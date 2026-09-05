@@ -233,3 +233,38 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-theme="dark"] .btn { background: var(--card); }
 [data-theme="dark"] .btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
 [data-theme="dark"] .bar { opacity: .9; }
+
+/* ============ 版本标识 ============ */
+.ver { font-size: 11px; font-weight: 400; color: var(--text-sub); margin-left: 4px; }
+
+/* ============ 移动端适配 ============ */
+@media (max-width: 700px) {
+  .topbar { flex-wrap: wrap; height: auto; padding: 8px 12px; gap: 6px 10px; }
+  .brand { font-size: 14px; flex: 1; min-width: 0; }
+  .tabs { order: 3; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { padding: 8px 12px; white-space: nowrap; flex-shrink: 0; }
+  .theme-toggle { order: 2; }
+  .sync-badge { order: 1; font-size: 11px; padding: 3px 8px; }
+
+  main { margin: 12px auto; padding: 0 10px; }
+  .card { padding: 14px; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .grid-2 { grid-template-columns: 1fr; gap: 12px; }
+  .stat-value { font-size: 22px; }
+
+  .study-layout { grid-template-columns: 1fr; }
+  .word-panel { position: static; max-height: none; }
+  .word-list { max-height: 40vh; }
+  .chat-panel { height: auto; }
+  .chat-messages { max-height: 55vh; }
+  .chat-input-row .input { font-size: 16px; } /* ≥16px 防 iOS 聚焦自动放大 */
+
+  .pomo-time { font-size: 54px; }
+  .pomo-controls .btn { padding: 10px 18px; }
+
+  .note-item { flex-direction: column; gap: 8px; }
+  .note-item .note-actions { flex-direction: row; }
+  .modal { width: 94vw; }
+  .hint { font-size: 12.5px; }
+}
