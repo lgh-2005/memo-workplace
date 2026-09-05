@@ -1,0 +1,13 @@
+{
+  "name": "english-workbench",
+  "version": "1.3.0",
+  "private": true,
+  "description": "个人本地英语学习工作台：墨墨数据同步 + AI 互动学习 + 助记生成 + 番茄钟",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

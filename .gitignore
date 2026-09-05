@@ -1,0 +1,8 @@
+# 数据与密钥，绝对不要提交到仓库
+data/
+*.log
+*.tmp
+
+node_modules/
+.DS_Store
+Thumbs.db

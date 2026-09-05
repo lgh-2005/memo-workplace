@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语学习工作台</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">🐳 英语学习工作台</div>
+  <nav class="tabs">
+    <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
+    <button class="tab" data-tab="study">💬 AI 学习</button>
+    <button class="tab" data-tab="notes">📖 助记库</button>
+    <button class="tab" data-tab="pomo">🍅 番茄钟</button>
+    <button class="tab" data-tab="settings">⚙️ 设置</button>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" title="切换黑夜/白天模式">🌙</button>
+  <div class="sync-badge" id="syncBadge" title="点击立即同步">
+    <span class="dot" id="syncDot"></span><span id="syncText">未同步</span>
+  </div>
+</header>
+
+<main>
+  <!-- ============ 仪表盘 ============ -->
+  <section id="tab-dashboard" class="tab-page active">
+    <div class="grid-4">
+      <div class="card stat">
+        <div class="stat-label">今日进度</div>
+        <div class="stat-value" id="statProgress">—</div>
+        <div class="stat-sub" id="statProgressSub">尚未同步</div>
+      </div>
+      <div class="card stat">
+        <div class="stat-label">今日学习时长</div>
+        <div class="stat-value" id="statTime">—</div>
+        <div class="stat-sub" id="statTimeSub"></div>
+      </div>
+      <div class="card stat">
+        <div class="stat-label">顽固词</div>
+        <div class="stat-value warn" id="statSticky">—</div>
+        <div class="stat-sub">反复忘记，优先攻克</div>
+      </div>
+      <div class="card stat">
+        <div class="stat-label">计划总词数</div>
+        <div class="stat-value" id="statTotal">—</div>
+        <div class="stat-sub" id="statWordsSub"></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">未来 7 天复习量</div>
+        <div class="bars" id="forecastBars"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">今日学习成果曲线（最近 14 天）</div>
+        <div class="bars line-bars" id="historyBars"></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">快捷入口</div>
+        <div class="quick-actions">
+          <button class="btn" data-jump="study" data-filter="today">学今日词</button>
+          <button class="btn" data-jump="study" data-filter="sticky">攻克顽固词</button>
+          <button class="btn" data-jump="study" data-filter="due7">7 天内要复习的</button>
+          <button class="btn ghost" data-jump="notes">查看助记库</button>
+        </div>
+        <div class="hint" id="setupHint" style="display:none">
+          ⚠️ 首次使用请先到 <a href="#" data-jump="settings">设置</a> 填写墨墨 Token 与 AI 服务商配置。
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">同步日志</div>
+        <ul class="log-list" id="syncLog"><li>暂无记录</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI 学习 ============ -->
+  <section id="tab-study" class="tab-page">
+    <div class="study-layout">
+      <aside class="word-panel card">
+        <div class="card-title">词表</div>
+        <div class="filter-row" id="wordFilters">
+          <button class="chip active" data-filter="today">今日</button>
+          <button class="chip" data-filter="unfinished">未完成</button>
+          <button class="chip" data-filter="newtoday">今日新词</button>
+          <button class="chip" data-filter="sticky">顽固词</button>
+          <button class="chip" data-filter="vague">模糊词</button>
+          <button class="chip" data-filter="forget">忘记词</button>
+          <button class="chip" data-filter="wellfamiliar">熟知词</button>
+          <button class="chip" data-filter="due7">7天内到期</button>
+          <button class="chip" data-filter="all">全部</button>
+        </div>
+        <input type="text" id="wordSearch" class="input" placeholder="搜索单词…">
+        <div class="word-list" id="wordList"><div class="empty">请先在仪表盘同步数据</div></div>
+        <div class="session-info" id="sessionInfo">本次会话已学 0 词</div>
+        <button class="btn primary full" id="finishBtn" disabled>✅ 结束本次学习并生成助记</button>
+      </aside>
+
+      <div class="chat-panel card">
+        <div class="chat-header" id="chatHeader">选择左侧一个单词开始，或直接提问</div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="msg ai">👋 我是你的 AI 单词教练。选中单词后可以问词义、用法、例句，也可以点下面的快捷按钮。学完点左下角「结束本次学习」，我会把你的易错点总结成助记。</div>
+        </div>
+        <div class="quick-row" id="quickRow">
+          <button class="chip q" data-q="这个词是什么意思？有哪些常见义项？">词义</button>
+          <button class="chip q" data-q="给我 3 个由易到难的原例句，附中文翻译。">例句</button>
+          <button class="chip q" data-q="这个常见的搭配和用法有哪些？">用法</button>
+          <button class="chip q" data-q="它最容易和哪些近义词混淆？帮我对比辨析。">辨析</button>
+          <button class="chip q err" data-q="我又把这个记混了！帮我看看我可能错在哪，给我一个记忆钩子。" data-error="1">我又忘了 😵</button>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" id="chatInput" class="input" placeholder="输入问题，回车发送…" autocomplete="off">
+          <button class="btn primary" id="sendBtn">发送</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 助记库 ============ -->
+  <section id="tab-notes" class="tab-page">
+    <div class="card">
+      <div class="card-title-row">
+        <div class="card-title">我的助记（<span id="notesCount">0</span>）</div>
+        <div style="display:flex;gap:8px">
+          <input type="text" id="noteSearch" class="input" placeholder="搜索单词或内容…" style="width:220px">
+          <button class="btn" id="addNoteBtn">＋ 手动添加</button>
+        </div>
+      </div>
+      <div class="hint">💡 带 <span class="tag pending">待推送</span> 的助记还没同步到墨墨 App；点击「推送到墨墨」后会出现在该单词的助记列表里（消耗每日内容创建配额 600 条）。</div>
+      <div class="notes-list" id="notesList"></div>
+    </div>
+  </section>
+
+  <!-- ============ 番茄钟 ============ -->
+  <section id="tab-pomo" class="tab-page">
+    <div class="grid-2">
+      <div class="card pomo-card">
+        <div class="pomo-mode-pill" id="pomoMode">待开始 · 专注</div>
+        <div class="pomo-time" id="pomoTime">25:00</div>
+        <div class="pomo-controls">
+          <button class="btn primary" id="pomoStartBtn">▶ 开始</button>
+          <button class="btn" id="pomoSkipBtn">⏭ 跳过本段</button>
+          <button class="btn ghost" id="pomoResetBtn">↺ 重置</button>
+        </div>
+        <div class="hint" style="text-align:center">计时基于本机时间戳，刷新页面、切走标签页都不丢进度；一段结束会响铃并自动进入下一段。</div>
+      </div>
+      <div class="card">
+        <div class="card-title">今日番茄</div>
+        <div class="grid-2" style="gap:10px">
+          <div class="stat"><div class="stat-value" id="pomoCount">0</div><div class="stat-label">完成专注段</div></div>
+          <div class="stat"><div class="stat-value" id="pomoMinutes">0</div><div class="stat-label">累计专注分钟</div></div>
+        </div>
+        <div class="card-title" style="margin-top:18px">时长设置（分钟）</div>
+        <div class="grid-2" style="gap:10px">
+          <div><label class="field-label">专注</label><input type="number" id="pomoWorkMin" class="input" value="25" min="1" max="120"></div>
+          <div><label class="field-label">休息</label><input type="number" id="pomoBreakMin" class="input" value="5" min="1" max="60"></div>
+        </div>
+        <div class="hint">💡 建议节奏：切到「AI 学习」页选一批顽固词 → 开一个 25 分钟专注 → 结束后点「生成助记」收尾，正好一个番茄。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 设置 ============ -->
+  <section id="tab-settings" class="tab-page">
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">墨墨背单词 API</div>
+        <label class="field-label">Token</label>
+        <input type="password" id="cfgToken" class="input" placeholder="粘贴墨墨开放 API Token">
+        <div class="hint">获取方式：墨墨背单词 App → 我的 → 更多设置 → 实验功能 → 开放 API。App 内生成的 Token 长期有效。</div>
+        <div class="row-gap">
+          <button class="btn" id="testMaimemoBtn">测试连接</button>
+          <button class="btn" id="syncNowBtn">立即全量同步</button>
+        </div>
+        <div class="result" id="maimemoTestResult"></div>
+
+        <div class="card-title" style="margin-top:20px">自动同步</div>
+        <label class="check-row"><input type="checkbox" id="cfgAutoSync"> 开启定时同步</label>
+        <label class="field-label">间隔（分钟）</label>
+        <input type="number" id="cfgSyncMinutes" class="input" value="60" min="5">
+      </div>
+
+      <div class="card">
+        <div class="card-title">AI 服务商（OpenAI 兼容）</div>
+        <label class="field-label">预设</label>
+        <select id="cfgPreset" class="input"><option value="">— 选择服务商 —</option></select>
+        <label class="field-label">Base URL</label>
+        <input type="text" id="cfgLLMUrl" class="input" placeholder="https://api.deepseek.com/v1">
+        <label class="field-label">API Key</label>
+        <input type="password" id="cfgLLMKey" class="input" placeholder="留空则沿用已保存的 Key">
+        <label class="field-label">模型 <span style="font-weight:400">(支持中转站，可自动拉取列表)</span></label>
+        <div style="display:flex;gap:8px">
+          <input type="text" id="cfgLLMModel" class="input" placeholder="deepseek-chat / glm-4-flash / gpt-4o-mini …">
+          <button class="btn" id="fetchModelsBtn" style="white-space:nowrap">🔄 拉取列表</button>
+        </div>
+        <select id="modelSelect" class="input" style="display:none;margin-top:8px"></select>
+        <label class="check-row"><input type="checkbox" id="cfgMock"> Mock 模式（不调用真实 AI，仅测试流程）</label>
+        <div class="row-gap">
+          <button class="btn" id="testLLMBtn">测试 AI 连接</button>
+        </div>
+        <div class="result" id="llmTestResult"></div>
+        <div class="hint">密钥只保存在本机 <code>data/config.json</code>，请求经本地服务代理，不经过第三方。</div>
+      </div>
+    </div>
+    <div class="card">
+      <button class="btn primary" id="saveConfigBtn">💾 保存全部设置</button>
+      <span class="result" id="saveResult"></span>
+    </div>
+  </section>
+</main>
+
+<!-- 助记弹层 -->
+<div class="modal-mask" id="noteModal" style="display:none">
+  <div class="modal card">
+    <div class="card-title" id="noteModalTitle">添加助记</div>
+    <label class="field-label">单词</label>
+    <input type="text" id="noteModalWord" class="input" placeholder="apple">
+    <label class="field-label">类型</label>
+    <select id="noteModalType" class="input">
+      <option>联想</option><option>谐音</option><option>词根词缀</option><option>近反义词</option>
+      <option>辨析</option><option>固定搭配</option><option>词源</option><option>口诀</option><option>其他</option>
+    </select>
+    <label class="field-label">内容</label>
+    <textarea id="noteModalContent" class="input" rows="4" placeholder="80 字以内，可以直接背的助记"></textarea>
+    <div class="row-gap" style="margin-top:14px">
+      <button class="btn primary" id="noteModalSave">保存</button>
+      <button class="btn ghost" id="noteModalCancel">取消</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
