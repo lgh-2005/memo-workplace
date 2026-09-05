@@ -57,9 +57,20 @@ function saveJSON(file, obj) {
 
 let config = loadJSON(CONFIG_FILE, {
   maimemoToken: process.env.MAIMEMO_TOKEN || '',
-  llm: { baseUrl: '', apiKey: '', model: '', mock: false },
+  llm: { mock: false, activeId: 'default', providers: [{ id: 'default', name: '默认服务商', baseUrl: '', apiKey: '', model: '' }] },
   autoSync: { enabled: false, minutes: 60 },
 });
+
+// v1.0.2 迁移：旧的单服务商结构自动升级为多服务商列表（老配置无痛升级）
+if (!Array.isArray(config.llm?.providers)) {
+  const old = config.llm || {};
+  config.llm = {
+    mock: !!old.mock,
+    activeId: 'default',
+    providers: [{ id: 'default', name: '默认服务商', baseUrl: old.baseUrl || '', apiKey: old.apiKey || '', model: old.model || '' }],
+  };
+  persistConfig();
+}
 
 let db = loadJSON(DB_FILE, {
   lastSync: null,
@@ -322,13 +333,22 @@ const LLM_PRESETS = {
   ollama: { label: 'Ollama（本地）', baseUrl: 'http://localhost:11434/v1', model: 'qwen2.5:7b' },
 };
 
-async function llmChat(messages, { maxTokens = 1600, llmOverride } = {}) {
-  const llm = { ...(config.llm || {}), ...(llmOverride || {}) };
-  if (llm.mock) {
+/** 取服务商档案：指定 id 优先，其次全局默认，兜底第一个；供不同功能板块分别指定 */
+function getProvider(id) {
+  const llm = config.llm;
+  return llm.providers.find(p => p.id === id)
+    || llm.providers.find(p => p.id === llm.activeId)
+    || llm.providers[0];
+}
+
+async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } = {}) {
+  if (config.llm.mock) {
     return mockLLM(messages);
   }
+  const base = getProvider(providerId) || {};
+  const llm = { ...base, ...(llmOverride || {}) };
   if (!llm.baseUrl || !llm.model) {
-    const e = new Error('尚未配置 AI 服务商，请到「设置」页选择服务商并填写 API Key');
+    const e = new Error('尚未配置 AI 服务商，请到「设置」页添加服务商并填写 API Key');
     e.code = 'NO_LLM';
     throw e;
   }
@@ -612,7 +632,12 @@ const server = http.createServer(async (req, res) => {
       if (p === '/api/status' && req.method === 'GET') {
         return sendJSON(res, 200, {
           hasToken: !!config.maimemoToken,
-          llm: { configured: !!(config.llm?.baseUrl && config.llm?.model) || !!config.llm?.mock, mock: !!config.llm?.mock, model: config.llm?.model || '' },
+          llm: {
+            configured: !!config.llm?.mock || (config.llm?.providers || []).some(p => p.baseUrl && p.model),
+            mock: !!config.llm?.mock,
+            activeId: config.llm?.activeId,
+            activeName: getProvider()?.name || '',
+          },
           lastSync: db.lastSync,
           counts: { words: Object.keys(db.words).length, notes: db.notes.length },
           autoSync: config.autoSync,
@@ -625,8 +650,11 @@ const server = http.createServer(async (req, res) => {
           maimemoToken: config.maimemoToken ? '••••（已保存，留空则不修改）' : '',
           hasToken: !!config.maimemoToken,
           llm: {
-            baseUrl: config.llm.baseUrl, model: config.llm.model,
-            hasKey: !!config.llm.apiKey, mock: !!config.llm.mock,
+            activeId: config.llm.activeId,
+            mock: !!config.llm.mock,
+            providers: (config.llm.providers || []).map(pr => ({
+              id: pr.id, name: pr.name, baseUrl: pr.baseUrl, model: pr.model, hasKey: !!pr.apiKey,
+            })),
           },
           autoSync: config.autoSync,
           presets: LLM_PRESETS,
@@ -639,10 +667,29 @@ const server = http.createServer(async (req, res) => {
         }
         if (body.maimemoToken === '') config.maimemoToken = '';
         if (body.llm) {
-          config.llm = { ...config.llm };
-          if (typeof body.llm.baseUrl === 'string') config.llm.baseUrl = body.llm.baseUrl.trim();
-          if (typeof body.llm.model === 'string') config.llm.model = body.llm.model.trim();
-          if (typeof body.llm.apiKey === 'string' && body.llm.apiKey) config.llm.apiKey = body.llm.apiKey.trim();
+          // 多服务商：数组整体替换；apiKey 留空表示沿用该档案已保存的 Key
+          if (Array.isArray(body.llm.providers)) {
+            const usedIds = new Set();
+            config.llm.providers = body.llm.providers.slice(0, 20).map((pr, i) => {
+              let id = pr.id ? String(pr.id).slice(0, 40) : '';
+              if (!id || usedIds.has(id)) id = 'p' + Date.now().toString(36) + '_' + i;  // 空id或重复id → 重新生成
+              usedIds.add(id);
+              const old = (config.llm.providers || []).find(x => x.id === id);
+              return {
+                id,
+                name: String(pr.name || '服务商').slice(0, 30),
+                baseUrl: String(pr.baseUrl || '').trim(),
+                model: String(pr.model || '').trim(),
+                apiKey: (typeof pr.apiKey === 'string' && pr.apiKey.trim()) ? pr.apiKey.trim() : (old?.apiKey || ''),
+              };
+            });
+            if (!config.llm.providers.find(x => x.id === config.llm.activeId)) {
+              config.llm.activeId = config.llm.providers[0]?.id || 'default';
+            }
+          }
+          if (typeof body.llm.activeId === 'string' && config.llm.providers.find(x => x.id === body.llm.activeId)) {
+            config.llm.activeId = body.llm.activeId;
+          }
           if (body.llm.mock != null) config.llm.mock = !!body.llm.mock;
         }
         if (body.autoSync) {
@@ -657,10 +704,12 @@ const server = http.createServer(async (req, res) => {
       }
 
       // 拉取模型列表（OpenAI-compatible GET /models，支持中转站）
+      // 传 providerId 则用已保存档案的 key/baseUrl 兜底；直接传 baseUrl/apiKey 优先
       if (p === '/api/llm/models' && req.method === 'POST') {
         const body = await readBody(req);
-        const baseUrl = (body.baseUrl || config.llm.baseUrl || '').trim();
-        const apiKey = (body.apiKey || config.llm.apiKey || '').trim();
+        const prov = body.providerId ? getProvider(body.providerId) : null;
+        const baseUrl = (body.baseUrl || prov?.baseUrl || '').trim();
+        const apiKey = (body.apiKey || prov?.apiKey || '').trim();
         if (!baseUrl) return sendJSON(res, 400, { error: '请先填写 Base URL' });
         const url = baseUrl.replace(/\/+$/, '') + '/models';
         let r;
@@ -687,14 +736,16 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, msg: `连接成功！今日进度 ${pr.finished}/${pr.total}` });
       }
       if (p === '/api/test/llm' && req.method === 'POST') {
-        // 允许直接用表单里的值测试（不依赖先保存）；字段缺省则回退到已保存配置
+        // 允许直接用表单值测试（不依赖先保存）；也可传 providerId 测试已保存档案
         const body = await readBody(req);
+        const opts = { maxTokens: 20 };
+        if (body.providerId) opts.providerId = body.providerId;
         const override = {};
         if (typeof body.baseUrl === 'string' && body.baseUrl.trim()) override.baseUrl = body.baseUrl.trim();
         if (typeof body.apiKey === 'string' && body.apiKey.trim()) override.apiKey = body.apiKey.trim();
         if (typeof body.model === 'string' && body.model.trim()) override.model = body.model.trim();
-        if (body.mock != null) override.mock = !!body.mock;
-        const reply = await llmChat([{ role: 'user', content: '请只回复：连接成功' }], { maxTokens: 20, llmOverride: override });
+        if (Object.keys(override).length) opts.llmOverride = override;
+        const reply = await llmChat([{ role: 'user', content: '请只回复：连接成功' }], opts);
         return sendJSON(res, 200, { ok: true, msg: reply.slice(0, 100) });
       }
 

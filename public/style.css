@@ -233,9 +233,89 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-theme="dark"] .btn { background: var(--card); }
 [data-theme="dark"] .btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
 [data-theme="dark"] .bar { opacity: .9; }
+[data-theme="dark"] .tag.active { background: #0e2e22; }
 
 /* ============ 版本标识 ============ */
 .ver { font-size: 11px; font-weight: 400; color: var(--text-sub); margin-left: 4px; }
+
+/* ============ 服务商档案 ============ */
+.prov-list { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.prov-item {
+  border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px;
+  display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+}
+.prov-item .prov-info { flex: 1; min-width: 180px; }
+.prov-item .prov-name { font-weight: 700; }
+.prov-item .prov-meta { font-size: 12px; color: var(--text-sub); word-break: break-all; margin-top: 3px; }
+.prov-item .prov-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag.active { background: #ecfdf5; color: var(--ok); }
+.empty-prov { color: var(--text-sub); font-size: 13px; text-align: center; padding: 14px 0; }
+
+/* ============ 界面风格选择 ============ */
+.style-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+.style-opt {
+  border: 1px solid var(--border); background: var(--card); border-radius: 10px;
+  padding: 16px 10px; cursor: pointer; font-size: 13.5px; text-align: center;
+  font-family: inherit; color: var(--text);
+}
+.style-opt:hover { border-color: var(--primary); }
+.style-opt.active { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); font-weight: 600; }
+.style-opt .style-desc { display: block; font-size: 11px; color: var(--text-sub); margin-top: 4px; font-weight: 400; }
+
+/* ============ 界面风格主题（白天模式生效；黑夜模式统一暗色） ============ */
+
+/* 🏮 中国古典：宣纸米色 + 朱砂 + 楷体 */
+[data-style="classic"] {
+  --bg: #f4eee1; --card: #fbf7ec; --border: #d9cdb2;
+  --text: #3a3226; --text-sub: #8a7d68;
+  --primary: #a63d2f; --primary-soft: #f3e4da;
+  --warn: #b3402e; --ok: #5a7247;
+  --radius: 4px;
+}
+[data-style="classic"] body { font-family: "KaiTi", "STKaiti", "楷体", "SimSun", serif; }
+[data-style="classic"] .topbar { border-bottom: 2px solid #a63d2f40; }
+[data-style="classic"] .card { box-shadow: 0 1px 4px rgba(90, 70, 40, .08); }
+[data-style="classic"] .stat-value, [data-style="classic"] .brand { letter-spacing: 1px; }
+
+/* 🏛 西方现代：冷灰白 + 纯黑几何 + 无衬线 */
+[data-style="western"] {
+  --bg: #f4f4f5; --card: #ffffff; --border: #e4e4e7;
+  --text: #18181b; --text-sub: #71717a;
+  --primary: #18181b; --primary-soft: #e9e9ee;
+  --warn: #dc2626; --ok: #059669;
+  --radius: 2px;
+}
+[data-style="western"] body { font-family: "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif; }
+[data-style="western"] .card { box-shadow: 0 1px 3px rgba(0, 0, 0, .07); }
+[data-style="western"] .btn.primary { background: var(--primary); }
+[data-style="western"] .stat-value { font-weight: 800; letter-spacing: -.5px; }
+
+/* 🎴 日式轻：生成り暖白 + 藍色 + 圆润 */
+[data-style="jp"] {
+  --bg: #f6f4ef; --card: #fdfcf8; --border: #e3ddd1;
+  --text: #4a4640; --text-sub: #96907f;
+  --primary: #5a7ba6; --primary-soft: #edf1f6;
+  --warn: #c2705d; --ok: #6f9b6f;
+  --radius: 16px;
+}
+[data-style="jp"] body { font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Microsoft YaHei", sans-serif; }
+[data-style="jp"] .card { box-shadow: 0 2px 12px rgba(110, 120, 140, .07); }
+[data-style="jp"] .topbar { border-bottom: 1px solid #c9beab; }
+[data-style="jp"] .chip, [data-style="jp"] .badge { border-radius: 8px; }
+
+/* 🏰 欧伦：奶油底 + 墨绿鎏金 + 衬线 */
+[data-style="euro"] {
+  --bg: #f3efe6; --card: #fffdf6; --border: #ddd2bd;
+  --text: #33301f; --text-sub: #857e6a;
+  --primary: #3e5c47; --primary-soft: #e8eee7;
+  --warn: #a8503c; --ok: #4c7a54;
+  --radius: 8px;
+}
+[data-style="euro"] body { font-family: Georgia, "Times New Roman", "Songti SC", serif; }
+[data-style="euro"] .topbar { border-bottom: 3px double #b08d4f66; }
+[data-style="euro"] .card { box-shadow: 0 1px 5px rgba(120, 100, 60, .1); }
+[data-style="euro"] .btn.primary { background: var(--primary); border-color: var(--primary); }
+[data-style="euro"] .brand { color: #3e5c47; }
 
 /* ============ 移动端适配 ============ */
 @media (max-width: 700px) {

@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.1</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.2</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
@@ -186,29 +186,30 @@
       </div>
 
       <div class="card">
-        <div class="card-title">AI 服务商（OpenAI 兼容）</div>
-        <label class="field-label">预设</label>
-        <select id="cfgPreset" class="input"><option value="">— 选择服务商 —</option></select>
-        <label class="field-label">Base URL</label>
-        <input type="text" id="cfgLLMUrl" class="input" placeholder="https://api.deepseek.com/v1">
-        <label class="field-label">API Key</label>
-        <input type="password" id="cfgLLMKey" class="input" placeholder="留空则沿用已保存的 Key">
-        <label class="field-label">模型 <span style="font-weight:400">(支持中转站，可自动拉取列表)</span></label>
-        <div style="display:flex;gap:8px">
-          <input type="text" id="cfgLLMModel" class="input" placeholder="deepseek-chat / glm-4-flash / gpt-4o-mini …">
-          <button class="btn" id="fetchModelsBtn" style="white-space:nowrap">🔄 拉取列表</button>
+        <div class="card-title-row">
+          <div class="card-title">AI 服务商（OpenAI 兼容 · 多档案）</div>
+          <button class="btn" id="addProvBtn">＋ 添加服务商</button>
         </div>
-        <select id="modelSelect" class="input" style="display:none;margin-top:8px"></select>
+        <div class="hint">默认服务商（⭐）用于全部 AI 功能；配置架构已支持按功能板块指定不同服务商，将在后续版本开放分区设置。</div>
+        <div class="prov-list" id="provList"></div>
         <label class="check-row"><input type="checkbox" id="cfgMock"> Mock 模式（不调用真实 AI，仅测试流程）</label>
-        <div class="row-gap">
-          <button class="btn" id="testLLMBtn">测试 AI 连接</button>
-        </div>
-        <div class="result" id="llmTestResult"></div>
-        <div class="hint">密钥只保存在本机 <code>data/config.json</code>，请求经本地服务代理，不经过第三方。</div>
+        <div class="hint">密钥只保存在本机 <code>data/config.json</code>，请求经本地服务代理，不经过第三方。API Key 留空保存 = 沿用该档案已存的 Key。</div>
       </div>
     </div>
+
     <div class="card">
-      <button class="btn primary" id="saveConfigBtn">💾 保存全部设置</button>
+      <div class="card-title">🎨 界面风格 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（作用于白天模式；黑夜模式保持统一暗色）</span></div>
+      <div class="style-grid" id="styleGrid">
+        <button class="style-opt" data-style="">🌿 默认清新</button>
+        <button class="style-opt" data-style="classic">🏮 中国古典</button>
+        <button class="style-opt" data-style="western">🏛 西方现代</button>
+        <button class="style-opt" data-style="jp">🎴 日式轻</button>
+        <button class="style-opt" data-style="euro">🏰 欧伦</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="btn primary" id="saveConfigBtn">💾 保存墨墨 Token 与同步设置</button>
       <span class="result" id="saveResult"></span>
     </div>
   </section>
@@ -230,6 +231,35 @@
     <div class="row-gap" style="margin-top:14px">
       <button class="btn primary" id="noteModalSave">保存</button>
       <button class="btn ghost" id="noteModalCancel">取消</button>
+    </div>
+  </div>
+</div>
+
+<!-- 服务商弹层 -->
+<div class="modal-mask" id="provModal" style="display:none">
+  <div class="modal card">
+    <div class="card-title" id="provModalTitle">添加服务商</div>
+    <label class="field-label">名称</label>
+    <input type="text" id="provName" class="input" placeholder="例：我的中转站 / DeepSeek">
+    <label class="field-label">预设（自动填充地址与模型）</label>
+    <select id="provPreset" class="input"><option value="">— 选择服务商 —</option></select>
+    <label class="field-label">Base URL</label>
+    <input type="text" id="provUrl" class="input" placeholder="https://api.deepseek.com/v1">
+    <label class="field-label">API Key</label>
+    <input type="password" id="provKey" class="input" placeholder="留空 = 沿用该档案已保存的 Key">
+    <label class="field-label">模型</label>
+    <div style="display:flex;gap:8px">
+      <input type="text" id="provModel" class="input" placeholder="deepseek-chat / glm-4-flash …">
+      <button class="btn" id="provFetchBtn" style="white-space:nowrap">🔄 拉取</button>
+    </div>
+    <select id="provModelSelect" class="input" style="display:none;margin-top:8px"></select>
+    <div class="row-gap" style="margin-top:14px;align-items:center">
+      <button class="btn" id="provTestBtn">🔌 测试连接</button>
+      <span class="result" id="provTestResult"></span>
+    </div>
+    <div class="row-gap" style="margin-top:14px">
+      <button class="btn primary" id="provSave">保存</button>
+      <button class="btn ghost" id="provCancel">取消</button>
     </div>
   </div>
 </div>

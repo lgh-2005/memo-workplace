@@ -13,6 +13,8 @@ const state = {
   sessionErrorWords: new Set(),
   sessionStartedAt: new Date().toISOString(),
   llmPresets: {},
+  providers: [],        // AI 服务商档案列表
+  activeProvId: '',     // 默认服务商 id
 };
 
 /* ---------------- 基础请求 ---------------- */
@@ -388,41 +390,122 @@ $('#themeToggle').addEventListener('click', () => {
   applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
 });
 
+/* ---------------- 界面风格（白天模式主题） ---------------- */
+
+function applyStyle(t) {
+  document.documentElement.dataset.style = t;
+  localStorage.setItem('wb-style', t);
+  $$('#styleGrid .style-opt').forEach(b => b.classList.toggle('active', b.dataset.style === t));
+}
+
+$$('#styleGrid .style-opt').forEach(b => b.addEventListener('click', () => applyStyle(b.dataset.style)));
+
 /* ---------------- 设置页 ---------------- */
+
+let provPresets = {};
 
 async function loadConfig() {
   try {
     const c = await api('/api/config');
-    state.llmPresets = c.presets;
-    const sel = $('#cfgPreset');
-    sel.innerHTML = '<option value="">— 选择服务商 —</option>' +
-      Object.entries(c.presets).map(([k, v]) => `<option value="${k}">${esc(v.label)}</option>`).join('');
-    if (c.hasToken) $('#cfgToken').placeholder = c.maimemoToken;
-    $('#cfgLLMUrl').value = c.llm.baseUrl || '';
-    $('#cfgLLMModel').value = c.llm.model || '';
+    provPresets = c.presets || {};
+    state.providers = c.llm.providers || [];
+    state.activeProvId = c.llm.activeId;
+    $('#provPreset').innerHTML = '<option value="">— 选择服务商 —</option>' +
+      Object.entries(provPresets).map(([k, v]) => `<option value="${k}">${esc(v.label)}</option>`).join('');
     $('#cfgMock').checked = !!c.llm.mock;
+    if (c.hasToken) $('#cfgToken').placeholder = c.maimemoToken;
     $('#cfgAutoSync').checked = !!c.autoSync.enabled;
     $('#cfgSyncMinutes').value = c.autoSync.minutes || 60;
+    renderProviders();
   } catch (e) { console.error(e); }
 }
 
-$('#cfgPreset').addEventListener('change', () => {
-  const p = state.llmPresets[$('#cfgPreset').value];
-  if (p) { $('#cfgLLMUrl').value = p.baseUrl; $('#cfgLLMModel').value = p.model; }
+function renderProviders() {
+  const list = $('#provList');
+  if (!state.providers.length) {
+    list.innerHTML = '<div class="empty-prov">还没有服务商，点右上角「＋ 添加服务商」</div>';
+    return;
+  }
+  list.innerHTML = state.providers.map(p => `
+    <div class="prov-item">
+      <div class="prov-info">
+        <div class="prov-name">${esc(p.name)} ${p.id === state.activeProvId ? '<span class="tag active">⭐ 默认</span>' : ''}</div>
+        <div class="prov-meta">${esc(p.baseUrl || '未填 Base URL')} · ${esc(p.model || '未选模型')} · ${p.hasKey ? '🔑 已存 Key' : '⚠️ 无 Key'}</div>
+      </div>
+      <div class="prov-actions">
+        ${p.id === state.activeProvId ? '' : `<button class="btn small" data-prov-active="${p.id}">设为默认</button>`}
+        <button class="btn small" data-prov-test="${p.id}">测试</button>
+        <button class="btn small" data-prov-edit="${p.id}">编辑</button>
+        <button class="btn small danger" data-prov-del="${p.id}">删除</button>
+      </div>
+    </div>`).join('');
+
+  $$('[data-prov-active]').forEach(b => b.addEventListener('click', () => setDefaultProvider(b.dataset.provActive)));
+  $$('[data-prov-test]').forEach(b => b.addEventListener('click', () => testProvider(b.dataset.provTest, b)));
+  $$('[data-prov-edit]').forEach(b => b.addEventListener('click', () => openProvModal(b.dataset.provEdit)));
+  $$('[data-prov-del]').forEach(b => b.addEventListener('click', () => deleteProvider(b.dataset.provDel)));
+}
+
+async function saveProviders(providers) {
+  await api('/api/config', { method: 'POST', body: { llm: { providers } } });
+  await loadConfig();
+}
+
+async function setDefaultProvider(id) {
+  try {
+    await api('/api/config', { method: 'POST', body: { llm: { activeId: id } } });
+    await loadConfig();
+  } catch (e) { alert(e.message); }
+}
+
+async function deleteProvider(id) {
+  if (!confirm('确定删除该服务商档案？（其 API Key 也会一并删除）')) return;
+  try {
+    const rest = state.providers.filter(p => p.id !== id);
+    await saveProviders(rest);
+  } catch (e) { alert(e.message); }
+}
+
+/* 服务商弹层（新增 / 编辑） */
+let provEditId = '';
+
+function openProvModal(id) {
+  provEditId = id || '';
+  const p = id ? state.providers.find(x => x.id === id) : null;
+  $('#provModalTitle').textContent = p ? '编辑服务商：' + p.name : '添加服务商';
+  $('#provName').value = p?.name || '';
+  $('#provPreset').value = '';
+  $('#provUrl').value = p?.baseUrl || '';
+  $('#provKey').value = '';
+  $('#provKey').placeholder = p?.hasKey ? '已保存 Key（留空 = 沿用）' : '粘贴 API Key';
+  $('#provModel').value = p?.model || '';
+  $('#provModelSelect').style.display = 'none';
+  $('#provTestResult').textContent = '';
+  $('#provTestResult').className = 'result';
+  $('#provModal').style.display = 'flex';
+}
+
+$('#addProvBtn').addEventListener('click', () => openProvModal(''));
+$('#provCancel').addEventListener('click', () => $('#provModal').style.display = 'none');
+
+$('#provPreset').addEventListener('change', () => {
+  const pr = provPresets[$('#provPreset').value];
+  if (pr) { $('#provUrl').value = pr.baseUrl; $('#provModel').value = pr.model; }
 });
 
-/* 拉取模型列表（支持中转站） */
-$('#fetchModelsBtn').addEventListener('click', async () => {
-  const btn = $('#fetchModelsBtn');
-  const sel = $('#modelSelect');
-  const baseUrl = $('#cfgLLMUrl').value.trim();
+$('#provFetchBtn').addEventListener('click', async () => {
+  const btn = $('#provFetchBtn'), sel = $('#provModelSelect');
+  const baseUrl = $('#provUrl').value.trim();
   if (!baseUrl) return alert('请先填写 Base URL');
-  btn.textContent = '拉取中…';
-  btn.disabled = true;
+  btn.textContent = '拉取中…'; btn.disabled = true;
   try {
     const r = await api('/api/llm/models', {
       method: 'POST',
-      body: { baseUrl, apiKey: $('#cfgLLMKey').value.trim() },
+      body: {
+        baseUrl,
+        apiKey: $('#provKey').value.trim() || undefined,
+        providerId: provEditId || undefined,
+      },
     });
     if (!r.models.length) throw new Error('服务商返回了空列表');
     sel.style.display = 'block';
@@ -432,31 +515,70 @@ $('#fetchModelsBtn').addEventListener('click', async () => {
     sel.style.display = 'none';
     alert('拉取失败：' + e.message);
   }
-  btn.textContent = '🔄 拉取列表';
-  btn.disabled = false;
+  btn.textContent = '🔄 拉取'; btn.disabled = false;
 });
 
-$('#modelSelect').addEventListener('change', () => {
-  if ($('#modelSelect').value) $('#cfgLLMModel').value = $('#modelSelect').value;
+$('#provModelSelect').addEventListener('change', () => {
+  if ($('#provModelSelect').value) $('#provModel').value = $('#provModelSelect').value;
+});
+
+$('#provTestBtn').addEventListener('click', async () => {
+  $('#provTestResult').textContent = '测试中…';
+  $('#provTestResult').className = 'result';
+  try {
+    const r = await api('/api/test/llm', {
+      method: 'POST',
+      body: {
+        baseUrl: $('#provUrl').value.trim() || undefined,
+        apiKey: $('#provKey').value.trim() || undefined,
+        model: $('#provModel').value.trim() || undefined,
+        providerId: provEditId || undefined,
+      },
+    });
+    $('#provTestResult').textContent = '✅ ' + r.msg;
+    $('#provTestResult').className = 'result ok';
+  } catch (e) {
+    $('#provTestResult').textContent = '❌ ' + e.message;
+    $('#provTestResult').className = 'result err';
+  }
+});
+
+$('#provSave').addEventListener('click', async () => {
+  const name = $('#provName').value.trim();
+  const baseUrl = $('#provUrl').value.trim();
+  const model = $('#provModel').value.trim();
+  if (!name) return alert('给服务商起个名字');
+  if (!baseUrl || !model) return alert('Base URL 和模型都要填');
+  const key = $('#provKey').value.trim();
+  const item = { name, baseUrl, model };
+  if (provEditId) item.id = provEditId;
+  if (key) item.apiKey = key;
+  const providers = provEditId
+    ? state.providers.map(p => (p.id === provEditId ? { ...p, ...item } : { ...p }))
+    : [...state.providers, item];
+  try {
+    await saveProviders(providers);
+    $('#provModal').style.display = 'none';
+  } catch (e) { alert(e.message); }
+});
+
+$('#cfgMock').addEventListener('change', async () => {
+  try { await api('/api/config', { method: 'POST', body: { llm: { mock: $('#cfgMock').checked } } }); }
+  catch (e) { alert(e.message); }
 });
 
 $('#saveConfigBtn').addEventListener('click', async () => {
-  const body = {
-    maimemoToken: $('#cfgToken').value.trim() ? $('#cfgToken').value.trim() : undefined,
-    llm: {
-      baseUrl: $('#cfgLLMUrl').value.trim(),
-      model: $('#cfgLLMModel').value.trim(),
-      mock: $('#cfgMock').checked,
-    },
-    autoSync: { enabled: $('#cfgAutoSync').checked, minutes: Number($('#cfgSyncMinutes').value) || 60 },
-  };
-  if ($('#cfgLLMKey').value.trim()) body.llm.apiKey = $('#cfgLLMKey').value.trim();
   try {
-    await api('/api/config', { method: 'POST', body });
+    await api('/api/config', {
+      method: 'POST',
+      body: {
+        maimemoToken: $('#cfgToken').value.trim() || undefined,
+        autoSync: { enabled: $('#cfgAutoSync').checked, minutes: Number($('#cfgSyncMinutes').value) || 60 },
+      },
+    });
     $('#saveResult').textContent = '✅ 已保存';
     $('#saveResult').className = 'result ok';
     $('#cfgToken').value = '';
-    $('#cfgLLMKey').value = '';
     loadConfig();
   } catch (e) {
     $('#saveResult').textContent = '❌ ' + e.message;
@@ -465,7 +587,6 @@ $('#saveConfigBtn').addEventListener('click', async () => {
 });
 
 $('#testMaimemoBtn').addEventListener('click', async () => {
-  // 若输入框填了新 token，先保存再测试
   if ($('#cfgToken').value.trim()) await saveConfigSilent();
   $('#maimemoTestResult').textContent = '测试中…';
   $('#maimemoTestResult').className = 'result';
@@ -479,30 +600,6 @@ $('#testMaimemoBtn').addEventListener('click', async () => {
   }
 });
 
-$('#testLLMBtn').addEventListener('click', async () => {
-  $('#llmTestResult').textContent = '测试中…';
-  $('#llmTestResult').className = 'result';
-  try {
-    // 直接用表单当前值测试（key/baseUrl 未保存也能测），保证所见即所测
-    const r = await api('/api/test/llm', {
-      method: 'POST',
-      body: {
-        baseUrl: $('#cfgLLMUrl').value.trim() || undefined,
-        apiKey: $('#cfgLLMKey').value.trim() || undefined,
-        model: $('#cfgLLMModel').value.trim() || undefined,
-        mock: $('#cfgMock').checked,
-      },
-    });
-    $('#llmTestResult').textContent = '✅ ' + r.msg;
-    $('#llmTestResult').className = 'result ok';
-    // 测试通过后顺手把配置（含 key）存下来
-    await saveConfigSilent();
-  } catch (e) {
-    $('#llmTestResult').textContent = '❌ ' + e.message;
-    $('#llmTestResult').className = 'result err';
-  }
-});
-
 $('#syncNowBtn').addEventListener('click', async () => {
   if ($('#cfgToken').value.trim()) await saveConfigSilent();
   switchTab('dashboard');
@@ -510,18 +607,9 @@ $('#syncNowBtn').addEventListener('click', async () => {
 });
 
 async function saveConfigSilent() {
-  const key = $('#cfgLLMKey').value.trim();
   await api('/api/config', {
     method: 'POST',
-    body: {
-      maimemoToken: $('#cfgToken').value.trim() || undefined,
-      llm: {
-        baseUrl: $('#cfgLLMUrl').value.trim(),
-        model: $('#cfgLLMModel').value.trim(),
-        mock: $('#cfgMock').checked,
-        ...(key ? { apiKey: key } : {}),
-      },
-    },
+    body: { maimemoToken: $('#cfgToken').value.trim() || undefined },
   });
 }
 
@@ -642,6 +730,7 @@ setInterval(() => {
 
 (async function init() {
   applyTheme(localStorage.getItem('wb-theme') || 'light');
+  applyStyle(localStorage.getItem('wb-style') || '');
   // 番茄钟初始化：恢复上次进度（若页面关闭期间已到点，计入完成）
   if (!pomo.fullMs) pomo.fullMs = pomo.workMin * 60000;
   pomoRender();
