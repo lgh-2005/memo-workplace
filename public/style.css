@@ -619,6 +619,20 @@ code { font-family: Consolas, monospace; font-size: 12px; }
    其引用了不存在的 var(--main)，导致选中态背景透明+白字，所有 chip 选中后文字不可见。
    选中态样式统一由文件头部 .chip.active（primary-soft 底 + primary 字）提供。 */
 
+/* ================= v1.1.2：真题库（考试-题型 专项处理） ================= */
+.exm-block { margin-top: 16px; }
+.exm-stats {
+  font-size: 12px; color: var(--text-sub); margin: 6px 0 10px;
+  padding: 6px 12px; background: var(--primary-soft); border-radius: 8px; display: inline-block;
+}
+.exm-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.exm-chip { font-size: 11px; padding: 2px 10px; cursor: default; }
+.exm-slot {
+  margin-top: 8px; border: 1.5px dashed var(--border); border-radius: 8px;
+  min-height: 60px; display: flex; align-items: center; justify-content: center;
+  color: var(--text-sub); font-size: 12px;
+}
+
 /* ================= v1.1.0：语料库 ================= */
 .kb-item {
   border: 1px solid var(--border);

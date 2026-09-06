@@ -8,13 +8,14 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.1</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.2</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
     <button class="tab" data-tab="quiz">📝 测验</button>
     <button class="tab" data-tab="notes">📖 助记库</button>
     <button class="tab" data-tab="kb">📚 语料库</button>
+    <button class="tab" data-tab="exam">🗂 真题库</button>
     <button class="tab" data-tab="pomo">🍅 番茄钟</button>
     <button class="tab" data-tab="settings">⚙️ 设置</button>
   </nav>
@@ -196,13 +197,13 @@
           <button class="btn" id="kbSearchBtn">🔍 搜索</button>
         </div>
       </div>
-      <div class="hint">结构化考试语料（<code>corpus/records.jsonl</code>）：〖N〗 为挖空/答题框锚点，板块顺序尊重语料自身（模块化渲染，不做强制重排）。AI 教练讲解单词时会自动引用这里的真实考试原句。类型筛选：</div>
+      <div class="hint">纯文本语料库（<code>corpus/records.jsonl</code>）：只收<b>外刊原文 / 教材文章 / 真题正文</b>三类文本，结构化真题已独立到「🗂 真题库」。板块顺序尊重语料自身（模块化渲染）。AI 教练讲解单词会引用这里的语料与真题库原句。来源筛选：</div>
       <div class="row-gap" id="kbFilters">
-        <button class="chip active" data-ktype="">全部</button>
-        <button class="chip" data-ktype="qa_set">题库</button>
-        <button class="chip" data-ktype="article">文章</button>
-        <button class="chip" data-ktype="document">文档</button>
-        <button class="chip" data-ktype="note">笔记</button>
+        <button class="chip active" data-kcat="">全部</button>
+        <button class="chip" data-kcat="外刊">外刊原文</button>
+        <button class="chip" data-kcat="教材">教材文章</button>
+        <button class="chip" data-kcat="真题">真题正文</button>
+        <button class="chip" data-kcat="直录">直录笔记</button>
       </div>
       <div class="result" id="kbListResult"></div>
       <div id="kbList"></div>
@@ -212,7 +213,7 @@
         <div class="card-title">📥 导入语料</div>
         <button class="btn" id="kbLogBtn">📜 导入日志</button>
       </div>
-      <div class="hint">三层契约（与导入工程一致）：上传先落 <code>imports/&lt;分类&gt;/</code> 投放区 → 解析成功写入 <code>records.jsonl</code>（<b>同名重导覆盖旧记录</b>）、原件归档 <code>archive/</code>；识别失败进 <code>quarantine/</code> 隔离区，绝不静默丢弃，全程留 <code>import_log.jsonl</code> 痕迹。支持 txt/md、html、docx、tex（推荐，结构化最优）、pdf（需 Python + PyMuPDF）；也可粘贴文本直录。</div>
+      <div class="hint">三层契约（与导入工程一致）：上传落 <code>imports/&lt;分类&gt;/</code> → 解析写入 <code>records.jsonl</code>（<b>同名重导覆盖</b>）、原件归档 <code>archive/</code>；识别失败进 <code>quarantine/</code> 隔离区，全程留 <code>import_log.jsonl</code> 痕迹。支持 txt/md、html、docx（<b>tex/pdf 真题源请到「🗂 真题库」导入</b>）；也可粘贴文本直录。</div>
       <div class="row-gap" style="flex-wrap:wrap">
         <select id="kbImportCategory" class="input" style="width:110px">
           <option value="真题">真题</option>
@@ -237,6 +238,33 @@
       </div>
       <div class="hint" id="kbDetailMeta"></div>
       <div id="kbDetail"></div>
+    </div>
+  </section>
+
+  <!-- ============ 真题库（v1.1.2） ============ -->
+  <section id="tab-exam" class="tab-page">
+    <div class="card">
+      <div class="card-title-row">
+        <div class="card-title">🗂 真题库 · 考研英语一</div>
+        <button class="btn" id="exLogBtn">📜 导入日志</button>
+      </div>
+      <div class="hint">结构化真题题库（<code>corpus/exams.jsonl</code>）：只收 <b>tex / pdf</b> 结构化源，自动拆题入库（同名重导覆盖，失败进隔离区）。按「<b>考试-题型</b>」专项处理——考研-完形填空 / 阅读理解 / 新题型 / 翻译 / 写作，各题型处理逻辑独立、输出结构统一。全库搜索与 AI 真题原句注入均覆盖本库。</div>
+      <div class="row-gap" style="flex-wrap:wrap">
+        <input type="file" id="exImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".tex,.pdf">
+        <button class="btn primary" id="exImportBtn">🗂 导入真题</button>
+      </div>
+      <div class="result" id="exImportResult"></div>
+      <div class="card-title-row" style="margin-top:14px"><div class="card-title">📄 真题列表</div></div>
+      <div class="result" id="exListResult"></div>
+      <div id="exList"></div>
+    </div>
+    <div class="card" id="exDetailCard" style="display:none">
+      <div class="card-title-row">
+        <div class="card-title" id="exDetailTitle">真题</div>
+        <button class="btn" id="exBackBtn">← 返回列表</button>
+      </div>
+      <div class="hint" id="exDetailMeta"></div>
+      <div id="exDetail"></div>
     </div>
   </section>
 

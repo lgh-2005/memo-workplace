@@ -20,6 +20,9 @@
  * 10. 语料导入（v1.1.1）：网页端导入按钮——投放(imports) -> 解析 -> 归档(archive)/
  *     隔离(quarantine) + 导入日志，同名重导覆盖；TeX/PDF 走 corpus_tools/ 内置
  *     Python 适配器，txt/md/html/docx 纯 Node 解析；取消板块固定排序（模块化）
+ * 11. 真题库分库（v1.1.2）：qa_set 独立到 corpus/exams.jsonl（语料库只留外刊/教材/
+ *     真题正文等纯文本），启动时自动迁移；/api/exam/* 浏览与 tex/pdf 导入；
+ *     按「考试-题型」（考研-完形填空/阅读理解/新题型/翻译/写作）统计各题型板块
  *
  * 启动：node server.js  （默认端口 5178）
  */
@@ -809,7 +812,7 @@ const KB_SECTION_LABEL = {
 };
 const RTYPE_LABEL = { qa_set: '题库', article: '文章', document: '文档', note: '笔记' };
 
-let kbCache = { mtime: 0, records: [], sentences: null };
+let kbCache = { mtime: 0, records: [], sentences: null, sentencesKey: '' };
 
 function kbFile() {
   const dir = (config.kb && config.kb.dir || '').trim();
@@ -874,9 +877,11 @@ function kbSentenceSplit(text) {
 }
 
 function kbSentences() {
-  if (kbCache.sentences) return kbCache.sentences;
+  // v1.1.2：索引覆盖语料库 + 真题库（真题原句在 exams.jsonl），任一文件变化即重建
+  const key = `${fileMtime(kbFile())}|${fileMtime(examsFile())}`;
+  if (kbCache.sentences && kbCache.sentencesKey === key) return kbCache.sentences;
   const out = [];
-  for (const r of loadKb()) {
+  for (const r of [...loadKb(), ...loadExams()]) {
     const year = r.meta?.year || null;
     const title = r.title || '';
     const items = Array.isArray(r.items) && r.items.length
@@ -889,6 +894,7 @@ function kbSentences() {
     }
   }
   kbCache.sentences = out;
+  kbCache.sentencesKey = key;
   return out;
 }
 
@@ -937,6 +943,94 @@ function kbSummary(r) {
     questions: r.meta?.questions || items.filter(i => i.type === 'question').length || null,
     itemCount: items.length,
     sections: (r.meta?.sections || [...new Set(items.map(i => i.section).filter(Boolean))]) || [],
+    source: r.source ? { file: r.source.file, parser: r.source.parser, imported_at: r.source.imported_at, category: r.source.category } : null,
+    preview: String(r.text || (items[0] && items[0].text) || '').replace(/〖\/?\d+〗/g, '').slice(0, 90),
+  };
+}
+
+/* ---------- v1.1.2：真题库（qa_set 分库到 exams.jsonl） ---------- */
+
+const EXAM_TYPE_LABEL = {
+  use_of_english: '考研-完形填空', reading: '考研-阅读理解', part_b: '考研-新题型',
+  translation: '考研-翻译', writing: '考研-写作',
+};
+
+function examsFile() { return path.join(path.dirname(kbFile()), 'exams.jsonl'); }
+
+let examCache = { mtime: 0, records: [] };
+
+function readJsonlRaw(file) {
+  try {
+    return fs.readFileSync(file, 'utf8').split('\n')
+      .map(l => { try { return JSON.parse(l); } catch { return null; } })
+      .filter(r => r && r.id && r.rtype);
+  } catch { return []; }
+}
+
+function fileMtime(file) { try { return fs.statSync(file).mtimeMs; } catch { return 0; } }
+
+function loadExams() {
+  const file = examsFile();
+  if (!fs.existsSync(file)) { examCache = { mtime: 0, records: [] }; return []; }
+  const mtime = fileMtime(file);
+  if (examCache.mtime !== mtime) examCache = { mtime, records: readJsonlRaw(file) };
+  return examCache.records;
+}
+
+/** v1.1.2 迁移：records.jsonl 里残留的 qa_set 全部移到 exams.jsonl（幂等，可重复调用） */
+function ensureKbSplit() {
+  try {
+    const file = kbFile();
+    if (!fs.existsSync(file)) return { moved: 0 };
+    const raw = fs.readFileSync(file, 'utf8').split('\n')
+      .map(l => { try { return JSON.parse(l); } catch { return null; } })
+      .filter(Boolean);
+    const qa = raw.filter(r => r.rtype === 'qa_set');
+    if (!qa.length) return { moved: 0 };
+    const rest = raw.filter(r => r.rtype !== 'qa_set');
+    const efile = examsFile();
+    const byId = new Map(readJsonlRaw(efile).map(r => [r.id, r]));
+    for (const r of qa) if (!byId.has(r.id)) byId.set(r.id, r);
+    const writeAtomic = (f, recs) => {
+      const tmp = f + '.tmp';
+      fs.writeFileSync(tmp, recs.map(r => JSON.stringify(r)).join('\n') + '\n', 'utf8');
+      fs.renameSync(tmp, f);
+    };
+    writeAtomic(efile, [...byId.values()]);
+    writeAtomic(file, rest);
+    kbCache = { mtime: 0, records: [], sentences: null, sentencesKey: '' };
+    examCache = { mtime: 0, records: [] };
+    kbLog({ time: new Date().toISOString().slice(0, 19), file: '(migration)', status: 'migrated', store: 'exam', records: qa.length });
+    console.log(`[v1.1.2] 已迁移 ${qa.length} 条 qa_set 记录 -> exams.jsonl`);
+    return { moved: qa.length };
+  } catch (e) {
+    console.error('kb split failed:', e.message);
+    return { moved: 0, error: e.message };
+  }
+}
+
+/** 真题记录摘要：按「考试-题型」板块统计（处理模块的服务端数据源） */
+function examSummary(r) {
+  const items = Array.isArray(r.items) ? r.items : [];
+  const bySec = new Map();
+  for (const it of items) {
+    const s = it.section || 'misc';
+    if (!bySec.has(s)) {
+      bySec.set(s, { key: s, label: EXAM_TYPE_LABEL[s] || ('考研-' + (KB_SECTION_LABEL[s] || s)), questions: 0, passages: 0, writings: 0 });
+    }
+    const b = bySec.get(s);
+    if (it.type === 'question') b.questions++;
+    else if (it.type === 'passage') b.passages++;
+    else if (it.type === 'writing') b.writings++;
+  }
+  return {
+    id: r.id,
+    rtype: r.rtype,
+    rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype,
+    title: r.title || '(无标题)',
+    year: r.meta?.year || null,
+    questions: r.meta?.questions || items.filter(i => i.type === 'question').length || null,
+    sections: [...bySec.values()],
     source: r.source ? { file: r.source.file, parser: r.source.parser, imported_at: r.source.imported_at, category: r.source.category } : null,
     preview: String(r.text || (items[0] && items[0].text) || '').replace(/〖\/?\d+〗/g, '').slice(0, 90),
   };
@@ -1088,8 +1182,19 @@ function kbParseWithPython(fmt, file) {
   });
 }
 
-/** 单文件导入全流程：投放 -> 解析 -> 写库（同名覆盖）+ 归档，失败 -> 隔离 + 日志 */
-async function kbImportOne({ name, buf, category }) {
+/** 分库写入：store=exam -> exams.jsonl（真题）；store=corpus -> records.jsonl（语料） */
+function kbMergeStore(store, records) {
+  const file = store === 'exam' ? examsFile() : kbFile();
+  const byKey = new Map();
+  for (const r of readJsonlRaw(file)) byKey.set(r.source && r.source.file ? r.source.file : '\u0000id:' + r.id, r);
+  for (const r of records) byKey.set(r.source.file, r);
+  const tmp = file + '.tmp';
+  fs.writeFileSync(tmp, [...byKey.values()].map(r => JSON.stringify(r)).join('\n') + '\n', 'utf8');
+  fs.renameSync(tmp, file);
+}
+
+/** 单文件导入全流程：投放 -> 解析 -> 分库写库（同名覆盖）+ 归档，失败 -> 隔离 + 日志 */
+async function kbImportOne({ name, buf, category, store = 'corpus' }) {
   const safe = kbSafeName(name);
   if (!safe) throw Object.assign(new Error('文件名无效'), { code: 'KB_IMPORT' });
   if (!buf || !buf.length) throw Object.assign(new Error('文件内容为空'), { code: 'KB_IMPORT' });
@@ -1099,7 +1204,9 @@ async function kbImportOne({ name, buf, category }) {
   const now = new Date().toISOString().slice(0, 19);
   let parsed, parser = null;
   try {
-    if (ext === '.txt' || ext === '.md' || ext === '') {
+    if (store === 'exam' && ext !== '.tex' && ext !== '.pdf') {
+      parsed = { ok: false, reason: `真题库仅支持 tex / pdf 结构化源（收到 ${ext || '无扩展名'}）`, hint: '文章、笔记类内容请到「📚 语料库」导入' };
+    } else if (ext === '.txt' || ext === '.md' || ext === '') {
       const text = kbDecode(buf);
       const m = text.match(/^#\s+(.+)$/m);
       parser = 'plain-text';
@@ -1115,10 +1222,14 @@ async function kbImportOne({ name, buf, category }) {
       parser = 'docx-zip';
       parsed = { ok: true, records: [{ rtype: 'document', title: safe.replace(/\.docx$/i, ''), text, meta: { chars: text.length } }] };
     } else if (ext === '.tex' || ext === '.pdf') {
-      parsed = await kbParseWithPython(ext.slice(1), srcPath);
-      if (parsed.ok) parser = parsed.parser || ext.slice(1) + '-adapter';
+      if (store === 'corpus') {
+        parsed = { ok: false, reason: 'tex / pdf 是真题结构化源，不属于语料库', hint: '请到「🗂 真题库」板块导入（自动拆题入库）' };
+      } else {
+        parsed = await kbParseWithPython(ext.slice(1), srcPath);
+        if (parsed.ok) parser = parsed.parser || ext.slice(1) + '-adapter';
+      }
     } else {
-      parsed = { ok: false, reason: `不支持的类型 ${ext || '(无扩展名)'}，支持：txt/md/html/htm/docx/tex/pdf` };
+      parsed = { ok: false, reason: `不支持的类型 ${ext || '(无扩展名)'}，支持：txt/md/html/htm/docx` };
     }
   } catch (e) {
     parsed = { ok: false, reason: e.message };
@@ -1129,29 +1240,29 @@ async function kbImportOne({ name, buf, category }) {
     const q = path.join(kbDir('quarantine'), safe);
     if (fs.existsSync(q)) fs.rmSync(q);
     fs.renameSync(srcPath, q);
-    kbLog({ time: now, file: safe, category, status: 'quarantined', reason: String(parsed.reason || '').slice(0, 200) });
-    return { ok: false, file: safe, reason: parsed.reason || '解析失败', hint: parsed.hint || null };
+    kbLog({ time: now, file: safe, category, store, status: 'quarantined', reason: String(parsed.reason || '').slice(0, 200) });
+    return { ok: false, file: safe, reason: parsed.reason || '解析失败', hint: parsed.hint || null, store };
   }
 
-  // replace-by-source：同名重导覆盖旧记录
-  const byKey = new Map();
-  for (const r of loadKb()) byKey.set(r.source && r.source.file ? r.source.file : '\u0000id:' + r.id, r);
+  // replace-by-source：同名重导覆盖旧记录；v1.1.2 分库——qa_set -> exams.jsonl，
+  // 其余（真题拆题失败的整卷文档即「真题正文」）-> records.jsonl
   parsed.records.forEach((r, i) => {
     if (!r.id) r.id = crypto.createHash('sha1').update([safe, parser, i, r.title || ''].join('|')).digest('hex').slice(0, 12);
     r.source = { file: safe, category, parser, imported_at: now };
     if (!r.title) r.title = safe;
-    byKey.set(safe, r);
   });
-  const tmp = kbFile() + '.tmp';
-  fs.writeFileSync(tmp, [...byKey.values()].map(r => JSON.stringify(r)).join('\n') + '\n', 'utf8');
-  fs.renameSync(tmp, kbFile());
+  const toExam = parsed.records.filter(r => r.rtype === 'qa_set');
+  const toCorpus = parsed.records.filter(r => r.rtype !== 'qa_set');
+  if (toExam.length) kbMergeStore('exam', toExam);
+  if (toCorpus.length) kbMergeStore('corpus', toCorpus);
+  const storeTag = [toExam.length ? 'exam' : '', toCorpus.length ? 'corpus' : ''].filter(Boolean).join('+');
   // 原件归档（重导覆盖旧归档）
   const dest = path.join(kbDir('archive', category), safe);
   if (fs.existsSync(dest)) fs.rmSync(dest);
   fs.renameSync(srcPath, dest);
-  kbLog({ time: now, file: safe, category, status: 'imported', parser, records: parsed.records.length });
+  kbLog({ time: now, file: safe, category, store: storeTag, status: 'imported', parser, records: parsed.records.length });
   return {
-    ok: true, file: safe, parser,
+    ok: true, file: safe, parser, store: storeTag,
     records: parsed.records.length,
     rtypes: parsed.records.map(r => RTYPE_LABEL[r.rtype] || r.rtype),
   };
@@ -2078,6 +2189,61 @@ const server = http.createServer(async (req, res) => {
         });
       }
 
+      // v1.1.2：真题库导入（仅 tex/pdf 结构化源 -> exams.jsonl）
+      if (p === '/api/exam/import' && req.method === 'POST') {
+        const body = await readBody(req, 60e6);
+        const results = [];
+        const files = (Array.isArray(body.items) ? body.items : []).slice(0, 20);
+        for (const it of files) {
+          if (!it || typeof it.name !== 'string' || typeof it.data64 !== 'string') continue;
+          if (it.data64.length > KB_IMPORT_MAX) {
+            results.push({ ok: false, file: it.name, reason: '文件超过 30MB 上限', store: 'exam' });
+            continue;
+          }
+          let buf;
+          try { buf = Buffer.from(it.data64, 'base64'); } catch {
+            results.push({ ok: false, file: it.name, reason: 'base64 解码失败', store: 'exam' });
+            continue;
+          }
+          results.push(await kbImportOne({ name: it.name, buf, category: '真题', store: 'exam' }));
+        }
+        if (!results.length) return sendJSON(res, 400, { error: '没有可导入的文件（选择 tex / pdf）', code: 'KB_IMPORT' });
+        return sendJSON(res, 200, {
+          ok: true, results,
+          imported: results.filter(r => r.ok).length,
+          quarantined: results.filter(r => !r.ok).length,
+        });
+      }
+
+      // v1.1.2：真题库列表（「考试-题型」板块统计）
+      if (p === '/api/exam/records' && req.method === 'GET') {
+        return sendJSON(res, 200, {
+          ok: true,
+          file: examsFile(),
+          exists: fs.existsSync(examsFile()),
+          records: loadExams().map(examSummary),
+        });
+      }
+
+      // v1.1.2：真题详情（渲染排序后的 items + 板块统计）
+      {
+        const m = p.match(/^\/api\/exam\/record\/([0-9a-f]+)$/);
+        if (m && req.method === 'GET') {
+          const r = loadExams().find(x => x.id === m[1]);
+          if (!r) return sendJSON(res, 404, { error: '记录不存在' });
+          return sendJSON(res, 200, {
+            ok: true,
+            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: kbOrderedItems(r), sections: examSummary(r).sections },
+          });
+        }
+      }
+
+      // v1.1.2：手动触发 qa_set 迁移（幂等，供测试/修复）
+      if (p === '/api/test/kb-split' && req.method === 'POST') {
+        const r = ensureKbSplit();
+        return sendJSON(res, 200, { ok: true, ...r, corpus: loadKb().length, exams: loadExams().length });
+      }
+
       // v1.1.1：导入日志（最近 30 条，新->旧）
       if (p === '/api/kb/importlog' && req.method === 'GET') {
         let log = [];
@@ -2116,6 +2282,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 ensureDataDir();
+ensureKbSplit();   // v1.1.2：旧版单文件里的 qa_set 自动迁移到 exams.jsonl
 armAutoSync();
 server.listen(PORT, HOST, () => {
   console.log(`\n  英语学习工作台已启动`);

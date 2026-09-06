@@ -90,6 +90,7 @@ function switchTab(name) {
   if (name === 'study') loadWords();
   if (name === 'notes') loadNotes();
   if (name === 'kb') loadKb();
+  if (name === 'exam') loadExamList();
   if (name === 'settings') loadConfig();
   // quiz 页保持进行中的状态，不重置
 }
@@ -1010,7 +1011,7 @@ const KB_SECTION_LABEL = {
   use_of_english: '完形填空', reading: '阅读 A', part_b: '新题型',
   translation: '翻译', writing: '写作',
 };
-const kbState = { records: [], filter: '', loaded: false };
+const kbState = { records: [], filter: '', loaded: false };   // v1.1.2：filter = 来源分类（外刊/教材/真题/直录）
 
 async function loadKb() {
   if (kbState.loaded) return;
@@ -1028,7 +1029,7 @@ async function loadKb() {
 
 function renderKbList() {
   const box = $('#kbList');
-  const list = kbState.records.filter(r => !kbState.filter || r.rtype === kbState.filter);
+  const list = kbState.records.filter(r => !kbState.filter || (r.source && r.source.category) === kbState.filter);
   if (!list.length) {
     box.innerHTML = '<div class="empty-prov">该类型下暂无记录。可用下方「📥 导入语料」直接导入文件或粘贴文本。</div>';
     return;
@@ -1140,7 +1141,7 @@ $('#kbBackBtn').addEventListener('click', () => {
   $('#kbListResult').className = 'result';
 });
 $$('#kbFilters .chip').forEach(c => c.addEventListener('click', () => {
-  kbState.filter = c.dataset.ktype;
+  kbState.filter = c.dataset.kcat || '';
   $$('#kbFilters .chip').forEach(x => x.classList.toggle('active', x === c));
   $('#kbSearchInput').value = '';
   renderKbList();
@@ -1203,8 +1204,8 @@ async function kbDoImport(kind) {
   }
 }
 
-async function kbShowLog() {
-  const out = $('#kbImportResult');
+async function kbShowLog(targetId = '#kbImportResult') {
+  const out = $(targetId);
   out.textContent = '加载中…';
   out.className = 'result';
   try {
@@ -1212,7 +1213,8 @@ async function kbShowLog() {
     out.innerHTML = r.log.length
       ? r.log.map(e => {
           const ok = e.status === 'imported';
-          return `<div>${ok ? '✅' : '⛔'} ${esc(String(e.time || '').slice(0, 19))} · ${esc(e.file || '')} · ${esc(e.category || '')} · ${ok ? esc(e.parser || '') + ' · ' + e.records + ' 条' : '隔离：' + esc(e.reason || '')}</div>`;
+          const store = e.store ? ` · ${e.store.includes('exam') ? '🗂真题库' : ''}${e.store.includes('corpus') ? '📚语料库' : ''}` : '';
+          return `<div>${ok ? '✅' : '⛔'} ${esc(String(e.time || '').slice(0, 19))} · ${esc(e.file || '')} · ${esc(e.category || '')}${esc(store)} · ${ok ? esc(e.parser || '') + ' · ' + e.records + ' 条' : '隔离：' + esc(e.reason || '')}</div>`;
         }).join('')
       : '暂无导入日志（records.jsonl 所在目录下的 import_log.jsonl）';
     out.className = 'result';
@@ -1225,6 +1227,253 @@ async function kbShowLog() {
 $('#kbImportBtn').addEventListener('click', () => kbDoImport('files'));
 $('#kbPasteBtn').addEventListener('click', () => kbDoImport('paste'));
 $('#kbLogBtn').addEventListener('click', kbShowLog);
+
+/* ---------------- 真题库（v1.1.2：qa_set 分库 +「考试-题型」专项处理） ---------------- */
+
+const examState = { records: [], loaded: false };
+
+const EXAM_TYPE_FALLBACK = {
+  use_of_english: '考研-完形填空', reading: '考研-阅读理解', part_b: '考研-新题型',
+  translation: '考研-翻译', writing: '考研-写作',
+};
+
+/* 「考试-题型」处理器注册表：每个题型一个独立模块，统一契约——
+   { icon, analyze(items) -> 统计行, render(items) -> html }
+   板块展示名以服务端下发的 label 为准（考试-题型 格式）。 */
+const EXAM_PROCESSORS = {
+  use_of_english: {
+    icon: '🔲',
+    analyze(items) {
+      const blanks = new Set();
+      let qs = 0, opts = 0;
+      for (const it of items) {
+        if (it.type === 'passage') for (const m of String(it.text || '').matchAll(/〖(\d+)〗/g)) blanks.add(+m[1]);
+        if (it.type === 'question') { qs++; if (it.options) opts++; }
+      }
+      return `挖空 ${blanks.size} 处 · 题目 ${qs} 题 · 带选项 ${opts} 题`;
+    },
+    render: kbExamPassageAndQuestions,
+  },
+  reading: {
+    icon: '📖',
+    analyze(items) {
+      const pids = new Set(items.filter(i => i.type === 'passage' && i.passage_id != null).map(i => i.passage_id));
+      const qs = items.filter(i => i.type === 'question').length;
+      const per = pids.size ? qs / pids.size : 0;
+      return `${pids.size || '—'} 篇文章 · ${qs} 题 · 每篇 ${per && Number.isInteger(per) ? per : per ? per.toFixed(1) : '—'} 题`;
+    },
+    render: kbExamPassageAndQuestions,
+  },
+  part_b: {
+    icon: '🧩',
+    analyze(items) {
+      const blanks = new Set();
+      let pool = 0, qs = 0;
+      for (const it of items) {
+        if (it.type === 'passage') for (const m of String(it.text || '').matchAll(/〖(4[1-5])〗/g)) blanks.add(+m[1]);
+        if (it.type === 'question' && it.number == null && it.options) pool = Object.keys(it.options).length;
+        if (it.type === 'question' && it.number != null) qs++;
+      }
+      return `空位 ${blanks.size} 处 · 选项池 ${pool || '—'} 项 · 待选 ${qs} 空`;
+    },
+    render(items) {
+      let html = '';
+      for (const it of items) {
+        if (it.type === 'passage') {
+          html += `<div class="kb-passage">${kbText(it.text)}</div>`;
+        } else if (it.type === 'question' && it.number == null) {
+          const opts = it.options
+            ? Object.entries(it.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')
+            : esc(it.text || '');
+          html += `<div class="kb-question"><div class="kb-q-head">🧩 选项池（含干扰项）</div><div class="kb-opts">${opts}</div></div>`;
+        } else if (it.type === 'question') {
+          html += `<div class="kb-question"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 空 · 从选项池中选出填入</div><div class="exm-slot">答题位（在线作答后续版本开放）</div></div>`;
+        }
+      }
+      return html;
+    },
+  },
+  translation: {
+    icon: '🖊',
+    analyze(items) {
+      const ul = new Set();
+      let qs = 0;
+      for (const it of items) {
+        if (it.type === 'passage') for (const m of String(it.text || '').matchAll(/〖(\d+)〗/g)) ul.add(+m[1]);
+        if (it.type === 'question') qs++;
+      }
+      return `划线句 ${ul.size} 句 · 待译 ${qs} 题（每题 2 分 · 手写译文）`;
+    },
+    render(items) {
+      let html = '';
+      for (const it of items) {
+        if (it.type === 'passage') {
+          html += `<div class="kb-passage">${kbText(it.text)}</div>`;
+        } else {
+          html += `<div class="kb-question"><div class="kb-q-head">🖊 第 ${esc(String(it.number ?? '—'))} 题 · 将划线句译成中文（2 分）</div><div class="exm-slot">答题位（在线作答后续版本开放）</div></div>`;
+        }
+      }
+      return html;
+    },
+  },
+  writing: {
+    icon: '📝',
+    analyze(items) {
+      const ws = items.filter(i => i.type === 'writing');
+      const score = ws.reduce((a, b) => a + (Number(b.score) || 0), 0);
+      return `${ws.length} 道写作题 · 合计 ${score || '—'} 分`;
+    },
+    render(items) {
+      return items.filter(i => i.type === 'writing').map(it =>
+        `<div class="kb-question"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`).join('');
+    },
+  },
+};
+
+function examProcessor(section) {
+  return EXAM_PROCESSORS[section] || {
+    icon: '🧩',
+    analyze(items) { return `${items.length} 个条目`; },
+    render: kbExamPassageAndQuestions,
+  };
+}
+
+/** 通用题型渲染：原文（〖N〗锚点）在前，题目（题干+选项+答案）在后 */
+function kbExamPassageAndQuestions(items) {
+  let html = '';
+  for (const it of items) {
+    if (it.type === 'passage') {
+      html += `<div class="kb-passage">${kbText(it.text)}</div>`;
+    } else if (it.type === 'writing') {
+      html += `<div class="kb-question"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
+    } else {
+      const opts = it.options
+        ? Object.entries(it.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')
+        : '';
+      html += `<div class="kb-question"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 题 · ${esc(it.qtype || '客观题')}${it.score != null ? ' · ' + esc(String(it.score)) + ' 分' : ''}${it.answer ? ` · <span class="kb-ans">答案：${esc(it.answer)}</span>` : ''}</div><div class="kb-q-text">${kbText(it.text)}</div>${opts ? `<div class="kb-opts">${opts}</div>` : ''}</div>`;
+    }
+  }
+  return html;
+}
+
+async function loadExamList() {
+  if (examState.loaded) return;
+  try {
+    const r = await api('/api/exam/records');
+    examState.records = r.records || [];
+    examState.loaded = true;
+    if (!r.exists) {
+      $('#exListResult').textContent = '⚠️ 未找到真题库文件：' + r.file;
+      $('#exListResult').className = 'result err';
+    }
+    renderExamList();
+  } catch (e) { console.error(e); }
+}
+
+function renderExamList() {
+  const box = $('#exList');
+  if (!examState.records.length) {
+    box.innerHTML = '<div class="empty-prov">真题库还是空的。用上方「🗂 导入真题」导入 tex / pdf 真题源。</div>';
+    return;
+  }
+  box.innerHTML = examState.records.map(r => `
+    <div class="kb-item" data-exid="${esc(r.id)}">
+      <div class="kb-item-head">
+        <span class="badge kb-badge kb-badge-qa_set">${esc(r.rtypeLabel)}</span>
+        ${r.year ? `<span class="badge kb-badge-year">${r.year} 年</span>` : ''}
+        <b>${esc(r.title)}</b>
+      </div>
+      <div class="kb-item-meta">${[
+        r.questions ? r.questions + ' 题' : '',
+        r.source?.parser ? '解析器 ' + esc(r.source.parser) : '',
+        r.source?.imported_at ? '导入 ' + esc(String(r.source.imported_at).slice(0, 10)) : '',
+      ].filter(Boolean).join(' · ')}</div>
+      ${(r.sections || []).length ? `<div class="exm-chips">${r.sections.map(s => `<span class="chip exm-chip">${esc(s.label)} ${s.questions || s.writings || s.passages || ''}</span>`).join('')}</div>` : ''}
+      ${r.preview ? `<div class="kb-item-preview">${esc(r.preview)}…</div>` : ''}
+    </div>`).join('');
+  $$('#exList .kb-item').forEach(el => el.addEventListener('click', () => openExamRecord(el.dataset.exid)));
+}
+
+async function openExamRecord(exid) {
+  const card = $('#exDetailCard');
+  card.style.display = 'block';
+  $('#exDetail').innerHTML = '<div class="hint">加载中…</div>';
+  try {
+    const r = await api('/api/exam/record/' + exid);
+    const rec = r.record;
+    $('#exDetailTitle').textContent = rec.title || rec.id;
+    $('#exDetailMeta').textContent = [
+      rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
+      rec.meta?.questions ? rec.meta.questions + ' 题' : '',
+      rec.source ? `${rec.source.file || ''} · ${rec.source.parser || ''} · 导入 ${String(rec.source.imported_at || '').slice(0, 10)}` : '',
+    ].filter(Boolean).join(' · ');
+
+    // 按「考试-题型」分块：每块交给独立处理器（统一 analyze + render 契约）
+    const blocks = [];
+    for (const it of (rec.items || [])) {
+      const s = it.section || 'misc';
+      if (!blocks.length || blocks[blocks.length - 1].key !== s) {
+        const label = (rec.sections || []).find(x => x.key === s)?.label
+          || EXAM_TYPE_FALLBACK[s] || ('考研-' + (s === 'misc' ? '其他' : s));
+        blocks.push({ key: s, label, items: [] });
+      }
+      blocks[blocks.length - 1].items.push(it);
+    }
+    let html = '';
+    for (const b of blocks) {
+      const proc = examProcessor(b.key);
+      html += `<div class="exm-block"><div class="kb-sec-title">${proc.icon} ${esc(b.label)}</div><div class="exm-stats">${esc(proc.analyze(b.items))}</div>${proc.render(b.items)}</div>`;
+    }
+    $('#exDetail').innerHTML = html || '<div class="hint">（无条目）</div>';
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (e) {
+    $('#exDetail').innerHTML = '❌ ' + esc(e.message);
+  }
+}
+
+async function exDoImport() {
+  const out = $('#exImportResult');
+  const files = [...$('#exImportFile').files];
+  if (!files.length) {
+    out.textContent = '⚠️ 请先选择 tex / pdf 文件';
+    out.className = 'result err';
+    return;
+  }
+  const items = [];
+  for (const f of files) {
+    if (f.size > 30 * 1024 * 1024) {
+      out.textContent = `❌ ${f.name} 超过 30MB 上限`;
+      out.className = 'result err';
+      return;
+    }
+    items.push({ name: f.name, data64: await kbFileToB64(f) });
+  }
+  out.textContent = '拆题解析中…（TeX 秒级，PDF 视大小而定）';
+  out.className = 'result';
+  try {
+    const r = await api('/api/exam/import', { method: 'POST', body: { items } });
+    const lines = r.results.map(x => x.ok
+      ? `✅ ${esc(x.file)} → ${x.records} 条记录（${esc((x.rtypes || []).join('/'))} · 解析器 ${esc(x.parser || '')}${x.store && x.store.includes('corpus') ? ' · 拆题未达阈值，整卷落入语料库（真题正文）' : ''}）`
+      : `⛔ ${esc(x.file)} 已隔离：${esc(x.reason || '')}${x.hint ? '（' + esc(x.hint) + '）' : ''}`);
+    out.innerHTML = lines.join('<br>') + `<br>合计：成功 ${r.imported} · 隔离 ${r.quarantined}`;
+    out.className = r.quarantined ? 'result err' : 'result ok';
+    $('#exImportFile').value = '';
+    examState.loaded = false;   // 重新拉取真题列表
+    loadExamList();
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+}
+
+$('#exImportBtn').addEventListener('click', exDoImport);
+$('#exLogBtn').addEventListener('click', () => kbShowLog('#exImportResult'));
+$('#exBackBtn').addEventListener('click', () => {
+  $('#exDetailCard').style.display = 'none';
+  renderExamList();
+  $('#exListResult').textContent = '';
+  $('#exListResult').className = 'result';
+});
 
 /* ---------------- 番茄钟 ---------------- */
 
