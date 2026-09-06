@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.5</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.6</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
@@ -121,6 +121,7 @@
           <button class="chip q" data-q="这个常见的搭配和用法有哪些？">用法</button>
           <button class="chip q" data-q="它最容易和哪些近义词混淆？帮我对比辨析。">辨析</button>
           <button class="chip q err" data-q="我又把这个记混了！帮我看看我可能错在哪，给我一个记忆钩子。" data-error="1">我又忘了 😵</button>
+          <button class="chip q" id="imgGenChip">🎨 生图助记</button>
         </div>
         <div class="chat-input-row">
           <input type="text" id="chatInput" class="input" placeholder="输入问题，回车发送…" autocomplete="off">
@@ -253,6 +254,22 @@
         <label class="check-row"><input type="checkbox" id="cfgMock"> Mock 模式（不调用真实 AI，仅测试流程）</label>
         <div class="hint">密钥只保存在本机 <code>data/config.json</code>，请求经本地服务代理，不经过第三方。API Key 留空保存 = 沿用该档案已存的 Key。</div>
       </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎨 AI 生图 · 助记图 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.0.6 · OpenAI 兼容 images API）</span></div>
+      <div class="hint">AI 学习页点「🎨 生图助记」时：对话模型先把当前单词 + 会话场景改写成画面提示词，再调用生图 API 出图，图片落盘本机 <code>data/images/</code>。支持中转站，Key 只保存在本机。</div>
+      <div class="grid-2" style="gap:10px">
+        <div><label class="field-label">Base URL</label><input type="text" id="cfgImgUrl" class="input" placeholder="https://open.bigmodel.cn/api/paas/v4"></div>
+        <div><label class="field-label">模型</label><input type="text" id="cfgImgModel" class="input" placeholder="cogview-4 / dall-e-3 / 中转站生图模型…"></div>
+      </div>
+      <label class="field-label">API Key</label>
+      <input type="password" id="cfgImgKey" class="input" placeholder="留空 = 沿用已保存的 Key">
+      <div class="row-gap">
+        <button class="btn" id="saveImageBtn">💾 保存生图配置</button>
+        <button class="btn" id="testImageBtn">🎨 测试生图</button>
+      </div>
+      <div class="result" id="imageTestResult"></div>
     </div>
 
     <div class="card">
