@@ -59,7 +59,9 @@ let config = loadJSON(CONFIG_FILE, {
   maimemoToken: process.env.MAIMEMO_TOKEN || '',
   llm: { mock: false, activeId: 'default', providers: [{ id: 'default', name: '默认服务商', baseUrl: '', apiKey: '', model: '' }] },
   autoSync: { enabled: false, minutes: 60 },
+  kaoyanMode: false,   // v1.0.5：考研英语一模式（默认关闭）
 });
+if (config.kaoyanMode === undefined) config.kaoyanMode = false;   // 旧配置兼容
 
 // v1.0.2 迁移：旧的单服务商结构自动升级为多服务商列表（老配置无痛升级）
 if (!Array.isArray(config.llm?.providers)) {
@@ -98,19 +100,25 @@ function persistDB() { saveJSON(DB_FILE, db); }
 /* ------------------------------------------------------------------ */
 
 const lastCallByPath = new Map();
-const MIN_GAP_MS = 700; // 限流 20/10s，留足余量
+// v1.0.5：自适应间隔——触发限流后全局上调（各接口一起降速），连续成功后缓慢回落
+let baseGapMs = 700;          // 基础间隔（限流 20/10s，余量充足）
+const GAP_MIN = 700, GAP_MAX = 4000;
+let throttledCount = 0;       // 本次进程内 429 计数（同步日志里如实汇报）
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 async function throttle(pathname) {
   const last = lastCallByPath.get(pathname) || 0;
-  const wait = MIN_GAP_MS - (Date.now() - last);
+  const wait = baseGapMs - (Date.now() - last);
   if (wait > 0) await sleep(wait);
   lastCallByPath.set(pathname, Date.now());
 }
 
+function tightenGap() { baseGapMs = Math.min(GAP_MAX, Math.round(baseGapMs * 1.6)); throttledCount++; }
+function relaxGap() { if (baseGapMs > GAP_MIN) baseGapMs = Math.max(GAP_MIN, Math.round(baseGapMs / 1.15)); }
+
 /**
- * 调用墨墨 API。自动剥信封、处理 429 退避。
+ * 调用墨墨 API。自动剥信封、限流自适应退避、网络/5xx 错误重试。
  * @returns {object} envelope.data
  */
 async function mm(pathname, { method = 'GET', body, query } = {}) {
@@ -127,7 +135,7 @@ async function mm(pathname, { method = 'GET', body, query } = {}) {
     }
   }
 
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     await throttle(pathname);
     let res;
     try {
@@ -141,16 +149,28 @@ async function mm(pathname, { method = 'GET', body, query } = {}) {
         body: body ? JSON.stringify(body) : undefined,
       });
     } catch (err) {
+      // 网络抖动：指数退避后重试
+      if (attempt < 3) { await sleep(1500 * (attempt + 1)); continue; }
       throw new Error('网络错误：' + err.message);
     }
 
-    // 429：读 retry-after-short 退避重试
+    // 429 限流：上调全局间隔 + 按 retry-after 退避重试
     if (res.status === 429) {
-      const ra = Number(res.headers.get('retry-after-short') || res.headers.get('retry-after') || 2);
-      if (attempt < 2) { await sleep((ra + 0.5) * 1000); continue; }
-      throw new Error('触发墨墨限流(429)，请稍后再试');
+      tightenGap();
+      if (attempt < 3) {
+        const ra = Number(res.headers.get('retry-after-short') || res.headers.get('retry-after') || 2);
+        await sleep((ra + 0.5 + Math.random()) * 1000);
+        continue;
+      }
+      throw new Error('墨墨限流(429)：已自动退避 3 次仍未恢复，请几分钟后再试');
     }
 
+    // 5xx 服务端抖动：退避重试
+    if (res.status >= 500) {
+      if (attempt < 3) { await sleep(2000 * (attempt + 1)); continue; }
+    }
+
+    relaxGap();
     let json;
     try { json = await res.json(); } catch { throw new Error(`响应解析失败 (HTTP ${res.status})`); }
 
@@ -324,6 +344,7 @@ async function runSync(trigger = 'manual') {
 
   db.lastSync = new Date().toISOString();
   db.lastSyncOk = ok;
+  if (throttledCount > 0) steps.push(`（期间触发限流 ${throttledCount} 次，已自动退避恢复）`);
   logSync(ok, steps.join('；') + ` [${trigger}]`);
   persistDB();
   return { ok, msg: steps.join('；') };
@@ -439,6 +460,14 @@ function buildTutorSystemPrompt(spelling, extraNotes) {
   if (w) lines.push(`当前学习单词：${w.spelling}（墨墨数据：${wordBrief(w) || '暂无记录'}）`);
   else if (spelling) lines.push(`当前学习单词：${spelling}`);
   if (extraNotes) lines.push(`学习者已有的助记笔记：\n${extraNotes}`);
+  if (config.kaoyanMode) {
+    lines.push(
+      '【🎓 考研英语一模式已开启】讲解必须对标考研英语一：',
+      '- 优先讲考研高频义项，特别注意熟词僻义（真题最爱考的往往不是第一义项）。',
+      '- 例句模仿历年真题（阅读/翻译）的句式难度与话题风格（经济/科技/社会/教育等），并标注话题领域；不确定是真题原文就不要编造年份。',
+      '- 主动补充：该词在真题中的常见考法（完形填空/阅读/翻译）、易混词对比、写作可用的搭配。'
+    );
+  }
   return lines.join('\n');
 }
 
@@ -470,7 +499,7 @@ async function ensureGlosses(spellings) {
     const chunk = missing.slice(i, i + 20);
     try {
       const text = await llmChat([
-        { role: 'system', content: GLOSS_SYSTEM },
+        { role: 'system', content: GLOSS_SYSTEM + (config.kaoyanMode ? '\n当前用户开启了考研英语一模式：gloss 优先给考研高频义项，熟词僻义放在第一位。' : '') },
         { role: 'user', content: chunk.join('\n') },
       ], { maxTokens: 1600, providerId: 'gloss' });
       const parsed = parseMnemonicJSON(text);
@@ -536,7 +565,7 @@ async function finishSession(payload) {
     `[${m.role === 'user' ? '学习者' : 'AI'}] ${m.word ? '(' + m.word + ') ' : ''}${m.content}`
   ).join('\n');
 
-  const system = [
+  let system = [
     '你是英语学习教练。学习者刚结束一次单词学习会话。',
     '请根据会话内容和易错点，为每个学习过的单词生成一条个性化助记。',
     '要求：',
@@ -545,7 +574,11 @@ async function finishSession(payload) {
     '3. noteType 从这些里选一个最贴切的：联想/谐音/词根词缀/近反义词/辨析/固定搭配/词源/口诀/其他。',
     '4. 只输出 JSON，不要多余文字，格式：{"notes":[{"spelling":"单词","noteType":"联想","content":"助记内容"}]}',
     '5. 每个学习过的单词都要有一条。',
-  ].join('\n');
+  ];
+  if (config.kaoyanMode) {
+    system.push('6. 考研英语一模式：助记要突出熟词僻义、真题考法与写作可用搭配，风格贴合考研备考场景。');
+  }
+  system = system.join('\n');
 
   const user = `学习过的单词：\n${wordBlocks}\n\n会话记录（可能截断）：\n${transcript || '（无详细记录）'}`;
 
@@ -724,6 +757,7 @@ const server = http.createServer(async (req, res) => {
           },
           lastSync: db.lastSync,
           lastSyncOk: db.lastSyncOk,
+          kaoyanMode: !!config.kaoyanMode,
           counts: { words: Object.keys(db.words).length, notes: db.notes.length },
           autoSync: config.autoSync,
         });
@@ -742,6 +776,7 @@ const server = http.createServer(async (req, res) => {
             })),
           },
           autoSync: config.autoSync,
+          kaoyanMode: !!config.kaoyanMode,
           presets: LLM_PRESETS,
         });
       }
@@ -783,6 +818,7 @@ const server = http.createServer(async (req, res) => {
             minutes: Math.max(5, Number(body.autoSync.minutes) || 60),
           };
         }
+        if (body.kaoyanMode != null) config.kaoyanMode = !!body.kaoyanMode;
         persistConfig();
         armAutoSync();
         return sendJSON(res, 200, { ok: true });

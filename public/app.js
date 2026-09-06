@@ -304,12 +304,54 @@ $('#speakWordBtn').addEventListener('click', () => {
   if (state.activeWord) speak(state.activeWord);
 });
 
-/** 轻量 Markdown（粗体/换行/列表） */
-function mdLite(text) {
-  return esc(text)
+/** 轻量 Markdown（v1.0.5）：标题 / 加粗 / 行内代码 / 无序列表 / 简单表格 / 空行分段 */
+function mdInline(s) {
+  return s
     .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
-    .replace(/^### (.+)$/gm, '<b>$1</b>')
-    .replace(/^- (.+)$/gm, '· $1');
+    .replace(/`([^`]+)`/g, '<code>$1</code>');
+}
+
+function mdLite(text) {
+  const lines = esc(text).split('\n');
+  const html = [];
+  let listOpen = false;
+  let table = [];   // 收集连续的表格行
+  const closeList = () => { if (listOpen) { html.push('</ul>'); listOpen = false; } };
+  const flushTable = () => {
+    if (!table.length) return;
+    const rows = table
+      .map(r => r.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim()))
+      .filter(r => !r.every(c => /^:?-{2,}:?$/.test(c) || c === ''));   // 去掉 |---|---| 分隔行
+    if (rows.length) {
+      const [head, ...rest] = rows;
+      html.push('<table class="md-table"><thead><tr>' +
+        head.map(c => `<th>${mdInline(c)}</th>`).join('') + '</tr></thead>' +
+        (rest.length ? '<tbody>' + rest.map(r => '<tr>' + r.map(c => `<td>${mdInline(c)}</td>`).join('') + '</tr>').join('') + '</tbody>' : '') +
+        '</table>');
+    } else {
+      html.push(`<div>${table.map(mdInline).join('<br>')}</div>`);
+    }
+    table = [];
+  };
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+    if (/^\s*\|.*\|\s*$/.test(line)) { closeList(); table.push(line.trim()); continue; }
+    flushTable();
+    if (!line.trim()) { closeList(); html.push('<div class="md-gap"></div>'); continue; }
+    const h = line.match(/^(#{1,4})\s+(.*)$/);
+    if (h) { closeList(); html.push(`<div class="md-h md-h${h[1].length}">${mdInline(h[2])}</div>`); continue; }
+    const li = line.match(/^\s*[-*•]\s+(.*)$/);
+    if (li) {
+      if (!listOpen) { html.push('<ul>'); listOpen = true; }
+      html.push(`<li>${mdInline(li[1])}</li>`);
+      continue;
+    }
+    closeList();
+    html.push(`<div>${mdInline(line)}</div>`);
+  }
+  closeList();
+  flushTable();
+  return html.join('');
 }
 
 async function askAI(message, isErrorMark = false) {
@@ -504,6 +546,7 @@ async function loadConfig() {
     if (c.hasToken) $('#cfgToken').placeholder = c.maimemoToken;
     $('#cfgAutoSync').checked = !!c.autoSync.enabled;
     $('#cfgSyncMinutes').value = c.autoSync.minutes || 60;
+    $('#cfgKaoyan').checked = !!c.kaoyanMode;
     renderProviders();
   } catch (e) { console.error(e); }
 }
@@ -653,6 +696,18 @@ $('#provSave').addEventListener('click', async () => {
 $('#cfgMock').addEventListener('change', async () => {
   try { await api('/api/config', { method: 'POST', body: { llm: { mock: $('#cfgMock').checked } } }); }
   catch (e) { alert(e.message); }
+});
+
+/* 考研模式：即时生效并持久化，聊天页徽章同步 */
+$('#cfgKaoyan').addEventListener('change', async () => {
+  const on = $('#cfgKaoyan').checked;
+  try {
+    await api('/api/config', { method: 'POST', body: { kaoyanMode: on } });
+    $('#kaoyanBadge').style.display = on ? 'inline-block' : 'none';
+  } catch (e) {
+    alert(e.message);
+    $('#cfgKaoyan').checked = !on;
+  }
 });
 
 $('#saveConfigBtn').addEventListener('click', async () => {
@@ -1028,6 +1083,7 @@ async function finishQuiz() {
     if (!status.hasToken || !status.llm.configured) {
       $('#setupHint').style.display = 'block';
     }
+    if (status.kaoyanMode) $('#kaoyanBadge').style.display = 'inline-block';
   } catch { /* 服务未就绪时静默 */ }
   loadDashboard();
 })();
