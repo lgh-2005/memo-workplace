@@ -15,6 +15,8 @@
  *     5h/2000 次（滑动窗口护栏），内容创建 600 条/天（例句+助记+释义合并）
  *  8. 韦氏词典（v1.0.8）：Merriam-Webster 双 key 代理（学习者版+大学版并行合并），
  *     本地缓存 data/dict/，真人发音 mp3，权威释义/词源注入 AI 教练上下文
+ *  9. 题库/语料库（v1.1.0）：读 corpus/records.jsonl（导入工程产出），
+ *     契约化浏览/搜索 API，真题原句注入 AI 教练（带来源标注）
  *
  * 启动：node server.js  （默认端口 5178）
  */
@@ -30,6 +32,9 @@ const DATA_DIR = path.join(ROOT, 'data');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const IMAGES_DIR = path.join(DATA_DIR, 'images');   // v1.0.6：AI 生图落盘目录
 const DICT_DIR = path.join(DATA_DIR, 'dict');       // v1.0.8：韦氏词典本地缓存（一词终身只查一次）
+// v1.1.0：题库/语料库——默认读仓库内 corpus/records.jsonl（随 git 部署）；
+// 可在设置里指定 kbDir 直接指向导入工程（如 ../importer/kb）实现实时联动
+const CORPUS_FILE = path.join(ROOT, 'corpus', 'records.jsonl');
 const CONFIG_FILE = path.join(DATA_DIR, 'config.json');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
@@ -787,6 +792,134 @@ async function dictLookup(word) {
   return entry;
 }
 
+/* ---------- v1.1.0：题库 / 语料库（导入工程产出的 records.jsonl） ---------- */
+/* 数据契约见《导入解析-经验总结.md》：rtype=qa_set|article|document|note，
+   items 用 〖N〗（挖空/新题型答题框）/ 〖N〗…〖/N〗（翻译划线）做交互锚点；
+   板块固定顺序：完形→阅读A→新题型→翻译→写作，板块内题干在前、题目在后。 */
+
+const KB_SECTION_ORDER = { use_of_english: 0, reading: 1, part_b: 2, translation: 3, writing: 4 };
+const KB_SECTION_LABEL = {
+  use_of_english: '完形填空', reading: '阅读 A', part_b: '新题型',
+  translation: '翻译', writing: '写作', misc: '其他',
+};
+const RTYPE_LABEL = { qa_set: '题库', article: '文章', document: '文档', note: '笔记' };
+
+let kbCache = { mtime: 0, records: [], sentences: null };
+
+function kbFile() {
+  const dir = (config.kb && config.kb.dir || '').trim();
+  return dir ? path.resolve(dir, 'records.jsonl') : CORPUS_FILE;
+}
+
+/** 加载语料记录（按文件 mtime 缓存；坏行跳过不炸） */
+function loadKb() {
+  const file = kbFile();
+  if (!fs.existsSync(file)) { kbCache = { mtime: 0, records: [], sentences: null }; return []; }
+  const mtime = fs.statSync(file).mtimeMs;
+  if (kbCache.mtime !== mtime) {
+    let records = [];
+    try {
+      records = fs.readFileSync(file, 'utf8').split('\n')
+        .map(l => { try { return JSON.parse(l); } catch { return null; } })
+        .filter(r => r && r.id && r.rtype);
+    } catch { records = []; }
+    kbCache = { mtime, records, sentences: null };
+  }
+  return kbCache.records;
+}
+
+/** 契约排序：板块固定顺序 + 题干（passage/writing）在前、题目按题号在后 */
+function kbSortedItems(record) {
+  const items = Array.isArray(record.items) ? [...record.items] : [];
+  items.sort((a, b) => {
+    const so = (KB_SECTION_ORDER[a.section] ?? 99) - (KB_SECTION_ORDER[b.section] ?? 99);
+    if (so !== 0) return so;
+    const lead = x => (x.type === 'passage' || x.type === 'writing') ? 0 : 1;
+    if (lead(a) !== lead(b)) return lead(a) - lead(b);
+    return (a.number || 0) - (b.number || 0);
+  });
+  return items;
+}
+
+/** 句子级索引（懒构建，供搜索与 AI 真题语料注入）：去掉 〖N〗 标记后按句切分 */
+function kbSentenceSplit(text) {
+  return String(text || '')
+    .replace(/〖\/?\d+〗/g, '')
+    .split(/\n+/)
+    .flatMap(par => par.split(/(?<=[.!?。！？])\s+/))
+    .map(s => s.replace(/\s{2,}/g, ' ').trim())
+    .filter(s => s.length >= 15);
+}
+
+function kbSentences() {
+  if (kbCache.sentences) return kbCache.sentences;
+  const out = [];
+  for (const r of loadKb()) {
+    const year = r.meta?.year || null;
+    const title = r.title || '';
+    const items = Array.isArray(r.items) && r.items.length
+      ? r.items
+      : [{ type: 'passage', section: null, number: null, text: r.text || '' }];
+    for (const it of items) {
+      for (const s of kbSentenceSplit(it.text || '')) {
+        out.push({ rid: r.id, title, year, section: it.section || null, number: it.number ?? null, s });
+      }
+    }
+  }
+  kbCache.sentences = out;
+  return out;
+}
+
+function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+/**
+ * 全库句子搜索。英文词组按词边界匹配（兼容少量词尾变化 -s/-ed/-ing），
+ * 中文按包含匹配。返回 [{rid,title,year,section,number,s}]。
+ */
+function kbSearch(query, limit = 30) {
+  const q = String(query || '').trim();
+  if (!q || q.length > 100) return [];
+  const lower = q.toLowerCase();
+  const isAscii = /^[\x20-\x7e]+$/.test(q);
+  const re = isAscii ? new RegExp(`\\b${escapeRegExp(q.toLowerCase())}(?:s|es|ed|d|ing)?\\b`, 'i') : null;
+  const out = [];
+  const seen = new Map();   // 同句去重（翻译原文与题干可能重复收录），优先保留带题号的来源
+  for (const item of kbSentences()) {
+    const hit = re ? re.test(item.s) : item.s.toLowerCase().includes(lower);
+    if (!hit) continue;
+    const key = item.s.toLowerCase();
+    const prev = seen.get(key);
+    if (prev === undefined) { seen.set(key, out.length); out.push(item); }
+    else if (item.number != null && out[prev].number == null) out[prev] = item;
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+/** AI 真题语料注入：当前单词在真实考试语料里的句子（最多 4 条，带来源） */
+function kbCorpusForWord(word, limit = 4) {
+  const w = String(word || '').trim();
+  if (!w || !/^[a-zA-Z][a-zA-Z'\-]{1,29}$/.test(w)) return [];
+  return kbSearch(w, limit);
+}
+
+/** 记录摘要（列表页用，不含全文） */
+function kbSummary(r) {
+  const items = Array.isArray(r.items) ? r.items : [];
+  return {
+    id: r.id,
+    rtype: r.rtype,
+    rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype,
+    title: r.title || '(无标题)',
+    year: r.meta?.year || null,
+    questions: r.meta?.questions || items.filter(i => i.type === 'question').length || null,
+    itemCount: items.length,
+    sections: (r.meta?.sections || [...new Set(items.map(i => i.section).filter(Boolean))]) || [],
+    source: r.source ? { file: r.source.file, parser: r.source.parser, imported_at: r.source.imported_at, category: r.source.category } : null,
+    preview: String(r.text || (items[0] && items[0].text) || '').replace(/〖\/?\d+〗/g, '').slice(0, 90),
+  };
+}
+
 /* ------------------------------------------------------------------ */
 /* 业务：AI 互动学习 / 助记生成 / 推送                                  */
 /* ------------------------------------------------------------------ */
@@ -1125,7 +1258,8 @@ const MIME = {
 
 function sendJSON(res, code, obj) {
   const body = JSON.stringify(obj);
-  res.writeHead(code, { 'Content-Type': 'application/json; charset=utf-8' });
+  // v1.1.0：禁缓存（经验总结坑 #3）——前端改完立刻可见，杜绝"白排查半天"
+  res.writeHead(code, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
   res.end(body);
 }
 
@@ -1240,6 +1374,12 @@ const server = http.createServer(async (req, res) => {
             hasLearners: !!config.dict.learnersKey,
             hasCollegiate: !!config.dict.collegiateKey,
           },
+          kb: {
+            dir: (config.kb && config.kb.dir) || '',
+            file: kbFile(),
+            exists: fs.existsSync(kbFile()),
+            count: loadKb().length,
+          },
           searchPresets: SEARCH_PRESETS,
           imagePresets: IMAGE_PRESETS,
           presets: LLM_PRESETS,
@@ -1319,6 +1459,11 @@ const server = http.createServer(async (req, res) => {
             collegiateKey: (typeof body.dict.collegiateKey === 'string' && body.dict.collegiateKey.trim())
               ? body.dict.collegiateKey.trim() : (oldD.collegiateKey || ''),
           };
+        }
+        // v1.1.0：语料库数据源目录（留空 = 用仓库内 corpus/）
+        if (body.kb && typeof body.kb === 'object' && typeof body.kb.dir === 'string') {
+          if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '' };
+          config.kb.dir = body.kb.dir.trim();
         }
         persistConfig();
         armAutoSync();
@@ -1479,6 +1624,22 @@ const server = http.createServer(async (req, res) => {
           } catch { /* 词典未配置或网络失败：不阻塞对话 */ }
         }
 
+        // v1.1.0：真题语料注入——当前单词在真实考试原句中的用法（带来源），例句优先引用、不再现编
+        if (spelling) {
+          try {
+            const hits = kbCorpusForWord(spelling);
+            if (hits.length) {
+              const lines = hits.map(h => {
+                const src = [h.title, h.year ? h.year + ' 年' : '', KB_SECTION_LABEL[h.section] || h.section || '', h.number ? '第 ' + h.number + ' 题' : '']
+                  .filter(Boolean).join(' · ');
+                return `- ${h.s}\n  （来源：${src}）`;
+              });
+              msgs[0].content += '\n\n【真题语料：真实考试原句】\n' + lines.join('\n') +
+                '\n讲解时优先引用以上真实语料并注明来源（考研最考什么就讲什么）；真题未覆盖的义项再用你自己的例句补充。';
+            }
+          } catch { /* 语料库不可用不阻塞对话 */ }
+        }
+
         // v1.0.7：联网搜索——开启时先搜索实时资料注入 system prompt；失败不阻塞对话
         if (body.useSearch) {
           try {
@@ -1605,6 +1766,39 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, msg: `查询成功！${bits.join(' · ')}` });
       }
 
+      /* ---- 题库 / 语料库（v1.1.0） ---- */
+
+      // 记录列表（摘要，不含全文）
+      if (p === '/api/kb/records' && req.method === 'GET') {
+        const records = loadKb();
+        return sendJSON(res, 200, {
+          ok: true,
+          file: kbFile(),
+          exists: fs.existsSync(kbFile()),
+          records: records.map(kbSummary),
+        });
+      }
+
+      // 记录详情（全文 + 契约排序后的 items）
+      {
+        const m = p.match(/^\/api\/kb\/record\/([0-9a-f]+)$/);
+        if (m && req.method === 'GET') {
+          const r = loadKb().find(x => x.id === m[1]);
+          if (!r) return sendJSON(res, 404, { error: '记录不存在' });
+          return sendJSON(res, 200, {
+            ok: true,
+            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: kbSortedItems(r) },
+          });
+        }
+      }
+
+      // 全库句子搜索（题库 + 语料）
+      if (p === '/api/kb/search' && req.method === 'GET') {
+        const q = u.searchParams.get('q') || '';
+        const results = kbSearch(q, 40);
+        return sendJSON(res, 200, { ok: true, query: q, count: results.length, results });
+      }
+
       return sendJSON(res, 404, { error: '接口不存在: ' + p });
     }
 
@@ -1620,7 +1814,7 @@ const server = http.createServer(async (req, res) => {
     if (!filePath.startsWith(PUBLIC_DIR)) { res.writeHead(403); return res.end(); }
     if (!fs.existsSync(filePath)) { res.writeHead(404); return res.end('Not Found'); }
     const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
+    res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream', 'Cache-Control': 'no-store' });
     fs.createReadStream(filePath).pipe(res);
   } catch (err) {
     if (p.startsWith('/api/')) {

@@ -8,12 +8,13 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.8</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.0</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
     <button class="tab" data-tab="quiz">📝 测验</button>
     <button class="tab" data-tab="notes">📖 助记库</button>
+    <button class="tab" data-tab="kb">📚 语料库</button>
     <button class="tab" data-tab="pomo">🍅 番茄钟</button>
     <button class="tab" data-tab="settings">⚙️ 设置</button>
   </nav>
@@ -182,6 +183,37 @@
       </div>
       <div class="hint">💡 带 <span class="tag pending">待推送</span> 的助记还没同步到墨墨 App；点击「推送到墨墨」后会出现在该单词的助记列表里（消耗每日内容创建配额 600 条）。</div>
       <div class="notes-list" id="notesList"></div>
+    </div>
+  </section>
+
+  <!-- ============ 语料库（v1.1.0） ============ -->
+  <section id="tab-kb" class="tab-page">
+    <div class="card">
+      <div class="card-title-row">
+        <div class="card-title">📚 题库 · 语料库</div>
+        <div style="display:flex;gap:8px">
+          <input type="text" id="kbSearchInput" class="input" placeholder="全库搜真题原句 / 语料，如：survive、长难句…" style="width:260px">
+          <button class="btn" id="kbSearchBtn">🔍 搜索</button>
+        </div>
+      </div>
+      <div class="hint">导入工程产出的结构化考试语料（<code>corpus/records.jsonl</code>）：真题按「完形 → 阅读 → 新题型 → 翻译 → 写作」排序，〖N〗 为挖空/答题框锚点。AI 教练讲解单词时会自动引用这里的真实考试原句。类型筛选：</div>
+      <div class="row-gap" id="kbFilters">
+        <button class="chip active" data-ktype="">全部</button>
+        <button class="chip" data-ktype="qa_set">题库</button>
+        <button class="chip" data-ktype="article">文章</button>
+        <button class="chip" data-ktype="document">文档</button>
+        <button class="chip" data-ktype="note">笔记</button>
+      </div>
+      <div class="result" id="kbListResult"></div>
+      <div id="kbList"></div>
+    </div>
+    <div class="card" id="kbDetailCard" style="display:none">
+      <div class="card-title-row">
+        <div class="card-title" id="kbDetailTitle">记录</div>
+        <button class="btn" id="kbBackBtn">← 返回列表</button>
+      </div>
+      <div class="hint" id="kbDetailMeta"></div>
+      <div id="kbDetail"></div>
     </div>
   </section>
 

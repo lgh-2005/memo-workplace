@@ -618,3 +618,63 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 /* v1.0.8 修复：移除 v1.0.7 误加的 .chip.active 覆盖规则——
    其引用了不存在的 var(--main)，导致选中态背景透明+白字，所有 chip 选中后文字不可见。
    选中态样式统一由文件头部 .chip.active（primary-soft 底 + primary 字）提供。 */
+
+/* ================= v1.1.0：语料库 ================= */
+.kb-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: border-color .16s ease, transform .16s ease;
+  background: var(--card);
+}
+.kb-item:hover { border-color: var(--primary); transform: translateY(-1px); }
+.kb-item-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.kb-item-meta { font-size: 12px; color: var(--text-sub); margin-top: 4px; }
+.kb-item-preview {
+  font-size: 13px; color: var(--text); margin-top: 6px;
+  overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+.kb-badge { font-size: 10px; padding: 1px 8px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); }
+.kb-badge-qa_set { background: #ecfdf5; color: #047857; }
+.kb-badge-article { background: #eff6ff; color: #1d4ed8; }
+.kb-badge-document { background: #fefce8; color: #a16207; }
+.kb-badge-note { background: #fdf2f8; color: #be185d; }
+.kb-badge-year { background: var(--primary-soft); color: var(--primary); }
+[data-theme="dark"] .kb-badge-qa_set { background: #0e2e22; }
+[data-theme="dark"] .kb-badge-article { background: #17263f; }
+[data-theme="dark"] .kb-badge-document { background: #3a2f10; }
+[data-theme="dark"] .kb-badge-note { background: #3f1729; }
+
+.kb-sec-title {
+  font-weight: 700; font-size: 15px; margin: 18px 0 8px;
+  padding-left: 10px; border-left: 3px solid var(--primary);
+  color: var(--primary);
+}
+.kb-passage {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+  padding: 12px 16px; margin: 8px 0; line-height: 1.9; font-size: 14px;
+}
+.kb-passage p { margin: 0 0 8px; }
+.kb-blank {
+  display: inline-block; min-width: 22px; text-align: center;
+  background: var(--primary); color: #fff; border-radius: 6px;
+  font-size: 12px; font-weight: 700; padding: 0 6px; margin: 0 2px;
+  vertical-align: 1px;
+}
+.kb-blank-n {
+  display: inline-block; background: var(--primary); color: #fff;
+  border-radius: 6px; font-size: 12px; font-weight: 700; padding: 0 6px; margin-right: 4px;
+}
+.kb-underline { text-decoration: underline; text-decoration-color: var(--primary); text-underline-offset: 4px; }
+.kb-question {
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 10px 14px; margin: 8px 0; background: var(--card);
+}
+.kb-q-head { font-size: 12px; color: var(--text-sub); margin-bottom: 6px; }
+.kb-q-text { line-height: 1.8; font-size: 14px; }
+.kb-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; margin-top: 8px; font-size: 13px; }
+.kb-opt b { color: var(--primary); }
+.kb-ans { color: var(--ok); font-weight: 600; }
+.kb-sentence { line-height: 1.8; font-size: 14px; }

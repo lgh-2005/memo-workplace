@@ -89,6 +89,7 @@ function switchTab(name) {
   if (name === 'dashboard') loadDashboard();
   if (name === 'study') loadWords();
   if (name === 'notes') loadNotes();
+  if (name === 'kb') loadKb();
   if (name === 'settings') loadConfig();
   // quiz 页保持进行中的状态，不重置
 }
@@ -1002,6 +1003,148 @@ async function saveConfigSilent() {
     body: { maimemoToken: $('#cfgToken').value.trim() || undefined },
   });
 }
+
+/* ---------------- 语料库（v1.1.0：题库 + 语料，读 corpus/records.jsonl） ---------------- */
+
+const KB_SECTION_LABEL = {
+  use_of_english: '完形填空', reading: '阅读 A', part_b: '新题型',
+  translation: '翻译', writing: '写作',
+};
+const kbState = { records: [], filter: '', loaded: false };
+
+async function loadKb() {
+  if (kbState.loaded) return;
+  try {
+    const r = await api('/api/kb/records');
+    kbState.records = r.records || [];
+    kbState.loaded = true;
+    if (!r.exists) {
+      $('#kbListResult').textContent = '⚠️ 未找到语料库文件：' + r.file + '（把导入工程的 records.jsonl 同步到 corpus/ 即可）';
+      $('#kbListResult').className = 'result err';
+    }
+    renderKbList();
+  } catch (e) { console.error(e); }
+}
+
+function renderKbList() {
+  const box = $('#kbList');
+  const list = kbState.records.filter(r => !kbState.filter || r.rtype === kbState.filter);
+  if (!list.length) {
+    box.innerHTML = '<div class="empty-prov">该类型下暂无记录。把资料丢进导入工程 imports/ 目录解析入库后，将 records.jsonl 同步到工作台 corpus/ 目录。</div>';
+    return;
+  }
+  box.innerHTML = list.map(r => `
+    <div class="kb-item" data-rid="${esc(r.id)}">
+      <div class="kb-item-head">
+        <span class="badge kb-badge kb-badge-${esc(r.rtype)}">${esc(r.rtypeLabel)}</span>
+        ${r.year ? `<span class="badge kb-badge-year">${r.year} 年</span>` : ''}
+        <b>${esc(r.title)}</b>
+      </div>
+      <div class="kb-item-meta">${[
+        r.questions ? r.questions + ' 题' : '',
+        r.itemCount ? r.itemCount + ' 个条目' : '',
+        r.source?.parser ? '解析器 ' + esc(r.source.parser) : '',
+        r.source?.imported_at ? '导入 ' + esc(String(r.source.imported_at).slice(0, 10)) : '',
+      ].filter(Boolean).join(' · ')}</div>
+      ${r.preview ? `<div class="kb-item-preview">${esc(r.preview)}…</div>` : ''}
+    </div>`).join('');
+  $$('#kbList .kb-item').forEach(el => el.addEventListener('click', () => openKbRecord(el.dataset.rid)));
+}
+
+/** 〖N〗 锚点渲染：〖N〗…〖/N〗 配对 = 翻译划线句；独立 〖N〗 = 挖空/答题框 */
+function kbText(text) {
+  let s = esc(String(text || ''));
+  s = s.replace(/〖(\d+)〗([\s\S]*?)〖\/\1〗/g,
+    (m, n, inner) => `<span class="kb-underline"><span class="kb-blank-n">${n}</span>${inner.trim()}</span>`);
+  s = s.replace(/〖(\d+)〗/g, (m, n) => `<span class="kb-blank">${n}</span>`);
+  return s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+}
+
+async function openKbRecord(rid) {
+  const card = $('#kbDetailCard');
+  card.style.display = 'block';
+  $('#kbDetail').innerHTML = '<div class="hint">加载中…</div>';
+  try {
+    const r = await api('/api/kb/record/' + rid);
+    const rec = r.record;
+    $('#kbDetailTitle').textContent = rec.title || rec.id;
+    $('#kbDetailMeta').textContent = [
+      rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
+      rec.meta?.questions ? rec.meta.questions + ' 题' : '',
+      rec.source ? `${rec.source.file || ''} · ${rec.source.parser || ''} · 导入 ${String(rec.source.imported_at || '').slice(0, 10)}` : '',
+    ].filter(Boolean).join(' · ');
+
+    let html = '';
+    const items = rec.items || [];
+    if (!items.length && rec.text) {
+      html = `<div class="kb-passage">${kbText(rec.text)}</div>`;
+    } else {
+      let lastSec = null;
+      for (const it of items) {
+        if (it.section !== lastSec) {
+          lastSec = it.section;
+          html += `<div class="kb-sec-title">${esc(KB_SECTION_LABEL[it.section] || it.section || '内容')}</div>`;
+        }
+        if (it.type === 'passage') {
+          html += `<div class="kb-passage">${kbText(it.text)}</div>`;
+        } else if (it.type === 'writing') {
+          html += `<div class="kb-question"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
+        } else {
+          const opts = it.options
+            ? Object.entries(it.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')
+            : '';
+          html += `<div class="kb-question"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 题 · ${esc(it.qtype || '客观题')}${it.score != null ? ' · ' + esc(String(it.score)) + ' 分' : ''}${it.answer ? ` · <span class="kb-ans">答案：${esc(it.answer)}</span>` : ''}</div><div class="kb-q-text">${kbText(it.text)}</div>${opts ? `<div class="kb-opts">${opts}</div>` : ''}</div>`;
+        }
+      }
+    }
+    $('#kbDetail').innerHTML = html || '<div class="hint">（无条目）</div>';
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (e) {
+    $('#kbDetail').innerHTML = '❌ ' + esc(e.message);
+  }
+}
+
+async function kbDoSearch() {
+  const q = $('#kbSearchInput').value.trim();
+  const out = $('#kbListResult');
+  if (!q) return;
+  out.textContent = '搜索中…';
+  out.className = 'result';
+  try {
+    const r = await api('/api/kb/search?q=' + encodeURIComponent(q));
+    if (!r.results.length) {
+      out.textContent = `「${q}」全库无匹配`;
+      out.className = 'result';
+      return;
+    }
+    out.textContent = `✅ 命中 ${r.count} 条真实语料（点击可跳原文）`;
+    out.className = 'result ok';
+    $('#kbList').innerHTML = r.results.map(h => `
+      <div class="kb-item" data-rid="${esc(h.rid)}">
+        <div class="kb-sentence">${esc(h.s)}</div>
+        <div class="kb-item-meta">来源：${esc(h.title)}${h.year ? ' · ' + h.year + ' 年' : ''}${h.section ? ' · ' + esc(KB_SECTION_LABEL[h.section] || h.section) : ''}${h.number ? ' · 第 ' + h.number + ' 题' : ''}</div>
+      </div>`).join('');
+    $$('#kbList .kb-item').forEach(el => el.addEventListener('click', () => openKbRecord(el.dataset.rid)));
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+}
+
+$('#kbSearchBtn').addEventListener('click', kbDoSearch);
+$('#kbSearchInput').addEventListener('keydown', e => { if (e.key === 'Enter') kbDoSearch(); });
+$('#kbBackBtn').addEventListener('click', () => {
+  $('#kbDetailCard').style.display = 'none';
+  renderKbList();
+  $('#kbListResult').textContent = '';
+  $('#kbListResult').className = 'result';
+});
+$$('#kbFilters .chip').forEach(c => c.addEventListener('click', () => {
+  kbState.filter = c.dataset.ktype;
+  $$('#kbFilters .chip').forEach(x => x.classList.toggle('active', x === c));
+  $('#kbSearchInput').value = '';
+  renderKbList();
+}));
 
 /* ---------------- 番茄钟 ---------------- */
 
