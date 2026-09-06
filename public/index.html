@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.6</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.7</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
@@ -122,6 +122,7 @@
           <button class="chip q" data-q="它最容易和哪些近义词混淆？帮我对比辨析。">辨析</button>
           <button class="chip q err" data-q="我又把这个记混了！帮我看看我可能错在哪，给我一个记忆钩子。" data-error="1">我又忘了 😵</button>
           <button class="chip q" id="imgGenChip">🎨 生图助记</button>
+          <button class="chip" id="webSearchChip" title="开启后 AI 回答前先联网搜索实时资料（需在设置页配置搜索服务）">🌐 联网</button>
         </div>
         <div class="chat-input-row">
           <input type="text" id="chatInput" class="input" placeholder="输入问题，回车发送…" autocomplete="off">
@@ -226,6 +227,7 @@
           <button class="btn" id="syncNowBtn">立即全量同步</button>
         </div>
         <div class="result" id="maimemoTestResult"></div>
+        <div class="hint">v1.0.7 已按墨墨官方频控优化：全局限流护栏（10s/20 次 · 60s/40 次 · 5h/2000 次）+ 二分切窗抓取（全量同步请求数降约 80%），正常使用不会触发 429。</div>
 
         <div class="card-title" style="margin-top:20px">自动同步</div>
         <label class="check-row"><input type="checkbox" id="cfgAutoSync"> 开启定时同步</label>
@@ -270,6 +272,28 @@
         <button class="btn" id="testImageBtn">🎨 测试生图</button>
       </div>
       <div class="result" id="imageTestResult"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🌐 网络搜索服务 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.0.7 · 通用 url + 密钥）</span></div>
+      <div class="hint">工作台级搜索服务：AI 学习页开「🌐 联网」后，AI 回答前会先搜索实时资料；后续新板块也复用这一服务。兼容博查 / Tavily / Serper / 智谱及同类中转，密钥只保存在本机。</div>
+      <div class="grid-2" style="gap:10px">
+        <div>
+          <label class="field-label">服务商预设</label>
+          <select id="cfgSearchPreset" class="input"><option value="">— 手动填写 —</option></select>
+        </div>
+        <div>
+          <label class="field-label">API URL（POST）</label>
+          <input type="text" id="cfgSearchUrl" class="input" placeholder="https://api.bochaai.com/v1/web-search">
+        </div>
+      </div>
+      <label class="field-label">API Key</label>
+      <input type="password" id="cfgSearchKey" class="input" placeholder="留空 = 沿用已保存的 Key">
+      <div class="row-gap">
+        <button class="btn" id="saveSearchBtn">💾 保存搜索配置</button>
+        <button class="btn" id="testSearchBtn">🔍 测试搜索</button>
+      </div>
+      <div class="result" id="searchTestResult"></div>
     </div>
 
     <div class="card">

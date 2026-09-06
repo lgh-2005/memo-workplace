@@ -614,3 +614,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   opacity: .55;
   cursor: wait;
 }
+
+/* ================= v1.0.7：联网搜索开关 ================= */
+.chip.active {
+  background: var(--main);
+  color: #fff;
+  border-color: var(--main);
+}

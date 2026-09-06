@@ -10,6 +10,9 @@
  *     v1.0.6：推送前自动绑定云词库（notepad）——词不在库中先追加，再写助记
  *  5. AI 生图（v1.0.6）：LLM 把单词+对话场景改写成画面提示词，
  *     调 OpenAI 兼容 /images/generations 出图，落盘 data/images 供前端展示
+ *  6. 网络搜索服务（v1.0.7）：通用 url+密钥 搜索 API 代理，供 AI 联网等板块复用
+ *  7. 墨墨频控合规（v1.0.7）：按官方文档实现全局限流——10s/20 次、60s/40 次、
+ *     5h/2000 次（滑动窗口护栏），内容创建 600 条/天（例句+助记+释义合并）
  *
  * 启动：node server.js  （默认端口 5178）
  */
@@ -68,12 +71,15 @@ let config = loadJSON(CONFIG_FILE, {
   maimemoNotepadId: '',   // v1.0.6：绑定的云词库 id（助记推送前提）
   notepadTitle: '',
   imageGen: { baseUrl: '', apiKey: '', model: '' },   // v1.0.6：生图服务商（OpenAI 兼容 images API）
+  webSearch: { url: '', apiKey: '' },   // v1.0.7：网络搜索服务（通用 url + 密钥）
 });
 if (config.kaoyanMode === undefined) config.kaoyanMode = false;   // 旧配置兼容
 // v1.0.6 迁移：云词库绑定与生图配置缺省补齐
 if (config.maimemoNotepadId === undefined) config.maimemoNotepadId = '';
 if (config.notepadTitle === undefined) config.notepadTitle = '';
 if (!config.imageGen || typeof config.imageGen !== 'object') config.imageGen = { baseUrl: '', apiKey: '', model: '' };
+// v1.0.7 迁移：搜索服务配置缺省补齐
+if (!config.webSearch || typeof config.webSearch !== 'object') config.webSearch = { url: '', apiKey: '' };
 
 // v1.0.2 迁移：旧的单服务商结构自动升级为多服务商列表（老配置无痛升级）
 if (!Array.isArray(config.llm?.providers)) {
@@ -98,32 +104,55 @@ let db = loadJSON(DB_FILE, {
   notes: [],              // 助记 {id, spelling, vocId?, noteType, content, createdAt, sessionId, source, synced, maimemoNoteId?, pushError?}
   sessions: [],           // 学习会话 {id, startedAt, endedAt, words[], messages[], errorWords[]}
   quizLog: [],            // 测验记录 [{ts, mode, total, familiar, vague, forget}]（v1.0.4）
+  contentCreated: { date: '', count: 0 },   // v1.0.7：当日已创建内容数（例句+助记+释义，官方上限 600/天）
 });
 // 旧 db.json 兼容：缺失字段补默认值
 if (!db.glosses) db.glosses = {};
 if (!Array.isArray(db.quizLog)) db.quizLog = [];
 if (db.lastSyncOk === undefined) db.lastSyncOk = true;
+if (!db.contentCreated || typeof db.contentCreated !== 'object') db.contentCreated = { date: '', count: 0 };   // v1.0.7
 
 function persistConfig() { saveJSON(CONFIG_FILE, config); }
 function persistDB() { saveJSON(DB_FILE, db); }
 
 /* ------------------------------------------------------------------ */
-/* 墨墨 API 客户端（按报告实测结论实现）                                 */
+/* 墨墨 API 客户端（v1.0.7：按官方频控文档实现全局滑动窗口限流）          */
+/* 官方规则（open.maimemo.com，2026-09 核对）：                          */
+/*   10 秒 20 次 / 60 秒 40 次 / 5 小时 2000 次（墨墨背单词）            */
+/*   内容创建（例句+助记+释义合并）每天最多 600 条                       */
 /* ------------------------------------------------------------------ */
 
-const lastCallByPath = new Map();
+// v1.0.7：全局请求时间戳滑动窗口（官方未说明按端点独立计数，保守按全局计）
+const callTimestamps = [];
+const WIN_10S = 10_000, WIN_60S = 60_000, WIN_5H = 5 * 3600_000;
+const LIMIT_10S = 18, LIMIT_60S = 38, LIMIT_5H = 1900;   // 官方 20/40/2000，各留约 10% 余量
 // v1.0.5：自适应间隔——触发限流后全局上调（各接口一起降速），连续成功后缓慢回落
-let baseGapMs = 700;          // 基础间隔（限流 20/10s，余量充足）
-const GAP_MIN = 700, GAP_MAX = 4000;
+let baseGapMs = 650;          // 基础间隔（窗口护栏兜底，短同步可快速通过）
+const GAP_MIN = 650, GAP_MAX = 8000;
 let throttledCount = 0;       // 本次进程内 429 计数（同步日志里如实汇报）
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-async function throttle(pathname) {
-  const last = lastCallByPath.get(pathname) || 0;
-  const wait = baseGapMs - (Date.now() - last);
-  if (wait > 0) await sleep(wait);
-  lastCallByPath.set(pathname, Date.now());
+/** 全局限流：滑动窗口护栏 + 基础间隔，任一约束命中即等待（分段睡，可响应收紧） */
+async function throttle() {
+  for (;;) {
+    const now = Date.now();
+    while (callTimestamps.length && now - callTimestamps[0] > WIN_5H) callTimestamps.shift();
+    let wait = 0;
+    if (callTimestamps.length >= LIMIT_10S) {
+      wait = Math.max(wait, WIN_10S - (now - callTimestamps[callTimestamps.length - LIMIT_10S]));
+    }
+    if (callTimestamps.length >= LIMIT_60S) {
+      wait = Math.max(wait, WIN_60S - (now - callTimestamps[callTimestamps.length - LIMIT_60S]));
+    }
+    if (callTimestamps.length >= LIMIT_5H) {
+      wait = Math.max(wait, WIN_5H - (now - callTimestamps[0]));
+    }
+    const last = callTimestamps[callTimestamps.length - 1] || 0;
+    wait = Math.max(wait, baseGapMs - (now - last));
+    if (wait <= 0) { callTimestamps.push(now); return; }
+    await sleep(Math.min(wait, 2000));
+  }
 }
 
 function tightenGap() { baseGapMs = Math.min(GAP_MAX, Math.round(baseGapMs * 1.6)); throttledCount++; }
@@ -148,7 +177,7 @@ async function mm(pathname, { method = 'GET', body, query } = {}) {
   }
 
   for (let attempt = 0; attempt < 4; attempt++) {
-    await throttle(pathname);
+    await throttle();
     let res;
     try {
       res = await fetch(url, {
@@ -256,56 +285,45 @@ async function syncTodayItems() {
   return items.length;
 }
 
-/** 学习记录全量导出：as_count 探针 + next_study_date 月度切片（每片 ≤1000） */
+/**
+ * 学习记录全量导出（v1.0.7：二分切窗抓取）
+ * 旧版逐月 as_count 探针：2019 起约 100 次探测 + 抓取，请求数多、耗时长。
+ * 新版：宽窗口直接抓（limit=1000），返回满 1000 条说明可能截断，就把窗口二分
+ * 递归下钻。请求数只花在真正有数据的地方（约 15-25 次），分片不重叠不遗漏。
+ */
 async function syncStudyRecords() {
   const start = new Date(Date.UTC(2019, 0, 1));
   const end = new Date(Date.now() + 400 * 86400000);
 
-  // 生成月度窗口
-  const windows = [];
-  let cur = new Date(start);
-  while (cur < end) {
-    const wStart = new Date(cur);
-    const wEnd = new Date(cur.getFullYear(), cur.getMonth() + 1, 1);
-    windows.push({ start: wStart, end: wEnd });
-    cur = wEnd;
-  }
-
-  // 先用 as_count 探每片的量（墨墨 count 恒 0 当 as_count=false，见报告 §5-13）
-  const nonEmpty = [];
-  for (const w of windows) {
-    const body = {
-      next_study_date: { start: toMM(w.start), end: toMM(w.end) },
-      as_count: true,
-    };
+  let fetched = 0, windows = 0, truncated = 0;
+  const seen = new Set();          // 去重计数（窗口边界重合的记录会抓到两次，按词去重）
+  const queue = [[start, end]];
+  while (queue.length) {
+    const [ws, we] = queue.shift();
+    windows++;
+    let records;
     try {
-      const data = await mm('/study/query_study_records', { method: 'POST', body });
-      if ((data.count || 0) > 0) nonEmpty.push({ ...w, count: data.count });
-    } catch { /* 跳过失败窗口 */ }
-  }
-
-  let fetched = 0, truncated = false;
-  for (const w of nonEmpty) {
-    let cursor = new Date(w.start);
-    while (cursor < w.end) {
-      const body = {
-        next_study_date: { start: toMM(cursor), end: toMM(w.end) },
-        limit: 1000,
-      };
-      const data = await mm('/study/query_study_records', { method: 'POST', body });
-      const records = data.records || [];
-      for (const r of records) upsertWordFromRecord(r);
-      fetched += records.length;
-      if (records.length < 1000) break;
-      // 接近 1000 说明可能截断：把游标推进到本批最大 next_study_date 之后再切
-      const maxDate = records.reduce((m, r) => (r.next_study_date > m ? r.next_study_date : m), '');
-      if (!maxDate) { truncated = true; break; }
-      const next = new Date(maxDate);
-      if (next <= cursor) { truncated = true; break; }
-      cursor = next;
+      const data = await mm('/study/query_study_records', {
+        method: 'POST',
+        body: { next_study_date: { start: toMM(ws), end: toMM(we) }, limit: 1000 },
+      });
+      records = data.records || [];
+    } catch (e) {
+      // 单窗失败不拖垮全量同步：计入截断数，同步日志如实汇报
+      truncated++;
+      continue;
     }
+    for (const r of records) {
+      upsertWordFromRecord(r);
+      if (!seen.has(r.voc_id)) { seen.add(r.voc_id); fetched++; }
+    }
+    if (records.length < 1000) continue;
+    // 满 1000：可能截断，二分下钻（墨墨 count 探针已不需要）
+    const mid = new Date(Math.floor((ws.getTime() + we.getTime()) / 2));
+    if (mid <= ws || mid >= we) { truncated++; continue; }   // 窗口已到最小粒度仍满页（极端情况）
+    queue.push([ws, mid], [mid, we]);
   }
-  return { fetched, windows: nonEmpty.length, truncated };
+  return { fetched, windows, truncated };
 }
 
 function toMM(d) {
@@ -343,7 +361,7 @@ async function runSync(trigger = 'manual') {
       steps.push('学习记录跳过（未配置 Token）');
     } else {
       const r = await syncStudyRecords();
-      steps.push(`学习记录 ${r.fetched} 条/${r.windows} 个窗口${r.truncated ? '（部分截断）' : ''}`);
+      steps.push(`学习记录 ${r.fetched} 条/${r.windows} 次请求${r.truncated ? `（${r.truncated} 个窗口截断）` : ''}`);
     }
   } catch (e) { steps.push('学习记录失败: ' + e.message); }
 
@@ -558,6 +576,64 @@ async function generateMnemonicImage({ spelling, context = [] }) {
     ? mockImageFile(spelling)
     : await callImageAPI(prompt);
   return { ...img, prompt, caption, spelling };
+}
+
+/* ---------- v1.0.7：网络搜索服务（通用 url + 密钥，供现有/后续板块复用） ---------- */
+
+const SEARCH_PRESETS = {
+  bocha: { label: '博查 Bocha', url: 'https://api.bochaai.com/v1/web-search' },
+  tavily: { label: 'Tavily', url: 'https://api.tavily.com/search' },
+  serper: { label: 'Serper（Google）', url: 'https://google.serper.dev/search' },
+  zhipu: { label: '智谱搜索', url: 'https://open.bigmodel.cn/api/paas/v4/web_search' },
+};
+
+/**
+ * 通用搜索代理：POST 配置的 url，Bearer 密钥鉴权。
+ * 请求体与响应解析做主流服务商兼容（博查/Tavily/Serper/智谱及 OpenAI 风格中转），
+ * 统一返回 [{title, url, snippet}]，后续板块零成本接入。
+ */
+async function webSearch(query, count = 5) {
+  const ws = config.webSearch || {};
+  // mock 模式优先：无需配置即可验证全链路（与 LLM/生图 mock 行为一致）
+  if (config.llm.mock) {
+    return Array.from({ length: Math.min(count, 3) }, (_, i) => ({
+      title: `[MOCK] 「${query}」搜索结果 ${i + 1}`,
+      url: 'https://example.com/mock#' + (i + 1),
+      snippet: '这是 mock 模式下的占位搜索结果，用于验证搜索链路（配置真实搜索服务后可联网）。',
+    }));
+  }
+  if (!ws.url) {
+    const e = new Error('尚未配置网络搜索服务，请到「设置」页填写 URL 与密钥');
+    e.code = 'NO_SEARCH';
+    throw e;
+  }
+  let res;
+  try {
+    res = await fetch(ws.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(ws.apiKey ? { 'Authorization': 'Bearer ' + ws.apiKey, 'X-API-KEY': ws.apiKey } : {}),
+      },
+      // 字段超集：覆盖博查(query/count/summary)、Tavily(query/max_results)、Serper(q)、智谱(search_query)
+      body: JSON.stringify({ query, q: query, search_query: query, count, max_results: count, summary: true }),
+    });
+  } catch {
+    throw new Error(`无法连接搜索服务（${ws.url}），请到「设置」检查地址与网络`);
+  }
+  if (!res.ok) {
+    const t = await res.text().catch(() => '');
+    throw new Error(`搜索请求失败 (HTTP ${res.status}) ${t.slice(0, 200)}`);
+  }
+  const j = await res.json();
+  // 兼容多种返回结构：博查 data.webPages.value / Tavily results / Serper organic / 通用 data[]
+  const raw = j?.data?.webPages?.value || j?.webPages?.value || j?.results || j?.organic
+    || (Array.isArray(j?.data) ? j.data : []);
+  return (Array.isArray(raw) ? raw : []).slice(0, count).map(r => ({
+    title: r.name || r.title || '',
+    url: r.url || r.link || '',
+    snippet: String(r.summary || r.snippet || r.content || r.description || '').slice(0, 500),
+  })).filter(r => r.title || r.snippet);
 }
 
 /* ------------------------------------------------------------------ */
@@ -814,10 +890,28 @@ async function ensureWordInNotepad(spelling) {
 }
 
 /** 把助记推回墨墨 notes API（关联 voc_id；v1.0.6 起先确保词在绑定的云词库中） */
+/** v1.0.7：官方内容创建频控——例句、助记、释义合并，每天最多 600 条。返回今日剩余额度 */
+function contentQuotaLeft() {
+  const today = bjDate();
+  if (db.contentCreated?.date !== today) db.contentCreated = { date: today, count: 0 };
+  return Math.max(0, 600 - (db.contentCreated.count || 0));
+}
+function countContentCreated(n = 1) {
+  contentQuotaLeft();   // 顺带触发跨日重置
+  db.contentCreated.count += n;
+}
+
 async function pushNoteToMaimemo(noteId) {
   const note = db.notes.find(n => n.id === noteId);
   if (!note) throw new Error('助记不存在');
   if (note.synced) return note;
+
+  // v1.0.7：官方内容创建频控（600 条/天），超限如实报错而不是被墨墨打回
+  if (contentQuotaLeft() <= 0) {
+    note.pushError = '已达官方内容创建频控（例句+助记+释义共 600 条/天），明天再推';
+    persistDB();
+    throw new Error(note.pushError);
+  }
 
   const vocId = note.vocId || await resolveVocId(note.spelling);
   if (!vocId) {
@@ -843,6 +937,7 @@ async function pushNoteToMaimemo(noteId) {
   note.synced = true;
   note.maimemoNoteId = data?.note?.id || null;
   note.pushError = null;
+  countContentCreated(1);   // v1.0.7：计入官方 600 条/天创建配额
   persistDB();
   return note;
 }
@@ -986,6 +1081,11 @@ const server = http.createServer(async (req, res) => {
             model: config.imageGen.model || '',
             hasKey: !!config.imageGen.apiKey,
           },
+          webSearch: {
+            url: config.webSearch.url || '',
+            hasKey: !!config.webSearch.apiKey,
+          },
+          searchPresets: SEARCH_PRESETS,
           imagePresets: IMAGE_PRESETS,
           presets: LLM_PRESETS,
         });
@@ -1044,6 +1144,15 @@ const server = http.createServer(async (req, res) => {
             model: String(body.imageGen.model ?? oldImg.model ?? '').trim(),
             apiKey: (typeof body.imageGen.apiKey === 'string' && body.imageGen.apiKey.trim())
               ? body.imageGen.apiKey.trim() : (oldImg.apiKey || ''),
+          };
+        }
+        // v1.0.7：网络搜索服务配置（Key 留空 = 沿用已存）
+        if (body.webSearch && typeof body.webSearch === 'object') {
+          const oldWs = config.webSearch || {};
+          config.webSearch = {
+            url: String(body.webSearch.url ?? oldWs.url ?? '').trim(),
+            apiKey: (typeof body.webSearch.apiKey === 'string' && body.webSearch.apiKey.trim())
+              ? body.webSearch.apiKey.trim() : (oldWs.apiKey || ''),
           };
         }
         persistConfig();
@@ -1187,6 +1296,23 @@ const server = http.createServer(async (req, res) => {
           ...history.map(m => ({ role: m.role, content: m.content })),
           { role: 'user', content: message },
         ];
+
+        // v1.0.7：联网搜索——开启时先搜索实时资料注入 system prompt；失败不阻塞对话
+        if (body.useSearch) {
+          try {
+            const results = await webSearch(spelling ? `${spelling} ${message}` : message, 5);
+            if (results.length) {
+              const block = results.map((r, i) => `${i + 1}. ${r.title}\n   ${r.snippet}\n   来源: ${r.url}`).join('\n');
+              msgs[0].content += '\n\n【联网搜索结果（实时资料，可能比你的训练数据更新）】\n' + block +
+                '\n\n回答时可自然引用以上资料并注明来源；若与你的既有知识冲突，以搜索结果为准并明确指出。';
+            } else {
+              msgs[0].content += '\n\n（联网搜索无结果，请基于自身知识回答）';
+            }
+          } catch (e) {
+            msgs[0].content += `\n\n（联网搜索失败：${e.message}。请基于自身知识回答，并在开头提醒用户本次未联网。）`;
+          }
+        }
+
         const reply = await llmChat(msgs);
         return sendJSON(res, 200, { reply });
       }
@@ -1259,6 +1385,26 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, msg: '生图成功！', ...result });
       }
 
+      // 网络搜索（v1.0.7）：通用 url+密钥 搜索代理，供现有/后续板块复用
+      if (p === '/api/search' && req.method === 'POST') {
+        const body = await readBody(req);
+        const query = String(body.query || '').trim().slice(0, 200);
+        const count = Math.min(10, Math.max(1, Number(body.count) || 5));
+        if (!query) return sendJSON(res, 400, { error: '搜索词不能为空' });
+        const results = await webSearch(query, count);
+        return sendJSON(res, 200, { ok: true, query, results });
+      }
+
+      // 搜索连通性测试（v1.0.7）
+      if (p === '/api/test/search' && req.method === 'POST') {
+        const results = await webSearch('考研英语 高频词汇', 3);
+        return sendJSON(res, 200, {
+          ok: true,
+          msg: `搜索成功！返回 ${results.length} 条结果`,
+          sample: results[0] ? `${results[0].title}（${results[0].url}）` : '（无结果）',
+        });
+      }
+
       return sendJSON(res, 404, { error: '接口不存在: ' + p });
     }
 
@@ -1278,7 +1424,7 @@ const server = http.createServer(async (req, res) => {
     fs.createReadStream(filePath).pipe(res);
   } catch (err) {
     if (p.startsWith('/api/')) {
-      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
+      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
     }
     res.writeHead(500); res.end('Server Error');
   }

@@ -15,6 +15,7 @@ const state = {
   llmPresets: {},
   providers: [],        // AI 服务商档案列表
   activeProvId: '',     // 默认服务商 id
+  useSearch: false,     // v1.0.7：联网搜索开关
 };
 
 /* ---------------- 基础请求 ---------------- */
@@ -363,7 +364,7 @@ async function askAI(message, isErrorMark = false) {
     if (isErrorMark) state.sessionErrorWords.add(state.activeWord);
     updateSessionInfo();
   }
-  const loading = addMsg('ai', '思考中…');
+  const loading = addMsg('ai', state.useSearch ? '🌐 正在联网搜索资料，然后思考中…' : '思考中…');
   loading.classList.add('loading');
   try {
     const r = await api('/api/chat', {
@@ -372,6 +373,7 @@ async function askAI(message, isErrorMark = false) {
         spelling: state.activeWord,
         message,
         history: state.chatHistory.slice(-16).map(m => ({ role: m.role, content: m.content })),
+        useSearch: !!state.useSearch,   // v1.0.7：联网搜索开关
       },
     });
     loading.classList.remove('loading');
@@ -442,6 +444,15 @@ $('#imgGenChip').addEventListener('click', async () => {
   } finally {
     chip.disabled = false;
   }
+});
+
+/* v1.0.7：联网搜索开关 —— 开启后每次提问先让服务端搜索实时资料注入上下文 */
+$('#webSearchChip').addEventListener('click', () => {
+  state.useSearch = !state.useSearch;
+  $('#webSearchChip').classList.toggle('active', state.useSearch);
+  addMsg('ai', state.useSearch
+    ? '🌐 已开启联网搜索：之后每次提问会先搜索实时资料再回答（需在 设置 页配置搜索服务）。'
+    : '🌐 已关闭联网搜索。');
 });
 
 /* 结束会话 -> 生成助记 */
@@ -585,6 +596,13 @@ async function loadConfig() {
     $('#cfgAutoSync').checked = !!c.autoSync.enabled;
     $('#cfgSyncMinutes').value = c.autoSync.minutes || 60;
     $('#cfgKaoyan').checked = !!c.kaoyanMode;
+    /* v1.0.7：搜索服务配置回填 */
+    if (c.searchPresets) {
+      $('#cfgSearchPreset').innerHTML = '<option value="">— 手动填写 —</option>' +
+        Object.entries(c.searchPresets).map(([k, v]) => `<option value="${esc(v.url)}">${esc(v.label)}</option>`).join('');
+    }
+    $('#cfgSearchUrl').value = c.webSearch?.url || '';
+    if (c.webSearch?.hasKey) $('#cfgSearchKey').placeholder = '已保存 ✓（留空 = 沿用）';
     renderProviders();
   } catch (e) { console.error(e); }
 }
@@ -833,6 +851,51 @@ $('#testImageBtn').addEventListener('click', async () => {
   try {
     const r = await api('/api/test/image', { method: 'POST' });
     out.innerHTML = `✅ 生图成功！<img class="test-img" src="${esc(r.url)}" alt="测试图">`;
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+});
+
+/* v1.0.7：网络搜索服务配置 */
+function buildSearchBody() {
+  return {
+    webSearch: {
+      url: $('#cfgSearchUrl').value.trim(),
+      apiKey: $('#cfgSearchKey').value.trim() || undefined,   // 留空沿用
+    },
+  };
+}
+
+$('#cfgSearchPreset').addEventListener('change', () => {
+  const url = $('#cfgSearchPreset').value;
+  if (url) $('#cfgSearchUrl').value = url;
+});
+
+$('#saveSearchBtn').addEventListener('click', async () => {
+  const out = $('#searchTestResult');
+  try {
+    await api('/api/config', { method: 'POST', body: buildSearchBody() });
+    $('#cfgSearchKey').value = '';
+    out.textContent = '✅ 已保存';
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+});
+
+$('#testSearchBtn').addEventListener('click', async () => {
+  const out = $('#searchTestResult');
+  // 先保存表单里的值再测（允许不先保存直接测）
+  try { await api('/api/config', { method: 'POST', body: buildSearchBody() }); $('#cfgSearchKey').value = ''; }
+  catch { /* 测试时如实暴露错误 */ }
+  out.textContent = '🔍 搜索测试中…';
+  out.className = 'result';
+  try {
+    const r = await api('/api/test/search', { method: 'POST' });
+    out.textContent = `✅ ${r.msg} · 首条：${r.sample}`;
     out.className = 'result ok';
   } catch (e) {
     out.textContent = '❌ ' + e.message;
