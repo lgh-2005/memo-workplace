@@ -8,10 +8,11 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.3</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.4</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
+    <button class="tab" data-tab="quiz">📝 测验</button>
     <button class="tab" data-tab="notes">📖 助记库</button>
     <button class="tab" data-tab="pomo">🍅 番茄钟</button>
     <button class="tab" data-tab="settings">⚙️ 设置</button>
@@ -25,6 +26,10 @@
 <main>
   <!-- ============ 仪表盘 ============ -->
   <section id="tab-dashboard" class="tab-page active">
+    <div class="sync-banner" id="syncBanner" style="display:none">
+      <span id="syncBannerText">今日数据还未同步</span>
+      <button class="btn small" id="bannerSyncBtn">立即同步</button>
+    </div>
     <div class="grid-4">
       <div class="card stat">
         <div class="stat-label">今日进度</div>
@@ -65,6 +70,7 @@
         <div class="quick-actions">
           <button class="btn" data-jump="study" data-filter="today">学今日词</button>
           <button class="btn" data-jump="study" data-filter="sticky">攻克顽固词</button>
+          <button class="btn" data-jump="quiz" data-filter="today">📝 测验今日词</button>
           <button class="btn" data-jump="study" data-filter="due7">7 天内要复习的</button>
           <button class="btn ghost" data-jump="notes">查看助记库</button>
         </div>
@@ -95,14 +101,17 @@
           <button class="chip" data-filter="due7">7天内到期</button>
           <button class="chip" data-filter="all">全部</button>
         </div>
-        <input type="text" id="wordSearch" class="input" placeholder="搜索单词…">
+        <input type="text" id="wordSearch" class="input" placeholder="搜索单词或释义…">
         <div class="word-list" id="wordList"><div class="empty">请先在仪表盘同步数据</div></div>
         <div class="session-info" id="sessionInfo">本次会话已学 0 词</div>
         <button class="btn primary full" id="finishBtn" disabled>✅ 结束本次学习并生成助记</button>
       </aside>
 
       <div class="chat-panel card">
-        <div class="chat-header" id="chatHeader">选择左侧一个单词开始，或直接提问</div>
+        <div class="chat-header-row">
+          <div class="chat-header" id="chatHeader">选择左侧一个单词开始，或直接提问</div>
+          <button class="btn small speak-btn" id="speakWordBtn" title="朗读单词" style="display:none">🔊</button>
+        </div>
         <div class="chat-messages" id="chatMessages">
           <div class="msg ai">👋 我是你的 AI 单词教练。选中单词后可以问词义、用法、例句，也可以点下面的快捷按钮。学完点左下角「结束本次学习」，我会把你的易错点总结成助记。</div>
         </div>
@@ -118,6 +127,44 @@
           <button class="btn primary" id="sendBtn">发送</button>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ 测验 ============ -->
+  <section id="tab-quiz" class="tab-page">
+    <div class="card" id="quizSetup">
+      <div class="card-title">📝 单词测验</div>
+      <div class="hint">主动回忆（测试效应）比反复看词义有效得多。测错的词会自动计入「忘记词」筛选，测完可回 AI 学习页针对性攻克。</div>
+      <label class="field-label">词源</label>
+      <div class="filter-row" id="quizSources">
+        <button class="chip active" data-src="today">今日词</button>
+        <button class="chip" data-src="sticky">顽固词</button>
+        <button class="chip" data-src="vague">模糊词</button>
+        <button class="chip" data-src="forget">忘记词</button>
+        <button class="chip" data-src="due7">7天内到期</button>
+        <button class="chip" data-src="all">全部</button>
+      </div>
+      <label class="field-label">题型</label>
+      <div class="filter-row" id="quizModes">
+        <button class="chip active" data-mode="flash">看英想中（闪卡）</button>
+        <button class="chip" data-mode="choice">四选一</button>
+        <button class="chip" data-mode="spell">拼写</button>
+      </div>
+      <label class="field-label">题量（3-50）</label>
+      <input type="number" id="quizCount" class="input" value="10" min="3" max="50" style="width:120px">
+      <div class="row-gap">
+        <button class="btn primary" id="quizStartBtn">🚀 开始测验</button>
+      </div>
+      <div class="result" id="quizMsg"></div>
+    </div>
+
+    <div class="card" id="quizRun" style="display:none">
+      <div class="card-title-row">
+        <div class="card-title" id="quizProgress">第 1 / 10 题</div>
+        <button class="btn small ghost" id="quizQuitBtn">✕ 退出测验</button>
+      </div>
+      <div class="quiz-progress-bar"><div id="quizBar"></div></div>
+      <div id="quizArea"></div>
     </div>
   </section>
 

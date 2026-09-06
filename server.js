@@ -74,14 +74,21 @@ if (!Array.isArray(config.llm?.providers)) {
 
 let db = loadJSON(DB_FILE, {
   lastSync: null,
+  lastSyncOk: true,
   syncLog: [],            // [{ts, ok, msg}]
   progressHistory: [],    // [{date, finished, total, studyTimeMs}]
   planTotal: 0,           // 学习计划总词数
-  words: {},              // vocId -> {vocId, spelling, studyCount, tags[], lastResponse, nextStudyDate, lastStudyDate, addDate, today:{firstResponse,isNew,isFinished}}
+  words: {},              // vocId -> {vocId, spelling, studyCount, tags[], lastResponse, nextStudyDate, lastStudyDate, addDate, today:{firstResponse,isNew,isFinished}, quizResponse?, quizWrong?, quizLastAt?}
+  glosses: {},            // spelling -> {phonetic, pos, gloss}（AI 词典缓存，v1.0.4）
   todayItems: [],         // 最近一次同步的今日词表
   notes: [],              // 助记 {id, spelling, vocId?, noteType, content, createdAt, sessionId, source, synced, maimemoNoteId?, pushError?}
   sessions: [],           // 学习会话 {id, startedAt, endedAt, words[], messages[], errorWords[]}
+  quizLog: [],            // 测验记录 [{ts, mode, total, familiar, vague, forget}]（v1.0.4）
 });
+// 旧 db.json 兼容：缺失字段补默认值
+if (!db.glosses) db.glosses = {};
+if (!Array.isArray(db.quizLog)) db.quizLog = [];
+if (db.lastSyncOk === undefined) db.lastSyncOk = true;
 
 function persistConfig() { saveJSON(CONFIG_FILE, config); }
 function persistDB() { saveJSON(DB_FILE, db); }
@@ -316,6 +323,7 @@ async function runSync(trigger = 'manual') {
   } catch { /* 非致命 */ }
 
   db.lastSync = new Date().toISOString();
+  db.lastSyncOk = ok;
   logSync(ok, steps.join('；') + ` [${trigger}]`);
   persistDB();
   return { ok, msg: steps.join('；') };
@@ -390,6 +398,15 @@ function mockLLM(messages) {
       })),
     });
   }
+  if (sys.includes('英汉词典')) {
+    const words = user.split('\n').map(s => s.trim()).filter(Boolean);
+    return JSON.stringify({
+      glosses: words.map(w => ({
+        spelling: w, phonetic: '/mɒk/', pos: 'n.',
+        gloss: `[MOCK] ${w} 的核心释义（自测数据）`,
+      })),
+    });
+  }
   return `[MOCK] 收到！这是一个自测回复。（词义、例句、用法讲解在配置真实 AI 服务商后可用）\n\n关于你的问题「${user.slice(0, 60)}」：本回复来自内置 mock 模式，仅用于验证闭环。`;
 }
 
@@ -443,6 +460,66 @@ function parseMnemonicJSON(text) {
   } catch {
     return null;
   }
+}
+
+/* ---------- v1.0.4：AI 词典缓存（音标/词性/核心释义） ---------- */
+
+async function ensureGlosses(spellings) {
+  const missing = [...new Set(spellings)].filter(sp => sp && !db.glosses[sp]);
+  for (let i = 0; i < missing.length; i += 20) {
+    const chunk = missing.slice(i, i + 20);
+    try {
+      const text = await llmChat([
+        { role: 'system', content: GLOSS_SYSTEM },
+        { role: 'user', content: chunk.join('\n') },
+      ], { maxTokens: 1600, providerId: 'gloss' });
+      const parsed = parseMnemonicJSON(text);
+      for (const g of (parsed?.glosses || [])) {
+        if (g && g.spelling && g.gloss) {
+          db.glosses[String(g.spelling)] = {
+            phonetic: String(g.phonetic || '').slice(0, 60),
+            pos: String(g.pos || '').slice(0, 40),
+            gloss: String(g.gloss).slice(0, 120),
+          };
+        }
+      }
+    } catch { /* 失败的块静默跳过，下次请求再试 */ }
+  }
+  persistDB();
+}
+
+const GLOSS_SYSTEM = [
+  '你是一本英汉词典，面向中国考研学生。',
+  '对用户给出的每个单词（每行一个）输出极简词典信息。',
+  '只输出 JSON，不要任何多余文字，格式：',
+  '{"glosses":[{"spelling":"单词","phonetic":"/美式音标/，不确定就给空串","pos":"词性缩写如 n. v. adj.","gloss":"最核心的 1-2 个中文释义，30 字内"}]}',
+  '规则：每个输入单词都必须有一条；音标不确定给空串，严禁编造；释义要优先考研高频义项。',
+].join('\n');
+
+/** 记录测验结果：反哺「我又忘了」体系（写入 word.quizResponse，供忘记词/模糊词筛选） */
+function applyQuizResults(results, mode) {
+  let applied = 0;
+  for (const r of results) {
+    const sp = String(r.spelling || '').trim();
+    const resp = ['FAMILIAR', 'VAGUE', 'FORGET'].includes(r.response) ? r.response : null;
+    if (!sp || !resp) continue;
+    const w = Object.values(db.words).find(x => x.spelling === sp);
+    if (!w) continue;
+    w.quizResponse = resp;
+    if (resp === 'FORGET') w.quizWrong = (w.quizWrong || 0) + 1;
+    w.quizLastAt = new Date().toISOString();
+    applied++;
+  }
+  db.quizLog.unshift({
+    ts: new Date().toISOString(), mode: String(mode || '').slice(0, 20),
+    total: results.length,
+    familiar: results.filter(r => r.response === 'FAMILIAR').length,
+    vague: results.filter(r => r.response === 'VAGUE').length,
+    forget: results.filter(r => r.response === 'FORGET').length,
+  });
+  db.quizLog = db.quizLog.slice(0, 100);
+  persistDB();
+  return applied;
 }
 
 async function finishSession(payload) {
@@ -599,11 +676,18 @@ function dashboardData() {
     forecast.push({ date: key, count: cnt });
   }
 
-  // 最近 14 天进度曲线
-  const history = db.progressHistory.slice(-14);
+  // 最近 14 天进度曲线（不足的天数补零，保证标题与数据窗口一致）
+  const history = [];
+  for (let i = -13; i <= 0; i++) {
+    const key = bjDate(i);
+    const rec = db.progressHistory.find(x => x.date === key);
+    history.push({ date: key, finished: rec?.finished || 0, total: rec?.total || 0 });
+  }
 
   return {
     lastSync: db.lastSync,
+    lastSyncOk: db.lastSyncOk,
+    todayStr: today,
     planTotal: db.planTotal,
     progress,
     counts: {
@@ -639,6 +723,7 @@ const server = http.createServer(async (req, res) => {
             activeName: getProvider()?.name || '',
           },
           lastSync: db.lastSync,
+          lastSyncOk: db.lastSyncOk,
           counts: { words: Object.keys(db.words).length, notes: db.notes.length },
           autoSync: config.autoSync,
         });
@@ -749,9 +834,13 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, msg: reply.slice(0, 100) });
       }
 
-      // 同步
+      // 同步（失败自动退避重试一次，v1.0.4）
       if (p === '/api/sync' && req.method === 'POST') {
-        const result = await runSync('manual');
+        let result = await runSync('manual');
+        if (!result.ok) {
+          await sleep(3000);
+          result = await runSync('manual-retry');
+        }
         return sendJSON(res, result.ok ? 200 : 207, result);
       }
 
@@ -771,8 +860,8 @@ const server = http.createServer(async (req, res) => {
           // 注意：tags 过滤参数服务端只认 STICKING，WELL_FAMILIAR 必须本地过滤
           words = words.filter(w => w.tags?.includes('WELL_FAMILIAR') || w.today?.firstResponse === 'WELL_FAMILIAR');
         }
-        else if (filter === 'forget') words = words.filter(w => w.lastResponse === 'FORGET' || w.today?.firstResponse === 'FORGET');
-        else if (filter === 'vague') words = words.filter(w => w.lastResponse === 'VAGUE' || w.today?.firstResponse === 'VAGUE');
+        else if (filter === 'forget') words = words.filter(w => w.lastResponse === 'FORGET' || w.today?.firstResponse === 'FORGET' || w.quizResponse === 'FORGET');
+        else if (filter === 'vague') words = words.filter(w => w.lastResponse === 'VAGUE' || w.today?.firstResponse === 'VAGUE' || w.quizResponse === 'VAGUE');
         else if (filter === 'newtoday') words = words.filter(w => w.today?.date === todayStr && w.today?.isNew);
         else if (filter === 'unfinished') words = words.filter(w => w.today?.date === todayStr && w.today?.isFinished === false);
         else if (filter === 'today') words = words.filter(w => w.today?.date === todayStr);
@@ -783,9 +872,34 @@ const server = http.createServer(async (req, res) => {
             return d && d <= end;
           });
         }
-        if (q) words = words.filter(w => w.spelling.toLowerCase().includes(q));
+        // 搜索：拼写或已缓存的中文释义（v1.0.4）
+        if (q) words = words.filter(w =>
+          w.spelling.toLowerCase().includes(q) ||
+          (db.glosses[w.spelling]?.gloss || '').toLowerCase().includes(q));
         words.sort((a, b) => (b.lastStudyDate || '').localeCompare(a.lastStudyDate || ''));
-        return sendJSON(res, 200, { words: words.slice(0, 500) });
+        return sendJSON(res, 200, {
+          words: words.slice(0, 500).map(w => ({ ...w, gloss: db.glosses[w.spelling] || null })),
+        });
+      }
+
+      // AI 词典缓存：批量获取/返回 音标+词性+核心释义（v1.0.4）
+      if (p === '/api/gloss' && req.method === 'POST') {
+        const body = await readBody(req);
+        const spellings = (Array.isArray(body.spellings) ? body.spellings : [])
+          .map(s => String(s).trim()).filter(Boolean).slice(0, 60);
+        if (!spellings.length) return sendJSON(res, 200, { glosses: {} });
+        await ensureGlosses(spellings);
+        const out = {};
+        for (const sp of spellings) if (db.glosses[sp]) out[sp] = db.glosses[sp];
+        return sendJSON(res, 200, { glosses: out });
+      }
+
+      // 测验结果提交：计入错词体系（v1.0.4）
+      if (p === '/api/quiz/submit' && req.method === 'POST') {
+        const body = await readBody(req);
+        const results = Array.isArray(body.results) ? body.results.slice(0, 500) : [];
+        const applied = applyQuizResults(results, body.mode);
+        return sendJSON(res, 200, { ok: true, applied });
       }
 
       // 单词详情（含本地助记）

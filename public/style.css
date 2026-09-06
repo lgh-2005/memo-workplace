@@ -435,6 +435,80 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-style="euro"] .btn.primary { background: var(--primary); border-color: var(--primary); }
 [data-style="euro"] .brand { color: #3e5c47; }
 
+/* ============ v1.0.4：同步引导条 / 释义速览 / 朗读 / 测验 ============ */
+
+/* 同步引导条 */
+.sync-banner {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: linear-gradient(90deg, #fef9c3, #fef3c7);
+  border: 1px solid #fde68a; border-radius: var(--radius);
+  padding: 10px 16px; margin-bottom: 16px; font-size: 13px;
+  animation: msg-in .25s ease;
+}
+#syncBannerText { flex: 1; min-width: 200px; color: #713f12; }
+
+/* 词表释义速览 */
+.word-item .word-main { min-width: 0; flex: 1; }
+.phonetic { font-size: 11px; color: var(--text-sub); font-weight: 400; margin-left: 4px; }
+.gloss-line {
+  font-size: 11px; color: var(--text-sub); margin-top: 2px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px;
+}
+.gloss-line.dim { opacity: .35; }
+
+/* 朗读按钮 */
+.speak-btn {
+  border: none; background: var(--primary-soft); cursor: pointer;
+  border-radius: 999px; line-height: 1; transition: transform .15s ease, box-shadow .15s ease;
+}
+.speak-btn:hover { transform: scale(1.15); box-shadow: 0 2px 6px color-mix(in srgb, var(--primary) 30%, transparent); }
+.speak-btn.mini { font-size: 12px; padding: 3px 7px; }
+.chat-header-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border); gap: 10px;
+}
+.chat-header-row .chat-header { padding-bottom: 0; border-bottom: none; }
+.msg-speak { float: right; margin-left: 8px; opacity: .65; }
+.msg-speak:hover { opacity: 1; }
+
+/* 测验 */
+.quiz-word { font-size: 32px; font-weight: 700; text-align: center; margin: 18px 0 6px; display: flex; align-items: baseline; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.quiz-word .phonetic { margin: 0; width: 100%; text-align: center; }
+.quiz-hint { text-align: center; color: var(--text-sub); font-size: 13px; margin-bottom: 18px; }
+.quiz-flip-zone { text-align: center; padding: 12px 0; }
+.quiz-answer {
+  text-align: center; font-size: 18px; font-weight: 600; line-height: 1.6;
+  background: var(--primary-soft); border-radius: var(--radius); padding: 16px; margin-bottom: 14px;
+}
+.quiz-answer .pos { color: var(--text-sub); font-weight: 400; margin-right: 6px; font-size: 14px; }
+.grade-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.grade { font-size: 15px; padding: 10px 22px; border-radius: 10px; }
+.g-ok { background: #ecfdf5; border-color: #a7f3d0; color: #047857; }
+.g-mid { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.g-bad { background: #fef2f2; border-color: #fecaca; color: #b91c1c; }
+.g-ok:hover, .g-mid:hover, .g-bad:hover { filter: brightness(.97); transform: translateY(-1px); }
+.quiz-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.quiz-opt { text-align: left; padding: 12px 14px; font-size: 14px; }
+.quiz-opt.correct { background: #ecfdf5; border-color: #34d399; color: #047857; font-weight: 600; }
+.quiz-opt.wrong { background: #fef2f2; border-color: #f87171; color: #b91c1c; }
+.quiz-feedback { text-align: center; min-height: 28px; font-size: 14px; }
+.fb-ok { color: var(--ok); }
+.fb-bad { color: var(--warn); }
+.quiz-spell-row { display: flex; gap: 10px; max-width: 420px; margin: 0 auto 12px; }
+.quiz-progress-bar {
+  height: 6px; background: var(--bg); border-radius: 999px; overflow: hidden; margin-bottom: 10px;
+}
+#quizBar {
+  height: 100%; width: 0; background: var(--grad-primary);
+  border-radius: 999px; transition: width .3s ease;
+}
+.quiz-done { text-align: center; padding: 24px 0; }
+.quiz-score {
+  font-size: 44px; font-weight: 800;
+  background: var(--stat-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.quiz-score-sub { color: var(--text-sub); margin: 6px 0 12px; }
+
 /* ============ 移动端适配 ============ */
 @media (max-width: 700px) {
   .topbar { flex-wrap: wrap; height: auto; padding: 8px 12px; gap: 6px 10px; }
@@ -465,4 +539,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   .note-item .note-actions { flex-direction: row; }
   .modal { width: 94vw; }
   .hint { font-size: 12.5px; }
+
+  .quiz-word { font-size: 26px; }
+  .quiz-opts { grid-template-columns: 1fr; }
+  .grade-row { gap: 8px; }
+  .grade { padding: 9px 16px; font-size: 14px; }
+  .gloss-line { max-width: 130px; }
 }

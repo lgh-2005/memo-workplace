@@ -50,6 +50,34 @@ function bjDate(offsetDays = 0) {
   return new Date(Date.now() + offsetDays * 86400000 + 8 * 3600000).toISOString().slice(0, 10);
 }
 
+/** 任意 ISO 时间 → 北京时间的 YYYY-MM-DD（用于「今天是否已同步」判断） */
+function bjDateOf(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return isNaN(d) ? '' : d.toLocaleString('sv-SE', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
+}
+
+/* ---------------- 发音（浏览器 TTS，零成本） ---------------- */
+
+function speak(text, lang = 'en-US') {
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(String(text));
+    u.lang = lang; u.rate = 0.92;
+    speechSynthesis.speak(u);
+  } catch { /* 浏览器不支持时静默 */ }
+}
+
+/** 从 AI 回复里提取英文句子朗读（例句场景），没有英文就读原词 */
+function speakEnglishFrom(text, fallbackWord) {
+  const sentences = String(text)
+    .split(/[\n。！？!?]+/)
+    .map(s => s.trim())
+    .filter(s => s.length > 3 && (s.match(/[A-Za-z]/g) || []).length / s.replace(/\s/g, '').length > 0.6);
+  if (sentences.length) speak(sentences.slice(0, 3).join(' '));
+  else if (fallbackWord) speak(fallbackWord);
+}
+
 /* ---------------- 页签 ---------------- */
 
 $$('.tab').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
@@ -61,6 +89,7 @@ function switchTab(name) {
   if (name === 'study') loadWords();
   if (name === 'notes') loadNotes();
   if (name === 'settings') loadConfig();
+  // quiz 页保持进行中的状态，不重置
 }
 
 // 快捷入口 / 链接跳转
@@ -81,6 +110,21 @@ document.addEventListener('click', (e) => {
 async function loadDashboard() {
   try {
     const d = await api('/api/dashboard');
+    // 同步引导条（v1.0.4）：从未同步 / 上次失败 / 今天没同步
+    const banner = $('#syncBanner');
+    const lastSyncDate = bjDateOf(d.lastSync);
+    if (!d.lastSync) {
+      $('#syncBannerText').textContent = '⚠️ 还没同步过数据——先同步一次，词表和进度才会出现';
+      banner.style.display = 'flex';
+    } else if (d.lastSyncOk === false) {
+      $('#syncBannerText').textContent = `⚠️ 上次同步失败（${fmtBJ(d.lastSync)}），点击右侧重试`;
+      banner.style.display = 'flex';
+    } else if (lastSyncDate !== d.todayStr) {
+      $('#syncBannerText').textContent = `⚠️ 今日数据未同步（上次同步 ${fmtBJ(d.lastSync)}），今日词表可能是空的`;
+      banner.style.display = 'flex';
+    } else {
+      banner.style.display = 'none';
+    }
     // 统计卡
     if (d.progress) {
       $('#statProgress').textContent = `${d.progress.finished}/${d.progress.total}`;
@@ -136,6 +180,7 @@ function updateSyncBadge(dotClass, text) {
 }
 
 $('#syncBadge').addEventListener('click', () => doSync(false));
+$('#bannerSyncBtn').addEventListener('click', () => doSync(false));
 
 async function doSync(silent) {
   if (!silent) updateSyncBadge('loading', '同步中…');
@@ -174,9 +219,23 @@ async function loadWords() {
     const d = await api(`/api/words?filter=${state.filter}${q ? '&q=' + encodeURIComponent(q) : ''}`);
     state.words = d.words;
     renderWordList();
+    fetchGlosses();   // 后台补释义，不阻塞列表
   } catch (e) {
     $('#wordList').innerHTML = `<div class="empty">${esc(e.message)}</div>`;
   }
+}
+
+/** 批量补齐当前词表缺失的音标/释义（AI 词典缓存，失败静默） */
+async function fetchGlosses() {
+  const need = state.words.filter(w => !w.gloss).slice(0, 30).map(w => w.spelling);
+  if (!need.length) return;
+  try {
+    const r = await api('/api/gloss', { method: 'POST', body: { spellings: need } });
+    const got = r.glosses || {};
+    if (!Object.keys(got).length) return;
+    state.words.forEach(w => { if (got[w.spelling]) w.gloss = got[w.spelling]; });
+    if ($('#tab-study').classList.contains('active')) renderWordList();
+  } catch { /* 释义是增强功能，获取失败不影响主流程 */ }
 }
 
 function renderWordList() {
@@ -188,23 +247,33 @@ function renderWordList() {
   const todayStr = bjDate();
   list.innerHTML = state.words.map(w => {
     let badge = '';
-    if (w.tags?.includes('STICKING')) badge = '<span class="badge sticky">顽固</span>';
+    if (w.tags?.includes('STICKING') || w.quizResponse === 'FORGET') badge = '<span class="badge sticky">顽固</span>';
     else if (w.today?.date === todayStr && w.today?.isNew) badge = '<span class="badge new">新词</span>';
     else if (w.today?.date === todayStr && w.today?.isFinished) badge = '<span class="badge done">已完成</span>';
     const meta = w.studyCount != null ? `学过 ${w.studyCount} 次` : (w.nextStudyDate ? '到期 ' + w.nextStudyDate.slice(5, 10) : '');
+    const phon = w.gloss?.phonetic ? `<span class="phonetic">${esc(w.gloss.phonetic)}</span>` : '';
+    const glossLine = w.gloss?.gloss ? `<div class="gloss-line" title="${esc(w.gloss.gloss)}">${esc(w.gloss.gloss)}</div>` : '<div class="gloss-line dim">　</div>';
     return `<div class="word-item ${state.activeWord === w.spelling ? 'active' : ''}" data-sp="${esc(w.spelling)}">
-      <span class="spelling">${esc(w.spelling)}</span>
-      <span style="text-align:right">${badge}<div class="meta">${meta}</div></span>
+      <span class="word-main">
+        <span class="spelling">${esc(w.spelling)} ${phon}</span>
+        ${glossLine}
+      </span>
+      <span style="text-align:right;flex-shrink:0">${badge}<div class="meta">${meta}</div><button class="speak-btn mini" data-speak="${esc(w.spelling)}" title="朗读">🔊</button></span>
     </div>`;
   }).join('');
   $$('.word-item').forEach(el => el.addEventListener('click', () => selectWord(el.dataset.sp)));
+  $$('.word-item .speak-btn').forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation();   // 不触发选中
+    speak(b.dataset.speak);
+  }));
 }
 
 function selectWord(spelling) {
   state.activeWord = spelling;
   renderWordList();
   $('#chatHeader').textContent = '当前学习：' + spelling;
-  addMsg('ai', `📖 已切换到 **${spelling}**。想问什么？`, spelling === null ? null : spelling);
+  $('#speakWordBtn').style.display = 'inline-block';
+  addMsg('ai', `📖 已切换到 **${spelling}**。想问什么？`, spelling);
   // 直接替用户发起一个开场
   askAI(`请用一句话介绍「${spelling}」的核心含义和最常用的一个搭配，然后等我提问。`);
 }
@@ -214,11 +283,26 @@ function addMsg(role, content, word) {
   const div = document.createElement('div');
   div.className = 'msg ' + role;
   const tag = word ? `<span class="word-tag">📘 ${esc(word)}</span>` : '';
-  div.innerHTML = tag + mdLite(content);
+  const spk = role === 'ai'
+    ? `<button class="speak-btn mini msg-speak" title="朗读其中的英文例句">🔊</button>` : '';
+  div.innerHTML = tag + mdLite(content) + spk;
+  if (role === 'ai') div.dataset.raw = content;
   box.appendChild(div);
   box.scrollTop = box.scrollHeight;
   return div;
 }
+
+// 事件委托：AI 消息上的朗读按钮
+$('#chatMessages').addEventListener('click', (e) => {
+  const btn = e.target.closest('.msg-speak');
+  if (!btn) return;
+  const msg = btn.closest('.msg');
+  speakEnglishFrom(msg.dataset.raw || '', state.activeWord);
+});
+
+$('#speakWordBtn').addEventListener('click', () => {
+  if (state.activeWord) speak(state.activeWord);
+});
 
 /** 轻量 Markdown（粗体/换行/列表） */
 function mdLite(text) {
@@ -273,6 +357,10 @@ $('#chatInput').addEventListener('keydown', e => {
 });
 
 $$('#quickRow .chip.q').forEach(c => c.addEventListener('click', () => {
+  if (c.dataset.error && !state.activeWord) {
+    addMsg('ai', '⚠️ 请先在左侧词表选中一个单词，再标记「我又忘了」。');
+    return;
+  }
   askAI(c.dataset.q, !!c.dataset.error);
 }));
 
@@ -725,6 +813,205 @@ setInterval(() => {
   else if (!$('#tab-pomo').classList.contains('active')) return;
   pomoRender();
 }, 500);
+
+/* ---------------- 单词测验（v1.0.4：主动回忆） ---------------- */
+
+const quiz = { running: false, src: 'today', mode: 'flash', items: [], idx: 0, results: [], distractorPool: [] };
+
+$$('#quizSources .chip').forEach(c => c.addEventListener('click', () => {
+  $$('#quizSources .chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  quiz.src = c.dataset.src;
+}));
+$$('#quizModes .chip').forEach(c => c.addEventListener('click', () => {
+  $$('#quizModes .chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  quiz.mode = c.dataset.mode;
+}));
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+$('#quizStartBtn').addEventListener('click', startQuiz);
+$('#quizQuitBtn').addEventListener('click', quitQuiz);
+
+// 测验区的朗读按钮（事件委托）
+$('#quizArea').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-speak]');
+  if (b) speak(b.dataset.speak);
+});
+
+async function startQuiz() {
+  const msg = $('#quizMsg');
+  msg.textContent = '正在准备题目…';
+  msg.className = 'result';
+  try {
+    const d = await api(`/api/words?filter=${quiz.src}`);
+    let pool = d.words || [];
+    if (pool.length < 3) {
+      msg.textContent = '⚠️ 该词源下单词太少（不足 3 个），换个词源或先去学习/同步';
+      msg.className = 'result err';
+      return;
+    }
+    const count = Math.min(50, Math.max(3, Number($('#quizCount').value) || 10));
+    pool = shuffle(pool).slice(0, count);
+    // 补齐释义（判分依赖），获取不到的词跳过
+    const missing = pool.filter(w => !w.gloss).map(w => w.spelling);
+    if (missing.length) {
+      const g = await api('/api/gloss', { method: 'POST', body: { spellings: missing } });
+      pool.forEach(w => { if (g.glosses?.[w.spelling]) w.gloss = g.glosses[w.spelling]; });
+    }
+    const withGloss = pool.filter(w => w.gloss?.gloss);
+    if (withGloss.length < 3) {
+      msg.textContent = '⚠️ 释义获取失败（请检查设置页的 AI 服务商），暂时出不了题';
+      msg.className = 'result err';
+      return;
+    }
+    quiz.items = withGloss;
+    quiz.idx = 0;
+    quiz.results = [];
+    quiz.running = true;
+    // 四选一的干扰项池
+    if (quiz.mode === 'choice') {
+      const all = await api('/api/words?filter=all');
+      quiz.distractorPool = (all.words || []).filter(w => w.gloss?.gloss);
+    }
+    msg.textContent = '';
+    $('#quizSetup').style.display = 'none';
+    $('#quizRun').style.display = 'block';
+    renderQuizItem();
+  } catch (e) {
+    msg.textContent = '❌ ' + e.message;
+    msg.className = 'result err';
+  }
+}
+
+function quitQuiz() {
+  quiz.running = false;
+  $('#quizRun').style.display = 'none';
+  $('#quizSetup').style.display = 'block';
+}
+
+function quizAdvance() {
+  quiz.idx++;
+  if (quiz.idx >= quiz.items.length) return finishQuiz();
+  renderQuizItem();
+}
+
+function quizRecord(resp) {
+  quiz.results.push({ spelling: quiz.items[quiz.idx].spelling, response: resp });
+}
+
+function renderQuizItem() {
+  const it = quiz.items[quiz.idx];
+  $('#quizProgress').textContent = `第 ${quiz.idx + 1} / ${quiz.items.length} 题`;
+  $('#quizBar').style.width = (quiz.idx / quiz.items.length * 100) + '%';
+  const area = $('#quizArea');
+
+  if (quiz.mode === 'flash') {
+    area.innerHTML = `
+      <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button>
+        ${it.gloss?.phonetic ? `<div class="phonetic">${esc(it.gloss.phonetic)}</div>` : ''}</div>
+      <div class="quiz-hint">想一想它的中文意思，再翻面对答案</div>
+      <div class="quiz-flip-zone" id="quizFlipZone">
+        <button class="btn primary" id="quizFlipBtn">🔄 翻面看答案</button>
+      </div>`;
+    $('#quizFlipBtn').addEventListener('click', () => {
+      $('#quizFlipZone').innerHTML = `
+        <div class="quiz-answer"><span class="pos">${esc(it.gloss.pos || '')}</span>${esc(it.gloss.gloss)}</div>
+        <div class="grade-row">
+          <button class="btn grade g-ok" data-r="FAMILIAR">😊 认识</button>
+          <button class="btn grade g-mid" data-r="VAGUE">😐 模糊</button>
+          <button class="btn grade g-bad" data-r="FORGET">😵 忘记</button>
+        </div>`;
+      $$('#quizFlipZone .grade').forEach(b =>
+        b.addEventListener('click', () => { quizRecord(b.dataset.r); quizAdvance(); }));
+    });
+    return;
+  }
+
+  if (quiz.mode === 'choice') {
+    const distractors = shuffle(quiz.distractorPool.filter(w => w.spelling !== it.spelling))
+      .slice(0, 3).map(w => w.gloss.gloss);
+    const opts = shuffle([{ ok: true, text: it.gloss.gloss }, ...distractors.map(t => ({ ok: false, text: t }))]);
+    area.innerHTML = `
+      <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></div>
+      <div class="quiz-hint">选出正确的释义</div>
+      <div class="quiz-opts">${opts.map((o, i) => `<button class="btn quiz-opt" data-i="${i}">${esc(o.text)}</button>`).join('')}</div>
+      <div class="quiz-feedback" id="quizFeedback"></div>`;
+    let answered = false;
+    $$('#quizArea .quiz-opt').forEach(b => b.addEventListener('click', () => {
+      if (answered) return;
+      answered = true;
+      const ok = opts[Number(b.dataset.i)].ok;
+      b.classList.add(ok ? 'correct' : 'wrong');
+      $('#quizFeedback').innerHTML = ok
+        ? '<span class="fb-ok">✅ 答对了</span>'
+        : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.gloss.gloss)}</b></span>`;
+      quizRecord(ok ? 'FAMILIAR' : 'FORGET');
+      setTimeout(quizAdvance, ok ? 700 : 1800);
+    }));
+    return;
+  }
+
+  // 拼写模式：给中文释义，拼出单词
+  area.innerHTML = `
+    <div class="quiz-answer"><span class="pos">${esc(it.gloss.pos || '')}</span>${esc(it.gloss.gloss)}</div>
+    <div class="quiz-hint">根据释义拼出这个单词（按回车提交）</div>
+    <div class="quiz-spell-row">
+      <input type="text" id="quizSpellInput" class="input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="输入拼写…">
+      <button class="btn primary" id="quizSpellBtn">提交</button>
+    </div>
+    <div class="quiz-feedback" id="quizFeedback"></div>`;
+  const input = $('#quizSpellInput');
+  input.focus();
+  const submit = () => {
+    const val = input.value.trim().toLowerCase();
+    if (!val) return;
+    const ok = val === it.spelling.toLowerCase();
+    $('#quizFeedback').innerHTML = ok
+      ? `<span class="fb-ok">✅ 拼对了！${esc(it.spelling)}</span>`
+      : `<span class="fb-bad">❌ 正确拼写：<b>${esc(it.spelling)}</b> <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></span>`;
+    input.disabled = true;
+    $('#quizSpellBtn').disabled = true;
+    quizRecord(ok ? 'FAMILIAR' : 'FORGET');
+    setTimeout(quizAdvance, ok ? 700 : 2000);
+  };
+  $('#quizSpellBtn').addEventListener('click', submit);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
+}
+
+async function finishQuiz() {
+  quiz.running = false;
+  $('#quizBar').style.width = '100%';
+  $('#quizProgress').textContent = '测验完成 🎉';
+  const r = quiz.results;
+  const cnt = k => r.filter(x => x.response === k).length;
+  let submitNote = '';
+  try {
+    await api('/api/quiz/submit', { method: 'POST', body: { results: r, mode: quiz.mode } });
+    submitNote = '结果已记录：忘记/模糊的词自动进入了对应筛选，回「AI 学习」页可针对性攻克。';
+  } catch {
+    submitNote = '（结果上报失败，本次不计入错词统计）';
+  }
+  $('#quizArea').innerHTML = `
+    <div class="quiz-done">
+      <div class="quiz-score">${cnt('FAMILIAR')} / ${r.length}</div>
+      <div class="quiz-score-sub">认识 ${cnt('FAMILIAR')} · 模糊 ${cnt('VAGUE')} · 忘记 ${cnt('FORGET')}</div>
+      <div class="hint" style="text-align:center">${esc(submitNote)}</div>
+      <div class="row-gap" style="justify-content:center">
+        <button class="btn primary" id="quizAgainBtn">🔁 再来一轮</button>
+        <button class="btn" data-jump="study" data-filter="forget">去学错词</button>
+      </div>
+    </div>`;
+  $('#quizAgainBtn').addEventListener('click', quitQuiz);
+}
 
 /* ---------------- 启动 ---------------- */
 
