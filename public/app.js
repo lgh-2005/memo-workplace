@@ -399,12 +399,50 @@ $('#chatInput').addEventListener('keydown', e => {
 });
 
 $$('#quickRow .chip.q').forEach(c => c.addEventListener('click', () => {
+  if (c.id === 'imgGenChip') return;   // 生图走独立流程
   if (c.dataset.error && !state.activeWord) {
     addMsg('ai', '⚠️ 请先在左侧词表选中一个单词，再标记「我又忘了」。');
     return;
   }
   askAI(c.dataset.q, !!c.dataset.error);
 }));
+
+/* v1.0.6：AI 生图助记 —— 结合当前对话场景生成助记图并内联展示 */
+$('#imgGenChip').addEventListener('click', async () => {
+  if (!state.activeWord) {
+    addMsg('ai', '⚠️ 请先在左侧词表选中一个单词，再生成助记图。');
+    return;
+  }
+  const chip = $('#imgGenChip');
+  chip.disabled = true;
+  const loading = addMsg('ai', '🎨 正在结合当前对话场景生成助记图…（首次生成约需 10-30 秒）');
+  loading.classList.add('loading');
+  try {
+    const r = await api('/api/image/gen', {
+      method: 'POST',
+      body: {
+        spelling: state.activeWord,
+        context: state.chatHistory.slice(-8).map(m => ({ role: m.role, content: m.content })),
+      },
+    });
+    loading.classList.remove('loading');
+    loading.innerHTML = `<span class="word-tag">📘 ${esc(state.activeWord)}</span>
+      <div class="img-note">
+        <img src="${esc(r.url)}" alt="${esc(state.activeWord)} 助记图" loading="lazy">
+        ${r.caption ? `<div class="img-caption">🖼️ ${esc(r.caption)}</div>` : ''}
+        <div class="img-prompt">画面提示词：${esc(r.prompt)}</div>
+      </div>`;
+    state.chatHistory.push({
+      role: 'assistant', word: state.activeWord,
+      content: `🎨 生成了「${state.activeWord}」的助记图：${r.caption || ''}`,
+    });
+  } catch (e) {
+    loading.classList.remove('loading');
+    loading.innerHTML = '❌ ' + esc(e.message) + (e.message.includes('生图服务商') ? '（请到 设置 页配置）' : '');
+  } finally {
+    chip.disabled = false;
+  }
+});
 
 /* 结束会话 -> 生成助记 */
 $('#finishBtn').addEventListener('click', async () => {
@@ -707,6 +745,98 @@ $('#cfgKaoyan').addEventListener('change', async () => {
   } catch (e) {
     alert(e.message);
     $('#cfgKaoyan').checked = !on;
+  }
+});
+
+/* v1.0.6：云词库绑定 */
+$('#loadNotepadsBtn').addEventListener('click', async () => {
+  const btn = $('#loadNotepadsBtn'), sel = $('#cfgNotepad'), out = $('#notepadResult');
+  btn.textContent = '拉取中…'; btn.disabled = true;
+  out.textContent = ''; out.className = 'result';
+  try {
+    const r = await api('/api/notepads');
+    if (!r.notepads.length) {
+      sel.innerHTML = '<option value="">— 账号下没有云词库 —</option>';
+      out.textContent = '⚠️ 账号下没有云词库/收藏本，请先在墨墨 App 里创建一个，再回来绑定';
+      out.className = 'result err';
+      return;
+    }
+    const typeLabel = t => (t === 'FAVORITE' ? '收藏本' : t === 'NOTEPAD' ? '云词本' : (t || ''));
+    sel.innerHTML = '<option value="">— 未绑定 —</option>' + r.notepads.map(np =>
+      `<option value="${esc(np.id)}" ${np.id === r.boundId ? 'selected' : ''}>${esc(np.title)}（${typeLabel(np.type)}）</option>`
+    ).join('');
+    out.textContent = `✅ 共 ${r.notepads.length} 个，选择后自动保存绑定`;
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  } finally {
+    btn.textContent = '拉取云词库列表'; btn.disabled = false;
+  }
+});
+
+$('#cfgNotepad').addEventListener('change', async () => {
+  const sel = $('#cfgNotepad'), out = $('#notepadResult');
+  const id = sel.value;
+  const title = id ? (sel.options[sel.selectedIndex]?.textContent || '') : '';
+  try {
+    await api('/api/config', { method: 'POST', body: { maimemoNotepadId: id, notepadTitle: title } });
+    out.textContent = id ? '✅ 已绑定云词库，之后推送助记会自动确保单词在库中' : '已解绑';
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+});
+
+/* v1.0.6：生图服务商配置 */
+$('#saveImageBtn').addEventListener('click', async () => {
+  const out = $('#imageTestResult');
+  try {
+    await api('/api/config', {
+      method: 'POST',
+      body: {
+        imageGen: {
+          baseUrl: $('#cfgImgUrl').value.trim(),
+          model: $('#cfgImgModel').value.trim(),
+          apiKey: $('#cfgImgKey').value.trim() || undefined,   // 留空沿用
+        },
+      },
+    });
+    $('#cfgImgKey').value = '';
+    out.textContent = '✅ 已保存';
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+});
+
+$('#testImageBtn').addEventListener('click', async () => {
+  const out = $('#imageTestResult');
+  // 先保存表单里的值再测（允许不先保存直接测）
+  try {
+    await api('/api/config', {
+      method: 'POST',
+      body: {
+        imageGen: {
+          baseUrl: $('#cfgImgUrl').value.trim(),
+          model: $('#cfgImgModel').value.trim(),
+          apiKey: $('#cfgImgKey').value.trim() || undefined,
+        },
+      },
+    });
+    $('#cfgImgKey').value = '';
+  } catch { /* 测试时如实暴露错误 */ }
+  out.textContent = '🎨 生成测试图中…（约 10-30 秒）';
+  out.className = 'result';
+  try {
+    const r = await api('/api/test/image', { method: 'POST' });
+    out.innerHTML = `✅ 生图成功！<img class="test-img" src="${esc(r.url)}" alt="测试图">`;
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
   }
 });
 

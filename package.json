@@ -1,8 +1,8 @@
 {
   "name": "english-workbench",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
-  "description": "个人本地英语学习工作台：墨墨数据同步 + AI 互动学习 + 单词测验 + 助记生成 + 考研模式 + 番茄钟",
+  "description": "个人本地英语学习工作台：墨墨数据同步 + AI 互动学习 + 单词测验 + 助记生成（云词库绑定）+ AI 生图助记 + 考研模式 + 番茄钟",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

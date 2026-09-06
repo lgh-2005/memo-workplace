@@ -6,7 +6,10 @@
  *  1. 墨墨背单词 Open API 同步（进度 / 今日词 / 学习记录全量）
  *  2. 本地 JSON 持久化（学习数据 / 学习会话 / 助记内容 / 配置）
  *  3. LLM 代理（OpenAI-compatible /v1/chat/completions，可插拔服务商）
- *  4. 助记生成（会话总结 -> 按词保存）+ 可选推回墨墨 notes API
+ *  4. 助记生成（会话总结 -> 按词保存）+ 推回墨墨 notes API
+ *     v1.0.6：推送前自动绑定云词库（notepad）——词不在库中先追加，再写助记
+ *  5. AI 生图（v1.0.6）：LLM 把单词+对话场景改写成画面提示词，
+ *     调 OpenAI 兼容 /images/generations 出图，落盘 data/images 供前端展示
  *
  * 启动：node server.js  （默认端口 5178）
  */
@@ -20,6 +23,7 @@ const crypto = require('crypto');
 const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, 'data');
 const PUBLIC_DIR = path.join(ROOT, 'public');
+const IMAGES_DIR = path.join(DATA_DIR, 'images');   // v1.0.6：AI 生图落盘目录
 const CONFIG_FILE = path.join(DATA_DIR, 'config.json');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
@@ -39,6 +43,7 @@ const MM_BASE = 'https://open.maimemo.com/open/api/v1/memo';
 
 function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+  if (!fs.existsSync(IMAGES_DIR)) fs.mkdirSync(IMAGES_DIR, { recursive: true });
 }
 
 function loadJSON(file, fallback) {
@@ -60,8 +65,15 @@ let config = loadJSON(CONFIG_FILE, {
   llm: { mock: false, activeId: 'default', providers: [{ id: 'default', name: '默认服务商', baseUrl: '', apiKey: '', model: '' }] },
   autoSync: { enabled: false, minutes: 60 },
   kaoyanMode: false,   // v1.0.5：考研英语一模式（默认关闭）
+  maimemoNotepadId: '',   // v1.0.6：绑定的云词库 id（助记推送前提）
+  notepadTitle: '',
+  imageGen: { baseUrl: '', apiKey: '', model: '' },   // v1.0.6：生图服务商（OpenAI 兼容 images API）
 });
 if (config.kaoyanMode === undefined) config.kaoyanMode = false;   // 旧配置兼容
+// v1.0.6 迁移：云词库绑定与生图配置缺省补齐
+if (config.maimemoNotepadId === undefined) config.maimemoNotepadId = '';
+if (config.notepadTitle === undefined) config.notepadTitle = '';
+if (!config.imageGen || typeof config.imageGen !== 'object') config.imageGen = { baseUrl: '', apiKey: '', model: '' };
 
 // v1.0.2 迁移：旧的单服务商结构自动升级为多服务商列表（老配置无痛升级）
 if (!Array.isArray(config.llm?.providers)) {
@@ -428,7 +440,124 @@ function mockLLM(messages) {
       })),
     });
   }
+  if (sys.includes('美术指导')) {   // v1.0.6：生图提示词 mock
+    const word = (user.match(/当前单词：(.+)/) || [])[1] || 'word';
+    return JSON.stringify({
+      prompt: `A flat-style mock mnemonic illustration for the word "${word.trim()}", bright colors`,
+      caption: '[MOCK] 占位画面说明（自测数据）',
+    });
+  }
   return `[MOCK] 收到！这是一个自测回复。（词义、例句、用法讲解在配置真实 AI 服务商后可用）\n\n关于你的问题「${user.slice(0, 60)}」：本回复来自内置 mock 模式，仅用于验证闭环。`;
+}
+
+/* ---------- v1.0.6：AI 生图（助记图） ---------- */
+
+const IMAGE_PRESETS = {
+  zhipu: { label: '智谱 CogView', baseUrl: 'https://open.bigmodel.cn/api/paas/v4', model: 'cogview-4' },
+  openai: { label: 'OpenAI DALL·E', baseUrl: 'https://api.openai.com/v1', model: 'dall-e-3' },
+};
+
+const IMAGE_PROMPT_SYSTEM = [
+  '你是记忆图片的美术指导，面向中国英语学习者。',
+  '根据当前学习的单词和最近的对话场景，构思一幅"助记图"：把单词的核心义项/记忆钩子画成一个具体、夸张、好记的画面。',
+  '只输出 JSON，不要任何多余文字，格式：{"prompt":"英文画面提示词","caption":"中文一句话说明画面与记忆点"}',
+  '规则：prompt 用英文、一个场景、主体明确、风格统一（明快扁平插画），60 词以内；caption 30 字内点出记忆钩子。',
+].join('\n');
+
+/** 调 OpenAI 兼容 /images/generations 出一张图，落盘后返回本地 URL */
+async function callImageAPI(prompt) {
+  const ig = config.imageGen || {};
+  const baseUrl = (ig.baseUrl || '').trim();
+  const model = (ig.model || '').trim();
+  if (!baseUrl || !model) {
+    const e = new Error('尚未配置生图服务商，请到「设置」页填写 Base URL 与模型');
+    e.code = 'NO_IMG';
+    throw e;
+  }
+  const url = baseUrl.replace(/\/+$/, '') + '/images/generations';
+  let res;
+  try {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(ig.apiKey ? { 'Authorization': 'Bearer ' + ig.apiKey } : {}),
+      },
+      body: JSON.stringify({ model, prompt: String(prompt).slice(0, 2000), n: 1, size: '1024x1024' }),
+    });
+  } catch {
+    throw new Error(`无法连接生图服务（${baseUrl}），请到「设置」检查地址与网络`);
+  }
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(`生图请求失败 (HTTP ${res.status}) ${text.slice(0, 300)}`);
+  }
+  const j = await res.json();
+  const item = (Array.isArray(j.data) && j.data[0]) || {};
+
+  // b64 直接落盘；url 则下载缓存（远端 URL 常带时效，落盘后本地可长期回看）
+  if (item.b64_json) {
+    return saveImageFile(Buffer.from(item.b64_json, 'base64'), 'png');
+  }
+  if (item.url) {
+    try {
+      const imgRes = await fetch(item.url);
+      if (!imgRes.ok) throw new Error(`HTTP ${imgRes.status}`);
+      const buf = Buffer.from(await imgRes.arrayBuffer());
+      const ct = (imgRes.headers.get('content-type') || '').split('/')[1];
+      const ext = ['png', 'jpg', 'jpeg', 'webp'].includes(ct) ? (ct === 'jpeg' ? 'jpg' : ct) : 'png';
+      return saveImageFile(buf, ext);
+    } catch {
+      return { url: item.url };   // 下载失败退回远端 URL，至少能看到图
+    }
+  }
+  throw new Error('生图服务返回内容无法识别（缺少 url / b64_json）');
+}
+
+function saveImageFile(buf, ext) {
+  const name = `img_${Date.now().toString(36)}_${crypto.randomBytes(3).toString('hex')}.${ext}`;
+  fs.writeFileSync(path.join(IMAGES_DIR, name), buf);
+  return { url: '/images/' + name };
+}
+
+/** mock 模式的占位图：本地画一张 SVG，保证全链路可测 */
+function mockImageFile(spelling) {
+  const safe = String(spelling).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="32" fill="#e8f4fd"/>
+  <circle cx="256" cy="210" r="120" fill="#9cd3f5"/>
+  <ellipse cx="256" cy="415" rx="170" ry="26" fill="#bcdff5"/>
+  <text x="256" y="120" font-size="44" text-anchor="middle" fill="#2b6cb0" font-family="sans-serif">MOCK 助记图</text>
+  <text x="256" y="235" font-size="64" font-weight="bold" text-anchor="middle" fill="#1a365d" font-family="sans-serif">${safe}</text>
+  <text x="256" y="310" font-size="26" text-anchor="middle" fill="#4a7aa8" font-family="sans-serif">[MOCK] 自测占位画面</text>
+</svg>`;
+  return saveImageFile(Buffer.from(svg, 'utf8'), 'svg');
+}
+
+/** 生图主流程：LLM 改写画面提示词（失败用模板兜底）→ 出图 → 返回 {url, prompt, caption} */
+async function generateMnemonicImage({ spelling, context = [] }) {
+  if (!spelling) throw new Error('请先选中一个单词');
+
+  let prompt = `A creative flat-style mnemonic illustration for the English word "${spelling}", one clear vivid scene, bright colors`;
+  let caption = `${spelling} 的助记图`;
+  try {
+    const recent = context.slice(-6).map(m => `[${m.role === 'user' ? '学习者' : 'AI'}] ${String(m.content).slice(0, 120)}`).join('\n');
+    const text = await llmChat([
+      { role: 'system', content: IMAGE_PROMPT_SYSTEM },
+      { role: 'user', content: `当前单词：${spelling}\n最近对话（可能为空）：\n${recent || '（无）'}` },
+    ], { maxTokens: 400 });
+    const parsed = parseMnemonicJSON(text);
+    if (parsed?.prompt) prompt = String(parsed.prompt).slice(0, 800);
+    if (parsed?.caption) caption = String(parsed.caption).slice(0, 80);
+  } catch (e) {
+    if (e.code === 'NO_LLM') throw e;   // 连对话模型都没有且非 mock：如实报错
+    // LLM 改写失败不阻塞，用兜底提示词继续出图
+  }
+
+  const img = (config.llm.mock || config.imageGen?.mock)
+    ? mockImageFile(spelling)
+    : await callImageAPI(prompt);
+  return { ...img, prompt, caption, spelling };
 }
 
 /* ------------------------------------------------------------------ */
@@ -621,7 +750,70 @@ async function finishSession(payload) {
   return { sessionId, saved, raw: text };
 }
 
-/** 把助记推回墨墨 notes API（关联 voc_id） */
+/* ---------- v1.0.6：云词库（notepad）绑定 ---------- */
+
+// notepad 内容词缓存（5 分钟）：避免每次推送都全量拉取
+let notepadCache = { id: '', at: 0, words: new Set(), notepad: null };
+
+/** 拉取账号下全部云词库/收藏本（GET /notepads limit 上限 10，翻页到取完为止） */
+async function listNotepads() {
+  const out = [];
+  let offset = 0;
+  for (let page = 0; page < 50; page++) {
+    const data = await mm('/notepads', { query: { limit: 10, offset } });
+    const list = data?.notepads || [];
+    for (const np of list) {
+      out.push({
+        id: np.id, title: np.title, brief: np.brief || '', type: np.type,
+        status: np.status, updatedAt: np.updated_time,
+      });
+    }
+    if (list.length < 10) break;
+    offset += 10;
+  }
+  return out;
+}
+
+/** 确保单词在绑定的云词库中：不在则把拼写追加到 content 末尾并全量更新。
+ *  这是助记能写进墨墨的前提（实测：词不在云词库时 POST /notes 会被拒）。
+ *  注意 POST /notepads/{id} 更新要求 title/brief/content/tags/status 全量携带。 */
+async function ensureWordInNotepad(spelling) {
+  const nid = (config.maimemoNotepadId || '').trim();
+  if (!nid) return;   // 未绑定则不阻塞旧流程（推送仍可能因云词库缺失失败，错误如实上报）
+
+  const now = Date.now();
+  if (notepadCache.id !== nid || now - notepadCache.at > 5 * 60 * 1000) {
+    const data = await mm(`/notepads/${encodeURIComponent(nid)}`);
+    const np = data?.notepad || null;
+    if (!np) throw new Error('云词库不存在或已被删除，请到「设置」重新绑定');
+    const words = (Array.isArray(np.list) ? np.list : [])
+      .filter(it => it?.type === 'WORD')
+      .map(it => String(it?.data?.word || '').toLowerCase());
+    notepadCache = { id: nid, at: now, words: new Set(words), notepad: np };
+  }
+
+  if (notepadCache.words.has(String(spelling).toLowerCase())) return;
+
+  const np = notepadCache.notepad;
+  const content = (np.content || '') + (np.content && !np.content.endsWith('\n') ? '\n' : '') + spelling;
+  await mm(`/notepads/${encodeURIComponent(nid)}`, {
+    method: 'POST',
+    body: {
+      notepad: {
+        title: np.title || '工作台云词库',
+        brief: np.brief || '',
+        content,
+        tags: Array.isArray(np.tags) ? np.tags : [],
+        status: np.status || 'PUBLISHED',
+      },
+    },
+  });
+  // 更新缓存（content 换新，list 由下次全量拉取重建）
+  notepadCache.notepad.content = content;
+  notepadCache.words.add(String(spelling).toLowerCase());
+}
+
+/** 把助记推回墨墨 notes API（关联 voc_id；v1.0.6 起先确保词在绑定的云词库中） */
 async function pushNoteToMaimemo(noteId) {
   const note = db.notes.find(n => n.id === noteId);
   if (!note) throw new Error('助记不存在');
@@ -634,6 +826,16 @@ async function pushNoteToMaimemo(noteId) {
     throw new Error(note.pushError);
   }
   note.vocId = vocId;
+
+  // v1.0.6：词不在云词库中先追加（这是 notes 写入的前提，失败则中断并如实报错）
+  try {
+    await ensureWordInNotepad(note.spelling);
+  } catch (e) {
+    note.pushError = `云词库同步失败：${e.message}`;
+    persistDB();
+    throw new Error(note.pushError);
+  }
+
   const data = await mm('/notes', {
     method: 'POST',
     body: { note: { voc_id: vocId, note_type: note.noteType, note: note.content } },
@@ -777,6 +979,14 @@ const server = http.createServer(async (req, res) => {
           },
           autoSync: config.autoSync,
           kaoyanMode: !!config.kaoyanMode,
+          maimemoNotepadId: config.maimemoNotepadId || '',
+          notepadTitle: config.notepadTitle || '',
+          imageGen: {
+            baseUrl: config.imageGen.baseUrl || '',
+            model: config.imageGen.model || '',
+            hasKey: !!config.imageGen.apiKey,
+          },
+          imagePresets: IMAGE_PRESETS,
           presets: LLM_PRESETS,
         });
       }
@@ -819,6 +1029,23 @@ const server = http.createServer(async (req, res) => {
           };
         }
         if (body.kaoyanMode != null) config.kaoyanMode = !!body.kaoyanMode;
+        // v1.0.6：云词库绑定
+        if (body.maimemoNotepadId !== undefined) {
+          config.maimemoNotepadId = String(body.maimemoNotepadId || '').trim().slice(0, 120);
+        }
+        if (typeof body.notepadTitle === 'string') {
+          config.notepadTitle = body.notepadTitle.slice(0, 60);
+        }
+        // v1.0.6：生图服务商（apiKey 留空沿用已存 Key）
+        if (body.imageGen && typeof body.imageGen === 'object') {
+          const oldImg = config.imageGen || {};
+          config.imageGen = {
+            baseUrl: String(body.imageGen.baseUrl ?? oldImg.baseUrl ?? '').trim(),
+            model: String(body.imageGen.model ?? oldImg.model ?? '').trim(),
+            apiKey: (typeof body.imageGen.apiKey === 'string' && body.imageGen.apiKey.trim())
+              ? body.imageGen.apiKey.trim() : (oldImg.apiKey || ''),
+          };
+        }
         persistConfig();
         armAutoSync();
         return sendJSON(res, 200, { ok: true });
@@ -1007,10 +1234,42 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, note });
       }
 
+      // 云词库列表（v1.0.6：设置页绑定用）
+      if (p === '/api/notepads' && req.method === 'GET') {
+        const notepads = await listNotepads();
+        return sendJSON(res, 200, {
+          notepads,
+          boundId: config.maimemoNotepadId || '',
+          boundTitle: config.notepadTitle || '',
+        });
+      }
+
+      // AI 生图（v1.0.6）：单词 + 会话场景 → 助记图
+      if (p === '/api/image/gen' && req.method === 'POST') {
+        const body = await readBody(req);
+        const spelling = String(body.spelling || '').trim().slice(0, 60);
+        const context = Array.isArray(body.context) ? body.context.slice(-8) : [];
+        const result = await generateMnemonicImage({ spelling, context });
+        return sendJSON(res, 200, { ok: true, ...result });
+      }
+
+      // 生图连通性测试（v1.0.6）
+      if (p === '/api/test/image' && req.method === 'POST') {
+        const result = await generateMnemonicImage({ spelling: 'memory', context: [] });
+        return sendJSON(res, 200, { ok: true, msg: '生图成功！', ...result });
+      }
+
       return sendJSON(res, 404, { error: '接口不存在: ' + p });
     }
 
     /* ---- 静态文件 ---- */
+    // v1.0.6：生成的助记图（/images/*，从 data/images 提供）
+    if (p.startsWith('/images/')) {
+      const imgPath = path.join(IMAGES_DIR, p.slice('/images/'.length));
+      if (!imgPath.startsWith(IMAGES_DIR) || !fs.existsSync(imgPath)) { res.writeHead(404); return res.end('Not Found'); }
+      res.writeHead(200, { 'Content-Type': MIME[path.extname(imgPath).toLowerCase()] || 'application/octet-stream' });
+      return fs.createReadStream(imgPath).pipe(res);
+    }
     let filePath = path.join(PUBLIC_DIR, p === '/' ? 'index.html' : p);
     if (!filePath.startsWith(PUBLIC_DIR)) { res.writeHead(403); return res.end(); }
     if (!fs.existsSync(filePath)) { res.writeHead(404); return res.end('Not Found'); }
@@ -1019,7 +1278,7 @@ const server = http.createServer(async (req, res) => {
     fs.createReadStream(filePath).pipe(res);
   } catch (err) {
     if (p.startsWith('/api/')) {
-      return sendJSON(res, err.code === 'NO_TOKEN' || err.code === 'NO_LLM' ? 400 : 500, { error: err.message, code: err.code });
+      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
     }
     res.writeHead(500); res.end('Server Error');
   }
