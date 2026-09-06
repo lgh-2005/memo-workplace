@@ -692,3 +692,13 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-opt b { color: var(--primary); }
 .kb-ans { color: var(--ok); font-weight: 600; }
 .kb-sentence { line-height: 1.8; font-size: 14px; }
+\n
+
+/* ============ v1.1.4：记录编辑 / AI 审读 ============ */
+.kb-edit-item { border: 1px solid var(--border-tertiary, rgba(127, 127, 127, .25)); border-radius: 10px; padding: 8px 10px; margin: 8px 0; }
+.kb-edit-head { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 6px; }
+.kb-edit-head span { flex: 1; }
+.kb-issue { border-left: 3px solid var(--primary); padding: 6px 10px; margin: 6px 0; font-size: 13px; border-radius: 0 8px 8px 0; background: color-mix(in srgb, var(--primary) 8%, transparent); }
+.kb-issue-high { border-left-color: #e24b4a; }
+.kb-issue-mid { border-left-color: #ba7517; }
+.kb-issue-low { border-left-color: #639922; }

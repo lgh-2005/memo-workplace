@@ -89,6 +89,7 @@ let config = loadJSON(CONFIG_FILE, {
   imageGen: { baseUrl: '', apiKey: '', model: '' },   // v1.0.6：生图服务商（OpenAI 兼容 images API）
   webSearch: { url: '', apiKey: '' },   // v1.0.7：网络搜索服务（通用 url + 密钥）
   dict: { learnersKey: '', collegiateKey: '' },   // v1.0.8：韦氏词典双 key（learners=学习者词典 / collegiate=大学版）
+  mineru: { apiKey: '', mock: false },   // v1.1.4：MinerU 精准解析 API（扫描件 PDF -> Markdown，mineru.net）
 });
 if (config.kaoyanMode === undefined) config.kaoyanMode = false;   // 旧配置兼容
 // v1.0.6 迁移：云词库绑定与生图配置缺省补齐
@@ -99,6 +100,8 @@ if (!config.imageGen || typeof config.imageGen !== 'object') config.imageGen = {
 if (!config.webSearch || typeof config.webSearch !== 'object') config.webSearch = { url: '', apiKey: '' };
 // v1.0.8 迁移：韦氏词典 key 缺省补齐
 if (!config.dict || typeof config.dict !== 'object') config.dict = { learnersKey: '', collegiateKey: '' };
+// v1.1.4 迁移：MinerU 解析配置缺省补齐
+if (!config.mineru || typeof config.mineru !== 'object') config.mineru = { apiKey: '', mock: false };
 
 // v1.0.2 迁移：旧的单服务商结构自动升级为多服务商列表（老配置无痛升级）
 if (!Array.isArray(config.llm?.providers)) {
@@ -458,6 +461,12 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
 function mockLLM(messages) {
   const sys = messages.find(m => m.role === 'system')?.content || '';
   const user = [...messages].reverse().find(m => m.role === 'user')?.content || '';
+  if (sys.includes('质检审读员')) {   // v1.1.4：语料 AI 审读 mock（疑点清单样例）
+    return JSON.stringify({ issues: [
+      { loc: '#2', severity: 'low', desc: '[mock] 段落首行疑似混入页眉（Text 2）' },
+      { loc: '题 27', severity: 'mid', desc: '[mock] 选项 D 与原文用词重合异常高，疑似解析串行' },
+    ] });
+  }
   if (sys.includes('个性化助记')) {
     const words = [...user.matchAll(/### ([\w'-]+)/g)].map(m => m[1]);
     return JSON.stringify({
@@ -1194,7 +1203,7 @@ function kbMergeStore(store, records) {
 }
 
 /** 单文件导入全流程：投放 -> 解析 -> 分库写库（同名覆盖）+ 归档，失败 -> 隔离 + 日志 */
-async function kbImportOne({ name, buf, category, store = 'corpus' }) {
+async function kbImportOne({ name, buf, category, store = 'corpus', parserTag = null }) {
   const safe = kbSafeName(name);
   if (!safe) throw Object.assign(new Error('文件名无效'), { code: 'KB_IMPORT' });
   if (!buf || !buf.length) throw Object.assign(new Error('文件内容为空'), { code: 'KB_IMPORT' });
@@ -1209,7 +1218,7 @@ async function kbImportOne({ name, buf, category, store = 'corpus' }) {
     } else if (ext === '.txt' || ext === '.md' || ext === '') {
       const text = kbDecode(buf);
       const m = text.match(/^#\s+(.+)$/m);
-      parser = 'plain-text';
+      parser = parserTag || 'plain-text';   // v1.1.4：MinerU 通道传入 'mineru-api' 保留来源标记
       parsed = { ok: true, records: [{ rtype: 'note', title: m ? m[1].trim() : safe, text, meta: { chars: text.length } }] };
     } else if (ext === '.html' || ext === '.htm') {
       const { title, text } = kbParseHtml(kbDecode(buf));
@@ -1266,6 +1275,117 @@ async function kbImportOne({ name, buf, category, store = 'corpus' }) {
     records: parsed.records.length,
     rtypes: parsed.records.map(r => RTYPE_LABEL[r.rtype] || r.rtype),
   };
+}
+
+/* ================= v1.1.4：MinerU 精准解析 + 记录编辑/删除 + AI 审读 ================= */
+
+const MINERU_BASE = 'https://mineru.net/api/v4';
+
+/** mock 模式的样例 Markdown（验证 上传->云端->入库 全链路，不调外网） */
+function mineruMockMd(name) {
+  const blanks = Array.from({ length: 20 }, (_, i) => `〖${i + 1}〗`).join(' ');
+  return [
+    '# ' + String(name).replace(/\.pdf$/i, '') + '（MinerU mock 解析）',
+    '',
+    'Section I Use of English',
+    '',
+    'Directions: Read the following text. Choose the best word for each numbered blank and mark the answer sheet.',
+    '',
+    'The standard of education in a country is closely related to its economic growth, and the debate over how to improve it has lasted for decades. ' + blanks,
+    '',
+    'This mock markdown verifies the v1.1.4 MinerU pipeline: upload -> cloud parse -> text record -> corpus.',
+  ].join('\n');
+}
+
+/**
+ * MinerU 标准 API v4 解析 PDF -> Markdown。
+ * 英语特化调参：language=en（英文 OCR 模型）、enable_formula=false（考研英语无公式）、
+ * enable_table=false（真题无表格）、is_ocr 按前端勾选（扫描件强制 OCR）。
+ * 流程：申请上传链接(batch) -> PUT 文件 -> 轮询 batch 结果 -> 下载 ZIP 取 full.md。
+ * 说明：端点/字段按官方 v4 文档实现，若官方字段有出入只需改本函数一处。
+ */
+async function mineruParsePdf(buf, filename, isOcr) {
+  if (!config.mineru.apiKey) {
+    throw Object.assign(new Error('未配置 MinerU Token，请到「设置」页填写（mineru.net/apiManage/token 免费申请）'), { code: 'NO_MINERU' });
+  }
+  const auth = { 'Authorization': 'Bearer ' + config.mineru.apiKey };
+  const apply = await fetch(MINERU_BASE + '/file-urls/batch', {
+    method: 'POST',
+    headers: { ...auth, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'pipeline',          // 无幻觉管线（英语场景不需要 VLM 后端）
+      language: 'en',             // 特化：英文 OCR
+      enable_formula: false,      // 特化：考研英语无公式
+      enable_table: false,        // 特化：真题无表格
+      files: [{ name: filename, is_ocr: !!isOcr }],
+    }),
+  });
+  if (apply.status === 401) {
+    throw Object.assign(new Error('MinerU Token 无效或已过期（约 90 天需更换），请到 mineru.net/apiManage/token 重新生成'), { code: 'NO_MINERU' });
+  }
+  if (!apply.ok) {
+    const t = await apply.text().catch(() => '');
+    throw new Error(`MinerU 申请上传链接失败 (HTTP ${apply.status}) ${t.slice(0, 200)}`);
+  }
+  const aj = await apply.json();
+  const batchId = aj?.data?.batch_id;
+  const putUrl = aj?.data?.file_urls?.[0];
+  if (!batchId || !putUrl) throw new Error('MinerU 返回异常: ' + JSON.stringify(aj).slice(0, 200));
+  const put = await fetch(putUrl, { method: 'PUT', headers: { 'Content-Type': 'application/octet-stream' }, body: buf });
+  if (!put.ok) throw new Error('MinerU 文件上传失败 (HTTP ' + put.status + ')');
+  let zipUrl = null;
+  for (let i = 0; i < 80; i++) {   // 3s 间隔最长 4 分钟（留余量避开 5 分钟请求超时）
+    await new Promise(s => setTimeout(s, 3000));
+    try {
+      const pr = await fetch(`${MINERU_BASE}/extract-results/batch/${encodeURIComponent(batchId)}`, { headers: auth });
+      if (!pr.ok) continue;
+      const pj = await pr.json();
+      const one = pj?.data?.extract_result?.[0];
+      if (!one) continue;
+      if (one.state === 'done' && one.full_zip_url) { zipUrl = one.full_zip_url; break; }
+      if (one.state === 'failed') throw new Error('MinerU 解析失败: ' + String(one.err_msg || '未知原因').slice(0, 200));
+    } catch (e) { if (String(e.message).startsWith('MinerU 解析失败')) throw e; }
+  }
+  if (!zipUrl) throw new Error('MinerU 解析超时（4 分钟），请稍后重试或改用本地导入');
+  const zr = await fetch(zipUrl);
+  if (!zr.ok) throw new Error('MinerU 结果下载失败 (HTTP ' + zr.status + ')');
+  const zbuf = Buffer.from(await zr.arrayBuffer());
+  const md = kbUnzipEntry(zbuf, 'full.md');
+  if (!md) throw new Error('MinerU 结果包中未找到 full.md');
+  return md.toString('utf8');
+}
+
+/** v1.1.4：按 id 定位记录所在库（真题库优先） */
+function kbFindStoreOf(id) {
+  if (loadExams().some(r => r.id === id)) return 'exam';
+  if (loadKb().some(r => r.id === id)) return 'corpus';
+  return null;
+}
+
+/** v1.1.4：按 id 原子改写单条记录（mutator 返回 null = 删除该行）；坏行原样保留 */
+function kbMutateStore(store, id, mutator) {
+  const file = store === 'exam' ? examsFile() : kbFile();
+  if (!fs.existsSync(file)) return { ok: false, reason: '库文件不存在' };
+  const lines = fs.readFileSync(file, 'utf8').split('\n');
+  let hit = null;
+  const out = [];
+  for (const line of lines) {
+    if (!line.trim()) continue;
+    let obj = null;
+    try { obj = JSON.parse(line); } catch { out.push(line); continue; }
+    if (!hit && obj && obj.id === id) {
+      hit = obj;
+      const r = mutator(obj);
+      if (r) out.push(JSON.stringify(r));
+      continue;
+    }
+    out.push(line);
+  }
+  if (!hit) return { ok: false, reason: '记录不存在：' + id };
+  const tmp = file + '.tmp';
+  fs.writeFileSync(tmp, out.join('\n') + (out.length ? '\n' : ''), 'utf8');
+  fs.renameSync(tmp, file);
+  return { ok: true, title: hit.title || hit.id, rtype: hit.rtype };
 }
 
 /** 粘贴直录：内容写为 txt 投放，走同一条导入管线（有归档、有日志） */
@@ -1740,6 +1860,10 @@ const server = http.createServer(async (req, res) => {
             hasLearners: !!config.dict.learnersKey,
             hasCollegiate: !!config.dict.collegiateKey,
           },
+          mineru: {
+            hasKey: !!config.mineru.apiKey,
+            mock: !!config.mineru.mock,
+          },
           kb: {
             dir: (config.kb && config.kb.dir) || '',
             pythonPath: (config.kb && config.kb.pythonPath) || '',
@@ -1827,6 +1951,12 @@ const server = http.createServer(async (req, res) => {
             collegiateKey: (typeof body.dict.collegiateKey === 'string' && body.dict.collegiateKey.trim())
               ? body.dict.collegiateKey.trim() : (oldD.collegiateKey || ''),
           };
+        }
+        // v1.1.4：MinerU 解析服务（Token 留空 = 沿用已存）
+        if (body.mineru && typeof body.mineru === 'object') {
+          if (!config.mineru || typeof config.mineru !== 'object') config.mineru = { apiKey: '', mock: false };
+          if (typeof body.mineru.apiKey === 'string' && body.mineru.apiKey.trim()) config.mineru.apiKey = body.mineru.apiKey.trim();
+          if (body.mineru.mock != null) config.mineru.mock = !!body.mineru.mock;
         }
         // v1.1.0：语料库数据源目录（留空 = 用仓库内 corpus/）
         if (body.kb && typeof body.kb === 'object' && typeof body.kb.dir === 'string') {
@@ -2156,7 +2286,7 @@ const server = http.createServer(async (req, res) => {
           if (!r) return sendJSON(res, 404, { error: '记录不存在' });
           return sendJSON(res, 200, {
             ok: true,
-            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: kbOrderedItems(r) },
+            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: u.searchParams.get('raw') === '1' ? (r.items || []) : kbOrderedItems(r) },
           });
         }
       }
@@ -2166,6 +2296,134 @@ const server = http.createServer(async (req, res) => {
         const q = u.searchParams.get('q') || '';
         const results = kbSearch(q, 40);
         return sendJSON(res, 200, { ok: true, query: q, count: results.length, results });
+      }
+
+      /* ---------------- v1.1.4：MinerU 云端解析 + 记录编辑/删除 + AI 审读 ---------------- */
+
+      // MinerU 解析：PDF -> 云端 Markdown -> 文本记录入库（扫描件/复杂版面专用通道）
+      if (p === '/api/mineru/parse' && req.method === 'POST') {
+        const body = await readBody(req, 60e6);
+        const it = (Array.isArray(body.items) ? body.items : [])[0];
+        if (!it || typeof it.name !== 'string' || typeof it.data64 !== 'string') {
+          return sendJSON(res, 400, { error: '缺少文件（name + data64）', code: 'KB_IMPORT' });
+        }
+        const safe = kbSafeName(it.name);
+        if (!safe || !/\.pdf$/i.test(safe)) return sendJSON(res, 400, { error: 'MinerU 通道目前只收 PDF 文件', code: 'KB_IMPORT' });
+        let buf;
+        try { buf = Buffer.from(it.data64, 'base64'); } catch { return sendJSON(res, 400, { error: 'base64 解码失败', code: 'KB_IMPORT' }); }
+        let md;
+        if (config.mineru.mock) {
+          md = mineruMockMd(safe);   // mock 放在 Token 校验之前（经验总结坑：mock 分支要能进）
+        } else {
+          md = await mineruParsePdf(buf, safe, !!body.ocr);
+        }
+        const base = safe.replace(/\.pdf$/i, '');
+        const r = await kbImportOne({
+          name: base + '.md',
+          buf: Buffer.from(md, 'utf8'),
+          category: KB_CATEGORIES.includes(body.category) ? body.category : '真题',
+          store: 'corpus',
+          parserTag: 'mineru-api',
+        });
+        return sendJSON(res, 200, { ok: true, mineru: true, ...r });
+      }
+
+      // MinerU 连通性测试（401=Token 失效；400=参数错但 Token 有效，均视为可达）
+      if (p === '/api/test/mineru' && req.method === 'POST') {
+        if (config.mineru.mock) return sendJSON(res, 200, { ok: true, msg: 'mock 模式：MinerU 链路可用（未调云端）' });
+        if (!config.mineru.apiKey) {
+          return sendJSON(res, 400, { error: '未配置 MinerU Token，请到「设置」页填写（mineru.net/apiManage/token 免费申请）', code: 'NO_MINERU' });
+        }
+        const tr = await fetch(MINERU_BASE + '/file-urls/batch', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + config.mineru.apiKey },
+          body: JSON.stringify({ files: [] }),
+        });
+        if (tr.status === 401) {
+          throw new Error('MinerU Token 无效或已过期（约 90 天需更换），请到 mineru.net/apiManage/token 重新生成');
+        }
+        if (!tr.ok && tr.status !== 400) {
+          const t = await tr.text().catch(() => '');
+          throw new Error(`MinerU API 请求失败 (HTTP ${tr.status}) ${t.slice(0, 200)}`);
+        }
+        return sendJSON(res, 200, { ok: true, msg: 'MinerU API 连接成功（Token 有效）' });
+      }
+
+      // 记录编辑（title/text/items 合并式更新；items 数组整体替换，删条目 = 数组里去掉）
+      if (p === '/api/kb/record/update' && req.method === 'POST') {
+        const body = await readBody(req);
+        if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
+        const store = body.store || kbFindStoreOf(body.id);
+        if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
+        const cleanText = s => String(s ?? '').slice(0, 2e6);
+        const r = kbMutateStore(store, body.id, rec => {
+          if (typeof body.title === 'string' && body.title.trim()) rec.title = body.title.trim().slice(0, 200);
+          if (typeof body.text === 'string') rec.text = cleanText(body.text);
+          if (Array.isArray(body.items)) {
+            rec.items = body.items.slice(0, 300).map(it => {
+              const o = { type: String(it.type || 'question'), section: it.section ?? null };
+              if (it.number != null) o.number = it.number;
+              if (it.text != null) o.text = cleanText(it.text);
+              if (it.passage_id != null) o.passage_id = it.passage_id;
+              if (it.options && typeof it.options === 'object') o.options = it.options;
+              if (it.qtype) o.qtype = String(it.qtype).slice(0, 20);
+              if (it.score != null) o.score = it.score;
+              if (it.part) o.part = String(it.part).slice(0, 4);
+              if (it.answer != null) o.answer = cleanText(it.answer).slice(0, 200);
+              return o;
+            });
+          }
+          rec.edited_at = new Date().toISOString().slice(0, 19);   // 编辑留痕（审核溯源用）
+          return rec;
+        });
+        if (!r.ok) return sendJSON(res, r.reason.includes('不存在') ? 404 : 400, { error: r.reason });
+        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(edit)', status: 'updated', store, records: 1, reason: String(r.title).slice(0, 80) });
+        return sendJSON(res, 200, { ok: true, title: r.title, edited_at: 'saved' });
+      }
+
+      // 记录删除（解析原件仍保留在 archive/，可重导恢复；删除写日志）
+      if (p === '/api/kb/record/delete' && req.method === 'POST') {
+        const body = await readBody(req);
+        if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
+        const store = body.store || kbFindStoreOf(body.id);
+        if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
+        const r = kbMutateStore(store, body.id, () => null);
+        if (!r.ok) return sendJSON(res, r.reason.includes('不存在') ? 404 : 400, { error: r.reason });
+        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(delete)', status: 'deleted', store, records: 1, reason: String(r.title).slice(0, 80) });
+        return sendJSON(res, 200, { ok: true, title: r.title });
+      }
+
+      // AI 审读（建议者，不是提交者：只出疑点清单，不改任何数据）
+      if (p === '/api/kb/review' && req.method === 'POST') {
+        const body = await readBody(req);
+        if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
+        const store = body.store || kbFindStoreOf(body.id);
+        if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
+        const rec = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
+        if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
+        const strip = s => String(s || '').replace(/〖\/\d+〗/g, '').replace(/〖\d+〗/g, ' ');
+        const material = (Array.isArray(rec.items) && rec.items.length)
+          ? rec.items.map((it, i) => `#${i + 1} [${it.type || 'item'}${it.section ? '/' + it.section : ''}${it.number != null ? ' 题' + it.number : ''}] ${strip(it.text).slice(0, 260)}`).join('\n').slice(0, 9000)
+          : strip(rec.text).slice(0, 9000);
+        const reply = await llmChat([
+          { role: 'system', content: [
+            '你是考研英语真题语料的质检审读员。审读导入的语料记录，找出解析/OCR 造成的问题，例如：',
+            '句子残缺或截断、乱码与字形损坏、题号断档或重复、选项丢失、段落错序、页眉页脚水印混入、明显重复段落。',
+            '只报告有把握的问题，不要臆测内容含义，不要改写文本。',
+            '严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","severity":"high|mid|low","desc":"问题描述(50字内)"}]}；没有问题输出 {"issues":[]}。',
+          ].join('\n') },
+          { role: 'user', content: `记录：${rec.title || rec.id}\n${material}` },
+        ], { maxTokens: 1200 });
+        const parsed = parseMnemonicJSON(reply);
+        if (!parsed || !Array.isArray(parsed.issues)) {
+          throw Object.assign(new Error('AI 审读输出无法解析为疑点清单（schema 不符），原始输出：' + String(reply).slice(0, 120)), { code: 'KB_IMPORT' });
+        }
+        const issues = parsed.issues
+          .filter(x => x && typeof x.desc === 'string' && x.desc.trim())
+          .slice(0, 30)
+          .map(x => ({ loc: String(x.loc || '?').slice(0, 40), severity: ['high', 'mid', 'low'].includes(x.severity) ? x.severity : 'mid', desc: x.desc.trim().slice(0, 120) }));
+        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(review)', status: 'reviewed', store, records: issues.length });
+        return sendJSON(res, 200, { ok: true, issues, reviewed_at: new Date().toISOString().slice(0, 19), mock: !!config.llm.mock });
       }
 
       // v1.1.1：语料导入（文件 base64 数组 + 可选粘贴直录）
@@ -2242,7 +2500,7 @@ const server = http.createServer(async (req, res) => {
           if (!r) return sendJSON(res, 404, { error: '记录不存在' });
           return sendJSON(res, 200, {
             ok: true,
-            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: kbOrderedItems(r), sections: examSummary(r).sections },
+            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: u.searchParams.get('raw') === '1' ? (r.items || []) : kbOrderedItems(r), sections: examSummary(r).sections },
           });
         }
       }
@@ -2288,7 +2546,7 @@ const server = http.createServer(async (req, res) => {
         // v1.1.3：请求体超限 = 413，并提示 nginx 反代需同步放宽 client_max_body_size
         return sendJSON(res, 413, { error: err.message + '（若经 nginx 反代访问，还需放宽 client_max_body_size）', code: 'BODY_TOO_LARGE' });
       }
-      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'KB_IMPORT'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
+      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'KB_IMPORT', 'NO_MINERU'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
     }
     res.writeHead(500); res.end('Server Error');
   }

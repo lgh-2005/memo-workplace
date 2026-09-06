@@ -617,6 +617,7 @@ async function loadConfig() {
     if (c.webSearch?.hasKey) $('#cfgSearchKey').placeholder = '已保存 ✓（留空 = 沿用）';
     /* v1.0.8：韦氏词典 Key 状态提示 */
     if (c.dict?.hasLearners) $('#cfgDictLearners').placeholder = '已保存 ✓（留空 = 沿用）';
+    if (c.mineru?.hasKey) $('#cfgMineruKey').placeholder = '已保存 ✓（留空 = 沿用）';
     if (c.dict?.hasCollegiate) $('#cfgDictCollegiate').placeholder = '已保存 ✓（留空 = 沿用）';
     renderProviders();
   } catch (e) { console.error(e); }
@@ -1068,6 +1069,9 @@ async function openKbRecord(rid) {
   try {
     const r = await api('/api/kb/record/' + rid);
     const rec = r.record;
+    kbDetailState = { prefix: 'kb', id: rid, rec: null };
+    kbCloseEditor();
+    $('#kbIssuesPanel').innerHTML = '';
     $('#kbDetailTitle').textContent = rec.title || rec.id;
     $('#kbDetailMeta').textContent = [
       rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
@@ -1401,6 +1405,9 @@ async function openExamRecord(exid) {
   try {
     const r = await api('/api/exam/record/' + exid);
     const rec = r.record;
+    kbDetailState = { prefix: 'ex', id: exid, rec: null };
+    kbCloseEditor();
+    $('#exIssuesPanel').innerHTML = '';
     $('#exDetailTitle').textContent = rec.title || rec.id;
     $('#exDetailMeta').textContent = [
       rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
@@ -1474,6 +1481,213 @@ $('#exBackBtn').addEventListener('click', () => {
   $('#exListResult').textContent = '';
   $('#exListResult').className = 'result';
 });
+
+/* ---------------- v1.1.4：MinerU 云端解析 + 记录编辑/删除/AI 审读 ---------------- */
+
+let kbDetailState = { prefix: 'kb', id: null, rec: null };
+
+function kbCloseEditor() {
+  ['kb', 'ex'].forEach(px => {
+    const p = $('#' + px + 'EditPanel');
+    if (p) { p.style.display = 'none'; p.innerHTML = ''; }
+  });
+  kbDetailState.rec = null;
+}
+
+function buildMineruBody() {
+  return { mineru: { apiKey: $('#cfgMineruKey').value.trim() || undefined } };   // 留空沿用
+}
+
+$('#saveMineruBtn').addEventListener('click', async () => {
+  const out = $('#mineruTestResult');
+  try {
+    await api('/api/config', { method: 'POST', body: buildMineruBody() });
+    $('#cfgMineruKey').value = '';
+    out.textContent = '✅ 已保存';
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+});
+
+$('#testMineruBtn').addEventListener('click', async () => {
+  const out = $('#mineruTestResult');
+  try { await api('/api/config', { method: 'POST', body: buildMineruBody() }); $('#cfgMineruKey').value = ''; }
+  catch { /* 测试时如实暴露错误 */ }
+  out.textContent = '🛰 MinerU 连接测试中…';
+  out.className = 'result';
+  try {
+    const r = await api('/api/test/mineru', { method: 'POST' });
+    out.textContent = '✅ ' + r.msg;
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+});
+
+/* MinerU 云端导入：逐文件上传（云端解析约 1-2 分钟/文件），产出文本记录入库 */
+async function mineruDoImport(store) {
+  const isExam = store === 'exam';
+  const out = isExam ? $('#exImportResult') : $('#kbImportResult');
+  const fileInput = isExam ? $('#exMineruFile') : $('#kbMineruFile');
+  const ocr = isExam ? $('#exMineruOcr').checked : $('#kbMineruOcr').checked;
+  const category = isExam ? '真题' : $('#kbImportCategory').value;
+  const files = [...fileInput.files];
+  if (!files.length) {
+    out.textContent = '⚠️ 请先选择 PDF 文件';
+    out.className = 'result err';
+    return;
+  }
+  for (const f of files) {
+    if (f.size > 30 * 1024 * 1024) {
+      out.textContent = `❌ ${esc(f.name)} 超过 30MB 上限`;
+      out.className = 'result err';
+      return;
+    }
+  }
+  const lines = [];
+  out.className = 'result';
+  for (const f of files) {
+    out.textContent = `🛰 ${f.name} 已提交 MinerU 云端解析…（约 1-2 分钟/文件，请勿关闭页面）`;
+    try {
+      const r = await api('/api/mineru/parse', { method: 'POST', body: { items: [{ name: f.name, data64: await kbFileToB64(f) }], ocr, category } });
+      lines.push(r.ok
+        ? `✅ ${esc(f.name)} → ${r.records} 条记录（${esc((r.rtypes || []).join('/'))} · MinerU 云端解析）`
+        : `⛔ ${esc(f.name)}：${esc(r.reason || '解析失败')}`);
+    } catch (e) {
+      lines.push(`⛔ ${esc(f.name)}：${esc(e.message)}`);
+    }
+  }
+  out.innerHTML = lines.join('<br>');
+  out.className = 'result ok';
+  fileInput.value = '';
+  if (isExam) { examState.loaded = false; loadExamList(); }
+  else { kbState.loaded = false; loadKb(); }
+}
+
+$('#kbMineruBtn').addEventListener('click', () => mineruDoImport('corpus'));
+$('#exMineruBtn').addEventListener('click', () => mineruDoImport('exam'));
+
+/* 记录编辑：编辑面板基于 ?raw=1 的原始条目顺序；删条目/改文字在内存标记，保存时一次性提交 */
+async function kbToggleEditor() {
+  const { prefix, id } = kbDetailState;
+  if (!id) return;
+  const panel = $('#' + prefix + 'EditPanel');
+  if (panel.style.display === 'block') { kbCloseEditor(); return; }
+  panel.innerHTML = '<div class="hint">加载原始记录…</div>';
+  panel.style.display = 'block';
+  try {
+    const r = await api('/api/kb/record/' + id + '?raw=1');
+    kbDetailState.rec = r.record;
+    kbRenderEditor(prefix, r.record);
+  } catch (e) {
+    panel.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
+  }
+}
+
+function kbRenderEditor(prefix, rec) {
+  const panel = $('#' + prefix + 'EditPanel');
+  const items = rec.items || [];
+  const rows = items.map((it, i) => `
+    <div class="kb-edit-item">
+      <div class="kb-edit-head"><b>#${i + 1}</b><span>${esc(it.type || '')}${it.section ? ' · ' + esc(KB_SECTION_LABEL[it.section] || it.section) : ''}${it.number != null ? ' · 第 ' + esc(String(it.number)) + ' 题' : ''}</span>
+        <button class="btn ghost" style="padding:2px 10px;font-size:12px" data-del="${i}">✕ 删此条</button></div>
+      <textarea class="input kb-item-text" data-i="${i}" rows="${Math.min(10, Math.max(3, Math.ceil(((it.text || '').length) / 90)))}">${esc(it.text || '')}</textarea>
+    </div>`).join('');
+  panel.innerHTML = `
+    <label class="field-label">标题</label>
+    <input type="text" class="input" id="${prefix}EditTitle" value="${esc(rec.title || '')}">
+    ${items.length
+      ? `<label class="field-label" style="margin-top:8px">条目（${items.length} 条 · 改文字或删条目，保存后生效）</label><div>${rows}</div>`
+      : `<label class="field-label" style="margin-top:8px">正文</label><textarea class="input" id="${prefix}EditText" rows="10">${esc(rec.text || '')}</textarea>`}
+    <div class="row-gap" style="margin-top:10px">
+      <button class="btn primary" id="${prefix}EditSave">💾 保存修改</button>
+      <button class="btn ghost" id="${prefix}EditCancel">取消编辑</button>
+    </div>
+    <div class="result" id="${prefix}EditResult"></div>`;
+  $$('#' + prefix + 'EditPanel .kb-item-text').forEach(t =>
+    t.addEventListener('input', () => { items[+t.dataset.i]._newText = t.value; }));
+  $$('#' + prefix + 'EditPanel [data-del]').forEach(b => b.addEventListener('click', () => {
+    const i = +b.dataset.del;
+    items[i]._del = !items[i]._del;
+    b.textContent = items[i]._del ? '↩ 恢复' : '✕ 删此条';
+    b.closest('.kb-edit-item').style.opacity = items[i]._del ? '.45' : '';
+  }));
+  $('#' + prefix + 'EditCancel').addEventListener('click', kbCloseEditor);
+  $('#' + prefix + 'EditSave').addEventListener('click', async () => {
+    const out = $('#' + prefix + 'EditResult');
+    const body = { id: kbDetailState.id, title: $('#' + prefix + 'EditTitle').value };
+    if (items.length) {
+      body.items = items.filter(it => !it._del).map(it => {
+        const o = {};
+        for (const k of ['type', 'section', 'number', 'passage_id', 'options', 'qtype', 'score', 'part', 'answer']) {
+          if (it[k] !== undefined && it[k] !== null) o[k] = it[k];
+        }
+        o.text = it._newText !== undefined ? it._newText : (it.text || '');
+        return o;
+      });
+    } else {
+      body.text = $('#' + prefix + 'EditText').value;
+    }
+    out.textContent = '保存中…';
+    out.className = 'result';
+    try {
+      const r = await api('/api/kb/record/update', { method: 'POST', body });
+      out.textContent = '✅ 已保存（' + esc(r.title) + '）';
+      out.className = 'result ok';
+      kbCloseEditor();
+      if (prefix === 'kb') { kbState.loaded = false; loadKb(); openKbRecord(kbDetailState.id); }
+      else { examState.loaded = false; loadExamList(); openExamRecord(kbDetailState.id); }
+    } catch (e) {
+      out.textContent = '❌ ' + e.message;
+      out.className = 'result err';
+    }
+  });
+}
+
+/* 记录删除：确认框 + 写导入日志（解析原件仍在 archive/，可重导恢复） */
+async function kbDeleteCurrent() {
+  const { prefix, id } = kbDetailState;
+  if (!id) return;
+  if (!confirm('确定删除这条记录吗？\n（解析原件仍保留在 archive/，可重新导入恢复；删除会写入导入日志）')) return;
+  try {
+    const r = await api('/api/kb/record/delete', { method: 'POST', body: { id } });
+    alert('已删除：' + r.title);
+    kbCloseEditor();
+    $('#' + (prefix === 'kb' ? 'kbDetailCard' : 'exDetailCard')).style.display = 'none';
+    if (prefix === 'kb') { kbState.loaded = false; loadKb(); }
+    else { examState.loaded = false; loadExamList(); }
+  } catch (e) {
+    alert('删除失败：' + e.message);
+  }
+}
+
+/* AI 审读：LLM 找解析疑点，只出清单不改数据（建议者，不是提交者） */
+async function kbDoReview() {
+  const { prefix, id } = kbDetailState;
+  if (!id) return;
+  const out = $('#' + prefix + 'IssuesPanel');
+  out.innerHTML = '<div class="hint">🤖 AI 审读中…（把记录交给 LLM 找解析疑点，只出报告、不改数据）</div>';
+  try {
+    const r = await api('/api/kb/review', { method: 'POST', body: { id } });
+    const cls = { high: 'kb-issue-high', mid: 'kb-issue-mid', low: 'kb-issue-low' };
+    out.innerHTML = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}</div>` +
+      (r.issues.length
+        ? r.issues.map(x => `<div class="kb-issue ${cls[x.severity] || 'kb-issue-mid'}"><b>${esc(x.loc)}</b> · ${esc(x.severity)} · ${esc(x.desc)}</div>`).join('')
+        : '<div class="hint">✅ 未发现明显疑点（AI 审读仅供参考，改动仍走人工编辑）</div>');
+  } catch (e) {
+    out.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
+  }
+}
+
+$('#kbEditBtn').addEventListener('click', kbToggleEditor);
+$('#exEditBtn').addEventListener('click', kbToggleEditor);
+$('#kbDelBtn').addEventListener('click', kbDeleteCurrent);
+$('#exDelBtn').addEventListener('click', kbDeleteCurrent);
+$('#kbReviewBtn').addEventListener('click', kbDoReview);
+$('#exReviewBtn').addEventListener('click', kbDoReview);
 
 /* ---------------- 番茄钟 ---------------- */
 
