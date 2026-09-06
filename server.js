@@ -17,6 +17,9 @@
  *     本地缓存 data/dict/，真人发音 mp3，权威释义/词源注入 AI 教练上下文
  *  9. 题库/语料库（v1.1.0）：读 corpus/records.jsonl（导入工程产出），
  *     契约化浏览/搜索 API，真题原句注入 AI 教练（带来源标注）
+ * 10. 语料导入（v1.1.1）：网页端导入按钮——投放(imports) -> 解析 -> 归档(archive)/
+ *     隔离(quarantine) + 导入日志，同名重导覆盖；TeX/PDF 走 corpus_tools/ 内置
+ *     Python 适配器，txt/md/html/docx 纯 Node 解析；取消板块固定排序（模块化）
  *
  * 启动：node server.js  （默认端口 5178）
  */
@@ -26,6 +29,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { spawn, spawnSync } = require('child_process');
 
 const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, 'data');
@@ -794,10 +798,11 @@ async function dictLookup(word) {
 
 /* ---------- v1.1.0：题库 / 语料库（导入工程产出的 records.jsonl） ---------- */
 /* 数据契约见《导入解析-经验总结.md》：rtype=qa_set|article|document|note，
-   items 用 〖N〗（挖空/新题型答题框）/ 〖N〗…〖/N〗（翻译划线）做交互锚点；
-   板块固定顺序：完形→阅读A→新题型→翻译→写作，板块内题干在前、题目在后。 */
+   items 用 〖N〗（挖空/新题型答题框）/ 〖N〗…〖/N〗（翻译划线）做交互锚点。
+   v1.1.1：取消「完形→阅读→新题型→翻译→写作」固定板块排序——真题与语料有多样性，
+   工作台做模块化渲染而非限制顺序；条目顺序尊重数据层（板块按首次出现，
+   板块内题干在前、题目按题号，带 passage_id 的题目跟随所属原文）。 */
 
-const KB_SECTION_ORDER = { use_of_english: 0, reading: 1, part_b: 2, translation: 3, writing: 4 };
 const KB_SECTION_LABEL = {
   use_of_english: '完形填空', reading: '阅读 A', part_b: '新题型',
   translation: '翻译', writing: '写作', misc: '其他',
@@ -828,12 +833,29 @@ function loadKb() {
   return kbCache.records;
 }
 
-/** 契约排序：板块固定顺序 + 题干（passage/writing）在前、题目按题号在后 */
-function kbSortedItems(record) {
+/** 渲染排序（v1.1.1 模块化版）：不预设板块顺序，按语料自身顺序渲染；
+ *  板块内仅保证题干（passage/writing）在前、题目按题号在后，题目跟随所属原文。 */
+function kbOrderedItems(record) {
   const items = Array.isArray(record.items) ? [...record.items] : [];
+  // 板块按首次出现顺序编号（数据即语义，不做全局重排）
+  const secRank = new Map();
+  for (const it of items) {
+    const s = it.section || '';
+    if (!secRank.has(s)) secRank.set(s, secRank.size);
+  }
+  // 板块内原文按首次出现编号，题目（passage_id）跟随所属原文
+  const psgRank = new Map();
+  for (const it of items) {
+    if (it.type === 'passage' && it.passage_id != null && !psgRank.has(it.passage_id)) {
+      psgRank.set(it.passage_id, psgRank.size);
+    }
+  }
   items.sort((a, b) => {
-    const so = (KB_SECTION_ORDER[a.section] ?? 99) - (KB_SECTION_ORDER[b.section] ?? 99);
-    if (so !== 0) return so;
+    const sr = (secRank.get(a.section || '') ?? 999) - (secRank.get(b.section || '') ?? 999);
+    if (sr !== 0) return sr;
+    const pr = ((a.passage_id != null && psgRank.has(a.passage_id)) ? psgRank.get(a.passage_id) : 9999)
+             - ((b.passage_id != null && psgRank.has(b.passage_id)) ? psgRank.get(b.passage_id) : 9999);
+    if (pr !== 0) return pr;
     const lead = x => (x.type === 'passage' || x.type === 'writing') ? 0 : 1;
     if (lead(a) !== lead(b)) return lead(a) - lead(b);
     return (a.number || 0) - (b.number || 0);
@@ -918,6 +940,230 @@ function kbSummary(r) {
     source: r.source ? { file: r.source.file, parser: r.source.parser, imported_at: r.source.imported_at, category: r.source.category } : null,
     preview: String(r.text || (items[0] && items[0].text) || '').replace(/〖\/?\d+〗/g, '').slice(0, 90),
   };
+}
+
+/* ---------- v1.1.1：语料导入（投放 -> 解析 -> 归档/隔离 + 日志） ---------- */
+/* 目录契约（相对 records.jsonl 所在目录，参照《导入解析-经验总结.md》）：
+   imports/<分类>/   投放区（上传先落这里）
+   archive/<分类>/   原件层（解析成功后归档，不可变）
+   quarantine/       识别失败隔离区，绝不静默丢弃
+   import_log.jsonl  流水：每次导入/隔离都有痕迹
+   去重：以源文件名为键，同名重导覆盖旧记录（replace-by-source）。 */
+
+const KB_CATEGORIES = ['真题', '外刊', '教材', '直录'];
+const KB_IMPORT_MAX = 30 * 1024 * 1024;   // 单文件上限 30MB
+
+function kbBaseDir() { return path.dirname(kbFile()); }
+
+function kbDir(...segs) {
+  const dir = path.join(kbBaseDir(), ...segs);
+  fs.mkdirSync(dir, { recursive: true });
+  return dir;
+}
+
+function kbLog(entry) {
+  try {
+    fs.appendFileSync(path.join(kbBaseDir(), 'import_log.jsonl'), JSON.stringify(entry) + '\n', 'utf8');
+  } catch { /* 日志失败不影响导入主流程 */ }
+}
+
+function kbSafeName(name) {
+  const s = path.basename(String(name || '')).replace(/[\\/:*?"<>|\u0000]/g, '_').trim();
+  return s && s !== '.' && s !== '..' ? s.slice(0, 120) : '';
+}
+
+/** 文本解码：UTF-8 优先，替换符过多时回退 GBK（中文 txt 常见） */
+function kbDecode(buf) {
+  const s = buf.toString('utf8');
+  if ((s.match(/\uFFFD/g) || []).length > s.length * 0.01) {
+    try { return new TextDecoder('gbk').decode(buf); } catch { /* 无 GBK 支持则原样返回 */ }
+  }
+  return s;
+}
+
+function kbEntities(s) {
+  return s.replace(/&nbsp;/gi, ' ').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"').replace(/&#39;|&apos;/gi, "'").replace(/&amp;/gi, '&');
+}
+
+/** HTML -> 纯文本（去 script/style 等噪声块，块级标签转换行） */
+function kbParseHtml(raw) {
+  const tm = raw.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+  const title = tm ? kbEntities(tm[1]).replace(/\s+/g, ' ').trim() : null;
+  const text = raw
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<(script|style|noscript|svg|nav|footer|header|form)[\s\S]*?<\/\1>/gi, '')
+    .replace(/<\s*(br|\/p|\/div|\/h[1-6]|\/li|\/tr|\/section|\/article|\/blockquote)[^>]*>/gi, '\n')
+    .replace(/<[^>]+>/g, '');
+  return {
+    title: title || null,
+    text: kbEntities(text).replace(/[ \t]+/g, ' ').replace(/\n\s*\n\s*/g, '\n\n').trim(),
+  };
+}
+
+/** 最小 zip 读取（走中央目录）：返回指定条目的解压内容，找不到返回 null */
+function kbUnzipEntry(buf, wantName) {
+  let i = buf.length - 22;
+  for (; i >= 0; i--) {
+    if (buf[i] === 0x50 && buf[i + 1] === 0x4b && buf[i + 2] === 0x05 && buf[i + 3] === 0x06) break;
+  }
+  if (i < 0) return null;
+  const count = buf.readUInt16LE(i + 10);
+  let p = buf.readUInt32LE(i + 16);
+  for (let k = 0; k < count; k++) {
+    if (buf.readUInt32LE(p) !== 0x02014b50) return null;
+    const method = buf.readUInt16LE(p + 10);
+    const csize = buf.readUInt32LE(p + 20);
+    const nameLen = buf.readUInt16LE(p + 28);
+    const extraLen = buf.readUInt16LE(p + 30);
+    const cmtLen = buf.readUInt16LE(p + 32);
+    const lho = buf.readUInt32LE(p + 42);
+    const name = buf.slice(p + 46, p + 46 + nameLen).toString('utf8');
+    if (name === wantName) {
+      const lnLen = buf.readUInt16LE(lho + 26);
+      const leLen = buf.readUInt16LE(lho + 28);
+      const start = lho + 30 + lnLen + leLen;
+      const data = buf.slice(start, start + csize);
+      return method === 0 ? data : require('zlib').inflateRawSync(data);
+    }
+    p += 46 + nameLen + extraLen + cmtLen;
+  }
+  return null;
+}
+
+/** docx -> 纯文本（word/document.xml，零依赖） */
+function kbParseDocx(buf) {
+  const xml = kbUnzipEntry(buf, 'word/document.xml');
+  if (!xml) throw Object.assign(new Error('docx 缺少 word/document.xml（不是有效的 .docx？）'), { code: 'KB_IMPORT' });
+  return kbEntities(xml.toString('utf8')
+    .replace(/<w:tab[^>]*\/?>/g, '\t')
+    .replace(/<w:br[^>]*\/?>/g, '\n')
+    .replace(/<\/w:p>/g, '\n')
+    .replace(/<[^>]+>/g, ''))
+    .replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
+let kbPyCmd = { tried: false, cmd: null };
+
+/** 探测可用的 Python（TeX/PDF 适配器需要；可在 config.kb.pythonPath 指定路径） */
+function kbPython() {
+  if (kbPyCmd.tried) return kbPyCmd.cmd;
+  kbPyCmd.tried = true;
+  const list = [];
+  if (config.kb && config.kb.pythonPath) list.push(config.kb.pythonPath);
+  list.push(...(process.platform === 'win32' ? ['python', 'py', 'python3'] : ['python3', 'python']));
+  for (const cmd of list) {
+    try {
+      const r = spawnSync(cmd, ['-c', 'print(1)'], { timeout: 8000 });
+      if (r.status === 0) { kbPyCmd.cmd = cmd; break; }
+    } catch { /* 下一个候选 */ }
+  }
+  return kbPyCmd.cmd;
+}
+
+/** 调 corpus_tools/import_cli.py 解析 TeX/PDF（单文件 -> JSON 记录） */
+function kbParseWithPython(fmt, file) {
+  return new Promise(resolve => {
+    const cmd = kbPython();
+    if (!cmd) {
+      return resolve({
+        ok: false,
+        reason: '未找到可用的 Python（TeX/PDF 解析需要）',
+        hint: '可在 data/config.json 里配置 kb.pythonPath；或改用 TXT/MD/HTML/DOCX 源（无需 Python）',
+      });
+    }
+    const p = spawn(cmd, ['-X', 'utf8', path.join(ROOT, 'corpus_tools', 'import_cli.py'), fmt, file], {
+      env: { ...process.env, PYTHONIOENCODING: 'utf-8' },
+    });
+    let out = '', err = '';
+    p.stdout.on('data', d => { out += d; });
+    p.stderr.on('data', d => { err += d; });
+    p.on('error', e => resolve({ ok: false, reason: 'Python 启动失败: ' + e.message }));
+    p.on('close', () => {
+      const s = out.trim();
+      try { resolve(JSON.parse(s)); return; } catch { /* 尝试最后一行 */ }
+      try { resolve(JSON.parse(s.split('\n').pop())); return; } catch { /* 放弃 */ }
+      resolve({ ok: false, reason: (err || '解析器无输出（可能缺少依赖）').slice(0, 300) });
+    });
+  });
+}
+
+/** 单文件导入全流程：投放 -> 解析 -> 写库（同名覆盖）+ 归档，失败 -> 隔离 + 日志 */
+async function kbImportOne({ name, buf, category }) {
+  const safe = kbSafeName(name);
+  if (!safe) throw Object.assign(new Error('文件名无效'), { code: 'KB_IMPORT' });
+  if (!buf || !buf.length) throw Object.assign(new Error('文件内容为空'), { code: 'KB_IMPORT' });
+  const srcPath = path.join(kbDir('imports', category), safe);
+  fs.writeFileSync(srcPath, buf);
+  const ext = path.extname(safe).toLowerCase();
+  const now = new Date().toISOString().slice(0, 19);
+  let parsed, parser = null;
+  try {
+    if (ext === '.txt' || ext === '.md' || ext === '') {
+      const text = kbDecode(buf);
+      const m = text.match(/^#\s+(.+)$/m);
+      parser = 'plain-text';
+      parsed = { ok: true, records: [{ rtype: 'note', title: m ? m[1].trim() : safe, text, meta: { chars: text.length } }] };
+    } else if (ext === '.html' || ext === '.htm') {
+      const { title, text } = kbParseHtml(kbDecode(buf));
+      if (!text) throw new Error('HTML 正文为空');
+      parser = 'html-strip';
+      parsed = { ok: true, records: [{ rtype: 'article', title: title || safe, text, meta: { chars: text.length } }] };
+    } else if (ext === '.docx') {
+      const text = kbParseDocx(buf);
+      if (!text) throw new Error('docx 正文为空');
+      parser = 'docx-zip';
+      parsed = { ok: true, records: [{ rtype: 'document', title: safe.replace(/\.docx$/i, ''), text, meta: { chars: text.length } }] };
+    } else if (ext === '.tex' || ext === '.pdf') {
+      parsed = await kbParseWithPython(ext.slice(1), srcPath);
+      if (parsed.ok) parser = parsed.parser || ext.slice(1) + '-adapter';
+    } else {
+      parsed = { ok: false, reason: `不支持的类型 ${ext || '(无扩展名)'}，支持：txt/md/html/htm/docx/tex/pdf` };
+    }
+  } catch (e) {
+    parsed = { ok: false, reason: e.message };
+  }
+
+  if (!parsed.ok) {
+    // 隔离区：识别失败绝不静默丢弃
+    const q = path.join(kbDir('quarantine'), safe);
+    if (fs.existsSync(q)) fs.rmSync(q);
+    fs.renameSync(srcPath, q);
+    kbLog({ time: now, file: safe, category, status: 'quarantined', reason: String(parsed.reason || '').slice(0, 200) });
+    return { ok: false, file: safe, reason: parsed.reason || '解析失败', hint: parsed.hint || null };
+  }
+
+  // replace-by-source：同名重导覆盖旧记录
+  const byKey = new Map();
+  for (const r of loadKb()) byKey.set(r.source && r.source.file ? r.source.file : '\u0000id:' + r.id, r);
+  parsed.records.forEach((r, i) => {
+    if (!r.id) r.id = crypto.createHash('sha1').update([safe, parser, i, r.title || ''].join('|')).digest('hex').slice(0, 12);
+    r.source = { file: safe, category, parser, imported_at: now };
+    if (!r.title) r.title = safe;
+    byKey.set(safe, r);
+  });
+  const tmp = kbFile() + '.tmp';
+  fs.writeFileSync(tmp, [...byKey.values()].map(r => JSON.stringify(r)).join('\n') + '\n', 'utf8');
+  fs.renameSync(tmp, kbFile());
+  // 原件归档（重导覆盖旧归档）
+  const dest = path.join(kbDir('archive', category), safe);
+  if (fs.existsSync(dest)) fs.rmSync(dest);
+  fs.renameSync(srcPath, dest);
+  kbLog({ time: now, file: safe, category, status: 'imported', parser, records: parsed.records.length });
+  return {
+    ok: true, file: safe, parser,
+    records: parsed.records.length,
+    rtypes: parsed.records.map(r => RTYPE_LABEL[r.rtype] || r.rtype),
+  };
+}
+
+/** 粘贴直录：内容写为 txt 投放，走同一条导入管线（有归档、有日志） */
+async function kbImportPaste({ title, text, category }) {
+  const t = String(text || '');
+  if (!t.trim()) throw Object.assign(new Error('粘贴内容为空'), { code: 'KB_IMPORT' });
+  if (t.length > 2e6) throw Object.assign(new Error('粘贴内容过长（上限 200 万字符）'), { code: 'KB_IMPORT' });
+  const base = kbSafeName(title) || ('直录-' + new Date().toISOString().slice(0, 19).replace(/[:T]/g, ''));
+  return kbImportOne({ name: base + '.txt', buf: Buffer.from(t, 'utf8'), category });
 }
 
 /* ------------------------------------------------------------------ */
@@ -1263,10 +1509,10 @@ function sendJSON(res, code, obj) {
   res.end(body);
 }
 
-function readBody(req) {
+function readBody(req, max = 5e6) {
   return new Promise((resolve, reject) => {
     let buf = '';
-    req.on('data', c => { buf += c; if (buf.length > 5e6) reject(new Error('body too large')); });
+    req.on('data', c => { buf += c; if (buf.length > max) reject(new Error('body too large')); });
     req.on('end', () => {
       if (!buf) return resolve({});
       try { resolve(JSON.parse(buf)); } catch { reject(new Error('invalid JSON body')); }
@@ -1376,6 +1622,8 @@ const server = http.createServer(async (req, res) => {
           },
           kb: {
             dir: (config.kb && config.kb.dir) || '',
+            pythonPath: (config.kb && config.kb.pythonPath) || '',
+            categories: KB_CATEGORIES,
             file: kbFile(),
             exists: fs.existsSync(kbFile()),
             count: loadKb().length,
@@ -1462,8 +1710,9 @@ const server = http.createServer(async (req, res) => {
         }
         // v1.1.0：语料库数据源目录（留空 = 用仓库内 corpus/）
         if (body.kb && typeof body.kb === 'object' && typeof body.kb.dir === 'string') {
-          if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '' };
+          if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '', pythonPath: '' };
           config.kb.dir = body.kb.dir.trim();
+          if (typeof body.kb.pythonPath === 'string') config.kb.pythonPath = body.kb.pythonPath.trim();
         }
         persistConfig();
         armAutoSync();
@@ -1779,7 +2028,7 @@ const server = http.createServer(async (req, res) => {
         });
       }
 
-      // 记录详情（全文 + 契约排序后的 items）
+      // 记录详情（全文 + 渲染排序后的 items：题干在前、题目按题号，不重排板块）
       {
         const m = p.match(/^\/api\/kb\/record\/([0-9a-f]+)$/);
         if (m && req.method === 'GET') {
@@ -1787,7 +2036,7 @@ const server = http.createServer(async (req, res) => {
           if (!r) return sendJSON(res, 404, { error: '记录不存在' });
           return sendJSON(res, 200, {
             ok: true,
-            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: kbSortedItems(r) },
+            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: kbOrderedItems(r) },
           });
         }
       }
@@ -1797,6 +2046,48 @@ const server = http.createServer(async (req, res) => {
         const q = u.searchParams.get('q') || '';
         const results = kbSearch(q, 40);
         return sendJSON(res, 200, { ok: true, query: q, count: results.length, results });
+      }
+
+      // v1.1.1：语料导入（文件 base64 数组 + 可选粘贴直录）
+      if (p === '/api/kb/import' && req.method === 'POST') {
+        const body = await readBody(req, 60e6);
+        const category = KB_CATEGORIES.includes(body.category) ? body.category : '直录';
+        const results = [];
+        if (body.paste && typeof body.paste.text === 'string') {
+          results.push(await kbImportPaste({ title: body.paste.title, text: body.paste.text, category }));
+        }
+        const files = (Array.isArray(body.items) ? body.items : []).slice(0, 20);
+        for (const it of files) {
+          if (!it || typeof it.name !== 'string' || typeof it.data64 !== 'string') continue;
+          if (it.data64.length > KB_IMPORT_MAX) {
+            results.push({ ok: false, file: it.name, reason: '文件超过 30MB 上限' });
+            continue;
+          }
+          let buf;
+          try { buf = Buffer.from(it.data64, 'base64'); } catch {
+            results.push({ ok: false, file: it.name, reason: 'base64 解码失败' });
+            continue;
+          }
+          results.push(await kbImportOne({ name: it.name, buf, category }));
+        }
+        if (!results.length) return sendJSON(res, 400, { error: '没有可导入的内容（选文件或粘贴文本）', code: 'KB_IMPORT' });
+        return sendJSON(res, 200, {
+          ok: true, results,
+          imported: results.filter(r => r.ok).length,
+          quarantined: results.filter(r => !r.ok).length,
+        });
+      }
+
+      // v1.1.1：导入日志（最近 30 条，新->旧）
+      if (p === '/api/kb/importlog' && req.method === 'GET') {
+        let log = [];
+        try {
+          log = fs.readFileSync(path.join(kbBaseDir(), 'import_log.jsonl'), 'utf8')
+            .trim().split('\n').slice(-30)
+            .map(l => { try { return JSON.parse(l); } catch { return null; } })
+            .filter(Boolean).reverse();
+        } catch { /* 无日志文件 */ }
+        return sendJSON(res, 200, { ok: true, log });
       }
 
       return sendJSON(res, 404, { error: '接口不存在: ' + p });
@@ -1818,7 +2109,7 @@ const server = http.createServer(async (req, res) => {
     fs.createReadStream(filePath).pipe(res);
   } catch (err) {
     if (p.startsWith('/api/')) {
-      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
+      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'KB_IMPORT'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
     }
     res.writeHead(500); res.end('Server Error');
   }

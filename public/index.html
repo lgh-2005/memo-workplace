@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.0</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.1</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
@@ -196,7 +196,7 @@
           <button class="btn" id="kbSearchBtn">🔍 搜索</button>
         </div>
       </div>
-      <div class="hint">导入工程产出的结构化考试语料（<code>corpus/records.jsonl</code>）：真题按「完形 → 阅读 → 新题型 → 翻译 → 写作」排序，〖N〗 为挖空/答题框锚点。AI 教练讲解单词时会自动引用这里的真实考试原句。类型筛选：</div>
+      <div class="hint">结构化考试语料（<code>corpus/records.jsonl</code>）：〖N〗 为挖空/答题框锚点，板块顺序尊重语料自身（模块化渲染，不做强制重排）。AI 教练讲解单词时会自动引用这里的真实考试原句。类型筛选：</div>
       <div class="row-gap" id="kbFilters">
         <button class="chip active" data-ktype="">全部</button>
         <button class="chip" data-ktype="qa_set">题库</button>
@@ -206,6 +206,29 @@
       </div>
       <div class="result" id="kbListResult"></div>
       <div id="kbList"></div>
+    </div>
+    <div class="card">
+      <div class="card-title-row">
+        <div class="card-title">📥 导入语料</div>
+        <button class="btn" id="kbLogBtn">📜 导入日志</button>
+      </div>
+      <div class="hint">三层契约（与导入工程一致）：上传先落 <code>imports/&lt;分类&gt;/</code> 投放区 → 解析成功写入 <code>records.jsonl</code>（<b>同名重导覆盖旧记录</b>）、原件归档 <code>archive/</code>；识别失败进 <code>quarantine/</code> 隔离区，绝不静默丢弃，全程留 <code>import_log.jsonl</code> 痕迹。支持 txt/md、html、docx、tex（推荐，结构化最优）、pdf（需 Python + PyMuPDF）；也可粘贴文本直录。</div>
+      <div class="row-gap" style="flex-wrap:wrap">
+        <select id="kbImportCategory" class="input" style="width:110px">
+          <option value="真题">真题</option>
+          <option value="外刊">外刊</option>
+          <option value="教材">教材</option>
+          <option value="直录">直录</option>
+        </select>
+        <input type="file" id="kbImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".txt,.md,.html,.htm,.tex,.pdf,.docx">
+        <button class="btn primary" id="kbImportBtn">📥 上传导入</button>
+      </div>
+      <div class="row-gap" style="flex-wrap:wrap;align-items:stretch">
+        <input type="text" id="kbPasteTitle" class="input" placeholder="标题（可选，首行 # 也可当标题）" style="width:230px">
+        <textarea id="kbPasteText" class="input" rows="3" placeholder="粘贴文本直录：外刊段落、笔记、错题整理……" style="flex:1;min-width:260px"></textarea>
+        <button class="btn" id="kbPasteBtn">📝 粘贴导入</button>
+      </div>
+      <div class="result" id="kbImportResult"></div>
     </div>
     <div class="card" id="kbDetailCard" style="display:none">
       <div class="card-title-row">

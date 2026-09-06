@@ -1030,7 +1030,7 @@ function renderKbList() {
   const box = $('#kbList');
   const list = kbState.records.filter(r => !kbState.filter || r.rtype === kbState.filter);
   if (!list.length) {
-    box.innerHTML = '<div class="empty-prov">该类型下暂无记录。把资料丢进导入工程 imports/ 目录解析入库后，将 records.jsonl 同步到工作台 corpus/ 目录。</div>';
+    box.innerHTML = '<div class="empty-prov">该类型下暂无记录。可用下方「📥 导入语料」直接导入文件或粘贴文本。</div>';
     return;
   }
   box.innerHTML = list.map(r => `
@@ -1145,6 +1145,86 @@ $$('#kbFilters .chip').forEach(c => c.addEventListener('click', () => {
   $('#kbSearchInput').value = '';
   renderKbList();
 }));
+
+/* ---------------- v1.1.1：语料导入（三层契约：投放 -> 解析 -> 归档/隔离） ---------------- */
+
+function kbFileToB64(f) {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(String(r.result).split(',')[1] || '');
+    r.onerror = () => reject(new Error('读取失败: ' + f.name));
+    r.readAsDataURL(f);
+  });
+}
+
+async function kbDoImport(kind) {
+  const out = $('#kbImportResult');
+  const category = $('#kbImportCategory').value;
+  const items = [];
+  let paste = null;
+  if (kind === 'files') {
+    for (const f of $('#kbImportFile').files) {
+      if (f.size > 30 * 1024 * 1024) {
+        out.textContent = `❌ ${f.name} 超过 30MB 上限`;
+        out.className = 'result err';
+        return;
+      }
+      items.push({ name: f.name, data64: await kbFileToB64(f) });
+    }
+    if (!items.length) {
+      out.textContent = '⚠️ 请先选择文件';
+      out.className = 'result err';
+      return;
+    }
+  } else {
+    paste = { title: $('#kbPasteTitle').value, text: $('#kbPasteText').value };
+    if (!paste.text.trim()) {
+      out.textContent = '⚠️ 请先粘贴文本内容';
+      out.className = 'result err';
+      return;
+    }
+  }
+  out.textContent = '解析中…（TeX / PDF 需要几秒钟）';
+  out.className = 'result';
+  try {
+    const r = await api('/api/kb/import', { method: 'POST', body: { category, items, paste } });
+    const lines = r.results.map(x => x.ok
+      ? `✅ ${esc(x.file)} → ${x.records} 条记录（${esc((x.rtypes || []).join('/'))} · 解析器 ${esc(x.parser || '')}）`
+      : `⛔ ${esc(x.file)} 已隔离：${esc(x.reason || '')}${x.hint ? '（' + esc(x.hint) + '）' : ''}`);
+    out.innerHTML = lines.join('<br>') + `<br>合计：成功 ${r.imported} · 隔离 ${r.quarantined}`;
+    out.className = r.quarantined ? 'result err' : 'result ok';
+    if (kind === 'files') $('#kbImportFile').value = '';
+    else { $('#kbPasteText').value = ''; $('#kbPasteTitle').value = ''; }
+    kbState.loaded = false;   // 重新拉取列表（含新记录）
+    loadKb();
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+}
+
+async function kbShowLog() {
+  const out = $('#kbImportResult');
+  out.textContent = '加载中…';
+  out.className = 'result';
+  try {
+    const r = await api('/api/kb/importlog');
+    out.innerHTML = r.log.length
+      ? r.log.map(e => {
+          const ok = e.status === 'imported';
+          return `<div>${ok ? '✅' : '⛔'} ${esc(String(e.time || '').slice(0, 19))} · ${esc(e.file || '')} · ${esc(e.category || '')} · ${ok ? esc(e.parser || '') + ' · ' + e.records + ' 条' : '隔离：' + esc(e.reason || '')}</div>`;
+        }).join('')
+      : '暂无导入日志（records.jsonl 所在目录下的 import_log.jsonl）';
+    out.className = 'result';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+}
+
+$('#kbImportBtn').addEventListener('click', () => kbDoImport('files'));
+$('#kbPasteBtn').addEventListener('click', () => kbDoImport('paste'));
+$('#kbLogBtn').addEventListener('click', kbShowLog);
 
 /* ---------------- 番茄钟 ---------------- */
 
