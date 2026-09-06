@@ -1623,7 +1623,16 @@ function sendJSON(res, code, obj) {
 function readBody(req, max = 5e6) {
   return new Promise((resolve, reject) => {
     let buf = '';
-    req.on('data', c => { buf += c; if (buf.length > max) reject(new Error('body too large')); });
+    req.on('data', c => {
+      buf += c;
+      if (buf.length > max) {
+        // v1.1.3：超限带 code 走统一错误映射（413）；resume() 排空剩余数据，连接可正常收尾
+        req.resume();
+        const e = new Error('请求体超过 ' + Math.round(max / 1e6) + 'MB 上限，请拆分文件');
+        e.code = 'BODY_TOO_LARGE';
+        reject(e);
+      }
+    });
     req.on('end', () => {
       if (!buf) return resolve({});
       try { resolve(JSON.parse(buf)); } catch { reject(new Error('invalid JSON body')); }
@@ -2275,6 +2284,10 @@ const server = http.createServer(async (req, res) => {
     fs.createReadStream(filePath).pipe(res);
   } catch (err) {
     if (p.startsWith('/api/')) {
+      if (err.code === 'BODY_TOO_LARGE') {
+        // v1.1.3：请求体超限 = 413，并提示 nginx 反代需同步放宽 client_max_body_size
+        return sendJSON(res, 413, { error: err.message + '（若经 nginx 反代访问，还需放宽 client_max_body_size）', code: 'BODY_TOO_LARGE' });
+      }
       return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'KB_IMPORT'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
     }
     res.writeHead(500); res.end('Server Error');
