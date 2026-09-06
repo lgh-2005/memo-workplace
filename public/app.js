@@ -301,8 +301,18 @@ $('#chatMessages').addEventListener('click', (e) => {
   speakEnglishFrom(msg.dataset.raw || '', state.activeWord);
 });
 
-$('#speakWordBtn').addEventListener('click', () => {
-  if (state.activeWord) speak(state.activeWord);
+/* v1.0.8：发音优先韦氏真人 mp3（免费、官方 CDN），失败回退 TTS */
+$('#speakWordBtn').addEventListener('click', async () => {
+  const w = state.activeWord;
+  if (!w) return;
+  try {
+    const r = await api('/api/dict/lookup?word=' + encodeURIComponent(w));
+    if (r.entry?.audio) {
+      new Audio(r.entry.audio).play().catch(() => speak(w));
+      return;
+    }
+  } catch { /* 未配置词典 / 网络失败：TTS 兜底 */ }
+  speak(w);
 });
 
 /** 轻量 Markdown（v1.0.5）：标题 / 加粗 / 行内代码 / 无序列表 / 简单表格 / 空行分段 */
@@ -603,6 +613,9 @@ async function loadConfig() {
     }
     $('#cfgSearchUrl').value = c.webSearch?.url || '';
     if (c.webSearch?.hasKey) $('#cfgSearchKey').placeholder = '已保存 ✓（留空 = 沿用）';
+    /* v1.0.8：韦氏词典 Key 状态提示 */
+    if (c.dict?.hasLearners) $('#cfgDictLearners').placeholder = '已保存 ✓（留空 = 沿用）';
+    if (c.dict?.hasCollegiate) $('#cfgDictCollegiate').placeholder = '已保存 ✓（留空 = 沿用）';
     renderProviders();
   } catch (e) { console.error(e); }
 }
@@ -896,6 +909,47 @@ $('#testSearchBtn').addEventListener('click', async () => {
   try {
     const r = await api('/api/test/search', { method: 'POST' });
     out.textContent = `✅ ${r.msg} · 首条：${r.sample}`;
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+});
+
+/* v1.0.8：韦氏词典双 Key 配置 */
+function buildDictBody() {
+  return {
+    dict: {
+      learnersKey: $('#cfgDictLearners').value.trim() || undefined,     // 留空沿用
+      collegiateKey: $('#cfgDictCollegiate').value.trim() || undefined,
+    },
+  };
+}
+
+$('#saveDictBtn').addEventListener('click', async () => {
+  const out = $('#dictTestResult');
+  try {
+    await api('/api/config', { method: 'POST', body: buildDictBody() });
+    $('#cfgDictLearners').value = '';
+    $('#cfgDictCollegiate').value = '';
+    out.textContent = '✅ 已保存';
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+});
+
+$('#testDictBtn').addEventListener('click', async () => {
+  const out = $('#dictTestResult');
+  // 先保存表单里的值再测（允许不先保存直接测）
+  try { await api('/api/config', { method: 'POST', body: buildDictBody() }); $('#cfgDictLearners').value = ''; $('#cfgDictCollegiate').value = ''; }
+  catch { /* 测试时如实暴露错误 */ }
+  out.textContent = '📖 查询「resilient」测试中…';
+  out.className = 'result';
+  try {
+    const r = await api('/api/test/dict', { method: 'POST' });
+    out.textContent = '✅ ' + r.msg;
     out.className = 'result ok';
   } catch (e) {
     out.textContent = '❌ ' + e.message;

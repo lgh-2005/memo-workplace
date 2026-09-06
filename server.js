@@ -13,6 +13,8 @@
  *  6. 网络搜索服务（v1.0.7）：通用 url+密钥 搜索 API 代理，供 AI 联网等板块复用
  *  7. 墨墨频控合规（v1.0.7）：按官方文档实现全局限流——10s/20 次、60s/40 次、
  *     5h/2000 次（滑动窗口护栏），内容创建 600 条/天（例句+助记+释义合并）
+ *  8. 韦氏词典（v1.0.8）：Merriam-Webster 双 key 代理（学习者版+大学版并行合并），
+ *     本地缓存 data/dict/，真人发音 mp3，权威释义/词源注入 AI 教练上下文
  *
  * 启动：node server.js  （默认端口 5178）
  */
@@ -27,6 +29,7 @@ const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, 'data');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const IMAGES_DIR = path.join(DATA_DIR, 'images');   // v1.0.6：AI 生图落盘目录
+const DICT_DIR = path.join(DATA_DIR, 'dict');       // v1.0.8：韦氏词典本地缓存（一词终身只查一次）
 const CONFIG_FILE = path.join(DATA_DIR, 'config.json');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
@@ -47,6 +50,7 @@ const MM_BASE = 'https://open.maimemo.com/open/api/v1/memo';
 function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   if (!fs.existsSync(IMAGES_DIR)) fs.mkdirSync(IMAGES_DIR, { recursive: true });
+  if (!fs.existsSync(DICT_DIR)) fs.mkdirSync(DICT_DIR, { recursive: true });
 }
 
 function loadJSON(file, fallback) {
@@ -72,6 +76,7 @@ let config = loadJSON(CONFIG_FILE, {
   notepadTitle: '',
   imageGen: { baseUrl: '', apiKey: '', model: '' },   // v1.0.6：生图服务商（OpenAI 兼容 images API）
   webSearch: { url: '', apiKey: '' },   // v1.0.7：网络搜索服务（通用 url + 密钥）
+  dict: { learnersKey: '', collegiateKey: '' },   // v1.0.8：韦氏词典双 key（learners=学习者词典 / collegiate=大学版）
 });
 if (config.kaoyanMode === undefined) config.kaoyanMode = false;   // 旧配置兼容
 // v1.0.6 迁移：云词库绑定与生图配置缺省补齐
@@ -80,6 +85,8 @@ if (config.notepadTitle === undefined) config.notepadTitle = '';
 if (!config.imageGen || typeof config.imageGen !== 'object') config.imageGen = { baseUrl: '', apiKey: '', model: '' };
 // v1.0.7 迁移：搜索服务配置缺省补齐
 if (!config.webSearch || typeof config.webSearch !== 'object') config.webSearch = { url: '', apiKey: '' };
+// v1.0.8 迁移：韦氏词典 key 缺省补齐
+if (!config.dict || typeof config.dict !== 'object') config.dict = { learnersKey: '', collegiateKey: '' };
 
 // v1.0.2 迁移：旧的单服务商结构自动升级为多服务商列表（老配置无痛升级）
 if (!Array.isArray(config.llm?.providers)) {
@@ -636,6 +643,150 @@ async function webSearch(query, count = 5) {
   })).filter(r => r.title || r.snippet);
 }
 
+/* ---------- v1.0.8：韦氏词典（Merriam-Webster 双 key，权威释义 + 真人发音） ---------- */
+/* 官方 API（dictionaryapi.com）免费档约 1000 次/天/key。
+   Learner's（学习者词典：简单词写完整句释义、例句多）与 Collegiate（大学版：词源全）
+   并行查询合并；结果落盘 data/dict/{word}.json —— 词典内容基本不变，一词终身只查一次。
+   真人发音 mp3 走官方媒体 CDN（不算 API 次数）。Key 只存本机 config，前端不可见。 */
+
+/** 清理韦氏返回文本里的排版标记：{it} {/it} {bc} {ldquo} [_bs] 等 */
+function mwClean(s) {
+  return String(s || '')
+    .replace(/\{[a-zA-Z_]+\|([^{}]*)\}/g, '$1')   // {variant|内容} 保留内容
+    .replace(/\{\/?[a-zA-Z_]+\}/g, '')            // 普通 {tag}
+    .replace(/\[\/?[a-z-]+\]/g, '')               // [_bs] [it] 等
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+/** 真人发音 mp3 地址（官方规则：数字开头→number，bix/gg 开头→同名目录，其余→首字母） */
+function mwAudioUrl(audio) {
+  const a = String(audio || '').replace(/\.(mp3|wav)$/i, '');
+  if (!a) return '';
+  let dir;
+  if (/^\d/.test(a)) dir = 'number';
+  else if (/^bix/.test(a)) dir = 'bix';
+  else if (/^gg/.test(a)) dir = 'gg';
+  else dir = a[0];
+  return `https://media.merriam-webster.com/audio/prons/en/us/mp3/${dir}/${a}.mp3`;
+}
+
+/** 递归收集韦氏词条里的例句（dt 的 "vis" 字段） */
+function collectVis(node, out = [], depth = 0) {
+  if (out.length >= 4 || !node || typeof node !== 'object' || depth > 9) return out;
+  if (Array.isArray(node)) {
+    if (node.length === 2 && node[0] === 'vis' && typeof node[1] === 'string') {
+      out.push(mwClean(node[1]).slice(0, 200));
+    } else node.forEach(n => collectVis(n, out, depth + 1));
+    return out;
+  }
+  for (const v of Object.values(node)) collectVis(v, out, depth + 1);
+  return out;
+}
+
+/** 递归收集同义词（learners 的 syn_list / syn 字段） */
+function collectSyns(node, out = [], depth = 0) {
+  if (out.length >= 8 || !node || typeof node !== 'object' || depth > 9) return out;
+  if (Array.isArray(node)) {
+    if (node.length === 2 && node[0] === 'syn' && node[1] && typeof node[1] === 'object') {
+      const t = node[1].ws?.text || node[1].text || '';
+      if (t) out.push(mwClean(t));
+    } else node.forEach(n => collectSyns(n, out, depth + 1));
+    return out;
+  }
+  for (const v of Object.values(node)) collectSyns(v, out, depth + 1);
+  return out;
+}
+
+async function fetchMWApi(ref, word, key) {
+  const url = `https://dictionaryapi.com/api/v3/references/${ref}/json/${encodeURIComponent(word)}?key=${encodeURIComponent(key)}`;
+  const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
+  if (!res.ok) throw new Error(`韦氏词典 ${ref} 请求失败 (HTTP ${res.status})`);
+  const j = await res.json();
+  return Array.isArray(j) ? j : [];
+}
+
+/** 合并学习者版 + 大学版为一个统一词条 */
+function mergeMWEntry(word, lr, cg) {
+  const le = lr.find(e => typeof e === 'object' && e) || null;
+  const ce = cg.find(e => typeof e === 'object' && e) || null;
+  const suggestions = [...new Set([...lr, ...cg].filter(x => typeof x === 'string'))].slice(0, 6);
+  const base = le || ce;
+  if (!base) return { word, found: false, suggestions };
+
+  const prs = (base.hwi?.prs || []).map(x => x.mw).filter(Boolean);
+  const defs = (base.shortdef || []).map(d => mwClean(d)).filter(Boolean).slice(0, 4);
+  const examples = collectVis(le || ce);
+  const synonyms = [...new Set([...collectSyns(le), ...collectSyns(ce)])]
+    .filter(s => s.toLowerCase() !== word.toLowerCase()).slice(0, 6);
+  const etRaw = ce?.et?.find(x => x?.[0] === 'text')?.[1] || le?.et?.find(x => x?.[0] === 'text')?.[1] || '';
+  const audioFile = (base.hwi?.prs || []).find(x => x.sound?.audio)?.sound?.audio || '';
+
+  return {
+    word,
+    found: true,
+    source: le && ce ? 'learners+collegiate' : (le ? 'learners' : 'collegiate'),
+    headword: mwClean(base.hwi?.hw || word),
+    phonetic: prs.map(p => `\\ ${p} \\`).join(' / '),
+    pos: base.fl || '',
+    def: defs[0] || '',
+    defs,
+    examples,
+    synonyms,
+    etymology: mwClean(etRaw).slice(0, 400),
+    audio: mwAudioUrl(audioFile),
+  };
+}
+
+function dictCacheFile(word) {
+  return path.join(DICT_DIR, String(word || '').toLowerCase().replace(/[^a-z'\-]/g, '_') + '.json');
+}
+
+/** 只读缓存（不打 API），供词表/详情等低延迟场景使用 */
+function dictCached(word) {
+  const w = String(word || '').trim().toLowerCase();
+  if (!w) return null;
+  return loadJSON(dictCacheFile(w), null);
+}
+
+/**
+ * 查韦氏词典：缓存优先；未命中则双 key 并行查、合并、落盘。
+ * mock 模式（与 LLM/生图/搜索一致）返回占位词条，保证全链路可测。
+ */
+async function dictLookup(word) {
+  const w = String(word || '').trim().toLowerCase();
+  if (!w || !/^[a-zA-Z][a-zA-Z'\- ]{0,59}$/.test(w)) {
+    const e = new Error('仅支持英文单词/词组查询');
+    e.code = 'BAD_WORD';
+    throw e;
+  }
+  if (config.llm.mock) {
+    return {
+      word: w, found: true, source: 'mock', headword: w,
+      phonetic: '\\ ˈmɒk \\', pos: 'n.',
+      def: `[MOCK] ${w} 的权威释义占位（自测数据）`,
+      defs: [`[MOCK] ${w} 的权威释义占位（自测数据）`],
+      examples: [`[MOCK] This is a mock example sentence for "${w}".`],
+      synonyms: ['mocksyn'], etymology: '[MOCK] mock etymology', audio: '',
+    };
+  }
+  if (fs.existsSync(dictCacheFile(w))) return loadJSON(dictCacheFile(w), null);
+
+  const d = config.dict || {};
+  if (!d.learnersKey && !d.collegiateKey) {
+    const e = new Error('尚未配置韦氏词典 Key，请到「设置」页填写（学习者版 / 大学版至少一个）');
+    e.code = 'NO_DICT';
+    throw e;
+  }
+  const tasks = [];
+  if (d.learnersKey) tasks.push(fetchMWApi('learners', w, d.learnersKey).catch(() => []));
+  if (d.collegiateKey) tasks.push(fetchMWApi('collegiate', w, d.collegiateKey).catch(() => []));
+  const [lr = [], cg = []] = await Promise.all(tasks);
+  const entry = mergeMWEntry(w, lr, cg);
+  saveJSON(dictCacheFile(w), entry);
+  return entry;
+}
+
 /* ------------------------------------------------------------------ */
 /* 业务：AI 互动学习 / 助记生成 / 推送                                  */
 /* ------------------------------------------------------------------ */
@@ -1085,6 +1236,10 @@ const server = http.createServer(async (req, res) => {
             url: config.webSearch.url || '',
             hasKey: !!config.webSearch.apiKey,
           },
+          dict: {
+            hasLearners: !!config.dict.learnersKey,
+            hasCollegiate: !!config.dict.collegiateKey,
+          },
           searchPresets: SEARCH_PRESETS,
           imagePresets: IMAGE_PRESETS,
           presets: LLM_PRESETS,
@@ -1153,6 +1308,16 @@ const server = http.createServer(async (req, res) => {
             url: String(body.webSearch.url ?? oldWs.url ?? '').trim(),
             apiKey: (typeof body.webSearch.apiKey === 'string' && body.webSearch.apiKey.trim())
               ? body.webSearch.apiKey.trim() : (oldWs.apiKey || ''),
+          };
+        }
+        // v1.0.8：韦氏词典双 Key（留空 = 沿用已存）
+        if (body.dict && typeof body.dict === 'object') {
+          const oldD = config.dict || {};
+          config.dict = {
+            learnersKey: (typeof body.dict.learnersKey === 'string' && body.dict.learnersKey.trim())
+              ? body.dict.learnersKey.trim() : (oldD.learnersKey || ''),
+            collegiateKey: (typeof body.dict.collegiateKey === 'string' && body.dict.collegiateKey.trim())
+              ? body.dict.collegiateKey.trim() : (oldD.collegiateKey || ''),
           };
         }
         persistConfig();
@@ -1274,13 +1439,13 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, applied });
       }
 
-      // 单词详情（含本地助记）
+      // 单词详情（含本地助记 + 韦氏词典缓存）
       if (p === '/api/word' && req.method === 'GET') {
         const sp = u.searchParams.get('spelling');
         const w = Object.values(db.words).find(x => x.spelling === sp) || null;
         const notes = db.notes.filter(n => n.spelling === sp);
         const sessions = db.sessions.filter(s => s.words?.includes(sp)).slice(0, 5);
-        return sendJSON(res, 200, { word: w, notes, sessions });
+        return sendJSON(res, 200, { word: w, notes, sessions, dict: dictCached(sp) });
       }
 
       // AI 对话
@@ -1296,6 +1461,23 @@ const server = http.createServer(async (req, res) => {
           ...history.map(m => ({ role: m.role, content: m.content })),
           { role: 'user', content: message },
         ];
+
+        // v1.0.8：韦氏词典权威参考——释义/例句/同义词/词源注入，AI 只负责讲解不再编造事实
+        if (spelling) {
+          try {
+            const entry = await dictLookup(spelling);
+            if (entry?.found) {
+              const parts = [`释义: ${entry.defs.join('；')}`];
+              if (entry.examples.length) parts.push(`例句: ${entry.examples.join(' / ')}`);
+              if (entry.synonyms.length) parts.push(`同义词: ${entry.synonyms.join(', ')}`);
+              if (entry.etymology) parts.push(`词源: ${entry.etymology}`);
+              msgs[0].content += `\n\n【韦氏词典权威参考（${entry.source}）】\n${parts.join('\n')}` +
+                '\n讲解以上述权威释义为准（词义/例句/搭配不得与之冲突），但需用中文通俗讲解；词源可用于词根词缀记忆。';
+            } else if (entry?.suggestions?.length) {
+              msgs[0].content += `\n\n（韦氏词典未直接收录「${spelling}」，近似词条：${entry.suggestions.join('、')}。若学习者想查的是这些词形之一，请先提示确认。）`;
+            }
+          } catch { /* 词典未配置或网络失败：不阻塞对话 */ }
+        }
 
         // v1.0.7：联网搜索——开启时先搜索实时资料注入 system prompt；失败不阻塞对话
         if (body.useSearch) {
@@ -1405,6 +1587,24 @@ const server = http.createServer(async (req, res) => {
         });
       }
 
+      // 韦氏词典查询（v1.0.8）：缓存优先，双 key 并行合并
+      if (p === '/api/dict/lookup' && req.method === 'GET') {
+        const entry = await dictLookup(u.searchParams.get('word') || '');
+        return sendJSON(res, 200, { ok: true, entry });
+      }
+
+      // 韦氏词典连通性测试（v1.0.8）
+      if (p === '/api/test/dict' && req.method === 'POST') {
+        const entry = await dictLookup('resilient');
+        if (!entry.found) {
+          return sendJSON(res, 200, { ok: true, msg: `Key 可用，但「resilient」未收录。近似词：${(entry.suggestions || []).join('、') || '无'}` });
+        }
+        const bits = [`「${entry.headword}」${entry.pos}`, entry.def, `来源 ${entry.source}`];
+        if (entry.audio) bits.push('真人发音 ✓');
+        if (entry.etymology) bits.push('词源 ✓');
+        return sendJSON(res, 200, { ok: true, msg: `查询成功！${bits.join(' · ')}` });
+      }
+
       return sendJSON(res, 404, { error: '接口不存在: ' + p });
     }
 
@@ -1424,7 +1624,7 @@ const server = http.createServer(async (req, res) => {
     fs.createReadStream(filePath).pipe(res);
   } catch (err) {
     if (p.startsWith('/api/')) {
-      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
+      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
     }
     res.writeHead(500); res.end('Server Error');
   }

@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.7</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.0.8</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
@@ -294,6 +294,26 @@
         <button class="btn" id="testSearchBtn">🔍 测试搜索</button>
       </div>
       <div class="result" id="searchTestResult"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📚 韦氏权威词典 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.0.8 · Merriam-Webster 双 Key）</span></div>
+      <div class="hint">接入 dictionaryapi.com 官方 API：<b>学习者版</b>（简单词写完整句释义、例句多）优先，<b>大学版</b>（词源全）兜底，并行合并。AI 教练讲解自动以权威释义为准、可用真实词源做词根助记；发音按钮优先播放官方<b>真人录音 mp3</b>（免费、不计次数）。免费档约 1000 次/天/Key，本地缓存后一个词终身只查一次。Key 只保存在本机。</div>
+      <div class="grid-2" style="gap:10px">
+        <div>
+          <label class="field-label">Learner's Key（学习者版）</label>
+          <input type="password" id="cfgDictLearners" class="input" placeholder="留空 = 沿用已保存的 Key">
+        </div>
+        <div>
+          <label class="field-label">Dictionary Key（大学版）</label>
+          <input type="password" id="cfgDictCollegiate" class="input" placeholder="留空 = 沿用已保存的 Key">
+        </div>
+      </div>
+      <div class="row-gap">
+        <button class="btn" id="saveDictBtn">💾 保存词典配置</button>
+        <button class="btn" id="testDictBtn">📖 测试词典</button>
+      </div>
+      <div class="result" id="dictTestResult"></div>
     </div>
 
     <div class="card">
