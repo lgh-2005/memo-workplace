@@ -333,7 +333,20 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .pomo-time.break-mode { color: var(--ok); }
 .pomo-controls { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 
-/* ============ 黑夜模式 ============ */
+/* ============ 界面风格 × 昼夜模式 矩阵系统 (v1.1.9.b) ============ */
+/*
+   支持 7 种风格 × 2 种昼夜模式 = 14 种深度定制体验：
+   1. 🌿 默认清新 (天青极简 · 深空钛黑)
+   2. 🏮 中国古典 (宣纸朱砂 · 紫檀墨砚)
+   3. 🏛 西方现代 (瑞士无衬 · 工业黑白)
+   4. 🎴 日式轻 (生成棉麻 · 町屋月夜)
+   5. 🏰 欧伦 (森林墨绿 · 羊皮鎏金)
+   6. 🕹 复古街机 (GameBoy · 80s霓虹赛博)
+   7. 🍬 潮流波普 (多巴胺粗边 · 潮流暗波)
+*/
+
+/* ----------------- 默认清新 (天青极简) ----------------- */
+/* 默认黑夜：深空钛蓝 */
 [data-theme="dark"] {
   --bg: #0b1220;
   --card: #151d2e;
@@ -355,7 +368,6 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-theme="dark"] body {
   background: linear-gradient(160deg, #0d1526 0%, var(--bg) 42%, #0e1424 100%) fixed;
 }
-[data-theme="dark"] body { background: var(--bg); }
 [data-theme="dark"] .msg.user { color: #fff; }
 [data-theme="dark"] .tag.type { background: var(--primary-soft); color: var(--primary); }
 [data-theme="dark"] .tag.pending { background: #33270d; color: #fbbf24; }
@@ -370,9 +382,371 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-theme="dark"] .btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
 [data-theme="dark"] .bar { opacity: .9; }
 [data-theme="dark"] .tag.active { background: #0e2e22; }
-[data-theme="dark"] .btn { background: #1a2436; }
 [data-theme="dark"] .word-item.active { box-shadow: inset 2px 0 0 var(--primary); }
 [data-theme="dark"] .msg.ai { border-color: #243252; }
+
+/* ----------------- 🏮 中国古典 (宣纸朱砂 · 紫檀墨砚) ----------------- */
+[data-style="classic"] {
+  --bg: #f4eee1; --card: #fbf7ec; --border: #d9cdb2;
+  --text: #3a3226; --text-sub: #8a7d68;
+  --primary: #a63d2f; --primary-soft: #f3e4da;
+  --warn: #b3402e; --ok: #5a7247;
+  --radius: 6px;
+  --grad-primary: linear-gradient(135deg, #c0533f 0%, #8f2f22 100%);
+  --stat-grad: linear-gradient(135deg, #3a3226 20%, #a63d2f 100%);
+}
+[data-style="classic"] body { font-family: "KaiTi", "STKaiti", "楷体", "SimSun", serif; }
+[data-style="classic"] .sidebar { border-right: 2px solid #a63d2f33; }
+[data-style="classic"] .card { box-shadow: 0 1px 4px rgba(90, 70, 40, .08); }
+[data-style="classic"] .stat-value, [data-style="classic"] .brand { letter-spacing: 1px; }
+
+/* 中国古典 × 黑夜：紫檀乌木 + 泥金朱砂 */
+[data-style="classic"][data-theme="dark"] {
+  --bg: #140e11;
+  --card: #1f161b;
+  --border: #3b2a33;
+  --text: #e6ded1;
+  --text-sub: #a89484;
+  --primary: #c9513e;
+  --primary-soft: #2e1c22;
+  --warn: #e06d53;
+  --ok: #8ca372;
+  --grad-primary: linear-gradient(135deg, #cf5542 0%, #8f2f22 100%);
+  --stat-grad: linear-gradient(135deg, #e6ded1 20%, #c9513e 100%);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, .45);
+}
+[data-style="classic"][data-theme="dark"] body {
+  background: linear-gradient(160deg, #181115 0%, #140e11 50%, #0f0a0c 100%) fixed;
+}
+[data-style="classic"][data-theme="dark"] .sidebar { border-right: 1px solid #4a3440; }
+[data-style="classic"][data-theme="dark"] .btn.primary { background: #c9513e; border-color: #c9513e; color: #fdfbf7; }
+
+/* ----------------- 🏛 西方现代 (瑞士无衬 · 工业黑白) ----------------- */
+[data-style="western"] {
+  --bg: #f4f4f5; --card: #ffffff; --border: #e4e4e7;
+  --text: #18181b; --text-sub: #71717a;
+  --primary: #18181b; --primary-soft: #e9e9ee;
+  --warn: #dc2626; --ok: #059669;
+  --radius: 2px;
+  --grad-primary: linear-gradient(135deg, #3f3f46 0%, #111113 100%);
+  --stat-grad: linear-gradient(135deg, #18181b 30%, #52525b 100%);
+}
+[data-style="western"] body { font-family: "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif; }
+[data-style="western"] .sidebar { border-right: 1px solid #e4e4e7; }
+[data-style="western"] .card { box-shadow: 0 1px 3px rgba(0, 0, 0, .07); border-radius: 2px; }
+[data-style="western"] .btn.primary { background: var(--primary); }
+[data-style="western"] .stat-value { font-weight: 800; letter-spacing: -.5px; }
+
+/* 西方现代 × 黑夜：纯黑极简 · 工业冷灰 */
+[data-style="western"][data-theme="dark"] {
+  --bg: #09090b;
+  --card: #121215;
+  --border: #27272a;
+  --text: #f4f4f5;
+  --text-sub: #a1a1aa;
+  --primary: #e4e4e7;
+  --primary-soft: #27272a;
+  --warn: #ef4444;
+  --ok: #10b981;
+  --radius: 2px;
+  --grad-primary: linear-gradient(135deg, #ffffff 0%, #d4d4d8 100%);
+  --stat-grad: linear-gradient(135deg, #ffffff 30%, #a1a1aa 100%);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, .6);
+}
+[data-style="western"][data-theme="dark"] body { background: #09090b; }
+[data-style="western"][data-theme="dark"] .sidebar { border-right: 1px solid #27272a; }
+[data-style="western"][data-theme="dark"] .btn.primary { background: #f4f4f5; color: #09090b; border-color: #f4f4f5; font-weight: 700; }
+[data-style="western"][data-theme="dark"] .tab.active { background: #27272a; color: #fff; }
+
+/* ----------------- 🎴 日式轻 (生成棉麻 · 町屋月夜) ----------------- */
+[data-style="jp"] {
+  --bg: #f6f4ef; --card: #fdfcf8; --border: #e3ddd1;
+  --text: #4a4640; --text-sub: #96907f;
+  --primary: #5a7ba6; --primary-soft: #edf1f6;
+  --warn: #c2705d; --ok: #6f9b6f;
+  --radius: 16px;
+  --grad-primary: linear-gradient(135deg, #7b98bf 0%, #4f6b92 100%);
+  --stat-grad: linear-gradient(135deg, #4a4640 20%, #5a7ba6 100%);
+}
+[data-style="jp"] body { font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Microsoft YaHei", sans-serif; }
+[data-style="jp"] .card { box-shadow: 0 2px 12px rgba(110, 120, 140, .07); border-radius: 16px; }
+[data-style="jp"] .sidebar { border-right: 1px solid #c9beab; }
+[data-style="jp"] .chip, [data-style="jp"] .badge { border-radius: 8px; }
+
+/* 日式轻 × 黑夜：町屋深蓝 · 蓝染月色 */
+[data-style="jp"][data-theme="dark"] {
+  --bg: #0f141c;
+  --card: #171f2b;
+  --border: #263346;
+  --text: #e2ded7;
+  --text-sub: #8d98a6;
+  --primary: #7ea3cc;
+  --primary-soft: #1a2738;
+  --warn: #d98877;
+  --ok: #88b388;
+  --radius: 16px;
+  --grad-primary: linear-gradient(135deg, #91b5de 0%, #5e84ad 100%);
+  --stat-grad: linear-gradient(135deg, #e2ded7 20%, #7ea3cc 100%);
+  --shadow-card: 0 4px 18px rgba(0, 0, 0, .4);
+}
+[data-style="jp"][data-theme="dark"] body {
+  background: linear-gradient(160deg, #121822 0%, #0f141c 60%, #0c1017 100%) fixed;
+}
+[data-style="jp"][data-theme="dark"] .sidebar { border-right: 1px solid #263346; }
+[data-style="jp"][data-theme="dark"] .btn.primary { background: #7ea3cc; color: #0f141c; font-weight: 600; }
+
+/* ----------------- 🏰 欧伦 (森林墨绿 · 羊皮鎏金) ----------------- */
+[data-style="euro"] {
+  --bg: #f3efe6; --card: #fffdf6; --border: #ddd2bd;
+  --text: #33301f; --text-sub: #857e6a;
+  --primary: #3e5c47; --primary-soft: #e8eee7;
+  --warn: #a8503c; --ok: #4c7a54;
+  --radius: 10px;
+  --grad-primary: linear-gradient(135deg, #517a5e 0%, #2f4b3a 100%);
+  --stat-grad: linear-gradient(135deg, #33301f 20%, #3e5c47 100%);
+}
+[data-style="euro"] body { font-family: Georgia, "Times New Roman", "Songti SC", serif; }
+[data-style="euro"] .sidebar { border-right: 3px double #b08d4f66; }
+[data-style="euro"] .card { box-shadow: 0 1px 5px rgba(120, 100, 60, .1); border-radius: 10px; }
+[data-style="euro"] .btn.primary { background: var(--primary); border-color: var(--primary); }
+[data-style="euro"] .brand { color: #3e5c47; }
+
+/* 欧伦 × 黑夜：牛津古籍阁 · 深墨绿底 + 鎏金古铜 */
+[data-style="euro"][data-theme="dark"] {
+  --bg: #0d1410;
+  --card: #151e18;
+  --border: #2c3c31;
+  --text: #e8e2d5;
+  --text-sub: #9ca395;
+  --primary: #c2a661;
+  --primary-soft: #232d20;
+  --warn: #e07a67;
+  --ok: #6cb07a;
+  --radius: 10px;
+  --grad-primary: linear-gradient(135deg, #d8bc75 0%, #a48540 100%);
+  --stat-grad: linear-gradient(135deg, #e8e2d5 20%, #c2a661 100%);
+  --shadow-card: 0 3px 14px rgba(0, 0, 0, .5);
+}
+[data-style="euro"][data-theme="dark"] body {
+  background: linear-gradient(160deg, #111a14 0%, #0d1410 50%, #080d0a 100%) fixed;
+}
+[data-style="euro"][data-theme="dark"] .sidebar { border-right: 3px double #c2a66155; }
+[data-style="euro"][data-theme="dark"] .brand { color: #c2a661; }
+[data-style="euro"][data-theme="dark"] .btn.primary { background: #c2a661; color: #151e18; font-weight: 700; border-color: #c2a661; }
+
+/* ----------------- 🕹 复古街机 (GameBoy · 80s霓虹赛博) ----------------- */
+/* 白天：经典 GameBoy 初代黄绿液晶点阵风格 */
+[data-style="arcade"] {
+  --bg: #dbe2cf;
+  --card: #c8d3b8;
+  --border: #8b9978;
+  --text: #2c3823;
+  --text-sub: #546545;
+  --primary: #3b4e2a;
+  --primary-soft: #b8c7a4;
+  --warn: #872e2e;
+  --ok: #345c2f;
+  --radius: 4px;
+  --grad-primary: linear-gradient(135deg, #4d6637 0%, #2c3823 100%);
+  --stat-grad: linear-gradient(135deg, #2c3823 30%, #546545 100%);
+  --shadow-card: 3px 3px 0 #8b9978;
+  --shadow-btn: 2px 2px 0 #546545;
+}
+[data-style="arcade"] body {
+  font-family: "Consolas", "Courier New", "Menlo", monospace;
+  background: #dbe2cf;
+  letter-spacing: .2px;
+}
+[data-style="arcade"] .sidebar { border-right: 2px solid #8b9978; background: #cfd9bf; }
+[data-style="arcade"] .card {
+  border: 2px solid #8b9978;
+  box-shadow: 3px 3px 0 #8b9978;
+  border-radius: 4px;
+}
+[data-style="arcade"] .btn {
+  border: 2px solid #546545;
+  box-shadow: 2px 2px 0 #546545;
+  font-family: monospace;
+  font-weight: 700;
+  border-radius: 4px;
+}
+[data-style="arcade"] .btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #546545;
+}
+[data-style="arcade"] .btn.primary { background: #3b4e2a; color: #dbe2cf; border-color: #2c3823; }
+[data-style="arcade"] .badge, [data-style="arcade"] .tag {
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  font-family: monospace;
+}
+[data-style="arcade"] .stat-value { font-family: monospace; font-weight: 900; }
+
+/* 复古街机 × 黑夜：80s 赛博街机厅 · 霓虹粉紫 + 激光青 */
+[data-style="arcade"][data-theme="dark"] {
+  --bg: #0f081d;
+  --card: #1a1030;
+  --border: #432b70;
+  --text: #f0e6ff;
+  --text-sub: #a894cc;
+  --primary: #f43f5e;
+  --primary-soft: #2d1645;
+  --warn: #fb7185;
+  --ok: #06b6d4;
+  --radius: 4px;
+  --grad-primary: linear-gradient(135deg, #f43f5e 0%, #9333ea 100%);
+  --stat-grad: linear-gradient(135deg, #f0e6ff 20%, #06b6d4 100%);
+  --shadow-card: 0 0 16px rgba(244, 63, 94, .18), 3px 3px 0 #432b70;
+  --shadow-btn: 2px 2px 0 #f43f5e;
+}
+[data-style="arcade"][data-theme="dark"] body {
+  background: linear-gradient(160deg, #160a2c 0%, #0f081d 50%, #07030e 100%) fixed;
+}
+[data-style="arcade"][data-theme="dark"] .sidebar {
+  border-right: 2px solid #5b359c;
+  background: rgba(22, 10, 44, .92);
+}
+[data-style="arcade"][data-theme="dark"] .card {
+  border: 2px solid #5b359c;
+  box-shadow: 0 0 15px rgba(147, 51, 234, .15), 3px 3px 0 #3b1b68;
+}
+[data-style="arcade"][data-theme="dark"] .btn.primary {
+  background: linear-gradient(135deg, #f43f5e, #be123c);
+  color: #fff;
+  border-color: #f43f5e;
+  box-shadow: 0 0 10px rgba(244, 63, 94, .5), 2px 2px 0 #9333ea;
+}
+[data-style="arcade"][data-theme="dark"] .tab.active {
+  background: #2d1645;
+  color: #06b6d4;
+  border: 1px solid #06b6d4;
+  box-shadow: 0 0 8px rgba(6, 182, 212, .4);
+}
+[data-style="arcade"][data-theme="dark"] .brand {
+  color: #f43f5e;
+  text-shadow: 0 0 8px rgba(244, 63, 94, .6);
+}
+
+/* ----------------- 🍬 潮流波普 (多巴胺粗边 · 潮流暗波) ----------------- */
+/* 白天：Neo-Brutalism 新丑风 · 2.5px 纯黑粗描边 + 实体硬阴影 + 多巴胺色彩 */
+[data-style="pop"] {
+  --bg: #fffbf0;
+  --card: #ffffff;
+  --border: #111111;
+  --text: #111111;
+  --text-sub: #4b5563;
+  --primary: #ff5e36;
+  --primary-soft: #fef08a;
+  --warn: #ef4444;
+  --ok: #10b981;
+  --radius: 12px;
+  --grad-primary: linear-gradient(135deg, #ff5e36 0%, #f97316 100%);
+  --stat-grad: linear-gradient(135deg, #111111 40%, #ff5e36 100%);
+  --shadow-card: 4px 4px 0 #111111;
+  --shadow-btn: 3px 3px 0 #111111;
+}
+[data-style="pop"] body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", sans-serif;
+  font-weight: 500;
+}
+[data-style="pop"] .sidebar {
+  border-right: 2.5px solid #111;
+  background: #fff;
+}
+[data-style="pop"] .card {
+  border: 2.5px solid #111111;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #111111;
+}
+[data-style="pop"] .card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #111111;
+}
+[data-style="pop"] .btn {
+  border: 2px solid #111111;
+  box-shadow: 3px 3px 0 #111111;
+  font-weight: 700;
+  border-radius: 8px;
+}
+[data-style="pop"] .btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #111111;
+}
+[data-style="pop"] .btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #111111;
+}
+[data-style="pop"] .btn.primary {
+  background: #ff5e36;
+  color: #fff;
+  border-color: #111;
+}
+[data-style="pop"] .tab {
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+}
+[data-style="pop"] .tab.active {
+  border: 2px solid #111;
+  background: #fde047;
+  color: #111;
+  font-weight: 800;
+  box-shadow: 2px 2px 0 #111;
+}
+[data-style="pop"] .badge, [data-style="pop"] .tag {
+  border: 1.5px solid #111;
+  font-weight: 700;
+}
+
+/* 潮流波普 × 黑夜：暗波朋克 (Dark Brutalism) · 荧光柠檬黄 + 鲜艳品红 + 实体硬描边 */
+[data-style="pop"][data-theme="dark"] {
+  --bg: #0d0d0f;
+  --card: #17171c;
+  --border: #facc15;
+  --text: #f9fafb;
+  --text-sub: #9ca3af;
+  --primary: #facc15;
+  --primary-soft: #292518;
+  --warn: #ff4976;
+  --ok: #4ade80;
+  --radius: 12px;
+  --grad-primary: linear-gradient(135deg, #facc15 0%, #f59e0b 100%);
+  --stat-grad: linear-gradient(135deg, #ffffff 30%, #facc15 100%);
+  --shadow-card: 4px 4px 0 rgba(250, 204, 21, .55);
+  --shadow-btn: 3px 3px 0 rgba(250, 204, 21, .55);
+}
+[data-style="pop"][data-theme="dark"] body { background: #0d0d0f; }
+[data-style="pop"][data-theme="dark"] .sidebar {
+  border-right: 2px solid #facc15;
+  background: #121215;
+}
+[data-style="pop"][data-theme="dark"] .card {
+  border: 2px solid #383842;
+  box-shadow: 4px 4px 0 #facc15;
+}
+[data-style="pop"][data-theme="dark"] .card:hover {
+  border-color: #facc15;
+}
+[data-style="pop"][data-theme="dark"] .btn {
+  border: 2px solid #facc15;
+  box-shadow: 2px 2px 0 #facc15;
+  background: #1c1c24;
+  color: #fff;
+}
+[data-style="pop"][data-theme="dark"] .btn.primary {
+  background: #facc15;
+  color: #111;
+  font-weight: 800;
+  border-color: #facc15;
+}
+[data-style="pop"][data-theme="dark"] .tab.active {
+  border: 2px solid #facc15;
+  background: #292518;
+  color: #facc15;
+  box-shadow: 2px 2px 0 #facc15;
+}
+[data-style="pop"][data-theme="dark"] .badge, [data-style="pop"][data-theme="dark"] .tag {
+  border: 1px solid #4b5563;
+}
 
 /* 全局滚动条 */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -405,79 +779,16 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .tag.active { background: #ecfdf5; color: var(--ok); }
 .empty-prov { color: var(--text-sub); font-size: 13px; text-align: center; padding: 14px 0; }
 
-/* ============ 界面风格选择 ============ */
-.style-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+/* ============ 界面风格选择卡片 ============ */
+.style-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)); gap: 10px; }
 .style-opt {
   border: 1px solid var(--border); background: var(--card); border-radius: 10px;
-  padding: 16px 10px; cursor: pointer; font-size: 13.5px; text-align: center;
-  font-family: inherit; color: var(--text);
+  padding: 14px 8px; cursor: pointer; font-size: 13px; text-align: center;
+  font-family: inherit; color: var(--text); transition: all .15s ease;
 }
-.style-opt:hover { border-color: var(--primary); }
-.style-opt.active { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); font-weight: 600; }
+.style-opt:hover { border-color: var(--primary); transform: translateY(-1px); }
+.style-opt.active { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); font-weight: 700; }
 .style-opt .style-desc { display: block; font-size: 11px; color: var(--text-sub); margin-top: 4px; font-weight: 400; }
-
-/* ============ 界面风格主题（白天模式生效；黑夜模式统一暗色） ============ */
-
-/* 🏮 中国古典：宣纸米色 + 朱砂 + 楷体 */
-[data-style="classic"] {
-  --bg: #f4eee1; --card: #fbf7ec; --border: #d9cdb2;
-  --text: #3a3226; --text-sub: #8a7d68;
-  --primary: #a63d2f; --primary-soft: #f3e4da;
-  --warn: #b3402e; --ok: #5a7247;
-  --radius: 6px;
-  --grad-primary: linear-gradient(135deg, #c0533f 0%, #8f2f22 100%);
-  --stat-grad: linear-gradient(135deg, #3a3226 20%, #a63d2f 100%);
-}
-[data-style="classic"] body { font-family: "KaiTi", "STKaiti", "楷体", "SimSun", serif; }
-[data-style="classic"] .topbar { border-bottom: 2px solid #a63d2f40; }
-[data-style="classic"] .card { box-shadow: 0 1px 4px rgba(90, 70, 40, .08); }
-[data-style="classic"] .stat-value, [data-style="classic"] .brand { letter-spacing: 1px; }
-
-/* 🏛 西方现代：冷灰白 + 纯黑几何 + 无衬线 */
-[data-style="western"] {
-  --bg: #f4f4f5; --card: #ffffff; --border: #e4e4e7;
-  --text: #18181b; --text-sub: #71717a;
-  --primary: #18181b; --primary-soft: #e9e9ee;
-  --warn: #dc2626; --ok: #059669;
-  --radius: 2px;
-  --grad-primary: linear-gradient(135deg, #3f3f46 0%, #111113 100%);
-  --stat-grad: linear-gradient(135deg, #18181b 30%, #52525b 100%);
-}
-[data-style="western"] body { font-family: "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif; }
-[data-style="western"] .card { box-shadow: 0 1px 3px rgba(0, 0, 0, .07); }
-[data-style="western"] .btn.primary { background: var(--primary); }
-[data-style="western"] .stat-value { font-weight: 800; letter-spacing: -.5px; }
-
-/* 🎴 日式轻：生成り暖白 + 藍色 + 圆润 */
-[data-style="jp"] {
-  --bg: #f6f4ef; --card: #fdfcf8; --border: #e3ddd1;
-  --text: #4a4640; --text-sub: #96907f;
-  --primary: #5a7ba6; --primary-soft: #edf1f6;
-  --warn: #c2705d; --ok: #6f9b6f;
-  --radius: 16px;
-  --grad-primary: linear-gradient(135deg, #7b98bf 0%, #4f6b92 100%);
-  --stat-grad: linear-gradient(135deg, #4a4640 20%, #5a7ba6 100%);
-}
-[data-style="jp"] body { font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Microsoft YaHei", sans-serif; }
-[data-style="jp"] .card { box-shadow: 0 2px 12px rgba(110, 120, 140, .07); }
-[data-style="jp"] .topbar { border-bottom: 1px solid #c9beab; }
-[data-style="jp"] .chip, [data-style="jp"] .badge { border-radius: 8px; }
-
-/* 🏰 欧伦：奶油底 + 墨绿鎏金 + 衬线 */
-[data-style="euro"] {
-  --bg: #f3efe6; --card: #fffdf6; --border: #ddd2bd;
-  --text: #33301f; --text-sub: #857e6a;
-  --primary: #3e5c47; --primary-soft: #e8eee7;
-  --warn: #a8503c; --ok: #4c7a54;
-  --radius: 10px;
-  --grad-primary: linear-gradient(135deg, #517a5e 0%, #2f4b3a 100%);
-  --stat-grad: linear-gradient(135deg, #33301f 20%, #3e5c47 100%);
-}
-[data-style="euro"] body { font-family: Georgia, "Times New Roman", "Songti SC", serif; }
-[data-style="euro"] .topbar { border-bottom: 3px double #b08d4f66; }
-[data-style="euro"] .card { box-shadow: 0 1px 5px rgba(120, 100, 60, .1); }
-[data-style="euro"] .btn.primary { background: var(--primary); border-color: var(--primary); }
-[data-style="euro"] .brand { color: #3e5c47; }
 
 /* ============ v1.0.4：同步引导条 / 释义速览 / 朗读 / 测验 ============ */
 
