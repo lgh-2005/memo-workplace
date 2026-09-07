@@ -2214,6 +2214,23 @@ function pomoToday() { return pomo.sessions[bjDate()] || { count: 0, minutes: 0 
 function pomoRemaining() { return pomo.running ? Math.max(0, pomo.endsAt - Date.now()) : pomo.remainingMs; }
 
 function pomoRender() {
+  const rem = pomoRemaining();
+  const sec = Math.ceil(rem / 1000);
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  const card = $('.pomo-card');
+  if (card) card.classList.toggle('running', !!pomo.running);
+
+  // 更新呼吸能量环进度 (周长 2 * PI * 70 ≈ 440)
+  const ring = $('#pomoRingProgress');
+  if (ring && pomo.fullMs > 0) {
+    const totalMs = pomo.fullMs;
+    const progress = Math.min(1, Math.max(0, rem / totalMs));
+    const offset = 440 * (1 - progress);
+    ring.style.strokeDashoffset = offset;
+    ring.style.stroke = pomo.mode === 'work' ? 'var(--primary)' : 'var(--ok)';
+  }
+
   const ms = pomoRemaining();
   const m = Math.floor(ms / 60000), s = Math.floor((ms % 60000) / 1000);
   $('#pomoTime').textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
@@ -2529,3 +2546,157 @@ async function finishQuiz() {
   } catch { /* 服务未就绪时静默 */ }
   loadDashboard();
 })();
+
+/* ============ v1.1.9c：禅意专注视界 + 视线探照灯 + 原生白噪音心流场 ============ */
+
+/* 1. 禅意专注模式 (Zen Mode) */
+function toggleZenMode() {
+  const isZen = document.body.classList.toggle('zen-mode');
+  localStorage.setItem('wb-zen', isZen ? '1' : '0');
+  const btn = $('#zenToggle');
+  if (btn) btn.textContent = isZen ? '🧘‍♂️' : '🧘';
+  toast(isZen ? '已进入禅意专注视界（按 Esc 或 Z 退出）' : '已退出专注视界');
+}
+
+if ($('#zenToggle')) $('#zenToggle').addEventListener('click', toggleZenMode);
+if ($('#zenFloatingExit')) $('#zenFloatingExit').addEventListener('click', toggleZenMode);
+
+/* 2. 考研段落探照灯 (Spotlight Focus) */
+function toggleSpotlight() {
+  const isActive = document.body.classList.toggle('spotlight-active');
+  localStorage.setItem('wb-spotlight', isActive ? '1' : '0');
+  const btn = $('#spotlightToggleFloating');
+  if (btn) btn.classList.toggle('active', isActive);
+  toast(isActive ? '已开启段落探照灯（长难句防跳行）' : '已关闭段落探照灯');
+}
+
+if ($('#spotlightToggleFloating')) $('#spotlightToggleFloating').addEventListener('click', toggleSpotlight);
+
+/* 快捷键监听：Z 键切换禅模式，S 键切换探照灯，Esc 退出禅模式 */
+window.addEventListener('keydown', e => {
+  const tag = e.target.tagName.toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+  if (e.key === 'z' || e.key === 'Z') {
+    e.preventDefault();
+    toggleZenMode();
+  } else if (e.key === 's' || e.key === 'S') {
+    e.preventDefault();
+    toggleSpotlight();
+  } else if (e.key === 'Escape' && document.body.classList.contains('zen-mode')) {
+    e.preventDefault();
+    toggleZenMode();
+  }
+});
+
+/* 3. 纯原生 Web Audio 算法白噪音心流发生器（零外链、零音频文件下载） */
+let audioCtx = null;
+let noiseNode = null;
+let gainNode = null;
+let currentNoiseMode = 'off'; // 'off' | 'rain' | 'cafe'
+
+const noiseModes = ['off', 'rain', 'cafe'];
+const noiseNames = { off: '已关闭', rain: '雨落窗台 🌧', cafe: '深空自习室 ☕' };
+const noiseIcons = { off: '🌧', rain: '🌧', cafe: '☕' };
+
+function createNoiseBuffer(type) {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const bufferSize = audioCtx.sampleRate * 2;
+  const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  if (type === 'rain') {
+    // 粉红噪声算法：雨声质感
+    let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+    for (let i = 0; i < bufferSize; i++) {
+      const white = Math.random() * 2 - 1;
+      b0 = 0.99886 * b0 + white * 0.0555179;
+      b1 = 0.99332 * b1 + white * 0.0750759;
+      b2 = 0.96900 * b2 + white * 0.1538520;
+      b3 = 0.86650 * b3 + white * 0.3104856;
+      b4 = 0.55000 * b4 + white * 0.5329522;
+      b5 = -0.7616 * b5 - white * 0.0168980;
+      data[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.045;
+      b6 = white * 0.115926;
+    }
+  } else if (type === 'cafe') {
+    // 布朗噪声算法：自习室厚重遮噪
+    let lastOut = 0.0;
+    for (let i = 0; i < bufferSize; i++) {
+      const white = Math.random() * 2 - 1;
+      data[i] = (lastOut + (0.02 * white)) / 1.02;
+      lastOut = data[i];
+      data[i] *= 0.8;
+    }
+  }
+  return buffer;
+}
+
+function startNoise(type) {
+  stopNoise();
+  if (type === 'off') return;
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+
+    const buffer = createNoiseBuffer(type);
+    noiseNode = audioCtx.createBufferSource();
+    noiseNode.buffer = buffer;
+    noiseNode.loop = true;
+
+    // 低通滤波器柔化高频刺耳声
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = type === 'rain' ? 1200 : 600;
+
+    gainNode = audioCtx.createGain();
+    gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.18, audioCtx.currentTime + 1.2); // 柔和淡入
+
+    noiseNode.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    noiseNode.start();
+  } catch (err) {
+    console.warn('AudioContext failed:', err);
+  }
+}
+
+function stopNoise() {
+  if (noiseNode) {
+    try {
+      if (gainNode && audioCtx) {
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.5); // 淡出
+        setTimeout(() => {
+          try { noiseNode.stop(); noiseNode.disconnect(); } catch (e) {}
+          noiseNode = null;
+        }, 500);
+      } else {
+        noiseNode.stop();
+        noiseNode = null;
+      }
+    } catch (e) { noiseNode = null; }
+  }
+}
+
+function cycleWhiteNoise() {
+  const curIdx = noiseModes.indexOf(currentNoiseMode);
+  const nextIdx = (curIdx + 1) % noiseModes.length;
+  currentNoiseMode = noiseModes[nextIdx];
+
+  const btn = $('#whiteNoiseToggle');
+  const hint = $('#pomoAudioState');
+  if (btn) btn.textContent = noiseIcons[currentNoiseMode];
+  if (hint) hint.textContent = noiseNames[currentNoiseMode];
+
+  startNoise(currentNoiseMode);
+  toast(`🎧 白噪音伴读：${noiseNames[currentNoiseMode]}`);
+}
+
+if ($('#whiteNoiseToggle')) $('#whiteNoiseToggle').addEventListener('click', cycleWhiteNoise);
+
+/* 恢复本地存储的偏好 */
+if (localStorage.getItem('wb-spotlight') === '1') {
+  document.body.classList.add('spotlight-active');
+  const btn = $('#spotlightToggleFloating');
+  if (btn) btn.classList.add('active');
+}
