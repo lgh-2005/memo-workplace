@@ -394,6 +394,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 /* ----------------- 🏮 中国古典 (宣纸朱砂 · 紫檀墨砚) ----------------- */
 [data-style="classic"] {
   --bg: #f4eee1; --card: #fbf7ec; --border: #d9cdb2;
+  --topbar-bg: rgba(244, 238, 225, .88);
+  --card-sheen: linear-gradient(180deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0) 55%);
   --text: #3a3226; --text-sub: #8a7d68;
   --primary: #a63d2f; --primary-soft: #f3e4da;
   --warn: #b3402e; --ok: #5a7247;
@@ -401,7 +403,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --grad-primary: linear-gradient(135deg, #c0533f 0%, #8f2f22 100%);
   --stat-grad: linear-gradient(135deg, #3a3226 20%, #a63d2f 100%);
 }
-[data-style="classic"] body { font-family: "KaiTi", "STKaiti", "楷体", "SimSun", serif; }
+[data-style="classic"] body {
+  font-family: "KaiTi", "STKaiti", "楷体", "SimSun", serif;
+  background: linear-gradient(160deg, #f9f5ed 0%, #f4eee1 50%, #eee5d3 100%) fixed;
+}
 [data-style="classic"] .sidebar { border-right: 2px solid #a63d2f33; }
 [data-style="classic"] .card { box-shadow: 0 1px 4px rgba(90, 70, 40, .08); }
 [data-style="classic"] .stat-value, [data-style="classic"] .brand { letter-spacing: 1px; }
@@ -430,6 +435,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 /* ----------------- 🏛 西方现代 (瑞士无衬 · 工业黑白) ----------------- */
 [data-style="western"] {
   --bg: #f4f4f5; --card: #ffffff; --border: #e4e4e7;
+  --topbar-bg: rgba(244, 244, 245, .9);
+  --card-sheen: linear-gradient(180deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, 0) 55%);
   --text: #18181b; --text-sub: #71717a;
   --primary: #18181b; --primary-soft: #e9e9ee;
   --warn: #dc2626; --ok: #059669;
@@ -437,7 +444,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --grad-primary: linear-gradient(135deg, #3f3f46 0%, #111113 100%);
   --stat-grad: linear-gradient(135deg, #18181b 30%, #52525b 100%);
 }
-[data-style="western"] body { font-family: "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif; }
+[data-style="western"] body {
+  font-family: "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(160deg, #fafafa 0%, #f4f4f5 50%, #ececed 100%) fixed;
+}
 [data-style="western"] .sidebar { border-right: 1px solid #e4e4e7; }
 [data-style="western"] .card { box-shadow: 0 1px 3px rgba(0, 0, 0, .07); border-radius: 2px; }
 [data-style="western"] .btn.primary { background: var(--primary); }
@@ -467,6 +477,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 /* ----------------- 🎴 日式轻 (生成棉麻 · 町屋月夜) ----------------- */
 [data-style="jp"] {
   --bg: #f6f4ef; --card: #fdfcf8; --border: #e3ddd1;
+  --topbar-bg: rgba(246, 244, 239, .88);
+  --card-sheen: linear-gradient(180deg, rgba(255, 255, 255, .6), rgba(255, 255, 255, 0) 55%);
   --text: #4a4640; --text-sub: #96907f;
   --primary: #5a7ba6; --primary-soft: #edf1f6;
   --warn: #c2705d; --ok: #6f9b6f;
@@ -474,7 +486,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --grad-primary: linear-gradient(135deg, #7b98bf 0%, #4f6b92 100%);
   --stat-grad: linear-gradient(135deg, #4a4640 20%, #5a7ba6 100%);
 }
-[data-style="jp"] body { font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Microsoft YaHei", sans-serif; }
+[data-style="jp"] body {
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(160deg, #faf8f4 0%, #f6f4ef 50%, #eee9e0 100%) fixed;
+}
 [data-style="jp"] .card { box-shadow: 0 2px 12px rgba(110, 120, 140, .07); border-radius: 16px; }
 [data-style="jp"] .sidebar { border-right: 1px solid #c9beab; }
 [data-style="jp"] .chip, [data-style="jp"] .badge { border-radius: 8px; }
@@ -504,6 +519,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 /* ----------------- 🏰 欧伦 (森林墨绿 · 羊皮鎏金) ----------------- */
 [data-style="euro"] {
   --bg: #f3efe6; --card: #fffdf6; --border: #ddd2bd;
+  --topbar-bg: rgba(243, 239, 230, .88);
+  --card-sheen: linear-gradient(180deg, rgba(255, 255, 255, .6), rgba(255, 255, 255, 0) 55%);
   --text: #33301f; --text-sub: #857e6a;
   --primary: #3e5c47; --primary-soft: #e8eee7;
   --warn: #a8503c; --ok: #4c7a54;
@@ -511,7 +528,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --grad-primary: linear-gradient(135deg, #517a5e 0%, #2f4b3a 100%);
   --stat-grad: linear-gradient(135deg, #33301f 20%, #3e5c47 100%);
 }
-[data-style="euro"] body { font-family: Georgia, "Times New Roman", "Songti SC", serif; }
+[data-style="euro"] body {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  background: linear-gradient(160deg, #f9f6ef 0%, #f3efe6 50%, #eae3d4 100%) fixed;
+}
 [data-style="euro"] .sidebar { border-right: 3px double #b08d4f66; }
 [data-style="euro"] .card { box-shadow: 0 1px 5px rgba(120, 100, 60, .1); border-radius: 10px; }
 [data-style="euro"] .btn.primary { background: var(--primary); border-color: var(--primary); }
@@ -546,6 +566,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --bg: #dbe2cf;
   --card: #c8d3b8;
   --border: #8b9978;
+  --topbar-bg: rgba(219, 226, 207, .92);
+  --card-sheen: none;
   --text: #2c3823;
   --text-sub: #546545;
   --primary: #3b4e2a;
@@ -639,6 +661,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --bg: #fffbf0;
   --card: #ffffff;
   --border: #111111;
+  --topbar-bg: rgba(255, 251, 240, .92);
+  --card-sheen: none;
   --text: #111111;
   --text-sub: #4b5563;
   --primary: #ff5e36;
@@ -654,6 +678,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-style="pop"] body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", sans-serif;
   font-weight: 500;
+  background: #fffbf0;
 }
 [data-style="pop"] .sidebar {
   border-right: 2.5px solid #111;
@@ -761,6 +786,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --bg: #4a6b22;
   --card: #c4ab80;
   --border: #3b2817;
+  --topbar-bg: rgba(184, 155, 108, .96);
+  --card-sheen: none;
   --text: #1e150d;
   --text-sub: #543d2b;
   --primary: #5c8e32;
@@ -1211,6 +1238,182 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   }
   .more-item-icon {
     font-size: 18px;
+  }
+
+  /* 移动端各主题风格深度适配 (Daylight & Dark 完美融合) */
+  /* 中国古典 */
+  [data-style="classic"] .mobile-header {
+    border-bottom: 2px solid #a63d2f33;
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+  }
+  [data-style="classic"] .mobile-bottom-bar {
+    border-top: 2px solid #a63d2f33;
+  }
+  [data-style="classic"] .more-sheet {
+    border-top: 2px solid #a63d2f44;
+  }
+
+  /* 西方现代 */
+  [data-style="western"] .mobile-header,
+  [data-style="western"] .mobile-bottom-bar,
+  [data-style="western"] .more-sheet {
+    border-radius: 0;
+  }
+  [data-style="western"] .more-sheet-item {
+    border-radius: 2px;
+  }
+
+  /* 日式轻 */
+  [data-style="jp"] .mobile-header {
+    border-bottom: 1px solid #c9beab;
+  }
+  [data-style="jp"] .mobile-bottom-bar {
+    border-top: 1px solid #c9beab;
+  }
+  [data-style="jp"] .more-sheet {
+    border-radius: 24px 24px 0 0;
+  }
+  [data-style="jp"] .more-sheet-item {
+    border-radius: 16px;
+  }
+
+  /* 欧伦 */
+  [data-style="euro"] .mobile-header {
+    border-bottom: 2px double #b08d4f66;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  [data-style="euro"] .mobile-bottom-bar {
+    border-top: 2px double #b08d4f66;
+  }
+  [data-style="euro"] .more-sheet {
+    border-top: 2px double #b08d4f88;
+  }
+
+  /* 复古街机 */
+  [data-style="arcade"] .mobile-header {
+    border-bottom: 2px solid #8b9978;
+    background: #cfd9bf;
+    font-family: monospace;
+  }
+  [data-style="arcade"] .mobile-bottom-bar {
+    border-top: 2px solid #8b9978;
+    background: #c8d3b8;
+    box-shadow: 0 -3px 0 #8b9978;
+  }
+  [data-style="arcade"] .more-sheet {
+    border: 3px solid #8b9978;
+    border-bottom: none;
+    border-radius: 0;
+    background: #c8d3b8;
+    box-shadow: 0 -4px 0 #8b9978;
+  }
+  [data-style="arcade"] .more-sheet-item {
+    border: 2px solid #546545;
+    border-radius: 2px;
+    box-shadow: 2px 2px 0 #546545;
+    font-family: monospace;
+  }
+  [data-style="arcade"][data-theme="dark"] .mobile-header {
+    background: #140826;
+    border-bottom: 2px solid #3d1b6d;
+  }
+  [data-style="arcade"][data-theme="dark"] .mobile-bottom-bar {
+    background: #180d2e;
+    border-top: 2px solid #ff2a85;
+    box-shadow: 0 -3px 0 #00f0ff55;
+  }
+  [data-style="arcade"][data-theme="dark"] .more-sheet {
+    background: #180d2e;
+    border-color: #ff2a85;
+  }
+
+  /* 潮流波普 */
+  [data-style="pop"] .mobile-header {
+    border-bottom: 2.5px solid #111;
+    background: #fff;
+  }
+  [data-style="pop"] .mobile-bottom-bar {
+    border-top: 2.5px solid #111;
+    background: #fff;
+    box-shadow: 0 -3px 0 #111;
+  }
+  [data-style="pop"] .more-sheet {
+    border-top: 3px solid #111;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -6px 0 #111;
+  }
+  [data-style="pop"] .more-sheet-item {
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-shadow: 2.5px 2.5px 0 #111;
+  }
+  [data-style="pop"][data-theme="dark"] .mobile-header {
+    background: #18181c;
+    border-bottom: 2.5px solid #33333d;
+  }
+  [data-style="pop"][data-theme="dark"] .mobile-bottom-bar {
+    background: #18181c;
+    border-top: 2.5px solid #33333d;
+    box-shadow: 0 -3px 0 #000;
+  }
+  [data-style="pop"][data-theme="dark"] .more-sheet-item {
+    border-color: #33333d;
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  /* 我的世界像素风 */
+  [data-style="mc"] .mobile-header {
+    border-bottom: 3px solid #281a0e;
+    background: #b89b6c;
+    box-shadow: inset 0 -2px 0 #775738;
+    font-family: inherit;
+  }
+  [data-style="mc"] .mobile-bottom-bar {
+    border-top: 3px solid #281a0e;
+    background: #c4ab80;
+    box-shadow: inset 0 2px 0 #ecd9b9, 0 -3px 0 #281a0e;
+  }
+  [data-style="mc"] .more-sheet {
+    border: 3px solid #281a0e;
+    border-bottom: none;
+    border-radius: 0;
+    background: #c4ab80;
+    box-shadow: inset 2px 2px 0 #ecd9b9, inset -2px 0 0 #775738, 0 -4px 0 #281a0e;
+  }
+  [data-style="mc"] .more-sheet-item {
+    border: 2px solid #1b1208;
+    border-radius: 0;
+    background: #8b8b8b;
+    color: #fff;
+    font-family: inherit;
+    text-shadow: 1px 1px 0 #3f3f3f;
+    box-shadow: inset 2px 2px 0 #dbdbdb, inset -2px -2px 0 #555555, 2px 2px 0 #1b1208;
+  }
+  [data-style="mc"] .more-sheet-item:hover,
+  [data-style="mc"] .more-sheet-item:active {
+    background: #4a7522;
+    color: #fff;
+    border-color: #1b1208;
+    box-shadow: inset 2px 2px 0 #72a838, inset -2px -2px 0 #29440f, 1px 1px 0 #1b1208;
+    transform: translate(1px, 1px);
+  }
+  [data-style="mc"][data-theme="dark"] .mobile-header {
+    background: #1e0d12;
+    border-bottom: 3px solid #4a1c24;
+  }
+  [data-style="mc"][data-theme="dark"] .mobile-bottom-bar {
+    background: #250f16;
+    border-top: 3px solid #4a1c24;
+    box-shadow: inset 0 2px 0 #3a151f;
+  }
+  [data-style="mc"][data-theme="dark"] .more-sheet {
+    background: #250f16;
+    border-color: #4a1c24;
+  }
+  [data-style="mc"][data-theme="dark"] .more-sheet-item {
+    background: #351720;
+    border-color: #5c202d;
+    box-shadow: inset 2px 2px 0 #4a1f2b, inset -2px -2px 0 #1f0b11, 2px 2px 0 #0f0508;
   }
 
   main { margin: 0; padding: 14px 12px 30px; }
