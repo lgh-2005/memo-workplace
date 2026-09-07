@@ -743,3 +743,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-fix-dialog .field-label { padding: 10px 18px 4px; }
 .kb-fix-text { margin: 0 18px; width: calc(100% - 36px); }
 #kbFixResult { margin: 0 18px 14px; }
+
+
+/* ---------------- v1.1.7c：弹窗预览高亮 ---------------- */
+.kb-fix-preview { margin: 0 18px; padding: 10px 14px; max-height: 24vh; overflow: auto; white-space: pre-wrap; line-height: 1.75; font-size: 13px; border: 1px dashed color-mix(in srgb, var(--text-sub, #888) 35%, transparent); border-radius: 8px; background: color-mix(in srgb, var(--text-sub, #888) 5%, transparent); }
+.kb-fix-hl { background: #fdecec; color: #b3261e; font-weight: 600; border-bottom: 2px solid #e24b4a; border-radius: 2px; padding: 0 1px; }
+.kb-fix-miss { color: #ba7517; font-size: 12px; margin-bottom: 8px; }
+.kb-fix-text { max-height: 36vh; }

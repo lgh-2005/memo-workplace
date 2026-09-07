@@ -1947,6 +1947,38 @@ function kbFixRuleFor(tag) {
   return hit ? hit[1] : '';
 }
 
+/* v1.1.7c：弹窗预览高亮——AI 摘录(quote)在原文中标红。先精确 includes，
+   失败用去空白规范化+位置映射（quote 跨 〖N〗 锚点或含换行差异时仍能命中） */
+function kbFixHighlight(text, quote) {
+  const raw = String(text || '');
+  const q = String(quote || '').trim();
+  let hit = -1, qlen = 0;
+  if (q) {
+    hit = raw.indexOf(q);
+    if (hit >= 0) {
+      qlen = q.length;
+    } else {
+      const map = [];   // norm 下标 -> raw 下标（跳过空白）
+      let norm = '';
+      for (let i = 0; i < raw.length; i++) {
+        if (!/\s/.test(raw[i])) { norm += raw[i]; map.push(i); }
+      }
+      const nq = q.replace(/\s+/g, '');
+      if (nq.length >= 4) {
+        const at = norm.indexOf(nq);
+        if (at >= 0) {
+          hit = map[at];
+          qlen = (at + nq.length < map.length) ? (map[at + nq.length] - hit) : (raw.length - hit);
+        }
+      }
+    }
+  }
+  const html = (hit >= 0 && qlen > 0)
+    ? esc(raw.slice(0, hit)) + '<mark class="kb-fix-hl">' + esc(raw.slice(hit, hit + qlen)) + '</mark>' + esc(raw.slice(hit + qlen))
+    : esc(raw);
+  return { html, hit };
+}
+
 /* 疑点直编弹窗：textarea 改的即原始 itemText，保存走 /api/kb/record/update（整体 items 替换），成功后刷新详情与列表 */
 async function kbOpenFixModal(prefix, rid, x) {
   kbCloseEditor();   // 关闭旧式全量编辑面板，避免状态交叉
@@ -1974,6 +2006,8 @@ async function kbOpenFixModal(prefix, rid, x) {
       </div>
       <div class="kb-fix-issue">${esc(x.desc || '')}${x.quote ? `<div class="kb-issue-quote">“${esc(x.quote)}”</div>` : ''}</div>
       ${rule ? `<div class="kb-fix-rule">📐 ${esc(rule)}</div>` : ''}
+      <label class="field-label">🔍 疑点定位预览 <span style="font-weight:400">（<mark class="kb-fix-hl">红底纹</mark> = AI 认为有误处，随下方编辑实时更新）</span></label>
+      <div id="kbFixPreview" class="kb-fix-preview"></div>
       <label class="field-label">条目原文（可直接修改，保存后同步题库；改动会写入 edited_at 留痕）</label>
       <textarea id="kbFixText" class="input kb-fix-text" rows="14">${esc(origText)}</textarea>
       <div class="kb-fix-actions">
@@ -1984,6 +2018,18 @@ async function kbOpenFixModal(prefix, rid, x) {
       <div class="result" id="kbFixResult"></div>
     </div>`;
   document.body.appendChild(dlg);
+  /* v1.1.7c：预览区渲染——AI 摘录标红；编辑时节流刷新（改对了红纹即消失，直观反馈） */
+  const pv = $('#kbFixPreview');
+  const ta = $('#kbFixText');
+  const renderPv = () => {
+    const { html, hit } = kbFixHighlight(ta.value, x.quote);
+    pv.innerHTML = (x.quote && hit < 0 ? '<div class="kb-fix-miss">⚠️ AI 摘录未在当前文本命中（可能已被修改或跨段截断）</div>' : '') + html;
+    pv.scrollTop = 0;
+  };
+  renderPv();
+  let pvTimer = null;
+  ta.addEventListener('input', () => { clearTimeout(pvTimer); pvTimer = setTimeout(renderPv, 200); });
+
   const close = () => dlg.remove();
   dlg.querySelector('.kb-fix-close').addEventListener('click', close);
   dlg.addEventListener('click', e => { if (e.target === dlg) close(); });
