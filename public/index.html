@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.4</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.5</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
@@ -16,6 +16,7 @@
     <button class="tab" data-tab="notes">📖 助记库</button>
     <button class="tab" data-tab="kb">📚 语料库</button>
     <button class="tab" data-tab="exam">🗂 真题库</button>
+    <button class="tab" data-tab="unit">🧩 单元题库</button>
     <button class="tab" data-tab="pomo">🍅 番茄钟</button>
     <button class="tab" data-tab="settings">⚙️ 设置</button>
   </nav>
@@ -289,6 +290,34 @@
       <div id="exIssuesPanel"></div>
       <div id="exEditPanel" style="display:none;margin-top:10px"></div>
       <div id="exDetail"></div>
+    </div>
+  </section>
+
+  <!-- ============ 单元题库（v1.1.5） ============ -->
+  <section id="tab-unit" class="tab-page">
+    <div class="card">
+      <div class="card-title-row">
+        <div class="card-title">🧩 单元题库 · 按题型做题</div>
+      </div>
+      <div class="hint">真题整卷自动切片成可练习的单元——<b>完形 = 原文挖空内联选词 / 阅读 = Text + 逐题单选 / 新题型 = 空位 + 选项池 / 翻译 = 划线句 + 译文框 / 写作 = 题干 + 作文框</b>。到「🗂 真题库」导入拆题成功后单元自动生成。客观题判分需先录入标准答案（存 <code>data/answers.json</code>；请用权威版答案人工录入）。</div>
+      <div class="row-gap" id="unitFilters">
+        <button class="chip active" data-usec="">全部</button>
+        <button class="chip" data-usec="use_of_english">完形填空</button>
+        <button class="chip" data-usec="reading">阅读理解</button>
+        <button class="chip" data-usec="part_b">新题型</button>
+        <button class="chip" data-usec="translation">翻译</button>
+        <button class="chip" data-usec="writing">写作</button>
+      </div>
+      <div class="result" id="unitListResult"></div>
+      <div id="unitList"></div>
+    </div>
+    <div class="card" id="unitDetailCard" style="display:none">
+      <div class="card-title-row">
+        <div class="card-title" id="unitDetailTitle">单元</div>
+        <button class="btn" id="unitBackBtn">← 返回列表</button>
+      </div>
+      <div class="hint" id="unitDetailMeta"></div>
+      <div id="unitDetail"></div>
     </div>
   </section>
 

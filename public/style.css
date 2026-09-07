@@ -702,3 +702,17 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-issue-high { border-left-color: #e24b4a; }
 .kb-issue-mid { border-left-color: #ba7517; }
 .kb-issue-low { border-left-color: #639922; }
+
+
+/* ============ v1.1.5：单元做题 ============ */
+.u-blank, .u-gap { display: inline-flex; align-items: center; gap: 4px; margin: 0 2px; }
+.u-blank b, .u-gap b { color: var(--primary); font-size: 12px; }
+.u-blank select, .u-gap select { width: auto; min-width: 130px; padding: 2px 6px; font-size: 12px; }
+.u-opts { display: grid; gap: 6px; margin-top: 8px; }
+.u-opt { display: flex; gap: 6px; align-items: baseline; cursor: pointer; font-size: 13px; }
+.u-opt input { accent-color: var(--primary); }
+.u-ans-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.u-ans-item { font-size: 13px; display: inline-flex; gap: 4px; align-items: center; }
+.u-ans-item select { width: auto; padding: 2px 6px; }
+.u-ok { color: var(--success, #639922); }
+.u-bad { color: var(--danger, #e24b4a); }

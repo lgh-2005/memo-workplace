@@ -127,12 +127,14 @@ let db = loadJSON(DB_FILE, {
   sessions: [],           // 学习会话 {id, startedAt, endedAt, words[], messages[], errorWords[]}
   quizLog: [],            // 测验记录 [{ts, mode, total, familiar, vague, forget}]（v1.0.4）
   contentCreated: { date: '', count: 0 },   // v1.0.7：当日已创建内容数（例句+助记+释义，官方上限 600/天）
+  unitLog: [],            // 单元做题记录 [{ts, unitId, title, total, judged, correct}]（v1.1.5，为错题统计铺路）
 });
 // 旧 db.json 兼容：缺失字段补默认值
 if (!db.glosses) db.glosses = {};
 if (!Array.isArray(db.quizLog)) db.quizLog = [];
 if (db.lastSyncOk === undefined) db.lastSyncOk = true;
 if (!db.contentCreated || typeof db.contentCreated !== 'object') db.contentCreated = { date: '', count: 0 };   // v1.0.7
+if (!Array.isArray(db.unitLog)) db.unitLog = [];   // v1.1.5：单元做题记录缺省补齐
 
 function persistConfig() { saveJSON(CONFIG_FILE, config); }
 function persistDB() { saveJSON(DB_FILE, db); }
@@ -1043,6 +1045,97 @@ function examSummary(r) {
     source: r.source ? { file: r.source.file, parser: r.source.parser, imported_at: r.source.imported_at, category: r.source.category } : null,
     preview: String(r.text || (items[0] && items[0].text) || '').replace(/〖\/?\d+〗/g, '').slice(0, 90),
   };
+}
+
+/* ================= v1.1.5：单元题库（整卷切片视图 + 分题型生题规则） ================= */
+
+/* 单元 = 整卷数据的切片视图（数据零迁移）：板块为切片键，阅读按 passage_id 分篇、写作按 Part。
+   每个单元的「生题规则」由 section 决定，前端按 UNIT_PRACTICE 规则渲染成真实做题形态：
+   完形=原文挖空内联选词 / 阅读=Text+逐题单选 / 新题型=空位+选项池 / 翻译=划线句+译文框 / 写作=题干+作文框。
+   标准答案存 data/answers.json（人工录入权威答案，绝不由 LLM 生成）。 */
+
+const UNIT_SECTIONS = {
+  use_of_english: '完形填空',
+  reading: '阅读理解',
+  part_b: '新题型',
+  translation: '翻译',
+  writing: '写作',
+};
+
+const ANSWERS_FILE = path.join(DATA_DIR, 'answers.json');   // { unitId: { 题号: 'A' } }
+
+function loadAnswers() { return loadJSON(ANSWERS_FILE, {}); }
+
+function saveAnswers(a) { saveJSON(ANSWERS_FILE, a); }
+
+let unitCache = { mtime: 0, units: [] };
+
+/** 整卷 -> 单元切片（懒构建，mtime 缓存；整卷导入/编辑/删除后自动重建） */
+function buildUnits() {
+  const mtime = fileMtime(examsFile());
+  if (unitCache.mtime === mtime && unitCache.units.length) return unitCache.units;
+  const units = [];
+  for (const rec of loadExams()) {
+    const items = Array.isArray(rec.items) ? rec.items : [];
+    const year = rec.meta?.year || null;
+    const groups = [];
+    const gkey = it => {
+      if (it.section === 'reading') return 'reading~' + (it.passage_id ?? 0);
+      if (it.section === 'writing') return 'writing~' + (it.part || 'A');
+      return (it.section || 'misc') + '~0';
+    };
+    items.forEach((it, i) => {
+      const k = gkey(it);
+      let g = groups.find(x => x.key === k);
+      if (!g) { g = { key: k, section: it.section || 'misc', passageId: it.passage_id ?? null, part: it.part || null, idx: [] }; groups.push(g); }
+      g.idx.push(i);
+    });
+    for (const g of groups) {
+      const secName = UNIT_SECTIONS[g.section] || (g.section === 'misc' ? '其他' : g.section);
+      let title = `考研-${secName}-${year ? year + '年' : rec.title}`;
+      if (g.section === 'reading') title += `-第${g.passageId || '?'}篇`;
+      if (g.section === 'writing') title += `-Part ${g.part || 'A'}`;
+      const gitems = g.idx.map(i => items[i]);
+      const qs = gitems.filter(it => it.type === 'question');
+      units.push({
+        unitId: `${rec.id}~${g.key}`,
+        examId: rec.id,
+        year,
+        section: g.section,
+        label: '考研-' + secName,
+        title,
+        itemCount: gitems.length,
+        qCount: qs.length,
+        scored: qs.length > 0 && qs.every(it => it.options && Object.keys(it.options).length >= 2),
+        firstNum: qs[0]?.number ?? null,
+        lastNum: qs[qs.length - 1]?.number ?? null,
+        preview: String(gitems.find(it => it.type === 'passage' || it.type === 'writing')?.text || '').replace(/〖\/\d+〗/g, '').replace(/〖\d+〗/g, ' ').slice(0, 80),
+      });
+    }
+  }
+  units.sort((a, b) => (b.year || 0) - (a.year || 0) || (a.unitId < b.unitId ? -1 : 1));
+  unitCache = { mtime, units };
+  return units;
+}
+
+function findUnit(unitId) {
+  return buildUnits().find(u => u.unitId === unitId) || null;
+}
+
+/** 单元的原始条目切片（保持整卷内原始顺序：题干在前、题目按号） */
+function unitItems(unitId) {
+  const unit = findUnit(unitId);
+  if (!unit) return null;
+  const rec = loadExams().find(x => x.id === unit.examId);
+  if (!rec) return null;
+  const items = Array.isArray(rec.items) ? rec.items : [];
+  const key = unitId.slice(unitId.indexOf('~') + 1);
+  const gkey = it => {
+    if (it.section === 'reading') return 'reading~' + (it.passage_id ?? 0);
+    if (it.section === 'writing') return 'writing~' + (it.part || 'A');
+    return (it.section || 'misc') + '~0';
+  };
+  return { unit, rec, items: items.map((it, i) => ({ it, i })).filter(x => gkey(x.it) === key).map(x => x.it) };
 }
 
 /* ---------- v1.1.1：语料导入（投放 -> 解析 -> 归档/隔离 + 日志） ---------- */
@@ -2429,6 +2522,77 @@ const server = http.createServer(async (req, res) => {
           .map(x => ({ loc: String(x.loc || '?').slice(0, 40), severity: ['high', 'mid', 'low'].includes(x.severity) ? x.severity : 'mid', desc: x.desc.trim().slice(0, 120) }));
         kbLog({ time: new Date().toISOString().slice(0, 19), file: '(review)', status: 'reviewed', store, records: issues.length });
         return sendJSON(res, 200, { ok: true, issues, reviewed_at: new Date().toISOString().slice(0, 19), mock: !!config.llm.mock });
+      }
+
+      /* ---------------- v1.1.5：单元题库 API ---------------- */
+
+      // 单元列表（整卷切片自动派生：导入成功即出现，无需手动推送）
+      if (p === '/api/unit/records' && req.method === 'GET') {
+        const answers = loadAnswers();
+        const units = buildUnits().map(u => ({ ...u, hasAnswer: !!(answers[u.unitId] && Object.keys(answers[u.unitId]).length) }));
+        return sendJSON(res, 200, { ok: true, units, file: examsFile() });
+      }
+
+      // 单元详情：items 切片 + 标准答案状态（只下发有无，不下发答案值）
+      {
+        const m = p.match(/^\/api\/unit\/detail\/([0-9a-f]{12}~[A-Za-z0-9_]+~[A-Za-z0-9]+)$/);
+        if (m && req.method === 'GET') {
+          const ui = unitItems(m[1]);
+          if (!ui) return sendJSON(res, 404, { error: '单元不存在：' + m[1] });
+          const std = loadAnswers()[m[1]] || {};
+          return sendJSON(res, 200, {
+            ok: true,
+            unit: ui.unit,
+            items: ui.items,
+            answerState: { has: Object.keys(std).length > 0, keys: Object.keys(std) },
+          });
+        }
+      }
+
+      // 保存标准答案（人工录入权威答案；LLM 不得生成）
+      if (p === '/api/unit/answers/save' && req.method === 'POST') {
+        const body = await readBody(req);
+        const unitId = String(body.unitId || '');
+        if (!findUnit(unitId)) return sendJSON(res, 404, { error: '单元不存在：' + unitId });
+        const ans = body.answers && typeof body.answers === 'object' ? body.answers : {};
+        const keys = Object.keys(ans);
+        if (keys.length > 60) return sendJSON(res, 400, { error: '答案条目过多', code: 'KB_IMPORT' });
+        const clean = {};
+        for (const k of keys) {
+          const v = String(ans[k] || '').trim().toUpperCase();
+          if (/^[A-G]$/.test(v)) clean[String(k).slice(0, 10)] = v;
+        }
+        const all = loadAnswers();
+        all[unitId] = clean;
+        saveAnswers(all);
+        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(answers)', status: 'saved', store: 'exam', records: Object.keys(clean).length, reason: unitId.slice(0, 40) });
+        return sendJSON(res, 200, { ok: true, saved: Object.keys(clean).length });
+      }
+
+      // 提交作答 -> 服务端判分（客观题对标准答案；主观题仅保存）
+      if (p === '/api/unit/answers/submit' && req.method === 'POST') {
+        const body = await readBody(req);
+        const unitId = String(body.unitId || '');
+        const ui = unitItems(unitId);
+        if (!ui) return sendJSON(res, 404, { error: '单元不存在：' + unitId });
+        const qs = ui.items.filter(it => it.type === 'question');
+        const std = loadAnswers()[unitId] || {};
+        const given = body.answers && typeof body.answers === 'object' ? body.answers : {};
+        const results = qs.map(it => {
+          const picked = String(given[String(it.number)] || '').trim().toUpperCase() || null;
+          const correct = std[String(it.number)] || null;
+          return { number: it.number, picked, correct, ok: (picked && correct) ? picked === correct : null };
+        });
+        const judged = results.filter(r => r.ok !== null);
+        const correctN = judged.filter(r => r.ok).length;
+        db.unitLog.push({ ts: new Date().toISOString().slice(0, 19), unitId, title: ui.unit.title, total: qs.length, judged: judged.length, correct: correctN });
+        if (db.unitLog.length > 500) db.unitLog = db.unitLog.slice(-500);
+        persistDB();
+        return sendJSON(res, 200, {
+          ok: true, title: ui.unit.title, results,
+          judged: judged.length, total: qs.length, correct: correctN,
+          hasStd: Object.keys(std).length > 0,
+        });
       }
 
       // v1.1.1：语料导入（文件 base64 数组 + 可选粘贴直录）

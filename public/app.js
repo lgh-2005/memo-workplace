@@ -91,6 +91,7 @@ function switchTab(name) {
   if (name === 'notes') loadNotes();
   if (name === 'kb') loadKb();
   if (name === 'exam') loadExamList();
+  if (name === 'unit') loadUnits();
   if (name === 'settings') loadConfig();
   // quiz 页保持进行中的状态，不重置
 }
@@ -1481,6 +1482,192 @@ $('#exBackBtn').addEventListener('click', () => {
   $('#exListResult').textContent = '';
   $('#exListResult').className = 'result';
 });
+
+/* ---------------- v1.1.5：单元题库（整卷切片 + 分题型做题规则） ---------------- */
+
+const unitState = { units: [], loaded: false, filter: '' };
+const UNIT_SEC_LABEL = { use_of_english: '完形填空', reading: '阅读理解', part_b: '新题型', translation: '翻译', writing: '写作' };
+
+async function loadUnits() {
+  if (unitState.loaded) return;
+  try {
+    const r = await api('/api/unit/records');
+    unitState.units = r.units || [];
+    unitState.loaded = true;
+    renderUnitList();
+  } catch (e) { console.error(e); }
+}
+
+function renderUnitList() {
+  const box = $('#unitList');
+  const list = unitState.units.filter(u => !unitState.filter || u.section === unitState.filter);
+  if (!list.length) {
+    box.innerHTML = '<div class="empty-prov">还没有单元。到「🗂 真题库」导入 tex / 文字层 PDF，拆题成功后单元自动生成。</div>';
+    return;
+  }
+  box.innerHTML = list.map(u => `
+    <div class="kb-item" data-uid="${esc(u.unitId)}">
+      <div class="kb-item-head">
+        <span class="badge kb-badge kb-badge-qa_set">${esc(u.label)}</span>
+        ${u.year ? `<span class="badge kb-badge-year">${u.year} 年</span>` : ''}
+        <b>${esc(u.title)}</b>
+        ${u.hasAnswer ? '<span class="badge kb-badge-year">有答案</span>' : ''}
+      </div>
+      <div class="kb-item-meta">${[u.qCount ? u.qCount + ' 题' : '', u.itemCount + ' 个条目', u.scored ? '可判分' : '主观题'].filter(Boolean).join(' · ')}</div>
+      ${u.preview ? `<div class="kb-item-preview">${esc(u.preview)}…</div>` : ''}
+    </div>`).join('');
+  $$('#unitList .kb-item').forEach(el => el.addEventListener('click', () => openUnit(el.dataset.uid)));
+}
+
+$$('#unitFilters .chip').forEach(c => c.addEventListener('click', () => {
+  unitState.filter = c.dataset.usec || '';
+  $$('#unitFilters .chip').forEach(x => x.classList.toggle('active', x === c));
+  renderUnitList();
+}));
+
+$('#unitBackBtn').addEventListener('click', () => {
+  $('#unitDetailCard').style.display = 'none';
+  renderUnitList();
+});
+
+/* 分题型生题规则：把单元条目渲染成真实做题形态（完形=挖空内联选词 / 阅读=逐题单选 /
+   新题型=空位+选项池 / 翻译=划线句+译文框 / 写作=题干+作文框） */
+function unitPracticeHtml(unit, items) {
+  const passage = items.find(it => it.type === 'passage');
+  const writings = items.filter(it => it.type === 'writing');
+  const qs = items.filter(it => it.type === 'question');
+
+  if (unit.section === 'use_of_english' && passage) {
+    const qByNum = {};
+    qs.forEach(q => { qByNum[q.number] = q; });
+    let s = esc(passage.text || '').replace(/〖\/\d+〗/g, '');
+    s = s.replace(/〖(\d+)〗/g, (m, n) => {
+      const q = qByNum[Number(n)];
+      const opts = q && q.options
+        ? Object.entries(q.options).map(([k, v]) => `<option value="${esc(k)}">${esc(k)}. ${esc(String(v).slice(0, 42))}</option>`).join('')
+        : '';
+      return `<span class="u-blank"><b>${n}</b><select class="input u-pick" data-num="${n}"><option value="">—</option>${opts}</select></span>`;
+    });
+    const html = s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+    return { body: `<div class="kb-passage">${html}</div>` };
+  }
+  if (unit.section === 'part_b' && passage) {
+    let s = esc(passage.text || '').replace(/〖\/\d+〗/g, '');
+    s = s.replace(/〖(\d+)〗/g, (m, n) =>
+      `<span class="u-gap"><b>${n}</b><select class="input u-pick" data-num="${n}"><option value="">—</option>${'ABCDEFG'.split('').map(k => `<option value="${k}">${k}</option>`).join('')}</select></span>`);
+    const html = s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+    const src = qs.find(q => q.options);
+    const poolHtml = src ? `<div class="kb-sec-title">选项池</div><div class="kb-opts">${Object.entries(src.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')}</div>` : '';
+    return { body: `<div class="kb-passage">${html}</div>${poolHtml}` };
+  }
+  if (unit.section === 'reading') {
+    let html = passage ? `<div class="kb-passage">${kbText(passage.text)}</div>` : '';
+    html += qs.map(q => {
+      const opts = q.options ? Object.entries(q.options).map(([k, v]) =>
+        `<label class="u-opt"><input type="radio" name="q${esc(String(q.number))}" value="${esc(k)}" data-num="${esc(String(q.number))}"><b>${esc(k)}.</b> ${esc(v)}</label>`).join('')
+        : '';
+      return `<div class="kb-question"><div class="kb-q-head">第 ${esc(String(q.number ?? '—'))} 题</div><div class="kb-q-text">${kbText(q.text)}</div><div class="u-opts">${opts}</div></div>`;
+    }).join('');
+    return { body: html };
+  }
+  if (unit.section === 'translation') {
+    let html = passage ? `<div class="kb-passage">${kbText(passage.text)}</div>` : '';
+    html += qs.map(q => `<div class="kb-question"><div class="kb-q-head">第 ${esc(String(q.number ?? '—'))} 题 · 将划线句译成中文</div><textarea class="input u-trans" data-num="${esc(String(q.number ?? ''))}" rows="3" placeholder="写下你的译文…"></textarea></div>`).join('');
+    return { body: html };
+  }
+  if (unit.section === 'writing') {
+    const w = writings[0] || items[0] || {};
+    return { body: `<div class="kb-question"><div class="kb-q-head">✍️ ${esc(w.part ? 'Part ' + w.part : '作文')}${w.score ? ' · ' + esc(String(w.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(w.text || '')}</div><textarea class="input u-essay" rows="12" placeholder="在纸上写完再对照解析，或直接在此打草稿…"></textarea></div>` };
+  }
+  return { body: items.map(it => `<div class="kb-passage">${kbText(it.text)}</div>`).join('') };
+}
+
+async function openUnit(uid) {
+  const card = $('#unitDetailCard');
+  card.style.display = 'block';
+  $('#unitDetail').innerHTML = '<div class="hint">加载中…</div>';
+  try {
+    const r = await api('/api/unit/detail/' + encodeURIComponent(uid));
+    const unit = r.unit, items = r.items, answerState = r.answerState;
+    $('#unitDetailTitle').textContent = unit.title;
+    $('#unitDetailMeta').textContent = [
+      unit.label, unit.year ? unit.year + ' 年' : '',
+      unit.qCount + ' 题',
+      answerState.has ? '已录标准答案（' + answerState.keys.length + ' 题）' : '未录标准答案',
+    ].filter(Boolean).join(' · ');
+
+    const { body } = unitPracticeHtml(unit, items);
+    $('#unitDetail').innerHTML = body + `
+      <div class="row-gap" style="margin-top:14px">
+        <button class="btn primary" id="unitSubmitBtn">✅ 提交答案</button>
+        <button class="btn" id="unitAnswerBtn">📝 录入标准答案</button>
+        <button class="btn ghost" id="unitBackBtn2">← 返回列表</button>
+      </div>
+      <div class="result" id="unitResult"></div>
+      <div id="unitAnswerPanel" style="display:none"></div>`;
+
+    $('#unitBackBtn2').addEventListener('click', () => {
+      card.style.display = 'none';
+      renderUnitList();
+    });
+
+    $('#unitSubmitBtn').addEventListener('click', async () => {
+      const answers = {};
+      $$('#unitDetail .u-pick').forEach(s => { if (s.value) answers[s.dataset.num] = s.value; });
+      $$('#unitDetail .u-opt input:checked').forEach(r2 => { answers[r2.dataset.num] = r2.value; });
+      $$('#unitDetail .u-trans').forEach(t => { if (t.value.trim()) answers[t.dataset.num] = '[译] ' + t.value.trim().slice(0, 500); });
+      const out = $('#unitResult');
+      out.textContent = '判分中…';
+      out.className = 'result';
+      try {
+        const r2 = await api('/api/unit/answers/submit', { method: 'POST', body: { unitId: uid, answers } });
+        const lines = r2.results.map(x => x.ok === null
+          ? (x.picked ? `<div>· 第 ${esc(String(x.number))} 题：作答已记录（无标准答案，不判分）</div>` : '')
+          : `<div class="${x.ok ? 'u-ok' : 'u-bad'}">第 ${esc(String(x.number))} 题：${x.ok ? '✓ 正确' : '✗ 错误'}${!x.ok && x.correct ? ' · 正确答案 ' + esc(x.correct) : ''}${!x.ok && x.picked ? ' · 你选了 ' + esc(x.picked) : ''}</div>`);
+        out.innerHTML = (r2.hasStd
+          ? `<b>客观题：${r2.correct}/${r2.judged} 正确</b><br>`
+          : '该单元尚未录入标准答案——点「📝 录入标准答案」后即可判分（作答已记录）<br>') + lines.join('');
+        out.className = r2.hasStd && r2.judged && r2.correct === r2.judged ? 'result ok' : 'result';
+      } catch (e) {
+        out.textContent = '❌ ' + e.message;
+        out.className = 'result err';
+      }
+    });
+
+    $('#unitAnswerBtn').addEventListener('click', () => {
+      const panel = $('#unitAnswerPanel');
+      if (panel.style.display === 'block') { panel.style.display = 'none'; return; }
+      const qws = items.filter(it => it.type === 'question' && it.options);
+      if (!qws.length) { panel.innerHTML = '<div class="hint">该单元没有可判分的客观题。</div>'; panel.style.display = 'block'; return; }
+      panel.innerHTML = `<div class="card-title" style="margin-top:10px">📝 录入标准答案（请用权威版答案人工录入；标准答案不影响本机数据，仅存 data/answers.json）</div>
+        <div class="u-ans-grid">${qws.map(q => {
+          const keys = Object.keys(q.options || {});
+          return `<span class="u-ans-item">第 ${esc(String(q.number))} 题 <select class="input u-std" data-num="${esc(String(q.number))}"><option value="">—</option>${keys.map(k => `<option value="${esc(k)}">${esc(k)}</option>`).join('')}</select>${answerState.keys.includes(String(q.number)) ? '<span class="u-ok">已有</span>' : ''}</span>`;
+        }).join('')}</div>
+        <div class="row-gap" style="margin-top:8px"><button class="btn primary" id="unitAnsSave">💾 保存答案</button></div>
+        <div class="result" id="unitAnsResult"></div>`;
+      panel.style.display = 'block';
+      $('#unitAnsSave').addEventListener('click', async () => {
+        const answers = {};
+        $$('#unitAnswerPanel .u-std').forEach(s => { if (s.value) answers[s.dataset.num] = s.value; });
+        const out = $('#unitAnsResult');
+        try {
+          const r2 = await api('/api/unit/answers/save', { method: 'POST', body: { unitId: uid, answers } });
+          out.textContent = '✅ 已保存 ' + r2.saved + ' 条标准答案';
+          out.className = 'result ok';
+          unitState.loaded = false;
+        } catch (e) {
+          out.textContent = '❌ ' + e.message;
+          out.className = 'result err';
+        }
+      });
+    });
+
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (e) {
+    $('#unitDetail').innerHTML = '❌ ' + esc(e.message);
+  }
+}
 
 /* ---------------- v1.1.4：MinerU 云端解析 + 记录编辑/删除/AI 审读 ---------------- */
 
