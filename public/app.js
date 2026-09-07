@@ -620,6 +620,18 @@ async function loadConfig() {
     if (c.dict?.hasLearners) $('#cfgDictLearners').placeholder = '已保存 ✓（留空 = 沿用）';
     if (c.mineru?.hasKey) $('#cfgMineruKey').placeholder = '已保存 ✓（留空 = 沿用）';
     if (c.dict?.hasCollegiate) $('#cfgDictCollegiate').placeholder = '已保存 ✓（留空 = 沿用）';
+    /* v1.1.7：AI 审核专用服务商回填 */
+    if (c.review) {
+      const revSel = $('#cfgReviewProvider');
+      if (revSel) {
+        revSel.innerHTML = '<option value="">— 同默认服务商 —</option>' +
+          (c.llm.providers || []).map(p => `<option value="${esc(p.id)}"${p.id === c.review.providerId ? ' selected' : ''}>${esc(p.name)}</option>`).join('');
+      }
+      const revModel = $('#cfgReviewModel');
+      if (revModel) revModel.value = c.review.model || '';
+      const revThink = $('#cfgReviewThinking');
+      if (revThink) revThink.checked = !!c.review.thinking;
+    }
     renderProviders();
   } catch (e) { console.error(e); }
 }
@@ -769,6 +781,25 @@ $('#provSave').addEventListener('click', async () => {
 $('#cfgMock').addEventListener('change', async () => {
   try { await api('/api/config', { method: 'POST', body: { llm: { mock: $('#cfgMock').checked } } }); }
   catch (e) { alert(e.message); }
+});
+/* v1.1.7：保存 AI 审核专用服务商 */
+$('#saveReviewCfgBtn').addEventListener('click', async () => {
+  const btn = $('#saveReviewCfgBtn');
+  const prev = btn.textContent;
+  try {
+    btn.disabled = true;
+    await api('/api/config', { method: 'POST', body: { review: {
+      providerId: $('#cfgReviewProvider').value,
+      model: $('#cfgReviewModel').value.trim(),
+      thinking: $('#cfgReviewThinking').checked,
+    } } });
+    btn.textContent = '✅ 已保存';
+    setTimeout(() => { btn.textContent = prev; }, 2000);
+  } catch (e) {
+    alert('保存失败：' + e.message);
+  } finally {
+    btn.disabled = false;
+  }
 });
 
 /* 考研模式：即时生效并持久化，聊天页徽章同步 */
@@ -1863,7 +1894,8 @@ async function kbDoReview() {
     const r = await api('/api/kb/review', { method: 'POST', body: { id } });
     const cls = { high: 'kb-issue-high', mid: 'kb-issue-mid', low: 'kb-issue-low' };
     const located = r.issues.filter(x => x.itemIdx != null).length;
-    const head = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}</div>` +
+    const modelTag = r.modelUsed ? (r.modelUsed.model ? ` · ${esc(r.modelUsed.model)}` : '') : '';
+    const head = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}${modelTag}</div>` +
       (r.materialStats ? `<div class="hint">审核对象：整理后题库内容（${r.materialStats.items} 个条目 / ${r.materialStats.chars} 字符${r.materialStats.truncated ? '，<b>超长已截断</b>' : ''}）${r.materialStats.hasRef ? ' + 真题原件参考' : ''} · 定位成功 ${located}/${r.issues.length}</div>` : '');
     const body = r.issues.length
       ? r.issues.map((x, i) => `

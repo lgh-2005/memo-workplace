@@ -102,6 +102,8 @@ if (!config.webSearch || typeof config.webSearch !== 'object') config.webSearch 
 if (!config.dict || typeof config.dict !== 'object') config.dict = { learnersKey: '', collegiateKey: '' };
 // v1.1.4 迁移：MinerU 解析配置缺省补齐
 if (!config.mineru || typeof config.mineru !== 'object') config.mineru = { apiKey: '', mock: false };
+// v1.1.7 迁移：AI 审核专用服务商配置缺省补齐
+if (!config.review || typeof config.review !== 'object') config.review = { providerId: '', model: '', thinking: false };
 
 // v1.0.2 迁移：旧的单服务商结构自动升级为多服务商列表（老配置无痛升级）
 if (!Array.isArray(config.llm?.providers)) {
@@ -444,7 +446,10 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
         'Content-Type': 'application/json',
         ...(llm.apiKey ? { 'Authorization': 'Bearer ' + llm.apiKey } : {}),
       },
-      body: JSON.stringify({ model: llm.model, messages, max_tokens: maxTokens, temperature: 0.7 }),
+      body: JSON.stringify(Object.assign(
+        { model: llm.model, messages, max_tokens: llm.max_tokens || maxTokens, temperature: llm.temperature !== undefined ? llm.temperature : 0.7 },
+        llm._thinking ? { thinking: llm._thinking } : {}
+      )),
     });
   } catch {
     throw new Error(`无法连接 AI 服务（${llm.baseUrl}），请到「设置」检查 Base URL 与网络`);
@@ -1964,6 +1969,11 @@ const server = http.createServer(async (req, res) => {
             hasKey: !!config.mineru.apiKey,
             mock: !!config.mineru.mock,
           },
+          review: {
+            providerId: (config.review && config.review.providerId) || '',
+            model: (config.review && config.review.model) || '',
+            thinking: !!(config.review && config.review.thinking),
+          },
           kb: {
             dir: (config.kb && config.kb.dir) || '',
             pythonPath: (config.kb && config.kb.pythonPath) || '',
@@ -2057,6 +2067,13 @@ const server = http.createServer(async (req, res) => {
           if (!config.mineru || typeof config.mineru !== 'object') config.mineru = { apiKey: '', mock: false };
           if (typeof body.mineru.apiKey === 'string' && body.mineru.apiKey.trim()) config.mineru.apiKey = body.mineru.apiKey.trim();
           if (body.mineru.mock != null) config.mineru.mock = !!body.mineru.mock;
+        }
+        // v1.1.7：AI 审核专用服务商配置持久化
+        if (body.review && typeof body.review === 'object') {
+          if (!config.review) config.review = { providerId: '', model: '', thinking: false };
+          if (body.review.providerId !== undefined) config.review.providerId = String(body.review.providerId || '').trim();
+          if (body.review.model !== undefined) config.review.model = String(body.review.model || '').trim();
+          if (body.review.thinking !== undefined) config.review.thinking = !!body.review.thinking;
         }
         // v1.1.0：语料库数据源目录（留空 = 用仓库内 corpus/）
         if (body.kb && typeof body.kb === 'object' && typeof body.kb.dir === 'string') {
@@ -2535,7 +2552,19 @@ const server = http.createServer(async (req, res) => {
             '3. 严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","quote":"逐字摘录","severity":"high|mid|low","desc":"问题描述(60字内)"}]}；没有问题输出 {"issues":[]}。',
           ].join('\n') },
           { role: 'user', content: `记录：${rec.title || rec.id}\n\n${material}${refNote}` },
-        ], { maxTokens: 2000 });
+        ], {
+          maxTokens: (config.review && config.review.thinking) ? 16000 : 2000,
+          providerId: (config.review && config.review.providerId) || undefined,
+          llmOverride: (() => {
+            const over = {};
+            if (config.review && config.review.model) over.model = config.review.model;
+            if (config.review && config.review.thinking) {
+              over.temperature = 1;
+              over._thinking = { type: 'enabled', budget_tokens: 8000 };
+            }
+            return Object.keys(over).length ? over : undefined;
+          })(),
+        });
         const parsed = parseMnemonicJSON(reply);
         if (!parsed || !Array.isArray(parsed.issues)) {
           throw Object.assign(new Error('AI 审读输出无法解析为疑点清单（schema 不符），原始输出：' + String(reply).slice(0, 120)), { code: 'KB_IMPORT' });
@@ -2579,6 +2608,10 @@ const server = http.createServer(async (req, res) => {
           ok: true, issues,
           reviewed_at: new Date().toISOString().slice(0, 19), mock: !!config.llm.mock,
           materialStats: { chars: totalChars, items: ordered.length, limit: LIMIT, truncated, hasRef: !!refNote },
+          modelUsed: {
+            providerId: (config.review && config.review.providerId) || config.llm.activeId || '',
+            model: (config.review && config.review.model) || '',
+          },
         });
       }
 

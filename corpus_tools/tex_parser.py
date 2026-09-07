@@ -47,6 +47,9 @@ def tokenize(raw):
     # comments + leftovers
     raw = "\n".join(re.sub(r"(?<!\\)%.*", "", ln) for ln in raw.split("\n"))
     raw = re.sub(r"\\(?:textbf|textit|emph)\s*\{\s*(Part\s+[A-C])\s*\}", r"\n\1\n", raw)
+    # v1.1.7 修复：在 catch-all 去除所有命令之前，先展开保内容命令，避免 \emph{Nature} 等关键词被剥离
+    for _ in range(4):
+        raw = re.sub(r'\\(?:uline|textbf|emph|underline|textit)\s*\{([^{}]*)\}', r'\1', raw)
     raw = re.sub(r"\\[a-zA-Z]+\s*(\[[^\]]*\])?(\{[^{}]*\})*", "\n", raw)
     raw = re.sub(r"[{}]", "", raw)
     raw = re.sub(r"[ \t]+", " ", raw)
