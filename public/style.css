@@ -1,3 +1,9 @@
+
+/* 桌面端默认隐藏手机专属组件 */
+.mobile-header, .mobile-bottom-bar, .more-sheet, .more-sheet-backdrop {
+  display: none;
+}
+
 /* 英语学习工作台 - 浅色主题 */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1037,18 +1043,176 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 
 /* ============ 移动端适配 ============ */
 @media (max-width: 700px) {
-  body { flex-direction: column; }
-  .sidebar {
-    width: 100%; min-width: 100%; height: auto; position: static;
-    border-right: none; border-bottom: 1px solid var(--border);
-    padding: 10px 14px;
+  body {
+    flex-direction: column;
+    padding-bottom: 70px; /* 为底部金刚导航条预留安全距离 */
   }
-  .sidebar-head { padding: 0 0 8px; margin-bottom: 6px; }
-  .tabs { flex-direction: row; flex-wrap: wrap; gap: 4px; overflow-y: visible; }
-  .tab-group-label { display: none; }
-  .tab { width: auto; padding: 6px 10px; font-size: 12.5px; }
-  .tab.active { box-shadow: inset 0 0 0 1px var(--primary); }
-  .sidebar-foot { padding: 6px 0 0; margin-top: 4px; }
+
+  /* 手机端隐藏 PC 庞大的左侧栏 */
+  .sidebar {
+    display: none !important;
+  }
+
+  /* 手机端超轻量原生 App 顶栏 (高度仅 46px) */
+  .mobile-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 0 14px;
+    background: var(--topbar-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .mobile-brand {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .mobile-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mobile-header-actions .theme-toggle {
+    padding: 4px 7px;
+    font-size: 14px;
+  }
+  .mobile-header-actions .sync-badge {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  /* 手机端原生 App 级底部金刚导航条 */
+  .mobile-bottom-bar {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    z-index: 1000;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, .06);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  .bottom-tab-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    color: var(--text-sub);
+    padding: 6px 0;
+    cursor: pointer;
+    transition: color .15s ease, transform .15s ease;
+  }
+  .bottom-tab-icon {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+  .bottom-tab-label {
+    font-size: 10.5px;
+    font-weight: 500;
+  }
+  .bottom-tab-item.active {
+    color: var(--primary);
+    font-weight: 700;
+  }
+  .bottom-tab-item:active {
+    transform: scale(.92);
+  }
+
+  /* 更多功能向上半屏抽屉 (Bottom Sheet) */
+  .more-sheet-backdrop {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1050;
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity .25s ease;
+  }
+  .more-sheet-backdrop.open {
+    display: block;
+    opacity: 1;
+  }
+  .more-sheet {
+    display: block;
+    position: fixed;
+    bottom: -100%;
+    left: 0; right: 0;
+    background: var(--card);
+    border-radius: 20px 20px 0 0;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .18);
+    z-index: 1100;
+    padding: 12px 18px 28px;
+    transition: bottom .3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .more-sheet.open {
+    bottom: 0;
+  }
+  .more-sheet-handle {
+    width: 36px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 999px;
+    margin: 0 auto 14px;
+  }
+  .more-sheet-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-sub);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .more-sheet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .more-sheet-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: all .16s ease;
+  }
+  .more-sheet-item:hover, .more-sheet-item:active {
+    background: var(--primary-soft);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-1px);
+  }
+  .more-item-icon {
+    font-size: 18px;
+  }
+
   main { margin: 0; padding: 14px 12px 30px; }
   .card { padding: 14px; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 10px; }

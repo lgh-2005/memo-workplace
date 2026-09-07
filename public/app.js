@@ -85,6 +85,7 @@ $$('.tab').forEach(btn => btn.addEventListener('click', () => switchTab(btn.data
 
 function switchTab(name) {
   $$('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  $$('.bottom-tab-item').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
   $$('.tab-page').forEach(p => p.classList.toggle('active', p.id === 'tab-' + name));
   if (name === 'dashboard') loadDashboard();
   if (name === 'study') loadWords();
@@ -2696,3 +2697,63 @@ if (localStorage.getItem('wb-spotlight') === '1') {
   const btn = $('#spotlightToggleFloating');
   if (btn) btn.classList.add('active');
 }
+
+
+/* ============ 手机端原生 App 级导航与折叠抽屉交互 (v1.1.9e) ============ */
+const bottomMoreBtn = $('#bottomMoreBtn');
+const moreSheet = $('#moreSheet');
+const moreSheetBackdrop = $('#moreSheetBackdrop');
+
+function openMoreSheet() {
+  if (moreSheet && moreSheetBackdrop) {
+    moreSheet.classList.add('open');
+    moreSheetBackdrop.classList.add('open');
+  }
+}
+
+function closeMoreSheet() {
+  if (moreSheet && moreSheetBackdrop) {
+    moreSheet.classList.remove('open');
+    moreSheetBackdrop.classList.remove('open');
+  }
+}
+
+if (bottomMoreBtn) bottomMoreBtn.addEventListener('click', openMoreSheet);
+if (moreSheetBackdrop) moreSheetBackdrop.addEventListener('click', closeMoreSheet);
+
+// 手机端底部金刚位与更多抽屉切换
+$$('.bottom-tab-item[data-tab]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    switchTab(btn.dataset.tab);
+    closeMoreSheet();
+  });
+});
+
+$$('.more-sheet-item[data-tab]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    switchTab(btn.dataset.tab);
+    closeMoreSheet();
+  });
+});
+
+// 手机顶栏主题切换与同步绑定
+if ($('#mobileThemeToggle')) {
+  $('#mobileThemeToggle').addEventListener('click', () => {
+    applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+  });
+}
+if ($('#mobileZenToggle')) {
+  $('#mobileZenToggle').addEventListener('click', toggleZenMode);
+}
+if ($('#mobileSyncBadge')) {
+  $('#mobileSyncBadge').addEventListener('click', () => {
+    if ($('#syncBadge')) $('#syncBadge').click();
+  });
+}
+
+// 代理原有的主题/同步更新到手机端
+const origApplyTheme = applyTheme;
+applyTheme = function(t) {
+  origApplyTheme(t);
+  if ($('#mobileThemeToggle')) $('#mobileThemeToggle').textContent = t === 'dark' ? '☀️' : '🌙';
+};
