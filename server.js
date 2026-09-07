@@ -2399,7 +2399,10 @@ const server = http.createServer(async (req, res) => {
       {
         const m = p.match(/^\/api\/kb\/record\/([0-9a-f]+)$/);
         if (m && req.method === 'GET') {
-          const r = loadKb().find(x => x.id === m[1]);
+          // v1.1.7a 修复：编辑器加载原始记录走本接口，真题 id 在 exams.jsonl——
+          // v1.1.2 分库后此处漏改单库查找，导致真题点「编辑」报「记录不存在」。
+          // 改为双库查找（真题优先，与 kbFindStoreOf 一致），语料/真题编辑均恢复。
+          const r = loadExams().find(x => x.id === m[1]) || loadKb().find(x => x.id === m[1]);
           if (!r) return sendJSON(res, 404, { error: '记录不存在' });
           return sendJSON(res, 200, {
             ok: true,
