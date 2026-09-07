@@ -7,24 +7,33 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.8</span></div>
+<aside class="sidebar">
+  <div class="sidebar-head">
+    <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.9.a</span></div>
+  </div>
   <nav class="tabs">
+    <div class="tab-group-label">日常学习</div>
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
     <button class="tab" data-tab="quiz">📝 测验</button>
-    <button class="tab" data-tab="notes">📖 助记库</button>
-    <button class="tab" data-tab="kb">📚 语料库</button>
-    <button class="tab" data-tab="exam">🗂 真题库</button>
-    <button class="tab" data-tab="unit">🧩 单元题库</button>
     <button class="tab" data-tab="pomo">🍅 番茄钟</button>
+
+    <div class="tab-group-label">题库与语料</div>
+    <button class="tab" data-tab="exam">🗂 真题库</button>
+    <button class="tab" data-tab="kb">📚 语料库</button>
+    <button class="tab" data-tab="unit">🧩 单元题库</button>
+    <button class="tab" data-tab="notes">📖 助记库</button>
+
+    <div class="tab-group-label">系统</div>
     <button class="tab" data-tab="settings">⚙️ 设置</button>
   </nav>
-  <button class="theme-toggle" id="themeToggle" title="切换黑夜/白天模式">🌙</button>
-  <div class="sync-badge" id="syncBadge" title="点击立即同步">
-    <span class="dot" id="syncDot"></span><span id="syncText">未同步</span>
+  <div class="sidebar-foot">
+    <button class="theme-toggle" id="themeToggle" title="切换黑夜/白天模式">🌙</button>
+    <div class="sync-badge" id="syncBadge" title="点击立即同步">
+      <span class="dot" id="syncDot"></span><span id="syncText">未同步</span>
+    </div>
   </div>
-</header>
+</aside>
 
 <main>
   <!-- ============ 仪表盘 ============ -->
