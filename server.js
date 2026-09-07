@@ -1331,8 +1331,13 @@ async function mineruParsePdf(buf, filename, isOcr) {
   const batchId = aj?.data?.batch_id;
   const putUrl = aj?.data?.file_urls?.[0];
   if (!batchId || !putUrl) throw new Error('MinerU 返回异常: ' + JSON.stringify(aj).slice(0, 200));
-  const put = await fetch(putUrl, { method: 'PUT', headers: { 'Content-Type': 'application/octet-stream' }, body: buf });
-  if (!put.ok) throw new Error('MinerU 文件上传失败 (HTTP ' + put.status + ')');
+  // 实测坑（v1.1.4a）：presigned URL 按「无 Content-Type」签名——PUT 带任何 Content-Type 都会 403 SignatureDoesNotMatch
+  // （curl --data-binary 会默认自动加 x-www-form-urlencoded，必须 -T 裸传或显式清空才能成功）
+  const put = await fetch(putUrl, { method: 'PUT', body: buf });
+  if (!put.ok) {
+    const t = await put.text().catch(() => '');
+    throw new Error('MinerU 文件上传失败 (HTTP ' + put.status + ') ' + t.slice(0, 200));
+  }
   let zipUrl = null;
   for (let i = 0; i < 80; i++) {   // 3s 间隔最长 4 分钟（留余量避开 5 分钟请求超时）
     await new Promise(s => setTimeout(s, 3000));
