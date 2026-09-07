@@ -1895,14 +1895,14 @@ async function kbDoReview() {
   const { prefix, id } = kbDetailState;
   if (!id) return;
   const out = $('#' + prefix + 'IssuesPanel');
-  out.innerHTML = '<div class="hint">🤖 AI 审读中…（以整理后的题库内容与真题原件为审核对象，只出报告、不改数据）</div>';
+  out.innerHTML = '<div class="hint kb-busy">AI 审读中…（报告生成后本行自动消失）</div>';
   try {
     const r = await api('/api/kb/review', { method: 'POST', body: { id } });
     const cls = { high: 'kb-issue-high', mid: 'kb-issue-mid', low: 'kb-issue-low' };
     const located = r.issues.filter(x => x.itemIdx != null).length;
     const modelTag = r.modelUsed ? (r.modelUsed.model ? ` · ${esc(r.modelUsed.model)}` : '') : '';
     const head = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}${modelTag}</div>` +
-      (r.materialStats ? `<div class="hint">审核对象：整理后题库内容（${r.materialStats.items} 个条目 / ${r.materialStats.chars} 字符${r.materialStats.truncated ? '，<b>超长已截断</b>' : ''}）${r.materialStats.hasRef ? ' + 真题原件参考' : ''} · 定位成功 ${located}/${r.issues.length}</div>` : '');
+      (r.materialStats ? `<details class="hint-fold" style="margin:4px 0 0"><summary>📊 审核范围 · 定位成功 ${located}/${r.issues.length}</summary><div class="hint">审核对象：整理后题库内容 ${r.materialStats.items} 个条目 / ${r.materialStats.chars} 字符${r.materialStats.truncated ? '，<b>超长已截断</b>' : ''}${r.materialStats.hasRef ? ' + 真题原件参考' : ''}。</div></details>` : '');
     /* v1.1.7e：按题型板块分组汇总（完形/阅读/翻译…），便于集中修改同一板块 */
     const secOf = x => {
       const m = String(x.itemTag || '').match(/^[a-z_]+·([a-z_]+)/);
@@ -1928,7 +1928,7 @@ async function kbDoReview() {
           <div class="kb-issue-group-head"><b>${GROUP_ICON[g.sec] || '📌 其他'}</b><span>· ${g.idxs.length} 处疑点</span><span class="kb-group-fixed" style="display:none;color:var(--ok);font-weight:600"></span></div>
           ${g.idxs.map(i => cardHtml(r.issues[i], i)).join('')}
         </div>`).join('')
-      : '<div class="hint">✅ 未发现明显疑点（AI 审读仅供参考，改动仍走人工编辑）</div>';
+      : '<div class="hint">✅ 未发现明显疑点（仅供参考，改动走人工编辑）</div>';
     out.innerHTML = head + body + `<div id="${prefix}LocateBox"></div>`;
     /* v1.1.7b：定位到此 → 弹窗直编（textarea 可改原文，保存同步库），附题型规则参考 */
     $$('#' + prefix + 'IssuesPanel [data-locate]').forEach(b => b.addEventListener('click', () => {
@@ -2130,6 +2130,11 @@ async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
     pv.scrollTop = 0;
   };
   renderPv();
+  /* v1.1.8：移动端预览区默认折叠，点一下展开全文 */
+  if (window.innerWidth <= 700) {
+    pv.classList.add('kb-collapsed');
+    pv.addEventListener('click', () => pv.classList.remove('kb-collapsed'), { once: true });
+  }
   let pvTimer = null;
   ta.addEventListener('input', () => { clearTimeout(pvTimer); pvTimer = setTimeout(renderPv, 200); });
 

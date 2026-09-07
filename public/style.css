@@ -773,3 +773,53 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-back-toast.warn { border-left: 4px solid #ba7517; }
 .kb-back-toast .btn { white-space: nowrap; }
 @keyframes kbToastIn { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+
+/* ================= v1.1.8：A/B/C 档——说明收纳 + 移动端补课 + 临时消息 ================= */
+
+/* A 档：hint 折叠面板（原生 details，双端生效） */
+.hint-fold { margin: 4px 0; }
+.hint-fold > summary { cursor: pointer; font-size: 12px; color: var(--text-sub); user-select: none; list-style: none; display: inline-flex; align-items: center; gap: 4px; }
+.hint-fold > summary::-webkit-details-marker { display: none; }
+.hint-fold > summary::before { content: '▸'; transition: transform .15s; }
+.hint-fold[open] > summary::before { transform: rotate(90deg); }
+.hint-fold > summary:hover { color: var(--primary); }
+.hint-fold .hint { margin-top: 4px; }
+
+/* C 档：加载/审读中 spinner */
+.kb-busy { display: flex; align-items: center; gap: 8px; }
+.kb-busy::before { content: ''; flex: none; width: 12px; height: 12px; border: 2px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: kbSpin .8s linear infinite; }
+@keyframes kbSpin { to { transform: rotate(360deg); } }
+
+/* B 档：弹窗预览移动端折叠态 */
+.kb-collapsed { max-height: 4.5em !important; overflow: hidden; position: relative; cursor: pointer; }
+.kb-collapsed::after { content: '👇 点开看完整高亮预览'; position: absolute; left: 0; right: 0; bottom: 0; text-align: center; font-size: 11px; color: var(--text-sub); background: linear-gradient(transparent, var(--card)); padding: 16px 0 4px; }
+
+/* B 档：新板块移动端补课（v1.1.0~v1.1.7 板块此前零适配） */
+@media (max-width: 700px) {
+  /* 详情正文与条目 */
+  .kb-passage { font-size: 14px; line-height: 1.85; }
+  .kb-question { padding: 10px; }
+  .kb-q-head { font-size: 12.5px; }
+  .exm-stats { font-size: 12px; }
+  .kb-sec-title { font-size: 14px; }
+  #kbDetailMeta, #exDetailMeta, #unitDetailMeta { font-size: 12px; }
+
+  /* 审读报告与疑点卡片 */
+  .kb-issue { padding: 8px 10px; font-size: 12.5px; }
+  .kb-issue-head { flex-wrap: wrap; row-gap: 4px; }
+  .kb-issue-head .btn { margin-left: 0 !important; }
+  .kb-issue-group-head { flex-wrap: wrap; padding: 6px 8px; font-size: 12.5px; }
+
+  /* 操作按钮：可换行 + 触控目标 */
+  .row-gap, .kb-fix-actions { flex-wrap: wrap; }
+  .btn { min-height: 38px; }
+  .btn.small { min-height: 34px; }
+
+  /* 疑点弹窗：全屏 sheet 式 */
+  .kb-fix-modal { padding: 0; align-items: flex-end; }
+  .kb-fix-dialog { width: 100vw; max-height: 94vh; border-radius: 16px 16px 0 0; }
+  .kb-fix-text { max-height: 30vh; }
+  .kb-fix-preview { max-height: 18vh; }
+  .kb-back-toast { right: 10px; bottom: 10px; left: 10px; flex-wrap: wrap; }
+}

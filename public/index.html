@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.7</span></div>
+  <div class="brand">🐳 英语学习工作台 <span class="ver">v1.1.8</span></div>
   <nav class="tabs">
     <button class="tab active" data-tab="dashboard">📊 仪表盘</button>
     <button class="tab" data-tab="study">💬 AI 学习</button>
@@ -139,7 +139,9 @@
   <section id="tab-quiz" class="tab-page">
     <div class="card" id="quizSetup">
       <div class="card-title">📝 单词测验</div>
+      <details class="hint-fold"><summary>ℹ️ 说明</summary>
       <div class="hint">主动回忆（测试效应）比反复看词义有效得多。测错的词会自动计入「忘记词」筛选，测完可回 AI 学习页针对性攻克。</div>
+      </details>
       <label class="field-label">词源</label>
       <div class="filter-row" id="quizSources">
         <button class="chip active" data-src="today">今日词</button>
@@ -183,7 +185,9 @@
           <button class="btn" id="addNoteBtn">＋ 手动添加</button>
         </div>
       </div>
+      <details class="hint-fold"><summary>ℹ️ 说明</summary>
       <div class="hint">💡 带 <span class="tag pending">待推送</span> 的助记还没同步到墨墨 App；点击「推送到墨墨」后会出现在该单词的助记列表里（消耗每日内容创建配额 600 条）。</div>
+      </details>
       <div class="notes-list" id="notesList"></div>
     </div>
   </section>
@@ -198,7 +202,9 @@
           <button class="btn" id="kbSearchBtn">🔍 搜索</button>
         </div>
       </div>
+      <details class="hint-fold"><summary>📖 板块说明</summary>
       <div class="hint">纯文本语料库（<code>corpus/records.jsonl</code>）：只收<b>外刊原文 / 教材文章 / 真题正文</b>三类文本，结构化真题已独立到「🗂 真题库」。板块顺序尊重语料自身（模块化渲染）。AI 教练讲解单词会引用这里的语料与真题库原句。来源筛选：</div>
+      </details>
       <div class="row-gap" id="kbFilters">
         <button class="chip active" data-kcat="">全部</button>
         <button class="chip" data-kcat="外刊">外刊原文</button>
@@ -214,7 +220,9 @@
         <div class="card-title">📥 导入语料</div>
         <button class="btn" id="kbLogBtn">📜 导入日志</button>
       </div>
+      <details class="hint-fold"><summary>ℹ️ 说明</summary>
       <div class="hint">三层契约（与导入工程一致）：上传落 <code>imports/&lt;分类&gt;/</code> → 解析写入 <code>records.jsonl</code>（<b>同名重导覆盖</b>）、原件归档 <code>archive/</code>；识别失败进 <code>quarantine/</code> 隔离区，全程留 <code>import_log.jsonl</code> 痕迹。支持 txt/md、html、docx（<b>tex/pdf 真题源请到「🗂 真题库」导入</b>）；也可粘贴文本直录；<b>扫描版 PDF</b> 可走下方 🛰 MinerU 云端解析（自动 OCR + 双栏还原）。</div>
+      </details>
       <div class="row-gap" style="flex-wrap:wrap">
         <select id="kbImportCategory" class="input" style="width:110px">
           <option value="真题">真题</option>
@@ -261,7 +269,9 @@
         <div class="card-title">🗂 真题库 · 考研英语一</div>
         <button class="btn" id="exLogBtn">📜 导入日志</button>
       </div>
+      <details class="hint-fold"><summary>📖 板块说明</summary>
       <div class="hint">结构化真题题库（<code>corpus/exams.jsonl</code>）：只收 <b>tex / pdf</b> 结构化源，自动拆题入库（同名重导覆盖，失败进隔离区）。按「<b>考试-题型</b>」专项处理——考研-完形填空 / 阅读理解 / 新题型 / 翻译 / 写作，各题型处理逻辑独立、输出结构统一。全库搜索与 AI 真题原句注入均覆盖本库。扫描版 PDF 可走 🛰 MinerU 解析（产出整卷「真题正文」入库；结构化拆题仍需 tex/文字层 PDF）。</div>
+      </details>
       <div class="row-gap" style="flex-wrap:wrap">
         <input type="file" id="exImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".tex,.pdf">
         <button class="btn primary" id="exImportBtn">🗂 导入真题</button>
@@ -299,7 +309,9 @@
       <div class="card-title-row">
         <div class="card-title">🧩 单元题库 · 按题型做题</div>
       </div>
+      <details class="hint-fold"><summary>📖 板块说明</summary>
       <div class="hint">真题整卷自动切片成可练习的单元——<b>完形 = 原文挖空内联选词 / 阅读 = Text + 逐题单选 / 新题型 = 空位 + 选项池 / 翻译 = 划线句 + 译文框 / 写作 = 题干 + 作文框</b>。到「🗂 真题库」导入拆题成功后单元自动生成。客观题判分需先录入标准答案（存 <code>data/answers.json</code>；请用权威版答案人工录入）。</div>
+      </details>
       <div class="row-gap" id="unitFilters">
         <button class="chip active" data-usec="">全部</button>
         <button class="chip" data-usec="use_of_english">完形填空</button>
@@ -345,7 +357,9 @@
           <div><label class="field-label">专注</label><input type="number" id="pomoWorkMin" class="input" value="25" min="1" max="120"></div>
           <div><label class="field-label">休息</label><input type="number" id="pomoBreakMin" class="input" value="5" min="1" max="60"></div>
         </div>
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
         <div class="hint">💡 建议节奏：切到「AI 学习」页选一批顽固词 → 开一个 25 分钟专注 → 结束后点「生成助记」收尾，正好一个番茄。</div>
+        </details>
       </div>
     </div>
   </section>
@@ -357,13 +371,17 @@
         <div class="card-title">墨墨背单词 API</div>
         <label class="field-label">Token</label>
         <input type="password" id="cfgToken" class="input" placeholder="粘贴墨墨开放 API Token">
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
         <div class="hint">获取方式：墨墨背单词 App → 我的 → 更多设置 → 实验功能 → 开放 API。App 内生成的 Token 长期有效。</div>
+        </details>
         <div class="row-gap">
           <button class="btn" id="testMaimemoBtn">测试连接</button>
           <button class="btn" id="syncNowBtn">立即全量同步</button>
         </div>
         <div class="result" id="maimemoTestResult"></div>
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
         <div class="hint">v1.0.7 已按墨墨官方频控优化：全局限流护栏（10s/20 次 · 60s/40 次 · 5h/2000 次）+ 二分切窗抓取（全量同步请求数降约 80%），正常使用不会触发 429。</div>
+        </details>
 
         <div class="card-title" style="margin-top:20px">自动同步</div>
         <label class="check-row"><input type="checkbox" id="cfgAutoSync"> 开启定时同步</label>
@@ -371,7 +389,9 @@
         <input type="number" id="cfgSyncMinutes" class="input" value="60" min="5">
 
         <div class="card-title" style="margin-top:20px">📚 云词库绑定 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.0.6 助记推送前提）</span></div>
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
         <div class="hint">墨墨要求助记挂在云词库（云词本 / 收藏本）里。未绑定或词不在库中时，助记推送会失败；绑定后推送会自动把单词补进所选云词库，再写入助记。</div>
+        </details>
         <div class="row-gap">
           <button class="btn" id="loadNotepadsBtn">拉取云词库列表</button>
           <select id="cfgNotepad" class="input" style="flex:1;min-width:0"><option value="">— 未绑定 —</option></select>
@@ -384,16 +404,24 @@
           <div class="card-title">AI 服务商（OpenAI 兼容 · 多档案）</div>
           <button class="btn" id="addProvBtn">＋ 添加服务商</button>
         </div>
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
         <div class="hint">默认服务商（⭐）用于全部 AI 功能；配置架构已支持按功能板块指定不同服务商，将在后续版本开放分区设置。</div>
+        </details>
         <div class="prov-list" id="provList"></div>
         <div class="card-title" style="margin-top:16px">🎓 考研英语一模式</div>
         <label class="check-row"><input type="checkbox" id="cfgKaoyan"> 开启（AI 内容对标考研英语一）</label>
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
         <div class="hint">开启后：AI 讲解优先考研高频义项与熟词僻义，例句贴近真题句式难度并标注话题领域，主动补充真题考法与写作搭配；助记和词典释义同步切换。默认关闭。</div>
+        </details>
         <label class="check-row"><input type="checkbox" id="cfgMock"> Mock 模式（不调用真实 AI，仅测试流程）</label>
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
         <div class="hint">密钥只保存在本机 <code>data/config.json</code>，请求经本地服务代理，不经过第三方。API Key 留空保存 = 沿用该档案已存的 Key。</div>
+        </details>
         <!-- v1.1.7：AI 审核专用服务商 -->
         <div class="card-title" style="margin-top:16px">🤖 AI 审核专用服务商 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（不填则使用默认服务商）</span></div>
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
         <div class="hint">仅 AI 审核功能使用此服务商，建议选支持长上下文 / 深度思考的模型。留空则沿用默认服务商。</div>
+        </details>
         <div class="grid-2" style="gap:10px">
           <div>
             <label class="field-label">服务商</label>
@@ -405,14 +433,18 @@
           </div>
         </div>
         <label class="check-row" style="margin-top:8px"><input type="checkbox" id="cfgReviewThinking"> 启用深度思考（Claude/DeepSeek-R1 等）</label>
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
         <div class="hint">开启后将向 API 发送 thinking 参数（budget_tokens=8000），max_tokens 自动增至 16000。仅部分模型支持，不支持的服务商会报错。</div>
+        </details>
         <button class="btn" id="saveReviewCfgBtn" style="margin-top:8px">💾 保存审核服务商配置</button>
       </div>
     </div>
 
     <div class="card">
       <div class="card-title">🎨 AI 生图 · 助记图 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.0.6 · OpenAI 兼容 images API）</span></div>
+      <details class="hint-fold"><summary>ℹ️ 说明</summary>
       <div class="hint">AI 学习页点「🎨 生图助记」时：对话模型先把当前单词 + 会话场景改写成画面提示词，再调用生图 API 出图，图片落盘本机 <code>data/images/</code>。支持中转站，Key 只保存在本机。</div>
+      </details>
       <div class="grid-2" style="gap:10px">
         <div><label class="field-label">Base URL</label><input type="text" id="cfgImgUrl" class="input" placeholder="https://open.bigmodel.cn/api/paas/v4"></div>
         <div><label class="field-label">模型</label><input type="text" id="cfgImgModel" class="input" placeholder="cogview-4 / dall-e-3 / 中转站生图模型…"></div>
@@ -428,7 +460,9 @@
 
     <div class="card">
       <div class="card-title">🌐 网络搜索服务 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.0.7 · 通用 url + 密钥）</span></div>
+      <details class="hint-fold"><summary>ℹ️ 说明</summary>
       <div class="hint">工作台级搜索服务：AI 学习页开「🌐 联网」后，AI 回答前会先搜索实时资料；后续新板块也复用这一服务。兼容博查 / Tavily / Serper / 智谱及同类中转，密钥只保存在本机。</div>
+      </details>
       <div class="grid-2" style="gap:10px">
         <div>
           <label class="field-label">服务商预设</label>
@@ -450,7 +484,9 @@
 
     <div class="card">
       <div class="card-title">📚 韦氏权威词典 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.0.8 · Merriam-Webster 双 Key）</span></div>
+      <details class="hint-fold"><summary>ℹ️ 说明</summary>
       <div class="hint">接入 dictionaryapi.com 官方 API：<b>学习者版</b>（简单词写完整句释义、例句多）优先，<b>大学版</b>（词源全）兜底，并行合并。AI 教练讲解自动以权威释义为准、可用真实词源做词根助记；发音按钮优先播放官方<b>真人录音 mp3</b>（免费、不计次数）。免费档约 1000 次/天/Key，本地缓存后一个词终身只查一次。Key 只保存在本机。</div>
+      </details>
       <div class="grid-2" style="gap:10px">
         <div>
           <label class="field-label">Learner's Key（学习者版）</label>
@@ -470,7 +506,9 @@
 
     <div class="card">
       <div class="card-title">🛰 MinerU 文档解析 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.1.4 · 扫描件 PDF → Markdown）</span></div>
+      <details class="hint-fold"><summary>ℹ️ 说明</summary>
       <div class="hint">接 mineru.net 精准解析 API（免费额度，按页计费）。已做英语特化调参：<b>英文 OCR 模型、关闭公式与表格识别</b>、扫描件强制 OCR。解析产出干净文本入库（扫描真题 → 真题正文；结构化拆题仍走 tex / 文字层 PDF 通道）。Token 到 mineru.net/apiManage/token 免费申请，约 90 天需更换；Key 只存本机。</div>
+      </details>
       <label class="field-label">API Token</label>
       <input type="password" id="cfgMineruKey" class="input" placeholder="留空 = 沿用已保存的 Token">
       <div class="row-gap">
