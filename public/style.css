@@ -1,7 +1,7 @@
 
-/* 桌面端默认隐藏手机专属组件 */
+/* 桌面端默认彻底隐藏手机专属组件，防止任何主题规则在桌面端意外泄露 */
 .mobile-header, .mobile-bottom-bar, .more-sheet, .more-sheet-backdrop {
-  display: none;
+  display: none !important;
 }
 
 /* 英语学习工作台 - 浅色主题 */
@@ -30,7 +30,7 @@
 
 html {
   min-height: 100%;
-  background: var(--bg);
+  background-color: var(--bg);
 }
 
 body {
@@ -39,6 +39,7 @@ body {
   background-image: linear-gradient(160deg, #eaf0f9 0%, var(--bg) 42%, #eef1f6 100%);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed; /* 桌面端大屏平滑吸附固定，不拉伸模糊 */
   color: var(--text);
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
@@ -377,7 +378,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-btn: 0 2px 6px -1px rgba(0, 0, 0, .4);
 }
 [data-theme="dark"] body {
-  background-color: var(--bg); background-image: linear-gradient(160deg, #0d1526 0%, var(--bg) 42%, #0e1424 100%); background-repeat: no-repeat; background-size: cover;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #0d1526 0%, var(--bg) 42%, #0e1424 100%); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 [data-theme="dark"] .msg.user { color: #fff; }
 [data-theme="dark"] .tag.type { background: var(--primary-soft); color: var(--primary); }
@@ -410,7 +411,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="classic"] body {
   font-family: "KaiTi", "STKaiti", "楷体", "SimSun", serif;
-  background-color: var(--bg); background-image: linear-gradient(160deg, #f9f5ed 0%, #f4eee1 50%, #eee5d3 100%); background-repeat: no-repeat; background-size: cover;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #f9f5ed 0%, #f4eee1 50%, #eee5d3 100%); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 [data-style="classic"] .sidebar { border-right: 2px solid #a63d2f33; }
 [data-style="classic"] .card { box-shadow: 0 1px 4px rgba(90, 70, 40, .08); }
@@ -432,7 +433,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-card: 0 2px 10px rgba(0, 0, 0, .45);
 }
 [data-style="classic"][data-theme="dark"] body {
-  background-color: var(--bg); background-image: linear-gradient(160deg, #181115 0%, #140e11 50%, #0f0a0c 100%); background-repeat: no-repeat; background-size: cover;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #181115 0%, #140e11 50%, #0f0a0c 100%); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 [data-style="classic"][data-theme="dark"] .sidebar { border-right: 1px solid #4a3440; }
 [data-style="classic"][data-theme="dark"] .btn.primary { background: #c9513e; border-color: #c9513e; color: #fdfbf7; }
@@ -451,7 +452,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="western"] body {
   font-family: "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif;
-  background-color: var(--bg); background-image: linear-gradient(160deg, #fafafa 0%, #f4f4f5 50%, #ececed 100%); background-repeat: no-repeat; background-size: cover;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #fafafa 0%, #f4f4f5 50%, #ececed 100%); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 [data-style="western"] .sidebar { border-right: 1px solid #e4e4e7; }
 [data-style="western"] .card { box-shadow: 0 1px 3px rgba(0, 0, 0, .07); border-radius: 2px; }
@@ -493,7 +494,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="jp"] body {
   font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Microsoft YaHei", sans-serif;
-  background-color: var(--bg); background-image: linear-gradient(160deg, #faf8f4 0%, #f6f4ef 50%, #eee9e0 100%); background-repeat: no-repeat; background-size: cover;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #faf8f4 0%, #f6f4ef 50%, #eee9e0 100%); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 [data-style="jp"] .card { box-shadow: 0 2px 12px rgba(110, 120, 140, .07); border-radius: 16px; }
 [data-style="jp"] .sidebar { border-right: 1px solid #c9beab; }
@@ -516,7 +517,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-card: 0 4px 18px rgba(0, 0, 0, .4);
 }
 [data-style="jp"][data-theme="dark"] body {
-  background-color: var(--bg); background-image: linear-gradient(160deg, #121822 0%, #0f141c 60%, #0c1017 100%); background-repeat: no-repeat; background-size: cover;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #121822 0%, #0f141c 60%, #0c1017 100%); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 [data-style="jp"][data-theme="dark"] .sidebar { border-right: 1px solid #263346; }
 [data-style="jp"][data-theme="dark"] .btn.primary { background: #7ea3cc; color: #0f141c; font-weight: 600; }
@@ -535,7 +536,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="euro"] body {
   font-family: Georgia, "Times New Roman", "Songti SC", serif;
-  background-color: var(--bg); background-image: linear-gradient(160deg, #f9f6ef 0%, #f3efe6 50%, #eae3d4 100%); background-repeat: no-repeat; background-size: cover;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #f9f6ef 0%, #f3efe6 50%, #eae3d4 100%); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 [data-style="euro"] .sidebar { border-right: 3px double #b08d4f66; }
 [data-style="euro"] .card { box-shadow: 0 1px 5px rgba(120, 100, 60, .1); border-radius: 10px; }
@@ -559,7 +560,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-card: 0 3px 14px rgba(0, 0, 0, .5);
 }
 [data-style="euro"][data-theme="dark"] body {
-  background-color: var(--bg); background-image: linear-gradient(160deg, #111a14 0%, #0d1410 50%, #080d0a 100%); background-repeat: no-repeat; background-size: cover;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #111a14 0%, #0d1410 50%, #080d0a 100%); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 [data-style="euro"][data-theme="dark"] .sidebar { border-right: 3px double #c2a66155; }
 [data-style="euro"][data-theme="dark"] .brand { color: #c2a661; }
@@ -633,7 +634,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-btn: 2px 2px 0 #f43f5e;
 }
 [data-style="arcade"][data-theme="dark"] body {
-  background-color: var(--bg); background-image: linear-gradient(160deg, #160a2c 0%, #0f081d 50%, #07030e 100%); background-repeat: no-repeat; background-size: cover;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #160a2c 0%, #0f081d 50%, #07030e 100%); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 [data-style="arcade"][data-theme="dark"] .sidebar {
   border-right: 2px solid #5b359c;
@@ -809,6 +810,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   font-family: "Courier New", "Consolas", monospace;
   background-color: #dde8cf;
   background-image: linear-gradient(180deg, #e4eed8 0%, #dde8cf 100%);
+  background-attachment: fixed;
   color: #1a120b;
   image-rendering: pixelated;
   letter-spacing: .3px;
