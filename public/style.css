@@ -716,3 +716,11 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .u-ans-item select { width: auto; padding: 2px 6px; }
 .u-ok { color: var(--success, #639922); }
 .u-bad { color: var(--danger, #e24b4a); }
+
+
+/* ============ v1.1.6：审读定位 ============ */
+.kb-locate { outline: 2px solid var(--primary); border-radius: 8px; background: color-mix(in srgb, var(--primary) 12%, transparent); }
+.kb-issue-head { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 2px; }
+.kb-issue-head span { color: var(--text-sub); font-size: 12px; }
+.kb-issue-quote { border-left: 3px dashed var(--primary); margin: 4px 0 4px 8px; padding: 2px 8px; font-size: 12px; color: var(--text-sub); }
+#kbDetail mark, #exDetail mark, .kb-detail mark { background: color-mix(in srgb, var(--primary) 25%, transparent); color: inherit; padding: 0 2px; border-radius: 3px; }

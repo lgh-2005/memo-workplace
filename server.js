@@ -463,10 +463,12 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
 function mockLLM(messages) {
   const sys = messages.find(m => m.role === 'system')?.content || '';
   const user = [...messages].reverse().find(m => m.role === 'user')?.content || '';
-  if (sys.includes('质检审读员')) {   // v1.1.4：语料 AI 审读 mock（疑点清单样例）
+  if (sys.includes('质检审读员')) {   // v1.1.6：mock 审读从送审材料抽真实文本做 quote，验证定位回写链路
+    const seg = user.match(/【条目#1｜[^】]*】\n([^\n【]{10,80})/);
+    const quote2 = seg ? seg[1].replace(/\s+/g, ' ').trim().slice(0, 30) : '';
     return JSON.stringify({ issues: [
-      { loc: '#2', severity: 'low', desc: '[mock] 段落首行疑似混入页眉（Text 2）' },
-      { loc: '题 27', severity: 'mid', desc: '[mock] 选项 D 与原文用词重合异常高，疑似解析串行' },
+      { loc: '条目#2', quote: quote2, severity: 'low', desc: '[mock] 该条目首行疑似混入页眉' },
+      { loc: '通篇', quote: '', severity: 'mid', desc: '[mock] 无摘录的疑点示例（应无法定位）' },
     ] });
   }
   if (sys.includes('个性化助记')) {
@@ -2499,29 +2501,85 @@ const server = http.createServer(async (req, res) => {
         if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
         const rec = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
         if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
-        const strip = s => String(s || '').replace(/〖\/\d+〗/g, '').replace(/〖\d+〗/g, ' ');
-        const material = (Array.isArray(rec.items) && rec.items.length)
-          ? rec.items.map((it, i) => `#${i + 1} [${it.type || 'item'}${it.section ? '/' + it.section : ''}${it.number != null ? ' 题' + it.number : ''}] ${strip(it.text).slice(0, 260)}`).join('\n').slice(0, 9000)
-          : strip(rec.text).slice(0, 9000);
+        /* v1.1.6 修复审核数据源：旧版材料按每条 260 字符截断 + 全局 9000 字符截断 + 抹除 〖N〗 锚点 +
+           原始顺序，LLM 把「送审材料自身残缺」当成语料问题报告（即实测中的假问题）。
+           现在材料 = 与页面展示一致的渲染视图：kbOrderedItems 排序 + 每条完整文本 + 保留 〖N〗 锚点 +
+           稳定定位符【条目#N】，并附 archive/ 真题原件（文本类）作比对参考。 */
+        const ordered = kbOrderedItems(rec);
+        const parts = ordered.map((it, i) => {
+          const tag = `${it.type || 'item'}${it.section ? '·' + it.section : ''}${it.number != null ? '·题' + it.number : ''}`;
+          return `【条目#${i + 1}｜${tag}】\n${String(it.text || '')}`;
+        });
+        const LIMIT = 60000;
+        let material = parts.length
+          ? parts.join('\n\n')
+          : `【整理后的题库内容】（纯文本记录，无结构化条目）\n${String(rec.text || '')}`;
+        const totalChars = material.length;
+        let truncated = false;
+        if (totalChars > LIMIT) { material = material.slice(0, LIMIT) + '\n…（超长截断，超出部分未送审）'; truncated = true; }
+        let refNote = '';
+        try {
+          const origPath = rec.source?.file ? path.join(kbBaseDir(), 'archive', rec.source.category || '', rec.source.file) : null;
+          if (origPath && fs.existsSync(origPath) && /\.(tex|txt|md|html?|htm)$/i.test(origPath)) {
+            const orig = fs.readFileSync(origPath, 'utf8');
+            refNote = `\n\n【真题原件参考】（${rec.source.file}，仅用于比对，不是整理结果）\n${orig.slice(0, 20000)}`;
+          }
+        } catch { /* 原件读取失败不影响审读 */ }
         const reply = await llmChat([
           { role: 'system', content: [
-            '你是考研英语真题语料的质检审读员。审读导入的语料记录，找出解析/OCR 造成的问题，例如：',
-            '句子残缺或截断、乱码与字形损坏、题号断档或重复、选项丢失、段落错序、页眉页脚水印混入、明显重复段落。',
-            '只报告有把握的问题，不要臆测内容含义，不要改写文本。',
-            '严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","severity":"high|mid|low","desc":"问题描述(50字内)"}]}；没有问题输出 {"issues":[]}。',
+            '你是考研英语真题语料的质检审读员。审核对象是【整理后的题库内容】（与审核人员在页面上看到的完全一致，含 〖N〗 挖空/划线锚点）和可选的【真题原件参考】。',
+            '对照找出解析/整理引入的问题，例如：句子残缺或截断、乱码与字形损坏、题号断档或重复、选项丢失或错位、段落错序、页眉页脚水印混入、明显重复段落、整理结果与原件不符。',
+            '重要规则：',
+            '1. 只报告有把握、能在材料中定位的问题；不要把送审材料自身的完整性当成语料问题；不要臆测内容含义；不要改写文本。',
+            '2. 每个问题必须给 quote 字段：从【整理后的题库内容】中逐字摘录有误处的原文片段（10~40 字，须与材料完全一致，可包含 〖N〗 标记）。',
+            '3. 严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","quote":"逐字摘录","severity":"high|mid|low","desc":"问题描述(60字内)"}]}；没有问题输出 {"issues":[]}。',
           ].join('\n') },
-          { role: 'user', content: `记录：${rec.title || rec.id}\n${material}` },
-        ], { maxTokens: 1200 });
+          { role: 'user', content: `记录：${rec.title || rec.id}\n\n${material}${refNote}` },
+        ], { maxTokens: 2000 });
         const parsed = parseMnemonicJSON(reply);
         if (!parsed || !Array.isArray(parsed.issues)) {
           throw Object.assign(new Error('AI 审读输出无法解析为疑点清单（schema 不符），原始输出：' + String(reply).slice(0, 120)), { code: 'KB_IMPORT' });
         }
+        // quote 定位回写：把每条疑点锚到渲染序条目（先精确 includes，失败用去空白/去锚点宽松匹配）
+        const normTxt = s => String(s || '').replace(/〖\/\d+〗/g, '').replace(/〖\d+〗/g, '').replace(/\s+/g, '');
+        const locate = quote => {
+          const q = String(quote || '').trim();
+          if (q.length < 4) return { idx: null, text: null, tag: null };
+          let hit = -1;
+          if (ordered.length) hit = ordered.findIndex(it => (it.text || '').includes(q));
+          if (hit < 0) {
+            const nq = normTxt(q);
+            if (nq.length >= 6) {
+              if (ordered.length) hit = ordered.findIndex(it => normTxt(it.text).includes(nq));
+              else if (normTxt(rec.text).includes(nq)) hit = 0;
+            }
+          }
+          if (hit < 0) return { idx: null, text: null, tag: null };
+          const it = ordered.length ? ordered[hit] : null;
+          const tag = it ? `${it.type || 'item'}${it.section ? '·' + it.section : ''}${it.number != null ? '·题' + it.number : ''}` : '纯文本记录';
+          return { idx: ordered.length ? hit : null, text: String(it ? it.text : rec.text || '').slice(0, 2000), tag };
+        };
         const issues = parsed.issues
           .filter(x => x && typeof x.desc === 'string' && x.desc.trim())
           .slice(0, 30)
-          .map(x => ({ loc: String(x.loc || '?').slice(0, 40), severity: ['high', 'mid', 'low'].includes(x.severity) ? x.severity : 'mid', desc: x.desc.trim().slice(0, 120) }));
-        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(review)', status: 'reviewed', store, records: issues.length });
-        return sendJSON(res, 200, { ok: true, issues, reviewed_at: new Date().toISOString().slice(0, 19), mock: !!config.llm.mock });
+          .map(x => {
+            const hitInfo = locate(x.quote);
+            return {
+              loc: String(x.loc || '?').slice(0, 40),
+              quote: String(x.quote || '').trim().slice(0, 100),
+              itemIdx: hitInfo.idx,
+              itemTag: hitInfo.tag,
+              itemText: hitInfo.text,
+              severity: ['high', 'mid', 'low'].includes(x.severity) ? x.severity : 'mid',
+              desc: x.desc.trim().slice(0, 160),
+            };
+          });
+        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(review)', status: 'reviewed', store, records: issues.length, reason: `located=${issues.filter(x => x.itemIdx != null).length}/${issues.length}` });
+        return sendJSON(res, 200, {
+          ok: true, issues,
+          reviewed_at: new Date().toISOString().slice(0, 19), mock: !!config.llm.mock,
+          materialStats: { chars: totalChars, items: ordered.length, limit: LIMIT, truncated, hasRef: !!refNote },
+        });
       }
 
       /* ---------------- v1.1.5：单元题库 API ---------------- */

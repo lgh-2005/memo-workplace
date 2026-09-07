@@ -1086,20 +1086,20 @@ async function openKbRecord(rid) {
       html = `<div class="kb-passage">${kbText(rec.text)}</div>`;
     } else {
       let lastSec = null;
-      for (const it of items) {
+      for (const [ix, it] of items.entries()) {
         if (it.section !== lastSec) {
           lastSec = it.section;
           html += `<div class="kb-sec-title">${esc(KB_SECTION_LABEL[it.section] || it.section || '内容')}</div>`;
         }
         if (it.type === 'passage') {
-          html += `<div class="kb-passage">${kbText(it.text)}</div>`;
+          html += `<div class="kb-passage" data-itemidx="${ix}">${kbText(it.text)}</div>`;
         } else if (it.type === 'writing') {
-          html += `<div class="kb-question"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
+          html += `<div class="kb-question" data-itemidx="${ix}"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
         } else {
           const opts = it.options
             ? Object.entries(it.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')
             : '';
-          html += `<div class="kb-question"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 题 · ${esc(it.qtype || '客观题')}${it.score != null ? ' · ' + esc(String(it.score)) + ' 分' : ''}${it.answer ? ` · <span class="kb-ans">答案：${esc(it.answer)}</span>` : ''}</div><div class="kb-q-text">${kbText(it.text)}</div>${opts ? `<div class="kb-opts">${opts}</div>` : ''}</div>`;
+          html += `<div class="kb-question" data-itemidx="${ix}"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 题 · ${esc(it.qtype || '客观题')}${it.score != null ? ' · ' + esc(String(it.score)) + ' 分' : ''}${it.answer ? ` · <span class="kb-ans">答案：${esc(it.answer)}</span>` : ''}</div><div class="kb-q-text">${kbText(it.text)}</div>${opts ? `<div class="kb-opts">${opts}</div>` : ''}</div>`;
         }
       }
     }
@@ -1851,19 +1851,49 @@ async function kbDeleteCurrent() {
   }
 }
 
-/* AI 审读：LLM 找解析疑点，只出清单不改数据（建议者，不是提交者） */
+/* AI 审读：LLM 找解析疑点，只出清单不改数据（建议者，不是提交者）。
+   v1.1.6：审核对象 = 整理后题库内容（与页面一致）+ 真题原件参考；疑点带 quote 逐字摘录与
+   服务端定位（itemIdx/itemTag/itemText），「📍 定位到此」滚动高亮题库对应条目。 */
 async function kbDoReview() {
   const { prefix, id } = kbDetailState;
   if (!id) return;
   const out = $('#' + prefix + 'IssuesPanel');
-  out.innerHTML = '<div class="hint">🤖 AI 审读中…（把记录交给 LLM 找解析疑点，只出报告、不改数据）</div>';
+  out.innerHTML = '<div class="hint">🤖 AI 审读中…（以整理后的题库内容与真题原件为审核对象，只出报告、不改数据）</div>';
   try {
     const r = await api('/api/kb/review', { method: 'POST', body: { id } });
     const cls = { high: 'kb-issue-high', mid: 'kb-issue-mid', low: 'kb-issue-low' };
-    out.innerHTML = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}</div>` +
-      (r.issues.length
-        ? r.issues.map(x => `<div class="kb-issue ${cls[x.severity] || 'kb-issue-mid'}"><b>${esc(x.loc)}</b> · ${esc(x.severity)} · ${esc(x.desc)}</div>`).join('')
-        : '<div class="hint">✅ 未发现明显疑点（AI 审读仅供参考，改动仍走人工编辑）</div>');
+    const located = r.issues.filter(x => x.itemIdx != null).length;
+    const head = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}</div>` +
+      (r.materialStats ? `<div class="hint">审核对象：整理后题库内容（${r.materialStats.items} 个条目 / ${r.materialStats.chars} 字符${r.materialStats.truncated ? '，<b>超长已截断</b>' : ''}）${r.materialStats.hasRef ? ' + 真题原件参考' : ''} · 定位成功 ${located}/${r.issues.length}</div>` : '');
+    const body = r.issues.length
+      ? r.issues.map((x, i) => `
+        <div class="kb-issue ${cls[x.severity] || 'kb-issue-mid'}">
+          <div class="kb-issue-head"><b>${esc(x.loc)}</b>${x.itemTag ? `<span>· ${esc(x.itemTag)}</span>` : ''}<span>· ${esc(x.severity)}</span>${x.itemIdx != null ? `<button class="btn ghost" style="padding:2px 10px;font-size:12px;margin-left:auto" data-locate="${i}">📍 定位到此</button>` : ''}</div>
+          <div>${esc(x.desc)}</div>
+          ${x.quote ? `<div class="kb-issue-quote">“${esc(x.quote)}”</div>` : ''}
+        </div>`).join('')
+      : '<div class="hint">✅ 未发现明显疑点（AI 审读仅供参考，改动仍走人工编辑）</div>';
+    out.innerHTML = head + body + `<div id="${prefix}LocateBox"></div>`;
+    $$('#' + prefix + 'IssuesPanel [data-locate]').forEach(b => b.addEventListener('click', () => {
+      const x = r.issues[+b.dataset.locate];
+      const box = $('#' + prefix + 'LocateBox');
+      let marked = esc(x.itemText || '');
+      if (x.quote) {
+        const q = esc(x.quote);
+        const at = marked.indexOf(q);
+        if (at >= 0) marked = marked.slice(0, at) + '<mark>' + q + '</mark>' + marked.slice(at + q.length);
+      }
+      box.innerHTML = `<div class="card-title" style="margin-top:10px">📍 疑点上下文 · ${esc(x.itemTag || x.loc)}</div><div class="kb-passage kb-detail">${marked}</div>`;
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (x.itemIdx != null) {
+        const el = $('#kbDetail [data-itemidx="' + x.itemIdx + '"]') || $('#exDetail [data-itemidx="' + x.itemIdx + '"]');
+        if (el) {
+          $$('#kbDetail .kb-locate, #exDetail .kb-locate').forEach(e2 => e2.classList.remove('kb-locate'));
+          el.classList.add('kb-locate');
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    }));
   } catch (e) {
     out.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
   }
