@@ -180,8 +180,15 @@ async function loadDashboard() {
 function formatTime(iso) { return fmtBJ(iso); }
 
 function updateSyncBadge(dotClass, text) {
-  $('#syncDot').className = 'dot ' + dotClass;
-  $('#syncText').textContent = text;
+  const dot = $('#syncDot');
+  const txt = $('#syncText');
+  if (dot) dot.className = 'dot ' + dotClass;
+  if (txt) txt.textContent = text;
+
+  const mDot = $('#mobileSyncDot');
+  const mTxt = $('#mobileSyncText');
+  if (mDot) mDot.className = 'dot ' + dotClass;
+  if (mTxt) mTxt.textContent = text;
 }
 
 $('#syncBadge').addEventListener('click', () => doSync(false));
@@ -575,7 +582,10 @@ $('#noteModalSave').addEventListener('click', async () => {
 
 function applyTheme(t) {
   document.documentElement.dataset.theme = t;
-  $('#themeToggle').textContent = t === 'dark' ? '☀️' : '🌙';
+  const btn = $('#themeToggle');
+  if (btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
+  const mBtn = $('#mobileThemeToggle');
+  if (mBtn) mBtn.textContent = t === 'dark' ? '☀️' : '🌙';
   localStorage.setItem('wb-theme', t);
 }
 
@@ -2751,9 +2761,4 @@ if ($('#mobileSyncBadge')) {
   });
 }
 
-// 代理原有的主题/同步更新到手机端
-const origApplyTheme = applyTheme;
-applyTheme = function(t) {
-  origApplyTheme(t);
-  if ($('#mobileThemeToggle')) $('#mobileThemeToggle').textContent = t === 'dark' ? '☀️' : '🌙';
-};
+// 移动端主题与同步状态由 applyTheme 与 updateSyncBadge 统一定向更新
