@@ -748,6 +748,155 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   border: 1px solid #4b5563;
 }
 
+
+/* ----------------- ⛏️ 方块像素 (我的世界 Minecraft · 草方块与下界要塞) ----------------- */
+/* 白天：主世界草方块 · 泥土棕 + 草绿顶 + 橡木像素厚边 */
+[data-style="mc"] {
+  --bg: #4a6b22;
+  --card: #c4ab80;
+  --border: #3b2817;
+  --text: #1e150d;
+  --text-sub: #543d2b;
+  --primary: #5c8e32;
+  --primary-soft: #d8c29d;
+  --warn: #b02e26;
+  --ok: #5e7c16;
+  --radius: 0px;
+  --grad-primary: linear-gradient(180deg, #70a13c 0%, #4a6b22 100%);
+  --stat-grad: linear-gradient(180deg, #1e150d 30%, #5c8e32 100%);
+  --shadow-card: inset 2px 2px 0 #ecd9b9, inset -2px -2px 0 #775738, 3px 3px 0 #281a0e;
+  --shadow-btn: inset 2px 2px 0 #ffffff55, inset -2px -2px 0 #00000066, 2px 2px 0 #1b1208;
+}
+[data-style="mc"] body {
+  font-family: "Courier New", "Consolas", monospace;
+  background: #384e1b;
+  image-rendering: pixelated;
+  letter-spacing: .3px;
+}
+[data-style="mc"] .sidebar {
+  border-right: 3px solid #281a0e;
+  background: #b89b6c;
+  box-shadow: inset 2px 2px 0 #ecd9b9, inset -2px -2px 0 #775738;
+}
+[data-style="mc"] .sidebar-head { border-bottom: 2px solid #543d2b; }
+[data-style="mc"] .card {
+  border: 3px solid #281a0e;
+  border-radius: 0px;
+  background: #c4ab80;
+  box-shadow: inset 3px 3px 0 #e6d3b3, inset -3px -3px 0 #85613e, 4px 4px 0 rgba(0,0,0,.35);
+}
+[data-style="mc"] .btn {
+  border: 2px solid #1b1208;
+  border-radius: 0px;
+  background: #8b8b8b;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 #3f3f3f;
+  box-shadow: inset 2px 2px 0 #dbdbdb, inset -2px -2px 0 #555555, 2px 2px 0 #1b1208;
+}
+[data-style="mc"] .btn:hover {
+  background: #a0a0a0;
+  box-shadow: inset 2px 2px 0 #f0f0f0, inset -2px -2px 0 #444444, 2px 2px 0 #1b1208;
+}
+[data-style="mc"] .btn:active {
+  box-shadow: inset 2px 2px 0 #373737, inset -2px -2px 0 #cfcfcf;
+  transform: translate(1px, 1px);
+}
+[data-style="mc"] .btn.primary {
+  background: #4a7522;
+  color: #fff;
+  text-shadow: 1px 1px 0 #28440d;
+  box-shadow: inset 2px 2px 0 #72a838, inset -2px -2px 0 #29440f, 2px 2px 0 #1b1208;
+}
+[data-style="mc"] .tab {
+  border-radius: 0px;
+  border: 2px solid transparent;
+  font-family: inherit;
+}
+[data-style="mc"] .tab.active {
+  background: #8f7754;
+  color: #fff;
+  text-shadow: 1px 1px 0 #3a2b18;
+  border: 2px solid #281a0e;
+  box-shadow: inset 2px 2px 0 #b39b74, inset -2px -2px 0 #59442a;
+}
+[data-style="mc"] .badge, [data-style="mc"] .tag {
+  border-radius: 0px;
+  border: 1px solid #281a0e;
+  box-shadow: 1px 1px 0 #281a0e;
+}
+[data-style="mc"] .kb-passage {
+  border-radius: 0px;
+  border: 2px solid #3b2817;
+  background: #f7eedb;
+  box-shadow: inset 2px 2px 0 #fff8ec, inset -2px -2px 0 #d9c4a5;
+  font-family: inherit;
+}
+
+/* 我的世界 × 黑夜：下界要塞与红石矿石 (Nether Fortress & Redstone) */
+[data-style="mc"][data-theme="dark"] {
+  --bg: #14070a;
+  --card: #2c1118;
+  --border: #4d1c25;
+  --text: #f0e6e8;
+  --text-sub: #b08c92;
+  --primary: #e02a2a;
+  --primary-soft: #42121c;
+  --warn: #ff5555;
+  --ok: #55ff55;
+  --radius: 0px;
+  --grad-primary: linear-gradient(180deg, #ff3838 0%, #9e1313 100%);
+  --stat-grad: linear-gradient(180deg, #ffffff 30%, #e02a2a 100%);
+  --shadow-card: inset 2px 2px 0 #592530, inset -2px -2px 0 #14070a, 4px 4px 0 #080304;
+  --shadow-btn: inset 2px 2px 0 #6e2735, inset -2px -2px 0 #120407, 2px 2px 0 #000;
+}
+[data-style="mc"][data-theme="dark"] body {
+  background: #14070a;
+}
+[data-style="mc"][data-theme="dark"] .sidebar {
+  border-right: 3px solid #0a0305;
+  background: #240c13;
+  box-shadow: inset 2px 2px 0 #4f1d28, inset -2px -2px 0 #120407;
+}
+[data-style="mc"][data-theme="dark"] .card {
+  border: 3px solid #080204;
+  border-radius: 0px;
+  background: #2c1118;
+  box-shadow: inset 3px 3px 0 #592530, inset -3px -3px 0 #14070a, 4px 4px 0 #000000;
+}
+[data-style="mc"][data-theme="dark"] .btn {
+  background: #3b1720;
+  border: 2px solid #0a0305;
+  color: #ffcccc;
+  text-shadow: 1px 1px 0 #000;
+  box-shadow: inset 2px 2px 0 #612735, inset -2px -2px 0 #1c080d, 2px 2px 0 #000;
+}
+[data-style="mc"][data-theme="dark"] .btn.primary {
+  background: #a81919;
+  border-color: #000;
+  color: #fff;
+  text-shadow: 1px 1px 0 #400000;
+  box-shadow: inset 2px 2px 0 #f23d3d, inset -2px -2px 0 #590909, 2px 2px 0 #000, 0 0 10px rgba(224, 42, 42, .4);
+}
+[data-style="mc"][data-theme="dark"] .tab.active {
+  background: #4a1522;
+  color: #ff4757;
+  text-shadow: 1px 1px 0 #000;
+  border: 2px solid #000;
+  box-shadow: inset 2px 2px 0 #732637, inset -2px -2px 0 #24070e, 0 0 6px rgba(255, 71, 87, .3);
+}
+[data-style="mc"][data-theme="dark"] .brand {
+  color: #ff4757;
+  text-shadow: 0 0 6px rgba(255, 71, 87, .6);
+}
+[data-style="mc"][data-theme="dark"] .kb-passage {
+  background: #1f0b11;
+  border: 2px solid #4a1723;
+  box-shadow: inset 2px 2px 0 #3d141e, inset -2px -2px 0 #120407;
+  color: #f7e6e9;
+}
+
 /* 全局滚动条 */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
