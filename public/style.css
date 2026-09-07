@@ -28,18 +28,23 @@
   --shadow-btn: 0 2px 6px -1px rgba(37, 99, 235, .35);
 }
 
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
 body {
   font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
-  background: linear-gradient(160deg, #eaf0f9 0%, var(--bg) 42%, #eef1f6 100%) fixed;
+  background-color: var(--bg);
+  background-image: linear-gradient(160deg, #eaf0f9 0%, var(--bg) 42%, #eef1f6 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--text);
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
-}
-
-/* ============ v1.1.9.a：左侧边栏 (Sidebar Navigation) ============ */
-body {
   display: flex;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .sidebar {
@@ -372,7 +377,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-btn: 0 2px 6px -1px rgba(0, 0, 0, .4);
 }
 [data-theme="dark"] body {
-  background: linear-gradient(160deg, #0d1526 0%, var(--bg) 42%, #0e1424 100%) fixed;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #0d1526 0%, var(--bg) 42%, #0e1424 100%); background-repeat: no-repeat; background-size: cover;
 }
 [data-theme="dark"] .msg.user { color: #fff; }
 [data-theme="dark"] .tag.type { background: var(--primary-soft); color: var(--primary); }
@@ -405,7 +410,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="classic"] body {
   font-family: "KaiTi", "STKaiti", "楷体", "SimSun", serif;
-  background: linear-gradient(160deg, #f9f5ed 0%, #f4eee1 50%, #eee5d3 100%) fixed;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #f9f5ed 0%, #f4eee1 50%, #eee5d3 100%); background-repeat: no-repeat; background-size: cover;
 }
 [data-style="classic"] .sidebar { border-right: 2px solid #a63d2f33; }
 [data-style="classic"] .card { box-shadow: 0 1px 4px rgba(90, 70, 40, .08); }
@@ -427,7 +432,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-card: 0 2px 10px rgba(0, 0, 0, .45);
 }
 [data-style="classic"][data-theme="dark"] body {
-  background: linear-gradient(160deg, #181115 0%, #140e11 50%, #0f0a0c 100%) fixed;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #181115 0%, #140e11 50%, #0f0a0c 100%); background-repeat: no-repeat; background-size: cover;
 }
 [data-style="classic"][data-theme="dark"] .sidebar { border-right: 1px solid #4a3440; }
 [data-style="classic"][data-theme="dark"] .btn.primary { background: #c9513e; border-color: #c9513e; color: #fdfbf7; }
@@ -446,7 +451,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="western"] body {
   font-family: "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif;
-  background: linear-gradient(160deg, #fafafa 0%, #f4f4f5 50%, #ececed 100%) fixed;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #fafafa 0%, #f4f4f5 50%, #ececed 100%); background-repeat: no-repeat; background-size: cover;
 }
 [data-style="western"] .sidebar { border-right: 1px solid #e4e4e7; }
 [data-style="western"] .card { box-shadow: 0 1px 3px rgba(0, 0, 0, .07); border-radius: 2px; }
@@ -488,7 +493,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="jp"] body {
   font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Microsoft YaHei", sans-serif;
-  background: linear-gradient(160deg, #faf8f4 0%, #f6f4ef 50%, #eee9e0 100%) fixed;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #faf8f4 0%, #f6f4ef 50%, #eee9e0 100%); background-repeat: no-repeat; background-size: cover;
 }
 [data-style="jp"] .card { box-shadow: 0 2px 12px rgba(110, 120, 140, .07); border-radius: 16px; }
 [data-style="jp"] .sidebar { border-right: 1px solid #c9beab; }
@@ -511,7 +516,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-card: 0 4px 18px rgba(0, 0, 0, .4);
 }
 [data-style="jp"][data-theme="dark"] body {
-  background: linear-gradient(160deg, #121822 0%, #0f141c 60%, #0c1017 100%) fixed;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #121822 0%, #0f141c 60%, #0c1017 100%); background-repeat: no-repeat; background-size: cover;
 }
 [data-style="jp"][data-theme="dark"] .sidebar { border-right: 1px solid #263346; }
 [data-style="jp"][data-theme="dark"] .btn.primary { background: #7ea3cc; color: #0f141c; font-weight: 600; }
@@ -530,7 +535,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="euro"] body {
   font-family: Georgia, "Times New Roman", "Songti SC", serif;
-  background: linear-gradient(160deg, #f9f6ef 0%, #f3efe6 50%, #eae3d4 100%) fixed;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #f9f6ef 0%, #f3efe6 50%, #eae3d4 100%); background-repeat: no-repeat; background-size: cover;
 }
 [data-style="euro"] .sidebar { border-right: 3px double #b08d4f66; }
 [data-style="euro"] .card { box-shadow: 0 1px 5px rgba(120, 100, 60, .1); border-radius: 10px; }
@@ -554,7 +559,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-card: 0 3px 14px rgba(0, 0, 0, .5);
 }
 [data-style="euro"][data-theme="dark"] body {
-  background: linear-gradient(160deg, #111a14 0%, #0d1410 50%, #080d0a 100%) fixed;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #111a14 0%, #0d1410 50%, #080d0a 100%); background-repeat: no-repeat; background-size: cover;
 }
 [data-style="euro"][data-theme="dark"] .sidebar { border-right: 3px double #c2a66155; }
 [data-style="euro"][data-theme="dark"] .brand { color: #c2a661; }
@@ -628,7 +633,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-btn: 2px 2px 0 #f43f5e;
 }
 [data-style="arcade"][data-theme="dark"] body {
-  background: linear-gradient(160deg, #160a2c 0%, #0f081d 50%, #07030e 100%) fixed;
+  background-color: var(--bg); background-image: linear-gradient(160deg, #160a2c 0%, #0f081d 50%, #07030e 100%); background-repeat: no-repeat; background-size: cover;
 }
 [data-style="arcade"][data-theme="dark"] .sidebar {
   border-right: 2px solid #5b359c;
@@ -783,26 +788,28 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 /* ----------------- ⛏️ 方块像素 (我的世界 Minecraft · 草方块与下界要塞) ----------------- */
 /* 白天：主世界草方块 · 泥土棕 + 草绿顶 + 橡木像素厚边 */
 [data-style="mc"] {
-  --bg: #4a6b22;
-  --card: #c4ab80;
+  --bg: #dde8cf;
+  --card: #f2e3c6;
   --border: #3b2817;
-  --topbar-bg: rgba(184, 155, 108, .96);
+  --topbar-bg: rgba(220, 201, 168, .96);
   --card-sheen: none;
-  --text: #1e150d;
-  --text-sub: #543d2b;
-  --primary: #5c8e32;
-  --primary-soft: #d8c29d;
-  --warn: #b02e26;
-  --ok: #5e7c16;
+  --text: #1a120b;
+  --text-sub: #4e3926;
+  --primary: #3b6b1d;
+  --primary-soft: #c8dcaf;
+  --warn: #a3221b;
+  --ok: #486e0c;
   --radius: 0px;
-  --grad-primary: linear-gradient(180deg, #70a13c 0%, #4a6b22 100%);
-  --stat-grad: linear-gradient(180deg, #1e150d 30%, #5c8e32 100%);
-  --shadow-card: inset 2px 2px 0 #ecd9b9, inset -2px -2px 0 #775738, 3px 3px 0 #281a0e;
-  --shadow-btn: inset 2px 2px 0 #ffffff55, inset -2px -2px 0 #00000066, 2px 2px 0 #1b1208;
+  --grad-primary: linear-gradient(180deg, #5c8e32 0%, #3b6b1d 100%);
+  --stat-grad: linear-gradient(180deg, #1a120b 30%, #3b6b1d 100%);
+  --shadow-card: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #9f7d54, 3px 3px 0 #281a0e;
+  --shadow-btn: inset 2px 2px 0 #ffffff77, inset -2px -2px 0 #00000066, 2px 2px 0 #1b1208;
 }
 [data-style="mc"] body {
   font-family: "Courier New", "Consolas", monospace;
-  background: #384e1b;
+  background-color: #dde8cf;
+  background-image: linear-gradient(180deg, #e4eed8 0%, #dde8cf 100%);
+  color: #1a120b;
   image-rendering: pixelated;
   letter-spacing: .3px;
 }
@@ -1070,9 +1077,26 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 
 /* ============ 移动端适配 ============ */
 @media (max-width: 700px) {
+  html, body {
+    min-height: 100%;
+    min-height: 100dvh;
+    background-attachment: scroll !important; /* 手机端彻底禁用 fixed 背景防重绘残缺 */
+  }
   body {
     flex-direction: column;
-    padding-bottom: 70px; /* 为底部金刚导航条预留安全距离 */
+    padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)); /* 为底部金刚导航条预留安全距离 */
+  }
+
+  /* 移动端文字背景防吃色高保真度增强 */
+  .hint, .stat-label, .field-label, .session-info, .more-sheet-title {
+    color: var(--text-sub);
+    font-weight: 550; /* 略微加粗移动端辅字，避免在特殊底色下被吃字 */
+  }
+  .card-title {
+    color: var(--text);
+  }
+  .badge, .tag {
+    font-weight: 600;
   }
 
   /* 手机端隐藏 PC 庞大的左侧栏 */
