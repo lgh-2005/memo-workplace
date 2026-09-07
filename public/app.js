@@ -1906,17 +1906,10 @@ async function kbDoReview() {
         </div>`).join('')
       : '<div class="hint">✅ 未发现明显疑点（AI 审读仅供参考，改动仍走人工编辑）</div>';
     out.innerHTML = head + body + `<div id="${prefix}LocateBox"></div>`;
+    /* v1.1.7b：定位到此 → 弹窗直编（textarea 可改原文，保存同步库），附题型规则参考 */
     $$('#' + prefix + 'IssuesPanel [data-locate]').forEach(b => b.addEventListener('click', () => {
       const x = r.issues[+b.dataset.locate];
-      const box = $('#' + prefix + 'LocateBox');
-      let marked = esc(x.itemText || '');
-      if (x.quote) {
-        const q = esc(x.quote);
-        const at = marked.indexOf(q);
-        if (at >= 0) marked = marked.slice(0, at) + '<mark>' + q + '</mark>' + marked.slice(at + q.length);
-      }
-      box.innerHTML = `<div class="card-title" style="margin-top:10px">📍 疑点上下文 · ${esc(x.itemTag || x.loc)}</div><div class="kb-passage kb-detail">${marked}</div>`;
-      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      kbOpenFixModal(prefix, id, x);
       if (x.itemIdx != null) {
         const el = $('#kbDetail [data-itemidx="' + x.itemIdx + '"]') || $('#exDetail [data-itemidx="' + x.itemIdx + '"]');
         if (el) {
@@ -1929,6 +1922,101 @@ async function kbDoReview() {
   } catch (e) {
     out.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
   }
+}
+
+/* ---------------- v1.1.7b：疑点弹窗直编 ---------------- */
+
+/* 题型编辑规则参考（按 itemTag 前缀匹配：type·section·题N） */
+const KB_FIX_RULES = {
+  'passage·use_of_english': '完形原文：挖空处必须保留 〖N〗 标记（N=1~20）；段落间空行分隔；不要改动挖空位置与数量。',
+  'question·use_of_english': '完形选项：text 一般为空（(blank N) 占位即可）；options 必须是 A/B/C/D 四项；score=0.5。',
+  'passage·reading': '阅读原文：划线句用 〖N〗…〖/N〗 包裹（仅翻译/指代题）；Text 间空行分隔；passage_id 标识所属篇。',
+  'question·reading': '阅读题目：题干以题号自然顺序排布；options 为 A/B/C/D；score=2；passage_id 指向所属原文篇。',
+  'passage·part_b': '新题型原文：空位必须保留 〖4x〗 标记（41~45）；options 池为 7 项数组（A~G）；score=null（按题给分）。',
+  'passage·translation': '翻译原文：待译句用 〖4N〗…〖/4N〗 划线包裹（46~50）；划线句需与翻译题干完全一致。',
+  'question·translation': '翻译题干：text 即划线句原文（与原文 〖N〗…〖/N〗 内文本一致）；score=2；answer=书写。',
+  'writing·writing': '写作 Part A：小作文（10 分），text 含题目要求与字数；Part B：大作文（20 分），text 含图画描述指令。',
+  'article': '文章：标题/正文自由文本，段落空行分隔；无 〖N〗 体系。',
+  'note': '笔记：自由文本。',
+  'document': '文档：自由文本。',
+};
+function kbFixRuleFor(tag) {
+  const t = String(tag || '');
+  if (!t) return '';
+  const hit = Object.entries(KB_FIX_RULES).find(([k]) => t === k || t.startsWith(k + '·') || t.startsWith(k));
+  return hit ? hit[1] : '';
+}
+
+/* 疑点直编弹窗：textarea 改的即原始 itemText，保存走 /api/kb/record/update（整体 items 替换），成功后刷新详情与列表 */
+async function kbOpenFixModal(prefix, rid, x) {
+  kbCloseEditor();   // 关闭旧式全量编辑面板，避免状态交叉
+  let rec = kbDetailState.rec;
+  try {
+    const r = await api('/api/kb/record/' + rid + '?raw=1');
+    rec = kbDetailState.rec = r.record;
+  } catch (e) { /* 拉取失败用已有 rec 兜底 */ }
+  const items = (rec && rec.items) || [];
+  /* v1.1.7b：rawIdx 由服务端 locate 回写（itemRawIdx，ordered 引用 == 原始 items 元素，indexOf 精确） */
+  const rawIdx = (x.itemRawIdx != null && rec && Array.isArray(rec.items) && x.itemRawIdx < rec.items.length) ? x.itemRawIdx : -1;
+  const origText = rawIdx >= 0 ? String(rec.items[rawIdx].text || '') : String(x.itemText || '');
+  const rule = kbFixRuleFor(x.itemTag);
+  const sevCls = { high: 'kb-issue-high', mid: 'kb-issue-mid', low: 'kb-issue-low' }[x.severity] || 'kb-issue-mid';
+  let dlg = $('#kbFixModal');
+  if (dlg) dlg.remove();
+  dlg = document.createElement('div');
+  dlg.id = 'kbFixModal';
+  dlg.className = 'kb-fix-modal';
+  dlg.innerHTML = `
+    <div class="kb-fix-dialog">
+      <div class="kb-fix-head">
+        <div class="kb-fix-title">📍 疑点直编 · ${esc(x.itemTag || x.loc)} <span class="kb-issue-tag ${sevCls}">${esc(x.severity || 'mid')}</span></div>
+        <button class="kb-fix-close" title="关闭">✕</button>
+      </div>
+      <div class="kb-fix-issue">${esc(x.desc || '')}${x.quote ? `<div class="kb-issue-quote">“${esc(x.quote)}”</div>` : ''}</div>
+      ${rule ? `<div class="kb-fix-rule">📐 ${esc(rule)}</div>` : ''}
+      <label class="field-label">条目原文（可直接修改，保存后同步题库；改动会写入 edited_at 留痕）</label>
+      <textarea id="kbFixText" class="input kb-fix-text" rows="14">${esc(origText)}</textarea>
+      <div class="kb-fix-actions">
+        <button class="btn primary" id="kbFixSave">💾 保存到题库</button>
+        <button class="btn ghost" id="kbFixCancel">关闭</button>
+        ${rawIdx < 0 ? '<span class="hint">⚠️ 该疑点未能对齐到原始条目（定位降级），保存将不可用——请用「编辑」全量面板改。</span>' : ''}
+      </div>
+      <div class="result" id="kbFixResult"></div>
+    </div>`;
+  document.body.appendChild(dlg);
+  const close = () => dlg.remove();
+  dlg.querySelector('.kb-fix-close').addEventListener('click', close);
+  dlg.addEventListener('click', e => { if (e.target === dlg) close(); });
+  $('#kbFixCancel').addEventListener('click', close);
+  document.addEventListener('keydown', function escClose(e) {
+    if (e.key === 'Escape' && document.body.contains(dlg)) { close(); document.removeEventListener('keydown', escClose); }
+  });
+  if (rawIdx < 0) return;   // 无法对齐：仅浏览，不出保存
+  $('#kbFixSave').addEventListener('click', async () => {
+    const out = $('#kbFixResult');
+    const newText = $('#kbFixText').value;
+    const body = { id: rid, items: rec.items.map((it, i) => {
+      const o = {};
+      for (const k of ['type', 'section', 'number', 'passage_id', 'options', 'qtype', 'score', 'part', 'answer']) {
+        if (it[k] !== undefined && it[k] !== null) o[k] = it[k];
+      }
+      o.text = i === rawIdx ? newText : (it.text || '');
+      return o;
+    }) };
+    out.textContent = '保存中…';
+    out.className = 'result';
+    try {
+      await api('/api/kb/record/update', { method: 'POST', body });
+      out.textContent = '✅ 已同步题库';
+      out.className = 'result ok';
+      setTimeout(close, 800);
+      if (prefix === 'kb') { kbState.loaded = false; loadKb(); openKbRecord(rid); }
+      else { examState.loaded = false; loadExamList(); openExamRecord(rid); }
+    } catch (e) {
+      out.textContent = '❌ ' + esc(e.message);
+      out.className = 'result err';
+    }
+  });
 }
 
 $('#kbEditBtn').addEventListener('click', kbToggleEditor);

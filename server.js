@@ -2586,10 +2586,12 @@ const server = http.createServer(async (req, res) => {
               else if (normTxt(rec.text).includes(nq)) hit = 0;
             }
           }
-          if (hit < 0) return { idx: null, text: null, tag: null };
+          if (hit < 0) return { idx: null, text: null, tag: null, rawIdx: null };
           const it = ordered.length ? ordered[hit] : null;
           const tag = it ? `${it.type || 'item'}${it.section ? '·' + it.section : ''}${it.number != null ? '·题' + it.number : ''}` : '纯文本记录';
-          return { idx: ordered.length ? hit : null, text: String(it ? it.text : rec.text || '').slice(0, 2000), tag };
+          // v1.1.7b：ordered 是 items 浅拷贝的排序，元素引用不变——indexOf 直接拿原始下标，供疑点弹窗直编对齐
+          const rawIdx = (it && Array.isArray(rec.items)) ? rec.items.indexOf(it) : -1;
+          return { idx: ordered.length ? hit : null, text: String(it ? it.text : rec.text || '').slice(0, 2000), tag, rawIdx: rawIdx >= 0 ? rawIdx : null };
         };
         const issues = parsed.issues
           .filter(x => x && typeof x.desc === 'string' && x.desc.trim())
@@ -2600,6 +2602,7 @@ const server = http.createServer(async (req, res) => {
               loc: String(x.loc || '?').slice(0, 40),
               quote: String(x.quote || '').trim().slice(0, 100),
               itemIdx: hitInfo.idx,
+              itemRawIdx: hitInfo.rawIdx,
               itemTag: hitInfo.tag,
               itemText: hitInfo.text,
               severity: ['high', 'mid', 'low'].includes(x.severity) ? x.severity : 'mid',
