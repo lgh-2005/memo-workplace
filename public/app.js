@@ -1312,18 +1312,18 @@ const EXAM_PROCESSORS = {
       }
       return `空位 ${blanks.size} 处 · 选项池 ${pool || '—'} 项 · 待选 ${qs} 空`;
     },
-    render(items) {
+    render(items, base = 0) {
       let html = '';
-      for (const it of items) {
+      for (const [ix, it] of items.entries()) {
         if (it.type === 'passage') {
-          html += `<div class="kb-passage">${kbText(it.text)}</div>`;
+          html += `<div class="kb-passage" data-itemidx="${base + ix}">${kbText(it.text)}</div>`;
         } else if (it.type === 'question' && it.number == null) {
           const opts = it.options
             ? Object.entries(it.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')
             : esc(it.text || '');
-          html += `<div class="kb-question"><div class="kb-q-head">🧩 选项池（含干扰项）</div><div class="kb-opts">${opts}</div></div>`;
+          html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">🧩 选项池（含干扰项）</div><div class="kb-opts">${opts}</div></div>`;
         } else if (it.type === 'question') {
-          html += `<div class="kb-question"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 空 · 从选项池中选出填入</div><div class="exm-slot">答题位（在线作答后续版本开放）</div></div>`;
+          html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 空 · 从选项池中选出填入</div><div class="exm-slot">答题位（在线作答后续版本开放）</div></div>`;
         }
       }
       return html;
@@ -1340,13 +1340,13 @@ const EXAM_PROCESSORS = {
       }
       return `划线句 ${ul.size} 句 · 待译 ${qs} 题（每题 2 分 · 手写译文）`;
     },
-    render(items) {
+    render(items, base = 0) {
       let html = '';
-      for (const it of items) {
+      for (const [ix, it] of items.entries()) {
         if (it.type === 'passage') {
-          html += `<div class="kb-passage">${kbText(it.text)}</div>`;
+          html += `<div class="kb-passage" data-itemidx="${base + ix}">${kbText(it.text)}</div>`;
         } else {
-          html += `<div class="kb-question"><div class="kb-q-head">🖊 第 ${esc(String(it.number ?? '—'))} 题 · 将划线句译成中文（2 分）</div><div class="exm-slot">答题位（在线作答后续版本开放）</div></div>`;
+          html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">🖊 第 ${esc(String(it.number ?? '—'))} 题 · 将划线句译成中文（2 分）</div><div class="exm-slot">答题位（在线作答后续版本开放）</div></div>`;
         }
       }
       return html;
@@ -1359,9 +1359,13 @@ const EXAM_PROCESSORS = {
       const score = ws.reduce((a, b) => a + (Number(b.score) || 0), 0);
       return `${ws.length} 道写作题 · 合计 ${score || '—'} 分`;
     },
-    render(items) {
-      return items.filter(i => i.type === 'writing').map(it =>
-        `<div class="kb-question"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`).join('');
+    render(items, base = 0) {
+      let html = '';
+      for (const [ix, it] of items.entries()) {
+        if (it.type !== 'writing') continue;
+        html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
+      }
+      return html;
     },
   },
 };
@@ -1375,18 +1379,18 @@ function examProcessor(section) {
 }
 
 /** 通用题型渲染：原文（〖N〗锚点）在前，题目（题干+选项+答案）在后 */
-function kbExamPassageAndQuestions(items) {
+function kbExamPassageAndQuestions(items, base = 0) {
   let html = '';
-  for (const it of items) {
+  for (const [ix, it] of items.entries()) {
     if (it.type === 'passage') {
-      html += `<div class="kb-passage">${kbText(it.text)}</div>`;
+      html += `<div class="kb-passage" data-itemidx="${base + ix}">${kbText(it.text)}</div>`;
     } else if (it.type === 'writing') {
-      html += `<div class="kb-question"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
+      html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
     } else {
       const opts = it.options
         ? Object.entries(it.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')
         : '';
-      html += `<div class="kb-question"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 题 · ${esc(it.qtype || '客观题')}${it.score != null ? ' · ' + esc(String(it.score)) + ' 分' : ''}${it.answer ? ` · <span class="kb-ans">答案：${esc(it.answer)}</span>` : ''}</div><div class="kb-q-text">${kbText(it.text)}</div>${opts ? `<div class="kb-opts">${opts}</div>` : ''}</div>`;
+      html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 题 · ${esc(it.qtype || '客观题')}${it.score != null ? ' · ' + esc(String(it.score)) + ' 分' : ''}${it.answer ? ` · <span class="kb-ans">答案：${esc(it.answer)}</span>` : ''}</div><div class="kb-q-text">${kbText(it.text)}</div>${opts ? `<div class="kb-opts">${opts}</div>` : ''}</div>`;
     }
   }
   return html;
@@ -1459,9 +1463,11 @@ async function openExamRecord(exid) {
       blocks[blocks.length - 1].items.push(it);
     }
     let html = '';
+    let ixBase = 0;
     for (const b of blocks) {
       const proc = examProcessor(b.key);
-      html += `<div class="exm-block"><div class="kb-sec-title">${proc.icon} ${esc(b.label)}</div><div class="exm-stats">${esc(proc.analyze(b.items))}</div>${proc.render(b.items)}</div>`;
+      html += `<div class="exm-block"><div class="kb-sec-title">${proc.icon} ${esc(b.label)}</div><div class="exm-stats">${esc(proc.analyze(b.items))}</div>${proc.render(b.items, ixBase)}</div>`;
+      ixBase += b.items.length;
     }
     $('#exDetail').innerHTML = html || '<div class="hint">（无条目）</div>';
     card.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1909,7 +1915,7 @@ async function kbDoReview() {
     /* v1.1.7b：定位到此 → 弹窗直编（textarea 可改原文，保存同步库），附题型规则参考 */
     $$('#' + prefix + 'IssuesPanel [data-locate]').forEach(b => b.addEventListener('click', () => {
       const x = r.issues[+b.dataset.locate];
-      kbOpenFixModal(prefix, id, x);
+      kbOpenFixModal(prefix, id, x, +b.dataset.locate);
       if (x.itemIdx != null) {
         const el = $('#kbDetail [data-itemidx="' + x.itemIdx + '"]') || $('#exDetail [data-itemidx="' + x.itemIdx + '"]');
         if (el) {
@@ -1979,8 +1985,43 @@ function kbFixHighlight(text, quote) {
   return { html, hit };
 }
 
-/* 疑点直编弹窗：textarea 改的即原始 itemText，保存走 /api/kb/record/update（整体 items 替换），成功后刷新详情与列表 */
-async function kbOpenFixModal(prefix, rid, x) {
+/** v1.1.7d：就地更新详情页中该条目块的文本（不重建详情、不毁 AI 报告现场） */
+function kbUpdateDetailItem(prefix, x, newText) {
+  if (x.itemIdx == null) return;
+  const el = $('#' + prefix + 'Detail [data-itemidx="' + x.itemIdx + '"]');
+  if (!el) return;
+  const qt = el.querySelector('.kb-q-text');
+  if (qt) qt.innerHTML = kbText(newText);
+  else el.innerHTML = kbText(newText);
+}
+
+/** v1.1.7d：疑点卡片状态标记——fixed=✅淡出 / still=追加复核反馈 */
+function markIssueCard(prefix, cardIdx, state, newDesc) {
+  if (cardIdx == null || cardIdx < 0) return;
+  const btn = document.querySelector('#' + prefix + 'IssuesPanel [data-locate="' + cardIdx + '"]');
+  const card = btn && btn.closest('.kb-issue');
+  if (!card) return;
+  if (state === 'fixed') {
+    card.style.transition = 'opacity .8s'; card.style.opacity = '.45';
+    const head = card.querySelector('.kb-issue-head');
+    if (head && !card.querySelector('.kb-issue-fixed-tag')) {
+      const t = document.createElement('span');
+      t.className = 'kb-issue-fixed-tag';
+      t.textContent = '✅ 已修复';
+      head.appendChild(t);
+    }
+    const lb = card.querySelector('[data-locate]');
+    if (lb) lb.disabled = true;
+  } else if (state === 'still' && newDesc) {
+    const d = document.createElement('div');
+    d.className = 'kb-fix-miss';
+    d.textContent = '🔁 AI 复核：' + newDesc;
+    card.appendChild(d);
+  }
+}
+
+/* 疑点直编弹窗：textarea 改的即原始 itemText，保存走 /api/kb/record/update（整体 items 替换）*/
+async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
   kbCloseEditor();   // 关闭旧式全量编辑面板，避免状态交叉
   let rec = kbDetailState.rec;
   try {
@@ -2053,11 +2094,26 @@ async function kbOpenFixModal(prefix, rid, x) {
     out.className = 'result';
     try {
       await api('/api/kb/record/update', { method: 'POST', body });
-      out.textContent = '✅ 已同步题库';
-      out.className = 'result ok';
-      setTimeout(close, 800);
-      if (prefix === 'kb') { kbState.loaded = false; loadKb(); openKbRecord(rid); }
-      else { examState.loaded = false; loadExamList(); openExamRecord(rid); }
+      /* v1.1.7d：不重建详情、不退回列表——就地更新该条目块，保留 AI 审读现场 */
+      if (prefix === 'kb') kbState.loaded = false; else examState.loaded = false;
+      kbUpdateDetailItem(prefix, x, newText);
+      out.innerHTML = '✅ 已保存 · 🤖 AI 复核中…';
+      out.className = 'result';
+      let rv = null;
+      try { rv = await api('/api/kb/review/item', { id: rid, store: prefix === 'ex' ? 'exam' : 'corpus', rawIdx, text: newText }); }
+      catch (e2) { /* 复核异常不阻塞保存结果 */ }
+      if (rv && rv.ok) {
+        out.innerHTML = '✅ 已保存 · AI 复核通过，疑点已标记修复';
+        out.className = 'result ok';
+        markIssueCard(prefix, cardIdx, 'fixed');
+        $('#kbFixPreview').innerHTML = '<div class="kb-fix-miss" style="color:var(--ok)">✅ AI 复核通过：该疑点已修复，卡片将自动淡出</div>';
+        setTimeout(close, 1500);
+      } else {
+        const d = (rv && rv.issues && rv.issues[0] && rv.issues[0].desc) || 'AI 复核未通过，请检查该条目';
+        out.innerHTML = '✅ 已保存 · ⚠️ AI 复核仍有疑点：' + esc(d);
+        out.className = 'result err';
+        markIssueCard(prefix, cardIdx, 'still', d);
+      }
     } catch (e) {
       out.textContent = '❌ ' + esc(e.message);
       out.className = 'result err';

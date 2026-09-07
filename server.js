@@ -2621,6 +2621,49 @@ const server = http.createServer(async (req, res) => {
         });
       }
 
+      // v1.1.7d：单条复核——疑点弹窗保存后对该条目快速 AI 复核，无误则前端自动消红
+      if (p === '/api/kb/review/item' && req.method === 'POST') {
+        const body = await readBody(req);
+        if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
+        const store = body.store || kbFindStoreOf(body.id);
+        if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
+        const rec = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
+        if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
+        const item = Array.isArray(rec.items) ? rec.items[body.rawIdx] : null;
+        const text = typeof body.text === 'string' ? body.text : String((item && item.text) || '');
+        if (!text.trim()) return sendJSON(res, 400, { error: '条目文本为空' });
+        if (config.llm.mock) return sendJSON(res, 200, { ok: true, mock: true });
+        const reply = await llmChat([
+          { role: 'system', content: [
+            '你是考研英语真题语料的质检审读员。审核对象是【单个条目的当前文本】（刚被用户编辑过）。',
+            '只判断该条目本身是否仍有质量问题：句子残缺或截断、乱码、挖空/划线锚点（〖N〗或〖/N〗）缺失或破坏、明显重复、页眉页脚水印混入。',
+            '严格输出 JSON（不要 markdown 代码块包裹）：{"ok":true} 表示质量合格；{"ok":false,"issues":[{"desc":"问题描述(60字内)"}]} 表示仍有问题。',
+          ].join('\n') },
+          { role: 'user', content: `条目类型：${(item && (item.type + (item.section ? '·' + item.section : ''))) || '未知'}\n\n【条目当前文本】\n${text.slice(0, 6000)}` },
+        ], {
+          maxTokens: (config.review && config.review.thinking) ? 8000 : 800,
+          providerId: (config.review && config.review.providerId) || undefined,
+          llmOverride: (() => {
+            const over = {};
+            if (config.review && config.review.model) over.model = config.review.model;
+            if (config.review && config.review.thinking) {
+              over.temperature = 1;
+              over._thinking = { type: 'enabled', budget_tokens: 4000 };
+            }
+            return Object.keys(over).length ? over : undefined;
+          })(),
+        });
+        const parsed = parseMnemonicJSON(reply);
+        if (!parsed) {
+          return sendJSON(res, 200, { ok: false, issues: [{ desc: 'AI 复核输出无法解析，请人工确认' }] });
+        }
+        const issues = Array.isArray(parsed.issues)
+          ? parsed.issues.filter(x => x && typeof x.desc === 'string' && x.desc.trim()).slice(0, 5)
+          : [];
+        const ok = parsed.ok === true || (Array.isArray(parsed.issues) && !parsed.issues.length);
+        return sendJSON(res, 200, { ok, issues });
+      }
+
       /* ---------------- v1.1.5：单元题库 API ---------------- */
 
       // 单元列表（整卷切片自动派生：导入成功即出现，无需手动推送）
