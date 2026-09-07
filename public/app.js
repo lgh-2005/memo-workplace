@@ -2214,10 +2214,8 @@ function pomoToday() { return pomo.sessions[bjDate()] || { count: 0, minutes: 0 
 function pomoRemaining() { return pomo.running ? Math.max(0, pomo.endsAt - Date.now()) : pomo.remainingMs; }
 
 function pomoRender() {
-  const rem = pomoRemaining();
-  const sec = Math.ceil(rem / 1000);
-  const m = Math.floor(sec / 60);
-  const s = sec % 60;
+  const ms = pomoRemaining();
+  const m = Math.floor(ms / 60000), s = Math.floor((ms % 60000) / 1000);
   const card = $('.pomo-card');
   if (card) card.classList.toggle('running', !!pomo.running);
 
@@ -2225,14 +2223,12 @@ function pomoRender() {
   const ring = $('#pomoRingProgress');
   if (ring && pomo.fullMs > 0) {
     const totalMs = pomo.fullMs;
-    const progress = Math.min(1, Math.max(0, rem / totalMs));
+    const progress = Math.min(1, Math.max(0, ms / totalMs));
     const offset = 440 * (1 - progress);
     ring.style.strokeDashoffset = offset;
     ring.style.stroke = pomo.mode === 'work' ? 'var(--primary)' : 'var(--ok)';
   }
 
-  const ms = pomoRemaining();
-  const m = Math.floor(ms / 60000), s = Math.floor((ms % 60000) / 1000);
   $('#pomoTime').textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
   $('#pomoTime').classList.toggle('break-mode', pomo.mode === 'break');
   const pill = $('#pomoMode');
