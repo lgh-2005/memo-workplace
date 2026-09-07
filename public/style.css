@@ -172,19 +172,71 @@ main {
 }
 .stat-sub { color: var(--text-sub); font-size: 12px; }
 
-/* 柱状图 */
-.bars { display: flex; align-items: flex-end; gap: 10px; height: 120px; padding-top: 8px; }
-.bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+/* 柱状图（v1.2.1：紧凑自适应，防止拉扯背景） */
+.bars {
+  display: flex; align-items: flex-end; gap: 6px; height: 110px; padding-top: 8px;
+  overflow: hidden; min-width: 0; box-sizing: border-box;
+}
+.bar-col {
+  flex: 1 1 0; min-width: 0; display: flex; flex-direction: column;
+  align-items: center; gap: 3px; height: 100%; justify-content: flex-end;
+}
 .bar {
-  width: 70%; min-height: 2px;
+  width: 70%; max-width: 32px; min-height: 2px;
   background: var(--grad-primary);
   border-radius: 6px 6px 2px 2px; opacity: .88;
   transition: opacity .18s ease, transform .18s ease;
 }
 .bar-col:hover .bar { opacity: 1; transform: scaleY(1.03); transform-origin: bottom; }
-.bar-col .bar-num { font-size: 11px; color: var(--text-sub); }
-.bar-col .bar-label { font-size: 10px; color: var(--text-sub); white-space: nowrap; }
+.bar-col .bar-num { font-size: 11px; color: var(--text-sub); line-height: 1; }
+.bar-col .bar-label { font-size: 10px; color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 .bar.dim { background: linear-gradient(180deg, #c7d2fe, #a5b4fc); }
+[data-theme="dark"] .bar.dim { background: linear-gradient(180deg, #3b4f8a, #4f5fa0); }
+
+/* v1.2.1：考研倒计时横幅 */
+.kaoyan-countdown {
+  background: var(--grad-primary); color: #fff; padding: 14px 20px; margin-bottom: 14px;
+}
+.countdown-row {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.countdown-main { display: flex; align-items: baseline; gap: 4px; }
+.countdown-num { font-size: 38px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+.countdown-unit { font-size: 14px; opacity: .9; }
+.countdown-info { flex: 1; min-width: 120px; }
+.countdown-title { font-size: 16px; font-weight: 600; }
+.countdown-date { font-size: 12px; opacity: .8; margin-top: 2px; }
+.countdown-streak {
+  display: flex; align-items: baseline; gap: 4px;
+  background: rgba(255,255,255,.18); padding: 8px 16px; border-radius: 12px;
+}
+.countdown-streak .countdown-num { font-size: 28px; }
+
+/* v1.2.1：词汇掌握度分布条 */
+.mastery-bar {
+  display: flex; height: 18px; border-radius: 9px; overflow: hidden; margin: 10px 0 8px;
+  background: var(--bg); border: 1px solid var(--border);
+}
+.mastery-seg { min-width: 2px; transition: width .3s ease; }
+.seg-ok { background: var(--ok); }
+.seg-other { background: #a5b4fc; }
+.seg-vague { background: #fbbf24; }
+.seg-forget { background: #f87171; }
+.seg-sticky { background: #ef4444; }
+[data-theme="dark"] .seg-other { background: #6366f1; }
+.mastery-legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--text-sub); }
+.ml-item { display: flex; align-items: center; gap: 4px; }
+.ml-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.ml-dot.seg-ok { background: var(--ok); }
+.ml-dot.seg-other { background: #a5b4fc; }
+.ml-dot.seg-vague { background: #fbbf24; }
+.ml-dot.seg-forget { background: #f87171; }
+.ml-dot.seg-sticky { background: #ef4444; }
+[data-theme="dark"] .ml-dot.seg-other { background: #6366f1; }
+
+/* v1.2.1：测验概况 */
+.quiz-overview { font-size: 13px; line-height: 2; color: var(--text); }
+.quiz-overview b { color: var(--primary); font-weight: 700; }
 
 /* 快捷按钮 / 日志 */
 .quick-actions { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -1303,8 +1355,13 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   #tab-dashboard .bars {
     background: transparent;
     border-radius: 8px;
-    padding: 6px 4px 0;
+    padding: 6px 2px 0;
+    height: 90px;     /* v1.2.1：移动端紧凑柱图 */
+    gap: 3px;
   }
+  #tab-dashboard .bars .bar-num { font-size: 10px; }
+  #tab-dashboard .bars .bar-label { font-size: 9px; }
+  #tab-dashboard .bars .bar { max-width: 24px; }
   #tab-dashboard .quick-actions {
     background: transparent;
   }

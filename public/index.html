@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v1.2.0</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v1.2.1</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v1.2.0</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v1.2.1</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -60,26 +60,57 @@
       <span id="syncBannerText" data-page-node-id="inGWePDGx6rjeLit3A78e0">今日数据还未同步</span>
       <button class="btn small" id="bannerSyncBtn" data-page-node-id="OLOfEXWjgbEEtlpGGQxE1Z">立即同步</button>
     </div>
-    <div class="grid-4" data-page-node-id="uG78coUuOhE5x4OUa8qpFR">
-      <div class="card stat" data-page-node-id="zBHmpgpQrCx04mMEGXWZcz">
-        <div class="stat-label" data-page-node-id="3yM87maEnadHeE6XgziKVP">今日进度</div>
-        <div class="stat-value" id="statProgress" data-page-node-id="CER0n7fGu32tEF8M1xevj0">—</div>
-        <div class="stat-sub" id="statProgressSub" data-page-node-id="Xj3CybXhz6m1uk99HkNWfS">尚未同步</div>
+    <!-- v1.2.1：考研倒计时横幅 -->
+    <div class="card kaoyan-countdown" id="kaoyanCountdown" style="display:none">
+      <div class="countdown-row">
+        <div class="countdown-main">
+          <span class="countdown-num" id="countdownDays">—</span>
+          <span class="countdown-unit">天</span>
+        </div>
+        <div class="countdown-info">
+          <div class="countdown-title">距考研初试</div>
+          <div class="countdown-date" id="countdownDate"></div>
+        </div>
+        <div class="countdown-streak">
+          <span class="countdown-num" id="streakDays">0</span>
+          <span class="countdown-unit">天连续学习</span>
+        </div>
       </div>
-      <div class="card stat" data-page-node-id="d6ijmEqFSdwO0bENKuIQQ9">
-        <div class="stat-label" data-page-node-id="31ScGbI03Yq5YxT7Teceyq">今日学习时长</div>
-        <div class="stat-value" id="statTime" data-page-node-id="PJH50UjOrKbDnTNfEJGIig">—</div>
-        <div class="stat-sub" id="statTimeSub" data-page-node-id="s5yWSPEbNN8QZBchTHPA8o"></div>
+    </div>
+
+    <div class="grid-4">
+      <div class="card stat">
+        <div class="stat-label">今日进度</div>
+        <div class="stat-value" id="statProgress">—</div>
+        <div class="stat-sub" id="statProgressSub">尚未同步</div>
       </div>
-      <div class="card stat" data-page-node-id="1kOBP0B2Aop7yZfw5KuC8W">
-        <div class="stat-label" data-page-node-id="Up2G7BRxl7jnXrJmVAL7NS">顽固词</div>
-        <div class="stat-value warn" id="statSticky" data-page-node-id="IbvGzdgCF2MZLGboVwfZEN">—</div>
-        <div class="stat-sub" data-page-node-id="c7ZYri2V3W4bAM9oDWBXiB">反复忘记，优先攻克</div>
+      <div class="card stat">
+        <div class="stat-label">今日学习时长</div>
+        <div class="stat-value" id="statTime">—</div>
+        <div class="stat-sub" id="statTimeSub"></div>
       </div>
-      <div class="card stat" data-page-node-id="StluRsYgVMuktBZYCYMKIA">
-        <div class="stat-label" data-page-node-id="CTZMvNMQJS3sbTChPpseml">计划总词数</div>
-        <div class="stat-value" id="statTotal" data-page-node-id="TV6U8IUWZizcHjEraiYJFx">—</div>
-        <div class="stat-sub" id="statWordsSub" data-page-node-id="jgffCj1C9AaujGHLh7AOmV"></div>
+      <div class="card stat">
+        <div class="stat-label">顽固词</div>
+        <div class="stat-value warn" id="statSticky">—</div>
+        <div class="stat-sub">反复忘记，优先攻克</div>
+      </div>
+      <div class="card stat">
+        <div class="stat-label">计划总词数</div>
+        <div class="stat-value" id="statTotal">—</div>
+        <div class="stat-sub" id="statWordsSub"></div>
+      </div>
+    </div>
+
+    <!-- v1.2.1：词汇掌握度 + 测验概况 -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">词汇掌握度分布</div>
+        <div class="mastery-bar" id="masteryBar"></div>
+        <div class="mastery-legend" id="masteryLegend"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">测验与做题概况</div>
+        <div class="quiz-overview" id="quizOverview">暂无数据</div>
       </div>
     </div>
 

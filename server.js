@@ -1902,6 +1902,44 @@ function dashboardData() {
     history.push({ date: key, finished: rec?.finished || 0, total: rec?.total || 0 });
   }
 
+  // v1.2.1：考研倒计时（每年 12 月最后一个周末，约 12-20 ~ 12-28 之间，取 12-21 作近似值）
+  const yr = new Date().getFullYear();
+  const examDate = new Date(`${today > `${yr}-06-01` ? yr : yr}-12-21T00:00:00+08:00`);
+  if (examDate.getTime() < Date.now()) examDate.setFullYear(examDate.getFullYear() + 1);
+  const daysLeft = Math.ceil((examDate.getTime() - Date.now()) / 86400000);
+
+  // 连续打卡天数 (streak)：从今天/昨天向前数连续有学习记录的天数
+  let streak = 0;
+  const startCheck = progress && progress.finished > 0 ? 0 : -1; // 今天有数据从今天开始，否则从昨天
+  for (let i = startCheck; i >= -365; i--) {
+    const key = bjDate(i);
+    const rec = db.progressHistory.find(x => x.date === key);
+    if (rec && rec.finished > 0) streak++;
+    else break;
+  }
+
+  // 词汇掌握度分布
+  const mastery = { wellFamiliar: wellFamiliar.length, sticky: sticky.length, forget: 0, vague: 0, other: 0 };
+  for (const w of words) {
+    if (w.tags?.includes('WELL_FAMILIAR') || w.tags?.includes('STICKING')) continue;
+    if (w.lastResponse === 'FORGET' || w.quizResponse === 'FORGET') mastery.forget++;
+    else if (w.lastResponse === 'VAGUE' || w.quizResponse === 'VAGUE') mastery.vague++;
+    else mastery.other++;
+  }
+
+  // 测验统计
+  const quizStats = { total: db.quizLog.length, recent: db.quizLog.slice(0, 5) };
+  if (db.quizLog.length) {
+    const all = db.quizLog;
+    quizStats.totalQ = all.reduce((s, q) => s + (q.total || 0), 0);
+    quizStats.totalCorrect = all.reduce((s, q) => s + (q.familiar || 0), 0);
+    quizStats.avgRate = quizStats.totalQ ? Math.round(quizStats.totalCorrect / quizStats.totalQ * 100) : 0;
+  }
+
+  // 单元做题统计
+  const unitStats = { total: db.unitLog.length, correct: 0, judged: 0 };
+  for (const u of db.unitLog) { unitStats.correct += u.correct || 0; unitStats.judged += u.judged || 0; }
+
   return {
     lastSync: db.lastSync,
     lastSyncOk: db.lastSyncOk,
@@ -1916,6 +1954,12 @@ function dashboardData() {
       pendingNotes: db.notes.filter(n => !n.synced).length,
       sessions: db.sessions.length,
     },
+    // v1.2.1：考研增强
+    kaoyan: { daysLeft, examDate: examDate.toISOString().slice(0, 10) },
+    streak,
+    mastery,
+    quizStats,
+    unitStats,
     forecast,
     history,
     todayItems: db.todayItems.length,

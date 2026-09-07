@@ -155,14 +155,69 @@ async function loadDashboard() {
         <div class="bar-label">${x.date.slice(5)}</div>
       </div>`).join('');
 
-    // 进度曲线
-    const maxH = Math.max(1, ...d.history.map(x => x.finished));
-    $('#historyBars').innerHTML = (d.history.length ? d.history : [{ date: '', finished: 0, total: 0 }]).map(x => `
+    // 进度曲线（移动端只显示最近 7 天，防止柱子过多拉扯布局）
+    const isMobile = window.innerWidth <= 700;
+    const histSlice = d.history.length ? (isMobile ? d.history.slice(-7) : d.history) : [{ date: '', finished: 0, total: 0 }];
+    const maxH = Math.max(1, ...histSlice.map(x => x.finished));
+    $('#historyBars').innerHTML = histSlice.map(x => `
       <div class="bar-col" title="${x.date}: ${x.finished}/${x.total}">
         <div class="bar-num">${x.finished || ''}</div>
         <div class="bar dim" style="height:${Math.max(2, x.finished / maxH * 100)}%"></div>
         <div class="bar-label">${x.date.slice(5)}</div>
       </div>`).join('');
+    // 更新标题
+    const histTitle = $('#historyBars')?.closest('.card')?.querySelector('.card-title');
+    if (histTitle) histTitle.textContent = `学习成果曲线（最近 ${histSlice.length} 天）`;
+
+    // v1.2.1：考研倒计时
+    if (d.kaoyan) {
+      const el = $('#kaoyanCountdown');
+      if (el) {
+        el.style.display = '';
+        $('#countdownDays').textContent = d.kaoyan.daysLeft;
+        $('#countdownDate').textContent = d.kaoyan.examDate;
+        $('#streakDays').textContent = d.streak || 0;
+      }
+    }
+
+    // v1.2.1：词汇掌握度分布
+    if (d.mastery) {
+      const m = d.mastery;
+      const total = m.wellFamiliar + m.sticky + m.forget + m.vague + m.other;
+      const pct = v => total ? Math.round(v / total * 100) : 0;
+      const bar = $('#masteryBar');
+      if (bar && total) {
+        bar.innerHTML = `<div class="mastery-seg seg-ok" style="width:${pct(m.wellFamiliar)}%"></div>` +
+          `<div class="mastery-seg seg-other" style="width:${pct(m.other)}%"></div>` +
+          `<div class="mastery-seg seg-vague" style="width:${pct(m.vague)}%"></div>` +
+          `<div class="mastery-seg seg-forget" style="width:${pct(m.forget)}%"></div>` +
+          `<div class="mastery-seg seg-sticky" style="width:${pct(m.sticky)}%"></div>`;
+      } else if (bar) {
+        bar.innerHTML = '<div class="empty">同步后显示</div>';
+      }
+      const leg = $('#masteryLegend');
+      if (leg) {
+        leg.innerHTML = [
+          `<span class="ml-item"><i class="ml-dot seg-ok"></i>熟练 ${m.wellFamiliar}</span>`,
+          `<span class="ml-item"><i class="ml-dot seg-other"></i>一般 ${m.other}</span>`,
+          `<span class="ml-item"><i class="ml-dot seg-vague"></i>模糊 ${m.vague}</span>`,
+          `<span class="ml-item"><i class="ml-dot seg-forget"></i>忘记 ${m.forget}</span>`,
+          `<span class="ml-item"><i class="ml-dot seg-sticky"></i>顽固 ${m.sticky}</span>`,
+        ].join('');
+      }
+    }
+
+    // v1.2.1：测验与做题概况
+    const qo = $('#quizOverview');
+    if (qo) {
+      const qs = d.quizStats || {};
+      const us = d.unitStats || {};
+      const parts = [];
+      if (qs.total) parts.push(`<div><b>${qs.total}</b> 次单词测验 · <b>${qs.totalQ || 0}</b> 题 · 正确率 <b>${qs.avgRate || 0}%</b></div>`);
+      if (us.total) parts.push(`<div><b>${us.total}</b> 次单元练习 · <b>${us.judged}</b> 题判分 · 正确 <b>${us.judged ? Math.round(us.correct / us.judged * 100) : 0}%</b></div>`);
+      if (d.counts.sessions) parts.push(`<div><b>${d.counts.sessions}</b> 次 AI 学习会话 · <b>${d.counts.notes}</b> 条助记</div>`);
+      qo.innerHTML = parts.length ? parts.join('') : '<div class="empty">还没做过测验，去试试吧</div>';
+    }
 
     // 同步日志
     $('#syncLog').innerHTML = d.recentLog.length
