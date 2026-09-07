@@ -2631,15 +2631,61 @@ const server = http.createServer(async (req, res) => {
         if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
         const item = Array.isArray(rec.items) ? rec.items[body.rawIdx] : null;
         const text = typeof body.text === 'string' ? body.text : String((item && item.text) || '');
+        const origText = typeof body.origText === 'string' && body.origText.trim() ? body.origText : text;
         if (!text.trim()) return sendJSON(res, 400, { error: '条目文本为空' });
+        /* v1.1.7f：复核必须结合真题原件比对——先在原件中定位该条目对应段落作为比对基准，防止 AI 杜撰 */
+        let refSeg = '';
+        try {
+          const origPath = rec.source?.file ? path.join(kbBaseDir(), 'archive', rec.source.category || '', rec.source.file) : null;
+          if (origPath && fs.existsSync(origPath) && /\.(tex|txt|md|html?|htm)$/i.test(origPath)) {
+            const orig = fs.readFileSync(origPath, 'utf8');
+            const fuzzyFind = (hay, needle) => {
+              // 忽略空白差异地在 hay 中找 needle，返回 [start, end) 或 null
+              const isSp = c => /\s/.test(c);
+              for (let start = 0; start < hay.length; start++) {
+                if (isSp(hay[start])) continue;
+                let p = start, j = 0;
+                while (p < hay.length && j < needle.length) {
+                  if (isSp(needle[j])) { j++; continue; }
+                  if (isSp(hay[p])) { p++; continue; }
+                  if (hay[p] !== needle[j]) break;
+                  p++; j++;
+                }
+                while (j < needle.length && isSp(needle[j])) j++;
+                if (j >= needle.length) return [start, p];
+              }
+              return null;
+            };
+            const probe = origText.replace(/\s+/g, ' ').trim().slice(0, 60);
+            let hit = (probe.length >= 20) ? fuzzyFind(orig, probe) : null;
+            let seg = '';
+            if (hit) {
+              seg = orig.slice(Math.max(0, hit[0] - 1200), hit[1] + 1200);
+              refSeg = `\n\n【真题原件相关段落】（${rec.source.file} 中与该条目对应的片段，是比对基准）\n${seg}`;
+            } else {
+              // 精确定位失败：用条目里最长的几个英文词兜底
+              const words = [...new Set(origText.split(/[^A-Za-z']+/))].filter(w => w.length >= 7).sort((a, b) => b.length - a.length).slice(0, 6);
+              for (const w of words) {
+                const wAt = orig.indexOf(w);
+                if (wAt >= 0) {
+                  seg = orig.slice(Math.max(0, wAt - 1500), wAt + 2500);
+                  refSeg = `\n\n【真题原件相关段落】（按关键词定位，${rec.source.file}）\n${seg}`;
+                  break;
+                }
+              }
+              if (!refSeg) refSeg = `\n\n【真题原件开头】（未能精确定位该条目对应段落，附开头 ${Math.min(6000, orig.length)} 字符供比对）\n${orig.slice(0, 6000)}`;
+            }
+          }
+        } catch { /* 原件读取失败不影响复核主流程 */ }
         if (config.llm.mock) return sendJSON(res, 200, { ok: true, mock: true });
         const reply = await llmChat([
           { role: 'system', content: [
-            '你是考研英语真题语料的质检审读员。审核对象是【单个条目的当前文本】（刚被用户编辑过）。',
-            '只判断该条目本身是否仍有质量问题：句子残缺或截断、乱码、挖空/划线锚点（〖N〗或〖/N〗）缺失或破坏、明显重复、页眉页脚水印混入。',
-            '严格输出 JSON（不要 markdown 代码块包裹）：{"ok":true} 表示质量合格；{"ok":false,"issues":[{"desc":"问题描述(60字内)"}]} 表示仍有问题。',
+            '你是考研英语真题语料的质检审读员。审核对象是【单个条目的当前文本】（刚被用户编辑过），比对依据是【真题原件相关段落】。',
+            '只报告能与原件比对确认的问题：句子残缺或截断、乱码、挖空/划线锚点（〖N〗或〖/N〗）缺失或破坏、明显重复、页眉页脚水印混入、当前文本与原件不符。',
+            '重要：原件本身的内容不是问题；拿不准、无法与原件比对确认的，一律输出 {"ok":true}——宁可放过，不可杜撰。',
+            '严格输出 JSON（不要 markdown 代码块包裹）：{"ok":true} 表示质量合格；{"ok":false,"issues":[{"desc":"问题描述(60字内)","suggestion":"给用户的修改建议(120字内)"}]} 表示仍有问题——suggestion 必填，且建议里的英文措辞必须来自原件或当前文本，不得杜撰原件中不存在的句子。',
           ].join('\n') },
-          { role: 'user', content: `条目类型：${(item && (item.type + (item.section ? '·' + item.section : ''))) || '未知'}\n\n【条目当前文本】\n${text.slice(0, 6000)}` },
+          { role: 'user', content: `条目类型：${(item && (item.type + (item.section ? '·' + item.section : ''))) || '未知'}\n\n【条目当前文本】\n${text.slice(0, 6000)}${refSeg}` },
         ], {
           maxTokens: (config.review && config.review.thinking) ? 8000 : 800,
           providerId: (config.review && config.review.providerId) || undefined,
@@ -2659,6 +2705,7 @@ const server = http.createServer(async (req, res) => {
         }
         const issues = Array.isArray(parsed.issues)
           ? parsed.issues.filter(x => x && typeof x.desc === 'string' && x.desc.trim()).slice(0, 5)
+              .map(x => ({ desc: x.desc.trim().slice(0, 160), suggestion: String(x.suggestion || '').trim().slice(0, 300) }))
           : [];
         const ok = parsed.ok === true || (Array.isArray(parsed.issues) && !parsed.issues.length);
         return sendJSON(res, 200, { ok, issues });

@@ -761,3 +761,15 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-theme="dark"] .kb-fix-hl { background: #45201f; color: #ffb3b1; border-bottom-color: var(--warn); }
 .kb-fix-preview .kb-fix-miss { color: var(--warn); }
 .kb-issue-fixed-tag { margin-left: auto; background: var(--ok); color: #fff; font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 10px; }
+
+
+/* ---------------- v1.1.7e：滚动隔离 + 分组汇总 + 回到审读 toast ---------------- */
+.kb-fix-modal, .kb-fix-dialog, .kb-fix-preview, .kb-fix-text { overscroll-behavior: contain; }
+.kb-issue-group { margin: 10px 0 4px; }
+.kb-issue-group-head { display: flex; gap: 8px; align-items: center; padding: 6px 10px; margin: 8px 0 2px; background: color-mix(in srgb, var(--primary) 10%, transparent); border-radius: 8px; font-size: 13px; }
+.kb-fix-sug { margin-top: 4px; padding: 6px 10px; font-size: 12px; line-height: 1.6; background: color-mix(in srgb, var(--primary) 8%, transparent); border-left: 3px solid var(--primary); border-radius: 0 8px 8px 0; }
+.kb-back-toast { position: fixed; right: 24px; bottom: 24px; z-index: 10000; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; box-shadow: 0 10px 36px rgba(0, 0, 0, .25); background: var(--card); color: var(--text); border: 1px solid var(--border); font-size: 13px; animation: kbToastIn .25s ease-out; }
+.kb-back-toast.ok { border-left: 4px solid var(--ok); }
+.kb-back-toast.warn { border-left: 4px solid #ba7517; }
+.kb-back-toast .btn { white-space: nowrap; }
+@keyframes kbToastIn { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }

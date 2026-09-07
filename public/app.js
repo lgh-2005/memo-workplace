@@ -1903,12 +1903,30 @@ async function kbDoReview() {
     const modelTag = r.modelUsed ? (r.modelUsed.model ? ` · ${esc(r.modelUsed.model)}` : '') : '';
     const head = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}${modelTag}</div>` +
       (r.materialStats ? `<div class="hint">审核对象：整理后题库内容（${r.materialStats.items} 个条目 / ${r.materialStats.chars} 字符${r.materialStats.truncated ? '，<b>超长已截断</b>' : ''}）${r.materialStats.hasRef ? ' + 真题原件参考' : ''} · 定位成功 ${located}/${r.issues.length}</div>` : '');
-    const body = r.issues.length
-      ? r.issues.map((x, i) => `
+    /* v1.1.7e：按题型板块分组汇总（完形/阅读/翻译…），便于集中修改同一板块 */
+    const secOf = x => {
+      const m = String(x.itemTag || '').match(/^[a-z_]+·([a-z_]+)/);
+      return m ? m[1] : (x.itemIdx != null ? 'misc' : 'unlocated');
+    };
+    const GROUP_ICON = { use_of_english: '🔲 完形填空', reading: '📖 阅读理解', part_b: '🧩 新题型', translation: '🖊 翻译', writing: '📝 写作', misc: '📌 其他条目', unlocated: '🔍 未定位疑点' };
+    const groups = [];
+    const bySec = new Map();
+    r.issues.forEach((x, i) => {
+      const s = secOf(x);
+      if (!bySec.has(s)) { const g = { sec: s, idxs: [] }; bySec.set(s, g); groups.push(g); }
+      bySec.get(s).idxs.push(i);
+    });
+    const cardHtml = (x, i) => `
         <div class="kb-issue ${cls[x.severity] || 'kb-issue-mid'}">
           <div class="kb-issue-head"><b>${esc(x.loc)}</b>${x.itemTag ? `<span>· ${esc(x.itemTag)}</span>` : ''}<span>· ${esc(x.severity)}</span>${x.itemIdx != null ? `<button class="btn ghost" style="padding:2px 10px;font-size:12px;margin-left:auto" data-locate="${i}">📍 定位到此</button>` : ''}</div>
           <div>${esc(x.desc)}</div>
           ${x.quote ? `<div class="kb-issue-quote">“${esc(x.quote)}”</div>` : ''}
+        </div>`;
+    const body = r.issues.length
+      ? groups.map(g => `
+        <div class="kb-issue-group" data-kb-sec="${g.sec}">
+          <div class="kb-issue-group-head"><b>${GROUP_ICON[g.sec] || '📌 其他'}</b><span>· ${g.idxs.length} 处疑点</span><span class="kb-group-fixed" style="display:none;color:var(--ok);font-weight:600"></span></div>
+          ${g.idxs.map(i => cardHtml(r.issues[i], i)).join('')}
         </div>`).join('')
       : '<div class="hint">✅ 未发现明显疑点（AI 审读仅供参考，改动仍走人工编辑）</div>';
     out.innerHTML = head + body + `<div id="${prefix}LocateBox"></div>`;
@@ -1995,8 +2013,8 @@ function kbUpdateDetailItem(prefix, x, newText) {
   else el.innerHTML = kbText(newText);
 }
 
-/** v1.1.7d：疑点卡片状态标记——fixed=✅淡出 / still=追加复核反馈 */
-function markIssueCard(prefix, cardIdx, state, newDesc) {
+/** v1.1.7e：疑点卡片状态标记——fixed=✅淡出+组头进度 / still=追加复核反馈与修改建议 */
+function markIssueCard(prefix, cardIdx, state, newDesc, sug) {
   if (cardIdx == null || cardIdx < 0) return;
   const btn = document.querySelector('#' + prefix + 'IssuesPanel [data-locate="' + cardIdx + '"]');
   const card = btn && btn.closest('.kb-issue');
@@ -2012,12 +2030,45 @@ function markIssueCard(prefix, cardIdx, state, newDesc) {
     }
     const lb = card.querySelector('[data-locate]');
     if (lb) lb.disabled = true;
+    const grp = card.closest('.kb-issue-group');
+    if (grp) {
+      const fixedEl = grp.querySelector('.kb-group-fixed');
+      const total = grp.querySelectorAll('.kb-issue').length;
+      const done = grp.querySelectorAll('.kb-issue-fixed-tag').length;
+      if (fixedEl) { fixedEl.textContent = `· 已修复 ${done}/${total}`; fixedEl.style.display = ''; }
+      if (done === total) grp.style.opacity = '.55';
+    }
   } else if (state === 'still' && newDesc) {
     const d = document.createElement('div');
     d.className = 'kb-fix-miss';
     d.textContent = '🔁 AI 复核：' + newDesc;
     card.appendChild(d);
+    if (sug) {
+      const s = document.createElement('div');
+      s.className = 'kb-fix-sug';
+      s.textContent = '💡 修改建议：' + sug;
+      card.appendChild(s);
+    }
   }
+}
+
+/* v1.1.7e：保存后右下角 toast——一键回到 AI 审读板块 */
+function kbShowBackToast(prefix, ok, msg) {
+  const old = document.querySelector('.kb-back-toast');
+  if (old) old.remove();
+  const t = document.createElement('div');
+  t.className = 'kb-back-toast' + (ok ? ' ok' : ' warn');
+  t.innerHTML = `<div class="kb-back-msg">${esc(msg)}</div><button class="btn small primary">📋 回到审读报告</button>`;
+  t.querySelector('button').addEventListener('click', () => {
+    const panel = $('#' + prefix + 'IssuesPanel');
+    if (panel) {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (panel.animate) panel.animate([{ opacity: .35 }, { opacity: 1 }], { duration: 900 });
+    }
+    t.remove();
+  });
+  document.body.appendChild(t);
+  setTimeout(() => { if (t.parentNode) t.remove(); }, 12000);
 }
 
 /* 疑点直编弹窗：textarea 改的即原始 itemText，保存走 /api/kb/record/update（整体 items 替换）*/
@@ -2059,6 +2110,17 @@ async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
       <div class="result" id="kbFixResult"></div>
     </div>`;
   document.body.appendChild(dlg);
+  /* v1.1.7e：滚动隔离——弹窗内滚动不穿透主界面（可滚元素内部放行，到边界/遮罩一律拦截） */
+  dlg.addEventListener('wheel', e => {
+    const scrollers = [$('#kbFixPreview'), $('#kbFixText'), dlg.querySelector('.kb-fix-dialog')].filter(Boolean);
+    const t = scrollers.find(el => el === e.target || el.contains(e.target));
+    if (t && t.scrollHeight > t.clientHeight) {
+      const atTop = t.scrollTop <= 0 && e.deltaY < 0;
+      const atBottom = t.scrollTop + t.clientHeight >= t.scrollHeight - 1 && e.deltaY > 0;
+      if (!atTop && !atBottom) return;
+    }
+    e.preventDefault();
+  }, { passive: false });
   /* v1.1.7c：预览区渲染——AI 摘录标红；编辑时节流刷新（改对了红纹即消失，直观反馈） */
   const pv = $('#kbFixPreview');
   const ta = $('#kbFixText');
@@ -2100,19 +2162,22 @@ async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
       out.innerHTML = '✅ 已保存 · 🤖 AI 复核中…';
       out.className = 'result';
       let rv = null;
-      try { rv = await api('/api/kb/review/item', { id: rid, store: prefix === 'ex' ? 'exam' : 'corpus', rawIdx, text: newText }); }
+      try { rv = await api('/api/kb/review/item', { id: rid, store: prefix === 'ex' ? 'exam' : 'corpus', rawIdx, text: newText, origText }); }
       catch (e2) { /* 复核异常不阻塞保存结果 */ }
       if (rv && rv.ok) {
         out.innerHTML = '✅ 已保存 · AI 复核通过，疑点已标记修复';
         out.className = 'result ok';
         markIssueCard(prefix, cardIdx, 'fixed');
-        $('#kbFixPreview').innerHTML = '<div class="kb-fix-miss" style="color:var(--ok)">✅ AI 复核通过：该疑点已修复，卡片将自动淡出</div>';
-        setTimeout(close, 1500);
+        $('#kbFixPreview').innerHTML = '<div class="kb-fix-miss" style="color:var(--ok)">✅ AI 复核通过：该疑点已修复</div>';
+        close();
+        kbShowBackToast(prefix, true, '✅ 修改已保存，AI 复核通过');
       } else {
+        const sug = (rv && rv.issues && rv.issues[0] && rv.issues[0].suggestion) || '';
         const d = (rv && rv.issues && rv.issues[0] && rv.issues[0].desc) || 'AI 复核未通过，请检查该条目';
-        out.innerHTML = '✅ 已保存 · ⚠️ AI 复核仍有疑点：' + esc(d);
+        out.innerHTML = '✅ 已保存 · ⚠️ AI 复核仍有疑点：' + esc(d) + (sug ? `<div class="kb-fix-sug">💡 修改建议：${esc(sug)}</div>` : '');
         out.className = 'result err';
-        markIssueCard(prefix, cardIdx, 'still', d);
+        markIssueCard(prefix, cardIdx, 'still', d, sug);
+        kbShowBackToast(prefix, false, '⚠️ 已保存，AI 复核发现新问题');
       }
     } catch (e) {
       out.textContent = '❌ ' + esc(e.message);
