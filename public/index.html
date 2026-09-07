@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v1.1.9j</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v1.2.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v1.1.9j</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v1.2.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -140,7 +140,21 @@
       <div class="chat-panel card" data-page-node-id="mhDINlh1yKn0Koq9HpFOSx">
         <div class="chat-header-row" data-page-node-id="hP1h0G4ZZcTjfTGKzVYfec">
           <div class="chat-header" data-page-node-id="t9ofVLCv1wjBgdg7WdFJAW"><span id="chatHeader" data-page-node-id="5tNtI60HD2bCHu6cbVsRyD">选择左侧一个单词开始，或直接提问</span> <span class="tag type" id="kaoyanBadge" style="display:none" data-page-node-id="OL05rrgDnrEEulEOP9thp6">🎓 考研模式</span></div>
-          <button class="btn small speak-btn" id="speakWordBtn" title="朗读单词" style="display:none" data-page-node-id="9489zHTeXVolmAfaCLZGei">🔊</button>
+          <div style="display:flex;gap:6px;align-items:center">
+            <button class="btn small" id="chatHistoryBtn" title="聊天历史">📜 历史</button>
+            <button class="btn small speak-btn" id="speakWordBtn" title="朗读单词" style="display:none">🔊</button>
+          </div>
+        </div>
+        <!-- v1.2.0：聊天历史面板（覆盖层） -->
+        <div id="chatHistoryOverlay" class="ch-overlay" style="display:none">
+          <div class="ch-overlay-head">
+            <b>📜 聊天历史</b>
+            <div style="display:flex;gap:6px;align-items:center">
+              <input type="text" id="chatHistorySearch" class="input" placeholder="搜索单词或内容…" style="width:180px;font-size:13px">
+              <button class="btn small" id="chatHistoryClose">✕ 关闭</button>
+            </div>
+          </div>
+          <div id="chatHistoryPanel" class="ch-panel"></div>
         </div>
         <div class="chat-messages" id="chatMessages" data-page-node-id="jpU6gfzhCZz25RwBiiSesd">
           <div class="msg ai" data-page-node-id="mEc3ltFfA8JfEB2bCVdmED">👋 我是你的 AI 单词教练。选中单词后可以问词义、用法、例句，也可以点下面的快捷按钮。学完点左下角「结束本次学习」，我会把你的易错点总结成助记。</div>
@@ -560,6 +574,18 @@
         <button class="style-opt" data-style="pop" data-page-node-id="xTqKDDvV1xCFzbzmOihZrQ">🍬 潮流波普<span class="style-desc" data-page-node-id="mI6ZEkGiefkJh9gBYlLg5H">多巴胺粗边 · 潮流暗波</span></button>
         <button class="style-opt" data-style="mc">⛏️ 方块像素<span class="style-desc">我的世界草方块 · 下界红石</span></button>
       </div>
+    </div>
+
+    <!-- v1.2.0：数据备份管理 -->
+    <div class="card">
+      <div class="card-title">🛡️ 数据备份与恢复 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.2.0）</span></div>
+      <div class="hint">服务端每 6 小时自动备份核心数据（db.json / config.json / 聊天记录 / 语料库 / 真题库），最多保留 10 份。也可手动创建或恢复备份。</div>
+      <div class="row-gap">
+        <button class="btn primary" id="backupCreateBtn">📦 立即创建备份</button>
+        <button class="btn" id="backupRefreshBtn">🔄 刷新列表</button>
+      </div>
+      <div class="result" id="backupResult"></div>
+      <div id="backupList" style="margin-top:10px"></div>
     </div>
 
     <div class="card" data-page-node-id="cS7dFlHJTmZRRhAhkX1XbF">

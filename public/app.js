@@ -9,6 +9,7 @@ const state = {
   words: [],
   activeWord: null,
   chatHistory: [],      // [{role, content, word}]
+  chatSessionId: null,  // v1.2.0：当前聊天会话 id（持久化用）
   sessionWords: new Set(),
   sessionErrorWords: new Set(),
   sessionStartedAt: new Date().toISOString(),
@@ -93,7 +94,7 @@ function switchTab(name) {
   if (name === 'kb') loadKb();
   if (name === 'exam') loadExamList();
   if (name === 'unit') loadUnits();
-  if (name === 'settings') loadConfig();
+  if (name === 'settings') { loadConfig(); loadBackupList(); }
   // quiz 页保持进行中的状态，不重置
 }
 
@@ -326,24 +327,31 @@ $('#speakWordBtn').addEventListener('click', async () => {
   speak(w);
 });
 
-/** 轻量 Markdown（v1.0.5）：标题 / 加粗 / 行内代码 / 无序列表 / 简单表格 / 空行分段 */
+/** Markdown 渲染器（v1.2.0）：标题/加粗/斜体/删除线/行内代码/代码块/有序+无序列表/表格/引用/分隔线/链接/图片 */
 function mdInline(s) {
   return s
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img class="md-img" src="$2" alt="$1" loading="lazy">')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a class="md-link" href="$2" target="_blank" rel="noopener">$1</a>')
     .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+    .replace(/(?<![*\w])\*([^*]+?)\*(?![*\w])/g, '<em>$1</em>')
+    .replace(/~~(.+?)~~/g, '<del>$1</del>')
     .replace(/`([^`]+)`/g, '<code>$1</code>');
 }
 
 function mdLite(text) {
   const lines = esc(text).split('\n');
   const html = [];
-  let listOpen = false;
-  let table = [];   // 收集连续的表格行
-  const closeList = () => { if (listOpen) { html.push('</ul>'); listOpen = false; } };
+  let ulOpen = false, olOpen = false;
+  let table = [];
+  let inCode = false, codeLang = '', codeLines = [];
+  const closeUl = () => { if (ulOpen) { html.push('</ul>'); ulOpen = false; } };
+  const closeOl = () => { if (olOpen) { html.push('</ol>'); olOpen = false; } };
+  const closeLists = () => { closeUl(); closeOl(); };
   const flushTable = () => {
     if (!table.length) return;
     const rows = table
       .map(r => r.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim()))
-      .filter(r => !r.every(c => /^:?-{2,}:?$/.test(c) || c === ''));   // 去掉 |---|---| 分隔行
+      .filter(r => !r.every(c => /^:?-{2,}:?$/.test(c) || c === ''));
     if (rows.length) {
       const [head, ...rest] = rows;
       html.push('<table class="md-table"><thead><tr>' +
@@ -357,21 +365,52 @@ function mdLite(text) {
   };
   for (const raw of lines) {
     const line = raw.trimEnd();
-    if (/^\s*\|.*\|\s*$/.test(line)) { closeList(); table.push(line.trim()); continue; }
-    flushTable();
-    if (!line.trim()) { closeList(); html.push('<div class="md-gap"></div>'); continue; }
-    const h = line.match(/^(#{1,4})\s+(.*)$/);
-    if (h) { closeList(); html.push(`<div class="md-h md-h${h[1].length}">${mdInline(h[2])}</div>`); continue; }
-    const li = line.match(/^\s*[-*•]\s+(.*)$/);
-    if (li) {
-      if (!listOpen) { html.push('<ul>'); listOpen = true; }
-      html.push(`<li>${mdInline(li[1])}</li>`);
+    // fenced code block （三反引号开闭）
+    if (/^`{3}/.test(line.trim())) {
+      if (!inCode) {
+        closeLists(); flushTable();
+        inCode = true; codeLang = line.trim().slice(3).trim(); codeLines = [];
+      } else {
+        html.push(`<pre class="md-code-block${codeLang ? ' lang-' + codeLang : ''}"><code>${codeLines.join('\n')}</code></pre>`);
+        inCode = false; codeLang = ''; codeLines = [];
+      }
       continue;
     }
-    closeList();
+    if (inCode) { codeLines.push(line); continue; }
+    // table
+    if (/^\s*\|.*\|\s*$/.test(line)) { closeLists(); table.push(line.trim()); continue; }
+    flushTable();
+    // empty
+    if (!line.trim()) { closeLists(); html.push('<div class="md-gap"></div>'); continue; }
+    // horizontal rule
+    if (/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(line)) { closeLists(); html.push('<hr class="md-hr">'); continue; }
+    // heading
+    const h = line.match(/^(#{1,4})\s+(.*)$/);
+    if (h) { closeLists(); html.push(`<div class="md-h md-h${h[1].length}">${mdInline(h[2])}</div>`); continue; }
+    // blockquote（> 被 esc() 转成 &gt;）
+    const bq = line.match(/^\s*&gt;\s?(.*)$/);
+    if (bq) { closeLists(); html.push(`<blockquote class="md-quote">${mdInline(bq[1])}</blockquote>`); continue; }
+    // unordered list
+    const ul = line.match(/^\s*[-*•]\s+(.*)$/);
+    if (ul) {
+      closeOl();
+      if (!ulOpen) { html.push('<ul>'); ulOpen = true; }
+      html.push(`<li>${mdInline(ul[1])}</li>`);
+      continue;
+    }
+    // ordered list
+    const oli = line.match(/^\s*(\d+)\.\s+(.*)$/);
+    if (oli) {
+      closeUl();
+      if (!olOpen) { html.push(`<ol start="${oli[1]}">`); olOpen = true; }
+      html.push(`<li>${mdInline(oli[2])}</li>`);
+      continue;
+    }
+    closeLists();
     html.push(`<div>${mdInline(line)}</div>`);
   }
-  closeList();
+  if (inCode) html.push(`<pre class="md-code-block"><code>${codeLines.join('\n')}</code></pre>`);
+  closeLists();
   flushTable();
   return html.join('');
 }
@@ -400,6 +439,7 @@ async function askAI(message, isErrorMark = false) {
     loading.classList.remove('loading');
     loading.innerHTML = (state.activeWord ? `<span class="word-tag">📘 ${esc(state.activeWord)}</span>` : '') + mdLite(r.reply);
     state.chatHistory.push({ role: 'assistant', content: r.reply, word: state.activeWord });
+    autoSaveChat();   // v1.2.0：每次 AI 回复后自动持久化
   } catch (e) {
     loading.classList.remove('loading');
     loading.innerHTML = '❌ ' + esc(e.message) + (e.message.includes('AI 服务商') ? '（请到 设置 页配置）' : '');
@@ -476,6 +516,115 @@ $('#webSearchChip').addEventListener('click', () => {
     : '🌐 已关闭联网搜索。');
 });
 
+/* v1.2.0：聊天记录自动持久化 —— 每次 AI 回复后自动保存到服务端 */
+const _chatSaveTimer = { t: null };
+function autoSaveChat() {
+  clearTimeout(_chatSaveTimer.t);
+  _chatSaveTimer.t = setTimeout(() => {
+    if (state.chatHistory.length < 2) return;   // 至少一问一答才保存
+    const title = state.activeWord
+      ? `学习：${state.activeWord}`
+      : (state.chatHistory.find(m => m.role === 'user')?.content?.slice(0, 30) || '对话');
+    api('/api/chat/save', {
+      method: 'POST',
+      body: {
+        id: state.chatSessionId,
+        title,
+        messages: state.chatHistory,
+        createdAt: state.sessionStartedAt,
+      },
+    }).then(r => {
+      if (r.id && !state.chatSessionId) state.chatSessionId = r.id;
+    }).catch(() => { /* 保存失败静默 */ });
+  }, 1500);   // 防抖 1.5s
+}
+
+/* v1.2.0：聊天历史面板 —— 查看/搜索/加载/删除历史对话 */
+async function loadChatHistoryPanel() {
+  const panel = $('#chatHistoryPanel');
+  if (!panel) return;
+  const q = $('#chatHistorySearch')?.value?.trim() || '';
+  panel.innerHTML = '<div class="empty">加载中…</div>';
+  try {
+    const d = await api('/api/chat/history' + (q ? '?q=' + encodeURIComponent(q) : ''));
+    if (!d.total) {
+      panel.innerHTML = '<div class="empty">暂无历史对话' + (q ? '（试试其他搜索词）' : '') + '</div>';
+      return;
+    }
+    let html = '';
+    const days = Object.keys(d.groups).sort().reverse();
+    for (const day of days) {
+      const items = d.groups[day];
+      html += `<div class="ch-day-header">${day === bjDate() ? '今天' : day}</div>`;
+      for (const s of items) {
+        const wordTags = (s.words || []).slice(0, 5).map(w => `<span class="tag type">${esc(w)}</span>`).join(' ');
+        html += `<div class="ch-item" data-sid="${esc(s.id)}">
+          <div class="ch-item-head">
+            <b>${esc(s.title)}</b>
+            <span class="ch-meta">${s.msgCount} 条消息 · ${fmtBJ(s.updatedAt || s.createdAt)}</span>
+          </div>
+          <div class="ch-words">${wordTags}</div>
+          ${s.preview ? `<div class="ch-preview">${esc(s.preview)}</div>` : ''}
+          <div class="ch-actions">
+            <button class="btn small" data-load-chat="${esc(s.id)}">加载对话</button>
+            <button class="btn small danger" data-del-chat="${esc(s.id)}">删除</button>
+          </div>
+        </div>`;
+      }
+    }
+    panel.innerHTML = html;
+  } catch (e) {
+    panel.innerHTML = `<div class="empty">加载失败：${esc(e.message)}</div>`;
+  }
+}
+
+async function loadChatSession(id) {
+  try {
+    const d = await api(`/api/chat/session/${id}`);
+    const s = d.session;
+    // 恢复到当前聊天
+    state.chatHistory = s.messages || [];
+    state.chatSessionId = s.id;
+    state.sessionStartedAt = s.createdAt;
+    state.sessionWords = new Set(s.words || []);
+    state.sessionErrorWords.clear();
+    // 渲染消息
+    const box = $('#chatMessages');
+    box.innerHTML = '';
+    for (const m of state.chatHistory) {
+      addMsg(m.role === 'assistant' ? 'ai' : m.role, m.content, m.word);
+    }
+    if (s.words?.length) {
+      state.activeWord = s.words[s.words.length - 1];
+      $('#chatHeader').textContent = '当前学习：' + state.activeWord;
+      $('#speakWordBtn').style.display = 'inline-block';
+    }
+    updateSessionInfo();
+    // 切回聊天页
+    if ($('#chatHistoryOverlay')) $('#chatHistoryOverlay').style.display = 'none';
+  } catch (e) {
+    alert('加载会话失败：' + e.message);
+  }
+}
+
+async function deleteChatSession(id) {
+  if (!confirm('确定删除这条聊天记录？')) return;
+  try {
+    await api(`/api/chat/session/${id}`, { method: 'DELETE' });
+    loadChatHistoryPanel();
+  } catch (e) {
+    alert('删除失败：' + e.message);
+  }
+}
+
+// 事件委托：聊天历史面板
+document.addEventListener('click', (e) => {
+  const loadBtn = e.target.closest('[data-load-chat]');
+  if (loadBtn) { loadChatSession(loadBtn.dataset.loadChat); return; }
+  const delBtn = e.target.closest('[data-del-chat]');
+  if (delBtn) { deleteChatSession(delBtn.dataset.delChat); return; }
+});
+
 /* 结束会话 -> 生成助记 */
 $('#finishBtn').addEventListener('click', async () => {
   if (!state.sessionWords.size) return;
@@ -499,6 +648,7 @@ $('#finishBtn').addEventListener('click', async () => {
     state.sessionWords.clear();
     state.sessionErrorWords.clear();
     state.chatHistory = [];
+    state.chatSessionId = null;   // v1.2.0：重置持久化 id
     state.sessionStartedAt = new Date().toISOString();
     updateSessionInfo();
     btn.textContent = '✅ 结束本次学习并生成助记';
@@ -2708,6 +2858,79 @@ if (localStorage.getItem('wb-spotlight') === '1') {
   if (btn) btn.classList.add('active');
 }
 
+
+/* ============ v1.2.0：数据备份管理 ============ */
+async function loadBackupList() {
+  const el = $('#backupList');
+  if (!el) return;
+  try {
+    const d = await api('/api/backup/list');
+    if (!d.backups?.length) { el.innerHTML = '<div class="empty">暂无备份</div>'; return; }
+    el.innerHTML = d.backups.map(b => `
+      <div class="note-item" style="padding:8px 12px;margin-bottom:6px">
+        <div style="flex:1">
+          <b style="font-size:13px">${esc(b.name)}</b>
+          <div style="font-size:11px;color:var(--text-sub)">${b.files} 个文件</div>
+        </div>
+        <button class="btn small" data-restore="${esc(b.name)}">恢复此备份</button>
+      </div>`).join('');
+  } catch (e) {
+    el.innerHTML = `<div class="empty">加载失败：${esc(e.message)}</div>`;
+  }
+}
+
+if ($('#backupCreateBtn')) {
+  $('#backupCreateBtn').addEventListener('click', async () => {
+    const res = $('#backupResult');
+    res.textContent = '正在备份…'; res.className = 'result';
+    try {
+      const d = await api('/api/backup/create', { method: 'POST' });
+      res.textContent = `✅ 备份完成：${d.name}（${d.files} 个文件）`;
+      res.className = 'result ok';
+      loadBackupList();
+    } catch (e) {
+      res.textContent = '❌ ' + e.message;
+      res.className = 'result err';
+    }
+  });
+}
+if ($('#backupRefreshBtn')) $('#backupRefreshBtn').addEventListener('click', loadBackupList);
+
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('[data-restore]');
+  if (!btn) return;
+  const name = btn.dataset.restore;
+  if (!confirm(`确定恢复备份「${name}」？当前数据将被覆盖！`)) return;
+  const res = $('#backupResult');
+  res.textContent = '正在恢复…'; res.className = 'result';
+  try {
+    const d = await api('/api/backup/restore', { method: 'POST', body: { name } });
+    res.textContent = `✅ 已恢复 ${d.restored} 个文件，刷新页面生效`;
+    res.className = 'result ok';
+    setTimeout(() => location.reload(), 1500);
+  } catch (e) {
+    res.textContent = '❌ ' + e.message;
+    res.className = 'result err';
+  }
+});
+
+/* ============ v1.2.0：聊天历史面板事件绑定 ============ */
+if ($('#chatHistoryBtn')) {
+  $('#chatHistoryBtn').addEventListener('click', () => {
+    const overlay = $('#chatHistoryOverlay');
+    if (!overlay) return;
+    overlay.style.display = overlay.style.display === 'none' ? 'flex' : 'none';
+    if (overlay.style.display !== 'none') loadChatHistoryPanel();
+  });
+}
+if ($('#chatHistoryClose')) {
+  $('#chatHistoryClose').addEventListener('click', () => {
+    $('#chatHistoryOverlay').style.display = 'none';
+  });
+}
+if ($('#chatHistorySearch')) {
+  $('#chatHistorySearch').addEventListener('input', debounce(loadChatHistoryPanel, 400));
+}
 
 /* ============ 手机端原生 App 级导航与折叠抽屉交互 (v1.1.9e) ============ */
 const bottomMoreBtn = $('#bottomMoreBtn');

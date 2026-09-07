@@ -82,7 +82,71 @@ sudo systemctl restart workbench
 
 本地改完代码 push 上去，服务器 pull 一下重启即可。`data/` 目录（学习数据、助记、配置）在服务器上独立存在，任何更新都不影响。
 
-## 三、备份
+## 三、HTTPS 配置（v1.2.0 强烈建议）
+
+> API Key、墨墨 Token、AI 对话内容均经网络传输，**必须上 HTTPS**。
+
+### 方案 A：Caddy 自动签证书（推荐，最简单）
+
+```bash
+# 1. 安装 Caddy（Ubuntu/Debian）
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update && sudo apt install caddy
+
+# 2. 配置反向代理（将 your-domain.com 替换为你的域名）
+sudo tee /etc/caddy/Caddyfile <<'EOF'
+your-domain.com {
+    reverse_proxy 127.0.0.1:5178
+}
+EOF
+
+# 3. 重启 Caddy（自动申请 Let's Encrypt 证书）
+sudo systemctl restart caddy
+```
+
+访问 `https://your-domain.com` 即可，Caddy 自动续签证书。
+
+### 方案 B：nginx + Let's Encrypt（已有 nginx 的情况）
+
+```bash
+# 安装 certbot
+sudo apt install certbot python3-certbot-nginx
+
+# nginx 配置添加反向代理
+server {
+    listen 80;
+    server_name your-domain.com;
+    location / {
+        proxy_pass http://127.0.0.1:5178;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        client_max_body_size 60m;
+    }
+}
+
+# 申请证书（自动修改 nginx 配置）
+sudo certbot --nginx -d your-domain.com
+```
+
+### 无域名临时方案
+
+安全组只放行你自己的 IP，并保持 Basic Auth：
+
+```bash
+# 在 nginx location 块中加：
+auth_basic "Workbench";
+auth_basic_user_file /etc/nginx/.htpasswd;
+```
+
+## 四、自动备份（v1.2.0）
+
+v1.2.0 起服务端**自动每 6 小时**备份核心数据到 `data/backups/`（保留最近 10 份），也可通过网页「设置」页手动创建/恢复备份。
+
+手动备份仍然推荐定期做：
+
+## 五、手动备份
 
 只需备份服务器上的一个目录：
 

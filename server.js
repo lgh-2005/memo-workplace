@@ -141,6 +141,18 @@ if (!Array.isArray(db.unitLog)) db.unitLog = [];   // v1.1.5：单元做题记�
 function persistConfig() { saveJSON(CONFIG_FILE, config); }
 function persistDB() { saveJSON(DB_FILE, db); }
 
+/* v1.2.0：聊天记录持久化（独立文件，不膨胀 db.json） */
+const CHAT_FILE = path.join(DATA_DIR, 'chat_sessions.json');
+function loadChatHistory() { return loadJSON(CHAT_FILE, []); }
+function saveChatHistory(arr) { saveJSON(CHAT_FILE, arr); }
+
+/** 任意 ISO 时间 → 北京时间的 YYYY-MM-DD */
+function bjDateOf(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return isNaN(d) ? '' : d.toLocaleString('sv-SE', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
+}
+
 /* ------------------------------------------------------------------ */
 /* 墨墨 API 客户端（v1.0.7：按官方频控文档实现全局滑动窗口限流）          */
 /* 官方规则（open.maimemo.com，2026-09 核对）：                          */
@@ -2879,6 +2891,148 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, log });
       }
 
+      /* ---- v1.2.0：聊天记录持久化 ---- */
+
+      if (p === '/api/chat/save' && req.method === 'POST') {
+        const body = await readBody(req);
+        const msgs = Array.isArray(body.messages) ? body.messages.slice(0, 200) : [];
+        if (!msgs.length) return sendJSON(res, 400, { error: '消息不能为空' });
+        const id = body.id || crypto.randomUUID();
+        const title = String(body.title || msgs.find(m => m.word)?.word || msgs[0]?.content?.slice(0, 30) || '对话').slice(0, 60);
+        const words = [...new Set(msgs.filter(m => m.word).map(m => m.word))];
+        const session = {
+          id,
+          title,
+          words,
+          messages: msgs.map(m => ({ role: m.role, content: String(m.content || '').slice(0, 5000), word: m.word || null })),
+          createdAt: body.createdAt || new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        };
+        const all = loadChatHistory();
+        const idx = all.findIndex(s => s.id === id);
+        if (idx >= 0) all[idx] = session; else all.unshift(session);
+        // 保留最近 200 个会话
+        if (all.length > 200) all.length = 200;
+        saveChatHistory(all);
+        return sendJSON(res, 200, { ok: true, id, title });
+      }
+
+      if (p === '/api/chat/history' && req.method === 'GET') {
+        const all = loadChatHistory();
+        const q = (u.searchParams.get('q') || '').toLowerCase();
+        let list = all;
+        if (q) list = list.filter(s =>
+          s.title.toLowerCase().includes(q) ||
+          (s.words || []).some(w => w.toLowerCase().includes(q)) ||
+          s.messages.some(m => m.content.toLowerCase().includes(q)));
+        // 按天分组
+        const groups = {};
+        for (const s of list) {
+          const day = bjDateOf(s.updatedAt || s.createdAt) || 'unknown';
+          if (!groups[day]) groups[day] = [];
+          groups[day].push({
+            id: s.id, title: s.title, words: s.words || [],
+            msgCount: s.messages.length,
+            createdAt: s.createdAt, updatedAt: s.updatedAt,
+            preview: s.messages.filter(m => m.role === 'user').slice(-1)[0]?.content?.slice(0, 80) || '',
+          });
+        }
+        return sendJSON(res, 200, { ok: true, total: list.length, groups });
+      }
+
+      {
+        const m = p.match(/^\/api\/chat\/session\/([a-f0-9-]+)$/);
+        if (m && req.method === 'GET') {
+          const s = loadChatHistory().find(x => x.id === m[1]);
+          if (!s) return sendJSON(res, 404, { error: '会话不存在' });
+          return sendJSON(res, 200, { ok: true, session: s });
+        }
+        if (m && req.method === 'DELETE') {
+          const all = loadChatHistory();
+          const idx = all.findIndex(x => x.id === m[1]);
+          if (idx < 0) return sendJSON(res, 404, { error: '会话不存在' });
+          all.splice(idx, 1);
+          saveChatHistory(all);
+          return sendJSON(res, 200, { ok: true });
+        }
+      }
+
+      /* ---- v1.2.0：数据备份与恢复 ---- */
+
+      if (p === '/api/backup/create' && req.method === 'POST') {
+        const backupDir = path.join(DATA_DIR, 'backups');
+        if (!fs.existsSync(backupDir)) fs.mkdirSync(backupDir, { recursive: true });
+        const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+        const backupName = `backup-${stamp}`;
+        const bDir = path.join(backupDir, backupName);
+        fs.mkdirSync(bDir);
+        // 备份核心数据文件
+        const filesToBackup = [
+          { src: DB_FILE, name: 'db.json' },
+          { src: CONFIG_FILE, name: 'config.json' },
+          { src: path.join(DATA_DIR, 'chat_sessions.json'), name: 'chat_sessions.json' },
+          { src: CORPUS_FILE, name: 'records.jsonl' },
+          { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
+        ];
+        let count = 0;
+        for (const f of filesToBackup) {
+          if (fs.existsSync(f.src)) {
+            fs.copyFileSync(f.src, path.join(bDir, f.name));
+            count++;
+          }
+        }
+        // 清理超过 10 个的旧备份
+        const backups = fs.readdirSync(backupDir).filter(d => d.startsWith('backup-')).sort();
+        while (backups.length > 10) {
+          const old = backups.shift();
+          const oldDir = path.join(backupDir, old);
+          try { fs.rmSync(oldDir, { recursive: true }); } catch { /* ignore */ }
+        }
+        return sendJSON(res, 200, { ok: true, name: backupName, files: count });
+      }
+
+      if (p === '/api/backup/list' && req.method === 'GET') {
+        const backupDir = path.join(DATA_DIR, 'backups');
+        if (!fs.existsSync(backupDir)) return sendJSON(res, 200, { ok: true, backups: [] });
+        const list = fs.readdirSync(backupDir)
+          .filter(d => d.startsWith('backup-'))
+          .sort().reverse()
+          .map(d => {
+            const bDir = path.join(backupDir, d);
+            const files = fs.existsSync(bDir) ? fs.readdirSync(bDir) : [];
+            return { name: d, files: files.length, date: d.replace('backup-', '').replace(/-/g, (m, i) => i < 10 ? '-' : i === 10 ? 'T' : ':') };
+          });
+        return sendJSON(res, 200, { ok: true, backups: list });
+      }
+
+      if (p === '/api/backup/restore' && req.method === 'POST') {
+        const body = await readBody(req);
+        const name = String(body.name || '').trim();
+        if (!name || !/^backup-/.test(name)) return sendJSON(res, 400, { error: '无效的备份名称' });
+        const bDir = path.join(DATA_DIR, 'backups', name);
+        if (!fs.existsSync(bDir)) return sendJSON(res, 404, { error: '备份不存在: ' + name });
+        const restoreMap = [
+          { name: 'db.json', dst: DB_FILE },
+          { name: 'config.json', dst: CONFIG_FILE },
+          { name: 'chat_sessions.json', dst: path.join(DATA_DIR, 'chat_sessions.json') },
+          { name: 'records.jsonl', dst: CORPUS_FILE },
+          { name: 'exams.jsonl', dst: path.join(ROOT, 'corpus', 'exams.jsonl') },
+        ];
+        let restored = 0;
+        for (const f of restoreMap) {
+          const src = path.join(bDir, f.name);
+          if (fs.existsSync(src)) {
+            fs.copyFileSync(src, f.dst);
+            restored++;
+          }
+        }
+        // 重新加载内存数据
+        config = loadJSON(CONFIG_FILE, config);
+        db = loadJSON(DB_FILE, db);
+        armAutoSync();
+        return sendJSON(res, 200, { ok: true, restored, name });
+      }
+
       return sendJSON(res, 404, { error: '接口不存在: ' + p });
     }
 
@@ -2911,6 +3065,44 @@ const server = http.createServer(async (req, res) => {
 ensureDataDir();
 ensureKbSplit();   // v1.1.2：旧版单文件里的 qa_set 自动迁移到 exams.jsonl
 armAutoSync();
+
+/* v1.2.0：自动备份——启动时检查，之后每 6 小时一次（最多保留 10 份） */
+function autoBackup() {
+  const backupDir = path.join(DATA_DIR, 'backups');
+  if (!fs.existsSync(backupDir)) fs.mkdirSync(backupDir, { recursive: true });
+  // 检查最近一次备份时间，不足 6 小时则跳过
+  const existing = fs.readdirSync(backupDir).filter(d => d.startsWith('backup-')).sort();
+  if (existing.length) {
+    const last = existing[existing.length - 1];
+    const ts = last.replace('backup-', '').replace(/-/g, (m, i) => i < 10 ? '-' : i === 10 ? 'T' : ':');
+    const elapsed = Date.now() - new Date(ts + ':00').getTime();
+    if (elapsed < 6 * 3600_000) return;   // 距上次备份不足 6h
+  }
+  const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const bDir = path.join(backupDir, `backup-${stamp}`);
+  try {
+    fs.mkdirSync(bDir);
+    const files = [
+      { src: DB_FILE, name: 'db.json' },
+      { src: CONFIG_FILE, name: 'config.json' },
+      { src: CHAT_FILE, name: 'chat_sessions.json' },
+      { src: CORPUS_FILE, name: 'records.jsonl' },
+      { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
+    ];
+    for (const f of files) { if (fs.existsSync(f.src)) fs.copyFileSync(f.src, path.join(bDir, f.name)); }
+    // 清理旧备份（保留 10 份）
+    const all = fs.readdirSync(backupDir).filter(d => d.startsWith('backup-')).sort();
+    while (all.length > 10) {
+      try { fs.rmSync(path.join(backupDir, all.shift()), { recursive: true }); } catch {}
+    }
+    console.log(`  [自动备份] ${stamp} 完成`);
+  } catch (e) {
+    console.error('  [自动备份] 失败:', e.message);
+  }
+}
+autoBackup();
+setInterval(autoBackup, 6 * 3600_000);   // 每 6 小时
+
 server.listen(PORT, HOST, () => {
   console.log(`\n  英语学习工作台已启动`);
   console.log(`  ➜  http://localhost:${PORT}  (listening on ${HOST})`);
