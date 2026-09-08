@@ -1397,7 +1397,97 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   .gloss-line { max-width: 130px; }
   .msg .md-table { font-size: 12px; }
   .msg .md-table th, .msg .md-table td { padding: 4px 6px; }
+
+  /* v1.2.2：移动端适配增强 */
+  /* 触控目标最小 38px */
+  .chip { min-height: 32px; display: inline-flex; align-items: center; }
+  .btn.small { min-height: 34px; }
+
+  /* 考研倒计时移动端紧凑 */
+  .kaoyan-countdown { padding: 10px 14px; margin-bottom: 10px; }
+  .countdown-row { gap: 12px; }
+  .countdown-num { font-size: 28px; }
+  .countdown-unit { font-size: 12px; }
+  .countdown-info { min-width: 0; }
+  .countdown-title { font-size: 14px; }
+  .countdown-date { font-size: 11px; }
+  .countdown-streak { padding: 6px 12px; }
+  .countdown-streak .countdown-num { font-size: 22px; }
+
+  /* 掌握度分布移动端 */
+  .mastery-legend { gap: 8px; font-size: 11px; }
+  .ml-dot { width: 8px; height: 8px; }
+
+  /* 测验概况移动端 */
+  .quiz-overview { font-size: 12px; line-height: 1.9; }
+
+  /* 聊天历史覆盖层全屏 */
+  .ch-overlay { border-radius: 0; }
+  .ch-overlay-head { padding: 10px 12px; flex-wrap: wrap; gap: 8px; }
+  .ch-overlay-head input { width: 100% !important; }
+  .ch-item-head { flex-direction: column; align-items: flex-start; gap: 2px; }
+
+  /* 卡片 hover 移动端禁用防误触 */
+  .card:hover { transform: none; box-shadow: var(--shadow-card); border-color: var(--border); }
 }
+
+/* v1.2.2：桌面端阅读宽度优化 */
+@media (min-width: 1400px) {
+  main { max-width: 1100px; }
+  .study-layout { grid-template-columns: 300px 1fr; }
+}
+
+/* v1.2.2：中等屏幕适配 (701-900px) */
+@media (min-width: 701px) and (max-width: 900px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-2 { grid-template-columns: 1fr; }
+  .countdown-row { gap: 14px; }
+  .countdown-num { font-size: 32px; }
+}
+
+/* v1.2.2：各风格 × 暗色模式下新组件（倒计时/掌握度条）适配 */
+[data-theme="dark"] .kaoyan-countdown {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f2545 100%);
+  border: 1px solid #2a4a6f;
+}
+[data-theme="dark"] .countdown-streak { background: rgba(255,255,255,.08); }
+[data-theme="dark"] .mastery-bar { background: #1c2740; border-color: #2a3650; }
+
+/* 街机风格倒计时 */
+[data-style="arcade"] .kaoyan-countdown {
+  background: #3b4e2a; border: 2px solid #2c3823; box-shadow: 3px 3px 0 #2c3823;
+  border-radius: 4px; font-family: monospace;
+}
+[data-style="arcade"][data-theme="dark"] .kaoyan-countdown {
+  background: linear-gradient(135deg, #2d1645 0%, #1a1030 100%);
+  border-color: #5b359c; box-shadow: 0 0 12px rgba(244,63,94,.2), 3px 3px 0 #3b1b68;
+}
+[data-style="arcade"] .mastery-bar { border-radius: 2px; }
+[data-style="arcade"] .mastery-seg { border-radius: 0; }
+
+/* 波普风格倒计时 */
+[data-style="pop"] .kaoyan-countdown {
+  background: #ff5e36; border: 2.5px solid #111; box-shadow: 4px 4px 0 #111;
+  border-radius: 12px; font-weight: 700;
+}
+[data-style="pop"][data-theme="dark"] .kaoyan-countdown {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #111; border-color: #facc15; box-shadow: 4px 4px 0 rgba(250,204,21,.5);
+}
+[data-style="pop"][data-theme="dark"] .kaoyan-countdown .countdown-date { color: #333; }
+[data-style="pop"] .mastery-bar { border: 2px solid #111; border-radius: 6px; }
+
+/* MC风格倒计时 */
+[data-style="mc"] .kaoyan-countdown {
+  background: #4a7522; border: 3px solid #1b1208;
+  border-radius: 0; box-shadow: inset 2px 2px 0 #72a838, inset -2px -2px 0 #29440f;
+}
+[data-style="mc"][data-theme="dark"] .kaoyan-countdown {
+  background: #351720; border-color: #5c202d;
+  box-shadow: inset 2px 2px 0 #4a1f2b, inset -2px -2px 0 #1f0b11;
+}
+[data-style="mc"] .mastery-bar { border-radius: 0; border: 2px solid #1b1208; }
+[data-style="mc"] .mastery-seg { border-radius: 0; }
 
 /* ================= v1.0.6：AI 生图助记 ================= */
 
