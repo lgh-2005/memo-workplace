@@ -103,15 +103,15 @@ def parse_year(year, raw):
                           "section": "reading", "passage_id": st["sub"], "text": buf})
         elif sec == "reading" and st["part"] == "C":
             items.append({"year": year, "type": "passage", "src": "tex",
-                          "section": "translation", "text": buf[:2500]})
+                          "section": "translation", "text": buf})
         elif sec == "translation":
             items.append({"year": year, "type": "passage", "src": "tex",
-                          "section": "translation", "text": buf[:2500]})
+                          "section": "translation", "text": buf})
         elif sec == "writing":
             st["w_n"] += 1
             items.append({"year": year, "type": "writing", "src": "tex",
                           "section": "writing",
-                          "part": "A" if st["w_n"] == 1 else "B", "text": buf[:1500]})
+                          "part": "A" if st["w_n"] == 1 else "B", "text": buf})
 
     def flush_partb():
         joined = " ".join(pb_buf["buf"])

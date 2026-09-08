@@ -358,7 +358,7 @@ def parse_year(year, text):
             spans.append((int(m.group(1)), m, seg))
         for num, m, seg in spans:
             add("question", section="translation", number=num,
-                text=clean(seg)[:500], options=None)
+                text=clean(seg), options=None)
         # 完整翻译原文：画线句用 〖N〗...〖/N〗 配对包裹（前端渲染下划线）
         parts, last = [], 0
         for num, m, seg in spans:
@@ -385,7 +385,7 @@ def parse_year(year, text):
             wptext = clean_passage(wtext)
             wptext = re.sub(r"^\s*(\d{1,2}\s*[\.．]?\s*)?Directions\s*[:：]?\s*", "", wptext).strip()
             if wptext:
-                add("writing", section="writing", part=label, text=wptext[:1500])
+                add("writing", section="writing", part=label, text=wptext)
 
     quality["questions"] = sum(1 for x in items if x["type"] == "question")
     return items, quality
