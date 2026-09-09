@@ -23,6 +23,8 @@
  * 11. 真题库分库（v1.1.2）：qa_set 独立到 corpus/exams.jsonl（语料库只留外刊/教材/
  *     真题正文等纯文本），启动时自动迁移；/api/exam/* 浏览与 tex/pdf 导入；
  *     按「考试-题型」（考研-完形填空/阅读理解/新题型/翻译/写作）统计各题型板块
+ * 12. 外刊发布源（v2.0.0）：独立读取 corpus/external/current/articles.jsonl，
+ *     保留标准文章元数据，和手工语料/真题分开管理；外刊只读、可参与检索与 AI 引用
  *
  * 启动：node server.js  （默认端口 5178）
  */
@@ -42,6 +44,7 @@ const DICT_DIR = path.join(DATA_DIR, 'dict');       // v1.0.8：韦氏词典本�
 // v1.1.0：题库/语料库——默认读仓库内 corpus/records.jsonl（随 git 部署）；
 // 可在设置里指定 kbDir 直接指向导入工程（如 ../importer/kb）实现实时联动
 const CORPUS_FILE = path.join(ROOT, 'corpus', 'records.jsonl');
+const EXTERNAL_CORPUS_DEFAULT_DIR = path.join(ROOT, 'corpus', 'external', 'current');
 const CONFIG_FILE = path.join(DATA_DIR, 'config.json');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
@@ -104,6 +107,9 @@ if (!config.dict || typeof config.dict !== 'object') config.dict = { learnersKey
 if (!config.mineru || typeof config.mineru !== 'object') config.mineru = { apiKey: '', mock: false };
 // v1.1.7 迁移：AI 审核专用服务商配置缺省补齐
 if (!config.review || typeof config.review !== 'object') config.review = { providerId: '', model: '', thinking: false };
+// v2.0.0：外刊发布源独立于手工语料和真题库；留空使用 corpus/external/current/
+if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '', pythonPath: '', externalDir: '' };
+if (config.kb.externalDir === undefined) config.kb.externalDir = '';
 
 // v1.0.2 迁移：旧的单服务商结构自动升级为多服务商列表（老配置无痛升级）
 if (!Array.isArray(config.llm?.providers)) {
@@ -829,7 +835,7 @@ async function dictLookup(word) {
   return entry;
 }
 
-/* ---------- v1.1.0：题库 / 语料库（导入工程产出的 records.jsonl） ---------- */
+/* ---------- v2.0.0：题库 / 语料库 / 外刊发布源 ---------- */
 /* 数据契约见《导入解析-经验总结.md》：rtype=qa_set|article|document|note，
    items 用 〖N〗（挖空/新题型答题框）/ 〖N〗…〖/N〗（翻译划线）做交互锚点。
    v1.1.1：取消「完形→阅读→新题型→翻译→写作」固定板块排序——真题与语料有多样性，
@@ -843,10 +849,38 @@ const KB_SECTION_LABEL = {
 const RTYPE_LABEL = { qa_set: '题库', article: '文章', document: '文档', note: '笔记' };
 
 let kbCache = { mtime: 0, records: [], sentences: null, sentencesKey: '' };
+let externalCache = { mtime: 0, records: [] };
 
 function kbFile() {
   const dir = (config.kb && config.kb.dir || '').trim();
   return dir ? path.resolve(dir, 'records.jsonl') : CORPUS_FILE;
+}
+
+function externalCorpusDir() {
+  const configured = (config.kb && config.kb.externalDir || process.env.EXTERNAL_CORPUS_DIR || '').trim();
+  return configured ? path.resolve(configured) : EXTERNAL_CORPUS_DEFAULT_DIR;
+}
+
+function externalArticlesFile() { return path.join(externalCorpusDir(), 'articles.jsonl'); }
+function externalManifestFile() { return path.join(externalCorpusDir(), 'manifest.json'); }
+
+function externalText(r) {
+  if (typeof r.text === 'string' && r.text.trim()) return r.text;
+  const ps = Array.isArray(r.paragraphs) ? r.paragraphs : r.content?.paragraphs;
+  if (!Array.isArray(ps)) return '';
+  return ps.map(p => typeof p === 'string' ? p : String(p?.text || '')).filter(Boolean).join('\n\n');
+}
+
+/** 外刊发布源只接受 article，兼容 scraper 的 paragraphs/content 两种正文形态。 */
+function normalizeExternalRecord(r) {
+  if (!r || !r.id || r.rtype !== 'article') return null;
+  const source = { ...(r.source || {}), category: '外刊', managed: 'external' };
+  const published = source.published_at || source.date || r.meta?.published_at || '';
+  if (published && !source.published_at) source.published_at = published;
+  const meta = { ...(r.meta || {}) };
+  if (!meta.year && /^\d{4}/.test(String(published))) meta.year = Number(String(published).slice(0, 4));
+  const text = externalText(r);
+  return { ...r, rtype: 'article', text, source, meta, external: true };
 }
 
 /** 加载语料记录（按文件 mtime 缓存；坏行跳过不炸） */
@@ -864,6 +898,36 @@ function loadKb() {
     kbCache = { mtime, records, sentences: null };
   }
   return kbCache.records;
+}
+
+/** v2.0.0：读取采集管线发布的外刊快照；此库由发布流程写入，网站端只读。 */
+function loadExternalKb() {
+  const file = externalArticlesFile();
+  if (!fs.existsSync(file)) { externalCache = { mtime: 0, records: [] }; return []; }
+  const mtime = fileMtime(file);
+  if (externalCache.mtime !== mtime) {
+    externalCache = { mtime, records: readJsonlRaw(file).map(normalizeExternalRecord).filter(Boolean) };
+  }
+  return externalCache.records;
+}
+
+function externalStatus() {
+  const file = externalArticlesFile();
+  const manifestFile = externalManifestFile();
+  const manifest = loadJSON(manifestFile, null);
+  return {
+    dir: externalCorpusDir(),
+    file,
+    manifestFile,
+    exists: fs.existsSync(file),
+    count: loadExternalKb().length,
+    manifest: manifest && typeof manifest === 'object' ? {
+      release_id: manifest.release_id || manifest.releaseId || '',
+      generated_at: manifest.generated_at || manifest.generatedAt || '',
+      article_count: manifest.article_count ?? manifest.articleCount ?? null,
+      schema_version: manifest.schema_version ?? manifest.schemaVersion ?? null,
+    } : null,
+  };
 }
 
 /** 渲染排序（v1.1.1 模块化版）：不预设板块顺序，按语料自身顺序渲染；
@@ -907,19 +971,30 @@ function kbSentenceSplit(text) {
 }
 
 function kbSentences() {
-  // v1.1.2：索引覆盖语料库 + 真题库（真题原句在 exams.jsonl），任一文件变化即重建
-  const key = `${fileMtime(kbFile())}|${fileMtime(examsFile())}`;
+  // v2.0.0：索引覆盖手工语料 + 外刊发布源 + 真题库，任一文件变化即重建
+  const key = `${fileMtime(kbFile())}|${fileMtime(externalArticlesFile())}|${fileMtime(examsFile())}`;
   if (kbCache.sentences && kbCache.sentencesKey === key) return kbCache.sentences;
   const out = [];
-  for (const r of [...loadKb(), ...loadExams()]) {
-    const year = r.meta?.year || null;
+  for (const r of [...loadKb(), ...loadExternalKb(), ...loadExams()]) {
+    const sourceKind = r.external ? 'external' : (r.rtype === 'qa_set' ? 'exam' : 'corpus');
+    const year = r.meta?.year || (r.source?.published_at && /^\d{4}/.test(r.source.published_at) ? Number(r.source.published_at.slice(0, 4)) : null);
     const title = r.title || '';
     const items = Array.isArray(r.items) && r.items.length
       ? r.items
       : [{ type: 'passage', section: null, number: null, text: r.text || '' }];
     for (const it of items) {
       for (const s of kbSentenceSplit(it.text || '')) {
-        out.push({ rid: r.id, title, year, section: it.section || null, number: it.number ?? null, s });
+        out.push({
+          rid: r.id,
+          title,
+          year,
+          section: it.section || null,
+          number: it.number ?? null,
+          sourceKind,
+          publication: r.source?.publication || r.source?.source || '',
+          sourceUrl: r.source?.canonical_url || r.source?.url || '',
+          s,
+        });
       }
     }
   }
@@ -932,9 +1007,9 @@ function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
 /**
  * 全库句子搜索。英文词组按词边界匹配（兼容少量词尾变化 -s/-ed/-ing），
- * 中文按包含匹配。返回 [{rid,title,year,section,number,s}]。
+ * 中文按包含匹配。返回句子来源类型和 URL，供网站展示与 AI 分通道引用。
  */
-function kbSearch(query, limit = 30) {
+function kbSearch(query, limit = 30, sourceKind = 'all') {
   const q = String(query || '').trim();
   if (!q || q.length > 100) return [];
   const lower = q.toLowerCase();
@@ -943,18 +1018,33 @@ function kbSearch(query, limit = 30) {
   const out = [];
   const seen = new Map();   // 同句去重（翻译原文与题干可能重复收录），优先保留带题号的来源
   for (const item of kbSentences()) {
+    if (sourceKind !== 'all' && item.sourceKind !== sourceKind) continue;
     const hit = re ? re.test(item.s) : item.s.toLowerCase().includes(lower);
     if (!hit) continue;
     const key = item.s.toLowerCase();
     const prev = seen.get(key);
     if (prev === undefined) { seen.set(key, out.length); out.push(item); }
-    else if (item.number != null && out[prev].number == null) out[prev] = item;
-    if (out.length >= limit) break;
+    else {
+      const rank = x => x.sourceKind === 'exam' ? 0 : x.sourceKind === 'corpus' ? 1 : 2;
+      if ((item.number != null && out[prev].number == null) || rank(item) < rank(out[prev])) out[prev] = item;
+    }
   }
-  return out;
+  return limit > 0 ? out.slice(0, limit) : out;
 }
 
-/** AI 真题语料注入：当前单词在真实考试语料里的句子（最多 4 条，带来源） */
+/** v2.0.0：为 AI 提供分通道证据，避免外刊挤掉真题或被误标为真题。 */
+function kbEvidenceForWord(word, examLimit = 2, externalLimit = 2) {
+  const w = String(word || '').trim();
+  if (!w || !/^[a-zA-Z][a-zA-Z'\-]{1,29}$/.test(w)) return { exams: [], external: [], corpus: [] };
+  const hits = kbSearch(w, 0);
+  return {
+    exams: hits.filter(h => h.sourceKind === 'exam').slice(0, examLimit),
+    external: hits.filter(h => h.sourceKind === 'external').slice(0, externalLimit),
+    corpus: hits.filter(h => h.sourceKind === 'corpus').slice(0, 2),
+  };
+}
+
+/** 兼容旧调用：返回混合搜索结果；AI 新路径使用 kbEvidenceForWord。 */
 function kbCorpusForWord(word, limit = 4) {
   const w = String(word || '').trim();
   if (!w || !/^[a-zA-Z][a-zA-Z'\-]{1,29}$/.test(w)) return [];
@@ -973,7 +1063,18 @@ function kbSummary(r) {
     questions: r.meta?.questions || items.filter(i => i.type === 'question').length || null,
     itemCount: items.length,
     sections: (r.meta?.sections || [...new Set(items.map(i => i.section).filter(Boolean))]) || [],
-    source: r.source ? { file: r.source.file, parser: r.source.parser, imported_at: r.source.imported_at, category: r.source.category } : null,
+    source: r.source ? {
+      file: r.source.file,
+      parser: r.source.parser,
+      imported_at: r.source.imported_at,
+      category: r.source.category,
+      managed: r.source.managed || (r.external ? 'external' : 'managed'),
+      publication: r.source.publication || r.source.source || '',
+      published_at: r.source.published_at || r.source.date || '',
+      canonical_url: r.source.canonical_url || r.source.url || '',
+    } : null,
+    quality: r.quality || null,
+    external: !!r.external,
     preview: String(r.text || (items[0] && items[0].text) || '').replace(/〖\/?\d+〗/g, '').slice(0, 90),
   };
 }
@@ -1472,10 +1573,11 @@ async function mineruParsePdf(buf, filename, isOcr) {
   return md.toString('utf8');
 }
 
-/** v1.1.4：按 id 定位记录所在库（真题库优先） */
+/** v2.0.0：按 id 定位可写库；外刊发布源单独标记为只读。 */
 function kbFindStoreOf(id) {
   if (loadExams().some(r => r.id === id)) return 'exam';
   if (loadKb().some(r => r.id === id)) return 'corpus';
+  if (loadExternalKb().some(r => r.id === id)) return 'external';
   return null;
 }
 
@@ -2032,11 +2134,13 @@ const server = http.createServer(async (req, res) => {
           },
           kb: {
             dir: (config.kb && config.kb.dir) || '',
+            externalDir: (config.kb && config.kb.externalDir) || '',
             pythonPath: (config.kb && config.kb.pythonPath) || '',
             categories: KB_CATEGORIES,
             file: kbFile(),
             exists: fs.existsSync(kbFile()),
             count: loadKb().length,
+            external: externalStatus(),
           },
           searchPresets: SEARCH_PRESETS,
           imagePresets: IMAGE_PRESETS,
@@ -2136,6 +2240,13 @@ const server = http.createServer(async (req, res) => {
           if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '', pythonPath: '' };
           config.kb.dir = body.kb.dir.trim();
           if (typeof body.kb.pythonPath === 'string') config.kb.pythonPath = body.kb.pythonPath.trim();
+        }
+        if (body.kb && typeof body.kb === 'object' && typeof body.kb.externalDir === 'string') {
+          if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '', pythonPath: '', externalDir: '' };
+          config.kb.externalDir = body.kb.externalDir.trim();
+          externalCache = { mtime: 0, records: [] };
+          kbCache.sentences = null;
+          kbCache.sentencesKey = '';
         }
         persistConfig();
         armAutoSync();
@@ -2296,18 +2407,28 @@ const server = http.createServer(async (req, res) => {
           } catch { /* 词典未配置或网络失败：不阻塞对话 */ }
         }
 
-        // v1.1.0：真题语料注入——当前单词在真实考试原句中的用法（带来源），例句优先引用、不再现编
+        // v2.0.0：真题与外刊分通道注入，避免外刊被误标为考试原句
         if (spelling) {
           try {
-            const hits = kbCorpusForWord(spelling);
-            if (hits.length) {
-              const lines = hits.map(h => {
+            const evidence = kbEvidenceForWord(spelling);
+            const formatHit = h => {
                 const src = [h.title, h.year ? h.year + ' 年' : '', KB_SECTION_LABEL[h.section] || h.section || '', h.number ? '第 ' + h.number + ' 题' : '']
                   .filter(Boolean).join(' · ');
-                return `- ${h.s}\n  （来源：${src}）`;
-              });
-              msgs[0].content += '\n\n【真题语料：真实考试原句】\n' + lines.join('\n') +
-                '\n讲解时优先引用以上真实语料并注明来源（考研最考什么就讲什么）；真题未覆盖的义项再用你自己的例句补充。';
+                const external = h.sourceKind === 'external';
+                const externalSrc = [h.publication, h.year ? h.year + ' 年' : '', h.sourceUrl].filter(Boolean).join(' · ');
+                return `- ${h.s}\n  （来源：${external ? (externalSrc || src || '外刊发布源') : (src || '考研真题')}）`;
+            };
+            if (evidence.exams.length) {
+              msgs[0].content += '\n\n【考研真题原句】\n' + evidence.exams.map(formatHit).join('\n') +
+                '\n讲解时优先引用以上真题并注明来源，尤其关注考研义项和考法。';
+            }
+            if (evidence.external.length) {
+              msgs[0].content += '\n\n【外刊真实语境】\n' + evidence.external.map(formatHit).join('\n') +
+                '\n以上是外刊语境，不得称为考研真题；可用于补充当代用法、主题背景和词义迁移。';
+            }
+            if (evidence.corpus.length) {
+              msgs[0].content += '\n\n【个人语料补充】\n' + evidence.corpus.map(formatHit).join('\n') +
+                '\n请标明这是工作台语料，不要将其表述为考试原句。';
             }
           } catch { /* 语料库不可用不阻塞对话 */ }
         }
@@ -2440,25 +2561,38 @@ const server = http.createServer(async (req, res) => {
 
       /* ---- 题库 / 语料库（v1.1.0） ---- */
 
+      // v2.0.0：发布源状态只读接口，便于本地/线上核对当前外刊 release
+      if (p === '/api/kb/status' && req.method === 'GET') {
+        return sendJSON(res, 200, {
+          ok: true,
+          manual: { file: kbFile(), exists: fs.existsSync(kbFile()), count: loadKb().length },
+          external: externalStatus(),
+          exams: { file: examsFile(), exists: fs.existsSync(examsFile()), count: loadExams().length },
+        });
+      }
+
       // 记录列表（摘要，不含全文）
       if (p === '/api/kb/records' && req.method === 'GET') {
-        const records = loadKb();
+        const records = [...loadKb(), ...loadExternalKb()];
         return sendJSON(res, 200, {
           ok: true,
           file: kbFile(),
           exists: fs.existsSync(kbFile()),
           records: records.map(kbSummary),
+          external: externalStatus(),
         });
       }
 
       // 记录详情（全文 + 渲染排序后的 items：题干在前、题目按题号，不重排板块）
       {
-        const m = p.match(/^\/api\/kb\/record\/([0-9a-f]+)$/);
+        const m = p.match(/^\/api\/kb\/record\/([A-Za-z0-9_-]+)$/);
         if (m && req.method === 'GET') {
           // v1.1.7a 修复：编辑器加载原始记录走本接口，真题 id 在 exams.jsonl——
           // v1.1.2 分库后此处漏改单库查找，导致真题点「编辑」报「记录不存在」。
           // 改为双库查找（真题优先，与 kbFindStoreOf 一致），语料/真题编辑均恢复。
-          const r = loadExams().find(x => x.id === m[1]) || loadKb().find(x => x.id === m[1]);
+          const r = loadExams().find(x => x.id === m[1])
+            || loadKb().find(x => x.id === m[1])
+            || loadExternalKb().find(x => x.id === m[1]);
           if (!r) return sendJSON(res, 404, { error: '记录不存在' });
           return sendJSON(res, 200, {
             ok: true,
@@ -2467,10 +2601,11 @@ const server = http.createServer(async (req, res) => {
         }
       }
 
-      // 全库句子搜索（题库 + 语料）
+      // 全库句子搜索（题库 + 手工语料 + 外刊发布源）
       if (p === '/api/kb/search' && req.method === 'GET') {
         const q = u.searchParams.get('q') || '';
-        const results = kbSearch(q, 40);
+        const scope = ['all', 'exam', 'external', 'corpus'].includes(u.searchParams.get('scope')) ? u.searchParams.get('scope') : 'all';
+        const results = kbSearch(q, 40, scope);
         return sendJSON(res, 200, { ok: true, query: q, count: results.length, results });
       }
 
@@ -2530,6 +2665,7 @@ const server = http.createServer(async (req, res) => {
         const body = await readBody(req);
         if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
         const store = body.store || kbFindStoreOf(body.id);
+        if (store === 'external') return sendJSON(res, 409, { error: '外刊发布源为只读，请在采集管线或本地验收层修改', code: 'EXTERNAL_READONLY' });
         if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
         const cleanText = s => String(s ?? '').slice(0, 2e6);
         const r = kbMutateStore(store, body.id, rec => {
@@ -2562,6 +2698,7 @@ const server = http.createServer(async (req, res) => {
         const body = await readBody(req);
         if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
         const store = body.store || kbFindStoreOf(body.id);
+        if (store === 'external') return sendJSON(res, 409, { error: '外刊发布源为只读，请在采集管线或本地验收层删除', code: 'EXTERNAL_READONLY' });
         if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
         const r = kbMutateStore(store, body.id, () => null);
         if (!r.ok) return sendJSON(res, r.reason.includes('不存在') ? 404 : 400, { error: r.reason });
@@ -2575,8 +2712,11 @@ const server = http.createServer(async (req, res) => {
         if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
         const store = body.store || kbFindStoreOf(body.id);
         if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
-        const rec = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
+        const rec = store === 'exam' ? loadExams().find(x => x.id === body.id)
+          : store === 'corpus' ? loadKb().find(x => x.id === body.id)
+            : loadExternalKb().find(x => x.id === body.id);
         if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
+        const reviewLabel = store === 'external' ? '外刊语料' : '考研真题语料';
         /* v1.1.6 修复审核数据源：旧版材料按每条 260 字符截断 + 全局 9000 字符截断 + 抹除 〖N〗 锚点 +
            原始顺序，LLM 把「送审材料自身残缺」当成语料问题报告（即实测中的假问题）。
            现在材料 = 与页面展示一致的渲染视图：kbOrderedItems 排序 + 每条完整文本 + 保留 〖N〗 锚点 +
@@ -2589,7 +2729,7 @@ const server = http.createServer(async (req, res) => {
         const LIMIT = 60000;
         let material = parts.length
           ? parts.join('\n\n')
-          : `【整理后的题库内容】（纯文本记录，无结构化条目）\n${String(rec.text || '')}`;
+          : `【整理后的${reviewLabel}内容】（纯文本记录，无结构化条目）\n${String(rec.text || '')}`;
         const totalChars = material.length;
         let truncated = false;
         if (totalChars > LIMIT) { material = material.slice(0, LIMIT) + '\n…（超长截断，超出部分未送审）'; truncated = true; }
@@ -2603,7 +2743,7 @@ const server = http.createServer(async (req, res) => {
         } catch { /* 原件读取失败不影响审读 */ }
         const reply = await llmChat([
           { role: 'system', content: [
-            '你是考研英语真题语料的质检审读员。审核对象是【整理后的题库内容】（与审核人员在页面上看到的完全一致，含 〖N〗 挖空/划线锚点）和可选的【真题原件参考】。',
+            `你是${reviewLabel}的质检审读员。审核对象是【整理后的${reviewLabel}内容】（与审核人员在页面上看到的完全一致，含 〖N〗 挖空/划线锚点）和可选的【真题原件参考】。`,
             '对照找出解析/整理引入的问题，例如：句子残缺或截断、乱码与字形损坏、题号断档或重复、选项丢失或错位、段落错序、页眉页脚水印混入、明显重复段落、整理结果与原件不符。',
             '重要规则：',
             '1. 只报告有把握、能在材料中定位的问题；不要把送审材料自身的完整性当成语料问题；不要臆测内容含义；不要改写文本。',
@@ -2669,7 +2809,8 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, {
           ok: true, issues,
           reviewed_at: new Date().toISOString().slice(0, 19), mock: !!config.llm.mock,
-          materialStats: { chars: totalChars, items: ordered.length, limit: LIMIT, truncated, hasRef: !!refNote },
+          materialStats: { chars: totalChars, items: ordered.length, limit: LIMIT, truncated, hasRef: !!refNote, readOnly: store === 'external' },
+          readOnly: store === 'external',
           modelUsed: {
             providerId: (config.review && config.review.providerId) || config.llm.activeId || '',
             model: (config.review && config.review.model) || '',
@@ -2683,6 +2824,7 @@ const server = http.createServer(async (req, res) => {
         if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
         const store = body.store || kbFindStoreOf(body.id);
         if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
+        if (store === 'external') return sendJSON(res, 409, { error: '外刊发布源为只读，不能在网站端复核后直接写回', code: 'EXTERNAL_READONLY' });
         const rec = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
         if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
         const item = Array.isArray(rec.items) ? rec.items[body.rawIdx] : null;
@@ -2906,7 +3048,7 @@ const server = http.createServer(async (req, res) => {
 
       // v1.1.2：真题详情（渲染排序后的 items + 板块统计）
       {
-        const m = p.match(/^\/api\/exam\/record\/([0-9a-f]+)$/);
+        const m = p.match(/^\/api\/exam\/record\/([A-Za-z0-9_-]+)$/);
         if (m && req.method === 'GET') {
           const r = loadExams().find(x => x.id === m[1]);
           if (!r) return sendJSON(res, 404, { error: '记录不存在' });

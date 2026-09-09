@@ -1254,7 +1254,7 @@ async function saveConfigSilent() {
   });
 }
 
-/* ---------------- 语料库（v1.1.0：题库 + 语料，读 corpus/records.jsonl） ---------------- */
+/* ---------------- 语料库（v2.0.0：手工语料 + 外刊发布源 + 真题） ---------------- */
 
 const KB_SECTION_LABEL = {
   use_of_english: '完形填空', reading: '阅读 A', part_b: '新题型',
@@ -1268,6 +1268,11 @@ async function loadKb() {
     const r = await api('/api/kb/records');
     kbState.records = r.records || [];
     kbState.loaded = true;
+    if (r.external?.count) {
+      const release = r.external.manifest?.release_id ? ` · release ${r.external.manifest.release_id}` : '';
+      $('#kbListResult').textContent = `外刊发布源 ${r.external.count} 篇${release}`;
+      $('#kbListResult').className = 'result';
+    }
     if (!r.exists) {
       $('#kbListResult').textContent = '⚠️ 未找到语料库文件：' + r.file + '（把导入工程的 records.jsonl 同步到 corpus/ 即可）';
       $('#kbListResult').className = 'result err';
@@ -1287,14 +1292,16 @@ function renderKbList() {
     <div class="kb-item" data-rid="${esc(r.id)}">
       <div class="kb-item-head">
         <span class="badge kb-badge kb-badge-${esc(r.rtype)}">${esc(r.rtypeLabel)}</span>
+        ${r.external ? '<span class="badge kb-badge-year">发布源</span>' : ''}
         ${r.year ? `<span class="badge kb-badge-year">${r.year} 年</span>` : ''}
         <b>${esc(r.title)}</b>
       </div>
       <div class="kb-item-meta">${[
         r.questions ? r.questions + ' 题' : '',
         r.itemCount ? r.itemCount + ' 个条目' : '',
+        r.source?.publication ? esc(r.source.publication) : '',
         r.source?.parser ? '解析器 ' + esc(r.source.parser) : '',
-        r.source?.imported_at ? '导入 ' + esc(String(r.source.imported_at).slice(0, 10)) : '',
+        r.source?.published_at ? '发布 ' + esc(String(r.source.published_at).slice(0, 10)) : (r.source?.imported_at ? '导入 ' + esc(String(r.source.imported_at).slice(0, 10)) : ''),
       ].filter(Boolean).join(' · ')}</div>
       ${r.preview ? `<div class="kb-item-preview">${esc(r.preview)}…</div>` : ''}
     </div>`).join('');
@@ -1321,10 +1328,15 @@ async function openKbRecord(rid) {
     kbCloseEditor();
     $('#kbIssuesPanel').innerHTML = '';
     $('#kbDetailTitle').textContent = rec.title || rec.id;
+    const readonly = rec.source?.managed === 'external' || rec.external;
+    $('#kbEditBtn').style.display = readonly ? 'none' : '';
+    $('#kbDelBtn').style.display = readonly ? 'none' : '';
     $('#kbDetailMeta').textContent = [
       rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
       rec.meta?.questions ? rec.meta.questions + ' 题' : '',
-      rec.source ? `${rec.source.file || ''} · ${rec.source.parser || ''} · 导入 ${String(rec.source.imported_at || '').slice(0, 10)}` : '',
+      rec.source?.publication || '',
+      rec.source?.canonical_url || '',
+      rec.source ? `${rec.source.file || ''} · ${rec.source.parser || ''} · ${rec.source.published_at ? '发布 ' + String(rec.source.published_at).slice(0, 10) : '导入 ' + String(rec.source.imported_at || '').slice(0, 10)}` : '',
     ].filter(Boolean).join(' · ');
 
     let html = '';
@@ -1370,12 +1382,12 @@ async function kbDoSearch() {
       out.className = 'result';
       return;
     }
-    out.textContent = `✅ 命中 ${r.count} 条真实语料（点击可跳原文）`;
+    out.textContent = `✅ 命中 ${r.count} 条语料（点击可跳原文）`;
     out.className = 'result ok';
     $('#kbList').innerHTML = r.results.map(h => `
       <div class="kb-item" data-rid="${esc(h.rid)}">
         <div class="kb-sentence">${esc(h.s)}</div>
-        <div class="kb-item-meta">来源：${esc(h.title)}${h.year ? ' · ' + h.year + ' 年' : ''}${h.section ? ' · ' + esc(KB_SECTION_LABEL[h.section] || h.section) : ''}${h.number ? ' · 第 ' + h.number + ' 题' : ''}</div>
+        <div class="kb-item-meta">${h.sourceKind === 'exam' ? '考研真题' : h.sourceKind === 'external' ? '外刊真实语境' : '工作台语料'}：${esc(h.title)}${h.publication ? ' · ' + esc(h.publication) : ''}${h.year ? ' · ' + h.year + ' 年' : ''}${h.section ? ' · ' + esc(KB_SECTION_LABEL[h.section] || h.section) : ''}${h.number ? ' · 第 ' + h.number + ' 题' : ''}</div>
       </div>`).join('');
     $$('#kbList .kb-item').forEach(el => el.addEventListener('click', () => openKbRecord(el.dataset.rid)));
   } catch (e) {
@@ -1660,6 +1672,8 @@ async function openExamRecord(exid) {
     kbDetailState = { prefix: 'ex', id: exid, rec: null };
     kbCloseEditor();
     $('#exIssuesPanel').innerHTML = '';
+    $('#exEditBtn').style.display = '';
+    $('#exDelBtn').style.display = '';
     $('#exDetailTitle').textContent = rec.title || rec.id;
     $('#exDetailMeta').textContent = [
       rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
@@ -2117,8 +2131,8 @@ async function kbDoReview() {
     const cls = { high: 'kb-issue-high', mid: 'kb-issue-mid', low: 'kb-issue-low' };
     const located = r.issues.filter(x => x.itemIdx != null).length;
     const modelTag = r.modelUsed ? (r.modelUsed.model ? ` · ${esc(r.modelUsed.model)}` : '') : '';
-    const head = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}${modelTag}</div>` +
-      (r.materialStats ? `<details class="hint-fold" style="margin:4px 0 0"><summary>📊 审核范围 · 定位成功 ${located}/${r.issues.length}</summary><div class="hint">审核对象：整理后题库内容 ${r.materialStats.items} 个条目 / ${r.materialStats.chars} 字符${r.materialStats.truncated ? '，<b>超长已截断</b>' : ''}${r.materialStats.hasRef ? ' + 真题原件参考' : ''}。</div></details>` : '');
+    const head = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}${r.readOnly ? ' · 外刊只读' : ''}${modelTag}</div>` +
+      (r.materialStats ? `<details class="hint-fold" style="margin:4px 0 0"><summary>📊 审核范围 · 定位成功 ${located}/${r.issues.length}</summary><div class="hint">审核对象：整理后${r.readOnly ? '外刊语料' : '题库'}内容 ${r.materialStats.items} 个条目 / ${r.materialStats.chars} 字符${r.materialStats.truncated ? '，<b>超长已截断</b>' : ''}${r.materialStats.hasRef ? ' + 真题原件参考' : ''}。</div></details>` : '');
     /* v1.1.7e：按题型板块分组汇总（完形/阅读/翻译…），便于集中修改同一板块 */
     const secOf = x => {
       const m = String(x.itemTag || '').match(/^[a-z_]+·([a-z_]+)/);
@@ -2134,7 +2148,7 @@ async function kbDoReview() {
     });
     const cardHtml = (x, i) => `
         <div class="kb-issue ${cls[x.severity] || 'kb-issue-mid'}">
-          <div class="kb-issue-head"><b>${esc(x.loc)}</b>${x.itemTag ? `<span>· ${esc(x.itemTag)}</span>` : ''}<span>· ${esc(x.severity)}</span>${x.itemIdx != null ? `<button class="btn ghost" style="padding:2px 10px;font-size:12px;margin-left:auto" data-locate="${i}">📍 定位到此</button>` : ''}</div>
+          <div class="kb-issue-head"><b>${esc(x.loc)}</b>${x.itemTag ? `<span>· ${esc(x.itemTag)}</span>` : ''}<span>· ${esc(x.severity)}</span>${x.itemIdx != null && !r.readOnly ? `<button class="btn ghost" style="padding:2px 10px;font-size:12px;margin-left:auto" data-locate="${i}">📍 定位到此</button>` : ''}</div>
           <div>${esc(x.desc)}</div>
           ${x.quote ? `<div class="kb-issue-quote">“${esc(x.quote)}”</div>` : ''}
         </div>`;
