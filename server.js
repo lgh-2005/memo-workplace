@@ -477,7 +477,14 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     throw new Error(`AI 请求失败 (HTTP ${res.status}) ${text.slice(0, 300)}`);
   }
   const json = await res.json();
-  const content = json.choices?.[0]?.message?.content;
+  let content = json.choices?.[0]?.message?.content;
+  // v2.0.0.a 增强：部分推理模型或中转站会将输出置于 reasoning_content 或 text 字段，做兼容提取
+  if (!content && json.choices?.[0]?.message?.reasoning_content) {
+    content = json.choices[0].message.reasoning_content;
+  }
+  if (!content && json.choices?.[0]?.text) {
+    content = json.choices[0].text;
+  }
   if (!content) throw new Error('AI 返回为空');
   return content;
 }
@@ -2304,7 +2311,9 @@ const server = http.createServer(async (req, res) => {
       if (p === '/api/test/llm' && req.method === 'POST') {
         // 允许直接用表单值测试（不依赖先保存）；也可传 providerId 测试已保存档案
         const body = await readBody(req);
-        const opts = { maxTokens: 20 };
+        // v2.0.0.a 优化：思考型推理模型（如 deepseek-r1/claude-thinking 等）思考过程会占用大量 token，
+        // 测试连通性时 maxTokens 设为 200，避免因思考内容占满 20 token 导致 content 字段为空报错
+        const opts = { maxTokens: 200 };
         if (body.providerId) opts.providerId = body.providerId;
         const override = {};
         if (typeof body.baseUrl === 'string' && body.baseUrl.trim()) override.baseUrl = body.baseUrl.trim();
@@ -2395,10 +2404,28 @@ const server = http.createServer(async (req, res) => {
       // AI 对话
       if (p === '/api/chat' && req.method === 'POST') {
         const body = await readBody(req);
-        const spelling = (body.spelling || '').trim();
+        let spelling = (body.spelling || '').trim();
         const message = (body.message || '').trim();
         const history = Array.isArray(body.history) ? body.history.slice(-16) : [];
         if (!message) return sendJSON(res, 400, { error: '消息不能为空' });
+
+        // v2.0.0.a 智能单词感知：若前端未明确传参 spelling（例如用户未点击左侧单词直接打字提问），
+        // 从用户提问中智能提取最可能的英文目标词（优先匹配墨墨数据库中的高频真题词/普通词形），打通与语料库的连接
+        if (!spelling) {
+          const englishTokens = (message.match(/\b[a-zA-Z][a-zA-Z'\-]{1,29}\b/g) || [])
+            .map(t => t.toLowerCase());
+          // 排除过于基础的高频日常词（如 i, you, he, the, is, a, an, and, or, what, how, can）
+          const stopWords = new Set(['the','be','to','of','and','a','in','that','have','i','it','for','not','on','with','he','as','you','do','at','this','but','his','by','from','they','we','say','her','she','or','an','will','my','one','all','would','there','their','what','so','up','out','if','about','who','get','which','go','me','when','make','can','like','time','no','just','him','know','take','people','into','year','your','good','some','could','them','see','other','than','then','now','look','only','come','its','over','think','also','back','after','use','two','how','our','work','first','well','way','even','new','want','because','any','these','give','day','most','us']);
+          for (const token of englishTokens) {
+            if (!stopWords.has(token)) {
+              // 优先匹配本地词库或语料库中能搜到的词
+              const wordMatch = Object.values(db.words).find(x => x.spelling?.toLowerCase() === token);
+              if (wordMatch) { spelling = wordMatch.spelling; break; }
+              const hits = kbSearch(token, 1);
+              if (hits.length > 0) { spelling = token; break; }
+            }
+          }
+        }
 
         const msgs = [
           { role: 'system', content: buildTutorSystemPrompt(spelling, localNotesFor(spelling)) },
