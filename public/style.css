@@ -1895,3 +1895,55 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   color: var(--primary);
 }
 
+/* ================= 分页器样式（v2.0.0.a：单页十篇） ================= */
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+.pagination-bar .page-btn {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  min-width: 32px;
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .16s ease;
+}
+.pagination-bar .page-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.pagination-bar .page-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+.pagination-bar .page-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--border);
+}
+.pagination-bar .page-ellipsis {
+  padding: 0 4px;
+  color: var(--text-sub);
+}
+.pagination-bar .page-info {
+  margin: 0 8px;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+

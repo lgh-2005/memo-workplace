@@ -1944,6 +1944,13 @@ function armAutoSync() {
       runSync('auto').catch(e => logSync(false, '自动同步异常: ' + e.message));
     }, ms);
     logSync(true, `已开启自动同步，每 ${config.autoSync.minutes} 分钟`);
+    // v2.0.0.a：如果超过设定的时间间隔未曾同步过，启动后 10 秒内立即执行一次预热后台同步
+    const lastSyncMs = db.lastSync ? new Date(db.lastSync).getTime() : 0;
+    if (Date.now() - lastSyncMs >= ms) {
+      setTimeout(() => {
+        runSync('auto-startup').catch(e => logSync(false, '启动自动同步异常: ' + e.message));
+      }, 10000);
+    }
   }
 }
 

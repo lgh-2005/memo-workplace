@@ -233,6 +233,16 @@ async function loadDashboard() {
   }
 }
 
+// v2.0.0.a：前端每 30 秒静默轮询状态，若后台定时任务完成同步则无感更新同步红绿灯
+setInterval(async () => {
+  try {
+    const status = await api('/api/status');
+    if (status && status.lastSync) {
+      updateSyncBadge(status.lastSyncOk ? 'ok' : 'err', formatTime(status.lastSync));
+    }
+  } catch {}
+}, 30000);
+
 function formatTime(iso) { return fmtBJ(iso); }
 
 function updateSyncBadge(dotClass, text) {
@@ -836,6 +846,17 @@ async function loadConfig() {
     if (c.dict?.hasLearners) $('#cfgDictLearners').placeholder = '已保存 ✓（留空 = 沿用）';
     if (c.mineru?.hasKey) $('#cfgMineruKey').placeholder = '已保存 ✓（留空 = 沿用）';
     if (c.dict?.hasCollegiate) $('#cfgDictCollegiate').placeholder = '已保存 ✓（留空 = 沿用）';
+    /* v2.0.0.a：云词库回填与长期绑定状态持久化显示 */
+    if (c.maimemoNotepadId) {
+      const title = c.notepadTitle || '已绑定云词库';
+      $('#cfgNotepad').innerHTML = `<option value="${esc(c.maimemoNotepadId)}" selected>${esc(title)}</option>`;
+      $('#notepadResult').textContent = `✅ 当前已稳定绑定：${title}`;
+      $('#notepadResult').className = 'result ok';
+    } else {
+      $('#cfgNotepad').innerHTML = '<option value="">— 未绑定 —</option>';
+      $('#notepadResult').textContent = '';
+      $('#notepadResult').className = 'result';
+    }
     /* v1.1.7：AI 审核专用服务商回填 */
     if (c.review) {
       const revSel = $('#cfgReviewProvider');
@@ -1060,10 +1081,10 @@ $('#loadNotepadsBtn').addEventListener('click', async () => {
 $('#cfgNotepad').addEventListener('change', async () => {
   const sel = $('#cfgNotepad'), out = $('#notepadResult');
   const id = sel.value;
-  const title = id ? (sel.options[sel.selectedIndex]?.textContent || '') : '';
+  const title = id ? (sel.options[sel.selectedIndex]?.textContent || '').trim() : '';
   try {
     await api('/api/config', { method: 'POST', body: { maimemoNotepadId: id, notepadTitle: title } });
-    out.textContent = id ? '✅ 已绑定云词库，之后推送助记会自动确保单词在库中' : '已解绑';
+    out.textContent = id ? `✅ 已永久绑定云词库「${title}」，之后推送助记会自动将单词入库` : '已解绑';
     out.className = 'result ok';
   } catch (e) {
     out.textContent = '❌ ' + e.message;
@@ -1260,7 +1281,53 @@ const KB_SECTION_LABEL = {
   use_of_english: '完形填空', reading: '阅读 A', part_b: '新题型',
   translation: '翻译', writing: '写作',
 };
-const kbState = { records: [], filter: '', loaded: false };   // v1.1.2：filter = 来源分类（外刊/教材/真题/直录）
+const kbState = { records: [], filter: '', loaded: false, page: 1, pageSize: 10, searchResults: null };   // v1.1.2：filter = 来源分类（外刊/教材/真题/直录）；v2.0.0.a 分页
+
+function renderPaginationBar(containerId, currentPage, totalPages, totalCount, onPageChange) {
+  const container = $(containerId);
+  if (!container) return;
+  if (totalPages <= 1) {
+    container.style.display = 'none';
+    container.innerHTML = '';
+    return;
+  }
+  container.style.display = 'flex';
+  let html = '';
+  html += `<button class="page-btn" data-page="${currentPage - 1}" ${currentPage <= 1 ? 'disabled' : ''}>上一页</button>`;
+  
+  // 生成页码序列（显示第 1 页、当前页前后各 1 页、最后一页，中间省略号）
+  const pages = [];
+  pages.push(1);
+  const left = Math.max(2, currentPage - 1);
+  const right = Math.min(totalPages - 1, currentPage + 1);
+  if (left > 2) pages.push('...');
+  for (let p = left; p <= right; p++) {
+    if (!pages.includes(p)) pages.push(p);
+  }
+  if (right < totalPages - 1) pages.push('...');
+  if (totalPages > 1 && !pages.includes(totalPages)) pages.push(totalPages);
+
+  for (const p of pages) {
+    if (p === '...') {
+      html += `<span class="page-ellipsis">…</span>`;
+    } else {
+      html += `<button class="page-btn ${p === currentPage ? 'active' : ''}" data-page="${p}">${p}</button>`;
+    }
+  }
+
+  html += `<button class="page-btn" data-page="${currentPage + 1}" ${currentPage >= totalPages ? 'disabled' : ''}>下一页</button>`;
+  html += `<span class="page-info">第 ${currentPage} / ${totalPages} 页（共 ${totalCount} 篇）</span>`;
+  container.innerHTML = html;
+
+  container.onclick = e => {
+    const btn = e.target.closest('.page-btn');
+    if (!btn || btn.disabled) return;
+    const targetPage = parseInt(btn.dataset.page, 10);
+    if (targetPage && targetPage >= 1 && targetPage <= totalPages && targetPage !== currentPage) {
+      onPageChange(targetPage);
+    }
+  };
+}
 
 async function loadKb() {
   if (kbState.loaded) return;
@@ -1284,11 +1351,21 @@ async function loadKb() {
 function renderKbList() {
   const box = $('#kbList');
   const list = kbState.records.filter(r => !kbState.filter || (r.source && r.source.category) === kbState.filter);
+  const totalCount = list.length;
+  const totalPages = Math.ceil(totalCount / kbState.pageSize) || 1;
+  if (kbState.page > totalPages) kbState.page = totalPages;
+  if (kbState.page < 1) kbState.page = 1;
+
   if (!list.length) {
     box.innerHTML = '<div class="empty-prov">该类型下暂无记录。可用下方「📥 导入语料」直接导入文件或粘贴文本。</div>';
+    renderPaginationBar('#kbPagination', 1, 0, 0, () => {});
     return;
   }
-  box.innerHTML = list.map(r => `
+
+  const startIdx = (kbState.page - 1) * kbState.pageSize;
+  const pageList = list.slice(startIdx, startIdx + kbState.pageSize);
+
+    box.innerHTML = pageList.map(r => `
     <div class="kb-item" data-rid="${esc(r.id)}">
       <div class="kb-item-head">
         <span class="badge kb-badge kb-badge-${esc(r.rtype)}">${esc(r.rtypeLabel)}</span>
@@ -1305,7 +1382,17 @@ function renderKbList() {
       ].filter(Boolean).join(' · ')}</div>
       ${r.preview ? `<div class="kb-item-preview">${esc(r.preview)}…</div>` : ''}
     </div>`).join('');
-  $$('#kbList .kb-item').forEach(el => el.addEventListener('click', () => openKbRecord(el.dataset.rid)));
+
+  box.onclick = e => {
+    const item = e.target.closest('.kb-item');
+    if (item && item.dataset.rid) openKbRecord(item.dataset.rid);
+  };
+
+  renderPaginationBar('#kbPagination', kbState.page, totalPages, totalCount, newPage => {
+    kbState.page = newPage;
+    renderKbList();
+    $('#tab-kb').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }
 
 /** 〖N〗 锚点渲染：〖N〗…〖/N〗 配对 = 翻译划线句；独立 〖N〗 = 挖空/答题框 */
@@ -1390,7 +1477,7 @@ async function kbDoSearch() {
         <div class="kb-sentence">${esc(h.s)}</div>
         <div class="kb-item-meta">${h.sourceKind === 'exam' ? '考研真题' : h.sourceKind === 'external' ? '外刊真实语境' : '工作台语料'}：${esc(h.title)}${h.publication ? ' · ' + esc(h.publication) : ''}${h.year ? ' · ' + h.year + ' 年' : ''}${h.section ? ' · ' + esc(KB_SECTION_LABEL[h.section] || h.section) : ''}${h.number ? ' · 第 ' + h.number + ' 题' : ''}</div>
       </div>`).join('');
-    $$('#kbList .kb-item').forEach(el => el.addEventListener('click', () => openKbRecord(el.dataset.rid)));
+    renderPaginationBar('#kbPagination', 1, 0, 0, () => {});
   } catch (e) {
     out.textContent = '❌ ' + e.message;
     out.className = 'result err';
@@ -1407,6 +1494,7 @@ $('#kbBackBtn').addEventListener('click', () => {
 });
 $$('#kbFilters .chip').forEach(c => c.addEventListener('click', () => {
   kbState.filter = c.dataset.kcat || '';
+  kbState.page = 1; // 切换分类重置回第 1 页
   $$('#kbFilters .chip').forEach(x => x.classList.toggle('active', x === c));
   $('#kbSearchInput').value = '';
   renderKbList();
@@ -1495,7 +1583,7 @@ $('#kbLogBtn').addEventListener('click', kbShowLog);
 
 /* ---------------- 真题库（v1.1.2：qa_set 分库 +「考试-题型」专项处理） ---------------- */
 
-const examState = { records: [], loaded: false };
+const examState = { records: [], loaded: false, page: 1, pageSize: 10 };
 
 const EXAM_TYPE_FALLBACK = {
   use_of_english: '考研-完形填空', reading: '考研-阅读理解', part_b: '考研-新题型',
@@ -1641,11 +1729,21 @@ async function loadExamList() {
 
 function renderExamList() {
   const box = $('#exList');
+  const totalCount = examState.records.length;
+  const totalPages = Math.ceil(totalCount / examState.pageSize) || 1;
+  if (examState.page > totalPages) examState.page = totalPages;
+  if (examState.page < 1) examState.page = 1;
+
   if (!examState.records.length) {
     box.innerHTML = '<div class="empty-prov">真题库还是空的。用上方「🗂 导入真题」导入 tex / pdf 真题源。</div>';
+    renderPaginationBar('#exPagination', 1, 0, 0, () => {});
     return;
   }
-  box.innerHTML = examState.records.map(r => `
+
+  const startIdx = (examState.page - 1) * examState.pageSize;
+  const pageList = examState.records.slice(startIdx, startIdx + examState.pageSize);
+
+  box.innerHTML = pageList.map(r => `
     <div class="kb-item" data-exid="${esc(r.id)}">
       <div class="kb-item-head">
         <span class="badge kb-badge kb-badge-qa_set">${esc(r.rtypeLabel)}</span>
@@ -1660,7 +1758,17 @@ function renderExamList() {
       ${(r.sections || []).length ? `<div class="exm-chips">${r.sections.map(s => `<span class="chip exm-chip">${esc(s.label)} ${s.questions || s.writings || s.passages || ''}</span>`).join('')}</div>` : ''}
       ${r.preview ? `<div class="kb-item-preview">${esc(r.preview)}…</div>` : ''}
     </div>`).join('');
-  $$('#exList .kb-item').forEach(el => el.addEventListener('click', () => openExamRecord(el.dataset.exid)));
+
+  box.onclick = e => {
+    const item = e.target.closest('.kb-item');
+    if (item && item.dataset.exid) openExamRecord(item.dataset.exid);
+  };
+
+  renderPaginationBar('#exPagination', examState.page, totalPages, totalCount, newPage => {
+    examState.page = newPage;
+    renderExamList();
+    $('#tab-exam').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }
 
 async function openExamRecord(exid) {
@@ -2782,7 +2890,19 @@ function toggleZenMode() {
   localStorage.setItem('wb-zen', isZen ? '1' : '0');
   const btn = $('#zenToggle');
   if (btn) btn.textContent = isZen ? '🧘‍♂️' : '🧘';
-  toast(isZen ? '已进入禅意专注视界（按 Esc 或 Z 退出）' : '已退出专注视界');
+  if (isZen) {
+    // v2.0.0.a：开启专注禅模式自动开启番茄钟
+    if (!pomo.running) {
+      if (!pomo.fullMs) pomo.fullMs = pomo.remainingMs || (pomo.workMin * 60000);
+      pomo.endsAt = Date.now() + (pomo.remainingMs || pomo.fullMs);
+      pomo.running = true;
+      pomoSave();
+      pomoRender();
+    }
+    toast('已进入禅意专注视界（番茄钟已同步开启，按 Esc 或 Z 退出）');
+  } else {
+    toast('已退出专注视界');
+  }
 }
 
 if ($('#zenToggle')) $('#zenToggle').addEventListener('click', toggleZenMode);
