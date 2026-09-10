@@ -1254,7 +1254,7 @@ async function saveConfigSilent() {
   });
 }
 
-/* ---------------- 语料库（v2.0.0：手工语料 + 外刊发布源 + 真题） ---------------- */
+/* ---------------- 语料库（v2.0.1：手工上传外刊 + 自动发布源 + 真题） ---------------- */
 
 const KB_SECTION_LABEL = {
   use_of_english: '完形填空', reading: '阅读 A', part_b: '新题型',
@@ -1292,7 +1292,7 @@ function renderKbList() {
     <div class="kb-item" data-rid="${esc(r.id)}">
       <div class="kb-item-head">
         <span class="badge kb-badge kb-badge-${esc(r.rtype)}">${esc(r.rtypeLabel)}</span>
-        ${r.external ? '<span class="badge kb-badge-year">发布源</span>' : ''}
+        ${r.external ? '<span class="badge kb-badge-year">自动发布</span>' : (r.source?.managed === 'manual' && r.source?.category === '外刊' ? '<span class="badge kb-badge-year">用户上传</span>' : '')}
         ${r.year ? `<span class="badge kb-badge-year">${r.year} 年</span>` : ''}
         <b>${esc(r.title)}</b>
       </div>
@@ -1334,6 +1334,7 @@ async function openKbRecord(rid) {
     $('#kbDetailMeta').textContent = [
       rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
       rec.meta?.questions ? rec.meta.questions + ' 题' : '',
+      rec.external ? '自动外刊发布源' : (rec.source?.managed === 'manual' && rec.source?.category === '外刊' ? '用户上传外刊' : ''),
       rec.source?.publication || '',
       rec.source?.canonical_url || '',
       rec.source ? `${rec.source.file || ''} · ${rec.source.parser || ''} · ${rec.source.published_at ? '发布 ' + String(rec.source.published_at).slice(0, 10) : '导入 ' + String(rec.source.imported_at || '').slice(0, 10)}` : '',

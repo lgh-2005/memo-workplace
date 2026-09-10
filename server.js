@@ -23,7 +23,7 @@
  * 11. 真题库分库（v1.1.2）：qa_set 独立到 corpus/exams.jsonl（语料库只留外刊/教材/
  *     真题正文等纯文本），启动时自动迁移；/api/exam/* 浏览与 tex/pdf 导入；
  *     按「考试-题型」（考研-完形填空/阅读理解/新题型/翻译/写作）统计各题型板块
- * 12. 外刊发布源（v2.0.0）：独立读取 corpus/external/current/articles.jsonl，
+ * 12. 外刊发布源（v2.0.1）：独立读取 corpus/external/current/articles.jsonl，
  *     保留标准文章元数据，和手工语料/真题分开管理；外刊只读、可参与检索与 AI 引用
  *
  * 启动：node server.js  （默认端口 5178）
@@ -1431,8 +1431,10 @@ async function kbImportOne({ name, buf, category, store = 'corpus', parserTag = 
     } else if (ext === '.txt' || ext === '.md' || ext === '') {
       const text = kbDecode(buf);
       const m = text.match(/^#\s+(.+)$/m);
-      parser = parserTag || 'plain-text';   // v1.1.4：MinerU 通道传入 'mineru-api' 保留来源标记
-      parsed = { ok: true, records: [{ rtype: 'note', title: m ? m[1].trim() : safe, text, meta: { chars: text.length } }] };
+      parser = parserTag || (category === '外刊' ? 'manual-text' : 'plain-text');
+      // v2.0.1：网页选择“外刊”上传 TXT/MD 时按文章处理，保留为可编辑手工语料。
+      const rtype = category === '外刊' ? 'article' : 'note';
+      parsed = { ok: true, records: [{ rtype, title: m ? m[1].trim() : safe, text, meta: { chars: text.length } }] };
     } else if (ext === '.html' || ext === '.htm') {
       const { title, text } = kbParseHtml(kbDecode(buf));
       if (!text) throw new Error('HTML 正文为空');
@@ -1470,7 +1472,14 @@ async function kbImportOne({ name, buf, category, store = 'corpus', parserTag = 
   // 其余（真题拆题失败的整卷文档即「真题正文」）-> records.jsonl
   parsed.records.forEach((r, i) => {
     if (!r.id) r.id = crypto.createHash('sha1').update([safe, parser, i, r.title || ''].join('|')).digest('hex').slice(0, 12);
-    r.source = { file: safe, category, parser, imported_at: now };
+    r.source = {
+      file: safe,
+      category,
+      parser,
+      imported_at: now,
+      managed: 'manual',
+      origin: 'web_upload',
+    };
     if (!r.title) r.title = safe;
   });
   const toExam = parsed.records.filter(r => r.rtype === 'qa_set');

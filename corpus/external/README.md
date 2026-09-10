@@ -1,6 +1,6 @@
 # 外刊发布源
 
-网站端只读 `current/articles.jsonl`，默认目录为：
+网站端只读自动发布的 `current/articles.jsonl`，默认目录为：
 
 ```text
 corpus/external/current/
@@ -9,6 +9,8 @@ corpus/external/current/
 ```
 
 也可以通过 `config.kb.externalDir` 或环境变量 `EXTERNAL_CORPUS_DIR` 指向本地验收后的发布目录。`current/` 和 `releases/` 属于运行时数据，已加入 `.gitignore`，不随网站代码提交。
+
+网页上传时选择“外刊”的 TXT/MD/HTML 文件不会进入这里，而是进入手工语料 `records.jsonl`，记录带有 `source.managed: "manual"` 和 `source.origin: "web_upload"`，可在网站端编辑、删除和审读。自动发布源带有 `source.managed: "external"`，网站端只读；修改必须回到采集或本地验收层。
 
 每行文章至少需要：
 
