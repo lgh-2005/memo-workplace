@@ -1946,4 +1946,53 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   color: var(--text-sub);
 }
 
+/* ================= AI 学习语料与真题实际注入标签（v2.0.1） ================= */
+.evidence-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 4px 0 8px 0;
+}
+.evidence-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.evidence-pill.exam {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+.evidence-pill.external {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+.evidence-pill.corpus {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+[data-theme="dark"] .evidence-pill.exam {
+  background: #451a1a;
+  color: #fca5a5;
+  border-color: #7f1d1d;
+}
+[data-theme="dark"] .evidence-pill.external {
+  background: #143521;
+  color: #86efac;
+  border-color: #166534;
+}
+[data-theme="dark"] .evidence-pill.corpus {
+  background: #172554;
+  color: #93c5fd;
+  border-color: #1e40af;
+}
+
+
 

@@ -352,8 +352,12 @@ function selectWord(spelling) {
   $('#chatHeader').textContent = '当前学习：' + spelling;
   $('#speakWordBtn').style.display = 'inline-block';
   addMsg('ai', `📖 已切换到 **${spelling}**。想问什么？`, spelling);
-  // 直接替用户发起一个开场
-  askAI(`请用一句话介绍「${spelling}」的核心含义和最常用的一个搭配，然后等我提问。`);
+  // v2.0.1 优化需求2：修改用户在左侧点击单词时的首句提示词，考研模式下精准请求核心义与考研生僻义、常用搭配
+  if ($('#cfgKaoyan')?.checked || true) {
+    askAI(`请介绍「${spelling}」的核心含义和考研生僻含义，还有最常用的搭配，然后等我提问。`);
+  } else {
+    askAI(`请介绍「${spelling}」的核心含义，还有最常用的搭配，然后等我提问。`);
+  }
 }
 
 function addMsg(role, content, word) {
@@ -502,8 +506,19 @@ async function askAI(message, isErrorMark = false) {
       },
     });
     loading.classList.remove('loading');
-    loading.innerHTML = (state.activeWord ? `<span class="word-tag">📘 ${esc(state.activeWord)}</span>` : '') + mdLite(r.reply);
-    state.chatHistory.push({ role: 'assistant', content: r.reply, word: state.activeWord });
+    let evidenceBadgeHtml = '';
+    if (r.evidence) {
+      const parts = [];
+      if (r.evidence.examsCount > 0) parts.push(`<span class="evidence-pill exam" title="${esc(r.evidence.sampleExam || '真题库')}">🎓 真题 ×${r.evidence.examsCount}</span>`);
+      if (r.evidence.externalCount > 0) parts.push(`<span class="evidence-pill external" title="${esc(r.evidence.sampleExternal || '外刊精选')}">📰 外刊 ×${r.evidence.externalCount}</span>`);
+      if (r.evidence.corpusCount > 0) parts.push(`<span class="evidence-pill corpus" title="工作台手工语料">📚 语料 ×${r.evidence.corpusCount}</span>`);
+      if (parts.length > 0) {
+        evidenceBadgeHtml = `<div class="evidence-tags">${parts.join('')}</div>`;
+      }
+    }
+    const currentWord = r.evidence?.spelling || state.activeWord;
+    loading.innerHTML = (currentWord ? `<span class="word-tag">📘 ${esc(currentWord)}</span>` : '') + evidenceBadgeHtml + mdLite(r.reply);
+    state.chatHistory.push({ role: 'assistant', content: r.reply, word: currentWord });
     autoSaveChat();   // v1.2.0：每次 AI 回复后自动持久化
   } catch (e) {
     loading.classList.remove('loading');

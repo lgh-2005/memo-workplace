@@ -1013,7 +1013,79 @@ function kbSentences() {
 function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
 /**
- * 全库句子搜索。英文词组按词边界匹配（兼容少量词尾变化 -s/-ed/-ing），
+ * v2.0.1 单词词形生成器（Lemmatizer / Inflections）
+ * 针对单词形态变化导致语料命中率偏低的问题，生成完整的英文屈折变体：
+ * 1. 原形
+ * 2. 复数 / 第三人称单数：-s, -es, -ies (study -> studies)
+ * 3. 过去式 / 过去分词：-ed, -d, -ied, 双写辅音 (stop -> stopped, prefer -> preferred)
+ * 4. 现在分词 / 进行时：-ing, 去e加ing (make -> making), 双写加ing (run -> running), -ying (die -> dying)
+ * 5. 形容词副词比较级/最高级：-er, -est, -r, -st, -ier, -iest, -ly
+ */
+function getWordInflections(word) {
+  const w = String(word || '').trim().toLowerCase();
+  if (!w || !/^[a-z][a-z'\-]{1,29}$/.test(w)) return [];
+  const forms = new Set([w]);
+
+  // 辅音字母判断
+  const isVowel = c => ['a','e','i','o','u'].includes(c);
+  const len = w.length;
+  const last1 = w[len - 1];
+  const last2 = len > 1 ? w.slice(-2) : '';
+
+  // 1. 复数 / 三单
+  if (w.endsWith('y') && len > 2 && !isVowel(w[len - 2])) {
+    forms.add(w.slice(0, -1) + 'ies'); // carry -> carries
+  } else if (w.endsWith('s') || w.endsWith('x') || w.endsWith('z') || w.endsWith('ch') || w.endsWith('sh')) {
+    forms.add(w + 'es');
+  } else {
+    forms.add(w + 's');
+  }
+
+  // 2. 过去式 / 分词 (-ed)
+  if (w.endsWith('e')) {
+    forms.add(w + 'd'); // live -> lived, prosecute -> prosecuted
+  } else if (w.endsWith('y') && len > 2 && !isVowel(w[len - 2])) {
+    forms.add(w.slice(0, -1) + 'ied'); // apply -> applied
+  } else {
+    forms.add(w + 'ed');
+    // 双写规则检测 (重读闭音节单辅音结尾：如 stop -> stopped, plan -> planned)
+    if (len >= 3 && !isVowel(last1) && isVowel(w[len - 2]) && !isVowel(w[len - 3]) && !['w','x','y'].includes(last1)) {
+      forms.add(w + last1 + 'ed');
+    }
+  }
+
+  // 3. 现在分词 (-ing)
+  if (w.endsWith('ie') && len > 2) {
+    forms.add(w.slice(0, -2) + 'ying'); // die -> dying, tie -> tying
+  } else if (w.endsWith('e') && !w.endsWith('ee')) {
+    forms.add(w.slice(0, -1) + 'ing'); // write -> writing, prosecute -> prosecuting
+  } else {
+    forms.add(w + 'ing');
+    // 双写 -ing
+    if (len >= 3 && !isVowel(last1) && isVowel(w[len - 2]) && !isVowel(w[len - 3]) && !['w','x','y'].includes(last1)) {
+      forms.add(w + last1 + 'ing');
+    }
+  }
+
+  // 4. 形容词副词派生（如有 -er, -est, -ly）
+  if (w.endsWith('e')) {
+    forms.add(w + 'r');
+    forms.add(w + 'st');
+  } else if (w.endsWith('y') && len > 2 && !isVowel(w[len - 2])) {
+    forms.add(w.slice(0, -1) + 'ier');
+    forms.add(w.slice(0, -1) + 'iest');
+    forms.add(w.slice(0, -1) + 'ily');
+  } else {
+    forms.add(w + 'er');
+    forms.add(w + 'est');
+    forms.add(w + 'ly');
+  }
+
+  return [...forms];
+}
+
+/**
+ * 全库句子搜索。v2.0.1 升级：融合多词形还原变体匹配，大幅提升真题与外刊命中率。
  * 中文按包含匹配。返回句子来源类型和 URL，供网站展示与 AI 分通道引用。
  */
 function kbSearch(query, limit = 30, sourceKind = 'all') {
@@ -1021,7 +1093,18 @@ function kbSearch(query, limit = 30, sourceKind = 'all') {
   if (!q || q.length > 100) return [];
   const lower = q.toLowerCase();
   const isAscii = /^[\x20-\x7e]+$/.test(q);
-  const re = isAscii ? new RegExp(`\\b${escapeRegExp(q.toLowerCase())}(?:s|es|ed|d|ing)?\\b`, 'i') : null;
+  
+  let re = null;
+  if (isAscii) {
+    // 获取全部变体词形构建高性能正则词界匹配
+    const inflections = getWordInflections(lower);
+    if (inflections.length > 0) {
+      re = new RegExp(`\\b(?:${inflections.map(escapeRegExp).join('|')})\\b`, 'i');
+    } else {
+      re = new RegExp(`\\b${escapeRegExp(lower)}(?:s|es|ed|d|ing)?\\b`, 'i');
+    }
+  }
+
   const out = [];
   const seen = new Map();   // 同句去重（翻译原文与题干可能重复收录），优先保留带题号的来源
   for (const item of kbSentences()) {
@@ -2450,10 +2533,19 @@ const server = http.createServer(async (req, res) => {
           } catch { /* 词典未配置或网络失败：不阻塞对话 */ }
         }
 
-        // v2.0.0：真题与外刊分通道注入，避免外刊被误标为考试原句
+        // v2.0.1：真题与外刊分通道注入，并记录注入证据元信息返给前端 UI 展示小标签
+        let evidenceMeta = null;
         if (spelling) {
           try {
             const evidence = kbEvidenceForWord(spelling);
+            evidenceMeta = {
+              spelling,
+              examsCount: evidence.exams.length,
+              externalCount: evidence.external.length,
+              corpusCount: evidence.corpus.length,
+              sampleExam: evidence.exams[0] ? `${evidence.exams[0].title || '真题'}${evidence.exams[0].year ? ' (' + evidence.exams[0].year + ')' : ''}` : '',
+              sampleExternal: evidence.external[0] ? (evidence.external[0].publication || '外刊精选') : ''
+            };
             const formatHit = h => {
                 const src = [h.title, h.year ? h.year + ' 年' : '', KB_SECTION_LABEL[h.section] || h.section || '', h.number ? '第 ' + h.number + ' 题' : '']
                   .filter(Boolean).join(' · ');
@@ -2493,7 +2585,7 @@ const server = http.createServer(async (req, res) => {
         }
 
         const reply = await llmChat(msgs);
-        return sendJSON(res, 200, { reply });
+        return sendJSON(res, 200, { reply, evidence: evidenceMeta });
       }
 
       // 结束会话 -> 生成助记
