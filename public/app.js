@@ -2262,7 +2262,7 @@ async function mineruDoImport(store) {
   for (const f of files) {
     out.textContent = `🛰 ${f.name} 已提交 MinerU 云端解析…（约 1-2 分钟/文件，请勿关闭页面）`;
     try {
-      const r = await api('/api/mineru/parse', { method: 'POST', body: { items: [{ name: f.name, data64: await kbFileToB64(f) }], ocr, category } });
+      const r = await api('/api/mineru/parse', { method: 'POST', body: { items: [{ name: f.name, data64: await kbFileToB64(f) }], ocr, category, store } });
       lines.push(r.ok
         ? `✅ ${esc(f.name)} → ${r.records} 条记录（${esc((r.rtypes || []).join('/'))} · MinerU 云端解析）`
         : `⛔ ${esc(f.name)}：${esc(r.reason || '解析失败')}`);

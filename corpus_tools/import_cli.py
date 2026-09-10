@@ -1,17 +1,20 @@
 # -*- coding: utf-8 -*-
-r"""Workbench KB import adapter (v1.1.1) — parse ONE file, print JSON to stdout.
+r"""Workbench KB import adapter (v2.1.1) — parse ONE file, print JSON to stdout.
 
 Contract (called by server.js):
     python import_cli.py <format> <file>
+    format: tex | pdf | md
     stdout: {"ok": true, "parser": "...", "records": [ {...}, ... ]}
             {"ok": false, "reason": "...", "hint": "..."}
 
-Only stdlib is required for `tex`. `pdf` needs PyMuPDF (pip install pymupdf);
-scanned PDFs (OCR) are NOT supported here — quarantine with a hint instead.
+- `tex`  : stdlib only（TeX 结构化源，最优）
+- `pdf`  : needs PyMuPDF（文字层拆题；扫描件按 <3000 字符拒绝并提示走 MinerU 通道）
+- `md`   : v2.1.1 新增——MinerU 扫描件 markdown 结构化通道（标题井号 / 图片哨兵 /
+           行内 [A]-[D] 选项），拆题不足 10 题时降级为 document 整篇。
 
 Parsers are vendored copies (see 导入解析-经验总结.md):
     tex_parser.py  <- english-corpus/scripts (TeX 源 ★★★ 最优)
-    parse_corpus.py<- english-corpus/scripts (PDF 文本层拆题 ★★)
+    parse_corpus.py<- english-corpus/scripts (PDF 文本层拆题 ★★；v2.1.1 增加 MinerU 适配)
     exam_norm.py   <- importer/scripts       (统一契约归一化)
 """
 import json
@@ -97,9 +100,45 @@ def parse_pdf(path):
         out({"ok": True, "parser": "pymupdf-textlayer", "records": [rec]})
 
 
+def parse_markdown(path):
+    """v2.1.1：MinerU 扫描件 Markdown 结构化拆题通道。
+
+    扫描件 PDF 经 MinerU 版面还原后输出 markdown（含标题井号、图片引用、行内选项），
+    本通道将其送入 parse_corpus 拆题；拆题达到阈值 -> qa_set 入库真题库，
+    否则降级为 document 整篇（与 PDF 文字层通道保持同一契约）。
+    """
+    text = open(path, encoding="utf-8", errors="ignore").read()
+    m = re.search(r"(\d{4})", os.path.basename(path))
+    year = int(m.group(1)) if m else 0
+    try:
+        import parse_corpus
+        items, quality = parse_corpus.parse_year(year, text)
+        items = exam_norm.normalize(items)
+    except Exception:
+        items, quality = [], {"questions": 0}
+    nq = quality.get("questions", 0)
+    if nq >= 10:
+        rec = {
+            "id": rid(path, "mineru-md"), "rtype": "qa_set",
+            "title": f"{year} 年考研英语真题" if year else os.path.basename(path),
+            "text": "", "items": items,
+            "meta": {"year": year, "chars": len(text), **exam_norm.summarize(items)},
+        }
+        out({"ok": True, "parser": "mineru-md-parser", "records": [rec]})
+    else:
+        rec = {
+            "id": rid(path, "mineru-doc"), "rtype": "document",
+            "title": os.path.basename(path), "text": text,
+            "meta": {"year": year, "chars": len(text),
+                     "note": "MinerU markdown 拆题未达阈值，存为整篇文档",
+                     "questions": nq},
+        }
+        out({"ok": True, "parser": "mineru-md-text", "records": [rec]})
+
+
 def main():
     if len(sys.argv) < 3:
-        out({"ok": False, "reason": "usage: import_cli.py <tex|pdf> <file>"})
+        out({"ok": False, "reason": "usage: import_cli.py <tex|pdf|md> <file>"})
         return 1
     fmt, path = sys.argv[1], sys.argv[2]
     try:
@@ -107,6 +146,8 @@ def main():
             parse_tex(path)
         elif fmt == "pdf":
             parse_pdf(path)
+        elif fmt == "md":
+            parse_markdown(path)
         else:
             out({"ok": False, "reason": f"未知格式 {fmt}"})
             return 1

@@ -1646,8 +1646,13 @@ async function kbImportOne({ name, buf, category, store = 'corpus', parserTag = 
   const now = new Date().toISOString().slice(0, 19);
   let parsed, parser = null;
   try {
-    if (store === 'exam' && ext !== '.tex' && ext !== '.pdf') {
+    // v2.1.1：真题库新增 mineru md 结构化通道（扫描件经 MinerU 版面还原后拆题入库）
+    const examMineruMd = store === 'exam' && ext === '.md' && parserTag === 'mineru-api';
+    if (store === 'exam' && ext !== '.tex' && ext !== '.pdf' && !examMineruMd) {
       parsed = { ok: false, reason: `真题库仅支持 tex / pdf 结构化源（收到 ${ext || '无扩展名'}）`, hint: '文章、笔记类内容请到「📚 语料库」导入' };
+    } else if (examMineruMd) {
+      parsed = await kbParseWithPython('md', srcPath);
+      if (parsed.ok) parser = parsed.parser || 'mineru-md-parser';
     } else if (ext === '.txt' || ext === '.md' || ext === '') {
       const text = kbDecode(buf);
       const m = text.match(/^#\s+(.+)$/m);
@@ -2920,14 +2925,17 @@ const server = http.createServer(async (req, res) => {
           md = await mineruParsePdf(buf, safe, !!body.ocr);
         }
         const base = safe.replace(/\.pdf$/i, '');
+        // v2.1.1：store=exam 时走 mineru md 结构化拆题通道 -> 真题库（qa_set）；
+        // 否则维持原行为（整篇 md 入语料库）
+        const targetStore = body.store === 'exam' ? 'exam' : 'corpus';
         const r = await kbImportOne({
           name: base + '.md',
           buf: Buffer.from(md, 'utf8'),
           category: KB_CATEGORIES.includes(body.category) ? body.category : '真题',
-          store: 'corpus',
+          store: targetStore,
           parserTag: 'mineru-api',
         });
-        return sendJSON(res, 200, { ok: true, mineru: true, ...r });
+        return sendJSON(res, 200, { ok: true, mineru: true, store: targetStore, ...r });
       }
 
       // MinerU 连通性测试（401=Token 失效；400=参数错但 Token 有效，均视为可达）

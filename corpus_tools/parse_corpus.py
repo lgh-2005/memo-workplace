@@ -22,6 +22,12 @@ def norm(t):
     for i, r in [("Ⅰ", "I"), ("Ⅱ", "II"), ("Ⅲ", "III"), ("Ⅳ", "IV")]:
         t = t.replace(i, r)
     t = t.replace("\u00a0", " ")
+    # v2.1.1：MinerU markdown 适配——剥离标题井号（## Text 1 / ## Part A）、
+    # 图片引用 ![](images/xx.jpg) 暂存为 [[IMG]] 哨兵（Part B 用于还原 41-45 答题框）、
+    # 转义下划线（\_12 → 12，交由挖空标记处理）
+    t = re.sub(r"(?m)^[ \t]*#{1,6}[ \t]*", "", t)
+    t = re.sub(r"!\[[^\]]*\]\([^)]*\)", " [[IMG]] ", t)
+    t = t.replace("\\_", "")
     return t
 
 def split_sections(t):
@@ -173,6 +179,8 @@ def clean(s):
 def clean_passage(t, blanks=False):
     """Rebuild paragraphs from PDF line structure (indent >= 3 or blank line
     starts a new paragraph). blanks=True converts blank numbers to \u3016N\u3017."""
+    # v2.1.1：MinerU 图片哨兵（正文图片不在段落文字中保留）
+    t = t.replace("[[IMG]]", " ")
     if blanks:
         t = re.sub(r"(?m)^[ \t]*(\d{1,2})[\.．、]?[ \t]*$", "〖\\1〗", t)
         t = re.sub(r"[ \t]{2,}(\d{1,2})[\.．][ \t]*(?=[^\s\d])", " 〖\\1〗 ", t)
@@ -183,6 +191,35 @@ def clean_passage(t, blanks=False):
         # line-start variants (blank number begins the line)
         t = re.sub(r"(?m)^(\d{1,2})[\.．][ \t]+(?=[^\s\d])", "〖\\1〗 ", t)
         t = re.sub(r"(?m)^(\d{1,2})[ \t]{2,}(?=[^\s\d])", "〖\\1〗 ", t)
+        # v2.1.1：MinerU markdown 正文为连续流，挖空号仅单空格包裹
+        #（如 "his friends, 1 those of" / "in the selection. 4, a girl"）
+        def _inline_blank(m):
+            n = int(m.group(1))
+            return " 〖%d〗 " % n if 1 <= n <= 20 else m.group(0)
+        t = re.sub(r"(?<=\s)(\d{1,2})(?=\s)", _inline_blank, t)
+        t = re.sub(r"(?<=\s)(\d{1,2})(?=[,;.])", _inline_blank, t)
+        # v2.1.1：MinerU 扫描件 OCR 常把挖空号与相邻单词粘连，按 3 种形态还原：
+        #   ① 前空格+后粘连："are 15with some" / "in the 4of" / "It 1in"
+        #   ② 前粘连+后连："people9higher" / "the4of" / "It1in"
+        #   ③ 前粘连+后句读："was9," / "years20."（负向前瞻排除 4,000 千分位）
+        # 说明：多位数字（1980s / 4,000）天然不匹配——数字位前后不是字母或 \s。
+        def _glued_letter(m):
+            n = int(m.group(1))
+            nxt = (m.group(2) or "").lower()
+            after = (m.group(3) or "")
+            # 序数词（1st/2nd/3rd/20th）：后缀两个字母后须为词边界；
+            # "16there"/"20that"/"9higher" 等后缀后仍是字母 → 属挖空粘连
+            if nxt in ("th", "st", "nd", "rd") and not after.isalpha():
+                return m.group(0)
+            if nxt.isdigit():                     # 多位数字（1980s 等）不算挖空
+                return m.group(0)
+            return " 〖%d〗 " % n if 1 <= n <= 20 else m.group(0)
+        def _glued_before_punct(m):
+            n = int(m.group(1))
+            return " 〖%d〗 " % n if 1 <= n <= 20 else m.group(0)
+        t = re.sub(r"(?<=\s)(\d{1,2})([a-zA-Z]{2}|[a-zA-Z]\d)(\w?)", _glued_letter, t)
+        t = re.sub(r"(?<=[a-zA-Z])(\d{1,2})([a-zA-Z]{2}|[a-zA-Z]\d)(\w?)", _glued_letter, t)
+        t = re.sub(r"(?<=[a-zA-Z])(\d{1,2})(?=[,;.](?!\d))", _glued_before_punct, t)
     paras, cur = [], []
     for ln in t.split("\n"):
         s = ln.strip()
@@ -292,10 +329,84 @@ def parse_year(year, text):
     partb_seg = reading[mb.end():mc.start()] if (mb and mc) else (reading[mb.end():] if mb else "")
     partc_seg = reading[mc.end():] if mc else ""
     qblocks = question_blocks(partb_seg, 41, 45)
+    # v2.1.1：MinerU markdown 适配——答题框在 MinerU 输出中表现为段落间的 [[IMG]] 哨兵
+    #（扫描件里 41-45 是答题框图片）。按出现顺序还原为 〖41〗…〖45〗。
+    mineru_gaps = 0
+    if not qblocks and "[[IMG]]" in partb_seg:
+        bbody = partb_seg
+        pts = re.search(r"\(10\s*points?\)", bbody, re.I)
+        if pts:
+            bbody = bbody[pts.end():]
+        # 去掉 [A]-[G] 选项行（保留选项池解析）
+        bbody = re.sub(r"(?m)^\s*[\[（(]([A-G])[\]）)].*$", "", bbody)
+        gc = [40]
+        def _img_gap(m):
+            gc[0] += 1
+            return "\n〖%d〗\n" % gc[0] if gc[0] <= 45 else "\n"
+        bbody = re.sub(r"\[\[IMG\]\]", _img_gap, bbody)
+        mineru_gaps = gc[0] - 40
+        # 以 〖N〗 为界整理段落（答题框独立成段）
+        paras, cur = [], []
+        for ln in bbody.split("\n"):
+            ls = WATERMARK.sub(" ", ln).strip()
+            if not ls:
+                if cur:
+                    paras.append(" ".join(cur))
+                    cur = []
+                continue
+            if re.fullmatch(r"〖\d{1,2}〗", ls):
+                if cur:
+                    paras.append(" ".join(cur))
+                    cur = []
+                paras.append(ls)
+                continue
+            cur.append(ls)
+        if cur:
+            paras.append(" ".join(cur))
+        ptext = "\n\n".join(x for x in paras if x).strip()
+        if len(ptext) > 200:
+            add("passage", section="part_b", passage_id=None, text=ptext)
+        # MinerU 还原出的 41-45 空位也登记为题（供逐空作答；Passage 已含 〖N〗 锚点）
+        for n in range(41, 41 + max(0, mineru_gaps)):
+            add("question", section="part_b", number=n, text=f"(gap {n})", options=None)
+    # v2.1.1：MinerU markdown 行内空位形态——"(41)"…"(45)" 直接嵌在正文句中
+    # （7 选 5 句子填空题；容错 OCR 造成的开括号损坏 "�?43)"）
+    if not qblocks and not mineru_gaps:
+        inl = sorted({int(m.group(1)) for m in re.finditer(r"(?<!\d)(4[1-5])\)", partb_seg)})
+        if len(inl) >= 5 and inl[0] == 41:
+            bbody = partb_seg
+            pts = re.search(r"\(10\s*points?\)", bbody, re.I)
+            if pts:
+                bbody = bbody[pts.end():]
+            bbody = re.sub(r"(?m)^\s*[\[（(]([A-G])[\]）)].*$", "", bbody)
+            bbody = re.sub(r"(?<!\d)(4[1-5])\)", lambda m: "\n\n〖%s〗\n\n" % m.group(1), bbody)
+            paras, cur = [], []
+            for ln in bbody.split("\n"):
+                ls = WATERMARK.sub(" ", ln).strip()
+                if not ls:
+                    if cur:
+                        paras.append(" ".join(cur))
+                        cur = []
+                    continue
+                if re.fullmatch(r"〖4[1-5]〗", ls):
+                    if cur:
+                        paras.append(" ".join(cur))
+                        cur = []
+                    paras.append(ls)
+                    continue
+                cur.append(ls)
+            if cur:
+                paras.append(" ".join(cur))
+            ptext = "\n\n".join(x for x in paras if x).strip()
+            if len(ptext) > 200:
+                add("passage", section="part_b", passage_id=None, text=ptext)
+            for n in inl:
+                add("question", section="part_b", number=n, text=f"(gap {n})", options=None)
+            mineru_gaps = len(inl)
     for num in sorted(qblocks):
         add("question", section="part_b", number=num,
             text=clean(cut_body(qblocks[num])), options=extract_options(qblocks[num]))
-    if not qblocks and partb_seg:
+    if not qblocks and not mineru_gaps and partb_seg:
         # gap-number questions may be glyph-damaged; recover the passage text
         bbody = partb_seg
         pts = re.search(r"\(10\s*points?\)", bbody, re.I)
