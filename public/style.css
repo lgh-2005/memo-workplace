@@ -1994,5 +1994,96 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   border-color: #1e40af;
 }
 
+/* ================= v2.1.0：设置页可折叠子版块 ================= */
+.settings-section {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.settings-section > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  transition: background .16s ease;
+}
+.settings-section > summary::-webkit-details-marker { display: none; }
+.settings-section > summary::before {
+  content: '▸';
+  font-size: 12px;
+  color: var(--primary);
+  transition: transform .18s ease;
+}
+.settings-section[open] > summary::before { transform: rotate(90deg); }
+.settings-section > summary:hover { background: var(--bg); }
+.settings-section-body { padding: 4px 16px 16px; }
+.settings-section-body > .card:first-child { margin-top: 0; }
+
+/* 提示词注册表卡片 */
+.prompt-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: var(--bg);
+}
+.prompt-item-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.prompt-item-title { font-weight: 600; font-size: 14px; color: var(--text); }
+.prompt-item-index {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 11px;
+  background: var(--primary-soft, #eff6ff);
+  color: var(--primary);
+  border-radius: 6px;
+  padding: 1px 7px;
+  margin-left: 6px;
+}
+.prompt-item-desc { font-size: 12px; color: var(--text-sub); margin: 4px 0 8px; }
+.prompt-item textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  font-family: monospace;
+  font-size: 12.5px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+.prompt-item-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; align-items: center; }
+.prompt-history {
+  margin-top: 8px;
+  border-top: 1px dashed var(--border);
+  padding-top: 8px;
+}
+.prompt-history-title { font-size: 12px; color: var(--text-sub); margin-bottom: 6px; }
+.prompt-history-entry {
+  font-size: 11.5px;
+  color: var(--text-sub);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 9px;
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 90px;
+  overflow: auto;
+}
+.prompt-history-entry .ph-time { color: var(--primary); font-size: 10.5px; margin-right: 6px; }
+
 
 

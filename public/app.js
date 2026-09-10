@@ -17,6 +17,7 @@ const state = {
   providers: [],        // AI 服务商档案列表
   activeProvId: '',     // 默认服务商 id
   useSearch: false,     // v1.0.7：联网搜索开关
+  diyPrompts: {},       // v2.1.0：自定义提示词注册表（含索引/历史）
 };
 
 /* ---------------- 基础请求 ---------------- */
@@ -352,12 +353,10 @@ function selectWord(spelling) {
   $('#chatHeader').textContent = '当前学习：' + spelling;
   $('#speakWordBtn').style.display = 'inline-block';
   addMsg('ai', `📖 已切换到 **${spelling}**。想问什么？`, spelling);
-  // v2.0.1 优化需求2：修改用户在左侧点击单词时的首句提示词，考研模式下精准请求核心义与考研生僻义、常用搭配
-  if ($('#cfgKaoyan')?.checked || true) {
-    askAI(`请介绍「${spelling}」的核心含义和考研生僻含义，还有最常用的搭配，然后等我提问。`);
-  } else {
-    askAI(`请介绍「${spelling}」的核心含义，还有最常用的搭配，然后等我提问。`);
-  }
+  // v2.1.0：首句开场指令可在「设置 → DIY → 模型提示词」中自定义，{spacing} 占位符自动替换
+  const tpl = (state.diyPrompts?.tutor_first_msg?.current)
+    || '请介绍「{spelling}」的核心含义和常见考点/熟词僻义，还有最常用的搭配，然后等我提问。';
+  askAI(tpl.replace(/\{spacing\}|\{spelling\}/g, spelling));
 }
 
 function addMsg(role, content, word) {
@@ -849,7 +848,11 @@ async function loadConfig() {
     if (c.hasToken) $('#cfgToken').placeholder = c.maimemoToken;
     $('#cfgAutoSync').checked = !!c.autoSync.enabled;
     $('#cfgSyncMinutes').value = c.autoSync.minutes || 60;
-    $('#cfgKaoyan').checked = !!c.kaoyanMode;
+    /* v2.1.0：DIY 模型提示词注册表回填 */
+    if (c.diyPrompts) {
+      state.diyPrompts = c.diyPrompts;
+      renderPromptRegistry();
+    }
     /* v1.0.7：搜索服务配置回填 */
     if (c.searchPresets) {
       $('#cfgSearchPreset').innerHTML = '<option value="">— 手动填写 —</option>' +
@@ -919,6 +922,90 @@ async function saveProviders(providers) {
   await loadConfig();
 }
 
+/* v2.1.0：DIY 模型提示词注册表渲染 */
+function renderPromptRegistry() {
+  const box = $('#promptRegistry');
+  if (!box) return;
+  const entries = Object.entries(state.diyPrompts || {});
+  if (!entries.length) {
+    box.innerHTML = '<div class="hint">暂无可配置的提示词。</div>';
+    return;
+  }
+  box.innerHTML = entries.map(([key, p]) => {
+    const cur = p.current || p.template || '';
+    const isCustom = p.current && p.current !== p.template;
+    const history = Array.isArray(p.history) ? p.history : [];
+    const historyHtml = history.length
+      ? `<details class="prompt-history"><summary class="prompt-history-title">🕘 最近 ${history.length} 条历史版本</summary>` +
+        history.map(h => `<div class="prompt-history-entry"><span class="ph-time">${esc(fmtBJ(h.time))}</span>${esc(String(h.text || '').slice(0, 400))}</div>`).join('') +
+        '</details>'
+      : '';
+    return `
+      <div class="prompt-item" data-pkey="${esc(key)}">
+        <div class="prompt-item-head">
+          <div>
+            <span class="prompt-item-title">${esc(p.title || key)}</span>
+            <span class="prompt-item-index">${esc(p.id || key)}</span>
+          </div>
+          ${isCustom ? '<span class="badge kb-badge-year">已自定义</span>' : '<span class="badge">默认</span>'}
+        </div>
+        <div class="prompt-item-desc">${esc(p.desc || '')}</div>
+        <textarea data-prompt-text="${esc(key)}">${esc(cur)}</textarea>
+        <div class="prompt-item-actions">
+          <button class="btn small primary" data-prompt-save="${esc(key)}">💾 保存</button>
+          <button class="btn small" data-prompt-preview="${esc(key)}">👀 预览默认</button>
+          <button class="btn small ghost" data-prompt-reset="${esc(key)}">↺ 恢复默认</button>
+          <span class="result" id="promptResult-${esc(key)}"></span>
+        </div>
+        ${historyHtml}
+      </div>`;
+  }).join('');
+
+  $$('[data-prompt-save]').forEach(b => b.addEventListener('click', () => savePrompt(b.dataset.promptSave)));
+  $$('[data-prompt-reset]').forEach(b => b.addEventListener('click', () => resetPrompt(b.dataset.promptReset)));
+  $$('[data-prompt-preview]').forEach(b => b.addEventListener('click', () => {
+    const key = b.dataset.promptPreview;
+    const p = state.diyPrompts[key];
+    alert('【默认提示词 · ' + key + '】\n\n' + (p?.template || ''));
+  }));
+  const resetAll = $('#promptResetAllBtn');
+  if (resetAll) resetAll.onclick = resetAllPrompts;
+}
+
+async function savePrompt(key) {
+  const ta = $(`textarea[data-prompt-text="${key}"]`);
+  const out = $('#promptResult-' + key);
+  if (!ta || !out) return;
+  try {
+    await api('/api/config', { method: 'POST', body: { diyPrompts: { [key]: ta.value } } });
+    out.textContent = '✅ 已保存';
+    out.className = 'result ok';
+    await loadConfig();
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+}
+
+async function resetPrompt(key) {
+  if (!confirm('确定恢复「' + key + '」为默认提示词？当前自定义内容会存入历史。')) return;
+  try {
+    await api('/api/config', { method: 'POST', body: { diyPrompts: { [key]: { reset: true } } } });
+    await loadConfig();
+  } catch (e) { alert(e.message); }
+}
+
+async function resetAllPrompts() {
+  if (!confirm('确定将所有提示词恢复为默认？当前自定义内容会存入各自历史。')) return;
+  try {
+    const body = {};
+    const promptKeys = Object.keys(state.diyPrompts || {});
+    for (const key of promptKeys) body[key] = { reset: true };
+    await api('/api/config', { method: 'POST', body: { diyPrompts: body } });
+    await loadConfig();
+  } catch (e) { alert(e.message); }
+}
+
 async function setDefaultProvider(id) {
   try {
     await api('/api/config', { method: 'POST', body: { llm: { activeId: id } } });
@@ -947,6 +1034,8 @@ function openProvModal(id) {
   $('#provKey').value = '';
   $('#provKey').placeholder = p?.hasKey ? '已保存 Key（留空 = 沿用）' : '粘贴 API Key';
   $('#provModel').value = p?.model || '';
+  $('#provTemp').value = p?.temperature !== undefined ? p.temperature : '';
+  $('#provMaxTokens').value = p?.max_tokens !== undefined ? p.max_tokens : '';
   $('#provModelSelect').style.display = 'none';
   $('#provTestResult').textContent = '';
   $('#provTestResult').className = 'result';
@@ -958,7 +1047,14 @@ $('#provCancel').addEventListener('click', () => $('#provModal').style.display =
 
 $('#provPreset').addEventListener('change', () => {
   const pr = provPresets[$('#provPreset').value];
-  if (pr) { $('#provUrl').value = pr.baseUrl; $('#provModel').value = pr.model; }
+  if (pr) {
+    // v2.1.0：预设自带完整模型参数（参考 Cherry Studio），一键填入地址、模型、温度与最大 token
+    $('#provUrl').value = pr.baseUrl || '';
+    $('#provModel').value = pr.model || '';
+    $('#provTemp').value = pr.temperature !== undefined ? pr.temperature : '';
+    $('#provMaxTokens').value = pr.max_tokens !== undefined ? pr.max_tokens : '';
+    if (!$('#provName').value.trim()) $('#provName').value = pr.label || $('#provPreset').value;
+  }
 });
 
 $('#provFetchBtn').addEventListener('click', async () => {
@@ -1019,6 +1115,10 @@ $('#provSave').addEventListener('click', async () => {
   if (!baseUrl || !model) return alert('Base URL 和模型都要填');
   const key = $('#provKey').value.trim();
   const item = { name, baseUrl, model };
+  const tempVal = $('#provTemp').value.trim();
+  const maxTokVal = $('#provMaxTokens').value.trim();
+  if (tempVal !== '') item.temperature = Number(tempVal);
+  if (maxTokVal !== '') item.max_tokens = Number(maxTokVal);
   if (provEditId) item.id = provEditId;
   if (key) item.apiKey = key;
   const providers = provEditId
@@ -1051,18 +1151,6 @@ $('#saveReviewCfgBtn').addEventListener('click', async () => {
     alert('保存失败：' + e.message);
   } finally {
     btn.disabled = false;
-  }
-});
-
-/* 考研模式：即时生效并持久化，聊天页徽章同步 */
-$('#cfgKaoyan').addEventListener('change', async () => {
-  const on = $('#cfgKaoyan').checked;
-  try {
-    await api('/api/config', { method: 'POST', body: { kaoyanMode: on } });
-    $('#kaoyanBadge').style.display = on ? 'inline-block' : 'none';
-  } catch (e) {
-    alert(e.message);
-    $('#cfgKaoyan').checked = !on;
   }
 });
 
@@ -1874,9 +1962,9 @@ $('#exBackBtn').addEventListener('click', () => {
   $('#exListResult').className = 'result';
 });
 
-/* ---------------- v1.1.5：单元题库（整卷切片 + 分题型做题规则） ---------------- */
+/* ---------------- v1.1.5：单元题库（整卷切片 + 分题型做题规则；v2.1.0 分页） ---------------- */
 
-const unitState = { units: [], loaded: false, filter: '' };
+const unitState = { units: [], loaded: false, filter: '', page: 1, pageSize: 10 };
 const UNIT_SEC_LABEL = { use_of_english: '完形填空', reading: '阅读理解', part_b: '新题型', translation: '翻译', writing: '写作' };
 
 async function loadUnits() {
@@ -1892,11 +1980,21 @@ async function loadUnits() {
 function renderUnitList() {
   const box = $('#unitList');
   const list = unitState.units.filter(u => !unitState.filter || u.section === unitState.filter);
+  const totalCount = list.length;
+  const totalPages = Math.ceil(totalCount / unitState.pageSize) || 1;
+  if (unitState.page > totalPages) unitState.page = totalPages;
+  if (unitState.page < 1) unitState.page = 1;
+
   if (!list.length) {
     box.innerHTML = '<div class="empty-prov">还没有单元。到「🗂 真题库」导入 tex / 文字层 PDF，拆题成功后单元自动生成。</div>';
+    renderPaginationBar('#unitPagination', 1, 0, 0, () => {});
     return;
   }
-  box.innerHTML = list.map(u => `
+
+  const startIdx = (unitState.page - 1) * unitState.pageSize;
+  const pageList = list.slice(startIdx, startIdx + unitState.pageSize);
+
+  box.innerHTML = pageList.map(u => `
     <div class="kb-item" data-uid="${esc(u.unitId)}">
       <div class="kb-item-head">
         <span class="badge kb-badge kb-badge-qa_set">${esc(u.label)}</span>
@@ -1907,11 +2005,22 @@ function renderUnitList() {
       <div class="kb-item-meta">${[u.qCount ? u.qCount + ' 题' : '', u.itemCount + ' 个条目', u.scored ? '可判分' : '主观题'].filter(Boolean).join(' · ')}</div>
       ${u.preview ? `<div class="kb-item-preview">${esc(u.preview)}…</div>` : ''}
     </div>`).join('');
-  $$('#unitList .kb-item').forEach(el => el.addEventListener('click', () => openUnit(el.dataset.uid)));
+
+  box.onclick = e => {
+    const item = e.target.closest('.kb-item');
+    if (item && item.dataset.uid) openUnit(item.dataset.uid);
+  };
+
+  renderPaginationBar('#unitPagination', unitState.page, totalPages, totalCount, newPage => {
+    unitState.page = newPage;
+    renderUnitList();
+    $('#tab-unit').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }
 
 $$('#unitFilters .chip').forEach(c => c.addEventListener('click', () => {
   unitState.filter = c.dataset.usec || '';
+  unitState.page = 1; // 切换分类重置回第 1 页
   $$('#unitFilters .chip').forEach(x => x.classList.toggle('active', x === c));
   renderUnitList();
 }));
@@ -2886,13 +2995,17 @@ async function finishQuiz() {
   if (!pomo.fullMs) pomo.fullMs = pomo.workMin * 60000;
   pomoRender();
   pomoRenderStats();
+  // v2.1.0：启动即拉取 DIY 提示词，使学习页首句开场等自定义提示词无需进设置页即可生效
+  try {
+    const cfg = await api('/api/config');
+    if (cfg.diyPrompts) state.diyPrompts = cfg.diyPrompts;
+  } catch { /* 服务未就绪时静默 */ }
   try {
     const status = await api('/api/status');
     updateSyncBadge(status.lastSync ? 'ok' : 'err', status.lastSync ? formatTime(status.lastSync) : '未同步');
     if (!status.hasToken || !status.llm.configured) {
       $('#setupHint').style.display = 'block';
     }
-    if (status.kaoyanMode) $('#kaoyanBadge').style.display = 'inline-block';
   } catch { /* 服务未就绪时静默 */ }
   loadDashboard();
 })();

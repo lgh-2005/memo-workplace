@@ -86,7 +86,7 @@ let config = loadJSON(CONFIG_FILE, {
   maimemoToken: process.env.MAIMEMO_TOKEN || '',
   llm: { mock: false, activeId: 'default', providers: [{ id: 'default', name: '默认服务商', baseUrl: '', apiKey: '', model: '' }] },
   autoSync: { enabled: false, minutes: 60 },
-  kaoyanMode: false,   // v1.0.5：考研英语一模式（默认关闭）
+  diyPrompts: {},      // v2.1.0：自定义提示词（附带索引与最近5条历史）
   maimemoNotepadId: '',   // v1.0.6：绑定的云词库 id（助记推送前提）
   notepadTitle: '',
   imageGen: { baseUrl: '', apiKey: '', model: '' },   // v1.0.6：生图服务商（OpenAI 兼容 images API）
@@ -94,7 +94,9 @@ let config = loadJSON(CONFIG_FILE, {
   dict: { learnersKey: '', collegiateKey: '' },   // v1.0.8：韦氏词典双 key（learners=学习者词典 / collegiate=大学版）
   mineru: { apiKey: '', mock: false },   // v1.1.4：MinerU 精准解析 API（扫描件 PDF -> Markdown，mineru.net）
 });
-if (config.kaoyanMode === undefined) config.kaoyanMode = false;   // 旧配置兼容
+// v2.1.0：DIY 模型提示词自定义注册表配置补齐
+if (!config.diyPrompts || typeof config.diyPrompts !== 'object') config.diyPrompts = {};
+delete config.kaoyanMode; // v2.1.0：取消考研英语一模式
 // v1.0.6 迁移：云词库绑定与生图配置缺省补齐
 if (config.maimemoNotepadId === undefined) config.maimemoNotepadId = '';
 if (config.notepadTitle === undefined) config.notepadTitle = '';
@@ -429,11 +431,54 @@ async function runSync(trigger = 'manual') {
 /* ------------------------------------------------------------------ */
 
 const LLM_PRESETS = {
-  deepseek: { label: 'DeepSeek', baseUrl: 'https://api.deepseek.com/v1', model: 'deepseek-chat' },
-  zhipu: { label: '智谱 GLM', baseUrl: 'https://open.bigmodel.cn/api/paas/v4', model: 'glm-4-flash' },
-  openai: { label: 'OpenAI', baseUrl: 'https://api.openai.com/v1', model: 'gpt-4o-mini' },
-  moonshot: { label: 'Moonshot Kimi', baseUrl: 'https://api.moonshot.cn/v1', model: 'moonshot-v1-8k' },
-  ollama: { label: 'Ollama（本地）', baseUrl: 'http://localhost:11434/v1', model: 'qwen2.5:7b' },
+  deepseek: {
+    label: 'DeepSeek 官方',
+    baseUrl: 'https://api.deepseek.com/v1',
+    model: 'deepseek-chat',
+    models: ['deepseek-chat', 'deepseek-reasoner'],
+    temperature: 0.7,
+    max_tokens: 2000
+  },
+  siliconflow: {
+    label: '硅基流动 (SiliconFlow)',
+    baseUrl: 'https://api.siliconflow.cn/v1',
+    model: 'deepseek-ai/DeepSeek-V3',
+    models: ['deepseek-ai/DeepSeek-V3', 'deepseek-ai/DeepSeek-R1', 'Qwen/Qwen2.5-72B-Instruct', 'THUDM/glm-4-9b-chat'],
+    temperature: 0.7,
+    max_tokens: 2000
+  },
+  zhipu: {
+    label: '智谱 GLM 开放平台',
+    baseUrl: 'https://open.bigmodel.cn/api/paas/v4',
+    model: 'glm-4-flash',
+    models: ['glm-4-flash', 'glm-4-air', 'glm-4-plus'],
+    temperature: 0.7,
+    max_tokens: 2000
+  },
+  moonshot: {
+    label: '月之暗面 (Kimi)',
+    baseUrl: 'https://api.moonshot.cn/v1',
+    model: 'moonshot-v1-8k',
+    models: ['moonshot-v1-8k', 'moonshot-v1-32k'],
+    temperature: 0.7,
+    max_tokens: 2000
+  },
+  openai: {
+    label: 'OpenAI 官方',
+    baseUrl: 'https://api.openai.com/v1',
+    model: 'gpt-4o-mini',
+    models: ['gpt-4o-mini', 'gpt-4o', 'gpt-3.5-turbo'],
+    temperature: 0.7,
+    max_tokens: 2000
+  },
+  ollama: {
+    label: 'Ollama 本地部署',
+    baseUrl: 'http://localhost:11434/v1',
+    model: 'qwen2.5:7b',
+    models: ['qwen2.5:7b', 'llama3.1:8b', 'deepseek-r1:7b'],
+    temperature: 0.7,
+    max_tokens: 2000
+  }
 };
 
 /** 取服务商档案：指定 id 优先，其次全局默认，兜底第一个；供不同功能板块分别指定 */
@@ -537,12 +582,97 @@ const IMAGE_PRESETS = {
   openai: { label: 'OpenAI DALL·E', baseUrl: 'https://api.openai.com/v1', model: 'dall-e-3' },
 };
 
-const IMAGE_PROMPT_SYSTEM = [
-  '你是记忆图片的美术指导，面向中国英语学习者。',
-  '根据当前学习的单词和最近的对话场景，构思一幅"助记图"：把单词的核心义项/记忆钩子画成一个具体、夸张、好记的画面。',
-  '只输出 JSON，不要任何多余文字，格式：{"prompt":"英文画面提示词","caption":"中文一句话说明画面与记忆点"}',
-  '规则：prompt 用英文、一个场景、主体明确、风格统一（明快扁平插画），60 词以内；caption 30 字内点出记忆钩子。',
-].join('\n');
+const DEFAULT_PROMPTS = {
+  tutor_system: {
+    id: 'tutor_system',
+    title: 'AI 单词学习教练（System Prompt）',
+    desc: '学习页中 AI 教练的基础系统人设与引导规则，可自定义你的专属导师风格',
+    template: [
+      '你是一位耐心的英语单词学习助手，面向中国学习者。',
+      '规则：',
+      '1. 用简体中文讲解，术语可保留英文；简洁、有重点，别写长篇大论。',
+      '2. 词义、例句、搭配要准确；不确定就说不确定，不要编造。',
+      '3. 例句中的目标词要自然出现，并配中文翻译。',
+      '4. 主动呼应学习者的薄弱点（如给出易混词对比、记忆钩子）。',
+      '5. 回复用 Markdown 轻量排版。',
+      '6. 结合提供的权威词典释义、历年真题原句和外刊真实语境进行针对性讲解。',
+    ].join('\n')
+  },
+  tutor_first_msg: {
+    id: 'tutor_first_msg',
+    title: '单词点击自动开场指令（User Prompt）',
+    desc: '在左侧单词列表中点击单词时，前端向 AI 自动发送的第一句开场白。支持 {spelling} 占位符',
+    template: '请介绍「{spelling}」的核心含义和常见考点/熟词僻义，还有最常用的搭配，然后等我提问。'
+  },
+  mnemonic_gen: {
+    id: 'mnemonic_gen',
+    title: '会话结束助记生成（System Prompt）',
+    desc: '学习会话结束时，AI 根据对话历史与错词点为单词生成助记的提示词',
+    template: [
+      '你是英语学习教练。学习者刚结束一次单词学习会话。',
+      '请根据会话内容和易错点，为每个学习过的单词生成一条个性化助记。',
+      '要求：',
+      '1. 助记要结合学习者在会话中暴露的具体问题（混淆的词、忘掉的义项、拼错的点），而不是泛泛的词根拆解。',
+      '2. 每条助记 80 字以内，可以直接背。',
+      '3. noteType 从这些里选一个最贴切的：联想/谐音/词根词缀/近反义词/辨析/固定搭配/词源/口诀/其他。',
+      '4. 只输出 JSON，不要多余文字，格式：{"notes":[{"spelling":"单词","noteType":"联想","content":"助记内容"}]}',
+    ].join('\n')
+  },
+  gloss_gen: {
+    id: 'gloss_gen',
+    title: '词典音标释义提取（System Prompt）',
+    desc: '用于为单词表批量缓存音标、词性与核心释义的词典生成指令',
+    template: [
+      '你是一本英汉词典，面向中国英语学习者。',
+      '对用户给出的每个单词（每行一个）输出极简词典信息。',
+      '只输出 JSON，不要任何多余文字，格式：',
+      '{"glosses":[{"spelling":"单词","phonetic":"/美式音标/，不确定就给空串","pos":"词性缩写如 n. v. adj.","gloss":"最核心的 1-2 个中文释义，30 字内"}]}',
+      '规则：每个输入单词都必须有一条；音标不确定给空串，严禁编造；释义要优先最常用的高频核心义项。',
+    ].join('\n')
+  },
+  image_prompt: {
+    id: 'image_prompt',
+    title: '生图画面描述改写（System Prompt）',
+    desc: '根据单词含义与学习场景生成英文生图 Prompt 的美术指导提示词',
+    template: [
+      '你是记忆图片的美术指导，面向中国英语学习者。',
+      '根据当前学习的单词和最近的对话场景，构思一幅"助记图"：把单词的核心义项/记忆钩子画成一个具体、夸张、好记的画面。',
+      '只输出 JSON，不要任何多余文字，格式：{"prompt":"英文画面提示词","caption":"中文一句话说明画面与记忆点"}',
+      '规则：prompt 用英文、一个场景、主体明确、风格统一（明快扁平插画），60 词以内；caption 30 字内点出记忆钩子。',
+    ].join('\n')
+  },
+  quality_review: {
+    id: 'quality_review',
+    title: '语料与真题质检审读员（System Prompt）',
+    desc: '对导入的真题或语料进行结构化对比、错字错题校验的质检提示词',
+    template: [
+      '你是材料的质检审读员。审核对象是【整理后的题库/语料内容】（含 〖N〗 挖空/划线锚点）和可选的【真题原件参考】。',
+      '对照找出解析/整理引入的问题，例如：句子残缺或截断、乱码与字形损坏、题号断档或重复、选项丢失或错位、段落错序、页眉页脚水印混入、明显重复段落、整理结果与原件不符。',
+      '重要规则：',
+      '1. 只报告有把握、能在材料中定位的问题；不要把送审材料自身的完整性当成语料问题；不要臆测内容含义；不要改写文本。',
+      '2. 每个问题必须给 quote 字段：从材料中逐字摘录有误处的原文片段（10~40 字，须与材料完全一致，可包含 〖N〗 标记）。',
+      '3. 严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","quote":"逐字摘录","severity":"high|mid|low","desc":"问题描述(60字内)"}]}；没有问题输出 {"issues":[]}。',
+    ].join('\n')
+  },
+  quality_review_item: {
+    id: 'quality_review_item',
+    title: '单条目编辑复核审读员（System Prompt）',
+    desc: '用户手动编辑真题条目后，AI 依据原件段落对该单条进行复核的提示词',
+    template: [
+      '你是考研英语真题语料的质检审读员。审核对象是【单个条目的当前文本】（刚被用户编辑过），比对依据是【真题原件相关段落】。',
+      '只报告能与原件比对确认的问题：句子残缺或截断、乱码、挖空/划线锚点（〖N〗或〖/N〗）缺失或破坏、明显重复、页眉页脚水印混入、当前文本与原件不符。',
+      '重要：原件本身的内容不是问题；拿不准、无法与原件比对确认的，一律输出 {"ok":true}——宁可放过，不可杜撰。',
+      '严格输出 JSON（不要 markdown 代码块包裹）：{"ok":true} 表示质量合格；{"ok":false,"issues":[{"desc":"问题描述(60字内)","suggestion":"给用户的修改建议(120字内)"}]} 表示仍有问题——suggestion 必填，且建议里的英文措辞必须来自原件或当前文本，不得杜撰原件中不存在的句子。',
+    ].join('\n')
+  }
+};
+
+function getPrompt(key, fallback) {
+  if (config.diyPrompts && config.diyPrompts[key]?.current) {
+    return config.diyPrompts[key].current;
+  }
+  return DEFAULT_PROMPTS[key]?.template || fallback || '';
+}
 
 /** 调 OpenAI 兼容 /images/generations 出一张图，落盘后返回本地 URL */
 async function callImageAPI(prompt) {
@@ -623,7 +753,7 @@ async function generateMnemonicImage({ spelling, context = [] }) {
   try {
     const recent = context.slice(-6).map(m => `[${m.role === 'user' ? '学习者' : 'AI'}] ${String(m.content).slice(0, 120)}`).join('\n');
     const text = await llmChat([
-      { role: 'system', content: IMAGE_PROMPT_SYSTEM },
+      { role: 'system', content: getPrompt('image_prompt') },
       { role: 'user', content: `当前单词：${spelling}\n最近对话（可能为空）：\n${recent || '（无）'}` },
     ], { maxTokens: 400 });
     const parsed = parseMnemonicJSON(text);
@@ -1732,26 +1862,11 @@ function wordBrief(w) {
 
 function buildTutorSystemPrompt(spelling, extraNotes) {
   const w = Object.values(db.words).find(x => x.spelling === spelling);
-  const lines = [
-    '你是一位耐心的英语单词学习助手，面向中国学习者。',
-    '规则：',
-    '1. 用简体中文讲解，术语可保留英文；简洁、有重点，别写长篇大论。',
-    '2. 词义、例句、搭配要准确；不确定就说不确定，不要编造。',
-    '3. 例句中的目标词要自然出现，并配中文翻译。',
-    '4. 主动呼应学习者的薄弱点（如给出易混词对比、记忆钩子）。',
-    '5. 回复用 Markdown 轻量排版。',
-  ];
+  const baseTutor = getPrompt('tutor_system');
+  const lines = [baseTutor];
   if (w) lines.push(`当前学习单词：${w.spelling}（墨墨数据：${wordBrief(w) || '暂无记录'}）`);
   else if (spelling) lines.push(`当前学习单词：${spelling}`);
   if (extraNotes) lines.push(`学习者已有的助记笔记：\n${extraNotes}`);
-  if (config.kaoyanMode) {
-    lines.push(
-      '【🎓 考研英语一模式已开启】讲解必须对标考研英语一：',
-      '- 优先讲考研高频义项，特别注意熟词僻义（真题最爱考的往往不是第一义项）。',
-      '- 例句模仿历年真题（阅读/翻译）的句式难度与话题风格（经济/科技/社会/教育等），并标注话题领域；不确定是真题原文就不要编造年份。',
-      '- 主动补充：该词在真题中的常见考法（完形填空/阅读/翻译）、易混词对比、写作可用的搭配。'
-    );
-  }
   return lines.join('\n');
 }
 
@@ -1783,9 +1898,9 @@ async function ensureGlosses(spellings) {
     const chunk = missing.slice(i, i + 20);
     try {
       const text = await llmChat([
-        { role: 'system', content: GLOSS_SYSTEM + (config.kaoyanMode ? '\n当前用户开启了考研英语一模式：gloss 优先给考研高频义项，熟词僻义放在第一位。' : '') },
+        { role: 'system', content: getPrompt('gloss_gen') },
         { role: 'user', content: chunk.join('\n') },
-      ], { maxTokens: 1600, providerId: 'gloss' });
+      ], { maxTokens: 800 });
       const parsed = parseMnemonicJSON(text);
       for (const g of (parsed?.glosses || [])) {
         if (g && g.spelling && g.gloss) {
@@ -1849,21 +1964,7 @@ async function finishSession(payload) {
     `[${m.role === 'user' ? '学习者' : 'AI'}] ${m.word ? '(' + m.word + ') ' : ''}${m.content}`
   ).join('\n');
 
-  let system = [
-    '你是英语学习教练。学习者刚结束一次单词学习会话。',
-    '请根据会话内容和易错点，为每个学习过的单词生成一条个性化助记。',
-    '要求：',
-    '1. 助记要结合学习者在会话中暴露的具体问题（混淆的词、忘掉的义项、拼错的点），而不是泛泛的词根拆解。',
-    '2. 每条助记 80 字以内，可以直接背。',
-    '3. noteType 从这些里选一个最贴切的：联想/谐音/词根词缀/近反义词/辨析/固定搭配/词源/口诀/其他。',
-    '4. 只输出 JSON，不要多余文字，格式：{"notes":[{"spelling":"单词","noteType":"联想","content":"助记内容"}]}',
-    '5. 每个学习过的单词都要有一条。',
-  ];
-  if (config.kaoyanMode) {
-    system.push('6. 考研英语一模式：助记要突出熟词僻义、真题考法与写作可用搭配，风格贴合考研备考场景。');
-  }
-  system = system.join('\n');
-
+  const system = getPrompt('mnemonic_gen');
   const user = `学习过的单词：\n${wordBlocks}\n\n会话记录（可能截断）：\n${transcript || '（无详细记录）'}`;
 
   const text = await llmChat([
@@ -2194,7 +2295,6 @@ const server = http.createServer(async (req, res) => {
           },
           lastSync: db.lastSync,
           lastSyncOk: db.lastSyncOk,
-          kaoyanMode: !!config.kaoyanMode,
           counts: { words: Object.keys(db.words).length, notes: db.notes.length },
           autoSync: config.autoSync,
         });
@@ -2210,10 +2310,25 @@ const server = http.createServer(async (req, res) => {
             mock: !!config.llm.mock,
             providers: (config.llm.providers || []).map(pr => ({
               id: pr.id, name: pr.name, baseUrl: pr.baseUrl, model: pr.model, hasKey: !!pr.apiKey,
+              temperature: pr.temperature, max_tokens: pr.max_tokens, models: pr.models,
             })),
           },
           autoSync: config.autoSync,
-          kaoyanMode: !!config.kaoyanMode,
+          diyPrompts: (() => {
+            const out = {};
+            for (const [k, v] of Object.entries(DEFAULT_PROMPTS)) {
+              const userConf = config.diyPrompts?.[k] || {};
+              out[k] = {
+                id: v.id,
+                title: v.title,
+                desc: v.desc,
+                template: v.template,
+                current: userConf.current || v.template,
+                history: Array.isArray(userConf.history) ? userConf.history : [],
+              };
+            }
+            return out;
+          })(),
           maimemoNotepadId: config.maimemoNotepadId || '',
           notepadTitle: config.notepadTitle || '',
           imageGen: {
@@ -2268,13 +2383,21 @@ const server = http.createServer(async (req, res) => {
               if (!id || usedIds.has(id)) id = 'p' + Date.now().toString(36) + '_' + i;  // 空id或重复id → 重新生成
               usedIds.add(id);
               const old = (config.llm.providers || []).find(x => x.id === id);
-              return {
+              // v2.1.0：完整模型参数入库（参考 Cherry Studio，预设自带 temperature / max_tokens 等）
+              const out = {
                 id,
                 name: String(pr.name || '服务商').slice(0, 30),
                 baseUrl: String(pr.baseUrl || '').trim(),
                 model: String(pr.model || '').trim(),
                 apiKey: (typeof pr.apiKey === 'string' && pr.apiKey.trim()) ? pr.apiKey.trim() : (old?.apiKey || ''),
               };
+              if (pr.temperature !== undefined && pr.temperature !== '') out.temperature = Math.max(0, Math.min(2, Number(pr.temperature)));
+              else if (old?.temperature !== undefined) out.temperature = old.temperature;
+              if (pr.max_tokens !== undefined && pr.max_tokens !== '') out.max_tokens = Math.max(1, Math.min(128000, Number(pr.max_tokens)));
+              else if (old?.max_tokens !== undefined) out.max_tokens = old.max_tokens;
+              if (pr.models !== undefined) out.models = Array.isArray(pr.models) ? pr.models.slice(0, 100) : old?.models;
+              else if (old?.models !== undefined) out.models = old.models;
+              return out;
             });
             if (!config.llm.providers.find(x => x.id === config.llm.activeId)) {
               config.llm.activeId = config.llm.providers[0]?.id || 'default';
@@ -2291,7 +2414,40 @@ const server = http.createServer(async (req, res) => {
             minutes: Math.max(5, Number(body.autoSync.minutes) || 60),
           };
         }
-        if (body.kaoyanMode != null) config.kaoyanMode = !!body.kaoyanMode;
+        // v2.1.0：DIY 模型提示词自定义保存（附带索引与最近5条历史记录）
+        if (body.diyPrompts && typeof body.diyPrompts === 'object') {
+          if (!config.diyPrompts) config.diyPrompts = {};
+          for (const [k, pVal] of Object.entries(body.diyPrompts)) {
+            if (typeof pVal === 'string' && DEFAULT_PROMPTS[k]) {
+              const oldEntry = config.diyPrompts[k] || { current: DEFAULT_PROMPTS[k].template, history: [] };
+              const trimmed = pVal.trim();
+              if (trimmed && trimmed !== oldEntry.current) {
+                const history = Array.isArray(oldEntry.history) ? [...oldEntry.history] : [];
+                // 存入当前旧值至最近5条历史
+                if (oldEntry.current) {
+                  history.unshift({ time: new Date().toISOString(), text: oldEntry.current });
+                }
+                config.diyPrompts[k] = {
+                  current: trimmed,
+                  history: history.slice(0, 5) // 最多保存 5 条
+                };
+              }
+            } else if (pVal && typeof pVal === 'object' && pVal.reset) {
+              // 恢复默认提示词
+              if (DEFAULT_PROMPTS[k]) {
+                const oldEntry = config.diyPrompts[k] || { current: '', history: [] };
+                const history = Array.isArray(oldEntry.history) ? [...oldEntry.history] : [];
+                if (oldEntry.current && oldEntry.current !== DEFAULT_PROMPTS[k].template) {
+                  history.unshift({ time: new Date().toISOString(), text: oldEntry.current });
+                }
+                config.diyPrompts[k] = {
+                  current: DEFAULT_PROMPTS[k].template,
+                  history: history.slice(0, 5)
+                };
+              }
+            }
+          }
+        }
         // v1.0.6：云词库绑定
         if (body.maimemoNotepadId !== undefined) {
           config.maimemoNotepadId = String(body.maimemoNotepadId || '').trim().slice(0, 120);
@@ -2877,14 +3033,7 @@ const server = http.createServer(async (req, res) => {
           }
         } catch { /* 原件读取失败不影响审读 */ }
         const reply = await llmChat([
-          { role: 'system', content: [
-            `你是${reviewLabel}的质检审读员。审核对象是【整理后的${reviewLabel}内容】（与审核人员在页面上看到的完全一致，含 〖N〗 挖空/划线锚点）和可选的【真题原件参考】。`,
-            '对照找出解析/整理引入的问题，例如：句子残缺或截断、乱码与字形损坏、题号断档或重复、选项丢失或错位、段落错序、页眉页脚水印混入、明显重复段落、整理结果与原件不符。',
-            '重要规则：',
-            '1. 只报告有把握、能在材料中定位的问题；不要把送审材料自身的完整性当成语料问题；不要臆测内容含义；不要改写文本。',
-            '2. 每个问题必须给 quote 字段：从【整理后的题库内容】中逐字摘录有误处的原文片段（10~40 字，须与材料完全一致，可包含 〖N〗 标记）。',
-            '3. 严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","quote":"逐字摘录","severity":"high|mid|low","desc":"问题描述(60字内)"}]}；没有问题输出 {"issues":[]}。',
-          ].join('\n') },
+          { role: 'system', content: getPrompt('quality_review') },
           { role: 'user', content: `记录：${rec.title || rec.id}\n\n${material}${refNote}` },
         ], {
           maxTokens: (config.review && config.review.thinking) ? 16000 : 2000,
@@ -3012,12 +3161,7 @@ const server = http.createServer(async (req, res) => {
         } catch { /* 原件读取失败不影响复核主流程 */ }
         if (config.llm.mock) return sendJSON(res, 200, { ok: true, mock: true });
         const reply = await llmChat([
-          { role: 'system', content: [
-            '你是考研英语真题语料的质检审读员。审核对象是【单个条目的当前文本】（刚被用户编辑过），比对依据是【真题原件相关段落】。',
-            '只报告能与原件比对确认的问题：句子残缺或截断、乱码、挖空/划线锚点（〖N〗或〖/N〗）缺失或破坏、明显重复、页眉页脚水印混入、当前文本与原件不符。',
-            '重要：原件本身的内容不是问题；拿不准、无法与原件比对确认的，一律输出 {"ok":true}——宁可放过，不可杜撰。',
-            '严格输出 JSON（不要 markdown 代码块包裹）：{"ok":true} 表示质量合格；{"ok":false,"issues":[{"desc":"问题描述(60字内)","suggestion":"给用户的修改建议(120字内)"}]} 表示仍有问题——suggestion 必填，且建议里的英文措辞必须来自原件或当前文本，不得杜撰原件中不存在的句子。',
-          ].join('\n') },
+          { role: 'system', content: getPrompt('quality_review_item') },
           { role: 'user', content: `条目类型：${(item && (item.type + (item.section ? '·' + item.section : ''))) || '未知'}\n\n【条目当前文本】\n${text.slice(0, 6000)}${refSeg}` },
         ], {
           maxTokens: (config.review && config.review.thinking) ? 8000 : 800,
