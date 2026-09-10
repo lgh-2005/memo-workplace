@@ -60,6 +60,23 @@ function bjDateOf(iso) {
   return isNaN(d) ? '' : d.toLocaleString('sv-SE', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 }
 
+/** v2.1.0a 补齐：右下角轻提示（此前 toast 未定义，禅模式/白噪音调用会抛错） */
+function toast(msg) {
+  try {
+    const old = document.querySelector('.wb-toast');
+    if (old) old.remove();
+    const el = document.createElement('div');
+    el.className = 'wb-toast';
+    el.textContent = msg;
+    document.body.appendChild(el);
+    requestAnimationFrame(() => el.classList.add('show'));
+    setTimeout(() => {
+      el.classList.remove('show');
+      setTimeout(() => { try { el.remove(); } catch { /* 静默 */ } }, 320);
+    }, 2200);
+  } catch { /* 静默 */ }
+}
+
 /* ---------------- 发音（浏览器 TTS，零成本） ---------------- */
 
 function speak(text, lang = 'en-US') {
@@ -1332,27 +1349,40 @@ $('#testDictBtn').addEventListener('click', async () => {
   }
 });
 
-$('#saveConfigBtn').addEventListener('click', async () => {
+/* v2.1.0a：墨墨 Token 自动保存（失焦或粘贴后即保存，无需手动点保存） */
+async function saveMaimemoTokenSilent() {
+  const val = $('#cfgToken').value.trim();
+  if (!val) return;                      // 空值不覆盖已存 Token
+  const out = $('#tokenSaveResult');
+  try {
+    await api('/api/config', { method: 'POST', body: { maimemoToken: val } });
+    $('#cfgToken').value = '';
+    $('#cfgToken').placeholder = '已保存 ✓（留空 = 沿用）';
+    if (out) { out.textContent = '✅ Token 已自动保存'; out.className = 'result ok'; }
+  } catch (e) {
+    if (out) { out.textContent = '❌ ' + e.message; out.className = 'result err'; }
+  }
+}
+if ($('#cfgToken')) {
+  $('#cfgToken').addEventListener('change', saveMaimemoTokenSilent);
+  $('#cfgToken').addEventListener('blur', saveMaimemoTokenSilent);
+  $('#cfgToken').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); saveMaimemoTokenSilent(); } });
+}
+
+/* v2.1.0a：自动同步配置自动保存（勾选/改间隔即时生效） */
+async function saveAutoSyncSilent() {
   try {
     await api('/api/config', {
       method: 'POST',
-      body: {
-        maimemoToken: $('#cfgToken').value.trim() || undefined,
-        autoSync: { enabled: $('#cfgAutoSync').checked, minutes: Number($('#cfgSyncMinutes').value) || 60 },
-      },
+      body: { autoSync: { enabled: $('#cfgAutoSync').checked, minutes: Number($('#cfgSyncMinutes').value) || 60 } },
     });
-    $('#saveResult').textContent = '✅ 已保存';
-    $('#saveResult').className = 'result ok';
-    $('#cfgToken').value = '';
-    loadConfig();
-  } catch (e) {
-    $('#saveResult').textContent = '❌ ' + e.message;
-    $('#saveResult').className = 'result err';
-  }
-});
+  } catch (e) { console.error(e); }
+}
+if ($('#cfgAutoSync')) $('#cfgAutoSync').addEventListener('change', saveAutoSyncSilent);
+if ($('#cfgSyncMinutes')) $('#cfgSyncMinutes').addEventListener('change', saveAutoSyncSilent);
 
 $('#testMaimemoBtn').addEventListener('click', async () => {
-  if ($('#cfgToken').value.trim()) await saveConfigSilent();
+  if ($('#cfgToken').value.trim()) await saveMaimemoTokenSilent();
   $('#maimemoTestResult').textContent = '测试中…';
   $('#maimemoTestResult').className = 'result';
   try {
@@ -1366,17 +1396,10 @@ $('#testMaimemoBtn').addEventListener('click', async () => {
 });
 
 $('#syncNowBtn').addEventListener('click', async () => {
-  if ($('#cfgToken').value.trim()) await saveConfigSilent();
+  if ($('#cfgToken').value.trim()) await saveMaimemoTokenSilent();
   switchTab('dashboard');
   doSync(false);
 });
-
-async function saveConfigSilent() {
-  await api('/api/config', {
-    method: 'POST',
-    body: { maimemoToken: $('#cfgToken').value.trim() || undefined },
-  });
-}
 
 /* ---------------- 语料库（v2.0.1：手工上传外刊 + 自动发布源 + 真题） ---------------- */
 
@@ -3063,24 +3086,49 @@ window.addEventListener('keydown', e => {
   }
 });
 
-/* 3. 纯原生 Web Audio 算法白噪音心流发生器（零外链、零音频文件下载） */
+/* 3. 纯原生 Web Audio 算法白噪音心流发生器（v2.1.0a：并入番茄钟 · 10 种可选 · 音量可调）
+      零外链、零音频文件下载，全部实时合成。 */
 let audioCtx = null;
 let noiseNode = null;
+let noiseLfo = null;
+let noiseLfoGain = null;
 let gainNode = null;
-let currentNoiseMode = 'off'; // 'off' | 'rain' | 'cafe'
+let currentNoiseMode = 'off';
 
-const noiseModes = ['off', 'rain', 'cafe'];
-const noiseNames = { off: '已关闭', rain: '雨落窗台 🌧', cafe: '深空自习室 ☕' };
-const noiseIcons = { off: '🌧', rain: '🌧', cafe: '☕' };
+const NOISE_TYPES = {
+  off:    { name: '已关闭' },
+  rain:   { name: '雨落窗台',   color: 'pink',  filter: { type: 'lowpass',  freq: 1300, q: 0.7 }, gain: 0.95 },
+  cafe:   { name: '深空自习室', color: 'brown', filter: { type: 'lowpass',  freq: 520,  q: 0.7 }, gain: 0.85 },
+  forest: { name: '林间清晨',   color: 'pink',  filter: { type: 'bandpass', freq: 3000, q: 0.6 }, gain: 1.10 },
+  ocean:  { name: '海浪拍岸',   color: 'brown', filter: { type: 'lowpass',  freq: 750,  q: 0.7 }, gain: 1.15, lfo: { freq: 0.12, depth: 0.85 } },
+  fire:   { name: '壁炉篝火',   color: 'brown', filter: { type: 'lowpass',  freq: 950,  q: 0.7 }, gain: 0.90, crackle: true },
+  night:  { name: '夏夜虫鸣',   color: 'pink',  filter: { type: 'bandpass', freq: 4300, q: 1.3 }, gain: 1.00, lfo: { freq: 6, depth: 0.25 } },
+  stream: { name: '山涧溪流',   color: 'white', filter: { type: 'bandpass', freq: 2600, q: 0.8 }, gain: 0.90 },
+  brown:  { name: '棕噪音',     color: 'brown', filter: { type: 'lowpass',  freq: 600,  q: 0.7 }, gain: 0.90 },
+  white:  { name: '纯白噪音',   color: 'white', filter: { type: 'lowpass',  freq: 6000, q: 0.7 }, gain: 0.50 },
+};
 
-function createNoiseBuffer(type) {
+let noiseVolume = (() => {
+  const raw = localStorage.getItem('wb-noise-vol');
+  if (raw === null || raw === '') return 45;   // 注意：Number(null)===0，不能直接转
+  const v = Number(raw);
+  return Number.isFinite(v) && v >= 0 && v <= 100 ? v : 45;
+})();
+
+function noiseTargetGain(type) {
+  const cfg = NOISE_TYPES[type];
+  if (!cfg || !cfg.gain) return 0;
+  return Math.min(1, cfg.gain * (noiseVolume / 100) * 0.4);
+}
+
+function createNoiseBuffer(color, crackle) {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   const bufferSize = audioCtx.sampleRate * 2;
   const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
   const data = buffer.getChannelData(0);
 
-  if (type === 'rain') {
-    // 粉红噪声算法：雨声质感
+  if (color === 'pink') {
+    // 粉红噪声：雨声 / 自然声质感
     let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
     for (let i = 0; i < bufferSize; i++) {
       const white = Math.random() * 2 - 1;
@@ -3093,8 +3141,8 @@ function createNoiseBuffer(type) {
       data[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.045;
       b6 = white * 0.115926;
     }
-  } else if (type === 'cafe') {
-    // 布朗噪声算法：自习室厚重遮噪
+  } else if (color === 'brown') {
+    // 布朗噪声：厚重遮噪
     let lastOut = 0.0;
     for (let i = 0; i < bufferSize; i++) {
       const white = Math.random() * 2 - 1;
@@ -3102,72 +3150,137 @@ function createNoiseBuffer(type) {
       lastOut = data[i];
       data[i] *= 0.8;
     }
+  } else {
+    // 纯白噪声
+    for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+  }
+
+  // 篝火噼啪：叠加随机短促脉冲
+  if (crackle) {
+    for (let i = 0; i < bufferSize; i++) {
+      if (Math.random() < 0.00012) {
+        const pop = (Math.random() * 2 - 1) * 0.9;
+        const len = Math.floor(audioCtx.sampleRate * (0.005 + Math.random() * 0.02));
+        for (let j = 0; j < len && i + j < bufferSize; j++) {
+          data[i + j] += pop * Math.exp(-j / (len / 4));
+        }
+        i += len;
+      }
+    }
   }
   return buffer;
 }
 
+function stopNoise() {
+  if (gainNode && audioCtx) {
+    try {
+      gainNode.gain.cancelScheduledValues(audioCtx.currentTime);
+      gainNode.gain.setValueAtTime(gainNode.gain.value, audioCtx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.35);
+    } catch (e) {}
+  }
+  const node = noiseNode, lfo = noiseLfo;
+  noiseNode = null; noiseLfo = null; noiseLfoGain = null;
+  if (node || lfo) {
+    setTimeout(() => {
+      try { if (node) { node.stop(); node.disconnect(); } } catch (e) {}
+      try { if (lfo) { lfo.stop(); lfo.disconnect(); } } catch (e) {}
+    }, 380);
+  }
+}
+
 function startNoise(type) {
   stopNoise();
-  if (type === 'off') return;
+  const cfg = NOISE_TYPES[type];
+  if (!cfg || !cfg.gain) return;
   try {
     if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     if (audioCtx.state === 'suspended') audioCtx.resume();
 
-    const buffer = createNoiseBuffer(type);
-    noiseNode = audioCtx.createBufferSource();
-    noiseNode.buffer = buffer;
-    noiseNode.loop = true;
+    const buffer = createNoiseBuffer(cfg.color, cfg.crackle);
+    const src = audioCtx.createBufferSource();
+    src.buffer = buffer;
+    src.loop = true;
 
-    // 低通滤波器柔化高频刺耳声
     const filter = audioCtx.createBiquadFilter();
-    filter.type = 'lowpass';
-    filter.frequency.value = type === 'rain' ? 1200 : 600;
+    filter.type = cfg.filter.type;
+    filter.frequency.value = cfg.filter.freq;
+    filter.Q.value = cfg.filter.q;
 
-    gainNode = audioCtx.createGain();
-    gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.18, audioCtx.currentTime + 1.2); // 柔和淡入
+    const g = audioCtx.createGain();
+    const target = noiseTargetGain(type);
+    g.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(Math.max(0.0002, target), audioCtx.currentTime + 1.0);
 
-    noiseNode.connect(filter);
-    filter.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    noiseNode.start();
+    src.connect(filter);
+    filter.connect(g);
+    g.connect(audioCtx.destination);
+    src.start();
+
+    let lfo = null, lfoGain = null;
+    if (cfg.lfo) {
+      lfo = audioCtx.createOscillator();
+      lfo.frequency.value = cfg.lfo.freq;
+      lfoGain = audioCtx.createGain();
+      lfoGain.gain.value = target * cfg.lfo.depth;
+      lfo.connect(lfoGain);
+      lfoGain.connect(g.gain);
+      lfo.start();
+    }
+
+    noiseNode = src; gainNode = g; noiseLfo = lfo; noiseLfoGain = lfoGain;
   } catch (err) {
     console.warn('AudioContext failed:', err);
   }
 }
 
-function stopNoise() {
-  if (noiseNode) {
+function setNoiseVolume(v) {
+  noiseVolume = Math.max(0, Math.min(100, Number(v) || 0));
+  localStorage.setItem('wb-noise-vol', String(noiseVolume));
+  const label = $('#noiseVolVal');
+  if (label) label.textContent = noiseVolume + '%';
+  const slider = $('#noiseVolume');
+  if (slider && Number(slider.value) !== noiseVolume) slider.value = noiseVolume;
+  const cfg = NOISE_TYPES[currentNoiseMode];
+  if (gainNode && audioCtx && cfg && cfg.gain) {
+    const target = noiseTargetGain(currentNoiseMode);
     try {
-      if (gainNode && audioCtx) {
-        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.5); // 淡出
-        setTimeout(() => {
-          try { noiseNode.stop(); noiseNode.disconnect(); } catch (e) {}
-          noiseNode = null;
-        }, 500);
-      } else {
-        noiseNode.stop();
-        noiseNode = null;
-      }
-    } catch (e) { noiseNode = null; }
+      gainNode.gain.cancelScheduledValues(audioCtx.currentTime);
+      gainNode.gain.setValueAtTime(gainNode.gain.value, audioCtx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(Math.max(0.0002, target), audioCtx.currentTime + 0.25);
+    } catch (e) {}
+    if (noiseLfoGain && cfg.lfo) noiseLfoGain.gain.value = target * cfg.lfo.depth;
   }
 }
 
-function cycleWhiteNoise() {
-  const curIdx = noiseModes.indexOf(currentNoiseMode);
-  const nextIdx = (curIdx + 1) % noiseModes.length;
-  currentNoiseMode = noiseModes[nextIdx];
-
-  const btn = $('#whiteNoiseToggle');
-  const hint = $('#pomoAudioState');
-  if (btn) btn.textContent = noiseIcons[currentNoiseMode];
-  if (hint) hint.textContent = noiseNames[currentNoiseMode];
-
-  startNoise(currentNoiseMode);
-  toast(`🎧 白噪音伴读：${noiseNames[currentNoiseMode]}`);
+function applyNoise(type, silent) {
+  if (!NOISE_TYPES[type]) type = 'off';
+  currentNoiseMode = type;
+  localStorage.setItem('wb-noise', type);
+  $$('#noiseGrid .noise-opt').forEach(b => b.classList.toggle('active', b.dataset.noise === type));
+  const cur = $('#noiseCurrent');
+  if (cur) cur.textContent = NOISE_TYPES[type].name;
+  startNoise(type);
+  if (!silent) toast(type === 'off' ? '🎧 白噪音已关闭' : `🎧 白噪音：${NOISE_TYPES[type].name}`);
 }
 
-if ($('#whiteNoiseToggle')) $('#whiteNoiseToggle').addEventListener('click', cycleWhiteNoise);
+/* 绑定白噪音选择器与音量（v2.1.0a） */
+$$('#noiseGrid .noise-opt').forEach(b => b.addEventListener('click', () => applyNoise(b.dataset.noise)));
+if ($('#noiseVolume')) {
+  $('#noiseVolume').value = noiseVolume;
+  $('#noiseVolume').addEventListener('input', () => setNoiseVolume($('#noiseVolume').value));
+}
+/* 初始化 UI：恢复上次选择（遵照浏览器自动播放策略，不自动发声，需用户点击才播放） */
+(function initNoiseUi() {
+  const saved = localStorage.getItem('wb-noise') || 'off';
+  const type = NOISE_TYPES[saved] ? saved : 'off';
+  currentNoiseMode = type;
+  $$('#noiseGrid .noise-opt').forEach(b => b.classList.toggle('active', b.dataset.noise === type));
+  const cur = $('#noiseCurrent');
+  if (cur) cur.textContent = NOISE_TYPES[type].name;
+  const label = $('#noiseVolVal');
+  if (label) label.textContent = noiseVolume + '%';
+})();
 
 /* 恢复本地存储的偏好 */
 if (localStorage.getItem('wb-spotlight') === '1') {
