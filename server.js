@@ -539,12 +539,18 @@ function mockLLM(messages) {
   const sys = messages.find(m => m.role === 'system')?.content || '';
   const user = [...messages].reverse().find(m => m.role === 'user')?.content || '';
   if (sys.includes('质检审读员')) {   // v1.1.6：mock 审读从送审材料抽真实文本做 quote，验证定位回写链路
-    const seg = user.match(/【条目#1｜[^】]*】\n([^\n【]{10,80})/);
+    const seg = user.match(/【条目#1｜[^】]*】\n([^\n【]{10,80})/) || user.match(/无结构化条目）\n([^\n【]{10,80})/);
     const quote2 = seg ? seg[1].replace(/\s+/g, ' ').trim().slice(0, 30) : '';
+    // v2.1.2：附 fix 修正方案（把摘录文本中的 "the" 改成 "a"，纯自测）
+    const fix2 = quote2 ? quote2.replace(/\bthe\b/i, 'a') : '';
     return JSON.stringify({ issues: [
-      { loc: '条目#2', quote: quote2, severity: 'low', desc: '[mock] 该条目首行疑似混入页眉' },
-      { loc: '通篇', quote: '', severity: 'mid', desc: '[mock] 无摘录的疑点示例（应无法定位）' },
+      { loc: '条目#2', quote: quote2, fix: fix2 && fix2 !== quote2 ? fix2 : '', severity: 'low', desc: '[mock] 该条目首行疑似混入页眉' },
+      { loc: '通篇', quote: '', fix: '', severity: 'mid', desc: '[mock] 无摘录的疑点示例（应无法定位）' },
     ] });
+  }
+  if (sys.includes('英语精读解析助手')) {   // v2.1.2：划选精读 mock
+    const sel = (user.match(/【划选内容】[^：]*：([^\n]+)/) || [])[1] || user.slice(0, 60);
+    return `[MOCK] 划选精读自测：**${sel.trim()}**\n\n- 词义/整体含义：占位释义（自测数据）\n- 语境含义：在此上下文中的占位说明\n\n> 配置真实 AI 服务商后可获得准确解析。`;
   }
   if (sys.includes('个性化助记')) {
     const words = [...user.matchAll(/### ([\w'-]+)/g)].map(m => m[1]);
@@ -651,7 +657,21 @@ const DEFAULT_PROMPTS = {
       '重要规则：',
       '1. 只报告有把握、能在材料中定位的问题；不要把送审材料自身的完整性当成语料问题；不要臆测内容含义；不要改写文本。',
       '2. 每个问题必须给 quote 字段：从材料中逐字摘录有误处的原文片段（10~40 字，须与材料完全一致，可包含 〖N〗 标记）。',
-      '3. 严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","quote":"逐字摘录","severity":"high|mid|low","desc":"问题描述(60字内)"}]}；没有问题输出 {"issues":[]}。',
+      '3. v2.1.2：每个问题必须尽量给出 fix 字段——用于替换 quote 的修正文本（只修正该片段本身的错误，保持其余内容与 〖N〗 锚点原样；无把握时留空字符串）。',
+      '4. 严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","quote":"逐字摘录","fix":"修正后的替换文本(可为空)","severity":"high|mid|low","desc":"问题描述(60字内)"}]}；没有问题输出 {"issues":[]}。',
+    ].join('\n')
+  },
+  selection_learn: {
+    id: 'selection_learn',
+    title: '划线精读解析（System Prompt）',
+    desc: '阅读材料时划选单词/词组/句子，AI 按类型给出词义、语境含义、词组释义或地道翻译',
+    template: [
+      '你是英语精读解析助手，面向中国考研学生。用户正在阅读考研英语真题或外刊材料，并划选了其中一段文本。',
+      '请根据【划选内容】与【上下文】判断类型并解析：',
+      '- 单词：先给核心词义（含词性），再结合上下文说明它在此处的语境含义；若它在文中属于固定搭配/词组，补充该词组的含义与用法。',
+      '- 词组：给出该词组/搭配的整体含义与常见用法，并说明它在当前语境中的意思。',
+      '- 句子：结合全文语境给出地道、自然的中文翻译；可附一句简短翻译要点（如长难句结构、指代关系）。',
+      '要求：准确、简洁、有针对性；确实不确定的内容不要编造；用 Markdown 轻量排版（可用加粗与列表，不要长篇大论）。',
     ].join('\n')
   },
   quality_review_item: {
@@ -1841,6 +1861,43 @@ function kbMutateStore(store, id, mutator) {
   return { ok: true, title: hit.title || hit.id, rtype: hit.rtype };
 }
 
+/* ---------- v2.1.2：记录修改版本历史（每个记录保留最近 5 个版本，可回溯） ---------- */
+
+const KB_VERSIONS_FILE = path.join(DATA_DIR, 'kb_versions.json');
+const KB_VERSION_MAX = 5;
+
+function loadKbVersions() {
+  const v = loadJSON(KB_VERSIONS_FILE, {});
+  return (v && typeof v === 'object') ? v : {};
+}
+function saveKbVersions(v) { saveJSON(KB_VERSIONS_FILE, v); }
+
+/** 记录一次版本快照（在写入新内容前调用，保存的是「修改前」的旧内容） */
+function kbPushVersion(id, store, rec, note) {
+  try {
+    const all = loadKbVersions();
+    const list = Array.isArray(all[id]) ? all[id] : [];
+    list.unshift({
+      ts: new Date().toISOString().slice(0, 19),
+      store,
+      title: rec.title || '',
+      text: String(rec.text || '').slice(0, 2e6),
+      items: Array.isArray(rec.items) ? rec.items : undefined,
+      edited_at: rec.edited_at || null,
+      note: String(note || '').slice(0, 120),
+    });
+    all[id] = list.slice(0, KB_VERSION_MAX);
+    // 全局防膨胀：最多保留 200 个记录的版本（超出按最新快照时间淘汰）
+    const ids = Object.keys(all);
+    if (ids.length > 200) {
+      ids.sort((a, b) => String(all[a]?.[0]?.ts || '').localeCompare(String(all[b]?.[0]?.ts || '')));
+      for (const k of ids.slice(0, ids.length - 200)) delete all[k];
+    }
+    saveKbVersions(all);
+    return true;
+  } catch { return false; }
+}
+
 /** 粘贴直录：内容写为 txt 投放，走同一条导入管线（有归档、有日志） */
 async function kbImportPaste({ title, text, category }) {
   const t = String(text || '');
@@ -2967,6 +3024,9 @@ const server = http.createServer(async (req, res) => {
         if (store === 'external') return sendJSON(res, 409, { error: '外刊发布源为只读，请在采集管线或本地验收层修改', code: 'EXTERNAL_READONLY' });
         if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
         const cleanText = s => String(s ?? '').slice(0, 2e6);
+        // v2.1.2：写入前先快照旧版本（保留最近 5 个，可回溯/恢复）
+        const before = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
+        if (before) kbPushVersion(body.id, store, before, body.note || '修改前快照');
         const r = kbMutateStore(store, body.id, rec => {
           if (typeof body.title === 'string' && body.title.trim()) rec.title = body.title.trim().slice(0, 200);
           if (typeof body.text === 'string') rec.text = cleanText(body.text);
@@ -2990,6 +3050,107 @@ const server = http.createServer(async (req, res) => {
         if (!r.ok) return sendJSON(res, r.reason.includes('不存在') ? 404 : 400, { error: r.reason });
         kbLog({ time: new Date().toISOString().slice(0, 19), file: '(edit)', status: 'updated', store, records: 1, reason: String(r.title).slice(0, 80) });
         return sendJSON(res, 200, { ok: true, title: r.title, edited_at: 'saved' });
+      }
+
+      // v2.1.2：记录修改历史（最近 5 个版本，可回溯）
+      if (p === '/api/kb/versions' && req.method === 'GET') {
+        const id = u.searchParams.get('id') || '';
+        if (!id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
+        const all = loadKbVersions();
+        const list = (Array.isArray(all[id]) ? all[id] : []).map((v, i) => ({
+          index: i, ts: v.ts, store: v.store, title: v.title, note: v.note,
+          itemCount: Array.isArray(v.items) ? v.items.length : 0,
+          chars: String(v.text || '').length +
+            (Array.isArray(v.items) ? v.items.reduce((a, it) => a + String(it.text || '').length, 0) : 0),
+        }));
+        return sendJSON(res, 200, { ok: true, id, versions: list, max: KB_VERSION_MAX });
+      }
+
+      // v2.1.2：恢复到指定历史版本（当前内容会先压入历史，可再回退）
+      if (p === '/api/kb/version/restore' && req.method === 'POST') {
+        const body = await readBody(req);
+        if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
+        const store = body.store || kbFindStoreOf(body.id);
+        if (store === 'external') return sendJSON(res, 409, { error: '外刊发布源为只读，不能恢复历史', code: 'EXTERNAL_READONLY' });
+        if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
+        const all = loadKbVersions();
+        const list = Array.isArray(all[body.id]) ? all[body.id] : [];
+        const vi = Number(body.versionIndex);
+        if (!Number.isInteger(vi) || vi < 0 || vi >= list.length) return sendJSON(res, 400, { error: '历史版本序号无效' });
+        const snapshot = list[vi];
+        const before = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
+        if (before) kbPushVersion(body.id, store, before, `恢复自 ${snapshot.ts} 前快照`);
+        const cleanText = s => String(s ?? '').slice(0, 2e6);
+        const r = kbMutateStore(store, body.id, rec => {
+          if (typeof snapshot.title === 'string') rec.title = snapshot.title.slice(0, 200);
+          rec.text = cleanText(snapshot.text);
+          if (Array.isArray(snapshot.items)) rec.items = snapshot.items.slice(0, 300);
+          else delete rec.items;
+          rec.edited_at = new Date().toISOString().slice(0, 19);
+          return rec;
+        });
+        if (!r.ok) return sendJSON(res, r.reason.includes('不存在') ? 404 : 400, { error: r.reason });
+        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(restore)', status: 'updated', store, records: 1, reason: `version#${vi} @${snapshot.ts}` });
+        return sendJSON(res, 200, { ok: true, title: r.title, restored: snapshot.ts });
+      }
+
+      // v2.1.2：AI 审读修正方案——用户采纳后直接写回（替换 quote 片段）
+      if (p === '/api/kb/review/apply' && req.method === 'POST') {
+        const body = await readBody(req);
+        if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
+        const store = body.store || kbFindStoreOf(body.id);
+        if (store === 'external') return sendJSON(res, 409, { error: '外刊发布源为只读，不能应用修正', code: 'EXTERNAL_READONLY' });
+        if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
+        const rawIdx = body.itemRawIdx == null ? -1 : Number(body.itemRawIdx);
+        const quote = String(body.quote || '');
+        const fix = String(body.fix || '');
+        if (!quote) return sendJSON(res, 400, { error: '缺少 quote（AI 摘录）' });
+        if (fix === quote) return sendJSON(res, 400, { error: '修正方案与原文相同，无需应用' });
+        const rec = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
+        if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
+        const cleanText = s => String(s ?? '').slice(0, 2e6);
+        // 定位目标文本：优先 itemRawIdx，其次全文
+        const target = (Array.isArray(rec.items) && Number.isInteger(rawIdx) && rawIdx >= 0 && rawIdx < rec.items.length)
+          ? String(rec.items[rawIdx].text || '') : String(rec.text || '');
+        if (!target.includes(quote)) {
+          return sendJSON(res, 409, { error: 'AI 摘录未能在当前文本中命中（可能已被修改），请手动编辑' });
+        }
+        const replaced = target.replace(quote, fix);
+        const before = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
+        if (before) kbPushVersion(body.id, store, before, 'AI 修正采纳前快照');
+        const r = kbMutateStore(store, body.id, r0 => {
+          if (Array.isArray(r0.items) && Number.isInteger(rawIdx) && rawIdx >= 0 && rawIdx < r0.items.length) {
+            r0.items[rawIdx].text = cleanText(replaced);
+          } else {
+            r0.text = cleanText(replaced);
+          }
+          r0.edited_at = new Date().toISOString().slice(0, 19);
+          return r0;
+        });
+        if (!r.ok) return sendJSON(res, r.reason.includes('不存在') ? 404 : 400, { error: r.reason });
+        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(review-apply)', status: 'updated', store, records: 1, reason: String(r.title).slice(0, 80) });
+        return sendJSON(res, 200, { ok: true, title: r.title, appliedText: replaced.slice(0, 2000) });
+      }
+
+      // v2.1.2：划线精读解析（单词 / 词组 / 句子）——参考沉浸式翻译的学习反馈弹窗
+      if (p === '/api/selection/learn' && req.method === 'POST') {
+        const body = await readBody(req);
+        const selection = String(body.text || '').trim().slice(0, 600);
+        if (!selection) return sendJSON(res, 400, { error: '划选内容为空' });
+        const context = String(body.context || '').trim().slice(0, 4000);
+        const title = String(body.title || '').slice(0, 120);
+        const kind = ['word', 'phrase', 'sentence'].includes(body.kind) ? body.kind : 'auto';
+        const kindLabel = { word: '单词', phrase: '词组', sentence: '句子', auto: '自动判定' }[kind];
+        const msgs = [
+          { role: 'system', content: getPrompt('selection_learn') },
+          { role: 'user', content: [
+            title ? `材料：${title}` : '',
+            `【划选内容】（${kindLabel}）：${selection}`,
+            context ? `【上下文】\n${context}` : '（无额外上下文）',
+          ].filter(Boolean).join('\n\n') },
+        ];
+        const reply = await llmChat(msgs, { maxTokens: 1200 });
+        return sendJSON(res, 200, { ok: true, kind, selection, reply });
       }
 
       // 记录删除（解析原件仍保留在 archive/，可重导恢复；删除写日志）
@@ -3089,6 +3250,8 @@ const server = http.createServer(async (req, res) => {
             return {
               loc: String(x.loc || '?').slice(0, 40),
               quote: String(x.quote || '').trim().slice(0, 100),
+              // v2.1.2：AI 修正方案——用于替换 quote 的修正文本（可为空 = 无自动方案）
+              fix: String(x.fix || '').trim().slice(0, 2000),
               itemIdx: hitInfo.idx,
               itemRawIdx: hitInfo.rawIdx,
               itemTag: hitInfo.tag,
@@ -3446,6 +3609,7 @@ const server = http.createServer(async (req, res) => {
           { src: path.join(DATA_DIR, 'chat_sessions.json'), name: 'chat_sessions.json' },
           { src: CORPUS_FILE, name: 'records.jsonl' },
           { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
+          { src: KB_VERSIONS_FILE, name: 'kb_versions.json' },
         ];
         let count = 0;
         for (const f of filesToBackup) {
@@ -3490,6 +3654,7 @@ const server = http.createServer(async (req, res) => {
           { name: 'chat_sessions.json', dst: path.join(DATA_DIR, 'chat_sessions.json') },
           { name: 'records.jsonl', dst: CORPUS_FILE },
           { name: 'exams.jsonl', dst: path.join(ROOT, 'corpus', 'exams.jsonl') },
+          { name: 'kb_versions.json', dst: KB_VERSIONS_FILE },
         ];
         let restored = 0;
         for (const f of restoreMap) {
@@ -3561,6 +3726,7 @@ function autoBackup() {
       { src: CHAT_FILE, name: 'chat_sessions.json' },
       { src: CORPUS_FILE, name: 'records.jsonl' },
       { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
+      { src: KB_VERSIONS_FILE, name: 'kb_versions.json' },
     ];
     for (const f of files) { if (fs.existsSync(f.src)) fs.copyFileSync(f.src, path.join(bDir, f.name)); }
     // 清理旧备份（保留 10 份）

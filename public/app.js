@@ -1544,6 +1544,7 @@ async function openKbRecord(rid) {
     const readonly = rec.source?.managed === 'external' || rec.external;
     $('#kbEditBtn').style.display = readonly ? 'none' : '';
     $('#kbDelBtn').style.display = readonly ? 'none' : '';
+    $('#kbHistoryBtn').style.display = readonly ? 'none' : '';
     $('#kbDetailMeta').textContent = [
       rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
       rec.meta?.questions ? rec.meta.questions + ' 题' : '',
@@ -1909,6 +1910,7 @@ async function openExamRecord(exid) {
     $('#exIssuesPanel').innerHTML = '';
     $('#exEditBtn').style.display = '';
     $('#exDelBtn').style.display = '';
+    $('#exHistoryBtn').style.display = '';
     $('#exDetailTitle').textContent = rec.title || rec.id;
     $('#exDetailMeta').textContent = [
       rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
@@ -2403,10 +2405,19 @@ async function kbDoReview() {
       bySec.get(s).idxs.push(i);
     });
     const cardHtml = (x, i) => `
-        <div class="kb-issue ${cls[x.severity] || 'kb-issue-mid'}">
+        <div class="kb-issue ${cls[x.severity] || 'kb-issue-mid'}" data-issue="${i}">
           <div class="kb-issue-head"><b>${esc(x.loc)}</b>${x.itemTag ? `<span>· ${esc(x.itemTag)}</span>` : ''}<span>· ${esc(x.severity)}</span>${x.itemIdx != null && !r.readOnly ? `<button class="btn ghost" style="padding:2px 10px;font-size:12px;margin-left:auto" data-locate="${i}">📍 定位到此</button>` : ''}</div>
           <div>${esc(x.desc)}</div>
           ${x.quote ? `<div class="kb-issue-quote">“${esc(x.quote)}”</div>` : ''}
+          ${!r.readOnly && x.quote ? `
+          <div class="kb-issue-fixzone" data-fixzone="${i}">
+            ${x.fix ? `<div class="kb-issue-fix"><span class="kb-fix-label">🛠 AI 修正方案</span><div class="kb-fix-new">${esc(x.fix)}</div></div>` : `<div class="hint" style="margin:6px 0 0">（AI 未给出可直接替换的修正文本，可点「采纳」进入手动编辑）</div>`}
+            <div class="kb-issue-actions">
+              <button class="btn small primary" data-adopt="${i}">✅ 采纳修改</button>
+              <button class="btn small ghost" data-ignore="${i}">🚫 忽略</button>
+              <span class="result kb-adopt-result" id="${prefix}AdoptRes${i}"></span>
+            </div>
+          </div>` : ''}
         </div>`;
     const body = r.issues.length
       ? groups.map(g => `
@@ -2427,6 +2438,26 @@ async function kbDoReview() {
           el.classList.add('kb-locate');
           el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+      }
+    }));
+    /* v2.1.2：采纳 AI 修正方案（有 fix 直接替换；无 fix 进手动编辑弹窗） */
+    $$('#' + prefix + 'IssuesPanel [data-adopt]').forEach(b => b.addEventListener('click', () => {
+      const x = r.issues[+b.dataset.adopt];
+      kbAdoptFix(prefix, id, x, +b.dataset.adopt);
+    }));
+    $$('#' + prefix + 'IssuesPanel [data-ignore]').forEach(b => b.addEventListener('click', () => {
+      const i = +b.dataset.ignore;
+      const card = document.querySelector('#' + prefix + 'IssuesPanel .kb-issue[data-issue="' + i + '"]');
+      if (!card) return;
+      card.classList.add('kb-issue-ignored');
+      const z = card.querySelector('[data-fixzone]');
+      if (z) z.remove();
+      const head = card.querySelector('.kb-issue-head');
+      if (head && !card.querySelector('.kb-issue-ignored-tag')) {
+        const t = document.createElement('span');
+        t.className = 'kb-issue-ignored-tag';
+        t.textContent = '🚫 已忽略';
+        head.appendChild(t);
       }
     }));
   } catch (e) {
@@ -2502,8 +2533,9 @@ function kbUpdateDetailItem(prefix, x, newText) {
 /** v1.1.7e：疑点卡片状态标记——fixed=✅淡出+组头进度 / still=追加复核反馈与修改建议 */
 function markIssueCard(prefix, cardIdx, state, newDesc, sug) {
   if (cardIdx == null || cardIdx < 0) return;
-  const btn = document.querySelector('#' + prefix + 'IssuesPanel [data-locate="' + cardIdx + '"]');
-  const card = btn && btn.closest('.kb-issue');
+  /* v2.1.2：优先按 data-issue 找卡片（纯文本记录的疑点无「定位」按钮也能标记） */
+  const card = document.querySelector('#' + prefix + 'IssuesPanel .kb-issue[data-issue="' + cardIdx + '"]') ||
+    (() => { const btn = document.querySelector('#' + prefix + 'IssuesPanel [data-locate="' + cardIdx + '"]'); return btn && btn.closest('.kb-issue'); })();
   if (!card) return;
   if (state === 'fixed') {
     card.style.transition = 'opacity .8s'; card.style.opacity = '.45';
@@ -2677,12 +2709,277 @@ async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
   });
 }
 
+/* ---------------- v2.1.2：AI 修正采纳 与 历史版本回溯 ---------------- */
+
+async function kbAdoptFix(prefix, rid, x, cardIdx) {
+  const out = $(`#${prefix}AdoptRes${cardIdx}`);
+  const card = document.querySelector('#' + prefix + 'IssuesPanel .kb-issue[data-issue="' + cardIdx + '"]');
+  if (!x.fix) { kbOpenFixModal(prefix, rid, x, cardIdx); return; }   // 无修正方案 → 手动直编
+  if (!confirm('采纳 AI 修正方案？\n\n原文摘录：“' + x.quote + '”\n\n修正为：“' + x.fix + '”\n\n（写回题库，可在「🕘 历史版本」中回退）')) return;
+  if (out) { out.textContent = '提交中…'; out.className = 'result kb-adopt-result'; }
+  try {
+    const r = await api('/api/kb/review/apply', { method: 'POST', body: {
+      id: rid, store: prefix === 'ex' ? 'exam' : 'corpus',
+      itemRawIdx: x.itemRawIdx, quote: x.quote, fix: x.fix,
+    } });
+    if (out) { out.textContent = '✅ 已应用修正'; out.className = 'result ok kb-adopt-result'; }
+    /* 就地刷新详情条目 + 标记疑点已修复（不重建整页，保留审读现场） */
+    if (r.appliedText != null) {
+      if (x.itemIdx != null) kbUpdateDetailItem(prefix, x, r.appliedText);
+      else {
+        /* 纯文本记录：直接刷新首个 passage 的渲染内容，不重建详情、不毁审读现场 */
+        const el = $('#' + prefix + 'Detail .kb-passage');
+        if (el) el.innerHTML = kbText(r.appliedText);
+      }
+    }
+    markIssueCard(prefix, cardIdx, 'fixed');
+    if (card) {
+      const z = card.querySelector('[data-fixzone]');
+      if (z) z.remove();
+    }
+    if (prefix === 'kb') kbState.loaded = false; else examState.loaded = false;
+    toast('✅ 已采纳 AI 修正');
+  } catch (e) {
+    /* 摘录未命中（文本已被改动等）→ 降级到手动直编弹窗 */
+    if (String(e.message).includes('未能在当前文本中命中')) {
+      kbOpenFixModal(prefix, rid, x, cardIdx);
+      return;
+    }
+    if (out) { out.textContent = '❌ ' + e.message; out.className = 'result err kb-adopt-result'; }
+  }
+}
+
+async function kbOpenHistory() {
+  const { prefix, id } = kbDetailState;
+  if (!id) return;
+  let dlg = $('#kbHistoryModal');
+  if (dlg) dlg.remove();
+  dlg = document.createElement('div');
+  dlg.id = 'kbHistoryModal';
+  dlg.className = 'kb-fix-modal';
+  dlg.innerHTML = `
+    <div class="kb-fix-dialog kb-history-dialog">
+      <div class="kb-fix-head">
+        <div class="kb-fix-title">🕘 历史版本（最近 ${5} 个，改前自动留存）</div>
+        <button class="kb-fix-close" title="关闭">✕</button>
+      </div>
+      <div id="kbHistoryBody" class="kb-history-body"><div class="hint">加载中…</div></div>
+    </div>`;
+  document.body.appendChild(dlg);
+  const close = () => dlg.remove();
+  dlg.querySelector('.kb-fix-close').addEventListener('click', close);
+  dlg.addEventListener('click', e => { if (e.target === dlg) close(); });
+  dlg.addEventListener('wheel', e => {
+    const t = e.target.closest('.kb-history-body');
+    if (t && t.scrollHeight > t.clientHeight) {
+      const atTop = t.scrollTop <= 0 && e.deltaY < 0;
+      const atBottom = t.scrollTop + t.clientHeight >= t.scrollHeight - 1 && e.deltaY > 0;
+      if (!atTop && !atBottom) return;
+    }
+    if (!e.target.closest('.kb-history-body')) e.preventDefault();
+  }, { passive: false });
+  const body = $('#kbHistoryBody');
+  try {
+    const r = await api('/api/kb/versions?id=' + encodeURIComponent(id));
+    if (!r.versions.length) {
+      body.innerHTML = '<div class="hint">暂无历史版本——每次保存修改时会自动留存旧版本（最多 5 个）。</div>';
+      return;
+    }
+    body.innerHTML = r.versions.map(v => `
+      <div class="kb-history-item">
+        <div class="kb-history-head">
+          <b>${esc(fmtBJ(v.ts))}</b>
+          <span class="hint">${esc(v.title || '')} · ${v.itemCount ? v.itemCount + ' 条目 · ' : ''}${v.chars} 字符</span>
+        </div>
+        <div class="hint">${esc(v.note || '')}</div>
+        <div class="row-gap" style="margin-top:6px">
+          <button class="btn small" data-restore="${v.index}">↩ 回退到此版本</button>
+        </div>
+      </div>`).join('');
+    $$('#kbHistoryBody [data-restore]').forEach(b => b.addEventListener('click', async () => {
+      const vi = +b.dataset.restore;
+      const v = r.versions[vi];
+      if (!confirm('回退到 ' + v.ts + ' 的版本？\n\n当前内容会先存入历史，可再次回退。')) return;
+      b.disabled = true; b.textContent = '回退中…';
+      try {
+        await api('/api/kb/version/restore', { method: 'POST', body: { id, store: prefix === 'ex' ? 'exam' : 'corpus', versionIndex: vi } });
+        close();
+        toast('↩ 已回退到历史版本');
+        if (prefix === 'kb') { kbState.loaded = false; loadKb(); openKbRecord(id); }
+        else { examState.loaded = false; loadExamList(); openExamRecord(id); }
+      } catch (e) {
+        alert('回退失败：' + e.message);
+        b.disabled = false; b.textContent = '↩ 回退到此版本';
+      }
+    }));
+  } catch (e) {
+    body.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
+  }
+}
+
 $('#kbEditBtn').addEventListener('click', kbToggleEditor);
 $('#exEditBtn').addEventListener('click', kbToggleEditor);
 $('#kbDelBtn').addEventListener('click', kbDeleteCurrent);
 $('#exDelBtn').addEventListener('click', kbDeleteCurrent);
 $('#kbReviewBtn').addEventListener('click', kbDoReview);
 $('#exReviewBtn').addEventListener('click', kbDoReview);
+$('#kbHistoryBtn').addEventListener('click', kbOpenHistory);
+$('#exHistoryBtn').addEventListener('click', kbOpenHistory);
+
+/* ---------------- v2.1.2：划选精读学习（单词/词组/句子，PC 浮动 + 移动端底部卡片） ---------------- */
+
+const SEL_LEARN_READABLE = ['#kbDetail', '#exDetail', '#unitDetail'];
+let selLearnBtn = null;      // 选区旁的「精读」浮动按钮
+let selLearnCard = null;     // 解析结果卡片
+let selLearnState = null;    // { text, context, title, kind, rect }
+let selLearnReqSeq = 0;      // 并发保护：只认最后一次请求
+
+function selLearnKindOf(text) {
+  const t = String(text || '').trim();
+  if (!t) return 'sentence';
+  if (/^[A-Za-z][A-Za-z'-]*$/.test(t)) return 'word';
+  const words = t.split(/\s+/).filter(Boolean);
+  if (/^[A-Za-z0-9'’\-–—.,;:!?()\s]+$/.test(t) && words.length <= 5) return 'phrase';
+  return 'sentence';
+}
+
+function selLearnInReadable(node) {
+  const el = node && (node.nodeType === 1 ? node : node.parentElement);
+  if (!el) return null;
+  return SEL_LEARN_READABLE.map(s => el.closest && el.closest(s)).find(Boolean) || null;
+}
+
+function selLearnContextOf(range, root) {
+  try {
+    const node = range.startContainer;
+    const host = (node.nodeType === 1 ? node : node.parentElement)?.closest('[data-itemidx]') ||
+      (node.nodeType === 1 ? node : node.parentElement)?.closest('.kb-passage, .kb-question, .unit-q, p') || root;
+    return String(host?.innerText || '').replace(/\s+\n/g, '\n').trim().slice(0, 3000);
+  } catch { return ''; }
+}
+
+function selLearnTitleOf(root) {
+  const prefix = root.id === 'exDetail' ? 'ex' : (root.id === 'unitDetail' ? 'unit' : 'kb');
+  const t = $(`#${prefix}DetailTitle`);
+  return t ? t.textContent.trim().slice(0, 100) : '';
+}
+
+function selLearnRemoveBtn() {
+  if (selLearnBtn) { selLearnBtn.remove(); selLearnBtn = null; }
+}
+
+function selLearnCloseCard() {
+  if (selLearnCard) { selLearnCard.remove(); selLearnCard = null; }
+  selLearnReqSeq++;
+}
+
+function selLearnShowBtn(rect) {
+  selLearnRemoveBtn();
+  const b = document.createElement('button');
+  b.className = 'sel-learn-btn';
+  b.type = 'button';
+  b.innerHTML = '🔍 精读';
+  b.title = '划选精读：单词 / 词组 / 句子';
+  document.body.appendChild(b);
+  const isMobile = window.innerWidth <= 700;
+  if (!isMobile) {
+    const x = Math.min(Math.max(8, rect.left + rect.width / 2 - 34), window.innerWidth - 84);
+    const y = rect.top - 40 < 8 ? rect.bottom + 10 : rect.top - 40;
+    b.style.left = x + 'px';
+    b.style.top = y + 'px';
+  }
+  b.addEventListener('mousedown', e => e.preventDefault());
+  b.addEventListener('click', e => { e.stopPropagation(); selLearnOpen(); });
+  selLearnBtn = b;
+}
+
+function selLearnOpen() {
+  if (!selLearnState) return;
+  const { text, context, title } = selLearnState;
+  const kind = selLearnKindOf(text);
+  selLearnRemoveBtn();
+  selLearnCloseCard();
+  const seq = ++selLearnReqSeq;
+  const isMobile = window.innerWidth <= 700;
+  const card = document.createElement('div');
+  card.className = 'sel-learn-card' + (isMobile ? ' mobile' : '');
+  card.innerHTML = `
+    <div class="sel-learn-head">
+      <span class="sel-learn-kind">${kind === 'word' ? '📖 单词' : kind === 'phrase' ? '🧩 词组' : '📝 句子'}</span>
+      <span class="sel-learn-text">${esc(text.length > 120 ? text.slice(0, 120) + '…' : text)}</span>
+      <button class="sel-learn-x" title="关闭">✕</button>
+    </div>
+    <div class="sel-learn-body"><div class="hint">AI 精读解析中…</div></div>
+    <div class="sel-learn-foot">
+      <button class="btn small" data-sel-speak>🔊 朗读</button>
+      <button class="btn small ghost" data-sel-copy>📋 复制解析</button>
+    </div>`;
+  document.body.appendChild(card);
+  selLearnCard = card;
+  card.addEventListener('wheel', e => {
+    const b = card.querySelector('.sel-learn-body');
+    if (b && b.scrollHeight > b.clientHeight) {
+      const atTop = b.scrollTop <= 0 && e.deltaY < 0;
+      const atBottom = b.scrollTop + b.clientHeight >= b.scrollHeight - 1 && e.deltaY > 0;
+      if (!atTop && !atBottom) return;
+    }
+    if (!e.target.closest('.sel-learn-body')) e.preventDefault();
+  }, { passive: false });
+  card.querySelector('.sel-learn-x').addEventListener('click', selLearnCloseCard);
+  card.querySelector('[data-sel-speak]').addEventListener('click', () => speak(text));
+  card.querySelector('[data-sel-copy]').addEventListener('click', async () => {
+    const c = card.querySelector('.sel-learn-body')?.innerText || '';
+    try { await navigator.clipboard.writeText(c); toast('📋 已复制'); } catch { toast('复制失败'); }
+  });
+  api('/api/selection/learn', { method: 'POST', body: { text, context, title, kind } })
+    .then(r => {
+      if (seq !== selLearnReqSeq || !selLearnCard) return;
+      card.querySelector('.sel-learn-body').innerHTML = mdLite(r.reply || '（无解析结果）');
+    })
+    .catch(e => {
+      if (seq !== selLearnReqSeq || !selLearnCard) return;
+      card.querySelector('.sel-learn-body').innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
+    });
+}
+
+/* 选区变化 → 显示浮动按钮（PC 鼠标 / 移动端长按划选均覆盖） */
+function selLearnOnSelection() {
+  const sel = window.getSelection();
+  if (!sel || sel.isCollapsed || sel.rangeCount === 0) { selLearnRemoveBtn(); return; }
+  const text = sel.toString().trim();
+  if (!text || text.length < 1 || text.length > 600) { selLearnRemoveBtn(); return; }
+  if (!/[\u4e00-\u9fa5]/.test(text) && !/[A-Za-z]/.test(text)) { selLearnRemoveBtn(); return; }
+  const range = sel.getRangeAt(0);
+  const root = selLearnInReadable(range.commonAncestorContainer);
+  if (!root) { selLearnRemoveBtn(); return; }
+  const cac = range.commonAncestorContainer;
+  const cacEl = cac.nodeType === 1 ? cac : cac.parentElement;
+  if (cacEl?.closest('input, textarea, .sel-learn-card, .kb-fix-modal')) { selLearnRemoveBtn(); return; }
+  let rect;
+  try { rect = range.getBoundingClientRect(); } catch { return; }
+  if (!rect || (!rect.width && !rect.height)) return;
+  selLearnState = { text, context: selLearnContextOf(range, root), title: selLearnTitleOf(root), kind: selLearnKindOf(text), rect };
+  /* 移动端选区手柄遮挡浮动词：直接给底部「精读」条，点击即出卡片 */
+  selLearnShowBtn(rect);
+}
+
+document.addEventListener('mouseup', e => {
+  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
+  setTimeout(selLearnOnSelection, 10);
+});
+document.addEventListener('touchend', e => {
+  /* 点按精读条本身不触发重新检测（移动端 tap 会短暂改变选区，避免按钮被误移除） */
+  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
+  setTimeout(selLearnOnSelection, 120);
+});
+document.addEventListener('mousedown', e => {
+  if (selLearnBtn && e.target === selLearnBtn) return;
+  if (selLearnCard && selLearnCard.contains(e.target)) return;
+  setTimeout(() => {
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed) { selLearnRemoveBtn(); }
+  }, 120);
+});
 
 /* ---------------- 番茄钟 ---------------- */
 
