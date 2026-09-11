@@ -58,6 +58,9 @@ def score_items(items):
     for it in items:
         if it["type"] not in ("question", "writing"):
             continue
+        if it["type"] == "question" and it.get("number") is None:
+            it["score"] = None  # 选项池等非题目条目不计分
+            continue
         sec = it.get("section")
         qtype = it.get("qtype")
         if qtype == "作文":

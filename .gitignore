@@ -6,6 +6,7 @@ data/
 node_modules/
 .DS_Store
 Thumbs.db
+__pycache__/
 
 # v1.1.1：语料导入运行时目录（原件与隔离文件留在本机/服务器，不进 git）
 corpus/imports/
