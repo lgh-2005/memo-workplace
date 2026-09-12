@@ -12,10 +12,24 @@ v2.1.3 修复（真题库全量重导）：
   4. A./B./C./D. 文本选项（2008 等）按行识别；支持续行。
   5. 完形/阅读 Directions 段落过滤扩充（numbered blank / four choices / ANSWER SHEET…）。
   6. Part B：选项池统一为 {A..H} 字典；空位 41-45 归一为 〖N〗 并生成对应题目；
-     兼容 linefill / tabular「41. &」/ (41) 段落标记 / 独立数字（2022/2023 排序题）。
+      兼容 linefill / tabular「41. &」/ (41) 段落标记 / 独立数字（2022/2023 排序题）。
   7. 翻译答案句数上限 5；多余（源缺陷，如 2023）连同所在段落一并剔除。
+
+v2.1.4 修复（AI 审读零疑点）：
+  1. \begin{env}[opts]{args} 与 \end{env} 全形剥离，消除 [resume]/[h!]/[b]0.45 参数泄漏；
+     独立参数行（1998 [resume,leftmargin=1em]）删除。
+  2. \item[●] 视为正文本 bullet 段落（<<<P>>>），不再占用题号 —— 1998 Text4/5 题号复位。
+  3. \caption*{...} / \textsuperscript{} / \textsubscript{} 保留内容（2006 配图说明、2011 19th、2019 H2O）。
+  4. 全局转义清洗：\% \$ \& \# \_ \ldots \, \; \: \! \- 及 \'o 重音；``/'' 引号、---/-- 破折号、~ 空格。
+  5. 数学模式：$\$$→$、$\%$→%、$ \sim $→~。
+  6. 注释规则：数字后的 % 视为字面百分号（1997/1998/2000 百分号被吞）；注释剥离提前到最前。
+  7. \phantom{...} 整体删除（防止内部 \linefill 生成伪空位）。
+  8. 多段 \uline{} 的 \transnum 合并（2008 第50题）；捕获右花括号外句末标点（2004 第50题）。
+  9. Unicode 归一：U+E011/U+00AD→'-'、康熙部首 NFKC、数字间全角逗号转半角。
+ 10. (\d) th/st/nd/rd 合并（15th）、(\d) s 合并（1970s）。
+ 11. 输出阶段统一终清（正文与选项）。
 """
-import glob, json, os, re
+import glob, json, os, re, unicodedata
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEXDIR = os.path.join(BASE, "texsrc")
@@ -31,18 +45,47 @@ SEC_PATS = [
 # （如 1994 "...in innumerable directions."、1998 同理）。
 DIRECTION_RE = re.compile(
     r"^\s*(?:\d+[.、]\s*)?(?:Part\s+[A-C]\s*)?"
-    r"(Directions|For each numbered blank|Read the following|In the following|"
+    r"(Directions|For\s+(?:Questions|each numbered blank)|Read the following|In the following|"
     r"The following paragraphs|You are going to read|Choose the best|"
     r"Translate the underlined|translation should be written|"
     r"Mark your answers|Answer the questions)", re.I)
 
 
-def tex_clean(s):
-    s = s.replace("\\&", "&").replace("``", "\u201c").replace("''", "\u201d")
-    s = s.replace("---", "\u2014").replace("--", "-").replace("\\%", "%")
-    for _ in range(3):
-        s = re.sub(r"\\(?:uline|textbf|emph|underline|textit)\s*{([^{}]*)}", r"\1", s)
+def tex_tidy(s):
+    """v2.1.4 全局文本终清（幂等）。正文、选项、翻译句、题干统一走这里。"""
+    if not s:
+        return s
+    s = s.replace("\u00ad", "-").replace("\ue011", "-")
+    if any(0x2E80 <= ord(c) <= 0x2FDF for c in s):  # 康熙部首等兼容字
+        s = "".join(unicodedata.normalize("NFKC", c)
+                    if 0x2E80 <= ord(c) <= 0x2FDF else c for c in s)
+    s = re.sub(r"(?<=\d)\uff0c(?=\d)", ",", s)  # 2000 "2，125" -> "2,125"
+    s = re.sub(r"\\'\s*\{?([a-zA-Z])\}?",
+               lambda m: unicodedata.normalize("NFC", m.group(1) + "\u0301"), s)  # Knos\'os
+    s = re.sub(r"\\text(?:super|sub)script\s*\{([^{}]*)\}", r"\1", s)
+    s = re.sub(r"\\caption\s*\*?\s*\{([^{}]*)\}", r"\1", s)
+    s = s.replace("$\\$$", "$").replace("$\\%$", "%")
+    s = re.sub(r"\$\s*\\sim\s*\$", "\x01", s)  # Lines 2$\sim$3 -> 2~3（\x01 占位，parse_year 末尾还原，防终清再吃）
+    s = s.replace("\\$", "$")
+    s = re.sub(r"\$\s+(?=\d)", "$", s)
+    s = s.replace("~", " ")  # TeX 非断行空格
+    s = s.replace("\\%", "%").replace("\\&", "&").replace("\\#", "#").replace("\\_", "_")
+    s = s.replace("\\ldots", "\u2026").replace("\\dots", "\u2026")
+    for tok in ("\\,", "\\;", "\\:", "\\!", "\\-"):
+        s = s.replace(tok, "")
+    s = s.replace("``", "\u201c").replace("''", "\u201d")
+    s = s.replace("---", "\u2014").replace("--", "-")
+    s = re.sub(r"(?<=\d),\s+(?=\d{3}(?!\d))", ",", s)  # "100, 000" -> "100,000"（OCR 逗号后空格）
+    s = re.sub(r"(\d)\s+(th|st|nd|rd)(?![A-Za-z])", r"\1\2", s)
+    s = re.sub(r"(\d)\s+s(?=\W|$)", r"\1s", s)
+    s = re.sub(r"\s+([,;:!?])", r"\1", s)
     return s
+
+
+def tex_clean(s):
+    for _ in range(3):
+        s = re.sub(r"\\(?:uline|textbf|emph|underline|textit)\s*\{([^{}]*)}", r"\1", s)
+    return tex_tidy(s)
 
 
 def tokenize(raw):
@@ -51,13 +94,39 @@ def tokenize(raw):
     # v2.1.3：剥离 \newlinespread{1.2}{ ... } 包裹命令，保留正文（否则其后的 {..} 会被
     # catch-all 当作命令参数吞掉，1995/1998/1999/2000/2009 翻译整段丢失）。
     raw = re.sub(r"\\newlinespread\s*\{[^{}]*\}", "", raw)
+    # v2.1.4：注释先行剥离；数字后的 % 是字面百分号（1997 "2.5%"）而非注释
+    raw = "\n".join(re.sub(r"(?<!\\)(?<!\d)%.*", "", ln) for ln in raw.split("\n"))
+    # v2.1.4：\phantom{...} 整块删除（其内 \linefill 不参与空位计数）
+    raw = re.sub(r"\\phantom\s*\{[^{}]*\}", "", raw)
+    raw = tex_tidy(raw)
+
     def grab_trans(m):
-        trans.append(re.sub(r"\s+", " ", tex_clean(m.group(1))).strip())
+        body = m.group(1)
+        punct = (m.group(2) or "").strip()
+        quote = (m.group(3) or "").strip()
+        if "\\uline" in body:
+            parts = re.findall(
+                r"\\uline\s*\*?\s*\{((?:[^{}]*\{[^{}]*\})*[^{}]*)\}", body)
+            txt = " ".join(re.sub(r"\s+", " ", tex_clean(p)).strip() for p in parts)
+        else:
+            txt = re.sub(r"\s+", " ", tex_clean(body.strip())).strip()
+        txt = txt.strip()
+        if punct and not txt.endswith(punct):
+            txt += punct
+        if quote and not txt.endswith(quote):
+            txt += quote
+        trans.append(txt)
         return f"\n<<<TRANS{len(trans)-1}>>>\n"
-    raw = re.sub(r"\\transnum\s*\\uline\s*\*", "", raw)
-    raw = re.sub(r"\\transnum\s*(?:\\uline\s*)?{((?:[^{}]*{[^{}]*})*[^{}]*)}", grab_trans, raw)
+
+    TRANS_U = r"\\uline\s*\*?\s*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}"
+    # v2.1.4：捕获右花括号外的句末标点与后引号（2001/2008 “carefully}.” 类源缺陷）
+    raw = re.sub(r"\\transnum\s*((?:" + TRANS_U + r"\s*)+)([.!?])?([\u201d\"])?", grab_trans, raw)
     # v2.1.3：兼容 2020 "(49) \uline{...}" 无 \transnum 的写法
-    raw = re.sub(r"\(\s*\d{1,3}\s*\)\s*\\uline\s*{((?:[^{}]*{[^{}]*})*[^{}]*)}", grab_trans, raw)
+    raw = re.sub(r"\(\s*\d{1,3}\s*\)\s*(" + TRANS_U + r")([.!?])?([\u201d\"])?", grab_trans, raw)
+    # v2.1.4：\transnum 替换产生的伪段落分隔（源换行 + 替换换行叠加恰成 \n\n）合并，
+    # 使 “In fact, 〖49〗…” 回到同段；3+ 换行的真段落边界不受影响
+    raw = re.sub(r"(?<!\n)\n\n(?=<<<TRANS\d+>>>)", "\n", raw)
+
     def grab_ch(m):
         choices.append([tex_clean(g.strip()).strip("{} \t\n") for g in m.groups()])
         return f"\n<<<CH{len(choices)-1}>>>\n"
@@ -68,16 +137,22 @@ def tokenize(raw):
     raw = re.sub(r"\n[ \t]*\n+", "\n<<<P>>>\n", raw)
     raw = re.sub(r"\\linefill\s*\.?", "\n<<<GAP>>>\n", raw)
     raw = raw.replace("\\cloze", "\n<<<CLOZE>>>\n")
+    # v2.1.4：\item[●]（1998 正文 bullet）转段落，不占题号；其后普通 \item 才是题目
+    raw = re.sub(r"\\item\s*\[[^\]]*\]", "\n<<<P>>>\n", raw)
     raw = raw.replace("\\item", "\n<<<ITEM>>>\n")
     raw = raw.replace("\\begin{listmatch}", "\n<<<LIST>>>\n").replace("\\end{listmatch}", "\n<<<ENDLIST>>>\n")
     raw = re.sub(r"\\subsection\s*\*?\s*{([^}]*)}", r"\n<<<SUB \1>>>\n", raw)
     raw = re.sub(r"\\section\s*\*?\s*{([^}]*)}", r"\n<<<SEC \1>>>\n", raw)
-    # comments + leftovers
-    raw = "\n".join(re.sub(r"(?<!\\)%.*", "", ln) for ln in raw.split("\n"))
+    # v2.1.4：\begin{...}[opts]{args} 与 \end{...} 全形剥离（[resume]/[h!]/[b]0.45 泄漏修复）
+    raw = re.sub(r"\\(?:begin|end)\s*\{[^{}]*\}(?:\s*\[[^\]]*\])?(?:\s*\{[^{}]*\})*", "\n", raw)
+    # v2.1.4：独立参数行（1998 [resume,leftmargin=1em]）
+    raw = re.sub(r"(?m)^[ \t]*\[[^\]\n]*\][ \t]*$", "", raw)
     raw = re.sub(r"\\(?:textbf|textit|emph)\s*\{\s*(Part\s+[A-C])\s*\}", r"\n\1\n", raw)
     # v1.1.7 修复：在 catch-all 去除所有命令之前，先展开保内容命令，避免 \emph{Nature} 等关键词被剥离
+    # v2.1.4：阅读正文 \uline{} 忠实还原为 <u>…</u>（2017 Text 3 划线句）；\uline* 同处理
     for _ in range(4):
-        raw = re.sub(r'\\(?:uline|textbf|emph|underline|textit)\s*\{([^{}]*)\}', r'\1', raw)
+        raw = re.sub(r'\\uline\s*\*?\s*\{([^{}]*)\}', r'<u>\1</u>', raw)
+        raw = re.sub(r'\\(?:textbf|emph|underline|textit)\s*\{([^{}]*)\}', r'\1', raw)
     raw = re.sub(r"\\[a-zA-Z]+\s*(\[[^\]]*\])?(\{[^{}]*\})*", "\n", raw)
     raw = re.sub(r"[{}]", "", raw)
     raw = re.sub(r"[ \t]+", " ", raw)
@@ -89,7 +164,9 @@ def _norm_partb_gaps(text):
     t = text.replace("\\[", "").replace("\\]", "")
     t = re.sub(r"\(\s*(4[1-5])\s*\)", lambda m: f"\u3016{m.group(1)}\u3017", t)  # (41) 段落标记（2022）
     t = re.sub(r"(4[1-5])\s*\.\s*&", lambda m: f"\u3016{m.group(1)}\u3017", t)  # tabular 41. &
-    t = re.sub(r"(?m)^\s*(4[1-5])\s*$", lambda m: f"\u3016{m.group(1)}\u3017", t)  # 独立数字（2023）
+    # v2.1.4：\s* 改成 [ \t]*，避免吞掉行尾换行使相邻空位（2023 〖44〗〖45〗）粘连
+    t = re.sub(r"(?m)^[ \t]*(4[1-5])[ \t]*$", lambda m: f"\u3016{m.group(1)}\u3017", t)  # 独立数字（2023）
+    t = re.sub(r"\u3017(?=\u3016)", "\u3017\n", t)  # 保险：相邻空位标记之间补换行
     return t
 
 
@@ -265,7 +342,7 @@ def parse_year(year, raw):
             add_item()
             st["item_no"] += 1
             st["trans_n"] += 1
-            base_tr = 45 if year >= 2005 else (60 if year >= 2002 else 70)
+            base_tr = 45 if year >= 2005 else (40 if year >= 2001 else 30)
             n_tr = base_tr + st["trans_n"]
             items.append({"year": year, "type": "question", "src": "tex",
                           "section": "translation", "number": n_tr,
@@ -319,6 +396,14 @@ def parse_year(year, raw):
                 paras = [p for p in it["text"].split("\n\n")
                          if not any(f"\u3016{n}\u3017" in p for n in drop_nums)]
                 it["text"] = "\n\n".join(paras).strip()
+
+    # v2.1.4：统一终清（正文与选项）
+    for it in items:
+        if it.get("text"):
+            it["text"] = tex_tidy(it["text"]).replace("\x01", "~")
+        opts = it.get("options")
+        if isinstance(opts, dict):
+            it["options"] = {k: tex_tidy(v).replace("\x01", "~") for k, v in opts.items()}
     return items
 
 

@@ -653,9 +653,12 @@ const DEFAULT_PROMPTS = {
     desc: '对导入的真题或语料进行结构化对比、错字错题校验的质检提示词',
     template: [
       '你是材料的质检审读员。审核对象是【整理后的题库/语料内容】（含 〖N〗 挖空/划线锚点）和可选的【真题原件参考】。',
+      '你的职责是核对「整理结果」是否忠实于【真题原件参考】（有无解析/整理引入的缺损），而不是校对英文本身。',
       '对照找出解析/整理引入的问题，例如：句子残缺或截断、乱码与字形损坏、题号断档或重复、选项丢失或错位、段落错序、页眉页脚水印混入、明显重复段落、整理结果与原件不符。',
       '重要规则：',
       '1. 只报告有把握、能在材料中定位的问题；不要把送审材料自身的完整性当成语料问题；不要臆测内容含义；不要改写文本。',
+      '1a. 原件中已有的写法一律不是问题——包括原件自身的拼写错误、语法不一致、专有名词特殊写法（如 Au Bong Pain / Gallileo）、看似矛盾的用词、原卷的标点习惯等。只要整理结果与原件一致，就不得报告（例如：整句话与原件逐字相同，即使拼写看起来有误，也不要报）。',
+      '1b. 只有「整理结果」与「原件」确实不同、或语句被截断/丢词/夹杂水印而原件没有时，才算问题。不要仅凭英文常识判断对错。',
       '2. 每个问题必须给 quote 字段：从材料中逐字摘录有误处的原文片段（10~40 字，须与材料完全一致，可包含 〖N〗 标记）。',
       '3. v2.1.2：每个问题必须尽量给出 fix 字段——用于替换 quote 的修正文本（只修正该片段本身的错误，保持其余内容与 〖N〗 锚点原样；无把握时留空字符串）。',
       '4. 严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","quote":"逐字摘录","fix":"修正后的替换文本(可为空)","severity":"high|mid|low","desc":"问题描述(60字内)"}]}；没有问题输出 {"issues":[]}。',
@@ -3184,9 +3187,16 @@ const server = http.createServer(async (req, res) => {
         const ordered = kbOrderedItems(rec);
         const parts = ordered.map((it, i) => {
           const tag = `${it.type || 'item'}${it.section ? '·' + it.section : ''}${it.number != null ? '·题' + it.number : ''}`;
-          return `【条目#${i + 1}｜${tag}】\n${String(it.text || '')}`;
+          let body = String(it.text || '');
+          // v2.1.4：选项一并送审（否则 LLM 会把「选项未提供」误报为语料缺选项）
+          const opts = it.options;
+          if (opts && typeof opts === 'object' && !Array.isArray(opts)) {
+            const lines = Object.keys(opts).map(L => `(${L}) ${String(opts[L] || '').trim()}`);
+            if (lines.length) body = (body ? body + '\n' : '') + lines.join('\n');
+          }
+          return `【条目#${i + 1}｜${tag}】\n${body}`;
         });
-        const LIMIT = 60000;
+        const LIMIT = 120000;
         let material = parts.length
           ? parts.join('\n\n')
           : `【整理后的${reviewLabel}内容】（纯文本记录，无结构化条目）\n${String(rec.text || '')}`;
@@ -3222,16 +3232,26 @@ const server = http.createServer(async (req, res) => {
           throw Object.assign(new Error('AI 审读输出无法解析为疑点清单（schema 不符），原始输出：' + String(reply).slice(0, 120)), { code: 'KB_IMPORT' });
         }
         // quote 定位回写：把每条疑点锚到渲染序条目（先精确 includes，失败用去空白/去锚点宽松匹配）
+        // v2.1.4：送审材料含选项，定位同步覆盖「正文+选项」渲染体，quote 命中选项也能锚回条目
+        const bodies = ordered.map((it, i) => {
+          const body = String(it.text || '');
+          const opts = it.options;
+          if (opts && typeof opts === 'object' && !Array.isArray(opts)) {
+            const lines = Object.keys(opts).map(L => `(${L}) ${String(opts[L] || '').trim()}`);
+            if (lines.length) return (body ? body + '\n' : '') + lines.join('\n');
+          }
+          return body;
+        });
         const normTxt = s => String(s || '').replace(/〖\/\d+〗/g, '').replace(/〖\d+〗/g, '').replace(/\s+/g, '');
         const locate = quote => {
           const q = String(quote || '').trim();
           if (q.length < 4) return { idx: null, text: null, tag: null };
           let hit = -1;
-          if (ordered.length) hit = ordered.findIndex(it => (it.text || '').includes(q));
+          if (ordered.length) hit = bodies.findIndex(b => b.includes(q));
           if (hit < 0) {
             const nq = normTxt(q);
             if (nq.length >= 6) {
-              if (ordered.length) hit = ordered.findIndex(it => normTxt(it.text).includes(nq));
+              if (ordered.length) hit = bodies.findIndex(b => normTxt(b).includes(nq));
               else if (normTxt(rec.text).includes(nq)) hit = 0;
             }
           }
@@ -3395,7 +3415,8 @@ const server = http.createServer(async (req, res) => {
         const clean = {};
         for (const k of keys) {
           const v = String(ans[k] || '').trim().toUpperCase();
-          if (/^[A-G]$/.test(v)) clean[String(k).slice(0, 10)] = v;
+          // v2.1.4：Part B 选项池可达 A–H（2023），统一放行单字母
+          if (/^[A-Z]$/.test(v)) clean[String(k).slice(0, 10)] = v;
         }
         const all = loadAnswers();
         all[unitId] = clean;
@@ -3410,7 +3431,7 @@ const server = http.createServer(async (req, res) => {
         const unitId = String(body.unitId || '');
         const ui = unitItems(unitId);
         if (!ui) return sendJSON(res, 404, { error: '单元不存在：' + unitId });
-        const qs = ui.items.filter(it => it.type === 'question');
+        const qs = ui.items.filter(it => it.type === 'question' && it.number != null);
         const std = loadAnswers()[unitId] || {};
         const given = body.answers && typeof body.answers === 'object' ? body.answers : {};
         const results = qs.map(it => {

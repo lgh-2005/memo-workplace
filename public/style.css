@@ -1627,6 +1627,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   text-decoration: underline; text-decoration-color: var(--primary);
   text-decoration-thickness: 1.5px; text-underline-offset: 4px;
 }
+.kb-passage u, .kb-q-text u {
+  text-decoration: underline; text-decoration-color: var(--primary);
+  text-decoration-thickness: 1.5px; text-underline-offset: 4px;
+}
 .kb-question {
   border: 1px solid var(--border); border-radius: 10px;
   padding: 10px 14px; margin: 8px 0; background: var(--card);

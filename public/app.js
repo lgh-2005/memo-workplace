@@ -37,6 +37,11 @@ function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+/** 语料中仅放行 <u>…</u>（阅读划线句忠实还原）；必须先 esc 再调用 */
+function allowU(s) {
+  return String(s ?? '').replace(/&lt;u&gt;([\s\S]*?)&lt;\/u&gt;/g, '<u>$1</u>');
+}
+
 /** 任何时间戳 → 北京时间 MM-DD HH:mm（服务器在哪个时区都不影响显示） */
 function fmtBJ(iso) {
   if (!iso) return '';
@@ -1523,7 +1528,7 @@ function renderKbList() {
 
 /** 〖N〗 锚点渲染：〖N〗…〖/N〗 配对 = 翻译划线句；独立 〖N〗 = 挖空/答题框 */
 function kbText(text) {
-  let s = esc(String(text || ''));
+  let s = allowU(esc(String(text || '')));
   s = s.replace(/〖(\d+)〗([\s\S]*?)〖\/\1〗/g,
     (m, n, inner) => `<span class="kb-underline"><span class="kb-blank-n">${n}</span>${inner.trim()}</span>`);
   s = s.replace(/〖(\d+)〗/g, (m, n) => `<span class="kb-blank">${n}</span>`);
@@ -2065,7 +2070,7 @@ function unitPracticeHtml(unit, items) {
   if (unit.section === 'use_of_english' && passage) {
     const qByNum = {};
     qs.forEach(q => { qByNum[q.number] = q; });
-    let s = esc(passage.text || '').replace(/〖\/\d+〗/g, '');
+    let s = allowU(esc(passage.text || '')).replace(/〖\/\d+〗/g, '');
     s = s.replace(/〖(\d+)〗/g, (m, n) => {
       const q = qByNum[Number(n)];
       const opts = q && q.options
@@ -2077,11 +2082,12 @@ function unitPracticeHtml(unit, items) {
     return { body: `<div class="kb-passage">${html}</div>` };
   }
   if (unit.section === 'part_b' && passage) {
-    let s = esc(passage.text || '').replace(/〖\/\d+〗/g, '');
-    s = s.replace(/〖(\d+)〗/g, (m, n) =>
-      `<span class="u-gap"><b>${n}</b><select class="input u-pick" data-num="${n}"><option value="">—</option>${'ABCDEFG'.split('').map(k => `<option value="${k}">${k}</option>`).join('')}</select></span>`);
-    const html = s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
     const src = qs.find(q => q.options);
+    const optKeys = src ? Object.keys(src.options) : 'ABCDEFG'.split('');
+    let s = allowU(esc(passage.text || '')).replace(/〖\/\d+〗/g, '');
+    s = s.replace(/〖(\d+)〗/g, (m, n) =>
+      `<span class="u-gap"><b>${n}</b><select class="input u-pick" data-num="${n}"><option value="">—</option>${optKeys.map(k => `<option value="${esc(k)}">${esc(k)}</option>`).join('')}</select></span>`);
+    const html = s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
     const poolHtml = src ? `<div class="kb-sec-title">选项池</div><div class="kb-opts">${Object.entries(src.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')}</div>` : '';
     return { body: `<div class="kb-passage">${html}</div>${poolHtml}` };
   }
@@ -2162,11 +2168,19 @@ async function openUnit(uid) {
     $('#unitAnswerBtn').addEventListener('click', () => {
       const panel = $('#unitAnswerPanel');
       if (panel.style.display === 'block') { panel.style.display = 'none'; return; }
-      const qws = items.filter(it => it.type === 'question' && it.options);
+      const qws = (() => {
+        const pool = items.find(it => it.type === 'question' && it.options && Object.keys(it.options).length);
+        const keysFor = q => (q.options && Object.keys(q.options).length) ? Object.keys(q.options)
+          : (unit.section === 'part_b' && pool ? Object.keys(pool.options) : []);
+        return items.filter(it => it.type === 'question' && it.number != null && keysFor(it).length);
+      })();
       if (!qws.length) { panel.innerHTML = '<div class="hint">该单元没有可判分的客观题。</div>'; panel.style.display = 'block'; return; }
+      const pool = items.find(it => it.type === 'question' && it.options && Object.keys(it.options).length);
+      const keysFor = q => (q.options && Object.keys(q.options).length) ? Object.keys(q.options)
+        : (unit.section === 'part_b' && pool ? Object.keys(pool.options) : []);
       panel.innerHTML = `<div class="card-title" style="margin-top:10px">📝 录入标准答案（请用权威版答案人工录入；标准答案不影响本机数据，仅存 data/answers.json）</div>
         <div class="u-ans-grid">${qws.map(q => {
-          const keys = Object.keys(q.options || {});
+          const keys = keysFor(q);
           return `<span class="u-ans-item">第 ${esc(String(q.number))} 题 <select class="input u-std" data-num="${esc(String(q.number))}"><option value="">—</option>${keys.map(k => `<option value="${esc(k)}">${esc(k)}</option>`).join('')}</select>${answerState.keys.includes(String(q.number)) ? '<span class="u-ok">已有</span>' : ''}</span>`;
         }).join('')}</div>
         <div class="row-gap" style="margin-top:8px"><button class="btn primary" id="unitAnsSave">💾 保存答案</button></div>
