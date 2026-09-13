@@ -1184,6 +1184,27 @@ function mockLLM(messages) {
       })),
     });
   }
+  if (sys.includes('长难句训练教练')) {   // v2.2.5：长难句三遍法 mock
+    const isReview = user.includes('复答');
+    const base = [
+      '## 一、句子主干',
+      '[MOCK] 主语 + 谓语 + 宾语（自测占位，配置真实 AI 后生效）。',
+      '',
+      '## 二、从句与修饰成分',
+      '[MOCK] 定语从句修饰前面的名词；非谓语作状语（自测占位）。',
+      '',
+      '## 三、逻辑与指代关系',
+      '[MOCK] 转折与因果关系说明；代词指代前文（自测占位）。',
+      '',
+      '## 四、译文反馈',
+      '[MOCK] 你的译文主干基本正确；注意语序与个别词义（自测占位）。',
+      '',
+      '## 五、建议译文',
+      '[MOCK] 这是一个占位参考译文，配置真实 AI 服务商后可获得准确讲解。',
+    ];
+    if (isReview) base.push('', '## 六、复测对比', '[MOCK] 相较首答，结构与理解更准确；仍需注意修饰关系（自测占位）。');
+    return base.join('\n');
+  }
   if (sys.includes('美术指导')) {   // v1.0.6：生图提示词 mock
     const word = (user.match(/当前单词：(.+)/) || [])[1] || 'word';
     return JSON.stringify({
@@ -1299,6 +1320,29 @@ const DEFAULT_PROMPTS = {
       '只报告能与原件比对确认的问题：句子残缺或截断、乱码、挖空/划线锚点（〖N〗或〖/N〗）缺失或破坏、明显重复、页眉页脚水印混入、当前文本与原件不符。',
       '重要：原件本身的内容不是问题；拿不准、无法与原件比对确认的，一律输出 {"ok":true}——宁可放过，不可杜撰。',
       '严格输出 JSON（不要 markdown 代码块包裹）：{"ok":true} 表示质量合格；{"ok":false,"issues":[{"desc":"问题描述(60字内)","suggestion":"给用户的修改建议(120字内)"}]} 表示仍有问题——suggestion 必填，且建议里的英文措辞必须来自原件或当前文本，不得杜撰原件中不存在的句子。',
+    ].join('\n')
+  },
+  sentence_training: {
+    id: 'sentence_training',
+    title: '长难句三遍法训练（System Prompt）',
+    desc: '长难句“结构分析 → 自译 → 分层反馈 → 3 天复测”的分层讲解与复测对比提示词',
+    template: [
+      '你是考研英语长难句训练教练，面向中国考研学生。学习者先完成【结构分析】和【自译】，再由你给出分层反馈。',
+      '首次反馈必须固定输出以下五个 Markdown 小节，标题逐字使用，不得增减：',
+      '## 一、句子主干',
+      '## 二、从句与修饰成分',
+      '## 三、逻辑与指代关系',
+      '## 四、译文反馈',
+      '## 五、建议译文',
+      '要求：',
+      '1. 「主干」先给出主句的主语、谓语、宾语/表语；「从句与修饰」逐层拆出定语从句、状语从句、非谓语、插入语等，并说明各自修饰对象。',
+      '2. 「逻辑与指代」说清连接词、转折/因果、代词与省略的所指。',
+      '3. 「译文反馈」先肯定学习者译文中正确的部分，再指出误译、漏译、语序或术语问题，逐条对应；不要空泛夸奖。',
+      '4. 「建议译文」给出一版通顺、忠实、符合中文表达习惯的参考译文。',
+      '5. 只针对本句讲解，不编造原文没有的背景；不确定的地方如实说明。',
+      '6. 复测场景下（输入含【首答】【首轮反馈】【复答】），额外在末尾输出：',
+      '## 六、复测对比',
+      '明确写出相较首答的改善点与仍存在的问题，只作定性比较，禁止输出任何虚构的分数或等级。',
     ].join('\n')
   }
 };
@@ -4612,6 +4656,180 @@ const server = http.createServer(async (req, res) => {
           word: q.word,
           kind: q.kind,
           attemptsSaved: 1,
+        });
+      }
+
+      /* ---- v2.2.5：长难句三遍法与 3 天复测接口 ---- */
+
+      if (p === '/api/learning/sentence/start' && req.method === 'POST') {
+        const body = await readBody(req);
+        const text = String(body.text || '').trim().slice(0, 600);
+        if (text.length < 15) return sendJSON(res, 400, { error: '句子长度不足（至少 15 字符）' });
+        const context = String(body.context || '').trim().slice(0, 3000);
+        const title = String(body.title || '').trim().slice(0, 120);
+
+        // sourceRef 校验：能匹配到句子索引则视为已验证真题/语料来源
+        let verifiedSource = false;
+        let source = 'manual_selection';
+        let refSection = null;
+        let refYear = null;
+        const sourceRef = body.sourceRef && typeof body.sourceRef === 'object' ? body.sourceRef : null;
+        if (sourceRef && sourceRef.rid) {
+          const norm = s => String(s || '').replace(/\s+/g, ' ').trim().toLowerCase();
+          const target = norm(sourceRef.sentence || text);
+          const hit = kbSentences().find(it => it.rid === String(sourceRef.rid) &&
+            (norm(it.s) === target || norm(it.s).includes(target) || target.includes(norm(it.s))));
+          if (hit) {
+            verifiedSource = true;
+            source = hit.sourceKind === 'exam' ? 'exam' : (hit.sourceKind === 'external' ? 'external' : 'corpus');
+            refSection = hit.section || null;
+            refYear = hit.year || null;
+          }
+        }
+
+        const submittedAt = new Date().toISOString();
+        const attempt = {
+          id: `att_sent_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+          kind: 'sentence_analysis',
+          source,
+          itemId: sourceRef && sourceRef.rid ? `sentence:${sourceRef.rid}` : 'sentence:manual',
+          year: refYear,
+          section: 'sentence',
+          prompt: text,
+          expected: null,
+          answer: null,
+          result: 'pending',
+          confidence: null,
+          startedAt: submittedAt,
+          submittedAt,
+          durationMs: null,
+          meta: {
+            phase: 'first',
+            context,
+            title,
+            verifiedSource,
+            sourceKind: verifiedSource ? source : 'manual_selection',
+            refSection,
+          },
+        };
+        appendLearningAttempts([attempt]);
+        return sendJSON(res, 200, { ok: true, attemptId: attempt.id, verifiedSource, source });
+      }
+
+      if (p === '/api/learning/sentence/submit' && req.method === 'POST') {
+        const body = await readBody(req);
+        const attemptId = String(body.attemptId || '').trim();
+        if (!attemptId) return sendJSON(res, 400, { error: '缺少 attemptId' });
+
+        // 先校验记录状态（完成/未到期），再校验正文，保证幂等与 409 语义优先
+        const store = loadLearningStore();
+        const target = (store.attempts || []).find(a => a.id === attemptId);
+        if (!target) return sendJSON(res, 404, { error: '训练记录不存在: ' + attemptId });
+        if (target.kind !== 'sentence_analysis') return sendJSON(res, 400, { error: '该记录不是长难句训练' });
+
+        const isReview = !!target.reviewOf;
+        if (target.result === 'completed') {
+          return sendJSON(res, 409, { error: '该训练已完成，请勿重复提交', code: 'SENTENCE_DONE' });
+        }
+        if (isReview) {
+          const dueT = target.dueAt ? new Date(target.dueAt).getTime() : NaN;
+          if (isNaN(dueT) || dueT > Date.now()) {
+            return sendJSON(res, 409, { error: '复测尚未到期，请到期后再来', code: 'SENTENCE_NOT_DUE' });
+          }
+        }
+
+        const structure = String(body.structure || '').trim();
+        const translation = String(body.translation || '').trim();
+        if (structure.length < 2 || translation.length < 2) {
+          return sendJSON(res, 400, { error: '结构分析与自译都需要填写' });
+        }
+        if (structure.length > 2000) return sendJSON(res, 400, { error: '结构分析超过 2000 字符限制' });
+        if (translation.length > 2000) return sendJSON(res, 400, { error: '自译超过 2000 字符限制' });
+
+        // 组装 LLM 输入
+        const msgs = [{ role: 'system', content: getPrompt('sentence_training') }];
+        const baseUser = [
+          `【原句】${target.prompt}`,
+          target.meta?.context ? `【上下文】\n${target.meta.context}` : '',
+        ].filter(Boolean).join('\n\n');
+        if (isReview) {
+          const first = (store.attempts || []).find(a => a.id === target.reviewOf);
+          const firstText = first ? `【首答结构分析】\n${first.meta?.structure || ''}\n\n【首答自译】\n${first.meta?.translation || ''}` : '';
+          const firstFeedback = first?.expected ? `【首轮反馈】\n${first.expected}` : '';
+          msgs.push({ role: 'user', content: [baseUser, firstText, firstFeedback,
+            `【复答结构分析】\n${structure}`, `【复答自译】\n${translation}`].filter(Boolean).join('\n\n') });
+        } else {
+          msgs.push({ role: 'user', content: [baseUser,
+            `【结构分析】\n${structure}`, `【自译】\n${translation}`].filter(Boolean).join('\n\n') });
+        }
+
+        let reply;
+        try {
+          reply = await llmChat(msgs, {
+            maxTokens: (config.review && config.review.thinking) ? 8000 : 1800,
+            providerId: (config.review && config.review.providerId) || undefined,
+            llmOverride: (() => {
+              const over = {};
+              if (config.review && config.review.model) over.model = config.review.model;
+              if (config.review && config.review.thinking) {
+                over.temperature = 1;
+                over._thinking = { type: 'enabled', budget_tokens: 6000 };
+              }
+              return Object.keys(over).length ? over : undefined;
+            })(),
+          });
+        } catch (e) {
+          // LLM 失败：保存用户输入但保持 pending 以便重试，不生成复测任务
+          target.meta = { ...(target.meta || {}), structure, translation, phase: isReview ? 'review' : 'first', lastError: String(e.message || '').slice(0, 300) };
+          target.submittedAt = new Date().toISOString();
+          saveLearningStore(store);
+          return sendJSON(res, 502, { ok: false, retryable: true, error: 'AI 反馈生成失败，已保存你的输入，可稍后重试：' + String(e.message || '').slice(0, 200) });
+        }
+
+        const submittedAt = new Date().toISOString();
+        target.answer = `${structure}\n\n[自译] ${translation}`.slice(0, 4000);
+        target.expected = String(reply).slice(0, 4000);
+        target.result = 'completed';
+        target.submittedAt = submittedAt;
+        target.meta = { ...(target.meta || {}), structure, translation, phase: isReview ? 'review' : 'first', feedbackAt: submittedAt };
+
+        let reviewAttemptId = null;
+        if (!isReview) {
+          // 首次成功：生成 3 天后复测任务
+          const dueAt = new Date(Date.now() + 3 * 86400000).toISOString();
+          const reviewAttempt = {
+            kind: 'sentence_analysis',
+            source: target.source,
+            itemId: target.itemId,
+            unitId: target.unitId || null,
+            examId: target.examId || null,
+            year: target.year || null,
+            section: 'sentence',
+            prompt: target.prompt,
+            expected: null,
+            answer: null,
+            result: 'pending',
+            confidence: null,
+            startedAt: submittedAt,
+            submittedAt,
+            durationMs: null,
+            reviewOf: target.id,
+            dueAt,
+            meta: { phase: 'review', context: target.meta?.context || '', title: target.meta?.title || '', verifiedSource: !!target.meta?.verifiedSource, sourceKind: target.meta?.sourceKind || 'manual_selection' },
+          };
+          const normalized = normalizeLearningAttempt(reviewAttempt);
+          store.attempts.push(normalized);
+          store.attempts = pruneLearningAttempts(store.attempts);
+          reviewAttemptId = normalized.id;
+        }
+
+        saveLearningStore(store);
+        return sendJSON(res, 200, {
+          ok: true,
+          feedback: String(reply),
+          isReview,
+          reviewAttemptId,
+          dueAt: !isReview ? new Date(Date.now() + 3 * 86400000).toISOString() : null,
         });
       }
 

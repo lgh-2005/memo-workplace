@@ -437,7 +437,21 @@ function renderLearningReport(data) {
       </div>
     </div>` : '';
 
-  bodyEl.innerHTML = overviewHtml + repHtml + reasonHtml + confHtml + mnHtml;
+  // 6. 待复测长难句任务（v2.2.5）
+  const dueList = data.dueReviews || [];
+  const dueHtml = dueList.length ? `
+    <div class="report-section">
+      <div class="report-sec-title">📅 待复测长难句（3 天周期）</div>
+      <div class="report-due-list">
+        ${dueList.map(d => `
+          <button type="button" class="report-due-item" data-review-id="${esc(d.id)}" data-prompt="${esc(String(d.prompt || '').slice(0, 600))}">
+            <span class="due-sentence">${esc(String(d.prompt || '').slice(0, 80))}${String(d.prompt || '').length > 80 ? '…' : ''}</span>
+            <span class="due-badge">复测</span>
+          </button>`).join('')}
+      </div>
+    </div>` : '';
+
+  bodyEl.innerHTML = overviewHtml + repHtml + reasonHtml + confHtml + mnHtml + dueHtml;
 
   // 绑定反复错词点击跳转去学
   $$('#learningReportBody .report-word-tag').forEach(btn => {
@@ -448,6 +462,13 @@ function renderLearningReport(data) {
         $('#wordSearch').value = sp;
         loadWords();
       }
+    });
+  });
+
+  // 绑定待复测长难句点击进入训练弹层
+  $$('#learningReportBody .report-due-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      stOpenReview(btn.dataset.reviewId, btn.dataset.prompt, {});
     });
   });
 }
@@ -3319,6 +3340,7 @@ function selLearnOpen() {
     <div class="sel-learn-foot">
       <button class="btn small" data-sel-speak>🔊 朗读</button>
       <button class="btn small ghost" data-sel-copy>📋 复制解析</button>
+      <button class="btn small" data-sel-sentence>🧩 加入三遍训练</button>
     </div>`;
   document.body.appendChild(card);
   selLearnCard = card;
@@ -3333,6 +3355,10 @@ function selLearnOpen() {
   }, { passive: false });
   card.querySelector('.sel-learn-x').addEventListener('click', selLearnCloseCard);
   card.querySelector('[data-sel-speak]').addEventListener('click', () => speak(text));
+  card.querySelector('[data-sel-sentence]').addEventListener('click', () => {
+    selLearnCloseCard();
+    stOpen({ text, context, title, sourceRef: selLearnState?.sourceRef || null });
+  });
   card.querySelector('[data-sel-copy]').addEventListener('click', async () => {
     const c = card.querySelector('.sel-learn-body')?.innerText || '';
     try { await navigator.clipboard.writeText(c); toast('📋 已复制'); } catch { toast('复制失败'); }
@@ -3364,7 +3390,9 @@ function selLearnOnSelection() {
   let rect;
   try { rect = range.getBoundingClientRect(); } catch { return; }
   if (!rect || (!rect.width && !rect.height)) return;
-  selLearnState = { text, context: selLearnContextOf(range, root), title: selLearnTitleOf(root), kind: selLearnKindOf(text), rect };
+  const ridEl = cacEl?.closest?.('[data-rid]');
+  const sourceRef = ridEl ? { rid: ridEl.dataset.rid, sentence: text } : null;
+  selLearnState = { text, context: selLearnContextOf(range, root), title: selLearnTitleOf(root), kind: selLearnKindOf(text), rect, sourceRef };
   /* 移动端选区手柄遮挡浮动词：直接给底部「精读」条，点击即出卡片 */
   selLearnShowBtn(rect);
 }
@@ -3385,6 +3413,141 @@ document.addEventListener('mousedown', e => {
     const sel = window.getSelection();
     if (!sel || sel.isCollapsed) { selLearnRemoveBtn(); }
   }, 120);
+});
+
+/* ---------------- v2.2.5：长难句三遍法训练 ---------------- */
+
+const stState = {
+  attemptId: null,
+  mode: 'first',       // first | review
+  text: '',
+  context: '',
+  title: '',
+  sourceRef: null,
+  triggeredBy: null,
+};
+
+function stEl(id) { return document.getElementById(id); }
+
+function stOpen(opts = {}) {
+  const overlay = stEl('stOverlay');
+  if (!overlay) return;
+  stState.mode = opts.mode || 'first';
+  stState.attemptId = opts.attemptId || null;
+  stState.text = opts.text || '';
+  stState.context = opts.context || '';
+  stState.title = opts.title || '';
+  stState.sourceRef = opts.sourceRef || null;
+  stState.triggeredBy = opts.triggeredBy || document.activeElement;
+
+  stEl('stSource').textContent = opts.title ? `材料：${opts.title}` : (opts.sourceLabel || '');
+  stEl('stSentence').textContent = opts.text || '';
+  stEl('stStructure').value = opts.structure || '';
+  stEl('stTranslation').value = opts.translation || '';
+  stEl('stMsg').textContent = '';
+  stEl('stMsg').className = 'result';
+  stEl('stInputPane').style.display = 'block';
+  stEl('stFeedbackPane').style.display = 'none';
+  stEl('stFeedback').innerHTML = '';
+  stEl('stSubmitBtn').disabled = false;
+  stEl('stSubmitBtn').textContent = stState.mode === 'review' ? '提交复测，看对比反馈' : '提交，看 AI 分层反馈';
+  overlay.style.display = 'flex';
+  setTimeout(() => { const s = stEl('stStructure'); if (s) s.focus(); }, 30);
+}
+
+function stClose() {
+  const overlay = stEl('stOverlay');
+  if (overlay) overlay.style.display = 'none';
+  const back = stState.triggeredBy;
+  if (back && back.focus) { try { back.focus(); } catch {} }
+}
+
+/** 从仪表盘待复测任务打开（attemptId 为待复测记录 id） */
+function stOpenReview(reviewAttemptId, prompt, meta) {
+  const m = meta || {};
+  stOpen({
+    mode: 'review',
+    attemptId: reviewAttemptId,
+    text: prompt,
+    title: m.title || '',
+    sourceLabel: m.verifiedSource ? '真题/语料复测' : '手动选句复测',
+    triggeredBy: document.activeElement,
+  });
+}
+
+async function stEnsureAttempt() {
+  if (stState.attemptId) return stState.attemptId;
+  const sourceRef = stState.sourceRef || null;
+  const r = await api('/api/learning/sentence/start', {
+    method: 'POST',
+    body: {
+      text: stState.text,
+      context: stState.context || '',
+      title: stState.title || '',
+      sourceRef,
+    },
+  });
+  stState.attemptId = r.attemptId;
+  return r.attemptId;
+}
+
+async function stSubmit() {
+  const structure = stEl('stStructure').value.trim();
+  const translation = stEl('stTranslation').value.trim();
+  const msg = stEl('stMsg');
+  if (structure.length < 2 || translation.length < 2) {
+    msg.textContent = '⚠️ 结构和自译都要填写后再提交';
+    msg.className = 'result err';
+    return;
+  }
+  const btn = stEl('stSubmitBtn');
+  msg.textContent = 'AI 正在生成分层反馈…';
+  msg.className = 'result';
+  btn.disabled = true;
+  let attemptId;
+  try {
+    attemptId = await stEnsureAttempt();
+  } catch (e) {
+    msg.textContent = '❌ ' + e.message;
+    msg.className = 'result err';
+    btn.disabled = false;
+    return;
+  }
+  try {
+    const r = await api('/api/learning/sentence/submit', {
+      method: 'POST',
+      body: {
+        attemptId,
+        structure,
+        translation,
+        startedAt: new Date().toISOString(),
+      },
+    });
+    stEl('stFeedback').innerHTML = mdLite(r.feedback || '（无反馈）');
+    stEl('stInputPane').style.display = 'none';
+    stEl('stFeedbackPane').style.display = 'block';
+    stEl('stReviewNote').innerHTML = r.isReview
+      ? '<div class="hint">✅ 复测完成，对比结果见「复测对比」小节。</div>'
+      : (r.dueAt ? `<div class="hint">📅 已安排 3 天后复测（${fmtBJ(r.dueAt)} 到期），届时可从仪表盘「待复测」进入。</div>` : '');
+    // 反馈后不提供修改，防止刷分
+    stState.attemptId = attemptId;
+  } catch (e) {
+    msg.textContent = '❌ ' + e.message + (e.message.includes('已保存') ? '（可再次点击提交重试）' : '');
+    msg.className = 'result err';
+    btn.disabled = false;
+  }
+}
+
+if (stEl('stSubmitBtn')) stEl('stSubmitBtn').addEventListener('click', stSubmit);
+if (stEl('stCloseBtn')) stEl('stCloseBtn').addEventListener('click', stClose);
+if (stEl('stContinueBtn')) stEl('stContinueBtn').addEventListener('click', stClose);
+if (stEl('stOverlay')) {
+  stEl('stOverlay').addEventListener('click', e => { if (e.target === stEl('stOverlay')) stClose(); });
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && stEl('stOverlay') && stEl('stOverlay').style.display !== 'none') {
+    stClose();
+  }
 });
 
 /* ---------------- 番茄钟 ---------------- */

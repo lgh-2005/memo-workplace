@@ -1089,6 +1089,78 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .chat-panel { position: relative; }   /* for ch-overlay absolute positioning */
 .kaoyan-badge { display: inline-block; }
 
+/* ============ v2.2.5：长难句三遍法训练弹层 ============ */
+.st-overlay {
+  position: fixed; inset: 0; z-index: 1200;
+  background: rgba(15, 23, 42, .5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.st-modal {
+  width: 100%; max-width: 900px; max-height: 88dvh;
+  display: flex; flex-direction: column;
+  background: var(--card); color: var(--text);
+  border: 1px solid var(--border); border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, .28);
+  overflow: hidden;
+}
+.st-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px; border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+.st-title { font-size: 15px; font-weight: 700; }
+.st-close {
+  width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text);
+  font-size: 15px; line-height: 1;
+}
+.st-close:hover { border-color: var(--primary); color: var(--primary); }
+.st-body { padding: 16px 18px; overflow-y: auto; }
+.st-source { font-size: 12px; color: var(--text-sub); margin-bottom: 8px; }
+.st-sentence {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px; line-height: 1.8; text-indent: 0;
+  padding: 12px 14px; margin-bottom: 14px;
+  background: var(--primary-soft); border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0; color: var(--text);
+}
+.st-textarea {
+  width: 100%; resize: vertical; font-size: 14px; line-height: 1.7;
+  padding: 10px 12px; min-height: 96px;
+}
+.st-feedback {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+  padding: 12px 16px; margin-bottom: 12px; font-size: 14px; line-height: 1.75;
+}
+.st-feedback h2 {
+  font-size: 14px; margin: 14px 0 6px; padding-left: 8px;
+  border-left: 3px solid var(--primary); color: var(--primary);
+}
+.st-feedback h2:first-child { margin-top: 0; }
+.st-review-note { margin-bottom: 10px; }
+.st-overlay .field-label { display: block; margin: 12px 0 6px; }
+.st-overlay .row-gap { margin-top: 14px; }
+.report-due-list { display: flex; flex-direction: column; gap: 8px; }
+.report-due-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  text-align: left; width: 100%; cursor: pointer;
+  padding: 10px 12px; border-radius: 10px;
+  background: var(--card); border: 1px solid var(--border); color: var(--text);
+}
+.report-due-item:hover { border-color: var(--primary); }
+.report-due-item .due-sentence {
+  font-family: Georgia, 'Times New Roman', serif; font-size: 13px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.report-due-item .due-badge {
+  flex: 0 0 auto; font-size: 11px; font-weight: 600;
+  padding: 2px 9px; border-radius: 999px;
+  background: var(--primary); color: #fff;
+}
+
 /* ============ 移动端适配 ============ */
 @media (max-width: 700px) {
   html, body {
@@ -2433,6 +2505,16 @@ body.spotlight-active .kb-passage p.spotlight-focus {
 .wb-toast.show { opacity: 1; transform: none; }
 @media (max-width: 700px) {
   .wb-toast { right: 10px; bottom: 72px; left: 10px; max-width: none; }
+}
+
+/* v2.2.5：长难句训练弹层移动端适配 */
+@media (max-width: 700px) {
+  .st-overlay { padding: 10px; align-items: flex-end; }
+  .st-modal { max-width: none; width: 100%; max-height: 90dvh; border-radius: 16px 16px 0 0; }
+  .st-modal .btn { min-height: 44px; }
+  .st-close { width: 40px; height: 40px; }
+  .st-body { padding: 14px 14px calc(14px + env(safe-area-inset-bottom, 0px)); }
+  .st-sentence { font-size: 15px; }
 }
 
 

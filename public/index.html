@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.2.4</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.2.5</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.2.4</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.2.5</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -889,6 +889,41 @@
       <span class="more-item-icon">⚙️</span>
       <span class="more-item-text">系统与风格设置</span>
     </button>
+  </div>
+</div>
+
+<!-- v2.2.5：长难句三遍法训练弹层（桌面/移动共用，单个可复用） -->
+<div class="st-overlay" id="stOverlay" style="display:none">
+  <div class="st-modal" role="dialog" aria-modal="true" aria-labelledby="stTitle">
+    <div class="st-head">
+      <span class="st-title" id="stTitle">🧩 长难句三遍训练</span>
+      <button class="st-close" id="stCloseBtn" type="button" title="关闭 (Esc)">✕</button>
+    </div>
+    <div class="st-body">
+      <div class="st-source" id="stSource"></div>
+      <div class="st-sentence" id="stSentence"></div>
+
+      <!-- 第一遍：结构与自译输入（AI 反馈前不显示解析） -->
+      <div id="stInputPane">
+        <label class="field-label">第一遍 · 结构分析（主干/从句/修饰，先自己拆）</label>
+        <textarea class="input st-textarea" id="stStructure" rows="5" maxlength="2000" placeholder="先写出主句主干，再逐层标注从句、非谓语、插入语……"></textarea>
+        <label class="field-label">第二遍 · 自译（不看答案，先翻成中文）</label>
+        <textarea class="input st-textarea" id="stTranslation" rows="5" maxlength="2000" placeholder="按你的理解翻译整句……"></textarea>
+        <div class="result" id="stMsg"></div>
+        <div class="row-gap">
+          <button class="btn primary" id="stSubmitBtn">提交，看 AI 分层反馈</button>
+        </div>
+      </div>
+
+      <!-- 反馈区 -->
+      <div id="stFeedbackPane" style="display:none">
+        <div class="st-feedback" id="stFeedback"></div>
+        <div class="st-review-note" id="stReviewNote"></div>
+        <div class="row-gap">
+          <button class="btn" id="stContinueBtn">完成，关闭</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
