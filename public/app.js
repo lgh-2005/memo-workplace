@@ -3525,7 +3525,43 @@ const quiz = {
   distractorPool: [],
   confidence: 'unsure',
   itemStartedAt: null,
+  submode: 'basic',
 };
+
+/* v2.2.4：真题迁移训练状态 */
+const transfer = {
+  running: false,
+  src: 'forget',
+  kinds: { context: true, cloze: true },
+  questions: [],
+  idx: 0,
+  results: [],
+  itemStartedAt: null,
+  confidence: 'unsure',
+  answered: false,
+};
+
+// 二级模式切换
+$$('#quizSubmode .quiz-submode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('#quizSubmode .quiz-submode-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    quiz.submode = btn.dataset.submode;
+    $('#quizBasicPane').style.display = quiz.submode === 'basic' ? 'block' : 'none';
+    $('#quizTransferPane').style.display = quiz.submode === 'transfer' ? 'block' : 'none';
+  });
+});
+
+// 迁移训练词源与题型开关
+$$('#transferSources .chip').forEach(c => c.addEventListener('click', () => {
+  $$('#transferSources .chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  transfer.src = c.dataset.tsrc;
+}));
+$$('#transferKinds .chip').forEach(c => c.addEventListener('click', () => {
+  c.classList.toggle('active');
+  transfer.kinds[c.dataset.kind] = c.classList.contains('active');
+}));
 
 function resetQuizConfidence() {
   quiz.confidence = 'unsure';
@@ -3609,6 +3645,7 @@ async function startQuiz() {
     msg.textContent = '';
     $('#quizSetup').style.display = 'none';
     $('#quizRun').style.display = 'block';
+    $('#quizConfidenceGroup').style.display = '';
     renderQuizItem();
   } catch (e) {
     msg.textContent = '❌ ' + e.message;
@@ -3620,6 +3657,7 @@ function quitQuiz() {
   quiz.running = false;
   $('#quizRun').style.display = 'none';
   $('#quizSetup').style.display = 'block';
+  $('#quizConfidenceGroup').style.display = '';
 }
 
 function quizAdvance() {
@@ -3755,6 +3793,196 @@ async function finishQuiz() {
     </div>`;
   $('#quizAgainBtn').addEventListener('click', quitQuiz);
 }
+
+/* ---------------- v2.2.4：真题迁移训练 ---------------- */
+
+async function startTransfer() {
+  const msg = $('#transferMsg');
+  const kinds = transfer.kinds;
+  if (!kinds.context && !kinds.cloze) {
+    msg.textContent = '⚠️ 请至少开启一种题型（语境选义或搭配补全）';
+    msg.className = 'result err';
+    return;
+  }
+  const count = Math.min(20, Math.max(3, Number($('#transferCount').value) || 6));
+  msg.textContent = '正在从真题句中生成迁移题…';
+  msg.className = 'result';
+  try {
+    const r = await api('/api/learning/vocab/generate', {
+      method: 'POST',
+      body: { filter: transfer.src, count, context: kinds.context, cloze: kinds.cloze },
+    });
+    const questions = r.questions || [];
+    if (!questions.length) {
+      msg.textContent = '⚠️ ' + (r.message || '暂无可生成的迁移题');
+      msg.className = 'result err';
+      return;
+    }
+    transfer.questions = questions;
+    transfer.idx = 0;
+    transfer.results = [];
+    transfer.running = true;
+    transfer.answered = false;
+    msg.textContent = '';
+    $('#quizSetup').style.display = 'none';
+    $('#quizRun').style.display = 'block';
+    // 复用基础测验的运行容器，但隐藏信心组（迁移题不需要单选信心，直接用默认）
+    $('#quizConfidenceGroup').style.display = 'none';
+    renderTransferItem();
+  } catch (e) {
+    msg.textContent = '❌ ' + e.message;
+    msg.className = 'result err';
+  }
+}
+
+function transferAdvance() {
+  transfer.idx++;
+  if (transfer.idx >= transfer.questions.length) return finishTransfer();
+  renderTransferItem();
+}
+
+function renderTransferItem() {
+  const q = transfer.questions[transfer.idx];
+  transfer.itemStartedAt = new Date().toISOString();
+  transfer.answered = false;
+  $('#quizProgress').textContent = `第 ${transfer.idx + 1} / ${transfer.questions.length} 题`;
+  $('#quizBar').style.width = (transfer.idx / transfer.questions.length * 100) + '%';
+  const area = $('#quizArea');
+
+  const kindBadge = q.kind === 'vocab_cloze'
+    ? '<span class="transfer-kind-badge cloze">搭配补全</span>'
+    : '<span class="transfer-kind-badge">语境选义</span>';
+  const srcLabel = [q.sourceLabel, q.title].filter(Boolean).join(' · ');
+
+  if (q.kind === 'vocab_context') {
+    const optHtml = (q.options || []).map((text, i) =>
+      `<button type="button" class="btn quiz-opt transfer-opt" data-i="${i}">${esc(text)}</button>`).join('');
+    area.innerHTML = `
+      <div class="transfer-meta">${kindBadge}<span class="tag">${esc(srcLabel)}</span></div>
+      <div class="transfer-source-sentence">${esc(q.sentence)}</div>
+      <div class="quiz-hint">选出 <b>${esc(q.word)}</b> 在这句真题中的正确释义</div>
+      <div class="quiz-opts" id="transferOpts">${optHtml}</div>
+      <div class="quiz-feedback" id="quizFeedback"></div>`;
+    let done = false;
+    $$('#quizArea .transfer-opt').forEach(b => b.addEventListener('click', () => {
+      if (done) return;
+      done = true;
+      transfer.answered = true;
+      const picked = q.options[Number(b.dataset.i)];
+      submitTransfer(q, picked);
+    }));
+    return;
+  }
+
+  // 搭配补全：文本输入
+  area.innerHTML = `
+    <div class="transfer-meta">${kindBadge}<span class="tag">${esc(srcLabel)}</span></div>
+    <div class="transfer-source-sentence">${esc(q.sentence)}</div>
+    <div class="quiz-hint">根据句意与词形，补全横线处的单词（原形：<b>${esc(q.word)}</b>）</div>
+    <div class="quiz-spell-row">
+      <input type="text" id="transferInput" class="input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="输入缺失的单词…">
+      <button class="btn primary" id="transferSubmitBtn">提交</button>
+    </div>
+    <div class="quiz-feedback" id="quizFeedback"></div>`;
+  const input = $('#transferInput');
+  input.focus();
+  const doSubmit = () => {
+    if (transfer.answered) return;
+    const val = input.value.trim();
+    if (!val) return;
+    transfer.answered = true;
+    input.disabled = true;
+    $('#transferSubmitBtn').disabled = true;
+    submitTransfer(q, val);
+  };
+  $('#transferSubmitBtn').addEventListener('click', doSubmit);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') doSubmit(); });
+}
+
+async function submitTransfer(q, answer) {
+  const now = Date.now();
+  const startT = transfer.itemStartedAt ? new Date(transfer.itemStartedAt).getTime() : now;
+  const durationMs = Math.max(0, Math.min(14400000, now - startT));
+  let correct = false;
+  let expected = '';
+  try {
+    const r = await api('/api/learning/vocab/submit', {
+      method: 'POST',
+      body: {
+        token: q.token,
+        answer,
+        confidence: 'unsure',
+        startedAt: transfer.itemStartedAt,
+        durationMs,
+      },
+    });
+    correct = !!r.correct;
+    expected = r.expected || '';
+  } catch (e) {
+    $('#quizFeedback').innerHTML = `<span class="fb-bad">❌ 提交失败：${esc(e.message)}</span>`;
+    // 允许重试
+    transfer.answered = false;
+    return;
+  }
+
+  transfer.results.push({ word: q.word, kind: q.kind, answer, expected, correct });
+
+  // 高亮反馈
+  if (q.kind === 'vocab_context') {
+    $$('#quizArea .transfer-opt').forEach(b => {
+      const text = q.options[Number(b.dataset.i)];
+      if (text === expected) b.classList.add('correct');
+      else if (text === answer && !correct) b.classList.add('wrong');
+    });
+  }
+  $('#quizFeedback').innerHTML = correct
+    ? '<span class="fb-ok">✅ 正确</span>'
+    : `<span class="fb-bad">❌ 正确答案：<b>${esc(expected)}</b></span>`;
+  setTimeout(transferAdvance, correct ? 800 : 1800);
+}
+
+async function finishTransfer() {
+  transfer.running = false;
+  $('#quizBar').style.width = '100%';
+  $('#quizProgress').textContent = '迁移训练完成 🎯';
+  $('#quizConfidenceGroup').style.display = '';
+  const r = transfer.results;
+  const correctN = r.filter(x => x.correct).length;
+  const ctx = r.filter(x => x.kind === 'vocab_context');
+  const cloze = r.filter(x => x.kind === 'vocab_cloze');
+  const wrongWords = [...new Set(r.filter(x => !x.correct).map(x => x.word))];
+
+  const wrongHtml = wrongWords.length
+    ? `<div class="transfer-wrong-list">${wrongWords.map(w => `<button type="button" class="transfer-wrong-chip" data-word="${esc(w)}">${esc(w)}</button>`).join('')}</div>`
+    : '<div class="hint" style="text-align:center">本轮全部答对，状态不错 👏</div>';
+
+  $('#quizArea').innerHTML = `
+    <div class="quiz-done">
+      <div class="quiz-score">${correctN} / ${r.length}</div>
+      <div class="transfer-done-sub">
+        语境选义 ${ctx.filter(x => x.correct).length}/${ctx.length} · 搭配补全 ${cloze.filter(x => x.correct).length}/${cloze.length}
+      </div>
+      <div class="hint" style="text-align:center">${wrongWords.length ? '错词已计入「忘记词」，点击下方词或去 AI 学习攻克：' : ''}</div>
+      ${wrongHtml}
+      <div class="row-gap" style="justify-content:center">
+        <button class="btn primary" id="transferAgainBtn">🔁 再来一组</button>
+        <button class="btn" id="transferToStudyBtn" data-jump="study" data-filter="forget">去学错词</button>
+      </div>
+    </div>`;
+  $('#transferAgainBtn').addEventListener('click', () => {
+    $('#quizRun').style.display = 'none';
+    $('#quizSetup').style.display = 'block';
+  });
+  $$('#quizArea .transfer-wrong-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      switchTab('study');
+      $('#wordSearch').value = chip.dataset.word;
+      loadWords();
+    });
+  });
+}
+
+if ($('#transferStartBtn')) $('#transferStartBtn').addEventListener('click', startTransfer);
 
 /* ---------------- 启动 ---------------- */
 

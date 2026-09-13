@@ -59,6 +59,11 @@ function bjDate(offsetDays = 0) {
 
 const MM_BASE = 'https://open.maimemo.com/open/api/v1/memo';
 
+/* v2.2.4：词汇真题迁移训练——仅在进程内存中驻留的签名密钥（重启即失效，旧题自动作废） */
+const VOCAB_TRAIN_SECRET = crypto.randomBytes(32);
+const VOCAB_QUESTION_TTL_MS = 6 * 3600_000;   // 单题有效期 6 小时
+const vocabQuestionMap = new Map();           // token -> 题目上下文（仅内存）
+
 /* ------------------------------------------------------------------ */
 /* 存储                                                                */
 /* ------------------------------------------------------------------ */
@@ -591,6 +596,174 @@ function buildLearningReport(days = 7) {
     },
     dueReviews,
     recentAttempts,
+  };
+}
+
+/* ------------------------------------------------------------------ */
+/* v2.2.4：词汇真题迁移训练（真实真题句确定性出题 + HMAC 防篡改判分）      */
+/* ------------------------------------------------------------------ */
+
+function vocabGlossOf(word) {
+  const g = db.glosses && db.glosses[word];
+  if (!g) return null;
+  const text = typeof g === 'string' ? g : g.gloss;
+  if (!text) return null;
+  return {
+    pos: (typeof g === 'object' && g.pos) ? String(g.pos) : '',
+    gloss: String(text).trim(),
+  };
+}
+
+/** 与 /api/words 同源的候选词筛选（仅支持 sticky/vague/forget/due7） */
+function collectVocabCandidates(filter) {
+  const todayStr = bjDate();
+  let words = Object.values(db.words);
+  if (filter === 'sticky') words = words.filter(w => w.tags?.includes('STICKING'));
+  else if (filter === 'forget') words = words.filter(w => w.lastResponse === 'FORGET' || w.today?.firstResponse === 'FORGET' || w.quizResponse === 'FORGET');
+  else if (filter === 'vague') words = words.filter(w => w.lastResponse === 'VAGUE' || w.today?.firstResponse === 'VAGUE' || w.quizResponse === 'VAGUE');
+  else if (filter === 'due7') {
+    const end = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
+    words = words.filter(w => {
+      const d = (w.nextStudyDate || '').slice(0, 10);
+      return d && d <= end;
+    });
+  }
+  return words;
+}
+
+/** 取句中真实命中的目标词形（用于 cloze 挖空），大小写不敏感 */
+function findWordFormInSentence(sentence, word) {
+  const inflections = getWordInflections(word);
+  const pattern = inflections.length
+    ? new RegExp(`\\b(?:${inflections.map(escapeRegExp).join('|')})\\b`, 'i')
+    : new RegExp(`\\b${escapeRegExp(word)}\\b`, 'i');
+  const m = pattern.exec(sentence);
+  return m ? m[0] : null;
+}
+
+function vocabSignPayload(q) {
+  return crypto.createHmac('sha256', VOCAB_TRAIN_SECRET)
+    .update([q.kind, q.word, q.sentence, q.expected].join('|'))
+    .digest('hex');
+}
+
+/** 生成词汇真题迁移题（语境选义 + 搭配补全），不调用 LLM，仅用真实真题句 */
+function generateVocabQuestions(filter, count, options = {}) {
+  const wantContext = options.context !== false;
+  const wantCloze = options.cloze !== false;
+  const candidates = collectVocabCandidates(filter);
+  const now = Date.now();
+
+  const usable = [];
+  for (const w of candidates) {
+    const gloss = vocabGlossOf(w.spelling);
+    if (!gloss) continue;
+    const evidence = kbEvidenceForWord(w.spelling, 3, 0);
+    const examHit = evidence.exams && evidence.exams[0];
+    if (!examHit) continue;
+    usable.push({ word: w.spelling, gloss, hit: examHit });
+  }
+
+  // 打乱候选词，避免每次同一顺序
+  for (let i = usable.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [usable[i], usable[j]] = [usable[j], usable[i]];
+  }
+
+  // 干扰项池：所有本地 gloss（去重）
+  const allGlosses = [];
+  const glossSeen = new Set();
+  for (const sp of Object.keys(db.glosses || {})) {
+    const g = vocabGlossOf(sp);
+    if (g && !glossSeen.has(g.gloss)) { glossSeen.add(g.gloss); allGlosses.push(g.gloss); }
+  }
+
+  const questions = [];
+  for (const item of usable) {
+    if (questions.length >= count) break;
+
+    if (wantContext) {
+      // 语境选义：正确项为服务端 gloss，干扰项从其他本地 gloss 去重抽取 3 个
+      const distractors = [];
+      for (const g of allGlosses) {
+        if (g === item.gloss.gloss) continue;
+        distractors.push(g);
+        if (distractors.length >= 10) break;
+      }
+      for (let i = distractors.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
+      }
+      const wrongOpts = distractors.slice(0, 3);
+      if (wrongOpts.length < 3) continue;   // 释义池不足，跳过
+      const opts = [item.gloss.gloss, ...wrongOpts];
+      for (let i = opts.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [opts[i], opts[j]] = [opts[j], opts[i]];
+      }
+      const expected = item.gloss.gloss;
+      const q = {
+        kind: 'vocab_context',
+        word: item.word,
+        sentence: item.hit.s,
+        year: item.hit.year || null,
+        title: item.hit.title || '',
+        sourceKind: item.hit.sourceKind,
+        expected,
+        options: opts,
+      };
+      q.token = vocabSignPayload(q);
+      questions.push(q);
+      vocabQuestionMap.set(q.token, { ...q, createdAt: now });
+      if (questions.length >= count) break;
+    }
+
+    if (wantCloze) {
+      // 搭配补全：把句中真实目标词形替换为 ____，答案为该实际词形
+      const form = findWordFormInSentence(item.hit.s, item.word);
+      if (!form) continue;
+      const blanked = item.hit.s.replace(
+        new RegExp(`\\b${escapeRegExp(form)}\\b`, 'i'),
+        '____'
+      );
+      if (blanked === item.hit.s) continue;
+      const q = {
+        kind: 'vocab_cloze',
+        word: item.word,
+        sentence: blanked,
+        year: item.hit.year || null,
+        title: item.hit.title || '',
+        sourceKind: item.hit.sourceKind,
+        expected: form,
+        options: null,
+      };
+      q.token = vocabSignPayload(q);
+      questions.push(q);
+      vocabQuestionMap.set(q.token, { ...q, createdAt: now });
+    }
+  }
+
+  // 清理过期题目缓存
+  if (vocabQuestionMap.size > 4000) {
+    for (const [k, v] of vocabQuestionMap) {
+      if (now - v.createdAt > VOCAB_QUESTION_TTL_MS) vocabQuestionMap.delete(k);
+    }
+  }
+
+  return questions;
+}
+
+// 返回给前端时移除 expected（标准答案不下发为独立字段，仅以 opts 存在与否体现）
+function publicVocabQuestion(q) {
+  return {
+    token: q.token,
+    kind: q.kind,
+    word: q.word,
+    sentence: q.sentence,
+    year: q.year,
+    title: q.title,
+    sourceLabel: q.year ? `真题 ${q.year}` : '真题语境',
+    options: q.options || null,
   };
 }
 
@@ -4327,6 +4500,119 @@ const server = http.createServer(async (req, res) => {
         }
         const report = buildLearningReport(days);
         return sendJSON(res, 200, { ok: true, ...report });
+      }
+
+      /* ---- v2.2.4：词汇真题迁移训练接口 ---- */
+
+      if (p === '/api/learning/vocab/generate' && req.method === 'POST') {
+        const body = await readBody(req);
+        const filter = String(body.filter || 'forget').trim();
+        if (!['sticky', 'vague', 'forget', 'due7'].includes(filter)) {
+          return sendJSON(res, 400, { error: 'filter 参数仅允许 sticky/vague/forget/due7' });
+        }
+        let count = parseInt(body.count, 10);
+        if (isNaN(count)) count = 5;
+        count = Math.max(3, Math.min(20, count));
+        const wantContext = body.context !== false;
+        const wantCloze = body.cloze !== false;
+        if (!wantContext && !wantCloze) {
+          return sendJSON(res, 400, { error: '至少需要开启一种题型（语境选义或搭配补全）' });
+        }
+        const raw = generateVocabQuestions(filter, count, { context: wantContext, cloze: wantCloze });
+        const questions = raw.map(publicVocabQuestion);
+        if (!questions.length) {
+          return sendJSON(res, 200, {
+            ok: true, questions: [], filter, count,
+            message: '没有符合条件的真题迁移题：候选词需既有本地释义、又在真实真题句中出现。可先做基础测验或降低筛选范围。',
+          });
+        }
+        return sendJSON(res, 200, { ok: true, questions, filter, count });
+      }
+
+      if (p === '/api/learning/vocab/submit' && req.method === 'POST') {
+        const body = await readBody(req);
+        const token = String(body.token || '').trim();
+        const answer = String(body.answer || '').trim();
+        if (!token) return sendJSON(res, 400, { error: '缺少题目标识 token' });
+
+        const q = vocabQuestionMap.get(token);
+        if (!q) {
+          return sendJSON(res, 400, { error: '题目已失效（服务可能已重启），请重新生成迁移题', code: 'VOCAB_EXPIRED' });
+        }
+        if (Date.now() - q.createdAt > VOCAB_QUESTION_TTL_MS) {
+          vocabQuestionMap.delete(token);
+          return sendJSON(res, 400, { error: '题目已过期，请重新生成', code: 'VOCAB_EXPIRED' });
+        }
+
+        // 服务端独立校验：重新在真实真题句与 gloss 中确认标准答案，不信任客户端
+        const gloss = vocabGlossOf(q.word);
+        const evidence = kbEvidenceForWord(q.word, 3, 0);
+        const examHit = evidence.exams && evidence.exams[0];
+        if (!gloss || !examHit) {
+          vocabQuestionMap.delete(token);
+          return sendJSON(res, 400, { error: '题目来源已变化，请重新生成', code: 'VOCAB_EXPIRED' });
+        }
+
+        let expected;
+        if (q.kind === 'vocab_context') {
+          expected = gloss.gloss;
+        } else {
+          const form = findWordFormInSentence(examHit.s, q.word);
+          if (!form) {
+            vocabQuestionMap.delete(token);
+            return sendJSON(res, 400, { error: '题目来源已变化，请重新生成', code: 'VOCAB_EXPIRED' });
+          }
+          expected = form;
+        }
+
+        const norm = s => String(s || '').trim().toLowerCase();
+        const ok = norm(answer) === norm(expected);
+
+        // 信心与耗时校验
+        let conf = body.confidence ? String(body.confidence).trim() : 'unsure';
+        if (!VALID_ATTEMPT_CONFIDENCES.has(conf)) conf = 'unsure';
+        let durationMs = Number(body.durationMs);
+        if (!Number.isFinite(durationMs) || durationMs < 0) durationMs = null;
+        if (durationMs > 14400000) durationMs = 14400000;
+        const startedAt = body.startedAt ? (() => { const d = new Date(body.startedAt); return isNaN(d) ? null : d.toISOString(); })() : null;
+        const submittedAt = new Date().toISOString();
+
+        const attempt = {
+          kind: q.kind,
+          source: 'exam',
+          itemId: `${q.kind}:${q.word}:${(q.token || '').slice(0, 12)}`,
+          section: 'vocabulary',
+          year: q.year || null,
+          prompt: q.sentence,
+          expected,
+          answer: answer.slice(0, 4000),
+          result: ok ? 'correct' : 'incorrect',
+          confidence: conf,
+          startedAt,
+          submittedAt,
+          durationMs,
+          meta: { word: q.word, sourceKind: q.sourceKind, title: q.title, mode: 'vocab_transfer' },
+        };
+        appendLearningAttempts([attempt]);
+        vocabQuestionMap.delete(token);   // 一题一提交，防止重复计分
+
+        // 回写单词错词体系（使现有忘记词筛选有效）
+        const w = Object.values(db.words).find(x => x.spelling === q.word);
+        if (w) {
+          w.quizResponse = ok ? 'FAMILIAR' : 'FORGET';
+          if (!ok) w.quizWrong = (w.quizWrong || 0) + 1;
+          w.quizLastAt = submittedAt;
+          persistDB();
+        }
+
+        return sendJSON(res, 200, {
+          ok: true,
+          correct: ok,
+          expected,
+          word: q.word,
+          kind: q.kind,
+          attemptsSaved: 1,
+        });
       }
 
       /* ---- v1.2.0：数据备份与恢复 ---- */

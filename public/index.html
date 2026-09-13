@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.2.3</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.2.4</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.2.3</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.2.4</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -248,6 +248,13 @@
   <section id="tab-quiz" class="tab-page" data-page-node-id="7gqxf15kCaD2kQAwymNT5Q">
     <div class="card" id="quizSetup" data-page-node-id="2XLzZDCOV3XrGOzLvZIWZj">
       <div class="card-title" data-page-node-id="6MxB6a0jjc99rR66ZFFWdB">📝 单词测验</div>
+      <!-- v2.2.4：基础回忆 / 真题迁移 二级模式 -->
+      <div class="quiz-submode" id="quizSubmode">
+        <button type="button" class="btn quiz-submode-btn active" data-submode="basic">🧠 基础回忆</button>
+        <button type="button" class="btn quiz-submode-btn" data-submode="transfer">🎯 真题迁移</button>
+      </div>
+
+      <div id="quizBasicPane">
       <details class="hint-fold" data-page-node-id="JteAlyOsCXGs1iEG7N5yBy"><summary data-page-node-id="zkOapoE7eLNEZMiU767wq0">ℹ️ 说明</summary>
       <div class="hint" data-page-node-id="iG3LqGiqxJOkIFWBYbBjcF">主动回忆（测试效应）比反复看词义有效得多。测错的词会自动计入「忘记词」筛选，测完可回 AI 学习页针对性攻克。</div>
       </details>
@@ -272,6 +279,32 @@
         <button class="btn primary" id="quizStartBtn" data-page-node-id="rmwUvlx79tZUiOPrOC1S0v">🚀 开始测验</button>
       </div>
       <div class="result" id="quizMsg" data-page-node-id="wSj1igi0CouGzndBq7MLxR"></div>
+      </div>
+
+      <!-- 真题迁移训练配置区 -->
+      <div id="quizTransferPane" style="display:none">
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
+        <div class="hint">从真实考研真题句子中出题：语境选义（选出该词在真题句中的正确释义）与搭配补全（还原真题句中缺失的目标词）。题目由服务端依据真题与词典确定性生成，可离线判分、防篡改，不调用 AI 编造例句。</div>
+        </details>
+        <label class="field-label">词源</label>
+        <div class="filter-row" id="transferSources">
+          <button class="chip" data-tsrc="sticky">顽固词</button>
+          <button class="chip" data-tsrc="vague">模糊词</button>
+          <button class="chip active" data-tsrc="forget">忘记词</button>
+          <button class="chip" data-tsrc="due7">7天内到期</button>
+        </div>
+        <label class="field-label">题型开关</label>
+        <div class="filter-row" id="transferKinds">
+          <button type="button" class="chip active" data-kind="context">语境选义</button>
+          <button type="button" class="chip active" data-kind="cloze">搭配补全</button>
+        </div>
+        <label class="field-label">题量（3-20）</label>
+        <input type="number" id="transferCount" class="input" value="6" min="3" max="20" style="width:120px">
+        <div class="row-gap">
+          <button class="btn primary" id="transferStartBtn">🎯 开始迁移训练</button>
+        </div>
+        <div class="result" id="transferMsg"></div>
+      </div>
     </div>
 
     <div class="card" id="quizRun" style="display:none" data-page-node-id="TwoyCTAxz2gPP7P0M4z5Gx">

@@ -944,6 +944,41 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .quiz-progress-bar {
   height: 6px; background: var(--bg); border-radius: 999px; overflow: hidden; margin-bottom: 10px;
 }
+/* v2.2.4：基础回忆 / 真题迁移 二级模式 */
+.quiz-submode {
+  display: flex; gap: 8px; margin: 4px 0 14px; padding: 4px; border-radius: var(--radius);
+  background: var(--bg); border: 1px solid var(--border); width: fit-content;
+}
+.quiz-submode-btn {
+  padding: 6px 16px; font-size: 13px; border-radius: 6px; cursor: pointer;
+  background: transparent; border: 1px solid transparent; color: var(--text-sub);
+}
+.quiz-submode-btn.active {
+  background: var(--primary); color: #fff; font-weight: 600;
+}
+.transfer-source-sentence {
+  background: var(--primary-soft); border-left: 3px solid var(--primary); border-radius: 0 8px 8px 0;
+  padding: 12px 14px; margin: 10px 0; font-size: 15px; line-height: 1.75; font-family: Georgia, 'Times New Roman', serif;
+}
+.transfer-meta {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; font-size: 12px; color: var(--text-sub);
+}
+.transfer-meta .tag { font-size: 11px; }
+.transfer-blank-word { color: var(--primary); font-weight: 700; letter-spacing: 2px; }
+.transfer-kind-badge {
+  display: inline-block; font-size: 11px; padding: 1px 8px; border-radius: 10px;
+  background: var(--primary); color: #fff; font-weight: 600;
+}
+.transfer-kind-badge.cloze { background: var(--warn); }
+.transfer-opt.correct { background: #ecfdf5; border-color: #34d399; color: #047857; font-weight: 600; }
+.transfer-opt.wrong { background: #fef2f2; border-color: #f87171; color: #b91c1c; }
+.transfer-done-sub { color: var(--text-sub); margin: 6px 0 12px; }
+.transfer-wrong-list { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 12px 0; }
+.transfer-wrong-chip {
+  font-size: 12.5px; padding: 4px 10px; border-radius: 6px; cursor: pointer;
+  background: var(--card); border: 1px solid var(--border); color: var(--text);
+}
+.transfer-wrong-chip:hover { border-color: var(--primary); }
 .quiz-confidence-row {
   display: flex; align-items: center; justify-content: center; gap: 8px;
   margin: 6px auto 14px; padding: 6px 12px; border-radius: var(--radius);
