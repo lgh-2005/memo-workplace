@@ -247,6 +247,9 @@ async function loadDashboard() {
       ? d.recentLog.map(l => `<li class="${l.ok ? 'log-ok' : 'log-fail'}">${fmtBJ(l.ts)} · ${esc(l.msg)}</li>`).join('')
       : '<li>暂无记录，点击右上角同步</li>';
 
+    // v2.2.3：加载细粒度学习诊断周报
+    loadLearningReport(state.reportDays || 7);
+
     // 首次使用提示
     const status = await api('/api/status');
     $('#setupHint').style.display = (!status.hasToken || !status.llm.configured) ? 'block' : 'none';
@@ -295,6 +298,228 @@ async function doSync(silent) {
   } catch (e) {
     updateSyncBadge('err', '同步失败');
     if (!silent) alert('❌ ' + e.message);
+  }
+}
+
+/* ---------------- v2.2.3：学习诊断周报 ---------------- */
+
+async function loadLearningReport(days = 7) {
+  state.reportDays = days;
+  const labelEl = $('#reportWinLabel');
+  if (labelEl) labelEl.textContent = `最近 ${days} 天`;
+  $$('.report-win-btn').forEach(b => {
+    b.classList.toggle('active', Number(b.dataset.days) === days);
+  });
+
+  const bodyEl = $('#learningReportBody');
+  if (!bodyEl) return;
+
+  try {
+    const r = await api(`/api/learning/report?days=${days}`);
+    renderLearningReport(r);
+  } catch (err) {
+    bodyEl.innerHTML = `<div class="result err">⚠️ 加载学习诊断周报失败: ${esc(err.message)}</div>`;
+  }
+}
+
+function renderLearningReport(data) {
+  const bodyEl = $('#learningReportBody');
+  if (!bodyEl) return;
+
+  const ov = data.overview || {};
+  if (!ov.totalAttempts) {
+    bodyEl.innerHTML = `
+      <div class="report-empty">
+        <div class="report-empty-icon">📊</div>
+        <div class="report-empty-title">细粒度学习数据积累中</div>
+        <div class="report-empty-sub">自 v2.2.0 起已启用单题级流水。在单词测验或真题单元中作答后，此处将自动呈现薄弱项、错因分布与信心校准。</div>
+        <div class="report-empty-meta">数据启用时间: ${esc(data.enabledAt ? fmtBJ(data.enabledAt) : '近期')}</div>
+      </div>`;
+    return;
+  }
+
+  const accPct = ov.accuracy !== null ? Math.round(ov.accuracy * 100) + '%' : '—';
+  const avgSec = ov.avgDurationMs ? (ov.avgDurationMs / 1000).toFixed(1) + 's' : '—';
+
+  // 1. 核心指标网格
+  const overviewHtml = `
+    <div class="report-stat-grid">
+      <div class="report-stat-box">
+        <div class="report-stat-label">作答题量</div>
+        <div class="report-stat-val">${ov.totalAttempts}</div>
+        <div class="report-stat-sub">已判分: ${ov.judgedCount} 题</div>
+      </div>
+      <div class="report-stat-box">
+        <div class="report-stat-label">客观准确率</div>
+        <div class="report-stat-val ${ov.accuracy >= 0.7 ? 'ok' : 'warn'}">${accPct}</div>
+        <div class="report-stat-sub">正确: ${ov.correctCount || 0} 题</div>
+      </div>
+      <div class="report-stat-box">
+        <div class="report-stat-label">单题平均耗时</div>
+        <div class="report-stat-val">${avgSec}</div>
+        <div class="report-stat-sub">作答节奏</div>
+      </div>
+      <div class="report-stat-box">
+        <div class="report-stat-label">主观输出</div>
+        <div class="report-stat-val">${(data.subjective?.translationCount || 0) + (data.subjective?.essayCount || 0)}</div>
+        <div class="report-stat-sub">翻译 ${data.subjective?.translationCount || 0} 篇 · 作文 ${data.subjective?.essayCount || 0} 篇</div>
+      </div>
+    </div>`;
+
+  // 2. 薄弱反复错词
+  const repList = data.repeatedWords || [];
+  const repHtml = repList.length ? `
+    <div class="report-section">
+      <div class="report-sec-title">⚠️ 反复错词 / 顽固词（做错 ≥2 次）</div>
+      <div class="report-tag-list">
+        ${repList.map(w => `
+          <button type="button" class="btn mini ghost report-word-tag" data-word="${esc(w.word)}">
+            ${esc(w.word)} <span class="badge warn">${w.count}次</span>
+          </button>`).join('')}
+      </div>
+    </div>` : '';
+
+  // 3. 错因分布
+  const reasonLabels = {
+    unknown_word: '生词障碍',
+    misread_stem: '看错题干',
+    evidence_missed: '定位遗漏',
+    over_inference: '过度推断',
+    option_trap: '选项陷阱',
+    careless: '粗心手滑',
+    time_pressure: '时间紧张',
+    other: '其他原因',
+  };
+  const reasons = data.errorReasons || {};
+  const reasonEntries = Object.entries(reasons).filter(([k, v]) => v > 0);
+  const reasonHtml = reasonEntries.length ? `
+    <div class="report-section">
+      <div class="report-sec-title">🎯 客观题错因归因分布</div>
+      <div class="report-reason-grid">
+        ${reasonEntries.map(([k, v]) => `
+          <div class="report-reason-item">
+            <span class="reason-name">${reasonLabels[k] || k}</span>
+            <span class="reason-count">${v} 次</span>
+          </div>`).join('')}
+      </div>
+    </div>` : '';
+
+  // 4. 信心校准矩阵
+  const cm = data.confidenceMatrix || {};
+  const confLabels = { sure: '🎯 确定', unsure: '🤔 犹豫', guess: '🎲 猜测' };
+  const confHtml = `
+    <div class="report-section">
+      <div class="report-sec-title">⚖️ 作答信心与准确率校准</div>
+      <div class="report-conf-grid">
+        ${['sure', 'unsure', 'guess'].map(k => {
+          const item = cm[k] || { total: 0, accuracy: null, correct: 0 };
+          const p = item.accuracy !== null ? Math.round(item.accuracy * 100) + '%' : '—';
+          return `
+            <div class="report-conf-box">
+              <div class="conf-head">${confLabels[k]}</div>
+              <div class="conf-acc">${p}</div>
+              <div class="conf-detail">${item.correct}/${item.total} 题正确</div>
+            </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+
+  // 5. 助记有效性评估（可解释模型追踪）
+  const mn = data.mnemonicEffect || {};
+  const mnHtml = mn.samples > 0 ? `
+    <div class="report-section">
+      <div class="report-sec-title">💡 助记促学效果追踪</div>
+      <div class="report-mn-row">
+        <span class="mn-badge ok">初步有效 ${mn.initialEffective}</span>
+        <span class="mn-badge warn">待重写 ${mn.needsRewrite}</span>
+        <span class="mn-badge sub">待验证 ${mn.pending}</span>
+        <span class="mn-tip">（基于助记创建后的后续首测作答表现）</span>
+      </div>
+    </div>` : '';
+
+  bodyEl.innerHTML = overviewHtml + repHtml + reasonHtml + confHtml + mnHtml;
+
+  // 绑定反复错词点击跳转去学
+  $$('#learningReportBody .report-word-tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sp = btn.dataset.word;
+      if (sp) {
+        switchTab('study');
+        $('#wordSearch').value = sp;
+        loadWords();
+      }
+    });
+  });
+}
+
+// 绑定周报时间窗口切换按钮
+$$('.report-win-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const days = Number(btn.dataset.days || 7);
+    loadLearningReport(days);
+  });
+});
+
+// 查看全部流水弹层
+if ($('#reportViewAllBtn')) {
+  $('#reportViewAllBtn').addEventListener('click', () => openReportModal());
+}
+if ($('#reportModalClose')) {
+  $('#reportModalClose').addEventListener('click', () => {
+    $('#reportModal').style.display = 'none';
+  });
+}
+if ($('#reportKindFilter')) {
+  $('#reportKindFilter').addEventListener('change', (e) => {
+    loadReportModalList(e.target.value);
+  });
+}
+
+async function openReportModal() {
+  $('#reportModal').style.display = 'flex';
+  const filter = $('#reportKindFilter') ? $('#reportKindFilter').value : '';
+  loadReportModalList(filter);
+}
+
+async function loadReportModalList(kind = '') {
+  const listEl = $('#reportModalList');
+  const totEl = $('#reportModalTotal');
+  if (!listEl) return;
+  listEl.innerHTML = '<div class="hint">加载流水明细…</div>';
+
+  try {
+    const url = kind ? `/api/learning/attempts?kind=${encodeURIComponent(kind)}&limit=100` : '/api/learning/attempts?limit=100';
+    const r = await api(url);
+    const attempts = r.attempts || [];
+    if (totEl) totEl.textContent = `共 ${r.total} 条（显示前 ${attempts.length} 条）`;
+
+    if (!attempts.length) {
+      listEl.innerHTML = '<div class="report-empty" style="padding:20px 0">暂无对应流水记录</div>';
+      return;
+    }
+
+    listEl.innerHTML = attempts.map(a => {
+      const isOk = a.result === 'correct';
+      const isBad = a.result === 'incorrect';
+      const resClass = isOk ? 'u-ok' : isBad ? 'u-bad' : '';
+      const resText = isOk ? '✓ 正确' : isBad ? '✗ 错误' : (a.result || '待定');
+      const timeStr = a.submittedAt || a.startedAt || '';
+      return `
+        <div class="report-attempt-item">
+          <div class="att-head">
+            <span class="tag">${esc(a.kind)}</span>
+            <span class="att-res ${resClass}">${resText}</span>
+            <span class="att-conf">${a.confidence ? '信心: ' + esc(a.confidence) : ''}</span>
+            <span class="att-time">${timeStr ? fmtBJ(timeStr) : ''}</span>
+          </div>
+          <div class="att-prompt"><b>题干:</b> ${esc(String(a.prompt || '').slice(0, 120))}</div>
+          <div class="att-ans"><b>作答:</b> ${esc(String(a.answer || '').slice(0, 100))}${a.expected ? ` · <b>标准:</b> ${esc(String(a.expected).slice(0, 80))}` : ''}</div>
+          ${a.errorReason ? `<div class="att-reason">错因标记: <span class="badge warn">${esc(a.errorReason)}</span></div>` : ''}
+        </div>`;
+    }).join('');
+
+  } catch (err) {
+    listEl.innerHTML = `<div class="result err">加载失败: ${esc(err.message)}</div>`;
   }
 }
 

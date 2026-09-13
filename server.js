@@ -367,6 +367,233 @@ function appendLearningAttempts(newItems) {
   return normalized.length;
 }
 
+/**
+ * v2.2.3：按北京时间自然日窗口（7/14/30天）聚合细粒度学习诊断周报纯函数
+ * 严禁使用旧汇总伪造单题数据，无细粒度流水时安全返回全零结构与 enabledAt
+ */
+function buildLearningReport(days = 7) {
+  const allowedDays = [7, 14, 30];
+  const winDays = allowedDays.includes(Number(days)) ? Number(days) : 7;
+  const store = loadLearningStore();
+  const enabledAt = store.enabledAt || null;
+  const allAttempts = Array.isArray(store.attempts) ? store.attempts : [];
+
+  // 计算北京时间自然日窗口边界：今天为第 0 天，窗口为 [today - (winDays - 1), today]
+  const todayStr = bjDate(0);
+  const startDayStr = bjDate(-(winDays - 1));
+
+  const inWindow = (iso) => {
+    if (!iso) return false;
+    const dStr = bjDateOf(iso);
+    return dStr >= startDayStr && dStr <= todayStr;
+  };
+
+  // 筛选窗口内已提交/作答的流水记录
+  const windowAttempts = allAttempts.filter(a => inWindow(a.submittedAt || a.startedAt));
+
+  // 1. overview: 总作答、已判题、正确率、平均耗时
+  let totalAttempts = windowAttempts.length;
+  let judgedCount = 0;
+  let correctCount = 0;
+  let durationTotalMs = 0;
+  let durationSamples = 0;
+
+  for (const a of windowAttempts) {
+    if (a.result === 'correct' || a.result === 'incorrect' || a.result === 'vague') {
+      judgedCount++;
+      if (a.result === 'correct') correctCount++;
+    }
+    if (typeof a.durationMs === 'number' && a.durationMs > 0) {
+      durationTotalMs += a.durationMs;
+      durationSamples++;
+    }
+  }
+
+  const accuracy = judgedCount > 0 ? Number((correctCount / judgedCount).toFixed(4)) : null;
+  const avgDurationMs = durationSamples > 0 ? Math.round(durationTotalMs / durationSamples) : 0;
+
+  // 2. bySection: 按板块统计作答量、判分量与正确率
+  const sectionKeys = ['vocabulary', 'use_of_english', 'reading', 'part_b', 'translation', 'writing'];
+  const bySection = {};
+  for (const k of sectionKeys) {
+    bySection[k] = { total: 0, judged: 0, correct: 0, accuracy: null };
+  }
+  for (const a of windowAttempts) {
+    const sec = a.section || (a.kind === 'word_quiz' ? 'vocabulary' : 'misc');
+    if (!bySection[sec]) {
+      bySection[sec] = { total: 0, judged: 0, correct: 0, accuracy: null };
+    }
+    bySection[sec].total++;
+    if (a.result === 'correct' || a.result === 'incorrect' || a.result === 'vague') {
+      bySection[sec].judged++;
+      if (a.result === 'correct') bySection[sec].correct++;
+    }
+  }
+  for (const k of Object.keys(bySection)) {
+    const item = bySection[k];
+    item.accuracy = item.judged > 0 ? Number((item.correct / item.judged).toFixed(4)) : null;
+  }
+
+  // 3. repeatedWords: 窗口内 incorrect/vague 至少 2 次的错词，降序取前 20
+  const wordErrMap = new Map();
+  for (const a of windowAttempts) {
+    const isWordKind = a.kind === 'word_quiz' || a.kind === 'vocab_context' || a.kind === 'vocab_cloze';
+    if (isWordKind && (a.result === 'incorrect' || a.result === 'vague')) {
+      const sp = a.meta?.word || a.prompt;
+      if (!sp) continue;
+      const cur = wordErrMap.get(sp) || { word: sp, count: 0, vagueCount: 0, incorrectCount: 0, lastAt: null };
+      cur.count++;
+      if (a.result === 'vague') cur.vagueCount++;
+      if (a.result === 'incorrect') cur.incorrectCount++;
+      const t = a.submittedAt || a.startedAt;
+      if (!cur.lastAt || t > cur.lastAt) cur.lastAt = t;
+      wordErrMap.set(sp, cur);
+    }
+  }
+  const repeatedWords = Array.from(wordErrMap.values())
+    .filter(x => x.count >= 2)
+    .sort((a, b) => b.count - a.count || (b.lastAt < a.lastAt ? -1 : 1))
+    .slice(0, 20);
+
+  // 4. errorReasons: 8 大错因分布
+  const errorReasons = {
+    unknown_word: 0,
+    misread_stem: 0,
+    evidence_missed: 0,
+    over_inference: 0,
+    option_trap: 0,
+    careless: 0,
+    time_pressure: 0,
+    other: 0,
+  };
+  for (const a of windowAttempts) {
+    if (a.errorReason && errorReasons[a.errorReason] !== undefined) {
+      errorReasons[a.errorReason]++;
+    }
+  }
+
+  // 5. confidenceMatrix: 信心校准矩阵 (sure/unsure/guess 分别的正确、模糊、错误与准确率)
+  const confidenceMatrix = {
+    sure: { total: 0, correct: 0, vague: 0, incorrect: 0, accuracy: null },
+    unsure: { total: 0, correct: 0, vague: 0, incorrect: 0, accuracy: null },
+    guess: { total: 0, correct: 0, vague: 0, incorrect: 0, accuracy: null },
+  };
+  for (const a of windowAttempts) {
+    const c = a.confidence;
+    if (confidenceMatrix[c] && (a.result === 'correct' || a.result === 'incorrect' || a.result === 'vague')) {
+      confidenceMatrix[c].total++;
+      if (a.result === 'correct') confidenceMatrix[c].correct++;
+      else if (a.result === 'vague') confidenceMatrix[c].vague++;
+      else if (a.result === 'incorrect') confidenceMatrix[c].incorrect++;
+    }
+  }
+  for (const c of ['sure', 'unsure', 'guess']) {
+    const m = confidenceMatrix[c];
+    m.accuracy = m.total > 0 ? Number((m.correct / m.total).toFixed(4)) : null;
+  }
+
+  // 6. subjective: 主观输出统计（翻译题数、作文篇数、总词数）
+  let transCount = 0;
+  let essayCount = 0;
+  let subjectiveWords = 0;
+  for (const a of windowAttempts) {
+    if (a.kind === 'translation') {
+      transCount++;
+      subjectiveWords += (a.meta?.wordCount || (a.answer ? a.answer.length : 0));
+    } else if (a.kind === 'writing') {
+      essayCount++;
+      subjectiveWords += (a.meta?.wordCount || (a.answer ? a.answer.split(/\s+/).filter(Boolean).length : 0));
+    }
+  }
+
+  // 7. dueReviews: 到期且未完成的复测任务（dueAt <= 现在 且 result === 'pending'），最多 20 条
+  const nowISO = new Date().toISOString();
+  const dueReviews = allAttempts
+    .filter(a => a.result === 'pending' && a.dueAt && a.dueAt <= nowISO)
+    .sort((a, b) => (a.dueAt < b.dueAt ? -1 : 1))
+    .slice(0, 20);
+
+  // 8. recentAttempts: 窗口内最近 20 条流水
+  const recentAttempts = windowAttempts
+    .slice()
+    .sort((a, b) => {
+      const ta = new Date(a.submittedAt || a.startedAt || 0).getTime() || 0;
+      const tb = new Date(b.submittedAt || b.startedAt || 0).getTime() || 0;
+      return tb - ta;
+    })
+    .slice(0, 20);
+
+  // 9. mnemonicEffect: 助记有效性可解释追踪
+  // 每条助记与同 spelling 且 submittedAt > note.createdAt 的首个 word_quiz/vocab_context/vocab_cloze attempt 关联
+  let initialEffective = 0;
+  let needsRewrite = 0;
+  let pendingEffect = 0;
+  let samples = 0;
+
+  const notes = Array.isArray(db.notes) ? db.notes : [];
+  for (const n of notes) {
+    const sp = n.spelling;
+    if (!sp) continue;
+    const nCreated = n.createdAt || '1970-01-01T00:00:00.000Z';
+    // 找到该词在助记创建后的所有流水，按时间正序
+    const postAttempts = allAttempts.filter(a => {
+      const isWord = a.kind === 'word_quiz' || a.kind === 'vocab_context' || a.kind === 'vocab_cloze';
+      const wordHit = (a.meta?.word === sp) || (a.prompt === sp);
+      const postTime = (a.submittedAt || a.startedAt || '') > nCreated;
+      return isWord && wordHit && postTime;
+    }).sort((a, b) => {
+      const ta = new Date(a.submittedAt || a.startedAt || 0).getTime() || 0;
+      const tb = new Date(b.submittedAt || b.startedAt || 0).getTime() || 0;
+      return ta - tb;
+    });
+
+    if (postAttempts.length === 0) {
+      pendingEffect++;
+    } else {
+      samples++;
+      const first = postAttempts[0];
+      if (first.result === 'correct') {
+        initialEffective++;
+      } else if (first.result === 'incorrect' || first.result === 'vague') {
+        needsRewrite++;
+      } else {
+        pendingEffect++;
+      }
+    }
+  }
+
+  return {
+    windowDays: winDays,
+    startDate: startDayStr,
+    endDate: todayStr,
+    enabledAt,
+    overview: {
+      totalAttempts,
+      judgedCount,
+      correctCount,
+      accuracy,
+      avgDurationMs,
+    },
+    bySection,
+    repeatedWords,
+    errorReasons,
+    confidenceMatrix,
+    subjective: {
+      translationCount: transCount,
+      essayCount,
+      totalWords: subjectiveWords,
+    },
+    mnemonicEffect: {
+      initialEffective,
+      needsRewrite,
+      pending: pendingEffect,
+      samples,
+    },
+    dueReviews,
+    recentAttempts,
+  };
+}
+
 /** 任意 ISO 时间 → 北京时间的 YYYY-MM-DD */
 function bjDateOf(iso) {
   if (!iso) return '';
@@ -4087,6 +4314,19 @@ const server = http.createServer(async (req, res) => {
           total: list.length,
           attempts: sorted.slice(0, limit),
         });
+      }
+
+      /* ---- v2.2.3：学习诊断周报接口 ---- */
+
+      if (p === '/api/learning/report' && req.method === 'GET') {
+        const u = new URL(req.url, 'http://localhost');
+        const daysParam = u.searchParams.get('days') || '7';
+        let days = parseInt(daysParam, 10);
+        if (![7, 14, 30].includes(days)) {
+          return sendJSON(res, 400, { error: 'days 参数仅允许 7、14 或 30' });
+        }
+        const report = buildLearningReport(days);
+        return sendJSON(res, 200, { ok: true, ...report });
       }
 
       /* ---- v1.2.0：数据备份与恢复 ---- */

@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.2.2</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.2.3</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.2.2</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.2.3</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -110,6 +110,44 @@
       <div class="card">
         <div class="card-title">测验与做题概况</div>
         <div class="quiz-overview" id="quizOverview">暂无数据</div>
+      </div>
+    </div>
+
+    <!-- v2.2.3：学习诊断周报（7/14/30天自然日窗口诊断） -->
+    <div class="card" id="learningReportCard">
+      <div class="card-title-row">
+        <div class="card-title">📈 学习诊断报告（<span id="reportWinLabel">最近 7 天</span>）</div>
+        <div class="report-win-btns">
+          <button type="button" class="btn mini report-win-btn active" data-days="7">7天</button>
+          <button type="button" class="btn mini report-win-btn" data-days="14">14天</button>
+          <button type="button" class="btn mini report-win-btn" data-days="30">30天</button>
+          <button type="button" class="btn mini ghost" id="reportViewAllBtn">📜 全部流水</button>
+        </div>
+      </div>
+      <div id="learningReportBody">
+        <div class="hint">正在加载学习诊断数据…</div>
+      </div>
+    </div>
+
+    <!-- 流水记录弹层 (Modal) -->
+    <div class="kb-fix-modal" id="reportModal" style="display:none">
+      <div class="kb-fix-dialog">
+        <div class="kb-fix-head">
+          <div class="kb-fix-title">📜 细粒度作答流水记录</div>
+          <button type="button" class="kb-fix-close" id="reportModalClose">✕</button>
+        </div>
+        <div class="report-modal-filter-row">
+          <span class="field-label" style="padding:0">题型过滤:</span>
+          <select class="input" id="reportKindFilter" style="width:auto;padding:4px 8px;font-size:12px">
+            <option value="">全部题型</option>
+            <option value="word_quiz">单词测验 (word_quiz)</option>
+            <option value="unit_objective">客观真题 (unit_objective)</option>
+            <option value="translation">真题翻译 (translation)</option>
+            <option value="writing">真题写作 (writing)</option>
+          </select>
+          <span id="reportModalTotal" style="font-size:12px;color:var(--text-sub)"></span>
+        </div>
+        <div class="report-modal-list" id="reportModalList"></div>
       </div>
     </div>
 

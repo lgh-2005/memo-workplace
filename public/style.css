@@ -1745,7 +1745,98 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 
 
-/* ============ v1.1.6：审读定位 ============ */
+/* ============ v2.2.3：学习诊断周报样式 ============ */
+.report-win-btns { display: flex; gap: 6px; align-items: center; }
+.report-win-btn { min-height: 28px; padding: 2px 10px; font-size: 12px; }
+.report-win-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); font-weight: 600; }
+
+.report-empty {
+  text-align: center; padding: 32px 16px; color: var(--text-sub);
+}
+.report-empty-icon { font-size: 38px; margin-bottom: 8px; }
+.report-empty-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.report-empty-sub { font-size: 12.5px; max-width: 480px; margin: 0 auto 10px; line-height: 1.6; }
+.report-empty-meta { font-size: 11px; opacity: 0.75; }
+
+.report-stat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px;
+}
+.report-stat-box {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px; text-align: center;
+}
+.report-stat-label { font-size: 12px; color: var(--text-sub); margin-bottom: 4px; }
+.report-stat-val { font-size: 24px; font-weight: 700; color: var(--text); line-height: 1.2; }
+.report-stat-val.ok { color: var(--ok); }
+.report-stat-val.warn { color: var(--warn); }
+.report-stat-sub { font-size: 11px; color: var(--text-sub); margin-top: 4px; }
+
+.report-section {
+  margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--border);
+}
+.report-sec-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.report-tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.report-word-tag { font-size: 12.5px; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
+.report-word-tag:hover { border-color: var(--primary); }
+
+.report-reason-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px;
+}
+.report-reason-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--border);
+  font-size: 12px;
+}
+.report-reason-item .reason-name { color: var(--text); }
+.report-reason-item .reason-count { font-weight: 600; color: var(--warn); }
+
+.report-conf-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+}
+.report-conf-box {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+  padding: 10px; text-align: center;
+}
+.report-conf-box .conf-head { font-size: 12px; color: var(--text-sub); margin-bottom: 2px; }
+.report-conf-box .conf-acc { font-size: 18px; font-weight: 700; color: var(--text); }
+.report-conf-box .conf-detail { font-size: 11px; color: var(--text-sub); margin-top: 2px; }
+
+.report-mn-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 12px; }
+.mn-badge { padding: 3px 8px; border-radius: 4px; font-weight: 500; font-size: 12px; }
+.mn-badge.ok { background: color-mix(in srgb, var(--ok) 18%, transparent); color: var(--ok); }
+.mn-badge.warn { background: color-mix(in srgb, var(--warn) 18%, transparent); color: var(--warn); }
+.mn-badge.sub { background: var(--bg); color: var(--text-sub); border: 1px solid var(--border); }
+.mn-tip { font-size: 11px; color: var(--text-sub); }
+
+/* 流水弹层 (Modal) */
+.report-modal-filter-row {
+  display: flex; align-items: center; gap: 10px; padding: 10px 18px;
+  border-bottom: 1px solid var(--border); background: var(--bg);
+}
+.report-modal-list {
+  flex: 1; max-height: 60vh; overflow-y: auto; padding: 14px 18px; display: flex; flex-direction: column; gap: 10px;
+}
+.report-attempt-item {
+  padding: 10px 12px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border);
+  font-size: 12.5px; line-height: 1.5;
+}
+.report-attempt-item .att-head {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap;
+}
+.report-attempt-item .att-res { font-weight: 600; }
+.report-attempt-item .att-conf { font-size: 11px; color: var(--text-sub); }
+.report-attempt-item .att-time { margin-left: auto; font-size: 11px; color: var(--text-sub); }
+.report-attempt-item .att-prompt { color: var(--text); }
+.report-attempt-item .att-ans { color: var(--text-sub); }
+.report-attempt-item .att-reason { margin-top: 4px; }
+
+/* 移动端周报适配 (<=700px) */
+@media (max-width: 700px) {
+  .report-stat-grid { grid-template-columns: 1fr 1fr; }
+  .report-conf-grid { grid-template-columns: 1fr; }
+  .report-win-btns .report-win-btn { min-height: 36px; padding: 4px 10px; }
+  #reportViewAllBtn { min-height: 36px; }
+}
 .kb-locate { outline: 2px solid var(--primary); border-radius: 8px; background: color-mix(in srgb, var(--primary) 12%, transparent); }
 .kb-issue-head { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 2px; }
 .kb-issue-head span { color: var(--text-sub); font-size: 12px; }
