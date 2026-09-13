@@ -88,6 +88,22 @@ function saveJSON(file, obj) {
   fs.renameSync(tmp, file);
 }
 
+/** v2.2.6：读取并校验 JSON 文件；返回 { exists, valid, obj, error }，损坏时不抛异常 */
+function validateJsonFile(file) {
+  if (!fs.existsSync(file)) return { exists: false, valid: false };
+  try {
+    const obj = JSON.parse(fs.readFileSync(file, 'utf8'));
+    return { exists: true, valid: true, obj };
+  } catch (e) {
+    return { exists: true, valid: false, error: String(e.message || e).slice(0, 160) };
+  }
+}
+
+/** v2.2.6：学习流水文件结构校验（schemaVersion 与 attempts 数组） */
+function isLearningStoreShape(obj) {
+  return !!obj && typeof obj === 'object' && obj.schemaVersion === 1 && Array.isArray(obj.attempts);
+}
+
 let config = loadJSON(CONFIG_FILE, {
   maimemoToken: process.env.MAIMEMO_TOKEN || '',
   llm: { mock: false, activeId: 'default', providers: [{ id: 'default', name: '默认服务商', baseUrl: '', apiKey: '', model: '' }] },
@@ -4848,20 +4864,32 @@ const server = http.createServer(async (req, res) => {
         fs.mkdirSync(bDir, { recursive: true });
         // 备份核心数据文件
         const filesToBackup = [
-          { src: DB_FILE, name: 'db.json' },
-          { src: CONFIG_FILE, name: 'config.json' },
-          { src: path.join(DATA_DIR, 'chat_sessions.json'), name: 'chat_sessions.json' },
-          { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json' },
+          { src: DB_FILE, name: 'db.json', json: true },
+          { src: CONFIG_FILE, name: 'config.json', json: true },
+          { src: path.join(DATA_DIR, 'chat_sessions.json'), name: 'chat_sessions.json', json: true },
+          { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json', json: true, learning: true },
           { src: CORPUS_FILE, name: 'records.jsonl' },
           { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
-          { src: KB_VERSIONS_FILE, name: 'kb_versions.json' },
+          { src: KB_VERSIONS_FILE, name: 'kb_versions.json', json: true },
         ];
         let count = 0;
+        const warnings = [];
         for (const f of filesToBackup) {
-          if (fs.existsSync(f.src)) {
-            fs.copyFileSync(f.src, path.join(bDir, f.name));
-            count++;
+          if (!fs.existsSync(f.src)) continue;
+          // v2.2.6：备份前校验 JSON 合法性与学习流水 schema，损坏文件仅告警不中断
+          if (f.json) {
+            const v = validateJsonFile(f.src);
+            if (!v.valid) {
+              warnings.push({ file: f.name, reason: '源文件 JSON 损坏，已跳过: ' + (v.error || '解析失败') });
+              continue;
+            }
+            if (f.learning && !isLearningStoreShape(v.obj)) {
+              warnings.push({ file: f.name, reason: '学习流水结构不符，已跳过' });
+              continue;
+            }
           }
+          fs.copyFileSync(f.src, path.join(bDir, f.name));
+          count++;
         }
         // 清理超过 10 个的旧备份
         const backups = fs.readdirSync(backupDir).filter(d => d.startsWith('backup-')).sort();
@@ -4870,7 +4898,7 @@ const server = http.createServer(async (req, res) => {
           const oldDir = path.join(backupDir, old);
           try { fs.rmSync(oldDir, { recursive: true }); } catch { /* ignore */ }
         }
-        return sendJSON(res, 200, { ok: true, name: backupName, files: count });
+        return sendJSON(res, 200, { ok: true, name: backupName, files: count, warnings });
       }
 
       if (p === '/api/backup/list' && req.method === 'GET') {
@@ -4893,28 +4921,55 @@ const server = http.createServer(async (req, res) => {
         if (!name || !/^backup-/.test(name)) return sendJSON(res, 400, { error: '无效的备份名称' });
         const bDir = path.join(DATA_DIR, 'backups', name);
         if (!fs.existsSync(bDir)) return sendJSON(res, 404, { error: '备份不存在: ' + name });
+
+        // v2.2.6：恢复前逐文件校验（JSON 合法性 + 学习流水 schema），损坏则跳过并告警，绝不静默覆盖
         const restoreMap = [
-          { name: 'db.json', dst: DB_FILE },
-          { name: 'config.json', dst: CONFIG_FILE },
-          { name: 'chat_sessions.json', dst: path.join(DATA_DIR, 'chat_sessions.json') },
-          { name: 'learning_attempts.json', dst: LEARNING_ATTEMPTS_FILE },
-          { name: 'records.jsonl', dst: CORPUS_FILE },
-          { name: 'exams.jsonl', dst: path.join(ROOT, 'corpus', 'exams.jsonl') },
-          { name: 'kb_versions.json', dst: KB_VERSIONS_FILE },
+          { name: 'db.json', dst: DB_FILE, json: true },
+          { name: 'config.json', dst: CONFIG_FILE, json: true },
+          { name: 'chat_sessions.json', dst: path.join(DATA_DIR, 'chat_sessions.json'), json: true },
+          { name: 'learning_attempts.json', dst: LEARNING_ATTEMPTS_FILE, json: true, learning: true },
+          { name: 'records.jsonl', dst: CORPUS_FILE, json: false },
+          { name: 'exams.jsonl', dst: path.join(ROOT, 'corpus', 'exams.jsonl'), json: false },
+          { name: 'kb_versions.json', dst: KB_VERSIONS_FILE, json: true },
         ];
+        const warnings = [];
+        const skipped = [];
         let restored = 0;
+
         for (const f of restoreMap) {
           const src = path.join(bDir, f.name);
-          if (fs.existsSync(src)) {
+          if (!fs.existsSync(src)) {
+            // 备份不含该文件：保留当前数据，不创建空文件覆盖（学习流水尤其如此）
+            if (f.learning) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前学习流水' });
+            continue;
+          }
+          if (f.json) {
+            const v = validateJsonFile(src);
+            if (!v.valid) {
+              warnings.push({ file: f.name, reason: 'JSON 损坏，已跳过: ' + (v.error || '解析失败') });
+              continue;
+            }
+            if (f.learning && !isLearningStoreShape(v.obj)) {
+              warnings.push({ file: f.name, reason: 'schemaVersion/attempts 结构不符，已跳过' });
+              continue;
+            }
+          }
+          try {
             fs.copyFileSync(src, f.dst);
             restored++;
+          } catch (e) {
+            warnings.push({ file: f.name, reason: '写入失败: ' + String(e.message || e).slice(0, 120) });
           }
         }
-        // 重新加载内存数据
+
+        // 重新加载内存数据（学习流水由 loadLearningStore() 每次从文件实时读取，无需额外缓存失效）
         config = loadJSON(CONFIG_FILE, config);
         db = loadJSON(DB_FILE, db);
         armAutoSync();
-        return sendJSON(res, 200, { ok: true, restored, name });
+        return sendJSON(res, 200, {
+          ok: true, restored, name, warnings, skipped,
+          learningPreserved: skipped.some(s => s.file === 'learning_attempts.json'),
+        });
       }
 
       return sendJSON(res, 404, { error: '接口不存在: ' + p });
@@ -4971,15 +5026,24 @@ function autoBackup() {
   try {
     fs.mkdirSync(bDir, { recursive: true });
     const files = [
-      { src: DB_FILE, name: 'db.json' },
-      { src: CONFIG_FILE, name: 'config.json' },
-      { src: CHAT_FILE, name: 'chat_sessions.json' },
-      { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json' },
+      { src: DB_FILE, name: 'db.json', json: true },
+      { src: CONFIG_FILE, name: 'config.json', json: true },
+      { src: CHAT_FILE, name: 'chat_sessions.json', json: true },
+      { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json', json: true, learning: true },
       { src: CORPUS_FILE, name: 'records.jsonl' },
       { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
-      { src: KB_VERSIONS_FILE, name: 'kb_versions.json' },
+      { src: KB_VERSIONS_FILE, name: 'kb_versions.json', json: true },
     ];
-    for (const f of files) { if (fs.existsSync(f.src)) fs.copyFileSync(f.src, path.join(bDir, f.name)); }
+    for (const f of files) {
+      if (!fs.existsSync(f.src)) continue;
+      // v2.2.6：损坏文件跳过，避免自动备份把坏数据固化
+      if (f.json) {
+        const v = validateJsonFile(f.src);
+        if (!v.valid) { console.error(`  [自动备份] 跳过损坏文件 ${f.name}: ${v.error}`); continue; }
+        if (f.learning && !isLearningStoreShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
+      }
+      fs.copyFileSync(f.src, path.join(bDir, f.name));
+    }
     // 清理旧备份（保留 10 份）
     const all = fs.readdirSync(backupDir).filter(d => d.startsWith('backup-')).sort();
     while (all.length > 10) {
