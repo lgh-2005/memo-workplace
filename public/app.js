@@ -2079,7 +2079,22 @@ function unitPracticeHtml(unit, items) {
       return `<span class="u-blank"><b>${n}</b><select class="input u-pick" data-num="${n}"><option value="">—</option>${opts}</select></span>`;
     });
     const html = s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
-    return { body: `<div class="kb-passage">${html}</div>` };
+    const confRow = qs.length ? `
+      <div class="u-conf-panel">
+        <div class="u-conf-panel-title">完形作答信心评估（默认犹豫）</div>
+        <div class="u-conf-grid">
+          ${qs.map(q => `
+            <div class="unit-conf-item" data-qnum="${q.number}">
+              <span class="unit-conf-num">第 ${q.number} 题</span>
+              <div class="unit-conf-group" data-qnum="${q.number}">
+                <button type="button" class="btn mini unit-conf-btn" data-conf="sure">🎯</button>
+                <button type="button" class="btn mini unit-conf-btn active" data-conf="unsure">🤔</button>
+                <button type="button" class="btn mini unit-conf-btn" data-conf="guess">🎲</button>
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>` : '';
+    return { body: `<div class="kb-passage">${html}</div>${confRow}` };
   }
   if (unit.section === 'part_b' && passage) {
     const src = qs.find(q => q.options);
@@ -2089,15 +2104,44 @@ function unitPracticeHtml(unit, items) {
       `<span class="u-gap"><b>${n}</b><select class="input u-pick" data-num="${n}"><option value="">—</option>${optKeys.map(k => `<option value="${esc(k)}">${esc(k)}</option>`).join('')}</select></span>`);
     const html = s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
     const poolHtml = src ? `<div class="kb-sec-title">选项池</div><div class="kb-opts">${Object.entries(src.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')}</div>` : '';
-    return { body: `<div class="kb-passage">${html}</div>${poolHtml}` };
+    const confRow = qs.length ? `
+      <div class="u-conf-panel">
+        <div class="u-conf-panel-title">新题型作答信心评估（默认犹豫）</div>
+        <div class="u-conf-grid">
+          ${qs.map(q => `
+            <div class="unit-conf-item" data-qnum="${q.number}">
+              <span class="unit-conf-num">第 ${q.number} 题</span>
+              <div class="unit-conf-group" data-qnum="${q.number}">
+                <button type="button" class="btn mini unit-conf-btn" data-conf="sure">🎯</button>
+                <button type="button" class="btn mini unit-conf-btn active" data-conf="unsure">🤔</button>
+                <button type="button" class="btn mini unit-conf-btn" data-conf="guess">🎲</button>
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>` : '';
+    return { body: `<div class="kb-passage">${html}</div>${poolHtml}${confRow}` };
   }
   if (unit.section === 'reading') {
     let html = passage ? `<div class="kb-passage">${kbText(passage.text)}</div>` : '';
     html += qs.map(q => {
+      const qNum = esc(String(q.number ?? '—'));
       const opts = q.options ? Object.entries(q.options).map(([k, v]) =>
-        `<label class="u-opt"><input type="radio" name="q${esc(String(q.number))}" value="${esc(k)}" data-num="${esc(String(q.number))}"><b>${esc(k)}.</b> ${esc(v)}</label>`).join('')
+        `<label class="u-opt"><input type="radio" name="q${qNum}" value="${esc(k)}" data-num="${qNum}"><b>${esc(k)}.</b> ${esc(v)}</label>`).join('')
         : '';
-      return `<div class="kb-question"><div class="kb-q-head">第 ${esc(String(q.number ?? '—'))} 题</div><div class="kb-q-text">${kbText(q.text)}</div><div class="u-opts">${opts}</div></div>`;
+      return `
+        <div class="kb-question" data-qnum="${qNum}">
+          <div class="kb-q-head-row">
+            <div class="kb-q-head">第 ${qNum} 题</div>
+            <div class="unit-conf-group" data-qnum="${qNum}">
+              <span class="unit-conf-label">信心:</span>
+              <button type="button" class="btn mini unit-conf-btn" data-conf="sure">🎯确定</button>
+              <button type="button" class="btn mini unit-conf-btn active" data-conf="unsure">🤔犹豫</button>
+              <button type="button" class="btn mini unit-conf-btn" data-conf="guess">🎲猜测</button>
+            </div>
+          </div>
+          <div class="kb-q-text">${kbText(q.text)}</div>
+          <div class="u-opts">${opts}</div>
+        </div>`;
     }).join('');
     return { body: html };
   }
@@ -2137,6 +2181,19 @@ async function openUnit(uid) {
       <div class="result" id="unitResult"></div>
       <div id="unitAnswerPanel" style="display:none"></div>`;
 
+    const unitStartedAt = new Date().toISOString();
+
+    // 绑定信心按钮切换事件
+    $$('#unitDetail .unit-conf-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.closest('.unit-conf-group');
+        if (group) {
+          group.querySelectorAll('.unit-conf-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      });
+    });
+
     $('#unitBackBtn2').addEventListener('click', () => {
       card.style.display = 'none';
       renderUnitList();
@@ -2144,21 +2201,131 @@ async function openUnit(uid) {
 
     $('#unitSubmitBtn').addEventListener('click', async () => {
       const answers = {};
-      $$('#unitDetail .u-pick').forEach(s => { if (s.value) answers[s.dataset.num] = s.value; });
-      $$('#unitDetail .u-opt input:checked').forEach(r2 => { answers[r2.dataset.num] = r2.value; });
-      $$('#unitDetail .u-trans').forEach(t => { if (t.value.trim()) answers[t.dataset.num] = '[译] ' + t.value.trim().slice(0, 500); });
+      const confidence = {};
+      const subjective = { translations: {}, essay: '' };
+
+      // 1. 客观题作答与信心收集
+      $$('#unitDetail .u-pick').forEach(s => {
+        if (s.value) answers[s.dataset.num] = s.value;
+      });
+      $$('#unitDetail .u-opt input:checked').forEach(r2 => {
+        answers[r2.dataset.num] = r2.value;
+      });
+      $$('#unitDetail .unit-conf-group').forEach(group => {
+        const qnum = group.dataset.qnum;
+        const activeBtn = group.querySelector('.unit-conf-btn.active');
+        if (qnum && activeBtn) {
+          confidence[qnum] = activeBtn.dataset.conf || 'unsure';
+        }
+      });
+
+      // 2. 主观题收集：翻译
+      $$('#unitDetail .u-trans').forEach(t => {
+        const val = t.value.trim();
+        if (val) subjective.translations[t.dataset.num] = val;
+      });
+
+      // 3. 主观题收集：写作
+      const essayEl = $('#unitDetail .u-essay');
+      if (essayEl) {
+        const rawEssay = essayEl.value.trim();
+        if (rawEssay) {
+          if (rawEssay.length > 4000) {
+            const out = $('#unitResult');
+            out.textContent = '❌ 作文字数超过 4000 字符限制，请精简后再提交';
+            out.className = 'result err';
+            return;
+          }
+          subjective.essay = rawEssay;
+        }
+      }
+
       const out = $('#unitResult');
-      out.textContent = '判分中…';
+      out.textContent = '判分与提交中…';
       out.className = 'result';
+
       try {
-        const r2 = await api('/api/unit/answers/submit', { method: 'POST', body: { unitId: uid, answers } });
-        const lines = r2.results.map(x => x.ok === null
-          ? (x.picked ? `<div>· 第 ${esc(String(x.number))} 题：作答已记录（无标准答案，不判分）</div>` : '')
-          : `<div class="${x.ok ? 'u-ok' : 'u-bad'}">第 ${esc(String(x.number))} 题：${x.ok ? '✓ 正确' : '✗ 错误'}${!x.ok && x.correct ? ' · 正确答案 ' + esc(x.correct) : ''}${!x.ok && x.picked ? ' · 你选了 ' + esc(x.picked) : ''}</div>`);
-        out.innerHTML = (r2.hasStd
-          ? `<b>客观题：${r2.correct}/${r2.judged} 正确</b><br>`
-          : '该单元尚未录入标准答案——点「📝 录入标准答案」后即可判分（作答已记录）<br>') + lines.join('');
-        out.className = r2.hasStd && r2.judged && r2.correct === r2.judged ? 'result ok' : 'result';
+        const r2 = await api('/api/unit/answers/submit', {
+          method: 'POST',
+          body: {
+            unitId: uid,
+            answers,
+            confidence,
+            subjective,
+            startedAt: unitStartedAt,
+          },
+        });
+
+        // 格式化判分结果
+        const lines = (r2.results || []).map(x => {
+          if (x.ok === null) {
+            return x.picked ? `<div class="u-item-res">· 第 ${esc(String(x.number))} 题：作答已记录（无标准答案，不判分）</div>` : '';
+          }
+          if (x.ok) {
+            return `<div class="u-item-res u-ok">✓ 第 ${esc(String(x.number))} 题：正确（你的选项: ${esc(x.picked)}）</div>`;
+          }
+          // 错题：显示标准答案，并提供固定错因标签选择
+          const reasons = [
+            { key: 'unknown_word', label: '生词障碍' },
+            { key: 'misread_stem', label: '看错题干' },
+            { key: 'evidence_missed', label: '定位遗漏' },
+            { key: 'over_inference', label: '过度推断' },
+            { key: 'option_trap', label: '选项陷阱' },
+            { key: 'careless', label: '粗心手滑' },
+            { key: 'time_pressure', label: '时间紧张' },
+            { key: 'other', label: '其他原因' },
+          ];
+          const reasonBtns = reasons.map(r =>
+            `<button type="button" class="btn mini u-reason-btn" data-att="${esc(x.attemptId)}" data-reason="${esc(r.key)}">${esc(r.label)}</button>`
+          ).join('');
+
+          return `
+            <div class="u-item-res u-bad" data-att="${esc(x.attemptId)}">
+              <div>✗ 第 ${esc(String(x.number))} 题：错误 · 正确答案 <b>${esc(x.correct || '')}</b> · 你选了 <b>${esc(x.picked || '')}</b></div>
+              <div class="u-reason-row">
+                <span class="u-reason-tip">标记错因:</span>
+                ${reasonBtns}
+                <span class="u-reason-feedback" id="rf_${esc(x.attemptId)}"></span>
+              </div>
+            </div>`;
+        });
+
+        let subjectiveSummary = '';
+        if (r2.subjective > 0) {
+          subjectiveSummary = `<div class="u-subj-note">📝 已保存 ${r2.subjective} 项主观题作答（译文/草稿、字数与耗时已记录，不作自动估分）</div>`;
+        }
+
+        const headSummary = r2.hasStd
+          ? `<b>客观题：${r2.correct}/${r2.judged} 正确</b>`
+          : (r2.judged > 0 ? '该单元尚未录入标准答案——点「📝 录入标准答案」后即可判分（作答已记录）' : '');
+
+        out.innerHTML = (headSummary ? headSummary + '<br>' : '') + subjectiveSummary + lines.filter(Boolean).join('');
+        out.className = (r2.hasStd && r2.judged && r2.correct === r2.judged) ? 'result ok' : 'result';
+
+        // 绑定错因后补点击事件
+        $$('#unitResult .u-reason-btn').forEach(b => {
+          b.addEventListener('click', async () => {
+            const attId = b.dataset.att;
+            const rKey = b.dataset.reason;
+            const pRow = b.closest('.u-reason-row');
+            if (pRow) {
+              pRow.querySelectorAll('.u-reason-btn').forEach(btn => btn.classList.remove('active'));
+              b.classList.add('active');
+            }
+            try {
+              await api('/api/unit/answers/submit', {
+                method: 'POST',
+                body: { unitId: uid, reasonOnly: true, attemptId: attId, errorReason: rKey }
+              });
+              const fb = $('#rf_' + attId);
+              if (fb) fb.textContent = '✓ 错因已更新';
+            } catch (err) {
+              const fb = $('#rf_' + attId);
+              if (fb) fb.textContent = '❌ ' + err.message;
+            }
+          });
+        });
+
       } catch (e) {
         out.textContent = '❌ ' + e.message;
         out.className = 'result err';

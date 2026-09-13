@@ -1679,7 +1679,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-issue-low { border-left-color: #639922; }
 
 
-/* ============ v1.1.5：单元做题 ============ */
+/* ============ v1.1.5：单元做题 / v2.2.2 信心与错因增强 ============ */
 .u-blank, .u-gap { display: inline-flex; align-items: center; gap: 4px; margin: 0 2px; }
 .u-blank b, .u-gap b { color: var(--primary); font-size: 12px; }
 .u-blank select, .u-gap select { width: auto; min-width: 130px; padding: 2px 6px; font-size: 12px; }
@@ -1691,6 +1691,58 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .u-ans-item select { width: auto; padding: 2px 6px; }
 .u-ok { color: var(--success, #639922); }
 .u-bad { color: var(--danger, #e24b4a); }
+
+.kb-q-head-row {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 6px;
+}
+.unit-conf-group {
+  display: inline-flex; align-items: center; gap: 4px; background: var(--bg);
+  padding: 2px 6px; border-radius: 6px; border: 1px solid var(--border);
+}
+.unit-conf-label { font-size: 11.5px; color: var(--text-sub); }
+.unit-conf-btn {
+  padding: 2px 6px; font-size: 11.5px; border-radius: 4px; cursor: pointer;
+  background: var(--card); border: 1px solid var(--border); color: var(--text-sub);
+}
+.unit-conf-btn.active {
+  background: var(--primary); color: #fff; border-color: var(--primary); font-weight: 600;
+}
+
+.u-conf-panel {
+  margin-top: 14px; padding: 12px; border-radius: 8px;
+  background: var(--card); border: 1px solid var(--border);
+}
+.u-conf-panel-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+.u-conf-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px;
+}
+.unit-conf-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 4px 8px; border-radius: 6px; background: var(--bg); border: 1px solid var(--border);
+}
+.unit-conf-num { font-size: 12px; font-weight: 500; color: var(--text-sub); }
+
+.u-item-res {
+  padding: 6px 0; border-bottom: 1px dashed var(--border);
+}
+.u-item-res:last-child { border-bottom: none; }
+.u-reason-row {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 6px; padding-left: 14px;
+}
+.u-reason-tip { font-size: 12px; color: var(--text-sub); }
+.u-reason-btn {
+  font-size: 11px; padding: 2px 8px; border-radius: 4px; cursor: pointer;
+  background: var(--card); border: 1px solid var(--border); color: var(--text-sub);
+}
+.u-reason-btn:hover { border-color: var(--warn); color: var(--text); }
+.u-reason-btn.active {
+  background: var(--warn); color: #fff; border-color: var(--warn); font-weight: 600;
+}
+.u-reason-feedback { font-size: 11px; color: var(--ok); margin-left: 4px; }
+.u-subj-note {
+  margin: 6px 0 10px; padding: 6px 10px; border-radius: 6px;
+  background: var(--primary-soft); color: var(--text); font-size: 12.5px;
+}
 
 
 /* ============ v1.1.6：审读定位 ============ */

@@ -3685,29 +3685,211 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, saved: Object.keys(clean).length });
       }
 
-      // 提交作答 -> 服务端判分（客观题对标准答案；主观题仅保存）
+      // 提交作答 -> 服务端判分（v1.1.5 客观题对标准答案；v2.2.2 升级为客观题、翻译和写作完整流水与错因后补）
       if (p === '/api/unit/answers/submit' && req.method === 'POST') {
         const body = await readBody(req);
-        const unitId = String(body.unitId || '');
+        const unitId = String(body.unitId || '').trim();
         const ui = unitItems(unitId);
         if (!ui) return sendJSON(res, 404, { error: '单元不存在：' + unitId });
+
+        // 仅补充错因模式：reasonOnly: true
+        if (body.reasonOnly) {
+          const attemptId = String(body.attemptId || '').trim();
+          const errorReason = String(body.errorReason || '').trim();
+          if (!attemptId) return sendJSON(res, 400, { error: '缺少 attemptId' });
+          if (!VALID_ATTEMPT_ERROR_REASONS.has(errorReason)) {
+            return sendJSON(res, 400, { error: `无效的 errorReason: ${errorReason}` });
+          }
+
+          const store = loadLearningStore();
+          const target = (store.attempts || []).find(a => a.id === attemptId);
+          if (!target) return sendJSON(res, 404, { error: '作答流水不存在: ' + attemptId });
+          if (target.unitId !== unitId) {
+            return sendJSON(res, 400, { error: '作答记录不属于当前单元' });
+          }
+          if (target.kind !== 'unit_objective') {
+            return sendJSON(res, 400, { error: '仅客观题作答记录允许补充错因' });
+          }
+
+          target.errorReason = errorReason;
+          saveLearningStore(store);
+          return sendJSON(res, 200, { ok: true, attemptId, errorReason });
+        }
+
         const qs = ui.items.filter(it => it.type === 'question' && it.number != null);
         const std = loadAnswers()[unitId] || {};
         const given = body.answers && typeof body.answers === 'object' ? body.answers : {};
-        const results = qs.map(it => {
-          const picked = String(given[String(it.number)] || '').trim().toUpperCase() || null;
+        const confObj = body.confidence && typeof body.confidence === 'object' ? body.confidence : {};
+        const subjective = body.subjective && typeof body.subjective === 'object' ? body.subjective : {};
+
+        // 耗时与起止时间
+        const now = new Date();
+        const submittedAt = now.toISOString();
+        let startedAt = null;
+        let unitDurationMs = null;
+        if (body.startedAt) {
+          const st = new Date(body.startedAt);
+          if (!isNaN(st.getTime())) {
+            startedAt = st.toISOString();
+            unitDurationMs = Math.max(0, Math.min(14400000, now.getTime() - st.getTime()));
+          }
+        }
+
+        const attemptsToSave = [];
+        const results = [];
+
+        // 1. 客观题处理
+        for (const it of qs) {
+          const rawPicked = String(given[String(it.number)] || '').trim().toUpperCase();
+          const picked = /^[A-Z]$/.test(rawPicked) ? rawPicked : null;
           const correct = std[String(it.number)] || null;
-          return { number: it.number, picked, correct, ok: (picked && correct) ? picked === correct : null };
-        });
+          const isJudged = picked && correct;
+          const ok = isJudged ? picked === correct : null;
+
+          let conf = confObj[String(it.number)] ? String(confObj[String(it.number)]).trim() : 'unsure';
+          if (!VALID_ATTEMPT_CONFIDENCES.has(conf)) conf = 'unsure';
+
+          const attemptId = `att_uo_${Date.now()}_${it.number}_${Math.random().toString(36).slice(2, 6)}`;
+          results.push({
+            number: it.number,
+            picked,
+            correct,
+            ok,
+            attemptId,
+          });
+
+          // 只有用户作答了才落盘流水
+          if (picked) {
+            attemptsToSave.push({
+              id: attemptId,
+              kind: 'unit_objective',
+              source: 'exam',
+              itemId: `${unitId}:${it.number}`,
+              unitId,
+              examId: ui.unit.examId || null,
+              year: ui.unit.year || null,
+              section: ui.unit.section || 'reading',
+              prompt: it.text ? String(it.text).slice(0, 4000) : `第 ${it.number} 题`,
+              expected: correct ? String(correct) : null,
+              answer: picked,
+              result: ok === true ? 'correct' : ok === false ? 'incorrect' : 'unjudged',
+              confidence: conf,
+              errorReason: null,
+              startedAt,
+              submittedAt,
+              durationMs: unitDurationMs,
+              meta: {
+                unitTitle: ui.unit.title,
+                number: it.number,
+              },
+            });
+          }
+        }
+
+        // 2. 主观题处理：翻译
+        let subjectiveCount = 0;
+        const translations = subjective.translations && typeof subjective.translations === 'object'
+          ? subjective.translations
+          : null;
+        if (translations) {
+          for (const [numStr, tText] of Object.entries(translations)) {
+            const rawText = String(tText || '').trim();
+            if (!rawText) continue;
+            if (rawText.length > 2000) {
+              return sendJSON(res, 400, { error: `第 ${numStr} 题翻译译文超过 2000 字符限制` });
+            }
+            subjectiveCount++;
+            const qMatch = qs.find(q => String(q.number) === String(numStr));
+            attemptsToSave.push({
+              kind: 'translation',
+              source: 'exam',
+              itemId: `${unitId}:${numStr}`,
+              unitId,
+              examId: ui.unit.examId || null,
+              year: ui.unit.year || null,
+              section: 'translation',
+              prompt: qMatch?.text ? String(qMatch.text).slice(0, 4000) : `第 ${numStr} 题划线句`,
+              expected: null,
+              answer: rawText,
+              result: 'unjudged',
+              confidence: 'unsure',
+              startedAt,
+              submittedAt,
+              durationMs: unitDurationMs,
+              meta: {
+                unitTitle: ui.unit.title,
+                number: Number(numStr) || null,
+                wordCount: rawText.length,
+              },
+            });
+          }
+        }
+
+        // 3. 主观题处理：写作
+        const rawEssay = typeof subjective.essay === 'string' ? subjective.essay.trim() : '';
+        if (rawEssay) {
+          if (rawEssay.length > 4000) {
+            return sendJSON(res, 400, { error: '作文草稿超过 4000 字符限制' });
+          }
+          subjectiveCount++;
+          const wItem = ui.items.find(it => it.type === 'writing') || {};
+          const partStr = wItem.part || (ui.unit.section === 'writing' ? (ui.unit.title.includes('Part B') ? 'B' : 'A') : 'A');
+          attemptsToSave.push({
+            kind: 'writing',
+            source: 'exam',
+            itemId: `${unitId}:writing:${partStr}`,
+            unitId,
+            examId: ui.unit.examId || null,
+            year: ui.unit.year || null,
+            section: 'writing',
+            prompt: wItem.text ? String(wItem.text).slice(0, 4000) : ui.unit.title,
+            expected: null,
+            answer: rawEssay,
+            result: 'unjudged',
+            confidence: 'unsure',
+            startedAt,
+            submittedAt,
+            durationMs: unitDurationMs,
+            meta: {
+              unitTitle: ui.unit.title,
+              part: partStr,
+              score: wItem.score || null,
+              wordCount: rawEssay.split(/\s+/).filter(Boolean).length,
+            },
+          });
+        }
+
+        // 4. 落盘学习流水
+        let attemptsSaved = 0;
+        if (attemptsToSave.length > 0) {
+          attemptsSaved = appendLearningAttempts(attemptsToSave);
+        }
+
+        // 5. 双写旧 unitLog（仅计算客观题，主观题不干扰正确率）
         const judged = results.filter(r => r.ok !== null);
         const correctN = judged.filter(r => r.ok).length;
-        db.unitLog.push({ ts: new Date().toISOString().slice(0, 19), unitId, title: ui.unit.title, total: qs.length, judged: judged.length, correct: correctN });
+        db.unitLog.push({
+          ts: submittedAt.slice(0, 19),
+          unitId,
+          title: ui.unit.title,
+          total: qs.length,
+          judged: judged.length,
+          correct: correctN,
+          subjective: subjectiveCount,
+        });
         if (db.unitLog.length > 500) db.unitLog = db.unitLog.slice(-500);
         persistDB();
+
         return sendJSON(res, 200, {
-          ok: true, title: ui.unit.title, results,
-          judged: judged.length, total: qs.length, correct: correctN,
+          ok: true,
+          title: ui.unit.title,
+          results,
+          judged: judged.length,
+          total: qs.length,
+          correct: correctN,
+          subjective: subjectiveCount,
           hasStd: Object.keys(std).length > 0,
+          attemptsSaved,
         });
       }
 
