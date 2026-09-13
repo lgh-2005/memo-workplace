@@ -2202,9 +2202,13 @@ const GLOSS_SYSTEM = [
   '规则：每个输入单词都必须有一条；音标不确定给空串，严禁编造；释义要优先考研高频义项。',
 ].join('\n');
 
-/** 记录测验结果：反哺「我又忘了」体系（写入 word.quizResponse，供忘记词/模糊词筛选） */
+/** 记录测验结果：反哺「我又忘了」体系（写入 word.quizResponse，供忘记词/模糊词筛选）
+ *  v2.2.1：双写统一学习流水（word_quiz attempt），单题采集信心/耗时/作答值，服务端权威释义 expected 防篡改
+ */
 function applyQuizResults(results, mode) {
   let applied = 0;
+  const attemptsToSave = [];
+
   for (const r of results) {
     const sp = String(r.spelling || '').trim();
     const resp = ['FAMILIAR', 'VAGUE', 'FORGET'].includes(r.response) ? r.response : null;
@@ -2215,7 +2219,44 @@ function applyQuizResults(results, mode) {
     if (resp === 'FORGET') w.quizWrong = (w.quizWrong || 0) + 1;
     w.quizLastAt = new Date().toISOString();
     applied++;
+
+    // 服务端权威释义作为 expected，禁止信任客户端上报
+    const stdGloss = (db.glosses && db.glosses[sp])
+      ? (typeof db.glosses[sp] === 'string' ? db.glosses[sp] : db.glosses[sp].gloss || '')
+      : '';
+
+    // 映射 FAMILIAR/VAGUE/FORGET 到标准 attempt result
+    const attemptResult = resp === 'FAMILIAR' ? 'correct' : resp === 'VAGUE' ? 'vague' : 'incorrect';
+
+    let conf = r.confidence ? String(r.confidence).trim() : 'unsure';
+    if (!VALID_ATTEMPT_CONFIDENCES.has(conf)) conf = 'unsure';
+
+    const itemMode = String(r.mode || mode || 'flash').slice(0, 20);
+    const userAnswer = r.userAnswer !== undefined && r.userAnswer !== null
+      ? String(r.userAnswer).slice(0, 4000)
+      : resp;
+
+    attemptsToSave.push({
+      kind: 'word_quiz',
+      source: 'quiz',
+      itemId: `word:${sp}`,
+      section: 'vocabulary',
+      prompt: sp,
+      expected: stdGloss,
+      answer: userAnswer,
+      result: attemptResult,
+      confidence: conf,
+      startedAt: r.startedAt || null,
+      submittedAt: r.submittedAt || new Date().toISOString(),
+      durationMs: r.durationMs !== undefined ? r.durationMs : null,
+      meta: {
+        mode: itemMode,
+        word: sp,
+        response: resp,
+      },
+    });
   }
+
   db.quizLog.unshift({
     ts: new Date().toISOString(), mode: String(mode || '').slice(0, 20),
     total: results.length,
@@ -2225,7 +2266,13 @@ function applyQuizResults(results, mode) {
   });
   db.quizLog = db.quizLog.slice(0, 100);
   persistDB();
-  return applied;
+
+  let attemptsSaved = 0;
+  if (attemptsToSave.length > 0) {
+    attemptsSaved = appendLearningAttempts(attemptsToSave);
+  }
+
+  return { applied, attemptsSaved };
 }
 
 async function finishSession(payload) {
@@ -2901,12 +2948,12 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { glosses: out });
       }
 
-      // 测验结果提交：计入错词体系（v1.0.4）
+      // 测验结果提交：计入错词体系（v1.0.4）并双写统一流水（v2.2.1）
       if (p === '/api/quiz/submit' && req.method === 'POST') {
         const body = await readBody(req);
         const results = Array.isArray(body.results) ? body.results.slice(0, 500) : [];
-        const applied = applyQuizResults(results, body.mode);
-        return sendJSON(res, 200, { ok: true, applied });
+        const { applied, attemptsSaved } = applyQuizResults(results, body.mode);
+        return sendJSON(res, 200, { ok: true, applied, attemptsSaved });
       }
 
       // 单词详情（含本地助记 + 韦氏词典缓存）

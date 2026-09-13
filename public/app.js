@@ -3121,9 +3121,34 @@ setInterval(() => {
   pomoRender();
 }, 500);
 
-/* ---------------- 单词测验（v1.0.4：主动回忆） ---------------- */
+/* ---------------- 单词测验（v1.0.4：主动回忆 / v2.2.1：单题流水与三级信心） ---------------- */
 
-const quiz = { running: false, src: 'today', mode: 'flash', items: [], idx: 0, results: [], distractorPool: [] };
+const quiz = {
+  running: false,
+  src: 'today',
+  mode: 'flash',
+  items: [],
+  idx: 0,
+  results: [],
+  distractorPool: [],
+  confidence: 'unsure',
+  itemStartedAt: null,
+};
+
+function resetQuizConfidence() {
+  quiz.confidence = 'unsure';
+  $$('#quizConfidenceGroup .quiz-conf-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.conf === 'unsure');
+  });
+}
+
+$$('#quizConfidenceGroup .quiz-conf-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('#quizConfidenceGroup .quiz-conf-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    quiz.confidence = btn.dataset.conf || 'unsure';
+  });
+});
 
 $$('#quizSources .chip').forEach(c => c.addEventListener('click', () => {
   $$('#quizSources .chip').forEach(x => x.classList.remove('active'));
@@ -3211,12 +3236,30 @@ function quizAdvance() {
   renderQuizItem();
 }
 
-function quizRecord(resp) {
-  quiz.results.push({ spelling: quiz.items[quiz.idx].spelling, response: resp });
+function quizRecord(resp, extra = {}) {
+  const it = quiz.items[quiz.idx];
+  const now = Date.now();
+  const startT = quiz.itemStartedAt ? new Date(quiz.itemStartedAt).getTime() : now;
+  const durationMs = Math.max(0, Math.min(14400000, now - startT));
+
+  quiz.results.push({
+    spelling: it.spelling,
+    response: resp,
+    mode: quiz.mode,
+    prompt: it.spelling,
+    expected: it.gloss?.gloss || '',
+    userAnswer: extra.userAnswer !== undefined ? String(extra.userAnswer) : resp,
+    confidence: quiz.confidence || 'unsure',
+    startedAt: quiz.itemStartedAt || new Date(now - durationMs).toISOString(),
+    submittedAt: new Date(now).toISOString(),
+    durationMs,
+  });
 }
 
 function renderQuizItem() {
   const it = quiz.items[quiz.idx];
+  quiz.itemStartedAt = new Date().toISOString();
+  resetQuizConfidence();
   $('#quizProgress').textContent = `第 ${quiz.idx + 1} / ${quiz.items.length} 题`;
   $('#quizBar').style.width = (quiz.idx / quiz.items.length * 100) + '%';
   const area = $('#quizArea');
@@ -3256,12 +3299,13 @@ function renderQuizItem() {
     $$('#quizArea .quiz-opt').forEach(b => b.addEventListener('click', () => {
       if (answered) return;
       answered = true;
-      const ok = opts[Number(b.dataset.i)].ok;
+      const pickedOpt = opts[Number(b.dataset.i)];
+      const ok = pickedOpt.ok;
       b.classList.add(ok ? 'correct' : 'wrong');
       $('#quizFeedback').innerHTML = ok
         ? '<span class="fb-ok">✅ 答对了</span>'
         : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.gloss.gloss)}</b></span>`;
-      quizRecord(ok ? 'FAMILIAR' : 'FORGET');
+      quizRecord(ok ? 'FAMILIAR' : 'FORGET', { userAnswer: pickedOpt.text });
       setTimeout(quizAdvance, ok ? 700 : 1800);
     }));
     return;
@@ -3279,15 +3323,15 @@ function renderQuizItem() {
   const input = $('#quizSpellInput');
   input.focus();
   const submit = () => {
-    const val = input.value.trim().toLowerCase();
+    const val = input.value.trim();
     if (!val) return;
-    const ok = val === it.spelling.toLowerCase();
+    const ok = val.toLowerCase() === it.spelling.toLowerCase();
     $('#quizFeedback').innerHTML = ok
       ? `<span class="fb-ok">✅ 拼对了！${esc(it.spelling)}</span>`
       : `<span class="fb-bad">❌ 正确拼写：<b>${esc(it.spelling)}</b> <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></span>`;
     input.disabled = true;
     $('#quizSpellBtn').disabled = true;
-    quizRecord(ok ? 'FAMILIAR' : 'FORGET');
+    quizRecord(ok ? 'FAMILIAR' : 'FORGET', { userAnswer: val });
     setTimeout(quizAdvance, ok ? 700 : 2000);
   };
   $('#quizSpellBtn').addEventListener('click', submit);
