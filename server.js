@@ -47,6 +47,7 @@ const CORPUS_FILE = path.join(ROOT, 'corpus', 'records.jsonl');
 const EXTERNAL_CORPUS_DEFAULT_DIR = path.join(ROOT, 'corpus', 'external', 'current');
 const CONFIG_FILE = path.join(DATA_DIR, 'config.json');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
+const LEARNING_ATTEMPTS_FILE = path.join(DATA_DIR, 'learning_attempts.json');
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
 // 本机默认只监听 127.0.0.1；云服务器部署时设置 HOST=0.0.0.0（建议配合 nginx/防火墙）
 const HOST = process.env.HOST || '127.0.0.1';
@@ -153,6 +154,218 @@ function persistDB() { saveJSON(DB_FILE, db); }
 const CHAT_FILE = path.join(DATA_DIR, 'chat_sessions.json');
 function loadChatHistory() { return loadJSON(CHAT_FILE, []); }
 function saveChatHistory(arr) { saveJSON(CHAT_FILE, arr); }
+
+/* v2.2.0：统一学习流水持久化（独立文件，tmp+rename 原子写，最多 20,000 条） */
+const MAX_LEARNING_ATTEMPTS = 20000;
+const VALID_ATTEMPT_KINDS = new Set([
+  'word_quiz',
+  'unit_objective',
+  'translation',
+  'writing',
+  'vocab_context',
+  'vocab_cloze',
+  'sentence_analysis',
+]);
+const VALID_ATTEMPT_RESULTS = new Set([
+  'pending',
+  'correct',
+  'incorrect',
+  'vague',
+  'unjudged',
+  'completed',
+]);
+const VALID_ATTEMPT_CONFIDENCES = new Set([
+  'sure',
+  'unsure',
+  'guess',
+]);
+const VALID_ATTEMPT_ERROR_REASONS = new Set([
+  'unknown_word',
+  'misread_stem',
+  'evidence_missed',
+  'over_inference',
+  'option_trap',
+  'careless',
+  'time_pressure',
+  'other',
+]);
+
+function loadLearningStore() {
+  if (!fs.existsSync(LEARNING_ATTEMPTS_FILE)) {
+    return { schemaVersion: 1, enabledAt: new Date().toISOString(), attempts: [] };
+  }
+  const raw = loadJSON(LEARNING_ATTEMPTS_FILE, null);
+  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.attempts)) {
+    return { schemaVersion: 1, enabledAt: new Date().toISOString(), attempts: [] };
+  }
+  return {
+    schemaVersion: 1,
+    enabledAt: typeof raw.enabledAt === 'string' ? raw.enabledAt : new Date().toISOString(),
+    attempts: raw.attempts,
+  };
+}
+
+function saveLearningStore(store) {
+  saveJSON(LEARNING_ATTEMPTS_FILE, {
+    schemaVersion: 1,
+    enabledAt: store.enabledAt || new Date().toISOString(),
+    attempts: Array.isArray(store.attempts) ? store.attempts : [],
+  });
+}
+
+function normalizeLearningAttempt(raw) {
+  if (!raw || typeof raw !== 'object') throw new Error('Attempt 必须为对象');
+
+  const kind = String(raw.kind || '').trim();
+  if (!VALID_ATTEMPT_KINDS.has(kind)) throw new Error(`无效的 attempt kind: ${kind}`);
+
+  const result = String(raw.result || '').trim();
+  if (!VALID_ATTEMPT_RESULTS.has(result)) throw new Error(`无效的 attempt result: ${result}`);
+
+  let confidence = raw.confidence !== null && raw.confidence !== undefined ? String(raw.confidence).trim() : null;
+  if (confidence !== null && !VALID_ATTEMPT_CONFIDENCES.has(confidence)) {
+    throw new Error(`无效的 attempt confidence: ${confidence}`);
+  }
+
+  let errorReason = raw.errorReason !== null && raw.errorReason !== undefined ? String(raw.errorReason).trim() : null;
+  if (errorReason !== null && !VALID_ATTEMPT_ERROR_REASONS.has(errorReason)) {
+    throw new Error(`无效的 attempt errorReason: ${errorReason}`);
+  }
+
+  const prompt = raw.prompt !== null && raw.prompt !== undefined ? String(raw.prompt) : null;
+  if (prompt && prompt.length > 4000) throw new Error('prompt 超过 4000 字符限制');
+
+  const expected = raw.expected !== null && raw.expected !== undefined ? String(raw.expected) : null;
+  if (expected && expected.length > 4000) throw new Error('expected 超过 4000 字符限制');
+
+  const answer = raw.answer !== null && raw.answer !== undefined ? String(raw.answer) : null;
+  if (answer && answer.length > 4000) throw new Error('answer 超过 4000 字符限制');
+
+  let meta = null;
+  if (raw.meta !== null && raw.meta !== undefined) {
+    if (typeof raw.meta !== 'object') throw new Error('meta 必须为对象');
+    const metaStr = JSON.stringify(raw.meta);
+    if (metaStr.length > 8000) throw new Error('meta 序列化后超过 8000 字符限制');
+    meta = JSON.parse(metaStr);
+  }
+
+  let durationMs = null;
+  if (raw.durationMs !== null && raw.durationMs !== undefined) {
+    const d = Number(raw.durationMs);
+    if (!Number.isFinite(d) || d < 0 || d > 14400000) {
+      throw new Error('durationMs 必须为 0..14400000 毫秒');
+    }
+    durationMs = Math.round(d);
+  }
+
+  const parseISO = (val, name) => {
+    if (!val) return null;
+    const str = String(val).trim();
+    const d = new Date(str);
+    if (isNaN(d.getTime())) throw new Error(`${name} 无效的 ISO 时间`);
+    return d.toISOString();
+  };
+
+  const startedAt = parseISO(raw.startedAt, 'startedAt');
+  const submittedAt = parseISO(raw.submittedAt, 'submittedAt');
+  const dueAt = parseISO(raw.dueAt, 'dueAt');
+
+  const cleanStr = (val, max = 200) => {
+    if (val === null || val === undefined) return null;
+    const s = String(val).trim();
+    return s.slice(0, max) || null;
+  };
+
+  const cleanNum = (val) => {
+    if (val === null || val === undefined || val === '') return null;
+    const n = Number(val);
+    return Number.isFinite(n) ? n : null;
+  };
+
+  return {
+    id: cleanStr(raw.id, 64) || `att_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`,
+    kind,
+    source: cleanStr(raw.source, 100),
+    itemId: cleanStr(raw.itemId, 200),
+    unitId: cleanStr(raw.unitId, 100),
+    examId: cleanStr(raw.examId, 100),
+    year: cleanNum(raw.year),
+    section: cleanStr(raw.section, 100),
+    prompt,
+    expected,
+    answer,
+    result,
+    confidence,
+    errorReason,
+    startedAt,
+    submittedAt,
+    durationMs,
+    reviewOf: cleanStr(raw.reviewOf, 64),
+    dueAt,
+    meta,
+  };
+}
+
+function pruneLearningAttempts(attempts, max = MAX_LEARNING_ATTEMPTS) {
+  if (attempts.length <= max) return attempts;
+  const now = Date.now();
+  // 必须优先保留未完成 (result === 'pending') 或未来到期 (dueAt 在未来) 的复测记录
+  const isProtected = (att) => {
+    if (att.result === 'pending') return true;
+    if (att.dueAt) {
+      const t = new Date(att.dueAt).getTime();
+      if (!isNaN(t) && t > now) return true;
+    }
+    return false;
+  };
+
+  // 按 submittedAt || startedAt 升序排序
+  const getTime = (att) => {
+    const iso = att.submittedAt || att.startedAt;
+    if (!iso) return 0;
+    const t = new Date(iso).getTime();
+    return isNaN(t) ? 0 : t;
+  };
+
+  // 如果全部都保护，或者超出上限，先剔除最早且未受保护的记录
+  let excess = attempts.length - max;
+  const result = [];
+  // 保持时间相对顺序
+  const sortedWithIdx = attempts.map((att, idx) => ({ att, idx, time: getTime(att), prot: isProtected(att) }))
+    .sort((a, b) => a.time - b.time || a.idx - b.idx);
+
+  const dropIndices = new Set();
+  for (const item of sortedWithIdx) {
+    if (excess <= 0) break;
+    if (!item.prot) {
+      dropIndices.add(item.idx);
+      excess--;
+    }
+  }
+
+  // 若剔除非保护记录后仍然超量（极端情况下全是保护记录），再按最早时间丢弃受保护记录兜底
+  if (excess > 0) {
+    for (const item of sortedWithIdx) {
+      if (excess <= 0) break;
+      if (!dropIndices.has(item.idx)) {
+        dropIndices.add(item.idx);
+        excess--;
+      }
+    }
+  }
+
+  return attempts.filter((_, idx) => !dropIndices.has(idx));
+}
+
+function appendLearningAttempts(newItems) {
+  if (!Array.isArray(newItems) || newItems.length === 0) return 0;
+  const normalized = newItems.map(normalizeLearningAttempt);
+  const store = loadLearningStore();
+  store.attempts.push(...normalized);
+  store.attempts = pruneLearningAttempts(store.attempts);
+  saveLearningStore(store);
+  return normalized.length;
+}
 
 /** 任意 ISO 时间 → 北京时间的 YYYY-MM-DD */
 function bjDateOf(iso) {
@@ -3614,20 +3827,58 @@ const server = http.createServer(async (req, res) => {
         }
       }
 
+      /* ---- v2.2.0：学习流水接口 ---- */
+
+      if (p === '/api/learning/attempts' && req.method === 'GET') {
+        const u = new URL(req.url, 'http://localhost');
+        const kind = u.searchParams.get('kind');
+        if (kind && !VALID_ATTEMPT_KINDS.has(kind)) {
+          return sendJSON(res, 400, { error: `无效的 kind 参数: ${kind}` });
+        }
+        let limit = parseInt(u.searchParams.get('limit') || '50', 10);
+        if (isNaN(limit) || limit < 1) limit = 50;
+        if (limit > 200) limit = 200;
+
+        const store = loadLearningStore();
+        let list = store.attempts || [];
+        if (kind) {
+          list = list.filter(a => a.kind === kind);
+        }
+        // 按时间倒序（submittedAt || startedAt）返回最多 limit 条
+        const sorted = list.slice().sort((a, b) => {
+          const ta = new Date(a.submittedAt || a.startedAt || 0).getTime() || 0;
+          const tb = new Date(b.submittedAt || b.startedAt || 0).getTime() || 0;
+          return tb - ta;
+        });
+
+        return sendJSON(res, 200, {
+          ok: true,
+          schemaVersion: store.schemaVersion || 1,
+          enabledAt: store.enabledAt || null,
+          total: list.length,
+          attempts: sorted.slice(0, limit),
+        });
+      }
+
       /* ---- v1.2.0：数据备份与恢复 ---- */
 
       if (p === '/api/backup/create' && req.method === 'POST') {
         const backupDir = path.join(DATA_DIR, 'backups');
         if (!fs.existsSync(backupDir)) fs.mkdirSync(backupDir, { recursive: true });
-        const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-        const backupName = `backup-${stamp}`;
-        const bDir = path.join(backupDir, backupName);
-        fs.mkdirSync(bDir);
+        let stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+        let backupName = `backup-${stamp}`;
+        let bDir = path.join(backupDir, backupName);
+        if (fs.existsSync(bDir)) {
+          backupName = `backup-${stamp}-${Math.random().toString(36).slice(2, 6)}`;
+          bDir = path.join(backupDir, backupName);
+        }
+        fs.mkdirSync(bDir, { recursive: true });
         // 备份核心数据文件
         const filesToBackup = [
           { src: DB_FILE, name: 'db.json' },
           { src: CONFIG_FILE, name: 'config.json' },
           { src: path.join(DATA_DIR, 'chat_sessions.json'), name: 'chat_sessions.json' },
+          { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json' },
           { src: CORPUS_FILE, name: 'records.jsonl' },
           { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
           { src: KB_VERSIONS_FILE, name: 'kb_versions.json' },
@@ -3673,6 +3924,7 @@ const server = http.createServer(async (req, res) => {
           { name: 'db.json', dst: DB_FILE },
           { name: 'config.json', dst: CONFIG_FILE },
           { name: 'chat_sessions.json', dst: path.join(DATA_DIR, 'chat_sessions.json') },
+          { name: 'learning_attempts.json', dst: LEARNING_ATTEMPTS_FILE },
           { name: 'records.jsonl', dst: CORPUS_FILE },
           { name: 'exams.jsonl', dst: path.join(ROOT, 'corpus', 'exams.jsonl') },
           { name: 'kb_versions.json', dst: KB_VERSIONS_FILE },
@@ -3737,14 +3989,19 @@ function autoBackup() {
     const elapsed = Date.now() - new Date(ts + ':00').getTime();
     if (elapsed < 6 * 3600_000) return;   // 距上次备份不足 6h
   }
-  const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-  const bDir = path.join(backupDir, `backup-${stamp}`);
+  let stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  let bDir = path.join(backupDir, `backup-${stamp}`);
+  if (fs.existsSync(bDir)) {
+    stamp = `${stamp}-${Math.random().toString(36).slice(2, 6)}`;
+    bDir = path.join(backupDir, `backup-${stamp}`);
+  }
   try {
-    fs.mkdirSync(bDir);
+    fs.mkdirSync(bDir, { recursive: true });
     const files = [
       { src: DB_FILE, name: 'db.json' },
       { src: CONFIG_FILE, name: 'config.json' },
       { src: CHAT_FILE, name: 'chat_sessions.json' },
+      { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json' },
       { src: CORPUS_FILE, name: 'records.jsonl' },
       { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
       { src: KB_VERSIONS_FILE, name: 'kb_versions.json' },
