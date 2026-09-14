@@ -1899,10 +1899,31 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .report-reason-item .reason-name { color: var(--text); }
 .report-reason-item .reason-count { font-weight: 600; color: var(--warn); }
 
+/* v2.2.8：分题型作答统计表 */
+.report-sec-table { display: flex; flex-direction: column; gap: 6px; }
+.report-sec-row {
+  display: grid; grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr; align-items: center; gap: 8px;
+  padding: 7px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--border);
+  font-size: 12.5px; color: var(--text);
+}
+.report-sec-head {
+  background: transparent; border: none; padding: 0 10px; font-size: 11.5px; color: var(--text-sub); font-weight: 600;
+}
+.report-sec-row .sec-num { text-align: right; font-variant-numeric: tabular-nums; }
+.report-sec-row .sec-num.ok { color: var(--ok); font-weight: 600; }
+.report-sec-row .sec-num.warn { color: var(--warn); font-weight: 600; }
+
+.report-retry-item {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  width: 100%; text-align: left; padding: 9px 12px; border-radius: 8px; cursor: pointer;
+  background: var(--bg); border: 1px solid var(--border); color: var(--text); font-size: 13px;
+}
+.report-retry-item:hover { border-color: var(--primary); }
+.report-retry-item .due-badge { flex-shrink: 0; padding: 2px 8px; border-radius: 4px; font-size: 11px; background: color-mix(in srgb, var(--warn) 18%, transparent); color: var(--warn); }
+
 .report-conf-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-}
-.report-conf-box {
+}.report-conf-box {
   background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
   padding: 10px; text-align: center; color: var(--text);
 }

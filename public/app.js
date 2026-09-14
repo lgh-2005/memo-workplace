@@ -37,6 +37,17 @@ function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+/** v2.2.8：学习流水 kind 的展示标签，与服务端 VALID_ATTEMPT_KINDS 对齐 */
+const ATTEMPT_KIND_LABELS = {
+  word_quiz: '单词测验',
+  unit_objective: '客观真题',
+  translation: '真题翻译',
+  writing: '真题写作',
+  vocab_context: '语境选义',
+  vocab_cloze: '搭配补全',
+  sentence_analysis: '长难句三遍训练',
+};
+
 /** 语料中仅放行 <u>…</u>（阅读划线句忠实还原）；必须先 esc 再调用 */
 function allowU(s) {
   return String(s ?? '').replace(/&lt;u&gt;([\s\S]*?)&lt;\/u&gt;/g, '<u>$1</u>');
@@ -366,9 +377,42 @@ function renderLearningReport(data) {
       </div>
     </div>`;
 
+  // 1b. 分题型统计（v2.2.8：六类 section 作答量/判分量/准确率）
+  const secLabels = {
+    vocabulary: '词汇',
+    use_of_english: '完形填空',
+    reading: '阅读理解',
+    part_b: '新题型',
+    translation: '翻译',
+    writing: '写作',
+  };
+  const secOrder = ['vocabulary', 'use_of_english', 'reading', 'part_b', 'translation', 'writing'];
+  const bySection = data.bySection || {};
+  const bySecRows = secOrder
+    .map(k => ({ k, v: bySection[k] || { total: 0, judged: 0, correct: 0, accuracy: null } }))
+    .filter(x => x.v.total > 0 || x.v.judged > 0);
+  const bySecHtml = bySecRows.length ? `
+    <div class="report-section">
+      <div class="report-sec-title">📚 分题型作答统计</div>
+      <div class="report-sec-table">
+        <div class="report-sec-row report-sec-head">
+          <span class="sec-name">题型</span>
+          <span class="sec-num">作答</span>
+          <span class="sec-num">判分</span>
+          <span class="sec-num">准确率</span>
+        </div>
+        ${bySecRows.map(({ k, v }) => `
+          <div class="report-sec-row">
+            <span class="sec-name">${esc(secLabels[k] || k)}</span>
+            <span class="sec-num">${v.total}</span>
+            <span class="sec-num">${v.judged}</span>
+            <span class="sec-num ${v.accuracy !== null ? (v.accuracy >= 0.7 ? 'ok' : 'warn') : ''}">${v.accuracy !== null ? Math.round(v.accuracy * 100) + '%' : '—'}</span>
+          </div>`).join('')}
+      </div>
+    </div>` : '';
+
   // 2. 薄弱反复错词
-  const repList = data.repeatedWords || [];
-  const repHtml = repList.length ? `
+  const repList = data.repeatedWords || [];  const repHtml = repList.length ? `
     <div class="report-section">
       <div class="report-sec-title">⚠️ 反复错词 / 顽固词（做错 ≥2 次）</div>
       <div class="report-tag-list">
@@ -451,7 +495,21 @@ function renderLearningReport(data) {
       </div>
     </div>` : '';
 
-  bodyEl.innerHTML = overviewHtml + repHtml + reasonHtml + confHtml + mnHtml + dueHtml;
+  // 5b. 待重试首答（v2.2.8：LLM 失败已存输入，尚未生成反馈，不计入作答统计）
+  const retryList = data.pendingRetries || [];
+  const pendingHtml = retryList.length ? `
+    <div class="report-section">
+      <div class="report-sec-title">⏳ 待重试长难句（AI 反馈未生成）</div>
+      <div class="report-due-list">
+        ${retryList.map(d => `
+          <button type="button" class="report-retry-item" data-review-id="${esc(d.id)}" data-prompt="${esc(String(d.prompt || '').slice(0, 600))}">
+            <span class="due-sentence">${esc(String(d.prompt || '').slice(0, 80))}${String(d.prompt || '').length > 80 ? '…' : ''}</span>
+            <span class="due-badge warn">待重试</span>
+          </button>`).join('')}
+      </div>
+    </div>` : '';
+
+  bodyEl.innerHTML = overviewHtml + bySecHtml + repHtml + reasonHtml + confHtml + mnHtml + pendingHtml + dueHtml;
 
   // 绑定反复错词点击跳转去学
   $$('#learningReportBody .report-word-tag').forEach(btn => {
@@ -469,6 +527,13 @@ function renderLearningReport(data) {
   $$('#learningReportBody .report-due-item').forEach(btn => {
     btn.addEventListener('click', () => {
       stOpenReview(btn.dataset.reviewId, btn.dataset.prompt, {});
+    });
+  });
+
+  // 绑定待重试首答点击进入训练弹层（复用首答重做入口）
+  $$('#learningReportBody .report-retry-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      stOpenRetry(btn.dataset.reviewId, btn.dataset.prompt);
     });
   });
 }
@@ -528,7 +593,7 @@ async function loadReportModalList(kind = '') {
       return `
         <div class="report-attempt-item">
           <div class="att-head">
-            <span class="tag">${esc(a.kind)}</span>
+            <span class="tag">${esc(ATTEMPT_KIND_LABELS[a.kind] || a.kind)}</span>
             <span class="att-res ${resClass}">${resText}</span>
             <span class="att-conf">${a.confidence ? '信心: ' + esc(a.confidence) : ''}</span>
             <span class="att-time">${timeStr ? fmtBJ(timeStr) : ''}</span>
@@ -3510,6 +3575,17 @@ function stOpenReview(reviewAttemptId, prompt, meta) {
     text: prompt,
     title: m.title || '',
     sourceLabel: m.verifiedSource ? '真题/语料复测' : '手动选句复测',
+    triggeredBy: document.activeElement,
+  });
+}
+
+/** v2.2.8：从仪表盘待重试首答打开（attemptId 为 LLM 失败的首答记录，重做首答） */
+function stOpenRetry(attemptId, prompt) {
+  stOpen({
+    mode: 'first',
+    attemptId,
+    text: prompt,
+    sourceLabel: '首答重做（上次 AI 反馈生成失败）',
     triggeredBy: document.activeElement,
   });
 }

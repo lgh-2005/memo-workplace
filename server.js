@@ -426,6 +426,7 @@ const sentenceSubmitInFlight = new Set();
 /**
  * v2.2.3：按北京时间自然日窗口（7/14/30天）聚合细粒度学习诊断周报纯函数
  * 严禁使用旧汇总伪造单题数据，无细粒度流水时安全返回全零结构与 enabledAt
+ * v2.2.8：pending（未完成首答/待复测）一律不进入作答统计，仅 dueReviews/pendingRetries 单独呈现
  */
 function buildLearningReport(days = 7) {
   const allowedDays = [7, 14, 30];
@@ -445,7 +446,9 @@ function buildLearningReport(days = 7) {
   };
 
   // 筛选窗口内已提交/作答的流水记录
-  const windowAttempts = allAttempts.filter(a => inWindow(a.submittedAt || a.startedAt));
+  // v2.2.8：pending（含首答未完成与待复测）不进入作答统计，避免污染准确率/信心矩阵/最近流水
+  const inWindowAll = allAttempts.filter(a => inWindow(a.submittedAt || a.startedAt));
+  const windowAttempts = inWindowAll.filter(a => a.result !== 'pending');
 
   // 1. overview: 总作答、已判题、正确率、平均耗时至
   let totalAttempts = windowAttempts.length;
@@ -573,11 +576,22 @@ function buildLearningReport(days = 7) {
     }
   }
 
-  // 7. dueReviews: 到期且未完成的复测任务（dueAt <= 现在 且 result === 'pending'），最多 20 条
+  // 7. dueReviews: 到期且未完成的复测任务（reviewOf 存在、result=pending 且 dueAt <= 现在），最多 20 条
+  //    v2.2.8：首答失败待重试的 pending（无 reviewOf）不再伪装成复测任务
   const nowISO = new Date().toISOString();
   const dueReviews = allAttempts
-    .filter(a => a.result === 'pending' && a.dueAt && a.dueAt <= nowISO)
+    .filter(a => a.result === 'pending' && a.reviewOf && a.dueAt && a.dueAt <= nowISO)
     .sort((a, b) => (a.dueAt < b.dueAt ? -1 : 1))
+    .slice(0, 20);
+
+  // 7b. pendingRetries: 首答因 LLM 失败待重试的记录（result=pending、无 reviewOf、有 lastError）
+  const pendingRetries = allAttempts
+    .filter(a => a.result === 'pending' && !a.reviewOf && a.meta && a.meta.lastError)
+    .sort((a, b) => {
+      const ta = new Date(a.submittedAt || a.startedAt || 0).getTime() || 0;
+      const tb = new Date(b.submittedAt || b.startedAt || 0).getTime() || 0;
+      return tb - ta;
+    })
     .slice(0, 20);
 
   // 8. recentAttempts: 窗口内最近 20 条流水
@@ -657,6 +671,7 @@ function buildLearningReport(days = 7) {
       samples,
     },
     dueReviews,
+    pendingRetries,
     recentAttempts,
   };
 }
