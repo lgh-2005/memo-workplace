@@ -211,13 +211,28 @@ const VALID_ATTEMPT_ERROR_REASONS = new Set([
   'other',
 ]);
 
+/**
+ * v2.2.8：读取学习流水存储。
+ * 文件不存在时返回内存空 store（首次真实追加后才落盘）；
+ * 文件存在但 JSON 损坏或结构非法（schemaVersion !== 1 / attempts 非数组）时抛出
+ * 带 code=LEARNING_STORE_CORRUPT 的错误，绝不返回空 store 覆盖原文件。
+ */
 function loadLearningStore() {
   if (!fs.existsSync(LEARNING_ATTEMPTS_FILE)) {
     return { schemaVersion: 1, enabledAt: new Date().toISOString(), attempts: [] };
   }
-  const raw = loadJSON(LEARNING_ATTEMPTS_FILE, null);
-  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.attempts)) {
-    return { schemaVersion: 1, enabledAt: new Date().toISOString(), attempts: [] };
+  let raw;
+  try {
+    raw = JSON.parse(fs.readFileSync(LEARNING_ATTEMPTS_FILE, 'utf8'));
+  } catch (e) {
+    const err = new Error('学习流水文件损坏，无法解析：' + String(e.message || e).slice(0, 160));
+    err.code = 'LEARNING_STORE_CORRUPT';
+    throw err;
+  }
+  if (!raw || typeof raw !== 'object' || raw.schemaVersion !== 1 || !Array.isArray(raw.attempts)) {
+    const err = new Error('学习流水文件结构非法（schemaVersion 必须为 1 且 attempts 为数组），已拒绝读写以免覆盖');
+    err.code = 'LEARNING_STORE_CORRUPT';
+    throw err;
   }
   return {
     schemaVersion: 1,
@@ -387,6 +402,26 @@ function appendLearningAttempts(newItems) {
   saveLearningStore(store);
   return normalized.length;
 }
+
+/**
+ * v2.2.8：并发安全地更新单条流水。
+ * 每次调用前重新 loadLearningStore()，仅在最新快照上修改指定 id 的记录后落盘，
+ * 禁止跨 await 持有旧 store 快照整体保存（避免覆盖并发写入）。
+ * @returns {object|null} 修改后的记录，未找到返回 null
+ */
+function updateLearningAttempt(attemptId, mutator) {
+  const store = loadLearningStore();
+  const idx = (store.attempts || []).findIndex(a => a.id === attemptId);
+  if (idx < 0) return null;
+  const next = mutator(store.attempts[idx]);
+  store.attempts[idx] = next;
+  store.attempts = pruneLearningAttempts(store.attempts);
+  saveLearningStore(store);
+  return next;
+}
+
+/** v2.2.8：同一 attemptId 在 LLM 请求期间只允许一次提交，避免并发重复生成复测任务 */
+const sentenceSubmitInFlight = new Set();
 
 /**
  * v2.2.3：按北京时间自然日窗口（7/14/30天）聚合细粒度学习诊断周报纯函数
@@ -1120,6 +1155,9 @@ function getProvider(id) {
 
 async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } = {}) {
   if (config.llm.mock) {
+    // v2.2.8：测试用可配置延迟（MOCK_LLM_DELAY_MS），用于验证并发写入安全
+    const mockDelay = Number(process.env.MOCK_LLM_DELAY_MS || 0);
+    if (Number.isFinite(mockDelay) && mockDelay > 0) await new Promise(r => setTimeout(r, mockDelay));
     return mockLLM(messages);
   }
   const base = getProvider(providerId) || {};
@@ -4737,6 +4775,11 @@ const server = http.createServer(async (req, res) => {
         const attemptId = String(body.attemptId || '').trim();
         if (!attemptId) return sendJSON(res, 400, { error: '缺少 attemptId' });
 
+        // v2.2.8：同一 attempt 在 LLM 请求期间再次提交直接 409，避免生成两个复测任务
+        if (sentenceSubmitInFlight.has(attemptId)) {
+          return sendJSON(res, 409, { error: '该训练正在生成反馈，请勿重复提交', code: 'SENTENCE_IN_FLIGHT' });
+        }
+
         // 先校验记录状态（完成/未到期），再校验正文，保证幂等与 409 语义优先
         const store = loadLearningStore();
         const target = (store.attempts || []).find(a => a.id === attemptId);
@@ -4762,7 +4805,7 @@ const server = http.createServer(async (req, res) => {
         if (structure.length > 2000) return sendJSON(res, 400, { error: '结构分析超过 2000 字符限制' });
         if (translation.length > 2000) return sendJSON(res, 400, { error: '自译超过 2000 字符限制' });
 
-        // 组装 LLM 输入
+        // 组装 LLM 输入（仅使用读取快照，落盘一律走 updateLearningAttempt 重新读取）
         const msgs = [{ role: 'system', content: getPrompt('sentence_training') }];
         const baseUser = [
           `【原句】${target.prompt}`,
@@ -4779,74 +4822,84 @@ const server = http.createServer(async (req, res) => {
             `【结构分析】\n${structure}`, `【自译】\n${translation}`].filter(Boolean).join('\n\n') });
         }
 
-        let reply;
+        sentenceSubmitInFlight.add(attemptId);
         try {
-          reply = await llmChat(msgs, {
-            maxTokens: (config.review && config.review.thinking) ? 8000 : 1800,
-            providerId: (config.review && config.review.providerId) || undefined,
-            llmOverride: (() => {
-              const over = {};
-              if (config.review && config.review.model) over.model = config.review.model;
-              if (config.review && config.review.thinking) {
-                over.temperature = 1;
-                over._thinking = { type: 'enabled', budget_tokens: 6000 };
-              }
-              return Object.keys(over).length ? over : undefined;
-            })(),
+          let reply;
+          try {
+            reply = await llmChat(msgs, {
+              maxTokens: (config.review && config.review.thinking) ? 8000 : 1800,
+              providerId: (config.review && config.review.providerId) || undefined,
+              llmOverride: (() => {
+                const over = {};
+                if (config.review && config.review.model) over.model = config.review.model;
+                if (config.review && config.review.thinking) {
+                  over.temperature = 1;
+                  over._thinking = { type: 'enabled', budget_tokens: 6000 };
+                }
+                return Object.keys(over).length ? over : undefined;
+              })(),
+            });
+          } catch (e) {
+            // LLM 失败：重新读取最新 store 仅更新目标记录保存输入，保持 pending 以便重试，不生成复测任务
+            updateLearningAttempt(attemptId, (att) => {
+              att.meta = { ...(att.meta || {}), structure, translation, phase: isReview ? 'review' : 'first', lastError: String(e.message || '').slice(0, 300) };
+              att.submittedAt = new Date().toISOString();
+              return att;
+            });
+            return sendJSON(res, 502, { ok: false, retryable: true, error: 'AI 反馈生成失败，已保存你的输入，可稍后重试：' + String(e.message || '').slice(0, 200) });
+          }
+
+          const submittedAt = new Date().toISOString();
+          let reviewAttemptId = null;
+
+          // LLM 返回后重新读取最新 store 合并首答反馈，禁止用调用前快照整体保存
+          updateLearningAttempt(attemptId, (att) => {
+            att.answer = `${structure}\n\n[自译] ${translation}`.slice(0, 4000);
+            att.expected = String(reply).slice(0, 4000);
+            att.result = 'completed';
+            att.submittedAt = submittedAt;
+            att.meta = { ...(att.meta || {}), structure, translation, phase: isReview ? 'review' : 'first', feedbackAt: submittedAt };
+            return att;
           });
-        } catch (e) {
-          // LLM 失败：保存用户输入但保持 pending 以便重试，不生成复测任务
-          target.meta = { ...(target.meta || {}), structure, translation, phase: isReview ? 'review' : 'first', lastError: String(e.message || '').slice(0, 300) };
-          target.submittedAt = new Date().toISOString();
-          saveLearningStore(store);
-          return sendJSON(res, 502, { ok: false, retryable: true, error: 'AI 反馈生成失败，已保存你的输入，可稍后重试：' + String(e.message || '').slice(0, 200) });
+
+          if (!isReview) {
+            // 首次成功：生成 3 天后复测任务。重新读取最新 store 后追加，避免覆盖并发写入
+            const dueAt = new Date(Date.now() + 3 * 86400000).toISOString();
+            const reviewAttempt = {
+              kind: 'sentence_analysis',
+              source: target.source,
+              itemId: target.itemId,
+              unitId: target.unitId || null,
+              examId: target.examId || null,
+              year: target.year || null,
+              section: 'sentence',
+              prompt: target.prompt,
+              expected: null,
+              answer: null,
+              result: 'pending',
+              confidence: null,
+              startedAt: submittedAt,
+              submittedAt,
+              durationMs: null,
+              reviewOf: attemptId,
+              dueAt,
+              meta: { phase: 'review', context: target.meta?.context || '', title: target.meta?.title || '', verifiedSource: !!target.meta?.verifiedSource, sourceKind: target.meta?.sourceKind || 'manual_selection' },
+            };
+            const normalized = normalizeLearningAttempt(reviewAttempt);
+            appendLearningAttempts([normalized]);
+            reviewAttemptId = normalized.id;
+          }
+
+          return sendJSON(res, 200, {
+            ok: true,
+            feedback: String(reply),
+            isReview,
+            reviewAttemptId,
+            dueAt: !isReview ? new Date(Date.now() + 3 * 86400000).toISOString() : null,
+          });
+        } finally {
+          sentenceSubmitInFlight.delete(attemptId);
         }
-
-        const submittedAt = new Date().toISOString();
-        target.answer = `${structure}\n\n[自译] ${translation}`.slice(0, 4000);
-        target.expected = String(reply).slice(0, 4000);
-        target.result = 'completed';
-        target.submittedAt = submittedAt;
-        target.meta = { ...(target.meta || {}), structure, translation, phase: isReview ? 'review' : 'first', feedbackAt: submittedAt };
-
-        let reviewAttemptId = null;
-        if (!isReview) {
-          // 首次成功：生成 3 天后复测任务
-          const dueAt = new Date(Date.now() + 3 * 86400000).toISOString();
-          const reviewAttempt = {
-            kind: 'sentence_analysis',
-            source: target.source,
-            itemId: target.itemId,
-            unitId: target.unitId || null,
-            examId: target.examId || null,
-            year: target.year || null,
-            section: 'sentence',
-            prompt: target.prompt,
-            expected: null,
-            answer: null,
-            result: 'pending',
-            confidence: null,
-            startedAt: submittedAt,
-            submittedAt,
-            durationMs: null,
-            reviewOf: target.id,
-            dueAt,
-            meta: { phase: 'review', context: target.meta?.context || '', title: target.meta?.title || '', verifiedSource: !!target.meta?.verifiedSource, sourceKind: target.meta?.sourceKind || 'manual_selection' },
-          };
-          const normalized = normalizeLearningAttempt(reviewAttempt);
-          store.attempts.push(normalized);
-          store.attempts = pruneLearningAttempts(store.attempts);
-          reviewAttemptId = normalized.id;
-        }
-
-        saveLearningStore(store);
-        return sendJSON(res, 200, {
-          ok: true,
-          feedback: String(reply),
-          isReview,
-          reviewAttemptId,
-          dueAt: !isReview ? new Date(Date.now() + 3 * 86400000).toISOString() : null,
-        });
       }
 
       /* ---- v1.2.0：数据备份与恢复 ---- */
