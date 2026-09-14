@@ -990,15 +990,18 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .quiz-confidence-btns {
   display: flex; gap: 6px;
 }
-.quiz-conf-btn {
+.quiz-conf-btn,
+.transfer-conf-btn {
   padding: 4px 12px; font-size: 12.5px; border-radius: 6px; cursor: pointer;
   background: var(--card); border: 1px solid var(--border); color: var(--text-sub);
   transition: all .15s ease;
 }
-.quiz-conf-btn:hover {
+.quiz-conf-btn:hover,
+.transfer-conf-btn:hover {
   color: var(--text); border-color: var(--primary);
 }
-.quiz-conf-btn.active {
+.quiz-conf-btn.active,
+.transfer-conf-btn.active {
   background: var(--primary); color: #fff; border-color: var(--primary);
   box-shadow: 0 1px 4px rgba(0,0,0,0.12); font-weight: 600;
 }
@@ -1539,7 +1542,6 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   .quiz-opts { grid-template-columns: 1fr; }
   .quiz-confidence-row { width: 100%; justify-content: space-between; box-sizing: border-box; }
   .quiz-confidence-btns { flex: 1; justify-content: flex-end; }
-  .quiz-conf-btn { min-height: 36px; padding: 6px 10px; font-size: 12px; }
   .grade-row { gap: 8px; }
   .grade { padding: 9px 16px; font-size: 14px; }
   .gloss-line { max-width: 130px; }
@@ -2040,6 +2042,9 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   .row-gap, .kb-fix-actions { flex-wrap: wrap; }
   .btn { min-height: 38px; }
   .btn.small { min-height: 34px; }
+  /* v2.2.8：信心按钮（测验/迁移）移动端触控 44px，置于 .btn.small 之后以生效 */
+  .quiz-confidence-btns .quiz-conf-btn,
+  .quiz-confidence-btns .transfer-conf-btn { min-height: 44px; padding: 6px 10px; font-size: 12px; }
 
   /* 疑点弹窗：全屏 sheet 式 */
   .kb-fix-modal { padding: 0; align-items: flex-end; }

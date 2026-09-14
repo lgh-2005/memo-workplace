@@ -3713,6 +3713,7 @@ const quiz = {
   confidence: 'unsure',
   itemStartedAt: null,
   submode: 'basic',
+  advanceTimer: null,
 };
 
 /* v2.2.4：真题迁移训练状态 */
@@ -3726,6 +3727,7 @@ const transfer = {
   itemStartedAt: null,
   confidence: 'unsure',
   answered: false,
+  advanceTimer: null,
 };
 
 // 二级模式切换
@@ -3762,6 +3764,22 @@ $$('#quizConfidenceGroup .quiz-conf-btn').forEach(btn => {
     $$('#quizConfidenceGroup .quiz-conf-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     quiz.confidence = btn.dataset.conf || 'unsure';
+  });
+});
+
+/* v2.2.8：迁移训练独立信心组（与基础测验互不复用，避免隐藏状态互相干扰） */
+function resetTransferConfidence() {
+  transfer.confidence = 'unsure';
+  $$('#transferConfidenceGroup .transfer-conf-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.conf === 'unsure');
+  });
+}
+
+$$('#transferConfidenceGroup .transfer-conf-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('#transferConfidenceGroup .transfer-conf-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    transfer.confidence = btn.dataset.conf || 'unsure';
   });
 });
 
@@ -3842,12 +3860,18 @@ async function startQuiz() {
 
 function quitQuiz() {
   quiz.running = false;
+  transfer.running = false;
+  transfer.answered = false;
+  if (quiz.advanceTimer) { clearTimeout(quiz.advanceTimer); quiz.advanceTimer = null; }
+  if (transfer.advanceTimer) { clearTimeout(transfer.advanceTimer); transfer.advanceTimer = null; }
   $('#quizRun').style.display = 'none';
   $('#quizSetup').style.display = 'block';
   $('#quizConfidenceGroup').style.display = '';
+  $('#transferConfidenceGroup').style.display = 'none';
 }
 
 function quizAdvance() {
+  if (!quiz.running) return;
   quiz.idx++;
   if (quiz.idx >= quiz.items.length) return finishQuiz();
   renderQuizItem();
@@ -3923,7 +3947,7 @@ function renderQuizItem() {
         ? '<span class="fb-ok">✅ 答对了</span>'
         : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.gloss.gloss)}</b></span>`;
       quizRecord(ok ? 'FAMILIAR' : 'FORGET', { userAnswer: pickedOpt.text });
-      setTimeout(quizAdvance, ok ? 700 : 1800);
+      quiz.advanceTimer = setTimeout(quizAdvance, ok ? 700 : 1800);
     }));
     return;
   }
@@ -3949,7 +3973,7 @@ function renderQuizItem() {
     input.disabled = true;
     $('#quizSpellBtn').disabled = true;
     quizRecord(ok ? 'FAMILIAR' : 'FORGET', { userAnswer: val });
-    setTimeout(quizAdvance, ok ? 700 : 2000);
+    quiz.advanceTimer = setTimeout(quizAdvance, ok ? 700 : 2000);
   };
   $('#quizSpellBtn').addEventListener('click', submit);
   input.addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
@@ -4010,11 +4034,13 @@ async function startTransfer() {
     transfer.results = [];
     transfer.running = true;
     transfer.answered = false;
+    if (transfer.advanceTimer) { clearTimeout(transfer.advanceTimer); transfer.advanceTimer = null; }
     msg.textContent = '';
     $('#quizSetup').style.display = 'none';
     $('#quizRun').style.display = 'block';
-    // 复用基础测验的运行容器，但隐藏信心组（迁移题不需要单选信心，直接用默认）
+    // 迁移训练使用独立信心组，隐藏基础测验信心组
     $('#quizConfidenceGroup').style.display = 'none';
+    $('#transferConfidenceGroup').style.display = '';
     renderTransferItem();
   } catch (e) {
     msg.textContent = '❌ ' + e.message;
@@ -4023,6 +4049,7 @@ async function startTransfer() {
 }
 
 function transferAdvance() {
+  if (!transfer.running) return;
   transfer.idx++;
   if (transfer.idx >= transfer.questions.length) return finishTransfer();
   renderTransferItem();
@@ -4032,6 +4059,7 @@ function renderTransferItem() {
   const q = transfer.questions[transfer.idx];
   transfer.itemStartedAt = new Date().toISOString();
   transfer.answered = false;
+  resetTransferConfidence();   // 每题重置为 unsure
   $('#quizProgress').textContent = `第 ${transfer.idx + 1} / ${transfer.questions.length} 题`;
   $('#quizBar').style.width = (transfer.idx / transfer.questions.length * 100) + '%';
   const area = $('#quizArea');
@@ -4098,7 +4126,7 @@ async function submitTransfer(q, answer) {
       body: {
         token: q.token,
         answer,
-        confidence: 'unsure',
+        confidence: transfer.confidence || 'unsure',   // v2.2.8：发送真实信心，不再固定 unsure
         startedAt: transfer.itemStartedAt,
         durationMs,
       },
@@ -4125,14 +4153,15 @@ async function submitTransfer(q, answer) {
   $('#quizFeedback').innerHTML = correct
     ? '<span class="fb-ok">✅ 正确</span>'
     : `<span class="fb-bad">❌ 正确答案：<b>${esc(expected)}</b></span>`;
-  setTimeout(transferAdvance, correct ? 800 : 1800);
+  transfer.advanceTimer = setTimeout(transferAdvance, correct ? 800 : 1800);
 }
 
 async function finishTransfer() {
   transfer.running = false;
+  if (transfer.advanceTimer) { clearTimeout(transfer.advanceTimer); transfer.advanceTimer = null; }
   $('#quizBar').style.width = '100%';
   $('#quizProgress').textContent = '迁移训练完成 🎯';
-  $('#quizConfidenceGroup').style.display = '';
+  $('#transferConfidenceGroup').style.display = 'none';
   const r = transfer.results;
   const correctN = r.filter(x => x.correct).length;
   const ctx = r.filter(x => x.kind === 'vocab_context');
@@ -4159,6 +4188,7 @@ async function finishTransfer() {
   $('#transferAgainBtn').addEventListener('click', () => {
     $('#quizRun').style.display = 'none';
     $('#quizSetup').style.display = 'block';
+    $('#transferConfidenceGroup').style.display = 'none';
   });
   $$('#quizArea .transfer-wrong-chip').forEach(chip => {
     chip.addEventListener('click', () => {

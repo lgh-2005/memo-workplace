@@ -693,8 +693,9 @@ function findWordFormInSentence(sentence, word) {
 }
 
 function vocabSignPayload(q) {
+  // v2.2.8：额外绑定 rid，提交时据此在当前索引精确复核来源
   return crypto.createHmac('sha256', VOCAB_TRAIN_SECRET)
-    .update([q.kind, q.word, q.sentence, q.expected].join('|'))
+    .update([q.kind, q.word, q.sentence, q.expected, q.rid || ''].join('|'))
     .digest('hex');
 }
 
@@ -721,12 +722,12 @@ function generateVocabQuestions(filter, count, options = {}) {
     [usable[i], usable[j]] = [usable[j], usable[i]];
   }
 
-  // 干扰项池：所有本地 gloss（去重）
+  // 干扰项池：所有本地 gloss（去重），保留词性以支持同词性优先
   const allGlosses = [];
   const glossSeen = new Set();
   for (const sp of Object.keys(db.glosses || {})) {
     const g = vocabGlossOf(sp);
-    if (g && !glossSeen.has(g.gloss)) { glossSeen.add(g.gloss); allGlosses.push(g.gloss); }
+    if (g && !glossSeen.has(g.gloss)) { glossSeen.add(g.gloss); allGlosses.push({ gloss: g.gloss, pos: g.pos || '' }); }
   }
 
   const questions = [];
@@ -734,29 +735,34 @@ function generateVocabQuestions(filter, count, options = {}) {
     if (questions.length >= count) break;
 
     if (wantContext) {
-      // 语境选义：正确项为服务端 gloss，干扰项从其他本地 gloss 去重抽取 3 个
-      const distractors = [];
+      // 语境选义：干扰项优先取同词性释义，不足再补其他词性；仍不足 3 个则跳过
+      const targetPos = (item.gloss.pos || '').trim();
+      const samePos = [];
+      const otherPos = [];
       for (const g of allGlosses) {
-        if (g === item.gloss.gloss) continue;
-        distractors.push(g);
-        if (distractors.length >= 10) break;
+        if (g.gloss === item.gloss.gloss) continue;
+        if (targetPos && g.pos && g.pos === targetPos) samePos.push(g.gloss);
+        else otherPos.push(g.gloss);
       }
-      for (let i = distractors.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
+      shuffleInPlace(samePos);
+      shuffleInPlace(otherPos);
+      const distractors = samePos.slice(0, 3);
+      if (distractors.length < 3) {
+        for (const g of otherPos) {
+          if (distractors.length >= 3) break;
+          if (!distractors.includes(g)) distractors.push(g);
+        }
       }
-      const wrongOpts = distractors.slice(0, 3);
-      if (wrongOpts.length < 3) continue;   // 释义池不足，跳过
-      const opts = [item.gloss.gloss, ...wrongOpts];
-      for (let i = opts.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [opts[i], opts[j]] = [opts[j], opts[i]];
-      }
+      if (distractors.length < 3) continue;   // 释义池不足，跳过
+      const opts = [item.gloss.gloss, ...distractors.slice(0, 3)];
+      shuffleInPlace(opts);
       const expected = item.gloss.gloss;
       const q = {
         kind: 'vocab_context',
         word: item.word,
         sentence: item.hit.s,
+        rid: item.hit.rid || null,
+        sourceSentence: item.hit.s,
         year: item.hit.year || null,
         title: item.hit.title || '',
         sourceKind: item.hit.sourceKind,
@@ -782,6 +788,8 @@ function generateVocabQuestions(filter, count, options = {}) {
         kind: 'vocab_cloze',
         word: item.word,
         sentence: blanked,
+        rid: item.hit.rid || null,
+        sourceSentence: item.hit.s,
         year: item.hit.year || null,
         title: item.hit.title || '',
         sourceKind: item.hit.sourceKind,
@@ -1875,6 +1883,15 @@ function kbSentences() {
 }
 
 function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+/** v2.2.8：原地 Fisher-Yates 洗牌（迁移题选项/干扰项随机化复用） */
+function shuffleInPlace(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
 /**
  * v2.0.1 单词词形生成器（Lemmatizer / Inflections）
@@ -4642,11 +4659,19 @@ const server = http.createServer(async (req, res) => {
           return sendJSON(res, 400, { error: '题目已过期，请重新生成', code: 'VOCAB_EXPIRED' });
         }
 
-        // 服务端独立校验：重新在真实真题句与 gloss 中确认标准答案，不信任客户端
+        // v2.2.8：按 token 绑定的 rid + sourceSentence 在当前索引精确查找，不得只取 evidence.exams[0]
         const gloss = vocabGlossOf(q.word);
-        const evidence = kbEvidenceForWord(q.word, 3, 0);
-        const examHit = evidence.exams && evidence.exams[0];
-        if (!gloss || !examHit) {
+        if (!gloss) {
+          vocabQuestionMap.delete(token);
+          return sendJSON(res, 400, { error: '题目来源已变化，请重新生成', code: 'VOCAB_EXPIRED' });
+        }
+        const normS = s => String(s || '').replace(/\s+/g, ' ').trim().toLowerCase();
+        const srcNorm = normS(q.sourceSentence);
+        const examHit = kbSentences().find(it =>
+          it.sourceKind === 'exam' &&
+          it.rid === q.rid &&
+          normS(it.s) === srcNorm);
+        if (!examHit) {
           vocabQuestionMap.delete(token);
           return sendJSON(res, 400, { error: '题目来源已变化，请重新生成', code: 'VOCAB_EXPIRED' });
         }
@@ -4666,12 +4691,22 @@ const server = http.createServer(async (req, res) => {
         const norm = s => String(s || '').trim().toLowerCase();
         const ok = norm(answer) === norm(expected);
 
-        // 信心与耗时校验
-        let conf = body.confidence ? String(body.confidence).trim() : 'unsure';
-        if (!VALID_ATTEMPT_CONFIDENCES.has(conf)) conf = 'unsure';
-        let durationMs = Number(body.durationMs);
-        if (!Number.isFinite(durationMs) || durationMs < 0) durationMs = null;
-        if (durationMs > 14400000) durationMs = 14400000;
+        // v2.2.8：信心非法直接 400，不再静默降级；duration 超范围 400
+        let conf = 'unsure';
+        if (body.confidence !== undefined && body.confidence !== null && String(body.confidence).trim() !== '') {
+          conf = String(body.confidence).trim();
+          if (!VALID_ATTEMPT_CONFIDENCES.has(conf)) {
+            return sendJSON(res, 400, { error: `无效的 confidence: ${conf}（仅 sure/unsure/guess）` });
+          }
+        }
+        let durationMs = null;
+        if (body.durationMs !== undefined && body.durationMs !== null && String(body.durationMs).trim() !== '') {
+          const d = Number(body.durationMs);
+          if (!Number.isFinite(d) || d < 0 || d > 14400000) {
+            return sendJSON(res, 400, { error: '无效的 durationMs（0..14400000 毫秒）' });
+          }
+          durationMs = Math.round(d);
+        }
         const startedAt = body.startedAt ? (() => { const d = new Date(body.startedAt); return isNaN(d) ? null : d.toISOString(); })() : null;
         const submittedAt = new Date().toISOString();
 
@@ -4689,7 +4724,7 @@ const server = http.createServer(async (req, res) => {
           startedAt,
           submittedAt,
           durationMs,
-          meta: { word: q.word, sourceKind: q.sourceKind, title: q.title, mode: 'vocab_transfer' },
+          meta: { word: q.word, sourceKind: q.sourceKind, title: q.title, rid: q.rid || null, mode: 'vocab_transfer' },
         };
         appendLearningAttempts([attempt]);
         vocabQuestionMap.delete(token);   // 一题一提交，防止重复计分
