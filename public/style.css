@@ -1116,7 +1116,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 .st-title { font-size: 15px; font-weight: 700; }
 .st-close {
-  width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+  width: 44px; height: 44px; border-radius: 8px; cursor: pointer;
   border: 1px solid var(--border); background: var(--bg); color: var(--text);
   font-size: 15px; line-height: 1;
 }
@@ -1125,7 +1125,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .st-source { font-size: 12px; color: var(--text-sub); margin-bottom: 8px; }
 .st-sentence {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 16px; line-height: 1.8; text-indent: 0;
+  font-size: 16px; line-height: 1.8; text-indent: 2em;
   padding: 12px 14px; margin-bottom: 14px;
   background: var(--primary-soft); border-left: 3px solid var(--primary);
   border-radius: 0 8px 8px 0; color: var(--text);
@@ -1149,7 +1149,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .report-due-list { display: flex; flex-direction: column; gap: 8px; }
 .report-due-item {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  text-align: left; width: 100%; cursor: pointer;
+  text-align: left; width: 100%; cursor: pointer; min-height: 44px;
   padding: 10px 12px; border-radius: 10px;
   background: var(--card); border: 1px solid var(--border); color: var(--text);
 }
@@ -1840,7 +1840,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 .u-reason-tip { font-size: 12px; color: var(--text-sub); }
 .u-reason-btn {
-  font-size: 11px; padding: 2px 8px; border-radius: 4px; cursor: pointer;
+  min-height: 44px; font-size: 11px; padding: 2px 10px; border-radius: 4px; cursor: pointer;
   background: var(--card); border: 1px solid var(--border); color: var(--text-sub);
 }
 .u-reason-btn:hover { border-color: var(--warn); color: var(--text); }
@@ -1856,7 +1856,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 
 /* ============ v2.2.3：学习诊断周报样式 ============ */
 .report-win-btns { display: flex; gap: 6px; align-items: center; }
-.report-win-btn { min-height: 28px; padding: 2px 10px; font-size: 12px; }
+.report-win-btn { min-height: 44px; padding: 2px 12px; font-size: 12px; }
+#reportViewAllBtn { min-height: 44px; }
 .report-win-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); font-weight: 600; }
 
 .report-empty {
@@ -1915,7 +1916,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 
 .report-retry-item {
   display: flex; justify-content: space-between; align-items: center; gap: 10px;
-  width: 100%; text-align: left; padding: 9px 12px; border-radius: 8px; cursor: pointer;
+  width: 100%; text-align: left; padding: 9px 12px; border-radius: 8px; cursor: pointer; min-height: 44px;
   background: var(--bg); border: 1px solid var(--border); color: var(--text); font-size: 13px;
 }
 .report-retry-item:hover { border-color: var(--primary); }
@@ -1962,10 +1963,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 
 /* 移动端周报适配 (<=700px) */
 @media (max-width: 700px) {
-  .report-stat-grid { grid-template-columns: 1fr 1fr; }
+  .report-stat-grid { grid-template-columns: 1fr; }
   .report-conf-grid { grid-template-columns: 1fr; }
-  .report-win-btns .report-win-btn { min-height: 36px; padding: 4px 10px; }
-  #reportViewAllBtn { min-height: 36px; }
+  .report-win-btns .report-win-btn { min-height: 44px; padding: 4px 10px; }
+  #reportViewAllBtn { min-height: 44px; }
 }
 .kb-locate { outline: 2px solid var(--primary); border-radius: 8px; background: color-mix(in srgb, var(--primary) 12%, transparent); }
 .kb-issue-head { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 2px; }
@@ -1982,7 +1983,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-issue-tag.kb-issue-high { background: #e24b4a; }
 .kb-issue-tag.kb-issue-mid { background: #ba7517; }
 .kb-issue-tag.kb-issue-low { background: #639922; }
-.kb-fix-close { border: none; background: none; font-size: 16px; cursor: pointer; color: var(--text-sub, #888); padding: 4px 8px; border-radius: 6px; }
+.kb-fix-close { border: none; background: none; font-size: 16px; cursor: pointer; color: var(--text-sub, #888); padding: 4px 8px; border-radius: 6px; min-width: 44px; min-height: 44px; }
 .kb-fix-close:hover { background: color-mix(in srgb, var(--text-sub, #888) 15%, transparent); }
 .kb-fix-issue { padding: 10px 18px; font-size: 13px; color: var(--text-main, #333); }
 .kb-fix-rule { margin: 4px 18px 0; padding: 8px 12px; font-size: 12px; line-height: 1.6; background: color-mix(in srgb, var(--primary, #4a7de2) 8%, transparent); border-left: 3px solid var(--primary, #4a7de2); border-radius: 0 8px 8px 0; color: var(--text-main, #333); }
@@ -2538,7 +2539,7 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   .st-overlay { padding: 10px; align-items: flex-end; }
   .st-modal { max-width: none; width: 100%; max-height: 90dvh; border-radius: 16px 16px 0 0; }
   .st-modal .btn { min-height: 44px; }
-  .st-close { width: 40px; height: 40px; }
+  .st-close { width: 44px; height: 44px; }
   .st-body { padding: 14px 14px calc(14px + env(safe-area-inset-bottom, 0px)); }
   .st-sentence { font-size: 15px; }
 }
