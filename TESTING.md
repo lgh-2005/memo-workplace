@@ -62,9 +62,9 @@
 
 | # | 脚本 | 断言数 | 覆盖 |
 |---|---|---|---|
-| 27 | `.workbuddy/test_v228_online_smoke.js` | 12 | 线上只读 API/页面/版本/无持久化写 |
+| 27 | `.workbuddy/test_v228_online_smoke.js` | 15 | 线上只读 API/页面/版本/无持久化写/静态资源三方哈希 |
 
-> 合计 **27** 套、断言总数 **553**（14 后端 336 + 12 浏览器 205 + 1 线上冒烟 12）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+> 合计 **27** 套、断言总数 **556**（14 后端 336 + 12 浏览器 205 + 1 线上冒烟 15）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
 
 > **说明**：`english-workbench/.workbuddy/` 目录下共 32 个 `test_*.js`，其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，**不属于 v2.2.8 验收范围**；上表 27 套为本版验收清单，与计划「14 后端 + 12 浏览器 + 1 线上冒烟」一一对应。
 
@@ -108,7 +108,11 @@ node .workbuddy/test_v228_ui_contract.js
 node .workbuddy/test_v228_online_smoke.js
 # 严格模式：configured 入口不可达即失败，禁止回退
 ONLINE_REQUIRE_ORIGIN=1 node .workbuddy/test_v228_online_smoke.js
+# 静态资源三方哈希比对基准 ref（默认 v2.2.8）
+ONLINE_HASH_REF=v2.2.8 node .workbuddy/test_v228_online_smoke.js
 ```
+
+> 静态资源哈希比对统一按 **LF 归一**（`CRLF→LF` 后再算 SHA-256），以消除 Windows 工作树（`core.autocrlf=true`）与仓库 blob / 服务器之间的行尾差异。
 
 ## 5. 线上冒烟入口与写接口红线
 
@@ -120,11 +124,10 @@ ONLINE_REQUIRE_ORIGIN=1 node .workbuddy/test_v228_online_smoke.js
 
 ## 6. 当前发布状态（截至本文件提交）
 
-- ✅ 本地 / Gitee `master` / tag `v2.2.8` / ECS `/opt/workbench` 均为 `0705689`；`workbench.service` `active`。
+- ✅ 本地 / Gitee `master` / tag `v2.2.8` / ECS `/opt/workbench`：产品文件与 tag `v2.2.8`（`0705689`）逐文件一致；`workbench.service` `active`。
 - ✅ 27 套件全部退出码 `0`，无残留 `server.js` 子进程，真实 `data/` 三文件哈希不变。
-- ✅ 线上只读冒烟通过（ECS 直连入口）。
+- ✅ 线上只读冒烟通过（canonical 入口 = ECS 直连），含**静态资源三方哈希一致性**：`index.html`/`app.js`/`style.css` 的「线上服务 = tag `v2.2.8` = 本地工作树」SHA-256 按 LF 归一后**完全相等**。
 - ✅ tag `v2.2.8` 已推送 Gitee（附注 tag，peeled `0705689`）。
-- ⏳ **Gitee Release 尚未创建**：账号未完成手机身份绑定，`release create` 返回 HTTP 400（平台账号级限制）。绑定后以既有 `v2.2.8` tag 创建，**不得**新建同名 tag 或移动 tag。
+- ✅ **Gitee Release `v2.2.8` 已创建**（标题「v2.2.8 学习诊断闭环稳定性收口」，target `0705689`）。
 - ℹ️ 线上学习流水 `data/learning_attempts.json` 为空态；线上无 `data/answers.json`。
-
-> 本文档**不得**在 Gitee Release 实际创建成功前声称 "Release 已完成"。
+- ℹ️ 域名按用户决策**不启用**（国内备案不便，canonical 入口为 ECS 直连 IP）。
