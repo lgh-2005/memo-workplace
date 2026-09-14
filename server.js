@@ -447,19 +447,30 @@ function buildLearningReport(days = 7) {
   // 筛选窗口内已提交/作答的流水记录
   const windowAttempts = allAttempts.filter(a => inWindow(a.submittedAt || a.startedAt));
 
-  // 1. overview: 总作答、已判题、正确率、平均耗时
+  // 1. overview: 总作答、已判题、正确率、平均耗时至
   let totalAttempts = windowAttempts.length;
   let judgedCount = 0;
   let correctCount = 0;
   let durationTotalMs = 0;
   let durationSamples = 0;
 
+  // v2.2.8：单题耗时用 durationMs；单元作答改用整会话耗时 meta.sessionDurationMs，
+  // 同一批次（batchId）共享一次会话，按批次去重，避免一单元 N 题重复计入。
+  const sessionSeen = new Set();
   for (const a of windowAttempts) {
     if (a.result === 'correct' || a.result === 'incorrect' || a.result === 'vague') {
       judgedCount++;
       if (a.result === 'correct') correctCount++;
     }
-    if (typeof a.durationMs === 'number' && a.durationMs > 0) {
+    const sessionMs = a.meta && typeof a.meta.sessionDurationMs === 'number' ? a.meta.sessionDurationMs : null;
+    if (sessionMs !== null && sessionMs > 0) {
+      const key = (a.meta && a.meta.batchId) ? 'b:' + a.meta.batchId : 'a:' + a.id;
+      if (!sessionSeen.has(key)) {
+        sessionSeen.add(key);
+        durationTotalMs += sessionMs;
+        durationSamples++;
+      }
+    } else if (typeof a.durationMs === 'number' && a.durationMs > 0) {
       durationTotalMs += a.durationMs;
       durationSamples++;
     }
@@ -4210,8 +4221,10 @@ const server = http.createServer(async (req, res) => {
         // 仅补充错因模式：reasonOnly: true
         if (body.reasonOnly) {
           const attemptId = String(body.attemptId || '').trim();
+          const batchId = String(body.batchId || '').trim();
           const errorReason = String(body.errorReason || '').trim();
           if (!attemptId) return sendJSON(res, 400, { error: '缺少 attemptId' });
+          if (!batchId) return sendJSON(res, 400, { error: '缺少 batchId（错因只能修改同一批次作答）' });
           if (!VALID_ATTEMPT_ERROR_REASONS.has(errorReason)) {
             return sendJSON(res, 400, { error: `无效的 errorReason: ${errorReason}` });
           }
@@ -4225,19 +4238,68 @@ const server = http.createServer(async (req, res) => {
           if (target.kind !== 'unit_objective') {
             return sendJSON(res, 400, { error: '仅客观题作答记录允许补充错因' });
           }
+          if (target.result !== 'incorrect') {
+            return sendJSON(res, 400, { error: '仅错误作答允许补充错因' });
+          }
+          if (!target.meta || target.meta.batchId !== batchId) {
+            return sendJSON(res, 400, { error: '该作答不属于当前批次，拒绝修改' });
+          }
 
           target.errorReason = errorReason;
           saveLearningStore(store);
-          return sendJSON(res, 200, { ok: true, attemptId, errorReason });
+          return sendJSON(res, 200, { ok: true, attemptId, errorReason, batchId });
         }
+
+        const unitSection = ui.unit.section || 'misc';
+        const isObjective = unitSection !== 'translation' && unitSection !== 'writing';
+        const batchId = String(body.batchId || '').trim();
+        if (!batchId) return sendJSON(res, 400, { error: '缺少 batchId（用于关联本次提交的作答与错因）' });
 
         const qs = ui.items.filter(it => it.type === 'question' && it.number != null);
         const std = loadAnswers()[unitId] || {};
         const given = body.answers && typeof body.answers === 'object' ? body.answers : {};
         const confObj = body.confidence && typeof body.confidence === 'object' ? body.confidence : {};
         const subjective = body.subjective && typeof body.subjective === 'object' ? body.subjective : {};
+        const translations = subjective.translations && typeof subjective.translations === 'object'
+          ? subjective.translations
+          : {};
+        const essayText = typeof subjective.essay === 'string' ? subjective.essay.trim() : '';
 
-        // 耗时与起止时间
+        // v2.2.8：按 unit.section 严格分支，拒绝不属于当前 section 的字段
+        const hasGiven = Object.keys(given).length > 0;
+        const hasTrans = Object.keys(translations).length > 0;
+        const hasEssay = essayText.length > 0;
+        if (unitSection === 'translation') {
+          if (hasGiven) return sendJSON(res, 400, { error: '当前为翻译单元，不接受客观题作答 answers' });
+          if (hasEssay) return sendJSON(res, 400, { error: '当前为翻译单元，不接受写作 essay' });
+        } else if (unitSection === 'writing') {
+          if (hasGiven) return sendJSON(res, 400, { error: '当前为写作单元，不接受客观题作答 answers' });
+          if (hasTrans) return sendJSON(res, 400, { error: '当前为写作单元，不接受翻译 translations' });
+        } else {
+          if (hasTrans) return sendJSON(res, 400, { error: '当前为客观题单元，不接受翻译 translations' });
+          if (hasEssay) return sendJSON(res, 400, { error: '当前为客观题单元，不接受写作 essay' });
+        }
+
+        // v2.2.8：严格校验客观题答案（单个 A–Z）与题号归属，非法直接 400
+        const unitNumbers = new Set(qs.map(it => String(it.number)));
+        for (const numStr of Object.keys(given)) {
+          const raw = String(given[numStr] || '').trim().toUpperCase();
+          if (!raw) continue;
+          if (!/^[A-Z]$/.test(raw)) {
+            return sendJSON(res, 400, { error: `第 ${numStr} 题答案非法（需为单个 A–Z）` });
+          }
+          if (!unitNumbers.has(String(numStr))) {
+            return sendJSON(res, 400, { error: `第 ${numStr} 题不属于当前单元` });
+          }
+        }
+        for (const numStr of Object.keys(confObj)) {
+          const c = String(confObj[numStr] || '').trim();
+          if (c && !VALID_ATTEMPT_CONFIDENCES.has(c)) {
+            return sendJSON(res, 400, { error: `第 ${numStr} 题信心非法（仅 sure/unsure/guess）` });
+          }
+        }
+
+        // 耗时与起止时间（v2.2.8：整单元会话耗时存 meta.sessionDurationMs，durationMs 不再伪装单题耗时）
         const now = new Date();
         const submittedAt = now.toISOString();
         let startedAt = null;
@@ -4271,6 +4333,7 @@ const server = http.createServer(async (req, res) => {
             correct,
             ok,
             attemptId,
+            batchId,
           });
 
           // 只有用户作答了才落盘流水
@@ -4292,10 +4355,12 @@ const server = http.createServer(async (req, res) => {
               errorReason: null,
               startedAt,
               submittedAt,
-              durationMs: unitDurationMs,
+              durationMs: null,
               meta: {
                 unitTitle: ui.unit.title,
                 number: it.number,
+                batchId,
+                sessionDurationMs: unitDurationMs,
               },
             });
           }
@@ -4303,10 +4368,7 @@ const server = http.createServer(async (req, res) => {
 
         // 2. 主观题处理：翻译
         let subjectiveCount = 0;
-        const translations = subjective.translations && typeof subjective.translations === 'object'
-          ? subjective.translations
-          : null;
-        if (translations) {
+        if (unitSection === 'translation' && hasTrans) {
           for (const [numStr, tText] of Object.entries(translations)) {
             const rawText = String(tText || '').trim();
             if (!rawText) continue;
@@ -4330,25 +4392,26 @@ const server = http.createServer(async (req, res) => {
               confidence: 'unsure',
               startedAt,
               submittedAt,
-              durationMs: unitDurationMs,
+              durationMs: null,
               meta: {
                 unitTitle: ui.unit.title,
                 number: Number(numStr) || null,
                 wordCount: rawText.length,
+                batchId,
+                sessionDurationMs: unitDurationMs,
               },
             });
           }
         }
 
         // 3. 主观题处理：写作
-        const rawEssay = typeof subjective.essay === 'string' ? subjective.essay.trim() : '';
-        if (rawEssay) {
-          if (rawEssay.length > 4000) {
+        if (unitSection === 'writing' && hasEssay) {
+          if (essayText.length > 4000) {
             return sendJSON(res, 400, { error: '作文草稿超过 4000 字符限制' });
           }
           subjectiveCount++;
           const wItem = ui.items.find(it => it.type === 'writing') || {};
-          const partStr = wItem.part || (ui.unit.section === 'writing' ? (ui.unit.title.includes('Part B') ? 'B' : 'A') : 'A');
+          const partStr = wItem.part || (ui.unit.title.includes('Part B') ? 'B' : 'A');
           attemptsToSave.push({
             kind: 'writing',
             source: 'exam',
@@ -4359,17 +4422,19 @@ const server = http.createServer(async (req, res) => {
             section: 'writing',
             prompt: wItem.text ? String(wItem.text).slice(0, 4000) : ui.unit.title,
             expected: null,
-            answer: rawEssay,
+            answer: essayText,
             result: 'unjudged',
             confidence: 'unsure',
             startedAt,
             submittedAt,
-            durationMs: unitDurationMs,
+            durationMs: null,
             meta: {
               unitTitle: ui.unit.title,
               part: partStr,
               score: wItem.score || null,
-              wordCount: rawEssay.split(/\s+/).filter(Boolean).length,
+              wordCount: essayText.split(/\s+/).filter(Boolean).length,
+              batchId,
+              sessionDurationMs: unitDurationMs,
             },
           });
         }
@@ -4398,6 +4463,8 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, {
           ok: true,
           title: ui.unit.title,
+          unitSection,
+          batchId,
           results,
           judged: judged.length,
           total: qs.length,
@@ -4405,6 +4472,7 @@ const server = http.createServer(async (req, res) => {
           subjective: subjectiveCount,
           hasStd: Object.keys(std).length > 0,
           attemptsSaved,
+          sessionDurationMs: unitDurationMs,
         });
       }
 

@@ -355,7 +355,7 @@ function renderLearningReport(data) {
         <div class="report-stat-sub">正确: ${ov.correctCount || 0} 题</div>
       </div>
       <div class="report-stat-box">
-        <div class="report-stat-label">单题平均耗时</div>
+        <div class="report-stat-label">平均作答会话耗时</div>
         <div class="report-stat-val">${avgSec}</div>
         <div class="report-stat-sub">作答节奏</div>
       </div>
@@ -2465,39 +2465,49 @@ async function openUnit(uid) {
       const confidence = {};
       const subjective = { translations: {}, essay: '' };
 
-      // 1. 客观题作答与信心收集
-      $$('#unitDetail .u-pick').forEach(s => {
-        if (s.value) answers[s.dataset.num] = s.value;
-      });
-      $$('#unitDetail .u-opt input:checked').forEach(r2 => {
-        answers[r2.dataset.num] = r2.value;
-      });
-      $$('#unitDetail .unit-conf-group').forEach(group => {
-        const qnum = group.dataset.qnum;
-        const activeBtn = group.querySelector('.unit-conf-btn.active');
-        if (qnum && activeBtn) {
-          confidence[qnum] = activeBtn.dataset.conf || 'unsure';
-        }
-      });
+      // v2.2.8：按单元题型只收集对应 section 的作答，避免跨 section 字段被服务端拒绝
+      const unitSection = unit.section || 'misc';
+      const isObjective = unitSection !== 'translation' && unitSection !== 'writing';
 
-      // 2. 主观题收集：翻译
-      $$('#unitDetail .u-trans').forEach(t => {
-        const val = t.value.trim();
-        if (val) subjective.translations[t.dataset.num] = val;
-      });
-
-      // 3. 主观题收集：写作
-      const essayEl = $('#unitDetail .u-essay');
-      if (essayEl) {
-        const rawEssay = essayEl.value.trim();
-        if (rawEssay) {
-          if (rawEssay.length > 4000) {
-            const out = $('#unitResult');
-            out.textContent = '❌ 作文字数超过 4000 字符限制，请精简后再提交';
-            out.className = 'result err';
-            return;
+      // 1. 客观题作答与信心收集（仅客观题单元）
+      if (isObjective) {
+        $$('#unitDetail .u-pick').forEach(s => {
+          if (s.value) answers[s.dataset.num] = s.value;
+        });
+        $$('#unitDetail .u-opt input:checked').forEach(r2 => {
+          answers[r2.dataset.num] = r2.value;
+        });
+        $$('#unitDetail .unit-conf-group').forEach(group => {
+          const qnum = group.dataset.qnum;
+          const activeBtn = group.querySelector('.unit-conf-btn.active');
+          if (qnum && activeBtn) {
+            confidence[qnum] = activeBtn.dataset.conf || 'unsure';
           }
-          subjective.essay = rawEssay;
+        });
+      }
+
+      // 2. 主观题收集：翻译（仅翻译单元）
+      if (unitSection === 'translation') {
+        $$('#unitDetail .u-trans').forEach(t => {
+          const val = t.value.trim();
+          if (val) subjective.translations[t.dataset.num] = val;
+        });
+      }
+
+      // 3. 主观题收集：写作（仅写作单元）
+      if (unitSection === 'writing') {
+        const essayEl = $('#unitDetail .u-essay');
+        if (essayEl) {
+          const rawEssay = essayEl.value.trim();
+          if (rawEssay) {
+            if (rawEssay.length > 4000) {
+              const out = $('#unitResult');
+              out.textContent = '❌ 作文字数超过 4000 字符限制，请精简后再提交';
+              out.className = 'result err';
+              return;
+            }
+            subjective.essay = rawEssay;
+          }
         }
       }
 
@@ -2505,11 +2515,15 @@ async function openUnit(uid) {
       out.textContent = '判分与提交中…';
       out.className = 'result';
 
+      // v2.2.8：本批次唯一 batchId，用于关联作答与错因权限
+      const batchId = 'batch_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+
       try {
         const r2 = await api('/api/unit/answers/submit', {
           method: 'POST',
           body: {
             unitId: uid,
+            batchId,
             answers,
             confidence,
             subjective,
@@ -2537,7 +2551,7 @@ async function openUnit(uid) {
             { key: 'other', label: '其他原因' },
           ];
           const reasonBtns = reasons.map(r =>
-            `<button type="button" class="btn mini u-reason-btn" data-att="${esc(x.attemptId)}" data-reason="${esc(r.key)}">${esc(r.label)}</button>`
+            `<button type="button" class="btn mini u-reason-btn" data-att="${esc(x.attemptId)}" data-batch="${esc(r2.batchId || batchId)}" data-reason="${esc(r.key)}">${esc(r.label)}</button>`
           ).join('');
 
           return `
@@ -2568,6 +2582,7 @@ async function openUnit(uid) {
           b.addEventListener('click', async () => {
             const attId = b.dataset.att;
             const rKey = b.dataset.reason;
+            const batch = b.dataset.batch;
             const pRow = b.closest('.u-reason-row');
             if (pRow) {
               pRow.querySelectorAll('.u-reason-btn').forEach(btn => btn.classList.remove('active'));
@@ -2576,7 +2591,7 @@ async function openUnit(uid) {
             try {
               await api('/api/unit/answers/submit', {
                 method: 'POST',
-                body: { unitId: uid, reasonOnly: true, attemptId: attId, errorReason: rKey }
+                body: { unitId: uid, batchId: batch, reasonOnly: true, attemptId: attId, errorReason: rKey }
               });
               const fb = $('#rf_' + attId);
               if (fb) fb.textContent = '✓ 错因已更新';
