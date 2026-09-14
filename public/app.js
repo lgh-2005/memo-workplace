@@ -1791,6 +1791,11 @@ async function openKbRecord(rid) {
     kbDetailState = { prefix: 'kb', id: rid, rec: null };
     kbCloseEditor();
     $('#kbIssuesPanel').innerHTML = '';
+    // v2.2.8：给详情根节点打上记录来源标记，供划选精读/三遍训练取真实 sourceRef
+    $('#kbDetail').dataset.rid = rid;
+    $('#kbDetail').dataset.sourceKind = rec.external ? 'external' : (rec.rtype === 'qa_set' ? 'exam' : 'corpus');
+    $('#kbDetail').dataset.year = rec.meta?.year != null ? String(rec.meta.year) : '';
+    $('#kbDetail').dataset.section = '';
     $('#kbDetailTitle').textContent = rec.title || rec.id;
     const readonly = rec.source?.managed === 'external' || rec.external;
     $('#kbEditBtn').style.display = readonly ? 'none' : '';
@@ -2162,6 +2167,11 @@ async function openExamRecord(exid) {
     $('#exEditBtn').style.display = '';
     $('#exDelBtn').style.display = '';
     $('#exHistoryBtn').style.display = '';
+    // v2.2.8：详情根节点标记真题来源，供划选取真实 sourceRef
+    $('#exDetail').dataset.rid = exid;
+    $('#exDetail').dataset.sourceKind = 'exam';
+    $('#exDetail').dataset.year = rec.meta?.year != null ? String(rec.meta.year) : '';
+    $('#exDetail').dataset.section = '';
     $('#exDetailTitle').textContent = rec.title || rec.id;
     $('#exDetailMeta').textContent = [
       rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
@@ -2410,6 +2420,11 @@ async function openUnit(uid) {
   try {
     const r = await api('/api/unit/detail/' + encodeURIComponent(uid));
     const unit = r.unit, items = r.items, answerState = r.answerState;
+    // v2.2.8：单元详情根节点标记真题来源（rid=examId）与题型/年份，供划选取真实 sourceRef
+    $('#unitDetail').dataset.rid = unit.examId || '';
+    $('#unitDetail').dataset.sourceKind = 'exam';
+    $('#unitDetail').dataset.year = unit.year != null ? String(unit.year) : '';
+    $('#unitDetail').dataset.section = unit.section || '';
     $('#unitDetailTitle').textContent = unit.title;
     $('#unitDetailMeta').textContent = [
       unit.label, unit.year ? unit.year + ' 年' : '',
@@ -3391,7 +3406,16 @@ function selLearnOnSelection() {
   try { rect = range.getBoundingClientRect(); } catch { return; }
   if (!rect || (!rect.width && !rect.height)) return;
   const ridEl = cacEl?.closest?.('[data-rid]');
-  const sourceRef = ridEl ? { rid: ridEl.dataset.rid, sentence: text } : null;
+  let sourceRef = null;
+  if (ridEl && ridEl.dataset.rid) {
+    sourceRef = {
+      rid: ridEl.dataset.rid,
+      sourceKind: ridEl.dataset.sourceKind || null,
+      year: ridEl.dataset.year ? Number(ridEl.dataset.year) : null,
+      section: ridEl.dataset.section || null,
+      sentence: text,   // 必须等于用户实际选区文本，不复用其他 DOM/旧状态
+    };
+  }
   selLearnState = { text, context: selLearnContextOf(range, root), title: selLearnTitleOf(root), kind: selLearnKindOf(text), rect, sourceRef };
   /* 移动端选区手柄遮挡浮动词：直接给底部「精读」条，点击即出卡片 */
   selLearnShowBtn(rect);

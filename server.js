@@ -4717,24 +4717,36 @@ const server = http.createServer(async (req, res) => {
 
       if (p === '/api/learning/sentence/start' && req.method === 'POST') {
         const body = await readBody(req);
-        const text = String(body.text || '').trim().slice(0, 600);
+        // v2.2.8：超长直接拒绝，不得先截断再保存
+        const rawText = String(body.text || '').trim();
+        if (rawText.length > 600) return sendJSON(res, 400, { error: '句子超过 600 字符限制' });
+        const text = rawText;
         if (text.length < 15) return sendJSON(res, 400, { error: '句子长度不足（至少 15 字符）' });
         const context = String(body.context || '').trim().slice(0, 3000);
         const title = String(body.title || '').trim().slice(0, 120);
 
-        // sourceRef 校验：能匹配到句子索引则视为已验证真题/语料来源
+        // v2.2.8：sourceRef 校验固定以服务端收到的 text 为准；rid 必须命中同 rid 且规范化后完全一致的句子
         let verifiedSource = false;
         let source = 'manual_selection';
+        let refRid = null;
         let refSection = null;
         let refYear = null;
         const sourceRef = body.sourceRef && typeof body.sourceRef === 'object' ? body.sourceRef : null;
+        let declaredRef = null;
         if (sourceRef && sourceRef.rid) {
+          const rid = String(sourceRef.rid);
+          declaredRef = {
+            rid: rid.slice(0, 64),
+            sourceKind: sourceRef.sourceKind ? String(sourceRef.sourceKind).slice(0, 24) : null,
+            year: Number.isFinite(Number(sourceRef.year)) ? Number(sourceRef.year) : null,
+            section: sourceRef.section ? String(sourceRef.section).slice(0, 40) : null,
+          };
           const norm = s => String(s || '').replace(/\s+/g, ' ').trim().toLowerCase();
-          const target = norm(sourceRef.sentence || text);
-          const hit = kbSentences().find(it => it.rid === String(sourceRef.rid) &&
-            (norm(it.s) === target || norm(it.s).includes(target) || target.includes(norm(it.s))));
+          const targetNorm = norm(text);
+          const hit = kbSentences().find(it => it.rid === rid && norm(it.s) === targetNorm);
           if (hit) {
             verifiedSource = true;
+            refRid = hit.rid;
             source = hit.sourceKind === 'exam' ? 'exam' : (hit.sourceKind === 'external' ? 'external' : 'corpus');
             refSection = hit.section || null;
             refYear = hit.year || null;
@@ -4746,7 +4758,7 @@ const server = http.createServer(async (req, res) => {
           id: `att_sent_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
           kind: 'sentence_analysis',
           source,
-          itemId: sourceRef && sourceRef.rid ? `sentence:${sourceRef.rid}` : 'sentence:manual',
+          itemId: refRid ? `sentence:${refRid}` : 'sentence:manual',
           year: refYear,
           section: 'sentence',
           prompt: text,
@@ -4763,7 +4775,10 @@ const server = http.createServer(async (req, res) => {
             title,
             verifiedSource,
             sourceKind: verifiedSource ? source : 'manual_selection',
+            rid: refRid,
             refSection,
+            refYear,
+            sourceRef: declaredRef,
           },
         };
         appendLearningAttempts([attempt]);
