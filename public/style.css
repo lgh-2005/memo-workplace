@@ -497,6 +497,18 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   box-shadow: 3px 3px 0 #8b9978;
   border-radius: 4px;
 }
+[data-style="arcade"] .kb-passage {
+  background: #edf2e4;
+  border: 2px solid #758562;
+  color: #1a2512;
+  box-shadow: inset 2px 2px 0 #f6faf0, inset -2px -2px 0 #cdd8bc;
+}
+[data-style="arcade"][data-theme="dark"] .kb-passage {
+  background: #140b26;
+  border: 2px solid #4a287c;
+  color: #f1e9fc;
+  box-shadow: inset 2px 2px 0 #231340, inset -2px -2px 0 #090312;
+}
 [data-style="arcade"] .btn {
   border: 2px solid #546545;
   box-shadow: 2px 2px 0 #546545;
@@ -594,6 +606,18 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   border: 2.5px solid #111111;
   border-radius: 12px;
   box-shadow: 4px 4px 0 #111111;
+}
+[data-style="pop"] .kb-passage {
+  background: #ffffff;
+  border: 2px solid #111111;
+  color: #111111;
+  box-shadow: 3px 3px 0 #111111;
+}
+[data-style="pop"][data-theme="dark"] .kb-passage {
+  background: #141419;
+  border: 2px solid #2d2d38;
+  color: #f3f3f6;
+  box-shadow: 3px 3px 0 #000000;
 }
 [data-style="pop"] .card:hover {
   transform: translate(-1px, -1px);
@@ -715,7 +739,6 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style^="mc"] .kb-passage {
   border-radius: 0px;
-  font-family: inherit;
 }
 [data-style^="mc"] .input,
 [data-style^="mc"] textarea.input,
@@ -1548,7 +1571,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .st-body { padding: 16px 18px; overflow-y: auto; }
 .st-source { font-size: 12px; color: var(--text-sub); margin-bottom: 8px; }
 .st-sentence {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Charter, "Bitstream Charter", Georgia, 'Times New Roman', serif !important;
   font-size: 16px; line-height: 1.8; text-indent: 2em;
   padding: 12px 14px; margin-bottom: 14px;
   background: var(--primary-soft); border-left: 3px solid var(--primary);
@@ -2186,7 +2209,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-passage {
   background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
   padding: 18px 22px; margin: 12px 0; line-height: 2.05; font-size: 15px;
-  font-family: Charter, "Bitstream Charter", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  font-family: Charter, "Bitstream Charter", "Source Serif Pro", Georgia, "Times New Roman", serif !important;
   letter-spacing: .01em;
   box-shadow: inset 0 1px 3px rgba(0,0,0,.02);
 }
