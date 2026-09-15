@@ -686,7 +686,53 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 
 
-/* ----------------- ⛏️ 方块像素 (我的世界 Minecraft · 草方块与下界要塞) ----------------- */
+/* ----------------- ⛏️ 方块像素 Minecraft 风格家族通用基类 ----------------- */
+[data-style^="mc"] body {
+  font-family: "Courier New", "Consolas", monospace;
+  image-rendering: pixelated;
+  letter-spacing: .3px;
+}
+[data-style^="mc"] .card {
+  border-radius: 0px;
+}
+[data-style^="mc"] .btn {
+  border-radius: 0px;
+  font-family: inherit;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 #3f3f3f;
+}
+[data-style^="mc"] .btn:active {
+  box-shadow: inset 2px 2px 0 #373737, inset -2px -2px 0 #cfcfcf;
+  transform: translate(1px, 1px);
+}
+[data-style^="mc"] .tab {
+  border-radius: 0px;
+  border: 2px solid transparent;
+  font-family: inherit;
+}
+[data-style^="mc"] .badge, [data-style^="mc"] .tag {
+  border-radius: 0px;
+}
+[data-style^="mc"] .kb-passage {
+  border-radius: 0px;
+  font-family: inherit;
+}
+[data-style^="mc"] .input,
+[data-style^="mc"] textarea.input,
+[data-style^="mc"] .st-textarea,
+[data-style^="mc"] .kb-fix-text,
+[data-style^="mc"] .modal,
+[data-style^="mc"] .word-item,
+[data-style^="mc"] .quiz-opt,
+[data-style^="mc"] .unit-conf-btn,
+[data-style^="mc"] .quiz-conf-btn {
+  border-radius: 0px !important;
+}
+[data-style^="mc"] ::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+}
+
+/* ----------------- ⛏️ 像素·草方块与下界要塞 (Minecraft · mc) ----------------- */
 /* 白天：主世界草方块 · 泥土棕 + 草绿顶 + 橡木像素厚边 */
 [data-style="mc"] {
   --bg: #dde8cf;
@@ -707,13 +753,10 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --shadow-btn: inset 2px 2px 0 #ffffff77, inset -2px -2px 0 #00000066, 2px 2px 0 #1b1208;
 }
 [data-style="mc"] body {
-  font-family: "Courier New", "Consolas", monospace;
   background-color: #dde8cf;
   background-image: linear-gradient(180deg, #e4eed8 0%, #dde8cf 100%);
   background-attachment: fixed;
   color: #1a120b;
-  image-rendering: pixelated;
-  letter-spacing: .3px;
 }
 [data-style="mc"] .sidebar {
   border-right: 3px solid #281a0e;
@@ -723,38 +766,24 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-style="mc"] .sidebar-head { border-bottom: 2px solid #543d2b; }
 [data-style="mc"] .card {
   border: 3px solid #281a0e;
-  border-radius: 0px;
   background: #c4ab80;
   box-shadow: inset 3px 3px 0 #e6d3b3, inset -3px -3px 0 #85613e, 4px 4px 0 rgba(0,0,0,.35);
 }
 [data-style="mc"] .btn {
   border: 2px solid #1b1208;
-  border-radius: 0px;
   background: #8b8b8b;
   color: #fff;
-  font-family: inherit;
-  font-weight: 700;
-  text-shadow: 1px 1px 0 #3f3f3f;
   box-shadow: inset 2px 2px 0 #dbdbdb, inset -2px -2px 0 #555555, 2px 2px 0 #1b1208;
 }
 [data-style="mc"] .btn:hover {
   background: #a0a0a0;
   box-shadow: inset 2px 2px 0 #f0f0f0, inset -2px -2px 0 #444444, 2px 2px 0 #1b1208;
 }
-[data-style="mc"] .btn:active {
-  box-shadow: inset 2px 2px 0 #373737, inset -2px -2px 0 #cfcfcf;
-  transform: translate(1px, 1px);
-}
 [data-style="mc"] .btn.primary {
   background: #4a7522;
   color: #fff;
   text-shadow: 1px 1px 0 #28440d;
   box-shadow: inset 2px 2px 0 #72a838, inset -2px -2px 0 #29440f, 2px 2px 0 #1b1208;
-}
-[data-style="mc"] .tab {
-  border-radius: 0px;
-  border: 2px solid transparent;
-  font-family: inherit;
 }
 [data-style="mc"] .tab.active {
   background: #8f7754;
@@ -764,16 +793,13 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   box-shadow: inset 2px 2px 0 #b39b74, inset -2px -2px 0 #59442a;
 }
 [data-style="mc"] .badge, [data-style="mc"] .tag {
-  border-radius: 0px;
   border: 1px solid #281a0e;
   box-shadow: 1px 1px 0 #281a0e;
 }
 [data-style="mc"] .kb-passage {
-  border-radius: 0px;
   border: 2px solid #3b2817;
   background: #f7eedb;
   box-shadow: inset 2px 2px 0 #fff8ec, inset -2px -2px 0 #d9c4a5;
-  font-family: inherit;
 }
 
 /* 我的世界 × 黑夜：下界要塞与红石矿石 (Nether Fortress & Redstone) */
@@ -781,6 +807,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --bg: #14070a;
   --card: #2c1118;
   --border: #4d1c25;
+  --topbar-bg: rgba(30, 13, 18, .96);
   --text: #f0e6e8;
   --text-sub: #b08c92;
   --primary: #e02a2a;
@@ -795,6 +822,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="mc"][data-theme="dark"] body {
   background: #14070a;
+  color: #f0e6e8;
 }
 [data-style="mc"][data-theme="dark"] .sidebar {
   border-right: 3px solid #0a0305;
@@ -803,7 +831,6 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 [data-style="mc"][data-theme="dark"] .card {
   border: 3px solid #080204;
-  border-radius: 0px;
   background: #2c1118;
   box-shadow: inset 3px 3px 0 #592530, inset -3px -3px 0 #14070a, 4px 4px 0 #000000;
 }
@@ -837,6 +864,403 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   border: 2px solid #4a1723;
   box-shadow: inset 2px 2px 0 #3d141e, inset -2px -2px 0 #120407;
   color: #f7e6e9;
+}
+
+/* ----------------- 📦 像素·工作台 (Minecraft Classic GUI · mc-gui) ----------------- */
+/* 白天：原版经典灰石工作台 · 浅原石灰 + 纯粹物品槽凹凸 */
+[data-style="mc-gui"] {
+  --bg: #c6c6c6;
+  --card: #dbdbdb;
+  --border: #373737;
+  --topbar-bg: rgba(205, 205, 205, .96);
+  --card-sheen: none;
+  --text: #1e1e1e;
+  --text-sub: #4b4b4b;
+  --primary: #3b7418;
+  --primary-soft: #b8df9c;
+  --warn: #b22222;
+  --ok: #2e7d32;
+  --radius: 0px;
+  --grad-primary: linear-gradient(180deg, #599827 0%, #356b14 100%);
+  --stat-grad: linear-gradient(180deg, #1e1e1e 30%, #3b7418 100%);
+  --shadow-card: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #555555, 3px 3px 0 rgba(0,0,0,.25);
+  --shadow-btn: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #555555, 2px 2px 0 #373737;
+}
+[data-style="mc-gui"] body {
+  background-color: #c6c6c6;
+  background-image: linear-gradient(180deg, #cfcfcf 0%, #c6c6c6 100%);
+  background-attachment: fixed;
+  color: #1e1e1e;
+}
+[data-style="mc-gui"] .sidebar {
+  border-right: 3px solid #373737;
+  background: #c6c6c6;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #8b8b8b;
+}
+[data-style="mc-gui"] .sidebar-head { border-bottom: 2px solid #555555; }
+[data-style="mc-gui"] .card {
+  border: 2px solid #373737;
+  background: #dbdbdb;
+  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #8b8b8b, 3px 3px 0 rgba(0,0,0,.3);
+}
+[data-style="mc-gui"] .btn {
+  border: 2px solid #373737;
+  background: #9b9b9b;
+  color: #ffffff;
+  box-shadow: inset 2px 2px 0 #e0e0e0, inset -2px -2px 0 #555555, 2px 2px 0 #2b2b2b;
+}
+[data-style="mc-gui"] .btn:hover {
+  background: #b0b0b0;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #444444, 2px 2px 0 #2b2b2b;
+}
+[data-style="mc-gui"] .btn.primary {
+  background: #3e7b1a;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #1b3d09;
+  box-shadow: inset 2px 2px 0 #73be36, inset -2px -2px 0 #254d10, 2px 2px 0 #1c330f;
+}
+[data-style="mc-gui"] .tab.active {
+  background: #949494;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #333333;
+  border: 2px solid #373737;
+  box-shadow: inset 2px 2px 0 #c7c7c7, inset -2px -2px 0 #555555;
+}
+[data-style="mc-gui"] .badge, [data-style="mc-gui"] .tag {
+  border: 1px solid #373737;
+  box-shadow: 1px 1px 0 #555555;
+}
+[data-style="mc-gui"] .kb-passage {
+  border: 2px solid #373737;
+  background: #e5e5e5;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #b3b3b3;
+}
+/* 工作台 × 夜间：深板岩暗石与经验条荧光绿 */
+[data-style="mc-gui"][data-theme="dark"] {
+  --bg: #161619;
+  --card: #25252b;
+  --border: #3b3b44;
+  --topbar-bg: rgba(26, 26, 31, .96);
+  --text: #eaeaea;
+  --text-sub: #9e9ea8;
+  --primary: #55ff55;
+  --primary-soft: #183318;
+  --warn: #ff5555;
+  --ok: #55ff55;
+  --radius: 0px;
+  --grad-primary: linear-gradient(180deg, #6bf56b 0%, #2fb82f 100%);
+  --stat-grad: linear-gradient(180deg, #ffffff 30%, #55ff55 100%);
+  --shadow-card: inset 2px 2px 0 #43434f, inset -2px -2px 0 #101013, 3px 3px 0 #000000;
+  --shadow-btn: inset 2px 2px 0 #4f4f5c, inset -2px -2px 0 #131317, 2px 2px 0 #0a0a0d;
+}
+[data-style="mc-gui"][data-theme="dark"] body {
+  background: #161619;
+  color: #eaeaea;
+}
+[data-style="mc-gui"][data-theme="dark"] .sidebar {
+  border-right: 3px solid #101013;
+  background: #1f1f25;
+  box-shadow: inset 2px 2px 0 #3a3a46, inset -2px -2px 0 #101013;
+}
+[data-style="mc-gui"][data-theme="dark"] .card {
+  border: 2px solid #101013;
+  background: #25252b;
+  box-shadow: inset 3px 3px 0 #43434f, inset -3px -3px 0 #141417, 3px 3px 0 #000000;
+}
+[data-style="mc-gui"][data-theme="dark"] .btn {
+  background: #33333b;
+  border: 2px solid #101013;
+  color: #eaeaea;
+  text-shadow: 1px 1px 0 #000;
+  box-shadow: inset 2px 2px 0 #525261, inset -2px -2px 0 #1a1a20, 2px 2px 0 #0a0a0d;
+}
+[data-style="mc-gui"][data-theme="dark"] .btn.primary {
+  background: #1c521c;
+  border-color: #0b240b;
+  color: #55ff55;
+  text-shadow: 1px 1px 0 #061706;
+  box-shadow: inset 2px 2px 0 #338a33, inset -2px -2px 0 #0e300e, 2px 2px 0 #000, 0 0 8px rgba(85, 255, 85, .3);
+}
+[data-style="mc-gui"][data-theme="dark"] .tab.active {
+  background: #3c3c47;
+  color: #55ff55;
+  text-shadow: 1px 1px 0 #000;
+  border: 2px solid #101013;
+  box-shadow: inset 2px 2px 0 #595969, inset -2px -2px 0 #17171c;
+}
+[data-style="mc-gui"][data-theme="dark"] .kb-passage {
+  background: #1d1d23;
+  border: 2px solid #32323d;
+  box-shadow: inset 2px 2px 0 #2d2d37, inset -2px -2px 0 #101014;
+  color: #e5e5e9;
+}
+
+/* ----------------- 💎 像素·钻石矿 (Minecraft Deepslate & Diamond · mc-deep) ----------------- */
+/* 白天：方解石冷岩与纯正钻石青蓝 */
+[data-style="mc-deep"] {
+  --bg: #e2e7ec;
+  --card: #f0f4f8;
+  --border: #233446;
+  --topbar-bg: rgba(220, 227, 235, .96);
+  --card-sheen: none;
+  --text: #132230;
+  --text-sub: #465a6e;
+  --primary: #0a8f9c;
+  --primary-soft: #beeaf0;
+  --warn: #b82d2d;
+  --ok: #1e7a5c;
+  --radius: 0px;
+  --grad-primary: linear-gradient(180deg, #1cbdd0 0%, #0a8f9c 100%);
+  --stat-grad: linear-gradient(180deg, #132230 30%, #0a8f9c 100%);
+  --shadow-card: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #9cb2c7, 3px 3px 0 #233446;
+  --shadow-btn: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #7b93ab, 2px 2px 0 #1b2735;
+}
+[data-style="mc-deep"] body {
+  background-color: #e2e7ec;
+  background-image: linear-gradient(180deg, #eaf0f5 0%, #e2e7ec 100%);
+  background-attachment: fixed;
+  color: #132230;
+}
+[data-style="mc-deep"] .sidebar {
+  border-right: 3px solid #233446;
+  background: #cad4df;
+  box-shadow: inset 2px 2px 0 #f0f4f8, inset -2px -2px 0 #95a7b9;
+}
+[data-style="mc-deep"] .sidebar-head { border-bottom: 2px solid #4a637d; }
+[data-style="mc-deep"] .card {
+  border: 2px solid #233446;
+  background: #f0f4f8;
+  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #a9bdd0, 3px 3px 0 rgba(35, 52, 70, .35);
+}
+[data-style="mc-deep"] .btn {
+  border: 2px solid #233446;
+  background: #8fa5bc;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #233446;
+  box-shadow: inset 2px 2px 0 #d7e2ee, inset -2px -2px 0 #586f87, 2px 2px 0 #1b2735;
+}
+[data-style="mc-deep"] .btn:hover {
+  background: #a4b9ce;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #4f667d, 2px 2px 0 #1b2735;
+}
+[data-style="mc-deep"] .btn.primary {
+  background: #0f8694;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #053b42;
+  box-shadow: inset 2px 2px 0 #3ad7e9, inset -2px -2px 0 #074f57, 2px 2px 0 #112933;
+}
+[data-style="mc-deep"] .tab.active {
+  background: #738da7;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #21303f;
+  border: 2px solid #233446;
+  box-shadow: inset 2px 2px 0 #adc2d7, inset -2px -2px 0 #465c72;
+}
+[data-style="mc-deep"] .badge, [data-style="mc-deep"] .tag {
+  border: 1px solid #233446;
+  box-shadow: 1px 1px 0 #4b6278;
+}
+[data-style="mc-deep"] .kb-passage {
+  border: 2px solid #233446;
+  background: #f3f7fa;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #c2d3e3;
+}
+/* 钻石矿 × 夜间：深邃深板岩基岩与发光钻石青 (Deep Dark & Glowing Diamond) */
+[data-style="mc-deep"][data-theme="dark"] {
+  --bg: #0d1217;
+  --card: #151d26;
+  --border: #253342;
+  --topbar-bg: rgba(16, 23, 31, .96);
+  --text: #e2edf7;
+  --text-sub: #7f99b2;
+  --primary: #2fe0cd;
+  --primary-soft: #0b2c29;
+  --warn: #ff5252;
+  --ok: #2fe0cd;
+  --radius: 0px;
+  --grad-primary: linear-gradient(180deg, #4dfbe7 0%, #15a999 100%);
+  --stat-grad: linear-gradient(180deg, #ffffff 30%, #2fe0cd 100%);
+  --shadow-card: inset 2px 2px 0 #2d3c4e, inset -2px -2px 0 #0a0d12, 3px 3px 0 #000000;
+  --shadow-btn: inset 2px 2px 0 #35475b, inset -2px -2px 0 #0d131a, 2px 2px 0 #05080b;
+}
+[data-style="mc-deep"][data-theme="dark"] body {
+  background: #0d1217;
+  color: #e2edf7;
+}
+[data-style="mc-deep"][data-theme="dark"] .sidebar {
+  border-right: 3px solid #090c10;
+  background: #121820;
+  box-shadow: inset 2px 2px 0 #283747, inset -2px -2px 0 #090c10;
+}
+[data-style="mc-deep"][data-theme="dark"] .card {
+  border: 2px solid #090c10;
+  background: #151d26;
+  box-shadow: inset 3px 3px 0 #2d3c4e, inset -3px -3px 0 #0b0f14, 3px 3px 0 #000000;
+}
+[data-style="mc-deep"][data-theme="dark"] .btn {
+  background: #202b37;
+  border: 2px solid #090c10;
+  color: #d8e5f2;
+  text-shadow: 1px 1px 0 #000;
+  box-shadow: inset 2px 2px 0 #3b4d61, inset -2px -2px 0 #11171f, 2px 2px 0 #000;
+}
+[data-style="mc-deep"][data-theme="dark"] .btn.primary {
+  background: #0d4a46;
+  border-color: #042120;
+  color: #2fe0cd;
+  text-shadow: 1px 1px 0 #021413;
+  box-shadow: inset 2px 2px 0 #1b857d, inset -2px -2px 0 #052624, 2px 2px 0 #000, 0 0 10px rgba(47, 224, 205, .35);
+}
+[data-style="mc-deep"][data-theme="dark"] .tab.active {
+  background: #1e3144;
+  color: #2fe0cd;
+  text-shadow: 1px 1px 0 #000;
+  border: 2px solid #090c10;
+  box-shadow: inset 2px 2px 0 #34506c, inset -2px -2px 0 #101c27, 0 0 6px rgba(47, 224, 205, .25);
+}
+[data-style="mc-deep"][data-theme="dark"] .brand {
+  color: #2fe0cd;
+  text-shadow: 0 0 6px rgba(47, 224, 205, .5);
+}
+[data-style="mc-deep"][data-theme="dark"] .kb-passage {
+  background: #10161d;
+  border: 2px solid #202e3d;
+  box-shadow: inset 2px 2px 0 #1b2633, inset -2px -2px 0 #090d12;
+  color: #e4edf5;
+}
+
+/* ----------------- 🔮 像素·附魔殿 (Minecraft The End & Enchanting · mc-end) ----------------- */
+/* 白天：末地石砖暖黄微玉与末影珍珠墨绿 */
+[data-style="mc-end"] {
+  --bg: #ecefda;
+  --card: #f9fbee;
+  --border: #3d3b28;
+  --topbar-bg: rgba(231, 235, 212, .96);
+  --card-sheen: none;
+  --text: #211e14;
+  --text-sub: #5c573f;
+  --primary: #197864;
+  --primary-soft: #c2ebd9;
+  --warn: #a82738;
+  --ok: #207a4a;
+  --radius: 0px;
+  --grad-primary: linear-gradient(180deg, #279f85 0%, #176f5c 100%);
+  --stat-grad: linear-gradient(180deg, #211e14 30%, #197864 100%);
+  --shadow-card: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #b3b793, 3px 3px 0 #3d3b28;
+  --shadow-btn: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #929973, 2px 2px 0 #28271a;
+}
+[data-style="mc-end"] body {
+  background-color: #ecefda;
+  background-image: linear-gradient(180deg, #f3f6e4 0%, #ecefda 100%);
+  background-attachment: fixed;
+  color: #211e14;
+}
+[data-style="mc-end"] .sidebar {
+  border-right: 3px solid #3d3b28;
+  background: #d9debe;
+  box-shadow: inset 2px 2px 0 #fafcee, inset -2px -2px 0 #a9af89;
+}
+[data-style="mc-end"] .sidebar-head { border-bottom: 2px solid #575438; }
+[data-style="mc-end"] .card {
+  border: 2px solid #3d3b28;
+  background: #f9fbee;
+  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #bec39e, 3px 3px 0 rgba(61, 59, 40, .35);
+}
+[data-style="mc-end"] .btn {
+  border: 2px solid #3d3b28;
+  background: #a6ad8c;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #323522;
+  box-shadow: inset 2px 2px 0 #e4e9cf, inset -2px -2px 0 #737a59, 2px 2px 0 #28271a;
+}
+[data-style="mc-end"] .btn:hover {
+  background: #b7bea0;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #676d4d, 2px 2px 0 #28271a;
+}
+[data-style="mc-end"] .btn.primary {
+  background: #1c7a65;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #0a332a;
+  box-shadow: inset 2px 2px 0 #46be9f, inset -2px -2px 0 #0d463a, 2px 2px 0 #1b2621;
+}
+[data-style="mc-end"] .tab.active {
+  background: #8e9673;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #2c301e;
+  border: 2px solid #3d3b28;
+  box-shadow: inset 2px 2px 0 #c2cba4, inset -2px -2px 0 #575e3e;
+}
+[data-style="mc-end"] .badge, [data-style="mc-end"] .tag {
+  border: 1px solid #3d3b28;
+  box-shadow: 1px 1px 0 #575438;
+}
+[data-style="mc-end"] .kb-passage {
+  border: 2px solid #3d3b28;
+  background: #fcfdf6;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #cbd1a9;
+}
+/* 末地 × 黑夜：虚空深邃与附魔龙息亮紫 (The End Void & Dragon Breath) */
+[data-style="mc-end"][data-theme="dark"] {
+  --bg: #0f0b16;
+  --card: #1b1527;
+  --border: #332646;
+  --topbar-bg: rgba(19, 14, 29, .96);
+  --text: #efe6f8;
+  --text-sub: #9e8cb4;
+  --primary: #c359f8;
+  --primary-soft: #32164a;
+  --warn: #ff476d;
+  --ok: #34d399;
+  --radius: 0px;
+  --grad-primary: linear-gradient(180deg, #db7eff 0%, #9e2adb 100%);
+  --stat-grad: linear-gradient(180deg, #ffffff 30%, #c359f8 100%);
+  --shadow-card: inset 2px 2px 0 #3a2e52, inset -2px -2px 0 #0a0710, 3px 3px 0 #000000;
+  --shadow-btn: inset 2px 2px 0 #463462, inset -2px -2px 0 #0e0917, 2px 2px 0 #050308;
+}
+[data-style="mc-end"][data-theme="dark"] body {
+  background: #0f0b16;
+  color: #efe6f8;
+}
+[data-style="mc-end"][data-theme="dark"] .sidebar {
+  border-right: 3px solid #09060e;
+  background: #171122;
+  box-shadow: inset 2px 2px 0 #33244c, inset -2px -2px 0 #09060e;
+}
+[data-style="mc-end"][data-theme="dark"] .card {
+  border: 2px solid #09060e;
+  background: #1b1527;
+  box-shadow: inset 3px 3px 0 #3a2e52, inset -3px -3px 0 #0d0914, 3px 3px 0 #000000;
+}
+[data-style="mc-end"][data-theme="dark"] .btn {
+  background: #271f37;
+  border: 2px solid #09060e;
+  color: #e5d8f2;
+  text-shadow: 1px 1px 0 #000;
+  box-shadow: inset 2px 2px 0 #463760, inset -2px -2px 0 #150f20, 2px 2px 0 #000;
+}
+[data-style="mc-end"][data-theme="dark"] .btn.primary {
+  background: #471569;
+  border-color: #1f0730;
+  color: #eedaff;
+  text-shadow: 1px 1px 0 #150320;
+  box-shadow: inset 2px 2px 0 #852ec4, inset -2px -2px 0 #280b3d, 2px 2px 0 #000, 0 0 10px rgba(195, 89, 248, .4);
+}
+[data-style="mc-end"][data-theme="dark"] .tab.active {
+  background: #392254;
+  color: #e08aff;
+  text-shadow: 1px 1px 0 #000;
+  border: 2px solid #09060e;
+  box-shadow: inset 2px 2px 0 #5c3886, inset -2px -2px 0 #180d26, 0 0 6px rgba(195, 89, 248, .3);
+}
+[data-style="mc-end"][data-theme="dark"] .brand {
+  color: #e08aff;
+  text-shadow: 0 0 6px rgba(195, 89, 248, .6);
+}
+[data-style="mc-end"][data-theme="dark"] .kb-passage {
+  background: #150f20;
+  border: 2px solid #2e1d42;
+  box-shadow: inset 2px 2px 0 #241634, inset -2px -2px 0 #0a0610;
+  color: #f1e7fa;
 }
 
 /* 全局滚动条 */
@@ -1429,26 +1853,26 @@ code { font-family: Consolas, monospace; font-size: 12px; }
     box-shadow: 2px 2px 0 #000;
   }
 
-  /* 我的世界像素风 */
-  [data-style="mc"] .mobile-header {
+  /* 我的世界像素风家族移动端 */
+  [data-style^="mc"] .mobile-header {
     border-bottom: 3px solid #281a0e;
     background: #b89b6c;
     box-shadow: inset 0 -2px 0 #775738;
     font-family: inherit;
   }
-  [data-style="mc"] .mobile-bottom-bar {
+  [data-style^="mc"] .mobile-bottom-bar {
     border-top: 3px solid #281a0e;
     background: #c4ab80;
     box-shadow: inset 0 2px 0 #ecd9b9, 0 -3px 0 #281a0e;
   }
-  [data-style="mc"] .more-sheet {
+  [data-style^="mc"] .more-sheet {
     border: 3px solid #281a0e;
     border-bottom: none;
     border-radius: 0;
     background: #c4ab80;
     box-shadow: inset 2px 2px 0 #ecd9b9, inset -2px 0 0 #775738, 0 -4px 0 #281a0e;
   }
-  [data-style="mc"] .more-sheet-item {
+  [data-style^="mc"] .more-sheet-item {
     border: 2px solid #1b1208;
     border-radius: 0;
     background: #8b8b8b;
@@ -1457,28 +1881,28 @@ code { font-family: Consolas, monospace; font-size: 12px; }
     text-shadow: 1px 1px 0 #3f3f3f;
     box-shadow: inset 2px 2px 0 #dbdbdb, inset -2px -2px 0 #555555, 2px 2px 0 #1b1208;
   }
-  [data-style="mc"] .more-sheet-item:hover,
-  [data-style="mc"] .more-sheet-item:active {
+  [data-style^="mc"] .more-sheet-item:hover,
+  [data-style^="mc"] .more-sheet-item:active {
     background: #4a7522;
     color: #fff;
     border-color: #1b1208;
     box-shadow: inset 2px 2px 0 #72a838, inset -2px -2px 0 #29440f, 1px 1px 0 #1b1208;
     transform: translate(1px, 1px);
   }
-  [data-style="mc"][data-theme="dark"] .mobile-header {
+  [data-style^="mc"][data-theme="dark"] .mobile-header {
     background: #1e0d12;
     border-bottom: 3px solid #4a1c24;
   }
-  [data-style="mc"][data-theme="dark"] .mobile-bottom-bar {
+  [data-style^="mc"][data-theme="dark"] .mobile-bottom-bar {
     background: #250f16;
     border-top: 3px solid #4a1c24;
     box-shadow: inset 0 2px 0 #3a151f;
   }
-  [data-style="mc"][data-theme="dark"] .more-sheet {
+  [data-style^="mc"][data-theme="dark"] .more-sheet {
     background: #250f16;
     border-color: #4a1c24;
   }
-  [data-style="mc"][data-theme="dark"] .more-sheet-item {
+  [data-style^="mc"][data-theme="dark"] .more-sheet-item {
     background: #351720;
     border-color: #5c202d;
     box-shadow: inset 2px 2px 0 #4a1f2b, inset -2px -2px 0 #1f0b11, 2px 2px 0 #0f0508;
@@ -1627,17 +2051,41 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-style="pop"][data-theme="dark"] .kaoyan-countdown .countdown-date { color: #333; }
 [data-style="pop"] .mastery-bar { border: 2px solid #111; border-radius: 6px; }
 
-/* MC风格倒计时 */
-[data-style="mc"] .kaoyan-countdown {
+/* MC风格倒计时与掌握度 */
+[data-style^="mc"] .kaoyan-countdown {
   background: #4a7522; border: 3px solid #1b1208;
   border-radius: 0; box-shadow: inset 2px 2px 0 #72a838, inset -2px -2px 0 #29440f;
 }
-[data-style="mc"][data-theme="dark"] .kaoyan-countdown {
+[data-style^="mc"][data-theme="dark"] .kaoyan-countdown {
   background: #351720; border-color: #5c202d;
   box-shadow: inset 2px 2px 0 #4a1f2b, inset -2px -2px 0 #1f0b11;
 }
-[data-style="mc"] .mastery-bar { border-radius: 0; border: 2px solid #1b1208; }
-[data-style="mc"] .mastery-seg { border-radius: 0; }
+[data-style="mc-gui"] .kaoyan-countdown {
+  background: #8b8b8b; border: 3px solid #373737;
+  box-shadow: inset 2px 2px 0 #c2c2c2, inset -2px -2px 0 #555555;
+}
+[data-style="mc-gui"][data-theme="dark"] .kaoyan-countdown {
+  background: #25252b; border-color: #3b3b44;
+  box-shadow: inset 2px 2px 0 #43434f, inset -2px -2px 0 #141417;
+}
+[data-style="mc-deep"] .kaoyan-countdown {
+  background: #0f8694; border: 3px solid #233446;
+  box-shadow: inset 2px 2px 0 #3ad7e9, inset -2px -2px 0 #074f57;
+}
+[data-style="mc-deep"][data-theme="dark"] .kaoyan-countdown {
+  background: #112833; border-color: #253342;
+  box-shadow: inset 2px 2px 0 #1b857d, inset -2px -2px 0 #052624;
+}
+[data-style="mc-end"] .kaoyan-countdown {
+  background: #1c7a65; border: 3px solid #3d3b28;
+  box-shadow: inset 2px 2px 0 #46be9f, inset -2px -2px 0 #0d463a;
+}
+[data-style="mc-end"][data-theme="dark"] .kaoyan-countdown {
+  background: #391c52; border-color: #332646;
+  box-shadow: inset 2px 2px 0 #852ec4, inset -2px -2px 0 #1e092d;
+}
+[data-style^="mc"] .mastery-bar { border-radius: 0; border: 2px solid #1b1208; }
+[data-style^="mc"] .mastery-seg { border-radius: 0; }
 
 /* ================= v1.0.6：AI 生图助记 ================= */
 
