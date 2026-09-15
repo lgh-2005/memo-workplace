@@ -890,60 +890,84 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 
 /* ----------------- 📦 像素·工作台 (Minecraft Classic GUI · mc-gui) ----------------- */
-/* 白天：原版经典灰石工作台 · 浅原石灰 + 纯粹物品槽凹凸 */
+/* 核心特色：原版 9-Patch 灰石立体切角、下凹物理物品槽(Slot)、经验球荧光绿、泥土点阵背景 */
 [data-style="mc-gui"] {
   --bg: #c6c6c6;
-  --card: #dbdbdb;
+  --card: #c6c6c6;
   --border: #373737;
-  --topbar-bg: rgba(205, 205, 205, .96);
+  --topbar-bg: rgba(198, 198, 198, .98);
   --card-sheen: none;
   --text: #1e1e1e;
-  --text-sub: #4b4b4b;
+  --text-sub: #4f4f4f;
   --primary: #3b7418;
-  --primary-soft: #b8df9c;
-  --warn: #b22222;
+  --primary-soft: #b2df93;
+  --warn: #a81c1c;
   --ok: #2e7d32;
   --radius: 0px;
   --grad-primary: linear-gradient(180deg, #599827 0%, #356b14 100%);
   --stat-grad: linear-gradient(180deg, #1e1e1e 30%, #3b7418 100%);
-  --shadow-card: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #555555, 3px 3px 0 rgba(0,0,0,.25);
-  --shadow-btn: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #555555, 2px 2px 0 #373737;
+  --shadow-card: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #555555, 4px 4px 0 rgba(0,0,0,.35);
+  --shadow-btn: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #555555, 2px 2px 0 #222222;
 }
 [data-style="mc-gui"] body {
-  background-color: #c6c6c6;
-  background-image: linear-gradient(180deg, #cfcfcf 0%, #c6c6c6 100%);
+  background-color: #583d28;
+  background-image:
+    radial-gradient(#442e1d 15%, transparent 16%),
+    radial-gradient(#3a2618 15%, transparent 16%),
+    linear-gradient(45deg, rgba(0,0,0,.08) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0,0,0,.08) 25%, transparent 25%);
+  background-size: 16px 16px, 16px 16px, 8px 8px, 8px 8px;
+  background-position: 0 0, 8px 8px, 0 0, 4px 4px;
   background-attachment: fixed;
   color: #1e1e1e;
 }
 [data-style="mc-gui"] .sidebar {
-  border-right: 3px solid #373737;
+  border-right: 4px solid #373737;
   background: #c6c6c6;
-  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #8b8b8b;
+  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #8b8b8b;
 }
-[data-style="mc-gui"] .sidebar-head { border-bottom: 2px solid #555555; }
+[data-style="mc-gui"] .sidebar-head { border-bottom: 3px solid #555555; }
 [data-style="mc-gui"] .card {
-  border: 2px solid #373737;
-  background: #dbdbdb;
-  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #8b8b8b, 3px 3px 0 rgba(0,0,0,.3);
+  border: 3px solid #373737;
+  background: #c6c6c6;
+  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #555555, 4px 4px 0 rgba(0,0,0,.35);
+}
+/* 原生物品槽 (Item Slot) 凹陷浮雕 */
+[data-style="mc-gui"] .input,
+[data-style="mc-gui"] textarea.input,
+[data-style="mc-gui"] .st-textarea,
+[data-style="mc-gui"] .kb-fix-text,
+[data-style="mc-gui"] .quiz-opt {
+  background: #8b8b8b !important;
+  color: #ffffff !important;
+  border: 2px solid #373737 !important;
+  box-shadow: inset 3px 3px 0 #373737, inset -2px -2px 0 #ffffff !important;
+}
+[data-style="mc-gui"] .quiz-opt:hover {
+  background: #9e9e9e !important;
 }
 [data-style="mc-gui"] .btn {
-  border: 2px solid #373737;
+  border: 2px solid #222222;
   background: #9b9b9b;
   color: #ffffff;
-  box-shadow: inset 2px 2px 0 #e0e0e0, inset -2px -2px 0 #555555, 2px 2px 0 #2b2b2b;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #555555, 2px 2px 0 #222222;
 }
 [data-style="mc-gui"] .btn:hover {
-  background: #b0b0b0;
-  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #444444, 2px 2px 0 #2b2b2b;
+  background: #ababab;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #444444, 2px 2px 0 #222222;
+}
+[data-style="mc-gui"] .btn:active {
+  box-shadow: inset 2px 2px 0 #373737, inset -2px -2px 0 #ffffff;
+  transform: translate(1px, 1px);
 }
 [data-style="mc-gui"] .btn.primary {
-  background: #3e7b1a;
+  background: #4a8622;
   color: #ffffff;
   text-shadow: 1px 1px 0 #1b3d09;
-  box-shadow: inset 2px 2px 0 #73be36, inset -2px -2px 0 #254d10, 2px 2px 0 #1c330f;
+  box-shadow: inset 2px 2px 0 #85d63f, inset -2px -2px 0 #254d10, 2px 2px 0 #1c330f;
 }
 [data-style="mc-gui"] .tab.active {
-  background: #949494;
+  background: #999999;
   color: #ffffff;
   text-shadow: 1px 1px 0 #333333;
   border: 2px solid #373737;
@@ -954,16 +978,16 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   box-shadow: 1px 1px 0 #555555;
 }
 [data-style="mc-gui"] .kb-passage {
-  border: 2px solid #373737;
-  background: #e5e5e5;
-  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #b3b3b3;
+  border: 3px solid #373737;
+  background: #e2e2e2;
+  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #9c9c9c;
 }
 /* 工作台 × 夜间：深板岩暗石与经验条荧光绿 */
 [data-style="mc-gui"][data-theme="dark"] {
-  --bg: #161619;
-  --card: #25252b;
+  --bg: #141418;
+  --card: #202026;
   --border: #3b3b44;
-  --topbar-bg: rgba(26, 26, 31, .96);
+  --topbar-bg: rgba(22, 22, 27, .98);
   --text: #eaeaea;
   --text-sub: #9e9ea8;
   --primary: #55ff55;
@@ -973,58 +997,75 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --radius: 0px;
   --grad-primary: linear-gradient(180deg, #6bf56b 0%, #2fb82f 100%);
   --stat-grad: linear-gradient(180deg, #ffffff 30%, #55ff55 100%);
-  --shadow-card: inset 2px 2px 0 #43434f, inset -2px -2px 0 #101013, 3px 3px 0 #000000;
+  --shadow-card: inset 3px 3px 0 #3e3e4a, inset -3px -3px 0 #0d0d10, 4px 4px 0 #000000;
   --shadow-btn: inset 2px 2px 0 #4f4f5c, inset -2px -2px 0 #131317, 2px 2px 0 #0a0a0d;
 }
 [data-style="mc-gui"][data-theme="dark"] body {
-  background: #161619;
+  background-color: #101013;
+  background-image:
+    radial-gradient(#1c1c22 15%, transparent 16%),
+    radial-gradient(#16161c 15%, transparent 16%),
+    linear-gradient(45deg, rgba(0,0,0,.25) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0,0,0,.25) 25%, transparent 25%);
+  background-size: 16px 16px, 16px 16px, 8px 8px, 8px 8px;
+  background-position: 0 0, 8px 8px, 0 0, 4px 4px;
   color: #eaeaea;
 }
 [data-style="mc-gui"][data-theme="dark"] .sidebar {
-  border-right: 3px solid #101013;
-  background: #1f1f25;
-  box-shadow: inset 2px 2px 0 #3a3a46, inset -2px -2px 0 #101013;
+  border-right: 3px solid #0d0d10;
+  background: #191920;
+  box-shadow: inset 3px 3px 0 #343440, inset -3px -3px 0 #0d0d10;
 }
 [data-style="mc-gui"][data-theme="dark"] .card {
-  border: 2px solid #101013;
-  background: #25252b;
-  box-shadow: inset 3px 3px 0 #43434f, inset -3px -3px 0 #141417, 3px 3px 0 #000000;
+  border: 3px solid #0d0d10;
+  background: #202026;
+  box-shadow: inset 3px 3px 0 #3a3a46, inset -3px -3px 0 #0d0d10, 4px 4px 0 #000000;
+}
+[data-style="mc-gui"][data-theme="dark"] .input,
+[data-style="mc-gui"][data-theme="dark"] textarea.input,
+[data-style="mc-gui"][data-theme="dark"] .st-textarea,
+[data-style="mc-gui"][data-theme="dark"] .kb-fix-text,
+[data-style="mc-gui"][data-theme="dark"] .quiz-opt {
+  background: #141418 !important;
+  color: #eaeaea !important;
+  border: 2px solid #0d0d10 !important;
+  box-shadow: inset 3px 3px 0 #08080a, inset -2px -2px 0 #32323d !important;
 }
 [data-style="mc-gui"][data-theme="dark"] .btn {
-  background: #33333b;
-  border: 2px solid #101013;
+  background: #2b2b34;
+  border: 2px solid #0d0d10;
   color: #eaeaea;
   text-shadow: 1px 1px 0 #000;
-  box-shadow: inset 2px 2px 0 #525261, inset -2px -2px 0 #1a1a20, 2px 2px 0 #0a0a0d;
+  box-shadow: inset 2px 2px 0 #4f4f5e, inset -2px -2px 0 #141418, 2px 2px 0 #0a0a0d;
 }
 [data-style="mc-gui"][data-theme="dark"] .btn.primary {
   background: #1c521c;
   border-color: #0b240b;
   color: #55ff55;
   text-shadow: 1px 1px 0 #061706;
-  box-shadow: inset 2px 2px 0 #338a33, inset -2px -2px 0 #0e300e, 2px 2px 0 #000, 0 0 8px rgba(85, 255, 85, .3);
+  box-shadow: inset 2px 2px 0 #338a33, inset -2px -2px 0 #0e300e, 2px 2px 0 #000, 0 0 10px rgba(85, 255, 85, .35);
 }
 [data-style="mc-gui"][data-theme="dark"] .tab.active {
-  background: #3c3c47;
+  background: #2e2e38;
   color: #55ff55;
   text-shadow: 1px 1px 0 #000;
-  border: 2px solid #101013;
-  box-shadow: inset 2px 2px 0 #595969, inset -2px -2px 0 #17171c;
+  border: 2px solid #0d0d10;
+  box-shadow: inset 2px 2px 0 #484857, inset -2px -2px 0 #131317;
 }
 [data-style="mc-gui"][data-theme="dark"] .kb-passage {
-  background: #1d1d23;
-  border: 2px solid #32323d;
-  box-shadow: inset 2px 2px 0 #2d2d37, inset -2px -2px 0 #101014;
+  background: #18181f;
+  border: 2px solid #2f2f3a;
+  box-shadow: inset 2px 2px 0 #252530, inset -2px -2px 0 #0e0e12;
   color: #e5e5e9;
 }
 
 /* ----------------- 💎 像素·钻石矿 (Minecraft Deepslate & Diamond · mc-deep) ----------------- */
-/* 白天：方解石冷岩与纯正钻石青蓝 */
+/* 核心特色：深板岩凿刻岩层断层、双层矿石凹槽、天然发光钻石青与幽匿荧光冷脉络 */
 [data-style="mc-deep"] {
-  --bg: #e2e7ec;
-  --card: #f0f4f8;
-  --border: #233446;
-  --topbar-bg: rgba(220, 227, 235, .96);
+  --bg: #dde3ea;
+  --card: #eef3f8;
+  --border: #1b2633;
+  --topbar-bg: rgba(215, 224, 233, .98);
   --card-sheen: none;
   --text: #132230;
   --text-sub: #465a6e;
@@ -1035,130 +1076,139 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --radius: 0px;
   --grad-primary: linear-gradient(180deg, #1cbdd0 0%, #0a8f9c 100%);
   --stat-grad: linear-gradient(180deg, #132230 30%, #0a8f9c 100%);
-  --shadow-card: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #9cb2c7, 3px 3px 0 #233446;
-  --shadow-btn: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #7b93ab, 2px 2px 0 #1b2735;
+  --shadow-card: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #8fa6bd, 4px 4px 0 #1b2633;
+  --shadow-btn: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #68829c, 2px 2px 0 #121a24;
 }
 [data-style="mc-deep"] body {
-  background-color: #e2e7ec;
-  background-image: linear-gradient(180deg, #eaf0f5 0%, #e2e7ec 100%);
+  background-color: #ced6df;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(27,38,51,.07) 0px, rgba(27,38,51,.07) 2px, transparent 2px, transparent 16px),
+    repeating-linear-gradient(90deg, rgba(27,38,51,.04) 0px, rgba(27,38,51,.04) 2px, transparent 2px, transparent 32px);
   background-attachment: fixed;
   color: #132230;
 }
 [data-style="mc-deep"] .sidebar {
-  border-right: 3px solid #233446;
-  background: #cad4df;
-  box-shadow: inset 2px 2px 0 #f0f4f8, inset -2px -2px 0 #95a7b9;
+  border-right: 3px solid #1b2633;
+  background: #c3cfdc;
+  box-shadow: inset 3px 3px 0 #f0f4f8, inset -3px -3px 0 #859bb2;
 }
-[data-style="mc-deep"] .sidebar-head { border-bottom: 2px solid #4a637d; }
+[data-style="mc-deep"] .sidebar-head { border-bottom: 2px solid #3c5268; }
 [data-style="mc-deep"] .card {
-  border: 2px solid #233446;
-  background: #f0f4f8;
-  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #a9bdd0, 3px 3px 0 rgba(35, 52, 70, .35);
+  border: 3px solid #1b2633;
+  background: #eef3f8;
+  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #9cb2c7, 4px 4px 0 rgba(27, 38, 51, .35);
 }
 [data-style="mc-deep"] .btn {
-  border: 2px solid #233446;
+  border: 2px solid #1b2633;
   background: #8fa5bc;
   color: #ffffff;
-  text-shadow: 1px 1px 0 #233446;
-  box-shadow: inset 2px 2px 0 #d7e2ee, inset -2px -2px 0 #586f87, 2px 2px 0 #1b2735;
+  text-shadow: 1px 1px 0 #1b2633;
+  box-shadow: inset 2px 2px 0 #d7e2ee, inset -2px -2px 0 #586f87, 2px 2px 0 #121a24;
 }
 [data-style="mc-deep"] .btn:hover {
-  background: #a4b9ce;
-  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #4f667d, 2px 2px 0 #1b2735;
+  background: #9db2c7;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #4f667d, 2px 2px 0 #121a24;
 }
 [data-style="mc-deep"] .btn.primary {
-  background: #0f8694;
+  background: #0b808e;
   color: #ffffff;
   text-shadow: 1px 1px 0 #053b42;
-  box-shadow: inset 2px 2px 0 #3ad7e9, inset -2px -2px 0 #074f57, 2px 2px 0 #112933;
+  box-shadow: inset 2px 2px 0 #47e2f4, inset -2px -2px 0 #064b53, 2px 2px 0 #0f242d, 0 0 8px rgba(11, 128, 142, .4);
 }
 [data-style="mc-deep"] .tab.active {
-  background: #738da7;
+  background: #6e87a2;
   color: #ffffff;
-  text-shadow: 1px 1px 0 #21303f;
-  border: 2px solid #233446;
-  box-shadow: inset 2px 2px 0 #adc2d7, inset -2px -2px 0 #465c72;
+  text-shadow: 1px 1px 0 #1b2633;
+  border: 2px solid #1b2633;
+  box-shadow: inset 2px 2px 0 #a5bbd2, inset -2px -2px 0 #43586e;
 }
 [data-style="mc-deep"] .badge, [data-style="mc-deep"] .tag {
-  border: 1px solid #233446;
-  box-shadow: 1px 1px 0 #4b6278;
+  border: 1px solid #1b2633;
+  box-shadow: 1px 1px 0 #465a6e;
 }
 [data-style="mc-deep"] .kb-passage {
-  border: 2px solid #233446;
-  background: #f3f7fa;
-  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #c2d3e3;
+  border: 2px solid #1b2633;
+  background: #f4f8fb;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #bfd0e0;
 }
 /* 钻石矿 × 夜间：深邃深板岩基岩与发光钻石青 (Deep Dark & Glowing Diamond) */
 [data-style="mc-deep"][data-theme="dark"] {
-  --bg: #0d1217;
-  --card: #151d26;
-  --border: #253342;
-  --topbar-bg: rgba(16, 23, 31, .96);
+  --bg: #090c10;
+  --card: #121820;
+  --border: #233446;
+  --topbar-bg: rgba(13, 17, 23, .98);
   --text: #e2edf7;
   --text-sub: #7f99b2;
   --primary: #2fe0cd;
-  --primary-soft: #0b2c29;
+  --primary-soft: #082624;
   --warn: #ff5252;
   --ok: #2fe0cd;
   --radius: 0px;
   --grad-primary: linear-gradient(180deg, #4dfbe7 0%, #15a999 100%);
   --stat-grad: linear-gradient(180deg, #ffffff 30%, #2fe0cd 100%);
-  --shadow-card: inset 2px 2px 0 #2d3c4e, inset -2px -2px 0 #0a0d12, 3px 3px 0 #000000;
-  --shadow-btn: inset 2px 2px 0 #35475b, inset -2px -2px 0 #0d131a, 2px 2px 0 #05080b;
+  --shadow-card: inset 2px 2px 0 #26384a, inset -2px -2px 0 #070a0d, 4px 4px 0 #000000;
+  --shadow-btn: inset 2px 2px 0 #334960, inset -2px -2px 0 #0c1219, 2px 2px 0 #040608;
 }
 [data-style="mc-deep"][data-theme="dark"] body {
-  background: #0d1217;
+  background-color: #090c10;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(35,52,70,.18) 0px, rgba(35,52,70,.18) 2px, transparent 2px, transparent 16px),
+    repeating-linear-gradient(90deg, rgba(35,52,70,.1) 0px, rgba(35,52,70,.1) 2px, transparent 2px, transparent 32px);
   color: #e2edf7;
 }
 [data-style="mc-deep"][data-theme="dark"] .sidebar {
-  border-right: 3px solid #090c10;
-  background: #121820;
-  box-shadow: inset 2px 2px 0 #283747, inset -2px -2px 0 #090c10;
+  border-right: 3px solid #06080b;
+  background: #0e141a;
+  box-shadow: inset 3px 3px 0 #213040, inset -3px -3px 0 #06080b;
 }
 [data-style="mc-deep"][data-theme="dark"] .card {
-  border: 2px solid #090c10;
-  background: #151d26;
-  box-shadow: inset 3px 3px 0 #2d3c4e, inset -3px -3px 0 #0b0f14, 3px 3px 0 #000000;
+  border: 3px solid #06080b;
+  background: #121820;
+  box-shadow: inset 3px 3px 0 #28394a, inset -3px -3px 0 #080b0f, 4px 4px 0 #000000;
 }
 [data-style="mc-deep"][data-theme="dark"] .btn {
-  background: #202b37;
-  border: 2px solid #090c10;
+  background: #1c2632;
+  border: 2px solid #06080b;
   color: #d8e5f2;
   text-shadow: 1px 1px 0 #000;
-  box-shadow: inset 2px 2px 0 #3b4d61, inset -2px -2px 0 #11171f, 2px 2px 0 #000;
+  box-shadow: inset 2px 2px 0 #374a5e, inset -2px -2px 0 #0f151c, 2px 2px 0 #000;
 }
 [data-style="mc-deep"][data-theme="dark"] .btn.primary {
-  background: #0d4a46;
-  border-color: #042120;
+  background: #0a4641;
+  border-color: #031c1a;
   color: #2fe0cd;
   text-shadow: 1px 1px 0 #021413;
-  box-shadow: inset 2px 2px 0 #1b857d, inset -2px -2px 0 #052624, 2px 2px 0 #000, 0 0 10px rgba(47, 224, 205, .35);
+  box-shadow: inset 2px 2px 0 #29a399, inset -2px -2px 0 #052624, 2px 2px 0 #000, 0 0 14px rgba(47, 224, 205, .45);
 }
 [data-style="mc-deep"][data-theme="dark"] .tab.active {
-  background: #1e3144;
+  background: #192a3b;
   color: #2fe0cd;
   text-shadow: 1px 1px 0 #000;
-  border: 2px solid #090c10;
-  box-shadow: inset 2px 2px 0 #34506c, inset -2px -2px 0 #101c27, 0 0 6px rgba(47, 224, 205, .25);
+  border: 2px solid #06080b;
+  box-shadow: inset 2px 2px 0 #2d455d, inset -2px -2px 0 #0d1722, 0 0 8px rgba(47, 224, 205, .3);
 }
 [data-style="mc-deep"][data-theme="dark"] .brand {
   color: #2fe0cd;
-  text-shadow: 0 0 6px rgba(47, 224, 205, .5);
+  text-shadow: 0 0 8px rgba(47, 224, 205, .6);
 }
 [data-style="mc-deep"][data-theme="dark"] .kb-passage {
-  background: #10161d;
-  border: 2px solid #202e3d;
-  box-shadow: inset 2px 2px 0 #1b2633, inset -2px -2px 0 #090d12;
+  background: #0f141a;
+  border: 2px solid #1c2937;
+  box-shadow: inset 2px 2px 0 #18232f, inset -2px -2px 0 #070a0d;
   color: #e4edf5;
 }
 
 /* ----------------- 🔮 像素·附魔殿 (Minecraft The End & Enchanting · mc-end) ----------------- */
-/* 白天：末地石砖暖黄微玉与末影珍珠墨绿 */
+/* 核心特色：末地石砖米黄拼缝纹理、黑曜石祭坛外框、装备标志性「附魔紫粉流光动效 (Glint)」 */
+@keyframes mc-enchant-glint {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
 [data-style="mc-end"] {
-  --bg: #ecefda;
-  --card: #f9fbee;
-  --border: #3d3b28;
-  --topbar-bg: rgba(231, 235, 212, .96);
+  --bg: #eaedd6;
+  --card: #f8faeb;
+  --border: #353322;
+  --topbar-bg: rgba(228, 232, 207, .98);
   --card-sheen: none;
   --text: #211e14;
   --text-sub: #5c573f;
@@ -1167,122 +1217,137 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   --warn: #a82738;
   --ok: #207a4a;
   --radius: 0px;
-  --grad-primary: linear-gradient(180deg, #279f85 0%, #176f5c 100%);
+  --grad-primary: linear-gradient(115deg, #1c7a65 0%, #a855f7 35%, #ec4899 65%, #1c7a65 100%);
   --stat-grad: linear-gradient(180deg, #211e14 30%, #197864 100%);
-  --shadow-card: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #b3b793, 3px 3px 0 #3d3b28;
-  --shadow-btn: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #929973, 2px 2px 0 #28271a;
+  --shadow-card: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #a9ad8b, 4px 4px 0 #353322;
+  --shadow-btn: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #8a916a, 2px 2px 0 #242217;
 }
 [data-style="mc-end"] body {
-  background-color: #ecefda;
-  background-image: linear-gradient(180deg, #f3f6e4 0%, #ecefda 100%);
+  background-color: #dde1c4;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(53,51,34,.06) 0px, rgba(53,51,34,.06) 2px, transparent 2px, transparent 24px),
+    repeating-linear-gradient(90deg, rgba(53,51,34,.04) 0px, rgba(53,51,34,.04) 2px, transparent 2px, transparent 48px);
   background-attachment: fixed;
   color: #211e14;
 }
 [data-style="mc-end"] .sidebar {
-  border-right: 3px solid #3d3b28;
-  background: #d9debe;
-  box-shadow: inset 2px 2px 0 #fafcee, inset -2px -2px 0 #a9af89;
+  border-right: 3px solid #353322;
+  background: #d4d9b6;
+  box-shadow: inset 3px 3px 0 #fafcee, inset -3px -3px 0 #9fa57d;
 }
-[data-style="mc-end"] .sidebar-head { border-bottom: 2px solid #575438; }
+[data-style="mc-end"] .sidebar-head { border-bottom: 2px solid #504c32; }
 [data-style="mc-end"] .card {
-  border: 2px solid #3d3b28;
-  background: #f9fbee;
-  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #bec39e, 3px 3px 0 rgba(61, 59, 40, .35);
+  border: 3px solid #353322;
+  background: #f8faeb;
+  box-shadow: inset 3px 3px 0 #ffffff, inset -3px -3px 0 #b3b793, 4px 4px 0 rgba(53, 51, 34, .35);
 }
 [data-style="mc-end"] .btn {
-  border: 2px solid #3d3b28;
-  background: #a6ad8c;
+  border: 2px solid #353322;
+  background: #9fa782;
   color: #ffffff;
   text-shadow: 1px 1px 0 #323522;
-  box-shadow: inset 2px 2px 0 #e4e9cf, inset -2px -2px 0 #737a59, 2px 2px 0 #28271a;
+  box-shadow: inset 2px 2px 0 #dfe5c9, inset -2px -2px 0 #69704e, 2px 2px 0 #242217;
 }
 [data-style="mc-end"] .btn:hover {
-  background: #b7bea0;
-  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #676d4d, 2px 2px 0 #28271a;
+  background: #abb390;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #5d6344, 2px 2px 0 #242217;
 }
+/* 附魔流光专属按钮 */
 [data-style="mc-end"] .btn.primary {
-  background: #1c7a65;
+  background: linear-gradient(115deg, #1b735f 0%, #8e44ad 30%, #d35400 60%, #1b735f 100%);
+  background-size: 250% 100%;
+  animation: mc-enchant-glint 5s linear infinite;
   color: #ffffff;
   text-shadow: 1px 1px 0 #0a332a;
-  box-shadow: inset 2px 2px 0 #46be9f, inset -2px -2px 0 #0d463a, 2px 2px 0 #1b2621;
+  border-color: #242217;
+  box-shadow: inset 2px 2px 0 #46be9f, inset -2px -2px 0 #0d463a, 2px 2px 0 #1b2621, 0 0 10px rgba(142, 68, 173, .45);
 }
 [data-style="mc-end"] .tab.active {
-  background: #8e9673;
+  background: #848c68;
   color: #ffffff;
-  text-shadow: 1px 1px 0 #2c301e;
-  border: 2px solid #3d3b28;
-  box-shadow: inset 2px 2px 0 #c2cba4, inset -2px -2px 0 #575e3e;
+  text-shadow: 1px 1px 0 #242217;
+  border: 2px solid #353322;
+  box-shadow: inset 2px 2px 0 #b9c199, inset -2px -2px 0 #4e5535;
 }
 [data-style="mc-end"] .badge, [data-style="mc-end"] .tag {
-  border: 1px solid #3d3b28;
-  box-shadow: 1px 1px 0 #575438;
+  border: 1px solid #353322;
+  box-shadow: 1px 1px 0 #504c32;
 }
 [data-style="mc-end"] .kb-passage {
-  border: 2px solid #3d3b28;
-  background: #fcfdf6;
-  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #cbd1a9;
+  border: 2px solid #353322;
+  background: #fbfdf5;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #c7cd9e;
 }
 /* 末地 × 黑夜：虚空深邃与附魔龙息亮紫 (The End Void & Dragon Breath) */
 [data-style="mc-end"][data-theme="dark"] {
-  --bg: #0f0b16;
-  --card: #1b1527;
-  --border: #332646;
-  --topbar-bg: rgba(19, 14, 29, .96);
+  --bg: #09060f;
+  --card: #150f22;
+  --border: #302042;
+  --topbar-bg: rgba(14, 9, 23, .98);
   --text: #efe6f8;
   --text-sub: #9e8cb4;
   --primary: #c359f8;
-  --primary-soft: #32164a;
+  --primary-soft: #2c1242;
   --warn: #ff476d;
   --ok: #34d399;
   --radius: 0px;
-  --grad-primary: linear-gradient(180deg, #db7eff 0%, #9e2adb 100%);
+  --grad-primary: linear-gradient(115deg, #a855f7 0%, #ec4899 35%, #6366f1 70%, #a855f7 100%);
   --stat-grad: linear-gradient(180deg, #ffffff 30%, #c359f8 100%);
-  --shadow-card: inset 2px 2px 0 #3a2e52, inset -2px -2px 0 #0a0710, 3px 3px 0 #000000;
-  --shadow-btn: inset 2px 2px 0 #463462, inset -2px -2px 0 #0e0917, 2px 2px 0 #050308;
+  --shadow-card: inset 2px 2px 0 #33244c, inset -2px -2px 0 #08050d, 4px 4px 0 #000000;
+  --shadow-btn: inset 2px 2px 0 #44305e, inset -2px -2px 0 #0b0713, 2px 2px 0 #040208;
 }
 [data-style="mc-end"][data-theme="dark"] body {
-  background: #0f0b16;
+  background-color: #09060f;
+  background-image:
+    radial-gradient(#261838 12%, transparent 13%),
+    radial-gradient(#180f24 12%, transparent 13%),
+    linear-gradient(45deg, rgba(0,0,0,.35) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0,0,0,.35) 25%, transparent 25%);
+  background-size: 24px 24px, 24px 24px, 12px 12px, 12px 12px;
+  background-position: 0 0, 12px 12px, 0 0, 6px 6px;
   color: #efe6f8;
 }
 [data-style="mc-end"][data-theme="dark"] .sidebar {
-  border-right: 3px solid #09060e;
-  background: #171122;
-  box-shadow: inset 2px 2px 0 #33244c, inset -2px -2px 0 #09060e;
+  border-right: 3px solid #06040a;
+  background: #110c1c;
+  box-shadow: inset 3px 3px 0 #2c1d42, inset -3px -3px 0 #06040a;
 }
 [data-style="mc-end"][data-theme="dark"] .card {
-  border: 2px solid #09060e;
-  background: #1b1527;
-  box-shadow: inset 3px 3px 0 #3a2e52, inset -3px -3px 0 #0d0914, 3px 3px 0 #000000;
+  border: 3px solid #06040a;
+  background: #150f22;
+  box-shadow: inset 3px 3px 0 #35254e, inset -3px -3px 0 #090610, 4px 4px 0 #000000;
 }
 [data-style="mc-end"][data-theme="dark"] .btn {
-  background: #271f37;
-  border: 2px solid #09060e;
+  background: #231934;
+  border: 2px solid #06040a;
   color: #e5d8f2;
   text-shadow: 1px 1px 0 #000;
-  box-shadow: inset 2px 2px 0 #463760, inset -2px -2px 0 #150f20, 2px 2px 0 #000;
+  box-shadow: inset 2px 2px 0 #43305c, inset -2px -2px 0 #110a1a, 2px 2px 0 #000;
 }
 [data-style="mc-end"][data-theme="dark"] .btn.primary {
-  background: #471569;
-  border-color: #1f0730;
-  color: #eedaff;
+  background: linear-gradient(115deg, #7c1fc2 0%, #e84393 30%, #4834d4 65%, #7c1fc2 100%);
+  background-size: 250% 100%;
+  animation: mc-enchant-glint 4s linear infinite;
+  border-color: #06040a;
+  color: #ffffff;
   text-shadow: 1px 1px 0 #150320;
-  box-shadow: inset 2px 2px 0 #852ec4, inset -2px -2px 0 #280b3d, 2px 2px 0 #000, 0 0 10px rgba(195, 89, 248, .4);
+  box-shadow: inset 2px 2px 0 #af5ef7, inset -2px -2px 0 #3b0a63, 2px 2px 0 #000, 0 0 16px rgba(195, 89, 248, .55);
 }
 [data-style="mc-end"][data-theme="dark"] .tab.active {
-  background: #392254;
+  background: #311c4d;
   color: #e08aff;
   text-shadow: 1px 1px 0 #000;
-  border: 2px solid #09060e;
-  box-shadow: inset 2px 2px 0 #5c3886, inset -2px -2px 0 #180d26, 0 0 6px rgba(195, 89, 248, .3);
+  border: 2px solid #06040a;
+  box-shadow: inset 2px 2px 0 #543082, inset -2px -2px 0 #140a22, 0 0 8px rgba(195, 89, 248, .35);
 }
 [data-style="mc-end"][data-theme="dark"] .brand {
   color: #e08aff;
-  text-shadow: 0 0 6px rgba(195, 89, 248, .6);
+  text-shadow: 0 0 8px rgba(195, 89, 248, .7);
 }
 [data-style="mc-end"][data-theme="dark"] .kb-passage {
-  background: #150f20;
-  border: 2px solid #2e1d42;
-  box-shadow: inset 2px 2px 0 #241634, inset -2px -2px 0 #0a0610;
+  background: #110c1b;
+  border: 2px solid #29183d;
+  box-shadow: inset 2px 2px 0 #1e112d, inset -2px -2px 0 #08040d;
   color: #f1e7fa;
 }
 
