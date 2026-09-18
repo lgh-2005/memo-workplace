@@ -1225,6 +1225,10 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
         }
       } catch { /* 非法 JSON 忽略，不阻塞请求 */ }
     }
+    if (llm._jsonMode && !bodyObj.response_format) {
+      // v2.4.0.b：结构化输出场景（词文成章）请求 JSON 模式；服务商不支持时由上游报错或走解析兜底
+      bodyObj.response_format = { type: 'json_object' };
+    }
     res = await fetch(url, {
       method: 'POST',
       headers: {
@@ -4132,7 +4136,7 @@ const server = http.createServer(async (req, res) => {
             '【再次提醒】你的回复必须整体是一个 JSON 对象（第一个字符 { 最后一个字符 }），英文正文放在 passage 字段里，不要在 JSON 之外输出任何文字。',
           ].filter(Boolean).join('\n\n') },
         ];
-        const reply = await llmChat(msgs, { maxTokens: 4000 });
+        const reply = await llmChat(msgs, { maxTokens: 4000, llmOverride: { _jsonMode: true } });
         let parsed;
         try {
           // v2.4.0a 容错：真实模型常在 JSON 前后带说明文字/代码围栏——先剥围栏，再提取第一个平衡的 {...} 块解析
