@@ -3141,5 +3141,56 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   .check-row { min-height: 36px; }
 }
 
+/* ============ v2.4.0：词文成章（选词生成记忆文章） ============ */
+
+/* 词池 */
+.story-pool { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; min-height: 34px; }
+.story-pool-word { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--border); background: color-mix(in srgb, var(--primary) 7%, transparent); border-radius: 999px; padding: 4px 6px 4px 12px; font-size: 13px; font-weight: 600; }
+.story-pool-x { border: none; background: none; color: var(--text-sub); font-size: 12px; cursor: pointer; width: 22px; height: 22px; border-radius: 50%; }
+.story-pool-x:hover { background: color-mix(in srgb, var(--text-sub) 18%, transparent); color: var(--text); }
+
+/* 正文与翻译 */
+.story-passage { font-size: 15px; line-height: 2.0; padding: 12px 2px; }
+.story-passage .story-word { color: var(--primary); font-weight: 700; cursor: pointer; border-bottom: 2px solid color-mix(in srgb, var(--primary) 45%, transparent); padding: 0 1px; }
+.story-passage .story-word:hover { background: color-mix(in srgb, var(--primary) 14%, transparent); border-radius: 4px; }
+.story-translation { font-size: 14px; line-height: 1.9; color: var(--text-sub); padding: 8px 2px; }
+
+/* 词汇钩子卡片 */
+.story-hooks { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; }
+.story-hook { border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; background: color-mix(in srgb, var(--primary) 4%, transparent); font-size: 13px; line-height: 1.7; }
+.story-hook-word { color: var(--primary); cursor: pointer; font-size: 14px; }
+.story-hook-meta { color: var(--text-sub); margin: 0 6px; font-size: 12px; }
+.story-hook-meaning { font-weight: 600; }
+.story-hook-line { color: var(--text-sub); margin-top: 2px; }
+.story-hook-speak { margin-left: 4px; }
+
+/* 检索自测 */
+.story-quiz-item { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+.story-quiz-q { font-size: 14px; font-weight: 600; margin-bottom: 6px; line-height: 1.7; }
+.story-quiz-opts { display: flex; flex-wrap: wrap; gap: 6px; }
+.story-quiz-opt { border: 1px solid var(--border); background: transparent; color: var(--text); border-radius: 8px; padding: 7px 12px; font-size: 13px; cursor: pointer; text-align: left; transition: background .12s ease, border-color .12s ease; }
+.story-quiz-opt:hover { border-color: var(--primary); }
+.story-quiz-opt.correct { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 15%, transparent); font-weight: 600; }
+.story-quiz-opt.wrong { border-color: var(--warn); background: color-mix(in srgb, var(--warn) 12%, transparent); }
+
+/* 历史列表 */
+.story-hist-item { display: flex; align-items: center; gap: 10px; padding: 9px 4px; border-bottom: 1px solid var(--border); }
+.story-hist-item:last-child { border-bottom: none; }
+.story-hist-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.story-hist-meta { font-size: 12px; color: var(--text-sub); }
+.story-hist-words { font-size: 12px; color: var(--text-sub); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* 移动端适配 */
+@media (max-width: 700px) {
+  .story-passage { font-size: 14.5px; }
+  .story-hooks { grid-template-columns: 1fr; }
+  .story-quiz-opt { min-height: 44px; padding: 9px 14px; }
+  .story-hist-item .btn { min-height: 44px; }
+  #storyGenBtn { min-height: 48px; font-size: 15px; }
+  .story-pool-word { padding: 6px 6px 6px 12px; }
+  .story-pool-x { width: 28px; height: 28px; }
+  .row-gap .btn.small { min-height: 44px; }
+}
+
 
 

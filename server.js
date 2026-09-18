@@ -162,6 +162,7 @@ let db = loadJSON(DB_FILE, {
   quizLog: [],            // 测验记录 [{ts, mode, total, familiar, vague, forget}]（v1.0.4）
   contentCreated: { date: '', count: 0 },   // v1.0.7：当日已创建内容数（例句+助记+释义，官方上限 600/天）
   unitLog: [],            // 单元做题记录 [{ts, unitId, title, total, judged, correct}]（v1.1.5，为错题统计铺路）
+  stories: [],            // v2.4.0：词文成章 [{id, title, words[], theme, length, passage, hooks[], translation, quiz[], createdAt}]
 });
 // 旧 db.json 兼容：缺失字段补默认值
 if (!db.glosses) db.glosses = {};
@@ -169,6 +170,7 @@ if (!Array.isArray(db.quizLog)) db.quizLog = [];
 if (db.lastSyncOk === undefined) db.lastSyncOk = true;
 if (!db.contentCreated || typeof db.contentCreated !== 'object') db.contentCreated = { date: '', count: 0 };   // v1.0.7
 if (!Array.isArray(db.unitLog)) db.unitLog = [];   // v1.1.5：单元做题记录缺省补齐
+if (!Array.isArray(db.stories)) db.stories = [];   // v2.4.0：词文成章文章 {id, title, words[], theme, length, passage, hooks[], translation, quiz[], createdAt}
 
 function persistConfig() { saveJSON(CONFIG_FILE, config); }
 function persistDB() { saveJSON(DB_FILE, db); }
@@ -1335,6 +1337,22 @@ function mockLLM(messages) {
       caption: '[MOCK] 占位画面说明（自测数据）',
     });
   }
+  if (sys.includes('词汇记忆教练')) {   // v2.4.0：词文成章 mock——严格按 story_gen schema
+    const wm = user.match(/【目标单词】（共 \d+ 个）：(.+)/) || [];
+    const words = (wm[1] || 'mock story word').split(',').map(s => s.trim()).filter(Boolean);
+    const hookOne = { word: words[0] || 'mock', phonetic: '/mɒk/', pos: 'n.', meaning: '[MOCK] 核心义项', hook: '[MOCK] 谐音钩子：mock=毛蔻，毛茸茸的故事' };
+    return JSON.stringify({
+      title: 'The Mock Adventure',
+      passage: `Once upon a mock day, ${words.join(' and ')} met in a library. They argued about ${words[0] || 'mock'} loudly, until a librarian suggested a better plan. In the end, ${words[0] || 'mock'} became the hero of the story.`,
+      hooks: words.map(w => ({ word: w, phonetic: '/mɒk/', pos: 'n.', meaning: '[MOCK] 核心义项（自测）', hook: `[MOCK] ${w} 的联想钩子` })),
+      translation: '[MOCK] 这是占位中文翻译：在一个 mock 的日子里，' + words.join('和') + '在图书馆相遇……（自测数据）',
+      quiz: [
+        { q: `The story happened in a ___.`, options: ['library', 'stadium', 'kitchen', 'garage'], answer: 1, explain: '[MOCK] 原句定位：met in a library。' },
+        { q: `${words[0] || 'mock'} finally became ___.`, options: ['the villain', 'the hero', 'a ghost', 'a driver'], answer: 2, explain: '[MOCK] 原句定位：became the hero of the story。' },
+        { q: `Who suggested a better plan?`, options: ['the librarian', 'the dog', 'the teacher', 'the pilot'], answer: 1, explain: '[MOCK] 原句定位：a librarian suggested。' },
+      ],
+    });
+  }
   return `[MOCK] 收到！这是一个自测回复。（词义、例句、用法讲解在配置真实 AI 服务商后可用）\n\n关于你的问题「${user.slice(0, 60)}」：本回复来自内置 mock 模式，仅用于验证闭环。`;
 }
 
@@ -1466,6 +1484,23 @@ const DEFAULT_PROMPTS = {
       '6. 复测场景下（输入含【首答】【首轮反馈】【复答】），额外在末尾输出：',
       '## 六、复测对比',
       '明确写出相较首答的改善点与仍存在的问题，只作定性比较，禁止输出任何虚构的分数或等级。',
+    ].join('\n')
+  },
+  story_gen: {
+    id: 'story_gen',
+    title: '词文成章：选词生成记忆故事（System Prompt）',
+    desc: '把学习者选定的单词写进一篇连贯英文短文（语境记忆），并为每个词配记忆钩子（关键词法），附中文翻译与自测题',
+    template: [
+      '你是考研英语词汇记忆教练，面向中国考研学生。把用户选定的单词写进一篇便于记忆的英文短文。',
+      '要求：',
+      '1. 用【目标单词】清单里的每个单词至少一次（原形或标注了词形的变形），全部覆盖，不得遗漏；优先使用考研高频义项。',
+      '2. 短文情节连贯、有画面感、略带幽默或戏剧性更好记；题材按用户指定；难度对标考研阅读（高考纲内词汇为主，超纲词最多 3 个）。',
+      '3. 目标单词在短文中原样出现（变形时在 hooks 里标注），便于前端加粗高亮。',
+      '4. hooks：每个目标词一条 {word, phonetic, pos, meaning, hook}——phonetic 美式音标（不确定给空串）、pos 词性缩写、meaning 考研核心义项（15字内）、hook 一句中文记忆钩子（谐音/联想/词根拆解，25字内，具体不空泛）。',
+      '5. translation：全文通顺中文翻译。',
+      '6. quiz：5 道选择题 {q, options:[4个], answer(1-4), explain(40字内)}——3 道用短文原句挖空目标词，2 道选义；干扰项来自目标词表或形近词。',
+      '7. 严格输出 JSON（不要 markdown 代码块包裹）：',
+      '{"title":"英文标题(12词内)","passage":"英文正文","hooks":[{"word":"","phonetic":"","pos":"","meaning":"","hook":""}],"translation":"中文翻译","quiz":[{"q":"","options":["","","",""],"answer":1,"explain":""}]}',
     ].join('\n')
   }
 };
@@ -4058,6 +4093,91 @@ const server = http.createServer(async (req, res) => {
         }
         await ensureWordInNotepad(spelling);
         return sendJSON(res, 200, { ok: true, spelling, notepadId: config.maimemoNotepadId });
+      }
+
+      // v2.4.0：词文成章——选词生成记忆故事（故事+钩子双形态 + 中文翻译 + 检索自测）
+      if (p === '/api/story/generate' && req.method === 'POST') {
+        const body = await readBody(req);
+        const words = [...new Set((Array.isArray(body.words) ? body.words : [])
+          .map(w => String(w || '').trim().toLowerCase())
+          .filter(w => /^[a-z][a-z''\-]{0,29}$/.test(w)))];
+        if (words.length < 3) return sendJSON(res, 400, { error: '至少选 3 个单词（每词限字母/撇号/连字符，≤30 字符）' });
+        if (words.length > 20) return sendJSON(res, 400, { error: '每篇最多 20 个单词，请精简词池' });
+        const themes = ['随缘', '校园', '科幻', '悬疑', '职场', '旅行', '童话', '冒险', '美食', '体育', '侦探', '西部', '宫斗', '末日', '神话', '赛博朋克'];
+        const theme = themes.includes(body.theme) ? body.theme : '随缘';
+        const lengths = { short: { label: '短篇', guide: '180~260 个英文单词' }, medium: { label: '中篇', guide: '350~450 个英文单词' } };
+        const lengthKey = lengths[body.length] ? body.length : 'short';
+        const lens = Object.fromEntries(words.map(w => [w, db.glosses[w] || null]));
+        // v2.4.0：真题/外刊真实语境注入，引导模型优先用考研高频义项
+        let evidenceNote = '';
+        try {
+          const lines = [];
+          for (const w of words.slice(0, 20)) {
+            const ev = kbEvidenceForWord(w);
+            const ex = ev.exams[0] || ev.external[0] || ev.corpus[0];
+            if (ex?.s) lines.push(`- ${w}: ${String(ex.s).slice(0, 120)}`);
+          }
+          if (lines.length) evidenceNote = '\n\n【真实语境参考】以下是部分单词在考研真题/外刊中的原句，优先按这些义项与用法编写：\n' + lines.join('\n');
+        } catch { /* 语料库不可用不阻塞 */ }
+        const msgs = [
+          { role: 'system', content: getPrompt('story_gen') },
+          { role: 'user', content: [
+            `【目标单词】（共 ${words.length} 个）：${words.join(', ')}`,
+            lens && words.some(w => lens[w]) ? `【词典参考】\n` + words.filter(w => lens[w]).map(w => `- ${w}: ${lens[w].pos || ''} ${lens[w].gloss || ''}`).join('\n') : '',
+            `【题材】：${theme}`,
+            `【篇幅】：${lengths[lengthKey].label}（${lengths[lengthKey].guide}）`,
+            evidenceNote,
+          ].filter(Boolean).join('\n\n') },
+        ];
+        const reply = await llmChat(msgs, { maxTokens: 4000 });
+        let parsed;
+        try {
+          parsed = JSON.parse(String(reply).replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim());
+        } catch {
+          throw Object.assign(new Error('AI 输出无法解析为文章 JSON（schema 不符），点「换一篇」重试通常可解决'), { code: 'STORY_PARSE' });
+        }
+        const hooks = (Array.isArray(parsed.hooks) ? parsed.hooks : [])
+          .map(h => ({ word: String(h.word || '').trim(), phonetic: String(h.phonetic || '').slice(0, 40), pos: String(h.pos || '').slice(0, 12), meaning: String(h.meaning || '').slice(0, 40), hook: String(h.hook || '').slice(0, 60) }))
+          .filter(h => h.word).slice(0, 20);
+        const quiz = (Array.isArray(parsed.quiz) ? parsed.quiz : [])
+          .map(q => ({ q: String(q.q || '').slice(0, 300), options: (Array.isArray(q.options) ? q.options : []).map(o => String(o || '').slice(0, 120)).slice(0, 4), answer: Math.min(4, Math.max(1, Number(q.answer) || 1)), explain: String(q.explain || '').slice(0, 120) }))
+          .filter(q => q.q && q.options.length === 4).slice(0, 5);
+        const story = {
+          id: crypto.randomUUID(),
+          title: String(parsed.title || 'Untitled Story').slice(0, 120),
+          words,
+          theme,
+          length: lengthKey,
+          passage: String(parsed.passage || '').slice(0, 6000),
+          hooks,
+          translation: String(parsed.translation || '').slice(0, 8000),
+          quiz,
+          createdAt: new Date().toISOString(),
+        };
+        if (!story.passage) return sendJSON(res, 502, { error: 'AI 输出缺少正文（passage 为空），点「换一篇」重试' });
+        db.stories.unshift(story);
+        if (db.stories.length > 200) db.stories.length = 200;   // 上限 200 篇，FIFO 裁剪
+        persistDB();
+        return sendJSON(res, 200, { ok: true, story });
+      }
+      if (p === '/api/story/list' && req.method === 'GET') {
+        const list = (db.stories || []).map(s => ({ id: s.id, title: s.title, words: s.words, theme: s.theme, length: s.length, createdAt: s.createdAt }));
+        return sendJSON(res, 200, { ok: true, list });
+      }
+      {
+        const m = p.match(/^\/api\/story\/([a-f0-9-]+)$/);
+        if (m && req.method === 'GET') {
+          const s = (db.stories || []).find(x => x.id === m[1]);
+          if (!s) return sendJSON(res, 404, { error: '文章不存在' });
+          return sendJSON(res, 200, { ok: true, story: s });
+        }
+        if (m && req.method === 'DELETE') {
+          const before = (db.stories || []).length;
+          db.stories = db.stories.filter(x => x.id !== m[1]);
+          if (db.stories.length === before) return sendJSON(res, 404, { error: '文章不存在' });
+          persistDB();
+          return sendJSON(res, 200, { ok: true });
+        }
       }
 
       // 记录删除（解析原件仍保留在 archive/，可重导恢复；删除写日志）

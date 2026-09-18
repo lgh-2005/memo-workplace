@@ -946,6 +946,281 @@ $$('#quickRow .chip.q').forEach(c => c.addEventListener('click', () => {
   askAI(c.dataset.q, !!c.dataset.error);
 }));
 
+/* ================= v2.4.0：词文成章 —— 选词生成记忆文章 ================= */
+
+const storyState = {
+  quick: 'today', count: 5, theme: '随缘', length: 'short',
+  pool: [],            // 已选词（小写）
+  current: null,       // 当前文章对象
+  hist: [],            // 历史列表
+};
+const STORY_TIP = {
+  vocab: '词表精读 + AI 教练 + 助记生成，让单词过手入脑',
+  story: '把选中的词写进一篇连贯短文：语境记忆 + 记忆钩子 + 检索自测，三管齐下',
+};
+
+function switchStudySub(sub) {
+  $$('#studySubbar .study-sub-item').forEach(b => b.classList.toggle('active', b.dataset.sub === sub));
+  const vocab = $('#vocabPane'), story = $('#storyPane');
+  if (vocab) vocab.style.display = sub === 'vocab' ? '' : 'none';
+  if (story) story.style.display = sub === 'story' ? '' : 'none';
+  const tip = $('#studySubTip');
+  if (tip) tip.textContent = STORY_TIP[sub] || '';
+  if (sub === 'story') { if (!storyState.hist.length) loadStoryHist(); }
+  else loadWords();
+}
+
+$$('#studySubbar .study-sub-item').forEach(b => b.addEventListener('click', () => switchStudySub(b.dataset.sub)));
+
+/* 快选词源 → 按墨墨筛选口径拉词，填充/合并词池 */
+$$('#storyQuickRow .chip').forEach(c => c.addEventListener('click', () => {
+  $$('#storyQuickRow .chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  storyState.quick = c.dataset.quick;
+}));
+
+$$('#storyCountRow .chip').forEach(c => c.addEventListener('click', () => {
+  $$('#storyCountRow .chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  storyState.count = Number(c.dataset.count);
+}));
+
+$$('#storyThemeRow .chip').forEach(c => c.addEventListener('click', () => {
+  $$('#storyThemeRow .chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  storyState.theme = c.dataset.theme;
+}));
+
+$$('#storyLengthRow .chip').forEach(c => c.addEventListener('click', () => {
+  $$('#storyLengthRow .chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  storyState.length = c.dataset.length;
+}));
+
+async function storyQuickFill() {
+  const out = $('#storyGenResult');
+  try {
+    out.textContent = '⏳ 正在按「' + $('#storyQuickRow .chip.active').textContent + '」取词…';
+    out.className = 'result';
+    const d = await api(`/api/words?filter=${storyState.quick}`);
+    const list = (d.words || []).map(w => w.spelling.toLowerCase());
+    if (!list.length) { out.textContent = '⚠️ 该词源下没有单词，先同步或换一个筛选'; out.className = 'result err'; return; }
+    const want = storyState.count;
+    const next = [...new Set([...list, ...storyState.pool])].slice(0, Math.max(want, 0) || 5);
+    storyState.pool = next.slice(0, 20);
+    renderStoryPool();
+    out.textContent = `✅ 已载入 ${storyState.pool.length} 词（快选会合并现有词池）`;
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+}
+
+/* 快选行为：单击 chip 即取词填充（数量 chip 决定取多少） */
+$$('#storyQuickRow .chip').forEach(c => c.addEventListener('click', storyQuickFill));
+$$('#storyCountRow .chip').forEach(c => c.addEventListener('click', storyQuickFill));
+
+function renderStoryPool() {
+  const pool = $('#storyPool');
+  const clearBtn = $('#storyPoolClear');
+  if (!storyState.pool.length) {
+    pool.innerHTML = '<div class="hint">词池为空，先快选或搜索加入</div>';
+    if (clearBtn) clearBtn.style.display = 'none';
+    $('#storyPoolCount').textContent = '(0)';
+    return;
+  }
+  pool.innerHTML = storyState.pool.map(w =>
+    `<span class="story-pool-word" data-pw="${esc(w)}">${esc(w)}<button class="story-pool-x" data-pwx="${esc(w)}" title="移除" type="button">✕</button></span>`
+  ).join('');
+  $('#storyPoolCount').textContent = `(${storyState.pool.length})`;
+  if (clearBtn) clearBtn.style.display = '';
+  $$('#storyPool [data-pwx]').forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation();
+    storyState.pool = storyState.pool.filter(w => w !== b.dataset.pwx);
+    renderStoryPool();
+  }));
+}
+
+$('#storyAddBtn').addEventListener('click', () => {
+  const inp = $('#storySearch');
+  const w = (inp.value || '').trim().toLowerCase();
+  if (!w) return;
+  if (!/^[a-z][a-z''\-]{0,29}$/.test(w)) { toast('⚠️ 仅支持英文单词（字母/撇号/连字符）'); return; }
+  if (storyState.pool.includes(w)) { toast('已在词池中'); return; }
+  if (storyState.pool.length >= 20) { toast('⚠️ 词池上限 20 词'); return; }
+  storyState.pool.push(w);
+  inp.value = '';
+  renderStoryPool();
+});
+$('#storySearch').addEventListener('keydown', e => { if (e.key === 'Enter') $('#storyAddBtn').click(); });
+$('#storyPoolClear').addEventListener('click', () => { storyState.pool = []; renderStoryPool(); });
+
+/* 生成文章 */
+async function generateStory() {
+  const btn = $('#storyGenBtn'), out = $('#storyGenResult');
+  if (storyState.pool.length < 3) {
+    out.textContent = '⚠️ 词池至少 3 个单词，先快选或搜索加入';
+    out.className = 'result err';
+    return;
+  }
+  btn.disabled = true;
+  out.textContent = '✨ AI 正在把 ' + storyState.pool.length + ' 个词写进' + storyState.theme + '故事…（约 10-40 秒）';
+  out.className = 'result';
+  try {
+    const r = await api('/api/story/generate', {
+      method: 'POST',
+      body: { words: storyState.pool, theme: storyState.theme, length: storyState.length },
+    });
+    out.textContent = '✅ 生成完成';
+    out.className = 'result ok';
+    renderStory(r.story);
+    loadStoryHist();
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  } finally {
+    btn.disabled = false;
+  }
+}
+$('#storyGenBtn').addEventListener('click', generateStory);
+
+/** 高亮正文中的目标词（含基本变形）：整词匹配加粗 */
+function highlightStoryWords(passage, words) {
+  let html = esc(passage);
+  const pats = words
+    .map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .map(w => `\\b${w}(?:s|es|ed|d|ing|ly)?\\b`)
+    .sort((a, b) => b.length - a.length);
+  for (const p of pats) {
+    html = html.replace(new RegExp(p, 'gi'), m => `<b class="story-word" data-sw="${esc(m.toLowerCase())}">${m}</b>`);
+  }
+  return html.replace(/\n/g, '<br>');
+}
+
+function renderStory(s) {
+  storyState.current = s;
+  $('#storyResultCard').style.display = '';
+  $('#storyTitle').textContent = `📖 ${s.title}（${s.theme} · ${s.words.length} 词）`;
+  $('#storyPassage').innerHTML = highlightStoryWords(s.passage, s.words);
+  $('#storyTranslation').textContent = s.translation || '（无翻译）';
+  $('#storyHooks').innerHTML = (s.hooks || []).map(h => `
+    <div class="story-hook">
+      <b class="story-hook-word" data-sw="${esc(h.word.toLowerCase())}">${esc(h.word)}</b>
+      <span class="story-hook-meta">${esc(h.phonetic || '')} ${esc(h.pos || '')}</span>
+      <span class="story-hook-meaning">${esc(h.meaning || '')}</span>
+      <button class="speak-btn mini story-hook-speak" data-spw="${esc(h.word)}" title="朗读">🔊</button>
+      <div class="story-hook-line">🪝 ${esc(h.hook || '')}</div>
+    </div>`).join('') || '<div class="hint">无钩子数据</div>';
+  $$('#storyHooks [data-spw]').forEach(b => b.addEventListener('click', () => speak(b.dataset.spw)));
+  renderStoryQuiz(s);
+  $('#storyResultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* 检索自测渲染与判分 */
+function renderStoryQuiz(s) {
+  const box = $('#storyQuiz'), res = $('#storyQuizResult');
+  res.textContent = '';
+  res.className = 'result';
+  box.innerHTML = (s.quiz || []).map((q, i) => `
+    <div class="story-quiz-item" data-qi="${i}">
+      <div class="story-quiz-q">${i + 1}. ${esc(q.q)}</div>
+      <div class="story-quiz-opts">${(q.options || []).map((o, j) =>
+        `<button class="story-quiz-opt" data-qi="${i}" data-oj="${j + 1}" type="button">${'ABCD'[j]}. ${esc(o)}</button>`).join('')}</div>
+    </div>`).join('') || '<div class="hint">无自测题</div>';
+  const answers = (s.quiz || []).map(q => q.answer);
+  const picked = {};
+  $$('#storyQuiz .story-quiz-opt').forEach(b => b.addEventListener('click', () => {
+    const qi = Number(b.dataset.qi), oj = Number(b.dataset.oj);
+    if (picked[qi] !== undefined) return;   // 每题只答一次
+    picked[qi] = oj;
+    const correct = answers[qi] === oj;
+    b.classList.add(correct ? 'correct' : 'wrong');
+    if (!correct) {
+      const opts = $$('#storyQuiz [data-qi="' + qi + '"] .story-quiz-opt');
+      (opts.find ? opts.find(x => Number(x.dataset.oj) === answers[qi]) : opts.filter(x => Number(x.dataset.oj) === answers[qi])[0])?.classList.add('correct');
+    }
+    const done = Object.keys(picked).length;
+    const right = Object.keys(picked).filter(k => picked[k] === answers[k]).length;
+    res.textContent = `📊 已答 ${done}/${answers.length}，答对 ${right} 题`;
+    res.className = 'result ' + (done === answers.length ? (right >= answers.length - 1 ? 'ok' : 'warn') : '');
+  }));
+}
+
+/* 点词查义（正文加粗词/钩子词）：本地释义缓存优先，悬停小提示 + 朗读 */
+document.addEventListener('click', e => {
+  const w = e.target.closest('.story-word, .story-hook-word');
+  if (!w) return;
+  const word = w.dataset.sw || w.textContent.trim();
+  speak(word);
+  api('/api/gloss', { method: 'POST', body: { spellings: [word] } })
+    .then(r => {
+      const g = r.glosses?.[word];
+      toast(g ? `📘 ${word} ${g.phonetic || ''} ${g.pos || ''} ${g.gloss || ''}` : '📘 ' + word + '（暂无释义缓存）');
+    })
+    .catch(() => {});
+});
+
+$('#storySpeakBtn').addEventListener('click', () => {
+  const s = storyState.current;
+  if (!s) return;
+  speakEnglishFrom(s.passage, s.words[0]);
+});
+$('#storyCopyBtn').addEventListener('click', async () => {
+  const s = storyState.current;
+  if (!s) return;
+  try {
+    const hooks = (s.hooks || []).map(h => `- ${h.word} ${h.pos || ''} ${h.meaning || ''}｜钩子：${h.hook || ''}`).join('\n');
+    await navigator.clipboard.writeText(`${s.title}\n\n${s.passage}\n\n【词汇钩子】\n${hooks}\n\n【译文】\n${s.translation || ''}`);
+    toast('📋 已复制全文+钩子');
+  } catch { toast('复制失败'); }
+});
+$('#storyDelBtn').addEventListener('click', async () => {
+  const s = storyState.current;
+  if (!s) return;
+  if (!confirm('删除这篇文章？')) return;
+  try {
+    await api('/api/story/' + s.id, { method: 'DELETE' });
+    $('#storyResultCard').style.display = 'none';
+    storyState.current = null;
+    toast('🗑 已删除');
+    loadStoryHist();
+  } catch (e) { toast('❌ ' + e.message); }
+});
+
+/* 历史文章列表与回看 */
+async function loadStoryHist() {
+  try {
+    const d = await api('/api/story/list');
+    storyState.hist = d.list || [];
+    const box = $('#storyHistList');
+    if (!storyState.hist.length) {
+      box.innerHTML = '<div class="hint">还没有生成过文章</div>';
+      return;
+    }
+    box.innerHTML = storyState.hist.map(s => `
+      <div class="story-hist-item" data-sid="${esc(s.id)}">
+        <div class="story-hist-main">
+          <b>${esc(s.title)}</b>
+          <span class="story-hist-meta">${esc(s.theme)} · ${s.words.length} 词 · ${fmtBJ(s.createdAt)}</span>
+          <span class="story-hist-words">${esc(s.words.slice(0, 8).join(', '))}${s.words.length > 8 ? '…' : ''}</span>
+        </div>
+        <button class="btn small" data-sload="${esc(s.id)}">查看</button>
+      </div>`).join('');
+    $$('#storyHistList [data-sload]').forEach(b => b.addEventListener('click', async () => {
+      try {
+        const r = await api('/api/story/' + b.dataset.sload);
+        renderStory(r.story);
+      } catch (e) { toast('❌ ' + e.message); }
+    }));
+  } catch (e) {
+    $('#storyHistList').innerHTML = `<div class="result err">加载失败: ${esc(e.message)}</div>`;
+  }
+}
+$('#storyHistRefresh').addEventListener('click', loadStoryHist);
+
+$('#storyRegenBtn').addEventListener('click', generateStory);
+
 /* v1.0.6：AI 生图助记 —— 结合当前对话场景生成助记图并内联展示 */
 $('#imgGenChip').addEventListener('click', async () => {
   if (!state.activeWord) {

@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.3.5.a</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.4.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.3.5.a</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.4.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -192,10 +192,100 @@
     <div class="study-subbar card" id="studySubbar">
       <div class="study-subnav">
         <button class="study-sub-item active" data-sub="vocab" type="button">🔤 词汇精练</button>
-        <span class="study-sub-tip">词表精读 + AI 教练 + 助记生成已整合为「词汇精练」子版块，更多子版块规划中</span>
+        <button class="study-sub-item" data-sub="story" type="button" id="storySubBtn">📖 词文成章</button>
+        <span class="study-sub-tip" id="studySubTip">词表精读 + AI 教练 + 助记生成，让单词过手入脑</span>
       </div>
     </div>
-    <div class="study-layout" data-page-node-id="jtPHsbe6nPhZY4HTSyRZuY">
+    <div id="storyPane" style="display:none">
+      <div class="grid-2" style="align-items:start">
+        <div class="card">
+          <div class="card-title">🎯 选词（3~20 个）</div>
+          <details class="hint-fold"><summary>ℹ️ 说明</summary>
+          <div class="hint">快选按钮按墨墨筛选口径自动取词；也可搜索词表手动加入。选定后 AI 会把这些词写进一篇连贯的英文短文（语境记忆），并配记忆钩子（关键词法），双管齐下。</div>
+          </details>
+          <label class="field-label">快选词源</label>
+          <div class="filter-row" id="storyQuickRow">
+            <button class="chip active" data-quick="today">今日词</button>
+            <button class="chip" data-quick="sticky">顽固词</button>
+            <button class="chip" data-quick="forget">忘记词</button>
+            <button class="chip" data-quick="due7">7天内到期</button>
+            <button class="chip" data-quick="all">全部</button>
+          </div>
+          <label class="field-label">数量</label>
+          <div class="filter-row" id="storyCountRow">
+            <button class="chip active" data-count="5">5 词</button>
+            <button class="chip" data-count="8">8 词</button>
+            <button class="chip" data-count="10">10 词</button>
+            <button class="chip" data-count="15">15 词</button>
+          </div>
+          <label class="field-label">搜索加入</label>
+          <div style="display:flex;gap:8px">
+            <input type="text" id="storySearch" class="input" placeholder="输入单词加入词池…" autocomplete="off">
+            <button class="btn" id="storyAddBtn" style="white-space:nowrap">➕ 加入</button>
+          </div>
+          <label class="field-label">已选词池 <span id="storyPoolCount" style="color:var(--text-sub);font-weight:400">(0)</span></label>
+          <div class="story-pool" id="storyPool"><div class="hint">词池为空，先快选或搜索加入</div></div>
+          <button class="btn small ghost" id="storyPoolClear" style="display:none">🗑 清空词池</button>
+        </div>
+        <div class="card">
+          <div class="card-title">⚙️ 生成参数</div>
+          <label class="field-label">题材</label>
+          <div class="filter-row" id="storyThemeRow">
+            <button class="chip active" data-theme="随缘">随缘</button>
+            <button class="chip" data-theme="校园">校园</button>
+            <button class="chip" data-theme="科幻">科幻</button>
+            <button class="chip" data-theme="悬疑">悬疑</button>
+            <button class="chip" data-theme="职场">职场</button>
+            <button class="chip" data-theme="旅行">旅行</button>
+            <button class="chip" data-theme="童话">童话</button>
+            <button class="chip" data-theme="冒险">冒险</button>
+            <button class="chip" data-theme="美食">美食</button>
+            <button class="chip" data-theme="体育">体育</button>
+            <button class="chip" data-theme="侦探">侦探</button>
+            <button class="chip" data-theme="西部">西部</button>
+            <button class="chip" data-theme="宫斗">宫斗</button>
+            <button class="chip" data-theme="末日">末日</button>
+            <button class="chip" data-theme="神话">神话</button>
+            <button class="chip" data-theme="赛博朋克">赛博朋克</button>
+          </div>
+          <label class="field-label">篇幅</label>
+          <div class="filter-row" id="storyLengthRow">
+            <button class="chip active" data-length="short">短篇 ~200 词</button>
+            <button class="chip" data-length="medium">中篇 ~400 词</button>
+          </div>
+          <button class="btn primary full" id="storyGenBtn" style="margin-top:12px">✨ 生成记忆文章</button>
+          <div class="result" id="storyGenResult"></div>
+        </div>
+      </div>
+      <div class="card" id="storyResultCard" style="display:none">
+        <div class="card-title-row">
+          <div class="card-title" id="storyTitle">文章</div>
+          <div class="row-gap">
+            <button class="btn small" id="storySpeakBtn">🔊 朗读全文</button>
+            <button class="btn small ghost" id="storyCopyBtn">📋 复制</button>
+            <button class="btn small" id="storyRegenBtn">🔁 换一篇</button>
+            <button class="btn small danger" id="storyDelBtn">🗑 删除</button>
+          </div>
+        </div>
+        <div class="story-passage" id="storyPassage"></div>
+        <details class="hint-fold"><summary>🌐 全文中文翻译</summary>
+        <div class="story-translation" id="storyTranslation"></div>
+        </details>
+        <div class="card-title" style="margin-top:14px">🪝 词汇钩子</div>
+        <div class="story-hooks" id="storyHooks"></div>
+        <div class="card-title" style="margin-top:14px">📝 检索自测（即做即判）</div>
+        <div class="story-quiz" id="storyQuiz"></div>
+        <div class="result" id="storyQuizResult"></div>
+      </div>
+      <div class="card">
+        <div class="card-title-row">
+          <div class="card-title">🗂 历史文章</div>
+          <button class="btn small" id="storyHistRefresh">刷新</button>
+        </div>
+        <div id="storyHistList"><div class="hint">还没有生成过文章</div></div>
+      </div>
+    </div>
+    <div class="study-layout" id="vocabPane" data-page-node-id="jtPHsbe6nPhZY4HTSyRZuY">
       <aside class="word-panel card" data-page-node-id="XLvWS2U7KuUAVrvzsrro3S">
         <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD">词表</div>
         <div class="filter-row" id="wordFilters" data-page-node-id="6hQfUGFSzT2MfS2nEn5FtZ">
