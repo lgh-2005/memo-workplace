@@ -3349,11 +3349,19 @@ $('#kbHistoryBtn').addEventListener('click', kbOpenHistory);
 $('#exHistoryBtn').addEventListener('click', kbOpenHistory);
 
 /* ---------------- v2.1.2：划选精读学习（单词/词组/句子，PC 浮动 + 移动端底部卡片） ---------------- */
+/* v2.3.3：借鉴 nextai-translator / Saladict / 沉浸式翻译——
+   ① 解析卡片多模式 Tab（释义/直译/语法/例句）；② 双击查词；③ Esc 关闭；④ 一键收进墨墨云词库（Saladict 生词本交互 × 墨墨生态） */
 
 const SEL_LEARN_READABLE = ['#kbDetail', '#exDetail', '#unitDetail'];
+const SEL_LEARN_MODES = [
+  { id: 'define', label: '📖 释义' },
+  { id: 'translate', label: '🌐 直译' },
+  { id: 'grammar', label: '🌳 语法' },
+  { id: 'example', label: '💡 例句' },
+];
 let selLearnBtn = null;      // 选区旁的「精读」浮动按钮
 let selLearnCard = null;     // 解析结果卡片
-let selLearnState = null;    // { text, context, title, kind, rect }
+let selLearnState = null;    // { text, context, title, kind, rect, mode }
 let selLearnReqSeq = 0;      // 并发保护：只认最后一次请求
 
 function selLearnKindOf(text) {
@@ -3415,6 +3423,26 @@ function selLearnShowBtn(rect) {
   selLearnBtn = b;
 }
 
+/** v2.3.3：以指定模式请求解析结果（并发保护：只认最后一次请求） */
+function selLearnRequest(card, mode, seq) {
+  if (!selLearnState || !card) return;
+  const bodyEl = card.querySelector('.sel-learn-body');
+  if (!bodyEl) return;
+  bodyEl.innerHTML = '<div class="hint">AI 精读解析中…</div>';
+  api('/api/selection/learn', {
+    method: 'POST',
+    body: { text: selLearnState.text, context: selLearnState.context, title: selLearnState.title, kind: selLearnState.kind, mode },
+  })
+    .then(r => {
+      if (seq !== selLearnReqSeq || selLearnCard !== card) return;
+      bodyEl.innerHTML = mdLite(r.reply || '（无解析结果）');
+    })
+    .catch(e => {
+      if (seq !== selLearnReqSeq || selLearnCard !== card) return;
+      bodyEl.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
+    });
+}
+
 function selLearnOpen() {
   if (!selLearnState) return;
   const { text, context, title } = selLearnState;
@@ -3431,11 +3459,15 @@ function selLearnOpen() {
       <span class="sel-learn-text">${esc(text.length > 120 ? text.slice(0, 120) + '…' : text)}</span>
       <button class="sel-learn-x" title="关闭">✕</button>
     </div>
+    <div class="sel-learn-modes">
+      ${SEL_LEARN_MODES.map(m => `<button class="sel-mode${m.id === 'define' ? ' active' : ''}" data-mode="${m.id}" type="button">${m.label}</button>`).join('')}
+    </div>
     <div class="sel-learn-body"><div class="hint">AI 精读解析中…</div></div>
     <div class="sel-learn-foot">
       <button class="btn small" data-sel-speak>🔊 朗读</button>
       <button class="btn small ghost" data-sel-copy>📋 复制解析</button>
       <button class="btn small" data-sel-sentence>🧩 加入三遍训练</button>
+      ${kind !== 'sentence' ? '<button class="btn small" data-sel-collect>➕ 收进墨墨</button>' : ''}
     </div>`;
   document.body.appendChild(card);
   selLearnCard = card;
@@ -3458,15 +3490,27 @@ function selLearnOpen() {
     const c = card.querySelector('.sel-learn-body')?.innerText || '';
     try { await navigator.clipboard.writeText(c); toast('📋 已复制'); } catch { toast('复制失败'); }
   });
-  api('/api/selection/learn', { method: 'POST', body: { text, context, title, kind } })
-    .then(r => {
-      if (seq !== selLearnReqSeq || !selLearnCard) return;
-      card.querySelector('.sel-learn-body').innerHTML = mdLite(r.reply || '（无解析结果）');
-    })
-    .catch(e => {
-      if (seq !== selLearnReqSeq || !selLearnCard) return;
-      card.querySelector('.sel-learn-body').innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
+  /* v2.3.3：多模式切换——以新模式重新请求，并发序号保证只显示最后一次结果 */
+  card.querySelectorAll('.sel-mode').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('active')) return;
+      card.querySelectorAll('.sel-mode').forEach(b => b.classList.toggle('active', b === btn));
+      selLearnRequest(card, btn.dataset.mode, ++selLearnReqSeq);
     });
+  });
+  /* v2.3.3：一键收进墨墨云词库（Saladict 生词本交互） */
+  const collectBtn = card.querySelector('[data-sel-collect]');
+  if (collectBtn) collectBtn.addEventListener('click', async () => {
+    try {
+      await api('/api/selection/collect', { method: 'POST', body: { spelling: text } });
+      collectBtn.textContent = '✔ 已收进';
+      collectBtn.disabled = true;
+      toast('✅ 已收进墨墨云词库');
+    } catch (e) {
+      toast('❌ ' + e.message);
+    }
+  });
+  selLearnRequest(card, 'define', seq);
 }
 
 /* 选区变化 → 显示浮动按钮（PC 鼠标 / 移动端长按划选均覆盖） */
@@ -3496,7 +3540,7 @@ function selLearnOnSelection() {
       sentence: text,   // 必须等于用户实际选区文本，不复用其他 DOM/旧状态
     };
   }
-  selLearnState = { text, context: selLearnContextOf(range, root), title: selLearnTitleOf(root), kind: selLearnKindOf(text), rect, sourceRef };
+  selLearnState = { text, context: selLearnContextOf(range, root), title: selLearnTitleOf(root), kind: selLearnKindOf(text), rect, sourceRef, mode: 'define' };
   /* 移动端选区手柄遮挡浮动词：直接给底部「精读」条，点击即出卡片 */
   selLearnShowBtn(rect);
 }
@@ -3517,6 +3561,21 @@ document.addEventListener('mousedown', e => {
     const sel = window.getSelection();
     if (!sel || sel.isCollapsed) { selLearnRemoveBtn(); }
   }, 120);
+});
+/* v2.3.3：双击查词（Saladict 经典交互）——双击选词后自动弹出精读条 */
+document.addEventListener('dblclick', e => {
+  if (!e.target || typeof e.target.closest !== 'function') return;
+  if (e.target.closest('input, textarea, .sel-learn-card, .kb-fix-modal')) return;
+  if (e.target.closest && SEL_LEARN_READABLE.some(s => e.target.closest(s))) {
+    setTimeout(selLearnOnSelection, 30);
+  }
+});
+/* v2.3.3：Esc 关闭解析卡片（nextai-translator / 沉浸式翻译通用手势） */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && selLearnCard) {
+    selLearnCloseCard();
+    selLearnRemoveBtn();
+  }
 });
 
 /* ---------------- v2.2.5：长难句三遍法训练 ---------------- */

@@ -1251,7 +1251,8 @@ function mockLLM(messages) {
   }
   if (sys.includes('英语精读解析助手')) {   // v2.1.2：划选精读 mock
     const sel = (user.match(/【划选内容】[^：]*：([^\n]+)/) || [])[1] || user.slice(0, 60);
-    return `[MOCK] 划选精读自测：**${sel.trim()}**\n\n- 词义/整体含义：占位释义（自测数据）\n- 语境含义：在此上下文中的占位说明\n\n> 配置真实 AI 服务商后可获得准确解析。`;
+    const mode = (user.match(/【请求模式】：([^\n]+)/) || [])[1] || '';   // v2.3.3：回显请求模式，验证注入链路
+    return `[MOCK] 划选精读自测（模式：${mode || '释义'}）：**${sel.trim()}**\n\n- 词义/整体含义：占位释义（自测数据）\n- 语境含义：在此上下文中的占位说明\n\n> 配置真实 AI 服务商后可获得准确解析。`;
   }
   if (sys.includes('个性化助记')) {
     const words = [...user.matchAll(/### ([\w'-]+)/g)].map(m => m[1]);
@@ -3937,6 +3938,7 @@ const server = http.createServer(async (req, res) => {
       }
 
       // v2.1.2：划线精读解析（单词 / 词组 / 句子）——参考沉浸式翻译的学习反馈弹窗
+      // v2.3.3：新增 mode 模式注入（释义 define / 直译 translate / 语法 grammar / 例句 example）——借鉴 nextai-translator 多模式气泡
       if (p === '/api/selection/learn' && req.method === 'POST') {
         const body = await readBody(req);
         const selection = String(body.text || '').trim().slice(0, 600);
@@ -3944,17 +3946,42 @@ const server = http.createServer(async (req, res) => {
         const context = String(body.context || '').trim().slice(0, 4000);
         const title = String(body.title || '').slice(0, 120);
         const kind = ['word', 'phrase', 'sentence'].includes(body.kind) ? body.kind : 'auto';
+        const mode = ['define', 'translate', 'grammar', 'example'].includes(body.mode) ? body.mode : 'define';
         const kindLabel = { word: '单词', phrase: '词组', sentence: '句子', auto: '自动判定' }[kind];
+        const modeLabel = { define: '释义', translate: '直译', grammar: '语法', example: '例句' }[mode];
+        const modeDirective = {
+          define: '',
+          translate: '本次解析严格要求以【直译】为主：句子给一段自然通顺、贴近原文的地道中文翻译，不展开其他分析；单词/词组给核心词义与在此语境中的中文含义，简短直接。',
+          grammar: '本次解析严格要求以【语法】为主：拆解该片段的语法结构——主干与成分、从句与修饰关系、时态语态、指代衔接；面向考研阅读长难句习惯，简洁清楚，不必给完整译文。',
+          example: '本次解析严格要求以【例句】为主：若是单词/词组，给 2~3 个地道例句（附中文翻译）与常见搭配；若是句子，给一个同结构仿写例句（附中文翻译）。',
+        }[mode];
         const msgs = [
           { role: 'system', content: getPrompt('selection_learn') },
           { role: 'user', content: [
             title ? `材料：${title}` : '',
             `【划选内容】（${kindLabel}）：${selection}`,
+            `【请求模式】：${modeLabel}`,
+            modeDirective ? `本次解析要求：${modeDirective}` : '',
             context ? `【上下文】\n${context}` : '（无额外上下文）',
           ].filter(Boolean).join('\n\n') },
         ];
         const reply = await llmChat(msgs, { maxTokens: 1200 });
-        return sendJSON(res, 200, { ok: true, kind, selection, reply });
+        return sendJSON(res, 200, { ok: true, kind, mode, selection, reply });
+      }
+
+      // v2.3.3：划词一键收进墨墨云词库（Saladict 生词本交互 × 墨墨生态，复用 ensureWordInNotepad）
+      if (p === '/api/selection/collect' && req.method === 'POST') {
+        const body = await readBody(req);
+        const spelling = String(body.spelling || '').trim();
+        if (!spelling || spelling.length > 80) return sendJSON(res, 400, { error: '收词内容为空或超长' });
+        if (!/^[A-Za-z][A-Za-z''\-]*(?:\s+[A-Za-z][A-Za-z''\-]*){0,4}$/.test(spelling)) {
+          return sendJSON(res, 400, { error: '仅支持 1~5 个英文单词（字母/撇号/连字符）' });
+        }
+        if (!(config.maimemoNotepadId || '').trim()) {
+          return sendJSON(res, 409, { error: '尚未绑定墨墨云词库，请先到「设置」页绑定后再收词' });
+        }
+        await ensureWordInNotepad(spelling);
+        return sendJSON(res, 200, { ok: true, spelling, notepadId: config.maimemoNotepadId });
       }
 
       // 记录删除（解析原件仍保留在 archive/，可重导恢复；删除写日志）

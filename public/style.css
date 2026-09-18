@@ -2649,12 +2649,21 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .sel-learn-body p { margin: 6px 0; }
 .sel-learn-foot { display: flex; gap: 8px; padding: 8px 12px; border-top: 1px solid var(--border); }
 
+/* v2.3.3：解析卡片多模式 Tab（释义/直译/语法/例句） */
+.sel-learn-modes { display: flex; gap: 6px; padding: 8px 12px 0; flex-wrap: wrap; }
+.sel-mode { border: 1px solid var(--border); background: transparent; color: var(--text-sub); border-radius: 999px; padding: 4px 11px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background .12s ease, color .12s ease, border-color .12s ease; }
+.sel-mode:hover { border-color: var(--primary); color: var(--primary); }
+.sel-mode.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
 /* 划选精读：移动端底部卡片 + 底部「精读」条 */
 @media (max-width: 700px) {
   .sel-learn-btn { left: 50% !important; top: auto !important; bottom: 84px; transform: translateX(-50%); font-size: 14px; padding: 9px 22px; box-shadow: 0 8px 26px rgba(0, 0, 0, .34); }
   .sel-learn-card, .sel-learn-card.mobile { right: 0; left: 0; bottom: 0; width: 100vw; max-height: 72vh; border-radius: 16px 16px 0 0; border-bottom: none; }
   .sel-learn-body { font-size: 14px; padding-bottom: 16px; }
   .sel-learn-foot { padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+  .sel-learn-modes { padding: 10px 12px 0; }
+  .sel-mode { min-height: 44px; padding: 9px 16px; font-size: 13.5px; }
+  .sel-learn-foot .btn { min-height: 44px; }
   .kb-issue-actions .btn { flex: 1; justify-content: center; }
 }
 
