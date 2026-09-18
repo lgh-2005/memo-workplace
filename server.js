@@ -1504,9 +1504,10 @@ const DEFAULT_PROMPTS = {
       '4. hooks：每个目标词一条 {word, phonetic, pos, meaning, hook}——phonetic 美式音标（不确定给空串）、pos 词性缩写、meaning 考研核心义项（15字内）、hook 一句中文记忆钩子（谐音/联想/词根拆解，25字内，具体不空泛）。',
       '5. translation：全文通顺中文翻译。',
       '6. quiz：5 道选择题 {q, options:[4个], answer(1-4), explain(40字内)}——3 道用短文原句挖空目标词，2 道选义；干扰项来自目标词表或形近词。',
-      '7. JSON schema（字段名逐字一致，不得增删）：',
-      '{"title":"英文标题(12词内)","passage":"英文正文","hooks":[{"word":"","phonetic":"","pos":"","meaning":"","hook":""}],"translation":"中文翻译","quiz":[{"q":"","options":["","","",""],"answer":1,"explain":""}]}',
-      '再次强调：回复只能是上述 JSON 对象本身。passage 字段里放英文正文；不要把正文直接回复在 JSON 外面。',
+      '7. JSON 必须包含全部五个字段：title、passage、hooks、translation、quiz，缺一不可（hooks 数组元素数 = 目标词数，quiz 数组元素数 = 5）。',
+      '8. 完整示例（3 词的迷你样例，展示结构——你生成时按目标词数量与篇幅扩展）：',
+      '{"title":"The Last Train","passage":"The station was nearly empty...（完整英文正文）","hooks":[{"word":"desperate","phonetic":"/ˈdespərət/","pos":"adj.","meaning":"不顾一切的；绝望的","hook":"谐音：德斯珀雷特，德行绝望了就不顾一切"},{"word":"commute","phonetic":"/kəˈmjuːt/","pos":"v./n.","meaning":"通勤","hook":"com(共同)+mute(移动)→大家共同移动=通勤"},{"word":"scramble","phonetic":"/ˈskræmbl/","pos":"v.","meaning":"争夺；爬行","hook":"scram(爬)+ble→争着往上爬"}],"translation":"（完整中文翻译）","quiz":[{"q":"The passengers ___ for the last seats on the train.","options":["scrambled","strolled","zoomed","melted"],"answer":1,"explain":"scramble for 争夺，符合末节车厢拥挤场景。"},{"q":"A ___ worker takes the same train every morning.","options":["commute","commuting","commuted","commuter"],"answer":4,"explain":"commuter 通勤者，作名词。"},{"q":"desperate 的核心含义是？","options":["高兴的","不顾一切的","缓慢的","富有的"],"answer":2,"explain":"desperate 绝望的/不顾一切的。"},{"q":"文中谁最终赶上了火车？","options":["the guard","the narrator","the driver","nobody"],"answer":2,"explain":"结尾处 narrator 挤上了末班车。"},{"q":"commute 在文中的词性是？","options":["名词","动词","形容词","副词"],"answer":1,"explain":"文中用作动词，表示通勤。"}]}',
+      '再次强调：回复只能是这样一个完整 JSON 对象。passage 字段里放英文正文；五个字段一个都不能少。',
     ].join('\n')
   }
 };
