@@ -4210,14 +4210,39 @@ const server = http.createServer(async (req, res) => {
               if (!parsed.translation && meta.translation) parsed.translation = meta.translation;
               if ((!Array.isArray(parsed.quiz) || parsed.quiz.length < 3) && Array.isArray(meta.quiz)) parsed.quiz = meta.quiz;
             }
-          } catch { /* 二段失败不阻塞：保留已成功的正文，缺失字段按空展示 */ }
+          } catch { /* 二段失败不阻塞：保留已成功的正文，缺失字段走确定性兜底 */ }
         }
+        /* v2.4.0.f 确定性兜底：无论模型多不配合，文章+钩子+自测三件套保证齐全 */
         const hooks = (Array.isArray(parsed.hooks) ? parsed.hooks : [])
           .map(h => ({ word: String(h.word || '').trim(), phonetic: String(h.phonetic || '').slice(0, 40), pos: String(h.pos || '').slice(0, 12), meaning: String(h.meaning || '').slice(0, 40), hook: String(h.hook || '').slice(0, 60) }))
           .filter(h => h.word).slice(0, 20);
-        const quiz = (Array.isArray(parsed.quiz) ? parsed.quiz : [])
+        // 钩子缺词：用韦氏释义缓存补卡片（hook 文案缺省提示），保证每个目标词都有卡
+        if (hooks.length < words.length) {
+          const have = new Set(hooks.map(h => h.word.toLowerCase()));
+          for (const w of words) {
+            if (have.has(w)) continue;
+            const g = db.glosses[w] || null;
+            hooks.push({ word: w, phonetic: (g && g.phonetic) || '', pos: (g && g.pos) || '', meaning: (g && g.gloss) || '', hook: g && g.gloss ? `释义卡：${g.gloss}` : '（本次未生成钩子，点「换一篇」重新生成可恢复）' });
+          }
+        }
+        let quiz = (Array.isArray(parsed.quiz) ? parsed.quiz : [])
           .map(q => ({ q: String(q.q || '').slice(0, 300), options: (Array.isArray(q.options) ? q.options : []).map(o => String(o || '').slice(0, 120)).slice(0, 4), answer: Math.min(4, Math.max(1, Number(q.answer) || 1)), explain: String(q.explain || '').slice(0, 120) }))
           .filter(q => q.q && q.options.length === 4).slice(0, 5);
+        // 自测缺题：确定性生成「词义四选一」（从词池+释义缓存出题，不依赖模型）
+        if (quiz.length < 3 && words.length >= 3) {
+          const pool = words.map(w => ({ w, g: db.glosses[w] || null }));
+          const distractors = pool.filter(x => x.g && x.g.gloss).map(x => x.g.gloss);
+          for (const { w, g } of pool) {
+            if (quiz.length >= 3) break;
+            if (!g || !g.gloss) continue;
+            const others = distractors.filter(x => x !== g.gloss);
+            if (others.length < 3) break;
+            const opts = [g.gloss, ...others.slice(0, 3)];
+            // 简单洗牌并记录答案位置
+            for (let i = opts.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [opts[i], opts[j]] = [opts[j], opts[i]]; }
+            quiz.push({ q: `单词「${w}」的核心含义是？`, options: opts, answer: opts.indexOf(g.gloss) + 1, explain: `${w} = ${g.gloss}` });
+          }
+        }
         const story = {
           id: crypto.randomUUID(),
           title: String(parsed.title || 'Untitled Story').slice(0, 120),
@@ -4226,7 +4251,7 @@ const server = http.createServer(async (req, res) => {
           length: lengthKey,
           passage: String(parsed.passage || '').slice(0, 6000),
           hooks,
-          translation: String(parsed.translation || '').slice(0, 8000),
+          translation: String(parsed.translation || ''),
           quiz,
           createdAt: new Date().toISOString(),
         };
