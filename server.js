@@ -4132,7 +4132,26 @@ const server = http.createServer(async (req, res) => {
         const reply = await llmChat(msgs, { maxTokens: 4000 });
         let parsed;
         try {
-          parsed = JSON.parse(String(reply).replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim());
+          // v2.4.0a 容错：真实模型常在 JSON 前后带说明文字/代码围栏——先剥围栏，再提取第一个平衡的 {...} 块解析
+          let text = String(reply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+          try {
+            parsed = JSON.parse(text);
+          } catch {
+            const start = text.indexOf('{');
+            if (start === -1) throw new Error('no-json');
+            let depth = 0, inStr = false, esc2 = false, end = -1;
+            for (let i = start; i < text.length; i++) {
+              const ch = text[i];
+              if (esc2) { esc2 = false; continue; }
+              if (ch === '\\') { esc2 = true; continue; }
+              if (ch === '"') { inStr = !inStr; continue; }
+              if (inStr) continue;
+              if (ch === '{') depth++;
+              else if (ch === '}') { depth--; if (depth === 0) { end = i + 1; break; } }
+            }
+            if (end === -1) throw new Error('no-json');
+            parsed = JSON.parse(text.slice(start, end));
+          }
         } catch {
           throw Object.assign(new Error('AI 输出无法解析为文章 JSON（schema 不符），点「换一篇」重试通常可解决'), { code: 'STORY_PARSE' });
         }
