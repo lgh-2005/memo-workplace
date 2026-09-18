@@ -131,6 +131,8 @@ if (!config.dict || typeof config.dict !== 'object') config.dict = { learnersKey
 if (!config.mineru || typeof config.mineru !== 'object') config.mineru = { apiKey: '', mock: false };
 // v1.1.7 迁移：AI 审核专用服务商配置缺省补齐
 if (!config.review || typeof config.review !== 'object') config.review = { providerId: '', model: '', thinking: false };
+// v2.3.4：划词助手专用模型配置缺省补齐（留空沿用默认服务商）
+if (!config.selection || typeof config.selection !== 'object') config.selection = { providerId: '', model: '' };
 // v2.0.0：外刊发布源独立于手工语料和真题库；留空使用 corpus/external/current/
 if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '', pythonPath: '', externalDir: '' };
 if (config.kb.externalDir === undefined) config.kb.externalDir = '';
@@ -1167,7 +1169,8 @@ const LLM_PRESETS = {
     model: 'gpt-4o-mini',
     models: ['gpt-4o-mini', 'gpt-4o', 'gpt-3.5-turbo'],
     temperature: 0.7,
-    max_tokens: 2000
+    max_tokens: 2000,
+    vision: true   // v2.3.4：官方多模态模型默认开放视觉能力（可在编辑弹层调整）
   },
   ollama: {
     label: 'Ollama 本地部署',
@@ -1204,16 +1207,29 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
   const url = llm.baseUrl.replace(/\/+$/, '') + '/chat/completions';
   let res;
   try {
+    // v2.3.4：请求体三级构建——基础参数 → 思考参数（Claude 式 _thinking 优先，否则服务商「思考等级」reasoning_effort）→ 透传 JSON 参数
+    const bodyObj = { model: llm.model, messages, max_tokens: llm.max_tokens || maxTokens, temperature: llm.temperature !== undefined ? llm.temperature : 0.7 };
+    if (llm._thinking) {
+      bodyObj.thinking = llm._thinking;
+    } else if (llm.thinking && llm.thinking !== 'off') {
+      bodyObj.reasoning_effort = llm.thinking;   // OpenAI o 系列与主流中转站通用
+    }
+    if (typeof llm.extraBody === 'string' && llm.extraBody.trim()) {
+      try {
+        const extra = JSON.parse(llm.extraBody);
+        if (extra && typeof extra === 'object' && !Array.isArray(extra)) {
+          delete extra.messages; delete extra.stream;   // 流程关键参数不许覆盖
+          Object.assign(bodyObj, extra);
+        }
+      } catch { /* 非法 JSON 忽略，不阻塞请求 */ }
+    }
     res = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         ...(llm.apiKey ? { 'Authorization': 'Bearer ' + llm.apiKey } : {}),
       },
-      body: JSON.stringify(Object.assign(
-        { model: llm.model, messages, max_tokens: llm.max_tokens || maxTokens, temperature: llm.temperature !== undefined ? llm.temperature : 0.7 },
-        llm._thinking ? { thinking: llm._thinking } : {}
-      )),
+      body: JSON.stringify(bodyObj),
     });
   } catch {
     throw new Error(`无法连接 AI 服务（${llm.baseUrl}），请到「设置」检查 Base URL 与网络`);
@@ -3159,6 +3175,7 @@ const server = http.createServer(async (req, res) => {
             mock: !!config.llm?.mock,
             activeId: config.llm?.activeId,
             activeName: getProvider()?.name || '',
+            vision: !!getProvider()?.vision,   // v2.3.4：默认服务商是否开启视觉能力（前端控制图片按钮显隐）
           },
           lastSync: db.lastSync,
           lastSyncOk: db.lastSyncOk,
@@ -3178,6 +3195,7 @@ const server = http.createServer(async (req, res) => {
             providers: (config.llm.providers || []).map(pr => ({
               id: pr.id, name: pr.name, baseUrl: pr.baseUrl, model: pr.model, hasKey: !!pr.apiKey,
               temperature: pr.temperature, max_tokens: pr.max_tokens, models: pr.models,
+              thinking: pr.thinking || 'off', extraBody: pr.extraBody || '', vision: !!pr.vision,   // v2.3.4：模型服务高级三项
             })),
           },
           autoSync: config.autoSync,
@@ -3219,6 +3237,10 @@ const server = http.createServer(async (req, res) => {
             providerId: (config.review && config.review.providerId) || '',
             model: (config.review && config.review.model) || '',
             thinking: !!(config.review && config.review.thinking),
+          },
+          selection: {
+            providerId: (config.selection && config.selection.providerId) || '',
+            model: (config.selection && config.selection.model) || '',
           },
           kb: {
             dir: (config.kb && config.kb.dir) || '',
@@ -3264,6 +3286,13 @@ const server = http.createServer(async (req, res) => {
               else if (old?.max_tokens !== undefined) out.max_tokens = old.max_tokens;
               if (pr.models !== undefined) out.models = Array.isArray(pr.models) ? pr.models.slice(0, 100) : old?.models;
               else if (old?.models !== undefined) out.models = old.models;
+              // v2.3.4：模型服务高级三项——思考等级 / JSON 参数透传 / 视觉能力
+              if (pr.thinking !== undefined) out.thinking = ['off', 'low', 'medium', 'high'].includes(pr.thinking) ? pr.thinking : 'off';
+              else if (old?.thinking) out.thinking = old.thinking;
+              if (pr.extraBody !== undefined) out.extraBody = String(pr.extraBody || '').slice(0, 2000);
+              else if (old?.extraBody) out.extraBody = old.extraBody;
+              if (pr.vision !== undefined) out.vision = !!pr.vision;
+              else if (old?.vision) out.vision = old.vision;
               return out;
             });
             if (!config.llm.providers.find(x => x.id === config.llm.activeId)) {
@@ -3363,6 +3392,12 @@ const server = http.createServer(async (req, res) => {
           if (body.review.providerId !== undefined) config.review.providerId = String(body.review.providerId || '').trim();
           if (body.review.model !== undefined) config.review.model = String(body.review.model || '').trim();
           if (body.review.thinking !== undefined) config.review.thinking = !!body.review.thinking;
+        }
+        // v2.3.4：划词助手专用模型配置持久化
+        if (body.selection && typeof body.selection === 'object') {
+          if (!config.selection || typeof config.selection !== 'object') config.selection = { providerId: '', model: '' };
+          if (body.selection.providerId !== undefined) config.selection.providerId = String(body.selection.providerId || '').trim();
+          if (body.selection.model !== undefined) config.selection.model = String(body.selection.model || '').trim();
         }
         // v1.1.0：语料库数据源目录（留空 = 用仓库内 corpus/）
         if (body.kb && typeof body.kb === 'object' && typeof body.kb.dir === 'string') {
@@ -3604,6 +3639,24 @@ const server = http.createServer(async (req, res) => {
             }
           } catch (e) {
             msgs[0].content += `\n\n（联网搜索失败：${e.message}。请基于自身知识回答，并在开头提醒用户本次未联网。）`;
+          }
+        }
+
+        // v2.3.4：视觉能力——服务商开启 vision 后允许随消息发送图片（dataURL，OpenAI 兼容 image_url 内容块）
+        if (typeof body.image === 'string' && body.image.startsWith('data:image/')) {
+          if (body.image.length > 2100000) {
+            return sendJSON(res, 400, { error: '图片过大，请压缩后再试（≤1.5MB）' });
+          }
+          const prov = getProvider();
+          if (!(config.llm.mock || (prov && prov.vision))) {
+            return sendJSON(res, 400, { error: '当前默认服务商未开启「视觉能力」，请到设置页编辑服务商并勾选后重试' });
+          }
+          const last = msgs[msgs.length - 1];
+          if (last && last.role === 'user') {
+            last.content = [
+              { type: 'text', text: message },
+              { type: 'image_url', image_url: { url: body.image } },
+            ];
           }
         }
 
@@ -3965,7 +4018,12 @@ const server = http.createServer(async (req, res) => {
             context ? `【上下文】\n${context}` : '（无额外上下文）',
           ].filter(Boolean).join('\n\n') },
         ];
-        const reply = await llmChat(msgs, { maxTokens: 1200 });
+        const reply = await llmChat(msgs, {
+          maxTokens: 1200,
+          // v2.3.4：划词助手可单独指定服务商与覆盖模型（留空沿用默认服务商）
+          providerId: (config.selection && config.selection.providerId) || undefined,
+          llmOverride: (config.selection && config.selection.model) ? { model: config.selection.model } : undefined,
+        });
         return sendJSON(res, 200, { ok: true, kind, mode, selection, reply });
       }
 

@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.3.3</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.3.4</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.3.3</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.3.4</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -187,7 +187,14 @@
   </section>
 
   <!-- ============ AI 学习 ============ -->
+  <!-- v2.3.4：AI 学习收缩为「词汇精练」子版块（新增子版块导航，后续扩展位） -->
   <section id="tab-study" class="tab-page" data-page-node-id="JrmSjX0dVC0hVqhyML8U63">
+    <div class="study-subbar card" id="studySubbar">
+      <div class="study-subnav">
+        <button class="study-sub-item active" data-sub="vocab" type="button">🔤 词汇精练</button>
+        <span class="study-sub-tip">词表精读 + AI 教练 + 助记生成已整合为「词汇精练」子版块，更多子版块规划中</span>
+      </div>
+    </div>
     <div class="study-layout" data-page-node-id="jtPHsbe6nPhZY4HTSyRZuY">
       <aside class="word-panel card" data-page-node-id="XLvWS2U7KuUAVrvzsrro3S">
         <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD">词表</div>
@@ -239,7 +246,13 @@
           <button class="chip q" id="imgGenChip" data-page-node-id="UJamfXo35zOnj5yM4UHatl">🎨 生图助记</button>
           <button class="chip" id="webSearchChip" title="开启后 AI 回答前先联网搜索实时资料（需在设置页配置搜索服务）" data-page-node-id="vjZjyBCFa0ZuRhKgqvGAjj">🌐 联网</button>
         </div>
+        <div class="chat-image-preview" id="chatImagePreview" style="display:none">
+          <img id="chatImagePreviewImg" alt="待发送图片">
+          <button class="chat-image-clear" id="chatImageClear" title="移除图片" type="button">✕</button>
+        </div>
         <div class="chat-input-row" data-page-node-id="CF2qOHn0v6t773Z4Ezjam1">
+          <input type="file" id="chatImageFile" accept="image/*" style="display:none">
+          <button class="btn ghost" id="chatImageBtn" title="上传图片提问（需当前服务商开启视觉能力）" style="display:none">🖼️</button>
           <input type="text" id="chatInput" class="input" placeholder="输入问题，回车发送…" autocomplete="off" data-page-node-id="qGuHsp5T3qYDLGRWnEBtkc">
           <button class="btn primary" id="sendBtn" data-page-node-id="GYO2e2jWWfJ2EZNayi61Vm">发送</button>
         </div>
@@ -606,6 +619,25 @@
             </details>
             <button class="btn" id="saveReviewCfgBtn" style="margin-top:8px" data-page-node-id="8BHSgI1QRIbNeCWnI3plap">💾 保存审核服务商配置</button>
           </div>
+
+          <!-- v2.3.4：划词助手专用模型（独立于默认服务商与审核服务商） -->
+          <div class="card" id="selectionCfgCard">
+            <div class="card-title">🔍 划词助手专用模型 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（不填则使用默认服务商）</span></div>
+            <details class="hint-fold"><summary>ℹ️ 说明</summary>
+            <div class="hint">仅阅读页的「划选精读」功能使用此服务商，高频短解析适合配一个便宜快速的模型；服务商档案里的思考等级与透传参数同样生效。留空则沿用默认服务商。</div>
+            </details>
+            <div class="grid-2" style="gap:10px">
+              <div>
+                <label class="field-label">服务商</label>
+                <select id="cfgSelectionProvider" class="input"></select>
+              </div>
+              <div>
+                <label class="field-label">覆盖模型（可选）</label>
+                <input type="text" id="cfgSelectionModel" class="input" placeholder="留空 = 使用服务商默认模型">
+              </div>
+            </div>
+            <button class="btn" id="saveSelectionCfgBtn" style="margin-top:8px">💾 保存划词助手配置</button>
+          </div>
         </div>
 
         <div class="card" data-page-node-id="Kmb9Ms5FM0029EuD90rbYn">
@@ -839,6 +871,24 @@
         <input type="number" id="provMaxTokens" class="input" min="1" max="128000" placeholder="2000">
       </div>
     </div>
+    <!-- v2.3.4：模型服务高级三项——思考等级 / 视觉能力 / 透传 JSON 参数 -->
+    <div class="grid-2" style="gap:10px;margin-top:8px">
+      <div>
+        <label class="field-label">思考等级（reasoning_effort）</label>
+        <select id="provThinking" class="input">
+          <option value="off">关闭（默认）</option>
+          <option value="low">低 low</option>
+          <option value="medium">中 medium</option>
+          <option value="high">高 high</option>
+        </select>
+      </div>
+      <div>
+        <label class="field-label">视觉能力（图片输入）</label>
+        <label class="check-row prov-vision-row"><input type="checkbox" id="provVision"> 支持发送图片提问</label>
+      </div>
+    </div>
+    <label class="field-label" style="margin-top:8px">透传 JSON 参数（可选 · 合并进 chat/completions 请求体）</label>
+    <textarea id="provExtraBody" class="input" rows="3" placeholder='例如：{"top_p":0.9,"response_format":{"type":"json_object"}}（messages / stream 不允许覆盖）'></textarea>
     <div class="row-gap" style="margin-top:14px;align-items:center" data-page-node-id="b64DezURw7Ek0eajF2lJO1">
       <button class="btn" id="provTestBtn" data-page-node-id="HjVwjf1uG9sAxr5RfWcF6K">🔌 测试连接</button>
       <span class="result" id="provTestResult" data-page-node-id="GtiNOqtK3WRSDwno2N8QUE"></span>

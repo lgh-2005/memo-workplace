@@ -816,8 +816,71 @@ function mdLite(text) {
   return html.join('');
 }
 
+/* v2.3.4：视觉能力——默认服务商开启 vision 后，可随提问附图片（OpenAI 兼容 image_url 内容块） */
+let chatImage = '';   // 待发送图片 dataURL
+
+function activeVisionEnabled() {
+  const p = state.providers.find(x => x.id === state.activeProvId);
+  return !!(p && p.vision);
+}
+
+function refreshVisionUI() {
+  const btn = $('#chatImageBtn');
+  if (btn) btn.style.display = activeVisionEnabled() ? '' : 'none';
+}
+
+/** 压缩输入图片：最长边 ≤1024px、JPEG 0.85，产出 dataURL（≤1.5MB 服务端红线） */
+function compressImageFile(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        try {
+          const scale = Math.min(1, 1024 / Math.max(img.width, img.height, 1));
+          const w = Math.max(1, Math.round(img.width * scale));
+          const h = Math.max(1, Math.round(img.height * scale));
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          const dataURL = canvas.toDataURL('image/jpeg', 0.85);
+          if (!dataURL.startsWith('data:image/')) throw new Error('图片编码失败');
+          resolve(dataURL);
+        } catch (err) { reject(err); }
+      };
+      img.onerror = () => reject(new Error('图片读取失败'));
+      img.src = reader.result;
+    };
+    reader.onerror = () => reject(new Error('文件读取失败'));
+    reader.readAsDataURL(file);
+  });
+}
+
+function setChatImagePreview(dataURL) {
+  chatImage = dataURL || '';
+  const row = $('#chatImagePreview');
+  if (!row) return;
+  if (dataURL) {
+    $('#chatImagePreviewImg').src = dataURL;
+    row.style.display = 'flex';
+  } else {
+    row.style.display = 'none';
+  }
+}
+
+$('#chatImageBtn').addEventListener('click', () => { const f = $('#chatImageFile'); f.value = ''; f.click(); });
+$('#chatImageFile').addEventListener('change', async () => {
+  const f = $('#chatImageFile').files && $('#chatImageFile').files[0];
+  if (!f) return;
+  try { setChatImagePreview(await compressImageFile(f)); }
+  catch (e) { toast('🖼️ ' + (e.message || '图片处理失败')); }
+});
+$('#chatImageClear').addEventListener('click', () => setChatImagePreview(''));
+
 async function askAI(message, isErrorMark = false) {
   if (!message.trim()) return;
+  const image = chatImage;               // v2.3.4：捕获待发送图片后立即清空预览
+  if (image) setChatImagePreview('');
   addMsg('user', message, state.activeWord);
   state.chatHistory.push({ role: 'user', content: message, word: state.activeWord });
   if (state.activeWord) {
@@ -835,6 +898,7 @@ async function askAI(message, isErrorMark = false) {
         message,
         history: state.chatHistory.slice(-16).map(m => ({ role: m.role, content: m.content })),
         useSearch: !!state.useSearch,   // v1.0.7：联网搜索开关
+        image: image || undefined,      // v2.3.4：视觉能力图片随问题发送
       },
     });
     loading.classList.remove('loading');
@@ -1208,7 +1272,7 @@ async function loadConfig() {
       $('#notepadResult').textContent = '';
       $('#notepadResult').className = 'result';
     }
-    /* v1.1.7：AI 审核专用服务商回填 */
+    /* v1.1.7：AI 审核专用服务商回填 + v2.3.4：划词助手专用模型回填 */
     if (c.review) {
       const revSel = $('#cfgReviewProvider');
       if (revSel) {
@@ -1220,7 +1284,17 @@ async function loadConfig() {
       const revThink = $('#cfgReviewThinking');
       if (revThink) revThink.checked = !!c.review.thinking;
     }
+    if (c.selection) {
+      const selSel = $('#cfgSelectionProvider');
+      if (selSel) {
+        selSel.innerHTML = '<option value="">— 同默认服务商 —</option>' +
+          (c.llm.providers || []).map(p => `<option value="${esc(p.id)}"${p.id === c.selection.providerId ? ' selected' : ''}>${esc(p.name)}</option>`).join('');
+      }
+      const selModel = $('#cfgSelectionModel');
+      if (selModel) selModel.value = c.selection.model || '';
+    }
     renderProviders();
+    refreshVisionUI();   // v2.3.4：默认服务商视觉能力变化后同步图片按钮显隐
   } catch (e) { console.error(e); }
 }
 
@@ -1234,7 +1308,7 @@ function renderProviders() {
     <div class="prov-item">
       <div class="prov-info">
         <div class="prov-name">${esc(p.name)} ${p.id === state.activeProvId ? '<span class="tag active">⭐ 默认</span>' : ''}</div>
-        <div class="prov-meta">${esc(p.baseUrl || '未填 Base URL')} · ${esc(p.model || '未选模型')} · ${p.hasKey ? '🔑 已存 Key' : '⚠️ 无 Key'}</div>
+        <div class="prov-meta">${esc(p.baseUrl || '未填 Base URL')} · ${esc(p.model || '未选模型')} · ${p.hasKey ? '🔑 已存 Key' : '⚠️ 无 Key'}${p.vision ? ' · <span class="prov-tag-mini">👁️ 视觉</span>' : ''}${p.thinking && p.thinking !== 'off' ? ` · <span class="prov-tag-mini">🧠 ${esc(p.thinking)}</span>` : ''}${p.extraBody ? ' · <span class="prov-tag-mini">🔧 JSON</span>' : ''}</div>
       </div>
       <div class="prov-actions">
         ${p.id === state.activeProvId ? '' : `<button class="btn small" data-prov-active="${p.id}">设为默认</button>`}
@@ -1369,6 +1443,10 @@ function openProvModal(id) {
   $('#provModel').value = p?.model || '';
   $('#provTemp').value = p?.temperature !== undefined ? p.temperature : '';
   $('#provMaxTokens').value = p?.max_tokens !== undefined ? p.max_tokens : '';
+  /* v2.3.4：模型服务高级三项回填 */
+  $('#provThinking').value = p?.thinking || 'off';
+  $('#provVision').checked = !!p?.vision;
+  $('#provExtraBody').value = p?.extraBody || '';
   $('#provModelSelect').style.display = 'none';
   $('#provTestResult').textContent = '';
   $('#provTestResult').className = 'result';
@@ -1452,6 +1530,17 @@ $('#provSave').addEventListener('click', async () => {
   const maxTokVal = $('#provMaxTokens').value.trim();
   if (tempVal !== '') item.temperature = Number(tempVal);
   if (maxTokVal !== '') item.max_tokens = Number(maxTokVal);
+  /* v2.3.4：模型服务高级三项保存（透传 JSON 先本地校验，防打手误存） */
+  item.thinking = $('#provThinking').value || 'off';
+  item.vision = $('#provVision').checked;
+  const extraRaw = $('#provExtraBody').value.trim();
+  if (extraRaw) {
+    try {
+      const parsed = JSON.parse(extraRaw);
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('必须是 JSON 对象');
+    } catch (e) { return alert('透传 JSON 参数格式错误：' + e.message); }
+  }
+  item.extraBody = extraRaw;
   if (provEditId) item.id = provEditId;
   if (key) item.apiKey = key;
   const providers = provEditId
@@ -1477,6 +1566,25 @@ $('#saveReviewCfgBtn').addEventListener('click', async () => {
       providerId: $('#cfgReviewProvider').value,
       model: $('#cfgReviewModel').value.trim(),
       thinking: $('#cfgReviewThinking').checked,
+    } } });
+    btn.textContent = '✅ 已保存';
+    setTimeout(() => { btn.textContent = prev; }, 2000);
+  } catch (e) {
+    alert('保存失败：' + e.message);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+/* v2.3.4：保存划词助手专用模型配置 */
+$('#saveSelectionCfgBtn').addEventListener('click', async () => {
+  const btn = $('#saveSelectionCfgBtn');
+  const prev = btn.textContent;
+  try {
+    btn.disabled = true;
+    await api('/api/config', { method: 'POST', body: { selection: {
+      providerId: $('#cfgSelectionProvider').value,
+      model: $('#cfgSelectionModel').value.trim(),
     } } });
     btn.textContent = '✅ 已保存';
     setTimeout(() => { btn.textContent = prev; }, 2000);
@@ -4364,7 +4472,11 @@ if ($('#transferStartBtn')) $('#transferStartBtn').addEventListener('click', sta
   try {
     const cfg = await api('/api/config');
     if (cfg.diyPrompts) state.diyPrompts = cfg.diyPrompts;
+    // v2.3.4：启动拉取服务商档案（含视觉能力），控制学习页图片按钮显隐
+    state.providers = cfg.llm?.providers || [];
+    state.activeProvId = cfg.llm?.activeId || '';
   } catch { /* 服务未就绪时静默 */ }
+  refreshVisionUI();
   try {
     const status = await api('/api/status');
     updateSyncBadge(status.lastSync ? 'ok' : 'err', status.lastSync ? formatTime(status.lastSync) : '未同步');

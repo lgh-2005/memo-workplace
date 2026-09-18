@@ -3089,5 +3089,57 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   .st-sentence { font-size: 15px; }
 }
 
+/* ============ v2.3.4：划词助手独立模型 + 模型服务高级项 + 词汇精练子版块 + 移动端适配提升 ============ */
+
+/* AI 学习子版块导航条 */
+.study-subbar { display: flex; align-items: center; gap: 10px; padding: 10px 14px; margin-bottom: 12px; }
+.study-subnav { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; flex-wrap: wrap; }
+.study-sub-item { border: 1px solid var(--border); background: transparent; color: var(--text-sub); border-radius: 999px; padding: 8px 18px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .12s ease, color .12s ease, border-color .12s ease; touch-action: manipulation; }
+.study-sub-item:hover { border-color: var(--primary); color: var(--primary); }
+.study-sub-item.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.study-sub-tip { font-size: 12px; color: var(--text-sub); }
+
+/* 服务商档案高级项标签 + 视觉勾选行 */
+.prov-tag-mini { color: var(--primary); font-weight: 600; }
+.prov-vision-row { display: flex; align-items: center; gap: 6px; padding: 10px 0 2px; min-height: 44px; cursor: pointer; }
+
+/* 学习页图片预览与按钮 */
+.chat-image-preview { display: flex; align-items: center; margin: 0 0 6px; padding: 4px 8px 4px 4px; border: 1px dashed var(--border); border-radius: 10px; width: fit-content; max-width: 100%; background: color-mix(in srgb, var(--primary) 5%, transparent); }
+.chat-image-preview img { max-height: 72px; max-width: 200px; border-radius: 8px; display: block; }
+.chat-image-clear { margin-left: 8px; border: none; background: none; color: var(--text-sub); font-size: 14px; cursor: pointer; width: 28px; height: 28px; border-radius: 50%; flex: none; touch-action: manipulation; }
+.chat-image-clear:hover { background: color-mix(in srgb, var(--text-sub) 15%, transparent); color: var(--text); }
+#chatImageBtn { flex: none; }
+
+/* 移动端适配提升（v2.3.4） */
+@media (max-width: 700px) {
+  /* iOS 聚焦自动放大防护：设置页与弹窗内输入统一起 16px */
+  .input { font-size: 16px !important; }
+
+  /* 全局点按反馈降噪与连点放触控优化 */
+  button, .btn, .chip, .sel-mode, .study-sub-item, summary { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+  /* 服务商卡片：按钮换行 + 触控目标 */
+  .prov-item .prov-actions { justify-content: flex-start; }
+  .prov-item .prov-actions .btn { min-height: 44px; }
+
+  /* 词汇精练子版块导航 */
+  .study-subbar { padding: 10px 12px; margin-bottom: 10px; }
+  .study-sub-item { min-height: 44px; }
+  .study-sub-tip { flex-basis: 100%; }
+
+  /* 学习页聊天输入行：图片按钮 44px 方块，输入不挤压 */
+  .chat-input-row { gap: 6px; }
+  .chat-input-row .btn { min-height: 44px; }
+  #chatImageBtn { width: 44px; height: 44px; padding: 0; font-size: 18px; }
+  .chat-image-preview img { max-height: 56px; max-width: 160px; }
+  .chat-image-clear { width: 32px; height: 32px; }
+
+  /* 设置子区块 summary 触控高度 */
+  .settings-section > summary { min-height: 48px; }
+
+  /* 复选行统一点击高度 */
+  .check-row { min-height: 36px; }
+}
+
 
 
