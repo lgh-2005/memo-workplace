@@ -4160,16 +4160,57 @@ const server = http.createServer(async (req, res) => {
             if (end === -1) throw new Error('no-json');
             parsed = JSON.parse(text.slice(start, end));
           }
+          if (typeof parsed.passage !== 'string' || !parsed.passage.trim()) throw new Error('passage-missing');
         } catch {
-          // v2.4.0a 兜底：模型无视 schema 直接输出了英文文章（无任何 JSON）——降级为纯正文模式，
-          // 钩子/翻译/自测留空，用户仍可阅读与朗读；提示词强化后再生成通常能恢复完整结构
-          const text = String(reply).trim();
+          // v2.4.0e 二段式兜底：弱指令遵循模型（实测 deepseek-v4.1-flash）对结构化 JSON 服从性差，
+          // 但纯写作没问题——第一段产物若为英文正文，直接用作 passage，进入第二段抽取补齐元数据
+          const text = String(reply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
           const enRatio = (text.match(/[A-Za-z]/g) || []).length / Math.max(1, text.replace(/\s/g, '').length);
-          if (text.length > 200 && enRatio > 0.7) {
-            parsed = { title: (words[0] || 'Story') + ' & friends', passage: text, hooks: words.map(w => ({ word: w, phonetic: '', pos: '', meaning: '', hook: '（本次未生成钩子，点「换一篇」重新生成可恢复）' })), translation: '（本次模型未按格式返回翻译，点「换一篇」重试）', quiz: [] };
-          } else {
+          const inlinePassage = typeof parsed === 'object' && parsed && typeof parsed.passage === 'string' ? parsed.passage : '';
+          const passage0 = inlinePassage || (text.length > 200 && enRatio > 0.7 ? text : '');
+          if (!passage0) {
             throw Object.assign(new Error('AI 输出无法解析为文章 JSON（schema 不符），点「换一篇」重试通常可解决'), { code: 'STORY_PARSE' });
           }
+          parsed = { passage: passage0 };
+        }
+        // v2.4.0e 二段式补齐：title/hooks/translation/quiz 缺哪段补哪段（抽取任务的指令服从性远高于边写边结构化）
+        const needsMeta = !Array.isArray(parsed.hooks) || !parsed.hooks.length
+          || !parsed.translation || !Array.isArray(parsed.quiz) || parsed.quiz.length < 3
+          || !parsed.title;
+        if (needsMeta) {
+          try {
+            const metaMsgs = [
+              { role: 'system', content: '你是考研英语词汇教练。对给定英文短文完成四项标注并只输出 JSON 对象（第一个字符 { 最后一个字符 }）：'
+                + '{"title":"英文标题(12词内)","hooks":[{"word":"单词(必须逐一核对确在文中出现,用原形)","phonetic":"美式音标,不确定给空串","pos":"词性缩写","meaning":"考研核心义项,15字内","hook":"一句中文记忆钩子,谐音/联想/词根,25字内"}],"translation":"全文通顺中文翻译","quiz":[5道选择题{"q":"题干","options":["A","B","C","D"],"answer":1到4,"explain":"40字内"}]}'
+                + '。hooks 必须覆盖给定的每个目标词；quiz 前3题用文中原句挖空目标词、后2题考词义。除 JSON 外禁止输出任何文字。' },
+              { role: 'user', content: `【目标词】${words.join(', ')}\n\n【英文短文】\n${parsed.passage.slice(0, 4500)}` },
+            ];
+            const metaReply = await llmChat(metaMsgs, { maxTokens: 2500, llmOverride: { _jsonMode: true } });
+            let meta;
+            const mt = String(metaReply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+            try { meta = JSON.parse(mt); } catch {
+              const ms = mt.indexOf('{');
+              if (ms !== -1) {
+                let depth = 0, inStr = false, esc3 = false, me = -1;
+                for (let i = ms; i < mt.length; i++) {
+                  const ch = mt[i];
+                  if (esc3) { esc3 = false; continue; }
+                  if (ch === '\\') { esc3 = true; continue; }
+                  if (ch === '"') { inStr = !inStr; continue; }
+                  if (inStr) continue;
+                  if (ch === '{') depth++;
+                  else if (ch === '}') { depth--; if (depth === 0) { me = i + 1; break; } }
+                }
+                if (me !== -1) meta = JSON.parse(mt.slice(ms, me));
+              }
+            }
+            if (meta && typeof meta === 'object') {
+              if (!parsed.title && meta.title) parsed.title = meta.title;
+              if ((!Array.isArray(parsed.hooks) || !parsed.hooks.length) && Array.isArray(meta.hooks)) parsed.hooks = meta.hooks;
+              if (!parsed.translation && meta.translation) parsed.translation = meta.translation;
+              if ((!Array.isArray(parsed.quiz) || parsed.quiz.length < 3) && Array.isArray(meta.quiz)) parsed.quiz = meta.quiz;
+            }
+          } catch { /* 二段失败不阻塞：保留已成功的正文，缺失字段按空展示 */ }
         }
         const hooks = (Array.isArray(parsed.hooks) ? parsed.hooks : [])
           .map(h => ({ word: String(h.word || '').trim(), phonetic: String(h.phonetic || '').slice(0, 40), pos: String(h.pos || '').slice(0, 12), meaning: String(h.meaning || '').slice(0, 40), hook: String(h.hook || '').slice(0, 60) }))
