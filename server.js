@@ -1239,15 +1239,22 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     throw new Error(`AI 请求失败 (HTTP ${res.status}) ${text.slice(0, 300)}`);
   }
   const json = await res.json();
-  let content = json.choices?.[0]?.message?.content;
-  // v2.0.0.a 增强：部分推理模型或中转站会将输出置于 reasoning_content 或 text 字段，做兼容提取
-  if (!content && json.choices?.[0]?.message?.reasoning_content) {
-    content = json.choices[0].message.reasoning_content;
-  }
+  const msg = json.choices?.[0]?.message || {};
+  let content = msg.content;
+  // v2.0.0.a 增强：部分中转站会把输出置于 text 字段，做兼容提取
   if (!content && json.choices?.[0]?.text) {
     content = json.choices[0].text;
   }
-  if (!content) throw new Error('AI 返回为空');
+  // v2.3.5a 修复：思考模式开启后 content 为空时，reasoning_content 里是被 max_tokens 截断的思考过程——
+  // 直接回退返回会「整条回复只剩半截思考体」。这里改为如实报错（带 finish_reason），提示调大 max_tokens 或关闭思考。
+  if (!content) {
+    const rc = String(msg.reasoning_content || '').trim();
+    const finish = json.choices?.[0]?.finish_reason || 'unknown';
+    throw new Error(
+      `AI 只返回了思考过程，正文为空（finish_reason=${finish}${rc ? '，思考已生成 ' + rc.length + ' 字' : ''}）。` +
+      `多为 max_tokens 被思考耗尽所致：请到设置页调大该服务商的 Max Tokens，或关闭思考等级后重试。`
+    );
+  }
   // v2.3.5：开启思考模式后，部分模型/中转站把思考体（<think>…</think>）混在正文里返回，统一剥离
   return stripThinkBlocks(content);
 }
