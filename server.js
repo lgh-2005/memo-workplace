@@ -1491,6 +1491,7 @@ const DEFAULT_PROMPTS = {
     title: '词文成章：选词生成记忆故事（System Prompt）',
     desc: '把学习者选定的单词写进一篇连贯英文短文（语境记忆），并为每个词配记忆钩子（关键词法），附中文翻译与自测题',
     template: [
+      '【输出格式铁律】你的全部回复必须是一个可被 JSON.parse 直接解析的单个 JSON 对象，第一个字符必须是 {，最后一个字符必须是 }。禁止输出任何解释、前言、后记、Markdown 代码块围栏或纯文本文章。',
       '你是考研英语词汇记忆教练，面向中国考研学生。把用户选定的单词写进一篇便于记忆的英文短文。',
       '要求：',
       '1. 用【目标单词】清单里的每个单词至少一次（原形或标注了词形的变形），全部覆盖，不得遗漏；优先使用考研高频义项。',
@@ -1499,8 +1500,9 @@ const DEFAULT_PROMPTS = {
       '4. hooks：每个目标词一条 {word, phonetic, pos, meaning, hook}——phonetic 美式音标（不确定给空串）、pos 词性缩写、meaning 考研核心义项（15字内）、hook 一句中文记忆钩子（谐音/联想/词根拆解，25字内，具体不空泛）。',
       '5. translation：全文通顺中文翻译。',
       '6. quiz：5 道选择题 {q, options:[4个], answer(1-4), explain(40字内)}——3 道用短文原句挖空目标词，2 道选义；干扰项来自目标词表或形近词。',
-      '7. 严格输出 JSON（不要 markdown 代码块包裹）：',
+      '7. JSON schema（字段名逐字一致，不得增删）：',
       '{"title":"英文标题(12词内)","passage":"英文正文","hooks":[{"word":"","phonetic":"","pos":"","meaning":"","hook":""}],"translation":"中文翻译","quiz":[{"q":"","options":["","","",""],"answer":1,"explain":""}]}',
+      '再次强调：回复只能是上述 JSON 对象本身。passage 字段里放英文正文；不要把正文直接回复在 JSON 外面。',
     ].join('\n')
   }
 };
@@ -4127,6 +4129,7 @@ const server = http.createServer(async (req, res) => {
             `【题材】：${theme}`,
             `【篇幅】：${lengths[lengthKey].label}（${lengths[lengthKey].guide}）`,
             evidenceNote,
+            '【再次提醒】你的回复必须整体是一个 JSON 对象（第一个字符 { 最后一个字符 }），英文正文放在 passage 字段里，不要在 JSON 之外输出任何文字。',
           ].filter(Boolean).join('\n\n') },
         ];
         const reply = await llmChat(msgs, { maxTokens: 4000 });
@@ -4153,7 +4156,15 @@ const server = http.createServer(async (req, res) => {
             parsed = JSON.parse(text.slice(start, end));
           }
         } catch {
-          throw Object.assign(new Error('AI 输出无法解析为文章 JSON（schema 不符），点「换一篇」重试通常可解决'), { code: 'STORY_PARSE' });
+          // v2.4.0a 兜底：模型无视 schema 直接输出了英文文章（无任何 JSON）——降级为纯正文模式，
+          // 钩子/翻译/自测留空，用户仍可阅读与朗读；提示词强化后再生成通常能恢复完整结构
+          const text = String(reply).trim();
+          const enRatio = (text.match(/[A-Za-z]/g) || []).length / Math.max(1, text.replace(/\s/g, '').length);
+          if (text.length > 200 && enRatio > 0.7) {
+            parsed = { title: (words[0] || 'Story') + ' & friends', passage: text, hooks: words.map(w => ({ word: w, phonetic: '', pos: '', meaning: '', hook: '（本次未生成钩子，点「换一篇」重新生成可恢复）' })), translation: '（本次模型未按格式返回翻译，点「换一篇」重试）', quiz: [] };
+          } else {
+            throw Object.assign(new Error('AI 输出无法解析为文章 JSON（schema 不符），点「换一篇」重试通常可解决'), { code: 'STORY_PARSE' });
+          }
         }
         const hooks = (Array.isArray(parsed.hooks) ? parsed.hooks : [])
           .map(h => ({ word: String(h.word || '').trim(), phonetic: String(h.phonetic || '').slice(0, 40), pos: String(h.pos || '').slice(0, 12), meaning: String(h.meaning || '').slice(0, 40), hook: String(h.hook || '').slice(0, 60) }))
