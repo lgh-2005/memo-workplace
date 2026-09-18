@@ -1248,7 +1248,18 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     content = json.choices[0].text;
   }
   if (!content) throw new Error('AI 返回为空');
-  return content;
+  // v2.3.5：开启思考模式后，部分模型/中转站把思考体（<think>…</think>）混在正文里返回，统一剥离
+  return stripThinkBlocks(content);
+}
+
+/** v2.3.5：剥离混入正文的思考体——成对 <think>…</think>（含 <thinking> 变体）整段删除；
+ *  开标签独占段落开头（前仅空白）且无闭合时，丢弃该标签到末尾的内容（真实泄漏形态），
+ *  正文句中提及 <think> 字样不受影响。只处理标签形态，不做文字启发式；仅净化不改变其余输出。 */
+function stripThinkBlocks(text) {
+  let out = String(text ?? '');
+  out = out.replace(/<think(?:ing)?\s*>[\s\S]*?<\/think(?:ing)?\s*>/gi, '');
+  out = out.replace(/(^|\n)(\s*)<think(?:ing)?\s*>[\s\S]*$/i, (m, pre) => pre);
+  return out.trim();
 }
 
 /** 本地自测用的假 LLM（config.llm.mock=true 时启用） */
