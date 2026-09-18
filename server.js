@@ -4245,7 +4245,7 @@ const server = http.createServer(async (req, res) => {
         }
         const story = {
           id: crypto.randomUUID(),
-          title: String(parsed.title || 'Untitled Story').slice(0, 120),
+          title: String(parsed.title || `${theme}物语 · ${words.slice(0, 3).join(' · ')}`).slice(0, 120),
           words,
           theme,
           length: lengthKey,
