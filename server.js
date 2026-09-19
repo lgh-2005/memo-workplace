@@ -4193,7 +4193,8 @@ const server = http.createServer(async (req, res) => {
         ];
 
         const reply = await llmChat(msgs, {
-          maxTokens: 2500,
+          // v2.4.2：词池可达 200+，大清单会诱发长思考——预算给足（思考模型思考+正文共用 max_tokens）
+          maxTokens: 8000,
           providerId: (config.story && config.story.providerId) || undefined,
           llmOverride: {
             _jsonMode: true,
