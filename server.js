@@ -1142,32 +1142,28 @@ const LLM_PRESETS = {
     baseUrl: 'https://api.deepseek.com/v1',
     model: 'deepseek-chat',
     models: ['deepseek-chat', 'deepseek-reasoner'],
-    temperature: 0.7,
-    max_tokens: 2000
+    temperature: 0.7
   },
   siliconflow: {
     label: '硅基流动 (SiliconFlow)',
     baseUrl: 'https://api.siliconflow.cn/v1',
     model: 'deepseek-ai/DeepSeek-V3',
     models: ['deepseek-ai/DeepSeek-V3', 'deepseek-ai/DeepSeek-R1', 'Qwen/Qwen2.5-72B-Instruct', 'THUDM/glm-4-9b-chat'],
-    temperature: 0.7,
-    max_tokens: 2000
+    temperature: 0.7
   },
   zhipu: {
     label: '智谱 GLM 开放平台',
     baseUrl: 'https://open.bigmodel.cn/api/paas/v4',
     model: 'glm-4-flash',
     models: ['glm-4-flash', 'glm-4-air', 'glm-4-plus'],
-    temperature: 0.7,
-    max_tokens: 2000
+    temperature: 0.7
   },
   moonshot: {
     label: '月之暗面 (Kimi)',
     baseUrl: 'https://api.moonshot.cn/v1',
     model: 'moonshot-v1-8k',
     models: ['moonshot-v1-8k', 'moonshot-v1-32k'],
-    temperature: 0.7,
-    max_tokens: 2000
+    temperature: 0.7
   },
   openai: {
     label: 'OpenAI 官方',
@@ -1175,7 +1171,6 @@ const LLM_PRESETS = {
     model: 'gpt-4o-mini',
     models: ['gpt-4o-mini', 'gpt-4o', 'gpt-3.5-turbo'],
     temperature: 0.7,
-    max_tokens: 2000,
     vision: true   // v2.3.4：官方多模态模型默认开放视觉能力（可在编辑弹层调整）
   },
   ollama: {
@@ -1183,8 +1178,7 @@ const LLM_PRESETS = {
     baseUrl: 'http://localhost:11434/v1',
     model: 'qwen2.5:7b',
     models: ['qwen2.5:7b', 'llama3.1:8b', 'deepseek-r1:7b'],
-    temperature: 0.7,
-    max_tokens: 2000
+    temperature: 0.7
   }
 };
 
@@ -1213,17 +1207,18 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
   const url = llm.baseUrl.replace(/\/+$/, '') + '/chat/completions';
   let res;
   try {
-    // v2.3.4：请求体三级构建——基础参数 → 思考参数（Claude 式 _thinking 优先，否则服务商「思考等级」reasoning_effort）→ 透传 JSON 参数
+    // v2.3.4：请求体三级构建——基础参数 → 思考参数（Claude 式 _thinking 优先，否则服务商「思考强度」reasoning_effort）→ 透传 JSON 参数
+    // v2.4.4：思考参数单一来源——只读服务商档案 thinking 字段（用户设置页滑块调节，档位 2026-09 官方核实：
+    //   off / minimal / low / medium / high / xhigh / max），任何功能板块不得注入思考参数；
+    //   off → 显式关闭双保险（reasoning_effort:none + enable_thinking:false，兼容默认思考模型，上游不识别的忽略）
     const bodyObj = { model: llm.model, messages, max_tokens: llm.max_tokens || maxTokens, temperature: llm.temperature !== undefined ? llm.temperature : 0.7 };
     if (llm._thinking) {
       bodyObj.thinking = llm._thinking;
-    } else if (llm._noThinking) {
-      // v2.4.2.b：调用方显式关闭思考——仅不传 reasoning_effort 不够（部分模型默认思考），
-      // 双保险下发两种主流关闭参数，上游不识别的会忽略
+    } else if (llm.thinking && llm.thinking !== 'off') {
+      bodyObj.reasoning_effort = llm.thinking;   // minimal~max 直通（OpenAI o 系 / gpt-5 系 / DeepSeek V4 / 主流中转站通用）
+    } else {
       bodyObj.reasoning_effort = 'none';
       bodyObj.enable_thinking = false;
-    } else if (llm.thinking && llm.thinking !== 'off') {
-      bodyObj.reasoning_effort = llm.thinking;   // OpenAI o 系列与主流中转站通用
     }
     if (typeof llm.extraBody === 'string' && llm.extraBody.trim()) {
       try {
@@ -3440,12 +3435,14 @@ const server = http.createServer(async (req, res) => {
               };
               if (pr.temperature !== undefined && pr.temperature !== '') out.temperature = Math.max(0, Math.min(2, Number(pr.temperature)));
               else if (old?.temperature !== undefined) out.temperature = old.temperature;
-              if (pr.max_tokens !== undefined && pr.max_tokens !== '') out.max_tokens = Math.max(1, Math.min(128000, Number(pr.max_tokens)));
+              // v2.4.4：Max Tokens 完全解放——取消 128000 封顶，仅防 0/负数；档案不配置时不传钳制
+              if (pr.max_tokens !== undefined && pr.max_tokens !== '') out.max_tokens = Math.max(1, Number(pr.max_tokens));
               else if (old?.max_tokens !== undefined) out.max_tokens = old.max_tokens;
               if (pr.models !== undefined) out.models = Array.isArray(pr.models) ? pr.models.slice(0, 100) : old?.models;
               else if (old?.models !== undefined) out.models = old.models;
               // v2.3.4：模型服务高级三项——思考等级 / JSON 参数透传 / 视觉能力
-              if (pr.thinking !== undefined) out.thinking = ['off', 'low', 'medium', 'high'].includes(pr.thinking) ? pr.thinking : 'off';
+              // v2.4.4：思考强度 7 档白名单（off/minimal/low/medium/high/xhigh/max），旧档案合法值无缝迁移
+              if (pr.thinking !== undefined) out.thinking = ['off', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max'].includes(pr.thinking) ? pr.thinking : 'off';
               else if (old?.thinking) out.thinking = old.thinking;
               if (pr.extraBody !== undefined) out.extraBody = String(pr.extraBody || '').slice(0, 2000);
               else if (old?.extraBody) out.extraBody = old.extraBody;
@@ -4240,9 +4237,9 @@ const server = http.createServer(async (req, res) => {
         const reply = await llmChat(msgs, {
           maxTokens: 8000,
           providerId: (config.story && config.story.providerId) || undefined,
+          // v2.4.4：删除 _noThinking——思考强度全权交给用户在设置页滑块调节；Max Tokens 已解放不再截断
           llmOverride: {
             _jsonMode: true,
-            _noThinking: true,   // v2.4.2.a：分析类结构化任务禁用思考（实测思考会自适应膨胀至数万字耗尽预算）
             ...(((config.story && config.story.model)) ? { model: config.story.model } : {}),
           },
         });
@@ -4374,10 +4371,10 @@ const server = http.createServer(async (req, res) => {
           const reply = await llmChat(msgs, {
             maxTokens: 4000,
             // v2.4.1：词文成章可单独指定服务商与覆盖模型（留空沿用默认服务商）
+            // v2.4.4：删除 _noThinking——思考强度全权交给用户在设置页滑块调节；Max Tokens 已解放不再截断
             providerId: (config.story && config.story.providerId) || undefined,
             llmOverride: {
               _jsonMode: true,
-              _noThinking: true,   // v2.4.2.c：长文结构化生成禁思考（实测思考自适应膨胀耗尽 max_tokens）
               ...(((config.story && config.story.model)) ? { model: config.story.model } : {}),
             },
           });

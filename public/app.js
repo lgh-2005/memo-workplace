@@ -1772,7 +1772,7 @@ function renderProviders() {
     <div class="prov-item">
       <div class="prov-info">
         <div class="prov-name">${esc(p.name)} ${p.id === state.activeProvId ? '<span class="tag active">⭐ 默认</span>' : ''}</div>
-        <div class="prov-meta">${esc(p.baseUrl || '未填 Base URL')} · ${esc(p.model || '未选模型')} · ${p.hasKey ? '🔑 已存 Key' : '⚠️ 无 Key'}${p.vision ? ' · <span class="prov-tag-mini">👁️ 视觉</span>' : ''}${p.thinking && p.thinking !== 'off' ? ` · <span class="prov-tag-mini">🧠 ${esc(p.thinking)}</span>` : ''}${p.extraBody ? ' · <span class="prov-tag-mini">🔧 JSON</span>' : ''}</div>
+        <div class="prov-meta">${esc(p.baseUrl || '未填 Base URL')} · ${esc(p.model || '未选模型')} · ${p.hasKey ? '🔑 已存 Key' : '⚠️ 无 Key'}${p.vision ? ' · <span class="prov-tag-mini">👁️ 视觉</span>' : ''}${p.thinking && p.thinking !== 'off' ? ` · <span class="prov-tag-mini">🧠 ${esc((THINK_META[p.thinking] || [p.thinking])[0])}</span>` : ''}${p.extraBody ? ' · <span class="prov-tag-mini">🔧 JSON</span>' : ''}</div>
       </div>
       <div class="prov-actions">
         ${p.id === state.activeProvId ? '' : `<button class="btn small" data-prov-active="${p.id}">设为默认</button>`}
@@ -1895,6 +1895,35 @@ async function deleteProvider(id) {
 /* 服务商弹层（新增 / 编辑） */
 let provEditId = '';
 
+/* v2.4.4：思考强度 7 档滑块——档位字符串 ↔ 刻度互转与徽章渲染（2026-09 官方档案核实档位）
+   唯一调节入口=设置页滑块；功能板块不注入思考参数（服务端只读档案 thinking 字段） */
+const THINK_LEVELS = ['off', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max'];
+const THINK_META = {
+  off: ['关闭', '直出答案不思考；会显式下发关闭参数，兼容默认思考的模型'],
+  minimal: ['极简', '极速浅思考，牺牲深度换取最快首字延迟'],
+  low: ['低', '轻量思考，速度与成本均衡，适合多步决断与工具调用'],
+  medium: ['中', '平衡档，多数任务的理想起点（规划 / 推理 / 判断）'],
+  high: ['高', '高强度思考，复杂推理、深度规划与高价值任务'],
+  xhigh: ['超高', '极深思考，面向深度研究与长程智能体任务'],
+  max: ['拉满', '最深思考档，最复杂任务；与超高档建议对比后选用'],
+};
+function thinkStrToIdx(v) {
+  const i = THINK_LEVELS.indexOf(String(v || 'off'));
+  return i < 0 ? 0 : i;
+}
+function renderThinkBadge() {
+  const el = $('#provThinking');
+  if (!el) return;
+  const idx = thinkStrToIdx(THINK_LEVELS[Number(el.value)] ? THINK_LEVELS[Number(el.value)] : 'off');
+  const key = THINK_LEVELS[idx] || 'off';
+  const [label, desc] = THINK_META[key] || THINK_META.off;
+  const badge = $('#provThinkingBadge'), descEl = $('#provThinkingDesc');
+  const wrap = $('#thinkSliderWrap');
+  if (badge) { badge.textContent = label; badge.dataset.level = key; }
+  if (descEl) descEl.textContent = desc;
+  if (wrap) wrap.style.setProperty('--think-pct', (idx / (THINK_LEVELS.length - 1) * 100).toFixed(1) + '%');
+}
+
 function openProvModal(id) {
   provEditId = id || '';
   const p = id ? state.providers.find(x => x.id === id) : null;
@@ -1907,8 +1936,9 @@ function openProvModal(id) {
   $('#provModel').value = p?.model || '';
   $('#provTemp').value = p?.temperature !== undefined ? p.temperature : '';
   $('#provMaxTokens').value = p?.max_tokens !== undefined ? p.max_tokens : '';
-  /* v2.3.4：模型服务高级三项回填 */
-  $('#provThinking').value = p?.thinking || 'off';
+  /* v2.3.4：模型服务高级三项回填；v2.4.4：思考等级改由滑块承载 */
+  $('#provThinking').value = thinkStrToIdx(p?.thinking || 'off');
+  renderThinkBadge();
   $('#provVision').checked = !!p?.vision;
   $('#provExtraBody').value = p?.extraBody || '';
   $('#provModelSelect').style.display = 'none';
@@ -1919,6 +1949,7 @@ function openProvModal(id) {
 
 $('#addProvBtn').addEventListener('click', () => openProvModal(''));
 $('#provCancel').addEventListener('click', () => $('#provModal').style.display = 'none');
+$('#provThinking').addEventListener('input', renderThinkBadge);   // v2.4.4：滑块拖动实时刷徽章与进度底色
 
 $('#provPreset').addEventListener('change', () => {
   const pr = provPresets[$('#provPreset').value];
@@ -1994,8 +2025,8 @@ $('#provSave').addEventListener('click', async () => {
   const maxTokVal = $('#provMaxTokens').value.trim();
   if (tempVal !== '') item.temperature = Number(tempVal);
   if (maxTokVal !== '') item.max_tokens = Number(maxTokVal);
-  /* v2.3.4：模型服务高级三项保存（透传 JSON 先本地校验，防打手误存） */
-  item.thinking = $('#provThinking').value || 'off';
+  /* v2.3.4：模型服务高级三项保存（透传 JSON 先本地校验，防打手误存）；v2.4.4：思考强度读滑块刻度 */
+  item.thinking = THINK_LEVELS[Number($('#provThinking').value) || 0] || 'off';
   item.vision = $('#provVision').checked;
   const extraRaw = $('#provExtraBody').value.trim();
   if (extraRaw) {

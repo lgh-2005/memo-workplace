@@ -114,6 +114,17 @@ ONLINE_HASH_REF=v2.2.8 node .workbuddy/test_v228_online_smoke.js
 
 > 静态资源哈希比对统一按 **LF 归一**（`CRLF→LF` 后再算 SHA-256），以消除 Windows 工作树（`core.autocrlf=true`）与仓库 blob / 服务器之间的行尾差异。
 
+## 5.5 v2.4.4 专项增量（2026-09-19）
+
+v2.2.8 以来的后续版本持续扩充 `.workbuddy/` 套件（`test_v233_selection.js` / `test_v234_llmops.js` / `test_v234_ui.js` / `test_v235_thinkstrip.js` / `test_v236_story.js` / `test_v236_story_ui.js`），并新增 **v2.4.4 底座专项**：
+
+| 脚本 | 断言数 | 覆盖 |
+|---|---|---|
+| `.workbuddy/test_v244_thinkslider.js` | 24 | 思考强度滑块后端语义（off 未配置/显式 off → `reasoning_effort:none + enable_thinking:false` 双保险；minimal/xhigh/max 直通且无关闭注入；非法档位白名单回落；词文成章 analyze 不再注入 `_noThinking`（thinking=high 原样透传、response_format 保留）；Max Tokens 500000 无封顶；负数回落 1；6 预设零内置 max_tokens） |
+
+> v2.4.4 全量回归：**38 套件（含 6 个历史调试脚本）全部退出码 0**。`test_v234_ui.js` 三处断言随滑块语义最小修补（SELECT→range 刻度 0=off、medium 档回填校验刻度 3 + badge dataset.level、meta 徽章中文化「中」）。
+
+
 ## 5. 线上冒烟入口与写接口红线
 
 - **canonical 入口**：`http://121.43.177.191`（ECS 直连，Basic Auth）。

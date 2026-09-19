@@ -3291,5 +3291,58 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   .row-gap .btn.small { min-height: 44px; }
 }
 
+/* ============ v2.4.4：思考强度 7 档滑块（设置页服务商档案） ============ */
+.think-slider-wrap { padding: 6px 2px 2px; }
+.think-slider {
+  -webkit-appearance: none; appearance: none;
+  display: block; width: 100%; height: 36px;
+  background: transparent; cursor: pointer; margin: 0;
+}
+.think-slider::-webkit-slider-runnable-track {
+  height: 6px; border-radius: 3px;
+  background: linear-gradient(90deg,
+    var(--primary) 0%,
+    var(--primary) var(--think-pct, 0%),
+    var(--border) var(--think-pct, 0%),
+    var(--border) 100%);
+}
+.think-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--card);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .28);
+  margin-top: -8px;
+}
+.think-slider::-moz-range-track { height: 6px; border-radius: 3px; background: var(--border); }
+.think-slider::-moz-range-progress { height: 6px; border-radius: 3px; background: var(--primary); }
+.think-slider::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--primary); border: 3px solid var(--card);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .28);
+}
+.think-slider:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; border-radius: 8px; }
+.think-ticks { display: flex; justify-content: space-between; margin-top: 2px; font-size: 11px; color: var(--text-sub); user-select: none; }
+.think-ticks span { flex: 0 0 auto; min-width: 28px; text-align: center; }
+.think-cur { display: flex; align-items: center; gap: 10px; margin-top: 10px; min-height: 32px; flex-wrap: wrap; }
+.think-badge {
+  display: inline-block; padding: 4px 12px; border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 14%, transparent);
+  color: var(--primary); font-weight: 700; font-size: 12.5px; white-space: nowrap;
+}
+.think-badge[data-level="off"] { background: color-mix(in srgb, var(--text-sub) 16%, transparent); color: var(--text-sub); }
+.think-badge[data-level="xhigh"], .think-badge[data-level="max"] {
+  background: color-mix(in srgb, var(--warn) 16%, transparent); color: var(--warn);
+}
+.think-desc { font-size: 12px; color: var(--text-sub); line-height: 1.5; }
+
+@media (max-width: 700px) {
+  .think-slider { height: 44px; }   /* 触控契约：滑杆触控区 ≥44px */
+  .think-slider::-webkit-slider-thumb { width: 26px; height: 26px; margin-top: -10px; }
+  .think-ticks span { min-width: 0; flex: 1; }
+  .think-ticks { font-size: 10px; }
+  .think-desc { flex-basis: 100%; }
+}
+
 
 
