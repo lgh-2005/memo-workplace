@@ -4308,7 +4308,7 @@ const server = http.createServer(async (req, res) => {
           .map(w => String(w || '').trim().toLowerCase())
           .filter(w => /^[a-z][a-z''\-]{0,39}$/.test(w)))];
         if (words.length < 1) return sendJSON(res, 400, { error: '请至少选择 1 个单词' });
-        if (words.length > 200) return sendJSON(res, 400, { error: '单次生成单词量建议不超过 200 词，请适当精简' });
+        if (words.length > 600) return sendJSON(res, 400, { error: '单次生成单词量建议不超过 600 词（分 3 组每组 200），请适当精简' });
         // v2.4.3：多分组解析——groups 为 [{name, theme, words, suggestedPlot}]，1~6 组；无 groups 时退化为单篇（全词池）
         const groupsIn = (Array.isArray(body.groups) ? body.groups : [])
           .map(g => ({
@@ -4321,7 +4321,15 @@ const server = http.createServer(async (req, res) => {
           .slice(0, 6);
         const useGroups = groupsIn.length >= 2;
         const totalWords = useGroups ? groupsIn.reduce((n, g) => n + g.words.length, 0) : words.length;
-        if (totalWords > 200) return sendJSON(res, 400, { error: '分组词总数超过 200，请精简' });
+        if (useGroups) {
+          // v2.4.3：分组模式下每组 ≤200（组内截断保护），总词数上限 600
+          for (const g of groupsIn) {
+            if (g.words.length > 200) g.words = g.words.slice(0, 200);
+          }
+          if (totalWords > 600) return sendJSON(res, 400, { error: '分组词总数超过 600，请精简' });
+        } else if (totalWords > 200) {
+          return sendJSON(res, 400, { error: '单篇生成建议不超过 200 词——请先「AI 分析」按分组拆成多篇' });
+        }
         // v2.4.1：题材动态化——storyThemes 自定义列表优先，缺省用内置 16 题材
         const themes = storyThemesList();
         const theme = themes.includes(body.theme) ? body.theme : (body.theme ? String(body.theme).slice(0, 30) : (themes[0] || '随缘'));
