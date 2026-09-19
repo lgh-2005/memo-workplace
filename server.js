@@ -1348,17 +1348,42 @@ function mockLLM(messages) {
   if (sys.includes('词汇记忆教练')) {   // v2.4.0：词文成章 mock——严格按 story_gen schema
     const wm = user.match(/【目标单词】（共 \d+ 个）：(.+)/) || [];
     const words = (wm[1] || 'mock story word').split(',').map(s => s.trim()).filter(Boolean);
-    const hookOne = { word: words[0] || 'mock', phonetic: '/mɒk/', pos: 'n.', meaning: '[MOCK] 核心义项', hook: '[MOCK] 谐音钩子：mock=毛蔻，毛茸茸的故事' };
+    const hookOne = { word: words[0] || 'mock', phonetic: '/mɒk/', pos: 'n.', meaning: '[MOCK] 核心义项', hook: '[MOCK] 谐音钩子：mock=某蔻，毛茸茸的故事' };
     return JSON.stringify({
       title: 'The Mock Adventure',
-      passage: `Once upon a mock day, ${words.join(' and ')} met in a library. They argued about ${words[0] || 'mock'} loudly, until a librarian suggested a better plan. In the end, ${words[0] || 'mock'} became the hero of the story.`,
-      hooks: words.map(w => ({ word: w, phonetic: '/mɒk/', pos: 'n.', meaning: '[MOCK] 核心义项（自测）', hook: `[MOCK] ${w} 的联想钩子` })),
-      translation: '[MOCK] 这是占位中文翻译：在一个 mock 的日子里，' + words.join('和') + '在图书馆相遇……（自测数据）',
+      passage: `Once upon a mock day, ${words.slice(0, 10).join(' and ')} met in a library. They argued about ${words[0] || 'mock'} loudly, until a librarian suggested a better plan. In the end, ${words[0] || 'mock'} became the hero of the story.`,
+      hooks: words.slice(0, 30).map(w => ({ word: w, phonetic: '/mɒk/', pos: 'n.', meaning: '[MOCK] 核心义项（自测）', hook: `[MOCK] ${w} 的联想钩子` })),
+      translation: '[MOCK] 这是占位中文翻译：在一个 mock 的日子里，' + words.slice(0, 10).join('和') + '在图书馆相遇……（自测数据）',
       quiz: [
         { q: `The story happened in a ___.`, options: ['library', 'stadium', 'kitchen', 'garage'], answer: 1, explain: '[MOCK] 原句定位：met in a library。' },
         { q: `${words[0] || 'mock'} finally became ___.`, options: ['the villain', 'the hero', 'a ghost', 'a driver'], answer: 2, explain: '[MOCK] 原句定位：became the hero of the story。' },
         { q: `Who suggested a better plan?`, options: ['the librarian', 'the dog', 'the teacher', 'the pilot'], answer: 1, explain: '[MOCK] 原句定位：a librarian suggested。' },
       ],
+    });
+  }
+  if (sys.includes('词汇分类规划师')) {   // v2.4.2：词汇AI分析与篇幅建议 mock
+    const wm = user.match(/【待分析单词清单】（共 \d+ 个）：([\s\S]*?)(?=\n\n|$)/) || [];
+    const words = (wm[1] || '').split(/[,，、\s]+/).map(s => s.trim()).filter(Boolean);
+    const wCount = words.length || 1;
+    return JSON.stringify({
+      summary: `已对这 ${wCount} 个词汇完成语义与考研场景切片分析，识别出认知关联与搭配逻辑。`,
+      recommendedLength: wCount > 25 ? 'long' : (wCount > 10 ? 'medium' : 'short'),
+      lengthLabel: wCount > 25 ? '长篇拓展（建议 600~900 词）' : (wCount > 10 ? '中篇叙事（建议 350~450 词）' : '精悍短篇（建议 180~260 词）'),
+      lengthReason: `本次包含 ${wCount} 个目标词，为保证各词上下文自然展开且不堆砌，推荐此篇幅。`,
+      groups: [
+        {
+          name: '核心场景群',
+          theme: '校园/科技',
+          words: words.slice(0, Math.ceil(wCount / 2)),
+          suggestedPlot: '以探索新知或技术挑战为叙事线索，将关键情境词自然嵌入。'
+        },
+        {
+          name: '演化与心境群',
+          theme: '反思/成长',
+          words: words.slice(Math.ceil(wCount / 2)),
+          suggestedPlot: '围绕面对波折后的心理蜕变或局势逆转展开。'
+        }
+      ].filter(g => g.words.length > 0)
     });
   }
   return `[MOCK] 收到！这是一个自测回复。（词义、例句、用法讲解在配置真实 AI 服务商后可用）\n\n关于你的问题「${user.slice(0, 60)}」：本回复来自内置 mock 模式，仅用于验证闭环。`;
@@ -1512,6 +1537,21 @@ const DEFAULT_PROMPTS = {
       '8. 完整示例（3 词的迷你样例，展示结构——你生成时按目标词数量与篇幅扩展）：',
       '{"title":"The Last Train","passage":"The station was nearly empty...（完整英文正文）","hooks":[{"word":"desperate","phonetic":"/ˈdespərət/","pos":"adj.","meaning":"不顾一切的；绝望的","hook":"谐音：德斯珀雷特，德行绝望了就不顾一切"},{"word":"commute","phonetic":"/kəˈmjuːt/","pos":"v./n.","meaning":"通勤","hook":"com(共同)+mute(移动)→大家共同移动=通勤"},{"word":"scramble","phonetic":"/ˈskræmbl/","pos":"v.","meaning":"争夺；爬行","hook":"scram(爬)+ble→争着往上爬"}],"translation":"（完整中文翻译）","quiz":[{"q":"The passengers ___ for the last seats on the train.","options":["scrambled","strolled","zoomed","melted"],"answer":1,"explain":"scramble for 争夺，符合末节车厢拥挤场景。"},{"q":"A ___ worker takes the same train every morning.","options":["commute","commuting","commuted","commuter"],"answer":4,"explain":"commuter 通勤者，作名词。"},{"q":"desperate 的核心含义是？","options":["高兴的","不顾一切的","缓慢的","富有的"],"answer":2,"explain":"desperate 绝望的/不顾一切的。"},{"q":"文中谁最终赶上了火车？","options":["the guard","the narrator","the driver","nobody"],"answer":2,"explain":"结尾处 narrator 挤上了末班车。"},{"q":"commute 在文中的词性是？","options":["名词","动词","形容词","副词"],"answer":1,"explain":"文中用作动词，表示通勤。"}]}',
       '再次强调：回复只能是这样一个完整 JSON 对象。passage 字段里放英文正文；五个字段一个都不能少。',
+    ].join('\n')
+  },
+  story_analyze: {
+    id: 'story_analyze',
+    title: '词文成章：词汇分析与篇幅建议（System Prompt）',
+    desc: '分析用户选中的单词列表，梳理词义逻辑、考研搭配关联，给出合理的情景/语义分类和篇幅建议',
+    template: [
+      '你是考研英语教学专家与词汇分类规划师。学习者选定了一组单词，准备编写故事来背诵记忆。',
+      '请根据给出的【待分析单词清单】（可能包含几个到几十个词），进行深入的语义/考研场景分析并给出最佳规划方案。',
+      '任务要求：',
+      '1. 【词汇分类与情节线索】：分析词群之间的逻辑关联（如因果、对立、工作科研场景、情感态度等），将词汇合理划分为 1~4 个场景或情节子群（每个群包含名称、推荐题材、包含单词列表、推荐情节构想）。',
+      '2. 【篇幅与节奏建议】：结合总词数与词义复杂度，科学评估最易于吸收记忆的故事篇幅（短篇 180~260 词 / 中篇 350~450 词 / 长篇 600~900 词），给出推荐理由。',
+      '3. 【结构化输出格式】：严格输出单个合法的 JSON 对象（禁止包含 markdown 代码块包裹，首字符 {，末字符 }）：',
+      '{"summary":"一两句整体分析，点明这批词在考研语境或逻辑上的核心关联","recommendedLength":"short|medium|long","lengthLabel":"精悍短篇（180~260词）|中篇叙事（350~450词）|长篇拓展（600~900词）","lengthReason":"推荐该篇幅的具体理由","groups":[{"name":"分组名称","theme":"建议题材如科幻/校园/职场/悬疑等","words":["单词1","单词2"],"suggestedPlot":"该组词在此题材中的情节推进与记忆线索"}]}',
+      '严禁在 JSON 之外输出任何文字。',
     ].join('\n')
   }
 };
@@ -4135,25 +4175,109 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, spelling, notepadId: config.maimemoNotepadId });
       }
 
+      // v2.4.2：词文成章——AI分析词汇并给出分类与篇幅建议
+      if (p === '/api/story/analyze' && req.method === 'POST') {
+        const body = await readBody(req);
+        const words = [...new Set((Array.isArray(body.words) ? body.words : [])
+          .map(w => String(w || '').trim().toLowerCase())
+          .filter(w => /^[a-z][a-z''\-]{0,39}$/.test(w)))];
+        if (words.length < 1) return sendJSON(res, 400, { error: '请至少选择 1 个单词进行分析' });
+
+        const lens = Object.fromEntries(words.map(w => [w, db.glosses[w] || null]));
+        const msgs = [
+          { role: 'system', content: getPrompt('story_analyze') },
+          { role: 'user', content: [
+            `【待分析单词清单】（共 ${words.length} 个）：\n${words.join(', ')}`,
+            lens && words.some(w => lens[w]) ? `【词典参考（部分）】\n` + words.filter(w => lens[w]).slice(0, 40).map(w => `- ${w}: ${lens[w].pos || ''} ${lens[w].gloss || ''}`).join('\n') : '',
+          ].filter(Boolean).join('\n\n') }
+        ];
+
+        const reply = await llmChat(msgs, {
+          maxTokens: 2500,
+          providerId: (config.story && config.story.providerId) || undefined,
+          llmOverride: {
+            _jsonMode: true,
+            ...(((config.story && config.story.model)) ? { model: config.story.model } : {}),
+          },
+        });
+
+        let parsed = null;
+        try {
+          let text = String(reply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+          try {
+            parsed = JSON.parse(text);
+          } catch {
+            const start = text.indexOf('{');
+            const end = text.lastIndexOf('}');
+            if (start !== -1 && end > start) {
+              parsed = JSON.parse(text.slice(start, end + 1));
+            }
+          }
+        } catch { parsed = null; }
+
+        // v2.4.2 schema 校验：分析结果必须含 groups(非空数组) 与 recommendedLength，否则视为无效输出走确定性兜底
+        const analysisValid = parsed && typeof parsed === 'object'
+          && Array.isArray(parsed.groups) && parsed.groups.length >= 1
+          && ['short', 'medium', 'long'].includes(parsed.recommendedLength);
+        if (!analysisValid) {
+          // 容错兜底：模型未按要求输出（或输出了别的 schema），基于词数确定性给出科学分类和篇幅建议
+          const wCount = words.length;
+          const recLen = wCount > 25 ? 'long' : (wCount > 10 ? 'medium' : 'short');
+          const lenLabels = {
+            short: '精悍短篇（建议 180~260 词）',
+            medium: '中篇叙事（建议 350~450 词）',
+            long: '长篇拓展（建议 600~900 词）'
+          };
+          parsed = {
+            summary: `已对这 ${wCount} 个词汇完成梳理。结合词汇量与记忆曲线，建议采用${lenLabels[recLen]}形式。`,
+            recommendedLength: recLen,
+            lengthLabel: lenLabels[recLen],
+            lengthReason: `包含 ${wCount} 个单词，该篇幅能够让上下文自然展开，避免单词过于拥挤。`,
+            groups: [
+              {
+                name: '核心场景群',
+                theme: '校园/探索',
+                words: words.slice(0, Math.ceil(wCount / 2)),
+                suggestedPlot: '结合求知、探索与日常互动的生动故事线。'
+              },
+              {
+                name: '行动与转变群',
+                theme: '科幻/成长',
+                words: words.slice(Math.ceil(wCount / 2)),
+                suggestedPlot: '描绘面对突发状况、心理蜕变或局势逆转的情节。'
+              }
+            ].filter(g => g.words.length > 0)
+          };
+        }
+
+        return sendJSON(res, 200, { ok: true, analysis: parsed });
+      }
+
       // v2.4.0：词文成章——选词生成记忆故事（故事+钩子双形态 + 中文翻译 + 检索自测）
+      // v2.4.2：解除严格数量限制，选词不限数量（至少 1 词，可分批分段生成）
       if (p === '/api/story/generate' && req.method === 'POST') {
         const body = await readBody(req);
         const words = [...new Set((Array.isArray(body.words) ? body.words : [])
           .map(w => String(w || '').trim().toLowerCase())
-          .filter(w => /^[a-z][a-z''\-]{0,29}$/.test(w)))];
-        if (words.length < 3) return sendJSON(res, 400, { error: '至少选 3 个单词（每词限字母/撇号/连字符，≤30 字符）' });
-        if (words.length > 20) return sendJSON(res, 400, { error: '每篇最多 20 个单词，请精简词池' });
+          .filter(w => /^[a-z][a-z''\-]{0,39}$/.test(w)))];
+        if (words.length < 1) return sendJSON(res, 400, { error: '请至少选择 1 个单词' });
+        if (words.length > 200) return sendJSON(res, 400, { error: '单次生成单词量建议不超过 200 词，请适当精简' });
         // v2.4.1：题材动态化——storyThemes 自定义列表优先，缺省用内置 16 题材
         const themes = storyThemesList();
-        const theme = themes.includes(body.theme) ? body.theme : themes[0] || '随缘';
-        const lengths = { short: { label: '短篇', guide: '180~260 个英文单词' }, medium: { label: '中篇', guide: '350~450 个英文单词' } };
-        const lengthKey = lengths[body.length] ? body.length : 'short';
+        const theme = themes.includes(body.theme) ? body.theme : (body.theme ? String(body.theme).slice(0, 30) : (themes[0] || '随缘'));
+        const lengths = {
+          short: { label: '短篇', guide: '180~260 个英文单词' },
+          medium: { label: '中篇', guide: '350~450 个英文单词' },
+          long: { label: '长篇', guide: '600~900 个英文单词' }
+        };
+        const lengthKey = lengths[body.length] ? body.length : (body.length ? 'medium' : 'short');
+        const customGuide = body.lengthGuide ? String(body.lengthGuide).slice(0, 80) : (lengths[lengthKey] ? lengths[lengthKey].guide : '适中篇幅');
         const lens = Object.fromEntries(words.map(w => [w, db.glosses[w] || null]));
         // v2.4.0：真题/外刊真实语境注入，引导模型优先用考研高频义项
         let evidenceNote = '';
         try {
           const lines = [];
-          for (const w of words.slice(0, 20)) {
+          for (const w of words.slice(0, 30)) {
             const ev = kbEvidenceForWord(w);
             const ex = ev.exams[0] || ev.external[0] || ev.corpus[0];
             if (ex?.s) lines.push(`- ${w}: ${String(ex.s).slice(0, 120)}`);
@@ -4164,9 +4288,10 @@ const server = http.createServer(async (req, res) => {
           { role: 'system', content: getPrompt('story_gen') },
           { role: 'user', content: [
             `【目标单词】（共 ${words.length} 个）：${words.join(', ')}`,
-            lens && words.some(w => lens[w]) ? `【词典参考】\n` + words.filter(w => lens[w]).map(w => `- ${w}: ${lens[w].pos || ''} ${lens[w].gloss || ''}`).join('\n') : '',
+            lens && words.some(w => lens[w]) ? `【词典参考】\n` + words.filter(w => lens[w]).slice(0, 50).map(w => `- ${w}: ${lens[w].pos || ''} ${lens[w].gloss || ''}`).join('\n') : '',
             `【题材】：${theme}`,
-            `【篇幅】：${lengths[lengthKey].label}（${lengths[lengthKey].guide}）`,
+            `【篇幅建议与要求】：${body.lengthLabel || lengths[lengthKey]?.label || '自适应'}（${customGuide}）`,
+            body.userInstruction ? `【AI分析与分类建议提示】：${String(body.userInstruction).slice(0, 300)}` : '',
             evidenceNote,
             '【再次提醒】你的回复必须整体是一个 JSON 对象（第一个字符 { 最后一个字符 }），英文正文放在 passage 字段里，不要在 JSON 之外输出任何文字。',
           ].filter(Boolean).join('\n\n') },
@@ -4257,7 +4382,7 @@ const server = http.createServer(async (req, res) => {
         /* v2.4.0.f 确定性兜底：无论模型多不配合，文章+钩子+自测三件套保证齐全 */
         const hooks = (Array.isArray(parsed.hooks) ? parsed.hooks : [])
           .map(h => ({ word: String(h.word || '').trim(), phonetic: String(h.phonetic || '').slice(0, 40), pos: String(h.pos || '').slice(0, 12), meaning: String(h.meaning || '').slice(0, 40), hook: String(h.hook || '').slice(0, 60) }))
-          .filter(h => h.word).slice(0, 20);
+          .filter(h => h.word).slice(0, 100);
         // 钩子缺词：用韦氏释义缓存补卡片（hook 文案缺省提示），保证每个目标词都有卡
         if (hooks.length < words.length) {
           const have = new Set(hooks.map(h => h.word.toLowerCase()));

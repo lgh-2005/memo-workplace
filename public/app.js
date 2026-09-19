@@ -93,6 +93,38 @@ function toast(msg) {
   } catch { /* 静默 */ }
 }
 
+/* ================= v2.4.2：通用可折叠卡片（所有占版大的板块均可折叠） ================= */
+
+/** 按 CSS 选择器折叠/展开卡片内容体；state=true 折叠，false 展开 */
+function collapseCard(targetSel, state) {
+  const body = $(targetSel);
+  if (!body) return;
+  body.classList.toggle('collapsed', !!state);
+  const card = body.closest('.card-collapsible');
+  const toggle = card && card.querySelector('.card-collapse-toggle');
+  if (toggle) setCollapseToggleLabel(toggle, !!state);
+}
+
+function expandCard(targetSel) {
+  collapseCard(targetSel, false);
+}
+
+function setCollapseToggleLabel(btn, collapsed) {
+  btn.textContent = collapsed ? '展开 ▾' : '收起 ▴';
+}
+
+/* 全站折叠按钮事件委托：点按切换 data-collapse-target 指向的内容体 */
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.card-collapse-toggle');
+  if (!btn) return;
+  const targetSel = btn.dataset.collapseTarget;
+  if (!targetSel) return;
+  const body = $(targetSel);
+  if (!body) return;
+  const nowCollapsed = !body.classList.contains('collapsed');
+  collapseCard(targetSel, nowCollapsed);
+});
+
 /* ---------------- 发音（浏览器 TTS，零成本） ---------------- */
 
 function speak(text, lang = 'en-US') {
@@ -949,10 +981,11 @@ $$('#quickRow .chip.q').forEach(c => c.addEventListener('click', () => {
 /* ================= v2.4.0：词文成章 —— 选词生成记忆文章 ================= */
 
 const storyState = {
-  quick: 'today', count: 5, theme: '随缘', length: 'short',
+  quick: 'today', theme: '随缘', length: 'short',
   pool: [],            // 已选词（小写）
   current: null,       // 当前文章对象
   hist: [],            // 历史列表
+  analysis: null,      // v2.4.2: AI词汇分析建议缓存
 };
 const STORY_TIP = {
   vocab: '词表精读 + AI 教练 + 助记生成，让单词过手入脑',
@@ -981,17 +1014,12 @@ async function switchStudySub(sub) {
 
 $$('#studySubbar .study-sub-item').forEach(b => b.addEventListener('click', () => switchStudySub(b.dataset.sub)));
 
-/* 快选词源 → 按墨墨筛选口径拉词，填充/合并词池 */
+/* 快选词源 → 按墨墨筛选口径拉词，整组全部加入词池（不限数量） */
 $$('#storyQuickRow .chip').forEach(c => c.addEventListener('click', () => {
   $$('#storyQuickRow .chip').forEach(x => x.classList.remove('active'));
   c.classList.add('active');
   storyState.quick = c.dataset.quick;
-}));
-
-$$('#storyCountRow .chip').forEach(c => c.addEventListener('click', () => {
-  $$('#storyCountRow .chip').forEach(x => x.classList.remove('active'));
-  c.classList.add('active');
-  storyState.count = Number(c.dataset.count);
+  storyQuickFill();
 }));
 
 /* v2.4.1：题材 chips 改为动态渲染（renderStoryThemeRow），静态绑定移除 */
@@ -1003,28 +1031,40 @@ $$('#storyLengthRow .chip').forEach(c => c.addEventListener('click', () => {
 }));
 
 async function storyQuickFill() {
-  const out = $('#storyGenResult');
+  const out = $('#storyAnalyzeResult') || $('#storyGenResult');
   try {
-    out.textContent = '⏳ 正在按「' + $('#storyQuickRow .chip.active').textContent + '」取词…';
-    out.className = 'result';
+    const chipText = $('#storyQuickRow .chip.active')?.textContent || '当前词源';
+    if (out) {
+      out.textContent = '⏳ 正在按「' + chipText + '」抓取所有词汇…';
+      out.className = 'result';
+    }
     const d = await api(`/api/words?filter=${storyState.quick}`);
     const list = (d.words || []).map(w => w.spelling.toLowerCase());
-    if (!list.length) { out.textContent = '⚠️ 该词源下没有单词，先同步或换一个筛选'; out.className = 'result err'; return; }
-    const want = storyState.count;
-    const next = [...new Set([...list, ...storyState.pool])].slice(0, Math.max(want, 0) || 5);
-    storyState.pool = next.slice(0, 20);
+    if (!list.length) {
+      if (out) {
+        out.textContent = '⚠️ 该词源下暂无单词，请先在仪表盘同步或切换词源';
+        out.className = 'result err';
+      }
+      return;
+    }
+    // v2.4.2：直接将该词源下的全部词汇与当前词池合并去重，不设数量截断
+    const next = [...new Set([...storyState.pool, ...list])];
+    const addedCount = next.length - storyState.pool.length;
+    storyState.pool = next;
     renderStoryPool();
-    out.textContent = `✅ 已载入 ${storyState.pool.length} 词（快选会合并现有词池）`;
-    out.className = 'result ok';
+    // 词池变动后，重置分析状态
+    resetStoryAnalysis();
+    if (out) {
+      out.textContent = `✅ 成功载入「${chipText}」：新加入 ${addedCount} 词，当前词池共 ${storyState.pool.length} 词`;
+      out.className = 'result ok';
+    }
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
-    out.className = 'result err';
+    if (out) {
+      out.textContent = '❌ ' + e.message;
+      out.className = 'result err';
+    }
   }
 }
-
-/* 快选行为：单击 chip 即取词填充（数量 chip 决定取多少） */
-$$('#storyQuickRow .chip').forEach(c => c.addEventListener('click', storyQuickFill));
-$$('#storyCountRow .chip').forEach(c => c.addEventListener('click', storyQuickFill));
 
 function renderStoryPool() {
   const pool = $('#storyPool');
@@ -1049,38 +1089,146 @@ function renderStoryPool() {
 
 $('#storyAddBtn').addEventListener('click', () => {
   const inp = $('#storySearch');
-  const w = (inp.value || '').trim().toLowerCase();
-  if (!w) return;
-  if (!/^[a-z][a-z''\-]{0,29}$/.test(w)) { toast('⚠️ 仅支持英文单词（字母/撇号/连字符）'); return; }
-  if (storyState.pool.includes(w)) { toast('已在词池中'); return; }
-  if (storyState.pool.length >= 20) { toast('⚠️ 词池上限 20 词'); return; }
-  storyState.pool.push(w);
+  const raw = (inp.value || '').trim();
+  if (!raw) return;
+  // v2.4.2：支持逗号/空格/分号批量粘贴，统一小写去重加入（不限数量）
+  const tokens = raw.split(/[,，;；\s]+/).map(s => s.trim().toLowerCase()).filter(Boolean);
+  if (!tokens.length) return;
+  const bad = tokens.filter(w => !/^[a-z][a-z''\-]{0,39}$/.test(w));
+  if (bad.length >= tokens.length) { toast('⚠️ 仅支持英文单词（字母/撇号/连字符）'); return; }
+  if (bad.length) toast(`⚠️ 跳过 ${bad.length} 个非法词：${bad.slice(0, 3).join(', ')}${bad.length > 3 ? '…' : ''}`);
+  const before = storyState.pool.length;
+  storyState.pool = [...new Set([...storyState.pool, ...tokens.filter(w => /^[a-z][a-z''\-]{0,39}$/.test(w))])];
+  const added = storyState.pool.length - before;
   inp.value = '';
   renderStoryPool();
+  resetStoryAnalysis();
+  if (added) toast(`➕ 新加 ${added} 词，词池共 ${storyState.pool.length} 词`);
+  else toast('已在词池中');
 });
 $('#storySearch').addEventListener('keydown', e => { if (e.key === 'Enter') $('#storyAddBtn').click(); });
-$('#storyPoolClear').addEventListener('click', () => { storyState.pool = []; renderStoryPool(); });
+$('#storyPoolClear').addEventListener('click', () => {
+  storyState.pool = [];
+  renderStoryPool();
+  resetStoryAnalysis();
+});
 
-/* 生成文章 */
-async function generateStory() {
-  const btn = $('#storyGenBtn'), out = $('#storyGenResult');
-  if (storyState.pool.length < 3) {
-    out.textContent = '⚠️ 词池至少 3 个单词，先快选或搜索加入';
+/* ================= v2.4.2：AI 词汇分析与规划（两阶段工作流·步骤一） ================= */
+
+function resetStoryAnalysis() {
+  storyState.analysis = null;
+  const box = $('#storyAnalysisBox');
+  if (box) box.style.display = 'none';
+}
+
+async function analyzeStoryWords() {
+  const btn = $('#storyAnalyzeBtn'), out = $('#storyAnalyzeResult');
+  if (!storyState.pool.length) {
+    out.textContent = '⚠️ 词池为空——先点击上方词源快速选词或手动加入';
     out.className = 'result err';
     return;
   }
   btn.disabled = true;
-  out.textContent = '✨ AI 正在把 ' + storyState.pool.length + ' 个词写进' + storyState.theme + '故事…（约 10-40 秒）';
+  out.textContent = `🤖 AI 正在分析 ${storyState.pool.length} 个词汇的语义关联与考研场景…（约 10-30 秒）`;
+  out.className = 'result';
+  try {
+    const r = await api('/api/story/analyze', { method: 'POST', body: { words: storyState.pool } });
+    storyState.analysis = r.analysis || null;
+    renderStoryAnalysis(storyState.analysis);
+    out.textContent = '✅ 分析完成——请查阅建议并采纳，或手动微调下方参数';
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ 分析失败：' + e.message;
+    out.className = 'result err';
+  } finally {
+    btn.disabled = false;
+  }
+}
+$('#storyAnalyzeBtn').addEventListener('click', analyzeStoryWords);
+
+/** 渲染 AI 分析建议 */
+function renderStoryAnalysis(a) {
+  if (!a) return;
+  const box = $('#storyAnalysisBox');
+  if (!box) return;
+  box.style.display = '';
+  $('#storyAnalysisSummary').textContent = '💡 ' + (a.summary || '（无整体分析）');
+  $('#storyLenRec').innerHTML =
+    `<b>${esc(a.lengthLabel || '自适应篇幅')}</b>` +
+    (a.lengthReason ? `<div style="margin-top:4px">${esc(a.lengthReason)}</div>` : '');
+  const groups = Array.isArray(a.groups) ? a.groups : [];
+  $('#storyGroupsList').innerHTML = groups.map(g => `
+    <div class="story-group-item">
+      <div class="story-group-title">🧩 ${esc(g.name || '未命名组')} <span class="story-hist-meta">题材建议：${esc(g.theme || '随缘')}</span></div>
+      <div class="story-group-words">${esc((g.words || []).join(', '))}</div>
+      <div class="story-group-plot">📖 ${esc(g.suggestedPlot || '')}</div>
+    </div>`).join('') || '<div class="hint">无分组建议</div>';
+}
+
+/** 一键采纳：同步 AI 推荐的篇幅，题材按首选分组建议映射（存在自定义题材则优先取它） */
+$('#storyAdoptAdviceBtn').addEventListener('click', () => {
+  const a = storyState.analysis;
+  if (!a) { toast('⚠️ 请先完成分析'); return; }
+  // 篇幅采纳
+  const lenKey = ['short', 'medium', 'long'].includes(a.recommendedLength) ? a.recommendedLength : null;
+  if (lenKey) {
+    storyState.length = lenKey;
+    $$('#storyLengthRow .chip').forEach(x => x.classList.toggle('active', x.dataset.length === lenKey));
+  }
+  // 题材采纳：第一个分组的 theme 与题材清单做包含匹配（如“校园/科技”→“校园”）
+  const row = $('#storyThemeRow');
+  const chips = row ? $$('#storyThemeRow .chip') : [];
+  const suggested = (Array.isArray(a.groups) && a.groups[0] && a.groups[0].theme) || '';
+  let matched = null;
+  if (suggested) {
+    for (const c of chips) {
+      const t = c.dataset.theme || c.textContent.trim();
+      if (suggested.includes(t) || (t && t.includes(suggested.split(/[\/／]/)[0].trim()))) { matched = c; break; }
+    }
+  }
+  if (matched) {
+    chips.forEach(x => x.classList.remove('active'));
+    matched.classList.add('active');
+    storyState.theme = matched.dataset.theme || matched.textContent.trim();
+  }
+  toast(`✅ 已采纳：篇幅=${lenKey || storyState.length}，题材=${storyState.theme}（可手动微调后生成）`);
+});
+
+/* 生成文章（v2.4.2：解除 3 词门槛；传入分析上下文，弱化硬性题材指定） */
+async function generateStory() {
+  const btn = $('#storyGenBtn'), out = $('#storyGenResult');
+  if (storyState.pool.length < 1) {
+    out.textContent = '⚠️ 词池为空，先点击上方词源快速选词';
+    out.className = 'result err';
+    return;
+  }
+  btn.disabled = true;
+  const a = storyState.analysis;
+  const lenLabel = ({ short: '短篇', medium: '中篇', long: '长篇' })[storyState.length] || '短篇';
+  const userInstruction = a
+    ? (a.summary || '') + (Array.isArray(a.groups) && a.groups.length ? ' 分组建议：' + a.groups.map(g => `${g.name}(${(g.words || []).length}词,${g.theme || ''}):${g.suggestedPlot || ''}`).join('；') : '')
+    : '';
+  out.textContent = `✨ AI 正在把 ${storyState.pool.length} 个词写进${storyState.theme}故事…（约 10-60 秒，词多时更久）`;
   out.className = 'result';
   try {
     const r = await api('/api/story/generate', {
       method: 'POST',
-      body: { words: storyState.pool, theme: storyState.theme, length: storyState.length },
+      body: {
+        words: storyState.pool,
+        theme: storyState.theme,
+        length: storyState.length,
+        lengthLabel: lenLabel,
+        userInstruction,
+      },
     });
     out.textContent = '✅ 生成完成';
     out.className = 'result ok';
     renderStory(r.story);
     loadStoryHist();
+    // 折叠生成参数卡与选词卡，突出文章成果
+    collapseCard('#storyParamBody', true);
+    collapseCard('#storySelectBody', true);
+    expandCard('#storyResultBody');
   } catch (e) {
     out.textContent = '❌ ' + e.message;
     out.className = 'result err';

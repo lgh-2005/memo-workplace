@@ -3189,6 +3189,89 @@ body.spotlight-active .kb-passage p.spotlight-focus {
 .story-theme-x:hover { background: color-mix(in srgb, var(--text-sub) 18%, transparent); color: var(--text); }
 .story-theme-lock { font-size: 12px; margin-right: 2px; }
 
+/* ============ v2.4.2：通用可折叠卡片与容器 ============ */
+.card-collapsible {
+  transition: all .2s ease;
+}
+.card-collapse-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-sub);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .16s ease;
+  white-space: nowrap;
+}
+.card-collapse-toggle:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+}
+.card-collapse-body {
+  transition: max-height .25s ease, opacity .2s ease;
+  overflow: hidden;
+}
+.card-collapse-body.collapsed {
+  display: none !important;
+}
+
+/* AI 词汇分析与规划推荐盒 */
+.story-analysis-box {
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 10px;
+}
+.story-analysis-summary {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.story-len-rec {
+  font-size: 13px;
+  color: var(--text-sub);
+  background: var(--card);
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px dashed var(--border);
+}
+.story-groups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+.story-group-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12.5px;
+}
+.story-group-title {
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.story-group-words {
+  color: var(--text);
+  font-family: var(--font-mono, monospace);
+  margin-bottom: 4px;
+}
+.story-group-plot {
+  color: var(--text-sub);
+  font-size: 12px;
+}
+
 /* 移动端适配 */
 @media (max-width: 700px) {
   .story-passage { font-size: 14.5px; }

@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.4.1</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.4.2</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.4.1</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.4.2</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -114,7 +114,7 @@
     </div>
 
     <!-- v2.2.3：学习诊断周报（7/14/30天自然日窗口诊断） -->
-    <div class="card" id="learningReportCard">
+    <div class="card card-collapsible" id="learningReportCard">
       <div class="card-title-row">
         <div class="card-title">📈 学习诊断报告（<span id="reportWinLabel">最近 7 天</span>）</div>
         <div class="report-win-btns">
@@ -122,9 +122,10 @@
           <button type="button" class="btn mini report-win-btn" data-days="14">14天</button>
           <button type="button" class="btn mini report-win-btn" data-days="30">30天</button>
           <button type="button" class="btn mini ghost" id="reportViewAllBtn">📜 全部流水</button>
+          <button class="card-collapse-toggle" type="button" data-collapse-target="#learningReportBody" title="折叠/展开">收起 ▴</button>
         </div>
       </div>
-      <div id="learningReportBody">
+      <div class="card-collapse-body" id="learningReportBody">
         <div class="hint">正在加载学习诊断数据…</div>
       </div>
     </div>
@@ -179,9 +180,14 @@
           ⚠️ 首次使用请先到 <a href="#" data-jump="settings" data-page-node-id="57HFRUnKroWSmVAud0L6jF">设置</a> 填写墨墨 Token 与 AI 服务商配置。
         </div>
       </div>
-      <div class="card" data-page-node-id="PY4R8L2IPwM8y5dayzw1D6">
-        <div class="card-title" data-page-node-id="3Lxorj5vYVWe4EY0btefcV">同步日志</div>
-        <ul class="log-list" id="syncLog" data-page-node-id="Gvhe60LqCpM3Um5WAQVgq8"><li data-page-node-id="WZjF8oDm4WepIVS44grJi2">暂无记录</li></ul>
+      <div class="card card-collapsible" data-page-node-id="PY4R8L2IPwM8y5dayzw1D6">
+        <div class="card-title-row" style="margin-bottom:0">
+          <div class="card-title" data-page-node-id="3Lxorj5vYVWe4EY0btefcV" style="margin-bottom:0">同步日志</div>
+          <button class="card-collapse-toggle" type="button" data-collapse-target="#syncLogCollapseBody" title="折叠/展开">收起 ▴</button>
+        </div>
+        <div class="card-collapse-body" id="syncLogCollapseBody">
+          <ul class="log-list" id="syncLog" data-page-node-id="Gvhe60LqCpM3Um5WAQVgq8" style="margin-top:8px"><li data-page-node-id="WZjF8oDm4WepIVS44grJi2">暂无记录</li></ul>
+        </div>
       </div>
     </div>
   </section>
@@ -198,94 +204,142 @@
     </div>
     <div id="storyPane" style="display:none">
       <div class="grid-2" style="align-items:start">
-        <div class="card">
-          <div class="card-title">🎯 选词（3~20 个）</div>
-          <details class="hint-fold"><summary>ℹ️ 说明</summary>
-          <div class="hint">快选按钮按墨墨筛选口径自动取词；也可搜索词表手动加入。选定后 AI 会把这些词写进一篇连贯的英文短文（语境记忆），并配记忆钩子（关键词法），双管齐下。</div>
-          </details>
-          <label class="field-label">快选词源</label>
-          <div class="filter-row" id="storyQuickRow">
-            <button class="chip active" data-quick="today">今日词</button>
-            <button class="chip" data-quick="sticky">顽固词</button>
-            <button class="chip" data-quick="forget">忘记词</button>
-            <button class="chip" data-quick="due7">7天内到期</button>
-            <button class="chip" data-quick="all">全部</button>
+        <div class="card card-collapsible" id="storySelectCard">
+          <div class="card-title-row" style="margin-bottom:0">
+            <div class="card-title" style="margin-bottom:0">🎯 选词（根据词源快速选词 · 不限数量）</div>
+            <button class="card-collapse-toggle" type="button" data-collapse-target="#storySelectBody" title="折叠/展开">收起 ▴</button>
           </div>
-          <label class="field-label">数量</label>
-          <div class="filter-row" id="storyCountRow">
-            <button class="chip active" data-count="5">5 词</button>
-            <button class="chip" data-count="8">8 词</button>
-            <button class="chip" data-count="10">10 词</button>
-            <button class="chip" data-count="15">15 词</button>
+          <div class="card-collapse-body" id="storySelectBody">
+            <details class="hint-fold" style="margin-top:8px"><summary>ℹ️ 说明</summary>
+            <div class="hint">点击词源可自主快速将整组词汇直接全部载入词池，选词不设数量上限！选好后将交由 AI 分析语义关联与建议篇幅，采纳后再行创作。</div>
+            </details>
+            <label class="field-label">快选词源（点击即整组加入词池）</label>
+            <div class="filter-row" id="storyQuickRow">
+              <button class="chip active" data-quick="today">今日词</button>
+              <button class="chip" data-quick="sticky">顽固词</button>
+              <button class="chip" data-quick="forget">忘记词</button>
+              <button class="chip" data-quick="vague">模糊词</button>
+              <button class="chip" data-quick="newtoday">今日新词</button>
+              <button class="chip" data-quick="due7">7天内到期</button>
+              <button class="chip" data-quick="all">全部词库</button>
+            </div>
+            <label class="field-label">精准搜索 / 手动追加</label>
+            <div style="display:flex;gap:8px">
+              <input type="text" id="storySearch" class="input" placeholder="输入单词，支持逗号或空格批量粘贴…" autocomplete="off">
+              <button class="btn" id="storyAddBtn" style="white-space:nowrap">➕ 加入词池</button>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+              <label class="field-label" style="margin:0">已选词池 <span id="storyPoolCount" style="color:var(--primary);font-weight:700">(0)</span></label>
+              <button class="btn small ghost" id="storyPoolClear" style="display:none">🗑 清空全部词池</button>
+            </div>
+            <div class="story-pool" id="storyPool"><div class="hint">词池为空，点击上方词源或输入单词加入</div></div>
           </div>
-          <label class="field-label">搜索加入</label>
-          <div style="display:flex;gap:8px">
-            <input type="text" id="storySearch" class="input" placeholder="输入单词加入词池…" autocomplete="off">
-            <button class="btn" id="storyAddBtn" style="white-space:nowrap">➕ 加入</button>
-          </div>
-          <label class="field-label">已选词池 <span id="storyPoolCount" style="color:var(--text-sub);font-weight:400">(0)</span></label>
-          <div class="story-pool" id="storyPool"><div class="hint">词池为空，先快选或搜索加入</div></div>
-          <button class="btn small ghost" id="storyPoolClear" style="display:none">🗑 清空词池</button>
         </div>
-        <div class="card">
-          <div class="card-title">⚙️ 生成参数</div>
-          <label class="field-label">题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（在 设置 · DIY · 文章题材 中自定义）</span></label>
-          <div class="filter-row" id="storyThemeRow"></div><!-- v2.4.1：题材 chips 由 /api/story/themes 动态渲染 -->
-          <label class="field-label">篇幅</label>
-          <div class="filter-row" id="storyLengthRow">
-            <button class="chip active" data-length="short">短篇 ~200 词</button>
-            <button class="chip" data-length="medium">中篇 ~400 词</button>
+        <div class="card card-collapsible" id="storyParamCard">
+          <div class="card-title-row" style="margin-bottom:0">
+            <div class="card-title" style="margin-bottom:0">⚙️ AI 词汇分析与创作参数规划</div>
+            <button class="card-collapse-toggle" type="button" data-collapse-target="#storyParamBody" title="折叠/展开">收起 ▴</button>
           </div>
-          <button class="btn primary full" id="storyGenBtn" style="margin-top:12px">✨ 生成记忆文章</button>
-          <div class="result" id="storyGenResult"></div>
+          <div class="card-collapse-body" id="storyParamBody">
+            <details class="hint-fold" style="margin-top:8px"><summary>ℹ️ 流程说明</summary>
+            <div class="hint">两阶段工作流：① 选定词汇后，先点击「🤖 分析词汇并规划建议」，AI 会深入梳理各词的考研语义、逻辑场景分类与最佳篇幅推荐；② 用户查阅采纳建议后，再一键生成专属故事！</div>
+            </details>
+            
+            <div style="margin-top:10px">
+              <button class="btn primary full" id="storyAnalyzeBtn">🤖 步骤一：分析词汇并获取分类建议</button>
+              <div class="result" id="storyAnalyzeResult"></div>
+            </div>
+
+            <!-- AI 分析建议展示区 -->
+            <div id="storyAnalysisBox" class="story-analysis-box" style="display:none">
+              <div class="story-analysis-summary" id="storyAnalysisSummary"></div>
+              
+              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px">📊 AI 推荐篇幅与理由</div>
+              <div class="story-len-rec" id="storyLenRec"></div>
+              
+              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px">🧩 词汇场景分类与情节线索建议</div>
+              <div class="story-groups-list" id="storyGroupsList"></div>
+              
+              <div style="display:flex;gap:8px;align-items:center;margin-top:12px">
+                <button class="btn ok" id="storyAdoptAdviceBtn">✅ 一键采纳推荐配置</button>
+                <span class="hint" style="margin:0">采纳后将自动同步下方的题材与篇幅</span>
+              </div>
+            </div>
+
+            <hr style="border:none;border-top:1px dashed var(--border);margin:14px 0">
+
+            <label class="field-label">文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（采纳建议或自主微调）</span></label>
+            <div class="filter-row" id="storyThemeRow"></div><!-- v2.4.1：题材 chips 动态渲染 -->
+            <label class="field-label">篇幅规格</label>
+            <div class="filter-row" id="storyLengthRow">
+              <button class="chip active" data-length="short">短篇 (~200词)</button>
+              <button class="chip" data-length="medium">中篇 (~400词)</button>
+              <button class="chip" data-length="long">长篇 (~700词)</button>
+            </div>
+            <button class="btn primary full" id="storyGenBtn" style="margin-top:14px">✨ 步骤二：根据当前规划生成文章</button>
+            <div class="result" id="storyGenResult"></div>
+          </div>
         </div>
       </div>
-      <div class="card" id="storyResultCard" style="display:none">
-        <div class="card-title-row">
-          <div class="card-title" id="storyTitle">文章</div>
-          <div class="row-gap">
+      <div class="card card-collapsible" id="storyResultCard" style="display:none">
+        <div class="card-title-row" style="margin-bottom:0">
+          <div class="card-title" id="storyTitle" style="margin-bottom:0">文章</div>
+          <div class="row-gap" style="align-items:center">
             <button class="btn small" id="storySpeakBtn">🔊 朗读全文</button>
             <button class="btn small ghost" id="storyCopyBtn">📋 复制</button>
             <button class="btn small" id="storyRegenBtn">🔁 换一篇</button>
             <button class="btn small danger" id="storyDelBtn">🗑 删除</button>
+            <button class="card-collapse-toggle" type="button" data-collapse-target="#storyResultBody" title="折叠/展开">收起 ▴</button>
           </div>
         </div>
-        <div class="story-passage" id="storyPassage"></div>
-        <details class="hint-fold"><summary>🌐 全文中文翻译</summary>
-        <div class="story-translation" id="storyTranslation"></div>
-        </details>
-        <div class="card-title" style="margin-top:14px">🪝 词汇钩子</div>
-        <div class="story-hooks" id="storyHooks"></div>
-        <div class="card-title" style="margin-top:14px">📝 检索自测（即做即判）</div>
-        <div class="story-quiz" id="storyQuiz"></div>
-        <div class="result" id="storyQuizResult"></div>
-      </div>
-      <div class="card">
-        <div class="card-title-row">
-          <div class="card-title">🗂 历史文章</div>
-          <button class="btn small" id="storyHistRefresh">刷新</button>
+        <div class="card-collapse-body" id="storyResultBody">
+          <div class="story-passage" id="storyPassage" style="margin-top:10px"></div>
+          <details class="hint-fold"><summary>🌐 全文中文翻译</summary>
+          <div class="story-translation" id="storyTranslation"></div>
+          </details>
+          <div class="card-title" style="margin-top:14px">🪝 词汇钩子</div>
+          <div class="story-hooks" id="storyHooks"></div>
+          <div class="card-title" style="margin-top:14px">📝 检索自测（即做即判）</div>
+          <div class="story-quiz" id="storyQuiz"></div>
+          <div class="result" id="storyQuizResult"></div>
         </div>
-        <div id="storyHistList"><div class="hint">还没有生成过文章</div></div>
+      </div>
+      <div class="card card-collapsible">
+        <div class="card-title-row" style="margin-bottom:0">
+          <div class="card-title" style="margin-bottom:0">🗂 历史文章</div>
+          <div class="row-gap" style="align-items:center">
+            <button class="btn small" id="storyHistRefresh">刷新</button>
+            <button class="card-collapse-toggle" type="button" data-collapse-target="#storyHistBody" title="折叠/展开">收起 ▴</button>
+          </div>
+        </div>
+        <div class="card-collapse-body" id="storyHistBody">
+          <div id="storyHistList" style="margin-top:8px"><div class="hint">还没有生成过文章</div></div>
+        </div>
       </div>
     </div>
     <div class="study-layout" id="vocabPane" data-page-node-id="jtPHsbe6nPhZY4HTSyRZuY">
-      <aside class="word-panel card" data-page-node-id="XLvWS2U7KuUAVrvzsrro3S">
-        <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD">词表</div>
-        <div class="filter-row" id="wordFilters" data-page-node-id="6hQfUGFSzT2MfS2nEn5FtZ">
-          <button class="chip active" data-filter="today" data-page-node-id="iuCGD27RRtaTHe1cwCbvC1">今日</button>
-          <button class="chip" data-filter="unfinished" data-page-node-id="Az6KeieUmztMpGvMosKghV">未完成</button>
-          <button class="chip" data-filter="newtoday" data-page-node-id="vmHYuMx3C11zU2ztFO691f">今日新词</button>
-          <button class="chip" data-filter="sticky" data-page-node-id="Bv35E9FwwUObECdzuj6VBo">顽固词</button>
-          <button class="chip" data-filter="vague" data-page-node-id="mfLZPz0fq2pUZ1jG1VYrQF">模糊词</button>
-          <button class="chip" data-filter="forget" data-page-node-id="o0jAvRJSeJucjm5CO00dZ0">忘记词</button>
-          <button class="chip" data-filter="wellfamiliar" data-page-node-id="IxEFbGpDA4ALKrlpWD0DKE">熟知词</button>
-          <button class="chip" data-filter="due7" data-page-node-id="OwzCJsjvrWLpVHUm70Skue">7天内到期</button>
-          <button class="chip" data-filter="all" data-page-node-id="tLBVUk9KLaqic2S4C2llO6">全部</button>
+      <aside class="word-panel card card-collapsible" data-page-node-id="XLvWS2U7KuUAVrvzsrro3S">
+        <div class="card-title-row" style="margin-bottom:0">
+          <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD" style="margin-bottom:0">词表</div>
+          <button class="card-collapse-toggle" type="button" data-collapse-target="#wordPanelCollapseBody" title="折叠/展开">收起 ▴</button>
         </div>
-        <input type="text" id="wordSearch" class="input" placeholder="搜索单词或释义…" data-page-node-id="5RYsbeiVWXkq1iv7rmk1cR">
-        <div class="word-list" id="wordList" data-page-node-id="2QnUWaT7eTETCU8maBdUaS"><div class="empty" data-page-node-id="EBQRB4Prl6VdTzqzj5dRCB">请先在仪表盘同步数据</div></div>
-        <div class="session-info" id="sessionInfo" data-page-node-id="PDBFhDxdSklvmO8ThaW0E0">本次会话已学 0 词</div>
-        <button class="btn primary full" id="finishBtn" disabled data-page-node-id="Y083OTYkOKbbs4WhjjYymX">✅ 结束本次学习并生成助记</button>
+        <div class="card-collapse-body" id="wordPanelCollapseBody">
+          <div class="filter-row" id="wordFilters" data-page-node-id="6hQfUGFSzT2MfS2nEn5FtZ" style="margin-top:8px">
+            <button class="chip active" data-filter="today" data-page-node-id="iuCGD27RRtaTHe1cwCbvC1">今日</button>
+            <button class="chip" data-filter="unfinished" data-page-node-id="Az6KeieUmztMpGvMosKghV">未完成</button>
+            <button class="chip" data-filter="newtoday" data-page-node-id="vmHYuMx3C11zU2ztFO691f">今日新词</button>
+            <button class="chip" data-filter="sticky" data-page-node-id="Bv35E9FwwUObECdzuj6VBo">顽固词</button>
+            <button class="chip" data-filter="vague" data-page-node-id="mfLZPz0fq2pUZ1jG1VYrQF">模糊词</button>
+            <button class="chip" data-filter="forget" data-page-node-id="o0jAvRJSeJucjm5CO00dZ0">忘记词</button>
+            <button class="chip" data-filter="wellfamiliar" data-page-node-id="IxEFbGpDA4ALKrlpWD0DKE">熟知词</button>
+            <button class="chip" data-filter="due7" data-page-node-id="OwzCJsjvrWLpVHUm70Skue">7天内到期</button>
+            <button class="chip" data-filter="all" data-page-node-id="tLBVUk9KLaqic2S4C2llO6">全部</button>
+          </div>
+          <input type="text" id="wordSearch" class="input" placeholder="搜索单词或释义…" data-page-node-id="5RYsbeiVWXkq1iv7rmk1cR">
+          <div class="word-list" id="wordList" data-page-node-id="2QnUWaT7eTETCU8maBdUaS"><div class="empty" data-page-node-id="EBQRB4Prl6VdTzqzj5dRCB">请先在仪表盘同步数据</div></div>
+          <div class="session-info" id="sessionInfo" data-page-node-id="PDBFhDxdSklvmO8ThaW0E0">本次会话已学 0 词</div>
+          <button class="btn primary full" id="finishBtn" disabled data-page-node-id="Y083OTYkOKbbs4WhjjYymX">✅ 结束本次学习并生成助记</button>
+        </div>
       </aside>
 
       <div class="chat-panel card" data-page-node-id="mhDINlh1yKn0Koq9HpFOSx">
@@ -463,35 +517,40 @@
       <div id="kbList" data-page-node-id="YkMxSQzwwN7awDTzhFrm0x"></div>
       <div id="kbPagination" class="pagination-bar" style="display:none;margin-top:14px"></div>
     </div>
-    <div class="card" data-page-node-id="59dAVKg9z39kffWsnAeyIU">
-      <div class="card-title-row" data-page-node-id="kjw1OQaUbiIFvrFPjuVHfs">
-        <div class="card-title" data-page-node-id="Djl90jvegO63Qnpd13BEDy">📥 导入语料</div>
-        <button class="btn" id="kbLogBtn" data-page-node-id="XzcHlTlXM218R3pkKeXgEd">📜 导入日志</button>
+    <div class="card card-collapsible" data-page-node-id="59dAVKg9z39kffWsnAeyIU">
+      <div class="card-title-row" style="margin-bottom:0" data-page-node-id="kjw1OQaUbiIFvrFPjuVHfs">
+        <div class="card-title" data-page-node-id="Djl90jvegO63Qnpd13BEDy" style="margin-bottom:0">📥 导入语料</div>
+        <div class="row-gap" style="align-items:center">
+          <button class="btn" id="kbLogBtn" data-page-node-id="XzcHlTlXM218R3pkKeXgEd">📜 导入日志</button>
+          <button class="card-collapse-toggle" type="button" data-collapse-target="#kbImportCollapseBody" title="折叠/展开">收起 ▴</button>
+        </div>
       </div>
-      <details class="hint-fold" data-page-node-id="xXwjz7Q6HfApRN2FhDWngm"><summary data-page-node-id="N4omxCGmZX3k3VDUGMHcZG">ℹ️ 说明</summary>
-      <div class="hint" data-page-node-id="i6y3giSuFhwAcpqJhErPZk">三层契约（与导入工程一致）：上传落 <code data-page-node-id="FbXMLXN3WeGHmNjJx9VdeC">imports/&lt;分类&gt;/</code> → 解析写入 <code data-page-node-id="i5uk70FDwGthjag6hx3Uuo">records.jsonl</code>（<b data-page-node-id="XklvmAH4tGTekglagEteFv">同名重导覆盖</b>）、原件归档 <code data-page-node-id="Qnf3EBMWQBvhCUm7wZ0sl4">archive/</code>；识别失败进 <code data-page-node-id="cTBwdm7johopYbfQo4zVbm">quarantine/</code> 隔离区，全程留 <code data-page-node-id="S5IsDAnibifvUbSQa3kZAl">import_log.jsonl</code> 痕迹。支持 txt/md、html、docx（<b data-page-node-id="tpc0gKPC48nc0yHHbXWFg7">tex/pdf 真题源请到「🗂 真题库」导入</b>）；也可粘贴文本直录；<b data-page-node-id="plvv6UuBR7sVd2gtHIweTY">扫描版 PDF</b> 可走下方 🛰 MinerU 云端解析（自动 OCR + 双栏还原）。</div>
-      </details>
-      <div class="row-gap" style="flex-wrap:wrap" data-page-node-id="NSHR5M1Rtzwst1t2c2TD9B">
-        <select id="kbImportCategory" class="input" style="width:110px" data-page-node-id="noPwZwPP4SLmAk2wWyO0iV">
-          <option value="真题" data-page-node-id="trCZBA8jDLGbycC5IU9D2o">真题</option>
-          <option value="外刊" data-page-node-id="Gu0pExzdDp9kWpxxtHRYCB">外刊</option>
-          <option value="教材" data-page-node-id="t8PakpeehsPHCkarmQmu0e">教材</option>
-          <option value="直录" data-page-node-id="iXtY9l0zlkIxSnzgpZRpHU">直录</option>
-        </select>
-        <input type="file" id="kbImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".txt,.md,.html,.htm,.tex,.pdf,.docx" data-page-node-id="tCOTNYaDByF4ScPk9kBN3G">
-        <button class="btn primary" id="kbImportBtn" data-page-node-id="yTBHLrxxGzN27Zb9QsgLaF">📥 上传导入</button>
+      <div class="card-collapse-body" id="kbImportCollapseBody">
+        <details class="hint-fold" data-page-node-id="xXwjz7Q6HfApRN2FhDWngm"><summary data-page-node-id="N4omxCGmZX3k3VDUGMHcZG">ℹ️ 说明</summary>
+        <div class="hint" data-page-node-id="i6y3giSuFhwAcpqJhErPZk">三层契约（与导入工程一致）：上传落 <code data-page-node-id="FbXMLXN3WeGHmNjJx9VdeC">imports/&lt;分类&gt;/</code> → 解析写入 <code data-page-node-id="i5uk70FDwGthjag6hx3Uuo">records.jsonl</code>（<b data-page-node-id="XklvmAH4tGTekglagEteFv">同名重导覆盖</b>）、原件归档 <code data-page-node-id="Qnf3EBMWQBvhCUm7wZ0sl4">archive/</code>；识别失败进 <code data-page-node-id="cTBwdm7johopYbfQo4zVbm">quarantine/</code> 隔离区，全程留 <code data-page-node-id="S5IsDAnibifvUbSQa3kZAl">import_log.jsonl</code> 痕迹。支持 txt/md、html、docx（<b data-page-node-id="tpc0gKPC48nc0yHHbXWFg7">tex/pdf 真题源请到「🗂 真题库」导入</b>）；也可粘贴文本直录；<b data-page-node-id="plvv6UuBR7sVd2gtHIweTY">扫描版 PDF</b> 可走下方 🛰 MinerU 云端解析（自动 OCR + 双栏还原）。</div>
+        </details>
+        <div class="row-gap" style="flex-wrap:wrap" data-page-node-id="NSHR5M1Rtzwst1t2c2TD9B">
+          <select id="kbImportCategory" class="input" style="width:110px" data-page-node-id="noPwZwPP4SLmAk2wWyO0iV">
+            <option value="真题" data-page-node-id="trCZBA8jDLGbycC5IU9D2o">真题</option>
+            <option value="外刊" data-page-node-id="Gu0pExzdDp9kWpxxtHRYCB">外刊</option>
+            <option value="教材" data-page-node-id="t8PakpeehsPHCkarmQmu0e">教材</option>
+            <option value="直录" data-page-node-id="iXtY9l0zlkIxSnzgpZRpHU">直录</option>
+          </select>
+          <input type="file" id="kbImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".txt,.md,.html,.htm,.tex,.pdf,.docx" data-page-node-id="tCOTNYaDByF4ScPk9kBN3G">
+          <button class="btn primary" id="kbImportBtn" data-page-node-id="yTBHLrxxGzN27Zb9QsgLaF">📥 上传导入</button>
+        </div>
+        <div class="row-gap" style="flex-wrap:wrap;align-items:stretch" data-page-node-id="6z9IkQqKByIkS7XpsHlkfh">
+          <input type="text" id="kbPasteTitle" class="input" placeholder="标题（可选，首行 # 也可当标题）" style="width:230px" data-page-node-id="DH2dhNR2BhJUEbqYIURD7c">
+          <textarea id="kbPasteText" class="input" rows="3" placeholder="粘贴文本直录：外刊段落、笔记、错题整理……" style="flex:1;min-width:260px"></textarea>
+          <button class="btn" id="kbPasteBtn" data-page-node-id="GoKofMy6wuUgDg848bwy3e">📝 粘贴导入</button>
+        </div>
+        <div class="row-gap" style="flex-wrap:wrap" data-page-node-id="nUTJYcdBGfZFfWgcTrk2vb">
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px" data-page-node-id="qVF9x1ZYRBqppupNWglCMu"><input type="checkbox" id="kbMineruOcr" checked data-page-node-id="8jXk38HsBDVCz7E4A8zIoo"> 扫描件（强制 OCR）</label>
+          <input type="file" id="kbMineruFile" class="input" multiple style="flex:1;min-width:220px" accept=".pdf" data-page-node-id="TeIGLiDP4mvdld5WKRkYjM">
+          <button class="btn" id="kbMineruBtn" data-page-node-id="fyBhDui4OYIfd6RZ4v5snP">🛰 MinerU 云端解析</button>
+        </div>
+        <div class="result" id="kbImportResult" data-page-node-id="MPA9AVTfGXqqXiuLhh3qE3"></div>
       </div>
-      <div class="row-gap" style="flex-wrap:wrap;align-items:stretch" data-page-node-id="6z9IkQqKByIkS7XpsHlkfh">
-        <input type="text" id="kbPasteTitle" class="input" placeholder="标题（可选，首行 # 也可当标题）" style="width:230px" data-page-node-id="DH2dhNR2BhJUEbqYIURD7c">
-        <textarea id="kbPasteText" class="input" rows="3" placeholder="粘贴文本直录：外刊段落、笔记、错题整理……" style="flex:1;min-width:260px"></textarea>
-        <button class="btn" id="kbPasteBtn" data-page-node-id="GoKofMy6wuUgDg848bwy3e">📝 粘贴导入</button>
-      </div>
-      <div class="row-gap" style="flex-wrap:wrap" data-page-node-id="nUTJYcdBGfZFfWgcTrk2vb">
-        <label style="display:flex;align-items:center;gap:6px;font-size:13px" data-page-node-id="qVF9x1ZYRBqppupNWglCMu"><input type="checkbox" id="kbMineruOcr" checked data-page-node-id="8jXk38HsBDVCz7E4A8zIoo"> 扫描件（强制 OCR）</label>
-        <input type="file" id="kbMineruFile" class="input" multiple style="flex:1;min-width:220px" accept=".pdf" data-page-node-id="TeIGLiDP4mvdld5WKRkYjM">
-        <button class="btn" id="kbMineruBtn" data-page-node-id="fyBhDui4OYIfd6RZ4v5snP">🛰 MinerU 云端解析</button>
-      </div>
-      <div class="result" id="kbImportResult" data-page-node-id="MPA9AVTfGXqqXiuLhh3qE3"></div>
     </div>
     <div class="card" id="kbDetailCard" style="display:none" data-page-node-id="AqaLozdzo2VKCjtv4Zvy81">
       <div class="card-title-row" data-page-node-id="05sJRhjVfqDWAcaWqnFpB0">
@@ -513,28 +572,33 @@
 
   <!-- ============ 真题库（v1.1.2） ============ -->
   <section id="tab-exam" class="tab-page" data-page-node-id="3thbmqXptek9R1mzko5MOs">
-    <div class="card" data-page-node-id="zrLt1D63nJqPOG3789dG4c">
-      <div class="card-title-row" data-page-node-id="lZEESy3vpTDsGmHIYXv9JP">
-        <div class="card-title" data-page-node-id="PT2imYkzu7EalCYeEFIq4G">🗂 真题库 · 考研英语一</div>
-        <button class="btn" id="exLogBtn" data-page-node-id="FwphYpAGfpG5v4CCv7dWZP">📜 导入日志</button>
+    <div class="card card-collapsible" data-page-node-id="zrLt1D63nJqPOG3789dG4c">
+      <div class="card-title-row" style="margin-bottom:0" data-page-node-id="lZEESy3vpTDsGmHIYXv9JP">
+        <div class="card-title" data-page-node-id="PT2imYkzu7EalCYeEFIq4G" style="margin-bottom:0">🗂 真题库 · 考研英语一</div>
+        <div class="row-gap" style="align-items:center">
+          <button class="btn" id="exLogBtn" data-page-node-id="FwphYpAGfpG5v4CCv7dWZP">📜 导入日志</button>
+          <button class="card-collapse-toggle" type="button" data-collapse-target="#exCardCollapseBody" title="折叠/展开">收起 ▴</button>
+        </div>
       </div>
-      <details class="hint-fold" data-page-node-id="c7mGBEtRCE7B7kWREAPQ4A"><summary data-page-node-id="FEHistF6GO0LyW9TbgLhi0">📖 板块说明</summary>
-      <div class="hint" data-page-node-id="gzNMoQF2e207ipCInLGaZR">结构化真题题库（<code data-page-node-id="SDVHQMyrjYxDGFtcInphsP">corpus/exams.jsonl</code>）：只收 <b data-page-node-id="F1KuMknK1SGJL9NOC9zWxk">tex / pdf</b> 结构化源，自动拆题入库（同名重导覆盖，失败进隔离区）。按「<b data-page-node-id="gCBI4I8X7nu7TIrdG4cpcn">考试-题型</b>」专项处理——考研-完形填空 / 阅读理解 / 新题型 / 翻译 / 写作，各题型处理逻辑独立、输出结构统一。全库搜索与 AI 真题原句注入均覆盖本库。扫描版 PDF 可走 🛰 MinerU 解析（产出整卷「真题正文」入库；结构化拆题仍需 tex/文字层 PDF）。</div>
-      </details>
-      <div class="row-gap" style="flex-wrap:wrap" data-page-node-id="glIIs8VYlET4xxCyOaoZdN">
-        <input type="file" id="exImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".tex,.pdf" data-page-node-id="LUl41UwF6mrKjOnL1PZFjG">
-        <button class="btn primary" id="exImportBtn" data-page-node-id="TYrTWjOGa952mw9zJvlMZF">🗂 导入真题</button>
+      <div class="card-collapse-body" id="exCardCollapseBody">
+        <details class="hint-fold" data-page-node-id="c7mGBEtRCE7B7kWREAPQ4A" style="margin-top:8px"><summary data-page-node-id="FEHistF6GO0LyW9TbgLhi0">📖 板块说明</summary>
+        <div class="hint" data-page-node-id="gzNMoQF2e207ipCInLGaZR">结构化真题题库（<code data-page-node-id="SDVHQMyrjYxDGFtcInphsP">corpus/exams.jsonl</code>）：只收 <b data-page-node-id="F1KuMknK1SGJL9NOC9zWxk">tex / pdf</b> 结构化源，自动拆题入库（同名重导覆盖，失败进隔离区）。按「<b data-page-node-id="gCBI4I8X7nu7TIrdG4cpcn">考试-题型</b>」专项处理——考研-完形填空 / 阅读理解 / 新题型 / 翻译 / 写作，各题型处理逻辑独立、输出结构统一。全库搜索与 AI 真题原句注入均覆盖本库。扫描版 PDF 可走 🛰 MinerU 解析（产出整卷「真题正文」入库；结构化拆题仍需 tex/文字层 PDF）。</div>
+        </details>
+        <div class="row-gap" style="flex-wrap:wrap;margin-top:8px" data-page-node-id="glIIs8VYlET4xxCyOaoZdN">
+          <input type="file" id="exImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".tex,.pdf" data-page-node-id="LUl41UwF6mrKjOnL1PZFjG">
+          <button class="btn primary" id="exImportBtn" data-page-node-id="TYrTWjOGa952mw9zJvlMZF">🗂 导入真题</button>
+        </div>
+        <div class="row-gap" style="flex-wrap:wrap" data-page-node-id="GXFaEvDdNoJMeEnR8vBbaE">
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px" data-page-node-id="X9Zg6oOBBnFFtUO7Exsn2O"><input type="checkbox" id="exMineruOcr" checked data-page-node-id="OmnNBfSF4wAXqFUsDsYvnX"> 扫描件</label>
+          <input type="file" id="exMineruFile" class="input" multiple style="flex:1;min-width:220px" accept=".pdf" data-page-node-id="QksGBjZ2eP6LVVlAvMqWzM">
+          <button class="btn" id="exMineruBtn" data-page-node-id="Sx0wSlYyG4WCRCdXeKagAD">🛰 MinerU 解析（→ 真题正文）</button>
+        </div>
+        <div class="result" id="exImportResult" data-page-node-id="gxOHKU0enUV7obZARC8weO"></div>
+        <div class="card-title-row" style="margin-top:14px" data-page-node-id="F1SE7rqjCze8qxFLPUQ6WI"><div class="card-title" data-page-node-id="IwFKhJHZxsSaBjBdB8wxFX">📄 真题列表</div></div>
+        <div class="result" id="exListResult" data-page-node-id="1DvjpOuyK5JBJK4AHS4rZm"></div>
+        <div id="exList" data-page-node-id="DMhnasjxfKIkdlOpdt40Wo"></div>
+        <div id="exPagination" class="pagination-bar" style="display:none;margin-top:14px"></div>
       </div>
-      <div class="row-gap" style="flex-wrap:wrap" data-page-node-id="GXFaEvDdNoJMeEnR8vBbaE">
-        <label style="display:flex;align-items:center;gap:6px;font-size:13px" data-page-node-id="X9Zg6oOBBnFFtUO7Exsn2O"><input type="checkbox" id="exMineruOcr" checked data-page-node-id="OmnNBfSF4wAXqFUsDsYvnX"> 扫描件</label>
-        <input type="file" id="exMineruFile" class="input" multiple style="flex:1;min-width:220px" accept=".pdf" data-page-node-id="QksGBjZ2eP6LVVlAvMqWzM">
-        <button class="btn" id="exMineruBtn" data-page-node-id="Sx0wSlYyG4WCRCdXeKagAD">🛰 MinerU 解析（→ 真题正文）</button>
-      </div>
-      <div class="result" id="exImportResult" data-page-node-id="gxOHKU0enUV7obZARC8weO"></div>
-      <div class="card-title-row" style="margin-top:14px" data-page-node-id="F1SE7rqjCze8qxFLPUQ6WI"><div class="card-title" data-page-node-id="IwFKhJHZxsSaBjBdB8wxFX">📄 真题列表</div></div>
-      <div class="result" id="exListResult" data-page-node-id="1DvjpOuyK5JBJK4AHS4rZm"></div>
-      <div id="exList" data-page-node-id="DMhnasjxfKIkdlOpdt40Wo"></div>
-      <div id="exPagination" class="pagination-bar" style="display:none;margin-top:14px"></div>
     </div>
     <div class="card" id="exDetailCard" style="display:none" data-page-node-id="n20x6z8B8eXxxjkCqlFWrr">
       <div class="card-title-row" data-page-node-id="9fkzoJr8gdx4fOFsRdsRrN">
