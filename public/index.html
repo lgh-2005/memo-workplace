@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.4.2</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.4.3</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.4.2</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.4.3</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -270,13 +270,8 @@
 
             <label class="field-label">文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（采纳建议或自主微调）</span></label>
             <div class="filter-row" id="storyThemeRow"></div><!-- v2.4.1：题材 chips 动态渲染 -->
-            <label class="field-label">篇幅规格</label>
-            <div class="filter-row" id="storyLengthRow">
-              <button class="chip active" data-length="short">短篇 (~200词)</button>
-              <button class="chip" data-length="medium">中篇 (~400词)</button>
-              <button class="chip" data-length="long">长篇 (~700词)</button>
-            </div>
-            <button class="btn primary full" id="storyGenBtn" style="margin-top:14px">✨ 步骤二：根据当前规划生成文章</button>
+            <!-- v2.4.3：篇幅规格已删除——篇幅全权由 AI 分析建议约束 -->
+            <button class="btn primary full" id="storyGenBtn" style="margin-top:14px">✨ 步骤二：按分组逐篇生成文章</button>
             <div class="result" id="storyGenResult"></div>
           </div>
         </div>

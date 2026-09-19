@@ -981,7 +981,8 @@ $$('#quickRow .chip.q').forEach(c => c.addEventListener('click', () => {
 /* ================= v2.4.0：词文成章 —— 选词生成记忆文章 ================= */
 
 const storyState = {
-  quick: 'today', theme: '随缘', length: 'short',
+  quick: 'today', theme: '随缘',
+  length: 'short',     // v2.4.3：唯一写入来源=AI 分析采纳（篇幅 chips 已删除）
   pool: [],            // 已选词（小写）
   current: null,       // 当前文章对象
   hist: [],            // 历史列表
@@ -1023,12 +1024,7 @@ $$('#storyQuickRow .chip').forEach(c => c.addEventListener('click', () => {
 }));
 
 /* v2.4.1：题材 chips 改为动态渲染（renderStoryThemeRow），静态绑定移除 */
-
-$$('#storyLengthRow .chip').forEach(c => c.addEventListener('click', () => {
-  $$('#storyLengthRow .chip').forEach(x => x.classList.remove('active'));
-  c.classList.add('active');
-  storyState.length = c.dataset.length;
-}));
+/* v2.4.3：篇幅规格 chips 已删除——篇幅全权由 AI 分析建议约束（storyState.length 仅由采纳建议写入） */
 
 async function storyQuickFill() {
   const out = $('#storyAnalyzeResult') || $('#storyGenResult');
@@ -1165,16 +1161,13 @@ function renderStoryAnalysis(a) {
     </div>`).join('') || '<div class="hint">无分组建议</div>';
 }
 
-/** 一键采纳：同步 AI 推荐的篇幅，题材按首选分组建议映射（存在自定义题材则优先取它） */
+/** 一键采纳：篇幅写入 storyState（v2.4.3 篇幅已无 chips，全权由 AI 建议约束）；题材按首选分组建议映射 */
 $('#storyAdoptAdviceBtn').addEventListener('click', () => {
   const a = storyState.analysis;
   if (!a) { toast('⚠️ 请先完成分析'); return; }
-  // 篇幅采纳
+  // 篇幅采纳（唯一来源：AI 建议）
   const lenKey = ['short', 'medium', 'long'].includes(a.recommendedLength) ? a.recommendedLength : null;
-  if (lenKey) {
-    storyState.length = lenKey;
-    $$('#storyLengthRow .chip').forEach(x => x.classList.toggle('active', x.dataset.length === lenKey));
-  }
+  if (lenKey) storyState.length = lenKey;
   // 题材采纳：第一个分组的 theme 与题材清单做包含匹配（如“校园/科技”→“校园”）
   const row = $('#storyThemeRow');
   const chips = row ? $$('#storyThemeRow .chip') : [];
@@ -1191,10 +1184,10 @@ $('#storyAdoptAdviceBtn').addEventListener('click', () => {
     matched.classList.add('active');
     storyState.theme = matched.dataset.theme || matched.textContent.trim();
   }
-  toast(`✅ 已采纳：篇幅=${lenKey || storyState.length}，题材=${storyState.theme}（可手动微调后生成）`);
+  toast(`✅ 已采纳：篇幅=${lenKey || storyState.length}，题材=${storyState.theme}`);
 });
 
-/* 生成文章（v2.4.2：解除 3 词门槛；传入分析上下文，弱化硬性题材指定） */
+/* 生成文章（v2.4.3：按 AI 分组逐篇生成，一次多篇；篇幅全权来自分析建议） */
 async function generateStory() {
   const btn = $('#storyGenBtn'), out = $('#storyGenResult');
   if (storyState.pool.length < 1) {
@@ -1202,28 +1195,42 @@ async function generateStory() {
     out.className = 'result err';
     return;
   }
+  if (!storyState.analysis) {
+    out.textContent = '⚠️ 请先完成「步骤一：AI 分析」——篇幅与分组由分析建议全权约束';
+    out.className = 'result err';
+    return;
+  }
   btn.disabled = true;
   const a = storyState.analysis;
   const lenLabel = ({ short: '短篇', medium: '中篇', long: '长篇' })[storyState.length] || '短篇';
-  const userInstruction = a
-    ? (a.summary || '') + (Array.isArray(a.groups) && a.groups.length ? ' 分组建议：' + a.groups.map(g => `${g.name}(${(g.words || []).length}词,${g.theme || ''}):${g.suggestedPlot || ''}`).join('；') : '')
-    : '';
-  out.textContent = `✨ AI 正在把 ${storyState.pool.length} 个词写进${storyState.theme}故事…（约 10-60 秒，词多时更久）`;
+  const userInstruction = (a.summary || '') + (Array.isArray(a.groups) && a.groups.length ? ' 分组建议：' + a.groups.map(g => `${g.name}(${(g.words || []).length}词,${g.theme || ''}):${g.suggestedPlot || ''}`).join('；') : '');
+  // v2.4.3：分组 ≥2 时按分组逐篇生成；否则全词池单篇
+  const groups = (Array.isArray(a.groups) && a.groups.length >= 2)
+    ? a.groups.map(g => ({ name: g.name || '', theme: g.theme || '', words: g.words || [], suggestedPlot: g.suggestedPlot || '' }))
+    : [];
+  const useGroups = groups.length >= 2 && groups.reduce((n, g) => n + g.words.length, 0) > 0;
+  const totalPieces = useGroups ? groups.length : 1;
+  out.textContent = useGroups
+    ? `✨ AI 正在按 ${totalPieces} 个分组逐篇创作（0/${totalPieces}）…每篇约 20-60 秒`
+    : `✨ AI 正在把 ${storyState.pool.length} 个词写进${storyState.theme}故事…（约 10-60 秒）`;
   out.className = 'result';
   try {
     const r = await api('/api/story/generate', {
       method: 'POST',
       body: {
         words: storyState.pool,
+        groups: useGroups ? groups : undefined,
         theme: storyState.theme,
         length: storyState.length,
         lengthLabel: lenLabel,
         userInstruction,
       },
     });
-    out.textContent = '✅ 生成完成';
+    const stories = r.stories || (r.story ? [r.story] : []);
+    const partialNote = r.partial ? `（${r.failed ? '「' + r.failed.group + '」失败：' + r.failed.error : ''}）` : '';
+    out.textContent = `✅ 生成完成：共 ${stories.length} 篇${partialNote}`;
     out.className = 'result ok';
-    renderStory(r.story);
+    if (stories.length) renderStory(stories[0]);
     loadStoryHist();
     // 折叠生成参数卡与选词卡，突出文章成果
     collapseCard('#storyParamBody', true);
@@ -1254,7 +1261,9 @@ function highlightStoryWords(passage, words) {
 function renderStory(s) {
   storyState.current = s;
   $('#storyResultCard').style.display = '';
-  $('#storyTitle').textContent = `📖 ${s.title}（${s.theme} · ${s.words.length} 词）`;
+  // v2.4.3：完成态徽章——done=true 绿色已完成 / false 黄色待做
+  const badge = s.done ? '<span class="story-done-badge ok">✅ 已完成</span>' : '<span class="story-done-badge todo">📝 待做</span>';
+  $('#storyTitle').innerHTML = `📖 ${esc(s.title)}（${esc(s.theme)} · ${s.words.length} 词）${badge}`;
   $('#storyPassage').innerHTML = highlightStoryWords(s.passage, s.words);
   $('#storyTranslation').textContent = s.translation || '（无翻译）';
   $('#storyHooks').innerHTML = (s.hooks || []).map(h => `
@@ -1270,7 +1279,7 @@ function renderStory(s) {
   $('#storyResultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-/* 检索自测渲染与判分 */
+/* 检索自测渲染与判分（v2.4.3：题数不限，全部作答后文章置「已完成」） */
 function renderStoryQuiz(s) {
   const box = $('#storyQuiz'), res = $('#storyQuizResult');
   res.textContent = '';
@@ -1283,6 +1292,7 @@ function renderStoryQuiz(s) {
     </div>`).join('') || '<div class="hint">无自测题</div>';
   const answers = (s.quiz || []).map(q => q.answer);
   const picked = {};
+  let completedReported = false;
   $$('#storyQuiz .story-quiz-opt').forEach(b => b.addEventListener('click', () => {
     const qi = Number(b.dataset.qi), oj = Number(b.dataset.oj);
     if (picked[qi] !== undefined) return;   // 每题只答一次
@@ -1297,6 +1307,19 @@ function renderStoryQuiz(s) {
     const right = Object.keys(picked).filter(k => picked[k] === answers[k]).length;
     res.textContent = `📊 已答 ${done}/${answers.length}，答对 ${right} 题`;
     res.className = 'result ' + (done === answers.length ? (right >= answers.length - 1 ? 'ok' : 'warn') : '');
+    // v2.4.3：全部作答 → 上报完成态，标题徽章切换为绿色「已完成」
+    if (done === answers.length && !completedReported && s.id) {
+      completedReported = true;
+      api(`/api/story/${s.id}/done`, { method: 'POST' })
+        .then(() => {
+          if (storyState.current && storyState.current.id === s.id) storyState.current.done = true;
+          const badge = $('#storyTitle .story-done-badge');
+          if (badge) { badge.textContent = '✅ 已完成'; badge.className = 'story-done-badge ok'; }
+          toast('🎉 自测完成，文章已标记「已完成」');
+          loadStoryHist();
+        })
+        .catch(() => {});
+    }
   }));
 }
 
@@ -1352,12 +1375,13 @@ async function loadStoryHist() {
       return;
     }
     box.innerHTML = storyState.hist.map(s => `
-      <div class="story-hist-item" data-sid="${esc(s.id)}">
+      <div class="story-hist-item${s.done ? ' done' : ''}" data-sid="${esc(s.id)}">
         <div class="story-hist-main">
           <b>${esc(s.title)}</b>
-          <span class="story-hist-meta">${esc(s.theme)} · ${s.words.length} 词 · ${fmtBJ(s.createdAt)}</span>
+          <span class="story-hist-meta">${esc(s.theme)} · ${s.words.length} 词 · ${s.quizCount || 0} 题 · ${fmtBJ(s.createdAt)}</span>
           <span class="story-hist-words">${esc(s.words.slice(0, 8).join(', '))}${s.words.length > 8 ? '…' : ''}</span>
         </div>
+        <span class="story-done-badge ${s.done ? 'ok' : 'todo'}">${s.done ? '✅ 已完成' : '📝 待做'}</span>
         <button class="btn small" data-sload="${esc(s.id)}">查看</button>
       </div>`).join('');
     $$('#storyHistList [data-sload]').forEach(b => b.addEventListener('click', async () => {

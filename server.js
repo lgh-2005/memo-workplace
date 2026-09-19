@@ -1238,10 +1238,13 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
       // v2.4.0.b：结构化输出场景（词文成章）请求 JSON 模式；服务商不支持时由上游报错或走解析兜底
       bodyObj.response_format = { type: 'json_object' };
     }
+    // v2.4.3：全模型服务开启流式——长请求不再占用无数据连接，防止中转站/网关 504 超时
+    bodyObj.stream = true;
     res = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Accept: 'text/event-stream',
         ...(llm.apiKey ? { 'Authorization': 'Bearer ' + llm.apiKey } : {}),
       },
       body: JSON.stringify(bodyObj),
@@ -1253,20 +1256,52 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     const text = await res.text().catch(() => '');
     throw new Error(`AI 请求失败 (HTTP ${res.status}) ${text.slice(0, 300)}`);
   }
-  const json = await res.json();
-  const msg = json.choices?.[0]?.message || {};
-  let content = msg.content;
-  // v2.0.0.a 增强：部分中转站会把输出置于 text 字段，做兼容提取
-  if (!content && json.choices?.[0]?.text) {
-    content = json.choices[0].text;
+  // v2.4.3：统一解析——上游真流式（SSE）则逐块聚合 delta；上游忽略 stream 参数回整包 JSON 也能兼容
+  const ct = String(res.headers.get('content-type') || '');
+  let content = '';
+  let reasoningLen = 0;
+  let finishReason = '';
+  if (ct.includes('text/event-stream')) {
+    try {
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buf = '';
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+        const lines = buf.split('\n');
+        buf = lines.pop() || '';   // 末行可能不完整，留到下一轮
+        for (const raw of lines) {
+          const line = raw.trim();
+          if (!line.startsWith('data:')) continue;
+          const payload = line.slice(5).trim();
+          if (!payload || payload === '[DONE]') continue;
+          try {
+            const j = JSON.parse(payload);
+            const d = j.choices?.[0]?.delta || {};
+            if (typeof d.content === 'string') content += d.content;
+            if (typeof d.reasoning_content === 'string') reasoningLen += d.reasoning_content.length;
+            if (j.choices?.[0]?.finish_reason) finishReason = j.choices[0].finish_reason;
+          } catch { /* 单块坏数据忽略 */ }
+        }
+      }
+    } catch (e) {
+      throw new Error(`AI 流式响应中断（${e.message}），请重试`);
+    }
+  } else {
+    const json = await res.json();
+    const msg = json.choices?.[0]?.message || {};
+    content = msg.content || json.choices?.[0]?.text || '';
+    reasoningLen = String(msg.reasoning_content || '').length;
+    finishReason = json.choices?.[0]?.finish_reason || '';
   }
-  // v2.3.5a 修复：思考模式开启后 content 为空时，reasoning_content 里是被 max_tokens 截断的思考过程——
-  // 直接回退返回会「整条回复只剩半截思考体」。这里改为如实报错（带 finish_reason），提示调大 max_tokens 或关闭思考。
-  if (!content) {
-    const rc = String(msg.reasoning_content || '').trim();
-    const finish = json.choices?.[0]?.finish_reason || 'unknown';
+  content = String(content || '');
+  // v2.3.5a 修复：思考耗尽 max_tokens 时正文为空——如实报错（带 finish_reason），提示调大 max_tokens 或关闭思考。
+  if (!content.trim()) {
+    const finish = finishReason || 'unknown';
     throw new Error(
-      `AI 只返回了思考过程，正文为空（finish_reason=${finish}${rc ? '，思考已生成 ' + rc.length + ' 字' : ''}）。` +
+      `AI 只返回了思考过程，正文为空（finish_reason=${finish}${reasoningLen ? '，思考已生成 ' + reasoningLen + ' 字' : ''}）。` +
       `多为 max_tokens 被思考耗尽所致：请到设置页调大该服务商的 Max Tokens，或关闭思考等级后重试。`
     );
   }
@@ -1537,8 +1572,8 @@ const DEFAULT_PROMPTS = {
       '3. 目标单词在短文中原样出现（变形时在 hooks 里标注），便于前端加粗高亮。',
       '4. hooks：每个目标词一条 {word, phonetic, pos, meaning, hook}——phonetic 美式音标（不确定给空串）、pos 词性缩写、meaning 考研核心义项（15字内）、hook 一句中文记忆钩子（谐音/联想/词根拆解，25字内，具体不空泛）。',
       '5. translation：全文通顺中文翻译。',
-      '6. quiz：5 道选择题 {q, options:[4个], answer(1-4), explain(40字内)}——3 道用短文原句挖空目标词，2 道选义；干扰项来自目标词表或形近词。',
-      '7. JSON 必须包含全部五个字段：title、passage、hooks、translation、quiz，缺一不可（hooks 数组元素数 = 目标词数，quiz 数组元素数 = 5）。',
+      '6. quiz：检索自测题，数量按文章篇幅与难度自适应（短篇 5~6 题、中篇 7~8 题、长篇 9~12 题），覆盖全文关键情节与全部核心目标词——{q, options:[4个], answer(1-4), explain(40字内)}——多数用短文原句挖空目标词，穿插选义与细节理解题；干扰项来自目标词表或形近词。',
+      '7. JSON 必须包含全部五个字段：title、passage、hooks、translation、quiz，缺一不可（hooks 数组元素数 = 目标词数，quiz 数量按篇幅 5~12 题自适应）。',
       '8. 完整示例（3 词的迷你样例，展示结构——你生成时按目标词数量与篇幅扩展）：',
       '{"title":"The Last Train","passage":"The station was nearly empty...（完整英文正文）","hooks":[{"word":"desperate","phonetic":"/ˈdespərət/","pos":"adj.","meaning":"不顾一切的；绝望的","hook":"谐音：德斯珀雷特，德行绝望了就不顾一切"},{"word":"commute","phonetic":"/kəˈmjuːt/","pos":"v./n.","meaning":"通勤","hook":"com(共同)+mute(移动)→大家共同移动=通勤"},{"word":"scramble","phonetic":"/ˈskræmbl/","pos":"v.","meaning":"争夺；爬行","hook":"scram(爬)+ble→争着往上爬"}],"translation":"（完整中文翻译）","quiz":[{"q":"The passengers ___ for the last seats on the train.","options":["scrambled","strolled","zoomed","melted"],"answer":1,"explain":"scramble for 争夺，符合末节车厢拥挤场景。"},{"q":"A ___ worker takes the same train every morning.","options":["commute","commuting","commuted","commuter"],"answer":4,"explain":"commuter 通勤者，作名词。"},{"q":"desperate 的核心含义是？","options":["高兴的","不顾一切的","缓慢的","富有的"],"answer":2,"explain":"desperate 绝望的/不顾一切的。"},{"q":"文中谁最终赶上了火车？","options":["the guard","the narrator","the driver","nobody"],"answer":2,"explain":"结尾处 narrator 挤上了末班车。"},{"q":"commute 在文中的词性是？","options":["名词","动词","形容词","副词"],"answer":1,"explain":"文中用作动词，表示通勤。"}]}',
       '再次强调：回复只能是这样一个完整 JSON 对象。passage 字段里放英文正文；五个字段一个都不能少。',
@@ -4266,6 +4301,7 @@ const server = http.createServer(async (req, res) => {
 
       // v2.4.0：词文成章——选词生成记忆故事（故事+钩子双形态 + 中文翻译 + 检索自测）
       // v2.4.2：解除严格数量限制，选词不限数量（至少 1 词，可分批分段生成）
+      // v2.4.3：支持 groups 多分组——一次生成多篇文章（每组一篇，顺序生成，逐篇落库）
       if (p === '/api/story/generate' && req.method === 'POST') {
         const body = await readBody(req);
         const words = [...new Set((Array.isArray(body.words) ? body.words : [])
@@ -4273,6 +4309,19 @@ const server = http.createServer(async (req, res) => {
           .filter(w => /^[a-z][a-z''\-]{0,39}$/.test(w)))];
         if (words.length < 1) return sendJSON(res, 400, { error: '请至少选择 1 个单词' });
         if (words.length > 200) return sendJSON(res, 400, { error: '单次生成单词量建议不超过 200 词，请适当精简' });
+        // v2.4.3：多分组解析——groups 为 [{name, theme, words, suggestedPlot}]，1~6 组；无 groups 时退化为单篇（全词池）
+        const groupsIn = (Array.isArray(body.groups) ? body.groups : [])
+          .map(g => ({
+            name: String(g?.name || '').slice(0, 40),
+            theme: String(g?.theme || '').slice(0, 30),
+            words: [...new Set((Array.isArray(g?.words) ? g.words : []).map(w => String(w || '').trim().toLowerCase()).filter(w => /^[a-z][a-z''\-]{0,39}$/.test(w)))].slice(0, 200),
+            plot: String(g?.suggestedPlot || '').slice(0, 200),
+          }))
+          .filter(g => g.words.length >= 1)
+          .slice(0, 6);
+        const useGroups = groupsIn.length >= 2;
+        const totalWords = useGroups ? groupsIn.reduce((n, g) => n + g.words.length, 0) : words.length;
+        if (totalWords > 200) return sendJSON(res, 400, { error: '分组词总数超过 200，请精简' });
         // v2.4.1：题材动态化——storyThemes 自定义列表优先，缺省用内置 16 题材
         const themes = storyThemesList();
         const theme = themes.includes(body.theme) ? body.theme : (body.theme ? String(body.theme).slice(0, 30) : (themes[0] || '随缘'));
@@ -4283,165 +4332,196 @@ const server = http.createServer(async (req, res) => {
         };
         const lengthKey = lengths[body.length] ? body.length : (body.length ? 'medium' : 'short');
         const customGuide = body.lengthGuide ? String(body.lengthGuide).slice(0, 80) : (lengths[lengthKey] ? lengths[lengthKey].guide : '适中篇幅');
-        const lens = Object.fromEntries(words.map(w => [w, db.glosses[w] || null]));
-        // v2.4.0：真题/外刊真实语境注入，引导模型优先用考研高频义项
-        let evidenceNote = '';
-        try {
-          const lines = [];
-          for (const w of words.slice(0, 30)) {
-            const ev = kbEvidenceForWord(w);
-            const ex = ev.exams[0] || ev.external[0] || ev.corpus[0];
-            if (ex?.s) lines.push(`- ${w}: ${String(ex.s).slice(0, 120)}`);
-          }
-          if (lines.length) evidenceNote = '\n\n【真实语境参考】以下是部分单词在考研真题/外刊中的原句，优先按这些义项与用法编写：\n' + lines.join('\n');
-        } catch { /* 语料库不可用不阻塞 */ }
-        const msgs = [
-          { role: 'system', content: getPrompt('story_gen') },
-          { role: 'user', content: [
-            `【目标单词】（共 ${words.length} 个）：${words.join(', ')}`,
-            lens && words.some(w => lens[w]) ? `【词典参考】\n` + words.filter(w => lens[w]).slice(0, 50).map(w => `- ${w}: ${lens[w].pos || ''} ${lens[w].gloss || ''}`).join('\n') : '',
-            `【题材】：${theme}`,
-            `【篇幅建议与要求】：${body.lengthLabel || lengths[lengthKey]?.label || '自适应'}（${customGuide}）`,
-            body.userInstruction ? `【AI分析与分类建议提示】：${String(body.userInstruction).slice(0, 300)}` : '',
-            evidenceNote,
-            '【再次提醒】你的回复必须整体是一个 JSON 对象（第一个字符 { 最后一个字符 }），英文正文放在 passage 字段里，不要在 JSON 之外输出任何文字。',
-          ].filter(Boolean).join('\n\n') },
-        ];
-        const reply = await llmChat(msgs, {
-          maxTokens: 4000,
-          // v2.4.1：词文成章可单独指定服务商与覆盖模型（留空沿用默认服务商）
-          providerId: (config.story && config.story.providerId) || undefined,
-          llmOverride: {
-            _jsonMode: true,
-            _noThinking: true,   // v2.4.2.c：长文结构化生成禁思考（实测思考自适应膨胀耗尽 max_tokens）
-            ...(((config.story && config.story.model)) ? { model: config.story.model } : {}),
-          },
-        });
-        let parsed;
-        try {
-          // v2.4.0a 容错：真实模型常在 JSON 前后带说明文字/代码围栏——先剥围栏，再提取第一个平衡的 {...} 块解析
-          let text = String(reply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+        const stories = [];
+        const genOne = async (gWords, gTheme, gName, gPlot, gLenKey, gLenLabel) => {
+          const lens = Object.fromEntries(gWords.map(w => [w, db.glosses[w] || null]));
+          // v2.4.0：真题/外刊真实语境注入，引导模型优先用考研高频义项
+          let evidenceNote = '';
           try {
-            parsed = JSON.parse(text);
-          } catch {
-            const start = text.indexOf('{');
-            if (start === -1) throw new Error('no-json');
-            let depth = 0, inStr = false, esc2 = false, end = -1;
-            for (let i = start; i < text.length; i++) {
-              const ch = text[i];
-              if (esc2) { esc2 = false; continue; }
-              if (ch === '\\') { esc2 = true; continue; }
-              if (ch === '"') { inStr = !inStr; continue; }
-              if (inStr) continue;
-              if (ch === '{') depth++;
-              else if (ch === '}') { depth--; if (depth === 0) { end = i + 1; break; } }
+            const lines = [];
+            for (const w of gWords.slice(0, 30)) {
+              const ev = kbEvidenceForWord(w);
+              const ex = ev.exams[0] || ev.external[0] || ev.corpus[0];
+              if (ex?.s) lines.push(`- ${w}: ${String(ex.s).slice(0, 120)}`);
             }
-            if (end === -1) throw new Error('no-json');
-            parsed = JSON.parse(text.slice(start, end));
-          }
-          if (typeof parsed.passage !== 'string' || !parsed.passage.trim()) throw new Error('passage-missing');
-        } catch {
-          // v2.4.0e 二段式兜底：弱指令遵循模型（实测 deepseek-v4.1-flash）对结构化 JSON 服从性差，
-          // 但纯写作没问题——第一段产物若为英文正文，直接用作 passage，进入第二段抽取补齐元数据
-          const text = String(reply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
-          const enRatio = (text.match(/[A-Za-z]/g) || []).length / Math.max(1, text.replace(/\s/g, '').length);
-          const inlinePassage = typeof parsed === 'object' && parsed && typeof parsed.passage === 'string' ? parsed.passage : '';
-          const passage0 = inlinePassage || (text.length > 200 && enRatio > 0.7 ? text : '');
-          if (!passage0) {
-            throw Object.assign(new Error('AI 输出无法解析为文章 JSON（schema 不符），点「换一篇」重试通常可解决'), { code: 'STORY_PARSE' });
-          }
-          parsed = { passage: passage0 };
-        }
-        // v2.4.0e 二段式补齐：title/hooks/translation/quiz 缺哪段补哪段（抽取任务的指令服从性远高于边写边结构化）
-        const needsMeta = !Array.isArray(parsed.hooks) || !parsed.hooks.length
-          || !parsed.translation || !Array.isArray(parsed.quiz) || parsed.quiz.length < 3
-          || !parsed.title;
-        if (needsMeta) {
+            if (lines.length) evidenceNote = '\n\n【真实语境参考】以下是部分单词在考研真题/外刊中的原句，优先按这些义项与用法编写：\n' + lines.join('\n');
+          } catch { /* 语料库不可用不阻塞 */ }
+          const msgs = [
+            { role: 'system', content: getPrompt('story_gen') },
+            { role: 'user', content: [
+              `【目标单词】（共 ${gWords.length} 个）：${gWords.join(', ')}`,
+              lens && gWords.some(w => lens[w]) ? `【词典参考】\n` + gWords.filter(w => lens[w]).slice(0, 50).map(w => `- ${w}: ${lens[w].pos || ''} ${lens[w].gloss || ''}`).join('\n') : '',
+              `【题材】：${gTheme}`,
+              `【篇幅建议与要求】：${gLenLabel || lengths[gLenKey]?.label || '自适应'}（${customGuide}）`,
+              gName ? `【本篇分组】：${gName}` : '',
+              gPlot ? `【情节建议】：${gPlot}` : '',
+              body.userInstruction ? `【AI分析与分类建议提示】：${String(body.userInstruction).slice(0, 300)}` : '',
+              evidenceNote,
+              '【再次提醒】你的回复必须整体是一个 JSON 对象（第一个字符 { 最后一个字符 }），英文正文放在 passage 字段里，不要在 JSON 之外输出任何文字。',
+            ].filter(Boolean).join('\n\n') },
+          ];
+          const reply = await llmChat(msgs, {
+            maxTokens: 4000,
+            // v2.4.1：词文成章可单独指定服务商与覆盖模型（留空沿用默认服务商）
+            providerId: (config.story && config.story.providerId) || undefined,
+            llmOverride: {
+              _jsonMode: true,
+              _noThinking: true,   // v2.4.2.c：长文结构化生成禁思考（实测思考自适应膨胀耗尽 max_tokens）
+              ...(((config.story && config.story.model)) ? { model: config.story.model } : {}),
+            },
+          });
+          let parsed;
           try {
-            const metaMsgs = [
-              { role: 'system', content: '你是考研英语词汇教练。对给定英文短文完成四项标注并只输出 JSON 对象（第一个字符 { 最后一个字符 }）：'
-                + '{"title":"英文标题(12词内)","hooks":[{"word":"单词(必须逐一核对确在文中出现,用原形)","phonetic":"美式音标,不确定给空串","pos":"词性缩写","meaning":"考研核心义项,15字内","hook":"一句中文记忆钩子,谐音/联想/词根,25字内"}],"translation":"全文通顺中文翻译","quiz":[5道选择题{"q":"题干","options":["A","B","C","D"],"answer":1到4,"explain":"40字内"}]}'
-                + '。hooks 必须覆盖给定的每个目标词；quiz 前3题用文中原句挖空目标词、后2题考词义。除 JSON 外禁止输出任何文字。' },
-              { role: 'user', content: `【目标词】${words.join(', ')}\n\n【英文短文】\n${parsed.passage.slice(0, 4500)}` },
-            ];
-            const metaReply = await llmChat(metaMsgs, { maxTokens: 2500, llmOverride: { _jsonMode: true } });
-            let meta;
-            const mt = String(metaReply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
-            try { meta = JSON.parse(mt); } catch {
-              const ms = mt.indexOf('{');
-              if (ms !== -1) {
-                let depth = 0, inStr = false, esc3 = false, me = -1;
-                for (let i = ms; i < mt.length; i++) {
-                  const ch = mt[i];
-                  if (esc3) { esc3 = false; continue; }
-                  if (ch === '\\') { esc3 = true; continue; }
-                  if (ch === '"') { inStr = !inStr; continue; }
-                  if (inStr) continue;
-                  if (ch === '{') depth++;
-                  else if (ch === '}') { depth--; if (depth === 0) { me = i + 1; break; } }
+            // v2.4.0a 容错：真实模型常在 JSON 前后带说明文字/代码围栏——先剥围栏，再提取第一个平衡的 {...} 块解析
+            let text = String(reply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+            try {
+              parsed = JSON.parse(text);
+            } catch {
+              const start = text.indexOf('{');
+              if (start === -1) throw new Error('no-json');
+              let depth = 0, inStr = false, esc2 = false, end = -1;
+              for (let i = start; i < text.length; i++) {
+                const ch = text[i];
+                if (esc2) { esc2 = false; continue; }
+                if (ch === '\\') { esc2 = true; continue; }
+                if (ch === '"') { inStr = !inStr; continue; }
+                if (inStr) continue;
+                if (ch === '{') depth++;
+                else if (ch === '}') { depth--; if (depth === 0) { end = i + 1; break; } }
+              }
+              if (end === -1) throw new Error('no-json');
+              parsed = JSON.parse(text.slice(start, end));
+            }
+            if (typeof parsed.passage !== 'string' || !parsed.passage.trim()) throw new Error('passage-missing');
+          } catch {
+            // v2.4.0e 二段式兜底：弱指令遵循模型（实测 deepseek-v4.1-flash）对结构化 JSON 服从性差，
+            // 但纯写作没问题——第一段产物若为英文正文，直接用作 passage，进入第二段抽取补齐元数据
+            const text = String(reply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+            const enRatio = (text.match(/[A-Za-z]/g) || []).length / Math.max(1, text.replace(/\s/g, '').length);
+            const inlinePassage = typeof parsed === 'object' && parsed && typeof parsed.passage === 'string' ? parsed.passage : '';
+            const passage0 = inlinePassage || (text.length > 200 && enRatio > 0.7 ? text : '');
+            if (!passage0) {
+              throw Object.assign(new Error('AI 输出无法解析为文章 JSON（schema 不符），点「换一篇」重试通常可解决'), { code: 'STORY_PARSE' });
+            }
+            parsed = { passage: passage0 };
+          }
+          // v2.4.0e 二段式补齐：title/hooks/translation/quiz 缺哪段补哪段（抽取任务的指令服从性远高于边写边结构化）
+          const needsMeta = !Array.isArray(parsed.hooks) || !parsed.hooks.length
+            || !parsed.translation || !Array.isArray(parsed.quiz) || parsed.quiz.length < 3
+            || !parsed.title;
+          if (needsMeta) {
+            try {
+              const metaMsgs = [
+                { role: 'system', content: '你是考研英语词汇教练。对给定英文短文完成四项标注并只输出 JSON 对象（第一个字符 { 最后一个字符 }）：'
+                  + '{"title":"英文标题(12词内)","hooks":[{"word":"单词(必须逐一核对确在文中出现,用原形)","phonetic":"美式音标,不确定给空串","pos":"词性缩写","meaning":"考研核心义项,15字内","hook":"一句中文记忆钩子,谐音/联想/词根,25字内"}],"translation":"全文通顺中文翻译","quiz":[按篇幅6~12道选择题{"q":"题干","options":["A","B","C","D"],"answer":1到4,"explain":"40字内"}]}'
+                  + '。hooks 必须覆盖给定的每个目标词；quiz 用文中原句挖空目标词并穿插词义题。除 JSON 外禁止输出任何文字。' },
+                { role: 'user', content: `【目标词】${gWords.join(', ')}\n\n【英文短文】\n${parsed.passage.slice(0, 4500)}` },
+              ];
+              const metaReply = await llmChat(metaMsgs, { maxTokens: 3000, llmOverride: { _jsonMode: true } });
+              let meta;
+              const mt = String(metaReply).replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+              try { meta = JSON.parse(mt); } catch {
+                const ms = mt.indexOf('{');
+                if (ms !== -1) {
+                  let depth = 0, inStr = false, esc3 = false, me = -1;
+                  for (let i = ms; i < mt.length; i++) {
+                    const ch = mt[i];
+                    if (esc3) { esc3 = false; continue; }
+                    if (ch === '\\') { esc3 = true; continue; }
+                    if (ch === '"') { inStr = !inStr; continue; }
+                    if (inStr) continue;
+                    if (ch === '{') depth++;
+                    else if (ch === '}') { depth--; if (depth === 0) { me = i + 1; break; } }
+                  }
+                  if (me !== -1) meta = JSON.parse(mt.slice(ms, me));
                 }
-                if (me !== -1) meta = JSON.parse(mt.slice(ms, me));
+              }
+              if (meta && typeof meta === 'object') {
+                if (!parsed.title && meta.title) parsed.title = meta.title;
+                if ((!Array.isArray(parsed.hooks) || !parsed.hooks.length) && Array.isArray(meta.hooks)) parsed.hooks = meta.hooks;
+                if (!parsed.translation && meta.translation) parsed.translation = meta.translation;
+                if ((!Array.isArray(parsed.quiz) || parsed.quiz.length < 3) && Array.isArray(meta.quiz)) parsed.quiz = meta.quiz;
+              }
+            } catch { /* 二段失败不阻塞：保留已成功的正文，缺失字段走确定性兜底 */ }
+          }
+          /* v2.4.0.f 确定性兜底：无论模型多不配合，文章+钩子+自测三件套保证齐全 */
+          const hooks = (Array.isArray(parsed.hooks) ? parsed.hooks : [])
+            .map(h => ({ word: String(h.word || '').trim(), phonetic: String(h.phonetic || '').slice(0, 40), pos: String(h.pos || '').slice(0, 12), meaning: String(h.meaning || '').slice(0, 40), hook: String(h.hook || '').slice(0, 60) }))
+            .filter(h => h.word).slice(0, 100);
+          // 钩子缺词：用韦氏释义缓存补卡片（hook 文案缺省提示），保证每个目标词都有卡
+          if (hooks.length < gWords.length) {
+            const have = new Set(hooks.map(h => h.word.toLowerCase()));
+            for (const w of gWords) {
+              if (have.has(w)) continue;
+              const g = db.glosses[w] || null;
+              hooks.push({ word: w, phonetic: (g && g.phonetic) || '', pos: (g && g.pos) || '', meaning: (g && g.gloss) || '', hook: g && g.gloss ? `释义卡：${g.gloss}` : '（本次未生成钩子，点「换一篇」重新生成可恢复）' });
+            }
+          }
+          let quiz = (Array.isArray(parsed.quiz) ? parsed.quiz : [])
+            .map(q => ({ q: String(q.q || '').slice(0, 300), options: (Array.isArray(q.options) ? q.options : []).map(o => String(o || '').slice(0, 120)).slice(0, 4), answer: Math.min(4, Math.max(1, Number(q.answer) || 1)), explain: String(q.explain || '').slice(0, 120) }))
+            .filter(q => q.q && q.options.length === 4).slice(0, 12);   // v2.4.3：自测不限 5 题，按篇幅 5~12 题自适应
+          // 自测缺题：确定性生成「词义四选一」（从词池+释义缓存出题，不依赖模型），目标至少 4 题
+          if (quiz.length < 4 && gWords.length >= 3) {
+            const pool = gWords.map(w => ({ w, g: db.glosses[w] || null }));
+            const distractors = pool.filter(x => x.g && x.g.gloss).map(x => x.g.gloss);
+            for (const { w, g } of pool) {
+              if (quiz.length >= 4) break;
+              if (!g || !g.gloss) continue;
+              const others = distractors.filter(x => x !== g.gloss);
+              if (others.length < 3) break;
+              const opts = [g.gloss, ...others.slice(0, 3)];
+              // 简单洗牌并记录答案位置
+              for (let i = opts.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [opts[i], opts[j]] = [opts[j], opts[i]]; }
+              quiz.push({ q: `单词「${w}」的核心含义是？`, options: opts, answer: opts.indexOf(g.gloss) + 1, explain: `${w} = ${g.gloss}` });
+            }
+          }
+          const story = {
+            id: crypto.randomUUID(),
+            title: String(parsed.title || `${gTheme}物语 · ${gWords.slice(0, 3).join(' · ')}`).slice(0, 120),
+            words: gWords,
+            theme: gTheme,
+            length: gLenKey,
+            passage: String(parsed.passage || '').slice(0, 6000),
+            hooks,
+            translation: String(parsed.translation || ''),
+            quiz,
+            done: false,   // v2.4.3：完成态——自测全部作答后置 true（绿色已完成/黄色待做）
+            createdAt: new Date().toISOString(),
+          };
+          if (!story.passage) throw Object.assign(new Error('AI 输出缺少正文（passage 为空）'), { code: 'STORY_EMPTY' });
+          db.stories.unshift(story);
+          return story;
+        };
+        try {
+          if (useGroups) {
+            // v2.4.3：多分组逐篇生成（顺序执行防并发压垮上游；逐篇落库，中途失败保留已完成篇并报进度）
+            for (let gi = 0; gi < groupsIn.length; gi++) {
+              const g = groupsIn[gi];
+              const gTheme = g.theme || theme;
+              const gLenKey = lengthKey;
+              try {
+                const s = await genOne(g.words, gTheme, g.name, g.plot, gLenKey, body.lengthLabel || lengths[gLenKey]?.label);
+                stories.push(s);
+              } catch (e) {
+                if (stories.length) {
+                  // 已有部分成功：如实返回进度与失败原因
+                  persistDB();
+                  return sendJSON(res, 207, { ok: true, partial: true, stories, failed: { group: g.name || `第 ${gi + 1} 组`, error: e.message } });
+                }
+                throw e;
               }
             }
-            if (meta && typeof meta === 'object') {
-              if (!parsed.title && meta.title) parsed.title = meta.title;
-              if ((!Array.isArray(parsed.hooks) || !parsed.hooks.length) && Array.isArray(meta.hooks)) parsed.hooks = meta.hooks;
-              if (!parsed.translation && meta.translation) parsed.translation = meta.translation;
-              if ((!Array.isArray(parsed.quiz) || parsed.quiz.length < 3) && Array.isArray(meta.quiz)) parsed.quiz = meta.quiz;
-            }
-          } catch { /* 二段失败不阻塞：保留已成功的正文，缺失字段走确定性兜底 */ }
-        }
-        /* v2.4.0.f 确定性兜底：无论模型多不配合，文章+钩子+自测三件套保证齐全 */
-        const hooks = (Array.isArray(parsed.hooks) ? parsed.hooks : [])
-          .map(h => ({ word: String(h.word || '').trim(), phonetic: String(h.phonetic || '').slice(0, 40), pos: String(h.pos || '').slice(0, 12), meaning: String(h.meaning || '').slice(0, 40), hook: String(h.hook || '').slice(0, 60) }))
-          .filter(h => h.word).slice(0, 100);
-        // 钩子缺词：用韦氏释义缓存补卡片（hook 文案缺省提示），保证每个目标词都有卡
-        if (hooks.length < words.length) {
-          const have = new Set(hooks.map(h => h.word.toLowerCase()));
-          for (const w of words) {
-            if (have.has(w)) continue;
-            const g = db.glosses[w] || null;
-            hooks.push({ word: w, phonetic: (g && g.phonetic) || '', pos: (g && g.pos) || '', meaning: (g && g.gloss) || '', hook: g && g.gloss ? `释义卡：${g.gloss}` : '（本次未生成钩子，点「换一篇」重新生成可恢复）' });
+          } else {
+            stories.push(await genOne(words, theme, '', '', lengthKey, body.lengthLabel || lengths[lengthKey]?.label));
           }
+        } finally {
+          if (db.stories.length > 200) db.stories.length = 200;   // 上限 200 篇，FIFO 裁剪
+          persistDB();
         }
-        let quiz = (Array.isArray(parsed.quiz) ? parsed.quiz : [])
-          .map(q => ({ q: String(q.q || '').slice(0, 300), options: (Array.isArray(q.options) ? q.options : []).map(o => String(o || '').slice(0, 120)).slice(0, 4), answer: Math.min(4, Math.max(1, Number(q.answer) || 1)), explain: String(q.explain || '').slice(0, 120) }))
-          .filter(q => q.q && q.options.length === 4).slice(0, 5);
-        // 自测缺题：确定性生成「词义四选一」（从词池+释义缓存出题，不依赖模型）
-        if (quiz.length < 3 && words.length >= 3) {
-          const pool = words.map(w => ({ w, g: db.glosses[w] || null }));
-          const distractors = pool.filter(x => x.g && x.g.gloss).map(x => x.g.gloss);
-          for (const { w, g } of pool) {
-            if (quiz.length >= 3) break;
-            if (!g || !g.gloss) continue;
-            const others = distractors.filter(x => x !== g.gloss);
-            if (others.length < 3) break;
-            const opts = [g.gloss, ...others.slice(0, 3)];
-            // 简单洗牌并记录答案位置
-            for (let i = opts.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [opts[i], opts[j]] = [opts[j], opts[i]]; }
-            quiz.push({ q: `单词「${w}」的核心含义是？`, options: opts, answer: opts.indexOf(g.gloss) + 1, explain: `${w} = ${g.gloss}` });
-          }
-        }
-        const story = {
-          id: crypto.randomUUID(),
-          title: String(parsed.title || `${theme}物语 · ${words.slice(0, 3).join(' · ')}`).slice(0, 120),
-          words,
-          theme,
-          length: lengthKey,
-          passage: String(parsed.passage || '').slice(0, 6000),
-          hooks,
-          translation: String(parsed.translation || ''),
-          quiz,
-          createdAt: new Date().toISOString(),
-        };
-        if (!story.passage) return sendJSON(res, 502, { error: 'AI 输出缺少正文（passage 为空），点「换一篇」重试' });
-        db.stories.unshift(story);
-        if (db.stories.length > 200) db.stories.length = 200;   // 上限 200 篇，FIFO 裁剪
-        persistDB();
-        return sendJSON(res, 200, { ok: true, story });
+        return sendJSON(res, 200, { ok: true, stories, story: stories[0] });   // story 字段保持旧前端兼容
       }
       if (p === '/api/story/list' && req.method === 'GET') {
-        const list = (db.stories || []).map(s => ({ id: s.id, title: s.title, words: s.words, theme: s.theme, length: s.length, createdAt: s.createdAt }));
+        const list = (db.stories || []).map(s => ({ id: s.id, title: s.title, words: s.words, theme: s.theme, length: s.length, done: !!s.done, quizCount: (s.quiz || []).length, createdAt: s.createdAt }));
         return sendJSON(res, 200, { ok: true, list });
       }
       {
@@ -4450,6 +4530,18 @@ const server = http.createServer(async (req, res) => {
           const s = (db.stories || []).find(x => x.id === m[1]);
           if (!s) return sendJSON(res, 404, { error: '文章不存在' });
           return sendJSON(res, 200, { ok: true, story: s });
+        }
+        // v2.4.3：自测完成态上报——前端自测全部作答后调用，置 done=true（绿色已完成）
+        const mDone = p.match(/^\/api\/story\/([a-f0-9-]+)\/done$/);
+        if (mDone && req.method === 'POST') {
+          const s = (db.stories || []).find(x => x.id === mDone[1]);
+          if (!s) return sendJSON(res, 404, { error: '文章不存在' });
+          if (!s.done) {
+            s.done = true;
+            s.doneAt = new Date().toISOString();
+            persistDB();
+          }
+          return sendJSON(res, 200, { ok: true, done: true });
         }
         if (m && req.method === 'DELETE') {
           const before = (db.stories || []).length;
