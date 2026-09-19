@@ -4321,12 +4321,11 @@ const server = http.createServer(async (req, res) => {
           .slice(0, 6);
         const totalWords0 = words.length;
         if (groupsIn.length >= 2) {
-          // v2.4.3：分组模式下每组 ≤200（组内截断保护），总词数上限 600
+          // v2.4.3.b：分组模式下每组 ≤200（组内截断保护）；总词数不设上限——
+          // 允许一个词出现在多个分组（多故事强化记忆），篇数由分组数决定（≤6）
           for (const g of groupsIn) {
             if (g.words.length > 200) g.words = g.words.slice(0, 200);
           }
-          const totalG = groupsIn.reduce((n, g) => n + g.words.length, 0);
-          if (totalG > 600) return sendJSON(res, 400, { error: '分组词总数超过 600，请精简' });
         } else if (totalWords0 > 200) {
           // v2.4.3.a：单篇超 200 词自动拆组（每 200 词一篇），不再直接拒绝——选词不限量的自然延伸
           for (let i = 0; i * 200 < words.length; i++) {
