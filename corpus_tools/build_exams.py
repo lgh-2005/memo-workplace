@@ -10,6 +10,7 @@ import exam_docx as EX
 SRC = r'C:\Users\兰某\Desktop\zhenti'
 ROOT = os.path.dirname(HERE)
 OUT = os.path.join(ROOT, 'corpus', 'exams.jsonl')
+IMG_DIR = os.path.join(ROOT, 'public', 'exam_images')
 
 
 def main():
@@ -24,6 +25,15 @@ def main():
         paras = [r for r in runs if ''.join(t for t, _ in r).strip()]
         items = EX.parse_year(year, paras)
         items = EX.normalize(items)
+
+        # 挂载真题大作文原图
+        img_fn = f'exam_{year}.jpg'
+        if os.path.exists(os.path.join(IMG_DIR, img_fn)):
+            for it in items:
+                if it.get('section') == 'writing' and (it.get('part') == 'B' or it.get('number') in (52, 36, 46) or (year < 2005 and it.get('type') == 'writing')):
+                    it['image'] = f'/exam_images/{img_fn}'
+                    break
+
         rec = {
             'id': hashlib.sha1(fn.encode('utf-8')).hexdigest()[:12],
             'rtype': 'qa_set',
@@ -33,7 +43,7 @@ def main():
             'meta': {'year': year, 'chars': sum(len(x.get('text') or '') for x in items),
                      **EX.summarize(items)},
             'source': {'file': fn, 'category': '真题', 'parser': 'docx-v2',
-                       'imported_at': '2026-09-19T20:00:00', 'managed': 'manual',
+                       'imported_at': '2026-09-19T22:00:00', 'managed': 'manual',
                        'origin': 'local_docx'},
         }
         recs.append(rec)

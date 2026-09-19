@@ -2962,8 +2962,8 @@ const EXAM_PROCESSORS = {
       const qs = items.filter(i => i.type === 'question' && i.number != null);
 
       let pText = kbText(passage?.text || '');
-      pText = pText.replace(/〖(\d+)〗(.*?)〖\/\1〗/gs, (m, n, body) =>
-        `<span class="exm-trans-underline"><span class="exm-trans-num">${n}</span>${body}</span>`);
+      pText = pText.replaceAll('kb-underline', 'kb-underline exm-trans-underline');
+      pText = pText.replaceAll('kb-blank-n', 'kb-blank-n exm-trans-num');
 
       let html = `<div class="kb-passage">${pText}</div><div style="display:flex;flex-direction:column;gap:12px;margin-top:12px">`;
       for (const q of qs) {
