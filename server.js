@@ -4313,6 +4313,7 @@ const server = http.createServer(async (req, res) => {
           providerId: (config.story && config.story.providerId) || undefined,
           llmOverride: {
             _jsonMode: true,
+            _noThinking: true,   // v2.4.2.c：长文结构化生成禁思考（实测思考自适应膨胀耗尽 max_tokens）
             ...(((config.story && config.story.model)) ? { model: config.story.model } : {}),
           },
         });
