@@ -2754,111 +2754,266 @@ $('#kbImportBtn').addEventListener('click', () => kbDoImport('files'));
 $('#kbPasteBtn').addEventListener('click', () => kbDoImport('paste'));
 $('#kbLogBtn').addEventListener('click', kbShowLog);
 
-/* ---------------- 真题库（v1.1.2：qa_set 分库 +「考试-题型」专项处理） ---------------- */
+/* ---------------- 真题库（v2.6.1.a：全真考场答题交互与风格自适应） ---------------- */
 
-const examState = { records: [], loaded: false, page: 1, pageSize: 10 };
+const examState = {
+  records: [], loaded: false, page: 1, pageSize: 10,
+  currentExam: null, mode: 'practice', answers: {},
+};
 
 const EXAM_TYPE_FALLBACK = {
   use_of_english: '考研-完形填空', reading: '考研-阅读理解', part_b: '考研-新题型',
   translation: '考研-翻译', writing: '考研-写作',
 };
 
-/* 「考试-题型」处理器注册表：每个题型一个独立模块，统一契约——
-   { icon, analyze(items) -> 统计行, render(items) -> html }
-   板块展示名以服务端下发的 label 为准（考试-题型 格式）。 */
+/* 「考试-题型」处理器注册表：渲染考场级交互 */
 const EXAM_PROCESSORS = {
   use_of_english: {
     icon: '🔲',
     analyze(items) {
       const blanks = new Set();
-      let qs = 0, opts = 0;
+      let qs = 0;
       for (const it of items) {
         if (it.type === 'passage') for (const m of String(it.text || '').matchAll(/〖(\d+)〗/g)) blanks.add(+m[1]);
-        if (it.type === 'question') { qs++; if (it.options) opts++; }
+        if (it.type === 'question' && it.number != null) qs++;
       }
-      return `挖空 ${blanks.size} 处 · 题目 ${qs} 题 · 带选项 ${opts} 题`;
+      return `共 ${qs || blanks.size || 20} 题 · 每题 0.5 分 · 支持原文空格/下方卡片双向联动`;
     },
-    render: kbExamPassageAndQuestions,
+    render(items, base = 0) {
+      const passage = items.find(i => i.type === 'passage');
+      const qs = items.filter(i => i.type === 'question' && i.number != null);
+      const qByNum = {};
+      qs.forEach(q => { qByNum[q.number] = q; });
+
+      let passText = kbText(passage?.text || '');
+      passText = passText.replace(/〖(\d+)〗/g, (m, n) => {
+        const q = qByNum[+n];
+        const opts = q && q.options
+          ? Object.entries(q.options).map(([k, v]) => `<option value="${esc(k)}">${esc(k)}. ${esc(String(v).slice(0, 32))}</option>`).join('')
+          : '';
+        return `<span class="exm-cloze-blank">
+          <span class="exm-cloze-num" onclick="scrollToExamQ(${n})">〖${n}〗</span>
+          <span class="exm-cloze-select-wrap" id="exmClozeWrap-${n}">
+            <select data-exmq="${n}" onchange="onExamClozeChange(${n}, this.value)">
+              <option value="">— ${n} —</option>${opts}
+            </select>
+          </span>
+        </span>`;
+      });
+
+      let html = `<div class="kb-passage">${passText}</div>`;
+      html += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:12px">`;
+      for (const q of qs) {
+        const qNum = q.number;
+        const opts = q.options ? Object.entries(q.options).map(([k, v]) => `
+          <label class="exm-opt-item" id="exmOpt-${qNum}-${k}">
+            <input type="radio" name="exmq_${qNum}" value="${esc(k)}" onchange="onExamRadioPick(${qNum}, '${esc(k)}')">
+            <span><b>[ ${esc(k)} ]</b> ${esc(v)}</span>
+          </label>
+        `).join('') : '';
+
+        html += `
+          <div class="kb-question" id="exmQCard-${qNum}">
+            <div class="kb-q-head-row">
+              <span class="kb-q-head">第 ${qNum} 题 · 完形填空</span>
+              <span class="hint">${q.score != null ? q.score + ' 分' : '0.5 分'}</span>
+            </div>
+            <div class="kb-q-text" style="margin-bottom:6px">Choose the best word for blank [${qNum}]:</div>
+            <div style="display:flex;flex-direction:column;gap:6px">${opts}</div>
+            <div class="exm-analysis-card" id="exmAnalysis-${qNum}">
+              <b>标准答案：${esc(q.answer || '—')}</b>
+            </div>
+          </div>
+        `;
+      }
+      html += `</div>`;
+      return html;
+    },
   },
+
   reading: {
     icon: '📖',
     analyze(items) {
       const pids = new Set(items.filter(i => i.type === 'passage' && i.passage_id != null).map(i => i.passage_id));
-      const qs = items.filter(i => i.type === 'question').length;
-      const per = pids.size ? qs / pids.size : 0;
-      return `${pids.size || '—'} 篇文章 · ${qs} 题 · 每篇 ${per && Number.isInteger(per) ? per : per ? per.toFixed(1) : '—'} 题`;
+      const qs = items.filter(i => i.type === 'question' && i.number != null);
+      return `${pids.size || 4} 篇文章 · ${qs.length} 题 · 分栏对照阅读`;
     },
-    render: kbExamPassageAndQuestions,
+    render(items, base = 0) {
+      const passages = items.filter(i => i.type === 'passage');
+      const qs = items.filter(i => i.type === 'question' && i.number != null);
+      const pids = passages.map(p => p.passage_id || 1);
+      const uniquePids = [...new Set(pids)].sort((a, b) => a - b);
+
+      let html = '';
+      for (const pid of uniquePids) {
+        const pass = passages.find(p => (p.passage_id || 1) === pid);
+        const pqs = qs.filter(q => (q.passage_id || 1) === pid);
+
+        const qCards = pqs.map(q => {
+          const qNum = q.number;
+          const opts = q.options ? Object.entries(q.options).map(([k, v]) => `
+            <label class="exm-opt-item" id="exmOpt-${qNum}-${k}">
+              <input type="radio" name="exmq_${qNum}" value="${esc(k)}" onchange="onExamRadioPick(${qNum}, '${esc(k)}')">
+              <span><b>[ ${esc(k)} ]</b> ${esc(v)}</span>
+            </label>
+          `).join('') : '';
+
+          return `
+            <div class="kb-question" id="exmQCard-${qNum}">
+              <div class="kb-q-head-row">
+                <span class="kb-q-head">第 ${qNum} 题</span>
+                <span class="hint">${q.score != null ? q.score + ' 分' : '2.0 分'}</span>
+              </div>
+              <div class="kb-q-text" style="margin-bottom:8px"><b>${esc(q.text || '')}</b></div>
+              <div style="display:flex;flex-direction:column;gap:6px">${opts}</div>
+              <div class="exm-analysis-card" id="exmAnalysis-${qNum}">
+                <b>标准答案：${esc(q.answer || '—')}</b>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        html += `
+          <div style="margin:16px 0 6px;font-weight:700;color:var(--primary)">📖 Text ${pid}</div>
+          <div class="exm-split-reading">
+            <div class="exm-reading-passage kb-passage">${kbText(pass?.text || '')}</div>
+            <div class="exm-reading-questions">${qCards}</div>
+          </div>
+        `;
+      }
+      return html;
+    },
   },
+
   part_b: {
     icon: '🧩',
     analyze(items) {
-      const blanks = new Set();
-      let pool = 0, qs = 0;
-      for (const it of items) {
-        if (it.type === 'passage') for (const m of String(it.text || '').matchAll(/〖(4[1-5])〗/g)) blanks.add(+m[1]);
-        if (it.type === 'question' && it.number == null && it.options) pool = Object.keys(it.options).length;
-        if (it.type === 'question' && it.number != null) qs++;
-      }
-      return `空位 ${blanks.size} 处 · 选项池 ${pool || '—'} 项 · 待选 ${qs} 空`;
+      const blanks = items.filter(i => i.type === 'question' && i.number != null);
+      const pool = items.find(i => i.type === 'question' && i.number == null && i.options);
+      const poolCount = pool ? Object.keys(pool.options).length : 7;
+      return `待选 ${blanks.length} 空 · 选项池 ${poolCount} 项 · 排序流转与选项置灰`;
     },
     render(items, base = 0) {
+      const passage = items.find(i => i.type === 'passage');
+      const pool = items.find(i => i.type === 'question' && i.number == null && i.options);
+      const qs = items.filter(i => i.type === 'question' && i.number != null);
+      const optKeys = pool ? Object.keys(pool.options) : ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
       let html = '';
-      for (const [ix, it] of items.entries()) {
-        if (it.type === 'passage') {
-          html += `<div class="kb-passage" data-itemidx="${base + ix}">${kbText(it.text)}</div>`;
-        } else if (it.type === 'question' && it.number == null) {
-          const opts = it.options
-            ? Object.entries(it.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')
-            : esc(it.text || '');
-          html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">🧩 选项池（含干扰项）</div><div class="kb-opts">${opts}</div></div>`;
-        } else if (it.type === 'question') {
-          html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 空 · 从选项池中选出填入</div><div class="exm-slot">答题位（在线作答后续版本开放）</div></div>`;
+      if (passage && /→/.test(passage.text)) {
+        // 段落排序型
+        const segs = passage.text.split(/→/).map(s => s.trim());
+        const flowNodes = segs.map(seg => {
+          const m = seg.match(/^〖(\d+)〗$/);
+          if (m) {
+            const num = m[1];
+            const opts = optKeys.map(k => `<option value="${k}">${k}</option>`).join('');
+            return `<span class="exm-flow-node" id="exmFlowNode-${num}">
+              <span>第 ${num} 空</span>
+              <select data-exmpb="${num}" onchange="onExamPartBChange(${num}, this.value)">
+                <option value="">?</option>${opts}
+              </select>
+            </span>`;
+          }
+          return `<span class="exm-flow-node given">已知段落 [ ${esc(seg)} ]</span>`;
+        }).join('<span class="exm-flow-arrow">→</span>');
+
+        html += `<div class="exm-part-b-flow">${flowNodes}</div>`;
+      } else {
+        // 7选5填空型
+        let pText = kbText(passage?.text || '');
+        pText = pText.replace(/〖(4[1-5])〗/g, (m, n) => {
+          const opts = optKeys.map(k => `<option value="${k}">[ ${k} ]</option>`).join('');
+          return `<span class="exm-cloze-blank">
+            <span class="exm-cloze-num">〖${n} 空〗</span>
+            <span class="exm-cloze-select-wrap">
+              <select data-exmpb="${n}" onchange="onExamPartBChange(${n}, this.value)">
+                <option value="">— 选择填入 —</option>${opts}
+              </select>
+            </span>
+          </span>`;
+        });
+        html += `<div class="kb-passage">${pText}</div>`;
+      }
+
+      if (pool) {
+        html += `<div class="exm-pool-box">
+          <div class="exm-pool-title">
+            <span>🧩 段落选项池（选定后自动划线置灰防重复）</span>
+            <span id="exmPoolRemaining">剩余 ${optKeys.length} 项可选</span>
+          </div>`;
+        for (const [k, v] of Object.entries(pool.options)) {
+          html += `<div class="exm-pool-item" id="exmPoolItem-${k}"><b>[ ${esc(k)} ]</b> ${esc(v)}</div>`;
         }
+        html += `</div>`;
       }
       return html;
     },
   },
+
   translation: {
     icon: '🖊',
     analyze(items) {
-      const ul = new Set();
-      let qs = 0;
-      for (const it of items) {
-        if (it.type === 'passage') for (const m of String(it.text || '').matchAll(/〖(\d+)〗/g)) ul.add(+m[1]);
-        if (it.type === 'question') qs++;
-      }
-      return `划线句 ${ul.size} 句 · 待译 ${qs} 题（每题 2 分 · 手写译文）`;
+      const qs = items.filter(i => i.type === 'question' && i.number != null);
+      return `共 ${qs.length} 句划线句 · 每句 2 分 · 全文语境与答题框对照`;
     },
     render(items, base = 0) {
-      let html = '';
-      for (const [ix, it] of items.entries()) {
-        if (it.type === 'passage') {
-          html += `<div class="kb-passage" data-itemidx="${base + ix}">${kbText(it.text)}</div>`;
-        } else {
-          html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">🖊 第 ${esc(String(it.number ?? '—'))} 题 · 将划线句译成中文（2 分）</div><div class="exm-slot">答题位（在线作答后续版本开放）</div></div>`;
-        }
+      const passage = items.find(i => i.type === 'passage');
+      const qs = items.filter(i => i.type === 'question' && i.number != null);
+
+      let pText = kbText(passage?.text || '');
+      pText = pText.replace(/〖(\d+)〗(.*?)〖\/\1〗/gs, (m, n, body) =>
+        `<span class="exm-trans-underline"><span class="exm-trans-num">${n}</span>${body}</span>`);
+
+      let html = `<div class="kb-passage">${pText}</div><div style="display:flex;flex-direction:column;gap:12px;margin-top:12px">`;
+      for (const q of qs) {
+        const qNum = q.number;
+        html += `
+          <div class="kb-question" id="exmQCard-${qNum}">
+            <div class="kb-q-head-row">
+              <span class="kb-q-head">第 ${qNum} 题 · 划线句翻译（2.0 分）</span>
+            </div>
+            <div class="hint" style="margin-bottom:6px;font-style:italic">"${esc(q.text || '')}"</div>
+            <textarea class="input" rows="3" placeholder="在此输入你的中文译文..." style="width:100%" oninput="onExamSubjectiveInput(${qNum})"></textarea>
+          </div>
+        `;
       }
+      html += `</div>`;
       return html;
     },
   },
+
   writing: {
     icon: '📝',
     analyze(items) {
       const ws = items.filter(i => i.type === 'writing' || (i.section === 'writing' && i.type === 'question'));
       const score = ws.reduce((a, b) => a + (Number(b.score) || 0), 0);
-      return `${ws.length} 道写作题 · 合计 ${score || '—'} 分`;
+      return `${ws.length} 道写作题 · 合计 ${score || '—'} 分 · 附原版考题图画与实时词数`;
     },
     render(items, base = 0) {
       let html = '';
       for (const [ix, it] of items.entries()) {
         if (it.section !== 'writing' && it.type !== 'writing') continue;
-        const imgHtml = it.image ? `<div class="exm-writing-img"><img src="${esc(it.image)}" alt="真题配图" loading="lazy"><div class="hint" style="text-align:center;margin-top:4px">【真题原版附图】</div></div>` : '';
-        html += `<div class="kb-question" data-itemidx="${base + ix}">
-          <div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div>
-          <div class="kb-q-text">${kbText(it.text)}</div>
-          ${imgHtml}
-        </div>`;
+        const qNum = it.number || (it.part === 'A' ? 51 : 52);
+        const minWc = it.part === 'A' ? 100 : 160;
+        const maxWc = it.part === 'A' ? 120 : 200;
+        const imgHtml = it.image ? `<div class="exm-writing-img"><img src="${esc(it.image)}" alt="真题原版图画" loading="lazy"><div class="hint" style="text-align:center;margin-top:4px">【真题原版附图】</div></div>` : '';
+
+        html += `
+          <div class="kb-question" id="exmQCard-${qNum}" style="margin:12px 0">
+            <div class="kb-q-head-row">
+              <span class="kb-q-head">✍️ ${it.part ? 'Part ' + esc(it.part) : '写作题'}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</span>
+              <span class="hint">建议词数：${minWc} ~ ${maxWc} 词</span>
+            </div>
+            <div class="kb-q-text" style="white-space:pre-wrap;margin-bottom:8px">${kbText(it.text)}</div>
+            ${imgHtml}
+            <textarea class="input" rows="8" placeholder="在此写作（草稿将自动保存）..." style="width:100%;font-size:14px;line-height:1.7" id="exmEssay-${qNum}" oninput="onExamEssayInput(${qNum}, ${minWc}, ${maxWc})"></textarea>
+            <div class="exm-wc-status">
+              <span class="exm-wc-badge warn" id="exmWcBadge-${qNum}">词数：0 词</span>
+              <span>考场建议区间：${minWc} ~ ${maxWc} 词</span>
+            </div>
+          </div>
+        `;
       }
       return html;
     },
@@ -2873,19 +3028,17 @@ function examProcessor(section) {
   };
 }
 
-/** 通用题型渲染：原文（〖N〗锚点）在前，题目（题干+选项+答案）在后 */
+/** 通用题型渲染 */
 function kbExamPassageAndQuestions(items, base = 0) {
   let html = '';
   for (const [ix, it] of items.entries()) {
     if (it.type === 'passage') {
       html += `<div class="kb-passage" data-itemidx="${base + ix}">${kbText(it.text)}</div>`;
-    } else if (it.type === 'writing') {
-      html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
     } else {
       const opts = it.options
         ? Object.entries(it.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')
         : '';
-      html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 题 · ${esc(it.qtype || '客观题')}${it.score != null ? ' · ' + esc(String(it.score)) + ' 分' : ''}${it.answer ? ` · <span class="kb-ans">答案：${esc(it.answer)}</span>` : ''}</div><div class="kb-q-text">${kbText(it.text)}</div>${opts ? `<div class="kb-opts">${opts}</div>` : ''}</div>`;
+      html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">第 ${esc(String(it.number ?? '—'))} 题 · ${esc(it.qtype || '客观题')}</div><div class="kb-q-text">${kbText(it.text)}</div>${opts ? `<div class="kb-opts">${opts}</div>` : ''}</div>`;
     }
   }
   return html;
@@ -2974,6 +3127,12 @@ async function openExamRecord(exid) {
       rec.source ? `${rec.source.file || ''} · ${rec.source.parser || ''} · 导入 ${String(rec.source.imported_at || '').slice(0, 10)}` : '',
     ].filter(Boolean).join(' · ');
 
+    examState.currentExam = rec;
+    examState.answers = {};
+    examState.mode = 'practice';
+    $('#exmModePractice')?.classList.add('active');
+    $('#exmModeAnalysis')?.classList.remove('active');
+
     // 按「考试-题型」分块：每块交给独立处理器（统一 analyze + render 契约）
     const blocks = [];
     for (const it of (rec.items || [])) {
@@ -2985,14 +3144,51 @@ async function openExamRecord(exid) {
       }
       blocks[blocks.length - 1].items.push(it);
     }
-    let html = '';
+    let bodyHtml = '';
     let ixBase = 0;
     for (const b of blocks) {
       const proc = examProcessor(b.key);
-      html += `<div class="exm-block"><div class="kb-sec-title">${proc.icon} ${esc(b.label)}</div><div class="exm-stats">${esc(proc.analyze(b.items))}</div>${proc.render(b.items, ixBase)}</div>`;
+      bodyHtml += `<div class="exm-block" id="exmSecBlock-${b.key}"><div class="kb-sec-title">${proc.icon} ${esc(b.label)}</div><div class="exm-stats">${esc(proc.analyze(b.items))}</div>${proc.render(b.items, ixBase)}</div>`;
       ixBase += b.items.length;
     }
-    $('#exDetail').innerHTML = html || '<div class="hint">（无条目）</div>';
+
+    // 组装考场左侧答题卡
+    const allQs = (rec.items || []).filter(i => i.type === 'question' && i.number != null);
+    const ueQs = allQs.filter(q => q.section === 'use_of_english');
+    const rdQs = allQs.filter(q => q.section === 'reading');
+    const pbQs = allQs.filter(q => q.section === 'part_b');
+    const trQs = allQs.filter(q => q.section === 'translation');
+
+    const renderBubbles = list => list.map(q => `<button type="button" class="exm-bubble-btn" id="exmBubble-${q.number}" onclick="scrollToExamQ(${q.number})"><span>${q.number}</span></button>`).join('');
+
+    const sidebarHtml = `
+      <div class="exm-sheet-sidebar">
+        <div class="exm-sheet-head">
+          <span>📑 考场答题卡</span>
+          <span class="exm-sheet-progress" id="exmSheetProgress">已做 0 / ${allQs.length + 2}</span>
+        </div>
+        ${ueQs.length ? `<div class="exm-sheet-sec-title"><span>完形填空 (1-${ueQs.length})</span><span>0.5分</span></div><div class="exm-bubble-grid">${renderBubbles(ueQs)}</div>` : ''}
+        ${rdQs.length ? `<div class="exm-sheet-sec-title"><span>阅读理解 (21-${20 + rdQs.length})</span><span>2.0分</span></div><div class="exm-bubble-grid">${renderBubbles(rdQs)}</div>` : ''}
+        ${pbQs.length ? `<div class="exm-sheet-sec-title"><span>新题型 (41-45)</span><span>2.0分</span></div><div class="exm-bubble-grid">${renderBubbles(pbQs)}</div>` : ''}
+        ${trQs.length ? `<div class="exm-sheet-sec-title"><span>翻译 (${trQs[0].number}-${trQs[trQs.length-1].number})</span><span>2.0分</span></div><div class="exm-bubble-grid">${renderBubbles(trQs)}</div>` : ''}
+        <div class="exm-sheet-sec-title"><span>写作 (51-52)</span><span>30分</span></div>
+        <div class="exm-bubble-grid" style="grid-template-columns:1fr 1fr">
+          <button type="button" class="exm-bubble-btn" id="exmBubble-51" onclick="scrollToExamQ(51)"><span>51 小作文</span></button>
+          <button type="button" class="exm-bubble-btn" id="exmBubble-52" onclick="scrollToExamQ(52)"><span>52 大作文</span></button>
+        </div>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
+          <button type="button" class="btn primary" style="width:100%" onclick="submitExamPaper()">🏁 提交并核对答案</button>
+          <button type="button" class="btn ghost mini" style="width:100%" onclick="resetExamAnswers()">🔄 清空作答</button>
+        </div>
+      </div>
+    `;
+
+    $('#exDetail').innerHTML = `
+      <div class="exm-exam-layout">
+        ${sidebarHtml}
+        <div class="exm-exam-content">${bodyHtml || '<div class="hint">（无条目）</div>'}</div>
+      </div>
+    `;
     card.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } catch (e) {
     $('#exDetail').innerHTML = '❌ ' + esc(e.message);
@@ -3033,6 +3229,197 @@ async function exDoImport() {
     out.className = 'result err';
   }
 }
+
+/* ---------------- 考场答题交互联动函数 ---------------- */
+
+function scrollToExamQ(num) {
+  const card = $(`#exmQCard-${num}`);
+  if (card) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.style.outline = '2px solid var(--primary)';
+    card.style.outlineOffset = '2px';
+    setTimeout(() => { card.style.outline = ''; card.style.outlineOffset = ''; }, 1500);
+  }
+}
+
+function updateExamBubbleProgress() {
+  const total = ((examState.currentExam?.items || []).filter(i => i.type === 'question' && i.number != null).length || 50) + 2;
+  const answered = Object.keys(examState.answers || {}).length;
+  const el = $('#exmSheetProgress');
+  if (el) el.textContent = `已做 ${answered} / ${total}`;
+}
+
+function onExamRadioPick(qNum, opt) {
+  examState.answers[qNum] = opt;
+  // 同步完形内联空格选择框（若有）
+  const wrap = $(`#exmClozeWrap-${qNum}`);
+  if (wrap) {
+    const sel = wrap.querySelector('select');
+    if (sel) sel.value = opt;
+    wrap.classList.toggle('filled', !!opt);
+  }
+  // 更新该题选项样式
+  $$(`[id^="exmOpt-${qNum}-"]`).forEach(el => el.classList.remove('selected'));
+  $(`#exmOpt-${qNum}-${opt}`)?.classList.add('selected');
+
+  // 答题卡气泡染色
+  const bubble = $(`#exmBubble-${qNum}`);
+  if (bubble) {
+    bubble.classList.add('filled');
+    bubble.innerHTML = `<span>${qNum}</span><span style="font-size:9px">${opt}</span>`;
+  }
+  updateExamBubbleProgress();
+}
+
+function onExamClozeChange(qNum, opt) {
+  if (!opt) {
+    delete examState.answers[qNum];
+    $(`#exmClozeWrap-${qNum}`)?.classList.remove('filled');
+    $$(`[id^="exmOpt-${qNum}-"]`).forEach(el => {
+      el.classList.remove('selected');
+      const radio = el.querySelector('input');
+      if (radio) radio.checked = false;
+    });
+    const bubble = $(`#exmBubble-${qNum}`);
+    if (bubble) {
+      bubble.classList.remove('filled');
+      bubble.innerHTML = `<span>${qNum}</span>`;
+    }
+    updateExamBubbleProgress();
+    return;
+  }
+  const radio = $(`#exmOpt-${qNum}-${opt} input`);
+  if (radio) radio.checked = true;
+  onExamRadioPick(qNum, opt);
+}
+
+function onExamPartBChange(qNum, opt) {
+  if (opt) {
+    examState.answers[qNum] = opt;
+    const bubble = $(`#exmBubble-${qNum}`);
+    if (bubble) {
+      bubble.classList.add('filled');
+      bubble.innerHTML = `<span>${qNum}</span><span style="font-size:9px">${opt}</span>`;
+    }
+  } else {
+    delete examState.answers[qNum];
+    const bubble = $(`#exmBubble-${qNum}`);
+    if (bubble) {
+      bubble.classList.remove('filled');
+      bubble.innerHTML = `<span>${qNum}</span>`;
+    }
+  }
+
+  // 选项池置灰排他逻辑
+  const used = new Set(Object.entries(examState.answers).filter(([k]) => +k >= 41 && +k <= 45).map(([, v]) => v));
+  $$('.exm-pool-item').forEach(item => {
+    const id = item.id.replace('exmPoolItem-', '');
+    item.classList.toggle('used', used.has(id));
+  });
+  const remEl = $('#exmPoolRemaining');
+  if (remEl) remEl.textContent = `已选 ${used.size} 项 · 剩余 ${Math.max(0, 7 - used.size)} 项可选`;
+  updateExamBubbleProgress();
+}
+
+function onExamSubjectiveInput(qNum) {
+  examState.answers[qNum] = true;
+  $(`#exmBubble-${qNum}`)?.classList.add('filled');
+  updateExamBubbleProgress();
+}
+
+function onExamEssayInput(qNum, min, max) {
+  const txt = $(`#exmEssay-${qNum}`)?.value.trim() || '';
+  const words = txt ? txt.split(/\s+/).filter(Boolean).length : 0;
+  const badge = $(`#exmWcBadge-${qNum}`);
+  if (badge) {
+    badge.textContent = `词数：${words} 词`;
+    badge.className = 'exm-wc-badge ' + (words >= min && words <= max ? 'ok' : 'warn');
+  }
+  if (words > 0) {
+    examState.answers[qNum] = true;
+    $(`#exmBubble-${qNum}`)?.classList.add('filled');
+  } else {
+    delete examState.answers[qNum];
+    $(`#exmBubble-${qNum}`)?.classList.remove('filled');
+  }
+  updateExamBubbleProgress();
+}
+
+function switchExamMode(mode) {
+  examState.mode = mode;
+  $('#exmModePractice')?.classList.toggle('active', mode === 'practice');
+  $('#exmModeAnalysis')?.classList.toggle('active', mode === 'analysis');
+
+  const isAnalysis = mode === 'analysis';
+  const qs = (examState.currentExam?.items || []).filter(i => i.type === 'question' && i.number != null);
+
+  for (const q of qs) {
+    const num = q.number;
+    const ans = q.answer;
+    const userPick = examState.answers[num];
+    const bubble = $(`#exmBubble-${num}`);
+    const analysisCard = $(`#exmAnalysis-${num}`);
+
+    if (isAnalysis) {
+      if (analysisCard) {
+        analysisCard.classList.add('show');
+        analysisCard.innerHTML = `<b>正确答案：${esc(ans || '未收录')}</b> · 你的作答：<span style="font-weight:700;color:${userPick === ans ? 'var(--ok)' : 'var(--warn)'}">${esc(userPick || '未作答')}</span>`;
+      }
+      if (ans) {
+        $(`#exmOpt-${num}-${ans}`)?.classList.add('right');
+        if (userPick && userPick !== ans) {
+          $(`#exmOpt-${num}-${userPick}`)?.classList.add('wrong');
+        }
+      }
+      if (bubble && ans) {
+        bubble.classList.toggle('correct', userPick === ans);
+        bubble.classList.toggle('wrong', userPick && userPick !== ans);
+      }
+    } else {
+      analysisCard?.classList.remove('show');
+      $$(`[id^="exmOpt-${num}-"]`).forEach(el => {
+        el.classList.remove('right');
+        el.classList.remove('wrong');
+      });
+      bubble?.classList.remove('correct');
+      bubble?.classList.remove('wrong');
+    }
+  }
+}
+
+function submitExamPaper() {
+  switchExamMode('analysis');
+  alert('🏁 试卷已提交！已自动切换至【答案对照】模式，系统已核对标准答案并标注正误。');
+}
+
+function resetExamAnswers() {
+  if (confirm('确认清空当前试卷的所有作答记录？')) {
+    examState.answers = {};
+    switchExamMode('practice');
+    $$('.exm-bubble-btn').forEach(b => {
+      b.classList.remove('filled', 'correct', 'wrong');
+      const num = b.id.replace('exmBubble-', '');
+      b.innerHTML = `<span>${num}</span>`;
+    });
+    $$('.exm-cloze-select-wrap').forEach(w => {
+      w.classList.remove('filled');
+      const s = w.querySelector('select');
+      if (s) s.value = '';
+    });
+    $$('.exm-opt-item').forEach(o => {
+      o.classList.remove('selected', 'right', 'wrong');
+      const r = o.querySelector('input');
+      if (r) r.checked = false;
+    });
+    $$('.exm-flow-node select').forEach(s => { s.value = ''; });
+    $$('.exm-pool-item').forEach(p => p.classList.remove('used'));
+    $$('#exDetail textarea').forEach(t => { t.value = ''; });
+    updateExamBubbleProgress();
+  }
+}
+
+$('#exmModePractice')?.addEventListener('click', () => switchExamMode('practice'));
+$('#exmModeAnalysis')?.addEventListener('click', () => switchExamMode('analysis'));
 
 $('#exImportBtn').addEventListener('click', exDoImport);
 $('#exLogBtn').addEventListener('click', () => kbShowLog('#exImportResult'));
