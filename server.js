@@ -4319,17 +4319,21 @@ const server = http.createServer(async (req, res) => {
           }))
           .filter(g => g.words.length >= 1)
           .slice(0, 6);
-        const useGroups = groupsIn.length >= 2;
-        const totalWords = useGroups ? groupsIn.reduce((n, g) => n + g.words.length, 0) : words.length;
-        if (useGroups) {
+        const totalWords0 = words.length;
+        if (groupsIn.length >= 2) {
           // v2.4.3：分组模式下每组 ≤200（组内截断保护），总词数上限 600
           for (const g of groupsIn) {
             if (g.words.length > 200) g.words = g.words.slice(0, 200);
           }
-          if (totalWords > 600) return sendJSON(res, 400, { error: '分组词总数超过 600，请精简' });
-        } else if (totalWords > 200) {
-          return sendJSON(res, 400, { error: '单篇生成建议不超过 200 词——请先「AI 分析」按分组拆成多篇' });
+          const totalG = groupsIn.reduce((n, g) => n + g.words.length, 0);
+          if (totalG > 600) return sendJSON(res, 400, { error: '分组词总数超过 600，请精简' });
+        } else if (totalWords0 > 200) {
+          // v2.4.3.a：单篇超 200 词自动拆组（每 200 词一篇），不再直接拒绝——选词不限量的自然延伸
+          for (let i = 0; i * 200 < words.length; i++) {
+            groupsIn.push({ name: `第 ${i + 1} 篇`, theme: '', words: words.slice(i * 200, (i + 1) * 200), plot: '' });
+          }
         }
+        const useGroups = groupsIn.length >= 2;
         // v2.4.1：题材动态化——storyThemes 自定义列表优先，缺省用内置 16 题材
         const themes = storyThemesList();
         const theme = themes.includes(body.theme) ? body.theme : (body.theme ? String(body.theme).slice(0, 30) : (themes[0] || '随缘'));
