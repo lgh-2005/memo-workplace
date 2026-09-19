@@ -3,7 +3,7 @@
 import json, re, sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-P = r'D:\ai\opencode\momo\english-workbench\corpus\exams_docx.jsonl'
+P = r'D:\ai\opencode\momo\english-workbench\corpus\exams.jsonl'
 recs = [json.loads(l) for l in open(P, encoding='utf-8')]
 issues = []
 

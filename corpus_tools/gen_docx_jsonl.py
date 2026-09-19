@@ -10,7 +10,8 @@ import docx_parser as DP
 import exam_norm as EN
 
 ROOT = r'C:\Users\兰某\Desktop\zhenti'
-OUT = r'D:\ai\opencode\momo\english-workbench\corpus\exams_docx.jsonl'
+OUT = r'D:\ai\opencode\momo\english-workbench\corpus\exams.jsonl'
+IMG_DIR = r'D:\ai\opencode\momo\english-workbench\public\exam_images'
 
 
 def year_of(fn):
@@ -35,6 +36,16 @@ def main():
         paras = DP.docx_paras(os.path.join(ROOT, fn))
         items = DP.parse_year(year, paras)
         items = EN.normalize(items)
+
+        # 关联真实原题配图（Part B 大作文或旧卷作文）
+        img_fn = f'exam_{year}.jpg'
+        if os.path.exists(os.path.join(IMG_DIR, img_fn)):
+            # 挂载到大作文条目上
+            for it in items:
+                if it.get('section') == 'writing' and (it.get('part') == 'B' or it.get('number') in (52, 36, 46) or (year < 2005 and it.get('type') == 'writing')):
+                    it['image'] = f'/exam_images/{img_fn}'
+                    break
+
         rec = {
             'id': hashlib.sha1(fn.encode()).hexdigest()[:12],
             'rtype': 'qa_set',
@@ -44,7 +55,7 @@ def main():
             'meta': {'year': year, 'chars': sum(len(x.get('text') or '') for x in items),
                      **EN.summarize(items)},
             'source': {'file': fn, 'category': '真题', 'parser': 'docx2026',
-                       'imported_at': '2026-09-19T19:11:02', 'managed': 'manual',
+                       'imported_at': '2026-09-19T21:15:00', 'managed': 'manual',
                        'origin': 'local_docx'},
         }
         recs.append(rec)

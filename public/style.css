@@ -2312,7 +2312,14 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-opt b { color: var(--primary); }
 .kb-ans { color: var(--ok); font-weight: 600; }
 .kb-sentence { line-height: 1.8; font-size: 14px; }
-\n
+.exm-writing-img {
+  margin: 12px 0; text-align: center; background: var(--bg);
+  padding: 12px; border-radius: 8px; border: 1px solid var(--border);
+}
+.exm-writing-img img {
+  max-width: 100%; max-height: 280px; object-fit: contain;
+  border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
 
 /* ============ v1.1.4：记录编辑 / AI 审读 ============ */
 .kb-edit-item { border: 1px solid var(--border-tertiary, rgba(127, 127, 127, .25)); border-radius: 10px; padding: 8px 10px; margin: 8px 0; }

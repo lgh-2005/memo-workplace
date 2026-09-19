@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英语工作台 · 真题库全真考场答题交互原型 (v2.6 架构设计)</title>
+<style>
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --border-focus: #3b82f6;
+  --text-main: #1e293b;
+  --text-sub: #64748b;
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --accent: #f59e0b;
+  --accent-light: #fef3c7;
+  --success: #10b981;
+  --success-light: #ecfdf5;
+  --danger: #ef4444;
+  --danger-light: #fef2f2;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow: 0 2px 10px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.06);
+  --font-serif: "Times New Roman", "Baskerville", "Georgia", "Songti SC", "SimSun", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  padding-bottom: 90px;
+}
+
+/* 顶部导航与考场仪表 */
+header.exam-header {
+  background: #1e293b;
+  color: #fff;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.header-left { display: flex; align-items: center; gap: 14px; }
+.header-badge {
+  background: rgba(255,255,255,0.15);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.header-title { font-size: 17px; font-weight: 700; letter-spacing: 0.5px; }
+
+.header-right { display: flex; align-items: center; gap: 16px; }
+.exam-timer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #0f172a;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+/* 模式切换胶囊 */
+.mode-toggle {
+  display: flex;
+  background: #334155;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 3px;
+}
+.mode-btn {
+  background: transparent;
+  border: 0;
+  color: #94a3b8;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.mode-btn.active {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* 主容器 */
+.container {
+  max-width: 1240px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+/* 左侧栏：试卷大纲与题卡 */
+.sidebar {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+.sheet-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sheet-progress {
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.sec-nav-group { margin-bottom: 16px; }
+.sec-nav-header {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.bubble-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+.bubble-btn {
+  height: 32px;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bubble-btn:hover { border-color: var(--primary); color: var(--primary); }
+.bubble-btn.filled {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.bubble-btn.current {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+.bubble-btn.correct { background: var(--success-light); border-color: var(--success); color: var(--success); }
+.bubble-btn.wrong { background: var(--danger-light); border-color: var(--danger); color: var(--danger); }
+
+/* 右侧主答题区 */
+.exam-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 考卷题型 Section 容器卡片 */
+.exam-section-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  box-shadow: var(--shadow);
+}
+.sec-header {
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.sec-title-main {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sec-tag {
+  background: #e2e8f0;
+  font-size: 11.5px;
+  color: #475569;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.sec-instructions {
+  font-size: 13px;
+  color: var(--text-sub);
+  font-style: italic;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* 权威原版排版：学术文章正文区 */
+.academic-passage {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.9;
+  color: #1e293b;
+  text-align: justify;
+  background: #fafbfc;
+  border: 1px solid #edf2f7;
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.academic-passage p {
+  margin-bottom: 14px;
+  text-indent: 2em;
+}
+.academic-passage p:last-child { margin-bottom: 0; }
+
+/* 完形与填空内联锚点样式 */
+.cloze-blank {
+  display: inline-block;
+  text-indent: 0;
+  vertical-align: baseline;
+  margin: 0 4px;
+}
+.cloze-badge {
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  color: #b45309;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cloze-badge:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.cloze-select-wrap {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  border-radius: 6px;
+  padding: 1px 4px;
+  font-family: var(--font-sans);
+}
+.cloze-select-wrap.has-val {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+.cloze-select-wrap select {
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--text-main);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 划线翻译句样式 */
+.trans-underline {
+  text-indent: 0;
+  background: linear-gradient(to bottom, transparent 65%, #fed7aa 65%);
+  border-bottom: 1.5px dashed #f97316;
+  padding: 0 2px;
+  font-weight: 500;
+}
+.trans-num-tag {
+  background: #ea580c;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-right: 4px;
+  font-weight: 700;
+  text-indent: 0;
+  display: inline-block;
+}
+
+/* 左右分栏做题布局（阅读理解最佳体验） */
+.split-reading-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.reading-passage-col {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 12px;
+  border-right: 1px dashed var(--border);
+}
+.reading-questions-col {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 客观题目卡片 */
+.q-card {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  transition: all 0.2s;
+}
+.q-card:hover { border-color: #cbd5e1; }
+.q-card.active-target {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+.q-meta {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.q-stem {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.q-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.opt-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+  background: #f8fafc;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: #334155;
+  transition: all 0.15s;
+}
+.opt-label:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+.opt-label input[type="radio"] {
+  margin-top: 3px;
+  accent-color: var(--primary);
+}
+.opt-label.selected {
+  background: var(--primary-light);
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+  font-weight: 500;
+}
+.opt-label.answer-correct {
+  background: var(--success-light);
+  border-color: #86efac;
+  color: #15803d;
+  font-weight: 600;
+}
+.opt-label.answer-wrong {
+  background: var(--danger-light);
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+.opt-tag { font-weight: 700; }
+
+/* Part B：新题型 排序骨架与选项池 */
+.part-b-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.flow-node {
+  border: 1.5px solid var(--border);
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+.flow-node.given {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1e40af;
+}
+.flow-arrow { color: #94a3b8; font-weight: 900; }
+.flow-select {
+  border: 0;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--primary);
+  background: transparent;
+  cursor: pointer;
+}
+
+.pool-container {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.pool-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.pool-item {
+  padding: 10px 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  border-left: 3px solid #cbd5e1;
+}
+.pool-item.used {
+  opacity: 0.5;
+  text-decoration: line-through;
+  background: #f1f5f9;
+}
+.pool-char { font-weight: 800; color: var(--primary); margin-right: 6px; }
+
+/* 翻译手写输入框 */
+.trans-item-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.trans-target-text {
+  font-size: 14px;
+  font-family: var(--font-serif);
+  color: #1e293b;
+  margin-bottom: 10px;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #f97316;
+}
+.trans-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 70px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.trans-input:focus { border-color: var(--primary); }
+
+/* 作文区域与图片排版 */
+.writing-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+}
+.writing-prompt-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 13.5px;
+}
+.writing-img-preview {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-top: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.writing-textarea-wrap { display: flex; flex-direction: column; gap: 8px; }
+.writing-textarea {
+  width: 100%;
+  height: 220px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 14.5px;
+  font-family: inherit;
+  line-height: 1.7;
+  outline: none;
+  resize: vertical;
+}
+.writing-textarea:focus { border-color: var(--primary); }
+.writing-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: var(--text-sub);
+}
+.badge-wc {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 11.5px;
+}
+.badge-wc.in-range { background: var(--success-light); color: var(--success); }
+.badge-wc.out-range { background: var(--accent-light); color: var(--accent); }
+
+/* 底部操作栏 */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+  z-index: 99;
+}
+.bottom-stats {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  display: flex;
+  gap: 16px;
+}
+.btn {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-outline { background: #fff; border-color: var(--border); color: var(--text-main); }
+.btn-outline:hover { background: #f8fafc; border-color: #cbd5e1; }
+
+/* 智能解析与答案对照卡 */
+.answer-analysis-card {
+  margin-top: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 13px;
+  display: none;
+}
+.answer-analysis-card.show { display: block; }
+.answer-key-badge {
+  font-weight: 700;
+  color: var(--success);
+  margin-right: 8px;
+}
+
+@media(max-width: 900px) {
+  .container { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .split-reading-layout { grid-template-columns: 1fr; }
+  .writing-layout { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- 考场顶栏 -->
+<header class="exam-header">
+  <div class="header-left">
+    <span class="header-badge">全国统一硕士研究生招生考试</span>
+    <div class="header-title">2010 年考研英语（一）真实考卷答题演练</div>
+  </div>
+  <div class="header-right">
+    <div class="exam-timer" id="examTimer">⏱️ 02:45:18</div>
+    <div class="mode-toggle">
+      <button class="mode-btn active" id="modePractice" onclick="setMode('practice')">全真演练</button>
+      <button class="mode-btn" id="modeAnalysis" onclick="setMode('analysis')">答案对照</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- 左侧：真实答题卡 (Bubble Sheet) -->
+  <aside class="sidebar">
+    <div class="sheet-title">
+      <span>📑 答题卡卡位</span>
+      <span class="sheet-progress" id="sheetProgress">已完成 2 / 52</span>
+    </div>
+
+    <!-- Section 1 完形 1-20 -->
+    <div class="sec-nav-group">
+      <div class="sec-nav-header">
+        <span>Section I 完形填空 (1-20)</span>
+        <span>0.5分/题</span>
+      </div>
+      <div class="bubble-grid" id="bubbleGrid1">
+        <!-- JS 动态生成 1-20 -->
+      </div>
+    </div>
+
+    <!-- Section 2 Part A 阅读 21-40 -->
+    <div class="sec-nav-group">
+      <div class="sec-nav-header">
+        <span>Section II Part A 阅读 (21-40)</span>
+        <span>2.0分/题</span>
+      </div>
+      <div class="bubble-grid" id="bubbleGrid2">
+        <!-- JS 动态生成 21-40 -->
+      </div>
+    </div>
+
+    <!-- Section 2 Part B 新题型 41-45 -->
+    <div class="sec-nav-group">
+      <div class="sec-nav-header">
+        <span>Section II Part B 新题型 (41-45)</span>
+        <span>2.0分/题</span>
+      </div>
+      <div class="bubble-grid" id="bubbleGrid3">
+        <!-- JS 动态生成 41-45 -->
+      </div>
+    </div>
+
+    <!-- Section 2 Part C 翻译 46-50 -->
+    <div class="sec-nav-group">
+      <div class="sec-nav-header">
+        <span>Section II Part C 翻译 (46-50)</span>
+        <span>2.0分/题</span>
+      </div>
+      <div class="bubble-grid" id="bubbleGrid4">
+        <!-- JS 动态生成 46-50 -->
+      </div>
+    </div>
+
+    <!-- Section 3 写作 51-52 -->
+    <div class="sec-nav-group">
+      <div class="sec-nav-header">
+        <span>Section III 写作 (51-52)</span>
+        <span>30分</span>
+      </div>
+      <div class="bubble-grid" style="grid-template-columns: 1fr 1fr;">
+        <button class="bubble-btn" id="bubble-51">51 (小作文)</button>
+        <button class="bubble-btn" id="bubble-52">52 (大作文)</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 右侧：真实试卷排版与考题答题逻辑 -->
+  <main class="exam-main">
+
+    <!-- ================= Section I: Use of English ================= -->
+    <section class="exam-section-card" id="sec-1">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title-main">
+            Section I  Use of English
+            <span class="sec-tag">共 20 题 · 10 分</span>
+          </div>
+          <div class="sec-instructions">
+            Directions: Read the following text. Choose the best word(s) for each numbered blank and mark A, B, C or D on the ANSWER SHEET. (10 points)
+          </div>
+        </div>
+      </div>
+
+      <!-- 真实原版文章排版：支持直接在文章空格中内联做题，亦可点击联动下方四选一 -->
+      <div class="academic-passage">
+        <p>
+          In 1924 America's National Research Council sent two engineers to supervise a series of experiments at a telephone-parts factory called the Hawthorne Plant near Chicago. It hoped they would learn how stop-floor lighting 
+          <span class="cloze-blank">
+            <span class="cloze-badge" onclick="scrollToQ(1)">〖1〗</span>
+            <span class="cloze-select-wrap" id="clozeWrap-1">
+              <select onchange="onClozeChange(1, this.value)">
+                <option value="">— 1 —</option>
+                <option value="A">A. affected</option>
+                <option value="B">B. achieved</option>
+                <option value="C">C. extracted</option>
+                <option value="D">D. restored</option>
+              </select>
+            </span>
+          </span>
+          workers' productivity. Instead, the studies ended 
+          <span class="cloze-blank">
+            <span class="cloze-badge" onclick="scrollToQ(2)">〖2〗</span>
+            <span class="cloze-select-wrap" id="clozeWrap-2">
+              <select onchange="onClozeChange(2, this.value)">
+                <option value="">— 2 —</option>
+                <option value="A">A. at</option>
+                <option value="B">B. up</option>
+                <option value="C">C. with</option>
+                <option value="D">D. off</option>
+              </select>
+            </span>
+          </span>
+          giving their name to the "Hawthorne effect", the extremely influential idea that the very 
+          <span class="cloze-blank">
+            <span class="cloze-badge" onclick="scrollToQ(3)">〖3〗</span>
+            <span class="cloze-select-wrap" id="clozeWrap-3">
+              <select onchange="onClozeChange(3, this.value)">
+                <option value="">— 3 —</option>
+                <option value="A">A. truth</option>
+                <option value="B">B. sight</option>
+                <option value="C">C. act</option>
+                <option value="D">D. proof</option>
+              </select>
+            </span>
+          </span>
+          of being experimented upon changed subjects' behavior.
+        </p>
+        <p>
+          The idea arose because of the 
+          <span class="cloze-blank">
+            <span class="cloze-badge" onclick="scrollToQ(4)">〖4〗</span>
+            <span class="cloze-select-wrap" id="clozeWrap-4">
+              <select onchange="onClozeChange(4, this.value)">
+                <option value="">— 4 —</option>
+                <option value="A">A. controversial</option>
+                <option value="B">B. perplexing</option>
+                <option value="C">C. mischievous</option>
+                <option value="D">D. ambiguous</option>
+              </select>
+            </span>
+          </span>
+          behavior of the women in the plant. According to 
+          <span class="cloze-blank">
+            <span class="cloze-badge" onclick="scrollToQ(5)">〖5〗</span>
+            <span class="cloze-select-wrap" id="clozeWrap-5">
+              <select onchange="onClozeChange(5, this.value)">
+                <option value="">— 5 —</option>
+                <option value="A">A. requirements</option>
+                <option value="B">B. explanations</option>
+                <option value="C">C. accounts</option>
+                <option value="D">D. assessments</option>
+              </select>
+            </span>
+          </span>
+          of the experiments, their hourly output rose when lighting was increased, but also when it was dimmed. (篇幅示例，其余空格 6-20 省略...)
+        </p>
+      </div>
+
+      <!-- 完形对应的考题细项（双向同步） -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="q-card" id="qcard-1">
+          <div class="q-meta">
+            <span>第 1 题 · 词义辨析</span>
+            <span>0.5 分</span>
+          </div>
+          <div class="q-stem">1. Choose the best word for blank [1]:</div>
+          <div class="q-options-grid">
+            <label class="opt-label" id="opt-1-A"><input type="radio" name="q1" value="A" onchange="onRadioPick(1,'A')"><span class="opt-tag">[ A ]</span> affected</label>
+            <label class="opt-label" id="opt-1-B"><input type="radio" name="q1" value="B" onchange="onRadioPick(1,'B')"><span class="opt-tag">[ B ]</span> achieved</label>
+            <label class="opt-label" id="opt-1-C"><input type="radio" name="q1" value="C" onchange="onRadioPick(1,'C')"><span class="opt-tag">[ C ]</span> extracted</label>
+            <label class="opt-label" id="opt-1-D"><input type="radio" name="q1" value="D" onchange="onRadioPick(1,'D')"><span class="opt-tag">[ D ]</span> restored</label>
+          </div>
+          <div class="answer-analysis-card" id="analysis-1">
+            <span class="answer-key-badge">正确答案：A</span>
+            <span>考查动宾搭配。affect productivity 表示“影响生产力”，符合文意。</span>
+          </div>
+        </div>
+
+        <div class="q-card" id="qcard-2">
+          <div class="q-meta">
+            <span>第 2 题 · 介词搭配</span>
+            <span>0.5 分</span>
+          </div>
+          <div class="q-stem">2. Choose the best word for blank [2]:</div>
+          <div class="q-options-grid">
+            <label class="opt-label" id="opt-2-A"><input type="radio" name="q2" value="A" onchange="onRadioPick(2,'A')"><span class="opt-tag">[ A ]</span> at</label>
+            <label class="opt-label" id="opt-2-B"><input type="radio" name="q2" value="B" onchange="onRadioPick(2,'B')"><span class="opt-tag">[ B ]</span> up</label>
+            <label class="opt-label" id="opt-2-C"><input type="radio" name="q2" value="C" onchange="onRadioPick(2,'C')"><span class="opt-tag">[ C ]</span> with</label>
+            <label class="opt-label" id="opt-2-D"><input type="radio" name="q2" value="D" onchange="onRadioPick(2,'D')"><span class="opt-tag">[ D ]</span> off</label>
+          </div>
+          <div class="answer-analysis-card" id="analysis-2">
+            <span class="answer-key-badge">正确答案：B</span>
+            <span>end up doing 意为“最终以...告终”，考查固定动词短语。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section II Part A: Reading Comprehension ================= -->
+    <section class="exam-section-card" id="sec-2">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title-main">
+            Section II  Reading Comprehension · Part A
+            <span class="sec-tag">4 篇文章 · 20 题 · 40 分</span>
+          </div>
+          <div class="sec-instructions">
+            Directions: Read the following four texts. Answer the questions below each text by choosing A, B, C or D. (40 points)
+          </div>
+        </div>
+      </div>
+
+      <!-- 推荐的双栏分屏联动布局：左文章，右题干 -->
+      <div style="margin-bottom: 12px; font-weight: 700; color: #334155;">📖 Text 1 (Q21 - Q25)</div>
+      <div class="split-reading-layout">
+        <div class="reading-passage-col academic-passage">
+          <p>
+            Of all the changes that have taken place in English-language newspapers during the past quarter-century, perhaps the most far-reaching has been the inexorable decline in the scope and seriousness of their arts coverage.
+          </p>
+          <p>
+            It is difficult to the point of impossibility for the average reader under the age of forty to imagine a time when high-quality arts criticism could be found in most big-city American newspapers. Yet a considerable number of the most significant collections of rhetoric criticism published in the 20th century consisted in large part of columns wrote for daily newspapers.
+          </p>
+          <p>
+            We are even farther removed from the unfocused intellectual climate of England in the mid-19th century, when a newspaper could think it fit to publish an 8,000-word review of an autobiography.
+          </p>
+          <p>
+            The story of this decline is simple enough. The daily newspaper was the medium through which intellectuals spoke to the general public; today, that communication has virtually ceased. (下略...)
+          </p>
+        </div>
+
+        <div class="reading-questions-col">
+          <div class="q-card" id="qcard-21">
+            <div class="q-meta">
+              <span>第 21 题 · 细节推断</span>
+              <span>2.0 分</span>
+            </div>
+            <div class="q-stem">21. It is indicated in Paragraphs 1 and 2 that ______.</div>
+            <div class="q-options-grid">
+              <label class="opt-label" id="opt-21-A"><input type="radio" name="q21" value="A" onchange="onRadioPick(21,'A')"><span class="opt-tag">[ A ]</span> arts criticism has disappeared from big-city newspapers</label>
+              <label class="opt-label" id="opt-21-B"><input type="radio" name="q21" value="B" onchange="onRadioPick(21,'B')"><span class="opt-tag">[ B ]</span> English-language newspapers used to carry serious arts reviews</label>
+              <label class="opt-label" id="opt-21-C"><input type="radio" name="q21" value="C" onchange="onRadioPick(21,'C')"><span class="opt-tag">[ C ]</span> what readers want most are reviews of rhetoric criticism</label>
+              <label class="opt-label" id="opt-21-D"><input type="radio" name="q21" value="D" onchange="onRadioPick(21,'D')"><span class="opt-tag">[ D ]</span> little changes have happened in newspaper arts coverage</label>
+            </div>
+            <div class="answer-analysis-card" id="analysis-21">
+              <span class="answer-key-badge">正确答案：B</span>
+              <span>根据前两段强调过去报纸有高质量的艺术评论，而如今已发生严重衰落，可推知过去报纸曾刊载严肃的艺术评论。</span>
+            </div>
+          </div>
+
+          <div class="q-card" id="qcard-22">
+            <div class="q-meta">
+              <span>第 22 题 · 事实细节</span>
+              <span>2.0 分</span>
+            </div>
+            <div class="q-stem">22. Newspaper reviews in England before World War II were characterized by ______.</div>
+            <div class="q-options-grid">
+              <label class="opt-label" id="opt-22-A"><input type="radio" name="q22" value="A" onchange="onRadioPick(22,'A')"><span class="opt-tag">[ A ]</span> free themes and styles</label>
+              <label class="opt-label" id="opt-22-B"><input type="radio" name="q22" value="B" onchange="onRadioPick(22,'B')"><span class="opt-tag">[ B ]</span> their length and depth</label>
+              <label class="opt-label" id="opt-22-C"><input type="radio" name="q22" value="C" onchange="onRadioPick(22,'C')"><span class="opt-tag">[ C ]</span> casual writing attitude</label>
+              <label class="opt-label" id="opt-22-D"><input type="radio" name="q22" value="D" onchange="onRadioPick(22,'D')"><span class="opt-tag">[ D ]</span> strong political orientation</label>
+            </div>
+            <div class="answer-analysis-card" id="analysis-22">
+              <span class="answer-key-badge">正确答案：B</span>
+              <span>文中提到可容纳 8000 词长篇自传书评，反映出当时的篇幅和深度。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section II Part B: New Question Types (7选5/排序) ================= -->
+    <section class="exam-section-card" id="sec-3">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title-main">
+            Section II  Reading Comprehension · Part B (新题型)
+            <span class="sec-tag">5 空 · 10 分 · 2010年排序题型</span>
+          </div>
+          <div class="sec-instructions">
+            Directions: For questions 41-45, choose the most suitable paragraphs from the list A-G and fill them into the numbered boxes to complete the text. (10 points)
+          </div>
+        </div>
+      </div>
+
+      <!-- 排序题真实考场交互流程骨架 -->
+      <div class="part-b-flow">
+        <div class="flow-node">
+          <span>第 41 空</span>
+          <select class="flow-select" id="pb-41" onchange="onPartBPick(41, this.value)">
+            <option value="">?</option>
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option>
+          </select>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <span>第 42 空</span>
+          <select class="flow-select" id="pb-42" onchange="onPartBPick(42, this.value)">
+            <option value="">?</option>
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option>
+          </select>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <span>第 43 空</span>
+          <select class="flow-select" id="pb-43" onchange="onPartBPick(43, this.value)">
+            <option value="">?</option>
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option>
+          </select>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <span>第 44 空</span>
+          <select class="flow-select" id="pb-44" onchange="onPartBPick(44, this.value)">
+            <option value="">?</option>
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option>
+          </select>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node given">
+          <span>已知段落 [ E ]</span>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <span>第 45 空</span>
+          <select class="flow-select" id="pb-45" onchange="onPartBPick(45, this.value)">
+            <option value="">?</option>
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 选项池（选完自动标记划线，防止重复使用选项） -->
+      <div class="pool-container">
+        <div class="pool-title">
+          <span>🧩 段落选项池（点击或通过上方下拉框填入，已选项将自动划线置灰）</span>
+          <span id="poolRemainingBadge">剩余 7 项可用</span>
+        </div>
+        <div class="pool-item" id="poolItem-B">
+          <span class="pool-char">[ B ]</span> Retail sales of food and drink in Europe's largest markets are at a standstill, leaving European manufacturers with little scope for growth...
+        </div>
+        <div class="pool-item" id="poolItem-F">
+          <span class="pool-char">[ F ]</span> For example, wholesale food and drink sales came to $268 billion in France, Germany, Italy, Spain and the UK in 2000...
+        </div>
+        <div class="pool-item" id="poolItem-D">
+          <span class="pool-char">[ D ]</span> All in all, this clearly seems to be a market in which big retailers could profitably apply their scale and expertise...
+        </div>
+        <div class="pool-item" id="poolItem-G">
+          <span class="pool-char">[ G ]</span> However, none of these requirements should deter large retailers from taking advantage of this major transformation...
+        </div>
+        <div class="pool-item" id="poolItem-A">
+          <span class="pool-char">[ A ]</span> The first and most important is the consumer's growing preference for eating out: the consumption of food and drink outside the home...
+        </div>
+        <div class="pool-item" id="poolItem-C">
+          <span class="pool-char">[ C ]</span> Will such variations bring about a change in the overall structure of the food and drink market?
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section II Part C: Translation ================= -->
+    <section class="exam-section-card" id="sec-4">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title-main">
+            Section II  Reading Comprehension · Part C (英译汉)
+            <span class="sec-tag">5 句 · 10 分</span>
+          </div>
+          <div class="sec-instructions">
+            Directions: Read the following text carefully and then translate the underlined segments into Chinese. Your translation should be written neatly on the ANSWER SHEET. (10 points)
+          </div>
+        </div>
+      </div>
+
+      <!-- 篇章中包含划线句 -->
+      <div class="academic-passage">
+        <p>
+          One basic weakness in a conservation system based wholly on economic motives is that most members of the land community have no economic value. Yet these creatures are members of the biotic community and, if its stability depends on its integrity, they are entitled to continuance.
+        </p>
+        <p>
+          When one of these noneconomic categories is threatened and, if we happen to love it, we invent excuses to give it economic importance. At the beginning of the century songbirds were supposed to be disappearing. 
+          <span class="trans-underline"><span class="trans-num-tag">46</span>Scientists jumped to the rescue with some distinctly shaky evidence to the effect that insects would eat us up if birds failed to control them.</span>
+          The evidence had to be economic in order to be valid.
+        </p>
+        <p>
+          It is painful to read these roundabout accounts today. We have no land ethic yet, 
+          <span class="trans-underline"><span class="trans-num-tag">47</span>but we have at least drawn nearer the point of admitting that birds should continue as a matter of intrinsic right, regardless of the presence or absence of economic advantage to us.</span>
+        </p>
+      </div>
+
+      <!-- 答题框：支持手写输入与 AI 评分预留 -->
+      <div class="trans-item-box">
+        <div style="font-weight:700; font-size:13px; color:#ea580c; margin-bottom:6px;">第 46 题划线句 (2 分)：</div>
+        <div class="trans-target-text">
+          Scientists jumped to the rescue with some distinctly shaky evidence to the effect that insects would eat us up if birds failed to control them.
+        </div>
+        <textarea class="trans-input" id="trans-46" placeholder="在此输入你的中文翻译（考场答题逻辑：划线句即时书写）..."></textarea>
+      </div>
+
+      <div class="trans-item-box">
+        <div style="font-weight:700; font-size:13px; color:#ea580c; margin-bottom:6px;">第 47 题划线句 (2 分)：</div>
+        <div class="trans-target-text">
+          but we have at least drawn nearer the point of admitting that birds should continue as a matter of intrinsic right, regardless of the presence or absence of economic advantage to us.
+        </div>
+        <textarea class="trans-input" id="trans-47" placeholder="在此输入你的中文翻译..."></textarea>
+      </div>
+    </section>
+
+    <!-- ================= Section III: Writing ================= -->
+    <section class="exam-section-card" id="sec-5">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title-main">
+            Section III  Writing (写作)
+            <span class="sec-tag">Part A (10分) + Part B (20分)</span>
+          </div>
+          <div class="sec-instructions">
+            Part A 应用文 (约 100 词) + Part B 短文写作 (160-200 词)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Part A 小作文 -->
+      <div style="margin-bottom: 24px;">
+        <div style="font-weight:800; font-size:15px; margin-bottom:8px; color:#1e293b;">✍️ 51. Part A 应用文写作 (10 points)</div>
+        <div class="writing-layout">
+          <div class="writing-prompt-card">
+            <b>Directions:</b><br>
+            You are supposed to write for the Postgraduates' Association a notice to recruit volunteers for an international conference on globalization.<br><br>
+            The notice should include the basic qualifications for applicants and the other information which you think is relevant.<br><br>
+            <i>You should write about 100 words on ANSWER SHEET 2. Do not sign your own name.</i>
+          </div>
+          <div class="writing-textarea-wrap">
+            <textarea class="writing-textarea" id="essay-51" placeholder="Write your notice here..." oninput="updateWordCount(51, 100, 120)"></textarea>
+            <div class="writing-status-bar">
+              <span id="wc-badge-51" class="badge-wc out-range">词数：0 词</span>
+              <span>建议词数区间：100 ~ 120 词</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B 大作文（支持漫画图片真实还原） -->
+      <div>
+        <div style="font-weight:800; font-size:15px; margin-bottom:8px; color:#1e293b;">🎨 52. Part B 图画写作 (20 points)</div>
+        <div class="writing-layout">
+          <div class="writing-prompt-card">
+            <b>Directions:</b><br>
+            Write an essay of 160-200 words based on the following drawing. In your essay, you should:<br>
+            1) describe the drawing briefly,<br>
+            2) explain its intended meaning, and<br>
+            3) give your comments.<br>
+            <!-- 真实考研真题原版图画 -->
+            <div style="margin-top: 12px; text-align: center; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px;">
+              <img src="exam_images/exam_2010.jpg" alt="2010考研英语一真题漫画原图" style="max-width: 100%; height: auto; max-height: 280px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); object-fit: contain;">
+              <div style="font-size: 12px; color: var(--text-sub); margin-top: 6px;">【2010 真实试卷附图】文化“火锅”，既美味又营养</div>
+            </div>
+          </div>
+          <div class="writing-textarea-wrap">
+            <textarea class="writing-textarea" id="essay-52" placeholder="Write your essay here based on the drawing..." oninput="updateWordCount(52, 160, 200)"></textarea>
+            <div class="writing-status-bar">
+              <span id="wc-badge-52" class="badge-wc out-range">词数：0 词</span>
+              <span>建议词数区间：160 ~ 200 词</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- 底部固定交付栏 -->
+<div class="bottom-bar">
+  <div class="bottom-stats">
+    <span>当前作答进度：<b id="progressPercent" style="color:var(--primary)">4%</b></span>
+    <span>客观题已做：<b id="answeredCount">2</b> / 45 题</span>
+    <span>主观题已做：<b>0</b> / 7 题</span>
+  </div>
+  <div style="display:flex; gap:12px;">
+    <button class="btn btn-outline" onclick="resetAll()">🔄 清空重做</button>
+    <button class="btn btn-primary" onclick="submitExam()">🏁 交卷并核对真题答案</button>
+  </div>
+</div>
+
+<script>
+// 状态管理
+const userAnswers = {};
+const standardKeys = {
+  1: 'A', 2: 'B', 3: 'C', 4: 'B', 5: 'C',
+  21: 'B', 22: 'B', 23: 'A', 24: 'D', 25: 'B',
+  41: 'B', 42: 'F', 43: 'D', 44: 'G', 45: 'A'
+};
+
+// 初始化答题卡
+function initBubbleSheet() {
+  const b1 = document.getElementById('bubbleGrid1');
+  for (let i = 1; i <= 20; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'bubble-btn';
+    btn.id = `bubble-${i}`;
+    btn.innerHTML = `<span>${i}</span>`;
+    btn.onclick = () => scrollToQ(i);
+    b1.appendChild(btn);
+  }
+
+  const b2 = document.getElementById('bubbleGrid2');
+  for (let i = 21; i <= 40; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'bubble-btn';
+    btn.id = `bubble-${i}`;
+    btn.innerHTML = `<span>${i}</span>`;
+    btn.onclick = () => scrollToQ(i);
+    b2.appendChild(btn);
+  }
+
+  const b3 = document.getElementById('bubbleGrid3');
+  for (let i = 41; i <= 45; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'bubble-btn';
+    btn.id = `bubble-${i}`;
+    btn.innerHTML = `<span>${i}</span>`;
+    btn.onclick = () => document.getElementById('sec-3').scrollIntoView({ behavior: 'smooth' });
+    b3.appendChild(btn);
+  }
+
+  const b4 = document.getElementById('bubbleGrid4');
+  for (let i = 46; i <= 50; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'bubble-btn';
+    btn.id = `bubble-${i}`;
+    btn.innerHTML = `<span>${i}</span>`;
+    btn.onclick = () => document.getElementById('sec-4').scrollIntoView({ behavior: 'smooth' });
+    b4.appendChild(btn);
+  }
+}
+
+// 单选题选择联动
+function onRadioPick(qNum, opt) {
+  userAnswers[qNum] = opt;
+  
+  // 同步文章内联下拉框（如果是完形）
+  const wrap = document.getElementById(`clozeWrap-${qNum}`);
+  if (wrap) {
+    const sel = wrap.querySelector('select');
+    if (sel) sel.value = opt;
+    wrap.classList.add('has-val');
+  }
+
+  // 选项样式高亮
+  ['A','B','C','D'].forEach(k => {
+    const el = document.getElementById(`opt-${qNum}-${k}`);
+    if (el) el.classList.toggle('selected', k === opt);
+  });
+
+  // 更新左侧答题卡
+  const bubble = document.getElementById(`bubble-${qNum}`);
+  if (bubble) {
+    bubble.classList.add('filled');
+    bubble.innerHTML = `<span>${qNum}</span><span style="font-size:10px;font-weight:bold">${opt}</span>`;
+  }
+
+  updateProgress();
+}
+
+// 完形文章内联选择联动下方单选题
+function onClozeChange(qNum, opt) {
+  if (!opt) {
+    delete userAnswers[qNum];
+    document.getElementById(`clozeWrap-${qNum}`).classList.remove('has-val');
+    const bubble = document.getElementById(`bubble-${qNum}`);
+    if (bubble) {
+      bubble.classList.remove('filled');
+      bubble.innerHTML = `<span>${qNum}</span>`;
+    }
+    ['A','B','C','D'].forEach(k => {
+      const el = document.getElementById(`opt-${qNum}-${k}`);
+      if (el) {
+        el.classList.remove('selected');
+        const inp = el.querySelector('input');
+        if (inp) inp.checked = false;
+      }
+    });
+    updateProgress();
+    return;
+  }
+
+  // 勾选单选框
+  const optEl = document.getElementById(`opt-${qNum}-${opt}`);
+  if (optEl) {
+    const inp = optEl.querySelector('input');
+    if (inp) inp.checked = true;
+  }
+  onRadioPick(qNum, opt);
+}
+
+// Part B 排序题选择联动
+function onPartBPick(blankNum, opt) {
+  if (opt) {
+    userAnswers[blankNum] = opt;
+    const bubble = document.getElementById(`bubble-${blankNum}`);
+    if (bubble) {
+      bubble.classList.add('filled');
+      bubble.innerHTML = `<span>${blankNum}</span><span style="font-size:10px;font-weight:bold">${opt}</span>`;
+    }
+  } else {
+    delete userAnswers[blankNum];
+    const bubble = document.getElementById(`bubble-${blankNum}`);
+    if (bubble) {
+      bubble.classList.remove('filled');
+      bubble.innerHTML = `<span>${blankNum}</span>`;
+    }
+  }
+
+  // 更新选项池置灰划线状态
+  const usedOpts = new Set(Object.entries(userAnswers).filter(([k,v]) => k >= 41 && k <= 45).map(([k,v]) => v));
+  ['A','B','C','D','F','G'].forEach(ch => {
+    const item = document.getElementById(`poolItem-${ch}`);
+    if (item) {
+      item.classList.toggle('used', usedOpts.has(ch));
+    }
+  });
+
+  const remaining = 6 - usedOpts.size;
+  document.getElementById('poolRemainingBadge').textContent = `已选 ${usedOpts.size} 项 · 剩余 ${remaining} 项可用`;
+  updateProgress();
+}
+
+// 词数统计
+function updateWordCount(id, min, max) {
+  const text = document.getElementById(`essay-${id}`).value.trim();
+  const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
+  const badge = document.getElementById(`wc-badge-${id}`);
+  badge.textContent = `词数：${words} 词`;
+  
+  if (words >= min && words <= max) {
+    badge.className = 'badge-wc in-range';
+  } else {
+    badge.className = 'badge-wc out-range';
+  }
+
+  const bubble = document.getElementById(`bubble-${id}`);
+  if (bubble) {
+    bubble.classList.toggle('filled', words > 0);
+  }
+  updateProgress();
+}
+
+function scrollToQ(num) {
+  const card = document.getElementById(`qcard-${num}`);
+  if (card) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.classList.add('active-target');
+    setTimeout(() => card.classList.remove('active-target'), 1500);
+  }
+}
+
+function updateProgress() {
+  const answered = Object.keys(userAnswers).length;
+  document.getElementById('answeredCount').textContent = answered;
+  const totalTarget = 52;
+  const percent = Math.round((answered / totalTarget) * 100);
+  document.getElementById('progressPercent').textContent = `${percent}%`;
+  document.getElementById('sheetProgress').textContent = `已完成 ${answered} / ${totalTarget}`;
+}
+
+// 交卷与答案核对
+function submitExam() {
+  setMode('analysis');
+  alert('答卷已提交！已自动切换为【答案对照】模式，系统已核对标准答案并标注解析。');
+}
+
+function setMode(mode) {
+  document.getElementById('modePractice').classList.toggle('active', mode === 'practice');
+  document.getElementById('modeAnalysis').classList.toggle('active', mode === 'analysis');
+
+  const isAnalysis = mode === 'analysis';
+
+  // 针对客观题展开解析卡片并标红/绿
+  Object.keys(standardKeys).forEach(qNum => {
+    const correctOpt = standardKeys[qNum];
+    const userOpt = userAnswers[qNum];
+    const bubble = document.getElementById(`bubble-${qNum}`);
+    const analysisCard = document.getElementById(`analysis-${qNum}`);
+
+    if (isAnalysis) {
+      if (analysisCard) analysisCard.classList.add('show');
+      
+      // 正确选项标绿
+      const correctEl = document.getElementById(`opt-${qNum}-${correctOpt}`);
+      if (correctEl) correctEl.classList.add('answer-correct');
+
+      // 选错标红
+      if (userOpt && userOpt !== correctOpt) {
+        const wrongEl = document.getElementById(`opt-${qNum}-${userOpt}`);
+        if (wrongEl) wrongEl.classList.add('answer-wrong');
+      }
+
+      // 答题卡卡位标红绿
+      if (bubble) {
+        bubble.classList.toggle('correct', userOpt === correctOpt);
+        bubble.classList.toggle('wrong', userOpt && userOpt !== correctOpt);
+      }
+    } else {
+      if (analysisCard) analysisCard.classList.remove('show');
+      ['A','B','C','D'].forEach(k => {
+        const el = document.getElementById(`opt-${qNum}-${k}`);
+        if (el) {
+          el.classList.remove('answer-correct');
+          el.classList.remove('answer-wrong');
+        }
+      });
+      if (bubble) {
+        bubble.classList.remove('correct');
+        bubble.classList.remove('wrong');
+      }
+    }
+  });
+}
+
+function resetAll() {
+  if (confirm('确认清空当前所有作答？')) {
+    location.reload();
+  }
+}
+
+// 页面加载启动
+window.addEventListener('DOMContentLoaded', () => {
+  initBubbleSheet();
+});
+</script>
+
+</body>
+</html>

@@ -2845,15 +2845,20 @@ const EXAM_PROCESSORS = {
   writing: {
     icon: '📝',
     analyze(items) {
-      const ws = items.filter(i => i.type === 'writing');
+      const ws = items.filter(i => i.type === 'writing' || (i.section === 'writing' && i.type === 'question'));
       const score = ws.reduce((a, b) => a + (Number(b.score) || 0), 0);
       return `${ws.length} 道写作题 · 合计 ${score || '—'} 分`;
     },
     render(items, base = 0) {
       let html = '';
       for (const [ix, it] of items.entries()) {
-        if (it.type !== 'writing') continue;
-        html += `<div class="kb-question" data-itemidx="${base + ix}"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
+        if (it.section !== 'writing' && it.type !== 'writing') continue;
+        const imgHtml = it.image ? `<div class="exm-writing-img"><img src="${esc(it.image)}" alt="真题配图" loading="lazy"><div class="hint" style="text-align:center;margin-top:4px">【真题原版附图】</div></div>` : '';
+        html += `<div class="kb-question" data-itemidx="${base + ix}">
+          <div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div>
+          <div class="kb-q-text">${kbText(it.text)}</div>
+          ${imgHtml}
+        </div>`;
       }
       return html;
     },
@@ -3197,8 +3202,9 @@ function unitPracticeHtml(unit, items) {
     return { body: html };
   }
   if (unit.section === 'writing') {
-    const w = writings[0] || items[0] || {};
-    return { body: `<div class="kb-question"><div class="kb-q-head">✍️ ${esc(w.part ? 'Part ' + w.part : '作文')}${w.score ? ' · ' + esc(String(w.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(w.text || '')}</div><textarea class="input u-essay" rows="12" placeholder="在纸上写完再对照解析，或直接在此打草稿…"></textarea></div>` };
+    const w = writings[0] || items.find(it => it.section === 'writing' && (it.type === 'writing' || it.type === 'question')) || items[0] || {};
+    const imgHtml = w.image ? `<div class="exm-writing-img" style="margin:12px 0"><img src="${esc(w.image)}" alt="真题原图" loading="lazy" style="max-width:100%;max-height:280px;border-radius:8px;border:1px solid var(--border)"><div class="hint" style="text-align:center;margin-top:4px">【真题原版附图】</div></div>` : '';
+    return { body: `<div class="kb-question"><div class="kb-q-head">✍️ ${esc(w.part ? 'Part ' + w.part : '作文')}${w.score ? ' · ' + esc(String(w.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(w.text || '')}</div>${imgHtml}<textarea class="input u-essay" rows="12" placeholder="在纸上写完再对照解析，或直接在此打草稿…"></textarea></div>` };
   }
   return { body: items.map(it => `<div class="kb-passage">${kbText(it.text)}</div>`).join('') };
 }
