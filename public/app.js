@@ -959,15 +959,24 @@ const STORY_TIP = {
   story: '把选中的词写进一篇连贯短文：语境记忆 + 记忆钩子 + 检索自测，三管齐下',
 };
 
-function switchStudySub(sub) {
+async function switchStudySub(sub) {
   $$('#studySubbar .study-sub-item').forEach(b => b.classList.toggle('active', b.dataset.sub === sub));
   const vocab = $('#vocabPane'), story = $('#storyPane');
   if (vocab) vocab.style.display = sub === 'vocab' ? '' : 'none';
   if (story) story.style.display = sub === 'story' ? '' : 'none';
   const tip = $('#studySubTip');
   if (tip) tip.textContent = STORY_TIP[sub] || '';
-  if (sub === 'story') { if (!storyState.hist.length) loadStoryHist(); }
-  else loadWords();
+  if (sub === 'story') {
+    /* v2.4.1：首次进入词文成章时若无题材 chips，先拉取题材渲染（loadConfig 只在设置页触发） */
+    if (!$('#storyThemeRow .chip')) {
+      try {
+        const cfg = await api('/api/config');
+        state.storyThemes = Array.isArray(cfg.storyThemes) ? cfg.storyThemes : null;
+      } catch { /* 题材拉取失败回退前端内置清单 */ }
+      renderStoryThemeRow(state.storyThemes);
+    }
+    if (!storyState.hist.length) loadStoryHist();
+  } else loadWords();
 }
 
 $$('#studySubbar .study-sub-item').forEach(b => b.addEventListener('click', () => switchStudySub(b.dataset.sub)));
@@ -985,11 +994,7 @@ $$('#storyCountRow .chip').forEach(c => c.addEventListener('click', () => {
   storyState.count = Number(c.dataset.count);
 }));
 
-$$('#storyThemeRow .chip').forEach(c => c.addEventListener('click', () => {
-  $$('#storyThemeRow .chip').forEach(x => x.classList.remove('active'));
-  c.classList.add('active');
-  storyState.theme = c.dataset.theme;
-}));
+/* v2.4.1：题材 chips 改为动态渲染（renderStoryThemeRow），静态绑定移除 */
 
 $$('#storyLengthRow .chip').forEach(c => c.addEventListener('click', () => {
   $$('#storyLengthRow .chip').forEach(x => x.classList.remove('active'));
@@ -1556,8 +1561,7 @@ async function loadConfig() {
       }
       const revModel = $('#cfgReviewModel');
       if (revModel) revModel.value = c.review.model || '';
-      const revThink = $('#cfgReviewThinking');
-      if (revThink) revThink.checked = !!c.review.thinking;
+      /* v2.4.1：审核专项「启用深度思考」开关已删除（统一收敛到服务商档案思考等级），不再回填 */
     }
     if (c.selection) {
       const selSel = $('#cfgSelectionProvider');
@@ -1568,6 +1572,19 @@ async function loadConfig() {
       const selModel = $('#cfgSelectionModel');
       if (selModel) selModel.value = c.selection.model || '';
     }
+    /* v2.4.1：词文成章专用模型回填 + DIY 文章题材编辑器回填 */
+    if (c.story) {
+      const storySel = $('#cfgStoryProvider');
+      if (storySel) {
+        storySel.innerHTML = '<option value="">— 同默认服务商 —</option>' +
+          (c.llm.providers || []).map(p => `<option value="${esc(p.id)}"${p.id === c.story.providerId ? ' selected' : ''}>${esc(p.name)}</option>`).join('');
+      }
+      const storyModel = $('#cfgStoryModel');
+      if (storyModel) storyModel.value = c.story.model || '';
+    }
+    state.storyThemes = Array.isArray(c.storyThemes) ? c.storyThemes : null;   // null = 内置默认
+    renderStoryThemesEditor();
+    renderStoryThemeRow(state.storyThemes);
     renderProviders();
     refreshVisionUI();   // v2.3.4：默认服务商视觉能力变化后同步图片按钮显隐
   } catch (e) { console.error(e); }
@@ -1840,7 +1857,7 @@ $('#saveReviewCfgBtn').addEventListener('click', async () => {
     await api('/api/config', { method: 'POST', body: { review: {
       providerId: $('#cfgReviewProvider').value,
       model: $('#cfgReviewModel').value.trim(),
-      thinking: $('#cfgReviewThinking').checked,
+      // v2.4.1：thinking 不再由本卡管理（未提交该字段 → 服务端保留已存值），深度思考统一走服务商档案思考等级
     } } });
     btn.textContent = '✅ 已保存';
     setTimeout(() => { btn.textContent = prev; }, 2000);
@@ -1869,6 +1886,123 @@ $('#saveSelectionCfgBtn').addEventListener('click', async () => {
     btn.disabled = false;
   }
 });
+
+/* v2.4.1：保存词文成章专用模型配置 */
+$('#saveStoryCfgBtn').addEventListener('click', async () => {
+  const btn = $('#saveStoryCfgBtn');
+  const prev = btn.textContent;
+  try {
+    btn.disabled = true;
+    await api('/api/config', { method: 'POST', body: { story: {
+      providerId: $('#cfgStoryProvider').value,
+      model: $('#cfgStoryModel').value.trim(),
+    } } });
+    btn.textContent = '✅ 已保存';
+    setTimeout(() => { btn.textContent = prev; }, 2000);
+  } catch (e) {
+    alert('保存失败：' + e.message);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+/* ================= v2.4.1：DIY · 文章题材编辑器（词文成章题材自定义） ================= */
+
+const STORY_THEMES_FALLBACK = ['随缘', '校园', '科幻', '悬疑', '职场', '旅行', '童话', '冒险', '美食', '体育', '侦探', '西部', '宫斗', '末日', '神话', '赛博朋克'];
+
+function storyThemesWorking() {
+  return [...(state.storyThemesEdit || state.storyThemes || STORY_THEMES_FALLBACK)];
+}
+
+/** DIY 编辑器渲染（增/删，保存时统一提交） */
+function renderStoryThemesEditor() {
+  const list = $('#storyThemesList');
+  if (!list) return;
+  const items = storyThemesWorking();
+  if (!items.length) {
+    list.innerHTML = '<div class="hint">列表为空——保存后将回退到内置 16 题材</div>';
+    return;
+  }
+  list.innerHTML = items.map((t, i) => `
+    <span class="story-theme-tag${t === '随缘' ? ' locked' : ''}" data-ti="${i}">${esc(t)}
+      ${t === '随缘' ? '<span class="story-theme-lock" title="默认题材，不可删除">🔒</span>' : `<button class="story-theme-x" data-tx="${i}" title="移除" type="button">✕</button>`}
+    </span>`).join('');
+  $$('#storyThemesList [data-tx]').forEach(b => b.addEventListener('click', () => {
+    const cur = storyThemesWorking();
+    cur.splice(Number(b.dataset.tx), 1);
+    state.storyThemesEdit = cur;
+    renderStoryThemesEditor();
+  }));
+}
+
+$('#storyThemeAddBtn').addEventListener('click', () => {
+  const inp = $('#storyThemeInput');
+  const t = (inp.value || '').trim();
+  if (!t) return;
+  const cur = storyThemesWorking();
+  if (cur.includes(t)) { toast('题材已存在'); return; }
+  if (t.length > 12) { toast('题材 ≤12 字'); return; }
+  if (cur.length >= 40) { toast('最多 40 个题材'); return; }
+  cur.push(t);
+  state.storyThemesEdit = cur;
+  inp.value = '';
+  renderStoryThemesEditor();
+});
+$('#storyThemeInput').addEventListener('keydown', e => { if (e.key === 'Enter') $('#storyThemeAddBtn').click(); });
+
+$('#storyThemesSaveBtn').addEventListener('click', async () => {
+  const btn = $('#storyThemesSaveBtn'), out = $('#storyThemesResult');
+  try {
+    btn.disabled = true;
+    const cur = storyThemesWorking();
+    await api('/api/config', { method: 'POST', body: { storyThemes: cur.length >= 2 ? cur : null } });
+    state.storyThemes = cur.length >= 2 ? cur : null;
+    state.storyThemesEdit = null;
+    renderStoryThemesEditor();
+    renderStoryThemeRow(state.storyThemes);
+    out.textContent = '✅ 题材已保存，词文成章页已生效';
+    out.className = 'result ok';
+    setTimeout(() => { out.textContent = ''; }, 2500);
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+$('#storyThemesResetBtn').addEventListener('click', async () => {
+  const out = $('#storyThemesResult');
+  try {
+    await api('/api/config', { method: 'POST', body: { storyThemes: null } });
+    state.storyThemes = null;
+    state.storyThemesEdit = null;
+    renderStoryThemesEditor();
+    renderStoryThemeRow(null);
+    out.textContent = '↺ 已恢复内置题材';
+    out.className = 'result ok';
+    setTimeout(() => { out.textContent = ''; }, 2500);
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+});
+
+/** 词文成章页题材 chips 动态渲染（自定义列表优先，随缘固定首位） */
+function renderStoryThemeRow(customList) {
+  const row = $('#storyThemeRow');
+  if (!row) return;
+  const themes = (Array.isArray(customList) && customList.length >= 2 ? customList : STORY_THEMES_FALLBACK);
+  const ordered = ['随缘', ...themes.filter(t => t !== '随缘')];
+  const cur = storyState.theme && ordered.includes(storyState.theme) ? storyState.theme : ordered[0];
+  storyState.theme = cur;
+  row.innerHTML = ordered.map(t => `<button class="chip${t === cur ? ' active' : ''}" data-theme="${esc(t)}" type="button">${esc(t)}</button>`).join('');
+  $$('#storyThemeRow .chip').forEach(c => c.addEventListener('click', () => {
+    $$('#storyThemeRow .chip').forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    storyState.theme = c.dataset.theme;
+  }));
+}
 
 /* v1.0.6：云词库绑定 */
 $('#loadNotepadsBtn').addEventListener('click', async () => {
@@ -3734,8 +3868,10 @@ $('#exHistoryBtn').addEventListener('click', kbOpenHistory);
 /* ---------------- v2.1.2：划选精读学习（单词/词组/句子，PC 浮动 + 移动端底部卡片） ---------------- */
 /* v2.3.3：借鉴 nextai-translator / Saladict / 沉浸式翻译——
    ① 解析卡片多模式 Tab（释义/直译/语法/例句）；② 双击查词；③ Esc 关闭；④ 一键收进墨墨云词库（Saladict 生词本交互 × 墨墨生态） */
+/* v2.4.1：划词助手扩展到全站——不再限定容器白名单，正文/文章/词表/笔记等任意页面文本皆可划选；
+   仍排除输入框、textarea、精读卡自身与编辑弹窗，交互控件区域不受影响。 */
 
-const SEL_LEARN_READABLE = ['#kbDetail', '#exDetail', '#unitDetail'];
+const SEL_LEARN_READABLE = null;   // v2.4.1：null = 全站放行（原白名单 ['#kbDetail', '#exDetail', '#unitDetail'] 已弃用）
 const SEL_LEARN_MODES = [
   { id: 'define', label: '📖 释义' },
   { id: 'translate', label: '🌐 直译' },
@@ -3757,24 +3893,31 @@ function selLearnKindOf(text) {
 }
 
 function selLearnInReadable(node) {
+  /* v2.4.1：全站放行——按 DOM 结构判定“可读正文”：处于 body 内且不在编辑/交互件中即视为可读 */
   const el = node && (node.nodeType === 1 ? node : node.parentElement);
-  if (!el) return null;
-  return SEL_LEARN_READABLE.map(s => el.closest && el.closest(s)).find(Boolean) || null;
+  if (!el || !document.body.contains(el)) return null;
+  if (el.closest('input, textarea, select, [contenteditable], .sel-learn-card, .kb-fix-modal, .modal-mask, nav.tab-group, .sidebar, .mobile-header, .mobile-bottom-bar, button, .btn')) return null;
+  return el.closest('#kbDetail') || el.closest('#exDetail') || el.closest('#unitDetail') || el;
 }
 
 function selLearnContextOf(range, root) {
   try {
     const node = range.startContainer;
     const host = (node.nodeType === 1 ? node : node.parentElement)?.closest('[data-itemidx]') ||
-      (node.nodeType === 1 ? node : node.parentElement)?.closest('.kb-passage, .kb-question, .unit-q, p') || root;
+      (node.nodeType === 1 ? node : node.parentElement)?.closest('.kb-passage, .kb-question, .unit-q, .story-passage, .sel-learn-body, p, li, .card') || root;
     return String(host?.innerText || '').replace(/\s+\n/g, '\n').trim().slice(0, 3000);
   } catch { return ''; }
 }
 
 function selLearnTitleOf(root) {
-  const prefix = root.id === 'exDetail' ? 'ex' : (root.id === 'unitDetail' ? 'unit' : 'kb');
-  const t = $(`#${prefix}DetailTitle`);
-  return t ? t.textContent.trim().slice(0, 100) : '';
+  /* v2.4.1：全站场景取当前激活页签标题兜底 */
+  const prefix = root.id === 'exDetail' ? 'ex' : (root.id === 'unitDetail' ? 'unit' : (root.id === 'kbDetail' ? 'kb' : ''));
+  if (prefix) {
+    const t = $(`#${prefix}DetailTitle`);
+    if (t) return t.textContent.trim().slice(0, 100);
+  }
+  const active = document.querySelector('.tab.active');
+  return active ? ('工作台 · ' + active.textContent.trim().slice(0, 60)) : '';
 }
 
 function selLearnRemoveBtn() {
@@ -3946,12 +4089,11 @@ document.addEventListener('mousedown', e => {
   }, 120);
 });
 /* v2.3.3：双击查词（Saladict 经典交互）——双击选词后自动弹出精读条 */
+/* v2.4.1：全站放行——不在编辑件/弹窗内即可触发 */
 document.addEventListener('dblclick', e => {
   if (!e.target || typeof e.target.closest !== 'function') return;
-  if (e.target.closest('input, textarea, .sel-learn-card, .kb-fix-modal')) return;
-  if (e.target.closest && SEL_LEARN_READABLE.some(s => e.target.closest(s))) {
-    setTimeout(selLearnOnSelection, 30);
-  }
+  if (e.target.closest('input, textarea, select, [contenteditable], .sel-learn-card, .kb-fix-modal, .modal-mask, button, .btn')) return;
+  setTimeout(selLearnOnSelection, 30);
 });
 /* v2.3.3：Esc 关闭解析卡片（nextai-translator / 沉浸式翻译通用手势） */
 document.addEventListener('keydown', e => {

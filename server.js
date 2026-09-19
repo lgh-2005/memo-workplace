@@ -133,6 +133,10 @@ if (!config.mineru || typeof config.mineru !== 'object') config.mineru = { apiKe
 if (!config.review || typeof config.review !== 'object') config.review = { providerId: '', model: '', thinking: false };
 // v2.3.4：划词助手专用模型配置缺省补齐（留空沿用默认服务商）
 if (!config.selection || typeof config.selection !== 'object') config.selection = { providerId: '', model: '' };
+// v2.4.1：词文成章专用模型配置缺省补齐（留空沿用默认服务商）
+if (!config.story || typeof config.story !== 'object') config.story = { providerId: '', model: '' };
+// v2.4.1：文章题材自定义列表（null = 未自定义，用内置 16 题材；数组 = 用户自定义全量替换，2~40 项）
+if (config.storyThemes !== undefined && !Array.isArray(config.storyThemes)) config.storyThemes = null;
 // v2.0.0：外刊发布源独立于手工语料和真题库；留空使用 corpus/external/current/
 if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '', pythonPath: '', externalDir: '' };
 if (config.kb.externalDir === undefined) config.kb.externalDir = '';
@@ -1517,6 +1521,15 @@ function getPrompt(key, fallback) {
     return config.diyPrompts[key].current;
   }
   return DEFAULT_PROMPTS[key]?.template || fallback || '';
+}
+
+/* v2.4.1：词文成章题材清单——config.storyThemes 自定义优先，缺省内置 16 题材 */
+const STORY_THEMES_BUILTIN = ['随缘', '校园', '科幻', '悬疑', '职场', '旅行', '童话', '冒险', '美食', '体育', '侦探', '西部', '宫斗', '末日', '神话', '赛博朋克'];
+function storyThemesList() {
+  if (Array.isArray(config.storyThemes) && config.storyThemes.length) {
+    return config.storyThemes.map(t => String(t || '').trim()).filter(Boolean).slice(0, 40);
+  }
+  return STORY_THEMES_BUILTIN;
 }
 
 /** 调 OpenAI 兼容 /images/generations 出一张图，落盘后返回本地 URL */
@@ -3302,6 +3315,11 @@ const server = http.createServer(async (req, res) => {
             providerId: (config.selection && config.selection.providerId) || '',
             model: (config.selection && config.selection.model) || '',
           },
+          story: {
+            providerId: (config.story && config.story.providerId) || '',
+            model: (config.story && config.story.model) || '',
+          },
+          storyThemes: storyThemesList(),   // v2.4.1：文章题材（自定义或内置）
           kb: {
             dir: (config.kb && config.kb.dir) || '',
             externalDir: (config.kb && config.kb.externalDir) || '',
@@ -3458,6 +3476,21 @@ const server = http.createServer(async (req, res) => {
           if (!config.selection || typeof config.selection !== 'object') config.selection = { providerId: '', model: '' };
           if (body.selection.providerId !== undefined) config.selection.providerId = String(body.selection.providerId || '').trim();
           if (body.selection.model !== undefined) config.selection.model = String(body.selection.model || '').trim();
+        }
+        // v2.4.1：词文成章专用模型配置持久化
+        if (body.story && typeof body.story === 'object') {
+          if (!config.story || typeof config.story !== 'object') config.story = { providerId: '', model: '' };
+          if (body.story.providerId !== undefined) config.story.providerId = String(body.story.providerId || '').trim();
+          if (body.story.model !== undefined) config.story.model = String(body.story.model || '').trim();
+        }
+        // v2.4.1：文章题材自定义列表持久化（null 恢复内置默认；数组 2~40 项、每项 ≤12 字符全量替换）
+        if (body.storyThemes !== undefined) {
+          if (body.storyThemes === null) {
+            config.storyThemes = null;
+          } else if (Array.isArray(body.storyThemes)) {
+            const list = [...new Set(body.storyThemes.map(t => String(t || '').trim()).filter(t => t && t.length <= 12))];
+            config.storyThemes = list.length >= 2 ? list.slice(0, 40) : null;
+          }
         }
         // v1.1.0：语料库数据源目录（留空 = 用仓库内 corpus/）
         if (body.kb && typeof body.kb === 'object' && typeof body.kb.dir === 'string') {
@@ -4110,8 +4143,9 @@ const server = http.createServer(async (req, res) => {
           .filter(w => /^[a-z][a-z''\-]{0,29}$/.test(w)))];
         if (words.length < 3) return sendJSON(res, 400, { error: '至少选 3 个单词（每词限字母/撇号/连字符，≤30 字符）' });
         if (words.length > 20) return sendJSON(res, 400, { error: '每篇最多 20 个单词，请精简词池' });
-        const themes = ['随缘', '校园', '科幻', '悬疑', '职场', '旅行', '童话', '冒险', '美食', '体育', '侦探', '西部', '宫斗', '末日', '神话', '赛博朋克'];
-        const theme = themes.includes(body.theme) ? body.theme : '随缘';
+        // v2.4.1：题材动态化——storyThemes 自定义列表优先，缺省用内置 16 题材
+        const themes = storyThemesList();
+        const theme = themes.includes(body.theme) ? body.theme : themes[0] || '随缘';
         const lengths = { short: { label: '短篇', guide: '180~260 个英文单词' }, medium: { label: '中篇', guide: '350~450 个英文单词' } };
         const lengthKey = lengths[body.length] ? body.length : 'short';
         const lens = Object.fromEntries(words.map(w => [w, db.glosses[w] || null]));
@@ -4137,7 +4171,15 @@ const server = http.createServer(async (req, res) => {
             '【再次提醒】你的回复必须整体是一个 JSON 对象（第一个字符 { 最后一个字符 }），英文正文放在 passage 字段里，不要在 JSON 之外输出任何文字。',
           ].filter(Boolean).join('\n\n') },
         ];
-        const reply = await llmChat(msgs, { maxTokens: 4000, llmOverride: { _jsonMode: true } });
+        const reply = await llmChat(msgs, {
+          maxTokens: 4000,
+          // v2.4.1：词文成章可单独指定服务商与覆盖模型（留空沿用默认服务商）
+          providerId: (config.story && config.story.providerId) || undefined,
+          llmOverride: {
+            _jsonMode: true,
+            ...(((config.story && config.story.model)) ? { model: config.story.model } : {}),
+          },
+        });
         let parsed;
         try {
           // v2.4.0a 容错：真实模型常在 JSON 前后带说明文字/代码围栏——先剥围栏，再提取第一个平衡的 {...} 块解析

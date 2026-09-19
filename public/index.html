@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.4.0</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.4.1</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.4.0</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.4.1</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -229,25 +229,8 @@
         </div>
         <div class="card">
           <div class="card-title">⚙️ 生成参数</div>
-          <label class="field-label">题材</label>
-          <div class="filter-row" id="storyThemeRow">
-            <button class="chip active" data-theme="随缘">随缘</button>
-            <button class="chip" data-theme="校园">校园</button>
-            <button class="chip" data-theme="科幻">科幻</button>
-            <button class="chip" data-theme="悬疑">悬疑</button>
-            <button class="chip" data-theme="职场">职场</button>
-            <button class="chip" data-theme="旅行">旅行</button>
-            <button class="chip" data-theme="童话">童话</button>
-            <button class="chip" data-theme="冒险">冒险</button>
-            <button class="chip" data-theme="美食">美食</button>
-            <button class="chip" data-theme="体育">体育</button>
-            <button class="chip" data-theme="侦探">侦探</button>
-            <button class="chip" data-theme="西部">西部</button>
-            <button class="chip" data-theme="宫斗">宫斗</button>
-            <button class="chip" data-theme="末日">末日</button>
-            <button class="chip" data-theme="神话">神话</button>
-            <button class="chip" data-theme="赛博朋克">赛博朋克</button>
-          </div>
+          <label class="field-label">题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（在 设置 · DIY · 文章题材 中自定义）</span></label>
+          <div class="filter-row" id="storyThemeRow"></div><!-- v2.4.1：题材 chips 由 /api/story/themes 动态渲染 -->
           <label class="field-label">篇幅</label>
           <div class="filter-row" id="storyLengthRow">
             <button class="chip active" data-length="short">短篇 ~200 词</button>
@@ -703,10 +686,7 @@
                 <input type="text" id="cfgReviewModel" class="input" placeholder="留空 = 使用服务商默认模型" data-page-node-id="cjnGer5AtLt6FQjavkbZYh">
               </div>
             </div>
-            <label class="check-row" style="margin-top:8px" data-page-node-id="9wlBWlR6Hb6SAvX9uxhpSP"><input type="checkbox" id="cfgReviewThinking" data-page-node-id="EJckgWPpIrQ5fZzEftHl3m"> 启用深度思考（Claude/DeepSeek-R1 等）</label>
-            <details class="hint-fold" data-page-node-id="LAjmy2wGy3cMkof3jCxqMX"><summary data-page-node-id="gndZ8JlcCeOM7gaGnfqTTQ">ℹ️ 说明</summary>
-            <div class="hint" data-page-node-id="NRWP48yQHFlYCKJCPG3bBm">开启后将向 API 发送 thinking 参数（budget_tokens=8000），max_tokens 自动增至 16000。仅部分模型支持，不支持的服务商会报错。</div>
-            </details>
+            <div class="hint" data-page-node-id="NRWP48yQHFlYCKJCPG3bBm">深度思考开关已统一收敛到服务商档案的「思考等级」（v2.4.1）：需要审核深度思考时，编辑对应服务商选择思考等级即可，本专项配置不再重复提供。</div>
             <button class="btn" id="saveReviewCfgBtn" style="margin-top:8px" data-page-node-id="8BHSgI1QRIbNeCWnI3plap">💾 保存审核服务商配置</button>
           </div>
 
@@ -727,6 +707,25 @@
               </div>
             </div>
             <button class="btn" id="saveSelectionCfgBtn" style="margin-top:8px">💾 保存划词助手配置</button>
+          </div>
+
+          <!-- v2.4.1：词文成章专用模型 -->
+          <div class="card" id="storyCfgCard">
+            <div class="card-title">📖 词文成章专用模型 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（不填则使用默认服务商）</span></div>
+            <details class="hint-fold"><summary>ℹ️ 说明</summary>
+            <div class="hint">仅「词文成章」的文章生成使用此服务商。长文结构化输出对模型指令服从性要求高——建议配 GPT/Claude 系或其它服从性好的模型，可显著提升钩子/翻译/自测的完整度；服务商档案的思考等级与透传参数同样生效。留空则沿用默认服务商。</div>
+            </details>
+            <div class="grid-2" style="gap:10px">
+              <div>
+                <label class="field-label">服务商</label>
+                <select id="cfgStoryProvider" class="input"></select>
+              </div>
+              <div>
+                <label class="field-label">覆盖模型（可选）</label>
+                <input type="text" id="cfgStoryModel" class="input" placeholder="留空 = 使用服务商默认模型">
+              </div>
+            </div>
+            <button class="btn" id="saveStoryCfgBtn" style="margin-top:8px">💾 保存词文成章配置</button>
           </div>
         </div>
 
@@ -905,6 +904,26 @@
           <div class="hint">这里集中管理本工作台所有向 AI 发送的提示词（System / User Prompt）。每个提示词都带唯一<b>索引</b>（如 <code>tutor_system</code>），修改保存后自动保留最近 <b>5 条</b>历史版本，可随时回看或恢复默认。</div>
           </details>
           <div id="promptRegistry"></div>
+        </div>
+
+        <!-- v2.4.1：子版块「文章题材」——词文成章题材自定义 -->
+        <div class="card" id="storyThemesCard">
+          <div class="card-title-row">
+            <div class="card-title">📚 文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v2.4.1 · 词文成章的生成题材可自定义）</span></div>
+            <button class="btn" id="storyThemesResetBtn">↺ 恢复内置题材</button>
+          </div>
+          <details class="hint-fold"><summary>ℹ️ 说明</summary>
+          <div class="hint">「📖 词文成章」页顶部的题材 chips 由此列表驱动：可添加自定义题材（如「武侠」「律政」「克苏鲁」），也可删除不想要的。列表为空或不足 2 项时自动回退内置题材。默认「随缘」始终保留且排第一。</div>
+          </details>
+          <div class="story-themes-editor">
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <input type="text" id="storyThemeInput" class="input" placeholder="输入新题材（≤12 字，如：武侠）" maxlength="12" autocomplete="off">
+              <button class="btn" id="storyThemeAddBtn" style="white-space:nowrap">➕ 添加</button>
+            </div>
+            <div class="story-themes-list" id="storyThemesList"></div>
+            <button class="btn primary" id="storyThemesSaveBtn" style="margin-top:10px">💾 保存题材配置</button>
+            <div class="result" id="storyThemesResult"></div>
+          </div>
         </div>
       </div>
     </details>
