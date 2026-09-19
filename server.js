@@ -1218,7 +1218,10 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     if (llm._thinking) {
       bodyObj.thinking = llm._thinking;
     } else if (llm._noThinking) {
-      // v2.4.2.a：调用方显式抑制思考（大词池结构化任务防思考失控耗尽预算）
+      // v2.4.2.b：调用方显式关闭思考——仅不传 reasoning_effort 不够（部分模型默认思考），
+      // 双保险下发两种主流关闭参数，上游不识别的会忽略
+      bodyObj.reasoning_effort = 'none';
+      bodyObj.enable_thinking = false;
     } else if (llm.thinking && llm.thinking !== 'off') {
       bodyObj.reasoning_effort = llm.thinking;   // OpenAI o 系列与主流中转站通用
     }
