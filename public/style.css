@@ -2312,6 +2312,76 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-opt b { color: var(--primary); }
 .kb-ans { color: var(--ok); font-weight: 600; }
 .kb-sentence { line-height: 1.8; font-size: 14px; }
+/* ================= v2.6.2：手写稿拍照识别核对弹层与全端响应式适配 ================= */
+.ocr-overlay {
+  position: fixed; inset: 0; background: rgba(15, 23, 42, .65); backdrop-filter: blur(4px);
+  z-index: 1200; display: flex; align-items: center; justify-content: center; padding: 16px;
+}
+.ocr-modal {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius, 14px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, .25); width: 100%; max-width: 980px;
+  max-height: 90vh; display: flex; flex-direction: column; overflow: hidden;
+  animation: ocrModalIn .2s ease-out;
+}
+@keyframes ocrModalIn { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: scale(1); } }
+
+.ocr-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 20px; border-bottom: 1px solid var(--border); background: var(--bg);
+}
+.ocr-title { font-size: 15px; font-weight: 700; color: var(--text); }
+.ocr-close {
+  background: transparent; border: 0; font-size: 18px; color: var(--text-sub);
+  cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: all .15s;
+}
+.ocr-close:hover { background: color-mix(in srgb, var(--text-sub) 15%, transparent); color: var(--text); }
+
+.ocr-body { padding: 16px 20px; overflow-y: auto; flex: 1; }
+.ocr-split-view {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; min-height: 420px;
+}
+@media (max-width: 768px) {
+  .ocr-split-view { grid-template-columns: 1fr; }
+  .ocr-img-pane { max-height: 240px; }
+}
+
+.ocr-pane-title {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text);
+}
+.ocr-img-pane {
+  display: flex; flex-direction: column; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--bg); padding: 10px; overflow: hidden;
+}
+.ocr-img-scroll {
+  flex: 1; overflow: auto; text-align: center; border-radius: 6px; background: #00000008;
+  display: flex; align-items: center; justify-content: center; min-height: 200px;
+}
+.ocr-img-scroll img {
+  max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
+}
+
+.ocr-text-pane { display: flex; flex-direction: column; }
+.ocr-textarea {
+  flex: 1; min-height: 320px; width: 100%; resize: vertical; font-size: 14px;
+  line-height: 1.8; padding: 12px 14px; font-family: Charter, Georgia, serif;
+}
+.ocr-badge {
+  padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 700;
+}
+.ocr-badge.ok { background: color-mix(in srgb, var(--ok, #10b981) 16%, transparent); color: var(--ok, #10b981); }
+.ocr-badge.warn { background: color-mix(in srgb, var(--warn, #ef4444) 16%, transparent); color: var(--warn, #ef4444); }
+
+.ocr-foot {
+  display: flex; justify-content: flex-end; align-items: center; gap: 10px;
+  padding: 12px 20px; border-top: 1px solid var(--border); background: var(--bg);
+}
+@media (max-width: 580px) {
+  .ocr-foot { flex-wrap: wrap; }
+  .ocr-foot button { flex: 1; min-width: 100px; }
+}
+
 /* ================= 考场全真交互系统与风格自适应 (v2.6.1.a) ================= */
 .exm-mode-switch {
   display: inline-flex; background: var(--bg);

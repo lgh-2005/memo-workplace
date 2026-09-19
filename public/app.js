@@ -1759,6 +1759,16 @@ async function loadConfig() {
       const storyModel = $('#cfgStoryModel');
       if (storyModel) storyModel.value = c.story.model || '';
     }
+    /* v2.6.2：手写识图专用模型回填 */
+    if (c.writingOcr) {
+      const ocrSel = $('#cfgWritingOcrProvider');
+      if (ocrSel) {
+        ocrSel.innerHTML = '<option value="">— 同默认服务商 —</option>' +
+          (c.llm.providers || []).map(p => `<option value="${esc(p.id)}"${p.id === c.writingOcr.providerId ? ' selected' : ''}>${esc(p.name)}${p.vision ? ' (👁️视觉)' : ''}</option>`).join('');
+      }
+      const ocrModel = $('#cfgWritingOcrModel');
+      if (ocrModel) ocrModel.value = c.writingOcr.model || '';
+    }
     state.storyThemes = Array.isArray(c.storyThemes) ? c.storyThemes : null;   // null = 内置默认
     renderStoryThemesEditor();
     renderStoryThemeRow(state.storyThemes);
@@ -2104,6 +2114,25 @@ $('#saveStoryCfgBtn').addEventListener('click', async () => {
     await api('/api/config', { method: 'POST', body: { story: {
       providerId: $('#cfgStoryProvider').value,
       model: $('#cfgStoryModel').value.trim(),
+    } } });
+    btn.textContent = '✅ 已保存';
+    setTimeout(() => { btn.textContent = prev; }, 2000);
+  } catch (e) {
+    alert('保存失败：' + e.message);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+/* v2.6.2：保存写作手写识图专用模型配置 */
+$('#saveWritingOcrCfgBtn')?.addEventListener('click', async () => {
+  const btn = $('#saveWritingOcrCfgBtn');
+  const prev = btn.textContent;
+  try {
+    btn.disabled = true;
+    await api('/api/config', { method: 'POST', body: { writingOcr: {
+      providerId: $('#cfgWritingOcrProvider').value,
+      model: $('#cfgWritingOcrModel').value.trim(),
     } } });
     btn.textContent = '✅ 已保存';
     setTimeout(() => { btn.textContent = prev; }, 2000);
@@ -2580,7 +2609,6 @@ async function openKbRecord(rid) {
     const rec = r.record;
     kbDetailState = { prefix: 'kb', id: rid, rec: null };
     kbCloseEditor();
-    $('#kbIssuesPanel').innerHTML = '';
     // v2.2.8：给详情根节点打上记录来源标记，供划选精读/三遍训练取真实 sourceRef
     $('#kbDetail').dataset.rid = rid;
     $('#kbDetail').dataset.sourceKind = rec.external ? 'external' : (rec.rtype === 'qa_set' ? 'exam' : 'corpus');
@@ -3111,7 +3139,6 @@ async function openExamRecord(exid) {
     const rec = r.record;
     kbDetailState = { prefix: 'ex', id: exid, rec: null };
     kbCloseEditor();
-    $('#exIssuesPanel').innerHTML = '';
     $('#exEditBtn').style.display = '';
     $('#exDelBtn').style.display = '';
     $('#exHistoryBtn').style.display = '';
@@ -4016,95 +4043,6 @@ async function kbDeleteCurrent() {
   }
 }
 
-/* AI 审读：LLM 找解析疑点，只出清单不改数据（建议者，不是提交者）。
-   v1.1.6：审核对象 = 整理后题库内容（与页面一致）+ 真题原件参考；疑点带 quote 逐字摘录与
-   服务端定位（itemIdx/itemTag/itemText），「📍 定位到此」滚动高亮题库对应条目。 */
-async function kbDoReview() {
-  const { prefix, id } = kbDetailState;
-  if (!id) return;
-  const out = $('#' + prefix + 'IssuesPanel');
-  out.innerHTML = '<div class="hint kb-busy">AI 审读中…（报告生成后本行自动消失）</div>';
-  try {
-    const r = await api('/api/kb/review', { method: 'POST', body: { id } });
-    const cls = { high: 'kb-issue-high', mid: 'kb-issue-mid', low: 'kb-issue-low' };
-    const located = r.issues.filter(x => x.itemIdx != null).length;
-    const modelTag = r.modelUsed ? (r.modelUsed.model ? ` · ${esc(r.modelUsed.model)}` : '') : '';
-    const head = `<div class="card-title" style="margin-top:10px">🤖 AI 审读报告 · ${esc(String(r.reviewed_at).replace('T', ' '))}${r.mock ? ' · mock' : ''}${r.readOnly ? ' · 外刊只读' : ''}${modelTag}</div>` +
-      (r.materialStats ? `<details class="hint-fold" style="margin:4px 0 0"><summary>📊 审核范围 · 定位成功 ${located}/${r.issues.length}</summary><div class="hint">审核对象：整理后${r.readOnly ? '外刊语料' : '题库'}内容 ${r.materialStats.items} 个条目 / ${r.materialStats.chars} 字符${r.materialStats.truncated ? '，<b>超长已截断</b>' : ''}${r.materialStats.hasRef ? ' + 真题原件参考' : ''}。</div></details>` : '');
-    /* v1.1.7e：按题型板块分组汇总（完形/阅读/翻译…），便于集中修改同一板块 */
-    const secOf = x => {
-      const m = String(x.itemTag || '').match(/^[a-z_]+·([a-z_]+)/);
-      return m ? m[1] : (x.itemIdx != null ? 'misc' : 'unlocated');
-    };
-    const GROUP_ICON = { use_of_english: '🔲 完形填空', reading: '📖 阅读理解', part_b: '🧩 新题型', translation: '🖊 翻译', writing: '📝 写作', misc: '📌 其他条目', unlocated: '🔍 未定位疑点' };
-    const groups = [];
-    const bySec = new Map();
-    r.issues.forEach((x, i) => {
-      const s = secOf(x);
-      if (!bySec.has(s)) { const g = { sec: s, idxs: [] }; bySec.set(s, g); groups.push(g); }
-      bySec.get(s).idxs.push(i);
-    });
-    const cardHtml = (x, i) => `
-        <div class="kb-issue ${cls[x.severity] || 'kb-issue-mid'}" data-issue="${i}">
-          <div class="kb-issue-head"><b>${esc(x.loc)}</b>${x.itemTag ? `<span>· ${esc(x.itemTag)}</span>` : ''}<span>· ${esc(x.severity)}</span>${x.itemIdx != null && !r.readOnly ? `<button class="btn ghost" style="padding:2px 10px;font-size:12px;margin-left:auto" data-locate="${i}">📍 定位到此</button>` : ''}</div>
-          <div>${esc(x.desc)}</div>
-          ${x.quote ? `<div class="kb-issue-quote">“${esc(x.quote)}”</div>` : ''}
-          ${!r.readOnly && x.quote ? `
-          <div class="kb-issue-fixzone" data-fixzone="${i}">
-            ${x.fix ? `<div class="kb-issue-fix"><span class="kb-fix-label">🛠 AI 修正方案</span><div class="kb-fix-new">${esc(x.fix)}</div></div>` : `<div class="hint" style="margin:6px 0 0">（AI 未给出可直接替换的修正文本，可点「采纳」进入手动编辑）</div>`}
-            <div class="kb-issue-actions">
-              <button class="btn small primary" data-adopt="${i}">✅ 采纳修改</button>
-              <button class="btn small ghost" data-ignore="${i}">🚫 忽略</button>
-              <span class="result kb-adopt-result" id="${prefix}AdoptRes${i}"></span>
-            </div>
-          </div>` : ''}
-        </div>`;
-    const body = r.issues.length
-      ? groups.map(g => `
-        <div class="kb-issue-group" data-kb-sec="${g.sec}">
-          <div class="kb-issue-group-head"><b>${GROUP_ICON[g.sec] || '📌 其他'}</b><span>· ${g.idxs.length} 处疑点</span><span class="kb-group-fixed" style="display:none;color:var(--ok);font-weight:600"></span></div>
-          ${g.idxs.map(i => cardHtml(r.issues[i], i)).join('')}
-        </div>`).join('')
-      : '<div class="hint">✅ 未发现明显疑点（仅供参考，改动走人工编辑）</div>';
-    out.innerHTML = head + body + `<div id="${prefix}LocateBox"></div>`;
-    /* v1.1.7b：定位到此 → 弹窗直编（textarea 可改原文，保存同步库），附题型规则参考 */
-    $$('#' + prefix + 'IssuesPanel [data-locate]').forEach(b => b.addEventListener('click', () => {
-      const x = r.issues[+b.dataset.locate];
-      kbOpenFixModal(prefix, id, x, +b.dataset.locate);
-      if (x.itemIdx != null) {
-        const el = $('#kbDetail [data-itemidx="' + x.itemIdx + '"]') || $('#exDetail [data-itemidx="' + x.itemIdx + '"]');
-        if (el) {
-          $$('#kbDetail .kb-locate, #exDetail .kb-locate').forEach(e2 => e2.classList.remove('kb-locate'));
-          el.classList.add('kb-locate');
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      }
-    }));
-    /* v2.1.2：采纳 AI 修正方案（有 fix 直接替换；无 fix 进手动编辑弹窗） */
-    $$('#' + prefix + 'IssuesPanel [data-adopt]').forEach(b => b.addEventListener('click', () => {
-      const x = r.issues[+b.dataset.adopt];
-      kbAdoptFix(prefix, id, x, +b.dataset.adopt);
-    }));
-    $$('#' + prefix + 'IssuesPanel [data-ignore]').forEach(b => b.addEventListener('click', () => {
-      const i = +b.dataset.ignore;
-      const card = document.querySelector('#' + prefix + 'IssuesPanel .kb-issue[data-issue="' + i + '"]');
-      if (!card) return;
-      card.classList.add('kb-issue-ignored');
-      const z = card.querySelector('[data-fixzone]');
-      if (z) z.remove();
-      const head = card.querySelector('.kb-issue-head');
-      if (head && !card.querySelector('.kb-issue-ignored-tag')) {
-        const t = document.createElement('span');
-        t.className = 'kb-issue-ignored-tag';
-        t.textContent = '🚫 已忽略';
-        head.appendChild(t);
-      }
-    }));
-  } catch (e) {
-    out.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
-  }
-}
-
 /* ---------------- v1.1.7b：疑点弹窗直编 ---------------- */
 
 /* 题型编辑规则参考（按 itemTag 前缀匹配：type·section·题N） */
@@ -4160,7 +4098,7 @@ function kbFixHighlight(text, quote) {
   return { html, hit };
 }
 
-/** v1.1.7d：就地更新详情页中该条目块的文本（不重建详情、不毁 AI 报告现场） */
+/** v1.1.7d：就地更新详情页中该条目块的文本 */
 function kbUpdateDetailItem(prefix, x, newText) {
   if (x.itemIdx == null) return;
   const el = $('#' + prefix + 'Detail [data-itemidx="' + x.itemIdx + '"]');
@@ -4170,63 +4108,9 @@ function kbUpdateDetailItem(prefix, x, newText) {
   else el.innerHTML = kbText(newText);
 }
 
-/** v1.1.7e：疑点卡片状态标记——fixed=✅淡出+组头进度 / still=追加复核反馈与修改建议 */
-function markIssueCard(prefix, cardIdx, state, newDesc, sug) {
-  if (cardIdx == null || cardIdx < 0) return;
-  /* v2.1.2：优先按 data-issue 找卡片（纯文本记录的疑点无「定位」按钮也能标记） */
-  const card = document.querySelector('#' + prefix + 'IssuesPanel .kb-issue[data-issue="' + cardIdx + '"]') ||
-    (() => { const btn = document.querySelector('#' + prefix + 'IssuesPanel [data-locate="' + cardIdx + '"]'); return btn && btn.closest('.kb-issue'); })();
-  if (!card) return;
-  if (state === 'fixed') {
-    card.style.transition = 'opacity .8s'; card.style.opacity = '.45';
-    const head = card.querySelector('.kb-issue-head');
-    if (head && !card.querySelector('.kb-issue-fixed-tag')) {
-      const t = document.createElement('span');
-      t.className = 'kb-issue-fixed-tag';
-      t.textContent = '✅ 已修复';
-      head.appendChild(t);
-    }
-    const lb = card.querySelector('[data-locate]');
-    if (lb) lb.disabled = true;
-    const grp = card.closest('.kb-issue-group');
-    if (grp) {
-      const fixedEl = grp.querySelector('.kb-group-fixed');
-      const total = grp.querySelectorAll('.kb-issue').length;
-      const done = grp.querySelectorAll('.kb-issue-fixed-tag').length;
-      if (fixedEl) { fixedEl.textContent = `· 已修复 ${done}/${total}`; fixedEl.style.display = ''; }
-      if (done === total) grp.style.opacity = '.55';
-    }
-  } else if (state === 'still' && newDesc) {
-    const d = document.createElement('div');
-    d.className = 'kb-fix-miss';
-    d.textContent = '🔁 AI 复核：' + newDesc;
-    card.appendChild(d);
-    if (sug) {
-      const s = document.createElement('div');
-      s.className = 'kb-fix-sug';
-      s.textContent = '💡 修改建议：' + sug;
-      card.appendChild(s);
-    }
-  }
-}
-
-/* v1.1.7e：保存后右下角 toast——一键回到 AI 审读板块 */
+/** 保存后右下角 toast（v2.6.2：原「回到 AI 审读」语义改为提示已保存） */
 function kbShowBackToast(prefix, ok, msg) {
-  const old = document.querySelector('.kb-back-toast');
-  if (old) old.remove();
-  const t = document.createElement('div');
-  t.className = 'kb-back-toast' + (ok ? ' ok' : ' warn');
-  t.innerHTML = `<div class="kb-back-msg">${esc(msg)}</div><button class="btn small primary">📋 回到审读报告</button>`;
-  t.querySelector('button').addEventListener('click', () => {
-    const panel = $('#' + prefix + 'IssuesPanel');
-    if (panel) {
-      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (panel.animate) panel.animate([{ opacity: .35 }, { opacity: 1 }], { duration: 900 });
-    }
-    t.remove();
-  });
-  document.body.appendChild(t);
-  setTimeout(() => { if (t.parentNode) t.remove(); }, 12000);
+  toast(msg || (ok ? '✅ 已保存' : '⚠️ 已保存'));
 }
 
 /* 疑点直编弹窗：textarea 改的即原始 itemText，保存走 /api/kb/record/update（整体 items 替换）*/
@@ -4319,29 +4203,13 @@ async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
     out.className = 'result';
     try {
       await api('/api/kb/record/update', { method: 'POST', body });
-      /* v1.1.7d：不重建详情、不退回列表——就地更新该条目块，保留 AI 审读现场 */
+      /* v2.6.2：AI 复核通道已废弃——保存后直接标记完成 */
       if (prefix === 'kb') kbState.loaded = false; else examState.loaded = false;
       kbUpdateDetailItem(prefix, x, newText);
-      out.innerHTML = '✅ 已保存 · 🤖 AI 复核中…';
-      out.className = 'result';
-      let rv = null;
-      try { rv = await api('/api/kb/review/item', { id: rid, store: prefix === 'ex' ? 'exam' : 'corpus', rawIdx, text: newText, origText }); }
-      catch (e2) { /* 复核异常不阻塞保存结果 */ }
-      if (rv && rv.ok) {
-        out.innerHTML = '✅ 已保存 · AI 复核通过，疑点已标记修复';
-        out.className = 'result ok';
-        markIssueCard(prefix, cardIdx, 'fixed');
-        $('#kbFixPreview').innerHTML = '<div class="kb-fix-miss" style="color:var(--ok)">✅ AI 复核通过：该疑点已修复</div>';
-        close();
-        kbShowBackToast(prefix, true, '✅ 修改已保存，AI 复核通过');
-      } else {
-        const sug = (rv && rv.issues && rv.issues[0] && rv.issues[0].suggestion) || '';
-        const d = (rv && rv.issues && rv.issues[0] && rv.issues[0].desc) || 'AI 复核未通过，请检查该条目';
-        out.innerHTML = '✅ 已保存 · ⚠️ AI 复核仍有疑点：' + esc(d) + (sug ? `<div class="kb-fix-sug">💡 修改建议：${esc(sug)}</div>` : '');
-        out.className = 'result err';
-        markIssueCard(prefix, cardIdx, 'still', d, sug);
-        kbShowBackToast(prefix, false, '⚠️ 已保存，AI 复核发现新问题');
-      }
+      out.innerHTML = '✅ 已保存';
+      out.className = 'result ok';
+      close();
+      kbShowBackToast(prefix, true, '✅ 修改已保存');
     } catch (e) {
       out.textContent = '❌ ' + esc(e.message);
       out.className = 'result err';
@@ -4349,45 +4217,7 @@ async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
   });
 }
 
-/* ---------------- v2.1.2：AI 修正采纳 与 历史版本回溯 ---------------- */
-
-async function kbAdoptFix(prefix, rid, x, cardIdx) {
-  const out = $(`#${prefix}AdoptRes${cardIdx}`);
-  const card = document.querySelector('#' + prefix + 'IssuesPanel .kb-issue[data-issue="' + cardIdx + '"]');
-  if (!x.fix) { kbOpenFixModal(prefix, rid, x, cardIdx); return; }   // 无修正方案 → 手动直编
-  if (!confirm('采纳 AI 修正方案？\n\n原文摘录：“' + x.quote + '”\n\n修正为：“' + x.fix + '”\n\n（写回题库，可在「🕘 历史版本」中回退）')) return;
-  if (out) { out.textContent = '提交中…'; out.className = 'result kb-adopt-result'; }
-  try {
-    const r = await api('/api/kb/review/apply', { method: 'POST', body: {
-      id: rid, store: prefix === 'ex' ? 'exam' : 'corpus',
-      itemRawIdx: x.itemRawIdx, quote: x.quote, fix: x.fix,
-    } });
-    if (out) { out.textContent = '✅ 已应用修正'; out.className = 'result ok kb-adopt-result'; }
-    /* 就地刷新详情条目 + 标记疑点已修复（不重建整页，保留审读现场） */
-    if (r.appliedText != null) {
-      if (x.itemIdx != null) kbUpdateDetailItem(prefix, x, r.appliedText);
-      else {
-        /* 纯文本记录：直接刷新首个 passage 的渲染内容，不重建详情、不毁审读现场 */
-        const el = $('#' + prefix + 'Detail .kb-passage');
-        if (el) el.innerHTML = kbText(r.appliedText);
-      }
-    }
-    markIssueCard(prefix, cardIdx, 'fixed');
-    if (card) {
-      const z = card.querySelector('[data-fixzone]');
-      if (z) z.remove();
-    }
-    if (prefix === 'kb') kbState.loaded = false; else examState.loaded = false;
-    toast('✅ 已采纳 AI 修正');
-  } catch (e) {
-    /* 摘录未命中（文本已被改动等）→ 降级到手动直编弹窗 */
-    if (String(e.message).includes('未能在当前文本中命中')) {
-      kbOpenFixModal(prefix, rid, x, cardIdx);
-      return;
-    }
-    if (out) { out.textContent = '❌ ' + e.message; out.className = 'result err kb-adopt-result'; }
-  }
-}
+/* ---------------- v2.6.2：历史版本回溯（原 AI 修正采纳板块已废弃，kbAdoptFix/kbDoReview 已移除） ---------------- */
 
 async function kbOpenHistory() {
   const { prefix, id } = kbDetailState;
@@ -4461,8 +4291,6 @@ $('#kbEditBtn').addEventListener('click', kbToggleEditor);
 $('#exEditBtn').addEventListener('click', kbToggleEditor);
 $('#kbDelBtn').addEventListener('click', kbDeleteCurrent);
 $('#exDelBtn').addEventListener('click', kbDeleteCurrent);
-$('#kbReviewBtn').addEventListener('click', kbDoReview);
-$('#exReviewBtn').addEventListener('click', kbDoReview);
 $('#kbHistoryBtn').addEventListener('click', kbOpenHistory);
 $('#exHistoryBtn').addEventListener('click', kbOpenHistory);
 
@@ -6364,4 +6192,129 @@ async function wrtOpenHist(id) {
     toast('❌ ' + err.message);
   }
 }
+
+/* ================= v2.6.2：手写稿拍照识别与图文快速核对 ================= */
+const ocrState = {
+  activeTarget: '#wrtEssay',   // 目标填入框，默认自由写作台
+};
+
+function initOcrEvents() {
+  const ocrBtn = $('#wrtOcrBtn');
+  const ocrInput = $('#wrtOcrInput');
+  if (!ocrBtn || !ocrInput) return;
+
+  ocrBtn.addEventListener('click', () => {
+    ocrInput.click();
+  });
+
+  ocrInput.addEventListener('change', async e => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    await processOcrFile(file);
+    ocrInput.value = '';
+  });
+
+  $('#ocrCloseBtn')?.addEventListener('click', closeOcrModal);
+  $('#ocrCancelBtn')?.addEventListener('click', closeOcrModal);
+  $('#ocrRetryBtn')?.addEventListener('click', () => {
+    closeOcrModal();
+    $('#wrtOcrInput')?.click();
+  });
+
+  $('#ocrConfirmBtn')?.addEventListener('click', () => {
+    const txt = $('#ocrTranscribeText')?.value || '';
+    const textarea = $(ocrState.activeTarget || '#wrtEssay');
+    if (textarea) {
+      textarea.value = txt;
+      textarea.dispatchEvent(new Event('input', { bubbles: true }));
+      toast('✅ 手写稿内容已填入作文框');
+    }
+    closeOcrModal();
+  });
+
+  $('#ocrTranscribeText')?.addEventListener('input', updateOcrWordBadge);
+}
+
+function updateOcrWordBadge() {
+  const txt = $('#ocrTranscribeText')?.value.trim() || '';
+  const words = txt ? txt.split(/\s+/).filter(Boolean).length : 0;
+  const badge = $('#ocrWordCountBadge');
+  if (badge) {
+    badge.textContent = `${words} 词`;
+    badge.className = 'ocr-badge ' + (words > 0 ? 'ok' : 'warn');
+  }
+}
+
+function processOcrFile(file) {
+  return new Promise((resolve, reject) => {
+    if (!file.type || !file.type.startsWith('image/')) {
+      alert('请选择图片格式文件');
+      resolve();
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      alert('图片过大，请控制在 5MB 以内');
+      resolve();
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = async () => {
+      try {
+        await openOcrModal(String(reader.result));
+      } catch (e) { console.error(e); }
+      resolve();
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function openOcrModal(base64) {
+  const modal = $('#ocrOverlay');
+  const preview = $('#ocrPreviewImg');
+  const textarea = $('#ocrTranscribeText');
+  const confirmBtn = $('#ocrConfirmBtn');
+  if (!modal || !preview || !textarea) return;
+
+  preview.src = base64;
+  textarea.value = '⏳ 正在识别考研标准横线纸手写稿，请稍候（自动滤除横线中）…';
+  textarea.disabled = true;
+  confirmBtn.disabled = true;
+  modal.style.display = 'flex';
+  updateOcrWordBadge();
+
+  try {
+    const r = await api('/api/writing/transcribe', {
+      method: 'POST',
+      body: { image: base64 },
+    });
+    textarea.value = r.text || '';
+    textarea.disabled = false;
+    confirmBtn.disabled = false;
+    updateOcrWordBadge();
+    const tip = $('#ocrTip');
+    if (tip) {
+      if (r.uncertainCount > 0) {
+        tip.innerHTML = `⚠️ 检测到 <b>${r.uncertainCount} 处</b> 字迹较模糊（已标为 <code>[?word]</code>），请对照左侧原图校正。`;
+        tip.style.color = 'var(--warn)';
+      } else {
+        tip.innerHTML = '💡 提示：AI 已自动滤除横线干扰。请快速扫视确认，无误后点击下方填入。';
+        tip.style.color = 'var(--text-sub)';
+      }
+    }
+  } catch (err) {
+    textarea.value = '识别失败：' + err.message;
+    textarea.disabled = false;
+    confirmBtn.disabled = false;
+  }
+}
+
+function closeOcrModal() {
+  const modal = $('#ocrOverlay');
+  if (modal) modal.style.display = 'none';
+}
+
+// 启动手写识别事件监听（脚本加载即执行，兜底 DOMContentLoaded 后再执行一次）
+initOcrEvents();
+document.addEventListener('DOMContentLoaded', initOcrEvents);
 

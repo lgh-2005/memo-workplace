@@ -135,6 +135,8 @@ if (!config.review || typeof config.review !== 'object') config.review = { provi
 if (!config.selection || typeof config.selection !== 'object') config.selection = { providerId: '', model: '' };
 // v2.4.1：词文成章专用模型配置缺省补齐（留空沿用默认服务商）
 if (!config.story || typeof config.story !== 'object') config.story = { providerId: '', model: '' };
+// v2.6.2：手写稿识图专用模型配置缺省补齐（留空沿用默认视觉模型）
+if (!config.writingOcr || typeof config.writingOcr !== 'object') config.writingOcr = { providerId: '', model: '' };
 // v2.4.1：文章题材自定义列表（null = 未自定义，用内置 16 题材；数组 = 用户自定义全量替换，2~40 项）
 if (config.storyThemes !== undefined && !Array.isArray(config.storyThemes)) config.storyThemes = null;
 // v2.0.0：外刊发布源独立于手工语料和真题库；留空使用 corpus/external/current/
@@ -1759,19 +1761,11 @@ const DEFAULT_PROMPTS = {
   },
   quality_review: {
     id: 'quality_review',
-    title: '语料与真题质检审读员（System Prompt）',
-    desc: '对导入的真题或语料进行结构化对比、错字错题校验的质检提示词',
+    title: '语料与真题质检审读员（System Prompt）【v2.6.2 已随 AI 审读功能废弃，保留仅供历史参考】',
+    desc: '【v2.6.2 已废弃】对导入的真题或语料进行结构化对比、错字错题校验的质检提示词',
     template: [
-      '你是材料的质检审读员。审核对象是【整理后的题库/语料内容】（含 〖N〗 挖空/划线锚点）和可选的【真题原件参考】。',
-      '你的职责是核对「整理结果」是否忠实于【真题原件参考】（有无解析/整理引入的缺损），而不是校对英文本身。',
-      '对照找出解析/整理引入的问题，例如：句子残缺或截断、乱码与字形损坏、题号断档或重复、选项丢失或错位、段落错序、页眉页脚水印混入、明显重复段落、整理结果与原件不符。',
-      '重要规则：',
-      '1. 只报告有把握、能在材料中定位的问题；不要把送审材料自身的完整性当成语料问题；不要臆测内容含义；不要改写文本。',
-      '1a. 原件中已有的写法一律不是问题——包括原件自身的拼写错误、语法不一致、专有名词特殊写法（如 Au Bong Pain / Gallileo）、看似矛盾的用词、原卷的标点习惯等。只要整理结果与原件一致，就不得报告（例如：整句话与原件逐字相同，即使拼写看起来有误，也不要报）。',
-      '1b. 只有「整理结果」与「原件」确实不同、或语句被截断/丢词/夹杂水印而原件没有时，才算问题。不要仅凭英文常识判断对错。',
-      '2. 每个问题必须给 quote 字段：从材料中逐字摘录有误处的原文片段（10~40 字，须与材料完全一致，可包含 〖N〗 标记）。',
-      '3. v2.1.2：每个问题必须尽量给出 fix 字段——用于替换 quote 的修正文本（只修正该片段本身的错误，保持其余内容与 〖N〗 锚点原样；无把握时留空字符串）。',
-      '4. 严格输出 JSON（不要 markdown 代码块包裹）：{"issues":[{"loc":"位置(条目#或题号)","quote":"逐字摘录","fix":"修正后的替换文本(可为空)","severity":"high|mid|low","desc":"问题描述(60字内)"}]}；没有问题输出 {"issues":[]}。',
+      '【v2.6.2 已废弃：AI 审读功能因实测幻觉率过高已整体移除】',
+      '此提示词不再被任何接口调用，保留仅为历史参考。',
     ].join('\n')
   },
   selection_learn: {
@@ -1789,13 +1783,11 @@ const DEFAULT_PROMPTS = {
   },
   quality_review_item: {
     id: 'quality_review_item',
-    title: '单条目编辑复核审读员（System Prompt）',
-    desc: '用户手动编辑真题条目后，AI 依据原件段落对该单条进行复核的提示词',
+    title: '单条目编辑复核审读员（System Prompt）【v2.6.2 已随 AI 审读功能废弃，保留仅供历史参考】',
+    desc: '【v2.6.2 已废弃】用户手动编辑真题条目后，AI 依据原件段落对该单条进行复核的提示词',
     template: [
-      '你是考研英语真题语料的质检审读员。审核对象是【单个条目的当前文本】（刚被用户编辑过），比对依据是【真题原件相关段落】。',
-      '只报告能与原件比对确认的问题：句子残缺或截断、乱码、挖空/划线锚点（〖N〗或〖/N〗）缺失或破坏、明显重复、页眉页脚水印混入、当前文本与原件不符。',
-      '重要：原件本身的内容不是问题；拿不准、无法与原件比对确认的，一律输出 {"ok":true}——宁可放过，不可杜撰。',
-      '严格输出 JSON（不要 markdown 代码块包裹）：{"ok":true} 表示质量合格；{"ok":false,"issues":[{"desc":"问题描述(60字内)","suggestion":"给用户的修改建议(120字内)"}]} 表示仍有问题——suggestion 必填，且建议里的英文措辞必须来自原件或当前文本，不得杜撰原件中不存在的句子。',
+      '【v2.6.2 已废弃：AI 审读功能因实测幻觉率过高已整体移除】',
+      '此提示词不再被任何接口调用，保留仅为历史参考。',
     ].join('\n')
   },
   sentence_training: {
@@ -3661,6 +3653,10 @@ const server = http.createServer(async (req, res) => {
             providerId: (config.story && config.story.providerId) || '',
             model: (config.story && config.story.model) || '',
           },
+          writingOcr: {
+            providerId: (config.writingOcr && config.writingOcr.providerId) || '',
+            model: (config.writingOcr && config.writingOcr.model) || '',
+          },
           storyThemes: storyThemesList(),   // v2.4.1：文章题材（自定义或内置）
           kb: {
             dir: (config.kb && config.kb.dir) || '',
@@ -3826,6 +3822,12 @@ const server = http.createServer(async (req, res) => {
           if (!config.story || typeof config.story !== 'object') config.story = { providerId: '', model: '' };
           if (body.story.providerId !== undefined) config.story.providerId = String(body.story.providerId || '').trim();
           if (body.story.model !== undefined) config.story.model = String(body.story.model || '').trim();
+        }
+        // v2.6.2：手写稿识图专用模型配置持久化
+        if (body.writingOcr && typeof body.writingOcr === 'object') {
+          if (!config.writingOcr || typeof config.writingOcr !== 'object') config.writingOcr = { providerId: '', model: '' };
+          if (body.writingOcr.providerId !== undefined) config.writingOcr.providerId = String(body.writingOcr.providerId || '').trim();
+          if (body.writingOcr.model !== undefined) config.writingOcr.model = String(body.writingOcr.model || '').trim();
         }
         // v2.4.1：文章题材自定义列表持久化（null 恢复内置默认；数组 2~40 项、每项 ≤12 字符全量替换）
         if (body.storyThemes !== undefined) {
@@ -4389,42 +4391,9 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, title: r.title, restored: snapshot.ts });
       }
 
-      // v2.1.2：AI 审读修正方案——用户采纳后直接写回（替换 quote 片段）
-      if (p === '/api/kb/review/apply' && req.method === 'POST') {
-        const body = await readBody(req);
-        if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
-        const store = body.store || kbFindStoreOf(body.id);
-        if (store === 'external') return sendJSON(res, 409, { error: '外刊发布源为只读，不能应用修正', code: 'EXTERNAL_READONLY' });
-        if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
-        const rawIdx = body.itemRawIdx == null ? -1 : Number(body.itemRawIdx);
-        const quote = String(body.quote || '');
-        const fix = String(body.fix || '');
-        if (!quote) return sendJSON(res, 400, { error: '缺少 quote（AI 摘录）' });
-        if (fix === quote) return sendJSON(res, 400, { error: '修正方案与原文相同，无需应用' });
-        const rec = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
-        if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
-        const cleanText = s => String(s ?? '').slice(0, 2e6);
-        // 定位目标文本：优先 itemRawIdx，其次全文
-        const target = (Array.isArray(rec.items) && Number.isInteger(rawIdx) && rawIdx >= 0 && rawIdx < rec.items.length)
-          ? String(rec.items[rawIdx].text || '') : String(rec.text || '');
-        if (!target.includes(quote)) {
-          return sendJSON(res, 409, { error: 'AI 摘录未能在当前文本中命中（可能已被修改），请手动编辑' });
-        }
-        const replaced = target.replace(quote, fix);
-        const before = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
-        if (before) kbPushVersion(body.id, store, before, 'AI 修正采纳前快照');
-        const r = kbMutateStore(store, body.id, r0 => {
-          if (Array.isArray(r0.items) && Number.isInteger(rawIdx) && rawIdx >= 0 && rawIdx < r0.items.length) {
-            r0.items[rawIdx].text = cleanText(replaced);
-          } else {
-            r0.text = cleanText(replaced);
-          }
-          r0.edited_at = new Date().toISOString().slice(0, 19);
-          return r0;
-        });
-        if (!r.ok) return sendJSON(res, r.reason.includes('不存在') ? 404 : 400, { error: r.reason });
-        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(review-apply)', status: 'updated', store, records: 1, reason: String(r.title).slice(0, 80) });
-        return sendJSON(res, 200, { ok: true, title: r.title, appliedText: replaced.slice(0, 2000) });
+      // v2.6.2：废弃移除高幻觉率的 AI 审读相关接口
+      if ((p === '/api/kb/review' || p === '/api/kb/review/apply' || p === '/api/kb/review/item') && req.method === 'POST') {
+        return sendJSON(res, 410, { error: 'AI 审读功能已在 v2.6.2 中废弃移除' });
       }
 
       // v2.1.2：划线精读解析（单词 / 词组 / 句子）——参考沉浸式翻译的学习反馈弹窗
@@ -4829,13 +4798,61 @@ const server = http.createServer(async (req, res) => {
 
       /* ---------- v2.5.0：写作升格（自由写作单轨，题源不碰真题库） ---------- */
 
+      // v2.6.2：手写稿拍照识别与转写（考研标准横线纸抗扰 + 防脑补精准转写）
+      if (p === '/api/writing/transcribe' && req.method === 'POST') {
+        const body = await readBody(req);
+        const image = typeof body.image === 'string' && body.image.startsWith('data:image/') ? body.image : '';
+        if (!image) return sendJSON(res, 400, { error: '请先提供手写稿照片' });
+        if (image.length > 5000000) return sendJSON(res, 400, { error: '图片过大，请压缩后再试（≤3.5MB）' });
+
+        // 服务商分派：配置专属 writingOcr > 默认服务商
+        let targetProvId = (config.writingOcr && config.writingOcr.providerId) || undefined;
+        let modelOverride = (config.writingOcr && config.writingOcr.model) ? config.writingOcr.model : undefined;
+        const activeProv = targetProvId ? (config.llm.providers || []).find(x => x.id === targetProvId) : getProvider();
+
+        if (!config.llm.mock && (!activeProv || !activeProv.vision)) {
+          return sendJSON(res, 400, { error: '所选服务商未开启「视觉能力」，请到设置页选择支持 Vision 的模型档案' });
+        }
+
+        const systemPrompt = `You are a professional, high-precision English handwriting transcriber specifically calibrated for the Chinese Graduate Entrance Exam (考研英语) standard ruled answer sheet (考研横线纸).
+
+CRITICAL TRANSCRIPTION RULES:
+1. Ignore background printed horizontal ruling lines (考研印刷横线) completely. Do NOT treat them as hyphens, underlines, or minus signs. Focus strictly on the handwritten ink.
+2. Transcribe exactly what is handwritten with 100% fidelity. DO NOT correct spelling mistakes, punctuation quirks, grammatical errors, or capitalization. If the student misspells "accompany" as "acommpany", you MUST output "acommpany".
+3. Preserve original paragraph indentations and paragraph breaks.
+4. If a word or stroke is genuinely illegible or ambiguous due to ink smear or blur, wrap it in bracket markers: [?word] or [?].
+5. Output format: Output ONLY the transcribed English plain text. Strictly NO explanations, NO greetings, NO markdown fence blocks, NO translation.`;
+
+        const msgs = [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: [
+            { type: 'text', text: 'Please transcribe this handwritten essay from the ruled answer sheet with exact fidelity:' },
+            { type: 'image_url', image_url: { url: image } }
+          ] }
+        ];
+
+        try {
+          const reply = await llmChat(msgs, {
+            providerId: targetProvId,
+            llmOverride: modelOverride ? { model: modelOverride } : undefined,
+            maxTokens: 2500,
+          });
+          const text = stripThinkBlocks(reply).trim();
+          const wordsCount = text.split(/\s+/).filter(Boolean).length;
+          const uncertainCount = (text.match(/\[\?[^\]]*\]/g) || []).length;
+          return sendJSON(res, 200, { ok: true, text, wordsCount, uncertainCount });
+        } catch (e) {
+          return sendJSON(res, 500, { error: '手写识图失败：' + (e.message || '未知错误') });
+        }
+      }
+
       // 审题/识图（含防幻觉：AI 先自报看到什么，用户再确认/纠偏）
       if (p === '/api/writing/inspect' && req.method === 'POST') {
         const body = await readBody(req);
         const promptText = String(body.prompt || '').trim().slice(0, 4000);
         const part = body.part === 'B' ? 'B' : 'A';
         const imageNote = String(body.imageNote || '').trim().slice(0, 800);
-        if (!promptText) return sendJSON(res, 400, { error: '请先填写题目要求（题干/D读作 Directions）' });
+        if (!promptText) return sendJSON(res, 400, { error: '请先填写题目要求（题干/Directions）' });
         const image = typeof body.image === 'string' && body.image.startsWith('data:image/') ? body.image : '';
         if (image && image.length > 2100000) return sendJSON(res, 400, { error: '图片过大，请压缩后再试（≤1.5MB）' });
         const prov = getProvider();
@@ -4978,214 +4995,9 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 200, { ok: true, title: r.title });
       }
 
-      // AI 审读（建议者，不是提交者：只出疑点清单，不改任何数据）
-      if (p === '/api/kb/review' && req.method === 'POST') {
-        const body = await readBody(req);
-        if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
-        const store = body.store || kbFindStoreOf(body.id);
-        if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
-        const rec = store === 'exam' ? loadExams().find(x => x.id === body.id)
-          : store === 'corpus' ? loadKb().find(x => x.id === body.id)
-            : loadExternalKb().find(x => x.id === body.id);
-        if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
-        const reviewLabel = store === 'external' ? '外刊语料' : '考研真题语料';
-        /* v1.1.6 修复审核数据源：旧版材料按每条 260 字符截断 + 全局 9000 字符截断 + 抹除 〖N〗 锚点 +
-           原始顺序，LLM 把「送审材料自身残缺」当成语料问题报告（即实测中的假问题）。
-           现在材料 = 与页面展示一致的渲染视图：kbOrderedItems 排序 + 每条完整文本 + 保留 〖N〗 锚点 +
-           稳定定位符【条目#N】，并附 archive/ 真题原件（文本类）作比对参考。 */
-        const ordered = kbOrderedItems(rec);
-        const parts = ordered.map((it, i) => {
-          const tag = `${it.type || 'item'}${it.section ? '·' + it.section : ''}${it.number != null ? '·题' + it.number : ''}`;
-          let body = String(it.text || '');
-          // v2.1.4：选项一并送审（否则 LLM 会把「选项未提供」误报为语料缺选项）
-          const opts = it.options;
-          if (opts && typeof opts === 'object' && !Array.isArray(opts)) {
-            const lines = Object.keys(opts).map(L => `(${L}) ${String(opts[L] || '').trim()}`);
-            if (lines.length) body = (body ? body + '\n' : '') + lines.join('\n');
-          }
-          return `【条目#${i + 1}｜${tag}】\n${body}`;
-        });
-        const LIMIT = 120000;
-        let material = parts.length
-          ? parts.join('\n\n')
-          : `【整理后的${reviewLabel}内容】（纯文本记录，无结构化条目）\n${String(rec.text || '')}`;
-        const totalChars = material.length;
-        let truncated = false;
-        if (totalChars > LIMIT) { material = material.slice(0, LIMIT) + '\n…（超长截断，超出部分未送审）'; truncated = true; }
-        let refNote = '';
-        try {
-          const origPath = rec.source?.file ? path.join(kbBaseDir(), 'archive', rec.source.category || '', rec.source.file) : null;
-          if (origPath && fs.existsSync(origPath) && /\.(tex|txt|md|html?|htm)$/i.test(origPath)) {
-            const orig = fs.readFileSync(origPath, 'utf8');
-            refNote = `\n\n【真题原件参考】（${rec.source.file}，仅用于比对，不是整理结果）\n${orig.slice(0, 20000)}`;
-          }
-        } catch { /* 原件读取失败不影响审读 */ }
-        const reply = await llmChat([
-          { role: 'system', content: getPrompt('quality_review') },
-          { role: 'user', content: `记录：${rec.title || rec.id}\n\n${material}${refNote}` },
-        ], {
-          maxTokens: (config.review && config.review.thinking) ? 16000 : 2000,
-          providerId: (config.review && config.review.providerId) || undefined,
-          llmOverride: (() => {
-            const over = {};
-            if (config.review && config.review.model) over.model = config.review.model;
-            if (config.review && config.review.thinking) {
-              over.temperature = 1;
-              over._thinking = { type: 'enabled', budget_tokens: 8000 };
-            }
-            return Object.keys(over).length ? over : undefined;
-          })(),
-        });
-        const parsed = parseMnemonicJSON(reply);
-        if (!parsed || !Array.isArray(parsed.issues)) {
-          throw Object.assign(new Error('AI 审读输出无法解析为疑点清单（schema 不符），原始输出：' + String(reply).slice(0, 120)), { code: 'KB_IMPORT' });
-        }
-        // quote 定位回写：把每条疑点锚到渲染序条目（先精确 includes，失败用去空白/去锚点宽松匹配）
-        // v2.1.4：送审材料含选项，定位同步覆盖「正文+选项」渲染体，quote 命中选项也能锚回条目
-        const bodies = ordered.map((it, i) => {
-          const body = String(it.text || '');
-          const opts = it.options;
-          if (opts && typeof opts === 'object' && !Array.isArray(opts)) {
-            const lines = Object.keys(opts).map(L => `(${L}) ${String(opts[L] || '').trim()}`);
-            if (lines.length) return (body ? body + '\n' : '') + lines.join('\n');
-          }
-          return body;
-        });
-        const normTxt = s => String(s || '').replace(/〖\/\d+〗/g, '').replace(/〖\d+〗/g, '').replace(/\s+/g, '');
-        const locate = quote => {
-          const q = String(quote || '').trim();
-          if (q.length < 4) return { idx: null, text: null, tag: null };
-          let hit = -1;
-          if (ordered.length) hit = bodies.findIndex(b => b.includes(q));
-          if (hit < 0) {
-            const nq = normTxt(q);
-            if (nq.length >= 6) {
-              if (ordered.length) hit = bodies.findIndex(b => normTxt(b).includes(nq));
-              else if (normTxt(rec.text).includes(nq)) hit = 0;
-            }
-          }
-          if (hit < 0) return { idx: null, text: null, tag: null, rawIdx: null };
-          const it = ordered.length ? ordered[hit] : null;
-          const tag = it ? `${it.type || 'item'}${it.section ? '·' + it.section : ''}${it.number != null ? '·题' + it.number : ''}` : '纯文本记录';
-          // v1.1.7b：ordered 是 items 浅拷贝的排序，元素引用不变——indexOf 直接拿原始下标，供疑点弹窗直编对齐
-          const rawIdx = (it && Array.isArray(rec.items)) ? rec.items.indexOf(it) : -1;
-          return { idx: ordered.length ? hit : null, text: String(it ? it.text : rec.text || '').slice(0, 2000), tag, rawIdx: rawIdx >= 0 ? rawIdx : null };
-        };
-        const issues = parsed.issues
-          .filter(x => x && typeof x.desc === 'string' && x.desc.trim())
-          .slice(0, 30)
-          .map(x => {
-            const hitInfo = locate(x.quote);
-            return {
-              loc: String(x.loc || '?').slice(0, 40),
-              quote: String(x.quote || '').trim().slice(0, 100),
-              // v2.1.2：AI 修正方案——用于替换 quote 的修正文本（可为空 = 无自动方案）
-              fix: String(x.fix || '').trim().slice(0, 2000),
-              itemIdx: hitInfo.idx,
-              itemRawIdx: hitInfo.rawIdx,
-              itemTag: hitInfo.tag,
-              itemText: hitInfo.text,
-              severity: ['high', 'mid', 'low'].includes(x.severity) ? x.severity : 'mid',
-              desc: x.desc.trim().slice(0, 160),
-            };
-          });
-        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(review)', status: 'reviewed', store, records: issues.length, reason: `located=${issues.filter(x => x.itemIdx != null).length}/${issues.length}` });
-        return sendJSON(res, 200, {
-          ok: true, issues,
-          reviewed_at: new Date().toISOString().slice(0, 19), mock: !!config.llm.mock,
-          materialStats: { chars: totalChars, items: ordered.length, limit: LIMIT, truncated, hasRef: !!refNote, readOnly: store === 'external' },
-          readOnly: store === 'external',
-          modelUsed: {
-            providerId: (config.review && config.review.providerId) || config.llm.activeId || '',
-            model: (config.review && config.review.model) || '',
-          },
-        });
-      }
-
-      // v1.1.7d：单条复核——疑点弹窗保存后对该条目快速 AI 复核，无误则前端自动消红
-      if (p === '/api/kb/review/item' && req.method === 'POST') {
-        const body = await readBody(req);
-        if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
-        const store = body.store || kbFindStoreOf(body.id);
-        if (!store) return sendJSON(res, 404, { error: '记录不存在：' + body.id });
-        if (store === 'external') return sendJSON(res, 409, { error: '外刊发布源为只读，不能在网站端复核后直接写回', code: 'EXTERNAL_READONLY' });
-        const rec = (store === 'exam' ? loadExams() : loadKb()).find(x => x.id === body.id);
-        if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
-        const item = Array.isArray(rec.items) ? rec.items[body.rawIdx] : null;
-        const text = typeof body.text === 'string' ? body.text : String((item && item.text) || '');
-        const origText = typeof body.origText === 'string' && body.origText.trim() ? body.origText : text;
-        if (!text.trim()) return sendJSON(res, 400, { error: '条目文本为空' });
-        /* v1.1.7f：复核必须结合真题原件比对——先在原件中定位该条目对应段落作为比对基准，防止 AI 杜撰 */
-        let refSeg = '';
-        try {
-          const origPath = rec.source?.file ? path.join(kbBaseDir(), 'archive', rec.source.category || '', rec.source.file) : null;
-          if (origPath && fs.existsSync(origPath) && /\.(tex|txt|md|html?|htm)$/i.test(origPath)) {
-            const orig = fs.readFileSync(origPath, 'utf8');
-            const fuzzyFind = (hay, needle) => {
-              // 忽略空白差异地在 hay 中找 needle，返回 [start, end) 或 null
-              const isSp = c => /\s/.test(c);
-              for (let start = 0; start < hay.length; start++) {
-                if (isSp(hay[start])) continue;
-                let p = start, j = 0;
-                while (p < hay.length && j < needle.length) {
-                  if (isSp(needle[j])) { j++; continue; }
-                  if (isSp(hay[p])) { p++; continue; }
-                  if (hay[p] !== needle[j]) break;
-                  p++; j++;
-                }
-                while (j < needle.length && isSp(needle[j])) j++;
-                if (j >= needle.length) return [start, p];
-              }
-              return null;
-            };
-            const probe = origText.replace(/\s+/g, ' ').trim().slice(0, 60);
-            let hit = (probe.length >= 20) ? fuzzyFind(orig, probe) : null;
-            let seg = '';
-            if (hit) {
-              seg = orig.slice(Math.max(0, hit[0] - 1200), hit[1] + 1200);
-              refSeg = `\n\n【真题原件相关段落】（${rec.source.file} 中与该条目对应的片段，是比对基准）\n${seg}`;
-            } else {
-              // 精确定位失败：用条目里最长的几个英文词兜底
-              const words = [...new Set(origText.split(/[^A-Za-z']+/))].filter(w => w.length >= 7).sort((a, b) => b.length - a.length).slice(0, 6);
-              for (const w of words) {
-                const wAt = orig.indexOf(w);
-                if (wAt >= 0) {
-                  seg = orig.slice(Math.max(0, wAt - 1500), wAt + 2500);
-                  refSeg = `\n\n【真题原件相关段落】（按关键词定位，${rec.source.file}）\n${seg}`;
-                  break;
-                }
-              }
-              if (!refSeg) refSeg = `\n\n【真题原件开头】（未能精确定位该条目对应段落，附开头 ${Math.min(6000, orig.length)} 字符供比对）\n${orig.slice(0, 6000)}`;
-            }
-          }
-        } catch { /* 原件读取失败不影响复核主流程 */ }
-        if (config.llm.mock) return sendJSON(res, 200, { ok: true, mock: true });
-        const reply = await llmChat([
-          { role: 'system', content: getPrompt('quality_review_item') },
-          { role: 'user', content: `条目类型：${(item && (item.type + (item.section ? '·' + item.section : ''))) || '未知'}\n\n【条目当前文本】\n${text.slice(0, 6000)}${refSeg}` },
-        ], {
-          maxTokens: (config.review && config.review.thinking) ? 8000 : 800,
-          providerId: (config.review && config.review.providerId) || undefined,
-          llmOverride: (() => {
-            const over = {};
-            if (config.review && config.review.model) over.model = config.review.model;
-            if (config.review && config.review.thinking) {
-              over.temperature = 1;
-              over._thinking = { type: 'enabled', budget_tokens: 4000 };
-            }
-            return Object.keys(over).length ? over : undefined;
-          })(),
-        });
-        const parsed = parseMnemonicJSON(reply);
-        if (!parsed) {
-          return sendJSON(res, 200, { ok: false, issues: [{ desc: 'AI 复核输出无法解析，请人工确认' }] });
-        }
-        const issues = Array.isArray(parsed.issues)
-          ? parsed.issues.filter(x => x && typeof x.desc === 'string' && x.desc.trim()).slice(0, 5)
-              .map(x => ({ desc: x.desc.trim().slice(0, 160), suggestion: String(x.suggestion || '').trim().slice(0, 300) }))
-          : [];
-        const ok = parsed.ok === true || (Array.isArray(parsed.issues) && !parsed.issues.length);
-        return sendJSON(res, 200, { ok, issues });
+      // v2.6.2：废弃移除高幻觉率的 AI 审读与单条复核相关接口
+      if ((p === '/api/kb/review' || p === '/api/kb/review/apply' || p === '/api/kb/review/item') && req.method === 'POST') {
+        return sendJSON(res, 410, { error: 'AI 审读功能已在 v2.6.2 中废弃移除' });
       }
 
       /* ---------------- v1.1.5：单元题库 API ---------------- */
