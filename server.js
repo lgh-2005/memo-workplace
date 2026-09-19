@@ -1217,6 +1217,8 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     const bodyObj = { model: llm.model, messages, max_tokens: llm.max_tokens || maxTokens, temperature: llm.temperature !== undefined ? llm.temperature : 0.7 };
     if (llm._thinking) {
       bodyObj.thinking = llm._thinking;
+    } else if (llm._noThinking) {
+      // v2.4.2.a：调用方显式抑制思考（大词池结构化任务防思考失控耗尽预算）
     } else if (llm.thinking && llm.thinking !== 'off') {
       bodyObj.reasoning_effort = llm.thinking;   // OpenAI o 系列与主流中转站通用
     }
@@ -4184,20 +4186,25 @@ const server = http.createServer(async (req, res) => {
         if (words.length < 1) return sendJSON(res, 400, { error: '请至少选择 1 个单词进行分析' });
 
         const lens = Object.fromEntries(words.map(w => [w, db.glosses[w] || null]));
+        // v2.4.2.a：大词池智能摘要——>60 词时输出全量词表但释义仅抽样 40 条，控制输入规模防思考失控
+        const glossLines = words.filter(w => lens[w]);
+        const sampledGloss = glossLines.length > 40
+          ? glossLines.filter((_, i) => i % Math.ceil(glossLines.length / 40) === 0).slice(0, 40)
+          : glossLines;
         const msgs = [
           { role: 'system', content: getPrompt('story_analyze') },
           { role: 'user', content: [
             `【待分析单词清单】（共 ${words.length} 个）：\n${words.join(', ')}`,
-            lens && words.some(w => lens[w]) ? `【词典参考（部分）】\n` + words.filter(w => lens[w]).slice(0, 40).map(w => `- ${w}: ${lens[w].pos || ''} ${lens[w].gloss || ''}`).join('\n') : '',
+            sampledGloss.length ? `【词典参考（${sampledGloss.length === glossLines.length ? '全量' : '抽样 ' + sampledGloss.length + '/' + glossLines.length + ' 条'}）】\n` + sampledGloss.map(w => `- ${w}: ${lens[w].pos || ''} ${lens[w].gloss || ''}`).join('\n') : '',
           ].filter(Boolean).join('\n\n') }
         ];
 
         const reply = await llmChat(msgs, {
-          // v2.4.2：词池可达 200+，大清单会诱发长思考——预算给足（思考模型思考+正文共用 max_tokens）
           maxTokens: 8000,
           providerId: (config.story && config.story.providerId) || undefined,
           llmOverride: {
             _jsonMode: true,
+            _noThinking: true,   // v2.4.2.a：分析类结构化任务禁用思考（实测思考会自适应膨胀至数万字耗尽预算）
             ...(((config.story && config.story.model)) ? { model: config.story.model } : {}),
           },
         });
