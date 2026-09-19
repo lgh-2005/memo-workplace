@@ -124,6 +124,16 @@ v2.2.8 以来的后续版本持续扩充 `.workbuddy/` 套件（`test_v233_selec
 
 > v2.4.4 全量回归：**38 套件（含 6 个历史调试脚本）全部退出码 0**。`test_v234_ui.js` 三处断言随滑块语义最小修补（SELECT→range 刻度 0=off、medium 档回填校验刻度 3 + badge dataset.level、meta 徽章中文化「中」）。
 
+## 5.6 v2.5.0 写作升格专项（2026-09-19）
+
+| 脚本 | 断言数 | 覆盖 |
+|---|---|---|
+| `.workbuddy/test_v250_writing.js` | 26 | inspect 校验线（缺题干/超大图 400）+ 三段式锚点输出 + 带图审题（vision 直通 + image_url 内容块 + 纠偏注入）；elevate SSE 分块事件（>3）+ 五锚点全齐 + `:::sentence` 块 + **思考体拆块打穿拦截**（进 thinking 事件不污染正文，跨 4 块的 `اقة…-in></think` 也拦住）+ done 携带 id/score + 详情回读（essay/prompt/imageHint/report/words）+ 删除 404；非流式上游 fallback；历史列表/金句入库（noteType+source）/data/essays.json 落盘/空正文 400 |
+| `.workbuddy/test_v250_writing_ui.js` | 21 | 子版块导航与 pane 互斥 + 审题结果 markdown 渲染 + 确认行出现 + 提交后 SSE 流式（真实 fetch 收流）→ 评分卡 13/20 + L1/L2 对比卡 + 范文卡 + PATTERNS 金句 2 条 ⭐ 存入助记库（db.notes 校验）+ 历史出现与回看再渲染 + 1440 无溢出 + 390 触控 ≥44px + 控制台 0 错误 |
+
+> v2.5.0 全量回归：**40 套件全部退出码 0**。工程要点：elevate 的 `sseSend` 不得再带 finished 闸（finishUp 先置位再发 done——曾出现 done 自拦截 bug，v2.5.0.a 修正）。
+
+
 
 ## 5. 线上冒烟入口与写接口红线
 

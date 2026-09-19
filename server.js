@@ -1314,6 +1314,216 @@ function stripThinkBlocks(text) {
   return out.trim();
 }
 
+/* ------------------------------------------------------------------ */
+/* v2.5.0：写作升格（Essay Elevation）                                 */
+/*   自由写作单轨（题源不碰真题库）+ Part B 图画防幻觉识图确认           */
+/*   + 逐句 L1/L2 升格对比 + 流式 SSE 批改报告 + 金句入助记库           */
+/* ------------------------------------------------------------------ */
+
+const ESSAYS_FILE = path.join(DATA_DIR, 'essays.json');   // 写作历史（独立文件，tmp+rename 原子写）
+let essaysCache = null;
+
+function loadEssays() {
+  if (essaysCache) return essaysCache;
+  try { essaysCache = JSON.parse(fs.readFileSync(ESSAYS_FILE, 'utf8')); } catch { essaysCache = []; }
+  if (!Array.isArray(essaysCache)) essaysCache = [];
+  return essaysCache;
+}
+function saveEssays() { saveJSON(ESSAYS_FILE, loadEssays().slice(0, 200)); }
+
+/** 从批改报告提取预估得分（列表徽章用） */
+function parseWritingScore(report) {
+  const m = String(report || '').match(/(\d+(?:\.\d+)?)\s*\/\s*(10|20)\b/);
+  return m ? { got: m[1], full: m[2] } : null;
+}
+
+/* 审题/识图 system（防幻觉铁律：只描述画面可直接确认元素，不确定必标注） */
+const WRITING_INSPECT_SYSTEM = [
+  '你是考研英语（一）阅卷组资深审题指导。',
+  '用户会给一道写作题（小作文 Part A 书信/告示类 10 分，或大作文 Part B 图画/图表类 20 分），若附图则是漫画原图。',
+  '你的任务：审题拆解与立意指导，输出固定三段式 Markdown，三个标题一字不差：',
+  '### 画面要素',
+  '仅描述画面上真实可见的内容：主体人物/动物/物体、动作与方位、对话气泡与图内文字、背景物品、符号与箭头、整体氛围。',
+  '【防幻觉铁律】只写你能从图上直接确认的元素；任何不确定的内容后面标注「（不确定）」；图上没有的东西严禁编造。题目未附图时写「（题目未附图）」，并从题干整理命题信息。',
+  '### 寓意主题',
+  '揭示图画/命题背后考察的考研经典话题（如科技双刃剑、传统与创新、诚信、环保、青年奋斗、心理健康等），并给出一句命题关键词总结。',
+  '### 立意建议',
+  '给出 2~3 个稳妥立意角度（按推荐度排序，每条一句话），并提醒容易写偏的歧义点。',
+  '全程简体中文，语言凝练直接；禁止输出评分或范文。',
+].join('\n');
+
+/* 批改升格 system（五锚点协议 + 思考聚焦锚） */
+const WRITING_ELEVATE_SYSTEM = [
+  '你是考研英语（一）阅卷组资深外教，对考生习作做「逐句诊断 + 阶梯升格」批改（小作文满分 10 分 / 大作文满分 20 分）。',
+  '评分遵循考研阅卷真实档次：内容切题与要点覆盖、篇章衔接、词汇多样与精准（警惕中式直译与大词堆砌）、语法多样与准确。',
+  '【思考聚焦】思考时只围绕：审题契合度、逐句病因定位（时态/主谓一致/冠词/介词/搭配/中式英语）、句型最有力的升格方案；不做无关发散。',
+  '你的输出是【固定锚点协议】Markdown，五个锚点标题一字不差、按顺序出现：',
+  '### [SCORE]',
+  '第一行：总分（如 15/20 或 7/10）＋ 档位结论（如 第二档（良好））。',
+  '随后四行列表：任务完成度 x/5、篇章逻辑 x/5、词汇丰富 x/5、语法准确 x/5（四个维度各配一句短评）。',
+  '### [SENTENCES]',
+  '挑 3~5 句最值得改的句子。每个句子一个 :::sentence … ::: 块，内部五行前缀固定：',
+  '[ORIGINAL] 原句（原样摘录不改字）',
+  '[FLAW] 一句中文点出病因（语法硬伤/中式表达/用词平庸/衔接生硬）',
+  '[LEVEL1] 规范纠错版：只修正错误、保留原有结构（基准档）',
+  '[LEVEL2] 考研高分升格版：句式与用词升级（高分档），自然不堆砌',
+  '[TECHNIQUE] 升格手法标签 2~3 个，用 | 分隔（如：分词状语 | 动词升格 | 破除中式主语）',
+  '### [REWRITE]',
+  '在保留考生原有思路与论点的前提下写出全文升格版（篇幅符合该部分字数档），不要逐句重复批改内容。',
+  '### [PATTERNS]',
+  '提炼 3~5 个可迁移的考研写作句型骨架，每行一条，格式「- 英文句型 —— 中文用法说明」。',
+  '【硬性规则】除五个锚点标题与 ::: 块外不写任何额外小节；锚点顺序不得颠倒；英文示例必须语法正确；点评用简体中文。',
+].join('\n');
+
+/**
+ * v2.5.0：流式 LLM 中继（OpenAI 兼容）——请求构建与 llmChat 同源（思考参数只按服务商档案透传，
+ * 功能代码零注入，off 档双保险显式关闭），区别为 delta 通过 onThinking/onContent 回调实时转发。
+ * 上游把思考体（Administration…王朝块）混进正文时，内置流式状态机拦截转发到 onThinking，不污染正文。
+ * mock 模式：mockLLM 整包产出按 12 块均匀推送（模拟真实推流节奏，供测试断言分块）。
+ * 返回 { content, reasoningLen, finishReason }。
+ */
+async function llmChatSSE(messages, { providerId, llmOverride, maxTokens, onThinking, onContent } = {}) {
+  let contentSeen = '';
+  let reasoningLen = 0;
+  let finishReasonOf = '';
+  const emitC = t => { if (!t) return; contentSeen += t; if (onContent) { try { onContent(t); } catch { } } };
+  const emitT = t => { if (!t) return; reasoningLen += t.length; if (onThinking) { try { onThinking(t); } catch { } } };
+
+  if (config.llm.mock) {
+    const reply = stripThinkBlocks(mockLLM(messages));
+    if (!reply) return { content: '', reasoningLen: 0, finishReason: 'stop' };
+    const N = 12;
+    for (let i = 0; i < N; i++) {
+      emitC(reply.slice(Math.floor(reply.length * i / N), Math.floor(reply.length * (i + 1) / N)));
+      await new Promise(r => setTimeout(r, 15));
+    }
+    return { content: reply, reasoningLen: 0, finishReason: 'stop' };
+  }
+
+  const base = getProvider(providerId) || {};
+  const llm = { ...base, ...(llmOverride || {}) };
+  if (!llm.baseUrl || !llm.model) {
+    const e = new Error('尚未配置 AI 服务商，请到「设置」页添加服务商并填写 API Key');
+    e.code = 'NO_LLM';
+    throw e;
+  }
+  const url = llm.baseUrl.replace(/\/+$/, '') + '/chat/completions';
+  // v2.4.4 思考参数翻译层（与 llmChat 同源）：off → reasoning_effort:none + enable_thinking:false 双保险；档位直通
+  const bodyObj = { model: llm.model, messages, temperature: llm.temperature !== undefined ? llm.temperature : 0.7, stream: true };
+  if (llm.max_tokens) bodyObj.max_tokens = llm.max_tokens;          // 用户档案已配置 → 按档案
+  else if (maxTokens) bodyObj.max_tokens = maxTokens;               // 调用方显式指定才带上（写作升格默认不设钳制）
+  if (llm._thinking) bodyObj.thinking = llm._thinking;
+  else if (llm.thinking && llm.thinking !== 'off') bodyObj.reasoning_effort = llm.thinking;
+  else { bodyObj.reasoning_effort = 'none'; bodyObj.enable_thinking = false; }
+  if (typeof llm.extraBody === 'string' && llm.extraBody.trim()) {
+    try {
+      const extra = JSON.parse(llm.extraBody);
+      if (extra && typeof extra === 'object' && !Array.isArray(extra)) {
+        delete extra.messages; delete extra.stream; delete extra.max_tokens;
+        Object.assign(bodyObj, extra);
+      }
+    } catch { /* 非法 JSON 忽略 */ }
+  }
+  let res;
+  try {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'text/event-stream',
+        ...(llm.apiKey ? { 'Authorization': 'Bearer ' + llm.apiKey } : {}),
+      },
+      body: JSON.stringify(bodyObj),
+    });
+  } catch {
+    throw new Error(`无法连接 AI 服务（${llm.baseUrl}），请到「设置」检查 Base URL 与网络`);
+  }
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(`AI 请求失败 (HTTP ${res.status}) ${text.slice(0, 300)}`);
+  }
+  const ct = String(res.headers.get('content-type') || '');
+
+  /* 流式思考体拦截状态机： content 中的 Administration/Write 网块 → onThinking，正文 → onContent */
+  let sbuf = '', inThink = false;
+  const csScan = isFinal => {
+    for (;;) {
+      if (inThink) {
+        const m = /<\/think(?:ing)?\s*>/i.exec(sbuf);
+        if (m) { emitT(sbuf.slice(0, m.index)); sbuf = sbuf.slice(m.index + m[0].length); inThink = false; continue; }
+        // 尾部可能是被截断的闭合标签（≤12 字符）：保守扣住等待
+        const holdTail = /<\/?(?:\/?t?h?i?n?k?i?n?g?\s*>?)?$/i.test(sbuf.slice(-12)) && sbuf.length <= 12;
+        if (sbuf.length > 12) { emitT(sbuf.slice(0, sbuf.length - 12)); sbuf = sbuf.slice(sbuf.length - 12); }
+        else if (holdTail && !isFinal) { /* 等待更多 */ }
+        else if (isFinal) { emitT(sbuf); sbuf = ''; }
+        break;
+      }
+      const m = /<think(?:ing)?\s*>/i.exec(sbuf);
+      if (m) {
+        const emit = sbuf.slice(0, m.index);
+        sbuf = sbuf.slice(m.index + m[0].length);
+        inThink = true;
+        if (emit) emitC(emit);
+        continue;
+      }
+      // 无开标签：扣住尾部可能是半截「<t…」标签前缀（≤19 字符）等待补齐
+      const tail = sbuf.match(/<[^>]{0,19}$/);
+      if (tail) {
+        const cut = sbuf.length - tail[0].length;
+        if (cut > 0) { emitC(sbuf.slice(0, cut)); sbuf = sbuf.slice(cut); }
+      } else {
+        emitC(sbuf); sbuf = '';
+      }
+      if (!isFinal) break;
+      if (sbuf) { emitC(sbuf); sbuf = ''; }
+      break;
+    }
+  };
+
+  if (ct.includes('text/event-stream')) {
+    try {
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buf = '';
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+        const lines = buf.split('\n');
+        buf = lines.pop() || '';
+        for (const raw of lines) {
+          const line = raw.trim();
+          if (!line.startsWith('data:')) continue;
+          const payload = line.slice(5).trim();
+          if (!payload || payload === '[DONE]') continue;
+          try {
+            const j = JSON.parse(payload);
+            const d = j.choices?.[0]?.delta || {};
+            if (typeof d.reasoning_content === 'string') emitT(d.reasoning_content);
+            if (typeof d.content === 'string') { sbuf += d.content; csScan(false); }
+            if (j.choices?.[0]?.finish_reason) finishReasonOf = j.choices[0].finish_reason;
+          } catch { /* 单块坏数据忽略 */ }
+        }
+      }
+    } catch (e) {
+      throw new Error(`AI 流式响应中断（${e.message}），请重试`);
+    }
+    csScan(true);
+  } else {
+    const json = await res.json();
+    const msg = json.choices?.[0]?.message || {};
+    if (msg.reasoning_content) emitT(String(msg.reasoning_content));
+    sbuf = String(msg.content || json.choices?.[0]?.text || '');
+    finishReasonOf = json.choices?.[0]?.finish_reason || '';
+    csScan(true);
+  }
+
+  if (!contentSeen.trim() && reasoningLen > 0) {
+    throw new Error(`AI 只返回了思考过程，正文为空（finish_reason=${finishReasonOf}，思考已生成 ${reasoningLen} 字）。请到设置页调整「Max Tokens」或「思考强度」后重试。`);
+  }
+  return { content: stripThinkBlocks(contentSeen), reasoningLen, finishReason: finishReasonOf };
+}
+
 /** 本地自测用的假 LLM（config.llm.mock=true 时启用） */
 function mockLLM(messages) {
   const sys = messages.find(m => m.role === 'system')?.content || '';
@@ -1420,6 +1630,63 @@ function mockLLM(messages) {
         }
       ].filter(g => g.words.length > 0)
     });
+  }
+  if (sys.includes('阅卷组资深审题指导')) {   // v2.5.0：写作升格审题/识图 mock——三段式防幻觉输出
+    const isB = user.includes('Part B');
+    const hasImg = user.includes('image 图片内容块') || user.includes('image_url');
+    return [
+      '### 画面要素',
+      hasImg && isB
+        ? '[MOCK] 一位坐在书桌前的年轻人，面前堆着复习资料，右手握着手机，屏幕朝向自己（图内文字无法确认 → （不确定））。（不确定：桌角是否有闹钟。）'
+        : '（题目未附图）[MOCK] 从题干整理：Part A 建议信——向外国朋友介绍校园读书周活动并发出邀请。',
+      '### 寓意主题',
+      isB
+        ? '[MOCK] 命题关键词：「数字时代的自律」——手机便利与沉迷风险并存，青年自控力是核心议题。'
+        : '[MOCK] 命题关键词：「书信交际与活动邀请」——格式规范（称呼/正文三段/落款）与信息完整性。',
+      '### 立意建议',
+      '- [MOCK] 角度一（推荐）：从个体自律切入，讨论适度使用手机与自我管理的平衡。',
+      '- [MOCK] 角度二：从环境与引导切入，探讨学校/家庭的提醒责任。',
+      '- [MOCK] 歧义点提醒：勿把话题写成纯手机利弊罗列，须落到「人应对诱惑的态度」。',
+    ].join('\n');
+  }
+  if (sys.includes('阶梯升格')) {   // v2.5.0：写作升格批改 mock——严格按五锚点协议从考生真实作文构造
+    const essay = (user.match(/【考生作文】\n([\s\S]+)/) || [])[1] || '';
+    const sents = essay.split(/(?<=[.!?])\s+/).map(s => s.replace(/\s+/g, ' ').trim()).filter(s => s.length > 8).slice(0, 2);
+    const s1 = sents[0] || 'People think it is very good.';
+    const s2 = sents[1] || s1;
+    const wordsN = (user.match(/约 (\d+) 词/) || [])[1] || '0';
+    const isB = user.includes('Part B');
+    return [
+      '### [SCORE]',
+      `预估得分：${isB ? '15' : '7'}/${isB ? '20' : '10'} · 第二档（良好）`,
+      '- 任务完成度 4/5 · [MOCK] 要点覆盖完整，契合题意。',
+      '- 篇章逻辑 3.5/5 · [MOCK] 衔接手段单一，段落推进可更清晰。',
+      '- 词汇丰富 3.5/5 · [MOCK] 基础词重复，可替换更地道表达。',
+      '- 语法准确 4/5 · [MOCK] 无严重硬伤，复合句占比可提升。',
+      '### [SENTENCES]',
+      ':::sentence',
+      `[ORIGINAL] ${s1}`,
+      '[FLAW] [MOCK] 用词偏口语，句子信息密度低。',
+      `[LEVEL1] ${s1.replace(/\bthink\b/i, 'believe').replace(/\bis very\b/i, 'is quite')}`,
+      `[LEVEL2] [MOCK] 升格示范：It is widely acknowledged that ${s1.replace(/^people\s+/i, '').replace(/\bthink\b/i, 'benefit')}.（结构化重构）`,
+      '[TECHNIQUE] 动词升格 | 形式主语 | 消灭中式直译',
+      ':::',
+      ':::sentence',
+      `[ORIGINAL] ${s2}`,
+      '[FLAW] [MOCK] 短句堆叠，可用伴随状语合并。',
+      `[LEVEL1] ${s2}`,
+      `[LEVEL2] [MOCK] 升格示范：${s2.replace(/\.$/, '')}, thereby fostering a more balanced lifestyle.`,
+      '[TECHNIQUE] 分词伴随 | 句式合并 | 衔接升格',
+      ':::',
+      '### [REWRITE]',
+      `[MOCK] 全文升格示范（基于考生原思路重构，约 ${isB ? '185' : '112'} 词；考生字数 ${wordsN} 词）：`,
+      `[MOCK REWRITE BASED ON]: ${s1}`,
+      '[MOCK] 只有这样，我们才能在享受科技便利的同时守住自律的边界（占位收束段）。',
+      '### [PATTERNS]',
+      '- A prevailing consensus holds that … —— 普遍共识认为……（开篇点题）',
+      '- It is advisable to … —— ……是可取的（建议句型）',
+      '- Only in this way can we … —— 只有这样我们才能……（倒装收尾）',
+    ].join('\n');
   }
   return `[MOCK] 收到！这是一个自测回复。（词义、例句、用法讲解在配置真实 AI 服务商后可用）\n\n关于你的问题「${user.slice(0, 60)}」：本回复来自内置 mock 模式，仅用于验证闭环。`;
 }
@@ -4558,6 +4825,144 @@ const server = http.createServer(async (req, res) => {
           persistDB();
           return sendJSON(res, 200, { ok: true });
         }
+      }
+
+      /* ---------- v2.5.0：写作升格（自由写作单轨，题源不碰真题库） ---------- */
+
+      // 审题/识图（含防幻觉：AI 先自报看到什么，用户再确认/纠偏）
+      if (p === '/api/writing/inspect' && req.method === 'POST') {
+        const body = await readBody(req);
+        const promptText = String(body.prompt || '').trim().slice(0, 4000);
+        const part = body.part === 'B' ? 'B' : 'A';
+        const imageNote = String(body.imageNote || '').trim().slice(0, 800);
+        if (!promptText) return sendJSON(res, 400, { error: '请先填写题目要求（题干/D读作 Directions）' });
+        const image = typeof body.image === 'string' && body.image.startsWith('data:image/') ? body.image : '';
+        if (image && image.length > 2100000) return sendJSON(res, 400, { error: '图片过大，请压缩后再试（≤1.5MB）' });
+        const prov = getProvider();
+        if (image && !(config.llm.mock || (prov && prov.vision))) {
+          return sendJSON(res, 400, { error: '当前默认服务商未开启「视觉能力」，请到设置页编辑服务商勾选视觉能力，或直接用文字描述图画' });
+        }
+        const userText = [
+          `【作文类型】Part ${part}${part === 'B' ? ' 大作文（20 分，图画/图表类）' : ' 小作文（10 分，书信/告示类）'}`,
+          `【题目要求】\n${promptText}`,
+          image ? '【附图】见 image 图片内容块（漫画原图，请严格按防幻觉铁律描述）' : '【附图】无',
+          imageNote ? `【用户纠偏提示】${imageNote}` : '',
+        ].filter(Boolean).join('\n\n');
+        const msgs = [
+          { role: 'system', content: WRITING_INSPECT_SYSTEM },
+          { role: 'user', content: image ? [{ type: 'text', text: userText }, { type: 'image_url', image_url: { url: image } }] : userText },
+        ];
+        const reply = await llmChat(msgs, { maxTokens: 3000 });
+        return sendJSON(res, 200, { ok: true, inspection: stripThinkBlocks(reply) });
+      }
+
+      // 批改升格（SSE 流式：thinking / content / done / error 四事件）
+      if (p === '/api/writing/elevate' && req.method === 'POST') {
+        const body = await readBody(req);
+        const promptText = String(body.prompt || '').trim().slice(0, 4000);
+        const essay = String(body.essay || '').trim().slice(0, 6000);
+        const part = body.part === 'B' ? 'B' : 'A';
+        const imageHint = String(body.imageHint || '').trim().slice(0, 1200);
+        if (!promptText) { sendJSON(res, 400, { error: '题目要求不能为空' }); return; }
+        if (!essay) { sendJSON(res, 400, { error: '作文正文为空，请先写作再提交' }); return; }
+
+        // SSE 头：X-Accel-Buffering:no 防 nginx 缓冲吃掉流式；15s 心跳防空闲掐断
+        res.writeHead(200, {
+          'Content-Type': 'text/event-stream; charset=utf-8',
+          'Cache-Control': 'no-cache',
+          Connection: 'keep-alive',
+          'X-Accel-Buffering': 'no',
+        });
+        let finished = false;
+        // v2.5.0.a：sseSend 不带 finished 闸（finishUp/failUp 先置位再发事件，若 sseSend 也检查会自我拦截 done）
+        const sseSend = obj => { try { res.write('data: ' + JSON.stringify(obj) + '\n\n'); } catch { } };
+        const finishUp = (payload) => { if (!finished) { finished = true; sseSend({ type: 'done', ...payload }); try { res.end(); } catch { } } };
+        const failUp = (msg) => { if (!finished) { finished = true; sseSend({ type: 'error', error: msg }); try { res.end(); } catch { } } };
+        const hb = setInterval(() => { if (!finished) { try { res.write(': ping\n\n'); } catch { } } }, 15000);
+
+        const wordsCount = essay.split(/\s+/).filter(Boolean).length;
+        const msgs = [
+          { role: 'system', content: WRITING_ELEVATE_SYSTEM },
+          { role: 'user', content: [
+            `【作文类型】Part ${part}${part === 'B' ? ' 大作文（满分 20 分，建议 160~200 词）' : ' 小作文（满分 10 分，建议 100~120 词）'}`,
+            `【题目要求】\n${promptText}`,
+            part === 'B' && imageHint ? `【图画理解（用户确认信息，以此为准）】${imageHint}` : '',
+            `【考生字数】约 ${wordsCount} 词（与建议档差距明显时须在点评中提示）`,
+            `【考生作文】\n${essay}`,
+          ].filter(Boolean).join('\n\n') },
+        ];
+
+        try {
+          const r = await llmChatSSE(msgs, {
+            onThinking: t => sseSend({ type: 'thinking', delta: t }),
+            onContent: t => sseSend({ type: 'content', delta: t }),
+          });
+          const report = stripThinkBlocks(r.content);
+          if (!report.trim()) {
+            failUp(`AI 未输出批改正文（finish_reason=${r.finishReason || 'unknown'}），请调整 Max Tokens/思考强度后重试`);
+          } else {
+            const rec = {
+              id: crypto.randomUUID(),
+              createdAt: new Date().toISOString(),
+              part, prompt: promptText, imageHint,
+              essay, words: wordsCount,
+              report,
+              score: parseWritingScore(report),
+            };
+            const list = loadEssays();
+            list.unshift(rec);
+            essaysCache = list;
+            saveEssays();
+            finishUp({ id: rec.id, score: rec.score, words: rec.words, createdAt: rec.createdAt });
+          }
+        } catch (e) {
+          failUp(`AI 批改失败：${e.message}`);
+        } finally {
+          clearInterval(hb);
+          if (!finished) { finished = true; try { res.end(); } catch { } }
+        }
+        return;
+      }
+
+      // 历史（列表最多 50 条元数据 / 详情 / 删除）
+      if (p === '/api/writing/history' && req.method === 'GET') {
+        const list = loadEssays().slice(0, 50).map(e => ({ id: e.id, createdAt: e.createdAt, part: e.part, words: e.words, score: e.score, prompt: String(e.prompt || '').slice(0, 120) }));
+        return sendJSON(res, 200, { ok: true, list });
+      }
+      {
+        const wm = p.match(/^\/api\/writing\/([a-f0-9-]+)$/);
+        if (wm && req.method === 'GET') {
+          const e = loadEssays().find(x => x.id === wm[1]);
+          if (!e) return sendJSON(res, 404, { error: '习作不存在' });
+          return sendJSON(res, 200, { ok: true, essay: e });
+        }
+        if (wm && req.method === 'DELETE') {
+          const before = loadEssays().length;
+          essaysCache = loadEssays().filter(x => x.id !== wm[1]);
+          if (essaysCache.length === before) return sendJSON(res, 404, { error: '习作不存在' });
+          saveEssays();
+          return sendJSON(res, 200, { ok: true });
+        }
+      }
+
+      // 金句入库（复用助记库存储，noteType=写作金句，不自动推送墨墨）
+      if (p === '/api/writing/note' && req.method === 'POST') {
+        const body = await readBody(req);
+        const content = String(body.content || '').trim().slice(0, 500);
+        if (!content) return sendJSON(res, 400, { error: '金句内容为空' });
+        const spelling = (String(body.spelling || '').trim() || '写作金句').slice(0, 80);
+        const note = {
+          id: crypto.randomUUID(),
+          spelling,
+          noteType: '写作金句',
+          content,
+          createdAt: new Date().toISOString(),
+          source: '写作升格',
+          synced: false,
+        };
+        db.notes.unshift(note);
+        persistDB();
+        return sendJSON(res, 201, { ok: true, note });
       }
 
       // 记录删除（解析原件仍保留在 archive/，可重导恢复；删除写日志）

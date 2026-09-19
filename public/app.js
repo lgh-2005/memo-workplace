@@ -991,13 +991,15 @@ const storyState = {
 const STORY_TIP = {
   vocab: '词表精读 + AI 教练 + 助记生成，让单词过手入脑',
   story: '把选中的词写进一篇连贯短文：语境记忆 + 记忆钩子 + 检索自测，三管齐下',
+  writing: '自由写作单轨：防幻觉识图审题 + 逐句 L1/L2 升格对比 + 金句沉淀入助记库',
 };
 
 async function switchStudySub(sub) {
   $$('#studySubbar .study-sub-item').forEach(b => b.classList.toggle('active', b.dataset.sub === sub));
-  const vocab = $('#vocabPane'), story = $('#storyPane');
+  const vocab = $('#vocabPane'), story = $('#storyPane'), wrt = $('#writingPane');
   if (vocab) vocab.style.display = sub === 'vocab' ? '' : 'none';
   if (story) story.style.display = sub === 'story' ? '' : 'none';
+  if (wrt) wrt.style.display = sub === 'writing' ? '' : 'none';
   const tip = $('#studySubTip');
   if (tip) tip.textContent = STORY_TIP[sub] || '';
   if (sub === 'story') {
@@ -1010,6 +1012,9 @@ async function switchStudySub(sub) {
       renderStoryThemeRow(state.storyThemes);
     }
     if (!storyState.hist.length) loadStoryHist();
+  } else if (sub === 'writing') {
+    wrtInitOnce();
+    loadWrtHist();
   } else loadWords();
 }
 
@@ -5490,3 +5495,480 @@ if ($('#mobileSyncBadge')) {
 }
 
 // 移动端主题与同步状态由 applyTheme 与 updateSyncBadge 统一定向更新
+
+/* ==================================================================== */
+/* v2.5.0：写作升格（自由写作单轨 + 防幻觉识图 + 逐句 L1/L2 + SSE 流式） */
+/* ==================================================================== */
+
+const wrt = {
+  part: 'A',
+  image: '',
+  hist: [], histLoaded: false,
+  timer: { running: false, startTs: 0, acc: 0, iv: null },
+  lastReportId: '',
+};
+const WRT_RECOMMEND = { A: 15 * 60, B: 35 * 60 };   // 建议秒数（小作文 15 / 大作文 35 分钟）
+const WRT_WORD_RANGE = { A: [100, 120], B: [160, 200] };   // 官方字数档
+
+let wrtInited = false;
+function wrtInitOnce() {
+  if (wrtInited) { wrtRefreshVisionHint(); return; }
+  wrtInited = true;
+  /* 作文类型切换 */
+  $$('#wrtPartRow .chip').forEach(c => c.addEventListener('click', () => {
+    $$('#wrtPartRow .chip').forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    wrt.part = c.dataset.wrtPart;
+    wrtWordCount();
+    wrtTimerReset();
+  }));
+  /* 图片上传（复用聊天压缩管线 compressImageFile） */
+  $('#wrtImgBtn').addEventListener('click', () => { const f = $('#wrtImageFile'); f.value = ''; f.click(); });
+  $('#wrtImageFile').addEventListener('change', async () => {
+    const f = $('#wrtImageFile').files && $('#wrtImageFile').files[0];
+    if (!f) return;
+    try { wrtSetImage(await compressImageFile(f)); }
+    catch (e) { toast('🖼️ ' + (e.message || '图片处理失败')); }
+  });
+  $('#wrtImageClear').addEventListener('click', () => wrtSetImage(''));
+  /* 剪贴板粘贴图片（仅写作 pane 可见时生效） */
+  document.addEventListener('paste', e => {
+    if ($('#writingPane').style.display === 'none') return;
+    const item = [...(e.clipboardData?.items || [])].find(it => it.type.startsWith('image/'));
+    if (item) {
+      e.preventDefault();
+      const f = item.getAsFile();
+      if (f) compressImageFile(f).then(d => wrtSetImage(d)).catch(err => toast('🖼️ ' + (err.message || '图片处理失败')));
+    }
+  });
+  /* 草稿暂存与字数 */
+  const essayEl = $('#wrtEssay');
+  essayEl.addEventListener('input', () => {
+    try { localStorage.setItem('wrtDraft_' + wrt.part, essayEl.value); } catch { }
+    wrtWordCount();
+  });
+  const draft = (() => { try { return localStorage.getItem('wrtDraft_' + wrt.part) || ''; } catch { return ''; } })();
+  if (draft) essayEl.value = draft;
+  wrtWordCount();
+  $('#wrtDraftClear').addEventListener('click', () => {
+    essayEl.value = '';
+    try { localStorage.removeItem('wrtDraft_' + wrt.part); } catch { }
+    wrtWordCount();
+  });
+  /* 考场计时（提醒不强制：到建议时长变橙） */
+  $('#wrtTimerBtn').addEventListener('click', wrtTimerToggle);
+  $('#wrtTimerReset').addEventListener('click', wrtTimerReset);
+  /* 审题 / 提交 */
+  $('#wrtInspectBtn').addEventListener('click', wrtInspect);
+  $('#wrtSubmitBtn').addEventListener('click', wrtElevate);
+  /* 历史 */
+  $('#wrtHistRefresh').addEventListener('click', loadWrtHist);
+  wrtRefreshVisionHint();
+}
+
+function wrtRefreshVisionHint() {
+  const hint = $('#wrtVisionHint');
+  if (!hint) return;
+  if (!state.providers.length) { hint.textContent = ''; return; }
+  hint.textContent = activeVisionEnabled()
+    ? '当前模型支持识图（Part B 漫画题必备用）'
+    : '当前模型未开视觉：仅支持文字审题';
+  $('#wrtImgBtn').style.display = activeVisionEnabled() ? '' : 'none';
+}
+
+function wrtSetImage(dataURL) {
+  wrt.image = dataURL || '';
+  const row = $('#wrtImagePreview');
+  if (!row) return;
+  if (dataURL) {
+    $('#wrtImagePreviewImg').src = dataURL;
+    row.style.display = 'flex';
+  } else {
+    row.style.display = 'none';
+  }
+  $('#wrtImgConfirmed').checked = false;   // 换图后确认态重置（防幻觉闸口）
+}
+
+/** 实时词数徽章：红(不足/超限) 黄(接近) 绿(达区间) */
+function wrtWordCount() {
+  const el = $('#wrtWordBadge');
+  if (!el) return;
+  const n = $('#wrtEssay').value.split(/\s+/).filter(Boolean).length;
+  el.textContent = n + ' 词';
+  if (!n) { el.dataset.state = 'empty'; return; }
+  const [lo, hi] = WRT_WORD_RANGE[wrt.part];
+  if (n < lo - 10) el.dataset.state = 'less';
+  else if (n > hi + 15) el.dataset.state = 'over';
+  else if (n < lo || n > hi) el.dataset.state = 'near';
+  else el.dataset.state = 'ok';
+}
+
+/* 考场计时 */
+function wrtTimerToggle() {
+  const t = wrt.timer;
+  if (t.running) {
+    t.acc += Date.now() - t.startTs;
+    t.running = false;
+    clearInterval(t.iv);
+    t.iv = null;
+    $('#wrtTimerBtn').textContent = '▶ 继续';
+  } else {
+    t.startTs = Date.now();
+    t.running = true;
+    t.iv = setInterval(wrtTimerTick, 500);
+    $('#wrtTimerBtn').textContent = '⏸ 暂停';
+  }
+}
+function wrtTimerReset() {
+  const t = wrt.timer;
+  t.running = false;
+  t.acc = 0;
+  if (t.iv) clearInterval(t.iv);
+  t.iv = null;
+  $('#wrtTimerBtn').textContent = '▶ 计时';
+  const el = $('#wrtTimer');
+  if (el) {
+    el.textContent = '⏱ 00:00';
+    el.classList.remove('over');
+  }
+}
+function wrtTimerTick() {
+  const t = wrt.timer;
+  const sec = Math.floor((t.acc + (t.running ? Date.now() - t.startTs : 0)) / 1000);
+  const el = $('#wrtTimer');
+  if (!el) return;
+  const mm = String(Math.floor(sec / 60)).padStart(2, '0');
+  const ss = String(sec % 60).padStart(2, '0');
+  el.textContent = `⏱ ${mm}:${ss}`;
+  if (sec >= WRT_RECOMMEND[wrt.part]) el.classList.add('over');   // 到建议时长：橙色提醒不强制
+}
+
+/* ---------- 审题 / 识图（防幻觉第一道闸） ---------- */
+async function wrtInspect() {
+  const prompt = $('#wrtPrompt').value.trim();
+  if (!prompt) { toast('🧾 请先填写题目要求'); return; }
+  const imgNote = $('#wrtImgNote').value.trim();
+  if (!imgNote && !prompt) return;
+  const btn = $('#wrtInspectBtn');
+  const out = $('#wrtInspectResult');
+  btn.disabled = true;
+  btn.textContent = '🔍 审题分析中…（识图可能较慢）';
+  out.textContent = '';
+  out.className = 'result';
+  $('#wrtInspectBox').style.display = 'none';
+  try {
+    const r = await api('/api/writing/inspect', {
+      method: 'POST',
+      body: { prompt, part: wrt.part, image: wrt.image || undefined, imageNote: imgNote || undefined },
+    });
+    wrt.lastInspection = r.inspection || '';
+    const box = $('#wrtInspectBox');
+    box.innerHTML = mdLite(r.inspection || '（空）');
+    box.style.display = '';
+    $('#wrtConfirmRow').style.display = '';
+    $('#wrtImgConfirmed').checked = false;
+    out.textContent = '✅ 审题完成。请核对下方 AI 对画面/题意的理解（防幻觉核对/纠偏后写作）。';
+    out.className = 'result ok';
+  } catch (e) {
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+  btn.disabled = false;
+  btn.textContent = '🔍 AI 审题与立意（防幻觉核对）';
+}
+
+/* ---------- 提交批改（SSE 流式收流 + 渐进渲染） ---------- */
+async function wrtElevate() {
+  const prompt = $('#wrtPrompt').value.trim();
+  const essay = $('#wrtEssay').value.trim();
+  if (!prompt) { toast('🧾 请先填写题目要求'); return; }
+  if (!essay) { toast('📝 作文还是空的，先写几句'); return; }
+  const n = essay.split(/\s+/).filter(Boolean).length;
+  if (n < 30 && !confirm(`当前只有 ${n} 词，篇幅偏短，确定继续提交批改吗？`)) return;
+
+  const imageHint = $('#wrtImgConfirmed').checked || $('#wrtImgNote').value.trim()
+    ? [$('#wrtImgConfirmed').checked && wrt.lastInspection ? '（已确认 AI 识图理解）' : '', $('#wrtImgNote').value.trim()].filter(Boolean).join(' ') : '';
+
+  // 重置报告区
+  $('#wrtReportCard').style.display = '';
+  $('#wrtReportCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  $('#wrtReportTitle').textContent = '📈 批改与升格报告（批改中…）';
+  $('#wrtThinkFold').style.display = 'none';
+  $('#wrtThinkBox').textContent = '';
+  $('#wrtThinkCount').textContent = '0';
+  $('#wrtStreamBox').style.display = '';
+  $('#wrtStreamBox').textContent = '';
+  $('#wrtReportFinal').style.display = 'none';
+  $('#wrtReportCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  $('#wrtSubmitBtn').disabled = true;
+  $('#wrtSubmitBtn').textContent = '⏳ AI 升格批改中…';
+  $('#wrtInspectResult').textContent = '';
+
+  let thinkLen = 0, streamMd = '';
+  let renderQueued = false;
+  const renderStream = () => {
+    if (renderQueued) return;
+    renderQueued = true;
+    requestAnimationFrame(() => {
+      renderQueued = false;
+      const box = $('#wrtStreamBox');
+      if (!box || $('#wrtStreamBox').style.display === 'none') return;
+      box.innerHTML = mdLite(streamMd) || '<div class="hint">等待输出…</div>';
+      box.scrollTop = box.scrollHeight;   // 容器滚动
+    });
+  };
+  try {
+    const res = await fetch('/api/writing/elevate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt, essay, part: wrt.part, imageHint: imageHint || undefined }),
+    });
+    if (!res.ok || !(res.headers.get('content-type') || '').includes('text/event-stream')) {
+      const j = await res.json().catch(() => ({}));
+      throw new Error(j.error || `批改请求失败 (HTTP ${res.status})`);
+    }
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = '', done = false, errMsg = '', savedId = '';
+    while (!done) {
+      const { done: rdDone, value } = await reader.read();
+      if (rdDone) break;
+      buf += decoder.decode(value, { stream: true });
+      const lines = buf.split('\n');
+      buf = lines.pop() || '';
+      for (const raw of lines) {
+        const line = raw.trim();
+        if (!line.startsWith('data:')) continue;
+        const payload = line.slice(5).trim();
+        if (!payload) continue;
+        let ev;
+        try { ev = JSON.parse(payload); } catch { continue; }
+        if (ev.type === 'thinking') {
+          thinkLen += (ev.delta || '').length;
+          $('#wrtThinkFold').style.display = '';
+          $('#wrtThinkCount').textContent = String(thinkLen);
+          $('#wrtThinkBox').textContent += ev.delta || '';
+        } else if (ev.type === 'content') {
+          streamMd += ev.delta || '';
+          renderStream();
+        } else if (ev.type === 'error') {
+          errMsg = ev.error || '未知错误';
+        } else if (ev.type === 'done') {
+          savedId = ev.id || '';
+        } else if (ev.type === 'ping') {
+          /* 心跳 */
+        }
+      }
+    }
+    if (errMsg) throw new Error(errMsg);
+    if (!streamMd.trim()) throw new Error('AI 未返回批改内容（流提前结束），请重试');
+
+    // 结构化渲染（原始流保留在可折叠区）
+    $('#wrtStreamBox').style.display = 'none';
+    wrtRenderReport(streamMd, savedId);
+    $('#wrtReportTitle').textContent = '📈 批改与升格报告';
+    $('#wrtSubmitBtn').disabled = false;
+    $('#wrtSubmitBtn').textContent = '✨ 提交 AI 升格批改';
+    wrt.histLoaded = false;   // 触发历史刷新
+    loadWrtHist();
+  } catch (e) {
+    $('#wrtReportTitle').textContent = '📈 批改与升格报告';
+    $('#wrtSubmitBtn').disabled = false;
+    $('#wrtSubmitBtn').textContent = '✨ 提交 AI 升格批改';
+    const box = $('#wrtStreamBox');
+    if (box) {
+      box.style.display = '';
+      box.innerHTML = `<div class="result err">❌ ${esc(e.message)}</div>`;
+    }
+    $('#wrtThinkBox').textContent = ''; $('#wrtThinkFold').style.display = 'none'; $('#wrtThinkCount').textContent = '0';
+  }
+}
+
+/* ---------- 批改报告结构化渲染（解析 [SCORE]/[SENTENCES]/[REWRITE]/[PATTERNS] 锚点） ---------- */
+function parseWrtReport(md) {
+  const iScore = md.indexOf('### [SCORE]');
+  const iSent = md.indexOf('### [SENTENCES]');
+  const iRew = md.indexOf('### [REWRITE]');
+  const iPat = md.indexOf('### [PATTERNS]');
+  const seg = (a, b) => (a >= 0 ? md.slice(a, b >= a ? b : undefined) : null);
+  const sents = [];
+  if (iSent >= 0) {
+    const body = seg(iSent, iRew >= iSent ? iRew : undefined) || '';
+    const re = /:::sentence([\s\S]*?):::/g;
+    let m;
+    while ((m = re.exec(body))) {
+      const get = tag => {
+        const mm = m[1].match(new RegExp('\\[' + tag + '\\]\\s*([\\s\\S]*?)(?=\\n\\[|$)'));
+        return mm ? mm[1].trim() : '';
+      };
+      sents.push({ original: get('ORIGINAL'), flaw: get('FLAW'), l1: get('LEVEL1'), l2: get('LEVEL2'), tech: get('TECHNIQUE') });
+    }
+  }
+  const scoreHead = iScore >= 0 ? seg(iScore, iSent >= iScore ? iSent : undefined).replace(/^### \[SCORE\]\s*/, '').trim() : '';
+  const dims = (scoreHead.split('\n').slice(1).join('\n').split('\n').filter(l => l.trim().startsWith('-')).map(l => l.replace(/^-\s*/, '').trim()));
+  const rewrite = iRew >= 0 ? (seg(iRew, iPat >= iRew ? iPat : undefined) || '').replace(/^### \[REWRITE\]\s*/, '').trim() : '';
+  const patterns = iPat >= 0 ? md.slice(iPat).split('\n').filter(l => l.trim().startsWith('-')).map(l => l.trim().replace(/^-\s*/, '')).filter(Boolean) : [];
+  return { scoreHead, scoreFirstLine: ((scoreHead.split('\n')[0] || '').trim()), dims, sents, rewrite, patterns, hasAnchors: iScore >= 0 };
+}
+
+function wrtRenderReport(md, savedId) {
+  const rep = parseWrtReport(md);
+  const final = $('#wrtReportFinal');
+  final.style.display = '';
+
+  /* 评分卡 */
+  const scoreEl = $('#wrtScoreCard');
+  const head = rep.scoreFirstLine || md.split('\n')[0] || '';
+  let scoreHtml = `<div class="wrt-score-head">${esc(head)}</div>`;
+  rep.dims.forEach((d, i) => {
+    const m = d.match(/^([^·:/]{1,10}?)\s*(\d(?:\.\d)?)\s*\/\s*5\s*(?:·\s*(.+))?$/);
+    if (m) {
+      const pct = Math.min(100, Math.round(Number(m[2]) / 5 * 100));
+      scoreHtml += `
+        <div class="wrt-dim">
+          <div class="wrt-dim-label"><span>${esc(m[1].trim() || ('维度' + (i + 1)))}</span><b>${esc(m[2])}/5</b></div>
+          <div class="wrt-dim-bar"><i style="width:${pct}%"></i></div>
+          ${m[3] ? `<div class="wrt-dim-desc">${esc(m[3])}</div>` : ''}
+        </div>`;
+    } else if (d) {
+      scoreHtml += `<div class="wrt-dim-pure">${esc(d)}</div>`;
+    }
+  });
+  scoreEl.innerHTML = scoreHtml;
+
+  /* 逐句升格对比卡 */
+  const sentEl = $('#wrtSentList');
+  if (rep.sents.length) {
+    sentEl.innerHTML = rep.sents.map((s, i) => `
+      <div class="wrt-sent">
+        <div class="wrt-sent-idx">句 ${i + 1}</div>
+        <div class="wrt-sent-orig">${esc(s.original || s.l1 || '')}</div>
+        ${s.flaw ? `<div class="wrt-sent-flaw">🩺 病因：${esc(s.flaw)}</div>` : ''}
+        <div class="wrt-l1"><span class="wrt-l-tag l1">L1 规范纠错</span><span class="wrt-l-text">${esc(s.l1)}</span>
+          <button class="btn mini wrt-copy" type="button" data-copy="${esc(s.l1)}">📋</button></div>
+        <div class="wrt-l2"><span class="wrt-l-tag l2">L2 考研升格</span><span class="wrt-l-text">${esc(s.l2)}</span>
+          <button class="btn mini wrt-copy" type="button" data-copy="${esc(s.l2)}">📋</button></div>
+        ${s.tech ? `<div class="wrt-techs">${s.tech.split(/[|｜]/).map(x => x.trim()).filter(Boolean).map(t => `<span class="wrp">${esc(t)}</span>`).join('')}</div>` : ''}
+      </div>`).join('');
+  } else {
+    sentEl.innerHTML = '<div class="hint">未解析到逐句升格内容（模型可能未按锚点协议输出，原始报告见下方折叠区）</div>';
+  }
+
+  /* 全文升格范文 */
+  const rwEl = $('#wrtRewriteCard');
+  if (rep.rewrite) {
+    rwEl.innerHTML = mdLite(rep.rewrite);
+    addWrtActionRow(rwEl);
+  } else {
+    rwEl.innerHTML = '<div class="hint">未解析到全文升格内容</div>';
+  }
+
+  /* 句型骨架金句 */
+  const patEl = $('#wrtPatternCard');
+  patEl.innerHTML = rep.patterns.length
+    ? rep.patterns.map((p, i) => `
+      <div class="wrt-pattern">
+        <span class="wrt-pattern-text">${esc(p)}</span>
+        <button class="btn mini" type="button" id="wrtStar${i}">⭐ 存入助记库</button>
+      </div>`).join('')
+    : '<div class="hint">未解析到句型骨架</div>';
+  rep.patterns.forEach((p, i) => {
+    const btn = $('#wrtStar' + i);
+    if (btn) btn.addEventListener('click', () => wrtSavePattern(p, btn));
+  });
+
+  /* 复制按钮 */
+  $$('#wrtReportFinal .wrt-copy').forEach(b => b.addEventListener('click', () => {
+    navigator.clipboard.writeText(b.dataset.copy || '').then(() => toast('📋 已复制'));
+  }));
+
+  /* 未解析到锚点时的原始报告折叠兜底 */
+  if (!rep.hasAnchors) {
+    const raw = $('#wrtStreamBox');
+    raw.style.display = '';
+    raw.classList.add('collapsed-raw');
+    raw.innerHTML = `<details class="hint-fold"><summary>📄 模型未按协议输出，查看原始全文</summary><div>${mdLite(md)}</div></details>`;
+  }
+}
+
+/** 范文卡动作行（朗读 / 复制） */
+function addWrtActionRow(el) {
+  const row = document.createElement('div');
+  row.className = 'row-gap wrt-rewrite-actions';
+  row.innerHTML = `<button class="btn small" type="button">🔊 朗读范文</button>
+    <button class="btn small ghost" type="button">📋 复制范文</button>`;
+  const [sp, cp] = row.querySelectorAll('button');
+  const plain = () => (el.innerText || '').trim();
+  sp.addEventListener('click', () => speak(plain()));
+  cp.addEventListener('click', () => navigator.clipboard.writeText(plain()).then(() => toast('📋 范文已复制')));
+  el.before(row);
+}
+
+/* ---------- 金句存入助记库 ---------- */
+async function wrtSavePattern(text, btn) {
+  try {
+    await api('/api/writing/note', { method: 'POST', body: { content: text } });
+    const out = $('#wrtNoteResult');
+    out.textContent = `✅ 已存入助记库（写作金句）：${text.slice(0, 40)}…`;
+    out.className = 'result ok';
+    btn.textContent = '⭐ 已入库';
+    btn.disabled = true;
+  } catch (e) {
+    const out = $('#wrtNoteResult');
+    out.textContent = '❌ ' + e.message;
+    out.className = 'result err';
+  }
+}
+
+/* ---------- 历史 ---------- */
+async function loadWrtHist() {
+  const list = $('#wrtHistList');
+  if (!list) return;
+  try {
+    const r = await api('/api/writing/history');
+    wrt.hist = r.list || [];
+    wrt.histLoaded = true;
+    if (!wrt.hist.length) { list.innerHTML = '<div class="hint">还没有提交过批改</div>'; return; }
+    list.innerHTML = wrt.hist.map(e => {
+      const d = (e.createdAt || '').slice(0, 16).replace('T', ' ');
+      const badge = e.score ? `<span class="wrt-hist-score">${esc(e.score.got)}/${esc(e.score.full)}</span>` : '';
+      return `<div class="wrt-hist-item">
+        <div class="wrt-hist-main">
+          <b>Part ${esc(e.part)}</b> ${badge}<span class="wrt-hist-meta">${esc(d)} · ${esc(e.words)} 词</span>
+          <div class="wrt-hist-prompt">${esc(String(e.prompt || '').slice(0, 60))}</div>
+        </div>
+        <div class="wrt-hist-actions">
+          <button class="btn small" data-wload="${esc(e.id)}">查看</button>
+          <button class="btn small danger" data-wdel="${esc(e.id)}">删除</button>
+        </div>
+      </div>`;
+    }).join('');
+    $$('#wrtHistList [data-wload]').forEach(b => b.addEventListener('click', () => wrtOpenHist(b.dataset.wload)));
+    $$('#wrtHistList [data-wdel]').forEach(b => b.addEventListener('click', async () => {
+      if (!confirm('删除这条习作与批改记录？')) return;
+      try { await api('/api/writing/' + b.dataset.wdel, { method: 'DELETE' }); loadWrtHist(); } catch (e) { toast('❌ ' + e.message); }
+    }));
+  } catch (e) {
+    list.innerHTML = `<div class="hint">历史加载失败：${esc(e.message)}</div>`;
+  }
+}
+
+async function wrtOpenHist(id) {
+  try {
+    const r = await api('/api/writing/' + encodeURIComponent(id));
+    const e = r.essay;
+    $('#wrtPrompt').value = e.prompt || '';
+    $('#wrtEssay').value = e.essay || '';
+    wrt.part = e.part === 'B' ? 'B' : 'A';
+    $$('#wrtPartRow .chip').forEach(c => c.classList.toggle('active', c.dataset.wrtPart === wrt.part));
+    wrtWordCount();
+    $('#wrtReportCard').style.display = '';
+    $('#wrtReportTitle').textContent = '📈 批改与升格报告（' + String(e.createdAt || '').slice(0, 10) + '）';
+    $('#wrtStreamBox').style.display = 'none';
+    wrtRenderReport(e.report || '', e.id);
+    $('#wrtReportCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (err) {
+    toast('❌ ' + err.message);
+  }
+}
+

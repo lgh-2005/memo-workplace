@@ -3344,5 +3344,89 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   .think-desc { flex-basis: 100%; }
 }
 
+/* ============ v2.5.0：写作升格（writingPane） ============ */
+
+/* 图片预览行 */
+.wrt-img-preview { display: flex; align-items: center; margin-top: 8px; padding: 4px 8px 4px 4px; border: 1px dashed var(--border); border-radius: 10px; width: fit-content; max-width: 100%; background: color-mix(in srgb, var(--primary) 5%, transparent); }
+.wrt-img-preview img { max-height: 80px; max-width: 220px; border-radius: 8px; display: block; }
+
+/* 审题结果卡 */
+.wrt-inspect { border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent); background: color-mix(in srgb, var(--primary) 5%, transparent); border-radius: 10px; padding: 10px 14px; margin-top: 10px; font-size: 13.5px; line-height: 1.75; }
+.wrt-inspect h3 { font-size: 14px; color: var(--primary); margin: 8px 0 4px; }
+.wrt-confirm-row { margin-top: 10px; padding: 10px 12px; border: 1px dashed var(--ok); border-radius: 10px; background: color-mix(in srgb, var(--ok) 6%, transparent); }
+.wrt-confirm-row .check-row { min-height: 44px; cursor: pointer; }
+
+/* 写作台 */
+.wrt-desk-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.wrt-word-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-weight: 700; font-size: 12.5px; background: color-mix(in srgb, var(--text-sub) 16%, transparent); color: var(--text-sub); }
+.wrt-word-badge[data-state="less"] { background: color-mix(in srgb, var(--warn) 15%, transparent); color: var(--warn); }
+.wrt-word-badge[data-state="over"] { background: color-mix(in srgb, #f0a500 18%, transparent); color: #b3790a; }
+[data-theme="dark"] .wrt-word-badge[data-state="over"] { color: #ffd479; }
+.wrt-word-badge[data-state="near"] { background: color-mix(in srgb, #f0a500 14%, transparent); color: #b3790a; }
+[data-theme="dark"] .wrt-word-badge[data-state="near"] { color: #ffd479; }
+.wrt-word-badge[data-state="ok"] { background: color-mix(in srgb, var(--ok) 16%, transparent); color: var(--ok); }
+.wrt-timer { font-weight: 700; font-family: var(--font-mono, monospace); font-size: 13.5px; }
+.wrt-timer.over { color: var(--warn); }
+.wrt-essay { font-family: var(--font-mono, monospace); font-size: 14px; line-height: 1.9; resize: vertical; min-height: 220px; }
+
+/* 流式原始输出 */
+.wrt-stream { max-height: 420px; overflow: auto; border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; font-size: 13.5px; line-height: 1.8; background: color-mix(in srgb, var(--primary) 3%, transparent); }
+.wrt-think-box { max-height: 260px; overflow: auto; font-size: 12.5px; color: var(--text-sub); line-height: 1.7; white-space: pre-wrap; }
+.wrt-think-fold summary { cursor: pointer; user-select: none; }
+
+/* 评分卡 */
+.wrt-score { border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent); background: color-mix(in srgb, var(--primary) 6%, transparent); border-radius: 12px; padding: 14px 16px; }
+.wrt-score-head { font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+.wrt-dim { margin: 8px 0; }
+.wrt-dim-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 3px; }
+.wrt-dim-bar { height: 8px; border-radius: 4px; background: color-mix(in srgb, var(--text-sub) 15%, transparent); overflow: hidden; }
+.wrt-dim-bar i { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--primary), color-mix(in srgb, var(--ok) 70%, var(--primary))); }
+.wrt-dim-desc { font-size: 12px; color: var(--text-sub); margin-top: 3px; }
+.wrt-dim-pure { font-size: 12.5px; color: var(--text-sub); margin: 4px 0; }
+
+/* 逐句升格卡 */
+.wrt-sents { display: flex; flex-direction: column; gap: 10px; }
+.wrt-sent { border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; background: var(--card); }
+.wrt-sent-idx { font-size: 11px; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 6px; }
+.wrt-sent-orig { font-family: var(--font-mono, monospace); font-size: 13.5px; line-height: 1.7; padding: 8px 10px; border: 1px dashed var(--warn); border-radius: 8px; background: color-mix(in srgb, var(--warn) 6%, transparent); margin-bottom: 8px; }
+.wrt-sent-flaw { font-size: 12.5px; color: var(--warn); margin-bottom: 8px; }
+.wrt-l1, .wrt-l2 { display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; border-radius: 8px; margin-bottom: 6px; }
+.wrt-l1 { background: color-mix(in srgb, var(--text-sub) 8%, transparent); border: 1px solid var(--border); }
+.wrt-l2 { background: color-mix(in srgb, var(--ok) 10%, transparent); border: 1px solid color-mix(in srgb, var(--ok) 40%, transparent); }
+.wrt-l-tag { flex: none; font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: 999px; margin-top: 2px; white-space: nowrap; }
+.wrt-l-tag.l1 { background: color-mix(in srgb, var(--text-sub) 18%, transparent); color: var(--text-sub); }
+.wrt-l-tag.l2 { background: var(--ok); color: #fff; }
+.wrt-l-text { flex: 1; font-family: var(--font-mono, monospace); font-size: 13.5px; line-height: 1.7; }
+.wrt-copy { flex: none; }
+.wrt-techs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.wrt-techs .wrp { display: inline-block; padding: 2px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--primary) 40%, transparent); color: var(--primary); font-size: 11.5px; font-weight: 600; }
+
+/* 范文与金句 */
+.wrt-rewrite { font-size: 14.5px; line-height: 2.0; padding: 10px 2px; }
+.wrt-rewrite p, .wrt-inspect p { text-indent: 2em; }   /* 正文缩进约定 */
+.wrt-rewrite-actions { margin: 4px 0 2px; }
+.wrt-patterns { display: flex; flex-direction: column; gap: 8px; }
+.wrt-pattern { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px; background: color-mix(in srgb, var(--primary) 4%, transparent); }
+.wrt-pattern-text { flex: 1; font-size: 13px; line-height: 1.7; font-family: var(--font-mono, monospace); }
+
+/* 历史 */
+.wrt-hist-item { display: flex; align-items: center; gap: 10px; padding: 9px 4px; border-bottom: 1px solid var(--border); }
+.wrt-hist-item:last-child { border-bottom: none; }
+.wrt-hist-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.wrt-hist-meta { font-size: 12px; color: var(--text-sub); margin-left: 4px; }
+.wrt-hist-score { display: inline-block; font-size: 11px; font-weight: 700; color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); border-radius: 999px; padding: 1px 8px; }
+.wrt-hist-prompt { font-size: 12px; color: var(--text-sub); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wrt-hist-actions { display: flex; gap: 6px; flex: none; }
+.wrt-hist-item .btn { min-height: 36px; }
+
+@media (max-width: 700px) {
+  .wrt-essay { font-size: 15px; }
+  .wrt-sent-copy, .wrt-hist-actions .btn, .wrt-confirm-row { min-height: 44px; }
+  .wrt-hist-actions .btn { min-height: 44px; }
+  #wrtSubmitBtn, #wrtInspectBtn, #wrtImgBtn, #wrtTimerBtn { min-height: 44px; }
+  .wrt-l1, .wrt-l2 { flex-wrap: wrap; }
+  .wrt-copy { width: 40px; height: 40px; }
+}
+
 
 
