@@ -4630,6 +4630,7 @@ let selLearnBtn = null;      // 选区旁的「精读」浮动按钮
 let selLearnCard = null;     // 解析结果卡片
 let selLearnState = null;    // { text, context, title, kind, rect, mode }
 let selLearnReqSeq = 0;      // 并发保护：只认最后一次请求
+let selLearnBubbleBornAt = 0; // v2.7.2.a：气泡生成时刻（长按取词后浏览器会补发 click，短暂豁免防止气泡被立刻收起）
 
 function selLearnKindOf(text) {
   const t = String(text || '').trim();
@@ -4684,6 +4685,7 @@ function selLearnShowBtn(rect) {
   let bubble = selLearnBtn;
   if (!bubble || !bubble.parentNode) {
     selLearnRemoveBtn();
+    selLearnBubbleBornAt = Date.now();
     bubble = document.createElement('div');
     bubble.className = 'sel-learn-bubble';
     bubble.innerHTML = `
@@ -4692,19 +4694,37 @@ function selLearnShowBtn(rect) {
       <button type="button" class="sel-bubble-btn" data-act="copy">📋 复制</button>
     `;
     document.body.appendChild(bubble);
+    bubble.innerHTML = `
+      <button type="button" class="sel-bubble-btn primary" data-act="learn">🔍 精读</button>
+      <button type="button" class="sel-bubble-btn" data-act="expand" style="display:none">↔️ 整句</button>
+      <span class="sel-bubble-divider"></span>
+      <button type="button" class="sel-bubble-btn" data-act="copy">📋 复制</button>
+    `;
 
-    // 关键：阻止 mousedown 与 touchstart 默认行为，确保点击气泡按钮时原生选区不被浏览器清空
-    const stopEvt = e => {
+    // 关键：仅阻止 mousedown 默认行为（桌面端防止点击气泡时原生选区内塌）；
+    // 移动端不可 preventDefault touchstart，否则浏览器不会再合成 click，按钮将彻底点不动。
+    bubble.addEventListener('mousedown', e => {
       e.preventDefault();
       e.stopPropagation();
-    };
-    bubble.addEventListener('mousedown', stopEvt);
-    bubble.addEventListener('touchstart', stopEvt, { passive: false });
+    });
+    bubble.addEventListener('touchstart', e => {
+      e.stopPropagation(); // 只阻止冒泡（避免触发全局长按取词/收起逻辑），保留 click 合成
+    }, { passive: true });
 
     bubble.querySelector('[data-act="learn"]').addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
       selLearnOpen();
+    });
+
+    // v2.7.2.a：触摸端无自由划线，提供「整句」一键把取词扩展为整句再精读
+    bubble.querySelector('[data-act="expand"]').addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (selLearnExpandToSentence()) {
+        const ex = bubble.querySelector('[data-act="expand"]');
+        if (ex) ex.style.display = 'none';
+      }
     });
 
     bubble.querySelector('[data-act="copy"]').addEventListener('click', async e => {
@@ -4739,6 +4759,13 @@ function selLearnShowBtn(rect) {
     });
 
     selLearnBtn = bubble;
+  }
+
+  // 「整句」按钮仅在触摸端且当前取词为单词/词组时显示
+  const expandBtn = bubble.querySelector('[data-act="expand"]');
+  if (expandBtn) {
+    const canExpand = SEL_TOUCH_DEVICE && selLearnState && selLearnState.kind !== 'sentence' && selLearnState.at;
+    expandBtn.style.display = canExpand ? '' : 'none';
   }
 
   /* v2.7.2：高精度自适应浮动定位算法（PC & 移动端统一跟随选区） */
@@ -4859,15 +4886,17 @@ document.addEventListener('contextmenu', e => {
   if (target && target.closest && target.closest('input, textarea, [contenteditable]')) {
     return;
   }
-  // 若点击在气泡内部，直接放行（由按钮 click 处理）
-  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) {
-    e.preventDefault();
-    return;
-  }
-  // 无论是已经有选区，还是正文长按准备触发选区，均在非输入控件上拦截原生系统菜单
+  // 非输入控件一律拦截原生菜单（气泡内部也一并拦截，避免与自研操作冲突）
   e.preventDefault();
-  setTimeout(selLearnOnSelection, 10);
 }, { capture: true }); // 使用 capture 捕获阶段，防止被子元素冒泡阻止
+
+/* v2.7.2.a：点按气泡/卡片以外的空白处 → 收起浮动气泡（触摸端无原生选区事件可依赖） */
+document.addEventListener('click', e => {
+  if (e.target === selLearnBtn || selLearnBtn?.contains(e.target)) return;
+  if (e.target === selLearnCard || selLearnCard?.contains(e.target)) return;
+  if (Date.now() - selLearnBubbleBornAt < 600) return;
+  if (selLearnBtn) selLearnRemoveBtn();
+}, true);
 
 /* 选区变化 → 显示浮动按钮（PC 鼠标 / 移动端长按划选均覆盖） */
 function selLearnOnSelection() {
@@ -4915,32 +4944,165 @@ function selLearnOnSelection() {
   selLearnShowBtn(rect);
 }
 
-// 触摸状态记录，防止手指触摸移动（滚动中）频繁触发定位重绘
-let isTouching = false;
+/* ---------- v2.7.2.a：触摸设备「长按取词」——原生文本选择已全局禁用，改由长按手势接管 ---------- */
+const SEL_TOUCH_DEVICE = (() => {
+  try { return window.matchMedia('(pointer: coarse)').matches; } catch { return 'ontouchstart' in window; }
+})();
+
+function selLearnCaretAt(x, y) {
+  if (document.caretRangeFromPoint) {
+    const r = document.caretRangeFromPoint(x, y);
+    if (r) return r;
+  }
+  if (document.caretPositionFromPoint) {
+    const p = document.caretPositionFromPoint(x, y);
+    if (p) { const r = document.createRange(); r.setStart(p.offsetNode, p.offset); r.collapse(true); return r; }
+  }
+  return null;
+}
+
+/** 触摸长按取词：判定触点下的单词/中文短语，构建选区矩形并升起浮动气泡 */
+function selLearnPickAtPoint(clientX, clientY) {
+  const caret = selLearnCaretAt(clientX, clientY);
+  if (!caret) return false;
+  const node = caret.startContainer;
+  if (!node || node.nodeType !== 3) return false;
+  const root = selLearnInReadable(node);
+  if (!root) return false;
+  const cacEl = node.parentElement;
+  if (cacEl?.closest('input, textarea, .sel-learn-card, .kb-fix-modal')) return false;
+
+  const text = node.nodeValue || '';
+  let offset = Math.min(caret.startOffset, Math.max(0, text.length - 1));
+  const LATIN = /[A-Za-z0-9'’\-]/;
+  const CN = /[\u4e00-\u9fa5]/;
+  const isWord = ch => LATIN.test(ch) || CN.test(ch);
+  if (!isWord(text[offset] || '') && offset > 0 && isWord(text[offset - 1] || '')) offset--;
+
+  let start = offset, end = offset + 1;
+  if (LATIN.test(text[offset] || '')) {
+    // 英文/数字：整词扩展
+    while (start > 0 && LATIN.test(text[start - 1])) start--;
+    while (end < text.length && LATIN.test(text[end])) end++;
+  } else if (CN.test(text[offset] || '')) {
+    // 中文：取以标点/空白分隔的短句（最多 10 字）
+    const BREAK = /[\s，。！？；：、“”‘’（）()《》【】,.!?;:]/;
+    while (start > 0 && !BREAK.test(text[start - 1]) && offset - start < 10) start--;
+    while (end < text.length && !BREAK.test(text[end]) && end - start < 10) end++;
+  } else {
+    // 标点/空白：选中整个非空白串
+    while (start > 0 && !/\s/.test(text[start - 1])) start--;
+    while (end < text.length && !/\s/.test(text[end])) end++;
+  }
+  const picked = text.slice(start, end).trim();
+  if (!picked) return false;
+
+  let rect;
+  try {
+    const range = document.createRange();
+    range.setStart(node, start);
+    range.setEnd(node, end);
+    rect = range.getBoundingClientRect();
+  } catch { rect = null; }
+  if (!rect || (!rect.width && !rect.height)) {
+    rect = { left: clientX, right: clientX, top: clientY, bottom: clientY, width: 0, height: 0 };
+  }
+
+  const ridEl = cacEl?.closest?.('[data-rid]');
+  let sourceRef = null;
+  if (ridEl && ridEl.dataset.rid) {
+    sourceRef = {
+      rid: ridEl.dataset.rid,
+      sourceKind: ridEl.dataset.sourceKind || null,
+      year: ridEl.dataset.year ? Number(ridEl.dataset.year) : null,
+      section: ridEl.dataset.section || null,
+      sentence: picked,
+    };
+  }
+  selLearnState = { text: picked, context: selLearnContextOf({ startContainer: node }, root), title: selLearnTitleOf(root), kind: selLearnKindOf(picked), rect, sourceRef, mode: 'define', at: { node, start, end, root } };
+  selLearnShowBtn(rect);
+  return true;
+}
+
+/** v2.7.2.a：把当前取词扩展为所在整句（触摸端无自由划线的补偿交互） */
+function selLearnExpandToSentence() {
+  const st = selLearnState;
+  if (!st || !st.at || !st.at.node || !st.at.node.nodeValue) return false;
+  const node = st.at.node;
+  const full = node.nodeValue || '';
+  const BREAK = /[.!?。！？…\n]/;
+  let s = st.at.start, e = st.at.end;
+  while (s > 0 && !BREAK.test(full[s - 1])) s--;
+  while (e < full.length && !BREAK.test(full[e])) e++;
+  // 去掉句首尾空白
+  while (s < e && /\s/.test(full[s])) s++;
+  while (e > s && /\s/.test(full[e - 1])) e--;
+  const sentence = full.slice(s, e).trim();
+  if (!sentence || sentence === st.text) return false;
+  let rect;
+  try {
+    const range = document.createRange();
+    range.setStart(node, s);
+    range.setEnd(node, e);
+    rect = range.getBoundingClientRect();
+  } catch { rect = st.rect; }
+  if (!rect || (!rect.width && !rect.height)) rect = st.rect;
+  st.text = sentence;
+  st.kind = selLearnKindOf(sentence);
+  st.rect = rect;
+  if (st.sourceRef) st.sourceRef.sentence = sentence;
+  selLearnShowBtn(rect);
+  return true;
+}
+
+let touchPickTimer = null, touchStartPt = null, touchMoved = false;
 document.addEventListener('touchstart', e => {
-  // 若触摸的是浮动气泡，不要改变状态
+  // 点按气泡/精读卡：交给其自身 click 处理，不参与长按取词，也不关闭气泡
   if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
-  isTouching = true;
+  if (selLearnCard && selLearnCard.contains(e.target)) return;
+  if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable], button, .btn')) return;
+  if (!SEL_TOUCH_DEVICE) return;
+  if (e.touches.length !== 1) { if (touchPickTimer) clearTimeout(touchPickTimer); touchPickTimer = null; return; }
+  const t = e.touches[0];
+  touchStartPt = { x: t.clientX, y: t.clientY };
+  touchMoved = false;
+  if (touchPickTimer) clearTimeout(touchPickTimer);
+  touchPickTimer = setTimeout(() => {
+    touchPickTimer = null;
+    if (touchMoved || !touchStartPt) return;
+    const ok = selLearnPickAtPoint(touchStartPt.x, touchStartPt.y);
+    if (ok && navigator.vibrate) { try { navigator.vibrate(12); } catch {} }
+  }, 420);
 }, { passive: true });
 
-document.addEventListener('touchend', e => {
-  isTouching = false;
-  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
-  // 手指抬起后，稍作缓冲等待选区坐标完全就绪后呈现气泡
-  setTimeout(() => {
-    selLearnOnSelection();
-  }, 100);
+document.addEventListener('touchmove', e => {
+  if (!touchStartPt) return;
+  const t = e.touches[0];
+  if (!t) return;
+  if (Math.abs(t.clientX - touchStartPt.x) > 10 || Math.abs(t.clientY - touchStartPt.y) > 10) {
+    touchMoved = true;
+    if (touchPickTimer) { clearTimeout(touchPickTimer); touchPickTimer = null; }
+  }
 }, { passive: true });
 
+function selLearnTouchReset() {
+  if (touchPickTimer) { clearTimeout(touchPickTimer); touchPickTimer = null; }
+  touchStartPt = null;
+}
+document.addEventListener('touchend', selLearnTouchReset, { passive: true });
+document.addEventListener('touchcancel', selLearnTouchReset, { passive: true });
+
+/* ---------- 桌面端：鼠标划选 / 双击查词（触摸设备走上面的长按取词） ---------- */
 document.addEventListener('mouseup', e => {
+  if (SEL_TOUCH_DEVICE) return;
   if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
   setTimeout(selLearnOnSelection, 10);
 });
 
-// 选区变化：仅在非触控滑动期间，且选区确实折叠时才收起气泡；若有稳定选区则平滑更新
+// 选区变化：仅桌面端跟随；触摸设备不再依赖原生选区
 let selChangeTimer = null;
 document.addEventListener('selectionchange', () => {
-  if (isTouching) return; // 触摸拖动过程中不抢占 DOM，防止与原生手柄打架
+  if (SEL_TOUCH_DEVICE) return;
   if (selChangeTimer) clearTimeout(selChangeTimer);
   selChangeTimer = setTimeout(() => {
     const sel = window.getSelection();
@@ -4953,6 +5115,7 @@ document.addEventListener('selectionchange', () => {
 });
 
 document.addEventListener('mousedown', e => {
+  if (SEL_TOUCH_DEVICE) return;
   if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
   if (selLearnCard && selLearnCard.contains(e.target)) return;
   setTimeout(() => {
@@ -4963,6 +5126,7 @@ document.addEventListener('mousedown', e => {
 /* v2.3.3：双击查词（Saladict 经典交互）——双击选词后自动弹出精读条 */
 /* v2.4.1：全站放行——不在编辑件/弹窗内即可触发 */
 document.addEventListener('dblclick', e => {
+  if (SEL_TOUCH_DEVICE) return;   // v2.7.2.a：触摸端走「长按取词」，避免双击/双指缩放误触发
   if (!e.target || typeof e.target.closest !== 'function') return;
   if (e.target.closest('input, textarea, select, [contenteditable], .sel-learn-card, .kb-fix-modal, .modal-mask, button, .btn')) return;
   setTimeout(selLearnOnSelection, 30);

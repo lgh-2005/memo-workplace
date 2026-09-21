@@ -2903,6 +2903,21 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 html, body, #app, main, .tab-pane, .card, .kb-passage, .kb-question, .unit-q, .story-passage, article, p, span, div, li, em, strong, b, u, i, code {
   -webkit-touch-callout: none;
 }
+/* v2.7.2.a：触摸设备彻底关闭正文原生文本选择——这是从根上消灭 Android ActionMode / iOS Callout 的唯一可靠手段；
+   阅读区文本不再触发系统选区手柄与系统工具条，改由「长按取词 → 浮动气泡」接管；
+   输入框/答题框/可编辑区保持完整原生选择与编辑能力。 */
+@media (pointer: coarse) {
+  body, body * {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+  input, textarea, [contenteditable], input *, textarea *, [contenteditable] * {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    -webkit-touch-callout: default !important;
+  }
+}
 input, textarea, [contenteditable], input *, textarea * {
   -webkit-touch-callout: default !important;
   user-select: text !important;
