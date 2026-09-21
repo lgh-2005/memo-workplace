@@ -62,11 +62,17 @@
 
 | # | 脚本 | 断言数 | 覆盖 |
 |---|---|---|---|
-| 27 | `.workbuddy/test_v228_online_smoke.js` | 15 | 线上只读 API/页面/版本/无持久化写/静态资源三方哈希 |
+| 27 | `.workbuddy/test_v228_online_smoke.js` | 16 | 线上只读 API/页面/版本/无持久化写/静态资源三方哈希 |
 
-> 合计 **27** 套、断言总数 **556**（14 后端 336 + 12 浏览器 205 + 1 线上冒烟 15）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.4 v2.6.3 增量套件（1）
 
-> **说明**：`english-workbench/.workbuddy/` 目录下共 32 个 `test_*.js`，其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，**不属于 v2.2.8 验收范围**；上表 27 套为本版验收清单，与计划「14 后端 + 12 浏览器 + 1 线上冒烟」一一对应。
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 28 | `.workbuddy/test_v263_answers_verify.js` | 7 | 真题库答案回填 E2E：单元总数 243/有答案 165、全部客观题单元已录标准答案、answerState.has、错答案判 0 正确且回传正确答案、2010 真题 45 题答案齐备 |
+
+> 合计 **28** 套、断言总数 **564**（15 后端 343 + 12 浏览器 205 + 1 线上冒烟 16）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+
+> **说明**：`english-workbench/.workbuddy/` 目录下共 33 个 `test_*.js`，其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，**不属于验收范围**；上表 28 套为本版验收清单（v2.2.8 的 27 套 + v2.6.3 增量 1 套）。
 
 ## 4. 运行顺序（建议）
 
