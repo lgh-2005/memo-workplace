@@ -2899,18 +2899,20 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-history-head b { color: var(--primary); }
 
 /* ============ v2.7.2：移动端原生菜单拦截与划词浮动气泡 ============ */
-/* iOS Safari 长按呼出原生复制/全选菜单拦截（正文可读区域屏蔽，输入框保留） */
-.kb-passage, .kb-question, .unit-q, .story-passage, .card, main article, main p, main li, .cloze-text, .exm-trans-text, .exm-match-text {
-  -webkit-touch-callout: none;
+/* iOS / iPadOS Safari 长按呼出原生复制/全选菜单全局拦截（通配符级覆盖，除输入编辑控件外一律禁止 Callout） */
+*:not(input):not(textarea):not([contenteditable]) {
+  -webkit-touch-callout: none !important;
 }
 input, textarea, [contenteditable] {
-  -webkit-touch-callout: default;
+  -webkit-touch-callout: default !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
 }
 
 /* 划选精读：选区旁浮动小气泡（胶囊双按钮） */
 .sel-learn-bubble {
   position: fixed;
-  z-index: 10020;
+  z-index: 2147483647; /* 提升至最高层级，杜绝被移动端任何 DOM 遮盖 */
   display: inline-flex;
   align-items: center;
   gap: 2px;

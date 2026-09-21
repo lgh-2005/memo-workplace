@@ -4841,10 +4841,10 @@ function selLearnOpen() {
   selLearnRequest(card, 'define', seq);
 }
 
-/* v2.7.2：拦截移动端/现代浏览器长按上下文菜单（阻止出现与气泡抢焦点的系统复制/全选菜单） */
+/* v2.7.2：多端深度拦截长按上下文菜单（捕获阶段强力拦截，阻止出现与气泡抢焦点的系统复制/全选菜单） */
 document.addEventListener('contextmenu', e => {
   const target = e.target;
-  // 答题框、输入框和弹窗编辑区域不受限制，允许用户正常粘贴/编辑
+  // 答题框、输入框和弹窗编辑区域不受限制，允许用户正常使用系统原生粘贴/编辑
   if (target && target.closest && target.closest('input, textarea, [contenteditable]')) {
     return;
   }
@@ -4853,16 +4853,10 @@ document.addEventListener('contextmenu', e => {
     e.preventDefault();
     return;
   }
-  // 检查当前是否有选中的文本，或者事件发生于可读正文内
-  const sel = window.getSelection();
-  const hasText = sel && !sel.isCollapsed && sel.toString().trim().length > 0;
-  if (hasText || selLearnInReadable(target)) {
-    // 阻止系统菜单弹出，改由我们的浮动气泡（🔍 精读 | 📋 复制）接管
-    e.preventDefault();
-    // 立即触发气泡定位更新
-    setTimeout(selLearnOnSelection, 10);
-  }
-});
+  // 无论是已经有选区，还是正文长按准备触发选区，均在非输入控件上拦截原生系统菜单
+  e.preventDefault();
+  setTimeout(selLearnOnSelection, 10);
+}, { capture: true }); // 使用 capture 捕获阶段，防止被子元素冒泡阻止
 
 /* 选区变化 → 显示浮动按钮（PC 鼠标 / 移动端长按划选均覆盖） */
 function selLearnOnSelection() {
@@ -4903,7 +4897,20 @@ document.addEventListener('mouseup', e => {
 document.addEventListener('touchend', e => {
   /* 点按精读条本身不触发重新检测（移动端 tap 会短暂改变选区，避免按钮被误移除） */
   if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
-  setTimeout(selLearnOnSelection, 120);
+  setTimeout(selLearnOnSelection, 80);
+});
+/* 移动端/iPad 选区即时联动：当通过手柄滑动调整选区或系统选区变更时，快速响应浮动气泡 */
+let selChangeTimer = null;
+document.addEventListener('selectionchange', () => {
+  if (selChangeTimer) clearTimeout(selChangeTimer);
+  selChangeTimer = setTimeout(() => {
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed) {
+      selLearnRemoveBtn();
+    } else {
+      selLearnOnSelection();
+    }
+  }, 150);
 });
 document.addEventListener('mousedown', e => {
   if (selLearnBtn && e.target === selLearnBtn) return;
