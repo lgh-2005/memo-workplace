@@ -2800,10 +2800,24 @@ function examTrackMetaOf(track) {
 }
 function currentExamTrackMeta() { return examTrackMetaOf(examState.track); }
 
-/* v2.7.0：题型中文名（标签前缀由考试大类 track 决定，见 recTrackMeta.examName） */
+/* v2.7.0：题型中文名（标签前缀由考试大类 track 决定，见 recTrackMeta.examName）
+   v2.7.1：六级新增 听力理解/选词填空/长篇匹配 */
 const EXAM_SECTION_NAME = {
   use_of_english: '完形填空', reading: '阅读理解', part_b: '新题型',
   translation: '翻译', writing: '写作',
+  listening: '听力理解', banked_cloze: '选词填空', long_match: '长篇匹配',
+};
+
+/* v2.7.1：各大类的「单元题库」分类筛选条（按轨道动态渲染，避免跨轨出现空筛选项） */
+const TRACK_UNIT_FILTERS = {
+  kaoyan1: [
+    ['use_of_english', '完形填空'], ['reading', '阅读理解'], ['part_b', '新题型'],
+    ['translation', '翻译'], ['writing', '写作'],
+  ],
+  cet6: [
+    ['listening', '听力理解'], ['banked_cloze', '选词填空'], ['long_match', '长篇匹配'],
+    ['reading', '阅读理解'], ['translation', '翻译'], ['writing', '写作'],
+  ],
 };
 
 /* 「考试-题型」处理器注册表：渲染考场级交互 */
@@ -2995,11 +3009,27 @@ const EXAM_PROCESSORS = {
     icon: '🖊',
     analyze(items) {
       const qs = items.filter(i => i.type === 'question' && i.number != null);
-      return `共 ${qs.length} 句划线句 · 每句 2 分 · 全文语境与答题框对照`;
+      const cet6 = String((items.find(i => i.type === 'passage') || {}).src || '').startsWith('cet6');
+      return cet6
+        ? `汉译英 1 段 · 15 分 · 全文语境与译文框对照`
+        : `共 ${qs.length} 句划线句 · 每句 2 分 · 全文语境与答题框对照`;
     },
     render(items, base = 0) {
       const passage = items.find(i => i.type === 'passage');
       const qs = items.filter(i => i.type === 'question' && i.number != null);
+      const cet6 = String(passage?.src || '').startsWith('cet6');
+
+      if (cet6) {
+        // 六级 Part IV：汉译英（整段中文译成英文）
+        const q = qs[0] || {};
+        return `<div class="kb-passage">${kbText(passage?.text || '')}</div>
+          <div class="kb-question" id="exmQCard-${q.number || 56}" style="margin-top:12px">
+            <div class="kb-q-head-row">
+              <span class="kb-q-head">第 ${q.number || 56} 题 · 汉译英（15.0 分）</span>
+            </div>
+            <textarea class="input" rows="8" placeholder="在此输入你的英文译文..." style="width:100%" oninput="onExamSubjectiveInput(${q.number || 56})"></textarea>
+          </div>`;
+      }
 
       let pText = kbText(passage?.text || '');
       pText = pText.replaceAll('kb-underline', 'kb-underline exm-trans-underline');
@@ -3034,9 +3064,10 @@ const EXAM_PROCESSORS = {
       let html = '';
       for (const [ix, it] of items.entries()) {
         if (it.section !== 'writing' && it.type !== 'writing') continue;
+        const isCet6 = String(it.src || '').startsWith('cet6');
         const qNum = it.number || (it.part === 'A' ? 51 : 52);
-        const minWc = it.part === 'A' ? 100 : 160;
-        const maxWc = it.part === 'A' ? 120 : 200;
+        const minWc = isCet6 ? 150 : (it.part === 'A' ? 100 : 160);
+        const maxWc = isCet6 ? 200 : (it.part === 'A' ? 120 : 200);
         const imgHtml = it.image ? `<div class="exm-writing-img"><img src="${esc(it.image)}" alt="真题原版图画" loading="lazy"><div class="hint" style="text-align:center;margin-top:4px">【真题原版附图】</div></div>` : '';
 
         html += `
@@ -3057,6 +3088,127 @@ const EXAM_PROCESSORS = {
       }
       return html;
     },
+  },
+};
+
+/* ---------- v2.7.1：六级专属板块处理器 ----------
+   听力理解：录音分段占位 + 四选一（无本地音频）
+   选词填空：原文挖空内联选词 + A–O 词池
+   长篇匹配：A)~R) 段落正文 + 10 条陈述（选段字母） */
+
+function cet6RadioCard(q, baseLabel) {
+  const qNum = q.number;
+  const opts = q.options ? Object.entries(q.options).map(([k, v]) => `
+    <label class="exm-opt-item" id="exmOpt-${qNum}-${k}">
+      <input type="radio" name="exmq_${qNum}" value="${esc(k)}" onchange="onExamRadioPick(${qNum}, '${esc(k)}')">
+      <span><b>[ ${esc(k)} ]</b> ${esc(v)}</span>
+    </label>
+  `).join('') : '';
+  return `
+    <div class="kb-question" id="exmQCard-${qNum}">
+      <div class="kb-q-head-row">
+        <span class="kb-q-head">第 ${qNum} 题${baseLabel ? ' · ' + esc(baseLabel) : ''}</span>
+        <span class="hint">${q.score != null ? q.score + ' 分' : ''}</span>
+      </div>
+      ${q.text ? `<div class="kb-q-text" style="margin-bottom:6px">${kbText(q.text)}</div>` : ''}
+      <div style="display:flex;flex-direction:column;gap:6px">${opts}</div>
+      <div class="exm-analysis-card" id="exmAnalysis-${qNum}">
+        <b>标准答案：${esc(q.answer || '—')}</b>
+      </div>
+    </div>`;
+}
+
+EXAM_PROCESSORS.listening = {
+  icon: '🎧',
+  analyze(items) {
+    const segs = items.filter(i => i.type === 'passage').length;
+    const qs = items.filter(i => i.type === 'question' && i.number != null).length;
+    return `${segs} 段录音 · ${qs} 题 · 每题 1 分（音频在官方源站，本站暂无本地音频）`;
+  },
+  render(items) {
+    const passages = items.filter(i => i.type === 'passage');
+    const qs = items.filter(i => i.type === 'question' && i.number != null);
+    const pids = [...new Set(passages.map(p => p.passage_id || 1))].sort((a, b) => a - b);
+    let html = '';
+    for (const pid of pids) {
+      const pass = passages.find(p => (p.passage_id || 1) === pid);
+      const pqs = qs.filter(q => (q.passage_id || 1) === pid);
+      html += `<div style="margin:14px 0 6px;font-weight:700;color:var(--primary)">🎧 第 ${pid} 段录音</div>`;
+      if (pass) html += `<div class="exm-pool-box" style="background:var(--bg-soft,#f6f7f9)"><div class="hint">${esc(pass.text || '')}</div></div>`;
+      html += pqs.map(q => cet6RadioCard(q, '听力理解')).join('');
+    }
+    return html;
+  },
+};
+
+EXAM_PROCESSORS.banked_cloze = {
+  icon: '🔤',
+  analyze(items) {
+    const qs = items.filter(i => i.type === 'question' && i.number != null).length;
+    const pool = items.find(i => i.type === 'question' && i.number == null && i.options);
+    const n = pool ? Object.keys(pool.options).length : 15;
+    return `${qs} 空 · 选项池 ${n} 词 · 原文内联选词（每题 0.5 分）`;
+  },
+  render(items) {
+    const passage = items.find(i => i.type === 'passage');
+    const qs = items.filter(i => i.type === 'question' && i.number != null);
+    const pool = (qs[0] && qs[0].options) || {};
+    const qByNum = {};
+    qs.forEach(q => { qByNum[q.number] = q; });
+
+    let s = allowU(esc(passage?.text || ''));
+    s = s.replace(/〖(\d+)〗/g, (m, n) => {
+      const opts = Object.entries(pool).map(([k, v]) => `<option value="${esc(k)}">${esc(k)}. ${esc(String(v).slice(0, 20))}</option>`).join('');
+      return `<span class="exm-cloze-blank"><span class="exm-cloze-num" onclick="scrollToExamQ(${n})">〖${n}〗</span><span class="exm-cloze-select-wrap" id="exmClozeWrap-${n}"><select data-exmq="${n}" onchange="onExamClozeChange(${n}, this.value)"><option value="">— ${n} —</option>${opts}</select></span></span>`;
+    });
+    let html = `<div class="kb-passage">${s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('')}</div>`;
+    html += `<div class="exm-pool-box"><div class="exm-pool-title"><span>🔤 候选词池（A–O，选定后自动划线置灰防重复）</span><span id="exmPoolRemaining"></span></div>`;
+    for (const [k, v] of Object.entries(pool)) {
+      html += `<div class="exm-pool-item" id="exmPoolItem-${k}"><b>[ ${esc(k)} ]</b> ${esc(v)}</div>`;
+    }
+    html += `</div>`;
+    html += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px">`
+      + qs.map(q => cet6RadioCard(q, '选词填空')).join('') + `</div>`;
+    return html;
+  },
+};
+
+EXAM_PROCESSORS.long_match = {
+  icon: '🧷',
+  analyze(items) {
+    const qs = items.filter(i => i.type === 'question' && i.number != null).length;
+    return `${qs} 条陈述 · 段落选项池（A–R）· 每题 1 分`;
+  },
+  render(items) {
+    const passage = items.find(i => i.type === 'passage');
+    const qs = items.filter(i => i.type === 'question' && i.number != null);
+    // 段落字母池：从正文里解析 A)~ 标记
+    const letters = [...new Set([...String(passage?.text || '').matchAll(/(?:^|\n)\s*([A-Z])\)/g)].map(m => m[1]))]
+      .sort();
+    const optKeys = letters.length ? letters : 'ABCDEFGHIJKLMNO'.split('');
+    let html = '';
+    if (passage) html += `<div class="kb-passage">${kbText(passage.text)}</div>`;
+    html += `<div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">`;
+    for (const q of qs) {
+      const qNum = q.number;
+      const opts = optKeys.map(k => `<option value="${esc(k)}">${esc(k)}</option>`).join('');
+      html += `
+        <div class="kb-question" id="exmQCard-${qNum}">
+          <div class="kb-q-head-row">
+            <span class="kb-q-head">第 ${qNum} 题 · 段落匹配</span>
+            <span class="hint">${q.score != null ? q.score + ' 分' : ''}</span>
+          </div>
+          <div class="kb-q-text" style="margin-bottom:6px">${kbText(q.text || '')}</div>
+          <select class="input" data-exmpb="${qNum}" onchange="onExamPartBChange(${qNum}, this.value)" style="max-width:180px">
+            <option value="">— 选择来源段落 —</option>${opts}
+          </select>
+          <div class="exm-analysis-card" id="exmAnalysis-${qNum}">
+            <b>标准答案：${esc(q.answer || '—')} 段</b>
+          </div>
+        </div>`;
+    }
+    html += `</div>`;
+    return html;
   },
 };
 
@@ -3225,30 +3377,48 @@ async function openExamRecord(exid) {
       ixBase += b.items.length;
     }
 
-    // 组装考场左侧答题卡
+    // 组装考场左侧答题卡（v2.7.1：按 track 的板块顺序动态生成，五/六级各自成表）
     const allQs = (rec.items || []).filter(i => i.type === 'question' && i.number != null);
-    const ueQs = allQs.filter(q => q.section === 'use_of_english');
-    const rdQs = allQs.filter(q => q.section === 'reading');
-    const pbQs = allQs.filter(q => q.section === 'part_b');
-    const trQs = allQs.filter(q => q.section === 'translation');
+    const writings = (rec.items || []).filter(i => i.type === 'writing');
 
     const renderBubbles = list => list.map(q => `<button type="button" class="exm-bubble-btn" id="exmBubble-${q.number}" onclick="scrollToExamQ(${q.number})"><span>${q.number}</span></button>`).join('');
+
+    // 各大类答题卡板块顺序与分值口径
+    const SHEET_SECS = recTrackMeta.key === 'cet6'
+      ? [['listening', '听力理解', '1分'], ['banked_cloze', '选词填空', '0.5分'],
+         ['long_match', '长篇匹配', '1分'], ['reading', '阅读理解', '2分'],
+         ['translation', '翻译', '15分'], ['writing', '写作', '15分']]
+      : [['use_of_english', '完形填空', '0.5分'], ['reading', '阅读理解', '2.0分'],
+         ['part_b', '新题型', '2.0分'], ['translation', '翻译', '2.0分'], ['writing', '写作', '30分']];
+
+    let sheetHtml = '';
+    for (const [sec, name, pts] of SHEET_SECS) {
+      const qs = allQs.filter(q => q.section === sec);
+      const ws = writings.filter(w => w.section === sec);
+      if (!qs.length && !ws.length) continue;
+      if (qs.length) {
+        sheetHtml += `<div class="exm-sheet-sec-title"><span>${esc(name)} (${qs[0].number}-${qs[qs.length - 1].number})</span><span>${pts}</span></div>
+          <div class="exm-bubble-grid">${renderBubbles(qs)}</div>`;
+      }
+      if (ws.length) {
+        const btns = ws.map(w => {
+          const n = w.number || 51;
+          const tag = w.part && w.part !== 'A' ? ` ${w.part}` : '';
+          const label = recTrackMeta.key === 'cet6' ? `${n} 作文` : `${n}${tag}`;
+          return `<button type="button" class="exm-bubble-btn" id="exmBubble-${n}" onclick="scrollToExamQ(${n})"><span>${esc(label)}</span></button>`;
+        }).join('');
+        sheetHtml += `<div class="exm-sheet-sec-title"><span>${esc(name)}</span><span>${pts}</span></div>
+          <div class="exm-bubble-grid" style="grid-template-columns:1fr 1fr">${btns}</div>`;
+      }
+    }
 
     const sidebarHtml = `
       <div class="exm-sheet-sidebar">
         <div class="exm-sheet-head">
           <span>📑 考场答题卡</span>
-          <span class="exm-sheet-progress" id="exmSheetProgress">已做 0 / ${allQs.length + 2}</span>
+          <span class="exm-sheet-progress" id="exmSheetProgress">已做 0 / ${allQs.length + writings.length}</span>
         </div>
-        ${ueQs.length ? `<div class="exm-sheet-sec-title"><span>完形填空 (1-${ueQs.length})</span><span>0.5分</span></div><div class="exm-bubble-grid">${renderBubbles(ueQs)}</div>` : ''}
-        ${rdQs.length ? `<div class="exm-sheet-sec-title"><span>阅读理解 (21-${20 + rdQs.length})</span><span>2.0分</span></div><div class="exm-bubble-grid">${renderBubbles(rdQs)}</div>` : ''}
-        ${pbQs.length ? `<div class="exm-sheet-sec-title"><span>新题型 (41-45)</span><span>2.0分</span></div><div class="exm-bubble-grid">${renderBubbles(pbQs)}</div>` : ''}
-        ${trQs.length ? `<div class="exm-sheet-sec-title"><span>翻译 (${trQs[0].number}-${trQs[trQs.length-1].number})</span><span>2.0分</span></div><div class="exm-bubble-grid">${renderBubbles(trQs)}</div>` : ''}
-        <div class="exm-sheet-sec-title"><span>写作 (51-52)</span><span>30分</span></div>
-        <div class="exm-bubble-grid" style="grid-template-columns:1fr 1fr">
-          <button type="button" class="exm-bubble-btn" id="exmBubble-51" onclick="scrollToExamQ(51)"><span>51 小作文</span></button>
-          <button type="button" class="exm-bubble-btn" id="exmBubble-52" onclick="scrollToExamQ(52)"><span>52 大作文</span></button>
-        </div>
+        ${sheetHtml}
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
           <button type="button" class="btn primary" style="width:100%" onclick="submitExamPaper()">🏁 提交并核对答案</button>
           <button type="button" class="btn ghost mini" style="width:100%" onclick="resetExamAnswers()">🔄 清空作答</button>
@@ -3316,10 +3486,11 @@ function scrollToExamQ(num) {
 }
 
 function updateExamBubbleProgress() {
-  const total = ((examState.currentExam?.items || []).filter(i => i.type === 'question' && i.number != null).length || 50) + 2;
+  const items = examState.currentExam?.items || [];
+  const total = items.filter(i => (i.type === 'question' && i.number != null) || i.type === 'writing').length;
   const answered = Object.keys(examState.answers || {}).length;
   const el = $('#exmSheetProgress');
-  if (el) el.textContent = `已做 ${answered} / ${total}`;
+  if (el) el.textContent = `已做 ${answered} / ${total || '—'}`;
 }
 
 function onExamRadioPick(qNum, opt) {
@@ -3519,6 +3690,7 @@ async function loadUnits() {
     unitState.trackMeta = r.trackMeta || examState.trackMeta || {};
     unitState.loaded = true;
     renderUnitTrackBar();
+    renderUnitFilterBar();
     renderUnitList();
   } catch (e) { console.error(e); }
 }
@@ -3537,11 +3709,29 @@ function switchUnitTrack(track) {
   if (!EXAM_TRACK_FALLBACK[track] || track === unitState.track) return;
   unitState.track = track;
   unitState.page = 1;
+  unitState.filter = '';
   unitState.loaded = false;
   unitState.units = [];
   $('#unitDetailCard').style.display = 'none';
   renderUnitTrackBar();
+  renderUnitFilterBar();
   loadUnits();
+}
+
+/* v2.7.1：单元题库分类筛选条随轨道动态渲染（六级含听力/选词/长篇匹配） */
+function renderUnitFilterBar() {
+  const box = $('#unitFilters');
+  if (!box) return;
+  const items = TRACK_UNIT_FILTERS[unitState.track] || TRACK_UNIT_FILTERS.kaoyan1;
+  const chips = [['', '全部'], ...items];
+  box.innerHTML = chips.map(([sec, name]) =>
+    `<button class="chip${sec === unitState.filter ? ' active' : ''}" data-usec="${esc(sec)}">${esc(name)}</button>`).join('');
+  $$('#unitFilters .chip').forEach(c => c.addEventListener('click', () => {
+    unitState.filter = c.dataset.usec || '';
+    unitState.page = 1;
+    $$('#unitFilters .chip').forEach(x => x.classList.toggle('active', x === c));
+    renderUnitList();
+  }));
 }
 
 function renderUnitList() {
@@ -3585,13 +3775,6 @@ function renderUnitList() {
     $('#tab-unit').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 }
-
-$$('#unitFilters .chip').forEach(c => c.addEventListener('click', () => {
-  unitState.filter = c.dataset.usec || '';
-  unitState.page = 1; // 切换分类重置回第 1 页
-  $$('#unitFilters .chip').forEach(x => x.classList.toggle('active', x === c));
-  renderUnitList();
-}));
 
 // v2.7.0：单元题库考试大类切换
 $$('#unitTrackFilters .chip').forEach(c => c.addEventListener('click', () => switchUnitTrack(c.dataset.utrack)));
@@ -3682,6 +3865,66 @@ function unitPracticeHtml(unit, items) {
           </div>
           <div class="kb-q-text">${kbText(q.text)}</div>
           <div class="u-opts">${opts}</div>
+        </div>`;
+    }).join('');
+    return { body: html };
+  }
+  if (unit.section === 'listening') {
+    let html = passage ? `<div class="kb-passage">${kbText(passage.text)}</div>` : '';
+    html += qs.map(q => {
+      const qNum = esc(String(q.number ?? '—'));
+      const opts = q.options ? Object.entries(q.options).map(([k, v]) =>
+        `<label class="u-opt"><input type="radio" name="q${qNum}" value="${esc(k)}" data-num="${qNum}"><b>${esc(k)}.</b> ${esc(v)}</label>`).join('')
+        : '';
+      return `
+        <div class="kb-question" data-qnum="${qNum}">
+          <div class="kb-q-head-row">
+            <div class="kb-q-head">第 ${qNum} 题 · 听力理解</div>
+            <div class="unit-conf-group" data-qnum="${qNum}">
+              <span class="unit-conf-label">信心:</span>
+              <button type="button" class="btn mini unit-conf-btn" data-conf="sure">🎯确定</button>
+              <button type="button" class="btn mini unit-conf-btn active" data-conf="unsure">🤔犹豫</button>
+              <button type="button" class="btn mini unit-conf-btn" data-conf="guess">🎲猜测</button>
+            </div>
+          </div>
+          <div class="u-opts">${opts}</div>
+        </div>`;
+    }).join('');
+    const tip = `<div class="hint" style="margin-bottom:8px">🎧 本站暂无本地音频，可先做题再对照听力原文与解析。</div>`;
+    return { body: tip + html };
+  }
+  if (unit.section === 'banked_cloze' && passage) {
+    const bank = (qs.find(q => q.options) || {}).options || {};
+    const qByNum = {};
+    qs.forEach(q => { qByNum[q.number] = q; });
+    let s = allowU(esc(passage.text || '')).replace(/〖\/\d+〗/g, '');
+    s = s.replace(/〖(\d+)〗/g, (m, n) => {
+      const opts = Object.entries(bank).map(([k, v]) => `<option value="${esc(k)}">${esc(k)}. ${esc(String(v).slice(0, 24))}</option>`).join('');
+      return `<span class="u-blank"><b>${n}</b><select class="input u-pick" data-num="${n}"><option value="">—</option>${opts}</select></span>`;
+    });
+    const html = s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+    const poolHtml = `<div class="kb-sec-title">候选词池</div><div class="kb-opts">${Object.entries(bank).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')}</div>`;
+    return { body: `<div class="kb-passage">${html}</div>${poolHtml}` };
+  }
+  if (unit.section === 'long_match') {
+    let html = passage ? `<div class="kb-passage">${kbText(passage.text)}</div>` : '';
+    const letters = [...new Set([...String(passage?.text || '').matchAll(/(?:^|\n)\s*([A-Z])\)/g)].map(m => m[1]))].sort();
+    const optKeys = letters.length ? letters : 'ABCDEFGHIJKLMNO'.split('');
+    html += qs.map(q => {
+      const qNum = esc(String(q.number ?? '—'));
+      return `
+        <div class="kb-question" data-qnum="${qNum}">
+          <div class="kb-q-head-row">
+            <div class="kb-q-head">第 ${qNum} 题 · 段落匹配</div>
+            <div class="unit-conf-group" data-qnum="${qNum}">
+              <span class="unit-conf-label">信心:</span>
+              <button type="button" class="btn mini unit-conf-btn" data-conf="sure">🎯确定</button>
+              <button type="button" class="btn mini unit-conf-btn active" data-conf="unsure">🤔犹豫</button>
+              <button type="button" class="btn mini unit-conf-btn" data-conf="guess">🎲猜测</button>
+            </div>
+          </div>
+          <div class="kb-q-text">${kbText(q.text)}</div>
+          <select class="input u-pick" data-num="${qNum}"><option value="">— 选择来源段落 —</option>${optKeys.map(k => `<option value="${esc(k)}">${esc(k)}</option>`).join('')}</select>
         </div>`;
     }).join('');
     return { body: html };

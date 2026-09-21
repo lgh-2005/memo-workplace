@@ -2509,7 +2509,7 @@ function kbSummary(r) {
    冲突键：exam/record 详情等路由以 '/' 结尾（如 /api/exam/records/6）；track 详情为单段。 */
 const EXAM_TRACKS = {
   kaoyan1: { key: 'kaoyan1', label: '考研英语一', examName: '考研', sections: ['use_of_english', 'reading', 'part_b', 'translation', 'writing'] },
-  cet6: { key: 'cet6', label: '六级英语', examName: '六级', sections: ['use_of_english', 'reading', 'part_b', 'translation', 'writing'] },
+  cet6: { key: 'cet6', label: '六级英语', examName: '六级', sections: ['listening', 'banked_cloze', 'long_match', 'reading', 'translation', 'writing'] },
 };
 const DEFAULT_EXAM_TRACK = 'kaoyan1';
 
@@ -2522,6 +2522,8 @@ function examTrackMeta(t) { return EXAM_TRACKS[normalizeTrack(t)]; }
 const EXAM_SECTION_NAME = {
   use_of_english: '完形填空', reading: '阅读理解', part_b: '新题型',
   translation: '翻译', writing: '写作', misc: '其他',
+  /* v2.7.1 六级板块 */
+  listening: '听力理解', banked_cloze: '选词填空', long_match: '长篇匹配',
 };
 /** 题型标签按 track 前缀（考研-阅读理解 / 六级-阅读理解） */
 function sectionLabel(track, section) {
@@ -2627,6 +2629,10 @@ const UNIT_SECTIONS = {
   part_b: '新题型',
   translation: '翻译',
   writing: '写作',
+  /* v2.7.1 六级板块 */
+  listening: '听力理解',
+  banked_cloze: '选词填空',
+  long_match: '长篇匹配',
 };
 
 const ANSWERS_FILE = path.join(DATA_DIR, 'answers.json');   // { unitId: { 题号: 'A' } }
@@ -2650,6 +2656,7 @@ function buildUnits() {
     const groups = [];
     const gkey = it => {
       if (it.section === 'reading') return 'reading~' + (it.passage_id ?? 0);
+      if (it.section === 'listening') return 'listening~' + (it.passage_id ?? 0);
       if (it.section === 'writing') return 'writing~' + (it.part || 'A');
       return (it.section || 'misc') + '~0';
     };
@@ -2661,11 +2668,21 @@ function buildUnits() {
     });
     for (const g of groups) {
       const secName = UNIT_SECTIONS[g.section] || (g.section === 'misc' ? '其他' : g.section);
-      let title = `${trackMeta.examName}-${secName}-${year ? year + '年' : rec.title}`;
+      // v2.7.1：六级同一年有多场次多套卷，年份后补「月/套」以免标题重名
+      const when = track === 'cet6'
+        ? [year ? year + '年' : '', rec.meta?.month ? rec.meta.month + '月' : '',
+           rec.meta?.set ? '第' + rec.meta.set + '套' : ''].filter(Boolean).join('') || rec.title
+        : (year ? year + '年' : rec.title);
+      let title = `${trackMeta.examName}-${secName}-${when}`;
       if (g.section === 'reading') title += `-第${g.passageId || '?'}篇`;
+      if (g.section === 'listening') title += `-第${g.passageId || '?'}段`;
       if (g.section === 'writing') title += `-Part ${g.part || 'A'}`;
       const gitems = g.idx.map(i => items[i]);
       const qs = gitems.filter(it => it.type === 'question');
+      // v2.7.1：long_match 无选项（选段字母作答），仍属客观题，按有标准答案判分
+      const objOk = g.section === 'long_match'
+        ? true
+        : qs.length > 0 && qs.every(it => it.options && Object.keys(it.options).length >= 2);
       units.push({
         unitId: `${rec.id}~${g.key}`,
         examId: rec.id,
@@ -2677,7 +2694,7 @@ function buildUnits() {
         title,
         itemCount: gitems.length,
         qCount: qs.length,
-        scored: qs.length > 0 && qs.every(it => it.options && Object.keys(it.options).length >= 2),
+        scored: qs.length > 0 && objOk,
         firstNum: qs[0]?.number ?? null,
         lastNum: qs[qs.length - 1]?.number ?? null,
         preview: String(gitems.find(it => it.type === 'passage' || it.type === 'writing')?.text || '').replace(/〖\/\d+〗/g, '').replace(/〖\d+〗/g, ' ').slice(0, 80),
@@ -2703,6 +2720,7 @@ function unitItems(unitId) {
   const key = unitId.slice(unitId.indexOf('~') + 1);
   const gkey = it => {
     if (it.section === 'reading') return 'reading~' + (it.passage_id ?? 0);
+    if (it.section === 'listening') return 'listening~' + (it.passage_id ?? 0);
     if (it.section === 'writing') return 'writing~' + (it.part || 'A');
     return (it.section || 'misc') + '~0';
   };

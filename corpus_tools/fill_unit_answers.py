@@ -19,6 +19,8 @@ def gkey(it):
     sec = it.get('section')
     if sec == 'reading':
         return 'reading~' + str(it.get('passage_id') or 0)
+    if sec == 'listening':
+        return 'listening~' + str(it.get('passage_id') or 0)
     if sec == 'writing':
         return 'writing~' + str(it.get('part') or 'A')
     return (sec or 'misc') + '~0'

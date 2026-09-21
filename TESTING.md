@@ -77,9 +77,16 @@
 | 29 | `.workbuddy/test_v270_track.js` | 22 | 真题库「考试大类」分轨（后端）：分轨统计与缺省归类、track 过滤、题型标签前缀随大类、单元库分轨与 trackLabel、详情回传 track、导入接口按 track 落盘 |
 | 30 | `.workbuddy/test_v270_track_ui.js` | 17 | 真题库/单元题库 track 切换交互（浏览器）：chip 计数、切轨仅显本轨卷、track 徽标、标题随轨、390px 无溢出、控制台 0 错误 |
 
-> 合计 **30** 套、断言总数 **603**（16 后端 365 + 14 浏览器 222 + 1 线上冒烟 16）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.6 v2.7.1 增量套件（2）
 
-> **说明**：`english-workbench/.workbuddy/` 目录下共 44 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨）。上表 30 套为与「14 后端 + 12 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单（后增 v2.6.3/v2.7.0 增量）。
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 31 | `.workbuddy/test_v271_cet6.js` | 33 | 六级真题整卷入库（后端）：听力/选词/长篇匹配板块识别与「六级-」标签、单元切片 gkey（listening~pid / banked_cloze~0 / long_match~0）、长篇匹配 scored=true（无选项客观题）、标准答案命中与客观题提交判分、真实 exams.jsonl 76 套六级 + 28 套考研数据核验（客观题答案 100% 覆盖） |
+| 32 | `.workbuddy/test_v271_cet6_ui.js` | 22 | 六级整卷与单元题库渲染（浏览器）：六大板块渲染、听力按段占位、选词内联 10 空 + 15 词池、匹配 10 下拉、答题卡按轨道动态生成（含听力/选词/匹配、写作气泡 57）、六级筛选项、390px 无溢出、控制台 0 错误 |
+
+> 合计 **32** 套、断言总数 **658**（16 后端 398 + 16 浏览器 244 + 1 线上冒烟 16）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+
+> **说明**：`english-workbench/.workbuddy/` 目录下共 46 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级）。上表 32 套为与「16 后端 + 16 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
 
 ## 4. 运行顺序（建议）
 
@@ -102,6 +109,7 @@ node .workbuddy/test_v228_unit.js
 node .workbuddy/test_v228_report.js
 node .workbuddy/test_v263_answers_verify.js
 node .workbuddy/test_v270_track.js
+node .workbuddy/test_v271_cet6.js
 node .workbuddy/test_v221_playwright.js
 node .workbuddy/test_v222_playwright.js
 node .workbuddy/test_v223_playwright.js
@@ -115,6 +123,7 @@ node .workbuddy/test_v228_unit_ui.js
 node .workbuddy/test_v228_report_ui.js
 node .workbuddy/test_v228_ui_contract.js
 node .workbuddy/test_v270_track_ui.js
+node .workbuddy/test_v271_cet6_ui.js
 ```
 
 线上只读冒烟（需本机 `Desktop/password.txt`；Basic Auth 用户 `贾忖`）：
