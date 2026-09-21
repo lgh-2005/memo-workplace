@@ -4678,27 +4678,79 @@ function selLearnCloseCard() {
 }
 
 function selLearnShowBtn(rect) {
-  selLearnRemoveBtn();
-  const bubble = document.createElement('div');
-  bubble.className = 'sel-learn-bubble';
-  bubble.innerHTML = `
-    <button type="button" class="sel-bubble-btn primary" data-act="learn">🔍 精读</button>
-    <span class="sel-bubble-divider"></span>
-    <button type="button" class="sel-bubble-btn" data-act="copy">📋 复制</button>
-  `;
-  document.body.appendChild(bubble);
+  const isMobile = window.innerWidth <= 700;
+
+  // 若气泡已存在，直接复用并更新定位，避免频繁销毁重建导致选区丢失和移动端闪烁
+  let bubble = selLearnBtn;
+  if (!bubble || !bubble.parentNode) {
+    selLearnRemoveBtn();
+    bubble = document.createElement('div');
+    bubble.className = 'sel-learn-bubble';
+    bubble.innerHTML = `
+      <button type="button" class="sel-bubble-btn primary" data-act="learn">🔍 精读</button>
+      <span class="sel-bubble-divider"></span>
+      <button type="button" class="sel-bubble-btn" data-act="copy">📋 复制</button>
+    `;
+    document.body.appendChild(bubble);
+
+    // 关键：阻止 mousedown 与 touchstart 默认行为，确保点击气泡按钮时原生选区不被浏览器清空
+    const stopEvt = e => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    bubble.addEventListener('mousedown', stopEvt);
+    bubble.addEventListener('touchstart', stopEvt, { passive: false });
+
+    bubble.querySelector('[data-act="learn"]').addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      selLearnOpen();
+    });
+
+    bubble.querySelector('[data-act="copy"]').addEventListener('click', async e => {
+      e.preventDefault();
+      e.stopPropagation();
+      const copyBtn = bubble.querySelector('[data-act="copy"]');
+      const textToCopy = selLearnState?.text || '';
+      let success = false;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          success = true;
+        } catch {}
+      }
+      if (!success) {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = textToCopy;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          success = document.execCommand('copy');
+          document.body.removeChild(ta);
+        } catch {}
+      }
+      if (copyBtn) copyBtn.innerHTML = '✓ 已复制';
+      toast(success ? '📋 文本已复制到剪贴板' : '❌ 复制失败，请重试');
+      setTimeout(() => {
+        selLearnRemoveBtn();
+      }, 700);
+    });
+
+    selLearnBtn = bubble;
+  }
 
   /* v2.7.2：高精度自适应浮动定位算法（PC & 移动端统一跟随选区） */
   const bubbleW = bubble.offsetWidth || 150;
   const bubbleH = bubble.offsetHeight || 38;
   const winW = window.innerWidth;
-  const isMobile = winW <= 700;
 
   // 水平居中计算并进行左右边界 clamp 保护
   let x = rect.left + (rect.width / 2) - (bubbleW / 2);
   x = Math.max(10, Math.min(x, winW - bubbleW - 10));
 
-  // 垂直方向：移动端留更多呼吸间隙（14px）避开系统水滴手柄；PC 端 10px
+  // 垂直方向：移动端预留 14px 呼吸间隙避开系统光标水滴手柄；PC 端 10px
   const gap = isMobile ? 14 : 10;
   let y = rect.top - bubbleH - gap;
   // 若选区靠顶（上方空间不足），翻转至下方
@@ -4708,47 +4760,6 @@ function selLearnShowBtn(rect) {
 
   bubble.style.left = Math.round(x) + 'px';
   bubble.style.top = Math.round(y) + 'px';
-
-  // 关键：阻止 mousedown/touchstart 默认行为，防止点击气泡按键时文本选区瞬间坍塌丢失
-  bubble.addEventListener('mousedown', e => e.preventDefault());
-  bubble.addEventListener('touchstart', e => e.preventDefault(), { passive: false });
-
-  bubble.querySelector('[data-act="learn"]').addEventListener('click', e => {
-    e.stopPropagation();
-    selLearnOpen();
-  });
-
-  bubble.querySelector('[data-act="copy"]').addEventListener('click', async e => {
-    e.stopPropagation();
-    const copyBtn = bubble.querySelector('[data-act="copy"]');
-    const textToCopy = selLearnState?.text || '';
-    let success = false;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      try {
-        await navigator.clipboard.writeText(textToCopy);
-        success = true;
-      } catch {}
-    }
-    if (!success) {
-      try {
-        const ta = document.createElement('textarea');
-        ta.value = textToCopy;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        success = document.execCommand('copy');
-        document.body.removeChild(ta);
-      } catch {}
-    }
-    if (copyBtn) copyBtn.innerHTML = '✓ 已复制';
-    toast(success ? '📋 文本已复制到剪贴板' : '❌ 复制失败，请手动长按');
-    setTimeout(() => {
-      selLearnRemoveBtn();
-    }, 600);
-  });
-
-  selLearnBtn = bubble;
 }
 
 /** v2.3.3：以指定模式请求解析结果（并发保护：只认最后一次请求） */
@@ -4861,16 +4872,31 @@ document.addEventListener('contextmenu', e => {
 /* 选区变化 → 显示浮动按钮（PC 鼠标 / 移动端长按划选均覆盖） */
 function selLearnOnSelection() {
   const sel = window.getSelection();
-  if (!sel || sel.isCollapsed || sel.rangeCount === 0) { selLearnRemoveBtn(); return; }
+  if (!sel || sel.isCollapsed || sel.rangeCount === 0) {
+    selLearnRemoveBtn();
+    return;
+  }
   const text = sel.toString().trim();
-  if (!text || text.length < 1 || text.length > 600) { selLearnRemoveBtn(); return; }
-  if (!/[\u4e00-\u9fa5]/.test(text) && !/[A-Za-z]/.test(text)) { selLearnRemoveBtn(); return; }
+  if (!text || text.length < 1 || text.length > 600) {
+    selLearnRemoveBtn();
+    return;
+  }
+  if (!/[\u4e00-\u9fa5]/.test(text) && !/[A-Za-z]/.test(text)) {
+    selLearnRemoveBtn();
+    return;
+  }
   const range = sel.getRangeAt(0);
   const root = selLearnInReadable(range.commonAncestorContainer);
-  if (!root) { selLearnRemoveBtn(); return; }
+  if (!root) {
+    selLearnRemoveBtn();
+    return;
+  }
   const cac = range.commonAncestorContainer;
   const cacEl = cac.nodeType === 1 ? cac : cac.parentElement;
-  if (cacEl?.closest('input, textarea, .sel-learn-card, .kb-fix-modal')) { selLearnRemoveBtn(); return; }
+  if (cacEl?.closest('input, textarea, .sel-learn-card, .kb-fix-modal')) {
+    selLearnRemoveBtn();
+    return;
+  }
   let rect;
   try { rect = range.getBoundingClientRect(); } catch { return; }
   if (!rect || (!rect.width && !rect.height)) return;
@@ -4882,26 +4908,39 @@ function selLearnOnSelection() {
       sourceKind: ridEl.dataset.sourceKind || null,
       year: ridEl.dataset.year ? Number(ridEl.dataset.year) : null,
       section: ridEl.dataset.section || null,
-      sentence: text,   // 必须等于用户实际选区文本，不复用其他 DOM/旧状态
+      sentence: text,
     };
   }
   selLearnState = { text, context: selLearnContextOf(range, root), title: selLearnTitleOf(root), kind: selLearnKindOf(text), rect, sourceRef, mode: 'define' };
-  /* 移动端选区手柄遮挡浮动词：直接给底部「精读」条，点击即出卡片 */
   selLearnShowBtn(rect);
 }
+
+// 触摸状态记录，防止手指触摸移动（滚动中）频繁触发定位重绘
+let isTouching = false;
+document.addEventListener('touchstart', e => {
+  // 若触摸的是浮动气泡，不要改变状态
+  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
+  isTouching = true;
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  isTouching = false;
+  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
+  // 手指抬起后，稍作缓冲等待选区坐标完全就绪后呈现气泡
+  setTimeout(() => {
+    selLearnOnSelection();
+  }, 100);
+}, { passive: true });
 
 document.addEventListener('mouseup', e => {
   if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
   setTimeout(selLearnOnSelection, 10);
 });
-document.addEventListener('touchend', e => {
-  /* 点按精读条本身不触发重新检测（移动端 tap 会短暂改变选区，避免按钮被误移除） */
-  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
-  setTimeout(selLearnOnSelection, 80);
-});
-/* 移动端/iPad 选区即时联动：当通过手柄滑动调整选区或系统选区变更时，快速响应浮动气泡 */
+
+// 选区变化：仅在非触控滑动期间，且选区确实折叠时才收起气泡；若有稳定选区则平滑更新
 let selChangeTimer = null;
 document.addEventListener('selectionchange', () => {
+  if (isTouching) return; // 触摸拖动过程中不抢占 DOM，防止与原生手柄打架
   if (selChangeTimer) clearTimeout(selChangeTimer);
   selChangeTimer = setTimeout(() => {
     const sel = window.getSelection();
@@ -4910,10 +4949,11 @@ document.addEventListener('selectionchange', () => {
     } else {
       selLearnOnSelection();
     }
-  }, 150);
+  }, 200);
 });
+
 document.addEventListener('mousedown', e => {
-  if (selLearnBtn && e.target === selLearnBtn) return;
+  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
   if (selLearnCard && selLearnCard.contains(e.target)) return;
   setTimeout(() => {
     const sel = window.getSelection();

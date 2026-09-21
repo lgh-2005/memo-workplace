@@ -2899,11 +2899,11 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-history-head b { color: var(--primary); }
 
 /* ============ v2.7.2：移动端原生菜单拦截与划词浮动气泡 ============ */
-/* iOS / iPadOS Safari 长按呼出原生复制/全选菜单全局拦截（通配符级覆盖，除输入编辑控件外一律禁止 Callout） */
-*:not(input):not(textarea):not([contenteditable]) {
-  -webkit-touch-callout: none !important;
+/* iOS / iPadOS Safari 长按呼出原生复制/全选菜单拦截（正文与所有展示容器屏蔽，输入框保留） */
+html, body, #app, main, .tab-pane, .card, .kb-passage, .kb-question, .unit-q, .story-passage, article, p, span, div, li, em, strong, b, u, i, code {
+  -webkit-touch-callout: none;
 }
-input, textarea, [contenteditable] {
+input, textarea, [contenteditable], input *, textarea * {
   -webkit-touch-callout: default !important;
   user-select: text !important;
   -webkit-user-select: text !important;
@@ -2990,12 +2990,13 @@ input, textarea, [contenteditable] {
 @media (max-width: 700px) {
   /* 移动端浮动气泡按钮触控高度优化，避免手指遮挡与误触 */
   .sel-learn-bubble {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .32), 0 2px 8px rgba(0, 0, 0, .12);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .36), 0 2px 8px rgba(0, 0, 0, .15);
+    background: var(--card, #fff) !important;
   }
   .sel-bubble-btn {
-    min-height: 38px;
-    padding: 8px 14px;
-    font-size: 13px;
+    min-height: 40px;
+    padding: 8px 16px;
+    font-size: 13.5px;
   }
   .sel-learn-btn { left: 50% !important; top: auto !important; bottom: 84px; transform: translateX(-50%); font-size: 14px; padding: 9px 22px; box-shadow: 0 8px 26px rgba(0, 0, 0, .34); }
   .sel-learn-card, .sel-learn-card.mobile { right: 0; left: 0; bottom: 0; width: 100vw; max-height: 72vh; border-radius: 16px 16px 0 0; border-bottom: none; }
