@@ -4679,22 +4679,76 @@ function selLearnCloseCard() {
 
 function selLearnShowBtn(rect) {
   selLearnRemoveBtn();
-  const b = document.createElement('button');
-  b.className = 'sel-learn-btn';
-  b.type = 'button';
-  b.innerHTML = '🔍 精读';
-  b.title = '划选精读：单词 / 词组 / 句子';
-  document.body.appendChild(b);
-  const isMobile = window.innerWidth <= 700;
-  if (!isMobile) {
-    const x = Math.min(Math.max(8, rect.left + rect.width / 2 - 34), window.innerWidth - 84);
-    const y = rect.top - 40 < 8 ? rect.bottom + 10 : rect.top - 40;
-    b.style.left = x + 'px';
-    b.style.top = y + 'px';
+  const bubble = document.createElement('div');
+  bubble.className = 'sel-learn-bubble';
+  bubble.innerHTML = `
+    <button type="button" class="sel-bubble-btn primary" data-act="learn">🔍 精读</button>
+    <span class="sel-bubble-divider"></span>
+    <button type="button" class="sel-bubble-btn" data-act="copy">📋 复制</button>
+  `;
+  document.body.appendChild(bubble);
+
+  /* v2.7.2：高精度自适应浮动定位算法（PC & 移动端统一跟随选区） */
+  const bubbleW = bubble.offsetWidth || 150;
+  const bubbleH = bubble.offsetHeight || 38;
+  const winW = window.innerWidth;
+  const isMobile = winW <= 700;
+
+  // 水平居中计算并进行左右边界 clamp 保护
+  let x = rect.left + (rect.width / 2) - (bubbleW / 2);
+  x = Math.max(10, Math.min(x, winW - bubbleW - 10));
+
+  // 垂直方向：移动端留更多呼吸间隙（14px）避开系统水滴手柄；PC 端 10px
+  const gap = isMobile ? 14 : 10;
+  let y = rect.top - bubbleH - gap;
+  // 若选区靠顶（上方空间不足），翻转至下方
+  if (y < 8) {
+    y = rect.bottom + gap;
   }
-  b.addEventListener('mousedown', e => e.preventDefault());
-  b.addEventListener('click', e => { e.stopPropagation(); selLearnOpen(); });
-  selLearnBtn = b;
+
+  bubble.style.left = Math.round(x) + 'px';
+  bubble.style.top = Math.round(y) + 'px';
+
+  // 关键：阻止 mousedown/touchstart 默认行为，防止点击气泡按键时文本选区瞬间坍塌丢失
+  bubble.addEventListener('mousedown', e => e.preventDefault());
+  bubble.addEventListener('touchstart', e => e.preventDefault(), { passive: false });
+
+  bubble.querySelector('[data-act="learn"]').addEventListener('click', e => {
+    e.stopPropagation();
+    selLearnOpen();
+  });
+
+  bubble.querySelector('[data-act="copy"]').addEventListener('click', async e => {
+    e.stopPropagation();
+    const copyBtn = bubble.querySelector('[data-act="copy"]');
+    const textToCopy = selLearnState?.text || '';
+    let success = false;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        success = true;
+      } catch {}
+    }
+    if (!success) {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = textToCopy;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        success = document.execCommand('copy');
+        document.body.removeChild(ta);
+      } catch {}
+    }
+    if (copyBtn) copyBtn.innerHTML = '✓ 已复制';
+    toast(success ? '📋 文本已复制到剪贴板' : '❌ 复制失败，请手动长按');
+    setTimeout(() => {
+      selLearnRemoveBtn();
+    }, 600);
+  });
+
+  selLearnBtn = bubble;
 }
 
 /** v2.3.3：以指定模式请求解析结果（并发保护：只认最后一次请求） */
@@ -4786,6 +4840,29 @@ function selLearnOpen() {
   });
   selLearnRequest(card, 'define', seq);
 }
+
+/* v2.7.2：拦截移动端/现代浏览器长按上下文菜单（阻止出现与气泡抢焦点的系统复制/全选菜单） */
+document.addEventListener('contextmenu', e => {
+  const target = e.target;
+  // 答题框、输入框和弹窗编辑区域不受限制，允许用户正常粘贴/编辑
+  if (target && target.closest && target.closest('input, textarea, [contenteditable]')) {
+    return;
+  }
+  // 若点击在气泡内部，直接放行（由按钮 click 处理）
+  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) {
+    e.preventDefault();
+    return;
+  }
+  // 检查当前是否有选中的文本，或者事件发生于可读正文内
+  const sel = window.getSelection();
+  const hasText = sel && !sel.isCollapsed && sel.toString().trim().length > 0;
+  if (hasText || selLearnInReadable(target)) {
+    // 阻止系统菜单弹出，改由我们的浮动气泡（🔍 精读 | 📋 复制）接管
+    e.preventDefault();
+    // 立即触发气泡定位更新
+    setTimeout(selLearnOnSelection, 10);
+  }
+});
 
 /* 选区变化 → 显示浮动按钮（PC 鼠标 / 移动端长按划选均覆盖） */
 function selLearnOnSelection() {

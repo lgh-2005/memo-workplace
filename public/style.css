@@ -2898,7 +2898,70 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-history-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-size: 13px; }
 .kb-history-head b { color: var(--primary); }
 
-/* 划选精读：选区旁浮动按钮 */
+/* ============ v2.7.2：移动端原生菜单拦截与划词浮动气泡 ============ */
+/* iOS Safari 长按呼出原生复制/全选菜单拦截（正文可读区域屏蔽，输入框保留） */
+.kb-passage, .kb-question, .unit-q, .story-passage, .card, main article, main p, main li, .cloze-text, .exm-trans-text, .exm-match-text {
+  -webkit-touch-callout: none;
+}
+input, textarea, [contenteditable] {
+  -webkit-touch-callout: default;
+}
+
+/* 划选精读：选区旁浮动小气泡（胶囊双按钮） */
+.sel-learn-bubble {
+  position: fixed;
+  z-index: 10020;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  background: var(--card, #fff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .22), 0 2px 6px rgba(0, 0, 0, .08);
+  animation: selBtnIn .16s ease-out;
+  user-select: none;
+  -webkit-user-select: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.sel-bubble-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: none;
+  background: transparent;
+  color: var(--text, #1e293b);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .12s ease, color .12s ease, transform .1s ease;
+}
+.sel-bubble-btn:hover {
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--primary);
+}
+.sel-bubble-btn:active {
+  transform: scale(0.96);
+}
+.sel-bubble-btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+.sel-bubble-btn.primary:hover {
+  filter: brightness(1.08);
+  color: #fff;
+}
+.sel-bubble-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border, #cbd5e1);
+  margin: 0 1px;
+}
 .sel-learn-btn { position: fixed; z-index: 10020; padding: 5px 12px; border: none; border-radius: 999px; background: var(--primary); color: #fff; font-size: 12.5px; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 0, 0, .28); animation: selBtnIn .16s ease-out; user-select: none; }
 .sel-learn-btn:hover { filter: brightness(1.08); }
 @keyframes selBtnIn { from { transform: translateY(6px) scale(.92); opacity: 0; } to { transform: none; opacity: 1; } }
@@ -2921,8 +2984,17 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .sel-mode:hover { border-color: var(--primary); color: var(--primary); }
 .sel-mode.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 
-/* 划选精读：移动端底部卡片 + 底部「精读」条 */
+/* 划选精读：移动端适配 */
 @media (max-width: 700px) {
+  /* 移动端浮动气泡按钮触控高度优化，避免手指遮挡与误触 */
+  .sel-learn-bubble {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .32), 0 2px 8px rgba(0, 0, 0, .12);
+  }
+  .sel-bubble-btn {
+    min-height: 38px;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
   .sel-learn-btn { left: 50% !important; top: auto !important; bottom: 84px; transform: translateX(-50%); font-size: 14px; padding: 9px 22px; box-shadow: 0 8px 26px rgba(0, 0, 0, .34); }
   .sel-learn-card, .sel-learn-card.mobile { right: 0; left: 0; bottom: 0; width: 100vw; max-height: 72vh; border-radius: 16px 16px 0 0; border-bottom: none; }
   .sel-learn-body { font-size: 14px; padding-bottom: 16px; }
