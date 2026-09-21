@@ -7,7 +7,8 @@ v2.6.3 单元题库标准答案回填：从 corpus/exams.jsonl 生成 data/answe
 """
 import json, os, sys
 
-ROOT = r'D:\ai\opencode\momo\english-workbench'
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
 sys.stdout.reconfigure(encoding='utf-8')
 EXAMS = os.path.join(ROOT, 'corpus', 'exams.jsonl')
 OUT = os.path.join(ROOT, 'data', 'answers.json')
