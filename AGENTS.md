@@ -4,7 +4,7 @@
 > 工作区根：`D:\ai\opencode\momo`。
 
 ## 0. 一句话
-个人**考研英语一**学习系统，核心是「墨墨背单词同步 + AI 教练互动 + 真题语料注入 + 助记推送墨墨」。主应用 `english-workbench/`（**v2.6.3**，纯 Node 单文件后端 + 原生 JS 前端），已上线阿里云 ECS，代码以 **Gitee 主干仓库** 与云服务器保持同步，双仓（Gitee 为主，GitHub 镜像/备用）维护。目标考试明确为全国卷**考研英语一**。
+个人考研英语 / 六级英语学习系统，核心是「墨墨背单词同步 + AI 教练互动 + 真题语料注入 + 助记推送墨墨」。主应用 `english-workbench/`（**v2.7.0**，纯 Node 单文件后端 + 原生 JS 前端），已上线阿里云 ECS，代码以 **Gitee 主干仓库** 与云服务器保持同步，双仓（Gitee 为主，GitHub 镜像/备用）维护。**真题库已按考试大类分轨**：考研英语一（`kaoyan1`，历史卷缺省归属）与六级英语（`cet6`），为六级真题题库入库预留结构。
 
 ## 1. 目录与各子系统职责（避免重复劳动）
 
@@ -58,11 +58,11 @@
   - 本地验证通过 (`node --check public/app.js` && `node --check server.js`) → `git push gitee master` → 云端备份 data + 拉取 + `sudo systemctl restart workbench` → curl 只读验证。
 
 ## 6. 当前状态与已知问题（起点）
-- 版本：**v2.6.3**（2026-09-21：**真题库答案全量回填**——依据《考研英语一历年真题答案汇编.md》（懒笔记 english-exam.lazynote.cn 站内整卷「客观题答案速查表」+ 各题型解析页公开数据），一次性回填 ① **真题库** `corpus/exams.jsonl` 全部 29 套（英语一 2010–2026 + 旧卷 1998–2009）客观题 `answer` 共 **1210 题**（完形/阅读/Part B 排序链，含完形正确选项词），考场「答案对照」模式即时可判；② **单元题库** `data/answers.json`（原为空 `{}`）生成 **165 个客观题单元、1210 条标准答案**，单元判分/错因后补/周报闭环立即可用。译写主观题不写字母答案（沿用解析页参考译文/范文路径）。回填脚本 `corpus_tools/fill_answers.py`、`corpus_tools/fill_unit_answers.py`（幂等、CRLF 保持、`data/` 仍 gitignore）。数据口径：客观题选项顺序已逐卷与站方排版页核对一致（1100/1100 全等），可直接照搬字母。前序：v2.6.2（手写稿拍照识别 + AI 审读废弃 + 双端适配强化）；v2.6.1.b（翻译划线排印净化）；v2.6.1.a（全真考场交互）；v2.6.1（真题原图挂载）；v2.5.0（写作升格）；v2.2.8（`0705689`）。测试基线：`node --check` 0 错误；新增 `.workbuddy/test_v263_answers_verify.js`（7 断言，退出码 0）；线上冒烟 `ONLINE_VER` 默认最新版。
+- 版本：**v2.7.0**（2026-09-21：**真题库考试大类分流**——真题库从单一考研英语一升格为**多考试大类（track）**结构，首开「📘 考研英语一（`kaoyan1`）」与「🎧 六级英语（`cet6`）」双轨，为随后的六级真题题库入库铺路。① **数据模型**：真题记录新增 `track` 字段；**兼容策略**——历史卷与现有导入缺省一律视为 `kaoyan1`，零数据迁移、零字段回填（真实 28 卷 / 243 单元实测全归考研英语一）。② **服务端**：`EXAM_TRACKS` 注册表 + `normalizeTrack/trackOf/examTrackMeta/sectionLabel`；`examSummary` 与 `buildUnits()` 输出 `track/trackLabel`，题型标签前缀随大类（考研-阅读理解 / 六级-阅读理解）。③ **分轨 API**：`/api/exam/records?track=`、`/api/unit/records?track=` 过滤 + 回传 `tracks` 两轨计数与 `trackMeta`；`/api/exam/record/:id` 回传 `track/trackLabel`。④ **导入分流**：`/api/exam/import` 与 `/api/mineru/parse`（store=exam）按当前大类写入 `track`。⑤ **前端**：真题库与单元题库各加「考试大类切换条」（chip + 计数），标题随轨、列表项 track 徽标、空态文案分轨。⑥ **语料联动**：全库句子索引为真题句附 `track/trackLabel`，搜索与 AI「真题原句」注入按考试类别标注来源，避免六级句被误标为考研。前序：v2.6.3（真题库与单元题库答案全量回填 29 套 1210 题 + 165 单元标准答案）；v2.6.2（手写稿拍照识别 + AI 审读废弃 + 双端适配强化）；v2.6.1.a（全真考场交互）；v2.5.0（写作升格）；v2.2.8（`0705689`）。测试基线：`node --check` 0 错误；新增 `.workbuddy/test_v270_track.js`（22 断言，后端分轨）与 `.workbuddy/test_v270_track_ui.js`（17 断言，浏览器切轨）退出码 0；15 后端 + 12 浏览器套件全绿（验收清单 30 套）。
 - **⚠️ 弱指令遵循模型事实（2026-09-18 实测确认）**：默认服务商 `cat`（deepseek-v4.1-flash 经 api.catcat.top 中转）对结构化 JSON 输出服从性差——提示词铁律/few-shot/response_format 均无法稳定约束，story 生成已用「二段式 + 确定性兜底」架构收口（v2.4.0.e/f）。若日后切换到指令服从性好的模型（如实测有效的 GPT/Claude 系），二段式会自动跳过（首段直接返回完整 JSON 时不再触发抽取）。词义四选一自测依赖 `db.glosses` 缓存，词池词若无缓存则不出该词的题（属正常降级）。
 - **⚠️ 思考失控事实（2026-09-19 实测确认）**：`cat` 服务商的 deepseek-v4.1-flash **默认开启思考且不可通过不传参数关闭**——长输入（大词池/长文生成）下思考会自适应膨胀至 1.5万~2.7万字耗尽 max_tokens（v2.3.5.a 的保护报错会如实提示）。词文成章 analyze/generate 已通过 `_noThinking` 双保险（reasoning_effort=none + enable_thinking=false）压制；若用户日后换思考模型，如遇同类报错，检查该服务商档案思考等级或模型默认行为。
 - **⚠️ 默认服务商「大日」配额耗尽（2026-09-18 发现，非代码问题）**：真实 LLM 调用（划词精读/对话等）被上游拒为 HTTP 402 `insufficient_user_quota`（「当前账户暂无生效套餐」），错误已如实透传前端。需用户到中转站充值/续费，或在设置页把默认服务商切到有余额的档案。划词助手独立模型（`config.selection`）留空即沿用默认服务商，切换后即可恢复。
-- **线上学习流水事实**：`data/learning_attempts.json` 为空态（85B，attempts=[]）；线上无 `data/answers.json`；`db.json` 约 3,669,685B。
+- **线上学习流水事实**：`data/learning_attempts.json` 为空态（85B，attempts=[]）；线上 `data/answers.json` 已由 `corpus_tools/fill_unit_answers.py` 于服务器生成（165 单元 / 1210 条，v2.6.3 起）；`db.json` 约 3,669,685B。
 - **发布状态**：post-audit TODO 1（`TESTING.md`）/2（测试补强）/3（文档统一）/4（Release）/6（静态资源三方哈希）均已完成；TODO 5（恢复 canonical 域名）因用户决策**不启用域名**废止。**域名：不启用**（国内备案不便，canonical 入口=ECS 直连 `http://121.43.177.191`，`memo.luguhu.online` NXDOMAIN 不构成阻断）。后续可选 v2.2.9 翻译数据质量补丁（题号校验/字符数口径/周报文案）。历史缺口备查：翻译/写作专属训练、错词周报、助记编辑导出、数据回流固化、2024 真题（仅 PDF 无 TeX 源）是否入库。
 - 服务器访问：**SSH 走 `~/.ssh/config` 的 `aliyun` 别名**（root + 密钥 `aliyun_ecs`，可 `ssh aliyun "..."`）。网站 Basic Auth 用户名 `贾忖`（密码在用户本地 `password.txt`，**不得写入仓库**）。
 - **域名（已打通 2026-09-08）**：`https://memo.luguhu.online` 走 Cloudflare 代理回源 ECS，源站 443 已装 **Cloudflare Origin CA**（15 年期，`/etc/nginx/ssl/memo.{key,pem}`）+ nginx `workbench-ssl` 站点 + ufw/安全组放行 443；登录走 nginx Basic Auth（`贾忖`）。CF SSL 模式未切严格（用户暂缓），勿擅动。API Token（`opencode`）缺 Zone Settings 权限，改 SSL 模式需面板手动。服务器上另有「空教室」站（端口 8710），勿动。
