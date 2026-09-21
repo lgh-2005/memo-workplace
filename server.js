@@ -2320,6 +2320,8 @@ function kbSentences() {
           section: it.section || null,
           number: it.number ?? null,
           sourceKind,
+          track: sourceKind === 'exam' ? trackOf(r) : null,
+          trackLabel: sourceKind === 'exam' ? examTrackMeta(trackOf(r)).label : '',
           publication: r.source?.publication || r.source?.source || '',
           sourceUrl: r.source?.canonical_url || r.source?.url || '',
           s,
@@ -2502,10 +2504,31 @@ function kbSummary(r) {
 
 /* ---------- v1.1.2：真题库（qa_set 分库到 exams.jsonl） ---------- */
 
-const EXAM_TYPE_LABEL = {
-  use_of_english: '考研-完形填空', reading: '考研-阅读理解', part_b: '考研-新题型',
-  translation: '考研-翻译', writing: '考研-写作',
+/* v2.7.0：真题库按「考试大类」分流（track）——考研英语一 / 六级英语。
+   兼容策略：track 缺省（历史记录与现有导入）一律视为 kaoyan1，零数据迁移。
+   冲突键：exam/record 详情等路由以 '/' 结尾（如 /api/exam/records/6）；track 详情为单段。 */
+const EXAM_TRACKS = {
+  kaoyan1: { key: 'kaoyan1', label: '考研英语一', examName: '考研', sections: ['use_of_english', 'reading', 'part_b', 'translation', 'writing'] },
+  cet6: { key: 'cet6', label: '六级英语', examName: '六级', sections: ['use_of_english', 'reading', 'part_b', 'translation', 'writing'] },
 };
+const DEFAULT_EXAM_TRACK = 'kaoyan1';
+
+function normalizeTrack(t) {
+  return Object.prototype.hasOwnProperty.call(EXAM_TRACKS, t) ? t : DEFAULT_EXAM_TRACK;
+}
+function trackOf(r) { return normalizeTrack(r && (r.track || (r.meta && r.meta.track))); }
+function examTrackMeta(t) { return EXAM_TRACKS[normalizeTrack(t)]; }
+/** 题型中文名（与原始「考研-阅读理解」口径一致） */
+const EXAM_SECTION_NAME = {
+  use_of_english: '完形填空', reading: '阅读理解', part_b: '新题型',
+  translation: '翻译', writing: '写作', misc: '其他',
+};
+/** 题型标签按 track 前缀（考研-阅读理解 / 六级-阅读理解） */
+function sectionLabel(track, section) {
+  const tk = examTrackMeta(track);
+  const name = EXAM_SECTION_NAME[section] || section || '其他';
+  return `${tk.examName}-${name}`;
+}
 
 function examsFile() { return path.join(path.dirname(kbFile()), 'exams.jsonl'); }
 
@@ -2564,11 +2587,12 @@ function ensureKbSplit() {
 /** 真题记录摘要：按「考试-题型」板块统计（处理模块的服务端数据源） */
 function examSummary(r) {
   const items = Array.isArray(r.items) ? r.items : [];
+  const track = trackOf(r);
   const bySec = new Map();
   for (const it of items) {
     const s = it.section || 'misc';
     if (!bySec.has(s)) {
-      bySec.set(s, { key: s, label: EXAM_TYPE_LABEL[s] || ('考研-' + (KB_SECTION_LABEL[s] || s)), questions: 0, passages: 0, writings: 0 });
+      bySec.set(s, { key: s, label: sectionLabel(track, s), questions: 0, passages: 0, writings: 0 });
     }
     const b = bySec.get(s);
     if (it.type === 'question') b.questions++;
@@ -2578,6 +2602,8 @@ function examSummary(r) {
   return {
     id: r.id,
     rtype: r.rtype,
+    track,
+    trackLabel: examTrackMeta(track).label,
     rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype,
     title: r.title || '(无标题)',
     year: r.meta?.year || null,
@@ -2619,6 +2645,8 @@ function buildUnits() {
   for (const rec of loadExams()) {
     const items = Array.isArray(rec.items) ? rec.items : [];
     const year = rec.meta?.year || null;
+    const track = trackOf(rec);
+    const trackMeta = examTrackMeta(track);
     const groups = [];
     const gkey = it => {
       if (it.section === 'reading') return 'reading~' + (it.passage_id ?? 0);
@@ -2633,7 +2661,7 @@ function buildUnits() {
     });
     for (const g of groups) {
       const secName = UNIT_SECTIONS[g.section] || (g.section === 'misc' ? '其他' : g.section);
-      let title = `考研-${secName}-${year ? year + '年' : rec.title}`;
+      let title = `${trackMeta.examName}-${secName}-${year ? year + '年' : rec.title}`;
       if (g.section === 'reading') title += `-第${g.passageId || '?'}篇`;
       if (g.section === 'writing') title += `-Part ${g.part || 'A'}`;
       const gitems = g.idx.map(i => items[i]);
@@ -2641,9 +2669,11 @@ function buildUnits() {
       units.push({
         unitId: `${rec.id}~${g.key}`,
         examId: rec.id,
+        track,
+        trackLabel: trackMeta.label,
         year,
         section: g.section,
-        label: '考研-' + secName,
+        label: `${trackMeta.examName}-${secName}`,
         title,
         itemCount: gitems.length,
         qCount: qs.length,
@@ -2837,10 +2867,11 @@ function kbMergeStore(store, records) {
 }
 
 /** 单文件导入全流程：投放 -> 解析 -> 分库写库（同名覆盖）+ 归档，失败 -> 隔离 + 日志 */
-async function kbImportOne({ name, buf, category, store = 'corpus', parserTag = null }) {
+async function kbImportOne({ name, buf, category, store = 'corpus', parserTag = null, track = null }) {
   const safe = kbSafeName(name);
   if (!safe) throw Object.assign(new Error('文件名无效'), { code: 'KB_IMPORT' });
   if (!buf || !buf.length) throw Object.assign(new Error('文件内容为空'), { code: 'KB_IMPORT' });
+  const examTrack = normalizeTrack(track);
   const srcPath = path.join(kbDir('imports', category), safe);
   fs.writeFileSync(srcPath, buf);
   const ext = path.extname(safe).toLowerCase();
@@ -2910,6 +2941,10 @@ async function kbImportOne({ name, buf, category, store = 'corpus', parserTag = 
   });
   const toExam = parsed.records.filter(r => r.rtype === 'qa_set');
   const toCorpus = parsed.records.filter(r => r.rtype !== 'qa_set');
+  // v2.7.0：真题库记录打上考试大类标记（track），缺省 kaoyan1；语料库记录不写
+  if (store === 'exam') {
+    for (const r of toExam) { r.track = examTrack; if (r.meta && typeof r.meta === 'object') r.meta.track = examTrack; }
+  }
   if (toExam.length) kbMergeStore('exam', toExam);
   if (toCorpus.length) kbMergeStore('corpus', toCorpus);
   const storeTag = [toExam.length ? 'exam' : '', toCorpus.length ? 'corpus' : ''].filter(Boolean).join('+');
@@ -4044,15 +4079,15 @@ const server = http.createServer(async (req, res) => {
               sampleExternal: evidence.external[0] ? (evidence.external[0].publication || '外刊精选') : ''
             };
             const formatHit = h => {
-                const src = [h.title, h.year ? h.year + ' 年' : '', KB_SECTION_LABEL[h.section] || h.section || '', h.number ? '第 ' + h.number + ' 题' : '']
+                const src = [h.trackLabel || (h.track ? examTrackMeta(h.track).label : '考研真题'), h.title, h.year ? h.year + ' 年' : '', KB_SECTION_LABEL[h.section] || h.section || '', h.number ? '第 ' + h.number + ' 题' : '']
                   .filter(Boolean).join(' · ');
                 const external = h.sourceKind === 'external';
                 const externalSrc = [h.publication, h.year ? h.year + ' 年' : '', h.sourceUrl].filter(Boolean).join(' · ');
                 return `- ${h.s}\n  （来源：${external ? (externalSrc || src || '外刊发布源') : (src || '考研真题')}）`;
             };
             if (evidence.exams.length) {
-              msgs[0].content += '\n\n【考研真题原句】\n' + evidence.exams.map(formatHit).join('\n') +
-                '\n讲解时优先引用以上真题并注明来源，尤其关注考研义项和考法。';
+              msgs[0].content += '\n\n【真题原句】\n' + evidence.exams.map(formatHit).join('\n') +
+                '\n讲解时优先引用以上真题并注明来源与考试类别，尤其关注对应考试的义项和考法。';
             }
             if (evidence.external.length) {
               msgs[0].content += '\n\n【外刊真实语境】\n' + evidence.external.map(formatHit).join('\n') +
@@ -4288,6 +4323,7 @@ const server = http.createServer(async (req, res) => {
           category: KB_CATEGORIES.includes(body.category) ? body.category : '真题',
           store: targetStore,
           parserTag: 'mineru-api',
+          track: body.track,
         });
         return sendJSON(res, 200, { ok: true, mineru: true, store: targetStore, ...r });
       }
@@ -5002,11 +5038,22 @@ CRITICAL TRANSCRIPTION RULES:
 
       /* ---------------- v1.1.5：单元题库 API ---------------- */
 
-      // 单元列表（整卷切片自动派生：导入成功即出现，无需手动推送）
+      // 单元列表（整卷切片自动派生：导入成功即出现，无需手动推送；v2.7.0 支持 track 过滤）
       if (p === '/api/unit/records' && req.method === 'GET') {
+        const trackFilter = u.searchParams.get('track');
         const answers = loadAnswers();
-        const units = buildUnits().map(u => ({ ...u, hasAnswer: !!(answers[u.unitId] && Object.keys(answers[u.unitId]).length) }));
-        return sendJSON(res, 200, { ok: true, units, file: examsFile() });
+        const all = buildUnits();
+        const tracks = {};
+        for (const k of Object.keys(EXAM_TRACKS)) tracks[k] = 0;
+        for (const x of all) tracks[x.track || DEFAULT_EXAM_TRACK]++;
+        const units = all
+          .filter(x => !trackFilter || (x.track || DEFAULT_EXAM_TRACK) === normalizeTrack(trackFilter))
+          .map(u => ({ ...u, hasAnswer: !!(answers[u.unitId] && Object.keys(answers[u.unitId]).length) }));
+        return sendJSON(res, 200, {
+          ok: true, units, file: examsFile(),
+          track: trackFilter ? normalizeTrack(trackFilter) : null,
+          tracks, trackMeta: EXAM_TRACKS,
+        });
       }
 
       // 单元详情：items 切片 + 标准答案状态（只下发有无，不下发答案值）
@@ -5357,7 +5404,7 @@ CRITICAL TRANSCRIPTION RULES:
             results.push({ ok: false, file: it.name, reason: 'base64 解码失败', store: 'exam' });
             continue;
           }
-          results.push(await kbImportOne({ name: it.name, buf, category: '真题', store: 'exam' }));
+          results.push(await kbImportOne({ name: it.name, buf, category: '真题', store: 'exam', track: body.track }));
         }
         if (!results.length) return sendJSON(res, 400, { error: '没有可导入的文件（选择 tex / pdf）', code: 'KB_IMPORT' });
         return sendJSON(res, 200, {
@@ -5367,25 +5414,42 @@ CRITICAL TRANSCRIPTION RULES:
         });
       }
 
-      // v1.1.2：真题库列表（「考试-题型」板块统计）
+      // v1.1.2：真题库列表（「考试-题型」板块统计；v2.7.0 支持 track 过滤与分轨统计）
       if (p === '/api/exam/records' && req.method === 'GET') {
+        const trackFilter = u.searchParams.get('track');
+        const all = loadExams();
+        const tracks = {};
+        for (const k of Object.keys(EXAM_TRACKS)) tracks[k] = 0;
+        for (const r of all) tracks[trackOf(r)]++;
+        const records = all
+          .filter(r => !trackFilter || trackOf(r) === normalizeTrack(trackFilter))
+          .map(examSummary);
         return sendJSON(res, 200, {
           ok: true,
           file: examsFile(),
           exists: fs.existsSync(examsFile()),
-          records: loadExams().map(examSummary),
+          track: trackFilter ? normalizeTrack(trackFilter) : null,
+          tracks,
+          trackMeta: EXAM_TRACKS,
+          records,
         });
       }
 
-      // v1.1.2：真题详情（渲染排序后的 items + 板块统计）
+      // v2.7.0：真题详情（渲染排序后的 items + 板块统计）
       {
         const m = p.match(/^\/api\/exam\/record\/([A-Za-z0-9_-]+)$/);
         if (m && req.method === 'GET') {
           const r = loadExams().find(x => x.id === m[1]);
           if (!r) return sendJSON(res, 404, { error: '记录不存在' });
+          const track = trackOf(r);
           return sendJSON(res, 200, {
             ok: true,
-            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: u.searchParams.get('raw') === '1' ? (r.items || []) : kbOrderedItems(r), sections: examSummary(r).sections },
+            record: {
+              ...r, track, trackLabel: examTrackMeta(track).label,
+              rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype,
+              items: u.searchParams.get('raw') === '1' ? (r.items || []) : kbOrderedItems(r),
+              sections: examSummary(r).sections,
+            },
           });
         }
       }

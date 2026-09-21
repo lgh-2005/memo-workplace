@@ -2676,7 +2676,7 @@ async function kbDoSearch() {
     $('#kbList').innerHTML = r.results.map(h => `
       <div class="kb-item" data-rid="${esc(h.rid)}">
         <div class="kb-sentence">${esc(h.s)}</div>
-        <div class="kb-item-meta">${h.sourceKind === 'exam' ? '考研真题' : h.sourceKind === 'external' ? '外刊真实语境' : '工作台语料'}：${esc(h.title)}${h.publication ? ' · ' + esc(h.publication) : ''}${h.year ? ' · ' + h.year + ' 年' : ''}${h.section ? ' · ' + esc(KB_SECTION_LABEL[h.section] || h.section) : ''}${h.number ? ' · 第 ' + h.number + ' 题' : ''}</div>
+        <div class="kb-item-meta">${h.sourceKind === 'exam' ? esc(h.trackLabel || '考研真题') : h.sourceKind === 'external' ? '外刊真实语境' : '工作台语料'}：${esc(h.title)}${h.publication ? ' · ' + esc(h.publication) : ''}${h.year ? ' · ' + h.year + ' 年' : ''}${h.section ? ' · ' + esc(KB_SECTION_LABEL[h.section] || h.section) : ''}${h.number ? ' · 第 ' + h.number + ' 题' : ''}</div>
       </div>`).join('');
     renderPaginationBar('#kbPagination', 1, 0, 0, () => {});
   } catch (e) {
@@ -2787,11 +2787,23 @@ $('#kbLogBtn').addEventListener('click', kbShowLog);
 const examState = {
   records: [], loaded: false, page: 1, pageSize: 10,
   currentExam: null, mode: 'practice', answers: {},
+  track: 'kaoyan1', tracks: {}, trackMeta: {},
 };
 
-const EXAM_TYPE_FALLBACK = {
-  use_of_english: '考研-完形填空', reading: '考研-阅读理解', part_b: '考研-新题型',
-  translation: '考研-翻译', writing: '考研-写作',
+/* v2.7.0：真题库考试大类（track）——考研英语一 / 六级英语 */
+const EXAM_TRACK_FALLBACK = {
+  kaoyan1: { key: 'kaoyan1', label: '考研英语一', examName: '考研英语' },
+  cet6: { key: 'cet6', label: '六级英语', examName: '六级英语' },
+};
+function examTrackMetaOf(track) {
+  return examState.trackMeta?.[track] || EXAM_TRACK_FALLBACK[track] || EXAM_TRACK_FALLBACK.kaoyan1;
+}
+function currentExamTrackMeta() { return examTrackMetaOf(examState.track); }
+
+/* v2.7.0：题型中文名（标签前缀由考试大类 track 决定，见 recTrackMeta.examName） */
+const EXAM_SECTION_NAME = {
+  use_of_english: '完形填空', reading: '阅读理解', part_b: '新题型',
+  translation: '翻译', writing: '写作',
 };
 
 /* 「考试-题型」处理器注册表：渲染考场级交互 */
@@ -3075,15 +3087,31 @@ function kbExamPassageAndQuestions(items, base = 0) {
 async function loadExamList() {
   if (examState.loaded) return;
   try {
-    const r = await api('/api/exam/records');
+    const r = await api('/api/exam/records?track=' + encodeURIComponent(examState.track));
     examState.records = r.records || [];
+    examState.tracks = r.tracks || {};
+    examState.trackMeta = r.trackMeta || {};
     examState.loaded = true;
     if (!r.exists) {
       $('#exListResult').textContent = '⚠️ 未找到真题库文件：' + r.file;
       $('#exListResult').className = 'result err';
     }
+    renderExamTrackBar();
     renderExamList();
   } catch (e) { console.error(e); }
+}
+
+/* v2.7.0：渲染考试大类切换条（chip + 计数）与当前标题 */
+function renderExamTrackBar() {
+  const meta = currentExamTrackMeta();
+  const titleEl = $('#exTrackTitle');
+  if (titleEl) titleEl.textContent = meta.label;
+  ['kaoyan1', 'cet6'].forEach(k => {
+    const btn = $(`#exTrackFilters [data-xtrack="${k}"]`);
+    if (btn) btn.classList.toggle('active', k === examState.track);
+    const cnt = $(`#exTrackCount-${k}`);
+    if (cnt) cnt.textContent = String(examState.tracks?.[k] ?? 0);
+  });
 }
 
 function renderExamList() {
@@ -3093,8 +3121,9 @@ function renderExamList() {
   if (examState.page > totalPages) examState.page = totalPages;
   if (examState.page < 1) examState.page = 1;
 
+  const trackLabel = currentExamTrackMeta().label;
   if (!examState.records.length) {
-    box.innerHTML = '<div class="empty-prov">真题库还是空的。用上方「🗂 导入真题」导入 tex / pdf 真题源。</div>';
+    box.innerHTML = `<div class="empty-prov">「${esc(trackLabel)}」真题库还是空的。用上方「🗂 导入真题」导入 tex / pdf 真题源。</div>`;
     renderPaginationBar('#exPagination', 1, 0, 0, () => {});
     return;
   }
@@ -3106,6 +3135,7 @@ function renderExamList() {
     <div class="kb-item" data-exid="${esc(r.id)}">
       <div class="kb-item-head">
         <span class="badge kb-badge kb-badge-qa_set">${esc(r.rtypeLabel)}</span>
+        <span class="badge kb-badge-track">${esc(r.trackLabel || trackLabel)}</span>
         ${r.year ? `<span class="badge kb-badge-year">${r.year} 年</span>` : ''}
         <b>${esc(r.title)}</b>
       </div>
@@ -3130,6 +3160,19 @@ function renderExamList() {
   });
 }
 
+/* v2.7.0：切换考试大类 */
+function switchExamTrack(track) {
+  if (!EXAM_TRACK_FALLBACK[track] || track === examState.track) return;
+  examState.track = track;
+  examState.page = 1;
+  examState.loaded = false;
+  examState.records = [];
+  $('#exDetailCard').style.display = 'none';
+  $$('#exTrackFilters .chip').forEach(c => c.classList.toggle('active', c.dataset.xtrack === track));
+  renderExamTrackBar();
+  loadExamList();
+}
+
 async function openExamRecord(exid) {
   const card = $('#exDetailCard');
   card.style.display = 'block';
@@ -3145,10 +3188,12 @@ async function openExamRecord(exid) {
     // v2.2.8：详情根节点标记真题来源，供划选取真实 sourceRef
     $('#exDetail').dataset.rid = exid;
     $('#exDetail').dataset.sourceKind = 'exam';
+    $('#exDetail').dataset.track = rec.track || examState.track;
     $('#exDetail').dataset.year = rec.meta?.year != null ? String(rec.meta.year) : '';
     $('#exDetail').dataset.section = '';
     $('#exDetailTitle').textContent = rec.title || rec.id;
     $('#exDetailMeta').textContent = [
+      rec.trackLabel || examTrackMetaOf(rec.track || examState.track).label,
       rec.rtypeLabel, rec.meta?.year ? rec.meta.year + ' 年' : '',
       rec.meta?.questions ? rec.meta.questions + ' 题' : '',
       rec.source ? `${rec.source.file || ''} · ${rec.source.parser || ''} · 导入 ${String(rec.source.imported_at || '').slice(0, 10)}` : '',
@@ -3161,12 +3206,13 @@ async function openExamRecord(exid) {
     $('#exmModeAnalysis')?.classList.remove('active');
 
     // 按「考试-题型」分块：每块交给独立处理器（统一 analyze + render 契约）
+    const recTrackMeta = examTrackMetaOf(rec.track || examState.track);
     const blocks = [];
     for (const it of (rec.items || [])) {
       const s = it.section || 'misc';
       if (!blocks.length || blocks[blocks.length - 1].key !== s) {
         const label = (rec.sections || []).find(x => x.key === s)?.label
-          || EXAM_TYPE_FALLBACK[s] || ('考研-' + (s === 'misc' ? '其他' : s));
+          || `${recTrackMeta.examName}-${EXAM_SECTION_NAME[s] || (s === 'misc' ? '其他' : s)}`;
         blocks.push({ key: s, label, items: [] });
       }
       blocks[blocks.length - 1].items.push(it);
@@ -3239,10 +3285,10 @@ async function exDoImport() {
     }
     items.push({ name: f.name, data64: await kbFileToB64(f) });
   }
-  out.textContent = '拆题解析中…（TeX 秒级，PDF 视大小而定）';
+  out.textContent = `拆题解析中…（导入到「${currentExamTrackMeta().label}」，TeX 秒级，PDF 视大小而定）`;
   out.className = 'result';
   try {
-    const r = await api('/api/exam/import', { method: 'POST', body: { items } });
+    const r = await api('/api/exam/import', { method: 'POST', body: { items, track: examState.track } });
     const lines = r.results.map(x => x.ok
       ? `✅ ${esc(x.file)} → ${x.records} 条记录（${esc((x.rtypes || []).join('/'))} · 解析器 ${esc(x.parser || '')}${x.store && x.store.includes('corpus') ? ' · 拆题未达阈值，整卷落入语料库（真题正文）' : ''}）`
       : `⛔ ${esc(x.file)} 已隔离：${esc(x.reason || '')}${x.hint ? '（' + esc(x.hint) + '）' : ''}`);
@@ -3450,6 +3496,8 @@ $('#exmModeAnalysis')?.addEventListener('click', () => switchExamMode('analysis'
 
 $('#exImportBtn').addEventListener('click', exDoImport);
 $('#exLogBtn').addEventListener('click', () => kbShowLog('#exImportResult'));
+// v2.7.0：考试大类切换（考研英语一 / 六级英语）
+$$('#exTrackFilters .chip').forEach(c => c.addEventListener('click', () => switchExamTrack(c.dataset.xtrack)));
 $('#exBackBtn').addEventListener('click', () => {
   $('#exDetailCard').style.display = 'none';
   renderExamList();
@@ -3459,17 +3507,41 @@ $('#exBackBtn').addEventListener('click', () => {
 
 /* ---------------- v1.1.5：单元题库（整卷切片 + 分题型做题规则；v2.1.0 分页） ---------------- */
 
-const unitState = { units: [], loaded: false, filter: '', page: 1, pageSize: 10 };
+const unitState = { units: [], loaded: false, filter: '', page: 1, pageSize: 10, track: 'kaoyan1', tracks: {}, trackMeta: {} };
 const UNIT_SEC_LABEL = { use_of_english: '完形填空', reading: '阅读理解', part_b: '新题型', translation: '翻译', writing: '写作' };
 
 async function loadUnits() {
   if (unitState.loaded) return;
   try {
-    const r = await api('/api/unit/records');
+    const r = await api('/api/unit/records?track=' + encodeURIComponent(unitState.track));
     unitState.units = r.units || [];
+    unitState.tracks = r.tracks || {};
+    unitState.trackMeta = r.trackMeta || examState.trackMeta || {};
     unitState.loaded = true;
+    renderUnitTrackBar();
     renderUnitList();
   } catch (e) { console.error(e); }
+}
+
+/* v2.7.0：单元题库考试大类切换条 */
+function renderUnitTrackBar() {
+  ['kaoyan1', 'cet6'].forEach(k => {
+    const btn = $(`#unitTrackFilters [data-utrack="${k}"]`);
+    if (btn) btn.classList.toggle('active', k === unitState.track);
+    const cnt = $(`#unitTrackCount-${k}`);
+    if (cnt) cnt.textContent = String(unitState.tracks?.[k] ?? 0);
+  });
+}
+
+function switchUnitTrack(track) {
+  if (!EXAM_TRACK_FALLBACK[track] || track === unitState.track) return;
+  unitState.track = track;
+  unitState.page = 1;
+  unitState.loaded = false;
+  unitState.units = [];
+  $('#unitDetailCard').style.display = 'none';
+  renderUnitTrackBar();
+  loadUnits();
 }
 
 function renderUnitList() {
@@ -3493,6 +3565,7 @@ function renderUnitList() {
     <div class="kb-item" data-uid="${esc(u.unitId)}">
       <div class="kb-item-head">
         <span class="badge kb-badge kb-badge-qa_set">${esc(u.label)}</span>
+        <span class="badge kb-badge-track">${esc(u.trackLabel || examTrackMetaOf(u.track).label)}</span>
         ${u.year ? `<span class="badge kb-badge-year">${u.year} 年</span>` : ''}
         <b>${esc(u.title)}</b>
         ${u.hasAnswer ? '<span class="badge kb-badge-year">有答案</span>' : ''}
@@ -3519,6 +3592,9 @@ $$('#unitFilters .chip').forEach(c => c.addEventListener('click', () => {
   $$('#unitFilters .chip').forEach(x => x.classList.toggle('active', x === c));
   renderUnitList();
 }));
+
+// v2.7.0：单元题库考试大类切换
+$$('#unitTrackFilters .chip').forEach(c => c.addEventListener('click', () => switchUnitTrack(c.dataset.utrack)));
 
 $('#unitBackBtn').addEventListener('click', () => {
   $('#unitDetailCard').style.display = 'none';
@@ -3931,7 +4007,7 @@ async function mineruDoImport(store) {
   for (const f of files) {
     out.textContent = `🛰 ${f.name} 已提交 MinerU 云端解析…（约 1-2 分钟/文件，请勿关闭页面）`;
     try {
-      const r = await api('/api/mineru/parse', { method: 'POST', body: { items: [{ name: f.name, data64: await kbFileToB64(f) }], ocr, category, store } });
+      const r = await api('/api/mineru/parse', { method: 'POST', body: { items: [{ name: f.name, data64: await kbFileToB64(f) }], ocr, category, store, track: isExam ? examState.track : undefined } });
       lines.push(r.ok
         ? `✅ ${esc(f.name)} → ${r.records} 条记录（${esc((r.rtypes || []).join('/'))} · MinerU 云端解析）`
         : `⛔ ${esc(f.name)}：${esc(r.reason || '解析失败')}`);

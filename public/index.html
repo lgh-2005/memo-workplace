@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.6.3</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.7.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.6.3</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.7.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -664,7 +664,7 @@
   <section id="tab-exam" class="tab-page" data-page-node-id="3thbmqXptek9R1mzko5MOs">
     <div class="card card-collapsible" data-page-node-id="zrLt1D63nJqPOG3789dG4c">
       <div class="card-title-row" style="margin-bottom:0" data-page-node-id="lZEESy3vpTDsGmHIYXv9JP">
-        <div class="card-title" data-page-node-id="PT2imYkzu7EalCYeEFIq4G" style="margin-bottom:0">🗂 真题库 · 考研英语一</div>
+        <div class="card-title" data-page-node-id="PT2imYkzu7EalCYeEFIq4G" style="margin-bottom:0">🗂 真题库 · <span id="exTrackTitle">考研英语一</span></div>
         <div class="row-gap" style="align-items:center">
           <button class="btn" id="exLogBtn" data-page-node-id="FwphYpAGfpG5v4CCv7dWZP">📜 导入日志</button>
           <button class="card-collapse-toggle" type="button" data-collapse-target="#exCardCollapseBody" title="折叠/展开">收起 ▴</button>
@@ -672,8 +672,12 @@
       </div>
       <div class="card-collapse-body" id="exCardCollapseBody">
         <details class="hint-fold" data-page-node-id="c7mGBEtRCE7B7kWREAPQ4A" style="margin-top:8px"><summary data-page-node-id="FEHistF6GO0LyW9TbgLhi0">📖 板块说明</summary>
-        <div class="hint" data-page-node-id="gzNMoQF2e207ipCInLGaZR">结构化真题题库（<code data-page-node-id="SDVHQMyrjYxDGFtcInphsP">corpus/exams.jsonl</code>）：只收 <b data-page-node-id="F1KuMknK1SGJL9NOC9zWxk">tex / pdf</b> 结构化源，自动拆题入库（同名重导覆盖，失败进隔离区）。按「<b data-page-node-id="gCBI4I8X7nu7TIrdG4cpcn">考试-题型</b>」专项处理——考研-完形填空 / 阅读理解 / 新题型 / 翻译 / 写作，各题型处理逻辑独立、输出结构统一。全库搜索与 AI 真题原句注入均覆盖本库。扫描版 PDF 可走 🛰 MinerU 解析（产出整卷「真题正文」入库；结构化拆题仍需 tex/文字层 PDF）。</div>
+        <div class="hint" data-page-node-id="gzNMoQF2e207ipCInLGaZR">结构化真题题库（<code data-page-node-id="SDVHQMyrjYxDGFtcInphsP">corpus/exams.jsonl</code>）：按<b data-page-node-id="v270track00">考试大类</b>（考研英语一 / 六级英语）分流管理，各卷记录带 <code>track</code> 标记（历史卷缺省视为考研英语一）。只收 <b data-page-node-id="F1KuMknK1SGJL9NOC9zWxk">tex / pdf</b> 结构化源，自动拆题入库（同名重导覆盖，失败进隔离区）。按「<b data-page-node-id="gCBI4I8X7nu7TIrdG4cpcn">考试-题型</b>」专项处理——完形填空 / 阅读理解 / 新题型 / 翻译 / 写作，各题型处理逻辑独立、输出结构统一。全库搜索与 AI 真题原句注入均覆盖本库。扫描版 PDF 可走 🛰 MinerU 解析（产出整卷「真题正文」入库；结构化拆题仍需 tex/文字层 PDF）。</div>
         </details>
+        <div class="row-gap" id="exTrackFilters" style="margin-top:8px" data-page-node-id="v270trackfilters">
+          <button class="chip active" data-xtrack="kaoyan1" data-page-node-id="v270tk-ky"><span>📘 考研英语一</span> <span class="ex-track-count" id="exTrackCount-kaoyan1">0</span></button>
+          <button class="chip" data-xtrack="cet6" data-page-node-id="v270tk-cet6"><span>🎧 六级英语</span> <span class="ex-track-count" id="exTrackCount-cet6">0</span></button>
+        </div>
         <div class="row-gap" style="flex-wrap:wrap;margin-top:8px" data-page-node-id="glIIs8VYlET4xxCyOaoZdN">
           <input type="file" id="exImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".tex,.pdf" data-page-node-id="LUl41UwF6mrKjOnL1PZFjG">
           <button class="btn primary" id="exImportBtn" data-page-node-id="TYrTWjOGa952mw9zJvlMZF">🗂 导入真题</button>
@@ -719,6 +723,10 @@
       <details class="hint-fold" data-page-node-id="rvre1fOFBV0uqSSXx7O6OO"><summary data-page-node-id="HZbRh14z8XCP10dws0PUuO">📖 板块说明</summary>
       <div class="hint" data-page-node-id="TBkA2jtHiaRBLFRF9e7j1B">真题整卷自动切片成可练习的单元——<b data-page-node-id="1wDDnK1E5ZOTbfln9n5EtF">完形 = 原文挖空内联选词 / 阅读 = Text + 逐题单选 / 新题型 = 空位 + 选项池 / 翻译 = 划线句 + 译文框 / 写作 = 题干 + 作文框</b>。到「🗂 真题库」导入拆题成功后单元自动生成。客观题判分需先录入标准答案（存 <code data-page-node-id="BcNJCORZWLPwOLWnuWDNFh">data/answers.json</code>；请用权威版答案人工录入）。</div>
       </details>
+      <div class="row-gap" id="unitTrackFilters" data-page-node-id="v270unittrackfilters">
+        <button class="chip active" data-utrack="kaoyan1" data-page-node-id="v270utk-ky"><span>📘 考研英语一</span> <span class="ex-track-count" id="unitTrackCount-kaoyan1">0</span></button>
+        <button class="chip" data-utrack="cet6" data-page-node-id="v270utk-cet6"><span>🎧 六级英语</span> <span class="ex-track-count" id="unitTrackCount-cet6">0</span></button>
+      </div>
       <div class="row-gap" id="unitFilters" data-page-node-id="A99eFIqdNEw29M7cgK5NAq">
         <button class="chip active" data-usec="" data-page-node-id="NGdvWUOSWgqQyIQsafiOyz">全部</button>
         <button class="chip" data-usec="use_of_english" data-page-node-id="ubfD704NtfUsCm8UauB30G">完形填空</button>

@@ -2260,10 +2260,15 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .kb-badge-document { background: #fefce8; color: #a16207; }
 .kb-badge-note { background: #fdf2f8; color: #be185d; }
 .kb-badge-year { background: var(--primary-soft); color: var(--primary); }
+.kb-badge-track { background: #f5f3ff; color: #6d28d9; }
 [data-theme="dark"] .kb-badge-qa_set { background: #0e2e22; }
 [data-theme="dark"] .kb-badge-article { background: #17263f; }
 [data-theme="dark"] .kb-badge-document { background: #3a2f10; }
 [data-theme="dark"] .kb-badge-note { background: #3f1729; }
+[data-theme="dark"] .kb-badge-track { background: #241a3f; color: #c4b5fd; }
+/* v2.7.0：考试大类切换 chip 的计数徽标 */
+.ex-track-count { display: inline-block; min-width: 18px; padding: 0 5px; margin-left: 4px; border-radius: 999px; background: var(--bg); color: var(--text-sub); font-size: 11px; font-weight: 700; line-height: 16px; text-align: center; }
+.chip.active .ex-track-count { background: var(--primary); color: #fff; }
 
 .kb-sec-title {
   font-weight: 700; font-size: 15px; margin: 18px 0 8px;

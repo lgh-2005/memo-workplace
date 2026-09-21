@@ -70,9 +70,16 @@
 |---|---|---|---|
 | 28 | `.workbuddy/test_v263_answers_verify.js` | 7 | 真题库答案回填 E2E：单元总数 243/有答案 165、全部客观题单元已录标准答案、answerState.has、错答案判 0 正确且回传正确答案、2010 真题 45 题答案齐备 |
 
-> 合计 **28** 套、断言总数 **564**（15 后端 343 + 12 浏览器 205 + 1 线上冒烟 16）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.5 v2.7.0 增量套件（2）
 
-> **说明**：`english-workbench/.workbuddy/` 目录下共 33 个 `test_*.js`，其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，**不属于验收范围**；上表 28 套为本版验收清单（v2.2.8 的 27 套 + v2.6.3 增量 1 套）。
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 29 | `.workbuddy/test_v270_track.js` | 22 | 真题库「考试大类」分轨（后端）：分轨统计与缺省归类、track 过滤、题型标签前缀随大类、单元库分轨与 trackLabel、详情回传 track、导入接口按 track 落盘 |
+| 30 | `.workbuddy/test_v270_track_ui.js` | 17 | 真题库/单元题库 track 切换交互（浏览器）：chip 计数、切轨仅显本轨卷、track 徽标、标题随轨、390px 无溢出、控制台 0 错误 |
+
+> 合计 **30** 套、断言总数 **603**（16 后端 365 + 14 浏览器 222 + 1 线上冒烟 16）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+
+> **说明**：`english-workbench/.workbuddy/` 目录下共 44 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨）。上表 30 套为与「14 后端 + 12 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单（后增 v2.6.3/v2.7.0 增量）。
 
 ## 4. 运行顺序（建议）
 
@@ -93,6 +100,8 @@ node .workbuddy/test_v228_sourceref.js
 node .workbuddy/test_v228_vocab.js
 node .workbuddy/test_v228_unit.js
 node .workbuddy/test_v228_report.js
+node .workbuddy/test_v263_answers_verify.js
+node .workbuddy/test_v270_track.js
 node .workbuddy/test_v221_playwright.js
 node .workbuddy/test_v222_playwright.js
 node .workbuddy/test_v223_playwright.js
@@ -105,6 +114,7 @@ node .workbuddy/test_v228_vocab_ui.js
 node .workbuddy/test_v228_unit_ui.js
 node .workbuddy/test_v228_report_ui.js
 node .workbuddy/test_v228_ui_contract.js
+node .workbuddy/test_v270_track_ui.js
 ```
 
 线上只读冒烟（需本机 `Desktop/password.txt`；Basic Auth 用户 `贾忖`）：
