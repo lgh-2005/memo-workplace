@@ -3839,5 +3839,73 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   .wrt-copy { width: 40px; height: 40px; }
 }
 
+/* ================= v2.8.0：Token 凭证登录遮罩 ================= */
+.login-overlay {
+  position: fixed; inset: 0; z-index: 5000;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--bg) 82%, #0b1220);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+}
+.login-card {
+  width: 100%; max-width: 380px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow-card-hover);
+  padding: 28px 24px 22px; text-align: center;
+  animation: fadein .25s;
+}
+.login-brand { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+.login-sub { font-size: 13px; color: var(--text-sub); margin-bottom: 18px; }
+.login-input { text-align: center; letter-spacing: 1px; }
+.login-card .result { display: block; margin: 8px 0 0; min-height: 16px; }
+.login-btn { width: 100%; margin-top: 14px; min-height: 44px; font-size: 15px; }
+.login-hint { margin-top: 14px; font-size: 11.5px; line-height: 1.6; }
+
+/* ================= v2.8.0：日志版块 ================= */
+.ver-click { cursor: pointer; border-radius: 6px; padding: 1px 4px; transition: background .15s, color .15s; }
+.ver-click:hover { background: var(--primary-soft); color: var(--primary); }
+.logs-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 14px; }
+.logs-tab {
+  padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text-sub); cursor: pointer;
+  font-size: 13px; min-height: 40px; transition: all .15s;
+}
+.logs-tab:hover { border-color: var(--primary); color: var(--primary); }
+.logs-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); font-weight: 600; }
+.logs-pane { display: none; }
+.logs-pane.active { display: block; animation: fadein .2s; }
+.logs-add-card { margin: 12px 0 16px; }
+.log-entry {
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: 12px 14px; margin-bottom: 10px; background: var(--card);
+}
+.log-entry-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.log-ver { font-size: 12px; font-weight: 700; color: #fff; background: var(--primary); border-radius: 6px; padding: 1px 8px; }
+.log-kind { font-size: 12px; font-weight: 600; color: var(--primary); background: var(--primary-soft); border-radius: 6px; padding: 1px 8px; }
+.log-title { font-weight: 600; font-size: 14px; flex: 1; min-width: 0; }
+.log-date { font-size: 12px; color: var(--text-sub); }
+.log-del { margin-left: auto; min-height: 28px; padding: 2px 8px; }
+.log-items { margin: 8px 0 0 18px; padding: 0; }
+.log-items li { font-size: 13px; line-height: 1.8; color: var(--text); list-style: disc; }
+.log-content { margin-top: 8px; font-size: 13px; line-height: 1.8; white-space: pre-wrap; color: var(--text); text-indent: 2em; }
+.log-meta { margin-top: 6px; font-size: 12px; color: var(--text-sub); word-break: break-all; }
+.log-stack {
+  margin-top: 8px; padding: 8px 10px; border-radius: 8px;
+  background: color-mix(in srgb, var(--warn) 8%, transparent);
+  font-size: 11.5px; line-height: 1.6; color: var(--text-sub);
+  white-space: pre-wrap; word-break: break-all; max-height: 220px; overflow: auto;
+}
+.log-entry.usage-plan { border-left: 3px solid var(--primary); }
+.log-entry.usage-issue { border-left: 3px solid var(--warn); }
+.log-entry.usage-note { border-left: 3px solid var(--border); }
+.log-entry.err-error { border-left: 3px solid var(--warn); }
+.log-entry.err-warn { border-left: 3px solid #f59e0b; }
+
+@media (max-width: 700px) {
+  .logs-tab { min-height: 44px; padding: 10px 14px; }
+  .log-del { min-height: 44px; padding: 8px 12px; }
+  .logs-tab, .logs-add-card .btn, #errorClearBtn { min-height: 44px; }
+}
+
 
 

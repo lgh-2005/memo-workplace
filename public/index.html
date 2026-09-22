@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver">v2.7.2.d</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v2.8.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.7.2.d</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.8.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -52,7 +52,73 @@
 <button id="zenFloatingExit" class="zen-exit-btn" title="退出专注视界 (Esc或Z)">✕ 退出专注</button>
 <button id="spotlightToggleFloating" class="spotlight-floating-btn" title="开关段落聚光灯 (快捷键 S)">💡 探照灯</button>
 
+<!-- v2.8.0：Token 凭证登录遮罩（未登录时覆盖全屏；登录后该设备默认保持登录） -->
+<div class="login-overlay" id="loginOverlay" style="display:none">
+  <div class="login-card">
+    <div class="login-brand">🐳 英语学习工作台</div>
+    <div class="login-sub">请输入 Token 凭证以进入</div>
+    <input type="password" id="loginToken" class="input login-input" placeholder="Token 凭证" autocomplete="current-password">
+    <div class="result" id="loginResult"></div>
+    <button class="btn primary login-btn" id="loginBtn">进入工作台</button>
+    <div class="hint login-hint">凭证由管理员在「设置 → 登录与安全」中配置；登录有效期内本设备无需重复输入。</div>
+  </div>
+</div>
+
 <main data-page-node-id="hnUFGLrlF2uhns1Lwty8dF">
+  <!-- ============ 日志版块（v2.8.0，点击版本号进入） ============ -->
+  <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
+    <div class="card-title-row" style="align-items:center">
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v2.8.0</span></div>
+      <button class="btn" id="logsBackBtn">← 返回</button>
+    </div>
+    <div class="logs-tabs" id="logsTabs">
+      <button class="logs-tab active" data-logs="dev">📘 开发日志</button>
+      <button class="logs-tab" data-logs="usage">🛠 使用日志</button>
+      <button class="logs-tab" data-logs="error">⚠️ 报错日志</button>
+    </div>
+
+    <!-- 开发日志 -->
+    <div class="logs-pane active" id="logsPane-dev">
+      <div class="hint">记录各版本更新内容，随版本发布同步维护。</div>
+      <div id="devLogList"></div>
+    </div>
+
+    <!-- 使用日志 -->
+    <div class="logs-pane" id="logsPane-usage">
+      <div class="hint">开发者维护的更新方向与使用中发现的已知小毛病。</div>
+      <div class="card logs-add-card">
+        <div class="grid-2" style="gap:10px">
+          <div>
+            <label class="field-label">类型</label>
+            <select id="usageKind" class="input">
+              <option value="plan">🧭 更新方向</option>
+              <option value="issue">🐞 已知小毛病</option>
+              <option value="note">📝 其他备注</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label">标题</label>
+            <input type="text" id="usageTitle" class="input" placeholder="一句话概括">
+          </div>
+        </div>
+        <label class="field-label" style="margin-top:8px">内容</label>
+        <textarea id="usageContent" class="input" rows="3" placeholder="补充说明、复现步骤或规划细节"></textarea>
+        <button class="btn primary" id="usageAddBtn" style="margin-top:10px">➕ 添加到使用日志</button>
+        <div class="result" id="usageResult"></div>
+      </div>
+      <div id="usageLogList"></div>
+    </div>
+
+    <!-- 报错日志 -->
+    <div class="logs-pane" id="logsPane-error">
+      <div class="card-title-row" style="align-items:center">
+        <div class="hint" style="margin:0">网站运行中的报错将自动显示在此（前端 JS 错误与接口失败，最多保留 500 条）。</div>
+        <button class="btn" id="errorClearBtn">🗑 清空报错日志</button>
+      </div>
+      <div id="errorLogList"></div>
+    </div>
+  </section>
+
   <!-- ============ 仪表盘 ============ -->
   <section id="tab-dashboard" class="tab-page active" data-page-node-id="KzRxvTw5mAmkf2aNoMRYpq">
     <div class="sync-banner" id="syncBanner" style="display:none" data-page-node-id="b1PSdgHAeJ2EcRWOlQpnKS">
@@ -1017,6 +1083,28 @@
             <select id="cfgNotepad" class="input" style="flex:1;min-width:0" data-page-node-id="yFVKabzY8FseQyxkEdYuHf"><option value="" data-page-node-id="h9Q1ynx7abqhwKFA4w98ZY">— 未绑定 —</option></select>
           </div>
           <div class="result" id="notepadResult" data-page-node-id="b9U7rBYvngIASMDQWIqaYo"></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ===== 子版块：登录与安全（v2.8.0） ===== -->
+    <details class="settings-section">
+      <summary>🔐 登录与安全</summary>
+      <div class="settings-section-body">
+        <div class="card" id="authCfgCard">
+          <div class="card-title">🔑 Token 凭证登录 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v2.8.0 · 管理员登录方式）</span></div>
+          <details class="hint-fold"><summary>ℹ️ 说明</summary>
+          <div class="hint">开启后，访问网站需先输入 Token 凭证；登录成功即在本设备长久保持登录（30 天，服务重启后需重新登录）。本机开发默认关闭，无需登录。</div>
+          </details>
+          <label class="check-row"><input type="checkbox" id="cfgAuthEnabled"> 启用 Token 凭证登录</label>
+          <label class="field-label" style="margin-top:8px">Token 凭证 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（留空 = 沿用已保存）</span></label>
+          <input type="password" id="cfgAuthToken" class="input" placeholder="留空 = 沿用已保存的 Token" autocomplete="new-password">
+          <div class="row-gap" style="margin-top:8px">
+            <button class="btn primary" id="saveAuthCfgBtn">💾 保存登录配置</button>
+            <button class="btn" id="clearAuthTokenBtn">🧹 清除已存 Token</button>
+          </div>
+          <div class="result" id="authCfgResult"></div>
+          <div class="hint" style="margin-top:6px">当前状态：<b id="authCfgState">加载中…</b></div>
         </div>
       </div>
     </details>

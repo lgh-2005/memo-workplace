@@ -29,8 +29,99 @@ async function api(path, opts = {}) {
     body: opts.body ? JSON.stringify(opts.body) : undefined,
   });
   const json = await res.json().catch(() => ({}));
+  // v2.8.0：登录失效（401）→ 弹出登录遮罩（登录接口本身的 401 除外）
+  if (res.status === 401 && !/^\/api\/auth\//.test(path)) {
+    showLoginOverlay();
+  }
   if (!res.ok) throw new Error(json.error || `请求失败 (${res.status})`);
   return json;
+}
+
+/* ================= v2.8.0：报错日志自动采集 ================= */
+
+let _errReportQueue = [];
+let _errReportTimer = null;
+/** 前端错误上报到服务端报错日志（去抖动批量提交，失败静默） */
+function reportError(payload) {
+  try {
+    _errReportQueue.push({
+      source: payload.source || 'frontend',
+      level: payload.level || 'error',
+      message: String(payload.message || '').slice(0, 2000),
+      stack: String(payload.stack || '').slice(0, 4000),
+      url: payload.url || location.pathname,
+      method: payload.method || '',
+      status: payload.status || null,
+    });
+    if (_errReportQueue.length > 50) _errReportQueue = _errReportQueue.slice(-50);
+    if (_errReportTimer) return;
+    _errReportTimer = setTimeout(() => {
+      _errReportTimer = null;
+      const batch = _errReportQueue.slice();
+      _errReportQueue = [];
+      for (const item of batch) {
+        try { fetch('/api/error/report', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(item) }); } catch { /* 静默 */ }
+      }
+    }, 800);
+  } catch { /* 静默 */ }
+}
+
+window.addEventListener('error', (e) => {
+  // 资源加载失败（图片等）不记为报错
+  if (e.target && e.target !== window && e.target.tagName) return;
+  reportError({ source: 'frontend', level: 'error', message: e.message, stack: e.error && e.error.stack, url: e.filename || location.pathname });
+});
+window.addEventListener('unhandledrejection', (e) => {
+  const r = e.reason;
+  reportError({ source: 'frontend', level: 'error', message: (r && (r.message || r)) || 'Unhandled promise rejection', stack: r && r.stack });
+});
+
+/* ================= v2.8.0：Token 凭证登录 ================= */
+
+function showLoginOverlay() {
+  const ov = $('#loginOverlay');
+  if (!ov) return;
+  ov.style.display = 'flex';
+  setTimeout(() => { const t = $('#loginToken'); if (t) t.focus(); }, 60);
+}
+
+function hideLoginOverlay() {
+  const ov = $('#loginOverlay');
+  if (ov) ov.style.display = 'none';
+}
+
+async function doLogin() {
+  const input = $('#loginToken');
+  const out = $('#loginResult');
+  const token = input ? input.value : '';
+  if (!token) { if (out) out.textContent = '请输入 Token 凭证'; return; }
+  if (out) out.textContent = '登录中…';
+  try {
+    const r = await api('/api/auth/login', { method: 'POST', body: { token } });
+    if (out) out.textContent = '';
+    if (input) input.value = '';
+    hideLoginOverlay();
+    // 登录成功后刷新当前页数据
+    initApp();
+  } catch (e) {
+    if (out) out.textContent = '❌ ' + e.message;
+  }
+}
+
+/** 启动时校验登录状态：未启用或已登录 → 正常进入；否则显示登录遮罩 */
+async function checkAuth() {
+  try {
+    const s = await api('/api/auth/status');
+    if (s.enabled && !s.authed) { showLoginOverlay(); return false; }
+    return true;
+  } catch { return true; }
+}
+
+function bindLoginUI() {
+  const btn = $('#loginBtn');
+  if (btn) btn.addEventListener('click', doLogin);
+  const input = $('#loginToken');
+  if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); doLogin(); } });
 }
 
 function esc(s) {
@@ -151,6 +242,7 @@ function speakEnglishFrom(text, fallbackWord) {
 $$('.tab').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
 
 function switchTab(name) {
+  if (name !== 'logs') state._prevTab = name;   // v2.8.0：记录日志版块前的页签，便于返回
   $$('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
   $$('.bottom-tab-item').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
   $$('.tab-page').forEach(p => p.classList.toggle('active', p.id === 'tab-' + name));
@@ -161,7 +253,120 @@ function switchTab(name) {
   if (name === 'exam') loadExamList();
   if (name === 'unit') loadUnits();
   if (name === 'settings') { loadConfig(); loadBackupList(); }
+  if (name === 'logs') loadLogs();
   // quiz 页保持进行中的状态，不重置
+}
+
+/* ================= v2.8.0：日志版块（开发日志 / 使用日志 / 报错日志） ================= */
+
+let _logsLoaded = false;
+
+function openLogs() { switchTab('logs'); }
+
+function bindVersionClick() {
+  for (const id of ['openLogsSidebar', 'openLogsMobile']) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', openLogs);
+    }
+  }
+}
+
+function switchLogsPane(kind) {
+  $$('#logsTabs .logs-tab').forEach(b => b.classList.toggle('active', b.dataset.logs === kind));
+  $$('.logs-pane').forEach(p => p.classList.toggle('active', p.id === 'logsPane-' + kind));
+  if (kind === 'error') loadErrorLogs();
+}
+
+async function loadLogs() {
+  _logsLoaded = true;
+  const back = $('#logsBackBtn');
+  if (back && !back._bound) {
+    back._bound = true;
+    back.addEventListener('click', () => switchTab(state._prevTab && state._prevTab !== 'logs' ? state._prevTab : 'dashboard'));
+  }
+  $$('#logsTabs .logs-tab').forEach(b => {
+    if (b._bound) return;
+    b._bound = true;
+    b.addEventListener('click', () => switchLogsPane(b.dataset.logs));
+  });
+  await Promise.all([loadDevLogs(), loadUsageLogs()]);
+}
+
+async function loadDevLogs() {
+  const box = $('#devLogList');
+  if (!box) return;
+  try {
+    const r = await api('/api/logs/dev');
+    const badge = $('#logsVersionBadge');
+    if (badge && r.version) badge.textContent = 'v' + r.version;
+    const list = r.dev || [];
+    if (!list.length) { box.innerHTML = '<div class="hint">暂无开发日志</div>'; return; }
+    box.innerHTML = list.map(v => `
+      <div class="log-entry">
+        <div class="log-entry-head">
+          <span class="log-ver">v${esc(v.version)}</span>
+          <span class="log-title">${esc(v.title || '')}</span>
+          <span class="log-date">${esc(v.date || '')}</span>
+        </div>
+        <ul class="log-items">${(v.items || []).map(it => `<li>${esc(it)}</li>`).join('')}</ul>
+      </div>`).join('');
+  } catch (e) {
+    box.innerHTML = `<div class="hint">加载失败：${esc(e.message)}</div>`;
+  }
+}
+
+const USAGE_KIND_META = { plan: { label: '🧭 更新方向', cls: 'plan' }, issue: { label: '🐞 已知小毛病', cls: 'issue' }, note: { label: '📝 备注', cls: 'note' } };
+
+async function loadUsageLogs() {
+  const box = $('#usageLogList');
+  if (!box) return;
+  try {
+    const r = await api('/api/logs/usage');
+    const list = r.usage || [];
+    if (!list.length) { box.innerHTML = '<div class="hint">暂无使用日志，可在上方添加。</div>'; return; }
+    box.innerHTML = list.map(u => {
+      const meta = USAGE_KIND_META[u.kind] || USAGE_KIND_META.note;
+      return `<div class="log-entry usage-${meta.cls}">
+        <div class="log-entry-head">
+          <span class="log-kind">${meta.label}</span>
+          <span class="log-title">${esc(u.title || '')}</span>
+          <span class="log-date">${fmtBJ(u.ts)}</span>
+          <button class="btn ghost log-del" data-usage-del="${esc(u.id)}" title="删除">🗑</button>
+        </div>
+        ${u.content ? `<div class="log-content">${esc(u.content)}</div>` : ''}
+      </div>`;
+    }).join('');
+    box.querySelectorAll('[data-usage-del]').forEach(btn => btn.addEventListener('click', async () => {
+      try { await api('/api/logs/usage', { method: 'POST', body: { remove: btn.dataset.usageDel } }); loadUsageLogs(); toast('已删除'); }
+      catch (e) { toast('删除失败：' + e.message); }
+    }));
+  } catch (e) {
+    box.innerHTML = `<div class="hint">加载失败：${esc(e.message)}</div>`;
+  }
+}
+
+async function loadErrorLogs() {
+  const box = $('#errorLogList');
+  if (!box) return;
+  try {
+    const r = await api('/api/logs/errors');
+    const list = r.errors || [];
+    if (!list.length) { box.innerHTML = '<div class="hint">✓ 暂无报错记录。</div>'; return; }
+    box.innerHTML = list.map(e => `
+      <div class="log-entry err-${esc(e.level || 'error')}">
+        <div class="log-entry-head">
+          <span class="log-kind">${esc(e.source)}</span>
+          <span class="log-title">${esc(e.message || '(无消息)')}</span>
+          <span class="log-date">${fmtBJ(e.ts)}</span>
+        </div>
+        <div class="log-meta">${esc(e.method || '')} ${esc(e.url || '')} ${e.status ? '· HTTP ' + esc(String(e.status)) : ''}</div>
+        ${e.stack ? `<pre class="log-stack">${esc(e.stack)}</pre>` : ''}
+      </div>`).join('');
+  } catch (e) {
+    box.innerHTML = `<div class="hint">加载失败：${esc(e.message)}</div>`;
+  }
 }
 
 // 快捷入口 / 链接跳转
@@ -1772,6 +1977,17 @@ async function loadConfig() {
     state.storyThemes = Array.isArray(c.storyThemes) ? c.storyThemes : null;   // null = 内置默认
     renderStoryThemesEditor();
     renderStoryThemeRow(state.storyThemes);
+    /* v2.8.0：Token 凭证登录配置回填 */
+    if (c.auth) {
+      const en = $('#cfgAuthEnabled');
+      if (en) en.checked = !!c.auth.enabled;
+      const tok = $('#cfgAuthToken');
+      if (tok) tok.placeholder = c.auth.hasToken ? '已保存 ✓（留空 = 沿用）' : '尚未设置，请填写 Token 凭证';
+      const st = $('#authCfgState');
+      if (st) st.textContent = c.auth.enabled
+        ? (c.auth.hasToken ? '✅ 已开启（访问需登录）' : '⚠️ 已开启但未设置 Token')
+        : '🔓 未开启（无需登录）';
+    }
     renderProviders();
     refreshVisionUI();   // v2.3.4：默认服务商视觉能力变化后同步图片按钮显隐
   } catch (e) { console.error(e); }
@@ -2067,6 +2283,42 @@ $('#cfgMock').addEventListener('change', async () => {
   catch (e) { alert(e.message); }
 });
 /* v1.1.7：保存 AI 审核专用服务商 */
+/* v2.8.0：保存 Token 凭证登录配置 */
+if ($('#saveAuthCfgBtn')) $('#saveAuthCfgBtn').addEventListener('click', async () => {
+  const btn = $('#saveAuthCfgBtn');
+  const out = $('#authCfgResult');
+  const prev = btn.textContent;
+  const body = { enabled: $('#cfgAuthEnabled').checked };
+  const tok = $('#cfgAuthToken').value.trim();
+  if (tok) body.token = tok;
+  try {
+    btn.disabled = true;
+    await api('/api/config', { method: 'POST', body: { auth: body } });
+    if (out) { out.textContent = '✅ 登录配置已保存'; out.className = 'result ok'; }
+    if (tok) $('#cfgAuthToken').value = '';
+    btn.textContent = '✅ 已保存';
+    loadConfig();
+    setTimeout(() => { btn.textContent = prev; }, 2000);
+  } catch (e) {
+    if (out) { out.textContent = '❌ ' + e.message; out.className = 'result err'; }
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+/* v2.8.0：清除已存 Token 凭证 */
+if ($('#clearAuthTokenBtn')) $('#clearAuthTokenBtn').addEventListener('click', async () => {
+  const out = $('#authCfgResult');
+  if (!confirm('确定清除已保存的 Token 凭证？清除后需重新设置才能开启登录。')) return;
+  try {
+    await api('/api/config', { method: 'POST', body: { auth: { enabled: false, clearToken: true } } });
+    if (out) { out.textContent = '🧹 已清除 Token（登录已关闭）'; out.className = 'result ok'; }
+    loadConfig();
+  } catch (e) {
+    if (out) { out.textContent = '❌ ' + e.message; out.className = 'result err'; }
+  }
+});
+
 $('#saveReviewCfgBtn').addEventListener('click', async () => {
   const btn = $('#saveReviewCfgBtn');
   const prev = btn.textContent;
@@ -6147,7 +6399,8 @@ if ($('#transferStartBtn')) $('#transferStartBtn').addEventListener('click', sta
 
 /* ---------------- 启动 ---------------- */
 
-(async function init() {
+/** v2.8.0：应用初始化/刷新（登录成功后也会再次调用） */
+async function initApp() {
   applyTheme(localStorage.getItem('wb-theme') || 'light');
   applyStyle(localStorage.getItem('wb-style') || '');
   // 番茄钟初始化：恢复上次进度（若页面关闭期间已到点，计入完成）
@@ -6161,7 +6414,7 @@ if ($('#transferStartBtn')) $('#transferStartBtn').addEventListener('click', sta
     // v2.3.4：启动拉取服务商档案（含视觉能力），控制学习页图片按钮显隐
     state.providers = cfg.llm?.providers || [];
     state.activeProvId = cfg.llm?.activeId || '';
-  } catch { /* 服务未就绪时静默 */ }
+  } catch { /* 服务未就绪或未登录时静默 */ }
   refreshVisionUI();
   try {
     const status = await api('/api/status');
@@ -6169,8 +6422,38 @@ if ($('#transferStartBtn')) $('#transferStartBtn').addEventListener('click', sta
     if (!status.hasToken || !status.llm.configured) {
       $('#setupHint').style.display = 'block';
     }
-  } catch { /* 服务未就绪时静默 */ }
+  } catch { /* 服务未就绪或未登录时静默 */ }
   loadDashboard();
+}
+
+(async function init() {
+  bindLoginUI();
+  bindVersionClick();
+  // v2.8.0：日志版块事件
+  const usageAdd = $('#usageAddBtn');
+  if (usageAdd) usageAdd.addEventListener('click', async () => {
+    const kind = $('#usageKind') ? $('#usageKind').value : 'note';
+    const title = $('#usageTitle') ? $('#usageTitle').value.trim() : '';
+    const content = $('#usageContent') ? $('#usageContent').value.trim() : '';
+    const out = $('#usageResult');
+    if (!title && !content) { if (out) out.textContent = '请填写标题或内容'; return; }
+    try {
+      await api('/api/logs/usage', { method: 'POST', body: { add: { kind, title, content } } });
+      if ($('#usageTitle')) $('#usageTitle').value = '';
+      if ($('#usageContent')) $('#usageContent').value = '';
+      if (out) out.textContent = '✓ 已添加';
+      loadUsageLogs();
+    } catch (e) { if (out) out.textContent = '❌ ' + e.message; }
+  });
+  const errClear = $('#errorClearBtn');
+  if (errClear) errClear.addEventListener('click', async () => {
+    try { await api('/api/logs/errors', { method: 'DELETE' }); loadErrorLogs(); toast('报错日志已清空'); }
+    catch (e) { toast('清空失败：' + e.message); }
+  });
+  // v2.8.0：先校验登录状态，未登录则只显示登录遮罩
+  const ok = await checkAuth();
+  if (!ok) return;
+  await initApp();
 })();
 
 /* ============ v1.1.9c：禅意专注视界 + 视线探照灯 + 原生白噪音心流场 ============ */

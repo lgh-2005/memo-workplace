@@ -37,6 +37,9 @@ const crypto = require('crypto');
 const { spawn, spawnSync } = require('child_process');
 
 const ROOT = __dirname;
+const APP_VERSION = (() => {
+  try { return require(path.join(ROOT, 'package.json')).version || ''; } catch { return ''; }
+})();
 const DATA_DIR = path.join(ROOT, 'data');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const IMAGES_DIR = path.join(DATA_DIR, 'images');   // v1.0.6：AI 生图落盘目录
@@ -47,6 +50,10 @@ const CORPUS_FILE = path.join(ROOT, 'corpus', 'records.jsonl');
 const EXTERNAL_CORPUS_DEFAULT_DIR = path.join(ROOT, 'corpus', 'external', 'current');
 const CONFIG_FILE = path.join(DATA_DIR, 'config.json');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
+// v2.8.0：日志版块——开发日志 / 使用日志（data/logs.json，人工维护）+ 报错日志（data/error_log.json，自动采集）
+const LOGS_FILE = path.join(DATA_DIR, 'logs.json');
+const ERROR_LOG_FILE = path.join(DATA_DIR, 'error_log.json');
+const MAX_ERROR_LOGS = 500;   // 报错日志上限（超出裁掉最旧）
 const LEARNING_ATTEMPTS_FILE = path.join(DATA_DIR, 'learning_attempts.json');
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
 // 本机默认只监听 127.0.0.1；云服务器部署时设置 HOST=0.0.0.0（建议配合 nginx/防火墙）
@@ -115,6 +122,7 @@ let config = loadJSON(CONFIG_FILE, {
   webSearch: { url: '', apiKey: '' },   // v1.0.7：网络搜索服务（通用 url + 密钥）
   dict: { learnersKey: '', collegiateKey: '' },   // v1.0.8：韦氏词典双 key（learners=学习者词典 / collegiate=大学版）
   mineru: { apiKey: '', mock: false },   // v1.1.4：MinerU 精准解析 API（扫描件 PDF -> Markdown，mineru.net）
+  auth: { enabled: false, token: '' },   // v2.8.0：Token 凭证登录（开发者登录方式；关闭时无需登录）
 });
 // v2.1.0：DIY 模型提示词自定义注册表配置补齐
 if (!config.diyPrompts || typeof config.diyPrompts !== 'object') config.diyPrompts = {};
@@ -142,6 +150,134 @@ if (config.storyThemes !== undefined && !Array.isArray(config.storyThemes)) conf
 // v2.0.0：外刊发布源独立于手工语料和真题库；留空使用 corpus/external/current/
 if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '', pythonPath: '', externalDir: '' };
 if (config.kb.externalDir === undefined) config.kb.externalDir = '';
+// v2.8.0：Token 凭证登录配置缺省补齐（enabled=false 时不校验）
+if (!config.auth || typeof config.auth !== 'object') config.auth = { enabled: false, token: '' };
+if (typeof config.auth.enabled !== 'boolean') config.auth.enabled = false;
+if (typeof config.auth.token !== 'string') config.auth.token = '';
+
+/* v2.8.0：Token 凭证登录——会话 cookie 表（仅内存，重启即失效，强制重新登录） */
+const AUTH_COOKIE = 'wb_session';
+const authSessions = new Map();          // sessionId -> { createdAt, lastSeen }
+const AUTH_SESSION_TTL_MS = 30 * 86400000;   // 会话 30 天（该设备默认保持登录）
+
+/** 恒定时间字符串比较，避免时序侧信道 */
+function safeEqual(a, b) {
+  const ba = Buffer.from(String(a || ''), 'utf8');
+  const bb = Buffer.from(String(b || ''), 'utf8');
+  if (ba.length !== bb.length) return false;
+  try { return crypto.timingSafeEqual(ba, bb); } catch { return false; }
+}
+
+/** 解析请求 Cookie 头 -> 对象 */
+function parseCookies(req) {
+  const out = {};
+  const raw = req.headers.cookie || '';
+  for (const part of raw.split(';')) {
+    const i = part.indexOf('=');
+    if (i < 0) continue;
+    const k = part.slice(0, i).trim();
+    const v = part.slice(i + 1).trim();
+    if (k) out[k] = decodeURIComponent(v);
+  }
+  return out;
+}
+
+/** 当前请求是否已通过 Token 凭证登录 */
+function isAuthed(req) {
+  if (!config.auth || !config.auth.enabled) return true;   // 未启用登录 = 全部放行
+  if (!config.auth.token) return true;                      // 启用但未设 Token（防自锁）→ 放行
+  const sid = parseCookies(req)[AUTH_COOKIE];
+  if (!sid) return false;
+  const s = authSessions.get(sid);
+  if (!s) return false;
+  if (Date.now() - s.lastSeen > AUTH_SESSION_TTL_MS) { authSessions.delete(sid); return false; }
+  s.lastSeen = Date.now();
+  return true;
+}
+
+/** 登录成功后签发会话并下发 httpOnly Cookie（该设备后续请求自动携带，默认登录） */
+function issueAuthCookie(res) {
+  const sid = crypto.randomBytes(24).toString('hex');
+  authSessions.set(sid, { createdAt: Date.now(), lastSeen: Date.now() });
+  const secure = String(process.env.HTTPS || '') === '1' ? '; Secure' : '';
+  res.setHeader('Set-Cookie',
+    `${AUTH_COOKIE}=${sid}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${Math.floor(AUTH_SESSION_TTL_MS / 1000)}${secure}`);
+  return sid;
+}
+
+function clearAuthCookie(res) {
+  res.setHeader('Set-Cookie', `${AUTH_COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`);
+}
+
+/* v2.8.0：报错日志（自动采集前端错误与 API 失败） */
+function loadErrorLog() {
+  const raw = loadJSON(ERROR_LOG_FILE, { schemaVersion: 1, errors: [] });
+  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.errors)) return { schemaVersion: 1, errors: [] };
+  return { schemaVersion: 1, errors: raw.errors };
+}
+function saveErrorLog(store) {
+  saveJSON(ERROR_LOG_FILE, { schemaVersion: 1, errors: Array.isArray(store.errors) ? store.errors : [] });
+}
+/** 追加一条报错记录（上限 500，裁掉最旧） */
+function appendErrorLog(entry) {
+  try {
+    const store = loadErrorLog();
+    store.errors.unshift({
+      id: crypto.randomUUID(),
+      ts: new Date().toISOString(),
+      source: String(entry.source || 'unknown').slice(0, 40),   // frontend / api / server
+      level: String(entry.level || 'error').slice(0, 20),        // error / warn
+      message: String(entry.message || '').slice(0, 2000),
+      stack: String(entry.stack || '').slice(0, 4000),
+      url: String(entry.url || '').slice(0, 500),
+      method: String(entry.method || '').slice(0, 12),
+      status: Number.isFinite(Number(entry.status)) ? Number(entry.status) : null,
+      ua: String(entry.ua || '').slice(0, 300),
+    });
+    if (store.errors.length > MAX_ERROR_LOGS) store.errors = store.errors.slice(0, MAX_ERROR_LOGS);
+    saveErrorLog(store);
+  } catch { /* 日志写入失败不得影响主流程 */ }
+}
+
+/* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
+const DEV_LOG = [
+  {
+    version: '2.8.0',
+    date: '2026-09-22',
+    title: 'Token 凭证登录 + 日志版块',
+    items: [
+      '新增 Token 凭证登录：开发者以单一管理员 Token 登录，登录后该设备默认保持登录（httpOnly 会话 Cookie，30 天有效）',
+      '登录开关与 Token 可在「设置 → 登录与安全」中由管理员随时更改；关闭时无需登录',
+      '点击左上角版本号可进入「日志版块」',
+      '日志版块含：开发日志（版本更新内容）、使用日志（更新方向与已知小毛病）、报错日志（自动采集前端错误与 API 失败）',
+    ],
+  },
+  {
+    version: '2.7.2.d',
+    date: '2026-09-21',
+    title: '词汇精练词表无法滚动修复',
+    items: [
+      '修复宽屏/平板/横屏/桌面下「AI 学习 → 词汇精练」词表无法拖动取词的布局回归（折叠容器切断 flex 链）',
+    ],
+  },
+  {
+    version: '2.7.2',
+    date: '2026-09-21',
+    title: '移动端划词助手',
+    items: [
+      '移动端屏蔽系统自带复制/全选菜单，改为长按取词 + 浮动气泡',
+      '支持自由拉伸选区、跨行多段高亮、整句精读',
+    ],
+  },
+];
+function loadUsageLog() {
+  const raw = loadJSON(LOGS_FILE, { schemaVersion: 1, usage: [] });
+  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.usage)) return { schemaVersion: 1, usage: [] };
+  return { schemaVersion: 1, usage: raw.usage };
+}
+function saveUsageLog(store) {
+  saveJSON(LOGS_FILE, { schemaVersion: 1, usage: Array.isArray(store.usage) ? store.usage : [] });
+}
 
 // v1.0.2 迁移：旧的单服务商结构自动升级为多服务商列表（老配置无痛升级）
 if (!Array.isArray(config.llm?.providers)) {
@@ -3626,6 +3762,109 @@ const server = http.createServer(async (req, res) => {
   try {
     /* ---- API ---- */
     if (p.startsWith('/api/')) {
+      /* v2.8.0：Token 凭证登录闸门——白名单外的 API 均需已登录 */
+      const AUTH_WHITELIST = new Set(['/api/auth/login', '/api/auth/status', '/api/error/report']);
+      if (!AUTH_WHITELIST.has(p) && !isAuthed(req)) {
+        return sendJSON(res, 401, { error: '未登录或登录已过期，请输入 Token 凭证', code: 'UNAUTHORIZED' });
+      }
+
+      /* v2.8.0：Token 凭证登录 */
+      if (p === '/api/auth/status' && req.method === 'GET') {
+        return sendJSON(res, 200, {
+          enabled: !!(config.auth && config.auth.enabled),
+          hasToken: !!(config.auth && config.auth.token),
+          authed: isAuthed(req),
+        });
+      }
+      if (p === '/api/auth/login' && req.method === 'POST') {
+        const body = await readBody(req);
+        const token = String(body.token || '');
+        if (!config.auth || !config.auth.enabled) {
+          return sendJSON(res, 200, { ok: true, enabled: false, msg: '登录未启用，直接进入' });
+        }
+        if (!config.auth.token) {
+          return sendJSON(res, 400, { error: '服务端尚未设置 Token，请先到「设置 → 登录与安全」配置', code: 'NO_AUTH_TOKEN' });
+        }
+        if (!safeEqual(token, config.auth.token)) {
+          return sendJSON(res, 401, { error: 'Token 凭证不正确', code: 'BAD_CREDENTIAL' });
+        }
+        issueAuthCookie(res);
+        return sendJSON(res, 200, { ok: true, enabled: true });
+      }
+      if (p === '/api/auth/logout' && req.method === 'POST') {
+        const sid = parseCookies(req)[AUTH_COOKIE];
+        if (sid) authSessions.delete(sid);
+        clearAuthCookie(res);
+        return sendJSON(res, 200, { ok: true });
+      }
+
+      /* v2.8.0：报错日志采集（前端错误 / API 失败自动上报） */
+      if (p === '/api/error/report' && req.method === 'POST') {
+        const body = await readBody(req);
+        appendErrorLog({
+          source: body.source || 'frontend',
+          level: body.level || 'error',
+          message: body.message,
+          stack: body.stack,
+          url: body.url,
+          method: body.method,
+          status: body.status,
+          ua: req.headers['user-agent'] || '',
+        });
+        return sendJSON(res, 200, { ok: true });
+      }
+
+      /* v2.8.0：日志版块——开发日志 */
+      if (p === '/api/logs/dev' && req.method === 'GET') {
+        return sendJSON(res, 200, { ok: true, version: APP_VERSION, dev: DEV_LOG });
+      }
+      /* v2.8.0：日志版块——使用日志（人工维护：更新方向 / 已知小毛病） */
+      if (p === '/api/logs/usage' && req.method === 'GET') {
+        const store = loadUsageLog();
+        return sendJSON(res, 200, { ok: true, usage: store.usage });
+      }
+      if (p === '/api/logs/usage' && req.method === 'POST') {
+        const body = await readBody(req);
+        const store = loadUsageLog();
+        // 新增一条使用日志
+        if (body.add && typeof body.add === 'object') {
+          const entry = {
+            id: crypto.randomUUID(),
+            ts: new Date().toISOString(),
+            kind: String(body.add.kind || 'note').slice(0, 20),     // plan=更新方向 / issue=小毛病 / note=备注
+            title: String(body.add.title || '').slice(0, 200),
+            content: String(body.add.content || '').slice(0, 4000),
+          };
+          if (!entry.title && !entry.content) return sendJSON(res, 400, { error: '标题或内容不能为空' });
+          store.usage.unshift(entry);
+        }
+        // 删除一条使用日志
+        if (body.remove) {
+          store.usage = store.usage.filter(u => u.id !== String(body.remove));
+        }
+        // 整体覆盖（可选）
+        if (Array.isArray(body.usage)) {
+          store.usage = body.usage.slice(0, 500).map(u => ({
+            id: String(u.id || crypto.randomUUID()),
+            ts: String(u.ts || new Date().toISOString()),
+            kind: String(u.kind || 'note').slice(0, 20),
+            title: String(u.title || '').slice(0, 200),
+            content: String(u.content || '').slice(0, 4000),
+          }));
+        }
+        saveUsageLog(store);
+        return sendJSON(res, 200, { ok: true, usage: store.usage });
+      }
+      /* v2.8.0：日志版块——报错日志（自动采集） */
+      if (p === '/api/logs/errors' && req.method === 'GET') {
+        const store = loadErrorLog();
+        return sendJSON(res, 200, { ok: true, total: store.errors.length, errors: store.errors.slice(0, 300) });
+      }
+      if (p === '/api/logs/errors' && req.method === 'DELETE') {
+        saveErrorLog({ schemaVersion: 1, errors: [] });
+        return sendJSON(res, 200, { ok: true });
+      }
+
       // 状态
       if (p === '/api/status' && req.method === 'GET') {
         return sendJSON(res, 200, {
@@ -3692,6 +3931,10 @@ const server = http.createServer(async (req, res) => {
           mineru: {
             hasKey: !!config.mineru.apiKey,
             mock: !!config.mineru.mock,
+          },
+          auth: {
+            enabled: !!(config.auth && config.auth.enabled),
+            hasToken: !!(config.auth && config.auth.token),
           },
           review: {
             providerId: (config.review && config.review.providerId) || '',
@@ -3856,6 +4099,19 @@ const server = http.createServer(async (req, res) => {
           if (!config.mineru || typeof config.mineru !== 'object') config.mineru = { apiKey: '', mock: false };
           if (typeof body.mineru.apiKey === 'string' && body.mineru.apiKey.trim()) config.mineru.apiKey = body.mineru.apiKey.trim();
           if (body.mineru.mock != null) config.mineru.mock = !!body.mineru.mock;
+        }
+        // v2.8.0：Token 凭证登录配置（enabled 开关；token 留空 = 沿用已存，显式空字符串清除）
+        if (body.auth && typeof body.auth === 'object') {
+          if (!config.auth || typeof config.auth !== 'object') config.auth = { enabled: false, token: '' };
+          if (body.auth.enabled !== undefined) config.auth.enabled = !!body.auth.enabled;
+          if (typeof body.auth.token === 'string' && body.auth.token.trim()) config.auth.token = body.auth.token.trim();
+          // 显式清除 token（clearToken=true 时）
+          if (body.auth.clearToken === true) config.auth.token = '';
+          // 开启校验但无 token = 自锁风险，拒绝
+          if (config.auth.enabled && !config.auth.token) {
+            config.auth.enabled = false;
+            return sendJSON(res, 400, { error: '开启登录前请先设置 Token 凭证', code: 'NO_AUTH_TOKEN' });
+          }
         }
         // v1.1.7：AI 审核专用服务商配置持久化
         if (body.review && typeof body.review === 'object') {
@@ -6083,7 +6339,12 @@ CRITICAL TRANSCRIPTION RULES:
         // v1.1.3：请求体超限 = 413，并提示 nginx 反代需同步放宽 client_max_body_size
         return sendJSON(res, 413, { error: err.message + '（若经 nginx 反代访问，还需放宽 client_max_body_size）', code: 'BODY_TOO_LARGE' });
       }
-      return sendJSON(res, ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'KB_IMPORT', 'NO_MINERU'].includes(err.code) ? 400 : 500, { error: err.message, code: err.code });
+      const code = ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'KB_IMPORT', 'NO_MINERU'].includes(err.code) ? 400 : 500;
+      // v2.8.0：服务端 500 异常自动落入报错日志（前端错误由前端上报）
+      if (code === 500) {
+        appendErrorLog({ source: 'server', level: 'error', message: err.message, stack: err.stack, url: p, method: req.method, status: 500 });
+      }
+      return sendJSON(res, code, { error: err.message, code: err.code });
     }
     res.writeHead(500); res.end('Server Error');
   }

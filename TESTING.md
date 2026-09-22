@@ -20,7 +20,7 @@
 | `data/answers.json` | 真题标准答案（权威来源，仅人工录入） |
 | `data/learning_attempts.json` | 学习流水（`schemaVersion:1`，上限 20000，本地缺省不存在） |
 
-## 3. 脚本清单（27 套 · 全部预期退出码 `0`）
+## 3. 脚本清单（37 套 · 全部预期退出码 `0`）
 
 ### 3.1 后端套件（14）
 
@@ -92,9 +92,16 @@
 | 34 | `.workbuddy/test_v272c_drag_ui.js` | 16 | 触摸端自由拉伸选区（浏览器，触摸上下文）：长按后出现 `.sel-learn-handle` start/end 端点手柄、拖拽 end 向后扩词、拖拽 start 越界回退、拉成整句判 `sentence`、折行选区 `getClientRects`>1 对应多段高亮、收起时手柄/高亮一并清除、控制台 0 错误 |
 | 35 | `.workbuddy/test_v272d_wordlist_scroll.js` | 20 | 词汇精练词表滚动修复（浏览器，触摸上下文 × 4 视口 390×844/844×390/768×1024/1280×800）：`.card-collapse-body` 参与 flex 纵向布局后 `#wordList` 恢复可滚动（`clientHeight < scrollHeight` 且可见高度 > 0）、真实触摸上拖 `scrollTop` 增大、控制台 0 错误。修复前在 >700px 宽视口 6 断言必失败（已反向验证） |
 
-> 合计 **35** 套、断言总数 **718**（16 后端 398 + 19 浏览器 304 + 1 线上冒烟 16）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.8 v2.8.0 增量套件（2）
 
-> **说明**：`english-workbench/.workbuddy/` 目录下共 49 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动）。上表 35 套为与「16 后端 + 19 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 36 | `.workbuddy/test_v280_auth.js` | 47 | Token 凭证登录 + 日志版块（后端）：未登录受保护 API 返回 401（`UNAUTHORIZED`）、白名单（auth/login·auth/status·error/report）、错误 Token 拒绝且不签发 Cookie、正确 Token 签发 `httpOnly; SameSite=Lax` 会话 Cookie、带会话可访问、报错日志采集/读取/清空、使用日志增删与空内容拒绝、开发日志随版本（version=2.8.0）、登出后会话失效、管理员改 Token 后旧失效新可用、清除 Token 后关闭登录、未启用时全部放行、开启却清空 Token 自锁保护（400 `NO_AUTH_TOKEN`）、真实数据（db/config/answers）哈希不变 |
+| 37 | `.workbuddy/test_v280_ui.js` | 22 | 登录与日志版块（浏览器）：未登录显示登录遮罩、错误 Token 提示且遮罩保留、正确 Token 进入并刷新后仍登录、点击版本号进日志版块、开发日志渲染（含 v2.8.0）、使用日志新增与类型标签渲染、报错日志注入与清空、设置页「登录与安全」状态与开关、390px 日志版块无横向溢出、控制台 0 错误且 401 仅来自故意的错误登录 |
+
+> 合计 **37** 套（18 后端 + 18 浏览器 + 1 线上冒烟），断言总数 **787+**。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+
+> **说明**：`english-workbench/.workbuddy/` 目录下共 51 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块）。上表 37 套为与「17 后端 + 20 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
 
 ## 4. 运行顺序（建议）
 
@@ -118,6 +125,7 @@ node .workbuddy/test_v228_report.js
 node .workbuddy/test_v263_answers_verify.js
 node .workbuddy/test_v270_track.js
 node .workbuddy/test_v271_cet6.js
+node .workbuddy/test_v280_auth.js
 node .workbuddy/test_v221_playwright.js
 node .workbuddy/test_v222_playwright.js
 node .workbuddy/test_v223_playwright.js
@@ -132,6 +140,7 @@ node .workbuddy/test_v228_report_ui.js
 node .workbuddy/test_v228_ui_contract.js
 node .workbuddy/test_v270_track_ui.js
 node .workbuddy/test_v271_cet6_ui.js
+node .workbuddy/test_v280_ui.js
 ```
 
 线上只读冒烟（需本机 `Desktop/password.txt`；Basic Auth 用户 `贾忖`）：
@@ -179,7 +188,7 @@ v2.2.8 以来的后续版本持续扩充 `.workbuddy/` 套件（`test_v233_selec
 ## 6. 当前发布状态（截至本文件提交）
 
 - ✅ 本地 / Gitee `master` / tag `v2.2.8` / ECS `/opt/workbench`：产品文件与 tag `v2.2.8`（`0705689`）逐文件一致；`workbench.service` `active`。
-- ✅ 27 套件全部退出码 `0`，无残留 `server.js` 子进程，真实 `data/` 三文件哈希不变。
+- ✅ 37 套件全部退出码 `0`（v2.8.0 基线口径：17 后端 + 20 浏览器 + 1 线上冒烟），无残留 `server.js` 子进程，真实 `data/` 三文件哈希不变。
 - ✅ 线上只读冒烟通过（canonical 入口 = ECS 直连），含**静态资源三方哈希一致性**：`index.html`/`app.js`/`style.css` 的「线上服务 = tag `v2.2.8` = 本地工作树」SHA-256 按 LF 归一后**完全相等**。
 - ✅ tag `v2.2.8` 已推送 Gitee（附注 tag，peeled `0705689`）。
 - ✅ **Gitee Release `v2.2.8` 已创建**（标题「v2.2.8 学习诊断闭环稳定性收口」，target `0705689`）。
