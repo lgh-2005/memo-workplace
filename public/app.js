@@ -4669,29 +4669,78 @@ function selLearnTitleOf(root) {
   return active ? ('工作台 · ' + active.textContent.trim().slice(0, 60)) : '';
 }
 
-/* v2.7.2.a：触摸端原生选择已禁用，用自绘高亮框给出「划线」视觉反馈 */
-let selLearnHl = null;
-function selLearnShowHighlight(rect) {
-  if (!rect || (!rect.width && !rect.height)) return;
-  if (!selLearnHl) {
-    selLearnHl = document.createElement('div');
-    selLearnHl.className = 'sel-learn-hl';
-    document.body.appendChild(selLearnHl);
+/* v2.7.2.a：触摸端原生选择已禁用，用自绘高亮框给出「划线」视觉反馈（支持跨行多段矩形） */
+let selLearnHlNodes = [];
+function selLearnShowHighlight(rects) {
+  const list = (Array.isArray(rects) ? rects : [rects]).filter(r => r && (r.width || r.height));
+  while (selLearnHlNodes.length < list.length) {
+    const d = document.createElement('div');
+    d.className = 'sel-learn-hl';
+    document.body.appendChild(d);
+    selLearnHlNodes.push(d);
   }
   const pad = 2;
-  selLearnHl.style.left = Math.round(rect.left - pad) + 'px';
-  selLearnHl.style.top = Math.round(rect.top - pad) + 'px';
-  selLearnHl.style.width = Math.round(rect.width + pad * 2) + 'px';
-  selLearnHl.style.height = Math.round(rect.height + pad * 2) + 'px';
-  selLearnHl.style.display = 'block';
+  selLearnHlNodes.forEach((d, i) => {
+    const r = list[i];
+    if (!r) { d.style.display = 'none'; return; }
+    d.style.left = Math.round(r.left - pad) + 'px';
+    d.style.top = Math.round(r.top - pad) + 'px';
+    d.style.width = Math.round(r.width + pad * 2) + 'px';
+    d.style.height = Math.round(r.height + pad * 2) + 'px';
+    d.style.display = 'block';
+  });
 }
 function selLearnRemoveHighlight() {
-  if (selLearnHl) { selLearnHl.remove(); selLearnHl = null; }
+  selLearnHlNodes.forEach(d => d.remove());
+  selLearnHlNodes = [];
+}
+
+/* v2.7.2.c：触摸端「可拖拽端点手柄」——原生选择手柄已被禁用，自绘两只手柄实现自由拉伸选区 */
+let selLearnHandleStart = null, selLearnHandleEnd = null, selLearnDragIdx = null;
+function selLearnEnsureHandles() {
+  if (selLearnHandleStart && selLearnHandleEnd) return;
+  const mk = () => {
+    const h = document.createElement('div');
+    h.className = 'sel-learn-handle';
+    h.innerHTML = '<span class="sel-learn-handle-knob"></span>';
+    document.body.appendChild(h);
+    return h;
+  };
+  selLearnHandleStart = mk();
+  selLearnHandleEnd = mk();
+  selLearnHandleStart.classList.add('start');
+  selLearnHandleEnd.classList.add('end');
+  selLearnHandleStart.dataset.idx = '0';
+  selLearnHandleEnd.dataset.idx = '1';
+  [selLearnHandleStart, selLearnHandleEnd].forEach(h => {
+    h.addEventListener('touchstart', selLearnHandleTouchStart, { passive: false });
+    h.addEventListener('touchmove', selLearnHandleTouchMove, { passive: false });
+    h.addEventListener('touchend', selLearnHandleTouchEnd, { passive: false });
+    h.addEventListener('touchcancel', selLearnHandleTouchEnd, { passive: false });
+    h.addEventListener('mousedown', e => e.preventDefault());
+  });
+}
+function selLearnRemoveHandles() {
+  [selLearnHandleStart, selLearnHandleEnd].forEach(h => { if (h) h.remove(); });
+  selLearnHandleStart = null;
+  selLearnHandleEnd = null;
+  selLearnDragIdx = null;
+}
+function selLearnPositionHandle(el, rect, isStart) {
+  if (!el) return;
+  if (!rect) { el.style.display = 'none'; return; }
+  const half = 11;
+  const x = isStart ? rect.left : rect.right;
+  const y = rect.bottom;
+  el.style.display = 'block';
+  el.style.left = Math.round(x - half) + 'px';
+  el.style.top = Math.round(y - half) + 'px';
 }
 
 function selLearnRemoveBtn() {
   if (selLearnBtn) { selLearnBtn.remove(); selLearnBtn = null; }
   selLearnRemoveHighlight();
+  selLearnRemoveHandles();
 }
 
 function selLearnCloseCard() {
@@ -4699,7 +4748,7 @@ function selLearnCloseCard() {
   selLearnReqSeq++;
 }
 
-function selLearnShowBtn(rect) {
+function selLearnShowBtn(rect, rects) {
   const isMobile = window.innerWidth <= 700;
 
   // 若气泡已存在，直接复用并更新定位，避免频繁销毁重建导致选区丢失和移动端闪烁
@@ -4785,7 +4834,8 @@ function selLearnShowBtn(rect) {
   // 「整句」按钮仅在触摸端且当前取词为单词/词组时显示
   const expandBtn = bubble.querySelector('[data-act="expand"]');
   if (expandBtn) {
-    const canExpand = SEL_TOUCH_DEVICE && selLearnState && selLearnState.kind !== 'sentence' && selLearnState.at;
+    const canExpand = SEL_TOUCH_DEVICE && selLearnState && selLearnState.kind !== 'sentence' &&
+      selLearnState.anchor && selLearnState.focus && selLearnState.anchor.node === selLearnState.focus.node;
     expandBtn.style.display = canExpand ? '' : 'none';
   }
 
@@ -4809,8 +4859,15 @@ function selLearnShowBtn(rect) {
   bubble.style.left = Math.round(x) + 'px';
   bubble.style.top = Math.round(y) + 'px';
 
-  // 触摸端：原生选择已禁用，自绘高亮框提供「划线」视觉反馈
-  if (SEL_TOUCH_DEVICE) selLearnShowHighlight(rect);
+  // 触摸端：原生选择已禁用，自绘高亮框 + 可拖拽端点手柄提供「划线/拉伸」能力
+  if (SEL_TOUCH_DEVICE) {
+    const list = (rects && rects.length) ? rects : [rect];
+    selLearnShowHighlight(list);
+    selLearnEnsureHandles();
+    const first = list[0], last = list[list.length - 1];
+    selLearnPositionHandle(selLearnHandleStart, first, true);
+    selLearnPositionHandle(selLearnHandleEnd, last, false);
+  }
 }
 
 /** v2.3.3：以指定模式请求解析结果（并发保护：只认最后一次请求） */
@@ -4931,6 +4988,7 @@ let selLearnSuppressNextClick = false;
 document.addEventListener('click', e => {
   if (e.target === selLearnBtn || selLearnBtn?.contains(e.target)) return;
   if (e.target === selLearnCard || selLearnCard?.contains(e.target)) return;
+  if (e.target.closest && e.target.closest('.sel-learn-handle')) return;
   if (selLearnSuppressNextClick) { selLearnSuppressNextClick = false; return; }
   if (selLearnBtn) selLearnRemoveBtn();
 }, true);
@@ -5013,25 +5071,101 @@ function selLearnTextNodeAt(clientX, clientY) {
   return null;
 }
 
-/** 触摸长按取词：判定触点下的单词/中文短语，构建选区矩形并升起浮动气泡 */
-function selLearnPickAtPoint(clientX, clientY) {
-  const caret = selLearnCaretAt(clientX, clientY);
-  let node = caret && caret.startContainer;
-  let offsetHint = caret ? caret.startOffset : 0;
-  if (!node || node.nodeType !== 3) {
-    // 兜底：真机可能返回元素节点，改用 elementFromPoint 取最近文本节点
-    const fb = selLearnTextNodeAt(clientX, clientY);
-    if (!fb) return false;
-    node = fb.node;
-    offsetHint = fb.offset;
+/** v2.7.2.c：取触点处的 {node, offset}（caret 命中优先，真机返回元素节点时按水平距离估算）
+    自绘手柄/高亮/气泡浮在文字之上会挡住命中测试，故测量期间临时让其 pointer-events:none。 */
+function selLearnPointAt(clientX, clientY) {
+  const overlays = [selLearnHandleStart, selLearnHandleEnd, selLearnBtn, ...selLearnHlNodes].filter(Boolean);
+  const saved = overlays.map(el => el.style.pointerEvents);
+  overlays.forEach(el => { el.style.pointerEvents = 'none'; });
+  let caret = null, fb = null;
+  try {
+    caret = selLearnCaretAt(clientX, clientY);
+    if (!(caret && caret.startContainer && caret.startContainer.nodeType === 3)) {
+      fb = selLearnTextNodeAt(clientX, clientY);
+    }
+  } finally {
+    overlays.forEach((el, i) => { el.style.pointerEvents = saved[i]; });
   }
+  if (caret && caret.startContainer && caret.startContainer.nodeType === 3) {
+    return { node: caret.startContainer, offset: caret.startOffset };
+  }
+  if (!fb) return null;
+  const n = fb.node, t = n.nodeValue || '';
+  let best = 0, bestDx = Infinity;
+  try {
+    for (let i = 0; i <= t.length; i++) {
+      const r = document.createRange();
+      r.setStart(n, i); r.setEnd(n, Math.min(t.length, i + 1));
+      const rc = r.getBoundingClientRect();
+      if (!rc || (!rc.width && !rc.height)) continue;
+      const dx = Math.abs(rc.left - clientX);
+      if (dx < bestDx) { bestDx = dx; best = i; }
+    }
+  } catch { best = 0; }
+  return { node: n, offset: best };
+}
+
+/** v2.7.2.c：比较两个 {node,offset} 的文档顺序（-1/0/1） */
+function selLearnCmpPoint(a, b) {
+  try {
+    const ra = document.createRange(); ra.setStart(a.node, a.offset); ra.collapse(true);
+    const rb = document.createRange(); rb.setStart(b.node, b.offset); rb.collapse(true);
+    return ra.compareBoundaryPoints(Range.START_TO_START, rb);
+  } catch { return 0; }
+}
+
+/** v2.7.2.c：按 anchor/focus 构建规范化的 DOM Range */
+function selLearnBuildRange() {
+  const st = selLearnState;
+  if (!st || !st.anchor || !st.focus) return null;
+  const cmp = selLearnCmpPoint(st.anchor, st.focus);
+  const a = cmp <= 0 ? st.anchor : st.focus;
+  const b = cmp <= 0 ? st.focus : st.anchor;
+  const r = document.createRange();
+  try { r.setStart(a.node, a.offset); r.setEnd(b.node, b.offset); } catch { return null; }
+  return r;
+}
+
+function selLearnRectsOf(range) {
+  try {
+    const list = Array.from(range.getClientRects()).filter(r => r.width || r.height);
+    if (list.length) return list;
+    const b = range.getBoundingClientRect();
+    return (b && (b.width || b.height)) ? [b] : [];
+  } catch { return []; }
+}
+
+/** v2.7.2.c：把当前 anchor/focus 同步到 state / 高亮 / 手柄 / 气泡（拖拽与扩展共用） */
+function selLearnSyncSelection() {
+  const st = selLearnState;
+  const range = selLearnBuildRange();
+  if (!st || !range) return false;
+  const picked = range.toString().trim();
+  if (!picked) return false;
+  st.range = range.cloneRange();
+  st.text = picked;
+  st.kind = selLearnKindOf(picked);
+  const rects = selLearnRectsOf(range);
+  const bounding = range.getBoundingClientRect();
+  st.rect = (bounding && (bounding.width || bounding.height)) ? bounding : (rects[0] || st.rect);
+  st.rects = rects;
+  if (st.sourceRef) st.sourceRef.sentence = picked;
+  selLearnShowBtn(st.rect, rects);
+  return true;
+}
+
+/** 触摸长按取词：判定触点下的单词/中文短语，构建选区并升起浮动气泡+可拖拽端点手柄 */
+function selLearnPickAtPoint(clientX, clientY) {
+  const pt = selLearnPointAt(clientX, clientY);
+  if (!pt) return false;
+  const node = pt.node;
   const root = selLearnInReadable(node);
   if (!root) return false;
   const cacEl = node.parentElement;
   if (cacEl?.closest('input, textarea, .sel-learn-card, .kb-fix-modal')) return false;
 
   const text = node.nodeValue || '';
-  let offset = Math.min(offsetHint, Math.max(0, text.length - 1));
+  let offset = Math.min(pt.offset, Math.max(0, text.length - 1));
   const LATIN = /[A-Za-z0-9'’\-]/;
   const CN = /[\u4e00-\u9fa5]/;
   const isWord = ch => LATIN.test(ch) || CN.test(ch);
@@ -5055,17 +5189,6 @@ function selLearnPickAtPoint(clientX, clientY) {
   const picked = text.slice(start, end).trim();
   if (!picked) return false;
 
-  let rect;
-  try {
-    const range = document.createRange();
-    range.setStart(node, start);
-    range.setEnd(node, end);
-    rect = range.getBoundingClientRect();
-  } catch { rect = null; }
-  if (!rect || (!rect.width && !rect.height)) {
-    rect = { left: clientX, right: clientX, top: clientY, bottom: clientY, width: 0, height: 0 };
-  }
-
   const ridEl = cacEl?.closest?.('[data-rid]');
   let sourceRef = null;
   if (ridEl && ridEl.dataset.rid) {
@@ -5077,54 +5200,95 @@ function selLearnPickAtPoint(clientX, clientY) {
       sentence: picked,
     };
   }
-  selLearnState = { text: picked, context: selLearnContextOf({ startContainer: node }, root), title: selLearnTitleOf(root), kind: selLearnKindOf(picked), rect, sourceRef, mode: 'define', at: { node, start, end, root } };
-  selLearnShowBtn(rect);
-  return true;
+  selLearnState = {
+    text: picked,
+    context: selLearnContextOf({ startContainer: node }, root),
+    title: selLearnTitleOf(root),
+    kind: selLearnKindOf(picked),
+    rect: null, rects: null, range: null,
+    anchor: { node, offset: start },
+    focus: { node, offset: end },
+    root,
+    sourceRef, mode: 'define',
+  };
+  return selLearnSyncSelection();
 }
 
-/** v2.7.2.a：把当前取词扩展为所在整句（触摸端无自由划线的补偿交互） */
-function selLearnExpandToSentence() {
-  const st = selLearnState;
-  if (!st || !st.at || !st.at.node || !st.at.node.nodeValue) return false;
-  const node = st.at.node;
+/** v2.7.2.c：把一个 {node,offset} 扩展为所在整句的 [start,end] */
+function selLearnSentenceSpanAt(node, offset) {
   const full = node.nodeValue || '';
   const BREAK = /[.!?。！？…\n]/;
-  let s = st.at.start, e = st.at.end;
+  let s = Math.min(offset, full.length), e = Math.min(offset, full.length);
   while (s > 0 && !BREAK.test(full[s - 1])) s--;
   while (e < full.length && !BREAK.test(full[e])) e++;
-  // 去掉句首尾空白
   while (s < e && /\s/.test(full[s])) s++;
   while (e > s && /\s/.test(full[e - 1])) e--;
-  const sentence = full.slice(s, e).trim();
-  if (!sentence || sentence === st.text) return false;
-  let rect;
-  try {
-    const range = document.createRange();
-    range.setStart(node, s);
-    range.setEnd(node, e);
-    rect = range.getBoundingClientRect();
-  } catch { rect = st.rect; }
-  if (!rect || (!rect.width && !rect.height)) rect = st.rect;
-  st.text = sentence;
-  st.kind = selLearnKindOf(sentence);
-  st.rect = rect;
-  if (st.sourceRef) st.sourceRef.sentence = sentence;
-  selLearnShowBtn(rect);
-  return true;
+  return { start: s, end: e };
 }
 
-/* 滚动时清除触摸端高亮/气泡（fixed 定位不会跟随滚动，避免残留错位） */
+/** v2.7.2.a/c：把当前取词双向扩展到整句（触摸端「整句」按钮） */
+function selLearnExpandToSentence() {
+  const st = selLearnState;
+  if (!st || !st.anchor || !st.focus) return false;
+  if (st.anchor.node !== st.focus.node) return false;
+  const node = st.anchor.node;
+  const a = Math.min(st.anchor.offset, st.focus.offset);
+  const b = Math.max(st.anchor.offset, st.focus.offset);
+  const full = node.nodeValue || '';
+  const BREAK = /[.!?。！？…\n]/;
+  let s = a, e = b;
+  while (s > 0 && !BREAK.test(full[s - 1])) s--;
+  while (e < full.length && !BREAK.test(full[e])) e++;
+  while (s < e && /\s/.test(full[s])) s++;
+  while (e > s && /\s/.test(full[e - 1])) e--;
+  if (e <= s) return false;
+  st.anchor = { node, offset: s };
+  st.focus = { node, offset: e };
+  return selLearnSyncSelection();
+}
+
+/* v2.7.2.c：端点手柄拖拽 → 自由拉伸选区（原生选择手柄已被禁用，自绘替代） */
+function selLearnHandleTouchStart(e) {
+  if (!selLearnState || !selLearnState.anchor) return;
+  e.preventDefault();
+  e.stopPropagation();
+  selLearnDragIdx = e.currentTarget.dataset.idx;
+  if (navigator.vibrate) { try { navigator.vibrate(8); } catch {} }
+}
+function selLearnHandleTouchMove(e) {
+  if (selLearnDragIdx == null || !selLearnState) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const t = e.touches[0];
+  if (!t) return;
+  const pt = selLearnPointAt(t.clientX, t.clientY);
+  if (!pt) return;
+  const st = selLearnState;
+  const root = st.root;
+  if (!root || !root.contains(pt.node)) return;
+  if (selLearnDragIdx === '0') st.anchor = pt; else st.focus = pt;
+  selLearnSyncSelection();
+}
+function selLearnHandleTouchEnd(e) {
+  if (selLearnDragIdx == null) return;
+  e.preventDefault();
+  e.stopPropagation();
+  selLearnDragIdx = null;
+  if (selLearnState) selLearnSyncSelection();
+}
+
+/* 滚动时清除触摸端高亮/手柄/气泡（fixed 定位不会跟随滚动，避免残留错位） */
 window.addEventListener('scroll', () => {
   if (!SEL_TOUCH_DEVICE) return;
-  if (selLearnHl || selLearnBtn) selLearnRemoveBtn();
+  if (selLearnBtn || selLearnHandleStart) selLearnRemoveBtn();
 }, { passive: true });
 
 let touchPickTimer = null, touchStartPt = null, touchMoved = false;
 document.addEventListener('touchstart', e => {
-  // 点按气泡/精读卡：交给其自身 click 处理，不参与长按取词，也不关闭气泡
+  // 点按气泡/精读卡/端点手柄：交给其自身处理，不参与长按取词，也不关闭气泡
   if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
   if (selLearnCard && selLearnCard.contains(e.target)) return;
-  if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable], button, .btn')) return;
+  if (e.target.closest && e.target.closest('.sel-learn-handle, input, textarea, select, [contenteditable], button, .btn')) return;
   if (!SEL_TOUCH_DEVICE) return;
   selLearnSuppressNextClick = false;   // 新手势开始，清掉上一次的补发 click 豁免
   if (e.touches.length !== 1) { if (touchPickTimer) clearTimeout(touchPickTimer); touchPickTimer = null; return; }

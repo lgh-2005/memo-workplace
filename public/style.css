@@ -2936,6 +2936,43 @@ input, textarea, [contenteditable], input *, textarea * {
 }
 @keyframes selHlIn { from { opacity: 0; } to { opacity: 1; } }
 
+/* v2.7.2.c：触摸端「可拖拽端点手柄」——原生选择手柄被禁用后自绘，实现自由拉伸划线 */
+.sel-learn-handle {
+  position: fixed;
+  z-index: 2147483647;
+  width: 22px;
+  height: 22px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.sel-learn-handle-knob {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary, #3b82f6);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+  pointer-events: none;
+}
+.sel-learn-handle::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -14px;
+  width: 2px;
+  height: 16px;
+  transform: translateX(-50%);
+  background: var(--primary, #3b82f6);
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .7);
+}
+
 /* 划选精读：选区旁浮动小气泡（胶囊双按钮） */
 .sel-learn-bubble {
   position: fixed;

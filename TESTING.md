@@ -84,15 +84,16 @@
 | 31 | `.workbuddy/test_v271_cet6.js` | 33 | 六级真题整卷入库（后端）：听力/选词/长篇匹配板块识别与「六级-」标签、单元切片 gkey（listening~pid / banked_cloze~0 / long_match~0）、长篇匹配 scored=true（无选项客观题）、标准答案命中与客观题提交判分、真实 exams.jsonl 76 套六级 + 28 套考研数据核验（客观题答案 100% 覆盖） |
 | 32 | `.workbuddy/test_v271_cet6_ui.js` | 22 | 六级整卷与单元题库渲染（浏览器）：六大板块渲染、听力按段占位、选词内联 10 空 + 15 词池、匹配 10 下拉、答题卡按轨道动态生成（含听力/选词/匹配、写作气泡 57）、六级筛选项、390px 无溢出、控制台 0 错误 |
 
-### 3.7 v2.7.2 增量套件（1）
+### 3.7 v2.7.2 增量套件（2）
 
 | # | 脚本 | 断言数 | 覆盖 |
 |---|---|---|---|
-| 33 | `.workbuddy/test_v272_bubble_ui.js` | 18 | 移动端划词助手（浏览器，`hasTouch`+`isMobile` 触摸上下文）：长按取词命中整词、气泡结构与左右边界 clamp、触发端 `user-select:none`（原生划选取不到文本 = 系统菜单根除）、`contextmenu` 正文拦截/输入框放行、输入框 `user-select:text` 保留、整句扩展、复制反馈、控制台 0 错误 |
+| 33 | `.workbuddy/test_v272_bubble_ui.js` | 24 | 移动端划词助手（浏览器，`hasTouch`+`isMobile` 触摸上下文）：长按取词命中整词、气泡结构与左右边界 clamp、自绘高亮框 `.sel-learn-hl`（`pointer-events:none`）、触发端 `user-select:none`（原生划选取不到文本 = 系统菜单根除）、`contextmenu` 正文拦截/输入框放行 + OS 级兜底取词、输入框 `user-select:text` 保留、整句扩展、复制反馈、控制台 0 错误 |
+| 34 | `.workbuddy/test_v272c_drag_ui.js` | 16 | 触摸端自由拉伸选区（浏览器，触摸上下文）：长按后出现 `.sel-learn-handle` start/end 端点手柄、拖拽 end 向后扩词、拖拽 start 越界回退、拉成整句判 `sentence`、折行选区 `getClientRects`>1 对应多段高亮、收起时手柄/高亮一并清除、控制台 0 错误 |
 
-> 合计 **33** 套、断言总数 **676**（16 后端 398 + 17 浏览器 262 + 1 线上冒烟 16）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+> 合计 **34** 套、断言总数 **698**（16 后端 398 + 18 浏览器 284 + 1 线上冒烟 16）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
 
-> **说明**：`english-workbench/.workbuddy/` 目录下共 47 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡）。上表 33 套为与「16 后端 + 17 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
+> **说明**：`english-workbench/.workbuddy/` 目录下共 48 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡与拖拽拉伸）。上表 34 套为与「16 后端 + 18 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
 
 ## 4. 运行顺序（建议）
 
