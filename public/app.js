@@ -2785,7 +2785,8 @@ async function loadKb() {
     kbState.loaded = true;
     if (r.external?.count) {
       const release = r.external.manifest?.release_id ? ` · release ${r.external.manifest.release_id}` : '';
-      $('#kbListResult').textContent = `外刊发布源 ${r.external.count} 篇${release}`;
+      const updated = r.external.manifest?.updated_at ? ` · 更新 ${String(r.external.manifest.updated_at).slice(0, 10)}` : '';
+      $('#kbListResult').textContent = `外刊发布源 ${r.external.count} 篇${release}${updated}（自动同步）`;
       $('#kbListResult').className = 'result';
     }
     if (!r.exists) {

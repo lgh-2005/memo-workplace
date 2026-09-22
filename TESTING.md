@@ -99,7 +99,13 @@
 | 36 | `.workbuddy/test_v280_auth.js` | 47 | Token 凭证登录 + 日志版块（后端）：未登录受保护 API 返回 401（`UNAUTHORIZED`）、白名单（auth/login·auth/status·error/report）、错误 Token 拒绝且不签发 Cookie、正确 Token 签发 `httpOnly; SameSite=Lax` 会话 Cookie、带会话可访问、报错日志采集/读取/清空、使用日志增删与空内容拒绝、开发日志随版本（version=2.8.0）、登出后会话失效、管理员改 Token 后旧失效新可用、清除 Token 后关闭登录、未启用时全部放行、开启却清空 Token 自锁保护（400 `NO_AUTH_TOKEN`）、真实数据（db/config/answers）哈希不变 |
 | 37 | `.workbuddy/test_v280_ui.js` | 22 | 登录与日志版块（浏览器）：未登录显示登录遮罩、错误 Token 提示且遮罩保留、正确 Token 进入并刷新后仍登录、点击版本号进日志版块、开发日志渲染（含 v2.8.0）、使用日志新增与类型标签渲染、报错日志注入与清空、设置页「登录与安全」状态与开关、390px 日志版块无横向溢出、控制台 0 错误且 401 仅来自故意的错误登录 |
 
-> 合计 **37** 套（18 后端 + 18 浏览器 + 1 线上冒烟），断言总数 **787+**。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.9 v2.9.0 增量套件（1）
+
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 38 | `.workbuddy/test_v290_external.js` | 25 | 外刊全自动入库（release-format v2 瘦索引，后端）：瘦索引目录 `format=v2` 且列表仅含元数据（不带全文）、`preview` 摘要来自索引、详情按需从分片 `articles_body/body-XX.jsonl.gz` 补全文/段落/句子、句子索引 `sentences_index.jsonl.gz` 参与搜索且命中带 `sourceKind=external` 与 publication、无命中返回空、真实 `data/db.json` 哈希不变；同一脚本另起沙箱验证**旧版整包 `articles.jsonl` 目录回退兼容**（`format=v1`、列表/详情/搜索均正常） |
+
+> 合计 **38** 套（19 后端 + 18 浏览器 + 1 线上冒烟），断言总数 **812+**。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
 
 > **说明**：`english-workbench/.workbuddy/` 目录下共 51 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块）。上表 37 套为与「17 后端 + 20 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
 

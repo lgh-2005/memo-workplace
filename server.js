@@ -242,6 +242,18 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '2.9.0',
+    date: '2026-09-22',
+    title: '外刊全自动入库',
+    items: [
+      '外刊发布源升级为 release-format v2：瘦索引（articles_index.jsonl）常驻内存，全文分片（articles_body/*.gz）按需读取，内存占用由数百 MB 降到约数 MB',
+      '句子索引（sentences_index.jsonl.gz）预生成，搜索与 AI「外刊真实语境」证据直接读取，不再逐篇重建',
+      '采集服务器（香港）夜间增量构建 release，网站服务器定时 rsync 拉取并原子替换，全程无人值守',
+      '保留最近 5 份历史 release 自动归档，可一键回滚；旧版整包 articles.jsonl 目录仍兼容读取',
+      '语料库列表显示外刊「更新日期」，只读发布源标识不变',
+    ],
+  },
+  {
     version: '2.8.0',
     date: '2026-09-22',
     title: 'Token 凭证登录 + 日志版块',
@@ -2314,7 +2326,8 @@ const KB_SECTION_LABEL = {
 const RTYPE_LABEL = { qa_set: '题库', article: '文章', document: '文档', note: '笔记' };
 
 let kbCache = { mtime: 0, records: [], sentences: null, sentencesKey: '' };
-let externalCache = { mtime: 0, records: [] };
+let externalCache = { mtime: 0, records: [], thin: false };
+let externalSentenceCache = { mtime: 0, rows: [] };   // v2.9.0：外刊句子索引缓存
 
 function kbFile() {
   const dir = (config.kb && config.kb.dir || '').trim();
@@ -2335,6 +2348,12 @@ function externalText(r) {
   if (!Array.isArray(ps)) return '';
   return ps.map(p => typeof p === 'string' ? p : String(p?.text || '')).filter(Boolean).join('\n\n');
 }
+
+/** v2.9.0：外刊 release-format v2（瘦索引）。存在 articles_index.jsonl 时优先用瘦索引。 */
+function externalIndexFile() { return path.join(externalCorpusDir(), 'articles_index.jsonl'); }
+function externalSentencesFile() { return path.join(externalCorpusDir(), 'sentences_index.jsonl.gz'); }
+function externalBodyDir() { return path.join(externalCorpusDir(), 'articles_body'); }
+function externalIndexExists() { return fs.existsSync(externalIndexFile()); }
 
 /** 外刊发布源只接受 article，兼容 scraper 的 paragraphs/content 两种正文形态。 */
 function normalizeExternalRecord(r) {
@@ -2365,30 +2384,93 @@ function loadKb() {
   return kbCache.records;
 }
 
-/** v2.0.0：读取采集管线发布的外刊快照；此库由发布流程写入，网站端只读。 */
+/** v2.0.0：读取采集管线发布的外刊快照；此库由发布流程写入，网站端只读。
+ *  v2.9.0：优先读 release-format v2 瘦索引（articles_index.jsonl，约数 MB），
+ *          全文分片（articles_body/*.jsonl.gz）按需从磁盘流式读取；
+ *          目录里若只有旧的整包 articles.jsonl，则走原逻辑（向后兼容）。 */
 function loadExternalKb() {
   const file = externalArticlesFile();
-  if (!fs.existsSync(file)) { externalCache = { mtime: 0, records: [] }; return []; }
-  const mtime = fileMtime(file);
-  if (externalCache.mtime !== mtime) {
-    externalCache = { mtime, records: readJsonlRaw(file).map(normalizeExternalRecord).filter(Boolean) };
+  const indexFile = externalIndexFile();
+  const useIndex = fs.existsSync(indexFile);
+  const mtime = fileMtime(useIndex ? indexFile : file);
+  if (!mtime) { externalCache = { mtime: 0, records: [], thin: useIndex }; return []; }
+  if (externalCache.mtime !== mtime || externalCache.thin !== useIndex) {
+    const raw = useIndex ? readJsonlRaw(indexFile) : readJsonlRaw(file);
+    externalCache = { mtime, records: raw.map(normalizeExternalRecord).filter(Boolean), thin: useIndex };
   }
   return externalCache.records;
 }
 
+/** v2.9.0：按需读取外刊全文分片。按 shard 打开 .gz 流，命中目标 id 即停，内存只驻留单篇。 */
+function externalLoadBody(id, shard) {
+  const sh = Number.isInteger(shard) ? shard : shardOfId(id);
+  const file = path.join(externalBodyDir(), `body-${String(sh).padStart(2, '0')}.jsonl.gz`);
+  if (!fs.existsSync(file)) return null;
+  const zlib = require('zlib');
+  let buf;
+  try { buf = zlib.gunzipSync(fs.readFileSync(file)); } catch { return null; }
+  for (const line of buf.toString('utf8').split('\n')) {
+    if (!line) continue;
+    let body;
+    try { body = JSON.parse(line); } catch { continue; }
+    if (body && body.id === id) return body;
+  }
+  return null;
+}
+
+function shardOfId(id) {
+  return parseInt(crypto.createHash('sha256').update(String(id)).digest('hex').slice(0, 8), 16) % 16;
+}
+
+/** v2.9.0：懒加载整份句子索引（含正文，仅搜索/AI 证据用），进程内按 mtime 缓存。 */
+function loadExternalSentences() {
+  const file = externalSentencesFile();
+  const mtime = fileMtime(file);
+  if (!mtime) { externalSentenceCache = { mtime: 0, rows: [] }; return []; }
+  if (externalSentenceCache.mtime !== mtime) {
+    const zlib = require('zlib');
+    let rows = [];
+    try {
+      const text = zlib.gunzipSync(fs.readFileSync(file)).toString('utf8');
+      rows = text.split('\n').map(l => { if (!l) return null; try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
+    } catch { rows = []; }
+    externalSentenceCache = { mtime, rows };
+  }
+  return externalSentenceCache.rows;
+}
+
+/** v2.0.0：record 已含全文时（旧格式）直接拼接；瘦索引模式由调用方补正文。 */
+function externalEnsureText(rec) {
+  if (!rec || rec.text) return rec;
+  try {
+    const body = externalLoadBody(rec.id, rec.shard);
+    if (body) {
+      rec.text = Array.isArray(body.paragraphs) ? body.paragraphs.join('\n\n') : '';
+      rec.paragraphs = body.paragraphs || rec.paragraphs;
+      rec.sentences = body.sentences || rec.sentences;
+      rec.vocab_analysis = body.vocab_analysis || rec.vocab_analysis;
+    }
+  } catch {}
+  return rec;
+}
+
 function externalStatus() {
   const file = externalArticlesFile();
+  const indexFile = externalIndexFile();
   const manifestFile = externalManifestFile();
   const manifest = loadJSON(manifestFile, null);
+  const thin = fs.existsSync(indexFile);
   return {
     dir: externalCorpusDir(),
-    file,
+    file: thin ? indexFile : file,
     manifestFile,
-    exists: fs.existsSync(file),
+    exists: fs.existsSync(thin ? indexFile : file),
+    format: thin ? 'v2' : 'v1',
     count: loadExternalKb().length,
     manifest: manifest && typeof manifest === 'object' ? {
       release_id: manifest.release_id || manifest.releaseId || '',
       generated_at: manifest.generated_at || manifest.generatedAt || '',
+      updated_at: manifest.updated_at || '',
       article_count: manifest.article_count ?? manifest.articleCount ?? null,
       schema_version: manifest.schema_version ?? manifest.schemaVersion ?? null,
     } : null,
@@ -2437,10 +2519,14 @@ function kbSentenceSplit(text) {
 
 function kbSentences() {
   // v2.0.0：索引覆盖手工语料 + 外刊发布源 + 真题库，任一文件变化即重建
-  const key = `${fileMtime(kbFile())}|${fileMtime(externalArticlesFile())}|${fileMtime(examsFile())}`;
+  // v2.9.0：外刊改用预生成句子索引（sentences_index.jsonl.gz），不再从句级重建
+  const thin = externalIndexExists();
+  const key = `${fileMtime(kbFile())}|${thin ? fileMtime(externalSentencesFile()) : fileMtime(externalArticlesFile())}|${fileMtime(examsFile())}`;
   if (kbCache.sentences && kbCache.sentencesKey === key) return kbCache.sentences;
   const out = [];
-  for (const r of [...loadKb(), ...loadExternalKb(), ...loadExams()]) {
+  const externalRecords = loadExternalKb();
+  const corpusRecords = thin ? [...loadKb(), ...loadExams()] : [...loadKb(), ...externalRecords, ...loadExams()];
+  for (const r of corpusRecords) {
     const sourceKind = r.external ? 'external' : (r.rtype === 'qa_set' ? 'exam' : 'corpus');
     const year = r.meta?.year || (r.source?.published_at && /^\d{4}/.test(r.source.published_at) ? Number(r.source.published_at.slice(0, 4)) : null);
     const title = r.title || '';
@@ -2463,6 +2549,23 @@ function kbSentences() {
           s,
         });
       }
+    }
+  }
+  if (thin) {
+    for (const row of loadExternalSentences()) {
+      out.push({
+        rid: row.r,
+        title: row.t || '',
+        year: row.y ?? null,
+        section: row.sec || null,
+        number: null,
+        sourceKind: 'external',
+        track: null,
+        trackLabel: '',
+        publication: row.pub || '',
+        sourceUrl: row.u || '',
+        s: row.s || '',
+      });
     }
   }
   kbCache.sentences = out;
@@ -2634,7 +2737,8 @@ function kbSummary(r) {
     } : null,
     quality: r.quality || null,
     external: !!r.external,
-    preview: String(r.text || (items[0] && items[0].text) || '').replace(/〖\/?\d+〗/g, '').slice(0, 90),
+    // v2.9.0：瘦索引模式列表不带全文，预览取索引内预生成的 preview 字段
+    preview: String(r.text || (items[0] && items[0].text) || r.preview || '').replace(/〖\/?\d+〗/g, '').slice(0, 90),
   };
 }
 
@@ -4156,7 +4260,8 @@ const server = http.createServer(async (req, res) => {
         if (body.kb && typeof body.kb === 'object' && typeof body.kb.externalDir === 'string') {
           if (!config.kb || typeof config.kb !== 'object') config.kb = { dir: '', pythonPath: '', externalDir: '' };
           config.kb.externalDir = body.kb.externalDir.trim();
-          externalCache = { mtime: 0, records: [] };
+          externalCache = { mtime: 0, records: [], thin: false };
+          externalSentenceCache = { mtime: 0, rows: [] };
           kbCache.sentences = null;
           kbCache.sentencesKey = '';
         }
@@ -4553,6 +4658,8 @@ const server = http.createServer(async (req, res) => {
             || loadKb().find(x => x.id === m[1])
             || loadExternalKb().find(x => x.id === m[1]);
           if (!r) return sendJSON(res, 404, { error: '记录不存在' });
+          // v2.9.0：瘦索引只存元数据，命中外刊后在返回前按需补全文
+          if (r.external) externalEnsureText(r);
           return sendJSON(res, 200, {
             ok: true,
             record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: u.searchParams.get('raw') === '1' ? (r.items || []) : kbOrderedItems(r) },
