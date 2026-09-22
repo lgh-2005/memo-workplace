@@ -2924,6 +2924,18 @@ input, textarea, [contenteditable], input *, textarea * {
   -webkit-user-select: text !important;
 }
 
+/* v2.7.2.a：触摸端「长按取词」自绘高亮框（原生选择已禁用，用它提供划线视觉反馈） */
+.sel-learn-hl {
+  position: fixed;
+  z-index: 2147483646;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--primary, #3b82f6) 26%, transparent);
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary, #3b82f6) 45%, transparent);
+  animation: selHlIn .14s ease-out;
+}
+@keyframes selHlIn { from { opacity: 0; } to { opacity: 1; } }
+
 /* 划选精读：选区旁浮动小气泡（胶囊双按钮） */
 .sel-learn-bubble {
   position: fixed;

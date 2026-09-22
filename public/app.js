@@ -4669,8 +4669,29 @@ function selLearnTitleOf(root) {
   return active ? ('工作台 · ' + active.textContent.trim().slice(0, 60)) : '';
 }
 
+/* v2.7.2.a：触摸端原生选择已禁用，用自绘高亮框给出「划线」视觉反馈 */
+let selLearnHl = null;
+function selLearnShowHighlight(rect) {
+  if (!rect || (!rect.width && !rect.height)) return;
+  if (!selLearnHl) {
+    selLearnHl = document.createElement('div');
+    selLearnHl.className = 'sel-learn-hl';
+    document.body.appendChild(selLearnHl);
+  }
+  const pad = 2;
+  selLearnHl.style.left = Math.round(rect.left - pad) + 'px';
+  selLearnHl.style.top = Math.round(rect.top - pad) + 'px';
+  selLearnHl.style.width = Math.round(rect.width + pad * 2) + 'px';
+  selLearnHl.style.height = Math.round(rect.height + pad * 2) + 'px';
+  selLearnHl.style.display = 'block';
+}
+function selLearnRemoveHighlight() {
+  if (selLearnHl) { selLearnHl.remove(); selLearnHl = null; }
+}
+
 function selLearnRemoveBtn() {
   if (selLearnBtn) { selLearnBtn.remove(); selLearnBtn = null; }
+  selLearnRemoveHighlight();
 }
 
 function selLearnCloseCard() {
@@ -4787,6 +4808,9 @@ function selLearnShowBtn(rect) {
 
   bubble.style.left = Math.round(x) + 'px';
   bubble.style.top = Math.round(y) + 'px';
+
+  // 触摸端：原生选择已禁用，自绘高亮框提供「划线」视觉反馈
+  if (SEL_TOUCH_DEVICE) selLearnShowHighlight(rect);
 }
 
 /** v2.3.3：以指定模式请求解析结果（并发保护：只认最后一次请求） */
@@ -4888,13 +4912,26 @@ document.addEventListener('contextmenu', e => {
   }
   // 非输入控件一律拦截原生菜单（气泡内部也一并拦截，避免与自研操作冲突）
   e.preventDefault();
+  // v2.7.2.a：Android/部分浏览器长按会稳定触发 contextmenu，这是比 JS 计时器更可靠的 OS 级长按信号；
+  // 用它兜底触发取词，避免部分真机 touchstart 计时器被 touchcancel/滚动手势吞掉导致「划线不显示」。
+  if (!SEL_TOUCH_DEVICE) return;
+  if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
+  if (selLearnCard && selLearnCard.contains(e.target)) return;
+  if (selLearnPickAtPoint(e.clientX, e.clientY)) {
+    selLearnSuppressNextClick = true;
+    if (touchPickTimer) { clearTimeout(touchPickTimer); touchPickTimer = null; }
+    if (navigator.vibrate) { try { navigator.vibrate(12); } catch {} }
+  }
 }, { capture: true }); // 使用 capture 捕获阶段，防止被子元素冒泡阻止
 
-/* v2.7.2.a：点按气泡/卡片以外的空白处 → 收起浮动气泡（触摸端无原生选区事件可依赖） */
+/* v2.7.2.a：点按气泡/卡片以外的空白处 → 收起浮动气泡（触摸端无原生选区事件可依赖）
+   注意：长按取词抬手时浏览器会补发一次 click，必须跳过它，否则气泡会被立即收起（真机「划线不显示」真凶）。
+   用一次性标志而非时间窗判定，兼容任意时长的长按。 */
+let selLearnSuppressNextClick = false;
 document.addEventListener('click', e => {
   if (e.target === selLearnBtn || selLearnBtn?.contains(e.target)) return;
   if (e.target === selLearnCard || selLearnCard?.contains(e.target)) return;
-  if (Date.now() - selLearnBubbleBornAt < 600) return;
+  if (selLearnSuppressNextClick) { selLearnSuppressNextClick = false; return; }
   if (selLearnBtn) selLearnRemoveBtn();
 }, true);
 
@@ -4961,19 +4998,40 @@ function selLearnCaretAt(x, y) {
   return null;
 }
 
+/** v2.7.2.a：部分真机 caretRangeFromPoint 返回元素节点，回退到 elementFromPoint 内的最近文本节点 */
+function selLearnTextNodeAt(clientX, clientY) {
+  const el = document.elementFromPoint(clientX, clientY);
+  if (!el) return null;
+  let node = null;
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+  let n;
+  while ((n = walker.nextNode())) {
+    const t = n.nodeValue || '';
+    if (t.trim()) { node = n; break; }
+  }
+  if (node) return { node, offset: 0 };
+  return null;
+}
+
 /** 触摸长按取词：判定触点下的单词/中文短语，构建选区矩形并升起浮动气泡 */
 function selLearnPickAtPoint(clientX, clientY) {
   const caret = selLearnCaretAt(clientX, clientY);
-  if (!caret) return false;
-  const node = caret.startContainer;
-  if (!node || node.nodeType !== 3) return false;
+  let node = caret && caret.startContainer;
+  let offsetHint = caret ? caret.startOffset : 0;
+  if (!node || node.nodeType !== 3) {
+    // 兜底：真机可能返回元素节点，改用 elementFromPoint 取最近文本节点
+    const fb = selLearnTextNodeAt(clientX, clientY);
+    if (!fb) return false;
+    node = fb.node;
+    offsetHint = fb.offset;
+  }
   const root = selLearnInReadable(node);
   if (!root) return false;
   const cacEl = node.parentElement;
   if (cacEl?.closest('input, textarea, .sel-learn-card, .kb-fix-modal')) return false;
 
   const text = node.nodeValue || '';
-  let offset = Math.min(caret.startOffset, Math.max(0, text.length - 1));
+  let offset = Math.min(offsetHint, Math.max(0, text.length - 1));
   const LATIN = /[A-Za-z0-9'’\-]/;
   const CN = /[\u4e00-\u9fa5]/;
   const isWord = ch => LATIN.test(ch) || CN.test(ch);
@@ -5055,6 +5113,12 @@ function selLearnExpandToSentence() {
   return true;
 }
 
+/* 滚动时清除触摸端高亮/气泡（fixed 定位不会跟随滚动，避免残留错位） */
+window.addEventListener('scroll', () => {
+  if (!SEL_TOUCH_DEVICE) return;
+  if (selLearnHl || selLearnBtn) selLearnRemoveBtn();
+}, { passive: true });
+
 let touchPickTimer = null, touchStartPt = null, touchMoved = false;
 document.addEventListener('touchstart', e => {
   // 点按气泡/精读卡：交给其自身 click 处理，不参与长按取词，也不关闭气泡
@@ -5062,6 +5126,7 @@ document.addEventListener('touchstart', e => {
   if (selLearnCard && selLearnCard.contains(e.target)) return;
   if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable], button, .btn')) return;
   if (!SEL_TOUCH_DEVICE) return;
+  selLearnSuppressNextClick = false;   // 新手势开始，清掉上一次的补发 click 豁免
   if (e.touches.length !== 1) { if (touchPickTimer) clearTimeout(touchPickTimer); touchPickTimer = null; return; }
   const t = e.touches[0];
   touchStartPt = { x: t.clientX, y: t.clientY };
@@ -5071,7 +5136,11 @@ document.addEventListener('touchstart', e => {
     touchPickTimer = null;
     if (touchMoved || !touchStartPt) return;
     const ok = selLearnPickAtPoint(touchStartPt.x, touchStartPt.y);
-    if (ok && navigator.vibrate) { try { navigator.vibrate(12); } catch {} }
+    if (ok) {
+      // 长按取词成功后抬手会补发一次 click，标记跳过，避免气泡被立即收起
+      selLearnSuppressNextClick = true;
+      if (navigator.vibrate) { try { navigator.vibrate(12); } catch {} }
+    }
   }, 420);
 }, { passive: true });
 
