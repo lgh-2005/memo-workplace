@@ -327,6 +327,12 @@ select.input { cursor: pointer; }
 .chip.q { background: var(--bg); }
 .chip.q.err { color: var(--warn); border-color: #fecaca; }
 .word-list { flex: 1; overflow-y: auto; margin: 10px 0; min-height: 120px; }
+/* v2.7.2.d：修复词表无法向下滚动——v2.4.2 的折叠容器 .card-collapse-body 插在 flex 纵向面板与词表之间，
+   使 .word-list 的 flex:1 失效、撑满内容高度（约 3.5 万 px）后被 overflow:hidden 裁掉，无法内部滚动
+   （>700px 宽屏/平板/横屏与桌面必现；手机竖屏因 max-height:40vh 侥幸可用）。
+   让折叠容器参与 flex 纵向布局并允许收缩，恢复词表自身滚动。 */
+.word-panel .card-collapse-body { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
+.word-panel .word-list { flex: 1 1 auto; min-height: 120px; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
 .word-item {
   padding: 8px 10px; border-radius: 10px; cursor: pointer;
   display: flex; justify-content: space-between; align-items: center;
