@@ -2422,7 +2422,9 @@ function shardOfId(id) {
   return parseInt(crypto.createHash('sha256').update(String(id)).digest('hex').slice(0, 8), 16) % 16;
 }
 
-/** v2.9.0：懒加载整份句子索引（含正文，仅搜索/AI 证据用），进程内按 mtime 缓存。 */
+/** v2.9.0：懒加载整份句子索引（搜索/AI 证据用），进程内按 mtime 缓存。
+ *  只保留 {r,s,l} 三个字段（其余元数据从已常驻的 articles_index 取），
+ *  避免每句重复存 title/publication/url 造成约 90MB 额外堆占用。 */
 function loadExternalSentences() {
   const file = externalSentencesFile();
   const mtime = fileMtime(file);
@@ -2432,7 +2434,13 @@ function loadExternalSentences() {
     let rows = [];
     try {
       const text = zlib.gunzipSync(fs.readFileSync(file)).toString('utf8');
-      rows = text.split('\n').map(l => { if (!l) return null; try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
+      rows = text.split('\n').map(l => {
+        if (!l) return null;
+        try {
+          const o = JSON.parse(l);
+          return o && o.s ? { r: o.r, s: o.s, l: o.l ? 1 : 0 } : null;
+        } catch { return null; }
+      }).filter(Boolean);
     } catch { rows = []; }
     externalSentenceCache = { mtime, rows };
   }
@@ -2552,24 +2560,44 @@ function kbSentences() {
     }
   }
   if (thin) {
+    // v2.9.0：外刊句子以极简行缓存（rid + 文本 + 长句标记），
+    // 命中时再从常驻的 articles_index 取元数据，避免 17.5 万句各存一份元数据。
     for (const row of loadExternalSentences()) {
-      out.push({
-        rid: row.r,
-        title: row.t || '',
-        year: row.y ?? null,
-        section: row.sec || null,
-        number: null,
-        sourceKind: 'external',
-        track: null,
-        trackLabel: '',
-        publication: row.pub || '',
-        sourceUrl: row.u || '',
-        s: row.s || '',
-      });
+      out.push({ rid: row.r, s: row.s || '', sourceKind: 'external', l: row.l || 0, _lean: true });
     }
   }
   kbCache.sentences = out;
   kbCache.sentencesKey = key;
+  return out;
+}
+
+/** v2.9.0：外刊 id -> 索引记录（懒建，仅元数据）。 */
+let externalByIdCache = { key: '', map: null };
+function externalById() {
+  const key = `${externalIndexExists() ? fileMtime(externalIndexFile()) : fileMtime(externalArticlesFile())}`;
+  if (externalByIdCache.map && externalByIdCache.key === key) return externalByIdCache.map;
+  const map = new Map();
+  for (const r of loadExternalKb()) map.set(r.id, r);
+  externalByIdCache = { key, map };
+  return map;
+}
+
+/** 把瘦句子行补全为搜索结果契约（title/year/section/publication/sourceUrl）。
+ *  返回**新对象**，不改动用缓存中的极简行，避免多次检索后元数据在缓存里累积。 */
+function externalHydrateSentence(item) {
+  if (!item || !item._lean) return item;
+  const rec = externalById().get(item.rid);
+  const out = { rid: item.rid, s: item.s, sourceKind: 'external', number: null, track: null, trackLabel: '' };
+  if (rec) {
+    const src = rec.source || {};
+    out.title = rec.title || '';
+    out.year = rec.meta?.year ?? (src.published_at ? Number(String(src.published_at).slice(0, 4)) || null : null);
+    out.section = src.section || null;
+    out.publication = src.publication || src.source || '';
+    out.sourceUrl = src.canonical_url || src.url || '';
+  } else {
+    out.title = ''; out.year = null; out.section = null; out.publication = ''; out.sourceUrl = '';
+  }
   return out;
 }
 
@@ -2691,7 +2719,7 @@ function kbSearch(query, limit = 30, sourceKind = 'all') {
       if ((item.number != null && out[prev].number == null) || rank(item) < rank(out[prev])) out[prev] = item;
     }
   }
-  return limit > 0 ? out.slice(0, limit) : out;
+  return limit > 0 ? out.slice(0, limit).map(externalHydrateSentence) : out.map(externalHydrateSentence);
 }
 
 /** v2.0.0：为 AI 提供分通道证据，避免外刊挤掉真题或被误标为真题。 */
@@ -4262,6 +4290,7 @@ const server = http.createServer(async (req, res) => {
           config.kb.externalDir = body.kb.externalDir.trim();
           externalCache = { mtime: 0, records: [], thin: false };
           externalSentenceCache = { mtime: 0, rows: [] };
+          externalByIdCache = { key: '', map: null };
           kbCache.sentences = null;
           kbCache.sentencesKey = '';
         }
