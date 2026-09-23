@@ -62,7 +62,7 @@
 
 | # | 脚本 | 断言数 | 覆盖 |
 |---|---|---|---|
-| 27 | `.workbuddy/test_v228_online_smoke.js` | 16 | 线上只读 API/页面/版本/无持久化写/静态资源三方哈希 |
+| 27 | `.workbuddy/test_v228_online_smoke.js` | 16 | 线上只读 API/页面/版本/无持久化写/静态资源三方哈希；**v2.9.0 起自动登录换取会话 Cookie**（线上 Token 登录启用后只读 API 需鉴权），期望版本与哈希基准默认自动取自本地工作树（`package.json`/`HEAD`），免手填 `ONLINE_VER`/`ONLINE_HASH_REF` |
 
 ### 3.4 v2.6.3 增量套件（1）
 
@@ -96,7 +96,7 @@
 
 | # | 脚本 | 断言数 | 覆盖 |
 |---|---|---|---|
-| 36 | `.workbuddy/test_v280_auth.js` | 47 | Token 凭证登录 + 日志版块（后端）：未登录受保护 API 返回 401（`UNAUTHORIZED`）、白名单（auth/login·auth/status·error/report）、错误 Token 拒绝且不签发 Cookie、正确 Token 签发 `httpOnly; SameSite=Lax` 会话 Cookie、带会话可访问、报错日志采集/读取/清空、使用日志增删与空内容拒绝、开发日志随版本（version=2.8.0）、登出后会话失效、管理员改 Token 后旧失效新可用、清除 Token 后关闭登录、未启用时全部放行、开启却清空 Token 自锁保护（400 `NO_AUTH_TOKEN`）、真实数据（db/config/answers）哈希不变 |
+| 36 | `.workbuddy/test_v280_auth.js` | 49 | Token 凭证登录 + 日志版块（后端）：未登录受保护 API 返回 401（`UNAUTHORIZED`）、白名单（auth/login·auth/status·error/report）、错误 Token 拒绝且不签发 Cookie、正确 Token 签发 `httpOnly; SameSite=Lax` 会话 Cookie、带会话可访问、报错日志采集/读取/清空、使用日志增删与空内容拒绝、开发日志随版本（version 与 `package.json` 一致且 ≥2.8.0、保留 v2.8.0 历史条目）、登出后会话失效、管理员改 Token 后旧失效新可用、清除 Token 后关闭登录、未启用时全部放行、开启却清空 Token 自锁保护（400 `NO_AUTH_TOKEN`）、真实数据（db/config/answers）哈希不变 |
 | 37 | `.workbuddy/test_v280_ui.js` | 22 | 登录与日志版块（浏览器）：未登录显示登录遮罩、错误 Token 提示且遮罩保留、正确 Token 进入并刷新后仍登录、点击版本号进日志版块、开发日志渲染（含 v2.8.0）、使用日志新增与类型标签渲染、报错日志注入与清空、设置页「登录与安全」状态与开关、390px 日志版块无横向溢出、控制台 0 错误且 401 仅来自故意的错误登录 |
 
 ### 3.9 v2.9.0 增量套件（1）
