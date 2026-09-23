@@ -2422,29 +2422,34 @@ function shardOfId(id) {
   return parseInt(crypto.createHash('sha256').update(String(id)).digest('hex').slice(0, 8), 16) % 16;
 }
 
-/** v2.9.0：懒加载整份句子索引（搜索/AI 证据用），进程内按 mtime 缓存。
- *  只保留 {r,s,l} 三个字段（其余元数据从已常驻的 articles_index 取），
- *  避免每句重复存 title/publication/url 造成约 90MB 额外堆占用。 */
+/** v2.9.0：懒加载外刊句子索引（搜索/AI 证据用）并按 mtime 常驻。
+ *  只保留 {rid,s,sourceKind,l,_lean}（约 50MB，远低于旧格式整包全量 parse 的 446MB）；
+ *  标题/刊名/URL 等元数据不逐句存，命中时从常驻的 articles_index 取。
+ *  注：刻意一次性 gunzip 到位并常驻，避免每次检索重新解压造成 V8 堆反复扩张、
+ *  RSS 只增不降（1.6G 机器上反而更危险）。 */
 function loadExternalSentences() {
   const file = externalSentencesFile();
   const mtime = fileMtime(file);
-  if (!mtime) { externalSentenceCache = { mtime: 0, rows: [] }; return []; }
-  if (externalSentenceCache.mtime !== mtime) {
-    const zlib = require('zlib');
-    let rows = [];
-    try {
-      const text = zlib.gunzipSync(fs.readFileSync(file)).toString('utf8');
-      rows = text.split('\n').map(l => {
-        if (!l) return null;
+  if (!mtime) return [];
+  if (externalSentenceCache.mtime === mtime) return externalSentenceCache.rows;
+  const zlib = require('zlib');
+  const rows = [];
+  try {
+    const raw = zlib.gunzipSync(fs.readFileSync(file));
+    let start = 0;
+    for (let i = 0; i <= raw.length; i++) {
+      if (i !== raw.length && raw[i] !== 10) continue;
+      if (i > start) {
         try {
-          const o = JSON.parse(l);
-          return o && o.s ? { r: o.r, s: o.s, l: o.l ? 1 : 0 } : null;
-        } catch { return null; }
-      }).filter(Boolean);
-    } catch { rows = []; }
-    externalSentenceCache = { mtime, rows };
-  }
-  return externalSentenceCache.rows;
+          const o = JSON.parse(raw.toString('utf8', start, i));
+          if (o && o.s) rows.push({ rid: o.r, s: o.s, sourceKind: 'external', l: o.l ? 1 : 0, _lean: true });
+        } catch {}
+      }
+      start = i + 1;
+    }
+  } catch {}
+  externalSentenceCache = { mtime, rows };
+  return rows;
 }
 
 /** v2.0.0：record 已含全文时（旧格式）直接拼接；瘦索引模式由调用方补正文。 */
@@ -2560,11 +2565,8 @@ function kbSentences() {
     }
   }
   if (thin) {
-    // v2.9.0：外刊句子以极简行缓存（rid + 文本 + 长句标记），
-    // 命中时再从常驻的 articles_index 取元数据，避免 17.5 万句各存一份元数据。
-    for (const row of loadExternalSentences()) {
-      out.push({ rid: row.r, s: row.s || '', sourceKind: 'external', l: row.l || 0, _lean: true });
-    }
+    // v2.9.0：外刊句子来自预生成索引，以极简行并入缓存（复用同一对象引用，不再复制）。
+    for (const row of loadExternalSentences()) out.push(row);
   }
   kbCache.sentences = out;
   kbCache.sentencesKey = key;
@@ -2707,6 +2709,7 @@ function kbSearch(query, limit = 30, sourceKind = 'all') {
 
   const out = [];
   const seen = new Map();   // 同句去重（翻译原文与题干可能重复收录），优先保留带题号的来源
+  const rank = x => x.sourceKind === 'exam' ? 0 : x.sourceKind === 'corpus' ? 1 : 2;
   for (const item of kbSentences()) {
     if (sourceKind !== 'all' && item.sourceKind !== sourceKind) continue;
     const hit = re ? re.test(item.s) : item.s.toLowerCase().includes(lower);
@@ -2714,10 +2717,7 @@ function kbSearch(query, limit = 30, sourceKind = 'all') {
     const key = item.s.toLowerCase();
     const prev = seen.get(key);
     if (prev === undefined) { seen.set(key, out.length); out.push(item); }
-    else {
-      const rank = x => x.sourceKind === 'exam' ? 0 : x.sourceKind === 'corpus' ? 1 : 2;
-      if ((item.number != null && out[prev].number == null) || rank(item) < rank(out[prev])) out[prev] = item;
-    }
+    else if ((item.number != null && out[prev].number == null) || rank(item) < rank(out[prev])) out[prev] = item;
   }
   return limit > 0 ? out.slice(0, limit).map(externalHydrateSentence) : out.map(externalHydrateSentence);
 }
