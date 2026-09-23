@@ -1576,6 +1576,13 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .msg ol li { margin: 2px 0; }
 .msg em { font-style: italic; }
 .msg del { text-decoration: line-through; opacity: .7; }
+.msg mark, .msg .md-mark {
+  background: color-mix(in srgb, var(--primary) 22%, transparent);
+  color: inherit;
+  padding: 1px 4px;
+  border-radius: 4px;
+  border-bottom: 2px solid color-mix(in srgb, var(--primary) 65%, transparent);
+}
 .msg .md-link { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
 .msg .md-link:hover { opacity: .8; }
 .msg .md-img { max-width: 100%; border-radius: 8px; margin: 6px 0; display: block; }

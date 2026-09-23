@@ -105,7 +105,13 @@
 |---|---|---|---|
 | 38 | `.workbuddy/test_v290_external.js` | 25 | 外刊全自动入库（release-format v2 瘦索引，后端）：瘦索引目录 `format=v2` 且列表仅含元数据（不带全文）、`preview` 摘要来自索引、详情按需从分片 `articles_body/body-XX.jsonl.gz` 补全文/段落/句子、句子索引 `sentences_index.jsonl.gz` 参与搜索且命中带 `sourceKind=external` 与 publication、无命中返回空、真实 `data/db.json` 哈希不变；同一脚本另起沙箱验证**旧版整包 `articles.jsonl` 目录回退兼容**（`format=v1`、列表/详情/搜索均正常） |
 
-> 合计 **38** 套（19 后端 + 18 浏览器 + 1 线上冒烟），断言总数 **812+**。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.10 v2.9.1 增量套件（1）
+
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 39 | `.workbuddy/test_v291_markdown.js` | 27 | Markdown 语法升级（单测）：LaTeX 箭头（\rightarrow / \to / \longrightarrow / \Rightarrow / \leftrightarrow 等）转 Unicode、行内公式脱壳（$...$）、常见数学/逻辑符号（\neq / \approx / \le / \ge / \times / \pm / \cdots）、文本型快捷箭头（-> / => / <-> / <=>）在 esc() 后平滑转义、行内高亮 ==重点== 渲染为 <mark class="md-mark">、既有 Markdown 语法与 mdLite 完整渲染结合验证 |
+
+> 合计 **39** 套（20 后端/单测 + 18 浏览器 + 1 线上冒烟），断言总数 **839+**。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
 
 > **说明**：`english-workbench/.workbuddy/` 目录下共 51 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块）。上表 37 套为与「17 后端 + 20 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
 

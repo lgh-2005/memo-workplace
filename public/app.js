@@ -965,15 +965,41 @@ $('#speakWordBtn').addEventListener('click', async () => {
   speak(w);
 });
 
-/** Markdown 渲染器（v1.2.0）：标题/加粗/斜体/删除线/行内代码/代码块/有序+无序列表/表格/引用/分隔线/链接/图片 */
+/** Markdown 渲染器（v1.2.0，v2.9.1 增强）：加粗/斜体/删除线/行内高亮/行内代码/LaTeX公式脱壳/常见推导箭头与数学符号/代码块/表格/列表/引用/分隔线/链接/图片 */
 function mdInline(s) {
   return s
+    // 1. 链接与图片
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img class="md-img" src="$2" alt="$1" loading="lazy">')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a class="md-link" href="$2" target="_blank" rel="noopener">$1</a>')
+    // 2. 基础行内排版：加粗、斜体、删除线、行内高亮、行内代码
     .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
     .replace(/(?<![*\w])\*([^*]+?)\*(?![*\w])/g, '<em>$1</em>')
     .replace(/~~(.+?)~~/g, '<del>$1</del>')
-    .replace(/`([^`]+)`/g, '<code>$1</code>');
+    .replace(/==(.+?)==/g, '<mark class="md-mark">$1</mark>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    // 3. LaTeX 行内公式脱壳：$ \rightarrow $ / $\to$ / $x \le y$
+    .replace(/\$([^\$\n]+?)\$/g, '$1')
+    // 4. LaTeX 常用推导箭头与数学符号映射（区分大小写：小写单线，大写双线）
+    .replace(/\\(?:longleftrightarrow|leftrightarrow)\b/g, '↔')
+    .replace(/\\(?:Longleftrightarrow|Leftrightarrow)\b/g, '⇔')
+    .replace(/\\(?:longrightarrow|rightarrow|to)\b/g, '→')
+    .replace(/\\(?:Longrightarrow|Rightarrow|implies)\b/g, '⇒')
+    .replace(/\\(?:longleftarrow|leftarrow|gets)\b/g, '←')
+    .replace(/\\(?:Longleftarrow|Leftarrow)\b/g, '⇐')
+    .replace(/\\(?:approx|sim)\b/gi, '≈')
+    .replace(/\\(?:neq|ne)\b/gi, '≠')
+    .replace(/\\(?:leq|le)\b/gi, '≤')
+    .replace(/\\(?:geq|ge)\b/gi, '≥')
+    .replace(/\\times\b/gi, '×')
+    .replace(/\\div\b/gi, '÷')
+    .replace(/\\pm\b/gi, '±')
+    .replace(/\\(?:cdot|cdots|ldots)\b/gi, '···')
+    // 5. 文本型箭头（匹配被 esc() 转义后的 &gt; 和 &lt;，支持 ->, =>, <->, <=>）
+    .replace(/&lt;[=-]+&gt;/g, m => m.includes('=') ? '⇔' : '↔')
+    .replace(/=+&gt;/g, '⇒')
+    .replace(/-+&gt;/g, '→')
+    .replace(/&lt;=+/g, '⇐')
+    .replace(/&lt;-+/g, '←');
 }
 
 function mdLite(text) {
