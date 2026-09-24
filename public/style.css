@@ -1534,6 +1534,58 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 .quiz-score-sub { color: var(--text-sub); margin: 6px 0 12px; }
 
+/* ============ v2.10.0：测验记忆引擎（4 档评分 / 掌握度 / 错题复练） ============ */
+.grade-row-4 { flex-wrap: wrap; gap: 8px; }
+.grade-row-4 .grade { font-size: 14px; padding: 10px 16px; min-height: 44px; }
+.g-again { background: #fef2f2; border-color: #fecaca; color: #b91c1c; }
+.g-hard { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.g-good { background: #ecfdf5; border-color: #a7f3d0; color: #047857; }
+.g-easy { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+.g-again:hover, .g-hard:hover, .g-good:hover, .g-easy:hover { filter: brightness(.97); transform: translateY(-1px); }
+
+.quiz-grade-summary { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 10px 0 14px; }
+.quiz-grade-summary .gd { font-size: 12.5px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--border); }
+.quiz-grade-summary .gd.g-again { background: #fef2f2; border-color: #fecaca; color: #b91c1c; }
+.quiz-grade-summary .gd.g-hard { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.quiz-grade-summary .gd.g-good { background: #ecfdf5; border-color: #a7f3d0; color: #047857; }
+.quiz-grade-summary .gd.g-easy { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+
+.quiz-mastery-row {
+  display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+  margin: 6px auto 10px; padding: 6px 12px; border-radius: var(--radius);
+  background: var(--bg); border: 1px solid var(--border); width: fit-content;
+}
+.quiz-mastery-label { font-size: 12.5px; color: var(--text-sub); }
+.quiz-mastery-bar { display: flex; gap: 3px; }
+.qm-seg { width: 26px; height: 8px; border-radius: 999px; background: var(--border); transition: background .2s; }
+.qm-seg.on { background: var(--primary); }
+.qm-seg.on.max { background: var(--ok, #16a34a); }
+.quiz-mastery-text { font-size: 12.5px; color: var(--text-sub); }
+.quiz-timer { font-size: 12.5px; color: var(--text-sub); font-variant-numeric: tabular-nums; }
+
+.quiz-srs-overview { margin: 8px 0 12px; }
+.srs-stat-row { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--text-sub); margin-bottom: 8px; }
+.srs-stat b { color: var(--primary); font-size: 15px; }
+.srs-stat.warn b { color: var(--warn); }
+.srs-dist-bar { display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: var(--bg); border: 1px solid var(--border); }
+.srs-dist-seg.lv-0 { background: #ef4444; }
+.srs-dist-seg.lv-1 { background: #f59e0b; }
+.srs-dist-seg.lv-2 { background: #eab308; }
+.srs-dist-seg.lv-3 { background: #84cc16; }
+.srs-dist-seg.lv-4 { background: #16a34a; }
+.srs-dist-legend { display: flex; gap: 12px; font-size: 11.5px; color: var(--text-sub); margin-top: 6px; flex-wrap: wrap; }
+
+.quiz-wrongbook-list { margin-top: 8px; }
+.wb-list { display: flex; flex-direction: column; gap: 6px; }
+.wb-item {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card);
+}
+.wb-word { font-weight: 700; color: var(--text); min-width: 90px; }
+.wb-meta { font-size: 12px; color: var(--text-sub); flex: 1; }
+.wb-actions { display: flex; gap: 6px; }
+.wb-actions .btn { min-height: 36px; }
+
 /* ============ v1.0.5：Markdown 渲染增强 ============ */
 .msg .md-h { font-weight: 700; margin: 4px 0 2px; }
 .msg .md-h1, .msg .md-h2 { font-size: 15.5px; padding-left: 8px; border-left: 3px solid var(--primary); }
@@ -2882,6 +2934,9 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   /* v2.2.8：信心按钮（测验/迁移）移动端触控 44px，置于 .btn.small 之后以生效 */
   .quiz-confidence-btns .quiz-conf-btn,
   .quiz-confidence-btns .transfer-conf-btn { min-height: 44px; padding: 6px 10px; font-size: 12px; }
+  /* v2.10.0：4 档评分与错题复练操作触控 44px */
+  .grade-row-4 .grade { min-height: 44px; }
+  .wb-actions .btn { min-height: 44px; }
 
   /* 疑点弹窗：全屏 sheet 式 */
   .kb-fix-modal { padding: 0; align-items: flex-end; }

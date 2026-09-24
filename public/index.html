@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v2.9.1</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v2.10.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.9.1</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.10.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -68,7 +68,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v2.9.1</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v2.10.0</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -552,6 +552,7 @@
       <!-- v2.2.4：基础回忆 / 真题迁移 二级模式 -->
       <div class="quiz-submode" id="quizSubmode">
         <button type="button" class="btn quiz-submode-btn active" data-submode="basic">🧠 基础回忆</button>
+        <button type="button" class="btn quiz-submode-btn" data-submode="srs">🔁 错题复练</button>
         <button type="button" class="btn quiz-submode-btn" data-submode="transfer">🎯 真题迁移</button>
       </div>
 
@@ -566,6 +567,8 @@
         <button class="chip" data-src="vague" data-page-node-id="UIqSG6HuahvOG4Y7Lc5OSO">模糊词</button>
         <button class="chip" data-src="forget" data-page-node-id="ASFURZrCLt2lHeuLRbs0kV">忘记词</button>
         <button class="chip" data-src="due7" data-page-node-id="azoCmsp9he4ieKgCPRRRIC">7天内到期</button>
+        <button class="chip" data-src="srs_due" data-page-node-id="v210srsdue">🧠 记忆到期</button>
+        <button class="chip" data-src="wrongbook" data-page-node-id="v210wbook">📕 错题本</button>
         <button class="chip" data-src="all" data-page-node-id="qLHG1AKuV2iDZ5jyYF22wh">全部</button>
       </div>
       <label class="field-label" data-page-node-id="Y3eDjsvoEfPwwSplSwx9IT">题型</label>
@@ -576,10 +579,32 @@
       </div>
       <label class="field-label" data-page-node-id="2THmFmSDrCjLkQYAGEBtuV">题量（3-50）</label>
       <input type="number" id="quizCount" class="input" value="10" min="3" max="50" style="width:120px" data-page-node-id="OHE3gV80NQpuZEQNaKeII9">
-      <div class="row-gap" data-page-node-id="M6wzHURtA2jFHENV2FcFqy">
-        <button class="btn primary" id="quizStartBtn" data-page-node-id="rmwUvlx79tZUiOPrOC1S0v">🚀 开始测验</button>
+        <div class="row-gap" data-page-node-id="M6wzHURtA2jFHENV2FcFqy">
+          <button class="btn primary" id="quizStartBtn" data-page-node-id="rmwUvlx79tZUiOPrOC1S0v">🚀 开始测验</button>
+        </div>
+        <div class="result" id="quizMsg" data-page-node-id="wSj1igi0CouGzndBq7MLxR"></div>
       </div>
-      <div class="result" id="quizMsg" data-page-node-id="wSj1igi0CouGzndBq7MLxR"></div>
+
+      <!-- v2.10.0：错题复练（自维护 SRS + 错题本） -->
+      <div id="quizSrsPane" style="display:none">
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
+        <div class="hint">自维护记忆引擎（简化 SM-2）：每个词记录易度/间隔/到期时间与掌握度（0–4）。答错即进入<b>错题本</b>，按 1→3→7→21 天分级复练，连续晋级即掌握移出。评分为 4 档（忘记/吃力/掌握/轻松），与墨墨数据互不干扰。</div>
+        </details>
+        <div class="quiz-srs-overview" id="quizSrsOverview"></div>
+        <label class="field-label">复练范围</label>
+        <div class="filter-row" id="quizSrsFilter">
+          <button type="button" class="chip active" data-sfilter="all">全部到期</button>
+          <button type="button" class="chip" data-sfilter="wrongbook">仅错题本</button>
+          <button type="button" class="chip" data-sfilter="srs_due">仅记忆到期</button>
+        </div>
+        <label class="field-label">题量（3-50）</label>
+        <input type="number" id="quizSrsCount" class="input" value="10" min="3" max="50" style="width:120px">
+        <div class="row-gap">
+          <button class="btn primary" id="quizSrsStartBtn">🔁 开始复练</button>
+          <button class="btn" id="quizSrsRefreshBtn">🔄 刷新概览</button>
+        </div>
+        <div class="result" id="quizSrsMsg"></div>
+        <div class="quiz-wrongbook-list" id="quizWrongbookList"></div>
       </div>
 
       <!-- 真题迁移训练配置区 -->
@@ -614,6 +639,17 @@
         <button class="btn small ghost" id="quizQuitBtn" data-page-node-id="RZbBz0XgvVIcySxgL2c2fg">✕ 退出测验</button>
       </div>
       <div class="quiz-progress-bar" data-page-node-id="voF1U02lxU5fswA6cEOHd8"><div id="quizBar" data-page-node-id="rYNMFaZxFXVncM9hUtYrjL"></div></div>
+      <!-- v2.10.0：掌握度条（0–4）与计时 -->
+      <div class="quiz-mastery-row" id="quizMasteryRow" style="display:none">
+        <span class="quiz-mastery-label">掌握度</span>
+        <div class="quiz-mastery-bar" id="quizMasteryBar">
+          <span class="qm-seg" data-lv="1"></span><span class="qm-seg" data-lv="2"></span>
+          <span class="qm-seg" data-lv="3"></span><span class="qm-seg" data-lv="4"></span>
+        </div>
+        <span class="quiz-mastery-text" id="quizMasteryText">未追踪</span>
+        <span class="quiz-timer" id="quizTimer">00:00</span>
+        <button type="button" class="btn mini ghost" id="quizPauseBtn">⏸ 暂停</button>
+      </div>
       <div class="quiz-confidence-row" id="quizConfidenceGroup">
         <span class="quiz-confidence-label">作答信心：</span>
         <div class="quiz-confidence-btns">

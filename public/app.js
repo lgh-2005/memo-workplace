@@ -5937,7 +5937,35 @@ const quiz = {
   itemStartedAt: null,
   submode: 'basic',
   advanceTimer: null,
+  sessionStartedAt: null,
+  pausedMs: 0,
+  pauseStartedAt: null,
+  srsMeta: {},        // v2.10.0：spelling -> { mastery, wrongStage, source }
 };
+
+/* v2.10.0：错题复练状态（自维护 SRS + 错题本） */
+const srs = {
+  running: false,
+  filter: 'all',
+  items: [],
+  idx: 0,
+  results: [],
+  confidence: 'unsure',
+  itemStartedAt: null,
+  advanceTimer: null,
+  overview: null,
+  sessionStartedAt: null,
+  pausedMs: 0,
+  pauseStartedAt: null,
+};
+
+/** 4 档评分定义（Anki 式） */
+const QUIZ_GRADES = [
+  { key: 'again', label: '😵 忘记', cls: 'g-again', hint: '完全想不起，再来' },
+  { key: 'hard', label: '😕 吃力', cls: 'g-hard', hint: '想起来了但很费劲' },
+  { key: 'good', label: '😊 掌握', cls: 'g-good', hint: '顺利想起' },
+  { key: 'easy', label: '😎 轻松', cls: 'g-easy', hint: '脱口而出，太简单' },
+];
 
 /* v2.2.4：真题迁移训练状态 */
 const transfer = {
@@ -5960,9 +5988,89 @@ $$('#quizSubmode .quiz-submode-btn').forEach(btn => {
     btn.classList.add('active');
     quiz.submode = btn.dataset.submode;
     $('#quizBasicPane').style.display = quiz.submode === 'basic' ? 'block' : 'none';
+    $('#quizSrsPane').style.display = quiz.submode === 'srs' ? 'block' : 'none';
     $('#quizTransferPane').style.display = quiz.submode === 'transfer' ? 'block' : 'none';
+    if (quiz.submode === 'srs') loadSrsOverview();
   });
 });
+
+/* v2.10.0：错题复练 —— 概览 / 错题本列表 */
+$$('#quizSrsFilter .chip').forEach(c => c.addEventListener('click', () => {
+  $$('#quizSrsFilter .chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  srs.filter = c.dataset.sfilter;
+  loadSrsOverview();
+}));
+if ($('#quizSrsRefreshBtn')) $('#quizSrsRefreshBtn').addEventListener('click', loadSrsOverview);
+if ($('#quizSrsStartBtn')) $('#quizSrsStartBtn').addEventListener('click', startSrs);
+
+function renderSrsOverview(data) {
+  const box = $('#quizSrsOverview');
+  if (!box) return;
+  const ov = data.overview || {};
+  const dist = ov.masteryDist || {};
+  const total = Number(ov.trackedWords || 0);
+  const distBar = [0, 1, 2, 3, 4].map(lv => {
+    const n = Number(dist[String(lv)] || 0);
+    const pct = total > 0 ? Math.round(n / total * 100) : 0;
+    return `<div class="srs-dist-seg lv-${lv}" style="width:${pct}%" title="掌握度 ${lv}：${n} 词"></div>`;
+  }).join('');
+  box.innerHTML = `
+    <div class="srs-stat-row">
+      <span class="srs-stat"><b>${total}</b> 追踪词</span>
+      <span class="srs-stat ${ov.dueCount ? 'warn' : ''}"><b>${ov.dueCount || 0}</b> 记忆到期</span>
+      <span class="srs-stat ${ov.wrongBookDue ? 'warn' : ''}"><b>${ov.wrongBookDue || 0}</b> 错题待复练</span>
+      <span class="srs-stat"><b>${ov.wrongBookTotal || 0}</b> 错题本在册</span>
+      <span class="srs-stat">平均易度 <b>${ov.avgEase == null ? '—' : ov.avgEase}</b></span>
+    </div>
+    <div class="srs-dist-bar">${total > 0 ? distBar : '<div class="hint">尚无记忆数据，先做一轮基础测验或复练</div>'}</div>
+    <div class="srs-dist-legend">
+      <span class="lv-0">错题 0</span><span class="lv-1">1 级</span><span class="lv-2">2 级</span>
+      <span class="lv-3">3 级</span><span class="lv-4">已掌握 4</span>
+    </div>`;
+  renderWrongbookList(data.wrongbook || []);
+}
+
+function renderWrongbookList(items) {
+  const box = $('#quizWrongbookList');
+  if (!box) return;
+  if (!items.length) { box.innerHTML = ''; return; }
+  box.innerHTML = `
+    <div class="card-title" style="margin-top:12px">📕 错题本（${items.length}）</div>
+    <div class="wb-list">${items.map(it => `
+      <div class="wb-item">
+        <span class="wb-word">${esc(it.spelling)}</span>
+        <span class="wb-meta">错 ${it.wrongCount || 0} 次 · 阶段 ${it.stage || 0}/4${it.nextDueAt ? ' · 下次 ' + fmtBJ(it.nextDueAt).slice(5, 16) : ''}</span>
+        <span class="wb-actions">
+          <button type="button" class="btn mini ghost wb-resolve" data-word="${esc(it.spelling)}">✓ 已掌握</button>
+          <button type="button" class="btn mini ghost wb-remove" data-word="${esc(it.spelling)}">✕</button>
+        </span>
+      </div>`).join('')}</div>`;
+  $$('#quizWrongbookList .wb-resolve').forEach(b => b.addEventListener('click', async () => {
+    try { await api('/api/quiz/wrongbook/resolve', { method: 'POST', body: { spelling: b.dataset.word } }); toast('已标记掌握'); loadSrsOverview(); }
+    catch (e) { toast('操作失败：' + e.message); }
+  }));
+  $$('#quizWrongbookList .wb-remove').forEach(b => b.addEventListener('click', async () => {
+    try { await api('/api/quiz/wrongbook/remove', { method: 'POST', body: { spelling: b.dataset.word } }); toast('已移除'); loadSrsOverview(); }
+    catch (e) { toast('操作失败：' + e.message); }
+  }));
+}
+
+async function loadSrsOverview() {
+  const box = $('#quizSrsOverview');
+  if (box) box.innerHTML = '<div class="hint">加载记忆状态…</div>';
+  try {
+    const filter = srs.filter === 'all' ? 'all' : srs.filter;
+    const data = await api('/api/quiz/srs?filter=' + encodeURIComponent(filter));
+    srs.overview = data.overview;
+    // 错题本列表始终展示全量（不受 filter 影响）：错题本单独拉取
+    const wb = await api('/api/quiz/wrongbook');
+    data.wrongbook = wb.items || [];
+    renderSrsOverview(data);
+  } catch (e) {
+    if (box) box.innerHTML = `<div class="result err">记忆状态加载失败：${esc(e.message)}</div>`;
+  }
+}
 
 // 迁移训练词源与题型开关
 $$('#transferSources .chip').forEach(c => c.addEventListener('click', () => {
@@ -5986,7 +6094,9 @@ $$('#quizConfidenceGroup .quiz-conf-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     $$('#quizConfidenceGroup .quiz-conf-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    quiz.confidence = btn.dataset.conf || 'unsure';
+    const conf = btn.dataset.conf || 'unsure';
+    quiz.confidence = conf;
+    srs.confidence = conf;   // v2.10.0：复练与基础测验共用信心组
   });
 });
 
@@ -6065,6 +6175,11 @@ async function startQuiz() {
     quiz.idx = 0;
     quiz.results = [];
     quiz.running = true;
+    quiz.sessionStartedAt = new Date().toISOString();
+    quiz.pausedMs = 0;
+    quiz.pauseStartedAt = null;
+    // v2.10.0：拉取这些词的现行 SRS 掌握度（供掌握度条展示）
+    await loadQuizSrsMeta(quiz.items.map(w => w.spelling));
     // 四选一的干扰项池
     if (quiz.mode === 'choice') {
       const all = await api('/api/words?filter=all');
@@ -6074,6 +6189,8 @@ async function startQuiz() {
     $('#quizSetup').style.display = 'none';
     $('#quizRun').style.display = 'block';
     $('#quizConfidenceGroup').style.display = '';
+    $('#quizMasteryRow').style.display = 'flex';
+    startQuizTimer();
     renderQuizItem();
   } catch (e) {
     msg.textContent = '❌ ' + e.message;
@@ -6081,16 +6198,77 @@ async function startQuiz() {
   }
 }
 
+/** v2.10.0：批量获取词的 SRS 元数据（掌握度/错题阶段） */
+async function loadQuizSrsMeta(spellings) {
+  quiz.srsMeta = {};
+  try {
+    const data = await api('/api/quiz/srs?filter=all');
+    const map = data.words || {};
+    for (const sp of spellings) if (map[sp]) quiz.srsMeta[sp] = map[sp];
+  } catch { /* 静默：SRS 状态不可用不影响出题 */ }
+}
+
 function quitQuiz() {
   quiz.running = false;
   transfer.running = false;
   transfer.answered = false;
+  srs.running = false;
   if (quiz.advanceTimer) { clearTimeout(quiz.advanceTimer); quiz.advanceTimer = null; }
   if (transfer.advanceTimer) { clearTimeout(transfer.advanceTimer); transfer.advanceTimer = null; }
+  if (srs.advanceTimer) { clearTimeout(srs.advanceTimer); srs.advanceTimer = null; }
+  stopQuizTimer();
   $('#quizRun').style.display = 'none';
   $('#quizSetup').style.display = 'block';
   $('#quizConfidenceGroup').style.display = '';
   $('#transferConfidenceGroup').style.display = 'none';
+  $('#quizMasteryRow').style.display = 'none';
+}
+
+/* ---- v2.10.0：会话计时（含暂停） ---- */
+let quizTimerHandle = null;
+function startQuizTimer() {
+  stopQuizTimer();
+  quizTimerHandle = setInterval(() => { const el = $('#quizTimer'); if (el) el.textContent = fmtDuration(currentSessionElapsedMs()); }, 500);
+}
+function stopQuizTimer() { if (quizTimerHandle) { clearInterval(quizTimerHandle); quizTimerHandle = null; } }
+function currentSessionElapsedMs() {
+  const session = srs.running ? srs : quiz;
+  if (!session.sessionStartedAt) return 0;
+  let ms = Date.now() - new Date(session.sessionStartedAt).getTime() - (session.pausedMs || 0);
+  if (session.pauseStartedAt) ms -= Date.now() - new Date(session.pauseStartedAt).getTime();
+  return Math.max(0, ms);
+}
+function fmtDuration(ms) {
+  const s = Math.floor(ms / 1000);
+  const m = Math.floor(s / 60);
+  return String(m).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+}
+if ($('#quizPauseBtn')) $('#quizPauseBtn').addEventListener('click', () => {
+  const session = srs.running ? srs : quiz;
+  const btn = $('#quizPauseBtn');
+  if (session.pauseStartedAt) {
+    session.pausedMs = (session.pausedMs || 0) + (Date.now() - new Date(session.pauseStartedAt).getTime());
+    session.pauseStartedAt = null;
+    btn.textContent = '⏸ 暂停';
+  } else {
+    session.pauseStartedAt = new Date().toISOString();
+    btn.textContent = '▶ 继续';
+  }
+});
+
+/** v2.10.0：渲染掌握度条（0–4） */
+function renderMasteryBar(spelling, srsMeta) {
+  const bar = $('#quizMasteryBar'), text = $('#quizMasteryText');
+  if (!bar || !text) return;
+  const meta = srsMeta || {};
+  const lv = Number(meta.mastery || 0);
+  $$('#quizMasteryBar .qm-seg').forEach(seg => {
+    seg.classList.toggle('on', Number(seg.dataset.lv) <= lv);
+    seg.classList.toggle('max', Number(seg.dataset.lv) === lv);
+  });
+  let label = lv === 0 ? '未掌握' : lv >= 4 ? '已掌握' : `${lv} 级`;
+  if (meta.wrongStage != null && !meta.resolved) label += `（错题阶段 ${meta.wrongStage}/4）`;
+  text.textContent = label;
 }
 
 function quizAdvance() {
@@ -6106,13 +6284,20 @@ function quizRecord(resp, extra = {}) {
   const startT = quiz.itemStartedAt ? new Date(quiz.itemStartedAt).getTime() : now;
   const durationMs = Math.max(0, Math.min(14400000, now - startT));
 
+  // v2.10.0：若为 4 档评分，映射为旧版 response 以兼容，同时保留 grade 交给 SRS 引擎
+  const grade = extra.grade || null;
+  const mappedResp = grade
+    ? { again: 'FORGET', hard: 'VAGUE', good: 'FAMILIAR', easy: 'FAMILIAR' }[grade]
+    : resp;
+
   quiz.results.push({
     spelling: it.spelling,
-    response: resp,
+    response: mappedResp,
+    grade,
     mode: quiz.mode,
     prompt: it.spelling,
     expected: it.gloss?.gloss || '',
-    userAnswer: extra.userAnswer !== undefined ? String(extra.userAnswer) : resp,
+    userAnswer: extra.userAnswer !== undefined ? String(extra.userAnswer) : mappedResp,
     confidence: quiz.confidence || 'unsure',
     startedAt: quiz.itemStartedAt || new Date(now - durationMs).toISOString(),
     submittedAt: new Date(now).toISOString(),
@@ -6124,6 +6309,7 @@ function renderQuizItem() {
   const it = quiz.items[quiz.idx];
   quiz.itemStartedAt = new Date().toISOString();
   resetQuizConfidence();
+  renderMasteryBar(it.spelling, quiz.srsMeta[it.spelling]);
   $('#quizProgress').textContent = `第 ${quiz.idx + 1} / ${quiz.items.length} 题`;
   $('#quizBar').style.width = (quiz.idx / quiz.items.length * 100) + '%';
   const area = $('#quizArea');
@@ -6139,13 +6325,11 @@ function renderQuizItem() {
     $('#quizFlipBtn').addEventListener('click', () => {
       $('#quizFlipZone').innerHTML = `
         <div class="quiz-answer"><span class="pos">${esc(it.gloss.pos || '')}</span>${esc(it.gloss.gloss)}</div>
-        <div class="grade-row">
-          <button class="btn grade g-ok" data-r="FAMILIAR">😊 认识</button>
-          <button class="btn grade g-mid" data-r="VAGUE">😐 模糊</button>
-          <button class="btn grade g-bad" data-r="FORGET">😵 忘记</button>
+        <div class="grade-row grade-row-4">
+          ${QUIZ_GRADES.map(g => `<button class="btn grade ${g.cls}" data-grade="${g.key}" title="${esc(g.hint)}">${esc(g.label)}</button>`).join('')}
         </div>`;
       $$('#quizFlipZone .grade').forEach(b =>
-        b.addEventListener('click', () => { quizRecord(b.dataset.r); quizAdvance(); }));
+        b.addEventListener('click', () => { quizRecord(null, { grade: b.dataset.grade }); quizAdvance(); }));
     });
     return;
   }
@@ -6169,7 +6353,7 @@ function renderQuizItem() {
       $('#quizFeedback').innerHTML = ok
         ? '<span class="fb-ok">✅ 答对了</span>'
         : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.gloss.gloss)}</b></span>`;
-      quizRecord(ok ? 'FAMILIAR' : 'FORGET', { userAnswer: pickedOpt.text });
+      quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: pickedOpt.text });
       quiz.advanceTimer = setTimeout(quizAdvance, ok ? 700 : 1800);
     }));
     return;
@@ -6195,7 +6379,7 @@ function renderQuizItem() {
       : `<span class="fb-bad">❌ 正确拼写：<b>${esc(it.spelling)}</b> <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></span>`;
     input.disabled = true;
     $('#quizSpellBtn').disabled = true;
-    quizRecord(ok ? 'FAMILIAR' : 'FORGET', { userAnswer: val });
+    quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: val });
     quiz.advanceTimer = setTimeout(quizAdvance, ok ? 700 : 2000);
   };
   $('#quizSpellBtn').addEventListener('click', submit);
@@ -6204,28 +6388,201 @@ function renderQuizItem() {
 
 async function finishQuiz() {
   quiz.running = false;
+  stopQuizTimer();
   $('#quizBar').style.width = '100%';
   $('#quizProgress').textContent = '测验完成 🎉';
   const r = quiz.results;
   const cnt = k => r.filter(x => x.response === k).length;
+  const gcnt = g => r.filter(x => x.grade === g).length;
+  const elapsed = fmtDuration(currentSessionElapsedMs());
   let submitNote = '';
+  let srsNote = '';
   try {
-    await api('/api/quiz/submit', { method: 'POST', body: { results: r, mode: quiz.mode } });
-    submitNote = '结果已记录：忘记/模糊的词自动进入了对应筛选，回「AI 学习」页可针对性攻克。';
+    const res = await api('/api/quiz/submit', { method: 'POST', body: { results: r, mode: quiz.mode } });
+    if (res.engine === 'srs') {
+      srsNote = `🧠 记忆引擎已更新${res.wrongBooked ? ` · 新入错题本 ${res.wrongBooked}` : ''}${res.resolved ? ` · 已掌握移出 ${res.resolved}` : ''}。`;
+    }
+    submitNote = '忘记/模糊的词自动进入了对应筛选，回「AI 学习」页可针对性攻克。';
   } catch {
     submitNote = '（结果上报失败，本次不计入错词统计）';
   }
+  const gc = QUIZ_GRADES.map(g => `<span class="gd ${g.cls}">${esc(g.label)} ${gcnt(g.key)}</span>`).join('');
   $('#quizArea').innerHTML = `
     <div class="quiz-done">
       <div class="quiz-score">${cnt('FAMILIAR')} / ${r.length}</div>
-      <div class="quiz-score-sub">认识 ${cnt('FAMILIAR')} · 模糊 ${cnt('VAGUE')} · 忘记 ${cnt('FORGET')}</div>
+      <div class="quiz-score-sub">用时 ${elapsed}</div>
+      <div class="quiz-grade-summary">${gc}</div>
+      <div class="hint" style="text-align:center">${esc(srsNote)}</div>
       <div class="hint" style="text-align:center">${esc(submitNote)}</div>
       <div class="row-gap" style="justify-content:center">
         <button class="btn primary" id="quizAgainBtn">🔁 再来一轮</button>
+        <button class="btn" id="quizToWrongbookBtn">📕 去错题复练</button>
         <button class="btn" data-jump="study" data-filter="forget">去学错词</button>
       </div>
     </div>`;
   $('#quizAgainBtn').addEventListener('click', quitQuiz);
+  $('#quizToWrongbookBtn').addEventListener('click', () => {
+    quitQuiz();
+    $$('#quizSubmode .quiz-submode-btn').forEach(b => b.classList.toggle('active', b.dataset.submode === 'srs'));
+    quiz.submode = 'srs';
+    $('#quizBasicPane').style.display = 'none';
+    $('#quizSrsPane').style.display = 'block';
+    $('#quizTransferPane').style.display = 'none';
+    loadSrsOverview();
+  });
+}
+
+/* ---------------- v2.10.0：错题复练（自维护 SRS） ---------------- */
+
+async function startSrs() {
+  const msg = $('#quizSrsMsg');
+  msg.textContent = '正在准备复练题…';
+  msg.className = 'result';
+  try {
+    const data = await api('/api/quiz/srs?filter=' + encodeURIComponent(srs.filter));
+    const due = data.due || [];
+    if (!due.length) {
+      msg.textContent = '⚠️ 当前没有到期的复练词。可先做基础测验积累记忆数据，或稍后再来。';
+      msg.className = 'result err';
+      return;
+    }
+    const count = Math.min(50, Math.max(3, Number($('#quizSrsCount').value) || 10));
+    const spellings = due.slice(0, count).map(d => d.spelling);
+    // 拉取词详情 + 释义
+    const words = await api('/api/words?filter=all');
+    const bySpelling = new Map((words.words || []).map(w => [w.spelling, w]));
+    let items = spellings.map(sp => {
+      const w = bySpelling.get(sp) || { spelling: sp, gloss: null };
+      return { ...w, _srs: data.words[sp] || {} };
+    });
+    const missing = items.filter(w => !w.gloss).map(w => w.spelling);
+    if (missing.length) {
+      const g = await api('/api/gloss', { method: 'POST', body: { spellings: missing } });
+      items.forEach(w => { if (g.glosses?.[w.spelling]) w.gloss = g.glosses[w.spelling]; });
+    }
+    items = items.filter(w => w.gloss?.gloss);
+    if (!items.length) {
+      msg.textContent = '⚠️ 到期词的释义获取失败（请检查设置页的 AI 服务商）';
+      msg.className = 'result err';
+      return;
+    }
+    srs.items = items;
+    srs.idx = 0;
+    srs.results = [];
+    srs.running = true;
+    srs.sessionStartedAt = new Date().toISOString();
+    srs.pausedMs = 0;
+    srs.pauseStartedAt = null;
+    quiz.srsMeta = { ...(data.words || {}) };
+    msg.textContent = '';
+    $('#quizSetup').style.display = 'none';
+    $('#quizRun').style.display = 'block';
+    $('#quizConfidenceGroup').style.display = '';
+    $('#quizMasteryRow').style.display = 'flex';
+    startQuizTimer();
+    renderSrsItem();
+  } catch (e) {
+    msg.textContent = '❌ ' + e.message;
+    msg.className = 'result err';
+  }
+}
+
+function srsAdvance() {
+  if (!srs.running) return;
+  srs.idx++;
+  if (srs.idx >= srs.items.length) return finishSrs();
+  renderSrsItem();
+}
+
+function srsRecord(grade, extra = {}) {
+  const it = srs.items[srs.idx];
+  const now = Date.now();
+  const startT = srs.itemStartedAt ? new Date(srs.itemStartedAt).getTime() : now;
+  const durationMs = Math.max(0, Math.min(14400000, now - startT));
+  srs.results.push({
+    spelling: it.spelling,
+    grade,
+    mode: 'flash',
+    prompt: it.spelling,
+    expected: it.gloss?.gloss || '',
+    userAnswer: extra.userAnswer !== undefined ? String(extra.userAnswer) : grade,
+    confidence: srs.confidence || 'unsure',
+    startedAt: srs.itemStartedAt || new Date(now - durationMs).toISOString(),
+    submittedAt: new Date(now).toISOString(),
+    durationMs,
+  });
+}
+
+function renderSrsItem() {
+  const it = srs.items[srs.idx];
+  srs.itemStartedAt = new Date().toISOString();
+  resetSrsConfidence();
+  const meta = quiz.srsMeta[it.spelling] || it._srs || {};
+  renderMasteryBar(it.spelling, meta);
+  $('#quizProgress').textContent = `复练 第 ${srs.idx + 1} / ${srs.items.length} 题`;
+  $('#quizBar').style.width = (srs.idx / srs.items.length * 100) + '%';
+  const srcBadge = meta.source === 'wrongbook'
+    ? `<span class="transfer-kind-badge cloze">错题本 · 阶段 ${meta.wrongStage || 0}/4</span>`
+    : '<span class="transfer-kind-badge">记忆到期</span>';
+  const area = $('#quizArea');
+  area.innerHTML = `
+    <div class="transfer-meta">${srcBadge}${meta.wrongCount ? `<span class="tag">错 ${meta.wrongCount} 次</span>` : ''}</div>
+    <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button>
+      ${it.gloss?.phonetic ? `<div class="phonetic">${esc(it.gloss.phonetic)}</div>` : ''}</div>
+    <div class="quiz-hint">回忆它的中文意思，再翻面自评</div>
+    <div class="quiz-flip-zone" id="srsFlipZone">
+      <button class="btn primary" id="srsFlipBtn">🔄 翻面看答案</button>
+    </div>`;
+  $('#srsFlipBtn').addEventListener('click', () => {
+    $('#srsFlipZone').innerHTML = `
+      <div class="quiz-answer"><span class="pos">${esc(it.gloss.pos || '')}</span>${esc(it.gloss.gloss)}</div>
+      <div class="grade-row grade-row-4">
+        ${QUIZ_GRADES.map(g => `<button class="btn grade ${g.cls}" data-grade="${g.key}" title="${esc(g.hint)}">${esc(g.label)}</button>`).join('')}
+      </div>`;
+    $$('#srsFlipZone .grade').forEach(b =>
+      b.addEventListener('click', () => { srsRecord(b.dataset.grade); srsAdvance(); }));
+  });
+}
+
+function resetSrsConfidence() {
+  srs.confidence = 'unsure';
+  $$('#quizConfidenceGroup .quiz-conf-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.conf === 'unsure');
+  });
+}
+
+async function finishSrs() {
+  srs.running = false;
+  stopQuizTimer();
+  $('#quizBar').style.width = '100%';
+  $('#quizProgress').textContent = '复练完成 🎯';
+  const r = srs.results;
+  const gcnt = g => r.filter(x => x.grade === g).length;
+  const elapsed = fmtDuration(currentSessionElapsedMs());
+  let note = '';
+  try {
+    const res = await api('/api/quiz/submit', { method: 'POST', body: { results: r, mode: 'srs' } });
+    const parts = [];
+    if (res.wrongBooked) parts.push(`新入错题本 ${res.wrongBooked}`);
+    if (res.resolved) parts.push(`已掌握移出 ${res.resolved}`);
+    note = `记忆引擎已更新${parts.length ? ' · ' + parts.join(' · ') : ''}。`;
+  } catch {
+    note = '（结果上报失败，本次不计入记忆引擎）';
+  }
+  const gc = QUIZ_GRADES.map(g => `<span class="gd ${g.cls}">${esc(g.label)} ${gcnt(g.key)}</span>`).join('');
+  $('#quizArea').innerHTML = `
+    <div class="quiz-done">
+      <div class="quiz-score">${gcnt('good') + gcnt('easy')} / ${r.length}</div>
+      <div class="quiz-score-sub">掌握+轻松 / 总数 · 用时 ${elapsed}</div>
+      <div class="quiz-grade-summary">${gc}</div>
+      <div class="hint" style="text-align:center">${esc(note)}</div>
+      <div class="row-gap" style="justify-content:center">
+        <button class="btn primary" id="srsAgainBtn">🔁 继续复练</button>
+        <button class="btn" id="srsBackBtn">↩ 返回设置</button>
+      </div>
+    </div>`;
+  $('#srsAgainBtn').addEventListener('click', () => { $('#quizRun').style.display = 'none'; $('#quizSetup').style.display = 'block'; $('#quizMasteryRow').style.display = 'none'; startSrs(); });
+  $('#srsBackBtn').addEventListener('click', () => { quitQuiz(); loadSrsOverview(); });
 }
 
 /* ---------------- v2.2.4：真题迁移训练 ---------------- */

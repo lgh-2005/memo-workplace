@@ -55,6 +55,8 @@ const LOGS_FILE = path.join(DATA_DIR, 'logs.json');
 const ERROR_LOG_FILE = path.join(DATA_DIR, 'error_log.json');
 const MAX_ERROR_LOGS = 500;   // 报错日志上限（超出裁掉最旧）
 const LEARNING_ATTEMPTS_FILE = path.join(DATA_DIR, 'learning_attempts.json');
+// v2.10.0：测验记忆引擎（自维护 SRS + 错题本 + 游戏化），独立文件不膨胀 db.json
+const QUIZ_SRS_FILE = path.join(DATA_DIR, 'quiz_srs.json');
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
 // 本机默认只监听 127.0.0.1；云服务器部署时设置 HOST=0.0.0.0（建议配合 nginx/防火墙）
 const HOST = process.env.HOST || '127.0.0.1';
@@ -241,6 +243,19 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '2.10.0',
+    date: '2026-09-24',
+    title: '测验记忆引擎（自维护 SRS + 错题本）',
+    items: [
+      '新增独立记忆引擎 data/quiz_srs.json（自维护 SRS，与墨墨同步数据互不干扰）：每词记录易度/间隔/到期时间与掌握度（0–4），tmp+rename 原子写、损坏拒绝覆盖、纳入备份与恢复',
+      '基础回忆闪卡升级为 4 档评分（😵 忘记 / 😕 吃力 / 😊 掌握 / 😎 轻松），按简化 SM-2 演化间隔与易度；四选一/拼写自动映射 correct/incorrect',
+      '新增「错题复练」子模式：答错即进入错题本，按 1→3→7→21 天分级复练，连续晋级即视为掌握并移出；支持仅错题本 / 仅记忆到期 / 全部到期三种范围',
+      '测验页新增掌握度条（0–4 分段）与作答计时（可暂停）；结果页展示 4 档明细、用时与记忆引擎更新摘要',
+      '新增游戏化基础（XP / 连胜 / 连对 combo），默认关闭，可在数据层按需开启',
+      '新增接口：GET /api/quiz/srs、GET /api/quiz/wrongbook、POST /api/quiz/wrongbook/resolve、POST /api/quiz/wrongbook/remove、POST /api/quiz/gamification；旧 /api/quiz/submit 无 grade 时保持 legacy 三档路径兼容',
+    ],
+  },
   {
     version: '2.9.1',
     date: '2026-09-23',
@@ -588,6 +603,323 @@ function updateLearningAttempt(attemptId, mutator) {
   store.attempts = pruneLearningAttempts(store.attempts);
   saveLearningStore(store);
   return next;
+}
+
+/* ------------------------------------------------------------------ */
+/* v2.10.0：测验记忆引擎——自维护 SRS（简化 SM-2） + 错题本 + 游戏化占位   */
+/*   独立文件 data/quiz_srs.json，与墨墨同步数据（db.words）互不干扰。      */
+/* ------------------------------------------------------------------ */
+
+const QUIZ_MAX_WORDS = 20000;          // SRS 词条上限
+const QUIZ_HISTORY_PER_WORD = 40;      // 每词最近作答历史条数上限
+const QUIZ_WRONGBOOK_MAX = 5000;       // 错题本条目上限
+
+/** 4 档评分（Anki 式）：again=忘记 / hard=吃力 / good=掌握 / easy=轻松 */
+const QUIZ_GRADES = new Set(['again', 'hard', 'good', 'easy']);
+/** 评分 → 旧版三档响应（兼容现有「忘记词/模糊词」筛选与统计口径） */
+const QUIZ_GRADE_TO_RESPONSE = { again: 'FORGET', hard: 'VAGUE', good: 'FAMILIAR', easy: 'FAMILIAR' };
+/** 评分 → 标准 attempt result */
+const QUIZ_GRADE_TO_RESULT = { again: 'incorrect', hard: 'vague', good: 'correct', easy: 'correct' };
+/** 掌握度晋级：错→归零；吃力→不动；掌握→+1；轻松→+2 */
+const QUIZ_GRADE_MASTERY_DELTA = { again: 0, hard: 0, good: 1, easy: 2 };
+/** 错题复练阶段间隔（天）：stage 0→1→2→3→4 毕业后移出错题本 */
+const QUIZ_REVIEW_INTERVALS_DAYS = [1, 3, 7, 21];
+const QUIZ_MASTERED_STAGE = QUIZ_REVIEW_INTERVALS_DAYS.length;   // 4
+const QUIZ_MASTERED_MASTERY = 4;
+
+function emptyQuizSrsStore() {
+  return {
+    schemaVersion: 1,
+    enabledAt: new Date().toISOString(),
+    words: {},
+    wrongBook: [],
+    gamification: { xp: 0, streak: 0, lastActiveDate: '', dailyGoal: 0, combo: 0, bestCombo: 0 },
+  };
+}
+
+function isQuizSrsShape(obj) {
+  return !!obj && typeof obj === 'object' && obj.schemaVersion === 1 &&
+    obj.words && typeof obj.words === 'object' && Array.isArray(obj.wrongBook);
+}
+
+/**
+ * 读取测验记忆存储。文件不存在返回内存空 store（首次真实追加后才落盘）；
+ * 文件存在但损坏/结构非法时抛 code=QUIZ_SRS_CORRUPT，绝不返回空 store 覆盖原文件。
+ */
+function loadQuizSrs() {
+  if (!fs.existsSync(QUIZ_SRS_FILE)) return emptyQuizSrsStore();
+  let raw;
+  try {
+    raw = JSON.parse(fs.readFileSync(QUIZ_SRS_FILE, 'utf8'));
+  } catch (e) {
+    const err = new Error('测验记忆文件损坏，无法解析：' + String(e.message || e).slice(0, 160));
+    err.code = 'QUIZ_SRS_CORRUPT';
+    throw err;
+  }
+  if (!isQuizSrsShape(raw)) {
+    const err = new Error('测验记忆文件结构非法（schemaVersion 必须为 1 且 words/wrongBook 合规），已拒绝读写以免覆盖');
+    err.code = 'QUIZ_SRS_CORRUPT';
+    throw err;
+  }
+  return {
+    schemaVersion: 1,
+    enabledAt: typeof raw.enabledAt === 'string' ? raw.enabledAt : new Date().toISOString(),
+    words: raw.words,
+    wrongBook: Array.isArray(raw.wrongBook) ? raw.wrongBook : [],
+    gamification: (raw.gamification && typeof raw.gamification === 'object')
+      ? { xp: 0, streak: 0, lastActiveDate: '', dailyGoal: 0, combo: 0, bestCombo: 0, ...raw.gamification }
+      : { xp: 0, streak: 0, lastActiveDate: '', dailyGoal: 0, combo: 0, bestCombo: 0 },
+  };
+}
+
+function saveQuizSrs(store) {
+  saveJSON(QUIZ_SRS_FILE, {
+    schemaVersion: 1,
+    enabledAt: store.enabledAt || new Date().toISOString(),
+    words: store.words && typeof store.words === 'object' ? store.words : {},
+    wrongBook: Array.isArray(store.wrongBook) ? store.wrongBook : [],
+    gamification: store.gamification || { xp: 0, streak: 0, lastActiveDate: '', dailyGoal: 0, combo: 0, bestCombo: 0 },
+  });
+}
+
+/** 裁剪：word 数、每词历史、错题本条目上限（已 resolve 的最先淘汰） */
+function pruneQuizSrs(store) {
+  const words = store.words || {};
+  for (const sp of Object.keys(words)) {
+    const w = words[sp];
+    if (Array.isArray(w.history) && w.history.length > QUIZ_HISTORY_PER_WORD) {
+      w.history = w.history.slice(-QUIZ_HISTORY_PER_WORD);
+    }
+  }
+  const keys = Object.keys(words);
+  if (keys.length > QUIZ_MAX_WORDS) {
+    // 保留最近复习的，淘汰最久未动的
+    keys.sort((a, b) => String(words[a].lastReviewedAt || '').localeCompare(String(words[b].lastReviewedAt || '')));
+    for (const sp of keys.slice(0, keys.length - QUIZ_MAX_WORDS)) delete words[sp];
+  }
+  let wb = Array.isArray(store.wrongBook) ? store.wrongBook : [];
+  if (wb.length > QUIZ_WRONGBOOK_MAX) {
+    wb = wb.slice().sort((a, b) => {
+      if (!!a.resolved !== !!b.resolved) return a.resolved ? 1 : -1;
+      return String(b.lastWrongAt || '').localeCompare(String(a.lastWrongAt || ''));
+    }).slice(0, QUIZ_WRONGBOOK_MAX);
+  }
+  store.wrongBook = wb;
+  return store;
+}
+
+/** 单次作答时间（安全解析 ISO → ms） */
+function isoMs(v) {
+  if (!v) return 0;
+  const t = new Date(v).getTime();
+  return isNaN(t) ? 0 : t;
+}
+
+/** 生成/规整单个词的 SRS 状态 */
+function normalizeSrsWord(w) {
+  const o = (w && typeof w === 'object') ? w : {};
+  return {
+    ease: Number.isFinite(o.ease) ? Math.min(3.2, Math.max(1.3, o.ease)) : 2.5,
+    intervalDays: Number.isFinite(o.intervalDays) && o.intervalDays >= 0 ? o.intervalDays : 0,
+    dueAt: typeof o.dueAt === 'string' ? o.dueAt : null,
+    mastery: Number.isFinite(o.mastery) ? Math.min(QUIZ_MASTERED_MASTERY, Math.max(0, Math.round(o.mastery))) : 0,
+    streakCorrect: Number.isFinite(o.streakCorrect) && o.streakCorrect >= 0 ? o.streakCorrect : 0,
+    lapses: Number.isFinite(o.lapses) && o.lapses >= 0 ? o.lapses : 0,
+    totalReviews: Number.isFinite(o.totalReviews) && o.totalReviews >= 0 ? o.totalReviews : 0,
+    lastGrade: typeof o.lastGrade === 'string' ? o.lastGrade : null,
+    lastResult: typeof o.lastResult === 'string' ? o.lastResult : null,
+    lastReviewedAt: typeof o.lastReviewedAt === 'string' ? o.lastReviewedAt : null,
+    firstSeenAt: typeof o.firstSeenAt === 'string' ? o.firstSeenAt : null,
+    history: Array.isArray(o.history) ? o.history : [],
+  };
+}
+
+/**
+ * 简化 SM-2 演化：给定当前状态与本次评分，返回新状态。
+ * 纯函数（不读文件、不写盘），便于单测。
+ * @param {object} cur 现有词状态（可为 null）
+ * @param {string} grade again|hard|good|easy
+ * @param {object} opts { confidence, result, at(ISO) }
+ */
+function applySrsGrade(cur, grade, opts = {}) {
+  if (!QUIZ_GRADES.has(grade)) throw new Error(`无效评分: ${grade}`);
+  const nowIso = typeof opts.at === 'string' ? opts.at : new Date().toISOString();
+  const prev = normalizeSrsWord(cur);
+  const ease = prev.ease;
+  let intervalDays = prev.intervalDays;
+  let mastery = prev.mastery;
+  let streakCorrect = prev.streakCorrect;
+  let lapses = prev.lapses;
+
+  if (grade === 'again') {
+    intervalDays = 0;
+    mastery = 0;
+    streakCorrect = 0;
+    lapses += 1;
+  } else if (grade === 'hard') {
+    intervalDays = prev.intervalDays <= 0 ? 1 : Math.max(1, Math.round(prev.intervalDays * 1.2));
+    streakCorrect += 1;
+  } else if (grade === 'good') {
+    intervalDays = prev.intervalDays <= 0 ? 1 : Math.max(1, Math.round(prev.intervalDays * ease));
+    mastery = Math.min(QUIZ_MASTERED_MASTERY, mastery + QUIZ_GRADE_MASTERY_DELTA.good);
+    streakCorrect += 1;
+  } else { // easy
+    intervalDays = prev.intervalDays <= 0 ? 4 : Math.max(1, Math.round(prev.intervalDays * ease * 1.3));
+    mastery = Math.min(QUIZ_MASTERED_MASTERY, mastery + QUIZ_GRADE_MASTERY_DELTA.easy);
+    streakCorrect += 1;
+  }
+
+  // ease 演化（SM-2 惯例；again 扣分最多）
+  let nextEase = ease;
+  if (grade === 'again') nextEase -= 0.20;
+  else if (grade === 'hard') nextEase -= 0.15;
+  else if (grade === 'easy') nextEase += 0.15;
+  nextEase = Math.min(3.2, Math.max(1.3, Number(nextEase.toFixed(3))));
+
+  const dueAt = intervalDays > 0
+    ? new Date(isoMs(nowIso) + intervalDays * 86400000).toISOString()
+    : new Date(isoMs(nowIso) + 10 * 60000).toISOString();   // again：10 分钟后再来
+
+  const result = opts.result || QUIZ_GRADE_TO_RESULT[grade];
+  const entry = {
+    ease: nextEase,
+    intervalDays,
+    dueAt,
+    mastery,
+    streakCorrect,
+    lapses,
+    totalReviews: prev.totalReviews + 1,
+    lastGrade: grade,
+    lastResult: result,
+    lastReviewedAt: nowIso,
+    firstSeenAt: prev.firstSeenAt || nowIso,
+    history: prev.history.concat([{
+      at: nowIso, grade, result,
+      confidence: opts.confidence || null,
+      intervalDays, mastery,
+    }]),
+  };
+  return entry;
+}
+
+/** 错题本条目查找下标 */
+function wrongBookIndex(store, spelling) {
+  return (store.wrongBook || []).findIndex(x => x.spelling === spelling);
+}
+
+/**
+ * 作答后更新错题本（纯逻辑，直接改 store.wrongBook）。
+ * 答错（again）→ 入本/回炉 stage=0；答对（good/easy）→ stage 晋级；
+ * 连续晋级达 QUIZ_MASTERED_STAGE 视为掌握 → resolved=true 移出复练队列。
+ */
+function updateWrongBook(store, spelling, grade, atIso) {
+  const at = atIso || new Date().toISOString();
+  const idx = wrongBookIndex(store, spelling);
+  if (!Array.isArray(store.wrongBook)) store.wrongBook = [];
+
+  if (grade === 'again') {
+    if (idx >= 0) {
+      const e = store.wrongBook[idx];
+      e.lastWrongAt = at;
+      e.wrongCount = (e.wrongCount || 0) + 1;
+      e.stage = 0;
+      e.resolved = false;
+      e.nextDueAt = new Date(isoMs(at) + QUIZ_REVIEW_INTERVALS_DAYS[0] * 86400000).toISOString();
+    } else {
+      store.wrongBook.unshift({
+        spelling,
+        firstWrongAt: at,
+        lastWrongAt: at,
+        wrongCount: 1,
+        stage: 0,
+        nextDueAt: new Date(isoMs(at) + QUIZ_REVIEW_INTERVALS_DAYS[0] * 86400000).toISOString(),
+        resolved: false,
+        lastGrade: grade,
+      });
+    }
+    return store.wrongBook[wrongBookIndex(store, spelling)];
+  }
+
+  // 非 again：仅当已在错题本中才推进阶段
+  if (idx < 0) return null;
+  const e = store.wrongBook[idx];
+  if (grade === 'hard') {
+    e.lastGrade = grade;
+    return e;   // 吃力不晋级，维持当前阶段
+  }
+  // good / easy
+  e.stage = (e.stage || 0) + 1;
+  e.lastGrade = grade;
+  if (e.stage >= QUIZ_MASTERED_STAGE) {
+    e.resolved = true;
+    e.resolvedAt = at;
+    e.nextDueAt = null;
+  } else {
+    const days = QUIZ_REVIEW_INTERVALS_DAYS[e.stage] || QUIZ_REVIEW_INTERVALS_DAYS[QUIZ_REVIEW_INTERVALS_DAYS.length - 1];
+    e.nextDueAt = new Date(isoMs(at) + days * 86400000).toISOString();
+    e.resolved = false;
+  }
+  return e;
+}
+
+/** 计算到期复习词（SRS due 或错题本 due），按到期时间升序。 */
+function collectSrsDue(filter = 'srs_due') {
+  const store = loadQuizSrs();
+  const now = Date.now();
+  const out = [];
+  const wbMap = new Map((store.wrongBook || []).map(x => [x.spelling, x]));
+
+  const consider = (spelling, dueAt, source) => {
+    const t = isoMs(dueAt);
+    if (!dueAt || t > now) return;
+    out.push({ spelling, dueAt, source });
+  };
+
+  if (filter === 'srs_due' || filter === 'all') {
+    for (const sp of Object.keys(store.words)) {
+      const w = store.words[sp];
+      if (w && w.dueAt) consider(sp, w.dueAt, 'srs');
+    }
+  }
+  if (filter === 'wrongbook' || filter === 'all') {
+    for (const e of store.wrongBook) {
+      if (e.resolved) continue;
+      consider(e.spelling, e.nextDueAt, 'wrongbook');
+    }
+  }
+  out.sort((a, b) => isoMs(a.dueAt) - isoMs(b.dueAt));
+  return out;
+}
+
+/** 记忆状态概览（掌握度分布 / 到期数 / 错题本数 / 平均易度） */
+function srsOverview() {
+  const store = loadQuizSrs();
+  const now = Date.now();
+  const dist = [0, 0, 0, 0, 0];
+  let dueCount = 0;
+  let easeSum = 0;
+  let easeN = 0;
+  for (const sp of Object.keys(store.words)) {
+    const w = normalizeSrsWord(store.words[sp]);
+    dist[w.mastery]++;
+    if (w.dueAt && isoMs(w.dueAt) <= now) dueCount++;
+    easeSum += w.ease; easeN++;
+  }
+  const active = (store.wrongBook || []).filter(x => !x.resolved);
+  const dueWrong = active.filter(x => x.nextDueAt && isoMs(x.nextDueAt) <= now).length;
+  return {
+    trackedWords: Object.keys(store.words).length,
+    masteryDist: {
+      '0': dist[0], '1': dist[1], '2': dist[2], '3': dist[3], '4': dist[4],
+    },
+    dueCount,
+    wrongBookTotal: active.length,
+    wrongBookResolved: (store.wrongBook || []).length - active.length,
+    wrongBookDue: dueWrong,
+    avgEase: easeN > 0 ? Number((easeSum / easeN).toFixed(2)) : null,
+    gamification: store.gamification,
+    enabledAt: store.enabledAt,
+  };
 }
 
 /** v2.2.8：同一 attemptId 在 LLM 请求期间只允许一次提交，避免并发重复生成复测任务 */
@@ -3573,6 +3905,126 @@ function applyQuizResults(results, mode) {
   return { applied, attemptsSaved };
 }
 
+/**
+ * v2.10.0：统一测验作答入库（4 档评分版）。
+ * ① 更新独立 SRS（quiz_srs.json）：每词 ease/interval/dueAt/mastery + 错题本；
+ * ② 兼容回写 db.words 的 quizResponse/quizWrong（仅命中已有词）；
+ * ③ 双写学习流水（word_quiz，带 grade/mastery）；
+ * ④ 更新游戏化（XP/连胜/combo）。
+ * @returns {{ applied:number, attemptsSaved:number, wrongBooked:number, resolved:number, gamification:object }}
+ */
+function applyQuizSrsSession(items, mode) {
+  const atIso = new Date().toISOString();
+  const store = loadQuizSrs();
+  const attemptsToSave = [];
+  let applied = 0;
+  let wrongBooked = 0;
+  let resolved = 0;
+  let xpGained = 0;
+  let combo = store.gamification.combo || 0;
+  let bestCombo = store.gamification.bestCombo || 0;
+
+  for (const it of items) {
+    const sp = String(it.spelling || '').trim();
+    const grade = String(it.grade || '').trim();
+    if (!sp || !QUIZ_GRADES.has(grade)) continue;
+    applied++;
+
+    // ① SRS 演化
+    const prev = store.words[sp] || null;
+    let conf = it.confidence ? String(it.confidence).trim() : 'unsure';
+    if (!VALID_ATTEMPT_CONFIDENCES.has(conf)) conf = 'unsure';
+    const result = QUIZ_GRADE_TO_RESULT[grade];
+    const next = applySrsGrade(prev, grade, { confidence: conf, result, at: atIso });
+    store.words[sp] = next;
+
+    // ② 错题本
+    const before = wrongBookIndex(store, sp);
+    const wasResolvedBefore = before >= 0 ? !!store.wrongBook[before].resolved : true;
+    updateWrongBook(store, sp, grade, atIso);
+    const afterIdx = wrongBookIndex(store, sp);
+    if (grade === 'again' && afterIdx >= 0 && !store.wrongBook[afterIdx].resolved && (before < 0 || wasResolvedBefore)) {
+      wrongBooked++;   // 新入本（含从已掌握回炉）
+    }
+    if (afterIdx >= 0 && store.wrongBook[afterIdx].resolved && !wasResolvedBefore) resolved++;
+
+    // ③ 兼容回写 db.words（仅命中已有墨墨词；自维护词不凭空创建）
+    const w = Object.values(db.words).find(x => x.spelling === sp);
+    if (w) {
+      w.quizResponse = QUIZ_GRADE_TO_RESPONSE[grade];
+      if (grade === 'again') w.quizWrong = (w.quizWrong || 0) + 1;
+      w.quizLastAt = atIso;
+    }
+
+    // ④ 游戏化
+    if (grade === 'again') { combo = 0; xpGained += 1; }
+    else if (grade === 'hard') { combo += 1; xpGained += 3; }
+    else if (grade === 'good') { combo += 1; xpGained += 5; }
+    else { combo += 1; xpGained += 8; }
+    if (combo > bestCombo) bestCombo = combo;
+
+    // ⑤ 学习流水
+    const stdGloss = (db.glosses && db.glosses[sp])
+      ? (typeof db.glosses[sp] === 'string' ? db.glosses[sp] : db.glosses[sp].gloss || '')
+      : '';
+    const userAnswer = it.userAnswer !== undefined && it.userAnswer !== null
+      ? String(it.userAnswer).slice(0, 4000)
+      : QUIZ_GRADE_TO_RESPONSE[grade];
+
+    attemptsToSave.push({
+      kind: 'word_quiz',
+      source: 'quiz',
+      itemId: `word:${sp}`,
+      section: 'vocabulary',
+      prompt: sp,
+      expected: stdGloss,
+      answer: userAnswer,
+      result,
+      confidence: conf,
+      startedAt: it.startedAt || null,
+      submittedAt: it.submittedAt || atIso,
+      durationMs: (typeof it.durationMs === 'number' && it.durationMs >= 0 && it.durationMs <= 14400000) ? Math.round(it.durationMs) : null,
+      meta: { mode: String(it.mode || mode || 'flash').slice(0, 20), word: sp, grade, mastery: next.mastery, response: QUIZ_GRADE_TO_RESPONSE[grade] },
+    });
+  }
+
+  // 游戏化累积（XP/连胜按北京时间自然日）
+  const today = bjDate();
+  const g = store.gamification;
+  if (applied > 0) {
+    g.xp = (g.xp || 0) + xpGained;
+    g.combo = combo;
+    g.bestCombo = bestCombo;
+    if (g.lastActiveDate !== today) {
+      const yesterday = bjDate(-1);
+      g.streak = (g.lastActiveDate === yesterday) ? (g.streak || 0) + 1 : 1;
+      g.lastActiveDate = today;
+    }
+  }
+
+  pruneQuizSrs(store);
+  saveQuizSrs(store);
+  persistDB();
+
+  // 旧聚合日志（兼容仪表盘「测验概况」）
+  if (applied > 0) {
+    db.quizLog.unshift({
+      ts: atIso, mode: String(mode || '').slice(0, 20),
+      total: applied,
+      familiar: items.filter(r => QUIZ_GRADE_TO_RESPONSE[r.grade] === 'FAMILIAR').length,
+      vague: items.filter(r => r.grade === 'hard').length,
+      forget: items.filter(r => r.grade === 'again').length,
+    });
+    db.quizLog = db.quizLog.slice(0, 100);
+    persistDB();
+  }
+
+  let attemptsSaved = 0;
+  if (attemptsToSave.length > 0) attemptsSaved = appendLearningAttempts(attemptsToSave);
+
+  return { applied, attemptsSaved, wrongBooked, resolved, gamification: g };
+}
+
 async function finishSession(payload) {
   const { messages = [], words = [], errorWords = [], startedAt, endedAt } = payload;
   if (!words.length) throw new Error('本次会话没有学习任何单词');
@@ -4423,8 +4875,126 @@ const server = http.createServer(async (req, res) => {
       if (p === '/api/quiz/submit' && req.method === 'POST') {
         const body = await readBody(req);
         const results = Array.isArray(body.results) ? body.results.slice(0, 500) : [];
+        // v2.10.0：若携带 4 档 grade，走 SRS 引擎（自维护调度 + 错题本 + 游戏化）；否则沿用旧三档路径
+        const hasGrade = results.some(r => r && QUIZ_GRADES.has(String(r.grade || '')));
+        if (hasGrade) {
+          const out = applyQuizSrsSession(results, body.mode);
+          return sendJSON(res, 200, { ok: true, engine: 'srs', ...out });
+        }
         const { applied, attemptsSaved } = applyQuizResults(results, body.mode);
-        return sendJSON(res, 200, { ok: true, applied, attemptsSaved });
+        return sendJSON(res, 200, { ok: true, engine: 'legacy', applied, attemptsSaved });
+      }
+
+      /* ---- v2.10.0：测验记忆引擎（SRS + 错题本 + 游戏化） ---- */
+
+      // 记忆状态概览 + 到期词表
+      if (p === '/api/quiz/srs' && req.method === 'GET') {
+        try {
+          const filter = u.searchParams.get('filter') || 'all';
+          if (!['srs_due', 'wrongbook', 'all'].includes(filter)) {
+            return sendJSON(res, 400, { error: 'filter 仅允许 srs_due/wrongbook/all' });
+          }
+          const store = loadQuizSrs();
+          const due = collectSrsDue(filter).slice(0, 100);
+          const overview = srsOverview();
+          // 附带掌握度明细（供前端展示 0–4 分布与每词状态）
+          const words = {};
+          for (const d of due) {
+            const raw = store.words[d.spelling];
+            const wb = (store.wrongBook || []).find(x => x.spelling === d.spelling);
+            words[d.spelling] = {
+              mastery: raw ? normalizeSrsWord(raw).mastery : 0,
+              ease: raw ? normalizeSrsWord(raw).ease : null,
+              intervalDays: raw ? normalizeSrsWord(raw).intervalDays : 0,
+              dueAt: d.dueAt,
+              source: d.source,
+              wrongStage: wb ? wb.stage : null,
+              wrongCount: wb ? wb.wrongCount : 0,
+            };
+          }
+          return sendJSON(res, 200, { ok: true, filter, due, words, overview });
+        } catch (e) {
+          if (e.code === 'QUIZ_SRS_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
+      }
+
+      // 错题本列表
+      if (p === '/api/quiz/wrongbook' && req.method === 'GET') {
+        try {
+          const store = loadQuizSrs();
+          const includeResolved = u.searchParams.get('resolved') === '1';
+          let list = store.wrongBook || [];
+          if (!includeResolved) list = list.filter(x => !x.resolved);
+          list = list.slice().sort((a, b) => {
+            const ta = isoMs(a.nextDueAt || a.lastWrongAt);
+            const tb = isoMs(b.nextDueAt || b.lastWrongAt);
+            return ta - tb;
+          }).slice(0, 500);
+          return sendJSON(res, 200, { ok: true, total: list.length, items: list });
+        } catch (e) {
+          if (e.code === 'QUIZ_SRS_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
+      }
+
+      // 手动将错题标记为已掌握（移出复练队列）
+      if (p === '/api/quiz/wrongbook/resolve' && req.method === 'POST') {
+        const body = await readBody(req);
+        const spelling = String(body.spelling || '').trim();
+        if (!spelling) return sendJSON(res, 400, { error: '缺少 spelling' });
+        try {
+          const store = loadQuizSrs();
+          const idx = wrongBookIndex(store, spelling);
+          if (idx < 0) return sendJSON(res, 404, { error: '该词不在错题本中' });
+          store.wrongBook[idx].resolved = true;
+          store.wrongBook[idx].resolvedAt = new Date().toISOString();
+          store.wrongBook[idx].nextDueAt = null;
+          saveQuizSrs(store);
+          return sendJSON(res, 200, { ok: true, spelling });
+        } catch (e) {
+          if (e.code === 'QUIZ_SRS_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
+      }
+
+      // 手动移除错题本条目
+      if (p === '/api/quiz/wrongbook/remove' && req.method === 'POST') {
+        const body = await readBody(req);
+        const spelling = String(body.spelling || '').trim();
+        if (!spelling) return sendJSON(res, 400, { error: '缺少 spelling' });
+        try {
+          const store = loadQuizSrs();
+          const before = (store.wrongBook || []).length;
+          store.wrongBook = (store.wrongBook || []).filter(x => x.spelling !== spelling);
+          if (store.wrongBook.length === before) return sendJSON(res, 404, { error: '该词不在错题本中' });
+          saveQuizSrs(store);
+          return sendJSON(res, 200, { ok: true, spelling });
+        } catch (e) {
+          if (e.code === 'QUIZ_SRS_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
+      }
+
+      // 游戏化开关/目标（默认关闭，设置页可开）
+      if (p === '/api/quiz/gamification' && req.method === 'POST') {
+        const body = await readBody(req);
+        try {
+          const store = loadQuizSrs();
+          const g = store.gamification;
+          if (body.enabled !== undefined) g.enabled = !!body.enabled;
+          if (body.dailyGoal !== undefined) {
+            const dg = Number(body.dailyGoal);
+            if (!Number.isFinite(dg) || dg < 0 || dg > 1000) return sendJSON(res, 400, { error: 'dailyGoal 需为 0..1000' });
+            g.dailyGoal = Math.round(dg);
+          }
+          if (body.reset === true) { g.xp = 0; g.combo = 0; g.bestCombo = 0; g.streak = 0; g.lastActiveDate = ''; }
+          saveQuizSrs(store);
+          return sendJSON(res, 200, { ok: true, gamification: g });
+        } catch (e) {
+          if (e.code === 'QUIZ_SRS_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
       }
 
       // 单词详情（含本地助记 + 韦氏词典缓存）
@@ -6360,6 +6930,7 @@ CRITICAL TRANSCRIPTION RULES:
           { src: CONFIG_FILE, name: 'config.json', json: true },
           { src: path.join(DATA_DIR, 'chat_sessions.json'), name: 'chat_sessions.json', json: true },
           { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json', json: true, learning: true },
+          { src: QUIZ_SRS_FILE, name: 'quiz_srs.json', json: true, quizSrs: true },
           { src: CORPUS_FILE, name: 'records.jsonl' },
           { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
           { src: KB_VERSIONS_FILE, name: 'kb_versions.json', json: true },
@@ -6377,6 +6948,10 @@ CRITICAL TRANSCRIPTION RULES:
             }
             if (f.learning && !isLearningStoreShape(v.obj)) {
               warnings.push({ file: f.name, reason: '学习流水结构不符，已跳过' });
+              continue;
+            }
+            if (f.quizSrs && !isQuizSrsShape(v.obj)) {
+              warnings.push({ file: f.name, reason: '测验记忆结构不符，已跳过' });
               continue;
             }
           }
@@ -6420,6 +6995,7 @@ CRITICAL TRANSCRIPTION RULES:
           { name: 'config.json', dst: CONFIG_FILE, json: true },
           { name: 'chat_sessions.json', dst: path.join(DATA_DIR, 'chat_sessions.json'), json: true },
           { name: 'learning_attempts.json', dst: LEARNING_ATTEMPTS_FILE, json: true, learning: true },
+          { name: 'quiz_srs.json', dst: QUIZ_SRS_FILE, json: true, quizSrs: true },
           { name: 'records.jsonl', dst: CORPUS_FILE, json: false },
           { name: 'exams.jsonl', dst: path.join(ROOT, 'corpus', 'exams.jsonl'), json: false },
           { name: 'kb_versions.json', dst: KB_VERSIONS_FILE, json: true },
@@ -6431,8 +7007,9 @@ CRITICAL TRANSCRIPTION RULES:
         for (const f of restoreMap) {
           const src = path.join(bDir, f.name);
           if (!fs.existsSync(src)) {
-            // 备份不含该文件：保留当前数据，不创建空文件覆盖（学习流水尤其如此）
+            // 备份不含该文件：保留当前数据，不创建空文件覆盖（学习流水/测验记忆尤其如此）
             if (f.learning) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前学习流水' });
+            if (f.quizSrs) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前测验记忆' });
             continue;
           }
           if (f.json) {
@@ -6443,6 +7020,10 @@ CRITICAL TRANSCRIPTION RULES:
             }
             if (f.learning && !isLearningStoreShape(v.obj)) {
               warnings.push({ file: f.name, reason: 'schemaVersion/attempts 结构不符，已跳过' });
+              continue;
+            }
+            if (f.quizSrs && !isQuizSrsShape(v.obj)) {
+              warnings.push({ file: f.name, reason: 'schemaVersion/words 结构不符，已跳过' });
               continue;
             }
           }
@@ -6527,6 +7108,7 @@ function autoBackup() {
       { src: CONFIG_FILE, name: 'config.json', json: true },
       { src: CHAT_FILE, name: 'chat_sessions.json', json: true },
       { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json', json: true, learning: true },
+      { src: QUIZ_SRS_FILE, name: 'quiz_srs.json', json: true, quizSrs: true },
       { src: CORPUS_FILE, name: 'records.jsonl' },
       { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
       { src: KB_VERSIONS_FILE, name: 'kb_versions.json', json: true },
@@ -6538,6 +7120,7 @@ function autoBackup() {
         const v = validateJsonFile(f.src);
         if (!v.valid) { console.error(`  [自动备份] 跳过损坏文件 ${f.name}: ${v.error}`); continue; }
         if (f.learning && !isLearningStoreShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
+        if (f.quizSrs && !isQuizSrsShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
       }
       fs.copyFileSync(f.src, path.join(bDir, f.name));
     }
