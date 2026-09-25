@@ -663,6 +663,19 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.1.0',
+    date: '2026-09-25',
+    title: '多用户 P1 账户体系（前端）',
+    items: [
+      '登录遮罩升级为「登录 / 注册」双标签：多用户模式走用户名 + 密码登录、一次性邀请码注册（注册成功即登录）；单用户模式仍为 Token 凭证，界面自适应',
+      '新增「👤 我的账户」设置区：显示当前用户名与角色（管理员/普通用户），一键退出登录',
+      '角色显隐：普通用户自动隐藏管理员专属设置区（模型服务/密钥/登录与安全/数据备份等），与后端 403 守卫一致',
+      '登出清理：清空内存学习状态 + 作文草稿 + 番茄钟进度，保留主题/风格/白噪音等设备偏好；登出后登录遮罩复现',
+      '管理员专属接口加固：备份创建/列表/恢复在多用户下仅管理员可用（403 FORBIDDEN）',
+      '登录/注册成功与启动时统一刷新认证状态与角色可见性',
+    ],
+  },
+  {
     version: '3.0.0',
     date: '2026-09-25',
     title: '多用户 P0 基础设施（后端）',
@@ -8449,9 +8462,10 @@ CRITICAL TRANSCRIPTION RULES:
         }
       }
 
-      /* ---- v1.2.0：数据备份与恢复 ---- */
+      /* ---- v1.2.0：数据备份与恢复（v3.1.0：多用户下备份为全站数据，仅管理员） ---- */
 
       if (p === '/api/backup/create' && req.method === 'POST') {
+        if (!isAdminCtx(ctxStore)) return sendJSON(res, 403, { error: '仅管理员可创建备份', code: 'FORBIDDEN' });
         const backupDir = path.join(DATA_DIR, 'backups');
         if (!fs.existsSync(backupDir)) fs.mkdirSync(backupDir, { recursive: true });
         let stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
@@ -8504,6 +8518,7 @@ CRITICAL TRANSCRIPTION RULES:
       }
 
       if (p === '/api/backup/list' && req.method === 'GET') {
+        if (!isAdminCtx(ctxStore)) return sendJSON(res, 403, { error: '仅管理员可查看备份', code: 'FORBIDDEN' });
         const backupDir = path.join(DATA_DIR, 'backups');
         if (!fs.existsSync(backupDir)) return sendJSON(res, 200, { ok: true, backups: [] });
         const list = fs.readdirSync(backupDir)
@@ -8518,6 +8533,7 @@ CRITICAL TRANSCRIPTION RULES:
       }
 
       if (p === '/api/backup/restore' && req.method === 'POST') {
+        if (!isAdminCtx(ctxStore)) return sendJSON(res, 403, { error: '仅管理员可恢复备份', code: 'FORBIDDEN' });
         const body = await readBody(req);
         const name = String(body.name || '').trim();
         if (!name || !/^backup-/.test(name)) return sendJSON(res, 400, { error: '无效的备份名称' });

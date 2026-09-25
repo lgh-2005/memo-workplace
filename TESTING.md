@@ -139,7 +139,13 @@
 |---|---|---|---|
 | 47 | `.workbuddy/test_v300_multiuser.js` | 52 | 多用户 P0 基础设施（后端）：单用户模式零破坏（`multiUser` 缺省、未启用登录全放行）、一次性迁移（建 admin + 备份 + per-user 目录落盘 + 旧顶层文件移走 + 哈希非明文 + 重复迁移被拒 + 迁后强制登录）、用户名+密码登录（错误密码 401、签发 `wb_session`）、一次性邀请码注册（错误码 `BAD_INVITE`、短密码 `BAD_PASSWORD`、注册即登录、邀请码不可复用、重名 `USERNAME_TAKEN`）、双用户配置隔离（各自墨墨 Token 落 `users/<id>/config.json` 互不串味）、普通用户禁改全局配置（403 `FORBIDDEN`）与禁看用户/邀请码、双用户学习数据隔离（`learning_attempts.json` 分落且只见自己）、管理员用户列表（不含哈希）/禁删 admin/删用户、登出后旧 Cookie 失效、**重启后 Cookie 仍有效（`sessions.json` 持久化）**；全程在 tmp 沙箱，真实数据哈希不变 |
 
-> 合计 **47** 套（第 3 节核心验收清单，含 1 套线上只读冒烟），断言总数 **1136+**；本次全量回归实测 **30 后端/单测 + 25 浏览器套件退出码 0**（另有少数早期套件随基线一并运行）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.15 v3.1.0 增量套件（1）
+
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 48 | `.workbuddy/test_v310_multiuser_ui.js` | 28 | 多用户账户体系前端（浏览器）：多用户未登录遮罩含「登录/注册」双标签（Token 输入隐藏）、错误邀请码提示、邀请码注册即进入并签发 httpOnly Cookie、普通用户登录后隐藏全部管理员专属设置区（`data-admin-only`）与「登录与安全」区且显示「我的账户」（用户名/角色）、前端 `isAdminUser()` 判定、登出后遮罩复现 + 作文草稿/番茄钟进度清理 + 设备偏好（主题）保留、管理员登录显示管理员设置区、390px 遮罩无横向溢出 + 登录按钮触控 ≥44px、控制台 0 错误（401 仅来自故意的错误注册/登录） |
+
+> 合计 **48** 套（第 3 节核心验收清单，含 1 套线上只读冒烟），断言总数 **1164+**；本次全量回归实测 **30 后端/单测 + 26 浏览器套件退出码 0**（另有少数早期套件随基线一并运行）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
 
 > **说明**：`english-workbench/.workbuddy/` 目录下共 54 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块、v2.9.x 外刊与 Markdown、v2.10.0 记忆引擎、v2.11.0 自适应组卷、v2.12.0 AI 增强与统计看板）。上表 46 套为与「25 后端 + 20 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
 
@@ -167,6 +173,7 @@ node .workbuddy/test_v270_track.js
 node .workbuddy/test_v271_cet6.js
 node .workbuddy/test_v280_auth.js
 node .workbuddy/test_v300_multiuser.js
+node .workbuddy/test_v310_multiuser_ui.js
 node .workbuddy/test_v2100_quiz_srs.js
 node .workbuddy/test_v2100_quiz_srs_ui.js
 node .workbuddy/test_v221_playwright.js

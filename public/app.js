@@ -76,13 +76,27 @@ window.addEventListener('unhandledrejection', (e) => {
   reportError({ source: 'frontend', level: 'error', message: (r && (r.message || r)) || 'Unhandled promise rejection', stack: r && r.stack });
 });
 
-/* ================= v2.8.0：Token 凭证登录 ================= */
+/* ================= v2.8.0：登录 / v3.1.0：多用户登录与注册 ================= */
+
+/** 全局认证状态（v3.1.0）：多用户总开关 + 当前用户信息 */
+const authState = {
+  enabled: false,
+  multiUser: false,
+  authed: false,
+  me: null,       // { id, username, role, createdAt, quotas }
+  loaded: false,
+};
+function isAdminUser() { return !authState.multiUser || (authState.me && authState.me.role === 'admin'); }
 
 function showLoginOverlay() {
   const ov = $('#loginOverlay');
   if (!ov) return;
   ov.style.display = 'flex';
-  setTimeout(() => { const t = $('#loginToken'); if (t) t.focus(); }, 60);
+  setTimeout(() => {
+    const focus = authState.multiUser ? (loginTab === 'register' ? '#regUsername' : '#loginUsername') : '#loginToken';
+    const t = $(focus);
+    if (t) t.focus();
+  }, 60);
 }
 
 function hideLoginOverlay() {
@@ -90,31 +104,170 @@ function hideLoginOverlay() {
   if (ov) ov.style.display = 'none';
 }
 
-async function doLogin() {
-  const input = $('#loginToken');
+/** 切换登录遮罩标签：login（用户名+密码）/ register（注册）；单用户模式恒为 Token */
+let loginTab = 'login';
+function setLoginTab(tab) {
+  loginTab = tab === 'register' ? 'register' : 'login';
+  const tabs = $('#loginTabs');
+  if (tabs) {
+    $$('.login-tab').forEach(b => b.classList.toggle('active', b.dataset.loginTab === loginTab));
+  }
+  $('#loginPaneUser').style.display = loginTab === 'login' ? 'block' : 'none';
+  $('#loginPaneRegister').style.display = loginTab === 'register' ? 'block' : 'none';
+  const btn = $('#loginBtn');
+  if (btn) btn.textContent = loginTab === 'register' ? '注册并进入' : '进入工作台';
   const out = $('#loginResult');
+  if (out) out.textContent = '';
+}
+
+/** 依据服务端 auth/status 应用登录遮罩形态（多用户双标签 vs 单用户 Token） */
+function applyAuthMode(s) {
+  authState.enabled = !!s.enabled;
+  authState.multiUser = !!s.multiUser;
+  const tabs = $('#loginTabs');
+  const paneToken = $('#loginPaneToken');
+  const paneUser = $('#loginPaneUser');
+  const paneReg = $('#loginPaneRegister');
+  if (authState.multiUser) {
+    if (tabs) tabs.style.display = 'flex';
+    if (paneToken) paneToken.style.display = 'none';
+    if (paneReg) paneReg.style.display = 'none';
+    paneUser.style.display = 'block';
+    setLoginTab('login');
+  } else {
+    if (tabs) tabs.style.display = 'none';
+    if (paneToken) paneToken.style.display = 'block';
+    if (paneUser) paneUser.style.display = 'none';
+    if (paneReg) paneReg.style.display = 'none';
+  }
+  applyRoleVisibility();
+}
+
+/** v3.1.0：按角色显隐管理员专属设置区（普通用户隐藏） */
+function applyRoleVisibility() {
+  const admin = isAdminUser();
+  $$('[data-admin-only]').forEach(el => { el.style.display = admin ? '' : 'none'; });
+  const accSec = $('#accountSection');
+  if (accSec) accSec.style.display = authState.multiUser ? '' : 'none';
+  if (authState.multiUser && authState.me) {
+    const nm = $('#accountName');
+    if (nm) nm.textContent = authState.me.username || '—';
+    const rl = $('#accountRole');
+    if (rl) rl.textContent = authState.me.role === 'admin' ? '管理员（可配置全局服务）' : '普通用户';
+  }
+}
+
+async function doLogin() {
+  const out = $('#loginResult');
+  if (authState.multiUser) {
+    if (loginTab === 'register') return doRegister();
+    const username = ($('#loginUsername') || {}).value || '';
+    const password = ($('#loginPassword') || {}).value || '';
+    if (!username.trim() || !password) { if (out) out.textContent = '请输入用户名与密码'; return; }
+    if (out) out.textContent = '登录中…';
+    try {
+      const r = await api('/api/auth/login', { method: 'POST', body: { username: username.trim(), password } });
+      authState.me = r.user || null;
+      if (out) out.textContent = '';
+      if ($('#loginPassword')) $('#loginPassword').value = '';
+      hideLoginOverlay();
+      initApp();
+    } catch (e) {
+      if (out) out.textContent = '❌ ' + e.message;
+    }
+    return;
+  }
+  // 单用户模式：Token 凭证
+  const input = $('#loginToken');
   const token = input ? input.value : '';
   if (!token) { if (out) out.textContent = '请输入 Token 凭证'; return; }
   if (out) out.textContent = '登录中…';
   try {
-    const r = await api('/api/auth/login', { method: 'POST', body: { token } });
+    await api('/api/auth/login', { method: 'POST', body: { token } });
     if (out) out.textContent = '';
     if (input) input.value = '';
     hideLoginOverlay();
-    // 登录成功后刷新当前页数据
     initApp();
   } catch (e) {
     if (out) out.textContent = '❌ ' + e.message;
   }
 }
 
+/** v3.1.0：注册（用户名 + 密码 + 一次性邀请码），成功即登录 */
+async function doRegister() {
+  const out = $('#loginResult');
+  const username = ($('#regUsername') || {}).value || '';
+  const password = ($('#regPassword') || {}).value || '';
+  const inviteCode = ($('#regInvite') || {}).value || '';
+  if (!username.trim() || !password || !inviteCode.trim()) {
+    if (out) out.textContent = '请填写用户名、密码与邀请码';
+    return;
+  }
+  if (out) out.textContent = '注册中…';
+  try {
+    const r = await api('/api/auth/register', { method: 'POST', body: { username: username.trim(), password, inviteCode: inviteCode.trim() } });
+    authState.me = r.user || null;
+    if (out) out.textContent = '';
+    if ($('#regPassword')) $('#regPassword').value = '';
+    if ($('#regInvite')) $('#regInvite').value = '';
+    hideLoginOverlay();
+    initApp();
+  } catch (e) {
+    if (out) out.textContent = '❌ ' + e.message;
+  }
+}
+
+/** v3.1.0：登出——清会话 + 用户数据（保留主题/风格等设备偏好） */
+async function doLogout() {
+  const out = $('#accountResult');
+  try {
+    await api('/api/auth/logout', { method: 'POST' });
+  } catch { /* 即便失败也清理本地并回登录页 */ }
+  logoutCleanup();
+  authState.me = null;
+  authState.authed = false;
+  try { await loadAuthStatus(); } catch { /* ignore */ }
+  toast('已退出登录');
+  showLoginOverlay();
+}
+
+/** 清理用户数据（保留设备偏好）：内存 state + 作文草稿 + 番茄钟进度；不删主题/风格/白噪音/禅模式 */
+function logoutCleanup() {
+  try {
+    state.chatHistory = [];
+    state.chatSessionId = null;
+    state.sessionWords = new Set();
+    state.sessionErrorWords = new Set();
+    state.activeWord = null;
+    state.words = [];
+    for (const k of Object.keys(localStorage)) {
+      if (k.startsWith('wrtDraft_')) { try { localStorage.removeItem(k); } catch { /* ignore */ } }
+    }
+    try { localStorage.removeItem(POMO_KEY); } catch { /* ignore */ }
+  } catch { /* ignore */ }
+}
+
 /** 启动时校验登录状态：未启用或已登录 → 正常进入；否则显示登录遮罩 */
 async function checkAuth() {
   try {
     const s = await api('/api/auth/status');
+    applyAuthMode(s);
+    authState.authed = !!s.authed;
+    authState.me = s.me || null;
+    authState.loaded = true;
     if (s.enabled && !s.authed) { showLoginOverlay(); return false; }
     return true;
   } catch { return true; }
+}
+
+/** v3.1.0：重新拉取认证状态（登录/注册/登出后调用），并刷新角色显隐 */
+async function loadAuthStatus() {
+  const s = await api('/api/auth/status');
+  applyAuthMode(s);
+  authState.authed = !!s.authed;
+  authState.me = s.me || null;
+  authState.loaded = true;
+  return s;
 }
 
 function bindLoginUI() {
@@ -122,6 +275,15 @@ function bindLoginUI() {
   if (btn) btn.addEventListener('click', doLogin);
   const input = $('#loginToken');
   if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); doLogin(); } });
+  const up = $('#loginUsername');
+  const pp = $('#loginPassword');
+  [up, pp].forEach(el => { if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); doLogin(); } }); });
+  const rp = $('#regPassword');
+  const ri = $('#regInvite');
+  [rp, ri].forEach(el => { if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); doLogin(); } }); });
+  $$('.login-tab').forEach(b => b.addEventListener('click', () => setLoginTab(b.dataset.loginTab)));
+  const lo = $('#logoutBtn');
+  if (lo) lo.addEventListener('click', doLogout);
 }
 
 function esc(s) {
@@ -7221,6 +7383,8 @@ if ($('#transferStartBtn')) $('#transferStartBtn').addEventListener('click', sta
 async function initApp() {
   applyTheme(localStorage.getItem('wb-theme') || 'light');
   applyStyle(localStorage.getItem('wb-style') || '');
+  // v3.1.0：刷新认证状态与角色显隐（登录/注册成功后进入时同步 me 与管理员设置可见性）
+  try { await loadAuthStatus(); } catch { /* 未登录或服务未就绪时静默 */ }
   // 番茄钟初始化：恢复上次进度（若页面关闭期间已到点，计入完成）
   if (!pomo.fullMs) pomo.fullMs = pomo.workMin * 60000;
   pomoRender();

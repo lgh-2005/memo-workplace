@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.0.0</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.1.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.0.0</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.1.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -52,15 +52,40 @@
 <button id="zenFloatingExit" class="zen-exit-btn" title="退出专注视界 (Esc或Z)">✕ 退出专注</button>
 <button id="spotlightToggleFloating" class="spotlight-floating-btn" title="开关段落聚光灯 (快捷键 S)">💡 探照灯</button>
 
-<!-- v2.9.0：Token 凭证登录遮罩（未登录时覆盖全屏；登录后该设备默认保持登录） -->
+<!-- v2.9.0：登录遮罩（未登录时覆盖全屏；登录后该设备默认保持登录）
+     v3.1.0：新增「登录 / 注册」双标签——多用户模式走用户名+密码、一次性邀请码注册；单用户模式仍走 Token 凭证 -->
 <div class="login-overlay" id="loginOverlay" style="display:none">
   <div class="login-card">
     <div class="login-brand">🐳 英语学习工作台</div>
-    <div class="login-sub">请输入 Token 凭证以进入</div>
-    <input type="password" id="loginToken" class="input login-input" placeholder="Token 凭证" autocomplete="current-password">
+
+    <!-- 多用户模式：登录 / 注册 标签 -->
+    <div class="login-tabs" id="loginTabs" style="display:none">
+      <button type="button" class="login-tab active" data-login-tab="login">登录</button>
+      <button type="button" class="login-tab" data-login-tab="register">注册</button>
+    </div>
+
+    <!-- 单用户模式：Token 凭证 -->
+    <div id="loginPaneToken">
+      <div class="login-sub" id="loginTokenSub">请输入 Token 凭证以进入</div>
+      <input type="password" id="loginToken" class="input login-input" placeholder="Token 凭证" autocomplete="current-password">
+    </div>
+
+    <!-- 多用户模式：登录表单 -->
+    <div id="loginPaneUser" style="display:none">
+      <input type="text" id="loginUsername" class="input login-input" placeholder="用户名" autocomplete="username">
+      <input type="password" id="loginPassword" class="input login-input" placeholder="密码" autocomplete="current-password">
+    </div>
+
+    <!-- 多用户模式：注册表单 -->
+    <div id="loginPaneRegister" style="display:none">
+      <input type="text" id="regUsername" class="input login-input" placeholder="用户名（2–20 位中英文/数字/下划线）" autocomplete="username" maxlength="20">
+      <input type="password" id="regPassword" class="input login-input" placeholder="密码（6–128 位）" autocomplete="new-password">
+      <input type="text" id="regInvite" class="input login-input" placeholder="一次性邀请码" autocomplete="off">
+    </div>
+
     <div class="result" id="loginResult"></div>
     <button class="btn primary login-btn" id="loginBtn">进入工作台</button>
-    <div class="hint login-hint">凭证由管理员在「设置 → 登录与安全」中配置；登录有效期内本设备无需重复输入。</div>
+    <div class="hint login-hint" id="loginHint">凭证由管理员在「设置 → 登录与安全」中配置；登录有效期内本设备无需重复输入。</div>
   </div>
 </div>
 
@@ -68,7 +93,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.0.0</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.1.0</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -955,8 +980,26 @@
   <!-- ============ 设置（v2.1.0：可折叠子版块） ============ -->
   <section id="tab-settings" class="tab-page" data-page-node-id="tKTGPEToP1TI0j2YEVwNvI">
 
-    <!-- ===== 子版块：模型服务 ===== -->
-    <details class="settings-section" open>
+    <!-- ===== 子版块：我的账户（v3.1.0，仅多用户模式显示） ===== -->
+    <details class="settings-section" id="accountSection" open style="display:none">
+      <summary>👤 我的账户</summary>
+      <div class="settings-section-body">
+        <div class="card" id="accountCard">
+          <div class="card-title">👤 我的账户 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v3.1.0 · 多用户）</span></div>
+          <div class="account-row">
+            <div>
+              <div class="account-name" id="accountName">—</div>
+              <div class="account-role" id="accountRole"></div>
+            </div>
+            <button class="btn" id="logoutBtn">🚪 退出登录</button>
+          </div>
+          <div class="result" id="accountResult"></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ===== 子版块：模型服务（v3.1.0：管理员专属，普通用户隐藏） ===== -->
+    <details class="settings-section" open data-admin-only>
       <summary>🤖 模型服务</summary>
       <div class="settings-section-body">
         <div class="grid-2" data-page-node-id="afHumpJW76Wzto2QRYiFxT">
@@ -1166,8 +1209,8 @@
       </div>
     </details>
 
-    <!-- ===== 子版块：登录与安全（v2.9.0） ===== -->
-    <details class="settings-section">
+    <!-- ===== 子版块：登录与安全（v2.9.0；v3.1.0：管理员专属） ===== -->
+    <details class="settings-section" data-admin-only>
       <summary>🔐 登录与安全</summary>
       <div class="settings-section-body">
         <div class="card" id="authCfgCard">
@@ -1213,8 +1256,8 @@
           <div class="hint">开启后服务端按间隔在后台自动同步墨墨数据；修改即时保存。</div>
         </div>
 
-        <div class="card">
-          <div class="card-title">🛡️ 数据备份与恢复 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.2.0）</span></div>
+        <div class="card" data-admin-only>
+          <div class="card-title">🛡️ 数据备份与恢复 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.2.0 · 全站数据，仅管理员）</span></div>
           <div class="hint">服务端每 6 小时自动备份核心数据（db.json / config.json / 聊天记录 / 语料库 / 真题库），最多保留 10 份。也可手动创建或恢复备份。</div>
           <div class="row-gap">
             <button class="btn primary" id="backupCreateBtn">📦 立即创建备份</button>
