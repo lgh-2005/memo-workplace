@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v2.11.0</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v2.12.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.11.0</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v2.12.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -68,7 +68,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v2.11.0</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v2.12.0</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -554,6 +554,7 @@
         <button type="button" class="btn quiz-submode-btn active" data-submode="basic">🧠 基础回忆</button>
         <button type="button" class="btn quiz-submode-btn" data-submode="srs">🔁 错题复练</button>
         <button type="button" class="btn quiz-submode-btn" data-submode="transfer">🎯 真题迁移</button>
+        <button type="button" class="btn quiz-submode-btn" data-submode="stats">📈 统计看板</button>
       </div>
 
       <div id="quizBasicPane">
@@ -595,6 +596,7 @@
         <button type="button" class="chip" data-akind="zh2en">🀄 看中选英</button>
         <button type="button" class="chip" data-akind="audio">🔊 听音辨义</button>
       </div>
+      <label class="field-label quiz-ai-toggle"><input type="checkbox" id="quizAiDistractors"> ✨ AI 增强干扰项（更贴近考研易混词，需 AI 服务商可用；失败自动回退）</label>
       <div class="row-gap">
         <button class="btn primary" id="quizAdaptiveBtn">🧩 智能组卷开测</button>
       </div>
@@ -656,6 +658,21 @@
           <button class="btn primary" id="transferStartBtn">🎯 开始迁移训练</button>
         </div>
         <div class="result" id="transferMsg"></div>
+      </div>
+
+      <!-- v2.12.0：统计看板 -->
+      <div id="quizStatsPane" style="display:none">
+        <details class="hint-fold"><summary>ℹ️ 说明</summary>
+        <div class="hint">数据来自自维护记忆引擎（<code>quiz_srs.json</code>）与学习流水（<code>learning_attempts.json</code>）：掌握度分布、正确率趋势、错题构成与连续学习天数。只看测验相关作答，不含墨墨同步的原始记录。</div>
+        </details>
+        <div class="row-gap" style="align-items:center">
+          <button type="button" class="chip active" data-statsdays="7">近 7 天</button>
+          <button type="button" class="chip" data-statsdays="14">近 14 天</button>
+          <button type="button" class="chip" data-statsdays="30">近 30 天</button>
+          <button class="btn small" id="quizStatsRefreshBtn">🔄 刷新</button>
+        </div>
+        <div class="result" id="quizStatsMsg"></div>
+        <div class="quiz-stats-board" id="quizStatsBoard"></div>
       </div>
     </div>
 

@@ -5947,7 +5947,11 @@ const quiz = {
   difficulty: 'normal',
   adaptiveKinds: ['flash', 'choice'],   // v2.11.0：交错题型开关（默认与「标准」档一致）
   saveTimer: null,
+  aiDistractors: false,                 // v2.12.0：AI 增强干扰项
 };
+
+/* v2.12.0：统计看板状态 */
+const stats = { days: 7, data: null };
 
 /* v2.10.0：错题复练状态（自维护 SRS + 错题本） */
 const srs = {
@@ -5996,7 +6000,9 @@ $$('#quizSubmode .quiz-submode-btn').forEach(btn => {
     $('#quizBasicPane').style.display = quiz.submode === 'basic' ? 'block' : 'none';
     $('#quizSrsPane').style.display = quiz.submode === 'srs' ? 'block' : 'none';
     $('#quizTransferPane').style.display = quiz.submode === 'transfer' ? 'block' : 'none';
+    if ($('#quizStatsPane')) $('#quizStatsPane').style.display = quiz.submode === 'stats' ? 'block' : 'none';
     if (quiz.submode === 'srs') loadSrsOverview();
+    if (quiz.submode === 'stats') loadQuizStats();
   });
 });
 
@@ -6044,13 +6050,20 @@ function renderWrongbookList(items) {
   box.innerHTML = `
     <div class="card-title" style="margin-top:12px">📕 错题本（${items.length}）</div>
     <div class="wb-list">${items.map(it => `
-      <div class="wb-item">
-        <span class="wb-word">${esc(it.spelling)}</span>
-        <span class="wb-meta">错 ${it.wrongCount || 0} 次 · 阶段 ${it.stage || 0}/4${it.nextDueAt ? ' · 下次 ' + fmtBJ(it.nextDueAt).slice(5, 16) : ''}</span>
-        <span class="wb-actions">
-          <button type="button" class="btn mini ghost wb-resolve" data-word="${esc(it.spelling)}">✓ 已掌握</button>
-          <button type="button" class="btn mini ghost wb-remove" data-word="${esc(it.spelling)}">✕</button>
-        </span>
+      <div class="wb-item wb-item-rich" data-word="${esc(it.spelling)}">
+        <div class="wb-line">
+          <span class="wb-word">${esc(it.spelling)}</span>
+          <span class="wb-meta">错 ${it.wrongCount || 0} 次 · 阶段 ${it.stage || 0}/4${it.nextDueAt ? ' · 下次 ' + fmtBJ(it.nextDueAt).slice(5, 16) : ''}</span>
+          <span class="wb-actions">
+            <button type="button" class="btn mini ghost wb-explain" data-word="${esc(it.spelling)}">💡 讲解</button>
+            <button type="button" class="btn mini ghost wb-mnemonic" data-word="${esc(it.spelling)}">📝 助记</button>
+            <button type="button" class="btn mini ghost wb-example" data-word="${esc(it.spelling)}">📚 例句</button>
+            <button type="button" class="btn mini ghost wb-resolve" data-word="${esc(it.spelling)}">✓ 已掌握</button>
+            <button type="button" class="btn mini ghost wb-remove" data-word="${esc(it.spelling)}">✕</button>
+          </span>
+        </div>
+        <div class="ai-explain-box" style="display:none"></div>
+        <div class="ai-example-box" style="display:none"></div>
       </div>`).join('')}</div>`;
   $$('#quizWrongbookList .wb-resolve').forEach(b => b.addEventListener('click', async () => {
     try { await api('/api/quiz/wrongbook/resolve', { method: 'POST', body: { spelling: b.dataset.word } }); toast('已标记掌握'); loadSrsOverview(); }
@@ -6059,6 +6072,18 @@ function renderWrongbookList(items) {
   $$('#quizWrongbookList .wb-remove').forEach(b => b.addEventListener('click', async () => {
     try { await api('/api/quiz/wrongbook/remove', { method: 'POST', body: { spelling: b.dataset.word } }); toast('已移除'); loadSrsOverview(); }
     catch (e) { toast('操作失败：' + e.message); }
+  }));
+  $$('#quizWrongbookList .wb-explain').forEach(b => b.addEventListener('click', () => {
+    const box = b.closest('.wb-item-rich').querySelector('.ai-explain-box');
+    if (box.style.display !== 'none') { box.style.display = 'none'; return; }
+    aiExplainInto(b.dataset.word, box, { correct: false });
+  }));
+  $$('#quizWrongbookList .wb-mnemonic').forEach(b => b.addEventListener('click', () => aiMnemonicFor(b.dataset.word, b)));
+  $$('#quizWrongbookList .wb-example').forEach(b => b.addEventListener('click', () => {
+    const box = b.closest('.wb-item-rich').querySelector('.ai-example-box');
+    if (box.style.display !== 'none') { box.style.display = 'none'; return; }
+    box.style.display = '';
+    loadQuizExamples(b.dataset.word, box);
   }));
 }
 
@@ -6076,6 +6101,166 @@ async function loadSrsOverview() {
   } catch (e) {
     if (box) box.innerHTML = `<div class="result err">记忆状态加载失败：${esc(e.message)}</div>`;
   }
+}
+
+/* ================= v2.12.0：统计看板 + AI 增强 ================= */
+
+const QUIZ_KIND_LABELS = { flash: '🃏 闪卡', choice: '🔤 四选一', spell: '⌨️ 拼写', zh2en: '🀄 看中选英', audio: '🔊 听音辨义', srs: '🔁 复练' };
+
+$$('#quizStatsPane [data-statsdays]').forEach(c => c.addEventListener('click', () => {
+  $$('#quizStatsPane [data-statsdays]').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  stats.days = Number(c.dataset.statsdays) || 7;
+  loadQuizStats();
+}));
+if ($('#quizStatsRefreshBtn')) $('#quizStatsRefreshBtn').addEventListener('click', loadQuizStats);
+
+async function loadQuizStats() {
+  const box = $('#quizStatsBoard');
+  const msg = $('#quizStatsMsg');
+  if (box) box.innerHTML = '<div class="hint">加载统计…</div>';
+  if (msg) msg.textContent = '';
+  try {
+    const d = await api('/api/quiz/stats?days=' + stats.days);
+    stats.data = d;
+    renderQuizStats(d);
+  } catch (e) {
+    if (box) box.innerHTML = `<div class="result err">统计加载失败：${esc(e.message)}</div>`;
+  }
+}
+
+function renderQuizStats(d) {
+  const box = $('#quizStatsBoard');
+  if (!box) return;
+  const dist = d.masteryDist || {};
+  const total = Number(d.trackedWords || 0);
+  const distBar = [0, 1, 2, 3, 4].map(lv => {
+    const n = Number(dist[String(lv)] || 0);
+    const pct = total > 0 ? Math.round(n / total * 100) : 0;
+    return `<div class="srs-dist-seg lv-${lv}" style="width:${pct}%" title="掌握度 ${lv}：${n} 词"></div>`;
+  }).join('');
+
+  // 正确率趋势（迷你柱状图）
+  const trend = d.accuracyTrend || [];
+  const maxRate = 100;
+  const bars = trend.map(t => {
+    const h = t.rate == null ? 0 : Math.max(4, Math.round(t.rate / maxRate * 72));
+    const cls = t.rate == null ? 'empty' : (t.rate >= 80 ? 'good' : t.rate >= 60 ? 'mid' : 'low');
+    const label = t.date.slice(5);
+    const tip = t.total ? `${label}：${t.correct}/${t.total}（${t.rate}%）` : `${label}：无作答`;
+    return `<div class="acc-bar-wrap" title="${esc(tip)}"><div class="acc-bar ${cls}" style="height:${h}px"></div><span class="acc-lbl">${esc(label.slice(3))}</span></div>`;
+  }).join('');
+
+  // 题型正确率
+  const kindRows = (d.kindRates || []).map(k => {
+    const rate = k.rate == null ? '—' : k.rate + '%';
+    return `<div class="kind-rate-row"><span class="kr-name">${QUIZ_KIND_LABELS[k.kind] || esc(k.kind)}</span>
+      <span class="kr-bar"><i style="width:${k.rate == null ? 0 : k.rate}%"></i></span>
+      <span class="kr-val">${rate} <span class="kr-sub">(${k.correct}/${k.total})</span></span></div>`;
+  }).join('') || '<div class="hint">尚无题型作答数据</div>';
+
+  const wb = d.wrongBook || {};
+  const wc = wb.byWrongCount || {};
+  const stageBars = (wb.byStage || []).map((n, i) =>
+    `<div class="wb-stage-seg s${i}" style="flex:${n}"><span>${n}</span></div>`).join('');
+
+  box.innerHTML = `
+    <div class="stats-grid">
+      <div class="stats-card">
+        <div class="stats-card-title">🧠 掌握度分布</div>
+        <div class="srs-dist-bar">${total > 0 ? distBar : '<div class="hint">尚无记忆数据</div>'}</div>
+        <div class="srs-dist-legend">
+          <span class="lv-0">错题 ${dist['0'] || 0}</span><span class="lv-1">1级 ${dist['1'] || 0}</span>
+          <span class="lv-2">2级 ${dist['2'] || 0}</span><span class="lv-3">3级 ${dist['3'] || 0}</span>
+          <span class="lv-4">已掌握 ${dist['4'] || 0}</span>
+        </div>
+        <div class="stats-sub">追踪 ${total} 词 · <b class="${d.dueCount ? 'warn' : ''}">${d.dueCount || 0}</b> 记忆到期</div>
+      </div>
+      <div class="stats-card">
+        <div class="stats-card-title">🔥 连续学习 <b>${d.streakDays || 0}</b> 天</div>
+        <div class="stats-sub">错题本在册 <b>${wb.active || 0}</b> · 已掌握 <b>${wb.resolved || 0}</b></div>
+        <div class="wb-count-row">
+          <span class="wb-count-item">错 1 次 <b>${wc['1'] || 0}</b></span>
+          <span class="wb-count-item">错 2 次 <b>${wc['2'] || 0}</b></span>
+          <span class="wb-count-item">错 3+ 次 <b>${wc['3+'] || 0}</b></span>
+        </div>
+        <div class="stats-card-title" style="font-size:12.5px;margin-top:8px">复练阶段分布（0→3）</div>
+        <div class="wb-stage-bar">${wb.active ? stageBars : '<div class="hint">错题本为空</div>'}</div>
+      </div>
+    </div>
+    <div class="stats-card">
+      <div class="stats-card-title">📈 近 ${d.windowDays} 天正确率趋势</div>
+      <div class="acc-chart">${bars || '<div class="hint">无数据</div>'}</div>
+      <div class="acc-legend"><span class="lg good"></span>≥80% <span class="lg mid"></span>60–79% <span class="lg low"></span>&lt;60%</div>
+    </div>
+    <div class="stats-card">
+      <div class="stats-card-title">🎯 分题型正确率</div>
+      <div class="kind-rate-list">${kindRows}</div>
+    </div>`;
+}
+
+/** ⑤ 外刊/真题真实例句 */
+async function loadQuizExamples(spelling, container) {
+  try {
+    const d = await api('/api/quiz/ai/examples?spelling=' + encodeURIComponent(spelling));
+    const ex = d.examples || [];
+    if (!ex.length) { container.innerHTML = '<div class="hint">暂无真题/外刊真实例句</div>'; return; }
+    container.innerHTML = ex.map(e => `
+      <div class="ai-example">
+        <div class="ai-example-text">${esc(e.sentence)}</div>
+        <div class="ai-example-src">— ${esc(e.sourceLabel)}${e.title ? ' · ' + esc(e.title) : ''}</div>
+      </div>`).join('');
+  } catch (e) { container.innerHTML = `<div class="hint">例句加载失败：${esc(e.message)}</div>`; }
+}
+
+/** ② 错题讲解（结果页/错题本内联展开） */
+async function aiExplainInto(spelling, container, opts = {}) {
+  container.style.display = '';
+  container.innerHTML = '<div class="hint">🧠 AI 讲解生成中…</div>';
+  try {
+    const d = await api('/api/quiz/ai/explain', { method: 'POST', body: { spelling, gloss: opts.gloss, userAnswer: opts.userAnswer, correct: opts.correct } });
+    if (!d.ok || !d.explain) {
+      container.innerHTML = '<div class="hint">讲解暂不可用（AI 未就绪或配额不足），可稍后再试。</div>';
+      return;
+    }
+    container.innerHTML = `<div class="ai-explain md-body">${mdLite(d.explain)}</div>`;
+  } catch (e) { container.innerHTML = `<div class="hint">讲解失败：${esc(e.message)}</div>`; }
+}
+
+/** ③ 一键助记 */
+async function aiMnemonicFor(spelling, btn) {
+  const old = btn.textContent;
+  btn.disabled = true; btn.textContent = '生成中…';
+  try {
+    const d = await api('/api/quiz/ai/mnemonic', { method: 'POST', body: { spelling } });
+    const tag = d.source === 'ai' ? 'AI' : '兜底';
+    toast(`已生成助记（${tag}），可在「助记库」查看`);
+  } catch (e) { toast('助记生成失败：' + e.message); }
+  finally { btn.disabled = false; btn.textContent = old; }
+}
+
+/** v2.12.0：结果页 AI 复盘区事件绑定 */
+function wireAiReview() {
+  const list = $('#aiReviewList');
+  if (!list) return;
+  list.querySelectorAll('.ai-review-item').forEach(item => {
+    const word = item.dataset.word;
+    const exBox = item.querySelector('.ai-explain-box');
+    const egBox = item.querySelector('.ai-example-box');
+    const eb = item.querySelector('.ai-explain-btn');
+    const mb = item.querySelector('.ai-mnemonic-btn');
+    const gb = item.querySelector('.ai-example-btn');
+    if (eb) eb.addEventListener('click', () => {
+      if (exBox.style.display !== 'none') { exBox.style.display = 'none'; return; }
+      aiExplainInto(word, exBox, { correct: false });
+    });
+    if (mb) mb.addEventListener('click', () => aiMnemonicFor(word, mb));
+    if (gb) gb.addEventListener('click', () => {
+      if (egBox.style.display !== 'none') { egBox.style.display = 'none'; return; }
+      egBox.style.display = '';
+      loadQuizExamples(word, egBox);
+    });
+  });
 }
 
 // 迁移训练词源与题型开关
@@ -6154,6 +6339,7 @@ function syncAdaptiveKindChips() {
     c.classList.toggle('active', quiz.adaptiveKinds.includes(c.dataset.akind)));
 }
 if ($('#quizAdaptiveBtn')) $('#quizAdaptiveBtn').addEventListener('click', () => startAdaptive());
+if ($('#quizAiDistractors')) $('#quizAiDistractors').addEventListener('change', e => { quiz.aiDistractors = !!e.target.checked; });
 
 /* v2.11.0：启动时检查是否有可续做的会话 */
 async function checkQuizResume() {
@@ -6227,7 +6413,7 @@ async function startAdaptive() {
     const count = Math.min(50, Math.max(3, Number($('#quizCount').value) || 10));
     const d = await api('/api/quiz/generate', {
       method: 'POST',
-      body: { source: quiz.src, count, difficulty: quiz.difficulty, kinds: quiz.adaptiveKinds },
+      body: { source: quiz.src, count, difficulty: quiz.difficulty, kinds: quiz.adaptiveKinds, aiDistractors: quiz.aiDistractors },
     });
     if (!d.ok) {
       msg.textContent = d.reason === 'too_few_words'
@@ -6627,6 +6813,31 @@ async function finishQuiz() {
     kindNote = Object.keys(kindCnt).map(k => `${kindLabels[k] || k} ${kindCnt[k]}`).join(' · ');
   }
   const gc = QUIZ_GRADES.map(g => `<span class="gd ${g.cls}">${esc(g.label)} ${gcnt(g.key)}</span>`).join('');
+
+  // v2.12.0：答错/遗忘的词 → AI 复盘区（讲解 / 助记 / 真实例句）
+  const wrongItems = r.filter(x => x.response !== 'FAMILIAR');
+  let aiReview = '';
+  if (wrongItems.length) {
+    aiReview = `<div class="stats-card ai-review-card">
+      <div class="stats-card-title">🧠 AI 复盘（本轮回炉 ${wrongItems.length} 词）</div>
+      <div class="ai-review-list" id="aiReviewList">
+        ${wrongItems.map((x, i) => `
+          <div class="ai-review-item" data-word="${esc(x.spelling)}" data-idx="${i}">
+            <div class="ai-review-head">
+              <b>${esc(x.spelling)}</b>
+              <span class="ai-review-actions">
+                <button class="btn small ghost ai-explain-btn">💡 讲解</button>
+                <button class="btn small ghost ai-mnemonic-btn">📝 助记</button>
+                <button class="btn small ghost ai-example-btn">📚 例句</button>
+              </span>
+            </div>
+            <div class="ai-explain-box" style="display:none"></div>
+            <div class="ai-example-box" style="display:none"></div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  }
+
   $('#quizArea').innerHTML = `
     <div class="quiz-done">
       <div class="quiz-score">${cnt('FAMILIAR')} / ${r.length}</div>
@@ -6640,7 +6851,9 @@ async function finishQuiz() {
         <button class="btn" id="quizToWrongbookBtn">📕 去错题复练</button>
         <button class="btn" data-jump="study" data-filter="forget">去学错词</button>
       </div>
+      ${aiReview}
     </div>`;
+  wireAiReview();
   $('#quizAgainBtn').addEventListener('click', quitQuiz);
   $('#quizToWrongbookBtn').addEventListener('click', () => {
     quitQuiz();

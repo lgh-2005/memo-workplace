@@ -246,6 +246,21 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '2.12.0',
+    date: '2026-09-25',
+    title: '测验 AI 增强 + 统计看板',
+    items: [
+      '测验 AI 增强 5 处（LLM 可用则增强，不可用一律优雅降级到确定性兜底，绝不阻断测验）',
+      '① 智能干扰项：四选一/听音/看中选英的「似是而非」错误项可由 LLM 生成，逼近考研易混词辨析；失败回退本地同词性释义池；组卷时可勾选「AI 增强干扰项」',
+      '② 错题讲解：结果页/错题本一键生成「为什么容易错 / 词义与搭配辨析 / 一句话记忆点」分层讲解',
+      '③ 一键助记：为单个词生成个性化助记并直接入库（可推送墨墨）；失败回退「释义卡」',
+      '④ 拼写容错判分：拼写笔误（漏/多/颠倒字母）与真正记错区分，规则 + LLM 双通道',
+      '⑤ 真实例句：从真题与外刊本地语料取该词真实用例（确定性，无需 LLM）',
+      '统计看板（新页签）：掌握度分布、近 7/14/30 天正确率趋势、错题构成（错次/阶段分档）、连续学习天数、分题型正确率；数据来源 quiz_srs.json + learning_attempts.json',
+      '新增接口：GET /api/quiz/stats、POST /api/quiz/ai/distractors、POST /api/quiz/ai/explain、POST /api/quiz/ai/mnemonic、POST /api/quiz/ai/spell-grade、GET /api/quiz/ai/examples；/api/quiz/generate 支持 aiDistractors 选项',
+    ],
+  },
+  {
     version: '2.11.0',
     date: '2026-09-25',
     title: '自适应组卷 + 交错题型 + 会话韧性',
@@ -1251,6 +1266,342 @@ function quizSessionSummary(sess) {
     pausedMs: sess.pausedMs || 0,
     updatedAt: sess.updatedAt,
     expired: quizSessionExpired(sess),
+  };
+}
+
+/* ------------------------------------------------------------------ */
+/* v2.12.0：测验 AI 增强 5 处 + 统计看板                                 */
+/*   AI 增强：① 智能干扰项 ② 错题讲解 ③ 一键助记 ④ 拼写容错判分          */
+/*            ⑤ 外刊真实例句（本地语料，无需 LLM）                       */
+/*   统一原则：LLM 可用则增强，不可用/失败一律优雅降级到确定性兜底。      */
+/* ------------------------------------------------------------------ */
+
+/** LLM 是否具备调用条件（mock 视为可用，便于自测） */
+function llmAvailable() {
+  if (config.llm && config.llm.mock) return true;
+  const base = getProvider() || {};
+  return !!(base.baseUrl && base.model);
+}
+
+/** 去掉 ```json 围栏并提取第一个平衡的 {...} 块（复用词文成章容错思路） */
+function extractJsonObject(text) {
+  const t = String(text || '').replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+  try { return JSON.parse(t); } catch { /* 继续提取 */ }
+  const start = t.indexOf('{');
+  if (start === -1) return null;
+  let depth = 0, inStr = false, esc = false, end = -1;
+  for (let i = start; i < t.length; i++) {
+    const ch = t[i];
+    if (esc) { esc = false; continue; }
+    if (ch === '\\') { esc = true; continue; }
+    if (ch === '"') { inStr = !inStr; continue; }
+    if (inStr) continue;
+    if (ch === '{') depth++;
+    else if (ch === '}') { depth--; if (depth === 0) { end = i + 1; break; } }
+  }
+  if (end === -1) return null;
+  try { return JSON.parse(t.slice(start, end)); } catch { return null; }
+}
+
+/** Levenshtein 距离（拼写容错判分的确定性兜底） */
+function levenshtein(a, b) {
+  const s = String(a || ''), t = String(b || '');
+  if (!s.length) return t.length;
+  if (!t.length) return s.length;
+  let prev = new Array(t.length + 1);
+  for (let j = 0; j <= t.length; j++) prev[j] = j;
+  for (let i = 1; i <= s.length; i++) {
+    const cur = [i];
+    for (let j = 1; j <= t.length; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (s[i - 1] === t[j - 1] ? 0 : 1));
+    }
+    prev = cur;
+  }
+  return prev[t.length];
+}
+
+/**
+ * ① 智能干扰项：给定词与正确释义，尝试用 LLM 生成 3 个「似是而非」的干扰项；
+ * 失败/格式不符则回退到本地同词性释义池（确定性）。
+ */
+async function aiQuizDistractors(spelling, correctGloss, correctPos) {
+  const poolCn = [];
+  const seen = new Set();
+  for (const sp of Object.keys(db.glosses || {})) {
+    const g = vocabGlossOf(sp);
+    if (!g || g.gloss === correctGloss || seen.has(g.gloss)) continue;
+    seen.add(g.gloss);
+    poolCn.push(g);
+  }
+  const fallback = () => {
+    const same = poolCn.filter(g => correctPos && g.pos && g.pos === correctPos).map(g => g.gloss);
+    const other = poolCn.filter(g => !(correctPos && g.pos && g.pos === correctPos)).map(g => g.gloss);
+    shuffleWith(same); shuffleWith(other);
+    const out = [];
+    for (const g of same.concat(other)) { if (out.length >= 3) break; if (!out.includes(g)) out.push(g); }
+    return out.length >= 3 ? out : null;
+  };
+  if (!llmAvailable()) return { options: fallback(), source: 'fallback' };
+  try {
+    const reply = await llmChat([
+      { role: 'system', content: getPrompt('quiz_distractors') },
+      { role: 'user', content: `单词：${spelling}\n词性：${correctPos || ''}\n正确释义：${correctGloss}` },
+    ], { maxTokens: 400, llmOverride: { _jsonMode: true } });
+    const parsed = extractJsonObject(reply);
+    const opts = (parsed?.items?.[0]?.options || parsed?.options || [])
+      .map(x => String(x || '').trim()).filter(Boolean);
+    const uniq = [];
+    for (const o of opts) { if (o !== correctGloss && !uniq.includes(o)) uniq.push(o); }
+    if (uniq.length >= 3) return { options: uniq.slice(0, 3), source: 'ai' };
+  } catch { /* 降级 */ }
+  return { options: fallback(), source: 'fallback' };
+}
+
+/**
+ * ①b 组卷后用 AI 增强客观题干扰项（可选、非阻断）：保留正确答案，替换/补齐 3 个干扰项。
+ * 逐题调用，任一失败即保留该题确定性选项；总请求数受 maxItems 限制。
+ */
+async function enhanceQuizItemsWithAI(items, maxItems = 8) {
+  if (!llmAvailable()) return items;
+  let enhanced = 0;
+  for (const it of items) {
+    if (enhanced >= maxItems) break;
+    const isCn = it.kind === 'choice' || it.kind === 'audio';
+    const isEn = it.kind === 'zh2en';
+    if (!isCn && !isEn) continue;
+    if (!Array.isArray(it.options) || !it.options.length) continue;
+    try {
+      const out = await aiQuizDistractors(it.spelling, it.gloss.gloss, it.gloss.pos);
+      const aiOpts = (out.options || []).map(x => String(x).trim()).filter(Boolean);
+      if (out.source !== 'ai' || aiOpts.length < 3) continue;
+      const correct = it.answer;
+      const wrong = [];
+      for (const o of aiOpts) { if (o !== correct && !wrong.includes(o)) wrong.push(o); }
+      if (wrong.length < 3) continue;
+      it.options = shuffleWith([correct, ...wrong.slice(0, 3)]);
+      it.aiEnhanced = true;
+      enhanced++;
+    } catch { /* 单题失败忽略 */ }
+  }
+  return items;
+}
+
+/** ② 错题讲解：LLM 生成讲解；失败返回 null（前端不展示，非阻断） */
+async function aiQuizExplain({ spelling, gloss, userAnswer, correct }) {
+  if (!llmAvailable()) return null;
+  try {
+    const reply = await llmChat([
+      { role: 'system', content: getPrompt('quiz_explain') },
+      { role: 'user', content: [
+        `单词：${spelling}`,
+        gloss ? `正确释义：${gloss}` : '',
+        correct ? '本题作答：正确' : '本题作答：错误',
+        userAnswer ? `学习者所选：${userAnswer}` : '',
+      ].filter(Boolean).join('\n') },
+    ], { maxTokens: 700 });
+    const text = String(reply || '').trim();
+    return text ? text.slice(0, 1500) : null;
+  } catch { return null; }
+}
+
+/** ③ 一键助记：LLM 生成一条助记并直接入库（复用 db.notes 结构）；失败回退确定性助记 */
+async function aiQuizMnemonic(spelling) {
+  const g = db.glosses[spelling] || null;
+  const glossText = g ? (typeof g === 'string' ? g : g.gloss || '') : '';
+  const saveNote = (noteType, content) => {
+    const note = {
+      id: crypto.randomUUID(),
+      spelling,
+      noteType,
+      content: String(content).slice(0, 500),
+      createdAt: new Date().toISOString(),
+      source: 'AI',
+      synced: false,
+    };
+    db.notes.unshift(note);
+    persistDB();
+    return note;
+  };
+  if (llmAvailable()) {
+    try {
+      const reply = await llmChat([
+        { role: 'system', content: getPrompt('quiz_mnemonic') },
+        // 用 ### 词头，与既有「个性化助记」mock/解析口径一致
+        { role: 'user', content: `### ${spelling}${glossText ? `\n核心释义：${glossText}` : ''}` },
+      ], { maxTokens: 500, llmOverride: { _jsonMode: true } });
+      const parsed = parseMnemonicJSON(reply);
+      const n = (parsed?.notes || []).find(x => x && x.content);
+      if (n) return { note: saveNote(n.noteType || '联想', n.content), source: 'ai' };
+    } catch { /* 降级 */ }
+  }
+  // 确定性兜底：用既有释义缓存生成一条朴素助记
+  const content = glossText ? `释义卡：${spelling} = ${glossText}` : `（暂无释义缓存）${spelling}`;
+  return { note: saveNote('其他', content), source: 'fallback' };
+}
+
+/**
+ * ④ 拼写容错判分：先规则判分；拼错时若 LLM 可用则由其判定「笔误/真错」，否则用 Levenshtein 兜底。
+ * @returns {{ verdict:'correct'|'typo'|'wrong', feedback:string, tip:string, source:string }}
+ */
+async function aiGradeSpelling(spelling, answer) {
+  const target = String(spelling || '').trim().toLowerCase();
+  const got = String(answer || '').trim().toLowerCase();
+  if (!target || !got) return { verdict: 'wrong', feedback: '未作答', tip: '', source: 'rule' };
+  if (target === got) return { verdict: 'correct', feedback: '拼写正确', tip: '', source: 'rule' };
+
+  const dist = levenshtein(target, got);
+  const tolerance = Math.max(1, Math.floor(target.length / 4));   // 长度 25% 以内允许视为笔误
+  const ruleVerdict = dist <= tolerance ? 'typo' : 'wrong';
+  if (!llmAvailable()) {
+    return {
+      verdict: ruleVerdict,
+      feedback: ruleVerdict === 'typo' ? '拼写笔误，接近正确' : '拼写错误',
+      tip: '',
+      source: 'fallback',
+    };
+  }
+  try {
+    const reply = await llmChat([
+      { role: 'system', content: getPrompt('quiz_spell_grade') },
+      { role: 'user', content: `正确单词：${spelling}\n学习者拼写：${answer}` },
+    ], { maxTokens: 200, llmOverride: { _jsonMode: true } });
+    const parsed = extractJsonObject(reply);
+    const verdict = ['correct', 'typo', 'wrong'].includes(parsed?.verdict) ? parsed.verdict : ruleVerdict;
+    return {
+      verdict,
+      feedback: String(parsed?.feedback || '').slice(0, 60) || (verdict === 'typo' ? '拼写笔误' : '拼写错误'),
+      tip: String(parsed?.tip || '').slice(0, 60),
+      source: 'ai',
+    };
+  } catch {
+    return { verdict: ruleVerdict, feedback: ruleVerdict === 'typo' ? '拼写笔误' : '拼写错误', tip: '', source: 'fallback' };
+  }
+}
+
+/** ⑤ 外刊/真题真实例句（本地语料，纯确定性，无需 LLM） */
+function quizRealExamples(spelling, limit = 3) {
+  try {
+    const ev = kbEvidenceForWord(spelling, 2, 3);
+    const out = [];
+    for (const h of [...(ev.exams || []), ...(ev.corpus || []), ...(ev.external || [])]) {
+      const s = String(h.s || '').trim();
+      if (!s || out.some(x => x.sentence === s)) continue;
+      const kind = h.sourceKind;
+      out.push({
+        sentence: s,
+        sourceKind: kind,
+        sourceLabel: kind === 'exam'
+          ? (h.year ? `真题 ${h.year}` : '真题语境')
+          : kind === 'external' ? (h.publication || '外刊')
+            : '语料',
+        title: h.title || '',
+        rid: h.rid || null,
+      });
+      if (out.length >= limit) break;
+    }
+    return out;
+  } catch { return []; }
+}
+
+/* ---------------- v2.12.0：统计看板聚合 ---------------- */
+
+/** 从学习流水取最近 N 个北京自然日的正确率（按 submittedAt 归日） */
+function quizAccuracyTrend(days = 14) {
+  let attempts = [];
+  try { attempts = loadLearningStore().attempts || []; } catch { attempts = []; }
+  const buckets = new Map();   // date -> { correct, total }
+  const wordKinds = new Set(['word_quiz']);
+  for (const a of attempts) {
+    if (!a || !wordKinds.has(a.kind)) continue;
+    const d = bjDateOf(a.submittedAt);
+    if (!d) continue;
+    const b = buckets.get(d) || { correct: 0, total: 0 };
+    b.total++;
+    if (a.result === 'correct') b.correct++;
+    buckets.set(d, b);
+  }
+  const out = [];
+  for (let i = days - 1; i >= 0; i--) {
+    const key = bjDate(-i);
+    const b = buckets.get(key) || { correct: 0, total: 0 };
+    out.push({ date: key, correct: b.correct, total: b.total, rate: b.total ? Math.round(b.correct / b.total * 100) : null });
+  }
+  return out;
+}
+
+/** 错题构成：按 wrongCount 分档 + 阶段分布 */
+function quizWrongBookBreakdown(store) {
+  const active = (store.wrongBook || []).filter(x => !x.resolved);
+  const byWrongCount = { '1': 0, '2': 0, '3+': 0 };
+  const byStage = [0, 0, 0, 0];
+  for (const e of active) {
+    const wc = Number(e.wrongCount || 1);
+    if (wc <= 1) byWrongCount['1']++; else if (wc === 2) byWrongCount['2']++; else byWrongCount['3+']++;
+    const st = Math.min(3, Math.max(0, Number(e.stage || 0)));
+    byStage[st]++;
+  }
+  return { active: active.length, resolved: (store.wrongBook || []).length - active.length, byWrongCount, byStage };
+}
+
+/** 连续学习天数（基于学习流水的北京自然日；今日或昨日有作答均计入） */
+function quizStreakDays(days = 400) {
+  let attempts = [];
+  try { attempts = loadLearningStore().attempts || []; } catch { attempts = []; }
+  const activeDays = new Set();
+  for (const a of attempts) {
+    const d = a && bjDateOf(a.submittedAt);
+    if (d) activeDays.add(d);
+  }
+  if (!activeDays.size) return 0;
+  let start = 0;
+  if (!activeDays.has(bjDate())) start = activeDays.has(bjDate(-1)) ? -1 : null;
+  if (start === null) return 0;
+  let streak = 0;
+  for (let i = start; i >= -days; i--) {
+    if (activeDays.has(bjDate(i))) streak++;
+    else break;
+  }
+  return streak;
+}
+
+/** 统计看板总聚合（掌握度分布 / 正确率趋势 / 错题构成 / 连续天数 / 题型正确率） */
+function quizStatsDashboard(days = 14) {
+  const store = loadQuizSrs();
+  const dist = [0, 0, 0, 0, 0];
+  let dueCount = 0;
+  const now = Date.now();
+  for (const sp of Object.keys(store.words)) {
+    const w = normalizeSrsWord(store.words[sp]);
+    dist[w.mastery]++;
+    if (w.dueAt && isoMs(w.dueAt) <= now) dueCount++;
+  }
+  // 按题型（word_quiz meta.mode）统计正确率
+  let attempts = [];
+  try { attempts = loadLearningStore().attempts || []; } catch { attempts = []; }
+  const byKind = {};
+  for (const a of attempts) {
+    if (!a || a.kind !== 'word_quiz') continue;
+    const k = String((a.meta && a.meta.mode) || 'flash');
+    const b = byKind[k] || { correct: 0, total: 0 };
+    b.total++;
+    if (a.result === 'correct') b.correct++;
+    byKind[k] = b;
+  }
+  const kindRates = Object.keys(byKind).map(k => ({
+    kind: k, total: byKind[k].total, correct: byKind[k].correct,
+    rate: byKind[k].total ? Math.round(byKind[k].correct / byKind[k].total * 100) : null,
+  })).sort((a, b) => b.total - a.total);
+
+  return {
+    trackedWords: Object.keys(store.words).length,
+    masteryDist: { '0': dist[0], '1': dist[1], '2': dist[2], '3': dist[3], '4': dist[4] },
+    dueCount,
+    accuracyTrend: quizAccuracyTrend(days),
+    wrongBook: quizWrongBookBreakdown(store),
+    streakDays: quizStreakDays(),
+    kindRates,
+    gamification: store.gamification,
+    windowDays: days,
   };
 }
 
@@ -2388,6 +2739,36 @@ function mockLLM(messages) {
       })),
     });
   }
+  if (sys.includes('似是而非') || sys.includes('智能干扰项生成')) {   // v2.12.0：测验智能干扰项 mock
+    const sp = (user.match(/单词：(.+)/) || [])[1] || 'word';
+    return JSON.stringify({ items: [{ spelling: sp.trim(), options: [`[MOCK] ${sp.trim()} 干扰项A`, `[MOCK] ${sp.trim()} 干扰项B`, `[MOCK] ${sp.trim()} 干扰项C`] }] });
+  }
+  if (sys.includes('错题讲解教练')) {   // v2.12.0：错题讲解 mock
+    const sp = (user.match(/单词：(.+)/) || [])[1] || 'word';
+    return [
+      '## 为什么容易错',
+      `[MOCK] ${sp.trim()} 与所选答案语义相邻，属常见混淆点（自测占位）。`,
+      '',
+      '## 词义与搭配辨析',
+      `[MOCK] ${sp.trim()} 的核心义项与常见搭配（自测占位）。`,
+      '',
+      '## 一句话记忆点',
+      `[MOCK] 用词根/谐音记住 ${sp.trim()}（自测占位）。`,
+    ].join('\n');
+  }
+  if (sys.includes('拼写判分助手')) {   // v2.12.0：拼写容错判分 mock
+    const target = (user.match(/正确单词：(.+)/) || [])[1] || '';
+    const got = (user.match(/学习者拼写：(.+)/) || [])[1] || '';
+    const norm = s => String(s || '').trim().toLowerCase();
+    const dist = (() => {
+      const a = norm(target), b = norm(got);
+      let p = Array.from({ length: b.length + 1 }, (_, j) => j);
+      for (let i = 1; i <= a.length; i++) { const c = [i]; for (let j = 1; j <= b.length; j++) c[j] = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = c; }
+      return p[b.length];
+    })();
+    const verdict = norm(target) === norm(got) ? 'correct' : (dist <= Math.max(1, Math.floor(norm(target).length / 4)) ? 'typo' : 'wrong');
+    return JSON.stringify({ verdict, feedback: verdict === 'correct' ? '[MOCK] 拼写正确' : (verdict === 'typo' ? '[MOCK] 拼写笔误' : '[MOCK] 拼写错误'), tip: '' });
+  }
   if (sys.includes('长难句训练教练')) {   // v2.2.5：长难句三遍法 mock
     const isReview = user.includes('复答');
     const base = [
@@ -2670,6 +3051,63 @@ const DEFAULT_PROMPTS = {
       '3. 【结构化输出格式】：严格输出单个合法的 JSON 对象（禁止包含 markdown 代码块包裹，首字符 {，末字符 }）：',
       '{"summary":"一两句整体分析，点明这批词在考研语境或逻辑上的核心关联","recommendedLength":"short|medium|long","lengthLabel":"精悍短篇（180~260词）|中篇叙事（350~450词）|长篇拓展（600~900词）","lengthReason":"推荐该篇幅的具体理由","groups":[{"name":"分组名称","theme":"建议题材如科幻/校园/职场/悬疑等","words":["单词1","单词2"],"suggestedPlot":"该组词在此题材中的情节推进与记忆线索"}]}',
       '严禁在 JSON 之外输出任何文字。',
+    ].join('\n')
+  },
+  /* ---------- v2.12.0：测验 AI 增强 5 处 ---------- */
+  quiz_distractors: {
+    id: 'quiz_distractors',
+    title: '测验：智能干扰项生成（System Prompt）',
+    desc: '为四选一/看中选英题生成「似是而非」的干扰项，逼近考研易混词的辨析难度',
+    template: [
+      '你是考研英语出题教练。对给定的每个单词，生成 3 个「似是而非」的中文干扰释义（用于选择题的错误选项）。',
+      '要求：',
+      '1. 干扰项必须是真实存在的、与该词义相关或易混的其他义项/近义表达，绝不能是明显荒谬或与正确释义同义的选项。',
+      '2. 三个干扰项彼此不同，且都不同于正确释义；优先取同词性、语义相邻（近义/反义/上下位/同一场景）的词。',
+      '3. 每个干扰项 12 字以内，中文；不要写「的」字凑字数，不要加编号。',
+      '4. 只输出 JSON，不要任何多余文字，格式：{"items":[{"spelling":"单词","options":["干扰1","干扰2","干扰3"]}]}',
+    ].join('\n')
+  },
+  quiz_explain: {
+    id: 'quiz_explain',
+    title: '测验：错题讲解教练（System Prompt）',
+    desc: '作答后针对错词给出简明讲解（错因、辨析、记忆点），用于结果页与错题本',
+    template: [
+      '你是考研英语错题讲解教练。学习者刚在单词测验中作答（可能答错或答得犹豫），请给出简明、可操作的讲解。',
+      '固定输出以下 Markdown 小节，标题逐字使用：',
+      '## 为什么容易错',
+      '## 词义与搭配辨析',
+      '## 一句话记忆点',
+      '要求：',
+      '1. 「为什么容易错」点明该词与学习者所选答案（若提供）混淆的根源，不要空泛。',
+      '2. 「词义与搭配辨析」给核心义项、常见搭配，并视情况对比 1~2 个最易混的词。',
+      '3. 「一句话记忆点」给一句能直接背的钩子（谐音/词根/联想均可）。',
+      '4. 总篇幅 220 字以内；不确定的内容不要编造；推导箭头用 Unicode 符号 →。',
+    ].join('\n')
+  },
+  quiz_mnemonic: {
+    id: 'quiz_mnemonic',
+    title: '测验：一键个性化助记（System Prompt）',
+    desc: '为测验中的单个词生成一条可推送墨墨的个性化助记',
+    template: [
+      '你是英语学习教练，正在为「个性化助记」板块生成一条针对单个单词的助记。',
+      '请结合该词的核心义项与易错点，生成一条具体、可直接背诵的助记。',
+      '要求：',
+      '1. 助记要结合该词暴露的易错点（混淆近义词、忘掉的义项），而不是泛泛的词根拆解。',
+      '2. 80 字以内。',
+      '3. noteType 从这些里选一个最贴切的：联想/谐音/词根词缀/近反义词/辨析/固定搭配/词源/口诀/其他。',
+      '4. 只输出 JSON，不要多余文字，格式：{"notes":[{"spelling":"单词","noteType":"联想","content":"助记内容"}]}',
+    ].join('\n')
+  },
+  quiz_spell_grade: {
+    id: 'quiz_spell_grade',
+    title: '测验：拼写容错判分（System Prompt）',
+    desc: '对拼写题的答案做容错判定（拼写笔误 vs 真正记错），并给出简短反馈',
+    template: [
+      '你是考研英语拼写判分助手。学习者根据中文释义拼写单词。',
+      '请在规则判分之外做容错判断：形近笔误（漏字母、多字母、相邻字母颠倒、少写一个重复字母）应判为「拼写笔误」而非「完全不会」。',
+      '只输出 JSON，不要任何多余文字，格式：',
+      '{"verdict":"correct|typo|wrong","feedback":"20字内中文反馈","tip":"20字内记忆提示，不确定给空串"}',
+      '规则：完全拼对 verdict=correct；仅个别字母笔误且明显是同一个词 verdict=typo；拼成另一个词或差异过大 verdict=wrong。',
     ].join('\n')
   }
 };
@@ -5265,6 +5703,7 @@ const server = http.createServer(async (req, res) => {
         const difficulty = ['easy', 'normal', 'hard'].includes(String(body.difficulty)) ? String(body.difficulty) : 'normal';
         const kinds = Array.isArray(body.kinds) ? body.kinds.map(k => String(k)) : [];
         const seed = Number.isFinite(Number(body.seed)) ? Number(body.seed) : undefined;
+        const aiDistractors = body.aiDistractors === true;   // v2.12.0：可选 AI 干扰项增强
 
         try {
           const candidates = quizCandidates(source);
@@ -5274,6 +5713,14 @@ const server = http.createServer(async (req, res) => {
           await ensureGlosses(spellings);
           const items = buildAdaptiveQuiz({ source, count, difficulty, kinds, seed });
           if (items.length < 3) return sendJSON(res, 200, { ok: false, reason: 'too_few_glossed', candidates: candidates.length, glossed: items.length });
+          // v2.12.0：可选 AI 干扰项增强（非阻断，失败保留确定性选项）
+          let aiEnhanced = 0;
+          if (aiDistractors) {
+            try {
+              await enhanceQuizItemsWithAI(items, 8);
+              aiEnhanced = items.filter(x => x.aiEnhanced).length;
+            } catch { /* 整体失败不影响组卷 */ }
+          }
           const sessionId = crypto.randomBytes(12).toString('hex');
           const sess = {
             ...emptyQuizSession(),
@@ -5286,7 +5733,7 @@ const server = http.createServer(async (req, res) => {
           };
           saveQuizSession(sess);
           // 下发时对客观题隐去 answer？——保留 answer 供前端即时反馈；服务端提交时另行权威复核。
-          return sendJSON(res, 200, { ok: true, sessionId, source, difficulty, items, summary: quizSessionSummary(sess) });
+          return sendJSON(res, 200, { ok: true, sessionId, source, difficulty, items, aiEnhanced, summary: quizSessionSummary(sess) });
         } catch (e) {
           if (e.code === 'QUIZ_SESSION_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
           throw e;
@@ -5340,6 +5787,82 @@ const server = http.createServer(async (req, res) => {
           if (e.code === 'QUIZ_SESSION_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
           throw e;
         }
+      }
+
+      /* ---- v2.12.0：测验 AI 增强 5 处 + 统计看板 ---- */
+
+      // 统计看板聚合（掌握度分布 / 正确率趋势 / 错题构成 / 连续天数 / 题型正确率）
+      if (p === '/api/quiz/stats' && req.method === 'GET') {
+        try {
+          const raw = Number(u.searchParams.get('days'));
+          const days = [7, 14, 30].includes(raw) ? raw : 14;
+          return sendJSON(res, 200, { ok: true, ...quizStatsDashboard(days) });
+        } catch (e) {
+          if (e.code === 'QUIZ_SRS_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
+      }
+
+      // ① 智能干扰项（LLM 增强，失败降级本地池）
+      if (p === '/api/quiz/ai/distractors' && req.method === 'POST') {
+        const body = await readBody(req);
+        const spelling = String(body.spelling || '').trim();
+        if (!spelling) return sendJSON(res, 400, { error: '缺少 spelling' });
+        try { await ensureGlosses([spelling]); } catch { /* 释义缺失仍可用传入 gloss */ }
+        const g = vocabGlossOf(spelling);
+        const correctGloss = String(body.gloss || (g && g.gloss) || '').trim();
+        const correctPos = String(body.pos || (g && g.pos) || '').trim();
+        if (!correctGloss) return sendJSON(res, 200, { ok: false, reason: 'no_gloss', options: null });
+        try {
+          const out = await aiQuizDistractors(spelling, correctGloss, correctPos);
+          return sendJSON(res, 200, { ok: true, spelling, correct: correctGloss, ...out });
+        } catch (e) {
+          if (e.code === 'NO_LLM') return sendJSON(res, 200, { ok: true, options: null, source: 'fallback' });
+          throw e;
+        }
+      }
+
+      // ② 错题讲解（LLM 增强；不可用返回 ok:false，前端不展示）
+      if (p === '/api/quiz/ai/explain' && req.method === 'POST') {
+        const body = await readBody(req);
+        const spelling = String(body.spelling || '').trim();
+        if (!spelling) return sendJSON(res, 400, { error: '缺少 spelling' });
+        const g = vocabGlossOf(spelling);
+        const explain = await aiQuizExplain({
+          spelling,
+          gloss: String(body.gloss || (g && g.gloss) || '').trim(),
+          userAnswer: body.userAnswer != null ? String(body.userAnswer).slice(0, 120) : '',
+          correct: !!body.correct,
+        });
+        if (!explain) return sendJSON(res, 200, { ok: false, reason: llmAvailable() ? 'llm_failed' : 'no_llm', explain: null });
+        return sendJSON(res, 200, { ok: true, spelling, explain });
+      }
+
+      // ③ 一键助记（LLM 增强；不可用回退确定性释义卡并入库）
+      if (p === '/api/quiz/ai/mnemonic' && req.method === 'POST') {
+        const body = await readBody(req);
+        const spelling = String(body.spelling || '').trim();
+        if (!spelling) return sendJSON(res, 400, { error: '缺少 spelling' });
+        try { await ensureGlosses([spelling]); } catch { /* 忽略 */ }
+        const out = await aiQuizMnemonic(spelling);
+        return sendJSON(res, 200, { ok: true, spelling, ...out });
+      }
+
+      // ④ 拼写容错判分（规则 + LLM 容错；永不阻断）
+      if (p === '/api/quiz/ai/spell-grade' && req.method === 'POST') {
+        const body = await readBody(req);
+        const spelling = String(body.spelling || '').trim();
+        const answer = String(body.answer || '').trim();
+        if (!spelling) return sendJSON(res, 400, { error: '缺少 spelling' });
+        const out = await aiGradeSpelling(spelling, answer);
+        return sendJSON(res, 200, { ok: true, spelling, answer, ...out });
+      }
+
+      // ⑤ 真实例句（外刊 + 真题，本地语料，确定性）
+      if (p === '/api/quiz/ai/examples' && req.method === 'GET') {
+        const spelling = String(u.searchParams.get('spelling') || '').trim();
+        if (!spelling) return sendJSON(res, 400, { error: '缺少 spelling' });
+        return sendJSON(res, 200, { ok: true, spelling, examples: quizRealExamples(spelling, 3) });
       }
 
       /* ---- v2.10.0：测验记忆引擎（SRS + 错题本 + 游戏化） ---- */

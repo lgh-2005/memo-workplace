@@ -1605,6 +1605,64 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .quiz-cn-prompt { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 8px; }
 .quiz-cn-prompt .pos { margin-right: 6px; }
 
+/* ============ v2.12.0：测验 AI 增强 + 统计看板 ============ */
+.quiz-ai-toggle { display: flex; align-items: center; gap: 6px; font-weight: 500; color: var(--text-sub); }
+.quiz-ai-toggle input { width: 16px; height: 16px; }
+.quiz-stats-board { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 640px) { .stats-grid { grid-template-columns: 1fr; } }
+.stats-card {
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--card);
+  padding: 12px 14px;
+}
+.stats-card-title { font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 10px; }
+.stats-card-title b { color: var(--primary); font-size: 17px; }
+.stats-sub { font-size: 12.5px; color: var(--text-sub); margin-top: 8px; }
+.stats-sub b.warn { color: var(--warn); }
+.wb-count-row { display: flex; gap: 14px; margin-top: 8px; font-size: 12.5px; color: var(--text-sub); flex-wrap: wrap; }
+.wb-count-item b { color: var(--text); font-size: 14px; }
+.wb-stage-bar { display: flex; height: 18px; border-radius: 6px; overflow: hidden; margin-top: 6px; border: 1px solid var(--border); }
+.wb-stage-seg { display: flex; align-items: center; justify-content: center; font-size: 11px; color: #fff; min-width: 0; }
+.wb-stage-seg.s0 { background: #ef4444; }
+.wb-stage-seg.s1 { background: #f59e0b; }
+.wb-stage-seg.s2 { background: #84cc16; }
+.wb-stage-seg.s3 { background: #16a34a; }
+.acc-chart { display: flex; align-items: flex-end; gap: 6px; height: 96px; padding-top: 8px; overflow-x: auto; }
+.acc-bar-wrap { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-width: 22px; height: 100%; }
+.acc-bar { width: 16px; border-radius: 4px 4px 0 0; background: var(--primary); transition: height .2s; }
+.acc-bar.good { background: #16a34a; }
+.acc-bar.mid { background: #eab308; }
+.acc-bar.low { background: #ef4444; }
+.acc-bar.empty { background: var(--border); }
+.acc-lbl { font-size: 10px; color: var(--text-sub); margin-top: 4px; }
+.acc-legend { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--text-sub); margin-top: 8px; }
+.acc-legend .lg { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; }
+.acc-legend .lg.good { background: #16a34a; }
+.acc-legend .lg.mid { background: #eab308; }
+.acc-legend .lg.low { background: #ef4444; }
+.kind-rate-list { display: flex; flex-direction: column; gap: 8px; }
+.kind-rate-row { display: flex; align-items: center; gap: 10px; font-size: 12.5px; }
+.kr-name { min-width: 88px; color: var(--text); }
+.kr-bar { flex: 1; height: 8px; border-radius: 999px; background: var(--bg); border: 1px solid var(--border); overflow: hidden; }
+.kr-bar i { display: block; height: 100%; background: var(--primary); }
+.kr-val { min-width: 74px; text-align: right; color: var(--text); }
+.kr-sub { color: var(--text-sub); font-size: 11px; }
+.ai-review-card { margin-top: 14px; text-align: left; }
+.ai-review-list { display: flex; flex-direction: column; gap: 8px; }
+.ai-review-item { border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 10px; }
+.ai-review-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.ai-review-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.ai-explain-box, .ai-example-box { margin-top: 8px; padding: 8px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--border); }
+.ai-explain.md-body { font-size: 13px; line-height: 1.7; }
+.ai-explain .md-h { font-weight: 700; margin: 6px 0 2px; color: var(--primary); font-size: 13px; }
+.ai-example { padding: 6px 0; border-bottom: 1px dashed var(--border); }
+.ai-example:last-child { border-bottom: 0; }
+.ai-example-text { font-size: 13px; line-height: 1.65; color: var(--text); }
+.ai-example-src { font-size: 11.5px; color: var(--text-sub); margin-top: 3px; }
+.wb-item-rich { flex-direction: column; align-items: stretch; }
+.wb-line { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ai-mnemonic-btn, .ai-explain-btn, .ai-example-btn { min-height: 36px; }
+
 /* ============ v1.0.5：Markdown 渲染增强 ============ */
 .msg .md-h { font-weight: 700; margin: 4px 0 2px; }
 .msg .md-h1, .msg .md-h2 { font-size: 15.5px; padding-left: 8px; border-left: 3px solid var(--primary); }
@@ -2958,6 +3016,9 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   .wb-actions .btn { min-height: 44px; }
   /* v2.11.0：测验退出与续做操作触控 44px */
   #quizQuitBtn, .quiz-resume .btn { min-height: 44px; }
+  /* v2.12.0：AI 复盘 / 错题本 AI 操作触控 44px */
+  .ai-review-actions .btn, .wb-actions .btn, #quizStatsRefreshBtn,
+  #quizStatsPane [data-statsdays] { min-height: 44px; }
 
   /* 疑点弹窗：全屏 sheet 式 */
   .kb-fix-modal { padding: 0; align-items: flex-end; }
