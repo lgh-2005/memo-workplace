@@ -133,7 +133,13 @@
 | 45 | `.workbuddy/test_v2120_stats.js` | 35 | 统计看板聚合（后端）：默认窗口 14、掌握度分布 0..4、到期计数、正确率趋势按北京自然日分桶（今日 2/3、昨日 1/2、单题日 100%）、非 word_quiz 排除、错题构成（在册/resolved/错次分档/阶段分布）、连续学习天数、分题型正确率（choice 50%/spell 100%/flash 67%、按题量降序）、窗口参数（7/30 生效、非法回退 14）、游戏化摘要透传、SRS 损坏 500 + `QUIZ_SRS_CORRUPT` 不覆盖、还原恢复、真实 `data/` 三文件哈希不变 |
 | 46 | `.workbuddy/test_v2120_ai_stats_ui.js` | 28 | 测验 AI 增强 + 统计看板 UI（浏览器）：统计看板子模式切换与渲染（≥4 卡片、掌握度 5 段、趋势柱=窗口天数）、窗口切换（30 天→30 柱）、AI 增强干扰项开关绑定状态、结果页 AI 复盘（答错出现复盘区、讲解/例句/助记三按钮生效）、错题本 AI 操作（富条目 + 讲解/助记/例句按钮 + 内联讲解）、移动端 390px 看板无溢出 + 刷新按钮触控 ≥44px、控制台 0 错误、真实 `data/` 四文件哈希不变 |
 
-> 合计 **46** 套（第 3 节核心验收清单，含 1 套线上只读冒烟），断言总数 **1084+**；本次全量回归实测 **29 后端/单测 + 25 浏览器套件退出码 0**（另有少数早期套件随基线一并运行）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.14 v3.0.0 增量套件（1）
+
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 47 | `.workbuddy/test_v300_multiuser.js` | 52 | 多用户 P0 基础设施（后端）：单用户模式零破坏（`multiUser` 缺省、未启用登录全放行）、一次性迁移（建 admin + 备份 + per-user 目录落盘 + 旧顶层文件移走 + 哈希非明文 + 重复迁移被拒 + 迁后强制登录）、用户名+密码登录（错误密码 401、签发 `wb_session`）、一次性邀请码注册（错误码 `BAD_INVITE`、短密码 `BAD_PASSWORD`、注册即登录、邀请码不可复用、重名 `USERNAME_TAKEN`）、双用户配置隔离（各自墨墨 Token 落 `users/<id>/config.json` 互不串味）、普通用户禁改全局配置（403 `FORBIDDEN`）与禁看用户/邀请码、双用户学习数据隔离（`learning_attempts.json` 分落且只见自己）、管理员用户列表（不含哈希）/禁删 admin/删用户、登出后旧 Cookie 失效、**重启后 Cookie 仍有效（`sessions.json` 持久化）**；全程在 tmp 沙箱，真实数据哈希不变 |
+
+> 合计 **47** 套（第 3 节核心验收清单，含 1 套线上只读冒烟），断言总数 **1136+**；本次全量回归实测 **30 后端/单测 + 25 浏览器套件退出码 0**（另有少数早期套件随基线一并运行）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
 
 > **说明**：`english-workbench/.workbuddy/` 目录下共 54 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块、v2.9.x 外刊与 Markdown、v2.10.0 记忆引擎、v2.11.0 自适应组卷、v2.12.0 AI 增强与统计看板）。上表 46 套为与「25 后端 + 20 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
 
@@ -160,6 +166,7 @@ node .workbuddy/test_v263_answers_verify.js
 node .workbuddy/test_v270_track.js
 node .workbuddy/test_v271_cet6.js
 node .workbuddy/test_v280_auth.js
+node .workbuddy/test_v300_multiuser.js
 node .workbuddy/test_v2100_quiz_srs.js
 node .workbuddy/test_v2100_quiz_srs_ui.js
 node .workbuddy/test_v221_playwright.js

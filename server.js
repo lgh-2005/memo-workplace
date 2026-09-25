@@ -83,6 +83,7 @@ function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   if (!fs.existsSync(IMAGES_DIR)) fs.mkdirSync(IMAGES_DIR, { recursive: true });
   if (!fs.existsSync(DICT_DIR)) fs.mkdirSync(DICT_DIR, { recursive: true });
+  if (MULTIUSER && !fs.existsSync(USERS_DIR)) fs.mkdirSync(USERS_DIR, { recursive: true });
 }
 
 function loadJSON(file, fallback) {
@@ -115,7 +116,93 @@ function isLearningStoreShape(obj) {
   return !!obj && typeof obj === 'object' && obj.schemaVersion === 1 && Array.isArray(obj.attempts);
 }
 
-let config = loadJSON(CONFIG_FILE, {
+/* ================================================================== */
+/* v3.0.0：多用户隔离层                                                  */
+/*   - AsyncLocalStorage 请求上下文（每个请求绑定 userId / role）          */
+/*   - 用户注册表 data/users.json + 会话持久化 data/sessions.json         */
+/*   - per-user 存储路径解析（config.multiUser=false 时行为与 v2.12.0 完全   */
+/*     一致，保证既有测试与现有线上数据零破坏）                            */
+/*   - config / db 透明 Proxy：业务代码零改动，按当前用户自动解析           */
+/*   - 每用户写串行队列：避免同一用户并发写互相覆盖                        */
+/*   - 一次性迁移：现有数据归入 admin 用户                                */
+/* ================================================================== */
+const { AsyncLocalStorage } = require('async_hooks');
+const requestContext = new AsyncLocalStorage();
+const LEGACY_USER = '__legacy__';
+const USERS_DIR = path.join(DATA_DIR, 'users');
+const USERS_FILE = path.join(DATA_DIR, 'users.json');
+const SESSIONS_FILE = path.join(DATA_DIR, 'sessions.json');
+// 属于「每个用户各自设置」的 config 字段；其余字段（llm/auth/kb/dict/...）为全局共享
+const USER_CONFIG_KEYS = new Set([
+  'maimemoToken', 'maimemoNotepadId', 'notepadTitle', 'autoSync',
+  'diyPrompts', 'review', 'selection', 'story', 'writingOcr', 'storyThemes',
+]);
+const WRITE_METHODS = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
+
+function defaultDbSkeleton() {
+  return {
+    lastSync: null,
+    lastSyncOk: true,
+    syncLog: [],            // [{ts, ok, msg}]
+    progressHistory: [],    // [{date, finished, total, studyTimeMs}]
+    planTotal: 0,           // 学习计划总词数
+    words: {},              // vocId -> {...}
+    glosses: {},            // spelling -> {phonetic, pos, gloss}
+    todayItems: [],         // 最近一次同步的今日词表
+    notes: [],              // 助记
+    sessions: [],           // 学习会话
+    quizLog: [],            // 测验记录
+    contentCreated: { date: '', count: 0 },
+    unitLog: [],            // 单元做题记录
+    stories: [],            // 词文成章
+  };
+}
+
+/** 旧 db.json 兼容：缺失字段补默认值 */
+function normalizeDb(obj) {
+  const out = Object.assign(defaultDbSkeleton(), (obj && typeof obj === 'object') ? obj : {});
+  if (!out.glosses || typeof out.glosses !== 'object') out.glosses = {};
+  if (!Array.isArray(out.quizLog)) out.quizLog = [];
+  if (out.lastSyncOk === undefined) out.lastSyncOk = true;
+  if (!out.contentCreated || typeof out.contentCreated !== 'object') out.contentCreated = { date: '', count: 0 };
+  if (!Array.isArray(out.unitLog)) out.unitLog = [];
+  if (!Array.isArray(out.stories)) out.stories = [];
+  if (!out.words || typeof out.words !== 'object') out.words = {};
+  if (!Array.isArray(out.notes)) out.notes = [];
+  if (!Array.isArray(out.sessions)) out.sessions = [];
+  if (!Array.isArray(out.syncLog)) out.syncLog = [];
+  if (!Array.isArray(out.progressHistory)) out.progressHistory = [];
+  if (!Array.isArray(out.todayItems)) out.todayItems = [];
+  return out;
+}
+
+function defaultUserConfig() {
+  return {
+    maimemoToken: '',
+    maimemoNotepadId: '',
+    notepadTitle: '',
+    autoSync: { enabled: false, minutes: 60 },
+    diyPrompts: {},
+    review: { providerId: '', model: '', thinking: false },
+    selection: { providerId: '', model: '' },
+    story: { providerId: '', model: '' },
+    writingOcr: { providerId: '', model: '' },
+    storyThemes: null,
+  };
+}
+function normalizeUserConfig(c) {
+  const out = Object.assign(defaultUserConfig(), (c && typeof c === 'object') ? c : {});
+  if (!out.autoSync || typeof out.autoSync !== 'object') out.autoSync = { enabled: false, minutes: 60 };
+  if (!out.diyPrompts || typeof out.diyPrompts !== 'object') out.diyPrompts = {};
+  if (!out.review || typeof out.review !== 'object') out.review = { providerId: '', model: '', thinking: false };
+  if (!out.selection || typeof out.selection !== 'object') out.selection = { providerId: '', model: '' };
+  if (!out.story || typeof out.story !== 'object') out.story = { providerId: '', model: '' };
+  if (!out.writingOcr || typeof out.writingOcr !== 'object') out.writingOcr = { providerId: '', model: '' };
+  if (out.storyThemes !== undefined && out.storyThemes !== null && !Array.isArray(out.storyThemes)) out.storyThemes = null;
+  return out;
+}
+
+let rawConfig = loadJSON(CONFIG_FILE, {
   maimemoToken: process.env.MAIMEMO_TOKEN || '',
   llm: { mock: false, activeId: 'default', providers: [{ id: 'default', name: '默认服务商', baseUrl: '', apiKey: '', model: '' }] },
   autoSync: { enabled: false, minutes: 60 },
@@ -127,7 +214,390 @@ let config = loadJSON(CONFIG_FILE, {
   dict: { learnersKey: '', collegiateKey: '' },   // v1.0.8：韦氏词典双 key（learners=学习者词典 / collegiate=大学版）
   mineru: { apiKey: '', mock: false },   // v1.1.4：MinerU 精准解析 API（扫描件 PDF -> Markdown，mineru.net）
   auth: { enabled: false, token: '' },   // v2.8.0：Token 凭证登录（开发者登录方式；关闭时无需登录）
+  multiUser: false,                      // v3.0.0：多用户总开关（false=保持 v2.12.0 单用户行为）
 });
+/** 多用户总开关：仅当 config.multiUser===true 时启用隔离；否则完全走旧路径 */
+let MULTIUSER = rawConfig.multiUser === true;
+
+/* 用户注册表 data/users.json：{ schemaVersion, nextId, users:{id:{...}}, invites:[{code,...}] } */
+const userRegistry = loadJSON(USERS_FILE, { schemaVersion: 1, nextId: 1, users: {}, invites: [] });
+if (!userRegistry.users || typeof userRegistry.users !== 'object') userRegistry.users = {};
+if (!Array.isArray(userRegistry.invites)) userRegistry.invites = [];
+if (!Number.isFinite(userRegistry.nextId) || userRegistry.nextId < 1) userRegistry.nextId = 1;
+
+function persistUserRegistry() { saveJSON(USERS_FILE, userRegistry); }
+function userCount() { return Object.keys(userRegistry.users).length; }
+function adminUserId() {
+  const admin = Object.values(userRegistry.users).find(u => u.role === 'admin');
+  return admin ? admin.id : (Object.keys(userRegistry.users)[0] || null);
+}
+function publicUser(u) {
+  if (!u) return null;
+  return { id: u.id, username: u.username, role: u.role, createdAt: u.createdAt, quotas: u.quotas || null };
+}
+function findUserByName(name) {
+  const n = String(name || '').trim().toLowerCase();
+  if (!n) return null;
+  return Object.values(userRegistry.users).find(u => String(u.username).toLowerCase() === n) || null;
+}
+function hashPassword(password, saltHex) {
+  const salt = saltHex ? Buffer.from(saltHex, 'hex') : crypto.randomBytes(16);
+  const hash = crypto.scryptSync(String(password), salt, 64);
+  return { salt: salt.toString('hex'), hash: hash.toString('hex') };
+}
+function verifyPassword(password, user) {
+  try {
+    if (!user || !user.salt || !user.hash) return false;
+    const calc = crypto.scryptSync(String(password), Buffer.from(user.salt, 'hex'), 64);
+    const stored = Buffer.from(user.hash, 'hex');
+    if (calc.length !== stored.length) return false;
+    return crypto.timingSafeEqual(calc, stored);
+  } catch { return false; }
+}
+function userDir(userId) { return path.join(USERS_DIR, userId); }
+function userConfigPath(userId) { return path.join(USERS_DIR, userId, 'config.json'); }
+function ensureUserDir(userId) { fs.mkdirSync(userDir(userId), { recursive: true }); }
+
+const userConfigCache = new Map();
+const userDbCache = new Map();
+let legacyDb = null;
+
+/** 当前请求上下文；无请求上下文（启动期/定时器）时：多用户回退到管理员，否则回退到旧单用户 */
+function currentCtx() {
+  const store = requestContext.getStore();
+  if (store) return store;
+  if (MULTIUSER) { const aid = adminUserId(); if (aid) return { userId: aid, role: 'admin' }; }
+  return { userId: LEGACY_USER, role: 'admin', legacy: true };
+}
+function getUserConfig(userId) {
+  if (userId === LEGACY_USER) return rawConfig;
+  if (!userConfigCache.has(userId)) {
+    userConfigCache.set(userId, normalizeUserConfig(loadJSON(userConfigPath(userId), defaultUserConfig())));
+  }
+  return userConfigCache.get(userId);
+}
+function currentUserConfig() { return getUserConfig(currentCtx().userId); }
+function getUserDb(userId) {
+  if (userId === LEGACY_USER) return legacyDb;
+  if (!userDbCache.has(userId)) {
+    userDbCache.set(userId, normalizeDb(loadJSON(path.join(userDir(userId), 'db.json'), defaultDbSkeleton())));
+  }
+  return userDbCache.get(userId);
+}
+function currentDbObject() { return getUserDb(currentCtx().userId); }
+/** per-user 文件路径解析：单用户模式 = data/<file>；多用户 = data/users/<uid>/<file> */
+function ctxFilePath(filename) {
+  const ctx = currentCtx();
+  if (!MULTIUSER || ctx.userId === LEGACY_USER) return path.join(DATA_DIR, filename);
+  return path.join(USERS_DIR, ctx.userId, filename);
+}
+/** 生图目录（v3.0.0 多用户下按用户隔离，防跨用户看到他人图片） */
+function currentImagesDir() {
+  const ctx = currentCtx();
+  if (!MULTIUSER || ctx.userId === LEGACY_USER) return IMAGES_DIR;
+  return path.join(USERS_DIR, ctx.userId, 'images');
+}
+
+/** config Proxy：用户级字段路由到当前用户，全局字段落在 rawConfig */
+function createConfigProxy() {
+  const handler = {
+    get(_t, prop) {
+      if (typeof prop === 'symbol') return undefined;
+      if (MULTIUSER && USER_CONFIG_KEYS.has(prop)) return currentUserConfig()[prop];
+      return rawConfig[prop];
+    },
+    set(_t, prop, value) {
+      if (MULTIUSER && USER_CONFIG_KEYS.has(prop)) { currentUserConfig()[prop] = value; return true; }
+      rawConfig[prop] = value; return true;
+    },
+    deleteProperty(_t, prop) {
+      if (MULTIUSER && USER_CONFIG_KEYS.has(prop)) { delete currentUserConfig()[prop]; return true; }
+      delete rawConfig[prop]; return true;
+    },
+    has(_t, prop) {
+      if (MULTIUSER && USER_CONFIG_KEYS.has(prop)) return prop in currentUserConfig();
+      return prop in rawConfig;
+    },
+    ownKeys() {
+      const keys = new Set(Reflect.ownKeys(rawConfig));
+      if (MULTIUSER) for (const k of Object.keys(currentUserConfig())) keys.add(k);
+      return [...keys];
+    },
+    getOwnPropertyDescriptor(_t, prop) {
+      const present = (MULTIUSER && USER_CONFIG_KEYS.has(prop)) ? (prop in currentUserConfig()) : (prop in rawConfig);
+      if (!present) return undefined;
+      return { configurable: true, enumerable: true, writable: true, value: handler.get(_t, prop) };
+    },
+  };
+  return new Proxy({}, handler);
+}
+
+/** db Proxy：所有 db.* 访问透明路由到当前用户的 db 对象 */
+function createDbProxy() {
+  const handler = {
+    get(_t, prop) { if (typeof prop === 'symbol') return undefined; return currentDbObject()[prop]; },
+    set(_t, prop, value) { currentDbObject()[prop] = value; return true; },
+    deleteProperty(_t, prop) { delete currentDbObject()[prop]; return true; },
+    has(_t, prop) { return prop in currentDbObject(); },
+    ownKeys() { return Reflect.ownKeys(currentDbObject()); },
+    getOwnPropertyDescriptor(_t, prop) {
+      const o = currentDbObject();
+      if (!(prop in o)) return undefined;
+      return { configurable: true, enumerable: true, writable: true, value: o[prop] };
+    },
+  };
+  return new Proxy({}, handler);
+}
+
+legacyDb = normalizeDb(loadJSON(DB_FILE, defaultDbSkeleton()));
+const config = createConfigProxy();
+let db = createDbProxy();
+
+function persistConfig() {
+  if (!MULTIUSER) { saveJSON(CONFIG_FILE, rawConfig); return; }
+  saveJSON(CONFIG_FILE, rawConfig);
+  const ctx = currentCtx();
+  if (ctx.userId !== LEGACY_USER) saveJSON(userConfigPath(ctx.userId), getUserConfig(ctx.userId));
+}
+function persistDB() { saveJSON(ctxFilePath('db.json'), currentDbObject()); }
+function reloadConfigFromDisk() {
+  rawConfig = loadJSON(CONFIG_FILE, rawConfig);
+  MULTIUSER = rawConfig.multiUser === true;
+  userConfigCache.clear();
+}
+function reloadDbFromDisk() {
+  const ctx = currentCtx();
+  if (ctx.userId === LEGACY_USER) legacyDb = normalizeDb(loadJSON(DB_FILE, legacyDb));
+  else userDbCache.delete(ctx.userId);
+}
+
+/* v3.0.0：备份/恢复文件清单生成（单用户保持 v2.12.0 顶层布局；多用户按 users/<id>/ 分目录） */
+const USER_DATA_FILES = [
+  { file: 'config.json', json: true },
+  { file: 'db.json', json: true },
+  { file: 'chat_sessions.json', json: true },
+  { file: 'learning_attempts.json', json: true, learning: true },
+  { file: 'quiz_srs.json', json: true, quizSrs: true },
+  { file: 'quiz_session.json', json: true, quizSession: true },
+  { file: 'essays.json', json: true },
+];
+function backupFileSpecs() {
+  const specs = [];
+  if (!MULTIUSER) {
+    // 单用户：顶层布局（config.json 为全局，单独追加，避免重复）
+    for (const f of USER_DATA_FILES) {
+      if (f.file === 'config.json') continue;
+      specs.push({ src: path.join(DATA_DIR, f.file), name: f.file, ...f });
+    }
+  } else {
+    for (const uid of Object.keys(userRegistry.users)) {
+      for (const f of USER_DATA_FILES) {
+        specs.push({ src: path.join(USERS_DIR, uid, f.file), name: `users/${uid}/${f.file}`, ...f });
+      }
+    }
+    specs.push({ src: USERS_FILE, name: 'users.json', json: true });
+    specs.push({ src: SESSIONS_FILE, name: 'sessions.json', json: true });
+  }
+  specs.push({ src: CONFIG_FILE, name: 'config.json', json: true });   // 全局配置
+  specs.push({ src: CORPUS_FILE, name: 'records.jsonl' });
+  specs.push({ src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' });
+  specs.push({ src: KB_VERSIONS_FILE, name: 'kb_versions.json', json: true });
+  return specs;
+}
+function restoreFileSpecs() {
+  // 与 backupFileSpecs 同布局；name 为备份内相对路径，dst 为磁盘目标
+  const out = [];
+  if (!MULTIUSER) {
+    for (const f of USER_DATA_FILES) {
+      if (f.file === 'config.json') continue;
+      out.push({ name: f.file, dst: path.join(DATA_DIR, f.file), ...f });
+    }
+  } else {
+    for (const uid of Object.keys(userRegistry.users)) {
+      for (const f of USER_DATA_FILES) out.push({ name: `users/${uid}/${f.file}`, dst: path.join(USERS_DIR, uid, f.file), ...f });
+    }
+    out.push({ name: 'users.json', dst: USERS_FILE, json: true });
+    out.push({ name: 'sessions.json', dst: SESSIONS_FILE, json: true });
+  }
+  out.push({ name: 'config.json', dst: CONFIG_FILE, json: true });
+  out.push({ name: 'records.jsonl', dst: CORPUS_FILE, json: false });
+  out.push({ name: 'exams.jsonl', dst: path.join(ROOT, 'corpus', 'exams.jsonl'), json: false });
+  out.push({ name: 'kb_versions.json', dst: KB_VERSIONS_FILE, json: true });
+  return out;
+}
+
+/* v3.0.0：每用户写串行队列——同一用户的写请求按到达顺序串行执行，避免并发覆盖 */
+const userWriteChains = new Map();
+function enqueueUserWrite(userId, fn) {
+  const prev = userWriteChains.get(userId) || Promise.resolve();
+  const run = prev.then(() => fn());
+  userWriteChains.set(userId, run.then(() => {}, () => {}));
+  return run;
+}
+
+/* v3.0.0：会话持久化 data/sessions.json（重启不掉线）；会话绑定 userId */
+const AUTH_COOKIE = 'wb_session';
+const authSessions = new Map();          // sessionId -> { userId, role, createdAt, lastSeen }
+const AUTH_SESSION_TTL_MS = 30 * 86400000;   // 会话 30 天（该设备默认保持登录）
+(function loadSessions() {
+  const raw = loadJSON(SESSIONS_FILE, { schemaVersion: 1, sessions: {} });
+  const map = (raw && typeof raw === 'object' && raw.sessions && typeof raw.sessions === 'object') ? raw.sessions : {};
+  const now = Date.now();
+  for (const [sid, s] of Object.entries(map)) {
+    if (!s || typeof s !== 'object' || typeof s.lastSeen !== 'number') continue;
+    if (now - s.lastSeen > AUTH_SESSION_TTL_MS) continue;
+    authSessions.set(sid, {
+      userId: s.userId || LEGACY_USER,
+      role: s.role || 'admin',
+      createdAt: typeof s.createdAt === 'number' ? s.createdAt : now,
+      lastSeen: s.lastSeen,
+    });
+  }
+})();
+function persistSessions() {
+  const sessions = {};
+  for (const [sid, s] of authSessions) sessions[sid] = s;
+  saveJSON(SESSIONS_FILE, { schemaVersion: 1, sessions });
+}
+
+/** 恒定时间字符串比较，避免时序侧信道 */
+function safeEqual(a, b) {
+  const ba = Buffer.from(String(a || ''), 'utf8');
+  const bb = Buffer.from(String(b || ''), 'utf8');
+  if (ba.length !== bb.length) return false;
+  try { return crypto.timingSafeEqual(ba, bb); } catch { return false; }
+}
+
+/** 解析请求 Cookie 头 -> 对象 */
+function parseCookies(req) {
+  const out = {};
+  const raw = req.headers.cookie || '';
+  for (const part of raw.split(';')) {
+    const i = part.indexOf('=');
+    if (i < 0) continue;
+    const k = part.slice(0, i).trim();
+    const v = part.slice(i + 1).trim();
+    if (k) out[k] = decodeURIComponent(v);
+  }
+  return out;
+}
+
+/** 登录成功后签发会话并下发 httpOnly Cookie（该设备后续请求自动携带，默认登录） */
+function issueAuthCookie(res, userId, role) {
+  const sid = crypto.randomBytes(24).toString('hex');
+  authSessions.set(sid, {
+    userId: userId || LEGACY_USER,
+    role: role || 'admin',
+    createdAt: Date.now(),
+    lastSeen: Date.now(),
+  });
+  persistSessions();
+  const secure = String(process.env.HTTPS || '') === '1' ? '; Secure' : '';
+  res.setHeader('Set-Cookie',
+    `${AUTH_COOKIE}=${sid}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${Math.floor(AUTH_SESSION_TTL_MS / 1000)}${secure}`);
+  return sid;
+}
+
+function clearAuthCookie(res) {
+  res.setHeader('Set-Cookie', `${AUTH_COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`);
+}
+
+/**
+ * 解析当前请求的认证上下文。
+ * 单用户模式：沿用 v2.8.0 Token 闸门，通过则为 LEGACY_USER。
+ * 多用户模式：会话携带 userId，映射到注册表。
+ * @returns {{ ok:boolean, store:{userId:string, role:string, legacy?:boolean} }}
+ */
+function resolveAuthContext(req) {
+  const sid = parseCookies(req)[AUTH_COOKIE];
+  let session = sid ? authSessions.get(sid) : null;
+  if (session && (typeof session.lastSeen !== 'number' || Date.now() - session.lastSeen > AUTH_SESSION_TTL_MS)) {
+    authSessions.delete(sid);
+    persistSessions();
+    session = null;
+  }
+  if (session) session.lastSeen = Date.now();
+  if (!MULTIUSER) {
+    const legacyStore = { userId: LEGACY_USER, role: 'admin', legacy: true };
+    if (!rawConfig.auth || !rawConfig.auth.enabled) return { ok: true, store: legacyStore };   // 未启用登录 = 全部放行
+    if (!rawConfig.auth.token) return { ok: true, store: legacyStore };                          // 防自锁
+    if (session && session.userId === LEGACY_USER) return { ok: true, store: legacyStore };
+    return { ok: false, store: legacyStore };
+  }
+  if (session && session.userId && userRegistry.users[session.userId]) {
+    return { ok: true, store: { userId: session.userId, role: userRegistry.users[session.userId].role } };
+  }
+  return { ok: false, store: { userId: LEGACY_USER, role: 'admin', legacy: true } };
+}
+
+/** 多用户下管理员校验（单用户模式恒为真） */
+function isAdminCtx(store) { return !MULTIUSER || (store && store.role === 'admin'); }
+
+/**
+ * v3.0.0：一次性迁移——把现有单用户数据归入 admin 用户，开启多用户。
+ * 幂等：已存在用户时抛错；迁移前自动备份 data 核心文件。
+ * @returns {{username:string,password:string,generated:boolean,backupDir:string}}
+ */
+function migrateToMultiUser(adminPasswordRaw) {
+  if (userCount() > 0) { const e = new Error('已存在用户，拒绝重复迁移'); e.code = 'USERS_EXIST'; throw e; }
+  const provided = String(adminPasswordRaw || '').trim();
+  const finalPw = provided || (rawConfig.auth && rawConfig.auth.token) || crypto.randomBytes(9).toString('base64url');
+  const generated = !provided && !(rawConfig.auth && rawConfig.auth.token);
+
+  const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const backupDir = path.join(DATA_DIR, 'backups', `backup-v3-migrate-${stamp}`);
+  fs.mkdirSync(backupDir, { recursive: true });
+  for (const fn of ['config.json', 'db.json', 'chat_sessions.json', 'learning_attempts.json',
+    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'logs.json', 'error_log.json']) {
+    const src = path.join(DATA_DIR, fn);
+    if (fs.existsSync(src)) fs.copyFileSync(src, path.join(backupDir, fn));
+  }
+
+  // 拆分全局 config 与用户 config
+  // 注意：必须以「内存中已归一化补全默认值」的 rawConfig 为基准（磁盘上可能缺 imageGen/dict 等
+  // 未持久化的默认键，直接读盘会让新用户读到 undefined 而崩溃）
+  const globalCfg = JSON.parse(JSON.stringify(rawConfig || {}));
+  const userCfg = {};
+  for (const k of USER_CONFIG_KEYS) {
+    if (globalCfg[k] !== undefined) { userCfg[k] = globalCfg[k]; delete globalCfg[k]; }
+  }
+
+  // 建 admin 用户
+  const id = 'admin';
+  const { salt, hash } = hashPassword(finalPw);
+  userRegistry.users[id] = {
+    id, username: 'admin', role: 'admin', salt, hash,
+    createdAt: new Date().toISOString(), quotas: null,
+  };
+  userRegistry.nextId = Math.max(userRegistry.nextId, 2);
+  persistUserRegistry();
+  ensureUserDir(id);
+
+  // 迁移 per-user 数据文件
+  for (const fn of ['db.json', 'chat_sessions.json', 'learning_attempts.json',
+    'quiz_srs.json', 'quiz_session.json', 'essays.json']) {
+    const src = path.join(DATA_DIR, fn);
+    if (fs.existsSync(src)) {
+      try { fs.renameSync(src, path.join(userDir(id), fn)); }
+      catch { fs.copyFileSync(src, path.join(userDir(id), fn)); fs.rmSync(src, { force: true }); }
+    }
+  }
+  saveJSON(userConfigPath(id), normalizeUserConfig(userCfg));
+
+  // 全局 config：开启多用户 + 强制登录（管理员可用旧 Token 直登）
+  globalCfg.multiUser = true;
+  if (!globalCfg.auth || typeof globalCfg.auth !== 'object') globalCfg.auth = { enabled: true, token: '' };
+  globalCfg.auth.enabled = true;
+  saveJSON(CONFIG_FILE, globalCfg);
+
+  // 重载内存状态
+  rawConfig = globalCfg;
+  MULTIUSER = true;
+  userConfigCache.clear();
+  userDbCache.clear();
+  legacyDb = null;
+  return { username: 'admin', password: finalPw, generated, backupDir };
+}
 // v2.1.0：DIY 模型提示词自定义注册表配置补齐
 if (!config.diyPrompts || typeof config.diyPrompts !== 'object') config.diyPrompts = {};
 delete config.kaoyanMode; // v2.1.0：取消考研英语一模式
@@ -159,68 +629,15 @@ if (!config.auth || typeof config.auth !== 'object') config.auth = { enabled: fa
 if (typeof config.auth.enabled !== 'boolean') config.auth.enabled = false;
 if (typeof config.auth.token !== 'string') config.auth.token = '';
 
-/* v2.8.0：Token 凭证登录——会话 cookie 表（仅内存，重启即失效，强制重新登录） */
-const AUTH_COOKIE = 'wb_session';
-const authSessions = new Map();          // sessionId -> { createdAt, lastSeen }
-const AUTH_SESSION_TTL_MS = 30 * 86400000;   // 会话 30 天（该设备默认保持登录）
-
-/** 恒定时间字符串比较，避免时序侧信道 */
-function safeEqual(a, b) {
-  const ba = Buffer.from(String(a || ''), 'utf8');
-  const bb = Buffer.from(String(b || ''), 'utf8');
-  if (ba.length !== bb.length) return false;
-  try { return crypto.timingSafeEqual(ba, bb); } catch { return false; }
-}
-
-/** 解析请求 Cookie 头 -> 对象 */
-function parseCookies(req) {
-  const out = {};
-  const raw = req.headers.cookie || '';
-  for (const part of raw.split(';')) {
-    const i = part.indexOf('=');
-    if (i < 0) continue;
-    const k = part.slice(0, i).trim();
-    const v = part.slice(i + 1).trim();
-    if (k) out[k] = decodeURIComponent(v);
-  }
-  return out;
-}
-
-/** 当前请求是否已通过 Token 凭证登录 */
-function isAuthed(req) {
-  if (!config.auth || !config.auth.enabled) return true;   // 未启用登录 = 全部放行
-  if (!config.auth.token) return true;                      // 启用但未设 Token（防自锁）→ 放行
-  const sid = parseCookies(req)[AUTH_COOKIE];
-  if (!sid) return false;
-  const s = authSessions.get(sid);
-  if (!s) return false;
-  if (Date.now() - s.lastSeen > AUTH_SESSION_TTL_MS) { authSessions.delete(sid); return false; }
-  s.lastSeen = Date.now();
-  return true;
-}
-
-/** 登录成功后签发会话并下发 httpOnly Cookie（该设备后续请求自动携带，默认登录） */
-function issueAuthCookie(res) {
-  const sid = crypto.randomBytes(24).toString('hex');
-  authSessions.set(sid, { createdAt: Date.now(), lastSeen: Date.now() });
-  const secure = String(process.env.HTTPS || '') === '1' ? '; Secure' : '';
-  res.setHeader('Set-Cookie',
-    `${AUTH_COOKIE}=${sid}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${Math.floor(AUTH_SESSION_TTL_MS / 1000)}${secure}`);
-  return sid;
-}
-
-function clearAuthCookie(res) {
-  res.setHeader('Set-Cookie', `${AUTH_COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`);
-}
-
-/* v2.8.0：报错日志（自动采集前端错误与 API 失败） */
+/* v2.8.0：报错日志（自动采集前端错误与 API 失败）；v3.0.0 统一为全局运维日志（管理员可查全量） */
+function errorLogPath() { return ERROR_LOG_FILE; }
 function loadErrorLog() {
-  const raw = loadJSON(ERROR_LOG_FILE, { schemaVersion: 1, errors: [] });
+  const raw = loadJSON(errorLogPath(), { schemaVersion: 1, errors: [] });
   if (!raw || typeof raw !== 'object' || !Array.isArray(raw.errors)) return { schemaVersion: 1, errors: [] };
   return { schemaVersion: 1, errors: raw.errors };
 }
 function saveErrorLog(store) {
-  saveJSON(ERROR_LOG_FILE, { schemaVersion: 1, errors: Array.isArray(store.errors) ? store.errors : [] });
+  saveJSON(errorLogPath(), { schemaVersion: 1, errors: Array.isArray(store.errors) ? store.errors : [] });
 }
 /** 追加一条报错记录（上限 500，裁掉最旧） */
 function appendErrorLog(entry) {
@@ -245,6 +662,23 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '3.0.0',
+    date: '2026-09-25',
+    title: '多用户 P0 基础设施（后端）',
+    items: [
+      '多用户总开关 config.multiUser：默认 false 时行为与 v2.12.0 完全一致（零破坏）；true 时启用请求级用户隔离',
+      'AsyncLocalStorage 请求上下文：每个请求绑定 userId/role；config 与 db 改为透明 Proxy，业务代码零改动即按当前用户自动解析',
+      'config 按字段分流：用户级（墨墨 Token/云词库/自动同步/DIY 提示词/各功能专用模型/文章题材）落到各自用户；其余（LLM 服务商/登录开关/词典/搜索/KB/生图/解析）全局共享且仅管理员可改',
+      '每用户独立数据目录 data/users/<id>/：db.json、config.json、chat_sessions.json、learning_attempts.json、quiz_srs.json、quiz_session.json、essays.json 全部分区，互不可见',
+      '用户注册表 data/users.json（scrypt 加盐哈希，绝不明文）+ 会话持久化 data/sessions.json（30 天，重启不掉线，会话绑定 userId）',
+      '用户名 + 密码 + 管理员一次性邀请码注册（邀请码用后即废）；用户名 2–20 位中英文/数字/下划线，密码 6–128 位；总用户上限 50',
+      '管理员端点：POST /api/admin/migrate（单用户→多用户一次性迁移，自动备份 data 并把现有数据归入 admin）、GET/POST /api/admin/invites、GET/DELETE /api/admin/users',
+      '每用户写串行队列：同一用户的写请求按到达顺序串行执行，避免并发写互相覆盖',
+      '备份/恢复/自动备份统一按 users/<id>/ 分层打包，含全局 config 与 users.json/sessions.json；图片目录按用户隔离',
+      '认证接口升级：/api/auth/status 返回 multiUser 与当前用户 me；/api/auth/login 多用户走用户名+密码（兼容旧 Token 直登 admin）；/api/auth/register、/api/auth/logout',
+    ],
+  },
   {
     version: '2.12.0',
     date: '2026-09-25',
@@ -359,37 +793,10 @@ if (!Array.isArray(config.llm?.providers)) {
   persistConfig();
 }
 
-let db = loadJSON(DB_FILE, {
-  lastSync: null,
-  lastSyncOk: true,
-  syncLog: [],            // [{ts, ok, msg}]
-  progressHistory: [],    // [{date, finished, total, studyTimeMs}]
-  planTotal: 0,           // 学习计划总词数
-  words: {},              // vocId -> {vocId, spelling, studyCount, tags[], lastResponse, nextStudyDate, lastStudyDate, addDate, today:{firstResponse,isNew,isFinished}, quizResponse?, quizWrong?, quizLastAt?}
-  glosses: {},            // spelling -> {phonetic, pos, gloss}（AI 词典缓存，v1.0.4）
-  todayItems: [],         // 最近一次同步的今日词表
-  notes: [],              // 助记 {id, spelling, vocId?, noteType, content, createdAt, sessionId, source, synced, maimemoNoteId?, pushError?}
-  sessions: [],           // 学习会话 {id, startedAt, endedAt, words[], messages[], errorWords[]}
-  quizLog: [],            // 测验记录 [{ts, mode, total, familiar, vague, forget}]（v1.0.4）
-  contentCreated: { date: '', count: 0 },   // v1.0.7：当日已创建内容数（例句+助记+释义，官方上限 600/天）
-  unitLog: [],            // 单元做题记录 [{ts, unitId, title, total, judged, correct}]（v1.1.5，为错题统计铺路）
-  stories: [],            // v2.4.0：词文成章 [{id, title, words[], theme, length, passage, hooks[], translation, quiz[], createdAt}]
-});
-// 旧 db.json 兼容：缺失字段补默认值
-if (!db.glosses) db.glosses = {};
-if (!Array.isArray(db.quizLog)) db.quizLog = [];
-if (db.lastSyncOk === undefined) db.lastSyncOk = true;
-if (!db.contentCreated || typeof db.contentCreated !== 'object') db.contentCreated = { date: '', count: 0 };   // v1.0.7
-if (!Array.isArray(db.unitLog)) db.unitLog = [];   // v1.1.5：单元做题记录缺省补齐
-if (!Array.isArray(db.stories)) db.stories = [];   // v2.4.0：词文成章文章 {id, title, words[], theme, length, passage, hooks[], translation, quiz[], createdAt}
-
-function persistConfig() { saveJSON(CONFIG_FILE, config); }
-function persistDB() { saveJSON(DB_FILE, db); }
-
-/* v1.2.0：聊天记录持久化（独立文件，不膨胀 db.json） */
-const CHAT_FILE = path.join(DATA_DIR, 'chat_sessions.json');
-function loadChatHistory() { return loadJSON(CHAT_FILE, []); }
-function saveChatHistory(arr) { saveJSON(CHAT_FILE, arr); }
+/* v1.2.0：聊天记录持久化（独立文件，不膨胀 db.json）；v3.0.0 按用户解析路径 */
+function chatFilePath() { return ctxFilePath('chat_sessions.json'); }
+function loadChatHistory() { return loadJSON(chatFilePath(), []); }
+function saveChatHistory(arr) { saveJSON(chatFilePath(), arr); }
 
 /* v2.2.0：统一学习流水持久化（独立文件，tmp+rename 原子写，最多 20,000 条） */
 const MAX_LEARNING_ATTEMPTS = 20000;
@@ -433,12 +840,13 @@ const VALID_ATTEMPT_ERROR_REASONS = new Set([
  * 带 code=LEARNING_STORE_CORRUPT 的错误，绝不返回空 store 覆盖原文件。
  */
 function loadLearningStore() {
-  if (!fs.existsSync(LEARNING_ATTEMPTS_FILE)) {
+  const file = ctxFilePath('learning_attempts.json');
+  if (!fs.existsSync(file)) {
     return { schemaVersion: 1, enabledAt: new Date().toISOString(), attempts: [] };
   }
   let raw;
   try {
-    raw = JSON.parse(fs.readFileSync(LEARNING_ATTEMPTS_FILE, 'utf8'));
+    raw = JSON.parse(fs.readFileSync(file, 'utf8'));
   } catch (e) {
     const err = new Error('学习流水文件损坏，无法解析：' + String(e.message || e).slice(0, 160));
     err.code = 'LEARNING_STORE_CORRUPT';
@@ -457,7 +865,7 @@ function loadLearningStore() {
 }
 
 function saveLearningStore(store) {
-  saveJSON(LEARNING_ATTEMPTS_FILE, {
+  saveJSON(ctxFilePath('learning_attempts.json'), {
     schemaVersion: 1,
     enabledAt: store.enabledAt || new Date().toISOString(),
     attempts: Array.isArray(store.attempts) ? store.attempts : [],
@@ -677,10 +1085,11 @@ function isQuizSrsShape(obj) {
  * 文件存在但损坏/结构非法时抛 code=QUIZ_SRS_CORRUPT，绝不返回空 store 覆盖原文件。
  */
 function loadQuizSrs() {
-  if (!fs.existsSync(QUIZ_SRS_FILE)) return emptyQuizSrsStore();
+  const file = ctxFilePath('quiz_srs.json');
+  if (!fs.existsSync(file)) return emptyQuizSrsStore();
   let raw;
   try {
-    raw = JSON.parse(fs.readFileSync(QUIZ_SRS_FILE, 'utf8'));
+    raw = JSON.parse(fs.readFileSync(file, 'utf8'));
   } catch (e) {
     const err = new Error('测验记忆文件损坏，无法解析：' + String(e.message || e).slice(0, 160));
     err.code = 'QUIZ_SRS_CORRUPT';
@@ -703,7 +1112,7 @@ function loadQuizSrs() {
 }
 
 function saveQuizSrs(store) {
-  saveJSON(QUIZ_SRS_FILE, {
+  saveJSON(ctxFilePath('quiz_srs.json'), {
     schemaVersion: 1,
     enabledAt: store.enabledAt || new Date().toISOString(),
     words: store.words && typeof store.words === 'object' ? store.words : {},
@@ -1009,10 +1418,11 @@ function emptyQuizSession() {
 
 /** 读取会话；不存在返回空会话；损坏抛 QUIZ_SESSION_CORRUPT（拒绝覆盖） */
 function loadQuizSession() {
-  if (!fs.existsSync(QUIZ_SESSION_FILE)) return emptyQuizSession();
+  const file = ctxFilePath('quiz_session.json');
+  if (!fs.existsSync(file)) return emptyQuizSession();
   let raw;
   try {
-    raw = JSON.parse(fs.readFileSync(QUIZ_SESSION_FILE, 'utf8'));
+    raw = JSON.parse(fs.readFileSync(file, 'utf8'));
   } catch (e) {
     const err = new Error('测验会话文件损坏，无法解析：' + String(e.message || e).slice(0, 160));
     err.code = 'QUIZ_SESSION_CORRUPT';
@@ -1041,7 +1451,7 @@ function loadQuizSession() {
 }
 
 function saveQuizSession(sess) {
-  saveJSON(QUIZ_SESSION_FILE, {
+  saveJSON(ctxFilePath('quiz_session.json'), {
     schemaVersion: QUIZ_SESSION_SCHEMA,
     sessionId: sess.sessionId,
     mode: sess.mode,
@@ -2497,16 +2907,19 @@ function stripThinkBlocks(text) {
 /*   + 逐句 L1/L2 升格对比 + 流式 SSE 批改报告 + 金句入助记库           */
 /* ------------------------------------------------------------------ */
 
-const ESSAYS_FILE = path.join(DATA_DIR, 'essays.json');   // 写作历史（独立文件，tmp+rename 原子写）
-let essaysCache = null;
+// v2.5.0：写作历史（独立文件，tmp+rename 原子写）；v3.0.0 按用户隔离缓存
+const essaysCache = new Map();   // userId -> array
 
 function loadEssays() {
-  if (essaysCache) return essaysCache;
-  try { essaysCache = JSON.parse(fs.readFileSync(ESSAYS_FILE, 'utf8')); } catch { essaysCache = []; }
-  if (!Array.isArray(essaysCache)) essaysCache = [];
-  return essaysCache;
+  const uid = currentCtx().userId;
+  if (essaysCache.has(uid)) return essaysCache.get(uid);
+  let arr = [];
+  try { arr = JSON.parse(fs.readFileSync(ctxFilePath('essays.json'), 'utf8')); } catch { arr = []; }
+  if (!Array.isArray(arr)) arr = [];
+  essaysCache.set(uid, arr);
+  return arr;
 }
-function saveEssays() { saveJSON(ESSAYS_FILE, loadEssays().slice(0, 200)); }
+function saveEssays() { saveJSON(ctxFilePath('essays.json'), loadEssays().slice(0, 200)); }
 
 /** 从批改报告提取预估得分（列表徽章用） */
 function parseWritingScore(report) {
@@ -3180,7 +3593,9 @@ async function callImageAPI(prompt) {
 
 function saveImageFile(buf, ext) {
   const name = `img_${Date.now().toString(36)}_${crypto.randomBytes(3).toString('hex')}.${ext}`;
-  fs.writeFileSync(path.join(IMAGES_DIR, name), buf);
+  const dir = currentImagesDir();
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, name), buf);
   return { url: '/images/' + name };
 }
 
@@ -5121,30 +5536,73 @@ function dashboardData() {
   };
 }
 
+/* v3.0.0：白名单——免登录 API（含注册） */
+const AUTH_WHITELIST = new Set([
+  '/api/auth/login', '/api/auth/status', '/api/auth/register',
+  '/api/auth/logout', '/api/error/report',
+]);
+
 const server = http.createServer(async (req, res) => {
+  const p = new URL(req.url, `http://localhost:${PORT}`).pathname;
+  /* v3.0.0：建立每请求隔离上下文；写请求按用户串行（避免同一用户并发写互相覆盖） */
+  const auth = resolveAuthContext(req);
+  const store = Object.assign({ ok: auth.ok }, auth.store);
+  const run = () => requestContext.run(store, () => handleRequest(req, res));
+  if (p.startsWith('/api/') && MULTIUSER && auth.ok && !AUTH_WHITELIST.has(p) && WRITE_METHODS.has(req.method)) {
+    return enqueueUserWrite(auth.store.userId, run);
+  }
+  return run();
+});
+
+async function handleRequest(req, res) {
   const u = new URL(req.url, `http://localhost:${PORT}`);
   const p = u.pathname;
+  const ctxStore = requestContext.getStore() || {};
 
   try {
     /* ---- API ---- */
     if (p.startsWith('/api/')) {
-      /* v2.8.0：Token 凭证登录闸门——白名单外的 API 均需已登录 */
-      const AUTH_WHITELIST = new Set(['/api/auth/login', '/api/auth/status', '/api/error/report']);
-      if (!AUTH_WHITELIST.has(p) && !isAuthed(req)) {
-        return sendJSON(res, 401, { error: '未登录或登录已过期，请输入 Token 凭证', code: 'UNAUTHORIZED' });
+      /* v2.8.0/v3.0.0：登录闸门——白名单外的 API 均需已登录（多用户下由会话解析身份） */
+      if (!AUTH_WHITELIST.has(p) && ctxStore.ok !== true) {
+        return sendJSON(res, 401, { error: MULTIUSER ? '未登录或登录已过期，请重新登录' : '未登录或登录已过期，请输入 Token 凭证', code: 'UNAUTHORIZED' });
       }
 
-      /* v2.8.0：Token 凭证登录 */
+      /* v2.8.0：Token 凭证登录 / v3.0.0：多用户账户 */
       if (p === '/api/auth/status' && req.method === 'GET') {
+        const me = (ctxStore.ok && ctxStore.userId && ctxStore.userId !== LEGACY_USER && MULTIUSER)
+          ? publicUser(userRegistry.users[ctxStore.userId]) : null;
         return sendJSON(res, 200, {
           enabled: !!(config.auth && config.auth.enabled),
           hasToken: !!(config.auth && config.auth.token),
-          authed: isAuthed(req),
+          authed: ctxStore.ok === true,
+          multiUser: MULTIUSER,
+          me,
         });
       }
       if (p === '/api/auth/login' && req.method === 'POST') {
         const body = await readBody(req);
-        const token = String(body.token || '');
+        // v3.0.0：多用户——用户名 + 密码；兼容旧 Token 登录（username 缺省时按 Token 处理）
+        if (MULTIUSER) {
+          const username = String(body.username || '').trim();
+          const password = String(body.password || body.token || '');
+          if (!username) {
+            // 兼容：多用户下旧「Token 凭证」入口——与 admin 密码比对
+            const admin = userRegistry.users[adminUserId()];
+            if (admin && verifyPassword(password, admin)) {
+              issueAuthCookie(res, admin.id, admin.role);
+              return sendJSON(res, 200, { ok: true, user: publicUser(admin) });
+            }
+            return sendJSON(res, 401, { error: '用户名或密码不正确', code: 'BAD_CREDENTIAL' });
+          }
+          const user = findUserByName(username);
+          if (!user || !verifyPassword(password, user)) {
+            return sendJSON(res, 401, { error: '用户名或密码不正确', code: 'BAD_CREDENTIAL' });
+          }
+          issueAuthCookie(res, user.id, user.role);
+          return sendJSON(res, 200, { ok: true, user: publicUser(user) });
+        }
+        // ---- 单用户模式：沿用 Token 凭证 ----
+        const token = String(body.token || body.password || '');
         if (!config.auth || !config.auth.enabled) {
           return sendJSON(res, 200, { ok: true, enabled: false, msg: '登录未启用，直接进入' });
         }
@@ -5154,13 +5612,103 @@ const server = http.createServer(async (req, res) => {
         if (!safeEqual(token, config.auth.token)) {
           return sendJSON(res, 401, { error: 'Token 凭证不正确', code: 'BAD_CREDENTIAL' });
         }
-        issueAuthCookie(res);
+        issueAuthCookie(res, LEGACY_USER, 'admin');
         return sendJSON(res, 200, { ok: true, enabled: true });
+      }
+      /* v3.0.0：多用户注册——一次性邀请码 */
+      if (p === '/api/auth/register' && req.method === 'POST') {
+        if (!MULTIUSER) {
+          return sendJSON(res, 400, { error: '未开启多用户模式', code: 'NO_MULTIUSER' });
+        }
+        const body = await readBody(req);
+        const username = String(body.username || '').trim();
+        const password = String(body.password || '');
+        const inviteCode = String(body.inviteCode || '').trim();
+        if (!/^[A-Za-z0-9_\u4e00-\u9fa5]{2,20}$/.test(username)) {
+          return sendJSON(res, 400, { error: '用户名需为 2–20 位中英文字母/数字/下划线', code: 'BAD_USERNAME' });
+        }
+        if (password.length < 6 || password.length > 128) {
+          return sendJSON(res, 400, { error: '密码长度需为 6–128 位', code: 'BAD_PASSWORD' });
+        }
+        if (findUserByName(username)) {
+          return sendJSON(res, 409, { error: '用户名已被占用', code: 'USERNAME_TAKEN' });
+        }
+        if (userCount() >= 50) {
+          return sendJSON(res, 403, { error: '用户数已达上限（50）', code: 'USER_LIMIT' });
+        }
+        const codeNum = userRegistry.invites.findIndex(inv => inv.code === inviteCode && !inv.usedBy);
+        if (codeNum < 0) {
+          return sendJSON(res, 401, { error: '邀请码无效或已被使用', code: 'BAD_INVITE' });
+        }
+        const id = 'u' + userRegistry.nextId++;
+        const { salt, hash } = hashPassword(password);
+        userRegistry.users[id] = {
+          id, username, role: 'user', salt, hash,
+          createdAt: new Date().toISOString(), quotas: null,
+        };
+        userRegistry.invites[codeNum].usedBy = id;
+        userRegistry.invites[codeNum].usedAt = new Date().toISOString();
+        persistUserRegistry();
+        ensureUserDir(id);
+        issueAuthCookie(res, id, 'user');
+        return sendJSON(res, 200, { ok: true, user: publicUser(userRegistry.users[id]) });
       }
       if (p === '/api/auth/logout' && req.method === 'POST') {
         const sid = parseCookies(req)[AUTH_COOKIE];
-        if (sid) authSessions.delete(sid);
+        if (sid) { authSessions.delete(sid); persistSessions(); }
         clearAuthCookie(res);
+        return sendJSON(res, 200, { ok: true });
+      }
+
+      /* v3.0.0：多用户管理（仅管理员） */
+      if (p === '/api/admin/migrate' && req.method === 'POST') {
+        // 单用户 → 多用户一次性迁移；多用户下不可重入
+        if (!isAdminCtx(ctxStore) && ctxStore.userId !== LEGACY_USER) {
+          return sendJSON(res, 403, { error: '仅管理员可执行迁移', code: 'FORBIDDEN' });
+        }
+        const body = await readBody(req);
+        const r = migrateToMultiUser(body && body.password);
+        return sendJSON(res, 200, { ok: true, ...r });
+      }
+      if (p === '/api/admin/invites' && req.method === 'GET') {
+        if (!MULTIUSER || !isAdminCtx(ctxStore)) return sendJSON(res, 403, { error: '仅管理员可查看邀请码', code: 'FORBIDDEN' });
+        const list = userRegistry.invites.map(inv => ({
+          code: inv.code, createdAt: inv.createdAt, usedBy: inv.usedBy || null, usedAt: inv.usedAt || null,
+        }));
+        return sendJSON(res, 200, { ok: true, invites: list });
+      }
+      if (p === '/api/admin/invites' && req.method === 'POST') {
+        if (!MULTIUSER || !isAdminCtx(ctxStore)) return sendJSON(res, 403, { error: '仅管理员可生成邀请码', code: 'FORBIDDEN' });
+        const body = await readBody(req);
+        const count = Math.min(20, Math.max(1, Number(body && body.count) || 1));
+        const created = [];
+        for (let i = 0; i < count; i++) {
+          const inv = { code: crypto.randomBytes(9).toString('base64url'), createdAt: new Date().toISOString(), createdBy: ctxStore.userId };
+          userRegistry.invites.push(inv);
+          created.push(inv.code);
+        }
+        persistUserRegistry();
+        return sendJSON(res, 200, { ok: true, codes: created });
+      }
+      if (p === '/api/admin/users' && req.method === 'GET') {
+        if (!MULTIUSER || !isAdminCtx(ctxStore)) return sendJSON(res, 403, { error: '仅管理员可查看用户', code: 'FORBIDDEN' });
+        const users = Object.values(userRegistry.users).map(publicUser);
+        return sendJSON(res, 200, { ok: true, users });
+      }
+      if (p === '/api/admin/users' && req.method === 'DELETE') {
+        if (!MULTIUSER || !isAdminCtx(ctxStore)) return sendJSON(res, 403, { error: '仅管理员可删除用户', code: 'FORBIDDEN' });
+        const body = await readBody(req);
+        const targetId = String((body && body.id) || '');
+        const target = userRegistry.users[targetId];
+        if (!target) return sendJSON(res, 404, { error: '用户不存在', code: 'NO_USER' });
+        if (target.role === 'admin') return sendJSON(res, 400, { error: '不能删除管理员账户', code: 'CANNOT_DELETE_ADMIN' });
+        delete userRegistry.users[targetId];
+        persistUserRegistry();
+        // 清理该用户会话与目录（数据保留在 users/<id>/ 便于人工恢复）
+        for (const [sid, s] of [...authSessions]) { if (s.userId === targetId) authSessions.delete(sid); }
+        persistSessions();
+        userConfigCache.delete(targetId);
+        userDbCache.delete(targetId);
         return sendJSON(res, 200, { ok: true });
       }
 
@@ -5337,6 +5885,15 @@ const server = http.createServer(async (req, res) => {
       }
       if (p === '/api/config' && req.method === 'POST') {
         const body = await readBody(req);
+        /* v3.0.0：多用户下，全局配置（服务商/词典/搜索/密钥/登录开关/KB）仅管理员可改；
+           普通用户仅能改自己的 per-user 字段（墨墨 Token / 自动同步 / DIY 提示词等） */
+        if (MULTIUSER && !isAdminCtx(ctxStore)) {
+          const GLOBAL_KEYS = ['llm', 'auth', 'kb', 'dict', 'webSearch', 'mineru', 'imageGen', 'multiUser', 'users'];
+          const touched = GLOBAL_KEYS.filter(k => body[k] !== undefined);
+          if (touched.length) {
+            return sendJSON(res, 403, { error: '仅管理员可修改全局配置：' + touched.join(', '), code: 'FORBIDDEN' });
+          }
+        }
         if (typeof body.maimemoToken === 'string' && body.maimemoToken && !body.maimemoToken.startsWith('••')) {
           config.maimemoToken = body.maimemoToken.trim();
         }
@@ -6936,7 +7493,7 @@ CRITICAL TRANSCRIPTION RULES:
             };
             const list = loadEssays();
             list.unshift(rec);
-            essaysCache = list;
+            essaysCache.set(currentCtx().userId, list);
             saveEssays();
             finishUp({ id: rec.id, score: rec.score, words: rec.words, createdAt: rec.createdAt });
           }
@@ -6963,8 +7520,9 @@ CRITICAL TRANSCRIPTION RULES:
         }
         if (wm && req.method === 'DELETE') {
           const before = loadEssays().length;
-          essaysCache = loadEssays().filter(x => x.id !== wm[1]);
-          if (essaysCache.length === before) return sendJSON(res, 404, { error: '习作不存在' });
+          const next = loadEssays().filter(x => x.id !== wm[1]);
+          if (next.length === before) return sendJSON(res, 404, { error: '习作不存在' });
+          essaysCache.set(currentCtx().userId, next);
           saveEssays();
           return sendJSON(res, 200, { ok: true });
         }
@@ -7904,18 +8462,8 @@ CRITICAL TRANSCRIPTION RULES:
           bDir = path.join(backupDir, backupName);
         }
         fs.mkdirSync(bDir, { recursive: true });
-        // 备份核心数据文件
-        const filesToBackup = [
-          { src: DB_FILE, name: 'db.json', json: true },
-          { src: CONFIG_FILE, name: 'config.json', json: true },
-          { src: path.join(DATA_DIR, 'chat_sessions.json'), name: 'chat_sessions.json', json: true },
-          { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json', json: true, learning: true },
-          { src: QUIZ_SRS_FILE, name: 'quiz_srs.json', json: true, quizSrs: true },
-          { src: QUIZ_SESSION_FILE, name: 'quiz_session.json', json: true, quizSession: true },
-          { src: CORPUS_FILE, name: 'records.jsonl' },
-          { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
-          { src: KB_VERSIONS_FILE, name: 'kb_versions.json', json: true },
-        ];
+        // 备份核心数据文件（v3.0.0：多用户按 users/<id>/ 分层）
+        const filesToBackup = backupFileSpecs();
         let count = 0;
         const warnings = [];
         for (const f of filesToBackup) {
@@ -7940,7 +8488,9 @@ CRITICAL TRANSCRIPTION RULES:
               continue;
             }
           }
-          fs.copyFileSync(f.src, path.join(bDir, f.name));
+          const dst = path.join(bDir, f.name);
+          fs.mkdirSync(path.dirname(dst), { recursive: true });
+          fs.copyFileSync(f.src, dst);
           count++;
         }
         // 清理超过 10 个的旧备份
@@ -7975,17 +8525,7 @@ CRITICAL TRANSCRIPTION RULES:
         if (!fs.existsSync(bDir)) return sendJSON(res, 404, { error: '备份不存在: ' + name });
 
         // v2.2.6：恢复前逐文件校验（JSON 合法性 + 学习流水 schema），损坏则跳过并告警，绝不静默覆盖
-        const restoreMap = [
-          { name: 'db.json', dst: DB_FILE, json: true },
-          { name: 'config.json', dst: CONFIG_FILE, json: true },
-          { name: 'chat_sessions.json', dst: path.join(DATA_DIR, 'chat_sessions.json'), json: true },
-          { name: 'learning_attempts.json', dst: LEARNING_ATTEMPTS_FILE, json: true, learning: true },
-          { name: 'quiz_srs.json', dst: QUIZ_SRS_FILE, json: true, quizSrs: true },
-          { name: 'quiz_session.json', dst: QUIZ_SESSION_FILE, json: true, quizSession: true },
-          { name: 'records.jsonl', dst: CORPUS_FILE, json: false },
-          { name: 'exams.jsonl', dst: path.join(ROOT, 'corpus', 'exams.jsonl'), json: false },
-          { name: 'kb_versions.json', dst: KB_VERSIONS_FILE, json: true },
-        ];
+        const restoreMap = restoreFileSpecs();
         const warnings = [];
         const skipped = [];
         let restored = 0;
@@ -8019,6 +8559,7 @@ CRITICAL TRANSCRIPTION RULES:
             }
           }
           try {
+            fs.mkdirSync(path.dirname(f.dst), { recursive: true });
             fs.copyFileSync(src, f.dst);
             restored++;
           } catch (e) {
@@ -8026,9 +8567,12 @@ CRITICAL TRANSCRIPTION RULES:
           }
         }
 
-        // 重新加载内存数据（学习流水由 loadLearningStore() 每次从文件实时读取，无需额外缓存失效）
-        config = loadJSON(CONFIG_FILE, config);
-        db = loadJSON(DB_FILE, db);
+        // 重新加载内存数据（v3.0.0：清空用户缓存后按需重读；学习流水每次实时读文件）
+        reloadConfigFromDisk();
+        userConfigCache.clear();
+        userDbCache.clear();
+        legacyDb = null;
+        essaysCache.clear();
         armAutoSync();
         return sendJSON(res, 200, {
           ok: true, restored, name, warnings, skipped,
@@ -8042,8 +8586,9 @@ CRITICAL TRANSCRIPTION RULES:
     /* ---- 静态文件 ---- */
     // v1.0.6：生成的助记图（/images/*，从 data/images 提供）
     if (p.startsWith('/images/')) {
-      const imgPath = path.join(IMAGES_DIR, p.slice('/images/'.length));
-      if (!imgPath.startsWith(IMAGES_DIR) || !fs.existsSync(imgPath)) { res.writeHead(404); return res.end('Not Found'); }
+      const baseDir = currentImagesDir();
+      const imgPath = path.join(baseDir, p.slice('/images/'.length));
+      if (!imgPath.startsWith(baseDir) || !fs.existsSync(imgPath)) { res.writeHead(404); return res.end('Not Found'); }
       res.writeHead(200, { 'Content-Type': MIME[path.extname(imgPath).toLowerCase()] || 'application/octet-stream' });
       return fs.createReadStream(imgPath).pipe(res);
     }
@@ -8059,7 +8604,7 @@ CRITICAL TRANSCRIPTION RULES:
         // v1.1.3：请求体超限 = 413，并提示 nginx 反代需同步放宽 client_max_body_size
         return sendJSON(res, 413, { error: err.message + '（若经 nginx 反代访问，还需放宽 client_max_body_size）', code: 'BODY_TOO_LARGE' });
       }
-      const code = ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'KB_IMPORT', 'NO_MINERU'].includes(err.code) ? 400 : 500;
+      const code = ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'KB_IMPORT', 'NO_MINERU', 'BAD_CREDENTIAL'].includes(err.code) ? 400 : 500;
       // v2.8.0：服务端 500 异常自动落入报错日志（前端错误由前端上报）
       if (code === 500) {
         appendErrorLog({ source: 'server', level: 'error', message: err.message, stack: err.stack, url: p, method: req.method, status: 500 });
@@ -8068,7 +8613,7 @@ CRITICAL TRANSCRIPTION RULES:
     }
     res.writeHead(500); res.end('Server Error');
   }
-});
+}
 
 ensureDataDir();
 ensureKbSplit();   // v1.1.2：旧版单文件里的 qa_set 自动迁移到 exams.jsonl
@@ -8094,17 +8639,7 @@ function autoBackup() {
   }
   try {
     fs.mkdirSync(bDir, { recursive: true });
-    const files = [
-      { src: DB_FILE, name: 'db.json', json: true },
-      { src: CONFIG_FILE, name: 'config.json', json: true },
-      { src: CHAT_FILE, name: 'chat_sessions.json', json: true },
-      { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json', json: true, learning: true },
-      { src: QUIZ_SRS_FILE, name: 'quiz_srs.json', json: true, quizSrs: true },
-      { src: QUIZ_SESSION_FILE, name: 'quiz_session.json', json: true, quizSession: true },
-      { src: CORPUS_FILE, name: 'records.jsonl' },
-      { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
-      { src: KB_VERSIONS_FILE, name: 'kb_versions.json', json: true },
-    ];
+    const files = backupFileSpecs();
     for (const f of files) {
       if (!fs.existsSync(f.src)) continue;
       // v2.2.6：损坏文件跳过，避免自动备份把坏数据固化
@@ -8115,7 +8650,9 @@ function autoBackup() {
         if (f.quizSrs && !isQuizSrsShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
         if (f.quizSession && !isQuizSessionShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
       }
-      fs.copyFileSync(f.src, path.join(bDir, f.name));
+      const dst = path.join(bDir, f.name);
+      fs.mkdirSync(path.dirname(dst), { recursive: true });
+      fs.copyFileSync(f.src, dst);
     }
     // 清理旧备份（保留 10 份）
     const all = fs.readdirSync(backupDir).filter(d => d.startsWith('backup-')).sort();
