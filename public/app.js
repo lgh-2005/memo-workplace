@@ -254,6 +254,7 @@ function switchTab(name) {
   if (name === 'unit') loadUnits();
   if (name === 'settings') { loadConfig(); loadBackupList(); }
   if (name === 'logs') loadLogs();
+  if (name === 'quiz') { try { checkQuizResume(); } catch {} }   // v2.11.0：进入测验页检查可续做会话
   // quiz 页保持进行中的状态，不重置
 }
 
@@ -5941,6 +5942,11 @@ const quiz = {
   pausedMs: 0,
   pauseStartedAt: null,
   srsMeta: {},        // v2.10.0：spelling -> { mastery, wrongStage, source }
+  adaptive: false,    // v2.11.0：是否为自适应组卷会话
+  sessionId: null,    // v2.11.0：服务端会话 ID（会话韧性）
+  difficulty: 'normal',
+  adaptiveKinds: ['flash', 'choice'],   // v2.11.0：交错题型开关（默认与「标准」档一致）
+  saveTimer: null,
 };
 
 /* v2.10.0：错题复练状态（自维护 SRS + 错题本） */
@@ -6127,6 +6133,157 @@ $$('#quizModes .chip').forEach(c => c.addEventListener('click', () => {
   quiz.mode = c.dataset.mode;
 }));
 
+/* v2.11.0：自适应组卷 —— 难度档与交错题型开关 */
+$$('#quizDifficulty .chip').forEach(c => c.addEventListener('click', () => {
+  $$('#quizDifficulty .chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  quiz.difficulty = c.dataset.diff;
+  // 联动题型开关到该难度档的默认集合，用户仍可再手动增减
+  const preset = { easy: ['flash', 'choice'], normal: ['flash', 'choice', 'spell'], hard: ['flash', 'choice', 'spell', 'zh2en', 'audio'] }[quiz.difficulty] || ['flash'];
+  quiz.adaptiveKinds = preset.slice();
+  syncAdaptiveKindChips();
+}));
+$$('#quizAdaptiveKinds .chip').forEach(c => c.addEventListener('click', () => {
+  c.classList.toggle('active');
+  const k = c.dataset.akind;
+  if (c.classList.contains('active')) { if (!quiz.adaptiveKinds.includes(k)) quiz.adaptiveKinds.push(k); }
+  else quiz.adaptiveKinds = quiz.adaptiveKinds.filter(x => x !== k);
+}));
+function syncAdaptiveKindChips() {
+  $$('#quizAdaptiveKinds .chip').forEach(c =>
+    c.classList.toggle('active', quiz.adaptiveKinds.includes(c.dataset.akind)));
+}
+if ($('#quizAdaptiveBtn')) $('#quizAdaptiveBtn').addEventListener('click', () => startAdaptive());
+
+/* v2.11.0：启动时检查是否有可续做的会话 */
+async function checkQuizResume() {
+  const box = $('#quizResume');
+  if (!box) return;
+  try {
+    const d = await api('/api/quiz/session');
+    if (!d.resume || d.resume.expired) { box.style.display = 'none'; return; }
+    const r = d.resume;
+    box.style.display = '';
+    box.innerHTML = `
+      <span class="qr-text">📌 上次自适应组卷未完成（${r.idx}/${r.total} 题${r.answered ? ` · 已答 ${r.answered}` : ''}）</span>
+      <span class="qr-actions">
+        <button type="button" class="btn small primary" id="quizResumeBtn">▶ 继续上次</button>
+        <button type="button" class="btn small ghost" id="quizResumeDrop">✕ 放弃</button>
+      </span>`;
+    $('#quizResumeBtn').addEventListener('click', () => resumeAdaptive());
+    $('#quizResumeDrop').addEventListener('click', async () => {
+      try { await api('/api/quiz/session/clear', { method: 'POST' }); } catch {}
+      box.style.display = 'none';
+    });
+  } catch { box.style.display = 'none'; }
+}
+
+async function resumeAdaptive() {
+  const msg = $('#quizMsg');
+  msg.textContent = '正在恢复上次组卷…';
+  msg.className = 'result';
+  try {
+    const d = await api('/api/quiz/session');
+    if (!d.session || !d.session.items?.length) {
+      msg.textContent = '⚠️ 上次会话已失效，请重新组卷';
+      msg.className = 'result err';
+      checkQuizResume();
+      return;
+    }
+    const sess = d.session;
+    quiz.items = sess.items;
+    quiz.idx = Math.min(sess.idx || 0, sess.items.length);
+    quiz.results = Array.isArray(sess.results) ? sess.results : [];
+    quiz.mode = 'adaptive';
+    quiz.adaptive = true;
+    quiz.sessionId = sess.sessionId;
+    quiz.difficulty = sess.config?.difficulty || 'normal';
+    quiz.adaptiveKinds = sess.config?.kinds || quiz.adaptiveKinds;
+    quiz.sessionStartedAt = sess.sessionStartedAt || new Date().toISOString();
+    quiz.pausedMs = sess.pausedMs || 0;
+    quiz.pauseStartedAt = null;
+    quiz.running = true;
+    quiz.srsMeta = {};
+    await loadQuizSrsMeta(quiz.items.map(w => w.spelling));
+    msg.textContent = '';
+    $('#quizSetup').style.display = 'none';
+    $('#quizRun').style.display = 'block';
+    $('#quizConfidenceGroup').style.display = '';
+    $('#quizMasteryRow').style.display = 'flex';
+    startQuizTimer();
+    if (quiz.idx >= quiz.items.length) finishQuiz(); else renderQuizItem();
+  } catch (e) {
+    msg.textContent = '❌ ' + e.message;
+    msg.className = 'result err';
+  }
+}
+
+/** v2.11.0：调服务端自适应组卷并开测 */
+async function startAdaptive() {
+  const msg = $('#quizMsg');
+  msg.textContent = '正在自适应组卷…';
+  msg.className = 'result';
+  try {
+    const count = Math.min(50, Math.max(3, Number($('#quizCount').value) || 10));
+    const d = await api('/api/quiz/generate', {
+      method: 'POST',
+      body: { source: quiz.src, count, difficulty: quiz.difficulty, kinds: quiz.adaptiveKinds },
+    });
+    if (!d.ok) {
+      msg.textContent = d.reason === 'too_few_words'
+        ? '⚠️ 该词源下单词太少，换个词源或先去学习/同步'
+        : '⚠️ 可用释义不足（请检查设置页的 AI 服务商），暂时出不了题';
+      msg.className = 'result err';
+      return;
+    }
+    quiz.items = d.items || [];
+    quiz.idx = 0;
+    quiz.results = [];
+    quiz.mode = 'adaptive';
+    quiz.adaptive = true;
+    quiz.sessionId = d.sessionId;
+    quiz.sessionStartedAt = new Date().toISOString();
+    quiz.pausedMs = 0;
+    quiz.pauseStartedAt = null;
+    quiz.running = true;
+    quiz.srsMeta = {};
+    await loadQuizSrsMeta(quiz.items.map(w => w.spelling));
+    msg.textContent = '';
+    $('#quizSetup').style.display = 'none';
+    $('#quizRun').style.display = 'block';
+    $('#quizConfidenceGroup').style.display = '';
+    $('#quizMasteryRow').style.display = 'flex';
+    startQuizTimer();
+    renderQuizItem();
+  } catch (e) {
+    msg.textContent = '❌ ' + e.message;
+    msg.className = 'result err';
+  }
+}
+
+/** v2.11.0：会话进度暂存（去抖动，前端逐题调用） */
+function scheduleSessionSave() {
+  if (!quiz.adaptive || !quiz.sessionId) return;
+  if (quiz.saveTimer) { clearTimeout(quiz.saveTimer); quiz.saveTimer = null; }
+  quiz.saveTimer = setTimeout(() => { saveSessionNow(); }, 400);
+}
+async function saveSessionNow() {
+  if (!quiz.adaptive || !quiz.sessionId) return;
+  try {
+    await api('/api/quiz/session/save', {
+      method: 'POST',
+      body: {
+        sessionId: quiz.sessionId,
+        idx: quiz.idx,
+        results: quiz.results,
+        confidence: quiz.confidence,
+        pausedMs: quiz.pausedMs || 0,
+        pauseStartedAt: quiz.pauseStartedAt || null,
+      },
+    });
+  } catch { /* 静默：暂存失败不打断测验 */ }
+}
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -6171,10 +6328,12 @@ async function startQuiz() {
       msg.className = 'result err';
       return;
     }
-    quiz.items = withGloss;
+    quiz.items = withGloss.map(w => ({ ...w, kind: quiz.mode }));
     quiz.idx = 0;
     quiz.results = [];
     quiz.running = true;
+    quiz.adaptive = false;
+    quiz.sessionId = null;
     quiz.sessionStartedAt = new Date().toISOString();
     quiz.pausedMs = 0;
     quiz.pauseStartedAt = null;
@@ -6214,6 +6373,7 @@ function quitQuiz() {
   transfer.answered = false;
   srs.running = false;
   if (quiz.advanceTimer) { clearTimeout(quiz.advanceTimer); quiz.advanceTimer = null; }
+  if (quiz.saveTimer) { clearTimeout(quiz.saveTimer); quiz.saveTimer = null; }
   if (transfer.advanceTimer) { clearTimeout(transfer.advanceTimer); transfer.advanceTimer = null; }
   if (srs.advanceTimer) { clearTimeout(srs.advanceTimer); srs.advanceTimer = null; }
   stopQuizTimer();
@@ -6222,6 +6382,13 @@ function quitQuiz() {
   $('#quizConfidenceGroup').style.display = '';
   $('#transferConfidenceGroup').style.display = 'none';
   $('#quizMasteryRow').style.display = 'none';
+  // v2.11.0：自适应会话退出不是放弃——保留进度供续做，只刷新「继续上次」提示
+  // 注意：saveSessionNow 在首个 await 前同步读取 sessionId，故须先调用再清空标志
+  const wasAdaptive = quiz.adaptive && quiz.sessionId;
+  if (wasAdaptive) { saveSessionNow().catch(() => {}); }
+  quiz.adaptive = false;
+  quiz.sessionId = null;
+  if (wasAdaptive) checkQuizResume();
 }
 
 /* ---- v2.10.0：会话计时（含暂停） ---- */
@@ -6290,12 +6457,13 @@ function quizRecord(resp, extra = {}) {
     ? { again: 'FORGET', hard: 'VAGUE', good: 'FAMILIAR', easy: 'FAMILIAR' }[grade]
     : resp;
 
+  const itemKind = it.kind || quiz.mode;
   quiz.results.push({
     spelling: it.spelling,
     response: mappedResp,
     grade,
-    mode: quiz.mode,
-    prompt: it.spelling,
+    mode: itemKind,
+    prompt: itemKind === 'zh2en' ? (it.gloss?.gloss || '') : it.spelling,
     expected: it.gloss?.gloss || '',
     userAnswer: extra.userAnswer !== undefined ? String(extra.userAnswer) : mappedResp,
     confidence: quiz.confidence || 'unsure',
@@ -6303,6 +6471,7 @@ function quizRecord(resp, extra = {}) {
     submittedAt: new Date(now).toISOString(),
     durationMs,
   });
+  scheduleSessionSave();
 }
 
 function renderQuizItem() {
@@ -6310,11 +6479,13 @@ function renderQuizItem() {
   quiz.itemStartedAt = new Date().toISOString();
   resetQuizConfidence();
   renderMasteryBar(it.spelling, quiz.srsMeta[it.spelling]);
-  $('#quizProgress').textContent = `第 ${quiz.idx + 1} / ${quiz.items.length} 题`;
+  const kind = it.kind || quiz.mode;
+  const kindLabel = { flash: '🃏 闪卡', choice: '🔤 四选一', spell: '⌨️ 拼写', zh2en: '🀄 看中选英', audio: '🔊 听音辨义' }[kind] || '';
+  $('#quizProgress').innerHTML = `第 ${quiz.idx + 1} / ${quiz.items.length} 题${quiz.adaptive && kindLabel ? ` <span class="quiz-kind-badge">${kindLabel}</span>` : ''}`;
   $('#quizBar').style.width = (quiz.idx / quiz.items.length * 100) + '%';
   const area = $('#quizArea');
 
-  if (quiz.mode === 'flash') {
+  if (kind === 'flash') {
     area.innerHTML = `
       <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button>
         ${it.gloss?.phonetic ? `<div class="phonetic">${esc(it.gloss.phonetic)}</div>` : ''}</div>
@@ -6334,15 +6505,26 @@ function renderQuizItem() {
     return;
   }
 
-  if (quiz.mode === 'choice') {
-    const distractors = shuffle(quiz.distractorPool.filter(w => w.spelling !== it.spelling))
-      .slice(0, 3).map(w => w.gloss.gloss);
-    const opts = shuffle([{ ok: true, text: it.gloss.gloss }, ...distractors.map(t => ({ ok: false, text: t }))]);
+  if (kind === 'choice' || kind === 'audio') {
+    // 自适应组卷自带 options（服务端确定性生成）；固定模式则用词库现造
+    let opts;
+    if (it.options && it.options.length) {
+      opts = it.options.map(t => ({ ok: t === (it.answer || it.gloss.gloss), text: t }));
+    } else {
+      const distractors = shuffle(quiz.distractorPool.filter(w => w.spelling !== it.spelling))
+        .slice(0, 3).map(w => w.gloss.gloss);
+      opts = shuffle([{ ok: true, text: it.gloss.gloss }, ...distractors.map(t => ({ ok: false, text: t }))]);
+    }
+    const head = kind === 'audio'
+      ? `<div class="quiz-word quiz-audio"><button class="speak-btn large" data-speak="${esc(it.spelling)}">🔊</button><div class="phonetic">${esc(it.gloss?.phonetic || '')}</div></div>
+         <div class="quiz-hint">听发音，选出正确释义</div>`
+      : `<div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></div>
+         <div class="quiz-hint">选出正确的释义</div>`;
     area.innerHTML = `
-      <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></div>
-      <div class="quiz-hint">选出正确的释义</div>
+      ${head}
       <div class="quiz-opts">${opts.map((o, i) => `<button class="btn quiz-opt" data-i="${i}">${esc(o.text)}</button>`).join('')}</div>
       <div class="quiz-feedback" id="quizFeedback"></div>`;
+    if (kind === 'audio') speak(it.spelling);
     let answered = false;
     $$('#quizArea .quiz-opt').forEach(b => b.addEventListener('click', () => {
       if (answered) return;
@@ -6355,6 +6537,29 @@ function renderQuizItem() {
         : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.gloss.gloss)}</b></span>`;
       quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: pickedOpt.text });
       quiz.advanceTimer = setTimeout(quizAdvance, ok ? 700 : 1800);
+    }));
+    return;
+  }
+
+  if (kind === 'zh2en') {
+    // 看中文选英文：题干给中文释义，选项为英文单词
+    const opts = (it.options || []).map(t => ({ ok: t === (it.answer || it.spelling), text: t }));
+    area.innerHTML = `
+      <div class="quiz-answer quiz-cn-prompt"><span class="pos">${esc(it.gloss?.pos || '')}</span>${esc(it.gloss?.gloss || '')}</div>
+      <div class="quiz-hint">选出对应的英文单词</div>
+      <div class="quiz-opts">${opts.map((o, i) => `<button class="btn quiz-opt" data-i="${i}">${esc(o.text)}</button>`).join('')}</div>
+      <div class="quiz-feedback" id="quizFeedback"></div>`;
+    let answered = false;
+    $$('#quizArea .quiz-opt').forEach(b => b.addEventListener('click', () => {
+      if (answered) return;
+      answered = true;
+      const picked = opts[Number(b.dataset.i)];
+      b.classList.add(picked.ok ? 'correct' : 'wrong');
+      $('#quizFeedback').innerHTML = picked.ok
+        ? `<span class="fb-ok">✅ 答对了！${esc(it.spelling)}</span>`
+        : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.spelling)}</b></span>`;
+      quizRecord(null, { grade: picked.ok ? 'good' : 'again', userAnswer: picked.text });
+      quiz.advanceTimer = setTimeout(quizAdvance, picked.ok ? 700 : 1800);
     }));
     return;
   }
@@ -6389,16 +6594,23 @@ function renderQuizItem() {
 async function finishQuiz() {
   quiz.running = false;
   stopQuizTimer();
+  if (quiz.saveTimer) { clearTimeout(quiz.saveTimer); quiz.saveTimer = null; }
   $('#quizBar').style.width = '100%';
   $('#quizProgress').textContent = '测验完成 🎉';
   const r = quiz.results;
   const cnt = k => r.filter(x => x.response === k).length;
   const gcnt = g => r.filter(x => x.grade === g).length;
   const elapsed = fmtDuration(currentSessionElapsedMs());
+  const wasAdaptive = quiz.adaptive;
+  const sessionId = quiz.sessionId;
+  quiz.adaptive = false;
+  quiz.sessionId = null;
   let submitNote = '';
   let srsNote = '';
   try {
-    const res = await api('/api/quiz/submit', { method: 'POST', body: { results: r, mode: quiz.mode } });
+    const body = { results: r, mode: quiz.mode };
+    if (wasAdaptive && sessionId) body.sessionId = sessionId;
+    const res = await api('/api/quiz/submit', { method: 'POST', body });
     if (res.engine === 'srs') {
       srsNote = `🧠 记忆引擎已更新${res.wrongBooked ? ` · 新入错题本 ${res.wrongBooked}` : ''}${res.resolved ? ` · 已掌握移出 ${res.resolved}` : ''}。`;
     }
@@ -6406,11 +6618,20 @@ async function finishQuiz() {
   } catch {
     submitNote = '（结果上报失败，本次不计入错词统计）';
   }
+  // v2.11.0：本轮为自适应组卷 → 结果页额外展示题型分布
+  let kindNote = '';
+  if (wasAdaptive) {
+    const kindCnt = {};
+    for (const x of r) kindCnt[x.mode] = (kindCnt[x.mode] || 0) + 1;
+    const kindLabels = { flash: '闪卡', choice: '四选一', spell: '拼写', zh2en: '看中选英', audio: '听音辨义' };
+    kindNote = Object.keys(kindCnt).map(k => `${kindLabels[k] || k} ${kindCnt[k]}`).join(' · ');
+  }
   const gc = QUIZ_GRADES.map(g => `<span class="gd ${g.cls}">${esc(g.label)} ${gcnt(g.key)}</span>`).join('');
   $('#quizArea').innerHTML = `
     <div class="quiz-done">
       <div class="quiz-score">${cnt('FAMILIAR')} / ${r.length}</div>
       <div class="quiz-score-sub">用时 ${elapsed}</div>
+      ${kindNote ? `<div class="quiz-score-sub">题型分布：${esc(kindNote)}</div>` : ''}
       <div class="quiz-grade-summary">${gc}</div>
       <div class="hint" style="text-align:center">${esc(srsNote)}</div>
       <div class="hint" style="text-align:center">${esc(submitNote)}</div>

@@ -57,6 +57,8 @@ const MAX_ERROR_LOGS = 500;   // 报错日志上限（超出裁掉最旧）
 const LEARNING_ATTEMPTS_FILE = path.join(DATA_DIR, 'learning_attempts.json');
 // v2.10.0：测验记忆引擎（自维护 SRS + 错题本 + 游戏化），独立文件不膨胀 db.json
 const QUIZ_SRS_FILE = path.join(DATA_DIR, 'quiz_srs.json');
+// v2.11.0：自适应组卷会话（跨设备/刷新可续做），独立文件不膨胀 db.json
+const QUIZ_SESSION_FILE = path.join(DATA_DIR, 'quiz_session.json');
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
 // 本机默认只监听 127.0.0.1；云服务器部署时设置 HOST=0.0.0.0（建议配合 nginx/防火墙）
 const HOST = process.env.HOST || '127.0.0.1';
@@ -243,6 +245,19 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '2.11.0',
+    date: '2026-09-25',
+    title: '自适应组卷 + 交错题型 + 会话韧性',
+    items: [
+      '自适应组卷（服务端 /api/quiz/generate，确定性可测）：按「记忆到期 > 错题本在册 > 忘记/模糊 > 掌握度反比 > 顽固词」加权排序选词，兼顾弱项与到期节奏，避免只抽到简单词',
+      '交错题型：一次测验内按题型池轮转并打散，避免长同题型连排；新增「看中文选英文」(zh2en) 与「听音辨义」(audio) 两类题型，客观题由服务端生成选项并权威判分',
+      '难度档 easy/normal/hard 决定可用题型范围（越难越多客观题与新题型），词源支持 记忆到期/错题本/今日/顽固/模糊/忘记/7天内到期/全部',
+      '会话韧性（服务端持久化 data/quiz_session.json）：跨设备/刷新/断网可续做；逐题暂存 idx/结果/信心，支持「继续上次」与放弃；提交时以服务端权威 answer 复核客观题成绩防篡改',
+      '新增接口：POST /api/quiz/generate、GET /api/quiz/session、POST /api/quiz/session/save、POST /api/quiz/session/clear；/api/quiz/submit 支持携带 sessionId 复核入库',
+      '游戏化（XP/连胜/combo）接入自适应组卷，仍默认关闭（设置可开）',
+    ],
+  },
   {
     version: '2.10.0',
     date: '2026-09-24',
@@ -919,6 +934,323 @@ function srsOverview() {
     avgEase: easeN > 0 ? Number((easeSum / easeN).toFixed(2)) : null,
     gamification: store.gamification,
     enabledAt: store.enabledAt,
+  };
+}
+
+/* ------------------------------------------------------------------ */
+/* v2.11.0：自适应组卷 + 交错题型 + 会话韧性                              */
+/*   ① 自适应加权选词：到期/错题/弱项/低掌握度加权，掌握度反比；          */
+/*   ② 交错题型：flash/choice/spell + 新增 zh2en（看中选英）/audio（听音）；*/
+/*   ③ 服务端会话持久化 data/quiz_session.json，跨设备/刷新可续做。       */
+/* ------------------------------------------------------------------ */
+
+const QUIZ_SESSION_SCHEMA = 1;
+const QUIZ_SESSION_MAX_ITEMS = 100;
+const QUIZ_SESSION_TTL_MS = 7 * 86400000;   // 会话最长保留 7 天
+
+/** 新题型 + 既有题型（交错组卷的可用题型池） */
+const QUIZ_KINDS_ALL = new Set(['flash', 'choice', 'spell', 'zh2en', 'audio']);
+/** 难度档 → 允许出现的题型（掌握度越低/难度越高，客观题占比越大） */
+const QUIZ_DIFFICULTY_KINDS = {
+  easy: ['flash', 'choice'],
+  normal: ['flash', 'choice', 'spell'],
+  hard: ['flash', 'choice', 'spell', 'zh2en', 'audio'],
+};
+
+/** 可复现随机数（mulberry32），seed 为整数；未给 seed 则用时间熵 */
+function makeRng(seed) {
+  let a = (Number.isFinite(seed) ? Math.floor(seed) : Date.now()) >>> 0;
+  return function rng() {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/** 会话结构校验（sessionId 为 null 表示已清空的空会话，属合法形态） */
+function isQuizSessionShape(obj) {
+  return !!obj && typeof obj === 'object' && obj.schemaVersion === QUIZ_SESSION_SCHEMA &&
+    (typeof obj.sessionId === 'string' || obj.sessionId === null) && Array.isArray(obj.items);
+}
+
+function emptyQuizSession() {
+  return {
+    schemaVersion: QUIZ_SESSION_SCHEMA,
+    sessionId: null,
+    mode: 'adaptive',
+    source: 'all',
+    config: { difficulty: 'normal', kinds: ['flash', 'choice', 'spell'], count: 10 },
+    items: [],
+    idx: 0,
+    results: [],
+    confidence: 'unsure',
+    sessionStartedAt: null,
+    pausedMs: 0,
+    pauseStartedAt: null,
+    updatedAt: null,
+  };
+}
+
+/** 读取会话；不存在返回空会话；损坏抛 QUIZ_SESSION_CORRUPT（拒绝覆盖） */
+function loadQuizSession() {
+  if (!fs.existsSync(QUIZ_SESSION_FILE)) return emptyQuizSession();
+  let raw;
+  try {
+    raw = JSON.parse(fs.readFileSync(QUIZ_SESSION_FILE, 'utf8'));
+  } catch (e) {
+    const err = new Error('测验会话文件损坏，无法解析：' + String(e.message || e).slice(0, 160));
+    err.code = 'QUIZ_SESSION_CORRUPT';
+    throw err;
+  }
+  if (!isQuizSessionShape(raw)) {
+    const err = new Error('测验会话文件结构非法（schemaVersion 必须为 1 且 items 为数组），已拒绝读写以免覆盖');
+    err.code = 'QUIZ_SESSION_CORRUPT';
+    throw err;
+  }
+  return {
+    schemaVersion: QUIZ_SESSION_SCHEMA,
+    sessionId: raw.sessionId,
+    mode: typeof raw.mode === 'string' ? raw.mode : 'adaptive',
+    source: typeof raw.source === 'string' ? raw.source : 'all',
+    config: (raw.config && typeof raw.config === 'object') ? raw.config : { difficulty: 'normal', kinds: ['flash', 'choice', 'spell'], count: 10 },
+    items: Array.isArray(raw.items) ? raw.items : [],
+    idx: Number.isFinite(raw.idx) && raw.idx >= 0 ? Math.round(raw.idx) : 0,
+    results: Array.isArray(raw.results) ? raw.results : [],
+    confidence: typeof raw.confidence === 'string' ? raw.confidence : 'unsure',
+    sessionStartedAt: typeof raw.sessionStartedAt === 'string' ? raw.sessionStartedAt : null,
+    pausedMs: Number.isFinite(raw.pausedMs) && raw.pausedMs >= 0 ? raw.pausedMs : 0,
+    pauseStartedAt: typeof raw.pauseStartedAt === 'string' ? raw.pauseStartedAt : null,
+    updatedAt: typeof raw.updatedAt === 'string' ? raw.updatedAt : null,
+  };
+}
+
+function saveQuizSession(sess) {
+  saveJSON(QUIZ_SESSION_FILE, {
+    schemaVersion: QUIZ_SESSION_SCHEMA,
+    sessionId: sess.sessionId,
+    mode: sess.mode,
+    source: sess.source,
+    config: sess.config,
+    items: (sess.items || []).slice(0, QUIZ_SESSION_MAX_ITEMS),
+    idx: sess.idx || 0,
+    results: (sess.results || []).slice(0, QUIZ_SESSION_MAX_ITEMS),
+    confidence: sess.confidence || 'unsure',
+    sessionStartedAt: sess.sessionStartedAt || null,
+    pausedMs: sess.pausedMs || 0,
+    pauseStartedAt: sess.pauseStartedAt || null,
+    updatedAt: new Date().toISOString(),
+  });
+}
+
+/** 会话是否已失效（超过 TTL 视为过期，可被新会话覆盖） */
+function quizSessionExpired(sess) {
+  if (!sess || !sess.updatedAt) return true;
+  return (Date.now() - isoMs(sess.updatedAt)) > QUIZ_SESSION_TTL_MS;
+}
+
+/**
+ * 按词源收集候选词（返回 word-like 对象数组，供加权）。
+ * 支持：today/sticky/vague/forget/due7/all/srs_due/wrongbook
+ */
+function quizCandidates(source) {
+  const store = loadQuizSrs();
+  const todayStr = bjDate();
+  const bySpelling = new Map(Object.values(db.words).map(w => [w.spelling, w]));
+  const out = [];
+  const push = sp => {
+    const w = bySpelling.get(sp);
+    out.push(w || { spelling: sp });
+  };
+
+  if (source === 'srs_due') {
+    for (const d of collectSrsDue('srs_due')) push(d.spelling);
+    return out;
+  }
+  if (source === 'wrongbook') {
+    for (const e of (store.wrongBook || [])) if (!e.resolved) push(e.spelling);
+    return out;
+  }
+
+  let words = Object.values(db.words);
+  if (source === 'sticky') words = words.filter(w => w.tags?.includes('STICKING'));
+  else if (source === 'forget') words = words.filter(w => w.lastResponse === 'FORGET' || w.today?.firstResponse === 'FORGET' || w.quizResponse === 'FORGET');
+  else if (source === 'vague') words = words.filter(w => w.lastResponse === 'VAGUE' || w.today?.firstResponse === 'VAGUE' || w.quizResponse === 'VAGUE');
+  else if (source === 'due7') {
+    const end = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
+    words = words.filter(w => { const d = (w.nextStudyDate || '').slice(0, 10); return d && d <= end; });
+  } else if (source === 'today') {
+    words = words.filter(w => w.today?.date === todayStr);
+  }
+  for (const w of words) out.push(w);
+  return out;
+}
+
+/**
+ * 自适应加权打分（确定性：给定 rng 则结果可复现）。
+ * 到期(SRS due) > 错题本在册 > 忘记/模糊 > 低掌握度 > 顽固词；再加少量抖动以打散并列。
+ */
+function scoreQuizCandidate(word, store, nowMs, rng) {
+  const sp = word.spelling;
+  let score = 1;
+  const meta = store.words[sp];
+  const norm = meta ? normalizeSrsWord(meta) : null;
+  if (norm && norm.dueAt && isoMs(norm.dueAt) <= nowMs) score += 1000;   // 记忆到期
+  const wb = (store.wrongBook || []).find(x => x.spelling === sp && !x.resolved);
+  if (wb) score += 800 + Math.min(200, (wb.wrongCount || 0) * 40);       // 错题本在册
+  const resp = word.quizResponse || word.lastResponse || word.today?.firstResponse;
+  if (resp === 'FORGET') score += 300;
+  else if (resp === 'VAGUE') score += 150;
+  const mastery = norm ? norm.mastery : 0;
+  score += (QUIZ_MASTERED_MASTERY - mastery) * 60;                       // 掌握度反比
+  if (word.tags?.includes('STICKING')) score += 40;
+  score += rng() * 50;                                                   // 抖动打散并列
+  return score;
+}
+
+/** 交错分配题型：按题型池轮转 + 抖动静默，避免长同题型连排 */
+function assignInterleavedKinds(count, kindPool, rng) {
+  const pool = kindPool.length ? kindPool.slice() : ['flash'];
+  // 构造一个被多次重复的循环序列并按权重（顺序）打散
+  const seq = [];
+  for (let i = 0; i < count; i++) seq.push(pool[i % pool.length]);
+  // 小幅洗牌：以 2~3 为窗口局部交换，保持交错感同时引入变化
+  for (let i = seq.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [seq[i], seq[j]] = [seq[j], seq[i]];
+  }
+  // 避免相邻同题型（简单前后推移）
+  for (let i = 1; i < seq.length; i++) {
+    if (seq[i] === seq[i - 1] && pool.length > 1) {
+      for (let k = i + 1; k < seq.length; k++) {
+        if (seq[k] !== seq[i - 1]) { [seq[i], seq[k]] = [seq[k], seq[i]]; break; }
+      }
+    }
+  }
+  return seq;
+}
+
+/** 原地 Fisher-Yates 洗牌（可注入 rng，保证自适应组卷可复现） */
+function shuffleWith(arr, rng) {
+  const r = typeof rng === 'function' ? rng : Math.random;
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(r() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+/** 构造中文干扰项（同词性优先），不足返回 null */
+function quizChineseDistractors(correctGloss, correctPos, poolCn, rng) {
+  const samePos = [];
+  const other = [];
+  for (const g of poolCn) {
+    if (g.gloss === correctGloss) continue;
+    if (correctPos && g.pos && g.pos === correctPos) samePos.push(g.gloss);
+    else other.push(g.gloss);
+  }
+  const out = [];
+  for (const g of shuffleWith(samePos, rng)) { if (out.length >= 3) break; if (!out.includes(g)) out.push(g); }
+  for (const g of shuffleWith(other, rng)) { if (out.length >= 3) break; if (!out.includes(g)) out.push(g); }
+  return out.length >= 3 ? out : null;
+}
+
+/** 构造英文干扰项（看中选英），不足返回 null */
+function quizEnglishDistractors(correctSpelling, poolEn, rng) {
+  const out = [];
+  for (const sp of shuffleWith(poolEn.slice(), rng)) {
+    if (sp === correctSpelling) continue;
+    if (!out.includes(sp)) out.push(sp);
+    if (out.length >= 3) break;
+  }
+  return out.length >= 3 ? out : null;
+}
+
+/**
+ * 自适应组卷（同步，要求 db.glosses 已就绪；路由先 ensureGlosses）。
+ * @returns {Array} 公开题目项（不含 expected 之外的敏感字段；self-grade 题含 answer 供客户端比对）
+ */
+function buildAdaptiveQuiz({ source, count, difficulty, kinds, seed }) {
+  const store = loadQuizSrs();
+  const nowMs = Date.now();
+  const rng = makeRng(seed);
+
+  const diff = QUIZ_DIFFICULTY_KINDS[difficulty] ? difficulty : 'normal';
+  const requested = (Array.isArray(kinds) && kinds.length ? kinds : QUIZ_DIFFICULTY_KINDS[diff])
+    .map(k => String(k)).filter(k => QUIZ_KINDS_ALL.has(k));
+  // 仅保留该难度档允许的题型；为空则退回难度档默认
+  let kindPool = requested.filter(k => QUIZ_DIFFICULTY_KINDS[diff].includes(k));
+  if (!kindPool.length) kindPool = QUIZ_DIFFICULTY_KINDS[diff].slice();
+
+  // 候选去重 + 打分排序
+  const seen = new Set();
+  const cands = [];
+  for (const w of quizCandidates(source)) {
+    if (!w || !w.spelling || seen.has(w.spelling)) continue;
+    if (!/^[a-z][a-z'\-]{1,29}$/i.test(w.spelling)) continue;
+    seen.add(w.spelling);
+    cands.push({ word: w, score: scoreQuizCandidate(w, store, nowMs, rng) });
+  }
+  cands.sort((a, b) => b.score - a.score || a.word.spelling.localeCompare(b.word.spelling));
+
+  // 中文/英文干扰池（池顺序本身有序，故池内随机按 seed 可控）
+  const poolCn = [];
+  const poolEn = [];
+  const cnSeen = new Set();
+  for (const sp of Object.keys(db.glosses || {})) {
+    const g = vocabGlossOf(sp);
+    if (!g) continue;
+    if (!cnSeen.has(g.gloss)) { cnSeen.add(g.gloss); poolCn.push(g); }
+    poolEn.push(sp);
+  }
+
+  const kindSeq = assignInterleavedKinds(count, kindPool, rng);
+  const items = [];
+  let ki = 0;
+  for (const c of cands) {
+    if (items.length >= count) break;
+    const g = vocabGlossOf(c.word.spelling);
+    if (!g) continue;   // 无释义（AI 未就绪）跳过，由后续候选补足
+    let kind = kindSeq[ki] || 'flash';
+    const item = {
+      spelling: c.word.spelling,
+      kind,
+      difficulty: diff,
+      gloss: { pos: g.pos || '', gloss: g.gloss, phonetic: db.glosses[c.word.spelling]?.phonetic || '' },
+      options: null,
+      answer: null,
+    };
+    if (kind === 'choice' || kind === 'audio') {
+      const distractors = quizChineseDistractors(g.gloss, g.pos, poolCn, rng);
+      if (distractors) { item.options = shuffleWith([g.gloss, ...distractors], rng); item.answer = g.gloss; }
+      else kind = 'flash';
+    } else if (kind === 'zh2en') {
+      const distractors = quizEnglishDistractors(c.word.spelling, poolEn, rng);
+      if (distractors) { item.options = shuffleWith([c.word.spelling, ...distractors], rng); item.answer = c.word.spelling; }
+      else kind = 'flash';
+    }
+    item.kind = kind;
+    items.push(item);
+    ki++;
+  }
+  return items;
+}
+
+/** 上次会话摘要（供前端「继续上次」提示） */
+function quizSessionSummary(sess) {
+  if (!sess || !sess.sessionId) return null;
+  return {
+    sessionId: sess.sessionId,
+    mode: sess.mode,
+    source: sess.source,
+    config: sess.config,
+    total: (sess.items || []).length,
+    idx: sess.idx || 0,
+    answered: (sess.results || []).length,
+    sessionStartedAt: sess.sessionStartedAt,
+    pausedMs: sess.pausedMs || 0,
+    updatedAt: sess.updatedAt,
+    expired: quizSessionExpired(sess),
   };
 }
 
@@ -4872,9 +5204,45 @@ const server = http.createServer(async (req, res) => {
       }
 
       // 测验结果提交：计入错词体系（v1.0.4）并双写统一流水（v2.2.1）
+      // v2.11.0：若携带 sessionId，则以服务端会话的权威 answer 复核客观题成绩（防篡改），
+      //          自评题（flash）沿用客户端 grade；提交后清空会话。
       if (p === '/api/quiz/submit' && req.method === 'POST') {
         const body = await readBody(req);
-        const results = Array.isArray(body.results) ? body.results.slice(0, 500) : [];
+        let results = Array.isArray(body.results) ? body.results.slice(0, 500) : [];
+        const sessionId = String(body.sessionId || '').trim();
+
+        if (sessionId) {
+          let sess = null;
+          try { sess = loadQuizSession(); } catch (e) {
+            if (e.code === 'QUIZ_SESSION_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+            throw e;
+          }
+          if (sess.sessionId !== sessionId) return sendJSON(res, 409, { error: '会话已失效，请重新组卷' });
+          const bySpelling = new Map(sess.items.map(it => [it.spelling, it]));
+          const resultsBySpelling = new Map(results.map(r => [String(r.spelling || ''), r]));
+          const graded = [];
+          for (const it of sess.items) {
+            const r = resultsBySpelling.get(it.spelling);
+            if (!r) continue;
+            const scoreable = (it.kind === 'choice' || it.kind === 'audio' || it.kind === 'zh2en') && it.answer != null;
+            let grade = QUIZ_GRADES.has(String(r.grade || '')) ? String(r.grade) : null;
+            if (scoreable) {
+              const ok = String(r.userAnswer || '').trim().toLowerCase() === String(it.answer).trim().toLowerCase();
+              grade = ok ? 'good' : 'again';
+              // 服务端权威 expected 覆盖客户端
+              r.expected = it.answer;
+              r.grade = grade;
+            } else if (!grade) {
+              continue;   // 自评题缺 grade 视为无效
+            }
+            graded.push({ ...r, spelling: it.spelling, mode: it.kind, grade });
+          }
+          if (!graded.length) return sendJSON(res, 400, { error: '没有可入库的作答' });
+          const out = applyQuizSrsSession(graded, body.mode);
+          try { saveQuizSession({ ...sess, sessionId: null, items: [], idx: 0, results: [] }); } catch { /* 会话清理失败不影响入库 */ }
+          return sendJSON(res, 200, { ok: true, engine: 'srs', sessionId, regraded: true, ...out });
+        }
+
         // v2.10.0：若携带 4 档 grade，走 SRS 引擎（自维护调度 + 错题本 + 游戏化）；否则沿用旧三档路径
         const hasGrade = results.some(r => r && QUIZ_GRADES.has(String(r.grade || '')));
         if (hasGrade) {
@@ -4883,6 +5251,95 @@ const server = http.createServer(async (req, res) => {
         }
         const { applied, attemptsSaved } = applyQuizResults(results, body.mode);
         return sendJSON(res, 200, { ok: true, engine: 'legacy', applied, attemptsSaved });
+      }
+
+      /* ---- v2.11.0：自适应组卷 + 交错题型 + 会话韧性 ---- */
+
+      // 自适应组卷：POST { source, count, difficulty, kinds, seed }
+      if (p === '/api/quiz/generate' && req.method === 'POST') {
+        const body = await readBody(req);
+        const source = String(body.source || 'all');
+        const allowedSources = ['today', 'sticky', 'vague', 'forget', 'due7', 'all', 'srs_due', 'wrongbook'];
+        if (!allowedSources.includes(source)) return sendJSON(res, 400, { error: 'source 非法' });
+        const count = Math.min(50, Math.max(3, Number(body.count) || 10));
+        const difficulty = ['easy', 'normal', 'hard'].includes(String(body.difficulty)) ? String(body.difficulty) : 'normal';
+        const kinds = Array.isArray(body.kinds) ? body.kinds.map(k => String(k)) : [];
+        const seed = Number.isFinite(Number(body.seed)) ? Number(body.seed) : undefined;
+
+        try {
+          const candidates = quizCandidates(source);
+          if (candidates.length < 3) return sendJSON(res, 200, { ok: false, reason: 'too_few_words', candidates: candidates.length });
+          // 先补齐候选词释义（AI 词典缓存；mock 模式即可测）
+          const spellings = candidates.map(w => w.spelling).filter(Boolean).slice(0, Math.max(count * 6, 60));
+          await ensureGlosses(spellings);
+          const items = buildAdaptiveQuiz({ source, count, difficulty, kinds, seed });
+          if (items.length < 3) return sendJSON(res, 200, { ok: false, reason: 'too_few_glossed', candidates: candidates.length, glossed: items.length });
+          const sessionId = crypto.randomBytes(12).toString('hex');
+          const sess = {
+            ...emptyQuizSession(),
+            sessionId,
+            mode: 'adaptive',
+            source,
+            config: { difficulty, kinds: kinds.length ? kinds : QUIZ_DIFFICULTY_KINDS[difficulty], count },
+            items,
+            sessionStartedAt: new Date().toISOString(),
+          };
+          saveQuizSession(sess);
+          // 下发时对客观题隐去 answer？——保留 answer 供前端即时反馈；服务端提交时另行权威复核。
+          return sendJSON(res, 200, { ok: true, sessionId, source, difficulty, items, summary: quizSessionSummary(sess) });
+        } catch (e) {
+          if (e.code === 'QUIZ_SESSION_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
+      }
+
+      // 读取当前会话（用于跨设备/刷新续做）
+      if (p === '/api/quiz/session' && req.method === 'GET') {
+        try {
+          const sess = loadQuizSession();
+          const summary = quizSessionSummary(sess);
+          if (!summary || quizSessionExpired(sess) || !sess.items.length) {
+            return sendJSON(res, 200, { ok: true, resume: null });
+          }
+          return sendJSON(res, 200, { ok: true, resume: summary, session: sess });
+        } catch (e) {
+          if (e.code === 'QUIZ_SESSION_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
+      }
+
+      // 暂存/更新会话进度（前端逐题调用；也可用于更新 confidence/pause）
+      if (p === '/api/quiz/session/save' && req.method === 'POST') {
+        const body = await readBody(req);
+        try {
+          const sess = loadQuizSession();
+          if (!sess.sessionId) return sendJSON(res, 404, { error: '当前无进行中的会话' });
+          if (body.sessionId && String(body.sessionId) !== sess.sessionId) {
+            return sendJSON(res, 409, { error: '会话 ID 不匹配' });
+          }
+          if (Number.isFinite(body.idx) && body.idx >= 0) sess.idx = Math.min(sess.items.length, Math.round(body.idx));
+          if (Array.isArray(body.results)) sess.results = body.results.slice(0, QUIZ_SESSION_MAX_ITEMS);
+          if (typeof body.confidence === 'string' && VALID_ATTEMPT_CONFIDENCES.has(body.confidence)) sess.confidence = body.confidence;
+          if (Number.isFinite(body.pausedMs) && body.pausedMs >= 0) sess.pausedMs = body.pausedMs;
+          if (body.pauseStartedAt === null || typeof body.pauseStartedAt === 'string') sess.pauseStartedAt = body.pauseStartedAt;
+          saveQuizSession(sess);
+          return sendJSON(res, 200, { ok: true, summary: quizSessionSummary(sess) });
+        } catch (e) {
+          if (e.code === 'QUIZ_SESSION_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
+      }
+
+      // 清除会话（放弃续做）
+      if (p === '/api/quiz/session/clear' && req.method === 'POST') {
+        try {
+          const sess = loadQuizSession();
+          saveQuizSession({ ...sess, sessionId: null, items: [], idx: 0, results: [], sessionStartedAt: null, pausedMs: 0, pauseStartedAt: null });
+          return sendJSON(res, 200, { ok: true });
+        } catch (e) {
+          if (e.code === 'QUIZ_SESSION_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
       }
 
       /* ---- v2.10.0：测验记忆引擎（SRS + 错题本 + 游戏化） ---- */
@@ -6931,6 +7388,7 @@ CRITICAL TRANSCRIPTION RULES:
           { src: path.join(DATA_DIR, 'chat_sessions.json'), name: 'chat_sessions.json', json: true },
           { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json', json: true, learning: true },
           { src: QUIZ_SRS_FILE, name: 'quiz_srs.json', json: true, quizSrs: true },
+          { src: QUIZ_SESSION_FILE, name: 'quiz_session.json', json: true, quizSession: true },
           { src: CORPUS_FILE, name: 'records.jsonl' },
           { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
           { src: KB_VERSIONS_FILE, name: 'kb_versions.json', json: true },
@@ -6952,6 +7410,10 @@ CRITICAL TRANSCRIPTION RULES:
             }
             if (f.quizSrs && !isQuizSrsShape(v.obj)) {
               warnings.push({ file: f.name, reason: '测验记忆结构不符，已跳过' });
+              continue;
+            }
+            if (f.quizSession && !isQuizSessionShape(v.obj)) {
+              warnings.push({ file: f.name, reason: '测验会话结构不符，已跳过' });
               continue;
             }
           }
@@ -6996,6 +7458,7 @@ CRITICAL TRANSCRIPTION RULES:
           { name: 'chat_sessions.json', dst: path.join(DATA_DIR, 'chat_sessions.json'), json: true },
           { name: 'learning_attempts.json', dst: LEARNING_ATTEMPTS_FILE, json: true, learning: true },
           { name: 'quiz_srs.json', dst: QUIZ_SRS_FILE, json: true, quizSrs: true },
+          { name: 'quiz_session.json', dst: QUIZ_SESSION_FILE, json: true, quizSession: true },
           { name: 'records.jsonl', dst: CORPUS_FILE, json: false },
           { name: 'exams.jsonl', dst: path.join(ROOT, 'corpus', 'exams.jsonl'), json: false },
           { name: 'kb_versions.json', dst: KB_VERSIONS_FILE, json: true },
@@ -7010,6 +7473,7 @@ CRITICAL TRANSCRIPTION RULES:
             // 备份不含该文件：保留当前数据，不创建空文件覆盖（学习流水/测验记忆尤其如此）
             if (f.learning) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前学习流水' });
             if (f.quizSrs) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前测验记忆' });
+            if (f.quizSession) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前测验会话' });
             continue;
           }
           if (f.json) {
@@ -7024,6 +7488,10 @@ CRITICAL TRANSCRIPTION RULES:
             }
             if (f.quizSrs && !isQuizSrsShape(v.obj)) {
               warnings.push({ file: f.name, reason: 'schemaVersion/words 结构不符，已跳过' });
+              continue;
+            }
+            if (f.quizSession && !isQuizSessionShape(v.obj)) {
+              warnings.push({ file: f.name, reason: 'schemaVersion/items 结构不符，已跳过' });
               continue;
             }
           }
@@ -7109,6 +7577,7 @@ function autoBackup() {
       { src: CHAT_FILE, name: 'chat_sessions.json', json: true },
       { src: LEARNING_ATTEMPTS_FILE, name: 'learning_attempts.json', json: true, learning: true },
       { src: QUIZ_SRS_FILE, name: 'quiz_srs.json', json: true, quizSrs: true },
+      { src: QUIZ_SESSION_FILE, name: 'quiz_session.json', json: true, quizSession: true },
       { src: CORPUS_FILE, name: 'records.jsonl' },
       { src: path.join(ROOT, 'corpus', 'exams.jsonl'), name: 'exams.jsonl' },
       { src: KB_VERSIONS_FILE, name: 'kb_versions.json', json: true },
@@ -7121,6 +7590,7 @@ function autoBackup() {
         if (!v.valid) { console.error(`  [自动备份] 跳过损坏文件 ${f.name}: ${v.error}`); continue; }
         if (f.learning && !isLearningStoreShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
         if (f.quizSrs && !isQuizSrsShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
+        if (f.quizSession && !isQuizSessionShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
       }
       fs.copyFileSync(f.src, path.join(bDir, f.name));
     }

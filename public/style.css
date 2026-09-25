@@ -1586,6 +1586,25 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .wb-actions { display: flex; gap: 6px; }
 .wb-actions .btn { min-height: 36px; }
 
+/* ============ v2.11.0：自适应组卷 + 交错题型 + 会话韧性 ============ */
+.quiz-kind-badge {
+  display: inline-block; margin-left: 6px; padding: 1px 8px; font-size: 11.5px; font-weight: 600;
+  border-radius: 999px; background: var(--primary-soft); color: var(--primary); border: 1px solid var(--border);
+  vertical-align: middle;
+}
+.quiz-resume {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  margin: 8px 0; padding: 8px 12px; border-radius: var(--radius);
+  background: var(--primary-soft); border: 1px solid var(--border);
+}
+.quiz-resume .qr-text { font-size: 13px; color: var(--text); }
+.quiz-resume .qr-actions { display: flex; gap: 8px; }
+.quiz-resume .btn { min-height: 36px; }
+.quiz-word.quiz-audio { flex-direction: column; align-items: center; gap: 6px; }
+.speak-btn.large { font-size: 26px; width: 64px; height: 64px; border-radius: 50%; min-height: 44px; }
+.quiz-cn-prompt { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+.quiz-cn-prompt .pos { margin-right: 6px; }
+
 /* ============ v1.0.5：Markdown 渲染增强 ============ */
 .msg .md-h { font-weight: 700; margin: 4px 0 2px; }
 .msg .md-h1, .msg .md-h2 { font-size: 15.5px; padding-left: 8px; border-left: 3px solid var(--primary); }
@@ -2937,6 +2956,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   /* v2.10.0：4 档评分与错题复练操作触控 44px */
   .grade-row-4 .grade { min-height: 44px; }
   .wb-actions .btn { min-height: 44px; }
+  /* v2.11.0：测验退出与续做操作触控 44px */
+  #quizQuitBtn, .quiz-resume .btn { min-height: 44px; }
 
   /* 疑点弹窗：全屏 sheet 式 */
   .kb-fix-modal { padding: 0; align-items: flex-end; }

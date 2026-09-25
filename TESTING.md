@@ -118,7 +118,14 @@
 | 40 | `.workbuddy/test_v2100_quiz_srs.js` | 46 | 测验记忆引擎（自维护 SRS，后端）：空态、4 档评分写入（good→interval 1、easy→首答 4 天、hard 不晋级、mastery 演化）、again 入册错题本（stage=0/wrongCount/mastery 归零）、连续 4 次 good 掌握移出（`resolved` 且从默认列表消失、resolved=1 可见）、掌握度分布、`dueAt` 拨到过去后到期收集（`srs_due`/`wrongbook` filter）、filter 非法 400、legacy 三档兼容（无 grade 时 engine=legacy 且回写 `db.words`、不触发 again 入册）、`wrongbook/resolve` 与 `remove`（不存在词 404）、游戏化 XP 递增/连胜/dailyGoal 校验、`quiz_srs.json` 损坏时 500 + `QUIZ_SRS_CORRUPT` 且不覆盖原文件、还原后恢复、真实 `data/` 三文件哈希不变 |
 | 41 | `.workbuddy/test_v2100_quiz_srs_ui.js` | 21 | 测验记忆引擎 UI（浏览器）：错题复练子模式可见与互斥切换、SRS 概览渲染（追踪词/错题/5 段分布/错题本列表）、掌握度条 4 段、4 档评分按钮集合正确、复练作答真实提交（mode=srs 且每题携 grade 枚举）、结果页 4 档汇总、错题本 resolve 后条目减少、移动端 390px 无溢出 + 评分按钮触控 ≥44px、控制台 0 错误、真实 `data/` 三文件哈希不变 |
 
-> 合计 **41** 套（21 后端/单测 + 19 浏览器 + 1 线上冒烟），断言总数 **906+**。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.12 v2.11.0 增量套件（2）
+
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 42 | `.workbuddy/test_v2110_quiz_generate.js` | 47 | 自适应组卷 + 交错题型 + 会话韧性（后端）：自适应组卷返回 `sessionId`/items 且落盘 `quiz_session.json`（schemaVersion=1）、到期/错题词强加权排前 2、低掌握度词排名高于高掌握度词、难度档题型约束（easy 仅 flash/choice；hard ≥3 种题型）、客观题 4 选项且 `answer` 在选项内（choice=释义、zh2en=拼写）、同 seed 组卷确定性（拼写顺序与题型序列一致）、会话读取/暂存/续做（idx/answered 持久化、sessionId 不匹配 409）、提交携带 sessionId 时服务端权威复核（错答强制 again 入错题本、提交后清空会话）、`session/clear`、参数校验（非法 source 400、count 钳制 3..50）、`quiz_session.json` 损坏保护（500 + `QUIZ_SESSION_CORRUPT` 且不覆盖、还原后恢复）、真实 `data/` 四文件哈希不变 |
+| 43 | `.workbuddy/test_v2110_quiz_generate_ui.js` | 24 | 自适应组卷 UI（浏览器）：配置区存在（难度档 3 / 题型开关 5 / 智能组卷与固定题型双按钮）、难度档联动题型开关（hard→5 类、normal→3 类）、智能组卷开测与题型标签渲染、走完全程（提交携带 sessionId 且结果含 ≥2 种题型、结果页显示题型分布）、会话韧性（刷新后显示续做横幅 2/6、恢复后从第 3 题继续、放弃后横幅消失且服务端会话清空）、移动端 390px 无溢出 + 退出按钮触控 ≥44px、控制台 0 错误、真实 `data/` 四文件哈希不变 |
+
+> 合计 **43** 套（23 后端/单测 + 19 浏览器 + 1 线上冒烟），断言总数 **977+**。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
 
 > **说明**：`english-workbench/.workbuddy/` 目录下共 51 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块）。上表 37 套为与「17 后端 + 20 浏览器 + 1 线上冒烟」基线口径对齐的核心验收清单。
 
