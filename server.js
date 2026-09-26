@@ -380,6 +380,7 @@ const USER_DATA_FILES = [
   { file: 'quiz_srs.json', json: true, quizSrs: true },
   { file: 'quiz_session.json', json: true, quizSession: true },
   { file: 'essays.json', json: true },
+  { file: 'llm_usage.json', json: true },   // v3.2.0：AI 用量统计
 ];
 function backupFileSpecs() {
   const specs = [];
@@ -533,6 +534,14 @@ function resolveAuthContext(req) {
 /** 多用户下管理员校验（单用户模式恒为真） */
 function isAdminCtx(store) { return !MULTIUSER || (store && store.role === 'admin'); }
 
+/** 共享内容写操作守卫（v3.2.0）：多用户下仅管理员可改全局共享资源（真题库/语料库/单元标准答案）。
+ *  返回 true 表示放行；否则已发送 403，调用方应直接 return。 */
+function requireAdmin(res, store, what) {
+  if (isAdminCtx(store)) return true;
+  sendJSON(res, 403, { error: `仅管理员可${what || '修改共享内容'}（多用户下共享资源只读）`, code: 'FORBIDDEN' });
+  return false;
+}
+
 /**
  * v3.0.0：一次性迁移——把现有单用户数据归入 admin 用户，开启多用户。
  * 幂等：已存在用户时抛错；迁移前自动备份 data 核心文件。
@@ -548,7 +557,7 @@ function migrateToMultiUser(adminPasswordRaw) {
   const backupDir = path.join(DATA_DIR, 'backups', `backup-v3-migrate-${stamp}`);
   fs.mkdirSync(backupDir, { recursive: true });
   for (const fn of ['config.json', 'db.json', 'chat_sessions.json', 'learning_attempts.json',
-    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'logs.json', 'error_log.json']) {
+    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json', 'logs.json', 'error_log.json']) {
     const src = path.join(DATA_DIR, fn);
     if (fs.existsSync(src)) fs.copyFileSync(src, path.join(backupDir, fn));
   }
@@ -575,7 +584,7 @@ function migrateToMultiUser(adminPasswordRaw) {
 
   // 迁移 per-user 数据文件
   for (const fn of ['db.json', 'chat_sessions.json', 'learning_attempts.json',
-    'quiz_srs.json', 'quiz_session.json', 'essays.json']) {
+    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json']) {
     const src = path.join(DATA_DIR, fn);
     if (fs.existsSync(src)) {
       try { fs.renameSync(src, path.join(userDir(id), fn)); }
@@ -662,6 +671,20 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '3.2.0',
+    date: '2026-09-25',
+    title: '多用户 P2 数据分区收尾 + P3 集成改造',
+    items: [
+      'P2 共享内容写操作加管理员守卫：语料/真题导入、记录编辑与删除、历史版本恢复、单元标准答案保存、MinerU 解析入库，多用户下均仅管理员可写（403 FORBIDDEN），普通用户对共享资源只读',
+      'P3 墨墨集成改为 per-user：每人自带 Token 独立频控（滑动窗口 + 自适应间隔按用户隔离，互不拖慢）；云词库缓存按用户隔离；自动同步按用户各自间隔独立装配（各自 Token、写各自数据）',
+      'P3 自动同步定时器：启动/迁移/配置变更时遍历所有已开启的用户分别装配，删除用户自动撤下；迁移后立即为 admin 装配',
+      'P3 AI 用量统计：每次 LLM 调用抓取上游 usage tokens（流式与非流式均支持），按北京自然日聚合并落 data/users/<id>/llm_usage.json，纳入备份与恢复',
+      '新增「📊 AI 用量」看板：普通用户看自己的总 Tokens/调用次数/输入输出与近 7/14/30 天柱状趋势；管理员额外可见全员用量表',
+      '接口：GET /api/llm/usage?days=7|14|30（scope=all 仅管理员可看全员，越权 403 FORBIDDEN）',
+      '共享 LLM Key 由管理员统一配置；用量看板仅统计展示，不设额度拦截',
+    ],
+  },
   {
     version: '3.1.0',
     date: '2026-09-25',
@@ -2474,41 +2497,49 @@ function bjDateOf(iso) {
 /*   内容创建（例句+助记+释义合并）每天最多 600 条                       */
 /* ------------------------------------------------------------------ */
 
-// v1.0.7：全局请求时间戳滑动窗口（官方未说明按端点独立计数，保守按全局计）
-const callTimestamps = [];
+// v1.0.7：请求时间戳滑动窗口（官方未说明按端点独立计数，保守按全局计）
+// v3.2.0：改为 **按用户（Token）独立**——每人自带墨墨 Token，频控须互不影响
 const WIN_10S = 10_000, WIN_60S = 60_000, WIN_5H = 5 * 3600_000;
 const LIMIT_10S = 18, LIMIT_60S = 38, LIMIT_5H = 1900;   // 官方 20/40/2000，各留约 10% 余量
-// v1.0.5：自适应间隔——触发限流后全局上调（各接口一起降速），连续成功后缓慢回落
-let baseGapMs = 650;          // 基础间隔（窗口护栏兜底，短同步可快速通过）
 const GAP_MIN = 650, GAP_MAX = 8000;
-let throttledCount = 0;       // 本次进程内 429 计数（同步日志里如实汇报）
+
+/** 每用户频控状态：{ callTimestamps:[], baseGapMs, throttledCount }（单用户模式用 LEGACY_USER 键） */
+const mmLimiter = new Map();
+function limiterState() {
+  const uid = currentCtx().userId || LEGACY_USER;
+  let st = mmLimiter.get(uid);
+  if (!st) { st = { callTimestamps: [], baseGapMs: GAP_MIN, throttledCount: 0 }; mmLimiter.set(uid, st); }
+  return st;
+}
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-/** 全局限流：滑动窗口护栏 + 基础间隔，任一约束命中即等待（分段睡，可响应收紧） */
+/** 限流：滑动窗口护栏 + 基础间隔，任一约束命中即等待（分段睡，可响应收紧）。按当前用户隔离 */
 async function throttle() {
+  const st = limiterState();
   for (;;) {
     const now = Date.now();
-    while (callTimestamps.length && now - callTimestamps[0] > WIN_5H) callTimestamps.shift();
+    while (st.callTimestamps.length && now - st.callTimestamps[0] > WIN_5H) st.callTimestamps.shift();
     let wait = 0;
-    if (callTimestamps.length >= LIMIT_10S) {
-      wait = Math.max(wait, WIN_10S - (now - callTimestamps[callTimestamps.length - LIMIT_10S]));
+    if (st.callTimestamps.length >= LIMIT_10S) {
+      wait = Math.max(wait, WIN_10S - (now - st.callTimestamps[st.callTimestamps.length - LIMIT_10S]));
     }
-    if (callTimestamps.length >= LIMIT_60S) {
-      wait = Math.max(wait, WIN_60S - (now - callTimestamps[callTimestamps.length - LIMIT_60S]));
+    if (st.callTimestamps.length >= LIMIT_60S) {
+      wait = Math.max(wait, WIN_60S - (now - st.callTimestamps[st.callTimestamps.length - LIMIT_60S]));
     }
-    if (callTimestamps.length >= LIMIT_5H) {
-      wait = Math.max(wait, WIN_5H - (now - callTimestamps[0]));
+    if (st.callTimestamps.length >= LIMIT_5H) {
+      wait = Math.max(wait, WIN_5H - (now - st.callTimestamps[0]));
     }
-    const last = callTimestamps[callTimestamps.length - 1] || 0;
-    wait = Math.max(wait, baseGapMs - (now - last));
-    if (wait <= 0) { callTimestamps.push(now); return; }
+    const last = st.callTimestamps[st.callTimestamps.length - 1] || 0;
+    wait = Math.max(wait, st.baseGapMs - (now - last));
+    if (wait <= 0) { st.callTimestamps.push(now); return; }
     await sleep(Math.min(wait, 2000));
   }
 }
 
-function tightenGap() { baseGapMs = Math.min(GAP_MAX, Math.round(baseGapMs * 1.6)); throttledCount++; }
-function relaxGap() { if (baseGapMs > GAP_MIN) baseGapMs = Math.max(GAP_MIN, Math.round(baseGapMs / 1.15)); }
+function tightenGap() { const st = limiterState(); st.baseGapMs = Math.min(GAP_MAX, Math.round(st.baseGapMs * 1.6)); st.throttledCount++; }
+function relaxGap() { const st = limiterState(); if (st.baseGapMs > GAP_MIN) st.baseGapMs = Math.max(GAP_MIN, Math.round(st.baseGapMs / 1.15)); }
+function throttledCountNow() { return limiterState().throttledCount; }
 
 /**
  * 调用墨墨 API。自动剥信封、限流自适应退避、网络/5xx 错误重试。
@@ -2726,7 +2757,8 @@ async function runSync(trigger = 'manual') {
 
   db.lastSync = new Date().toISOString();
   db.lastSyncOk = ok;
-  if (throttledCount > 0) steps.push(`（期间触发限流 ${throttledCount} 次，已自动退避恢复）`);
+  const thr = throttledCountNow();
+  if (thr > 0) steps.push(`（期间触发限流 ${thr} 次，已自动退避恢复）`);
   logSync(ok, steps.join('；') + ` [${trigger}]`);
   persistDB();
   return { ok, msg: steps.join('；') };
@@ -2795,7 +2827,9 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     // v2.2.8：测试用可配置延迟（MOCK_LLM_DELAY_MS），用于验证并发写入安全
     const mockDelay = Number(process.env.MOCK_LLM_DELAY_MS || 0);
     if (Number.isFinite(mockDelay) && mockDelay > 0) await new Promise(r => setTimeout(r, mockDelay));
-    return mockLLM(messages);
+    const reply = mockLLM(messages);
+    recordLlmUsage(estimateUsage(messages, reply));   // v3.2.0：mock 也记用量（便于测试与看板联调）
+    return reply;
   }
   const base = getProvider(providerId) || {};
   const llm = { ...base, ...(llmOverride || {}) };
@@ -2835,6 +2869,8 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     }
     // v2.4.3：全模型服务开启流式——长请求不再占用无数据连接，防止中转站/网关 504 超时
     bodyObj.stream = true;
+    // v3.2.0：请求流末回报 usage，供 per-user 用量统计（上游不支持的会忽略该字段）
+    if (!bodyObj.stream_options) bodyObj.stream_options = { include_usage: true };
     res = await fetch(url, {
       method: 'POST',
       headers: {
@@ -2856,6 +2892,7 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
   let content = '';
   let reasoningLen = 0;
   let finishReason = '';
+  let usageSeen = null;
   if (ct.includes('text/event-stream')) {
     try {
       const reader = res.body.getReader();
@@ -2878,6 +2915,7 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
             if (typeof d.content === 'string') content += d.content;
             if (typeof d.reasoning_content === 'string') reasoningLen += d.reasoning_content.length;
             if (j.choices?.[0]?.finish_reason) finishReason = j.choices[0].finish_reason;
+            if (j.usage) usageSeen = j.usage;   // v3.2.0：上游在流末块回报 usage
           } catch { /* 单块坏数据忽略 */ }
         }
       }
@@ -2890,7 +2928,9 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     content = msg.content || json.choices?.[0]?.text || '';
     reasoningLen = String(msg.reasoning_content || '').length;
     finishReason = json.choices?.[0]?.finish_reason || '';
+    if (json.usage) usageSeen = json.usage;
   }
+  if (usageSeen) recordLlmUsage(usageSeen);   // v3.2.0：per-user 用量统计
   content = String(content || '');
   // v2.3.5a 修复：思考耗尽 max_tokens 时正文为空——如实报错（带 finish_reason），提示调大 max_tokens 或关闭思考。
   if (!content.trim()) {
@@ -2933,6 +2973,88 @@ function loadEssays() {
   return arr;
 }
 function saveEssays() { saveJSON(ctxFilePath('essays.json'), loadEssays().slice(0, 200)); }
+
+/* ------------------------------------------------------------------ */
+/* v3.2.0：LLM 用量统计（per-user，独立文件 llm_usage.json）             */
+/*   记录每次成功调用的 prompt/completion/total tokens，按日聚合并留存   */
+/*   最近 N 天明细，供「AI 用量」看板展示（普通用户看自己/管理员看全员）。*/
+/* ------------------------------------------------------------------ */
+const LLM_USAGE_MAX_DAYS = 120;      // 保留天数
+const llmUsageCache = new Map();     // userId -> store
+function emptyLlmUsageStore() { return { schemaVersion: 1, total: { calls: 0, promptTokens: 0, completionTokens: 0, totalTokens: 0 }, days: {} }; }
+/** v3.2.0：mock/无 usage 回包时的粗略 token 估算（约 2.5 字符/token，中日韩更省；仅统计用） */
+function estimateUsage(messages, reply) {
+  const inChars = (Array.isArray(messages) ? messages : []).reduce((a, m) => a + String(m?.content || '').length, 0);
+  const outChars = String(reply || '').length;
+  const prompt_tokens = Math.ceil(inChars / 2.5);
+  const completion_tokens = Math.ceil(outChars / 2.5);
+  return { prompt_tokens, completion_tokens, total_tokens: prompt_tokens + completion_tokens };
+}
+function normalizeLlmUsageStore(raw) {
+  const out = emptyLlmUsageStore();
+  if (!raw || typeof raw !== 'object') return out;
+  const t = raw.total || {};
+  out.total = {
+    calls: Number(t.calls) || 0,
+    promptTokens: Number(t.promptTokens) || 0,
+    completionTokens: Number(t.completionTokens) || 0,
+    totalTokens: Number(t.totalTokens) || 0,
+  };
+  if (raw.days && typeof raw.days === 'object') {
+    for (const [d, v] of Object.entries(raw.days)) {
+      if (!v || typeof v !== 'object') continue;
+      out.days[d] = {
+        calls: Number(v.calls) || 0,
+        promptTokens: Number(v.promptTokens) || 0,
+        completionTokens: Number(v.completionTokens) || 0,
+        totalTokens: Number(v.totalTokens) || 0,
+      };
+    }
+  }
+  return out;
+}
+function loadLlmUsage() {
+  const uid = currentCtx().userId;
+  if (llmUsageCache.has(uid)) return llmUsageCache.get(uid);
+  let raw = null;
+  try { raw = JSON.parse(fs.readFileSync(ctxFilePath('llm_usage.json'), 'utf8')); } catch { raw = null; }
+  const store = normalizeLlmUsageStore(raw);
+  llmUsageCache.set(uid, store);
+  return store;
+}
+function saveLlmUsage(store) {
+  // 裁剪：只保留最近 LLM_USAGE_MAX_DAYS 天
+  const days = Object.keys(store.days || {}).sort();
+  while (days.length > LLM_USAGE_MAX_DAYS) delete store.days[days.shift()];
+  saveJSON(ctxFilePath('llm_usage.json'), store);
+}
+/** 记一次 LLM 调用的 token 用量（bjDate 归日；usage 缺失时只记 calls） */
+function recordLlmUsage(usage) {
+  try {
+    const uid = currentCtx().userId;
+    const store = loadLlmUsage();
+    const pt = Number(usage?.prompt_tokens) || 0;
+    const ct = Number(usage?.completion_tokens) || 0;
+    const tt = Number(usage?.total_tokens) || (pt + ct);
+    const day = bjDate();
+    store.total.calls += 1;
+    store.total.promptTokens += pt;
+    store.total.completionTokens += ct;
+    store.total.totalTokens += tt;
+    if (!store.days[day]) store.days[day] = { calls: 0, promptTokens: 0, completionTokens: 0, totalTokens: 0 };
+    const d = store.days[day];
+    d.calls += 1; d.promptTokens += pt; d.completionTokens += ct; d.totalTokens += tt;
+    saveLlmUsage(store);
+  } catch { /* 统计失败不影响主流程 */ }
+}
+/** 供看板：读取指定用户的用量（无上下文，显式传 userId） */
+function loadLlmUsageForUser(userId) {
+  const cached = llmUsageCache.get(userId);
+  if (cached) return cached;
+  let raw = null;
+  try { raw = JSON.parse(fs.readFileSync(path.join(USERS_DIR, userId, 'llm_usage.json'), 'utf8')); } catch { raw = null; }
+  return normalizeLlmUsageStore(raw);
+}
 
 /** 从批改报告提取预估得分（列表徽章用） */
 function parseWritingScore(report) {
@@ -2989,6 +3111,7 @@ async function llmChatSSE(messages, { providerId, llmOverride, maxTokens, onThin
   let contentSeen = '';
   let reasoningLen = 0;
   let finishReasonOf = '';
+  let usageSeen = null;   // v3.2.0：per-user 用量统计
   const emitC = t => { if (!t) return; contentSeen += t; if (onContent) { try { onContent(t); } catch { } } };
   const emitT = t => { if (!t) return; reasoningLen += t.length; if (onThinking) { try { onThinking(t); } catch { } } };
 
@@ -3000,6 +3123,7 @@ async function llmChatSSE(messages, { providerId, llmOverride, maxTokens, onThin
       emitC(reply.slice(Math.floor(reply.length * i / N), Math.floor(reply.length * (i + 1) / N)));
       await new Promise(r => setTimeout(r, 15));
     }
+    recordLlmUsage(estimateUsage(messages, reply));   // v3.2.0：mock 也记用量
     return { content: reply, reasoningLen: 0, finishReason: 'stop' };
   }
 
@@ -3012,7 +3136,7 @@ async function llmChatSSE(messages, { providerId, llmOverride, maxTokens, onThin
   }
   const url = llm.baseUrl.replace(/\/+$/, '') + '/chat/completions';
   // v2.4.4 思考参数翻译层（与 llmChat 同源）：off → reasoning_effort:none + enable_thinking:false 双保险；档位直通
-  const bodyObj = { model: llm.model, messages, temperature: llm.temperature !== undefined ? llm.temperature : 0.7, stream: true };
+  const bodyObj = { model: llm.model, messages, temperature: llm.temperature !== undefined ? llm.temperature : 0.7, stream: true, stream_options: { include_usage: true } };   // v3.2.0：流末回报 usage
   if (llm.max_tokens) bodyObj.max_tokens = llm.max_tokens;          // 用户档案已配置 → 按档案
   else if (maxTokens) bodyObj.max_tokens = maxTokens;               // 调用方显式指定才带上（写作升格默认不设钳制）
   if (llm._thinking) bodyObj.thinking = llm._thinking;
@@ -3105,6 +3229,7 @@ async function llmChatSSE(messages, { providerId, llmOverride, maxTokens, onThin
             if (typeof d.reasoning_content === 'string') emitT(d.reasoning_content);
             if (typeof d.content === 'string') { sbuf += d.content; csScan(false); }
             if (j.choices?.[0]?.finish_reason) finishReasonOf = j.choices[0].finish_reason;
+            if (j.usage) usageSeen = j.usage;   // v3.2.0：per-user 用量统计
           } catch { /* 单块坏数据忽略 */ }
         }
       }
@@ -3118,8 +3243,10 @@ async function llmChatSSE(messages, { providerId, llmOverride, maxTokens, onThin
     if (msg.reasoning_content) emitT(String(msg.reasoning_content));
     sbuf = String(msg.content || json.choices?.[0]?.text || '');
     finishReasonOf = json.choices?.[0]?.finish_reason || '';
+    if (json.usage) usageSeen = json.usage;
     csScan(true);
   }
+  if (usageSeen) recordLlmUsage(usageSeen);   // v3.2.0：per-user 用量统计
 
   if (!contentSeen.trim() && reasoningLen > 0) {
     throw new Error(`AI 只返回了思考过程，正文为空（finish_reason=${finishReasonOf}，思考已生成 ${reasoningLen} 字）。请到设置页调整「Max Tokens」或「思考强度」后重试。`);
@@ -5282,7 +5409,14 @@ async function finishSession(payload) {
 /* ---------- v1.0.6：云词库（notepad）绑定 ---------- */
 
 // notepad 内容词缓存（5 分钟）：避免每次推送都全量拉取
-let notepadCache = { id: '', at: 0, words: new Set(), notepad: null };
+// v3.2.0：云词库缓存按用户隔离（每人各自绑定云词库，Token 不同，缓存不可跨用户复用）
+const notepadCaches = new Map();   // userId -> { id, at, words:Set, notepad }
+function notepadCacheOf() {
+  const uid = currentCtx().userId || LEGACY_USER;
+  let c = notepadCaches.get(uid);
+  if (!c) { c = { id: '', at: 0, words: new Set(), notepad: null }; notepadCaches.set(uid, c); }
+  return c;
+}
 
 /** 拉取账号下全部云词库/收藏本（GET /notepads limit 上限 10，翻页到取完为止） */
 async function listNotepads() {
@@ -5311,19 +5445,20 @@ async function ensureWordInNotepad(spelling) {
   if (!nid) return;   // 未绑定则不阻塞旧流程（推送仍可能因云词库缺失失败，错误如实上报）
 
   const now = Date.now();
-  if (notepadCache.id !== nid || now - notepadCache.at > 5 * 60 * 1000) {
+  const cache = notepadCacheOf();
+  if (cache.id !== nid || now - cache.at > 5 * 60 * 1000) {
     const data = await mm(`/notepads/${encodeURIComponent(nid)}`);
     const np = data?.notepad || null;
     if (!np) throw new Error('云词库不存在或已被删除，请到「设置」重新绑定');
     const words = (Array.isArray(np.list) ? np.list : [])
       .filter(it => it?.type === 'WORD')
       .map(it => String(it?.data?.word || '').toLowerCase());
-    notepadCache = { id: nid, at: now, words: new Set(words), notepad: np };
+    cache.id = nid; cache.at = now; cache.words = new Set(words); cache.notepad = np;
   }
 
-  if (notepadCache.words.has(String(spelling).toLowerCase())) return;
+  if (cache.words.has(String(spelling).toLowerCase())) return;
 
-  const np = notepadCache.notepad;
+  const np = cache.notepad;
   const content = (np.content || '') + (np.content && !np.content.endsWith('\n') ? '\n' : '') + spelling;
   await mm(`/notepads/${encodeURIComponent(nid)}`, {
     method: 'POST',
@@ -5338,8 +5473,8 @@ async function ensureWordInNotepad(spelling) {
     },
   });
   // 更新缓存（content 换新，list 由下次全量拉取重建）
-  notepadCache.notepad.content = content;
-  notepadCache.words.add(String(spelling).toLowerCase());
+  cache.notepad.content = content;
+  cache.words.add(String(spelling).toLowerCase());
 }
 
 /** 把助记推回墨墨 notes API（关联 voc_id；v1.0.6 起先确保词在绑定的云词库中） */
@@ -5399,22 +5534,47 @@ async function pushNoteToMaimemo(noteId) {
 /* 自动同步                                                            */
 /* ------------------------------------------------------------------ */
 
-let autoTimer = null;
+/* v3.2.0：自动同步改为 **per-user** —— 每个用户各自按自己的 Token/间隔独立后台同步。
+ *  单用户模式沿用 LEGACY_USER 单键（行为与 v2.12.0 一致）。 */
+const autoTimers = new Map();   // userId -> { timer, warm }
+function armAutoSyncForUser(userId) {
+  const prev = autoTimers.get(userId);
+  if (prev) { if (prev.timer) clearInterval(prev.timer); if (prev.warm) clearTimeout(prev.warm); autoTimers.delete(userId); }
+  let cfg, mmToken, lastSync, minutes;
+  if (MULTIUSER && userId !== LEGACY_USER) {
+    cfg = getUserConfig(userId);
+    mmToken = cfg && cfg.maimemoToken;
+    lastSync = getUserDb(userId)?.lastSync;
+    minutes = cfg?.autoSync?.minutes;
+  } else {
+    cfg = rawConfig; mmToken = rawConfig.maimemoToken; lastSync = legacyDb?.lastSync; minutes = rawConfig.autoSync?.minutes;
+  }
+  if (!cfg?.autoSync?.enabled || !mmToken) return;
+  const ms = Math.max(5, Number(minutes) || 60) * 60000;
+  const ctxStore = { userId, role: userId === LEGACY_USER ? 'admin' : (userRegistry.users[userId]?.role || 'user'), ok: true, legacy: userId === LEGACY_USER };
+  const run = () => requestContext.run(ctxStore, () => runSync('auto').catch(e => logSync(false, '自动同步异常: ' + e.message)));
+  const timer = setInterval(run, ms);
+  const entry = { timer, warm: null };
+  requestContext.run(ctxStore, () => logSync(true, `已开启自动同步，每 ${minutes} 分钟`));
+  // 超过间隔未曾同步 → 启动后 10 秒内预热一次
+  const lastSyncMs = lastSync ? new Date(lastSync).getTime() : 0;
+  if (Date.now() - lastSyncMs >= ms) {
+    entry.warm = setTimeout(() => requestContext.run(ctxStore, () => runSync('auto-startup').catch(e => logSync(false, '启动自动同步异常: ' + e.message))), 10000);
+  }
+  autoTimers.set(userId, entry);
+}
+/** 重新装配：多用户下遍历所有用户，单用户下仅装配 LEGACY_USER */
 function armAutoSync() {
-  if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
-  if (config.autoSync?.enabled && config.maimemoToken) {
-    const ms = Math.max(5, Number(config.autoSync.minutes) || 60) * 60000;
-    autoTimer = setInterval(() => {
-      runSync('auto').catch(e => logSync(false, '自动同步异常: ' + e.message));
-    }, ms);
-    logSync(true, `已开启自动同步，每 ${config.autoSync.minutes} 分钟`);
-    // v2.0.0.a：如果超过设定的时间间隔未曾同步过，启动后 10 秒内立即执行一次预热后台同步
-    const lastSyncMs = db.lastSync ? new Date(db.lastSync).getTime() : 0;
-    if (Date.now() - lastSyncMs >= ms) {
-      setTimeout(() => {
-        runSync('auto-startup').catch(e => logSync(false, '启动自动同步异常: ' + e.message));
-      }, 10000);
+  // 清理已下线/已关闭用户的定时器
+  for (const uid of [...autoTimers.keys()]) {
+    if (MULTIUSER && uid !== LEGACY_USER && !userRegistry.users[uid]) {
+      const e = autoTimers.get(uid); if (e) { if (e.timer) clearInterval(e.timer); if (e.warm) clearTimeout(e.warm); } autoTimers.delete(uid);
     }
+  }
+  if (MULTIUSER) {
+    for (const uid of Object.keys(userRegistry.users)) armAutoSyncForUser(uid);
+  } else {
+    armAutoSyncForUser(LEGACY_USER);
   }
 }
 
@@ -5681,6 +5841,7 @@ async function handleRequest(req, res) {
         }
         const body = await readBody(req);
         const r = migrateToMultiUser(body && body.password);
+        armAutoSync();   // v3.2.0：迁移后为 admin 装配自动同步定时器
         return sendJSON(res, 200, { ok: true, ...r });
       }
       if (p === '/api/admin/invites' && req.method === 'GET') {
@@ -5722,7 +5883,50 @@ async function handleRequest(req, res) {
         persistSessions();
         userConfigCache.delete(targetId);
         userDbCache.delete(targetId);
+        llmUsageCache.delete(targetId);
+        armAutoSync();   // v3.2.0：撤下该用户的自动同步定时器
         return sendJSON(res, 200, { ok: true });
+      }
+
+      /* v3.2.0：AI 用量看板——普通用户看自己；管理员可看全员（?scope=all） */
+      if (p === '/api/llm/usage' && req.method === 'GET') {
+        const wantAll = u.searchParams.get('scope') === 'all';
+        if (wantAll && !isAdminCtx(ctxStore)) {
+          return sendJSON(res, 403, { error: '仅管理员可查看全员用量', code: 'FORBIDDEN' });
+        }
+        const days = Math.min(120, Math.max(1, Number(u.searchParams.get('days')) || 14));
+        const since = bjDate(-(days - 1));
+        const shapeSeries = store => {
+          const series = [];
+          for (let i = days - 1; i >= 0; i--) {
+            const d = bjDate(-i);
+            const v = store.days[d] || { calls: 0, promptTokens: 0, completionTokens: 0, totalTokens: 0 };
+            series.push({ date: d, ...v });
+          }
+          return series;
+        };
+        if (!wantAll || !MULTIUSER) {
+          const store = wantAll ? loadLlmUsageForUser(adminUserId() || LEGACY_USER) : loadLlmUsage();
+          return sendJSON(res, 200, { ok: true, scope: wantAll ? 'all' : 'self', days, series: shapeSeries(store), total: store.total });
+        }
+        const users = Object.values(userRegistry.users).map(u => {
+          const store = loadLlmUsageForUser(u.id);
+          const series = shapeSeries(store);
+          const win = series.reduce((a, s) => ({
+            calls: a.calls + s.calls,
+            promptTokens: a.promptTokens + s.promptTokens,
+            completionTokens: a.completionTokens + s.completionTokens,
+            totalTokens: a.totalTokens + s.totalTokens,
+          }), { calls: 0, promptTokens: 0, completionTokens: 0, totalTokens: 0 });
+          return { id: u.id, username: u.username, role: u.role, total: store.total, window: win, series };
+        });
+        const agg = users.reduce((a, x) => ({
+          calls: a.calls + x.total.calls,
+          promptTokens: a.promptTokens + x.total.promptTokens,
+          completionTokens: a.completionTokens + x.total.completionTokens,
+          totalTokens: a.totalTokens + x.total.totalTokens,
+        }), { calls: 0, promptTokens: 0, completionTokens: 0, totalTokens: 0 });
+        return sendJSON(res, 200, { ok: true, scope: 'all', days, users, total: agg });
       }
 
       /* v2.8.0：报错日志采集（前端错误 / API 失败自动上报） */
@@ -6840,6 +7044,7 @@ async function handleRequest(req, res) {
 
       // MinerU 解析：PDF -> 云端 Markdown -> 文本记录入库（扫描件/复杂版面专用通道）
       if (p === '/api/mineru/parse' && req.method === 'POST') {
+        if (!requireAdmin(res, ctxStore, '导入共享语料/真题')) return;
         const body = await readBody(req, 60e6);
         const it = (Array.isArray(body.items) ? body.items : [])[0];
         if (!it || typeof it.name !== 'string' || typeof it.data64 !== 'string') {
@@ -6893,6 +7098,7 @@ async function handleRequest(req, res) {
 
       // 记录编辑（title/text/items 合并式更新；items 数组整体替换，删条目 = 数组里去掉）
       if (p === '/api/kb/record/update' && req.method === 'POST') {
+        if (!requireAdmin(res, ctxStore, '编辑共享语料')) return;
         const body = await readBody(req);
         if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
         const store = body.store || kbFindStoreOf(body.id);
@@ -6943,6 +7149,7 @@ async function handleRequest(req, res) {
 
       // v2.1.2：恢复到指定历史版本（当前内容会先压入历史，可再回退）
       if (p === '/api/kb/version/restore' && req.method === 'POST') {
+        if (!requireAdmin(res, ctxStore, '恢复共享语料历史版本')) return;
         const body = await readBody(req);
         if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
         const store = body.store || kbFindStoreOf(body.id);
@@ -7563,6 +7770,7 @@ CRITICAL TRANSCRIPTION RULES:
 
       // 记录删除（解析原件仍保留在 archive/，可重导恢复；删除写日志）
       if (p === '/api/kb/record/delete' && req.method === 'POST') {
+        if (!requireAdmin(res, ctxStore, '删除共享语料')) return;
         const body = await readBody(req);
         if (!body.id) return sendJSON(res, 400, { error: '缺少 id', code: 'KB_IMPORT' });
         const store = body.store || kbFindStoreOf(body.id);
@@ -7617,6 +7825,7 @@ CRITICAL TRANSCRIPTION RULES:
 
       // 保存标准答案（人工录入权威答案；LLM 不得生成）
       if (p === '/api/unit/answers/save' && req.method === 'POST') {
+        if (!requireAdmin(res, ctxStore, '保存单元标准答案')) return;
         const body = await readBody(req);
         const unitId = String(body.unitId || '');
         if (!findUnit(unitId)) return sendJSON(res, 404, { error: '单元不存在：' + unitId });
@@ -7903,6 +8112,7 @@ CRITICAL TRANSCRIPTION RULES:
 
       // v1.1.1：语料导入（文件 base64 数组 + 可选粘贴直录）
       if (p === '/api/kb/import' && req.method === 'POST') {
+        if (!requireAdmin(res, ctxStore, '导入共享语料')) return;
         const body = await readBody(req, 60e6);
         const category = KB_CATEGORIES.includes(body.category) ? body.category : '直录';
         const results = [];
@@ -7933,6 +8143,7 @@ CRITICAL TRANSCRIPTION RULES:
 
       // v1.1.2：真题库导入（仅 tex/pdf 结构化源 -> exams.jsonl）
       if (p === '/api/exam/import' && req.method === 'POST') {
+        if (!requireAdmin(res, ctxStore, '导入共享真题')) return;
         const body = await readBody(req, 60e6);
         const results = [];
         const files = (Array.isArray(body.items) ? body.items : []).slice(0, 20);

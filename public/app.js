@@ -149,11 +149,14 @@ function applyRoleVisibility() {
   $$('[data-admin-only]').forEach(el => { el.style.display = admin ? '' : 'none'; });
   const accSec = $('#accountSection');
   if (accSec) accSec.style.display = authState.multiUser ? '' : 'none';
+  const usageSec = $('#usageSection');
+  if (usageSec) usageSec.style.display = authState.multiUser ? '' : 'none';
   if (authState.multiUser && authState.me) {
     const nm = $('#accountName');
     if (nm) nm.textContent = authState.me.username || '—';
     const rl = $('#accountRole');
     if (rl) rl.textContent = authState.me.role === 'admin' ? '管理员（可配置全局服务）' : '普通用户';
+    loadUsageDashboard();
   }
 }
 
@@ -284,6 +287,64 @@ function bindLoginUI() {
   $$('.login-tab').forEach(b => b.addEventListener('click', () => setLoginTab(b.dataset.loginTab)));
   const lo = $('#logoutBtn');
   if (lo) lo.addEventListener('click', doLogout);
+  const ur = $('#usageRefresh');
+  if (ur) ur.addEventListener('click', loadUsageDashboard);
+  const ug = $('#usageRange');
+  if (ug) ug.addEventListener('change', loadUsageDashboard);
+}
+
+/* ================= v3.2.0：AI 用量看板（共享 LLM Key） ================= */
+
+function fmtTok(n) {
+  n = Number(n) || 0;
+  if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(1) + 'k';
+  return String(n);
+}
+
+async function loadUsageDashboard() {
+  if (!authState.multiUser) return;
+  const totalEl = $('#usageTotal');
+  const seriesEl = $('#usageSeries');
+  const allWrap = $('#usageAllWrap');
+  const allEl = $('#usageAll');
+  const out = $('#usageResult');
+  const days = Number(($('#usageRange') || {}).value) || 14;
+  if (out) out.textContent = '';
+  try {
+    const r = await api('/api/llm/usage?days=' + days);
+    if (totalEl) {
+      totalEl.innerHTML =
+        `<span class="usage-kpi"><b>${fmtTok(r.total.totalTokens)}</b><i>总 Tokens</i></span>` +
+        `<span class="usage-kpi"><b>${r.total.calls}</b><i>调用次数</i></span>` +
+        `<span class="usage-kpi"><b>${fmtTok(r.total.promptTokens)}</b><i>输入</i></span>` +
+        `<span class="usage-kpi"><b>${fmtTok(r.total.completionTokens)}</b><i>输出</i></span>`;
+    }
+    const max = Math.max(1, ...(r.series || []).map(s => s.totalTokens));
+    if (seriesEl) {
+      seriesEl.innerHTML = (r.series || []).map(s => {
+        const h = Math.round((s.totalTokens / max) * 100);
+        return `<div class="usage-bar" title="${s.date}：${s.totalTokens} tokens / ${s.calls} 次">
+          <div class="usage-bar-fill" style="height:${h}%"></div>
+          <div class="usage-bar-label">${esc(s.date.slice(5))}</div>
+        </div>`;
+      }).join('');
+    }
+    if (authState.me && authState.me.role === 'admin') {
+      const a = await api('/api/llm/usage?days=' + days + '&scope=all');
+      if (allWrap) allWrap.style.display = '';
+      if (allEl) {
+        allEl.innerHTML = `<table class="usage-table"><thead><tr><th>用户</th><th>角色</th><th>调用</th><th>Tokens</th></tr></thead><tbody>` +
+          (a.users || []).map(u =>
+            `<tr><td>${esc(u.username)}</td><td>${u.role === 'admin' ? '管理员' : '普通'}</td><td>${u.total.calls}</td><td>${fmtTok(u.total.totalTokens)}</td></tr>`
+          ).join('') + `</tbody></table>`;
+      }
+    } else if (allWrap) {
+      allWrap.style.display = 'none';
+    }
+  } catch (e) {
+    if (out) out.textContent = '❌ ' + e.message;
+  }
 }
 
 function esc(s) {
