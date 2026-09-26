@@ -118,7 +118,7 @@
 - **后端**：零依赖 Node.js 原生 `http`，单文件 `english-workbench/server.js`。无 `dependencies`。本地 Node v24，云服务器 Node v22。
 - **前端**：原生 JS + CSS 单页多 Tab，无框架、无构建步骤。`english-workbench/public/{index.html,app.js,style.css}`。
 - **持久化**：JSON / JSONL 文件。`data/db.json`、`data/chat_sessions.json`、`data/config.json`、`data/kb_versions.json`、`data/learning_attempts.json`（学习流水，`schemaVersion:1`，上限 20,000 条，tmp+rename 原子写）；`data/` 整体 gitignore（含密钥）。
-- **启动**：`node server.js`，默认 `PORT=5178`、`HOST=127.0.0.1`；云端 systemd `workbench.service` 绑定 127.0.0.1，前置 Nginx 反代 + Cloudflare HTTPS + Basic Auth。
+- **启动**：`node server.js`，默认 `PORT=5178`、`HOST=127.0.0.1`；云端 systemd `workbench.service` 绑定 127.0.0.1，前置 Nginx 反代 + Cloudflare HTTPS；**Basic Auth 已于 2026-09-26 移除**，公网唯一登录入口为应用内多用户登录。
 - **版本号**：`v2.2.8`（`package.json` + 桌面/移动端页头两处同步）。
 - **界面风格**：**4 种**（默认清新 / 复古街机 / 潮流波普 / 方块像素）× 2 昼夜 = 8 套主题。
 - **Git 拓扑**：应用仓库 remote `gitee` = `https://gitee.com/lgh-2005/memo-workplace.git`（**主力，唯一发布目标**）；`origin` = GitHub 镜像（不强制推）。根工作区 `D:\ai\opencode\momo` 本身也是 git 仓库（分支 `main`）但**零提交、全部 untracked**，勿把它当发布仓库。
@@ -231,7 +231,7 @@ AI 审读修正方案采纳/拒绝写回、记录级最近 5 版历史回溯、�
 - 线上学习流水 `data/learning_attempts.json` 当前为空态（85B）；`data/answers.json` 线上不存在；`data/db.json` 约 3,669,685B。
 - ECS 侧 `corpus/exams.jsonl`、`corpus/records.jsonl` 仍为线上进程可写的 modified 状态（正常，未触碰）；服务器另有若干历史 untracked 文件（`texsrc.tar.gz`、`texsrc_tmp/`、`audit_quality.js`、`batch_import.js` 等），非本次产生，勿清理。
 - **Gitee Release `v2.2.8` ✅ 已完成**（id `1143796`，target `0705689`，标题「v2.2.8 学习诊断闭环稳定性收口」）。
-- **域名（用户决策：不启用）**：国内备案不便，本项目**不依赖域名**；canonical 入口为 ECS 直连 `http://121.43.177.191`（Basic Auth）。`memo.luguhu.online` 子域 NXDOMAIN 属既有基础设施状态，**不作为发布阻断项**。
+- **域名（用户决策：不启用）**：国内备案不便，本项目**不依赖域名**；canonical 入口为 ECS 直连 `http://121.43.177.191`（**应用内多用户登录，2026-09-26 起已去除 nginx Basic Auth**）。`memo.luguhu.online` 子域 NXDOMAIN 属既有基础设施状态，**不作为发布阻断项**。
 - **已知非阻塞遗留（有意保留，勿当 bug）**：
   1. `server.js` 的 `GLOSS_SYSTEM` 常量、`kbCorpusForWord()` 已无引用，属死代码。
   2. `app.js` 注释写「`{spacing}` 占位符」，实际默认模板用 `{spelling}`；运行时代码两者兼容。
@@ -255,7 +255,7 @@ v2.2.8 修复/收口/校验/**发布**均已完成，剩余计划 TODO 9：
 ## 5. ⚠️ 避坑提醒与隐式上下文 (Caveats & Gotchas)
 
 1. **禁止在 ECS 上执行 `git checkout .` / `git reset --hard`**：`corpus/exams.jsonl`、`corpus/records.jsonl` 是**线上进程可写数据**（服务器端长期 modified），强拉会覆盖线上题库。标准更新流程：先 `tar` 备份 `data/`，再用 `git fetch origin master && git checkout origin/master -- <产品文件> && git merge origin/master --ff-only`，绝不冲掉线上脏数据。
-2. **密钥与凭据**：`english-workbench/data/` 已 gitignore（含墨墨 Token、LLM/搜索/词典/MinerU 全部 API Key），**永不入库**。网站 Basic Auth 用户名 `贾忖`，密码在用户桌面 `password.txt`（勿写进仓库/文档）。
+2. **密钥与凭据**：`english-workbench/data/` 已 gitignore（含墨墨 Token、LLM/搜索/词典/MinerU 全部 API Key），**永不入库**。**网站 Basic Auth 已于 2026-09-26 移除**，登录唯一走应用内多用户（管理员 `admin`，密码见 `config.auth.token`）；原 Basic Auth 用户名 `贾忖`/桌面 `password.txt` 凭据仅存档、不再使用。
 3. **导入通道契约**：`corpus_tools/import_cli.py` 支持 `tex | pdf | md`；`POST /api/exam/import` 单批 ≤20 文件、单文件 ≤30MB；记录 id 由 `rid(path,'tex')` 生成（**与源路径相关**，换路径会生成新 id）。
 4. **真题库前端结构契约**：完形/Part B 正文用 `〖N〗` 锚点；Part B 选项池为 `{A..H}` 字典（`number=null`），另有 41–45 逐空题目；翻译用 `〖N〗…〖/N〗`。改渲染须同时对齐 `public/app.js` 的 `part_b.render` 与 `kbExamPassageAndQuestions`。
 5. **三端数据边界**：真题（`corpus/exams.jsonl`，网站可读写）、自动外刊（v2.9.0 起为 `corpus/external/current/articles_index.jsonl` + `articles_body/*.jsonl.gz` 瘦索引格式，`managed=external` **只读**）、手工语料（`records.jsonl`，`managed=manual`）。自动外刊不得混入 `records.jsonl`；旧版整包 `articles.jsonl` 目录仍兼容读取（`/api/kb/status` 的 `external.format` = `v1`/`v2`）。
@@ -266,4 +266,4 @@ v2.2.8 修复/收口/校验/**发布**均已完成，剩余计划 TODO 9：
 10. **根仓库（`D:\ai\opencode\momo`）是「资料仓」而非发布仓**：`main` 分支零提交、全部 untracked；只放 `AGENTS.md`、`PROGRESS.md`、`版本号经历.md`、各评估文档与子项目。
 11. **云端回滚点**：`data/backups/pre-v2.2.8.{f,g}-*.tar.gz`（本轮）及更早备份。回滚前先备份现网两份 corpus 数据。
 12. **自动备份机制**：服务端每 6 小时备份 `db.json/config.json/chat_sessions.json/records.jsonl/exams.jsonl/kb_versions.json` 到 `data/backups/`，保留 10 份。
-13. **Playwright 资源路径**：`require(path.join(process.env.APPDATA, 'npm', 'node_modules', '@playwright', 'cli', 'node_modules', 'playwright'))`；本地站点 `http://127.0.0.1:5178`，线上需 Basic Auth。
+13. **Playwright 资源路径**：`require(path.join(process.env.APPDATA, 'npm', 'node_modules', '@playwright', 'cli', 'node_modules', 'playwright'))`；本地站点 `http://127.0.0.1:5178`，线上冒烟脚本仍附带 Basic Auth 头但服务器已忽略（2026-09-26 起）。

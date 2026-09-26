@@ -36,7 +36,7 @@
 1. 改代码 → `node --check public/app.js` 与 `node --check server.js` **必须 0 错误**。
 2. 用 grep 验证改动真实落盘（本环境有「工具假成功」前科：不要只看编辑工具返回，务必 grep/assert）。
 3. 涉及真实数据改动：先备份 `data/backups/`，改数据文件注意 json 原子结构。
-4. 可复用 E2E：`english-workbench/.workbuddy/test_*.js`（node 直跑，`.workbuddy/` 被 gitignore 不入库，版本来源为本地工作树对应 commit）；仓库内 `english-workbench/TESTING.md` 固定记录测试来源、37 套脚本清单与断言数。v2.2.8 后统一用 `.workbuddy/_test_util.js` 的 `stopServer`/`cleanupSandbox` 收口进程与沙箱，脚本以 `process.exitCode` 退出。**18 后端 + 18 浏览器 + 1 线上只读冒烟 = 37 套件全部退出码 0** 为验收硬门槛（其中线上冒烟需 Basic Auth 凭据，本地常规回归 36 套）。
+4. 可复用 E2E：`english-workbench/.workbuddy/test_*.js`（node 直跑，`.workbuddy/` 被 gitignore 不入库，版本来源为本地工作树对应 commit）；仓库内 `english-workbench/TESTING.md` 固定记录测试来源、37 套脚本清单与断言数。v2.2.8 后统一用 `.workbuddy/_test_util.js` 的 `stopServer`/`cleanupSandbox` 收口进程与沙箱，脚本以 `process.exitCode` 退出。**18 后端 + 18 浏览器 + 1 线上只读冒烟 = 37 套件全部退出码 0** 为验收硬门槛（线上冒烟仍附带 Basic Auth 头但服务器已忽略，本地常规回归 36 套）。
 
 ## 5. 部署、Git 拓扑与数据红线（2026-09 最新实测确认）
 - **仓库与远程源拓扑**：
@@ -69,8 +69,8 @@
 - **线上真题库事实（v2.7.1 起）**：`corpus/exams.jsonl` 含 28 套考研英语一 + 76 套六级整卷（104 卷），六级客观题 3315 题答案齐备；`data/answers.json` 786 单元 / 4525 条（六级新增 543 单元）。
 - **线上学习流水事实**：`data/learning_attempts.json` 为空态（85B，attempts=[]）；线上 `data/answers.json` 已由 `corpus_tools/fill_unit_answers.py` 于服务器生成（165 单元 / 1210 条，v2.6.3 起）；`db.json` 约 3,669,685B。
 - **发布状态**：post-audit TODO 1（`TESTING.md`）/2（测试补强）/3（文档统一）/4（Release）/6（静态资源三方哈希）均已完成；TODO 5（恢复 canonical 域名）因用户决策**不启用域名**废止。**域名：不启用**（国内备案不便，canonical 入口=ECS 直连 `http://121.43.177.191`，`memo.luguhu.online` NXDOMAIN 不构成阻断）。后续可选 v2.2.9 翻译数据质量补丁（题号校验/字符数口径/周报文案）。历史缺口备查：翻译/写作专属训练、错词周报、助记编辑导出、数据回流固化、2024 真题（仅 PDF 无 TeX 源）是否入库。
-- 服务器访问：**SSH 走 `~/.ssh/config` 的 `aliyun` 别名**（root + 密钥 `aliyun_ecs`，可 `ssh aliyun "..."`）。网站 Basic Auth 用户名 `贾忖`（密码在用户本地 `password.txt`，**不得写入仓库**）。
-- **域名（已打通 2026-09-08）**：`https://memo.luguhu.online` 走 Cloudflare 代理回源 ECS，源站 443 已装 **Cloudflare Origin CA**（15 年期，`/etc/nginx/ssl/memo.{key,pem}`）+ nginx `workbench-ssl` 站点 + ufw/安全组放行 443；登录走 nginx Basic Auth（`贾忖`）。CF SSL 模式未切严格（用户暂缓），勿擅动。API Token（`opencode`）缺 Zone Settings 权限，改 SSL 模式需面板手动。服务器上另有「空教室」站（端口 8710），勿动。
+- 服务器访问：**SSH 走 `~/.ssh/config` 的 `aliyun` 别名**（root + 密钥 `aliyun_ecs`，可 `ssh aliyun "..."`）。**网站入口已去除 nginx Basic Auth（2026-09-26）**，公网唯一登录方式为应用内多用户登录（管理员 `admin`，密码见 `config.auth.token`）；nginx 三处配置（`sites-enabled/workbench`、`sites-enabled/workbench-ssl`、`sites-available/workbench`）已删 `auth_basic` 两行，备份在服务器 `/root/nginx-backup-20260926-210637/`。原 Basic Auth 用户名 `贾忖` 凭据不再使用（`password.txt` 仅存档）。
+- **域名（已打通 2026-09-08）**：`https://memo.luguhu.online` 走 Cloudflare 代理回源 ECS，源站 443 已装 **Cloudflare Origin CA**（15 年期，`/etc/nginx/ssl/memo.{key,pem}`）+ nginx `workbench-ssl` 站点 + ufw/安全组放行 443；**Basic Auth 已于 2026-09-26 移除**，登录唯一走应用内多用户。CF SSL 模式未切严格（用户暂缓），勿擅动。API Token（`opencode`）缺 Zone Settings 权限，改 SSL 模式需面板手动。服务器上另有「空教室」站（端口 8710），勿动。
 - **香港服务器（外刊抓取，已接入 2026-09-08）**：`107.151.245.79`，用户 root（密码在桌面 `xianggang.txt`，不在仓库；本机 OpenSSH 不支持命令行密码，需用 Node `ssh2` 临时 runner `/tmp/opencode/hk-ssh/`）。Ubuntu 8 核 15G，磁盘余 65G。
   - **corpus_scraper**：`/root/corpus_scraper/`（venv+Playwright+BPC 3.1.6.4+xvfb）。
     - **科学定时任务（2026-09-09 升级版；v2.9.0 新增第 ⑤ 条）**：
