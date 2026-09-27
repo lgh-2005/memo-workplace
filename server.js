@@ -672,6 +672,17 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.2.1',
+    date: '2026-09-27',
+    title: '测验体验四项升级',
+    items: [
+      '① 智能信心判断：测验信心不再由用户手选，改为按作答行为自动推断（耗时 + 正误）。客观题相对快答对→确定、偏慢→犹豫、答错→猜测（极快）或犹豫，自评题按评分映射；作答后在反馈区轻量显示「本题判定」。真题迁移保留手动信心组不变',
+      '② 题量解锁：基础/自适应/复练/迁移题量下限改为 1、不设上限（实际受词源与释义数量约束）；会话上限 100→10000、提交与复练到期列表截断同步放宽；释义预补不封顶，随题量自由膨胀',
+      '③ 自动播报单词：进入题目自动朗读（浏览器 TTS），仅覆盖 flash/choice/audio/复练；看中选英(zh2en)与拼写(spell)不自动播报以免泄露答案；新增「🔊 自动播报」开关（默认开启，本机持久化）',
+      '④ 词源显示具体数目：测验 8 个词源与复练 3 个范围 chip 显示候选具体数量；新增只读接口 GET /api/quiz/sources（与组卷同口径去重计数，失败静默不阻断）',
+    ],
+  },
+  {
     version: '3.2.0',
     date: '2026-09-25',
     title: '多用户 P2 数据分区收尾 + P3 集成改造',
@@ -1405,7 +1416,7 @@ function srsOverview() {
 /* ------------------------------------------------------------------ */
 
 const QUIZ_SESSION_SCHEMA = 1;
-const QUIZ_SESSION_MAX_ITEMS = 100;
+const QUIZ_SESSION_MAX_ITEMS = 10000;   // v3.2.1：随题量解锁放宽（原 100）
 const QUIZ_SESSION_TTL_MS = 7 * 86400000;   // 会话最长保留 7 天
 
 /** 新题型 + 既有题型（交错组卷的可用题型池） */
@@ -1545,6 +1556,33 @@ function quizCandidates(source) {
   }
   for (const w of words) out.push(w);
   return out;
+}
+
+/**
+ * v3.2.1：词源/复练范围候选计数（供测验页 chip 显示「具体数目」）。
+ * 口径与组卷一致：去重 + 合法拼写（字母开头、2~30 位字母/连字符）。
+ * @returns {{ sources:object, srsFilters:object }}
+ */
+function quizSourceCounts() {
+  const VALID_SPELLING = /^[a-z][a-z'\-]{1,29}$/i;
+  const sourceKeys = ['today', 'sticky', 'vague', 'forget', 'due7', 'srs_due', 'wrongbook', 'all'];
+  const sources = {};
+  for (const key of sourceKeys) {
+    const seen = new Set();
+    for (const w of quizCandidates(key)) {
+      if (!w || !w.spelling || seen.has(w.spelling)) continue;
+      if (!VALID_SPELLING.test(w.spelling)) continue;
+      seen.add(w.spelling);
+    }
+    sources[key] = seen.size;
+  }
+  const srsFilters = {};
+  for (const key of ['all', 'wrongbook', 'srs_due']) {
+    const seen = new Set();
+    for (const d of collectSrsDue(key)) if (d && d.spelling) seen.add(d.spelling);
+    srsFilters[key] = seen.size;
+  }
+  return { sources, srsFilters };
 }
 
 /**
@@ -6420,7 +6458,7 @@ async function handleRequest(req, res) {
       //          自评题（flash）沿用客户端 grade；提交后清空会话。
       if (p === '/api/quiz/submit' && req.method === 'POST') {
         const body = await readBody(req);
-        let results = Array.isArray(body.results) ? body.results.slice(0, 500) : [];
+        let results = Array.isArray(body.results) ? body.results.slice(0, QUIZ_SESSION_MAX_ITEMS) : [];
         const sessionId = String(body.sessionId || '').trim();
 
         if (sessionId) {
@@ -6473,7 +6511,9 @@ async function handleRequest(req, res) {
         const source = String(body.source || 'all');
         const allowedSources = ['today', 'sticky', 'vague', 'forget', 'due7', 'all', 'srs_due', 'wrongbook'];
         if (!allowedSources.includes(source)) return sendJSON(res, 400, { error: 'source 非法' });
-        const count = Math.min(50, Math.max(3, Number(body.count) || 10));
+        // v3.2.1：题量解锁——下限 1，不设上限（实际受词源/释义数量约束）
+        const rawCount = Number(body.count);
+        const count = Number.isFinite(rawCount) ? Math.max(1, Math.floor(rawCount)) : 10;
         const difficulty = ['easy', 'normal', 'hard'].includes(String(body.difficulty)) ? String(body.difficulty) : 'normal';
         const kinds = Array.isArray(body.kinds) ? body.kinds.map(k => String(k)) : [];
         const seed = Number.isFinite(Number(body.seed)) ? Number(body.seed) : undefined;
@@ -6481,12 +6521,12 @@ async function handleRequest(req, res) {
 
         try {
           const candidates = quizCandidates(source);
-          if (candidates.length < 3) return sendJSON(res, 200, { ok: false, reason: 'too_few_words', candidates: candidates.length });
-          // 先补齐候选词释义（AI 词典缓存；mock 模式即可测）
+          if (candidates.length < 1) return sendJSON(res, 200, { ok: false, reason: 'too_few_words', candidates: candidates.length });
+          // 先补齐候选词释义（AI 词典缓存；mock 模式即可测）—— v3.2.1：不再封顶，随题量自由膨胀
           const spellings = candidates.map(w => w.spelling).filter(Boolean).slice(0, Math.max(count * 6, 60));
           await ensureGlosses(spellings);
           const items = buildAdaptiveQuiz({ source, count, difficulty, kinds, seed });
-          if (items.length < 3) return sendJSON(res, 200, { ok: false, reason: 'too_few_glossed', candidates: candidates.length, glossed: items.length });
+          if (items.length < 1) return sendJSON(res, 200, { ok: false, reason: 'too_few_glossed', candidates: candidates.length, glossed: items.length });
           // v2.12.0：可选 AI 干扰项增强（非阻断，失败保留确定性选项）
           let aiEnhanced = 0;
           if (aiDistractors) {
@@ -6564,6 +6604,16 @@ async function handleRequest(req, res) {
       }
 
       /* ---- v2.12.0：测验 AI 增强 5 处 + 统计看板 ---- */
+
+      // v3.2.1：词源/复练范围候选计数（供测验页 chip 显示具体数目）
+      if (p === '/api/quiz/sources' && req.method === 'GET') {
+        try {
+          return sendJSON(res, 200, { ok: true, ...quizSourceCounts() });
+        } catch (e) {
+          if (e.code === 'QUIZ_SRS_CORRUPT') return sendJSON(res, 500, { error: e.message, code: e.code });
+          throw e;
+        }
+      }
 
       // 统计看板聚合（掌握度分布 / 正确率趋势 / 错题构成 / 连续天数 / 题型正确率）
       if (p === '/api/quiz/stats' && req.method === 'GET') {
@@ -6649,7 +6699,7 @@ async function handleRequest(req, res) {
             return sendJSON(res, 400, { error: 'filter 仅允许 srs_due/wrongbook/all' });
           }
           const store = loadQuizSrs();
-          const due = collectSrsDue(filter).slice(0, 100);
+          const due = collectSrsDue(filter).slice(0, QUIZ_SESSION_MAX_ITEMS);   // v3.2.1：随题量解锁放宽
           const overview = srsOverview();
           // 附带掌握度明细（供前端展示 0–4 分布与每词状态）
           const words = {};
@@ -8346,9 +8396,10 @@ CRITICAL TRANSCRIPTION RULES:
         if (!['sticky', 'vague', 'forget', 'due7'].includes(filter)) {
           return sendJSON(res, 400, { error: 'filter 参数仅允许 sticky/vague/forget/due7' });
         }
+        // v3.2.1：题量解锁——下限 1，不设上限（实际受候选题约束）
         let count = parseInt(body.count, 10);
         if (isNaN(count)) count = 5;
-        count = Math.max(3, Math.min(20, count));
+        count = Math.max(1, count);
         const wantContext = body.context !== false;
         const wantCloze = body.cloze !== false;
         if (!wantContext && !wantCloze) {

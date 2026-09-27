@@ -477,7 +477,7 @@ function switchTab(name) {
   if (name === 'unit') loadUnits();
   if (name === 'settings') { loadConfig(); loadBackupList(); }
   if (name === 'logs') loadLogs();
-  if (name === 'quiz') { try { checkQuizResume(); } catch {} }   // v2.11.0：进入测验页检查可续做会话
+  if (name === 'quiz') { try { checkQuizResume(); } catch {}; try { loadQuizSourceCounts(); } catch {} }   // v2.11.0 续做检查 / v3.2.1 词源计数
   // quiz 页保持进行中的状态，不重置
 }
 
@@ -6157,7 +6157,7 @@ const quiz = {
   idx: 0,
   results: [],
   distractorPool: [],
-  confidence: 'unsure',
+  lastConfidence: 'unsure',   // v3.2.1：最近一题智能推断的信心（供会话暂存）
   itemStartedAt: null,
   submode: 'basic',
   advanceTimer: null,
@@ -6183,7 +6183,6 @@ const srs = {
   items: [],
   idx: 0,
   results: [],
-  confidence: 'unsure',
   itemStartedAt: null,
   advanceTimer: null,
   overview: null,
@@ -6226,6 +6225,7 @@ $$('#quizSubmode .quiz-submode-btn').forEach(btn => {
     if ($('#quizStatsPane')) $('#quizStatsPane').style.display = quiz.submode === 'stats' ? 'block' : 'none';
     if (quiz.submode === 'srs') loadSrsOverview();
     if (quiz.submode === 'stats') loadQuizStats();
+    try { loadQuizSourceCounts(); } catch {}   // v3.2.1：切子模式刷新词源/复练计数
   });
 });
 
@@ -6497,22 +6497,74 @@ $$('#transferKinds .chip').forEach(c => c.addEventListener('click', () => {
   transfer.kinds[c.dataset.kind] = c.classList.contains('active');
 }));
 
-function resetQuizConfidence() {
-  quiz.confidence = 'unsure';
-  $$('#quizConfidenceGroup .quiz-conf-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.conf === 'unsure');
-  });
+/* v3.2.1：作答信心由用户手选改为「根据行为智能判断」（耗时 + 正误）。
+   真题迁移仍保留手动信心组，不受本改动影响。 */
+const CONFIDENCE_LABELS = { sure: '🎯 确定', unsure: '🤔 犹豫', guess: '🎲 猜测' };
+
+function confidenceLabel(conf) { return CONFIDENCE_LABELS[conf] || CONFIDENCE_LABELS.unsure; }
+
+/** 该词的「快答基准时长」：按词长伸缩，用于判定相对快慢 */
+function quizConfidenceBaselineMs(spelling) {
+  const len = Math.max(1, String(spelling || '').length);
+  return Math.min(8000, Math.max(2500, 1200 + len * 180));
 }
 
-$$('#quizConfidenceGroup .quiz-conf-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    $$('#quizConfidenceGroup .quiz-conf-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const conf = btn.dataset.conf || 'unsure';
-    quiz.confidence = conf;
-    srs.confidence = conf;   // v2.10.0：复练与基础测验共用信心组
-  });
-});
+/**
+ * 智能信心推断（纯函数）：
+ *  - easy → 确定；
+ *  - good → 相对快答→确定，偏慢→犹豫；
+ *  - hard → 犹豫（想起来了但吃力）；
+ *  - again → 极快→猜测（纯蒙），偏慢→犹豫（有思考仍错）。
+ */
+function inferQuizConfidence({ grade, durationMs, spelling }) {
+  const base = quizConfidenceBaselineMs(spelling);
+  const d = Number.isFinite(Number(durationMs)) && Number(durationMs) >= 0 ? Number(durationMs) : base;
+  if (grade === 'easy') return 'sure';
+  if (grade === 'good') return d <= base ? 'sure' : 'unsure';
+  if (grade === 'hard') return 'unsure';
+  if (grade === 'again') return d <= base * 0.6 ? 'guess' : 'unsure';
+  return 'unsure';
+}
+
+/* v3.2.1：自动播报单词（浏览器 TTS）。
+   仅对「看英/听音」类题型自动朗读；zh2en（看中选英）与 spell（拼写）会泄露答案，不自动播报。 */
+const QUIZ_AUTOSPEAK_KINDS = new Set(['flash', 'choice', 'audio', 'srs']);
+const AUTOSPEAK_KEY = 'wb-quiz-autospeak';
+
+function quizAutoSpeakEnabled() {
+  try { return localStorage.getItem(AUTOSPEAK_KEY) !== '0'; } catch { return true; }
+}
+
+function autoSpeakQuizWord(kind, spelling) {
+  if (!spelling) return;
+  if (!QUIZ_AUTOSPEAK_KINDS.has(kind)) return;
+  if (!quizAutoSpeakEnabled()) return;
+  speak(spelling);
+}
+
+/* v3.2.1：词源/复练范围 chip 显示具体数目 */
+function setChipCount(chip, n) {
+  if (!chip) return;
+  if (!chip.dataset.baseLabel) chip.dataset.baseLabel = chip.textContent.trim();
+  const base = chip.dataset.baseLabel;
+  chip.textContent = Number.isFinite(n) ? `${base} · ${n}` : base;
+}
+
+async function loadQuizSourceCounts() {
+  try {
+    const d = await api('/api/quiz/sources');
+    const src = d.sources || {};
+    $$('#quizSources .chip').forEach(c => {
+      const key = c.dataset.src;
+      if (key && src[key] != null) setChipCount(c, src[key]);
+    });
+    const sf = d.srsFilters || {};
+    $$('#quizSrsFilter .chip').forEach(c => {
+      const key = c.dataset.sfilter;
+      if (key && sf[key] != null) setChipCount(c, sf[key]);
+    });
+  } catch { /* 计数失败静默，不阻断测验 */ }
+}
 
 /* v2.2.8：迁移训练独立信心组（与基础测验互不复用，避免隐藏状态互相干扰） */
 function resetTransferConfidence() {
@@ -6563,6 +6615,14 @@ function syncAdaptiveKindChips() {
 }
 if ($('#quizAdaptiveBtn')) $('#quizAdaptiveBtn').addEventListener('click', () => startAdaptive());
 if ($('#quizAiDistractors')) $('#quizAiDistractors').addEventListener('change', e => { quiz.aiDistractors = !!e.target.checked; });
+
+/* v3.2.1：自动播报开关（浏览器本地偏好，默认开启） */
+if ($('#quizAutoSpeak')) {
+  $('#quizAutoSpeak').checked = quizAutoSpeakEnabled();
+  $('#quizAutoSpeak').addEventListener('change', e => {
+    try { localStorage.setItem(AUTOSPEAK_KEY, e.target.checked ? '1' : '0'); } catch { /* 忽略 */ }
+  });
+}
 
 /* v2.11.0：启动时检查是否有可续做的会话 */
 async function checkQuizResume() {
@@ -6617,7 +6677,6 @@ async function resumeAdaptive() {
     msg.textContent = '';
     $('#quizSetup').style.display = 'none';
     $('#quizRun').style.display = 'block';
-    $('#quizConfidenceGroup').style.display = '';
     $('#quizMasteryRow').style.display = 'flex';
     startQuizTimer();
     if (quiz.idx >= quiz.items.length) finishQuiz(); else renderQuizItem();
@@ -6633,7 +6692,7 @@ async function startAdaptive() {
   msg.textContent = '正在自适应组卷…';
   msg.className = 'result';
   try {
-    const count = Math.min(50, Math.max(3, Number($('#quizCount').value) || 10));
+    const count = Math.max(1, Math.floor(Number($('#quizCount').value) || 10));
     const d = await api('/api/quiz/generate', {
       method: 'POST',
       body: { source: quiz.src, count, difficulty: quiz.difficulty, kinds: quiz.adaptiveKinds, aiDistractors: quiz.aiDistractors },
@@ -6660,7 +6719,6 @@ async function startAdaptive() {
     msg.textContent = '';
     $('#quizSetup').style.display = 'none';
     $('#quizRun').style.display = 'block';
-    $('#quizConfidenceGroup').style.display = '';
     $('#quizMasteryRow').style.display = 'flex';
     startQuizTimer();
     renderQuizItem();
@@ -6685,7 +6743,7 @@ async function saveSessionNow() {
         sessionId: quiz.sessionId,
         idx: quiz.idx,
         results: quiz.results,
-        confidence: quiz.confidence,
+        confidence: quiz.lastConfidence || 'unsure',
         pausedMs: quiz.pausedMs || 0,
         pauseStartedAt: quiz.pauseStartedAt || null,
       },
@@ -6723,7 +6781,7 @@ async function startQuiz() {
       msg.className = 'result err';
       return;
     }
-    const count = Math.min(50, Math.max(3, Number($('#quizCount').value) || 10));
+    const count = Math.max(1, Math.floor(Number($('#quizCount').value) || 10));
     pool = shuffle(pool).slice(0, count);
     // 补齐释义（判分依赖），获取不到的词跳过
     const missing = pool.filter(w => !w.gloss).map(w => w.spelling);
@@ -6756,7 +6814,6 @@ async function startQuiz() {
     msg.textContent = '';
     $('#quizSetup').style.display = 'none';
     $('#quizRun').style.display = 'block';
-    $('#quizConfidenceGroup').style.display = '';
     $('#quizMasteryRow').style.display = 'flex';
     startQuizTimer();
     renderQuizItem();
@@ -6788,7 +6845,6 @@ function quitQuiz() {
   stopQuizTimer();
   $('#quizRun').style.display = 'none';
   $('#quizSetup').style.display = 'block';
-  $('#quizConfidenceGroup').style.display = '';
   $('#transferConfidenceGroup').style.display = 'none';
   $('#quizMasteryRow').style.display = 'none';
   // v2.11.0：自适应会话退出不是放弃——保留进度供续做，只刷新「继续上次」提示
@@ -6798,6 +6854,7 @@ function quitQuiz() {
   quiz.adaptive = false;
   quiz.sessionId = null;
   if (wasAdaptive) checkQuizResume();
+  try { loadQuizSourceCounts(); } catch {}   // v3.2.1：退出后刷新词源计数
 }
 
 /* ---- v2.10.0：会话计时（含暂停） ---- */
@@ -6867,6 +6924,8 @@ function quizRecord(resp, extra = {}) {
     : resp;
 
   const itemKind = it.kind || quiz.mode;
+  // v3.2.1：信心由行为智能推断（耗时 + 正误），不再由用户手选
+  const confidence = inferQuizConfidence({ grade, durationMs, spelling: it.spelling });
   quiz.results.push({
     spelling: it.spelling,
     response: mappedResp,
@@ -6875,24 +6934,26 @@ function quizRecord(resp, extra = {}) {
     prompt: itemKind === 'zh2en' ? (it.gloss?.gloss || '') : it.spelling,
     expected: it.gloss?.gloss || '',
     userAnswer: extra.userAnswer !== undefined ? String(extra.userAnswer) : mappedResp,
-    confidence: quiz.confidence || 'unsure',
+    confidence,
     startedAt: quiz.itemStartedAt || new Date(now - durationMs).toISOString(),
     submittedAt: new Date(now).toISOString(),
     durationMs,
   });
+  quiz.lastConfidence = confidence;
   scheduleSessionSave();
+  return confidence;
 }
 
 function renderQuizItem() {
   const it = quiz.items[quiz.idx];
   quiz.itemStartedAt = new Date().toISOString();
-  resetQuizConfidence();
   renderMasteryBar(it.spelling, quiz.srsMeta[it.spelling]);
   const kind = it.kind || quiz.mode;
   const kindLabel = { flash: '🃏 闪卡', choice: '🔤 四选一', spell: '⌨️ 拼写', zh2en: '🀄 看中选英', audio: '🔊 听音辨义' }[kind] || '';
   $('#quizProgress').innerHTML = `第 ${quiz.idx + 1} / ${quiz.items.length} 题${quiz.adaptive && kindLabel ? ` <span class="quiz-kind-badge">${kindLabel}</span>` : ''}`;
   $('#quizBar').style.width = (quiz.idx / quiz.items.length * 100) + '%';
   const area = $('#quizArea');
+  autoSpeakQuizWord(kind, it.spelling);   // v3.2.1：flash/choice/audio 自动播报（zh2en/spell 不播）
 
   if (kind === 'flash') {
     area.innerHTML = `
@@ -6909,7 +6970,11 @@ function renderQuizItem() {
           ${QUIZ_GRADES.map(g => `<button class="btn grade ${g.cls}" data-grade="${g.key}" title="${esc(g.hint)}">${esc(g.label)}</button>`).join('')}
         </div>`;
       $$('#quizFlipZone .grade').forEach(b =>
-        b.addEventListener('click', () => { quizRecord(null, { grade: b.dataset.grade }); quizAdvance(); }));
+        b.addEventListener('click', () => {
+          const conf = quizRecord(null, { grade: b.dataset.grade });
+          toast(`本题判定：${confidenceLabel(conf)}`);
+          quizAdvance();
+        }));
     });
     return;
   }
@@ -6933,7 +6998,6 @@ function renderQuizItem() {
       ${head}
       <div class="quiz-opts">${opts.map((o, i) => `<button class="btn quiz-opt" data-i="${i}">${esc(o.text)}</button>`).join('')}</div>
       <div class="quiz-feedback" id="quizFeedback"></div>`;
-    if (kind === 'audio') speak(it.spelling);
     let answered = false;
     $$('#quizArea .quiz-opt').forEach(b => b.addEventListener('click', () => {
       if (answered) return;
@@ -6941,10 +7005,11 @@ function renderQuizItem() {
       const pickedOpt = opts[Number(b.dataset.i)];
       const ok = pickedOpt.ok;
       b.classList.add(ok ? 'correct' : 'wrong');
-      $('#quizFeedback').innerHTML = ok
+      const conf = quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: pickedOpt.text });
+      $('#quizFeedback').innerHTML = (ok
         ? '<span class="fb-ok">✅ 答对了</span>'
-        : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.gloss.gloss)}</b></span>`;
-      quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: pickedOpt.text });
+        : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.gloss.gloss)}</b></span>`)
+        + ` <span class="fb-conf">本题判定：${esc(confidenceLabel(conf))}</span>`;
       quiz.advanceTimer = setTimeout(quizAdvance, ok ? 700 : 1800);
     }));
     return;
@@ -6964,10 +7029,11 @@ function renderQuizItem() {
       answered = true;
       const picked = opts[Number(b.dataset.i)];
       b.classList.add(picked.ok ? 'correct' : 'wrong');
-      $('#quizFeedback').innerHTML = picked.ok
+      const conf = quizRecord(null, { grade: picked.ok ? 'good' : 'again', userAnswer: picked.text });
+      $('#quizFeedback').innerHTML = (picked.ok
         ? `<span class="fb-ok">✅ 答对了！${esc(it.spelling)}</span>`
-        : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.spelling)}</b></span>`;
-      quizRecord(null, { grade: picked.ok ? 'good' : 'again', userAnswer: picked.text });
+        : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.spelling)}</b></span>`)
+        + ` <span class="fb-conf">本题判定：${esc(confidenceLabel(conf))}</span>`;
       quiz.advanceTimer = setTimeout(quizAdvance, picked.ok ? 700 : 1800);
     }));
     return;
@@ -6988,12 +7054,13 @@ function renderQuizItem() {
     const val = input.value.trim();
     if (!val) return;
     const ok = val.toLowerCase() === it.spelling.toLowerCase();
-    $('#quizFeedback').innerHTML = ok
-      ? `<span class="fb-ok">✅ 拼对了！${esc(it.spelling)}</span>`
-      : `<span class="fb-bad">❌ 正确拼写：<b>${esc(it.spelling)}</b> <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></span>`;
     input.disabled = true;
     $('#quizSpellBtn').disabled = true;
-    quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: val });
+    const conf = quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: val });
+    $('#quizFeedback').innerHTML = (ok
+      ? `<span class="fb-ok">✅ 拼对了！${esc(it.spelling)}</span>`
+      : `<span class="fb-bad">❌ 正确拼写：<b>${esc(it.spelling)}</b> <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></span>`)
+      + ` <span class="fb-conf">本题判定：${esc(confidenceLabel(conf))}</span>`;
     quiz.advanceTimer = setTimeout(quizAdvance, ok ? 700 : 2000);
   };
   $('#quizSpellBtn').addEventListener('click', submit);
@@ -7103,7 +7170,7 @@ async function startSrs() {
       msg.className = 'result err';
       return;
     }
-    const count = Math.min(50, Math.max(3, Number($('#quizSrsCount').value) || 10));
+    const count = Math.max(1, Math.floor(Number($('#quizSrsCount').value) || 10));
     const spellings = due.slice(0, count).map(d => d.spelling);
     // 拉取词详情 + 释义
     const words = await api('/api/words?filter=all');
@@ -7134,7 +7201,6 @@ async function startSrs() {
     msg.textContent = '';
     $('#quizSetup').style.display = 'none';
     $('#quizRun').style.display = 'block';
-    $('#quizConfidenceGroup').style.display = '';
     $('#quizMasteryRow').style.display = 'flex';
     startQuizTimer();
     renderSrsItem();
@@ -7156,6 +7222,8 @@ function srsRecord(grade, extra = {}) {
   const now = Date.now();
   const startT = srs.itemStartedAt ? new Date(srs.itemStartedAt).getTime() : now;
   const durationMs = Math.max(0, Math.min(14400000, now - startT));
+  // v3.2.1：信心由行为智能推断（耗时 + 评分）
+  const confidence = inferQuizConfidence({ grade, durationMs, spelling: it.spelling });
   srs.results.push({
     spelling: it.spelling,
     grade,
@@ -7163,17 +7231,17 @@ function srsRecord(grade, extra = {}) {
     prompt: it.spelling,
     expected: it.gloss?.gloss || '',
     userAnswer: extra.userAnswer !== undefined ? String(extra.userAnswer) : grade,
-    confidence: srs.confidence || 'unsure',
+    confidence,
     startedAt: srs.itemStartedAt || new Date(now - durationMs).toISOString(),
     submittedAt: new Date(now).toISOString(),
     durationMs,
   });
+  return confidence;
 }
 
 function renderSrsItem() {
   const it = srs.items[srs.idx];
   srs.itemStartedAt = new Date().toISOString();
-  resetSrsConfidence();
   const meta = quiz.srsMeta[it.spelling] || it._srs || {};
   renderMasteryBar(it.spelling, meta);
   $('#quizProgress').textContent = `复练 第 ${srs.idx + 1} / ${srs.items.length} 题`;
@@ -7182,6 +7250,7 @@ function renderSrsItem() {
     ? `<span class="transfer-kind-badge cloze">错题本 · 阶段 ${meta.wrongStage || 0}/4</span>`
     : '<span class="transfer-kind-badge">记忆到期</span>';
   const area = $('#quizArea');
+  autoSpeakQuizWord('srs', it.spelling);   // v3.2.1：复练自动播报（单词题面可见）
   area.innerHTML = `
     <div class="transfer-meta">${srcBadge}${meta.wrongCount ? `<span class="tag">错 ${meta.wrongCount} 次</span>` : ''}</div>
     <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button>
@@ -7197,14 +7266,11 @@ function renderSrsItem() {
         ${QUIZ_GRADES.map(g => `<button class="btn grade ${g.cls}" data-grade="${g.key}" title="${esc(g.hint)}">${esc(g.label)}</button>`).join('')}
       </div>`;
     $$('#srsFlipZone .grade').forEach(b =>
-      b.addEventListener('click', () => { srsRecord(b.dataset.grade); srsAdvance(); }));
-  });
-}
-
-function resetSrsConfidence() {
-  srs.confidence = 'unsure';
-  $$('#quizConfidenceGroup .quiz-conf-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.conf === 'unsure');
+      b.addEventListener('click', () => {
+        const conf = srsRecord(b.dataset.grade);
+        toast(`本题判定：${confidenceLabel(conf)}`);
+        srsAdvance();
+      }));
   });
 }
 
@@ -7252,7 +7318,7 @@ async function startTransfer() {
     msg.className = 'result err';
     return;
   }
-  const count = Math.min(20, Math.max(3, Number($('#transferCount').value) || 6));
+  const count = Math.max(1, Math.floor(Number($('#transferCount').value) || 6));
   msg.textContent = '正在从真题句中生成迁移题…';
   msg.className = 'result';
   try {
@@ -7275,8 +7341,7 @@ async function startTransfer() {
     msg.textContent = '';
     $('#quizSetup').style.display = 'none';
     $('#quizRun').style.display = 'block';
-    // 迁移训练使用独立信心组，隐藏基础测验信心组
-    $('#quizConfidenceGroup').style.display = 'none';
+    // 迁移训练使用独立信心组（v3.2.1：基础测验信心组已移除，改为自动判断）
     $('#transferConfidenceGroup').style.display = '';
     renderTransferItem();
   } catch (e) {

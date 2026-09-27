@@ -9,7 +9,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.2.0</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.2.1</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +21,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.2.0</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.2.1</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -93,7 +93,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.2.0</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.2.1</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -630,8 +630,8 @@
       <!-- v2.11.0：续做横幅（置于折叠区外，始终可见） -->
       <div class="quiz-resume" id="quizResume" style="display:none"></div>
 
-      <label class="field-label" data-page-node-id="2THmFmSDrCjLkQYAGEBtuV">题量（3-50）</label>
-      <input type="number" id="quizCount" class="input" value="10" min="3" max="50" style="width:120px" data-page-node-id="OHE3gV80NQpuZEQNaKeII9">
+      <label class="field-label" data-page-node-id="2THmFmSDrCjLkQYAGEBtuV">题量（不设上限）</label>
+      <input type="number" id="quizCount" class="input" value="10" min="1" style="width:120px" data-page-node-id="OHE3gV80NQpuZEQNaKeII9">
         <div class="row-gap" data-page-node-id="M6wzHURtA2jFHENV2FcFqy">
           <button class="btn" id="quizStartBtn" data-page-node-id="rmwUvlx79tZUiOPrOC1S0v">🚀 固定题型开测</button>
         </div>
@@ -650,8 +650,8 @@
           <button type="button" class="chip" data-sfilter="wrongbook">仅错题本</button>
           <button type="button" class="chip" data-sfilter="srs_due">仅记忆到期</button>
         </div>
-        <label class="field-label">题量（3-50）</label>
-        <input type="number" id="quizSrsCount" class="input" value="10" min="3" max="50" style="width:120px">
+        <label class="field-label">题量（不设上限）</label>
+        <input type="number" id="quizSrsCount" class="input" value="10" min="1" style="width:120px">
         <div class="row-gap">
           <button class="btn primary" id="quizSrsStartBtn">🔁 开始复练</button>
           <button class="btn" id="quizSrsRefreshBtn">🔄 刷新概览</button>
@@ -677,8 +677,8 @@
           <button type="button" class="chip active" data-kind="context">语境选义</button>
           <button type="button" class="chip active" data-kind="cloze">搭配补全</button>
         </div>
-        <label class="field-label">题量（3-20）</label>
-        <input type="number" id="transferCount" class="input" value="6" min="3" max="20" style="width:120px">
+        <label class="field-label">题量（不设上限）</label>
+        <input type="number" id="transferCount" class="input" value="6" min="1" style="width:120px">
         <div class="row-gap">
           <button class="btn primary" id="transferStartBtn">🎯 开始迁移训练</button>
         </div>
@@ -716,15 +716,8 @@
         </div>
         <span class="quiz-mastery-text" id="quizMasteryText">未追踪</span>
         <span class="quiz-timer" id="quizTimer">00:00</span>
+        <label class="quiz-autospeak" title="进入题目时自动朗读单词（看中选英/拼写题不读，避免泄露答案）"><input type="checkbox" id="quizAutoSpeak" checked> 🔊 自动播报</label>
         <button type="button" class="btn mini ghost" id="quizPauseBtn">⏸ 暂停</button>
-      </div>
-      <div class="quiz-confidence-row" id="quizConfidenceGroup">
-        <span class="quiz-confidence-label">作答信心：</span>
-        <div class="quiz-confidence-btns">
-          <button type="button" class="btn small quiz-conf-btn" data-conf="sure" title="确定掌握，毫不犹豫">🎯 确定</button>
-          <button type="button" class="btn small quiz-conf-btn active" data-conf="unsure" title="有点模糊，需要思考">🤔 犹豫</button>
-          <button type="button" class="btn small quiz-conf-btn" data-conf="guess" title="完全不会，纯属蒙猜">🎲 猜测</button>
-        </div>
       </div>
       <div class="quiz-confidence-row" id="transferConfidenceGroup" style="display:none">
         <span class="quiz-confidence-label">作答信心：</span>

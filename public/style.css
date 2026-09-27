@@ -1458,6 +1458,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .quiz-feedback { text-align: center; min-height: 28px; font-size: 14px; }
 .fb-ok { color: var(--ok); }
 .fb-bad { color: var(--warn); }
+.fb-conf { color: var(--text-sub); font-size: 12.5px; margin-left: 6px; }
 .quiz-spell-row { display: flex; gap: 10px; max-width: 420px; margin: 0 auto 12px; }
 .quiz-progress-bar {
   height: 6px; background: var(--bg); border-radius: 999px; overflow: hidden; margin-bottom: 10px;
@@ -1562,6 +1563,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 .qm-seg.on.max { background: var(--ok, #16a34a); }
 .quiz-mastery-text { font-size: 12.5px; color: var(--text-sub); }
 .quiz-timer { font-size: 12.5px; color: var(--text-sub); font-variant-numeric: tabular-nums; }
+.quiz-autospeak { font-size: 12.5px; color: var(--text-sub); display: inline-flex; align-items: center; gap: 4px; cursor: pointer; user-select: none; }
+.quiz-autospeak input { margin: 0; cursor: pointer; }
 
 .quiz-srs-overview { margin: 8px 0 12px; }
 .srs-stat-row { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--text-sub); margin-bottom: 8px; }

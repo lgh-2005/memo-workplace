@@ -51,7 +51,7 @@
 | 18 | `.workbuddy/test_v224_playwright.js` | 6 | 迁移训练 UI |
 | 19 | `.workbuddy/test_v225_playwright.js` | 14 | 长难句 UI |
 | 20 | `.workbuddy/test_v226_playwright.js` | 39 | 四风格×昼夜可读性 + 三视口无溢出 |
-| 21 | `.workbuddy/test_v220_ui.js` | 36 | 真实作答三类测验 + 迁移真实信心 + 真实划选 |
+| 21 | `.workbuddy/test_v220_ui.js` | 37 | 真实作答三类测验 + 迁移真实信心（v3.2.1 起基础信心改智能判断）+ 真实划选 |
 | 22 | `.workbuddy/test_v228_sourceref_ui.js` | 28 | 真题/手工语料/单元三通道真实划选 |
 | 23 | `.workbuddy/test_v228_vocab_ui.js` | 14 | 迁移独立信心组 UI |
 | 24 | `.workbuddy/test_v228_unit_ui.js` | 16 | 单元 section 收集 + batchId |
@@ -152,9 +152,15 @@
 | 49 | `.workbuddy/test_v320_multiuser_p3.js` | 56 | 多用户 P2 数据分区 + P3 集成改造（后端）：源码契约（`requireAdmin` 与 7 个共享内容写接口守卫、`llm_usage.json` 纳入 `USER_DATA_FILES` 与迁移清单、`mmLimiter`/`notepadCaches`/`autoTimers` 均为 per-user Map）；P2 共享内容写操作普通用户 403 `FORBIDDEN`（kb/import、exam/import、kb/record/update·delete、kb/version/restore、unit/answers/save、mineru/parse）且管理员放行；P3 LLM 用量统计（mock 也记）落 `users/<id>/llm_usage.json`、`/api/llm/usage` 普通用户看自己 / 管理员 `scope=all` 看全员 / 越权 403、顶层无 `llm_usage.json`；备份含 per-user `llm_usage.json`；自动同步 per-user 装配（bob 开启后重启仅 bob 装配、admin 未开无记录、各自 config 独立保存 Token、全局 config 不含用户级 Token）；频控/云词本 per-user 键断言 |
 | 50 | `.workbuddy/test_v320_usage_ui.js` | 10 | AI 用量看板前端（浏览器）：普通用户「📊 AI 用量」区可见 + KPI（调用次数/总 Tokens）+ 14 天柱状趋势、无「全员用量」表；切换 30 天柱状变 30 条；管理员登录见「全员用量」表（含 admin 与 bob 行）；390px 用量卡片无横向溢出；控制台 0 错误 |
 
-> 合计 **50** 套（第 3 节核心验收清单，含 1 套线上只读冒烟），断言总数 **1230+**；本次全量回归实测 **本地 58 套件（含新增 2 套）退出码 0**（另有 4 个 v1.x 历史遗留调试脚本不在验收范围）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.17 v3.2.1 增量套件（1）
 
-> **说明**：`english-workbench/.workbuddy/` 目录下共 56 个 `test_*.js`。其中 6 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v212.js`、`test_v212_ui.js`、`test_v117*` 等）为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块、v2.9.x 外刊与 Markdown、v2.10.0 记忆引擎、v2.11.0 自适应组卷、v2.12.0 AI 增强与统计看板、v3.0.0 多用户 P0、v3.1.0 多用户 P1、v3.2.0 P2/P3）。
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 51 | `.workbuddy/test_v321_quiz_ux.js` | 30 | 测验体验四项升级（后端 + 浏览器）：②题量解锁（count=1 成功且仅 1 题、count=999 返回池内全部词无 50 上限、count=0/-5 钳到 1）；④词源计数 GET `/api/quiz/sources`（today/sticky/forget/vague/all/srs_due/wrongbook 去重计数、`srsFilters` all/wrongbook/srs_due 并集计数）；③置信/播报/计数前端（基础手动信心组已移除、自动播报开关存在且默认开启、题量框 min=1 无 max、词源 chip 显示「· N」、复练范围 chip 显示计数、提交信心为合法枚举且 easy→sure 自洽、`loadQuizSourceCounts` 静默不抛错）；真实 `data/` 四文件哈希不变 |
+
+> 合计 **51** 套（第 3 节核心验收清单，含 1 套线上只读冒烟），断言总数 **1260+**；本次全量回归实测 **本地 59 套件（含新增 1 套）退出码 0**（另有 4 个 v1.x 历史遗留调试脚本不在验收范围）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+
+> **说明**：`english-workbench/.workbuddy/` 目录下共 57 个 `test_*.js`。其中 4 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v117*` 等）及 `test_v212.js`/`test_v212_ui.js` 为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块、v2.9.x 外刊与 Markdown、v2.10.0 记忆引擎、v2.11.0 自适应组卷、v2.12.0 AI 增强与统计看板、v3.0.0 多用户 P0、v3.1.0 多用户 P1、v3.2.0 P2/P3、v3.2.1 测验体验四项升级）。
 
 ## 4. 运行顺序（建议）
 
@@ -185,6 +191,7 @@ node .workbuddy/test_v320_multiuser_p3.js
 node .workbuddy/test_v320_usage_ui.js
 node .workbuddy/test_v2100_quiz_srs.js
 node .workbuddy/test_v2100_quiz_srs_ui.js
+node .workbuddy/test_v321_quiz_ux.js
 node .workbuddy/test_v221_playwright.js
 node .workbuddy/test_v222_playwright.js
 node .workbuddy/test_v223_playwright.js
