@@ -672,6 +672,17 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.3.0',
+    date: '2026-09-27',
+    title: 'PWA 可安装（添加到主屏幕 / 桌面应用）',
+    items: [
+      '① 可安装为应用：新增 Web App Manifest（standalone 全屏、品牌主题色、应用图标族含 maskable），设置页新增「📱 安装到桌面」区，支持一键安装（beforeinstallprompt）与各浏览器手动添加指引',
+      '② iOS 全屏独立运行：补齐 apple-touch-icon 与 apple-mobile-web-app-capable，Safari「添加到主屏幕」后无地址栏全屏打开（不依赖 HTTPS）',
+      '③ 离线可用：新增 Service Worker 缓存应用外壳（网络优先导航 + 静态资源 stale-while-revalidate），断网也能打开界面；/api 与 /images 直连网络不缓存。仅在 HTTPS/localhost 生效，HTTP/IP 下自动跳过（无副作用），日后启用 HTTPS 即自动启用离线',
+      '④ 应用快捷方式：Manifest 内置「单词测验 / 今日学习」快捷入口，支持 ?tab= 参数直达对应页签',
+    ],
+  },
+  {
     version: '3.2.1',
     date: '2026-09-27',
     title: '测验体验四项升级',
@@ -5625,9 +5636,15 @@ const MIME = {
   '.js': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.webmanifest': 'application/manifest+json; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
   '.ico': 'image/x-icon',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2',
 };
 
 function sendJSON(res, code, obj) {

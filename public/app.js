@@ -7532,6 +7532,7 @@ async function initApp() {
     }
   } catch { /* 服务未就绪或未登录时静默 */ }
   loadDashboard();
+  try { pwaHandleShortcutTab(); } catch { /* v3.3.0：PWA 快捷方式直达页签 */ }
 }
 
 (async function init() {
@@ -8548,4 +8549,146 @@ function closeOcrModal() {
 // 启动手写识别事件监听（脚本加载即执行，兜底 DOMContentLoaded 后再执行一次）
 initOcrEvents();
 document.addEventListener('DOMContentLoaded', initOcrEvents);
+
+/* ============ v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） ============ */
+const PWA = {
+  deferredPrompt: null,
+  installed: false,
+};
+
+function pwaIsStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches
+    || window.matchMedia('(display-mode: fullscreen)').matches
+    || window.navigator.standalone === true;
+}
+
+function pwaIsIOS() {
+  return /iphone|ipad|ipod/i.test(navigator.userAgent)
+    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+
+/** 注册 Service Worker：仅在安全上下文（HTTPS/localhost）生效；HTTP/IP 下浏览器会拒绝，这里主动跳过避免控制台报错 */
+function pwaRegisterSW() {
+  if (!('serviceWorker' in navigator)) return;
+  if (!window.isSecureContext) return;   // http://IP 非安全上下文：跳过（无副作用）
+  // 先探测 /sw.js 是否存在：缺失时直接跳过，避免浏览器在控制台抛 404 资源错误
+  fetch('/sw.js', { method: 'HEAD' }).then((r) => {
+    if (!r.ok) return;
+    return navigator.serviceWorker.register('/sw.js');
+  }).then((reg) => {
+    if (!reg) return;
+    // 新版本就绪时提示刷新（应用外壳已更新）
+    reg.addEventListener('updatefound', () => {
+      const sw = reg.installing;
+      if (!sw) return;
+      sw.addEventListener('statechange', () => {
+        if (sw.state === 'installed' && navigator.serviceWorker.controller) {
+          toast('发现新版本，刷新后生效');
+        }
+      });
+    });
+  }).catch(() => { /* 静默：SW 注册失败不影响主流程 */ });
+}
+
+function pwaRenderInstallUI() {
+  const status = $('#installStatus');
+  const guide = $('#installGuide');
+  const btn = $('#installBtn');
+  const refreshBtn = $('#installRefreshBtn');
+  if (!status) return;
+  const secure = window.isSecureContext;
+
+  if (PWA.installed) {
+    status.innerHTML = '✅ 已安装为应用（当前正以独立窗口运行）。';
+    if (btn) btn.style.display = 'none';
+    if (refreshBtn) refreshBtn.style.display = 'none';
+    if (guide) guide.innerHTML = '';
+    return;
+  }
+
+  if (PWA.deferredPrompt) {
+    status.innerHTML = '🔔 本浏览器支持一键安装，点击「立即安装」即可。';
+    if (btn) btn.style.display = '';
+    if (refreshBtn) refreshBtn.style.display = '';
+    if (guide) guide.innerHTML = '';
+    return;
+  }
+
+  if (btn) btn.style.display = 'none';
+  if (refreshBtn) refreshBtn.style.display = '';
+
+  if (pwaIsIOS()) {
+    status.innerHTML = 'ℹ️ iPhone / iPad 请用 Safari 打开本页，按以下步骤添加：';
+    guide.innerHTML = '<ol style="margin:6px 0 0 18px;line-height:1.7">'
+      + '<li>点击 Safari 底部的「分享」按钮 <b>↑</b>（方框带向上箭头）</li>'
+      + '<li>在弹出菜单中向下找到并点击「<b>添加到主屏幕</b>」</li>'
+      + '<li>确认名称后点右上角「添加」，桌面即出现图标</li></ol>';
+  } else if (!secure) {
+    status.innerHTML = '⚠️ 当前以 <b>HTTP/IP</b> 访问，浏览器不允许「一键安装」与离线缓存。'
+      + '你仍可用浏览器菜单里的「<b>添加到主屏幕 / 创建快捷方式</b>」快速打开。';
+    guide.innerHTML = '<div style="margin-top:6px;line-height:1.7">'
+      + '• <b>Android Chrome</b>：右上角 ⋮ → 「添加到主屏幕」<br>'
+      + '• <b>iOS Safari</b>：底部分享 ↑ → 「添加到主屏幕」<br>'
+      + '• <b>桌面 Chrome/Edge</b>：地址栏右侧的「安装」图标 ⊕，或菜单 → 「安装英语学习工作台」</div>';
+  } else {
+    status.innerHTML = 'ℹ️ 本浏览器未直接提供一键安装，请用浏览器菜单添加：';
+    guide.innerHTML = '<div style="line-height:1.7">'
+      + '• <b>Android Chrome</b>：右上角 ⋮ → 「安装应用」/「添加到主屏幕」<br>'
+      + '• <b>iOS Safari</b>：底部分享 ↑ → 「添加到主屏幕」<br>'
+      + '• <b>桌面 Chrome/Edge</b>：地址栏右侧 ⊕ 安装图标</div>';
+  }
+}
+
+function pwaInitInstall() {
+  PWA.installed = pwaIsStandalone();
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();           // 拦截默认迷你信息条，改由自有按钮触发
+    PWA.deferredPrompt = e;
+    pwaRenderInstallUI();
+  });
+  window.addEventListener('appinstalled', () => {
+    PWA.installed = true;
+    PWA.deferredPrompt = null;
+    toast('🎉 已安装到桌面，可从图标直接打开');
+    pwaRenderInstallUI();
+  });
+
+  const btn = $('#installBtn');
+  if (btn) btn.addEventListener('click', async () => {
+    if (!PWA.deferredPrompt) { pwaRenderInstallUI(); return; }
+    PWA.deferredPrompt.prompt();
+    const choice = await PWA.deferredPrompt.userChoice;
+    if (choice && choice.outcome === 'accepted') toast('正在安装…');
+    PWA.deferredPrompt = null;
+    pwaRenderInstallUI();
+  });
+  const refreshBtn = $('#installRefreshBtn');
+  if (refreshBtn) refreshBtn.addEventListener('click', () => {
+    PWA.installed = pwaIsStandalone();
+    pwaRenderInstallUI();
+    if (PWA.deferredPrompt) toast('检测到可安装，请点「立即安装」');
+    else toast('暂未检测到一键安装入口，请按下方指引手动添加');
+  });
+
+  // 打开设置页时刷新安装区状态
+  pwaRenderInstallUI();
+}
+
+/* 安装成功后隐藏遮罩场景下也保持状态同步 */
+window.matchMedia('(display-mode: standalone)').addEventListener
+  && window.matchMedia('(display-mode: standalone)').addEventListener('change', () => {
+    PWA.installed = pwaIsStandalone();
+    pwaRenderInstallUI();
+  });
+
+pwaRegisterSW();
+pwaInitInstall();
+
+/* 支持 PWA 快捷方式 ?tab=xxx 直达对应页签（在 initApp 登录成功后调用） */
+function pwaHandleShortcutTab() {
+  try {
+    const tab = new URLSearchParams(location.search).get('tab');
+    if (tab && document.getElementById('tab-' + tab)) switchTab(tab);
+  } catch { /* 忽略 */ }
+}
 

@@ -2,14 +2,28 @@
 <html lang="zh-CN" data-page-node-id="cDnFSP6DAZmypkXhvboESc">
 <head data-page-node-id="EdhUpWkgCD4G5QQBoYMgEy">
 <meta charset="UTF-8" data-page-node-id="jJ2TzRBunJhs9LdkX6E9EG">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="oWFDBFujyrY5KW9n2DbmLZ">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="oWFDBFujyrY5KW9n2DbmLZ">
 <title>英语学习工作台</title>
+<!-- v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="description" content="墨墨背单词同步 + AI 教练互动 + 真题语料注入的考研 / 六级英语学习工作台">
+<link rel="manifest" href="/manifest.webmanifest">
+<!-- iOS Safari 独立全屏运行（不依赖 HTTPS） -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="英语工作台">
+<link rel="apple-touch-icon" href="/icons/icon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-167.png">
+<link rel="icon" href="/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
 <link rel="stylesheet" href="style.css" data-page-node-id="yrIOKZyALjeHGxt7vkSPue">
 </head>
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.2.1</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.3.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -21,7 +35,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.2.1</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.3.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -93,7 +107,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.2.1</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.3.0</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -987,6 +1001,23 @@
             <button class="btn" id="logoutBtn">🚪 退出登录</button>
           </div>
           <div class="result" id="accountResult"></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ===== 子版块：安装到桌面（v3.3.0，PWA） ===== -->
+    <details class="settings-section" id="installSection">
+      <summary>📱 安装到桌面</summary>
+      <div class="settings-section-body">
+        <div class="card" id="installCard">
+          <div class="card-title">📱 把工作台装到桌面 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v3.3.0 · 像 App 一样打开）</span></div>
+          <p class="hint" style="margin:4px 0 10px">安装后可从手机桌面 / 电脑开始菜单直接打开，全屏运行、无需每次输网址。</p>
+          <div class="install-actions">
+            <button class="btn primary" id="installBtn">⬇️ 立即安装</button>
+            <button class="btn" id="installRefreshBtn" style="display:none">🔄 重新检测</button>
+          </div>
+          <div class="install-status" id="installStatus"></div>
+          <div class="install-guide" id="installGuide"></div>
         </div>
       </div>
     </details>

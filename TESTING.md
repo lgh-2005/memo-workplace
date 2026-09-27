@@ -158,9 +158,15 @@
 |---|---|---|---|
 | 51 | `.workbuddy/test_v321_quiz_ux.js` | 30 | 测验体验四项升级（后端 + 浏览器）：②题量解锁（count=1 成功且仅 1 题、count=999 返回池内全部词无 50 上限、count=0/-5 钳到 1）；④词源计数 GET `/api/quiz/sources`（today/sticky/forget/vague/all/srs_due/wrongbook 去重计数、`srsFilters` all/wrongbook/srs_due 并集计数）；③置信/播报/计数前端（基础手动信心组已移除、自动播报开关存在且默认开启、题量框 min=1 无 max、词源 chip 显示「· N」、复练范围 chip 显示计数、提交信心为合法枚举且 easy→sure 自洽、`loadQuizSourceCounts` 静默不抛错）；真实 `data/` 四文件哈希不变 |
 
-> 合计 **51** 套（第 3 节核心验收清单，含 1 套线上只读冒烟），断言总数 **1260+**；本次全量回归实测 **本地 59 套件（含新增 1 套）退出码 0**（另有 4 个 v1.x 历史遗留调试脚本不在验收范围）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+### 3.18 v3.3.0 增量套件（1）
 
-> **说明**：`english-workbench/.workbuddy/` 目录下共 57 个 `test_*.js`。其中 4 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v117*` 等）及 `test_v212.js`/`test_v212_ui.js` 为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块、v2.9.x 外刊与 Markdown、v2.10.0 记忆引擎、v2.11.0 自适应组卷、v2.12.0 AI 增强与统计看板、v3.0.0 多用户 P0、v3.1.0 多用户 P1、v3.2.0 P2/P3、v3.2.1 测验体验四项升级）。
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 52 | `.workbuddy/test_v330_pwa.js` | 31 | PWA 可安装（后端 + 浏览器）：manifest MIME（`application/manifest+json`）与契约（name/short_name/display=standalone/scope/theme_color/图标 any 192·512 + maskable 192·512）、sw.js 含 install/activate/fetch 且 `/api` 直连、图标族（icon/maskable/apple-touch/favicon.ico/svg）均 200；浏览器侧 HTML manifest link + theme-color + apple-touch-icon + apple-mobile-web-app-capable、manifest 可解析、图标可加载非空、Service Worker 注册就绪并接管页面、**离线仍可打开应用外壳（导航 200）**、设置页「安装到桌面」区渲染、`?tab=quiz` 快捷方式直达、控制台 0 错误、真实 `data/` 三文件哈希不变 |
+
+> 合计 **52** 套（第 3 节核心验收清单，含 1 套线上只读冒烟），断言总数 **1290+**；本次全量回归实测 **本地 60 套件（含新增 1 套）退出码 0**（另有 4 个 v1.x 历史遗留调试脚本不在验收范围）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
+
+> **说明**：`english-workbench/.workbuddy/` 目录下共 58 个 `test_*.js`。其中 4 个（`test_hl.js`、`test_v117d.js`、`test_v117ef.js`、`test_v117*` 等）及 `test_v212.js`/`test_v212_ui.js` 为 v1.x 历史遗留调试脚本，不属于验收范围（`test_v212*` 依赖 v2.6.2 已删除的 AI 审读，为既有失败）；其余为 v2.2.8 基础 27 套 + 后续版本增量（v2.3.x–v2.5.0 功能套件、v2.6.3 答案回填、v2.7.0 分轨、v2.7.1 六级、v2.7.2 划词气泡/拖拽拉伸/词表滚动、v2.8.0 登录与日志版块、v2.9.x 外刊与 Markdown、v2.10.0 记忆引擎、v2.11.0 自适应组卷、v2.12.0 AI 增强与统计看板、v3.0.0 多用户 P0、v3.1.0 多用户 P1、v3.2.0 P2/P3、v3.2.1 测验体验四项升级、v3.3.0 PWA 可安装）。
 
 ## 4. 运行顺序（建议）
 
@@ -192,6 +198,7 @@ node .workbuddy/test_v320_usage_ui.js
 node .workbuddy/test_v2100_quiz_srs.js
 node .workbuddy/test_v2100_quiz_srs_ui.js
 node .workbuddy/test_v321_quiz_ux.js
+node .workbuddy/test_v330_pwa.js
 node .workbuddy/test_v221_playwright.js
 node .workbuddy/test_v222_playwright.js
 node .workbuddy/test_v223_playwright.js
