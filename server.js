@@ -100,6 +100,17 @@ function saveJSON(file, obj) {
   fs.renameSync(tmp, file);
 }
 
+/* v3.3.1：出站 fetch 统一超时护栏——防止上游（LLM/墨墨/生图/搜索/MinerU）无响应时
+   fetch 永久挂起，进而毒死 per-user 写串行队列（enqueueUserWrite）导致该用户所有写请求卡死。
+   Node 原生 fetch 默认无超时；此处用 AbortSignal.timeout 强制中断并抛出可读错误。 */
+const DEFAULT_FETCH_TIMEOUT_MS = Number(process.env.FETCH_TIMEOUT_MS) || 30000;
+function fetchT(url, opts = {}, timeoutMs = DEFAULT_FETCH_TIMEOUT_MS) {
+  const { signal, timeout = timeoutMs, ...rest } = opts;
+  const ms = Number(timeout);
+  if (!ms || ms <= 0 || signal) return fetch(url, opts);   // 显式自带 signal / 关闭超时时尊重调用方
+  return fetch(url, { ...rest, signal: AbortSignal.timeout(ms) });
+}
+
 /** v2.2.6：读取并校验 JSON 文件；返回 { exists, valid, obj, error }，损坏时不抛异常 */
 function validateJsonFile(file) {
   if (!fs.existsSync(file)) return { exists: false, valid: false };
@@ -671,6 +682,17 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '3.3.1',
+    date: '2026-10-10',
+    title: '出站 fetch 统一超时护栏（修复「模型拉取 / 切换默认模型」卡死）',
+    items: [
+      '① 根因修复：为服务端全部出站 fetch（LLM 对话/流式、墨墨 Open API、模型列表拉取、生图、网页搜索、MinerU 申请/上传/轮询/下载、连通性测试、韦氏词典）统一加 AbortSignal.timeout 超时，杜绝上游无响应时 Node fetch 永久挂起',
+      '② 解决连锁故障：多用户下写请求经 per-user 串行队列（enqueueUserWrite）执行，此前任一写请求的上游 fetch 永久挂起会毒死该用户整条写链，导致「无法切换默认模型 / 模型列表拉取失败 / 手动同步无响应」等所有写操作卡死；加超时后上游无响应会快速失败并释放队列',
+      '③ 超时策略：模型列表/墨墨单次 15–20s、LLM 流式 5 分钟、生图 2 分钟、网页搜索 30s、MinerU 上传 2 分钟/轮询 20s/下载 60s；可用环境变量 FETCH_TIMEOUT_MS 覆盖默认值（30s）',
+      '④ 兼容性：自带 signal 的调用方（如韦氏词典）行为不变；超时错误以可读信息透传前端，不阻断其他功能',
+    ],
+  },
   {
     version: '3.3.0',
     date: '2026-09-27',
@@ -2612,7 +2634,7 @@ async function mm(pathname, { method = 'GET', body, query } = {}) {
     await throttle();
     let res;
     try {
-      res = await fetch(url, {
+      res = await fetchT(url, {
         method,
         headers: {
           'Authorization': 'Bearer ' + config.maimemoToken,
@@ -2620,7 +2642,7 @@ async function mm(pathname, { method = 'GET', body, query } = {}) {
           ...(body ? { 'Content-Type': 'application/json' } : {}),
         },
         body: body ? JSON.stringify(body) : undefined,
-      });
+      }, 15000);   // 墨墨 API：单次 15s（外层已有 4 次退避重试）
     } catch (err) {
       // 网络抖动：指数退避后重试
       if (attempt < 3) { await sleep(1500 * (attempt + 1)); continue; }
@@ -2920,7 +2942,7 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
     bodyObj.stream = true;
     // v3.2.0：请求流末回报 usage，供 per-user 用量统计（上游不支持的会忽略该字段）
     if (!bodyObj.stream_options) bodyObj.stream_options = { include_usage: true };
-    res = await fetch(url, {
+    res = await fetchT(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -2928,7 +2950,7 @@ async function llmChat(messages, { maxTokens = 1600, providerId, llmOverride } =
         ...(llm.apiKey ? { 'Authorization': 'Bearer ' + llm.apiKey } : {}),
       },
       body: JSON.stringify(bodyObj),
-    });
+    }, 300000);   // LLM 流式：整段最长 5 分钟（含思考膨胀），超时即中断防永久挂起
   } catch {
     throw new Error(`无法连接 AI 服务（${llm.baseUrl}），请到「设置」检查 Base URL 与网络`);
   }
@@ -3202,7 +3224,7 @@ async function llmChatSSE(messages, { providerId, llmOverride, maxTokens, onThin
   }
   let res;
   try {
-    res = await fetch(url, {
+    res = await fetchT(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -3210,7 +3232,7 @@ async function llmChatSSE(messages, { providerId, llmOverride, maxTokens, onThin
         ...(llm.apiKey ? { 'Authorization': 'Bearer ' + llm.apiKey } : {}),
       },
       body: JSON.stringify(bodyObj),
-    });
+    }, 300000);   // LLM 流式（SSE 直通）：整段最长 5 分钟
   } catch {
     throw new Error(`无法连接 AI 服务（${llm.baseUrl}），请到「设置」检查 Base URL 与网络`);
   }
@@ -3743,14 +3765,14 @@ async function callImageAPI(prompt) {
   const url = baseUrl.replace(/\/+$/, '') + '/images/generations';
   let res;
   try {
-    res = await fetch(url, {
+    res = await fetchT(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         ...(ig.apiKey ? { 'Authorization': 'Bearer ' + ig.apiKey } : {}),
       },
       body: JSON.stringify({ model, prompt: String(prompt).slice(0, 2000), n: 1, size: '1024x1024' }),
-    });
+    }, 120000);   // 生图：2 分钟
   } catch {
     throw new Error(`无法连接生图服务（${baseUrl}），请到「设置」检查地址与网络`);
   }
@@ -3767,7 +3789,7 @@ async function callImageAPI(prompt) {
   }
   if (item.url) {
     try {
-      const imgRes = await fetch(item.url);
+      const imgRes = await fetchT(item.url, {}, 30000);   // 生图结果下载：30s
       if (!imgRes.ok) throw new Error(`HTTP ${imgRes.status}`);
       const buf = Buffer.from(await imgRes.arrayBuffer());
       const ct = (imgRes.headers.get('content-type') || '').split('/')[1];
@@ -3859,7 +3881,7 @@ async function webSearch(query, count = 5) {
   }
   let res;
   try {
-    res = await fetch(ws.url, {
+    res = await fetchT(ws.url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -3867,7 +3889,7 @@ async function webSearch(query, count = 5) {
       },
       // 字段超集：覆盖博查(query/count/summary)、Tavily(query/max_results)、Serper(q)、智谱(search_query)
       body: JSON.stringify({ query, q: query, search_query: query, count, max_results: count, summary: true }),
-    });
+    }, 30000);   // 网页搜索：30s
   } catch {
     throw new Error(`无法连接搜索服务（${ws.url}），请到「设置」检查地址与网络`);
   }
@@ -4996,7 +5018,7 @@ async function mineruParsePdf(buf, filename, isOcr) {
     throw Object.assign(new Error('未配置 MinerU Token，请到「设置」页填写（mineru.net/apiManage/token 免费申请）'), { code: 'NO_MINERU' });
   }
   const auth = { 'Authorization': 'Bearer ' + config.mineru.apiKey };
-  const apply = await fetch(MINERU_BASE + '/file-urls/batch', {
+  const apply = await fetchT(MINERU_BASE + '/file-urls/batch', {
     method: 'POST',
     headers: { ...auth, 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -5006,7 +5028,7 @@ async function mineruParsePdf(buf, filename, isOcr) {
       enable_table: false,        // 特化：真题无表格
       files: [{ name: filename, is_ocr: !!isOcr }],
     }),
-  });
+  }, 30000);   // MinerU 申请上传链接：30s
   if (apply.status === 401) {
     throw Object.assign(new Error('MinerU Token 无效或已过期（约 90 天需更换），请到 mineru.net/apiManage/token 重新生成'), { code: 'NO_MINERU' });
   }
@@ -5020,7 +5042,7 @@ async function mineruParsePdf(buf, filename, isOcr) {
   if (!batchId || !putUrl) throw new Error('MinerU 返回异常: ' + JSON.stringify(aj).slice(0, 200));
   // 实测坑（v1.1.4a）：presigned URL 按「无 Content-Type」签名——PUT 带任何 Content-Type 都会 403 SignatureDoesNotMatch
   // （curl --data-binary 会默认自动加 x-www-form-urlencoded，必须 -T 裸传或显式清空才能成功）
-  const put = await fetch(putUrl, { method: 'PUT', body: buf });
+  const put = await fetchT(putUrl, { method: 'PUT', body: buf }, 120000);   // MinerU 文件上传：2 分钟
   if (!put.ok) {
     const t = await put.text().catch(() => '');
     throw new Error('MinerU 文件上传失败 (HTTP ' + put.status + ') ' + t.slice(0, 200));
@@ -5029,7 +5051,7 @@ async function mineruParsePdf(buf, filename, isOcr) {
   for (let i = 0; i < 80; i++) {   // 3s 间隔最长 4 分钟（留余量避开 5 分钟请求超时）
     await new Promise(s => setTimeout(s, 3000));
     try {
-      const pr = await fetch(`${MINERU_BASE}/extract-results/batch/${encodeURIComponent(batchId)}`, { headers: auth });
+      const pr = await fetchT(`${MINERU_BASE}/extract-results/batch/${encodeURIComponent(batchId)}`, { headers: auth }, 20000);   // 轮询：20s/次
       if (!pr.ok) continue;
       const pj = await pr.json();
       const one = pj?.data?.extract_result?.[0];
@@ -5039,7 +5061,7 @@ async function mineruParsePdf(buf, filename, isOcr) {
     } catch (e) { if (String(e.message).startsWith('MinerU 解析失败')) throw e; }
   }
   if (!zipUrl) throw new Error('MinerU 解析超时（4 分钟），请稍后重试或改用本地导入');
-  const zr = await fetch(zipUrl);
+  const zr = await fetchT(zipUrl, {}, 60000);   // MinerU 结果下载：60s
   if (!zr.ok) throw new Error('MinerU 结果下载失败 (HTTP ' + zr.status + ')');
   const zbuf = Buffer.from(await zr.arrayBuffer());
   const md = kbUnzipEntry(zbuf, 'full.md');
@@ -6373,7 +6395,7 @@ async function handleRequest(req, res) {
         const url = baseUrl.replace(/\/+$/, '') + '/models';
         let r;
         try {
-          r = await fetch(url, { headers: apiKey ? { 'Authorization': 'Bearer ' + apiKey } : {} });
+          r = await fetchT(url, { headers: apiKey ? { 'Authorization': 'Bearer ' + apiKey } : {} }, 20000);   // 模型列表：20s
         } catch {
           throw new Error(`无法连接 ${baseUrl} —— 请检查 Base URL 是否正确、网络是否可达（中转站地址一般形如 https://xxx.example.com/v1）`);
         }
@@ -7148,11 +7170,11 @@ async function handleRequest(req, res) {
         if (!config.mineru.apiKey) {
           return sendJSON(res, 400, { error: '未配置 MinerU Token，请到「设置」页填写（mineru.net/apiManage/token 免费申请）', code: 'NO_MINERU' });
         }
-        const tr = await fetch(MINERU_BASE + '/file-urls/batch', {
+        const tr = await fetchT(MINERU_BASE + '/file-urls/batch', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + config.mineru.apiKey },
           body: JSON.stringify({ files: [] }),
-        });
+        }, 20000);   // MinerU 连通性测试：20s
         if (tr.status === 401) {
           throw new Error('MinerU Token 无效或已过期（约 90 天需更换），请到 mineru.net/apiManage/token 重新生成');
         }
