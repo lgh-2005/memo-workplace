@@ -17,6 +17,7 @@ corpus/*.tmp
 .workbuddy/
 corpus/*.bak-*
 *.bundle
+.releases/
 
 # v2.0.0：外刊 release 是运行时发布数据，不随网站代码进入 Git
 corpus/external/current/

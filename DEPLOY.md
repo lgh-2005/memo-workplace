@@ -71,7 +71,7 @@ ECS 控制台 → 安全组 → 添加入方向规则：TCP 5178（源建议先�
 > - 用 nginx 反向代理 80/443 并加 Basic Auth 或只放行自己 IP；
 > - 安全组源地址只填你常用网络的出口 IP。
 
-## 二、以后更新（每次 10 秒）
+## 二、以后更新（v3.3.3 自动发布与回滚）
 
 ```bash
 ssh <服务器>
@@ -80,7 +80,22 @@ git pull
 sudo systemctl restart workbench
 ```
 
-本地改完代码 push 上去，服务器 pull 一下重启即可。`data/` 目录（学习数据、助记、配置）在服务器上独立存在，任何更新都不影响。
+本地改完代码 push 上去，服务器执行 `scripts/deploy.sh`。脚本会先备份 `data/`，保存当前代码快照，拉取 Gitee 指定版本，保留运行时语料，重启并等待健康检查：
+
+```bash
+cd /opt/workbench
+sudo WORKBENCH_ROOT=/opt/workbench WORKBENCH_REF=master bash scripts/deploy.sh
+```
+
+失败时按发布时间点回滚：
+
+```bash
+sudo WORKBENCH_ROOT=/opt/workbench bash scripts/rollback.sh 20261010-193000
+```
+
+发布脚本不会覆盖 `data/`、运行时 `corpus/records.jsonl`、`corpus/exams.jsonl` 和外刊运行目录；每次发布会在 `data/backups/` 保存数据备份，在 `.releases/` 保存代码快照。
+
+本地提交前执行 `npm test` 可复现核心安全冒烟与服务启动验证。
 
 ## 三、HTTPS 配置（v1.2.0 强烈建议）
 

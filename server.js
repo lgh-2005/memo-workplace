@@ -63,6 +63,49 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
 // 本机默认只监听 127.0.0.1；云服务器部署时设置 HOST=0.0.0.0（建议配合 nginx/防火墙）
 const HOST = process.env.HOST || '127.0.0.1';
 
+/* v3.3.3：认证接口的轻量进程内频控。生产环境仍应在 nginx/Cloudflare 层
+   配合更严格的限流；这里保证直接暴露 Node 端口时登录接口不会无限尝试。 */
+const AUTH_RATE_WINDOW_MS = 15 * 60_000;
+const AUTH_RATE_MAX = Math.max(5, Number(process.env.AUTH_RATE_MAX) || 20);
+const authRateBuckets = new Map();
+function clientAddress(req) {
+  return String(req.socket?.remoteAddress || 'unknown').slice(0, 100);
+}
+function authRateLimited(req) {
+  const now = Date.now();
+  const key = clientAddress(req);
+  let bucket = authRateBuckets.get(key);
+  if (!bucket || now - bucket.startedAt >= AUTH_RATE_WINDOW_MS) {
+    bucket = { startedAt: now, count: 0 };
+    authRateBuckets.set(key, bucket);
+  }
+  bucket.count += 1;
+  if (authRateBuckets.size > 2000) {
+    for (const [k, v] of authRateBuckets) if (now - v.startedAt >= AUTH_RATE_WINDOW_MS) authRateBuckets.delete(k);
+  }
+  return bucket.count > AUTH_RATE_MAX;
+}
+
+/* v3.3.3：浏览器写请求的 Origin/Referer 校验，补上 Cookie 会话的 CSRF 防线。
+   缺少这些头的 CLI/同源服务端调用仍可用；跨站浏览器请求直接拒绝。 */
+function sameSiteWriteRequest(req, pathname) {
+  if (!['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method)) return true;
+  if (!pathname.startsWith('/api/')) return true;
+  const origin = String(req.headers.origin || '').trim();
+  const referer = String(req.headers.referer || '').trim();
+  if (!origin && !referer) return true;
+  const forwardedHost = String(req.headers['x-forwarded-host'] || '').split(',')[0].trim();
+  const expectedHost = forwardedHost || String(req.headers.host || '').trim();
+  const trusted = String(process.env.TRUSTED_ORIGINS || '').split(',').map(x => x.trim()).filter(Boolean);
+  const check = value => {
+    try {
+      const u = new URL(value);
+      return trusted.includes(value) || u.host === expectedHost;
+    } catch { return false; }
+  };
+  return (!origin || check(origin)) && (!referer || check(referer));
+}
+
 /** 北京时间（Asia/Shanghai）的 YYYY-MM-DD，offsetDays 为偏移天数 */
 function bjDate(offsetDays = 0) {
   return new Date(Date.now() + offsetDays * 86400000 + 8 * 3600000).toISOString().slice(0, 10);
@@ -495,7 +538,7 @@ function parseCookies(req) {
 }
 
 /** 登录成功后签发会话并下发 httpOnly Cookie（该设备后续请求自动携带，默认登录） */
-function issueAuthCookie(res, userId, role) {
+function issueAuthCookie(res, userId, role, req = null) {
   const sid = crypto.randomBytes(24).toString('hex');
   authSessions.set(sid, {
     userId: userId || LEGACY_USER,
@@ -504,7 +547,8 @@ function issueAuthCookie(res, userId, role) {
     lastSeen: Date.now(),
   });
   persistSessions();
-  const secure = String(process.env.HTTPS || '') === '1' ? '; Secure' : '';
+  const forwardedProto = String(req?.headers?.['x-forwarded-proto'] || '').split(',')[0].trim().toLowerCase();
+  const secure = (String(process.env.HTTPS || '') === '1' || String(process.env.TRUST_PROXY || '') === '1' || forwardedProto === 'https') ? '; Secure' : '';
   res.setHeader('Set-Cookie',
     `${AUTH_COOKIE}=${sid}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${Math.floor(AUTH_SESSION_TTL_MS / 1000)}${secure}`);
   return sid;
@@ -682,6 +726,17 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '3.3.3',
+    date: '2026-10-10',
+    title: '可复现测试、发布回滚自动化与安全审计加固',
+    items: [
+      '① 新增 npm test 与 CI：Node 22/24 自动执行语法检查、安全冒烟和隔离沙箱启动验证；',
+      '② 新增 scripts/deploy.sh 与 scripts/rollback.sh：发布前备份 data、保留运行时语料、重启后健康检查并支持按发布时间点回滚；',
+      '③ 登录/注册接口增加进程内频控；Cookie 会话写请求增加 Origin/Referer 同站校验；',
+      '④ 所有响应补充 nosniff、点击劫持防护、Referrer-Policy、Permissions-Policy 等安全响应头；',
+    ],
+  },
   {
     version: '3.3.2',
     date: '2026-10-10',
@@ -5687,6 +5742,14 @@ function sendJSON(res, code, obj) {
   res.end(body);
 }
 
+function setSecurityHeaders(res) {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'camera=(self), microphone=(), geolocation=()');
+  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+}
+
 function readBody(req, max = 5e6) {
   return new Promise((resolve, reject) => {
     let buf = '';
@@ -5805,6 +5868,12 @@ const AUTH_WHITELIST = new Set([
 
 const server = http.createServer(async (req, res) => {
   const p = new URL(req.url, `http://localhost:${PORT}`).pathname;
+  setSecurityHeaders(res);
+  if (!sameSiteWriteRequest(req, p)) return sendJSON(res, 403, { error: '跨站写请求已拒绝', code: 'CSRF_ORIGIN' });
+  if ((p === '/api/auth/login' || p === '/api/auth/register') && authRateLimited(req)) {
+    res.setHeader('Retry-After', String(Math.ceil(AUTH_RATE_WINDOW_MS / 1000)));
+    return sendJSON(res, 429, { error: '登录尝试过于频繁，请稍后再试', code: 'AUTH_RATE_LIMIT' });
+  }
   /* v3.0.0：建立每请求隔离上下文；写请求按用户串行（避免同一用户并发写互相覆盖） */
   const auth = resolveAuthContext(req);
   const store = Object.assign({ ok: auth.ok }, auth.store);
@@ -5850,7 +5919,7 @@ async function handleRequest(req, res) {
             // 兼容：多用户下旧「Token 凭证」入口——与 admin 密码比对
             const admin = userRegistry.users[adminUserId()];
             if (admin && verifyPassword(password, admin)) {
-              issueAuthCookie(res, admin.id, admin.role);
+              issueAuthCookie(res, admin.id, admin.role, req);
               return sendJSON(res, 200, { ok: true, user: publicUser(admin) });
             }
             return sendJSON(res, 401, { error: '用户名或密码不正确', code: 'BAD_CREDENTIAL' });
@@ -5859,7 +5928,7 @@ async function handleRequest(req, res) {
           if (!user || !verifyPassword(password, user)) {
             return sendJSON(res, 401, { error: '用户名或密码不正确', code: 'BAD_CREDENTIAL' });
           }
-          issueAuthCookie(res, user.id, user.role);
+          issueAuthCookie(res, user.id, user.role, req);
           return sendJSON(res, 200, { ok: true, user: publicUser(user) });
         }
         // ---- 单用户模式：沿用 Token 凭证 ----
@@ -5873,7 +5942,7 @@ async function handleRequest(req, res) {
         if (!safeEqual(token, config.auth.token)) {
           return sendJSON(res, 401, { error: 'Token 凭证不正确', code: 'BAD_CREDENTIAL' });
         }
-        issueAuthCookie(res, LEGACY_USER, 'admin');
+        issueAuthCookie(res, LEGACY_USER, 'admin', req);
         return sendJSON(res, 200, { ok: true, enabled: true });
       }
       /* v3.0.0：多用户注册——一次性邀请码 */
@@ -5911,7 +5980,7 @@ async function handleRequest(req, res) {
         userRegistry.invites[codeNum].usedAt = new Date().toISOString();
         persistUserRegistry();
         ensureUserDir(id);
-        issueAuthCookie(res, id, 'user');
+        issueAuthCookie(res, id, 'user', req);
         return sendJSON(res, 200, { ok: true, user: publicUser(userRegistry.users[id]) });
       }
       if (p === '/api/auth/logout' && req.method === 'POST') {
