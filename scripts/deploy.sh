@@ -4,17 +4,31 @@ set -Eeuo pipefail
 APP_ROOT="${WORKBENCH_ROOT:-/opt/workbench}"
 SERVICE_NAME="${WORKBENCH_SERVICE:-workbench.service}"
 REMOTE_REF="${WORKBENCH_REF:-master}"
+DRY_RUN="${DRY_RUN:-0}"
+if [[ "${1:-}" == "--dry-run" ]]; then DRY_RUN=1; fi
 STAMP="$(date -u +%Y%m%d-%H%M%S)"
 BACKUP_DIR="${APP_ROOT}/data/backups"
 RELEASE_DIR="${APP_ROOT}/.releases/${STAMP}"
 HEALTH_URL="${WORKBENCH_HEALTH_URL:-http://127.0.0.1:5178/api/auth/status}"
 
 cd "$APP_ROOT"
+if [[ "$DRY_RUN" == "1" ]]; then
+  command -v rsync >/dev/null 2>&1 || { echo "[deploy] rsync is required" >&2; exit 1; }
+  git fetch origin "$REMOTE_REF"
+  TMP_RELEASE="$(mktemp -d)"
+  trap 'rm -rf "$TMP_RELEASE"' EXIT
+  git archive "origin/${REMOTE_REF}" | tar -x -C "$TMP_RELEASE"
+  rsync --dry-run -a --itemize-changes --exclude data/ --exclude corpus/records.jsonl --exclude corpus/exams.jsonl \
+    --exclude corpus/external/current/ --exclude corpus/external/releases/ \
+    --exclude scripts/pull_external.sh "$TMP_RELEASE/" "$APP_ROOT/"
+  echo "[deploy] dry-run passed; runtime data and external delivery files are excluded"
+  exit 0
+fi
 mkdir -p "$BACKUP_DIR" "$RELEASE_DIR"
 echo "[deploy] backing up data"
-BACKUP_TMP="${APP_ROOT}/.data_backup_v333_${STAMP}.tar.gz"
+BACKUP_TMP="${APP_ROOT}/.data_backup_v334_${STAMP}.tar.gz"
 tar -czf "$BACKUP_TMP" -C "$APP_ROOT" data
-mv "$BACKUP_TMP" "${BACKUP_DIR}/data_backup_v333_${STAMP}.tar.gz"
+mv "$BACKUP_TMP" "${BACKUP_DIR}/data_backup_v334_${STAMP}.tar.gz"
 echo "[deploy] saving current code release"
 git archive HEAD | tar -x -C "$RELEASE_DIR"
 echo "[deploy] fetching ${REMOTE_REF}"

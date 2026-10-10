@@ -1,4 +1,4 @@
-# v3.3.3 安全专项审计记录
+# v3.3.4 安全专项审计记录
 
 ## 本版已处理
 
@@ -7,6 +7,8 @@
 - 统一响应增加 `X-Content-Type-Options`、`X-Frame-Options`、`Referrer-Policy`、`Permissions-Policy` 和 `Cross-Origin-Opener-Policy`。
 - 反向代理使用 HTTPS 时，通过 `HTTPS=1`、`TRUST_PROXY=1` 或 `X-Forwarded-Proto: https` 为会话 Cookie 加 `Secure`。
 - `npm test` 在隔离沙箱中验证以上行为，避免测试触碰真实 `data/`。
+- 静态文件服务使用 `path.relative` 目录边界校验，路径穿越请求不再依赖字符串前缀判断。
+- 响应增加基础 CSP：脚本仅允许同源，图片允许同源/data/blob，禁止被 iframe 嵌入。
 
 ## 部署边界
 

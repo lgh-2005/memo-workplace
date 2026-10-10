@@ -727,6 +727,17 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.3.4',
+    date: '2026-10-10',
+    title: '文档统一、发布回滚演练、CI 平台确认与安全审计补齐',
+    items: [
+      '① 统一 AGENTS.md、部署/测试/安全文档与产品版本口径，明确 Gitee 主仓库、GitHub Actions CI 与 ECS 发布边界；',
+      '② 部署与回滚脚本新增 --dry-run，验证运行时 data、真题、外刊和投递脚本不会被产品发布覆盖；',
+      '③ 静态文件服务改用 path.relative 目录边界校验，补齐图片与 public 目录路径穿越回归测试；',
+      '④ 安全响应补充 CSP，npm test 增加 CSP 与路径穿越断言。',
+    ],
+  },
+  {
     version: '3.3.3',
     date: '2026-10-10',
     title: '可复现测试、发布回滚自动化与安全审计加固',
@@ -5748,6 +5759,12 @@ function setSecurityHeaders(res) {
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('Permissions-Policy', 'camera=(self), microphone=(), geolocation=()');
   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+  res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https:; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
+}
+
+function isWithinDir(baseDir, targetPath) {
+  const rel = path.relative(path.resolve(baseDir), path.resolve(targetPath));
+  return rel === '' || (rel !== '..' && !rel.startsWith('..' + path.sep) && !path.isAbsolute(rel));
 }
 
 function readBody(req, max = 5e6) {
@@ -8984,13 +9001,17 @@ CRITICAL TRANSCRIPTION RULES:
     // v1.0.6：生成的助记图（/images/*，从 data/images 提供）
     if (p.startsWith('/images/')) {
       const baseDir = currentImagesDir();
-      const imgPath = path.join(baseDir, p.slice('/images/'.length));
-      if (!imgPath.startsWith(baseDir) || !fs.existsSync(imgPath)) { res.writeHead(404); return res.end('Not Found'); }
+      let requested;
+      try { requested = decodeURIComponent(p.slice('/images/'.length)); } catch { res.writeHead(400); return res.end('Bad Request'); }
+      const imgPath = path.resolve(baseDir, requested);
+      if (!isWithinDir(baseDir, imgPath) || !fs.existsSync(imgPath)) { res.writeHead(404); return res.end('Not Found'); }
       res.writeHead(200, { 'Content-Type': MIME[path.extname(imgPath).toLowerCase()] || 'application/octet-stream' });
       return fs.createReadStream(imgPath).pipe(res);
     }
-    let filePath = path.join(PUBLIC_DIR, p === '/' ? 'index.html' : p);
-    if (!filePath.startsWith(PUBLIC_DIR)) { res.writeHead(403); return res.end(); }
+    let filePath;
+    try { filePath = path.resolve(PUBLIC_DIR, decodeURIComponent(p === '/' ? 'index.html' : p)); }
+    catch { res.writeHead(400); return res.end('Bad Request'); }
+    if (!isWithinDir(PUBLIC_DIR, filePath)) { res.writeHead(403); return res.end(); }
     if (!fs.existsSync(filePath)) { res.writeHead(404); return res.end('Not Found'); }
     const ext = path.extname(filePath).toLowerCase();
     res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream', 'Cache-Control': 'no-store' });

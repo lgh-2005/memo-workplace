@@ -38,6 +38,11 @@ try {
   const status = await fetch(`${base}/api/auth/status`);
   if (status.headers.get('x-content-type-options') !== 'nosniff') throw new Error('missing security headers');
   if (status.headers.get('x-frame-options') !== 'DENY') throw new Error('missing frame protection');
+  if (!status.headers.get('content-security-policy')?.includes("frame-ancestors 'none'")) throw new Error('missing CSP');
+  const traversal = await fetch(`${base}/images/%2e%2e/server.js`);
+  if (![403, 404].includes(traversal.status)) throw new Error(`image traversal was not rejected: ${traversal.status}`);
+  const publicTraversal = await fetch(`${base}/%2e%2e/server.js`);
+  if (![403, 404].includes(publicTraversal.status)) throw new Error(`public traversal was not rejected: ${publicTraversal.status}`);
   const crossSite = await fetch(`${base}/api/auth/login`, {
     method: 'POST', headers: { 'content-type': 'application/json', Origin: 'https://evil.example' },
     body: JSON.stringify({ token: 'nope' }),
