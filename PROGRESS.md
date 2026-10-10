@@ -1,15 +1,68 @@
 # 项目交接与当前进度 (Agent Handover State)
 
-> 生成时间：2026-09-14（北京时间）· 最近更新：2026-09-25（v3.2.0）
-> 生成者：AI 工程负责人（v3.2.0 多用户 P2/P3 合并交付已完成）
+> 生成时间：2026-09-14（北京时间）· 最近更新：2026-10-10（v3.3.1）
+> 生成者：AI 工程负责人（v3.3.1 出站 fetch 统一超时护栏已完成）
 > 工作区根：`D:\ai\opencode\momo`
 > 应用仓库根：`D:\ai\opencode\momo\english-workbench`（独立 git 仓库，分支 `master`）
-> **当前版本：`v3.2.0`**（`package.json` = `3.2.0`，`public/index.html` 三处版本标识 = `v3.2.0`，零 dependencies）
-> **Gitee HEAD：`726bd7f`**（v3.2.0 多用户 P2 数据分区收尾 + P3 集成改造）。线上 ECS `/opt/workbench` 已 ff 合并至 `726bd7f` 并重启，`workbench.service` active，多用户已启用（`config.multiUser=true`），线上冒烟 16/16；`external.format=v2` / `count=4070`。
+> **当前版本：`v3.3.1`**（`package.json` = `3.3.1`，`public/index.html` 三处版本标识 = `v3.3.1`，`public/sw.js` 缓存名 = `wb-shell-v3.3.1`，零 dependencies）
+> **Gitee HEAD：`adfc405`**（v3.3.1 出站 fetch 统一超时护栏）。线上 ECS `/opt/workbench` 已 ff 合并并重启，`workbench.service` active，多用户保持启用（`config.multiUser=true`），外部语料 `external.format=v2` / `count=4070`。
 
 ---
 
-## 0. ⭐ v3.2.0 多用户 P2 数据分区收尾 + P3 集成改造（最新，已完成）
+## 0. ⭐ v3.3.1 出站 fetch 统一超时护栏（最新，已完成）
+
+**主题**：修复用户线上实测「无法切换默认模型 / 模型列表拉取失败」。详细见根工作区《版本号经历.md》v3.3.1 章节。
+
+**根因**：多用户下所有写请求经 **per-user 写串行队列** `enqueueUserWrite(userId, run)` 执行，新请求链挂在同一用户上一个未 settle 的 Promise 之后；而服务端各处出站 `fetch` **无超时**（全文件仅韦氏词典一处有 `AbortSignal.timeout`），任一上游（LLM/墨墨/生图/搜索/MinerU）无响应时 Node fetch 永久挂起 → 其所在 `run()` 永不 resolve → **该用户整条写链被永久污染**，后续所有写请求排队卡死（GET 与白名单登录不受影响）。
+
+**关键成果**：
+- **① 统一护栏**：`server.js` 顶部新增 `fetchT(url, opts, timeoutMs)`（`AbortSignal.timeout`；默认 30s，`FETCH_TIMEOUT_MS` 可覆盖；调用方自带 `signal` 时尊重调用方）。
+- **② 全部 12 处出站 fetch 改用之**：LLM 对话/流式 5 分钟、墨墨 `mm()` 15s、模型列表 20s、生图 2 分钟/下载 30s、网页搜索 30s、MinerU 30s/2 分钟/20s/60s/20s；韦氏词典保留原 15s。
+
+**验证**：`node --check` server/app/sw 0 错误；`grep` 确认 12 处 fetch 全部改为 `fetchT`；专项断言——模拟「永不响应的 HTTP 服务」，`fetchT(..., 1500)` 在 **1508ms 抛 `TimeoutError`**；本地回归 **34 后端套件 + 7 浏览器套件退出码 0**（`test_v212.js` 为文档记载遗留失败，与本改动无关）。
+
+**发布**：commit `adfc405`，Gitee `master` 已推；ECS `/opt/workbench` 已 ff 合并至 `adfc405`（先 `tar` 备份 data 至 `data_backup_v331_20261010-193423.tar.gz`，用 `git checkout origin/master -- <产品文件> && git merge --ff-only` 保留运行时 `corpus/records.jsonl`），服务重启后 `active`，线上冒烟 16/16（三方哈希一致，版本 v3.3.1）；线上实测 `POST /api/config`（切 activeId）由「永久挂起」→ **200/0.009s**、`POST /api/llm/models` 由「永久挂起」→ **200/1.59s**。
+
+---
+
+## 0. ⭐ v3.3.0 PWA 可安装（已完成）
+
+**主题**：让工作台从「网页」变成「可安装的应用」——手机端添加主屏幕、桌面端装成独立窗口，装好后从图标直接打开、全屏无地址栏，并具备离线打开界面的能力。详细见根工作区《版本号经历.md》v3.3.0 章节。
+
+**决策基线（用户拍板）**：入口**维持 IP**（不启用域名）、**要离线缓存**、图标由 **AI（Pillow）生成**。**关键技术约束（已说明并接受）**：Service Worker 仅安全上下文（HTTPS/localhost）注册；HTTP/IP 入口下 Android 一键安装与离线暂不可用（可加普通快捷方式），iOS Safari「添加到主屏幕」不受 HTTPS 限制、可全屏独立运行。全套资产与注册逻辑已就位，**日后启用 HTTPS 即自动获得完整安装 + 离线**。
+
+**关键成果**：
+- **① 图标**：`public/icons/`（`icon-{192,512,180,152,167,120}.png` + `maskable-{192,512}.png` + `favicon.ico` + `favicon.svg`，蓝色圆角底 + 鲸鱼）。
+- **② Manifest**：`public/manifest.webmanifest`（standalone / start_url:/ / scope:/ / theme_color / 图标 any+maskable / shortcuts 单词测验·今日学习）。
+- **③ Service Worker**：`public/sw.js`（预缓存应用外壳；`/api`·`/images`·跨域直连；导航网络优先失败回退；静态资源 stale-while-revalidate）。
+- **④ 注册守卫 + 安装 UI**：`pwaRegisterSW()` 判 `isSecureContext`（HTTP 跳过）；设置页「📱 安装到桌面」区 `#installSection`（beforeinstallprompt 一键 / iOS 与非安全上下文图文指引）；`?tab=` 快捷方式直达。
+- **⑤ 服务端**：`MIME` 表新增 `.webmanifest` 与常见图片/字体类型。
+
+**验证**：`node --check` server/app/sw 0 错误、manifest JSON 可解析；新增 `test_v330_pwa.js`(**31**，后端+浏览器，含 SW 注册接管 + **离线仍可打开应用外壳** + `?tab=` 直达) 全绿；**为补齐沙箱 PWA 资源新增 `_test_util.copyPublic()` 并接入 61 套测试**；全量回归 **本地 60 套件退出码 0**。
+
+**发布**：commit `099710c`，Gitee `master` 已推；ECS `/opt/workbench` 已 ff 合并至 `099710c`（先 `tar` 备份 data 至 `data_backup_v330_20260927-191859.tar.gz`，用 `git checkout origin/master -- <产品文件> && git merge --ff-only` 保留运行时 `corpus/records.jsonl`），服务重启后 `active`，线上冒烟 16/16（三方哈希一致，版本 v3.3.0），线上实测 `/manifest.webmanifest`·`/sw.js`·`/icons/*` 全部 200。
+
+---
+
+## 0. ⭐ v3.2.1 测验体验四项升级（已完成）
+
+**主题**：一轮**纯前端体验 + 后端解锁**的功能版，解决用户实测测验页的三处别扭（该自动却手点 / 该放开却设上限 / chip 无数目）。详细见根工作区《版本号经历.md》v3.2.1 章节。
+
+**决策基线（用户拍板）**：信心信号 = **耗时 + 正误**（仅影响周报，不影响 SRS 调度）；信心 UI 仅改基础/自适应/复练，**迁移保留手选**；题量**下限 1、无上限**（受词源/释义约束）；自动播报仅 **flash/choice/audio/复练**（zh2en/spell 防泄题不播）、开关默认开；词源计数显示**原始候选数**；**释义预补不封顶**（随题量自由膨胀）。
+
+**关键成果**：
+- **① 智能信心**：纯函数 `inferQuizConfidence({grade,durationMs,spelling})`（基准 `clamp(1200+180×词长, 2500, 8000)ms`），`quizRecord`/`srsRecord` 覆写并展示判定；删除基础手动信心组与全部引用（迁移独立组保留）。
+- **② 题量解锁**：前端 4 处钳制 → `Math.max(1,…)`；后端 generate 3..50 → ≥1、`<3` 门槛 → `<1`、vocab 3..20 → ≥1；`QUIZ_SESSION_MAX_ITEMS` 100→10000、提交/复练到期截断同步放宽；释义预补不封顶。
+- **③ 自动播报**：`autoSpeakQuizWord` 走浏览器 TTS，`renderQuizItem`/`renderSrsItem` 进入即播；`#quizAutoSpeak` 开关默认开、`localStorage['wb-quiz-autospeak']` 持久化。
+- **④ 词源计数**：新增只读 `GET /api/quiz/sources`（8 词源 + 3 复练范围去重计数），前端 chip 追加 `· N`（失败静默）。
+
+**验证**：`node --check` 0 错误；新增 `test_v321_quiz_ux.js`(**30**，后端+浏览器) 全绿；更新 `test_v2110_quiz_generate.js`/`test_v220_ui.js`/`test_v221_playwright.js`/`test_v228_vocab_ui.js`；全量回归 **本地 59 套件退出码 0**。
+
+**发布**：commit `8ad4cf4`，Gitee `master` 已推；ECS `/opt/workbench` 已 ff 合并至 `8ad4cf4`（先 `tar` 备份 data 至 `data_backup_v321_20260927-181821.tar.gz`），服务重启后 `active`，线上冒烟 16/16（三方哈希一致，版本 v3.2.1），线上实测 `GET /api/quiz/sources` 返回真实计数（today 553 / all 7984）。
+
+---
+
+## 0. ⭐ v3.2.0 多用户 P2 数据分区收尾 + P3 集成改造（已完成）
 
 **主题**：多用户路线图 **P2/P3 合并交付**。P2 把「用户级文件真正按用户落盘」收尾为「共享资源写操作仅管理员 + 全量备份集成」；P3 把三处原全局集成（墨墨 Token/频控/云词本、LLM 调用、自动同步）改造为 per-user，并为共享 LLM Key 补上**用量统计与看板**。详细见根工作区《版本号经历.md》v3.2.0 章节。
 
