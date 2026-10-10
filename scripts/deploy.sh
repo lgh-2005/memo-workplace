@@ -12,7 +12,9 @@ HEALTH_URL="${WORKBENCH_HEALTH_URL:-http://127.0.0.1:5178/api/auth/status}"
 cd "$APP_ROOT"
 mkdir -p "$BACKUP_DIR" "$RELEASE_DIR"
 echo "[deploy] backing up data"
-tar -czf "${BACKUP_DIR}/data_backup_v333_${STAMP}.tar.gz" data
+BACKUP_TMP="${APP_ROOT}/.data_backup_v333_${STAMP}.tar.gz"
+tar -czf "$BACKUP_TMP" -C "$APP_ROOT" data
+mv "$BACKUP_TMP" "${BACKUP_DIR}/data_backup_v333_${STAMP}.tar.gz"
 echo "[deploy] saving current code release"
 git archive HEAD | tar -x -C "$RELEASE_DIR"
 echo "[deploy] fetching ${REMOTE_REF}"
