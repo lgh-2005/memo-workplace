@@ -23,7 +23,8 @@ git archive "origin/${REMOTE_REF}" | tar -x -C "$TMP_RELEASE"
 echo "[deploy] applying product files while preserving runtime data"
 command -v rsync >/dev/null 2>&1 || { echo "[deploy] rsync is required to preserve runtime data" >&2; exit 1; }
 rsync -a --exclude data/ --exclude corpus/records.jsonl --exclude corpus/exams.jsonl \
-  --exclude corpus/external/current/ --exclude corpus/external/releases/ "$TMP_RELEASE/" "$APP_ROOT/"
+  --exclude corpus/external/current/ --exclude corpus/external/releases/ \
+  --exclude scripts/pull_external.sh "$TMP_RELEASE/" "$APP_ROOT/"
 git reset --mixed "origin/${REMOTE_REF}" >/dev/null
 echo "[deploy] restarting ${SERVICE_NAME}"
 systemctl restart "$SERVICE_NAME"

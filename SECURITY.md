@@ -14,6 +14,7 @@
 - 生产入口必须使用 HTTPS；Node 应绑定 `127.0.0.1`，由 Nginx/Cloudflare 负责 TLS、访问日志和请求体上限。
 - `TRUSTED_ORIGINS` 可配置额外可信 Origin，多个值以逗号分隔；默认只接受当前 `Host` / `X-Forwarded-Host`。
 - 发布使用 `scripts/deploy.sh`，回滚使用 `scripts/rollback.sh`，不要直接在服务器执行 `git pull` 覆盖运行时数据。
+- 发布脚本还会保留 ECS 上由外刊投递链路维护的 `scripts/pull_external.sh`，该脚本不属于产品代码发布范围。
 
 ## 后续审计项
 
