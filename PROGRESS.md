@@ -1,11 +1,21 @@
 # 项目交接与当前进度 (Agent Handover State)
 
-> 生成时间：2026-09-14（北京时间）· 最近更新：2026-10-10（v3.3.1）
-> 生成者：AI 工程负责人（v3.3.1 出站 fetch 统一超时护栏已完成）
+> 生成时间：2026-09-14（北京时间）· 最近更新：2026-10-10（v3.3.2）
+> 生成者：AI 工程负责人（v3.3.2 移动端触控与窄屏布局优化、Gitee/ECS 发布已完成）
 > 工作区根：`D:\ai\opencode\momo`
 > 应用仓库根：`D:\ai\opencode\momo\english-workbench`（独立 git 仓库，分支 `master`）
-> **当前版本：`v3.3.1`**（`package.json` = `3.3.1`，`public/index.html` 三处版本标识 = `v3.3.1`，`public/sw.js` 缓存名 = `wb-shell-v3.3.1`，零 dependencies）
+> **当前版本：`v3.3.2`**（`package.json` = `3.3.2`，`public/index.html` 三处版本标识 = `v3.3.2`，`public/sw.js` 缓存名 = `wb-shell-v3.3.2`，零 dependencies）
 > **Gitee HEAD：`adfc405`**（v3.3.1 出站 fetch 统一超时护栏）。线上 ECS `/opt/workbench` 已 ff 合并并重启，`workbench.service` active，多用户保持启用（`config.multiUser=true`），外部语料 `external.format=v2` / `count=4070`。
+
+---
+
+## 0. ⭐ v3.3.2 移动端触控与窄屏布局收口（已发布）
+
+**关键成果**：移动端安全区高度、底部导航预留、测验/AI 子导航横向滚动、常用控件 44px 触控目标、设置/真题/测验/登录弹层的窄屏换行与滚动边界均已优化。新增 `.workbuddy/test_v332_mobile_ui.js`，覆盖 360/390/700/768px 视口。
+
+**验证**：移动端专项 30/30；PWA 31/31；触摸取词与拖拽 40/40；四风格 UI 契约 16/16；真题分轨 UI 17/17；测验 UX 30/30；多用户和用量看板 38/38。`node --check` server/app/sw 均通过。应用 `/api/logs/dev` 在 5801 端口报告版本 3.3.2。
+
+**发布**：提交 `3173c6f` 已推送 Gitee `master`；ECS `/opt/workbench` 已备份 `data_backup_v332_20261010.tar.gz` 后 ff 合并、重启 `workbench.service`；线上管理员只读冒烟返回版本 `3.3.2`，静态 HTML/CSS/SW 均返回新版本内容。
 
 ---
 
