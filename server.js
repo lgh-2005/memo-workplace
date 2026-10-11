@@ -727,6 +727,18 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.3.5',
+    date: '2026-10-11',
+    title: '运维可靠性与安全收口',
+    items: [
+      '新增一键备份恢复演练脚本：在隔离目录打包、校验并恢复 data，不改动线上运行数据',
+      '新增发布门禁与线上只读健康检查：核对版本、提交、响应安全头、PWA 静态资源与认证状态',
+      '新增安全审计报告与敏感信息扫描，并把工作手册、版本历史、产品文档纳入一致性检查',
+      '新增移动端模拟回归与 Android 真机（ADB + Chrome DevTools）测试入口；无真机时明确报告 skipped',
+      '修复跨平台静态资源路径解析，并补横屏触控设备 44px 点击目标回归',
+    ],
+  },
+  {
     version: '3.3.4',
     date: '2026-10-10',
     title: '文档统一、发布回滚演练、CI 平台确认与安全审计补齐',
@@ -9009,7 +9021,12 @@ CRITICAL TRANSCRIPTION RULES:
       return fs.createReadStream(imgPath).pipe(res);
     }
     let filePath;
-    try { filePath = path.resolve(PUBLIC_DIR, decodeURIComponent(p === '/' ? 'index.html' : p)); }
+    try {
+      // URL pathname always starts with `/`; strip it before path.resolve so
+      // Windows does not reinterpret `/style.css` as the drive root `D:\`.
+      const publicName = p === '/' ? 'index.html' : decodeURIComponent(p).replace(/^\/+/, '');
+      filePath = path.resolve(PUBLIC_DIR, publicName);
+    }
     catch { res.writeHead(400); return res.end('Bad Request'); }
     if (!isWithinDir(PUBLIC_DIR, filePath)) { res.writeHead(403); return res.end(); }
     if (!fs.existsSync(filePath)) { res.writeHead(404); return res.end('Not Found'); }

@@ -5,6 +5,8 @@
 > v3.3.3 增量：仓库内 `npm test` 提供可复现入口，隔离沙箱启动服务并验证语法、安全响应头、跨站写请求拒绝与登录接口频控；`.github/workflows/ci.yml` 在 Node 22/24 自动执行。
 >
 > v3.3.4 增量：`npm test` 增加 CSP 与静态路径穿越断言；`npm run test:release` 检查发布/回滚脚本的运行时排除规则、dry-run 入口与备份版本号；ECS 通过 `deploy.sh --dry-run` 和 `rollback.sh <snapshot> --dry-run` 做无停机演练。
+>
+> v3.3.5 增量：新增隔离式备份恢复演练、发布门禁、线上只读健康检查、敏感信息扫描、文档一致性检查和移动端回归入口。无 Android 真机时执行 Pixel 7 / iPhone 13 Playwright 模拟；连接真机后可执行 ADB + Chrome DevTools 检查。
 
 > 本文件是 `v2.2.8` 的**可审计测试来源声明**，随产品仓库进入 Gitee，供审计确认测试基线、脚本清单与预期结果。
 > 代码基线：`0705689`　·　对应 tag：`v2.2.8`　·　版本口径：`2.2.8`

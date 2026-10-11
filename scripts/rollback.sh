@@ -5,6 +5,7 @@ APP_ROOT="${WORKBENCH_ROOT:-/opt/workbench}"
 SERVICE_NAME="${WORKBENCH_SERVICE:-workbench.service}"
 TARGET="${1:-}"
 HEALTH_URL="${WORKBENCH_HEALTH_URL:-http://127.0.0.1:5178/api/auth/status}"
+HEALTH_BASE_URL="${WORKBENCH_HEALTH_BASE_URL:-http://127.0.0.1:5178}"
 DRY_RUN="${DRY_RUN:-0}"
 if [[ "${2:-}" == "--dry-run" || "${1:-}" == "--dry-run" ]]; then DRY_RUN=1; [[ "${1:-}" == "--dry-run" ]] && TARGET="${2:-}"; fi
 if [[ -z "$TARGET" ]]; then echo "usage: $0 <release-stamp>" >&2; exit 2; fi
@@ -23,7 +24,10 @@ rsync "${RSYNC_FLAGS[@]}" --exclude data/ --exclude corpus/records.jsonl --exclu
 if [[ "$DRY_RUN" == "1" ]]; then echo "[rollback] dry-run passed; runtime data and external delivery files are excluded"; exit 0; fi
 systemctl restart "$SERVICE_NAME"
 for i in $(seq 1 30); do
-  if curl -fsS "$HEALTH_URL" >/dev/null; then echo "[rollback] healthy: $TARGET"; exit 0; fi
+  if curl -fsS "$HEALTH_URL" >/dev/null; then
+    if [[ -f scripts/online-health.mjs ]]; then node scripts/online-health.mjs --url "$HEALTH_BASE_URL"; fi
+    echo "[rollback] healthy: $TARGET"; exit 0
+  fi
   sleep 1
 done
 echo "[rollback] health check failed" >&2

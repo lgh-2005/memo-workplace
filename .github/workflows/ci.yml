@@ -21,4 +21,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
       - run: npm test
+      - run: npm run test:syntax
+      - run: npm run test:release
+      - run: npm run test:ops
+      - run: npm run test:mobile

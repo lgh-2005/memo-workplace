@@ -71,7 +71,7 @@ ECS 控制台 → 安全组 → 添加入方向规则：TCP 5178（源建议先�
 > - 用 nginx 反向代理 80/443 并加 Basic Auth 或只放行自己 IP；
 > - 安全组源地址只填你常用网络的出口 IP。
 
-## 二、以后更新（v3.3.4 自动发布与回滚）
+## 二、以后更新（v3.3.5 发布门禁、备份恢复与回滚）
 
 本地改完代码 push 上去，服务器执行 `scripts/deploy.sh`。脚本会先备份 `data/`，保存当前代码快照，拉取 Gitee 指定版本，保留运行时语料，重启并等待健康检查：
 
@@ -88,7 +88,16 @@ sudo WORKBENCH_ROOT=/opt/workbench bash scripts/rollback.sh 20261010-193000
 
 发布脚本不会覆盖 `data/`、运行时 `corpus/records.jsonl`、`corpus/exams.jsonl` 和外刊运行目录；每次发布会在 `data/backups/` 保存数据备份，在 `.releases/` 保存代码快照。
 
-本地提交前执行 `npm test` 可复现核心安全冒烟与服务启动验证。
+本地提交前执行以下门禁，确保文档、敏感信息、发布脚本和版本标识一致：
+
+```bash
+npm run test:syntax
+npm run test:release
+npm run test:ops
+npm run test:mobile
+```
+
+`npm run test:mobile` 在没有手机时运行 Pixel 7 / iPhone 13 的 Playwright 模拟回归；有 Android 真机时执行 `npm run test:mobile:device`，该命令通过 ADB + Chrome DevTools 检查真实设备的页面溢出、导航、触控尺寸和控制台错误。
 
 发布前可在 ECS 做无停机演练：
 
@@ -99,6 +108,12 @@ bash scripts/rollback.sh <已有快照时间点> --dry-run
 ```
 
 `--dry-run` 只执行远端版本读取、快照读取和 `rsync --dry-run`，不会写入数据、替换产品文件或重启服务。正式发布后应记录实际备份文件、快照目录、健康检查结果，并至少用最近快照完成一次回滚后再重新发布当前版本。
+
+发布脚本会在备份和替换产品文件前执行 `release-gate.mjs --refs --remote`，核对 Gitee/GitHub `master` 和目标 SHA 的 GitHub Actions 成功状态；备份包生成后立即用隔离式 `backup-restore-drill.mjs --archive` 做逐文件恢复校验，重启后执行 `online-health.mjs`。备份恢复演练可单独运行，不会覆盖源数据：
+
+```bash
+bash scripts/backup-restore-drill.sh --source /opt/workbench/data --json
+```
 
 ## 三、HTTPS 配置（v1.2.0 强烈建议）
 

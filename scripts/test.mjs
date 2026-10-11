@@ -39,6 +39,10 @@ try {
   if (status.headers.get('x-content-type-options') !== 'nosniff') throw new Error('missing security headers');
   if (status.headers.get('x-frame-options') !== 'DENY') throw new Error('missing frame protection');
   if (!status.headers.get('content-security-policy')?.includes("frame-ancestors 'none'")) throw new Error('missing CSP');
+  const css = await fetch(`${base}/style.css`);
+  if (css.status !== 200 || !css.headers.get('content-type')?.includes('text/css')) throw new Error(`static CSS was not served: ${css.status}`);
+  const app = await fetch(`${base}/app.js`);
+  if (app.status !== 200 || !app.headers.get('content-type')?.includes('javascript')) throw new Error(`static JS was not served: ${app.status}`);
   const traversal = await fetch(`${base}/images/%2e%2e/server.js`);
   if (![403, 404].includes(traversal.status)) throw new Error(`image traversal was not rejected: ${traversal.status}`);
   const publicTraversal = await fetch(`${base}/%2e%2e/server.js`);

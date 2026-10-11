@@ -1,4 +1,12 @@
-# v3.3.4 安全专项审计记录
+# v3.3.5 安全审计与敏感信息扫描记录
+
+## 本版审计结果
+
+- `scripts/security-audit.mjs --check` 扫描 Git 跟踪及工作树中未忽略的源码和配置，检测私钥、云访问密钥、GitHub Token、Bearer Token 及高置信度明文密钥赋值；匹配时只报告文件、行号和类型，不回显敏感值。
+- `scripts/release-gate.mjs` 检查版本标识、必需发布脚本、Git 空白错误，并可用 `--refs` 核对 Gitee/GitHub `master` 提交一致、用 `--online` 调用只读线上健康检查。
+- `scripts/online-health.mjs` 只读取认证状态、应用外壳、Manifest、Service Worker 和安全响应头，不调用任何持久化写接口。
+- `scripts/backup-restore-drill.mjs` 在隔离临时目录校验 data 备份与恢复逐文件哈希，排除运行时 `data/backups/` 和临时文件，不覆盖源目录。
+- 移动端回归分为 Playwright 设备模拟和 Android ADB + Chrome DevTools 真机入口；没有物理设备时报告为 skipped，不伪造真机结果。
 
 ## 本版已处理
 

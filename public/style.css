@@ -4222,5 +4222,15 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   .logs-tab, .logs-add-card .btn, #errorClearBtn { min-height: 44px; }
 }
 
+/* v3.3.5：横屏手机仍是触控设备（视口宽度可能超过 700px）。 */
+@media (max-width: 1000px) and (pointer: coarse) {
+  button, [role="button"], summary,
+  .btn, .btn.small, .chip, .card-collapse-toggle, .exm-mode-btn,
+  .pagination-bar .page-btn, .hint-fold > summary, .settings-section > summary,
+  .quiz-submode-btn, .study-sub-item, .bottom-tab-item {
+    min-height: 44px;
+  }
+}
+
 
 
