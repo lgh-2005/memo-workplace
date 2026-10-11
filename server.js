@@ -501,21 +501,32 @@ function enqueueUserWrite(userId, fn) {
     return Promise.reject(e);
   }
   state.pending += 1;
-  const run = state.tail.then(async () => {
-    let timer;
-    const task = Promise.resolve().then(fn);
-    const timeout = new Promise((_, reject) => {
-      timer = setTimeout(() => {
-        const e = new Error('写请求处理超时，请稍后重试');
-        e.code = 'WRITE_TIMEOUT';
-        reject(e);
-      }, USER_WRITE_TIMEOUT_MS);
-      timer.unref?.();
+  /* 保持 tail 绑定真实任务完成态。调用方超时只能结束当前响应，不能让后续写入
+   * 越过仍可能落盘的旧任务，否则会重新引入并发覆盖。 */
+  const task = state.tail.then(() => Promise.resolve().then(fn));
+  const run = new Promise((resolve, reject) => {
+    let settled = false;
+    const timer = setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      const e = new Error('写请求处理超时，请稍后重试');
+      e.code = 'WRITE_TIMEOUT';
+      reject(e);
+    }, USER_WRITE_TIMEOUT_MS);
+    timer.unref?.();
+    task.then(value => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      resolve(value);
+    }, err => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      reject(err);
     });
-    try { return await Promise.race([task, timeout]); }
-    finally { clearTimeout(timer); }
   });
-  state.tail = run.then(() => {}, () => {}).finally(() => {
+  state.tail = task.then(() => {}, () => {}).finally(() => {
     state.pending = Math.max(0, state.pending - 1);
     if (state.pending === 0 && userWriteChains.get(userId) === state) userWriteChains.delete(userId);
   });
@@ -5867,6 +5878,7 @@ const MIME = {
 };
 
 function sendJSON(res, code, obj) {
+  if (res.destroyed || res.writableEnded) return;
   const body = JSON.stringify(obj);
   // v1.1.0：禁缓存（经验总结坑 #3）——前端改完立刻可见，杜绝"白排查半天"
   res.writeHead(code, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
@@ -6060,6 +6072,7 @@ function readBody(req, max = 5e6) {
     const onError = err => fail(err);
     const onAborted = () => { const e = new Error('请求已中断'); e.code = 'REQUEST_ABORTED'; fail(e); };
     const onClose = () => { if (!req.complete) onAborted(); };
+    if (req.aborted || req.destroyed) return onAborted();
     req.on('data', onData); req.on('end', onEnd); req.on('error', onError);
     req.on('aborted', onAborted); req.on('close', onClose);
   });
