@@ -1,4 +1,4 @@
-# v3.4.0 CI 平台与发布门禁确认
+# v3.4.1 CI 平台与发布门禁确认
 
 本项目采用双仓模式：
 
@@ -12,3 +12,5 @@
 v3.3.6 的 `npm test` 额外执行 `scripts/study-plan-smoke.mjs`，使用两个隔离用户验证考试计划、任务完成、听说训练会话和学习流水不串号。
 
 v3.4.0 增加 `scripts/frontend-refinement-smoke.mjs`，在隔离沙箱端到端验证简化后的导航、报告、计划、模型分配和组卷操作；`npm run test:mobile` 在 Pixel 7 / iPhone 13 模拟环境检查新入口布局与触控契约。
+
+v3.4.1 增加 `scripts/external-body-cache-smoke.mjs`，验证外刊 gzip 分片按需解压、行偏移随机读取、文件替换失效和有界 LRU 淘汰。

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * v3.4.0：移动端回归入口。
+ * v3.4.1：移动端回归入口。
  * --emulated 在无手机环境下执行可复现的移动契约检查；
  * --device 需要 Android ADB，并通过 Chrome DevTools 读取真实设备页面布局。
  */
@@ -30,7 +30,7 @@ async function contractChecks() {
   pass('horizontal subnav contract', /\.quiz-submode[^{]*\{[^}]*overflow-x:\s*auto/s.test(css) || /\.quiz-submode/.test(css));
   pass('touch selection guard', /SEL_TOUCH_DEVICE|user-select:\s*none/.test(css + js));
   pass('responsive max-width constraints', /max-width:\s*1280px/.test(css) && /@media\s*\(max-width:\s*700px\)/.test(css));
-  pass('version marker', /v3\.4\.0/.test(html));
+  pass('version marker', /v3\.4\.1/.test(html));
 }
 
 async function emulatedChecks() {

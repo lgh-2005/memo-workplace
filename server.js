@@ -730,6 +730,15 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.4.1', date: '2026-10-11', title: '外刊正文随机读取优化',
+    items: [
+      '外刊详情首次访问只解压对应 gzip 分片，并建立文章 ID 到 JSONL 行偏移的内存索引',
+      '同一分片后续详情请求直接按偏移解析目标行，避免重复整片解压与线性扫描',
+      '新增 16 MiB / 6 分片有界 LRU 缓存，发布目录替换后按文件指纹自动失效；保留旧版整包外刊兼容',
+      '新增外刊缓存专项冒烟，覆盖命中、失效、淘汰和再次按需解压',
+    ],
+  },
+  {
     version: '3.4.0', date: '2026-10-11', title: '前端重复入口精简与报告归位',
     items: [
       '首页合并今日任务与快捷入口，考试计划改为按需展开，统计集中到学习报告',
@@ -4172,6 +4181,10 @@ const RTYPE_LABEL = { qa_set: '题库', article: '文章', document: '文档', n
 let kbCache = { mtime: 0, records: [], sentences: null, sentencesKey: '' };
 let externalCache = { mtime: 0, records: [], thin: false };
 let externalSentenceCache = { mtime: 0, rows: [] };   // v2.9.0：外刊句子索引缓存
+const externalBodyShardCache = new Map();
+const EXTERNAL_BODY_CACHE_MAX_BYTES = 16 * 1024 * 1024;
+const EXTERNAL_BODY_CACHE_MAX_SHARDS = 6;
+let externalBodyCacheBytes = 0;
 
 function kbFile() {
   const dir = (config.kb && config.kb.dir || '').trim();
@@ -4245,21 +4258,63 @@ function loadExternalKb() {
   return externalCache.records;
 }
 
-/** v2.9.0：按需读取外刊全文分片。按 shard 打开 .gz 流，命中目标 id 即停，内存只驻留单篇。 */
+/** v3.4.1：按需解压分片，缓存有界的解压 Buffer 与文章字节偏移，后续随机读取只解析目标行。 */
 function externalLoadBody(id, shard) {
   const sh = Number.isInteger(shard) ? shard : shardOfId(id);
-  const file = path.join(externalBodyDir(), `body-${String(sh).padStart(2, '0')}.jsonl.gz`);
-  if (!fs.existsSync(file)) return null;
-  const zlib = require('zlib');
-  let buf;
-  try { buf = zlib.gunzipSync(fs.readFileSync(file)); } catch { return null; }
-  for (const line of buf.toString('utf8').split('\n')) {
-    if (!line) continue;
-    let body;
-    try { body = JSON.parse(line); } catch { continue; }
-    if (body && body.id === id) return body;
+  if (sh < 0 || sh > 15) return null;
+  const bodyDir = externalBodyDir();
+  const file = path.join(bodyDir, `body-${String(sh).padStart(2, '0')}.jsonl.gz`);
+  let stat;
+  try { stat = fs.statSync(file, { bigint: true }); } catch { return null; }
+
+  const key = `${path.resolve(bodyDir)}:${sh}`;
+  const fingerprint = [stat.dev, stat.ino, stat.size, stat.mtimeNs, stat.ctimeNs].join(':');
+  let entry = externalBodyShardCache.get(key);
+  if (entry && entry.fingerprint === fingerprint) {
+    externalBodyShardCache.delete(key);
+    externalBodyShardCache.set(key, entry);
+    return externalBodyAt(entry, id);
   }
-  return null;
+  if (entry) removeExternalBodyShard(key);
+
+  let buffer;
+  try { buffer = require('zlib').gunzipSync(fs.readFileSync(file)); } catch { return null; }
+  const offsets = new Map();
+  let start = 0;
+  for (let end = 0; end <= buffer.length; end++) {
+    if (end !== buffer.length && buffer[end] !== 10) continue;
+    if (end > start) {
+      try {
+        const row = JSON.parse(buffer.toString('utf8', start, end));
+        if (row && typeof row.id === 'string' && !offsets.has(row.id)) offsets.set(row.id, { start, end });
+      } catch { /* Ignore malformed JSONL rows. */ }
+    }
+    start = end + 1;
+  }
+
+  entry = { buffer, offsets, fingerprint };
+  if (buffer.length <= EXTERNAL_BODY_CACHE_MAX_BYTES) {
+    externalBodyShardCache.set(key, entry);
+    externalBodyCacheBytes += buffer.length;
+    while (externalBodyShardCache.size > EXTERNAL_BODY_CACHE_MAX_SHARDS || externalBodyCacheBytes > EXTERNAL_BODY_CACHE_MAX_BYTES) {
+      removeExternalBodyShard(externalBodyShardCache.keys().next().value);
+    }
+  }
+  return externalBodyAt(entry, id);
+}
+
+function externalBodyAt(entry, id) {
+  const range = entry.offsets.get(id);
+  if (!range) return null;
+  try { return JSON.parse(entry.buffer.toString('utf8', range.start, range.end)); }
+  catch { return null; }
+}
+
+function removeExternalBodyShard(key) {
+  const entry = externalBodyShardCache.get(key);
+  if (!entry) return;
+  externalBodyCacheBytes -= entry.buffer.length;
+  externalBodyShardCache.delete(key);
 }
 
 function shardOfId(id) {
@@ -4301,12 +4356,13 @@ function externalEnsureText(rec) {
   if (!rec || rec.text) return rec;
   try {
     const body = externalLoadBody(rec.id, rec.shard);
-    if (body) {
-      rec.text = Array.isArray(body.paragraphs) ? body.paragraphs.join('\n\n') : '';
-      rec.paragraphs = body.paragraphs || rec.paragraphs;
-      rec.sentences = body.sentences || rec.sentences;
-      rec.vocab_analysis = body.vocab_analysis || rec.vocab_analysis;
-    }
+    if (body) return {
+      ...rec,
+      text: Array.isArray(body.paragraphs) ? body.paragraphs.join('\n\n') : '',
+      paragraphs: body.paragraphs || rec.paragraphs,
+      sentences: body.sentences || rec.sentences,
+      vocab_analysis: body.vocab_analysis || rec.vocab_analysis,
+    };
   } catch {}
   return rec;
 }
@@ -7478,10 +7534,10 @@ async function handleRequest(req, res) {
             || loadExternalKb().find(x => x.id === m[1]);
           if (!r) return sendJSON(res, 404, { error: '记录不存在' });
           // v2.9.0：瘦索引只存元数据，命中外刊后在返回前按需补全文
-          if (r.external) externalEnsureText(r);
+          const record = r.external ? externalEnsureText(r) : r;
           return sendJSON(res, 200, {
             ok: true,
-            record: { ...r, rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype, items: u.searchParams.get('raw') === '1' ? (r.items || []) : kbOrderedItems(r) },
+            record: { ...record, rtypeLabel: RTYPE_LABEL[record.rtype] || record.rtype, items: u.searchParams.get('raw') === '1' ? (record.items || []) : kbOrderedItems(record) },
           });
         }
       }
