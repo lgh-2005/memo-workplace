@@ -484,12 +484,41 @@ function restoreFileSpecs() {
   return out;
 }
 
-/* v3.0.0：每用户写串行队列——同一用户的写请求按到达顺序串行执行，避免并发覆盖 */
+/* v3.0.0/v3.4.2：每用户写串行队列。断开请求、超时和过长队列都必须快速释放，
+ * 避免一个取消的请求永久堵住后续配置保存。 */
 const userWriteChains = new Map();
+const USER_WRITE_QUEUE_MAX = 32;
+const USER_WRITE_TIMEOUT_MS = 6 * 60_000;
 function enqueueUserWrite(userId, fn) {
-  const prev = userWriteChains.get(userId) || Promise.resolve();
-  const run = prev.then(() => fn());
-  userWriteChains.set(userId, run.then(() => {}, () => {}));
+  let state = userWriteChains.get(userId);
+  if (!state) {
+    state = { tail: Promise.resolve(), pending: 0 };
+    userWriteChains.set(userId, state);
+  }
+  if (state.pending >= USER_WRITE_QUEUE_MAX) {
+    const e = new Error('写请求过多，请稍后重试');
+    e.code = 'WRITE_QUEUE_FULL';
+    return Promise.reject(e);
+  }
+  state.pending += 1;
+  const run = state.tail.then(async () => {
+    let timer;
+    const task = Promise.resolve().then(fn);
+    const timeout = new Promise((_, reject) => {
+      timer = setTimeout(() => {
+        const e = new Error('写请求处理超时，请稍后重试');
+        e.code = 'WRITE_TIMEOUT';
+        reject(e);
+      }, USER_WRITE_TIMEOUT_MS);
+      timer.unref?.();
+    });
+    try { return await Promise.race([task, timeout]); }
+    finally { clearTimeout(timer); }
+  });
+  state.tail = run.then(() => {}, () => {}).finally(() => {
+    state.pending = Math.max(0, state.pending - 1);
+    if (state.pending === 0 && userWriteChains.get(userId) === state) userWriteChains.delete(userId);
+  });
   return run;
 }
 
@@ -729,6 +758,14 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '3.4.2', date: '2026-10-11', title: '默认模型服务商切换队列修复',
+    items: [
+      '修复管理员切换默认模型服务商时，前序取消的写请求可能永久堵塞配置保存的问题',
+      '请求体在客户端中断时立即释放；同一用户写队列增加 32 项上限和 6 分钟总超时，异常时返回明确状态码',
+      '线上重启后已验证默认服务商切换保存 200、刷新回读成功，原默认服务商已恢复',
+    ],
+  },
   {
     version: '3.4.1', date: '2026-10-11', title: '外刊正文随机读取优化',
     items: [
@@ -5999,21 +6036,32 @@ function speechTokenDistance(a, b) {
 function readBody(req, max = 5e6) {
   return new Promise((resolve, reject) => {
     let buf = '';
-    req.on('data', c => {
+    let settled = false;
+    const cleanup = () => {
+      req.off('data', onData); req.off('end', onEnd); req.off('error', onError);
+      req.off('aborted', onAborted); req.off('close', onClose);
+    };
+    const finish = value => { if (settled) return; settled = true; cleanup(); resolve(value); };
+    const fail = err => { if (settled) return; settled = true; cleanup(); reject(err); };
+    const onData = c => {
       buf += c;
       if (buf.length > max) {
         // v1.1.3：超限带 code 走统一错误映射（413）；resume() 排空剩余数据，连接可正常收尾
         req.resume();
         const e = new Error('请求体超过 ' + Math.round(max / 1e6) + 'MB 上限，请拆分文件');
         e.code = 'BODY_TOO_LARGE';
-        reject(e);
+        fail(e);
       }
-    });
-    req.on('end', () => {
-      if (!buf) return resolve({});
-      try { resolve(JSON.parse(buf)); } catch { reject(new Error('invalid JSON body')); }
-    });
-    req.on('error', reject);
+    };
+    const onEnd = () => {
+      if (!buf) return finish({});
+      try { finish(JSON.parse(buf)); } catch { fail(new Error('invalid JSON body')); }
+    };
+    const onError = err => fail(err);
+    const onAborted = () => { const e = new Error('请求已中断'); e.code = 'REQUEST_ABORTED'; fail(e); };
+    const onClose = () => { if (!req.complete) onAborted(); };
+    req.on('data', onData); req.on('end', onEnd); req.on('error', onError);
+    req.on('aborted', onAborted); req.on('close', onClose);
   });
 }
 
@@ -6131,7 +6179,12 @@ const server = http.createServer(async (req, res) => {
   const store = Object.assign({ ok: auth.ok }, auth.store);
   const run = () => requestContext.run(store, () => handleRequest(req, res));
   if (p.startsWith('/api/') && MULTIUSER && auth.ok && !AUTH_WHITELIST.has(p) && WRITE_METHODS.has(req.method)) {
-    return enqueueUserWrite(auth.store.userId, run);
+    return enqueueUserWrite(auth.store.userId, run).catch(err => {
+      if (err.code === 'WRITE_QUEUE_FULL') return sendJSON(res, 429, { error: err.message, code: err.code });
+      if (err.code === 'WRITE_TIMEOUT') return sendJSON(res, 504, { error: err.message, code: err.code });
+      if (!res.headersSent) return sendJSON(res, 500, { error: err.message, code: err.code });
+      try { res.destroy(); } catch {}
+    });
   }
   return run();
 });

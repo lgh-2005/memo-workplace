@@ -10,7 +10,7 @@
 >
 > v3.3.6 增量：`scripts/study-plan-smoke.mjs` 在双用户隔离沙箱覆盖考试计划保存/非法日期、任务完成同步、听力/口语评分、会话防重放、流水隔离和同源麦克风策略；Playwright 移动模拟覆盖听说页与任务中心的无溢出、44px 触控和手动识别降级。
 >
-> v3.4.1 增量：`scripts/external-body-cache-smoke.mjs` 覆盖外刊分片首次解压、同分片命中缓存、分片替换失效、六分片 LRU 淘汰与再次按需解压；`scripts/frontend-refinement-smoke.mjs` 继续覆盖前端精简回归。
+> v3.4.2 增量：`scripts/external-body-cache-smoke.mjs` 覆盖外刊分片首次解压、同分片命中缓存、分片替换失效、六分片 LRU 淘汰与再次按需解压；`scripts/frontend-refinement-smoke.mjs` 继续覆盖前端精简回归。
 
 > 本文件是 `v2.2.8` 的**可审计测试来源声明**，随产品仓库进入 Gitee，供审计确认测试基线、脚本清单与预期结果。
 > 代码基线：`0705689`　·　对应 tag：`v2.2.8`　·　版本口径：`2.2.8`

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** v3.4.1：线上只读健康检查，不调用任何持久化写接口。 */
+/** v3.4.2：线上只读健康检查，不调用任何持久化写接口。 */
 const args = process.argv.slice(2);
 const valueOf = name => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : undefined; };
 const base = (valueOf('--url') || process.env.WORKBENCH_ONLINE_URL || 'http://127.0.0.1:5178').replace(/\/$/, '');
