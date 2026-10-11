@@ -4,8 +4,8 @@
 <meta charset="UTF-8" data-page-node-id="jJ2TzRBunJhs9LdkX6E9EG">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="oWFDBFujyrY5KW9n2DbmLZ">
 <title>英语学习工作台</title>
-<!-- v3.3.6：今日任务中心、考试计划与听说训练 -->
-<!-- v3.3.6：运维可靠性、安全收口、移动端真机回归与文档一致性检查 -->
+<!-- v3.4.0：精简重复入口，报告按数据来源集中展示，设置与管理操作按需展开。 -->
+
 <!-- v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） -->
 <meta name="theme-color" content="#3b82f6">
 <meta name="description" content="墨墨背单词同步 + AI 教练互动 + 真题语料注入的考研 / 六级英语学习工作台">
@@ -25,7 +25,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.3.6</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.4.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -37,22 +37,22 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.3.6</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.4.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
-    <button class="tab active" data-tab="dashboard" data-page-node-id="o15ZdFLBAnybA5gFW9Sf58">📊 仪表盘</button>
+    <button class="tab active" data-tab="dashboard" data-page-node-id="o15ZdFLBAnybA5gFW9Sf58">📊 今日学习</button>
     <button class="tab" data-tab="study" data-page-node-id="eBIb7j6N2U87cA5iGjeTTD">💬 AI 学习</button>
     <button class="tab" data-tab="quiz" data-page-node-id="3FXEzFdeeBZ3UbAbosesG8">📝 测验</button>
-    <button class="tab" data-tab="pomo" data-page-node-id="Bh88PnFT9HGZbJj74MDrlK">🍅 番茄钟</button>
+    <button class="tab" data-tab="pomo" data-page-node-id="Bh88PnFT9HGZbJj74MDrlK">🍅 专注工具</button>
     <button class="tab" data-tab="speaking">🎧 听说训练</button>
 
     <div class="tab-group-label" data-page-node-id="II9XTwl8cYai4EgDRImnfQ">题库与语料</div>
-    <button class="tab" data-tab="exam" data-page-node-id="hhGxvXfJ1AAKzff1vMtGrc">🗂 真题库</button>
+    <button class="tab" data-tab="exam" data-page-node-id="hhGxvXfJ1AAKzff1vMtGrc">🗂 真题训练</button>
     <button class="tab" data-tab="kb" data-page-node-id="vCt5b9lHOLdQZDdgLPNtOh">📚 语料库</button>
-    <button class="tab" data-tab="unit" data-page-node-id="djvygPfgQtHOaSAW7mJ6Tw">🧩 单元题库</button>
     <button class="tab" data-tab="notes" data-page-node-id="Qj2ehEZr3MtAKm89ciXEDf">📖 助记库</button>
 
+    <button class="tab" data-tab="reports">📈 学习报告</button>
     <div class="tab-group-label" data-page-node-id="wE6nqQfZt85IE3opAjyDxM">系统</div>
     <button class="tab" data-tab="settings" data-page-node-id="8WsV3HbAQPP96lYjOxMBtO">⚙️ 设置</button>
   </nav>
@@ -110,7 +110,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.3.6</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.4.0</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -162,13 +162,10 @@
   </section>
 
   <!-- ============ 仪表盘 ============ -->
-  <section id="tab-dashboard" class="tab-page active" data-page-node-id="KzRxvTw5mAmkf2aNoMRYpq">
-    <div class="sync-banner" id="syncBanner" style="display:none" data-page-node-id="b1PSdgHAeJ2EcRWOlQpnKS">
+  <section id="tab-dashboard" class="tab-page active"><div class="sync-banner" id="syncBanner" style="display:none" data-page-node-id="b1PSdgHAeJ2EcRWOlQpnKS">
       <span id="syncBannerText" data-page-node-id="inGWePDGx6rjeLit3A78e0">今日数据还未同步</span>
       <button class="btn small" id="bannerSyncBtn" data-page-node-id="OLOfEXWjgbEEtlpGGQxE1Z">立即同步</button>
-    </div>
-    <!-- v1.2.1：考研倒计时横幅 -->
-    <div class="card kaoyan-countdown" id="kaoyanCountdown" style="display:none">
+    </div><div class="card kaoyan-countdown" id="kaoyanCountdown" style="display:none">
       <div class="countdown-row">
         <div class="countdown-main">
           <span class="countdown-num" id="countdownDays">—</span>
@@ -184,14 +181,39 @@
         </div>
       </div>
     </div>
-
-    <div class="grid-2 study-plan-grid">
-      <div class="card" id="todayTasksCard">
+  <div class="page-heading"><h1>今日学习</h1><button class="btn" data-jump="reports">查看学习报告</button></div>
+  <div class="card" id="todayTasksCard">
         <div class="card-title-row"><div class="card-title">🧭 今日任务中心</div><span class="hint" id="todayTasksSummary"></span></div>
         <div class="study-task-list" id="todayTasksList"><div class="hint">正在加载今日任务…</div></div>
+      <details class="task-extra"><summary>其他词汇练习</summary><div class="row-gap">
+  <button class="btn" data-jump="study" data-filter="sticky">攻克顽固词</button>
+  <button class="btn" data-jump="study" data-filter="due7">7 天内复习</button>
+  <button class="btn" data-jump="quiz" data-filter="today">测验今日词</button>
+</div></details><div class="hint" id="setupHint" style="display:none" data-page-node-id="84FdKCIDxTPIiNzoaVb8ku">
+          ⚠️ 首次使用请先到 <a href="#" data-jump="settings" data-page-node-id="57HFRUnKroWSmVAud0L6jF">设置</a> 填写墨墨 Token 与 AI 服务商配置。
+        </div></div><div class="today-summary">
+      <div class="stat">
+        <div class="stat-label">墨墨今日进度</div>
+        <div class="stat-value" id="statProgress">—</div>
+        <div class="stat-sub" id="statProgressSub">尚未同步</div>
       </div>
-      <div class="card" id="studyPlanCard">
-        <div class="card-title-row"><div class="card-title">🎯 考试计划</div><span class="hint">按用户同步</span></div>
+      <div class="stat">
+        <div class="stat-label">墨墨学习时长</div>
+        <div class="stat-value" id="statTime">—</div>
+        <div class="stat-sub" id="statTimeSub"></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">顽固词</div>
+        <div class="stat-value warn" id="statSticky">—</div>
+        <div class="stat-sub">反复忘记，优先攻克</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">墨墨计划总词数</div>
+        <div class="stat-value" id="statTotal">—</div>
+        <div class="stat-sub" id="statWordsSub"></div>
+      </div>
+    </div><details class="plan-editor" id="studyPlanCard">
+        <summary><span>调整考试计划</span><span id="studyPlanSummary" class="hint"></span></summary>
         <div class="study-plan-form">
           <label class="field-label">考试类型
             <select class="input" id="studyPlanExamType"><option value="kaoyan1">考研英语一</option><option value="cet6">六级英语</option><option value="custom">自定义考试</option></select>
@@ -204,47 +226,14 @@
           </div>
           <div class="row-gap"><button class="btn primary" id="studyPlanSaveBtn" type="button">保存考试计划</button><span class="result" id="studyPlanResult"></span></div>
         </div>
-      </div>
-    </div>
-
-    <div class="grid-4">
-      <div class="card stat">
-        <div class="stat-label">今日进度</div>
-        <div class="stat-value" id="statProgress">—</div>
-        <div class="stat-sub" id="statProgressSub">尚未同步</div>
-      </div>
-      <div class="card stat">
-        <div class="stat-label">今日学习时长</div>
-        <div class="stat-value" id="statTime">—</div>
-        <div class="stat-sub" id="statTimeSub"></div>
-      </div>
-      <div class="card stat">
-        <div class="stat-label">顽固词</div>
-        <div class="stat-value warn" id="statSticky">—</div>
-        <div class="stat-sub">反复忘记，优先攻克</div>
-      </div>
-      <div class="card stat">
-        <div class="stat-label">计划总词数</div>
-        <div class="stat-value" id="statTotal">—</div>
-        <div class="stat-sub" id="statWordsSub"></div>
-      </div>
-    </div>
-
-    <!-- v1.2.1：词汇掌握度 + 测验概况 -->
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-title">词汇掌握度分布</div>
-        <div class="mastery-bar" id="masteryBar"></div>
-        <div class="mastery-legend" id="masteryLegend"></div>
-      </div>
-      <div class="card">
-        <div class="card-title">测验与做题概况</div>
-        <div class="quiz-overview" id="quizOverview">暂无数据</div>
-      </div>
-    </div>
-
-    <!-- v2.2.3：学习诊断周报（7/14/30天自然日窗口诊断） -->
-    <div class="card card-collapsible" id="learningReportCard">
+      </details></section>
+<section id="tab-reports" class="tab-page">
+  <div class="page-heading"><h1>学习报告</h1><span class="hint">按数据来源查看，避免混淆学习进度</span></div>
+  <div class="report-source-nav" aria-label="统计来源">
+    <button class="btn primary" data-report-view="workbench">工作台训练</button>
+    <button class="btn" data-report-view="maimemo">墨墨学习</button>
+  </div>
+  <div id="report-workbench" class="report-source-panel"><div class="card card-collapsible" id="learningReportCard">
       <div class="card-title-row">
         <div class="card-title">📈 学习诊断报告（<span id="reportWinLabel">最近 7 天</span>）</div>
         <div class="report-win-btns">
@@ -258,10 +247,33 @@
       <div class="card-collapse-body" id="learningReportBody">
         <div class="hint">正在加载学习诊断数据…</div>
       </div>
-    </div>
+    </div><div class="card"><div class="card-title">工作台测验与记忆</div><div class="hint">仅统计工作台训练记录；掌握度记忆独立于墨墨。</div><div class="quiz-overview" id="quizOverview">暂无数据</div><div id="quizStatsPane">
 
-    <!-- 流水记录弹层 (Modal) -->
-    <div class="kb-fix-modal" id="reportModal" style="display:none">
+        <div class="row-gap" style="align-items:center">
+          <button type="button" class="chip active" data-statsdays="7">近 7 天</button>
+          <button type="button" class="chip" data-statsdays="14">近 14 天</button>
+          <button type="button" class="chip" data-statsdays="30">近 30 天</button>
+          <button class="btn small" id="quizStatsRefreshBtn">🔄 刷新</button>
+        </div>
+        <div class="result" id="quizStatsMsg"></div>
+        <div class="quiz-stats-board" id="quizStatsBoard"></div>
+    </div></div></div>
+  <div id="report-maimemo" class="report-source-panel" hidden><div class="grid-2">
+      <div class="card">
+        <div class="card-title">墨墨词汇掌握状态</div>
+        <div class="mastery-bar" id="masteryBar"></div>
+        <div class="mastery-legend" id="masteryLegend"></div>
+      </div>
+    </div><div class="grid-2" data-page-node-id="N8gxQ5TIGBX3TPlnfqA0bw">
+      <div class="card" data-page-node-id="vz6vu1SAUEcxcddvkQGDbe">
+        <div class="card-title" data-page-node-id="TqH3Cj40tSmEgOJu09iHLJ">墨墨未来 7 天复习量</div>
+        <div class="bars" id="forecastBars" data-page-node-id="nS8WaAFk2peLLrvhkNevON"></div>
+      </div>
+      <div class="card" data-page-node-id="DIfWA7eOhg9MGbLA8e0z8f">
+        <div class="card-title" data-page-node-id="ZEkq71XtIhgTUiWDsadWyx">墨墨学习成果（最近 14 天）</div>
+        <div class="bars line-bars" id="historyBars" data-page-node-id="TI6Pe9jEouQlOARRdZsHfu"></div>
+      </div>
+    </div></div><div class="kb-fix-modal" id="reportModal" style="display:none">
       <div class="kb-fix-dialog">
         <div class="kb-fix-head">
           <div class="kb-fix-title">📜 细粒度作答流水记录</div>
@@ -271,63 +283,26 @@
           <span class="field-label" style="padding:0">题型过滤:</span>
           <select class="input" id="reportKindFilter" style="width:auto;padding:4px 8px;font-size:12px">
             <option value="">全部题型</option>
-            <option value="word_quiz">单词测验 (word_quiz)</option>
-            <option value="vocab_context">语境选义 (vocab_context)</option>
-            <option value="vocab_cloze">搭配补全 (vocab_cloze)</option>
-            <option value="unit_objective">客观真题 (unit_objective)</option>
-            <option value="translation">真题翻译 (translation)</option>
-            <option value="writing">真题写作 (writing)</option>
-            <option value="sentence_analysis">长难句三遍训练 (sentence_analysis)</option>
-            <option value="listening">听力训练 (listening)</option>
-            <option value="speaking">口语训练 (speaking)</option>
+            <option value="word_quiz">单词测验</option>
+            <option value="vocab_context">语境选义</option>
+            <option value="vocab_cloze">搭配补全</option>
+            <option value="unit_objective">客观真题</option>
+            <option value="translation">真题翻译</option>
+            <option value="writing">真题写作</option>
+            <option value="sentence_analysis">长难句三遍训练</option>
+            <option value="listening">听力训练</option>
+            <option value="speaking">口语训练</option>
           </select>
           <span id="reportModalTotal" style="font-size:12px;color:var(--text-sub)"></span>
         </div>
         <div class="report-modal-list" id="reportModalList"></div>
       </div>
-    </div>
-
-    <div class="grid-2" data-page-node-id="N8gxQ5TIGBX3TPlnfqA0bw">
-      <div class="card" data-page-node-id="vz6vu1SAUEcxcddvkQGDbe">
-        <div class="card-title" data-page-node-id="TqH3Cj40tSmEgOJu09iHLJ">未来 7 天复习量</div>
-        <div class="bars" id="forecastBars" data-page-node-id="nS8WaAFk2peLLrvhkNevON"></div>
-      </div>
-      <div class="card" data-page-node-id="DIfWA7eOhg9MGbLA8e0z8f">
-        <div class="card-title" data-page-node-id="ZEkq71XtIhgTUiWDsadWyx">今日学习成果曲线（最近 14 天）</div>
-        <div class="bars line-bars" id="historyBars" data-page-node-id="TI6Pe9jEouQlOARRdZsHfu"></div>
-      </div>
-    </div>
-
-    <div class="grid-2" data-page-node-id="2lTCSvFcmmNGbrVIyHw89v">
-      <div class="card" data-page-node-id="Twbf3spnd8alxJgPLGXaAt">
-        <div class="card-title" data-page-node-id="MJg3wuC9YeZLw1E2XHbqUp">快捷入口</div>
-        <div class="quick-actions" data-page-node-id="AEkc4UI2I1P5vwW2KHTOcu">
-          <button class="btn" data-jump="study" data-filter="today" data-page-node-id="DI1359JEkZhAdz9PgxRkzZ">学今日词</button>
-          <button class="btn" data-jump="study" data-filter="sticky" data-page-node-id="xP1WH7IsYY5R9Qfm9B78zu">攻克顽固词</button>
-          <button class="btn" data-jump="quiz" data-filter="today" data-page-node-id="NbtFjCiF2UuKPZbfylBLAw">📝 测验今日词</button>
-          <button class="btn" data-jump="study" data-filter="due7" data-page-node-id="wzlmdHuTKtikb0Ch4OldHz">7 天内要复习的</button>
-          <button class="btn ghost" data-jump="notes" data-page-node-id="YmTbgrY7Ni4u4gg0s7SHq0">查看助记库</button>
-        </div>
-        <div class="hint" id="setupHint" style="display:none" data-page-node-id="84FdKCIDxTPIiNzoaVb8ku">
-          ⚠️ 首次使用请先到 <a href="#" data-jump="settings" data-page-node-id="57HFRUnKroWSmVAud0L6jF">设置</a> 填写墨墨 Token 与 AI 服务商配置。
-        </div>
-      </div>
-      <div class="card card-collapsible" data-page-node-id="PY4R8L2IPwM8y5dayzw1D6">
-        <div class="card-title-row" style="margin-bottom:0">
-          <div class="card-title" data-page-node-id="3Lxorj5vYVWe4EY0btefcV" style="margin-bottom:0">同步日志</div>
-          <button class="card-collapse-toggle" type="button" data-collapse-target="#syncLogCollapseBody" title="折叠/展开">收起 ▴</button>
-        </div>
-        <div class="card-collapse-body" id="syncLogCollapseBody">
-          <ul class="log-list" id="syncLog" data-page-node-id="Gvhe60LqCpM3Um5WAQVgq8" style="margin-top:8px"><li data-page-node-id="WZjF8oDm4WepIVS44grJi2">暂无记录</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    </div></section>
 
   <!-- ============ 听说训练 ============ -->
   <section id="tab-speaking" class="tab-page">
     <div class="card">
-      <div class="card-title-row"><div class="card-title">🎧 听说训练</div><span class="hint">浏览器能力优先，无法识别时可手动输入</span></div>
+      <div class="card-title-row"><div class="card-title">🎧 听说训练</div><span class="hint">听音拼写与口语跟读</span></div>
       <div class="speaking-mode-row" id="speakingModeRow">
         <button class="chip active" data-speech-mode="listening" type="button">🎧 听力拼写</button>
         <button class="chip" data-speech-mode="speaking" type="button">🗣️ 口语跟读</button>
@@ -403,7 +378,7 @@
             <details class="hint-fold" style="margin-top:8px"><summary>ℹ️ 流程说明</summary>
             <div class="hint">两阶段工作流：① 选定词汇后，先点击「🤖 分析词汇并规划建议」，AI 会深入梳理各词的考研语义、逻辑场景分类与最佳篇幅推荐；② 用户查阅采纳建议后，再一键生成专属故事！</div>
             </details>
-            
+
             <div style="margin-top:10px">
               <button class="btn primary full" id="storyAnalyzeBtn">🤖 步骤一：分析词汇并获取分类建议</button>
               <div class="result" id="storyAnalyzeResult"></div>
@@ -412,13 +387,13 @@
             <!-- AI 分析建议展示区 -->
             <div id="storyAnalysisBox" class="story-analysis-box" style="display:none">
               <div class="story-analysis-summary" id="storyAnalysisSummary"></div>
-              
+
               <div class="card-title" style="font-size:13.5px;margin:10px 0 6px">📊 AI 推荐篇幅与理由</div>
               <div class="story-len-rec" id="storyLenRec"></div>
-              
+
               <div class="card-title" style="font-size:13.5px;margin:10px 0 6px">🧩 词汇场景分类与情节线索建议</div>
               <div class="story-groups-list" id="storyGroupsList"></div>
-              
+
               <div style="display:flex;gap:8px;align-items:center;margin-top:12px">
                 <button class="btn ok" id="storyAdoptAdviceBtn">✅ 一键采纳推荐配置</button>
                 <span class="hint" style="margin:0">采纳后将自动同步下方的题材与篇幅</span>
@@ -588,7 +563,7 @@
           <input type="text" id="wordSearch" class="input" placeholder="搜索单词或释义…" data-page-node-id="5RYsbeiVWXkq1iv7rmk1cR">
           <div class="word-list" id="wordList" data-page-node-id="2QnUWaT7eTETCU8maBdUaS"><div class="empty" data-page-node-id="EBQRB4Prl6VdTzqzj5dRCB">请先在仪表盘同步数据</div></div>
           <div class="session-info" id="sessionInfo" data-page-node-id="PDBFhDxdSklvmO8ThaW0E0">本次会话已学 0 词</div>
-          <button class="btn primary full" id="finishBtn" disabled data-page-node-id="Y083OTYkOKbbs4WhjjYymX">✅ 结束本次学习并生成助记</button>
+          <button class="btn primary full" id="finishBtn" disabled data-page-node-id="Y083OTYkOKbbs4WhjjYymX">结束学习</button>
         </div>
       </aside>
 
@@ -612,7 +587,7 @@
           <div id="chatHistoryPanel" class="ch-panel"></div>
         </div>
         <div class="chat-messages" id="chatMessages" data-page-node-id="jpU6gfzhCZz25RwBiiSesd">
-          <div class="msg ai" data-page-node-id="mEc3ltFfA8JfEB2bCVdmED">👋 我是你的 AI 单词教练。选中单词后可以问词义、用法、例句，也可以点下面的快捷按钮。学完点左下角「结束本次学习」，我会把你的易错点总结成助记。</div>
+          <div class="msg ai" data-page-node-id="mEc3ltFfA8JfEB2bCVdmED">选一个单词开始，或直接提问。结束学习后可生成助记。</div>
         </div>
         <div class="quick-row" id="quickRow" data-page-node-id="Ye66xUDBALj2t9Ww9jwEg3">
           <button class="chip q" data-q="这个词是什么意思？有哪些常见义项？" data-page-node-id="UamTzuB62zbCTHVCw7aaYH">词义</button>
@@ -646,8 +621,7 @@
         <button type="button" class="btn quiz-submode-btn active" data-submode="basic">🧠 基础回忆</button>
         <button type="button" class="btn quiz-submode-btn" data-submode="srs">🔁 错题复练</button>
         <button type="button" class="btn quiz-submode-btn" data-submode="transfer">🎯 真题迁移</button>
-        <button type="button" class="btn quiz-submode-btn" data-submode="stats">📈 统计看板</button>
-      </div>
+      <button class="btn" data-jump="reports">学习报告</button></div>
 
       <div id="quizBasicPane">
       <details class="hint-fold" data-page-node-id="JteAlyOsCXGs1iEG7N5yBy"><summary data-page-node-id="zkOapoE7eLNEZMiU767wq0">ℹ️ 说明</summary>
@@ -664,15 +638,15 @@
         <button class="chip" data-src="wrongbook" data-page-node-id="v210wbook">📕 错题本</button>
         <button class="chip" data-src="all" data-page-node-id="qLHG1AKuV2iDZ5jyYF22wh">全部</button>
       </div>
-      <label class="field-label" data-page-node-id="Y3eDjsvoEfPwwSplSwx9IT">题型（固定题型单练）</label>
-      <div class="filter-row" id="quizModes" data-page-node-id="PH0uIKuKU1Z8IfHRsUUcFA">
+
+      <label class="field-label" for="quizAssembly">组卷方式</label><select class="input" id="quizAssembly"><option value="fixed">指定题型</option><option value="adaptive">智能混合</option></select><div id="quizFixedOptions"><label class="field-label">指定题型</label><div class="filter-row" id="quizModes" data-page-node-id="PH0uIKuKU1Z8IfHRsUUcFA">
         <button class="chip active" data-mode="flash" data-page-node-id="jQfZZpgM6lXmZoOC6fTZ80">看英想中（闪卡）</button>
         <button class="chip" data-mode="choice" data-page-node-id="kiammf8fpsD3Ba5CrrGXqs">四选一</button>
         <button class="chip" data-mode="spell" data-page-node-id="jWGYvM6uj5Y5hBL9nRQwDI">拼写</button>
-      </div>
+      </div></div>
 
       <!-- v2.11.0：自适应组卷（交错题型 + 会话韧性） -->
-      <details class="hint-fold" id="quizAdaptiveFold"><summary>🧩 自适应组卷（交错题型 · 可续做）</summary>
+      <details hidden class="hint-fold" id="quizAdaptiveFold"><summary>智能组卷高级选项</summary>
       <div class="hint">服务端按「记忆到期 &gt; 错题本在册 &gt; 忘记/模糊 &gt; 掌握度反比」自适应加权选词，并在一次测验内交错多种题型。进度存服务端，刷新或换设备都能续做。</div>
       <label class="field-label">难度档</label>
       <div class="filter-row" id="quizDifficulty">
@@ -690,7 +664,7 @@
       </div>
       <label class="field-label quiz-ai-toggle"><input type="checkbox" id="quizAiDistractors"> ✨ AI 增强干扰项（更贴近考研易混词，需 AI 服务商可用；失败自动回退）</label>
       <div class="row-gap">
-        <button class="btn primary" id="quizAdaptiveBtn">🧩 智能组卷开测</button>
+
       </div>
       </details>
 
@@ -700,7 +674,7 @@
       <label class="field-label" data-page-node-id="2THmFmSDrCjLkQYAGEBtuV">题量（不设上限）</label>
       <input type="number" id="quizCount" class="input" value="10" min="1" style="width:120px" data-page-node-id="OHE3gV80NQpuZEQNaKeII9">
         <div class="row-gap" data-page-node-id="M6wzHURtA2jFHENV2FcFqy">
-          <button class="btn" id="quizStartBtn" data-page-node-id="rmwUvlx79tZUiOPrOC1S0v">🚀 固定题型开测</button>
+          <button class="btn primary" id="quizStartBtn" data-page-node-id="rmwUvlx79tZUiOPrOC1S0v">开始测验</button>
         </div>
         <div class="result" id="quizMsg" data-page-node-id="wSj1igi0CouGzndBq7MLxR"></div>
       </div>
@@ -753,19 +727,7 @@
       </div>
 
       <!-- v2.12.0：统计看板 -->
-      <div id="quizStatsPane" style="display:none">
-        <details class="hint-fold"><summary>ℹ️ 说明</summary>
-        <div class="hint">数据来自自维护记忆引擎（<code>quiz_srs.json</code>）与学习流水（<code>learning_attempts.json</code>）：掌握度分布、正确率趋势、错题构成与连续学习天数。只看测验相关作答，不含墨墨同步的原始记录。</div>
-        </details>
-        <div class="row-gap" style="align-items:center">
-          <button type="button" class="chip active" data-statsdays="7">近 7 天</button>
-          <button type="button" class="chip" data-statsdays="14">近 14 天</button>
-          <button type="button" class="chip" data-statsdays="30">近 30 天</button>
-          <button class="btn small" id="quizStatsRefreshBtn">🔄 刷新</button>
-        </div>
-        <div class="result" id="quizStatsMsg"></div>
-        <div class="quiz-stats-board" id="quizStatsBoard"></div>
-      </div>
+
     </div>
 
     <div class="card" id="quizRun" style="display:none" data-page-node-id="TwoyCTAxz2gPP7P0M4z5Gx">
@@ -825,9 +787,7 @@
           <button class="btn" id="kbSearchBtn" data-page-node-id="6azRm1QUEU1i08q6S9Kvxi">🔍 搜索</button>
         </div>
       </div>
-      <details class="hint-fold" data-page-node-id="0WxCYwy9M1u9gD3dx7KQSg"><summary data-page-node-id="4dq2ZluasLJs9DRKBgcbRY">📖 板块说明</summary>
-      <div class="hint" data-page-node-id="BNvadNwi4HkSg4OS3R7WX8">工作台语料与外刊发布源分开读取：<code data-page-node-id="u8BLaQuOb1ZSGeUl2HcBsR">corpus/records.jsonl</code> 保存手工导入内容，<code>corpus/external/current/articles.jsonl</code> 保存自动外刊标准发布快照；网页选择“外刊”上传的资料进入手工语料，可编辑删除；自动发布源只读。AI 会区分真题、自动外刊和用户上传外刊。来源筛选：</div>
-      </details>
+      <p class="hint">手工语料可编辑，自动更新的外刊只读；可按来源筛选并搜索原文。</p>
       <div class="row-gap" id="kbFilters" data-page-node-id="hwSjf3cALMAUElRmD1kyTV">
         <button class="chip active" data-kcat="" data-page-node-id="aWeDfxc4zKwrDYgV9Tw6WV">全部</button>
         <button class="chip" data-kcat="外刊" data-page-node-id="PpnQReO6Jk4tCgLPehS01u">外刊原文</button>
@@ -839,7 +799,7 @@
       <div id="kbList" data-page-node-id="YkMxSQzwwN7awDTzhFrm0x"></div>
       <div id="kbPagination" class="pagination-bar" style="display:none;margin-top:14px"></div>
     </div>
-    <div class="card card-collapsible" data-page-node-id="59dAVKg9z39kffWsnAeyIU">
+    <details class="management-fold" id="corpusManagement" data-admin-only><summary>管理语料</summary><div class="card card-collapsible" data-page-node-id="59dAVKg9z39kffWsnAeyIU">
       <div class="card-title-row" style="margin-bottom:0" data-page-node-id="kjw1OQaUbiIFvrFPjuVHfs">
         <div class="card-title" data-page-node-id="Djl90jvegO63Qnpd13BEDy" style="margin-bottom:0">📥 导入语料</div>
         <div class="row-gap" style="align-items:center">
@@ -873,14 +833,14 @@
         </div>
         <div class="result" id="kbImportResult" data-page-node-id="MPA9AVTfGXqqXiuLhh3qE3"></div>
       </div>
-    </div>
+    </div></details>
     <div class="card" id="kbDetailCard" style="display:none" data-page-node-id="AqaLozdzo2VKCjtv4Zvy81">
       <div class="card-title-row" data-page-node-id="05sJRhjVfqDWAcaWqnFpB0">
         <div class="card-title" id="kbDetailTitle" data-page-node-id="0O0kOF5BbgFqkJDEPjrimN">记录</div>
         <div class="row-gap" style="margin-left:auto" data-page-node-id="EnFMWzTxaaa4pgXvn1XeBV">
-          <button class="btn" id="kbHistoryBtn" data-page-node-id="v212kbhistbtn01">🕘 历史版本</button>
-          <button class="btn" id="kbEditBtn" data-page-node-id="zscrvLzs9melJts6kajGKc">✏️ 编辑</button>
-          <button class="btn ghost" id="kbDelBtn" data-page-node-id="AG8iZGJs7AuJfawhDbekCj">🗑 删除</button>
+          <button data-admin-only class="btn" id="kbHistoryBtn" data-page-node-id="v212kbhistbtn01">🕘 历史版本</button>
+          <button data-admin-only class="btn" id="kbEditBtn" data-page-node-id="zscrvLzs9melJts6kajGKc">✏️ 编辑</button>
+          <button data-admin-only class="btn ghost" id="kbDelBtn" data-page-node-id="AG8iZGJs7AuJfawhDbekCj">🗑 删除</button>
           <button class="btn" id="kbBackBtn" data-page-node-id="nuTv4jB0IKrkR0aIqHKIdP">← 返回列表</button>
         </div>
       </div>
@@ -891,24 +851,22 @@
   </section>
 
   <!-- ============ 真题库（v1.1.2） ============ -->
-  <section id="tab-exam" class="tab-page" data-page-node-id="3thbmqXptek9R1mzko5MOs">
+  <section id="tab-exam" class="tab-page" data-page-node-id="3thbmqXptek9R1mzko5MOs"><div class="training-view-nav" aria-label="真题训练方式"><button class="btn primary" data-training-view="exam">整卷演练</button><button class="btn " data-training-view="unit">题型专项</button></div>
     <div class="card card-collapsible" data-page-node-id="zrLt1D63nJqPOG3789dG4c">
       <div class="card-title-row" style="margin-bottom:0" data-page-node-id="lZEESy3vpTDsGmHIYXv9JP">
         <div class="card-title" data-page-node-id="PT2imYkzu7EalCYeEFIq4G" style="margin-bottom:0">🗂 真题库 · <span id="exTrackTitle">考研英语一</span></div>
         <div class="row-gap" style="align-items:center">
-          <button class="btn" id="exLogBtn" data-page-node-id="FwphYpAGfpG5v4CCv7dWZP">📜 导入日志</button>
+
           <button class="card-collapse-toggle" type="button" data-collapse-target="#exCardCollapseBody" title="折叠/展开">收起 ▴</button>
         </div>
       </div>
       <div class="card-collapse-body" id="exCardCollapseBody">
-        <details class="hint-fold" data-page-node-id="c7mGBEtRCE7B7kWREAPQ4A" style="margin-top:8px"><summary data-page-node-id="FEHistF6GO0LyW9TbgLhi0">📖 板块说明</summary>
-        <div class="hint" data-page-node-id="gzNMoQF2e207ipCInLGaZR">结构化真题题库（<code data-page-node-id="SDVHQMyrjYxDGFtcInphsP">corpus/exams.jsonl</code>）：按<b data-page-node-id="v270track00">考试大类</b>（考研英语一 / 六级英语）分流管理，各卷记录带 <code>track</code> 标记（历史卷缺省视为考研英语一）。只收 <b data-page-node-id="F1KuMknK1SGJL9NOC9zWxk">tex / pdf</b> 结构化源，自动拆题入库（同名重导覆盖，失败进隔离区）。按「<b data-page-node-id="gCBI4I8X7nu7TIrdG4cpcn">考试-题型</b>」专项处理——考研：完形填空 / 阅读理解 / 新题型 / 翻译 / 写作；六级：听力理解 / 选词填空 / 长篇匹配 / 阅读理解 / 汉译英 / 写作，各题型处理逻辑独立、输出结构统一。全库搜索与 AI 真题原句注入均覆盖本库。扫描版 PDF 可走 🛰 MinerU 解析（产出整卷「真题正文」入库；结构化拆题仍需 tex/文字层 PDF）。</div>
-        </details>
+        <p class="hint">按考试类别选择试卷，可进行整卷演练或查看答案解析。</p>
         <div class="row-gap" id="exTrackFilters" style="margin-top:8px" data-page-node-id="v270trackfilters">
           <button class="chip active" data-xtrack="kaoyan1" data-page-node-id="v270tk-ky"><span>📘 考研英语一</span> <span class="ex-track-count" id="exTrackCount-kaoyan1">0</span></button>
           <button class="chip" data-xtrack="cet6" data-page-node-id="v270tk-cet6"><span>🎧 六级英语</span> <span class="ex-track-count" id="exTrackCount-cet6">0</span></button>
         </div>
-        <div class="row-gap" style="flex-wrap:wrap;margin-top:8px" data-page-node-id="glIIs8VYlET4xxCyOaoZdN">
+        <details class="management-fold" id="examManagement" data-admin-only><summary>管理题库</summary><div class="row-gap" style="flex-wrap:wrap;margin-top:8px" data-page-node-id="glIIs8VYlET4xxCyOaoZdN">
           <input type="file" id="exImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".tex,.pdf" data-page-node-id="LUl41UwF6mrKjOnL1PZFjG">
           <button class="btn primary" id="exImportBtn" data-page-node-id="TYrTWjOGa952mw9zJvlMZF">🗂 导入真题</button>
         </div>
@@ -917,7 +875,7 @@
           <input type="file" id="exMineruFile" class="input" multiple style="flex:1;min-width:220px" accept=".pdf" data-page-node-id="QksGBjZ2eP6LVVlAvMqWzM">
           <button class="btn" id="exMineruBtn" data-page-node-id="Sx0wSlYyG4WCRCdXeKagAD">🛰 MinerU 解析（→ 真题正文）</button>
         </div>
-        <div class="result" id="exImportResult" data-page-node-id="gxOHKU0enUV7obZARC8weO"></div>
+        <div class="result" id="exImportResult" data-page-node-id="gxOHKU0enUV7obZARC8weO"></div><button class="btn" id="exLogBtn" data-page-node-id="FwphYpAGfpG5v4CCv7dWZP">📜 导入日志</button></details>
         <div class="card-title-row" style="margin-top:14px" data-page-node-id="F1SE7rqjCze8qxFLPUQ6WI"><div class="card-title" data-page-node-id="IwFKhJHZxsSaBjBdB8wxFX">📄 真题列表</div></div>
         <div class="result" id="exListResult" data-page-node-id="1DvjpOuyK5JBJK4AHS4rZm"></div>
         <div id="exList" data-page-node-id="DMhnasjxfKIkdlOpdt40Wo"></div>
@@ -932,9 +890,9 @@
             <button type="button" class="btn mini exm-mode-btn active" id="exmModePractice">全真演练</button>
             <button type="button" class="btn mini exm-mode-btn" id="exmModeAnalysis">答案对照</button>
           </div>
-          <button class="btn" id="exHistoryBtn" data-page-node-id="v212exhistbtn01">🕘 历史版本</button>
-          <button class="btn" id="exEditBtn" data-page-node-id="gaPtq3845fArJwjXMgegVe">✏️ 编辑</button>
-          <button class="btn ghost" id="exDelBtn" data-page-node-id="009UPRk8ozODJ6ttpXKK8R">🗑 删除</button>
+          <button data-admin-only class="btn" id="exHistoryBtn" data-page-node-id="v212exhistbtn01">🕘 历史版本</button>
+          <button data-admin-only class="btn" id="exEditBtn" data-page-node-id="gaPtq3845fArJwjXMgegVe">✏️ 编辑</button>
+          <button data-admin-only class="btn ghost" id="exDelBtn" data-page-node-id="009UPRk8ozODJ6ttpXKK8R">🗑 删除</button>
           <button class="btn" id="exBackBtn" data-page-node-id="CCoG5uGTg9sAxs8hgF8gnc">← 返回列表</button>
         </div>
       </div>
@@ -945,14 +903,12 @@
   </section>
 
   <!-- ============ 单元题库（v1.1.5） ============ -->
-  <section id="tab-unit" class="tab-page" data-page-node-id="IfITgtruO00xkphH57ejeh">
+  <section id="tab-unit" class="tab-page" data-page-node-id="IfITgtruO00xkphH57ejeh"><div class="training-view-nav" aria-label="真题训练方式"><button class="btn " data-training-view="exam">整卷演练</button><button class="btn primary" data-training-view="unit">题型专项</button></div>
     <div class="card" data-page-node-id="h0LIrCrJ1zwn5UUWFW9XTF">
       <div class="card-title-row" data-page-node-id="UlfJ6bIZutlOu1UlSJC2V0">
         <div class="card-title" data-page-node-id="CibCscb47oCurbrdFHQCN5">🧩 单元题库 · 按题型做题</div>
       </div>
-      <details class="hint-fold" data-page-node-id="rvre1fOFBV0uqSSXx7O6OO"><summary data-page-node-id="HZbRh14z8XCP10dws0PUuO">📖 板块说明</summary>
-      <div class="hint" data-page-node-id="TBkA2jtHiaRBLFRF9e7j1B">真题整卷自动切片成可练习的单元——<b data-page-node-id="1wDDnK1E5ZOTbfln9n5EtF">考研：完形 = 原文挖空内联选词 / 阅读 = Text + 逐题单选 / 新题型 = 空位 + 选项池 / 翻译 = 划线句 + 译文框 / 写作 = 题干 + 作文框；六级：听力 = 分段四选一 / 选词填空 = 内联选词 + 词池 / 长篇匹配 = 陈述选段 / 汉译英 = 整段译文框</b>。到「🗂 真题库」拆题成功后单元自动生成。客观题判分需先录入标准答案（存 <code data-page-node-id="BcNJCORZWLPwOLWnuWDNFh">data/answers.json</code>；请用权威版答案人工录入）。</div>
-      </details>
+      <p class="hint">选择考试类别和题型开始专项练习。整卷演练请切换上方训练方式。</p>
       <div class="row-gap" id="unitTrackFilters" data-page-node-id="v270unittrackfilters">
         <button class="chip active" data-utrack="kaoyan1" data-page-node-id="v270utk-ky"><span>📘 考研英语一</span> <span class="ex-track-count" id="unitTrackCount-kaoyan1">0</span></button>
         <button class="chip" data-utrack="cet6" data-page-node-id="v270utk-cet6"><span>🎧 六级英语</span> <span class="ex-track-count" id="unitTrackCount-cet6">0</span></button>
@@ -1013,7 +969,7 @@
     <!-- v2.1.0a：自习室白噪音并入番茄钟 -->
     <div class="card noise-card" data-page-node-id="noiseCard">
       <div class="card-title-row">
-        <div class="card-title">🎧 自习室白噪音 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（原生 Web Audio 合成 · 零外链）</span></div>
+        <div class="card-title">🎧 自习室白噪音 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
         <span class="noise-current" id="noiseCurrent">已关闭</span>
       </div>
       <div class="hint">选择一个背景声，陪你专注/休息。切换即时生效，可随时关闭。选择会被记住。</div>
@@ -1041,11 +997,11 @@
   <section id="tab-settings" class="tab-page" data-page-node-id="tKTGPEToP1TI0j2YEVwNvI">
 
     <!-- ===== 子版块：我的账户（v3.1.0，仅多用户模式显示） ===== -->
-    <details class="settings-section" id="accountSection" open style="display:none">
+    <details class="settings-section" id="accountSection" style="display:none">
       <summary>👤 我的账户</summary>
       <div class="settings-section-body">
         <div class="card" id="accountCard">
-          <div class="card-title">👤 我的账户 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v3.1.0 · 多用户）</span></div>
+          <div class="card-title">👤 我的账户 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（多用户）</span></div>
           <div class="account-row">
             <div>
               <div class="account-name" id="accountName">—</div>
@@ -1063,7 +1019,7 @@
       <summary>📱 安装到桌面</summary>
       <div class="settings-section-body">
         <div class="card" id="installCard">
-          <div class="card-title">📱 把工作台装到桌面 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v3.3.0 · 像 App 一样打开）</span></div>
+          <div class="card-title">📱 把工作台装到桌面 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（像 App 一样打开）</span></div>
           <p class="hint" style="margin:4px 0 10px">安装后可从手机桌面 / 电脑开始菜单直接打开，全屏运行、无需每次输网址。</p>
           <div class="install-actions">
             <button class="btn primary" id="installBtn">⬇️ 立即安装</button>
@@ -1076,12 +1032,12 @@
     </details>
 
     <!-- ===== 子版块：AI 用量看板（v3.2.0，普通用户看自己 / 管理员看全员） ===== -->
-    <details class="settings-section" id="usageSection" open style="display:none">
+    <details class="settings-section" id="usageSection" style="display:none">
       <summary>📊 AI 用量</summary>
       <div class="settings-section-body">
         <div class="card" id="usageCard">
           <div class="card-title-row">
-            <div class="card-title">📊 AI 用量 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v3.2.0 · 共享 LLM Key）</span></div>
+            <div class="card-title">📊 AI 用量 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（共享 LLM Key）</span></div>
             <div class="usage-controls">
               <select id="usageRange" class="input" style="width:auto">
                 <option value="7">近 7 天</option>
@@ -1103,7 +1059,7 @@
     </details>
 
     <!-- ===== 子版块：模型服务（v3.1.0：管理员专属，普通用户隐藏） ===== -->
-    <details class="settings-section" open data-admin-only>
+    <details class="settings-section" data-admin-only>
       <summary>🤖 模型服务</summary>
       <div class="settings-section-body">
         <div class="grid-2" data-page-node-id="afHumpJW76Wzto2QRYiFxT">
@@ -1122,85 +1078,26 @@
             </details>
           </div>
 
-          <div class="card" data-page-node-id="3jzAf96r6LDhbZZ2B56Zpi-wrap">
-            <div class="card-title" data-page-node-id="3jzAf96r6LDhbZZ2B56Zpi">🤖 AI 审核专用服务商 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="zfgFOWwoCAM2VywoSY3mVm">（不填则使用默认服务商）</span></div>
-            <details class="hint-fold" data-page-node-id="FZJQy3wmk6DmwoVrskUdME"><summary data-page-node-id="o6J8cH3YPj7m5f1hLmDqoK">ℹ️ 说明</summary>
-            <div class="hint" data-page-node-id="T3yAR4EV7GHiEzYHl1NJKJ">仅 AI 审核功能使用此服务商，建议选支持长上下文 / 深度思考的模型。留空则沿用默认服务商。</div>
-            </details>
-            <div class="grid-2" style="gap:10px" data-page-node-id="pHaHHY4jFjc5FfQeBlDku7">
-              <div data-page-node-id="YPAMHM0vZvpYp6cPDN9c1s">
-                <label class="field-label" data-page-node-id="1sjSjLJRPwJxl5v1wOHyyY">服务商</label>
-                <select id="cfgReviewProvider" class="input" data-page-node-id="fYTvetZ5m2T3sNPL73BgZZ"></select>
-              </div>
-              <div data-page-node-id="xwQEDGiphxqoWDAdEGGDCX">
-                <label class="field-label" data-page-node-id="kIHCnP9HDm727hDeFbEF9i">覆盖模型（可选）</label>
-                <input type="text" id="cfgReviewModel" class="input" placeholder="留空 = 使用服务商默认模型" data-page-node-id="cjnGer5AtLt6FQjavkbZYh">
-              </div>
-            </div>
-            <div class="hint" data-page-node-id="NRWP48yQHFlYCKJCPG3bBm">深度思考开关已统一收敛到服务商档案的「思考等级」（v2.4.1）：需要审核深度思考时，编辑对应服务商选择思考等级即可，本专项配置不再重复提供。</div>
-            <button class="btn" id="saveReviewCfgBtn" style="margin-top:8px" data-page-node-id="8BHSgI1QRIbNeCWnI3plap">💾 保存审核服务商配置</button>
-          </div>
+          <details id="modelAssignments" class="settings-section" data-admin-only>
+  <summary>功能模型分配 <span class="hint">默认继承服务商，按需覆盖</span></summary>
+  <div class="settings-section-body"><div class="model-assignment"><b>长难句反馈</b><label class="field-label">服务商<select id="cfgReviewProvider" class="input" data-page-node-id="fYTvetZ5m2T3sNPL73BgZZ"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgReviewModel" class="input" placeholder="留空 = 使用服务商默认模型" data-page-node-id="cjnGer5AtLt6FQjavkbZYh"></label></div><div class="model-assignment"><b>划词助手</b><label class="field-label">服务商<select id="cfgSelectionProvider" class="input"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgSelectionModel" class="input" placeholder="留空 = 使用服务商默认模型"></label></div><div class="model-assignment"><b>词文成章</b><label class="field-label">服务商<select id="cfgStoryProvider" class="input"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgStoryModel" class="input" placeholder="留空 = 使用服务商默认模型"></label></div><div class="model-assignment"><b>手写识图</b><label class="field-label">服务商<select id="cfgWritingOcrProvider" class="input"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgWritingOcrModel" class="input" placeholder="留空 = 使用服务商默认模型"></label></div>
+    <p class="hint">思考强度在服务商档案中统一设置；手写识图需支持图片输入的模型。</p>
+    <button class="btn primary" id="saveModelAssignmentsBtn">保存模型分配</button><span class="result" id="modelAssignmentsResult" role="status"></span>
+  </div>
+</details>
 
           <!-- v2.3.4：划词助手专用模型（独立于默认服务商与审核服务商） -->
-          <div class="card" id="selectionCfgCard">
-            <div class="card-title">🔍 划词助手专用模型 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（不填则使用默认服务商）</span></div>
-            <details class="hint-fold"><summary>ℹ️ 说明</summary>
-            <div class="hint">仅阅读页的「划选精读」功能使用此服务商，高频短解析适合配一个便宜快速的模型；服务商档案里的思考等级与透传参数同样生效。留空则沿用默认服务商。</div>
-            </details>
-            <div class="grid-2" style="gap:10px">
-              <div>
-                <label class="field-label">服务商</label>
-                <select id="cfgSelectionProvider" class="input"></select>
-              </div>
-              <div>
-                <label class="field-label">覆盖模型（可选）</label>
-                <input type="text" id="cfgSelectionModel" class="input" placeholder="留空 = 使用服务商默认模型">
-              </div>
-            </div>
-            <button class="btn" id="saveSelectionCfgBtn" style="margin-top:8px">💾 保存划词助手配置</button>
-          </div>
+
 
           <!-- v2.4.1：词文成章专用模型 -->
-          <div class="card" id="storyCfgCard">
-            <div class="card-title">📖 词文成章专用模型 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（不填则使用默认服务商）</span></div>
-            <details class="hint-fold"><summary>ℹ️ 说明</summary>
-            <div class="hint">仅「词文成章」的文章生成使用此服务商。长文结构化输出对模型指令服从性要求高——建议配 GPT/Claude 系或其它服从性好的模型，可显著提升钩子/翻译/自测的完整度；服务商档案的思考等级与透传参数同样生效。留空则沿用默认服务商。</div>
-            </details>
-            <div class="grid-2" style="gap:10px">
-              <div>
-                <label class="field-label">服务商</label>
-                <select id="cfgStoryProvider" class="input"></select>
-              </div>
-              <div>
-                <label class="field-label">覆盖模型（可选）</label>
-                <input type="text" id="cfgStoryModel" class="input" placeholder="留空 = 使用服务商默认模型">
-              </div>
-            </div>
-            <button class="btn" id="saveStoryCfgBtn" style="margin-top:8px">💾 保存词文成章配置</button>
-          </div>
+
 
           <!-- v2.6.2：写作手写识图专属模型 -->
-          <div class="card" id="writingOcrCfgCard">
-            <div class="card-title">📷 写作手写识图专用模型 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v2.6.2 · 考研横线纸高精度识图）</span></div>
-            <details class="hint-fold"><summary>ℹ️ 说明</summary>
-            <div class="hint">手写稿拍照识别与图文核对专用。建议选择具备顶级视觉能力（Vision）的模型档案（如 GPT-4o、Claude 3.5 Sonnet、Qwen-VL 等，须在服务商档案中勾选「视觉能力」）。留空则自动沿用默认服务商。</div>
-            </details>
-            <div class="grid-2" style="gap:10px">
-              <div>
-                <label class="field-label">视觉服务商</label>
-                <select id="cfgWritingOcrProvider" class="input"></select>
-              </div>
-              <div>
-                <label class="field-label">覆盖模型（可选）</label>
-                <input type="text" id="cfgWritingOcrModel" class="input" placeholder="留空 = 使用服务商默认模型">
-              </div>
-            </div>
-            <button class="btn" id="saveWritingOcrCfgBtn" style="margin-top:8px">💾 保存识图模型配置</button>
-          </div>
+
         </div>
 
-        <div class="card" data-page-node-id="Kmb9Ms5FM0029EuD90rbYn">
-          <div class="card-title" data-page-node-id="4BgRG97E7XlLCbPbBZZwqD">🎨 AI 生图 · 助记图 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="02DhaRKG86rEW66MBaWWek">（v1.0.6 · OpenAI 兼容 images API）</span></div>
+        <details class="model-services"><summary>其他服务：生图、词典、文档解析与搜索</summary><div class="grid-2 model-service-grid"><div class="card" data-page-node-id="Kmb9Ms5FM0029EuD90rbYn">
+          <div class="card-title" data-page-node-id="4BgRG97E7XlLCbPbBZZwqD">🎨 AI 生图 · 助记图 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="02DhaRKG86rEW66MBaWWek">（OpenAI 兼容 images API）</span></div>
           <details class="hint-fold" data-page-node-id="VdD1IuVpJyspZCJ6irNssH"><summary data-page-node-id="JmvH8exShLTaw7UiZ9OIcD">ℹ️ 说明</summary>
           <div class="hint" data-page-node-id="Jii3h9zyW8F7s9ijbAqyGH">AI 学习页点「🎨 生图助记」时：对话模型先把当前单词 + 会话场景改写成画面提示词，再调用生图 API 出图，图片落盘本机 <code data-page-node-id="akJFQcEvdkTNQLcp4xkDUH">data/images/</code>。支持中转站，Key 只保存在本机。</div>
           </details>
@@ -1218,7 +1115,7 @@
         </div>
 
         <div class="card" data-page-node-id="w2H52f8e71uDOJfRzo8Qws">
-          <div class="card-title" data-page-node-id="mQHBxBMTS40pTZAKREQug4">📚 韦氏权威词典 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="1R37aTKWfvu445iyUULcWw">（v1.0.8 · Merriam-Webster 双 Key）</span></div>
+          <div class="card-title" data-page-node-id="mQHBxBMTS40pTZAKREQug4">📚 韦氏权威词典 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="1R37aTKWfvu445iyUULcWw">（Merriam-Webster 双 Key）</span></div>
           <details class="hint-fold" data-page-node-id="AhhAUUXixty3yUfz3YLamq"><summary data-page-node-id="wSiEDb8LuOCXtbRXPqcFKU">ℹ️ 说明</summary>
           <div class="hint" data-page-node-id="cLZ30kP7xKfGOBkFUNAF6k">接入 dictionaryapi.com 官方 API：<b data-page-node-id="XUuurRZchIsll60oMQXxG5">学习者版</b>优先，<b data-page-node-id="s8sxvxt2A72Wbw68nfgEPy">大学版</b>兜底，并行合并。AI 教练讲解自动以权威释义为准；发音按钮优先播放官方<b data-page-node-id="JGcHuZ962iNgx6lt60TWJ0">真人录音 mp3</b>。Key 只保存在本机。</div>
           </details>
@@ -1240,7 +1137,7 @@
         </div>
 
         <div class="card" data-page-node-id="3KEAR4lrYV4UIubqLvxMOc">
-          <div class="card-title" data-page-node-id="AGovmfM6faqAco06HvHi9O">🛰 MinerU 文档解析 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ulwvQNTOoCGk7mS0z40PVj">（v1.1.4 · 扫描件 PDF → Markdown）</span></div>
+          <div class="card-title" data-page-node-id="AGovmfM6faqAco06HvHi9O">🛰 MinerU 文档解析 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ulwvQNTOoCGk7mS0z40PVj">（扫描件 PDF → Markdown）</span></div>
           <details class="hint-fold" data-page-node-id="dc4ed6JE0EiKLOEFFN4qHV"><summary data-page-node-id="cJu4gdTiEtk82peuzZ3ylW">ℹ️ 说明</summary>
           <div class="hint" data-page-node-id="aiGZttkFcIzHNO8J97iMhc">接 mineru.net 精准解析 API（免费额度，按页计费）。已做英语特化调参：<b data-page-node-id="grBBxbPADzyDtfWj6FZmki">英文 OCR 模型、关闭公式与表格识别</b>、扫描件强制 OCR。Token 到 mineru.net/apiManage/token 免费申请，约 90 天需更换；Key 只存本机。</div>
           </details>
@@ -1254,7 +1151,7 @@
         </div>
 
         <div class="card" data-page-node-id="uKM8PqIv10ZqUwUaHgIP4m">
-          <div class="card-title" data-page-node-id="cE0PgOaOMLilx0j3Q9DttK">🌐 网络搜索服务 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="iMbAn50xuQsESdGfqMIIFc">（v1.0.7 · 通用 url + 密钥）</span></div>
+          <div class="card-title" data-page-node-id="cE0PgOaOMLilx0j3Q9DttK">🌐 网络搜索服务 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="iMbAn50xuQsESdGfqMIIFc">（通用 url + 密钥）</span></div>
           <details class="hint-fold" data-page-node-id="NVo60f4A9hSoC1hR7VybP0"><summary data-page-node-id="XmZtiVHC7DjjTToSEnlxHu">ℹ️ 说明</summary>
           <div class="hint" data-page-node-id="kdaI6HPGIr2MwF0DcehjqO">工作台级搜索服务：AI 学习页开「🌐 联网」后，AI 回答前会先搜索实时资料；后续新板块也复用这一服务。兼容博查 / Tavily / Serper / 智谱及同类中转，密钥只保存在本机。</div>
           </details>
@@ -1275,13 +1172,13 @@
             <button class="btn" id="testSearchBtn" data-page-node-id="lIWQBZf1NkvecSrVIzNGM0">🔍 测试搜索</button>
           </div>
           <div class="result" id="searchTestResult" data-page-node-id="33PZTKhpJSFJywvq4sreAO"></div>
-        </div>
+        </div></div></details>
       </div>
     </details>
 
     <!-- ===== 子版块：Token 凭证 ===== -->
-    <details class="settings-section" open>
-      <summary>🔑 Token 凭证</summary>
+    <details class="settings-section">
+      <summary>墨墨连接</summary>
       <div class="settings-section-body">
         <div class="card" data-page-node-id="m9eP4J4upz09iiZ5JJHshy">
           <div class="card-title" data-page-node-id="YvN4RYzD1WhvH3WjeJQKBx">墨墨背单词 API</div>
@@ -1300,7 +1197,7 @@
           <div class="hint" data-page-node-id="Y2FhBtOxzSKp1wPC0Gx1O5">v1.0.7 已按墨墨官方频控优化：全局限流护栏（10s/20 次 · 60s/40 次 · 5h/2000 次）+ 二分切窗抓取（全量同步请求数降约 80%），正常使用不会触发 429。Token 修改后自动保存，无需手动点保存。</div>
           </details>
 
-          <div class="card-title" style="margin-top:20px" data-page-node-id="PhILVzEdvL2qupWLvUIOZG">📚 云词库绑定 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ktFrwimYhVBTjsmtrqiYcU">（v1.0.6 助记推送前提）</span></div>
+          <div class="card-title" style="margin-top:20px" data-page-node-id="PhILVzEdvL2qupWLvUIOZG">📚 云词库绑定 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ktFrwimYhVBTjsmtrqiYcU">（助记推送需绑定）</span></div>
           <details class="hint-fold" data-page-node-id="FFQqHdJuLbhCkBBFJDkid8"><summary data-page-node-id="4DzzZWiSy1r3Rv6FK2T7Y8">ℹ️ 说明</summary>
           <div class="hint" data-page-node-id="fmrlzgTa072et84HOREPnr">墨墨要求助记挂在云词库（云词本 / 收藏本）里。未绑定或词不在库中时，助记推送会失败；绑定后推送会自动把单词补进所选云词库，再写入助记。</div>
           </details>
@@ -1318,7 +1215,7 @@
       <summary>🔐 登录与安全</summary>
       <div class="settings-section-body">
         <div class="card" id="authCfgCard">
-          <div class="card-title">🔑 Token 凭证登录 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v2.9.0 · 管理员登录方式）</span></div>
+          <div class="card-title">🔑 Token 凭证登录 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（管理员登录方式）</span></div>
           <details class="hint-fold"><summary>ℹ️ 说明</summary>
           <div class="hint">开启后，访问网站需先输入 Token 凭证；登录成功即在本设备长久保持登录（30 天，服务重启后需重新登录）。本机开发默认关闭，无需登录。</div>
           </details>
@@ -1337,7 +1234,7 @@
 
     <!-- ===== 子版块：固有服务 ===== -->
     <details class="settings-section">
-      <summary>🏠 固有服务</summary>
+      <summary>界面、同步与备份</summary>
       <div class="settings-section-body">
         <div class="card" data-page-node-id="hJEX99GgBD8ah6zZPNx2RT">
           <div class="card-title" data-page-node-id="4cSzMPazvENC9D0onPdqLZ">🎨 界面风格 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（7 种风格深度融入昼夜模式，各具特色）</span></div>
@@ -1361,7 +1258,7 @@
         </div>
 
         <div class="card" data-admin-only>
-          <div class="card-title">🛡️ 数据备份与恢复 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v1.2.0 · 全站数据，仅管理员）</span></div>
+          <div class="card-title">🛡️ 数据备份与恢复 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（全站数据，仅管理员）</span></div>
           <div class="hint">服务端每 6 小时自动备份核心数据（db.json / config.json / 聊天记录 / 语料库 / 真题库），最多保留 10 份。也可手动创建或恢复备份。</div>
           <div class="row-gap">
             <button class="btn primary" id="backupCreateBtn">📦 立即创建备份</button>
@@ -1374,22 +1271,15 @@
     </details>
 
     <!-- ===== 子版块：其他服务 ===== -->
-    <details class="settings-section">
-      <summary>🧩 其他服务</summary>
-      <div class="settings-section-body">
-        <div class="card">
-          <div class="hint">其他预留服务将陆续归入此处。</div>
-        </div>
-      </div>
-    </details>
+
 
     <!-- ===== 子版块：DIY ===== -->
-    <details class="settings-section" open>
-      <summary>🎨 DIY</summary>
+    <details class="settings-section">
+      <summary>高级自定义</summary>
       <div class="settings-section-body">
         <div class="card">
           <div class="card-title-row">
-            <div class="card-title">✍️ 模型提示词 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v2.1.0 · 所有 AI 提示词均可自定义）</span></div>
+            <div class="card-title">✍️ 模型提示词 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（所有 AI 提示词均可自定义）</span></div>
             <button class="btn" id="promptResetAllBtn">↺ 全部恢复默认</button>
           </div>
           <details class="hint-fold"><summary>ℹ️ 说明</summary>
@@ -1401,7 +1291,7 @@
         <!-- v2.4.1：子版块「文章题材」——词文成章题材自定义 -->
         <div class="card" id="storyThemesCard">
           <div class="card-title-row">
-            <div class="card-title">📚 文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（v2.4.1 · 词文成章的生成题材可自定义）</span></div>
+            <div class="card-title">📚 文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（词文成章的生成题材可自定义）</span></div>
             <button class="btn" id="storyThemesResetBtn">↺ 恢复内置题材</button>
           </div>
           <details class="hint-fold"><summary>ℹ️ 说明</summary>
@@ -1420,7 +1310,15 @@
       </div>
     </details>
 
-  </section>
+  <details class="settings-section" id="syncLogSection"><summary>同步记录</summary><div class="settings-section-body"><div class="card card-collapsible" data-page-node-id="PY4R8L2IPwM8y5dayzw1D6">
+        <div class="card-title-row" style="margin-bottom:0">
+          <div class="card-title" data-page-node-id="3Lxorj5vYVWe4EY0btefcV" style="margin-bottom:0">同步日志</div>
+          <button class="card-collapse-toggle" type="button" data-collapse-target="#syncLogCollapseBody" title="折叠/展开">收起 ▴</button>
+        </div>
+        <div class="card-collapse-body" id="syncLogCollapseBody">
+          <ul class="log-list" id="syncLog" data-page-node-id="Gvhe60LqCpM3Um5WAQVgq8" style="margin-top:8px"><li data-page-node-id="WZjF8oDm4WepIVS44grJi2">暂无记录</li></ul>
+        </div>
+      </div></div></details></section>
 
 </main>
 
@@ -1510,7 +1408,7 @@
 <nav class="mobile-bottom-bar" id="mobileBottomBar">
   <button class="bottom-tab-item active" data-tab="dashboard">
     <span class="bottom-tab-icon">📊</span>
-    <span class="bottom-tab-label">看板</span>
+    <span class="bottom-tab-label">今日</span>
   </button>
   <button class="bottom-tab-item" data-tab="study">
     <span class="bottom-tab-icon">💬</span>
@@ -1518,11 +1416,11 @@
   </button>
   <button class="bottom-tab-item" data-tab="exam">
     <span class="bottom-tab-icon">🗂</span>
-    <span class="bottom-tab-label">真题</span>
+    <span class="bottom-tab-label">真题训练</span>
   </button>
-  <button class="bottom-tab-item" data-tab="pomo">
-    <span class="bottom-tab-icon">🍅</span>
-    <span class="bottom-tab-label">番茄钟</span>
+  <button class="bottom-tab-item" data-tab="quiz">
+    <span class="bottom-tab-icon">📝</span>
+    <span class="bottom-tab-label">测验</span>
   </button>
   <button class="bottom-tab-item" id="bottomMoreBtn">
     <span class="bottom-tab-icon">⋯</span>
@@ -1535,26 +1433,22 @@
 <div class="more-sheet" id="moreSheet">
   <div class="more-sheet-handle"></div>
   <div class="more-sheet-title">更多功能与设置</div>
-  <div class="more-sheet-grid">
-    <button class="more-sheet-item" data-tab="quiz">
-      <span class="more-item-icon">📝</span>
-      <span class="more-item-text">单词测验</span>
+  <div class="more-sheet-grid"><button class="more-sheet-item" data-tab="reports"><span class="more-item-icon">📈</span><span class="more-item-text">学习报告</span></button>
+    <button class="more-sheet-item" data-tab="pomo">
+      <span class="more-item-icon">🍅</span>
+      <span class="more-item-text">专注工具</span>
     </button>
     <button class="more-sheet-item" data-tab="kb">
       <span class="more-item-icon">📚</span>
-      <span class="more-item-text">真题语料库</span>
-    </button>
-    <button class="more-sheet-item" data-tab="unit">
-      <span class="more-item-icon">🧩</span>
-      <span class="more-item-text">单元题库</span>
+      <span class="more-item-text">语料库</span>
     </button>
     <button class="more-sheet-item" data-tab="notes">
       <span class="more-item-icon">📖</span>
-      <span class="more-item-text">云助记库</span>
+      <span class="more-item-text">助记库</span>
     </button>
     <button class="more-sheet-item" data-tab="settings">
       <span class="more-item-icon">⚙️</span>
-      <span class="more-item-text">系统与风格设置</span>
+      <span class="more-item-text">设置</span>
     </button>
     <button class="more-sheet-item" data-tab="speaking">
       <span class="more-item-icon">🎧</span>

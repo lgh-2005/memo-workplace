@@ -15,6 +15,7 @@ await run(process.execPath, ['--check', 'server.js']);
 await run(process.execPath, ['--check', 'public/app.js']);
 await run(process.execPath, ['--check', 'public/sw.js']);
 await run(process.execPath, ['scripts/study-plan-smoke.mjs']);
+await run(process.execPath, ['scripts/frontend-refinement-smoke.mjs']);
 
 const sandbox = await mkdtemp(join(tmpdir(), 'workbench-test-'));
 let server;

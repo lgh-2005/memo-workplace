@@ -1,4 +1,4 @@
-# v3.3.6 安全审计与敏感信息扫描记录
+# v3.4.0 安全审计与敏感信息扫描记录
 
 ## v3.3.6 新增接口与语音能力
 
@@ -7,6 +7,8 @@
 - `Permissions-Policy` 将 `microphone` 限定为 `(self)`。语音识别仅在浏览器安全上下文并存在 Web Speech API 时启用；HTTP/IP 或不支持的浏览器提供手动输入。口语评分仅比较文本，不声称评估口音或音素。
 
 ## 本版审计结果
+
+v3.4.0 仅精简前端页面结构与导航，不修改鉴权、服务端写接口、语料权限或数据持久化；下列 v3.3.6 安全措施继续适用。
 
 - `scripts/security-audit.mjs --check` 扫描 Git 跟踪及工作树中未忽略的源码和配置，检测私钥、云访问密钥、GitHub Token、Bearer Token 及高置信度明文密钥赋值；匹配时只报告文件、行号和类型，不回显敏感值。
 - `scripts/release-gate.mjs` 检查版本标识、必需发布脚本、Git 空白错误，并可用 `--refs` 核对 Gitee/GitHub `master` 提交一致、用 `--online` 调用只读线上健康检查。

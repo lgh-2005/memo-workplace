@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * v3.3.6：移动端回归入口。
+ * v3.4.0：移动端回归入口。
  * --emulated 在无手机环境下执行可复现的移动契约检查；
  * --device 需要 Android ADB，并通过 Chrome DevTools 读取真实设备页面布局。
  */
@@ -30,7 +30,7 @@ async function contractChecks() {
   pass('horizontal subnav contract', /\.quiz-submode[^{]*\{[^}]*overflow-x:\s*auto/s.test(css) || /\.quiz-submode/.test(css));
   pass('touch selection guard', /SEL_TOUCH_DEVICE|user-select:\s*none/.test(css + js));
   pass('responsive max-width constraints', /max-width:\s*1280px/.test(css) && /@media\s*\(max-width:\s*700px\)/.test(css));
-  pass('version marker', /v3\.3\.6/.test(html));
+  pass('version marker', /v3\.4\.0/.test(html));
 }
 
 async function emulatedChecks() {
@@ -87,7 +87,7 @@ async function emulatedChecks() {
       await page.goto(appBase, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(500);
       const result = await page.evaluate(async () => {
-        const tabs = ['dashboard', 'study', 'quiz', 'exam', 'speaking', 'settings'];
+        const tabs = ['dashboard', 'reports', 'study', 'quiz', 'exam', 'unit', 'speaking', 'settings'];
         const pages = {};
         const touchHeights = [];
         for (const tab of tabs) {
@@ -103,17 +103,25 @@ async function emulatedChecks() {
             }
           }
         }
+        const reportSource = document.querySelector('[data-report-view="maimemo"]');
+        reportSource?.click();
+        const reportVisible = !document.querySelector('#report-maimemo')?.hidden && document.querySelector('#report-workbench')?.hidden;
+        const assembly = document.querySelector('#quizAssembly');
+        assembly && (assembly.value = 'adaptive', assembly.dispatchEvent(new Event('change')));
+        const adaptiveVisible = document.querySelector('#quizAdaptiveFold')?.hidden === false;
         const header = document.querySelector('.mobile-header')?.getBoundingClientRect();
         const bottom = document.querySelector('.mobile-bottom-bar')?.getBoundingClientRect();
         for (const el of document.querySelectorAll('.mobile-bottom-bar button')) {
           const rect = el.getBoundingClientRect();
           if (rect.width > 0 && rect.height > 0) touchHeights.push(Math.round(rect.height));
         }
-        return { width: innerWidth, height: innerHeight, pages, header: header ? { width: header.width, height: header.height } : null, bottom: bottom ? { width: bottom.width, height: bottom.height } : null, heights: touchHeights.slice(0, 80), padding: getComputedStyle(document.body).paddingBottom };
+        return { width: innerWidth, height: innerHeight, pages, reportVisible, adaptiveVisible, header: header ? { width: header.width, height: header.height } : null, bottom: bottom ? { width: bottom.width, height: bottom.height } : null, heights: touchHeights.slice(0, 80), padding: getComputedStyle(document.body).paddingBottom };
       });
       pass(`${name} no horizontal overflow`, Object.values(result.pages).every(Boolean));
       pass(`${name} mobile chrome`, Boolean(result.header && result.bottom && result.header.width <= result.width + 1 && result.bottom.width <= result.width + 1));
       pass(`${name} touch sizes`, result.heights.length > 0 && result.heights.every(height => height >= 44), `visible heights=${JSON.stringify(result.heights)}`);
+      pass(`${name} report source switch`, result.reportVisible);
+      pass(`${name} adaptive assembly switch`, result.adaptiveVisible);
       pass(`${name} console clean`, errors.length === 0, errors.slice(0, 2).join(' | '));
       if (name === 'Pixel 7 landscape') {
         await page.evaluate(async () => {

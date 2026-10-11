@@ -469,10 +469,15 @@ $$('.tab').forEach(btn => btn.addEventListener('click', () => switchTab(btn.data
 function switchTab(name) {
   if (name !== 'speaking' && typeof speechTraining !== 'undefined') stopSpeechRecognition();
   if (name !== 'logs') state._prevTab = name;   // v2.8.0：记录日志版块前的页签，便于返回
-  $$('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
-  $$('.bottom-tab-item').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  const navName = name === 'unit' ? 'exam' : name;
+  const moreTabs = ['reports', 'pomo', 'kb', 'notes', 'settings', 'speaking'];
+  $$('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === navName));
+  $$('.bottom-tab-item').forEach(b => b.classList.toggle('active', b.dataset.tab === navName || (b.id === 'bottomMoreBtn' && moreTabs.includes(name))));
+  $$('.more-sheet-item[data-tab]').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  $$('[data-training-view]').forEach(b => b.classList.toggle('primary', b.dataset.trainingView === name));
   $$('.tab-page').forEach(p => p.classList.toggle('active', p.id === 'tab-' + name));
-      if (name === 'dashboard') loadDashboard();
+  if (name === 'dashboard') loadDashboard();
+  if (name === 'reports') { loadDashboard(); loadLearningReport(state.reportDays || 7); loadQuizStats(); }
   if (name === 'study') loadWords();
   if (name === 'notes') loadNotes();
   if (name === 'kb') loadKb();
@@ -484,6 +489,25 @@ function switchTab(name) {
   if (name === 'quiz') { try { checkQuizResume(); } catch {}; try { loadQuizSourceCounts(); } catch {} }   // v2.11.0 续做检查 / v3.2.1 词源计数
   // quiz 页保持进行中的状态，不重置
 }
+
+$$('[data-report-view]').forEach(btn => btn.addEventListener('click', () => {
+  const view = btn.dataset.reportView;
+  $$('.report-source-panel').forEach(panel => { panel.hidden = panel.id !== `report-${view}`; });
+  $$('[data-report-view]').forEach(item => item.classList.toggle('primary', item === btn));
+}));
+
+$$('[data-training-view]').forEach(btn => btn.addEventListener('click', () => {
+  const target = btn.dataset.trainingView;
+  if (target === 'unit' && typeof unitState !== 'undefined' && typeof examState !== 'undefined') {
+    unitState.track = examState.track;
+    unitState.loaded = false;
+  }
+  if (target === 'exam' && typeof examState !== 'undefined' && typeof unitState !== 'undefined') {
+    examState.track = unitState.track;
+    examState.loaded = false;
+  }
+  switchTab(target);
+}));
 
 /* ================= v2.8.0：日志版块（开发日志 / 使用日志 / 报错日志） ================= */
 
@@ -621,7 +645,7 @@ function renderStudyTasks(tasks) {
   const summary = $('#todayTasksSummary');
   if (summary) summary.textContent = `${done}/${list.length} 已完成`;
   box.innerHTML = list.map(t => `<div class="study-task ${t.done ? 'done' : ''}">
-    <input class="study-task-check" type="checkbox" data-study-complete="${esc(t.id)}" aria-label="标记${esc(t.title)}完成" ${t.done ? 'checked' : ''} ${t.automatic ? 'disabled' : ''}>
+    <label class="study-task-check-wrap"><input class="study-task-check" type="checkbox" data-study-complete="${esc(t.id)}" aria-label="标记${esc(t.title)}完成" ${t.done ? 'checked' : ''} ${t.automatic ? 'disabled' : ''}></label>
     <span class="study-task-icon">${t.icon}</span><div class="study-task-main"><b>${esc(t.title)}</b><span>${esc(t.detail || '')}</span></div>
     <button class="btn mini ${t.done ? 'ghost' : 'primary'} study-task-btn" data-study-start="${esc(t.id)}" type="button">${t.done ? '查看' : '去练习'}</button>
   </div>`).join('');
@@ -641,11 +665,16 @@ function renderStudyTasks(tasks) {
   }));
 }
 function renderStudyPlan(plan) {
-  if (!plan) return;
+  plan ||= {};
   const type = $('#studyPlanExamType'); if (type) type.value = plan.examType || 'kaoyan1';
   const date = $('#studyPlanExamDate'); if (date) date.value = plan.examDate || '';
   const words = $('#studyPlanWords'); if (words) words.value = plan.dailyWords || 30;
   const minutes = $('#studyPlanMinutes'); if (minutes) minutes.value = plan.dailyMinutes || 30;
+  const summary = $('#studyPlanSummary');
+  if (summary) {
+    const exam = ({ kaoyan1: '考研英语一', cet6: '六级', custom: '自定义考试' })[plan.examType] || '考研英语一';
+    summary.textContent = `${exam}${plan.examDate ? ` · ${plan.examDate}` : ''} · 每日 ${plan.dailyWords || 30} 词 / ${plan.dailyMinutes || 30} 分钟`;
+  }
 }
 async function saveStudyPlan() {
   const result = $('#studyPlanResult');
@@ -657,6 +686,7 @@ async function saveStudyPlan() {
       dailyMinutes: Number($('#studyPlanMinutes')?.value),
     }});
     renderStudyPlan(r.plan); renderStudyTasks(r.tasks); loadDashboard();
+    const planFold = $('#studyPlanCard'); if (planFold) planFold.open = false;
     if (result) { result.className = 'result ok'; result.textContent = '已保存'; }
   } catch (e) { if (result) { result.className = 'result err'; result.textContent = e.message; } }
 }
@@ -792,7 +822,7 @@ async function loadDashboard() {
       </div>`).join('');
     // 更新标题
     const histTitle = $('#historyBars')?.closest('.card')?.querySelector('.card-title');
-    if (histTitle) histTitle.textContent = `学习成果曲线（最近 ${histSlice.length} 天）`;
+    if (histTitle) histTitle.textContent = `墨墨学习成果（最近 ${histSlice.length} 天）`;
 
     // v1.2.1：考研倒计时
     const countdown = $('#kaoyanCountdown');
@@ -847,9 +877,6 @@ async function loadDashboard() {
     $('#syncLog').innerHTML = d.recentLog.length
       ? d.recentLog.map(l => `<li class="${l.ok ? 'log-ok' : 'log-fail'}">${fmtBJ(l.ts)} · ${esc(l.msg)}</li>`).join('')
       : '<li>暂无记录，点击右上角同步</li>';
-
-    // v2.2.3：加载细粒度学习诊断周报
-    loadLearningReport(state.reportDays || 7);
 
     // 首次使用提示
     const status = await api('/api/status');
@@ -931,10 +958,9 @@ function renderLearningReport(data) {
   if (!ov.totalAttempts) {
     bodyEl.innerHTML = `
       <div class="report-empty">
-        <div class="report-empty-icon">📊</div>
-        <div class="report-empty-title">细粒度学习数据积累中</div>
-        <div class="report-empty-sub">自 v2.2.0 起已启用单题级流水。在单词测验或真题单元中作答后，此处将自动呈现薄弱项、错因分布与信心校准。</div>
-        <div class="report-empty-meta">数据启用时间: ${esc(data.enabledAt ? fmtBJ(data.enabledAt) : '近期')}</div>
+        <div class="report-empty-title">还没有工作台作答记录</div>
+        <div class="report-empty-sub">完成单词测验或真题专项后，报告会显示薄弱项与作答表现。</div>
+        <button type="button" class="btn" data-jump="quiz">开始单词测验</button>
       </div>`;
     return;
   }
@@ -2698,80 +2724,22 @@ if ($('#clearAuthTokenBtn')) $('#clearAuthTokenBtn').addEventListener('click', a
   }
 });
 
-$('#saveReviewCfgBtn').addEventListener('click', async () => {
-  const btn = $('#saveReviewCfgBtn');
-  const prev = btn.textContent;
+$('#saveModelAssignmentsBtn')?.addEventListener('click', async () => {
+  const btn = $('#saveModelAssignmentsBtn');
+  const result = $('#modelAssignmentsResult');
+  if (!btn || btn.disabled) return;
+  btn.disabled = true;
+  if (result) { result.className = 'result'; result.textContent = '正在保存…'; }
+  const assignment = prefix => ({ providerId: $(`#cfg${prefix}Provider`)?.value || '', model: $(`#cfg${prefix}Model`)?.value.trim() || '' });
   try {
-    btn.disabled = true;
-    await api('/api/config', { method: 'POST', body: { review: {
-      providerId: $('#cfgReviewProvider').value,
-      model: $('#cfgReviewModel').value.trim(),
-      // v2.4.1：thinking 不再由本卡管理（未提交该字段 → 服务端保留已存值），深度思考统一走服务商档案思考等级
-    } } });
-    btn.textContent = '✅ 已保存';
-    setTimeout(() => { btn.textContent = prev; }, 2000);
+    await api('/api/config', { method: 'POST', body: {
+      review: assignment('Review'), selection: assignment('Selection'),
+      story: assignment('Story'), writingOcr: assignment('WritingOcr'),
+    } });
+    if (result) { result.className = 'result ok'; result.textContent = '模型分配已保存'; }
   } catch (e) {
-    alert('保存失败：' + e.message);
-  } finally {
-    btn.disabled = false;
-  }
-});
-
-/* v2.3.4：保存划词助手专用模型配置 */
-$('#saveSelectionCfgBtn').addEventListener('click', async () => {
-  const btn = $('#saveSelectionCfgBtn');
-  const prev = btn.textContent;
-  try {
-    btn.disabled = true;
-    await api('/api/config', { method: 'POST', body: { selection: {
-      providerId: $('#cfgSelectionProvider').value,
-      model: $('#cfgSelectionModel').value.trim(),
-    } } });
-    btn.textContent = '✅ 已保存';
-    setTimeout(() => { btn.textContent = prev; }, 2000);
-  } catch (e) {
-    alert('保存失败：' + e.message);
-  } finally {
-    btn.disabled = false;
-  }
-});
-
-/* v2.4.1：保存词文成章专用模型配置 */
-$('#saveStoryCfgBtn').addEventListener('click', async () => {
-  const btn = $('#saveStoryCfgBtn');
-  const prev = btn.textContent;
-  try {
-    btn.disabled = true;
-    await api('/api/config', { method: 'POST', body: { story: {
-      providerId: $('#cfgStoryProvider').value,
-      model: $('#cfgStoryModel').value.trim(),
-    } } });
-    btn.textContent = '✅ 已保存';
-    setTimeout(() => { btn.textContent = prev; }, 2000);
-  } catch (e) {
-    alert('保存失败：' + e.message);
-  } finally {
-    btn.disabled = false;
-  }
-});
-
-/* v2.6.2：保存写作手写识图专用模型配置 */
-$('#saveWritingOcrCfgBtn')?.addEventListener('click', async () => {
-  const btn = $('#saveWritingOcrCfgBtn');
-  const prev = btn.textContent;
-  try {
-    btn.disabled = true;
-    await api('/api/config', { method: 'POST', body: { writingOcr: {
-      providerId: $('#cfgWritingOcrProvider').value,
-      model: $('#cfgWritingOcrModel').value.trim(),
-    } } });
-    btn.textContent = '✅ 已保存';
-    setTimeout(() => { btn.textContent = prev; }, 2000);
-  } catch (e) {
-    alert('保存失败：' + e.message);
-  } finally {
-    btn.disabled = false;
-  }
+    if (result) { result.className = 'result err'; result.textContent = `保存失败：${e.message}`; }
+  } finally { btn.disabled = false; }
 });
 
 /* ================= v2.4.1：DIY · 文章题材编辑器（词文成章题材自定义） ================= */
@@ -6351,9 +6319,7 @@ $$('#quizSubmode .quiz-submode-btn').forEach(btn => {
     $('#quizBasicPane').style.display = quiz.submode === 'basic' ? 'block' : 'none';
     $('#quizSrsPane').style.display = quiz.submode === 'srs' ? 'block' : 'none';
     $('#quizTransferPane').style.display = quiz.submode === 'transfer' ? 'block' : 'none';
-    if ($('#quizStatsPane')) $('#quizStatsPane').style.display = quiz.submode === 'stats' ? 'block' : 'none';
     if (quiz.submode === 'srs') loadSrsOverview();
-    if (quiz.submode === 'stats') loadQuizStats();
     try { loadQuizSourceCounts(); } catch {}   // v3.2.1：切子模式刷新词源/复练计数
   });
 });
@@ -6742,7 +6708,15 @@ function syncAdaptiveKindChips() {
   $$('#quizAdaptiveKinds .chip').forEach(c =>
     c.classList.toggle('active', quiz.adaptiveKinds.includes(c.dataset.akind)));
 }
-if ($('#quizAdaptiveBtn')) $('#quizAdaptiveBtn').addEventListener('click', () => startAdaptive());
+if ($('#quizAssembly')) {
+  const updateQuizAssembly = () => {
+    const adaptive = $('#quizAssembly').value === 'adaptive';
+    $('#quizFixedOptions').hidden = adaptive;
+    $('#quizAdaptiveFold').hidden = !adaptive;
+  };
+  $('#quizAssembly').addEventListener('change', updateQuizAssembly);
+  updateQuizAssembly();
+}
 if ($('#quizAiDistractors')) $('#quizAiDistractors').addEventListener('change', e => { quiz.aiDistractors = !!e.target.checked; });
 
 /* v3.2.1：自动播报开关（浏览器本地偏好，默认开启） */
@@ -6889,7 +6863,7 @@ function shuffle(arr) {
   return a;
 }
 
-$('#quizStartBtn').addEventListener('click', startQuiz);
+$('#quizStartBtn').addEventListener('click', () => $('#quizAssembly')?.value === 'adaptive' ? startAdaptive() : startQuiz());
 $('#quizQuitBtn').addEventListener('click', quitQuiz);
 
 // 测验区的朗读按钮（事件委托）

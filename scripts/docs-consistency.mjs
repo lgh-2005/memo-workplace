@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** v3.3.6：产品文档、版本标识与工作手册的一致性检查。 */
+/** v3.4.0：产品文档、版本标识与工作手册的一致性检查。 */
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';

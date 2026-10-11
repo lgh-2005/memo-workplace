@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * v3.3.6：隔离式 data 备份/恢复演练。
+ * v3.3.5：隔离式 data 备份/恢复演练。
  * 默认生成 data/ tar.gz，再恢复到隔离临时目录并逐文件校验 SHA-256；
  * 永远不会覆盖源目录。生产服务器可通过 --source 指向 /opt/workbench/data。
  */

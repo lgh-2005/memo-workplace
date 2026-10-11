@@ -157,11 +157,7 @@ main {
   box-shadow: var(--shadow-card);
   transition: box-shadow .22s ease, transform .22s ease, border-color .22s ease;
 }
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card-hover);
-  border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
-}
+.card:hover { box-shadow: var(--shadow-card); }
 .card-title { font-weight: 650; margin-bottom: 12px; position: relative; padding-left: 12px; letter-spacing: .01em; }
 .card-title::before {
   content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
@@ -186,6 +182,18 @@ main {
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .stat-sub { color: var(--text-sub); font-size: 12px; }
+.today-summary { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:14px 0 16px; }
+.today-summary .stat { padding:10px 4px; border-bottom:1px solid var(--border); }
+.task-extra, .plan-editor { margin-top:12px; border-top:1px solid var(--border); padding-top:10px; }
+.task-extra > summary, .plan-editor > summary { cursor:pointer; color:var(--primary); font-size:13px; min-height:44px; display:flex; align-items:center; justify-content:space-between; }
+.study-plan-form { padding-top:6px; }
+.page-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px; }
+.report-source-nav, .training-view-nav { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.model-assignment { display:grid; grid-template-columns:150px minmax(140px,1fr) minmax(180px,1.3fr); gap:10px; align-items:center; padding:10px 0; border-bottom:1px solid var(--border); }
+.model-assignment:last-of-type { border-bottom:0; }
+.settings-section-body > .card { box-shadow:none; background:transparent; border:0; border-bottom:1px solid var(--border); border-radius:0; padding:14px 0; }
+.settings-section-body > .card:last-child { border-bottom:0; }
+[hidden] { display:none !important; }
 
 /* v3.3.6：任务中心、考试计划与听说训练 */
 .study-task-list { display: grid; gap: 8px; }
@@ -216,6 +224,9 @@ main {
   .study-task-btn { min-height: 44px; }
   .speech-actions .btn, #speechSubmitBtn { min-height: 44px; }
   .speech-target { font-size: 18px; }
+}
+@media (max-width: 900px) {
+  .model-assignment { grid-template-columns: 1fr; gap: 6px; }
 }
 
 /* 柱状图（v1.2.1：紧凑自适应，防止拉扯背景） */
@@ -657,8 +668,8 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   box-shadow: 3px 3px 0 #000000;
 }
 [data-style="pop"] .card:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 5px 5px 0 #111111;
+  transform: none;
+  box-shadow: 4px 4px 0 #111111;
 }
 [data-style="pop"] .btn {
   border: 2px solid #111111;
@@ -722,7 +733,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   box-shadow: 4px 4px 0 #facc15;
 }
 [data-style="pop"][data-theme="dark"] .card:hover {
-  border-color: #facc15;
+  border-color: #383842;
 }
 [data-style="pop"][data-theme="dark"] .btn {
   border: 2px solid #facc15;
@@ -1987,7 +1998,9 @@ code { font-family: Consolas, monospace; font-size: 12px; }
   .more-sheet {
     display: block !important;
     position: fixed;
-    bottom: -100%;
+    bottom: 0;
+    transform: translateY(100%);
+    visibility: hidden;
     left: 0; right: 0;
     background: var(--card);
     border-radius: 20px 20px 0 0;
@@ -1995,10 +2008,12 @@ code { font-family: Consolas, monospace; font-size: 12px; }
     box-shadow: 0 -8px 28px rgba(0, 0, 0, .25);
     z-index: 1100;
     padding: 12px 18px calc(24px + env(safe-area-inset-bottom, 0px));
-    transition: bottom .3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear .3s;
   }
   .more-sheet.open {
-    bottom: 0 !important;
+    transform: translateY(0);
+    visibility: visible;
+    transition-delay: 0s;
   }
   .more-sheet-handle {
     width: 36px;
@@ -2941,6 +2956,9 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 
 /* 移动端周报适配 (<=700px) */
 @media (max-width: 700px) {
+  .today-summary { grid-template-columns:repeat(2,1fr); gap:8px; }
+  .page-heading { align-items:flex-start; flex-direction:column; }
+  .model-assignment { grid-template-columns:1fr; gap:6px; }
   .report-stat-grid { grid-template-columns: 1fr; }
   .report-conf-grid { grid-template-columns: 1fr; }
   .report-win-btns .report-win-btn { min-height: 44px; padding: 4px 10px; }

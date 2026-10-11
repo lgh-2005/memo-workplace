@@ -1,4 +1,4 @@
-# v3.3.6 CI 平台与发布门禁确认
+# v3.4.0 CI 平台与发布门禁确认
 
 本项目采用双仓模式：
 
@@ -9,4 +9,6 @@
 
 确认标准：`git ls-remote gitee master` 与 `git ls-remote origin master` 指向同一提交；`release-gate.mjs --refs` 通过；GitHub Actions 页面对应提交为绿色后，才允许生产发布。生产发布完成后运行 `online-health.mjs` 并保存 JSON 结果。
 
-v3.3.6 的 `npm test` 额外执行 `scripts/study-plan-smoke.mjs`，使用两个隔离用户验证考试计划、任务完成、听说训练会话和学习流水不串号；`npm run test:mobile` 在 Pixel 7 / iPhone 13 模拟环境检查新增页签布局和触控契约。
+v3.3.6 的 `npm test` 额外执行 `scripts/study-plan-smoke.mjs`，使用两个隔离用户验证考试计划、任务完成、听说训练会话和学习流水不串号。
+
+v3.4.0 增加 `scripts/frontend-refinement-smoke.mjs`，在隔离沙箱端到端验证简化后的导航、报告、计划、模型分配和组卷操作；`npm run test:mobile` 在 Pixel 7 / iPhone 13 模拟环境检查新入口布局与触控契约。

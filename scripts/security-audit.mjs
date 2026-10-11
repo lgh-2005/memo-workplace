@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** v3.3.6：源码与文档敏感信息扫描。输出只含路径、行号和类型，不回显匹配内容。 */
+/** v3.4.0：源码与文档敏感信息扫描。输出只含路径、行号和类型，不回显匹配内容。 */
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
