@@ -5,7 +5,7 @@
  * --device 需要 Android ADB，并通过 Chrome DevTools 读取真实设备页面布局。
  */
 import { existsSync, readdirSync } from 'node:fs';
-import { cp, mkdtemp, readFile, rm } from 'node:fs/promises';
+import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { execFileSync, spawn } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
@@ -46,6 +46,13 @@ async function emulatedChecks() {
     await cp(join(root, 'package.json'), join(sandbox, 'package.json'));
     await cp(join(root, 'public'), join(sandbox, 'public'), { recursive: true });
     await cp(join(root, 'corpus'), join(sandbox, 'corpus'), { recursive: true });
+    await mkdir(join(sandbox, 'data'), { recursive: true });
+    const words = Object.fromEntries(Array.from({ length: 80 }, (_, index) => [`w${index}`, {
+      id: index, spelling: `mobileword${String(index).padStart(3, '0')}`, studyCount: index,
+      lastStudyDate: `2026-09-0${(index % 9) + 1}`,
+    }]));
+    await writeFile(join(sandbox, 'data', 'db.json'), JSON.stringify({ words, glosses: {}, progressHistory: [], todayItems: [], notes: [], sessions: [], syncLog: [], quizLog: [], unitLog: [] }));
+    await writeFile(join(sandbox, 'data', 'config.json'), JSON.stringify({ llm: { mock: true, activeId: 'mobile-test', providers: [{ id: 'mobile-test', name: 'mobile-test', baseUrl: '', apiKey: '', model: 'mock' }] }, autoSync: { enabled: false, minutes: 60 } }));
     const port = 19000 + Math.floor(Math.random() * 500);
     appBase = `http://127.0.0.1:${port}`;
     server = spawn(process.execPath, ['server.js'], { cwd: sandbox, env: { ...process.env, HOST: '127.0.0.1', PORT: String(port) }, stdio: 'ignore' });
@@ -108,6 +115,33 @@ async function emulatedChecks() {
       pass(`${name} mobile chrome`, Boolean(result.header && result.bottom && result.header.width <= result.width + 1 && result.bottom.width <= result.width + 1));
       pass(`${name} touch sizes`, result.heights.length > 0 && result.heights.every(height => height >= 44), `visible heights=${JSON.stringify(result.heights)}`);
       pass(`${name} console clean`, errors.length === 0, errors.slice(0, 2).join(' | '));
+      if (name === 'Pixel 7 landscape') {
+        await page.evaluate(async () => {
+          if (typeof window.switchTab === 'function') window.switchTab('study');
+          await new Promise(resolve => setTimeout(resolve, 150));
+          document.querySelector('#wordFilters [data-filter="all"]')?.click();
+          await new Promise(resolve => setTimeout(resolve, 250));
+        });
+        const list = await page.evaluate(() => {
+          const el = document.querySelector('#wordList');
+          if (!el) return null;
+          const rect = el.getBoundingClientRect();
+          return { x: Math.round(rect.left + rect.width / 2), y: Math.round(rect.top + Math.min(40, rect.height - 5)), top: Math.round(rect.top), height: Math.round(rect.height), innerHeight, items: el.querySelectorAll('.word-item').length, scrollTop: el.scrollTop, scrollHeight: el.scrollHeight, clientHeight: el.clientHeight };
+        });
+        let scrolled = false;
+        if (list && list.items > 10 && list.y < list.innerHeight - 8 && list.scrollHeight > list.clientHeight) {
+          const cdp = await context.newCDPSession(page);
+          await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: list.x, y: list.y }] });
+          for (let i = 1; i <= 14; i++) {
+            await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: list.x, y: list.y - i * 12 }] });
+            await delay(16);
+          }
+          await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+          await delay(250);
+          scrolled = await page.evaluate(() => document.querySelector('#wordList')?.scrollTop > 40);
+        }
+        pass('Pixel 7 landscape word list is touch-scrollable above viewport edge', scrolled, JSON.stringify(list));
+      }
       await context.close();
     }
   } catch (error) {
@@ -147,8 +181,9 @@ async function deviceChecks() {
     adb(['forward', 'tcp:9222', 'localabstract:chrome_devtools_remote']);
     const require = createRequire(import.meta.url);
     let playwright;
+    try { playwright = require('playwright'); } catch {}
     const candidates = [process.env.PLAYWRIGHT_MODULE, process.env.APPDATA && join(process.env.APPDATA, 'npm', 'node_modules', '@playwright', 'cli', 'node_modules', 'playwright')].filter(Boolean);
-    for (const candidate of candidates) { try { playwright = require(candidate); break; } catch {} }
+    for (const candidate of candidates) { if (playwright) break; try { playwright = require(candidate); break; } catch {} }
     if (!playwright) throw new DeviceUnavailable('未找到 Playwright；可设置 PLAYWRIGHT_MODULE');
     const browser = await playwright.chromium.connectOverCDP('http://127.0.0.1:9222');
     const pages = browser.contexts().flatMap(context => context.pages());

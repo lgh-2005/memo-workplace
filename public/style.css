@@ -4232,5 +4232,12 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   }
 }
 
+@media (orientation: landscape) and (max-height: 500px) and (pointer: coarse) {
+  /* 横屏高度紧张时筛选项横向滚动，避免把词表压到屏幕可视区以下。 */
+  #wordFilters { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+  #wordFilters::-webkit-scrollbar { display: none; }
+  #wordFilters .chip { flex: 0 0 auto; white-space: nowrap; }
+}
+
 
 
