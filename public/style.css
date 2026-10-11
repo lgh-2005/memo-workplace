@@ -187,6 +187,37 @@ main {
 }
 .stat-sub { color: var(--text-sub); font-size: 12px; }
 
+/* v3.3.6：任务中心、考试计划与听说训练 */
+.study-task-list { display: grid; gap: 8px; }
+.study-task { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); min-width: 0; }
+.study-task:last-child { border-bottom: 0; }
+.study-task.done { opacity: .7; }
+.study-task-check { width: 20px; height: 20px; flex: 0 0 20px; accent-color: var(--ok); cursor: pointer; }
+.study-task-check-wrap { min-width: 44px; min-height: 44px; display: grid; place-items: center; flex: 0 0 44px; cursor: pointer; }
+.study-task-icon { font-size: 21px; flex: 0 0 28px; text-align: center; }
+.study-task-main { min-width: 0; flex: 1; display: grid; gap: 3px; }
+.study-task-main b { font-size: 13px; }
+.study-task-main span { color: var(--text-sub); font-size: 11px; }
+.study-task-btn { flex: 0 0 auto; min-height: 38px; }
+.study-plan-form { display: grid; gap: 9px; }
+.study-plan-form .field-label { margin: 0; }
+.study-plan-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.study-plan-grid { margin-top: 16px; }
+.speaking-mode-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.speech-training { border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; display: grid; gap: 12px; }
+.speech-prompt { color: var(--text-sub); font-size: 13px; }
+.speech-target { font-size: 20px; font-weight: 650; min-height: 32px; line-height: 1.5; }
+.speech-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.speech-answer { font-size: 16px; min-height: 44px; }
+.speech-support { min-height: 20px; }
+@media (max-width: 700px) {
+  .study-plan-grid { margin-top: 12px; }
+  .study-plan-fields { grid-template-columns: 1fr; }
+  .study-task-btn { min-height: 44px; }
+  .speech-actions .btn, #speechSubmitBtn { min-height: 44px; }
+  .speech-target { font-size: 18px; }
+}
+
 /* 柱状图（v1.2.1：紧凑自适应，防止拉扯背景） */
 .bars {
   display: flex; align-items: flex-end; gap: 6px; height: 110px; padding-top: 8px;
@@ -4238,6 +4269,3 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   #wordFilters::-webkit-scrollbar { display: none; }
   #wordFilters .chip { flex: 0 0 auto; white-space: nowrap; }
 }
-
-
-

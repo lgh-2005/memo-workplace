@@ -59,6 +59,8 @@ const LEARNING_ATTEMPTS_FILE = path.join(DATA_DIR, 'learning_attempts.json');
 const QUIZ_SRS_FILE = path.join(DATA_DIR, 'quiz_srs.json');
 // v2.11.0：自适应组卷会话（跨设备/刷新可续做），独立文件不膨胀 db.json
 const QUIZ_SESSION_FILE = path.join(DATA_DIR, 'quiz_session.json');
+// v3.3.6：今日任务中心与考试计划（按用户隔离，随备份恢复）
+const STUDY_PLAN_FILE = 'study_plan.json';
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
 // 本机默认只监听 127.0.0.1；云服务器部署时设置 HOST=0.0.0.0（建议配合 nginx/防火墙）
 const HOST = process.env.HOST || '127.0.0.1';
@@ -435,6 +437,7 @@ const USER_DATA_FILES = [
   { file: 'quiz_session.json', json: true, quizSession: true },
   { file: 'essays.json', json: true },
   { file: 'llm_usage.json', json: true },   // v3.2.0：AI 用量统计
+  { file: STUDY_PLAN_FILE, json: true },    // v3.3.6：考试计划/任务完成状态
 ];
 function backupFileSpecs() {
   const specs = [];
@@ -612,7 +615,7 @@ function migrateToMultiUser(adminPasswordRaw) {
   const backupDir = path.join(DATA_DIR, 'backups', `backup-v3-migrate-${stamp}`);
   fs.mkdirSync(backupDir, { recursive: true });
   for (const fn of ['config.json', 'db.json', 'chat_sessions.json', 'learning_attempts.json',
-    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json', 'logs.json', 'error_log.json']) {
+    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json', STUDY_PLAN_FILE, 'logs.json', 'error_log.json']) {
     const src = path.join(DATA_DIR, fn);
     if (fs.existsSync(src)) fs.copyFileSync(src, path.join(backupDir, fn));
   }
@@ -639,7 +642,7 @@ function migrateToMultiUser(adminPasswordRaw) {
 
   // 迁移 per-user 数据文件
   for (const fn of ['db.json', 'chat_sessions.json', 'learning_attempts.json',
-    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json']) {
+    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json', STUDY_PLAN_FILE]) {
     const src = path.join(DATA_DIR, fn);
     if (fs.existsSync(src)) {
       try { fs.renameSync(src, path.join(userDir(id), fn)); }
@@ -726,6 +729,15 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '3.3.6', date: '2026-10-11', title: '今日任务中心、考试计划与听说训练',
+    items: [
+      '今日任务中心汇总词汇、到期复习、真题和听说记录，支持手动勾选及跨设备同步',
+      '考试计划支持考研英语一、六级和自定义日期，每日词数与学习时长；倒计时使用北京自然日',
+      '听力使用浏览器英语 TTS；口语从本地语料抽取短句，支持语音识别和手动输入降级',
+      '听说结果由服务端评分并写入学习流水，按用户隔离，一次性会话防重复提交',
+    ],
+  },
   {
     version: '3.3.5',
     date: '2026-10-11',
@@ -978,6 +990,8 @@ const VALID_ATTEMPT_KINDS = new Set([
   'vocab_context',
   'vocab_cloze',
   'sentence_analysis',
+  'listening',
+  'speaking',
 ]);
 const VALID_ATTEMPT_RESULTS = new Set([
   'pending',
@@ -5770,7 +5784,7 @@ function setSecurityHeaders(res) {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  res.setHeader('Permissions-Policy', 'camera=(self), microphone=(), geolocation=()');
+  res.setHeader('Permissions-Policy', 'camera=(self), microphone=(self), geolocation=()');
   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
   res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https:; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
 }
@@ -5778,6 +5792,152 @@ function setSecurityHeaders(res) {
 function isWithinDir(baseDir, targetPath) {
   const rel = path.relative(path.resolve(baseDir), path.resolve(targetPath));
   return rel === '' || (rel !== '..' && !rel.startsWith('..' + path.sep) && !path.isAbsolute(rel));
+}
+
+/* v3.3.6：今日任务中心、考试计划与听说训练 */
+const STUDY_TASK_IDS = new Set(['vocab_today', 'review_due', 'exam_practice', 'listening', 'speaking']);
+const speechSessions = new Map();
+function validStudyDate(date) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return false;
+  const [year, month, day] = date.split('-').map(Number);
+  const d = new Date(Date.UTC(year, month - 1, day));
+  return year >= 2000 && year <= 2100 && d.getUTCFullYear() === year && d.getUTCMonth() === month - 1 && d.getUTCDate() === day;
+}
+function defaultStudyPlan() {
+  return {
+    schemaVersion: 1,
+    examType: 'kaoyan1',
+    examDate: '',
+    dailyWords: 30,
+    dailyMinutes: 30,
+    completed: {},
+    updatedAt: null,
+  };
+}
+function loadStudyPlan() {
+  const file = ctxFilePath(STUDY_PLAN_FILE);
+  let raw = defaultStudyPlan();
+  if (fs.existsSync(file)) {
+    try {
+      raw = JSON.parse(fs.readFileSync(file, 'utf8'));
+      if (!raw || raw.schemaVersion !== 1 || !raw.completed || typeof raw.completed !== 'object' || Array.isArray(raw.completed)) throw new Error('invalid schema');
+    } catch {
+      const e = new Error('考试计划文件损坏，已拒绝覆盖，请从备份恢复');
+      e.code = 'STUDY_PLAN_CORRUPT'; throw e;
+    }
+  }
+  const base = defaultStudyPlan();
+  const p = raw && typeof raw === 'object' ? raw : {};
+  const completed = p.completed;
+  return {
+    ...base,
+    examType: ['kaoyan1', 'cet6', 'custom'].includes(String(p.examType)) ? String(p.examType) : base.examType,
+    examDate: validStudyDate(String(p.examDate || '')) ? String(p.examDate) : '',
+    dailyWords: Number.isFinite(Number(p.dailyWords)) ? Math.max(1, Math.min(10000, Math.floor(Number(p.dailyWords)))) : base.dailyWords,
+    dailyMinutes: Number.isFinite(Number(p.dailyMinutes)) ? Math.max(1, Math.min(1440, Math.floor(Number(p.dailyMinutes)))) : base.dailyMinutes,
+    completed,
+    updatedAt: typeof p.updatedAt === 'string' ? p.updatedAt : null,
+  };
+}
+function saveStudyPlan(plan) {
+  saveJSON(ctxFilePath(STUDY_PLAN_FILE), { ...plan, schemaVersion: 1, updatedAt: new Date().toISOString() });
+}
+function cleanStudyPlanInput(body, current = loadStudyPlan()) {
+  const examType = String(body.examType ?? current.examType);
+  if (!['kaoyan1', 'cet6', 'custom'].includes(examType)) throw new Error('examType 仅允许 kaoyan1/cet6/custom');
+  const examDate = String(body.examDate ?? current.examDate ?? '').trim();
+  if (examDate && !/^\d{4}-\d{2}-\d{2}$/.test(examDate)) throw new Error('examDate 必须为 YYYY-MM-DD');
+  if (examDate) {
+    const [yy, mm, dd] = examDate.split('-').map(Number);
+    const d = new Date(Date.UTC(yy, mm - 1, dd));
+    if (yy < 2000 || yy > 2100 || isNaN(d.getTime()) || d.getUTCFullYear() !== yy || d.getUTCMonth() !== mm - 1 || d.getUTCDate() !== dd) throw new Error('examDate 不是有效日期（2000..2100）');
+  }
+  const dailyWords = Number(body.dailyWords ?? current.dailyWords);
+  const dailyMinutes = Number(body.dailyMinutes ?? current.dailyMinutes);
+  if (!Number.isInteger(dailyWords) || dailyWords < 1 || dailyWords > 10000) throw new Error('dailyWords 必须为 1..10000 的整数');
+  if (!Number.isInteger(dailyMinutes) || dailyMinutes < 1 || dailyMinutes > 1440) throw new Error('dailyMinutes 必须为 1..1440 的整数');
+  return { ...current, schemaVersion: 1, examType, examDate, dailyWords, dailyMinutes };
+}
+function completedStudyTasksFor(date, plan = loadStudyPlan()) {
+  const row = plan.completed && plan.completed[date];
+  return row && typeof row === 'object' ? row : {};
+}
+function studyTasks(date = bjDate(), plan = loadStudyPlan()) {
+  const due = new Set(collectSrsDue('all').map(x => x.spelling)).size;
+  const attempts = loadLearningStore().attempts.filter(x => bjDateOf(x.submittedAt) === date && !['pending', 'unjudged'].includes(x.result));
+  const vocab = new Set(attempts.filter(x => x.kind === 'word_quiz').map(x => x.meta?.word || x.itemId));
+  const progress = db.progressHistory.find(x => x.date === date);
+  const counts = {
+    vocab_today: Math.max(vocab.size, progress?.finished || 0),
+    review_due: new Set(attempts.filter(x => x.kind === 'word_quiz' && ['srs', 'srs_review', 'wrongbook'].includes(x.meta?.mode)).map(x => x.meta?.word || x.itemId)).size,
+    exam_practice: attempts.filter(x => ['unit_objective', 'translation', 'writing', 'vocab_context', 'vocab_cloze'].includes(x.kind)).length,
+    listening: attempts.filter(x => x.kind === 'listening').length,
+    speaking: attempts.filter(x => x.kind === 'speaking').length,
+  };
+  const completed = completedStudyTasksFor(date, plan);
+  const tasks = [
+    { id: 'vocab_today', title: '今日词汇', icon: '🔤', target: plan.dailyWords, detail: `${counts.vocab_today}/${plan.dailyWords} 词 · 今日词表 ${Object.values(db.words).filter(x => x.today?.date === date).length}`, tab: 'study' },
+    { id: 'review_due', title: '到期与错题复习', icon: '🔁', target: due + counts.review_due, detail: `${counts.review_due} 词已练 · ${due} 词待复习（去重）`, tab: 'quiz' },
+    { id: 'exam_practice', title: '真题训练', icon: '📝', target: 1, detail: `${counts.exam_practice}/1 次`, tab: 'exam' },
+    { id: 'listening', title: '听力拼写', icon: '🎧', target: 1, detail: `${counts.listening}/1 次`, tab: 'speaking' },
+    { id: 'speaking', title: '口语跟读', icon: '🗣️', target: 1, detail: `${counts.speaking}/1 次`, tab: 'speaking' },
+  ];
+  return tasks.map(t => {
+    const automatic = counts[t.id] >= t.target;
+    return { ...t, count: counts[t.id], automatic, done: automatic || completed[t.id] === true };
+  });
+}
+function completeStudyTask(taskId, date = bjDate(), done = true) {
+  if (!STUDY_TASK_IDS.has(taskId)) throw new Error('未知任务');
+  const plan = loadStudyPlan();
+  if (!plan.completed[date] || typeof plan.completed[date] !== 'object') plan.completed[date] = {};
+  plan.completed[date][taskId] = done === true;
+  // 只保留最近 120 天，避免跨设备同步文件无限增长
+  const dates = Object.keys(plan.completed).sort();
+  for (const old of dates.slice(0, Math.max(0, dates.length - 120))) delete plan.completed[old];
+  saveStudyPlan(plan);
+  return studyTasks(date, plan);
+}
+function studyPlanDate(plan) {
+  return plan.examDate || null;
+}
+function speechSourceWord() {
+  const words = [...Object.values(db.words), ...db.todayItems].filter(x => /^[a-z][a-z'-]{1,40}$/i.test(x?.spelling || ''));
+  const today = words.filter(x => x.today?.date === bjDate());
+  const pool = today.length ? today : words;
+  const item = pool.length ? pool[crypto.randomInt(pool.length)] : { spelling: 'practice' };
+  const spelling = String(item.spelling).trim().slice(0, 120) || 'practice';
+  const gloss = String(db.glosses[spelling]?.gloss || '').slice(0, 300);
+  return { spelling, gloss };
+}
+function speechSourceSentence(word) {
+  const plan = loadStudyPlan();
+  const pool = kbSentences().filter(x => x.s.length <= 180 && /^[a-zA-Z]/.test(x.s) && (!x.track || plan.examType === 'custom' || x.track === plan.examType));
+  const matching = pool.filter(x => normalizeSpeechText(x.s).split(' ').includes(word));
+  const candidates = matching.length ? matching : pool;
+  if (candidates.length) {
+    const item = candidates[crypto.randomInt(candidates.length)];
+    return { text: item.s, source: item.sourceKind, title: item.title || '本地语料', rid: item.rid };
+  }
+  const sentences = ['Regular practice helps me make steady progress.', 'I would like to improve my English every day.', 'Learning a new language takes time and patience.'];
+  return { text: sentences[crypto.randomInt(sentences.length)], source: 'builtin', title: '内置练习短句', rid: null };
+}
+function speechSessionFor(id, userId) {
+  const s = speechSessions.get(`${userId}:${id}`);
+  if (!s || Date.now() - s.createdAt > 15 * 60 * 1000) { speechSessions.delete(`${userId}:${id}`); return null; }
+  return s;
+}
+function normalizeSpeechText(value) { return String(value || '').toLowerCase().replace(/[^a-z0-9'\s-]/g, ' ').replace(/\s+/g, ' ').trim(); }
+function speechTokenDistance(a, b) {
+  const left = Array.isArray(a) ? a : [];
+  const right = Array.isArray(b) ? b : [];
+  let prev = Array.from({ length: right.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= left.length; i++) {
+    const cur = [i];
+    for (let j = 1; j <= right.length; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (left[i - 1] === right[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[right.length];
 }
 
 function readBody(req, max = 5e6) {
@@ -5825,11 +5985,15 @@ function dashboardData() {
     history.push({ date: key, finished: rec?.finished || 0, total: rec?.total || 0 });
   }
 
-  // v1.2.1：考研倒计时（每年 12 月最后一个周末，约 12-20 ~ 12-28 之间，取 12-21 作近似值）
+  const studyPlan = loadStudyPlan();
+  const configuredExamDate = studyPlanDate(studyPlan);
+  // v3.3.6：优先使用用户考试计划；未设置时保留原有考研默认倒计时
   const yr = new Date().getFullYear();
-  const examDate = new Date(`${today > `${yr}-06-01` ? yr : yr}-12-21T00:00:00+08:00`);
-  if (examDate.getTime() < Date.now()) examDate.setFullYear(examDate.getFullYear() + 1);
-  const daysLeft = Math.ceil((examDate.getTime() - Date.now()) / 86400000);
+  const hasExamDate = Boolean(configuredExamDate) || studyPlan.examType === 'kaoyan1';
+  const examDate = new Date(`${configuredExamDate || `${yr}-12-21`}T00:00:00+08:00`);
+  if (!configuredExamDate && hasExamDate && examDate.getTime() < Date.now()) examDate.setFullYear(examDate.getFullYear() + 1);
+  const examDateStr = hasExamDate ? (configuredExamDate || `${examDate.getFullYear()}-12-21`) : '';
+  const daysLeft = hasExamDate ? Math.round((Date.parse(`${examDateStr}T00:00:00+08:00`) - Date.parse(`${today}T00:00:00+08:00`)) / 86400000) : null;
 
   // 连续打卡天数 (streak)：从今天/昨天向前数连续有学习记录的天数
   let streak = 0;
@@ -5877,8 +6041,10 @@ function dashboardData() {
       pendingNotes: db.notes.filter(n => !n.synced).length,
       sessions: db.sessions.length,
     },
-    // v1.2.1：考研增强
-    kaoyan: { daysLeft, examDate: examDate.toISOString().slice(0, 10) },
+    // v3.3.6：考试计划增强
+    kaoyan: hasExamDate ? { daysLeft, examDate: examDateStr, examType: studyPlan.examType, custom: Boolean(configuredExamDate) } : null,
+    studyPlan,
+    studyTasks: studyTasks(today, studyPlan),
     streak,
     mastery,
     quizStats,
@@ -6555,6 +6721,95 @@ async function handleRequest(req, res) {
       // 仪表盘
       if (p === '/api/dashboard' && req.method === 'GET') {
         return sendJSON(res, 200, dashboardData());
+      }
+
+      /* ---- v3.3.6：今日任务中心与考试计划 ---- */
+      if (p === '/api/study/plan' && req.method === 'GET') {
+        const plan = loadStudyPlan();
+        return sendJSON(res, 200, { ok: true, plan, today: bjDate(), tasks: studyTasks(bjDate(), plan) });
+      }
+      if (p === '/api/study/plan' && req.method === 'POST') {
+        const body = await readBody(req);
+        try {
+          const plan = cleanStudyPlanInput(body);
+          saveStudyPlan(plan);
+          return sendJSON(res, 200, { ok: true, plan: loadStudyPlan(), tasks: studyTasks(bjDate(), plan) });
+        } catch (e) { return sendJSON(res, e.code === 'STUDY_PLAN_CORRUPT' ? 500 : 400, { error: e.message, code: e.code }); }
+      }
+      if (p === '/api/study/tasks' && req.method === 'GET') {
+        const plan = loadStudyPlan();
+        const date = u.searchParams.get('date') || bjDate();
+        if (!validStudyDate(date) || date !== bjDate()) return sendJSON(res, 400, { error: '任务仅支持当前北京日期' });
+        return sendJSON(res, 200, { ok: true, date, tasks: studyTasks(date, plan), plan });
+      }
+      if (p === '/api/study/tasks/complete' && req.method === 'POST') {
+        const body = await readBody(req);
+        const date = String(body.date || bjDate());
+        if (!validStudyDate(date) || date !== bjDate()) return sendJSON(res, 400, { error: '任务仅支持当前北京日期' });
+        if (body.completed !== undefined && typeof body.completed !== 'boolean') return sendJSON(res, 400, { error: 'completed 必须为布尔值' });
+        try { return sendJSON(res, 200, { ok: true, date, tasks: completeStudyTask(String(body.taskId || ''), date, body.completed !== false) }); }
+        catch (e) { return sendJSON(res, 400, { error: e.message }); }
+      }
+
+      /* ---- v3.3.6：浏览器听说训练（TTS + Web Speech Recognition / 手动输入降级） ---- */
+      if (p === '/api/speaking/session' && req.method === 'POST') {
+        const body = await readBody(req);
+        for (const [key, session] of speechSessions) if (Date.now() - session.createdAt > 15 * 60 * 1000) speechSessions.delete(key);
+        const userPrefix = `${ctxStore.userId || LEGACY_USER}:`;
+        const mine = [...speechSessions.keys()].filter(key => key.startsWith(userPrefix));
+        for (const key of mine.slice(0, Math.max(0, mine.length - 9))) speechSessions.delete(key);
+        const mode = body.mode || 'listening';
+        if (!['listening', 'speaking'].includes(mode)) return sendJSON(res, 400, { error: 'mode 仅允许 listening/speaking' });
+        const word = speechSourceWord();
+        const id = crypto.randomBytes(12).toString('hex');
+        const sentence = mode === 'speaking' ? speechSourceSentence(word.spelling) : null;
+        const target = mode === 'speaking' ? sentence.text : word.spelling;
+        speechSessions.set(`${ctxStore.userId || LEGACY_USER}:${id}`, { mode, expected: target, word: word.spelling, gloss: word.gloss, source: sentence?.source || null, createdAt: Date.now() });
+        return sendJSON(res, 200, {
+          ok: true, sessionId: id, mode, word: mode === 'speaking' ? word.spelling : null,
+          prompt: mode === 'listening' ? '点击播放后，听音拼写单词' : '请朗读下面的句子，并检查识别结果',
+          target: mode === 'speaking' ? target : null,
+          ttsText: target,
+          gloss: null,
+          source: sentence ? { kind: sentence.source, title: sentence.title, rid: sentence.rid } : null,
+        });
+      }
+      if (p === '/api/speaking/submit' && req.method === 'POST') {
+        const body = await readBody(req);
+        const id = String(body.sessionId || '');
+        const session = speechSessionFor(id, ctxStore.userId || LEGACY_USER);
+        if (!session) return sendJSON(res, 400, { error: '训练会话已失效，请重新开始' });
+        const answer = String(body.answer || '').trim();
+        if (!answer || answer.length > 4000) return sendJSON(res, 400, { error: '请输入 1..4000 字符的答案' });
+        const inputMethod = body.inputMethod || 'manual';
+        if (!['manual', 'recognition'].includes(inputMethod)) return sendJSON(res, 400, { error: 'inputMethod 非法' });
+        const durationMs = body.durationMs === undefined ? null : Number(body.durationMs);
+        if (durationMs !== null && (!Number.isFinite(durationMs) || durationMs < 0 || durationMs > 14400000)) return sendJSON(res, 400, { error: 'durationMs 非法' });
+        const expected = session.expected;
+        let score = 0;
+        if (session.mode === 'listening') {
+          const got = normalizeSpeechText(answer);
+          const want = normalizeSpeechText(expected);
+          const distance = levenshtein(got, want);
+          score = got === want ? 1 : (got && want.length >= 5 && distance <= Math.floor(want.length * 0.2) ? 0.75 : 0);
+        } else {
+          const want = normalizeSpeechText(expected).split(/\s+/).filter(Boolean);
+          const got = normalizeSpeechText(answer).split(/\s+/).filter(Boolean);
+          // 对词序和重复词计入编辑距离；该分数仅表示文本匹配，不能代替发音评估。
+          score = Math.max(0, 1 - speechTokenDistance(want, got) / Math.max(1, want.length, got.length));
+        }
+        const correct = score >= (session.mode === 'listening' ? 0.75 : 0.7);
+        const result = correct ? 'correct' : (score > 0 ? 'vague' : 'incorrect');
+        const submittedAt = new Date().toISOString();
+        appendLearningAttempts([{
+          kind: session.mode, source: 'speech_training', itemId: `speech:${session.word}`,
+          section: session.mode, prompt: session.mode === 'speaking' ? expected : '听音拼写', expected,
+          answer, result, confidence: null, startedAt: null, submittedAt,
+          durationMs: durationMs === null ? null : Math.round(durationMs),
+          meta: { mode: session.mode, score, word: session.word, inputMethod, evaluation: 'text_match' },
+        }]);
+        speechSessions.delete(`${ctxStore.userId || LEGACY_USER}:${id}`);
+        return sendJSON(res, 200, { ok: true, correct, result, score, expected, gloss: session.gloss, source: session.source, attemptsSaved: 1 });
       }
 
       // 单词列表：?filter=sticky|wellfamiliar|forget|vague|newtoday|unfinished|today|due7|all&q=

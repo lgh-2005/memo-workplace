@@ -7,6 +7,8 @@
 > v3.3.4 增量：`npm test` 增加 CSP 与静态路径穿越断言；`npm run test:release` 检查发布/回滚脚本的运行时排除规则、dry-run 入口与备份版本号；ECS 通过 `deploy.sh --dry-run` 和 `rollback.sh <snapshot> --dry-run` 做无停机演练。
 >
 > v3.3.5 增量：新增隔离式备份恢复演练、发布门禁、线上只读健康检查、敏感信息扫描、文档一致性检查和移动端回归入口。无 Android 真机时执行 Pixel 7 / iPhone 13 Playwright 模拟；连接真机后可执行 ADB + Chrome DevTools 检查。
+>
+> v3.3.6 增量：`scripts/study-plan-smoke.mjs` 在双用户隔离沙箱覆盖考试计划保存/非法日期、任务完成同步、听力/口语评分、会话防重放、流水隔离和同源麦克风策略；Playwright 移动模拟覆盖听说页与任务中心的无溢出、44px 触控和手动识别降级。
 
 > 本文件是 `v2.2.8` 的**可审计测试来源声明**，随产品仓库进入 Gitee，供审计确认测试基线、脚本清单与预期结果。
 > 代码基线：`0705689`　·　对应 tag：`v2.2.8`　·　版本口径：`2.2.8`

@@ -4,7 +4,8 @@
 <meta charset="UTF-8" data-page-node-id="jJ2TzRBunJhs9LdkX6E9EG">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="oWFDBFujyrY5KW9n2DbmLZ">
 <title>英语学习工作台</title>
-<!-- v3.3.5：运维可靠性、安全收口、移动端真机回归与文档一致性检查 -->
+<!-- v3.3.6：今日任务中心、考试计划与听说训练 -->
+<!-- v3.3.6：运维可靠性、安全收口、移动端真机回归与文档一致性检查 -->
 <!-- v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） -->
 <meta name="theme-color" content="#3b82f6">
 <meta name="description" content="墨墨背单词同步 + AI 教练互动 + 真题语料注入的考研 / 六级英语学习工作台">
@@ -24,7 +25,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.3.5</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.3.6</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -36,7 +37,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.3.5</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.3.6</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -44,6 +45,7 @@
     <button class="tab" data-tab="study" data-page-node-id="eBIb7j6N2U87cA5iGjeTTD">💬 AI 学习</button>
     <button class="tab" data-tab="quiz" data-page-node-id="3FXEzFdeeBZ3UbAbosesG8">📝 测验</button>
     <button class="tab" data-tab="pomo" data-page-node-id="Bh88PnFT9HGZbJj74MDrlK">🍅 番茄钟</button>
+    <button class="tab" data-tab="speaking">🎧 听说训练</button>
 
     <div class="tab-group-label" data-page-node-id="II9XTwl8cYai4EgDRImnfQ">题库与语料</div>
     <button class="tab" data-tab="exam" data-page-node-id="hhGxvXfJ1AAKzff1vMtGrc">🗂 真题库</button>
@@ -108,7 +110,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.3.5</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.3.6</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -173,12 +175,34 @@
           <span class="countdown-unit">天</span>
         </div>
         <div class="countdown-info">
-          <div class="countdown-title">距考研初试</div>
+          <div class="countdown-title" id="countdownTitle">距考研初试</div>
           <div class="countdown-date" id="countdownDate"></div>
         </div>
         <div class="countdown-streak">
           <span class="countdown-num" id="streakDays">0</span>
           <span class="countdown-unit">天连续学习</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2 study-plan-grid">
+      <div class="card" id="todayTasksCard">
+        <div class="card-title-row"><div class="card-title">🧭 今日任务中心</div><span class="hint" id="todayTasksSummary"></span></div>
+        <div class="study-task-list" id="todayTasksList"><div class="hint">正在加载今日任务…</div></div>
+      </div>
+      <div class="card" id="studyPlanCard">
+        <div class="card-title-row"><div class="card-title">🎯 考试计划</div><span class="hint">按用户同步</span></div>
+        <div class="study-plan-form">
+          <label class="field-label">考试类型
+            <select class="input" id="studyPlanExamType"><option value="kaoyan1">考研英语一</option><option value="cet6">六级英语</option><option value="custom">自定义考试</option></select>
+          </label>
+          <label class="field-label">考试日期 <input class="input" id="studyPlanExamDate" type="date"></label>
+          <div class="hint study-plan-hint">六级或自定义考试请填写日期；考研留空时使用 12 月 21 日估算。</div>
+          <div class="study-plan-fields">
+            <label class="field-label">每日词数 <input class="input" id="studyPlanWords" type="number" min="1" max="10000" value="30"></label>
+            <label class="field-label">每日分钟 <input class="input" id="studyPlanMinutes" type="number" min="1" max="1440" value="30"></label>
+          </div>
+          <div class="row-gap"><button class="btn primary" id="studyPlanSaveBtn" type="button">保存考试计划</button><span class="result" id="studyPlanResult"></span></div>
         </div>
       </div>
     </div>
@@ -254,6 +278,8 @@
             <option value="translation">真题翻译 (translation)</option>
             <option value="writing">真题写作 (writing)</option>
             <option value="sentence_analysis">长难句三遍训练 (sentence_analysis)</option>
+            <option value="listening">听力训练 (listening)</option>
+            <option value="speaking">口语训练 (speaking)</option>
           </select>
           <span id="reportModalTotal" style="font-size:12px;color:var(--text-sub)"></span>
         </div>
@@ -294,6 +320,32 @@
         <div class="card-collapse-body" id="syncLogCollapseBody">
           <ul class="log-list" id="syncLog" data-page-node-id="Gvhe60LqCpM3Um5WAQVgq8" style="margin-top:8px"><li data-page-node-id="WZjF8oDm4WepIVS44grJi2">暂无记录</li></ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 听说训练 ============ -->
+  <section id="tab-speaking" class="tab-page">
+    <div class="card">
+      <div class="card-title-row"><div class="card-title">🎧 听说训练</div><span class="hint">浏览器能力优先，无法识别时可手动输入</span></div>
+      <div class="speaking-mode-row" id="speakingModeRow">
+        <button class="chip active" data-speech-mode="listening" type="button">🎧 听力拼写</button>
+        <button class="chip" data-speech-mode="speaking" type="button">🗣️ 口语跟读</button>
+      </div>
+      <div class="speech-training" id="speechTrainingBox">
+        <div class="speech-prompt" id="speechPrompt">准备开始训练</div>
+        <div class="speech-target" id="speechTarget"></div>
+        <div class="hint" id="speechSource"></div>
+        <div class="speech-actions">
+          <button class="btn primary" id="speechPlayBtn" type="button">🔊 播放</button>
+          <button class="btn" id="speechRecordBtn" type="button" style="display:none">🎙️ 开始识别</button>
+          <button class="btn ghost" id="speechNewBtn" type="button">换一题</button>
+        </div>
+        <label class="field-label" for="speechAnswer">你的答案</label>
+        <textarea class="input speech-answer" id="speechAnswer" rows="2" maxlength="4000" autocomplete="off" placeholder="听音后输入单词"></textarea>
+        <div class="speech-support hint" id="speechSupport"></div>
+        <div class="row-gap"><button class="btn ok" id="speechSubmitBtn" type="button">提交答案</button></div>
+        <div class="result" id="speechResult" aria-live="polite"></div>
       </div>
     </div>
   </section>
@@ -1503,6 +1555,10 @@
     <button class="more-sheet-item" data-tab="settings">
       <span class="more-item-icon">⚙️</span>
       <span class="more-item-text">系统与风格设置</span>
+    </button>
+    <button class="more-sheet-item" data-tab="speaking">
+      <span class="more-item-icon">🎧</span>
+      <span class="more-item-text">听说训练</span>
     </button>
   </div>
 </div>

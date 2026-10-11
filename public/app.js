@@ -360,6 +360,8 @@ const ATTEMPT_KIND_LABELS = {
   vocab_context: '语境选义',
   vocab_cloze: '搭配补全',
   sentence_analysis: '长难句三遍训练',
+  listening: '听力训练',
+  speaking: '口语训练',
 };
 
 /** 语料中仅放行 <u>…</u>（阅读划线句忠实还原）；必须先 esc 再调用 */
@@ -465,17 +467,19 @@ function speakEnglishFrom(text, fallbackWord) {
 $$('.tab').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
 
 function switchTab(name) {
+  if (name !== 'speaking' && typeof speechTraining !== 'undefined') stopSpeechRecognition();
   if (name !== 'logs') state._prevTab = name;   // v2.8.0：记录日志版块前的页签，便于返回
   $$('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
   $$('.bottom-tab-item').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
   $$('.tab-page').forEach(p => p.classList.toggle('active', p.id === 'tab-' + name));
-  if (name === 'dashboard') loadDashboard();
+      if (name === 'dashboard') loadDashboard();
   if (name === 'study') loadWords();
   if (name === 'notes') loadNotes();
   if (name === 'kb') loadKb();
   if (name === 'exam') loadExamList();
   if (name === 'unit') loadUnits();
   if (name === 'settings') { loadConfig(); loadBackupList(); }
+  if (name === 'speaking') loadSpeechSession();
   if (name === 'logs') loadLogs();
   if (name === 'quiz') { try { checkQuizResume(); } catch {}; try { loadQuizSourceCounts(); } catch {} }   // v2.11.0 续做检查 / v3.2.1 词源计数
   // quiz 页保持进行中的状态，不重置
@@ -608,9 +612,135 @@ document.addEventListener('click', (e) => {
 
 /* ---------------- 仪表盘 ---------------- */
 
+/* ---------------- v3.3.6：今日任务中心 / 考试计划 ---------------- */
+function renderStudyTasks(tasks) {
+  const box = $('#todayTasksList');
+  if (!box) return;
+  const list = Array.isArray(tasks) ? tasks : [];
+  const done = list.filter(x => x.done).length;
+  const summary = $('#todayTasksSummary');
+  if (summary) summary.textContent = `${done}/${list.length} 已完成`;
+  box.innerHTML = list.map(t => `<div class="study-task ${t.done ? 'done' : ''}">
+    <input class="study-task-check" type="checkbox" data-study-complete="${esc(t.id)}" aria-label="标记${esc(t.title)}完成" ${t.done ? 'checked' : ''} ${t.automatic ? 'disabled' : ''}>
+    <span class="study-task-icon">${t.icon}</span><div class="study-task-main"><b>${esc(t.title)}</b><span>${esc(t.detail || '')}</span></div>
+    <button class="btn mini ${t.done ? 'ghost' : 'primary'} study-task-btn" data-study-start="${esc(t.id)}" type="button">${t.done ? '查看' : '去练习'}</button>
+  </div>`).join('');
+  box.querySelectorAll('[data-study-complete]').forEach(input => input.addEventListener('change', async e => {
+    e.preventDefault();
+    e.stopPropagation();
+    const id = input.dataset.studyComplete;
+    try { const r = await api('/api/study/tasks/complete', { method: 'POST', body: { taskId: id, completed: input.checked } }); renderStudyTasks(r.tasks); }
+    catch (err) { input.checked = !input.checked; toast('任务更新失败：' + err.message); }
+  }));
+  box.querySelectorAll('[data-study-start]').forEach(btn => btn.addEventListener('click', () => {
+    const task = list.find(x => x.id === btn.dataset.studyStart); if (!task) return;
+    if (task.tab === 'speaking') { speechTraining.mode = task.id; $$('[data-speech-mode]').forEach(x => x.classList.toggle('active', x.dataset.speechMode === task.id)); }
+    switchTab(task.tab);
+    if (task.id === 'vocab_today') { state.filter = 'today'; $$('#wordFilters .chip').forEach(x => x.classList.toggle('active', x.dataset.filter === 'today')); loadWords(); }
+    if (task.id === 'review_due') document.querySelector('[data-submode="srs"]')?.click();
+  }));
+}
+function renderStudyPlan(plan) {
+  if (!plan) return;
+  const type = $('#studyPlanExamType'); if (type) type.value = plan.examType || 'kaoyan1';
+  const date = $('#studyPlanExamDate'); if (date) date.value = plan.examDate || '';
+  const words = $('#studyPlanWords'); if (words) words.value = plan.dailyWords || 30;
+  const minutes = $('#studyPlanMinutes'); if (minutes) minutes.value = plan.dailyMinutes || 30;
+}
+async function saveStudyPlan() {
+  const result = $('#studyPlanResult');
+  try {
+    const r = await api('/api/study/plan', { method: 'POST', body: {
+      examType: $('#studyPlanExamType')?.value,
+      examDate: $('#studyPlanExamDate')?.value || '',
+      dailyWords: Number($('#studyPlanWords')?.value),
+      dailyMinutes: Number($('#studyPlanMinutes')?.value),
+    }});
+    renderStudyPlan(r.plan); renderStudyTasks(r.tasks); loadDashboard();
+    if (result) { result.className = 'result ok'; result.textContent = '已保存'; }
+  } catch (e) { if (result) { result.className = 'result err'; result.textContent = e.message; } }
+}
+if ($('#studyPlanSaveBtn')) $('#studyPlanSaveBtn').addEventListener('click', saveStudyPlan);
+
+/* ---------------- v3.3.6：听说训练 ---------------- */
+const speechTraining = { mode: 'listening', sessionId: '', ttsText: '', target: '', startedAt: 0, recognition: null, requestId: 0, inputMethod: 'manual' };
+function stopSpeechRecognition() {
+  const rec = speechTraining.recognition; speechTraining.recognition = null;
+  if (rec) { rec.onresult = null; rec.onend = null; rec.onerror = null; try { rec.abort(); } catch {} }
+  if ($('#speechRecordBtn')) $('#speechRecordBtn').textContent = '🎙️ 开始识别';
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+}
+function speechRecognitionCtor() { return window.SpeechRecognition || window.webkitSpeechRecognition || null; }
+function renderSpeechSupport() {
+  const btn = $('#speechRecordBtn'); const support = $('#speechSupport');
+  const Ctor = speechRecognitionCtor();
+  const available = speechTraining.mode === 'speaking' && Boolean(Ctor) && window.isSecureContext;
+  if (btn) btn.style.display = speechTraining.mode === 'speaking' && available ? '' : 'none';
+  if (support) support.textContent = speechTraining.mode === 'speaking'
+    ? (available ? '可使用浏览器语音识别；识别结果仍可手动修改。' : '当前环境不支持安全的语音识别，请直接在下方输入朗读内容。')
+    : ('speechSynthesis' in window ? '英语语音播报 · 可重复播放' : '当前浏览器无语音播报能力，请使用支持英语 TTS 的浏览器。');
+}
+async function loadSpeechSession() {
+  stopSpeechRecognition();
+  const requestId = ++speechTraining.requestId;
+  speechTraining.sessionId = ''; speechTraining.ttsText = '';
+  if ($('#speechSubmitBtn')) $('#speechSubmitBtn').disabled = true;
+  if ($('#speechPlayBtn')) $('#speechPlayBtn').disabled = true;
+  const mode = speechTraining.mode;
+  try {
+    const r = await api('/api/speaking/session', { method: 'POST', body: { mode } });
+    if (requestId !== speechTraining.requestId) return;
+    speechTraining.sessionId = r.sessionId; speechTraining.target = r.target || ''; speechTraining.ttsText = r.ttsText || r.target || '';
+    speechTraining.startedAt = Date.now(); speechTraining.inputMethod = 'manual';
+    $('#speechPrompt').textContent = r.prompt || '';
+    $('#speechTarget').textContent = mode === 'speaking' ? (r.target || '') : '🔒 先听音，再输入你听到的单词';
+    $('#speechSource').textContent = r.source?.title || '今日词汇 / 本地词库';
+    $('#speechAnswer').value = ''; $('#speechAnswer').placeholder = mode === 'speaking' ? '输入或识别你朗读的句子' : '听音后输入单词';
+    $('#speechResult').textContent = ''; $('#speechResult').className = 'result';
+    $('#speechSubmitBtn').disabled = false; $('#speechPlayBtn').disabled = !('speechSynthesis' in window);
+    renderSpeechSupport();
+  } catch (e) { if (requestId === speechTraining.requestId) $('#speechResult').textContent = '加载失败：' + e.message; }
+}
+function startSpeechRecognition() {
+  const Ctor = speechRecognitionCtor();
+  if (!Ctor || !window.isSecureContext) return;
+  if (speechTraining.recognition) { stopSpeechRecognition(); return; }
+  try {
+    const rec = new Ctor(); speechTraining.recognition = rec;
+    rec.lang = 'en-US'; rec.interimResults = false; rec.maxAlternatives = 1;
+    rec.onstart = () => { $('#speechRecordBtn').textContent = '⏹️ 识别中…'; };
+    rec.onresult = e => { $('#speechAnswer').value = e.results?.[0]?.[0]?.transcript || ''; speechTraining.inputMethod = 'recognition'; };
+    rec.onerror = e => { $('#speechSupport').textContent = `语音识别不可用（${e.error || 'unknown'}），可手动输入。`; };
+    rec.onend = () => { speechTraining.recognition = null; $('#speechRecordBtn').textContent = '🎙️ 开始识别'; };
+    rec.start();
+  } catch { $('#speechSupport').textContent = '语音识别启动失败，请手动输入。'; }
+}
+function submitSpeechTraining() {
+  if (!speechTraining.sessionId) return;
+  if (!$('#speechAnswer').value.trim()) { $('#speechResult').textContent = '请输入答案后提交'; return; }
+  stopSpeechRecognition();
+  const requestId = speechTraining.requestId;
+  $('#speechSubmitBtn').disabled = true;
+  api('/api/speaking/submit', { method: 'POST', body: { sessionId: speechTraining.sessionId, answer: $('#speechAnswer').value, inputMethod: speechTraining.inputMethod || 'manual', durationMs: Date.now() - speechTraining.startedAt } })
+    .then(r => { if (requestId !== speechTraining.requestId) return; const out = $('#speechResult'); out.className = `result ${r.correct ? 'ok' : 'err'}`; out.textContent = `${r.correct ? '✅' : '❌'} ${Math.round((r.score || 0) * 100)} 分 · 正确答案：${r.expected}${r.gloss ? ` · ${r.gloss}` : ''}${speechTraining.mode === 'speaking' ? ' · 按文本匹配评分，不评估口音' : ''}`; speechTraining.sessionId = ''; loadDashboard(); })
+    .catch(e => { if (requestId === speechTraining.requestId) { $('#speechSubmitBtn').disabled = false; $('#speechResult').className = 'result err'; $('#speechResult').textContent = e.message; } });
+}
+$$('[data-speech-mode]').forEach(btn => btn.addEventListener('click', () => {
+  speechTraining.mode = btn.dataset.speechMode;
+  $$('[data-speech-mode]').forEach(x => x.classList.toggle('active', x === btn));
+  loadSpeechSession();
+}));
+if ($('#speechNewBtn')) $('#speechNewBtn').addEventListener('click', loadSpeechSession);
+if ($('#speechPlayBtn')) $('#speechPlayBtn').addEventListener('click', () => { if (speechTraining.ttsText) speak(speechTraining.ttsText); });
+if ($('#speechRecordBtn')) $('#speechRecordBtn').addEventListener('click', startSpeechRecognition);
+if ($('#speechSubmitBtn')) $('#speechSubmitBtn').addEventListener('click', submitSpeechTraining);
+if ($('#speechAnswer')) $('#speechAnswer').addEventListener('input', () => { speechTraining.inputMethod = 'manual'; });
+
 async function loadDashboard() {
   try {
     const d = await api('/api/dashboard');
+    renderStudyTasks(d.studyTasks || []);
+    renderStudyPlan(d.studyPlan);
     // 同步引导条（v1.0.4）：从未同步 / 上次失败 / 今天没同步
     const banner = $('#syncBanner');
     const lastSyncDate = bjDateOf(d.lastSync);
@@ -665,14 +795,13 @@ async function loadDashboard() {
     if (histTitle) histTitle.textContent = `学习成果曲线（最近 ${histSlice.length} 天）`;
 
     // v1.2.1：考研倒计时
+    const countdown = $('#kaoyanCountdown');
+    if (countdown) countdown.style.display = d.kaoyan ? '' : 'none';
     if (d.kaoyan) {
-      const el = $('#kaoyanCountdown');
-      if (el) {
-        el.style.display = '';
-        $('#countdownDays').textContent = d.kaoyan.daysLeft;
-        $('#countdownDate').textContent = d.kaoyan.examDate;
-        $('#streakDays').textContent = d.streak || 0;
-      }
+      $('#countdownTitle').textContent = `距${({ kaoyan1: '考研初试', cet6: '六级考试', custom: '自定义考试' })[d.kaoyan.examType] || '考试'}${d.kaoyan.custom ? '' : '（估算）'}`;
+      $('#countdownDays').textContent = d.kaoyan.daysLeft;
+      $('#countdownDate').textContent = d.kaoyan.examDate;
+      $('#streakDays').textContent = d.streak || 0;
     }
 
     // v1.2.1：词汇掌握度分布
