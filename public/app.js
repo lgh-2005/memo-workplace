@@ -2530,6 +2530,26 @@ async function deleteProvider(id) {
 
 /* 服务商弹层（新增 / 编辑） */
 let provEditId = '';
+let provReturnFocus = null;
+
+// 软键盘弹起时按实际可见视口收缩弹窗，表单仍在标题与保存栏之间滚动。
+function syncProvViewport() {
+  const modal = $('#provModal');
+  if (modal.style.display === 'none') return;
+  const viewport = window.visualViewport;
+  modal.style.setProperty('--prov-viewport-height', `${viewport?.height || window.innerHeight}px`);
+  modal.style.setProperty('--prov-viewport-top', `${viewport?.offsetTop || 0}px`);
+}
+window.visualViewport?.addEventListener('resize', syncProvViewport);
+window.visualViewport?.addEventListener('scroll', syncProvViewport);
+window.addEventListener('resize', syncProvViewport);
+
+function closeProvModal() {
+  $('#provModal').style.display = 'none';
+  const returnFocus = provReturnFocus?.isConnected ? provReturnFocus
+    : $$('[data-prov-edit]').find(el => el.dataset.provEdit === provEditId) || $('#addProvBtn');
+  returnFocus?.focus({ preventScroll: true });
+}
 
 /* v2.4.4：思考强度 7 档滑块——档位字符串 ↔ 刻度互转与徽章渲染（2026-09 官方档案核实档位）
    唯一调节入口=设置页滑块；功能板块不注入思考参数（服务端只读档案 thinking 字段） */
@@ -2561,6 +2581,7 @@ function renderThinkBadge() {
 }
 
 function openProvModal(id) {
+  provReturnFocus = document.activeElement;
   provEditId = id || '';
   const p = id ? state.providers.find(x => x.id === id) : null;
   $('#provModalTitle').textContent = p ? '编辑服务商：' + p.name : '添加服务商';
@@ -2580,11 +2601,25 @@ function openProvModal(id) {
   $('#provModelSelect').style.display = 'none';
   $('#provTestResult').textContent = '';
   $('#provTestResult').className = 'result';
+  $('#provAdvanced').open = false;
   $('#provModal').style.display = 'flex';
+  syncProvViewport();
+  $('#provModalBody').scrollTop = 0;
+  $('#provClose').focus({ preventScroll: true });
 }
 
 $('#addProvBtn').addEventListener('click', () => openProvModal(''));
-$('#provCancel').addEventListener('click', () => $('#provModal').style.display = 'none');
+$('#provCancel').addEventListener('click', closeProvModal);
+$('#provClose').addEventListener('click', closeProvModal);
+$('#provModal').addEventListener('keydown', e => {
+  if (e.key === 'Escape') { e.preventDefault(); closeProvModal(); }
+  if (e.key !== 'Tab') return;
+  const controls = [...$('#provModal').querySelectorAll('button, input, select, textarea, summary')]
+    .filter(el => !el.disabled && el.getClientRects().length > 0);
+  const first = controls[0], last = controls[controls.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+});
 $('#provThinking').addEventListener('input', renderThinkBadge);   // v2.4.4：滑块拖动实时刷徽章与进度底色
 
 $('#provPreset').addEventListener('change', () => {
@@ -2679,7 +2714,7 @@ $('#provSave').addEventListener('click', async () => {
     : [...state.providers, item];
   try {
     await saveProviders(providers);
-    $('#provModal').style.display = 'none';
+    closeProvModal();
   } catch (e) { alert(e.message); }
 });
 

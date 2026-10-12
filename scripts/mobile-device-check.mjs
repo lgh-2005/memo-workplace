@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * v3.4.2：移动端回归入口。
+ * v3.4.3：移动端回归入口。
  * --emulated 在无手机环境下执行可复现的移动契约检查；
  * --device 需要 Android ADB，并通过 Chrome DevTools 读取真实设备页面布局。
  */
@@ -30,7 +30,7 @@ async function contractChecks() {
   pass('horizontal subnav contract', /\.quiz-submode[^{]*\{[^}]*overflow-x:\s*auto/s.test(css) || /\.quiz-submode/.test(css));
   pass('touch selection guard', /SEL_TOUCH_DEVICE|user-select:\s*none/.test(css + js));
   pass('responsive max-width constraints', /max-width:\s*1280px/.test(css) && /@media\s*\(max-width:\s*700px\)/.test(css));
-  pass('version marker', /v3\.4\.2/.test(html));
+  pass('version marker', /v3\.4\.3/.test(html));
 }
 
 async function emulatedChecks() {
@@ -150,6 +150,45 @@ async function emulatedChecks() {
         }
         pass('Pixel 7 landscape word list is touch-scrollable above viewport edge', scrolled, JSON.stringify(list));
       }
+      await page.evaluate(() => switchTab('settings'));
+      await page.locator('#addProvBtn').evaluate(el => { el.closest('details.settings-section').open = true; });
+      await page.setViewportSize({ width: name === 'Pixel 7 landscape' ? 844 : 390, height: 360 });
+      await page.locator('#addProvBtn').click();
+      await page.locator('#provAdvanced summary').click();
+      const providerDialog = await page.evaluate(() => {
+        const viewport = window.visualViewport;
+        const viewTop = viewport?.offsetTop || 0;
+        const viewBottom = viewTop + (viewport?.height || innerHeight);
+        const box = selector => {
+          const rect = document.querySelector(selector).getBoundingClientRect();
+          return { top: rect.top, bottom: rect.bottom, height: rect.height };
+        };
+        const body = document.querySelector('#provModalBody');
+        body.scrollTop = body.scrollHeight;
+        const modal = box('#provModal');
+        const dialog = box('#provModal .prov-dialog');
+        const footer = box('#provModal .prov-dialog-footer');
+        return {
+          viewTop, viewBottom, modal, dialog, footer,
+          scrolls: body.scrollHeight > body.clientHeight && body.scrollTop > 0,
+          footerVisible: footer.top >= viewTop && footer.bottom <= viewBottom,
+          noHorizontalOverflow: document.documentElement.scrollWidth <= innerWidth + 1,
+          cancelHeight: document.querySelector('#provCancel').getBoundingClientRect().height,
+        };
+      });
+      pass(`${name} provider dialog fits short viewport`, providerDialog.modal.top >= providerDialog.viewTop && providerDialog.modal.bottom <= providerDialog.viewBottom && providerDialog.dialog.bottom <= providerDialog.viewBottom, JSON.stringify(providerDialog));
+      pass(`${name} provider form scrolls behind fixed footer`, providerDialog.scrolls && providerDialog.footerVisible && providerDialog.noHorizontalOverflow && providerDialog.cancelHeight >= 44);
+      await page.locator('#provClose').focus();
+      await page.keyboard.press('Shift+Tab');
+      pass(`${name} provider dialog traps reverse tab`, await page.evaluate(() => document.activeElement?.id === 'provCancel'));
+      await page.keyboard.press('Tab');
+      pass(`${name} provider dialog traps forward tab`, await page.evaluate(() => document.activeElement?.id === 'provClose'));
+      await page.locator('#provCancel').click();
+      pass(`${name} provider add cancel returns focus`, await page.evaluate(() => document.activeElement?.id === 'addProvBtn' && document.querySelector('#provModal').style.display === 'none'));
+      await page.locator('#provList [data-prov-edit]').first().click();
+      pass(`${name} provider edit opens`, await page.locator('#provModalTitle').textContent().then(title => title.startsWith('编辑服务商：')));
+      await page.locator('#provModal').press('Escape');
+      pass(`${name} provider edit closes with Escape`, await page.evaluate(() => document.querySelector('#provModal').style.display === 'none'));
       await context.close();
     }
   } catch (error) {

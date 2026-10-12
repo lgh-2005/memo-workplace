@@ -4,7 +4,7 @@
 <meta charset="UTF-8" data-page-node-id="jJ2TzRBunJhs9LdkX6E9EG">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="oWFDBFujyrY5KW9n2DbmLZ">
 <title>英语学习工作台</title>
-<!-- v3.4.2：精简重复入口，报告按数据来源集中展示，设置与管理操作按需展开。 -->
+<!-- v3.4.3：服务商配置弹窗移动端适配；标题与操作栏固定，表单区独立滚动。 -->
 
 <!-- v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） -->
 <meta name="theme-color" content="#3b82f6">
@@ -25,7 +25,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.4.2</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.4.3</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -37,7 +37,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.4.2</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.4.3</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -110,7 +110,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.4.2</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.4.3</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -1344,8 +1344,12 @@
 
 <!-- 服务商弹层 -->
 <div class="modal-mask" id="provModal" style="display:none" data-page-node-id="XWxO4RXsdncJ0yxzz2KX9U">
-  <div class="modal card" data-page-node-id="iextvA1c7AgGL74JfEjrVf">
-    <div class="card-title" id="provModalTitle" data-page-node-id="FnnaD9sWCuZ4KC15ef4Tmq">添加服务商</div>
+  <div class="modal card prov-dialog" role="dialog" aria-modal="true" aria-labelledby="provModalTitle" data-page-node-id="iextvA1c7AgGL74JfEjrVf">
+    <div class="prov-dialog-header">
+      <div class="card-title" id="provModalTitle" data-page-node-id="FnnaD9sWCuZ4KC15ef4Tmq">添加服务商</div>
+      <button class="btn ghost" id="provClose" aria-label="关闭服务商弹窗">×</button>
+    </div>
+    <div class="prov-dialog-body" id="provModalBody">
     <label class="field-label" data-page-node-id="wQ3SDNlQiqQN1YZkjaVAgc">名称</label>
     <input type="text" id="provName" class="input" placeholder="例：我的中转站 / DeepSeek" data-page-node-id="fiseE7mEP9vB4LzzLuBswF">
     <label class="field-label" data-page-node-id="2HMfgbhDUD5CLL6ejPeMEf">预设（自动填充地址与模型）</label>
@@ -1355,21 +1359,11 @@
     <label class="field-label" data-page-node-id="J2nVMJ4oPzNUkFJOfBxdV2">API Key</label>
     <input type="password" id="provKey" class="input" placeholder="留空 = 沿用该档案已保存的 Key" data-page-node-id="RjOyLqO96d4QENFGuPp8qt">
     <label class="field-label" data-page-node-id="kHqcURHJNcbCbUdQZBCW64">模型</label>
-    <div style="display:flex;gap:8px" data-page-node-id="m87NLx1MxusboYYyUvXr6H">
+    <div class="prov-model-row" data-page-node-id="m87NLx1MxusboYYyUvXr6H">
       <input type="text" id="provModel" class="input" placeholder="deepseek-chat / glm-4-flash …" data-page-node-id="dAavfsIWY1z6x6Fdmc1hIb">
       <button class="btn" id="provFetchBtn" style="white-space:nowrap" data-page-node-id="nhxVCkCGfNvHfTBK7xCWPL">🔄 拉取</button>
     </div>
     <select id="provModelSelect" class="input" style="display:none;margin-top:8px" data-page-node-id="6pgQJlYaAsFb6egPUuNWg8"></select>
-    <div class="grid-2" style="gap:10px;margin-top:8px">
-      <div>
-        <label class="field-label">Temperature（0~2）</label>
-        <input type="number" id="provTemp" class="input" step="0.1" min="0" max="2" placeholder="0.7">
-      </div>
-      <div>
-        <label class="field-label">Max Tokens</label>
-        <input type="number" id="provMaxTokens" class="input" min="1" placeholder="留空 = 不设限">
-      </div>
-    </div>
     <!-- v2.3.4：模型服务高级三项——思考等级 / 视觉能力 / 透传 JSON 参数 -->
     <!-- v2.5.0：思考等级升级为 7 档强度滑块（off/minimal/low/medium/high/xhigh/max，2026-09 官方档案核实），思考参数仅此处可调 -->
     <div style="margin-top:10px">
@@ -1386,17 +1380,29 @@
         <div class="hint" style="margin-top:6px">ℹ️ 超高 / 拉满仅部分模型支持；上游不支持时会自动映射降档或报错，出错请降一档。思考强度只能在此处调节，功能板块不修改。</div>
       </div>
     </div>
+    <details class="prov-advanced" id="provAdvanced">
+      <summary>高级参数 <span class="hint">温度 / 输出长度 / 视觉 / JSON</span></summary>
+      <div class="prov-parameter-grid">
+        <label class="field-label">Temperature（0~2）
+          <input type="number" id="provTemp" class="input" step="0.1" min="0" max="2" placeholder="0.7">
+        </label>
+        <label class="field-label">Max Tokens
+          <input type="number" id="provMaxTokens" class="input" min="1" placeholder="留空 = 不设限">
+        </label>
+      </div>
     <div style="margin-top:10px">
       <label class="field-label">视觉能力（图片输入）</label>
       <label class="check-row prov-vision-row"><input type="checkbox" id="provVision"> 支持发送图片提问</label>
     </div>
     <label class="field-label" style="margin-top:8px">透传 JSON 参数（可选 · 合并进 chat/completions 请求体）</label>
     <textarea id="provExtraBody" class="input" rows="3" placeholder='例如：{"top_p":0.9,"response_format":{"type":"json_object"}}（messages / stream 不允许覆盖）'></textarea>
+    </details>
     <div class="row-gap" style="margin-top:14px;align-items:center" data-page-node-id="b64DezURw7Ek0eajF2lJO1">
       <button class="btn" id="provTestBtn" data-page-node-id="HjVwjf1uG9sAxr5RfWcF6K">🔌 测试连接</button>
       <span class="result" id="provTestResult" data-page-node-id="GtiNOqtK3WRSDwno2N8QUE"></span>
     </div>
-    <div class="row-gap" style="margin-top:14px" data-page-node-id="O7DFwpBIzN4DQHpESnVPBI">
+    </div>
+    <div class="prov-dialog-footer" data-page-node-id="O7DFwpBIzN4DQHpESnVPBI">
       <button class="btn primary" id="provSave" data-page-node-id="8EywlAQ34NVLEbwRiuRRuA">保存</button>
       <button class="btn ghost" id="provCancel" data-page-node-id="i5pjiuzVU5e6eyyLbQC3Sz">取消</button>
     </div>

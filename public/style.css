@@ -448,6 +448,54 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 }
 .modal { width: 420px; max-width: 92vw; }
 
+/* 服务商表单：限定可见视口，标题与操作栏固定，只有表单内容滚动。 */
+#provModal {
+  z-index: 2000;
+  top: var(--prov-viewport-top, 0px);
+  bottom: auto;
+  height: var(--prov-viewport-height, 100dvh);
+  padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+  align-items: center;
+}
+#provModal .prov-dialog {
+  display: flex; flex-direction: column;
+  width: 480px; max-width: 100%; max-height: 100%; min-height: 0;
+  padding: 0; margin: 0; overflow: hidden;
+}
+.prov-dialog-header, .prov-dialog-footer {
+  display: flex; align-items: center; gap: 10px;
+  flex: 0 0 auto; padding: 10px 16px;
+}
+.prov-dialog-header { border-bottom: 1px solid var(--border); }
+.prov-dialog-header .card-title { flex: 1; min-width: 0; margin: 0; overflow-wrap: anywhere; }
+#provModalTitle { max-height: 3em; overflow: auto; }
+#provClose { width: 44px; padding: 0; flex: 0 0 44px; font-size: 24px; }
+.prov-dialog-body {
+  min-height: 0; padding: 4px 16px 16px; overflow-y: auto;
+  overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+  overflow-wrap: anywhere;
+}
+.prov-dialog-footer { border-top: 1px solid var(--border); }
+.prov-dialog-footer .btn { flex: 1; }
+#provModal .btn, #provModal .input, #provModal .think-slider, #provModal .check-row { min-height: 44px; }
+#provModal .input { min-width: 0; }
+.prov-model-row { display: flex; gap: 8px; }
+.prov-model-row .input { flex: 1; width: 0; }
+.prov-model-row .btn { flex-shrink: 0; }
+.prov-advanced { margin-top: 14px; border-top: 1px solid var(--border); }
+.prov-advanced summary { min-height: 44px; padding: 12px 0; cursor: pointer; font-size: 13px; }
+.prov-advanced summary .hint { margin: 0 0 0 6px; }
+.prov-parameter-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.prov-parameter-grid .field-label { margin-top: 0; }
+.prov-parameter-grid .input { margin-top: 6px; }
+#provTestResult { min-width: 0; flex: 1; margin: 0; }
+@media (max-width: 700px) {
+  #provModal .input { font-size: 16px; } /* 避免 iOS 聚焦输入框时自动缩放。 */
+  #provModal .prov-dialog { border-radius: var(--radius); }
+  .prov-dialog-header, .prov-dialog-footer { padding: 8px 12px; }
+  .prov-dialog-body { padding: 4px 12px 12px; }
+}
+
 /* 番茄钟 */
 .pomo-card { text-align: center; padding: 34px 18px; }
 .pomo-mode-pill {
