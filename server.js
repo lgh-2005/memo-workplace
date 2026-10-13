@@ -270,6 +270,7 @@ let rawConfig = loadJSON(CONFIG_FILE, {
   dict: { learnersKey: '', collegiateKey: '' },   // v1.0.8：韦氏词典双 key（learners=学习者词典 / collegiate=大学版）
   mineru: { apiKey: '', mock: false },   // v1.1.4：MinerU 精准解析 API（扫描件 PDF -> Markdown，mineru.net）
   auth: { enabled: false, token: '' },   // v2.8.0：Token 凭证登录（开发者登录方式；关闭时无需登录）
+  tts: { accent: 'en_US' },              // v3.5.0：发音朗读默认口音（en_US 美音 / en_GB 英音）
   multiUser: false,                      // v3.0.0：多用户总开关（false=保持 v2.12.0 单用户行为）
 });
 /** 多用户总开关：仅当 config.multiUser===true 时启用隔离；否则完全走旧路径 */
@@ -769,6 +770,15 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '3.5.0', date: '2026-10-13', title: '发音朗读升级（真人音源 + 神经语音）',
+    items: [
+      '修复 CSP 缺少 media-src 导致跨域真人发音被拦截、全部回退系统合成声的问题',
+      '单词发音改走服务端代理：优先有道真人发音，美音/英音可切换，按内容哈希落盘缓存',
+      '句子朗读新增服务端 Piper 神经语音常驻工作进程，懒加载模型、多请求复用，失败回退浏览器朗读',
+      '新增「设置 → 发音与朗读」：口音偏好、试听与引擎状态展示',
+    ],
+  },
   {
     version: '3.4.3', date: '2026-10-12', title: '服务商配置弹窗移动端适配',
     items: [
@@ -5865,6 +5875,276 @@ function armAutoSync() {
   }
 }
 
+/* ================================================================== */
+/* v3.5.0：发音朗读（服务端神经语音 + 真人音源）                          */
+/*   - 单词：有道真人发音（美音 type=2 / 英音 type=1），磁盘缓存          */
+/*   - 句子：本地 Piper 神经语音常驻工作进程（懒加载、按需拉起），磁盘缓存   */
+/*   - 二者皆不可用时前端回退浏览器 speechSynthesis（不阻断学习）         */
+/*   本模块只读合成音频，不写用户数据，属全局共享资源。                    */
+/* ================================================================== */
+const TTS_DIR = path.join(DATA_DIR, 'tts');                 // 音频+缓存落盘目录（git/data 排除）
+const TTS_CACHE_DIR = path.join(TTS_DIR, 'cache');          // 合成结果缓存（按内容哈希）
+const PIPER_HOME = process.env.PIPER_HOME ? path.resolve(process.env.PIPER_HOME) : path.join(DATA_DIR, 'piper');
+const PIPER_VENV_PY = path.join(PIPER_HOME, 'venv', 'bin', 'python');
+const PIPER_VOICES_DIR = path.join(PIPER_HOME, 'voices');
+const PIPER_WORKER = path.join(ROOT, 'tools', 'tts', 'piper_worker.py');
+const TTS_VOICES = {
+  en_US: { piper: path.join(PIPER_VOICES_DIR, 'en_US-lessac-medium.onnx'), youdaoType: '2', label: '美音' },
+  en_GB: { piper: path.join(PIPER_VOICES_DIR, 'en_GB-alba-medium.onnx'), youdaoType: '1', label: '英音' },
+};
+const TTS_TEXT_MAX = 500;              // 单次朗读文本上限（防滥用）
+const TTS_WORD_MAX = 64;               // 视为「单词/词组」的长度上限，超过走句子引擎
+const TTS_YOUDAO_TIMEOUT_MS = 12000;
+const TTS_PIPER_TIMEOUT_MS = 30000;
+const TTS_CACHE_MAX_FILES = 4000;      // 缓存文件上限（超出按 mtime 裁剪）
+const TTS_CACHE_MAX_BYTES = 256 * 1024 * 1024;
+
+function ensureTtsDirs() {
+  for (const d of [TTS_DIR, TTS_CACHE_DIR]) {
+    if (!fs.existsSync(d)) fs.mkdirSync(d, { recursive: true });
+  }
+}
+
+/** 发音语音偏好（全局，管理员配置；普通用户只读） */
+function ttsAccent() {
+  const a = config.tts && config.tts.accent;
+  return (a === 'en_GB') ? 'en_GB' : 'en_US';
+}
+function ttsCacheKey(engine, accent, text) {
+  return crypto.createHash('sha1').update(`${engine}\n${accent}\n${text}`).digest('hex').slice(0, 32);
+}
+function ttsCachePath(engine, accent, text, ext) {
+  return path.join(TTS_CACHE_DIR, `${engine}-${accent}-${ttsCacheKey(engine, accent, text)}${ext}`);
+}
+
+/** 文本是否是「单词或短词组」（走真人音源）；含标点/多句则视为句子。 */
+function isTtsWord(text) {
+  const t = String(text || '').trim();
+  if (!t || t.length > TTS_WORD_MAX) return false;
+  return /^[a-zA-Z][a-zA-Z'’\- ]*$/.test(t) && t.split(/\s+/).length <= 4;
+}
+
+/** 有道真人发音 URL（美音 type=2 / 英音 type=1）。 */
+function youdaoVoiceUrl(text, accent) {
+  const type = (TTS_VOICES[accent] || TTS_VOICES.en_US).youdaoType;
+  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=${type}`;
+}
+
+/** 拉取有道真人发音 mp3；成功返回 Buffer，失败（500/网络/非音频）返回 null。 */
+async function fetchYoudaoAudio(text, accent) {
+  try {
+    const r = await fetchT(youdaoVoiceUrl(text, accent), { headers: { 'User-Agent': TTS_UA } }, TTS_YOUDAO_TIMEOUT_MS);
+    if (!r.ok) return null;
+    const ct = String(r.headers.get('content-type') || '');
+    if (!/audio|octet-stream|mpeg/i.test(ct)) return null;   // 有道失败时会返回 application/json
+    const buf = Buffer.from(await r.arrayBuffer());
+    // 有道失败体很小且以 JSON 开头；真实音频带 ID3 或 MPEG 帧同步
+    if (buf.length < 512) return null;
+    if (buf.subarray(0, 1).toString('latin1') === '{') return null;
+    return buf;
+  } catch {
+    return null;
+  }
+}
+const TTS_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
+
+/* Piper 常驻工作进程：多请求复用同一 Python 进程，避免每次启动/加载模型（约 3.5s）。 */
+const piperState = {
+  proc: null,
+  ready: false,
+  pending: new Map(),   // id -> { resolve, reject, timer }
+  seq: 0,
+  buf: '',
+  starting: null,
+  lastError: '',
+};
+function piperAvailable() {
+  return fs.existsSync(PIPER_VENV_PY) && fs.existsSync(PIPER_WORKER);
+}
+function piperVoiceReady(accent) {
+  const v = TTS_VOICES[accent] || TTS_VOICES.en_US;
+  return fs.existsSync(v.piper) && fs.existsSync(v.piper + '.json');
+}
+function resetPiper(reason) {
+  piperState.ready = false;
+  piperState.proc = null;
+  piperState.buf = '';
+  piperState.lastError = reason || 'piper 进程已退出';
+  for (const [, p] of piperState.pending) {
+    clearTimeout(p.timer);
+    p.reject(new Error(piperState.lastError));
+  }
+  piperState.pending.clear();
+}
+function startPiper() {
+  if (piperState.proc && piperState.ready) return Promise.resolve();
+  if (piperState.starting) return piperState.starting;
+  if (!piperAvailable()) return Promise.reject(new Error('未安装服务端语音引擎（Piper）'));
+  piperState.starting = new Promise((resolve, reject) => {
+    ensureTtsDirs();
+    let child;
+    try {
+      child = spawn(PIPER_VENV_PY, [
+        '-u', PIPER_WORKER,
+        '--en_US', TTS_VOICES.en_US.piper,
+        '--en_GB', TTS_VOICES.en_GB.piper,
+      ], { stdio: ['pipe', 'pipe', 'pipe'] });
+    } catch (e) {
+      piperState.starting = null;
+      return reject(e);
+    }
+    piperState.proc = child;
+    const startedAt = Date.now();
+    let settled = false;
+    const failStart = msg => {
+      if (settled) return;
+      settled = true;
+      piperState.ready = false;
+      piperState.proc = null;
+      piperState.starting = null;
+      piperState.lastError = String(msg).slice(0, 300);
+      try { child.kill(); } catch {}
+      reject(new Error(piperState.lastError));
+    };
+    child.stdout.setEncoding('utf8');
+    child.stdout.on('data', chunk => {
+      if (!settled) { settled = true; piperState.ready = true; piperState.starting = null; resolve(); }
+      piperState.buf += chunk;
+      let idx;
+      while ((idx = piperState.buf.indexOf('\n')) >= 0) {
+        const line = piperState.buf.slice(0, idx).trim();
+        piperState.buf = piperState.buf.slice(idx + 1);
+        if (!line) continue;
+        let msg;
+        try { msg = JSON.parse(line); } catch { continue; }
+        const p = msg && msg.id != null ? piperState.pending.get(String(msg.id)) : null;
+        if (!p) continue;
+        clearTimeout(p.timer);
+        piperState.pending.delete(String(msg.id));
+        if (msg.ok) p.resolve();
+        else p.reject(new Error(msg.error || '合成失败'));
+      }
+    });
+    child.stderr.on('data', d => { piperState.lastError = String(d).trim().slice(0, 300); });
+    child.on('error', err => failStart(err.message));
+    child.on('exit', code => {
+      if (!settled) return failStart(`piper 启动失败（退出码 ${code}）`);
+      resetPiper(`piper 进程退出（code=${code}）`);
+    });
+    // 启动看门狗：进程正常但迟迟不产出（模型加载异常）
+    setTimeout(() => { if (!settled && Date.now() - startedAt >= 20000) failStart('piper 启动超时'); }, 20000);
+  });
+  return piperState.starting;
+}
+/** 用 Piper 合成文本到 outPath（wav）。失败抛异常，调用方降级。 */
+async function piperSynthesize(text, accent, outPath) {
+  await startPiper();
+  const id = String(++piperState.seq);
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      piperState.pending.delete(id);
+      reject(new Error('语音合成超时'));
+    }, TTS_PIPER_TIMEOUT_MS);
+    piperState.pending.set(id, { resolve, reject, timer });
+    try {
+      piperState.proc.stdin.write(JSON.stringify({ id, text, voice: accent, out: outPath }) + '\n');
+    } catch (e) {
+      clearTimeout(timer);
+      piperState.pending.delete(id);
+      reject(e);
+    }
+  });
+}
+
+/** 缓存裁剪：文件数/总量超限时按 mtime 从旧到新删除。 */
+function pruneTtsCache() {
+  try {
+    const names = fs.readdirSync(TTS_CACHE_DIR);
+    const stat = [];
+    let total = 0;
+    for (const n of names) {
+      try {
+        const s = fs.statSync(path.join(TTS_CACHE_DIR, n));
+        total += s.size;
+        stat.push({ n, mtime: s.mtimeMs, size: s.size });
+      } catch {}
+    }
+    if (stat.length <= TTS_CACHE_MAX_FILES && total <= TTS_CACHE_MAX_BYTES) return;
+    stat.sort((a, b) => a.mtime - b.mtime);
+    let i = 0;
+    while (i < stat.length && (stat.length - i > TTS_CACHE_MAX_FILES || total > TTS_CACHE_MAX_BYTES)) {
+      try { fs.unlinkSync(path.join(TTS_CACHE_DIR, stat[i].n)); total -= stat[i].size; } catch {}
+      i++;
+    }
+  } catch { /* 裁剪失败不影响朗读 */ }
+}
+
+/**
+ * 合成朗读音频，返回 { ok, file, mime, engine, cached }。
+ * 单词优先有道真人音；句子或单词失败时用 Piper；全失败抛 TTS_UNAVAILABLE。
+ */
+async function ttsSynthesize(rawText, accentOverride) {
+  const text = String(rawText || '').trim().slice(0, TTS_TEXT_MAX);
+  if (!text) {
+    const e = new Error('缺少朗读文本');
+    e.code = 'BAD_TTS_TEXT';
+    throw e;
+  }
+  const accent = TTS_VOICES[accentOverride] ? accentOverride : ttsAccent();
+  ensureTtsDirs();
+  const isWord = isTtsWord(text);
+
+  // 1) 单词：有道真人音（mp3）
+  if (isWord) {
+    const cache = ttsCachePath('youdao', accent, text, '.mp3');
+    if (fs.existsSync(cache)) return { ok: true, file: cache, mime: 'audio/mpeg', engine: 'youdao', cached: true };
+    const buf = await fetchYoudaoAudio(text, accent);
+    if (buf) {
+      const tmp = cache + '.tmp';
+      fs.writeFileSync(tmp, buf);
+      fs.renameSync(tmp, cache);
+      pruneTtsCache();
+      return { ok: true, file: cache, mime: 'audio/mpeg', engine: 'youdao', cached: false };
+    }
+  }
+
+  // 2) 句子 / 有道失败：Piper 神经语音（wav）
+  const cache = ttsCachePath('piper', accent, text, '.wav');
+  if (fs.existsSync(cache)) return { ok: true, file: cache, mime: 'audio/wav', engine: 'piper', cached: true };
+  if (piperAvailable()) {
+    const tmp = cache + '.tmp';
+    try {
+      await piperSynthesize(text, accent, tmp);
+      if (fs.existsSync(tmp) && fs.statSync(tmp).size > 44) {
+        fs.renameSync(tmp, cache);
+        pruneTtsCache();
+        return { ok: true, file: cache, mime: 'audio/wav', engine: 'piper', cached: false };
+      }
+    } catch { /* 落到 TTS_UNAVAILABLE，前端回退浏览器 TTS */ }
+    try { if (fs.existsSync(tmp)) fs.unlinkSync(tmp); } catch {}
+  }
+
+  const e = new Error('服务端语音不可用');
+  e.code = 'TTS_UNAVAILABLE';
+  throw e;
+}
+
+/** 服务端语音能力状态（供设置页展示与健康检查）。 */
+function ttsStatus() {
+  return {
+    accent: ttsAccent(),
+    voices: Object.entries(TTS_VOICES).map(([k, v]) => ({ id: k, label: v.label, ready: piperVoiceReady(k) })),
+    piper: {
+      installed: piperAvailable(),
+      running: piperState.ready,
+      voicesReady: Object.keys(TTS_VOICES).filter(piperVoiceReady),
+      home: PIPER_HOME,
+      lastError: piperState.lastError || '',
+    },
+    youdao: true,
+  };
+}
+
 /* ------------------------------------------------------------------ */
 /* HTTP 路由                                                           */
 /* ------------------------------------------------------------------ */
@@ -5899,7 +6179,7 @@ function setSecurityHeaders(res) {
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('Permissions-Policy', 'camera=(self), microphone=(self), geolocation=()');
   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-  res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https:; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
+  res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https:; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
 }
 
 function isWithinDir(baseDir, targetPath) {
@@ -6550,6 +6830,10 @@ async function handleRequest(req, res) {
             enabled: !!(config.auth && config.auth.enabled),
             hasToken: !!(config.auth && config.auth.token),
           },
+          tts: {
+            accent: ttsAccent(),
+            status: ttsStatus(),
+          },
           review: {
             providerId: (config.review && config.review.providerId) || '',
             model: (config.review && config.review.model) || '',
@@ -6588,7 +6872,7 @@ async function handleRequest(req, res) {
         /* v3.0.0：多用户下，全局配置（服务商/词典/搜索/密钥/登录开关/KB）仅管理员可改；
            普通用户仅能改自己的 per-user 字段（墨墨 Token / 自动同步 / DIY 提示词等） */
         if (MULTIUSER && !isAdminCtx(ctxStore)) {
-          const GLOBAL_KEYS = ['llm', 'auth', 'kb', 'dict', 'webSearch', 'mineru', 'imageGen', 'multiUser', 'users'];
+          const GLOBAL_KEYS = ['llm', 'auth', 'kb', 'dict', 'webSearch', 'mineru', 'imageGen', 'multiUser', 'users', 'tts'];
           const touched = GLOBAL_KEYS.filter(k => body[k] !== undefined);
           if (touched.length) {
             return sendJSON(res, 403, { error: '仅管理员可修改全局配置：' + touched.join(', '), code: 'FORBIDDEN' });
@@ -6769,6 +7053,11 @@ async function handleRequest(req, res) {
             const list = [...new Set(body.storyThemes.map(t => String(t || '').trim()).filter(t => t && t.length <= 12))];
             config.storyThemes = list.length >= 2 ? list.slice(0, 40) : null;
           }
+        }
+        // v3.5.0：发音朗读默认口音（en_US 美音 / en_GB 英音）
+        if (body.tts && typeof body.tts === 'object') {
+          if (!config.tts || typeof config.tts !== 'object') config.tts = { accent: 'en_US' };
+          if (body.tts.accent === 'en_US' || body.tts.accent === 'en_GB') config.tts.accent = body.tts.accent;
         }
         // v1.1.0：语料库数据源目录（留空 = 用仓库内 corpus/）
         if (body.kb && typeof body.kb === 'object' && typeof body.kb.dir === 'string') {
@@ -7558,6 +7847,37 @@ async function handleRequest(req, res) {
       if (p === '/api/dict/lookup' && req.method === 'GET') {
         const entry = await dictLookup(u.searchParams.get('word') || '');
         return sendJSON(res, 200, { ok: true, entry });
+      }
+
+      /* v3.5.0：发音朗读——服务端合成音频（单词真人音 / 句子神经语音）。
+         GET /api/tts?text=...&accent=en_US|en_GB 返回音频流；?meta=1 只返回状态不合成。 */
+      if (p === '/api/tts' && req.method === 'GET') {
+        if (u.searchParams.get('meta') === '1') {
+          return sendJSON(res, 200, { ok: true, status: ttsStatus() });
+        }
+        const accent = u.searchParams.get('accent') || '';
+        let out;
+        try {
+          out = await ttsSynthesize(u.searchParams.get('text') || '', accent);
+        } catch (err) {
+          if (err.code === 'TTS_UNAVAILABLE') {
+            return sendJSON(res, 503, { error: '服务端语音暂不可用，请使用浏览器朗读', code: 'TTS_UNAVAILABLE' });
+          }
+          throw err;
+        }
+        if (res.destroyed || res.writableEnded) return;
+        res.writeHead(200, {
+          'Content-Type': out.mime,
+          'Content-Length': String(fs.statSync(out.file).size),
+          'Cache-Control': 'public, max-age=86400',
+          'X-TTS-Engine': out.engine,
+        });
+        return fs.createReadStream(out.file).pipe(res);
+      }
+
+      // 服务端语音能力状态（只读）：是否已装 Piper、各语音模型是否就绪
+      if (p === '/api/tts/status' && req.method === 'GET') {
+        return sendJSON(res, 200, { ok: true, status: ttsStatus() });
       }
 
       // 韦氏词典连通性测试（v1.0.8）
@@ -9425,7 +9745,7 @@ CRITICAL TRANSCRIPTION RULES:
         // v1.1.3：请求体超限 = 413，并提示 nginx 反代需同步放宽 client_max_body_size
         return sendJSON(res, 413, { error: err.message + '（若经 nginx 反代访问，还需放宽 client_max_body_size）', code: 'BODY_TOO_LARGE' });
       }
-      const code = ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'KB_IMPORT', 'NO_MINERU', 'BAD_CREDENTIAL'].includes(err.code) ? 400 : 500;
+      const code = ['NO_TOKEN', 'NO_LLM', 'NO_IMG', 'NO_SEARCH', 'NO_DICT', 'BAD_WORD', 'BAD_TTS_TEXT', 'KB_IMPORT', 'NO_MINERU', 'BAD_CREDENTIAL'].includes(err.code) ? 400 : 500;
       // v2.8.0：服务端 500 异常自动落入报错日志（前端错误由前端上报）
       if (code === 500) {
         appendErrorLog({ source: 'server', level: 'error', message: err.message, stack: err.stack, url: p, method: req.method, status: 500 });
@@ -9437,6 +9757,7 @@ CRITICAL TRANSCRIPTION RULES:
 }
 
 ensureDataDir();
+ensureTtsDirs();   // v3.5.0：发音朗读缓存目录
 ensureKbSplit();   // v1.1.2：旧版单文件里的 qa_set 自动迁移到 exams.jsonl
 armAutoSync();
 

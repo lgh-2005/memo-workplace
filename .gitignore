@@ -25,3 +25,6 @@ corpus/external/releases/
 corpus/external/backups/
 corpus/external/current.staging-*
 corpus/external/*.tmp
+
+# v3.5.0：服务端发音语音运行时（Piper venv + 模型）落在 data/piper，已由 data/ 排除；
+# 发音缓存目录 data/tts 同理，不进入仓库。

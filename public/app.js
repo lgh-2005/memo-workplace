@@ -441,15 +441,88 @@ document.addEventListener('click', e => {
   collapseCard(targetSel, nowCollapsed);
 });
 
-/* ---------------- 发音（浏览器 TTS，零成本） ---------------- */
+/* ---------------- 发音（v3.5.0：服务端神经语音 + 真实音源，浏览器 TTS 兜底） ---------------- */
 
-function speak(text, lang = 'en-US') {
+let ttsAudio = null;
+let ttsUnlocked = false;
+let ttsServerAccent = 'en_US';
+// 极短静音 wav，用于首次手势解锁音频元素（iOS/Safari 限制）
+const TTS_SILENT_DATAURI = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=';
+
+function ttsAudioEl() { if (!ttsAudio) ttsAudio = new Audio(); return ttsAudio; }
+
+/* 首次用户手势时解锁音频：否则 await 网络请求后 play() 会被移动端拒绝 */
+function unlockTtsAudio() {
+  if (ttsUnlocked) return;
+  ttsUnlocked = true;
   try {
-    speechSynthesis.cancel();
+    const a = ttsAudioEl();
+    a.muted = true;
+    a.src = TTS_SILENT_DATAURI;
+    const p = a.play();
+    if (p && typeof p.then === 'function') {
+      p.then(() => { a.pause(); a.currentTime = 0; a.muted = false; }).catch(() => { a.muted = false; });
+    } else { a.pause(); a.muted = false; }
+  } catch { /* 忽略 */ }
+}
+if (typeof document !== 'undefined') {
+  document.addEventListener('pointerdown', unlockTtsAudio, { once: true, passive: true });
+  document.addEventListener('touchstart', unlockTtsAudio, { once: true, passive: true });
+}
+
+/** 当前口音偏好：设备本地设置优先，其次服务端默认 */
+function ttsAccentPref() {
+  try { const v = localStorage.getItem('wb-tts-accent'); if (v === 'en_US' || v === 'en_GB') return v; } catch { /* 忽略 */ }
+  return ttsServerAccent === 'en_GB' ? 'en_GB' : 'en_US';
+}
+
+/** 浏览器兜底：优先挑高质量英文声，其次按语言前缀匹配 */
+function pickBrowserVoice(lang) {
+  try {
+    const voices = speechSynthesis.getVoices() || [];
+    if (!voices.length) return null;
+    const prefix = String(lang || 'en-US').toLowerCase().slice(0, 2);
+    const prefer = /natural|neural|online|google|microsoft|aria|jenny|guy|samantha|zira|david|mark|libby|sonia/i;
+    const cand = voices.filter(v => (v.lang || '').toLowerCase().replace('_', '-').startsWith(prefix));
+    if (!cand.length) return null;
+    return cand.find(v => prefer.test(v.name) && v.localService === false)
+      || cand.find(v => prefer.test(v.name))
+      || cand.find(v => v.localService === false)
+      || cand[0];
+  } catch { return null; }
+}
+
+function browserSpeak(text, lang) {
+  try {
     const u = new SpeechSynthesisUtterance(String(text));
-    u.lang = lang; u.rate = 0.92;
+    const voice = pickBrowserVoice(lang);
+    if (voice) { u.voice = voice; u.lang = voice.lang; }
+    else u.lang = lang || 'en-US';
+    u.rate = 0.92;
+    speechSynthesis.cancel();
     speechSynthesis.speak(u);
   } catch { /* 浏览器不支持时静默 */ }
+}
+
+/**
+ * 朗读文本：服务端合成音频（单词走真人发音、句子走神经语音）优先，
+ * 失败自动回退浏览器 speechSynthesis。调用方式保持同步。
+ */
+async function speak(text, lang = 'en-US') {
+  const s = String(text || '').trim();
+  if (!s) return;
+  const accent = ttsAccentPref();
+  try {
+    const a = ttsAudioEl();
+    try { a.pause(); } catch { /* 忽略 */ }
+    a.muted = false;
+    a.src = '/api/tts?text=' + encodeURIComponent(s) + '&accent=' + encodeURIComponent(accent);
+    await a.play();
+  } catch (err) {
+    // 快速重播导致的中断（AbortError）不视为失败，避免双声叠加
+    if (err && err.name === 'AbortError') return;
+    browserSpeak(s, lang);
+  }
 }
 
 /** 从 AI 回复里提取英文句子朗读（例句场景），没有英文就读原词 */
@@ -708,7 +781,7 @@ function renderSpeechSupport() {
   if (btn) btn.style.display = speechTraining.mode === 'speaking' && available ? '' : 'none';
   if (support) support.textContent = speechTraining.mode === 'speaking'
     ? (available ? '可使用浏览器语音识别；识别结果仍可手动修改。' : '当前环境不支持安全的语音识别，请直接在下方输入朗读内容。')
-    : ('speechSynthesis' in window ? '英语语音播报 · 可重复播放' : '当前浏览器无语音播报能力，请使用支持英语 TTS 的浏览器。');
+    : '英语语音播报 · 服务端真人/神经语音，可重复播放';
 }
 async function loadSpeechSession() {
   stopSpeechRecognition();
@@ -727,7 +800,7 @@ async function loadSpeechSession() {
     $('#speechSource').textContent = r.source?.title || '今日词汇 / 本地词库';
     $('#speechAnswer').value = ''; $('#speechAnswer').placeholder = mode === 'speaking' ? '输入或识别你朗读的句子' : '听音后输入单词';
     $('#speechResult').textContent = ''; $('#speechResult').className = 'result';
-    $('#speechSubmitBtn').disabled = false; $('#speechPlayBtn').disabled = !('speechSynthesis' in window);
+    $('#speechSubmitBtn').disabled = false; $('#speechPlayBtn').disabled = false;
     renderSpeechSupport();
   } catch (e) { if (requestId === speechTraining.requestId) $('#speechResult').textContent = '加载失败：' + e.message; }
 }
@@ -761,7 +834,7 @@ $$('[data-speech-mode]').forEach(btn => btn.addEventListener('click', () => {
   loadSpeechSession();
 }));
 if ($('#speechNewBtn')) $('#speechNewBtn').addEventListener('click', loadSpeechSession);
-if ($('#speechPlayBtn')) $('#speechPlayBtn').addEventListener('click', () => { if (speechTraining.ttsText) speak(speechTraining.ttsText); });
+if ($('#speechPlayBtn')) $('#speechPlayBtn').addEventListener('click', () => { if (speechTraining.ttsText) { unlockTtsAudio(); speak(speechTraining.ttsText); } });
 if ($('#speechRecordBtn')) $('#speechRecordBtn').addEventListener('click', startSpeechRecognition);
 if ($('#speechSubmitBtn')) $('#speechSubmitBtn').addEventListener('click', submitSpeechTraining);
 if ($('#speechAnswer')) $('#speechAnswer').addEventListener('input', () => { speechTraining.inputMethod = 'manual'; });
@@ -1330,17 +1403,11 @@ $('#chatMessages').addEventListener('click', (e) => {
   speakEnglishFrom(msg.dataset.raw || '', state.activeWord);
 });
 
-/* v1.0.8：发音优先韦氏真人 mp3（免费、官方 CDN），失败回退 TTS */
-$('#speakWordBtn').addEventListener('click', async () => {
+/* v1.0.8 真人发音；v3.5.0：统一走服务端发音（单词真人音 + 口音切换 + 缓存） */
+$('#speakWordBtn').addEventListener('click', () => {
   const w = state.activeWord;
   if (!w) return;
-  try {
-    const r = await api('/api/dict/lookup?word=' + encodeURIComponent(w));
-    if (r.entry?.audio) {
-      new Audio(r.entry.audio).play().catch(() => speak(w));
-      return;
-    }
-  } catch { /* 未配置词典 / 网络失败：TTS 兜底 */ }
+  unlockTtsAudio();
   speak(w);
 });
 
@@ -2328,6 +2395,11 @@ async function loadConfig() {
     if (c.dict?.hasLearners) $('#cfgDictLearners').placeholder = '已保存 ✓（留空 = 沿用）';
     if (c.mineru?.hasKey) $('#cfgMineruKey').placeholder = '已保存 ✓（留空 = 沿用）';
     if (c.dict?.hasCollegiate) $('#cfgDictCollegiate').placeholder = '已保存 ✓（留空 = 沿用）';
+    /* v3.5.0：发音朗读默认口音与服务端语音能力 */
+    if (c.tts) {
+      ttsServerAccent = c.tts.accent === 'en_GB' ? 'en_GB' : 'en_US';
+      renderTtsSettings(c.tts);
+    }
     /* v2.0.0.a：云词库回填与长期绑定状态持久化显示 */
     if (c.maimemoNotepadId) {
       const title = c.notepadTitle || '已绑定云词库';
@@ -3011,6 +3083,47 @@ $('#testSearchBtn').addEventListener('click', async () => {
     out.className = 'result err';
   }
 });
+
+/* v3.5.0：发音与朗读设置 */
+const TTS_ACCENT_LABEL = { en_US: '美音', en_GB: '英音' };
+function renderTtsSettings(tts) {
+  const sel = $('#cfgTtsAccent');
+  if (sel) sel.value = ttsAccentPref();
+  const st = tts?.status;
+  const out = $('#ttsStatus');
+  if (!out) return;
+  if (!st) { out.textContent = ''; return; }
+  const roles = (st.piper?.voicesReady || []).map(k => TTS_ACCENT_LABEL[k] || k);
+  const engine = st.piper?.installed
+    ? `句子神经语音 ${st.piper.running ? '已就绪' : '待启用'}${roles.length ? `（${roles.join(' / ')}）` : '（模型未就绪）'}`
+    : '未部署服务端神经语音（句子将回退浏览器朗读）';
+  out.textContent = `✅ 单词：真人发音 · ${engine}`;
+  out.className = 'result ok';
+}
+async function refreshTtsStatus() {
+  try {
+    const r = await api('/api/tts/status');
+    renderTtsSettings({ accent: ttsServerAccent, status: r.status });
+  } catch { /* 静默 */ }
+}
+if ($('#cfgTtsAccent')) {
+  $('#cfgTtsAccent').addEventListener('change', async () => {
+    const accent = $('#cfgTtsAccent').value;
+    try { localStorage.setItem('wb-tts-accent', accent); } catch { /* 忽略 */ }
+    ttsServerAccent = accent;
+    try { await api('/api/config', { method: 'POST', body: { tts: { accent } } }); } catch { /* 非管理员时忽略，本地偏好仍生效 */ }
+  });
+}
+if ($('#testTtsBtn')) {
+  $('#testTtsBtn').addEventListener('click', async () => {
+    unlockTtsAudio();
+    const out = $('#ttsStatus');
+    if (out) { out.textContent = '🔊 播放示例：「resilient / Learning English opens the door.」'; out.className = 'result'; }
+    await speak('resilient');
+    setTimeout(() => speak('Learning English opens the door to a wider world.'), 900);
+    setTimeout(refreshTtsStatus, 1800);
+  });
+}
 
 /* v1.0.8：韦氏词典双 Key 配置 */
 function buildDictBody() {

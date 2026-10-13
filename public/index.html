@@ -4,7 +4,7 @@
 <meta charset="UTF-8" data-page-node-id="jJ2TzRBunJhs9LdkX6E9EG">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="oWFDBFujyrY5KW9n2DbmLZ">
 <title>英语学习工作台</title>
-<!-- v3.4.3：服务商配置弹窗移动端适配；标题与操作栏固定，表单区独立滚动。 -->
+<!-- v3.5.0：发音朗读升级——单词真人发音（有道，美音/英音可切），句子服务端神经语音（Piper），浏览器 TTS 兜底。 -->
 
 <!-- v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） -->
 <meta name="theme-color" content="#3b82f6">
@@ -25,7 +25,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.4.3</span></div>
+  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.5.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -37,7 +37,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.4.3</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.5.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -110,7 +110,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.4.3</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.5.0</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -1027,6 +1027,32 @@
           </div>
           <div class="install-status" id="installStatus"></div>
           <div class="install-guide" id="installGuide"></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ===== 子版块：发音与朗读（v3.5.0，全体用户，口音为本设备偏好） ===== -->
+    <details class="settings-section" id="ttsSection">
+      <summary>🔊 发音与朗读</summary>
+      <div class="settings-section-body">
+        <div class="card" id="ttsCard">
+          <div class="card-title">🔊 发音与朗读</div>
+          <details class="hint-fold"><summary>ℹ️ 说明</summary>
+          <div class="hint">单词优先播放<b>真人发音</b>（有道，美音/英音可切），句子使用服务端<b>神经语音</b>（Piper）。两者不可用时自动回退浏览器朗读。口音偏好保存在本设备。</div>
+          </details>
+          <div class="grid-2" style="gap:10px">
+            <div>
+              <label class="field-label">口音偏好</label>
+              <select id="cfgTtsAccent" class="input">
+                <option value="en_US">🇺🇸 美音</option>
+                <option value="en_GB">🇬🇧 英音</option>
+              </select>
+            </div>
+            <div style="display:flex;align-items:flex-end">
+              <button class="btn" id="testTtsBtn">🔊 试听</button>
+            </div>
+          </div>
+          <div class="result" id="ttsStatus"></div>
         </div>
       </div>
     </details>

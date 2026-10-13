@@ -36,9 +36,9 @@ git archive "origin/${REMOTE_REF}" | tar -x -C "$TMP_RELEASE"
 node "$TMP_RELEASE/scripts/release-gate.mjs" --repo "$APP_ROOT" --refs --remote --sha "$TARGET_SHA"
 mkdir -p "$BACKUP_DIR" "$RELEASE_DIR"
 echo "[deploy] backing up data"
-BACKUP_TMP="${APP_ROOT}/.data_backup_v343_${STAMP}.tar.gz"
+BACKUP_TMP="${APP_ROOT}/.data_backup_v350_${STAMP}.tar.gz"
 tar -czf "$BACKUP_TMP" --exclude=data/backups -C "$APP_ROOT" data
-BACKUP_FILE="${BACKUP_DIR}/data_backup_v343_${STAMP}.tar.gz"
+BACKUP_FILE="${BACKUP_DIR}/data_backup_v350_${STAMP}.tar.gz"
 mv "$BACKUP_TMP" "$BACKUP_FILE"
 node "$TMP_RELEASE/scripts/backup-restore-drill.mjs" --source "$APP_ROOT/data" --archive "$BACKUP_FILE" --json >/tmp/workbench-backup-restore-${STAMP}.json
 echo "[deploy] saving current code release"
