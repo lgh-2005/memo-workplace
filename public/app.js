@@ -1351,6 +1351,11 @@ function renderWordList() {
     if (w.tags?.includes('STICKING') || w.quizResponse === 'FORGET') badge = '<span class="badge sticky">顽固</span>';
     else if (w.today?.date === todayStr && w.today?.isNew) badge = '<span class="badge new">新词</span>';
     else if (w.today?.date === todayStr && w.today?.isFinished) badge = '<span class="badge done">已完成</span>';
+    // v3.5.1：今日作答结果徽标（忘记/模糊/熟知），只要限定今天，独立于上方状态徽标
+    const isTodayResp = w.today?.date === todayStr;
+    if (isTodayResp && w.today?.firstResponse === 'FORGET') badge += '<span class="badge sticky">今日忘</span>';
+    else if (isTodayResp && w.today?.firstResponse === 'VAGUE') badge += '<span class="badge vague">今日模糊</span>';
+    else if (isTodayResp && w.today?.firstResponse === 'WELL_FAMILIAR') badge += '<span class="badge done">今日熟</span>';
     const meta = w.studyCount != null ? `学过 ${w.studyCount} 次` : (w.nextStudyDate ? '到期 ' + w.nextStudyDate.slice(5, 10) : '');
     const phon = w.gloss?.phonetic ? `<span class="phonetic">${esc(w.gloss.phonetic)}</span>` : '';
     const glossLine = w.gloss?.gloss ? `<div class="gloss-line" title="${esc(w.gloss.gloss)}">${esc(w.gloss.gloss)}</div>` : '<div class="gloss-line dim">　</div>';

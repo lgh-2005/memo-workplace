@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * v3.5.0：移动端回归入口。
+ * v3.5.1：移动端回归入口。
  * --emulated 在无手机环境下执行可复现的移动契约检查；
  * --device 需要 Android ADB，并通过 Chrome DevTools 读取真实设备页面布局。
  */

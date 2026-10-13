@@ -386,6 +386,7 @@ select.input { cursor: pointer; }
 .word-item .meta { font-size: 11px; color: var(--text-sub); }
 .badge { font-size: 10px; padding: 1px 7px; border-radius: 999px; }
 .badge.sticky { background: #fef2f2; color: var(--warn); }
+.badge.vague { background: #fffbeb; color: #b45309; }   /* v3.5.1：今日模糊 */
 .badge.done { background: #ecfdf5; color: var(--ok); }
 .badge.new { background: #eff6ff; color: var(--primary); }
 .empty { color: var(--text-sub); font-size: 12px; text-align: center; padding: 20px 0; }
@@ -550,6 +551,7 @@ code { font-family: Consolas, monospace; font-size: 12px; }
 [data-theme="dark"] .tag.pending { background: #33270d; color: #fbbf24; }
 [data-theme="dark"] .tag.synced { background: #0e2e22; color: var(--ok); }
 [data-theme="dark"] .badge.sticky { background: #33191b; color: var(--warn); }
+[data-theme="dark"] .badge.vague { background: #33280f; color: #fbbf24; }   /* v3.5.1 */
 [data-theme="dark"] .badge.done { background: #0e2e22; color: var(--ok); }
 [data-theme="dark"] .badge.new { background: var(--primary-soft); color: var(--primary); }
 [data-theme="dark"] .chip.q.err { border-color: #4a2525; }

@@ -771,6 +771,15 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.5.1', date: '2026-10-13', title: '严格「今日」忘记/模糊筛选',
+    items: [
+      '新增词表与测验词源「今日忘词 / 今日模糊」筛选：严格限定为今天在墨墨或工作台测验的作答结果',
+      '修正旧版忘记词/模糊词把全历史 lastResponse 与跨天累积的今日快照混在一起、不限日期的问题',
+      '词文成章快选词源与真题迁移训练同步新增今日口径；词表按今日作答显示「今日忘/今日模糊/今日熟」徽标',
+      '新增 scripts/today-response-smoke.mjs 隔离回归（今日口径、历史不混入、计数与组卷/迁移白名单）',
+    ],
+  },
+  {
     version: '3.5.0', date: '2026-10-13', title: '发音朗读升级（真人音源 + 神经语音）',
     items: [
       '修复 CSP 缺少 media-src 导致跨域真人发音被拦截、全部回退系统合成声的问题',
@@ -1760,6 +1769,8 @@ function quizCandidates(source) {
   if (source === 'sticky') words = words.filter(w => w.tags?.includes('STICKING'));
   else if (source === 'forget') words = words.filter(w => w.lastResponse === 'FORGET' || w.today?.firstResponse === 'FORGET' || w.quizResponse === 'FORGET');
   else if (source === 'vague') words = words.filter(w => w.lastResponse === 'VAGUE' || w.today?.firstResponse === 'VAGUE' || w.quizResponse === 'VAGUE');
+  else if (source === 'today_forget') words = words.filter(w => todayHasResponse(w, todayStr, 'FORGET'));
+  else if (source === 'today_vague') words = words.filter(w => todayHasResponse(w, todayStr, 'VAGUE'));
   else if (source === 'due7') {
     const end = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
     words = words.filter(w => { const d = (w.nextStudyDate || '').slice(0, 10); return d && d <= end; });
@@ -1777,7 +1788,7 @@ function quizCandidates(source) {
  */
 function quizSourceCounts() {
   const VALID_SPELLING = /^[a-z][a-z'\-]{1,29}$/i;
-  const sourceKeys = ['today', 'sticky', 'vague', 'forget', 'due7', 'srs_due', 'wrongbook', 'all'];
+  const sourceKeys = ['today', 'sticky', 'vague', 'forget', 'today_forget', 'today_vague', 'due7', 'srs_due', 'wrongbook', 'all'];
   const sources = {};
   for (const key of sourceKeys) {
     const seen = new Set();
@@ -2572,13 +2583,28 @@ function vocabGlossOf(word) {
   };
 }
 
-/** 与 /api/words 同源的候选词筛选（仅支持 sticky/vague/forget/due7） */
+/**
+ * v3.5.1：严格「今日」作答判定。墨墨今日词表已落 w.today（含 firstResponse），
+ * 工作台测验结果落 w.quizLastAt（北京时间可判今日）。二者都限定为「今天」
+ * 才计入，避免旧版把全历史 lastResponse 与跨天累积的 w.today 快照混在一起。
+ */
+function todayHasResponse(w, todayStr, response) {
+  if (!w) return false;
+  if (w.today && w.today.date === todayStr && w.today.firstResponse === response) return true;
+  if (w.quizResponse === response && bjDateOf(w.quizLastAt) === todayStr) return true;
+  return false;
+}
+
+/** 与 /api/words 同源的候选词筛选（支持 sticky/vague/forget/today_forget/today_vague/today_wellfamiliar/due7） */
 function collectVocabCandidates(filter) {
   const todayStr = bjDate();
   let words = Object.values(db.words);
   if (filter === 'sticky') words = words.filter(w => w.tags?.includes('STICKING'));
   else if (filter === 'forget') words = words.filter(w => w.lastResponse === 'FORGET' || w.today?.firstResponse === 'FORGET' || w.quizResponse === 'FORGET');
   else if (filter === 'vague') words = words.filter(w => w.lastResponse === 'VAGUE' || w.today?.firstResponse === 'VAGUE' || w.quizResponse === 'VAGUE');
+  else if (filter === 'today_forget') words = words.filter(w => todayHasResponse(w, todayStr, 'FORGET'));
+  else if (filter === 'today_vague') words = words.filter(w => todayHasResponse(w, todayStr, 'VAGUE'));
+  else if (filter === 'today_wellfamiliar') words = words.filter(w => todayHasResponse(w, todayStr, 'WELL_FAMILIAR'));
   else if (filter === 'due7') {
     const end = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
     words = words.filter(w => {
@@ -7244,6 +7270,10 @@ async function handleRequest(req, res) {
         }
         else if (filter === 'forget') words = words.filter(w => w.lastResponse === 'FORGET' || w.today?.firstResponse === 'FORGET' || w.quizResponse === 'FORGET');
         else if (filter === 'vague') words = words.filter(w => w.lastResponse === 'VAGUE' || w.today?.firstResponse === 'VAGUE' || w.quizResponse === 'VAGUE');
+        // v3.5.1：严格「今日」作答筛选（限 today.date / quizLastAt 为北京时间今天）
+        else if (filter === 'today_forget') words = words.filter(w => todayHasResponse(w, todayStr, 'FORGET'));
+        else if (filter === 'today_vague') words = words.filter(w => todayHasResponse(w, todayStr, 'VAGUE'));
+        else if (filter === 'today_wellfamiliar') words = words.filter(w => todayHasResponse(w, todayStr, 'WELL_FAMILIAR'));
         else if (filter === 'newtoday') words = words.filter(w => w.today?.date === todayStr && w.today?.isNew);
         else if (filter === 'unfinished') words = words.filter(w => w.today?.date === todayStr && w.today?.isFinished === false);
         else if (filter === 'today') words = words.filter(w => w.today?.date === todayStr);
@@ -7332,7 +7362,7 @@ async function handleRequest(req, res) {
       if (p === '/api/quiz/generate' && req.method === 'POST') {
         const body = await readBody(req);
         const source = String(body.source || 'all');
-        const allowedSources = ['today', 'sticky', 'vague', 'forget', 'due7', 'all', 'srs_due', 'wrongbook'];
+        const allowedSources = ['today', 'sticky', 'vague', 'forget', 'today_forget', 'today_vague', 'due7', 'all', 'srs_due', 'wrongbook'];
         if (!allowedSources.includes(source)) return sendJSON(res, 400, { error: 'source 非法' });
         // v3.2.1：题量解锁——下限 1，不设上限（实际受词源/释义数量约束）
         const rawCount = Number(body.count);
@@ -9247,8 +9277,8 @@ CRITICAL TRANSCRIPTION RULES:
       if (p === '/api/learning/vocab/generate' && req.method === 'POST') {
         const body = await readBody(req);
         const filter = String(body.filter || 'forget').trim();
-        if (!['sticky', 'vague', 'forget', 'due7'].includes(filter)) {
-          return sendJSON(res, 400, { error: 'filter 参数仅允许 sticky/vague/forget/due7' });
+        if (!['sticky', 'vague', 'forget', 'today_forget', 'today_vague', 'due7'].includes(filter)) {
+          return sendJSON(res, 400, { error: 'filter 参数仅允许 sticky/vague/forget/today_forget/today_vague/due7' });
         }
         // v3.2.1：题量解锁——下限 1，不设上限（实际受候选题约束）
         let count = parseInt(body.count, 10);
