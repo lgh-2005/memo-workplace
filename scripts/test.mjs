@@ -17,6 +17,7 @@ await run(process.execPath, ['--check', 'public/sw.js']);
 await run(process.execPath, ['scripts/study-plan-smoke.mjs']);
 await run(process.execPath, ['scripts/tts-smoke.mjs']);
 await run(process.execPath, ['scripts/today-response-smoke.mjs']);
+await run(process.execPath, ['scripts/today-snapshot-smoke.mjs']);
 await run(process.execPath, ['scripts/frontend-refinement-smoke.mjs']);
 await run(process.execPath, ['scripts/mobile-device-check.mjs', '--emulated']);
 await run(process.execPath, ['scripts/external-body-cache-smoke.mjs']);

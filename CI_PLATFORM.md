@@ -1,4 +1,4 @@
-# v3.5.1 CI 平台与发布门禁确认
+# v3.5.2 CI 平台与发布门禁确认
 
 本项目采用双仓模式：
 
@@ -15,4 +15,4 @@ v3.4.0 增加 `scripts/frontend-refinement-smoke.mjs`，在隔离沙箱端到端
 
 v3.4.3 增加服务商弹窗在 Pixel 7 / iPhone 13 和短屏移动视口中的交互回归；v3.4.2 验证取消请求后的写队列串行保护、超时返回、响应关闭短路和默认模型服务商切换回归；外刊 gzip 分片按需解压、行偏移随机读取、文件替换失效和有界 LRU 淘汰属于 v3.4.1。
 
-v3.5.1 新增 `scripts/today-response-smoke.mjs`：验证严格「今日」作答筛选口径（只收当天、历史不混入、计数与组卷/迁移白名单）。v3.5.0 的 `scripts/tts-smoke.mjs` 验证 `/api/tts` 单词真人音源失败降级、句子在未部署 Piper 时返回 503、`/api/tts/status` 能力字段与 CSP `media-src` 放行。Piper 语音运行时属于服务器 sidecar，不进入 CI 与仓库。
+v3.5.2 新增 `scripts/today-snapshot-smoke.mjs`：通过 `MAIMEMO_BASE` 注入假墨墨服务端，验证同步以本次今日词表快照为唯一真源（重建 / 部分返回 / 空返回均清空旧 `w.today`）。v3.5.1 的 `scripts/today-response-smoke.mjs` 验证严格「今日」作答筛选口径；v3.5.0 的 `scripts/tts-smoke.mjs` 验证 `/api/tts` 单词真人音源失败降级、句子在未部署 Piper 时返回 503、`/api/tts/status` 能力字段与 CSP `media-src` 放行。Piper 语音运行时属于服务器 sidecar，不进入 CI 与仓库。

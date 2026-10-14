@@ -113,7 +113,8 @@ function bjDate(offsetDays = 0) {
   return new Date(Date.now() + offsetDays * 86400000 + 8 * 3600000).toISOString().slice(0, 10);
 }
 
-const MM_BASE = 'https://open.maimemo.com/open/api/v1/memo';
+// v3.5.2：允许测试经 MAIMEMO_BASE 覆盖（默认官方端点，行为不变），便于注入假墨墨服务端回归同步清理
+const MM_BASE = process.env.MAIMEMO_BASE || 'https://open.maimemo.com/open/api/v1/memo';
 
 /* v2.2.4：词汇真题迁移训练——仅在进程内存中驻留的签名密钥（重启即失效，旧题自动作废） */
 const VOCAB_TRAIN_SECRET = crypto.randomBytes(32);
@@ -770,6 +771,15 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '3.5.2', date: '2026-10-14', title: '今日词表快照清理',
+    items: [
+      '同步今日词表改为以本次墨墨快照为唯一真源：先清空所有旧 w.today（含跨天残留），再按本次返回重建',
+      '修旧版 w.today 只增不减、库里累积数千条过期今日快照（含已掉出计划的词）的问题',
+      '墨墨返回 0 条时即清空今日上下文，db.todayItems 与各词 w.today 保持严格一致',
+      '新增 scripts/today-snapshot-smoke.mjs 隔离回归（注入假墨墨：重建/部分返回/空返回三场景）',
+    ],
+  },
   {
     version: '3.5.1', date: '2026-10-13', title: '严格「今日」忘记/模糊筛选',
     items: [
@@ -2931,17 +2941,26 @@ async function syncProgress() {
 
 async function syncTodayItems() {
   const data = await mm('/study/get_today_items', { method: 'POST', body: { limit: 1000 } });
-  const items = data.today_items || [];
-  db.todayItems = items;
+  const items = Array.isArray(data.today_items) ? data.today_items : [];
   const dateStr = bjDate();
+
+  // v3.5.2：以本次同步快照为唯一真源——先清除所有旧 w.today（含跨天残留、已掉出今日计划的词），
+  // 再按本次返回重建。返回 0 条时即清空今日上下文（快照即真相，不做保留）。
+  let cleared = 0;
+  for (const w of Object.values(db.words)) {
+    if (w.today) { delete w.today; cleared++; }
+  }
+
   for (const it of items) {
+    if (!it || !it.voc_id) continue;
     const w = db.words[it.voc_id] || { vocId: it.voc_id };
     w.vocId = it.voc_id;
     w.spelling = it.voc_spelling || w.spelling;
     w.today = { date: dateStr, firstResponse: it.first_response, isNew: it.is_new, isFinished: it.is_finished };
     db.words[it.voc_id] = w;
   }
-  return items.length;
+  db.todayItems = items;
+  return { count: items.length, cleared };
 }
 
 /**
@@ -3012,8 +3031,8 @@ async function runSync(trigger = 'manual') {
     steps.push(`今日进度 ${p.finished}/${p.total}`);
   } catch (e) { ok = false; steps.push('进度失败: ' + e.message); }
   try {
-    const n = await syncTodayItems();
-    steps.push(`今日词表 ${n} 条`);
+    const t = await syncTodayItems();
+    steps.push(`今日词表 ${t.count} 条${t.cleared ? `（清理旧快照 ${t.cleared}）` : ''}`);
   } catch (e) { steps.push('今日词表失败: ' + e.message); }
   try {
     if (!config.maimemoToken) {

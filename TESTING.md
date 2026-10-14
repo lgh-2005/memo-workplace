@@ -14,7 +14,7 @@
 >
 > v3.4.3 增量：移动端 Playwright 回归覆盖服务商新增/编辑弹窗、窄高视口中的独立表单滚动、固定操作栏、关闭交互和焦点返回。
 >
-> v3.5.1 增量：`scripts/today-response-smoke.mjs` 在隔离沙箱验证严格「今日」作答筛选（词表 today_forget/today_vague/today_wellfamiliar 只收当天、历史与旧版 lastResponse 不混入、`/api/quiz/sources` 计数、组卷与真题迁移 filter 白名单）。v3.5.0 的 `scripts/tts-smoke.mjs` 验证 `/api/tts`（单词真人音源失败降级、句子无 Piper 优雅返回 503）、`/api/tts/status` 能力字段与 CSP `media-src` 放行。
+> v3.5.2 增量：`scripts/today-snapshot-smoke.mjs` 通过 `MAIMEMO_BASE` 注入假墨墨服务端，验证同步以本次 `get_today_items` 快照为唯一真源（重建 / 部分返回 / 空返回三场景均清空旧 `w.today`，`db.todayItems` 对齐）。v3.5.1 的 `scripts/today-response-smoke.mjs` 验证严格「今日」作答筛选（词表 today_forget/today_vague 只收当天、历史不混入、`/api/quiz/sources` 计数、组卷与真题迁移 filter 白名单）；v3.5.0 的 `scripts/tts-smoke.mjs` 验证 `/api/tts` 降级与 CSP `media-src`。
 
 > 本文件是 `v2.2.8` 的**可审计测试来源声明**，随产品仓库进入 Gitee，供审计确认测试基线、脚本清单与预期结果。
 > 代码基线：`0705689`　·　对应 tag：`v2.2.8`　·　版本口径：`2.2.8`
