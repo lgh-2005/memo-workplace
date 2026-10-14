@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-# v3.5.0：服务端神经语音（Piper）运行时安装脚本。
+# v3.5.3：服务端神经语音（Piper）运行时安装脚本。
 #
 # 在 ECS 上执行一次即可：安装 Python 虚拟环境 + piper-tts，并从国内可达镜像
-# 下载中英/美英两套 medium 语音模型。产物全部落在 $PIPER_HOME（默认 data/piper），
-# 该目录按 data/ 规则被 git 与发布流程排除，不进入仓库。
+# 下载中英/美英两套 medium 语音模型。产物全部落在 $PIPER_HOME（默认 runtime/piper），
+# 该目录是部署产物，不进 git、不参与 data 备份（避免 venv 符号链接污染备份校验）。
 #
 # 用法： bash tools/tts/setup_piper.sh
 set -Eeuo pipefail
 
 APP_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PIPER_HOME="${PIPER_HOME:-$APP_ROOT/data/piper}"
+PIPER_HOME="${PIPER_HOME:-$APP_ROOT/runtime/piper}"
 VENV="$PIPER_HOME/venv"
 VOICES="$PIPER_HOME/voices"
 MIRROR_BASE="${PIPER_VOICE_MIRROR:-https://hf-mirror.com/rhasspy/piper-voices/resolve/main}"

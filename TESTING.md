@@ -14,6 +14,8 @@
 >
 > v3.4.3 增量：移动端 Playwright 回归覆盖服务商新增/编辑弹窗、窄高视口中的独立表单滚动、固定操作栏、关闭交互和焦点返回。
 >
+> v3.5.3 增量：语音运行时（Piper venv + 模型 + 合成缓存）从 `data/` 移至 `runtime/`，消除 `data/` 内符号链接导致的备份恢复校验失败（`deploy.sh` 的 `backup-restore-drill` 拒绝含符号链接的归档）；发布/回滚脚本显式排除 `runtime/`。
+>
 > v3.5.2 增量：`scripts/today-snapshot-smoke.mjs` 通过 `MAIMEMO_BASE` 注入假墨墨服务端，验证同步以本次 `get_today_items` 快照为唯一真源（重建 / 部分返回 / 空返回三场景均清空旧 `w.today`，`db.todayItems` 对齐）。v3.5.1 的 `scripts/today-response-smoke.mjs` 验证严格「今日」作答筛选（词表 today_forget/today_vague 只收当天、历史不混入、`/api/quiz/sources` 计数、组卷与真题迁移 filter 白名单）；v3.5.0 的 `scripts/tts-smoke.mjs` 验证 `/api/tts` 降级与 CSP `media-src`。
 
 > 本文件是 `v2.2.8` 的**可审计测试来源声明**，随产品仓库进入 Gitee，供审计确认测试基线、脚本清单与预期结果。

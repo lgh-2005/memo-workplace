@@ -772,6 +772,14 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.5.3', date: '2026-10-14', title: '语音运行时移出数据目录',
+    items: [
+      'Piper 语音运行时与合成缓存从 data/ 移到 runtime/（部署产物目录，不进 git、不参与 data 备份）',
+      '修复 data/ 内 Python venv 符号链接导致 deploy.sh 备份恢复校验失败（拒绝含符号链接的归档）的问题',
+      '发布/回滚脚本显式排除 runtime/；今日词表快照清理见 v3.5.2',
+    ],
+  },
+  {
     version: '3.5.2', date: '2026-10-14', title: '今日词表快照清理',
     items: [
       '同步今日词表改为以本次墨墨快照为唯一真源：先清空所有旧 w.today（含跨天残留），再按本次返回重建',
@@ -5927,9 +5935,10 @@ function armAutoSync() {
 /*   - 二者皆不可用时前端回退浏览器 speechSynthesis（不阻断学习）         */
 /*   本模块只读合成音频，不写用户数据，属全局共享资源。                    */
 /* ================================================================== */
-const TTS_DIR = path.join(DATA_DIR, 'tts');                 // 音频+缓存落盘目录（git/data 排除）
+const RUNTIME_DIR = path.join(ROOT, 'runtime');             // v3.5.3：部署产物目录（不进 git、不参与 data 备份）
+const TTS_DIR = path.join(RUNTIME_DIR, 'tts');              // 音频+缓存落盘目录
 const TTS_CACHE_DIR = path.join(TTS_DIR, 'cache');          // 合成结果缓存（按内容哈希）
-const PIPER_HOME = process.env.PIPER_HOME ? path.resolve(process.env.PIPER_HOME) : path.join(DATA_DIR, 'piper');
+const PIPER_HOME = process.env.PIPER_HOME ? path.resolve(process.env.PIPER_HOME) : path.join(RUNTIME_DIR, 'piper');
 const PIPER_VENV_PY = path.join(PIPER_HOME, 'venv', 'bin', 'python');
 const PIPER_VOICES_DIR = path.join(PIPER_HOME, 'voices');
 const PIPER_WORKER = path.join(ROOT, 'tools', 'tts', 'piper_worker.py');

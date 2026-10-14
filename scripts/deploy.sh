@@ -23,7 +23,7 @@ if [[ "$DRY_RUN" == "1" ]]; then
   node "$TMP_RELEASE/scripts/release-gate.mjs" --repo "$APP_ROOT" --refs --remote --sha "$TARGET_SHA"
   rsync --dry-run -a --itemize-changes --exclude data/ --exclude corpus/records.jsonl --exclude corpus/exams.jsonl \
     --exclude corpus/external/current/ --exclude corpus/external/releases/ \
-    --exclude scripts/pull_external.sh "$TMP_RELEASE/" "$APP_ROOT/"
+    --exclude scripts/pull_external.sh --exclude runtime/ "$TMP_RELEASE/" "$APP_ROOT/"
   echo "[deploy] dry-run passed; runtime data and external delivery files are excluded"
   exit 0
 fi
@@ -47,7 +47,7 @@ echo "[deploy] applying product files while preserving runtime data"
 command -v rsync >/dev/null 2>&1 || { echo "[deploy] rsync is required to preserve runtime data" >&2; exit 1; }
 rsync -a --exclude data/ --exclude corpus/records.jsonl --exclude corpus/exams.jsonl \
   --exclude corpus/external/current/ --exclude corpus/external/releases/ \
-  --exclude scripts/pull_external.sh "$TMP_RELEASE/" "$APP_ROOT/"
+  --exclude scripts/pull_external.sh --exclude runtime/ "$TMP_RELEASE/" "$APP_ROOT/"
 git reset --mixed "origin/${REMOTE_REF}" >/dev/null
 node scripts/release-gate.mjs --local
 echo "[deploy] restarting ${SERVICE_NAME}"

@@ -20,7 +20,7 @@ RSYNC_FLAGS=(-a)
 [[ "$DRY_RUN" == "1" ]] && RSYNC_FLAGS+=(--dry-run --itemize-changes)
 rsync "${RSYNC_FLAGS[@]}" --exclude data/ --exclude corpus/records.jsonl --exclude corpus/exams.jsonl \
   --exclude corpus/external/current/ --exclude corpus/external/releases/ \
-  --exclude scripts/pull_external.sh "$TMP_RELEASE/" "$APP_ROOT/"
+  --exclude scripts/pull_external.sh --exclude runtime/ "$TMP_RELEASE/" "$APP_ROOT/"
 if [[ "$DRY_RUN" == "1" ]]; then echo "[rollback] dry-run passed; runtime data and external delivery files are excluded"; exit 0; fi
 systemctl restart "$SERVICE_NAME"
 for i in $(seq 1 30); do
