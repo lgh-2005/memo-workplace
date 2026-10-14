@@ -1,5 +1,7 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
+> v3.6.0 增量：新增 `scripts/publication-tracks-smoke.mjs`（隔离沙箱，构造两条刊物轨的最小 release-format v2），验证刊物轨注册/清单、记录带 `pubTrack`、按考试类型（kaoyan1/cet6）自动圈定范围、手动 `corpusTracks` 覆盖与还原自动（13 断言）。
+
 > v3.3.2 增量：`.workbuddy/test_v332_mobile_ui.js` 覆盖 360×800、390×844、700×900、768×1024 四视口，验证移动端安全区、横向子导航、触控目标、操作行换行、弹层滚动、无溢出与控制台无错误（30 断言，全部通过）。
 >
 > v3.3.3 增量：仓库内 `npm test` 提供可复现入口，隔离沙箱启动服务并验证语法、安全响应头、跨站写请求拒绝与登录接口频控；`.github/workflows/ci.yml` 在 Node 22/24 自动执行。

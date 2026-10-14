@@ -748,6 +748,41 @@ function renderStudyPlan(plan) {
     const exam = ({ kaoyan1: '考研英语一', cet6: '六级', custom: '自定义考试' })[plan.examType] || '考研英语一';
     summary.textContent = `${exam}${plan.examDate ? ` · ${plan.examDate}` : ''} · 每日 ${plan.dailyWords || 30} 词 / ${plan.dailyMinutes || 30} 分钟`;
   }
+  renderStudyPlanCorpusTracks(plan);   // v3.6.0
+}
+
+/* v3.6.0：考试语料范围（外刊刊物轨）勾选器 */
+let studyCorpusPubs = null;       // [{key,label,count}]
+let studyCorpusAuto = null;       // 当前考试类型的自动轨集合
+let studyCorpusOverride = null;   // null=自动；数组=手动指定
+async function renderStudyPlanCorpusTracks(plan) {
+  const box = $('#studyPlanCorpusTracks'); if (!box) return;
+  studyCorpusOverride = Array.isArray(plan?.corpusTracks) ? plan.corpusTracks : null;
+  try {
+    if (!studyCorpusPubs) {
+      const s = await api('/api/kb/status');
+      studyCorpusPubs = (s.publications || []);
+      studyCorpusAuto = s.corpusScope?.tracks || null;
+    }
+  } catch { /* 非阻断：拉不到刊物清单就不渲染 */ return; }
+  const eff = new Set(studyCorpusOverride || studyCorpusAuto || []);
+  const autoOn = !studyCorpusOverride;
+  box.innerHTML = [
+    `<label class="chip${autoOn ? ' active' : ''}"><input type="checkbox" id="studyCorpusAuto" ${autoOn ? 'checked' : ''}> 自动（按考试类型）</label>`,
+    ...studyCorpusPubs.map(p => `<label class="chip${eff.has(p.key) ? ' active' : ''}"><input type="checkbox" class="study-corpus-track" data-track="${esc(p.key)}" ${eff.has(p.key) ? 'checked' : ''}> ${esc(p.label)} · ${p.count}</label>`),
+  ].join('');
+  box.querySelectorAll('input').forEach(inp => inp.addEventListener('change', onStudyCorpusChange));
+}
+function onStudyCorpusChange() {
+  const auto = $('#studyCorpusAuto')?.checked;
+  if (auto) { studyCorpusOverride = null; }
+  else {
+    const picked = [...$$('.study-corpus-track')].filter(x => x.checked).map(x => x.dataset.track);
+    studyCorpusOverride = picked.length ? picked : null;   // 一个都不勾 = 回自动
+    if (!picked.length) { const autoBox = $('#studyCorpusAuto'); if (autoBox) autoBox.checked = true; }
+  }
+  const box = $('#studyPlanCorpusTracks');
+  if (box) box.querySelectorAll('.chip').forEach(c => { const i = c.querySelector('input'); if (i) c.classList.toggle('active', i.checked); });
 }
 async function saveStudyPlan() {
   const result = $('#studyPlanResult');
@@ -757,6 +792,7 @@ async function saveStudyPlan() {
       examDate: $('#studyPlanExamDate')?.value || '',
       dailyWords: Number($('#studyPlanWords')?.value),
       dailyMinutes: Number($('#studyPlanMinutes')?.value),
+      corpusTracks: studyCorpusOverride,   // v3.6.0：null=自动；数组=手动
     }});
     renderStudyPlan(r.plan); renderStudyTasks(r.tasks); loadDashboard();
     const planFold = $('#studyPlanCard'); if (planFold) planFold.open = false;
@@ -3229,7 +3265,7 @@ const KB_SECTION_LABEL = {
   use_of_english: '完形填空', reading: '阅读 A', part_b: '新题型',
   translation: '翻译', writing: '写作',
 };
-const kbState = { records: [], filter: '', loaded: false, page: 1, pageSize: 10, searchResults: null };   // v1.1.2：filter = 来源分类（外刊/教材/真题/直录）；v2.0.0.a 分页
+const kbState = { records: [], filter: '', loaded: false, page: 1, pageSize: 10, searchResults: null, pubTrack: '' };   // v1.1.2：filter = 来源分类（外刊/教材/真题/直录）；v2.0.0.a 分页；v3.6.0：pubTrack = 刊物数据轨
 
 function renderPaginationBar(containerId, currentPage, totalPages, totalCount, onPageChange) {
   const container = $(containerId);
@@ -3293,13 +3329,40 @@ async function loadKb() {
       $('#kbListResult').textContent = '⚠️ 未找到语料库文件：' + r.file + '（把导入工程的 records.jsonl 同步到 corpus/ 即可）';
       $('#kbListResult').className = 'result err';
     }
+    renderKbTrackFilters();
     renderKbList();
   } catch (e) { console.error(e); }
 }
 
+/** v3.6.0：按当前记录聚合「刊物数据轨」chip（每个外刊一条独立轨）。 */
+function renderKbTrackFilters() {
+  const box = $('#kbTrackFilters');
+  if (!box) return;
+  const counts = new Map();
+  for (const r of kbState.records) {
+    if (!r.pubTrack) continue;
+    const cur = counts.get(r.pubTrack) || { label: r.pubTrackLabel || r.pubTrack, count: 0 };
+    cur.count++; counts.set(r.pubTrack, cur);
+  }
+  const chips = [`<button class="chip${kbState.pubTrack === '' ? ' active' : ''}" data-ptrack="">全部刊物</button>`];
+  for (const [key, v] of [...counts.entries()].sort((a, b) => b[1].count - a[1].count)) {
+    chips.push(`<button class="chip${kbState.pubTrack === key ? ' active' : ''}" data-ptrack="${esc(key)}">${esc(v.label)} · ${v.count}</button>`);
+  }
+  box.innerHTML = chips.join('');
+  box.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+    kbState.pubTrack = c.dataset.ptrack || '';
+    kbState.page = 1;
+    box.querySelectorAll('.chip').forEach(x => x.classList.toggle('active', x === c));
+    renderKbList();
+  }));
+}
+
 function renderKbList() {
   const box = $('#kbList');
-  const list = kbState.records.filter(r => !kbState.filter || (r.source && r.source.category) === kbState.filter);
+  const list = kbState.records.filter(r =>
+    (!kbState.filter || (r.source && r.source.category) === kbState.filter)
+    && (!kbState.pubTrack || r.pubTrack === kbState.pubTrack)   // v3.6.0：刊物数据轨筛选
+  );
   const totalCount = list.length;
   const totalPages = Math.ceil(totalCount / kbState.pageSize) || 1;
   if (kbState.page > totalPages) kbState.page = totalPages;
@@ -3429,7 +3492,7 @@ async function kbDoSearch() {
     $('#kbList').innerHTML = r.results.map(h => `
       <div class="kb-item" data-rid="${esc(h.rid)}">
         <div class="kb-sentence">${esc(h.s)}</div>
-        <div class="kb-item-meta">${h.sourceKind === 'exam' ? esc(h.trackLabel || '考研真题') : h.sourceKind === 'external' ? '外刊真实语境' : '工作台语料'}：${esc(h.title)}${h.publication ? ' · ' + esc(h.publication) : ''}${h.year ? ' · ' + h.year + ' 年' : ''}${h.section ? ' · ' + esc(KB_SECTION_LABEL[h.section] || h.section) : ''}${h.number ? ' · 第 ' + h.number + ' 题' : ''}</div>
+        <div class="kb-item-meta">${h.sourceKind === 'exam' ? esc(h.trackLabel || '考研真题') : h.sourceKind === 'external' ? esc(h.pubTrackLabel || '外刊真实语境') : '工作台语料'}：${esc(h.title)}${h.publication ? ' · ' + esc(h.publication) : ''}${h.year ? ' · ' + h.year + ' 年' : ''}${h.section ? ' · ' + esc(KB_SECTION_LABEL[h.section] || h.section) : ''}${h.number ? ' · 第 ' + h.number + ' 题' : ''}</div>
       </div>`).join('');
     renderPaginationBar('#kbPagination', 1, 0, 0, () => {});
   } catch (e) {

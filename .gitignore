@@ -29,3 +29,6 @@ corpus/external/*.tmp
 # v3.5.3：发音语音运行时（Piper venv + 模型 + 合成缓存）是部署产物，
 # 落在 runtime/，不进 git、不参与 data 备份（venv 含符号链接会污染备份校验）。
 runtime/
+
+# v3.6.0：早期「真题库前端设计预览」稿，非产品文件，不入库
+/exam-preview.html

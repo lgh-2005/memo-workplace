@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** v3.5.3：发布前门禁。默认只检查本地产品；--refs 检查双仓提交；--online 做线上只读健康检查。 */
+/** v3.6.0：发布前门禁。默认只检查本地产品；--refs 检查双仓提交；--online 做线上只读健康检查。 */
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -13,14 +13,14 @@ const checks = [];
 const check = (name, ok, detail = '') => { checks.push({ name, ok, detail }); console.log(`${ok ? 'PASS' : 'FAIL'} ${name}${detail ? `: ${detail}` : ''}`); };
 const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
 const version = String(pkg.version);
-check('release version', version === '3.5.3', version);
+check('release version', version === '3.6.0', version);
 for (const file of ['server.js', 'public/index.html', 'public/app.js', 'public/sw.js', 'scripts/deploy.sh', 'scripts/rollback.sh', 'scripts/backup-restore-drill.sh', 'scripts/backup-restore-drill.mjs', 'scripts/online-health.mjs', 'scripts/security-audit.mjs', 'scripts/mobile-device-check.mjs', 'scripts/docs-consistency.mjs', 'scripts/study-plan-smoke.mjs', 'scripts/tts-smoke.mjs', 'scripts/today-response-smoke.mjs', 'scripts/today-snapshot-smoke.mjs', 'scripts/frontend-refinement-smoke.mjs', 'tools/tts/piper_worker.py', 'tools/tts/setup_piper.sh']) {
   check(`required file ${file}`, existsSync(join(root, file)));
 }
 const index = await readFile(join(root, 'public', 'index.html'), 'utf8');
 const sw = await readFile(join(root, 'public', 'sw.js'), 'utf8');
-check('HTML version markers', (index.match(/v3\.5\.3/g) || []).length >= 3);
-check('service worker cache marker', sw.includes('wb-shell-v3.5.3'));
+check('HTML version markers', (index.match(/v3\.6\.0/g) || []).length >= 3);
+check('service worker cache marker', sw.includes('wb-shell-v3.6.0'));
 const diff = spawnSync('git', ['-C', root, 'diff', '--check'], { encoding: 'utf8' });
 if (existsSync(join(root, '.git'))) check('git whitespace', diff.status === 0, diff.status === 0 ? '' : (diff.stderr.trim() || diff.stdout.trim()));
 if (args.includes('--refs') || args.includes('--remote')) {

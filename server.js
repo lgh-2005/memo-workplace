@@ -772,6 +772,17 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.6.0', date: '2026-10-14', title: '外刊刊物数据轨 + 按考试圈定语料范围',
+    items: [
+      '新增「刊物数据轨」：每个外刊刊物（经济学人/卫报/纽约客/连线/中国日报…）各占一条独立轨，后端 PUBLICATION_TRACKS 注册、每条外刊记录带 pubTrack',
+      '语料库页新增刊物轨筛选条（按当前 release 真实存在的刊聚合，显示篇数）；搜索结果标注刊物轨',
+      '新增「中国日报」轨（14_chinadaily）：主打六级翻译/写作，含双语对照 + 每日一词 + 主站英文',
+      '新增「按考试圈定学习语料范围」：考试计划可选 corpusTracks（null=按考试类型自动），作用于真题迁移/真实例句/听说语料/全库检索的外刊通道',
+      '考试↔刊物默认亲缘：kaoyan1→经济/卫报/科学美国人/大西洋/NYT/泰晤士/FT/科学自然；cet6→中国日报/纽约客/连线/箴言报/电讯报；真题与手工语料不受此闸门约束',
+      '新增 scripts/publication-tracks-smoke.mjs 隔离回归（13 断言）',
+    ],
+  },
+  {
     version: '3.5.3', date: '2026-10-14', title: '语音运行时移出数据目录',
     items: [
       'Piper 语音运行时与合成缓存从 data/ 移到 runtime/（部署产物目录，不进 git、不参与 data 备份）',
@@ -4291,6 +4302,70 @@ async function dictLookup(word) {
    工作台做模块化渲染而非限制顺序；条目顺序尊重数据层（板块按首次出现，
    板块内题干在前、题目按题号，带 passage_id 的题目跟随所属原文）。 */
 
+/* ---------- v3.6.0：外刊「数据轨」——每个刊物一条独立轨 ---------- */
+/* 刊源目录名（release 的 source.source_key）-> 刊物数据轨。docs = 是否主打文档/翻译向
+   （中国日报：双语对照+每日一词）。新增刊物只需在此登记一行。 */
+const PUBLICATION_TRACKS = {
+  '01_economist':             { key: 'economist',    label: '经济学人',     provider: 'The Economist',            group: 'kaoyan' },
+  '02_guardian':              { key: 'guardian',     label: '卫报',         provider: 'The Guardian',             group: 'kaoyan' },
+  '03_scientific_american':   { key: 'sciam',        label: '科学美国人',   provider: 'Scientific American',      group: 'kaoyan' },
+  '04_the_atlantic':          { key: 'atlantic',     label: '大西洋月刊',   provider: 'The Atlantic',             group: 'kaoyan' },
+  '06_nytimes':               { key: 'nytimes',      label: '纽约时报',     provider: 'The New York Times',       group: 'kaoyan' },
+  '12_new_yorker':            { key: 'new_yorker',   label: '纽约客',       provider: 'The New Yorker',           group: 'kaoyan' },
+  '13_wired':                 { key: 'wired',        label: '连线',         provider: 'Wired',                    group: 'kaoyan' },
+  '08_the_times':             { key: 'the_times',    label: '泰晤士报',     provider: 'The Times',                group: 'kaoyan' },
+  '07_ft':                    { key: 'ft',           label: '金融时报',     provider: 'Financial Times',          group: 'kaoyan' },
+  '09_science_nature':        { key: 'science_nature', label: 'Science/Nature', provider: 'Science / Nature',     group: 'kaoyan' },
+  '05_csmonitor':             { key: 'csmonitor',    label: '箴言报',       provider: 'Christian Science Monitor', group: 'other' },
+  '10_telegraph':             { key: 'telegraph',    label: '每日电讯报',   provider: 'The Daily Telegraph',      group: 'other' },
+  '11_washington_post':       { key: 'wapo',         label: '华盛顿邮报',   provider: 'The Washington Post',      group: 'other' },
+  '14_chinadaily':            { key: 'chinadaily',   label: '中国日报',     provider: 'China Daily',              group: 'cet6', docs: true },
+};
+/** 由发布的 source_key 求刊物数据轨（未知刊回落通用「外刊」轨）。 */
+function pubTrackOf(r) {
+  const key = r && r.external ? (r.source?.source_key || '') : '';
+  return PUBLICATION_TRACKS[key] || null;
+}
+function publicationTrack(r) {
+  const t = pubTrackOf(r);
+  // 手工上传的外刊（managed=manual）不属任何自动刊轨
+  if (!t) return { key: '', label: '', provider: (r?.source?.publication || r?.source?.source || '') };
+  return t;
+}
+/** 刊物数据轨清单（供前端渲染 chip；仅列出当前 release 中真实存在的刊）。 */
+function publicationTrackList() {
+  const seen = new Map();
+  for (const r of loadExternalKb()) {
+    const t = pubTrackOf(r);
+    if (!t) continue;
+    const cur = seen.get(t.key) || { key: t.key, label: t.label, provider: t.provider, group: t.group, docs: !!t.docs, count: 0 };
+    cur.count++;
+    seen.set(t.key, cur);
+  }
+  return [...seen.values()].sort((a, b) => b.count - a.count);
+}
+
+/* ---------- v3.6.0：按考试圈定「进入学习」的语料范围 ---------- */
+/* 考试类型 -> 默认「进入学习」的外刊刊物轨（真题/手工语料不受此闸门约束）。
+   用户可在考试计划 corpusTracks 里手动覆盖。 */
+const EXAM_CORPUS_TRACKS = {
+  kaoyan1: ['economist', 'guardian', 'sciam', 'atlantic', 'nytimes', 'the_times', 'ft', 'science_nature'],
+  cet6: ['chinadaily', 'new_yorker', 'wired', 'csmonitor', 'telegraph'],
+};
+/** 读考试计划（优先语料范围，其次考试类型对应的默认轨）。 */
+function activeCorpusTrackKeys() {
+  let plan = {};
+  try { plan = loadStudyPlan(); } catch { plan = {}; }
+  const valid = new Set(Object.values(PUBLICATION_TRACKS).map(t => t.key));
+  if (Array.isArray(plan.corpusTracks) && plan.corpusTracks.length) {
+    return new Set(plan.corpusTracks.filter(k => valid.has(k)));
+  }
+  const ids = EXAM_CORPUS_TRACKS[plan.examType];
+  if (!ids || !ids.length) return null;   // custom / 未配置：不限制
+  return new Set(ids);
+}
+
+
 const KB_SECTION_LABEL = {
   use_of_english: '完形填空', reading: '阅读 A', part_b: '新题型',
   translation: '翻译', writing: '写作', misc: '其他',
@@ -4460,7 +4535,7 @@ function loadExternalSentences() {
       if (i > start) {
         try {
           const o = JSON.parse(raw.toString('utf8', start, i));
-          if (o && o.s) rows.push({ rid: o.r, s: o.s, sourceKind: 'external', l: o.l ? 1 : 0, _lean: true });
+          if (o && o.s) rows.push({ rid: o.r, s: o.s, sourceKind: 'external', l: o.l ? 1 : 0, _lean: true, _scope: true });
         } catch {}
       }
       start = i + 1;
@@ -4558,7 +4633,13 @@ function kbSentences() {
   const out = [];
   const externalRecords = loadExternalKb();
   const corpusRecords = thin ? [...loadKb(), ...loadExams()] : [...loadKb(), ...externalRecords, ...loadExams()];
+  // v3.6.0：非 thin 回退路径同样按考试范围过滤；整轮只求一次活动轨集合
+  const fallbackActive = thin ? null : activeCorpusTrackKeys();
   for (const r of corpusRecords) {
+    if (r.external && fallbackActive) {
+      const t = pubTrackOf(r);
+      if (t && !fallbackActive.has(t.key)) continue;
+    }
     const sourceKind = r.external ? 'external' : (r.rtype === 'qa_set' ? 'exam' : 'corpus');
     const year = r.meta?.year || (r.source?.published_at && /^\d{4}/.test(r.source.published_at) ? Number(r.source.published_at.slice(0, 4)) : null);
     const title = r.title || '';
@@ -4603,6 +4684,27 @@ function externalById() {
   return map;
 }
 
+/** v3.6.0：当前考试圈定范围内、且属于外刊的 rid 集合（按索引 mtime + 计划签名 + 轨集合缓存）。
+ *  返回 null 表示「不限制」（custom / 未配置）。
+ *  重要：这是 O(外刊篇数) 的计算，绝不能逐句调用——调用方须每次检索只取一次。 */
+let activeRidCache = { key: '', set: null };
+function activeRidSet() {
+  const active = activeCorpusTrackKeys();
+  if (!active) return null;
+  let planSig = '';
+  try { planSig = String(fileMtime(ctxFilePath(STUDY_PLAN_FILE)) || 0); } catch { planSig = ''; }
+  const idxKey = externalIndexExists() ? fileMtime(externalIndexFile()) : fileMtime(externalArticlesFile());
+  const key = `${idxKey}|${planSig}|${[...active].sort().join(',')}`;
+  if (activeRidCache.set && activeRidCache.key === key) return activeRidCache.set;
+  const set = new Set();
+  for (const r of loadExternalKb()) {
+    const t = pubTrackOf(r);
+    if (t && active.has(t.key)) set.add(r.id);
+  }
+  activeRidCache = { key, set };
+  return set;
+}
+
 /** 把瘦句子行补全为搜索结果契约（title/year/section/publication/sourceUrl）。
  *  返回**新对象**，不改动用缓存中的极简行，避免多次检索后元数据在缓存里累积。 */
 function externalHydrateSentence(item) {
@@ -4616,6 +4718,10 @@ function externalHydrateSentence(item) {
     out.section = src.section || null;
     out.publication = src.publication || src.source || '';
     out.sourceUrl = src.canonical_url || src.url || '';
+    // v3.6.0：刊物数据轨（前端按轨展示/筛选）
+    const t = publicationTrack(rec);
+    out.pubTrack = t.key || '';
+    out.pubTrackLabel = t.label || '';
   } else {
     out.title = ''; out.year = null; out.section = null; out.publication = ''; out.sourceUrl = '';
   }
@@ -4729,8 +4835,10 @@ function kbSearch(query, limit = 30, sourceKind = 'all') {
   const out = [];
   const seen = new Map();   // 同句去重（翻译原文与题干可能重复收录），优先保留带题号的来源
   const rank = x => x.sourceKind === 'exam' ? 0 : x.sourceKind === 'corpus' ? 1 : 2;
+  const ridSet = activeRidSet();   // v3.6.0：整次检索只取一次（O(外刊篇数)），避免逐句重算
   for (const item of kbSentences()) {
     if (sourceKind !== 'all' && item.sourceKind !== sourceKind) continue;
+    if (item._scope && ridSet && !ridSet.has(item.rid)) continue;   // 按考试圈定外刊范围
     const hit = re ? re.test(item.s) : item.s.toLowerCase().includes(lower);
     if (!hit) continue;
     const key = item.s.toLowerCase();
@@ -4782,6 +4890,9 @@ function kbSummary(r) {
       published_at: r.source.published_at || r.source.date || '',
       canonical_url: r.source.canonical_url || r.source.url || '',
     } : null,
+    // v3.6.0：刊物数据轨（前端 chip 筛选）
+    pubTrack: (r.external && (publicationTrack(r).key || '')),
+    pubTrackLabel: (r.external && (publicationTrack(r).label || '')),
     quality: r.quality || null,
     external: !!r.external,
     // v2.9.0：瘦索引模式列表不带全文，预览取索引内预生成的 preview 字段
@@ -6257,9 +6368,14 @@ function defaultStudyPlan() {
     examDate: '',
     dailyWords: 30,
     dailyMinutes: 30,
+    corpusTracks: null,   // v3.6.0：进入学习的外刊刊物轨（null=按考试类型自动）
     completed: {},
     updatedAt: null,
   };
+}
+/** v3.6.0：语料刊物轨合法 key 集合 */
+function validCorpusTrackKeys() {
+  return new Set(Object.values(PUBLICATION_TRACKS).map(t => t.key));
 }
 function loadStudyPlan() {
   const file = ctxFilePath(STUDY_PLAN_FILE);
@@ -6282,6 +6398,9 @@ function loadStudyPlan() {
     examDate: validStudyDate(String(p.examDate || '')) ? String(p.examDate) : '',
     dailyWords: Number.isFinite(Number(p.dailyWords)) ? Math.max(1, Math.min(10000, Math.floor(Number(p.dailyWords)))) : base.dailyWords,
     dailyMinutes: Number.isFinite(Number(p.dailyMinutes)) ? Math.max(1, Math.min(1440, Math.floor(Number(p.dailyMinutes)))) : base.dailyMinutes,
+    corpusTracks: Array.isArray(p.corpusTracks)
+      ? p.corpusTracks.map(x => String(x)).filter(x => validCorpusTrackKeys().has(x)).slice(0, 40)
+      : (p.corpusTracks === null ? null : base.corpusTracks),
     completed,
     updatedAt: typeof p.updatedAt === 'string' ? p.updatedAt : null,
   };
@@ -6303,7 +6422,16 @@ function cleanStudyPlanInput(body, current = loadStudyPlan()) {
   const dailyMinutes = Number(body.dailyMinutes ?? current.dailyMinutes);
   if (!Number.isInteger(dailyWords) || dailyWords < 1 || dailyWords > 10000) throw new Error('dailyWords 必须为 1..10000 的整数');
   if (!Number.isInteger(dailyMinutes) || dailyMinutes < 1 || dailyMinutes > 1440) throw new Error('dailyMinutes 必须为 1..1440 的整数');
-  return { ...current, schemaVersion: 1, examType, examDate, dailyWords, dailyMinutes };
+  // v3.6.0：语料范围（null=按考试类型自动；数组=显式选定，空数组等价自动）
+  let corpusTracks = current.corpusTracks ?? null;
+  if (body.corpusTracks !== undefined) {
+    if (body.corpusTracks === null || body.corpusTracks === '') corpusTracks = null;
+    else if (Array.isArray(body.corpusTracks)) {
+      const valid = validCorpusTrackKeys();
+      corpusTracks = body.corpusTracks.map(x => String(x)).filter(x => valid.has(x)).slice(0, 40);
+    }
+  }
+  return { ...current, schemaVersion: 1, examType, examDate, dailyWords, dailyMinutes, corpusTracks };
 }
 function completedStudyTasksFor(date, plan = loadStudyPlan()) {
   const row = plan.completed && plan.completed[date];
@@ -6359,7 +6487,10 @@ function speechSourceWord() {
 }
 function speechSourceSentence(word) {
   const plan = loadStudyPlan();
-  const pool = kbSentences().filter(x => x.s.length <= 180 && /^[a-zA-Z]/.test(x.s) && (!x.track || plan.examType === 'custom' || x.track === plan.examType));
+  const ridSet = activeRidSet();   // v3.6.0：听说语料同样受考试圈定范围约束
+  const pool = kbSentences().filter(x => x.s.length <= 180 && /^[a-zA-Z]/.test(x.s)
+    && (!x.track || plan.examType === 'custom' || x.track === plan.examType)
+    && !(x._scope && ridSet && !ridSet.has(x.rid)));
   const matching = pool.filter(x => normalizeSpeechText(x.s).split(' ').includes(word));
   const candidates = matching.length ? matching : pool;
   if (candidates.length) {
@@ -7959,6 +8090,16 @@ async function handleRequest(req, res) {
           manual: { file: kbFile(), exists: fs.existsSync(kbFile()), count: loadKb().length },
           external: externalStatus(),
           exams: { file: examsFile(), exists: fs.existsSync(examsFile()), count: loadExams().length },
+          // v3.6.0：刊物数据轨清单 + 当前考试圈定的范围
+          publications: publicationTrackList(),
+          corpusScope: (() => {
+            const active = activeCorpusTrackKeys();
+            let plan = {};
+            try { plan = loadStudyPlan(); } catch { plan = {}; }
+            return { examType: plan.examType || 'kaoyan1',
+                     auto: !(Array.isArray(plan.corpusTracks) && plan.corpusTracks.length),
+                     tracks: active ? [...active] : null };
+          })(),
         });
       }
 
