@@ -1,4 +1,6 @@
-# v3.6.0 安全审计与敏感信息扫描记录
+# v3.7.0 安全审计与敏感信息扫描记录
+
+v3.7.0 划词助手接入离线英汉词典（ECDICT，MIT）：词库是**只读共享资源**，落在部署产物目录 `runtime/ecdict/`（不进 git、不参与 `data/` 备份与恢复演练，发布/回滚 rsync 显式排除），`server.js` 以 `node:sqlite` 只读连接查询，不新增任何出站请求、不写用户数据、不扩大鉴权面。新增 `GET /api/dict/ecdict`、`/api/dict/ecdict/suggest`、`/api/dict/ecdict/status` 三接口均在同一登录闸门内；查询词长度截断 64 字符，前缀联想 limit 上限 20。词库缺失时返回 503 并优雅降级（前端隐藏释义行，不影响划词其他功能）。与韦氏 `/api/dict/lookup`（需 Key、有出站请求）相互独立，本地词库不替代也不绕过该链路。
 
 v3.6.0 新增外刊刊物数据轨与按考试圈定语料范围：均为**只读检索过滤**（`PUBLICATION_TRACKS` 注册表 + `GET /api/kb/status` 暴露刊物清单 + 考试计划 `corpusTracks` 字段），不新增鉴权面、不写入外部数据；考试计划仍坚持「损坏拒绝覆盖」`STUDY_PLAN_CORRUPT` 契约。中国日报轨数据走既有只读外刊发布源（`managed:external`）。
 

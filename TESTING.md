@@ -1,5 +1,7 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
+> v3.7.0 增量：新增 `scripts/ecdict-smoke.mjs`（隔离沙箱，`ECDICT_HOME` 指向临时目录）验证离线 ECDICT 词库：词库缺失时 503 优雅降级且服务不崩、status 就绪字段、精确/忽略大小写命中、规则还原与 exchange 变形表（abandoned/gave/mice）、词组（give up）、未收录 `found:false`、空参数 400、前缀联想按词频升序、重复查询缓存性能（25 断言）。已接入 `npm test` 与发布门禁。
+
 > v3.6.0 增量：新增 `scripts/publication-tracks-smoke.mjs`（隔离沙箱，构造两条刊物轨的最小 release-format v2），验证刊物轨注册/清单、记录带 `pubTrack`、按考试类型（kaoyan1/cet6）自动圈定范围、手动 `corpusTracks` 覆盖与还原自动（13 断言）。
 
 > v3.3.2 增量：`.workbuddy/test_v332_mobile_ui.js` 覆盖 360×800、390×844、700×900、768×1024 四视口，验证移动端安全区、横向子导航、触控目标、操作行换行、弹层滚动、无溢出与控制台无错误（30 断言，全部通过）。
@@ -183,6 +185,15 @@
 | # | 脚本 | 断言数 | 覆盖 |
 |---|---|---|---|
 | 52 | `.workbuddy/test_v330_pwa.js` | 31 | PWA 可安装（后端 + 浏览器）：manifest MIME（`application/manifest+json`）与契约（name/short_name/display=standalone/scope/theme_color/图标 any 192·512 + maskable 192·512）、sw.js 含 install/activate/fetch 且 `/api` 直连、图标族（icon/maskable/apple-touch/favicon.ico/svg）均 200；浏览器侧 HTML manifest link + theme-color + apple-touch-icon + apple-mobile-web-app-capable、manifest 可解析、图标可加载非空、Service Worker 注册就绪并接管页面、**离线仍可打开应用外壳（导航 200）**、设置页「安装到桌面」区渲染、`?tab=quiz` 快捷方式直达、控制台 0 错误、真实 `data/` 三文件哈希不变 |
+
+### 3.19 v3.7.0 增量套件（2）
+
+| # | 脚本 | 断言数 | 覆盖 |
+|---|---|---|---|
+| 53 | `scripts/ecdict-smoke.mjs` | 25 | 离线词库（ECDICT）后端：词库缺失时 503 降级且服务不崩、status 就绪字段（ready/installed/count/fingerprint/lemma）、精确命中与中文释义/音标/考试标签、忽略大小写、规则还原（abandoned）、exchange 变形表（gave→give、mice→mouse）、词组（give up）、未收录 `found:false`、空参数 400、前缀联想按词频升序且带简要释义、重复查询缓存性能（40 次平均 <25ms）；沙箱通过 `ECDICT_HOME` 指向临时目录，无真实词库时仅跑降级分支并输出 SKIP |
+| 54 | `scripts/ecdict-bubble-ui-smoke.mjs` | 18 | 划词气泡浏览器回归：气泡内释义行（音标+考试标签+中文释义）、保留精读/复制、点击展开完整词条卡（词性分组/英文释义折叠/朗读/收进墨墨/AI 精读入口）、词条卡进入四模式精读、句子不查本地库、Pixel 7 触摸端释义行 ≥44px 且气泡不溢出、控制台无异常；无词库时输出 SKIP |
+
+> 构建工具 `scripts/ecdict-build-lemma.mjs`：从 `runtime/ecdict/ecdict.db` 的 `exchange` 字段生成 `lemma.db`（184,486 条映射，实测 0.5s），随发布门禁检查存在性。
 
 > 合计 **52** 套（第 3 节核心验收清单，含 1 套线上只读冒烟），断言总数 **1290+**；本次全量回归实测 **本地 60 套件（含新增 1 套）退出码 0**（另有 4 个 v1.x 历史遗留调试脚本不在验收范围）。共用收口工具 `.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`），所有脚本以 `process.exitCode` 退出。
 

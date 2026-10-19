@@ -5444,6 +5444,8 @@ const SEL_LEARN_MODES = [
 ];
 let selLearnBtn = null;      // 选区旁的「精读」浮动按钮
 let selLearnCard = null;     // 解析结果卡片
+let selDictCard = null;      // v3.7.0：本地词典卡片（ECDICT 秒出）
+let selDictGlossCache = new Map();   // 小写词 -> 查词结果（含未收录）
 let selLearnState = null;    // { text, context, title, kind, rect, mode }
 let selLearnReqSeq = 0;      // 并发保护：只认最后一次请求
 let selLearnBubbleBornAt = 0; // v2.7.2.a：气泡生成时刻（长按取词后浏览器会补发 click，短暂豁免防止气泡被立刻收起）
@@ -5559,6 +5561,216 @@ function selLearnRemoveBtn() {
   selLearnRemoveHandles();
 }
 
+/* ---------------- v3.7.0：离线词库（ECDICT）划词秒查 ---------------- */
+const SEL_DICT_POS_RE = /^((?:vt|vi|v|n|adj|adv|prep|conj|pron|num|art|int|aux|abbr|pl|a)\.)\s*(.*)$/i;
+
+/** 是否值得查本地词典：英文单词或 1~5 词短词组（句子不查）。 */
+function selDictEligible(text) {
+  const t = String(text || '').trim();
+  if (!t || t.length > 48) return false;
+  if (!/^[A-Za-z][A-Za-z'’\-\s]*$/.test(t)) return false;
+  return t.split(/\s+/).filter(Boolean).length <= 5;
+}
+
+/** 查本地词库（内存缓存 + 去重请求）；失败静默返回 null，不阻断划词。 */
+const selDictInflight = new Map();
+async function selDictLookup(text) {
+  const key = String(text || '').trim().toLowerCase();
+  if (!key) return null;
+  if (selDictGlossCache.has(key)) return selDictGlossCache.get(key);
+  if (selDictInflight.has(key)) return selDictInflight.get(key);
+  const task = (async () => {
+    try {
+      const res = await fetch('/api/dict/ecdict?word=' + encodeURIComponent(key));
+      if (!res.ok) return null;
+      const r = await res.json();
+      const out = (r && r.found) ? r : null;
+      selDictGlossCache.set(key, out);
+      if (selDictGlossCache.size > 2000) selDictGlossCache.delete(selDictGlossCache.keys().next().value);
+      return out;
+    } catch {
+      return null;
+    } finally {
+      selDictInflight.delete(key);
+    }
+  })();
+  selDictInflight.set(key, task);
+  return task;
+}
+
+function selDictTagsHtml(entry) {
+  const tags = (entry.tags || []).map(t => `<span class="sel-gloss-tag">${esc(t.name)}</span>`).join('');
+  const stars = entry.collins > 0 ? `<span class="sel-gloss-tag star">${'★'.repeat(Math.min(5, entry.collins))}</span>` : '';
+  return tags + stars;
+}
+
+/** 气泡内的简要释义（首条中文释义 + 音标 + 考试标签）。 */
+function selDictBriefHtml(entry) {
+  const first = (entry.translation || []).find(Boolean) || '';
+  const phon = entry.phonetic ? `<span class="sel-gloss-phon">/${esc(entry.phonetic.replace(/^\/+|\/+$/g, ''))}/</span>` : '';
+  const lemma = entry.lemmaOf ? `<span class="sel-gloss-lemma">→ ${esc(entry.lemmaOf)}</span>` : '';
+  const body = first
+    ? `<span class="sel-gloss-def">${esc(first.length > 72 ? first.slice(0, 72) + '…' : first)}</span>`
+    : '<span class="sel-gloss-def muted">暂无中文释义</span>';
+  return `${phon}<span class="sel-gloss-word">${esc(entry.word)}</span>${lemma}${selDictTagsHtml(entry)}${body}`;
+}
+
+let selGlossSeq = 0;
+/** 为气泡补上本地释义（异步；序号保护避免旧请求覆盖新选区）。 */
+function selDictFillGloss(bubble) {
+  const row = bubble && bubble.querySelector('[data-sel-gloss]');
+  if (!row) return;
+  const st = selLearnState;
+  const seq = ++selGlossSeq;
+  if (!st || !SEL_DICT_READY || !selDictEligible(st.text)) {
+    row.innerHTML = '';
+    row.style.display = 'none';
+    bubble.classList.remove('has-gloss');
+    return;
+  }
+  row.style.display = '';
+  row.innerHTML = '<span class="sel-gloss-loading">查词中…</span>';
+  bubble.classList.add('has-gloss');
+  selDictLookup(st.text).then(data => {
+    if (seq !== selGlossSeq || !bubble.parentNode) return;
+    if (!data || !data.data) {
+      row.style.display = 'none';
+      row.innerHTML = '';
+      bubble.classList.remove('has-gloss');
+      selLearnRepositionBubble(bubble);
+      return;
+    }
+    const entry = data.data;
+    row.innerHTML = selDictBriefHtml(entry);
+    row.dataset.act = 'dict';
+    row.title = '点击查看完整词条';
+    selLearnRepositionBubble(bubble);
+  });
+}
+
+/** 气泡高度变化后重新贴靠选区（避免释义撑高后压住文字）。 */
+function selLearnRepositionBubble(bubble) {
+  const st = selLearnState;
+  if (!st || !bubble) return;
+  const rect = bubble.__anchorRect || st.rect;
+  if (!rect) return;
+  const isMobile = window.innerWidth <= 700;
+  const bw = bubble.offsetWidth || 150;
+  const bh = bubble.offsetHeight || 38;
+  const winW = window.innerWidth;
+  let x = rect.left + (rect.width / 2) - (bw / 2);
+  x = Math.max(10, Math.min(x, winW - bw - 10));
+  const gap = isMobile ? 14 : 10;
+  let y = rect.top - bh - gap;
+  if (y < 8) y = rect.bottom + gap;
+  bubble.style.left = Math.round(x) + 'px';
+  bubble.style.top = Math.round(y) + 'px';
+}
+
+/** 本地词库是否就绪（启动时探测一次；未安装则气泡不显示释义行）。 */
+let SEL_DICT_READY = false;
+let SEL_DICT_FP = '';
+(async function selDictProbe() {
+  try {
+    // 用裸 fetch：探测失败（未登录/未安装）不应触发登录遮罩或报错提示
+    const res = await fetch('/api/dict/ecdict/status');
+    if (!res.ok) return;
+    const r = await res.json();
+    SEL_DICT_READY = Boolean(r && r.status && r.status.ready);
+    SEL_DICT_FP = (r && r.status && r.status.fingerprint) || '';
+  } catch { SEL_DICT_READY = false; }
+})();
+
+/** 完整词典卡片（本地词库；点击气泡释义行打开）。 */
+function selDictCloseCard() {
+  if (selDictCard) { selDictCard.remove(); selDictCard = null; }
+}
+
+function selDictTranslationHtml(entry) {
+  const lines = (entry.translation || []).filter(Boolean);
+  if (!lines.length) return '<div class="hint">暂无中文释义</div>';
+  const groups = [];
+  let cur = null;
+  for (const line of lines) {
+    const m = line.match(SEL_DICT_POS_RE);
+    if (m) {
+      cur = { pos: m[1], items: m[2] ? [m[2]] : [] };
+      groups.push(cur);
+    } else if (cur) {
+      cur.items.push(line);
+    } else {
+      cur = { pos: '', items: [line] };
+      groups.push(cur);
+    }
+  }
+  return groups.map(g => `<div class="sel-dict-pos">${g.pos ? `<span class="sel-dict-pos-label">${esc(g.pos)}</span>` : ''}${g.items.map(it => `<div class="sel-dict-def">${esc(it)}</div>`).join('')}</div>`).join('');
+}
+
+async function selDictOpen() {
+  if (!selLearnState) return;
+  const text = selLearnState.text;
+  const data = await selDictLookup(text);
+  selLearnRemoveBtn();
+  selDictCloseCard();
+  const isMobile = window.innerWidth <= 700;
+  const card = document.createElement('div');
+  card.className = 'sel-learn-card sel-dict-card' + (isMobile ? ' mobile' : '');
+  if (!data || !data.data) {
+    card.innerHTML = `
+      <div class="sel-learn-head">
+        <span class="sel-learn-kind">📖 词典</span>
+        <span class="sel-learn-text">${esc(text)}</span>
+        <button class="sel-learn-x" title="关闭">✕</button>
+      </div>
+      <div class="sel-learn-body"><div class="hint">本地词库未收录该词（可能是专有名词、缩写或拼写变形）。</div></div>
+      <div class="sel-learn-foot">
+        <button class="btn small" data-sel-learn>🔍 AI 精读</button>
+        <button class="btn small ghost" data-sel-speak>🔊 朗读</button>
+      </div>`;
+  } else {
+    const entry = data.data;
+    const phon = entry.phonetic ? `/${esc(entry.phonetic.replace(/^\/+|\/+$/g, ''))}/` : '';
+    const lemmaHint = entry.lemmaOf ? `<div class="sel-dict-lemma">原形：<b>${esc(entry.word)}</b></div>` : '';
+    const defs = (entry.definition || []).slice(0, 5);
+    card.innerHTML = `
+      <div class="sel-learn-head">
+        <span class="sel-learn-kind">📖 词典</span>
+        <span class="sel-learn-text">${esc(entry.word)}${phon ? ' <span class="sel-dict-phon">' + phon + '</span>' : ''}</span>
+        <button class="sel-learn-x" title="关闭">✕</button>
+      </div>
+      <div class="sel-learn-body">
+        ${selDictTagsHtml(entry) ? `<div class="sel-dict-tags">${selDictTagsHtml(entry)}</div>` : ''}
+        ${lemmaHint}
+        ${selDictTranslationHtml(entry)}
+        ${defs.length ? `<details class="sel-dict-en"><summary>英文释义</summary>${defs.map(d => `<div class="sel-dict-def en">${esc(d)}</div>`).join('')}</details>` : ''}
+      </div>
+      <div class="sel-learn-foot">
+        <button class="btn small" data-sel-speak>🔊 朗读</button>
+        <button class="btn small ghost" data-sel-learn>🔍 AI 精读</button>
+        <button class="btn small" data-sel-collect>➕ 收进墨墨</button>
+      </div>`;
+  }
+  document.body.appendChild(card);
+  selDictCard = card;
+  card.querySelector('.sel-learn-x').addEventListener('click', selDictCloseCard);
+  card.querySelector('[data-sel-speak]')?.addEventListener('click', () => speak(text));
+  card.querySelector('[data-sel-learn]')?.addEventListener('click', () => {
+    selDictCloseCard();
+    selLearnOpen();
+  });
+  const collectBtn = card.querySelector('[data-sel-collect]');
+  if (collectBtn) collectBtn.addEventListener('click', async () => {
+    try {
+      await api('/api/selection/collect', { method: 'POST', body: { spelling: text } });
+      collectBtn.textContent = '✔ 已收进';
+      collectBtn.disabled = true;
+      toast('✅ 已收进墨墨云词库');
+    } catch (e) {
+      toast('❌ ' + e.message);
+    }
+  });
+}
+
 function selLearnCloseCard() {
   if (selLearnCard) { selLearnCard.remove(); selLearnCard = null; }
   selLearnReqSeq++;
@@ -5575,17 +5787,15 @@ function selLearnShowBtn(rect, rects) {
     bubble = document.createElement('div');
     bubble.className = 'sel-learn-bubble';
     bubble.innerHTML = `
-      <button type="button" class="sel-bubble-btn primary" data-act="learn">🔍 精读</button>
-      <span class="sel-bubble-divider"></span>
-      <button type="button" class="sel-bubble-btn" data-act="copy">📋 复制</button>
+      <div class="sel-gloss" data-sel-gloss style="display:none"></div>
+      <div class="sel-bubble-actions">
+        <button type="button" class="sel-bubble-btn primary" data-act="learn">🔍 精读</button>
+        <button type="button" class="sel-bubble-btn" data-act="expand" style="display:none">↔️ 整句</button>
+        <span class="sel-bubble-divider"></span>
+        <button type="button" class="sel-bubble-btn" data-act="copy">📋 复制</button>
+      </div>
     `;
     document.body.appendChild(bubble);
-    bubble.innerHTML = `
-      <button type="button" class="sel-bubble-btn primary" data-act="learn">🔍 精读</button>
-      <button type="button" class="sel-bubble-btn" data-act="expand" style="display:none">↔️ 整句</button>
-      <span class="sel-bubble-divider"></span>
-      <button type="button" class="sel-bubble-btn" data-act="copy">📋 复制</button>
-    `;
 
     // 关键：仅阻止 mousedown 默认行为（桌面端防止点击气泡时原生选区内塌）；
     // 移动端不可 preventDefault touchstart，否则浏览器不会再合成 click，按钮将彻底点不动。
@@ -5596,6 +5806,13 @@ function selLearnShowBtn(rect, rects) {
     bubble.addEventListener('touchstart', e => {
       e.stopPropagation(); // 只阻止冒泡（避免触发全局长按取词/收起逻辑），保留 click 合成
     }, { passive: true });
+
+    // v3.7.0：点击释义行 → 打开本地词典完整卡片
+    bubble.querySelector('[data-sel-gloss]').addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      selDictOpen();
+    });
 
     bubble.querySelector('[data-act="learn"]').addEventListener('click', e => {
       e.preventDefault();
@@ -5674,6 +5891,10 @@ function selLearnShowBtn(rect, rects) {
 
   bubble.style.left = Math.round(x) + 'px';
   bubble.style.top = Math.round(y) + 'px';
+  bubble.__anchorRect = rect;
+
+  // v3.7.0：本地词库释义（单词/短词组，命中即显示；未就绪或句子则隐藏）
+  selDictFillGloss(bubble);
 
   // 触摸端：原生选择已禁用，自绘高亮框 + 可拖拽端点手柄提供「划线/拉伸」能力
   if (SEL_TOUCH_DEVICE) {
@@ -5790,6 +6011,7 @@ document.addEventListener('contextmenu', e => {
   if (!SEL_TOUCH_DEVICE) return;
   if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
   if (selLearnCard && selLearnCard.contains(e.target)) return;
+  if (selDictCard && selDictCard.contains(e.target)) return;
   if (selLearnPickAtPoint(e.clientX, e.clientY)) {
     selLearnSuppressNextClick = true;
     if (touchPickTimer) { clearTimeout(touchPickTimer); touchPickTimer = null; }
@@ -5804,6 +6026,7 @@ let selLearnSuppressNextClick = false;
 document.addEventListener('click', e => {
   if (e.target === selLearnBtn || selLearnBtn?.contains(e.target)) return;
   if (e.target === selLearnCard || selLearnCard?.contains(e.target)) return;
+  if (e.target === selDictCard || selDictCard?.contains(e.target)) return;
   if (e.target.closest && e.target.closest('.sel-learn-handle')) return;
   if (selLearnSuppressNextClick) { selLearnSuppressNextClick = false; return; }
   if (selLearnBtn) selLearnRemoveBtn();
@@ -6104,6 +6327,7 @@ document.addEventListener('touchstart', e => {
   // 点按气泡/精读卡/端点手柄：交给其自身处理，不参与长按取词，也不关闭气泡
   if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
   if (selLearnCard && selLearnCard.contains(e.target)) return;
+  if (selDictCard && selDictCard.contains(e.target)) return;
   if (e.target.closest && e.target.closest('.sel-learn-handle, input, textarea, select, [contenteditable], button, .btn')) return;
   if (!SEL_TOUCH_DEVICE) return;
   selLearnSuppressNextClick = false;   // 新手势开始，清掉上一次的补发 click 豁免
@@ -6167,6 +6391,7 @@ document.addEventListener('mousedown', e => {
   if (SEL_TOUCH_DEVICE) return;
   if (selLearnBtn && (e.target === selLearnBtn || selLearnBtn.contains(e.target))) return;
   if (selLearnCard && selLearnCard.contains(e.target)) return;
+  if (selDictCard && selDictCard.contains(e.target)) return;
   setTimeout(() => {
     const sel = window.getSelection();
     if (!sel || sel.isCollapsed) { selLearnRemoveBtn(); }

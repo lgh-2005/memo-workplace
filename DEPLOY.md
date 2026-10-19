@@ -71,7 +71,21 @@ ECS 控制台 → 安全组 → 添加入方向规则：TCP 5178（源建议先�
 > - 用 nginx 反向代理 80/443 并加 Basic Auth 或只放行自己 IP；
 > - 安全组源地址只填你常用网络的出口 IP。
 
-## 二、以后更新（v3.6.0 发布门禁、备份恢复与回滚）
+## 二、以后更新（v3.7.0 发布门禁、备份恢复与回滚）
+
+v3.7.0 划词助手接入离线英汉词典（ECDICT，MIT），词库落在部署产物目录 `runtime/ecdict/ecdict.db`（+ 可选 `lemma.db` 变形表）。它**不进 git、不参与 `data/` 备份**，发布/回滚 rsync 已显式排除 `runtime/`，因此升级代码不会覆盖或删除词库；首次部署需在服务器手工放置词库：
+
+```bash
+# 一次性：建目录并上传词库（本机 -> ECS）
+ssh aliyun "mkdir -p /opt/workbench/runtime/ecdict"
+scp runtime/ecdict/ecdict.db root@121.43.177.191:/opt/workbench/runtime/ecdict/
+# 可选：变形表（缺失时自动退化为「规则还原 + exchange 字段查库」）
+scp runtime/ecdict/lemma.db root@121.43.177.191:/opt/workbench/runtime/ecdict/
+# 变形表也可在服务器就地重建（零依赖，约 0.5s）
+node scripts/ecdict-build-lemma.mjs
+```
+
+可用环境变量 `ECDICT_HOME` 覆盖词库目录；词库缺失时接口返回 503，前端自动隐藏气泡释义行，划词其他功能不受影响。`GET /api/dict/ecdict/status` 可核验是否就绪。
 
 v3.6.0 新增「外刊刊物数据轨」（每个外刊刊物一条独立轨，中国日报轨 `14_chinadaily` 主打六级翻译/写作）与「按考试圈定学习语料范围」（考试计划 `corpusTracks`，作用于真题迁移/真实例句/听说语料/全库检索的外刊通道），语料库页新增刊物轨筛选条。纯读侧与配置侧改动，不改变 `data/` 备份与发布流程。
 

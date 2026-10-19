@@ -30,7 +30,7 @@ async function contractChecks() {
   pass('horizontal subnav contract', /\.quiz-submode[^{]*\{[^}]*overflow-x:\s*auto/s.test(css) || /\.quiz-submode/.test(css));
   pass('touch selection guard', /SEL_TOUCH_DEVICE|user-select:\s*none/.test(css + js));
   pass('responsive max-width constraints', /max-width:\s*1280px/.test(css) && /@media\s*\(max-width:\s*700px\)/.test(css));
-  pass('version marker', /v3\.5\.0/.test(html));
+  pass('version marker', /v3\.7\.0/.test(html));
 }
 
 async function emulatedChecks() {

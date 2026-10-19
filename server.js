@@ -772,6 +772,17 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.7.0', date: '2026-10-19', title: '划词助手接入离线 ECDICT 词库',
+    items: [
+      '划词不再全部依赖 LLM：新增离线英汉词典（ECDICT，MIT）作为本地底座，划选单词/短词组时气泡内秒出音标、中文释义、考研/四六级标签与柯林斯星级',
+      '点击气泡释义行展开完整词条卡（词性分组释义、英文释义、原形提示、朗读、收进墨墨、AI 精读入口）；AI 精读四模式（释义/直译/语法/例句）保留，按需触发',
+      '后端新增 /api/dict/ecdict、/api/dict/ecdict/suggest、/api/dict/ecdict/status；零第三方依赖（Node 内置 node:sqlite 只读查询）',
+      '词形还原采用「规则优先 + exchange 变形表兜底」：gave→give、mice→mouse、abandoned→abandon 均可查；纯交叉引用词条自动跳回原形',
+      '词库放 runtime/ecdict/（部署产物：不进 git、不参与 data 备份、发布/回滚显式排除）；可用 ECDICT_HOME 覆盖路径，词库缺失时优雅降级不影响其他功能',
+      '新增 scripts/ecdict-smoke.mjs 隔离回归（25 断言：降级/精确/大小写/变形/词组/未收录/联想/性能）',
+    ],
+  },
+  {
     version: '3.6.0', date: '2026-10-14', title: '外刊刊物数据轨 + 按考试圈定语料范围',
     items: [
       '新增「刊物数据轨」：每个外刊刊物（经济学人/卫报/纽约客/连线/中国日报…）各占一条独立轨，后端 PUBLICATION_TRACKS 注册、每条外刊记录带 pubTrack',
@@ -6310,6 +6321,255 @@ function ttsStatus() {
   };
 }
 
+/* ================================================================== */
+/* v3.7.0：离线英汉词典（ECDICT，MIT）——划词秒级本地查词                */
+/*   - 词库 runtime/ecdict/ecdict.db（部署产物，不进 git、不参与备份）    */
+/*   - node:sqlite 只读查询；规则还原优先，未命中再查 exchange/变形表      */
+/*   - 与韦氏（/api/dict/lookup）互补：本地中文底座 + 英文权威增强         */
+/*   本模块只读共享词库，无用户数据写入。                                */
+/* ================================================================== */
+const ECDICT_HOME = process.env.ECDICT_HOME ? path.resolve(process.env.ECDICT_HOME) : path.join(RUNTIME_DIR, 'ecdict');
+const ECDICT_DB = path.join(ECDICT_HOME, 'ecdict.db');
+const ECDICT_LEMMA_DB = path.join(ECDICT_HOME, 'lemma.db');
+const ECDICT_TAG_NAMES = {
+  zk: '中考', gk: '高考', cet4: '四级', cet6: '六级', ky: '考研',
+  toefl: '托福', ielts: '雅思', gre: 'GRE',
+};
+const ECDICT_TAG_ORDER = ['zk', 'gk', 'cet4', 'cet6', 'ky', 'toefl', 'ielts', 'gre'];
+const ECDICT_CACHE_MAX = 4000;
+const ecdictState = { db: null, lemma: null, error: '', lookupCache: new Map() };
+
+/** 懒加载只读连接（词库缺失时静默降级，不影响其他功能）。 */
+function ecdictOpen() {
+  if (ecdictState.db || ecdictState.error) return ecdictState.db;
+  try {
+    if (!fs.existsSync(ECDICT_DB)) {
+      ecdictState.error = '词库未安装（runtime/ecdict/ecdict.db 不存在）';
+      return null;
+    }
+    const { DatabaseSync } = require('node:sqlite');
+    ecdictState.db = new DatabaseSync(ECDICT_DB, { readOnly: true });
+    if (fs.existsSync(ECDICT_LEMMA_DB)) {
+      try { ecdictState.lemma = new DatabaseSync(ECDICT_LEMMA_DB, { readOnly: true }); } catch { ecdictState.lemma = null; }
+    }
+    ecdictState.error = '';
+    return ecdictState.db;
+  } catch (err) {
+    ecdictState.error = String(err && err.message || err);
+    return null;
+  }
+}
+
+function ecdictReady() {
+  return Boolean(ecdictOpen());
+}
+
+/** 词库版本指纹（文件大小 + mtime），供前端判断是否需要刷新本地缓存。 */
+function ecdictFingerprint() {
+  try {
+    const st = fs.statSync(ECDICT_DB);
+    return `${st.size}-${Math.round(st.mtimeMs)}`;
+  } catch { return ''; }
+}
+
+function ecdictStrip(word) {
+  return String(word || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+/** 规则还原候选（只做常见屈折，命中率不够时再由 exchange 表兜底）。 */
+function ecdictRuleLemmas(word) {
+  const w = String(word || '').toLowerCase().trim();
+  const out = [];
+  if (!w) return out;
+  if (/ies$/.test(w) && w.length > 4) out.push(w.slice(0, -3) + 'y');
+  if (/ves$/.test(w) && w.length > 4) out.push(w.slice(0, -3) + 'f', w.slice(0, -3) + 'fe');
+  if (/ses$|xes$|zes$|ches$|shes$/.test(w) && w.length > 4) out.push(w.slice(0, -2));
+  if (/[^s]s$/.test(w) && w.length > 2) out.push(w.slice(0, -1));
+  if (/ied$/.test(w) && w.length > 4) out.push(w.slice(0, -3) + 'y');
+  if (/ing$/.test(w) && w.length > 4) {
+    out.push(w.slice(0, -3), w.slice(0, -3) + 'e');
+    if (w.length > 5 && w.at(-4) === w.at(-5)) out.push(w.slice(0, -4));
+  }
+  if (/ed$/.test(w) && w.length > 3) {
+    out.push(w.slice(0, -2), w.slice(0, -1));
+    if (w.length > 4 && w.at(-3) === w.at(-4)) out.push(w.slice(0, -3));
+  }
+  if (/er$/.test(w) && w.length > 3) out.push(w.slice(0, -2), w.slice(0, -1));
+  if (/est$/.test(w) && w.length > 4) out.push(w.slice(0, -3), w.slice(0, -2));
+  return [...new Set(out)].filter(c => c && c !== w && c.length > 1);
+}
+
+function ecdictRowToEntry(row, query) {
+  const tags = [];
+  const tagSet = new Set(String(row.tag || '').split(/\s+/).filter(Boolean));
+  for (const code of ECDICT_TAG_ORDER) {
+    if (tagSet.has(code) && ECDICT_TAG_NAMES[code]) tags.push({ code, name: ECDICT_TAG_NAMES[code] });
+  }
+  const translation = String(row.translation || '').split('\n').map(s => s.trim()).filter(Boolean);
+  const definition = String(row.definition || '').split('\n').map(s => s.trim()).filter(Boolean);
+  return {
+    word: row.word,
+    query,
+    phonetic: String(row.phonetic || '').trim(),
+    pos: String(row.pos || '').trim(),
+    translation,
+    definition,
+    tags,
+    collins: Number(row.collins) || 0,
+    oxford: Boolean(Number(row.oxford)),
+    bnc: Number(row.bnc) || 0,
+    frq: Number(row.frq) || 0,
+  };
+}
+
+/** 命中但只有词形没有释义时视为未命中（ECDICT 里有大量空壳词条）。 */
+function ecdictHasContent(row) {
+  return Boolean(String(row.translation || '').trim() || String(row.definition || '').trim());
+}
+
+/** 纯交叉引用词条（如 gave 只有「give的过去式」）→ 返回原形词，用于补齐完整释义。 */
+function ecdictBaseOfShallowEntry(row) {
+  const lines = String(row.translation || '').split('\n').map(s => s.trim()).filter(Boolean);
+  if (!lines.length || lines.length > 2) return '';
+  const crossRef = /^[A-Za-z][A-Za-z'’\-]*\s*的\s*(过去式|过去分词|复数|第三人称单数|现在分词|比较级|最高级)\s*$/;
+  if (!lines.every(l => crossRef.test(l))) return '';
+  const m = String(row.exchange || '').match(/(?:^|\/)0:([^/]+)/);
+  return m ? m[1].trim() : '';
+}
+
+function ecdictSelectByWord(db, word) {
+  return db.prepare('SELECT word,phonetic,translation,definition,pos,collins,oxford,tag,bnc,frq,exchange FROM stardict WHERE word = ? LIMIT 1').get(word);
+}
+
+/** 离线查词：精确 → 忽略大小写 → 规则还原 → exchange 变形表 → 去符号模糊。 */
+function ecdictLookup(rawWord) {
+  const db = ecdictOpen();
+  const query = String(rawWord || '').trim().slice(0, 64);
+  if (!db || !query) return { ok: false, found: false, query, error: ecdictState.error || '' };
+  const cacheKey = query.toLowerCase();
+  const cached = ecdictState.lookupCache.get(cacheKey);
+  if (cached) return cached;
+
+  let hit = ecdictSelectByWord(db, query);
+  if (hit && !ecdictHasContent(hit)) hit = null;
+  if (!hit) {
+    const ci = db.prepare('SELECT word,phonetic,translation,definition,pos,collins,oxford,tag,bnc,frq,exchange FROM stardict WHERE word = ? COLLATE NOCASE LIMIT 1').get(query);
+    if (ci && ecdictHasContent(ci)) hit = ci;
+    else if (ci) hit = ci;
+  }
+  if (hit && ecdictHasContent(hit)) {
+    // 纯交叉引用词条（如 gave → "give的过去式"）优先回原形，给用户完整释义
+    const base = ecdictBaseOfShallowEntry(hit);
+    if (base && base !== hit.word) {
+      const br = ecdictSelectByWord(db, base);
+      if (br && ecdictHasContent(br)) {
+        const out = { ok: true, found: true, query, lemmaOf: br.word, data: ecdictRowToEntry(br, query) };
+        ecdictRemember(cacheKey, out);
+        return out;
+      }
+    }
+    const out = { ok: true, found: true, query, lemmaOf: null, data: ecdictRowToEntry(hit, query) };
+    ecdictRemember(cacheKey, out);
+    return out;
+  }
+
+  // 规则还原：只在词有多余形态标记时启用（避免把正常短词误伤）
+  if (/[a-z]/i.test(query) && query.length > 3) {
+    for (const cand of ecdictRuleLemmas(query)) {
+      const r = ecdictSelectByWord(db, cand) ||
+        db.prepare('SELECT word,phonetic,translation,definition,pos,collins,oxford,tag,bnc,frq,exchange FROM stardict WHERE word = ? COLLATE NOCASE LIMIT 1').get(cand);
+      if (r && ecdictHasContent(r)) {
+        const out = { ok: true, found: true, query, lemmaOf: r.word, data: ecdictRowToEntry(r, query) };
+        ecdictRemember(cacheKey, out);
+        return out;
+      }
+    }
+  }
+
+  // exchange 变形表（规则的过去式/不规则变化：gave→give、mice→mouse）
+  if (ecdictState.lemma) {
+    try {
+      const base = ecdictState.lemma.prepare('SELECT base FROM lemma WHERE form = ? LIMIT 1').get(query.toLowerCase());
+      if (base && base.base) {
+        const r = ecdictSelectByWord(db, base.base) ||
+          db.prepare('SELECT word,phonetic,translation,definition,pos,collins,oxford,tag,bnc,frq,exchange FROM stardict WHERE word = ? COLLATE NOCASE LIMIT 1').get(base.base);
+        if (r && ecdictHasContent(r)) {
+          const out = { ok: true, found: true, query, lemmaOf: r.word, data: ecdictRowToEntry(r, query) };
+          ecdictRemember(cacheKey, out);
+          return out;
+        }
+      }
+    } catch { /* 变形表损坏不影响主查询 */ }
+  }
+
+  // 去符号模糊（long-time / long time）
+  const sw = ecdictStrip(query);
+  if (sw) {
+    const r = db.prepare('SELECT word,phonetic,translation,definition,pos,collins,oxford,tag,bnc,frq,exchange FROM stardict WHERE sw = ? LIMIT 1').get(sw);
+    if (r && ecdictHasContent(r)) {
+      const out = { ok: true, found: true, query, lemmaOf: r.word.toLowerCase() === query.toLowerCase() ? null : r.word, data: ecdictRowToEntry(r, query) };
+      ecdictRemember(cacheKey, out);
+      return out;
+    }
+  }
+
+  // 前面精确命中但无释义：仍回传词条原文，前端只显示「暂无释义」
+  if (hit) {
+    const out = { ok: true, found: true, query, lemmaOf: null, data: ecdictRowToEntry(hit, query) };
+    ecdictRemember(cacheKey, out);
+    return out;
+  }
+  const miss = { ok: true, found: false, query };
+  ecdictRemember(cacheKey, miss);
+  return miss;
+}
+
+function ecdictRemember(key, value) {
+  if (ecdictState.lookupCache.size >= ECDICT_CACHE_MAX) {
+    const first = ecdictState.lookupCache.keys().next().value;
+    if (first !== undefined) ecdictState.lookupCache.delete(first);
+  }
+  ecdictState.lookupCache.set(key, value);
+}
+
+/** 前缀联想（词表搜索用；按词频降序，走 word 索引范围扫描，避免 LIKE 全表扫）。 */
+function ecdictSuggest(prefix, limit = 8) {
+  const db = ecdictOpen();
+  const p = String(prefix || '').trim().toLowerCase();
+  if (!db || !p) return [];
+  const upper = p.slice(0, -1) + String.fromCharCode(p.charCodeAt(p.length - 1) + 1);
+  try {
+    const rows = db.prepare(
+      'SELECT word,translation,tag,frq FROM stardict WHERE word >= ? AND word < ? ' +
+      'ORDER BY CASE WHEN frq > 0 THEN frq ELSE 999999 END ASC, word ASC LIMIT ?'
+    ).all(p, upper, Math.max(1, Math.min(20, Number(limit) || 8)));
+    return rows.map(r => ({
+      word: r.word,
+      brief: String(r.translation || '').split('\n').map(s => s.trim()).find(Boolean) || '',
+      tags: String(r.tag || '').split(/\s+/).filter(Boolean),
+    }));
+  } catch { return []; }
+}
+
+/** 词库能力状态（设置页/健康检查；不含词条内容）。 */
+function ecdictStatus() {
+  const db = ecdictOpen();
+  let count = 0;
+  if (db) {
+    try { count = Number(db.prepare('SELECT COUNT(*) AS c FROM stardict').get().c) || 0; } catch { count = 0; }
+  }
+  return {
+    ready: Boolean(db),
+    installed: fs.existsSync(ECDICT_DB),
+    db: ECDICT_DB,
+    lemma: Boolean(ecdictState.lemma),
+    lemmaDb: ECDICT_LEMMA_DB,
+    count,
+    fingerprint: ecdictFingerprint(),
+    error: ecdictState.error || '',
+  };
+}
+
 /* ------------------------------------------------------------------ */
 /* HTTP 路由                                                           */
 /* ------------------------------------------------------------------ */
@@ -8036,6 +8296,24 @@ async function handleRequest(req, res) {
       if (p === '/api/dict/lookup' && req.method === 'GET') {
         const entry = await dictLookup(u.searchParams.get('word') || '');
         return sendJSON(res, 200, { ok: true, entry });
+      }
+
+      /* v3.7.0：离线英汉词典（ECDICT）——划词秒级本地查词，不依赖任何外部 API */
+      if (p === '/api/dict/ecdict' && req.method === 'GET') {
+        const word = u.searchParams.get('word') || '';
+        if (!String(word).trim()) return sendJSON(res, 400, { ok: false, error: '缺少 word 参数' });
+        if (!ecdictReady()) return sendJSON(res, 503, { ok: false, ready: false, error: ecdictState.error || '离线词库未安装' });
+        return sendJSON(res, 200, ecdictLookup(word));
+      }
+
+      if (p === '/api/dict/ecdict/suggest' && req.method === 'GET') {
+        const word = u.searchParams.get('word') || '';
+        const limit = Number(u.searchParams.get('limit')) || 8;
+        return sendJSON(res, 200, { ok: true, ready: ecdictReady(), data: ecdictSuggest(word, limit) });
+      }
+
+      if (p === '/api/dict/ecdict/status' && req.method === 'GET') {
+        return sendJSON(res, 200, { ok: true, status: ecdictStatus() });
       }
 
       /* v3.5.0：发音朗读——服务端合成音频（单词真人音 / 句子神经语音）。
