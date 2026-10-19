@@ -17,7 +17,7 @@ const required = [
   ['deploy external script exclusion', deploy.includes('--exclude scripts/pull_external.sh')],
   ['rollback data exclusion', rollback.includes('--exclude data/')],
   ['rollback external script exclusion', rollback.includes('--exclude scripts/pull_external.sh')],
-  ['versioned backup', deploy.includes('data_backup_v350_')],
+  ['versioned backup', deploy.includes('VERSION_TAG') && deploy.includes('data_backup_v${VERSION_TAG}_')],
   ['release gate before apply', deploy.includes('release-gate.mjs')],
   ['remote release gate before backup', deploy.includes('--refs --remote --sha') && deploy.indexOf('--refs --remote --sha') < deploy.indexOf('backing up data')],
   ['post-deploy health automation', deploy.includes('online-health.mjs')],
