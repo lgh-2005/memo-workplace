@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /** v3.4.2：源码与文档敏感信息扫描。输出只含路径、行号和类型，不回显匹配内容。 */
 import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { spawnSync } from 'node:child_process';
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const args = process.argv.slice(2);
 const rootArg = args.includes('--root') ? args[args.indexOf('--root') + 1] : root;
 const scanRoot = rootArg || root;

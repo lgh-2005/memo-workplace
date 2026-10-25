@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /** v3.4.2：产品文档、版本标识与工作手册的一致性检查。 */
 import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { readFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
 const version = String(pkg.version);
 const marker = `v${version}`;

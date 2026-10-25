@@ -5,13 +5,14 @@
  * --device 需要 Android ADB，并通过 Chrome DevTools 读取真实设备页面布局。
  */
 import { existsSync, readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { execFileSync, spawn } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { setTimeout as delay } from 'node:timers/promises';
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const args = process.argv.slice(2);
 const mode = args.includes('--device') ? 'device' : 'emulated';
 const base = (args.includes('--url') ? args[args.indexOf('--url') + 1] : process.env.MOBILE_BASE_URL || 'http://127.0.0.1:5178').replace(/\/$/, '');

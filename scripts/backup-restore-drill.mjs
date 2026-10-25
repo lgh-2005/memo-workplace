@@ -5,13 +5,14 @@
  * 永远不会覆盖源目录。生产服务器可通过 --source 指向 /opt/workbench/data。
  */
 import { createHash } from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { mkdir, mkdtemp, readFile, readdir, readlink, rm, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { basename, dirname, isAbsolute, join, posix, relative, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const args = process.argv.slice(2);
 const valueOf = name => {
   const i = args.indexOf(name);

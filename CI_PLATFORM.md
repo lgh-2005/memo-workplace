@@ -1,5 +1,7 @@
 # v3.7.0 CI 平台与发布门禁确认
 
+> v3.7.1 增量：服务端 Piper 解释器路径改为跨平台候选探测（`venv/bin/python` / `venv/bin/python3` / `venv/Scripts/python.exe`）。CI 不安装 `runtime/piper`，`tts-smoke` 的句子分支走 503 优雅降级断言；本地装好 Piper 后同一套件走 200 音频断言。
+
 v3.7.0 新增 `scripts/ecdict-smoke.mjs`（离线词库：词库缺失降级 503、精确/大小写/规则还原/exchange 变形/词组、未收录、前缀联想、查询缓存性能，25 断言；沙箱通过 `ECDICT_HOME` 指向临时目录，无真实词库时只跑降级分支并输出 SKIP）。
 
 v3.6.0 新增 `scripts/publication-tracks-smoke.mjs`（外刊刊物数据轨 + 按考试圈定语料范围，13 断言）。

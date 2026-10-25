@@ -12,13 +12,14 @@
  * 说明：沙箱按 ECDICT_HOME 指向临时目录，不读取/写入真实词库。
  */
 import { mkdtemp, rm, mkdir, writeFile, copyFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
 
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const REAL_HOME = process.env.ECDICT_HOME || join(root, 'runtime', 'ecdict');
 const HAS_REAL = existsSync(join(REAL_HOME, 'ecdict.db'));
 const checks = [];

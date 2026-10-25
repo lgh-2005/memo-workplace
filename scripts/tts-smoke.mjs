@@ -11,12 +11,13 @@
  * 说明：CI 环境不安装 Piper（数据目录侧车），故句子请求预期 503。
  */
 import { cp, mkdtemp, rm, writeFile, mkdir } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
 
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const sandbox = await mkdtemp(join(tmpdir(), 'workbench-tts-'));
 let server;
 const assert = (cond, msg) => { if (!cond) throw new Error(msg); };

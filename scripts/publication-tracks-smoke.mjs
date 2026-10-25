@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /** v3.6.0：外刊刊物数据轨 + 按考试圈定语料范围 隔离沙箱回归。 */
 import { cp, mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { gzipSync } from 'node:zlib';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
 
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const sandbox = await mkdtemp(join(tmpdir(), 'workbench-tracks-'));
 let server, failures = 0;
 const ok = (cond, msg) => { if (cond) console.log('  ✓ ' + msg); else { failures++; console.error('  ✗ ' + msg); } };

@@ -11,13 +11,14 @@
  * 说明：若本机没有 runtime/ecdict/ecdict.db，则输出 SKIP 并正常退出（CI 不携带词库）。
  */
 import { cp, mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
 
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const ecdictHome = process.env.ECDICT_HOME || join(root, 'runtime', 'ecdict');
 if (!existsSync(join(ecdictHome, 'ecdict.db'))) {
   console.log(`SKIP ecdict bubble ui: 词库不存在（${join(ecdictHome, 'ecdict.db')}）`);

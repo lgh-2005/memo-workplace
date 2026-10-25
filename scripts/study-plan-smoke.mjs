@@ -1,13 +1,14 @@
 #!/usr/bin/env node
  /** v3.3.6：今日任务中心、考试计划与听说训练隔离沙箱回归。 */
  import { cp, mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+ import { fileURLToPath } from 'node:url';
  import { tmpdir } from 'node:os';
  import { join } from 'node:path';
  import { spawn } from 'node:child_process';
  import { randomBytes, scryptSync } from 'node:crypto';
  import { setTimeout as delay } from 'node:timers/promises';
  
- const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+ const root = fileURLToPath(new URL('..', import.meta.url));
  const sandbox = await mkdtemp(join(tmpdir(), 'workbench-study-'));
  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai' }).format(new Date());
  const adminSalt = randomBytes(16);

@@ -772,6 +772,15 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.7.1', date: '2026-10-25', title: '语音运行时跨平台解析（Piper 在 Windows 可用）',
+    items: [
+      '修复服务端神经语音（Piper）解释器路径硬编码 POSIX 的问题：改为候选列表探测，依次尝试 venv/bin/python、venv/bin/python3、venv/Scripts/python.exe',
+      '此前 Windows 下即便装好 Piper 也恒判「未安装」并回退浏览器 TTS；现在本地与 ECS 共用同一套探测逻辑',
+      '本机补装 runtime/piper：python 3.11 venv + piper-tts 1.8.0 + en_US-lessac-medium / en_GB-alba-medium 两套 medium 模型（各约 60MB，hf-mirror 下载）',
+      '实测：句子冷启动 2.8s（含模型加载）、热启动 62ms、英音分支与有道单词真人音均正常；piper_worker.py 协议在 piper 1.8.0 下无需改动',
+    ],
+  },
+  {
     version: '3.7.0', date: '2026-10-19', title: '划词助手接入离线 ECDICT 词库',
     items: [
       '划词不再全部依赖 LLM：新增离线英汉词典（ECDICT，MIT）作为本地底座，划选单词/短词组时气泡内秒出音标、中文释义、考研/四六级标签与柯林斯星级',
@@ -6061,7 +6070,13 @@ const RUNTIME_DIR = path.join(ROOT, 'runtime');             // v3.5.3：部署�
 const TTS_DIR = path.join(RUNTIME_DIR, 'tts');              // 音频+缓存落盘目录
 const TTS_CACHE_DIR = path.join(TTS_DIR, 'cache');          // 合成结果缓存（按内容哈希）
 const PIPER_HOME = process.env.PIPER_HOME ? path.resolve(process.env.PIPER_HOME) : path.join(RUNTIME_DIR, 'piper');
-const PIPER_VENV_PY = path.join(PIPER_HOME, 'venv', 'bin', 'python');
+// v3.7.1：虚拟环境解释器路径跨平台解析（POSIX: venv/bin/python；Windows: venv\Scripts\python.exe）
+const PIPER_VENV_PY_CANDIDATES = [
+  path.join(PIPER_HOME, 'venv', 'bin', 'python'),
+  path.join(PIPER_HOME, 'venv', 'bin', 'python3'),
+  path.join(PIPER_HOME, 'venv', 'Scripts', 'python.exe'),
+];
+const PIPER_VENV_PY = PIPER_VENV_PY_CANDIDATES.find(p => fs.existsSync(p)) || PIPER_VENV_PY_CANDIDATES[0];
 const PIPER_VOICES_DIR = path.join(PIPER_HOME, 'voices');
 const PIPER_WORKER = path.join(ROOT, 'tools', 'tts', 'piper_worker.py');
 const TTS_VOICES = {

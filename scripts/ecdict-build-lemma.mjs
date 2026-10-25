@@ -12,10 +12,11 @@
  * 生成物属部署产物（runtime/ 下，不进 git、不参与 data 备份）。零第三方依赖。
  */
 import { existsSync, statSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { rm } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const args = process.argv.slice(2);
 const valueOf = name => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : undefined; };
 const home = process.env.ECDICT_HOME ? resolve(process.env.ECDICT_HOME) : join(root, 'runtime', 'ecdict');

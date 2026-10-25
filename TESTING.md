@@ -1,5 +1,7 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
+> v3.7.1 增量：`scripts/tts-smoke.mjs` 的句子分支在**已安装 Piper** 时断言 200 + `audio/*`（未安装时仍断言 503 `TTS_UNAVAILABLE` 优雅降级），因此同一套件在本地（已装 Piper）与 CI（不装）都成立，无 SKIP 分支。
+
 > v3.7.0 增量：新增 `scripts/ecdict-smoke.mjs`（隔离沙箱，`ECDICT_HOME` 指向临时目录）验证离线 ECDICT 词库：词库缺失时 503 优雅降级且服务不崩、status 就绪字段、精确/忽略大小写命中、规则还原与 exchange 变形表（abandoned/gave/mice）、词组（give up）、未收录 `found:false`、空参数 400、前缀联想按词频升序、重复查询缓存性能（25 断言）。已接入 `npm test` 与发布门禁。
 
 > v3.6.0 增量：新增 `scripts/publication-tracks-smoke.mjs`（隔离沙箱，构造两条刊物轨的最小 release-format v2），验证刊物轨注册/清单、记录带 `pubTrack`、按考试类型（kaoyan1/cet6）自动圈定范围、手动 `corpusTracks` 覆盖与还原自动（13 断言）。

@@ -32,3 +32,13 @@ runtime/
 
 # v3.6.0：早期「真题库前端设计预览」稿，非产品文件，不入库
 /exam-preview.html
+
+# v3.7.1（memo bench 工作区）：本机启动日志与测试日志
+server.out.log
+server.err.log
+test-npm.log
+test-release.log
+test-ops.log
+
+# v3.7.1：工作手册与服务端安全审计/门禁临时产物
+*.spill

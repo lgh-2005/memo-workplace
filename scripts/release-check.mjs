@@ -1,15 +1,16 @@
 import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-const root = new URL('..', import.meta.url).pathname.replace(/^\/+([A-Za-z]:)/, '$1');
+const root = fileURLToPath(new URL('..', import.meta.url));
 const exists = file => existsSync(file);
 const packageJson = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
 const deploy = await readFile(join(root, 'scripts', 'deploy.sh'), 'utf8');
 const rollback = await readFile(join(root, 'scripts', 'rollback.sh'), 'utf8');
 const ci = await readFile(join(root, '.github', 'workflows', 'ci.yml'), 'utf8');
 const required = [
-  ['package version', packageJson.version === '3.7.0'],
+  ['package version', packageJson.version === '3.7.1'],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],
