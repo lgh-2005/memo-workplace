@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "274068d32544__reading__2",
+ "examId": "274068d32544",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 6 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:05:24.404Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54950,
+ "usage": {
+  "prompt_tokens": 1769,
+  "completion_tokens": 3453,
+  "total_tokens": 5222,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1769,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3453,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1769,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国大规模失业的真正原因",
+  "gist": "文章反驳了\"美国大规模失业源于结构性问题\"的主流观点，指出高失业率实际上是需求不足的结果，所谓的结构性失业不过是不采取行动的借口。作者以大萧条时期的历史为例，呼吁政府果断采取行动刺激经济，解决失业危机。",
+  "structure": [
+   "第1-2段：提出主流观点并反驳，指出失业根源是需求不足",
+   "第3-4段：用数据证伪结构性失业说法，分析其流行原因",
+   "第5段：以大萧条时期为例，证明政府刺激可快速降低失业率",
+   "第6-7段：揭示结构性失业论的意识形态根源，呼吁政策行动"
+  ],
+  "difficulty": "中等",
+  "translation": "对于大规模失业能做些什么？所有聪明人都认同：没有快速或简单的答案。有工作要做，但工人们还没准备好去做——他们在错误的地方，或者他们拥有错误的技能。\"我们的问题是结构性的\"，需要许多年才能解决。\n\n但不要费心去寻找证据来证明这一悲观看法，因为根本不存在这样的证据。相反，所有事实都表明，美国的高失业率是需求不足的结果。说没有简单的答案听起来很睿智，但实际上很愚蠢：如果我们拥有清晰的思路和行动的政治意愿，我们的失业危机可以很快得到解决。换句话说，结构性失业是一个虚假的问题，主要是为不寻求真正的解决方案提供借口。\n\n事实是，每个主要行业的职位空缺都大幅下降，而几乎所有行业中被迫从事兼职工作的工人数量都在飙升。每个主要职业类别的失业率都在激增。只有三个州的失业率低于5%，而这三个州的总人口加起来也不比布鲁克林多多少。因此，证据与我们主要遭受结构性失业之苦的说法相矛盾。那么，这种说法为何变得如此流行？\n\n部分原因在于，在高失业率时期总是会出现这种情况——一定程度上是因为专家和分析人士相信，宣称问题根深蒂固、没有简单答案，会让他们显得很严肃。\n\n我一直在研究那些自封的专家们在大萧条时期关于失业问题的言论；那些言论与当今那些\"非常严肃的人\"所说的几乎如出一辙。1935年的一篇分析文章宣称，失业率无法迅速降低，因为劳动力\"不适应且未经训练。他们无法回应行业可能提供的机会。\"几年后，大规模的国防建设终于提供了足以满足经济需求的财政刺激——突然间，行业迫切想要雇用那些\"不适应且未经训练的\"工人了。\n\n但如今和当时一样，强大的力量在意识形态上反对政府以足够规模采取行动来重新启动经济这一整体理念。从根本上说，这就是为什么声称我们面临巨大结构性问题的说法在不断增多：它们提供了一个对正在摧毁我们经济和社会的大规模失业袖手旁观的理由。\n\n所以你需要知道的是，没有任何证据支持这些说法。我们不是缺少所需的技能；我们缺少的是政策决心。正如我所说，结构性失业不是真正的问题，它只是一个借口——一个在迫切需要行动的时候不对美国的问题采取行动的理由。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "On the contrary, all the facts suggest that high unemployment in America is the result of inadequate demand.",
+    "why": "原文第二段明确指出\"所有事实都表明美国的高失业率是需求不足（inadequate demand）的结果\"。选项B\"Insufficient demand\"与原文\"inadequate demand\"是同义替换，直接对应文章所阐述的失业根本原因。",
+    "traps": "A\"公司管理不善\"原文未提及，属于无中生有；C\"技术进步\"文中未涉及，属于常识干扰；D\"工人适应缓慢\"是作者所批驳的\"结构性失业\"观点中的内容，是作者反对而非支持的说法，属于张冠李戴。",
+    "tip": "注意区分作者自身观点与其批驳的他人观点。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "But don't bother asking for evidence that justifies this bleak view. There isn't any.",
+    "why": "作者在第二段直言\"不要费心寻找证据来证明这一悲观看法，因为根本没有\"，末段再次强调\"没有任何证据支持这些说法\"（no evidence whatsoever）。作者认为专家的说法毫无依据，选项D\"Groundless\"（毫无根据的）准确概括了这一态度。",
+    "traps": "A\"不言自明\"与原文态度完全相反，作者认为恰恰缺乏证据；B\"发人深省\"为正面评价，而作者对专家观点持否定态度；C\"不理性\"虽为负面评价，但作者主要批评的是\"无根据\"而非\"不合理\"，程度和侧重点不同。",
+    "tip": "态度题需关注原文中表达评价的关键词句，如\"no evidence\"等。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "A few years later, a large defense buildup finally provided a fiscal stimulus adequate to the economy's needs—and suddenly industry was eager to employ those 'unadaptable and untrained' workers.",
+    "why": "原文第五段描述大萧条时期，\"大规模国防建设\"（a large defense buildup）提供了充分的财政刺激，使得行业突然迫切想要雇用工人，从而降低了失业率。选项A\"蓬勃发展的国防工业\"与\"a large defense buildup\"构成同义对应。",
+    "traps": "B\"聪明人的福利方案\"原文未提及，纯属编造；C\"全国性工人培训\"与原文相反，作者的论点恰恰是工人不需要额外训练就能被雇用；D\"彻底的产业重组\"原文未提及，属于无中生有。",
+    "tip": "历史例证题需回到原文找到具体的因果关系链条。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "powerful forces are ideologically opposed to the whole idea of government action on a sufficient scale to jump-start the economy. And that, fundamentally, is why claims that we face huge structural problems have been multiplying",
+    "why": "原文第六段明确指出：强大的力量在意识形态上反对政府以足够规模采取行动来重新启动经济，\"从根本上说\"（fundamentally）这就是结构性问题说法不断增多的原因。选项A\"对政府刺激努力的强力反对\"精准概括了这一因果逻辑。",
+    "traps": "B\"非常严肃的人试图摧毁经济\"曲解原文，他们只是提供不作为的借口，并非蓄意破坏经济；C\"从许多行业收集的证据\"与原文矛盾，作者反复强调没有证据；D\"经济学家未能及时发现问题\"原文未提及，属于无中生有。",
+    "tip": "因果关系题需紧扣原文中的逻辑连接词，如fundamentally、that is why等。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "We aren't suffering from a shortage of needed skills; we're suffering from a lack of policy resolve.",
+    "why": "全文的论证逻辑是：反驳结构性失业的说法→证明失业源于需求不足→指出结构性失业说法是不行动的借口→呼吁政策行动。末段\"我们缺少的是政策决心\"以及\"在迫切需要行动的时候\"均表明，作者写作目的是呼吁政府紧急采取行动，与选项C一致。",
+    "traps": "A\"为专家分析作证\"与全文立场相反，作者通篇批驳专家观点；B\"提供可行的解决方案\"过于具体，作者并未提出具体方案，只是呼吁行动；D\"提醒工人适应的紧迫性\"与作者观点矛盾，作者否认工人需要适应。",
+    "tip": "主旨题应综合全文论证方向，尤其关注首尾段的核心主张。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "structural",
+    "cn": "adj. 结构性的（指经济中根本性的、非周期性的）"
+   },
+   {
+    "w": "inadequate",
+    "cn": "adj. 不充分的，不够的"
+   },
+   {
+    "w": "intellectual clarity",
+    "cn": "n. 思想上的清晰认识"
+   },
+   {
+    "w": "plunge",
+    "cn": "v. 骤降，急剧下降"
+   },
+   {
+    "w": "soar",
+    "cn": "v. 猛增，飙升"
+   },
+   {
+    "w": "surge",
+    "cn": "v. 急剧上升，激增"
+   },
+   {
+    "w": "self-proclaimed",
+    "cn": "adj. 自封的，自称的"
+   },
+   {
+    "w": "unadaptable",
+    "cn": "adj. 不能适应的"
+   },
+   {
+    "w": "fiscal stimulus",
+    "cn": "n. 财政刺激"
+   },
+   {
+    "w": "ideologically",
+    "cn": "adv. 在意识形态上"
+   },
+   {
+    "w": "jump-start",
+    "cn": "v. 重新启动，快速激活"
+   },
+   {
+    "w": "resolve",
+    "cn": "n. 决心，决意"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Saying that there're no easy answers sounds wise, but it's actually foolish: our unemployment crisis could be cured very quickly if we had the intellectual clarity and political will to act.",
+    "cn": "说没有简单的答案听起来很睿智，但实际上很愚蠢：如果我们拥有清晰的思路和行动的政治意愿，我们的失业危机可以很快得到解决。",
+    "note": "主句为Saying...sounds wise, but it's foolish，冒号后补充说明原因；if引导虚拟条件状语从句，暗示当前缺乏这些条件。"
+   },
+   {
+    "en": "A few years later, a large defense buildup finally provided a fiscal stimulus adequate to the economy's needs—and suddenly industry was eager to employ those 'unadaptable and untrained' workers.",
+    "cn": "几年后，大规模的国防建设终于提供了足以满足经济需求的财政刺激——突然间，行业迫切想要雇用那些\"不适应且未经训练的\"工人了。",
+    "note": "主干为a large defense buildup provided a fiscal stimulus；adequate to...作后置定语修饰stimulus；破折号后为转折补充，引号表反讽。"
+   },
+   {
+    "en": "And that, fundamentally, is why claims that we face huge structural problems have been multiplying: they offer a reason to do nothing about the mass unemployment that is crippling our economy and our society.",
+    "cn": "从根本上说，这就是为什么声称我们面临巨大结构性问题的说法在不断增多：它们提供了一个对正在摧毁我们经济和社会的大规模失业袖手旁观的理由。",
+    "note": "that指代前句整体内容；claims后接that从句作同位语；冒号后解释原因；that is crippling...为定语从句修饰unemployment。"
+   }
+  ]
+ }
+}

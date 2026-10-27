@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "48775dd71dd3__banked_cloze__all",
+ "examId": "48775dd71dd3",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2023 年 6 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:50:32.222Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 83079,
+ "usage": {
+  "prompt_tokens": 1392,
+  "completion_tokens": 5219,
+  "total_tokens": 6611,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1392,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5219,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1392,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "现代饮食导致的\"永不满足的饥饿\"现象",
+  "gist": "文章指出，一些人即使在大量进食后仍有强烈的进食冲动，这种\"永不满足的饥饿\"表现为吃不饱和久坐不动两大特征，与人类原始的生物补偿机制相矛盾。研究表明，70%的美国成年人已丧失自然热量补偿能力，主要原因在于现代高糖、高碳水、高热量的饮食结构。",
+  "difficulty": "中等",
+  "translation": "想象一下坐下来吃一顿丰盛的晚餐：一大块牛排、一大份炸薯条，还有蛋糕作甜点。吃了这么多之后，你应该饱得再也吃不下一口了。但有些人即使在大快朵颐了一顿丰盛的大餐之后，仍然体验到一种强烈的继续进食的冲动。这种行为令人费解，因为大多数成年人都深知肥胖的危害——研究人员已经证明，肥胖与无数健康问题相关，甚至与死亡风险的增加有关。但有些人在早该停止进食之后仍然继续吃，苏珊·汤普森博士将这一现象称为\"永不满足的饥饿\"。它有两个主要特征：进食后仍不感到满足，以及有久坐不动的欲望。\n\n这与人类的生物学编程是相矛盾的。当有大量食物可用时，古人会大量摄入卡路里；这种大量的卡路里摄入伴随着一种变得活跃的冲动。人类还被编程设定了一种叫做\"补偿\"的机制，这是大脑用于防止多余体重积累的调节机制。通过补偿机制，如果你早上吃了一顿大餐，你自然会倾向于在一天的其余时间里少吃。\n\n但最近的研究表明，70%的美国成年人已经失去了自然补偿他们所摄入热量的能力；更糟糕的是，其中相当一部分人报告说在进餐过程中饥饿感在减少，但到用餐结束时，他们感到的饥饿程度与坐下来时相同甚至更高。汤普森博士认为，这一现象的主要原因是现代饮食，它由高糖、高碳水化合物和高热量的食物组成。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "H",
+    "correct": "indulging",
+    "why": "空格后紧跟介词 in，'indulge in' 是固定搭配，意为\"沉溺于、尽情享用\"。句意为\"即使在尽情享用了一顿丰盛大餐之后\"，语义和搭配均完美契合。且 after 后需要动名词形式，indulging 词形正确。",
+    "traps": "conceded（让步、承认）虽也是动词过去分词形式，但不与 in a huge meal 构成合理语义搭配；comprised 虽可接 of，但不接 in，且语义不通。",
+    "tip": "考查固定搭配 indulge in 及 after + doing 结构。"
+   },
+   {
+    "number": 27,
+    "answer": "I",
+    "correct": "innumerable",
+    "why": "空格位于名词 health issues 之前，需要形容词修饰。innumerable 意为\"无数的\"，表达肥胖与无数健康问题相关，语义恰当，且与 correlates with 搭配强调肥胖危害之广泛。",
+    "traps": "diminishing（减少的）虽为形容词，但\"减少的健康问题\"与上下文强调肥胖危害的语境矛盾；regulatory（调节的）语义不合适修饰 health issues。",
+    "tip": "考查形容词辨析，需根据上下文\"肥胖危害大\"选择\"无数的\"。"
+   },
+   {
+    "number": 28,
+    "answer": "J",
+    "correct": "mortality",
+    "why": "空格在 increased 与 risk 之间，需要名词作定语修饰 risk。mortality risk（死亡风险）是常见学术搭配，与前文 dangers of obesity 形成递进关系，表明肥胖甚至增加死亡风险。",
+    "traps": "conservation（保护、保存）放入此处构成\"保护风险\"语义不通；attributes 虽为名词，但\"特征风险\"不构成合理搭配。",
+    "tip": "考查 mortality risk 固定学术搭配及名词作定语用法。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "correct": "attributes",
+    "why": "空格前有 two main 修饰，需要可数名词复数。attributes 意为\"特征、属性\"，后文冒号引出两条具体表现（吃不饱、爱久坐），正是对\"两个主要特征\"的解释说明。",
+    "traps": "odds 虽为名词复数形式，但意为\"可能性、矛盾\"，与 two main 搭配后语义不合理；conservation 为不可数名词，不能用 two main 修饰。",
+    "tip": "考查 attributes（特征）作为概括词引出后文冒号解释的逻辑。"
+   },
+   {
+    "number": 30,
+    "answer": "K",
+    "correct": "odds",
+    "why": "'at odds with' 是固定短语，意为\"与……相矛盾/不一致\"。本段指出\"永不满足的饥饿\"现象与人类原始的生物编程机制相矛盾，语义完全吻合。",
+    "traps": "其他名词如 conservation 放入 at ___ with 无法构成已知固定短语；此处是纯粹的短语搭配考查，不熟悉 at odds with 极易失分。",
+    "tip": "考查固定短语 at odds with（与……相矛盾）。"
+   },
+   {
+    "number": 31,
+    "answer": "M",
+    "correct": "regulatory",
+    "why": "空格在 brain's 与 mechanism 之间，需要形容词修饰 mechanism。regulatory 意为\"调节的\"，'regulatory mechanism' 即\"调节机制\"，指大脑通过补偿来防止体重过度积累的调节功能，语义精准。",
+    "traps": "innumerable（无数的）虽为形容词，但\"无数的机制\"与句中 the brain's（特指）和单数 mechanism 矛盾；diminishing（减少的）修饰 mechanism 语义不合逻辑。",
+    "tip": "考查 regulatory mechanism（调节机制）的学术搭配。"
+   },
+   {
+    "number": 32,
+    "answer": "G",
+    "correct": "inclined",
+    "why": "空格前有 naturally，后接 to eat less，'be inclined to do sth' 是固定搭配，意为\"倾向于做某事\"。整句表达\"你自然会倾向于在一天剩余时间少吃\"，契合补偿机制的含义。",
+    "traps": "conceded（承认）为动词过去式/过去分词，若放入变成被动语态\"被承认去少吃\"语义不通；comprised 不能接 to do 结构。",
+    "tip": "考查 be inclined to do sth（倾向于）固定搭配。"
+   },
+   {
+    "number": 33,
+    "answer": "N",
+    "correct": "still",
+    "why": "'worse still' 是固定副词短语，意为\"更糟糕的是\"，用于引出比前文更严重的情况。句意从\"70%的人丧失补偿能力\"递进到\"部分人进餐中饥饿感反而加重\"，逻辑衔接紧密。",
+    "traps": "此处分号后为 worse ___，语法上需要副词。其他候选词中无合适副词能与 worse 构成递进连接短语。",
+    "tip": "考查固定表达 worse still（更糟糕的是）表递进。"
+   },
+   {
+    "number": 34,
+    "answer": "E",
+    "correct": "diminishing",
+    "why": "空格在 report 与 hunger 之间，需要现在分词或形容词修饰 hunger。diminishing hunger 意为\"正在减少的饥饿感\"。句意为\"他们报告在进餐过程中饥饿感在减少，但到用餐结束时饥饿感却与开始时持平甚至更强\"，前后构成转折。",
+    "traps": "innumerable 修饰 hunger 语义不通（饥饿感不可数，不能说\"无数的饥饿\"）；regulatory 修饰 hunger 也不合逻辑。注意此处的转折逻辑是解题关键。",
+    "tip": "考查语境转折逻辑：进餐中饥饿减少 vs 餐后饥饿不减反增。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "correct": "comprised",
+    "why": "'be comprised of' 意为\"由……组成/构成\"，与 consist of 同义。句意为\"现代饮食由高糖、高碳水化合物和高热量的食物组成\"，作为全文论点的总结，指出问题根源。",
+    "traps": "conceded（承认）放入 is ___ of food 语义不合理；conservation（保护）为名词，不能放在 is 与 of 之间构成合理结构。",
+    "tip": "考查 be comprised of（由……组成）固定搭配。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "indulge",
+    "cn": "v. 沉溺于，纵容，尽情享受（常与 in 搭配）"
+   },
+   {
+    "w": "innumerable",
+    "cn": "adj. 无数的，数不清的"
+   },
+   {
+    "w": "mortality",
+    "cn": "n. 死亡率，死亡人数；终有一死"
+   },
+   {
+    "w": "attributes",
+    "cn": "n. 特征，属性，品质（复数）"
+   },
+   {
+    "w": "at odds with",
+    "cn": "固定短语，与……相矛盾，与……不一致"
+   },
+   {
+    "w": "regulatory",
+    "cn": "adj. 调节的，管理的，监管的"
+   },
+   {
+    "w": "inclined",
+    "cn": "adj. 倾向于……的（be inclined to do sth）"
+   },
+   {
+    "w": "comprised",
+    "cn": "v. 由……组成（be comprised of）；包含"
+   },
+   {
+    "w": "sedentary",
+    "cn": "adj. 久坐不动的，需要久坐的"
+   },
+   {
+    "w": "gorge",
+    "cn": "v. 狼吞虎咽，大吃特吃（gorge on）"
+   },
+   {
+    "w": "compensation",
+    "cn": "n. 补偿，弥补；赔偿金"
+   },
+   {
+    "w": "well-versed",
+    "cn": "adj. 精通的，熟知的（常与 in 搭配）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨大意，标记每个空格所在句的核心逻辑。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空的候选范围。",
+   "第三步：利用空格前后的介词、冠词、助动词等语法标志判断所需词性和词形。",
+   "第四步：优先锁定固定搭配题（如 at odds with、worse still、indulge in），快速确定答案。",
+   "第五步：将剩余词代入剩余空格，通过上下文语义验证，确保逻辑自洽且无重复使用。"
+  ]
+ }
+}

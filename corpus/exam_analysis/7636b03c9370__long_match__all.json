@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "7636b03c9370__long_match__all",
+ "examId": "7636b03c9370",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2022 年 12 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:44:21.172Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32642,
+ "usage": {
+  "prompt_tokens": 945,
+  "completion_tokens": 1892,
+  "total_tokens": 2837,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 945,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1892,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 945,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "儿童对自然的疏离与生物多样性保护",
+  "strategy": [
+   "先通读10条陈述句，归纳主题关键词如biophobia、biodiversity、children、nature等",
+   "圈出每句中的专有名词（如Discovery Park、Elizabeth Lev）和数据细节优先定位",
+   "关注同义替换：如aversion≈disgust/dislike，erode≈undermine，worrisome≈alarming",
+   "注意因果逻辑词（pass on to, cause, help, prevent）与原文的对应关系",
+   "将剩余未匹配段落与剩余题目做排除法二次核实"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "一项新研究发现，父母对某些动物的厌恶会传递给他们的孩子。",
+    "keywords": [
+     "new study",
+     "parents",
+     "aversion",
+     "pass on to children"
+    ],
+    "paraphrase": "aversion（厌恶）可能被原文替换为disgust、negative attitude或dislike；pass on to可能被替换为transmit、transfer或be inherited by等表达，强调代际传递。",
+    "tip": "定位'父母—孩子—动物厌恶'的代际传递关系，锁定F段。"
+   },
+   {
+    "number": 37,
+    "answer": "A",
+    "cn": "物种和生态系统的消失正在削弱我们保护剩余资源的能力。",
+    "keywords": [
+     "disappearance",
+     "species",
+     "ecological systems",
+     "erodes"
+    ],
+    "paraphrase": "erodes our ability可能对应undermines/weakens our capacity；disappearance可能对应loss/extinction；keep what is left可能对应preserve the remaining/protect the rest。",
+    "tip": "关注文章开头段对生物多样性丧失的宏观论述，通常出现在A段。"
+   },
+   {
+    "number": 38,
+    "answer": "J",
+    "cn": "一项研究表明，Discovery Park中最野生的区域对公众最具吸引力。",
+    "keywords": [
+     "study",
+     "wildest areas",
+     "Discovery Park",
+     "appealed most"
+    ],
+    "paraphrase": "wildest areas可能被替换为most natural/least managed areas；appealed most可能对应most attractive/most popular/most preferred等表达。",
+    "tip": "专有名词Discovery Park是强定位线索，结合'wildest/最受欢迎'锁定J段。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "cn": "对生物的恐惧正变得越来越令人担忧。",
+    "keywords": [
+     "fear",
+     "living organisms",
+     "worrisome"
+    ],
+    "paraphrase": "fear of living organisms即biophobia（生物恐惧症）；worrisome可能被替换为alarming、concerning或growing concern等表达，强调问题的加剧趋势。",
+    "tip": "定位biophobia或fear of nature等核心概念及其加剧趋势，锁定C段。"
+   },
+   {
+    "number": 40,
+    "answer": "G",
+    "cn": "防止儿童对生物恐惧的增长对保护生物多样性也很重要。",
+    "keywords": [
+     "preventing",
+     "children's fear",
+     "living creatures",
+     "conserving biodiversity"
+    ],
+    "paraphrase": "preventing the increase可能对应curbing/halting the rise；fear of living creatures即biophobia；conserving biodiversity可能对应protecting/preserving species diversity。",
+    "tip": "关注将'儿童生物恐惧'与'生物多样性保护'因果关联的段落，锁定G段。"
+   },
+   {
+    "number": 41,
+    "answer": "P",
+    "cn": "研究表明，人们与自然接触越多、越深入，就越有助于拯救自然。",
+    "keywords": [
+     "research",
+     "deeper experience",
+     "nature",
+     "save"
+    ],
+    "paraphrase": "more and deeper experience可能对应greater/richer engagement或increased exposure；save it可能对应conservation efforts/protect the environment，强调经验深度与保护意愿的正相关。",
+    "tip": "定位'经验深度—保护行为'的正向因果关系，通常出现在文末总结段P段。"
+   },
+   {
+    "number": 42,
+    "answer": "E",
+    "cn": "尽管人类天生倾向于回避危险动物，但如今的孩子甚至试图远离无害的动物。",
+    "keywords": [
+     "naturally avoid",
+     "dangerous animals",
+     "today's children",
+     "harmless ones"
+    ],
+    "paraphrase": "naturally tend to avoid可能对应innate/evolutionary tendency；dangerous animals与harmless ones构成对比，原文可能用benign、non-threatening替换harmless。",
+    "tip": "抓住dangerous与harmless的对比逻辑，以及'当今儿童'的反常行为，锁定E段。"
+   },
+   {
+    "number": 43,
+    "answer": "M",
+    "cn": "Discovery Park内部及周边的开发可能给公园和当地居民造成严重损失。",
+    "keywords": [
+     "development",
+     "Discovery Park",
+     "heavy losses",
+     "local residents"
+    ],
+    "paraphrase": "development可能对应construction/urbanization/encroachment；heavy losses可能对应significant damage/devastating impact；强调开发对生态与社区的双重威胁。",
+    "tip": "以Discovery Park+development为双重定位词，关注负面影响描述，锁定M段。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "一项针对学龄儿童的大规模调查发现，随着他们与自然接触的减少，其负面情绪也在增长。",
+    "keywords": [
+     "large survey",
+     "school children",
+     "negative feelings",
+     "experience diminished"
+    ],
+    "paraphrase": "large survey可能对应extensive/massive study；negative feelings可能对应aversion/disgust/fear；experience with nature diminished可能对应reduced/decreased contact with nature。",
+    "tip": "定位'大规模调查+学龄儿童+自然经验与负面情绪的反比关系'，锁定D段。"
+   },
+   {
+    "number": 45,
+    "answer": "N",
+    "cn": "Elizabeth Lev认为，增加与更多野生动物的接触有助于保护生物多样性。",
+    "keywords": [
+     "Elizabeth Lev",
+     "increased contact",
+     "wildlife",
+     "conserve biodiversity"
+    ],
+    "paraphrase": "increased contact可能对应more exposure/greater interaction；conserve biodiversity可能对应protect/preserve species diversity；人名Elizabeth Lev是精准定位线索。",
+    "tip": "人名Elizabeth Lev是最强定位信号，结合其观点中'接触野生动物—保护多样性'锁定N段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "aversion",
+    "cn": "n. 厌恶，反感"
+   },
+   {
+    "w": "erode",
+    "cn": "v. 侵蚀，削弱"
+   },
+   {
+    "w": "biodiversity",
+    "cn": "n. 生物多样性"
+   },
+   {
+    "w": "biophobia",
+    "cn": "n. 生物恐惧症（对生物的恐惧）"
+   },
+   {
+    "w": "worrisome",
+    "cn": "adj. 令人担忧的"
+   },
+   {
+    "w": "diminish",
+    "cn": "v. 减少，减弱"
+   },
+   {
+    "w": "pass on to",
+    "cn": "phr. 传递给"
+   },
+   {
+    "w": "conserve",
+    "cn": "v. 保护，保存"
+   },
+   {
+    "w": "harmless",
+    "cn": "adj. 无害的"
+   },
+   {
+    "w": "appeal to",
+    "cn": "phr. 吸引，对……有吸引力"
+   }
+  ]
+ }
+}

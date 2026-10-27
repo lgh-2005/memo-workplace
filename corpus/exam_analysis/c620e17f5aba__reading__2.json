@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "c620e17f5aba__reading__2",
+ "examId": "c620e17f5aba",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 6 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:26:46.743Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58379,
+ "usage": {
+  "prompt_tokens": 1821,
+  "completion_tokens": 3945,
+  "total_tokens": 5766,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1821,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3945,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1821,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国出台新太空政策管理太空交通与碎片",
+  "gist": "美国白宫发布《太空政策指令-3》，旨在应对太空卫星数量激增带来的碎片和交通管理问题。新政策将太空交通管理权交由商务部，要求规范新卫星发射，并希望以此为全球商业航天建立行业标准。文章还回顾了太空碎片的现实威胁，介绍了现行碎片减缓标准及各国正在研发的碎片清除技术。",
+  "structure": [
+   "第1段：引出新政策SPD-3的总体目标——管理太空碎片与交通",
+   "第2段：商务部的具体职责及政策对全球标准化的期望",
+   "第3-4段：阐述太空拥挤现状与碎片碰撞的现实案例",
+   "第5段：介绍现行碎片减缓标准及其具体要求",
+   "第6段：各国机构致力于碎片清除技术，但美国当前侧重预防"
+  ],
+  "difficulty": "中等",
+  "translation": "白宫官员宣布了一项新的太空政策，重点关注对各公司和各国政府不断增加发射到太空中的卫星的管理。《太空政策指令-3》为美国缓解太空碎片影响以及追踪和管理太空交通制定了总体指导方针。\n\n该政策为商务部接管太空交通管理奠定了基础。商务部将确保新发射的卫星不会使用与现有卫星相干扰的无线电频率，并安排新卫星的发射时间。这仅适用于美国的太空活动，但人们希望它将有助于为全球新兴的商业航天产业确立一套标准化规范。\n\n太空，尤其是地球周围的近地空间，正随着越来越多的政府和公司发射卫星而变得更加拥挤。推动该政策出台的一个动因是，一些公司已经开始构建由数百甚至数千颗卫星组成的大型星座，其中有许多运动部件。由于太空中的物体越来越多，而地球周围的空间有限，政府希望降低碰撞的风险。两颗或多颗卫星相互碰撞可能会产生更多失控的碎片，对太空中日益增多的卫星构成更大的威胁。\n\n而这种情况并非没有发生过。2009年，一艘废旧的俄罗斯航天器撞上了一颗通信卫星，产生了数百块碎片云，并使其他太空设备面临风险。记者萨拉·斯科尔斯报道称，NASA目前追踪着大约24,000个太空物体，2016年美国空军不得不向卫星所有者发出3,995,874次警告，提醒他们注意来自其他卫星或碎片的潜在近距离威胁。\n\n这也是为什么这项新政策还包含更新现行《美国政府轨道碎片减缓标准实践》的指示。该标准已要求任何发射卫星或航天器的实体严格分析其任何行为——无论是意外故障还是正常运营——产生更多太空碎片的可能性。这包括对任何他们计划释放的、可能在轨道上停留25年或更长时间的超过5毫米的碎片进行说明。想到一个物体在太空中停留如此之久可能令人惊讶，但仍在轨道上运行的最古老卫星——先锋1号——在2018年已经\"年满\"60岁了。\n\n世界各地的机构和公司都在致力于开发能够在太空碎片造成严重损害之前将其处置或捕获的技术。但目前，美国政府更侧重于防止新碎片的产生，而非将已有的太空垃圾从轨道上清除。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Space Policy Directive-3 lays out general guidelines for the United States to mitigate the effects of space debris and track and manage traffic in space.",
+    "why": "原文第一段明确指出SPD-3制定了总体指导方针，目的是\"缓解太空碎片影响\"以及\"追踪和管理太空交通\"。D选项\"改善太空交通状况\"是对\"manage traffic in space\"和\"mitigate the effects of space debris\"的高度概括，涵盖了该政策的核心目的。",
+    "traps": "A选项\"太空探索指导方针\"偷换概念，原文说的是太空碎片和交通管理的指导方针，并非太空探索；B选项\"鼓励公司参与太空项目\"在原文中无对应信息，属于无中生有；C选项\"最佳利用太空卫星\"曲解文意，政策重点是管理交通和碎片，而非提升卫星使用效率。",
+    "tip": "关注首段主旨句，识别政策目标的核心关键词。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The department will make sure that newly launched satellites don't use radio frequencies that would interfere with existing satellites, and schedule when such new satellites can be launched.",
+    "why": "原文第二段详述商务部的职责：确保新发射卫星不干扰现有卫星的无线电频率，并安排新卫星的发射时间。这两项职能本质上都是在\"规范新卫星的发射\"，C选项\"Regulate the launching of new satellites\"精准概括了这一内容。",
+    "traps": "A选项\"减少太空碎片\"是整体政策目标而非商务部的具体职责，且原文未将此任务直接分配给商务部；B选项\"监控卫星运行\"过于宽泛，原文强调的是发射前的频率审核和时间安排；D选项\"更新卫星通信技术\"无中生有，原文提到的是频率管理，不是技术更新。",
+    "tip": "注意区分政策总目标与具体部门的分工职责。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "This only applies to American space activities, but the hope is that it will help standardize a set of norms in the dawning commercial spaceflight industry throughout the world.",
+    "why": "原文第二段末句明确指出，该政策虽然仅适用于美国太空活动，但\"希望\"（the hope）它能帮助在全球新兴商业航天产业中\"标准化一套规范\"。A选项\"Set international standards for the space flight industry\"完全对应\"standardize a set of norms...throughout the world\"。",
+    "traps": "B选项\"通过制定规范垄断太空产业\"歪曲了原文立意，原文的目的是标准化而非垄断(monopolize)，属于曲解语气；C选项\"促进全球商业航天飞行\"偷换目标，原文目的是建立标准而非直接促进航天商业化；D选项\"促进国际太空探索合作\"在原文中没有提及合作事宜，属于无中生有。",
+    "tip": "留意hope/expect等表示意图的关键词，精确理解政策的深层期望。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "which already require any entity that launches a satellite or spacecraft to vigorously analyze the likelihood that any of their actions, from an unexpected failure or normal operations, will create more space debris.",
+    "why": "原文第五段中定语从句明确说明现行标准要求任何发射卫星或航天器的实体\"严格分析\"（vigorously analyze）其任何行为——无论是意外故障还是正常操作——产生更多太空碎片的可能性。D选项\"彻底分析任何可能增加太空碎片的情况\"与\"vigorously analyze the likelihood...will create more space debris\"完全吻合。",
+    "traps": "A选项\"估计碎片在太空停留多久\"对应第五段后半部分关于25年的补充说明，但这只是标准的一部分细节，并非对实体的核心要求；B选项\"随时说明已释放的碎片\"偷换了时态和范围，原文是\"plan to release\"计划释放而非已释放；C选项\"提供详细的碎片管理计划\"在原文中无对应，原文要求的是分析可能性而非提供管理计划。",
+    "tip": "抓住require后的核心宾语从句，区分主要要求与补充说明。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Agencies and companies throughout the world are working on developing technology that would dispose of or capture space debris before it causes serious damage.",
+    "why": "原文末段首句明确指出，世界各地的机构和公司正在致力于\"开发能够处置或捕获太空碎片的技术\"。B选项\"Develop technology to address the space debris problem\"是对\"developing technology that would dispose of or capture space debris\"的准确概括，dispose of和capture都是解决碎片问题的手段。",
+    "traps": "A选项\"在航天器变成碎片前回收\"过于具体且不准确，原文说的是处置或捕获已有碎片而非提前回收航天器；C选项\"限制碎片进入太空的数量\"描述的是美国政府当前侧重的预防措施，而非各机构和公司正在做的事；D选项\"密切合作回收太空碎片\"中的\"密切合作\"(cooperate closely)在原文中无依据，且retrieve与原文dispose of/capture不完全对等。",
+    "tip": "注意区分末段中\"各机构的努力方向\"与\"美国政府当前重点\"的对比关系。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "mitigate",
+    "cn": "v. 缓解，减轻"
+   },
+   {
+    "w": "impetus",
+    "cn": "n. 推动力，促进因素"
+   },
+   {
+    "w": "constellation",
+    "cn": "n. 星座；（此处指）卫星星座群"
+   },
+   {
+    "w": "comprise",
+    "cn": "v. 由……组成，包含"
+   },
+   {
+    "w": "vigorously",
+    "cn": "adv. 大力地，严格地"
+   },
+   {
+    "w": "debris",
+    "cn": "n. 碎片，残骸"
+   },
+   {
+    "w": "hazard",
+    "cn": "n. 危险，隐患"
+   },
+   {
+    "w": "standardize",
+    "cn": "v. 使标准化"
+   },
+   {
+    "w": "dawning",
+    "cn": "adj. 新兴的，刚开始的"
+   },
+   {
+    "w": "entity",
+    "cn": "n. 实体，机构"
+   },
+   {
+    "w": "dispose of",
+    "cn": "v. 处理掉，清除"
+   },
+   {
+    "w": "interfere with",
+    "cn": "v. 干扰，妨碍"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Two or more satellites slamming into each other could create many more out-of-control bits that would pose even more hazards to the growing collection of satellites in space.",
+    "cn": "两颗或多颗卫星相互碰撞可能会产生更多失控的碎片，对太空中日益增多的卫星群体构成更大的威胁。",
+    "note": "主语为Two or more satellites slamming into each other（动名词短语作主语），谓语could create，that引导定语从句修饰bits，pose hazards to为固定搭配。"
+   },
+   {
+    "en": "This only applies to American space activities, but the hope is that it will help standardize a set of norms in the dawning commercial spaceflight industry throughout the world.",
+    "cn": "这仅适用于美国的太空活动，但人们希望它将有助于为全球新兴的商业航天产业确立一套标准化规范。",
+    "note": "but连接转折关系，the hope is后接that引导的表语从句；dawning commercial spaceflight industry为多重前置定语修饰名词。"
+   },
+   {
+    "en": "It includes accounting for any piece of debris they plan to release over 5mm that might stay in orbit for 25 years or more.",
+    "cn": "这包括对任何他们计划释放的、可能在轨道上停留25年或更长时间的超过5毫米的碎片进行说明。",
+    "note": "includes后接动名词accounting for作宾语；debris后有两个修饰成分：they plan to release over 5mm为省略关系代词的定语从句，that might stay...为第二个定语从句，形成双重修饰。"
+   }
+  ]
+ }
+}

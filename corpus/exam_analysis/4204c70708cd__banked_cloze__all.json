@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "4204c70708cd__banked_cloze__all",
+ "examId": "4204c70708cd",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2018 年 6 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:19:22.919Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67378,
+ "usage": {
+  "prompt_tokens": 1375,
+  "completion_tokens": 4032,
+  "total_tokens": 5407,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1375,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4032,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1375,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "Sarah Josepha Hale与《玛丽有只小羊羔》",
+  "gist": "文章介绍了Sarah Josepha Hale的生平：她被认为是经典儿歌《玛丽有只小羊羔》的作者，同时也是一位积极的社会倡导者，推动感恩节成为全国性节日。此外，文章还探讨了该诗真实作者的争议，指出该诗可能源于1816年的真实事件，而Hale一生都坚持自己是原作者。",
+  "difficulty": "中等",
+  "translation": "Sarah Josepha Hale是否写了《玛丽有只小羊羔》——那首关于一个名叫玛丽的女孩和一只倔强小羊的经典儿歌？这至今仍有争议，但很明显，这位因写了这首诗而闻名的女性是美国最迷人的人物之一。为了纪念该诗于1830年5月24日出版，以下是关于这位据称的作者的更多生平介绍。\n\nHale不仅是一位作家，她还是一位激烈的社会倡导者，她尤其痴迷于一个理想的新英格兰，她将其与丰盛的感恩节大餐联系在一起，并声称这些大餐具有\"深远的道德影响\"。她发起了一场全国性的运动，要求宣布一个能让家人团聚并庆祝传统节日的全国性假日。1863年，经过17年的倡导——包括给五位总统写信——Hale终于如愿以偿。亚伯拉罕·林肯总统在内战期间发布了一项公告，将11月最后一个星期四定为感恩节。\n\n《玛丽有只小羊羔》的真正作者仍有争议。据新英格兰历史学会记载，Hale只写了该诗的一部分，却声称拥有全部著作权。不管作者是谁，这首诗似乎是受到一个真实事件的启发。1816年，年幼的Mary Sawyer被一只小羊跟到了学校，这引起了一些麻烦。一位名叫John Roulstone的旁观者就此事写了一首诗，然后在某个时候，Hale本人似乎也参与了写作。然而，如果1916年她侄孙女的一篇文章可信的话，Hale在她的余生都声称\"有些人假装是别人写了这首诗\"。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "K",
+    "correct": "reputed",
+    "why": "此处需要一个过去分词/形容词修饰 woman，构成 'the woman reputed for writing it'（因写它而闻名的女性）。reputed 意为\"被认为的、据称的\"，与上文 'disputed'（有争议的）形成逻辑呼应：作者身份有争议，但她\"据称\"是作者。",
+    "traps": "supposed 也有\"据称\"之意，但 supposed 通常不与 for 搭配；此外 supposed 更适合填入第28题修饰 author。其他形容词如 obsessed/fierce 语义不符。",
+    "tip": "注意 reputed for 的固定搭配及语境中的\"争议\"暗示。"
+   },
+   {
+    "number": 27,
+    "answer": "C",
+    "correct": "characters",
+    "why": "空格前有 'America's most fascinating'，需要一个复数名词。characters 意为\"人物、角色\"，表示她是美国最迷人的人物之一，语义通顺且语法正确。",
+    "traps": "features（特征）虽是复数名词，但搭配 fascinating 后语义为\"迷人的特点\"，不能指代人。campaign 和 career 为单数，也不符合 'one of... 复数名词' 的结构。",
+    "tip": "'one of + 形容词最高级 + 复数名词' 结构需要复数可数名词指人。"
+   },
+   {
+    "number": 28,
+    "answer": "M",
+    "correct": "supposed",
+    "why": "空格在 'the ___ author's life' 中作定语修饰 author。supposed 意为\"所谓的、据称的\"，表达对作者身份的不确定，与首段讨论的\"争议\"主题一致。",
+    "traps": "reputed 已用于第26题，且 reputed 作前置定语修饰名词不如 supposed 常见（supposed author 是固定搭配）。其他词词性或语义不合。",
+    "tip": "supposed 作前置定语意为\"所谓的\"，是高频考点搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "E",
+    "correct": "fierce",
+    "why": "空格在 'a ___ social advocate' 中作形容词修饰 advocate。fierce 意为\"激烈的、猛烈的\"，此处表示她是一位坚定而激烈的社会倡导者，强调其倡导力度之大。",
+    "traps": "其他备选形容词如 traditional、obsessed 不适合修饰 advocate：traditional 语义不搭，obsessed 通常作表语与 with 连用而非前置定语。",
+    "tip": "fierce 可修饰人或行为，表示\"强烈的、坚定的\"。"
+   },
+   {
+    "number": 30,
+    "answer": "H",
+    "correct": "obsessed",
+    "why": "空格后紧跟 'with an ideal New England'，obsessed with 是固定搭配，意为\"痴迷于、执着于\"，表达她对理想化新英格兰的执念，与后文描述的持续17年倡导吻合。",
+    "traps": "其他词均无法与 with 构成有意义的固定搭配来表达\"执着/痴迷\"之意。be associated with 虽然也搭配 with，但 associated 不在选项中。",
+    "tip": "obsessed with 为固定搭配，表\"痴迷于\"，见到 with 即可联想。"
+   },
+   {
+    "number": 31,
+    "answer": "A",
+    "correct": "campaign",
+    "why": "空格在 'a nationwide ___' 中需要一个单数名词。campaign 意为\"运动、活动\"，'a nationwide campaign' 表示一场全国性运动，与后文 'to have a national holiday declared' 的目标一致。",
+    "traps": "career（职业）虽为单数名词，但语义不合：'a nationwide career' 说不通。proclamation 也是名词，但 nationwide proclamation 与 'she began' 搭配不当。",
+    "tip": "campaign 常与 nationwide/national 搭配，表\"全国性运动\"。"
+   },
+   {
+    "number": 32,
+    "answer": "N",
+    "correct": "traditional",
+    "why": "空格修饰 festivals，需要形容词。traditional festivals（传统节日）语义契合上下文——感恩节就是要庆祝传统节日，且与前文提到的家人团聚、感恩节大餐等传统元素呼应。",
+    "traps": "fierce festivals、supposed festivals 等搭配不自然，语义也不通。其他可选的形容词已被前文消耗或语义不匹配。",
+    "tip": "traditional festivals 是常见搭配，根据感恩节语境即可锁定。"
+   },
+   {
+    "number": 33,
+    "answer": "I",
+    "correct": "proclamation",
+    "why": "空格在 'issued a ___' 中需要一个单数名词。proclamation 意为\"公告、宣言\"，'issued a proclamation' 是描述总统发布正式文告的标准表达，与林肯设立感恩节的历史事实吻合。",
+    "traps": "campaign 已用于第31题。career 语义不搭（issue a career 不成立）。其他名词如 rest 也说不通。",
+    "tip": "issue a proclamation 是政治/历史语境的固定搭配。"
+   },
+   {
+    "number": 34,
+    "answer": "F",
+    "correct": "inspired",
+    "why": "空格在 'the poem was ___ by a real event' 中构成被动语态。inspired by 意为\"受……启发\"，表示这首诗是受真实事件启发而作，与后文讲述 Mary Sawyer 被羊跟到学校的故事相吻合。",
+    "traps": "reputed by 不构成有意义的被动搭配；obsessed 虽可用被动，但 'be obsessed by a real event' 语义不当（诗歌不会\"被事件迷住\"）。",
+    "tip": "be inspired by 是\"受……启发\"的经典被动搭配。"
+   },
+   {
+    "number": 35,
+    "answer": "L",
+    "correct": "rest",
+    "why": "空格在 'for the ___ of her life' 中需要名词。'for the rest of her life' 是固定短语，意为\"在她的余生中\"，表达 Hale 终其一生都坚持自己的说法。",
+    "traps": "career 虽是名词，但 'for the career of her life' 不是英语惯用表达。其他名词如 campaign、proclamation 填入后语义不通。",
+    "tip": "for the rest of one's life 是固定短语，意为\"余生\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "reputed",
+    "cn": "adj. 据称的，被认为的（常与 for/to 连用）"
+   },
+   {
+    "w": "supposed",
+    "cn": "adj. 所谓的，据称的（作前置定语时含怀疑意味）"
+   },
+   {
+    "w": "obsessed",
+    "cn": "adj. 痴迷的，着迷的（常与 with/by 搭配）"
+   },
+   {
+    "w": "fierce",
+    "cn": "adj. 激烈的，猛烈的；坚定的"
+   },
+   {
+    "w": "campaign",
+    "cn": "n. 运动，战役；v. 从事运动"
+   },
+   {
+    "w": "proclamation",
+    "cn": "n. 公告，宣言，声明"
+   },
+   {
+    "w": "stubborn",
+    "cn": "adj. 固执的，倔强的"
+   },
+   {
+    "w": "abundant",
+    "cn": "adj. 丰富的，充裕的"
+   },
+   {
+    "w": "advocacy",
+    "cn": "n. 倡导，拥护"
+   },
+   {
+    "w": "bystander",
+    "cn": "n. 旁观者，路人"
+   },
+   {
+    "w": "authorship",
+    "cn": "n. 著作权，作者身份"
+   },
+   {
+    "w": "eternal",
+    "cn": "adj. 永恒的，不朽的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——了解文章讲述 Hale 的生平与诗歌作者之争。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法结构（如冠词+___+名词需形容词，be+___+by需过去分词）确定词性。",
+   "第四步：利用固定搭配快速锁定答案，如 obsessed with、inspired by、for the rest of、issued a proclamation。",
+   "第五步：逐一回填确认，排除已用选项，检查语义与语法双重通顺。"
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "1c19f5649e3f__reading__4",
+ "examId": "1c19f5649e3f",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年考研英语真题",
+ "year": 2021,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:46:24.560Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64375,
+ "usage": {
+  "prompt_tokens": 1775,
+  "completion_tokens": 3766,
+  "total_tokens": 5541,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1775,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3766,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1775,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国网络中立性监管之争",
+  "gist": "文章围绕美国网络中立性规则的存废展开。宽带提供商可能偏袒关联网站，消费者和网络公司长期呼吁制定规则加以制约，但FCC在2017年废除了严格的网络中立规则，联邦上诉法院维持了该命令。作者认为国会应赋予FCC明确权力，禁止宽带商干预网络流量，以保障互联网的开放与创新。",
+  "structure": [
+   "第一段：提出问题——宽带商可能偏袒关联网站，需要网络中立规则",
+   "第二段：叙述FCC2017年废除网络中立规则及法院争议",
+   "第三段：举AT&T为例，揭露FCC放任反竞争行为",
+   "第四至五段：上诉法院维持裁决，但法官批评脱离现实，州级立法之争延续",
+   "第六段：呼吁国会立法，明确赋予FCC监管宽带商的权力"
+  ],
+  "difficulty": "较难",
+  "translation": "从宽带发展早期起，消费者和网络公司的倡导者就担心销售宽带连接的有线电视和电话公司有能力也有动机偏袒其关联网站、打压竞争对手。这就是为什么人们强烈要求制定规则，防止宽带提供商在网上挑选赢家和输家，以维护一直是互联网命脉的自由与创新。\n\n然而，这一诉求几乎不可能得到满足——部分原因在于宽带提供商、反监管的保守派以及法院的抵制。联邦上诉法院周二再次介入，但它非但没有提供亟需的解决方案，反而延长了这场争斗。摆在美国哥伦比亚特区巡回上诉法院面前的争议焦点，是联邦通信委员会（FCC）于2017年以党派划线投票方式通过的最新版网络中立方案。这项由共和党人起草的命令不仅废除了FCC在2015年民主党占多数时通过的严格网络中立规则，还否定了委员会要求宽带提供商做任何事情的权力。该命令还宣布，各州和地方政府也不得对宽带提供商实施监管。\n\nFCC辩称，其他机构会防止反竞争行为，比如像AT&T这样的宽带提供商集团偏袒自家的视频流媒体服务，而损害Netflix和Apple TV的利益。然而FCC也终止了对那些对竞争对手的流媒体服务施加数据上限、却不对自家服务施加同样限制的宽带提供商的调查。\n\n周二，上诉法院一致维持了2017年解除宽带提供商监管的命令，援引了2005年最高法院维持类似解除监管措施的裁决。但帕特里夏·米莱特法官在一份协同意见书中正确地指出，\"这一结果脱离了现代宽带服务的现实\"，并表示国会或最高法院可以介入，\"以避免让互联网监管陷入技术上的时代错误\"。\n\n与此同时，法院驳回了FCC试图阻止所有州级网络中立规则的企图，同时保留了委员会对破坏其命令的个别州法律进行优先管辖的权力。这意味着会有更多类似目前司法部与加利福尼亚州之间的争斗——加州在FCC放弃职责后颁布了一项严格的网络中立法律。\n\n无休止的法律争斗和FCC的反复无常迫切需要国会采取行动。国会需要一劳永逸地赋予委员会明确的权力，禁止宽带提供商干预其网络上的流量，并制定明确的规则来保护互联网的开放性和创新性。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "the cable and phone companies selling broadband connections had the power and incentive to favor affiliated websites over their rivals'.",
+    "why": "原文第一段明确指出，宽带提供商有能力和动机\"偏袒关联网站、打压竞争对手\"（favor affiliated websites over their rivals'），这说明人们担心宽带商在对待不同客户时会厚此薄彼。C选项\"show partiality in treating clients\"（在对待客户时表现出偏袒）是对原文\"favor...over\"的同义改写，完全吻合。",
+    "traps": "A项\"控制网络公司\"属于过度推断，原文说的是\"偏袒\"而非\"控制\"；B项\"减缓网络流量\"虽与网络中立相关，但原文第一段并未提及流量减速问题；D项\"加剧与对手的竞争\"偷换概念，原文说的是偏袒关联方损害对手，而非自身参与竞争加剧。",
+    "tip": "注意同义替换：favor...over = show partiality，不要被表面相关的选项干扰。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "The Republican-penned order not only eliminated the strict net neutrality rules the FCC had adopted when it had a Democratic majority in 2015, but rejected the commission's authority to require broadband providers to do much of anything.",
+    "why": "第二段说明FCC在2017年以共和党人主导的投票废除了严格的网络中立规则，不仅取消了2015年的规则，还否定了FCC自身要求宽带商做任何事情的权力。这一系列行为明确体现了FCC采取的是\"反监管立场\"（anti-regulatory stance）。B选项与原文中\"anti-regulatory conservatives\"的语境及FCC的实际行动完全对应。",
+    "traps": "A项\"坚持过时命令\"有一定迷惑性，但FCC是发布新命令废除旧规则，并非坚持旧命令；C项\"发布了专门决议\"不准确，原文说法院没有提供resolution，FCC发布的是deregulatory order；D项\"允许各州介入\"与原文相反，FCC的命令宣布州和地方政府不得监管宽带商。",
+    "tip": "理解FCC的政治立场变化是解题关键，注意区分不同时期的FCC多数党派。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "such as a broadband-providing conglomerate like AT&T favoring its own video-streaming service at the expense of Netflix and Apple TV.",
+    "why": "第三段举AT&T为例来说明反竞争行为：AT&T作为宽带提供商集团，偏袒自家视频流媒体服务，损害Netflix和Apple TV等竞争者利益。紧接着又提到FCC终止了对宽带商施加不公平数据上限行为的调查。因此AT&T被呈现为从事反竞争行为（anti-competitive practices）的典型案例，B选项正确。",
+    "traps": "A项\"防止不公平竞争\"张冠李戴，原文说的是\"其他机构\"会防止反竞争行为，AT&T恰恰是实施反竞争行为的一方；C项\"正接受FCC调查\"与原文矛盾，FCC已终止（ended）了相关调查；D项\"追求优质服务\"无中生有，原文完全没有提及AT&T追求服务质量。",
+    "tip": "例证题要看清举例的目的和对象，AT&T是反面例子而非正面案例。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "the result is unhinged from the realities of modern broadband service",
+    "why": "第四段引用米莱特法官的协同意见：她认为上诉法院的裁决结果\"脱离了现代宽带服务的现实\"（unhinged from the realities），并说应避免\"让互联网监管陷入技术上的时代错误\"（technological anachronism）。D选项\"is out of touch with reality\"（脱离现实）是对\"unhinged from the realities\"的精准同义改写。",
+    "traps": "A项\"关注琐事\"无据，米莱特法官批评的是裁决脱离现实，而非关注琐碎问题；B项\"传达模糊信息\"不符，法官的批评是裁决方向性错误，不是信息模糊；C项\"与早期裁决矛盾\"恰好相反，法院正是援引2005年的先例作出裁决，逻辑上是一致的。",
+    "tip": "关键词unhinged from realities = out of touch with reality，把握核心词义即可快速锁定答案。"
+   },
+   {
+    "number": 40,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "The endless legal battles and back-and-forth at the FCC cry out for Congress to act. It needs to give the commission explicit authority once and for all to bar broadband providers from meddling in the traffic on their network",
+    "why": "末段第一句指出无休止的法律争斗\"迫切需要国会采取行动\"，第二句进一步说明国会需要\"一劳永逸地\"赋予FCC明确权力，禁止宽带商干预网络流量，并制定保护开放和创新的规则。全段核心论点就是呼吁国会立法确保网络中立，A选项完全吻合。",
+    "traps": "B项\"FCC应受严格监督\"偷换主体，作者呼吁的是国会赋予FCC权力而非监督FCC；C项\"制定规则以多元化在线服务\"偏离主题，作者关注的是网络中立而非服务多元化；D项\"应保护宽带商权利\"与作者立场完全相反，作者主张限制而非保护宽带商的行为。",
+    "tip": "末段总结全文立场，抓住cry out for Congress to act即可判断作者核心主张。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "affiliated",
+    "cn": "adj. 附属的，关联的"
+   },
+   {
+    "w": "broadband",
+    "cn": "n. 宽带"
+   },
+   {
+    "w": "lifeblood",
+    "cn": "n. 命脉，生命线"
+   },
+   {
+    "w": "pushback",
+    "cn": "n. 抵制，反对"
+   },
+   {
+    "w": "conglomerate",
+    "cn": "n. 企业集团，联合大企业"
+   },
+   {
+    "w": "deregulatory",
+    "cn": "adj. 解除监管的，放松管制的"
+   },
+   {
+    "w": "concurring",
+    "cn": "adj. 协同的（法律用语，指同意判决结果但理由不同的意见）"
+   },
+   {
+    "w": "preempt",
+    "cn": "v. 优先取代，先发制人地阻止"
+   },
+   {
+    "w": "abdication",
+    "cn": "n. 放弃（职责），退位"
+   },
+   {
+    "w": "meddling",
+    "cn": "n./v. 干预，干涉"
+   },
+   {
+    "w": "anachronism",
+    "cn": "n. 时代错误，过时之物"
+   },
+   {
+    "w": "unhinged",
+    "cn": "adj. 脱离的，失去控制的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The Republican-penned order not only eliminated the strict net neutrality rules the FCC had adopted when it had a Democratic majority in 2015, but rejected the commission's authority to require broadband providers to do much of anything.",
+    "cn": "这项由共和党人起草的命令不仅废除了FCC在2015年民主党占多数时通过的严格网络中立规则，还否定了委员会要求宽带提供商做任何事情的权力。",
+    "note": "not only...but (also)并列结构；the FCC had adopted为定语从句修饰rules；when引导时间状语从句；to do much of anything为不定式作宾补。"
+   },
+   {
+    "en": "Yet the FCC also ended the investigations of broadband providers that imposed data caps on their rivals' streaming services but not their own.",
+    "cn": "然而FCC也终止了对那些对竞争对手的流媒体服务施加数据上限、却不对自家服务施加同样限制的宽带提供商的调查。",
+    "note": "that引导定语从句修饰broadband providers；imposed...but not their own构成转折对比，揭示宽带商的双重标准。"
+   },
+   {
+    "en": "In the meantime, the court threw out the FCC's attempt to block all state rules on net neutrality, while preserving the commission's power to preempt individual state laws that undermine its order.",
+    "cn": "与此同时，法院驳回了FCC试图阻止所有州级网络中立规则的企图，同时保留了委员会对破坏其命令的个别州法律进行优先管辖的权力。",
+    "note": "threw out与preserving构成while引导的让步/对比关系；to block为不定式作attempt的后置定语；that undermine its order为定语从句修饰individual state laws。"
+   }
+  ]
+ }
+}

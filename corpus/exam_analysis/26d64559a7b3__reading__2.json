@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "26d64559a7b3__reading__2",
+ "examId": "26d64559a7b3",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年 12 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:32:32.032Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62418,
+ "usage": {
+  "prompt_tokens": 1943,
+  "completion_tokens": 3749,
+  "total_tokens": 5692,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1943,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3749,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1943,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "慢性抱怨者的心理模式与应对策略",
+  "gist": "文章围绕精神科医生Eric Berne提出的\"Why Don't You—Yes But\"对话模式展开，指出慢性抱怨者不断否定他人建议、逃避责任的心理根源在于混淆了责任与过错。作者介绍了心理治疗师Gottlieb的\"过度认同\"策略来应对此类抱怨，并总结出：逃避责任看似舒适实为牢笼，而承担责任虽不适却能带来自由。",
+  "structure": [
+   "第一段：引出慢性抱怨者的对话模式及其心理动机",
+   "第二段：以弃婴为例阐释责任与过错的区别，指出逃避责任无益",
+   "第三段：介绍'过度认同'策略及其对抱怨者的反转效果",
+   "第四段：总结核心观点——逃避责任是牢笼，承担责任才是解放"
+  ],
+  "difficulty": "中等",
+  "translation": "早在1964年，精神科医生Eric Berne在其著作《人间游戏》中描述了一种他称之为\"你为什么不……——是的，但是……\"的对话模式，这种模式至今仍是日常社交生活中最令人恼火的现象之一。采用这种策略的人通常是慢性抱怨者。他们的人际关系、工作或其他处境中总有什么事情很糟糕，他们不停地抱怨，却总能找到某种借口来否定别人提出的任何解决方案。原因当然是，他们在某种程度上并不想要解决方案；他们想要的是让自己\"全世界都在针对我\"这一立场得到认可。如果他们能\"赢得\"这场游戏——逐一否定每一个建议，直到对话者恼怒地放弃——他们就能在自己的怨恨中获得一种正当感的快感，并免除任何改变的义务。\n\n这里的部分问题在于所谓的\"责任/过错谬误\"。当你觉得自己受到了不公正的对待——比如被伴侣视为理所当然，或者不得不为一个愚蠢的老板工作——你很容易执着于这样一种立场：解决这个问题不是你的事，而且这样做等于承认是自己的错。但这里存在一个混淆。例如，如果我在自家门口发现一个新生儿，这不是我的过错，但这肯定是我的责任。我必须做出选择，而且不可能回避这些选择，因为试图忽视这件事本身也是一种选择。关键是，门口弃婴的道理适用于所有情况：即使对方百分之百有错，从长远来看，以此为借口逃避责任也不会带来任何好处。\n\n如果你发现自己成了这类抱怨的接收方，有一种巧妙的方法可以让它停下来——那就是热烈地表示赞同。心理治疗师Lori Gottlieb将此称为\"过度认同\"。一方面，你将不再听到更多的抱怨，因为对方的动机就是确认她的信念，而现在你正在确认它们。但另一方面，正如Gottlieb所指出的，面对过度认同的人往往会重新审视自己的抱怨并开始反驳。那种认为自己完全无能为力的想法突然显得不切实际——更别提还相当恼人——因此他们转而被激发去想出一些可以改变现状的办法。\n\nGottlieb写道：\"然后，有时候，某种神奇的事情可能会发生。\"对方\"可能会意识到她并不像你所说的那样被困住，也不像她自己感觉的那样无路可走。\"这恰好说明了责任/过错谬误的讽刺之处：逃避责任感觉舒适，结果却变成了牢笼；而承担责任感觉不舒服，最终却带来了自由。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Something is terrible about their relationship, job, or other situation, and they moan about it ceaselessly, but find some excuse to dismiss any solution that's proposed.",
+    "why": "原文明确指出慢性抱怨者会\"不停抱怨\"且\"找借口否定任何被提出的解决方案\"，同时第一段末尾提到他们借此\"免除任何改变的义务\"（excused from any obligation to change）。C选项\"不断否定他人建议且不承担解决问题的责任\"精确概括了这两点特征，与原文逻辑完全吻合。",
+    "traps": "A项\"只感到愤怒并怨恨帮助者\"属于过度推断，原文说他们否定建议而非怨恨帮助者本人；B项\"不断挑别人的毛病\"偷换概念，原文是抱怨自身处境而非对周围人挑毛病；D项\"缺乏对话知识和基本技巧\"无中生有，原文从未提及他们缺乏沟通技巧。",
+    "tip": "注意区分抱怨者针对的是\"自身处境\"还是\"他人\"，选项常在对象上偷换。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "if I were to discover a newborn at my front door, it wouldn't be my fault, but it most certainly would be my responsibility.",
+    "why": "作者在第二段提出\"责任/过错谬误\"后，用门口弃婴的例子来说明：某件事不是你的过错（fault），但仍然是你的责任（responsibility）。这个例子的核心目的是论证responsibility和fault是两个不同的概念，不应混为一谈。D选项\"应当区分责任与过错\"准确概括了该例证所服务的论点。",
+    "traps": "A项\"人们倾向于认为不应为他人的错误负责\"虽相关但只是抱怨者的错误想法，并非作者要论证的观点；B项\"容易执着于忽视自己过错的立场\"曲解原文，原文讲的是混淆责任与过错而非忽视过错；C项\"面对多种选择时不知所措\"与原文论点无关，属于无中生有。",
+    "tip": "例证题要找例子所服务的论点，而非例子本身的细节。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "there's an ingenious way to shut it down—which is to agree with it, ardently.",
+    "why": "第三段开头明确建议：如果你成为抱怨的接收方，一种巧妙的终结方式就是\"热烈地表示赞同\"（agree with it, ardently），即\"过度认同\"策略。A选项\"通过赞同他们来阻止他们继续下去\"是对原文shut it down和agree with it的准确改写。",
+    "traps": "B项\"热心且同情地倾听\"看似接近但偷换了概念，ardently修饰的是agree（赞同）而非listen（倾听），且目的是终止抱怨而非表达同情；C项\"让他们用更多证据验证信念\"与原文相反，原文是你来确认他们的信念；D项\"说服他们澄清混淆\"无原文依据，属于张冠李戴。",
+    "tip": "注意原文关键动词的准确对应，agree≠listen，改写时动作不能偷换。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "people confronted with over-validation often hear their complaints afresh and start arguing back...so they're prompted instead to generate ideas about how they might change things.",
+    "why": "原文指出，面对过度认同时，抱怨者会重新审视自己的抱怨并开始反驳，他们会觉得\"完全无能为力\"的想法不切实际，从而\"被促使想出如何改变现状的办法\"。B选项\"被促使想出进行可能改变的想法\"直接对应原文prompted to generate ideas about how they might change things。",
+    "traps": "A项\"被激励找到巧妙方法说服对话者\"无中生有，原文的ingenious是描述策略本身而非抱怨者的行为；C项\"被刺激发出更多抱怨\"与原文相反，过度认同反而终止了抱怨；D项\"被鼓励开始反驳\"虽然原文有start arguing back，但这只是过程而非最终结果，且arguing back的对象是自己先前的抱怨而非他人。",
+    "tip": "区分\"过程\"和\"最终结果\"，题目问的是最终效果时应找终点而非中间环节。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "evading responsibility feels comfortable, but turns out to be a prison; whereas assuming responsibility feels unpleasant, but ends up being freeing.",
+    "why": "文章末段点明核心主旨：逃避责任看似舒适实则是牢笼，而承担责任虽然感觉不舒服但最终带来自由。要停止做慢性抱怨者，就需要主动承担责任（assuming responsibility）来解放自己。C选项\"承担责任以解放自己\"精确对应原文assuming responsibility和ends up being freeing。",
+    "traps": "A项\"分析责任/过错谬误\"只是文章论述手段而非作者给出的行动建议；B项\"避免日常社交中的危险陷阱\"过于笼统且偷换概念，原文的prison是比喻逃避责任的后果；D项\"等待神奇的事情发生\"断章取义，原文something magical是承担责任后的自然结果而非应采取的行动。",
+    "tip": "结尾段常点明全文主旨，尤其注意对比句式中作者肯定的一面。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "psychiatrist",
+    "cn": "n. 精神科医生"
+   },
+   {
+    "w": "validated",
+    "cn": "v. 使生效，证实，认可"
+   },
+   {
+    "w": "interlocutor",
+    "cn": "n. 对话者，谈话者"
+   },
+   {
+    "w": "righteous",
+    "cn": "adj. 正当的，正义的"
+   },
+   {
+    "w": "resentment",
+    "cn": "n. 怨恨，愤恨"
+   },
+   {
+    "w": "fallacy",
+    "cn": "n. 谬误，谬论"
+   },
+   {
+    "w": "half-witted",
+    "cn": "adj. 愚蠢的，弱智的"
+   },
+   {
+    "w": "ardently",
+    "cn": "adv. 热烈地，热切地"
+   },
+   {
+    "w": "ingenious",
+    "cn": "adj. 巧妙的，有独创性的"
+   },
+   {
+    "w": "over-validation",
+    "cn": "n. 过度认同"
+   },
+   {
+    "w": "evade",
+    "cn": "v. 逃避，规避"
+   },
+   {
+    "w": "afresh",
+    "cn": "adv. 重新，再次"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "If they can \"win\" the game—dismissing every suggestion until their interlocutor gives up in annoyance—they get to feel pleasurably righteous in their resentments and excused from any obligation to change.",
+    "cn": "如果他们能\"赢得\"这场游戏——逐一否定每一个建议，直到对话者恼怒地放弃——他们就能在自己的怨恨中获得一种正当感的快感，并免除任何改变的义务。",
+    "note": "主干为If they can win, they get to feel...and (get to feel) excused...；破折号内为插入语，解释win的具体方式；and连接两个并列的feel宾补。"
+   },
+   {
+    "en": "The point is that what goes for the baby on the doorstep is true in all cases: even if the other person is 100% in the wrong, there's nothing to be gained, long-term, from using this as a justification to evade responsibility.",
+    "cn": "关键是，门口弃婴的道理适用于所有情况：即使对方百分之百有错，从长远来看，以此为借口逃避责任也不会带来任何好处。",
+    "note": "主干为The point is that...；what引导主语从句；冒号后为解释说明；even if引导让步状语从句；from using...为介词短语作状语修饰nothing to be gained。"
+   },
+   {
+    "en": "Which illustrates the irony of the responsibility/fault fallacy: evading responsibility feels comfortable, but turns out to be a prison; whereas assuming responsibility feels unpleasant, but ends up being freeing.",
+    "cn": "这恰好说明了责任/过错谬误的讽刺之处：逃避责任感觉舒适，结果却变成了牢笼；而承担责任感觉不舒服，最终却带来了自由。",
+    "note": "Which指代前句内容；冒号后用分号隔开两组对比：evading...comfortable对应prison，assuming...unpleasant对应freeing，形成精巧的交叉对比结构。"
+   }
+  ]
+ }
+}

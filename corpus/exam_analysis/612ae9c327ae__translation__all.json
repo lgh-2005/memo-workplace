@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "612ae9c327ae__translation__all",
+ "examId": "612ae9c327ae",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2021 年 12 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:36:06.399Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 30500,
+ "usage": {
+  "prompt_tokens": 806,
+  "completion_tokens": 2093,
+  "total_tokens": 2899,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 806,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2093,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 806,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中共一大会址与纪念馆介绍",
+  "reference": "The Site of the First National Congress of the Communist Party of China (CPC) is located at No. 76, Xingye Road, Shanghai. It is a typical Shanghai-style residential building constructed in the autumn of 1920. On July 23, 1921, the First National Congress of the CPC was convened here, during which the Party's first program and first resolution were adopted, the central leading body was elected, and the founding of the Communist Party of China was proclaimed. In September 1952, the site of the First CPC National Congress was restored, and a memorial hall was established and opened to the public. In addition to introducing the delegates who attended the First National Congress, the memorial hall also presents the historical development of the Party. It has now become a patriotic education base for learning about Party history and honoring the memory of revolutionary martyrs.",
+  "sentences": [
+   {
+    "cn": "中国共产党第一次全国代表大会会址位于上海兴业路76号，是一栋典型的上海式住宅，建于1920年秋。",
+    "en": "The Site of the First National Congress of the Communist Party of China (CPC) is located at No. 76, Xingye Road, Shanghai. It is a typical Shanghai-style residential building constructed in the autumn of 1920.",
+    "structure": "主系表结构 + 并列谓语，'位于'用 be located at，'建于'用过去分词短语作后置定语或独立句",
+    "keys": [
+     "中国共产党第一次全国代表大会 the First National Congress of the Communist Party of China",
+     "会址 site",
+     "兴业路76号 No. 76, Xingye Road",
+     "上海式住宅 Shanghai-style residential building",
+     "建于1920年秋 constructed in the autumn of 1920"
+    ]
+   },
+   {
+    "cn": "1921年7月23日，中国共产党第一次全国代表大会在此召开，大会通过了中国共产党的第一个纲领和第一个决议，选举产生了中央领导机构，宣告了中国共产党的诞生。",
+    "en": "On July 23, 1921, the First National Congress of the CPC was convened here, during which the Party's first program and first resolution were adopted, the central leading body was elected, and the founding of the Communist Party of China was proclaimed.",
+    "structure": "时间状语前置 + 被动语态并列结构，用 during which 引导非限制性定语从句串联四个并列动作",
+    "keys": [
+     "召开 convene",
+     "纲领 program/platform",
+     "决议 resolution",
+     "选举产生 elect",
+     "中央领导机构 the central leading body",
+     "宣告 proclaim",
+     "诞生 founding"
+    ]
+   },
+   {
+    "cn": "1952年9月，中共一大会址修复，建立纪念馆并对外开放。",
+    "en": "In September 1952, the site of the First CPC National Congress was restored, and a memorial hall was established and opened to the public.",
+    "structure": "时间状语前置 + 三个被动语态并列谓语，用 and 连接",
+    "keys": [
+     "修复 restore",
+     "纪念馆 memorial hall",
+     "对外开放 open to the public"
+    ]
+   },
+   {
+    "cn": "纪念馆除了介绍参加一大的代表之外，还介绍党的历史发展进程，现已成为了解党史,缅怀革命先烈的爱国主义教育基地。",
+    "en": "In addition to introducing the delegates who attended the First National Congress, the memorial hall also presents the historical development of the Party. It has now become a patriotic education base for learning about Party history and honoring the memory of revolutionary martyrs.",
+    "structure": "In addition to... also... 结构表递进；who 引导定语从句修饰 delegates；for doing 结构说明基地功能",
+    "keys": [
+     "除了……之外还 in addition to... also",
+     "代表 delegates",
+     "历史发展进程 historical development",
+     "党史 Party history",
+     "缅怀 honor the memory of",
+     "革命先烈 revolutionary martyrs",
+     "爱国主义教育基地 patriotic education base"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "中国共产党第一次全国代表大会",
+    "en": "the First National Congress of the Communist Party of China (CPC)"
+   },
+   {
+    "cn": "会址",
+    "en": "site / venue"
+   },
+   {
+    "cn": "纲领",
+    "en": "program / platform"
+   },
+   {
+    "cn": "决议",
+    "en": "resolution"
+   },
+   {
+    "cn": "中央领导机构",
+    "en": "the central leading body"
+   },
+   {
+    "cn": "纪念馆",
+    "en": "memorial hall"
+   },
+   {
+    "cn": "爱国主义教育基地",
+    "en": "patriotic education base"
+   },
+   {
+    "cn": "革命先烈",
+    "en": "revolutionary martyrs"
+   },
+   {
+    "cn": "党史",
+    "en": "Party history"
+   },
+   {
+    "cn": "上海式住宅",
+    "en": "Shanghai-style residential building"
+   }
+  ],
+  "pitfalls": [
+   "'会址'误译为 address，应译为 site 或 venue，address 仅指地址",
+   "'纲领'误译为 outline，应译为 program 或 platform，指政党纲领",
+   "'宣告诞生'直译为 announced the birth，更规范的说法是 proclaimed the founding",
+   "'选举产生'漏译'产生'，仅写 elected 即可涵盖，但需注意被动语态",
+   "'缅怀革命先烈'误译为 miss，应用 honor the memory of / commemorate 表达敬意"
+  ],
+  "upgrades": [
+   {
+    "plain": "the meeting was held here",
+    "better": "the Congress was convened here",
+    "note": "convene 为正式会议专用动词，比 hold 更正式地道"
+   },
+   {
+    "plain": "passed the first program",
+    "better": "adopted the first program",
+    "note": "adopt 是通过纲领、决议的标准用词，比 pass 更精准"
+   },
+   {
+    "plain": "announced the birth of the CPC",
+    "better": "proclaimed the founding of the CPC",
+    "note": "proclaim 语气更庄重，founding 比 birth 更适合政党成立"
+   },
+   {
+    "plain": "to remember revolutionary martyrs",
+    "better": "to honor the memory of revolutionary martyrs",
+    "note": "honor the memory of 体现庄严缅怀之意，比 remember 更有仪式感"
+   },
+   {
+    "plain": "was repaired",
+    "better": "was restored",
+    "note": "restore 指对历史建筑的修复还原，repair 仅指普通修理"
+   }
+  ]
+ }
+}

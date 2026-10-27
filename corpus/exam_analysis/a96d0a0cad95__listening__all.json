@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "a96d0a0cad95__listening__all",
+ "examId": "a96d0a0cad95",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2021 年 12 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:37:39.945Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 51122,
+ "usage": {
+  "prompt_tokens": 2188,
+  "completion_tokens": 2739,
+  "total_tokens": 4927,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2188,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2739,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2188,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下内容仅基于题目选项的语言特征进行推理分析，不涉及任何对录音内容的转述或编造。",
+  "overview": "本场听力共 25 题，分 7 段。第 1-2 段（各 4 题）为长对话，第 3-7 段（3 或 4 题）为短文/讲座。由选项措辞推测：第 1 段涉及某本书或观点引发的争议（素食/环保话题）；第 2 段关于成功因素；第 3 段关于蝙蝠的生物学特征；第 4 段关于儿童观看电视节目的影响与家长指导；第 5 段关于鞋底细菌与室内卫生；第 6 段关于谎言或信任违背的心理话题；第 7 段关于农业研究与发展中国家。",
+  "strategy": [
+   "预读选项，根据关键词快速锁定话题方向，在录音开始前建立预期框架",
+   "关注选项中的反义词对（如 significant vs. modest），听到近义转述时立即标记",
+   "对因果类提问（why/what makes），注意 because、due to、since 等信号词",
+   "含有 They/It 等代词开头的选项，须在录音中迅速定位其指代对象",
+   "对话题中出现的极端词（force, ignore, all, never）保持警惕，听力正确答案通常措辞更温和",
+   "短文最后一题常对应文章结尾段的主旨或建议，集中注意力到最后"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "某书/观点引发争议，涉及素食主义与环保",
+    "optionSignals": "Q1 四项均以 It 开头描述某事物的评价（controversy/favorably/vegetarians/offends），在问对该事物的反响。Q2 以 She 开头描述某人做法，含极端词 neglects/force/ignores/insists，在问某女性被批评的原因。Q3 四个形容词（significant/revolutionary/rational/modest）在评价程度。Q4 以 It would 开头，在问某举措的潜在效果。",
+    "tips": [
+     "Q2 中 force 与 radical 是强烈负面词，若听到类似'push/impose'可对应选 B",
+     "Q3 答案 modest 属于偏低调的评价词，注意录音中 small/limited/not dramatic 等转述",
+     "Q4 四选项各指向不同领域（环保/经济/公众/饮食），听到 environment/green 可锁定 A"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "成功的关键因素与支持环境",
+    "optionSignals": "Q5 四项分别问来源/原因/个人经历/因素，典型的主旨题。Q6 四项均以 Having 开头，构成并列的条件短语，在问成功所需条件。Q7 四项描述人们面对困境的反应方式。Q8 四项为名词短语描述有利条件（领导/环境/尊重/团队）。",
+    "tips": [
+     "Q5 答案 D 最为概括（What makes people successful），主旨题倾向选最具总结性的选项",
+     "Q6 中 confidence in them 与 belief in own ability 易混淆，前者强调他人信任，后者强调自信，注意主语区别",
+     "Q8 答案 nurturing environment 是听力高频搭配，注意 supportive/encouraging 等同义转述"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "蝙蝠的视觉与回声定位等生物特征",
+    "optionSignals": "Q9 四项描述某类蝙蝠的特征（听觉/食物/眼睛/祖先），在问基本生物特征。Q10 四项描述定位方式（月光/回声定位/日光视觉/视觉嗅觉）。Q11 四项以 To 开头表示目的，在问某种能力发展的原因。",
+    "tips": [
+     "Q9 答案 C 提到 big eyes 和 visual centers，关键词 distinctive 是高频考点词",
+     "Q10 echolocation 是蝙蝠话题的核心术语，出现即可锁定",
+     "Q11 答案 B 中 adapt to a particular lifestyle 属于功能性解释，注意 in order to/so that 等目的信号"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "儿童看电视的影响及家长应对策略",
+    "optionSignals": "Q12 四项描述儿童看电视的后果，含正面（acquire/prepared）和负面（aggressive/emotionally）。Q13 四项解释儿童理解节目的障碍。Q14-15 均以动词原形开头，在问家长应采取的具体行动。",
+    "tips": [
+     "Q12 答案 C 含 emotionally aggressive，注意录音中 aggression/hostile/violent 等近义词",
+     "Q13 答案 D 中 cognitive and memory skills 是学术化表达，注意 don't have the ability to remember/process",
+     "Q14 与 Q15 都问家长行为但侧重不同：Q14 侧重观看过程中的陪伴理解，Q15 侧重观看后的信息解读"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "鞋底携带细菌与有害物质对家庭卫生的影响",
+    "optionSignals": "Q16 四项解释人们不脱鞋的原因（怕伤脚/没习惯/脏无害/嫌麻烦），在问行为原因。Q17 四项为研究发现的具体数据结论。Q18 四项描述鞋子对居家环境的负面影响。",
+    "tips": [
+     "Q16 答案 C 语气最轻松随意（a little dirt harms no one），符合日常心态描写",
+     "Q17 答案 D 强调 a single shoe 上的大量细菌，注意数字或 large number 等量化表达",
+     "Q18 答案 A 中 chemicals 和 air quality 联系紧密，注意 toxic/harmful substances 等词"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "谎言或某种负面情绪的心理认知与应对",
+    "optionSignals": "Q19 四项对某行为作定性描述（sinful/uncivilized/uncontrollable/violation of trust），在问该行为的本质。Q20 四项为动词短语描述应对策略。Q21 四项以动词开头建议如何对待该行为。",
+    "tips": [
+     "Q19 答案 D 中 violation of faith and trust 语气具体且不极端，优于 sinful 的笼统道德判断",
+     "Q20 答案 C（Accept them as normal）观点特殊，与常规认知相反，录音若出现转折语气可锁定",
+     "Q21 答案 A 强调理解信息（messages they convey），注意 what they tell us/signal 等转述"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "农业科研投入与发展中国家的粮食问题",
+    "optionSignals": "Q22 四项为具体农业措施（新品种/气候应对/农药/化肥），在问核心手段。Q23 四项为改善农业的宏观策略。Q24 四项以 For + 动名词构成原因/目的短语，在问对科学家的要求。Q25 四项为国家层面的成果或举措。",
+    "tips": [
+     "Q22 答案 A（Cultivation of new varieties）是农业研究的核心产出，注意 breed/develop/new strains",
+     "Q24 答案 C 强调 poorer countries 的需求导向，与发展中国家话题吻合",
+     "Q25 答案 B（Substantial funding）是典型的政策建议结论，注意 invest/spend/allocate 等词"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "controversy",
+    "cn": "争议，争论"
+   },
+   {
+    "w": "vegetarian",
+    "cn": "素食者"
+   },
+   {
+    "w": "echolocation",
+    "cn": "回声定位"
+   },
+   {
+    "w": "cognitive",
+    "cn": "认知的"
+   },
+   {
+    "w": "nurturing",
+    "cn": "培育的，滋养的"
+   },
+   {
+    "w": "aggressive",
+    "cn": "有攻击性的"
+   },
+   {
+    "w": "deteriorate",
+    "cn": "使恶化，使变质"
+   },
+   {
+    "w": "uncivilized",
+    "cn": "不文明的"
+   },
+   {
+    "w": "violation",
+    "cn": "违反，侵犯"
+   },
+   {
+    "w": "cultivation",
+    "cn": "培育，种植"
+   },
+   {
+    "w": "pesticide",
+    "cn": "杀虫剂，农药"
+   },
+   {
+    "w": "infrastructure",
+    "cn": "基础设施"
+   },
+   {
+    "w": "distinctive",
+    "cn": "独特的，有区别的"
+   },
+   {
+    "w": "substantial",
+    "cn": "大量的，可观的"
+   }
+  ]
+ }
+}

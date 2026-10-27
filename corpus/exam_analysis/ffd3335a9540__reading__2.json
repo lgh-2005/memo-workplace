@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "ffd3335a9540__reading__2",
+ "examId": "ffd3335a9540",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年考研英语真题",
+ "year": 2020,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:43:02.023Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63755,
+ "usage": {
+  "prompt_tokens": 1720,
+  "completion_tokens": 3911,
+  "total_tokens": 5631,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1720,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3911,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1720,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "学术出版的暴利模式与开放获取改革",
+  "gist": "文章揭示了学术出版行业利用科学家免费提供内容和同行评审的机制获取暴利的商业模式，以Elsevier为例说明出版商利润惊人。Sci-Hub的出现反映了现有体系合法性的丧失。尽管英国推动开放获取出版，但大学付费负担并未减轻，出版商通过向作者收取文章准备费继续获利，该模式亟需权力再平衡。",
+  "structure": [
+   "第1段：揭示学术出版'印钞许可证'的本质——内容和评审免费获取",
+   "第2-3段：以Elsevier为例展示出版商暴利现状",
+   "第4段：Sci-Hub的出现反映现有体系丧失合法性",
+   "第5-6段：开放获取改革未能降低大学成本，出版商转嫁费用给作者"
+  ],
+  "difficulty": "中等",
+  "translation": "学术出版长期以来一直是一张印钞许可证。科学家需要期刊来发表研究成果，因此他们会无偿提供文章。其他科学家也免费从事同行评审这项专业工作，因为它是获取学术地位和产出科学知识的核心要素。\n\n由于论文内容可以免费获取，出版商只需为其期刊找到市场即可。直到本世纪之前，大学图书馆对价格并不十分敏感。在出版业其他领域面临生存危机之际，学术出版商通常报告其运营利润率接近40%。\n\n荷兰巨头爱思唯尔声称出版了全球25%的学术论文，去年利润超过9亿英镑；而仅英国各大学在2016年就花费了超过2.1亿英镑，以使研究人员能够获取他们自己用公共资金资助的研究成果；尽管人们越来越急迫地试图改变这些数字，但两个数字似乎都在不可阻挡地上升。\n\n最激进且完全违法的反应是Sci-Hub的出现——一种面向全球的学术论文复印机，成立于2012年，目前声称可提供2015年以来发表的所有付费墙文章的访问权限。Sci-Hub的成功依赖于研究人员传递他们自己合法获取的论文副本，这表明合法生态系统已经在用户中丧失了合法性，必须进行变革，使其对所有参与者都有效。\n\n在英国，向开放获取出版的转变由资助机构推动。在某些方面，这相当成功。目前超过一半的英国科学研究以开放获取条款发表：要么从发表之时起免费提供，要么设置一年或更长时间的付费墙，让出版商在将其公开发布之前获取利润。\n\n然而，新体系对大学来说并没有变得更便宜。出版商对读者免费提供产品的要求做出回应，转而向作者收取文章准备费用。这些费用从大约500英镑到5000英镑不等，而且显然出版商做得越多，工作就越贵。去年的一份报告指出，订阅费和这些\"文章准备费用\"一直在以高于通胀的速度稳步上升。在某些方面，学术出版模式类似于社交互联网经济：劳动者以获得地位的希望为交换免费提供劳动，而少数经营市场平台的大公司则获取巨额利润。在这两种情况下，我们都需要权力的再平衡。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Scientists need journals in which to publish their research, so they will supply the articles without monetary reward. Other scientists perform the specialised work of peer review also for free",
+    "why": "题干问学术出版被视为'印钞许可证'的部分原因。原文第一段明确指出：科学家无偿提供文章（without monetary reward），同行评审也是免费进行的（also for free）。第二段首句进一步总结'With the content of papers secured for free'。D选项'内容获取不花钱'完全对应原文'免费获取论文内容'这一核心信息。",
+    "traps": "A项'资金稳步增长'：原文未提及出版商获得的资金/拨款增长，属于无中生有。B项'营销策略成功'：原文只说大学图书馆对价格不敏感，并未归因于出版商的营销策略，属于过度推断。C项'同行评审报酬减少'：原文说同行评审本来就是免费的，而非'减少了报酬'，属于偷换概念。",
+    "tip": "'partly because'提示答案只需匹配原因之一，定位关键词回原文逐一验证。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Until this century, university libraries were not very price sensitive. Scientific publishers routinely report profit margins approaching 40%... The Dutch giant Elsevier, which claims to publish 25% of the scientific papers produced in the world, made profits of more than £900m last year",
+    "why": "第二段指出大学图书馆对价格不敏感，出版商因此获得接近40%的利润率。第三段以Elsevier为例，说明其利润超过9亿英镑，而英国大学仅一年就花费超过2.1亿英镑用于获取研究文献。可见Elsevier等出版商主要依赖大学图书馆的订阅获利，即'主要靠大学图书馆繁荣发展'，A项正确。",
+    "traps": "B项'经历生存危机'：原文说面临生存危机的是'the rest of the publishing industry'即出版业其他领域，而非学术出版商，属于张冠李戴。C项'复兴了出版业'：原文未提及Elsevier振兴整个出版业，属于无中生有。D项'慷慨资助研究者'：原文恰恰表明研究者要花巨资获取自己的研究成果，出版商是获利方而非资助方，属于反向干扰。",
+    "tip": "注意对比对象，existential crisis的主语是'the rest of the publishing industry'而非学术出版。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "The most drastic, and thoroughly illegal, reaction has been the emergence of Sci-Hub... shows the legal ecosystem has lost legitimacy among its users and must be transformed so that it works for all participants.",
+    "why": "作者对Sci-Hub的态度需从用词和论述逻辑综合判断。作者明确指出Sci-Hub是'thoroughly illegal'（完全违法的），用'most drastic'（最激进的）来形容。虽然作者承认其成功反映了现有体系的问题，但强调的是现有体系'must be transformed'，并未肯定违法行为本身。这种态度是担忧的（concerned）：既忧虑现有体系的失败，也忧虑违法应对方式的蔓延。",
+    "traps": "A项'如释重负'：作者对违法行为不可能感到宽慰。B项'困惑'：作者对Sci-Hub成功的原因分析清晰，并不困惑。D项'受到鼓舞'：作者明确称其'thoroughly illegal'，不可能受到鼓舞。",
+    "tip": "态度题需综合关键形容词和论述方向，'thoroughly illegal'和'must be transformed'暗示担忧。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "either freely available from the moment of publication, or paywalled for a year or more so that the publishers can make a profit before being placed on general release.",
+    "why": "第五段描述开放获取的两种形式：一种是发表即免费，另一种是设定一年或更长时间的付费墙，让出版商在公开发布前获取利润。第六段还指出出版商通过向作者收取500至5000英镑的文章准备费来弥补成本。这些都说明开放获取条款仍然'给出版商留有盈利空间'，A项正确。",
+    "traps": "B项'使科学家发表论文更容易'：原文提到科学家需支付高额文章准备费，并未说发表变得更容易，属于无中生有。C项'大幅降低出版成本'：第六段明确指出'the new system has not yet worked out any cheaper'且费用持续上升，与原文矛盾。D项'使大学摆脱财务负担'：原文明确说新体系对大学来说并没有变得更便宜，大学仍面临订阅费和文章准备费的双重负担，属于反向干扰。",
+    "tip": "注意'not yet worked out any cheaper'这一关键否定句，直接排除C和D。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "labour is provided free in exchange for the hope of status, while huge profits are made by a few big firms who run the market places. In both cases, we need a rebalancing of power.",
+    "why": "末段将学术出版模式类比为社交互联网经济：劳动者（众多科学家）免费提供劳动以换取地位的希望，而少数经营市场的大公司则攫取巨额利润。'a few big firms'靠'free labour'获利，即'少数人从多数人身上获利'。D项'The few feed on the many'（少数人靠多数人养活）精准概括了这一特征。",
+    "traps": "A项'提供试用订阅'：原文未提及任何试用订阅机制，属于无中生有。B项'劳动战胜地位'：原文说劳动者仅获得'地位的希望'，实际利润被大公司拿走，劳动者并未'胜出'，属于曲解原文。C项'成本得到良好控制'：原文反复强调费用持续上升（steadily rising at a rate above inflation），与成本控制完全矛盾。",
+    "tip": "最后一段总结全文核心观点，类比修辞往往是出题重点，抓住对比双方的关系。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "peer review",
+    "cn": "同行评审（n.）"
+   },
+   {
+    "w": "acquisition",
+    "cn": "获得，获取（n.）"
+   },
+   {
+    "w": "profit margin",
+    "cn": "利润率（n.）"
+   },
+   {
+    "w": "existential",
+    "cn": "关乎存亡的，存在的（adj.）"
+   },
+   {
+    "w": "drastic",
+    "cn": "激进的，极端的（adj.）"
+   },
+   {
+    "w": "paywalled",
+    "cn": "设有付费墙的（adj.）"
+   },
+   {
+    "w": "legitimacy",
+    "cn": "合法性，正当性（n.）"
+   },
+   {
+    "w": "open access",
+    "cn": "开放获取（n.）"
+   },
+   {
+    "w": "subscription",
+    "cn": "订阅费，订阅（n.）"
+   },
+   {
+    "w": "inflation",
+    "cn": "通货膨胀（n.）"
+   },
+   {
+    "w": "rebalancing",
+    "cn": "再平衡（n.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The Dutch giant Elsevier, which claims to publish 25% of the scientific papers produced in the world, made profits of more than £900m last year, while UK universities alone spent more than £210m in 2016 to enable researchers to access their own publicly funded research; both figures seem to rise unstoppably despite increasingly desperate efforts to change them.",
+    "cn": "荷兰巨头爱思唯尔声称出版了全球25%的学术论文，去年利润超过9亿英镑；而仅英国各大学在2016年就花费超过2.1亿英镑，以使研究人员能够获取他们自己用公共资金资助的研究成果；尽管人们越来越急迫地试图改变这些数字，但两个数字似乎都在不可阻挡地上升。",
+    "note": "主干为Elsevier made profits... while UK universities spent...形成对比；which引导非限制性定语从句修饰Elsevier；分号后both figures引出让步关系despite...。"
+   },
+   {
+    "en": "The success of Sci-Hub, which relies on researchers passing on copies they have themselves legally accessed, shows the legal ecosystem has lost legitimacy among its users and must be transformed so that it works for all participants.",
+    "cn": "Sci-Hub的成功依赖于研究人员传递他们自己合法获取的论文副本，这表明合法生态系统已经在用户中丧失了合法性，必须进行变革，使其对所有参与者都有效。",
+    "note": "主干为The success shows...；which引导非限制性定语从句；shows后接两个并列宾语从句（has lost...and must be transformed）；so that引导目的状语从句。"
+   },
+   {
+    "en": "In some ways the scientific publishing model resembles the economy of the social internet: labour is provided free in exchange for the hope of status, while huge profits are made by a few big firms who run the market places.",
+    "cn": "在某些方面，学术出版模式类似于社交互联网经济：劳动者免费提供劳动以换取获得地位的希望，而少数经营市场平台的大公司则获取巨额利润。",
+    "note": "冒号后为类比展开，labour is provided...while huge profits are made...构成对比；who引导定语从句修饰a few big firms，点明利润归属。"
+   }
+  ]
+ }
+}

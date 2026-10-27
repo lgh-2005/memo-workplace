@@ -1,0 +1,163 @@
+{
+ "schemaVersion": 1,
+ "id": "a2a200f80779__reading__2",
+ "examId": "a2a200f80779",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 12 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T04:45:13.505Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 74657,
+ "usage": {
+  "prompt_tokens": 1552,
+  "completion_tokens": 7989,
+  "total_tokens": 9541,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5591
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1552
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "私人太空旅行遭遇挫折",
+  "gist": "本文以维珍银河飞船事故为切入点，指出事故给太空旅游业带来阴影。文章回顾太空旅游的发展历程，介绍维珍银河的商业计划因事故受阻，分析相关监管法规及FAA可能采取的监管措施，最后表达作者观点：尽管太空飞行有风险，但开拓新旅行方式应以经验降低风险，值得继续推进。",
+  "structure": [
+   "首两段引入事故，点明其对太空旅游的负面影响。",
+   "中间两段回顾太空旅游历史与维珍银河进展，说明事故导致计划搁置。",
+   "第五段分析相关法律及FAA可能采取的行动，并指出其潜在影响。",
+   "末段总结：前景取决于各方反应，作者认为风险可通过经验降低，行业值得开拓。"
+  ],
+  "difficulty": "中等",
+  "translation": "“航天界有句老话：业余人士谈技术，专业人士谈保险。”去年接受《经济学人》采访时，太空旅游公司维珍银河的首席执行官乔治·怀特塞兹就将其公司归入后者行列。但10月31日VSS Enterprise飞船失事，导致一名飞行员死亡、另一名重伤，此时保险只能是冰冷的安慰。\n\n除了惨痛的生命损失外，加州发生的这起事故将给太空旅游的未来蒙上长长的阴影，甚至在其尚未真正开始之前。\n\n太空旅游的概念始于2001年，当时富有冒险精神的百万富翁工程师丹尼斯·蒂托花费2000万美元乘坐俄罗斯飞船进行了太空飞行。此后至今，仅有六名度假者进入轨道，价格同样高得惊人。但最近，各家公司开始计划更实惠的“亚轨道”飞行——即更短暂的、仅到达太空无垠黑暗边缘的航行。在本周事故发生之前，维珍银河似乎最接近启动定期飞行。该公司已从约800名潜在太空游客那里收取了定金，其中包括斯蒂芬·霍金。\n\n在多年来因技术问题而一再推迟之后，维珍银河创始人理查德·布兰森爵士最近表示，一艘SpaceShipTwo飞船最早将于2015年2月搭载首批付费客户。如今，这一时间表似乎已不可能实现。今年7月，据报道，失事太空飞机的一架姐妹飞船已完成大约一半。另一半将不得不等待，因为美国联邦航空管理局（FAA）和国家运输安全委员会的有关部门正在调查事故原因。\n\n与此同时，整个太空旅游行业都将坐立不安。旨在鼓励私人太空飞行器和服务的2004年《商业航天发射修正案》禁止交通部长（从而也禁止FAA）监管私人航天器的设计或运营，除非这些航天器已导致机组人员或乘客严重受伤或死亡。这意味着FAA可以吊销维珍银河的飞行许可证。它还可以坚持像检查商用飞机一样彻底检查私人载人航天器。虽然这可能会使亚轨道旅行更安全，但也会给一个新兴产业增加巨大的成本和复杂性，而迄今为止，该产业在很大程度上只是亿万富翁和梦想工程师的游乐场。\n\n维珍银河、监管机构和公众如何应对这场最新的悲剧，将决定私人太空旅行能否以及多快超越那个游乐场。毫无疑问，太空飞行存在风险，而开拓一种新的旅行方式就是要释放这些风险，并利用来之不易的经验来降低风险。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "On top of the tragic loss of life, the accident in California will cast a long shadow over the future of space tourism, even before it has properly begun.",
+    "why": "文章第二段明确提到，这起事故将给太空旅游的未来投下长长的阴影，即便这项事业尚未真正开始。B选项“对太空旅游有强烈的负面影响”与原文“cast a long shadow”含义一致，即造成长期不利影响，故为正确项。",
+    "traps": "A项“导致维珍银河破产”文中未提及，属于无中生有；C项“使富人不敢参加太空旅行”过度推断，文章只说影响行业，未明确针对富人；D项“引起公众对安全问题的关注”文中未强调公众关注，而是强调对行业前景的阴影。",
+    "tip": "细节题要找准定位句，理解同义转述，警惕无中生有或过度推断。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Virgin Galactic had, prior to this week's accident, seemed closest to starting regular flights.",
+    "why": "第三段指出，在本周事故之前，维珍银河似乎是最接近启动定期飞行的公司，说明该公司当时已准备开展常规商业运营。C项“即将开始定期业务”是对该句的正确概括。",
+    "traps": "A项“刚建造了一架商业飞行器”错误，文中提到姊妹飞船才完成一半；B项“将六名乘客送入太空”混淆对象，那是指整个行业；D项“是首个推出亚轨道飞行的公司”文中未提及，只提到各公司开始计划，未说明谁第一。",
+    "tip": "注意选项与原文的对应关系，避免张冠李戴或无中生有。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The 2004 Commercial Space Launch Amendments Act, intended to encourage private space vehicles and services, prohibits the transportation secretary (and thereby the FAA) from regulating the design or operation of private spacecraft, unless they have resulted in a serious or fatal injury to crew or passengers.",
+    "why": "定位句明确说明该法案旨在鼓励私人太空飞行器和服务，即推动太空旅游行业发展。D项“促进太空旅游产业”是原文intended to encourage...的同义转述，因此正确。",
+    "traps": "A项“确保太空旅行安全”并非立法初衷，而是可能带来的后续影响；B项“限制FAA职能”是对法案具体规定的误解，立法目的不是限制；C项“使私人太空探索合法化”原文未提，且私人探索本身已存在。",
+    "tip": "注意区分法律目的与实际效果，定位原文中的intended to是关键。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "That means that the FAA could suspend Virgin Galactic's license to fly.",
+    "why": "原文明确指出，由于该法案的条款，FAA可以吊销维珍银河的飞行许可证。D项“暂停维珍银河载客进入太空的许可证”与原文一致，是事故后FAA可能采取的直接行动。",
+    "traps": "A项“实施更严格安全标准”是另一种可能（insist on checking），但不如D项直接且明确；B项“停止认证新机构”未提及；C项“修改法案”未提及，且FAA本身无权修改法律。",
+    "tip": "优先选择原文直接陈述的选项，避免将可能性当作必然，选项与原文动词须严格对应。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "There is no doubt that spaceflight entails risks, and to pioneer a new mode of travel is to free those risks, and to reduce them with the benefit of hard-won experience.",
+    "why": "末段作者指出太空飞行固然有风险，但开拓新旅行方式就是要释放风险并用经验降低风险，言下之意是支持发展私人太空旅行。A项“尽管有风险仍值得推进”符合作者态度。",
+    "traps": "B项“不应仅限于富人”文中未体现作者观点；C项“应严格监管”不是作者重点，作者更强调开拓；D项“太危险不应继续”与原文意思相反，作者认为应通过经验克服风险。",
+    "tip": "态度题要抓住末段总结性语句，注意作者用词如pioneer、reduce risks等积极色彩。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "insurance",
+    "cn": "n. 保险"
+   },
+   {
+    "w": "cold comfort",
+    "cn": "n. 无用的安慰"
+   },
+   {
+    "w": "cast a long shadow",
+    "cn": "v. 投下长远的阴影（产生负面影响）"
+   },
+   {
+    "w": "astronomical",
+    "cn": "adj. 天文数字的；极大的"
+   },
+   {
+    "w": "suborbital",
+    "cn": "adj. 亚轨道的"
+   },
+   {
+    "w": "deposit",
+    "cn": "n. 定金，押金"
+   },
+   {
+    "w": "dog",
+    "cn": "v. 困扰，纠缠"
+   },
+   {
+    "w": "tenterhooks",
+    "cn": "n. 坐立不安，提心吊胆（常与on连用）"
+   },
+   {
+    "w": "amendment",
+    "cn": "n. 修正案"
+   },
+   {
+    "w": "suspend",
+    "cn": "v. 暂停，吊销"
+   },
+   {
+    "w": "entail",
+    "cn": "v. 需要，包含"
+   },
+   {
+    "w": "hard-won",
+    "cn": "adj. 来之不易的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The 2004 Commercial Space Launch Amendments Act, intended to encourage private space vehicles and services, prohibits the transportation secretary (and thereby the FAA) from regulating the design or operation of private spacecraft, unless they have resulted in a serious or fatal injury to crew or passengers.",
+    "cn": "旨在鼓励私人太空飞行器和服务的2004年《商业航天发射修正案》禁止交通部长（从而也禁止FAA）监管私人航天器的设计或运营，除非这些航天器已导致机组人员或乘客严重受伤或死亡。",
+    "note": "句子主干为The Act prohibits the transportation secretary from regulating...，intended to...是过去分词短语作后置定语，unless引导条件状语从句。"
+   },
+   {
+    "en": "While that may make suborbital travel safer, it would add significant cost and complexity to an emerging industry that has until now operated largely as the playground of billionaires and dreamy engineers.",
+    "cn": "虽然这可能会使亚轨道旅行更安全，但也会给一个新兴产业增加巨大的成本和复杂性，而迄今为止，该产业在很大程度上只是亿万富翁和梦想工程师的游乐场。",
+    "note": "While引导让步状语从句，主句中that引导定语从句修饰industry，as the playground of...是as介词短语作方式状语。"
+   },
+   {
+    "en": "How Virgin Galactic, regulators and the public respond to this most recent tragedy will determine whether and how soon private space travel can transcend that playground.",
+    "cn": "维珍银河、监管机构和公众如何应对这场最新的悲剧，将决定私人太空旅行能否以及多快超越那个游乐场。",
+    "note": "How引导主语从句，主句谓语will determine，whether and how soon引导宾语从句。"
+   }
+  ]
+ }
+}

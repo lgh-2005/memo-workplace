@@ -1,0 +1,193 @@
+{
+ "schemaVersion": 1,
+ "id": "c620e17f5aba__translation__all",
+ "examId": "c620e17f5aba",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2019 年 6 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:26:30.081Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33771,
+ "usage": {
+  "prompt_tokens": 788,
+  "completion_tokens": 2069,
+  "total_tokens": 2857,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 788,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2069,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 788,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国方言的差异与保护",
+  "reference": "China is a vast country with a large population, and people in many areas speak their own dialects. Dialects differ greatly in pronunciation, but less so in vocabulary and grammar. Some dialects, especially those in the north and south, are so different that speakers of different dialects often find it hard to understand each other. Dialects are regarded as an integral part of local culture, but in recent years, the number of people who can speak dialects has been continuously declining. To encourage people to speak more local languages, some local governments have adopted measures such as offering dialect courses in schools and broadcasting dialect programs on radio and television, in the hope of preserving local cultural heritage.",
+  "sentences": [
+   {
+    "cn": "中国幅员辽阔，人口众多，很多地方人们都说自己的方言。",
+    "en": "China is a vast country with a large population, and people in many areas speak their own dialects.",
+    "structure": "主系表结构 + with 伴随结构 + 并列句，前半句描述国情，后半句引出方言话题",
+    "keys": [
+     "幅员辽阔 a vast country",
+     "人口众多 with a large population",
+     "方言 dialects"
+    ]
+   },
+   {
+    "cn": "方言在发音上差别很大，词汇和语法差别较小。",
+    "en": "Dialects differ greatly in pronunciation, but less so in vocabulary and grammar.",
+    "structure": "主谓结构 + 转折并列句，用 less so 省略重复动词，形成简洁对比",
+    "keys": [
+     "发音 pronunciation",
+     "词汇 vocabulary",
+     "语法 grammar",
+     "差别很大 differ greatly"
+    ]
+   },
+   {
+    "cn": "有些方言，特别是北方和南方的方言，差异很大，以致于说不同方言的人常常很难听懂彼此的讲话。",
+    "en": "Some dialects, especially those in the north and south, are so different that speakers of different dialects often find it hard to understand each other.",
+    "structure": "so...that... 结果状语从句，中间插入 especially 引导的插入语做补充说明",
+    "keys": [
+     "特别是 especially",
+     "以致于 so...that...",
+     "听懂彼此的讲话 understand each other"
+    ]
+   },
+   {
+    "cn": "方言被认为是当地文化的一个组成部分，但近年来能说方言的人数不断减少。",
+    "en": "Dialects are regarded as an integral part of local culture, but in recent years, the number of people who can speak dialects has been continuously declining.",
+    "structure": "被动语态 + but 转折并列句，后半句含 who 引导的定语从句修饰 people，谓语用现在完成进行时表持续趋势",
+    "keys": [
+     "被认为是 be regarded as",
+     "组成部分 an integral part",
+     "近年来 in recent years",
+     "不断减少 has been continuously declining"
+    ]
+   },
+   {
+    "cn": "为了鼓励人们更多说本地语言，一些地方政府已经采取措施，如在学校开设方言课，在广播和电视上播放方言节目，以期保存本地的文化遗产。",
+    "en": "To encourage people to speak more local languages, some local governments have adopted measures such as offering dialect courses in schools and broadcasting dialect programs on radio and television, in the hope of preserving local cultural heritage.",
+    "structure": "To do 不定式目的状语 + 主句 + such as 引导举例列举 + in the hope of 介词短语表目的，句末再用现在分词做宾语",
+    "keys": [
+     "地方政府 local governments",
+     "采取措施 adopt/take measures",
+     "开设方言课 offer dialect courses",
+     "播放方言节目 broadcast dialect programs",
+     "以期 in the hope of",
+     "文化遗产 cultural heritage"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "幅员辽阔",
+    "en": "a vast country / vast in territory"
+   },
+   {
+    "cn": "方言",
+    "en": "dialect"
+   },
+   {
+    "cn": "发音",
+    "en": "pronunciation"
+   },
+   {
+    "cn": "词汇",
+    "en": "vocabulary"
+   },
+   {
+    "cn": "组成部分",
+    "en": "an integral part / a component"
+   },
+   {
+    "cn": "地方政府",
+    "en": "local government"
+   },
+   {
+    "cn": "采取措施",
+    "en": "adopt measures / take measures"
+   },
+   {
+    "cn": "文化遗产",
+    "en": "cultural heritage"
+   },
+   {
+    "cn": "广播和电视",
+    "en": "radio and television"
+   },
+   {
+    "cn": "以期",
+    "en": "in the hope of / with the aim of"
+   }
+  ],
+  "pitfalls": [
+   "'幅员辽阔，人口众多'若逐字硬译为 territory is wide, people are many 则严重中式英语，应整合为 a vast country with a large population",
+   "'以致于'对应 so...that... 结果状语从句，不少考生误用 so that（目的）或遗漏 so 导致句式错误",
+   "'不断减少'需用现在完成时或现在完成进行时（has been declining）体现持续趋势，不可用一般现在时",
+   "'以期'表达目的兼期望，应译为 in the hope of，若仅用 to 则语义偏弱，丢失'期望'含义",
+   "'开设方言课'中'开设'应译为 offer/set up，不宜用 open，open a course 搭配不当"
+  ],
+  "upgrades": [
+   {
+    "plain": "China is very big and has many people",
+    "better": "China is a vast country with a large population",
+    "note": "用 vast 和 with 伴随结构更书面紧凑，避免口语化碎句"
+   },
+   {
+    "plain": "Dialects are thought to be a part of local culture",
+    "better": "Dialects are regarded as an integral part of local culture",
+    "note": "regarded as 比 thought to be 更正式，integral 比 a 更强调不可分割性"
+   },
+   {
+    "plain": "the number of people has been reducing",
+    "better": "the number of people who can speak dialects has been continuously declining",
+    "note": "decline 比 reduce 更适合描述数量下降趋势，continuously 呼应'不断'"
+   },
+   {
+    "plain": "to save local culture",
+    "better": "to preserve local cultural heritage",
+    "note": "preserve 比 save 更精准对应文化语境中的'保存'，cultural heritage 是固定搭配"
+   },
+   {
+    "plain": "have done some things like teaching dialects in schools",
+    "better": "have adopted measures such as offering dialect courses in schools",
+    "note": "adopt measures 是政策语体标准搭配，such as + doing 列举更规范"
+   }
+  ]
+ }
+}

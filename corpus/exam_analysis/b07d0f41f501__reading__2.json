@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "b07d0f41f501__reading__2",
+ "examId": "b07d0f41f501",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年考研英语真题",
+ "year": 2026,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:58:49.254Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58103,
+ "usage": {
+  "prompt_tokens": 1679,
+  "completion_tokens": 3418,
+  "total_tokens": 5097,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1679,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3418,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1679,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "好莱坞影视产业衰退与加州应对之策",
+  "gist": "文章指出好莱坞影视制作持续外流，其他地区以税收优惠吸引拍摄，加之流媒体从扩张转向盈利导致剧集产量锐减，洛杉矶影视业面临人才流失的严峻危机。作者呼吁加州影视委员会等机构应尽快改善激励政策，留住现有项目并吸引新制作，以维护加州在行业中的核心地位。",
+  "structure": [
+   "第1-2段：引出好莱坞衰退现状，以工会声明点明危机",
+   "第3段：其他地区以税收优惠抢夺制作资源",
+   "第4-5段：流媒体战略转变导致'巅峰电视'时代终结",
+   "第6段：人才与收入流失的恶性循环风险",
+   "第7段：呼吁加州政府立即行动以保住行业地位"
+  ],
+  "difficulty": "中等",
+  "translation": "没有什么行业比得上娱乐业——但在洛杉矶，感觉几乎已没有行业可言。\n\n如果这听起来过于夸张，不妨想想这一点：代表约3000名电影从业者的美术指导工会已暂停了一项培训项目，并发表声明解释说\"我们无法问心无愧地鼓励你从事我们这个行业\"。这是对好莱坞衰退的回应，而这种衰退正使该行业和南加州达到一个危急关头。\n\n自20世纪50年代以来，影视制作就一直在从好莱坞流失，但其影响从未像现在这样明显。美国其他地区、加拿大和欧洲稳步增加激励措施以吸引电视节目和电影，将加州远远甩在身后。佐治亚州在影视制作成本上提供高达30%的可转让税收抵免，如果项目包含佐治亚州的宣传标识，还可在基础税收抵免上额外增加10%。\n\n即使加州已将大量制作项目拱手让给其他地区，在今年之前洛杉矶仍有大量电影制作在进行。使我们得以维持的是\"巅峰电视\"——即流媒体服务爆发式增长所需要的海量内容。\n\n但2022年是\"巅峰电视\"的巅峰。当时Netflix、亚马逊和Apple TV等平台斥资数十亿美元制作内容以吸引新订阅用户，导致那一年共推出633部编剧剧集。随着流媒体的重心从用户增长转向盈利，服务价格上涨，新剧数量降至2023年的481部，预计几年内还将跌至300多部。\n\n如果南加州的制作量在较长时间内跌破某个临界水平，该行业的核心人才将随同巨额收入一起流失。如果我们无法提供大量本地影视从业者、银幕人才以及为娱乐产业提供支持的本地企业，那么说服制片公司在此拍摄将变得更加困难。\n\n这就是加州电影委员会及其洛杉矶对应机构Film LA现在就应该采取行动的原因，否则为时已晚。这些机构和其他政府部门应大幅改善激励措施，以留住现有节目并吸引新制作落户洛杉矶。让我们继续演出……并确保这场演出不会在没有我们的情况下上演。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "we cannot in good conscience encourage you to pursue our profession. This is a reaction to Hollywood's decline, which is reaching a critical point for the industry and Southern California.",
+    "why": "工会暂停培训项目并劝阻人们进入该行业，原文明确指出这是对'好莱坞衰退'的回应，且衰退正'达到危急关头'。D选项'好莱坞的黯淡局面'是对原文decline和critical point的同义概括，逻辑完全吻合。",
+    "traps": "A'人们对电影兴趣减少'偷换主语，声明针对的是从业前景而非观众兴趣；B'电影工人对过去的怀旧'无中生有，原文未提及怀旧情绪；C'南加州的吸引力'与声明传达的负面信息方向相反，属于反向干扰。",
+    "tip": "关注声明的上下文语境，抓住关键定性词decline和critical point。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "Other regions in the United States, Canada and Europe have steadily increased incentives to attract TV shows and movies, leaving California in the dust.",
+    "why": "佐治亚州的例子紧跟在'其他地区稳步增加激励措施以吸引影视制作'这一论点之后，用具体的30%可转让税收抵免和额外10%增幅来说明各地如何以税收优惠吸引制作项目。A选项'用税收优惠吸引制作'精准对应该论点。",
+    "traps": "B'推动影视设施改善'原文未涉及设施问题，属于无中生有；C'刺激州际竞争'虽表面相关但并非该例证的论证目的，原文重点在吸引制作外流；D'为影视制作筹集资金'曲解了税收抵免的性质，抵免是减税而非筹资。",
+    "tip": "例证题需向上找论点句，例子本身不是答案，其服务的观点才是。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "As the streamers' emphasis changed from subscriber growth to profitability, prices for the services went up and the number of new shows went down",
+    "why": "原文明确表述流媒体平台将重心从'用户增长'转向'盈利能力'，导致服务涨价、新剧减产。B选项'流媒体改变了战略优先级'是对emphasis changed from subscriber growth to profitability的精确概括。",
+    "traps": "A'流媒体失去技术优势'原文从未提及技术层面的变化，属于无中生有；C'订阅者对大平台心存警惕'在原文中没有依据，用户态度未被讨论；D'订阅者对新剧不满'同样缺乏原文支撑，剧集减少是平台策略调整的结果而非用户不满所致。",
+    "tip": "因果关系题要精确对应原文因果链，不可将结果误认为原因。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "If productions in Southern California dip below a critical level for too long, the industry's essential talent will drift away along with enormous sums of revenue.",
+    "why": "第六段指出，若制作量长期跌破临界水平，'行业核心人才将流失'，同时伴随巨额收入流出。C选项'人才向其他地方流失'（brain drain）精确对应essential talent will drift away这一核心信息。",
+    "traps": "A'产品质量下降'原文未提及质量问题，属于无中生有；B'对外来人才的需求'与原文方向相反，原文说的是本地人才流出而非引进外来人才；D'劳动力成本大幅上升'原文完全没有涉及成本上涨，属于凭空臆造。",
+    "tip": "drift away与brain drain构成同义替换，需敏锐识别。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "These agencies and other government bodies should dramatically improve incentives to keep our current shows and attract new productions to Los Angeles. Let's go on with the show…and make sure the show doesn't go on without us.",
+    "why": "末段呼吁加州影视机构和政府大幅改善激励措施以留住现有节目、吸引新制作，最后一句'确保演出不会在没有我们的情况下上演'强调的核心是加州不能被排除在行业之外，即维护其在行业中的地位。A选项完全吻合。",
+    "traps": "B'吸引比以前更多的投资'过度引申，原文强调的是保持地位而非超越过去的投资水平；C'追求更高的制作标准'偷换概念，原文讨论的是留住制作项目而非提升制作质量；D'加强与其他州的协调'与文意相悖，其他州恰恰是竞争对手而非协作对象。",
+    "tip": "结尾段总结全文态度，抓住keep和make sure the show doesn't go on without us这一核心诉求。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "melodramatic",
+    "cn": "adj. 夸张的；过于戏剧化的"
+   },
+   {
+    "w": "in good conscience",
+    "cn": "adv. 问心无愧地；凭良心"
+   },
+   {
+    "w": "incentive",
+    "cn": "n. 激励措施；奖励"
+   },
+   {
+    "w": "transferable",
+    "cn": "adj. 可转让的；可转移的"
+   },
+   {
+    "w": "kept afloat",
+    "cn": "v. 使维持运转；使免于失败"
+   },
+   {
+    "w": "glut",
+    "cn": "n. 过量供应；供过于求"
+   },
+   {
+    "w": "hemorrhaged",
+    "cn": "v. 大量流失（金钱等）；严重出血"
+   },
+   {
+    "w": "scripted",
+    "cn": "adj. 有剧本的；编剧创作的"
+   },
+   {
+    "w": "drift away",
+    "cn": "v. 逐渐流失；渐渐离去"
+   },
+   {
+    "w": "deep bench",
+    "cn": "n. 充足的后备人才；强大的替补阵容"
+   },
+   {
+    "w": "counterpart",
+    "cn": "n. 对应机构；对等人物"
+   },
+   {
+    "w": "dip",
+    "cn": "v. 下降；跌落"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Georgia offers up to 30% in transferable tax credits on film and TV production costs, plus an additional 10% increase on the base tax credit if the project includes a Georgia promotional logo.",
+    "cn": "佐治亚州在影视制作成本上提供高达30%的可转让税收抵免，如果项目包含佐治亚州的宣传标识，还可在基础税收抵免上额外增加10%。",
+    "note": "主句为Georgia offers...costs，plus引出附加条件，if从句为条件状语从句修饰额外优惠的适用情形。"
+   },
+   {
+    "en": "Persuading studios to film here would become much more challenging if we couldn't offer a deep bench of local film workers, on-screen talent and local businesses that support the entertainment industry.",
+    "cn": "如果我们无法提供大量本地影视从业者、银幕人才以及为娱乐产业提供支持的本地企业，那么说服制片公司在此拍摄将变得更加困难。",
+    "note": "主句主语为动名词短语Persuading studios to film here；if引导条件状语从句，宾语由三个并列名词构成，that从句修饰local businesses。"
+   },
+   {
+    "en": "As the streamers' emphasis changed from subscriber growth to profitability, prices for the services went up and the number of new shows went down to 481 released in 2023, with the number expected to dip into the 300s within a few years.",
+    "cn": "随着流媒体的重心从用户增长转向盈利能力，服务价格上涨，新剧数量降至2023年的481部，预计几年内还将跌至300多部。",
+    "note": "As引导时间/原因状语从句；主句含两个并列谓语went up和went down；with结构为独立主格，补充说明未来趋势。"
+   }
+  ]
+ }
+}

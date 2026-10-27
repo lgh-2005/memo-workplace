@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "3cd42931854a__banked_cloze__all",
+ "examId": "3cd42931854a",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2018 年 6 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:17:12.188Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 73792,
+ "usage": {
+  "prompt_tokens": 1370,
+  "completion_tokens": 4470,
+  "total_tokens": 5840,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1370,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4470,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1370,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "吉萨大金字塔的精确尺寸测量",
+  "gist": "科学家利用新测量方法发现吉萨大金字塔并非完全对称，东侧比西侧最多短5.5英寸。然而，更令人惊叹的是古埃及人在4500年前仅凭简陋工具就能将金字塔建造得如此接近完美，其朝向与基本方位的偏差极其微小。",
+  "difficulty": "中等",
+  "translation": "科学家在扫描和测绘吉萨金字塔群时表示，他们发现吉萨大金字塔并非完全对称——但差距微乎其微。这座金字塔是世界七大奇迹中最古老的。几个世纪以来，金字塔的确切尺寸一直令专家们困惑不已，因为最初覆盖其表面的\"超过21英亩坚硬的白色外层石块\"早已被移除。在最新一期的简报《AERAGRAM》中——该刊物记录了古埃及研究协会的工作——工程师格伦·达什表示，他的团队采用了一种新的测量方法，即寻找外层石块的任何现存残余物，以确定原始边缘的位置。他们发现金字塔的东侧比西侧最多短5.5英寸。\n\n然而，最令他着迷的问题并不是4500年前设计和建造金字塔的古埃及人哪里做错了，而是他们如何做到如此接近完美。达什写道：\"我们只能猜测古埃及人如何仅凭他们拥有的工具，以如此高的精度来布置这些线条。\"他说他的假说是古埃及人在网格上进行设计布局，并指出大金字塔的朝向仅略微偏离基本方位（其南北轴线偏正北方向以西3分54秒，而其东西轴线偏正东方向以北3分51秒）——考古学家Atlas Obscura指出，这一偏差\"极小，但相近\"。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "K",
+    "correct": "puzzled",
+    "why": "此处需要过去式动词作谓语。主语是 the pyramid's exact size，宾语是 experts，语义为\"金字塔的确切尺寸令专家困惑了几个世纪\"。has puzzled 构成现在完成时，语法和语义均通顺。",
+    "traps": "fascinates 虽然语义接近\"令人着迷\"，但此处 has 后需过去分词形式，fascinates 是第三人称单数现在时，语法不合；established 语义不搭配。",
+    "tip": "注意 has + 过去分词构成现在完成时的固定搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "M",
+    "correct": "removed",
+    "why": "此处 were ____ long ago 构成被动语态，需要过去分词。外层石块是\"被移走的\"，removed 语义和语法均正确，表示覆盖金字塔的石块很久以前就被拆除了。",
+    "traps": "established（被建立）语义不合，外层石块不是被\"建立\"而是被\"移除\"；puzzled 已用于第26题且语义不搭配。",
+    "tip": "were + 过去分词构成被动语态，结合语境判断动作方向。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "chronicles",
+    "why": "which 引导非限制性定语从句，先行词是 newsletter \"AERAGRAM\"，主语为单数，需要第三人称单数动词。chronicles 意为\"记录、记载\"，表示该简报记录了古埃及研究协会的工作，语义通顺。",
+    "traps": "fascinates 语义不当，简报不是\"令人着迷\"而是\"记录\"工作；其他动词形式或语义均不匹配此处定语从句结构。",
+    "tip": "which 引导的定语从句需要第三人称单数谓语动词。"
+   },
+   {
+    "number": 29,
+    "answer": "L",
+    "correct": "remnants",
+    "why": "此处 surviving ____ of the casing 需要名词，surviving 作前置定语。remnants 意为\"残余物、遗迹\"，指外层石块的残存部分，与 surviving 搭配自然，用以确定原始边缘位置。",
+    "traps": "hypothesis（假说）和 precision（精度）虽为名词，但语义不合；maximum 放在此处无法与 surviving 及 of the casing 形成合理搭配。",
+    "tip": "形容词 surviving 后需接名词，结合 of the casing 判断语义。"
+   },
+   {
+    "number": 30,
+    "answer": "F",
+    "correct": "maximum",
+    "why": "a maximum of 5.5 inches 是固定短语，表示\"最多5.5英寸\"。此处需要名词，说明东侧比西侧短的最大幅度为5.5英寸，语义精准。",
+    "traps": "a precision of / a hypothesis of 虽然语法上勉强可接 of，但语义不通；此处强调的是差值的上限，只有 maximum 表达\"最多\"这一含义。",
+    "tip": "a maximum of 为固定搭配，表示\"最多、至多\"。"
+   },
+   {
+    "number": 31,
+    "answer": "D",
+    "correct": "fascinates",
+    "why": "The question that most ____ him 需要第三人称单数动词，主语是 the question（单数）。fascinates 意为\"使着迷\"，表示最令他着迷的问题，与后文\"不是哪里做错了，而是如何做到接近完美\"的转折逻辑吻合。",
+    "traps": "puzzled 虽然语义接近但已用于第26题，且此处需要一般现在时第三人称单数形式而非过去式；chronicles 语义不搭配。",
+    "tip": "that 引导定语从句，先行词 question 决定谓语用第三人称单数。"
+   },
+   {
+    "number": 32,
+    "answer": "I",
+    "correct": "perfect",
+    "why": "close to 后可接名词或形容词，此处 perfect 用作名词性概念，表示\"完美的状态\"。语义为\"他们如何做到如此接近完美\"，与前文发现的微小误差形成呼应。",
+    "traps": "complete（完整）语义偏离，文章讨论的不是完整性而是精确性；precision 虽有关联但 close to precision 搭配不如 close to perfect 自然常见。",
+    "tip": "close to perfect 为常见搭配，表示\"接近完美\"。"
+   },
+   {
+    "number": 33,
+    "answer": "J",
+    "correct": "precision",
+    "why": "with such ____ 需要名词。precision 意为\"精确度\"，with such precision 表示\"以如此高的精度\"，与上下文讨论古埃及人惊人的建造精度完美契合。",
+    "traps": "hypothesis 放在此处语义不通（\"以如此假说\"不合逻辑）；maximum 搭配 with such 不自然，且已用于第30题。",
+    "tip": "with such + 不可数名词，表示\"以如此……的程度\"。"
+   },
+   {
+    "number": 34,
+    "answer": "E",
+    "correct": "hypothesis",
+    "why": "his ____ is that... 需要名词作主语补足语。hypothesis 意为\"假说\"，表示\"他的假说是……\"，后接 that 从句说明具体内容，符合科学讨论语境。",
+    "traps": "precision 放在此处语义不通（\"他的精度是……\"不合逻辑）；maximum 同理不搭配 is that 引导的表语从句。",
+    "tip": "名词 + is that 从句结构，需选择能引出推测性内容的名词。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "slightly",
+    "why": "oriented only ____ away from 需要副词修饰 away。slightly 意为\"略微地\"，表示金字塔朝向仅略微偏离基本方位，与后文给出的极小偏差数值（3分54秒）相吻合。",
+    "traps": "此处语法上只能填副词，词库中其他剩余词均非副词，排除无难度；slightly 是唯一能修饰介词短语 away from 的选项。",
+    "tip": "副词修饰介词短语 away from，判断词性即可锁定答案。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "chronicles",
+    "cn": "v. 记录，记载；n. 编年史"
+   },
+   {
+    "w": "fascinates",
+    "cn": "v. 使着迷，深深吸引"
+   },
+   {
+    "w": "puzzled",
+    "cn": "v. 使困惑（puzzle 的过去式/过去分词）"
+   },
+   {
+    "w": "remnants",
+    "cn": "n. 残余物，遗迹，剩余部分"
+   },
+   {
+    "w": "hypothesis",
+    "cn": "n. 假说，假设"
+   },
+   {
+    "w": "precision",
+    "cn": "n. 精确度，精密"
+   },
+   {
+    "w": "casing",
+    "cn": "n. 外壳，外层覆盖物"
+   },
+   {
+    "w": "cardinal directions",
+    "cn": "n. 基本方位（东南西北）"
+   },
+   {
+    "w": "oriented",
+    "cn": "adj./v. 朝向的，定向的"
+   },
+   {
+    "w": "speculate",
+    "cn": "v. 推测，猜测"
+   },
+   {
+    "w": "grid",
+    "cn": "n. 网格，方格"
+   },
+   {
+    "w": "due north",
+    "cn": "n. 正北方向"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握文章主题和大意，标记每个空格所在句子的结构。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法标志词（如冠词、介词、助动词）判断所需词性，初步锁定2-3个候选词。",
+   "第四步：结合上下文语义和逻辑关系（如因果、转折、并列）从候选词中选出最佳答案。",
+   "第五步：填完后回读全文，检查语法一致性（主谓一致、时态、单复数）和语义连贯性，确保无重复选用。"
+  ]
+ }
+}

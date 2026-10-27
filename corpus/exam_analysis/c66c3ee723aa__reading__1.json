@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "c66c3ee723aa__reading__1",
+ "examId": "c66c3ee723aa",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 6 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:02:29.167Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 74235,
+ "usage": {
+  "prompt_tokens": 1920,
+  "completion_tokens": 4885,
+  "total_tokens": 6805,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1920,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4885,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1920,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "缺课类型与学业成绩的关系",
+  "gist": "文章指出美国教育部门将学生缺课视为学业低下的主因，但作者研究发现，有理由的缺课对学业几乎无害，无故缺课才与学业下降密切相关，而无故缺课本质上是家庭和社区危机的信号，而非学业下降的直接原因。作者建议将无故缺课作为识别信号，将资源导向最需要帮助的家庭和儿童。",
+  "structure": [
+   "第1-3段：引出问题——美国学生缺课严重，教育部门呼吁全勤",
+   "第4-5段：作者提出新视角——缺课或反映更深层家庭社区危机",
+   "第6-9段：研究发现——有理由缺课无害，无故缺课是危机信号",
+   "第10-12段：批判现行政策——将所有缺课等同视之的假设有误",
+   "第13段：建议——将无故缺课作为信号，定向分配资源"
+  ],
+  "difficulty": "中等",
+  "translation": "在全国范围内，每六个孩子中就有一个在一年中缺课15天或更多。教育官员对如此大量的缺失教学深表痛惜。\n\n这些长期缺课的学生因错过课堂教学而在学业上受到影响。2015年，美国教育部长回应这一危机，敦促各社区支持每位学生每天到校并在学业上取得成功。他的公开信指出，一年中因任何原因——无论有假还是无假——缺课达10%，都是学业成绩低下的主要原因。\n\n关注孩子们是否上学是有道理的。毕竟，如果学生不出现，老师就无法教他们。\n\n但如果美国的出勤危机远不止学生缺课这么简单呢？如果它实际上反映的是学生面临的家庭和社区危机——例如被赶出家庭公寓、担心社区安全或患病呢？\n\n作为社会科学家，我们研究了有理由缺课和无故缺课与儿童学业成绩之间的关系。\n\n我们发现，经家长请假的缺课对儿童的学习几乎没有危害。事实上，没有无故缺课但有15到18次有理由缺课的孩子，其考试成绩与从未缺课的同龄人持平。\n\n与此同时，即使只有一次无故缺课的普通学生，其学业表现也远不如没有无故缺课的同龄人。\n\n我们认为，无故缺课是儿童和家庭面临诸多挑战（包括经济和医疗困境）的强烈信号。无故缺课能够有力地反映出这些校外挑战如何影响儿童的学业进步。\n\n我们的证据表明无故缺课确实是个问题，但原因与人们通常认为的不同。缺课，尤其是无故缺课，主要作为儿童及其家庭可能面临的多种危机的信号而具有意义，而非因缺失课堂教学而导致学业下降的原因。\n\n我们如何看待缺课问题，关系到教育政策的制定。学校出勤政策通常要求学校和家庭为孩子缺课的天数负责，无论缺课是有理由的还是无故的。\n\n这些政策假定，因任何原因缺课都会因错过课堂教学而在学业上对儿童造成伤害。它们还假定学校能够通过减少学生缺课来有效地进行干预。我们发现这两种假定都不成立。\n\n结果，这些出勤政策最终不成比例地惩罚了那些在生活中面临校外危机的家庭，并向为这些家庭服务的学校施压，要求它们让学生更频繁地到校。\n\n我们建议将无故缺课作为一种信号，据此将资源引导到最需要帮助的儿童和家庭。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "His open letter stated that missing 10% of school days in a year for any reason—excused or unexcused—is a primary cause of low academic achievement.",
+    "why": "原文明确指出教育部长的公开信称\"因任何原因缺课达10%是学业成绩低下的主要原因\"（a primary cause of low academic achievement）。C选项\"低学业成绩主要归因于缺课\"是对原文的准确同义改写，其中\"mainly attributed to\"对应\"a primary cause of\"。",
+    "traps": "A选项\"及时回应缺课危机至关重要\"——原文说的是教育部长回应了危机，但公开信内容并非强调\"及时回应\"的重要性，属于偷换概念。B选项\"长期缺课学生的学业表现令人痛惜\"——\"deplored\"（痛惜）是教育官员的态度，不是公开信的内容，属于张冠李戴。D选项\"缺课对美国教育的影响令人担忧\"——过于笼统，未体现公开信的核心论点即缺课是低成绩的主因，属于概括不精确。",
+    "tip": "细节题需精准定位原文句子，区分\"谁说了什么\"，避免张冠李戴。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "We find that absences excused by a parent do little to harm children's learning.",
+    "why": "原文明确表述\"经家长请假的缺课对儿童学习几乎没有危害\"（do little to harm），A选项\"有理由的缺课对儿童学习几乎没有影响\"是对原文的直接同义转述，\"little impact\"对应\"do little to harm\"。",
+    "traps": "B选项\"无故缺课和有理由缺课之间差异不大\"——与原文相反，作者强调两者影响截然不同，有理由缺课无害但无故缺课影响显著，属于反向干扰。C选项\"有理由缺课带来相对更好的学业表现\"——原文说有理由缺课的学生成绩与从未缺课者持平，并非\"更好\"，属于程度夸大。D选项\"无故缺课对学校和家庭都是巨大挑战\"——原文说无故缺课是家庭面临挑战的信号，而非本身是挑战，属于偷换逻辑关系。",
+    "tip": "注意区分\"信号\"和\"原因\"之间的逻辑关系差异。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "We believe unexcused absence is a strong signal of the many challenges children and families face, including economic and medical hardships.",
+    "why": "原文说\"我们认为无故缺课是儿童和家庭面临的诸多挑战的强烈信号\"。B选项\"它们直接指向儿童及其家庭面临的许多校外挑战\"准确概括了这一观点，\"point directly to\"对应\"a strong signal of\"，\"out-of-school challenges\"对应\"economic and medical hardships\"等校外因素。",
+    "traps": "A选项\"它们可能因缺失教学导致学业成绩下降\"——与原文观点相反，作者明确指出无故缺课\"作为导致学业下降的原因的意义较小\"（matters less as a cause），属于反向干扰。C选项\"美国政府在制定教育政策时通常忽视这一问题\"——原文未提及政府忽视无故缺课，属于无中生有。D选项\"向儿童和家庭发出他们未来可能面临危机的明确信号\"——原文指的是当前面临的危机，而非\"未来\"的危机，属于时态偷换。",
+    "tip": "注意\"信号\"与\"原因\"的区别，这是本文的核心论点。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "They also assume that schools will be able to effectively intervene by reducing student absences. We find neither to be the case.",
+    "why": "原文指出现行政策的第二个假设是\"学校能够通过减少学生缺课来有效干预\"。B选项\"学校能够通过有效干预来提升儿童学业表现\"准确对应了这一假设，\"effective intervention\"对应\"effectively intervene\"，\"boost academic performance\"是减少缺课的预期目标。",
+    "traps": "A选项\"儿童学业表现取决于减少缺课次数\"——虽与第一个假设有关联，但原文第一个假设是\"缺课因错过教学而有害\"，并非直接说\"学业取决于减少缺课数量\"，且该题问的是政策假设，B更完整地对应原文。C选项\"学校和家庭应为校外危机负责\"——原文说政策让学校和家庭为缺课天数负责，而非为\"校外危机\"负责，属于偷换对象。D选项\"儿童学业与教学质量密切相关\"——原文提到的是\"missed instruction\"（缺失的教学），不是\"quality of instruction\"（教学质量），属于偷换概念。",
+    "tip": "题目问\"假设\"时要精确定位assume/assumption等词所在句子。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "We instead suggest using unexcused absence from school as a signal to channel resources to the children and families who need them most.",
+    "why": "原文最后一段明确建议\"将无故缺课作为信号，将资源引导到最需要帮助的儿童和家庭\"。C选项\"将资源导向帮助有需要的儿童\"是对\"channel resources to the children and families who need them most\"的准确概括。",
+    "traps": "A选项\"识别缺课的深层原因\"——虽然与文章观点相关，但并非作者在最后提出的具体建议，属于合理推测但非原文建议。B选项\"重新制定学校出勤政策\"——文章确实批评了现行政策，但作者最后的具体建议是导向资源，并非笼统地\"重新制定政策\"，属于过度概括。D选项\"向学校施压以减少无故缺课\"——这恰恰是作者所批评的现行做法，与作者建议相反，属于反向干扰。",
+    "tip": "建议类题目通常定位于文章末段，注意区分作者主张与被批评的现行做法。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deplored",
+    "cn": "v. 谴责；深感遗憾"
+   },
+   {
+    "w": "chronically",
+    "cn": "adv. 长期地，慢性地"
+   },
+   {
+    "w": "ejected",
+    "cn": "v. 被驱逐，被赶出"
+   },
+   {
+    "w": "unexcused",
+    "cn": "adj. 未经准许的，无故的"
+   },
+   {
+    "w": "hardships",
+    "cn": "n. 困难，艰辛"
+   },
+   {
+    "w": "accountable",
+    "cn": "adj. 有责任的，应作解释的"
+   },
+   {
+    "w": "intervene",
+    "cn": "v. 干预，介入"
+   },
+   {
+    "w": "disproportionately",
+    "cn": "adv. 不成比例地，不相称地"
+   },
+   {
+    "w": "channel",
+    "cn": "v. 引导，输送（资源等）"
+   },
+   {
+    "w": "problematic",
+    "cn": "adj. 有问题的，成问题的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "His open letter stated that missing 10% of school days in a year for any reason—excused or unexcused—is a primary cause of low academic achievement.",
+    "cn": "他的公开信指出，一年中因任何原因——无论有假还是无假——缺课达10%，都是学业成绩低下的主要原因。",
+    "note": "主干为His open letter stated that...，that引导宾语从句；破折号中间的excused or unexcused是对any reason的补充说明；主语为动名词短语missing 10% of school days。"
+   },
+   {
+    "en": "As a result, these attendance policies end up disproportionately punishing families dealing with out-of-school crises in their lives and pressuring schools who serve them to get students to school more often.",
+    "cn": "结果，这些出勤政策最终不成比例地惩罚了那些在生活中面临校外危机的家庭，并向为这些家庭服务的学校施压，要求它们让学生更频繁地到校。",
+    "note": "主干为these policies end up punishing...and pressuring...，两个动名词并列作end up的宾语；dealing with...为现在分词短语修饰families；who serve them为定语从句修饰schools。"
+   },
+   {
+    "en": "Absence from school, and especially unexcused absence, matters mainly as a signal of many crises children and their families may be facing. It matters less as a cause of lower student achievement due to missed instruction.",
+    "cn": "缺课，尤其是无故缺课，主要作为儿童及其家庭可能面临的多种危机的信号而具有意义。它作为因缺失课堂教学而导致学生成绩下降的原因，意义较小。",
+    "note": "第一句主干为Absence matters as a signal；and especially unexcused absence为插入补充；children and their families may be facing为省略关系代词that的定语从句修饰crises。第二句与第一句形成对比。"
+   }
+  ]
+ }
+}

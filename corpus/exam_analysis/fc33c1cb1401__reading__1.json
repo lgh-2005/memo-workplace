@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "fc33c1cb1401__reading__1",
+ "examId": "fc33c1cb1401",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 12 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:04:06.473Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52770,
+ "usage": {
+  "prompt_tokens": 1766,
+  "completion_tokens": 3431,
+  "total_tokens": 5197,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1766,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3431,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1766,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "团结（solidarity）的内涵与社会意义",
+  "gist": "文章围绕\"团结\"这一概念展开论述。首先指出人类是相互依存的，离不开合作；接着定义团结并阐述其在多元社会中的复杂性；随后从社群主义和对抗个人主义两个侧面分析团结的特征；最后引用社会理论家观点，强调真正的团结是包容的、非强迫的，是维护社会秩序与进步的关键因素。",
+  "structure": [
+   "第1-3段：引出团结概念，从人类相互依存引入定义",
+   "第4-6段：分析团结在多元社会中的复杂性及两个侧面",
+   "第7段：社会理论家对团结的评价，揭示其本质与价值"
+  ],
+  "difficulty": "中等",
+  "translation": "作为相互依存的生命体，我们离开他人便无法繁荣发展。我们喜欢与志同道合的人合作——与我们有共同兴趣的人，或同样信仰我们所认真对待的事业的人。这一点从我们将自己组织成各种集体群体——如国家、地区、社区、组织和家庭——中可以清楚地看到。\n\n你所属的群体是否拥有强烈的集体意识或共同信念？其成员之间是否存在相互依存？你是否将这个群体视为你存在的重要组成部分？如果你的答案是肯定的，那么你正在经历一种微缩版的团结。\n\n什么是团结？字典中最简单的定义是：\"……一群人之间统一的意见、情感、目的或利益。\"\n\n在我们生活的这个日益多元的社会中，团结呈现出复杂而多面的特征，因为它在快速变化的环境中、在复杂的劳动分工体系内，在独特的个体之间形成相互依存的纽带。\n\n团结的一个方面与社群主义的原则十分契合。在这种情境下，个人放弃自身利益来服务公共利益。然而，对社会凝聚力和排他性的严格遵循限制了个体差异和偏好的表达与实践。因此，为了维持群体的统一，个性和自主权被牺牲了。\n\n团结也被视为对过度强调个人主义和选择自由的一种反应。它反对那种不受限制的个人的自由主义理念——这类人将社会视为其自由选择和按自身利益行事的障碍，而不顾这些行为会如何影响他人。\n\n但尽管团结有许多面向，社会理论家们将其视为促进社会秩序与进步的关键因素。他们认为，随着人类社会变得更加多元，为了生存下去，需要基于差异形成更多新的纽带。有鉴于此，他们认为真正的团结不仅仅是基于共同利益的浅层关系。团结不只是对自身能获益多少的战略计算的产物。它不是建立在\"你和我对抗全世界\"原则上的排他性阶层。相反，它是包容的，且不是被强迫的。出于团结而行动意味着相互支持和声援——认识到一个人的命运系于另一个人的命运。它是以合作实践为特征的纽带，因对他人福祉或公共利益的关切而得到强化。它为保护人的尊严而战，倾听并回应最弱势群体的呼声。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "As interdependent beings we cannot thrive independent of others.",
+    "why": "原文首句明确指出\"作为相互依存的生命体，我们离开他人便无法繁荣发展\"。A选项\"They cannot prosper without cooperating with each other\"是对原文的同义改写：thrive对应prosper，independent of others的否定形式对应without cooperating with each other。推理链清晰：相互依存→离不开他人→需要合作才能繁荣。",
+    "traps": "B项\"share a common interest and believe in a just cause\"属于偷换概念，原文说我们喜欢与这样的人合作，但并非所有人都如此，且原文是a cause而非a just cause；C项\"think and behave alike\"原文未提及，属于无中生有；D项\"gain independence without fighting for it\"与原文讨论的相互依存主题无关，属于曲解原文。",
+    "tip": "注意首句往往是段落主旨，同义替换是六级常见考法。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "solidarity takes on a complex and multifaceted character as it forms bonds of interdependence among unique individuals living in a fast-changing environment and working within a complex division of labor.",
+    "why": "原文第四段明确指出，在日益多元的社会中，团结呈现出\"complex and multifaceted character\"（复杂而多面的特征）。B选项\"It involves many aspects with great complexity\"是对multifaceted（多面的）和complex（复杂的）的准确同义改写，many aspects对应multifaceted，great complexity对应complex。",
+    "traps": "A项\"gives rise to a complicated division of labor\"因果倒置，原文是在复杂分工中形成纽带，而非团结导致了复杂分工；C项\"brings individuals together as environment changes\"只涉及原文部分信息，未体现\"复杂多面\"这一核心特征；D项\"embraces the characteristics of different individuals\"原文未表达此意，属于过度推断。",
+    "tip": "multifaceted是核心考点词，注意其含义\"多方面的\"。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "In this setting, individuals give up their own interests to serve the common good.",
+    "why": "原文第五段描述社群主义情境时明确说\"个人放弃自身利益来服务公共利益\"。C选项\"Sacrifice of personal interests for the common good\"是对give up their own interests to serve the common good的精确同义改写：sacrifice对应give up，personal interests对应their own interests，for the common good完全对应。",
+    "traps": "A项\"Ruling of social norms and ridding of individuality\"虽然原文提到个性被牺牲，但\"ruling of social norms\"（社会规范的统治）属于过度概括，原文未提及社会规范的统治；B项\"Emphasis on the adherence to individual differences\"与原文相反，社群主义限制个体差异而非强调；D项\"Elimination of individualism and personal choices\"过于极端，原文说的是sacrificed（牺牲）和restricts（限制），而非elimination（消除）。",
+    "tip": "注意区分sacrifice（牺牲/限制）和elimination（消除），程度词差异是常见陷阱。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Solidarity is also viewed as a reaction to the extreme emphasis on individualism and freedom of choice. It goes against the liberal idea of unrestricted individuals who see society as a hindrance to their freedom.",
+    "why": "原文第六段指出团结被视为对过度强调个人主义和选择自由的\"反应\"（reaction），并明确说\"It goes against the liberal idea of unrestricted individuals\"（它反对不受限制的个人的自由主义理念）。B选项\"An opposition to individualism\"准确概括了这层含义：opposition对应reaction和goes against，individualism直接对应原文。",
+    "traps": "A项\"A limit to personal differences\"混淆了第五段社群主义的特征与团结本身的内涵；C项\"A hindrance to social advancement\"属于张冠李戴，原文说的是社会被不受限制的个人视为hindrance，而非团结是hindrance；D项\"An inevitable end to liberal pursuits\"过度推断，原文只说团结反对极端个人主义，并未说它必然终结自由主义追求。",
+    "tip": "reaction to和goes against都指向\"反对/对立\"，需准确把握语义方向。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "social theorists have viewed solidarity as a key factor in bringing about order and progress in society.",
+    "why": "原文最后一段开头明确指出社会理论家将团结视为\"促进社会秩序与进步的关键因素\"（a key factor in bringing about order and progress in society）。C选项\"It is essential to progress and order in society\"是对此句的精确同义改写：essential对应key factor，progress and order对应order and progress，完全吻合。",
+    "traps": "A项\"especially relevant to the most vulnerable\"虽然文末提及最弱势群体，但这只是团结的一个具体表现，并非社会理论家对团结的整体评价；B项\"most effective in protecting human dignity\"同理，保护人的尊严只是团结的一个功能，不能代表核心评价；D项\"indispensable to avoiding shallow relationships\"曲解原文，原文说真正的团结不止是浅层关系，但并非说团结的作用是避免浅层关系。",
+    "tip": "社会理论家的核心观点往往在段首概括句中，抓住key factor即可定位。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "interdependent",
+    "cn": "adj. 相互依存的"
+   },
+   {
+    "w": "thrive",
+    "cn": "v. 繁荣，兴旺"
+   },
+   {
+    "w": "affirmative",
+    "cn": "adj. 肯定的，赞成的"
+   },
+   {
+    "w": "multifaceted",
+    "cn": "adj. 多方面的，多层次的"
+   },
+   {
+    "w": "communitarianism",
+    "cn": "n. 社群主义"
+   },
+   {
+    "w": "cohesiveness",
+    "cn": "n. 凝聚力，内聚性"
+   },
+   {
+    "w": "autonomy",
+    "cn": "n. 自主权，自治"
+   },
+   {
+    "w": "hindrance",
+    "cn": "n. 障碍，妨碍"
+   },
+   {
+    "w": "solidarity",
+    "cn": "n. 团结，团结一致"
+   },
+   {
+    "w": "vulnerable",
+    "cn": "adj. 脆弱的，易受伤害的"
+   },
+   {
+    "w": "inclusive",
+    "cn": "adj. 包容的，包含广泛的"
+   },
+   {
+    "w": "adherence",
+    "cn": "n. 遵循，坚持"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "In this increasingly diverse society we live in, solidarity takes on a complex and multifaceted character as it forms bonds of interdependence among unique individuals living in a fast-changing environment and working within a complex division of labor.",
+    "cn": "在我们生活的这个日益多元的社会中，团结呈现出复杂而多面的特征，因为它在快速变化的环境中、在复杂的劳动分工体系内，在独特的个体之间形成相互依存的纽带。",
+    "note": "主句为solidarity takes on...character；as引导原因状语从句；among后接由两个现在分词短语(living...和working...)修饰的unique individuals。"
+   },
+   {
+    "en": "It goes against the liberal idea of unrestricted individuals who see society as a hindrance to their freedom to make choices and to act according to what is good for them regardless of how these will affect others.",
+    "cn": "它反对那种不受限制的个人的自由主义理念——这类人将社会视为其自由选择和按自身利益行事的障碍，而不顾这些行为会如何影响他人。",
+    "note": "主干为It goes against the liberal idea；of unrestricted individuals作后置定语；who引导定语从句修饰individuals；regardless of引导让步状语，内含how引导的宾语从句。"
+   },
+   {
+    "en": "They believe that for human society to survive as it becomes more diverse, more new bonds need to be formed based on the differences.",
+    "cn": "他们认为，随着人类社会变得更加多元，为了生存下去，需要基于差异形成更多新的纽带。",
+    "note": "主干为They believe that...；that引导宾语从句；for...to survive为不定式作目的状语；as引导时间/条件状语从句；based on...为过去分词短语作后置定语。"
+   }
+  ]
+ }
+}

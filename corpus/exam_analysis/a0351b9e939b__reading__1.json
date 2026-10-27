@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "a0351b9e939b__reading__1",
+ "examId": "a0351b9e939b",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2002 年考研英语真题（旧）",
+ "year": 2002,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:12:01.389Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62765,
+ "usage": {
+  "prompt_tokens": 1717,
+  "completion_tokens": 3653,
+  "total_tokens": 5370,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1717,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3653,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1717,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "如何在演讲中有效运用幽默",
+  "gist": "文章围绕演讲中如何有效运用幽默展开，指出幽默须与听众相关，要针对不同对象选择不同话题；若你是群体中的一员可适当自嘲，否则应选择安全的吐槽对象；同时强调幽默的表达方式应自然随意，并可借助出人意料的手法增强效果。",
+  "structure": [
+   "第一段：提出核心观点——幽默须针对不同听众选择不同话题",
+   "第二段：举护士大会上关于医生的笑话为例证",
+   "第三段：区分内部人与外部人使用幽默的不同策略",
+   "第四段：建议幽默表达应自然随意，注重表达方式",
+   "第五段：提供寻找幽默素材的具体技巧"
+  ],
+  "difficulty": "中等",
+  "translation": "如果你打算在演讲中运用幽默来让人们微笑，你必须知道如何找到共同的经历和问题。你的幽默必须与听众相关，并且应该帮助他们看到你是他们中的一员，或者你理解他们的处境并对他们的观点表示同情。根据你所面对的听众不同，问题也会不同。如果你对一群经理讲话，你可以提到他们秘书杂乱无章的工作方式；反过来，如果你面对的是秘书们，你可能想评论一下他们那些杂乱无章的老板。\n\n这里有一个例子，是我在一次护士大会上听到的，这个故事效果很好，因为听众都对医生持有相同的看法。一个人到了天堂，圣彼得带他四处参观。他看到了美妙的住所、美丽的花园、晴朗的天气等等。每个人都非常安详、礼貌、友善，直到在排队等午餐时，这位新来者突然被一个穿白大褂的人推到一边，那人冲到队伍前面，抢了食物，然后独自跺着脚走到一张桌子旁。\"那是谁？\"新来者问圣彼得。\"哦，那是上帝，\"圣彼得回答说，\"但有时候他以为自己是个医生。\"\n\n如果你是你所面对的群体中的一员，你就能了解大家共同的经历和问题，随口评论一下食堂难以下咽的饭菜或者主席那出了名的糟糕领带品味都是合适的。面对其他听众时，你不能试图用幽默插嘴，因为他们会反感一个外人对他们的食堂或主席发表贬损性的评论。如果你选择邮局或电话系统这样的替罪羊作为话题，你会更安全。\n\n如果你觉得幽默起来很别扭，你必须加以练习使之变得更自然。准备一些随意的、看似即兴的评语，以便你能以轻松自如的方式说出来。往往是表达方式让听众发笑，所以说话要慢，记住扬起眉毛或做出一副不相信的表情可能有助于表明你在说一句轻松诙谐的话。\n\n寻找幽默素材。幽默往往来自出人意料之处。对一句熟悉的名言进行反转，如\"如果一开始你没有成功，那就放弃吧\"，或者利用文字游戏或情景游戏。寻找夸张和轻描淡写的手法。审视你的演讲稿，挑出一些你可以加以翻转并注入幽默的词语或句子。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Depending on whom you are addressing, the problems will be different. If you are talking to a group of managers, you may refer to the disorganized methods of their secretaries; alternatively if you are addressing secretaries, you may want to comment on their disorganized bosses.",
+    "why": "原文明确指出\"根据你面对的听众不同，问题也会不同\"，并举例说明对经理讲秘书的问题、对秘书讲老板的问题，即针对不同听众提出不同问题。C选项\"address different problems to different people\"是对原文的准确同义改写，完全吻合文意。",
+    "traps": "A\"利用不同类型的听众\"——原文强调的是\"适应\"听众而非\"利用\"，take advantage of含有利用之意，属于偷换概念；B\"取笑缺乏条理的人\"——disorganized只是举例内容，非核心主张，且原文目的不是取笑某类人，属于以偏概全；D\"对听众表示同情\"——原文确有sympathy一词，但这只是幽默起效的一个辅助条件，不是\"让幽默奏效\"的核心做法，属于张冠李戴。",
+    "tip": "注意区分文中的核心观点和辅助细节，避免被个别词汇吸引。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "but sometimes he thinks he's a doctor.",
+    "why": "笑话的笑点在于：上帝粗鲁地插队，圣彼得解释说\"那是上帝，但有时他以为自己是医生\"。言下之意是，医生在护士眼中自视甚高、以为自己是上帝一般的角色。B选项\"very conscious of their godlike role\"（非常意识到自己如同上帝般的角色）精准概括了这层讽刺含义。",
+    "traps": "A\"对新来者不礼貌\"——虽然笑话里上帝确实推开了新来者，但这只是故事情节，笑点并非在于不礼貌，属于表面理解；C\"有权享受某些特权\"——entitled暗示合理的特权，但笑话讽刺的是医生的自大而非合理特权，属于曲解语义；D\"午餐时间也很忙\"——原文完全没有提及医生忙碌，属于无中生有。",
+    "tip": "例证题要透过故事表面抓住讽刺的深层含义，关注笑点所在。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "You will be on safer ground if you stick to scapegoats like the Post Office or the telephone system.",
+    "why": "原文将邮局和电话系统称为\"scapegoats\"（替罪羊），意思是这些公共服务机构是人人都可以拿来开玩笑的安全对象。scapegoat本身含有\"被嘲笑、被指责的对象\"之意，由此可推断公共服务机构经常成为笑柄。D选项\"have often been the laughing stock\"与此完全吻合。",
+    "traps": "A\"使很多人受益\"——原文未提及公共服务的好处，属于无中生有；B\"是公众关注的焦点\"——原文只说它们是安全的幽默对象，并未讨论公众关注度，属于过度推理；C\"不适合作为幽默话题\"——恰恰相反，原文说它们是最安全的幽默话题，属于反向干扰。",
+    "tip": "理解scapegoat的含义是解题关键，替罪羊即人人可以嘲讽的对象。"
+   },
+   {
+    "number": 24,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Include a few casual and apparently off-the-cuff remarks which you can deliver in a relaxed and unforced manner.",
+    "why": "原文明确建议加入一些\"casual\"（随意的）和\"apparently off-the-cuff\"（看似即兴的）评语，并以\"relaxed and unforced manner\"（轻松自如的方式）表达。D选项\"as casually as possible\"（尽可能随意地）是对原文casual、off-the-cuff、relaxed and unforced的高度概括，完全契合原文建议。",
+    "traps": "A\"用措辞精美的语言\"——原文强调的是随意自然而非精雕细琢，与文意相反；B\"尽可能笨拙地\"——原文说如果觉得awkward要练习克服，awkward是需要避免的状态，属于反向干扰；C\"用夸张的陈述\"——exaggeration在第五段是寻找幽默素材的技巧之一，并非表达方式的要求，属于张冠李戴。",
+    "tip": "注意同义替换：casual≈off-the-cuff≈relaxed and unforced，都指向\"随意自然\"。"
+   },
+   {
+    "number": 25,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "If you intend using humor in your talk to make people smile, you must know how to identify shared experiences and problems.",
+    "why": "全文围绕如何在演讲中有效运用幽默展开，从选择话题、区分内外群体、表达方式到寻找素材，各段都在讲具体方法以使幽默产生效果。A选项\"Use Humor Effectively\"（有效运用幽默）最全面地概括了文章主旨，既包含了\"幽默\"的主题，又突出了\"有效\"这一核心要求。",
+    "traps": "B\"Various Kinds of Humor\"（各种幽默类型）——文章未分类讨论幽默类型，属于偏离主旨；C\"Add Humor to Speech\"（给演讲加入幽默）——只强调了\"加入\"，未体现\"有效\"这一核心主张，过于笼统；D\"Different Humor Strategies\"（不同的幽默策略）——虽然文章提到了不同策略，但标题过于侧重\"不同\"，未能突出\"有效运用\"的核心主旨。",
+    "tip": "主旨题选项既不能太窄也不能偏离，要涵盖全文核心论点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "alternatively",
+    "cn": "adv. 或者，作为替代"
+   },
+   {
+    "w": "convention",
+    "cn": "n. 大会，会议；惯例"
+   },
+   {
+    "w": "accommodations",
+    "cn": "n. 住处，膳宿"
+   },
+   {
+    "w": "stomp",
+    "cn": "v. 跺脚走，重步行走"
+   },
+   {
+    "w": "inedible",
+    "cn": "adj. 不可食用的，难以下咽的"
+   },
+   {
+    "w": "notorious",
+    "cn": "adj. 臭名昭著的，众所周知的（贬义）"
+   },
+   {
+    "w": "disparaging",
+    "cn": "adj. 贬损的，轻蔑的"
+   },
+   {
+    "w": "scapegoat",
+    "cn": "n. 替罪羊，代人受过者"
+   },
+   {
+    "w": "off-the-cuff",
+    "cn": "adj. 即兴的，未经准备的"
+   },
+   {
+    "w": "understatement",
+    "cn": "n. 轻描淡写，保守的陈述"
+   },
+   {
+    "w": "inject",
+    "cn": "v. 注入，插入"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Your humor must be relevant to the audience and should help to show them that you are one of them or that you understand their situation and are in sympathy with their point of view.",
+    "cn": "你的幽默必须与听众相关，并且应该帮助他们看到你是他们中的一员，或者你理解他们的处境并对他们的观点表示同情。",
+    "note": "主干为Your humor must be relevant... and should help to show them that...；that后接两个并列宾语从句，由or连接：① you are one of them ② you understand... and are in sympathy with...。"
+   },
+   {
+    "en": "With other audiences you mustn't attempt to cut in with humor as they will resent an outsider making disparaging remarks about their canteen or their chairman.",
+    "cn": "面对其他听众时，你不能试图用幽默插嘴，因为他们会反感一个外人对他们的食堂或主席发表贬损性的评论。",
+    "note": "主句为you mustn't attempt to cut in with humor；as引导原因状语从句；resent后接复合宾语：an outsider(宾语) + making disparaging remarks(现在分词作宾补)。"
+   },
+   {
+    "en": "Include a few casual and apparently off-the-cuff remarks which you can deliver in a relaxed and unforced manner.",
+    "cn": "准备一些随意的、看似即兴的评语，以便你能以轻松自如的方式说出来。",
+    "note": "祈使句，主干为Include remarks；which引导定语从句修饰remarks；casual和off-the-cuff为并列形容词作前置定语，apparently修饰off-the-cuff。"
+   }
+  ]
+ }
+}

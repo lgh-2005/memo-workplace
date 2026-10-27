@@ -1,0 +1,246 @@
+{
+ "schemaVersion": 1,
+ "id": "6dd82042fcd8__writing__all",
+ "examId": "6dd82042fcd8",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年考研英语真题",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  51,
+  52
+ ],
+ "generatedAt": "2026-10-27T08:45:59.180Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 102973,
+ "usage": {
+  "prompt_tokens": 721,
+  "completion_tokens": 1530,
+  "total_tokens": 2251,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 721,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1530,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 721,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：撰写一则招募通知，为Smith教授的校园体育活动研究项目招募一名学生助理，须说明工作职责与任职要求。",
+    "outline": [
+     "第一段：通知目的——简要说明招募背景，点明为Smith教授的校园体育活动研究项目招聘学生助理。",
+     "第二段：工作职责与任职要求——具体列出助理需承担的任务（如数据收集、报告撰写等）以及对申请者的资质要求（如专业背景、语言能力、时间安排等）。",
+     "第三段：联系方式与截止日期——告知感兴趣的同学如何报名、联系邮箱以及申请截止时间，署名Li Ming。"
+    ],
+    "sample": "NOTICE\n\nA research assistant is wanted for Prof. Smith's project on campus sports activities. We are now recruiting one student to join the research team for the upcoming semester.\n\nThe duties include collecting and analyzing survey data on students' participation in sports activities, assisting in organizing on-campus interviews, and drafting research reports. Applicants should meet the following requirements: a background in physical education or social sciences is preferred; proficiency in both English and data analysis software is essential; and the ability to commit at least ten hours per week to the project is required.\n\nInterested students are welcome to send your resume to campusproject@uni.edu before January 15. For further information, please contact us at the above email address.\n\nLi Ming",
+    "phrases": [
+     {
+      "en": "A research assistant is wanted for...",
+      "cn": "招聘研究助理用于……；通知类常用被动开头，正式得体。"
+     },
+     {
+      "en": "collect and analyze survey data",
+      "cn": "收集并分析调查数据；科研项目职责的高频搭配。"
+     },
+     {
+      "en": "a background in... is preferred",
+      "cn": "优先考虑……背景的申请者；礼貌表达优先条件。"
+     },
+     {
+      "en": "proficiency in both A and B is essential",
+      "cn": "精通A与B是必备条件；essential比needed更正式。"
+     },
+     {
+      "en": "commit at least X hours per week to...",
+      "cn": "每周至少投入X小时于……；强调时间承诺的地道表达。"
+     },
+     {
+      "en": "for the upcoming semester",
+      "cn": "在即将到来的学期；限定项目时间范围的常用短语。"
+     },
+     {
+      "en": "draft research reports",
+      "cn": "撰写研究报告；draft比write更具学术语域色彩。"
+     },
+     {
+      "en": "Interested students are welcome to...",
+      "cn": "欢迎感兴趣的同学……；通知结尾的礼貌邀请句式。"
+     },
+     {
+      "en": "For further information, please contact...",
+      "cn": "如需更多信息请联系……；通知类结尾万能收束句。"
+     }
+    ],
+    "pitfalls": [
+     "缺少标题NOTICE或格式不规范，导致应用文体裁分丢失。",
+     "未分别阐述duties和requirements，题目要求的两个要素缺一扣分严重。",
+     "通篇口语化，如用gonna、wanna等缩略语，与通知的正式语域不符。",
+     "署名用了自己真实姓名而非题目要求的Li Ming，违反指令扣分。",
+     "职责与要求描述过于笼统空泛，如仅写help the professor，缺少具体细节。"
+    ],
+    "upgrades": [
+     {
+      "plain": "We need a student to help Prof. Smith.",
+      "better": "A research assistant is wanted for Prof. Smith's project on campus sports activities.",
+      "note": "被动句式更符合通知语域，且一句话点明项目主题，信息密度更高。"
+     },
+     {
+      "plain": "You should be good at English.",
+      "better": "Proficiency in both English and data analysis software is essential.",
+      "note": "proficiency与essential提升用词档次，both...and结构使要求更完整。"
+     },
+     {
+      "plain": "You need to work at least 10 hours a week.",
+      "better": "The ability to commit at least ten hours per week to the project is required.",
+      "note": "名词化表达the ability to commit更书面正式，避免口语化的you need to。"
+     },
+     {
+      "plain": "Please send us an email if you are interested.",
+      "better": "Interested students are welcome to send your resume to campusproject@uni.edu before January 15.",
+      "note": "明确提交材料、邮箱与截止日期，信息完整度和实用性大幅提升。"
+     },
+     {
+      "plain": "The job is to collect data and write reports.",
+      "better": "The duties include collecting and analyzing survey data and drafting research reports.",
+      "note": "include+动名词并列结构更正式，draft替代write体现学术语域意识。"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "看图写作：简要描述图片内容，揭示其隐含寓意，并给出个人评论，字数160-200词。",
+    "outline": [
+     "第一段：客观描述图片——一个年轻人踩着写有\"知识\"\"实践\"\"坚持\"等字样的石块渡河，标题为\"积累\"，点明画面核心元素。",
+     "第二段：阐释寓意——成功并非一蹴而就，而是靠知识、技能和经验的逐步积累。批判当今社会急功近利的心态，用摩天大楼需要坚实地基的类比加以论证。",
+     "第三段：给出评论与建议——倡导在日常生活中养成持续努力的习惯，脚踏实地、循序渐进，以名言收束全文。"
+    ],
+    "sample": "As is vividly depicted in the picture, a young man is carefully stepping on stones to cross a river, with each stone bearing a word such as knowledge, practice, and persistence. The caption below reads: Accumulation leads to success.\n\nThe picture conveys a profound message that success is not achieved overnight but through gradual and steady accumulation. In today's fast-paced society, many people are obsessed with instant gratification and shortcuts, hoping to reach their goals without sustained effort. However, the truth is that every remarkable accomplishment is built upon countless small steps. Just as a skyscraper rises from a solid foundation, personal growth and professional achievement demand the patient accumulation of knowledge, skills, and experience.\n\nIn light of the analysis above, we should cultivate the habit of consistent effort in our daily lives. Rather than seeking quick fixes, we ought to embrace the process of learning and improving step by step. Only by laying each stone carefully can we eventually cross the river of challenges and reach the shore of success. As an ancient saying goes, a journey of a thousand miles begins with a single step.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the picture",
+      "cn": "正如图中生动描绘的那样；图画作文经典首句句型，直接引出画面。"
+     },
+     {
+      "en": "convey a profound message that...",
+      "cn": "传达了一个深刻的信息……；用于从描述过渡到寓意阐释。"
+     },
+     {
+      "en": "be obsessed with instant gratification",
+      "cn": "沉迷于即时满足；描述急功近利心态的高分表达。"
+     },
+     {
+      "en": "every remarkable accomplishment is built upon...",
+      "cn": "每一项杰出成就都建立在……之上；被动语态强调客观规律。"
+     },
+     {
+      "en": "Just as... so does...",
+      "cn": "正如……一样；类比论证经典句型，增强说服力。"
+     },
+     {
+      "en": "in light of the analysis above",
+      "cn": "鉴于以上分析；用于第三段开头承上启下。"
+     },
+     {
+      "en": "cultivate the habit of consistent effort",
+      "cn": "培养持续努力的习惯；建议类段落常用搭配。"
+     },
+     {
+      "en": "Only by doing... can we...",
+      "cn": "只有通过……我们才能……；倒装句式，展示语法功底。"
+     },
+     {
+      "en": "embrace the process of learning",
+      "cn": "拥抱学习的过程；体现积极态度的高级用词。"
+     },
+     {
+      "en": "a journey of a thousand miles begins with a single step",
+      "cn": "千里之行始于足下；以名言警句收束全文，提升亮点。"
+     }
+    ],
+    "pitfalls": [
+     "描述图片时脱离画面要素，凭空臆造内容，导致偏题扣分。",
+     "三段结构不清晰，描述、寓意、评论混为一谈，逻辑混乱。",
+     "通篇使用简单句，缺少从句、倒装、虚拟语气等复杂句式展示。",
+     "用词重复严重，如多次使用important/very，未做同义替换。",
+     "字数不足160词或超过200词，直接被扣档次分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture tells us that we should work hard.",
+      "better": "The picture conveys a profound message that success is not achieved overnight but through gradual and steady accumulation.",
+      "note": "用convey替代tell，增加not...but...对比结构，表意更精准、句式更丰富。"
+     },
+     {
+      "plain": "Many people want to succeed quickly.",
+      "better": "Many people are obsessed with instant gratification and shortcuts, hoping to reach their goals without sustained effort.",
+      "note": "用be obsessed with和现在分词短语作伴随状语，信息密度更高、语言更地道。"
+     },
+     {
+      "plain": "We can succeed if we keep trying.",
+      "better": "Only by laying each stone carefully can we eventually cross the river of challenges and reach the shore of success.",
+      "note": "倒装句+隐喻回扣图片意象，既展示语法能力又体现篇章连贯。"
+     },
+     {
+      "plain": "We should study hard every day.",
+      "better": "We ought to embrace the process of learning and improving step by step.",
+      "note": "ought to比should更正式，embrace体现积极主动，step by step呼应主题。"
+     },
+     {
+      "plain": "In conclusion, accumulation is important.",
+      "better": "As an ancient saying goes, a journey of a thousand miles begins with a single step.",
+      "note": "以名言收尾代替空洞总结，提升文章文化底蕴和结尾力度。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "A research assistant is wanted for Prof. Smith's project on campus sports activities. — 被动句开头直入主题，正式通知的标准起笔，值得背诵。",
+   "Applicants should meet the following requirements: a background in physical education or social sciences is preferred. — 冒号引出要求列表，preferred一词礼貌而不强硬，展示语用得体性。",
+   "The ability to commit at least ten hours per week to the project is required. — 名词化主语+被动谓语，典型书面正式句式，可迁移至各类招聘通知。",
+   "Interested students are welcome to send your resume to campusproject@uni.edu before January 15. — 结尾句兼顾礼貌语气与信息完整性（材料+邮箱+截止日期），一句三用。",
+   "As is vividly depicted in the picture, a young man is carefully stepping on stones to cross a river, with each stone bearing a word such as knowledge, practice, and persistence. —— 经典看图首句：with复合结构+分词短语，一句话覆盖所有画面要素。",
+   "The truth is that every remarkable accomplishment is built upon countless small steps. —— 表语从句+被动语态，简洁有力地揭示核心道理，适用于\"积累/坚持\"类主题。",
+   "Just as a skyscraper rises from a solid foundation, personal growth and professional achievement demand the patient accumulation of knowledge, skills, and experience. —— Just as类比论证句，逻辑清晰、论据形象，是议论段的万能加分句型。",
+   "Only by laying each stone carefully can we eventually cross the river of challenges and reach the shore of success. —— Only引导的倒装句+隐喻回扣图片，兼顾语法亮点与篇章衔接。",
+   "Rather than seeking quick fixes, we ought to embrace the process of learning and improving step by step. —— Rather than前置对比+embrace高级用词，适用于提建议的段落。"
+  ]
+ },
+ "mergedFrom": [
+  "6dd82042fcd8__writing__51",
+  "6dd82042fcd8__writing__52"
+ ]
+}

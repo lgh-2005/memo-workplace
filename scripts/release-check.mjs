@@ -10,7 +10,8 @@ const deploy = await readFile(join(root, 'scripts', 'deploy.sh'), 'utf8');
 const rollback = await readFile(join(root, 'scripts', 'rollback.sh'), 'utf8');
 const ci = await readFile(join(root, '.github', 'workflows', 'ci.yml'), 'utf8');
 const required = [
-  ['package version', packageJson.version === '3.7.1'],
+  // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
+  ['package version', packageJson.version === '3.8.0'],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],
@@ -41,6 +42,10 @@ const required = [
   ['today snapshot smoke', exists(join(root, 'scripts', 'today-snapshot-smoke.mjs'))],
   ['piper worker tooling', exists(join(root, 'tools', 'tts', 'piper_worker.py')) && exists(join(root, 'tools', 'tts', 'setup_piper.sh'))],
   ['front-end refinement browser regression', exists(join(root, 'scripts', 'frontend-refinement-smoke.mjs')) && exists(join(root, 'scripts', 'test.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('frontend-refinement-smoke.mjs')],
+  ['exam analysis smoke', exists(join(root, 'scripts', 'exam-analysis-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('exam-analysis-smoke.mjs')],
+  ['exam analysis builder', exists(join(root, 'scripts', 'exam-analysis-build.mjs'))],
+  ['exam analysis audit', exists(join(root, 'scripts', 'exam-analysis-audit.mjs'))],
+  ['exam analysis corpus shipped', exists(join(root, 'corpus', 'exam_analysis'))],
 ];
 const failed = required.filter(([, ok]) => !ok).map(([name]) => name);
 if (failed.length) throw new Error(`release checks failed: ${failed.join(', ')}`);

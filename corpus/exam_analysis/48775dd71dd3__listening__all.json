@@ -1,0 +1,260 @@
+{
+ "schemaVersion": 1,
+ "id": "48775dd71dd3__listening__all",
+ "examId": "48775dd71dd3",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2023 年 6 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:50:01.083Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62928,
+ "usage": {
+  "prompt_tokens": 2310,
+  "completion_tokens": 3298,
+  "total_tokens": 5608,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2310,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3298,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2310,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场六级听力的录音音频与原文文稿，以下所有解析仅基于题目选项的语言特征与正确答案进行推断分析，绝不编造录音内容。",
+  "overview": "本场听力共7段，前两段（Q1-Q4、Q5-Q8）各4题，推测为长对话；后五段（Q9-Q11、Q12-Q15、Q16-Q18、Q19-Q21、Q22-Q25）为短文或讲座。话题涵盖：建筑与工程兴趣、名人私人助理应聘、青少年冒险运动、电子产品计划性报废、职场网络摸鱼、美国植树节起源、人类走出非洲的迁徙路径。题材兼顾日常生活、科技环保与人文历史。",
+  "strategy": [
+   "预读选项时快速圈出各选项差异关键词，如人名、学科名、动作动词，带着区分点去听",
+   "长对话注意首尾两题：第一题常在对话前两轮出答案，末题常在对话收尾处出答案",
+   "听到选项中的原词或其同义替换时高度警觉，六级听力正确答案多为同义改写而非原词复现",
+   "含绝对词如 always、all、never 的选项往往是干扰项，优先考虑含限定词或中性表达的选项",
+   "短文听力开头第一句常揭示主题，与预读选项推断的话题对照可快速定位段落重心",
+   "遇到不确定的题先根据选项逻辑排除最不可能项，保证每题都有作答"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "女性对建筑学的兴趣来源及学习经历",
+    "optionSignals": "Q1四项均以 She is 开头，提问原因/动机；Q2问方式（how），四项为不同途径；Q3四个形容词描述某事物特质；Q4四个学科名词，问涉及哪个领域。",
+    "tips": [
+     "Q1中 D 选项 integration of design and engineering 是建筑学核心特征，比 A 的 beauty 更具专业深度，听到设计与工程结合的表述即可选",
+     "Q3四个形容词含义接近但有区别：groundbreaking（开创性）、long-lasting（持久）、immaterial（无关紧要）、immortal（不朽），注意区分程度差异",
+     "Q4出现四个学科，听力中学科名称通常直接读出，注意捕捉 computer science 这一信号词"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "名人私人助理岗位的面试对话",
+    "optionSignals": "Q5描述男性身份/知名度；Q6问工作职责，四项均为动词短语；Q7、Q8描述应聘者个人特征与优势。选项中出现 personal assistant、Real Madrid、public profile 等词，语境指向名人服务行业。",
+    "tips": [
+     "Q6中 A（personal assistant）与 D（promote public profile）易混淆，但 D 更偏公关职能；结合 Q5 的'well known to the public'，助理角色更合理",
+     "Q7含 always tells the truth 这类绝对表述，属于典型干扰项特征；D 选项'little previous work experience'虽看似负面，但面试语境中坦诚不足反而真实",
+     "Q8四项均为 He has a...结构，注意 proficiency in several languages 是私人助理岗位的核心竞争力"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "青少年参与冒险运动的利弊与建议",
+    "optionSignals": "Q9描述某类活动特点，四项含 benefits、supervision、suitable、rules 等词；Q10涉及对儿童的负面影响；Q11为建议类题，四项均以动词原形开头。",
+    "tips": [
+     "Q10四项均表达'剥夺孩子某种成长机会'，关键区分在于 courage vs. team spirit vs. injuries vs. adventure，需听准具体词汇",
+     "Q11中 B 选项'less risky outdoor activities'为折中建议，相比 A 的'more mature'和 C 的'indoor sports'更温和务实，符合六级听力常见的中庸立场"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "电子产品计划性报废与电子垃圾治理",
+    "optionSignals": "Q12问原因，涉及消费者心理与厂商策略；Q13问厂商应采取的措施，四项均为动词短语；Q14-Q15分别问行动建议与问题前景。选项高频词：repairability、lifecycle、electronic waste、toxic substances。",
+    "tips": [
+     "Q12中 C 选项 intentionally design products to have short lifespans 是'计划性报废'(planned obsolescence)的直接表述，属于该话题核心论点",
+     "Q13中 repairability score（可修复性评分）是近年欧盟立法热点词汇，出现此专业术语的选项往往是考点",
+     "Q15选项从乐观到悲观排列，A（can be solved）最积极；六级听力结尾常给出正面展望"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "职场网络摸鱼（cyberloafing）对生产力的影响",
+    "optionSignals": "Q16问主题/研究方向，四项均以 How 开头；Q17为研究发现，含因果关系；Q18为结论。核心词 cyberloafing 贯穿三题，其他关键词：productivity、stress、mini-breaks、turnover。",
+    "tips": [
+     "Q16虽然 D 说'prevent cyberloafing'，但 Q17 答案表明文章态度并非全面否定摸鱼，说明文章讨论的是如何应对而非简单禁止",
+     "Q17中 B 和 Q18中 A 形成逻辑链：适度摸鱼缓解压力→短暂休息提升表现，两题答案相互印证",
+     "注意 cyberloafing 一词读音：/ˌsaɪbərˈloʊfɪŋ/，由 cyber + loafing（偷懒）构成"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "美国内布拉斯加州植树节的起源",
+    "optionSignals": "Q19描述某地早期状况，四项涉及环境/人口；Q20描述 Julius Morton 的贡献，含具体行为；Q21描述某一里程碑事件。地名 Nebraska、人名 Julius Morton、Arbor Day 为核心线索。",
+    "tips": [
+     "Q19中 C（no trees）与 A（no wooden buildings）有因果关联，但问的是根本原因而非结果，C 更基础",
+     "Q20四项均描述个人贡献，D 选项'founded a newspaper and used it to promote his ideas'最具叙事性和独特性，是传记类文章常见的人物事迹描写",
+     "Q21注意数字信号：one million trees 是重要的量化成就，听到具体数字时应立即标记"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "现代人类走出非洲的迁徙历史与考古发现",
+    "optionSignals": "Q22描述早期人类活动时间线；Q23问考古发现内容；Q24问发现的意义/推论；Q25问研究关注的核心问题。选项含 Africa、Asia、China、60000 years、fossils、teeth、migration 等考古类词汇。",
+    "tips": [
+     "Q22中 D 的'60,000 years ago'是人类走出非洲的经典学术共识时间点，属于背景知识可辅助判断",
+     "Q23中'two modern human teeth in China'为非常具体的考古细节，六级听力中越具体的选项在细节题中越可能正确",
+     "Q25四项均为 wh- 疑问句的名词性从句，问研究方向；C 选项'what path'比 B 的'when'更具探索性，符合最新研究趋势"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "integration",
+    "cn": "融合，整合"
+   },
+   {
+    "w": "prerequisite",
+    "cn": "先决条件，前提课程"
+   },
+   {
+    "w": "groundbreaking",
+    "cn": "开创性的，突破性的"
+   },
+   {
+    "w": "proficiency",
+    "cn": "精通，熟练"
+   },
+   {
+    "w": "repairability",
+    "cn": "可修复性"
+   },
+   {
+    "w": "lifespan",
+    "cn": "使用寿命，生命周期"
+   },
+   {
+    "w": "cyberloafing",
+    "cn": "网络摸鱼，上班时间浏览无关网页"
+   },
+   {
+    "w": "productivity",
+    "cn": "生产力，工作效率"
+   },
+   {
+    "w": "turnover",
+    "cn": "人员流动率，营业额"
+   },
+   {
+    "w": "disperse",
+    "cn": "分散，扩散"
+   },
+   {
+    "w": "fossils",
+    "cn": "化石"
+   },
+   {
+    "w": "aesthetic",
+    "cn": "美学的，审美的"
+   },
+   {
+    "w": "deprive",
+    "cn": "剥夺，使丧失"
+   },
+   {
+    "w": "obsolescence",
+    "cn": "淘汰，过时（常与 planned 搭配表示计划性报废）"
+   }
+  ]
+ }
+}

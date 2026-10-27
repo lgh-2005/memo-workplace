@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "939a9b6ce073__writing__all",
+ "examId": "939a9b6ce073",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2020 年 9 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:29:35.834Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43695,
+ "usage": {
+  "prompt_tokens": 694,
+  "completion_tokens": 2784,
+  "total_tokens": 3478,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 694,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2784,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 694,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "围绕名言\"Beauty of the soul is the essential beauty\"写一篇议论文，阐述内在美才是本质之美，字数150-200词。",
+    "outline": [
+     "引出名言并点明主旨：在外貌至上的时代，内在美才是真正的美",
+     "分层论证：①外在美短暂易逝，内在美持久永恒，辅以名人事例；②内在美决定人际关系的深度与质量",
+     "总结全文，呼吁培养内在品质，追求本质之美"
+    ],
+    "sample": "The saying \"Beauty of the soul is the essential beauty\" highlights a profound truth that inner virtues far outweigh external appearances. In an era increasingly obsessed with physical attractiveness, this wisdom deserves our serious reflection.\n\nTo begin with, physical beauty is fleeting and superficial. As time passes, even the most stunning appearance will inevitably fade. In contrast, the beauty of the soul — encompassing kindness, integrity, compassion, and wisdom — endures throughout one's lifetime and even beyond. History offers abundant examples: Mother Teresa, whose appearance was plain and humble, touched millions of lives through her selfless devotion to the poor, leaving a legacy that continues to inspire generations.\n\nFurthermore, inner beauty shapes how we interact with the world and determines the depth of our relationships. A person with a beautiful soul naturally attracts trust, admiration, and genuine affection from others, whereas someone who relies solely on outward charm often finds such connections shallow and temporary.\n\nIn conclusion, while physical appearance may capture attention momentarily, it is the beauty of the soul that truly defines a person's worth. We should therefore cultivate our inner qualities and pursue essential beauty that stands the test of time.",
+    "phrases": [
+     {
+      "en": "far outweigh",
+      "cn": "远远超过；用于对比两个事物的重要性，学术议论文常用"
+     },
+     {
+      "en": "fleeting and superficial",
+      "cn": "短暂且肤浅的；形容外在美的局限性，形容词并列增强表达力"
+     },
+     {
+      "en": "selfless devotion to",
+      "cn": "对……的无私奉献；用于描述高尚品质，搭配介词to"
+     },
+     {
+      "en": "leave a legacy",
+      "cn": "留下一笔遗产/精神财富；常用于正面人物评价"
+     },
+     {
+      "en": "stands the test of time",
+      "cn": "经得起时间考验；固定短语，适合用在结尾升华主题"
+     },
+     {
+      "en": "genuine affection",
+      "cn": "真挚的情感；genuine比real更书面、更高级"
+     },
+     {
+      "en": "be obsessed with",
+      "cn": "沉迷于/痴迷于；描述社会现象时常用，含贬义色彩"
+     },
+     {
+      "en": "encompassing kindness, integrity, compassion, and wisdom",
+      "cn": "涵盖善良、正直、同情和智慧；同位语式列举使论证更具体"
+     },
+     {
+      "en": "capture attention momentarily",
+      "cn": "短暂地吸引注意力；momentarily精准体现外在美的局限"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只泛泛谈\"美\"却未扣住soul与essential的对比关系",
+     "论证空洞：缺少具体事例或名人论据，仅靠抽象说理难以拿高分",
+     "逻辑断裂：段与段之间缺乏过渡词，如furthermore、in contrast等",
+     "词汇重复：反复使用beautiful/beauty却不会用synonyms如virtue、merit替换",
+     "时态混乱：议论文应以一般现在时为主，举例时用一般过去时，二者混用扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Inner beauty is more important than outer beauty.",
+      "better": "Inner virtues far outweigh external appearances in defining one's true worth.",
+      "note": "动词outweigh替代important，补充in defining使逻辑更完整，表达更学术"
+     },
+     {
+      "plain": "Mother Teresa was a good person and helped many people.",
+      "better": "Mother Teresa, whose appearance was plain and humble, touched millions of lives through her selfless devotion to the poor.",
+      "note": "非限制性定语从句+through短语，信息密度高且句式多样"
+     },
+     {
+      "plain": "People who only care about looks will have bad relationships.",
+      "better": "Someone who relies solely on outward charm often finds such connections shallow and temporary.",
+      "note": "relies solely on更精确，shallow and temporary形容词对称，语体正式"
+     },
+     {
+      "plain": "We should try to become better people inside.",
+      "better": "We should cultivate our inner qualities and pursue essential beauty that stands the test of time.",
+      "note": "cultivate与pursue动词升级，定语从句收束全文，回扣题目关键词"
+     },
+     {
+      "plain": "This saying means inner beauty is the real beauty.",
+      "better": "This saying highlights a profound truth that inner virtues far outweigh external appearances.",
+      "note": "highlights替代means更有力，同位语从句使语法层次更丰富"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The beauty of the soul — encompassing kindness, integrity, compassion, and wisdom — endures throughout one's lifetime and even beyond. 灵魂之美——涵盖善良、正直、同情与智慧——贯穿人的一生乃至更久远。破折号插入语使定义具体化。",
+   "While physical appearance may capture attention momentarily, it is the beauty of the soul that truly defines a person's worth. 外貌或许能短暂吸引目光，但真正定义一个人价值的是灵魂之美。强调句型it is...that突出核心论点。",
+   "Mother Teresa, whose appearance was plain and humble, touched millions of lives through her selfless devotion to the poor, leaving a legacy that continues to inspire generations. 特蕾莎修女外表朴素谦和，却以对穷人的无私奉献感动了数百万人，留下了持续激励后世的精神遗产。非限制性定语从句+现在分词状语，句式丰富。",
+   "We should cultivate our inner qualities and pursue essential beauty that stands the test of time. 我们应当修炼内在品质，追求经得起时间考验的本质之美。cultivate和pursue双动词并列，定语从句回扣主题，适合做结尾金句。"
+  ]
+ }
+}

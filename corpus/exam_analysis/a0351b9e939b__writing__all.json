@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "a0351b9e939b__writing__all",
+ "examId": "a0351b9e939b",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2002 年考研英语真题（旧）",
+ "year": 2002,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:12:34.695Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33303,
+ "usage": {
+  "prompt_tokens": 722,
+  "completion_tokens": 1713,
+  "total_tokens": 2435,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 722,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1713,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 722,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 46,
+    "part": "A",
+    "task": "看图作文：描述图片中的文化现象，阐释民族文化与国际文化之间的关系，并给出个人评论。约200词。",
+    "outline": [
+     "第一段：描述图片内容——一个身着中国传统服饰的外国女孩，面带微笑，展示出民族文化走向世界的场景。",
+     "第二段：阐释图片含义——民族文化与国际文化相互交融，全球化背景下文化交流日益频繁，民族的才是世界的。",
+     "第三段：给出评论——我们应积极推动文化交流，既保护本民族文化特色，又以开放心态拥抱外来文化。"
+    ],
+    "sample": "As is vividly depicted in the picture, a young American girl is wearing traditional Chinese costume, with a bindingly beautiful smile on her face. She looks extremely elegant and happy in this exotic outfit, which symbolizes the harmonious blending of national and international cultures.\n\nThe picture is meant to reveal the increasingly frequent cultural exchanges in the era of globalization. On the one hand, national culture serves as the foundation and essence of a civilization, carrying the unique values, customs, and beliefs of a particular people. On the other hand, when a national culture steps onto the international stage, it gains new vitality and broader recognition. The image of the foreign girl embracing Chinese attire is a perfect illustration that what is national is also international. Cultures that maintain their distinctive characteristics while reaching out to the world can truly thrive and enrich the global cultural landscape.\n\nIn my view, we should adopt an open and inclusive attitude toward cultural exchange. It is essential that we preserve the uniqueness of our own heritage while actively learning from other civilizations. Only through mutual respect and appreciation can different cultures coexist in harmony and contribute to the common prosperity of mankind. Cultural diversity, rather than uniformity, is the driving force behind human progress.",
+    "phrases": [
+     {
+      "en": "harmonious blending of cultures",
+      "cn": "文化的和谐交融；用于描述不同文化良性互动的场景"
+     },
+     {
+      "en": "in the era of globalization",
+      "cn": "在全球化时代；常用于引出时代背景"
+     },
+     {
+      "en": "step onto the international stage",
+      "cn": "走上国际舞台；形容民族文化走向世界"
+     },
+     {
+      "en": "gain new vitality and broader recognition",
+      "cn": "获得新活力与更广泛的认可；描述文化传播的积极效果"
+     },
+     {
+      "en": "what is national is also international",
+      "cn": "民族的就是世界的；高度概括文化关系的经典表达"
+     },
+     {
+      "en": "adopt an open and inclusive attitude",
+      "cn": "采取开放包容的态度；用于评论段提出建议"
+     },
+     {
+      "en": "preserve the uniqueness of our own heritage",
+      "cn": "保护自身文化遗产的独特性；强调文化保护的必要性"
+     },
+     {
+      "en": "mutual respect and appreciation",
+      "cn": "相互尊重与欣赏；用于倡导平等的文化交流"
+     },
+     {
+      "en": "the driving force behind human progress",
+      "cn": "人类进步的驱动力；用于升华结尾"
+     },
+     {
+      "en": "coexist in harmony",
+      "cn": "和谐共存；描述多元文化理想状态"
+     }
+    ],
+    "pitfalls": [
+     "只描述图片不阐释深层含义，导致文章停留在表层，缺乏思想深度。",
+     "将'民族文化'与'国际文化'对立起来论述，偏离了题目强调两者融合的主旨。",
+     "用词单一重复，如反复使用culture而不替换为heritage、civilization、tradition等近义词。",
+     "段落之间缺乏逻辑过渡词，导致行文松散，影响连贯性得分。",
+     "超出或远低于200词的要求范围，字数偏差过大会被扣分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows a girl wearing Chinese clothes.",
+      "better": "As is vividly depicted in the picture, a young American girl is wearing traditional Chinese costume, with a bindingly beautiful smile on her face.",
+      "note": "增加细节描写和with伴随结构，使描述更生动具体，语言层次更高。"
+     },
+     {
+      "plain": "Culture exchange is important in today's world.",
+      "better": "The picture is meant to reveal the increasingly frequent cultural exchanges in the era of globalization.",
+      "note": "用be meant to reveal主动点明图片意图，搭配时代背景短语，更具学术性。"
+     },
+     {
+      "plain": "We should protect our culture and learn from others.",
+      "better": "It is essential that we preserve the uniqueness of our own heritage while actively learning from other civilizations.",
+      "note": "使用It is essential that虚拟语气+while并列结构，句式高级且逻辑严密。"
+     },
+     {
+      "plain": "Different cultures should live together peacefully.",
+      "better": "Only through mutual respect and appreciation can different cultures coexist in harmony and contribute to the common prosperity of mankind.",
+      "note": "使用Only倒装句加强语气，coexist in harmony替换live together更正式地道。"
+     },
+     {
+      "plain": "Cultural diversity is good for human development.",
+      "better": "Cultural diversity, rather than uniformity, is the driving force behind human progress.",
+      "note": "rather than形成对比，driving force比good更有力度，升华主题。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the picture, a young American girl is wearing traditional Chinese costume, with a bindingly beautiful smile on her face. — 生动描图的经典开头，with伴随结构增加画面感。",
+   "What is national is also international. — 一句话高度概括民族文化与世界文化的辩证关系，适合做文章点睛之笔。",
+   "It is essential that we preserve the uniqueness of our own heritage while actively learning from other civilizations. — 虚拟语气+while并列，逻辑严密，展示高级语法功底。",
+   "Only through mutual respect and appreciation can different cultures coexist in harmony and contribute to the common prosperity of mankind. — Only倒装句收尾，语气强烈，立意升华。",
+   "Cultural diversity, rather than uniformity, is the driving force behind human progress. — rather than对比结构，观点鲜明，适合做全文总结句。"
+  ]
+ }
+}

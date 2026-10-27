@@ -1,0 +1,235 @@
+{
+ "schemaVersion": 1,
+ "id": "e8fd5058f708__writing__all",
+ "examId": "e8fd5058f708",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2006 年考研英语真题（旧）",
+ "year": 2006,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:18:54.939Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 84233,
+ "usage": {
+  "prompt_tokens": 874,
+  "completion_tokens": 5147,
+  "total_tokens": 6021,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 874,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5147,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 874,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文（书信）：以李明身份给希望工程相关部门写信，请求帮忙寻找一名资助对象，说明资助条件与实施计划。",
+    "outline": [
+     "第一段：自我介绍，说明写信目的——希望通过希望工程资助偏远地区儿童，请求帮忙寻找合适人选。",
+     "第二段：具体说明资助对象的条件（家庭贫困、求学意愿强、年龄学段等），以及资助计划的实施方式（金额、频率、附加帮助等）。",
+     "第三段：表达期待回复的愿望，礼貌收尾并致谢。"
+    ],
+    "sample": "Dear Sir or Madam,\n\nI am writing to you to express my sincere desire to contribute to Project Hope by offering financial aid to a child in a remote area. I would be most grateful if you could help me find a suitable candidate.\n\nThe child I wish to sponsor should meet the following criteria. First, he or she should come from an impoverished family in a remote rural region where educational resources are severely limited. Second, the child should currently be enrolled in primary or junior high school, demonstrating a strong desire to learn despite financial hardships. Third, I would prefer to assist a girl, as girls in underdeveloped areas often face greater barriers to education.\n\nAs for my plan, I intend to provide a monthly allowance of 500 yuan to cover tuition fees, textbooks, and basic living expenses. In addition, I will send supplementary learning materials and stationery on a regular basis. I also hope to maintain correspondence with the child to offer encouragement and emotional support throughout his or her academic journey.\n\nI would appreciate it if you could help identify an appropriate candidate at your earliest convenience. Thank you for your time and consideration.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "contribute to Project Hope",
+      "cn": "为希望工程做贡献；contribute to 表示'对……做出贡献'"
+     },
+     {
+      "en": "offer financial aid to",
+      "cn": "向……提供经济资助；正式表达资助意愿"
+     },
+     {
+      "en": "an impoverished family in a remote rural region",
+      "cn": "偏远农村地区的贫困家庭；impoverished 比 poor 更正式"
+     },
+     {
+      "en": "demonstrate a strong desire to learn",
+      "cn": "展现出强烈的求学愿望；demonstrate 比 show 更书面"
+     },
+     {
+      "en": "despite financial hardships",
+      "cn": "尽管面临经济困难；despite + 名词短语表让步"
+     },
+     {
+      "en": "face greater barriers to education",
+      "cn": "面临更大的受教育障碍；barrier to 为固定搭配"
+     },
+     {
+      "en": "cover tuition fees, textbooks, and basic living expenses",
+      "cn": "支付学费、教材和基本生活费；cover 在此意为'支付、覆盖'"
+     },
+     {
+      "en": "maintain correspondence with",
+      "cn": "与……保持书信联系；正式书信中常见表达"
+     },
+     {
+      "en": "at your earliest convenience",
+      "cn": "在您方便的时候尽早；书信结尾礼貌催促的经典表达"
+     }
+    ],
+    "pitfalls": [
+     "格式缺失：忘记写 Dear Sir or Madam 称呼或 Yours sincerely 结尾，直接扣分",
+     "审题不全：只写资助对象条件而遗漏实施计划，或反之，未完整回应两个要求",
+     "语域不当：使用口语化表达如 wanna、gonna，不符合正式书信语体",
+     "人称错误：题目要求署名 Li Ming，写成自己真名或忘记署名",
+     "词数不足：未达到 100 词下限，内容单薄导致失分"
+    ],
+    "upgrades": [
+     {
+      "plain": "I want to help a poor child.",
+      "better": "I am writing to express my sincere desire to offer financial aid to a child in need.",
+      "note": "用正式书信开头句式替代口语化表达，体现书信语域意识"
+     },
+     {
+      "plain": "I will give the child money every month.",
+      "better": "I intend to provide a monthly allowance of 500 yuan to cover tuition fees and living expenses.",
+      "note": "具体化金额与用途，信息更充实；intend to 比 will 更书面"
+     },
+     {
+      "plain": "I hope you can write back to me soon.",
+      "better": "I would appreciate it if you could help identify an appropriate candidate at your earliest convenience.",
+      "note": "虚拟语气 would appreciate it if 更礼貌得体，符合高分书信结尾要求"
+     },
+     {
+      "plain": "Please help me find a child.",
+      "better": "I would be most grateful if you could help me find a suitable candidate.",
+      "note": "would be grateful if 为书信请求经典句型，语气更委婉正式"
+     },
+     {
+      "plain": "The child should be poor and want to study.",
+      "better": "The child should come from an impoverished family, demonstrating a strong desire to learn despite financial hardships.",
+      "note": "现在分词短语作伴随状语，句式更复杂；用词更高级"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "看图作文：观察照片（展现年轻人盲目追星模仿偶像发型等现象），描述照片内容、分析社会现象并给出观点，160-200词。",
+    "outline": [
+     "第一段：客观描述照片内容——贝克汉姆的标志性发型与一位模仿其发型的年轻粉丝形成对比，点出主题。",
+     "第二段：分析照片反映的社会现象——盲目偶像崇拜在年轻人中日益普遍，探讨其具体表现与负面影响。",
+     "第三段：给出个人观点——应理性对待偶像，学习其内在品质而非表面模仿，并提出建议。"
+    ],
+    "sample": "The two photos present a thought-provoking contrast related to celebrity worship. In the first photo, the renowned football star David Beckham is seen sporting a distinctive hairstyle. In the second, a young man has copied Beckham's hairstyle in exact detail, his face even bearing the idol's name, which vividly reveals a blind obsession with the celebrity.\n\nThis social phenomenon of idol worship has become increasingly prevalent among young people in contemporary society. Numerous youngsters devote enormous amounts of time and money to imitating their idols' appearance, purchasing celebrity merchandise, and following every trivial detail of their private lives. While it is perfectly natural to admire someone for outstanding talents and achievements, blind worship can lead to grave consequences. Some fans neglect their studies and personal responsibilities in relentless pursuit of their obsession. Others develop unrealistic expectations about life, mistaking superficial imitation for genuine self-improvement. In extreme cases, such irrational behavior may even pose a threat to their mental health and financial stability.\n\nIn my view, young people should adopt a rational and mature attitude toward celebrities. Instead of blindly copying their idols' outward appearance, they would do well to learn from their dedication, perseverance, and professional spirit. Only by focusing on substantive inner qualities rather than superficial features can young people truly benefit from having role models.",
+    "phrases": [
+     {
+      "en": "a thought-provoking contrast",
+      "cn": "一个发人深省的对比；thought-provoking 为图画作文高频形容词"
+     },
+     {
+      "en": "blind obsession with",
+      "cn": "对……的盲目痴迷；obsession 比 love 更能体现非理性程度"
+     },
+     {
+      "en": "increasingly prevalent among young people",
+      "cn": "在年轻人中日益普遍；prevalent 比 common 更学术"
+     },
+     {
+      "en": "in relentless pursuit of",
+      "cn": "对……的不懈/盲目追求；relentless 加强语气"
+     },
+     {
+      "en": "mistake A for B",
+      "cn": "将A误认为B；经典考研写作句型，表达认知偏差"
+     },
+     {
+      "en": "pose a threat to",
+      "cn": "对……构成威胁；正式议论文常用搭配"
+     },
+     {
+      "en": "adopt a rational and mature attitude toward",
+      "cn": "对……持理性成熟的态度；attitude toward 为固定搭配"
+     },
+     {
+      "en": "would do well to",
+      "cn": "最好去做……；委婉建议表达，比 should 更地道"
+     },
+     {
+      "en": "substantive inner qualities",
+      "cn": "实质性的内在品质；substantive 比 real 更正式高级"
+     },
+     {
+      "en": "Only by focusing on ... can young people truly ...",
+      "cn": "只有关注……年轻人才能真正……；倒装句式，增强表达力度"
+     }
+    ],
+    "pitfalls": [
+     "描述偏离图片：未扣住照片中发型模仿与偶像崇拜的核心细节，泛泛而谈",
+     "结构失衡：三段内容比例不当，描述过长而分析过短，或缺少个人观点段",
+     "论证空洞：仅说盲目追星不好，未给出具体表现与危害的分析",
+     "词数超标或不足：未控制在160-200词区间，过短内容单薄，过长结构松散",
+     "逻辑断裂：段落之间缺乏过渡衔接，从描述到分析的转换生硬"
+    ],
+    "upgrades": [
+     {
+      "plain": "Many young people like to copy their idols.",
+      "better": "Numerous youngsters devote enormous amounts of time and money to imitating their idols' appearance.",
+      "note": "具体化行为表现，devote...to 结构更高级，enormous 增强表达力"
+     },
+     {
+      "plain": "Blind worship is bad for young people.",
+      "better": "Blind worship can lead to grave consequences, as some fans neglect their studies and personal responsibilities.",
+      "note": "用因果链条展开论证，避免空洞判断；grave 比 bad 更正式"
+     },
+     {
+      "plain": "Young people should learn good things from their idols.",
+      "better": "Instead of blindly copying their idols' outward appearance, they would do well to learn from their dedication, perseverance, and professional spirit.",
+      "note": "instead of 形成对比，列举三个具体品质使建议更有说服力"
+     },
+     {
+      "plain": "I think this is a serious problem.",
+      "better": "This social phenomenon reflects a widespread crisis of values among the younger generation.",
+      "note": "将个人感受升华为社会层面分析，体现批判性思维深度"
+     },
+     {
+      "plain": "We should not worship idols blindly.",
+      "better": "Only by focusing on substantive inner qualities rather than superficial features can young people truly benefit from having role models.",
+      "note": "only by 引导的倒装句作结尾，句式高级且有力度，是考研写作加分句型"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "I would be most grateful if you could help me find a suitable candidate. —— 书信请求经典句型：would be grateful if + 虚拟语气，礼貌得体，适用于所有求助信。",
+   "Only by focusing on substantive inner qualities rather than superficial features can young people truly benefit from having role models. —— only by 引导的倒装句，逻辑清晰、句式高级，适合作为议论文收尾金句。",
+   "While it is perfectly natural to admire someone for outstanding talents and achievements, blind worship can lead to grave consequences. —— while 引导让步状语从句，先肯定后转折，体现辩证思维，是考研大作文论证核心句型。",
+   "Some fans neglect their studies and personal responsibilities in relentless pursuit of their obsession, mistaking superficial imitation for genuine self-improvement. —— 现在分词短语 mistaking A for B 作伴随状语，信息密度高，一句话同时呈现行为与认知偏差。",
+   "Instead of blindly copying their idols' outward appearance, they would do well to learn from their dedication, perseverance, and professional spirit. —— instead of 构成正反对比，would do well to 委婉建议，三个并列名词增强气势，堪称建议段模板句。"
+  ]
+ }
+}

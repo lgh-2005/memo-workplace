@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "a0351b9e939b__translation__all",
+ "examId": "a0351b9e939b",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2002 年考研英语真题（旧）",
+ "year": 2002,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:12:49.070Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66025,
+ "usage": {
+  "prompt_tokens": 1268,
+  "completion_tokens": 4659,
+  "total_tokens": 5927,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1268,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4659,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1268,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "行为科学技术的发展困境与必要性",
+  "translation": "我们面临的几乎所有重大问题都涉及人类行为，仅凭物理和生物技术是无法解决这些问题的。我们需要的是一种行为技术，但我们在发展这种技术所依据的科学方面一直进展缓慢。困难之一在于，几乎所有所谓的行为科学仍然把行为归结于心理状态、情感、性格特征、人性等因素。物理学和生物学曾经也遵循类似的做法，只有在抛弃这些做法后才取得了进步。行为科学之所以变化缓慢，部分原因是其用来解释行为的依据往往似乎可以直接观察到，部分原因是其他类型的解释一直难以找到。环境显然很重要，但它的作用一直不太清楚。环境并非推动或拉动行为，而是对行为进行选择，而这种功能难以被发现和分析。自然选择在进化中的作用仅仅在一百多年前才被阐明，而环境在塑造和保持个体行为方面的选择作用才刚刚开始被认识和研究。然而，随着人们对有机体与环境之间相互作用的理解不断深入，过去被归因于心理状态、情感和性格特征的种种效果正开始被追溯到可以把握的客观条件，因此一种行为技术也许就能为我们所用。然而，这种技术在取代传统的前科学观点之前是不会解决我们的问题的，而这些旧观点又根深蒂固。自由和尊严就说明了这一困难。\n\n它们是传统理论中自主（自治）的人所拥有的，对于要求一个人对自己的行为负责并因其成就而受到赞扬的那些实践活动来说，它们是必不可少的。科学分析把责任和成就都转移到了环境身上，同时也提出了有关\"价值\"的问题。谁将使用这种技术？又将用于什么目的？在这些问题得到解决之前，行为技术将继续遭到排斥，而随之遭到排斥的可能还有解决我们问题的唯一途径。",
+  "questions": [
+   {
+    "number": 41,
+    "en": "One difficulty is that almost all of what is called behavioral science continues to trace behavior to states of mind, feelings, traits of character, human nature, and so on.",
+    "cn": "困难之一在于，几乎所有所谓的行为科学仍然把行为归结于心理状态、情感、性格特征、人性等因素。",
+    "structure": "主句为 One difficulty is that...（主系表结构，that 引导表语从句）。表语从句中，主语为 almost all of what is called behavioral science（其中 what 引导名词性从句作 of 的宾语），谓语为 continues to trace，宾语为 behavior，to states of mind... 为介词短语作状语，表示归因方向。",
+    "points": [
+     "trace...to... 译为\"把……归结于/追溯到……\"",
+     "what is called 译为\"所谓的\"",
+     "traits of character 译为\"性格特征\"，与后面的并列成分需完整译出"
+    ],
+    "pitfall": "trace behavior to 极易误译为\"追踪行为到……\"，此处 trace...to 表示\"把……归因于\"，是因果归结关系而非物理追踪。"
+   },
+   {
+    "number": 42,
+    "en": "The behavioral sciences have been slow to change partly because the explanatory items often seem to be directly observed and partly because other kinds of explanations have been hard to find.",
+    "cn": "行为科学之所以变化缓慢，部分原因是其用来解释行为的依据往往似乎可以直接观察到，部分原因是其他类型的解释一直难以找到。",
+    "structure": "主句为 The behavioral sciences have been slow to change（主语 + 现在完成时系表结构）。后接两个 partly because 引导的并列原因状语从句：第一个从句主语为 the explanatory items，谓语为 seem to be directly observed；第二个从句主语为 other kinds of explanations，谓语为 have been hard to find。",
+    "points": [
+     "partly...partly... 译为\"部分是因为……部分是因为……\"，体现并列因果",
+     "explanatory items 译为\"用来解释（行为）的依据\"",
+     "have been hard to find 译为\"一直难以找到\"，体现延续性"
+    ],
+    "pitfall": "explanatory items 容易被逐字直译为\"解释性条目\"，应结合语境译为\"用来解释行为的依据/事项\"；seem to be directly observed 需注意 seem 表示\"似乎\"，强调表象而非事实。"
+   },
+   {
+    "number": 43,
+    "en": "The role of natural selection in evolution was formulated only a little more than a hundred years ago, and the selective role of the environment in shaping and maintaining the behavior of the individual is only beginning to be recognized and studied.",
+    "cn": "自然选择在进化中的作用仅仅在一百多年前才得以阐明，而环境在塑造和保持个体行为方面的选择作用则刚刚开始被认识和研究。",
+    "structure": "由 and 连接的两个并列分句。第一分句：主语为 The role of natural selection in evolution，谓语为 was formulated，时间状语为 only a little more than a hundred years ago。第二分句：主语为 the selective role of the environment in shaping and maintaining the behavior of the individual（含两个动名词并列作介词 in 的宾语），谓语为 is only beginning to be recognized and studied。",
+    "points": [
+     "formulate 译为\"阐明/确立\"而非\"公式化\"",
+     "selective role 译为\"选择性作用/选择作用\"",
+     "is only beginning to be recognized and studied 译为\"才刚刚开始被认识和研究\"，体现起步阶段"
+    ],
+    "pitfall": "formulate 容易误译为\"制定/形成公式\"，此处语境指科学理论的提出与阐述；两个分句中的 only 语义不同，前者强调\"仅仅/才\"（时间之短），后者强调\"刚刚\"（起步之初），需分别准确表达。"
+   },
+   {
+    "number": 44,
+    "en": "They are the possessions of the autonomous(self-governing) man of traditional theory, and they are essential to practices in which a person is held responsible for his conduct and given credit for his achievements.",
+    "cn": "它们（自由和尊严）是传统理论中自主的人所拥有的，对于要求一个人对其行为负责并因其成就而受到赞扬的那些实践活动而言，它们是必不可少的。",
+    "structure": "由 and 连接的两个并列分句。第一分句：They are the possessions of the autonomous man of traditional theory（主系表结构）。第二分句：they are essential to practices（主系表 + 介词短语），后接 in which 引导的定语从句修饰 practices，从句中包含两个并列的被动结构：a person is held responsible for his conduct 和 (is) given credit for his achievements。",
+    "points": [
+     "possessions 译为\"拥有物/财富\"，指自由和尊严为自主人所拥有",
+     "be held responsible for 译为\"被要求对……负责\"",
+     "be given credit for 译为\"因……而受到赞扬/获得荣誉"
+    ],
+    "pitfall": "in which 定语从句中有两个并列被动语态，容易漏译第二个 given credit for his achievements；possessions 不宜译为\"财产\"，应体现抽象的\"拥有\"关系。"
+   },
+   {
+    "number": 45,
+    "en": "Until these issues are resolved, a technology of behavior will continue to be rejected, and with it possibly the only way to solve our problems.",
+    "cn": "在这些问题得到解决之前，行为技术将继续遭到排斥，而随之遭到排斥的可能还有解决我们问题的唯一途径。",
+    "structure": "Until 引导时间状语从句（these issues are resolved）。主句为 a technology of behavior will continue to be rejected。and 后接省略结构 with it possibly the only way to solve our problems，其中 with it 的 it 指代 a technology of behavior，整个短语省略了谓语 will continue to be rejected，意为\"随着行为技术被排斥，解决问题的唯一途径也可能被排斥\"。",
+    "points": [
+     "until 引导的时间状语从句译为\"在……之前\"",
+     "with it 中 it 指代行为技术，需补译出省略的谓语",
+     "possibly 译为\"可能\"，修饰 the only way，体现不确定性"
+    ],
+    "pitfall": "and with it possibly the only way to solve our problems 是高难度省略句，极易误解。with it 并非\"用它\"，而是\"连同它一起/随之\"，后面省略了 will continue to be rejected，需在译文中补出被排斥之意，否则句意不完整。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "trace...to...",
+    "cn": "把……归结于/追溯到（动词短语）"
+   },
+   {
+    "w": "traits of character",
+    "cn": "性格特征（名词短语）"
+   },
+   {
+    "w": "behavioral science",
+    "cn": "行为科学（名词短语）"
+   },
+   {
+    "w": "explanatory",
+    "cn": "解释的，说明的（形容词）"
+   },
+   {
+    "w": "formulate",
+    "cn": "阐明，系统阐述（动词）"
+   },
+   {
+    "w": "selective",
+    "cn": "选择性的（形容词）"
+   },
+   {
+    "w": "autonomous",
+    "cn": "自主的，自治的（形容词）"
+   },
+   {
+    "w": "possession",
+    "cn": "拥有物，所有物（名词）"
+   },
+   {
+    "w": "be held responsible for",
+    "cn": "被要求对……负责（动词短语）"
+   },
+   {
+    "w": "give credit for",
+    "cn": "因……而给予赞扬/荣誉（动词短语）"
+   },
+   {
+    "w": "entrenched",
+    "cn": "根深蒂固的（形容词）"
+   },
+   {
+    "w": "prescientific",
+    "cn": "前科学的，科学之前的（形容词）"
+   },
+   {
+    "w": "obscure",
+    "cn": "模糊的，不清楚的（形容词）"
+   }
+  ],
+  "skills": [
+   "trace...to 等动词+介词搭配需根据语境灵活选择\"归因\"\"追溯\"等义项",
+   "partly...partly... 等并列结构须对称翻译，保持逻辑平衡",
+   "省略句（如第45题 and with it...）需补全省略成分以确保译文完整通顺",
+   "被动语态（如 was formulated, is recognized, be rejected）宜转换为汉语主动句或无主句",
+   "定语从句（如 in which...）较长时可前置翻译为\"……的\"，避免译文拖沓"
+  ]
+ }
+}

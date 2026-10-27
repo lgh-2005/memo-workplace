@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "274068d32544__long_match__all",
+ "examId": "274068d32544",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2016 年 6 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:04:26.168Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34176,
+ "usage": {
+  "prompt_tokens": 930,
+  "completion_tokens": 1812,
+  "total_tokens": 2742,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 930,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1812,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 930,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "环境保护与经济发展的关系",
+  "strategy": [
+   "先通读10条陈述句，归纳共同主题，建立全局语境感",
+   "划出每条陈述句中的专有名词、数字、极端词等高辨识度关键词",
+   "注意同义替换：如exploit↔take advantage of, rewarding↔profitable",
+   "关注表态度/语气的词（如necessarily, difficult, warns），它们往往是定位利器",
+   "优先匹配含独特信息的题目（如UN reports, politician），再处理主题泛化的题目"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "I",
+    "cn": "例子表明，无论富国还是穷国都曾为了经济发展而开发利用环境。",
+    "keywords": [
+     "examples",
+     "rich and poor countries",
+     "exploited",
+     "economic progress"
+    ],
+    "paraphrase": "陈述句用 both rich and poor countries 概括，原文很可能通过具体国家的实例（developed/developing nations）说明环境被利用以追求经济增长，exploit 可能被替换为 take advantage of 或 damage。",
+    "tip": "定位词 examples 和 both rich and poor，在原文中找举例段落。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "环境保护与改善惠及全世界人民。",
+    "keywords": [
+     "environmental protection",
+     "improvement",
+     "benefit",
+     "all over the world"
+    ],
+    "paraphrase": "benefit people all over the world 可能被改写为 be advantageous to the global population 或 serve the interests of people worldwide，强调环保的普惠性。",
+    "tip": "关注 benefit 和 all over the world 的同义表达，如 globally、worldwide。"
+   },
+   {
+    "number": 38,
+    "answer": "L",
+    "cn": "经济增长会使世界变得更清洁，这未必是事实。",
+    "keywords": [
+     "not necessarily",
+     "economic growth",
+     "cleaner"
+    ],
+    "paraphrase": "not necessarily true 表示对常见假设的质疑，原文可能用 it is a myth/misconception that... 或 there is no guarantee that... 来表达经济增长不一定带来更好环境。",
+    "tip": "定位否定或质疑语气词，如 not necessarily、questionable。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "联合国系列报告的共同主题是环境保护与经济增长之间的关系。",
+    "keywords": [
+     "common theme",
+     "UN reports",
+     "environmental protection",
+     "economic growth"
+    ],
+    "paraphrase": "common theme 可能被改写为 recurring topic 或 central message；UN reports 是高辨识度专有名词，原文应直接出现 United Nations 相关表述。",
+    "tip": "直接搜索 UN/United Nations 和 reports，快速锁定段落。"
+   },
+   {
+    "number": 40,
+    "answer": "K",
+    "cn": "各发展机构在如何处理环境问题的同时确保经济进步方面存在分歧。",
+    "keywords": [
+     "development agencies",
+     "disagree",
+     "tackle",
+     "environment issues"
+    ],
+    "paraphrase": "disagree 可能被替换为 differ/divided/debate；tackle 可被替换为 address/deal with/handle；原文可能描述不同机构对环境与经济平衡的策略争论。",
+    "tip": "定位 development agencies 和 disagree 的近义表达，如 divided opinions。"
+   },
+   {
+    "number": 41,
+    "answer": "E",
+    "cn": "很难找到确凿证据来证明环境友好型做法比开发自然环境能产生更多利润。",
+    "keywords": [
+     "solid evidence",
+     "environmental friendliness",
+     "more profits",
+     "exploiting"
+    ],
+    "paraphrase": "difficult to find solid evidence 可被替换为 hard to demonstrate/little proof；generates more profits 可能对应 is more economically viable/profitable，强调缺乏实证。",
+    "tip": "关注 evidence、proof、hard to prove 等关于论据不足的表述。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "cn": "对生态系统的可持续管理从长远来看将带来回报。",
+    "keywords": [
+     "sustainable management",
+     "ecosystems",
+     "rewarding",
+     "long run"
+    ],
+    "paraphrase": "rewarding in the long run 可被改写为 pay off over time 或 yield long-term benefits；sustainable management 可对应 careful stewardship/responsible governance of ecosystems。",
+    "tip": "定位 sustainable management 和 in the long run，找长期收益相关论述。"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "cn": "一位以谨慎著称的政治家断言，人类的可持续发展取决于自然环境。",
+    "keywords": [
+     "politician",
+     "cautious",
+     "sustainable human development",
+     "natural environment"
+    ],
+    "paraphrase": "noted for being cautious 可能被替换为 characterized by prudence 或 known for careful approach；asserts 可被替换为 argues/claims/insists；depends on 可对应 relies on/is contingent upon。",
+    "tip": "定位 politician 和 cautious，A 段常为引言段，以权威人物发言开篇。"
+   },
+   {
+    "number": 44,
+    "answer": "N",
+    "cn": "贫穷国家将不得不为富裕国家的经济发展承担代价。",
+    "keywords": [
+     "poor countries",
+     "bear the cost",
+     "rich nations",
+     "economic development"
+    ],
+    "paraphrase": "bear the cost 可被替换为 pay the price/suffer the consequences；此处强调发展代价分配不公，原文可能用 developing nations shoulder the burden 等表达。",
+    "tip": "定位 poor countries 与 cost/price 的搭配，找关于不公平负担的段落。"
+   },
+   {
+    "number": 45,
+    "answer": "J",
+    "cn": "最近一项研究警告我们地球自然资源枯竭的危险。",
+    "keywords": [
+     "recent study",
+     "warns",
+     "exhaustion",
+     "natural resources"
+    ],
+    "paraphrase": "exhaustion of natural resources 可能被替换为 depletion/running out of resources；warns 可对应 cautions/alerts/raises alarm；recent study 是时间标记词，便于定位。",
+    "tip": "定位 recent study 和 exhaustion/depletion，锁定涉及资源枯竭警告的段落。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "exploited",
+    "cn": "v. 开发利用；剥削（exploit 的过去式）"
+   },
+   {
+    "w": "sustainable",
+    "cn": "adj. 可持续的"
+   },
+   {
+    "w": "ecosystems",
+    "cn": "n. 生态系统（复数）"
+   },
+   {
+    "w": "rewarding",
+    "cn": "adj. 有回报的；值得的"
+   },
+   {
+    "w": "tackle",
+    "cn": "v. 处理，解决（问题）"
+   },
+   {
+    "w": "exhaustion",
+    "cn": "n. 耗尽，枯竭"
+   },
+   {
+    "w": "assert",
+    "cn": "v. 断言，声称"
+   },
+   {
+    "w": "environmental friendliness",
+    "cn": "n. 环境友好性"
+   },
+   {
+    "w": "solid evidence",
+    "cn": "n. 确凿的证据"
+   },
+   {
+    "w": "bear the cost",
+    "cn": "v. 承担代价/费用"
+   }
+  ]
+ }
+}

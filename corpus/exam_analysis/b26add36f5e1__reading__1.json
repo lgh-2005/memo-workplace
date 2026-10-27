@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "b26add36f5e1__reading__1",
+ "examId": "b26add36f5e1",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 12 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:20:59.433Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65578,
+ "usage": {
+  "prompt_tokens": 1833,
+  "completion_tokens": 3832,
+  "total_tokens": 5665,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1833,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3832,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1833,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 49 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "美国数学教育改革方向之争",
+  "gist": "文章围绕美国数学教育展开讨论。Andrew Hacker主张削减高等数学课程，代之以统计学等实用课程；Maria Droujkova和Pamela Harris则认为应改进数学教学方式，让数学更易理解、更能激发兴趣，而非减少数学内容。三方观点折射出美国数学教育面临的困境与改革分歧。",
+  "structure": [
+   "第1-2段：引出话题——高等数学实用性低，教育界展开争论",
+   "第3-5段：Hacker主张削减高等数学，推广实用型数学课",
+   "第6-8段：Droujkova反对，主张让数学更易懂、更有趣",
+   "第9-11段：Harris观点类似，Hacker仍持怀疑态度，呼吁提供替代选择"
+  ],
+  "difficulty": "中等",
+  "translation": "尽管人类在数学领域不断取得更高层次的成就，但我们当中许多并非天生热爱数学（或以工程为职业）的人，可能很难回忆起上一次使用微积分是什么时候了。\n\n美国教育工作者并没有忽视这一事实。在数学不及格率持续攀升的背景下，他们正在讨论数学如何更好地满足学生的现实生活需求。我们是否应该改变学校数学的教学方式，或者干脆取消某些课程？\n\n皇后学院政治学教授Andrew Hacker认为，高等代数和其他高级数学课程应从课程体系中删去，取而代之的是统计学等更具日常实用性的课程。\n\n\"我们从各方面听到的说法是，我们数学教得不够多，中国人把我们远远甩在身后，\"Hacker说。\"我的观点是，我们给太多人教了太多的数学……不是每个人都必须学微积分。如果你打算成为一名航空工程师，那没问题。但我们大多数人并不会成为航空工程师。\"\n\n相反，Hacker正在推动更多像他在皇后学院教授的那门课一样的课程：数字素养101。在那里，他的\"公民统计学\"学生学习分析联邦预算和企业报告等公共信息。Hacker认为，这样的课程是治疗成年人\"数字文盲\"的良药——这些成年人虽然完成了代数等高等数学课程，却无法计算比如按面积算一块地毯的价格。\n\n但Hacker的观点遭到了其他数学教育工作者的反对，他们认为需要做的是帮助学生在更早的阶段与数学建立更好的关系，而不是整体上减少数学教学。\n\nMaria Droujkova是\"自然数学\"的创始人之一，她曾向5岁的儿童教授基本的微积分概念。在Droujkova看来，高等数学很重要，美国课堂中需要的是注入一种孩童般的好奇心。\n\n\"让数学更容易获得，\"Droujkova说。\"重新设计它，让更多类型的人都能理解：幼小的孩子、对数学感到焦虑的成年人、以及可能有过不愉快经历的成年人。\"\n\nPamela Harris是得克萨斯大学奥斯汀分校的讲师，她持有类似的观点。Harris说，美国教育正深受\"伪数学\"的困扰——强调对公式和步骤的死记硬背，而非理解数学如何影响我们看待世界的方式。\n\n需要说明的是，Andrew Hacker仍然持怀疑态度。\n\n\"我会把这件事留给数学界的人去想办法，让他们的学科变得有趣和令人兴奋，从而使学生愿意去学，\"Hacker说。\"我所要求的只是，提供替代选择，而不是把我们所有人都赶上通往微积分的那条路。\"",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "many of us who aren't mathematicians at heart (or engineers by trade) may struggle to remember the last time we used calculus.",
+    "why": "原文第一段指出，许多非数学家或工程师的普通人\"很难回忆起上一次使用微积分是什么时候\"，言下之意是高等数学在日常生活中几乎用不上。C选项\"他们发现高等数学几乎没什么用\"准确概括了这一含义，属于对原文的合理推断。",
+    "traps": "A\"他们挣扎于解决数学问题\"——原文说的是struggle to remember上次用微积分的时间，不是解决数学题困难，偷换了struggle的宾语。B\"他们认为数学是复杂学科\"——complexity出现在第一句形容人类数学成就，不是普通人对数学的看法，属于张冠李戴。D\"他们努力学高等数学\"——原文无此信息，纯属无中生有。",
+    "tip": "注意区分原词在不同语境中的含义，防止偷换概念。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "We hear on all sides that we're not teaching enough mathematics, and the Chinese are running rings around us",
+    "why": "Hacker引用大众说法时提到\"我们从各方面听到说我们数学教得不够，中国人把我们远远甩在后面\"，running rings around us意为\"远远超过我们\"。这说明普遍的抱怨是美国在数学教育方面做得不如中国好，对应A选项。注意这是Hacker引述的他人观点（general complaint），而非他本人的主张。",
+    "traps": "B\"数学教授没做好工作\"——原文批评的是数学教育体制而非教授个人，属于过度推断。C\"没帮学生发展文字素养\"——原文后面提到的是numerical illiteracy（数字素养缺失），非literacy（文字素养），偷换概念。D\"多年来几乎没有创新\"——原文未提及创新问题，纯属无中生有。",
+    "tip": "注意区分引述他人观点与作者/说话人自身观点。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "There, his students of 'citizen statistics' learn to analyze public information like the federal budget and corporate reports.",
+    "why": "原文描述Numeracy 101课程内容是让学生学习分析联邦预算和企业报告等公共信息，并指出这是治疗\"数字文盲\"的良药——这些人学过高等数学却无法计算地毯面积价格。可见该课程旨在让学生将基础数学实际运用到现实生活中，对应B选项\"让学生实际运用基础数学\"。",
+    "traps": "A\"让学生循序渐进学习高等数学\"——Hacker的主张恰恰是减少高等数学，而非循序渐进教授，方向相反。C\"为高等数学学习打下坚实基础\"——课程目的是替代而非铺垫高等数学，属于曲解原意。D\"帮助学生发展分析能力\"——虽然课程涉及分析公共信息，但其核心目标是实用数学应用，D选项过度概括。",
+    "tip": "抓住课程具体内容和设置初衷，避免被个别词汇误导。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Make mathematics more available. Redesign it so it's more accessible to more kinds of people: young children, adults who worry about it, adults who may have had bad experiences.",
+    "why": "Droujkova明确主张\"让数学更容易获得\"和\"重新设计使之对更多人更可理解\"，包括幼儿和对数学感到焦虑的成年人。她还曾向5岁儿童教授微积分概念，说明她的核心建议是让复杂概念变得易于理解（accessible），对应A选项。",
+    "traps": "B\"从小就开始教孩子数学\"——虽然提到教5岁儿童，但这是举例说明数学可以变得易懂，而非建议所有老师都提前教学，以偏概全。C\"帮助孩子用微积分创造奇迹\"——work wonders曲解了childlike wonder（孩童般的好奇心），属于偷换概念。D\"激发学生对数学的好奇心\"——原文的childlike wonder是指教学方式应有的特质，而非学生的好奇心，且Droujkova的核心建议是accessible，D不够准确。",
+    "tip": "关注说话人的核心主张，区分举例与论点。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Harris says that American education is suffering from an epidemic of 'fake math'—an emphasis on rote memorization of formulas and steps, rather than an understanding of how math can influence the ways we see the world.",
+    "why": "Harris批评美国数学教育过于强调死记硬背公式和步骤，忽视了\"理解数学如何影响我们看待世界的方式\"。她认为数学教育的目标不应是死记硬背，而应拓宽学生对数学的认识——理解数学与世界的关系。C选项\"拓宽美国人对数学的视角\"最准确地概括了这一主张，即让人们从更广的视角认识数学的意义。",
+    "traps": "A\"让学习者更好地理解世界\"——看似接近原文，但Harris强调的是改变人们看待数学与世界关系的方式（perspectives on math），而非单纯理解世界本身，A偏离了数学教育的核心。B\"帮学习者区分伪数学和真数学\"——fake math是Harris对死记硬背教学的批评标签，而非教学目标，属于曲解。D\"对世界发展施加影响\"——过度引申原文influence一词，原文说的是数学影响我们看世界的方式，而非影响世界发展。",
+    "tip": "注意区分\"理解世界\"和\"改变对数学的认识\"，精准把握论述重心。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "curricula",
+    "cn": "n. 课程体系（curriculum的复数形式）"
+   },
+   {
+    "w": "running rings around",
+    "cn": "短语 远远超过，轻松击败"
+   },
+   {
+    "w": "numeracy",
+    "cn": "n. 计算能力，数字素养"
+   },
+   {
+    "w": "remedy",
+    "cn": "n. 补救措施，治疗方法"
+   },
+   {
+    "w": "illiteracy",
+    "cn": "n. 文盲；无知"
+   },
+   {
+    "w": "injection",
+    "cn": "n. 注入；注射"
+   },
+   {
+    "w": "accessible",
+    "cn": "adj. 可理解的；可接近的；易获得的"
+   },
+   {
+    "w": "epidemic",
+    "cn": "n. 流行病；泛滥 adj. 流行的"
+   },
+   {
+    "w": "rote",
+    "cn": "n. 死记硬背（常用于rote memorization）"
+   },
+   {
+    "w": "skeptical",
+    "cn": "adj. 怀疑的，持怀疑态度的"
+   },
+   {
+    "w": "eliminate",
+    "cn": "v. 消除，淘汰，去除"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Such courses, Hacker argues, are a remedy for the numerical illiteracy of adults who have completed high-level math like algebra but are unable to calculate the price of, say, a carpet by area.",
+    "cn": "Hacker认为，这样的课程是治疗成年人\"数字文盲\"的良药——这些成年人虽然完成了代数等高等数学课程，却无法计算比如按面积算一块地毯的价格。",
+    "note": "主干为Such courses are a remedy；Hacker argues为插入语；of adults后接who引导的定语从句修饰adults，从句内含but转折；say为插入语表示\"比如\"。"
+   },
+   {
+    "en": "Harris says that American education is suffering from an epidemic of 'fake math'—an emphasis on rote memorization of formulas and steps, rather than an understanding of how math can influence the ways we see the world.",
+    "cn": "Harris说，美国教育正深受\"伪数学\"的困扰——强调对公式和步骤的死记硬背，而非理解数学如何影响我们看待世界的方式。",
+    "note": "主干为Harris says that...；破折号后an emphasis...是对fake math的同位语解释；rather than连接对比；how引导宾语从句，其中the ways后省略了关系词that/in which。"
+   },
+   {
+    "en": "Hacker's argument has met with opposition from other math educators who say what's needed is to help students develop a better relationship with math earlier, rather than teaching them less math altogether.",
+    "cn": "但Hacker的观点遭到了其他数学教育工作者的反对，他们认为需要做的是帮助学生在更早的阶段与数学建立更好的关系，而不是整体上减少数学教学。",
+    "note": "主干为argument has met with opposition；who引导定语从句修饰educators；say后接what引导的主语从句作宾语；rather than引出对比项，与to help形成对照。"
+   }
+  ]
+ }
+}

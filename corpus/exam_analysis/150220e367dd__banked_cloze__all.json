@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "150220e367dd__banked_cloze__all",
+ "examId": "150220e367dd",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2021 年 6 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:38:57.948Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72184,
+ "usage": {
+  "prompt_tokens": 1440,
+  "completion_tokens": 4167,
+  "total_tokens": 5607,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1440,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4167,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1440,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中年女性的自我接纳与社会偏见",
+  "gist": "作者以43岁女性的视角，反驳社会对中年女性\"走向衰弱、逐渐隐形\"的刻板叙事，分享自己获得真实自我认知与自我接纳的喜悦，批判营销者利用羞耻感兜售产品的做法，并指出40岁后的人生远比杂志和好莱坞的简化描绘丰富得多。",
+  "difficulty": "中等",
+  "translation": "43岁的我，已经到了女性被警告要提防中年悄然来袭的悲伤的阶段。我们被灌输源源不断的\"如何挺过四十多岁\"的建议，仿佛我们正处于一段缓慢跛行走向脆弱的耐力赛阶段。这个年纪的女性开始变得\"隐形\"——我们的价值、吸引力和力量据说因青春的消逝而被削弱。但我并不觉得自己正在淡入无名之中。我比以往任何时候都更被看见，而且我人生中第一次对自己有了一种真实的、充满同情的、接纳的清醒认识。\n\n当我照镜子时，我为自己感到骄傲——即使是那些长期以来似乎不可能被爱的\"破碎\"部分。所以当广告商试图向我推销\"时光倒流\"的方法时，我不得不忍住笑。即使你付钱给我，我也不愿回到年轻时那种令人痛苦的自我意识中。这种来之不易的自我接纳感是成为年长女性的乐趣之一。但这种叙事往往被营销者所依赖的羞耻感所淹没，他们靠它来兜售减肥药、奇迹面霜和透气瑜伽裤——仿佛自爱是一种可以购买的商品。\n\n对于我认识的一些女性来说，人生后期这种信任感和自信给了她们离开病态关系或踏上新职业道路的勇气。其他人则谈到享受独处的时光，谈到在逆境中的成长，谈到友谊纽带的加深、变得更有同情心、更少批判性、更善于倾听并欣赏小小的快乐。40岁后的人生远非一帆风顺，但它远比我们在女性杂志和好莱坞大银幕上看到的那些简化的描绘丰富得多。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "H",
+    "correct": "fragility",
+    "why": "toward 后需接名词。上下文描述中年被比作\"缓慢跛行走向某处\"，fragility（脆弱）与 slow limp（缓慢跛行）构成语义搭配，暗示社会叙事将中年等同于身体和精神的衰弱。",
+    "traps": "adversity（逆境）虽是名词，但语义侧重外部困境，不符合此处\"缓慢衰退\"的身体隐喻；obscurity 虽也可选，但已用于第28题，且此处强调的是身体机能而非存在感。",
+    "tip": "介词 toward 后必填名词，结合 limp 的衰退隐喻选词。"
+   },
+   {
+    "number": 27,
+    "answer": "E",
+    "correct": "diminished",
+    "why": "空格处需要过去分词，与 supposedly 搭配构成被动含义：价值、吸引力和力量\"被青春的消逝所削减\"。diminished（被削弱的）精准表达\"减少、降低\"之意，逻辑通顺。",
+    "traps": "drowned 虽也是过去分词，但 drowned by the vanishing of youth 语义不当，且 drowned 常搭配 out 表示\"淹没声音/叙事\"，用于第31题更恰当。",
+    "tip": "supposedly + 过去分词构成被动结构，语义需与 value 递减匹配。"
+   },
+   {
+    "number": 28,
+    "answer": "J",
+    "correct": "obscurity",
+    "why": "fade into obscurity 是固定搭配，意为\"逐渐变得默默无闻/被遗忘\"，与上文\"女性开始变得隐形\"的主题呼应，语义高度契合。",
+    "traps": "fragility 虽也是名词，但 fade into fragility 不是习惯搭配，且 fragility 已用于第26题。adversity 语义不搭，fade into adversity 不符合英语表达习惯。",
+    "tip": "fade into obscurity 为高频固定搭配，考察词组识别能力。"
+   },
+   {
+    "number": 29,
+    "answer": "B",
+    "correct": "authentic",
+    "why": "空格与 compassionate、accepting 并列，需填形容词。authentic（真实的）表达对自我的清醒、真实认知，与全文\"自我接纳\"主题完美契合，且 clear-eyed view 呼应\"真实\"含义。",
+    "traps": "purchasable 虽为形容词，但语义（可购买的）与 view of myself 完全不搭。其他形容词已在候选池中被其他题消耗。",
+    "tip": "并列结构要求词性一致，三个形容词并列需语义递进或互补。"
+   },
+   {
+    "number": 30,
+    "answer": "O",
+    "correct": "suppress",
+    "why": "have to 后需接动词原形。suppress a laugh 是常见搭配，意为\"忍住笑\"。上下文中作者嘲讽广告商的\"时光倒流\"说辞，忍住笑表达了不屑与自信。",
+    "traps": "convey 虽为动词原形，但 convey a laugh 不是习惯搭配且语义不通。embark 需搭配 on，此处无法使用。",
+    "tip": "suppress a laugh 为常见动宾搭配，意为\"忍住不笑\"。"
+   },
+   {
+    "number": 31,
+    "answer": "F",
+    "correct": "drowned",
+    "why": "drowned out 是固定短语，意为\"（声音/叙事）被淹没/掩盖\"。此处被动结构 a narrative often drowned out by the shame 表示积极叙事被羞耻感所掩盖，逻辑清晰。",
+    "traps": "diminished 虽也是过去分词，但 diminished out 不是固定搭配。此处关键在于识别 drowned out 这一短语动词的被动形式。",
+    "tip": "drown out 为固定短语动词，被动形式 drowned out by 表示\"被…淹没\"。"
+   },
+   {
+    "number": 32,
+    "answer": "M",
+    "correct": "purchasable",
+    "why": "a + 形容词 + commodity 结构需填形容词。purchasable（可购买的）修饰 commodity（商品），讽刺营销者将自爱包装成可以花钱买到的东西，与上文批判广告商的语境一致。",
+    "traps": "authentic commodity 虽语法正确，但语义与讽刺语境矛盾，且 authentic 已用于第29题。",
+    "tip": "形容词修饰名词，需结合讽刺语气理解 purchasable commodity 的批判含义。"
+   },
+   {
+    "number": 33,
+    "answer": "G",
+    "correct": "embark",
+    "why": "embark on 是固定搭配，意为\"着手/开始（新事业、新旅程）\"。此处 embark on new career paths 表示开启新的职业道路，与 leave dysfunctional relationships 构成 or 并列，逻辑对称。",
+    "traps": "convey 虽为动词原形，但 convey on new career paths 不合语法也不合语义。suppress on 同样不搭配。",
+    "tip": "embark on 为固定搭配，意为\"着手开始\"，常与 journey/path 连用。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "correct": "adversity",
+    "why": "through 后需接名词。growth through adversity（逆境中的成长）是常见表达，与上下文讨论中年女性经历困难后获得成长的主题吻合。",
+    "traps": "obscurity（默默无闻）语义不当，growth through obscurity 逻辑不通。fragility 已用于第26题，且\"通过脆弱获得成长\"语义较弱。",
+    "tip": "through + 名词构成介词短语，adversity 与 growth 构成经典语义搭配。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "correct": "depictions",
+    "why": "the reductive + 名词 + we see in... 结构需填名词。depictions（描绘、刻画）指杂志和好莱坞对中年女性的简化描绘，与全文批判社会刻板叙事的主题形成总结呼应。",
+    "traps": "adversity 已用于第34题；且 reductive adversity 语义不通。fragility 已用且语义不搭。此处需要表示\"呈现方式\"的名词。",
+    "tip": "depictions 意为\"描绘/刻画\"，常指媒体对某群体的表现方式。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "fragility",
+    "cn": "n. 脆弱；虚弱"
+   },
+   {
+    "w": "diminished",
+    "cn": "v./adj. 减少的，被削弱的（diminish 的过去分词）"
+   },
+   {
+    "w": "obscurity",
+    "cn": "n. 默默无闻；晦涩；模糊"
+   },
+   {
+    "w": "authentic",
+    "cn": "adj. 真实的；可信的；地道的"
+   },
+   {
+    "w": "suppress",
+    "cn": "v. 抑制；镇压；忍住"
+   },
+   {
+    "w": "drowned",
+    "cn": "v. 淹没；掩盖（drown 的过去分词；drown out 为固定搭配）"
+   },
+   {
+    "w": "purchasable",
+    "cn": "adj. 可购买的；可收买的"
+   },
+   {
+    "w": "embark",
+    "cn": "v. 着手；上船（embark on 开始从事）"
+   },
+   {
+    "w": "adversity",
+    "cn": "n. 逆境；不幸；困难"
+   },
+   {
+    "w": "depictions",
+    "cn": "n. 描绘；刻画（depiction 的复数）"
+   },
+   {
+    "w": "crippling",
+    "cn": "adj. 严重损害的；令人痛苦的"
+   },
+   {
+    "w": "reductive",
+    "cn": "adj. 简化的；过于简单化的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文抓主旨，标记每空所需词性（名词/动词/形容词/副词）。",
+   "第二步：将15个候选词按词性分类，缩小每空的候选范围。",
+   "第三步：优先填固定搭配（如 fade into obscurity, embark on, drown out, suppress a laugh）。",
+   "第四步：利用并列结构和语法线索（如 and/or 并列要求词性一致）确认答案。",
+   "第五步：填完后回读全文，检查语义连贯性和每词是否仅用一次。"
+  ]
+ }
+}

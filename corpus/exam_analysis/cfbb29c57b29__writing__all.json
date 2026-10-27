@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "cfbb29c57b29__writing__all",
+ "examId": "cfbb29c57b29",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2018 年 12 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:22:00.359Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 51203,
+ "usage": {
+  "prompt_tokens": 694,
+  "completion_tokens": 3357,
+  "total_tokens": 4051,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 694,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3357,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 694,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，要求就\"如何平衡学业与课外活动\"展开论述，字数150–200词，需观点明确、论证充分、结构完整。",
+    "outline": [
+     "引出话题：大学生活不仅限于课本学习，课外活动同样重要，如何平衡二者值得深思。",
+     "主体论证：分两个层面展开——第一，明确优先级，学业为本，课外活动为有益补充；第二，掌握高效时间管理技巧，合理规划、学会取舍。",
+     "总结全文：重申观点，明确优先级与科学管理时间相结合，方能实现学业与个人成长的双赢。"
+    ],
+    "sample": "College life is not merely about burying oneself in textbooks; it also involves a wide range of extracurricular activities that contribute to personal growth. How to strike a proper balance between the two has become a question worthy of serious consideration.\n\nTo begin with, students should establish clear priorities. Academic study remains the primary mission of college life, and therefore it should always come first. Setting specific academic goals and adhering to a well-structured timetable can help ensure that coursework is never compromised. Meanwhile, extracurricular activities serve as a valuable complement to classroom learning. Participating in clubs, volunteer programs, or sports teams cultivates essential soft skills such as teamwork, leadership, and time management, which are increasingly valued by employers.\n\nFurthermore, effective time management is the key to maintaining this balance. Students are advised to plan their weekly schedules in advance, allocating dedicated time slots for both study and activities. Learning to say no to excessive commitments is equally important, as overloading oneself can lead to burnout and declining academic performance.\n\nIn conclusion, by setting clear priorities and managing time wisely, students can enjoy a fulfilling college experience that harmonizes academic excellence with personal development.",
+    "phrases": [
+     {
+      "en": "strike a proper balance between A and B",
+      "cn": "在A与B之间取得恰当的平衡；用于提出核心议题，比简单的keep balance更地道"
+     },
+     {
+      "en": "a question worthy of serious consideration",
+      "cn": "一个值得认真思考的问题；worthy of + n./doing结构，替代常见的worth thinking about"
+     },
+     {
+      "en": "establish clear priorities",
+      "cn": "明确优先级；establish比set更正式，适合议论文语体"
+     },
+     {
+      "en": "adhere to a well-structured timetable",
+      "cn": "遵循一份规划合理的时间表；adhere to比follow更书面、高级"
+     },
+     {
+      "en": "serve as a valuable complement to",
+      "cn": "作为……的有益补充；complement体现辩证思维，避免将二者对立"
+     },
+     {
+      "en": "cultivate essential soft skills",
+      "cn": "培养关键软技能；cultivate比develop更具书面色彩"
+     },
+     {
+      "en": "allocate dedicated time slots",
+      "cn": "分配专门的时间段；allocate体现主动规划意识，比spend time更精准"
+     },
+     {
+      "en": "lead to burnout and declining academic performance",
+      "cn": "导致倦怠和学业成绩下滑；burnout为高频话题词，加分明显"
+     },
+     {
+      "en": "harmonize academic excellence with personal development",
+      "cn": "使学业优异与个人发展相协调；harmonize一词优雅且贴合'平衡'主题"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只谈学业重要性或只谈课外活动好处，未扣住'如何平衡'这一核心要求",
+     "结构松散：缺少明确的段落主题句，导致论点不清晰、阅卷老师难以快速抓住要点",
+     "用词单一：全篇反复使用important/good/bad，缺乏同义替换和高级词汇展示",
+     "逻辑断裂：两个分论点之间缺少过渡词衔接，如furthermore/meanwhile等",
+     "字数失控：写作不足150词会被扣分，超过200词则浪费时间且易出错"
+    ],
+    "upgrades": [
+     {
+      "plain": "We should balance study and activities.",
+      "better": "Students should strike a proper balance between academic study and extracurricular activities.",
+      "note": "主语具体化，动词短语更地道，宾语展开更充分，体现书面语水平"
+     },
+     {
+      "plain": "Extracurricular activities are good for us.",
+      "better": "Extracurricular activities serve as a valuable complement to classroom learning.",
+      "note": "用serve as a complement替代笼统的be good for，论述更精准、更有学术感"
+     },
+     {
+      "plain": "We need to manage our time well.",
+      "better": "Effective time management is the key to maintaining this balance.",
+      "note": "用名词化结构替代简单祈使句，语言更凝练，符合议论文文体要求"
+     },
+     {
+      "plain": "Doing too many things is bad.",
+      "better": "Overloading oneself can lead to burnout and declining academic performance.",
+      "note": "动名词作主语+具体后果，避免空泛评价，论证更有说服力"
+     },
+     {
+      "plain": "In a word, we should study hard and join activities.",
+      "better": "By setting clear priorities and managing time wisely, students can enjoy a fulfilling college experience that harmonizes academic excellence with personal development.",
+      "note": "介词短语前置+定语从句收束全文，结尾有力且回扣主题"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Strike a proper balance between the two has become a question worthy of serious consideration. — 在二者之间取得恰当平衡已成为一个值得认真思考的问题。worthy of结构为高分句型。",
+   "Participating in clubs, volunteer programs, or sports teams cultivates essential soft skills such as teamwork, leadership, and time management, which are increasingly valued by employers. — 参加社团、志愿项目或运动队能培养团队合作、领导力和时间管理等关键软技能，而这些技能正日益受到雇主的重视。长主语+非限制性定语从句，信息量大且结构完整。",
+   "Learning to say no to excessive commitments is equally important, as overloading oneself can lead to burnout and declining academic performance. — 学会对过多的事务说不同样重要，因为让自己负担过重会导致倦怠和学业下滑。动名词主语+as引导原因从句，因果论证紧密。",
+   "By setting clear priorities and managing time wisely, students can enjoy a fulfilling college experience that harmonizes academic excellence with personal development. — 通过明确优先级并合理管理时间，学生可以享受一段将学业优异与个人发展相协调的充实大学生活。介词短语状语+that定语从句，结尾升华有力。"
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "baf672da4db5__reading__2",
+ "examId": "baf672da4db5",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 12 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:25:48.361Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58039,
+ "usage": {
+  "prompt_tokens": 1847,
+  "completion_tokens": 3988,
+  "total_tokens": 5835,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1847,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3988,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1847,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "南极磷虾捕捞威胁生态引发保护争议",
+  "gist": "绿色和平组织发布报告指出南极磷虾捕捞船日益靠近企鹅栖息地和鲸鱼觅食区，威胁南极生态。全球已发起运动推动建立海洋保护区。南极海洋生物资源养护委员会（CCAMLR）表示力求在保护生态与可持续捕捞之间取得平衡，并愿以自身知识和经验为保护区建设做出贡献。",
+  "structure": [
+   "第1-2段：绿色和平报告揭示磷虾捕捞对南极生态的威胁",
+   "第3-5段：全球运动推动建立海洋保护区及各方诉求",
+   "第6段：CCAMLR将就保护区提案进行决议",
+   "第7-8段：CCAMLR回应，强调平衡保护与捕捞，愿以专业知识贡献"
+  ],
+  "difficulty": "中等",
+  "translation": "一份新报告指出，在南极周围未受破坏的水域中进行的磷虾工业化捕捞正威胁着世界上最后几片大荒野之一的未来。\n\n绿色和平组织的这项研究分析了该区域磷虾捕捞船只的活动轨迹，发现它们越来越多地\"在企鹅栖息地和鲸鱼觅食区的紧邻区域\"作业。报告还指出了渔船搁浅、石油泄漏和事故等事件，这些事件对南极生态系统构成了严重威胁。\n\n这份于周二发布的报告正值人们对捕捞和气候变化对南极影响的担忧日益加剧之际。一场全球运动已经启动，旨在建立海洋保护区网络以保护该区域的海洋，绿色和平组织呼吁立即停止在正被考虑列为保护区的区域内的捕捞活动。\n\n绿色和平组织\"保护南极\"运动的弗里达·本特松表示：\"如果磷虾产业想要表明自己是一个负责任的参与者，那么它就应该自愿撤出任何被提议设为海洋保护区的区域，并且应该转而支持保护这些广袤的南极海域。\"\n\n一场全球运动已经启动，旨在将大片南极海域转变为海洋保护区，保护野生动物并禁止一切捕捞活动，不仅限于磷虾捕捞。2016年在罗斯海建立了一个保护区，另一个保护区被提议设在威德尔海的广阔区域，第三个保护区正在南极半岛西部地区——一个关键的磷虾捕捞区——被考虑之中。\n\n南极海洋生物资源养护委员会（CCAMLR）负责管理南极周围的海域。它将在十月于澳大利亚召开的会议上就威德尔海保护区提案作出决定，不过关于半岛保护区的决定预计要到之后才会作出。\n\nCCAMLR的科学事务经理基思·里德表示，该组织寻求\"在南大洋的保护、养护和可持续捕捞之间取得平衡\"。他说，尽管更多的捕捞活动在企鹅栖息地附近进行，但通常是在繁殖季节后期、这些栖息地已经空了的时候进行的。\n\n他补充道：\"建立海洋保护区体系是CCAMLR正在进行的科学和政策讨论的关键部分。我们在该区域的长期运营依赖于一个健康且繁荣的南极海洋生态系统，这就是为什么我们一直与环保非政府组织保持公开对话。我们强烈希望继续这一对话，包括与绿色和平组织的对话，基于最新科学数据讨论改进方案。我们不是决定是否设立海洋保护区的人，但我们希望以自身的知识和经验做出积极贡献。\"",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "found they were increasingly operating \"in the immediate vicinity of penguin colonies and whale-feeding grounds\"",
+    "why": "原文明确指出捕捞船越来越多地在企鹅栖息地和鲸鱼觅食区的\"紧邻区域\"（in the immediate vicinity of）作业。C选项中\"too close to the habitats of penguins and whales\"是对原文\"in the immediate vicinity of penguin colonies and whale-feeding grounds\"的同义改写，逻辑完全吻合。",
+    "traps": "A项\"导致大量企鹅和鲸鱼迁徙\"属于无中生有，原文未提及迁徙；B项\"剥夺栖息地\"过度推断，原文只说在栖息地附近作业，并非剥夺栖息地；D项\"前所未有的威胁\"中unprecedented一词属于程度夸大，原文只说posed a serious threat，未用最高级或\"前所未有\"的表述。",
+    "tip": "注意同义替换：immediate vicinity = too close to。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "A global campaign has been launched to create a network of ocean sanctuaries to protect the seas in the region",
+    "why": "原文第三段明确说全球运动的目的是\"create a network of ocean sanctuaries to protect the seas in the region\"（建立海洋保护区网络以保护该区域海洋）。B选项\"To establish conservation areas in the Antarctic region\"是对原文的同义改写：establish=create, conservation areas=ocean sanctuaries。",
+    "traps": "A项\"减少气候变化对南极的影响\"偷换概念，原文提到气候变化是背景信息，并非运动的目的；C项\"规范磷虾捕捞作业\"缩小了范围，运动目标是建立保护区而非仅仅规范捕捞；D项\"宣传对磷虾捕捞影响的关注\"混淆了手段与目的，运动目的是建保护区而非仅仅宣传。",
+    "tip": "抓住目的状语to do结构，精确定位运动目标。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "it should be voluntarily getting out of any area which is being proposed as an ocean sanctuary, and should instead be backing the protection of these huge tracts of the Antarctic",
+    "why": "原文引用绿色和平代表的话，建议磷虾产业\"自愿撤出任何被提议设为海洋保护区的区域\"。A选项\"Opting to operate away from the suggested conservation areas\"是对此的精确同义改写：voluntarily getting out of=opting to operate away from，proposed as an ocean sanctuary=suggested conservation areas。",
+    "traps": "B项\"自愿保护濒危物种\"属于偷换对象，原文说的是撤出保护区域，而非直接保护物种；C项\"在整个繁殖季节停止捕捞\"无中生有，原文未提及繁殖季节与此建议的关系；D项\"通过领导全球运动来展示责任感\"过度引申，原文只要求撤出和支持保护，未要求领导运动。",
+    "tip": "注意引述中的关键动词getting out of和backing，精准对应选项。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "the organisation sought \"a balance between protection, conservation and sustainable fishing in the Southern Ocean.\"",
+    "why": "CCAMLR科学事务经理Keith Reid说该组织寻求\"在保护、养护和可持续捕捞之间取得平衡\"。D选项\"Sustain fishing without damaging the Antarctic ecosystem\"准确概括了这一平衡目标：既要维持可持续捕捞（sustainable fishing），又要兼顾保护和养护（不破坏生态系统）。",
+    "traps": "A项\"提高公众对南极物种脆弱性的认识\"属于无中生有，原文未提及公众意识；B项\"禁止所有商业捕捞\"与原文矛盾，CCAMLR追求的是平衡而非全面禁止；C项\"使企鹅栖息地免受一切捕捞干扰\"过于绝对，原文Keith Reid还解释了捕捞在空巢期进行的合理性。",
+    "tip": "balance一词是关键，体现兼顾多方利益而非偏向一方。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "We are not the ones to decide on the establishment of marine protected areas, but we hope to contribute positively with our knowledge and experience.",
+    "why": "原文最后一段CCAMLR明确表示\"我们不是决定设立海洋保护区的人\"（排除决策者角色），\"但我们希望以自身的知识和经验做出积极贡献\"。这说明CCAMLR将自身定位为专业知识和经验的提供者。C选项\"A provider of the needed expertise\"（所需专业知识的提供者）精确对应了knowledge and experience的表述。",
+    "traps": "A项\"政策讨论的协调者\"虽然原文提到了policy discussions，但CCAMLR自述角色是贡献知识而非协调；B项\"大数据分析权威\"属于无中生有，原文提到scientific data但未涉及大数据分析或权威角色；D项\"海洋保护区的发起者\"与原文直接矛盾，原文明确说'We are not the ones to decide'，否认了决策/发起者角色。",
+    "tip": "否定句是重要线索，'not the ones to decide'排除了决策者角色。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "unspoilt",
+    "cn": "adj. 未遭破坏的，原始的"
+   },
+   {
+    "w": "vicinity",
+    "cn": "n. 附近，邻近地区"
+   },
+   {
+    "w": "grounding",
+    "cn": "n.（船只）搁浅"
+   },
+   {
+    "w": "sanctuary",
+    "cn": "n. 保护区，庇护所"
+   },
+   {
+    "w": "halt",
+    "cn": "n./v. 停止，中止"
+   },
+   {
+    "w": "tract",
+    "cn": "n. 大片（土地或水域）"
+   },
+   {
+    "w": "amid",
+    "cn": "prep. 在……之中，在……背景下"
+   },
+   {
+    "w": "thriving",
+    "cn": "adj. 繁荣的，蓬勃发展的"
+   },
+   {
+    "w": "sustainable",
+    "cn": "adj. 可持续的"
+   },
+   {
+    "w": "non-governmental",
+    "cn": "adj. 非政府的"
+   },
+   {
+    "w": "voluntarily",
+    "cn": "adv. 自愿地，主动地"
+   },
+   {
+    "w": "conservation",
+    "cn": "n. 保护，养护"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The study by Greenpeace analysed the movements of krill fishing vessels in the region and found they were increasingly operating \"in the immediate vicinity of penguin colonies and whale-feeding grounds\".",
+    "cn": "绿色和平组织的这项研究分析了该区域磷虾捕捞船只的活动轨迹，发现它们越来越多地在企鹅栖息地和鲸鱼觅食区的紧邻区域作业。",
+    "note": "主语The study，两个并列谓语analysed和found；found后接宾语从句they were...，其中in the immediate vicinity of为介词短语作地点状语。"
+   },
+   {
+    "en": "If the krill industry wants to show it's a responsible player, then it should be voluntarily getting out of any area which is being proposed as an ocean sanctuary, and should instead be backing the protection of these huge tracts of the Antarctic.",
+    "cn": "如果磷虾产业想要表明自己是一个负责任的参与者，那么它就应该自愿撤出任何被提议设为海洋保护区的区域，并且应该转而支持保护这些广袤的南极海域。",
+    "note": "If条件从句+then主句；主句含两个并列should：should be getting out of和should be backing；any area后接which引导的定语从句，被动语态is being proposed。"
+   },
+   {
+    "en": "We are not the ones to decide on the establishment of marine protected areas, but we hope to contribute positively with our knowledge and experience.",
+    "cn": "我们不是决定是否设立海洋保护区的人，但我们希望以自身的知识和经验做出积极贡献。",
+    "note": "but连接两个转折分句；not the ones to decide否定决策者身份，与后半句contribute positively形成对比，定义了自身贡献者角色。"
+   }
+  ]
+ }
+}

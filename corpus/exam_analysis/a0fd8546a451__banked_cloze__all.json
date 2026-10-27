@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "a0fd8546a451__banked_cloze__all",
+ "examId": "a0fd8546a451",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2016 年 12 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:09:02.835Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 78480,
+ "usage": {
+  "prompt_tokens": 1368,
+  "completion_tokens": 4819,
+  "total_tokens": 6187,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1368,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4819,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1368,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "阿米什人与现代文明的共存",
+  "gist": "文章论述了小型社区在扩张的机器文明冲击下逐渐消亡的现象，重点以旧秩序阿米什人为例，说明他们如何在工业化的美国保持独特的社区生活方式，成功抵制同质化进程，坚守传统价值观，并因勤劳节俭的美德而被主流社会所宽容。",
+  "difficulty": "中等",
+  "translation": "具有独特性格的小型社区——那里的生活稳定且充满人情味——正在逐渐消失。有些已经从地球表面消失了，有些正在慢慢衰亡，但所有社区在与不断扩张的机器文明接触后都经历了变化。将不同民族融合为一个共同整体的过程，在少数群体和多数群体的成员中都产生了紧张关系。\n\n旧秩序阿米什人在殖民时代来到美洲海岸，在现代世界中以独特的小型社区形式生存了下来。他们比其他群体更成功地抵制了同质化进程。在播种和收获的季节，人们可以看到蓄着胡须的阿米什男人用马匹耕作田地，女人们把洗好的衣物整齐地晾晒在外面。许多美国人在火车站或汽车站见过阿米什家庭——男人戴着宽沿黑帽，女人穿着长裙。尽管阿米什人与工业化的美国共同生活了两个半世纪以上，他们仍成功地调节了美国文化对其个人生活、家庭、社区和价值观的影响。\n\n阿米什人常常被其他美国人视为过去的遗迹，过着简单、刻板的生活，固守着不便且过时的习俗。他们被看作放弃了现代便利设施以及美国人追求成功与进步的梦想。但大多数人并不反对阿米什人以老式方式做事。他们在战时提出的良心拒服兵役得到了宽容，因为毕竟他们是践行勤劳和节俭美德的好农民。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "O",
+    "correct": "vanished",
+    "why": "空格处于 have _____ 结构中，需要动词过去分词构成现在完成时。搭配 from the face of the earth 为固定表达，意为\"从地球上消失\"，vanished 语义完美契合上文\"disappearing\"的递进含义，表示彻底消失。",
+    "traps": "undergone 虽然也是过去分词，但其后需接宾语（如 changes），此处无宾语故排除；survived 语义不通，不能与 from the face of the earth 搭配。",
+    "tip": "注意 vanish from the face of the earth 固定搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "M",
+    "correct": "undergone",
+    "why": "have _____ changes 需要过去分词，且该动词能接 changes 作宾语。undergo changes（经历变化）是高频固定搭配，语义上指社区在接触机器文明后经历了种种变化，逻辑通顺。",
+    "traps": "accessed changes 搭配不当，access 意为获取/访问，不与 changes 构成合理搭配；expanded 语义不合，changes 不是被\"扩展\"的。",
+    "tip": "undergo changes 是核心固定搭配，需熟记。"
+   },
+   {
+    "number": 28,
+    "answer": "D",
+    "correct": "expanding",
+    "why": "an _____ machine civilization 需要形容词或现在分词修饰名词短语 machine civilization。expanding 意为\"不断扩张的\"，用来形容机器文明的蔓延扩张，与上文社区消亡形成因果关系，语义合理。",
+    "traps": "industrialized 虽可作形容词，但与 machine civilization 语义重叠且冠词 an 搭配 industrialized 发音不合（industrialized 首字母为元音但此处用 an 正好匹配 expanding 的元音开头）；实际上 an 匹配 expanding 的元音音素。",
+    "tip": "现在分词作定语表\"正在进行/不断发展\"的状态。"
+   },
+   {
+    "number": 29,
+    "answer": "K",
+    "correct": "survived",
+    "why": "have _____ in the modern world 需要过去分词构成完成时，且为不及物用法（后接介词 in）。survived 表示阿米什人在现代世界中\"存活、幸存下来\"，与上文社区消亡的背景形成对比，突出其坚韧生命力。",
+    "traps": "vanished 已用于第26题，且语义相反（消失而非存活）；prospered 语义过强，文章侧重\"存续\"而非\"繁荣\"。",
+    "tip": "survive in 意为\"在……中存活\"，注意不及物用法。"
+   },
+   {
+    "number": 30,
+    "answer": "H",
+    "correct": "process",
+    "why": "resisted the homogenization _____ 需要名词，与 homogenization 构成名词短语作 resisted 的宾语。process（进程）与 homogenization 搭配意为\"同质化进程\"，指社会趋同的过程，阿米什人成功抵制了这一进程。",
+    "traps": "conveniences 与 homogenization 搭配不当，\"同质化便利\"语义不通；terminals 为\"终端/车站\"，此处语义无关。",
+    "tip": "名词+名词构成复合名词短语，注意语义搭配。"
+   },
+   {
+    "number": 31,
+    "answer": "L",
+    "correct": "terminals",
+    "why": "in railway or bus _____ 需要名词，表示地点场所。terminals 意为\"终点站、候车大厅\"，railway terminals（火车站）和 bus terminals（汽车站）为常见搭配，描述人们在车站偶遇阿米什家庭的场景。",
+    "traps": "conveniences 语义不合，\"铁路便利设施\"不符合语境所描述的\"看到阿米什家庭\"的场景；process 放在此处语义荒谬。",
+    "tip": "terminal 作名词有\"航站楼/车站\"之意，注意一词多义。"
+   },
+   {
+    "number": 32,
+    "answer": "E",
+    "correct": "industrialized",
+    "why": "lived with _____ America 需要形容词修饰专有名词 America。industrialized 意为\"工业化的\"，描述美国作为工业化国家的特征，与前文 machine civilization 呼应，体现阿米什人与工业化社会并存的对比。",
+    "traps": "expanding 已用于第28题；且 expanding America 侧重国土扩张，偏离文章讨论的工业化/现代化主题。",
+    "tip": "industrialized 强调社会经济发展阶段，与全文主题一致。"
+   },
+   {
+    "number": 33,
+    "answer": "F",
+    "correct": "perceived",
+    "why": "are often _____ by other Americans to be... 需要过去分词构成被动语态。perceive sb to be 意为\"把某人视为/认为某人是\"，是固定搭配。阿米什人\"被其他美国人视为过去的遗迹\"，语义逻辑通顺。",
+    "traps": "destined 搭配 to be 虽然语法可行（be destined to be），但语义为\"注定成为\"，与 by other Americans 的施动者结构矛盾；accessed 无被动用于此义的用法。",
+    "tip": "perceive sb/sth to be 是重要的被动态固定搭配。"
+   },
+   {
+    "number": 34,
+    "answer": "B",
+    "correct": "conveniences",
+    "why": "modern _____ 需要名词与 modern 搭配，且与 the American dream of success and progress 并列。modern conveniences（现代便利设施）指现代科技带来的生活便利，阿米什人被认为\"放弃了现代便利设施\"，与其拒绝使用电力、汽车等事实吻合。",
+    "traps": "terminals 搭配 modern 语义不当（现代终端站），且与\"放弃\"的语境不搭；process 为\"过程\"，abandoning modern process 语义不明。",
+    "tip": "conveniences 在此指具体的现代化便利工具和设施。"
+   },
+   {
+    "number": 35,
+    "answer": "G",
+    "correct": "practice",
+    "why": "who _____ the virtues of work and thrift 需要动词原形（先行词 farmers 为复数，定语从句谓语用原形）。practice 意为\"践行、实践\"，practice the virtues 表示\"践行美德\"，强调阿米什人身体力行地奉行勤劳节俭的价值观。",
+    "traps": "accessing 意为\"获取/访问\"，与 virtues 搭配不当，不能说\"获取美德\"；其余动词形式的候选词已在前面使用或词性不符。",
+    "tip": "practice 作动词意为\"实践、奉行\"，注意与名词 practice 区分。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "vanished",
+    "cn": "v. 消失，消亡（vanish 的过去式/过去分词）"
+   },
+   {
+    "w": "undergone",
+    "cn": "v. 经历，遭受（undergo 的过去分词）"
+   },
+   {
+    "w": "expanding",
+    "cn": "adj./v-ing 不断扩张的，扩展中的"
+   },
+   {
+    "w": "survived",
+    "cn": "v. 幸存，存活，经受住（survive 的过去式/过去分词）"
+   },
+   {
+    "w": "homogenization",
+    "cn": "n. 同质化，均质化"
+   },
+   {
+    "w": "terminals",
+    "cn": "n. 终点站，候车大厅，航站楼（terminal 的复数）"
+   },
+   {
+    "w": "industrialized",
+    "cn": "adj. 工业化的"
+   },
+   {
+    "w": "perceived",
+    "cn": "v. 感知，察觉；视为，认为（perceive 的过去分词）"
+   },
+   {
+    "w": "conveniences",
+    "cn": "n. 便利设施，方便的事物（convenience 的复数）"
+   },
+   {
+    "w": "thrift",
+    "cn": "n. 节俭，节约"
+   },
+   {
+    "w": "conscientious",
+    "cn": "adj. 认真的，出于良心的"
+   },
+   {
+    "w": "inflexible",
+    "cn": "adj. 刻板的，不灵活的，不可改变的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性（名词/动词/形容词/副词）分类标注。",
+   "第二步：分析每个空格的句法位置，根据 have+过去分词、冠词+___+名词 等结构判断所需词性，缩小选择范围。",
+   "第三步：利用固定搭配（如 undergo changes、vanish from、perceive...to be）直接锁定答案。",
+   "第四步：结合上下文逻辑和语义一致性验证答案，注意前后文的对比、因果、并列等关系。",
+   "第五步：每词仅用一次，已确定的答案及时划去，用排除法解决剩余难题并回读检验。"
+  ]
+ }
+}

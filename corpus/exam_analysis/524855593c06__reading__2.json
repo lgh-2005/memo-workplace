@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "524855593c06__reading__2",
+ "examId": "524855593c06",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 6 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:35:20.243Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66301,
+ "usage": {
+  "prompt_tokens": 1757,
+  "completion_tokens": 4270,
+  "total_tokens": 6027,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1757,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4270,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1757,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英国征收旅游税的争论",
+  "gist": "文章以苏格兰政府计划率先征收旅游税为切入点，介绍了国际上旅游税的发展趋势，分析了英国在此方面落后的原因（地方政府权力弱、执政党反对加税），论证了向游客征税以缓解地方服务财政压力的必要性，指出西方游客应正视旅游的社会成本，最后承认各方对旅游税意见不一，但主张应给予地方政府尝试的机会。",
+  "structure": [
+   "第1段：苏格兰率先获得对游客征税的权力，引出话题",
+   "第2-3段：举国际实例说明旅游税并非新事物且日益普及",
+   "第4段：分析英国落后原因，呼吁借鉴苏格兰大胆举措",
+   "第5段：论证游客应承担旅游社会成本，深化论点",
+   "第6段：承认分歧，但主张给地方政府征税的机会"
+  ],
+  "difficulty": "中等",
+  "translation": "尼古拉·斯特金上周二发表讲话，概述了苏格兰政府未来一年的立法计划，证实了一件已经相当明朗的事情：苏格兰各地方议会将成为英国首批有权向游客征收费用的地方政府，爱丁堡很可能率先实施。\n\n旅游税并非新事物。喜马拉雅山麓的不丹王国长期以来一直对游客收取每日费用。法国对过夜住宿征收的税款最初是为了帮助温泉疗养小镇发展，如今约有一半的法国地方当局在使用这一税种。\n\n但此类税费正在增加。巴塞罗那和威尼斯通过收费来应对\"过度旅游\"现象的举措近来备受关注。日本和希腊也是近期引入旅游税的国家之列。\n\n英国之所以落后，是因为按国际标准来看我们的地方政府权力薄弱，加之执政党极力推崇市场化、反对加税和监管。英国一些城市曾游说争取向游客征费的权力，但未获成功。此类税费并非万能药，因为其筹集的金额与2010年以来中央政府削减的拨款相比微不足道。尽管如此，人们仍然希望苏格兰政府的大胆举措能促使其他地区效仿。无论是来英国的国际游客，还是在康沃尔等热门景点度假的国内游客，都没有理由免于纳税——尤其是在废弃物收集、公园维护以及艺术文化支出等重要地方服务面临前所未有的压力之际。\n\n恰恰相反，要求游客在个人消费之外为其所到之处做出经济贡献，应当成为更广泛文化转变的一部分。拥有可支配收入的西方人常常表现得好像有权随心所欲地去任何地方，而很少顾及后果。正如航空及其他交通方式造成的环境危害必须接受更严格的审视一样，旅游的社会成本也必须得到正视。这包括短期租赁对居民住房成本和生活质量的影响。包括巴黎和柏林在内的数个欧洲首都正牵头推动欧盟加强监管。这还包括过度拥挤、乱扔垃圾以及与喧闹聚会相关的各种不文明行为的影响。\n\n这个问题没有\"放之四海而皆准\"的解决方案。新的收入来源仅惠及部分而非所有地方议会，情况较为复杂，企业也常常反对，担心更高的成本会削弱竞争力。但那些有意征收旅游税的地方必须获得尝试的机会，使旅游税切实发挥作用。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Scottish councils are set to be the first in the UK with the power to levy charges on visitors, with Edinburgh likely to lead the way.",
+    "why": "原文第一段明确指出，斯特金的讲话证实苏格兰地方议会将成为英国首批有权向游客征收费用的政府。B选项\"游客将不得不为访问苏格兰缴纳税费\"是对这一信息的准确概括。levy charges on visitors 即对游客征税。",
+    "traps": "A项\"英国将调整税收政策\"——文中只说苏格兰率先行动，并非全英国调整政策，属于扩大范围。C项\"英国将采取新措施促进旅游业\"——征税并非促进旅游，而是规范旅游，属于曲解目的。D项\"爱丁堡对苏格兰旅游业贡献最大\"——原文只说爱丁堡可能率先实施，并未涉及贡献大小，属于无中生有。",
+    "tip": "抓住首段核心事实，区分\"谁做什么\"的范围限定。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "That the UK lags behind is due to our weak, by international standards, local government, as well as the opposition to taxes and regulation of our aggressively pro-market ruling party.",
+    "why": "原文第四段明确给出英国落后的两个原因：一是地方政府权力薄弱，二是执政党极力推崇市场化、反对加税和监管。C选项\"其执政党反对税收和监管\"直接对应第二个原因，是原文的忠实转述。",
+    "traps": "A项\"政府想吸引更多游客\"——原文未提及吸引游客的意图，属于无中生有。B项\"税收不太可能增加多少收入\"——虽然原文提到金额微小，但这是解释旅游税非万能药的原因，不是英国推行缓慢的原因，属于张冠李戴。D项\"地方政府达成共识需要时间\"——原文说地方政府权力弱，非共识问题，属于偷换概念。",
+    "tip": "因果关系题要精准对应原因和结果，不要混淆不同论点的论据。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "There is no reason why visitors to the UK, or domestic tourists on holiday in hotspots such as Cornwall, should be exempt from taxation-particularly when vital local services including waste collection, park maintenance and arts and culture spending are under unprecedented strain.",
+    "why": "原文第四段末尾指出，无论国际游客还是国内游客都不应免税，尤其是在废弃物收集、公园维护、艺术文化支出等重要地方服务承受前所未有压力的情况下。D选项\"缓解其提供地方服务的财政负担\"准确概括了征税的目的——为面临巨大财政压力的地方服务提供资金。",
+    "traps": "A项\"将旅游业提升到国际标准\"——原文提到的\"国际标准\"是指地方政府权力而非旅游业水平，属于偷换对象。B项\"改善维护工人的福利\"——原文提到公园维护等服务经费紧张，非维护工人福利，属于偷换概念。C项\"促进与他国的文化交流\"——原文提及艺术文化支出，但指的是文化服务经费，非国际文化交流，属于曲解含义。",
+    "tip": "目的题关注 particularly when 等标志词后的核心信息。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Westerners with disposable incomes have often behaved as if they have a right to go wherever they choose with little regard for the consequences.",
+    "why": "原文第五段指出，拥有可支配收入的西方人常常表现得好像有权随心所欲去任何地方，很少顾及后果。紧接着文章将这一论断与旅游的社会成本联系起来。A选项\"他们似乎不关心旅游的社会成本\"准确概括了 with little regard for the consequences 的含义，且与上下文对社会成本的讨论一致。",
+    "traps": "B项\"他们似乎不介意为额外服务付费\"——原文未提及为额外服务付费的态度，属于无中生有。C项\"他们认为旅行是生活的重要组成部分\"——原文说的是他们觉得自己有权去任何地方，而非强调旅行的重要性，属于过度推断。D项\"他们将旅游影响置于审视之下\"——原文说的是旅游社会成本\"必须被正视\"（must be confronted），是作者的呼吁，并非西方游客已经在做的事，属于张冠李戴。",
+    "tip": "注意区分作者的呼吁和对现状的描述，as if 引导的虚拟语气暗示批评态度。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "The existence of new revenue streams for some but not all councils is complicated, and businesses are often opposed, fearing higher costs will make them uncompetitive. But those places that want them must be given the chance to make tourist taxes work.",
+    "why": "原文末段呈现了不同立场：一方面企业反对征税，担心成本上升削弱竞争力；另一方面作者认为有意征税的地方应获得机会。加上前文苏格兰政府的支持态度与部分城市游说未果的事实，可见各方意见不一。C选项\"分歧的\"准确反映了这种众说纷纭的局面。",
+    "traps": "A项\"支持的\"——仅反映了部分人的态度，忽略了企业界的反对声音，属于以偏概全。B项\"怀疑的\"——虽有反对意见，但也有积极推动的一面，不能一概而论为怀疑，属于以偏概全。D项\"不明确的\"——文中对各方立场描述清晰，只是彼此不同而非模糊不明，属于曲解信息。",
+    "tip": "态度题需综合全文尤其是末段各方观点，有支持有反对即为 divided。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "levy",
+    "cn": "v. 征收（税费）"
+   },
+   {
+    "w": "longstanding",
+    "cn": "adj. 长期存在的，由来已久的"
+   },
+   {
+    "w": "prominence",
+    "cn": "n. 显著地位，突出；gain prominence 引起关注"
+   },
+   {
+    "w": "lobby",
+    "cn": "v. 游说（政府或官员）"
+   },
+   {
+    "w": "remedy",
+    "cn": "n. 补救措施，解决方法"
+   },
+   {
+    "w": "exempt",
+    "cn": "adj. 被免除的，豁免的（from）"
+   },
+   {
+    "w": "unprecedented",
+    "cn": "adj. 前所未有的，史无前例的"
+   },
+   {
+    "w": "disposable",
+    "cn": "adj. 可支配的；一次性的"
+   },
+   {
+    "w": "scrutiny",
+    "cn": "n. 仔细审查，严格审视"
+   },
+   {
+    "w": "confronted",
+    "cn": "v. 正视，面对（问题或困难）"
+   },
+   {
+    "w": "revenue",
+    "cn": "n. 收入，税收（尤指政府财政收入）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "That the UK lags behind is due to our weak, by international standards, local government, as well as the opposition to taxes and regulation of our aggressively pro-market ruling party.",
+    "cn": "英国之所以落后，是因为按国际标准来看我们的地方政府权力薄弱，同时也因为我们极力推崇市场化的执政党反对加税和监管。",
+    "note": "That the UK lags behind 为主语从句作主语；by international standards 为插入语修饰 weak；as well as 连接两个并列原因；of our... ruling party 为 opposition 的修饰成分。"
+   },
+   {
+    "en": "There is no reason why visitors to the UK, or domestic tourists on holiday in hotspots such as Cornwall, should be exempt from taxation-particularly when vital local services including waste collection, park maintenance and arts and culture spending are under unprecedented strain.",
+    "cn": "无论是来英国的国际游客，还是在康沃尔等热门景点度假的国内游客，都没有理由免于纳税——尤其是在废弃物收集、公园维护以及艺术文化支出等重要地方服务面临前所未有的压力之际。",
+    "note": "why 引导定语从句修饰 reason；or 连接两类游客作并列主语；破折号后 particularly when 引导时间状语从句补充说明征税的紧迫性；including 后列举三项服务。"
+   },
+   {
+    "en": "Westerners with disposable incomes have often behaved as if they have a right to go wherever they choose with little regard for the consequences.",
+    "cn": "拥有可支配收入的西方人常常表现得好像有权随心所欲去任何地方，而很少顾及后果。",
+    "note": "as if 引导方式状语从句表虚拟或夸张；wherever they choose 为地点状语从句；with little regard for 为介词短语作伴随状语，表达漠不关心之意。"
+   }
+  ]
+ }
+}

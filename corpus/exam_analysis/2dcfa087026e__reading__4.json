@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "2dcfa087026e__reading__4",
+ "examId": "2dcfa087026e",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年考研英语真题",
+ "year": 2015,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:31:44.507Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67125,
+ "usage": {
+  "prompt_tokens": 1780,
+  "completion_tokens": 3971,
+  "total_tokens": 5751,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1780,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3971,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1780,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "机构道德缺失与电话窃听丑闻",
+  "gist": "文章以伊丽莎白·默多克关于社会道德缺失的演讲为引，围绕《世界新闻报》大规模电话窃听案展开，指出以利润为唯一社会筛选机制的集体信条导致了道德目标的缺位，高管问责制形同虚设，公平、正义等价值被边缘化，呼吁重建媒体行业的道德意识。",
+  "structure": [
+   "第1-2段：引伊丽莎白观点，批评利润至上导致道德缺失",
+   "第3段：窃听案审判结果，揭示丑闻规模之大",
+   "第4-5段：布鲁克斯辩护暴露高管免责现象及扭曲的集体价值观",
+   "第6段：点明编辑《世界新闻报》的真正目的，缺乏道德底线"
+  ],
+  "difficulty": "中等",
+  "translation": "两年前，鲁伯特·默多克的女儿伊丽莎白谈到了\"我们众多机构中令人不安的诚信缺失\"。她认为，诚信之所以崩塌，是因为人们集体接受了一种观念：社会唯一的\"筛选机制\"应该是利润和市场。但\"是我们——人类，是我们人民创造了我们想要的社会，而非利润。\"\n\n为了进一步阐明观点，她继续说道：\"越来越明显的是，政府、媒体或商业领域中目标感和道德话语的缺失，可能成为资本主义和自由面临的最危险的陷阱之一。\"她认为，同样的道德目标缺失正在伤害像国际新闻集团这样的公司，使其更容易像大规模非法电话窃听事件那样迷失方向。\n\n随着窃听案审判的结束——前《世界新闻报》编辑安迪·库尔森因合谋窃听电话被判有罪，而他的前任丽贝卡·布鲁克斯则在同样的指控中被判无罪——更广泛的诚信缺失问题依然存在。据悉，记者们曾窃听了多达5500人的电话。这是工业规模的窃听行为，2001年被《世界新闻报》雇佣为电话窃听核心人物的格伦·穆尔凯尔也承认了这一点。其他人还在等待审判。这个漫长的故事仍在展开。\n\n在许多方面，道德目标的缺失不仅构成了如此大规模电话窃听的背景，也界定了审判进行的基调。令人震惊的发现之一是，丽贝卡·布鲁克斯对她新闻编辑室里发生的事情知之甚少，她很少想到要去追问，而且她从未过问那些报道是如何获得的。她成功辩护的核心是：她什么都不知道。\n\n在当今世界，高薪高管不必对其所管理组织中发生的事情负责，这已成为常态。也许我们不应感到如此惊讶。一代人以来，集体信条一直是：社会的筛选机制应该是利润。重要的词汇是效率、灵活性、股东价值、商业友好、财富创造、销售额、影响力，以及在报业中的发行量。被边缘化的词汇则是公正、公平、宽容、适度和问责。\n\n编辑《世界新闻报》的目的不是为了促进读者的理解，不是为了报道的公正，也不是为了体现任何共同的人性关怀。它的目的是在追逐发行量和影响力的过程中毁掉他人的生活。布鲁克斯女士可能对她的记者如何获取报道有所怀疑，也可能没有，但她不问问题，不下指令——也没有收到任何可追溯、有记录的答复。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Integrity had collapsed, she argued, because of a collective acceptance that the only \"sorting mechanism\" in society should be profit and the market.",
+    "why": "伊丽莎白明确指出，诚信崩塌的原因是人们集体接受了利润和市场作为唯一的社会筛选机制（sorting mechanism），而第二段她进一步警告这种道德缺失会成为资本主义和自由的危险陷阱。A选项\"当前筛选机制的后果\"准确概括了她对利润至上机制所导致的道德沦丧问题的不满。",
+    "traps": "B项\"公司因不道德行为蒙受经济损失\"属于曲解原文，原文说的是道德缺失使公司迷失方向，并非强调财务损失；C项\"政府在道德问题上的无能\"以偏概全，原文提到的是政府、媒体和商业三者共同缺乏道德话语，而非单指政府；D项\"诚信在机构间被广泛滥用\"偷换概念，原文说的是诚信的\"缺失\"（dearth），而非\"滥用\"（misuse）。",
+    "tip": "注意区分dearth（缺乏）与misuse（滥用）的本质区别。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Others await trial. This long story still unfolds.",
+    "why": "第三段指出窃听行为涉及多达5500人，是\"工业规模\"的窃听；库尔森已被判有罪，穆尔凯尔承认了窃听规模，而\"其他人还在等待审判\"\"这个漫长的故事仍在展开\"暗示还会有更多记者被查明有罪。B选项\"更多记者可能被判窃听罪名成立\"是对这些信息的合理推断。",
+    "traps": "A项\"穆尔凯尔可能否认窃听是犯罪\"与原文矛盾，原文说他承认了工业规模的窃听（was acknowledged by Glenn Mulcaire）；C项\"库尔森应被判无罪\"与事实相反，他已被判有罪；D项\"电话窃听在某些场合会被接受\"属于无中生有，文中始终对窃听持否定态度。",
+    "tip": "推断题注意从\"事件仍在发展\"类表述中推出后续可能性。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "One of the astonishing revelations was how little Rebekah Brooks knew of what went on in her newsroom, how little she thought to ask and the fact that she never inquired how the stories arrived. The core of her successful defence was that she knew nothing.",
+    "why": "作者用\"astonishing\"形容布鲁克斯对编辑室情况一无所知这一\"揭露\"，语气充满讽刺与质疑；作为主编却声称什么都不知道，作者暗示这种辩护难以令人信服。第六段末尾再次强调她\"不问问题、不下指令\"，进一步加强了作者认为其辩护缺乏说服力的态度。A选项\"几乎没有说服力\"准确反映了作者立场。",
+    "traps": "B项\"集中在琐碎问题上\"不符合原文，辩护的核心是\"一无所知\"而非琐事；C项\"揭示了一个狡猾的人格\"属于过度推断，作者质疑的是辩护本身的可信度，并未直接评价其性格狡猾；D项\"是阴谋的一部分\"属于无中生有，原文未暗示辩护本身是阴谋。",
+    "tip": "注意作者使用astonishing等反讽词汇所传达的真实态度。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "The words that have mattered are efficiency, flexibility, shareholder value, business-friendly, wealth generation, sales, impact and, in newspapers, circulation. Words degraded to the margin have been justice, fairness, tolerance, proportionality and accountability.",
+    "why": "作者指出当前的集体信条将利润作为社会筛选机制，重视效率、销售额等商业词汇，而将公正、公平、宽容、问责等道德词汇边缘化。这意味着社会整体的价值取向发生了扭曲——商业价值凌驾于道德价值之上。C选项\"普遍扭曲的价值观\"准确概括了作者对这种集体信条的批判。",
+    "traps": "A项\"被边缘化的生活方式\"曲解原文，被边缘化的是道德价值词汇而非生活方式；B项\"不公平的财富分配\"属于偷换话题，原文讨论的是价值观偏向而非财富分配问题；D项\"僵化的道德准则\"与原文相反，原文恰恰批评的是道德准则的缺失而非僵化。",
+    "tip": "对比型论述中把握作者的褒贬倾向即可判断价值判断。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "The purpose of editing the News of the World was not to promote reader understanding, to be fair in what was written or to betray any common humanity. It was to ruin lives in the quest for circulation and impact.",
+    "why": "最后一段通过否定句列举了编辑报纸本应具有的道德目标（促进理解、公平报道、体现人性关怀），再揭露其实际目的是追逐发行量和影响力而毁人生活。作者通过正反对比，暗示编辑报纸时道德意识至关重要。布鲁克斯不问不查的行为正是道德意识缺失的体现。B选项\"道德意识在编辑报纸中至关重要\"是对全段主旨的准确提炼。",
+    "traps": "A项\"写作质量至关重要\"以偏概全，原文强调的不只是写作质量，而是编辑工作中的道德目标；C项\"共同人性是新闻报道的核心\"虽然原文提到了common humanity，但这只是道德目标之一，不是全段的核心建议；D项\"记者需要更严格的行业规范\"属于过度推断，原文讨论的是道德意识而非行业监管法规。",
+    "tip": "否定句式常暗示作者认为被否定内容本应是正确做法。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dearth",
+    "cn": "n. 缺乏，不足"
+   },
+   {
+    "w": "integrity",
+    "cn": "n. 诚信，正直；完整性"
+   },
+   {
+    "w": "sorting mechanism",
+    "cn": "n. 筛选机制"
+   },
+   {
+    "w": "conspiring",
+    "cn": "v. 合谋，密谋（conspire的现在分词）"
+   },
+   {
+    "w": "predecessor",
+    "cn": "n. 前任，前辈"
+   },
+   {
+    "w": "revelation",
+    "cn": "n. 揭露，揭示；令人惊讶的发现"
+   },
+   {
+    "w": "accountability",
+    "cn": "n. 问责制，责任"
+   },
+   {
+    "w": "proportionality",
+    "cn": "n. 相称性，适度"
+   },
+   {
+    "w": "traceable",
+    "cn": "adj. 可追溯的，可追踪的"
+   },
+   {
+    "w": "hacking",
+    "cn": "n./v. 非法侵入，窃听（此处指电话窃听）"
+   },
+   {
+    "w": "degraded",
+    "cn": "v. 使降级，使贬低（degrade的过去分词）"
+   },
+   {
+    "w": "circulation",
+    "cn": "n.（报刊的）发行量；流通"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It's increasingly apparent that the absence of purpose, of a moral language within government, media or business could become one of the most dangerous goals for capitalism and freedom.",
+    "cn": "越来越明显的是，政府、媒体或商业领域中目标感和道德话语的缺失，可能成为资本主义和自由面临的最危险的陷阱之一。",
+    "note": "主句为It is apparent that...形式主语结构；that从句中主语是the absence of purpose, of a moral language（两个of并列补充absence），within短语作后置定语修饰限定范围。"
+   },
+   {
+    "en": "In many respects, the dearth of moral purpose frames not only the fact of such widespread phone hacking but the terms on which the trial took place.",
+    "cn": "在许多方面，道德目标的缺失不仅构成了如此大规模电话窃听的背景，也界定了审判进行的基调。",
+    "note": "not only...but...并列结构连接两个宾语；on which引导定语从句修饰the terms；frames为主句谓语动词，意为\"界定、构成框架\"。"
+   },
+   {
+    "en": "One of the astonishing revelations was how little Rebekah Brooks knew of what went on in her newsroom, how little she thought to ask and the fact that she never inquired how the stories arrived.",
+    "cn": "令人震惊的发现之一是，丽贝卡·布鲁克斯对她新闻编辑室里发生的事情知之甚少，她很少想到要去追问，而且她从未过问那些报道是如何获得的。",
+    "note": "主句为One of...was...表语从句由三部分并列构成：两个how little引导的感叹/疑问从句 + the fact that...同位语从句；what went on为嵌套宾语从句。"
+   }
+  ]
+ }
+}

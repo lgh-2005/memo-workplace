@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "534680224ae3__writing__all",
+ "examId": "534680224ae3",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年 6 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:51:37.345Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43164,
+ "usage": {
+  "prompt_tokens": 724,
+  "completion_tokens": 2450,
+  "total_tokens": 3174,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 724,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2450,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 724,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，以指定首句开头，围绕\"教育的重要目标是帮助学生学会如何学习\"展开论述，可评论、举例或结合个人经历，150-200词。",
+    "outline": [
+     "引出话题：以题目给定首句开篇，指出在信息爆炸时代，自主学习能力比知识本身更有价值，点明论点。",
+     "分层论证：从两个角度说明\"学会学习\"的重要性——①培养批判性思维与自主学习策略，举具体例子支撑；②激发求知欲与抗挫力，使学生主动应对挑战。",
+     "总结升华：结合个人经历强调方法重于知识，呼吁教育者重视探究式教学与反思性实践，确保学生适应不断变化的世界。"
+    ],
+    "sample": "It is widely accepted that an important goal of education is to help students learn how to learn. In an era characterized by rapid technological advancement and information explosion, the ability to acquire knowledge independently has become far more valuable than the knowledge itself.\n\nTo begin with, learning how to learn equips students with critical thinking skills and self-directed learning strategies, which are indispensable in their future careers. For instance, a medical student who masters effective research methods can continuously update their expertise long after graduation, thereby adapting to evolving medical practices. Furthermore, fostering this capacity cultivates intellectual curiosity and resilience. Students who develop autonomous learning habits are more likely to embrace challenges and persist through difficulties rather than passively waiting for instructions.\n\nFrom my personal experience, it was not the specific formulas I memorized in college but the analytical frameworks I developed that truly shaped my professional competence. Therefore, educators should prioritize teaching methodologies such as inquiry-based learning and reflective practice over mere content delivery, ensuring that students are equipped to thrive in an ever-changing world.",
+    "phrases": [
+     {
+      "en": "be characterized by",
+      "cn": "以……为特征；用于描述时代或现象的典型特征，增强表达正式感"
+     },
+     {
+      "en": "equip sb. with sth.",
+      "cn": "使某人具备某种能力/技能；常用于教育类话题，强调赋能"
+     },
+     {
+      "en": "self-directed learning strategies",
+      "cn": "自主学习策略；教育类高频术语，体现学术词汇积累"
+     },
+     {
+      "en": "indispensable in/to",
+      "cn": "在……中不可或缺的；比important更高级的替换词"
+     },
+     {
+      "en": "long after graduation",
+      "cn": "毕业很久之后；强调学习能力的长远价值，时间状语前置增强语势"
+     },
+     {
+      "en": "cultivate intellectual curiosity",
+      "cn": "培养求知欲；教育话题高分搭配，展现用词精准度"
+     },
+     {
+      "en": "persist through difficulties",
+      "cn": "在困难中坚持；比overcome difficulties更具动态感和画面感"
+     },
+     {
+      "en": "prioritize A over B",
+      "cn": "将A置于B之上/优先考虑A而非B；对比结构，逻辑清晰"
+     },
+     {
+      "en": "inquiry-based learning",
+      "cn": "探究式学习；教育学专业术语，提升文章专业度"
+     },
+     {
+      "en": "thrive in an ever-changing world",
+      "cn": "在不断变化的世界中蓬勃发展；适合用作结尾升华句"
+     }
+    ],
+    "pitfalls": [
+     "未使用题目给定首句开头或擅自改动原句，直接扣分",
+     "通篇空谈道理，缺少具体例子或个人经历支撑，论证单薄",
+     "词汇重复率高，反复使用important/good等基础词，未做同义替换",
+     "段落之间缺少逻辑连接词，结构松散，影响连贯性评分",
+     "字数不足150词或严重超出200词，均可能被扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Learning how to learn is very important for students.",
+      "better": "Learning how to learn equips students with critical thinking skills and self-directed learning strategies.",
+      "note": "将抽象的important具体化，说明重要在哪里，内容更充实、表达更高级"
+     },
+     {
+      "plain": "Students can use this ability in the future.",
+      "better": "This capacity is indispensable in their future careers.",
+      "note": "用indispensable替换普通表达，主语换为抽象名词，句式更正式"
+     },
+     {
+      "plain": "Teachers should teach students how to learn, not just teach knowledge.",
+      "better": "Educators should prioritize teaching methodologies such as inquiry-based learning over mere content delivery.",
+      "note": "prioritize A over B结构更精炼，加入专业术语增强说服力"
+     },
+     {
+      "plain": "I think the methods I learned are more useful than the facts.",
+      "better": "It was not the specific formulas I memorized but the analytical frameworks I developed that truly shaped my professional competence.",
+      "note": "使用not...but...强调句型，对比鲜明且句式高级"
+     },
+     {
+      "plain": "The world is changing fast, so we need to keep learning.",
+      "better": "In an era characterized by rapid technological advancement, the ability to acquire knowledge independently has become far more valuable than the knowledge itself.",
+      "note": "用be characterized by引出时代背景，比较级结构突出核心论点"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "In an era characterized by rapid technological advancement and information explosion, the ability to acquire knowledge independently has become far more valuable than the knowledge itself. — 在以技术飞速发展和信息爆炸为特征的时代，独立获取知识的能力远比知识本身更有价值。（高分开篇背景句，比较级+抽象名词做主语）",
+   "Learning how to learn equips students with critical thinking skills and self-directed learning strategies, which are indispensable in their future careers. — 学会如何学习使学生具备批判性思维能力和自主学习策略，这些在其未来职业生涯中不可或缺。（equip sb. with + 非限定性定语从句，一句话完成论点陈述）",
+   "It was not the specific formulas I memorized in college but the analytical frameworks I developed that truly shaped my professional competence. — 真正塑造我职业能力的不是大学里背的具体公式，而是我建立起的分析框架。（not...but...强调句，适用于个人经历段）",
+   "Educators should prioritize teaching methodologies such as inquiry-based learning and reflective practice over mere content delivery. — 教育者应将探究式学习和反思性实践等教学方法置于单纯的知识传授之上。（prioritize A over B，结尾建议句，专业且有力）",
+   "Students who develop autonomous learning habits are more likely to embrace challenges and persist through difficulties rather than passively waiting for instructions. — 养成自主学习习惯的学生更可能主动迎接挑战、克服困难，而非被动等待指令。（定语从句+rather than对比，展现句式多样性）"
+  ]
+ }
+}

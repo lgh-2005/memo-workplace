@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "a96d0a0cad95__reading__1",
+ "examId": "a96d0a0cad95",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 12 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:38:33.468Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68109,
+ "usage": {
+  "prompt_tokens": 1846,
+  "completion_tokens": 4451,
+  "total_tokens": 6297,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1846,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4451,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1846,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 48 题 locate 定位句与原文不符",
+  "第 50 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "从电视到社交媒体对理性思维的侵蚀",
+  "gist": "文章指出，电视的兴起使文化从理性转向情感娱乐，万维网最初曾作为追求知识的文本媒介对抗这一趋势，但社交网络随后以电视的价值观殖民了互联网，将人们重新拉回图像驱动、寻求即时认可的非理性状态，启蒙精神正面临严峻挑战。",
+  "structure": [
+   "第一段：引用波兹曼论述电视使文化从理性转向情感娱乐",
+   "第二段：电视影响渗透到政治、宗教、商业等各领域，使互动肤浅化",
+   "第三段：万维网初期作为文本媒介被视为追求知识的工具",
+   "第四段：社交网络用电视价值观殖民互联网，削弱理性与好奇心"
+  ],
+  "difficulty": "中等",
+  "translation": "理性与启蒙的趋势早在万维网出现之前就已受到威胁。正如尼尔·波兹曼在其1985年出版的《娱乐至死》一书中所指出的，电视的兴起不仅引入了一种新媒介，还引入了一种新的话语方式：一种从印刷文化向图像文化的渐进转变，这进而意味着从理性向情感、从说理向娱乐的转变。波兹曼指出，在一个以图像为中心、以愉悦为驱动的世界里，理性思维没有容身之处，因为你根本无法用图像来思考。正是文字使我们能够\"揭示谎言、混淆和过度概括，发现对逻辑和常识的滥用。它还意味着权衡思想、比较和对照各种论断、将一个概括与另一个概括联系起来\"。\n\n电视的统治地位并不局限于我们的客厅。它颠覆了所有那些思维习惯，从根本上改变了我们对世界的体验，影响了政治、宗教、商业和文化的运作方式。它将现代生活的诸多方面简化为娱乐、轰动效应和商业行为。\"美国人不是在彼此交谈，而是在相互娱乐，\"波兹曼写道，\"他们不交流思想，而是交换图像。他们不以命题展开辩论，而是用漂亮的外表、名人和商业广告来争论。\"\n\n起初，互联网似乎在对抗这一趋势。当它在20世纪80年代末作为一种纯文本媒介出现时，人们将它视为追求知识而非快感的工具。在这片园地中，理性和思想最受推崇——这一切都源自启蒙运动的精神。世界各地的大学是最早接入这一新媒介的机构之一，这里汇聚了讨论组、信息丰富的个人或团体博客、电子杂志以及学术邮件列表和论坛。这是一项知识性工程，与商业或控制无关，诞生于瑞士的一个科学研究中心。在十多年的时间里，互联网创造了一个替代空间，威胁着电视对社会的掌控。\n\n然而，社交网络后来用电视的价值观殖民了互联网。从脸书到Instagram，这种媒介将我们的注意力重新聚焦于视频和图像，奖励情感诉求——\"点赞\"按钮——而非理性诉求。它不是让我们追求知识，而是让我们沉浸于对来自观众的即时认可的无尽热情之中，而我们也在不断地、不自觉地进行着表演。（值得注意的是，谷歌起源于一篇博士论文，而脸书最初只是一个评判同学外貌的工具。）它通过根据我们的个人档案和偏好向我们精确展示我们已经想要的和已经认同的东西来削弱我们的好奇心。启蒙运动\"敢于求知\"的座右铭已变成了\"不敢在意去求知\"。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "the rise of television introduced not just a new medium but a new discourse: a gradual shift from a typographic culture to a photographic one, which in turn meant a shift from rationality to emotions, exposition to entertainment.",
+    "why": "原文明确指出电视的兴起带来了一种从印刷文化到图像文化的转变，进而意味着从理性（rationality）到情感（emotions）、从说理（exposition）到娱乐（entertainment）的转变。选项A中\"dominance of reason\"对应rationality，\"supremacy of pleasure\"对应emotions/entertainment，是对原文的准确同义改写。",
+    "traps": "B项\"从去影院到家庭娱乐\"属于无中生有，文中未提及cinema going；C项\"摄影技术革命\"曲解了photographic culture（图像文化），文中是指文化形态而非技术；D项\"娱乐产业新纪元\"缩小了范围，波兹曼讨论的是整个文化转型而非仅限娱乐产业。",
+    "tip": "注意区分原文关键词的文化内涵与其字面意思，避免望文生义。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "It is text that enables us to 'uncover lies, confusions and overgeneralizations, and to detect abuses of logic and common sense. It also means to weigh ideas, to compare and contrast assertions, to connect one generalization to another.'",
+    "why": "原文用强调句式指出\"正是文字\"使人们能够揭露谎言、发现逻辑滥用、权衡思想、比较论断，这些能力（揭示谎言、检测逻辑问题、权衡对比观点）正是\"批判性思维\"（critical thinking）的核心组成部分。选项D中conducive to critical thinking是对这些具体能力的高度概括。",
+    "traps": "A项\"获取大量信息\"文中未提及文本阅读在信息量方面的优势；B项\"快速处理更多信息\"属于无中生有，原文强调的是思考深度而非速度；C项\"丰富生活\"过于笼统，偏离了原文关于理性思维能力的具体论述。",
+    "tip": "当原文列举多个具体功能时，正确选项往往是对这些功能的上位概括。"
+   },
+   {
+    "number": 48,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Americans don't talk to each other, we entertain each other. They don't exchange ideas, they exchange images. They do not argue with propositions, they argue with good looks, celebrities and commercials.",
+    "why": "波兹曼用三组对比说明美国人的互动发生了质变：不交谈而是娱乐，不交流思想而是交换图像，不以命题辩论而是用外表、名人和广告说事。这些描述共同表明人际互动变得更加肤浅（superficial），即形式取代了内容、表面取代了实质。选项D的rendered their interactions more superficial准确概括了这一变化。",
+    "traps": "A项\"更多争论话题\"曲解了原文，原文说的是争论方式变浅薄而非话题增多；B项\"名人更贴近生活\"片面截取了celebrities一词，忽略了整体论述方向；C项\"更在意说什么\"与原文意思相反，原文表明人们用图像和外表取代了有实质内容的交流。",
+    "tip": "多组并列对比结构通常服务于一个共同论点，要从整体上提炼其核心含义。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "it was seen as a tool to pursue knowledge, not pleasure.",
+    "why": "原文第三段明确指出，当互联网在80年代末以纯文本媒介的形式出现时，它\"被视为追求知识而非快感的工具\"。选项C中was viewed as a means to quest for knowledge是对原文was seen as a tool to pursue knowledge的同义替换，viewed对应seen，means对应tool，quest对应pursue。",
+    "traps": "A项\"主要为全球大学而开发\"夸大了事实，原文只说大学是最早接入的机构之一（among the first to connect），并非为大学而开发；B项\"为连接不同国家的人而创建\"属于无中生有；D项\"为大学生设计的讨论论坛\"缩小并歪曲了互联网的定位，原文仅列举论坛为其功能之一。",
+    "tip": "注意among the first等限定性表达，避免将\"早期使用者\"误读为\"设计目标\"。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "it engages us in an endless zest for instant approval from an audience, for which we are constantly but unconsciously performing.",
+    "why": "原文第四段指出社交媒体让用户沉浸于\"对来自观众的即时认可的无尽热情\"之中，人们为此\"不断地、无意识地进行着表演\"。选项B中constantly seeking approval from their audience与原文endless zest for instant approval from an audience高度对应，constantly对应endless/constantly，seeking对应zest for，是准确的同义改写。",
+    "traps": "A项\"寻找替代逃避空间\"张冠李戴，alternative space出现在第三段描述早期互联网，与社交媒体用户无关；C项\"不断搜寻新信息\"与原文相反，原文说社交媒体\"通过展示你已经想要和认同的东西来削弱好奇心\"；D项\"无法长时间专注于任务\"属于无中生有，文中未讨论注意力持续时间问题。",
+    "tip": "当原文用比喻或修辞表述观点时，正确选项往往是其直白的同义改写。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "advent",
+    "cn": "n. 出现，到来"
+   },
+   {
+    "w": "rationality",
+    "cn": "n. 理性，合理性"
+   },
+   {
+    "w": "discourse",
+    "cn": "n. 话语（方式），论述"
+   },
+   {
+    "w": "typographic",
+    "cn": "adj. 印刷的，排版的"
+   },
+   {
+    "w": "exposition",
+    "cn": "n. 阐述，说理"
+   },
+   {
+    "w": "sensationalism",
+    "cn": "n. 哗众取宠，追求轰动效应"
+   },
+   {
+    "w": "confine",
+    "cn": "v. 限制，局限于"
+   },
+   {
+    "w": "overturn",
+    "cn": "v. 颠覆，推翻"
+   },
+   {
+    "w": "colonize",
+    "cn": "v. 殖民化，占领"
+   },
+   {
+    "w": "conducive",
+    "cn": "adj. 有助于的，有益于的"
+   },
+   {
+    "w": "supremacy",
+    "cn": "n. 至高无上，霸权地位"
+   },
+   {
+    "w": "proposition",
+    "cn": "n. 命题，主张，论点"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As Neil Postman noted in his 1985 book Amusing Ourselves to Death, the rise of television introduced not just a new medium but a new discourse: a gradual shift from a typographic culture to a photographic one, which in turn meant a shift from rationality to emotions, exposition to entertainment.",
+    "cn": "正如尼尔·波兹曼在其1985年出版的《娱乐至死》一书中所指出的，电视的兴起不仅引入了一种新媒介，还引入了一种新的话语方式：一种从印刷文化向图像文化的渐进转变，这进而意味着从理性向情感、从说理向娱乐的转变。",
+    "note": "主干为the rise of television introduced...a new discourse，冒号后为同位语解释discourse的具体内容；which引导非限制性定语从句修饰shift；not just...but...构成递进关系。"
+   },
+   {
+    "en": "It reduces our curiosity by showing us exactly what we already want and think, based on our profiles and preferences.",
+    "cn": "它通过根据我们的个人档案和偏好，向我们精确展示我们已经想要的和已经认同的东西，来削弱我们的好奇心。",
+    "note": "主干为It reduces our curiosity；by showing...为方式状语；what引导宾语从句作showing的直接宾语；based on...为过去分词短语作状语修饰showing。"
+   },
+   {
+    "en": "From Facebook to Instagram, the medium refocuses our attention on videos and images, rewarding emotional appeals—'like' buttons—over rational ones.",
+    "cn": "从脸书到Instagram，这种媒介将我们的注意力重新聚焦于视频和图像，奖励情感诉求——\"点赞\"按钮——而非理性诉求。",
+    "note": "主干为the medium refocuses our attention；rewarding...为现在分词短语作伴随状语；破折号之间的'like' buttons是对emotional appeals的举例说明；over rational ones表示优先于理性诉求。"
+   }
+  ]
+ }
+}

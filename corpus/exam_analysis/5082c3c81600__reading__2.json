@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "5082c3c81600__reading__2",
+ "examId": "5082c3c81600",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 6 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T06:05:12.629Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62356,
+ "usage": {
+  "prompt_tokens": 1800,
+  "completion_tokens": 4128,
+  "total_tokens": 5928,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1800,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4128,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1800,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "政府应以公民幸福而非经济增长为目标",
+  "gist": "文章指出GDP增长不应是政府首要目标，经济思维正转向可持续性。作者讨论了政府聚焦幸福的争议，引用哲学家巴吉尼关于'真实财富'的观点，但认为其标准过低。文章进一步以心理健康问题为例，批评政府仍以经济为优先，最终主张政府应以公民幸福为最高目标，将公民视为目的本身。",
+  "structure": [
+   "第1段：提出GDP增长非政府首要目标，经济应追求可持续",
+   "第2-3段：讨论政府聚焦幸福的争议及政府应创造促进繁荣的条件",
+   "第4-5段：引用巴吉尼'真实财富'观点，评价其标准过低",
+   "第6段：以心理健康为例，批评政府以经济优先的弊端",
+   "第7段：总结呼吁政府以公民为目的本身"
+  ],
+  "difficulty": "中等",
+  "translation": "GDP增长并非衡量一个国家表现的良好指标，也不应成为政府的首要目标。无限增长是不可持续的，经济思维正在转向这样的理念：我们应在经济模式中追求可持续性。但尽管可持续经济对我们的未来至关重要，它只是达到目的的手段，而非目的本身。\n\n政府应聚焦幸福这一理念也受到了批评。人们担心幸福该如何衡量。幸福难道不是一种短暂且主观的心理状态吗？不同的人难道不会体验到不同程度的幸福吗？即使从最宽泛的角度将\"幸福\"理解为繁荣或\"生活满意度\"，人们想要的东西也各不相同。\n\n当然，政府不能将生活满意度强加于公民。但我们的幸福依赖于社会的协作努力。政府的责任在于创造促进繁荣的条件。而且有充分的理由认为，这些条件是存在的、具有全球适用性的，并且可以通过研究来发现。\n\n在最近发表的一篇文章中，哲学家朱利安·巴吉尼建议我们应关注公民的\"真实财富\"，这并不依赖于GDP增长。获取渠道是关键：人们不需要拥有，而是需要获取那些使他们能够生活得好的东西。技术进步和社会行为的变化使我们能够更高效地利用已有的资产。而聚焦于人们过上更好生活所需资源的获取渠道，有助于减少不平等。\n\n就其本身而言，这与\"幸福\"倡导者提出的提案有许多共同之处。但对于政府能够且应该为其公民所做的事情来说，它设定的门槛太低了。\n\n例如，目前尚不清楚一个\"真实财富\"经济体将如何治愈困扰我们社会的心理健康疾病。至少在西方国家，心理健康不佳比贫困对幸福感的危害更大。除了大幅改善治疗性心理医疗服务之外，政府还可以且应该采取预防性措施来改善心理健康。世界卫生组织建议建立促进社区参与的机构——提供促进心理健康技能的教育项目和干预措施。然而，世卫组织感到有必要诉诸改善心理健康的经济效益来说服政府，以证明采取拟议措施的成本是合理的，这本身就说明了很多问题。只要经济仍是政府的优先事项，政府就无需做出超出确保公民持续生产力之外的努力。\n\n要求政府将公民的\"幸福\"设定为最高优先事项，就是要求他们将公民视为目的本身。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Unlimited growth is not sustainable, and economic thinking is moving toward the idea that we should aim for sustainability in our economic models.",
+    "why": "原文第一段明确指出\"经济思维正在转向我们应在经济模式中追求可持续性\"，A选项\"经济增长应变得可持续\"是对原文\"aim for sustainability\"的同义改写，与原文语义完全吻合。题目问的是\"更近期的经济增长思维\"，对应原文中\"economic thinking is moving toward\"这一表述。",
+    "traps": "B项\"对人类未来至关重要\"偷换概念，原文说的是\"可持续经济\"对未来重要，而非经济增长本身；C项\"应是政府首要关注\"与原文观点相反，原文开篇即否定GDP增长作为首要目标；D项\"是政府表现的指标\"也与原文相悖，原文说GDP增长\"not a good indicator\"。",
+    "tip": "注意区分原文中\"经济增长\"与\"可持续经济\"的不同指代。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Is happiness not a fleeting and subjective psychological state? Don't different people experience different levels of happiness? Even on the broadest interpretation of 'happiness' as prosperity or 'life satisfaction', people want different things.",
+    "why": "第二段讨论批评者的观点，通过三个反问句层层递进：幸福是短暂主观的心理状态、不同人体验不同程度的幸福、即使最宽泛的解释下人们想要的东西也不同。核心论点是幸福对不同人意义不同、难以统一衡量，C选项\"幸福对不同人有不同含义\"精准概括了这一批评理由。",
+    "traps": "A项\"政府不能将幸福强加于公民\"出现在第三段，是作者的承认，而非批评者反对的理由；B项\"幸福建立在个人努力上\"属于无中生有，原文未提及此观点；D项\"幸福依赖于可持续经济增长\"在原文中没有对应依据，属于拼凑干扰。",
+    "tip": "题目问的是反对的原因，需精准定位到第二段批评者的论据。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Access is key: people do not need to own, but rather access things that enable them to live well. ... And focusing on access to the resources people need to live better lives could help reduce inequality.",
+    "why": "第四段介绍巴吉尼的观点，核心是\"Access is key\"（获取渠道是关键），人们不需要拥有而是需要获取让他们生活得好的东西，聚焦于人们过上更好生活所需资源的获取渠道。B选项\"为人们提供获取更好生活资源的渠道\"是对原文\"access to the resources people need to live better lives\"的准确概括。",
+    "traps": "A项\"减少贫富不平等\"虽在原文提及，但这是聚焦获取渠道的附带效果，非巴吉尼建议的核心内容；C项\"改变人们行为\"曲解原文，原文说\"changes in social behavior\"是客观趋势，而非建议改变行为；D项\"利用先进技术改善生活\"片面理解，技术只是使高效利用资产成为可能的因素之一，并非建议核心。",
+    "tip": "多个信息点并列时，需识别核心主张与辅助论据的区别。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "It says a lot, however, that the WHO feels the need to appeal to the economic benefits of improving mental health to persuade governments that the cost of taking proposed measures is justified. As long as the economy is their priority, governments need go no further than ensuring citizens' continued productivity.",
+    "why": "原文说世卫组织需要诉诸经济效益来说服政府\"这本身就说明了很多\"，紧接着解释：只要经济仍是政府优先事项，政府只需确保公民持续的生产力。这说明世卫组织之所以用经济效益来游说，正是因为政府仍将经济发展置于优先地位，只有从经济角度论证才能打动它们。D选项与此逻辑完全一致。",
+    "traps": "A项\"没有GDP增长就无法执行心理健康项目\"过度推断，原文并未建立这一因果关系；B项\"心理干预有利于幸福感\"虽然正确但答非所问，题目问的是世卫组织为何需要诉诸经济效益；C项\"心理健康不佳有害于国家经济体系\"虽有一定关联但偏离重点，世卫组织诉诸经济效益的根本原因是政府以经济为重。",
+    "tip": "\"It says a lot\"是理解作者态度和因果关系的关键信号词。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "To demand that governments set the 'happiness' of citizens as their highest priority is to demand that they view citizens as ends in themselves.",
+    "why": "文章最后一句话总结全文核心主张：要求政府将公民幸福设为最高优先事项，就是要求政府将公民视为目的本身（ends in themselves）。这呼应了第一段\"手段与目的\"的讨论，强调政府目标应以人为本，而非以经济为本。B选项\"政府目标应以人为导向\"完美契合\"view citizens as ends in themselves\"的含义。",
+    "traps": "A项\"政府目标应以繁荣为驱动\"模糊了作者立场，作者认为幸福高于经济繁荣；C项\"政府应在决策中考虑公民意见\"属于无中生有，原文讨论的是政府的目标设定而非决策过程；D项\"政府应以持续生产力为首要任务\"与原文观点完全相反，原文批评政府仅关注生产力。",
+    "tip": "文章末尾句常为主旨升华，\"ends in themselves\"是康德哲学术语，意为将人视为目的。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "fleeting",
+    "cn": "adj. 短暂的，转瞬即逝的"
+   },
+   {
+    "w": "collaborative",
+    "cn": "adj. 合作的，协作的"
+   },
+   {
+    "w": "remedy",
+    "cn": "v. 补救，纠正；治疗"
+   },
+   {
+    "w": "epidemic",
+    "cn": "n. 流行病；蔓延；adj. 流行的"
+   },
+   {
+    "w": "plague",
+    "cn": "v. 困扰，折磨；n. 瘟疫"
+   },
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的，不利的（to）"
+   },
+   {
+    "w": "provision",
+    "cn": "n. 提供，供给；条款；准备"
+   },
+   {
+    "w": "therapeutic",
+    "cn": "adj. 治疗的，有疗效的"
+   },
+   {
+    "w": "preventative",
+    "cn": "adj. 预防性的（= preventive）"
+   },
+   {
+    "w": "intervention",
+    "cn": "n. 干预，介入；调停"
+   },
+   {
+    "w": "sustainable",
+    "cn": "adj. 可持续的，可维持的"
+   },
+   {
+    "w": "table",
+    "cn": "v. 提出（议案等）供讨论"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It says a lot, however, that the WHO feels the need to appeal to the economic benefits of improving mental health to persuade governments that the cost of taking proposed measures is justified.",
+    "cn": "然而，世界卫生组织感到有必要诉诸改善心理健康的经济效益来说服政府，以证明采取拟议措施的成本是合理的——这本身就很说明问题。",
+    "note": "主干为\"It says a lot that...\"（形式主语结构），that引导主语从句；从句中包含不定式to appeal to...作need的宾语，to persuade引导目的状语，其中又嵌套that引导的宾语从句。"
+   },
+   {
+    "en": "Over and above a vastly improved provision of therapeutic mental healthcare, there are preventative measures for improving mental health that governments could and should adopt.",
+    "cn": "除了大幅改善治疗性心理医疗服务之外，还有政府能够且应该采取的预防性心理健康改善措施。",
+    "note": "\"Over and above\"意为\"除……之外还\"；主干为there are措施；that引导定语从句修饰measures；could and should并列强调政府的能力与责任。"
+   },
+   {
+    "en": "To demand that governments set the 'happiness' of citizens as their highest priority is to demand that they view citizens as ends in themselves.",
+    "cn": "要求政府将公民的\"幸福\"设定为最高优先事项，就是要求政府将公民视为目的本身。",
+    "note": "主语为To demand that...（不定式短语），表语为to demand that...（不定式短语），两个that从句形成对称结构；\"ends in themselves\"为康德哲学术语，指人本身即为目的。"
+   }
+  ]
+ }
+}

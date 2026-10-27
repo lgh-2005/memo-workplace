@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "1485326c452f__writing__all",
+ "examId": "1485326c452f",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2021 年 6 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:36:23.289Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 37181,
+ "usage": {
+  "prompt_tokens": 710,
+  "completion_tokens": 1853,
+  "total_tokens": 2563,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 710,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1853,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 710,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "根据图表描述中国高等教育成就，要求先简要描述图表数据，再对中国高等教育取得的成就进行评论，字数150-200词。",
+    "outline": [
+     "第一段：描述图表——指出图表主题（中国高等教育毛入学率或毕业生人数等关键指标），概括数据变化趋势（持续上升），给出起止年份的具体数据对比。",
+     "第二段：分析原因——从政府政策扶持、经济发展提供物质保障、社会对教育重视程度提高等方面，阐释取得成就背后的原因。",
+     "第三段：总结评论——肯定中国高等教育的巨大进步，展望未来发展前景，并可适当提及仍需努力的方向（如提升质量、促进公平）。"
+    ],
+    "sample": "As is clearly illustrated in the chart, China has made remarkable progress in higher education over the past two decades. The gross enrollment ratio in higher education surged from approximately 15 percent in 2002 to over 57 percent in 2021, indicating that more than half of Chinese young people now have access to higher education.\n\nSeveral factors have contributed to this extraordinary achievement. First and foremost, the Chinese government has consistently increased its investment in education, allocating substantial funds to expand university capacity and improve infrastructure. In addition, the rapid economic growth over these years has provided a solid financial foundation for families to afford college tuition. Furthermore, the deeply rooted cultural value of education in Chinese society has motivated millions of students to pursue academic excellence.\n\nIn conclusion, China's achievements in higher education are truly impressive and have profoundly transformed the nation's human capital landscape. Looking ahead, it is essential that China continue to prioritize not only the quantity but also the quality and equity of higher education, thereby cultivating more innovative talents for its future development.",
+    "phrases": [
+     {
+      "en": "gross enrollment ratio",
+      "cn": "毛入学率；描述教育覆盖面的核心术语，六级图表作文高频表达"
+     },
+     {
+      "en": "surge from ... to ...",
+      "cn": "从……猛增至……；比rise更生动，适合描述大幅增长趋势"
+     },
+     {
+      "en": "have access to",
+      "cn": "有机会获得/享有；强调教育机会的可及性，搭配education非常地道"
+     },
+     {
+      "en": "allocate substantial funds to",
+      "cn": "拨付大量资金用于……；比spend money on更正式、更具学术色彩"
+     },
+     {
+      "en": "a solid financial foundation",
+      "cn": "坚实的经济基础；用于分析经济因素对教育发展的支撑作用"
+     },
+     {
+      "en": "deeply rooted cultural value",
+      "cn": "根深蒂固的文化价值观；描述中国重教传统的高分表达"
+     },
+     {
+      "en": "human capital landscape",
+      "cn": "人力资本格局；从宏观角度评价教育对国家发展的意义"
+     },
+     {
+      "en": "prioritize not only the quantity but also the quality",
+      "cn": "不仅重视数量更重视质量；not only...but also结构用于提出建议，逻辑严密"
+     },
+     {
+      "en": "cultivate innovative talents",
+      "cn": "培养创新型人才；教育类话题的高频搭配，体现专业性"
+     }
+    ],
+    "pitfalls": [
+     "未描述图表数据就直接议论，不符合题目要求'start with a brief description of the chart'",
+     "数据描述笼统，只说increased而不给出具体数字，缺乏说服力",
+     "全篇只罗列现象，缺少对成就的深入评论和原因分析",
+     "用词单一，反复使用more and more、develop等初级词汇，影响语言档次",
+     "字数不足150词或严重超过200词，直接扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "The number increased a lot from 2002 to 2021.",
+      "better": "The gross enrollment ratio surged from approximately 15 percent in 2002 to over 57 percent in 2021.",
+      "note": "用精确数据替代模糊描述，用surge替代increase，表达更准确有力"
+     },
+     {
+      "plain": "The government spent much money on education.",
+      "better": "The Chinese government has consistently increased its investment in education, allocating substantial funds to expand university capacity.",
+      "note": "动词更正式，用现在分词短语做伴随状语，句式更高级"
+     },
+     {
+      "plain": "Education is important in China.",
+      "better": "The deeply rooted cultural value of education in Chinese society has motivated millions of students to pursue academic excellence.",
+      "note": "将抽象概念具体化，用主语从属结构展示因果逻辑，内容更充实"
+     },
+     {
+      "plain": "China should improve education in the future.",
+      "better": "It is essential that China continue to prioritize not only the quantity but also the quality and equity of higher education.",
+      "note": "虚拟语气it is essential that...展示语法功底，建议更具层次感"
+     },
+     {
+      "plain": "China has done well in higher education.",
+      "better": "China's achievements in higher education have profoundly transformed the nation's human capital landscape.",
+      "note": "用transform替代do well，human capital landscape提升学术深度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The gross enrollment ratio in higher education surged from approximately 15 percent in 2002 to over 57 percent in 2021. 高等教育毛入学率从2002年的约15%猛增至2021年的57%以上。——图表描述的标杆句型，数据嵌入自然。",
+   "The deeply rooted cultural value of education in Chinese society has motivated millions of students to pursue academic excellence. 中国社会根深蒂固的重教文化激励了数以百万计的学生追求学术卓越。——原因分析的满分句，文化视角独到。",
+   "It is essential that China continue to prioritize not only the quantity but also the quality and equity of higher education, thereby cultivating more innovative talents for its future development. 中国有必要继续不仅重视高等教育的数量，更要重视其质量与公平，从而为未来发展培养更多创新型人才。——虚拟语气+thereby分词结构，语法亮点密集。",
+   "China's achievements in higher education have profoundly transformed the nation's human capital landscape. 中国在高等教育方面的成就深刻改变了国家的人力资本格局。——总结评价的高分表达，视角宏观、用词精准。"
+  ]
+ }
+}

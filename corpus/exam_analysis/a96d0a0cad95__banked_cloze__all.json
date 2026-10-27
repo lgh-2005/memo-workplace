@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "a96d0a0cad95__banked_cloze__all",
+ "examId": "a96d0a0cad95",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2021 年 12 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:38:22.194Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72020,
+ "usage": {
+  "prompt_tokens": 1389,
+  "completion_tokens": 4306,
+  "total_tokens": 5695,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1389,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4306,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1389,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "穿衣选择如何影响身心健康",
+  "gist": "心理学家Sharon Draper指出，穿衣选择会影响人的身心状态。穿合身且符合个人风格的衣服可以提升自信。利用现有衣物也能改善心态：选择舒适合身的衣服有助于清晰思考，尝试不同穿搭可积极改变情绪，而穿有情感意义的衣物则能在低落时帮助唤起积极情绪。",
+  "difficulty": "中等",
+  "translation": "心理学家Sharon Draper认为，我们的穿衣选择绝对会影响我们的身心健康。当我们穿着不合身的衣服，或在某个场合穿得过于正式或过于随意时，自然会感到不自在甚至有压力。相反，她说，选择合身且与你的风格感相一致（align）的衣服可以提升你的自信心。\n\n但你能通过你现有的（current）衣物来改善健康，而不必急着出去买一整套新的衣橱（wardrobe）吗？Draper说\"完全可以\"。如果你的目标是改善思维，她建议选择合身且不太可能引起烦躁不安的衣物，所以要避免蝴蝶结、领带和不必要的配饰（accessories）。选择你视为（perceive）与目标相关的衣服也有帮助，所以如果你想在工作中表现更好，就选择你认为专业的单品。Draper说这符合行为激活的概念，即参与（engaging）一种行为（在此情境中为挑选衣服）可以让你走上实现目标（更努力工作）的道路。\n\n改善心态（frame of mind）的另一种方法是做出变化。Draper说，如果我们总穿同样的衣服——即使是我们最喜欢的——我们常常会觉得陷入常规，因此选择一件不常穿的衣物，或在一套穿搭中加入不同的元素，比如一顶帽子，可以积极地（positively）改变你的心情。在你真的不情愿（reluctant）面对世界的日子里，Draper建议选择有情感意义的衣物，比如你在特殊日子穿过的，或亲人送给你的，因为带有美好（fond）联想的衣物可以帮助你激发积极的情绪。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "correct": "align",
+    "why": "空格前有 fit well and，与之并列需要动词原形；空格后有 with your sense of style，align with 是固定搭配，意为\"与……一致/协调\"，语义完美契合上下文\"合身且与风格一致\"。",
+    "traps": "accessories 是名词，词性不合；concurrently 是副词，无法与 and 前的动词并列；current 是形容词，同样词性不匹配，无法填入此处动词位置。",
+    "tip": "注意 and 并列结构要求词性一致，align with 为高频搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "correct": "current",
+    "why": "空格位于名词 clothing 前，需要形容词作定语。上下文意为\"通过你现有的衣物\"来改善健康，current 意为\"当前的、现有的\"，与后文\"不必买新衣橱\"形成对比逻辑。",
+    "traps": "fond 虽是形容词，但 fond clothing 不构成合理搭配；其他剩余形容词 reluctant 修饰人而非物，语义不通。",
+    "tip": "利用前后对比逻辑：current clothing 对应 without buying new wardrobe。"
+   },
+   {
+    "number": 28,
+    "answer": "O",
+    "correct": "wardrobe",
+    "why": "空格前有 a whole new，需要可数名词单数。wardrobe 除\"衣柜\"外还有\"全部衣物\"之意，buy a whole new wardrobe 意为\"买一整套新衣服\"，与前文\"利用现有衣物\"语义衔接。",
+    "traps": "accessories 虽为名词但为复数形式，与 a 不搭配；frame 虽可作名词但 a whole new frame 在此语境无意义。",
+    "tip": "wardrobe 的引申义\"全套衣物\"是六级常考词义辨析。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "correct": "accessories",
+    "why": "空格前有 unnecessary，需要名词；与 bows（蝴蝶结）、ties（领带）并列，属于同类事物，accessories（配饰）完美匹配该语义场，指多余的装饰配件会让人烦躁不安。",
+    "traps": "wardrobe 已在28题使用，且语义不合并列逻辑；其他剩余名词均不属于服饰装饰类别，无法与蝴蝶结、领带并列。",
+    "tip": "并列结构中各项应属于同一语义范畴，accessories 与 bows、ties 同为配饰。"
+   },
+   {
+    "number": 30,
+    "answer": "I",
+    "correct": "perceive",
+    "why": "空格在 you 后、as 前，需要动词原形；perceive as 是固定搭配，意为\"视为、认为\"，此处指\"你认为与目标相关的衣服\"，与后文 you view as professional 形成同义呼应。",
+    "traps": "align 已用于26题；engage 需搭配 in 而非 as，且语义不符；此处必须用表示\"认知、看法\"的动词。",
+    "tip": "perceive as 与 view as 同义替换，命题常用此类呼应验证答案。"
+   },
+   {
+    "number": 31,
+    "answer": "E",
+    "correct": "engaging",
+    "why": "空格在 whereby 后，作从句主语，需要动名词形式；engaging in a behavior 意为\"参与一种行为\"，是行为激活理论的核心表述，语义与括号解释\"selecting clothes\"完全吻合。",
+    "traps": "其他候选动名词形式均不存在于选项中；positively 为副词不能作主语；fund/frame 等名词语义不合\"参与行为\"的搭配。",
+    "tip": "whereby 引导的从句中动名词作主语是常见结构，engage in 为核心搭配。"
+   },
+   {
+    "number": 32,
+    "answer": "G",
+    "correct": "frame",
+    "why": "空格在 your 后、of mind 前，需要名词；frame of mind 是固定短语，意为\"心态、心境\"，与前文讨论衣着影响情绪的主题一脉相承。",
+    "traps": "accessories of mind、wardrobe of mind 均不构成英语搭配；此处考查的是固定短语识别能力，只有 frame 可以与 of mind 组合。",
+    "tip": "frame of mind（心态）是高频固定搭配，务必熟记。"
+   },
+   {
+    "number": 33,
+    "answer": "J",
+    "correct": "positively",
+    "why": "空格在 can 与 shift 之间，需要副词修饰动词 shift；positively shift your mood 意为\"积极地改变你的心情\"，与前文\"尝试不同穿搭\"带来正面效果的语义一致。",
+    "traps": "concurrently（同时地）虽为副词但语义不通，不存在\"同时改变心情\"的逻辑；此处强调的是正向影响而非时间关系。",
+    "tip": "can + 副词 + 动词原形结构中，根据语境选积极语义的副词。"
+   },
+   {
+    "number": 34,
+    "answer": "M",
+    "correct": "reluctant",
+    "why": "空格在 you're really 后，需要形容词作表语；reluctant to 意为\"不情愿做……\"，与 brave the world（勇敢面对世界）搭配，表达低落时不想出门的状态，后文建议穿有情感意义的衣物来帮助振作。",
+    "traps": "fond 搭配 of 而非 to，且 fond to brave the world 语义不通；current 作\"当前的\"时不用于 be current to do 结构。",
+    "tip": "reluctant to do sth. 为固定搭配，表示\"不情愿做某事\"。"
+   },
+   {
+    "number": 35,
+    "answer": "F",
+    "correct": "fond",
+    "why": "空格在 with 后、associations 前，需要形容词修饰名词；fond associations 意为\"美好的联想/回忆\"，与前文 sentimental items（有情感意义的物品）、special day、loved one 等正面情感线索呼应。",
+    "traps": "current associations（当前的联想）语义虽通但与\"帮助激发积极情绪\"的逻辑不够贴合；上下文明确强调温馨、美好的情感记忆，fond 最为精准。",
+    "tip": "fond 除\"喜爱的\"外还有\"美好的、温馨的\"之意，常修饰 memory/association。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "align",
+    "cn": "v. 使一致，使协调；对齐"
+   },
+   {
+    "w": "wardrobe",
+    "cn": "n. 衣柜；（个人的）全部衣物"
+   },
+   {
+    "w": "accessories",
+    "cn": "n. 配饰，饰品；附件（复数）"
+   },
+   {
+    "w": "perceive",
+    "cn": "v. 认为，视为；感知，察觉"
+   },
+   {
+    "w": "engaging",
+    "cn": "v. 参与（engage in 的现在分词）；adj. 迷人的"
+   },
+   {
+    "w": "frame",
+    "cn": "n. 框架；心态（frame of mind）；v. 构建"
+   },
+   {
+    "w": "reluctant",
+    "cn": "adj. 不情愿的，勉强的（常接 to do）"
+   },
+   {
+    "w": "fond",
+    "cn": "adj. 喜爱的；美好的，温馨的（fond of / fond memories）"
+   },
+   {
+    "w": "concurrently",
+    "cn": "adv. 同时地，并发地"
+   },
+   {
+    "w": "sentimental",
+    "cn": "adj. 情感的，多愁善感的；有纪念意义的"
+   },
+   {
+    "w": "restlessness",
+    "cn": "n. 烦躁不安，坐立不宁"
+   },
+   {
+    "w": "constructive",
+    "cn": "adj. 建设性的，积极有益的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性分类（名词/动词/形容词/副词）。",
+   "第二步：根据空格前后语法结构判断所需词性，缩小候选范围至2-3个词。",
+   "第三步：结合上下文语义与逻辑关系（并列、转折、因果）确定最佳答案。",
+   "第四步：优先填入固定搭配（如 align with、frame of mind、engage in），再处理需语境推断的题。",
+   "第五步：所有空格填完后回读全文，检查语法一致性与语义连贯性，确保无重复选项。"
+  ]
+ }
+}

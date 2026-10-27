@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "2dcfa087026e__reading__1",
+ "examId": "2dcfa087026e",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年考研英语真题",
+ "year": 2015,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:31:10.375Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 83824,
+ "usage": {
+  "prompt_tokens": 1781,
+  "completion_tokens": 5701,
+  "total_tokens": 7482,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1781,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5701,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1781,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "欧洲君主制的存续危机与启示",
+  "gist": "文章以西班牙国王卡洛斯退位为切入点，探讨了欧洲君主制存续的理由（超越政治、充当无争议的国家元首）与隐患（特权、不平等、奢侈作风），最终聚焦英国王室，警告查尔斯若不适应非政治、非争议的角色定位，将成为君主制最大的威胁。",
+  "structure": [
+   "第1-2段：以卡洛斯退位引出问题，指出君主制有正反两面论据",
+   "第3段：解释欧洲君主制存续的核心原因——提供无争议的国家元首",
+   "第4-5段：转折论述君主制的弊端——特权过时、形象维护困难",
+   "第6-7段：聚焦英国王室，以查尔斯为反面案例点明君主制存续之道"
+  ],
+  "difficulty": "中等",
+  "translation": "西班牙国王胡安·卡洛斯曾坚称\"国王不会退位，他们在睡梦中辞世。\"但令人尴尬的丑闻以及共和派左翼在近期欧洲选举中的高人气迫使他食言并退位。那么，西班牙的危机是否意味着君主制正走向末路？这是否意味着所有身着华丽制服、过着威严生活的欧洲王室都已大势已去？\n\n西班牙的案例为支持和反对君主制都提供了论据。当公众舆论高度两极分化时——正如佛朗哥政权结束后的情况——君主能够超越\"纯粹的\"政治，\"体现\"民族团结的精神。\n\n正是这种对政治的表面超越解释了君主作为国家元首持续受到欢迎的原因。因此，除中东以外，欧洲是世界上君主制最盛行的地区，拥有十个王国（不包括梵蒂冈城和安道尔）。但与海湾地区和亚洲的专制君主不同，大多数王室之所以存续下来，是因为它们使选民免于费力寻找一位无争议且受尊敬的公众人物。\n\n尽管如此，国王和女王无疑也有不利的一面。尽管他们自称是国家团结的象征，但他们的历史——有时还有他们今天的行为方式——体现了过时的、站不住脚的特权和不平等。在托马斯·皮凯蒂和其他经济学家警告不平等加剧和继承财富权力日增的时代，富裕的贵族家庭仍然是现代民主国家的象征核心，这着实荒谬。\n\n最成功的君主制国家努力摒弃或隐藏其旧有的贵族作风。王子和公主们有日常工作，骑自行车而非骑马（或乘直升机）。即便如此，这些富裕家庭与国际上最顶层的1%群体交往甚密，而媒体的侵入性使维护恰当的形象越来越困难。\n\n虽然欧洲的君主制无疑将足够精明地继续存续一段时间，但最应从西班牙的例子中感到恐惧的是英国王室。\n\n只有女王凭借其颇为普通（尽管富裕）的祖母形象维护了君主制的声誉。危险将随查尔斯到来，他既有奢华的生活品味，又对世界持相当等级分明的看法。他未能理解，君主制之所以在很大程度上存续，是因为它们提供了一种服务——作为无争议的、非政治性的国家元首。查尔斯应该知道，正如英国历史所示，君主制最大的敌人是国王自己，而非共和主义者。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But embarrassing scandals and the popularity of the republican left in the recent Euro-elections have forced him to eat his words and stand down.",
+    "why": "原文明确指出\"令人尴尬的丑闻\"迫使卡洛斯\"食言并退位\"（eat his words and stand down）。D选项\"ended his reign in embarrassment\"精确对应\"embarrassing scandals\"和\"stand down\"，即他在尴尬中结束了自己的统治。整个第一段的逻辑链为：曾坚称不退位→丑闻+共和派崛起→被迫退位，因此退位过程是尴尬的。",
+    "traps": "A项\"缓和了与对手的关系\"属于无中生有，原文未提及与对手和解；B项\"曾享有很高的公众支持\"虽然可从\"forced him to stand down\"反推其支持率下降，但原文并未正面论述他曾享有高支持率，属于过度推断；C项\"在欧洲王室中不受欢迎\"原文完全没有涉及其他王室对他的态度，属于偷换对象。",
+    "tip": "注意题目限定范围\"前两段\"，答案需在定位区间内找到直接对应。"
+   },
+   {
+    "number": 22,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "most royal families have survived because they allow voters to avoid the difficult search for a non-controversial but respected public figure.",
+    "why": "原文说大多数王室存续是因为让选民免于寻找\"无争议且受尊敬的公众人物\"，即君主本身就具备\"无争议且受尊敬\"的地位。C选项\"owing to their undoubted and respectable status\"中\"undoubted\"对应\"non-controversial\"（无争议的），\"respectable\"对应\"respected\"（受尊敬的），构成同义替换。",
+    "traps": "A项\"给选民更多可敬仰的公众人物\"将原文的\"avoid the difficult search\"歪曲为\"提供更多人物\"，且原文强调的是免去搜寻的麻烦，并非增加人选；B项\"在传统与现实之间取得平衡\"属于无中生有，原文未涉及此层含义；D项\"由于其永恒的政治体现\"与原文\"transcendence of politics\"（超越政治）相矛盾，且\"everlasting\"过度夸大。",
+    "tip": "同义替换是考研阅读核心考法，注意识别non-controversial≈undoubted的对应关系。"
+   },
+   {
+    "number": 23,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "it is bizarre that wealthy aristocratic families should still be the symbolic heart of modern democratic states.",
+    "why": "原文用\"bizarre\"（荒谬的、奇怪的）修饰\"富裕贵族家庭仍是现代民主国家的象征核心\"，题目问\"odd\"（奇怪的）对应的内容。B选项\"The role of the nobility in modern democracies\"（贵族在现代民主中的角色）精确概括了\"wealthy aristocratic families should still be the symbolic heart of modern democratic states\"这一被作者视为荒谬的现象。",
+    "traps": "A项\"贵族对继承财富的过度依赖\"偷换了原文重点，原文提到Piketty警告继承财富的权力，但\"odd\"指向的是贵族在民主国家中的象征地位，而非依赖财富本身；C项\"贵族家庭的简朴生活方式\"与原文\"wealthy aristocratic families\"矛盾，且简朴生活是第五段内容；D项\"贵族对特权的坚守\"虽有原文依据，但并非被标记为\"bizarre\"的核心内容。",
+    "tip": "题干关键词odd是bizarre的同义替换，精准定位到该词所在句即可锁定答案。"
+   },
+   {
+    "number": 24,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "He has failed to understand that monarchies have largely survived because they provide a service–as non-controversial and non-political heads of state.",
+    "why": "原文指出查尔斯\"未能理解君主制存续的关键在于提供无争议、非政治性的国家元首服务\"，而他偏偏\"有奢华品味和等级分明的世界观\"，这恰恰违背了未来国王角色的要求。A选项\"fails to adapt himself to his future role\"准确概括了查尔斯不能适应其未来应扮演的低调、无争议的角色这一核心问题。",
+    "traps": "B项\"未能按建议改变生活方式\"中的\"as advised\"无中生有，原文没有提到有人建议他改变生活方式；C项\"视共和主义者为潜在盟友\"与原文末句\"it is kings, not republicans, who are the monarchy's worst enemies\"矛盾，且原文未说查尔斯把共和主义者当盟友；D项\"在政治问题上持强硬立场\"偷换概念，原文说的是\"hierarchical view of the world\"（等级观），并非具体的政治强硬态度。",
+    "tip": "推断题需综合整段信息，查尔斯的问题本质是角色认知错位，而非某个具体行为。"
+   },
+   {
+    "number": 25,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "While Europe's monarchies will no doubt be smart enough to survive for some time to come, it is the British royals who have most to fear from the Spanish example.",
+    "why": "文章从卡洛斯退位出发，讨论了欧洲君主制存续的条件与隐患，最后聚焦于英国王室的潜在危机。全文核心论点是：卡洛斯的退位对所有欧洲君主都是一个警示教训。C选项\"Carlos, a Lesson for All European Monarchs\"完整概括了这一主题——以卡洛斯为鉴，警示全体欧洲君主。",
+    "traps": "A项\"Carlos, Glory and Disgrace Combined\"仅涉及卡洛斯个人的荣辱，未涵盖文章对所有欧洲君主制的讨论，以偏概全；B项\"Charles, Anxious to Succeed to the Throne\"中的\"急于继位\"属于无中生有，文章对查尔斯持批评态度而非描述其急切心态；D项\"Charles, Slow to React to the Coming Threats\"虽涉及查尔斯，但文章主体不是关于查尔斯的反应迟缓，且查尔斯只是末段的例证而非全文主角。",
+    "tip": "主旨题须兼顾首尾段与全文论证脉络，避免被局部内容干扰。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "abdicate",
+    "cn": "退位，逊位（v.）"
+   },
+   {
+    "w": "polarised",
+    "cn": "两极分化的（adj.）"
+   },
+   {
+    "w": "transcendence",
+    "cn": "超越，超然（n.）"
+   },
+   {
+    "w": "absolutist",
+    "cn": "专制主义的（adj.）"
+   },
+   {
+    "w": "counterparts",
+    "cn": "对应的人或事物（n.）"
+   },
+   {
+    "w": "indefensible",
+    "cn": "站不住脚的，不可辩护的（adj.）"
+   },
+   {
+    "w": "bizarre",
+    "cn": "荒谬的，古怪的（adj.）"
+   },
+   {
+    "w": "aristocratic",
+    "cn": "贵族的（adj.）"
+   },
+   {
+    "w": "intrusiveness",
+    "cn": "侵入性，干扰性（n.）"
+   },
+   {
+    "w": "hierarchical",
+    "cn": "等级分明的，层级的（adj.）"
+   },
+   {
+    "w": "well-heeled",
+    "cn": "富有的，有钱的（adj.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But unlike their absolutist counterparts in the Gulf and Asia, most royal families have survived because they allow voters to avoid the difficult search for a non-controversial but respected public figure.",
+    "cn": "但与海湾地区和亚洲的专制君主不同，大多数王室之所以存续下来，是因为它们使选民免于费力寻找一位无争议且受尊敬的公众人物。",
+    "note": "主干为most royal families have survived；because引导原因状语从句；unlike短语作对比状语；allow sb to do sth后接不定式作宾补。"
+   },
+   {
+    "en": "At a time when Thomas Piketty and other economists are warning of rising inequality and the increasing power of inherited wealth, it is bizarre that wealthy aristocratic families should still be the symbolic heart of modern democratic states.",
+    "cn": "在托马斯·皮凯蒂和其他经济学家警告不平等加剧和继承财富权力日增的时代，富裕的贵族家庭仍然是现代民主国家的象征核心，这着实荒谬。",
+    "note": "主干为it is bizarre that...（it为形式主语，that从句为真正主语）；At a time when引导时间状语从句；should表示\"竟然\"，带有惊讶语气。"
+   },
+   {
+    "en": "He has failed to understand that monarchies have largely survived because they provide a service–as non-controversial and non-political heads of state.",
+    "cn": "他未能理解，君主制之所以在很大程度上存续，是因为它们提供了一种服务——作为无争议的、非政治性的国家元首。",
+    "note": "主干为He has failed to understand that...；that引导宾语从句，其中嵌套because原因状语从句；破折号后as短语作同位语补充说明service的具体内容。"
+   }
+  ]
+ }
+}

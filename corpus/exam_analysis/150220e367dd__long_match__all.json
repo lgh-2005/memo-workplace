@@ -1,0 +1,238 @@
+{
+ "schemaVersion": 1,
+ "id": "150220e367dd__long_match__all",
+ "examId": "150220e367dd",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2021 年 6 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:38:41.460Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32347,
+ "usage": {
+  "prompt_tokens": 965,
+  "completion_tokens": 1677,
+  "total_tokens": 2642,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 965,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1677,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 965,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "CGI技术重塑已故明星形象的争议",
+  "strategy": [
+   "先通读10条陈述句，提炼高频主题词如CGI、deceased、recreate等",
+   "圈出每条陈述句中的专有名词（如James Dean）、数据或独特表达作为定位线索",
+   "将同义替换意识贯穿始终：如ongoing debate≈controversy、violate≈infringe、dub≈voice-over",
+   "按段落顺序快速浏览原文，将段落核心信息与10条陈述句逐一比对",
+   "优先匹配含专有名词或具体细节的题目，再处理概括性较强的题目"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "G",
+    "cn": "公众对于是否应该重塑已故名人形象的争论一直在持续。",
+    "keywords": [
+     "ongoing debate",
+     "public",
+     "deceased celebrities",
+     "recreated"
+    ],
+    "paraphrase": "ongoing debate 可能对应原文中的 controversy / heated discussion；public 可能对应 people / general audience；recreated 可能对应 digitally brought back 等表述。",
+    "tip": "定位 debate/controversy 与 public 共现的段落即为目标。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "CGI技术使已故的詹姆斯·迪恩的形象能够在新的场景中呈现给年轻观众。",
+    "keywords": [
+     "CGI",
+     "James Dean",
+     "young people",
+     "new settings"
+    ],
+    "paraphrase": "new settings 可能替换为 different context / fresh scenarios；young people 可能替换为 younger generation / new audience。",
+    "tip": "以专有名词James Dean加young people双重定位，快速锁定C段。"
+   },
+   {
+    "number": 38,
+    "answer": "J",
+    "cn": "CGI重塑的已故名人形象很可能无法与真实演员相匹配。",
+    "keywords": [
+     "very likely",
+     "fail to match",
+     "real actor"
+    ],
+    "paraphrase": "fail to match 可能对应原文 fall short of / not live up to / unable to replicate；very likely 可能对应 chances are / highly probable。",
+    "tip": "定位表达\"不匹配/达不到真实效果\"这一负面评价的段落。"
+   },
+   {
+    "number": 39,
+    "answer": "A",
+    "cn": "数字技术的使用可以将已故名人的形象重新带回荧幕。",
+    "keywords": [
+     "digital technology",
+     "deceased celebrities",
+     "back to the screen"
+    ],
+    "paraphrase": "digital technology 可能替换为 computer-generated imagery / advanced technology；back to the screen 可能替换为 return to cinema / appear on screen again。",
+    "tip": "A段通常为引入话题段，定位bring back/return等表达即可。"
+   },
+   {
+    "number": 40,
+    "answer": "F",
+    "cn": "重塑一位已故著名演员可能会侵犯其合法权利。",
+    "keywords": [
+     "violate",
+     "legitimate rights",
+     "deceased",
+     "actor"
+    ],
+    "paraphrase": "violate 可能对应原文 infringe upon / breach；legitimate rights 可能替换为 legal rights / intellectual property / right of publicity。",
+    "tip": "定位涉及法律权利（rights/legal）讨论的段落。"
+   },
+   {
+    "number": 41,
+    "answer": "L",
+    "cn": "预计将有更多CGI重塑的已故名人形象出现在荧幕上。",
+    "keywords": [
+     "more",
+     "CGI-recreated",
+     "expected",
+     "appear on screen"
+    ],
+    "paraphrase": "expected to appear 可能替换为 likely to be seen / set to emerge / anticipated；more 可能对应 increasing number / growing trend。",
+    "tip": "定位展望未来趋势、包含more或increasingly等词的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "B",
+    "cn": "詹姆斯·迪恩的形象将在荧幕上被重塑，他的声音由别人配音。",
+    "keywords": [
+     "James Dean",
+     "recreated",
+     "voice",
+     "dubbed"
+    ],
+    "paraphrase": "dubbed by someone else 可能对应原文 voiced by another actor / voice provided by a different person；recreated on screen 可能替换为 digitally resurrected。",
+    "tip": "以James Dean加voice/dub双关键词精准定位B段。"
+   },
+   {
+    "number": 43,
+    "answer": "H",
+    "cn": "无论CGI技术多么先进，重塑的形象都会在某种程度上与真实演员有所不同。",
+    "keywords": [
+     "however advanced",
+     "differ",
+     "real actor"
+    ],
+    "paraphrase": "however advanced 可能对应 no matter how sophisticated / regardless of progress；differ in a way 可能替换为 subtle differences / not entirely identical。",
+    "tip": "定位让步句式（however/no matter how）与技术局限性共现的段落。"
+   },
+   {
+    "number": 44,
+    "answer": "E",
+    "cn": "如今许多演员可能会利用CGI技术储存自己的形象，以使家人受益。",
+    "keywords": [
+     "actors today",
+     "CGI",
+     "images stored",
+     "benefit of families"
+    ],
+    "paraphrase": "have their images stored 可能对应原文 archive / preserve their digital likeness；benefit of their families 可能替换为 financial gain for heirs / income for loved ones。",
+    "tip": "定位涉及演员主动存储形象及家庭经济利益的段落。"
+   },
+   {
+    "number": 45,
+    "answer": "I",
+    "cn": "一些演员担心他们可能会因为CGI技术而失去工作。",
+    "keywords": [
+     "actors",
+     "concerned",
+     "lose jobs",
+     "CGI"
+    ],
+    "paraphrase": "lose jobs 可能对应原文 be replaced / put out of work / threaten employment；concerned 可能替换为 worried / fearful / anxious。",
+    "tip": "定位演员对就业威胁表达担忧的段落，关注lose/replace等词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deceased",
+    "cn": "adj./n. 已故的；死者"
+   },
+   {
+    "w": "CGI (Computer-Generated Imagery)",
+    "cn": "n. 计算机生成图像技术"
+   },
+   {
+    "w": "recreate",
+    "cn": "v. 重新创造，再现"
+   },
+   {
+    "w": "dubbed",
+    "cn": "v. 配音（dub的过去分词）"
+   },
+   {
+    "w": "legitimate",
+    "cn": "adj. 合法的，正当的"
+   },
+   {
+    "w": "violate",
+    "cn": "v. 侵犯，违反"
+   },
+   {
+    "w": "ongoing",
+    "cn": "adj. 持续进行的，不断的"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 同义转述，释义"
+   }
+  ]
+ }
+}

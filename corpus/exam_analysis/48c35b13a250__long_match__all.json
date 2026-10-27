@@ -1,0 +1,250 @@
+{
+ "schemaVersion": 1,
+ "id": "48c35b13a250__long_match__all",
+ "examId": "48c35b13a250",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2022 年 6 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:42:16.614Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31828,
+ "usage": {
+  "prompt_tokens": 962,
+  "completion_tokens": 1750,
+  "total_tokens": 2712,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 962,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1750,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 962,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "孟加拉河岛远程医疗服务TD",
+  "strategy": [
+   "先通读10条陈述句，把握全文主题：孟加拉偏远河岛的远程医疗",
+   "提取各题专有名词与核心名词（如TD、river islands、maternal mortality）作为定位词",
+   "注意同义替换：如junk food↔unhealthy snacks、can't afford↔too expensive等",
+   "按段落顺序扫读，将段落主旨与各陈述句逐一比对",
+   "优先匹配含有数字、因果逻辑或独特细节的陈述句，再处理主题相近的题目"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "偏远岛屿上的一些孩子不肯吃正餐，因为他们被喂了廉价的垃圾食品。",
+    "keywords": [
+     "children",
+     "remote islands",
+     "cheap junk food",
+     "won't eat meals"
+    ],
+    "paraphrase": "原文可能用refuse to eat/skip meals替换won't eat their meals，用inexpensive/low-cost unhealthy snacks替换cheap junk food，核心因果关系一致。",
+    "tip": "定位children + junk food两个关键词，锁定描述岛上儿童饮食问题的段落。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "cn": "与孟加拉其他地区不同，河岛上的产妇死亡人数依然很高。",
+    "keywords": [
+     "Bangladesh",
+     "maternal mortality",
+     "river islands",
+     "remains high"
+    ],
+    "paraphrase": "原文可能用maternal death rate/mortality替换women who die from giving birth，用stays elevated替换remains high，unlike other parts表对比。",
+    "tip": "抓住对比结构unlike other parts和产妇死亡率这一独特信息快速定位。"
+   },
+   {
+    "number": 38,
+    "answer": "J",
+    "cn": "许多岛民面临的一个大问题是，即使有折扣，他们也买不起处方药。",
+    "keywords": [
+     "afford",
+     "prescribed medicines",
+     "discounts",
+     "big problem"
+    ],
+    "paraphrase": "原文可能用too costly/expensive替换can't afford，用reduced prices替换discounts offered，核心语义为药品费用对岛民仍是负担。",
+    "tip": "聚焦medicines + discounts/afford等经济类词汇定位药价问题段。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "TD是一项由该国一个非营利组织资助的虚拟医疗服务。",
+    "keywords": [
+     "TD",
+     "virtual medical service",
+     "nonprofit organization",
+     "financially supported"
+    ],
+    "paraphrase": "原文可能用funded/sponsored by替换financially supported by，用NGO/charitable organization替换nonprofit organization，此处为TD的身份介绍段。",
+    "tip": "定位TD的定义与资金来源，通常出现在文章前部的介绍段。"
+   },
+   {
+    "number": 40,
+    "answer": "K",
+    "cn": "TD医生受到岛民欢迎，因为他们以尊重和耐心对待病人。",
+    "keywords": [
+     "TD doctors",
+     "welcome",
+     "respect",
+     "patience"
+    ],
+    "paraphrase": "原文可能用popular among/appreciated by替换welcome to，用treat … with care and courtesy替换treat the sick with respect and patience。",
+    "tip": "定位respect和patience等态度类词汇，找描述医患关系的段落。"
+   },
+   {
+    "number": 41,
+    "answer": "F",
+    "cn": "女性岛民往往较早出现健康问题，部分原因是她们结婚和生育较早。",
+    "keywords": [
+     "women islanders",
+     "health problems early",
+     "married early",
+     "give birth early"
+    ],
+    "paraphrase": "原文可能用early marriage/child marriage替换get married early，用develop ailments at a younger age替换have health problems early，因果逻辑一致。",
+    "tip": "抓住early marriage + early health problems的因果链定位。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "cn": "TD医生每周前往偏远岛屿，在临时医疗中心提供服务。",
+    "keywords": [
+     "TD doctors",
+     "weekly visits",
+     "remote islands",
+     "temporary medical center"
+    ],
+    "paraphrase": "原文可能用makeshift/mobile clinic替换temporary medical center，用once a week替换weekly，描述TD的工作模式。",
+    "tip": "定位weekly和temporary medical center等运作细节词。"
+   },
+   {
+    "number": 43,
+    "answer": "G",
+    "cn": "TD医生为岛民提供常见疾病的在线诊断和治疗。",
+    "keywords": [
+     "online diagnoses",
+     "treatments",
+     "common diseases",
+     "islanders"
+    ],
+    "paraphrase": "原文可能用telemedicine consultations替换online diagnoses，用prevalent/routine illnesses替换common diseases，同义替换。",
+    "tip": "聚焦online/diagnoses等远程医疗核心服务描述进行定位。"
+   },
+   {
+    "number": 44,
+    "answer": "A",
+    "cn": "河岛居民因洪水和土地侵蚀不得不不断搬迁住所。",
+    "keywords": [
+     "river islands",
+     "moving homes",
+     "floods",
+     "land erosions"
+    ],
+    "paraphrase": "原文可能用relocate/shift their houses替换keep moving their homes，用soil erosion/riverbank erosion替换land erosions，交代背景。",
+    "tip": "floods和land erosions是强烈定位信号，通常出现在文章开头背景段。"
+   },
+   {
+    "number": 45,
+    "answer": "H",
+    "cn": "女性岛民通常依靠丈夫在没有诊断和处方的情况下为她们买一些药。",
+    "keywords": [
+     "women islanders",
+     "husbands",
+     "medicines",
+     "without diagnoses",
+     "prescriptions"
+    ],
+    "paraphrase": "原文可能用depend on/count on替换rely on，用purchase medication without consulting a doctor替换get medicines without diagnoses and prescriptions。",
+    "tip": "定位husbands + without prescriptions这一独特行为细节。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "junk food",
+    "cn": "垃圾食品（n.）"
+   },
+   {
+    "w": "maternal mortality",
+    "cn": "产妇死亡率（n.）（题干用women who die from giving birth表达）"
+   },
+   {
+    "w": "prescribed medicines",
+    "cn": "处方药（n.）"
+   },
+   {
+    "w": "nonprofit organization",
+    "cn": "非营利组织（n.）"
+   },
+   {
+    "w": "land erosion",
+    "cn": "土地侵蚀（n.）"
+   },
+   {
+    "w": "diagnoses",
+    "cn": "诊断（n.，diagnosis的复数）"
+   },
+   {
+    "w": "telemedicine",
+    "cn": "远程医疗（n.）（TD即此类服务缩写）"
+   },
+   {
+    "w": "temporary",
+    "cn": "临时的（adj.）"
+   },
+   {
+    "w": "prescription",
+    "cn": "处方（n.）"
+   },
+   {
+    "w": "virtual",
+    "cn": "虚拟的；线上的（adj.）"
+   }
+  ]
+ }
+}

@@ -1,0 +1,311 @@
+{
+ "schemaVersion": 1,
+ "id": "11d0bb69466f__use_of_english__all",
+ "examId": "11d0bb69466f",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2013 年考研英语真题",
+ "year": 2013,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:28:13.244Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 88061,
+ "usage": {
+  "prompt_tokens": 1757,
+  "completion_tokens": 5235,
+  "total_tokens": 6992,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1757,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5235,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1757,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "决策者受日常信息样本偏差影响",
+  "gist": "文章介绍了Simonsohn博士的研究：人们在做个体决策时不善于考虑背景信息，容易受当天接触到的信息样本影响而产生偏差。他通过分析9323次MBA面试数据发现，前一位面试者得分较高时，下一位申请者的得分会被压低，且消除这种偏差需要额外30分GMAT成绩来弥补。",
+  "difficulty": "中等",
+  "translation": "总体而言，人们在做个体决策时不善于考虑背景信息。乍看之下，这似乎是一种优势，它赋予人们做出不受外部因素干扰的判断的能力。但西蒙松博士推测，无法考虑全局正导致决策者受到他们每天接触的信息样本的影响而产生偏差。例如，他推论，一位害怕在犯罪问题上显得过于宽容的法官，如果当天已经判处了五六名被告仅进行强制社区服务，那么他就更有可能将下一个人送进监狱。\n\n为了检验这一想法，他转向了大学录取流程。理论上，一个申请者的成功不应取决于同一天被随机选中参加面试的少数其他人，但西蒙松博士怀疑事实并非如此。\n\n他研究了由31位招生官进行的9323次MBA面试的结果。面试官按照一到五分的量表对申请者进行了评分。该量表将众多因素纳入考量。这些分数随后与申请者在研究生管理入学考试（即GMAT，一项满分800分的标准化考试）中的得分结合使用，以决定是否录取该申请者。\n\n西蒙松博士发现，如果在一天面试序列中，前一位候选人的得分比再前一位高出0.75分或更多，那么下一位申请者的得分会平均下降0.075分。这听起来可能很小，但要消除这种下降的影响，一名候选人需要比原本所需的GMAT分数多出30分。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "A",
+    "correct": "grants",
+    "why": "grant the ability to do sth. 意为\"赋予……的能力\"，语义和搭配均合适。主语this（不善于考虑背景信息）被视为一种\"优势\"，它\"赋予\"人们不受外部因素干扰地做出判断的能力，逻辑通顺。",
+    "traps": "B) submits 意为\"提交/屈服\"，不与 ability 搭配；C) transmits 意为\"传输/传播\"，语义不合；D) delivers 意为\"递送/发表\"，不能表示\"赋予能力\"。",
+    "tip": "考查 grant sb./sth. the ability 固定搭配。"
+   },
+   {
+    "number": 2,
+    "answer": "B",
+    "correct": "external",
+    "why": "上文说人们不善于考虑\"背景信息\"，乍看似乎是优势——能做出不受\"外部\"因素干扰的判断。external factors 与 background information 形成语义照应，逻辑上表示判断不受外界无关信息影响。",
+    "traps": "A) minor（次要的）语义偏弱，无法与 background information 对应；C) crucial（关键的）语义相反，不受关键因素影响不是优势；D) objective（客观的）不受客观因素影响不合逻辑。",
+    "tip": "考查上下文语义照应，external 对应 background information。"
+   },
+   {
+    "number": 3,
+    "answer": "C",
+    "correct": "picture",
+    "why": "the big picture 是固定搭配，意为\"全局/整体情况\"。文中说决策者无法考虑\"全局\"，因此受到每日样本信息的偏差影响，与首句\"不善于考虑背景信息\"前后呼应。",
+    "traps": "A) issue（问题）无 the big issue 固定搭配义；B) vision（视野/愿景）不构成此处所需的\"全局\"含义；D) moment（时刻）the big moment 指重大时刻，语义不符。",
+    "tip": "考查固定搭配 the big picture（全局）。"
+   },
+   {
+    "number": 4,
+    "answer": "D",
+    "correct": "For example",
+    "why": "前文提出Simonsohn的理论假设（决策者受当日样本偏差影响），紧接着用法官判案的情景来举例说明，属于典型的\"论点+例证\"结构，For example 最合适。",
+    "traps": "A) Above all（最重要的是）表强调，非举例；B) On average（平均而言）表统计概述；C) In principle（原则上）表理论层面，均不符合举例功能。",
+    "tip": "考查逻辑关系词，论点之后用举例来支撑。"
+   },
+   {
+    "number": 5,
+    "answer": "B",
+    "correct": "fearful",
+    "why": "be fearful of 意为\"害怕……\"，法官害怕显得对犯罪过于宽容，因此可能矫枉过正地判处更重的刑罚，逻辑完整且与后文 too soft on crime 搭配合理。",
+    "traps": "A) fond of（喜欢）语义相反，喜欢显得宽容则不会加重判罚；C) capable of（有能力）语义不通；D) thoughtless（粗心的）不与 of 搭配构成合理含义。",
+    "tip": "考查 be fearful of 搭配及法官心理动机的推理。"
+   },
+   {
+    "number": 6,
+    "answer": "D",
+    "correct": "on",
+    "why": "soft on crime 是固定搭配，意为\"对犯罪态度宽容/手软\"。介词 on 在此表示\"在……问题上\"，是地道英语表达。",
+    "traps": "A) in crime（在犯罪中）语义变为参与犯罪；B) for crime 搭配不当；C) to crime 不构成\"对犯罪态度温和\"之意。",
+    "tip": "考查固定搭配 soft on sth.（对……宽容）。"
+   },
+   {
+    "number": 7,
+    "answer": "A",
+    "correct": "if",
+    "why": "此处构成条件关系：如果法官当天已经判了五六个人仅做社区服务，他就更可能把下一个人送进监狱。if 引导条件状语从句，逻辑关系清晰。",
+    "traps": "B) until（直到）表时间终点，不合逻辑；C) though（虽然）表让步，与 more likely 矛盾；D) unless（除非）表否定条件，语义相反。",
+    "tip": "考查条件状语从句，理解前后因果/条件逻辑。"
+   },
+   {
+    "number": 8,
+    "answer": "A",
+    "correct": "test",
+    "why": "上一段提出理论假设，本段开头说\"为了检验这一想法\"，test this idea 表示通过实证研究验证假设，与学术研究语境完全吻合。",
+    "traps": "B) emphasize（强调）不需要转向录取流程；C) share（分享）不符合研究验证语境；D) promote（推广）语义不合。",
+    "tip": "考查学术语境中 test an idea（检验假设）。"
+   },
+   {
+    "number": 9,
+    "answer": "D",
+    "correct": "success",
+    "why": "在大学录取语境中，申请者的\"成功\"（即是否被录取）不应取决于同日其他面试者。success 在此指录取结果，与后文 make a decision on whether to accept 呼应。",
+    "traps": "A) decision（决定）主语应是招生官而非申请者；B) quality（素质）申请者素质客观存在，不会因他人改变；C) status（地位/状态）语义模糊，不如 success 精准。",
+    "tip": "考查上下文语义：申请者的成败不应受他人影响。"
+   },
+   {
+    "number": 10,
+    "answer": "C",
+    "correct": "chosen",
+    "why": "同一天参加面试的其他申请者是被\"随机选中\"的，chosen randomly 表示随机抽选，符合面试安排的实际情况。",
+    "traps": "A) found（发现）语义不当；B) studied（研究）不适用于描述面试安排；D) identified（识别）不能表达\"被选中参加面试\"之意。",
+    "tip": "考查 chosen randomly（随机选取）的搭配。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "otherwise",
+    "why": "the truth was otherwise 意为\"事实并非如此\"，与前文 In theory（理论上）形成对比：理论上不应受影响，但实际情况恰恰相反，otherwise 完美衔接这一转折。",
+    "traps": "B) defensible（可辩护的）语义不构成与理论的对比；C) replaceable（可替代的）语义无关；D) exceptional（例外的）虽有\"不同\"之意但不能单独作表语表示\"并非如此\"。",
+    "tip": "考查 the truth was otherwise（事实并非如此）惯用表达。"
+   },
+   {
+    "number": 12,
+    "answer": "C",
+    "correct": "conducted",
+    "why": "interviews conducted by... 意为\"由……进行的面试\"，conducted 是描述实施/开展面试的标准搭配，常见于学术研究语境。",
+    "traps": "A) inspired（启发）不用于描述面试的执行；B) expressed（表达）语义不当；D) secured（获得/确保）不搭配面试的实施。",
+    "tip": "考查 conduct interviews（进行面试）固定搭配。"
+   },
+   {
+    "number": 13,
+    "answer": "B",
+    "correct": "rated",
+    "why": "rate applicants on a scale of one to five 意为\"按一到五分的量表给申请者评分\"，rated 是评分/评级的标准用词，与 scale 搭配完美。",
+    "traps": "A) assigned（分配）虽可表示\"给分\"，但不与 on a scale 自然搭配；C) matched（匹配）语义不合；D) arranged（安排）不能表达评分含义。",
+    "tip": "考查 rate sb. on a scale（按量表评分）搭配。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "took",
+    "why": "take...into consideration 是固定搭配，意为\"将……纳入考量\"。该量表将众多因素纳入考虑范围，took 是其过去式形式。",
+    "traps": "A) put 虽有 put into consideration 用法但远不如 take 地道常见；B) got 无此搭配；D) gave 无此搭配。",
+    "tip": "考查固定搭配 take...into consideration（将……纳入考虑）。"
+   },
+   {
+    "number": 15,
+    "answer": "B",
+    "correct": "then",
+    "why": "先描述面试评分（一到五分），然后（then）将该分数与GMAT成绩结合使用来做录取决定。then 表示时间/步骤顺序，衔接两个环节。",
+    "traps": "A) instead（相反）表替代，逻辑不通；C) ever（曾经）语义不通；D) rather（而是/相当）不能表达步骤递进。",
+    "tip": "考查 then 表示流程先后顺序的逻辑功能。"
+   },
+   {
+    "number": 16,
+    "answer": "C",
+    "correct": "marked",
+    "why": "marked out of 800 points 意为\"以800分为满分进行评分\"，marked 在此指\"打分/给分\"，是英式英语中描述考试计分的标准说法。",
+    "traps": "A) selected（选择）不用于描述考试分制；B) passed（通过）不能表达满分为800的含义；D) introduced（引入）语义无关。",
+    "tip": "考查 be marked out of（以……为满分评分）。"
+   },
+   {
+    "number": 17,
+    "answer": "D",
+    "correct": "before",
+    "why": "the one before that 指\"前一位候选人之前的那位\"，即再前一位。句意为：如果前一位候选人的分数比再前一位高出0.75分以上，下一位的得分就会下降。before 构成对比参照点。",
+    "traps": "A) below（在下方）指空间位置或数值低，不合语境；B) after（之后）则与 previous 重复且逻辑混乱；C) above（在上方）指空间或数值，不表时间先后。",
+    "tip": "考查 the one before that（再前面那位）的时间先后关系。"
+   },
+   {
+    "number": 18,
+    "answer": "D",
+    "correct": "drop",
+    "why": "文章论点是高分候选人之后的申请者会被压低分数，drop 表示\"下降\"，与后文 decrease 呼应，且与研究结论（评分偏差导致分数降低）一致。",
+    "traps": "A) jump（跳升）与下降趋势相反；B) float（浮动）语义模糊，不能表达明确的下降趋势；C) fluctuate（波动）指上下不定，不是单向下降。",
+    "tip": "考查 drop 与后文 decrease 的语义呼应。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "undo",
+    "why": "undo the effects 意为\"消除/抵消这种影响\"。要抵消因偏差导致的分数下降，申请者需要额外30分GMAT成绩，undo 精准表达\"逆转不利影响\"之意。",
+    "traps": "A) achieve（实现）不与 the effects of a decrease 搭配；C) maintain（维持）语义不当，不能维持一个负面影响；D) disregard（忽视）忽视影响不等于消除影响。",
+    "tip": "考查 undo the effects（消除影响）的搭配。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "correct": "necessary",
+    "why": "than would otherwise have been necessary 意为\"比原本所需要的多\"。如果没有偏差，录取所需的GMAT分数是一定的，但因偏差影响需要额外30分来弥补，necessary 最精准。",
+    "traps": "B) possible（可能的）语义含糊，不能表达\"所需分数\"的意思；C) promising（有前途的）语义无关；D) helpful（有帮助的）过于宽泛，不如 necessary 精确表达\"必要的分数\"。",
+    "tip": "考查 than would otherwise have been necessary（比本应需要的更多）。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "on the whole",
+    "cn": "adv. 总体而言，大体上"
+   },
+   {
+    "w": "speculated",
+    "cn": "v. 推测，推断（speculate 的过去式）"
+   },
+   {
+    "w": "biased",
+    "cn": "adj. 有偏见的，偏颇的"
+   },
+   {
+    "w": "defendants",
+    "cn": "n. 被告（defendant 的复数）"
+   },
+   {
+    "w": "community service",
+    "cn": "n. 社区服务（一种刑罚替代形式）"
+   },
+   {
+    "w": "admissions",
+    "cn": "n. 录取，招生（常用复数）"
+   },
+   {
+    "w": "in conjunction with",
+    "cn": "prep. 与……结合，连同"
+   },
+   {
+    "w": "standardised",
+    "cn": "adj. 标准化的（standardized 的英式拼写）"
+   },
+   {
+    "w": "interviewees",
+    "cn": "n. 被面试者，受访者（interviewee 的复数）"
+   },
+   {
+    "w": "candidate",
+    "cn": "n. 候选人，申请者"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "But",
+    "role": "转折，将表面优势与实际偏差问题形成对比"
+   },
+   {
+    "w": "For example",
+    "role": "举例说明，用法官判案的场景支撑前文假设"
+   },
+   {
+    "w": "In theory",
+    "role": "提出理论预期，为后文 otherwise 的转折做铺垫"
+   },
+   {
+    "w": "but (Dr Simonsohn suspected)",
+    "role": "转折，指出实际情况与理论预期相反"
+   },
+   {
+    "w": "then",
+    "role": "顺承，表示评分流程的先后步骤"
+   },
+   {
+    "w": "but (to undo)",
+    "role": "转折，强调看似微小的偏差实则影响重大"
+   }
+  ]
+ }
+}

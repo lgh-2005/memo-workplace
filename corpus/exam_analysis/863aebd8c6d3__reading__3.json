@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "863aebd8c6d3__reading__3",
+ "examId": "863aebd8c6d3",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2004 年考研英语真题（旧）",
+ "year": 2004,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:15:05.797Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68200,
+ "usage": {
+  "prompt_tokens": 1811,
+  "completion_tokens": 3917,
+  "total_tokens": 5728,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1811,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3917,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1811,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国经济放缓下消费者心态",
+  "gist": "文章以美甲师Ellen Spero的经历引入美国经济放缓的话题，指出消费者虽有所节制开支，但整体心态并不恐慌，对经济长期前景仍持乐观态度。房价平稳、就业信心尚存，不少人甚至从经济减速中看到了积极一面，如利率下降、餐厅订位变容易等。作者认为当前需要的是谨慎而非恐慌。",
+  "structure": [
+   "第1段：以美甲师个案引出经济放缓对普通人的影响",
+   "第2段：零售业数据印证放缓，但消费者只是适度紧缩并非恐慌",
+   "第3段：房价稳定与就业信心支撑消费者乐观情绪",
+   "第4段：经济减速中的多重'利好'，呼应全文温和乐观基调"
+  ],
+  "difficulty": "中等",
+  "translation": "谈到经济放缓，Ellen Spero目前还没有焦虑不安。但这位47岁的美甲师也并没有像她期望的那样忙着修剪、锉磨和抛光指甲。她的大多数客户每周花费12到50美元，但上个月两位长期客户突然不再光顾了。Spero将此归咎于疲软的经济。\"我是一个很好的经济指标，\"她说，\"我提供的是一种人们在想省钱时可以省掉的服务。\"于是Spero开始缩减开支，转而去她克利夫兰郊区家附近的中档迪拉德百货购物，而不再去尼曼·马库斯高档百货。\"我不知道其他客户是否也会抛弃我，\"她说。\n\n甚至在美联储主席艾伦·格林斯潘承认美国火热的经济正在降温之前，许多上班族就已经自己看到了经济放缓的迹象。从汽车经销商到Gap专卖店，随着消费者控制支出，销售额已连续数月低迷。对于零售商来说——他们去年在感恩节到圣诞节期间获得了全年24%的收入——这种谨慎态度出现在一个关键时刻。专家表示，假日销售额已比去年同期下降了7%。但先别急着拉响警报。消费者似乎只是略感担忧，并未恐慌，许多人表示，尽管在适度勒紧腰带，他们对经济的长期前景仍然乐观。\n\n消费者表示他们并未感到绝望，因为尽管媒体头条令人沮丧，他们自身的财务状况感觉仍然不错。大多数地区的房价保持稳定。在曼哈顿，\"在400万到1000万美元的价格区间正出现一轮新的淘金热，主要由华尔街的奖金推动，\"房产经纪人Barbara Corcoran说。在旧金山，尽管疯狂的竞价有所平息，房价仍在上涨。\"以前有20到30个报价，现在可能只有两三个，\"湾区房产经纪人John Tealdi说。而且大多数人对自己找到并保住工作的能力仍然感到相当安心。\n\n许多人从这次经济放缓中看到了积极的一面。潜在的购房者会为更低的利率而欢呼。雇主们也不介意就业市场少一些泡沫。许多消费者似乎受到了股市波动的影响，投资者现在将这种波动视为经济持续繁荣的必要因素。食客们或许也能看到好处。以前要在曼哈顿火爆的新餐厅Alain Ducasse订到位子几乎不可能，现在不会了。为此，格林斯潘和他的同事们或许仍然值得举杯致敬。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "D",
+    "type": "词义句意题",
+    "locate": "When it comes to the slowing economy, Ellen Spero isn't biting her nails just yet. But the 47-year-old manicurist isn't cutting, filing or polishing as many nails as she'd like to, either.",
+    "why": "\"bite one's nails\"是英语习语，意为\"焦虑不安、紧张万分\"，\"not...just yet\"表示\"目前还没有\"。整句意为Spero面对经济放缓目前还没有陷入绝望。后文也说她只是缩减开支、担心客户流失，并非走投无路。D选项\"并未陷入绝望\"准确对应了该句含义。",
+    "traps": "A\"难以维持生意\"过度推断，她只是客户减少，并非无法经营；B\"过于忙碌于工作\"与原文相悖，后文明确说她没有以前那么忙了；C\"改掉了坏习惯\"将\"biting her nails\"误解为字面意义上的\"咬指甲\"坏习惯，属于望文生义。",
+    "tip": "遇到习语考查需联系上下文判断比喻义，不可只取字面意思。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "Consumers seem only mildly concerned, not panicked, and many say they remain optimistic about the economy's long-term prospects even as they do some modest belt-tightening.",
+    "why": "原文明确指出消费者\"只是略感担忧，并未恐慌\"，并且\"对经济长期前景仍然乐观\"。第三段进一步说消费者并不绝望，自身财务状况感觉良好，房价稳定、就业有信心。因此公众对当前经济形势的态度是乐观的（Optimistic），选A。",
+    "traps": "B\"困惑\"文中未提及消费者感到困惑或迷茫；C\"无忧无虑\"程度过重，消费者确实有些担忧并在适度节俭，并非毫不在意；D\"恐慌\"与原文\"not panicked\"直接矛盾，属于反向干扰。",
+    "tip": "态度题需在原文中找到明确的情感态度词，注意否定词的限定作用。"
+   },
+   {
+    "number": 33,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Home prices are holding steady in most regions. In Manhattan, \"there's a new gold rush happening in the $4 million to $10 million range, predominantly fed by Wall Street bonuses,\" says broker Barbara Corcoran.",
+    "why": "该句出现在讨论房价的语境中：前一句说\"大多数地区房价保持稳定\"，引用者Barbara Corcoran身份为\"broker\"（房产经纪人），后文紧接旧金山房价与房产经纪人的评论。\"$4 million to $10 million range\"显然指房产价格区间，故选B（房地产）。",
+    "traps": "A\"黄金市场\"是对\"gold rush\"（淘金热）的字面曲解，此处gold rush是比喻房产交易火热；C\"股票交易\"虽提到华尔街奖金，但奖金只是购房资金来源而非讨论股市本身；D\"风险投资\"文中毫无涉及，属无中生有。",
+    "tip": "理解比喻性表达要回归上下文语境，不可断章取义。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Many folks see silver linings to this slowdown. Potential home buyers would cheer for lower interest rates. Employers wouldn't mind a few fewer bubbles in the job market.",
+    "why": "\"silver linings\"意为\"一线希望、积极面\"。第四段列举了多个具体好处：购房者受益于低利率，雇主乐见就业泡沫减少，消费者从股市波动中看到持续繁荣的必要条件，食客更容易订到高档餐厅。这些都是不同群体从经济放缓中获得的具体好处，A选项\"他们会在某些方面受益\"是对这些具体好处的准确概括。",
+    "traps": "B\"股市显示复苏迹象\"文中只说投资者将波动视为繁荣的必要因素，并未说股市正在复苏；C\"放缓通常先于繁荣\"虽有一定暗示但这不是人们看到silver linings的原因，原文强调的是具体收益；D\"购买力增强\"过于笼统且文中未直接提及购买力提升。",
+    "tip": "当题目问\"why\"时，要找直接原因而非间接推论，注意原文列举的具体细节。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "But don't sound any alarms just yet. Consumers seem only mildly concerned, not panicked, and many say they remain optimistic about the economy's long-term prospects even as they do some modest belt-tightening.",
+    "why": "全文基调是：经济确实在放缓，消费者有所警觉并适度节俭（caution），但远未到恐慌（panic）的地步，且对前景乐观。C选项\"谨慎可以，恐慌不必\"精准提炼了作者的核心立场——承认需要谨慎但反对过度恐慌。",
+    "traps": "A\"新一轮繁荣即将到来\"过于乐观，作者并未预言繁荣在望；B\"勒紧腰带是唯一良方\"过于极端，文中belt-tightening只是消费者的一种反应而非作者推荐的唯一对策；D\"冒险越多机会越多\"文中未涉及冒险与机会的关系，属于无中生有。",
+    "tip": "判断作者态度时，关注\"but/don't/not\"等转折与否定标记词，它们往往引出核心观点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "manicurist",
+    "cn": "美甲师（n.）"
+   },
+   {
+    "w": "downscaling",
+    "cn": "缩减开支，降低消费档次（v.）"
+   },
+   {
+    "w": "temper",
+    "cn": "使缓和，控制（v.）"
+   },
+   {
+    "w": "belt-tightening",
+    "cn": "勒紧腰带，节省开支（n.）"
+   },
+   {
+    "w": "despair",
+    "cn": "绝望（n.）"
+   },
+   {
+    "w": "frenzied",
+    "cn": "疯狂的，狂热的（adj.）"
+   },
+   {
+    "w": "overbidding",
+    "cn": "过高出价，竞相抬价（n.）"
+   },
+   {
+    "w": "silver linings",
+    "cn": "一线希望，积极面（n.）"
+   },
+   {
+    "w": "sustained",
+    "cn": "持续的，持久的（adj.）"
+   },
+   {
+    "w": "upside",
+    "cn": "好的一面，积极面（n.）"
+   },
+   {
+    "w": "predominantly",
+    "cn": "主要地，占主导地位地（adv.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "For retailers, who last year took in 24 percent of their revenue between Thanksgiving and Christmas, the cautious approach is coming at a crucial time.",
+    "cn": "对于零售商来说——他们去年在感恩节到圣诞节期间获得了全年24%的收入——消费者的这种谨慎态度出现在一个关键时刻。",
+    "note": "主句为\"the cautious approach is coming at a crucial time\"，中间\"who...Christmas\"为非限制性定语从句修饰retailers，补充说明假日季对零售商的重要性。"
+   },
+   {
+    "en": "Consumers seem only mildly concerned, not panicked, and many say they remain optimistic about the economy's long-term prospects even as they do some modest belt-tightening.",
+    "cn": "消费者似乎只是略感担忧，并未恐慌，许多人表示尽管在适度勒紧腰带，他们对经济的长期前景仍然乐观。",
+    "note": "and连接两个并列分句；第二分句中say后接宾语从句，even as引导让步状语从句，形成\"虽在节俭但仍乐观\"的转折。"
+   },
+   {
+    "en": "Many consumers seem to have been influenced by stock-market swings, which investors now view as a necessary ingredient to a sustained boom.",
+    "cn": "许多消费者似乎受到了股市波动的影响，投资者现在将这种波动视为经济持续繁荣的必要因素。",
+    "note": "主句为\"Many consumers seem to have been influenced by stock-market swings\"，which引导非限制性定语从句修饰swings，view...as...为固定搭配。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "2bf75860cf1c__reading__2",
+ "examId": "2bf75860cf1c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2011 年考研英语真题",
+ "year": 2011,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:25:18.714Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63075,
+ "usage": {
+  "prompt_tokens": 1753,
+  "completion_tokens": 3679,
+  "total_tokens": 5432,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1753,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3679,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1753,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "高管裸辞追求CEO职位成新趋势",
+  "gist": "文章围绕高管\"裸辞\"现象展开：以McGee离开美国银行为例，说明越来越多副职高管不再遮掩离职原因，而是坦率表明追求CEO职位的目标。文章分析了这一趋势的背景——经济复苏、董事会继任审查压力，并指出传统\"在职者更有吸引力\"的规则正在被打破，裸辞对顶尖人才不再是耻辱。",
+  "structure": [
+   "第1段：以McGee坦率离职为引子，引出话题",
+   "第2-3段：分析高管裸辞的原因及经济复苏背景",
+   "第4段：对比传统规则——在任CEO更受青睐",
+   "第5段：举反例说明裸辞后未必能快速找到理想职位",
+   "第6段：总结趋势——裸辞耻辱感消退，传统规则被颠覆"
+  ],
+  "difficulty": "中等",
+  "translation": "今年八月，当利亚姆·麦基从美国银行总裁职位离任时，他的解释出人意料地直截了当。他没有用惯常的含糊借口来掩饰自己的离去，而是直言不讳地表示自己离职是为了\"追求经营一家公司的目标\"。麦基说，公开宣布自己的抱负\"完全是我自己的决定\"。不到两周，他就首次与哈特福德金融服务集团的董事会进行了接触，该集团于9月29日任命他为首席执行官兼董事长。\n\n麦基表示，在没有确定下家的情况下离职让他有时间思考自己想要经营什么样的公司，同时也向外界传递了关于自己抱负的明确信号。而麦基并非个例。最近几周，雅芳和美国运通的二号人物也相继辞职，并表示他们正在寻求CEO职位。随着董事会在股东压力下加强对继任计划的审查，未能获得认可的高管也可能希望另谋出路。动荡的商业环境也让高级管理者们警惕，不愿让含糊的声明影响自己的声誉。\n\n随着经济复苏的最初迹象开始显现，副职高管们可能更愿意在没有安全网的情况下纵身一跃。据Liberum Research统计，第三季度CEO更替率同比下降了23%，因为紧张的董事会倾向于留住现有领导者。随着经济回暖，有抱负的领导者将迎来大量机会。\n\n辞去高级职位去寻找更好职位的决定是非常规的。多年来，高管和猎头们一直遵循一条规则：最有吸引力的CEO候选人是那些需要被挖走的人。光辉国际高级合伙人丹尼斯·凯里说：\"在我做过的所有猎头项目中，没有一个董事会不要求我首先考察在任CEO的。\"\n\n那些没有找好下家就跳槽的人并非总能迅速获得高层职位。埃伦·马拉姆十年前辞去纯品康纳总裁一职，声称想做CEO。一年后她才成为一家小型互联网大宗商品交易平台的负责人。罗伯特·威廉姆斯塔德2005年带着成为CEO的抱负离开花旗集团，三年后才在一家大型金融机构获得了该职位。\n\n许多猎头表示，对于顶级人才而言，过去的那种耻辱感正在消退。金融危机使得处于两份工作之间的空窗期或主动离开一份糟糕的工作变得更加可以接受。一位猎头说：\"传统规则是待在原来的地方更安全，但这条规则已经被彻底颠覆了。受伤最深的反而是那些待得太久的人。\"",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Rather than cloaking his exit in the usual vague excuses, he came right out and said he was leaving \"to pursue my goal of running a company.\"",
+    "why": "原文用\"surprisingly straight up\"形容McGee的离职声明方式，并进一步说明他没有用含糊借口掩饰（cloaking...vague excuses），而是直言不讳（came right out）。\"straight up\"和\"came right out\"都表示坦率直接，与选项B\"frank\"（坦率的）完全吻合。",
+    "traps": "A选项arrogant（傲慢的）：原文未体现傲慢态度，属于无中生有；C选项self-centered（以自我为中心的）：虽然McGee谈到了个人目标，但文章强调的是他的坦率态度而非自私，属于曲解原文；D选项impulsive（冲动的）：他两周内就与新公司接触，说明有规划而非冲动，属于反向干扰。",
+    "tip": "注意抓住题干中manner一词，定位到描述态度方式的关键词。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "the No. 2 executives at Avon and American Express quit with the explanation that they were looking for a CEO post. As boards scrutinize succession plans in response to shareholder pressure, executives who don't get the nod also may wish to move on.",
+    "why": "第二段明确提到雅芳和美国运通的二号人物辞职是因为寻求CEO职位，未获董事会认可的高管也希望另谋出路。这些都指向对新职业目标的追求，与D选项\"pursuit of new career goals\"一致。段落整体围绕高管追求更高职位这一职业目标展开。",
+    "traps": "A选项better financial status（更好的经济状况）：原文未提及薪酬或财务待遇，属于无中生有；B选项reflect on their private life（反思私人生活）：虽然McGee提到reflect，但反思的是想经营什么样的公司，属于偷换概念；C选项strained relations with the boards（与董事会关系紧张）：原文提到董事会审查继任计划，但并未说关系紧张，属于过度推断。",
+    "tip": "多个现象并列时，要找到它们的共同本质特征来匹配选项。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "the most attractive CEO candidates are the ones who must be poached. Says Korn/Ferry senior partner Dennis Carey: \"I can't think of a single search I've done where a board has not instructed me to look at sitting CEOs first.\"",
+    "why": "根据上下文，传统规则认为最有吸引力的CEO候选人必须是被\"poached\"的。后文Carey补充说董事会总要求他首先考察\"sitting CEOs\"（在任CEO），说明poached的含义是从现有职位上被挖走、被猎取，对应C选项\"hunted for\"（猎取、物色）。",
+    "traps": "A选项approved of（赞同）：语义不符，文章强调的是主动去寻找挖掘，而非被动认可；B选项attended to（照顾、处理）：与猎头挖人的语境完全无关，属于语义偏离；D选项guarded against（防范）：含义与原文相反，原文是要去招揽而非防备。",
+    "tip": "词义题需结合上下文语境推断，尤其注意后文的解释性补充说明。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The traditional rule was it's safer to stay where you are, but that's been fundamentally inverted. The people who've been hurt the worst are those who've stayed too long.",
+    "why": "末段指出\"the old disgrace is fading for top performers\"（旧的耻辱感正在消退），说明过去裸辞被视为不光彩的，因此顶尖人才过去倾向于留在原位。传统规则是\"待在原处更安全\"，这暗示过去顶尖人才确实会紧守自己的职位。由此可推断A选项\"top performers used to cling to their posts\"正确。",
+    "traps": "B选项loyalty is getting out-dated（忠诚过时了）：文章讨论的是跳槽策略而非忠诚度本身，且\"过时\"表述过于绝对，属于过度推断；C选项care more about reputations（更在意声誉）：末段未强调声誉问题，属于无中生有；D选项safer to stick to traditional rules（坚守传统规则更安全）：原文明确说传统规则已被\"fundamentally inverted\"（彻底颠覆），此选项与原文相反。",
+    "tip": "推断题需注意时态变化，past与present的对比往往是推断的关键。"
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "deputy chiefs may be more willing to make the jump without a net",
+    "why": "全文围绕高管在没有确定下家的情况下主动辞职这一现象展开：第1-2段引出现象，第3段分析经济背景，第4-5段讨论传统规则与现实案例，第6段总结趋势。\"jump without a net\"（没有安全网的跳跃）是文中反复出现的核心比喻，C选项\"Top Managers Jump without a Net\"精准概括了全文主题。",
+    "traps": "A选项CEOs: Where to Go?（CEO去哪儿？）：过于宽泛，未体现裸辞这一核心主题；B选项CEOs: All the Way Up?（CEO一路向上？）：暗示晋升之路，与文章讨论的裸辞现象不符；D选项The Only Way Out for Top Performers（顶尖人才的唯一出路）：\"only way out\"过于绝对，文章只是描述趋势而非定性为唯一出路。",
+    "tip": "主旨题选项应涵盖全文核心，警惕过于宽泛或过于绝对的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "cloaking",
+    "cn": "v. 掩饰，遮掩"
+   },
+   {
+    "w": "aspiration",
+    "cn": "n. 抱负，志向"
+   },
+   {
+    "w": "scrutinize",
+    "cn": "v. 仔细审查，详细检查"
+   },
+   {
+    "w": "succession",
+    "cn": "n. 继任，接班"
+   },
+   {
+    "w": "turbulent",
+    "cn": "adj. 动荡的，混乱的"
+   },
+   {
+    "w": "pronouncement",
+    "cn": "n. 声明，公告"
+   },
+   {
+    "w": "unconventional",
+    "cn": "adj. 非常规的，不合传统的"
+   },
+   {
+    "w": "adhere to",
+    "cn": "v. 遵守，坚持"
+   },
+   {
+    "w": "poach",
+    "cn": "v. 挖角，猎取（人才）"
+   },
+   {
+    "w": "abound",
+    "cn": "v. 大量存在，充裕"
+   },
+   {
+    "w": "invert",
+    "cn": "v. 颠倒，使反转"
+   },
+   {
+    "w": "disgrace",
+    "cn": "n. 耻辱，不光彩"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As boards scrutinize succession plans in response to shareholder pressure, executives who don't get the nod also may wish to move on.",
+    "cn": "随着董事会在股东压力下加强对继任计划的审查，未能获得认可的高管也可能希望另谋出路。",
+    "note": "As引导时间/原因状语从句，主句主语含who引导的定语从句修饰executives；get the nod意为\"获得认可\"；move on意为\"继续前进、另谋出路\"。"
+   },
+   {
+    "en": "I can't think of a single search I've done where a board has not instructed me to look at sitting CEOs first.",
+    "cn": "在我做过的所有猎头项目中，没有一个董事会不要求我首先考察在任CEO。",
+    "note": "主干为I can't think of a single search；I've done为省略关系代词that的定语从句修饰search；where引导定语从句进一步说明search的情况；双重否定（can't...not）表强调肯定。"
+   },
+   {
+    "en": "The traditional rule was it's safer to stay where you are, but that's been fundamentally inverted.",
+    "cn": "传统规则是待在原来的地方更安全，但这条规则已经被彻底颠覆了。",
+    "note": "主干为The traditional rule was...but that's been inverted；it's safer to stay为表语从句（省略that）；where you are为地点状语从句；fundamentally加强语气，表\"根本性地\"。"
+   }
+  ]
+ }
+}

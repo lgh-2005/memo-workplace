@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "a1fd36502b35__banked_cloze__all",
+ "examId": "a1fd36502b35",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2023 年 12 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:51:14.534Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 73449,
+ "usage": {
+  "prompt_tokens": 1407,
+  "completion_tokens": 4544,
+  "total_tokens": 5951,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1407,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4544,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1407,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "大脑对事实与可能性语言的不同反应",
+  "gist": "纽约大学科学家发现，人脑对表达事实的语言和表达可能性的语言有不同的反应。事实性语言能更迅速、更强烈地激活大脑活动。在虚假信息泛滥的时代，区分事实与推测至关重要。研究表明，大脑中负责语篇处理的区域能快速区分事实与可能性，且对事实性陈述的反应更为强烈。",
+  "difficulty": "中等",
+  "translation": "纽约大学的科学家近日发现，我们的大脑对表达事实的语言与传达可能性的语言有着不同的反应。他们的研究为我们提供了新的见解，揭示了措辞选择如何影响我们区分（differentiate）表达现实的陈述与仅仅表达可能性的陈述。研究人员认为他们的发现很重要，因为我们无时无刻不在接触虚假信息。其中有些是故意为之的（deliberate），比如欺骗性广告，但这一问题也被那些自以为在分享正确信息的人所加剧（aggravated）。因此，在沟通方式上将事实与可能或仅仅是推测性的（speculative）内容区分开来比以往任何时候都更加重要。这一点尤为正确，因为研究清楚表明，以事实形式呈现的信息会引发（evokes）我们大脑中特殊的反应，这种反应有别于我们处理带有明确不确定性（uncertainty）标志的相同内容时的反应。\n\n在这项新研究中，科学家们旨在查明（ascertain）大脑如何处理由\"may\"\"might\"和\"if\"等词所表达的可能性。研究人员比较了大脑对表达事实情境（scenarios）的陈述和表达可能性的陈述的反应。\"我的床底下有一只怪物\"是事实性陈述的例子。\"我将待在家里\"也是事实性的。这与表达可能性的陈述相对，比如\"我的床底下可能有一只怪物\"或\"如果下雨，我就待在家里\"。研究结果表明，事实性语言激活了（activated）大脑活动的快速增长，与传达可能性的短语相比，大脑对事实性短语的反应更强烈、参与度更高。因此，在大脑层面，事实占据主导地位。参与语篇（discourse）处理的大脑区域能迅速区分事实与可能性。此外，这些区域对事实性陈述的反应要强烈得多。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "E",
+    "correct": "differentiate",
+    "why": "空格后紧跟 between，differentiate between 是固定搭配，意为\"区分……\"，且句意需要表达\"区分事实陈述与可能性陈述\"，语义与搭配双重吻合。空格在 we 之后，需要动词原形，differentiate 词性正确。",
+    "traps": "ascertain（查明）虽为动词原形但不与 between 搭配；deliberate 作动词时意为\"仔细考虑\"，语义不符且不常接 between；其他动词如 activated、aggravated 为过去式/分词形式，此处需原形。",
+    "tip": "recognize differentiate between 的固定搭配"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "correct": "deliberate",
+    "why": "空格处在 is 之后作表语，需要形容词。上下文说虚假信息有些是'故意的'，后文以欺骗性广告为例佐证，deliberate（故意的、蓄意的）完全吻合语境。",
+    "traps": "speculative（推测性的）虽然也是形容词，但语义不符，此处强调的是'有意为之'而非'推测'；activated 是动词过去式/分词，放此处构成被动语态语义不通。",
+    "tip": "注意 deliberate 既可作形容词（故意的）也可作动词（深思熟虑）"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "correct": "aggravated",
+    "why": "空格在 is…by 结构中，构成被动语态，需要过去分词。句意为'问题被那些误以为自己在分享正确信息的人所加剧'，aggravated（使恶化、加剧）语义准确。",
+    "traps": "activated（激活）虽然也是过去分词，但语义不符，此处是说问题'被加重'而非'被激活'；其余候选词词性不合或已被使用。",
+    "tip": "is aggravated by 为被动语态，表示\"被……加剧\""
+   },
+   {
+    "number": 29,
+    "answer": "M",
+    "correct": "speculative",
+    "why": "空格前有 merely 修饰，与前文 possible 并列（the possible or merely ____），需要形容词。speculative（推测性的）与 possible 语义递进，表示'仅仅是推测的'，逻辑通顺。",
+    "traps": "deliberate（故意的）已在第27题使用且语义不符；其他形容词候选已无合适项。此处需要与 possible 构成并列递进关系的形容词。",
+    "tip": "并列结构要求词性一致，merely 修饰形容词"
+   },
+   {
+    "number": 30,
+    "answer": "G",
+    "correct": "evokes",
+    "why": "空格作谓语动词，主语为 information（第三人称单数），需要动词三单形式。evokes（引发、唤起）与 special responses 搭配自然，意为'以事实呈现的信息引发大脑中的特殊反应'。",
+    "traps": "activated 为过去式而非三单现在时（且后文第34题才用）；ascertain 为原形不带 -s；aggravated 为过去式/分词形式，均不符合此处三单现在时要求。",
+    "tip": "主语为单数名词，谓语需用动词第三人称单数形式"
+   },
+   {
+    "number": 31,
+    "answer": "O",
+    "correct": "uncertainty",
+    "why": "空格在 of 之后，需要名词。上文讲到大脑处理带有'不确定性'标志的内容时反应不同，uncertainty（不确定性）语义完美契合，与 possibility 相呼应。",
+    "traps": "discourse（语篇）虽然也是名词，但'indicators of discourse'语义不通；scenarios（情境）放在此处也不合逻辑，因为此处需表达'不确定'的概念。",
+    "tip": "indicators of uncertainty 为语义搭配，表示\"不确定性的标志\""
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "correct": "ascertain",
+    "why": "空格在 intended to 之后，需要动词原形。ascertain（查明、弄清）与 how 引导的宾语从句搭配，表示'旨在查明大脑如何处理可能性'，语义准确。",
+    "traps": "differentiate（区分）已在第26题使用；且此处语境是'弄清楚/确定'而非'区分'，ascertain 更加贴切。",
+    "tip": "intended to ascertain 意为\"旨在查明\"，后接 how 从句"
+   },
+   {
+    "number": 33,
+    "answer": "L",
+    "correct": "scenarios",
+    "why": "空格在 factual 之后，需要名词。scenarios（情境、场景）与 factual 搭配为'事实情境'，后文紧接具体举例说明不同的情境，语义连贯。",
+    "traps": "uncertainty 虽为名词但'factual uncertainty'自相矛盾；discourse 放此处为'事实语篇'，不如 scenarios 贴合后文逐个举例情境的语境。",
+    "tip": "factual scenarios 意为\"事实性情境\"，与后文举例相呼应"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "correct": "activated",
+    "why": "空格作谓语动词，全句用一般过去时（showed 同一段），activated（激活了）与 a rapid increase in brain activity 搭配，表示'事实性语言激活了大脑活动的快速增长'。",
+    "traps": "evokes 已在第30题使用且为三单现在时；aggravated（加剧）已在第28题使用；此处需过去式动词，activated 唯一合适。",
+    "tip": "activated 为过去式，与研究结果的叙述时态一致"
+   },
+   {
+    "number": 35,
+    "answer": "F",
+    "correct": "discourse",
+    "why": "空格在 processing 之后，需要名词作宾语。discourse（语篇、话语）指语言交际的内容，'processing discourse'意为'处理语篇'，与大脑区域区分事实和可能性的功能描述吻合。",
+    "traps": "scenarios 已在第33题使用；uncertainty 已在第31题使用；此处需要一个概括性名词来描述大脑处理的对象，discourse（话语/语篇）最为合适。",
+    "tip": "processing discourse 指\"处理话语/语篇\"，为学术常见搭配"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "differentiate",
+    "cn": "v. 区分，辨别"
+   },
+   {
+    "w": "deliberate",
+    "cn": "adj. 故意的，蓄意的；v. 仔细考虑"
+   },
+   {
+    "w": "aggravate",
+    "cn": "v. 加剧，使恶化；使恼怒"
+   },
+   {
+    "w": "speculative",
+    "cn": "adj. 推测性的，猜测的"
+   },
+   {
+    "w": "evoke",
+    "cn": "v. 引发，唤起（反应、回忆等）"
+   },
+   {
+    "w": "uncertainty",
+    "cn": "n. 不确定性，不确定的事物"
+   },
+   {
+    "w": "ascertain",
+    "cn": "v. 查明，弄清，确定"
+   },
+   {
+    "w": "scenario",
+    "cn": "n. 情境，场景；方案"
+   },
+   {
+    "w": "activate",
+    "cn": "v. 激活，使活动"
+   },
+   {
+    "w": "discourse",
+    "cn": "n. 语篇，话语；论述"
+   },
+   {
+    "w": "robust",
+    "cn": "adj. 强健的；强烈的，有力的"
+   },
+   {
+    "w": "exemplify",
+    "cn": "v. 例证，举例说明"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，理解主旨大意，标记每个空格所需词性（名词/动词/形容词等）",
+   "第二步：将15个候选词按词性分类（注意一词多性如 deliberate），缩小每空的候选范围",
+   "第三步：结合空格前后的搭配关系（如 differentiate between、indicators of）锁定答案",
+   "第四步：利用语法线索（时态、主谓一致、被动语态）排除干扰项",
+   "第五步：填完后通读检查，确保每词仅用一次且全文语义连贯"
+  ]
+ }
+}

@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "41fe6975b225__reading__2",
+ "examId": "41fe6975b225",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 12 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:18:47.950Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58621,
+ "usage": {
+  "prompt_tokens": 1727,
+  "completion_tokens": 3859,
+  "total_tokens": 5586,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1727,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3859,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1727,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 52 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "科学传播与公众理解的重要性",
+  "gist": "文章围绕科学家与公众之间的有效沟通展开论述。以气候变化为例说明科学传播不畅的严重后果，指出公众的科学理解会影响政策制定与科研经费。科学新闻是科普的主要渠道，但存在过度简化甚至失真的问题。作者认为科学家自身也需承担传播责任，应提升与不同受众沟通的能力。",
+  "structure": [
+   "第1-2段：以气候变化为例，说明科学传播不畅的后果及其对政策的影响",
+   "第3段：扩展到神经科学等领域，强调非科学家也需具备分析科学信息的能力",
+   "第4-5段：科学新闻的作用及其过度简化、失真的问题",
+   "第6段：指出科学家自身沟通能力不足也是传播问题的重要原因"
+  ],
+  "difficulty": "中等",
+  "translation": "公众必须能够理解基本的科学知识，才能做出明智的决定。科学家与公众之间沟通不畅所带来的负面后果，最引人注目的例子也许就是气候变化问题。在这个问题上，多种因素——其中一个重要因素是基本气候数据向公众传递过程中的失败——导致了公众对科学家及其研究的广泛不信任和误解。\n\n气候变化问题还说明了公众对科学的接受和理解（或者缺乏理解）如何能够影响政府在监管、科学政策和科研经费方面的决策。\n\n然而，与普通受众进行有效沟通的重要性并不仅限于气候变化这样的热点话题。它对于涉及社会争议的神经科学问题同样至关重要，比如特定行为的遗传基础、干细胞疗法对神经退行性疾病的治疗潜力，或者动物模型的使用——在这些领域中，公众对科学的理解同样可能影响政策和经费决策。此外，随着个体基因组测序技术的不断进步和个性化医疗的出现，越来越多的非科学家需要能够从容地分析复杂的科学信息，以便做出直接影响其生活质量的决策。\n\n科学新闻报道是在公众中普及科学信息的主要渠道。关于科学家与媒体之间的关系如何影响科学进展向公众的有效传播，已有大量论述。优秀的科学记者擅长在保持科学准确性的同时，将复杂的话题变得通俗易懂。\n\n遗憾的是，一些科学新闻报道也会对其主题材料进行过度简化和概括，以至于所传达的基本信息被模糊，甚至在最糟糕的情况下明显错误。一项基础发现对人类健康的影响可能被夸大，使公众认为一种神奇的疗法在几个月到几年后即将出现，而实际上该研究的意义要有限得多。\n\n尽管科学家在向记者乃至最终向公众传递信息方面发挥着作用，但传播不力的责任往往被归咎于记者一方。我们认为，至少部分问题出在科学家与媒体互动之外的环节，其存在的原因一方面是我们低估了科学家与各类受众有效沟通的难度，另一方面是大多数科学家并未接受过正式的科学传播培训。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "The issue of climate change also illustrates how the public acceptance and understanding of science (or the lack of it) can influence governmental decision-making with regard to regulation, science policy and research funding.",
+    "why": "第二段明确指出气候变化的例子说明了公众对科学的接受和理解（或缺乏理解）能够影响政府在监管、科学政策和科研经费方面的决策。D选项\"普通人的科学知识能够左右政策制定\"是对该段的准确概括：common folks对应the public，scientific knowledge对应acceptance and understanding of science，sway policy making对应influence governmental decision-making。",
+    "traps": "A\"气候数据的重要性日益被认识到\"——第一段提到的是气候数据传递的失败，而非其重要性被认识到，属于曲解原文；B\"充足的政府资金对科研至关重要\"——原文说公众理解影响funding决策，而非强调资金的重要性，因果关系颠倒；C\"政府监管帮助公众理解科学\"——原文说公众理解影响政府监管，方向相反，张冠李戴。",
+    "tip": "例证题应关注例子所服务的论点，通常在例子前后的概括性语句中。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Furthermore, with continuing advances in individual genome sequencing and the advent of personalized medicine, more non-scientists will need to be comfortable analyzing complex scientific information to make decisions that directly affect their quality of life.",
+    "why": "原文指出随着个体基因组测序和个性化医疗的到来，更多非科学家需要能够从容分析复杂科学信息，以做出直接影响生活质量的决策。B选项\"获得对医学科学的基本理解\"是对\"comfortable analyzing complex scientific information\"的合理概括，即非科学家需要具备一定的科学分析能力来保障生活质量。",
+    "traps": "A\"向医生寻求个性化医疗帮助\"——原文强调的是非科学家自身需要具备分析能力，而非依赖医生，偷换主体；C\"进行个体基因组测序\"——基因组测序只是背景信息，并非文章建议非科学家去做的事，属于无中生有；D\"合理使用动物模型\"——动物模型是前文举例的科学议题之一，与此处质量生活无直接关联，属于张冠李戴。",
+    "tip": "题干问\"should do\"，需找到原文中对应群体的建议性或必要性表述。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Much has been written about how the relationship between scientists and the media can shape the efficient transmission of scientific advances to the public.",
+    "why": "第四段指出科学新闻是公众获取科学信息的主要渠道，并提到科学家与媒体之间的关系如何影响科学进展向公众的有效传递。A选项\"帮助他们有效地普及新的科学信息\"准确对应了原文中shape the efficient transmission of scientific advances to the public的含义。",
+    "traps": "B\"使公众对科学产生积极态度\"——原文未提及让公众产生积极态度，属于过度推断；C\"帮助他们建立更正面的公众形象\"——原文讨论的是信息传播效率，而非科学家的公众形象，偷换概念；D\"使他们能将研究成果应用于公共健康\"——原文讨论的是信息传播而非成果应用，属于无中生有。",
+    "tip": "注意区分\"传播信息\"与\"应用成果\"的概念差异。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Unfortunately, pieces of science journalism can also oversimplify and generalize their subject material to the point that the basic information conveyed is obscured or at worst, obviously wrong.",
+    "why": "第五段指出科学新闻的问题是过度简化和概括，以至于传达的基本信息被模糊甚至明显错误，还可能夸大研究对健康的影响。C选项\"可能向公众提供不准确或扭曲的信息\"准确概括了obscured和obviously wrong以及exaggerated等问题的实质。",
+    "traps": "A\"热衷于传播耸人听闻的信息\"——原文说的是过度简化导致失真，而非刻意追求轰动效应，属于过度推断；B\"倾向于过度简化人们的健康问题\"——原文说的是简化科学研究主题材料，而非简化健康问题本身，偷换对象；D\"可能提供可以有不同解读的信息\"——原文说的是信息错误或失真，而非模棱两可，属于曲解原文。",
+    "tip": "注意原文用obviously wrong等词明确指向信息失真，而非其他方面的问题。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "we underestimate how difficult it is for scientists to communicate effectively with a diversity of audiences, and for another most scientists do not receive formal training in science communication.",
+    "why": "最后一段指出问题的原因之一是低估了科学家与不同受众沟通的难度，另一个原因是大多数科学家未接受过正式的科学传播培训。由此可推断，科学家应当提升自身的沟通技能。D选项\"提高他们的沟通技能\"是对这两个原因的对应解决方案：既然缺乏培训且沟通能力被低估，那么就应该加强沟通能力。",
+    "traps": "A\"为科学记者提供培训\"——原文说的是科学家自身缺乏培训，而非需要去培训记者，主客体颠倒；B\"激发公众对科学的兴趣\"——原文讨论的是传播能力而非公众兴趣，属于无中生有；C\"及时寻求媒体帮助\"——原文恰恰指出问题不仅在于科学家与媒体的互动，还在于科学家自身，此选项未抓住要点。",
+    "tip": "文章末尾点出问题根源时，往往暗含解决方案，对症下药即为正确答案。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "informed",
+    "cn": "adj. 明智的；有依据的"
+   },
+   {
+    "w": "breakdown",
+    "cn": "n. 崩溃；故障；（沟通的）中断"
+   },
+   {
+    "w": "mistrust",
+    "cn": "n./v. 不信任；怀疑"
+   },
+   {
+    "w": "regulation",
+    "cn": "n. 监管；法规；条例"
+   },
+   {
+    "w": "neurodegenerative",
+    "cn": "adj. 神经退行性的"
+   },
+   {
+    "w": "therapeutic",
+    "cn": "adj. 治疗的；有疗效的"
+   },
+   {
+    "w": "advent",
+    "cn": "n. 出现；到来"
+   },
+   {
+    "w": "adhereto",
+    "cn": "v. 遵守；坚持（adhere to）"
+   },
+   {
+    "w": "obscure",
+    "cn": "v. 使模糊；使难以理解；adj. 晦涩的"
+   },
+   {
+    "w": "exaggerate",
+    "cn": "v. 夸大；夸张"
+   },
+   {
+    "w": "miraculous",
+    "cn": "adj. 奇迹般的；不可思议的"
+   },
+   {
+    "w": "underestimate",
+    "cn": "v. 低估；轻视"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Perhaps the most dramatic example of the negative consequences of poor communication between scientists and the public is the issue of climate change, where a variety of factors, not the least of which is a breakdown in the transmission of fundamental climate data to the general public, has contributed to widespread mistrust and misunderstanding of scientists and their research.",
+    "cn": "科学家与公众之间沟通不畅所带来的负面后果，最引人注目的例子也许就是气候变化问题。在这个问题上，多种因素——其中一个重要因素是基本气候数据向公众传递过程中的失败——导致了对科学家及其研究的广泛不信任和误解。",
+    "note": "主干为the most dramatic example is the issue of climate change；where引导非限定性定语从句修饰climate change；not the least of which为插入语，意为\"其中一个重要的\"，修饰a variety of factors。"
+   },
+   {
+    "en": "We believe that at least part of the problem lies in places other than the interaction between scientists and members of the media, and exists because for one thing we underestimate how difficult it is for scientists to communicate effectively with a diversity of audiences, and for another most scientists do not receive formal training in science communication.",
+    "cn": "我们认为，至少部分问题出在科学家与媒体互动之外的环节，其存在的原因一方面是我们低估了科学家与各类受众有效沟通的难度，另一方面是大多数科学家并未接受过正式的科学传播培训。",
+    "note": "主干为We believe that...；that从句中两个并列谓语lies和exists；because后用for one thing...and for another...给出两个并列原因；how difficult引导宾语从句作underestimate的宾语。"
+   },
+   {
+    "en": "It is also critical for socially charged neuroscience issues such as the genetic basis for a particular behavior, the therapeutic potential of stem cell therapy for neurodegenerative diseases, or the use of animal models, areas where the public understanding of science can also influence policy and funding decisions.",
+    "cn": "它对于涉及社会争议的神经科学问题同样至关重要，比如特定行为的遗传基础、干细胞疗法对神经退行性疾病的治疗潜力，或者动物模型的使用——在这些领域，公众对科学的理解同样可能影响政策和经费决策。",
+    "note": "主干为It is also critical for...issues；such as后列举三个并列的例子；areas为同位语，补充说明前面的issues；where引导定语从句修饰areas。"
+   }
+  ]
+ }
+}

@@ -24,6 +24,8 @@ await run(process.execPath, ['scripts/mobile-device-check.mjs', '--emulated']);
 await run(process.execPath, ['scripts/external-body-cache-smoke.mjs']);
 await run(process.execPath, ['scripts/ecdict-smoke.mjs']);
 await run(process.execPath, ['scripts/ecdict-bubble-ui-smoke.mjs']);
+await run(process.execPath, ['scripts/exam-analysis-smoke.mjs']);
+await run(process.execPath, ['scripts/exam-analysis-audit.mjs', '--strict']);
 
 const sandbox = await mkdtemp(join(tmpdir(), 'workbench-test-'));
 let server;

@@ -1,0 +1,194 @@
+{
+ "schemaVersion": 1,
+ "id": "b26add36f5e1__translation__all",
+ "examId": "b26add36f5e1",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2018 年 12 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:20:47.482Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33236,
+ "usage": {
+  "prompt_tokens": 795,
+  "completion_tokens": 2180,
+  "total_tokens": 2975,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 795,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2180,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 795,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国公共图书馆的发展与服务提升",
+  "reference": "China has been attaching increasing importance to public libraries and encouraging people to make full use of them. Recently released statistics indicate that the number of public libraries in China has been growing year by year. Many libraries have created a quieter and more comfortable environment for readers through renovation and expansion. Large public libraries not only provide a wide variety of reference materials, but also regularly hold activities such as lectures and exhibitions. In recent years, many digital libraries have also emerged, thus saving the space needed for storing books. Some libraries have also introduced self-service systems, making it more convenient for readers to borrow and return books, which further satisfies the needs of readers.",
+  "sentences": [
+   {
+    "cn": "中国越来越重视公共图书馆，并鼓励人们充分加以利用。",
+    "en": "China has been attaching increasing importance to public libraries and encouraging people to make full use of them.",
+    "structure": "现在完成进行时 + 并列谓语（attaching... and encouraging...），宾语用 them 回指 public libraries，避免重复",
+    "keys": [
+     "越来越重视 attach increasing importance to",
+     "公共图书馆 public libraries",
+     "充分利用 make full use of"
+    ]
+   },
+   {
+    "cn": "新近公布的统计数字表明，中国的公共图书馆数量在逐年增长。",
+    "en": "Recently released statistics indicate that the number of public libraries in China has been growing year by year.",
+    "structure": "主语（过去分词短语作前置定语）+ 谓语 indicate + that 宾语从句；从句中用现在完成进行时体现\"逐年增长\"的持续性",
+    "keys": [
+     "新近公布的 recently released",
+     "统计数字 statistics",
+     "逐年增长 grow year by year"
+    ]
+   },
+   {
+    "cn": "许多图书馆通过翻新和扩建，为读者创造了更为安静、舒适的环境。",
+    "en": "Many libraries have created a quieter and more comfortable environment for readers through renovation and expansion.",
+    "structure": "主语 + have created + 宾语 + for 受益者 + through 介词短语表方式；比较级 quieter and more comfortable 体现\"更为\"",
+    "keys": [
+     "翻新和扩建 renovation and expansion",
+     "安静、舒适的环境 a quieter and more comfortable environment"
+    ]
+   },
+   {
+    "cn": "大型公共图书馆不仅提供种类繁多的参考资料，而且定期举办讲座、展览等活动。",
+    "en": "Large public libraries not only provide a wide variety of reference materials, but also regularly hold activities such as lectures and exhibitions.",
+    "structure": "not only... but also... 并列结构连接两个谓语动词；such as 引出举例说明",
+    "keys": [
+     "种类繁多的 a wide variety of",
+     "参考资料 reference materials",
+     "定期举办 regularly hold",
+     "讲座、展览 lectures and exhibitions"
+    ]
+   },
+   {
+    "cn": "近年来，也出现了许多数字图书馆，从而节省了存放图书所需的空间。",
+    "en": "In recent years, many digital libraries have also emerged, thus saving the space needed for storing books.",
+    "structure": "时间状语前置 + 主句（现在完成时）+ thus + 现在分词短语作结果状语；needed for storing 过去分词短语作后置定语修饰 space",
+    "keys": [
+     "数字图书馆 digital libraries",
+     "从而节省 thus saving",
+     "存放图书所需的空间 the space needed for storing books"
+    ]
+   },
+   {
+    "cn": "一些图书馆还推出了自助服务系统，使读者借书还书更加方便，进一步满足了读者的需求。",
+    "en": "Some libraries have also introduced self-service systems, making it more convenient for readers to borrow and return books, which further satisfies the needs of readers.",
+    "structure": "主句 + 现在分词短语作结果状语（making it + adj. + for sb. + to do）+ which 引导非限制性定语从句补充说明整件事的结果",
+    "keys": [
+     "自助服务系统 self-service systems",
+     "借书还书 borrow and return books",
+     "满足读者的需求 satisfy/meet the needs of readers"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "公共图书馆",
+    "en": "public library/public libraries"
+   },
+   {
+    "cn": "统计数字",
+    "en": "statistics/statistical data"
+   },
+   {
+    "cn": "翻新和扩建",
+    "en": "renovation and expansion"
+   },
+   {
+    "cn": "参考资料",
+    "en": "reference materials/reference resources"
+   },
+   {
+    "cn": "数字图书馆",
+    "en": "digital library/digital libraries"
+   },
+   {
+    "cn": "自助服务系统",
+    "en": "self-service system(s)"
+   },
+   {
+    "cn": "讲座",
+    "en": "lecture(s)"
+   },
+   {
+    "cn": "展览",
+    "en": "exhibition(s)"
+   },
+   {
+    "cn": "逐年增长",
+    "en": "grow/increase year by year"
+   }
+  ],
+  "pitfalls": [
+   "\"越来越重视\"误译为 more and more important，应使用 attach increasing importance to 或 place growing emphasis on",
+   "\"充分加以利用\"遗漏 fully/full，make use of 未体现\"充分\"含义，应为 make full use of",
+   "\"翻新和扩建\"词汇空白，误用 renew and rebuild 等不地道表达，标准说法为 renovation and expansion",
+   "\"从而节省了存放图书所需的空间\"结构混乱，the space needed for storing books 中 needed 作后置定语易漏译",
+   "\"使读者借书还书更加方便\"句中 making it more convenient for readers to do 的形式宾语 it 常被遗漏，导致语法错误"
+  ],
+  "upgrades": [
+   {
+    "plain": "China pays more and more attention to public libraries",
+    "better": "China has been attaching increasing importance to public libraries",
+    "note": "attach importance to 为正式书面搭配，现在完成进行时更准确体现持续趋势"
+   },
+   {
+    "plain": "there are more and more public libraries",
+    "better": "the number of public libraries has been growing year by year",
+    "note": "用 the number of + 现在完成进行时更精确表达\"数量逐年增长\""
+   },
+   {
+    "plain": "provide many kinds of reference materials",
+    "better": "provide a wide variety of reference materials",
+    "note": "a wide variety of 比 many kinds of 更书面、更地道，适合正式语境"
+   },
+   {
+    "plain": "appeared many digital libraries, so it saves space",
+    "better": "many digital libraries have also emerged, thus saving the space needed for storing books",
+    "note": "emerge 比 appear 更正式；thus + 分词结构比 so 从句更简洁高级"
+   },
+   {
+    "plain": "Libraries started self-service systems to make borrowing convenient",
+    "better": "Libraries have introduced self-service systems, making it more convenient for readers to borrow and return books",
+    "note": "introduce 搭配 system 更准确；分词结构作结果状语使句式更紧凑流畅"
+   }
+  ]
+ }
+}

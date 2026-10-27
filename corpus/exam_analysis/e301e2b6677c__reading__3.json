@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "e301e2b6677c__reading__3",
+ "examId": "e301e2b6677c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2014 年考研英语真题",
+ "year": 2014,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:29:46.549Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61897,
+ "usage": {
+  "prompt_tokens": 1734,
+  "completion_tokens": 3728,
+  "total_tokens": 5462,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1734,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3728,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1734,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学新奖项的争议与价值",
+  "gist": "文章围绕由互联网企业家资助的科学新奖项展开讨论。部分科学家批评这些奖项是自我推销、扭曲科研体系，但作者指出诺贝尔奖本身也有局限性，最终认为新奖项虽有争议，但将资金和关注引向科学界总体上是好事，应心怀感激地接受。",
+  "structure": [
+   "第1段：引出新科学奖项现象及其背景",
+   "第2段：列举科学家对新奖项的批评",
+   "第3段：过渡段，指出颁奖者目标不一",
+   "第4段：对比分析新旧奖项各自的局限性",
+   "第5段：作者表明立场，肯定新奖项的积极意义"
+  ],
+  "difficulty": "中等",
+  "translation": "300万美元的基础物理学奖确实是一个有趣的实验，正如亚历山大·波利亚科夫在今年三月接受该奖项时所说的那样。而且这远非此类奖项中的唯一一个。正如《自然》杂志一篇新闻专题文章所讨论的，近年来一系列丰厚的研究人员奖项已加入了诺贝尔奖的行列。其中许多奖项，如基础物理学奖，资金来源于互联网企业家那些天文数字般的银行账户。这些捐助者表示，他们已经在各自选定的领域取得了成功，他们希望用自己的财富来吸引人们关注那些在科学领域取得成功的人。\n\n有什么不好的呢？根据该新闻专题中引用的少数科学家的说法，问题相当多。俗话说，你买不来格调，这些暴发户企业家也买不来诺贝尔奖那样的声望。科学家们说，这些新奖项是幕后推动者的自我推销行为。它们可能扭曲以成就为基础的同行评审主导的研究体系。它们可能固化同行评审研究的现状。它们不资助同行评审研究。它们还延续了孤独天才的神话。\n\n颁奖者的目标似乎与批评一样零散。一些人想要引起震动，另一些人想吸引人们进入科学领域，或更好地奖励那些以研究为职业的人。\n\n正如《自然》杂志此前指出的，关于科学奖项——无论新旧——如何分配，确实存在一些合理的担忧。今年设立的生命科学突破奖对生命科学所涵盖的内容持有不具代表性的观点。但诺贝尔基金会每项奖最多三位获奖者且必须在世的限制，早已不适应现代研究的合作性质——当涉及到承认希格斯玻色子的发现时，关于谁被忽略的不可避免的争议将证明这一点。当然，诺贝尔奖本身也是由一位非常富有的个人设立的，他自行决定了如何使用自己的钱。是时间，而非初衷，赋予了它们合法性。\n\n尽管一些科学家可能会抱怨这些新奖项，但有两件事似乎是明确的。首先，大多数研究人员如果被授予这样的奖项，他们会欣然接受。其次，资金和关注流向科学领域而非其他地方，这无疑是一件好事。批评和质疑其机制是合理的——毕竟这是研究的文化——但这是颁奖者的钱，他们可以随心所欲地使用。明智的做法是心怀感激和优雅地接受这些馈赠。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "a string of lucrative awards for researchers have joined the Nobel Prizes in recent years. Many, like the Fundamental Physics Prize, are funded from the telephone-number-sized bank accounts of Internet entrepreneurs.",
+    "why": "文章第一段指出，近年来\"一系列针对研究人员的丰厚奖项\"加入了诺贝尔奖的行列，基础物理学奖是其中之一。lucrative awards for researchers（给研究人员的丰厚奖项）直接对应B选项\"a handsome reward for researchers\"（给研究人员的丰厚奖励），handsome与lucrative同义替换。",
+    "traps": "A项\"企业家财富的象征\"——文章提到企业家出资，但奖项本身的定位不是象征财富，而是奖励科学家，属于偷换概念；C项\"诺贝尔奖的可能替代品\"——文中说\"joined the Nobel Prizes\"（加入行列），并非替代，属于曲解原文；D项\"银行家投资的例子\"——出资者是Internet entrepreneurs（互联网企业家）而非bankers（银行家），且不是投资行为，属于张冠李戴。",
+    "tip": "注意同义替换：lucrative=handsome，此为考研高频考查方式。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The new awards are an exercise in self-promotion for those behind them, say scientists.",
+    "why": "第二段列举了批评者的观点，其中关键句指出新奖项是\"幕后推动者的自我推销行为\"（self-promotion for those behind them）。those behind them即奖项的创立者/资助者，对应C选项\"the founders of the new awards\"。批评者认为最大受益者是奖项创立者自身，而非科学界。",
+    "traps": "A项\"以盈利为导向的科学家\"——文中未提到科学家盈利导向，属于无中生有；B项\"以成就为基础的体系\"——原文说新奖项可能\"distort\"（扭曲）该体系，是受害而非受益；D项\"同行评审主导的研究\"——原文明确说\"They do not fund peer-reviewed research\"，同行评审研究也不是受益者。",
+    "tip": "抓住self-promotion和those behind them的指代关系即可锁定答案。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "the Nobel Foundation's limit of three recipients per prize, each of whom must still be living, has long been outgrown by the collaborative nature of modern research – as will be demonstrated by the inevitable row over who is ignored when it comes to acknowledging the discovery of the Higgs boson.",
+    "why": "希格斯玻色子的发现被用来证明前半句的论点：诺贝尔奖每项最多三人获奖的限制已不适应现代研究的\"collaborative nature\"（合作性质）。这意味着该发现涉及众多研究者的共同努力，正对应C选项\"the joint effort of modern researchers\"（现代研究者的共同努力）。",
+    "traps": "A项\"对新奖项的合理担忧\"——希格斯玻色子案例论证的是诺贝尔奖（旧奖项）的局限，而非新奖项的问题；B项\"关于获奖者地位的争议\"——原文争议在于谁被忽略（who is ignored），而非获奖者地位（status），属于偷换概念；D项\"研究成果的展示\"——demonstration在原文中意为\"证明/说明\"，而非展示研究成果，属于词义偷换。",
+    "tip": "例证题要回归论点本身，关键词collaborative nature直接对应joint effort。"
+   },
+   {
+    "number": 34,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Time, rather than intention, has given them legitimacy.",
+    "why": "该句是第四段的总结句，指出是\"时间\"而非\"初衷\"赋予了诺贝尔奖合法性。B选项\"Their endurance has done justice to them\"意为\"它们的持久存在使它们获得了公正的地位\"，endurance（持久）对应Time，done justice to（使…获得公正评价）对应given them legitimacy，构成精准的同义改写。",
+    "traps": "A项\"历史从未质疑过它们\"——第四段明确提出了对诺贝尔奖的批评（如三人限制等），never过于绝对；C项\"它们是最具代表性的荣誉\"——文中提到生命科学突破奖观点不具代表性，但未说诺贝尔奖是\"最具代表性的\"，属于无据推断；D项\"它们的合法性长期受到争议\"——原文说时间赋予了它们合法性，即合法性已确立，并非长期受争议。",
+    "tip": "理解Time与endurance的同义关系以及legitimacy与done justice to的语义对等是解题关键。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "It is fair to criticize and question the mechanism – that is the culture of research, after all – but it is the prize-givers' money to do with as they please. It is wise to take such gifts with gratitude and grace.",
+    "why": "最后一段作者明确表态：一方面承认批评和质疑是合理的（fair to criticize），另一方面肯定资金流向科学是好事，应心怀感激地接受。这说明作者认为尽管存在批评，新奖项仍是可接受的（acceptable despite the criticism），完美对应D选项。",
+    "traps": "A项\"不值得公众关注\"——作者明确说\"money and attention come to science\"是好事，态度相反；B项\"可能经历不良变化\"——文中未讨论新奖项未来会发生不良变化，属于无中生有；C项\"对研究文化有害\"——作者说批评质疑本身是研究文化的一部分，并未说奖项有害于研究文化，属于曲解原文。",
+    "tip": "末段常为作者总结观点所在，注意转折词but后的核心态度。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "lucrative",
+    "cn": "adj. 利润丰厚的，赚大钱的"
+   },
+   {
+    "w": "benefactor",
+    "cn": "n. 捐助者，赞助人"
+   },
+   {
+    "w": "prestige",
+    "cn": "n. 声望，威望"
+   },
+   {
+    "w": "upstart",
+    "cn": "n./adj. 暴发户（的），自命不凡的新贵"
+   },
+   {
+    "w": "distort",
+    "cn": "v. 扭曲，歪曲"
+   },
+   {
+    "w": "cement",
+    "cn": "v. 巩固，加强（此处非名词\"水泥\"义）"
+   },
+   {
+    "w": "perpetuate",
+    "cn": "v. 使持续，使永久化"
+   },
+   {
+    "w": "legitimate",
+    "cn": "adj. 合理的，正当的；合法的"
+   },
+   {
+    "w": "unrepresentative",
+    "cn": "adj. 不具代表性的"
+   },
+   {
+    "w": "collaborative",
+    "cn": "adj. 合作的，协作的"
+   },
+   {
+    "w": "gratitude",
+    "cn": "n. 感激，感恩"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But the Nobel Foundation's limit of three recipients per prize, each of whom must still be living, has long been outgrown by the collaborative nature of modern research – as will be demonstrated by the inevitable row over who is ignored when it comes to acknowledging the discovery of the Higgs boson.",
+    "cn": "但诺贝尔基金会每项奖最多三位获奖者且每位必须在世的限制，早已不适应现代研究的合作性质——当涉及承认希格斯玻色子的发现时，关于谁被忽略的不可避免的争议将证明这一点。",
+    "note": "主句为\"the Nobel Foundation's limit...has long been outgrown by the collaborative nature\"，被动语态；each of whom引导非限定性定语从句修饰recipients；破折号后as引导方式状语从句，其中含who引导的宾语从句以及when引导的时间状语从句，形成三层嵌套。"
+   },
+   {
+    "en": "It is fair to criticize and question the mechanism – that is the culture of research, after all – but it is the prize-givers' money to do with as they please.",
+    "cn": "批评和质疑其机制是合理的——毕竟这就是研究的文化——但这是颁奖者的钱，他们可以随心所欲地使用。",
+    "note": "由but连接两个并列分句；前半句用it作形式主语，真正主语为to criticize and question；破折号之间为插入语；后半句中to do with为不定式作后置定语修饰money，as they please为方式状语从句。"
+   },
+   {
+    "en": "They could distort the achievement-based system of peer-review-led research.",
+    "cn": "它们可能扭曲以成就为基础的、由同行评审主导的研究体系。",
+    "note": "核心为They could distort the system；achievement-based和peer-review-led为两个复合形容词分别作定语修饰system和research，多重修饰语叠加增加理解难度。"
+   }
+  ]
+ }
+}

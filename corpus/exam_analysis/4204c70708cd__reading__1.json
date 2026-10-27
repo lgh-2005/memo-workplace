@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "4204c70708cd__reading__1",
+ "examId": "4204c70708cd",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 6 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:19:53.852Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65899,
+ "usage": {
+  "prompt_tokens": 1832,
+  "completion_tokens": 3739,
+  "total_tokens": 5571,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1832,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3739,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1832,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "面部识别技术的机器局限性",
+  "gist": "文章探讨了面部识别技术的现状与挑战。机器在处理海量人脸数据库方面远胜人类记忆，但随着数据库规模扩大，识别准确率下降，且难以区分长相相似的人或同一人不同状态下的照片。研究者创建了MegaFace大型公开数据库以研究这些问题，但学术界仍面临缺乏大规模公开数据集的困境。",
+  "structure": [
+   "第1-3段：引出话题，机器面部识别优于人类记忆",
+   "第4-5段：MegaFace实验揭示数据库扩大后准确率下降",
+   "第6-7段：机器在相似面孔和光照、年龄变化方面的局限",
+   "第8-9段：研究者面临的困境——缺乏大规模公开数据集"
+  ],
+  "difficulty": "中等",
+  "translation": "人类的记忆是出了名的不可靠。即使拥有最敏锐面部识别能力的人，能记住的也十分有限。\n\n要量化一个人的记忆力有多好是很困难的。例如，没有人真正知道一个人能回忆起多少张不同的面孔，但各种估计值往往在数千张左右——这是基于一个人可能拥有的熟人数量来推算的。\n\n机器不受这种限制。给合适的计算机一个庞大的人脸数据库，它就能处理所见内容——然后以惊人的速度和精准度识别出被要求查找的面孔。这种能力支撑了面部识别软件在21世纪的巨大前景，也正是当代监控系统令人恐惧的原因所在。\n\n问题在于，机器在面部识别方面仍然存在局限性，而科学家们才刚刚开始理解这些局限是什么。为了探究计算机在哪些方面遇到困难，华盛顿大学的研究人员创建了一个庞大的人脸数据库——他们称之为MegaFace——并在复杂性不断增加的情况下测试了多种面部识别算法。其目的是在一个包含多达100万张不同图像、涵盖近70万个不同人物的数据库上测试机器——而不仅仅是一个图片量大但所含不同面孔数量相对较少的数据库，后者在其他研究中更为常见。\n\n随着数据库的增长，机器的准确率全面下降。例如，在处理1.3万张图像的数据库时正确率为95%的算法，在面对100万张图像时准确率约为70%。研究人员之一伊拉·凯梅尔马赫-施利泽曼表示，这仍然相当不错。\"比我们预期的要好得多，\"她说。\n\n机器在应对长相非常相似的人时也遇到了困难——要么是长相极相似的人，机器难以将他们识别为两个不同的人；要么是同一个人在不同年龄或不同光线条件下拍摄的不同照片，机器会错误地将其视为不同的人。\n\n凯梅尔马赫-施利泽曼说：\"一旦我们扩大规模，算法就必须对身份的微小变化保持敏感，同时对光线、姿势和年龄保持不变性。\"\n\n问题是，对于许多希望设计系统来应对这些挑战的研究人员来说，用于实验的大规模数据集根本不存在——至少不是以学术研究人员可以获取的格式存在的。像谷歌和脸书拥有的训练集是私有的。没有包含数百万张面孔的公共数据库。MegaFace的创建者表示，它是目前最大的公开可用的面部识别数据集。\n\n研究人员写道：\"终极的面部识别算法应该能够在包含数十亿人的数据集上运行。\"",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Give the right computer a massive database of faces, and it can process what it sees—then recognize a face it's told to find—with remarkable speed and precision.",
+    "why": "原文第三段明确指出，给机器一个庞大的人脸数据库，它就能以惊人的速度和精准度识别面孔。这与A选项\"更高效地识别人脸\"完全对应：remarkable speed对应efficiently，recognize a face对应identify human faces。前文还以人类记忆不可靠作为对比，突出机器的优势。",
+    "traps": "B选项\"区分朋友和泛泛之交\"原文未提及此能力，属于无中生有；C选项\"存储无限数量的人脸\"过于绝对，原文说machines aren't limited this way但并未说unlimited，且后文表明数据库增大时准确率下降；D选项\"感知人眼不可见的图像\"属于无中生有，原文从未涉及此内容。",
+    "tip": "注意区分\"不受人类局限\"和\"无限制\"的细微差别，避免选绝对化选项。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "To begin to figure out how computers are struggling, researchers at the University of Washington created a massive database of faces—they call it MegaFace—and tested a variety of facial-recognition algorithms as they scaled up in complexity.",
+    "why": "原文第四段开头明确交代创建MegaFace的目的：To begin to figure out how computers are struggling（开始弄清计算机在哪些方面遇到困难）。C选项\"理解计算机在面部识别方面的问题\"是对该目的句的准确同义改写，struggling对应problems。",
+    "traps": "A选项\"扩大数据库容量\"是创建MegaFace的手段而非目的，混淆了因果关系；B选项\"增加面部识别软件的种类\"原文未提及，属于无中生有；D选项\"降低算法的复杂性\"与原文相反，原文是scaled up in complexity（增加复杂性），属于反向干扰。",
+    "tip": "注意区分\"目的\"和\"手段\"，定位to do不定式表目的的结构。"
+   },
+   {
+    "number": 48,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "As the databases grew, machine accuracy dipped across the board. Algorithms that were right 95% of the time when they were dealing with a 13,000-image database, for example, were accurate about 70% of the time when confronted with 1 million images.",
+    "why": "原文第五段首句明确指出：随着数据库增长，机器准确率全面下降（dipped across the board）。后面用具体数据（95%降至70%）佐证。D选项\"随数据库规模增大而下降\"是对原文的准确概括，databases grew对应database size increases，dipped对应decreases。",
+    "traps": "A选项\"未达到研究人员的预期\"与原文相反，研究人员说\"Much better than we expected\"，属于反向干扰；B选项\"随计算能力增加而提高\"原文未涉及计算能力，属于无中生有；C选项\"随不同算法差异巨大\"虽然测试了多种算法，但原文强调的是across the board全面下降的趋势，而非算法间差异。",
+    "tip": "注意数据对比方向，同时关注研究人员对结果的评价态度。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Machines also had difficulty adjusting for people who look a lot alike—either doppelgangers, whom the machine would have trouble identifying as two separate people",
+    "why": "原文第六段明确指出机器的一个缺陷：对长相极其相似的人（doppelgangers）难以将其识别为两个不同的人。A选项\"不能轻易区分外表几乎相同的人\"是对原文的准确改写，people who look a lot alike对应near-identical appearances，had difficulty/trouble对应cannot easily tell apart。",
+    "traps": "B选项\"难以识别面部表情变化\"原文未提及面部表情，属于无中生有；C选项\"对人们情绪的微小变化不敏感\"原文从未涉及情绪识别，属于偷换概念（将tiny changes in identities偷换为mood变化）；D选项\"难以区分同龄人\"是对原文的曲解，原文说的是同一人不同年龄的照片被误认为不同人，而非区分同龄的不同人。",
+    "tip": "注意准确理解原文描述的具体困难，不要将\"年龄变化\"误读为\"同龄\"。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "massive datasets for experimentation just don't exist—at least, not in formats that are accessible to academic researchers. Training sets like the ones Google and Facebook have are private. There are no public databases that contain millions of faces.",
+    "why": "原文第八段指出研究者面临的困境：用于实验的大规模数据集不存在，至少不以学术研究人员可获取的格式存在；谷歌和脸书的训练集是私有的；没有包含数百万张面孔的公共数据库。B选项\"不存在拥有足够面孔样本的公共数据库\"精准概括了这一困境。",
+    "traps": "A选项\"没有计算机能处理庞大的人脸数据集\"原文未提及计算机处理能力不足的问题，属于无中生有；C选项\"没有合适的算法来处理面孔样本\"原文未提及算法缺乏问题，困难在于数据集而非算法；D选项\"难以将面孔数据集转换为正确格式\"曲解了原文的format表述，原文说的是数据集不以可获取的格式存在，而非需要格式转换。",
+    "tip": "注意区分\"数据集不可获取\"和\"格式转换困难\"的本质差别。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "notoriously",
+    "cn": "adv. 众所周知地（含贬义）"
+   },
+   {
+    "w": "quantify",
+    "cn": "v. 量化，定量表示"
+   },
+   {
+    "w": "hover",
+    "cn": "v. 徘徊，停留在某一水平附近"
+   },
+   {
+    "w": "surveillance",
+    "cn": "n. 监控，监视"
+   },
+   {
+    "w": "constraint",
+    "cn": "n. 限制，约束"
+   },
+   {
+    "w": "scale up",
+    "cn": "v. 扩大规模，按比例增加"
+   },
+   {
+    "w": "dip",
+    "cn": "v. 下降，下跌"
+   },
+   {
+    "w": "across the board",
+    "cn": "adv. 全面地，全体地"
+   },
+   {
+    "w": "doppelganger",
+    "cn": "n. 长相极相似的人，面貌酷似者"
+   },
+   {
+    "w": "invariant",
+    "cn": "adj. 不变的，恒定的"
+   },
+   {
+    "w": "accessible",
+    "cn": "adj. 可获取的，可进入的"
+   },
+   {
+    "w": "algorithm",
+    "cn": "n. 算法"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Give the right computer a massive database of faces, and it can process what it sees—then recognize a face it's told to find—with remarkable speed and precision.",
+    "cn": "给合适的计算机一个庞大的人脸数据库，它就能处理所见内容——然后以惊人的速度和精准度识别出被要求查找的面孔。",
+    "note": "祈使句+and+陈述句结构，相当于if条件句；破折号之间插入补充说明识别功能；with短语作方式状语修饰recognize。"
+   },
+   {
+    "en": "Algorithms that were right 95% of the time when they were dealing with a 13,000-image database, for example, were accurate about 70% of the time when confronted with 1 million images.",
+    "cn": "例如，在处理1.3万张图像的数据库时正确率为95%的算法，在面对100万张图像时准确率约为70%。",
+    "note": "主语Algorithms后接that引导的定语从句，从句内含when时间状语从句；for example为插入语；主句谓语were accurate后也含when从句，形成前后对比。"
+   },
+   {
+    "en": "The idea was to test the machines on a database that included up to 1 million different images of nearly 700,000 different people—and not just a large database featuring a relatively small number of different faces, more consistent with what's been used in other research.",
+    "cn": "其目的是在一个包含多达100万张不同图像、涵盖近70万个不同人物的数据库上测试机器——而不仅仅是一个图片量大但所含不同面孔数量相对较少的数据库，后者在其他研究中更为常见。",
+    "note": "主干为The idea was to test...；that引导定语从句修饰database；破折号后and not just构成对比；more consistent为形容词短语作后置定语修饰a large database，what引导宾语从句。"
+   }
+  ]
+ }
+}

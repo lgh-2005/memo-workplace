@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "4ee7bac862c0__banked_cloze__all",
+ "examId": "4ee7bac862c0",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2016 年 12 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:05:50.167Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 53907,
+ "usage": {
+  "prompt_tokens": 1345,
+  "completion_tokens": 3210,
+  "total_tokens": 4555,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1345,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3210,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1345,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学家应积极参与公共事务与科研投资",
+  "gist": "文章指出科学家应被视为提出和回答重要问题的普通人，好的科学依赖于假设、实验和合理方法。国家需要更多愿意走向公共舞台、用通俗语言解释科研工作的科学家。文章同时批评了美国科研投入比例的下降，并以加州大学为例说明应加大科研成果转化的投资力度。",
+  "difficulty": "中等",
+  "translation": "重要的是，科学家应被视为提出并回答重要问题的普通人。优秀、可靠的科学依赖于假设、实验和合理的方法论。它需要提出新问题和尝试新方法的意愿，需要冒险并经历失败。但好的科学也需要语境化的理解、清晰的解释和简洁的呈现。\n\n我们的国家需要更多愿意走上公共舞台、就重要事务发表意见的科学家。我们需要更多能用有说服力且公众能理解的语言来解释自己工作的科学家。我们这些非科学家人士也应准备好支持科学家参与公共事务，并将科学知识融入我们的公共交流之中。\n\n这个国家有太多人，包括一些民选领导人，仍然不理解科学是如何运作的，也不理解为何对科研进行稳健的长期投资至关重要。20世纪60年代，美国将近17%的可自由支配支出投入到研发中，收获了数十年的经济增长。到2008年，这一数字已降至个位数。而这发生在其他国家在自身科研能力方面取得重大进展的时期。\n\n在加州大学，我们不仅为研究质量感到自豪，也为其对改善世界的贡献感到自豪。为了加速科学从实验室到市场的发展进程，加州大学正在用自己的资金投资自己的好想法。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "G",
+    "correct": "hypotheses",
+    "why": "空格处与experiments和reasoned methodologies并列，需要一个名词复数形式。科学研究依赖于\"假设、实验和合理的方法论\"，hypotheses（假设）在语义和语法上完全契合，是科学研究的基本要素之一。",
+    "traps": "arena（舞台）和digits（数字）虽也是名词，但语义与科学方法论不搭配。此处需要体现科学研究起点——提出假设，其他名词均无此含义。",
+    "tip": "并列结构中各成分词性一致，语义需同属一个范畴。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "contextual",
+    "why": "空格后接understanding，需要形容词修饰。contextual understanding（语境化的理解）与后文clear explanation、concise presentation构成三组\"形容词+名词\"的并列结构，语义上强调理解需要有背景和语境。",
+    "traps": "convincing understanding（有说服力的理解）语义不够自然；其他形容词如devoted不能修饰understanding。contextual与clear、concise形成递进的修饰关系。",
+    "tip": "注意并列结构中形容词+名词的搭配模式。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "arena",
+    "why": "固定搭配public arena意为\"公共舞台/公共领域\"。科学家需要走上公共舞台发表意见，arena在此指公共讨论和关注的领域，与step out搭配表示\"走出来亮相\"。",
+    "traps": "其他名词如hypotheses、digits不能与public搭配形成有意义的表达。public arena是常见的英语搭配，表示公共视野或公共论坛。",
+    "tip": "掌握public arena这一常见固定搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "correct": "convincing",
+    "why": "空格与understandable由and并列，共同修饰language，需要一个形容词。convincing（有说服力的）与understandable（可理解的）并列描述科学家使用的语言特征，逻辑通顺。",
+    "traps": "contextual虽也是形容词，但contextual language（语境化的语言）语义不如convincing language（有说服力的语言）切合上下文对公众传播的需求。",
+    "tip": "and并列的两个形容词词性相同且语义互补。"
+   },
+   {
+    "number": 30,
+    "answer": "I",
+    "correct": "incorporate",
+    "why": "incorporate…into…是固定搭配，意为\"将……融入……\"。此处表示将科学知识融入公共交流中，语法上to incorporate与前面to support并列，均为不定式。",
+    "traps": "其他动词如devote搭配to而非into，hasten后不接into。incorporate into是唯一在此处语法和语义都成立的搭配。",
+    "tip": "熟记incorporate…into…的固定搭配用法。"
+   },
+   {
+    "number": 31,
+    "answer": "D",
+    "correct": "devoted",
+    "why": "devote…to…意为\"将……投入到……\"。美国将近17%的可自由支配支出投入到研发中，devoted作谓语动词过去式，与to research and development搭配完美。",
+    "traps": "其他动词如hasten、incorporate在此处与spending to research的搭配不当。devoted nearly 17% of spending to R&D是标准的资源分配表达。",
+    "tip": "devote sth. to sth.表示\"将资源投入某领域\"。"
+   },
+   {
+    "number": 32,
+    "answer": "N",
+    "correct": "reaping",
+    "why": "此处为现在分词作伴随状语或结果状语，表示投入研发的结果——\"收获了数十年的经济增长\"。reaping（收获）与decades of economic growth搭配，体现因果关系。",
+    "traps": "其他动词的现在分词形式在此处语义不通。reap本义为\"收割\"，引申为\"收获成果\"，与economic growth形成自然搭配。",
+    "tip": "现在分词作结果状语，表示前面行为的自然结果。"
+   },
+   {
+    "number": 33,
+    "answer": "E",
+    "correct": "digits",
+    "why": "single digits意为\"个位数\"，是固定表达。前文提到17%的比例下降，到2008年降至个位数（不到10%），与the figure和fallen搭配，逻辑清晰。",
+    "traps": "其他名词无法与single搭配形成有意义的表达。single digits是描述数字降至10以下的标准英语表达。",
+    "tip": "掌握single digits（个位数）这一固定表达。"
+   },
+   {
+    "number": 34,
+    "answer": "M",
+    "correct": "pride",
+    "why": "pride oneself on是固定搭配，意为\"以……为豪\"。we pride ourselves on…结构完整，表示加州大学以研究质量和贡献为傲。pride在此用作动词。",
+    "traps": "其他动词无法与ourselves on构成合理搭配。注意pride在此为动词用法而非名词，这是考查词性灵活运用的典型题。",
+    "tip": "注意pride作动词的用法：pride oneself on。"
+   },
+   {
+    "number": 35,
+    "answer": "F",
+    "correct": "hasten",
+    "why": "hasten意为\"加速、促进\"，to hasten the development表示\"加速科学发展进程\"。从实验室到市场的转化需要加速推进，语义上与investing呼应。",
+    "traps": "其他动词如incorporate语义不当。hasten强调加快速度，与from the lab bench to the market place的转化过程高度契合。",
+    "tip": "hasten=accelerate，表示加速推进某一进程。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "hypotheses",
+    "cn": "n. 假设，假说（hypothesis的复数）"
+   },
+   {
+    "w": "contextual",
+    "cn": "adj. 上下文的，语境的"
+   },
+   {
+    "w": "arena",
+    "cn": "n. 舞台，竞技场，活动领域"
+   },
+   {
+    "w": "convincing",
+    "cn": "adj. 有说服力的，令人信服的"
+   },
+   {
+    "w": "incorporate",
+    "cn": "v. 包含，合并，将……融入"
+   },
+   {
+    "w": "devoted",
+    "cn": "v. 投入，奉献（devote的过去式）"
+   },
+   {
+    "w": "reaping",
+    "cn": "v. 收获，获得（reap的现在分词）"
+   },
+   {
+    "w": "digits",
+    "cn": "n. 数字，位数（digit的复数）"
+   },
+   {
+    "w": "hasten",
+    "cn": "v. 加速，催促，赶紧"
+   },
+   {
+    "w": "discretionary",
+    "cn": "adj. 可自由支配的，酌情决定的"
+   },
+   {
+    "w": "robust",
+    "cn": "adj. 强健的，稳健的，强劲的"
+   },
+   {
+    "w": "concise",
+    "cn": "adj. 简洁的，简明的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握文章主旨和段落逻辑关系。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的选择范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、并列连词等）判断所需词性。",
+   "第四步：结合上下文语义和固定搭配（如public arena、single digits、pride oneself on）锁定答案。",
+   "第五步：填完后回读全文，检查语法一致性和语义连贯性，确保每词只用一次。"
+  ]
+ }
+}

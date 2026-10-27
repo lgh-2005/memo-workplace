@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "4ee7bac862c0__reading__2",
+ "examId": "4ee7bac862c0",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 12 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:06:28.086Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63678,
+ "usage": {
+  "prompt_tokens": 1928,
+  "completion_tokens": 3991,
+  "total_tokens": 5919,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1928,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3991,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1928,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "青少年心理问题的\"隐形风险\"群体",
+  "gist": "一项新研究发现，除了有明显不良行为（酗酒、吸毒、逃学等）的高风险青少年外，还存在一个庞大的\"隐形风险\"群体——过度使用电子设备、严重缺乏睡眠且久坐不动的青少年，其抑郁症状发生率接近高风险组，但因行为不显眼而容易被忽视。该研究为家长和教师提供了新的预警信号。",
+  "structure": [
+   "第1-2段：引出新发现——存在一个易被忽视的高危青少年群体",
+   "第3-4段：解释\"隐形风险\"群体的定义及其危险性",
+   "第5-7段：呈现调查数据，对比三组青少年的抑郁比例",
+   "第8-9段：研究者的惊讶反应及研究的实际意义"
+  ],
+  "difficulty": "中等",
+  "translation": "有抑郁、焦虑和自杀风险的青少年，往往像霓虹灯一样把自己的问题展示出来。他们的危险行为——过度饮酒、使用非法药物、吸烟和逃学——可以提醒家长和老师，严重的问题正在酝酿之中。\n\n但一项新研究发现，还有另一群青少年几乎面临同样大的危险，可能出现同样的精神症状：大量使用媒体、睡眠不足且生活方式久坐不动的青少年。\n\n当然，这听起来可能像是对地球上每一个青少年的描述。但该研究警告说，真正处于危险中的是那些在这三种行为上都走极端的青少年。由于他们的行为通常不被视为危险信号，这些年轻人被该研究的作者称为\"隐形风险\"群体。\n\n\"在某些方面，他们更有可能被忽略，\"研究员弗拉基米尔·卡利说。\"大多数家长、老师和临床医生看到青少年吸毒或醉酒时都会作出反应，但他们可能很容易忽视那些从事不显眼行为的青少年。\"\n\n该研究的作者调查了12395名学生，分析了九种风险行为，包括过量饮酒、非法药物使用、大量吸烟、高度媒体使用和逃学。他们的目标是确定这些风险行为与青少年心理健康问题之间的关系。\n\n大约58%的学生没有或很少表现出风险行为。约13%的学生在全部九种风险行为上得分都很高。而29%的学生，即\"隐形风险\"群体，在其中三项上得分特别高：他们每天在电子设备上花费五个小时或更多；他们每晚睡眠六小时或更少；他们忽视了\"其他健康活动\"。\n\n在全部九种风险行为上得分都高的群体最有可能表现出抑郁症状；总计近15%的该群体报告了抑郁，而低风险群体仅有4%。但隐形风险群体紧随高风险群体之后，其中超过13%表现出抑郁。\n\n这些发现让卡利措手不及。\"我们非常惊讶，\"他说。\"高风险群体和低风险群体是显而易见的。但这第三个群体不仅出乎意料，而且如此鲜明、如此庞大——几乎占了我们样本的三分之一——以至于它成为了该研究的一个关键发现。\"\n\n卡利说，他的研究最重要的意义之一是，它为家长、教师和心理健康服务提供者提供了新的早期预警信号。他说，对心理健康问题的早期识别、支持和治疗，是防止其发展成全面障碍的最佳途径。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "Teenagers at risk of depression, anxiety and suicide often wear their troubles like a neon sign. Their risky behaviors—drinking too much alcohol, using illegal drugs, smoking cigarettes and skipping school—can alert parents and teachers that serious problems are brewing.",
+    "why": "霓虹灯的核心特征是光亮醒目、极易被人看到。作者用这个比喻是说，有心理问题风险的青少年的问题表现得非常明显，就像霓虹灯一样引人注目。后文紧接着列举了酗酒、吸毒、吸烟、逃学等行为，说明这些行为能\"提醒\"（alert）家长和老师，进一步印证了\"问题过于显眼、不可能不被发现\"之意。C项\"too conspicuous not to be observed\"精准对应此义。",
+    "traps": "A项\"大量青少年存在心理问题\"偷换概念，原句强调的是问题的\"可见度\"而非\"数量\"；B项\"越来越受关注\"属于无中生有，原文没有涉及关注度的变化趋势；D项\"最常见症状\"也是无中生有，原文只是列举了depression和anxiety，并未比较哪种最常见。",
+    "tip": "比喻修辞考查需抓住喻体（neon sign）的核心特征——醒目可见。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "But a new study finds that there's another group of adolescents who are in nearly as much danger of experiencing the same psychiatric symptoms: teens who use tons of media, don't get enough sleep and have a sedentary lifestyle.",
+    "why": "文章从第二段开始介绍新研究的核心发现：除了行为显著的高风险青少年外，还有一群行为不显眼的青少年同样面临心理问题风险，他们被称为\"隐形风险\"群体。\"隐形\"正说明他们此前未被注意到（hitherto unobserved），而他们可能存在心理问题。D项\"许多此前未被观察到的年轻人可能有心理问题\"完整概括了该研究的发现。",
+    "traps": "A项\"生活方式近年发生巨大变化\"文中未提及时间变化维度；B项\"许多青少年借助毒品或酒精缓解心理问题\"张冠李戴，这是对高风险组的描述，不是新发现的核心；C项\"有心理问题的青少年倾向于大量使用媒体\"因果关系颠倒且以偏概全，原文指的是一个特定群体。",
+    "tip": "把握\"新研究发现了什么\"需回到文章主题句和总结句。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Because their behaviors are not usually seen as a red flag, these young people have been dubbed the 'invisible risk' group by the study's authors.",
+    "why": "原文明确指出命名原因：因为他们的行为\"通常不被视为危险信号\"（not usually seen as a red flag）。red flag即warning signal（警告信号），因此B项\"他们的行为不构成警告信号\"直接同义改写了原文定位句，是正确答案。",
+    "traps": "A项\"对社会构成隐形威胁\"属于曲解原文，\"invisible\"修饰的是风险被忽视而非对社会的威胁；C项\"他们的行为不倾向于导致心理问题\"与原文相悖，原文说他们同样面临心理问题风险；D项\"几乎所有青少年都有这些行为\"虽然第三段提及类似说法，但原文紧接着用but否定了这一点，强调是极端程度才构成风险。",
+    "tip": "定位因果关系词because，直接找到命名的原因所在。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "But the invisible group wasn't far behind the high-risk set, with more than 13% of them exhibiting depression.",
+    "why": "原文第七段用数据对比：高风险组近15%报告抑郁，低风险组仅4%，而隐形风险组超过13%。\"wasn't far behind\"意为\"差距不大\"，即隐形风险组的抑郁比例几乎与高风险组一样高。A项\"他们几乎与高风险组一样容易患抑郁\"精确对应了这一数据对比和原文判断。",
+    "traps": "B项\"患抑郁但不表现任何症状\"与原文矛盾，原文说他们\"exhibiting depression\"；C项\"不像同龄人那样常表现出危险行为\"虽有一定道理，但不是该研究关于隐形群体的\"发现\"重点；D项\"不像高风险组那样吸引媒体关注\"属于无中生有，文中未讨论媒体对这些群体的关注。",
+    "tip": "数据对比题需精确匹配数字和比较关系。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Carli says that one of the most significant things about his study is that it provides new early-warning signs for parents, teachers and mental health-care providers.",
+    "why": "文章最后一段，Carli本人直接阐述了研究的意义：\"最重要的事情之一是它为家长、教师和心理健康服务提供者提供了新的早期预警信号。\"B项\"它为识别有问题的青少年提供了新的早期预警信号\"几乎是原文的直接转述，完全吻合。",
+    "traps": "A项\"提供了新的治疗方法\"过度引申，原文仅说early identification和treatment很重要，并未说该研究提供了新疗法；C项\"找到了处理行为问题青少年的理想方式\"属于夸大其词，文中无此表述；D项\"揭示了不健康行为如何引发心理问题\"偏离重点，该研究核心意义在于预警而非机制解释。",
+    "tip": "研究意义题优先定位作者或研究者的总结性评价语句。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "brewing",
+    "cn": "v. 酝酿，逐渐形成"
+   },
+   {
+    "w": "sedentary",
+    "cn": "adj. 久坐不动的，不爱活动的"
+   },
+   {
+    "w": "jeopardy",
+    "cn": "n. 危险，危难"
+   },
+   {
+    "w": "dubbed",
+    "cn": "v. 被称为，被冠以（名称）"
+   },
+   {
+    "w": "conspicuous",
+    "cn": "adj. 显眼的，引人注目的"
+   },
+   {
+    "w": "inconspicuous",
+    "cn": "adj. 不显眼的，不引人注意的"
+   },
+   {
+    "w": "truancy",
+    "cn": "n. 逃学，旷课"
+   },
+   {
+    "w": "falling through the cracks",
+    "cn": "短语 被忽略，从缝隙中漏掉"
+   },
+   {
+    "w": "caught off guard",
+    "cn": "短语 措手不及，出乎意料"
+   },
+   {
+    "w": "full-blown",
+    "cn": "adj. 全面发展的，完全成熟的"
+   },
+   {
+    "w": "psychiatric",
+    "cn": "adj. 精神病学的，精神疾病的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But a new study finds that there's another group of adolescents who are in nearly as much danger of experiencing the same psychiatric symptoms: teens who use tons of media, don't get enough sleep and have a sedentary lifestyle.",
+    "cn": "但一项新研究发现，还有另一群青少年面临着几乎同样大的危险，可能出现同样的精神症状：大量使用媒体、睡眠不足且生活方式久坐不动的青少年。",
+    "note": "主干为a new study finds that...；that引导宾语从句，冒号后的teens...是对another group的同位语补充说明，内含三个并列行为。"
+   },
+   {
+    "en": "While most parents, teachers and clinicians would react to an adolescent using drugs or getting drunk, they may easily overlook teenagers who are engaging in inconspicuous behaviors.",
+    "cn": "大多数家长、老师和临床医生看到青少年吸毒或醉酒时都会作出反应，但他们可能很容易忽视那些从事不显眼行为的青少年。",
+    "note": "While引导让步状语从句，形成对比：对显性行为会反应 vs. 对隐性行为易忽视；who引导定语从句修饰teenagers。"
+   },
+   {
+    "en": "But this third group was not only unexpected, it was so distinct and so large—nearly one third of our sample—that it became a key finding of the study.",
+    "cn": "但这第三个群体不仅出乎意料，而且如此鲜明、如此庞大——几乎占了我们样本的三分之一——以至于它成为了该研究的一个关键发现。",
+    "note": "not only...it was so...that...构成递进+结果结构；破折号内nearly one third of our sample为插入语，补充说明large的程度。"
+   }
+  ]
+ }
+}

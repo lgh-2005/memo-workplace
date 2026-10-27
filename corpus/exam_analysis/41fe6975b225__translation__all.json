@@ -1,0 +1,218 @@
+{
+ "schemaVersion": 1,
+ "id": "41fe6975b225__translation__all",
+ "examId": "41fe6975b225",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2018 年 12 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:18:20.346Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 27403,
+ "usage": {
+  "prompt_tokens": 784,
+  "completion_tokens": 1917,
+  "total_tokens": 2701,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 784,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1917,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 784,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国博物馆免费开放与展览形式多样化",
+  "reference": "In recent years, an increasing number of museums in China have been opened to the public free of charge. The number of exhibitions and museum visitors has grown markedly. It has become common to see long queues forming outside some highly popular museums. These museums have had to take measures to limit the number of visitors. Nowadays, exhibition formats are becoming increasingly diverse. Some large museums make use of advanced technologies such as multimedia and virtual reality to make their exhibitions more appealing. Quite a few museums also hold online exhibitions, where people can appreciate rare exhibits on the Internet. However, the experience of viewing exhibits in person remains more attractive to most visitors.",
+  "sentences": [
+   {
+    "cn": "近年来，中国越来越多的博物馆免费向公众开放。",
+    "en": "In recent years, an increasing number of museums in China have been opened to the public free of charge.",
+    "structure": "主语用 an increasing number of + 名词复数，谓语用现在完成时被动语态，表示持续至今的趋势",
+    "keys": [
+     "免费 free of charge",
+     "向公众开放 be opened to the public",
+     "越来越多的 an increasing number of"
+    ]
+   },
+   {
+    "cn": "博物馆展览次数和参观人数都明显增长。",
+    "en": "The number of exhibitions and museum visitors has grown markedly.",
+    "structure": "并列名词作主语，the number of A and B + has grown，用现在完成时表示结果",
+    "keys": [
+     "展览次数 the number of exhibitions",
+     "参观人数 the number of visitors",
+     "明显增长 grow markedly/significantly"
+    ]
+   },
+   {
+    "cn": "在一些广受欢迎的博物馆门前，排长队已很常见。",
+    "en": "It has become common to see long queues forming outside some highly popular museums.",
+    "structure": "It + has become + adj. + to do 形式主语句型，地点状语后置",
+    "keys": [
+     "排长队 long queues",
+     "广受欢迎的 highly popular",
+     "博物馆门前 outside museums"
+    ]
+   },
+   {
+    "cn": "这些博物馆必须采取措施限制参观人数。",
+    "en": "These museums have had to take measures to limit the number of visitors.",
+    "structure": "主语 + have had to + 动词原形 + 不定式作目的状语，简洁的主谓宾结构",
+    "keys": [
+     "采取措施 take measures",
+     "限制参观人数 limit the number of visitors"
+    ]
+   },
+   {
+    "cn": "如今，展览形式越来越多样。",
+    "en": "Nowadays, exhibition formats are becoming increasingly diverse.",
+    "structure": "时间副词 + 主语 + are becoming + 形容词，用现在进行时表示正在发展的趋势",
+    "keys": [
+     "展览形式 exhibition formats",
+     "越来越多样 increasingly diverse"
+    ]
+   },
+   {
+    "cn": "一些大型博物馆利用多媒体和虚拟现实等先进技术，使展览更具吸引力。",
+    "en": "Some large museums make use of advanced technologies such as multimedia and virtual reality to make their exhibitions more appealing.",
+    "structure": "主句 + such as 列举 + 不定式作目的状语，make use of 搭配 to do 结构",
+    "keys": [
+     "多媒体 multimedia",
+     "虚拟现实 virtual reality",
+     "先进技术 advanced technologies",
+     "更具吸引力 more appealing"
+    ]
+   },
+   {
+    "cn": "不少博物馆还举办在线展览，人们可在网上观赏珍稀展品。",
+    "en": "Quite a few museums also hold online exhibitions, where people can appreciate rare exhibits on the Internet.",
+    "structure": "主句 + where 引导非限制性定语从句，对 online exhibitions 进行补充说明",
+    "keys": [
+     "在线展览 online exhibitions",
+     "珍稀展品 rare exhibits",
+     "不少 quite a few",
+     "观赏 appreciate"
+    ]
+   },
+   {
+    "cn": "然而，现场观看展品的体验对大多数参观者还是更具吸引力。",
+    "en": "However, the experience of viewing exhibits in person remains more attractive to most visitors.",
+    "structure": "However 转折 + 主语（the experience of doing）+ remains + 形容词比较级 + to sb.",
+    "keys": [
+     "现场观看 view in person",
+     "更具吸引力 remains more attractive",
+     "大多数参观者 most visitors"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "免费向公众开放",
+    "en": "be opened to the public free of charge"
+   },
+   {
+    "cn": "参观人数",
+    "en": "the number of visitors"
+   },
+   {
+    "cn": "排长队",
+    "en": "long queues / wait in long lines"
+   },
+   {
+    "cn": "采取措施",
+    "en": "take measures / adopt measures"
+   },
+   {
+    "cn": "虚拟现实",
+    "en": "virtual reality (VR)"
+   },
+   {
+    "cn": "多媒体",
+    "en": "multimedia"
+   },
+   {
+    "cn": "在线展览",
+    "en": "online exhibitions"
+   },
+   {
+    "cn": "珍稀展品",
+    "en": "rare exhibits"
+   },
+   {
+    "cn": "现场观看",
+    "en": "view in person / visit on site"
+   },
+   {
+    "cn": "展览形式",
+    "en": "exhibition formats / forms of exhibition"
+   }
+  ],
+  "pitfalls": [
+   "「免费」误译为 for free（口语化），应使用 free of charge 更正式",
+   "「越来越多的博物馆」误用 more and more museums，建议用 an increasing number of 更书面",
+   "「展览次数和参观人数」并列翻译时遗漏 the number of，导致语义偏差",
+   "「虚拟现实」virtual reality 拼写错误或遗漏，属于专有术语采分点",
+   "「现场观看」误译为 live watching，应为 view in person 或 on-site viewing"
+  ],
+  "upgrades": [
+   {
+    "plain": "more and more museums",
+    "better": "an increasing number of museums",
+    "note": "避免口语化重复结构，书面语更正式地道"
+   },
+   {
+    "plain": "became more and more different",
+    "better": "are becoming increasingly diverse",
+    "note": "increasingly diverse 搭配更精准，体现词汇多样性"
+   },
+   {
+    "plain": "use advanced technologies",
+    "better": "make use of advanced technologies",
+    "note": "make use of 比 use 更正式，体现动宾搭配的丰富性"
+   },
+   {
+    "plain": "people can watch rare things online",
+    "better": "people can appreciate rare exhibits on the Internet",
+    "note": "appreciate 和 exhibits 为高级词汇，准确对应「观赏」与「展品」"
+   },
+   {
+    "plain": "is still more attractive",
+    "better": "remains more attractive",
+    "note": "remains 兼表「仍然」与系动词功能，表达更简洁高级"
+   }
+  ]
+ }
+}

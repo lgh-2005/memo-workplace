@@ -1,0 +1,221 @@
+{
+ "schemaVersion": 1,
+ "id": "10ae747abbd8__writing__all",
+ "examId": "10ae747abbd8",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2009 年考研英语真题（旧）",
+ "year": 2009,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:23:24.052Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 77002,
+ "usage": {
+  "prompt_tokens": 867,
+  "completion_tokens": 4155,
+  "total_tokens": 5022,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 867,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4155,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 867,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：就塑料袋限用令效果不佳、白色污染持续的现象，给当地报社编辑写信，简述观点并提出2-3条建议，约100词。",
+    "outline": [
+     "称呼+写信目的：表明对白色污染问题的关注，简要阐述限塑令执行不力的现状与个人看法。",
+     "提出2-3条具体建议：如加大执法处罚力度、推广环保替代品、开展公众教育等。",
+     "表达期望与礼貌收尾：希望建议对解决问题有所帮助，署名Li Ming。"
+    ],
+    "sample": "Dear Editor,\n\nI am writing to express my concern over the issue of \"White Pollution.\" Despite the restrictions on the use of plastic bags, the problem persists in many regions, which I find deeply troubling. The ineffectiveness is largely attributable to lax enforcement and insufficient public awareness.\n\nTo address this problem, I would like to offer three suggestions. First, the government should impose stricter penalties on businesses that violate plastic bag regulations. Second, affordable and eco-friendly alternatives, such as cloth bags, should be made widely available to consumers. Third, educational campaigns ought to be launched to raise public awareness of the environmental damage caused by plastic waste.\n\nI sincerely hope these suggestions will prove helpful in combating this pressing issue.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "express my concern over",
+      "cn": "表达对……的关切；书信开头常用，体现正式语气"
+     },
+     {
+      "en": "be largely attributable to",
+      "cn": "在很大程度上归因于；比 because of 更高级的因果表达"
+     },
+     {
+      "en": "lax enforcement",
+      "cn": "执法松懈；形容监管不力的地道搭配"
+     },
+     {
+      "en": "impose stricter penalties on",
+      "cn": "对……施加更严厉的处罚；政策建议常用句式"
+     },
+     {
+      "en": "eco-friendly alternatives",
+      "cn": "环保替代品；环境类话题高频词组"
+     },
+     {
+      "en": "raise public awareness of",
+      "cn": "提高公众对……的认识；建议类段落万能搭配"
+     },
+     {
+      "en": "prove helpful in combating",
+      "cn": "有助于对抗……；结尾表达期望的正式用法"
+     },
+     {
+      "en": "a pressing issue",
+      "cn": "一个紧迫的问题；比 serious problem 更具学术色彩"
+     }
+    ],
+    "pitfalls": [
+     "忘写称呼 Dear Editor 或落款 Li Ming，格式扣分严重",
+     "建议太笼统（如 we should protect the environment），缺乏具体可操作性",
+     "语域不当：书信应正式礼貌，避免口语化表达如 you know、gonna",
+     "超过或远低于100词要求，偏差超过20%可能被扣分",
+     "将 White Pollution 误解为空气污染或其他类型污染，审题偏差"
+    ],
+    "upgrades": [
+     {
+      "plain": "Because the rules are not strict, the problem is still serious.",
+      "better": "The ineffectiveness is largely attributable to lax enforcement and insufficient public awareness.",
+      "note": "用 attributable to 替代 because，名词短语替代简单句，更学术正式"
+     },
+     {
+      "plain": "I think we should use less plastic bags.",
+      "better": "Affordable and eco-friendly alternatives should be made widely available to consumers.",
+      "note": "被动语态更客观，给出具体替代方案而非笼统号召"
+     },
+     {
+      "plain": "I hope you can think about my ideas.",
+      "better": "I sincerely hope these suggestions will prove helpful in combating this pressing issue.",
+      "note": "prove helpful 比 be useful 更正式，pressing issue 提升词汇档次"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "大作文看图写作：根据图画描述网络连接众人的场景，阐释其寓意（互联网对人际关系的影响），并发表评论，160-200词。",
+    "outline": [
+     "描述图画内容：众多人坐在电脑前，通过一张巨大的网（互联网）彼此相连，画面生动展现了网络时代人们的生活状态。",
+     "阐释寓意：互联网拉近了人与人之间的距离、提供了前所未有的便利，但同时也可能导致现实中人际交往的疏远。",
+     "个人评论与建议：应理性看待互联网，在享受科技便利的同时，不忘维系真实的人际关系，倡导线上线下平衡。"
+    ],
+    "sample": "As is vividly depicted in the drawing, a great number of people are sitting in front of their respective computers, interconnected by an enormous web that closely resembles a spider's net. Despite the physical distance between them, they appear to be intimately linked through this virtual network, each absorbed in the digital world.\n\nThe drawing is intended to reveal the profound impact that the internet has exerted on modern interpersonal communication. On the one hand, the internet has brought about unprecedented convenience, enabling individuals to communicate, collaborate, and access information regardless of geographical barriers. People can maintain friendships, conduct business, and even receive education through this powerful medium. On the other hand, excessive dependence on virtual interaction may come at the cost of genuine face-to-face relationships, gradually eroding the warmth of real human connection.\n\nIn my view, we should adopt a balanced and rational approach toward internet usage. While fully embracing the remarkable benefits of digital technology, we must not allow screens to become substitutes for heartfelt conversations and meaningful offline interactions. Only by striking a proper balance between the virtual and the real can we truly harness the power of the internet without sacrificing the depth of human bonds.",
+    "phrases": [
+     {
+      "en": "as is vividly depicted in the drawing",
+      "cn": "正如图画中生动描绘的；图画作文开头经典句式"
+     },
+     {
+      "en": "closely resemble",
+      "cn": "酷似、非常像；描述图画内容的精准动词"
+     },
+     {
+      "en": "exert a profound impact on",
+      "cn": "对……产生深远影响；比 have influence on 更高级"
+     },
+     {
+      "en": "bring about unprecedented convenience",
+      "cn": "带来前所未有的便利；正面论述科技影响常用"
+     },
+     {
+      "en": "regardless of geographical barriers",
+      "cn": "不受地理障碍限制；强调互联网跨越空间的特征"
+     },
+     {
+      "en": "come at the cost of",
+      "cn": "以……为代价；表转折与利弊权衡的高分表达"
+     },
+     {
+      "en": "erode the warmth of",
+      "cn": "侵蚀……的温情；拟人化用法，增加文采"
+     },
+     {
+      "en": "adopt a balanced and rational approach",
+      "cn": "采取均衡理性的态度；评论段提出观点的通用搭配"
+     },
+     {
+      "en": "strike a proper balance between",
+      "cn": "在……之间取得恰当平衡；辩证论述的经典句式"
+     },
+     {
+      "en": "harness the power of",
+      "cn": "驾驭/利用……的力量；比 use 更生动有力"
+     }
+    ],
+    "pitfalls": [
+     "第一段只写一句话就结束，图画描述过于单薄，缺乏细节",
+     "寓意分析停留在表面（网络很好/很坏），缺乏辩证思维和深度",
+     "三段之间缺乏逻辑连接词，显得松散，如缺少 on the one hand / in my view 等",
+     "词汇重复严重，多次使用 internet is good、internet is bad 等低级表达",
+     "字数不足160或超过200，审题不严谨导致扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Many people use the internet to talk to each other.",
+      "better": "A great number of people are interconnected by an enormous web, each absorbed in the digital world.",
+      "note": "独立主格结构 each absorbed 增加句式多样性，表达更生动"
+     },
+     {
+      "plain": "The internet has good and bad effects on people.",
+      "better": "The internet has brought about unprecedented convenience, yet excessive dependence on virtual interaction may come at the cost of genuine relationships.",
+      "note": "用 yet 转折、cost of 搭配取代简单 good/bad，体现辩证与深度"
+     },
+     {
+      "plain": "We should use the internet in a good way.",
+      "better": "Only by striking a proper balance between the virtual and the real can we truly harness the power of the internet.",
+      "note": "Only by... can we 倒装句式为高分亮点，harness 替代 use 提升词汇档次"
+     },
+     {
+      "plain": "The picture shows people on the internet.",
+      "better": "As is vividly depicted in the drawing, people are sitting in front of their respective computers, linked through a virtual network.",
+      "note": "被动句式开头+形容词修饰，比简单主谓宾更符合学术写作规范"
+     },
+     {
+      "plain": "I think we should not use the internet too much.",
+      "better": "We must not allow screens to become substitutes for heartfelt conversations and meaningful offline interactions.",
+      "note": "拟人手法+具体名词 heartfelt conversations 替代笼统表述，更有感染力"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The ineffectiveness is largely attributable to lax enforcement and insufficient public awareness. — 效果不佳在很大程度上归因于执法松懈与公众意识不足。attributable to 是书面归因高级表达。",
+   "Excessive dependence on virtual interaction may come at the cost of genuine face-to-face relationships. — 对虚拟交往的过度依赖可能以牺牲真实的面对面关系为代价。come at the cost of 是利弊分析万能句型。",
+   "Only by striking a proper balance between the virtual and the real can we truly harness the power of the internet without sacrificing the depth of human bonds. — 只有在虚拟与现实之间取得恰当平衡，我们才能真正驾驭互联网的力量而不牺牲人际纽带的深度。Only by 倒装+harness 为高分亮点。",
+   "As is vividly depicted in the drawing, a great number of people are interconnected by an enormous web that closely resembles a spider's net. — 正如图中生动描绘的，大量的人通过一张酷似蛛网的巨网彼此相连。图画描述段经典开头，resemble 比 look like 更正式。",
+   "We must not allow screens to become substitutes for heartfelt conversations and meaningful offline interactions. — 我们不能让屏幕成为真诚对话和有意义的线下互动的替代品。substitute for 搭配具体名词，避免空泛说教。"
+  ]
+ }
+}

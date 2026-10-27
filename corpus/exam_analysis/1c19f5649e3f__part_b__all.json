@@ -1,0 +1,161 @@
+{
+ "schemaVersion": 1,
+ "id": "1c19f5649e3f__part_b__all",
+ "examId": "1c19f5649e3f",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2021 年考研英语真题",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:46:02.696Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 39047,
+ "usage": {
+  "prompt_tokens": 1401,
+  "completion_tokens": 1862,
+  "total_tokens": 3263,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1401,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1862,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1401,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "AI如何在不取代员工的前提下帮助企业",
+  "type": "七选五",
+  "strategy": [
+   "先通读文章，把握各小标题下的核心论点",
+   "分析空格前后句的逻辑关系、指代词和重复关键词",
+   "将选项按话题分类，与各段主题逐一匹配",
+   "代入后检查上下文衔接是否通顺，排除干扰项"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "G",
+    "why": "空格前Domingos指出面试结果的偏见比AI更严重，空格后提到Blendoor利用数据分析识别招聘中的偏见。G选项说'AI能比人类审阅更多简历并筛选出更有潜力的候选人'，既承接前文AI减少偏见的论点，又与后文具体公司案例形成'总—分'衔接，关键词resumes、candidates与hiring主题高度吻合。",
+    "traps": "A项讲AI替代工作中无聊部分和做研究，与招聘偏见无关；F项讲客户渠道，话题不符。",
+    "tip": "抓住段落小标题Better hiring practices及前句bias关键词定位。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "why": "空格前讨论AI优化邮件营销主题行以提高打开率，并以Phrasee公司为例。C选项引入Acquisio公司，分析跨多渠道（Adwords、Bing、社交媒体）的广告表现，属于营销话题的自然延伸。空格后Winston评价这些是'帮助人们利用数据的工具'，C中analyzes advertising performance正是此类工具的具体实例。",
+    "traps": "A项谈研究中AI查找资料，与营销无关；B项谈审计合同，属于准确性话题。",
+    "tip": "关键词advertising、marketing及多渠道优化与本段营销主题对应。"
+   },
+   {
+    "number": 43,
+    "answer": "E",
+    "why": "空格前指出保险公司可以利用AI模型更准确地评估风险来制定保费。E选项用Before引出过去的对比：以前保险公司可能拒保高风险客户、收费过高或过低。这形成'过去（无AI）vs 现在（有AI）'的鲜明对照，them指代前文的insurance companies及其客户，逻辑连贯。",
+    "traps": "F项讲客户渠道，与保险定价无关；D项讲预测维护，属于基础设施话题。",
+    "tip": "抓住前句insurance companies和premiums，与E中insure、charge形成语义呼应。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "why": "本段小标题为Improved accuracy，前文Winston说机器学习提供更可靠的统计方法，帮助人们做出更明智的决策。B选项给出具体例证：会计事务所BY使用AI系统辅助审计中的合同审查，该流程结合员工审查，更快且更准确（faster and more accurate），直接印证小标题'提高准确性'。",
+    "traps": "A项谈替代无聊工作和查资料，未涉及准确性；C项关于广告分析，属营销话题。",
+    "tip": "B中more accurate与小标题Improved accuracy直接对应。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "why": "空格前Domingos说设备先坏再修代价极高。D选项紧接其语气（仍是Domingos的话）：'你应该预测哪些设备现在需要关注，并指出员工应去哪里处理。'predict与前文prevent equipment failure形成逻辑呼应，强调预防性维护优于事后修复。",
+    "traps": "A项讲AI替代枯燥工作，与基础设施维护无关；E项讲保险定价，话题不符。",
+    "tip": "关键词predict与段中prevent failure before they happen构成同义替换。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sinister",
+    "cn": "adj. 邪恶的，不祥的"
+   },
+   {
+    "w": "upend",
+    "cn": "v. 颠覆，彻底改变"
+   },
+   {
+    "w": "doom-and-gloom",
+    "cn": "adj. 悲观的，末日论调的"
+   },
+   {
+    "w": "impending",
+    "cn": "adj. 即将发生的，迫在眉睫的"
+   },
+   {
+    "w": "unconscious bias",
+    "cn": "n. 无意识偏见"
+   },
+   {
+    "w": "analytics",
+    "cn": "n. 数据分析（技术）"
+   },
+   {
+    "w": "optimize",
+    "cn": "v. 优化"
+   },
+   {
+    "w": "open rates",
+    "cn": "n. 邮件打开率"
+   },
+   {
+    "w": "premiums",
+    "cn": "n. 保险费，保费（premium复数）"
+   },
+   {
+    "w": "yield",
+    "cn": "v. 产生，带来（收益）"
+   },
+   {
+    "w": "audit",
+    "cn": "n. 审计，审查"
+   },
+   {
+    "w": "infrastructure",
+    "cn": "n. 基础设施"
+   },
+   {
+    "w": "leaks",
+    "cn": "n. 泄漏（leak复数）"
+   }
+  ]
+ }
+}

@@ -1,0 +1,246 @@
+{
+ "schemaVersion": 1,
+ "id": "9b97c3d4a4b6__long_match__all",
+ "examId": "9b97c3d4a4b6",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2025 年 12 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:05:14.295Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32977,
+ "usage": {
+  "prompt_tokens": 958,
+  "completion_tokens": 1933,
+  "total_tokens": 2891,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 958,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1933,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 958,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "交通信号灯的历史演变与规则",
+  "strategy": [
+   "先通读10条陈述句，归纳主题关键词（如traffic light、pedestrian、signal等），再带着关键词扫读各段",
+   "优先定位专有名词、数字、时间等具体信息词，这些词在原文中不易被同义替换",
+   "注意陈述句与原文之间的同义转述关系，如'originated in'可能对应'was first introduced in'",
+   "对含有观点或态度的陈述句，重点关注段落中表达居民看法、因果关系的语句",
+   "遇到多个段落涉及相似话题时，需细读句意，区分历史事件发生的先后顺序"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "Q",
+    "cn": "看到闪烁的黄色箭头灯时，驾驶员应先让行人和其他车辆通过，然后再转弯。",
+    "keywords": [
+     "flashing yellow arrow",
+     "pedestrians",
+     "turn"
+    ],
+    "paraphrase": "陈述句中'let pedestrians and traffic pass first'可能对应原文中'yield to oncoming traffic and pedestrians'等表述，'taking the turn'对应'make the turn'或'proceed to turn'。",
+    "tip": "定位'flashing yellow arrow'这一具体交通信号，该词组高度专有，不易混淆。"
+   },
+   {
+    "number": 37,
+    "answer": "I",
+    "cn": "红绿自动交通信号灯系统起源于一座美国城市。",
+    "keywords": [
+     "red and green",
+     "automatic",
+     "originated",
+     "American city"
+    ],
+    "paraphrase": "陈述句中'originated in'可能对应原文中'was first installed/introduced in'；'American city'可能对应具体城市名如Cleveland、Detroit等。",
+    "tip": "定位'automatic'和'red and green'组合，结合'originated/first'等表示起源的词汇。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "cn": "一座美国城市的居民倾向于认为，在道路上节省的时间足以证明升级交通信号灯系统的费用是值得的。",
+    "keywords": [
+     "residents",
+     "time saved",
+     "justifies",
+     "cost",
+     "upgrading"
+    ],
+    "paraphrase": "陈述句中'time saved on the road justifies the cost'可能对应原文中'the time they save makes the expense worthwhile'等类似因果表达，'share the opinion'对应'tend to agree/believe'。",
+    "tip": "定位'cost'和'upgrading traffic light system'，寻找含有居民态度或观点的段落。"
+   },
+   {
+    "number": 39,
+    "answer": "J",
+    "cn": "汽车的大规模生产使普通人买得起汽车成为可能。",
+    "keywords": [
+     "mass production",
+     "cars",
+     "ordinary people"
+    ],
+    "paraphrase": "陈述句中'mass production'可能对应原文中'assembly line production'或'manufacturing on a large scale'；'ordinary people'可能对应'average citizens/common people/the general public'。",
+    "tip": "定位'mass production'与'ordinary people/affordable'等关键概念。"
+   },
+   {
+    "number": 40,
+    "answer": "R",
+    "cn": "尽管存在一些差异，交通信号灯的含义在世界各地几乎相同。",
+    "keywords": [
+     "almost the same",
+     "everywhere",
+     "variations"
+    ],
+    "paraphrase": "陈述句中'almost the same everywhere despite some variations'可能对应原文中'largely universal/standardized across the world with minor differences'等表述。",
+    "tip": "定位'everywhere'或'universal/worldwide'以及'variations/differences'等词。"
+   },
+   {
+    "number": 41,
+    "answer": "L",
+    "cn": "人行横道直到二十世纪中期才出现。",
+    "keywords": [
+     "pedestrian crossings",
+     "mid-twentieth century",
+     "came into being"
+    ],
+    "paraphrase": "陈述句中'came into being'可能对应原文中'were introduced/first appeared/were established'；'mid-twentieth century'对应'the 1950s'或'around 1950'等具体时间。",
+    "tip": "定位'pedestrian crossings'与'mid-twentieth century'这一时间节点。"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "cn": "随着城市和交通的扩张，人们争先恐后地解决日益严重的交通问题。",
+    "keywords": [
+     "raced to address",
+     "traffic problems",
+     "expansion"
+    ],
+    "paraphrase": "陈述句中'raced to address'可能对应原文中'rushed to solve/hurried to find solutions'；'expansion of cities and traffic'对应'urban growth/growing traffic volume'。",
+    "tip": "定位'expansion of cities'与'increasing traffic problems'，注意段落中的急迫语气。"
+   },
+   {
+    "number": 43,
+    "answer": "K",
+    "cn": "当警示黄灯被引入后，驾驶变得更安全，交通事故也减少了。",
+    "keywords": [
+     "warning yellow light",
+     "introduced",
+     "safer",
+     "accidents reduced"
+    ],
+    "paraphrase": "陈述句中'driving became safer and traffic accidents reduced'可能对应原文中'improved road safety and led to fewer collisions/crashes'等表述。",
+    "tip": "定位'yellow light'与'introduced'的组合，并寻找安全改善和事故减少的描述。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "cn": "铁路上的信号系统为第一个交通信号灯提供了基础。",
+    "keywords": [
+     "signal system",
+     "railroad",
+     "basis",
+     "first traffic light"
+    ],
+    "paraphrase": "陈述句中'served as the basis for'可能对应原文中'inspired/was the model for/was adapted to create'；'railroad'可能对应'railway'。",
+    "tip": "定位'railroad/railway'与'first traffic light'，寻找描述技术来源或借鉴关系的段落。"
+   },
+   {
+    "number": 45,
+    "answer": "N",
+    "cn": "即使绿灯亮起表示可以通行，也应注意两侧的交通，以防有驾驶员粗心大意或闯红灯。",
+    "keywords": [
+     "green light",
+     "go",
+     "attention",
+     "either side",
+     "ignoring a red light"
+    ],
+    "paraphrase": "陈述句中'attention should be paid to traffic on either side'可能对应原文中'look both ways/check cross traffic'；'ignoring a red light'对应'running a red light'。",
+    "tip": "定位'green light'与'in case'引导的警示语境，寻找强调安全驾驶注意事项的段落。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "flashing",
+    "cn": "adj. 闪烁的，闪光的"
+   },
+   {
+    "w": "pedestrian",
+    "cn": "n. 行人"
+   },
+   {
+    "w": "originated",
+    "cn": "v. 起源于，发源（originate的过去式）"
+   },
+   {
+    "w": "justifies",
+    "cn": "v. 证明……是正当的/合理的（justify的第三人称单数）"
+   },
+   {
+    "w": "mass production",
+    "cn": "n. 大规模生产，批量生产"
+   },
+   {
+    "w": "variations",
+    "cn": "n. 变化，差异（variation的复数）"
+   },
+   {
+    "w": "came into being",
+    "cn": "v. 短语，产生，形成，出现"
+   },
+   {
+    "w": "raced to",
+    "cn": "v. 短语，争先恐后地去做……"
+   },
+   {
+    "w": "yield",
+    "cn": "v. 让行，让路（交通用语）"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 同义转述，改述"
+   }
+  ]
+ }
+}

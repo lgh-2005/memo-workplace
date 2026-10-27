@@ -1,0 +1,311 @@
+{
+ "schemaVersion": 1,
+ "id": "863aebd8c6d3__use_of_english__all",
+ "examId": "863aebd8c6d3",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2004 年考研英语真题（旧）",
+ "year": 2004,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:14:34.260Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66968,
+ "usage": {
+  "prompt_tokens": 1739,
+  "completion_tokens": 4277,
+  "total_tokens": 6016,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1739,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4277,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1739,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "青少年犯罪的成因分析",
+  "gist": "文章从个人与社会两个层面探讨青少年犯罪的成因，指出社会结构变化、家庭监管缺失、经济低迷、药物泛滥及虐待儿童等因素均可能间接增加青少年犯罪率，但所有理论尚属推测，因果关系尚未被确证。",
+  "difficulty": "中等",
+  "translation": "许多关于青少年犯罪（年轻人所犯罪行）成因的理论，要么聚焦于个人，要么聚焦于社会，将其视为主要的促成因素。以个人为中心的理论认为，儿童之所以从事犯罪行为，是因为他们先前的不当行为未受到充分惩罚，或者是通过与他人的互动习得了犯罪行为。聚焦于社会角色的理论则认为，儿童犯罪是对自身无法超越其社会经济地位的一种回应，或是对中产阶级价值观的一种拒绝。\n\n大多数青少年犯罪理论关注的是来自弱势家庭的儿童，而忽视了来自富裕家庭的儿童同样会犯罪这一事实。后者可能因为缺乏足够的父母管教而犯罪。然而，所有理论都是试探性的，都容易受到批评。\n\n社会结构的变化可能间接影响青少年犯罪率。例如，经济变化导致年轻人就业机会减少，失业率上升，总体上使有收入的工作越来越难以获得。由此产生的不满情绪可能反过来促使更多年轻人走上犯罪道路。\n\n近年来家庭也经历了变化。越来越多的家庭是单亲家庭或父母双方都工作的家庭；因此，与传统家庭结构中常见的情况相比，孩子们在家里可能受到更少的监管。这种父母监管的缺乏被认为是影响青少年犯罪率的一个因素。其他可识别的犯罪行为成因包括在学校中的挫败或失败、毒品和酒精供应的增加，以及虐待和忽视儿童事件发生率的上升。所有这些情况都倾向于增加儿童实施犯罪行为的可能性，尽管直接的因果关系尚未被确立。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "C",
+    "correct": "centering",
+    "why": "固定搭配 center on 意为\"以……为中心\"，此处描述理论聚焦于个人，与下文 focusing on the role of society 形成对应，语义和搭配均吻合。",
+    "traps": "A) acting on 意为\"按照……行事\"，语义不符；B) relying on 意为\"依赖\"，与理论聚焦含义不同；D) commenting on 意为\"评论\"，理论本身不会评论个人。",
+    "tip": "考查 center on（以……为中心）的固定搭配。"
+   },
+   {
+    "number": 2,
+    "answer": "D",
+    "correct": "because",
+    "why": "空格后是解释儿童从事犯罪行为的原因（未受充分惩罚或习得犯罪行为），属于因果逻辑，只有 because 引导原因状语从句合适。",
+    "traps": "A) before 表时间先后，逻辑不通；B) unless 表条件\"除非\"，与因果逻辑不符；C) until 表时间\"直到\"，语义不合。",
+    "tip": "考查表因果关系的从属连词辨析。"
+   },
+   {
+    "number": 3,
+    "answer": "A",
+    "correct": "interaction",
+    "why": "上下文说儿童通过与他人的某种接触习得犯罪行为，interaction with others（与他人互动）最准确，强调双向的接触与影响。",
+    "traps": "B) assimilation 意为\"同化\"，过于学术且语义偏；C) cooperation 意为\"合作\"，语义不当；D) consultation 意为\"咨询\"，与犯罪习得无关。",
+    "tip": "考查 interaction with 表示\"与……互动\"的搭配。"
+   },
+   {
+    "number": 4,
+    "answer": "D",
+    "correct": "response",
+    "why": "固定搭配 in response to 意为\"作为对……的回应\"，语义上表示儿童犯罪是对无法提升社会经济地位的回应，逻辑通顺。",
+    "traps": "A) in return 意为\"作为回报\"，语义不符；B) in reply to 意为\"答复\"，用于回应言语；C) in reference to 意为\"关于\"，不表因果回应。",
+    "tip": "考查 in response to（作为对……的回应）固定搭配。"
+   },
+   {
+    "number": 5,
+    "answer": "A",
+    "correct": "or",
+    "why": "此处 or 连接两个并列的解释——\"对无法提升地位的回应\"和\"对中产阶级价值观的拒绝\"，表示两种可能的理论解读，属于选择关系。",
+    "traps": "B) but rather 表转折纠正，语义过强；C) but 表转折，与并列列举的语境不符；D) or else 意为\"否则\"，表威胁或警告，语义不当。",
+    "tip": "考查 or 表示并列选择关系的用法。"
+   },
+   {
+    "number": 6,
+    "answer": "B",
+    "correct": "ignoring",
+    "why": "上文说大多数理论关注弱势家庭儿童，空格后说富裕家庭儿童也犯罪，逻辑上这些理论\"忽视\"了后者，ignoring 表达这一缺陷。",
+    "traps": "A) considering 意为\"考虑到\"，与主句\"聚焦弱势家庭\"矛盾；C) highlighting 意为\"强调\"，方向相反；D) discarding 意为\"丢弃\"，程度过重且搭配不当。",
+    "tip": "考查现在分词作状语表伴随/附带结果。"
+   },
+   {
+    "number": 7,
+    "answer": "C",
+    "correct": "for",
+    "why": "for 在此表示原因，for lack of 意为\"由于缺乏\"，说明富裕家庭儿童犯罪是因为缺乏足够的父母管教。",
+    "traps": "A) on lack of 无此固定搭配；B) in lack of 非标准搭配；D) with lack of 虽偶见但不如 for 地道。",
+    "tip": "考查 for lack of（由于缺乏）的固定介词搭配。"
+   },
+   {
+    "number": 8,
+    "answer": "D",
+    "correct": "subject",
+    "why": "be subject to 意为\"受制于、易受……的影响\"，表示所有理论都容易遭受批评，与 tentative（试探性的）语义衔接。",
+    "traps": "A) immune to 意为\"免受……的影响\"，语义相反；B) resistant to 意为\"抵抗\"，也与受到批评相反；C) sensitive to 意为\"对……敏感\"，程度不当。",
+    "tip": "考查 be subject to（易受……影响）的形容词搭配。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "affect",
+    "why": "本段论述社会结构变化对青少年犯罪率的间接作用，affect（影响）为中性动词，表达\"影响\"之意，最为恰当。",
+    "traps": "B) reduce 意为\"减少\"，方向过于具体；C) chock 意为\"阻塞\"，语义不当；D) reflect 意为\"反映\"，因果方向反了。",
+    "tip": "考查 affect 表示\"影响\"的基本词义辨析。"
+   },
+   {
+    "number": 10,
+    "answer": "B",
+    "correct": "lead",
+    "why": "lead to 是固定搭配，意为\"导致\"，说明经济变化导致就业机会减少和失业率上升。",
+    "traps": "A) point to 意为\"指向/表明\"，非因果义；C) come to 意为\"达到/涉及\"，搭配不当；D) amount to 意为\"总计/等于\"，语义不符。",
+    "tip": "考查 lead to（导致）的固定搭配。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "in general",
+    "why": "in general 意为\"总体上、一般来说\"，用于概括前文提到的就业机会减少和失业上升的总体效果。",
+    "traps": "B) on average 意为\"平均而言\"，强调数据平均值；C) by contrast 意为\"相比之下\"，表对比不当；D) at length 意为\"详尽地\"，语义不符。",
+    "tip": "考查副词短语 in general 表总体概括的用法。"
+   },
+   {
+    "number": 12,
+    "answer": "C",
+    "correct": "turn",
+    "why": "in turn 是固定搭配，意为\"反过来、进而\"，表示前因后果的递进——不满情绪进而导致更多犯罪，逻辑链条通顺。",
+    "traps": "A) in case 意为\"以防万一\"，表条件不当；B) in short 意为\"简言之\"，表总结不当；D) in essence 意为\"本质上\"，语义不符。",
+    "tip": "考查 in turn（反过来/进而）的固定搭配。"
+   },
+   {
+    "number": 13,
+    "answer": "D",
+    "correct": "experienced",
+    "why": "experience changes 意为\"经历变化\"，表示家庭在这些年里经历了结构上的变化，搭配自然。",
+    "traps": "A) survived 意为\"幸存\"，语义过重；B) noticed 意为\"注意到\"，主语为家庭不合适；C) undertaken 意为\"承担/着手进行\"，搭配 changes 不当。",
+    "tip": "考查 experience 作动词表\"经历\"的搭配用法。"
+   },
+   {
+    "number": 14,
+    "answer": "B",
+    "correct": "consequently",
+    "why": "前句说家庭结构变化（单亲或双职工），后句说孩子监管减少，是因果逻辑，consequently（因此）承接最恰当。",
+    "traps": "A) contrarily 意为\"相反地\"，表转折不当；C) similarly 意为\"类似地\"，表类比不当；D) simultaneously 意为\"同时\"，表时间并发不当。",
+    "tip": "考查表因果逻辑的副词 consequently 的用法。"
+   },
+   {
+    "number": 15,
+    "answer": "A",
+    "correct": "than",
+    "why": "句中有 less supervision，构成 less…than 比较结构，将当前家庭监管与传统家庭相比，than 引导比较从句。",
+    "traps": "B) that 无法引导比较从句；C) which 引导定语从句，但此处需要比较连接词；D) as 用于 as…as 结构，与 less 不搭。",
+    "tip": "考查 less…than 比较结构中 than 的用法。"
+   },
+   {
+    "number": 16,
+    "answer": "B",
+    "correct": "structure",
+    "why": "family structure 意为\"家庭结构\"，与前文 social structure 呼应，指传统的家庭组织模式。",
+    "traps": "A) family system 偏重制度层面，与语境不太吻合；C) family concept 意为\"家庭概念\"，过于抽象；D) family heritage 意为\"家族遗产\"，语义偏离。",
+    "tip": "考查 family structure（家庭结构）的语境复现。"
+   },
+   {
+    "number": 17,
+    "answer": "B",
+    "correct": "identifiable",
+    "why": "identifiable 意为\"可识别的\"，修饰 causes 表示可被辨认出来的犯罪成因，与后文具体列举内容一致。",
+    "traps": "A) assessable 意为\"可评估的\"，侧重价值评估不当；C) negligible 意为\"可忽略的\"，语义相反；D) incredible 意为\"难以置信的\"，感情色彩过强。",
+    "tip": "考查 identifiable 表\"可识别的\"形容词辨析。"
+   },
+   {
+    "number": 18,
+    "answer": "D",
+    "correct": "availability",
+    "why": "availability 意为\"可获得性\"，the increased availability of drugs and alcohol 表示毒品和酒精更容易获得，是犯罪诱因。",
+    "traps": "A) expense 意为\"花费\"，increased expense 意为费用增加，反而不易获得；B) restriction 意为\"限制\"，增加限制则犯罪应减少；C) allocation 意为\"分配\"，语义不当。",
+    "tip": "考查 availability 表\"可获得性\"的词义辨析。"
+   },
+   {
+    "number": 19,
+    "answer": "A",
+    "correct": "incidence",
+    "why": "incidence 意为\"发生率\"，the growing incidence of child abuse 表示虐待儿童事件发生率上升，与犯罪率讨论语域一致。",
+    "traps": "B) awareness 意为\"意识\"，指认知增强而非事件增多；C) exposure 意为\"曝光/暴露\"，搭配不当；D) popularity 意为\"流行/受欢迎\"，用于虐待儿童不当。",
+    "tip": "考查 incidence 表\"发生率\"的核心词义。"
+   },
+   {
+    "number": 20,
+    "answer": "C",
+    "correct": "although",
+    "why": "前句说这些条件增加犯罪可能性，后句说直接因果关系尚未确立，构成让步转折关系，although 最合适。",
+    "traps": "A) provided 意为\"假如\"，表条件不当；B) since 意为\"既然/因为\"，表因果方向相反；D) supposing 意为\"假设\"，表假设不当。",
+    "tip": "考查 although 引导让步状语从句的用法。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "juvenile delinquency",
+    "cn": "青少年犯罪（n.）"
+   },
+   {
+    "w": "penalize",
+    "cn": "处罚，惩罚（v.）"
+   },
+   {
+    "w": "misdeed",
+    "cn": "不端行为，恶行（n.）"
+   },
+   {
+    "w": "socioeconomic",
+    "cn": "社会经济的（adj.）"
+   },
+   {
+    "w": "tentative",
+    "cn": "试探性的，暂定的（adj.）"
+   },
+   {
+    "w": "gainful",
+    "cn": "有报酬的，有收益的（adj.）"
+   },
+   {
+    "w": "discontent",
+    "cn": "不满，不满足（n.）"
+   },
+   {
+    "w": "supervision",
+    "cn": "监管，监督（n.）"
+   },
+   {
+    "w": "frustration",
+    "cn": "挫败感，沮丧（n.）"
+   },
+   {
+    "w": "neglect",
+    "cn": "忽视，疏忽（n./v.）"
+   },
+   {
+    "w": "causal",
+    "cn": "因果的，因果关系的（adj.）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "because",
+    "role": "引导原因状语从句，解释犯罪行为的成因"
+   },
+   {
+    "w": "however",
+    "role": "句间转折，指出所有理论仍属推测、易受批评"
+   },
+   {
+    "w": "for example",
+    "role": "举例说明社会结构变化如何间接影响犯罪率"
+   },
+   {
+    "w": "consequently",
+    "role": "承接因果关系，表明家庭变化导致监管减少"
+   },
+   {
+    "w": "although",
+    "role": "引导让步从句，指出因果关系尚未确证，形成全文收束"
+   }
+  ]
+ }
+}

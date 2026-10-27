@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "a0fd8546a451__writing__all",
+ "examId": "a0fd8546a451",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2016 年 12 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:08:15.066Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35846,
+ "usage": {
+  "prompt_tokens": 704,
+  "completion_tokens": 1974,
+  "total_tokens": 2678,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 704,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1974,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 704,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "短文写作，围绕\"创新/创造\"展开，需包含创新的重要性以及鼓励创新的措施，字数150-200词。",
+    "outline": [
+     "第一段：引出话题，点明创新在当今时代的核心地位，总领全文。",
+     "第二段：分层阐述创新的重要性（科技进步、经济发展、个人成长），并过渡到鼓励创新的具体措施（政府政策、教育改革、社会氛围）。",
+     "第三段：总结全文，重申创新是社会繁荣的命脉，呼吁各方协同努力。"
+    ],
+    "sample": "In an era characterized by rapid technological advancement and fierce global competition, creation stands as the cornerstone of social progress and economic prosperity.\n\nThe importance of creation can hardly be overstated. To begin with, creation drives technological breakthroughs that fundamentally transform our daily lives, as exemplified by innovations such as artificial intelligence and renewable energy. Furthermore, it fuels economic growth by spawning new industries and generating abundant employment opportunities. On an individual level, the creative spirit empowers people to solve problems in novel ways and realize their full potential. To foster a culture of creation, concerted efforts should be made from multiple dimensions. First, the government ought to increase funding for scientific research and offer tax incentives to innovative enterprises. Second, educational institutions should reform their curricula to cultivate students' critical thinking and imagination rather than merely emphasizing rote memorization. Third, society as a whole should establish a tolerant atmosphere where trial and error is encouraged and failure is viewed as a stepping stone to success.\n\nIn conclusion, creation is the lifeblood of a thriving society. Only through collaborative endeavors can we build an environment where innovation truly flourishes.",
+    "phrases": [
+     {
+      "en": "stand as the cornerstone of",
+      "cn": "作为……的基石；用于强调某事物的根本性地位"
+     },
+     {
+      "en": "can hardly be overstated",
+      "cn": "怎么强调都不为过；常用于议论文强调重要性"
+     },
+     {
+      "en": "as exemplified by",
+      "cn": "正如……所例证的；用于举例论证，替代for example"
+     },
+     {
+      "en": "spawn new industries",
+      "cn": "催生新产业；spawn比create更生动，体现连锁效应"
+     },
+     {
+      "en": "concerted efforts from multiple dimensions",
+      "cn": "多维度的协同努力；适用于提出多方措施的过渡句"
+     },
+     {
+      "en": "rote memorization",
+      "cn": "死记硬背；教育话题高频表达"
+     },
+     {
+      "en": "a stepping stone to success",
+      "cn": "通往成功的垫脚石；用于论述应宽容失败"
+     },
+     {
+      "en": "the lifeblood of",
+      "cn": "……的命脉/生命线；比important更具感染力"
+     },
+     {
+      "en": "Only through … can we …",
+      "cn": "只有通过……我们才能……；倒装句式，适合结尾升华"
+     },
+     {
+      "en": "foster a culture of creation",
+      "cn": "营造创新文化；foster搭配culture属高分搭配"
+     }
+    ],
+    "pitfalls": [
+     "将creation误解为'创作'而偏题写成文学艺术类作文，应理解为广义的'创新/创造'。",
+     "全文只写重要性而忽略measures部分，导致不完整扣分。",
+     "措施部分泛泛而谈（如we should try our best），缺少具体主体和做法。",
+     "开头大段抄题目原文（the importance of creation and measures…），被判抄袭扣分。",
+     "通篇简单句堆砌，缺少复合句和逻辑连接词，影响语言档次评分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Creation is very important for society.",
+      "better": "Creation stands as the cornerstone of social progress and economic prosperity.",
+      "note": "用stand as the cornerstone of替代is important，表达更具体且有画面感。"
+     },
+     {
+      "plain": "The government should support creation.",
+      "better": "The government ought to increase funding for scientific research and offer tax incentives to innovative enterprises.",
+      "note": "将笼统建议细化为具体政策手段，展现论证深度。"
+     },
+     {
+      "plain": "Schools should teach students to be creative.",
+      "better": "Educational institutions should reform their curricula to cultivate students' critical thinking and imagination rather than merely emphasizing rote memorization.",
+      "note": "用rather than构成对比，信息密度更高，论证更有力。"
+     },
+     {
+      "plain": "We should not be afraid of failure.",
+      "better": "Society as a whole should establish a tolerant atmosphere where trial and error is encouraged and failure is viewed as a stepping stone to success.",
+      "note": "where引导定语从句+被动语态，句式更复杂，表意更精准。"
+     },
+     {
+      "plain": "In a word, creation is important and we should encourage it.",
+      "better": "Only through collaborative endeavors can we build an environment where innovation truly flourishes.",
+      "note": "Only+介词短语前置引发倒装，结尾有力且体现高级语法。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Creation stands as the cornerstone of social progress and economic prosperity. —— 创新是社会进步与经济繁荣的基石。（cornerstone一词精准且有分量，适合开篇立论。）",
+   "The importance of creation can hardly be overstated. —— 创新的重要性怎么强调都不为过。（can hardly be overstated为议论文万能强调句型，适用面极广。）",
+   "Educational institutions should reform their curricula to cultivate students' critical thinking and imagination rather than merely emphasizing rote memorization. —— 教育机构应改革课程体系以培养学生的批判性思维和想象力，而非仅仅强调死记硬背。（rather than形成鲜明对比，论证有力。）",
+   "Society should establish a tolerant atmosphere where trial and error is encouraged and failure is viewed as a stepping stone to success. —— 社会应营造宽容氛围，鼓励试错，将失败视为通往成功的垫脚石。（where引导定语从句，信息丰富且结构紧凑。）",
+   "Only through collaborative endeavors can we build an environment where innovation truly flourishes. —— 只有通过协同努力，我们才能构建一个创新真正蓬勃发展的环境。（倒装+where从句，结尾掷地有声，适合背诵。）"
+  ]
+ }
+}

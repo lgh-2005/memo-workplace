@@ -1,0 +1,257 @@
+{
+ "schemaVersion": 1,
+ "id": "7185c0af175d__listening__all",
+ "examId": "7185c0af175d",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2024 年 12 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:53:52.993Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59710,
+ "usage": {
+  "prompt_tokens": 2262,
+  "completion_tokens": 3006,
+  "total_tokens": 5268,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2262,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3006,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2262,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析仅基于题目选项的语言特征进行推断分析，不涉及任何录音具体内容的引用或编造。",
+  "overview": "本场六级听力共7段材料、25道题。第1-2段（Q1-8）为长对话，各含4题；第3-7段（Q9-25）为短文/讲座，各含3-4题。由选项措辞推测：第1段涉及职场绩效评估，第2段涉及医学职业规划，第3段涉及密码与网络安全，第4段涉及健身应用与AI训练，第5段涉及跨文化道德规则研究，第6段涉及视觉对饮食体验的影响，第7段涉及幸福感与人生意义的跨国研究。",
+  "strategy": [
+   "预读选项时用铅笔标注各选项间的关键差异词，听音时专注捕捉差异点",
+   "长对话中第一题答案通常出现在对话开头1-3个回合，注意开场寒暄后的第一个实质话题",
+   "当四个选项结构高度平行（如都是To do…），说明题目问的是目的/原因，重点听because、so that、in order to等信号词",
+   "选项中出现绝对词（all, never, always）时需格外警惕，正确答案往往使用更温和的表述",
+   "短文听力中注意转折词but、however后的内容，这里常设置考点",
+   "听到与某选项高度吻合的原词复现时不要急于选定，注意是否存在同义替换的另一选项更准确"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "职场绩效评估与员工沟通方式改进",
+    "optionSignals": "Q1四个选项均为现在分词短语，问的是对话场景/正在做什么；Q2选项含culture、instruction、honesty、recognition等抽象名词，问女性看重或满意的方面；Q3四选项均为Her+名词短语，指出女性的某项不足；Q4均为To+动词原形，问目的/原因。",
+    "tips": [
+     "Q1中D选项annual performance review是典型职场术语，若听到review、evaluation等词可快速锁定",
+     "Q3各选项描述不同维度的不足（语言/人际/会议行为/处事），注意听否定评价词如inadequate、inability",
+     "Q4中save time与be frank语义差距大，注意听取女性解释自己邮件写法的原因句"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "医学生职业理想与内科专业选择",
+    "optionSignals": "Q5四选项为动词原形短语，问人物的目标/理想；Q6四选项均以They have开头（现在完成时），问家人过去持续做了什么；Q7描述某医学分支的特点；Q8为四个形容词，问对某事物的评价。",
+    "tips": [
+     "Q6四选项都涉及家庭支持方式，注意区分urged to study hard与create positive learning environment的细微差别",
+     "Q8只有一个词的形容词选项，预判是对某人或某事的总体评价，听到inconsistent（前后不一致）相关表述即可选定",
+     "Q7中broad coverage是关键短语，对应内科学科覆盖面广的特点"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "密码安全机制与用户登录体验优化",
+    "optionSignals": "Q9四选项均为To+动词原形，问某技术/机制的目的；Q10同为动词原形短语，问某方案想要达成的效果；Q11也是动词原形短语，问未来建议/措施。",
+    "tips": [
+     "Q9中convince our computer that we are human明显指向CAPTCHA验证码机制，这是高辨识度选项",
+     "Q11选项D中log in more often看似与安全无直接关联，但可能涉及通过频繁登录减少遗忘密码的思路，注意听取建议类语句",
+     "Q10中reduce the intricacy与help remember passwords方向不同，注意听核心动词的语义"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "AI健身应用对训练效果与用户体验的影响",
+    "optionSignals": "Q12四选项描述女性遇到的问题（兴趣丧失/应用不合适/健身低谷/业务恶化），问事件起因；Q13问某应用的功能；Q14描述训练方案的特点；Q15涉及AI应用的局限性，四选项均以They will not/cannot开头。",
+    "tips": [
+     "Q12中fitness fell into a slump里slump是六级高频词，表示低迷期，听到plateau、decline等近义表述也可对应",
+     "Q14选项A never repeated语气绝对，但它确实是正确答案，说明在该语境下强调训练的多样性不重复",
+     "Q15四选项都是对AI训练应用的负面预测，注意区分take the place of human trainers与match humans的语义差异"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "跨文化道德规则的普遍性研究",
+    "optionSignals": "Q16四选项均为陈述句，描述研究结论，注意all/everyone等全称量词的使用差异；Q17四选项以Find out whether/Ascertain whether/Make clear whether开头，问研究目的；Q18为动词原形短语，问研究者应采取的行动。",
+    "tips": [
+     "Q16中seven basic moral rules与seven character traits易混淆，注意moral rules强调行为规范而非性格特质",
+     "Q17各选项核心差异在于研究对象：right-wing people、different societies、same moral issues、left-wing people，听准研究问题的表述",
+     "Q18中systematic field studies与independent descriptions代表不同研究方法，注意听方法论关键词"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "视觉感官对食物口味感知与饮食体验的影响",
+    "optionSignals": "Q19四选项描述eyes/视觉的作用，措辞涉及eating experience、brain functions、soul、mislead；Q20描述某因素的影响（吸引关注/负面影响/决定销量/改变口味）；Q21为简短动词短语，问具体功能。",
+    "tips": [
+     "Q19正确答案A中most important part用最高级表强调，听音时注意捕捉强调句型或最高级表述",
+     "Q20四选项覆盖不同影响方向，注意D选项changes the way people taste food与A选项attracts attention的区别",
+     "Q21中Make predictions较为抽象，可能指大脑基于视觉线索对味道的预判，注意expect、anticipate等同义词"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "幸福感与人生意义感的跨国比较研究",
+    "optionSignals": "Q22四选项为单个名词/短语，问研究聚焦的核心概念；Q23描述某因素的作用特征；Q24描述第二项研究的方法特点；Q25以They might开头，推测某群体的特征。",
+    "tips": [
+     "Q22中Meaning与Happiness是本段核心对比概念，正确答案为Meaning，注意听sense of meaning、purpose等表述",
+     "Q24各选项描述不同研究方法，D选项multiple countries对应跨国研究设计，注意听cross-cultural、international等词",
+     "Q25中external sources of happiness是关键短语，注意区分外部来源与内部感受的对比逻辑"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "performance review",
+    "cn": "绩效评估/考核"
+   },
+   {
+    "w": "proficiency",
+    "cn": "熟练程度，精通"
+   },
+   {
+    "w": "conducive",
+    "cn": "有助的，有益的"
+   },
+   {
+    "w": "intricacy",
+    "cn": "复杂性，错综复杂"
+   },
+   {
+    "w": "slump",
+    "cn": "低迷期，衰退"
+   },
+   {
+    "w": "personalised",
+    "cn": "个性化的，定制的"
+   },
+   {
+    "w": "meticulous",
+    "cn": "细致的，一丝不苟的"
+   },
+   {
+    "w": "morality",
+    "cn": "道德，道德准则"
+   },
+   {
+    "w": "defer",
+    "cn": "顺从，遵从（to）"
+   },
+   {
+    "w": "optimal",
+    "cn": "最佳的，最优的"
+   },
+   {
+    "w": "invariably",
+    "cn": "始终如一地，总是"
+   },
+   {
+    "w": "adversely",
+    "cn": "不利地，有害地"
+   },
+   {
+    "w": "cornerstone",
+    "cn": "基石，基础"
+   }
+  ]
+ }
+}

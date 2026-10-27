@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "c66c3ee723aa__translation__all",
+ "examId": "c66c3ee723aa",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2025 年 6 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T06:01:59.492Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29321,
+ "usage": {
+  "prompt_tokens": 811,
+  "completion_tokens": 2138,
+  "total_tokens": 2949,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 811,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2138,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 811,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "天宫空间站建设成就与应用",
+  "reference": "Tiangong Space Station is China's first space laboratory, with a usable space of over 110 cubic meters. It can accommodate three astronauts and operates in orbit at an altitude of 400 to 450 kilometers above the Earth's surface. The station has carried out more than 180 scientific research and application projects, covering such fields as space life science, space medicine, and space material science. The research findings of Tiangong Space Station have been widely applied in China, generating remarkable economic benefits. For example, space breeding alone has created direct economic benefits amounting to hundreds of billions of yuan. This not only marks China's tremendous progress in aerospace technology, but also demonstrates that China has made significant contributions to global space research and applications.",
+  "sentences": [
+   {
+    "cn": "天宫空间站(Tiangong Space Station)是中国首个太空实验室,拥有110多立方米使用空间,可驻留三名宇航员,在距地球表面400-450公里的轨道上运行。",
+    "en": "Tiangong Space Station is China's first space laboratory, with a usable space of over 110 cubic meters. It can accommodate three astronauts and operates in orbit at an altitude of 400 to 450 kilometers above the Earth's surface.",
+    "structure": "主系表结构 + with 介词短语作伴随状语 + 并列谓语 can accommodate... and operates...，信息密度大需合理断句",
+    "keys": [
+     "太空实验室 space laboratory",
+     "使用空间 usable space",
+     "110多立方米 over 110 cubic meters",
+     "驻留三名宇航员 accommodate three astronauts",
+     "在…轨道上运行 operate in orbit at an altitude of..."
+    ]
+   },
+   {
+    "cn": "天宫空间站已实施180多个科学研究与应用项目,涉及空间生命科学、太空医学、空间材料科学等领域。",
+    "en": "The station has carried out more than 180 scientific research and application projects, covering such fields as space life science, space medicine, and space material science.",
+    "structure": "主谓宾 + 现在分词短语 covering... 作伴随状语，列举多领域时用 such... as 结构",
+    "keys": [
+     "已实施 has carried out",
+     "科学研究与应用项目 scientific research and application projects",
+     "空间生命科学 space life science",
+     "空间材料科学 space material science"
+    ]
+   },
+   {
+    "cn": "天宫空间站的研究成果在我国得到了广泛应用,产生了显著的经济效益。",
+    "en": "The research findings of Tiangong Space Station have been widely applied in China, generating remarkable economic benefits.",
+    "structure": "主语 + 现在完成时被动语态 have been applied + 现在分词 generating 作结果状语",
+    "keys": [
+     "研究成果 research findings",
+     "得到了广泛应用 have been widely applied",
+     "显著的经济效益 remarkable economic benefits"
+    ]
+   },
+   {
+    "cn": "例如,太空育种创造的直接经济效益高达数千亿元。",
+    "en": "For example, space breeding alone has created direct economic benefits amounting to hundreds of billions of yuan.",
+    "structure": "主谓宾 + 现在分词短语 amounting to 作后置定语修饰 benefits，注意'高达'的译法",
+    "keys": [
+     "太空育种 space breeding",
+     "直接经济效益 direct economic benefits",
+     "高达数千亿元 amounting to hundreds of billions of yuan"
+    ]
+   },
+   {
+    "cn": "这不仅标志中国在航天技术上取得了巨大进步,也表明中国为全球的太空研究和应用做出了重大贡献。",
+    "en": "This not only marks China's tremendous progress in aerospace technology, but also demonstrates that China has made significant contributions to global space research and applications.",
+    "structure": "not only... but also... 并列结构连接两个谓语动词 marks 和 demonstrates，后接 that 宾语从句",
+    "keys": [
+     "航天技术 aerospace technology",
+     "取得了巨大进步 tremendous progress",
+     "做出了重大贡献 make significant contributions to"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "天宫空间站",
+    "en": "Tiangong Space Station"
+   },
+   {
+    "cn": "太空实验室",
+    "en": "space laboratory"
+   },
+   {
+    "cn": "立方米",
+    "en": "cubic meter(s)"
+   },
+   {
+    "cn": "空间生命科学",
+    "en": "space life science"
+   },
+   {
+    "cn": "太空医学",
+    "en": "space medicine"
+   },
+   {
+    "cn": "空间材料科学",
+    "en": "space material science"
+   },
+   {
+    "cn": "太空育种",
+    "en": "space breeding / space seed breeding"
+   },
+   {
+    "cn": "经济效益",
+    "en": "economic benefits"
+   },
+   {
+    "cn": "航天技术",
+    "en": "aerospace technology"
+   },
+   {
+    "cn": "太空研究和应用",
+    "en": "space research and applications"
+   }
+  ],
+  "pitfalls": [
+   "'110多立方米'应译为 over/more than 110 cubic meters，不可遗漏量词",
+   "'高达数千亿元'应译为 hundreds of billions of yuan，不能误译为 thousands of billions",
+   "'驻留'应译为 accommodate 而非 stay，注意主语为空间站而非宇航员",
+   "'不仅…也…'须用 not only... but also... 并列结构，注意平行对称",
+   "'得到了广泛应用'须用被动语态 have been widely applied，不可直译为主动"
+  ],
+  "upgrades": [
+   {
+    "plain": "has done more than 180 projects",
+    "better": "has carried out more than 180 scientific research and application projects",
+    "note": "carry out 比 do 更正式，更符合科研项目的语域"
+   },
+   {
+    "plain": "the economic benefits are very good",
+    "better": "generating remarkable economic benefits",
+    "note": "用现在分词作结果状语更简洁地道，remarkable 比 very good 更书面"
+   },
+   {
+    "plain": "made a lot of progress",
+    "better": "tremendous progress in aerospace technology",
+    "note": "tremendous 比 a lot of 更具学术色彩，搭配更精准"
+   },
+   {
+    "plain": "This shows that China has progressed in space technology",
+    "better": "This not only marks China's tremendous progress... but also demonstrates...",
+    "note": "not only... but also... 突出双重意义，demonstrates 比 shows 更正式"
+   },
+   {
+    "plain": "up to thousands of billions of yuan",
+    "better": "amounting to hundreds of billions of yuan",
+    "note": "数千亿应为 hundreds of billions，amounting to 比 up to 表达更准确"
+   }
+  ]
+ }
+}

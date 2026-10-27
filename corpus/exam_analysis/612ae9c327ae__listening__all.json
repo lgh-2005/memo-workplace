@@ -1,0 +1,265 @@
+{
+ "schemaVersion": 1,
+ "id": "612ae9c327ae__listening__all",
+ "examId": "612ae9c327ae",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2021 年 12 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:35:46.106Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54806,
+ "usage": {
+  "prompt_tokens": 2135,
+  "completion_tokens": 2914,
+  "total_tokens": 5049,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2135,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2914,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2135,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场六级听力的录音音频与听力原文文稿，以下全部解析仅基于题目选项的语言特征与正确答案进行推断分析，不涉及任何录音原文内容的引用或编造。",
+  "overview": "本场听力共 25 题，分 7 段：第 1-2 段各 4 题，推测为长对话；第 3-7 段各 3-4 题，推测为短文/讲座。话题涵盖：日常生活意外事件（第1段）、军事历史写作与作家访谈（第2段）、知名饮料品牌瓶身设计史（第3段）、陌生人社交与情绪影响（第4段）、某国经济结构与民生（第5段）、家庭教育与儿童心理发展（第6段）、求职面试常见误区（第7段）。",
+  "strategy": [
+   "预读选项时快速圈出各选项间的差异词，听到差异词附近内容时集中注意力",
+   "选项均以 He/She/They 开头时，先判断主语身份，有助于定位对话角色",
+   "当四个选项为并列名词或短语时，通常考查具体细节，需听取关键名词",
+   "注意转折词 but/however/actually 后的信息，往往是正确答案所在",
+   "选项中出现绝对词如 always/never 的通常为干扰项，需额外警惕",
+   "短文听力第一题的答案常出现在开头 1-2 句，注意开篇信息"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "某人（David）近期遭遇的意外及朋友间的帮助",
+    "optionSignals": "四题选项均以 He was/He+动词 或动词原形开头，说明分别在问\"他当时在做什么\"\"他遭遇了什么\"\"她打算怎么做\"\"她将如何帮助他\"。选项涉及 holiday、hospital、wrist、ice、repair shop、refreshments 等具体场景词，属于细节辨听题。",
+    "tips": [
+     "Q1 四个选项描述不同状态，需听对话开头对 David 近况的说明；答案 A 提示关键词为 holiday",
+     "Q2 四个选项描述不同事故，slipped on ice 为答案，注意冰雪、摔倒等场景词",
+     "Q3 问解决方案，repair shop 为答案，注意 fix/repair 同义替换",
+     "Q4 refreshments（茶点/饮料）为答案，注意 offer/drink/tea/coffee 等词"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "一位女性军事历史作家及其新书的访谈",
+    "optionSignals": "Q5 四选项描述女性身份（critic/hostess/researcher/historian），为身份判断题。Q6 描述书籍特征，Q7 描述研究方法，Q8 描述写作困难。选项中 military history 反复出现，war novel、fiction 等词暗示该作家涉及虚构写作。",
+    "tips": [
+     "Q5 答案为 historian of military history，注意开场对嘉宾身份的介绍",
+     "Q6 答案为 war novel set in the future，需区分 18th/19th century 与 future 的时间差异",
+     "Q7 答案为 looked into personal lives，注意 personal 与 visited/surveyed/met 的区别",
+     "Q8 答案为 doesn't have much freedom for imagination，暗示写历史小说受事实限制"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "某知名饮料品牌瓶身设计的演变历史",
+    "optionSignals": "Q9 选项为四个具体名词（Santa Claus/polar bear/cocoa seeds/glass bottle），问某个标志性元素。Q10 问目的/原因（To+动词），Q11 描述外形特征。围绕品牌视觉识别系统展开。",
+    "tips": [
+     "Q9 答案为 glass bottle，Santa Claus 和 polar bear 是该品牌常见联想，属于强干扰项",
+     "Q10 答案为 combat counterfeits（打击假冒），注意 counterfeit/fake/imitation 等近义词",
+     "Q11 答案为 the shape of a cocoa seed，注意描述形状的表达如 resembles/shaped like"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "陌生人之间交谈的心理效应与社交障碍",
+    "optionSignals": "Q12 问交谈的效果（mood/understanding/effort），Q13 问阻碍因素（anxiety/caution/skills/solitude），Q14 问原因（大脑倾向/人的反应），Q15 为单个形容词（Contagious/Temporary 等），问某种特性。选项涉及社会心理学术语。",
+    "tips": [
+     "Q12 答案为 improves mood considerably，注意 mood/feel better/happier 等表达",
+     "Q13 答案为 Social anxiety，是阻止人们与陌生人交谈的主要原因",
+     "Q14 答案为 brains tend to dwell on negative events，dwell on 意为'反复想'，是高频考点",
+     "Q15 答案为 Contagious（有感染力的），暗示情绪或行为具有传播性"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "某国的经济结构与居民生活状况",
+    "optionSignals": "Q16 四选项描述经济支柱（tourism/trade/agriculture/mineral），Q17 为四种农产品名词，Q18 描述居民生活方式。选项中 agriculture、farm、poor life 等词高频出现，指向发展中国家。",
+    "tips": [
+     "Q16 答案为 mainly based on agriculture，注意 farming/agricultural/crops 等替换词",
+     "Q17 答案为 Sugar，需在四种作物中辨听哪个被特别提及或强调",
+     "Q18 答案为 live a poor life，与 Spanish-style houses 形成对比，注意贫富描述词"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "过度溺爱对儿童成长的负面影响与适度教育",
+    "optionSignals": "Q19 问过度溺爱的后果（lonely/dependent/dissatisfied），Q20 问父母的不当行为（attention/toys/wishes/quality time），Q21 问适当挫折教育的好处。选项涉及 parenting 核心词汇。",
+    "tips": [
+     "Q19 答案为 lonely, dependent and dissatisfied，三个并列形容词是典型听力考点",
+     "Q20 答案为 failure to spend sufficient quality time，注意 quality time 这一固定搭配",
+     "Q21 答案为 help them handle disappointment，handle/cope with/deal with 常互换"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "求职面试中的常见错误与用人偏好",
+    "optionSignals": "Q22 问面试大忌（preparations/eye contact/wrong thing/judgment），Q23 问具体错误言行，Q24 问雇主偏好的员工类型，Q25 问某项关键能力。选项围绕 interview 场景，实用性强。",
+    "tips": [
+     "Q22 答案为 Saying the wrong thing，比 looking away 更具概括性，注意 say/mention/bring up",
+     "Q23 答案为 Complaining about previous job，面试中抱怨前雇主是经典禁忌",
+     "Q24 答案为 take initiative，initiative 是职场高频词，意为'主动性'",
+     "Q25 答案为 ability to shoulder new responsibilities，shoulder 作动词意为'承担'"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "refreshments",
+    "cn": "茶点，点心，饮料"
+   },
+   {
+    "w": "antibiotics",
+    "cn": "抗生素"
+   },
+   {
+    "w": "counterfeits",
+    "cn": "假冒伪劣品，赝品"
+   },
+   {
+    "w": "contagious",
+    "cn": "有感染力的，会传播的"
+   },
+   {
+    "w": "dwell on",
+    "cn": "老是想着，纠结于"
+   },
+   {
+    "w": "social anxiety",
+    "cn": "社交焦虑"
+   },
+   {
+    "w": "initiative",
+    "cn": "主动性，积极性；倡议"
+   },
+   {
+    "w": "shoulder",
+    "cn": "（动词）承担，担负"
+   },
+   {
+    "w": "genre",
+    "cn": "（文学/艺术的）体裁，类型"
+   },
+   {
+    "w": "acclaimed",
+    "cn": "受到赞誉的，备受好评的"
+   },
+   {
+    "w": "commuters",
+    "cn": "通勤者，上下班往返的人"
+   },
+   {
+    "w": "solitude",
+    "cn": "独处，独居"
+   },
+   {
+    "w": "flourishing",
+    "cn": "繁荣的，蓬勃发展的"
+   },
+   {
+    "w": "setbacks",
+    "cn": "挫折，阻碍"
+   }
+  ]
+ }
+}

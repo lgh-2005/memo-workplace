@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "68c22fd96d6b__reading__2",
+ "examId": "68c22fd96d6b",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2008 年考研英语真题（旧）",
+ "year": 2008,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:20:26.080Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58718,
+ "usage": {
+  "prompt_tokens": 1730,
+  "completion_tokens": 3475,
+  "total_tokens": 5205,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1730,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3475,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1730,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "学术期刊出版模式的变革",
+  "gist": "文章回顾了传统学术期刊的出版流程，指出互联网和资助机构的压力正推动科研成果走向免费开放获取，OECD报告揭示了这一趋势对出版商利润的冲击，并介绍了大宗交易、开放获取出版和开放获取档案等新兴出版模式，预示着学术出版领域的深刻变革。",
+  "structure": [
+   "第一段：回顾传统期刊出版的标准流程",
+   "第二段：互联网与资助机构推动免费获取，引出OECD报告",
+   "第三段：阐述科学出版的市场规模与公共投资回报",
+   "第四段：介绍三种新兴在线出版模式及混合变体"
+  ],
+  "difficulty": "中等",
+  "translation": "过去一切都非常简单明了。一个在实验室里合作的研究团队会将他们的研究成果提交给期刊。期刊编辑随后会将论文中作者的姓名和所属机构删除，然后将论文送交同行评审。根据收到的评审意见，编辑决定接受论文发表或予以退稿。版权归期刊出版商所有，而想要了解研究成果的研究人员必须订阅该期刊。\n\n如今情况已不再如此。互联网——以及来自资助机构的压力（这些机构质疑为何商业出版商通过限制对政府资助研究成果的获取来从中牟利）——正在使科研成果的免费获取成为现实。经济合作与发展组织（OECD）刚刚发布了一份报告，描述了这一趋势的深远影响。这份由澳大利亚维多利亚大学的约翰·霍顿和OECD的格雷厄姆·维克里撰写的报告，对迄今为止赚取了丰厚利润的出版商来说是一份沉重的读物。但报告的意义远不止于此。它标志着一个至今一直是科学事业关键要素的领域正在发生变化。\n\n知识的价值和公共研究投资的回报在一定程度上取决于广泛的传播和便捷的获取。这是一门大生意。在美国，核心科学出版市场估值在70亿至110亿美元之间。国际科学、技术与医学出版商协会称，全球有2000多家专注于这些学科的出版商。它们每年在约16000种期刊上发表超过120万篇文章。\n\n这一切正在改变。根据OECD的报告，约75%的学术期刊现已上线。全新的商业模式正在涌现；报告作者确定了三种主要模式。一种是所谓的\"大宗交易\"，即机构订阅者通过站点许可协议付费获取一系列在线期刊。另一种是开放获取出版，通常要求作者（或其雇主）支付论文发表费用。最后一种是开放获取档案库，由大学或国际实验室等组织支持机构知识库。还存在其他混合模式，如延迟开放获取——期刊在前六个月仅允许订阅者阅读论文，之后对所有希望查阅的人免费开放。所有这些都可能改变传统的同行评审流程，至少在论文发表方面是如此。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "A team of researchers working together in the laboratory would submit the results of their research to a journal. A journal editor would then remove the authors' names and affiliations from the paper and send it to their peers for review.",
+    "why": "第一段按时间顺序依次描述了传统期刊出版的完整流程：研究团队提交论文→编辑匿名送交同行评审→决定是否发表→版权归出版商→读者需订阅。D选项\"传统的期刊出版过程\"精准概括了这一段对旧有出版流程的回顾性描述，与段首\"It used to be so straightforward\"相呼应。",
+    "traps": "A项\"期刊编辑的背景信息\"以偏概全，编辑只是流程中一环；B项\"实验室报告的发表程序\"缩小了范围，文中讨论的是整个期刊出版流程而非仅限实验室报告；C项\"作者与出版商的关系\"偷换重点，段落重在流程描述而非二者关系。",
+    "tip": "首段功能题需概括该段核心内容，避免以偏概全。"
+   },
+   {
+    "number": 27,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The report, by John Houghton of Victoria University in Australia and Graham Vickery of the OECD, makes heavy reading for publishers who have, so far, made handsome profits.",
+    "why": "原文指出该报告对\"迄今赚取了丰厚利润的出版商来说是沉重的读物\"（makes heavy reading for publishers who have made handsome profits），即报告内容令盈利的出版商感到不安。C选项\"它让盈利的期刊出版商感到不安\"是对此句的准确同义转述，heavy reading对应upsets。",
+    "traps": "A项\"批评政府资助的研究\"张冠李戴，被质疑的是出版商利用政府资助研究牟利，而非批评研究本身；B项\"介绍一种有效的出版手段\"无中生有，报告描述的是后果而非推荐手段；D项\"极大地有益于科学研究\"过度推断，文中未说报告本身直接促进了科研。",
+    "tip": "注意区分报告\"描述的对象\"和报告\"产生的影响\"。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The Internet – and pressure from funding agencies, who are questioning why commercial publishers are making money from government-funded research by restricting access to it – is making free access to scientific results a reality.",
+    "why": "文章第二段明确指出互联网正在使\"科研成果的免费获取成为现实\"，第三段进一步强调知识的价值取决于\"广泛的传播和便捷的获取\"，第四段提到75%的学术期刊已上线。在线出版的意义在于它使人们更容易获取科研成果，A选项\"提供了更便捷的科研成果获取途径\"与此完全吻合。",
+    "traps": "B项\"给科研人员带来巨额利润\"偷换对象，巨额利润是出版商赚取的而非研究人员；C项\"强调科学知识的关键作用\"并非在线出版的意义，属于无中生有；D项\"促进公共科研投资\"因果倒置，文中说的是投资回报依赖于广泛传播，而非在线出版促进投资。",
+    "tip": "题目问significance时，要回归文章核心论点寻找答案。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "There is open-access publishing, typically supported by asking the author (or his employer) to pay for the paper to be published.",
+    "why": "原文第四段明确指出开放获取出版模式\"通常要求作者（或其雇主）支付论文发表费用\"，即作者需要承担出版成本。A选项\"承担出版费用\"（cover the cost of its publication）是对原文\"pay for the paper to be published\"的准确同义改写。",
+    "traps": "B项\"订阅发表该论文的期刊\"混淆了传统模式与开放获取模式，订阅是旧模式的特征；C项\"允许其他在线期刊免费使用\"无中生有，文中未提及跨刊使用；D项\"在提交前完成同行评审\"张冠李戴，同行评审是编辑流程中的环节，与开放获取付费模式无关。",
+    "tip": "细节题直接回原文定位，找到对应描述即可。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "Entirely new business models are emerging; three main ones were identified by the report's authors.",
+    "why": "全文从传统出版流程讲起，过渡到互联网推动免费获取的趋势，介绍OECD报告的影响，最后详细阐述三种新兴出版模式。文章核心围绕学术出版模式的变革展开，B选项\"一种新的出版模式正在涌现\"最能概括全文主旨，涵盖了从旧模式到新模式转变的完整线索。",
+    "traps": "A项\"互联网对出版商构成威胁\"以偏概全，互联网只是推动变革的因素之一，且文章重点不在\"威胁\"；C项\"作者欢迎新的发表渠道\"无中生有，文中未提及作者的态度；D项\"在线服务使出版变得更容易\"偷换主题，文章讨论的是出版模式的变革而非出版变得更容易。",
+    "tip": "主旨题需选涵盖面最广且最准确的选项，避免选局部信息。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "affiliations",
+    "cn": "n. 隶属关系；所属机构"
+   },
+   {
+    "w": "peers",
+    "cn": "n. 同行；同辈"
+   },
+   {
+    "w": "decline",
+    "cn": "v. 拒绝；婉拒（此处指退稿）"
+   },
+   {
+    "w": "subscribe",
+    "cn": "v. 订阅；订购"
+   },
+   {
+    "w": "far-reaching",
+    "cn": "adj. 深远的；影响广泛的"
+   },
+   {
+    "w": "handsome",
+    "cn": "adj. 可观的；丰厚的（修饰利润等）"
+   },
+   {
+    "w": "endeavour",
+    "cn": "n. 努力；事业（尤指学术事业）"
+   },
+   {
+    "w": "repositories",
+    "cn": "n. 知识库；存储库"
+   },
+   {
+    "w": "hybrids",
+    "cn": "n. 混合体；混合模式"
+   },
+   {
+    "w": "site-licensing",
+    "cn": "n. 站点许可（一种机构批量授权方式）"
+   },
+   {
+    "w": "institutional",
+    "cn": "adj. 机构的；制度的"
+   },
+   {
+    "w": "delayed",
+    "cn": "adj. 延迟的；推迟的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The Internet – and pressure from funding agencies, who are questioning why commercial publishers are making money from government-funded research by restricting access to it – is making free access to scientific results a reality.",
+    "cn": "互联网——以及来自资助机构的压力（这些机构质疑为何商业出版商通过限制对政府资助研究成果的获取来从中牟利）——正在使科研成果的免费获取成为现实。",
+    "note": "主语为The Internet and pressure，中间插入who引导的定语从句修饰funding agencies，从句内含by restricting...状语；谓语为is making，宾补为a reality。破折号插入成分造成主谓分离是理解难点。"
+   },
+   {
+    "en": "The value of knowledge and the return on the public investment in research depend, in part, upon wide distribution and ready access.",
+    "cn": "知识的价值和公共研究投资的回报在一定程度上取决于广泛的传播和便捷的获取。",
+    "note": "双主语并列（the value... and the return...），谓语depend upon被in part插入语隔开；ready access意为\"便捷的获取\"，是全文核心论点的浓缩表达。"
+   },
+   {
+    "en": "Finally, there are open-access archives, where organizations such as universities or international laboratories support institutional repositories.",
+    "cn": "最后一种是开放获取档案库，在这种模式中，大学或国际实验室等组织支持建立机构知识库。",
+    "note": "where引导非限制性定语从句修饰archives，such as引出举例说明organizations的具体类型；institutional repositories是学术出版领域的专业术语。"
+   }
+  ]
+ }
+}

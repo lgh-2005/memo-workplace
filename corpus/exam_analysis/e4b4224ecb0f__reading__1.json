@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "e4b4224ecb0f__reading__1",
+ "examId": "e4b4224ecb0f",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年 6 月英语六级真题（第 1 套）",
+ "year": 2026,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:06:40.258Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62168,
+ "usage": {
+  "prompt_tokens": 1795,
+  "completion_tokens": 4389,
+  "total_tokens": 6184,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1795,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4389,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1795,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "青少年使用社交媒体的问题与应对",
+  "gist": "文章围绕儿童和青少年使用社交媒体展开讨论。作者认为禁止青少年使用社交媒体既不现实也不可取，但指出社交媒体使用时长与英国少女抑郁率高度相关，呼吁重视这一发现。文章评析了政府出台使用指南的举措，批评了对数字媒体巨头监管的滞后，并指出教育压力与资源不足等也是青少年心理健康问题的重要成因。",
+  "structure": [
+   "第一段：提出观点——禁止青少年用社交媒体不现实也不可取",
+   "第二段：数据论证——社交媒体使用时长与少女抑郁高度相关",
+   "第三段：强调研究发现的重要性，指出各方的困惑",
+   "第四段：评析政府举措，批评监管滞后",
+   "第五段：补充其他致因——教育压力、资源不足等"
+  ],
+  "difficulty": "中等",
+  "translation": "儿童使用社交媒体是一个问题，但这并不意味着应该禁止它。虽然年幼的儿童不应该出现在最低年龄要求为13岁的平台上，但设想一个阻止青少年接触其周围成年人用来组织生活的平台和通讯系统的世界，既不切实际，也不可取。\n\n然而，各年龄段的人在屏幕和智能手机上找到的快乐和刺激，不应使我们对以这种方式消磨时间可能造成的危害视而不见。英国少女中令人担忧的高抑郁率与花在社交媒体上的时间密切相关，这一发现极其令人忧虑。研究发现，五分之二的女孩每天至少花三个小时在社交媒体上——而参与程度相同的男孩只有女孩的一半。超过三分之一的抑郁女孩经历过网络骚扰。大约一半受影响的女孩睡眠受到干扰，而抑郁男孩中这一比例为20%。\n\n尽管该研究并未证明社交媒体导致抑郁，但不应低估这一发现——即两者之间存在关联——的重要性。学校在传达有关网络滥用风险的关键信息方面做了重要工作。但在涉及关于\"屏幕时间\"的更广泛问题时，许多专业人士和家长一样感到困惑和不确定。\n\n卫生大臣马特·汉考克希望出台关于时间和年龄限制的官方指南。这一想法具有简单明了的优点，但一些专家质疑其效果，并呼吁进行更大程度的区分，认为上网时间本身并非坏事，一切取决于你在做什么。同样将于今年出台的是信息专员伊丽莎白·德纳姆的《适龄设计规范》，涵盖儿童个人数据的使用。这两项举措都值得欢迎。但政府是在追赶进度。对数字媒体巨头的法定监管早就应该实施了。迄今为止未能保护儿童免受数据采集和定向广告的侵害，与这些公司自身在儿童心理健康方面表现出的冷漠一样令人震惊。\n\n当然，社交媒体公司并非我们所有问题的根源，而且对于急于将公众注意力从资源不足的学校和医疗服务上转移开的政客来说，它们可能成为一个过于容易的攻击目标。年轻人抑郁率上升还有其他原因，在教育和更广泛的生活中不断增加的成功压力——要出名、要漂亮、要富有——常被认为是不快乐或焦虑的来源，如果被其他因素加剧且未得到管理，就可能演变为健康问题。保护意味着不仅仅是避免身体威胁。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "it is neither practical nor desirable to imagine a world in which teenagers are prevented from accessing the platforms and messaging systems that the adults around them use to organise their lives.",
+    "why": "原文用\"neither practical nor desirable\"明确表达了作者的态度：阻止青少年使用社交媒体既不切实际（unrealistic）也不可取（inadvisable）。选项A中的\"unrealistic\"对应\"neither practical\"，\"inadvisable\"对应\"nor desirable\"，属于同义替换，完全吻合原文立场。",
+    "traps": "B项张冠李戴，原文说成年人用平台组织生活，并未说社交媒体帮助儿童组织生活；C项偷换概念，原文说\"Children's use of social media is a problem\"，问题对象是儿童使用行为，没有说对父母也构成问题；D项曲解原文，原文说\"设想这样一个世界不现实\"而非\"没有社交媒体的世界难以想象\"，偷换了论述对象。",
+    "tip": "注意\"neither…nor…\"双重否定表达的态度方向，精准匹配同义替换。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The finding that the alarmingly high rate of depression in British teenage girls is closely correlated to time spent on social media is extremely concerning.",
+    "why": "原文明确指出英国少女的高抑郁率与花在社交媒体上的时间\"密切相关\"（closely correlated）。选项B用\"the more time…the more likely they suffer from depression\"准确概括了这种正相关关系，是对原文的合理推导。",
+    "traps": "A项无中生有，原文说的是社交媒体使用时间与抑郁相关，而非\"互动频率\"与骚扰相关；C项偷换数据，原文说\"two in five\"（五分之二）即40%的女孩每天至少用三小时社交媒体，C项说\"most of them\"（大多数），与数据不符；D项因果颠倒，原文说男孩参与程度只有女孩的一半，而非女孩只有男孩的一半。",
+    "tip": "注意数据题中\"most\"\"half\"\"two in five\"等量词的精确对应。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "the importance of the finding that there is a connection should not be underestimated.",
+    "why": "原文用\"should not be underestimated\"（不应被低估）来评价该研究发现的重要性。选项C\"Its importance should not be undervalued\"中\"undervalued\"与\"underestimated\"为近义替换，完全匹配作者观点。这是典型的同义替换考法。",
+    "traps": "A项偷换信息，原文说学校传达了关于网络滥用风险的信息，但作者并未说这项研究关于网络滥用的启示\"显而易见\"；B项过度推断，原文未使用\"immediate attention\"这类紧迫性措辞；D项反向干扰，虽然原文提到研究\"未证明因果关系\"，但作者强调的是这一发现的重要性不应被低估，而非它的不确定性。",
+    "tip": "双重否定\"should not be underestimated\"等于肯定其重要性，识别同义改写。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "This idea has the virtue of simplicity, though some experts question its effects and call for a greater degree of differentiation, arguing that time online by itself is not a bad thing",
+    "why": "原文先用\"has the virtue of simplicity\"看似肯定其简单，紧接着用\"though\"转折，指出\"some experts question its effects\"（一些专家质疑其效果），并呼吁更精细的区分。选项D\"too simplistic to produce the desired effect\"准确概括了专家的批评：过于简单化，难以产生预期效果。",
+    "traps": "A项无中生有，原文未提及专家认为需要\"prompt action\"（立即行动）；B项张冠李戴，\"long overdue\"是原文用来评价对数字媒体巨头的法定监管的，而非评价汉考克的想法；C项偷换逻辑，专家质疑的是这一想法本身的效果，而非说效果取决于实施方式。",
+    "tip": "注意\"though\"转折词后的内容往往是命题点和作者/专家的真实态度。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "social media companies are not the source of all our ills, and can offer a too-easy target for politicians keen to divert attention from inadequately resourced schools and health services.",
+    "why": "原文指出政客可能利用社交媒体公司来转移公众对\"inadequately resourced schools and health services\"（资源不足的学校和医疗服务）的关注。\"inadequately resourced\"即\"poorly financed\"（资金不足），选项A是对原文的同义替换，暗示这些才是导致青少年心理健康问题的因素之一。",
+    "traps": "B项偷换概念，政客的行为是转移注意力，而非导致青少年心理健康问题的因素；C项混淆信息，对数字媒体巨头的监管不力是另一个话题，题目问的是\"除社交媒体公司外\"的因素；D项无中生有，原文从未提及父母的教育背景和生活状况对青少年的影响。",
+    "tip": "注意题干中的\"besides\"限定范围，排除与社交媒体公司直接相关的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "correlated",
+    "cn": "相关的，有关联的 (adj./v.)"
+   },
+   {
+    "w": "harassment",
+    "cn": "骚扰，烦扰 (n.)"
+   },
+   {
+    "w": "underestimated",
+    "cn": "低估，轻视 (v.)"
+   },
+   {
+    "w": "differentiation",
+    "cn": "区分，差异化 (n.)"
+   },
+   {
+    "w": "statutory",
+    "cn": "法定的，依照法令的 (adj.)"
+   },
+   {
+    "w": "overdue",
+    "cn": "逾期的，早该发生的 (adj.)"
+   },
+   {
+    "w": "harvesting",
+    "cn": "采集，收割 (n./v.)"
+   },
+   {
+    "w": "divert",
+    "cn": "转移，转向 (v.)"
+   },
+   {
+    "w": "incidence",
+    "cn": "发生率，发生 (n.)"
+   },
+   {
+    "w": "aggravated",
+    "cn": "加重的，恶化的 (adj./v.)"
+   },
+   {
+    "w": "safeguarding",
+    "cn": "保护，保障 (n./v.)"
+   },
+   {
+    "w": "commissioner",
+    "cn": "专员，委员 (n.)"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The finding that the alarmingly high rate of depression in British teenage girls is closely correlated to time spent on social media is extremely concerning.",
+    "cn": "英国少女中令人担忧的高抑郁率与花在社交媒体上的时间密切相关，这一发现极其令人忧虑。",
+    "note": "主干为 The finding is extremely concerning。中间嵌套 that 引导的同位语从句解释 finding 的内容，从句主干为 rate is correlated to time。"
+   },
+   {
+    "en": "The failure to protect children from data harvesting and targeted advertising thus far is as shocking as the lack of concern shown by the companies themselves with regard to children's psychological health.",
+    "cn": "迄今为止未能保护儿童免受数据采集和定向广告的侵害，与这些公司自身在儿童心理健康方面所表现出的冷漠一样令人震惊。",
+    "note": "主干为 The failure is as shocking as the lack of concern。as…as 构成比较结构；shown by… 为后置定语修饰 lack of concern。"
+   },
+   {
+    "en": "There are other reasons for the rising incidence of depression in young people, with increasing pressure to succeed in education and in life more broadly—to be famous, beautiful, rich—often cited as a source of unhappiness or anxiety which can, if aggravated by other factors and not managed, tip into ill health.",
+    "cn": "年轻人抑郁率上升还有其他原因，在教育和更广泛的生活中不断增加的成功压力——要出名、要漂亮、要富有——常被认为是不快乐或焦虑的来源，如果被其他因素加剧且未得到管理，就可能演变为健康问题。",
+    "note": "主句为 There are other reasons。with 引导独立主格结构做补充说明；破折号为插入解释；which 引导定语从句修饰 anxiety，从句中 if 引导条件状语从句做插入语。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "7185c0af175d__reading__2",
+ "examId": "7185c0af175d",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 12 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:54:07.334Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54855,
+ "usage": {
+  "prompt_tokens": 1840,
+  "completion_tokens": 3545,
+  "total_tokens": 5385,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1840,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3545,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1840,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社交媒体重塑审美标准及其心理健康影响",
+  "gist": "文章指出现实世界正在反抗不切实际的审美标准，但在数字领域，社交媒体却在定义并强化新的美丽理想。用户通过点赞、滤镜等游戏化互动内化了这些标准，过度修图导致自我物化倾向，对心理健康产生严重影响，作者最终呼吁以心理健康干预而非整容来解决这一问题。",
+  "structure": [
+   "第1-2段：现实与数字世界的审美之争并行展开",
+   "第3-4段：科技重塑审美理想，Instagram脸成新标准",
+   "第5-6段：社交媒体游戏化互动促进审美内化",
+   "第7-8段：过度滤镜导致自我物化，损害心理健康",
+   "第9段：总结呼吁——解决外貌焦虑需心理干预而非整容"
+  ],
+  "difficulty": "中等",
+  "translation": "一场觉醒正在现实世界中发生，人们开始反抗多年来被强加的审美模式。但在数字领域，社交媒体决定了什么是美。\n\n这两种相互对立的斗争在同时进行。在现实世界中，斗争的对象是迫使女性去迎合不切实际的审美理想的潜在压力。作为这场斗争的一部分，各种媒体展示了身材不符合所谓理想标准的女性。所有那些此前被排除在杂志封面、电视剧和公共议程之外的女性，已经变得\"合理合法\"。与此同时，一些网红开始在社交媒体上上传自己素颜的照片，甚至是突显所谓缺陷的照片。\n\n科技重塑了我们的审美理想，并且在向大众传播这一信息方面做得非常出色。过去十年留下的一个奇特遗产是\"赛博格外观\"的流行，它展示了美国人在2050年可能的样子。\n\n赛博格外观迅速传播。然而如今，Instagram脸已经成为新的审美理想。\n\n当学习过程中存在积极参与时，被接受的审美规范的内化会更加有效。用户的积极参与体现在社交媒体平台提供的游戏化互动中——点赞、评论、比较、分享的能力。\n\n一旦理想的审美标准被内化，用户就会获得工具或功能来改变自己的外貌以符合被接受的审美理想，比如编辑图片、选择理想的滤镜、合适的背景。\n\n一项在美国进行的调查显示，超过50%的人在发布图片之前会进行滤镜处理。你不会惊讶地听到，其中大多数是女性。过度使用滤镜的一个重要后果是，一种将自己视为被观察和评价对象的倾向正在出现，就像另一个人从旁观者角度观察和评判一样。\n\n滤镜的影响已经远远超出了友善的消遣。滤镜以及社交网络上的整个游戏影响着用户的心理健康。一项研究表明，Instagram、Snapchat和FaceTune等应用程序让用户达到了一种以前只能在美容杂志上看到的完美水平。\n\n尽管人类一直以来都崇尚美丽，但在过去十年中，我们对外貌的痴迷已经达到了前所未有的高峰。花在社交媒体上的时间产生了一种追求不可能的审美理想的冲动，这种冲动如此强烈，以至于唯一能解决它的不是整容手术，而是心理健康护理。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But in the digital arena, social media determines what is considered beautiful.",
+    "why": "原文第一段末句明确指出\"在数字领域，社交媒体决定了什么被认为是美的\"。D选项\"It is defined by social media\"是对原文\"social media determines what is considered beautiful\"的同义改写，determine对应define，what is considered beautiful对应beauty，完全吻合。",
+    "traps": "A项\"它主导了数字媒体的品味\"因果倒置，原文说社交媒体定义美，而非美主导数字媒体；B项\"它已经酝酿多年\"偷换概念，原文说被强加多年的是现实世界的审美模式；C项\"它引发了一场新的觉醒\"张冠李戴，觉醒发生在现实世界（physical world）而非数字领域。",
+    "tip": "注意but转折后的重点信息，往往是命题焦点。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "In the physical world, the struggle goes against the underlying pressure exerted on women to conform to an unrealistic beauty ideal.",
+    "why": "原文第二段首句明确说明\"在现实世界中，斗争的对象是迫使女性迎合不切实际的审美理想的潜在压力\"。C选项\"一场斗争正在进行以消除迫使女性迎合荒谬审美理想的压力\"是对原文的准确概括，struggle goes against对应fight to remove，unrealistic对应absurd，pressure exerted on women to conform完全对应。",
+    "traps": "A项\"女性持续承受保持美丽模式的压力\"只说了压力存在，未提及斗争反抗这一核心信息，片面不完整；B项\"女性被鼓励追求从未存在的审美理想\"与原文方向相反，原文说的是反抗而非鼓励追求；D项\"媒体开始展示不化妆的时尚女性作为美丽模特\"过度推断，原文说展示身材不符合理想标准的女性以及素颜网红，但并非将其作为beauty models呈现。",
+    "tip": "选项需完整反映原文核心论点，只述部分事实的选项往往是干扰项。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Today, however, the Instagram face has become the new beauty ideal.",
+    "why": "原文第四段明确指出\"然而如今，Instagram脸已经成为新的审美理想\"。A选项\"It is now regarded as the new beauty ideal\"是对原文\"has become the new beauty ideal\"的直接同义转述，become对应regarded as，完全一致。",
+    "traps": "B项\"大多数女性在2050年会追求它\"混淆信息，2050年出现在上一段描述赛博格外观的语境中，与Instagram脸无关；C项\"它在社交媒体上被广泛讨论\"属于无中生有，原文没有提及被广泛讨论；D项\"它是终极美丽的完美例证\"过度引申，原文只说它是新的审美理想，并非\"终极美丽的完美例证\"。",
+    "tip": "定位关键词后直接匹配原文表述，避免被其他段落信息干扰。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "One of the significant consequences of obsessive filtering is the emerging tendency to treat oneself as an object to be observed and valued, in the same way another person observes and judges from the side.",
+    "why": "原文第七段明确指出过度滤镜的一个重要后果是\"出现一种将自己视为被观察和评价的对象的倾向\"。C选项\"将自己的身体视为被观察和评判的对象的倾向\"是对原文的精确同义改写，treat oneself as an object to be observed and valued对应regard one's body as an object of observation and judgment。",
+    "traps": "A项\"很多女性努力达到不可能的完美水平\"虽然文中有相关信息，但这不是obsessive filtering的直接后果，而是整体社交媒体影响的结果；B项\"将社交网络上的游戏转化为自身优势的冲动\"属无中生有，原文未提及此含义；D项\"越来越多女性在上传前修图\"描述的是调查结果现象，而非过度滤镜导致的后果，混淆了原因与结果。",
+    "tip": "题目问的是\"后果\"，需区分现象描述和因果关系，避免混淆。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "the only thing that can fix it is not cosmetic intervention, but mental health care.",
+    "why": "文章末段总结指出，人们对外貌的痴迷已达前所未有的高峰，社交媒体催生了追求不可能审美理想的冲动，唯一能解决的不是整容手术（cosmetic intervention），而是心理健康护理（mental health care）。B选项\"应引入心理干预来缓解它\"准确对应mental health care，psychological intervention是对mental health care的同义替换。",
+    "traps": "A项\"整容手术应让大众更容易获得\"与原文观点完全相反，原文明确否定了整容手术的作用；C项\"他们花在社交媒体上的时间应被严格控制\"虽然文中提到社交媒体时间问题，但作者的解决方案是心理健康护理而非限制时间；D项\"应仔细审视和分析其根本原因\"属于合理但无据推断，原文未强调需要分析根本原因。",
+    "tip": "结尾段的not...but...结构是强烈的观点标志，重点在but之后。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dictate",
+    "cn": "v. 强行规定，支配"
+   },
+   {
+    "w": "conform",
+    "cn": "v. 遵从，顺应"
+   },
+   {
+    "w": "exert",
+    "cn": "v. 施加（压力、影响等）"
+   },
+   {
+    "w": "internalization",
+    "cn": "n. 内化，内在化"
+   },
+   {
+    "w": "gamified",
+    "cn": "adj. 游戏化的"
+   },
+   {
+    "w": "obsessive",
+    "cn": "adj. 过度的，痴迷的"
+   },
+   {
+    "w": "unprecedented",
+    "cn": "adj. 前所未有的，空前的"
+   },
+   {
+    "w": "legitimate",
+    "cn": "adj. 合理的，正当的"
+   },
+   {
+    "w": "bizarre",
+    "cn": "adj. 奇特的，古怪的"
+   },
+   {
+    "w": "cosmetic",
+    "cn": "adj. 美容的，整容的；n. 化妆品"
+   },
+   {
+    "w": "amiable",
+    "cn": "adj. 友好的，和蔼可亲的"
+   },
+   {
+    "w": "usher",
+    "cn": "v. 引领，开创"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "One of the significant consequences of obsessive filtering is the emerging tendency to treat oneself as an object to be observed and valued, in the same way another person observes and judges from the side.",
+    "cn": "过度使用滤镜的一个重要后果是，一种将自己视为被观察和评价的对象的倾向正在出现，就像另一个人从旁观者角度观察和评判一样。",
+    "note": "主干为One of the consequences is the tendency；to treat...为tendency的后置定语不定式；in the same way引导方式状语从句，补充说明自我物化的具体方式。"
+   },
+   {
+    "en": "The time spent on social media creates an urge to achieve an impossible beauty ideal so powerful that the only thing that can fix it is not cosmetic intervention, but mental health care.",
+    "cn": "花在社交媒体上的时间产生了一种追求不可能的审美理想的冲动，这种冲动如此强烈，以至于唯一能解决它的不是整容手术，而是心理健康护理。",
+    "note": "主干为The time creates an urge；spent on social media为过去分词作后置定语修饰time；so powerful that...构成so...that...结果状语从句；not...but...为并列否定结构，强调but后的重点。"
+   },
+   {
+    "en": "The internalization of accepted beauty norms is much more effective when there is active involvement in the learning process.",
+    "cn": "当学习过程中存在积极参与时，被接受的审美规范的内化会更加有效。",
+    "note": "主干为The internalization is more effective；of accepted beauty norms为介词短语作后置定语；when引导时间状语从句说明条件。"
+   }
+  ]
+ }
+}

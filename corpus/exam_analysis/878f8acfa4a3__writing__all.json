@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "878f8acfa4a3__writing__all",
+ "examId": "878f8acfa4a3",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2020 年 7 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:28:52.137Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 73301,
+ "usage": {
+  "prompt_tokens": 697,
+  "completion_tokens": 6381,
+  "total_tokens": 7078,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 697,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 6381,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 697,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "名言警句类议论文写作。要求围绕\"The best preparation for tomorrow is doing your best today.\"展开论述，字数150-200词。",
+    "outline": [
+     "引出名言并点明其核心含义：把握当下、全力以赴即是对未来最好的准备。",
+     "分层论证：①今日的全力付出为明天奠定基础，辅以事例；②今日努力能培养自律与韧性等关键品质。适当加入让步段增强论证深度。",
+     "总结全文、升华主题：呼吁将精力投入当下，以今日之最佳表现迎接明日之挑战。"
+    ],
+    "sample": "\"The best preparation for tomorrow is doing your best today.\" This thought-provoking saying highlights the connection between present effort and future success. In my view, it conveys a timeless truth worthy of our serious reflection.\n\nTo begin with, focusing on today's tasks with full dedication lays a solid foundation for what lies ahead. History is replete with examples of individuals who achieved greatness through sustained daily effort rather than overnight miracles. Thomas Edison, for instance, conducted thousands of experiments before finally inventing the light bulb. Furthermore, doing our best today cultivates discipline and resilience, which are indispensable qualities for navigating future challenges. Those who consistently give their utmost effort develop a habit of excellence that naturally prepares them for whatever tomorrow may bring.\n\nAdmittedly, some argue that long-term planning matters more than daily effort. However, even the most elaborate plans remain hollow without concrete action. A grand vision without diligent execution is nothing but a castle in the air.\n\nIn conclusion, rather than worrying about an uncertain future, we should channel our energy into making the most of today. Only by doing our best now can we truly prepare for a brighter tomorrow.",
+    "phrases": [
+     {
+      "en": "thought-provoking",
+      "cn": "发人深省的；用于修饰saying/remark等，替代meaningful更高级"
+     },
+     {
+      "en": "lay a solid foundation for",
+      "cn": "为……奠定坚实基础；常用于论证因果关系"
+     },
+     {
+      "en": "be replete with",
+      "cn": "充满、富有；替代be full of或there are many，更书面"
+     },
+     {
+      "en": "cultivate discipline and resilience",
+      "cn": "培养自律与韧性；体现抽象品质论证，适合议论文"
+     },
+     {
+      "en": "indispensable qualities",
+      "cn": "不可或缺的品质；indispensable比necessary更正式"
+     },
+     {
+      "en": "give one's utmost effort",
+      "cn": "竭尽全力；替代try one's best，表达更地道"
+     },
+     {
+      "en": "a castle in the air",
+      "cn": "空中楼阁；英语习语，用于批驳空想而无行动"
+     },
+     {
+      "en": "channel one's energy into",
+      "cn": "将精力投入到……；比spend energy on更生动"
+     },
+     {
+      "en": "a habit of excellence",
+      "cn": "追求卓越的习惯；高分名词短语，概括力强"
+     },
+     {
+      "en": "Only by doing ... can we ...",
+      "cn": "只有通过……我们才能……；only引导的倒装句，适合结尾升华"
+     }
+    ],
+    "pitfalls": [
+     "通篇空谈道理而无具体事例，论证缺乏说服力",
+     "段落之间缺少过渡词，文章逻辑不连贯",
+     "反复使用important、good等基础词，词汇单一扣分",
+     "只从正面论证，缺少让步段，议论显得片面",
+     "未控制字数，低于150词或超过200词均不符合要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "We should try our best today.",
+      "better": "We should channel our energy into making the most of today.",
+      "note": "动词channel更生动具体，搭配make the most of更地道"
+     },
+     {
+      "plain": "There are many examples in history.",
+      "better": "History is replete with examples of individuals who achieved greatness through sustained daily effort.",
+      "note": "主语换为History，用be replete with替代there be，避免平铺直叙"
+     },
+     {
+      "plain": "Plans are useless without action.",
+      "better": "A grand vision without diligent execution is nothing but a castle in the air.",
+      "note": "运用习语castle in the air增添修辞色彩，表达更具画面感"
+     },
+     {
+      "plain": "This saying is very meaningful.",
+      "better": "This thought-provoking saying highlights the connection between present effort and future success.",
+      "note": "用thought-provoking替代meaningful，再以highlight具体化\"意义\"所在"
+     },
+     {
+      "plain": "If we work hard today, we can succeed tomorrow.",
+      "better": "Those who consistently give their utmost effort develop a habit of excellence that naturally prepares them for whatever tomorrow may bring.",
+      "note": "用定语从句和抽象名词短语提升句式复杂度与学术感"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "History is replete with examples of individuals who achieved greatness through sustained daily effort rather than overnight miracles. — 历史上不乏通过持之以恒的日常努力而非一夜奇迹取得伟大成就的人。（replete with高级替换+对比结构）",
+   "Doing our best today cultivates discipline and resilience, which are indispensable qualities for navigating future challenges. — 今天全力以赴能培养自律和韧性，这是应对未来挑战不可或缺的品质。（非限制性定语从句+高级形容词）",
+   "A grand vision without diligent execution is nothing but a castle in the air. — 宏大的愿景若没有勤勉的执行，不过是空中楼阁。（英语习语+简洁有力的短句）",
+   "Only by doing our best now can we truly prepare for a brighter tomorrow. — 只有现在竭尽全力，我们才能真正为更美好的明天做好准备。（Only引导的倒装句，适合结尾点题升华）"
+  ]
+ }
+}

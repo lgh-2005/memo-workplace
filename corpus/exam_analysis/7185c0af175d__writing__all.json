@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "7185c0af175d__writing__all",
+ "examId": "7185c0af175d",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2024 年 12 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:53:37.624Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 46598,
+ "usage": {
+  "prompt_tokens": 738,
+  "completion_tokens": 3165,
+  "total_tokens": 3903,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 738,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3165,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 738,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕\"设定切实目标并坚持不懈地为之努力可提高成功概率\"展开论述，可评论、举例或结合个人经历，字数150-200词。",
+    "outline": [
+     "引用题目首句，引出论点：切实目标与坚持是通向成功的基石。",
+     "分两层展开论证：第一层阐述设定切实目标的重要性并举例；第二层强调持之以恒的精神并用名人事例佐证。",
+     "总结全文，将目标设定与坚持不懈结合，升华主题。"
+    ],
+    "sample": "To increase the likelihood of success, one should set realistic goals and work persistently towards them. This principle, though seemingly straightforward, serves as the cornerstone of virtually every remarkable achievement in human history.\n\nSetting realistic goals is the first crucial step. When objectives are attainable yet challenging, individuals maintain a healthy sense of motivation without being overwhelmed by unrealistic expectations. For instance, a college student aspiring to master a foreign language might begin by committing to learning ten new words daily rather than attempting to read an entire novel in one sitting. Such incremental targets build confidence and create a sustainable path forward.\n\nEqually important is the quality of persistence. Obstacles and setbacks are inevitable in any worthwhile pursuit, but those who persevere ultimately distinguish themselves from those who surrender prematurely. Thomas Edison, who conducted thousands of failed experiments before inventing the light bulb, exemplified this spirit perfectly.\n\nIn conclusion, by combining pragmatic goal-setting with unwavering determination, we equip ourselves with the most reliable formula for turning aspirations into tangible accomplishments.",
+    "phrases": [
+     {
+      "en": "increase the likelihood of success",
+      "cn": "提高成功的可能性；likelihood 比 possibility 更正式，常与 increase/reduce 搭配"
+     },
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "充当……的基石；cornerstone 比 basis 更生动，适合用于议论文论点强调"
+     },
+     {
+      "en": "attainable yet challenging",
+      "cn": "可达成却又有挑战性的；yet 连接两个形容词形成对比，简练有力"
+     },
+     {
+      "en": "be overwhelmed by unrealistic expectations",
+      "cn": "被不切实际的期望压垮；overwhelm 强调心理上被压倒，搭配 by 引出原因"
+     },
+     {
+      "en": "incremental targets",
+      "cn": "循序渐进的小目标；incremental 体现逐步递增，学术写作常见高级词"
+     },
+     {
+      "en": "distinguish oneself from",
+      "cn": "使自己区别于……；distinguish A from B 为经典搭配，体现对比论证"
+     },
+     {
+      "en": "surrender prematurely",
+      "cn": "过早放弃；prematurely 比 too early 更书面，副词修饰动词提升表达档次"
+     },
+     {
+      "en": "unwavering determination",
+      "cn": "坚定不移的决心；unwavering 为高分形容词，比 strong 更具感染力"
+     },
+     {
+      "en": "turn aspirations into tangible accomplishments",
+      "cn": "将抱负转化为实实在在的成就；tangible 与 aspirations 形成虚实对比，收尾有力"
+     },
+     {
+      "en": "a sustainable path forward",
+      "cn": "一条可持续的前进道路；sustainable 体现目标的长期性，forward 增强方向感"
+     }
+    ],
+    "pitfalls": [
+     "忘记在文章开头抄写题目指定的首句，直接扣分",
+     "全文仅空谈道理缺乏具体事例，论证缺乏说服力",
+     "词数不足150或超过200，审题不仔细导致格式失分",
+     "段落之间缺乏过渡词衔接，行文逻辑松散",
+     "反复使用 important/very/good 等初级词汇，词汇单调影响档次"
+    ],
+    "upgrades": [
+     {
+      "plain": "Success is very important for everyone.",
+      "better": "Success, universally coveted yet elusive, demands both strategic planning and relentless effort.",
+      "note": "用同位语补充说明并列出条件，避免 very important 的口语化表达，信息量更大"
+     },
+     {
+      "plain": "We should not give up easily.",
+      "better": "Those who persevere ultimately distinguish themselves from those who surrender prematurely.",
+      "note": "用 those who 对比结构替代笼统建议，论证更具体，句式更高级"
+     },
+     {
+      "plain": "For example, Edison failed many times before he succeeded.",
+      "better": "Thomas Edison, who conducted thousands of failed experiments before inventing the light bulb, exemplified this spirit perfectly.",
+      "note": "用非限制性定语从句嵌入细节，主句聚焦评价，一句话兼顾叙述与论证"
+     },
+     {
+      "plain": "In a word, setting goals and working hard are important.",
+      "better": "By combining pragmatic goal-setting with unwavering determination, we equip ourselves with the most reliable formula for turning aspirations into tangible accomplishments.",
+      "note": "用介词短语作状语开头，动宾搭配更精确，结尾升华而非简单重复"
+     },
+     {
+      "plain": "Realistic goals can help us succeed.",
+      "better": "When objectives are attainable yet challenging, individuals maintain a healthy sense of motivation without being overwhelmed by unrealistic expectations.",
+      "note": "用状语从句展开因果逻辑，yet 形成内部对比，without 结构补充反面论证"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "This principle, though seemingly straightforward, serves as the cornerstone of virtually every remarkable achievement in human history. 这一原则虽看似简单，却是人类历史上几乎每一项卓越成就的基石。（插入语+serve as 句型，开篇点题大气）",
+   "When objectives are attainable yet challenging, individuals maintain a healthy sense of motivation without being overwhelmed by unrealistic expectations. 当目标既可实现又具挑战性时，人们能保持健康的动力感而不会被不切实际的期望压垮。（条件状语从句+without 反面补充，逻辑严密）",
+   "Those who persevere ultimately distinguish themselves from those who surrender prematurely. 那些坚持到底的人最终会将自己与半途而废者区分开来。（those who 平行对比，节奏感强，适合论证段核心句）",
+   "By combining pragmatic goal-setting with unwavering determination, we equip ourselves with the most reliable formula for turning aspirations into tangible accomplishments. 将务实的目标设定与坚定不移的决心相结合，我们便拥有了将抱负转化为切实成就的最可靠法则。（介词短语前置+equip sb. with 搭配，结尾掷地有声）"
+  ]
+ }
+}

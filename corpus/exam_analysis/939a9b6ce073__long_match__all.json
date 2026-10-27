@@ -1,0 +1,243 @@
+{
+ "schemaVersion": 1,
+ "id": "939a9b6ce073__long_match__all",
+ "examId": "939a9b6ce073",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2020 年 9 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:29:52.657Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 36974,
+ "usage": {
+  "prompt_tokens": 982,
+  "completion_tokens": 1947,
+  "total_tokens": 2929,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 982,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1947,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 982,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "双语教育的研究与实践",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如bilingual、dual-language、monolingual等",
+   "利用专有名词、数字、年份、极端表达等独特信号词快速定位段落",
+   "注意同义替换：如bilingual from birth=early bilingual、significantly better=outperform等",
+   "按照段落顺序扫读原文，逐段与10条陈述句比对核心语义",
+   "优先匹配含有具体细节（研究结论、时间、地点）的陈述句，再处理泛化表述"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "H",
+    "cn": "一项研究发现，从出生起就使用双语的人与后来才开始学习第二语言的人，在大脑结构变化方面存在相似性。",
+    "keywords": [
+     "brain structure",
+     "bilingual from birth",
+     "second language later",
+     "similar changes"
+    ],
+    "paraphrase": "陈述句中的 similar changes in brain structure 可能对应原文中关于大脑可塑性或结构对比的描述；bilingual from birth 与 start learning later 形成对比，原文可能用 early bilinguals 与 late learners 等近义表达。",
+    "tip": "定位 brain structure 和 bilingual from birth 这两个核心细节即可快速锁定H段。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "与传统的单语教学项目不同，双语课堂旨在培养学生到中学时能够使用两种语言的能力。",
+    "keywords": [
+     "monolingual programs",
+     "bilingual classrooms",
+     "two languages",
+     "middle school"
+    ],
+    "paraphrase": "unlike traditional monolingual programs 是对比信号，原文可能用 in contrast to / different from 等引出；aim at developing 可能被替换为 goal is to / designed to develop。",
+    "tip": "抓住 monolingual 与 bilingual 的对比以及 middle school 这一时间节点进行定位。"
+   },
+   {
+    "number": 38,
+    "answer": "J",
+    "cn": "一项研究表明，双语教学项目的学生在英语阅读方面的表现明显优于同龄人。",
+    "keywords": [
+     "dual-language students",
+     "significantly better",
+     "reading English texts"
+    ],
+    "paraphrase": "did significantly better 可能在原文中表述为 outperformed / scored higher；peers 可能被替换为 counterparts 或 students in other programs。",
+    "tip": "定位 dual-language students 和 reading + significantly 等程度副词，快速匹配J段。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "大约二十年前，双语教学实践受到强烈抵制，尤其是在加利福尼亚州。",
+    "keywords": [
+     "twenty years ago",
+     "discouraged",
+     "California"
+    ],
+    "paraphrase": "strongly discouraged 可能对应原文中的 banned / opposed / restricted 等负面动词；California 作为地名是极强的定位信号，原文可能提及相关立法（如Proposition 227）。",
+    "tip": "California 和 twenty years ago 是独特地理与时间标记，可一步定位D段。"
+   },
+   {
+    "number": 40,
+    "answer": "M",
+    "cn": "研究发现，在族裔和经济构成均衡的双语课堂中，孩子们更容易适应社会和文化的多样性。",
+    "keywords": [
+     "ethnically",
+     "economically balanced",
+     "social and cultural diversity"
+    ],
+    "paraphrase": "ethnically and economically balanced 可能在原文中表述为 diverse in race and income / mixed demographics；get used to 可能对应 adapt to / become accustomed to。",
+    "tip": "ethnically、economically balanced 等修饰语较为独特，扫读时重点关注描述课堂多样性的段落。"
+   },
+   {
+    "number": 41,
+    "answer": "E",
+    "cn": "研究人员现在声称，早期关于双语教育的研究存在严重缺陷。",
+    "keywords": [
+     "earlier research",
+     "bilingual education",
+     "seriously flawed"
+    ],
+    "paraphrase": "seriously flawed 可能在原文中用 methodologically problematic / had significant limitations / poorly designed 等来表达；earlier research 可能对应 previous studies / past work。",
+    "tip": "flawed 是核心判断词，定位时关注对旧研究进行批评或质疑的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "B",
+    "cn": "一位研究人员表示，双语经历对人的大脑产生终身影响。",
+    "keywords": [
+     "dual-language experiences",
+     "lifelong influence",
+     "brain"
+    ],
+    "paraphrase": "lifelong influence 可能对应原文中的 lasting impact / permanent effect / shapes the brain throughout life；exert influence on 可能被简化为 affect / shape / change。",
+    "tip": "lifelong 和 brain 的组合是核心定位线索，对应B段中研究者的观点表述。"
+   },
+   {
+    "number": 43,
+    "answer": "P",
+    "cn": "双语教育的倡导者认为，双语教育虽然效果可能有限，但仍然能产生积极影响。",
+    "keywords": [
+     "advocates",
+     "positive effects",
+     "limited"
+    ],
+    "paraphrase": "positive effects though limited 体现让步逻辑，原文可能用 modest but real benefits / advantages even if small 等表述；advocates 可能对应 supporters / proponents。",
+    "tip": "注意 though limited 这一让步语气，定位时寻找带有类似让步转折的段落。"
+   },
+   {
+    "number": 44,
+    "answer": "G",
+    "cn": "双语使用者在完成某些任务时往往比单语者表现更好，因为他们能更好地集中注意力。",
+    "keywords": [
+     "bilingual speakers",
+     "monolinguals",
+     "concentrate better",
+     "certain tasks"
+    ],
+    "paraphrase": "concentrate better 可能在原文中表述为 better focus / enhanced attention / superior executive control；do better than monolinguals 可能对应 outperform monolinguals。",
+    "tip": "concentrate / focus / attention 等注意力相关词汇是定位G段的关键。"
+   },
+   {
+    "number": 45,
+    "answer": "N",
+    "cn": "当使用母语时，家长能够更多地参与到孩子的教育中。",
+    "keywords": [
+     "native language",
+     "parents",
+     "more involved",
+     "children's education"
+    ],
+    "paraphrase": "native language 可能在原文中表述为 home language / first language / heritage language；more involved 可能对应 greater engagement / participate more actively。",
+    "tip": "parents 和 native language 的搭配具有较高辨识度，快速扫读涉及家长参与的段落。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "bilingual",
+    "cn": "adj. 双语的；n. 能说两种语言的人"
+   },
+   {
+    "w": "monolingual",
+    "cn": "adj. 单语的；n. 只说一种语言的人"
+   },
+   {
+    "w": "dual-language",
+    "cn": "adj. 双语的（常指双语教学项目）"
+   },
+   {
+    "w": "flawed",
+    "cn": "adj. 有缺陷的，有瑕疵的"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 释义，改述"
+   },
+   {
+    "w": "ethnically",
+    "cn": "adv. 在族裔方面，按民族划分地"
+   },
+   {
+    "w": "peers",
+    "cn": "n. 同龄人，同伴"
+   },
+   {
+    "w": "exert",
+    "cn": "v. 施加（影响、压力等）"
+   },
+   {
+    "w": "advocates",
+    "cn": "n. 倡导者，支持者"
+   },
+   {
+    "w": "diversity",
+    "cn": "n. 多样性，多元化"
+   }
+  ]
+ }
+}

@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "41935877cd0a__part_b__all",
+ "examId": "41935877cd0a",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2016 年考研英语真题",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:33:20.193Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32312,
+ "usage": {
+  "prompt_tokens": 1360,
+  "completion_tokens": 1769,
+  "total_tokens": 3129,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1360,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1769,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1360,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "职场形象升级的实用建议",
+  "type": "小标题匹配",
+  "strategy": [
+   "通读各段首尾句，提炼每段核心主旨",
+   "浏览七个选项，将选项关键词与段落主题词进行匹配",
+   "利用段落中的高频复现词和总结句确认对应关系",
+   "排除法处理干扰项，确保一一对应无冲突",
+   "回读检验标题能否概括全段内容，不可仅覆盖局部细节"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "C",
+    "why": "该段讨论形象升级的时机：transitions（转型期）、now may be a good time、If you're not sure 等都围绕\"何时做\"展开，与选项 C 'Decide if the time is right' 中的 time 和 right 完美呼应。段末 'Maybe there's no need for an upgrade and that's OK' 进一步印证核心是判断时机是否合适。",
+    "traps": "A 'Create a new image' 侧重\"创造新形象\"，而该段并未谈如何塑造形象，只谈是否该行动；B 'Have confidence' 在段中毫无体现。",
+    "tip": "定位关键句：now may be a good time 直指时机判断。"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "why": "段落首句 'Get clear on what impact you're hoping to have' 直接点明要明确目标。随后列举不同人的不同目标（be taken more seriously / more approachable / more modern），均围绕 goals 展开，与选项 F 'Know your goals' 高度吻合。",
+    "traps": "A 'Create a new image' 虽涉及形象，但该段重点不是创建形象，而是先弄清自己想要什么目标；选项与 A 的区别在于 F 强调认知目标，A 强调行动。",
+    "tip": "定位关键句：Get clear on what impact → 即 Know your goals。"
+   },
+   {
+    "number": 43,
+    "answer": "D",
+    "why": "该段要求像人类学家一样观察工作环境（like an anthropologist），关注 norms（规范）、status（地位）、cultural context（文化背景），全段核心是理解所处情境，与选项 D 'Understand the context' 中的 context 形成原词复现。",
+    "traps": "F 'Know your goals' 已用于42题；该段谈的不是目标，而是外部环境。A 'Create a new image' 与段落观察环境的主旨不符。",
+    "tip": "定位关键句：The better you understand the cultural context 原词复现 context。"
+   },
+   {
+    "number": 44,
+    "answer": "E",
+    "why": "该段首句 'Enlist the support of professionals' 开宗明义要借助专业人士，随后列举 personal stylist、hair stylist、professional photographer 等具体专业角色，与选项 E 'Work with professionals' 完全对应，professionals 为原词复现。",
+    "traps": "B 'Have confidence in yourself' 与借助他人帮助的主旨相反；A 'Create a new image' 虽有形象含义但未概括段落核心——强调专业协助。",
+    "tip": "定位关键词：professionals 在段首和选项中均出现。"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "why": "段落明确指出升级目的不是变得更虚荣，而是 'reduce decision fatigue'（减少决策疲劳），并建议 'Pick a standard work uniform' 和 'Buy all your clothes at once'，全部指向提高效率，与选项 G 'Make it efficient' 高度匹配。",
+    "traps": "A 'Create a new image' 关注\"创造\"，而本段关注\"简化流程\"；B 'Have confidence' 在段中没有任何语义线索。",
+    "tip": "定位关键句：reduce decision fatigue → 即 Make it efficient。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "competence",
+    "cn": "能力，胜任力（n.）"
+   },
+   {
+    "w": "trustworthiness",
+    "cn": "可信赖性（n.）"
+   },
+   {
+    "w": "likeability",
+    "cn": "讨人喜欢的程度，好感度（n.）"
+   },
+   {
+    "w": "fragmented",
+    "cn": "碎片化的，分裂的（adj.）"
+   },
+   {
+    "w": "convey",
+    "cn": "传达，表达（v.）"
+   },
+   {
+    "w": "magnified",
+    "cn": "被放大的（v./adj.）"
+   },
+   {
+    "w": "paradox",
+    "cn": "悖论，矛盾（n.）"
+   },
+   {
+    "w": "navigate",
+    "cn": "应对，驾驭（v.）"
+   },
+   {
+    "w": "pull off",
+    "cn": "成功做到，完成（phrasal v.）"
+   },
+   {
+    "w": "in a rut",
+    "cn": "陷入固定模式，一成不变（idiom）"
+   },
+   {
+    "w": "pivot",
+    "cn": "转变，调整方向（v.）"
+   },
+   {
+    "w": "anthropologist",
+    "cn": "人类学家（n.）"
+   },
+   {
+    "w": "enlist",
+    "cn": "争取，获得（支持）（v.）"
+   },
+   {
+    "w": "vain",
+    "cn": "虚荣的，自负的（adj.）"
+   },
+   {
+    "w": "fussing over",
+    "cn": "为……过分操心（phrasal v.）"
+   },
+   {
+    "w": "decision fatigue",
+    "cn": "决策疲劳（n.）"
+   },
+   {
+    "w": "go-to",
+    "cn": "首选的，常用的（adj.）"
+   }
+  ]
+ }
+}

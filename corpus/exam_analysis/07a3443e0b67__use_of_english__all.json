@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "07a3443e0b67__use_of_english__all",
+ "examId": "07a3443e0b67",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2018 年考研英语真题",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:36:47.047Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 95064,
+ "usage": {
+  "prompt_tokens": 1769,
+  "completion_tokens": 5917,
+  "total_tokens": 7686,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1769,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5917,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1769,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "信任的神经机制与儿童识别欺骗的能力",
+  "gist": "文章先指出信任既必要又有风险，接着从神经科学角度解释人们信任他人的原因——催产素带来的愉悦感和群居本能；随后介绍一项加拿大研究，证明幼儿能区分可信与不诚实的人，并据此决定是否与之合作，说明人类天生具备识别欺骗的第六感。",
+  "difficulty": "中等",
+  "translation": "信任是一件棘手的事情。一方面，它是许多有价值之事的必要条件：如儿童看护、友谊等。另一方面，把你的信任放错了地方往往要付出高昂的代价。\n\n那么，我们为什么还要信任呢？因为信任让人感觉很好。当人们将信任寄托于某个人或某个机构时，他们的大脑会释放催产素——一种能产生愉悦感并触发群居本能的激素，这种本能促使人们彼此建立联系。科学家发现，接触这种激素会使我们处于信任的情绪之中：在一项瑞士研究中，研究人员将催产素喷入一半受试者的鼻中；这些受试者愿意借给陌生人的金额明显高于吸入了其他物质的对照组。\n\n幸运的是，我们还拥有一种识别不诚实行为的第六感，它可以保护我们。一项加拿大研究发现，年仅14个月大的儿童就能区分可信赖的人和不诚实的人。六十名幼儿分别被引见给一位手持塑料容器的成年测试者。测试者会问\"这里面有什么？\"然后往容器里看，微笑着惊呼道：\"哇！\"随后每位受试者都被邀请往里面看。其中一半发现了一个玩具；另一半则发现容器是空的——并意识到测试者愚弄了他们。\n\n在那些没有被欺骗的儿童中，大多数愿意与测试者合作学习一项新技能，表明他们信任他的引导。相比之下，与那位\"不可靠的\"测试者配对的30名儿童中，只有5人参加了后续活动。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "C",
+    "correct": "for",
+    "why": "固定搭配 a necessary condition for sth.，意为\"……的必要条件\"。介词 for 表示\"对于……而言\"，与 condition 构成常见学术搭配，上下文列举了 child care、friendships 等信任的适用对象，语义通顺。",
+    "traps": "A) on：condition on 不构成常见搭配；B) like：语法上 like 作介词表\"像\"，语义不合；D) from：condition from 不构成\"……的条件\"之意，搭配错误。",
+    "tip": "考查名词+介词固定搭配：condition for。"
+   },
+   {
+    "number": 2,
+    "answer": "A",
+    "correct": "faith",
+    "why": "put one's faith in 是固定短语，意为\"将信任寄托于\"，与前文 trust 形成语义呼应。上下文讨论\"信错了人\"，faith（信任、信念）完美契合语境。",
+    "traps": "B) concern（关切）不能与 put...in 搭配表达信任之意；C) attention（注意力）语义偏离；D) interest（兴趣/利益）与\"信任放错地方导致代价高昂\"的逻辑不匹配。",
+    "tip": "考查固定短语 put one's faith in sb./sth.。"
+   },
+   {
+    "number": 3,
+    "answer": "D",
+    "correct": "price",
+    "why": "carry a high price 意为\"付出高昂的代价\"，与前文 putting your faith in the wrong place（信错人）构成因果逻辑。price 在此为比喻义，指\"代价\"。",
+    "traps": "A) benefit（好处）与 high 搭配语义矛盾，前文 on the other hand 转折暗示负面结果；B) debt（债务）不与 carry a high 搭配；C) hope（希望）语义不通。",
+    "tip": "考查语境逻辑：转折后应为负面含义，price 指代价。"
+   },
+   {
+    "number": 4,
+    "answer": "B",
+    "correct": "Then",
+    "why": "Then 在此用作话语标记词，引出一个自然推进的疑问\"那么，我们为什么还要信任？\"承接上文\"信任有风险\"的论述，过渡到对信任原因的解释，语气顺畅。",
+    "traps": "A) Therefore（因此）表因果总结，但后面紧跟的是疑问句而非结论；C) Instead（相反）表替代或转折，逻辑不符；D) Again（再者/又）无法自然引出设问。",
+    "tip": "考查语篇衔接：Then 引出设问，推动论证。"
+   },
+   {
+    "number": 5,
+    "answer": "D",
+    "correct": "When",
+    "why": "When 引导时间/条件状语从句，表示\"当人们将信任寄托于……时\"，与主句\"大脑释放催产素\"构成时间对应关系，逻辑通顺。",
+    "traps": "A) Until（直到）表时间终点，与后文\"大脑释放激素\"的即时反应不符；B) Unless（除非）表否定条件，逻辑相反；C) Although（虽然）表让步，与上下文因果关系不匹配。",
+    "tip": "考查时间状语从句引导词，When 表伴随条件。"
+   },
+   {
+    "number": 6,
+    "answer": "B",
+    "correct": "produces",
+    "why": "produces pleasurable feelings 意为\"产生愉悦感\"，准确描述催产素的生理功能。主语是 hormone（激素），produce 表\"产生、引发\"某种生理反应，搭配合理。",
+    "traps": "A) selects（选择）激素不能\"选择\"感受；C) applies（应用）语义不通；D) maintains（维持）虽语义可能，但此处重点是\"产生\"而非\"维持\"，且与后文 triggers 并列，强调的是触发作用。",
+    "tip": "考查动宾搭配：produce feelings（产生感受）。"
+   },
+   {
+    "number": 7,
+    "answer": "C",
+    "correct": "connect",
+    "why": "connect with one another 意为\"彼此建立联系\"，与前文 herding instinct（群居本能）语义一致：群居本能促使人与人之间产生联结。",
+    "traps": "A) consult（咨询）语义过窄，不能概括群居本能的作用；B) compete（竞争）与群居本能的合作含义相悖；D) compare（比较）与 herding instinct 语义无关。",
+    "tip": "考查语义逻辑：群居本能→彼此联结 connect。"
+   },
+   {
+    "number": 8,
+    "answer": "D",
+    "correct": "to",
+    "why": "exposure to 是固定搭配，意为\"接触、暴露于\"。此处表示\"接触催产素\"，to 为介词引出接触的对象。",
+    "traps": "A) at：exposure at 不是标准搭配；B) by：exposure by 语法错误；C) of：exposure of 表示\"暴露出某物\"，语义方向相反。",
+    "tip": "考查固定搭配 exposure to sth.（接触某物）。"
+   },
+   {
+    "number": 9,
+    "answer": "B",
+    "correct": "mood",
+    "why": "a trusting mood 意为\"信任的情绪/心境\"，表明接触催产素后人会进入一种倾向信任的心理状态。后文瑞士实验中受试者更愿意借钱给陌生人，印证了这种\"心境\"。",
+    "traps": "A) context（语境/背景）不能被 trusting 修饰来描述心理状态；C) period（时期）是时间概念，与心理状态无关；D) circle（圈子）指社交范围，语义偏离。",
+    "tip": "考查名词辨析：mood 指情绪/心境，符合心理状态描写。"
+   },
+   {
+    "number": 10,
+    "answer": "A",
+    "correct": "counterparts",
+    "why": "counterparts 意为\"对应的人、对照组\"，指实验中未喷催产素的另一半受试者。前文将受试者分为两半，sprayed 组与 counterparts 形成实验中的对照关系。",
+    "traps": "B) substitutes（替代者）暗示替换关系，不符实验分组逻辑；C) colleagues（同事）过于具体，受试者之间未必是同事关系；D) supporters（支持者）语义无关。",
+    "tip": "考查实验语境中的词汇：counterparts 指对照组。"
+   },
+   {
+    "number": 11,
+    "answer": "B",
+    "correct": "Lucky",
+    "why": "Lucky for us 意为\"对我们来说幸运的是\"，引出人类天生拥有识别欺骗的第六感这一积极信息，与上文\"信任有风险\"形成补充，语气正面。",
+    "traps": "A) Funny（有趣的是）语气过于轻松，不符学术语境；C) Odd（奇怪的是）暗示反常，但拥有第六感是好事；D) Ironic（讽刺的是）暗示矛盾，此处无讽刺意味。",
+    "tip": "考查语篇情感色彩：Lucky 引出正面补充信息。"
+   },
+   {
+    "number": 12,
+    "answer": "B",
+    "correct": "protect",
+    "why": "protect us 意为\"保护我们\"，与 a sixth sense for dishonesty（对不诚实的第六感）搭配，说明这种直觉能帮我们免受欺骗之害，与上段\"信任有风险\"形成呼应。",
+    "traps": "A) monitor（监控）语义过弱，不能体现\"防范\"之意；C) surprise（使惊讶）语义不合逻辑；D) delight（使愉悦）与\"识别不诚实\"的语境不搭。",
+    "tip": "考查语义逻辑：识别欺骗的第六感→保护我们。"
+   },
+   {
+    "number": 13,
+    "answer": "A",
+    "correct": "between",
+    "why": "differentiate between A and B 是固定搭配，意为\"区分A与B\"。此处指儿童能区分可信的人和不诚实的人。",
+    "traps": "B) within（在……内部）不与 differentiate 搭配；C) toward（朝向）语义不合；D) over（在……上方）不构成辨别的搭配。",
+    "tip": "考查固定搭配 differentiate between A and B。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "introduced",
+    "why": "be introduced to 意为\"被引见给……\"，描述实验流程中幼儿与测试者初次见面的过程。introduced 既符合实验操作的正式语境，也合乎逻辑。",
+    "traps": "A) transferred（转移）暗示从一处转到另一处，不描述人际介绍；B) added（添加）语义生硬；D) entrusted（委托）语义不当，幼儿不能被\"委托\"给测试者完成实验。",
+    "tip": "考查被动搭配 be introduced to sb.（被引见给）。"
+   },
+   {
+    "number": 15,
+    "answer": "D",
+    "correct": "inside",
+    "why": "look inside 意为\"往里面看\"，与上文测试者往容器里看并惊呼\"Wow\"的动作一致，受试幼儿被邀请重复同样的动作——看容器里面有什么。",
+    "traps": "A) out（向外看）方向相反；B) back（回头看）不符实验动作；C) around（环顾四周）与查看容器内部的动作不符。",
+    "tip": "考查语境动作还原：测试者看容器里面→邀请幼儿也往里看。"
+   },
+   {
+    "number": 16,
+    "answer": "A",
+    "correct": "discovered",
+    "why": "discovered 意为\"发现\"，表示另一半幼儿打开容器后发现是空的，强调认知上的意外发现。与前半句 found a toy 形成对照。",
+    "traps": "B) proved（证明）需要逻辑论证过程，不适用于幼儿的直觉发现；C) insisted（坚持）语义不通；D) remembered（记住）前文无提及此事，无记忆基础。",
+    "tip": "考查近义动词辨析：discovered 强调意外发现事实。"
+   },
+   {
+    "number": 17,
+    "answer": "C",
+    "correct": "fooled",
+    "why": "fooled them 意为\"愚弄了他们\"，测试者对着空容器微笑惊呼是一种欺骗行为。fool 语气适中，指善意或简单的欺骗，符合对幼儿实验的描述。",
+    "traps": "A) betrayed（背叛）语气过重，暗示严重的信任背叛；B) wronged（冤枉）指使人蒙受不公，语义不符；D) mocked（嘲笑）指嘲弄，含恶意，不符实验情境。",
+    "tip": "考查动词语义程度：fool 指哄骗，语气适合实验情境。"
+   },
+   {
+    "number": 18,
+    "answer": "B",
+    "correct": "willing",
+    "why": "be willing to 意为\"愿意……\"，未被欺骗的儿童主动愿意配合测试者学习新技能，体现了信任。与后文 demonstrating that they trusted his leadership 相呼应。",
+    "traps": "A) forced（被迫）与自愿信任的语义相悖；C) hesitant（犹豫的）与大多数（majority）积极配合的语境矛盾；D) entitled（有资格的）强调权利而非意愿。",
+    "tip": "考查语义呼应：willing 与后文 trusted 相互印证。"
+   },
+   {
+    "number": 19,
+    "answer": "A",
+    "correct": "In contrast",
+    "why": "In contrast 意为\"相比之下\"，将未被欺骗组（大多数愿意合作）与被欺骗组（30人中仅5人参与）进行对比，突出信任被破坏后的行为差异。",
+    "traps": "B) As a result（结果）表因果，但此句并非上句的直接结果，而是另一组的对照数据；C) On the whole（总体而言）表总结，此处是分组对比而非总结；D) For instance（例如）表举例，但此处并非对上句的举例说明。",
+    "tip": "考查逻辑连接词：In contrast 引出对照组数据。"
+   },
+   {
+    "number": 20,
+    "answer": "C",
+    "correct": "unreliable",
+    "why": "unreliable 意为\"不可靠的\"，指那位用空容器欺骗幼儿的测试者。此词精确概括了测试者\"欺骗→不可信\"的特征，与全文 trust/dishonesty 主题呼应，且加了引号表示实验中对该角色的标签化称呼。",
+    "traps": "A) inflexible（不灵活的）描述性格特征，与诚信无关；B) incapable（无能的）指能力不足，不涉及诚信问题；D) unsuitable（不合适的）过于笼统，未突出\"不诚实→不可靠\"的核心含义。",
+    "tip": "考查词义辨析：unreliable 对应全文 dishonesty 主线。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "tricky",
+    "cn": "adj. 棘手的，难以处理的"
+   },
+   {
+    "w": "oxytocin",
+    "cn": "n. 催产素"
+   },
+   {
+    "w": "hormone",
+    "cn": "n. 荷尔蒙，激素"
+   },
+   {
+    "w": "herding instinct",
+    "cn": "n. 群居本能"
+   },
+   {
+    "w": "trigger",
+    "cn": "v. 触发，引发"
+   },
+   {
+    "w": "inhale",
+    "cn": "v. 吸入"
+   },
+   {
+    "w": "differentiate",
+    "cn": "v. 区分，辨别"
+   },
+   {
+    "w": "credible",
+    "cn": "adj. 可信的，可靠的"
+   },
+   {
+    "w": "toddler",
+    "cn": "n. 幼儿，学步儿童"
+   },
+   {
+    "w": "exclaim",
+    "cn": "v. 惊呼，大声说"
+   },
+   {
+    "w": "follow-up",
+    "cn": "adj. 后续的，跟进的"
+   },
+   {
+    "w": "demonstrate",
+    "cn": "v. 证明，表明"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "On the one hand... On the other hand",
+    "role": "引出信任的两面性，构成对比论证框架"
+   },
+   {
+    "w": "Then",
+    "role": "引出设问，从风险话题过渡到信任原因的讨论"
+   },
+   {
+    "w": "Lucky for us",
+    "role": "话题转换，从信任机制转向人类自我保护能力"
+   },
+   {
+    "w": "In contrast",
+    "role": "对比两组儿童的行为差异，突出欺骗对信任的破坏"
+   },
+   {
+    "w": "When",
+    "role": "引导时间/条件从句，说明信任行为的触发条件"
+   }
+  ]
+ }
+}

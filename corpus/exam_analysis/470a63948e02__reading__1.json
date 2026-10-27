@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "470a63948e02__reading__1",
+ "examId": "470a63948e02",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 6 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:47:07.576Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59994,
+ "usage": {
+  "prompt_tokens": 1823,
+  "completion_tokens": 3678,
+  "total_tokens": 5501,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1823,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3678,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1823,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 47 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "人工智能正在重塑人类本质",
+  "gist": "文章探讨人工智能对人类的深层影响。AI不仅带来失业等表层问题，更在根本上改变人类做出道德判断的能力。算法在职场决策和文化消费中替代人类判断，使人们丧失锻炼实践判断力的机会，选择空间被压缩，生活变得可预测，人类正在失去不可预测性这一重要特质。",
+  "structure": [
+   "第1-2段：引出主题，AI正深层改变人类及其判断能力",
+   "第3-4段：论证AI替代人类判断，削弱实践判断力",
+   "第5-6段：推荐引擎限制选择，以过去约束未来",
+   "第7-8段：算法预测日益精准，生活趋于可预测",
+   "第9段：总结警示，不可预测性的丧失意味着人类本质改变"
+  ],
+  "difficulty": "中等",
+  "translation": "技术从来都不是实现人类目的的中性工具。当人们利用技术创新来控制环境时，技术创新也在重塑人类自身。例如，人工智能正在改变人类。\n\n虽然\"人工智能\"这一术语会让人联想到对杀手机器人或灾难性失业的焦虑，但还有其他更深层的含义。随着人工智能日益塑造人类体验，这如何改变了\"作为人类\"的意义？问题的核心在于一个人做出选择的能力，尤其是具有道德含义的判断。\n\n亚里士多德认为，做出实践判断的能力取决于经常性地做出判断——依靠习惯和练习。我们认为，机器在各种日常场景中作为替代判断者的出现，对人们学习如何有效地自行做出判断构成了潜在威胁。\n\n在职场中，管理者日常要做出关于雇用或解雇谁、批准哪笔贷款等决策。这些正是算法指令正在取代人类判断的领域，因此那些本可以在这些领域发展实践判断力的人将不再有此机会。\n\n推荐引擎作为人们文化消费中日益普遍的中介，可能会限制选择并减少偶然发现的机会。通过向消费者呈现由算法筛选的下一步观看、阅读、收听和访问的选项，企业正在用机器品味取代人类品味。从某种意义上说，这是有帮助的。毕竟，机器能够调查的选择范围远比任何个人凭自己的时间或精力所能覆盖的要广泛得多。\n\n然而与此同时，这种筛选是基于人们过去的偏好来优化他们可能喜欢的内容。我们认为存在一定风险，即人们的选项将以一种全新的、未曾预料到的方式被其过去所限制。\n\n随着机器学习算法的改进以及它们在更大规模的数据集上进行训练，日常生活的更大部分很可能会变得完全可预测。预测将越来越精准，最终会使日常体验更加高效和愉快。\n\n算法可能很快——如果不是已经——比你自己更清楚你接下来想看什么节目、应该雇用哪位求职者。有一天，人类甚至可能找到一种方式让机器在没有人类通常表现出的偏见的情况下做出这些决策。\n\n但就不可预测性是人们理解自身的方式的一部分、也是人们喜欢自身之处的一部分而言，人类正在失去某种重要的东西。随着他们变得越来越可预测，生活在日益由AI介导的世界中的生物将变得越来越不像我们。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Technological innovations reshape people as they use these innovations to control their environment. Artificial intelligence, for example, is altering humanity.",
+    "why": "题目问AI更深层的含义是什么。第一段明确指出技术创新在重塑人类，AI正在改变人类（altering humanity）。第二段进一步指出除了杀手机器人和失业等焦虑外，还有'deeper implications'，即AI如何改变'作为人类的意义'。D选项'reshaping humanity'是对原文'altering humanity'和'reshape people'的同义改写，完全吻合。",
+    "traps": "A选项'造成灾难性失业'是文中提到的表层焦虑（anxieties），而非'deeper implications'，属于偷换概念；B选项'对操作者造成身体伤害'文中完全未提及，属于无中生有；C选项'改变道德判断'虽与文章内容相关，但文章说的是AI影响人们做出道德判断的能力，而非改变道德判断本身，属于偷换对象。",
+    "tip": "注意区分文章提到的表层影响与深层影响，定位'deeper implications'所在段落。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "These are areas where algorithmic prescription is replacing human judgment, and so people who might have had the chance to develop practical judgment in these areas no longer will.",
+    "why": "第四段明确指出，算法指令取代人类判断的后果是：那些本可能有机会在这些领域发展实践判断力的人将不再拥有这种机会。A选项'人们失去了培养实践判断能力的机会'是对原文'people who might have had the chance to develop practical judgment...no longer will'的精确概括。",
+    "traps": "B选项'被阻止参与重大决策'过度引申，原文说的是失去培养判断力的机会，而非被阻止参与决策；C选项'管理者不再有机会决定批准哪笔贷款'是以偏概全，贷款审批只是举例之一，且原文强调的是判断力培养的丧失；D选项'管理者不需费心决定雇用或解雇谁'将后果错误地描述为一种便利，偏离了原文的负面论调。",
+    "tip": "注意因果关系链：算法取代判断→丧失练习机会→无法培养判断力。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Recommendation engines, which are increasingly prevalent intermediaries in people's consumption of culture, may serve to constrain choice and minimize luck.",
+    "why": "第五段开头明确指出推荐引擎'may serve to constrain choice and minimize luck'（可能限制选择并减少偶然机遇）。A选项'消费者的选择将大大受限'是对'constrain choice'的直接同义改写，与原文表述高度一致。",
+    "traps": "B选项'消费者实际上会享有更好的运气'与原文'minimize luck'直接矛盾，属于反义干扰；C选项'更容易决定享受什么'虽然看似合理，但原文强调的是选择被限制而非决策变容易，且这是机器替人做选择而非人更容易选择；D选项'人类会发展出类似机器的品味'是对'replacing human taste with machine taste'的曲解，原文是机器品味取代人类品味，而非人类发展出机器品味。",
+    "tip": "注意原文中constrain和minimize等限制性动词的负面含义。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "As machine learning algorithms improve and as they train on more extensive data sets, larger parts of everyday life are likely to become utterly predictable.",
+    "why": "第七段明确指出，随着机器学习算法的改进及在更大数据集上的训练，日常生活的更大部分'are likely to become utterly predictable'（很可能变得完全可预测）。C选项'They can be completely anticipated'是对'utterly predictable'的同义替换，completely对应utterly，anticipated对应predictable。",
+    "traps": "A选项'会变得更愉快'虽然文中提到'more efficient and pleasant'，但这是预测改善的附带结果，而非对'larger parts of daily life'变化的直接描述，属于答非所问；B选项'会重复过去的经历'是对第六段基于过去偏好优化的过度引申，原文是预测基于过去，不是重复过去；D选项'可能会变得越来越好'是对'predictions are going to get better'的偷换主语，变好的是预测而非生活本身。",
+    "tip": "utterly predictable与completely anticipated是核心同义替换，注意识别。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "But to the extent that unpredictability is part of how people understand themselves and part of what people like about themselves, humanity is in the process of losing something significant. As they become more and more predictable, the creatures inhabiting the increasingly AI-mediated world will become less and less like us.",
+    "why": "最后一段的逻辑链为：不可预测性是人类理解自身和喜爱自身的重要组成部分→人类正变得越来越可预测→AI中介世界中的生物将越来越不像我们。因此原因是丧失了不可预测性这一人类特征。B选项'不再拥有不可预测这一人类特征'精确对应这一逻辑。",
+    "traps": "A选项'失去了最重要的智能人类元素'中'being intelligent'在原文无对应，文章强调的是不可预测性而非智能，属于偷换概念；C选项'无法像我们今天一样理解自己'虽涉及'understand themselves'，但原文说不可预测性是理解自身的一部分，并非说他们无法理解自己；D选项'被剥夺了前辈引以为傲之物'中'proud of'对应的是'like about themselves'，语义有偏差，且选项未点明具体是什么，过于笼统，不如B选项精确。",
+    "tip": "末段常为全文总结段，需准确把握因果逻辑链和核心概念。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "conjure up",
+    "cn": "v. 使联想到，使想起"
+   },
+   {
+    "w": "implications",
+    "cn": "n. 含义，暗示，影响（复数）"
+   },
+   {
+    "w": "capacity",
+    "cn": "n. 能力，才能；容量"
+   },
+   {
+    "w": "algorithmic",
+    "cn": "adj. 算法的"
+   },
+   {
+    "w": "prevalent",
+    "cn": "adj. 普遍的，流行的"
+   },
+   {
+    "w": "intermediaries",
+    "cn": "n. 中介，中间人（复数）"
+   },
+   {
+    "w": "constrain",
+    "cn": "v. 限制，约束"
+   },
+   {
+    "w": "optimize",
+    "cn": "v. 优化，使最优化"
+   },
+   {
+    "w": "unanticipated",
+    "cn": "adj. 未曾预料到的"
+   },
+   {
+    "w": "utterly",
+    "cn": "adv. 完全地，彻底地"
+   },
+   {
+    "w": "mediated",
+    "cn": "adj. 介导的，经由中间媒介的"
+   },
+   {
+    "w": "unpredictability",
+    "cn": "n. 不可预测性"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "We see the emergence of machines as substitute judges in a variety of everyday contexts as a potential threat to people learning how to effectively exercise judgment themselves.",
+    "cn": "我们认为机器在各种日常场景中作为替代判断者的出现，对人们学习如何有效地自行做出判断构成了潜在威胁。",
+    "note": "主干为We see A as B结构：A = the emergence of machines as substitute judges in a variety of everyday contexts；B = a potential threat to people learning...，其中learning为动名词短语作threat的补充说明。"
+   },
+   {
+    "en": "By presenting consumers with algorithmically selected choices of what to watch, read, stream and visit next, companies are replacing human taste with machine taste.",
+    "cn": "通过向消费者呈现由算法筛选的下一步观看、阅读、收听和访问的选项，企业正在用机器品味取代人类品味。",
+    "note": "By doing引导方式状语前置；主干为companies are replacing A with B；what引导的宾语从句含四个并列动词watch/read/stream/visit。"
+   },
+   {
+    "en": "But to the extent that unpredictability is part of how people understand themselves and part of what people like about themselves, humanity is in the process of losing something significant.",
+    "cn": "但就不可预测性是人们理解自身的方式的一部分、也是人们喜欢自身之处的一部分而言，人类正在失去某种重要的东西。",
+    "note": "to the extent that引导条件/程度状语从句；从句中含how和what两个并列的名词性从句分别作part of的宾语；主句为humanity is in the process of losing something significant。"
+   }
+  ]
+ }
+}

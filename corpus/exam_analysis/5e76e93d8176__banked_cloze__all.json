@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "5e76e93d8176__banked_cloze__all",
+ "examId": "5e76e93d8176",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2015 年 12 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T04:34:44.294Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 59959,
+ "usage": {
+  "prompt_tokens": 1155,
+  "completion_tokens": 5430,
+  "total_tokens": 6585,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3427
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1155
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "日常化学品危及儿童大脑",
+  "gist": "哈佛大学公共卫生学院报告指出，许多日常用品中的化学物质可能增加儿童大脑和行为障碍风险，尤其对发育中的大脑可造成永久性损害。官方政策仍在演变，已有机构限制某些化学品，但确立因果关系需要可靠统计证据。专家建议谨慎防护，减少儿童接触。",
+  "difficulty": "中等",
+  "translation": "根据哈佛大学公共卫生学院的一份报告，许多日常用品，包括某些杀虫喷雾和清洁液，可能导致儿童大脑和行为障碍风险增加。报告称，发育中的大脑对这些产品可能含有的某些化学物质的毒性作用尤为脆弱，并且它们造成的损害可能是永久性的。\n\n然而官方政策仍在演变之中。健康和环境倡导者长期以来敦促美国政府机构加紧限制报告中引用的11种化学物质中部分物质的使用，并呼吁对其长期影响进行更多研究。例如，2001年，在人们担心铅中毒后，环境保护局限制了家庭和儿童看护设施的油漆和土壤中铅的种类和含量。该机构目前正在调查最新报告中部分化学物质的毒性作用。\n\n但是监管门槛很高。由于儿童大脑和行为障碍（如多动和成绩不佳）也可能与社会和遗传因素有关，很难用可靠的统计证据将这些障碍归咎于特定化学物质的接触，而这正是EPA所要求的。即使哈佛的研究也没有证明直接的因果关系，但指出接触与行为问题风险之间存在强烈关联。\n\n尽管如此，谨慎行事是明智的。虽然可能无法阻止孩子饮用可能含有微量化学物质的自来水，但是让孩子远离最近喷洒过化学物质的草坪和新干洗的衣服并无害处。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "O",
+    "correct": "vulnerable",
+    "why": "空格前为副词particularly，后为介词to，需要形容词作表语，且与to构成搭配，表示“容易受到……的伤害”。上下文指发育中的大脑对化学物质的毒性作用特别脆弱。",
+    "traps": "其他选项如advocates（名词/动词）、correlation（名词）等词性不符；compact等虽可作形容词，但意为“紧凑的”，语义不匹配；permanent虽为形容词但不与to搭配。",
+    "tip": "考查形容词与介词to的固定搭配，be vulnerable to。"
+   },
+   {
+    "number": 27,
+    "answer": "J",
+    "correct": "permanent",
+    "why": "空格前为be动词，需要形容词作表语；permanent意为“永久性的”，说明化学物质对大脑造成的损害不可逆，符合上下文强调的严重性。",
+    "traps": "limited表“有限的”有干扰，但原文强调损害的严重性和不可逆性，permanent更贴切；restricted意为“受限的”，多指规则限制，不适合描述损害性质。",
+    "tip": "结合语境选择表达损害严重性的形容词。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "advocates",
+    "why": "空格位于Health and environmental后作主语，且谓语动词have urged为复数，需要复数名词；advocates意为“倡导者”，与urged（敦促）构成合理的主谓搭配。",
+    "traps": "如facilities（设施）虽为复数但非人物，不能发出urge动作；correlation等单数名词主谓不一致；exercise词性不符。",
+    "tip": "通过主谓一致和语义判断主语名词。"
+   },
+   {
+    "number": 29,
+    "answer": "N",
+    "correct": "tighten",
+    "why": "空格前为不定式to，需要动词原形；后接宾语the use，tighten意为“收紧（限制）”，符合健康倡导者敦促政府机构限制化学品使用的语境。",
+    "traps": "exercise可作动词，但通常与权力、权利等搭配，不与use搭配表示限制；restricted为过去式，时态不符；advocates词性不对。",
+    "tip": "不定式后接动词原形，注意动宾搭配。"
+   },
+   {
+    "number": 30,
+    "answer": "K",
+    "correct": "restricted",
+    "why": "时间状语In 2001提示一般过去时，主语EPA为单数；restricted为过去式，意为“限制”，与宾语the type and amount of lead搭配合理。",
+    "traps": "advocates作动词时是现在时第三人称单数，语义也不符；investigating需与be动词连用构成进行时；tighten为原形，时态错误。",
+    "tip": "时间状语决定时态，注意谓语动词形式。"
+   },
+   {
+    "number": 31,
+    "answer": "E",
+    "correct": "facilities",
+    "why": "空格前为child-care作定语，后需名词复数；facilities意为“设施，场所”，child-care facilities为常见固定搭配，表示“儿童看护设施”。",
+    "traps": "advocates（倡导者）、correlation（相关）等不能与child-care搭配表示地点；compact等词性不符；exercise作名词意为“锻炼/运用”，语义不合。",
+    "tip": "掌握固定搭配child-care facilities。"
+   },
+   {
+    "number": 32,
+    "answer": "G",
+    "correct": "investigating",
+    "why": "空格前为is now，构成现在进行时，需要现在分词；investigating意为“调查”，与the toxic effects搭配表示“调查毒性作用”，符合语境。",
+    "traps": "restricted为过去式，不能与is构成进行时；advocates词性不对；exercise为动词原形，不能直接跟在is后。",
+    "tip": "be+doing表示正在进行的动作。"
+   },
+   {
+    "number": 33,
+    "answer": "M",
+    "correct": "statistical",
+    "why": "空格后为名词evidence，需要形容词修饰；statistical意为“统计的”，solid statistical evidence表示“可靠的统计证据”，符合EPA对证据的要求。",
+    "traps": "compact（紧凑的）、vulnerable（脆弱的）、permanent（永久的）虽为形容词但语义不符；其它名词/动词词性不对。",
+    "tip": "形容词修饰名词，注意固定搭配statistical evidence。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "correct": "correlation",
+    "why": "空格前为形容词direct，后需名词单数作宾语；correlation意为“相关性”，direct correlation为固定搭配，表示“直接因果关系”，符合未证明的语境。",
+    "traps": "exercise作名词意为“锻炼/运用”，与direct不搭配；advocates等名词复数语义不符；vulnerable等形容词不能作宾语。",
+    "tip": "掌握固定搭配direct correlation。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "correct": "exercise",
+    "why": "空格前为不定式to，需要动词原形，与caution构成动宾短语；exercise caution是固定搭配，意为“谨慎行事”，符合上下文的建议。",
+    "traps": "tighten意为“收紧”，不与caution搭配；advocates词性不符；restricted时态不对；investigating不能直接作to后动词。",
+    "tip": "牢记固定短语exercise caution。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "vulnerable",
+    "cn": "adj. 脆弱的，易受伤害的"
+   },
+   {
+    "w": "permanent",
+    "cn": "adj. 永久的，持久的"
+   },
+   {
+    "w": "advocate",
+    "cn": "n. 倡导者；v. 提倡"
+   },
+   {
+    "w": "tighten",
+    "cn": "v. 收紧，加强"
+   },
+   {
+    "w": "restrict",
+    "cn": "v. 限制，约束"
+   },
+   {
+    "w": "facility",
+    "cn": "n. 设施，场所"
+   },
+   {
+    "w": "investigate",
+    "cn": "v. 调查，研究"
+   },
+   {
+    "w": "statistical",
+    "cn": "adj. 统计的"
+   },
+   {
+    "w": "correlation",
+    "cn": "n. 相关，关联"
+   },
+   {
+    "w": "exercise",
+    "cn": "v. 行使，运用；n. 锻炼"
+   },
+   {
+    "w": "toxic",
+    "cn": "adj. 有毒的"
+   },
+   {
+    "w": "behavioral",
+    "cn": "adj. 行为的"
+   }
+  ],
+  "skills": [
+   "先通读全文，把握文章主题，判断空格所在句的语法结构。",
+   "根据空格前后词性、固定搭配、时态语态等快速缩小候选范围。",
+   "利用上下文逻辑和语义关联排除干扰项，注意同词根、近义词辨析。",
+   "优先解决有明确搭配或语法信号的题目，再攻克语义模糊的题。",
+   "全部选完后代入原文复查，确保语义连贯、逻辑合理。"
+  ]
+ }
+}

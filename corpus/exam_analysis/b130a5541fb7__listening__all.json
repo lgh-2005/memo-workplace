@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "b130a5541fb7__listening__all",
+ "examId": "b130a5541fb7",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2020 年 12 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:30:56.020Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63360,
+ "usage": {
+  "prompt_tokens": 2261,
+  "completion_tokens": 2746,
+  "total_tokens": 5007,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2261,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2746,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2261,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析仅基于题目选项文本的语言特征与正确答案进行推理分析，不涉及任何对录音内容的转述或编造。",
+  "overview": "本场听力共7段，前2段（题1-8）为长对话，各含4题；后5段（题9-25）为短文或讲座。话题涵盖：保险理赔纠纷、AI技术前景争论、个人理财储蓄建议、职场着装与形象管理、消费主义与物品价值观、诚实行为与社会心理实验、年龄增长与音乐偏好变化。选项整体语言难度中高，涉及较多社会热点和生活实用场景。",
+  "strategy": [
+   "预读选项时快速圈出各题关键名词与动词，判断每题在问'原因、行为还是态度'",
+   "长对话注意首尾轮转折词(but/however/actually)，答案常出现在转折之后",
+   "短文听力第一题答案常在开头1-2句，末题答案常在结尾处",
+   "选项中出现绝对词(all/solely/altogether/never)的往往是干扰项，优先排除",
+   "四个选项中语义最温和、最具概括性的往往更接近正确答案",
+   "边听边在选项旁做标记，听到某选项被否定时立刻划掉"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "女性就房屋受损向保险公司索赔遭遇纠纷",
+    "optionSignals": "第1题四个选项均为She/Her开头描述女方遭遇，问的是女方当前困境；第2题描述灾害细节(flooded/washed away/destroyed/collapsed)在问具体受灾情况；第3题均为The woman's + 名词短语，在问纠纷原因；第4题均为动词原形开头，在问下一步行动。",
+    "tips": [
+     "第2题四个选项都涉及洪水破坏程度，注意区分ground floor flooded(部分)与entire house destroyed(全毁)等程度差异，听时关注具体受损范围",
+     "第3题选项涉及misreading/ignorance/inaccurate/failure，均为负面原因；正确答案D含failure to pay，提示'未按时缴费'这一关键细节",
+     "第4题均为建议性动作，File a lawsuit(起诉)语气最强烈，若听到legal action/court/sue等词可锁定"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "两人就AI技术未来发展持不同观点",
+    "optionSignals": "第5题选项描述两人关系或立场(disagree/differ/worried)，为总领性设问；第6-7题分别问AI带来的工作变化与潜在担忧；第8题选项描述AI未来特征。整体选项涉及大量AI相关表达。",
+    "tips": [
+     "第5题B(disagree about the future)是对两人对立观点的概括，属于总结性正确项的典型形式",
+     "第7题D含solely/unfeeling等极端表述，属于常见干扰项特征；正确答案B'Digital life could replace human civilization'虽也极端但可能出自悲观方观点的直接引述",
+     "第8题正确答案D(smarter than human beings)是AI讨论中的经典论点，注意听surpass/exceed/outperform等同义替换"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "个人理财与储蓄习惯建议",
+    "optionSignals": "第9题选项均为动词原形开头(Restrain/Save/Invest/Try)，问建议性行动；第10题同样为行动建议，强调起步方式；第11题为名词短语(attitude/plan/mindset/interest)，问成功的关键要素。",
+    "tips": [
+     "第9题正确答案B提到具体数字one-fifth，听力中若出现20%或one-fifth可直接锁定",
+     "第10题A'Start by doing something small'是理财建议中常见的'从小处着手'思路，属于温和务实型选项",
+     "第11题C'proper mindset'比A'optimistic attitude'更中性概括，符合正确答案偏稳妥的规律"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "职场着装选择与个人形象管理",
+    "optionSignals": "第12题She为主语描述女性困扰；第13题以To+动词不定式开头，问目的或原因；第14题描述着装的作用(enhances/helps/matters/boosts)；第15题为建议性动作。",
+    "tips": [
+     "第13题A'save the trouble of choosing a unique outfit every day'暗示'统一着装减少决策疲劳'，是近年职场话题高频考点",
+     "第14题C强调interaction with others，提示着装在社交互动场景中更重要，注意听client-facing/public-facing等词",
+     "第15题D'Do whatever is possible to look smart'最为笼统概括，其余选项过于具体，正确答案常为最具包容性的表述"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "消费主义反思与物品真正价值",
+    "optionSignals": "第16题问社会问题根源(obsession/failure/costs/deterioration)；第17题以Things that开头描述物品特征，问何种物品最有价值；第18题以They开头描述某类物品特点。三题构成'问题—价值标准—解决特征'的逻辑链。",
+    "tips": [
+     "第16题A'obsession with consumption'是消费主义批判的核心概念，若听到over-consume/materialism/buy too much可对应",
+     "第17题D'Things that we cherish most'语义最抽象温情，与消费主义反思话题契合",
+     "第18题A'serve multiple purposes'即多用途物品，对应极简主义/反浪费理念中的核心主张"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "关于诚实行为的社会心理学实验",
+    "optionSignals": "第19题含数字细节(400 miles/10%/384 miles)，问实验数据结果；第20题问受试者行为动机(suspicion/reputation/honest)；第21题为评价性形容词(positive/intuitive/illustrative/conclusive)，问研究结论性质。",
+    "tips": [
+     "第19题含多个具体数字，注意听实际出现的百分比和里程数；C中Over 10%+lied是对实验发现的直接描述",
+     "第20题C'protect their reputation'是社会心理学中'声誉维护动机'的经典表述",
+     "第21题B'seem intuitive'意为'看似符合直觉'，注意intuitive一词在学术语境中常表示'不出意料的/直觉上合理的'"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "年龄增长导致对新音乐兴趣下降的现象与原因",
+    "optionSignals": "第22题为名词短语问文章主题(deterioration/insights/tastes/aversion)；第23-24题描述具体现象或原理(exposure/experience)；第25题比较青少年特征(memories/emotions/sensitive/sentimental)。",
+    "tips": [
+     "第22题D'aversion to new music'(对新音乐的反感)直接点明主旨，是典型主旨题正确项特征",
+     "第24题四个选项结构均为The more...the more...，需仔细辨别后半句差异；D中appreciate(欣赏/领悟)比familiar/understand/remember更深层",
+     "第25题B'emotions are more intense'解释了青少年时期听的音乐印象深刻的原因——情感更强烈，注意听emotional intensity/strong feelings等表达"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "claim",
+    "cn": "索赔；声称"
+   },
+   {
+    "w": "disregard",
+    "cn": "忽视，不理会"
+   },
+   {
+    "w": "insurance",
+    "cn": "保险"
+   },
+   {
+    "w": "lawsuit",
+    "cn": "诉讼"
+   },
+   {
+    "w": "obsession",
+    "cn": "痴迷，执念"
+   },
+   {
+    "w": "disposable",
+    "cn": "一次性的，可丢弃的"
+   },
+   {
+    "w": "intuitive",
+    "cn": "直觉的，凭直觉的"
+   },
+   {
+    "w": "aversion",
+    "cn": "厌恶，反感"
+   },
+   {
+    "w": "accumulate",
+    "cn": "积累，积攒"
+   },
+   {
+    "w": "lucrative",
+    "cn": "利润丰厚的"
+   },
+   {
+    "w": "mindset",
+    "cn": "心态，思维模式"
+   },
+   {
+    "w": "reputation",
+    "cn": "名誉，声望"
+   },
+   {
+    "w": "deterioration",
+    "cn": "恶化，退化"
+   },
+   {
+    "w": "stimulating",
+    "cn": "令人兴奋的，有启发性的"
+   }
+  ]
+ }
+}

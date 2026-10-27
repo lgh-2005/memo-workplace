@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "b8c6d06f8a82__translation__all",
+ "examId": "b8c6d06f8a82",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2015 年 6 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:04:29.451Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 37463,
+ "usage": {
+  "prompt_tokens": 829,
+  "completion_tokens": 2666,
+  "total_tokens": 3495,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 829,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2666,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 829,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国传统宴席待客之道",
+  "reference": "Traditional Chinese hospitality requires that there be a rich variety of dishes, so many that the guests cannot finish them all. A typical menu at a Chinese banquet includes a set of cold dishes to start, followed by hot dishes such as meat, poultry, vegetables, and so on. At most banquets, whole fish is considered indispensable, unless various seafood dishes have already been served. Nowadays, the Chinese like to combine Western specialties with traditional Chinese cuisine at one banquet, so it is not uncommon to see steak on the table. Salad has also gained popularity, even though traditionally the Chinese generally do not eat any uncooked dishes. A banquet usually features at least one soup, which can be served first or last. Desserts and fruits usually signal the end of the banquet.",
+  "sentences": [
+   {
+    "cn": "中国传统的待客之道要求饭菜丰富多样，让客人吃不完。",
+    "en": "Traditional Chinese hospitality requires that there be a rich variety of dishes, so many that the guests cannot finish them all.",
+    "structure": "主语 + requires that + 虚拟语气从句 + so...that... 结果状语从句",
+    "keys": [
+     "待客之道 hospitality",
+     "丰富多样 a rich variety of",
+     "吃不完 cannot finish them all"
+    ]
+   },
+   {
+    "cn": "中国宴席上典型的菜单包括开席的一套凉菜及其后的热菜，例如肉类、鸡鸭、蔬菜等。",
+    "en": "A typical menu at a Chinese banquet includes a set of cold dishes to start, followed by hot dishes such as meat, poultry, vegetables, and so on.",
+    "structure": "主语 + includes + 宾语（a set of...），followed by... 过去分词短语作后置定语，such as 列举",
+    "keys": [
+     "宴席 banquet",
+     "凉菜 cold dishes",
+     "热菜 hot dishes",
+     "鸡鸭 poultry"
+    ]
+   },
+   {
+    "cn": "大多数宴席上,全鱼被认为是必不可少的,除非已经上过各式海鲜。",
+    "en": "At most banquets, whole fish is considered indispensable, unless various seafood dishes have already been served.",
+    "structure": "介词短语作状语 + 被动语态主句 + unless 条件状语从句（现在完成时被动）",
+    "keys": [
+     "全鱼 whole fish",
+     "必不可少的 indispensable",
+     "各式海鲜 various seafood dishes"
+    ]
+   },
+   {
+    "cn": "如今，中国人喜欢把西方特色菜与传统中式菜肴融于一席,因此牛排上桌也不少见。",
+    "en": "Nowadays, the Chinese like to combine Western specialties with traditional Chinese cuisine at one banquet, so it is not uncommon to see steak on the table.",
+    "structure": "时间状语 + 主句（like to do），so 引导结果分句，it is not uncommon to do 形式主语结构",
+    "keys": [
+     "西方特色菜 Western specialties",
+     "中式菜肴 Chinese cuisine",
+     "融于一席 combine...with...at one banquet",
+     "牛排 steak",
+     "不少见 not uncommon"
+    ]
+   },
+   {
+    "cn": "沙拉也已流行起来,尽管传统上中国人一般不吃任何未经烹饪的菜肴。",
+    "en": "Salad has also gained popularity, even though traditionally the Chinese generally do not eat any uncooked dishes.",
+    "structure": "主句（现在完成时）+ even though 让步状语从句，uncooked 过去分词作前置定语",
+    "keys": [
+     "流行起来 gained popularity",
+     "未经烹饪的 uncooked",
+     "传统上 traditionally"
+    ]
+   },
+   {
+    "cn": "宴席通常至少有一道汤，可以最先或最后上桌。",
+    "en": "A banquet usually features at least one soup, which can be served first or last.",
+    "structure": "主句 + which 引导非限制性定语从句，被动语态 be served",
+    "keys": [
+     "至少 at least",
+     "上桌 be served",
+     "最先或最后 first or last"
+    ]
+   },
+   {
+    "cn": "甜点和水果通常标志宴席的结束。",
+    "en": "Desserts and fruits usually signal the end of the banquet.",
+    "structure": "主语 + 谓语 + 宾语，简单句式，signal 用作动词表示\"标志\"",
+    "keys": [
+     "甜点 desserts",
+     "标志…的结束 signal the end of"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "待客之道",
+    "en": "hospitality"
+   },
+   {
+    "cn": "宴席",
+    "en": "banquet"
+   },
+   {
+    "cn": "凉菜",
+    "en": "cold dishes"
+   },
+   {
+    "cn": "热菜",
+    "en": "hot dishes"
+   },
+   {
+    "cn": "鸡鸭（家禽）",
+    "en": "poultry"
+   },
+   {
+    "cn": "全鱼",
+    "en": "whole fish"
+   },
+   {
+    "cn": "必不可少的",
+    "en": "indispensable"
+   },
+   {
+    "cn": "西方特色菜",
+    "en": "Western specialties"
+   },
+   {
+    "cn": "中式菜肴",
+    "en": "Chinese cuisine"
+   },
+   {
+    "cn": "未经烹饪的",
+    "en": "uncooked / uncooked"
+   }
+  ],
+  "pitfalls": [
+   "「吃不完」易直译为 eat not finish，应用 so many that guests cannot finish them all 表达",
+   "「鸡鸭」不宜逐字译为 chicken and duck，应概括为 poultry 更地道",
+   "「融于一席」是抽象表达，需灵活处理为 combine...with...at one banquet",
+   "「上桌」应译为 be served，避免生硬的 go on the table 或 come to the table",
+   "「不少见」用双重否定 not uncommon 更学术，避免写成 is very common 改变了语气程度"
+  ],
+  "upgrades": [
+   {
+    "plain": "have many different dishes",
+    "better": "a rich variety of dishes",
+    "note": "variety 体现多样性，搭配 rich 更书面、更正式"
+   },
+   {
+    "plain": "chicken and duck",
+    "better": "poultry",
+    "note": "用上位概括词更简洁地道，符合英文表达习惯"
+   },
+   {
+    "plain": "has become popular",
+    "better": "has gained popularity",
+    "note": "动宾搭配 gain popularity 更高级，体现词汇功底"
+   },
+   {
+    "plain": "is very common to see",
+    "better": "it is not uncommon to see",
+    "note": "双重否定 not uncommon 语气更含蓄委婉，更具学术色彩"
+   },
+   {
+    "plain": "A banquet usually has at least one soup",
+    "better": "A banquet usually features at least one soup",
+    "note": "feature 作动词表「以…为特色」，比 have 更生动精准"
+   }
+  ]
+ }
+}

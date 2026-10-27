@@ -1,0 +1,246 @@
+{
+ "schemaVersion": 1,
+ "id": "26d64559a7b3__long_match__all",
+ "examId": "26d64559a7b3",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2020 年 12 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:31:54.968Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44289,
+ "usage": {
+  "prompt_tokens": 968,
+  "completion_tokens": 2683,
+  "total_tokens": 3651,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 968,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2683,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 968,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "生态危机、技术反思与变革希望",
+  "strategy": [
+   "先标记每句中的核心名词和特殊表达（如cutting-edge、vegetarian），回原文快速扫读",
+   "注意同义替换：题目常用抽象概括词替换原文具体描述，如ecological disaster对应环境恶化的具体表述",
+   "关注逻辑信号词（because、though、if等），据此判断句间因果、让步等关系与原文是否匹配",
+   "两道题指向同一段落（如37和44均指向I段）时，需确认段落内容确实涵盖两层含义",
+   "优先处理含专有名词或数据的题目（如America、vegetarians），因其定位最快"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "如今似乎有些人梦想着某种尖端新技术可以将他们从当前的生态灾难中拯救出来。",
+    "keywords": [
+     "cutting-edge technology",
+     "ecological disaster",
+     "dream",
+     "save"
+    ],
+    "paraphrase": "题目中cutting-edge new technology可能对应原文中frontier/advanced technology等表述；ecological disaster可能对应environmental crisis/catastrophe等同义词；dream可能对应hope/fantasize等。",
+    "tip": "定位\"尖端技术+生态灾难\"的搭配组合，E段应同时出现这两个语义场。"
+   },
+   {
+    "number": 37,
+    "answer": "I",
+    "cn": "一位伟大的思想家认为，如果我们丧失了用不同方式思考的能力，那将是最不幸的。",
+    "keywords": [
+     "great thinker",
+     "unfortunate",
+     "think differently"
+    ],
+    "paraphrase": "great thinker可能对应原文中具体哲学家或思想家的名字；think differently可能被改写为alternative thinking/see things from another perspective等；most unfortunate可能对应tragedy/greatest loss等。",
+    "tip": "寻找I段中引用某位思想家名言或观点的句子，关注\"不同思维方式\"这一核心概念。"
+   },
+   {
+    "number": 38,
+    "answer": "C",
+    "cn": "我们应当紧急关注在追求舒适生活过程中所制造的生态问题。",
+    "keywords": [
+     "urgent attention",
+     "ecological problems",
+     "pursuit",
+     "comfortable life"
+    ],
+    "paraphrase": "urgent attention可能对应原文中immediate concern/pressing need等表述；pursuit of a comfortable life可能对应quest for comfort/desire for convenience/modern lifestyle等同义替换。",
+    "tip": "定位C段中\"追求舒适生活\"与\"生态问题\"并存的语境，注意紧迫性表述。"
+   },
+   {
+    "number": 39,
+    "answer": "K",
+    "cn": "即使在快餐国家美国，素食者的数量也在不断增加。",
+    "keywords": [
+     "fast-food nation",
+     "America",
+     "vegetarians",
+     "on the rise"
+    ],
+    "paraphrase": "fast-food nation是美国的文化标签，原文可能直接使用该短语或描述美国的快餐文化；on the rise可能对应growing/increasing/expanding等；vegetarians可能对应plant-based diet followers等。",
+    "tip": "America和vegetarians是强特征词，K段中应有关于美国素食趋势的具体数据或描述。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "cn": "由于人类生产和消费的急剧增长，生态系统的恶化正在加速。",
+    "keywords": [
+     "deterioration",
+     "ecological system",
+     "production and consumption",
+     "accelerating"
+    ],
+    "paraphrase": "deterioration可能对应degradation/decline/breakdown等；dramatic increase可能对应explosive growth/surge/skyrocketing等；accelerating可能对应speeding up/intensifying等。",
+    "tip": "在D段寻找因果关系：原因是生产消费激增，结果是生态恶化加速。"
+   },
+   {
+    "number": 41,
+    "answer": "G",
+    "cn": "显然，我们必须找到解决办法来遏制快速恶化的环境和社会加速问题。",
+    "keywords": [
+     "solutions",
+     "curb",
+     "worsening environment",
+     "social acceleration"
+    ],
+    "paraphrase": "curb可能对应restrain/contain/slow down等；social acceleration可能对应social speed-up/fast-paced society等；solutions可能对应remedies/measures/approaches等。",
+    "tip": "G段应同时涉及环境恶化和社会加速两个议题，并强调寻找对策的紧迫性。"
+   },
+   {
+    "number": 42,
+    "answer": "A",
+    "cn": "许多人相信改变世界是可能的，尽管这可能需要时间并伴随挫折。",
+    "keywords": [
+     "changing the world",
+     "possible",
+     "time",
+     "setbacks"
+    ],
+    "paraphrase": "setbacks可能对应obstacles/difficulties/reversals等；take time可能对应long process/gradual change等；believe...possible可能对应optimism/conviction/confidence等。",
+    "tip": "A段作为文章开篇，很可能以乐观基调引入主题，注意让步逻辑（虽有挫折但仍相信）。"
+   },
+   {
+    "number": 43,
+    "answer": "F",
+    "cn": "期望某种神奇的技术能一举拯救我们的世界，这种想法可能是错误的。",
+    "keywords": [
+     "wrong",
+     "saved at one stroke",
+     "miraculous technology"
+    ],
+    "paraphrase": "at one stroke可能对应overnight/in one fell swoop/with a single solution等；miraculous technology可能对应technological silver bullet/magic fix等；与36题（E段）形成递进，F段进一步质疑技术万能论。",
+    "tip": "F段紧随E段，对技术拯救论提出质疑或反驳，关注否定/怀疑语气。"
+   },
+   {
+    "number": 44,
+    "answer": "I",
+    "cn": "对更美好世界怀抱希望是人类的天性。",
+    "keywords": [
+     "human nature",
+     "cherish hopes",
+     "better world"
+    ],
+    "paraphrase": "human nature可能对应innate tendency/inherent quality/natural inclination等；cherish hopes可能对应harbor aspirations/hold onto dreams等；better world可能对应improved future/brighter tomorrow等。",
+    "tip": "I段同时承载37题和44题，说明该段既谈人类天性中的希望，又引用思想家关于不同思维的观点。"
+   },
+   {
+    "number": 45,
+    "answer": "B",
+    "cn": "技术赋予了人类改变自然世界的力量，但我们为这种改变付出了代价。",
+    "keywords": [
+     "technology",
+     "power",
+     "change natural world",
+     "paid a price"
+    ],
+    "paraphrase": "paid a price可能对应come at a cost/suffer consequences/trade-off等；power to change the natural world可能对应ability to transform/reshape nature等；转折关系（but）是核心逻辑标志。",
+    "tip": "B段紧随A段，应出现技术双刃剑的论述，关注转折词but/however及其后的代价描述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "cutting-edge",
+    "cn": "尖端的，前沿的（adj.）"
+   },
+   {
+    "w": "ecological",
+    "cn": "生态的，生态学的（adj.）"
+   },
+   {
+    "w": "deterioration",
+    "cn": "恶化，退化（n.）"
+   },
+   {
+    "w": "curb",
+    "cn": "遏制，抑制（v.）"
+   },
+   {
+    "w": "setbacks",
+    "cn": "挫折，阻碍（n.）"
+   },
+   {
+    "w": "miraculous",
+    "cn": "奇迹般的，不可思议的（adj.）"
+   },
+   {
+    "w": "at one stroke",
+    "cn": "一举，一下子（短语）"
+   },
+   {
+    "w": "cherish",
+    "cn": "珍视，怀有（v.）"
+   },
+   {
+    "w": "vegetarian",
+    "cn": "素食者（n.）；素食的（adj.）"
+   },
+   {
+    "w": "acceleration",
+    "cn": "加速，加快（n.）"
+   }
+  ]
+ }
+}

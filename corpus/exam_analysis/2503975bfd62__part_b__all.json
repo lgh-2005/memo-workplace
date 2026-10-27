@@ -1,0 +1,170 @@
+{
+ "schemaVersion": 1,
+ "id": "2503975bfd62__part_b__all",
+ "examId": "2503975bfd62",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2010 年考研英语真题",
+ "year": 2010,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:24:20.521Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56466,
+ "usage": {
+  "prompt_tokens": 1462,
+  "completion_tokens": 2882,
+  "total_tokens": 4344,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1462,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2882,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1462,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "欧洲食品饮料批发市场机遇",
+  "type": "段落排序题",
+  "strategy": [
+   "先通读各段，识别首段（引出话题）和尾段（总结或展望）特征",
+   "重点关注段首逻辑连接词如 For example、All in all、However、The first",
+   "利用指代词（these requirements）、关键词复现（wholesale、retailers）锁定前后衔接",
+   "排除法：确认已放置段E的位置，反向验证前后段的逻辑通顺性",
+   "检查未选项C是否确实无法嵌入任何位置"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "B",
+    "why": "B段引出全文话题：欧洲食品零售市场停滞不前（at a standstill），大型零售商急需增长机会，进而点明批发食品饮料贸易是'自家后院的大机遇'。作为文章首段，它完成了'提出问题—指明方向'的功能，无需前文铺垫，符合开篇特征。",
+    "traps": "A段以'The first and most important'开头，明显承接前文列举，不可能做首段；C段含'Definitely not'等回应性表述，需有前文提问；其他段均有衔接前文的标志词。",
+    "tip": "首段需引出话题且无前文指代，B段最符合。"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "why": "B段末尾称批发贸易'appears to be just the kind of market retailers need'，F段紧接以'For example'给出具体数据佐证：2000年五国批发额达2680亿美元，超过零售额40%；批发利润率更高；食品服务需求增长迅速。'For example'直接承接B段论点，提供事实支撑。",
+    "traps": "D段以'All in all'开头，属总结性段落，不适合紧跟引论之后；A段讨论消费者外出就餐趋势，与B段末尾的论点衔接不够直接。",
+    "tip": "B段提出批发市场值得进入，F段用数据举例论证。"
+   },
+   {
+    "number": 43,
+    "answer": "D",
+    "why": "D段首句'All in all'是总结标志，承接B和F两段对批发市场吸引力的论述，总结大型零售商可利用规模、基础设施和技能获利。随后笔锋一转，指出各国市场存在重大差异（important differences），需要理解客户细分、批发结构和竞争动态，末句提出'New skills and unfamiliar business models are needed too'，为下文转折做铺垫。",
+    "traps": "G段以'However'开头并提及'these requirements'，需有前文明确列出要求，不能直接放在F后；A段讨论消费趋势，与F段数据论证之间缺乏总结过渡。",
+    "tip": "'All in all'总结前文优势，再转入市场差异分析。"
+   },
+   {
+    "number": 44,
+    "answer": "G",
+    "why": "D段末尾提到进入批发市场需要'new skills and unfamiliar business models'，G段首句'However, none of these requirements should deter large retailers'中的'these requirements'精确回指D段末尾所列要求。G段用'However'表转折，强调尽管有门槛，掌握批发门道的企业仍可'reap considerable gains'，逻辑顺畅地衔接D段的告诫与后文E段的市场细节描述。",
+    "traps": "C段讨论市场结构是否改变，与D段末尾的'new skills'要求无指代关系；A段讨论消费者外出就餐偏好，与'requirements'无关。",
+    "tip": "'these requirements'精确回指D段末尾的新技能要求。"
+   },
+   {
+    "number": 45,
+    "answer": "A",
+    "why": "E段（已给定）末句指出零售与批发增长数字合在一起'mask two opposing trends'（掩盖了两个相反的趋势），A段首句'The first and most important'直接承接，阐述第一个趋势：消费者外出就餐比例从1995年的32%升至2000年的35%，预计2005年接近38%。同时A段后半部分以'Meanwhile'引出经济衰退下消费者趋于节俭的反向趋势，恰好呼应'two opposing trends'。",
+    "traps": "C段讨论市场结构是否变化，以反问句开头，与E段'two opposing trends'的承接关系不成立；其余选项均已使用。",
+    "tip": "E段提出'两个相反趋势'，A段以'The first'承接展开。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "at a standstill",
+    "cn": "停滞不前（介词短语，作表语）"
+   },
+   {
+    "w": "wholesale",
+    "cn": "批发的；批发（adj./n.）"
+   },
+   {
+    "w": "entrenched",
+    "cn": "根深蒂固的，牢固确立的（adj.）"
+   },
+   {
+    "w": "intricacies",
+    "cn": "错综复杂之处（n. 复数）"
+   },
+   {
+    "w": "sluggish",
+    "cn": "缓慢的，低迷的（adj.）"
+   },
+   {
+    "w": "horeca",
+    "cn": "酒店餐饮业（hotels, restaurants, cafés 的缩写，n.）"
+   },
+   {
+    "w": "consolidate",
+    "cn": "合并，整合（v.）"
+   },
+   {
+    "w": "looming large",
+    "cn": "逼近，迫在眉睫（v. 短语）"
+   },
+   {
+    "w": "rake in",
+    "cn": "大量赚取（v. 短语）"
+   },
+   {
+    "w": "unseat",
+    "cn": "取代，使失去地位（v.）"
+   },
+   {
+    "w": "feasible",
+    "cn": "可行的（adj.）"
+   },
+   {
+    "w": "fragmented",
+    "cn": "分散的，碎片化的（adj.）"
+   },
+   {
+    "w": "deter",
+    "cn": "阻止，使打消念头（v.）"
+   },
+   {
+    "w": "reap",
+    "cn": "收获，获得（v.）"
+   },
+   {
+    "w": "cater to",
+    "cn": "迎合，满足…需要（v. 短语）"
+   }
+  ]
+ }
+}

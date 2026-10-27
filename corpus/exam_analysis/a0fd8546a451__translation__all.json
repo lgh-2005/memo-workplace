@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "a0fd8546a451__translation__all",
+ "examId": "a0fd8546a451",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2016 年 12 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:08:47.767Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29713,
+ "usage": {
+  "prompt_tokens": 793,
+  "completion_tokens": 2113,
+  "total_tokens": 2906,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 793,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2113,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 793,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国农业的历史、现状与发展",
+  "reference": "Agriculture is a vital industry in China, with over 300 million people engaged in it. China ranks first in the world in agricultural output, mainly producing rice, wheat, and beans. Although China's agricultural land accounts for only 10 percent of the world's total, it provides food for 20 percent of the world's population. China began to grow rice 7,700 years ago. Long before the use of machinery and chemical fertilizers, hardworking and creative Chinese farmers had already adopted various methods to increase crop yields. The latest development in China's agriculture is the promotion of organic farming. Organic farming can serve multiple purposes simultaneously, including food safety, public health, and sustainable development.",
+  "sentences": [
+   {
+    "cn": "农业是中国的一个重要产业，从业者超过3亿。",
+    "en": "Agriculture is a vital industry in China, with over 300 million people engaged in it.",
+    "structure": "with 复合结构（with + 名词 + 过去分词短语）作伴随状语，补充说明从业者人数",
+    "keys": [
+     "重要产业 vital/important industry",
+     "从业者 people engaged in it",
+     "超过3亿 over 300 million"
+    ]
+   },
+   {
+    "cn": "中国农业产量全球第一，主要生产水稻、小麦和豆类。",
+    "en": "China ranks first in the world in agricultural output, mainly producing rice, wheat, and beans.",
+    "structure": "主谓结构 + 现在分词短语（mainly producing ...）作伴随状语",
+    "keys": [
+     "农业产量 agricultural output",
+     "全球第一 ranks first in the world",
+     "豆类 beans/legumes"
+    ]
+   },
+   {
+    "cn": "虽然中国的农业用地仅占世界的百分之十，但为世界百分之二十的人口提供了粮食。",
+    "en": "Although China's agricultural land accounts for only 10 percent of the world's total, it provides food for 20 percent of the world's population.",
+    "structure": "Although 引导的让步状语从句 + 主句，形成转折对比",
+    "keys": [
+     "农业用地 agricultural land",
+     "仅占 accounts for only",
+     "百分之十 10 percent",
+     "提供了粮食 provides food for"
+    ]
+   },
+   {
+    "cn": "中国7700年前开始种植水稻。",
+    "en": "China began to grow rice 7,700 years ago.",
+    "structure": "简单句，主语 + 谓语 + 宾语 + 时间状语",
+    "keys": [
+     "种植水稻 grow/cultivate rice",
+     "7700年前 7,700 years ago"
+    ]
+   },
+   {
+    "cn": "早在使用机械和化肥之前，勤劳和富有创造性的中国农民就已经采用各种各样的方法来增加农作物产量。",
+    "en": "Long before the use of machinery and chemical fertilizers, hardworking and creative Chinese farmers had already adopted various methods to increase crop yields.",
+    "structure": "Long before ... 时间状语前置 + 主句使用过去完成时 had adopted，体现'早在……之前就已经'的时间先后关系",
+    "keys": [
+     "机械和化肥 machinery and chemical fertilizers",
+     "勤劳和富有创造性的 hardworking and creative",
+     "各种各样的方法 various methods",
+     "农作物产量 crop yields"
+    ]
+   },
+   {
+    "cn": "中国农业最新的发展是推进有机农业。",
+    "en": "The latest development in China's agriculture is the promotion of organic farming.",
+    "structure": "主系表结构（A is B），主语为 the latest development，表语为 the promotion",
+    "keys": [
+     "最新的发展 the latest development",
+     "推进 promotion",
+     "有机农业 organic farming"
+    ]
+   },
+   {
+    "cn": "有机农业可以同时服务于多种目的，包括食品安全、大众健康和可持续发展。",
+    "en": "Organic farming can serve multiple purposes simultaneously, including food safety, public health, and sustainable development.",
+    "structure": "主谓宾结构 + including 引导的介词短语作同位语，列举具体目的",
+    "keys": [
+     "同时 simultaneously",
+     "多种目的 multiple purposes",
+     "食品安全 food safety",
+     "可持续发展 sustainable development"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "农业",
+    "en": "agriculture"
+   },
+   {
+    "cn": "农业用地",
+    "en": "agricultural land"
+   },
+   {
+    "cn": "农业产量",
+    "en": "agricultural output"
+   },
+   {
+    "cn": "水稻",
+    "en": "rice"
+   },
+   {
+    "cn": "豆类",
+    "en": "beans / legumes"
+   },
+   {
+    "cn": "化肥",
+    "en": "chemical fertilizers"
+   },
+   {
+    "cn": "农作物产量",
+    "en": "crop yields"
+   },
+   {
+    "cn": "有机农业",
+    "en": "organic farming"
+   },
+   {
+    "cn": "食品安全",
+    "en": "food safety"
+   },
+   {
+    "cn": "可持续发展",
+    "en": "sustainable development"
+   }
+  ],
+  "pitfalls": [
+   "'从业者超过3亿'若译为 workers are over 300 million 则句式生硬，应使用 with 复合结构",
+   "'仅占世界的百分之十'中 account for 易拼写或搭配错误，且 only 位置须紧贴动词",
+   "'早在……之前就已经'须用过去完成时 had already adopted，很多考生误用一般过去时",
+   "'富有创造性的'易误译为 creative-rich 等生造词，正确用 creative 即可",
+   "'推进有机农业'中'推进'应译为 promotion / promoting，而非 push forward 等口语化表达"
+  ],
+  "upgrades": [
+   {
+    "plain": "Agriculture is an important industry in China.",
+    "better": "Agriculture is a vital industry in China.",
+    "note": "vital 比 important 更能体现产业的'命脉'地位，用词更精准高级"
+   },
+   {
+    "plain": "China is number one in the world in agricultural output.",
+    "better": "China ranks first in the world in agricultural output.",
+    "note": "rank first 是正式书面表达，比 number one 更学术规范"
+   },
+   {
+    "plain": "it gives food to 20 percent of the world's population",
+    "better": "it provides food for 20 percent of the world's population",
+    "note": "provide food for 是固定搭配，比 give food to 更正式地道"
+   },
+   {
+    "plain": "Chinese farmers used many ways to increase crop production",
+    "better": "Chinese farmers had already adopted various methods to increase crop yields",
+    "note": "adopt methods 搭配更正式，crop yields 比 crop production 更专业"
+   },
+   {
+    "plain": "Organic farming can be used for many purposes at the same time",
+    "better": "Organic farming can serve multiple purposes simultaneously",
+    "note": "serve purposes 为高级动宾搭配，simultaneously 比 at the same time 更简洁书面"
+   }
+  ]
+ }
+}

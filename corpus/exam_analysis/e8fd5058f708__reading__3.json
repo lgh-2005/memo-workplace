@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "e8fd5058f708__reading__3",
+ "examId": "e8fd5058f708",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2006 年考研英语真题（旧）",
+ "year": 2006,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:17:57.298Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65903,
+ "usage": {
+  "prompt_tokens": 1795,
+  "completion_tokens": 4038,
+  "total_tokens": 5833,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1795,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4038,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1795,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 32 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "海洋大型鱼类生物量急剧下降",
+  "gist": "文章以史前大型动物灭绝类比引出海洋过度捕捞问题。研究者Myers和Worm通过半个世纪的渔业数据发现，大型掠食性鱼类的生物量在新渔场开发15年内平均下降80%，且实际情况比数据更严重。他们提出\"移动基线\"概念，指出人们因回顾时间太短而未能察觉海洋的巨大变化，多数渔场的生物量已远低于可持续捕捞的理想水平。",
+  "structure": [
+   "第一段：以史前动物灭绝类比引出海洋大型鱼类面临类似威胁",
+   "第二段：引用研究数据说明大型掠食鱼类生物量下降速度与幅度",
+   "第三段：论证数据偏保守，实际损失更大，列举三个原因",
+   "第四段：提出'移动基线'概念，强调渔场生物量远低于可持续水平"
+  ],
+  "difficulty": "中等",
+  "translation": "当史前人类到达世界新地区时，大型动物身上发生了一些奇怪的事情：它们突然灭绝了。较小的物种存活了下来。那些大型、生长缓慢的动物是容易捕获的猎物，很快就被猎杀殆尽。如今，类似的情况可能正在海洋中上演。\n\n海洋被过度捕捞已是多年来的已知事实。兰塞姆·迈尔斯和鲍里斯·沃姆等研究者所揭示的，是变化发生得有多快。他们研究了来自全球渔场的半个世纪的数据。他们的方法并不试图估算海洋特定区域某一鱼种的实际生物量（即活的生物物质的数量），而是关注该生物量随时间的变化。根据他们发表在《自然》杂志上的最新论文，新渔场中大型掠食性动物（捕杀并吞食其他动物的动物）的生物量在开始开发后的15年内平均减少了80%。在一些长期捕捞的区域，此后又减少了一半。\n\n沃姆博士承认这些数据是保守的。原因之一是捕鱼技术已经改进。如今的船只可以利用卫星和声呐来寻找猎物，而这些技术在50年前是不具备的。这意味着海中更高比例的鱼被捕获了，因此现在与过去之间的实际差距可能比捕捞量变化所记录的更为严重。在早期，延绳钓上的鱼也会更加饱和。因此，有些鱼不会被捕到，因为没有多余的带饵鱼钩可以捕获它们，这导致了对过去鱼类资源量的低估。此外，在延绳钓捕鱼的早期，很多上钩的鱼会被鲨鱼吃掉。这个问题现在已不复存在，因为如今鲨鱼也少多了。\n\n迈尔斯博士和沃姆博士认为，他们的研究给出了一个正确的基线，未来的管理工作必须将其考虑在内。他们认为这些数据支持了海洋生物学家中流行的一个观点，即\"移动基线\"理论。这一概念指的是，人们未能察觉海洋中已经发生的巨大变化，因为他们回顾的时间跨度太短。这很重要，因为理论表明，渔场能够实现的最大可持续产量出现在目标物种的生物量约为其原始水平50%的时候。大多数渔场的生物量远低于这一水平，这是一种不明智的经营方式。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "Now something similar could be happening in the oceans.",
+    "why": "第一段先讲史前大型动物因易被猎杀而灭绝，末句用\"Now something similar could be happening in the oceans\"将话题从陆地引向海洋，说明举史前动物灭绝的例子是为了类比暗示：如今海洋中的大型动物可能面临同样的威胁。C项\"large sea animals may face the same threat today\"精准对应该类比意图。",
+    "traps": "A项\"vulnerable to the changing environment\"偷换原因，原文说的是被人类猎杀而非环境变化；B项虽是原文提到的事实，但只是背景细节，不是作者举例的目的；D项\"slow-growing fish outlive fast-growing ones\"无中生有，原文从未比较快慢生长鱼类的寿命。",
+    "tip": "例证题要找作者举例的目的，而非例子本身的细节。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "the biomass of large predators in a new fishery is reduced on average by 80% within 15 years of the start of exploitation. In some long-fished areas, it has halved again since then.",
+    "why": "原文指出新渔场大型掠食鱼类的生物量在15年内平均减少80%，即剩余20%；而在一些长期捕捞区域，此后又减半（halved again），即剩余10%，总计减少了90%。A项\"the stock of large predators in some old fisheries has reduced by 90%\"正是对这两步数据的合理推算。",
+    "traps": "B项将\"fisheries数量减半\"与原文\"生物量减半\"混淆，偷换了概念；C项将\"生物量减少到20%\"等同于\"捕获量只有20%\"，混淆了生物量与捕获量；D项原文未做新旧渔场下降速度的直接比较，属于无中生有。",
+    "tip": "推断题需对多句信息做数学或逻辑上的综合，注意分步计算。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "Dr. Worm acknowledges that these figures are conservative. One reason for this is that fishing technology has improved.",
+    "why": "\"conservative\"意为保守的，即数据低估了实际情况。第三段随后列举三个理由说明为何实际损失更大：①现代技术使捕获比例更高，过去与现在的真实差距比记录的更严重；②早期延绳钓更饱和导致低估了过去鱼量；③早期鲨鱼吃掉上钩的鱼也导致低估。这些都说明海洋生物量的实际损失比数据显示的更大，C项准确概括。",
+    "traps": "A项是导致数据保守的原因之一，不是\"figures are conservative\"本身的含义；B项说\"捕获量比记录的更小\"与原文相反，原文说实际捕获比例更高；D项\"数据过时\"在文中无依据，且并非conservative的含义。",
+    "tip": "理解句意题要结合上下文推断核心含义，区分原因与结论。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The notion is that people have failed to detect the massive changes which have happened in the ocean because they have been looking back only a relatively short time into the past.",
+    "why": "研究者提出\"shifting baseline\"（移动基线）理论，认为人们因回顾时间过短而未察觉海洋的巨变，因此需要根据变化了的实际情况来调整基线。D项\"people should adjust the fishing baseline to the changing situation\"准确概括了这一主张：基线应随实际变化而调整，而非固守短期视角。",
+    "traps": "A项\"寻找一个能用更长时间的基线\"扭曲了原意，研究者的重点是调整基线以反映真实变化，而非追求基线的持久性；B项\"产量应保持在50%以下\"曲解了原文，原文说50%是理想生物量水平而非产量上限；C项\"恢复到原始水平\"原文未提及，属于过度推断。",
+    "tip": "抓住shifting baseline的核心含义：基线需要随现实变化动态调整。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "Most fisheries are well below that, which is a bad way to do business.",
+    "why": "全文围绕海洋鱼类生物量（biomass）的急剧下降展开论述：第二段用数据说明生物量减少幅度，第三段论证实际损失更大，第四段指出多数渔场生物量远低于可持续水平。末句\"Most fisheries are well below that\"点明作者最关切的是渔场生物量水平过低的现状。B项\"biomass level\"最为贴切。",
+    "traps": "A项\"管理效率\"仅在第四段末略有涉及，非全文主要关切；C项\"catch-size limits\"（捕捞量限制）文中并未重点讨论捕捞限额问题；D项\"technological application\"仅在第三段作为论证保守数据的原因之一出现，非文章核心关注点。",
+    "tip": "主旨题关注贯穿全文的核心概念，本文biomass反复出现即为线索。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "extinct",
+    "cn": "adj. 灭绝的，绝种的"
+   },
+   {
+    "w": "biomass",
+    "cn": "n. 生物量，生物质"
+   },
+   {
+    "w": "predator",
+    "cn": "n. 掠食者，捕食性动物"
+   },
+   {
+    "w": "exploitation",
+    "cn": "n. 开发，开采；利用"
+   },
+   {
+    "w": "conservative",
+    "cn": "adj. 保守的，低估的"
+   },
+   {
+    "w": "sonar",
+    "cn": "n. 声呐"
+   },
+   {
+    "w": "saturated",
+    "cn": "adj. 饱和的，充满的"
+   },
+   {
+    "w": "underestimate",
+    "cn": "n./v. 低估"
+   },
+   {
+    "w": "baseline",
+    "cn": "n. 基线，基准"
+   },
+   {
+    "w": "sustainable",
+    "cn": "adj. 可持续的"
+   },
+   {
+    "w": "longline",
+    "cn": "n. 延绳钓（一种捕鱼方式）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "That means a higher proportion of what is in the sea is being caught, so the real difference between present and past is likely to be worse than the one recorded by changes in catch sizes.",
+    "cn": "这意味着海中更高比例的鱼被捕获了，因此现在与过去之间的实际差距可能比捕获量变化所记录的更为严重。",
+    "note": "主句为That means...，so引导结果分句；what is in the sea为名词性从句作of的宾语；the one指代the real difference；recorded by...作后置定语修饰the one。"
+   },
+   {
+    "en": "The notion is that people have failed to detect the massive changes which have happened in the ocean because they have been looking back only a relatively short time into the past.",
+    "cn": "这一概念指的是，人们未能察觉海洋中已经发生的巨大变化，因为他们回顾过去的时间跨度太短。",
+    "note": "主句The notion is后接that引导的表语从句；which引导定语从句修饰changes；because引导原因状语从句解释失察的原因。"
+   },
+   {
+    "en": "That matters because theory suggests that the maximum sustainable yield that can be cropped from a fishery comes when the biomass of a target species is about 50% of its original levels.",
+    "cn": "这很重要，因为理论表明，渔场能够获取的最大可持续产量出现在目标物种的生物量约为其原始水平50%的时候。",
+    "note": "主句That matters后接because原因从句；其中theory suggests后接that宾语从句；yield后有that定语从句修饰；when引导时间状语从句。"
+   }
+  ]
+ }
+}

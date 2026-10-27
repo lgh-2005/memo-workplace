@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "4204c70708cd__listening__all",
+ "examId": "4204c70708cd",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2018 年 6 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:19:06.713Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54762,
+ "usage": {
+  "prompt_tokens": 2240,
+  "completion_tokens": 2705,
+  "total_tokens": 4945,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2240,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2705,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2240,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析仅基于题目选项的语言特征与正确答案进行推理分析，不涉及任何对录音内容的编造。",
+  "overview": "本场听力共7段材料、25道题。第1段（Q1-4）涉及一家以动物为特色的咖啡馆经营；第2段（Q5-8）围绕垃圾食品与儿童广告营销；第3段（Q9-11）关于古代文明遗迹与河流地理知识；第4段（Q12-15）探讨快节奏生活与慢生活转变；第5段（Q16-18）讨论外来物种与本地生态系统的关系；第6段（Q19-21）涉及跨文化商务礼仪；第7段（Q22-25）与Reader's Digest杂志的历史与管理有关。话题涵盖生活、科学、文化与商业，符合六级听力常见出题范围。",
+  "strategy": [
+   "预读选项时快速圈出各题关键名词和动词，判断该题在问人物身份、原因还是做法",
+   "选项中出现绝对词如altogether、always时需高度警惕，此类选项往往是干扰项",
+   "长对话和短文听力中，首尾句和转折词but/however后的信息常为出题点",
+   "遇到四个选项结构高度平行的题目，重点区分选项间的差异词，听到哪个差异词即选哪项",
+   "数字、百分比出现在选项中时，注意听力中可能设置数字混淆陷阱，需听清修饰语",
+   "因果关系题优先关注because、due to、result in等信号词后面的内容"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "以动物为特色的咖啡馆的经营与管理",
+    "optionSignals": "Q1四个选项均以She开头，问女性身份或职业；Q2选项涉及比较关系（similarities/different），问两者异同；Q3选项均以By+动名词开头，问方式方法；Q4选项均以They开头，问顾客行为或态度。",
+    "tips": [
+     "Q1中advocate、sell、start、owner四个关键词差异明显，听到哪个动词即可定位",
+     "Q3四个选项描述不同的动物管理方式，cleaning and injections属于卫生健康层面，与其他三项角度不同，注意区分",
+     "Q4选项C和D都表达正面态度，需听清顾客喜爱的具体对象是animals还是整体评价"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "垃圾食品对儿童的影响及广告营销策略",
+    "optionSignals": "Q5四个选项描述食品的负面特征，问食品存在什么问题；Q6问影响因素（design/commercials/taste/peer），属原因类题；Q7选项均以动名词短语开头，问商家的行为策略；Q8选项均以They开头描述儿童的饮食习惯。",
+    "tips": [
+     "Q5中garbage是非常口语化且极端的表达，正确答案往往在听力中以近义改写出现",
+     "Q6四个选项分属不同影响维度，TV commercials与Q7的trick children形成逻辑呼应，可辅助验证",
+     "Q8注意seldom和hardly等否定频率副词，它们表达的含义截然不同于正面描述"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "古代文明遗迹与世界主要河流的地理特征",
+    "optionSignals": "Q9四个选项均为名词短语，问某地的具体内容或景观类型；Q10和Q11选项均以It开头描述某条河流的特征，涉及数据和对比。",
+    "tips": [
+     "Q9中farmland、animal farms、tombs、ruins四种景观差异大，听前需预判关键词",
+     "Q11出现具体数据one fifth和具体河流名Nile/Yangtze/Mississippi，听时需精确匹配数字与河流名称",
+     "Q10选项B中的hardly和great civilizations构成否定搭配，属于反常识表述，作为正确答案说明听力可能在颠覆常规认知"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "快节奏生活的反思与向慢生活的转变",
+    "optionSignals": "Q12四个选项描述关于生活节奏的不同观点，问主旨或现象；Q13和Q15以She开头，问女性人物的生活状态变化；Q14问促使改变的原因，属因果推断题。",
+    "tips": [
+     "Q12中always in a rush是对快节奏生活的概括，fast lane和tranquility分别代表快与慢两个方向，注意听开篇定调",
+     "Q14四个选项给出不同的转变契机，reading a book作为正确答案属于具体事件触发，听时关注事件性细节",
+     "Q13和Q15形成前后对比，分别描述转变前后的状态，可互相印证"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "外来物种与本地生态系统的关系及学术争议",
+    "optionSignals": "Q16四个选项均以They开头描述外来物种的影响，问其作用或危害；Q17选项涉及classifications/interactions/definitions/distinctions等学术概念词；Q18涉及程度限定词only a few/few/10 percent。",
+    "tips": [
+     "Q16注意root out altogether中的绝对化表达，此类选项通常为干扰项；正确答案C用pose a threat措辞更温和准确",
+     "Q18中only a few与few含义截然不同（少数vs几乎没有），这是经典的听力陷阱，务必听清限定词",
+     "Q17四个选项都在评价某种学术概念的性质，artificial一词暗示人为划分，属于批判性观点"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "与特定文化背景下的商务交往礼仪与禁忌",
+    "optionSignals": "Q19四个选项均为动词短语，问与某文化群体做生意的建议；Q20四个选项描述具体行为，问哪些行为属于禁忌或礼节；Q21以They开头描述该群体的特征或习惯。",
+    "tips": [
+     "Q20四个选项涉及具体的文化禁忌细节（手掌、礼物、饮酒、响指），需逐一对应听力中的肯定或否定语境",
+     "Q21选项D给出了具体时间段2:00到5:30 p.m.，数字细节常在听力中被直接提及，容易定位",
+     "Q19中respect traditional culture作为正确答案，是跨文化商务话题中最常见的核心建议"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "Reader's Digest杂志的创办理念与公司变迁",
+    "optionSignals": "Q22和Q24以He开头，问男性人物的行为或特征；Q23以It/Its开头，问杂志的定位或特色；Q25描述公司发生的具体事件。",
+    "tips": [
+     "Q22中四个选项涉及不同的商业行为，changed culture与其他三项差异最大，注意听是否有transform/revolutionize等同义替换",
+     "Q25四个选项描述公司的不同变化，Several hundred employees got fired是负面事件，需注意听力中的语气转折",
+     "Q23选项B中short and inspiring描述文章风格，Q24选项D中treated employees like family描述管理风格，两者分别对应产品理念和企业文化"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "advocate",
+    "cn": "提倡，拥护"
+   },
+   {
+    "w": "cater to",
+    "cn": "迎合，满足……的需求"
+   },
+   {
+    "w": "obesity",
+    "cn": "肥胖症"
+   },
+   {
+    "w": "texture",
+    "cn": "口感，质地"
+   },
+   {
+    "w": "habitat",
+    "cn": "栖息地，生境"
+   },
+   {
+    "w": "tranquility",
+    "cn": "宁静，平静"
+   },
+   {
+    "w": "biodiversity",
+    "cn": "生物多样性"
+   },
+   {
+    "w": "ecosystem",
+    "cn": "生态系统"
+   },
+   {
+    "w": "crossbreed",
+    "cn": "杂交繁殖"
+   },
+   {
+    "w": "naturalize",
+    "cn": "归化，使适应新环境"
+   },
+   {
+    "w": "boardroom",
+    "cn": "董事会会议室"
+   },
+   {
+    "w": "subscription",
+    "cn": "订阅，订购"
+   },
+   {
+    "w": "devastating",
+    "cn": "毁灭性的，破坏极大的"
+   },
+   {
+    "w": "seminar",
+    "cn": "研讨会，专题讨论会"
+   }
+  ]
+ }
+}

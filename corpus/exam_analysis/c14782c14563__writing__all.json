@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "c14782c14563__writing__all",
+ "examId": "c14782c14563",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2016 年 6 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:09:12.089Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42225,
+ "usage": {
+  "prompt_tokens": 707,
+  "completion_tokens": 2838,
+  "total_tokens": 3545,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 707,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2838,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 707,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "围绕\"在线学习\"写一篇短文，设想越来越多人选择网上学习而非到校上课后可能出现的变化，字数150-200词。",
+    "outline": [
+     "引出话题：信息技术发展使在线学习日趋普及，提出当更多人选择网上学习时将带来深刻变化。",
+     "分两面论述：一方面在线学习带来灵活性、资源可及性与个性化优势；另一方面指出社交缺失、自律不足、数字鸿沟等隐忧。",
+     "总结观点：在线学习无法完全取代传统教育，线上线下融合的混合模式或为最佳方案。"
+    ],
+    "sample": "With the rapid advancement of information technology, e-learning has emerged as a revolutionary approach to education. When more and more people choose to study online instead of attending traditional schools, profound changes will inevitably take place in multiple dimensions.\n\nOn the positive side, e-learning offers unprecedented flexibility and accessibility. Students from remote areas can gain access to high-quality educational resources that were previously unavailable to them. Moreover, learners can study at their own pace, rewinding or fast-forwarding lectures according to their individual needs. This personalized learning experience is something that conventional classrooms can hardly provide.\n\nHowever, the widespread adoption of e-learning also raises legitimate concerns. Without face-to-face interaction, students may suffer from a lack of social skills and emotional development. Additionally, the absence of direct supervision could lead to decreased self-discipline, making it difficult for some learners to stay motivated and focused. The digital divide may also widen educational inequality, as not everyone has equal access to technology and stable internet connections.\n\nIn conclusion, while e-learning presents remarkable opportunities, it cannot entirely replace traditional schooling. A blended model that combines online resources with in-person instruction may prove to be the optimal solution for future education.",
+    "phrases": [
+     {
+      "en": "emerge as a revolutionary approach to",
+      "cn": "作为一种革命性方式出现；用于引出新事物的定位"
+     },
+     {
+      "en": "unprecedented flexibility and accessibility",
+      "cn": "前所未有的灵活性与可及性；形容在线学习的核心优势"
+     },
+     {
+      "en": "gain access to high-quality educational resources",
+      "cn": "获得优质教育资源；常用于教育公平话题"
+     },
+     {
+      "en": "study at their own pace",
+      "cn": "按自己的节奏学习；描述个性化学习的经典表达"
+     },
+     {
+      "en": "raise legitimate concerns",
+      "cn": "引发合理的担忧；用于转折段引出问题，比raise problems更高级"
+     },
+     {
+      "en": "suffer from a lack of social skills",
+      "cn": "社交技能缺失之苦；描述在线学习弊端的常用搭配"
+     },
+     {
+      "en": "the absence of direct supervision",
+      "cn": "缺乏直接监督；absence of比without更正式书面"
+     },
+     {
+      "en": "widen educational inequality",
+      "cn": "加剧教育不平等；讨论数字鸿沟时的核心短语"
+     },
+     {
+      "en": "a blended model that combines A with B",
+      "cn": "将A与B结合的混合模式；提出折中方案的高分句型"
+     },
+     {
+      "en": "prove to be the optimal solution",
+      "cn": "被证明是最佳方案；用于结尾段提出建议"
+     }
+    ],
+    "pitfalls": [
+     "只写优点或只写缺点，缺乏辩证分析，导致论证单薄扣分",
+     "通篇使用I think、very good等口语化表达，缺乏书面语正式感",
+     "段落之间缺少过渡词（Moreover, However, Additionally），逻辑衔接不清",
+     "字数不足150词或超过200词，均可能被扣分",
+     "审题偏差：只泛谈科技而不聚焦在线学习对传统学校的冲击与影响"
+    ],
+    "upgrades": [
+     {
+      "plain": "E-learning is very popular now.",
+      "better": "E-learning has emerged as a revolutionary approach to education.",
+      "note": "用emerge as替代is popular，措辞更精准且有画面感"
+     },
+     {
+      "plain": "Students can learn what they want online.",
+      "better": "Learners can study at their own pace, rewinding or fast-forwarding lectures according to their individual needs.",
+      "note": "加入具体动作描写，使论述更生动有说服力"
+     },
+     {
+      "plain": "But there are also some problems.",
+      "better": "However, the widespread adoption of e-learning also raises legitimate concerns.",
+      "note": "用raises legitimate concerns代替some problems，学术感更强"
+     },
+     {
+      "plain": "Not everyone can use the internet.",
+      "better": "The digital divide may also widen educational inequality, as not everyone has equal access to technology and stable internet connections.",
+      "note": "引入digital divide概念，体现专业词汇储备"
+     },
+     {
+      "plain": "We should use both online and offline learning.",
+      "better": "A blended model that combines online resources with in-person instruction may prove to be the optimal solution.",
+      "note": "用blended model及定语从句提升句式复杂度和专业性"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "E-learning has emerged as a revolutionary approach to education. — 在线学习已成为一种革命性的教育方式。（emerge as结构高级且地道，适用于引出新现象）",
+   "This personalized learning experience is something that conventional classrooms can hardly provide. — 这种个性化学习体验是传统课堂难以提供的。（something that…强调句式，对比鲜明有力）",
+   "The absence of direct supervision could lead to decreased self-discipline, making it difficult for some learners to stay motivated and focused. — 缺乏直接监督可能导致自律下降，使部分学习者难以保持动力与专注。（现在分词作结果状语，句式复杂且逻辑清晰）",
+   "The digital divide may also widen educational inequality, as not everyone has equal access to technology and stable internet connections. — 数字鸿沟还可能加剧教育不平等，因为并非人人都能平等地接触技术和稳定的网络。（digital divide为热点术语，as引导原因状语从句自然流畅）",
+   "A blended model that combines online resources with in-person instruction may prove to be the optimal solution for future education. — 线上资源与线下教学相结合的混合模式或将成为未来教育的最佳方案。（定语从句+prove to be结构，收尾有力且观点鲜明）"
+  ]
+ }
+}

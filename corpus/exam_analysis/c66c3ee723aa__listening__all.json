@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "c66c3ee723aa__listening__all",
+ "examId": "c66c3ee723aa",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2025 年 6 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:01:20.491Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54058,
+ "usage": {
+  "prompt_tokens": 2238,
+  "completion_tokens": 2755,
+  "total_tokens": 4993,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2238,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2755,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2238,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 4,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下全部解析仅基于选项文本的语言特征与正确答案进行推断分析，不涉及任何录音内容的编造。",
+  "overview": "本场听力共 7 段，前两段（Q1-4、Q5-8）各 4 题，推测为长对话；后五段（Q9-11、Q12-15、Q16-18、Q19-21、Q22-25）中三段 3 题、两段 4 题，推测为短文/讲座。话题涵盖：计算机维修与客服投诉、法律调解职业、老年人记忆与创造力、工作异化与技术冲击、婴幼儿坚持力与人格特质、克服迟到习惯、城市文化与礼仪差异。",
+  "strategy": [
+   "预读选项时圈出各题选项间的差异关键词，听到时立即锁定答案",
+   "选项均为动词短语时多在问行为动作，需留意对话中的过去时态动词",
+   "涉及情感态度的题（如 frustration/indignation），注意说话人语气与评价性形容词",
+   "短文类听力首尾句常对应第一题和末题，集中注意力抓主旨与结论",
+   "遇到含 not/unlike 等否定词的选项时，警惕录音中的否定或转折表达",
+   "选项中出现并列结构（如 A and B）时，两个要素需同时在录音中被提及才可选"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "计算机故障报修与客服沟通纠纷",
+    "optionSignals": "Q1-2 选项均为过去式动词短语，问的是人物已执行的动作；Q3 四个选项全为情绪名词，问说话人感受；Q4 以 Whether 引导，问后续关注的问题。Alpha Maintenance 和 computer technician 暗示维修服务场景。",
+    "tips": [
+     "Q3 四个情绪词需精确区分：frustration（沮丧）、intimidation（威吓）、desperation（绝望）、indignation（愤慨），听语气与措辞判断",
+     "Q4 正确答案 A 涉及 backed up，听力中若出现 backup/save/copy 等近义表达即可锁定",
+     "Q2 选项 B came as soon as possible 与 D designated an engineer 都涉及响应速度，需区分是人直接来还是派人来"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "法律调解类职业介绍与职业技能",
+    "optionSignals": "Q5 选项为对职业的主观评价（boring/challenging/beautiful/unlike）；Q6 四个选项均为动名词短语描述工作内容；Q7 以 Courts 开头说明在讨论法庭的缺陷；Q8 涉及 ability/skill，问从业者所需核心能力。",
+    "tips": [
+     "Q6 正确答案 D mediating land disputes 与 A arbitrating 有近义干扰，mediate 侧重调解而 arbitrate 侧重仲裁，需听准原词",
+     "Q8 选项 A unique way 与 D clearly and forcefully 对比，听力中若强调表达的清晰有力则选 D",
+     "Q7 正确答案 C 包含 frustrating and expensive 两个要素，需同时被提及才可确认"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "老年人记忆检索困难与创造力研究",
+    "optionSignals": "Q9 选项用 looked into/offered/proposed/advanced 描述研究目的，需听首句定调；Q10 对比 young adults 与 older adults 的差异；Q11 描述老年人特征，含 preserved/enhanced creativity 等积极评价。",
+    "tips": [
+     "Q10 正确答案 B 中 irrelevant memories 是关键标志词，若听到 interference/unwanted/unrelated 等近义词即可确认",
+     "Q11 答案 A 含 preserved 和 enhanced 两层含义，注意录音是否有 despite/even though 等让步结构暗示意外发现",
+     "Q9 四个选项主题各异，快速区分：A 关系研究、B 新方法、C 解释困难、D 新模型，听首句即可排除大半"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "现代工作异化、时间贫困与技术对就业的影响",
+    "optionSignals": "Q12-13 描述工人状态与感受；Q14 以 It 开头讨论技术影响，选项涵盖正面（liberates）与负面（puts at risk）；Q15 为总结性建议/观点，四个选项分别涉及 meaning/life priority/relationships/social value。",
+    "tips": [
+     "Q12 答案 C rarely in control 含否定，听力中注意 little/lack of/no control 等变体",
+     "Q14 答案 B puts jobs and wages at risk 是负面影响，与 C liberates 形成对立，需听清作者立场",
+     "Q15 答案 B prioritizing life over work 语义鲜明，若听到 life should come first 或 work-life balance 倾向生活优先即可选"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "人格特质对成就的影响及婴幼儿坚持力实验",
+    "optionSignals": "Q16 讨论某种特质的作用范围（attitude/social/IQ/academic）；Q17 四个选项均描述按按钮的具体方式，明显是实验细节题；Q18 描述婴幼儿的能力表现，含 generalizable inferences 等学术表达。",
+    "tips": [
+     "Q17 为纯细节题，四个按钮操作方式差异明显，听到 hidden/big/two buttons 中任一即可快速定位",
+     "Q18 答案 B 中 generalizable inferences 和 persistence 是两个核心术语，听到 generalize/infer/persist 即锁定",
+     "Q16 答案 D 中 academic achievements 较具体，注意录音中是否出现 school/grades/test scores 等同义替换"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "克服习惯性迟到的实用建议",
+    "optionSignals": "Q19 问文章主旨/目的，四个选项分别涉及 lateness/recreation/traits/priorities；Q20-21 均为具体建议型选项，祈使句或动词原形开头，典型的 how-to 类文章。",
+    "tips": [
+     "Q19 答案 A 直接点明 habitual lateness，主旨题通常在开头出现关键词",
+     "Q20 答案 D get prepared the night before 强调提前准备，若听到 evening/night/before bed 等时间标志即可确认",
+     "Q21 答案 C leave time in between activities 强调活动间留缓冲，注意 buffer/gap/margin 等同义词"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "不同城市的文化特质与待客礼仪差异（涉及 Boston、Paris、New York）",
+    "optionSignals": "Q22 以 Their 开头比较差异（lifestyles/traits/customs/feels）；Q23 以 They 开头描述某群体的负面行为特征；Q24 涉及 Boston/Proper Bostonians，讨论某种文化实践的归属；Q25 为总结建议，涉及城市间学习与文化自豪感。",
+    "tips": [
+     "Q22 答案 D different feels 较抽象，注意录音中 atmosphere/vibe/feel 等词",
+     "Q24 答案 D not part of Boston's local culture 含否定，听力中可能出现 foreign/not native/imported 等表达",
+     "Q25 答案 B follow the examples set by Paris and New York City 指向具体城市，听到这两个城市名时集中注意上下文语境"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "indignation",
+    "cn": "愤慨，义愤"
+   },
+   {
+    "w": "back up",
+    "cn": "备份（数据）"
+   },
+   {
+    "w": "mediate",
+    "cn": "调解，斡旋"
+   },
+   {
+    "w": "arbitrate",
+    "cn": "仲裁，裁决"
+   },
+   {
+    "w": "solicitor",
+    "cn": "律师（英式英语）"
+   },
+   {
+    "w": "retrieve",
+    "cn": "检索，取回（信息/记忆）"
+   },
+   {
+    "w": "alienated",
+    "cn": "疏远的，被隔离的"
+   },
+   {
+    "w": "generalizable",
+    "cn": "可推广的，可泛化的"
+   },
+   {
+    "w": "persistence",
+    "cn": "坚持，毅力"
+   },
+   {
+    "w": "escalate",
+    "cn": "升级，恶化"
+   },
+   {
+    "w": "bureaucratic",
+    "cn": "官僚主义的"
+   },
+   {
+    "w": "intimidation",
+    "cn": "恐吓，威胁"
+   },
+   {
+    "w": "cognitive",
+    "cn": "认知的"
+   },
+   {
+    "w": "courtesy",
+    "cn": "礼貌，礼仪"
+   }
+  ]
+ }
+}

@@ -1,0 +1,205 @@
+{
+ "schemaVersion": 1,
+ "id": "d83bedfad653__translation__all",
+ "examId": "d83bedfad653",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年 12 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:52:51.023Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 30132,
+ "usage": {
+  "prompt_tokens": 794,
+  "completion_tokens": 2170,
+  "total_tokens": 2964,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 794,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2170,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 794,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国养老服务体系建设",
+  "reference": "In recent years, China's aging population has been growing continuously. The Chinese government is taking various measures to promote the development of the elderly care service system, so that senior citizens can lead a healthy and happy life in their later years. Various types of elderly care service institutions have been established across the country. To improve the service quality of elderly care institutions, the government has issued a series of standards to strengthen the supervision of these institutions. Many cities have set up community canteens to make dining more convenient for the elderly, providing them with affordable meals. Elderly people with limited mobility can also enjoy door-to-door meal delivery services. Meanwhile, China is also actively exploring other elderly care models such as home-based and community-based care, to ensure that all senior citizens are properly cared for in their old age.",
+  "sentences": [
+   {
+    "cn": "近年来，中国老龄人口持续增长。",
+    "en": "In recent years, China's aging population has been growing continuously.",
+    "structure": "时间状语 + 主语 + 现在完成进行时，表示从过去持续到现在的趋势",
+    "keys": [
+     "老龄人口 aging population",
+     "持续增长 has been growing continuously"
+    ]
+   },
+   {
+    "cn": "中国政府正采取各种措施，推进养老服务体系建设，使老年人晚年生活健康幸福。",
+    "en": "The Chinese government is taking various measures to promote the development of the elderly care service system, so that senior citizens can lead a healthy and happy life in their later years.",
+    "structure": "主句 + 不定式表目的 + so that 引导目的状语从句，三层递进结构",
+    "keys": [
+     "养老服务体系 elderly care service system",
+     "推进…建设 promote the development of",
+     "晚年生活 life in their later years"
+    ]
+   },
+   {
+    "cn": "全国兴建了各类养老服务机构。",
+    "en": "Various types of elderly care service institutions have been established across the country.",
+    "structure": "被动语态，将'全国'处理为地点状语 across the country 置于句末",
+    "keys": [
+     "养老服务机构 elderly care service institutions",
+     "兴建 establish"
+    ]
+   },
+   {
+    "cn": "为了提升养老机构的服务质量，政府颁布了一系列标准，加强对养老机构的监管。",
+    "en": "To improve the service quality of elderly care institutions, the government has issued a series of standards to strengthen the supervision of these institutions.",
+    "structure": "不定式作目的状语前置 + 主句 + 不定式作结果/目的补充说明",
+    "keys": [
+     "颁布标准 issue standards",
+     "加强监管 strengthen the supervision"
+    ]
+   },
+   {
+    "cn": "许多城市为方便老年人用餐，开设了社区食堂，为他们提供价格实惠的饭菜。",
+    "en": "Many cities have set up community canteens to make dining more convenient for the elderly, providing them with affordable meals.",
+    "structure": "主句 + 不定式表目的 + 现在分词短语作伴随状语，补充说明具体内容",
+    "keys": [
+     "社区食堂 community canteens",
+     "价格实惠的 affordable",
+     "开设 set up"
+    ]
+   },
+   {
+    "cn": "行动不便的老年人还能享受上门送餐服务。",
+    "en": "Elderly people with limited mobility can also enjoy door-to-door meal delivery services.",
+    "structure": "with 介词短语作后置定语修饰主语 + 情态动词 can 表能力",
+    "keys": [
+     "行动不便的 with limited mobility",
+     "上门送餐服务 door-to-door meal delivery services"
+    ]
+   },
+   {
+    "cn": "同时，中国还在积极探索居家和社区养老等其他养老模式，以确保所有老年人老有所养。",
+    "en": "Meanwhile, China is also actively exploring other elderly care models such as home-based and community-based care, to ensure that all senior citizens are properly cared for in their old age.",
+    "structure": "Meanwhile 引导并列语义 + 现在进行时表正在进行 + such as 举例 + 不定式表目的 + that 宾语从句",
+    "keys": [
+     "居家养老 home-based care",
+     "社区养老 community-based care",
+     "养老模式 elderly care models",
+     "老有所养 be properly cared for in old age"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "老龄人口",
+    "en": "aging population"
+   },
+   {
+    "cn": "养老服务体系",
+    "en": "elderly care service system"
+   },
+   {
+    "cn": "养老服务机构",
+    "en": "elderly care service institutions"
+   },
+   {
+    "cn": "社区食堂",
+    "en": "community canteens"
+   },
+   {
+    "cn": "上门送餐服务",
+    "en": "door-to-door meal delivery services"
+   },
+   {
+    "cn": "居家养老",
+    "en": "home-based care"
+   },
+   {
+    "cn": "社区养老",
+    "en": "community-based care"
+   },
+   {
+    "cn": "养老模式",
+    "en": "elderly care models"
+   },
+   {
+    "cn": "老有所养",
+    "en": "be properly cared for in old age"
+   },
+   {
+    "cn": "行动不便",
+    "en": "with limited mobility"
+   }
+  ],
+  "pitfalls": [
+   "'老龄人口'误译为 old people population，应为 aging population",
+   "'养老服务体系'漏译'体系'，仅写 elderly care service",
+   "'上门送餐服务'生硬直译为 go-to-home food service，应为 door-to-door meal delivery services",
+   "'老有所养'是四字成语，不可逐字硬译，应意译为 be properly cared for in old age",
+   "'颁布标准'误用 publish，正式语境应为 issue / promulgate standards"
+  ],
+  "upgrades": [
+   {
+    "plain": "China's old people are increasing.",
+    "better": "China's aging population has been growing continuously.",
+    "note": "aging population 是人口学标准术语，比 old people 更正式地道"
+   },
+   {
+    "plain": "The government made some rules to watch elderly care institutions.",
+    "better": "The government has issued a series of standards to strengthen the supervision of these institutions.",
+    "note": "issue standards 和 strengthen the supervision 是政策语域的准确搭配"
+   },
+   {
+    "plain": "Old people who cannot move easily",
+    "better": "Elderly people with limited mobility",
+    "note": "with limited mobility 是医疗与社会服务领域的标准表达，简洁专业"
+   },
+   {
+    "plain": "to make sure old people are taken care of",
+    "better": "to ensure that all senior citizens are properly cared for in their old age",
+    "note": "ensure 比 make sure 更正式；senior citizens 比 old people 更尊重得体"
+   },
+   {
+    "plain": "China is trying other ways of elderly care like home care.",
+    "better": "China is actively exploring other elderly care models such as home-based and community-based care.",
+    "note": "actively exploring 体现主动性；home-based/community-based 是养老领域专业复合形容词"
+   }
+  ]
+ }
+}

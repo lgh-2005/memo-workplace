@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "a9d96394fca2__banked_cloze__all",
+ "examId": "a9d96394fca2",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2017 年 12 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:15:58.393Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62828,
+ "usage": {
+  "prompt_tokens": 1381,
+  "completion_tokens": 3705,
+  "total_tokens": 5086,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1381,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3705,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1381,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "德国推动电动汽车与禁售燃油车计划",
+  "gist": "文章介绍了德国计划在2030年前禁止销售燃油汽车，并在2050年前将碳排放减少80-95%。目前电动车在德国的普及速度不及预期，政府正通过建设充电站、推动立法等措施加速转型，但效果可能需要数代人才能显现。",
+  "difficulty": "中等",
+  "translation": "许多欧洲国家一直在向电动汽车转型，德国刚刚宣布计划在2030年前禁止销售以汽油和柴油为燃料的汽车。该国还计划在2050年前将碳足迹减少80-95%，从而引发国内向绿色能源的转变。实际上，该禁令将涵盖新车在国内的注册，因为2030年之后将不允许任何以汽油为动力的车辆进行注册。\n\n这项禁令之所以正在被讨论和实施，部分原因是能源官员意识到，如果他们不消除大部分汽车排放，就无法在2050年前实现排放目标。该国仍然对实现排放目标抱有希望，比如在2020年前减少40%的排放量，但电动汽车在国内的接受程度并没有像预期那样快速提升。\n\n增加电动汽车使用的其他举措包括计划在全国建设超过100万个混合动力和电动汽车电池更换站。到2030年，德国计划安装超过600万个充电站。据《国际商业时报》报道，由于大众汽车仍在从排放丑闻中恢复，电动汽车的销量预计将有所增长。\n\n目前，德国道路上约有15.5万辆已注册的混合动力和电动汽车，与目前行驶在路上的4500万辆汽油和柴油汽车相比显得微不足道。随着各国继续设定减排目标，需要采取更大的措施才能对周围环境产生显著的影响。虽然这些努力当然不是徒劳的，但这些禁令的效果可能要到后代人才能开始显现，从而为未来创造一个更好的世界。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "O",
+    "correct": "sparking",
+    "why": "此处需要一个现在分词作伴随状语，逻辑上\"减少碳足迹\"这一举措\"引发/激发\"了向绿色能源的转变。sparking a shift 是常见搭配，表示\"引发一场转变\"，语义和语法均契合。",
+    "traps": "disrupting（C）虽也是现在分词，但意为\"扰乱\"，与 a shift to green energy 的正面语义不符；其他词词性不匹配此处伴随状语结构。",
+    "tip": "现在分词作伴随状语，注意语义正负色彩判断。"
+   },
+   {
+    "number": 27,
+    "answer": "L",
+    "correct": "powered",
+    "why": "空格前是 gasoline，空格后是 vehicle，需要一个形容词或过去分词修饰 vehicle。gasoline-powered vehicle 意为\"以汽油为动力的车辆\"，是固定搭配，语义通顺。",
+    "traps": "此处若填其他形容词如 noticeable 或 hopeful，语义上无法与 gasoline 构成合理的复合修饰关系，不符合汽车领域的表达习惯。",
+    "tip": "过去分词作定语，注意\"名词+过去分词+名词\"复合修饰结构。"
+   },
+   {
+    "number": 28,
+    "answer": "H",
+    "correct": "implemented",
+    "why": "空格与 discussed 并列（discussed and ___），需要一个过去分词形式。implemented 意为\"被实施\"，与 discussed（被讨论）构成语义递进：先讨论再实施，逻辑合理。",
+    "traps": "installed 也是过去分词，但\"安装禁令\"不合语义；disrupting 是现在分词，与 discussed 的被动形式不平行。",
+    "tip": "and 并列结构要求词性一致，注意被动语态的过去分词。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "correct": "eliminate",
+    "why": "空格前有 do not，后接动词原形。eliminate a large portion of vehicle emissions 意为\"消除大量汽车排放\"，语义上说明不消除排放就无法达到目标，逻辑完整。",
+    "traps": "此处需动词原形，acceptance（名词）、hopeful（形容词）等词性不符；disrupting 是现在分词形式，不能直接跟在 do not 后面。",
+    "tip": "助动词 do not 后必须接动词原形。"
+   },
+   {
+    "number": 30,
+    "answer": "G",
+    "correct": "hopeful",
+    "why": "空格前是 is still，后接 that 从句，需要形容词作表语。hopeful 意为\"抱有希望的\"，be hopeful that... 是固定搭配，表示\"对……抱有希望\"，与后文\"但接受度不如预期\"形成转折。",
+    "traps": "able、futile 等形容词虽可作表语，但 able 不在选项中，futile that 不构成惯用搭配；currently 是副词，不能作表语。",
+    "tip": "be + adj. + that 从句结构，根据转折语境选择积极含义的形容词。"
+   },
+   {
+    "number": 31,
+    "answer": "A",
+    "correct": "acceptance",
+    "why": "空格前有定冠词 the，后有介词 of，需要名词。the acceptance of electric cars 意为\"电动汽车的接受度/普及\"，与 has not occurred as fast as expected 搭配，表示普及不如预期。",
+    "traps": "其他剩余名词选项不符合此处语境；若填动词或形容词则无法与 the...of 结构匹配。",
+    "tip": "the ___ of 结构提示此处必须填名词。"
+   },
+   {
+    "number": 32,
+    "answer": "J",
+    "correct": "installed",
+    "why": "空格位于句末，前面是 6 million charging stations，需要过去分词作后置定语或补语，表示\"被安装好的\"。have...stations installed 是\"使充电站被安装\"的使役结构，语义通顺。",
+    "traps": "powered 虽也是过去分词，但 charging stations powered 语义不完整且重复；implemented 语义上不适用于\"充电站\"这类具体设施。",
+    "tip": "过去分词作宾补，表示\"使…处于某种完成状态\"。"
+   },
+   {
+    "number": 33,
+    "answer": "B",
+    "correct": "currently",
+    "why": "空格位于 There are 与 around 155,000 之间，需要副词修饰整个句子。currently 意为\"目前\"，强调当前电动车数量之少，与后文 now 呼应，为后续论述做铺垫。",
+    "traps": "其他副词候选已用尽；形容词或名词无法插入 There are ___ around 这一结构中充当修饰成分。",
+    "tip": "There are ___ around... 中间插入时间副词修饰全句。"
+   },
+   {
+    "number": 34,
+    "answer": "K",
+    "correct": "noticeable",
+    "why": "空格前有不定冠词 a，后有名词 effect，需要形容词修饰。noticeable effect 意为\"显著的效果\"，表示需要更大的努力才能对环境产生明显的影响，语义完整。",
+    "traps": "futile effect（徒劳的效果）语义不符，因为文章此处强调的是\"需要更大步骤以产生效果\"，而非否定效果本身。",
+    "tip": "a ___ effect 结构需形容词，结合上下文正面期望选择。"
+   },
+   {
+    "number": 35,
+    "answer": "F",
+    "correct": "futile",
+    "why": "空格前有 not，构成 not futile（并非徒劳）。文章在承认短期内看不到成效的同时，肯定这些努力并非无用，与后文 bettering the world for the future 呼应，属于让步转折逻辑。",
+    "traps": "noticeable 已用于第34题；若填 hopeful 则 efforts are not hopeful 语义不通，且 hopeful 已用于第30题。",
+    "tip": "While...not... 让步结构中，双重否定表肯定，注意语义转折。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sparking",
+    "cn": "v. 引发，激发（spark 的现在分词）"
+   },
+   {
+    "w": "powered",
+    "cn": "adj./v. 以……为动力的；驱动（power 的过去分词）"
+   },
+   {
+    "w": "implemented",
+    "cn": "v. 实施，执行（implement 的过去分词）"
+   },
+   {
+    "w": "eliminate",
+    "cn": "v. 消除，根除，淘汰"
+   },
+   {
+    "w": "hopeful",
+    "cn": "adj. 抱有希望的，有前途的"
+   },
+   {
+    "w": "acceptance",
+    "cn": "n. 接受，认可，接纳"
+   },
+   {
+    "w": "futile",
+    "cn": "adj. 徒劳的，无用的，无效的"
+   },
+   {
+    "w": "noticeable",
+    "cn": "adj. 显著的，明显的，值得注意的"
+   },
+   {
+    "w": "disrupting",
+    "cn": "v. 扰乱，破坏，中断（disrupt 的现在分词）"
+   },
+   {
+    "w": "carbon footprint",
+    "cn": "n. 碳足迹（指碳排放总量）"
+   },
+   {
+    "w": "dwarfed",
+    "cn": "v. 使相形见绌，使显得矮小（dwarf 的过去分词）"
+   },
+   {
+    "w": "emissions",
+    "cn": "n. 排放物，排放量（常指废气排放）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握文章主题和整体逻辑框架",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词）",
+   "第三步：根据空格前后的语法标志词（冠词、介词、助动词等）判断所需词性",
+   "第四步：在同词性候选词中，结合上下文语义和搭配习惯选择最佳答案",
+   "第五步：填完后回读全文，检查语法一致性和语义连贯性，确保无重复使用"
+  ]
+ }
+}

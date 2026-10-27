@@ -1,0 +1,209 @@
+{
+ "schemaVersion": 1,
+ "id": "484879d3c447__translation__all",
+ "examId": "484879d3c447",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年 9 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:41:37.771Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34871,
+ "usage": {
+  "prompt_tokens": 810,
+  "completion_tokens": 2351,
+  "total_tokens": 3161,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 810,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2351,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 810,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "贴春联习俗与春节文化",
+  "reference": "Pasting Spring Festival couplets is an important custom for Chinese people to celebrate the Spring Festival. A Spring Festival couplet is composed of a pair of poetic lines and a four-character horizontal scroll. The poetic lines and the horizontal scroll are written in gold or black on red paper, with red symbolizing good luck and gold representing wealth. The couplets are pasted on both sides of the front door and above the door frame. The poetic lines of the couplets reflect the characteristics of traditional Chinese poetry, with the two lines containing the same number of characters and related content. The horizontal scroll highlights the theme of the couplet, serving as the perfect icing on the cake. With concise words, Spring Festival couplets depict vivid images and express beautiful wishes. When every household puts up Spring Festival couplets, people realize that the Spring Festival has officially kicked off.",
+  "sentences": [
+   {
+    "cn": "贴春联是中国人欢度春节的一个重要习俗。",
+    "en": "Pasting Spring Festival couplets is an important custom for Chinese people to celebrate the Spring Festival.",
+    "structure": "动名词短语作主语 + be + 表语；for sb. to do 不定式作目的/修饰成分",
+    "keys": [
+     "贴春联 pasting Spring Festival couplets",
+     "欢度春节 celebrate the Spring Festival",
+     "习俗 custom"
+    ]
+   },
+   {
+    "cn": "春联由一对诗句和四字横批组成，诗句和横批用金色或黑色写在红纸上，红色代表幸运，金色代表财富。",
+    "en": "A Spring Festival couplet is composed of a pair of poetic lines and a four-character horizontal scroll. The poetic lines and the horizontal scroll are written in gold or black on red paper, with red symbolizing good luck and gold representing wealth.",
+    "structure": "be composed of 被动结构 + be written in/on 被动结构 + with + n. + 现在分词的独立主格结构表伴随说明",
+    "keys": [
+     "一对诗句 a pair of poetic lines",
+     "四字横批 four-character horizontal scroll",
+     "由……组成 be composed of",
+     "红色代表幸运 red symbolizing good luck",
+     "金色代表财富 gold representing wealth"
+    ]
+   },
+   {
+    "cn": "春联贴在大门左右两侧和门框上方。",
+    "en": "The couplets are pasted on both sides of the front door and above the door frame.",
+    "structure": "主语 + be + 过去分词（被动语态）+ 介词短语表方位",
+    "keys": [
+     "大门左右两侧 both sides of the front door",
+     "门框上方 above the door frame"
+    ]
+   },
+   {
+    "cn": "春联的诗句体现中国传统诗词的特点，两句诗的字数相同、内容相关。",
+    "en": "The poetic lines of the couplets reflect the characteristics of traditional Chinese poetry, with the two lines containing the same number of characters and related content.",
+    "structure": "主句 + with 复合结构（with + 名词 + 现在分词）作补充说明，避免短句罗列",
+    "keys": [
+     "体现……的特点 reflect the characteristics of",
+     "中国传统诗词 traditional Chinese poetry",
+     "字数相同 the same number of characters",
+     "内容相关 related content"
+    ]
+   },
+   {
+    "cn": "横批凸显春联的主题，更是锦上添花。",
+    "en": "The horizontal scroll highlights the theme of the couplet, serving as the perfect icing on the cake.",
+    "structure": "主句 + 现在分词短语作伴随状语，用英语习语 icing on the cake 对译\"锦上添花\"",
+    "keys": [
+     "凸显主题 highlight the theme",
+     "锦上添花 icing on the cake"
+    ]
+   },
+   {
+    "cn": "春联以简洁的文字描绘生动的形象，抒发美好的愿望。",
+    "en": "With concise words, Spring Festival couplets depict vivid images and express beautiful wishes.",
+    "structure": "with 介词短语前置作方式状语 + 并列谓语（depict ... and express ...）",
+    "keys": [
+     "简洁的文字 concise words",
+     "描绘生动的形象 depict vivid images",
+     "抒发美好的愿望 express beautiful wishes"
+    ]
+   },
+   {
+    "cn": "当家家户户贴春联时，人们就会意识到春节已经正式拉开序幕。",
+    "en": "When every household puts up Spring Festival couplets, people realize that the Spring Festival has officially kicked off.",
+    "structure": "When 引导时间状语从句 + 主句含 that 宾语从句；现在完成时表结果",
+    "keys": [
+     "家家户户 every household",
+     "拉开序幕 kick off / begin",
+     "意识到 realize"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "春联",
+    "en": "Spring Festival couplets"
+   },
+   {
+    "cn": "横批",
+    "en": "horizontal scroll"
+   },
+   {
+    "cn": "诗句",
+    "en": "poetic lines"
+   },
+   {
+    "cn": "习俗",
+    "en": "custom"
+   },
+   {
+    "cn": "门框",
+    "en": "door frame"
+   },
+   {
+    "cn": "锦上添花",
+    "en": "icing on the cake"
+   },
+   {
+    "cn": "拉开序幕",
+    "en": "kick off / officially begin"
+   },
+   {
+    "cn": "家家户户",
+    "en": "every household"
+   },
+   {
+    "cn": "传统诗词",
+    "en": "traditional Chinese poetry"
+   },
+   {
+    "cn": "幸运",
+    "en": "good luck / good fortune"
+   }
+  ],
+  "pitfalls": [
+   "spring festival couplets 专有名词首字母需大写，且 couplet 不可拼写为 couple",
+   "'由……组成'应用 be composed of / consist of，不可写成 compose of（缺 be 或介词错误）",
+   "'锦上添花'切忌直译为 add flowers on silk，应意译为 icing on the cake 或 add brilliance",
+   "'红色代表幸运，金色代表财富'并列短句宜用 with 独立主格合并，避免写成四个简单句导致句式单一扣分",
+   "'拉开序幕'不宜逐字译为 pull open the curtain，应用 kick off / officially begin 等地道表达"
+  ],
+  "upgrades": [
+   {
+    "plain": "Spring Festival couplets are made up of...",
+    "better": "A Spring Festival couplet is composed of...",
+    "note": "be composed of 更正式书面，且用单数泛指更符合说明文体"
+   },
+   {
+    "plain": "red means good luck and gold means wealth",
+    "better": "with red symbolizing good luck and gold representing wealth",
+    "note": "with 独立主格结构更紧凑，体现句式多样性，避免简单句堆砌"
+   },
+   {
+    "plain": "The two lines have the same number of characters and the content is related.",
+    "better": "with the two lines containing the same number of characters and related content",
+    "note": "用 with 复合结构将信息整合进主句，层次更清晰"
+   },
+   {
+    "plain": "people will know that the Spring Festival has started",
+    "better": "people realize that the Spring Festival has officially kicked off",
+    "note": "kick off 形象生动，对应'拉开序幕'的隐喻；realize 比 know 更贴合'意识到'"
+   },
+   {
+    "plain": "Spring Festival couplets use simple words to describe vivid pictures and express good wishes.",
+    "better": "With concise words, Spring Festival couplets depict vivid images and express beautiful wishes.",
+    "note": "concise/depict 词汇更高级，with 短语前置使句式更灵活"
+   }
+  ]
+ }
+}

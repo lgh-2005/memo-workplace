@@ -1,0 +1,258 @@
+{
+ "schemaVersion": 1,
+ "id": "8ebc05bd819d__listening__all",
+ "examId": "8ebc05bd819d",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2024 年 12 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:56:37.968Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54573,
+ "usage": {
+  "prompt_tokens": 2250,
+  "completion_tokens": 2762,
+  "total_tokens": 5012,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2250,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2762,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2250,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于选项文本的语言特征与正确答案进行推理分析，不涉及任何对录音内容的编造。",
+  "overview": "本场听力共7段材料、25道题。第1段（Q1-4）和第2段（Q5-8）各4题，推测为长对话；第3段（Q9-11）至第7段（Q22-25）各3-4题，推测为短文/讲座。话题涵盖：换专业与职业规划、商业项目与市场分析、儿童电视暴露与发展、人生目标与物质主义、备考饮食与大脑营养、全球经济与贫困率、嗅觉与情绪记忆。选项语言正式、学术性较强，涉及因果推理与细节辨析。",
+  "strategy": [
+   "预读选项时圈出各选项间的差异关键词，带着对比点去听",
+   "长对话中注意转折词 but/however/actually 后的信息，常为出题点",
+   "短文听力开头1-2句往往揭示主题，与第一题强相关",
+   "含有绝对词 only/all/every 的选项往往是干扰项，需谨慎",
+   "数字、时间、地点等细节出现时立即标记，避免混淆相邻题的信息",
+   "对话中第二位说话者的观点与建议常被考查，注意 I think/suggest/recommend 等信号词"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "大学生换专业、艺术史与经济现实间的抉择",
+    "optionSignals": "Q1选项为名词短语/动名词短语，问的是讨论话题；Q2四项均以 He thinks/doesn't think 开头，问男方观点；Q3为祈使/建议句式，问建议行为；Q4为单个抽象名词，问核心要素。",
+    "tips": [
+     "Q2四项均涉及对Art History的态度，区分financial角度（C/D）与moral角度（A），正确答案C强调'不能谋生'，最为直接务实",
+     "Q3注意区分 socialize（A）与 seek employment（B），两者方向不同；正确答案A侧重行业人脉，听时关注 network/connection 等词",
+     "Q4四个单词极简，听力末尾常出总结性判断，注意对话结尾的关键名词"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "期末商业项目：牛肉市场与洗车业务案例分析",
+    "optionSignals": "Q5选项涉及 project/case study/investigation，问讨论起因；Q6为动名词短语描述商业策略；Q7为单个名词问行业领域；Q8描述目标客户群体，含 high-end/well-off 等消费层级词汇。",
+    "tips": [
+     "Q7四个选项差异极大（设备/咨询/牛肉/洗车），听到具体行业名词即可锁定，正确答案D carwashing 在对话中应有明确提及",
+     "Q8关注客户定位词汇：all walks of life（A）vs high-end（B）vs professional（C）vs well-off dealers（D），答案B指向高端城市客户，听时注意 premium/luxury/upscale 等信号词"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "儿童看电视对其发展与好奇心的影响",
+    "optionSignals": "Q9四项均以完整句描述研究发现，含因果关系；Q10为名词短语问具体影响维度；Q11以 It can 开头描述电视的某一效应。选项中 curiosity/development/exploratory 等词高频出现。",
+    "tips": [
+     "Q9需辨别因果方向：A说父母交谈提升好奇心，B说电视减少交谈时间，C说看越多发展越差，D说社会经济影响学业——正确答案A强调父母介入的正面作用",
+     "Q11区分正面效应（C）与负面效应（A/B/D），正确答案B指'挤占探索活动时间'，属典型的机会成本论证"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "人生目标、物质主义倾向与幸福感的关系",
+    "optionSignals": "Q12四项均为动名词/being结构描述一种生活状态，问定义或现象；Q13以 We might 开头描述后果；Q14以 They should 开头描述目标设定原则；Q15为动名词短语描述风险。",
+    "tips": [
+     "Q12注意 material things（D）与 professional success（B）的区分，正确答案D侧重'无意识地追求物质积累'，关键词 mindlessly/possess",
+     "Q14四项谈目标设定标准，正确答案C含 help other people，体现利他维度，听时注意 altruistic/prosocial/contribute 等词",
+     "Q15正确答案A drifting aimlessly 与全文'需要正确目标'的主旨形成反面呼应"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "备考期间的饮食建议：咖啡与营养摄入",
+    "optionSignals": "Q16为复合形容词+名词短语，问文章主题类别；Q17四项描述与咖啡相关的具体行为，含时间点 2 pm；Q18以 By doing 结构描述获取营养的方式。",
+    "tips": [
+     "Q17四项均关于咖啡饮用习惯，正确答案C指'下午2点后喝咖啡'为应避免的行为，听时注意 avoid/refrain/shouldn't 等否定信号",
+     "Q18区分 supplements/tablets（A/D）与 variety of foods（B），正确答案B强调食物多样性优于补剂，属于常见健康类观点"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "全球经济发展趋势、贫困减少与中产阶级",
+    "optionSignals": "Q19四项为完整陈述句描述世界现状认知；Q20描述对全球化/经济增长的评价；Q21描述某一群体的经济状况分类。选项含 advanced economies/recession/prosperity/middle class 等宏观经济词汇。",
+    "tips": [
+     "Q19正确答案A含 advanced economies 和 from bad to worse，提示文章先呈现悲观认知再反驳，听时注意 pessimistic/perception/contrary 等词",
+     "Q20正确答案C含 the only way，属绝对表述但仍为正确项，说明原文确有强调全球化的唯一性或不可替代性",
+     "Q21正确答案B middle class 是核心分类标签，听时关注数据或标准的界定"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "嗅觉如何触发情绪记忆的神经科学解释",
+    "optionSignals": "Q22为 Why/How 疑问词转化的名词从句，问文章核心问题；Q23为长名词短语描述神经机制；Q24为单个抽象名词；Q25为形容词/名词短语描述记忆特征。",
+    "tips": [
+     "Q22正确答案A问'为什么气味能激活情绪记忆'，是全篇核心问题，听开头即可锁定",
+     "Q23四项均描述神经通路，正确答案D强调气味信号'直达'情绪与记忆中枢，关键词 directly，注意与C项（仅涉及嗅觉细胞交互）的区分",
+     "Q25正确答案A inaccuracy and alterability 指记忆的不准确性与可变性，属于文章结论部分对嗅觉记忆的客观评价"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "legitimate",
+    "cn": "合理的，正当的"
+   },
+   {
+    "w": "nourish",
+    "cn": "滋养，培育"
+   },
+   {
+    "w": "viable",
+    "cn": "可行的，切实可行的"
+   },
+   {
+    "w": "socioeconomic",
+    "cn": "社会经济的"
+   },
+   {
+    "w": "exploratory",
+    "cn": "探索性的"
+   },
+   {
+    "w": "mindlessly",
+    "cn": "不经思考地，盲目地"
+   },
+   {
+    "w": "well-being",
+    "cn": "幸福感，健康"
+   },
+   {
+    "w": "alleviate",
+    "cn": "减轻，缓解"
+   },
+   {
+    "w": "tolerance",
+    "cn": "耐受性，容忍度"
+   },
+   {
+    "w": "catastrophe",
+    "cn": "灾难，大祸"
+   },
+   {
+    "w": "recession",
+    "cn": "经济衰退"
+   },
+   {
+    "w": "susceptibility",
+    "cn": "易感性，敏感性"
+   },
+   {
+    "w": "alterability",
+    "cn": "可变性，可改变性"
+   },
+   {
+    "w": "markup",
+    "cn": "加价，利润率"
+   }
+  ]
+ }
+}

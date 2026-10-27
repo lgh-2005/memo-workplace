@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "b130a5541fb7__banked_cloze__all",
+ "examId": "b130a5541fb7",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2020 年 12 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:31:10.676Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66689,
+ "usage": {
+  "prompt_tokens": 1377,
+  "completion_tokens": 3954,
+  "total_tokens": 5331,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1377,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3954,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1377,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "对有害行为征税的双重效益",
+  "gist": "文章论述了对有害行为征税可带来双重收益的理念：一方面抑制不良行为（如酗酒、吸烟、碳排放、财富不平等），另一方面为政府创造税收。文章依次以罪恶税、碳税和财富税为例，说明此类税收在社会改善与财政增收方面的积极作用。",
+  "difficulty": "中等",
+  "translation": "对有害于社会的事物征税这一理念具有强大的吸引力。它提供了一种双重获益的可能性——既能抑制有害活动，同时又能为政府带来收入。\n\n以罪恶税为例。对酒类征税使得醉酒的成本更高，从而减少了过度饮酒和酒后驾驶。与此同时，这些税收为各州和地方政府提供了数十亿美元的收入。烟草税的收入是酒税的两倍多，已被证明在吸烟率下降方面发挥了重要作用，挽救了数百万人的生命。\n\n税收也可以成为环境保护的重要工具，许多经济学家表示，对碳征税将是减少温室气体排放的最佳方式。经济理论指出，与所得税或销售税不同，碳税实际上可以提高经济效率；因为那些向天空排放二氧化碳的公司并未承担其所导致的气候变化成本，碳税将恢复市场应有的激励机制。\n\n实际上，仅靠碳税不足以遏制全球变暖，但它将是任何气候计划中有用的一部分。此外，这项税收的收入——可能高达每年数千亿美元——可以作为红利发放给公民，或者用于资助绿色基础设施项目。\n\n同样，财富税也被提出作为一种在增加收入的同时减少不平等的手段。这项税收的收入——一些专家预测每十年将超过4万亿美元——将被指定用于住房、儿童保育、医疗保健和其他政府福利。如果你和许多人一样，认为财富不平等本质上是有害的，那么这些税收在改善社会的同时也充实了政府的金库。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "correct": "discouraging",
+    "why": "破折号后是对 double benefit 的解释，需要与后面的 providing 并列的动名词形式。discouraging harmful activities（抑制有害活动）在语义上与\"双重收益\"完美对应：一抑制、二增收。",
+    "traps": "emotional（形容词，修饰activities语义不通）和fragments（名词，与句法不符）均不能作动名词与providing并列；swelling虽也是-ing形式，但语义上\"膨胀有害活动\"逻辑相反。",
+    "tip": "破折号后并列动名词结构，语义需与\"抑制\"对应。"
+   },
+   {
+    "number": 27,
+    "answer": "E",
+    "correct": "impaired",
+    "why": "空格处修饰driving，impaired driving（酒后驾驶/醉驾）是固定搭配，与前文reduces excessive drinking并列，语境为酒精税减少的两大危害行为。",
+    "traps": "discouraging driving语义虽相关但已用于第26题，且此处需要形容词修饰driving而非动名词；emotional driving语义牵强，不是常见搭配。",
+    "tip": "impaired driving是固定搭配，意为\"酒后驾驶\"。"
+   },
+   {
+    "number": 28,
+    "answer": "J",
+    "correct": "instrumental",
+    "why": "have proven instrumental in是固定句型，意为\"在……中发挥了重要作用\"。主语tobacco taxes在吸烟率下降中起关键作用，逻辑通顺。instrumental为形容词作proven的补语。",
+    "traps": "emotional in the decline语义不通；其他候选词词性不符，无法充当proven后的表语补足语。",
+    "tip": "prove instrumental in为固定搭配，意为\"在……中起关键作用\"。"
+   },
+   {
+    "number": 29,
+    "answer": "N",
+    "correct": "pump",
+    "why": "空格后为carbon dioxide into the sky，pump...into是常用搭配，意为\"将……排放到\"。companies that pump carbon dioxide into the sky描述企业排放二氧化碳的行为，作定语从句谓语。",
+    "traps": "fragment、swell等词不能与into the sky构成合理搭配；需要一个及物动词表示'排放'的含义，pump最为贴切。",
+    "tip": "pump...into为固定搭配，此处意为\"排放……到\"。"
+   },
+   {
+    "number": 30,
+    "answer": "G",
+    "correct": "incentives",
+    "why": "restore the proper incentives to the market意为\"恢复市场应有的激励机制\"。碳税纠正企业不承担外部性成本的市场失灵，incentives（激励机制）是经济学核心概念，与上下文语境完全吻合。",
+    "traps": "fragments（碎片）和dividend（红利）语义上不能与restore the proper...to the market构成合理搭配；此处需要经济学术语表达市场信号。",
+    "tip": "经济学语境中incentives指\"激励机制\"，与市场效率搭配。"
+   },
+   {
+    "number": 31,
+    "answer": "M",
+    "correct": "probably",
+    "why": "空格位于which would___be之间，需要副词修饰be。probably表示推测，\"可能达到每年数千亿美元\"，表达对碳税收入的合理估计，语气恰当。",
+    "traps": "inherently虽也是副词但语义为\"本质上\"，与金额估算不搭；此处需要表示\"大概、可能\"的推测副词。",
+    "tip": "would与be之间需插入副词，probably表推测最合语境。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "correct": "dividend",
+    "why": "as a dividend意为\"作为红利/分红\"，指碳税收入以现金形式分发给公民。a提示后面跟可数名词单数，dividend符合语法且语义精准，与or used to fund并列。",
+    "traps": "fragment虽为可数名词但语义为\"碎片\"，与发放收入无关；此处需要一个表示\"现金分配/红利\"的经济类名词。",
+    "tip": "dividend在经济语境中指\"红利/分红\"，与公民分配搭配。"
+   },
+   {
+    "number": 33,
+    "answer": "L",
+    "correct": "predict",
+    "why": "which some experts predict will be over $4 trillion构成宾语从句（predict后省略that），experts作主语需要谓语动词原形。predict（预测）语义上与experts搭配自然，表示专家对税收金额的预估。",
+    "traps": "pump和swell等动词语义与\"专家对数据的估算\"不符；此处需要表示\"预测\"含义的动词，且主语为复数名词experts，需原形。",
+    "tip": "predict后接省略that的宾语从句，主语experts对应动词原形。"
+   },
+   {
+    "number": 34,
+    "answer": "H",
+    "correct": "inherently",
+    "why": "inherently bad意为\"本质上是坏的\"，修饰形容词bad，表达财富不平等从根本上就是有害的这一观点。副词位于系动词is与形容词bad之间，语法语义均合适。",
+    "traps": "probably bad虽语法可行但已用于31题；emotionally虽可修饰形容词但选项为emotional（形容词）不能修饰bad；此处强调\"本质上\"的哲学判断。",
+    "tip": "inherently修饰形容词，强调\"本质上、内在地\"。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "swelling",
+    "why": "while also swelling government coffers与前面improve society并列，swelling意为\"充实、使膨胀\"，形象地表达税收增加政府金库收入。swelling为现在分词与also连用，与while构成伴随状态。",
+    "traps": "discouraging government coffers语义为\"抑制金库\"，逻辑矛盾；此处需要表示\"增加、充实\"的动词-ing形式与coffers搭配。",
+    "tip": "swell作及物动词意为\"使增大\"，swelling coffers指充实金库。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "allure",
+    "cn": "n. 吸引力，诱惑力"
+   },
+   {
+    "w": "impaired",
+    "cn": "adj. 受损的，削弱的（impaired driving 酒后驾驶）"
+   },
+   {
+    "w": "instrumental",
+    "cn": "adj. 有帮助的，起作用的（instrumental in 在……中起关键作用）"
+   },
+   {
+    "w": "incentives",
+    "cn": "n. 激励机制，刺激因素（复数）"
+   },
+   {
+    "w": "dividend",
+    "cn": "n. 红利，股息，分红"
+   },
+   {
+    "w": "inherently",
+    "cn": "adv. 本质上，内在地"
+   },
+   {
+    "w": "swell",
+    "cn": "v. 膨胀，增大，充实（swelling 为现在分词）"
+   },
+   {
+    "w": "coffers",
+    "cn": "n. 金库，资金（常用复数）"
+   },
+   {
+    "w": "greenhouse gas emissions",
+    "cn": "n. 温室气体排放"
+   },
+   {
+    "w": "designated",
+    "cn": "adj./v. 指定的，被指定用于"
+   },
+   {
+    "w": "infrastructure",
+    "cn": "n. 基础设施"
+   },
+   {
+    "w": "halt",
+    "cn": "v. 阻止，使停止"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——了解文章讨论税收的双重效益",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空选择范围",
+   "第三步：根据空格前后的语法结构（如冠词a后接名词、would与be之间需副词）锁定词性",
+   "第四步：结合上下文语义和固定搭配（如impaired driving、instrumental in）确定唯一答案",
+   "第五步：已选词不重复使用，利用排除法验证剩余空格答案的唯一性"
+  ]
+ }
+}

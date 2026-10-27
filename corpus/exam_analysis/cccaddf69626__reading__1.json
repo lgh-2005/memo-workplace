@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "cccaddf69626__reading__1",
+ "examId": "cccaddf69626",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 6 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:11:51.809Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59512,
+ "usage": {
+  "prompt_tokens": 1736,
+  "completion_tokens": 3635,
+  "total_tokens": 5371,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1736,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3635,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1736,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科研数据开放共享的现状与趋势",
+  "gist": "文章讨论了科研领域开放数据共享的现状：多数研究者虽认同数据共享能促进科学发展，但实际愿意公开自身数据的人仍是少数。文章分析了阻碍共享的历史原因，指出期刊和资助机构正推动障碍消除，并以Dryad数据库为例说明数据共享对分享者和使用者均有益处，最后指出即使数据不太热门，整理数据本身也能使研究者受益。",
+  "structure": [
+   "第1段：引出矛盾——认同共享但不愿实践",
+   "第2段：举例说明共享仍是例外，列举历史障碍",
+   "第3段：障碍正在消失，期刊和资助机构推动共享",
+   "第4段：共享非纯利他，分享者和使用者均获益",
+   "第5段：补充说明——整理数据本身也能使人受益"
+  ],
+  "difficulty": "中等",
+  "translation": "在许多领域，开放数据的分享者仍属少数。尽管许多研究者大体上认同公众获取原始数据将加速科学发展，但大多数人不愿将自己的研究成果发布到网上。\n\n一些学术群体已经同意在线共享——例如，遗传学家将DNA序列发布到GenBank数据库，天文学家也习惯于从斯隆数字巡天望远镜等来源获取星系和恒星的图像，该望远镜已观测了约五亿个天体——但这些仍是例外，而非惯例。历史上，科学家反对共享有许多原因：这需要大量工作；直到最近，良好的数据库并不存在；资助方没有推动共享；在数据格式标准上难以达成一致；而且没有公认的方式来为数据贡献者给予学术认可。\n\n但这些障碍正在消失，部分原因是全球的期刊和资助机构正在鼓励科学家公开其数据。去年，伦敦皇家学会在其报告中指出，科学家需要\"从视数据为私有领地的研究文化中转变出来\"。资助机构指出，用公共资金支付的数据应当成为公共信息，科学界也认识到现在可以通过数字方式共享数据，这在以前是不可能的。为了满足不断增长的需求，各种服务正纷纷涌现，使得在线发布研究成果以及让其他研究者发现和引用它们变得更加容易。\n\n尽管呼吁共享数据的声音常常集中在共享的道德优势上，但这一做法并非纯粹的利他行为。分享数据的研究者获得了大量个人利益，包括更多的同行联系、更高的学术知名度以及更多的引用次数。最成功的分享者——那些数据被下载和引用最多的人——会受到关注，其工作也会被利用。例如，跨学科数据库Dryad上最受欢迎的数据集之一是关于全球木材密度的，它已被下载5700次。合著者艾米·赞恩认为，用户可能从想要估算生物质中储存了多少碳的气候变化研究者，到寻找不同等级木材信息的林业工作者不等。她说：\"我更希望我的数据被尽可能多的人使用，让他们提出自己的问题。让读者和审稿人确切地看到你如何得出结论是很重要的。发布数据和代码可以使你的科研具有可重复性。\"\n\n即使是那些数据不太受欢迎的人也能受益。通过努力整理和标注文件以便他人理解，科学家自身也变得更有条理、更自律，从而避免了日后的混乱。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Although many researchers broadly agree that public access to raw data would accelerate science, most are reluctant to post the results of their own labors online.",
+    "why": "原文明确指出\"many researchers broadly agree that public access to raw data would accelerate science\"，即许多研究者普遍认同公开获取原始数据能加速科学进步。D选项\"Open data sharing is conducive to scientific advancement\"是对原文\"accelerate science\"的同义改写，conducive to（有助于）对应accelerate（加速），scientific advancement对应science的发展，因此D正确。",
+    "traps": "A选项\"保护科学家专利\"文中未提及，属于无中生有。B选项\"数据库对科学研究至关重要\"虽然文中提到了数据库，但这不是researchers broadly agree的内容，属于偷换概念。C选项\"对医学最重要\"中的medical science在文中完全没有涉及，属于无中生有。",
+    "tip": "注意同义替换：accelerate science = conducive to scientific advancement。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "most are reluctant to post the results of their own labors online.",
+    "why": "原文说\"most are reluctant to post the results of their own labors online\"，reluctant意为\"不愿意的\"，表明大多数研究者对公开自己的数据持抵触态度。此外第二段列举了scientists have objected to sharing的多条理由，objected进一步印证了反对立场。因此A选项Opposed（反对的）最为贴切。",
+    "traps": "B选项Ambiguous（模棱两可的）不符合原文表述，reluctant和objected语气明确，并非含糊不清。C选项Liberal（开明的/自由的）与reluctant语义相反，属于正反混淆。D选项Neutral（中立的）同样不符合，研究者态度明确是不愿意，而非无所谓的中立。",
+    "tip": "reluctant和objected都是表示负面态度的关键词，直接指向Opposed。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "scientists need to \"shift away from a research culture where data is viewed as a private preserve\"",
+    "why": "原文引用皇家学会报告指出科学家需要\"从视数据为私有领地的研究文化中转变出来\"，这说明将研究数据视为私有知识产权（private preserve）的观念正是阻碍开放数据共享的因素之一。C选项\"The belief that research data is private intellectual property\"是对private preserve的同义改写，逻辑完全对应，因此C正确。",
+    "traps": "A选项\"害怕大规模复制\"原文未提及，属于无中生有。B选项\"缺乏研究文化\"属于曲解原文，原文说的是需要从某种特定的研究文化中转变，而非缺乏研究文化。D选项\"担心某些机构从中牟利\"在文中没有依据，属于无中生有。",
+    "tip": "private preserve（私有领地）= private intellectual property（私有知识产权），注意同义改写的识别。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But the barriers are disappearing, in part because journals and funding agencies worldwide are encouraging scientists to make their data public.",
+    "why": "原文第三段首句明确指出障碍正在消失，部分原因是全球的期刊（journals）和资助机构（funding agencies）正在鼓励科学家公开数据。C选项\"The changing attitude of journals and funders\"精准概括了这一原因，journals对应journals，funders对应funding agencies，changing attitude对应encouraging，因此C正确。",
+    "traps": "A选项\"对大数据不断增长的需求\"虽然文中提到了growing demand，但这是共享趋势的结果表现，并非消除障碍的原因，属于因果倒置。B选项\"数字技术的进步\"虽然文中提到data can now be shared digitally，但这只是补充说明，主因是期刊和资助机构的推动。D选项\"社会经济发展趋势\"在文中完全没有涉及，属于无中生有。",
+    "tip": "定位\"barriers are disappearing\"后紧跟because引导的原因状语从句，即为答案来源。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "Researchers who share get plenty of personal benefits, including more connections with colleagues, improved visibility and increased citations.",
+    "why": "Dryad的例子出现在第四段，该段论点是数据共享并非纯粹的利他行为，分享者也能获得个人利益。木材密度数据集被下载5700次，说明使用者受益；而合著者Amy Zanne表示希望数据被更多人使用，同时发布数据能使科研可重复，说明分享者也受益。因此Dryad的例子是为了说明开放数据共享让分享者和使用者双方均受益，对应B选项。",
+    "traps": "A选项\"越来越受欢迎\"虽然下载量大暗示了受欢迎，但这不是该例证要说明的论点，属于以偏概全。C选项\"使研究者成功\"过度引申，原文说的是get noticed而非makes researchers successful，且例证重点是双方受益。D选项\"节省金钱和劳动\"在文中完全没有提及，属于无中生有。",
+    "tip": "例证题需回到例子所服务的论点句，而非只看例子本身的细节。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "reluctant",
+    "cn": "adj. 不情愿的，勉强的"
+   },
+   {
+    "w": "repository",
+    "cn": "n. 存储库，仓库"
+   },
+   {
+    "w": "accustomed",
+    "cn": "adj. 习惯的，惯常的"
+   },
+   {
+    "w": "altruistic",
+    "cn": "adj. 利他的，无私的"
+   },
+   {
+    "w": "conducive",
+    "cn": "adj. 有助于的，有利于的"
+   },
+   {
+    "w": "imperative",
+    "cn": "adj. 紧迫的，必要的；n. 必要的事"
+   },
+   {
+    "w": "preserve",
+    "cn": "n. 专有领域，保护区；v. 保护，保存"
+   },
+   {
+    "w": "multidisciplinary",
+    "cn": "adj. 多学科的，跨学科的"
+   },
+   {
+    "w": "biomass",
+    "cn": "n. 生物质，生物量"
+   },
+   {
+    "w": "reproducible",
+    "cn": "adj. 可重复的，可再现的"
+   },
+   {
+    "w": "citation",
+    "cn": "n. 引用，引文"
+   },
+   {
+    "w": "spring up",
+    "cn": "v. 涌现，迅速出现"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Some communities have agreed to share online—geneticists, for example, post DNA sequences at the GenBank repository, and astronomers are accustomed to accessing images of galaxies and stars from, say, the Sloan Digital Sky Survey, a telescope that has observed some 500 million objects—but these remain the exception, not the rule.",
+    "cn": "一些学术群体已经同意在线共享——例如，遗传学家将DNA序列发布到GenBank数据库，天文学家也习惯于从斯隆数字巡天望远镜等来源获取星系和恒星的图像，该望远镜已观测了约五亿个天体——但这些仍是例外，而非惯例。",
+    "note": "主干为Some communities have agreed...but these remain...。两个破折号之间为插入性举例说明，内含两个并列分句（geneticists...and astronomers...），其中a telescope为同位语。"
+   },
+   {
+    "en": "To match the growing demand, services are springing up to make it easier to publish research products online and enable other researchers to discover and cite them.",
+    "cn": "为了满足不断增长的需求，各种服务正纷纷涌现，使得在线发布研究成果以及让其他研究者发现和引用它们变得更加容易。",
+    "note": "To match...为目的状语，主句为services are springing up，后接不定式to make it easier...and enable...作目的补充，其中it为形式宾语，to publish...为真正宾语。"
+   },
+   {
+    "en": "Co-author Amy Zanne thinks that users probably range from climate-change researchers wanting to estimate how much carbon is stored in biomass, to foresters looking for information on different grades of timber.",
+    "cn": "合著者艾米·赞恩认为，用户可能从想要估算生物质中储存了多少碳的气候变化研究者，到寻找不同等级木材信息的林业工作者不等。",
+    "note": "主干为Amy Zanne thinks that...，that引导宾语从句；range from A to B结构连接两类用户；wanting...和looking for...分别为现在分词短语作后置定语修饰researchers和foresters。"
+   }
+  ]
+ }
+}

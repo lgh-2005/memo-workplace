@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "4ee7bac862c0__writing__all",
+ "examId": "4ee7bac862c0",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2016 年 12 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:05:31.015Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42613,
+ "usage": {
+  "prompt_tokens": 704,
+  "completion_tokens": 2723,
+  "total_tokens": 3427,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 704,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2723,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 704,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "围绕\"发明\"写一篇短文，需涵盖发明的重要性以及鼓励发明应采取的措施，字数150–200词。",
+    "outline": [
+     "引出话题：在科技飞速发展的时代，发明是人类进步与社会发展的基石，点明其重要性不容忽视。",
+     "分两层展开：第一层阐述发明的重要性（推动经济、改善生活、提升国际竞争力），第二层提出鼓励发明的具体措施（政府资金与政策支持、教育培养创新思维、完善知识产权保护体系）。",
+     "总结全文：重申发明对社会进步不可或缺，呼吁各方共同努力营造创新文化。"
+    ],
+    "sample": "In an era of rapid technological advancement, invention serves as the cornerstone of human progress and social development. Its importance can hardly be overstated.\n\nTo begin with, invention drives economic growth by creating new industries and job opportunities. The invention of the Internet, for instance, has given rise to countless enterprises and transformed the way people live and work. Furthermore, inventions in the medical field, such as vaccines and advanced surgical techniques, have significantly improved the quality of human life and extended life expectancy. In addition, invention fosters a nation's competitiveness on the global stage, enabling it to take the lead in key technological domains.\n\nGiven the significance of invention, effective measures should be adopted to encourage it. First, the government should increase funding for scientific research and provide tax incentives for innovative enterprises. Second, educational institutions ought to cultivate students' creativity and critical thinking from an early age. Finally, a robust intellectual property system must be established to protect inventors' rights and reward their contributions.\n\nIn conclusion, invention is indispensable to societal progress, and concerted efforts from all sectors are needed to foster a culture of innovation.",
+    "phrases": [
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "充当……的基石；用于强调某事物的根本性地位"
+     },
+     {
+      "en": "can hardly be overstated",
+      "cn": "怎么强调都不为过；常用于议论文点明重要性"
+     },
+     {
+      "en": "give rise to",
+      "cn": "引起、催生；替代 cause/lead to，更书面"
+     },
+     {
+      "en": "extend life expectancy",
+      "cn": "延长预期寿命；医学/社会话题高频搭配"
+     },
+     {
+      "en": "foster one's competitiveness",
+      "cn": "增强某方的竞争力；foster 比 improve 更正式"
+     },
+     {
+      "en": "provide tax incentives for",
+      "cn": "为……提供税收优惠；政策类论述常用表达"
+     },
+     {
+      "en": "cultivate creativity and critical thinking",
+      "cn": "培养创造力与批判性思维；教育话题核心短语"
+     },
+     {
+      "en": "a robust intellectual property system",
+      "cn": "健全的知识产权体系；robust 显示用词精准"
+     },
+     {
+      "en": "concerted efforts from all sectors",
+      "cn": "各方的协调努力；总结段高级收束表达"
+     },
+     {
+      "en": "indispensable to societal progress",
+      "cn": "对社会进步不可或缺；indispensable 比 important 档次更高"
+     }
+    ],
+    "pitfalls": [
+     "审题遗漏：题目明确要求写 importance 和 measures 两部分，只写一部分会严重扣分。",
+     "论证空泛：只说 invention is important 却不给具体例子或分论点，缺乏说服力。",
+     "措施段流于口号：如 we should try our best 等空话，缺少可操作的具体建议。",
+     "词汇重复：全文反复使用 important / invention 而不做同义替换，影响语言分。",
+     "字数不达标或严重超标：低于150词直接扣档，超过200词说明组织松散。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Invention is very important for our society.",
+      "better": "Invention serves as the cornerstone of human progress and social development.",
+      "note": "用具体比喻 cornerstone 替代空泛的 very important，画面感更强。"
+     },
+     {
+      "plain": "The Internet has caused many new companies.",
+      "better": "The invention of the Internet has given rise to countless enterprises and transformed the way people live and work.",
+      "note": "give rise to 更书面，加 transformed 补充影响维度，论证更充分。"
+     },
+     {
+      "plain": "We should protect inventors.",
+      "better": "A robust intellectual property system must be established to protect inventors' rights and reward their contributions.",
+      "note": "将空泛呼吁细化为制度层面措施，同时用被动句式增强客观感。"
+     },
+     {
+      "plain": "Schools should teach students to be creative.",
+      "better": "Educational institutions ought to cultivate students' creativity and critical thinking from an early age.",
+      "note": "ought to 比 should 更正式，creativity and critical thinking 体现学术用语。"
+     },
+     {
+      "plain": "In a word, invention is important and we should encourage it.",
+      "better": "In conclusion, invention is indispensable to societal progress, and concerted efforts from all sectors are needed to foster a culture of innovation.",
+      "note": "indispensable 替代 important，concerted efforts 提升总结段的语言层次。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Invention serves as the cornerstone of human progress and social development. —— 发明是人类进步与社会发展的基石。（cornerstone 比喻精准，适用于开篇立论）",
+   "The invention of the Internet has given rise to countless enterprises and transformed the way people live and work. —— 互联网的发明催生了无数企业，改变了人们的生活与工作方式。（举例论证的经典句式，give rise to + transform 双动词并列）",
+   "A robust intellectual property system must be established to protect inventors' rights and reward their contributions. —— 必须建立健全的知识产权体系来保护发明者的权益并奖励他们的贡献。（措施段高分句，被动语态 + 目的状语，逻辑清晰）",
+   "Concerted efforts from all sectors are needed to foster a culture of innovation. —— 需要各方协调努力以培育创新文化。（总结段黄金收束句，concerted efforts + foster a culture of 均为六级高分表达）"
+  ]
+ }
+}

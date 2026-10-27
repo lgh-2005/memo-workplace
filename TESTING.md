@@ -1,5 +1,7 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
+> v3.8.0 增量：新增 `scripts/exam-analysis-smoke.mjs`（隔离沙箱，自带最小真题 + 解析夹具）验证真题参考解析全链路：状态接口（units/exams/bySection/byTrack/中文标签/不暴露绝对路径）、整套解析（排序/sub/题号/内嵌逐题）、单单元（命中/404 `NO_ANALYSIS`）、真题详情覆盖信息、无解析套卷降级 `ready:false`、损坏解析文件跳过并计入 `skipped`、索引缓存随文件变更自动失效、解析内容结构完整性（答案/why/译文/词汇/长难句/范文/听力 notice/未编造录音）、前端契约（app.js 与 index.html **内联事件处理器数量必须为 0**、板块挂载点、可见性 class、事件委托、解析徽章、样式、演练模式默认隐藏）、生成器 JSON 修复器单测（`repairUnescapedQuotes` / `parseLoose` / `salvageJson` / `stripFences`）、安全头未放宽（51 断言）。已接入 `npm test` 与发布门禁。
+
 > v3.7.1 增量：`scripts/tts-smoke.mjs` 的句子分支在**已安装 Piper** 时断言 200 + `audio/*`（未安装时仍断言 503 `TTS_UNAVAILABLE` 优雅降级），因此同一套件在本地（已装 Piper）与 CI（不装）都成立，无 SKIP 分支。
 
 > v3.7.0 增量：新增 `scripts/ecdict-smoke.mjs`（隔离沙箱，`ECDICT_HOME` 指向临时目录）验证离线 ECDICT 词库：词库缺失时 503 优雅降级且服务不崩、status 就绪字段、精确/忽略大小写命中、规则还原与 exchange 变形表（abandoned/gave/mice）、词组（give up）、未收录 `found:false`、空参数 400、前缀联想按词频升序、重复查询缓存性能（25 断言）。已接入 `npm test` 与发布门禁。
@@ -187,6 +189,14 @@
 | # | 脚本 | 断言数 | 覆盖 |
 |---|---|---|---|
 | 52 | `.workbuddy/test_v330_pwa.js` | 31 | PWA 可安装（后端 + 浏览器）：manifest MIME（`application/manifest+json`）与契约（name/short_name/display=standalone/scope/theme_color/图标 any 192·512 + maskable 192·512）、sw.js 含 install/activate/fetch 且 `/api` 直连、图标族（icon/maskable/apple-touch/favicon.ico/svg）均 200；浏览器侧 HTML manifest link + theme-color + apple-touch-icon + apple-mobile-web-app-capable、manifest 可解析、图标可加载非空、Service Worker 注册就绪并接管页面、**离线仍可打开应用外壳（导航 200）**、设置页「安装到桌面」区渲染、`?tab=quiz` 快捷方式直达、控制台 0 错误、真实 `data/` 三文件哈希不变 |
+
+### 3.20 v3.8.0 增量套件（1）
+
+| 脚本 | 断言数 | 覆盖 |
+|---|---|---|
+| `scripts/exam-analysis-smoke.mjs` | 51 | 解析状态/整套/单单元/详情覆盖/无解析降级/损坏跳过/缓存失效/内容完整性/前端契约/JSON 修复器/安全头 |
+
+> v3.8.0 起把「无内联事件处理器」列为**硬断言**：`app.js` 与 `index.html` 内出现 `on*=` 即判定失败。原因是 CSP `script-src 'self'` 会静默拦截它们，功能失效但页面不报错，靠人工很容易漏掉（v3.3.4~v3.7.0 真题页即因此失效）。
 
 ### 3.19 v3.7.0 增量套件（2）
 

@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "2efb108c52cc__long_match__all",
+ "examId": "2efb108c52cc",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2024 年 6 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:55:43.392Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 46240,
+ "usage": {
+  "prompt_tokens": 983,
+  "completion_tokens": 3060,
+  "total_tokens": 4043,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 983,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3060,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 983,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "行为习惯改变与维持的策略",
+  "strategy": [
+   "先通读10条陈述句，标记高区分度名词、形容词与因果逻辑关系",
+   "利用专有概念词（如willpower、perfectionists、inertia）快速在段落中扫读定位",
+   "注意同义替换：题目与原文常用不同表达传达相同含义，需关注语义而非字面",
+   "对比相似陈述句的细微差异（如39与45同定位K段），确认段落能同时支撑两个论点",
+   "先做有明显关键词的题目，再回头处理抽象概括类题目"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "专家们普遍认为，仅凭意志力无法保证一个人在改变和维持习惯方面取得成功。",
+    "keywords": [
+     "general consensus",
+     "experts",
+     "willpower alone",
+     "maintaining a habit"
+    ],
+    "paraphrase": "原文可能用 'agree/acknowledge' 替换 'general consensus'，用 'not enough/insufficient' 替换 'cannot guarantee'，核心同义替换围绕\"意志力不足以确保习惯改变的成功\"展开。",
+    "tip": "定位\"willpower\"与\"experts/专家共识\"共现的段落即为目标段。"
+   },
+   {
+    "number": 37,
+    "answer": "I",
+    "cn": "一个人不必仅仅因为暂时未达到目标就完全放弃自己的目标；他们可以重新开始。",
+    "keywords": [
+     "abandon goals",
+     "missed target temporarily",
+     "start anew"
+    ],
+    "paraphrase": "原文可能用 'give up entirely' 替换 'abandon completely'，用 'slip/setback/lapse' 替换 'missed their target temporarily'，用 'begin again/restart' 替换 'start anew'。",
+    "tip": "抓住\"暂时失败≠彻底放弃\"与\"重新开始\"的逻辑在段落中快速锁定。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "cn": "研究表明，在你已经启动了行为改变之后，维持这种改变是一个完全不同的挑战。",
+    "keywords": [
+     "research",
+     "maintain",
+     "behavioral change",
+     "initiated"
+    ],
+    "paraphrase": "原文可能用 'study/evidence suggests' 替换 'research shows'，用 'sustain/keep up' 替换 'maintain'，用 'started/begun' 替换 'initiated'，强调启动与维持是两个不同阶段。",
+    "tip": "该题常位于文章开头段（A段），用研究引出\"启动易、维持难\"的核心论点。"
+   },
+   {
+    "number": 39,
+    "answer": "K",
+    "cn": "认为我们用来启动行为改变的策略同样能很好地帮助维持这种改变，这种想法是错误的。",
+    "keywords": [
+     "wrong to assume",
+     "strategies",
+     "start a change",
+     "maintain"
+    ],
+    "paraphrase": "原文可能用 'mistaken/flawed thinking' 替换 'wrong to assume'，用 'initiation strategies ≠ maintenance strategies' 表达启动策略不等于维持策略的核心含义。",
+    "tip": "聚焦\"启动策略与维持策略不可混为一谈\"的否定判断，与第38题区分。"
+   },
+   {
+    "number": 40,
+    "answer": "H",
+    "cn": "有时候，仅仅用一种活动替代另一种活动来实现习惯改变可能并不成功；你可能需要额外的强化。",
+    "keywords": [
+     "substitute",
+     "activity",
+     "extra reinforcement",
+     "not successful"
+    ],
+    "paraphrase": "原文可能用 'replace/swap' 替换 'substitute'，用 'additional support/reward' 替换 'extra reinforcement'，强调简单替代不够、需要更多支持。",
+    "tip": "扫读含有\"替代活动\"加\"额外手段/强化\"双重信息的段落。"
+   },
+   {
+    "number": 41,
+    "answer": "F",
+    "cn": "一个人应该引入新事物来取代旧习惯，而不是简单地戒除它。",
+    "keywords": [
+     "introduce something new",
+     "replace",
+     "old habit",
+     "kicking"
+    ],
+    "paraphrase": "原文可能用 'add a positive behavior/fill the void' 替换 'introduce something new'，用 'merely stopping/eliminating' 替换 'simply kicking it'，核心是\"替代优于单纯戒除\"。",
+    "tip": "定位\"用新习惯填补旧习惯空缺\"的建议性语句所在段。"
+   },
+   {
+    "number": 42,
+    "answer": "J",
+    "cn": "完美主义者过于关注他们的大目标，而忽视了庆祝他们在过程中取得的小进步。",
+    "keywords": [
+     "perfectionists",
+     "big target",
+     "celebrating",
+     "small gains"
+    ],
+    "paraphrase": "原文可能用 'all-or-nothing thinkers' 替换 'perfectionists'，用 'overlook/ignore small victories/milestones' 替换 'neglect celebrating small gains'。",
+    "tip": "'perfectionists' 为高辨识词，直接在原文扫读可快速定位J段。"
+   },
+   {
+    "number": 43,
+    "answer": "L",
+    "cn": "从长远来看，克服阻止我们进行行为改变的惰性对我们大有裨益。",
+    "keywords": [
+     "great benefit",
+     "long term",
+     "conquer inertia",
+     "behavioral changes"
+    ],
+    "paraphrase": "原文可能用 'overcome resistance/reluctance' 替换 'conquer the inertia'，用 'rewarding/pay off' 替换 'of great benefit'，聚焦长期回报。",
+    "tip": "关注含 'inertia/resistance' 和 'long-term benefit/reward' 语义共现的段落。"
+   },
+   {
+    "number": 44,
+    "answer": "G",
+    "cn": "成功改变了你某一行为的策略可能对你的其他行为不起作用。",
+    "keywords": [
+     "strategy",
+     "successfully changed",
+     "one behavior",
+     "other behavior"
+    ],
+    "paraphrase": "原文可能用 'what worked for one habit may fail for another' 表达策略不可跨行为通用的含义，用 'different behaviors require different approaches' 进行改写。",
+    "tip": "核心逻辑是\"策略不具有跨行为的普适性\"，在段落中找\"一种策略≠万能\"的表述。"
+   },
+   {
+    "number": 45,
+    "answer": "K",
+    "cn": "没有愉快的心情，我们采取不同行为的智慧似乎就消失了。",
+    "keywords": [
+     "happy mood",
+     "wisdom",
+     "adopt different behavior",
+     "vanishes"
+    ],
+    "paraphrase": "原文可能用 'positive emotions/good feelings' 替换 'happy mood'，用 'cognitive flexibility/ability to think differently' 替换 'wisdom to adopt a different behavior'，用 'disappears/diminishes' 替换 'vanishes'。",
+    "tip": "注意此题与第39题同属K段，该段既讨论策略差异，也涉及情绪对认知灵活性的影响。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "consensus",
+    "cn": "n. 共识，一致意见"
+   },
+   {
+    "w": "willpower",
+    "cn": "n. 意志力"
+   },
+   {
+    "w": "anew",
+    "cn": "adv. 重新，再一次"
+   },
+   {
+    "w": "initiate",
+    "cn": "v. 发起，开始"
+   },
+   {
+    "w": "substitute",
+    "cn": "v. 替代，取代"
+   },
+   {
+    "w": "reinforcement",
+    "cn": "n. 强化，增援"
+   },
+   {
+    "w": "perfectionist",
+    "cn": "n. 完美主义者"
+   },
+   {
+    "w": "inertia",
+    "cn": "n. 惰性，惯性"
+   },
+   {
+    "w": "vanish",
+    "cn": "v. 消失，突然不见"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "v./n. 改述，释义"
+   }
+  ]
+ }
+}

@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "524855593c06__translation__all",
+ "examId": "524855593c06",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2021 年 6 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:35:35.896Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67973,
+ "usage": {
+  "prompt_tokens": 804,
+  "completion_tokens": 5569,
+  "total_tokens": 6373,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 804,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5569,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 804,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "海南岛概况与发展前景",
+  "reference": "Hainan is China's second largest island, second only to Taiwan, and is the southernmost province of China. Boasting beautiful scenery, a pleasant climate, abundant sunshine, rich biodiversity, numerous hot springs, and crystal-clear seawater, Hainan Island has most of its beaches serving as ideal places for swimming and sunbathing almost all year round. It is therefore hailed as China's \"four-season garden\" and a premier holiday resort, attracting large numbers of tourists from both home and abroad every year. Since it was established as a province in 1988, Hainan has witnessed rapid development in tourism, the service industry, and the high-tech industry, and it is China's only provincial-level special economic zone. With the strong support of the central government and people across the country, Hainan will be built into China's largest pilot free trade zone.",
+  "sentences": [
+   {
+    "cn": "海南是仅次于台湾的中国第二大岛，是位于中国最南端的省份。",
+    "en": "Hainan is China's second largest island, second only to Taiwan, and is the southernmost province of China.",
+    "structure": "并列谓语结构，两个 is 并列，second only to 作插入语补充排名关系，southernmost 用最高级表方位",
+    "keys": [
+     "仅次于 second only to",
+     "中国第二大岛 China's second largest island",
+     "中国最南端 the southernmost ... of China"
+    ]
+   },
+   {
+    "cn": "海南岛风景秀丽，气候宜人，阳光充足，生物多样，温泉密布，海水清澈，大部分海滩几乎全年都是游泳和日光浴的理想场所，因而被誉为中国的四季花园和度假胜地，每年都吸引了大批中外游客。",
+    "en": "Boasting beautiful scenery, a pleasant climate, abundant sunshine, rich biodiversity, numerous hot springs, and crystal-clear seawater, Hainan Island has most of its beaches serving as ideal places for swimming and sunbathing almost all year round. It is therefore hailed as China's \"four-season garden\" and a premier holiday resort, attracting large numbers of tourists from both home and abroad every year.",
+    "structure": "现在分词短语 Boasting... 作原因状语统领六个并列名词短语；主句用 has...serving 结构；第二句被动语态 is hailed as，尾部 attracting 为伴随结果状语",
+    "keys": [
+     "风景秀丽 beautiful scenery",
+     "气候宜人 a pleasant climate",
+     "生物多样 rich biodiversity",
+     "温泉密布 numerous hot springs",
+     "日光浴 sunbathing",
+     "被誉为 be hailed as",
+     "度假胜地 holiday resort",
+     "中外游客 tourists from home and abroad"
+    ]
+   },
+   {
+    "cn": "海南1988年建省以来，旅游业、服务业、高新技术产业飞速发展，是中国唯一的省级经济特区。",
+    "en": "Since it was established as a province in 1988, Hainan has witnessed rapid development in tourism, the service industry, and the high-tech industry, and it is China's only provincial-level special economic zone.",
+    "structure": "Since 引导时间状语从句用一般过去时，主句用现在完成时 has witnessed 表持续至今的变化，and 并列分句补充身份信息",
+    "keys": [
+     "建省 be established as a province",
+     "高新技术产业 high-tech industry",
+     "飞速发展 rapid development",
+     "省级经济特区 provincial-level special economic zone"
+    ]
+   },
+   {
+    "cn": "在中央政府和全国人民的大力支持下，海南将建成中国最大的自由贸易试验区。",
+    "en": "With the strong support of the central government and people across the country, Hainan will be built into China's largest pilot free trade zone.",
+    "structure": "With 介词短语作条件背景状语前置，主句用一般将来时被动语态 will be built into 表规划目标",
+    "keys": [
+     "中央政府 the central government",
+     "全国人民 people across the country",
+     "大力支持 strong support",
+     "自由贸易试验区 pilot free trade zone"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "仅次于",
+    "en": "second only to"
+   },
+   {
+    "cn": "气候宜人",
+    "en": "a pleasant/agreeable climate"
+   },
+   {
+    "cn": "生物多样",
+    "en": "rich biodiversity / biological diversity"
+   },
+   {
+    "cn": "温泉密布",
+    "en": "numerous hot springs"
+   },
+   {
+    "cn": "日光浴",
+    "en": "sunbathing"
+   },
+   {
+    "cn": "度假胜地",
+    "en": "holiday resort / vacation destination"
+   },
+   {
+    "cn": "省级经济特区",
+    "en": "provincial-level special economic zone"
+   },
+   {
+    "cn": "高新技术产业",
+    "en": "high-tech industry / high and new technology industry"
+   },
+   {
+    "cn": "自由贸易试验区",
+    "en": "pilot free trade zone"
+   },
+   {
+    "cn": "建省",
+    "en": "be established as a province"
+   }
+  ],
+  "pitfalls": [
+   "「仅次于」误译为 inferior to 或 only after，应用 second only to",
+   "「建省」直译为 build a province，应为 be established as a province",
+   "「自由贸易试验区」遗漏「试验」一词，pilot 不可省略，否则与「自由贸易区」混淆",
+   "「省级经济特区」中 provincial-level 易遗漏 level 或整体缺译",
+   "长句中六个并列描写若逐一写成独立短句，会造成逗号拼接错误，应用分词短语或 with 结构整合"
+  ],
+  "upgrades": [
+   {
+    "plain": "has beautiful scenery",
+    "better": "boasts picturesque/spectacular scenery",
+    "note": "boast 常用于介绍地方特色，比 has 更地道正式，体现夸赞语气"
+   },
+   {
+    "plain": "is called China's four-season garden",
+    "better": "is hailed/acclaimed as China's \"four-season garden\"",
+    "note": "hailed as 语气更庄重，贴合「被誉为」的赞誉色彩"
+   },
+   {
+    "plain": "has developed very fast",
+    "better": "has witnessed/seen rapid/booming development",
+    "note": "witness 作主语转换使句式更丰富，属于高分书面语表达"
+   },
+   {
+    "plain": "attract many Chinese and foreign tourists",
+    "better": "attract a multitude of tourists from home and abroad",
+    "note": "from home and abroad 为固定搭配，比 Chinese and foreign 更地道自然"
+   },
+   {
+    "plain": "clear seawater",
+    "better": "crystal-clear seawater",
+    "note": "crystal-clear 形象生动地强调海水清澈透明，比 clear 更具表现力"
+   }
+  ]
+ }
+}

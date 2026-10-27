@@ -1,0 +1,249 @@
+{
+ "schemaVersion": 1,
+ "id": "086191ae943b__long_match__all",
+ "examId": "086191ae943b",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2024 年 6 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:57:26.169Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35411,
+ "usage": {
+  "prompt_tokens": 999,
+  "completion_tokens": 2072,
+  "total_tokens": 3071,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 999,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2072,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 999,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "职场会议疲劳与会议恢复综合征(MRS)",
+  "strategy": [
+   "先通读10条陈述句，提炼共同主题与高频实体词（如Mroz、MRS等）",
+   "标记专有名词、数据、极端表述等强定位信号词，优先扫读定位",
+   "注意同义替换：陈述句用词往往是原文的近义改写，需灵活匹配",
+   "按信息密度排序：含人名、数字的题优先做，抽象概括题后做",
+   "一个段落原则上只对应一题，已匹配段落可排除以缩小范围"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "虽然据说员工对会议感到疲惫不堪，但直到最近这一状况才被认为值得进一步研究。",
+    "keywords": [
+     "fatigued by meetings",
+     "not been considered",
+     "further research",
+     "recently"
+    ],
+    "paraphrase": "陈述句中 'not been considered worthy of further research until recently' 可能对应原文中类似 '长期被忽视/未受到学术关注/直到近年来才引起研究者兴趣' 的表述，属于时间转折型同义替换。",
+    "tip": "定位 'until recently' 与 'research' 的时间转折信号，锁定D段。"
+   },
+   {
+    "number": 37,
+    "answer": "H",
+    "cn": "Mroz和他的团队整理了一份关于该做什么和不该做什么的清单，以解决MRS问题。",
+    "keywords": [
+     "Mroz",
+     "list",
+     "do and not to do",
+     "MRS"
+    ],
+    "paraphrase": "'compiled a list of what to do and what not to do' 可能对应原文中 'dos and don'ts' 或 'recommendations/guidelines' 等表达，属于具体行动建议的同义转述。",
+    "tip": "人名Mroz + list/dos and don'ts 为强定位词，直接扫读H段。"
+   },
+   {
+    "number": 38,
+    "answer": "N",
+    "cn": "如果公司优先考虑员工的时间，就能消除MRS的根本原因。",
+    "keywords": [
+     "root cause",
+     "MRS",
+     "give priority",
+     "workers' time"
+    ],
+    "paraphrase": "'give priority to workers' time' 可能对应原文 'value/respect employees' time' 等表述；'root cause' 可能对应 'fundamental/underlying cause'，属于核心概念的近义替换。",
+    "tip": "定位 'root cause' 与 'priority/time' 的因果关系，锁定N段。"
+   },
+   {
+    "number": 39,
+    "answer": "F",
+    "cn": "如果员工疲惫到了危险的程度，他们就极难过渡到下一项任务。",
+    "keywords": [
+     "exhausted",
+     "dangerous degree",
+     "transition",
+     "next task"
+    ],
+    "paraphrase": "'exhausted to a dangerous degree' 可能对应原文 'severely/dangerously depleted/drained'；'transition to the next task' 可能对应 'switch to/move on to subsequent work'，属于程度与动作的同义替换。",
+    "tip": "定位 'dangerous/extreme fatigue' 与 'transition' 的搭配，锁定F段。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "cn": "美国员工花大量时间参加会议，而管理者开会的时长则是前者的数倍。",
+    "keywords": [
+     "America",
+     "lot of time",
+     "meetings",
+     "managers",
+     "several times more"
+    ],
+    "paraphrase": "'several times more' 可能对应原文具体倍数或百分比数据；'spend a lot of time attending meetings' 可能对应具体小时数，属于数据概括型同义替换。",
+    "tip": "定位美国员工与管理者会议时间的数据对比，锁定B段。"
+   },
+   {
+    "number": 41,
+    "answer": "K",
+    "cn": "Phyllis Hartman通过自学掌握了Mroz在研究中提出的许多方法，并在摆脱不必要会议方面取得了显著成效。",
+    "keywords": [
+     "Phyllis Hartman",
+     "by herself",
+     "Mroz",
+     "unnecessary meetings"
+    ],
+    "paraphrase": "'learned by herself' 可能对应原文 'independently discovered/figured out on her own'；'remarkable success' 可能对应 'significant results/notable improvement'，属于个人案例型同义替换。",
+    "tip": "人名Phyllis Hartman为独特定位词，直接扫读K段确认。"
+   },
+   {
+    "number": 42,
+    "answer": "E",
+    "cn": "当会议持续太长或无法让员工参与其中时，会消耗他们的活力。",
+    "keywords": [
+     "continue too long",
+     "don't engage",
+     "deplete",
+     "vitality"
+    ],
+    "paraphrase": "'deplete vitality' 可能对应原文 'drain energy/sap enthusiasm'；'don't engage employees' 可能对应 'fail to involve/lack participation'，属于会议负面效果的同义转述。",
+    "tip": "定位会议时长与参与度对员工精力的消耗关系，锁定E段。"
+   },
+   {
+    "number": 43,
+    "answer": "I",
+    "cn": "当会议时间减少时，员工会更加投入地参与他们确实需要出席的会议。",
+    "keywords": [
+     "time reduced",
+     "more engaged",
+     "meetings they do participate in"
+    ],
+    "paraphrase": "'time of meetings is reduced' 可能对应原文 'fewer/shorter meetings'；'more engaged' 可能对应 'greater involvement/higher participation quality'，属于正向效果的同义替换。",
+    "tip": "定位减少会议时间与提升参与度的正相关关系，锁定I段。"
+   },
+   {
+    "number": 44,
+    "answer": "C",
+    "cn": "一些员工认为会议是工作日中最可有可无的部分之一。",
+    "keywords": [
+     "dispensable",
+     "workday",
+     "some employees",
+     "consider"
+    ],
+    "paraphrase": "'most dispensable parts' 可能对应原文 'least necessary/most expendable/biggest waste of time' 等表达，属于态度评价类的同义替换。",
+    "tip": "定位员工对会议的负面态度评价词（如waste/unnecessary），锁定C段。"
+   },
+   {
+    "number": 45,
+    "answer": "L",
+    "cn": "据Mroz称，如果他的所有建议都被采纳，最明显的变化将是预定会议数量的大幅减少。",
+    "keywords": [
+     "Mroz",
+     "all suggestions applied",
+     "steep decrease",
+     "number of meetings"
+    ],
+    "paraphrase": "'a very obvious change' 可能对应原文 'the most noticeable/dramatic effect'；'steep decrease' 可能对应 'sharp/significant drop/decline'，属于预测性结论的同义替换。",
+    "tip": "定位Mroz对建议全面实施后效果的预测性表述，锁定L段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "fatigued",
+    "cn": "adj. 疲惫的，疲劳的"
+   },
+   {
+    "w": "compiled",
+    "cn": "v. 编纂，汇编（compile的过去式）"
+   },
+   {
+    "w": "remedy",
+    "cn": "v./n. 补救，纠正；补救措施"
+   },
+   {
+    "w": "dispensable",
+    "cn": "adj. 可有可无的，非必要的"
+   },
+   {
+    "w": "deplete",
+    "cn": "v. 消耗，耗尽"
+   },
+   {
+    "w": "vitality",
+    "cn": "n. 活力，生命力"
+   },
+   {
+    "w": "transition",
+    "cn": "v./n. 过渡，转变"
+   },
+   {
+    "w": "steep",
+    "cn": "adj. 急剧的，陡峭的"
+   },
+   {
+    "w": "engage",
+    "cn": "v. 使参与，吸引（注意力）"
+   },
+   {
+    "w": "root cause",
+    "cn": "n. 根本原因"
+   }
+  ]
+ }
+}

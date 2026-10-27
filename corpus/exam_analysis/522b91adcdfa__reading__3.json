@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "522b91adcdfa__reading__3",
+ "examId": "522b91adcdfa",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2007 年考研英语真题（旧）",
+ "year": 2007,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:19:08.344Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60732,
+ "usage": {
+  "prompt_tokens": 1734,
+  "completion_tokens": 3725,
+  "total_tokens": 5459,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1734,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3725,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1734,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国中产阶级面临日益加剧的经济风险",
+  "gist": "文章指出，过去一代人中，美国中产阶级家庭面临的经济风险急剧上升：双收入家庭失去了后备劳动力的缓冲，退休金从固定保障转向投资风险，医疗成本攀升且储蓄计划增加投资风险，赡养老人的负担也大幅增加。这一系列变化使经济风险被大规模转嫁到中产家庭肩上，可能引发政治后果。",
+  "structure": [
+   "第一段：总起，中产阶级经济安全感被颠覆",
+   "第二段：双收入家庭失去后备劳动力这一安全网",
+   "第三段：退休金、医疗、人口结构三方面风险加剧",
+   "第四段：总结，经济风险转嫁中产，或引发政治后果"
+  ],
+  "difficulty": "中等",
+  "translation": "在过去一代人的时间里，曾经依靠辛勤工作和公平竞争来维持经济安全的美国中产阶级家庭，已被经济风险和新的现实所改变。如今，一张解雇通知、一个坏的诊断结果或配偶的离去，就能在几个月内使一个稳固的中产家庭沦为新的贫困家庭。\n\n仅仅一代人的时间，数百万母亲走上了工作岗位，改变了基本的家庭经济状况。各类学者、政策制定者和评论家一直在争论这些变化的社会影响，但很少有人关注到其副作用：家庭风险也随之上升。如今的家庭已经把预算用到了双薪收入的极限。因此，他们失去了曾经在经济困难时期拥有的降落伞——一个后备劳动力（通常是母亲），在主要经济来源被裁员或生病时可以出去工作。这种\"附加劳动力效应\"能够支撑失业保险或残疾保险所提供的安全网，帮助家庭度过困难时期。但今天，家庭经济的中断已无法再通过原本居家的伴侣的额外收入来弥补。\n\n在同一时期，家庭被要求在退休收入方面承担更多风险。钢铁工人、航空公司员工，以及现在的汽车行业从业者，正在加入数百万个不得不担忧利率、股市波动以及退休金可能不够用这一残酷现实的家庭行列。在过去一年的大部分时间里，布什总统一直在推动将社会保障转变为储蓄账户模式，让退休人员用大部分或全部的固定支付换取取决于投资回报的支付。对于年轻家庭来说，情况也好不到哪里去。医疗保健的绝对成本和家庭承担的份额都在上升——而新近流行的健康储蓄计划正从立法机构扩展到沃尔玛员工，带来了更高的免赔额和大量新增的投资风险，影响家庭未来的医疗保障。甚至人口结构也在与中产阶级家庭作对，因为拥有一位体弱年迈父母的概率——以及随之而来的身体和经济上的照料需求——在仅仅一代人的时间里增加了八倍。\n\n从中产阶级家庭的角度来看，这一切看起来远不像是一个行使更多财务责任的机会，而更像是一场可怕的加速运动——将经济风险大规模转移到他们已经不堪重负的肩膀上。经济上的后果已经开始显现，政治上的后果可能也不会太远。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Today's families have budgeted to the limits of their new two-paycheck status. As a result, they have lost the parachute they once had in times of financial setback – a back-up earner (usually Mom) who could go into the workforce if the primary earner got laid off or fell sick.",
+    "why": "原文指出，双收入家庭已经把预算花到了双薪的极限，因此失去了经济挫折时的'降落伞'——后备劳动力。家庭经济结构的这一变化使他们更容易受到家庭经济变动的冲击，即'更易受家庭经济变化的影响'，与C项'they are more vulnerable to changes in family economics'对应。",
+    "traps": "A项'安全网已经消失'过于绝对，原文说的是失去了'parachute'（降落伞/后备劳动力），而unemployment insurance等安全网仍然存在，只是缺少额外支撑；B项'被裁员的机会大增'文中未提及，属于无中生有；D项'被剥夺了失业或残疾保险'与原文矛盾，原文说这些保险仍在，只是缺乏added-worker effect的补充支持。",
+    "tip": "注意区分'安全网消失'和'安全网的补充力量消失'的差异。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "President Bush campaigned to move Social Security to a savings-account model, with retirees trading much or all of their guaranteed payments for payments depending on investment returns.",
+    "why": "原文明确指出，布什推动的社保改革让退休人员用'guaranteed payments'（有保障的支付）换取'payments depending on investment returns'（取决于投资回报的支付）。投资回报具有不确定性，因此退休人员得到的支付保障程度降低，即B项'less secured payments'（保障更少的支付）。",
+    "traps": "A项'更高的安全感'与原文意思相反，投资依赖市场波动，安全感降低；C项'更少的投资机会'与原文矛盾，改革恰恰是让退休金转向投资；D项'有保障的未来'与原文相反，原文强调的正是保障的减少和风险的增加。",
+    "tip": "抓住trade...for...结构理解'用保障换风险'的核心含义。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "newly fashionable health-savings plans are spreading from legislative halls to Wal-Mart workers, with much higher deductibles and a large new dose of investment risk for families' future healthcare.",
+    "why": "原文明确指出，健康储蓄计划带来了'much higher deductibles'（更高的免赔额）和'a large new dose of investment risk'（大量新增的投资风险），影响家庭未来的医疗保障。D项'increase the families' investment risk'（增加家庭的投资风险）与原文描述完全一致。",
+    "traps": "A项'帮助降低医疗费用'文中未提及，原文反而说医疗绝对成本在上升；B项'在中产阶级中普及'虽然提到从立法机构扩展到沃尔玛员工，但这不是作者强调的重点，且属于偷换论述焦点；C项'弥补减少的养老金'文中无此信息，属于无中生有。",
+    "tip": "注意with结构引出的伴随状态，往往揭示作者真正要强调的信息。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "The financial fallout has begun, and the political fallout may not be far behind.",
+    "why": "原文最后一句用并列结构指出'经济上的后果已经开始'且'政治上的后果可能也不远了'，其中financial fallout是因，political fallout是果，说明经济问题可能带来政治问题。C项'financial problems may bring about political problems'精确概括了这一因果逻辑。",
+    "traps": "A项'经济风险往往大于政治风险'原文未比较两者大小，属于曲解原文；B项'中产阶级可能面临更大政治挑战'偏离原文，原文说的是经济问题引发政治后果，而非中产阶级面对政治挑战；D项'经济责任是政治地位的指标'原文完全没有涉及，属于无中生有。",
+    "tip": "末段总结句常考推断题，注意并列结构暗示的因果或递进关系。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "the wholesale shift of financial risk onto their already overburdened shoulders",
+    "why": "全文围绕美国中产阶级家庭面临越来越多经济风险展开论述：双收入家庭失去缓冲、退休金保障减少、医疗风险增加、赡养压力加大。'on the Cliff'（在悬崖边）生动比喻了中产阶级处于危险边缘、随时可能坠落的处境，既反映了风险的严峻性，又暗示尚未完全坠落，最贴合全文语气和内容。",
+    "traps": "A项'on the Alert'（警觉中）语气过轻，文章强调的不只是警觉而是实质性的危险；C项'in Conflict'（在冲突中）偏离主题，文章重点不是冲突而是风险转嫁；D项'in Ruins'（已成废墟）过于极端，文章指出危机正在发生而非已经毁灭，末段说fallout has begun暗示过程尚在进行中。",
+    "tip": "标题题需兼顾主题覆盖和程度把控，既不过轻也不过重。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "pink slip",
+    "cn": "n. 解雇通知书"
+   },
+   {
+    "w": "parachute",
+    "cn": "n. 降落伞；此处比喻经济保障措施"
+   },
+   {
+    "w": "setback",
+    "cn": "n. 挫折，挫败"
+   },
+   {
+    "w": "disruption",
+    "cn": "n. 中断，扰乱"
+   },
+   {
+    "w": "fluctuation",
+    "cn": "n. 波动，起伏"
+   },
+   {
+    "w": "deductible",
+    "cn": "n./adj. （保险的）免赔额；可扣除的"
+   },
+   {
+    "w": "attendant",
+    "cn": "adj. 伴随的，随之而来的"
+   },
+   {
+    "w": "eightfold",
+    "cn": "adj./adv. 八倍的（地）"
+   },
+   {
+    "w": "wholesale",
+    "cn": "adj. 大规模的，批发的"
+   },
+   {
+    "w": "overburdened",
+    "cn": "adj. 负担过重的"
+   },
+   {
+    "w": "fallout",
+    "cn": "n. 后果，附带影响（常指不良后果）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As a result, they have lost the parachute they once had in times of financial setback – a back-up earner (usually Mom) who could go into the workforce if the primary earner got laid off or fell sick.",
+    "cn": "因此，他们失去了曾经在经济挫折时期拥有的降落伞——一个后备劳动力（通常是母亲），在主要经济来源被裁员或生病时可以出去工作。",
+    "note": "主干为they have lost the parachute；破折号后a back-up earner是parachute的同位语解释；who引导定语从句修饰back-up earner；if引导条件状语从句。"
+   },
+   {
+    "en": "For much of the past year, President Bush campaigned to move Social Security to a savings-account model, with retirees trading much or all of their guaranteed payments for payments depending on investment returns.",
+    "cn": "在过去一年的大部分时间里，布什总统一直在推动将社会保障转变为储蓄账户模式，让退休人员用大部分或全部有保障的支付换取取决于投资回报的支付。",
+    "note": "主干为President Bush campaigned to move...；with+名词+doing构成独立主格结构表伴随；trading...for...表示'用……换取……'；depending on为现在分词作后置定语修饰payments。"
+   },
+   {
+    "en": "From the middle-class family perspective, much of this, understandably, looks far less like an opportunity to exercise more financial responsibility, and a good deal more like a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders.",
+    "cn": "从中产阶级家庭的角度来看，这一切看起来远不像是一个行使更多财务责任的机会，而更像是一场可怕的加速运动——将经济风险大规模转移到他们已经不堪重负的肩膀上。",
+    "note": "主干为much of this looks far less like A and a good deal more like B；far less...and more...构成对比；understandably为插入语；of the wholesale shift of financial risk为多重介词短语后置修饰acceleration。"
+   }
+  ]
+ }
+}

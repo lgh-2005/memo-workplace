@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "457ceba875be__reading__1",
+ "examId": "457ceba875be",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 6 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:03:13.699Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60109,
+ "usage": {
+  "prompt_tokens": 1809,
+  "completion_tokens": 3676,
+  "total_tokens": 5485,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1809,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3676,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1809,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "势利眼心态与职业焦虑的根源",
+  "gist": "文章探讨了人们对职业焦虑的深层心理原因：社会中充斥着以职业判断人价值的势利眼（snob），人们追求物质并非出于贪婪，而是渴望通过物质获得尊重与爱。势利的根源在于缺乏想象力，真正的应对之道是对每个人都保持善良、好奇与想象力。",
+  "structure": [
+   "第1-2段：引出话题，职业焦虑源于害怕被势利之人评判",
+   "第3-5段：定义势利眼，说明当今势利眼以职业论人",
+   "第6段：人们追求物质实质是渴望被尊重与被爱",
+   "第7段：势利的根源是缺乏想象力，只尊重已成功者",
+   "第8段：应对势利的正确态度——对所有人保持善良与好奇"
+  ],
+  "difficulty": "中等",
+  "translation": "我们为什么如此担忧自己的职业？部分原因与金钱有关，但我们的恐惧也有心理层面的因素。\n\n我们担忧，是因为我们怀疑——这种怀疑并非毫无根据——这个世界上充满了一种令人生畏的人，他们准备无情而迅速地评判我们：这种人我们可以称之为\"势利眼\"。\n\n势利眼就是这样的人：他们抓住我们身上相对微小的一个方面，就得出一个僵化的结论，判定我们值得他们给予多少关注。在过去，那可能是你的家世和皇室关系。如今，势利眼只关心一件事：你以什么为生。\n\n这就解释了为什么在任何新的社交场合，我们被问到的第一个问题总是\"你是做什么的？\"而根据我们的回答，势利眼要么满面笑容地欢迎我们，要么对我们冷若冰霜。\n\n这就是为什么我们被一种如此强烈的渴望所驱动，想要去成就一番事业、给人留下深刻印象。\n\n有时候，我们的行为被误解为贪婪和虚荣，但实际上远不止如此。我们对豪车、好工作和豪宅的兴趣，很大程度上与物质主义无关。它与一种渴望有关——渴望获得尊重和敬意，而在我们的社会中，这种尊重只有通过获取物质才能得到。我们追求的并非物品本身，而是通过拥有这些物品所能赢得的爱。下次当我们看到有人开着法拉利时，不应该谴责他们的贪婪，而应该同情他们对世人之爱那种强烈的渴求。\n\n势利的根源在于缺乏想象力和信心，不知道如何判断世上谁才是有价值的。势利眼在判断谁是优秀之人时，其观念既残酷地被误导，又盲目地受制于成规。在势利眼看来，只有那些已经获得赞誉和已经取得成功的人才值得尊敬。在他们怯懦而刻板的头脑中，没有空间去想象一个人可能聪明、善良或优秀——却完全被社会忽视了，其品质隐藏在不为人知的面纱之下，至今未找到明显的展现途径。\n\n应对势利的正确答案并不是说世上不存在优劣之分，而是要坚持认为优劣存在于始终出人意料的地方，且不带有任何外在的显著标志。而且因为我们在评判他人价值方面如此拙劣，我们最终的职责仍是对几乎每一个出现在我们生命中的人都保持善良、友好、好奇和富于想象力。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "We worry because we suspect—not wrongly—that the world is full of a frightening sort of person ready to judge us ruthlessly and swiftly: a person we can call a snob.",
+    "why": "题目问除金钱外职业焦虑的心理因素。原文第二段明确指出，我们担忧是因为世上充满了准备无情而迅速评判我们的势利之人（snob）。A选项\"害怕被以势利的方式评判\"准确概括了这一原因，是对原文的同义改写。",
+    "traps": "B项\"面对吹毛求疵的经理\"属无中生有，原文未提及经理。C项\"员工经常被无情对待的方式\"偷换概念，原文说的是被势利之人评判，而非员工被对待的方式。D项\"对求职困难的恐惧\"属无中生有，原文未讨论求职本身的困难。",
+    "tip": "注意题目限定语\"apart from money\"，定位到心理层面的原因。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Nowadays, the snob cares about one thing only: what you do for a living.",
+    "why": "题目问当今势利眼的特征。原文第三段明确指出：如今，势利眼只关心一件事——你以什么为生（what you do for a living）。C选项\"他们以职业来评判一个人\"是对此句的精确同义转述，\"what you do for a living\"即\"occupation\"。",
+    "traps": "A项\"努力挖掘一个人的过去\"是对原文\"In the past, that might be your ancestry\"的曲解，那是过去势利眼的做法，而非当今。B项\"对人下僵化结论\"虽原文有此说法，但这是对势利眼的一般性定义，非当今势利眼的特定特征，且缺少职业这一关键限定。D项\"把人放入社交场景\"无中生有。",
+    "tip": "注意时间限定词\"today's\"，对应原文\"Nowadays\"。"
+   },
+   {
+    "number": 48,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "It has to do with a hunger for the respect and esteem that is only available in our societies through the acquisition of material goods. It isn't the goods themselves we seek, it is the love we stand to gain through our possession of them.",
+    "why": "题目问作者对人们追求物质的看法。原文明确说，对物质的兴趣与物质主义无关，而与渴望获得尊重和敬意有关。D选项\"源于对社会认可的渴望\"中的\"social recognition\"是对原文\"respect and esteem\"的同义概括，完全吻合。",
+    "traps": "A项\"导致人们因贪婪被谴责\"是作者反对的观点，原文说\"不应该谴责\"。B项\"与物质提供的舒适有关\"属无中生有，原文明确说与物质主义无关。C项\"引起富人的同情而非尊重\"曲解原文，原文说的是我们应同情开法拉利的人，而非富人同情别人。",
+    "tip": "抓住\"nothing to do with materialism\"这一否定表述，排除物质层面的选项。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "For snobs, it is the already acclaimed and already successful who are the only ones worthy of respect.",
+    "why": "题目问势利眼认为什么人值得尊敬。原文用强调句指出：对势利眼来说，只有那些已经获得赞誉和已经成功的人才值得尊敬。A选项\"有名望和财富的人\"是对\"already acclaimed and already successful\"的准确概括，\"fame\"对应\"acclaimed\"，\"fortune\"对应\"successful\"。",
+    "traps": "B项\"思维刻板的人\"张冠李戴，\"regimented minds\"是形容势利眼自己的特征，而非他们尊敬的对象。C项\"有智慧和想象力的人\"与原文相反，势利眼缺乏想象力，也不以此标准评判他人。D项\"品质隐藏的人\"恰恰是势利眼忽视和看不到的人。",
+    "tip": "用强调句\"it is...who...\"定位核心信息，准确理解被尊敬的对象。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "And because we are such poor judges of the worth of others, our ultimate duty remains to be kind, good, curious and imaginative about pretty much everyone who ever crosses our path.",
+    "why": "题目问作者暗示我们该如何避免势利。原文最后一句明确给出结论：因为我们拙于评判他人价值，所以我们最终的职责是对生命中遇到的每个人保持善良、友好、好奇和富于想象力。B选项\"对我们生活中碰巧遇到的人保持善良和好奇\"是对此句的准确概括，\"crosses our path\"对应\"happen to meet in our lives\"。",
+    "traps": "A项\"世上从来不存在优劣之分\"直接与原文矛盾，原文说\"not to say that there is no such thing as a better or worse person\"。C项\"优劣不断以意想不到的方式变化\"曲解原文，原文说优劣存在于意想不到的地方，而非不断变化。D项\"根据独特性格特征评判他人\"属无中生有，原文强调的是不要轻易评判。",
+    "tip": "末段结论句常为主旨题或推断题的答案来源，注意\"not...but...\"的转折结构。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "ruthlessly",
+    "cn": "adv. 无情地，残酷地"
+   },
+   {
+    "w": "ancestry",
+    "cn": "n. 祖先，血统，世系"
+   },
+   {
+    "w": "acquisition",
+    "cn": "n. 获取，获得；收购"
+   },
+   {
+    "w": "condemn",
+    "cn": "v. 谴责，指责；宣判"
+   },
+   {
+    "w": "snobbery",
+    "cn": "n. 势利，势利行为"
+   },
+   {
+    "w": "acclaimed",
+    "cn": "adj. 受到赞誉的，备受推崇的"
+   },
+   {
+    "w": "regimented",
+    "cn": "adj. 严格管制的，刻板的"
+   },
+   {
+    "w": "slavish",
+    "cn": "adj. 盲从的，奴性的"
+   },
+   {
+    "w": "vanity",
+    "cn": "n. 虚荣，自负"
+   },
+   {
+    "w": "brutally",
+    "cn": "adv. 残酷地，野蛮地"
+   },
+   {
+    "w": "materialism",
+    "cn": "n. 物质主义，唯物主义"
+   },
+   {
+    "w": "esteem",
+    "cn": "n. 尊敬，敬重；v. 尊重"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "A lot of our interest in fancy cars, jobs and houses has nothing to do with materialism. It has to do with a hunger for the respect and esteem that is only available in our societies through the acquisition of material goods.",
+    "cn": "我们对豪车、好工作和豪宅的大量兴趣与物质主义毫无关系。它与一种渴望有关——渴望获得尊重和敬意，而在我们的社会中，这种尊重和敬意只有通过获取物质才能得到。",
+    "note": "两句构成否定-肯定对比。第二句中that引导定语从句修饰respect and esteem，through短语表达获取途径。"
+   },
+   {
+    "en": "There is no room in their timid regimented minds to imagine that someone might be clever, kind or good—and yet somehow have been overlooked entirely by society, their qualities lying hidden beneath an unfamiliar veil, and having as yet discovered no obvious outlet.",
+    "cn": "在他们怯懦刻板的头脑中，没有空间去想象一个人可能聪明、善良或优秀——却完全被社会忽视了，其品质隐藏在一层不为人知的面纱之下，至今尚未找到明显的展现途径。",
+    "note": "主干为There is no room to imagine that...。that从句中用破折号引出转折，their qualities lying...为独立主格结构作伴随状语，having discovered...为并列的分词短语。"
+   },
+   {
+    "en": "And because we are such poor judges of the worth of others, our ultimate duty remains to be kind, good, curious and imaginative about pretty much everyone who ever crosses our path.",
+    "cn": "因为我们在评判他人价值方面如此拙劣，我们最终的职责仍然是对几乎每一个出现在我们生命中的人都保持善良、友好、好奇和富于想象力。",
+    "note": "because引导原因状语从句，主句主干为our duty remains to be...，who引导定语从句修饰everyone，crosses our path意为\"出现在我们的人生路上\"。"
+   }
+  ]
+ }
+}

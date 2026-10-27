@@ -1,0 +1,170 @@
+{
+ "schemaVersion": 1,
+ "id": "27831d1d141a__part_b__all",
+ "examId": "27831d1d141a",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2022 年考研英语真题",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:49:24.983Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35654,
+ "usage": {
+  "prompt_tokens": 1585,
+  "completion_tokens": 1992,
+  "total_tokens": 3577,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1585,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1992,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1585,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "各方人士围绕动物园存废展开争论",
+  "type": "小标题匹配",
+  "strategy": [
+   "先通读七个选项，提炼各选项核心立场与关键词",
+   "再逐段精读每位作者的核心论点与论据",
+   "将段落中反复出现的关键词、核心态度与选项一一比对",
+   "注意段落首尾句常为主旨句，优先用于匹配",
+   "排除法验证：确认未选项与该段无关后再确定答案"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "F",
+    "why": "Teri Byrd 明确指出动物园是\"profitable institutions whose bottom line is much more important than the condition of the animals\"，即金钱优先于动物福利；末句呼吁\"eliminate zoos from our culture\"，即应关闭动物园。F 选项\"prioritize money making over animals' wellbeing\"与\"closed down\"完全对应。",
+    "traps": "E 提到无法回归自然的动物，文中未涉及；B 讨论减少开支导致不人道后果，与该段批判立场不符。",
+    "tip": "定位关键句：profitable institutions + eliminate zoos"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "why": "Karen 一方面承认\"zoo displays can be sad and cruel\"（对圈养动物的同情），另一方面强调动物园的\"educational value\"——zoo visits是学生走上\"biological sciences\"道路的\"crucial formative experience\"。C 选项前半句\"animals in captivity deserve sympathy\"对应同情，后半句\"starting young people down the path of related sciences\"对应教育价值。",
+    "traps": "A 强调不应受不公批评，该段并非为动物园辩护不公批评；D 涉及减少人类去荒野旅行，本段未提及。",
+    "tip": "定位关键句：educational value + major in biological sciences"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "why": "Greg 称Marris的文章是\"insult and disservice to thousands of passionate people who work tirelessly\"（不知疲倦地工作的人不应被不公对待），并指出动物园\"at the forefront of conservation and constantly evolving to improve how they care for animals\"（不遗余力照顾动物）。A 选项\"spare no effort to take care of animals\"与\"should not be subjected to unfair criticism\"精准对应。",
+    "traps": "G 虽提到Marris歪曲研究，但Greg并未提及自己的研究被歪曲；B 谈减少开支，与本段无关。",
+    "tip": "定位关键句：insult + work tirelessly + forefront of conservation"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "why": "Dean 论证若无动物园，人们会\"travel to wild areas to seek out, disturb and even hunt them down\"，动物园能\"satisfy our need for contact…while leaving the vast majority undisturbed in their natural environments\"。D 选项\"save people trips to wilderness areas and thus contribute to wildlife conservation\"完美概括此逻辑：减少人类前往荒野→保护野生动物。",
+    "traps": "E 提到无法回归自然的动物，而Dean关注的是减少人类干扰荒野；C 强调教育意义，本段核心是替代性接触。",
+    "tip": "定位关键句：travel to wild areas + leaving undisturbed"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "why": "John 开篇即指出\"Marris selectively describes and misrepresents the findings of our research\"（歪曲研究发现），随后强调\"Our research provides strong support for the value of zoos in connecting people with animals and with nature\"（动物园是连接人与自然的纽带）。G 选项\"Marris distorts our findings\"对应misrepresents，\"indispensable link between man and nature\"对应connecting people with animals and nature。",
+    "traps": "A 强调不应受不公批评，但John的核心论点是研究被歪曲而非笼统的不公；C 涉及教育科学路径，本段侧重研究成果。",
+    "tip": "定位关键句：misrepresents + connecting people with animals and nature"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "captives",
+    "cn": "n. 被囚禁者；俘虏"
+   },
+   {
+    "w": "enclosures",
+    "cn": "n. 围场，围栏"
+   },
+   {
+    "w": "transparency",
+    "cn": "n. 透明度"
+   },
+   {
+    "w": "formative",
+    "cn": "adj. 形成的，塑造性的"
+   },
+   {
+    "w": "immersive",
+    "cn": "adj. 沉浸式的"
+   },
+   {
+    "w": "tirelessly",
+    "cn": "adv. 不知疲倦地"
+   },
+   {
+    "w": "undermine",
+    "cn": "v. 削弱，破坏"
+   },
+   {
+    "w": "at the forefront of",
+    "cn": "在……的前沿"
+   },
+   {
+    "w": "distressed",
+    "cn": "adj. 痛苦的，忧虑的"
+   },
+   {
+    "w": "fascination",
+    "cn": "n. 着迷，强烈的兴趣"
+   },
+   {
+    "w": "archeology",
+    "cn": "n. 考古学"
+   },
+   {
+    "w": "springbok",
+    "cn": "n. 跳羚"
+   },
+   {
+    "w": "discourse",
+    "cn": "n. 话语，论述"
+   },
+   {
+    "w": "misrepresents",
+    "cn": "v. 歪曲，不如实反映"
+   },
+   {
+    "w": "discount",
+    "cn": "v. 忽视，低估"
+   }
+  ]
+ }
+}

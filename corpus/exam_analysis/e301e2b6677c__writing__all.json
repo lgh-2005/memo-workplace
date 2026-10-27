@@ -1,0 +1,225 @@
+{
+ "schemaVersion": 1,
+ "id": "e301e2b6677c__writing__all",
+ "examId": "e301e2b6677c",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2014 年考研英语真题",
+ "year": 2014,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:33:05.559Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 78819,
+ "usage": {
+  "prompt_tokens": 842,
+  "completion_tokens": 4374,
+  "total_tokens": 5216,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 842,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4374,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 842,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 2,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：给校长写一封约100词的建议信，就如何改善学生体质提出具体建议，格式需符合书信规范，署名Li Ming。",
+    "outline": [
+     "自我介绍并说明写信目的：作为在校学生，就改善学生体质向校长提出建议。",
+     "正文主体：分条阐述具体建议，如增加体育设施投入、开展多样化课外体育活动、将体育课纳入各年级必修课程等。",
+     "礼貌收尾：表达期望建议被采纳的愿望，感谢校长拨冗阅读。"
+    ],
+    "sample": "Dear Mr. President,\n\nI am writing to put forward some suggestions concerning the improvement of students' physical condition in our university.\n\nTo begin with, the university should allocate more funds to build and upgrade sports facilities, such as gymnasiums and swimming pools, so that students can have convenient access to exercise. Furthermore, it would be highly beneficial to organize diverse extracurricular sports activities and competitions to stimulate students' enthusiasm for physical fitness. Last but not least, incorporating mandatory physical education courses into the curriculum for all grades would ensure that every student engages in regular exercise.\n\nI sincerely hope that my proposals will be taken into serious consideration. Thank you for your time and attention.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "put forward suggestions concerning...",
+      "cn": "就……提出建议；正式书信中提建议的地道表达"
+     },
+     {
+      "en": "allocate more funds to...",
+      "cn": "拨出更多资金用于……；体现对资源配置的建议"
+     },
+     {
+      "en": "have convenient access to...",
+      "cn": "方便地获得/使用……；强调便利性"
+     },
+     {
+      "en": "stimulate students' enthusiasm for...",
+      "cn": "激发学生对……的热情；比arouse更书面"
+     },
+     {
+      "en": "extracurricular sports activities",
+      "cn": "课外体育活动；academic/extracurricular为常用对比词"
+     },
+     {
+      "en": "incorporate...into the curriculum",
+      "cn": "将……纳入课程体系；教育类话题高频搭配"
+     },
+     {
+      "en": "Last but not least",
+      "cn": "最后但同样重要的是；经典并列连接词"
+     },
+     {
+      "en": "be taken into serious consideration",
+      "cn": "被认真考虑；建议信结尾常用礼貌表达"
+     },
+     {
+      "en": "engage in regular exercise",
+      "cn": "参加规律性锻炼；比do exercise更正式"
+     }
+    ],
+    "pitfalls": [
+     "缺少书信格式要素，如Dear...开头或Yours sincerely结尾，直接扣格式分",
+     "建议过于笼统空泛，如仅写improve health而无具体措施，内容分低",
+     "语气过于命令式，如用must/should频繁对校长发号施令，缺乏礼貌委婉",
+     "超出或远低于100词要求，严重偏离词数会影响总体印象分",
+     "署名写了真实姓名而非Li Ming，属于违规，可能被判零分"
+    ],
+    "upgrades": [
+     {
+      "plain": "I want to give you some advice about students' health.",
+      "better": "I am writing to put forward some constructive suggestions concerning the improvement of students' physical condition.",
+      "note": "目的句更正式，constructive体现积极态度，concerning比about更书面"
+     },
+     {
+      "plain": "The school should build more sports places.",
+      "better": "The university should allocate more funds to build and upgrade sports facilities, such as gymnasiums and swimming pools.",
+      "note": "allocate funds体现资源配置意识，举例具体化使建议更有说服力"
+     },
+     {
+      "plain": "I hope you can think about my advice.",
+      "better": "I sincerely hope that my proposals will be taken into serious consideration.",
+      "note": "被动语态更礼貌得体，proposals比advice更正式，体现书信素养"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "大作文看图写作：描述图画内容、阐释寓意并给出评论，要求160-200词。图画呈现两幅对比场景——三十年前母亲牵着女儿的手，如今女儿牵着年迈母亲的手，主题为感恩与孝道。",
+    "outline": [
+     "描述图画：左图为三十年前年轻母亲牵着小女儿的手行走，右图为如今成年女儿牵着年迈母亲的手行走，形成鲜明而温馨的对比。",
+     "阐释寓意：图画传达的核心信息是子女应当回报父母的养育之恩，在父母年迈时给予陪伴与关爱，这既是道德义务也是中华传统美德。",
+     "给出评论：呼吁在现代社会中传承孝道精神，多花时间陪伴父母，关注其身心健康，让他们安享晚年。"
+    ],
+    "sample": "As is vividly depicted in the drawing, two contrasting scenes are presented side by side. In the left picture, a young mother is holding the hand of her little daughter, walking along the road, with the caption \"30 years ago.\" In the right picture, the daughter, now fully grown, is holding her elderly mother's hand in exactly the same manner, with the caption \"now.\" The parallel composition is both striking and deeply heartwarming.\n\nThe drawing is intended to convey the profound message that we should repay our parents' selfless love and devotion by caring for them as they grow old. During our childhood, our parents nurtured us with unconditional love and boundless patience, sacrificing their own comfort for our well-being. Now that they are aging and becoming increasingly vulnerable, it is our fundamental responsibility and moral obligation to reciprocate this love by accompanying and supporting them wholeheartedly.\n\nIn my view, filial piety has always been a deeply cherished virtue in Chinese culture, and it should never fade in modern society. We ought to spend more quality time with our aging parents, attend to both their physical and emotional needs, and ultimately ensure that they enjoy a dignified and comfortable life in their twilight years. Only when the whole society embraces this value can families truly thrive in harmony.",
+    "phrases": [
+     {
+      "en": "as is vividly depicted in the drawing",
+      "cn": "正如图画中生动描绘的那样；图画作文经典首句句型"
+     },
+     {
+      "en": "contrasting scenes are presented side by side",
+      "cn": "对比场景并排呈现；描述双图对比的高分表达"
+     },
+     {
+      "en": "in exactly the same manner",
+      "cn": "以完全相同的方式；强调前后呼应的细节"
+     },
+     {
+      "en": "convey the profound message that...",
+      "cn": "传达……的深刻信息；阐释寓意段的核心句型"
+     },
+     {
+      "en": "repay one's selfless love and devotion",
+      "cn": "回报某人无私的爱与奉献；感恩主题高频搭配"
+     },
+     {
+      "en": "nurture sb. with unconditional love",
+      "cn": "用无条件的爱养育某人；描述父母之爱的高分表达"
+     },
+     {
+      "en": "moral obligation to reciprocate",
+      "cn": "回报的道德义务；reciprocate比repay更高级"
+     },
+     {
+      "en": "filial piety",
+      "cn": "孝道；中国文化类话题核心词汇"
+     },
+     {
+      "en": "attend to both their physical and emotional needs",
+      "cn": "关注其身心需求；attend to比care about更正式"
+     },
+     {
+      "en": "in their twilight years",
+      "cn": "在他们的暮年；比in their old age更具文学色彩"
+     }
+    ],
+    "pitfalls": [
+     "第一段只写一句话笼统带过图画内容而不描述细节，导致描述不充分扣分",
+     "忽略图画中的文字标注如30年前和现在，遗漏关键对比信息",
+     "寓意阐释偏离主题，如大谈时间流逝而不聚焦孝道与感恩的核心",
+     "三段结构不清晰，描述、阐释、评论混为一谈，逻辑层次混乱",
+     "词汇单一重复，如全篇反复使用love和care，缺乏同义替换和高级词汇"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows a mother and daughter walking together.",
+      "better": "As is vividly depicted in the drawing, two contrasting scenes are presented side by side, forming a striking parallel across three decades.",
+      "note": "vividly depicted引出图画更正式，contrasting scenes点明对比结构，信息量更丰富"
+     },
+     {
+      "plain": "We should take care of our old parents because they took care of us.",
+      "better": "It is our fundamental responsibility and moral obligation to reciprocate our parents' selfless devotion by accompanying and supporting them wholeheartedly.",
+      "note": "it is...to句型更正式，reciprocate替换take care of，层次更高"
+     },
+     {
+      "plain": "Everyone should be good to their parents.",
+      "better": "Only when the whole society embraces this cherished value can families truly thrive in harmony.",
+      "note": "only when引导的倒装句为亮点句型，thrive in harmony升华主题，结尾更有力"
+     },
+     {
+      "plain": "Filial piety is important in China.",
+      "better": "Filial piety has always been a deeply cherished virtue in Chinese culture, and it should never fade in modern society.",
+      "note": "cherished virtue比important更具感染力，never fade表达传承感，古今对比更完整"
+     },
+     {
+      "plain": "Parents did a lot for us when we were young.",
+      "better": "During our childhood, our parents nurtured us with unconditional love and boundless patience, sacrificing their own comfort for our well-being.",
+      "note": "nurtured用词精准，现在分词sacrificing补充说明使句子更紧凑，信息密度更高"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the drawing, two contrasting scenes are presented side by side. —— 经典看图作文首句，vividly depicted开篇点题，contrasting scenes精准概括双图结构，适用于所有对比类图画题。",
+   "It is our fundamental responsibility and moral obligation to reciprocate our parents' selfless devotion by accompanying and supporting them wholeheartedly. —— 将责任与道德义务并举，reciprocate为高分替换词，wholeheartedly收束有力，适用于感恩、责任类主题。",
+   "Only when the whole society embraces this cherished value can families truly thrive in harmony. —— only when引导的倒装句是考研写作核心亮点句型，从个人升华到社会层面，结尾掷地有声。",
+   "During our childhood, our parents nurtured us with unconditional love and boundless patience, sacrificing their own comfort for our well-being. —— 主句加现在分词状语的复合结构，nurtured与sacrificing形成付出链条，情感饱满且句法多变。",
+   "I sincerely hope that my proposals will be taken into serious consideration. —— 建议信万能结尾句，被动语态礼貌得体，proposals比suggestions更正式，适用于所有Part A建议信。"
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "522b91adcdfa__translation__all",
+ "examId": "522b91adcdfa",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2007 年考研英语真题（旧）",
+ "year": 2007,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:20:02.779Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67837,
+ "usage": {
+  "prompt_tokens": 1328,
+  "completion_tokens": 4850,
+  "total_tokens": 6178,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1328,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4850,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1328,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "法律学习对新闻教育的重要性",
+  "translation": "几个世纪以来，法律学习在欧洲各大学中一直被视为一门基本的知识学科。然而，直到近年来它才成为加拿大各大学本科课程的一个特色。传统上，在这些大学中，法律学习一直被看作是律师的专属领域，而不是受过教育的人所必备的知识素养的一部分。令人高兴的是，这种更为古老、更具欧洲大陆特色的法律教育观正在许多加拿大大学中确立起来，有些大学甚至已经开始提供法律专业的本科学位。\n\n如果说法律学习正逐渐成为通识教育不可或缺的组成部分，那么它的目标和方法应当直接引起新闻学教育工作者的兴趣。法律是一门鼓励负责任判断的学科。一方面，它提供了分析诸如正义、民主和自由等概念的机会。另一方面，它将这些概念与日常现实联系起来，其方式与新闻记者在报道和评论新闻时每天所建立的联系是相似的。例如，证据和事实、基本权利和公共利益等概念在新闻判断和制作过程中发挥着作用，就像在法庭上一样。通过吸收和思考法律来提高判断力，是新闻记者为其职业生涯所做的知识准备中一个理想的组成部分。\n\n但是，认为新闻记者必须比普通公民更深刻地理解法律，这一观点是基于对新闻媒体既定惯例和特殊责任的认识。政治，或者更广泛地说，国家的运作，是新闻记者报道的一个重要主题。他们对国家运作方式了解得越多，他们的报道就越出色。事实上，很难想象那些对加拿大宪法基本特征没有清楚了解的新闻记者能够胜任政治新闻的报道工作。\n\n此外，法律制度及其中发生的事件是新闻记者报道的主要题材。虽然法律新闻报道的质量参差不齐，但许多新闻记者过分依赖律师提供给他们的解释。尽管律师的评论和反应可能会使报道更加丰富，但新闻记者最好还是依靠自己对重要性的认识来做出自己的判断。这些判断只能来自对法律制度的深入了解。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "Traditionally, legal learning has been viewed in such institutions as the special preserve of lawyers, rather than a necessary part of the intellectual equipment of an educated person.",
+    "cn": "传统上，在这些（加拿大的）大学中，法律学习一直被看作是律师的专属领域，而不是受过教育的人所必备的知识素养的一部分。",
+    "structure": "主语为 legal learning，谓语为 has been viewed（被动语态），in such institutions 为地点状语，as the special preserve of lawyers 为主语补足语，rather than... 引出对比项，与 as 后成分并列形成 A rather than B 结构。",
+    "points": [
+     "preserve 译为\"专属领域/独占范围\"而非字面的\"保护/保存\"",
+     "rather than 对比结构需清晰呈现\"是…而非…\"的逻辑",
+     "intellectual equipment 译为\"知识素养/知识储备\"，不宜直译为\"智力装备\""
+    ],
+    "pitfall": "preserve 一词极易误译为\"保护\"\"保留\"等常见义。此处为名词，意为\"专属领域、独占活动范围\"。此外 such institutions 指代上文的加拿大大学，需准确回指。"
+   },
+   {
+    "number": 47,
+    "en": "On the other, it links these concepts to everyday realities in a manner which is parallel to the links journalists forge on a daily basis as they cover and comment on the news.",
+    "cn": "另一方面，它（法律）将这些概念与日常现实联系起来，其方式与新闻记者在每天报道和评论新闻时所建立的联系是相似的。",
+    "structure": "主干为 it links these concepts to everyday realities。in a manner 为方式状语，其后 which 引导定语从句修饰 manner；parallel to 后接 the links，journalists forge on a daily basis 为省略了关系代词 that 的定语从句修饰 links；as 引导时间/方式状语从句。全句包含三层嵌套修饰。",
+    "points": [
+     "forge 译为\"建立、构建\"而非\"伪造、锻造\"",
+     "which is parallel to 的定语从句需准确挂靠到 manner",
+     "as they cover and comment on the news 为时间状语从句，需译出\"在…时\""
+    ],
+    "pitfall": "forge 一词考生常联想到\"伪造\"，此处指\"建立（联系）\"。另外 the links journalists forge 中省略了关系代词，需识别 journalists forge 为 links 的后置定语从句。"
+   },
+   {
+    "number": 48,
+    "en": "But the idea that the journalist must understand the law more profoundly than an ordinary citizen rests on an understanding of the established conventions and special responsibilities of the news media.",
+    "cn": "但是，认为新闻记者必须比普通公民更深刻地理解法律，这一观点是基于对新闻媒体既定惯例和特殊责任的认识。",
+    "structure": "主语为 the idea，谓语为 rests on，宾语为 an understanding of...。that 引导同位语从句解释 idea 的内容。of the news media 同时修饰 conventions 和 responsibilities。主语与谓语被长同位语从句隔开，形成长距离主谓分离。",
+    "points": [
+     "that 同位语从句的准确识别与翻译，宜前置处理为'认为…这一观点'",
+     "rests on 译为\"基于、建立在…基础上\"",
+     "established conventions 译为\"既定惯例/约定俗成的规范\""
+    ],
+    "pitfall": "最大难点在于主谓分离：the idea 与 rests on 之间插入了长同位语从句，考生易将 rests on 的主语判断错误。established 需译为\"既定的\"而非\"建立的\"。"
+   },
+   {
+    "number": 49,
+    "en": "In fact, it is difficult to see how journalists who do not have a clear grasp of the basic features of the Canadian Constitution can do a competent job on political stories.",
+    "cn": "事实上，很难想象那些对加拿大宪法基本特征没有清楚了解的新闻记者能够胜任政治新闻的报道工作。",
+    "structure": "形式主语 it 指代后面的不定式 to see how...。how 引导宾语从句作 see 的宾语，从句主语为 journalists，谓语为 can do，宾语为 a competent job。who 引导定语从句修饰 journalists，内嵌介词短语 of the basic features of the Canadian Constitution 层层后置修饰。",
+    "points": [
+     "it is difficult to see 中 it 为形式主语，how 从句为真正主语，需译出'很难想象/看出'",
+     "who 定语从句宜前置翻译为'对…没有清楚了解的记者'",
+     "do a competent job on 译为\"胜任…的工作\""
+    ],
+    "pitfall": "句子嵌套层次多（形式主语→不定式→how 宾语从句→who 定语从句→多重 of 短语），考生易在断句时混乱。competent 需译为\"称职的、胜任的\"而非\"竞争的\"。"
+   },
+   {
+    "number": 50,
+    "en": "While comment and reaction from lawyers may enhance stories, it is preferable for journalists to rely on their own notions of significance and make their own judgments.",
+    "cn": "尽管律师的评论和反应可能会使报道更加丰富，但新闻记者最好还是依靠自己对重要性的认识来做出自己的判断。",
+    "structure": "While 引导让步状语从句，主句为 it is preferable for journalists to rely on... and make...。it 为形式主语，for journalists 为不定式的逻辑主语，to rely on 和 (to) make 并列构成真正主语。",
+    "points": [
+     "While 译为\"尽管、虽然\"（让步），而非\"当…时\"（时间）",
+     "it is preferable for sb. to do 译为\"某人最好做…/…更可取\"",
+     "notions of significance 译为\"对重要性的认识/看法\""
+    ],
+    "pitfall": "While 在此为让步意义而非时间意义，是常见考点。enhance 需译为\"丰富、提升\"。notions of significance 不可拆开直译为\"重要性的概念\"，应译为\"对重要性的认识/判断\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "preserve",
+    "cn": "n. 专属领域，独占活动范围"
+   },
+   {
+    "w": "intellectual equipment",
+    "cn": "n. 知识素养，知识储备"
+   },
+   {
+    "w": "part and parcel",
+    "cn": "n. 不可或缺的部分"
+   },
+   {
+    "w": "forge",
+    "cn": "v. 建立，构建（联系等）"
+   },
+   {
+    "w": "parallel",
+    "cn": "adj. 平行的，类似的"
+   },
+   {
+    "w": "rest on",
+    "cn": "v. 基于，依赖于"
+   },
+   {
+    "w": "established conventions",
+    "cn": "n. 既定惯例，约定俗成的规范"
+   },
+   {
+    "w": "grasp",
+    "cn": "n. 理解，掌握"
+   },
+   {
+    "w": "competent",
+    "cn": "adj. 称职的，胜任的"
+   },
+   {
+    "w": "enhance",
+    "cn": "v. 提升，丰富，增强"
+   },
+   {
+    "w": "preferable",
+    "cn": "adj. 更可取的，更好的"
+   },
+   {
+    "w": "notions of significance",
+    "cn": "n. 对重要性的认识/看法"
+   },
+   {
+    "w": "undue",
+    "cn": "adj. 过分的，不适当的"
+   }
+  ],
+  "skills": [
+   "注意熟词僻义：preserve（专属领域）、forge（建立）、competent（胜任的）等",
+   "长距离主谓分离时先找主干再处理插入成分，如第48题 the idea...rests on",
+   "英语后置定语从句汉译时常需前置处理，如 who/which 从句",
+   "While 引导从句时需根据语境区分让步义和时间义",
+   "形式主语 it 结构需还原真正主语，确保译文逻辑通顺"
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "6dd82042fcd8__reading__3",
+ "examId": "6dd82042fcd8",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年考研英语真题",
+ "year": 2023,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:52:30.311Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68027,
+ "usage": {
+  "prompt_tokens": 1768,
+  "completion_tokens": 3963,
+  "total_tokens": 5731,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1768,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3963,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1768,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "企鹅兰登书屋与Waterstones零售商的商业对峙",
+  "gist": "英国最大书商Waterstones因企鹅兰登书屋（PRH）对其实施信用额度限制而将PRH图书撤出显眼位置，双方陷入僵局。这场争端伤害了PRH中等知名度的作者，同时PRH与西蒙舒斯特的合并计划也引发业界对出版业权力集中、多元化减少的担忧。",
+  "structure": [
+   "第1段：以两本新书引出PRH与Waterstones的对峙背景",
+   "第2-3段：详述争端起因（信用限制）及双方回应",
+   "第4段：指出争端中受害最深的是PRH中等知名度作者",
+   "第5-6段：扩展至出版业合并趋势与权力集中的更深层忧虑",
+   "第7段：以开放式结尾引发对出版多元性前景的思考"
+  ],
+  "difficulty": "中等",
+  "translation": "如果你正前往英国最大图书零售商Waterstones最近的分店，想找到苏塞克斯公爵夫人新出的儿童书《长椅》，你可能需要做好四处寻找的准备；比尔·克林顿和詹姆斯·帕特森合著的新惊悚小说《总统的女儿》也可能如此。这两本书均由企鹅兰登书屋（PRH）于下周出版，而该公司目前正与Waterstones陷入对峙。\n\n问题始于去年年底，当时PRH确认已对Waterstones实施了\"相当高额度\"的信用限制。行业杂志《书商》报道称，Waterstones分店经理被告知将PRH的书从桌台、展示区和橱窗等显眼位置撤下，并\"悄悄将它们退回到各自所属的分类区域\"。\n\nPRH拒绝就此事发表评论，但Waterstones的一位发言人告诉我：\"Waterstones目前正在PRH缩减后的信用条款下运营，PRH是英国唯一一家对我们的贸易能力施加限制的出版商。我们并没有抵制PRH的书目，但我们正尽最大努力确保尽管库存总量降低，顾客的购书体验仍然良好。我们希望随着门店重新开业，一切能恢复正常，我们能够被允许正常采购。当然，我们的门店目前非常繁忙。五月'月度推荐书'的销量超过了2018年以来的任何一个月。\"\n\n与此同时，PRH的作者们成了输家。知名PRH作者可能受到一些影响，但那些中等知名度的作者——他们通常依赖Waterstones员工对推广不太知名的作家作品的热情——才是最盼望争端尽快结束的人。\n\n这场争端发生在作者们已经为PRH与另一大出版商西蒙与舒斯特拟议合并的后果感到担忧之际——英国独立出版商数量的减少很可能导致竞价战减少、预付款降低，以及出版内容趋于同质化。\n\n\"这一切都是权力集中化这一更大趋势的一部分，\"文学经纪人安德鲁·洛尼说。\"出版业在作者和员工方面大谈多样性，但它同样需要在提供思想交流、选择和不同声音方面保持多元化的途径。毕竟，近年来许多最有趣的书都来自小型出版社。\"\n\n我们将拭目以待，这种多元性是否会成为当前出版商为求足够壮大以应对所有竞争者之需求的牺牲品。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "Both of these books are published next week by Penguin Random House (PRH), a company currently involved in a stand-off with Waterstones.",
+    "why": "作者在第1段提到两本书是为了引出它们的出版商PRH与Waterstones之间正在发生的对峙（stand-off）。这两本书是具体例子，用来说明读者在Waterstones可能难以找到PRH出版的书籍这一现象，从而引出两家公司之间正在进行的冲突。stand-off即\"对峙\"，对应A选项中的\"ongoing conflict\"（正在发生的冲突）。",
+    "traps": "B选项\"知识性概念\"：文中提到两本书是为了引出商业冲突，并非阐释某个抽象的学术概念，属于无中生有。C选项\"普遍情绪\"：原文没有提及某种普遍的社会情绪，属于偷换概念。D选项\"文学现象\"：这两本书只是引入商业纠纷的铺垫，文章核心不是讨论文学创作现象，属于曲解主旨。",
+    "tip": "例证题要跳出例子本身，关注例子所服务的核心论点。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "when PRH confirmed that it had introduced a credit limit with Waterstones \"at a very significant level\". The trade magazine The Bookseller reported that Waterstones branch managers were being told to remove PRH books from prominent areas",
+    "why": "第2段的逻辑链是：先是PRH对Waterstones施加了信用额度限制（business move），随后Waterstones分店经理被告知将PRH的书从显眼位置撤走并退回到各自分类区。这一行为是Waterstones对PRH商业举措的回应（respond to PRH's business move），因果关系清晰。C选项准确概括了这一因果逻辑。",
+    "traps": "A选项\"让书更容易被注意到\"：退回分类区的目的恰恰相反，是让书不再显眼，属于反向干扰。B选项\"遵从PRH的要求\"：信用限制是PRH的举措，但撤书是Waterstones自主做出的对抗反应，并非PRH要求的，属于因果倒置。D选项\"系统化地整理\"：表面上\"退回相关分类区\"像是整理，但这是有意降低曝光率的对抗行为，属于望文生义。",
+    "tip": "因果关系题需分清主动方和被动方，辨明行为的真正驱动力。"
+   },
+   {
+    "number": 33,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Certainly, our shops are exceptionally busy. The sales for our May Books of the Month surpassed any month since 2018.",
+    "why": "Waterstones发言人在回应中强调门店\"非常繁忙\"，五月推荐书的销量创2018年以来新高。这些信息旨在传递一个核心信息：尽管PRH施加了信用限制，Waterstones的顾客依然忠诚，生意依旧兴隆。发言人用销售数据证明顾客并未因争端而流失，对应A选项\"顾客依然忠诚\"。",
+    "traps": "B选项\"信用限制将被取消\"：发言人只表达了\"希望恢复正常\"，并无确定信息表明限制会被取消，属于过度推断。C选项\"库存被低估\"：发言人承认库存总量降低，并非说库存被低估，属于曲解原意。D选项\"图书市场相当萧条\"：发言人恰恰用繁忙的门店和高销量否定了市场萧条的说法，属于反向干扰。",
+    "tip": "推断题要关注发言人表态的核心意图，不被字面细节带偏。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Big-name PRH authors may suffer a bit, but it's those mid-list authors, who normally rely on Waterstones staff's passion for promoting books by lesser-known writers, who will be praying for an end to the dispute.",
+    "why": "第4段明确指出PRH中等知名度作者是争端的最大受害者。他们平时依赖Waterstones员工的推荐热情，如今PRH图书被撤出显眼位置、库存减少，这些作者的曝光机会大幅降低，销量必然大受影响。A选项\"中等知名度PRH作者的销量大幅下降\"是对原文这一因果链的合理概括。",
+    "traps": "B选项\"不知名PRH作者成为批评对象\"：原文说他们是\"受害者\"，没有任何人批评他们，属于无中生有。C选项\"Waterstones员工犹豫是否推广大牌作者的书\"：原文说大牌作者只是\"受一点影响\"，核心受害者是中等知名度作者，属于偷换对象。D选项\"Waterstones分店收入严重下降\"：发言人在第3段明确提到门店繁忙、销量创新高，与此选项矛盾，属于反向干扰。",
+    "tip": "多对象对比题要抓住原文强调的核心对象和程度差异。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "This is all part of a wider change towards concentration of power... it also needs a plurality of ways of delivering intellectual contact, choice and different voices.",
+    "why": "Lownie将PRH与Waterstones的争端以及PRH与Simon & Schuster的拟议合并放在\"权力集中化\"的更大趋势下讨论，强调出版业需要保持多元化，并指出很多有趣的书来自小出版社。他的核心观点是：出版商合并导致权力集中、多元性受损，这是一个令人担忧的趋势。D选项\"出版商合并是一个令人担忧的趋势\"最准确地概括了他的立场。",
+    "traps": "A选项\"小出版商应团结在一起\"：Lownie提到小出版商出了很多好书，但从未建议它们互相联合，属于无中生有。B选项\"大出版商将失去主导地位\"：Lownie的观点恰恰是大出版商正在加强权力集中，并非会失去主导地位，属于反向推断。C选项\"出版业正在经历困难时期\"：这一说法过于笼统，Lownie关注的焦点是权力集中和多元性丧失的具体问题，而非泛泛的行业困境，属于以偏概全。",
+    "tip": "观点归纳题需把握说话者论述的核心关切，排除泛化和扭曲选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "stand-off",
+    "cn": "n. 对峙，僵局"
+   },
+   {
+    "w": "credit limit",
+    "cn": "n. 信用额度（限制）"
+   },
+   {
+    "w": "prominent",
+    "cn": "adj. 显眼的，突出的"
+   },
+   {
+    "w": "boycotting",
+    "cn": "v. 抵制（boycott的现在分词）"
+   },
+   {
+    "w": "utmost",
+    "cn": "n./adj. 最大努力；极度的"
+   },
+   {
+    "w": "surpassed",
+    "cn": "v. 超过，超越（surpass的过去式）"
+   },
+   {
+    "w": "mid-list",
+    "cn": "adj. 中等知名度的（出版业术语）"
+   },
+   {
+    "w": "merger",
+    "cn": "n. 合并，并购"
+   },
+   {
+    "w": "plurality",
+    "cn": "n. 多元化，多样性"
+   },
+   {
+    "w": "conformity",
+    "cn": "n. 一致性，同质化"
+   },
+   {
+    "w": "casualty",
+    "cn": "n. 牺牲品，受害者"
+   },
+   {
+    "w": "all-comers",
+    "cn": "n. 所有竞争者，所有来者"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Big-name PRH authors may suffer a bit, but it's those mid-list authors, who normally rely on Waterstones staff's passion for promoting books by lesser-known writers, who will be praying for an end to the dispute.",
+    "cn": "知名的PRH作者可能会受到一些影响，但那些中等知名度的作者——他们通常依赖Waterstones员工对推广不太知名的作家作品的热情——才是最盼望这场争端尽快结束的人。",
+    "note": "主干为强调句式\"it's those mid-list authors who will be praying...\"，中间插入who引导的非限制性定语从句修饰mid-list authors，前半句用Big-name authors作对比铺垫。"
+   },
+   {
+    "en": "The publishing industry talks about diversity in terms of authors and staff but it also needs a plurality of ways of delivering intellectual contact, choice and different voices.",
+    "cn": "出版业在作者和员工方面大谈多样性，但它同样需要在提供思想交流、选择和不同声音方面保持多元化的途径。",
+    "note": "but连接转折关系；a plurality of ways是核心宾语，of delivering...是后置定语，intellectual contact、choice和different voices三者并列作delivering的宾语。"
+   },
+   {
+    "en": "We shall see whether that plurality is a casualty of the current need among publishers to be big enough to take on all-comers.",
+    "cn": "我们将拭目以待，这种多元性是否会成为当前出版商为求足够壮大以应对所有竞争者之需求的牺牲品。",
+    "note": "whether引导宾语从句；a casualty of the current need是主要表语结构；among publishers作need的后置定语；to be big enough to take on all-comers是need的不定式补语，含目的关系。"
+   }
+  ]
+ }
+}

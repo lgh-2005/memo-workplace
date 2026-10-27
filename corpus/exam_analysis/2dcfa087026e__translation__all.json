@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "2dcfa087026e__translation__all",
+ "examId": "2dcfa087026e",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2015 年考研英语真题",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:31:53.364Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52514,
+ "usage": {
+  "prompt_tokens": 1414,
+  "completion_tokens": 3170,
+  "total_tokens": 4584,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1414,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3170,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1414,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "欧洲移民潮塑造美国民族性格",
+  "translation": "在十七世纪和十八世纪初的一百年间，一股移民浪潮——历史上伟大的民族迁徙之一——从欧洲涌向美洲。这场运动受到多种强大动因的驱使，在一片荒野上建立起一个国家，并以其本身的特点，塑造了一个未知大陆的性格和命运。\n\n美国是两大主要力量的产物——欧洲各民族携其多样的思想、习俗和民族特征的移民，以及一个新国家对这些特征加以改变所产生的影响。殖民时期的美洲必然是欧洲的延伸。一批又一批的英国人、法国人、德国人、苏格兰人、爱尔兰人、荷兰人、瑞典人以及许多其他民族的人漂洋过海来到大西洋彼岸，试图将他们的生活习惯和传统移植到新大陆。但是，美洲特有的地理条件的影响、各民族之间的相互作用，以及在一片原始的新大陆上保持旧世界生活方式的极大困难，这一切都引起了重大的变化。这些变化是渐进的，起初几乎察觉不到。但其结果却是一种崭新的社会模式，它虽然在许多方面与欧洲社会相似，却有着明显的美国特色。\n\n首批满载移民驶往现在的美国领土的船只，是在十五、十六世纪对北美的探索活动之后一百多年才横渡大西洋的。与此同时，繁荣的西班牙殖民地已经在墨西哥、西印度群岛和南美洲建立起来。这些前往北美的旅行者乘坐的是小而拥挤不堪的船只。在六到十二周的航程中，他们仅靠分配给他们的勉强够吃的食物维生。许多船只在风暴中沉没，许多旅客死于疾病，婴儿很少能在旅途中存活。有时风暴将船只吹得远离航线，而风平浪静则常常带来令人难以忍受的漫长延误。\n\n对于焦虑不安的旅行者来说，看到美洲海岸几乎带来了难以言表的宽慰。一位事件记录者说：\"在十二里格之外就能闻到空气如同新开的花园一样芬芳。\"殖民者对新大陆的第一眼印象是一片茂密的森林。那片原始森林，以其树木的丰富和多样，是一座真正的宝库，从缅因州一直延伸到佐治亚州。这里有充足的燃料和木材，这里有建造房屋和家具、船只和草木灰、染料和海军用品的原材料。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "This movement, driven by powerful and diverse motivations, built a nation out of a wilderness and, by its nature, shaped the character and destiny of an uncharted continent.",
+    "cn": "这场运动受到多种强大动因的驱使，在一片荒野上建立起一个国家，并以其本身的特点，塑造了一个未知大陆的性格和命运。",
+    "structure": "主语为 This movement；driven by powerful and diverse motivations 为过去分词短语作插入性状语；谓语由 built 和 shaped 两个并列动词构成；by its nature 为方式状语插入在第二个谓语之前。",
+    "points": [
+     "driven by powerful and diverse motivations 插入语须译为被动含义，如\"受……驱使\"",
+     "built a nation out of a wilderness 中 out of 表\"从……中\"，须体现从荒野到国家的转变",
+     "uncharted 译为\"未知的/未被开发的\"，不可误译为\"未列入地图的\""
+    ],
+    "pitfall": "by its nature 容易误译为\"由于其自然条件\"，实际意思是\"就其本质/特点而言\"，指运动本身的性质，而非自然环境。"
+   },
+   {
+    "number": 47,
+    "en": "The United States is the product of two principal forces – the immigration of European peoples with their varied ideas, customs, and national characteristics and the impact of a new country which modified these traits.",
+    "cn": "美国是两大主要力量的产物——欧洲各民族携其多样的思想、习俗和民族特征的移民，以及一个新国家对这些特征加以改变所产生的影响。",
+    "structure": "主干为 The United States is the product of two principal forces；破折号后为 two principal forces 的同位语，包含两个并列名词短语：the immigration… 和 the impact…；which modified these traits 为定语从句修饰 a new country。",
+    "points": [
+     "破折号后两个并列力量须完整译出，不可遗漏第二个 the impact",
+     "with their varied ideas, customs, and national characteristics 为介词短语作伴随状语，须译为\"携带/带着\"",
+     "which modified these traits 定语从句的先行词为 a new country，须正确归属"
+    ],
+    "pitfall": "两个并列成分之间只有 and 连接而无逗号，考生容易将 national characteristics and the impact 错误断句，误把 the impact 归入第一个力量。"
+   },
+   {
+    "number": 48,
+    "en": "But the force of geographic conditions peculiar to America, the interplay of the varied national groups upon one another, and the sheer difficulty of maintaining old-world ways in a raw, new continent caused significant changes.",
+    "cn": "但是，美洲特有的地理条件的影响、各民族之间的相互作用，以及在一片原始的新大陆上保持旧世界生活方式的极大困难，这一切都引起了重大的变化。",
+    "structure": "主语由三个并列名词短语构成：the force of geographic conditions peculiar to America、the interplay of the varied national groups upon one another、the sheer difficulty of maintaining old-world ways in a raw, new continent；谓语为 caused；宾语为 significant changes。",
+    "points": [
+     "三个并列主语须完整译出且逻辑清晰，不可遗漏任何一个",
+     "peculiar to America 为后置定语修饰 geographic conditions，译为\"美洲特有的\"",
+     "sheer 译为\"十足的/极大的\"，体现程度之深"
+    ],
+    "pitfall": "old-world ways 中 old world 指欧洲旧大陆，不可笼统译为\"古老的方式\"；raw 修饰 continent 意为\"原始的、未开发的\"，不可译为\"生的\"。"
+   },
+   {
+    "number": 49,
+    "en": "The first shiploads of immigrants bound for the territory which is now the United States crossed the Atlantic more than a hundred years after the 15th- and 16th-century explorations of North America.",
+    "cn": "首批满载移民驶往现在的美国领土的船只，是在十五、十六世纪对北美的探索活动之后一百多年才横渡大西洋的。",
+    "structure": "主语为 The first shiploads of immigrants；bound for the territory 为过去分词短语作后置定语修饰 immigrants（或整个主语）；which is now the United States 为定语从句修饰 the territory；谓语为 crossed the Atlantic；时间状语为 more than a hundred years after…。",
+    "points": [
+     "shiploads of immigrants 须译出\"满船的移民\"之意，体现量词用法",
+     "bound for 译为\"驶往/开往\"，表目的地方向",
+     "more than a hundred years after… 时间状语须准确体现\"在……之后一百多年\"的时间跨度"
+    ],
+    "pitfall": "the 15th- and 16th-century explorations 为合写形式，指十五世纪和十六世纪的探险活动，不可误译为仅一个世纪；bound for 不可误解为\"被束缚于\"。"
+   },
+   {
+    "number": 50,
+    "en": "The virgin forest with its richness and variety of trees was a real treasure-house which extended from Maine all the way down to Georgia.",
+    "cn": "那片原始森林，以其树木的丰富和多样，是一座真正的宝库，从缅因州一直延伸到佐治亚州。",
+    "structure": "主语为 The virgin forest；with its richness and variety of trees 为介词短语作伴随定语；谓语为 was；表语为 a real treasure-house；which extended from Maine all the way down to Georgia 为定语从句修饰 treasure-house。",
+    "points": [
+     "virgin forest 译为\"原始森林\"，virgin 不可按常见义译为\"处女的\"",
+     "with its richness and variety of trees 须将 richness 和 variety 分别译出，如\"丰富和多样\"",
+     "all the way down to 须体现\"一直延伸到\"的完整空间感"
+    ],
+    "pitfall": "richness and variety of trees 中 richness 和 variety 都修饰 trees，考生容易只译出\"种类丰富\"而遗漏\"资源丰富\"这层含义；Maine 和 Georgia 为专有地名须正确音译。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "emigration",
+    "cn": "（向外的）移民，移居国外（n.）"
+   },
+   {
+    "w": "wilderness",
+    "cn": "荒野，荒原（n.）"
+   },
+   {
+    "w": "uncharted",
+    "cn": "未知的，未被探索的（adj.）"
+   },
+   {
+    "w": "modified",
+    "cn": "改变，修改（v. 过去式）"
+   },
+   {
+    "w": "projection",
+    "cn": "延伸，投射；缩影（n.）"
+   },
+   {
+    "w": "transplant",
+    "cn": "移植，移栽（v.）"
+   },
+   {
+    "w": "peculiar to",
+    "cn": "……所特有的（adj. 短语）"
+   },
+   {
+    "w": "interplay",
+    "cn": "相互作用，相互影响（n.）"
+   },
+   {
+    "w": "sheer",
+    "cn": "十足的，完全的（adj.）"
+   },
+   {
+    "w": "bound for",
+    "cn": "开往，驶往（adj. 短语）"
+   },
+   {
+    "w": "allotted",
+    "cn": "分配，配给（v. 过去分词）"
+   },
+   {
+    "w": "virgin forest",
+    "cn": "原始森林（n. 短语）"
+   },
+   {
+    "w": "potash",
+    "cn": "草木灰，碳酸钾（n.）"
+   },
+   {
+    "w": "naval stores",
+    "cn": "海军用品；松脂类产品（n. 短语）"
+   },
+   {
+    "w": "league",
+    "cn": "里格（旧时长度单位，约三英里）（n.）"
+   }
+  ],
+  "skills": [
+   "插入性分词短语（如 driven by…、bound for…）需灵活调整语序融入译文",
+   "多重并列结构须先理清层次再翻译，避免遗漏或错误归属",
+   "后置定语（形容词短语、定语从句）常需前置处理以符合中文表达习惯",
+   "专有名词和历史文化背景词（如 old world、virgin forest）须结合语境准确翻译",
+   "介词短语（out of、with、upon）在不同语境中含义不同，需根据上下文灵活选词"
+  ]
+ }
+}

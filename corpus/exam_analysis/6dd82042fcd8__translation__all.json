@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "6dd82042fcd8__translation__all",
+ "examId": "6dd82042fcd8",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年考研英语真题",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:52:44.397Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 48432,
+ "usage": {
+  "prompt_tokens": 1347,
+  "completion_tokens": 3095,
+  "total_tokens": 4442,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1347,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3095,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1347,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人工智能在数字营销中的应用与挑战",
+  "translation": "围绕人工智能（AI）在数字营销中的应用，已有一些探索。例如，AI可以通过大数据分析来揭示趋势和偏好信息，从而分析何种广告内容或文案适合用来与特定的目标客户群体\"对话\"。AI还可以用于识别客户在兴趣爱好、喜爱的名人和时尚方面的生活方式选择，以便在通过社交媒体发布的营销信息中提供独特的内容。与此同时，AI也可以用于为社交媒体帖子和聊天网站生成内容。\n\n使用AI回应客户的主要缺点在于，人们担心将人际互动交由机器处理，这不仅可能导致人际联系的丧失，还可能导致营销人员的减少。一些人认为AI正在通过减少创造力和消除工作岗位对营销人员的角色产生负面影响，但他们也意识到这是一种降低成本和创造新信息的方式。通过让AI来开发内容，一些品牌营销人员可能会发现他们正在失去对品牌叙事的控制。用于模拟人际互动的算法正在引发许多此类担忧，尤其是因为没有人十分确定使用AI与客户互动的结果将会是什么。\n\nAI要想取得成功，数据需要是可获取的，但个人数据的使用正变得越来越受到监管，数据的自动共享也变得越来越困难。如果客户不愿意共享数据，AI将缺乏关键信息，无法有效运作，也无法利用机器学习来改进其营销内容和沟通方式。因此，除非客户愿意签署数据授权协议，否则AI的使用在未来可能会受到一定程度的限制。AI不仅可以帮助创建营销内容，还可以提供一种非侵入性的方式将内容传递给目标客户。可以收集关于客户在何处参与互动的数据，如位置、使用的设备、网站互动和访问的站点，从而以适当的形式展示营销信息，包括电子邮件、社交媒体帖子、弹出式广告和横幅广告，并以适当的频率推送。以一种对目标客户需求敏感的方式非侵入性地传递营销信息，是数字营销人员面临的关键挑战之一。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "AI can also be used to identify the lifestyle choices of customers regarding their hobbies, favourite celebrities, and fashions to provide unique content in marketing messages put out through social media.",
+    "cn": "AI还可以用于识别客户在兴趣爱好、喜爱的名人和时尚方面的生活方式选择，以便在通过社交媒体发布的营销信息中提供独特的内容。",
+    "structure": "主干为 AI can be used to identify ... to provide ...，其中第一个不定式 to identify 是目的/用途补语，宾语为 the lifestyle choices of customers；regarding ... 为介词短语作后置定语修饰 choices；第二个不定式 to provide ... 表目的；put out through social media 为过去分词短语作后置定语修饰 marketing messages。",
+    "points": [
+     "regarding their hobbies, favourite celebrities, and fashions 需译为修饰'生活方式选择'的限定成分，表示'在……方面'",
+     "put out through social media 为过去分词短语作后置定语，需译为'通过社交媒体发布的'",
+     "两个 to 不定式结构的功能区分：to identify 表用途，to provide 表目的"
+    ],
+    "pitfall": "容易将 put out through social media 误译为谓语动词或漏译；regarding 易被忽略，导致 hobbies 等与 lifestyle choices 之间的修饰关系表达不清。"
+   },
+   {
+    "number": 47,
+    "en": "Some believe that AI is negatively impacting on the marketer's role by reducing creativity and removing jobs, but they are aware that it is a way of reducing costs and creating new information.",
+    "cn": "一些人认为AI正在通过减少创造力和消除工作岗位对营销人员的角色产生负面影响，但他们也意识到这是一种降低成本和创造新信息的方式。",
+    "structure": "主干为并列句 Some believe that ..., but they are aware that ...。前半句主语 Some，谓语 believe，宾语从句中 by reducing ... and removing ... 为方式状语；后半句主语 they，谓语 are aware，宾语从句中 it 指代 AI，a way of ... 为表语。",
+    "points": [
+     "negatively impacting on ... by reducing ... and removing ... 中方式状语的准确翻译",
+     "but 转折关系的体现：前半句为负面看法，后半句承认其积极面",
+     "reducing costs and creating new information 需与前半句 reducing creativity and removing jobs 形成对比"
+    ],
+    "pitfall": "易将 they 的指代对象误解为其他群体；impacting on 与 by 引导的方式状语需连贯译出，不可断裂。"
+   },
+   {
+    "number": 48,
+    "en": "Algorithms used to simulate human interactions are creating many of these concerns, especially as no-one is quite sure what the outcomes of using AI to interact with customers will be.",
+    "cn": "用于模拟人际互动的算法正在引发许多此类担忧，尤其是因为没有人十分确定使用AI与客户互动的结果将会是什么。",
+    "structure": "主干为 Algorithms are creating many of these concerns；used to simulate human interactions 为过去分词短语作后置定语修饰 Algorithms；especially as 引导原因状语从句，其中 what ... will be 为宾语从句作 sure 的宾语，宾语从句主语为 the outcomes of using AI to interact with customers。",
+    "points": [
+     "used to simulate human interactions 需译为后置定语'用于模拟人际互动的'，不可误解为'过去常常'",
+     "especially as 引导的原因状语从句需译出因果逻辑，译为'尤其是因为'",
+     "what the outcomes ... will be 宾语从句的语序调整与完整翻译"
+    ],
+    "pitfall": "used to 极易被误译为'过去常常做某事'（used to do），此处实为'被用来做某事'（过去分词 + to 不定式）；as 在此处表原因而非时间。"
+   },
+   {
+    "number": 49,
+    "en": "If customers are not willing to share data, AI will be starved of essential information and will not be able to function effectively or employ machine learning to improve its marketing content and communication.",
+    "cn": "如果客户不愿意共享数据，AI将缺乏关键信息，无法有效运作，也无法利用机器学习来改进其营销内容和沟通方式。",
+    "structure": "主干为条件复合句，If 引导条件状语从句；主句有两个并列谓语：will be starved of ... 和 will not be able to function ... or employ ...；or 连接 function effectively 与 employ machine learning ...，两者并列共享 will not be able to。",
+    "points": [
+     "be starved of 需译为'缺乏/得不到'，体现被动含义和比喻意义",
+     "will not be able to function effectively or employ ... 中 or 连接两个并列动词，需完整译出",
+     "improve its marketing content and communication 中 its 指代 AI，需明确译出"
+    ],
+    "pitfall": "starved of 为比喻用法，不可直译为'被饿死'；or 连接的并列结构易被遗漏，导致 employ machine learning 部分漏译。"
+   },
+   {
+    "number": 50,
+    "en": "The non-intrusive delivery of the marketing messages in a way that is sensitive to the needs of target customers is one of the critical challenges to the digital marketer.",
+    "cn": "以一种对目标客户需求敏感的方式非侵入性地传递营销信息，是数字营销人员面临的关键挑战之一。",
+    "structure": "主干为 The delivery ... is one of the critical challenges。主语中心词为 delivery，of the marketing messages 为后置定语；in a way 为方式状语，that is sensitive to the needs of target customers 为定语从句修饰 a way；to the digital marketer 修饰 challenges，表示挑战的承受对象。",
+    "points": [
+     "non-intrusive 需准确译为'非侵入性的/不打扰的'",
+     "in a way that is sensitive to the needs of target customers 定语从句需准确嵌入，译为'以一种对目标客户需求敏感的方式'",
+     "主语较长，翻译时需调整语序使中文通顺自然"
+    ],
+    "pitfall": "该句主语极长（从 The 到 customers），易导致译文主谓割裂或语序混乱；non-intrusive 为专业术语，需结合语境准确理解为'非侵扰式的'。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "non-intrusive",
+    "cn": "非侵入性的，不打扰的（adj.）"
+   },
+   {
+    "w": "algorithm",
+    "cn": "算法（n.）"
+   },
+   {
+    "w": "simulate",
+    "cn": "模拟，仿真（v.）"
+   },
+   {
+    "w": "interpersonal",
+    "cn": "人际的，人与人之间的（adj.）"
+   },
+   {
+    "w": "narrative",
+    "cn": "叙事，故事讲述（n.）"
+   },
+   {
+    "w": "starved of",
+    "cn": "缺乏，极度匮乏（短语）"
+   },
+   {
+    "w": "regulated",
+    "cn": "受监管的，受规范的（adj.）"
+   },
+   {
+    "w": "pop-up advertisement",
+    "cn": "弹出式广告（n.）"
+   },
+   {
+    "w": "banner",
+    "cn": "横幅广告（n.）"
+   },
+   {
+    "w": "release agreement",
+    "cn": "授权协议，许可协议（n.）"
+   },
+   {
+    "w": "put out",
+    "cn": "发布，推出（短语动词）"
+   },
+   {
+    "w": "marketer",
+    "cn": "营销人员，市场推广人员（n.）"
+   }
+  ],
+  "skills": [
+   "长主语句需先理清主语边界，翻译时适当调整语序，将状语或定语前置以符合中文表达习惯",
+   "过去分词短语作后置定语（如 used to, put out）须准确识别其修饰对象，勿与谓语动词混淆",
+   "比喻性被动结构（如 be starved of）应意译而非直译，结合上下文选择恰当的中文表达",
+   "并列结构（A and B, A or B）需逐一译全，注意共享成分的还原，避免漏译",
+   "as 引导原因状语从句时需译出因果关系，注意与表时间的 as 区分"
+  ]
+ }
+}

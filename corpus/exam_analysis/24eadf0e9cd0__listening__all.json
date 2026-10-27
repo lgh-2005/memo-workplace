@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "24eadf0e9cd0__listening__all",
+ "examId": "24eadf0e9cd0",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2016 年 12 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:06:46.382Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63142,
+ "usage": {
+  "prompt_tokens": 2245,
+  "completion_tokens": 2859,
+  "total_tokens": 5104,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2245,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2859,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2245,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于题目选项的语言特征推断与通用应试技巧，不涉及对录音内容的任何编造。",
+  "overview": "本场听力共 7 段，25 题。第 1 段（Q1-4）选项涉及烹饪、饮食偏好与用餐体验；第 2 段（Q5-8）围绕女性店铺的经营策略与竞争关系；第 3 段（Q9-12）聚焦北极海鸟与污染物传播；第 4 段（Q13-15）涉及百岁老人健康状况与疾病趋势；第 5 段（Q16-18）讨论爱情理论中亲密、激情与承诺三要素；第 6 段（Q19-22）介绍社会工作这一职业的性质与要求；第 7 段（Q23-25）关注儿童肥胖与名人代言对儿童的影响。",
+  "strategy": [
+   "预读选项时快速标注各题提问对象（人物/原因/结果），缩小听音时的注意范围",
+   "当四个选项结构相似（如都是 They + 动词），重点听主语之后的谓语与宾语差异词",
+   "听到与某选项高度吻合的同义改写时，该选项极可能为正确答案；完全照搬原词的选项需警惕",
+   "否定词与程度词（no, all, only, most, just）常是干扰项设计的关键，听音时格外注意",
+   "当选项出现对立含义（如 increased vs. decreased），录音大概率直接给出判断，集中捕捉结论句",
+   "篇章类题目末题常考文章主旨或作者态度，注意录音开头与结尾的总结性语句"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "一次与饮食烹饪有关的社交用餐经历",
+    "optionSignals": "Q1 四选项均为 They were + 形容词短语，考查对一群人特征的判断；Q2 全是人物名词，考查具体角色；Q3/Q4 均描述某件事/经历的性质，注意否定表达（no tea, no one）与评价类形容词（disappointing, extraordinary）。",
+    "tips": [
+     "Q1 四项都涉及食物态度，但 A 强调能力（good at cooking），其余强调偏好或自豪，听音区分 ability 与 preference",
+     "Q3 正确项 C 含有绝对否定 no one，听音时需留意 nobody/none 等同义表达",
+     "Q4 正确项为负面评价 disappointing，注意 but/however 等转折信号词后的核心判断"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "一家小店的经营策略与邻里竞争关系",
+    "optionSignals": "Q5 选项都是名词短语，考查对话主题；Q6/Q7/Q8 都以 They/To + 动词开头，分别考查经营措施、商品特点和做法原因。介词 than/with 提示比较与关系。",
+    "tips": [
+     "Q6 正确项 keep down expenses 是常见同义改写，听音时关注 reduce cost / cut spending 等表达",
+     "Q8 考查做某事的目的，To maintain friendly relationships 属于社交动机，注意 because / so that / in order to 等目的状语引导词",
+     "Q7 涉及 lower prices，对比类信息往往在录音中通过 cheaper / less expensive 体现"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11,
+     12
+    ],
+    "sharedTopic": "北极海鸟（暴风鹱）与环境污染物的传播",
+    "optionSignals": "四题选项均以 They 开头，讨论海鸟的行为与影响。关键名词：pollutants, nesting sites, Arctic, Devon Island, fulmars, continent。Q12 转向宏观主题，选项为名词短语，考查短文主旨。",
+    "tips": [
+     "Q9 正确项 B 含 deliver pollutants，与 A 的 deliver messages 形成词汇复现干扰，注意区分宾语",
+     "Q12 为主旨题，正确项 C 涉及海鸟对人类的危害，这是意料之外的反向视角，听音时关注文章结论段",
+     "Q10 的 400 kilometers 为具体数字，听音时数字前后的限定语（up to / as far as）是确认关键"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "百岁老人的健康趋势与疾病状况",
+    "optionSignals": "Q13 选项为 It has + 过去分词，考查某指标的变化趋势；Q14 描述某种疾病的现状；Q15 以 Their/They 开头，描述老年人身心状况。注意 decreased 与 exaggerated、minds 与 bodies 的对立设计。",
+    "tips": [
+     "Q13 四选项呈对立关系（decreased vs. same vs. exaggerated），听音捕捉表示趋势的动词（decline, drop, rise）",
+     "Q15 正确项 C 中 minds fall before bodies 含有 before 的先后对比，听音时关注 while/whereas/before 等对比连接词",
+     "Q14 正确项含 second leading cause，序数词是典型的听力考点，注意精确捕捉"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "爱情心理学理论：亲密、激情与承诺三要素",
+    "optionSignals": "Q16 考查研究特征，选项含 attraction, Yale, thirty years, theory of love 等学术语境词；Q17/Q18 讨论三要素间关系，大量出现 intimacy, passion, commitment, relationship 等抽象名词。",
+    "tips": [
+     "Q16 正确项 A 指出研究更侧重 attraction 而非 love，注意 rather than / more...than / instead of 等对比结构",
+     "Q17 正确项 C 是条件句结构（It is not love if…），听音时留意 unless/if not 等否定条件",
+     "Q18 正确项 D 问缺少某要素时如何定义关系，属于分类讨论型，关注 what if / in the absence of 等假设表达"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "社会工作作为一种职业的性质、职责与从业要求",
+    "optionSignals": "Q19 选项为名词短语，考查短文主题；Q20/Q21 以 They 开头描述社会工作者的行为与资质；Q22 为末题考文章侧重点。关键词：profession, well-being, underprivileged, academic degree, job options。",
+    "tips": [
+     "Q20 正确项 B 中 underprivileged 是核心词，听音时注意 disadvantaged / vulnerable / needy 等同义词",
+     "Q21 正确项 B 强调 all have academic degree，全称量词 all 需在录音中得到明确支持",
+     "Q22 为主旨归纳题，正确项 D 涵盖 job options and responsibilities，范围最全面，符合主旨题选项覆盖面广的规律"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "名人代言对儿童肥胖与行为的影响",
+    "optionSignals": "Q23 考查目的（To + 动词原形），Q24 描述代言广告效果（含 online, TV, prevalent, kids vs. adults 等对比），Q25 为建议类（动词原形开头），考查对名人的行为倡导。",
+    "tips": [
+     "Q23 正确项 A 中 fight childhood obesity 为目的，听音关注 aim to / designed to / in order to",
+     "Q25 正确项 C 中 message positive behaviors 用法较特殊（message 作动词），注意 always/at all times 等频度表达",
+     "Q24 涉及 kids vs. adults 的对比效果，听音时定位 more than / compared to 等比较结构"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "cuisine",
+    "cn": "烹饪；菜肴（常指某一风格的饮食）"
+   },
+   {
+    "w": "underprivileged",
+    "cn": "贫困的；弱势的；社会地位低下的"
+   },
+   {
+    "w": "centenarian",
+    "cn": "百岁老人"
+   },
+   {
+    "w": "intimacy",
+    "cn": "亲密；亲密关系"
+   },
+   {
+    "w": "commitment",
+    "cn": "承诺；投入；忠诚"
+   },
+   {
+    "w": "pollutant",
+    "cn": "污染物"
+   },
+   {
+    "w": "fulmar",
+    "cn": "暴风鹱（一种北极海鸟）"
+   },
+   {
+    "w": "nesting site",
+    "cn": "筑巢地；栖息地"
+   },
+   {
+    "w": "obesity",
+    "cn": "肥胖（症）"
+   },
+   {
+    "w": "prevalent",
+    "cn": "流行的；普遍的"
+   },
+   {
+    "w": "endorsement",
+    "cn": "（名人）代言；背书"
+   },
+   {
+    "w": "deteriorate",
+    "cn": "恶化；变差"
+   },
+   {
+    "w": "well-being",
+    "cn": "幸福；健康；福祉"
+   },
+   {
+    "w": "indispensable",
+    "cn": "不可或缺的；必不可少的"
+   }
+  ]
+ }
+}

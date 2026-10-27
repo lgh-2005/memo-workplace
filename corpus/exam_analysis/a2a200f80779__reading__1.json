@@ -1,0 +1,163 @@
+{
+ "schemaVersion": 1,
+ "id": "a2a200f80779__reading__1",
+ "examId": "a2a200f80779",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 12 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T04:45:13.731Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 74926,
+ "usage": {
+  "prompt_tokens": 1505,
+  "completion_tokens": 7238,
+  "total_tokens": 8743,
+  "prompt_tokens_details": {
+   "cached_tokens": 1408
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4954
+  },
+  "prompt_cache_hit_tokens": 1408,
+  "prompt_cache_miss_tokens": 97
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "学会提问比记住知识更重要",
+  "gist": "文章通过对比大学生与儿童在制定秃鹰保护计划上的表现，指出真正的差异不在于记忆或应用已有知识，而在于能否提出关键问题、具备“为未来学习做准备”的能力。博物馆等非正式学习环境比学校更能容忍失败、更便于培养这种提问与科学探究能力，因此作者鼓励教育者充分利用非正式学习资源。",
+  "structure": [
+   "第一段：对比研究发现差异不在知识掌握，而在提问准备能力",
+   "第二段：深入探究表明大学生已学会提问，具备批判性思维",
+   "第三段：以探索馆实验说明提问能力可提升科学探究质量",
+   "第四段：指出非正式学习容忍失败，呼吁善用非正式系统"
+  ],
+  "difficulty": "中等",
+  "translation": "十多年前，时任范德堡大学认知科学家约翰·布兰斯福德和丹尼尔·施瓦茨发现，年轻人和儿童的区别并不在于记忆事实或将已有知识应用到新情境的能力，而在于一种他们称之为“为未来学习做准备”的素质。研究人员让五年级学生和大学生制定保护白头海雕免于灭绝的恢复计划。令人震惊的是，两组提出的计划质量相近（尽管大学生的拼写能力更好）。从传统教育者的角度看，这一结果说明学校教育未能帮助学生思考生态系统和灭绝等重大科学观念。\n\n然而，研究人员决定深入探究。他们要求两组学生就制定恢复计划所需的重要问题提出问题。在这项任务上，他们发现了巨大差异。大学生关注鹰与其栖息地之间相互依存的关键问题。五年级学生则倾向于关注鹰个体的特征（“它们有多大？”“它们吃什么？”）。大学生已经培养了提问能力，而这是批判性思维的基石。他们学会了如何学习。\n\n博物馆和其他非正式学习机构可能比中小学更适合教授这种技能。在旧金山探索馆，我们最近研究了学习提出好问题如何影响人们科学探究的质量。我们发现，当我们教参与者提出“如果……会怎样？”和“怎么能……？”这类现场无人知道答案、却能激发探索的问题时，他们在下一个展品前的探究表现更好——提出更多问题，做更多实验，并能更好地解释结果。具体来说，他们的提问在新展品前变得更加全面。他们不再仅仅询问想尝试的事情，而是倾向于在问题中同时包含原因和结果。提出有深度的问题似乎是一种可迁移的技能，能够深化对展品中科学内容的合作探究。\n\n这种学习并不局限于博物馆或机构环境。非正式学习环境比学校更能容忍失败。或许许多教师时间太少，无法让学生提出并追寻自己的问题，而课程要覆盖的内容又太多。但人们必须在某处获得这种技能。我们的社会依赖于他们能够对自己的医疗方案、或我们必须如何应对全球能源需求和消耗等问题做出关键决定。为此，我们拥有一个健全的非正式系统，它不给评分，来者不拒，甚至在节假日和周末也可用。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "From the standpoint of a traditional educator, this outcome indicated that schooling had failed to help students think about ecosystems and extinction, major scientific ideas.",
+    "why": "题干问传统教育者对该研究结果的解读，原文直接指出传统教育者认为这一结果说明学校教育未能帮助学生思考生态系统和灭绝等重大科学观念，D项与此完全对应。",
+    "traps": "A项把研究发现的“年轻人与儿童差异不在记住事实或应用旧知”曲解为教育者观点，且原文并未否定学生应用旧知；B项“大学生记忆力不比五年级强”原文未提；C项将“未帮助学生思考重大科学观念”偷换为“未足够重视环境问题”。",
+    "tip": "定位题干关键词traditional educators与interpretation，找到原文直接改写的正确项。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "College students focused on critical issues of interdependence between eagles and their habitat. Fifth graders tended to focus on features of individual eagles... The college students had cultivated the ability to ask questions, the cornerstone of critical thinking.",
+    "why": "原文指出大学生能提出鹰与栖息地相互依存的关键问题，并已培养提问能力，而提问能力是批判性思维的基石，说明大学生已学会批判性思考，A项概括准确。",
+    "traps": "B项“关心社会问题”是对“相互依存问题”的扩大化；C项“关注具体特征”实为五年级学生的表现，张冠李戴；D项“独立学习”原文未提及。",
+    "tip": "对比差异题要抓住双方各自的特点，避免混淆主体。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "when we taught participants to ask \"What if?\" and \"How can?\" questions that nobody present would know the answer to and that would spark exploration, they engaged in better inquiry at the next exhibit—asking more questions, performing more experiments and making better interpretations of their results.",
+    "why": "研究显示，教参与者提出无人知晓答案、能激发探索的问题后，他们在后续探究中提出更多问题、做更多实验并更好解释结果，这正说明该做法培养了科学探究能力，B项符合。",
+    "traps": "A项“激发兴趣”是手段而非核心益处；C项原文是“做更多实验”，并非训练设计实验能力；D项“并非所有问题都有答案”属过度推断，原文未表达。",
+    "tip": "正确答案多为研究结论的同义转述，注意区分方法与结果。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Informal learning environment tolerates failure better than schools.",
+    "why": "原文明确说非正式学习环境比学校更能容忍失败，因此允许失败是其优势，A项与原文tolerates failure直接对应。",
+    "traps": "B项“有趣”原文未提及；C项将“不给评分”曲解为“不收学费”；D项“满足实际需求”并非文中明确列出的优势，属无中生有。",
+    "tip": "定位到关键句后，抓住同义替换tolerates failure = allows for failures。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "But people must acquire this skill somewhere. Our society depends on them being able to make critical decisions... For that, we have a robust informal system that gives no grades, takes all comers, and is available even on holidays and weekends.",
+    "why": "末段指出学校时间有限，但人们必须从某处获得提问能力，而非正式系统健全、不评等级、来者不拒、节假日可用，作者借此鼓励教育者充分利用非正式学习资源，C项合理。",
+    "traps": "A项“全球议题”只是社会决策的例子，非核心建议；B项“课堂互动活动”原文未提；D项“合作探究”虽在文中出现，但结尾重点是利用非正式系统，而非纳入课程。",
+    "tip": "结合末段关键句推断作者意图，避免过度推理或片面摘取例子。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的"
+   },
+   {
+    "w": "distinguish",
+    "cn": "v. 区分；辨别"
+   },
+   {
+    "w": "retain",
+    "cn": "v. 记住；保持"
+   },
+   {
+    "w": "prior",
+    "cn": "adj. 先前的；在前的"
+   },
+   {
+    "w": "extinction",
+    "cn": "n. 灭绝"
+   },
+   {
+    "w": "habitat",
+    "cn": "n. 栖息地"
+   },
+   {
+    "w": "cornerstone",
+    "cn": "n. 基石；基础"
+   },
+   {
+    "w": "inquiry",
+    "cn": "n. 探究；询问"
+   },
+   {
+    "w": "spark",
+    "cn": "v. 引发；激发"
+   },
+   {
+    "w": "comprehensive",
+    "cn": "adj. 全面的；综合的"
+   },
+   {
+    "w": "transferable",
+    "cn": "adj. 可迁移的；可转移的"
+   },
+   {
+    "w": "robust",
+    "cn": "adj. 稳固的；强健的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "More than a decade ago, cognitive scientists John Bransford and Daniel Schwartz, both then at Vanderbilt University, found that what distinguished young adults from children was not the ability to retain facts or apply prior knowledge to a new situation but a quality they called \"preparation for future learning.\"",
+    "cn": "十多年前，时任范德堡大学认知科学家约翰·布兰斯福德和丹尼尔·施瓦茨发现，年轻人和儿童的区别并不在于记忆事实或将已有知识应用到新情境的能力，而在于一种他们称之为“为未来学习做准备”的素质。",
+    "note": "主干为cognitive scientists...found that...；that引导宾语从句，其中what引导主语从句；表语由not...but...连接两个并列成分。"
+   },
+   {
+    "en": "We found that when we taught participants to ask \"What if?\" and \"How can?\" questions that nobody present would know the answer to and that would spark exploration, they engaged in better inquiry at the next exhibit—asking more questions, performing more experiments and making better interpretations of their results.",
+    "cn": "我们发现，当我们教参与者提出“如果……会怎样？”和“怎么能……？”这类现场无人知道答案、却能激发探索的问题时，他们在下一个展品前的探究表现更好——提出更多问题，做更多实验，并能更好地解释结果。",
+    "note": "主干为We found that...；when引导时间状语从句，questions后有两个that定语从句；破折号后并列动名词短语补充说明better inquiry。"
+   },
+   {
+    "en": "Perhaps many teachers have too little time to allow students to form and pursue their own questions and too much ground to cover in the curriculum.",
+    "cn": "或许许多教师时间太少，无法让学生提出并追寻自己的问题，而课程要覆盖的内容又太多。",
+    "note": "该句包含并列结构have too little time...and too much ground...；不定式to allow students...作time的后置定语。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "612ae9c327ae__reading__2",
+ "examId": "612ae9c327ae",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 12 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:36:28.938Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55199,
+ "usage": {
+  "prompt_tokens": 1796,
+  "completion_tokens": 3588,
+  "total_tokens": 5384,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1796,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3588,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1796,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "食品\"缺失声明\"标签的危害",
+  "gist": "文章指出食品行业为迎合消费者对产品信息透明度的需求，大量使用\"缺失声明\"标签（如\"非转基因\"\"无糖\"等），标注产品中不含有的成分。作者认为这种策略利用消费者的恐惧和误解，短期虽有营销优势，但长期会侵蚀消费者信任、降低整体销量，并抑制农业创新、增加食品成本，最终各方皆输。",
+  "structure": [
+   "第1-2段：引出消费者对信息透明的需求及\"缺失声明\"标签趋势",
+   "第3段：举例说明非转基因标签的误导性",
+   "第4-6段：分析\"缺失声明\"标签的长期负面影响",
+   "第7段：总结建议，呼吁慎用此类标签"
+  ],
+  "difficulty": "中等",
+  "translation": "近年来，食品行业加大了标签的使用力度。无论标签上写着\"非转基因\"\"无糖\"还是\"零碳水化合物\"，消费者对食品成分信息的需求都在日益增长。一份报告发现，39%的消费者会从目前购买的品牌转向那些提供更清晰、更准确产品信息的品牌。食品制造商正在回应这份报告，推出新标签来满足这一需求，同时着眼于让自家产品在竞争中占据优势，并提振利润。\n\n这一策略在直觉上是合理的。如果消费者说他们想要透明度，那就告诉他们产品里到底有什么。这不过是满足某种需求。但针对这一消费者需求的营销策略已经超越了阐明产品中有什么，转向标注食品中没有什么。这些标签被称为\"缺失声明\"标签，它们代表了一种新兴的标签趋势，对购买产品的消费者和供应产品的行业都是有害的。\n\n例如，亨氏几年前在其罐装碎番茄上贴了\"非转基因\"标签——尽管当时市场上根本不存在转基因番茄。一些乳制品公司在牛奶上使用\"非转基因\"标签，尽管所有牛奶天然就不含转基因成分，这又是一个给食品制造不必要恐慌的标签。\n\n虽然利用消费者对食品的恐惧和误解来制作标签，可能在超市货架上暂时获得相对竞争产品的营销优势，但从长远来看，这一策略将产生截然相反的效果：通过在食品讨论中注入恐惧，我们面临的风险不仅是侵蚀消费者对单一产品的信任，而是对整个食品行业的信任。\n\n最终，消费者心中会产生这样的疑问：这些食品曾经安全过吗？通过购买和食用这类产品，我是否已经对我的家人或地球造成了某种伤害？\n\n对于食品制造商来说，这将意味着消费者信任受损，所有人的销售额都会下降。这不仅仅是推测。最近一项研究发现，即使没有科学证据表明某些食品会造成危害，缺失声明标签也会给这些食品制造污名。\n\n很明显，食品制造商在使用缺失声明标签时必须谨慎行事。除了可能对销售产生长期负面影响外，这种文字把戏还传递了一个信息：农业和食品加工领域的创新是不受欢迎的，最终导致效率降低、消费者选择减少，以及食品价格更高。如果我们允许这种标签做法继续下去，我们都将是输家。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "One report found that 39 percent of consumers would switch from the brands they currently buy to others that provide clearer, more accurate product information.",
+    "why": "原文第一段明确指出一份报告发现39%的消费者愿意转向提供更清晰、更准确产品信息的品牌，D选项\"消费者对清晰产品信息的需求日益增长\"是对该句的准确概括。报告的主语是消费者的行为趋势，核心关键词是clearer, more accurate product information，与D选项完全吻合。",
+    "traps": "A项\"制造商对产品安全意识的提高\"偷换主语，报告讲的是消费者而非制造商；B项\"制造商改变策略提振利润\"是制造商对报告的回应，不是报告本身的发现；C项\"消费者对醒目标签的需求增长\"将clear（清晰准确的）偷换为eye-catching（引人注目的），属于近义词干扰。",
+    "tip": "注意区分\"报告发现了什么\"与\"报告导致了什么\"。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "But the marketing strategy in response to this consumer demand has gone beyond articulating what is in a product, to labeling what is NOT in the food. These labels are known as 'absence claims' labels",
+    "why": "原文第二段指出营销策略已经从阐述产品里有什么，发展到标注食品中没有什么，即\"缺失声明\"标签。A选项\"强调产品中某些成分的缺失\"准确对应了labeling what is NOT in the food这一核心表述，是对制造商新营销策略的精确概括。",
+    "traps": "B项\"阐明产品独特的营养价值\"属于无中生有，原文未提及营养价值；C项\"提供产品的详细信息\"是消费者的需求，不是新的营销策略，且原文说策略已经超越(gone beyond)了这一层面；D项\"设计透明标签\"将transparency（信息透明度）曲解为标签的视觉透明，属于偷换概念。",
+    "tip": "关键词gone beyond表示策略已超越旧做法，新做法才是答案。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "another label that creates unnecessary fear around food",
+    "why": "第三段举了亨氏番茄和乳制品牛奶的例子，说明非转基因标签标注在本身就不含转基因的食品上，最后以another label that creates unnecessary fear around food总结，指出这类标签在消费者中制造了对食品不必要的恐惧。D选项\"它们引发消费者对食品的焦虑\"与creates unnecessary fear完全对应。",
+    "traps": "A项\"越来越吸引消费者注意\"在原文无直接依据，属于合理推测但非作者所要表达的观点；B项\"给转基因食品生产商制造麻烦\"原文未涉及，属于无中生有；C项\"应更多用于蔬菜和牛奶\"与作者的批判态度完全相反，原文举蔬菜和牛奶是反面例子。",
+    "tip": "例证题要关注例子所服务的论点，而非例子本身的细节。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "For food manufacturers, it will mean damaged consumer trust and lower sales for everyone.",
+    "why": "第六段开头明确指出，对于食品制造商而言，缺失声明标签将意味着消费者信任受损和所有人销售额下降。C选项\"侵蚀消费者信任并减少销量\"是对damaged consumer trust and lower sales的同义转述，与原文完全一致。",
+    "traps": "A项\"导致营销策略改变\"原文未提及此因果关系；B项\"帮助消除产品污名\"与原文相反，原文说缺失标签会create a stigma（制造污名），而非去除污名；D项\"减少食品科学家的支持\"属于无中生有。",
+    "tip": "选项中出现反义表述（如remove vs. create）时需格外警惕。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "It's clear that food manufacturers must tread carefully when it comes to using absence claims.",
+    "why": "最后一段开头作者明确建议食品制造商在使用缺失声明标签时必须谨慎行事（tread carefully）。B选项\"对缺失声明的使用保持谨慎\"是对must tread carefully when it comes to using absence claims的准确同义改写，exercise caution对应tread carefully。",
+    "traps": "A项\"采取措施降低食品成本\"虽然原文提到缺失标签最终导致更昂贵的食品，但这是负面后果的描述，不是作者的建议；C项\"欢迎食品加工新创新\"是作者希望传递的信息之一，但不是对制造商的直接建议；D项\"提升效率、增加食品种类\"是作者期望的结果，但不是原文对制造商的直接建议。",
+    "tip": "建议题优先找作者直接使用的祈使句或must/should等情态动词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "bolstering",
+    "cn": "v. 增强，提振（常搭配profits/confidence）"
+   },
+   {
+    "w": "intuitive",
+    "cn": "adj. 直觉的，凭直觉的"
+   },
+   {
+    "w": "transparency",
+    "cn": "n. 透明度，公开性"
+   },
+   {
+    "w": "articulating",
+    "cn": "v. 清楚表达，阐明"
+   },
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的，不利的（= harmful）"
+   },
+   {
+    "w": "misconceptions",
+    "cn": "n. 误解，错误观念"
+   },
+   {
+    "w": "eroding",
+    "cn": "v. 侵蚀，逐渐削弱"
+   },
+   {
+    "w": "supposition",
+    "cn": "n. 推测，假设"
+   },
+   {
+    "w": "stigma",
+    "cn": "n. 污名，耻辱（常与around/about搭配）"
+   },
+   {
+    "w": "tread",
+    "cn": "v. 踩踏；行事，行走（tread carefully 谨慎行事）"
+   },
+   {
+    "w": "absence claims",
+    "cn": "n. 缺失声明（标注产品中不含某成分的标签说明）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But the marketing strategy in response to this consumer demand has gone beyond articulating what is in a product, to labeling what is NOT in the food.",
+    "cn": "但针对这一消费者需求的营销策略已经超越了阐明产品中含有什么，转向标注食品中不含有什么。",
+    "note": "主干为strategy has gone beyond A to B结构，表示从A发展到B；in response to this consumer demand为介词短语作后置定语修饰strategy。"
+   },
+   {
+    "en": "While creating labels that play on consumer fears and misconceptions about their food may give a company a temporary marketing advantage over competing products on the grocery aisle, in the long term this strategy will have just the opposite effect: by injecting fear into the discourse about our food, we run the risk of eroding consumer trust in not just a single product, but the entire food business.",
+    "cn": "虽然利用消费者对食品的恐惧和误解来制作标签，可能在超市货架上暂时获得相对竞争产品的营销优势，但从长远来看，这一策略将产生截然相反的效果：通过在食品讨论中注入恐惧，我们面临的风险不仅是侵蚀消费者对单一产品的信任，而是对整个食品行业的信任。",
+    "note": "While引导让步状语从句，主句为this strategy will have the opposite effect；冒号后为解释说明，run the risk of为固定搭配，not just...but...构成递进。"
+   },
+   {
+    "en": "In addition to the likely negative long-term impact on sales, this verbal trick sends a message that innovations in farming and food processing are unwelcome, eventually leading to less efficiency, fewer choices for consumers, and ultimately, more costly food products.",
+    "cn": "除了可能对销售产生长期负面影响外，这种文字把戏还传递了一个信息：农业和食品加工领域的创新是不受欢迎的，最终导致效率降低、消费者选择减少，以及食品价格更高。",
+    "note": "In addition to为介词短语表递进；that引导同位语从句解释message内容；eventually leading to...为现在分词短语作结果状语，后接三个并列名词短语。"
+   }
+  ]
+ }
+}

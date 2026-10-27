@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "7636b03c9370__reading__2",
+ "examId": "7636b03c9370",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 12 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:45:15.098Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58554,
+ "usage": {
+  "prompt_tokens": 1850,
+  "completion_tokens": 3870,
+  "total_tokens": 5720,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1850,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3870,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1850,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "longSentences 有原句与原文不符"
+ ],
+ "analysis": {
+  "topic": "AAP更新儿童屏幕使用指南",
+  "gist": "美国儿科学会(AAP)更新了儿童屏幕使用指南，废弃了原先\"2岁以下禁止接触屏幕\"的规定。新指南将关注点从屏幕内容转向是否有家长陪伴，强调亲子共同观看的重要性，并根据不同年龄段给出了具体建议，核心理念是避免幼儿独自使用媒体。",
+  "structure": [
+   "第1-2段：引出旧规则被废弃的事实",
+   "第3-4段：介绍AAP新指南的核心转变——关注陪伴而非内容",
+   "第5-6段：18个月以下婴儿的例外——实时视频聊天",
+   "第7-8段：15个月至2岁幼儿的屏幕使用建议与独自观看的危害",
+   "第9段：2至5岁学龄前儿童的屏幕使用建议"
+  ],
+  "difficulty": "中等",
+  "translation": "如果说在孩子与媒体这个令人困惑、瞬息万变的世界里，大多数父母都紧守一条规则的话，那就是\"2岁以下不接触屏幕\"。\n\n截至今天，这条规则已经被抛弃了。\n\n美国儿科学会（AAP）早在1999年就首次发布了该建议，现在已根据新的研究和新的习惯，对其针对儿童和青少年的指南进行了大范围的更新和修订。\n\n新指南，尤其是针对年幼儿童的部分，将关注点从屏幕上播放的\"内容\"转移到了房间里还有\"谁\"。这样做的同时，也提出了一些关于未来通过媒体进行学习的引人深思的观点。\n\n对于18个月以下的婴儿，AAP仍然认为完全不接触屏幕是最好的——但有一个值得注意的例外：实时视频聊天。调查显示，家庭普遍认为\"视频通话不算屏幕时间\"，或者至少认为与祖父母或其他亲戚进行虚拟探望的好处超过了让婴儿接触笔记本电脑或智能手机的潜在代价。\n\nAAP并未引用积极的证据来证明婴儿确实能从这种\"对话\"中获益，就像他们明显能从现实社交互动中获益那样。但有一些观察性研究表明，小至六个月大的婴儿在网上与奶奶玩实时躲猫猫时会产生情感上的投入。\n\n对于15个月至2岁的婴幼儿和学步儿童，有来自几项非常小型研究的有限证据表明，他们可以从教育类媒体中学习新单词，但前提是且仅当父母在旁边一起观看、重复视频中说的内容和/或引导孩子关注屏幕上的内容时才行。换句话说，把视频或应用程序当作图画书来使用是最好的做法。\n\n另一方面，许多研究实际上表明，较早独自观看\"教育\"视频与较差的语言能力相关。还有研究表明，看电视越多、开始看电视越早的儿童存在语言发展迟缓的问题。在这两种情况下，问题似乎都在于媒体取代了与人的互动。因此，AAP的新指南已经从\"2岁以下避免所有屏幕\"改为\"在该年龄段避免独自使用媒体\"。\n\n对于2至5岁的学龄前儿童，有更多证据表明他们有能力将从屏幕上学到的知识转化到现实世界中，包括早期识字和数学。对于这个年龄段，AAP建议每天的屏幕使用时间不超过一小时。而且，就像对更小的孩子一样，他们希望看护者参与屏幕时间：\"与您的孩子一起观看，帮助孩子理解他们所看到的内容，并帮助他们将所学知识应用到周围的世界中。\"",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "As of today, that rule has been thrown out the window. The American Academy of Pediatrics (AAP), which first issued that recommendation back in 1999, has extensively updated and revised its guidelines for children and adolescents to reflect new research and new habits.",
+    "why": "文章第二段明确指出该规则已被\"thrown out the window\"（抛弃），第三段进一步说明AAP根据新研究和新习惯对指南进行了大幅更新和修订。D选项中的\"discarded\"对应\"thrown out\"，\"in line with recent research\"对应\"to reflect new research\"，属于同义替换，逻辑完全吻合。",
+    "traps": "A\"遭到越来越多家长抵制\"，文中未提及家长的抵制，属于无中生有；B\"已被证明有助于儿童健康成长\"，文中未提供该规则效果的正面评价，属于无中生有；C\"让家长在孩子教育问题上感到困惑\"，confusing修饰的是kids and media的世界，而非该规则令人困惑，属于偷换主语。",
+    "tip": "注意同义替换：thrown out = discarded，reflect new research = in line with recent research。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The new guidelines, especially for very young children, shift the focus from WHAT is on the screen to WHO else is in the room.",
+    "why": "新指南的核心转变是将关注点从屏幕内容转向\"房间里还有谁\"，即强调陪伴。后文多处反复印证：15个月至2岁幼儿需要\"parents are watching alongside them\"，2至5岁学龄前儿童要求\"Co-view with your children\"。A选项\"幼儿在屏幕时间应有父母陪伴\"准确概括了这一核心主张。",
+    "traps": "B\"父母应在情感上参与孩子的成长\"，过度泛化，文章讨论的是屏幕使用而非整体成长，属于偷换范围；C\"孩子应观看父母精心挑选的视频\"，文章关注的是陪伴而非内容筛选，属于曲解原意；D\"父母应保护孩子免受过多媒体接触\"，这更接近旧指南的立场，新指南的重点是陪伴而非禁止，属于以偏概全。",
+    "tip": "把握文章核心转变——从关注内容到关注陪伴，是理解多道题的关键。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Surveys indicate that families already popularly believe that \"Face time doesn't count\", or at least that the benefit of virtual visits with grandparents or other relatives outweighs the potential cost of exposing babies to the laptop or smartphone.",
+    "why": "原文明确指出调查显示家庭普遍认为\"Face time doesn't count\"（视频通话不算数），即不应将实时视频聊天视为屏幕时间。A选项\"It should not be regarded as screen time\"是对\"doesn't count\"的准确同义表达。",
+    "traps": "B\"帮助婴儿发展语言技能\"，文中AAP并未引用婴儿能从视频聊天中获益的正面证据，这不是家庭的普遍看法，属于无中生有；C\"没有在笔记本上玩游戏那么有害\"，文中未涉及与游戏的比较，属于无中生有；D\"是视频观看的良好替代品\"，文中未将视频聊天定位为视频观看的替代，属于无中生有。",
+    "tip": "关键在于理解\"doesn't count\"的含义——不被算作屏幕时间。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The flip side of this is that many studies have actually shown poorer language skills correlated with earlier solo viewing of \"educational\" videos. There's also research that shows language delays in children who watch more TV and start watching earlier.",
+    "why": "原文明确指出\"许多研究表明较早独自观看教育视频与较差的语言能力相关\"，并提到\"语言发展迟缓\"。C选项\"It hampers their development of language skills\"（妨碍语言技能发展）是对poorer language skills和language delays的准确概括。",
+    "traps": "A\"激发语言学习兴趣\"，与原文完全相反，原文说的是造成语言技能下降，属于正反混淆；B\"效果不比读图画书好\"，图画书是对有家长陪伴观看视频的类比，而非与独自观看的比较，属于张冠李戴；D\"帮助获得自主学习能力\"，文中恰恰说明独自观看是有害的，问题在于媒体取代了人际互动，属于正反混淆。",
+    "tip": "注意flip side引出的转折，后面往往是消极信息。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "For preschoolers ages 2 to 5, there's more evidence that they have the ability to transfer knowledge from screens to the real world, including early literacy and math.",
+    "why": "原文明确指出2至5岁学龄前儿童\"有能力将从屏幕上学到的知识转化到现实世界中\"。D选项\"They can relate what they learn on the screen to real life situations\"是对\"transfer knowledge from screens to the real world\"的同义改写，完全对应。",
+    "traps": "A\"能很好地理解屏幕上的内容\"，原文强调的是转化能力而非理解能力，且仍需看护者帮助理解，属于偷换概念；B\"无需太多父母指导即可自主学习\"，原文明确要求看护者共同观看和参与，属于与原文矛盾；C\"利用教育视频发展数字素养\"，原文说的是early literacy（早期识字能力）而非digital literacy（数字素养），属于偷换概念。",
+    "tip": "transfer knowledge from screens to the real world = relate what they learn to real life situations，典型同义替换。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "cling to",
+    "cn": "v. 坚持，紧守（某种信念或规则）"
+   },
+   {
+    "w": "extensively",
+    "cn": "adv. 广泛地，大范围地"
+   },
+   {
+    "w": "intriguing",
+    "cn": "adj. 引人入胜的，令人深思的"
+   },
+   {
+    "w": "notable",
+    "cn": "adj. 值得注意的，显著的"
+   },
+   {
+    "w": "outweigh",
+    "cn": "v. 超过，大于（在重要性或价值方面）"
+   },
+   {
+    "w": "observational",
+    "cn": "adj. 观察性的，基于观察的"
+   },
+   {
+    "w": "flip side",
+    "cn": "n. 另一面，反面"
+   },
+   {
+    "w": "correlated",
+    "cn": "adj./v. 相关的，有关联的"
+   },
+   {
+    "w": "solo",
+    "cn": "adj./adv. 单独的（地），独自的（地）"
+   },
+   {
+    "w": "literacy",
+    "cn": "n. 读写能力，识字能力"
+   },
+   {
+    "w": "caregiver",
+    "cn": "n. 看护者，照料者"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "For infants and toddlers, ages 15 months to 2 years old, there's limited evidence from a couple of very small studies that they can learn new words from educational media, if and only if parents are watching alongside them, repeating what the video says and/or drawing attention to what is on the screen.",
+    "cn": "对于15个月至2岁的婴幼儿和学步儿童，有来自几项非常小型研究的有限证据表明，他们可以从教育类媒体中学习新单词，但前提是且仅当父母在旁边一起观看、重复视频中说的内容和/或引导孩子关注屏幕上的内容时才行。",
+    "note": "主干为there's limited evidence that...，that引导同位语从句说明evidence的内容；if and only if引导条件状语从句，内含三个并列动作watching、repeating、drawing attention。"
+   },
+   {
+    "en": "Surveys indicate that families already popularly believe that \"Face time doesn't count\", or at least that the benefit of virtual visits with grandparents or other relatives outweighs the potential cost of exposing babies to the laptop or smartphone.",
+    "cn": "调查显示，家庭普遍认为\"视频通话不算屏幕时间\"，或者至少认为与祖父母或其他亲戚进行虚拟探望的好处超过了让婴儿接触笔记本电脑或智能手机的潜在代价。",
+    "note": "主干为Surveys indicate that...，that引导宾语从句；believe后接两个并列的that从句（由or at least连接）；第二个从句中outweighs连接benefit与cost形成对比。"
+   },
+   {
+    "en": "The flip side of this is that many studies have actually shown poorer language skills correlated with earlier solo viewing of \"educational\" videos.",
+    "cn": "另一方面，许多研究实际上表明，较早独自观看\"教育\"视频与较差的语言能力相关。",
+    "note": "主干为The flip side is that...，that引导表语从句；correlated with为过去分词短语作后置定语修饰poorer language skills，说明相关关系。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,240 @@
+{
+ "schemaVersion": 1,
+ "id": "612ae9c327ae__long_match__all",
+ "examId": "612ae9c327ae",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2021 年 12 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:35:55.477Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35454,
+ "usage": {
+  "prompt_tokens": 983,
+  "completion_tokens": 1885,
+  "total_tokens": 2868,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 983,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1885,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 983,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "Burberry销毁库存与奢侈品行业争议",
+  "strategy": [
+   "先通读10条陈述句，标出高频专有名词如Burberry、luxury brands，建立主题框架",
+   "优先定位专有名词、数字、极端表达等显眼关键词，再向其所在段落上下文核实语义",
+   "注意同义替换：陈述句常将原文动词、形容词替换为近义表达，需比对核心语义而非词形",
+   "区分相似话题的不同侧重点：如多段都涉及'销毁库存'，需通过附加细节（原因、后果、态度）区分段落"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "G",
+    "cn": "Burberry的高管正在努力将其销毁旧产品的做法归咎于生产预估失误。",
+    "keywords": [
+     "Burberry",
+     "executives",
+     "miscalculated production",
+     "destroying old products"
+    ],
+    "paraphrase": "陈述句中attribute...to miscalculated production可能对应原文中高管用'生产过剩源于预测偏差'等说辞来解释销毁行为，属因果归因类同义替换。",
+    "tip": "定位executives与miscalculated，该段应含高管为销毁行为辩解的内容。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "cn": "以折扣价出售产品对奢侈品牌造成的伤害比销毁产品更大。",
+    "keywords": [
+     "discount",
+     "greater harm",
+     "luxury brands",
+     "destroying"
+    ],
+    "paraphrase": "陈述句中do greater harm...than destroying可能对应原文中'打折比销毁更损害品牌价值'的比较逻辑，属比较关系的同义改写。",
+    "tip": "扫读含discount与harm/damage对比销毁行为的段落即可定位。"
+   },
+   {
+    "number": 38,
+    "answer": "K",
+    "cn": "仿冒的Burberry产品使奢侈品消费者不愿购买其正品。",
+    "keywords": [
+     "imitated",
+     "Burberry",
+     "discouraged",
+     "genuine products"
+    ],
+    "paraphrase": "陈述句中imitated products discouraged...buying genuine对应原文中仿冒品泛滥导致正品吸引力下降的表述，discouraged可能替换为deterred或put off。",
+    "tip": "定位imitated/counterfeit与genuine/authentic等关键词所在段落。"
+   },
+   {
+    "number": 39,
+    "answer": "E",
+    "cn": "奢侈品牌的员工可以以更低的价格购买旧库存，但不得转售。",
+    "keywords": [
+     "staff members",
+     "old stock",
+     "cheaper prices",
+     "resell"
+    ],
+    "paraphrase": "陈述句中buy...at cheaper prices, not allowed to resell可能对应原文中员工内购折扣但禁止二次销售的规定描述，属细节转述。",
+    "tip": "定位staff/employees与resell/sell on等限制性条件所在段落。"
+   },
+   {
+    "number": 40,
+    "answer": "L",
+    "cn": "未来传统奢侈品牌将不得不调整其商业策略以适应不断变化的奢侈品概念。",
+    "keywords": [
+     "traditional luxury brands",
+     "adapt",
+     "business strategies",
+     "changing concepts"
+    ],
+    "paraphrase": "陈述句中adapt...to changing concepts of luxury可能对应原文中奢侈品定义演变迫使品牌转型的论述，adapt可能替换为adjust或modify。",
+    "tip": "定位future/将来时态与changing concepts/新奢侈品观念等前瞻性论述段落。"
+   },
+   {
+    "number": 41,
+    "answer": "D",
+    "cn": "一位奢侈品牌员工辞了职，因为她实在无法忍受看到未售出产品被销毁。",
+    "keywords": [
+     "quit her job",
+     "couldn't bear",
+     "destruction",
+     "unsold products"
+    ],
+    "paraphrase": "陈述句中quit her job because she couldn't bear可能对应原文中女性员工因目睹销毁行为而愤然离职的叙述，quit可能替换为resigned或left。",
+    "tip": "定位quit/resign与个人经历叙事口吻的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "cn": "销毁旧库存不仅是奢侈品牌的做法，也是不那么知名的时尚品牌的做法。",
+    "keywords": [
+     "not just",
+     "luxury brands",
+     "less prestigious",
+     "fashion brands"
+    ],
+    "paraphrase": "陈述句中not just...but also结构表明该现象的普遍性，less prestigious可能替换为high-street brands或mass-market brands。",
+    "tip": "定位not just/also与非奢侈品牌名称或描述的段落。"
+   },
+   {
+    "number": 43,
+    "answer": "J",
+    "cn": "Burberry正与一个合作伙伴合作，充分利用皮革材料以减少浪费。",
+    "keywords": [
+     "Burberry",
+     "partner",
+     "leather materials",
+     "reduce waste"
+    ],
+    "paraphrase": "陈述句中working with a partner与make full use of leather可能对应原文中Burberry与某机构合作回收利用皮革边角料的具体举措描述。",
+    "tip": "定位partner/collaborate与leather两个具体细节即可快速锁定。"
+   },
+   {
+    "number": 44,
+    "answer": "A",
+    "cn": "Burberry计划销毁价值数百万美元的未售出产品，这引发了公众的愤怒。",
+    "keywords": [
+     "Burberry",
+     "unsold products",
+     "millions of dollars",
+     "public indignation"
+    ],
+    "paraphrase": "陈述句中aroused public indignation可能对应原文中sparked outrage或provoked public anger等表达，millions of dollars为金额细节定位词。",
+    "tip": "作为事件引入段，通常在文章开头，定位millions与outrage/anger即可。"
+   },
+   {
+    "number": 45,
+    "answer": "H",
+    "cn": "Burberry改变营销策略，让消费者在时装秀上看到产品后立即就能买到，但效果并不如预期。",
+    "keywords": [
+     "marketing strategy",
+     "available",
+     "fashion show",
+     "not as effective"
+    ],
+    "paraphrase": "陈述句中see it on the fashion show与available as soon as可能对应原文中see-now-buy-now即秀即买策略，did not turn out to be as effective可能替换为fell short of expectations。",
+    "tip": "定位fashion show与see-now-buy-now或即买即看等策略描述所在段落。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "miscalculated",
+    "cn": "adj./v. 错误估计的；误算（动词过去分词）"
+   },
+   {
+    "w": "indignation",
+    "cn": "n. 愤怒，愤慨"
+   },
+   {
+    "w": "prestigious",
+    "cn": "adj. 有声望的，享有盛誉的"
+   },
+   {
+    "w": "imitated",
+    "cn": "adj./v. 仿制的；模仿（动词过去分词）"
+   },
+   {
+    "w": "genuine",
+    "cn": "adj. 真正的，正品的"
+   },
+   {
+    "w": "attribute...to",
+    "cn": "v. 把……归因于"
+   },
+   {
+    "w": "resell",
+    "cn": "v. 转售，再销售"
+   },
+   {
+    "w": "adapt",
+    "cn": "v. 调整，适应"
+   }
+  ]
+ }
+}

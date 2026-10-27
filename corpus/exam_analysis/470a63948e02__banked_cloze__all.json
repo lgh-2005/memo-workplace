@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "470a63948e02__banked_cloze__all",
+ "examId": "470a63948e02",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2023 年 6 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:46:59.345Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60560,
+ "usage": {
+  "prompt_tokens": 1377,
+  "completion_tokens": 3571,
+  "total_tokens": 4948,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1377,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3571,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1377,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "狗的智力是否被高估",
+  "gist": "科学家回顾了300多项关于狗认知能力的研究，将其与其他聪明动物的研究进行比较，发现狗虽然聪明，但其智力并未超越同类别中的其他智慧动物。研究者认为许多前期研究存在预设立场，旨在证明狗有多聪明，而非客观研究其大脑。但也有学者对该结论持不完全赞同的态度。",
+  "difficulty": "中等",
+  "translation": "科学家最近审查了有关狗智力的研究，并将其与针对其他聪明动物心智的研究进行了比较。研究人员发现，狗属于较聪明的食肉动物、群居猎手和家养动物之列，但在上述任何类别中，它们的智力都未能超越其他聪明动物。尽管此前已有大量研究对狗的认知能力进行了考察，但这项新研究的作者认为，几乎没有什么能证明投入到该课题上的大量工作是合理的。\n\n新研究的第一作者斯蒂芬·利认为，许多研究者似乎在设计研究时就带有目的——证明狗有多聪明，而非单纯地研究狗的大脑。利和一位同事审查了300多项狗认知研究，将这些研究结果与其他动物的研究结果进行了比较。研究人员在不同智力类别中对不同物种进行了具体比较。这些比较证实了狗确实是聪明的，但它们的智力并不像一些研究者可能认为的那样令人叹服。\n\n然而，在许多方面，比较是无法实现的。例如，研究人员指出，狗和猫都能够识别和区分人类的声音。但研究者找不到任何数据来表明哪个物种能记住更多不同的人声，因此无法在这一方面对两者进行比较。不过，并非所有研究者都完全同意这项研究的发现。美国研究者扎卡里·西尔弗认为，这项新研究的作者夸大了\"已有过量研究投入到狗身上\"这一观点，因为狗认知领域尚处于起步阶段，关于狗如何思考还有很多需要了解的地方。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "N",
+    "correct": "surpass",
+    "why": "此处需要动词原形，与does not搭配构成否定句。语义上表示\"狗的智力并未超越其他聪明动物\"，surpass（超越）完美契合上下文中\"比较后发现并不突出\"的逻辑。",
+    "traps": "differentiate（区分）虽也是动词，但语义不符，此处不是\"区分\"其他动物，而是\"超过\"。prove等其他动词也与宾语other intelligent animals搭配不当。",
+    "tip": "does not ___+ 宾语，需及物动词，语义为\"超越\"。"
+   },
+   {
+    "number": 27,
+    "answer": "K",
+    "correct": "previously",
+    "why": "此处需要副词修饰动词has examined。previously（先前地）表示\"尽管此前已有大量研究考察过狗的认知\"，与后文\"这项新研究的作者发现……\"形成时间上的转折对比。",
+    "traps": "completely和approximately虽也是副词，但语义不合：completely强调程度，approximately强调大约，均无法表达\"以前/此前\"的时间含义。",
+    "tip": "修饰现在完成时动词，需时间副词表\"此前\"。"
+   },
+   {
+    "number": 28,
+    "answer": "O",
+    "correct": "volume",
+    "why": "空格前有定冠词the，后接of work，需填名词。volume of work意为\"大量的工作\"，语义上承接前句\"几乎没什么能证明投入到该课题上的这么大工作量是合理的\"。",
+    "traps": "其他名词选项（如无对应的名词竞争项）均无法与of work构成固定搭配。volume在此取\"量、大量\"之义，而非\"音量\"或\"卷\"。",
+    "tip": "the ___ of work，需名词表\"数量/规模\"。"
+   },
+   {
+    "number": 29,
+    "answer": "M",
+    "correct": "prove",
+    "why": "空格前是不定式to，需动词原形。语义为\"设计研究来证明狗有多聪明\"，prove（证明）与how clever dogs are搭配合理，且暗含研究者存在预设结论的批评立场。",
+    "traps": "surpass已用于26题；differentiate语义不符，无法接how引导的从句表\"证明\"。此处强调的是\"证实聪明\"而非\"区分聪明\"。",
+    "tip": "to ___ how clever…，需动词原形表\"证明\"。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "correct": "affirmed",
+    "why": "空格作谓语，主语These comparisons为复数，需要过去式动词。affirmed（证实）与that从句搭配，意为\"这些比较证实了狗确实聪明\"，逻辑通顺。",
+    "traps": "overstated（夸大）虽也可接that从句，但语义不合——比较结果是\"证实\"而非\"夸大\"狗的聪明；且后面用but转折说明智力没那么突出，与affirmed正面肯定后转折更吻合。",
+    "tip": "主语+___+that从句，需过去式动词表\"证实\"。"
+   },
+   {
+    "number": 31,
+    "answer": "G",
+    "correct": "formidable",
+    "why": "as...as结构中需要形容词。formidable（令人敬畏的、厉害的）表示\"狗的智力并不像一些研究者认为的那样了不起\"，与文章\"狗聪明但没那么突出\"的主旨一致。",
+    "traps": "distinct（不同的）虽是形容词，但语义不当——此处讨论的是智力的\"程度/水平\"而非\"差异性\"。approximately是副词，不能放在as___as中间。",
+    "tip": "not as ___ as，需形容词表\"强大/厉害\"。"
+   },
+   {
+    "number": 32,
+    "answer": "D",
+    "correct": "differentiate",
+    "why": "and连接recognize与另一个动词原形，构成并列结构。differentiate（区分）与recognize（识别）语义互补，表示\"狗和猫都能识别并区分人类声音\"。",
+    "traps": "surpass和prove虽也是动词原形，但surpass已用且语义不合，prove接human voices不通顺。differentiate强调在多个声音中\"分辨出不同\"，最符合语境。",
+    "tip": "recognize and ___，需并列动词表\"区分\"。"
+   },
+   {
+    "number": 33,
+    "answer": "E",
+    "correct": "distinct",
+    "why": "空格修饰名词human voices，需形容词。distinct（不同的、各自不同的）表示\"能记住更多不同的人声\"，强调声音来源的多样性和可辨别性，语义精确。",
+    "traps": "formidable已用于31题；且a greater number of formidable human voices语义不通。distinct强调\"各不相同的\"，与记忆辨别场景高度吻合。",
+    "tip": "修饰名词voices，需形容词表\"不同的\"。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "correct": "completely",
+    "why": "副词修饰动词agree。completely（完全地）与not搭配构成部分否定\"并非完全同意\"，语义精准——表示有些研究者对结论持保留意见但并非全盘否定。",
+    "traps": "approximately（大约地）修饰agree语义不通，\"大约同意\"不符合英语表达习惯。previously虽也是副词但语义为\"此前\"，与此处表程度的语境不匹配。",
+    "tip": "not all researchers agree ___，需副词表\"完全地\"构成部分否定。"
+   },
+   {
+    "number": 35,
+    "answer": "I",
+    "correct": "overstated",
+    "why": "空格作谓语，主语the authors，需过去式动词。overstated（夸大了）接the idea that从句，表示\"新研究作者夸大了狗研究过多这一观点\"。Silver持反对意见，认为该领域还很年轻。",
+    "traps": "affirmed已用于30题且语义相反——Silver的立场是批评而非\"证实\"。overstated精确传达了\"言过其实\"的批评态度，与后文as引导的原因状语吻合。",
+    "tip": "believes the authors ___，需过去式动词表\"夸大\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "surpass",
+    "cn": "v. 超越，胜过"
+   },
+   {
+    "w": "cognition",
+    "cn": "n. 认知，认识"
+   },
+   {
+    "w": "formidable",
+    "cn": "adj. 令人敬畏的，强大的"
+   },
+   {
+    "w": "differentiate",
+    "cn": "v. 区分，辨别"
+   },
+   {
+    "w": "distinct",
+    "cn": "adj. 不同的，明显的，清晰的"
+   },
+   {
+    "w": "overstated",
+    "cn": "v. 夸大，言过其实（overstate的过去式）"
+   },
+   {
+    "w": "affirmed",
+    "cn": "v. 证实，肯定（affirm的过去式）"
+   },
+   {
+    "w": "warrant",
+    "cn": "v. 证明……有理；n. 正当理由，授权令"
+   },
+   {
+    "w": "carnivore",
+    "cn": "n. 食肉动物"
+   },
+   {
+    "w": "excessive",
+    "cn": "adj. 过多的，过度的"
+   },
+   {
+    "w": "volume",
+    "cn": "n. 量，体积；卷；音量"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个备选词按词性分类（名词/动词/形容词/副词）。",
+   "第二步：根据空格前后语法标志（冠词、介词、助动词、并列连词等）判断所需词性，缩小候选范围。",
+   "第三步：结合上下文语义和逻辑关系（转折、因果、并列）从同词性候选词中精选最佳答案。",
+   "第四步：注意动词的时态和形式（原形/过去式/过去分词），确保与主语和时态一致。",
+   "第五步：填完后回读全文检查语义连贯性，确保每个词只使用一次且无遗漏。"
+  ]
+ }
+}

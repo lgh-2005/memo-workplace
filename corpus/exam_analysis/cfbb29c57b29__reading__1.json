@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "cfbb29c57b29__reading__1",
+ "examId": "cfbb29c57b29",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 12 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:22:42.224Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58166,
+ "usage": {
+  "prompt_tokens": 1815,
+  "completion_tokens": 3640,
+  "total_tokens": 5455,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1815,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3640,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1815,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "早期注意力问题对学业成功的影响",
+  "gist": "杜克大学一项新研究追踪了386名儿童的发展轨迹，发现早期注意力技能是学业成功最稳定的预测因素，同伴接纳度也有一定影响。即使是轻微的注意力问题也会导致阅读成绩和评分下降，最终使高中毕业率降低40%。研究者呼吁采用包含学业、社交、自我调控和注意力技能在内的综合教育方法。",
+  "structure": [
+   "第1-4段：引出研究背景与核心发现——注意力是学业成功最稳定预测因素",
+   "第5-7段：用数据说明注意力问题的持续负面影响及研究者解读",
+   "第8-9段：补充发现——同伴接纳度也影响学业成绩",
+   "第10-11段：总结启示——需要综合性教育方法来促进儿童全面发展"
+  ],
+  "difficulty": "中等",
+  "translation": "杜克大学一项新研究表明，幼儿时期存在注意力问题的儿童高中毕业的可能性低40%。\n\n该研究涵盖了\"快速通道项目\"中386名幼儿园学生，该项目是美国一项多站点临床试验，于1991年开始追踪儿童的终身发展轨迹。\n\n通过这项研究，研究人员考察了早期学业注意力和社会情感技能，以及它们各自如何影响到成年早期的学业成功。\n\n他们发现，早期注意力技能是学业成功最稳定的预测因素，而同伴中的受欢迎程度对学业表现也有一定的影响。\n\n到五年级时，早期存在注意力困难的儿童的成绩和阅读成就分数低于同龄人。作为五年级学生，早期存在注意力问题的儿童获得的平均阅读分数比同龄人至少低3%，成绩至少比同龄人低8%。这是在控制了智商、社会经济地位和入学时学业技能等变量之后得出的结论。\n\n尽管这些影响看起来可能并不大，但早期注意力问题的影响贯穿了儿童的整个学业生涯。五年级较低的阅读成就分数和成绩导致了中学成绩的下降，进而导致高中毕业率降低了40%。\n\n\"我们识别出的有注意力困难的儿童并未被诊断为注意力缺乏多动症（ADHD），尽管其中一些人可能患有该疾病。我们的研究结果表明，即使是较轻微的注意力困难也会增加学业成绩不佳的风险。\"杜克大学三一文理学院副院长大卫·拉比纳说道，他的研究一直聚焦于ADHD以及改善注意力困难儿童学业表现的干预措施。\n\n幼儿时期的同伴社会接纳度也预测了五年级的成绩。不太受一年级同伴喜欢的儿童在五年级时成绩略低，而社会接纳度较高的儿童成绩则更高。\n\n\"这项研究表明，所谓'非认知'或软技能在促进儿童积极的同伴关系方面很重要，而同伴关系反过来又有助于他们的学业成功。\"杜克大学儿童与家庭政策中心主任肯尼斯·道奇说道。\n\n研究人员表示，研究结果突显了开发有效的早期干预措施的必要性，以帮助有注意力问题的儿童在学业上保持正轨，同时教育者也应鼓励积极的同伴关系。\n\n道奇说：\"我们正在认识到，学生的成功需要一种更全面的方法，不仅包括学业技能，还包括社交、自我调节和注意力技能。如果我们忽视其中任何一个方面，儿童的发展就会滞后。如果我们关注这些方面，儿童的成功可能会通过正向反馈循环自我强化。\"",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "They found that early attention skills were the most consistent predictor of academic success, and that likability by peers also had a modest effect on academic performance.",
+    "why": "文章开篇即提出杜克大学新研究的发现，第三段明确说研究考察了早期注意力和社会情感技能如何影响学业成功，第四段总结发现注意力是学业成功最稳定的预测因素。B选项\"儿童学业成功的预测因素\"精准概括了研究焦点。",
+    "traps": "A\"儿童早期注意力的促成因素\"偷换了研究方向，文章研究的是注意力如何预测学业成功，而非什么因素导致注意力问题；C\"影响儿童情感健康的因素\"偏离主题，文章核心是学业成功而非情感健康；D\"儿童社交技能发展的决定因素\"同样偏离，社交只是研究的一个方面而非焦点。",
+    "tip": "主旨题需关注研究目的和核心发现，不要被局部细节带偏。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "This was after controlling for IQ, socio-economic status and academic skills at school entry.",
+    "why": "第五段末尾明确指出研究数据\"是在控制了智商、社会经济地位和入学时学业技能之后\"得出的。\"controlling for\"意为控制变量，即排除这些非研究因素的干扰，确保研究结果的有效性。C选项\"防止研究结果受到非研究因素的影响\"准确对应了这一方法论操作。",
+    "traps": "A\"对所有可能的变量给予同等重视\"与原文矛盾，研究是控制（排除）某些变量而非同等关注；B\"收集尽可能多的典型样本\"原文未提及样本采集策略的特殊之处；D\"关注被研究儿童的家庭背景\"虽然社会经济地位涉及家庭背景，但它恰恰是被控制（排除）的变量，而非研究聚焦点。",
+    "tip": "理解\"controlling for\"（控制变量）是解题关键，这是科研类文章常见术语。"
+   },
+   {
+    "number": 48,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Our findings suggest that even more modest attention difficulties can increase the risk of negative academic outcomes.",
+    "why": "第七段Rabiner的引语明确指出，被研究的儿童并未被诊断为ADHD，但研究发现即使是\"更轻微的注意力困难\"也会增加学业成绩不佳的风险。D选项\"即使是轻微的注意力不集中也可能影响儿童的学业表现\"是对这段话的准确改写。",
+    "traps": "A选项将\"modest\"理解为\"谦虚的\"，偷换了原文中\"modest\"意为\"轻微的\"的含义，属于词义偷换陷阱；B\"注意力困难的儿童比之前认为的更多\"原文未提及数量比较；C\"ADHD导致了大多数学业失败\"与原文矛盾，研究明确说这些儿童并非ADHD患者。",
+    "tip": "注意一词多义陷阱，\"modest\"在本文中是\"轻微的\"而非\"谦虚的\"。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Social acceptance by peers in early childhood also predicted grades in fifth grade. Children not as liked by their first-grade peers had slightly lower grades in fifth grade, while those with higher social acceptance had higher grades.",
+    "why": "第八段明确说明，幼儿时期同伴社会接纳度也预测了五年级成绩；不太受同伴喜欢的儿童五年级成绩略低，而社会接纳度高的儿童成绩更高。A选项\"他们学业表现更好\"是对\"higher social acceptance had higher grades\"的准确概括。",
+    "traps": "B\"他们容易相处\"是对社会接纳度高的原因推测，原文并未讨论为何这些儿童更受欢迎；C\"他们是老师的宠儿\"属于无中生有，原文完全没有提及老师的态度；D\"他们不太在意成绩\"与原文事实相反，这些儿童成绩反而更高。",
+    "tip": "同义改写是六级常见出题方式，需将选项与原文逐一对照。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "We're learning that student success requires a more comprehensive approach, one that incorporates not only academic skills but also social, self-regulatory and attention skills.",
+    "why": "文章末段Dodge明确总结：学生成功需要\"更全面的方法\"，不仅包括学业技能，还包括社交、自我调节和注意力技能。D选项\"学校教育应采用全面的方法\"是对\"a more comprehensive approach\"的准确改写，\"all-round\"对应\"comprehensive\"。",
+    "traps": "A\"儿童的成功与学习环境有关\"过于笼统且偏离原文重点，文章强调的是多维技能的综合培养；B\"学校课程应涵盖更多科目\"是对\"comprehensive approach\"的错误理解，原文指的是教育方法的全面性而非科目数量；C\"社交技能在儿童发展中起关键作用\"虽有部分依据但以偏概全，社交只是综合方法中的一个方面。",
+    "tip": "结论题优先看文章末尾的总结性陈述，抓住核心关键词进行同义替换。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "clinical trial",
+    "cn": "临床试验（名词短语）"
+   },
+   {
+    "w": "predictor",
+    "cn": "预测因素，预测指标（n.）"
+   },
+   {
+    "w": "likability",
+    "cn": "受欢迎程度，讨人喜欢的程度（n.）"
+   },
+   {
+    "w": "contemporaries",
+    "cn": "同龄人，同辈（n.）"
+   },
+   {
+    "w": "controlling for",
+    "cn": "控制（某变量），排除（某因素的影响）（动词短语）"
+   },
+   {
+    "w": "intervention",
+    "cn": "干预措施，干预行为（n.）"
+   },
+   {
+    "w": "deficit",
+    "cn": "缺乏，不足；赤字（n.）"
+   },
+   {
+    "w": "hyperactivity",
+    "cn": "多动，活动过度（n.）"
+   },
+   {
+    "w": "self-regulatory",
+    "cn": "自我调节的（adj.）"
+   },
+   {
+    "w": "incorporate",
+    "cn": "包含，纳入；合并（v.）"
+   },
+   {
+    "w": "lag",
+    "cn": "落后，滞后（v./n.）"
+   },
+   {
+    "w": "reinforce",
+    "cn": "强化，加强（v.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As fifth-graders, children with early attention problems obtained average reading scores at least 3% lower than their contemporaries' and grades at least 8% lower than those of their peers.",
+    "cn": "作为五年级学生，早期存在注意力问题的儿童获得的平均阅读分数比同龄人至少低3%，成绩至少比同龄人低8%。",
+    "note": "主干为children obtained scores and grades；两个比较结构并列：scores 3% lower than their contemporaries' 和 grades 8% lower than those of their peers，其中those指代grades。"
+   },
+   {
+    "en": "Our findings suggest that even more modest attention difficulties can increase the risk of negative academic outcomes.",
+    "cn": "我们的研究结果表明，即使是较轻微的注意力困难也会增加学业成绩不佳的风险。",
+    "note": "suggest引导宾语从句；even修饰more modest强调程度之轻；modest此处意为\"轻微的\"而非\"谦虚的\"，是干扰项设计的关键。"
+   },
+   {
+    "en": "We're learning that student success requires a more comprehensive approach, one that incorporates not only academic skills but also social, self-regulatory and attention skills.",
+    "cn": "我们正在认识到，学生的成功需要一种更全面的方法，一种不仅包括学业技能，还包括社交、自我调节和注意力技能的方法。",
+    "note": "that引导宾语从句；one为approach的同位语；not only...but also连接四类并列技能，是全文核心结论句。"
+   }
+  ]
+ }
+}

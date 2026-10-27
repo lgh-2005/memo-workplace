@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "e36b16edc748__writing__all",
+ "examId": "e36b16edc748",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2026 年 6 月英语六级真题（第 3 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:07:42.792Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41586,
+ "usage": {
+  "prompt_tokens": 743,
+  "completion_tokens": 2668,
+  "total_tokens": 3411,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 743,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2668,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 743,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕\"深入了解中国传统文化有助于培养文化自信\"展开论述，可评论、举例或结合个人经历，150-200词。",
+    "outline": [
+     "第一段：以题目给定首句引入话题，点明全球化背景下理解中国传统文化对培养文化自信的重要性",
+     "第二段：从两个层面展开论证——（1）传统文化为学生提供独特的世界观和民族认同感；（2）扎实的文化根基有助于跨文化交流，赢得国际尊重",
+     "第三段：总结全文，呼吁学生主动拥抱传统文化，以文化自信应对全球化浪潮"
+    ],
+    "sample": "Faced with growing globalization, students realize that a deep understanding of traditional Chinese culture helps cultivate cultural confidence. In an era where Western values and lifestyles permeate every corner of the world, it is imperative for young people to anchor themselves in their own cultural heritage.\n\nTo begin with, traditional Chinese culture, encompassing philosophy, literature, and art, provides a unique lens through which students can interpret the world. For instance, the Confucian emphasis on harmony and benevolence offers an alternative to the competitive individualism prevalent in Western societies. By studying these timeless principles, students develop a sense of pride and belonging that fortifies their cultural identity.\n\nFurthermore, a solid grounding in one's own culture facilitates more meaningful cross-cultural exchanges. When students can articulate the depth and richness of Chinese traditions, they earn respect on the international stage and contribute distinct perspectives to global dialogues.\n\nIn conclusion, rather than being overshadowed by globalization, students should embrace traditional Chinese culture as a wellspring of confidence. Only by understanding where we come from can we navigate where we are going.",
+    "phrases": [
+     {
+      "en": "cultivate cultural confidence",
+      "cn": "培养文化自信；cultivate 比 develop 更正式，常用于抽象品质的培育"
+     },
+     {
+      "en": "permeate every corner of",
+      "cn": "渗透到……的每个角落；形容影响力无处不在，比 spread to 更高级"
+     },
+     {
+      "en": "anchor oneself in",
+      "cn": "将自身扎根于……；anchor 用作动词，强调稳固根基"
+     },
+     {
+      "en": "provide a unique lens through which",
+      "cn": "提供一个独特的视角来……；through which 引导定语从句，句式高级"
+     },
+     {
+      "en": "a sense of pride and belonging",
+      "cn": "自豪感与归属感；pride 和 belonging 并列，表达文化认同的双重维度"
+     },
+     {
+      "en": "a solid grounding in",
+      "cn": "在……方面的坚实基础；grounding 比 foundation 更学术化"
+     },
+     {
+      "en": "articulate the depth and richness of",
+      "cn": "清晰表达……的深度与丰富性；articulate 作动词，比 express 更精准"
+     },
+     {
+      "en": "on the international stage",
+      "cn": "在国际舞台上；常见的高分搭配，适用于全球化话题"
+     },
+     {
+      "en": "a wellspring of confidence",
+      "cn": "自信的源泉；wellspring 比 source 更文学化，增添文采"
+     },
+     {
+      "en": "Only by ... can we ...",
+      "cn": "只有通过……我们才能……；倒装句式，用于结尾升华，增强语势"
+     }
+    ],
+    "pitfalls": [
+     "忘记抄写题目给定的首句，直接扣分",
+     "将 cultural confidence 误写为 culture confident，词性混淆",
+     "全篇空谈道理而不举例，论证缺乏说服力，内容分偏低",
+     "用词重复，反复使用 important/very，缺少同义替换",
+     "字数不足 150 词或超过 200 词，均会影响评分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Traditional Chinese culture is very important for students.",
+      "better": "Traditional Chinese culture provides a unique lens through which students can interpret the world.",
+      "note": "用具体比喻替代空泛的 important，表达更生动、论证更有力"
+     },
+     {
+      "plain": "Students should learn traditional culture to be confident.",
+      "better": "A solid grounding in one's own culture facilitates more meaningful cross-cultural exchanges.",
+      "note": "将抽象号召转化为具体效果，逻辑链更完整，语言更学术"
+     },
+     {
+      "plain": "In conclusion, traditional Chinese culture is good for us.",
+      "better": "Rather than being overshadowed by globalization, students should embrace traditional Chinese culture as a wellspring of confidence.",
+      "note": "rather than 形成对比，wellspring 替代 source，结尾更有力度和文采"
+     },
+     {
+      "plain": "We should know our culture so we can talk to foreigners.",
+      "better": "When students can articulate the depth and richness of Chinese traditions, they earn respect on the international stage.",
+      "note": "用 articulate、depth and richness 等高级词汇提升表达层次"
+     },
+     {
+      "plain": "Chinese culture has a long history and is very great.",
+      "better": "The Confucian emphasis on harmony and benevolence offers an alternative to the competitive individualism prevalent in Western societies.",
+      "note": "用具体文化元素举例并形成中西对比，避免空洞赞美，论证更具深度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only by understanding where we come from can we navigate where we are going. —— 只有理解我们从哪里来，才能把握我们往何处去。倒装+双 where 从句，适合结尾点睛。",
+   "Traditional Chinese culture provides a unique lens through which students can interpret the world. —— 中国传统文化为学生提供了解读世界的独特视角。through which 定语从句结构高级。",
+   "Rather than being overshadowed by globalization, students should embrace traditional Chinese culture as a wellspring of confidence. —— 学生不应被全球化遮蔽，而应将传统文化视为自信的源泉。rather than 对比句式+wellspring 高分词汇。",
+   "A solid grounding in one's own culture facilitates more meaningful cross-cultural exchanges. —— 对自身文化的扎实根基能促进更有意义的跨文化交流。grounding/facilitate 均为六级高频学术词。"
+  ]
+ }
+}

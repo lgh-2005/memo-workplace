@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "106c7d82f5d8__writing__all",
+ "examId": "106c7d82f5d8",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2020 年 12 月英语六级真题（第 3 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:33:17.825Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42824,
+ "usage": {
+  "prompt_tokens": 695,
+  "completion_tokens": 2806,
+  "total_tokens": 3501,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 695,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2806,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 695,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"为什么应鼓励学生培养应对挑战的能力\"展开论述，字数150-200词。",
+    "outline": [
+     "引出话题：在充满变化与竞争的时代，培养学生应对挑战的能力至关重要，简要点明其意义。",
+     "主体论证：从多个角度阐述原因——培养韧性与毅力、提升批判性思维与解决问题的能力、增强自信心；联系就业市场需求进一步论证其现实意义。",
+     "总结全文：重申培养应对挑战能力的重要性，呼吁学校与家庭共同为学生创造锻炼机会。"
+    ],
+    "sample": "In an era characterized by rapid changes and fierce competition, it is of paramount importance that students be encouraged to develop the ability to meet challenges. This capacity not only benefits their academic pursuits but also lays a solid foundation for their future careers.\n\nTo begin with, cultivating the ability to meet challenges fosters resilience and perseverance in students. When confronted with obstacles, students who have been trained to tackle difficulties are more likely to persist rather than surrender. Moreover, this ability enhances critical thinking and problem-solving skills. Students learn to analyze complex situations, devise creative solutions, and adapt to unforeseen circumstances. Furthermore, the process of overcoming challenges builds confidence and self-esteem, which are indispensable qualities for personal growth and professional development.\n\nIn addition, in today's increasingly competitive job market, employers place great value on candidates who demonstrate the capacity to handle pressure and navigate uncertainties. Students equipped with this ability will undoubtedly enjoy a competitive edge when they enter the workforce.\n\nIn conclusion, developing the ability to meet challenges is essential for students. Schools and families should collaborate to create opportunities for students to face and overcome difficulties, thereby preparing them for a successful and fulfilling life.",
+    "phrases": [
+     {
+      "en": "it is of paramount importance that...",
+      "cn": "……至关重要；虚拟语气句型，用于强调某事的重要性，显示语法功底"
+     },
+     {
+      "en": "lay a solid foundation for",
+      "cn": "为……奠定坚实基础；常用于论述长远影响"
+     },
+     {
+      "en": "foster resilience and perseverance",
+      "cn": "培养韧性与毅力；高频话题词汇搭配，体现词汇深度"
+     },
+     {
+      "en": "when confronted with obstacles",
+      "cn": "当面对障碍时；过去分词作状语，简洁高级"
+     },
+     {
+      "en": "devise creative solutions",
+      "cn": "想出创造性的解决方案；devise比think of更正式、更高分"
+     },
+     {
+      "en": "adapt to unforeseen circumstances",
+      "cn": "适应不可预见的情况；展示对challenge主题的精准表达"
+     },
+     {
+      "en": "indispensable qualities",
+      "cn": "不可或缺的品质；indispensable替代necessary，提升词汇档次"
+     },
+     {
+      "en": "navigate uncertainties",
+      "cn": "驾驭/应对不确定性；navigate用作比喻义，属高分用词"
+     },
+     {
+      "en": "enjoy a competitive edge",
+      "cn": "拥有竞争优势；edge比advantage更地道"
+     },
+     {
+      "en": "thereby preparing them for",
+      "cn": "从而为他们……做好准备；thereby+现在分词表结果，书面语标志"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只写\"挑战是什么\"而未回答\"为什么要培养该能力\"，导致跑题",
+     "逻辑单薄：仅罗列观点缺乏展开论证，每个理由只有一句话",
+     "词汇重复：全篇反复使用important、good、ability而无同义替换",
+     "语法硬伤：主谓不一致、从句标点错误（如逗号拼接两个独立句）",
+     "字数不达标：低于150词会被直接扣分，超过200词也可能因冗余失分"
+    ],
+    "upgrades": [
+     {
+      "plain": "It is very important for students to meet challenges.",
+      "better": "It is of paramount importance that students be encouraged to develop the ability to meet challenges.",
+      "note": "虚拟语气+of+名词结构替代very important，句式更正式、更有学术感"
+     },
+     {
+      "plain": "Students can learn to solve problems.",
+      "better": "Students learn to analyze complex situations, devise creative solutions, and adapt to unforeseen circumstances.",
+      "note": "三项并列展开具体内容，信息密度更高，展示词汇多样性"
+     },
+     {
+      "plain": "This ability is useful for getting a job.",
+      "better": "Employers place great value on candidates who demonstrate the capacity to handle pressure and navigate uncertainties.",
+      "note": "换主语为employers，视角更客观；搭配更地道精准"
+     },
+     {
+      "plain": "Schools should help students face challenges.",
+      "better": "Schools and families should collaborate to create opportunities for students to face and overcome difficulties, thereby preparing them for a fulfilling life.",
+      "note": "加入thereby分词结构收束全文，逻辑衔接更紧密、结尾更有力"
+     },
+     {
+      "plain": "Meeting challenges makes students stronger.",
+      "better": "The process of overcoming challenges builds confidence and self-esteem, which are indispensable qualities for personal growth and professional development.",
+      "note": "用非限制性定语从句补充说明，层次更丰富、论证更充分"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "It is of paramount importance that students be encouraged to develop the ability to meet challenges. — 用虚拟语气+of paramount importance强调重要性，是高分开篇的标杆句型。",
+   "When confronted with obstacles, students who have been trained to tackle difficulties are more likely to persist rather than surrender. — 过去分词状语+定语从句+比较结构三合一，语法展示充分。",
+   "Students learn to analyze complex situations, devise creative solutions, and adapt to unforeseen circumstances. — 三项动词并列，节奏感强，展示词汇广度与精准度。",
+   "Employers place great value on candidates who demonstrate the capacity to handle pressure and navigate uncertainties. — 从雇主视角论证，navigate用作比喻义属亮点词汇。",
+   "Schools and families should collaborate to create opportunities for students to face and overcome difficulties, thereby preparing them for a successful and fulfilling life. — thereby引导分词短语作结果状语，是高分结尾的经典写法。"
+  ]
+ }
+}

@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "3a1d5271950e__reading__4",
+ "examId": "3a1d5271950e",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2000 年考研英语真题（旧）",
+ "year": 2000,
+ "sub": "4",
+ "questionNumbers": [
+  23,
+  24,
+  25,
+  26
+ ],
+ "generatedAt": "2026-10-27T06:09:56.684Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68356,
+ "usage": {
+  "prompt_tokens": 1734,
+  "completion_tokens": 4458,
+  "total_tokens": 6192,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1734,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4458,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1734,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 26 题 locate 定位句与原文不符",
+  "longSentences 有原句与原文不符"
+ ],
+ "analysis": {
+  "topic": "战后日本社会道德观念衰退",
+  "gist": "文章围绕战后日本社会道德观念衰退展开，指出曾令西方羡慕的日本生产力和社会和谐正在被年轻人的迷茫、教育体制对创造力的压制以及西方价值观影响下的生活方式变化所侵蚀，传统的勤勉工作伦理和家庭群体价值观日渐瓦解，离婚率和自杀率攀升，社会问题凸显。",
+  "structure": [
+   "第一段：总起，提出日本传统工作伦理衰退的现象",
+   "第二段：具体表现——升学就业压力大、学生和工人满意度低",
+   "第三段：教育体制弊端——重应试轻创造力，引发校园暴力",
+   "第四段：根源——西方价值观影响下的生活方式变化导致社会问题加剧"
+  ],
+  "difficulty": "中等",
+  "translation": "漫无目标在战后日本几乎闻所未闻，其生产力和社会和谐一直令美国和欧洲羡慕不已。但日本人越来越多地看到传统工作道德价值观的衰退。十年前，年轻人勤奋工作，把工作视为自身存在的首要理由；但如今日本的经济需求已基本得到满足，年轻人不知道下一步该何去何从。\n\n战后婴儿潮一代的成年以及女性进入男性主导的就业市场，限制了青少年的发展机会，而这些青少年已经在质疑攀登日本僵化的社会阶梯——进入好学校、找到好工作——所需付出的巨大个人牺牲。一项近期调查发现，仅有24.5%的日本学生对学校生活完全满意，而美国学生的这一比例为67.2%。此外，在所调查的其他十个国家中，对工作表示不满的日本工人远多于其他国家的同行。\n\n日本教育虽然常因注重基础知识而受到外国人的赞扬，但往往强调应试和机械学习，而忽视创造力和自我表达。\"那些无法体现在考试分数上的东西——个性、能力、勇气或人性——被完全忽视了，\"执政的自由民主党教育委员会主席海部俊树说道。\"对这类事情的挫败感导致孩子们辍学并变得放纵。\"去年日本发生了2125起校园暴力事件，其中包括929起对教师的人身攻击。在一片强烈抗议声中，许多保守派领导人寻求恢复战前对道德教育的重视。去年，时任文部大臣的濑户山三男提出\"二战后美国占领当局引入的自由主义改革削弱了'日本人尊重父母的道德观'\"这一论点时，引起了广泛关注。\n\n但这可能更多地与日本人的生活方式有关。日本教育家室�的洋子说：\"在日本，问题从来不在于你是否享受工作和生活，而只在于你能忍受多少。\"伴随经济增长而来的是高度集中化；日本1.19亿公民中有76%居住在城市，在那里社区和大家庭已被抛弃，取而代之的是孤立的两代人家庭。城市日本人长期忍受着漫长的通勤和拥挤的居住条件，但随着旧有的群体和家庭价值观的弱化，这种不适感开始显现出来。在过去十年中，日本的离婚率虽然仍远低于美国，但已增长了50%以上，自杀率则增加了近四分之一。",
+  "questions": [
+   {
+    "number": 23,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Aimlessness has hardly been typical of the postwar Japan whose productivity and social harmony are the envy of the United States and Europe.",
+    "why": "原文说战后日本的生产力和社会和谐是美国和欧洲\"羡慕的对象\"（the envy of），即西方人视日本为值得学习的正面榜样。题目问\"在西方人眼中\"，'envy'一词直接表明日本是令人称羡的积极典范，对应B选项\"a positive example\"。",
+    "traps": "A\"漫无目标地发展\"与原文\"aimlessness has hardly been typical\"直接矛盾，属于反义干扰；C\"西方的对手\"虽提及了美欧，但原文说的是\"羡慕\"而非\"竞争对手\"，属于偷换概念；D\"走下坡路\"是日本当前的变化趋势，不是西方人对战后日本的总体看法，属于张冠李戴。",
+    "tip": "注意'the envy of'这一固定搭配，表示令人羡慕的对象。"
+   },
+   {
+    "number": 24,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "But that may have more to do with Japanese life-styles. ... liberal reforms introduced by the American occupation authorities after World War II had weakened the 'Japanese morality of respect for parents.'",
+    "why": "第四段首句'But that may have more to do with Japanese life-styles'中'that'指代日本道德衰退，作者认为其根本原因在于生活方式的变化。而第三段末尾指出二战后美国占领当局引入的自由主义改革削弱了日本传统道德，即生活方式受到了西方价值观的影响。两处信息综合，D选项\"生活方式受到西方价值观影响\"最为准确。",
+    "traps": "A\"女性参与社会活动受限\"与原文相反，原文说女性已进入就业市场，属于曲解原文；B\"更多工人对工作不满\"只是道德衰退的一个表现而非原因，属于因果倒置；C\"过度强调基础知识\"是外国人对日本教育的评价，不是道德衰退的主要原因，属于以偏概全。",
+    "tip": "注意段首转折句'But that may have more to do with...'往往揭示作者真正认为的核心原因。"
+   },
+   {
+    "number": 25,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Japanese education tends to stress test taking and mechanical learning over creativity and self-expression.",
+    "why": "原文指出日本教育强调应试和机械学习，却忽视了创造力和自我表达，且海部俊树批评个性、能力、勇气和人性被完全忽视。这些批评暗示作者认为应当更加重视创造力的培养，因此C\"应更加注重创造力的培养\"符合原文的言外之意和价值倾向。",
+    "traps": "A\"日本教育因帮助年轻人攀登社会阶梯而受到赞扬\"张冠李戴，原文说受到赞扬的是\"注重基础知识\"；B\"日本教育以机械学习和创造力为特征\"属于拼凑篡改，原文说的是重机械学习而轻创造力（over = 而非）；D\"辍学导致对应试的挫败感\"因果倒置，原文是对应试的挫败感导致辍学。",
+    "tip": "'stress A over B'意为重A轻B，暗含作者对B被忽视的批评。"
+   },
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Urban Japanese have long endured lengthy commutes and crowded living conditions, but as the old group and family values weaken, the discomfort is beginning to tell.",
+    "why": "原文说城市日本人长期忍受漫长通勤和拥挤的居住条件，但随着旧有群体和家庭价值观的弱化，这种不适感\"开始显现\"（beginning to tell）。言下之意，过去人们因传统价值观的支撑而能忍受不适，现在年轻人对生活中的不适越来越难以容忍，A选项准确概括了这一变化。",
+    "traps": "B\"日本离婚率超过美国\"与原文'still well below that of the United States'直接矛盾，属于反义干扰；C\"日本人比以前忍受更多\"与原文传达的信息相反，实际是忍耐力下降；D\"日本人欣赏当前的生活\"与文章整体基调（不满、不适加剧）完全背离，属于无中生有。",
+    "tip": "'the discomfort is beginning to tell'意为不适感开始产生影响，暗示忍耐力在下降。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "aimlessness",
+    "cn": "漫无目标；无目的状态 (n.)"
+   },
+   {
+    "w": "envy",
+    "cn": "羡慕；嫉妒的对象 (n.)"
+   },
+   {
+    "w": "rigid",
+    "cn": "僵化的；严格的 (adj.)"
+   },
+   {
+    "w": "counterparts",
+    "cn": "对等的人；同行 (n.)"
+   },
+   {
+    "w": "mechanical",
+    "cn": "机械的；死记硬背的 (adj.)"
+   },
+   {
+    "w": "outcry",
+    "cn": "强烈抗议；呐喊 (n.)"
+   },
+   {
+    "w": "endure",
+    "cn": "忍受；忍耐 (v.)"
+   },
+   {
+    "w": "centralization",
+    "cn": "集中化；中央集权化 (n.)"
+   },
+   {
+    "w": "commutes",
+    "cn": "通勤；上下班往返 (n.)"
+   },
+   {
+    "w": "raised eyebrows",
+    "cn": "引起惊讶/关注（固定搭配）"
+   },
+   {
+    "w": "dissatisfaction",
+    "cn": "不满；不满意 (n.)"
+   },
+   {
+    "w": "self-expression",
+    "cn": "自我表达 (n.)"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The coming of age of the postwar baby boom and an entry of women into the male-dominated job market have limited the opportunities of teenagers who are already questioning the heavy personal sacrifices involved in climbing Japan's rigid social ladder to good schools and jobs.",
+    "cn": "战后婴儿潮一代的成年以及女性进入男性主导的就业市场，限制了青少年的发展机会，而这些青少年已经在质疑攀登日本僵化的社会阶梯——进入好学校、找到好工作——所需付出的巨大个人牺牲。",
+    "note": "主语为两个并列名词短语（The coming... and an entry...），谓语为have limited；who引导定语从句修饰teenagers，其中involved in为后置定语修饰sacrifices。"
+   },
+   {
+    "en": "Last year Mitsuo Setoyama, who was then education minister, raised eyebrows when he argued that liberal reforms introduced by the American occupation authorities after World War II had weakened the 'Japanese morality of respect for parents.'",
+    "cn": "去年，时任文部大臣的濑户山三男提出\"二战后美国占领当局引入的自由主义改革削弱了'日本人尊重父母的道德观'\"这一论点时，引起了广泛关注。",
+    "note": "主句为Setoyama raised eyebrows；who引导非限制性定语从句；when引导时间状语从句，其中that引导宾语从句，introduced by...为过去分词短语作后置定语修饰reforms。"
+   },
+   {
+    "en": "Urban Japanese have long endured lengthy commutes and crowded living conditions, but as the old group and family values weaken, the discomfort is beginning to tell.",
+    "cn": "城市日本人长期忍受着漫长的通勤和拥挤的居住条件，但随着旧有的群体和家庭价值观的弱化，这种不适感开始显现出来。",
+    "note": "but连接两个并列分句形成转折；as引导时间/原因状语从句；tell此处意为\"产生效果/显现影响\"，为熟词僻义。"
+   }
+  ]
+ }
+}

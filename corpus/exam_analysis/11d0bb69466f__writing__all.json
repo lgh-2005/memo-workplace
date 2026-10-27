@@ -1,0 +1,234 @@
+{
+ "schemaVersion": 1,
+ "id": "11d0bb69466f__writing__all",
+ "examId": "11d0bb69466f",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2013 年考研英语真题",
+ "year": 2013,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:29:39.837Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 88573,
+ "usage": {
+  "prompt_tokens": 844,
+  "completion_tokens": 5346,
+  "total_tokens": 6190,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 844,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5346,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 844,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：以李明身份给外教写一封约100词的电子邮件，邀请其担任即将举办的英语演讲比赛评委，需包含必要细节。",
+    "outline": [
+     "第一段：自我介绍并说明写信目的——诚邀外教担任英语演讲比赛评委",
+     "第二段：提供比赛的具体信息（时间、地点、主题、参赛人数等），说明邀请该外教的理由",
+     "第三段：表达期待回复与感谢，礼貌收尾"
+    ],
+    "sample": "Dear Professor Smith,\n\nI am writing on behalf of the Students' Union to cordially invite you to serve as a judge for the upcoming English Speech Contest.\n\nThe contest is scheduled to be held in the Main Auditorium on December 20th, from 2:00 PM to 5:00 PM. Fifteen contestants will each deliver a five-minute speech on the topic of \"Cross-Cultural Communication.\" As a distinguished foreign language expert in our college, your insightful comments and professional evaluation would be immensely valuable to all participants and contribute significantly to the success of this event.\n\nPlease let me know at your earliest convenience whether you are available. I would be more than delighted if you could honor us with your presence.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "on behalf of",
+      "cn": "代表……，用于说明写信人的身份与代表资格"
+     },
+     {
+      "en": "cordially invite you to",
+      "cn": "诚挚地邀请您……，正式邀请函的经典表达"
+     },
+     {
+      "en": "serve as a judge",
+      "cn": "担任评委，准确对应题目核心要求"
+     },
+     {
+      "en": "is scheduled to be held",
+      "cn": "定于……举办，用被动语态描述活动安排更加正式"
+     },
+     {
+      "en": "deliver a speech on the topic of",
+      "cn": "就……主题发表演讲，演讲比赛语境的地道搭配"
+     },
+     {
+      "en": "contribute significantly to the success of",
+      "cn": "为……的成功做出重大贡献，突出受邀者的重要性"
+     },
+     {
+      "en": "at your earliest convenience",
+      "cn": "在您方便的时候尽早……，书信中礼貌催复的常用语"
+     },
+     {
+      "en": "honor us with your presence",
+      "cn": "赏光出席，高级礼貌用语，适合正式邀请场合"
+     },
+     {
+      "en": "insightful comments and professional evaluation",
+      "cn": "富有洞见的点评与专业的评判，赞美受邀者能力的表达"
+     },
+     {
+      "en": "more than delighted",
+      "cn": "非常高兴，比very happy更书面、更高级"
+     }
+    ],
+    "pitfalls": [
+     "遗漏比赛关键信息（时间、地点、主题），导致内容要点不全而扣分",
+     "称呼和落款格式错误，如用Dear Friend代替具体称谓或忘写Li Ming",
+     "语域不当：对外教使用过于随意的口语体而非正式书信语体",
+     "超出或远低于100词要求，偏离20%以上会被酌情扣分",
+     "邀请理由空泛，未体现该外教作为评委的独特优势"
+    ],
+    "upgrades": [
+     {
+      "plain": "I want to invite you to be a judge.",
+      "better": "I am writing to cordially invite you to serve as a judge for the upcoming English Speech Contest.",
+      "note": "增加写信目的状语和正式动词搭配，语体更符合书信规范"
+     },
+     {
+      "plain": "You are good at English, so please come.",
+      "better": "As a distinguished foreign language expert, your professional evaluation would be immensely valuable to all participants.",
+      "note": "用As引导的原因状语从句替代简单句，逻辑更清晰、措辞更得体"
+     },
+     {
+      "plain": "I hope you can come. Please reply to me.",
+      "better": "I would be more than delighted if you could honor us with your presence.",
+      "note": "虚拟语气+高级词汇honor，礼貌程度与句式复杂度双重提升"
+     },
+     {
+      "plain": "The contest will be on December 20th in the auditorium.",
+      "better": "The contest is scheduled to be held in the Main Auditorium on December 20th, from 2:00 PM to 5:00 PM.",
+      "note": "被动语态+详细时间信息，信息量更大且更正式"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "大作文看图写作：根据图画写160-200词短文，需描述图画、阐释寓意、发表评论。图画为一口火锅，内有佛、道、仁、莎士比亚、爱因斯坦、后现代等中西文化元素，标题为\"文化火锅——既美味又营养\"。",
+    "outline": [
+     "第一段：客观描述图画内容——一口热气腾腾的火锅中融汇了中西方多种文化元素，标题点明'文化火锅'主题",
+     "第二段：深入阐释寓意——文化融合如火锅般兼收并蓄，全球化时代各文化相互借鉴、彼此丰富",
+     "第三段：发表个人评论——倡导以开放心态拥抱文化多样性，同时保持本民族文化精髓，实现和谐共存"
+    ],
+    "sample": "As is vividly depicted in the drawing, a hotpot is brimming with a rich assortment of cultural ingredients. Inside the steaming pot, we can identify elements from both Chinese and Western traditions, including Buddhism, Taoism, Confucian benevolence, Shakespeare, Einstein, and postmodernism. The caption reads \"Cultural Hotpot — both delicious and nutritious,\" symbolizing the harmonious fusion of diverse cultures.\n\nThe message conveyed by this illustration is both profound and thought-provoking. Just as a hotpot blends various ingredients to create a flavorful meal, modern society benefits enormously from the integration of different cultural traditions. In today's increasingly globalized world, no single culture can flourish in complete isolation. Chinese civilization absorbs Western philosophical insights and scientific achievements, while Western societies also draw inspiration from Eastern wisdom. This mutual exchange transcends geographical boundaries, enriching both sides and propelling social progress forward.\n\nIn my view, we should embrace cultural diversity with an open and inclusive mind. While actively learning from other cultures, it is equally essential to preserve the essence of our own cultural heritage. Only by striking a balance between openness and preservation can we genuinely achieve cultural prosperity. The cultural hotpot reminds us that true harmony lies not in uniformity but in the celebration of diversity, which remains the driving force behind the continuous advancement of human civilization.",
+    "phrases": [
+     {
+      "en": "a rich assortment of",
+      "cn": "丰富多样的……，比various更具画面感，适合描述图画"
+     },
+     {
+      "en": "the message conveyed by this illustration",
+      "cn": "这幅图画所传达的信息，过渡到寓意阐释的经典衔接句式"
+     },
+     {
+      "en": "profound and thought-provoking",
+      "cn": "深刻且发人深省的，评价寓意的高分形容词搭配"
+     },
+     {
+      "en": "flourish in complete isolation",
+      "cn": "在完全封闭中繁荣发展，用于论证文化交流的必要性"
+     },
+     {
+      "en": "transcend geographical boundaries",
+      "cn": "超越地理界限，体现文化交融的全球视野"
+     },
+     {
+      "en": "propel social progress forward",
+      "cn": "推动社会进步，比promote更有力度的动词选择"
+     },
+     {
+      "en": "embrace cultural diversity with an open mind",
+      "cn": "以开放心态拥抱文化多样性，点题且立意高远"
+     },
+     {
+      "en": "strike a balance between A and B",
+      "cn": "在A与B之间取得平衡，常用于辩证分析的核心表达"
+     },
+     {
+      "en": "true harmony lies not in uniformity but in",
+      "cn": "真正的和谐不在于统一而在于……，not...but...的高级句式"
+     },
+     {
+      "en": "the driving force behind",
+      "cn": "……背后的驱动力，用于总结升华段落"
+     }
+    ],
+    "pitfalls": [
+     "描述段过长或过短，未覆盖图中中西文化元素的关键细节",
+     "只描述不分析，第二段缺乏对文化融合必要性的深层论证",
+     "评论段流于空泛口号，缺少'保留本民族文化精髓'的辩证维度",
+     "词数不足160或超过200，偏离要求区间会影响评分",
+     "三段结构失衡，如描述占一半篇幅而评论只有一两句"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows a hotpot with many cultural things in it.",
+      "better": "As is vividly depicted in the drawing, a hotpot is brimming with a rich assortment of cultural ingredients.",
+      "note": "万能描图句式+brimming with+高级名词短语，语言更丰满"
+     },
+     {
+      "plain": "Different cultures can help each other.",
+      "better": "This mutual exchange transcends geographical boundaries, enriching both sides and propelling social progress forward.",
+      "note": "现在分词作伴随状语使句式复杂化，信息密度大幅提升"
+     },
+     {
+      "plain": "We should learn from other cultures and keep our own culture.",
+      "better": "While actively learning from other cultures, it is equally essential to preserve the essence of our own cultural heritage.",
+      "note": "While引导让步状语从句+it is essential to结构，辩证逻辑更严谨"
+     },
+     {
+      "plain": "Harmony is not the same as being the same.",
+      "better": "True harmony lies not in uniformity but in the celebration of diversity.",
+      "note": "lie in+not...but...对比结构，表达精炼且富有哲理感"
+     },
+     {
+      "plain": "Culture mixing is good for people.",
+      "better": "Just as a hotpot blends various ingredients to create a flavorful meal, modern society benefits enormously from the integration of different cultural traditions.",
+      "note": "Just as...类比句呼应图画意象，使论证与图画紧密结合"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the drawing, a hotpot is brimming with a rich assortment of cultural ingredients. 如图所示，一口火锅中盛满了丰富多样的文化食材。——万能描图首句，as引导非限制性定语从句，可灵活替换主语用于任何图画作文。",
+   "Just as a hotpot blends various ingredients to create a flavorful meal, modern society benefits enormously from the integration of different cultural traditions. 正如火锅将各种食材融合烹制成美味佳肴，现代社会同样从不同文化传统的融合中获益匪浅。——类比论证的典范句式，将图画意象与社会现象无缝衔接。",
+   "Only by striking a balance between openness and preservation can we genuinely achieve cultural prosperity. 唯有在开放与传承之间取得平衡，我们才能真正实现文化繁荣。——Only by...倒装句+strike a balance辩证结构，同时展示语法功底与思辨深度。",
+   "True harmony lies not in uniformity but in the celebration of diversity, which remains the driving force behind the continuous advancement of human civilization. 真正的和谐不在于千篇一律，而在于对多样性的弘扬，这始终是人类文明不断进步的驱动力。——not...but...对比+which非限制性定语从句，适合用作压轴总结句。",
+   "I would be more than delighted if you could honor us with your presence. 若您能赏光出席，我将不胜欣喜。——虚拟语气+honor搭配，小作文邀请信的高分收尾句，可直接迁移至各类邀请场景。"
+  ]
+ }
+}

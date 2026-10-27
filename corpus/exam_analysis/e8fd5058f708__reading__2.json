@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "e8fd5058f708__reading__2",
+ "examId": "e8fd5058f708",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2006 年考研英语真题（旧）",
+ "year": 2006,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:17:49.174Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65883,
+ "usage": {
+  "prompt_tokens": 1923,
+  "completion_tokens": 4071,
+  "total_tokens": 5994,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1923,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4071,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1923,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "斯特拉福德镇与皇家莎士比亚剧团的利益之争",
+  "gist": "文章围绕斯特拉福德镇唯一的产业——莎士比亚展开，描述了皇家莎士比亚剧团（RSC）与当地居民之间日益加剧的矛盾。镇民否认RSC对当地经济的贡献，拒绝资助剧团；而RSC认为是看戏的观众为小镇带来了大量收入。作者通过反讽手法揭示镇民的短视，对RSC的处境表示同情。",
+  "structure": [
+   "第1-2段：引出RSC与镇民两大阵营的对立关系",
+   "第3段：对比观光客与戏迷的消费行为，突出戏迷贡献",
+   "第4段：讽刺镇民哭穷却大兴土木的矛盾",
+   "第5-6段：分析RSC需要补贴的真正原因及年轻观众的重要性"
+  ],
+  "difficulty": "中等",
+  "translation": "众所周知，埃文河畔斯特拉福德只有一个产业——威廉·莎士比亚——但这个产业有两个截然不同且日益敌对的分支。一个是皇家莎士比亚剧团（RSC），它在埃文河畔的莎士比亚纪念剧院上演精彩的莎剧作品。另一个是当地居民，他们主要依靠游客为生，而这些游客来此并非为了看戏，而是为了参观安妮·海瑟薇故居、莎士比亚出生地及其他景点。\n\n斯特拉福德的可敬居民们怀疑剧院是否为他们的收入增添了哪怕一便士。他们坦率地表示不喜欢RSC的演员——那些留着长发、蓄着胡须、穿着凉鞋、吵吵闹闹的人。想想看，这实在是妙趣横生的讽刺：为他们赚取生计的莎士比亚本人就是一位演员（还蓄着胡须），而且也没少制造噪音。\n\n游客流并非完全泾渭分明。乘巴士前来的观光客——他们往往顺道游览沃里克城堡和布莱尼姆宫——通常不看戏，其中一些人甚至惊讶地发现斯特拉福德居然有一座剧院。不过，看戏的人倒是在看戏之余也会顺便游览一番。RSC认为，正是这些看戏的人为小镇带来了大量收入，因为他们会过夜（有些人甚至住四五个晚上），将大把现金注入酒店和餐馆。而观光客则可以一天之内看完所有景点，在天黑前便离开小镇。\n\n镇民们并不认同这种看法，地方议会也不直接资助皇家莎士比亚剧团。斯特拉福德历来都在哭穷。然而，镇上每家酒店似乎都在加建新的侧楼或鸡尾酒酒廊。希尔顿正在那里建造自己的酒店，你可以确信那里将装饰着\"哈姆雷特汉堡吧\"\"李尔王休息室\"\"班柯宴会厅\"等等，而且价格会非常昂贵。\n\n不管怎样，镇民们无法理解皇家莎士比亚剧团为何需要补贴。（该剧院已连续三年打破上座记录。去年，其1431个座位全年平均上座率达94%，而今年还将更好。）原因当然是成本飙升而票价一直维持在低水平。\n\n大幅提高票价将是一件令人遗憾的事，因为这会赶走年轻人，而他们是斯特拉福德最有魅力的客户群。他们完全是为看戏而来，而非为了景点。他们看起来都差不多（尽管来自四面八方）——清瘦的面庞、棱角分明、满脸专注，穿着牛仔裤和凉鞋，啃着面包卷，夜里就睡在剧院外的石板路上，以便购买预留给露宿者的20张座位票和80张站票——这些票在上午10:30售票处开门时卖给他们。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The worthy residents of Stratford doubt that the theater adds a penny to their revenue.",
+    "why": "原文明确指出\"斯特拉福德可敬的居民们怀疑剧院是否为他们的收入增添了哪怕一便士\"，即镇民否认RSC对当地收入的贡献。选项A\"镇民否认RSC对小镇收入的贡献\"是对原文的准确同义改写，doubt...adds a penny对应deny the contribution。",
+    "traps": "B项\"演员在台上台下模仿莎士比亚\"无中生有，原文只是讽刺镇民不喜欢演员的外表，而莎士比亚本人也是类似形象；C项将\"两个分支\"误解为RSC内部的两个分支，原文指的是莎士比亚产业的两个分支——RSC和镇民，而非RSC的两个部门；D项\"镇民从旅游业中获利甚少\"与原文矛盾，原文说镇民主要靠游客谋生。",
+    "tip": "注意区分\"莎士比亚产业的两个分支\"并非RSC内部分支。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "It is the playgoers, the RSC contends, who bring in much of the town's revenue because they spend the night (some of them four or five nights) pouring cash into the hotels and restaurants. The sightseers can take in everything and get out of town by nightfall.",
+    "why": "原文指出看戏的人会过夜甚至住四五个晚上，将大量现金注入酒店和餐馆；而观光客可以在天黑前看完一切便离开。通过对比可推断，戏迷比观光客花费更多，因此B项正确。注意RSC contends是RSC的主张，但题目问的是从第三段可推断出什么，这一推断逻辑成立。",
+    "traps": "A项\"观光客不能分开参观城堡和宫殿\"属于曲解原文，take in...on the side只表示顺道游览；C项\"观光客比戏迷购物更多\"原文未提及购物行为，属无中生有；D项\"戏迷除了剧院哪里都不去\"与原文矛盾，原文说the playgoers do manage a little sight-seeing。",
+    "tip": "对比句式常暗示推断方向，注意两类人群消费行为的对照。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "Stratford cries poor traditionally. Nevertheless every hotel in town seems to be adding a new wing or cocktail lounge. Hilton is building its own hotel there",
+    "why": "作者用\"Nevertheless\"（然而）转折，指出斯特拉福德一边哭穷一边大兴土木——每家酒店都在扩建，希尔顿也在建新酒店。这种矛盾说明\"哭穷\"只是传统做法，小镇实际上并不缺钱。cry poor意为\"装穷、哭穷\"，traditionally表明这是惯常伎俩，C项\"小镇并非真正缺钱\"完全吻合。",
+    "traps": "A项\"斯特拉福德负担不起扩建项目\"与转折后的事实矛盾，酒店都在扩建说明资金充裕；B项\"斯特拉福德长期处于财务困难\"是对cry poor的字面理解，忽略了Nevertheless的反讽转折；D项\"镇民过去收入微薄\"属偷换概念，原文讨论的是小镇整体财政而非个人收入。",
+    "tip": "转折词Nevertheless是理解反讽语气的关键信号词。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "the townsfolk can't understand why the Royal Shakespeare Company needs a subsidy. (The theatre has broken attendance records for three years in a row. Last year its 1,431 seats were 94 per cent occupied all year long and this year they'll do better.)",
+    "why": "原文第五段先说镇民不理解RSC为何需要补贴，随后用括号补充说明理由：剧院连续三年打破上座记录，去年上座率达94%，今年还会更好。这正是镇民认为RSC不需要补贴的依据——上座率在持续上升。D项\"剧院上座率在上升\"准确概括了这一理由。",
+    "traps": "A项\"可以通过提高票价来弥补开支\"是作者随后分析的客观原因，而非镇民的理由；B项\"公司财务管理不善\"原文未提及；C项\"演员行为不被社会接受\"虽然第二段提到镇民不喜欢演员，但这不是他们反对补贴的理由，属于张冠李戴。",
+    "tip": "括号内容常是对前文观点的补充说明，要注意其论证功能。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "It's all deliciously ironic when you consider that Shakespeare, who earns their living, was himself an actor (with a beard) and did his share of noise-making.",
+    "why": "作者通篇对镇民持批评和讽刺态度：用\"deliciously ironic\"嘲讽镇民的虚伪，用\"cries poor traditionally\"揭露其装穷本质，用\"It would be a shame\"表达对可能赶走年轻观众的惋惜，末段深情描写年轻戏迷的专注形象。这些都表明作者同情RSC的处境，支持其获得补贴。D项\"对RSC抱有同情\"正确。",
+    "traps": "A项\"支持双方\"不符合作者明显倾向RSC的立场；B项\"赞同镇民的观点\"与作者对镇民的讽刺态度完全相反；C项\"持超然态度\"忽略了文中大量反讽和感情色彩词汇所体现的鲜明立场。",
+    "tip": "态度题需关注全文的讽刺、转折和情感色彩词汇来判断倾向。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "hostile",
+    "cn": "adj. 敌对的，充满敌意的"
+   },
+   {
+    "w": "superb",
+    "cn": "adj. 极好的，一流的"
+   },
+   {
+    "w": "revenue",
+    "cn": "n. 收入，税收"
+   },
+   {
+    "w": "ironic",
+    "cn": "adj. 讽刺的，具有反讽意味的"
+   },
+   {
+    "w": "contend",
+    "cn": "v. 主张，声称；竞争"
+   },
+   {
+    "w": "subsidy",
+    "cn": "n. 补贴，津贴"
+   },
+   {
+    "w": "cocktail lounge",
+    "cn": "n. 鸡尾酒酒廊"
+   },
+   {
+    "w": "rocketed",
+    "cn": "v. 飞涨，急剧上升"
+   },
+   {
+    "w": "clientele",
+    "cn": "n. 客户群，顾客（总称）"
+   },
+   {
+    "w": "dedicated",
+    "cn": "adj. 专注的，执着的"
+   },
+   {
+    "w": "flagstones",
+    "cn": "n. 石板（铺路用的扁平石块）"
+   },
+   {
+    "w": "deliciously",
+    "cn": "adv. 妙不可言地，令人愉悦地"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It's all deliciously ironic when you consider that Shakespeare, who earns their living, was himself an actor (with a beard) and did his share of noise-making.",
+    "cn": "想想看，这一切实在是妙不可言的讽刺：为他们赚取生计的莎士比亚本人就是一位演员（还蓄着胡须），而且也没少制造噪音。",
+    "note": "主干为It's ironic when you consider that...，that引导宾语从句，who earns their living为Shakespeare的非限制性定语从句，(with a beard)为插入成分呼应前文镇民对演员的嫌弃。"
+   },
+   {
+    "en": "It is the playgoers, the RSC contends, who bring in much of the town's revenue because they spend the night (some of them four or five nights) pouring cash into the hotels and restaurants.",
+    "cn": "RSC认为，正是这些看戏的人为小镇带来了大量收入，因为他们会过夜（有些人甚至住四五个晚上），将大把现金注入酒店和餐馆。",
+    "note": "It is...who...为强调句型，强调playgoers；the RSC contends为插入语；because引导原因状语从句；pouring cash为现在分词作伴随状语。"
+   },
+   {
+    "en": "They all seem to look alike (though they come from all over) – lean, pointed, dedicated faces, wearing jeans and sandals, eating their buns and bedding down for the night on the flagstones outside the theatre to buy the 20 seats and 80 standing-room tickets held for the sleepers and sold to them when the box office opens at 10:30 a.m.",
+    "cn": "他们看起来都差不多（尽管来自四面八方）——清瘦的面庞、棱角分明、满脸专注，穿着牛仔裤和凉鞋，啃着面包卷，夜里就睡在剧院外的石板路上，以便购买预留给露宿者的20张座位票和80张站票——这些票在上午10:30售票处开门时卖给他们。",
+    "note": "主干为They seem to look alike；破折号后lean, pointed, dedicated faces为同位语补充描写；wearing/eating/bedding down三个现在分词短语并列作伴随状语；held和sold为过去分词作后置定语修饰tickets。"
+   }
+  ]
+ }
+}

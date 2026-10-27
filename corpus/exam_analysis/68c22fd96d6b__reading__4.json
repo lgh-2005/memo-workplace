@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "68c22fd96d6b__reading__4",
+ "examId": "68c22fd96d6b",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2008 年考研英语真题（旧）",
+ "year": 2008,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:21:05.486Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62703,
+ "usage": {
+  "prompt_tokens": 1741,
+  "completion_tokens": 3930,
+  "total_tokens": 5671,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1741,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3930,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1741,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国开国元勋与奴隶制的复杂关系",
+  "gist": "文章以华盛顿用奴隶牙齿做牙移植手术为引子，揭示了美国开国元勋们在奴隶制问题上的道德妥协。他们虽私下反对奴隶制，却因政治、经济利益而未积极抗争，但最终华盛顿和杰斐逊在不同程度上释放了部分奴隶。",
+  "structure": [
+   "第1段：以华盛顿牙科手术引出开国元勋不为人知的一面",
+   "第2段：历史学家开始关注奴隶制在国父生活中的角色",
+   "第3-4段：奴隶制是当时政治经济基石，国父受制于时代文化",
+   "第5段：杰斐逊的政治生涯依赖奴隶制并扩展了奴隶制",
+   "第6段：杰斐逊和华盛顿最终在不同程度上释放了奴隶"
+  ],
+  "difficulty": "中等",
+  "translation": "1784年，乔治·华盛顿52岁，距他成为美国总统还有五年，当时他几乎已经没有牙齿了。于是他雇了一位牙医将九颗牙齿移植到自己的颌骨中——这些牙齿是从他的奴隶口中拔出来的。\n\n这与大多数人从历史书上记住的那个砍樱桃树的乔治形象大相径庭。但近来，许多历史学家开始关注奴隶制在开国一代人生活中所扮演的角色。他们在一定程度上受到1998年公布的DNA证据的推动，该证据几乎确凿地证明了托马斯·杰斐逊与他的女奴萨莉·赫明斯至少育有一个孩子。而且仅在过去30年间，学者们才开始自下而上地审视历史。几位历史学家的著作揭示了这个国家早期领导人所做的道德妥协，以及这个国家初创时期的脆弱本质。更重要的是，他们认为许多开国元勋们知道奴隶制是错误的——但大多数人几乎没有采取行动去反对它。\n\n历史学家们说，最主要的是，国父们受到了他们所处时代文化的束缚。虽然华盛顿和杰斐逊私下表达了对奴隶制的厌恶，但他们也明白奴隶制是他们帮助创建的这个国家的政治和经济基石的一部分。\n\n首先，南方承受不起失去奴隶的代价。拥有奴隶\"就像拥有一个大额银行账户\"，维恩切克说道，他是《不完美的上帝：乔治·华盛顿、他的奴隶和美国的创建》一书的作者。如果没有对这一\"特殊制度\"的保护，南方各州不会签署宪法，其中包括一项将一个奴隶按五分之三个人来计算以用于国会代表席位分配的条款。\n\n而且这些政治家的政治生涯也依赖于奴隶制。五分之三的计算公式通过在选举人团中增加南方各州的选票，使杰斐逊在1800年总统大选中以微弱优势获胜。上任后，杰斐逊通过1803年的路易斯安那购地扩展了奴隶制；新购得的土地被划分为13个州，其中包括三个蓄奴州。\n\n尽管如此，杰斐逊释放了赫明斯的孩子们——尽管没有释放赫明斯本人或他的大约150名其他奴隶。华盛顿在独立战争期间目睹了黑人士兵的英勇表现后，开始相信人人生而平等，他克服了亲属的强烈反对，在遗嘱中给予他的奴隶们自由。就在仅仅十年前，这样的行为在弗吉尼亚还需要获得立法机关的批准。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "That's a far different image from the cherry-tree-chopping George most people remember from their history books.",
+    "why": "文章第一段讲述华盛顿从奴隶口中拔牙移植的事实，第二段首句紧接着指出\"这与大多数人从历史书中记住的砍樱桃树的乔治形象大相径庭\"，说明提及牙科手术是为了揭示华盛顿不为人知的另一面。后文也说历史学家开始\"自下而上\"审视历史，揭示国父们的道德妥协，印证了D选项\"揭示其生活中不为人知的一面\"。",
+    "traps": "A项\"展示过去原始的医疗水平\"属于无中生有，文章重点不在医疗技术；B项\"展示奴隶制的残酷\"虽有一定关联，但此处例子的作用是引出华盛顿形象的另一面，而非专门论证奴隶制残酷；C项\"强调奴隶在美国历史中的角色\"范围过大，例子仅聚焦于华盛顿个人的不为人知之处。",
+    "tip": "例证题要找例子所服务的论点，关注例子前后的总结句。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Works of several historians reveal the moral compromises made by the nation's early leaders and the fragile nature of the country's infancy.",
+    "why": "原文明确提到历史学家的著作揭示了\"国家初创时期的脆弱本质（the fragile nature of the country's infancy）\"。fragile对应B选项中的delicate，infancy对应in its early days，situations对应国家面临的道德妥协、奴隶制等复杂局面，因此B项是对原文的合理推断和同义改写。",
+    "traps": "A项\"DNA技术被广泛应用于历史研究\"属于过度推断，原文只提到1998年的一个DNA证据案例，不能推出\"广泛应用\"；C项\"历史学家故意编造杰斐逊生平故事\"与原文相悖，DNA证据证实了杰斐逊的事实；D项\"政治妥协在美国历史中随处可见\"偷换概念，原文说的是moral compromises（道德妥协），且仅限于early leaders。",
+    "tip": "推断题注意同义替换，fragile≈delicate，infancy≈early days。"
+   },
+   {
+    "number": 38,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "While Washington and Jefferson privately expressed distaste for slavery, they also understood that it was part of the political and economic bedrock of the country they helped to create.",
+    "why": "文章多处展示杰斐逊对奴隶制的矛盾态度：他私下厌恶奴隶制，却依赖奴隶制获得政治利益（五分之三条款助其当选）；他通过路易斯安那购地扩展了奴隶制，却又释放了赫明斯的孩子们。这些既支持又反对、既依赖又厌恶的表现综合表明，他对奴隶制的态度是复杂的（complex），C项最为准确。",
+    "traps": "A项\"政治观点改变了他对奴隶制的态度\"缺乏原文依据，文中并未说其政治观点导致态度转变；B项\"父亲身份使他释放儿童奴隶\"属于过度推断，原文只说他释放了赫明斯的孩子，未说明原因是父亲身份；D项\"与奴隶的关系玷污了他的声誉\"在文中没有提及。",
+    "tip": "综合全文多处信息做推断，选择最全面、最中性的概括。"
+   },
+   {
+    "number": 39,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The three-fifths formula handed Jefferson his narrow victory in the presidential election of 1800 by inflating the votes of the southern states in the Electoral College.",
+    "why": "原文明确指出五分之三计算公式通过夸大南方州选票帮助杰斐逊赢得1800年大选的微弱胜利，这直接证明一些开国元勋在政治上从奴隶制中获益，与A项完全吻合。",
+    "traps": "B项\"奴隶没有投票权\"虽可能是历史事实，但原文并未直接讨论奴隶的投票权问题，属于无中生有；C项\"奴隶主通常有大额储蓄账户\"曲解原文，原文用\"like having a large bank account\"是比喻奴隶的经济价值，并非说他们真的有大额存款；D项\"奴隶制被认为是一种特殊制度\"中peculiar institution在原文中加了引号，是当时的委婉说法而非文章观点，且该项并非文章论证的重点。",
+    "tip": "细节题需精准回原文验证，注意区分比喻义和字面义。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Washington, who had begun to believe that all men were created equal after observing the bravery of the black soldiers during the Revolutionary War, overcame the strong opposition of his relatives to grant his slaves their freedom in his will.",
+    "why": "原文用after引导的时间状语从句明确指出，华盛顿释放奴隶的信念源于独立战争期间\"目睹了黑人士兵的英勇表现\"，这属于军事经历（military experience），因此B项正确。正是这段战争中的亲身经历使他开始相信人人生而平等，最终在遗嘱中释放了奴隶。",
+    "traps": "A项\"道德考量\"有一定干扰性，但原文强调的触发因素是具体的军事经历而非抽象的道德思考；C项\"经济状况\"在文中无任何提及；D项\"政治立场\"与华盛顿释放奴隶的原因无关，文中反而说他是克服了亲属的强烈反对才这样做的。",
+    "tip": "注意因果关系的定位，after/because/since等信号词指向原因。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "toothless",
+    "cn": "adj. 无牙的，没有牙齿的"
+   },
+   {
+    "w": "spur",
+    "cn": "v. 激励，促进，推动"
+   },
+   {
+    "w": "compromise",
+    "cn": "n. 妥协，折中；v. 损害，危及"
+   },
+   {
+    "w": "fragile",
+    "cn": "adj. 脆弱的，易碎的"
+   },
+   {
+    "w": "hamper",
+    "cn": "v. 妨碍，阻碍，束缚"
+   },
+   {
+    "w": "bedrock",
+    "cn": "n. 基石，基础；基岩"
+   },
+   {
+    "w": "peculiar",
+    "cn": "adj. 特殊的，独特的；奇怪的"
+   },
+   {
+    "w": "clause",
+    "cn": "n. 条款；从句"
+   },
+   {
+    "w": "inflate",
+    "cn": "v. 夸大，膨胀；使充气"
+   },
+   {
+    "w": "legislative",
+    "cn": "adj. 立法的，有立法权的"
+   },
+   {
+    "w": "distaste",
+    "cn": "n. 厌恶，反感"
+   },
+   {
+    "w": "congressional",
+    "cn": "adj. 国会的，议会的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "They have been spurred in part by DNA evidence made available in 1998, which almost certainly proved Thomas Jefferson had fathered at least one child with his slave Sally Hemings.",
+    "cn": "他们在一定程度上受到1998年公布的DNA证据的推动，该证据几乎确凿地证明了托马斯·杰斐逊与他的女奴萨莉·赫明斯至少育有一个孩子。",
+    "note": "主干为They have been spurred by DNA evidence；made available in 1998是过去分词短语作后置定语修饰evidence；which引导非限制性定语从句；had fathered是过去完成时。"
+   },
+   {
+    "en": "Washington, who had begun to believe that all men were created equal after observing the bravery of the black soldiers during the Revolutionary War, overcame the strong opposition of his relatives to grant his slaves their freedom in his will.",
+    "cn": "华盛顿在独立战争期间目睹了黑人士兵的英勇表现后，开始相信人人生而平等，他克服了亲属的强烈反对，在遗嘱中给予他的奴隶们自由。",
+    "note": "主干为Washington overcame the opposition to grant freedom；who引导非限制性定语从句，内含that引导的宾语从句和after引导的时间状语；to grant为不定式作目的状语。"
+   },
+   {
+    "en": "The southern states would not have signed the Constitution without protections for the 'peculiar institution,' including a clause that counted a slave as three fifths of a man for purposes of congressional representation.",
+    "cn": "如果没有对这一\"特殊制度\"的保护，南方各州不会签署宪法，其中包括一项将一个奴隶按五分之三个人来计算以用于国会代表席位分配的条款。",
+    "note": "主干为虚拟语气would not have signed；without引导含蓄条件；including引出补充说明；that引导定语从句修饰clause；for purposes of为介词短语表目的。"
+   }
+  ]
+ }
+}

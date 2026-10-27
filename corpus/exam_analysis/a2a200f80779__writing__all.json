@@ -1,0 +1,120 @@
+{
+ "schemaVersion": 1,
+ "id": "a2a200f80779__writing__all",
+ "examId": "a2a200f80779",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2015 年 12 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T04:42:03.594Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 81272,
+ "usage": {
+  "prompt_tokens": 595,
+  "completion_tokens": 8910,
+  "total_tokens": 9505,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7601
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 595
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "根据图片写一篇150-200词的短文，聚焦于信息技术发达背景下获取有用信息的困难，需描述图片、分析原因并提出建议。",
+    "outline": [
+     "第一段：描述图片中人物被海量信息包围的场景，引出信息技术发达但获取有用信息困难的主题。",
+     "第二段：从信息过载、虚假信息泛滥、算法推荐造成过滤气泡等角度分析原因。",
+     "第三段：提出培养批判性思维、主动筛选可靠信息源等建议，并总结全文。"
+    ],
+    "sample": "As is vividly depicted in the picture, a man is drowning in a sea of information, with countless icons, messages, and pop-ups swirling around him. Though he reaches out for useful knowledge, he only grasps at fragments of noise. This scene reveals a paradox of our digital age: advanced information technology does not necessarily guarantee easy access to useful information.\n\nSeveral factors account for this difficulty. First, information overload is overwhelming; with endless updates from social media, news apps, and emails, we are constantly bombarded by irrelevant or trivial content. Second, fake news and misleading advertisements spread rapidly online, making it hard to distinguish trustworthy sources from dubious ones. Third, algorithm-driven recommendations often create a \"filter bubble,\" trapping users in a loop of homogeneous information while pushing away diverse and valuable perspectives. As a result, the very tools designed to inform us can also mislead or distract us.\n\nTo overcome this, we need to sharpen our critical thinking and information literacy. Instead of passively consuming whatever appears on screen, we should actively seek reliable sources, cross-check facts, and curate our digital diet. Only by doing so can we truly benefit from information technology and obtain the useful information we need.",
+    "phrases": [
+     {
+      "en": "be drowning in a sea of information",
+      "cn": "淹没在信息的海洋中；用于描述信息过载的状态"
+     },
+     {
+      "en": "a paradox of our digital age",
+      "cn": "数字时代的一个悖论；用于引出看似矛盾的现象"
+     },
+     {
+      "en": "information overload is overwhelming",
+      "cn": "信息过载令人不堪重负；用于描述信息过多带来的压力"
+     },
+     {
+      "en": "be constantly bombarded by irrelevant or trivial content",
+      "cn": "不断受到无关或琐碎内容的轰炸；强调被动接收大量无用信息"
+     },
+     {
+      "en": "algorithm-driven recommendations often create a 'filter bubble'",
+      "cn": "算法驱动的推荐常常造成“过滤气泡”；指用户被同质化信息包围"
+     },
+     {
+      "en": "sharpen our critical thinking and information literacy",
+      "cn": "提高批判性思维和信息素养；提出解决方案时的常用表达"
+     },
+     {
+      "en": "curate our digital diet",
+      "cn": "管理我们的数字信息摄入；比喻主动筛选网络信息"
+     },
+     {
+      "en": "Only by doing so can we truly benefit from...",
+      "cn": "只有这样做，我们才能真正从……中受益；倒装句，强调条件"
+     }
+    ],
+    "pitfalls": [
+     "只描述图片表面，未分析信息获取困难的原因，内容单薄。",
+     "套用开头结尾万能模板，与信息技术主题脱节。",
+     "反复使用'get information'等简单词汇，表达单调。",
+     "字数控制不当，低于150词或超出200词。",
+     "原因分析缺少因果链，逻辑不连贯。"
+    ],
+    "upgrades": [
+     {
+      "plain": "There is too much information.",
+      "better": "Information overload is overwhelming.",
+      "note": "用名词短语作主语，表达更正式、更有力，符合书面语要求。"
+     },
+     {
+      "plain": "We are always receiving useless messages.",
+      "better": "We are constantly bombarded by irrelevant or trivial content.",
+      "note": "使用被动语态和高级词汇'bombarded'，形象生动，表现信息侵袭感。"
+     },
+     {
+      "plain": "We should choose good information.",
+      "better": "We should curate our digital diet.",
+      "note": "用'curate'和'digital diet'比喻，新颖且地道，提升语言层次。"
+     },
+     {
+      "plain": "If we do this, we can get useful information.",
+      "better": "Only by doing so can we truly benefit from information technology and obtain the useful information we need.",
+      "note": "倒装句强调条件，且用'benefit from'和'obtain'替换'get'，句式更丰富。"
+     },
+     {
+      "plain": "Fake news makes it hard to find true information.",
+      "better": "Fake news and misleading advertisements spread rapidly online, making it hard to distinguish trustworthy sources from dubious ones.",
+      "note": "增加具体细节和因果结构，使论证更充分，同时使用高级词汇。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the picture, a man is drowning in a sea of information, with countless icons, messages, and pop-ups swirling around him. （图片生动描绘了一个人淹没在信息海洋中，无数图标、信息和弹窗在周围旋转。）",
+   "This scene reveals a paradox of our digital age: advanced information technology does not necessarily guarantee easy access to useful information. （这一场景揭示了数字时代的一个悖论：先进的信息技术并不必然保证轻松获取有用信息。）",
+   "Third, algorithm-driven recommendations often create a 'filter bubble,' trapping users in a loop of homogeneous information while pushing away diverse and valuable perspectives. （第三，算法驱动的推荐常常造成“过滤气泡”，使用户陷入同质化信息的循环，同时排斥多元而有价值的观点。）",
+   "Only by doing so can we truly benefit from information technology and obtain the useful information we need. （只有这样，我们才能真正从信息技术中受益，并获得我们需要的有用信息。）"
+  ]
+ }
+}

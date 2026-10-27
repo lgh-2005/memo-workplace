@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "0e8abb45f7c0__listening__all",
+ "examId": "0e8abb45f7c0",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2022 年 12 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:40:12.515Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 50409,
+ "usage": {
+  "prompt_tokens": 2228,
+  "completion_tokens": 2696,
+  "total_tokens": 4924,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2228,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2696,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2228,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于题目选项的语言特征与正确答案进行推理分析，不涉及任何对录音内容的编造。",
+  "overview": "本场听力共 7 段，含 25 题。第 1-2 段（Q1-Q8）为长对话，各 4 题；第 3-7 段（Q9-Q25）为短文/讲座，各 3-4 题。由选项措辞推测：第 1 段围绕论文写作与选题，第 2 段涉及营养/饮食类书籍作者，第 3 段关于大脑细胞生长与健康，第 4 段聚焦管理者与邮件处理习惯，第 5 段谈食物外观与营销，第 6 段涉及环保产品市场，第 7 段关于喷泉硬币的去向与管理。",
+  "strategy": [
+   "预读选项时快速圈出各选项间的差异词，如人名、数字、动作动词，听音时针对性捕捉",
+   "选项中出现 He/She/They 等主语时，先判断题目在问哪个角色，避免张冠李戴",
+   "含有绝对词（only、all、exclusively）的选项往往是干扰项，需额外警惕",
+   "长对话中每题答案通常按顺序出现，听到与某题选项高度吻合的关键词时果断选定，不要回头犹豫",
+   "短文听力开头 1-2 句常对应第一题，结尾常对应最后一题，首尾信息务必集中注意力",
+   "数字、百分比出现时立刻记录，并关注其修饰对象，防止选项间数字张冠李戴"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "论文写作进度、选题与导师建议",
+    "optionSignals": "Q1 四个选项均以 She 开头描述女方状态（hasn't started / hasn't decided / proofreading / working on），属于典型的\"现状判断\"题。Q2-Q3 以 He 开头描述男方或导师行为，Q4 为祈使/建议类动词短语（Change / Narrow down / Consult / Follow），提问建议或下一步行动。",
+    "tips": [
+     "Q1 四选项描述论文不同阶段，听时关注时间状语和否定词（haven't / not yet）来定位进度",
+     "Q4 选项均为动词原形开头，典型的'建议/打算做什么'题，留意 should / suggest / why not 等建议信号词",
+     "dissertation、proofreading、references 等学术词汇需提前熟悉发音"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "某营养/饮食类畅销书作者及其观点",
+    "optionSignals": "Q5 选项涉及数字（12 books / a million copies）与身份（nutritionist），为人物身份或成就判断题。Q6 四选项均为名词短语说明原因/背景，Q7 问目标受众（general public / overweight / medical community），Q8 为建议类动词短语（Switch / Follow / Adhere / Cut）。",
+    "tips": [
+     "Q5 注意区分具体数字的修饰对象，12 books 与 a million copies 易混淆",
+     "Q7 四个选项指向不同人群，听音时关注 intended for / aimed at / written for 等表达",
+     "Q8 建议题中 personalized 是核心区分词，若听到 individual / tailored / specific 等近义替换可锁定答案"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "大脑新细胞生长、负面经历与免疫健康",
+    "optionSignals": "Q9 描述实验结果变化（increased / doubled / depression / restless），含比较与程度词。Q10 四选项均为 To + 动词，问目的。Q11 描述长期健康影响（healing / immunity / susceptible / protection），考查因果关系。",
+    "tips": [
+     "Q9 含有 doubled 和 dramatically 等程度词，听音时注意数据对比的具体表述",
+     "Q10 为目的题，听时锁定 in order to / so that / to 等目的状语标志词",
+     "Q11 涉及正面与负面健康效果的对立，注意区分 protect 与 susceptible 的方向性"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "管理者的时间分配、邮件习惯与领导力",
+    "optionSignals": "Q12 四选项均为现在分词短语描述管理者问题行为（Placing / Being overwhelmed / Lacking / Spending），典型\"问题识别\"题。Q13 为负面后果（challenged / bankrupt / unexpected / major problems），Q14-Q15 为建议/对策类。",
+    "tips": [
+     "Q12 选项 D 'Spending too much time handling email' 与 Q15 'Filter email / Check only when necessary' 形成呼应，可交叉验证",
+     "Q14 中 Motivate and inspire 与 Keep an eye on 方向截然相反，听时注意情感色彩词",
+     "Q15 含 self-control 这一抽象概念，可能对应录音中 discipline / restrain 等近义表达"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "食物外观、营养宣传与健康食品营销策略",
+    "optionSignals": "Q16 为主旨/话题判断题，四选项分别指向 supply / marketing / advertisements / appearance。Q17 以 By + 动名词 描述方式方法。Q18 以 They can 开头描述可行策略，为推断/建议题。",
+    "tips": [
+     "Q16 为段落主旨题，通常在开头 1-2 句即可锁定，appearance 与 visually appealing 构成同义链",
+     "Q17 方式题中 nutrients 与 aesthetics 形成科学 vs 美学的对立，注意录音侧重点",
+     "Q18 选项 B 中 visually appealing 与 Q16 答案 D 中 appearance 呼应，可做交叉印证"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "环保产品市场增长与消费者行为",
+    "optionSignals": "Q19 以 It has 开头描述市场现状（surge / criticism / small businesses / competition），为现象描述题。Q20 解释原因（know more / mass production / favor novel / quality improved）。Q21 以动名词描述消费者具体行为（Purchasing / Writing / Demonstrating / Telling）。",
+    "tips": [
+     "Q19 中 small businesses 与 global companies 指向完全不同的市场主体，听时注意主语",
+     "Q20 为因果题，关注 because / due to / as a result of 等因果连接词",
+     "Q21 涉及社交媒体（social media），若听到 online / post / share / review 等词可快速锁定"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "喷泉中硬币的影响、用途与相关事件",
+    "optionSignals": "Q22 问硬币造成的问题（workload / blocking / ritual / polluting），为负面影响题。Q23-Q24 关注硬币/资金去向（charity / maintenance / supermarket / wages），含金额（$40,000）。Q25 描述某人行为（arrested / sentenced / collected / stole），为事件细节题。",
+    "tips": [
+     "Q23 与 Q24 都涉及钱的去向但指向不同对象，听时区分 fountain coins 与某特定 fountain 的收入",
+     "Q25 选项 D 中 magnetic stick 为高辨识度细节词，在听音中一旦出现即可锁定",
+     "数字 34 years 与 $40,000 分属不同选项，注意各自修饰对象避免混淆"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "dissertation",
+    "cn": "学位论文"
+   },
+   {
+    "w": "proofreading",
+    "cn": "校对，审读"
+   },
+   {
+    "w": "viable",
+    "cn": "可行的，切实可行的"
+   },
+   {
+    "w": "nutritionist",
+    "cn": "营养学家"
+   },
+   {
+    "w": "carbohydrate",
+    "cn": "碳水化合物"
+   },
+   {
+    "w": "susceptible",
+    "cn": "易受影响的，易感染的"
+   },
+   {
+    "w": "immunity",
+    "cn": "免疫力"
+   },
+   {
+    "w": "aesthetics",
+    "cn": "美学，审美"
+   },
+   {
+    "w": "visually appealing",
+    "cn": "视觉上吸引人的"
+   },
+   {
+    "w": "environment-friendly",
+    "cn": "环保的，对环境友好的"
+   },
+   {
+    "w": "maintenance",
+    "cn": "维护，保养"
+   },
+   {
+    "w": "personalized",
+    "cn": "个性化的，量身定制的"
+   },
+   {
+    "w": "methodology",
+    "cn": "方法论，研究方法"
+   },
+   {
+    "w": "magnetic stick",
+    "cn": "磁力棒"
+   }
+  ]
+ }
+}

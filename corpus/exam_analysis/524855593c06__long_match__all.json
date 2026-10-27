@@ -1,0 +1,238 @@
+{
+ "schemaVersion": 1,
+ "id": "524855593c06__long_match__all",
+ "examId": "524855593c06",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2021 年 6 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:34:36.818Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33363,
+ "usage": {
+  "prompt_tokens": 959,
+  "completion_tokens": 2191,
+  "total_tokens": 3150,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 959,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2191,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 959,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "马可尼与无线通信发展历程",
+  "strategy": [
+   "先通读10条陈述句，标记高频专有名词（Marconi）及各句独特信息词",
+   "按时间线索分类：早年(B/C)、成年(I/H)、晚年(G/K)，缩小匹配范围",
+   "关注态度/评价类词汇（disapproved, alienated, complement），这些词常被原文同义替换",
+   "利用逻辑关系词（because of, despite, in order to）快速定位段落中的因果/让步结构",
+   "优先匹配含具体细节（commercial broadcasting, fascist regime）的题目，再处理概括性题目"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "马可尼对我们当今对通信的理解起了核心作用。",
+    "keywords": [
+     "central",
+     "present-day",
+     "understanding",
+     "communication"
+    ],
+    "paraphrase": "central 可能被替换为 fundamental/crucial/key；present-day understanding 可能被改写为 how we perceive communication today 或 modern concept of communication。",
+    "tip": "定位 F 段中涉及马可尼对当代通信认知贡献的评价性语句。"
+   },
+   {
+    "number": 37,
+    "answer": "I",
+    "cn": "成年后的马可尼有一种直觉，即他必须忠于政治人物才能具有影响力。",
+    "keywords": [
+     "adult",
+     "intuition",
+     "loyal",
+     "politicians",
+     "influential"
+    ],
+    "paraphrase": "intuition 可能被替换为 instinct/sense；loyal to politicians 可能改写为 allegiance to political figures 或 close to those in power；influential 可能替换为 powerful/have an impact。",
+    "tip": "定位 I 段中马可尼成年后主动亲近政治人物以获取影响力的描述。"
+   },
+   {
+    "number": 38,
+    "answer": "D",
+    "cn": "马可尼不赞成将无线通信用于商业广播。",
+    "keywords": [
+     "disapproved",
+     "wireless",
+     "commercial broadcasting"
+    ],
+    "paraphrase": "disapproved 可能被替换为 opposed/was against/objected to；commercial broadcasting 可能改写为 using radio for business/entertainment purposes。",
+    "tip": "扫读 D 段中马可尼对广播商业化持反对态度的关键否定词。"
+   },
+   {
+    "number": 39,
+    "answer": "J",
+    "cn": "马可尼的例子表明，理论概念与实验在推动科学技术进步方面是相辅相成的。",
+    "keywords": [
+     "theoretical concepts",
+     "experiments",
+     "complement",
+     "progress"
+    ],
+    "paraphrase": "complement each other 可能被替换为 go hand in hand/work together/reinforce one another；theoretical concepts 与 experiments 的互补关系可能被表述为 theory and practice。",
+    "tip": "定位 J 段中关于理论与实践关系的总结性论述。"
+   },
+   {
+    "number": 40,
+    "answer": "C",
+    "cn": "马可尼真正的兴趣在于发展全球性的无线通信。",
+    "keywords": [
+     "real interest",
+     "worldwide",
+     "wireless communication"
+    ],
+    "paraphrase": "real interest 可能被替换为 true passion/primary goal/main ambition；worldwide 可能被改写为 global/across the globe/international。",
+    "tip": "在 C 段中寻找表达马可尼核心志向或真正热情所在的语句。"
+   },
+   {
+    "number": 41,
+    "answer": "E",
+    "cn": "马可尼毕生致力于使无线通信变得易于使用。",
+    "keywords": [
+     "whole life",
+     "simple to use",
+     "wireless communication"
+    ],
+    "paraphrase": "spent his whole life 可能被替换为 devoted his lifetime/lifelong dedication；simple to use 可能改写为 user-friendly/accessible/easy to operate。",
+    "tip": "定位 E 段中强调马可尼终身简化无线通信技术的表述。"
+   },
+   {
+    "number": 42,
+    "answer": "K",
+    "cn": "由于长期与权力人物的关系，马可尼无法与意大利的法西斯政权切断联系。",
+    "keywords": [
+     "long-time connection",
+     "people in power",
+     "fascist regime",
+     "Italy"
+    ],
+    "paraphrase": "unable to cut himself off from 可能被替换为 could not distance himself from/was entangled with；fascist regime 为高辨识度定位词，原文可能直接出现或用 Mussolini's government 替代。",
+    "tip": "直接在 K 段中搜索 fascist/regime/Mussolini 等高辨识度专有词。"
+   },
+   {
+    "number": 43,
+    "answer": "G",
+    "cn": "在晚年，马可尼对人们生活的方方面面产生了巨大的影响。",
+    "keywords": [
+     "later years",
+     "tremendous influence",
+     "all aspects",
+     "life"
+    ],
+    "paraphrase": "tremendous influence 可能被替换为 profound/enormous impact；all aspects of people's life 可能改写为 every facet of daily life/permeated society。",
+    "tip": "定位 G 段中描述马可尼晚年广泛社会影响力的概括性语句。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "cn": "连接19世纪与当今时代的是无线通信的发展。",
+    "keywords": [
+     "19th century",
+     "present time",
+     "connected",
+     "wireless communication"
+    ],
+    "paraphrase": "connected...and 可能被替换为 bridged/linked；the 19th century and our present time 可能改写为 from the 1800s to the modern era，强调无线通信的时代桥梁作用。",
+    "tip": "在 B 段中寻找涉及时间跨度（19世纪至今）与无线通信关联的表述。"
+   },
+   {
+    "number": 45,
+    "answer": "H",
+    "cn": "尽管拥有自主独立性，马可尼仍感到被疏远，并深受缺乏认可之苦。",
+    "keywords": [
+     "autonomy",
+     "alienated",
+     "lack of acceptance"
+    ],
+    "paraphrase": "autonomy 可能被替换为 independence/self-reliance；alienated 可能改写为 isolated/estranged；lack of acceptance 可能替换为 not being recognized/feeling like an outsider。",
+    "tip": "定位 H 段中 despite 让步逻辑下马可尼孤立感与不被认可的情感描写。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "intuition",
+    "cn": "直觉，直觉力（n.）"
+   },
+   {
+    "w": "complement",
+    "cn": "补充，互补（v.）"
+   },
+   {
+    "w": "alienated",
+    "cn": "疏远的，被孤立的（adj.）"
+   },
+   {
+    "w": "autonomy",
+    "cn": "自主性，自治（n.）"
+   },
+   {
+    "w": "fascist regime",
+    "cn": "法西斯政权（n.短语）"
+   },
+   {
+    "w": "disapproved",
+    "cn": "不赞成，反对（v.过去式）"
+   },
+   {
+    "w": "tremendous",
+    "cn": "巨大的，极大的（adj.）"
+   },
+   {
+    "w": "exerted",
+    "cn": "施加，发挥（v.过去式）"
+   }
+  ]
+ }
+}

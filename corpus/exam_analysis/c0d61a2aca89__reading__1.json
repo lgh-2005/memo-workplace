@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "c0d61a2aca89__reading__1",
+ "examId": "c0d61a2aca89",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 12 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:39:57.873Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66784,
+ "usage": {
+  "prompt_tokens": 1751,
+  "completion_tokens": 4277,
+  "total_tokens": 6028,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1751,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4277,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1751,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "自动化对美国就业与经济的冲击",
+  "gist": "文章探讨了自动化对美国经济和就业的深远影响。作者指出自动化正大规模取代各行业岗位，制造业中绝大部分失业源于技术进步而非贸易。作者对自动化所谓的积极效应持怀疑态度，认为尽管自动化不可抗拒，但其对工人的负面影响不容忽视，呼吁社会关注民众的经济安全问题。",
+  "structure": [
+   "第1-2段：引入话题，以社区实例展示自动化取代就业的现状",
+   "第3-4段：数据佐证制造业失业主因是技术而非贸易，工人深感经济不安全",
+   "第5段：分析人们忽视自动化风险的原因，表达对其正面效应的质疑",
+   "第6-7段：以劳动力数据强化论点，呼吁正视自动化并保障经济安全"
+  ],
+  "difficulty": "中等",
+  "translation": "自动化及其在经济中所扮演角色的话题已引起美国公共讨论的广泛关注。从广义上讲，技术——尤其是自动化——正在深刻重塑我们的工作方式。我们需要为即将到来的变革制定计划。\n\n我们不必舍近求远，只需看看我们自己的社区，就能看到自动化带来的毁灭性影响。从自动化仓库到无收银员杂货店，再到以自助借还取代人工服务的社区图书馆——自动化正在越来越多地取代工作岗位，而留下的优质新岗位却少之又少。\n\n制造业的数据令人触目惊心。尽管人们普遍担忧贸易的影响，但一份近期报告显示，制造业中仅有13%的失业归因于贸易——其余的失业都是技术进步所致。\n\n正因如此，越来越多的人开始批评技术在经济中不断扩大的角色。我们国家的制造产出比以往任何时候都高，但使用的工人却更少了。然而，损失不仅仅出现在工厂——软件和信息技术也在对多数人认为不受快速变化经济冲击的岗位产生巨大影响。美国正在发生一场深刻变革，对美国家庭产生着不利影响。不管政策制定者和政客们是否承认，工人们已经明确表达了对自身经济不安全感的担忧以及想要保住美国优质工作岗位的愿望。\n\n那么，为什么人们如此执意忽视自动化的危险呢？在规划未来比以往任何时候都重要的当下，他们却未能着眼长远。抵制自动化是徒劳的：它就像之前的工业化一样不可避免。我真诚地希望那些宣称自动化将使我们更高效并为新职业铺平道路的人是对的，但自动化对工人的有害影响这一现实让我持怀疑态度。目前没有人能说清新的工作岗位将从何而来、何时出现，任何明智的企业或国家都应为各种可能做好准备。\n\n我并没有夸大危险：看看劳动力市场发生了什么。根据经济研究，25至54岁的适龄工作男性中，每六人就有一人没有工作。五十年前，该年龄段几乎100%的男性都在工作。与此同时，女性的劳动参与率已下滑至上世纪80年代末的水平。\n\n美国家庭和知名商界领袖都意识到自动化带来了严重问题。大学学位的价值在缩水，我们的向上流动性在下降。如果我们想要一个让每个人都能获得经济安全的经济体，我们就需要开始思考如何正当地应对自动化问题。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "From automated warehouses to cashierless grocery stores to neighborhood libraries that offer self-checkout lanes instead of employing real people—automation is increasingly replacing jobs and leaving too few good new jobs behind.",
+    "why": "原文第二段描述社区中可观察到的现象：自动化仓库、无收银员商店、自助图书馆等正取代人工岗位，且留下的好工作岗位太少。这说明社区的就业机会正在消退（fading employment opportunities），与D选项完全吻合。关键短语\"replacing jobs\"和\"too few good new jobs behind\"直接对应\"fading\"。",
+    "traps": "A\"对自动化日益增长的热情\"——文中描述的是自动化的负面影响而非人们对它的热情，属于偷换概念；B\"从体力劳动转向IT工作\"——文中未提及岗位从手工转向IT的趋势，属于无中生有；C\"他们对就业的看法在改变\"——文中描述的是就业机会在减少的事实，而非人们看法的变化，属于偷换对象。",
+    "tip": "注意区分\"客观事实的描述\"与\"主观看法的改变\"。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Despite the widespread fears about trade, a recent report showed that just 13 percent of jobs lost in manufacturing are due to trade—the rest of the losses have been due to advances in technology.",
+    "why": "原文用\"Despite the widespread fears about trade\"表明人们对贸易影响的担忧十分普遍，但报告数据显示贸易仅导致13%的制造业失业，其余均因技术进步所致。这意味着人们对贸易影响的担忧被夸大了（exaggerated），实际元凶是自动化技术。B选项准确概括了这一推断。",
+    "traps": "A\"制造业正在快速衰退\"——文中第四段明确指出美国制造产出比以往更高，只是工人更少，并非行业衰退，属于曲解原文；C\"对贸易的恐惧传播广泛\"——虽然原文提及widespread fears，但这只是report的背景铺垫而非报告结论，答非所问；D\"贸易对就业的影响令人震惊\"——staggering形容的是制造业统计数据，而非贸易影响本身，且报告恰恰说明贸易影响不大，属于张冠李戴。",
+    "tip": "注意让步结构\"Despite…but/only\"中转折后才是作者要表达的重点。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Something transformative is happening in America that is having an adverse effect on American families. Whether policymakers and politicians admit it or not, workers have made clear their feelings about their economic insecurity and desire to keep good jobs in America.",
+    "why": "原文明确指出变革对美国家庭产生了不利影响（adverse effect），工人们已表达了对\"经济不安全感\"（economic insecurity）的感受。\"economic insecurity\"直接对应B选项中的\"increasingly vulnerable\"（越来越脆弱/易受冲击）。文中多处信息（岗位被取代、好工作减少）共同支撑这一判断。",
+    "traps": "A\"感到被政客忽视\"——原文说\"Whether policymakers…admit it or not\"，强调的是政客是否承认现实，而非工人感到被忽视，属于过度推断；C\"不断适应变化\"——文中未提及工人在积极适应，而是强调他们的不安全感，属于无中生有；D\"不断抱怨但无济于事\"——工人表达的是经济不安全感和保住工作的愿望，并非无效的抱怨，属于歪曲语气。",
+    "tip": "精准对应原文情感词汇：insecurity=vulnerable。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "I sincerely hope that those who assert that automation will make us more effective and pave the way for new occupations are right, but the reality of automation's detrimental effects on workers makes me skeptical.",
+    "why": "作者用\"sincerely hope…are right\"表达美好愿望，紧接着用\"but…makes me skeptical\"转折表明自己的真实态度：对自动化声称的积极效应（使人更高效、创造新职业）持怀疑态度。C选项中\"alleged positive effects\"对应那些人\"assert\"的内容，\"doubtful\"对应作者的\"skeptical\"，完全吻合。",
+    "traps": "A\"将产生与工业化相同的影响\"——原文将自动化与工业化类比是说两者同样\"不可避免\"（inevitable），而非影响相同，属于偷换比较点；B\"为明智企业提供替代方案\"——原文\"prepare for all alternatives\"说的是为各种可能做准备，并非自动化本身提供替代方案，属于曲解原文；D\"有害影响不可避免\"——虽然原文提及detrimental effects，但作者说不可避免的是自动化本身而非其有害影响，且题目问的是作者的整体看法，C更准确地概括了作者skeptical的态度。",
+    "tip": "把握\"hope…but…skeptical\"的让步-转折结构，转折后是作者真正立场。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "If we want an economy that allows everyone to be economically secure, we need to start thinking about how we can rightfully address automation.",
+    "why": "文章末段总结呼吁，明确提出目标是建立一个\"让每个人都能获得经济安全\"（economically secure）的经济体。这是作者认为应对自动化时应重视的核心问题。C选项\"People's economic security\"与原文\"everyone to be economically secure\"精准对应。",
+    "traps": "A\"大学毕业生的就业前景\"——原文提及学位价值在缩水只是论据之一，并非作者强调的应对重点，属于以偏概全；B\"女性获得就业的机会\"——女性劳动参与率下降出现在倒数第二段作为数据论据，非最终主张，属于以偏概全；D\"人们的社会流动性\"——原文提及\"upward mobility is declining\"也只是问题的一个方面，不是作者的核心呼吁，属于以偏概全。",
+    "tip": "末段总结句通常是主旨题/对策题的答案所在。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "discourse",
+    "cn": "n. 话语；论述；讨论"
+   },
+   {
+    "w": "devastating",
+    "cn": "adj. 毁灭性的；极具破坏力的"
+   },
+   {
+    "w": "staggering",
+    "cn": "adj. 令人震惊的；惊人的"
+   },
+   {
+    "w": "adverse",
+    "cn": "adj. 不利的；有害的"
+   },
+   {
+    "w": "insistent",
+    "cn": "adj. 坚持的；执意的"
+   },
+   {
+    "w": "peril",
+    "cn": "n. 危险；风险"
+   },
+   {
+    "w": "futile",
+    "cn": "adj. 徒劳的；无用的"
+   },
+   {
+    "w": "inevitable",
+    "cn": "adj. 不可避免的；必然的"
+   },
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的；不利的"
+   },
+   {
+    "w": "skeptical",
+    "cn": "adj. 怀疑的；持怀疑态度的"
+   },
+   {
+    "w": "diminishing",
+    "cn": "adj. 减少的；缩小的（v. diminish 的现在分词）"
+   },
+   {
+    "w": "upward mobility",
+    "cn": "n. 向上流动性（指社会阶层的上升机会）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "I sincerely hope that those who assert that automation will make us more effective and pave the way for new occupations are right, but the reality of automation's detrimental effects on workers makes me skeptical.",
+    "cn": "我真诚地希望那些宣称自动化将使我们更高效并为新职业铺平道路的人是对的，但自动化对工人的有害影响这一现实让我持怀疑态度。",
+    "note": "主干为I hope…are right, but…makes me skeptical。hope后接that从句，其中嵌套who引导的定语从句修饰those，who从句中又包含assert后的宾语从句。but引出转折，揭示作者真实立场。"
+   },
+   {
+    "en": "Whether policymakers and politicians admit it or not, workers have made clear their feelings about their economic insecurity and desire to keep good jobs in America.",
+    "cn": "不管政策制定者和政客们是否承认，工人们已经明确表达了他们对经济不安全感的感受以及在美国保住好工作的愿望。",
+    "note": "Whether…or not引导让步状语从句；主句主干为workers have made clear their feelings；feelings后接about短语，并列连接economic insecurity和desire两个并列宾语。"
+   },
+   {
+    "en": "No one can currently say where the new jobs are coming from or when, and any sensible company or country should prepare for all alternatives.",
+    "cn": "目前没有人能说清新的工作岗位将从何而来、何时出现，任何明智的企业或国家都应为各种可能做好准备。",
+    "note": "and连接两个并列分句；第一分句中say后接where引导的宾语从句，or when为省略形式（=or when they are coming）；第二分句为结论性呼吁。"
+   }
+  ]
+ }
+}

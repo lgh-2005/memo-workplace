@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "2503975bfd62__use_of_english__all",
+ "examId": "2503975bfd62",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2010 年考研英语真题",
+ "year": 2010,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:23:32.479Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 80499,
+ "usage": {
+  "prompt_tokens": 1777,
+  "completion_tokens": 4554,
+  "total_tokens": 6331,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1777,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4554,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1777,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "霍桑效应的质疑与再审视",
+  "gist": "文章介绍了1924年霍桑工厂的照明实验催生了著名的\"霍桑效应\"概念，即被实验这一行为本身就能改变受试者表现。然而数十年后，经济计量学重新分析原始数据后发现，产出变化并非源于实验本身，而是工人在一周内本就存在的自然产出波动规律，这说明所谓的\"霍桑效应\"难以被确切证实。",
+  "difficulty": "中等",
+  "translation": "1924年，美国国家研究委员会派遣两名工程师前往芝加哥附近一家名为霍桑工厂的电话零件厂，监督一系列实验。委员会希望他们能了解车间照明如何影响（affected）工人的生产率。然而，这些研究最终却以（ended up）自己的名字命名了\"霍桑效应\"——这一极具影响力的观点认为，仅仅是被实验这一行为（act）本身就改变了受试者的行为。\n\n这一观点的产生源于工厂中女工们令人困惑的（perplexing）行为。根据对实验的描述（accounts），当照明增强时，她们的每小时产出上升了；但当照明调暗时，产出同样上升。实验中做了什么并不重要（matter）；只要（so long as）有什么东西被改变，生产率就会上升。意识到（awareness）自己正在被实验这一点，似乎就足以（enough）改变工人的行为本身（by itself）。\n\n几十年后，同样的数据被提交给（subjected to）经济计量学分析。霍桑实验还有另一个惊人发现。与（Contrary to）记录中的描述相反，没有发现任何系统性证据（evidence）表明生产率水平与照明变化有关。\n\n事实证明，进行实验的特殊方式可能导致了对所发生事情的误导性（misleading）解读。例如（For example），照明总是在周日被改变。当周一重新开始工作时，产出照例（duly）比前一个周六有所上升，并在接下来的几天里继续（continued）上升。然而（However），与没有进行实验的那些周的数据对比显示，产出在周一总是会上升。工人们往往（tended）在一周的头几天表现勤勉，之后达到（hitting）一个平台期，然后开始松懈。这表明，所谓的\"霍桑效应\"很难被确切证实。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "A",
+    "correct": "affected",
+    "why": "此处需要一个动词表示照明对生产率的\"影响\"，how shop-floor lighting affected workers' productivity 语义通顺，表示\"车间照明如何影响工人的生产率\"，符合上下文实验目的。",
+    "traps": "B) achieved（实现）与 productivity 搭配不符合句意；C) extracted（提取）语义不通；D) restored（恢复）无法与 how 构成合理的疑问句语义。",
+    "tip": "考查动词与宾语的语义搭配，affect 意为\"影响\"。"
+   },
+   {
+    "number": 2,
+    "answer": "B",
+    "correct": "up",
+    "why": "end up doing sth. 是固定短语，意为\"最终（做某事）\"，表示实验结果出人意料。句意为\"这些研究最终以自己的名字命名了霍桑效应\"。",
+    "traps": "A) end at 不构成常用搭配；C) end with 意为\"以……结束\"，后不接 doing 形式表此义；D) end off 非惯用搭配。",
+    "tip": "考查固定搭配 end up doing sth.。"
+   },
+   {
+    "number": 3,
+    "answer": "C",
+    "correct": "act",
+    "why": "the very act of being experimented upon 意为\"仅仅是被实验这一行为/举动\"，act 指具体行为或举动，语义精准，且 the act of doing sth. 是常见搭配。",
+    "traps": "A) truth（事实）语义不合，不能说\"被实验的事实改变行为\"；B) sight（视线/景象）无关；D) proof（证据）逻辑不通。",
+    "tip": "考查 the act of doing sth.（做某事的行为）搭配。"
+   },
+   {
+    "number": 4,
+    "answer": "B",
+    "correct": "perplexing",
+    "why": "下文描述照明增强或调暗产出都上升的矛盾现象，这令人困惑，因此 perplexing（令人费解的）最为贴切，解释了霍桑效应概念的由来。",
+    "traps": "A) controversial（有争议的）侧重争议而非困惑；C) mischievous（淘气的）用于形容行为不恰当；D) ambiguous（模糊的）侧重含义不清，非行为本身令人困惑。",
+    "tip": "考查形容词辨析，perplexing 强调令人费解。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "accounts",
+    "why": "according to accounts of the experiments 意为\"根据对实验的描述/记载\"，accounts 指记录、描述，与后文 the descriptions on record 呼应。",
+    "traps": "A) requirements（要求）语义不通；B) explanations（解释）不符合此处\"记载\"之意；D) assessments（评估）语义偏差，此处是叙述实验现象而非评价。",
+    "tip": "考查 accounts 作\"描述、记载\"义，与下文 descriptions 对应。"
+   },
+   {
+    "number": 6,
+    "answer": "B",
+    "correct": "matter",
+    "why": "It did not matter what was done 意为\"做了什么并不重要\"，表示无论实验如何操作，结果都一样，与下句 so long as something was changed 逻辑一致。",
+    "traps": "A) conclude（得出结论）主语 it 做形式主语不合此结构；C) indicate（表明）语义不通；D) work（起作用）虽有一定语义但与 what 从句搭配不如 matter 自然。",
+    "tip": "考查 it doesn't matter + what 从句的固定句式。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "so long as",
+    "why": "so long as 意为\"只要\"，表示条件关系：只要有东西被改变，生产率就上升。承接上句\"做什么不重要\"，逻辑连贯。",
+    "traps": "A) as far as（就……而言）不表条件；B) for fear that（唯恐）表目的，语义不符；C) in case that（以防万一）表预防，逻辑不通。",
+    "tip": "考查条件连词辨析，so long as = as long as。"
+   },
+   {
+    "number": 8,
+    "answer": "A",
+    "correct": "awareness",
+    "why": "An awareness that they were being experimented upon 意为\"意识到自己正在被实验\"，awareness 后接 that 从句说明意识到的内容，语义准确。",
+    "traps": "B) expectation（期望）语义偏差，工人未必有期望；C) sentiment（情感）过于宽泛；D) illusion（幻觉）含贬义，暗示虚假，此处并非说他们产生幻觉。",
+    "tip": "考查名词辨析，awareness 强调\"意识、觉知\"。"
+   },
+   {
+    "number": 9,
+    "answer": "C",
+    "correct": "enough",
+    "why": "be enough to do sth. 意为\"足以做某事\"，表示仅仅是意识到被实验就足以改变工人行为，体现霍桑效应的核心含义。",
+    "traps": "A) suitable（合适的）语义偏差，不表示\"足够\"；B) excessive（过度的）语义过重；D) abundant（充裕的）修饰不可数抽象概念不当且语义不合。",
+    "tip": "考查 enough to do sth. 表示\"足以\"。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "by",
+    "why": "by itself 是固定搭配，意为\"本身、独自\"，表示仅凭意识到被实验这一点本身就能改变行为，无需其他因素。",
+    "traps": "A) about itself 非惯用搭配；B) for itself 意为\"为自己\"，语义不符；C) on itself 非常规搭配。",
+    "tip": "考查固定搭配 by itself（本身、独自地）。"
+   },
+   {
+    "number": 11,
+    "answer": "C",
+    "correct": "subjected",
+    "why": "be subjected to 意为\"被提交给……、经受……\"，数据被提交给经济计量学分析，搭配 analysis 语义通顺。",
+    "traps": "A) compared to（与……比较）不合语境；B) shown to（展示给）后接人而非学科分析；D) conveyed to（传递给）语义不当。",
+    "tip": "考查搭配 be subjected to（使经受、提交给）。"
+   },
+   {
+    "number": 12,
+    "answer": "A",
+    "correct": "Contrary to",
+    "why": "Contrary to the descriptions on record 意为\"与记录中的描述相反\"，下文指出没有发现系统性证据，与之前的实验描述（产出随照明变化）矛盾，形成转折。",
+    "traps": "B) Consistent with（与……一致）与下文否定结论矛盾；C) Parallel with（与……平行）语义不合；D) Peculiar to（特有的）搭配不当。",
+    "tip": "考查逻辑关系：新分析结果与旧记录相反。"
+   },
+   {
+    "number": 13,
+    "answer": "A",
+    "correct": "evidence",
+    "why": "no systematic evidence was found that... 意为\"没有发现系统性证据表明……\"，evidence 后接 that 同位语从句说明证据内容，是学术研究中的常见表达。",
+    "traps": "B) guidance（指导）与 found that 不搭配；C) implication（暗示）语义较弱；D) source（来源）逻辑不通。",
+    "tip": "考查 evidence + that 同位语从句的学术表达。"
+   },
+   {
+    "number": 14,
+    "answer": "D",
+    "correct": "misleading",
+    "why": "文章指出实验方式特殊可能导致了误导性的（misleading）解读，与后文举例说明数据被错误解读一致，表明原来的结论可能有误。",
+    "traps": "A) disputable（有争议的）语义较弱，不能体现\"误导\"；B) enlightening（启发性的）为正面含义，与批判语境不符；C) reliable（可靠的）与文意完全相反。",
+    "tip": "考查形容词辨析，misleading 意为\"有误导性的\"。"
+   },
+   {
+    "number": 15,
+    "answer": "B",
+    "correct": "For example",
+    "why": "For example 引出具体实例来说明上句\"实验方式特殊可能导致误导性解读\"，后文以照明在周日更改为例进行论证。",
+    "traps": "A) In contrast（相比之下）表对比，但此处是举例而非对比；C) In consequence（因此）表因果，逻辑不合；D) As usual（像往常一样）语义不通。",
+    "tip": "考查逻辑连接词：上句为论点，下句为论据。"
+   },
+   {
+    "number": 16,
+    "answer": "A",
+    "correct": "duly",
+    "why": "duly 意为\"如期地、照例地\"，表示周一产出照例上升，暗示这是正常规律而非实验效果，与后文\"产出在周一总是上升\"相呼应。",
+    "traps": "B) accidentally（偶然地）暗示意外，与规律性相悖；C) unpredictably（不可预测地）同样不符；D) suddenly（突然地）语义不当，此处强调的是如期发生。",
+    "tip": "考查 duly 表示\"按预期地、如期地\"。"
+   },
+   {
+    "number": 17,
+    "answer": "D",
+    "correct": "continued",
+    "why": "continued to rise 意为\"继续上升\"，描述产出在周一上升后接下来几天持续上升的趋势，与后文 for the next couple of days 衔接自然。",
+    "traps": "A) failed（未能）与 rose 语义矛盾；B) ceased（停止）与上升趋势矛盾；C) started（开始）与前面已经 rose 重复，逻辑不通。",
+    "tip": "考查上下文语义连贯，continue to do 表持续。"
+   },
+   {
+    "number": 18,
+    "answer": "C",
+    "correct": "However",
+    "why": "However 表示转折：前文描述实验周的数据表现，此处转折指出非实验周也有同样规律，从而否定霍桑效应的解释，形成关键反驳。",
+    "traps": "A) Therefore（因此）表因果，逻辑不合；B) Furthermore（此外）表递进，但此处是反驳而非补充；D) Meanwhile（与此同时）表时间并列，不合语境。",
+    "tip": "考查转折逻辑：实验周 vs. 非实验周的对比。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "tended",
+    "why": "tended to be diligent 意为\"往往/倾向于勤勉\"，表示工人在一周头几天表现勤勉是一种普遍倾向和自然规律，非刻意选择。",
+    "traps": "A) attempted（试图）暗示刻意努力，语义偏差；C) chose（选择）过于主观；D) intended（打算）强调意图，不符合客观规律的描述。",
+    "tip": "考查 tend to do 表\"倾向于、往往会\"。"
+   },
+   {
+    "number": 20,
+    "answer": "D",
+    "correct": "hitting",
+    "why": "hitting a plateau 是固定搭配，意为\"达到一个平台期\"，描述产出上升到一定水平后不再增长、随后下降的过程，与 slackening off 构成递进。",
+    "traps": "A) breaking a plateau（突破平台）语义相反，表示继续上升；B) climbing a plateau 非惯用搭配；C) surpassing a plateau（超越平台）与下文松懈矛盾。",
+    "tip": "考查固定搭配 hit a plateau（达到平台期）。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "shop-floor",
+    "cn": "adj. 车间的，工厂生产区的"
+   },
+   {
+    "w": "productivity",
+    "cn": "n. 生产率，生产力"
+   },
+   {
+    "w": "perplexing",
+    "cn": "adj. 令人费解的，使人困惑的"
+   },
+   {
+    "w": "dimmed",
+    "cn": "v. 调暗，使变暗（dim 的过去式）"
+   },
+   {
+    "w": "econometric",
+    "cn": "adj. 经济计量学的"
+   },
+   {
+    "w": "in store",
+    "cn": "短语 储备着的，即将发生的"
+   },
+   {
+    "w": "peculiar",
+    "cn": "adj. 特殊的，奇怪的"
+   },
+   {
+    "w": "duly",
+    "cn": "adv. 如期地，按时地，适当地"
+   },
+   {
+    "w": "plateau",
+    "cn": "n. 平台期，高原，稳定期"
+   },
+   {
+    "w": "slackening off",
+    "cn": "短语 松懈，减弱，懈怠"
+   },
+   {
+    "w": "pin down",
+    "cn": "短语 确切证实，弄清楚"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Instead",
+    "role": "转折：实验目的与最终结果之间的出人意料的对比"
+   },
+   {
+    "w": "so long as",
+    "role": "条件：表明只要有改变就会产生效果的条件关系"
+   },
+   {
+    "w": "Contrary to",
+    "role": "对立：新分析结论与原始实验记录描述之间的矛盾"
+   },
+   {
+    "w": "For example",
+    "role": "举例：为上文\"误导性解读\"提供具体实例说明"
+   },
+   {
+    "w": "However",
+    "role": "转折：将实验周数据与非实验周数据对比，推翻前文解释"
+   },
+   {
+    "w": "This suggests that",
+    "role": "总结推论：由论据推出霍桑效应难以被证实的结论"
+   }
+  ]
+ }
+}

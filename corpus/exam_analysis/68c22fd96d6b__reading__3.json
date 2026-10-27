@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "68c22fd96d6b__reading__3",
+ "examId": "68c22fd96d6b",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2008 年考研英语真题（旧）",
+ "year": 2008,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:20:48.033Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58876,
+ "usage": {
+  "prompt_tokens": 1806,
+  "completion_tokens": 3591,
+  "total_tokens": 5397,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1806,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3591,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1806,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国人身高已达遗传极限",
+  "gist": "文章以NBA球员身高变化为引入，指出美国人的身高增长在20世纪60年代已基本停滞，达到了遗传上限。营养和健康水平的改善曾推动身高增长，但遗传结构对身高设有限制，如直立行走带来的骨骼负担。军方人体数据也表明，现有身高数据在可预见的未来仍然适用。",
+  "structure": [
+   "第1-2段：以NBA球员引出主题——美国人身高已停止增长",
+   "第3段：阐述营养与健康对身高增长的推动及其停滞现状",
+   "第4段：从遗传学角度解释身高受限的生物学原因",
+   "第5段：以军装数据佐证身高短期内不会变化"
+  ],
+  "difficulty": "中等",
+  "translation": "20世纪60年代初，威尔特·张伯伦是美国职业篮球联赛（NBA）中仅有的三名身高超过七英尺的球员之一。然而，如果他在上个赛季打球，他将只是42名七英尺以上球员中的一员。参与主要职业体育运动的运动员体型多年来发生了巨大变化，管理者们也非常愿意调整球队服装以适应越来越多的更高大身材。\n\n然而，体育界的这一趋势可能掩盖了一个未被认识到的现实：美国人总体上已经停止长高了。尽管如今的人通常比140年前高约两英寸，但今天的人——尤其是那些家族在美国生活了许多代的人——显然在20世纪60年代初就达到了身高极限。而且他们不太可能再长高了。\"在当今的总体人口中，在现有的遗传和环境水平下，我们基本上已经达到了极限，\"莱特州立大学的人类学家威廉·卡梅隆·楚姆利亚说。就NBA球员而言，他们身高的增加似乎源于从世界各地招募球员这一日益普遍的做法。\n\n身高增长很少持续到20岁以后，它需要卡路里和营养物质——特别是蛋白质——来供给不断扩展的组织。在20世纪初，营养不良和儿童期感染阻碍了身高增长。但随着饮食和健康状况的改善，儿童和青少年的平均身高大约每20年增长一英寸半，这种模式被称为身高的长期趋势。然而，根据疾病控制与预防中心的数据，平均身高——男性5英尺9英寸、女性5英尺4英寸——自1960年以来基本没有变化。\n\n从遗传学角度来看，避免过高的身材是有优势的。分娩时，较大的婴儿更难通过产道。此外，尽管人类直立行走已有数百万年，我们的双脚和背部仍在艰难应对两足行走的姿势，无法轻松承受过大肢体造成的反复压力。\"个体有机体的遗传架构确实设定了一些真正的限制，\"西北大学的人类学家威廉·伦纳德说。\n\n遗传上限可以改变，但不要指望这很快会发生。马萨诸塞州内蒂克陆军研究中心的资深人类学家克莱尔·C·戈登确保90%的制服和工作站无需改动即可适合新兵。她说，与篮球制服不同，军服的尺寸已经很长时间没有变化了。如果你需要预测近期的人类身高来设计一件设备，戈登说总的来说，\"你可以使用现有数据并且相当有信心。\"",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "In the early 1960s Wilt Chamberlain was one of the only three players in the National Basketball Association (NBA) listed at over seven feet. If he had played last season, however, he would have been one of 42.",
+    "why": "文章开头用张伯伦举例，指出他在60年代是仅有的三名七英尺以上球员之一，而如果他上赛季打球则会是42人之一。这一对比直接说明NBA球员的身高构成发生了显著变化，即用数据对比来\"说明NBA球员身高的变化\"。后文\"The bodies playing major professional sports have changed dramatically\"进一步印证此意。",
+    "traps": "B项\"NBA球员的受欢迎程度\"文中未涉及，属无中生有；C项\"比较不同代际的NBA球员\"过度引申，文章比较的是身高数据而非球员本身；D项\"评价著名NBA球员的成就\"完全偏离原文目的，属张冠李戴。",
+    "tip": "例证题关键在于找出例子所服务的论点，而非例子本身的细节。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But as diet and health improved, children and adolescents have, on average, increased in height by about an inch and a half every 20 years, a pattern known as the secular trend in height.",
+    "why": "第三段指出20世纪初营养不良和儿童感染阻碍了身高增长，但随着\"饮食和健康状况的改善\"（diet and health improved），身高开始每20年增长约一英寸半。这说明饮食与健康即\"生活水平\"（Living standards）是推动身高增长的关键因素。C项是对原文diet and health的上位概括。",
+    "traps": "A项\"基因改造\"文中未提及，文章讨论的是遗传限制而非人为基因修改；B项\"自然环境\"过于宽泛且非原文关键因素；D项\"日常锻炼\"在文中完全未被提及，属无中生有。",
+    "tip": "注意选项中的上位词对原文具体表述的概括替换，如living standards概括diet and health。"
+   },
+   {
+    "number": 33,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "even though humans have been upright for millions of years, our feet and back continue to struggle with bipedal posture and cannot easily withstand repeated strain imposed by oversize limbs.",
+    "why": "第四段明确指出，尽管人类直立行走已有数百万年，双脚和背部仍难以应对两足行走姿势带来的过大肢体压力，即直立姿势对人类身高构成了生理限制。B项\"人类身高受直立姿势的制约\"是对此内容的合理归纳。",
+    "traps": "A项\"非美国人拉高了全国平均身高\"与原文不符，原文说NBA球员身高增加是因为全球招募，并非指全国平均身高被拉高；C项\"美国人是世界上平均最高的\"文中未提及，属无据推断；D项\"较大的婴儿成年后往往更高\"偷换概念，原文讨论的是大婴儿分娩困难，而非其成年身高。",
+    "tip": "推断题需紧扣原文信息进行合理推导，避免过度联想或偷换概念。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "And if you need to predict human height in the near future to design a piece of equipment, Gordon says that by and large, \"you could use today's data and feel fairly confident.\"",
+    "why": "最后一段戈登明确表示，如果需要预测近期人类身高来设计设备，\"基本上可以使用现有数据并相当有信心\"。D项\"现有人类身高数据仍将适用\"是对这句话的直接同义改写，完全吻合原文。",
+    "traps": "A项\"服装行业将重新考虑制服尺寸\"与原文相反，军服尺寸长期未变，暗示无需重新考虑；B项\"军服设计将保持不变\"是对原文的过度推断，原文说的是军服尺寸没变，而非预测设计不会变；C项\"基因检测将被用于选拔运动员\"在文中完全没有依据，属凭空捏造。",
+    "tip": "末段常出总结性信息，注意区分\"已发生的事实\"和\"对未来的预测\"。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "Americans have generally stopped growing. ... we've pretty much gone as far as we can go",
+    "why": "全文围绕一个核心论点展开：美国人的身高增长已在60年代初达到遗传极限并停止增长。第二段明确提出主题，第三段用身高趋势数据佐证，第四段从遗传学角度解释原因，第五段以军方数据进一步确认。C项\"美国人已达到遗传增长极限\"精准概括了全文主旨。",
+    "traps": "A项\"人类身高变化遵循循环模式\"文中未提及任何循环模式，属无中生有；B项\"人类身高变得更加可预测\"虽末段略有涉及，但仅是一个佐证细节而非文章主旨；D项\"美国人的遗传模式已改变\"与原文矛盾，文章强调的是遗传上限尚未改变。",
+    "tip": "主旨题须把握文章核心论点，警惕以偏概全的选项将局部信息夸大为全文主旨。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "obscure",
+    "cn": "v. 掩盖，遮蔽"
+   },
+   {
+    "w": "secular trend",
+    "cn": "n. 长期趋势（世俗趋势）"
+   },
+   {
+    "w": "under-nutrition",
+    "cn": "n. 营养不良"
+   },
+   {
+    "w": "adolescent",
+    "cn": "n./adj. 青少年（的）"
+   },
+   {
+    "w": "bipedal",
+    "cn": "adj. 两足行走的"
+   },
+   {
+    "w": "constraint",
+    "cn": "n. 限制，约束"
+   },
+   {
+    "w": "anthropologist",
+    "cn": "n. 人类学家"
+   },
+   {
+    "w": "notably",
+    "cn": "adv. 特别，尤其"
+   },
+   {
+    "w": "withstand",
+    "cn": "v. 承受，经受住"
+   },
+   {
+    "w": "alteration",
+    "cn": "n. 改动，修改"
+   },
+   {
+    "w": "by and large",
+    "cn": "adv. 总的来说，大体上"
+   },
+   {
+    "w": "recruit",
+    "cn": "v./n. 招募；新兵"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Though typically about two inches taller now than 140 years ago, today's people – especially those born to families who have lived in the U.S. for many generations – apparently reached their limit in the early 1960s.",
+    "cn": "尽管如今的人通常比140年前高约两英寸，但今天的人——尤其是那些出生在已在美国生活了许多代的家庭中的人——显然在20世纪60年代初就达到了身高极限。",
+    "note": "主干为today's people apparently reached their limit；Though引导让步状语从句省略主语；破折号间为插入成分，内含who引导的定语从句修饰families。"
+   },
+   {
+    "en": "Moreover, even though humans have been upright for millions of years, our feet and back continue to struggle with bipedal posture and cannot easily withstand repeated strain imposed by oversize limbs.",
+    "cn": "此外，尽管人类直立行走已有数百万年，我们的双脚和背部仍在艰难应对两足行走的姿势，无法轻松承受过大肢体所带来的反复压力。",
+    "note": "even though引导让步状语从句；主句由and连接两个并列谓语continue to struggle和cannot withstand；imposed by为过去分词短语作后置定语修饰strain。"
+   },
+   {
+    "en": "Growth, which rarely continues beyond the age of 20, demands calories and nutrients – notably, protein – to feed expanding tissues.",
+    "cn": "身高增长很少持续到20岁以后，它需要卡路里和营养物质——特别是蛋白质——来供给不断扩展的组织。",
+    "note": "主干为Growth demands calories and nutrients；which引导非限制性定语从句；破折号间notably, protein为插入补充说明；to feed为目的状语。"
+   }
+  ]
+ }
+}

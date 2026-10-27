@@ -1,0 +1,247 @@
+{
+ "schemaVersion": 1,
+ "id": "1485326c452f__long_match__all",
+ "examId": "1485326c452f",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2021 年 6 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:36:46.101Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 30518,
+ "usage": {
+  "prompt_tokens": 957,
+  "completion_tokens": 1856,
+  "total_tokens": 2813,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 957,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1856,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 957,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "巴黎圣母院火灾及其后续影响",
+  "strategy": [
+   "先通读10条陈述句，标记高频专有名词与核心动词，建立主题框架",
+   "利用数字、人名、特殊概念等独特信号词快速锁定段落",
+   "注意同义替换：陈述句常将原文动词/形容词替换为近义表达",
+   "按段落顺序与题号顺序交叉比对，排除已匹配段落缩小范围",
+   "关注因果、条件、转折等逻辑关系词，它们往往是匹配的关键线索"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "I",
+    "cn": "只有在巴黎圣母院的结构被认定为安全之后，才能评估其所受损害的总量。",
+    "keywords": [
+     "total amount of damage",
+     "assessed",
+     "structure",
+     "safe"
+    ],
+    "paraphrase": "陈述句用 assessed 对应原文可能的 evaluate/determine，用 considered safe 对应原文可能的 deemed stable/declared secure 等，属于条件关系的同义改写。",
+    "tip": "定位\"评估损害+结构安全\"的条件逻辑，锁定I段。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "人们再一次开始争论，即使没有这场火灾，巴黎圣母院是否也会倒塌。",
+    "keywords": [
+     "argue",
+     "collapse",
+     "even without the fire"
+    ],
+    "paraphrase": "陈述句用 argue whether…collapse 对应原文可能的 debate/dispute about structural failure，even without the fire 强调火灾前已有的结构隐患讨论。",
+    "tip": "定位\"争论+即使没火灾也会坍塌\"这一反事实论点，锁定C段。"
+   },
+   {
+    "number": 38,
+    "answer": "K",
+    "cn": "据说巴黎圣母院的灾难帮助团结了法兰西民族。",
+    "keywords": [
+     "catastrophe",
+     "unite",
+     "French nation"
+    ],
+    "paraphrase": "陈述句用 unite the French nation 对应原文可能的 bring the country together / rally national solidarity，was said to 表示转述观点。",
+    "tip": "定位\"灾难+团结法国\"的社会影响表述，锁定K段。"
+   },
+   {
+    "number": 39,
+    "answer": "F",
+    "cn": "巴黎圣母院的屋顶是用大量密集排列的木梁建造的。",
+    "keywords": [
+     "roof",
+     "large numbers",
+     "densely laid-out",
+     "wood beams"
+    ],
+    "paraphrase": "陈述句用 densely laid-out wood beams 对应原文可能的 tightly/closely spaced timber frames，large numbers 对应原文可能的 hundreds of 等数量描述。",
+    "tip": "定位\"屋顶+大量木梁+密集排列\"的建筑细节描写，锁定F段。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "cn": "巴黎圣母院的翻新工人被问话，以查明事故原因。",
+    "keywords": [
+     "renovation workers",
+     "questioned",
+     "cause of the accident"
+    ],
+    "paraphrase": "陈述句用 questioned 对应原文可能的 interviewed/interrogated，renovation workers 对应原文可能的 restoration crew/construction workers。",
+    "tip": "定位\"工人被询问+调查事故原因\"的调查细节，锁定B段。"
+   },
+   {
+    "number": 41,
+    "answer": "H",
+    "cn": "如果钟楼的木框架被烧毁，沉重的大钟就会坠落下来。",
+    "keywords": [
+     "bell towers",
+     "wooden frames",
+     "burned down",
+     "heavy bells",
+     "crashed down"
+    ],
+    "paraphrase": "陈述句用虚拟语气 Had…burned down 对应原文可能的 if…had been destroyed/consumed by fire，crashed down 对应原文可能的 fallen/plummeted。",
+    "tip": "定位\"钟楼木框架+大钟坠落\"的虚拟假设后果，锁定H段。"
+   },
+   {
+    "number": 42,
+    "answer": "A",
+    "cn": "消防员的及时行动阻止了火势蔓延到大教堂的钟楼。",
+    "keywords": [
+     "timely action",
+     "firefighters",
+     "prevented",
+     "bell towers"
+    ],
+    "paraphrase": "陈述句用 timely action 对应原文可能的 quick response/swift intervention，prevented…from reaching 对应原文可能的 stopped the flames from spreading to。",
+    "tip": "定位\"消防员+及时+阻止火烧钟楼\"，通常出现在文章开头A段。"
+   },
+   {
+    "number": 43,
+    "answer": "J",
+    "cn": "除了火灾本身之外，用来灭火的水也对巴黎圣母院造成了大量损害。",
+    "keywords": [
+     "water",
+     "extinguish",
+     "also caused",
+     "damage"
+    ],
+    "paraphrase": "陈述句用 water used to extinguish 对应原文可能的 water sprayed/pumped to put out the fire，also caused a lot of damage 对应原文可能的 further damaged/additional harm。",
+    "tip": "定位\"灭火用水+额外损害\"的双重破坏逻辑，锁定J段。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "多年来，人们一直在争论巴黎圣母院的修复费用应该由谁来支付。",
+    "keywords": [
+     "argument",
+     "over the years",
+     "pay for",
+     "restoration"
+    ],
+    "paraphrase": "陈述句用 argument over the years 对应原文可能的 long-standing debate/ongoing dispute，pay for the restoration 对应原文可能的 fund/finance the repairs。",
+    "tip": "定位\"长期争论+修复资金承担者\"的经费讨论，锁定D段。"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "cn": "巴黎圣母院灾难的消息立即引起了全世界媒体的关注。",
+    "keywords": [
+     "news",
+     "instantly",
+     "media attention",
+     "throughout the world"
+    ],
+    "paraphrase": "陈述句用 instantly caught media attention 对应原文可能的 immediately drew global coverage / dominated headlines worldwide，throughout the world 强调全球范围。",
+    "tip": "定位\"灾难新闻+全球媒体关注+即时性\"的传播描写，锁定G段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "assessed",
+    "cn": "v. 评估，评定"
+   },
+   {
+    "w": "catastrophe",
+    "cn": "n. 大灾难，灾祸"
+   },
+   {
+    "w": "densely",
+    "cn": "adv. 密集地，稠密地"
+   },
+   {
+    "w": "laid-out",
+    "cn": "adj. 布置的，排列的"
+   },
+   {
+    "w": "renovation",
+    "cn": "n. 翻新，修缮"
+   },
+   {
+    "w": "extinguish",
+    "cn": "v. 扑灭，熄灭"
+   },
+   {
+    "w": "restoration",
+    "cn": "n. 修复，恢复"
+   },
+   {
+    "w": "unite",
+    "cn": "v. 团结，使联合"
+   },
+   {
+    "w": "crashed down",
+    "cn": "phr. 坠落，轰然倒塌"
+   },
+   {
+    "w": "timely",
+    "cn": "adj. 及时的，适时的"
+   }
+  ]
+ }
+}

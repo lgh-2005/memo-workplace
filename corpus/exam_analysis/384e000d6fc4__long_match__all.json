@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "384e000d6fc4__long_match__all",
+ "examId": "384e000d6fc4",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2016 年 6 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:07:36.903Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 37182,
+ "usage": {
+  "prompt_tokens": 945,
+  "completion_tokens": 2152,
+  "total_tokens": 3097,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 945,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2152,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 945,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "当代青少年的行为、态度与社会参与",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如teenager、youth、parents等",
+   "将每条陈述句的核心关键词（如voting、criminal、rebellion）作为扫读锚点快速定位段落",
+   "注意同义替换：陈述句用概括性表达，原文常用具体事例或近义词",
+   "区分相似主题的题目，如第40题（犯罪率下降）与第37题（父母担忧犯罪），侧重点不同",
+   "先做含独特关键词的题目（如voting、media），再攻含常见词的题目以排除干扰"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "I",
+    "cn": "如今没有多少有投票资格的年轻人对地方或全国选举感兴趣。",
+    "keywords": [
+     "eligible",
+     "voting",
+     "elections",
+     "young people"
+    ],
+    "paraphrase": "陈述句中的 not many young people interested in elections 可能在原文中被替换为类似 low voter turnout among youth、few young voters participate 等表达，属于\"具体数据或现象→概括总结\"的替换类型。",
+    "tip": "以 voting 和 elections 为锚点定位，该词组在全文中出现频率极低，可快速锁定I段。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "cn": "父母担心他们的孩子一旦进入青少年时期就可能会卷入犯罪活动。",
+    "keywords": [
+     "parents",
+     "concerned",
+     "criminal offences",
+     "teens"
+    ],
+    "paraphrase": "陈述句中 get involved in criminal offences 可能在原文被表述为 commit crimes、engage in illegal activities 等；concerned 可能替换为 worried、fearful 等同义词，属于\"近义词替换\"类型。",
+    "tip": "聚焦 parents + criminal/crime 的共现，定位B段中父母对青少年犯罪的担忧描述。"
+   },
+   {
+    "number": 38,
+    "answer": "F",
+    "cn": "即使在上世纪动荡的年代，青年叛逆行为也常常被媒体夸大。",
+    "keywords": [
+     "turbulent years",
+     "youth rebellion",
+     "exaggerated",
+     "media"
+    ],
+    "paraphrase": "陈述句中 turbulent years of last century 可能在原文对应 1960s/1970s 等具体年代；exaggerated in the media 可能替换为 overstated by the press、blown out of proportion 等，属于\"抽象概括↔具体描述\"的替换。",
+    "tip": "以 rebellion 和 media/exaggerated 为双锚点扫读，F段应含有对过去年代青年反叛现象的评价。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "如今的青少年经常就职业选择等重要事务向父母征求意见。",
+    "keywords": [
+     "teenagers",
+     "parents",
+     "advice",
+     "career choice"
+    ],
+    "paraphrase": "陈述句中 turn to parents for advice 可能在原文替换为 consult/seek guidance from parents；career choice 可能对应 job decisions、what to do for a living 等具体说法，属于同义词与上下义词替换。",
+    "tip": "以 career choice + parents + advice 组合定位D段中青少年与父母关系亲密的论述。"
+   },
+   {
+    "number": 40,
+    "answer": "C",
+    "cn": "如今青少年犯罪和不良行为的发生率正在下降。",
+    "keywords": [
+     "incidence",
+     "teenage crime",
+     "misbehavior",
+     "decreasing"
+    ],
+    "paraphrase": "陈述句中 incidence is decreasing 可能在原文表述为 rates have fallen/dropped/declined；misbehavior 可能被替换为 antisocial behavior、delinquency 等，属于\"近义动词/名词替换\"类型。",
+    "tip": "注意与第37题区分：37题讲父母的担忧，40题讲犯罪率下降的事实，以 decreasing/decline 为核心定位C段。"
+   },
+   {
+    "number": 41,
+    "answer": "K",
+    "cn": "年轻人应该拥有远大的人生理想，并努力成为领导者。",
+    "keywords": [
+     "lofty ideals",
+     "strive",
+     "leaders",
+     "young people"
+    ],
+    "paraphrase": "陈述句中 lofty ideals 可能在原文替换为 big ambitions、high aspirations；strive to be leaders 可能对应 aim for leadership roles、aspire to lead 等表达，属于\"同义短语替换\"类型。",
+    "tip": "以 ideals/aspirations 和 leaders 为关键词定位K段中关于青年志向的论述。"
+   },
+   {
+    "number": 42,
+    "answer": "A",
+    "cn": "一些年轻人喜欢把某些事情保留给自己，不想让父母知道。",
+    "keywords": [
+     "keep something to themselves",
+     "parents",
+     "young people"
+    ],
+    "paraphrase": "陈述句中 keep something to themselves 可能在原文替换为 maintain privacy、have secrets、don't share everything with parents 等，属于\"口语化表达↔书面化表达\"的替换类型。",
+    "tip": "以 privacy/secrets + parents 为锚点，A段作为首段很可能引出青少年隐私话题。"
+   },
+   {
+    "number": 43,
+    "answer": "L",
+    "cn": "鼓励年轻人去探索更广阔的世界并准备好让世界变得更美好，这是有益的。",
+    "keywords": [
+     "encourage",
+     "explore",
+     "broader world",
+     "better place"
+    ],
+    "paraphrase": "陈述句中 explore the broader world 可能在原文替换为 venture beyond their comfort zone、engage with the wider world；make it a better place 可能对应 contribute positively to society 等，属于\"概括性表达↔具体措施\"的替换。",
+    "tip": "以 explore/broader world 和 better place 组合定位L段中对青年走向社会的倡导。"
+   },
+   {
+    "number": 44,
+    "answer": "E",
+    "cn": "如今许多青少年主动为有需要的人提供服务。",
+    "keywords": [
+     "teenagers",
+     "offer",
+     "render service",
+     "needy"
+    ],
+    "paraphrase": "陈述句中 render service to the needy 可能在原文替换为 volunteer/do community service/help the disadvantaged 等；offer 可能对应 willingly、voluntarily 等，属于\"正式用语↔日常用语\"的替换类型。",
+    "tip": "以 volunteer/service/needy 为关键词快速定位E段中青少年志愿服务的相关描述。"
+   },
+   {
+    "number": 45,
+    "answer": "J",
+    "cn": "对学生的采访发现，他们中很多人只关心个人事务。",
+    "keywords": [
+     "interviews",
+     "students",
+     "concerned",
+     "personal matters"
+    ],
+    "paraphrase": "陈述句中 only concerned about personal matters 可能在原文替换为 focused on their own lives、self-centered concerns、preoccupied with individual issues 等；interviews 可能对应 surveys、conversations with 等，属于\"近义名词替换\"类型。",
+    "tip": "以 interviews/surveys + personal/self-centered 为双锚点定位J段中关于学生自我关注的调查结果。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "eligible",
+    "cn": "adj. 有资格的，合格的"
+   },
+   {
+    "w": "criminal offences",
+    "cn": "n. 刑事犯罪，犯罪行为"
+   },
+   {
+    "w": "turbulent",
+    "cn": "adj. 动荡的，混乱的"
+   },
+   {
+    "w": "exaggerated",
+    "cn": "adj./v. 被夸大的；夸大"
+   },
+   {
+    "w": "incidence",
+    "cn": "n. 发生率，发病率"
+   },
+   {
+    "w": "misbehavior",
+    "cn": "n. 不良行为，行为不端"
+   },
+   {
+    "w": "lofty",
+    "cn": "adj. 崇高的，远大的"
+   },
+   {
+    "w": "strive",
+    "cn": "v. 努力，奋斗"
+   },
+   {
+    "w": "render service",
+    "cn": "v. 提供服务"
+   },
+   {
+    "w": "the needy",
+    "cn": "n. 有需要的人，贫困者"
+   }
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "4204c70708cd__reading__2",
+ "examId": "4204c70708cd",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 6 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:19:50.297Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62222,
+ "usage": {
+  "prompt_tokens": 1782,
+  "completion_tokens": 3749,
+  "total_tokens": 5531,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1782,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3749,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1782,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "大学教育费用应由谁承担",
+  "gist": "文章围绕美国大学教育的高昂费用展开讨论。作者认为学生贷款读大学并不明智，免费大学教育不现实。如果由纳税人买单，学生应学习对社会最有实际价值的专业。最终作者得出结论：无论大学专业是否物有所值，纳税人都没有理由为学生的大学教育付费，学生应自己承担教育费用。",
+  "structure": [
+   "第1-2段：指出学生贷款问题严重，免费大学不可能实现",
+   "第3-4段：提出核心问题——若纳税人买单，应限制学生专业选择",
+   "第5-7段：以起薪为标准论证哪些专业对社会有价值",
+   "第8-9段：总结论证——纳税人不应为大学教育买单"
+  ],
+  "difficulty": "中等",
+  "translation": "目前美国有2150万大学生，其中许多人将通过借贷来支付大学费用。鉴于目前学生贷款总额已超过1.3万亿美元，很明显许多学生远非理性。学生毕业时的平均债务现已接近4万美元，而随着大学费用日益昂贵，要求大学\"免费\"的呼声也越来越高。就连希拉里·克林顿也表示，谈到大学，\"费用不应成为障碍\"。\n\n但大学免费的唯一方式是：教职人员无偿奉献时间，校舍无需维护，校园无需水电等设施。只要不可能凭空造出东西，费用就绝对是一个障碍。\n\n我们真正要讨论的问题是：谁应该为人们上大学买单。如果要纳税人承担免除学生贷款的费用，他们难道不应该对自己的钱如何使用有发言权吗？\n\n至少纳税人应该有权决定学生用公共资金学习什么专业。如果我们要强迫纳税人为大学学位买单，学生就应该只学习那些对纳税人最有益的科目。毕竟，正是学生在这方面自行做出选择才首先导致了这个问题。我们根本不需要更多的诗歌、性别研究或社会学专业的毕业生。我们怎么知道哪些科目对社会有益？很简单。\n\n平均起薪清楚地表明了社会需要新员工接受何种培训。当然，大学专业的好处不仅限于学生能从事的工作。但如果我们谈论的是对社会的好处，唯一重要的是该专业使学生能为社会创造什么。而学生能创造的价值体现在雇主愿意付给学生多少工资来让他们进行生产。\n\n然而，小学教师的低工资并不意味着基础教育不重要。这只是意味着小学教师已经太多了。\n\n与此同时，愿意并且能够从事需要石油工程专业的工作的人很少，因此多一个这样的人才价值非常高。\n\n所以我们可以让纳税人承担学生的学费，以换取对学生所学专业的决定权。或者我们可以让学生既自己选择专业，也自己支付学费。但最终，以下两者必居其一：\n\n大学专业要么值回其成本，要么不值。如果值，就不需要纳税人资助。如果不值，纳税人资助也不可取。无论哪种情况，纳税人都没有理由为学生的大学教育买单。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "Given that there's now over $1.3 trillion in student loans on the books, it's pretty clear that many students are far from sensible.",
+    "why": "原文明确指出学生贷款总额超过1.3万亿美元，\"it's pretty clear that many students are far from sensible\"（很明显许多学生远非理性的）。\"far from sensible\"直接表明作者认为学生贷款行为不理智，B选项\"acting in an irrational way\"（以不理性的方式行事）是对该句的同义转述，irrational与far from sensible语义完全对应。",
+    "traps": "A项\"只期望获得巨大回报\"，原文未提及学生对回报的期望，属于无中生有。C项\"以纳税人为代价获益\"，纳税人买单是后文讨论的假设情景，并非作者对学生贷款行为本身的评价，属于张冠李戴。D项\"总有一天会后悔\"，原文未涉及学生是否会后悔，属于无中生有。",
+    "tip": "注意\"far from + 正面形容词\"表示否定含义，等于该形容词的反义词。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "But the only way college could be free is if the faculty and staff donated their time, the buildings required no maintenance, and campuses required no utilities. As long as it's impossible to produce something from nothing, costs are absolutely a barrier.",
+    "why": "作者在第二段列举了大学免费的前提条件：教职员工无偿工作、校舍不需维护、校园不需水电。这些条件在现实中根本无法实现，再加上\"it's impossible to produce something from nothing\"（不可能凭空造出东西），表明作者认为免费大学教育在实际操作层面行不通，A选项\"impractical\"（不切实际的）准确概括了这一立场。",
+    "traps": "B项\"不可持续的\"暗示免费教育可以开始但不能长久维持，而作者认为它根本无法实现，程度不同且偏离原意。C项\"一个值得奋斗的目标\"与作者批判态度完全相反。D项\"通向社会平等的途径\"原文未涉及社会平等话题，属于无中生有。",
+    "tip": "当作者用假设虚拟条件句列举不可能实现的前提时，往往是在表达该事物不切实际。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "If we're going to force taxpayers to foot the bill for college degrees, students should only study those subjects that're of greatest benefit to taxpayers.",
+    "why": "原文明确指出，如果要强制纳税人为大学学位买单，学生就应该只学习对纳税人最有益的科目。后文进一步以起薪为标准说明社会实际需要的专业方向，并举例说不需要更多诗歌、性别研究或社会学专业的毕业生。C选项\"选择能满足社会实际需求的专业\"准确对应了\"subjects that're of greatest benefit to taxpayers\"这一核心要求。",
+    "traps": "A项\"更加努力回报社会\"过于笼统，原文具体要求是选择特定专业，而非泛泛地努力工作。B项\"更加仔细地选择科目\"虽与选专业相关，但太模糊，未体现核心要求——选择对社会有实际益处的专业。D项\"让纳税人参与大学管理\"，原文说的是纳税人应决定学生学什么，而非参与学校行政管理，属于偷换概念。",
+    "tip": "注意区分笼统表述和具体表述，正确答案通常与原文的具体要求精确对应。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Average starting salaries give a clear indication of what type of training society needs its new workers to have. And the value of what the student can produce is reflected in the wage employers are willing to pay the student to produce it.",
+    "why": "原文第五段明确指出\"Average starting salaries give a clear indication\"（平均起薪清楚地表明了社会需要何种培训），并进一步说明学生能创造的价值\"is reflected in the wage employers are willing to pay\"（体现在雇主愿意支付的工资中）。C选项\"它充分体现在他们的平均起薪中\"与这两处表述直接对应，\"reflected\"和\"clear indication\"都指向起薪是衡量教育价值的标准。",
+    "traps": "A项\"被追求利润的雇主低估\"，原文认为雇主愿付的工资恰恰反映了学生的价值，并非低估，属于曲解原文。B项\"要通过他们在工作中的表现来证明\"，看似合理但原文强调的是起薪作为指标，而非工作表现。D项\"体现在他们如何消除社会障碍上\"，原文未涉及消除社会障碍，属于无中生有。",
+    "tip": "当原文出现\"give a clear indication of\"和\"is reflected in\"时，这些是典型的价值判断标志词，常为命题点。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "Either a college major is worth its cost or it isn't. If yes, taxpayer financing isn't needed. If not, taxpayer financing isn't desirable. Either way, taxpayers have no business paying for students' college education.",
+    "why": "文章最后一段通过二元逻辑得出结论：如果大学专业值回成本，则不需要纳税人资助；如果不值，则纳税人资助不可取。无论哪种情况，\"taxpayers have no business paying for students' college education\"（纳税人没有理由为学生付费）。这意味着学生应自己承担教育费用，D选项\"大学生应该自己资助自己的教育\"是对这一结论的正面表述。",
+    "traps": "A项\"学生应仔细考虑是否上大学\"，文章讨论的是谁该为大学付费，而非是否该上大学，属于偏离主题。B项\"纳税人应只资助最有天赋的学生\"，原文结论是纳税人根本不应资助任何学生，而非有选择地资助。C项\"大学教育的价值有待商榷\"虽然文中有所涉及，但这只是论证过程，而非作者要传达的核心信息。",
+    "tip": "主旨题优先看文章末段的总结性语句，尤其是\"either way\"等归纳性词语后的结论。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sensible",
+    "cn": "adj. 明智的，理性的"
+   },
+   {
+    "w": "multiply",
+    "cn": "v.（数量）大幅增加，倍增"
+   },
+   {
+    "w": "maintenance",
+    "cn": "n. 维护，保养"
+   },
+   {
+    "w": "utilities",
+    "cn": "n. 公用事业设施（水电气等）"
+   },
+   {
+    "w": "forgiving",
+    "cn": "v. 免除（债务）（此处为forgive的现在分词）"
+   },
+   {
+    "w": "on the public dime",
+    "cn": "用公共资金，由纳税人出钱"
+   },
+   {
+    "w": "foot the bill",
+    "cn": "买单，承担费用"
+   },
+   {
+    "w": "indication",
+    "cn": "n. 指示，标志，迹象"
+   },
+   {
+    "w": "dictating",
+    "cn": "v. 决定，规定，支配"
+   },
+   {
+    "w": "petroleum",
+    "cn": "n. 石油"
+   },
+   {
+    "w": "desirable",
+    "cn": "adj. 值得拥有的，可取的"
+   },
+   {
+    "w": "have no business doing",
+    "cn": "没有理由做某事，不应该做某事"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But the only way college could be free is if the faculty and staff donated their time, the buildings required no maintenance, and campuses required no utilities.",
+    "cn": "但大学免费的唯一方式是：教职人员无偿奉献时间，校舍无需维护，校园无需水电等设施。",
+    "note": "主句为\"the only way...is if...\"结构，if引导表语从句，其中包含三个并列条件，用and连接，均为虚拟语气（动词用过去式），暗示这些条件不可能实现。"
+   },
+   {
+    "en": "If we're going to force taxpayers to foot the bill for college degrees, students should only study those subjects that're of greatest benefit to taxpayers.",
+    "cn": "如果我们要强迫纳税人为大学学位买单，学生就应该只学习那些对纳税人最有益的科目。",
+    "note": "If引导条件状语从句，主句中those subjects后接that引导的定语从句；foot the bill为固定搭配意为\"买单\"；of greatest benefit为介词短语作表语。"
+   },
+   {
+    "en": "And the value of what the student can produce is reflected in the wage employers are willing to pay the student to produce it.",
+    "cn": "而学生能创造的价值体现在雇主愿意付给学生多少工资来让他们进行生产。",
+    "note": "主语为\"the value of what the student can produce\"，其中what引导宾语从句作of的宾语；the wage后省略了关系代词that/which，后接定语从句employers are willing to pay...；be reflected in为被动结构。"
+   }
+  ]
+ }
+}

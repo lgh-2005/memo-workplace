@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "b26add36f5e1__listening__all",
+ "examId": "b26add36f5e1",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2018 年 12 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:20:14.243Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 51322,
+ "usage": {
+  "prompt_tokens": 2170,
+  "completion_tokens": 2720,
+  "total_tokens": 4890,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2170,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2720,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2170,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于选项文本的语言特征与正确答案进行推理分析，不涉及任何对录音内容的编造。",
+  "overview": "本场听力共 7 段，包含长对话与短文听力。第1段（Q1-4）围绕拍照与网络走红话题；第2段（Q5-8）涉及物理学访谈与宇宙起源；第3段（Q9-11）关于口音突变的医学现象；第4段（Q12-15）涉及游泳题材书籍与女性游泳历史；第5段（Q16-18）讨论测谎技术的可靠性；第6段（Q19-21）关于语言多样性的地理分布；第7段（Q22-25）涉及中产阶级消失与就业问题。",
+  "strategy": [
+   "预读选项时用关键词分组，快速锁定每段话题，如 photo/universe/accent/swimming 等",
+   "注意选项中表态度的形容词（sceptical, optimistic），听时重点捕捉说话者语气与评价词",
+   "动词原形开头的选项通常对应建议或请求类提问，留意祈使语气与情态动词",
+   "含否定词（not, far from）的选项常为陷阱或正确答案，注意听录音中的转折词 but/however",
+   "对并列信息题（如 A and B），注意区分主次：录音强调的往往是后半句",
+   "数据与细节题需集中注意力，避免被相似但错误的选项误导"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "拍照、照片发布与网络走红",
+    "optionSignals": "Q1四个选项均为祈使句（动词原形开头），问的是某人对另一人的建议或请求；Q2四个选项均为动名词短语，问的是目标或正在做的事；Q3也是动名词短语，问具体做法；Q4为 They 开头的陈述句，评价照片质量。",
+    "tips": [
+     "Q1 正确答案 C 'Take a picture of him' 与拍照主题高度吻合，其余选项虽合理但偏离核心事件",
+     "Q4 中 far from satisfactory 含否定意味，听力中转折处常出正确答案，注意 but/though 信号词",
+     "Q2 各选项差异大（fame vs. collection vs. professional），通过听到的关键名词即可排除"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "物理学访谈与宇宙起源中的物质与反物质",
+    "optionSignals": "Q5 四个选项分别描述不同媒体形式（journal/course/occasion/interviews），问的是节目或内容的性质；Q6-7 考查具体讨论话题，选项含 universe/radiation/particle/anti-matter 等专业词汇；Q8 为四个陈述句，考查对 matter 与 anti-matter 关系的理解。",
+    "tips": [
+     "Q5 区分 journal/course/occasion/interviews 四种形式，听开头介绍语即可判断",
+     "Q7 正确答案 D 'Why there is a universe at all' 是最根本性的问题，与宇宙起源主题最契合",
+     "Q8 注意 sufficient amount of matter 这一关键限定语，听力中可能出现 enough/sufficient 等同义表达"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "外国口音综合征（Foreign Accent Syndrome）的症状与病因",
+    "optionSignals": "Q9 四个选项均以 She 开头描述女性经历，涉及 speaking/accent/illness/country；Q10 以 It 开头描述某种疾病特征，含 stroke/brain injury/treatment/speech defects 等医学词；Q11 四个选项均为单个国籍形容词，问的是具体口音类型。",
+    "tips": [
+     "Q9 关键区分 foreign language 与 different accent，两者差异微妙但本质不同",
+     "Q10 正确答案 A 提到 stroke or brain injury，属于常见病因类考点，需注意因果信号词 caused by/due to",
+     "Q11 只需捕捉一个具体国名即可，俄语口音（Russian）在听力中辨识度较高"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "关于游泳的书籍与女性游泳史",
+    "optionSignals": "Q12 选项简短，问讨论主题（water sports/racing/women swimmers/books about swimming）；Q13-15 以 She 开头描述女性成就，涉及 English Channel/guide/swimwear/competed against men 等具体事件。",
+    "tips": [
+     "Q12 正确答案 D 'Books about swimming' 是上位概念，涵盖后续各题所涉内容，属于主旨题常见正确项特征",
+     "Q14 正确答案 D 'fully dressed when swimming' 与 modesty 概念相关但更具体，注意同义替换",
+     "Q15 区分三个 She was the first/She once competed/She was an advocate，关键词 English Channel 出现即可锁定"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "测谎技术的研发与可信度争议",
+    "optionSignals": "Q16 四个选项为不同目标（detect lies/brain scanner/court evidence/trust），问研究目的；Q17 含态度词 optimistic/sceptical/promotion/enthusiasm，问他人评价；Q18 涉及对技术的顾虑（trusted/economical/privacy/overuse）。",
+    "tips": [
+     "Q17 正确答案 B 含 sceptical（怀疑的），听力中常以 doubt/question/not convinced 等词表达同义",
+     "Q18 正确答案 A 'not to be trusted at all' 语气极端，此类绝对化表述在听力中若被说话者明确使用则可选",
+     "Q16 注意区分 build a machine 与 develop a scanner，前者更通俗，后者更技术化"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "全球语言多样性的地理分布规律与成因",
+    "optionSignals": "Q19 四个选项描述某地区语言状况，涉及 multilingual/dying out/different language/researchers；Q20 描述语言分布特征，含 randomly/difficult/tropical regions/enrich；Q21 描述研究结论，涉及 methods/patterns/hypotheses/no conclusive account。",
+    "tips": [
+     "Q19 正确答案 C 'Each village speaks a totally different language' 表述极端但可能是录音中的亮点信息",
+     "Q20 正确答案 C 涉及 tropical regions 与 mild zones 的对比，地理类对比是常考出题点",
+     "Q21 正确答案 D 含 no conclusive，表示研究尚无定论，属于学术类听力常见结尾总结"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "美国中产阶级消失、美国梦与就业形态变化",
+    "optionSignals": "Q22 选项描述某国现状（middle-class disappearing/wealth distributed/population growing/dream coming true）；Q23 以 They 引导的信念陈述；Q24 四个名词短语（working conditions/better-paying jobs/social status/full employment）问期望或目标；Q25 四个动词短语问企业策略。",
+    "tips": [
+     "Q22 正确答案 A 'middle-class is disappearing' 为负面信息，与后续题目关于就业困难形成逻辑链",
+     "Q24 正确答案 D 'Full employment' 需注意 full 的完整含义，不是 better 而是 full，精确捕捉修饰词",
+     "Q25 正确答案 C 'Hire part-time employees only' 中 only 为极端限定词，该策略与中产阶级萎缩话题逻辑自洽"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "sceptical",
+    "cn": "怀疑的，持怀疑态度的"
+   },
+   {
+    "w": "anti-matter",
+    "cn": "反物质"
+   },
+   {
+    "w": "credibility",
+    "cn": "可信度，可靠性"
+   },
+   {
+    "w": "accent",
+    "cn": "口音，腔调"
+   },
+   {
+    "w": "stroke",
+    "cn": "中风"
+   },
+   {
+    "w": "indigenous",
+    "cn": "本土的，土著的"
+   },
+   {
+    "w": "modesty",
+    "cn": "端庄，谦虚；（此处指着装保守）"
+   },
+   {
+    "w": "intrude",
+    "cn": "侵入，侵犯（隐私等）"
+   },
+   {
+    "w": "conclusive",
+    "cn": "决定性的，最终的"
+   },
+   {
+    "w": "tropical",
+    "cn": "热带的"
+   },
+   {
+    "w": "administrative",
+    "cn": "行政的，管理的"
+   },
+   {
+    "w": "satisfactory",
+    "cn": "令人满意的"
+   },
+   {
+    "w": "advocate",
+    "cn": "倡导者，拥护者"
+   },
+   {
+    "w": "distribution",
+    "cn": "分布，分配"
+   }
+  ]
+ }
+}

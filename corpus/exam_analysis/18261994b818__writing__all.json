@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "18261994b818__writing__all",
+ "examId": "18261994b818",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年 9 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:43:47.081Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44642,
+ "usage": {
+  "prompt_tokens": 737,
+  "completion_tokens": 2882,
+  "total_tokens": 3619,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 737,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2882,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 737,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，以指定首句开头，围绕\"现实社交的乐趣与价值\"展开论述，可举例、评论或结合个人经历，词数150-200词。",
+    "outline": [
+     "以题目给定首句引入话题，点明在数字化时代人们重新认识到线下社交的乐趣与意义。",
+     "从两个层面展开论证：一是面对面交流能建立真实的情感联结（举例说明）；二是现实社交有助于心理健康（引用研究或个人体验）。",
+     "总结全文，强调数字交流应辅助而非取代现实社交，呼吁人们多参与线下互动。"
+    ],
+    "sample": "Today more and more people begin to realize the pleasures and joys of real-world social interaction. In an era dominated by smartphones and social media, this awakening is both timely and significant.\n\nTo begin with, face-to-face communication fosters genuine emotional connections that virtual interaction simply cannot replicate. When we engage with others in person, we perceive subtle facial expressions, warm tones of voice, and sincere body language, all of which enrich our understanding of one another. For instance, sharing a meal with friends or taking a walk with family members creates lasting memories and deepens mutual trust in ways that sending text messages never could.\n\nFurthermore, real-world social interaction contributes to our mental well-being. Studies have consistently shown that people who maintain active offline social lives tend to experience lower levels of anxiety and depression. Physical presence and human touch release hormones that promote happiness and reduce stress.\n\nIn conclusion, while digital communication offers undeniable convenience, it should complement rather than replace real-world interaction. We would be wise to put down our devices more often and embrace the irreplaceable warmth of human connection.",
+    "phrases": [
+     {
+      "en": "foster genuine emotional connections",
+      "cn": "培养真实的情感联结；foster比build更正式，强调'促进、培育'"
+     },
+     {
+      "en": "in an era dominated by...",
+      "cn": "在一个被……主导的时代；过去分词作定语，高频写作句式"
+     },
+     {
+      "en": "replicate",
+      "cn": "复制、再现；比copy更学术，常用于论证线上无法替代线下"
+     },
+     {
+      "en": "all of which enrich...",
+      "cn": "所有这些都丰富了……；非限制性定语从句，增加句式复杂度"
+     },
+     {
+      "en": "contribute to one's mental well-being",
+      "cn": "有助于心理健康；well-being为六级高频词汇"
+     },
+     {
+      "en": "complement rather than replace",
+      "cn": "补充而非取代；rather than形成对比，论证更有力度"
+     },
+     {
+      "en": "deepen mutual trust",
+      "cn": "加深相互信任；搭配地道，适用于人际关系话题"
+     },
+     {
+      "en": "embrace the irreplaceable warmth",
+      "cn": "拥抱不可替代的温暖；embrace用作比喻义，提升文采"
+     },
+     {
+      "en": "tend to experience lower levels of...",
+      "cn": "往往较少经历……；学术化表达，适合引用研究结论时使用"
+     },
+     {
+      "en": "put down our devices",
+      "cn": "放下电子设备；贴合话题，具体且生动"
+     }
+    ],
+    "pitfalls": [
+     "首句必须完整照抄题目原句，不可擅自改写或省略，否则扣分",
+     "全篇不可只谈网络社交的弊端而忽视正面论证现实社交的乐趣",
+     "举例需具体（如聚餐、散步），空谈大道理难拿高分",
+     "词数不足150词或超出200词均会被扣分，写完务必数词",
+     "避免中式英语如 play with friends very happy，应使用地道搭配"
+    ],
+    "upgrades": [
+     {
+      "plain": "Face-to-face communication is better than online communication.",
+      "better": "Face-to-face communication fosters genuine emotional connections that virtual interaction simply cannot replicate.",
+      "note": "用foster+定语从句替代简单比较级，语言更学术、论证更有力"
+     },
+     {
+      "plain": "Real-world social interaction is good for our health.",
+      "better": "Real-world social interaction contributes to our mental well-being.",
+      "note": "contribute to搭配well-being，表达更精准，避免口语化的good for"
+     },
+     {
+      "plain": "We should use less phones and talk to people more.",
+      "better": "We would be wise to put down our devices more often and embrace the irreplaceable warmth of human connection.",
+      "note": "虚拟语气+比喻义embrace，语气更委婉优雅，结尾更有感染力"
+     },
+     {
+      "plain": "For example, eating with friends is very happy.",
+      "better": "For instance, sharing a meal with friends creates lasting memories and deepens mutual trust.",
+      "note": "动名词作主语+具体动宾搭配，避免Chinglish，句式更成熟"
+     },
+     {
+      "plain": "Studies show that people who have more social activities are healthier.",
+      "better": "Studies have consistently shown that people who maintain active offline social lives tend to experience lower levels of anxiety and depression.",
+      "note": "副词consistently+tend to+具体病症名词，论据更具说服力与学术感"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Face-to-face communication fosters genuine emotional connections that virtual interaction simply cannot replicate. — 面对面交流培养的真实情感联结是虚拟互动无法复制的。（foster+定语从句，论证精准有力）",
+   "When we engage with others in person, we perceive subtle facial expressions, warm tones of voice, and sincere body language, all of which enrich our understanding of one another. — 当我们与他人面对面交流时，我们感知到细微的面部表情、温暖的语调和真诚的肢体语言，所有这些都丰富了我们对彼此的理解。（排比+非限定语从句，信息量大且句式高级）",
+   "While digital communication offers undeniable convenience, it should complement rather than replace real-world interaction. — 虽然数字通信提供了不可否认的便利，但它应该补充而非取代现实社交。（让步状语从句+complement rather than replace，辩证收尾）",
+   "We would be wise to put down our devices more often and embrace the irreplaceable warmth of human connection. — 我们应当更多地放下设备，拥抱人际联结中不可替代的温暖。（would be wise to委婉建议+比喻义embrace，结尾富有感染力）"
+  ]
+ }
+}

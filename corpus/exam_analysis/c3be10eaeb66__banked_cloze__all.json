@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "c3be10eaeb66__banked_cloze__all",
+ "examId": "c3be10eaeb66",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2024 年 6 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:54:57.150Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55602,
+ "usage": {
+  "prompt_tokens": 1402,
+  "completion_tokens": 3247,
+  "total_tokens": 4649,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1402,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3247,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1402,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "古典音乐对健康的积极影响",
+  "gist": "文章介绍了古典音乐能缓解压力、释放多巴胺、改善情绪与思维清晰度，尤其强调莫扎特音乐对大脑认知功能的独特促进作用，还指出古典音乐能显著降低血压、帮助心脏恢复及改善睡眠，建议人们日常多听舒缓音乐以提升健康水平。",
+  "difficulty": "中等",
+  "translation": "不同类型的音乐能激发独特的感受、情绪和记忆，这一点相当了不起。研究表明，音乐可以减轻手术前的压力和焦虑，我们每个人都会被自己独特的人生配乐所吸引。\n\n如果你想要缓解压力，不妨试试古典音乐。\n\n古典音乐的声音会产生一种镇静效果，释放大脑中能带来愉悦感的多巴胺，帮助控制注意力、学习和情绪反应。它还能降低身体的应激反应，从而带来更加愉悦的整体心情。事实证明，愉悦的心情可以使人的思维更加清晰。\n\n虽然古典音乐有许多伟大的作曲家，如巴赫、贝多芬和亨德尔，但这些艺术家的音乐似乎都不具有莫扎特音乐那样的健康效果。研究人员表示，聆听莫扎特的音乐可以增强脑电波活动并改善认知功能。另一项研究发现，莫扎特音乐的独特特征能激活大脑中负责高级心理功能的区域。甚至产科病房也使用莫扎特的音乐来帮助新生儿适应母体外的生活。\n\n研究发现，聆听古典音乐能显著降低人的血压。研究人员认为，古典音乐的舒缓声音可以帮助你的心脏从压力中恢复。古典音乐也是帮助失眠人群的一个好工具。一项研究发现，有睡眠问题的学生在听古典音乐时睡得更好。\n\n无论古典音乐是否是你日常聆听的音乐类型，花时间聆听你觉得舒缓的音乐都不会有什么坏处。你会惊讶于它带给你的美好感受以及对健康可能产生的积极变化。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "correct": "alleviate",
+    "why": "空格前为 to，后接名词 stress，需要一个动词原形。alleviate stress（缓解压力）是常见搭配，且与前文 reduce stress and anxiety 语义呼应，逻辑通顺。",
+    "traps": "recover 虽也是动词，但 recover stress 不构成合理搭配，recover 常接 from；hurt 语义不符合此处\"想要____压力\"的逻辑。",
+    "tip": "动词与宾语搭配：alleviate stress 是固定搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "I",
+    "correct": "loose",
+    "why": "letting loose 意为\"释放\"，此处指释放大脑中的多巴胺。let loose 是固定短语搭配，语法上 letting 后接形容词 loose 构成动词短语，语义完全吻合。",
+    "traps": "其他形容词如 soothing 放在此处语义不通；名词或动词类选项无法与 letting 构成合理短语搭配。",
+    "tip": "固定搭配识别：let loose 意为\"释放、放出\"。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "correct": "clarity",
+    "why": "lead to 后需接名词，clarity 意为\"清晰度\"，clarity in a person's thinking 指思维的清晰度，与前文\"愉悦心情带来的好处\"逻辑一致。",
+    "traps": "composers 虽也是名词，但\"思维中的作曲家\"语义荒谬；其他名词如 wards 也不符合此处语境。",
+    "tip": "名词填空：lead to + 名词，需根据语境选择合适名词。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "correct": "composers",
+    "why": "空格前有形容词 great，后有 of classical music 及举例 Bach, Beethoven, Handel，这些都是著名作曲家，因此 composers（作曲家）完全吻合。",
+    "traps": "clarity 虽为名词但语义不通；wards 意为\"病房\"，与 Bach 等人名的举例完全不搭。",
+    "tip": "语境线索：后文列举的人名均为著名古典作曲家。"
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "correct": "cognitive",
+    "why": "空格后为名词 function，需要一个形容词修饰。cognitive function（认知功能）是学术常见搭配，与前文 brain wave activity 并列，逻辑紧密。",
+    "traps": "soothing function（舒缓功能）虽语法可行但语义与\"大脑活动\"主题不符；其他词性不匹配形容词位置。",
+    "tip": "形容词+名词搭配：cognitive function 是高频学术词组。"
+   },
+   {
+    "number": 31,
+    "answer": "O",
+    "correct": "wards",
+    "why": "maternity wards 意为\"产科病房\"，是医学领域固定搭配。空格前为 maternity（产科的），后文提到 newborn babies，语境完全吻合。",
+    "traps": "composers 等名词虽词性可行但与 maternity 无法构成合理搭配；clarity 放在此处语义不通。",
+    "tip": "固定搭配：maternity wards（产科病房）需日常积累。"
+   },
+   {
+    "number": 32,
+    "answer": "M",
+    "correct": "significantly",
+    "why": "空格位于主语与谓语动词 reduces 之间，需要副词修饰动词。significantly（显著地）表示程度，强调古典音乐降低血压的效果明显，逻辑合理。",
+    "traps": "此处不能填形容词或名词；其他选项中无第二个副词可选，significantly 是唯一适合的副词。",
+    "tip": "副词修饰动词：识别空格位于主谓之间，判定需填副词。"
+   },
+   {
+    "number": 33,
+    "answer": "L",
+    "correct": "recover",
+    "why": "help your heart recover from stress，recover from 意为\"从……中恢复\"，是固定搭配。help + 宾语 + 动词原形结构，语法正确，语义通顺。",
+    "traps": "alleviate 虽为动词但不与 from 搭配；hurt 语义\"伤害心脏\"与全文积极论调矛盾。",
+    "tip": "动词搭配：recover from（从……中恢复）是核心短语。"
+   },
+   {
+    "number": 34,
+    "answer": "E",
+    "correct": "hurt",
+    "why": "it wouldn't hurt to do sth. 是英语固定句型，意为\"做某事不会有坏处\"。此处建议读者花时间听音乐，语气委婉，逻辑通顺。",
+    "traps": "alleviate 或 recover 虽是动词，但放入 it wouldn't ___ to 结构中语义不通，不构成惯用表达。",
+    "tip": "固定句型：it wouldn't hurt to do sth. 意为\"做某事无妨\"。"
+   },
+   {
+    "number": 35,
+    "answer": "N",
+    "correct": "soothing",
+    "why": "find 后接宾语补足语，you find soothing 意为\"你觉得舒缓的\"。soothing（舒缓的、令人放松的）与全文古典音乐减压的主题高度一致。",
+    "traps": "cognitive 虽为形容词但\"你觉得认知的音乐\"语义不通；loose 放在此处语义也不合理。",
+    "tip": "宾补结构：find + 宾语 + 形容词（宾补），需选语义合理的形容词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "alleviate",
+    "cn": "v. 减轻，缓解（痛苦、压力等）"
+   },
+   {
+    "w": "clarity",
+    "cn": "n. 清晰，清楚；明确"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的，与认知过程有关的"
+   },
+   {
+    "w": "composers",
+    "cn": "n. 作曲家（composer 的复数）"
+   },
+   {
+    "w": "soothing",
+    "cn": "adj. 舒缓的，令人放松的"
+   },
+   {
+    "w": "significantly",
+    "cn": "adv. 显著地，大幅度地"
+   },
+   {
+    "w": "dopamine",
+    "cn": "n. 多巴胺（一种神经递质）"
+   },
+   {
+    "w": "maternity",
+    "cn": "adj. 产科的；孕妇的 / n. 母性"
+   },
+   {
+    "w": "distinctive",
+    "cn": "adj. 独特的，有特色的"
+   },
+   {
+    "w": "trigger",
+    "cn": "v. 触发，引发"
+   },
+   {
+    "w": "wards",
+    "cn": "n. 病房（ward 的复数）"
+   },
+   {
+    "w": "recover",
+    "cn": "v. 恢复，康复（常与 from 搭配）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握文章主旨和大意，标记每个空格的大致语义方向。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每个空格的候选范围。",
+   "第三步：根据空格前后的语法结构（如介词、冠词、助动词）判断所需词性，排除不符选项。",
+   "第四步：结合上下文语境和固定搭配（如 let loose, recover from, maternity wards）确定唯一答案。",
+   "第五步：将选定词回填通读，检查语义连贯性和语法正确性，确保无重复使用。"
+  ]
+ }
+}

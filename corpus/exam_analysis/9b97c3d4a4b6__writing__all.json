@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "9b97c3d4a4b6__writing__all",
+ "examId": "9b97c3d4a4b6",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2025 年 12 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:04:57.367Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43576,
+ "usage": {
+  "prompt_tokens": 738,
+  "completion_tokens": 2672,
+  "total_tokens": 3410,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 738,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2672,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 738,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕大学生应如何在竞争日益激烈的世界中做好准备、应对挑战展开论述，150–200词。",
+    "outline": [
+     "第一段：以题目给定句子开头，引出话题——当今世界竞争加剧，大学生必须做好多方面准备以应对挑战。",
+     "第二段：分论点展开——①拓宽知识面，跨学科学习以增强适应力；②培养人际沟通与团队协作等软技能；可结合具体事例说明。",
+     "第三段：总结全文，呼吁大学生主动提升自我，唯有如此才能在激烈竞争中脱颖而出、取得长远成功。"
+    ],
+    "sample": "Living in an increasingly competitive world, college students should better prepare themselves to confront various challenges. The rapid development of technology and globalization has intensified competition in almost every field, making it imperative for students to equip themselves with a wide range of skills before entering society.\n\nTo begin with, college students should strive to broaden their knowledge beyond their own majors. A well-rounded education enables them to adapt to diverse working environments and seize opportunities that may arise unexpectedly. For instance, a computer science student who also understands business management will have a distinct advantage in the job market. Moreover, developing strong interpersonal and communication skills is equally essential. In today's collaborative workplace, the ability to work effectively in teams and express ideas clearly can set one apart from the crowd. Participating in student organizations and internships provides invaluable hands-on experience in this regard.\n\nIn conclusion, college students must take a proactive approach to self-improvement by acquiring versatile knowledge and honing practical skills. Only by doing so can they stand out in this fiercely competitive world and achieve long-term success.",
+    "phrases": [
+     {
+      "en": "equip oneself with",
+      "cn": "使自己具备……；常接skills/knowledge，体现主动准备的姿态"
+     },
+     {
+      "en": "make it imperative for sb. to do",
+      "cn": "使某人做……成为当务之急；it作形式宾语，imperative表紧迫性"
+     },
+     {
+      "en": "broaden one's knowledge beyond",
+      "cn": "将知识面拓展到……之外；beyond强调跨界学习"
+     },
+     {
+      "en": "a well-rounded education",
+      "cn": "全面的教育；well-rounded比comprehensive更地道"
+     },
+     {
+      "en": "have a distinct advantage in",
+      "cn": "在……中拥有明显优势；distinct比clear更正式"
+     },
+     {
+      "en": "set one apart from the crowd",
+      "cn": "使某人从人群中脱颖而出；高分替代stand out"
+     },
+     {
+      "en": "take a proactive approach to",
+      "cn": "采取积极主动的方式来……；proactive体现主动意识"
+     },
+     {
+      "en": "hone practical skills",
+      "cn": "磨练实用技能；hone比improve更高级，含精雕细琢之意"
+     },
+     {
+      "en": "hands-on experience",
+      "cn": "实践经验；hands-on强调亲身参与，搭配internship常见"
+     },
+     {
+      "en": "Only by doing so can they…",
+      "cn": "只有这样他们才能……；倒装句式，增强语势，适合用于结尾段"
+     }
+    ],
+    "pitfalls": [
+     "忘记抄写题目给定首句或擅自修改首句原文，直接扣分",
+     "通篇空谈道理，缺乏具体事例支撑，论证单薄得分偏低",
+     "词汇反复使用important/good等低频替换词，缺少词汇多样性",
+     "段落之间缺少过渡词衔接（如moreover, in conclusion），逻辑断裂",
+     "字数不足150词或严重超过200词，均可能被扣除格式分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Competition is very fierce in today's world.",
+      "better": "The rapid development of technology and globalization has intensified competition in almost every field.",
+      "note": "用具体原因（科技与全球化）替代笼统描述，信息更丰富、更有说服力"
+     },
+     {
+      "plain": "Students should learn more things.",
+      "better": "College students should strive to broaden their knowledge beyond their own majors.",
+      "note": "strive to与beyond使表达更精确，体现主动性与跨学科意识"
+     },
+     {
+      "plain": "Good communication skills are important.",
+      "better": "Developing strong interpersonal and communication skills is equally essential.",
+      "note": "动名词做主语使句式更正式，equally essential避免重复important"
+     },
+     {
+      "plain": "They can do well in the future.",
+      "better": "Only by doing so can they stand out in this fiercely competitive world and achieve long-term success.",
+      "note": "倒装句式增强语势，fiercely competitive首尾呼应，结尾更有力"
+     },
+     {
+      "plain": "For example, some students join clubs.",
+      "better": "Participating in student organizations and internships provides invaluable hands-on experience in this regard.",
+      "note": "动名词主语+provides结构更书面，invaluable和hands-on提升用词档次"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Living in an increasingly competitive world, college students should better prepare themselves to confront various challenges. — 题目指定首句，increasingly competitive world是全文核心关键词，需牢记。",
+   "The rapid development of technology and globalization has intensified competition in almost every field, making it imperative for students to equip themselves with a wide range of skills. — 现在分词作结果状语+it形式宾语结构，一句话完成背景铺垫与观点引出。",
+   "A well-rounded education enables them to adapt to diverse working environments and seize opportunities that may arise unexpectedly. — enable sb. to do并列两个动宾短语，节奏紧凑，that定语从句增加句子层次。",
+   "The ability to work effectively in teams and express ideas clearly can set one apart from the crowd. — set apart from the crowd为高分替换表达，不定式后置定语修饰ability，结构工整。",
+   "Only by doing so can they stand out in this fiercely competitive world and achieve long-term success. — 经典only倒装句收束全文，fiercely competitive与首段呼应，结构圆满。"
+  ]
+ }
+}

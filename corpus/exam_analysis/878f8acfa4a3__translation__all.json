@@ -1,0 +1,199 @@
+{
+ "schemaVersion": 1,
+ "id": "878f8acfa4a3__translation__all",
+ "examId": "878f8acfa4a3",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2020 年 7 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:29:17.788Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29903,
+ "usage": {
+  "prompt_tokens": 813,
+  "completion_tokens": 2209,
+  "total_tokens": 3022,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 813,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2209,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 813,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "《三国演义》文学地位与影响",
+  "reference": "The Romance of the Three Kingdoms is a famous Chinese historical novel written in the 14th century. Set against the historical backdrop of the Three Kingdoms period, this literary work depicts the wars among the three kingdoms of Wei, Shu, and Wu from the second half of the 2nd century AD to the second half of the 3rd century AD. The novel portrays nearly a thousand characters and countless historical events. Although these characters and events are mostly based on real history, they have all been romanticized and dramatized to varying degrees. The Romance of the Three Kingdoms is a universally acknowledged literary masterpiece. Since its publication, the novel has been continuously attracting generations of readers and has exerted a broad and lasting influence on Chinese culture.",
+  "sentences": [
+   {
+    "cn": "《三国演义》(The Romance of the Three Kingdoms)是中国一部著名的历史小说，写于十四世纪。",
+    "en": "The Romance of the Three Kingdoms is a famous Chinese historical novel written in the 14th century.",
+    "structure": "主系表结构 + 过去分词短语 written in... 作后置定语修饰 novel",
+    "keys": [
+     "历史小说 historical novel",
+     "写于十四世纪 written in the 14th century"
+    ]
+   },
+   {
+    "cn": "这部文学作品以三国时期的历史为背景，描写了从公元二世纪下半叶到公元三世纪下半叶的魏、蜀、吴三国之间的战争。",
+    "en": "Set against the historical backdrop of the Three Kingdoms period, this literary work depicts the wars among the three kingdoms of Wei, Shu, and Wu from the second half of the 2nd century AD to the second half of the 3rd century AD.",
+    "structure": "过去分词短语 Set against... 作状语 + 主句用 depicts 引出宾语，from...to... 表时间跨度",
+    "keys": [
+     "以……为背景 set against the backdrop of",
+     "文学作品 literary work",
+     "公元二世纪下半叶 the second half of the 2nd century AD",
+     "魏、蜀、吴 Wei, Shu, and Wu"
+    ]
+   },
+   {
+    "cn": "小说中刻画了近千个人物和无数的历史事件。",
+    "en": "The novel portrays nearly a thousand characters and countless historical events.",
+    "structure": "简单主谓宾结构，注意中文无主句需转换为英文有主句，以 the novel 作主语",
+    "keys": [
+     "刻画 portray",
+     "近千个 nearly a thousand",
+     "无数的 countless"
+    ]
+   },
+   {
+    "cn": "这些人物和事件虽然大都基于真实的历史，但都不同程度地被浪漫化和戏剧化了。",
+    "en": "Although these characters and events are mostly based on real history, they have all been romanticized and dramatized to varying degrees.",
+    "structure": "Although 引导让步状语从句 + 主句用现在完成时被动语态 have been romanticized and dramatized",
+    "keys": [
+     "基于真实的历史 based on real history",
+     "不同程度地 to varying degrees",
+     "浪漫化 romanticize",
+     "戏剧化 dramatize"
+    ]
+   },
+   {
+    "cn": "《三国演义》是一部公认的文学杰作。",
+    "en": "The Romance of the Three Kingdoms is a universally acknowledged literary masterpiece.",
+    "structure": "主系表结构，核心在 universally acknowledged 作前置定语修饰 masterpiece",
+    "keys": [
+     "公认的 universally acknowledged",
+     "文学杰作 literary masterpiece"
+    ]
+   },
+   {
+    "cn": "自面世以来，这部小说不断吸引着一代又一代的读者，并且对中国文化产生了广泛而持久的影响。",
+    "en": "Since its publication, the novel has been continuously attracting generations of readers and has exerted a broad and lasting influence on Chinese culture.",
+    "structure": "Since... 时间状语 + 现在完成进行时 has been attracting 与现在完成时 has exerted 并列，体现动作延续至今",
+    "keys": [
+     "面世 publication",
+     "一代又一代的读者 generations of readers",
+     "广泛而持久的影响 a broad and lasting influence",
+     "对……产生影响 exert an influence on"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "《三国演义》",
+    "en": "The Romance of the Three Kingdoms"
+   },
+   {
+    "cn": "三国时期",
+    "en": "the Three Kingdoms period"
+   },
+   {
+    "cn": "魏、蜀、吴",
+    "en": "Wei, Shu, and Wu"
+   },
+   {
+    "cn": "历史小说",
+    "en": "historical novel"
+   },
+   {
+    "cn": "公元二世纪下半叶",
+    "en": "the second half of the 2nd century AD"
+   },
+   {
+    "cn": "公元三世纪下半叶",
+    "en": "the second half of the 3rd century AD"
+   },
+   {
+    "cn": "浪漫化",
+    "en": "romanticize"
+   },
+   {
+    "cn": "戏剧化",
+    "en": "dramatize"
+   },
+   {
+    "cn": "文学杰作",
+    "en": "literary masterpiece"
+   },
+   {
+    "cn": "一代又一代的读者",
+    "en": "generations of readers"
+   }
+  ],
+  "pitfalls": [
+   "「以……为背景」易直译为 use...as background，应用 set against the backdrop of",
+   "「公元二世纪下半叶」中 second half 与序数词 2nd 易混淆拼写或遗漏 AD",
+   "「不同程度地」易误译为 in different degrees，地道表达为 to varying degrees",
+   "「浪漫化/戏剧化」词形变化易出错，需注意 romanticized / dramatized 的拼写",
+   "「自面世以来」时态必须用现在完成时或现在完成进行时，用一般过去时会失分"
+  ],
+  "upgrades": [
+   {
+    "plain": "is based on the history of the Three Kingdoms period",
+    "better": "set against the historical backdrop of the Three Kingdoms period",
+    "note": "过去分词短语作状语更简洁地道，backdrop 比 background 更具文学色彩"
+   },
+   {
+    "plain": "has attracted readers of many generations",
+    "better": "has been continuously attracting generations of readers",
+    "note": "现在完成进行时更突出「不断吸引」的持续性与动态感"
+   },
+   {
+    "plain": "had a wide and long influence on",
+    "better": "exerted a broad and lasting influence on",
+    "note": "exert influence 为高级搭配；broad and lasting 比 wide and long 更精准"
+   },
+   {
+    "plain": "is a masterpiece that everyone recognizes",
+    "better": "is a universally acknowledged literary masterpiece",
+    "note": "universally acknowledged 更正式凝练，避免定语从句的冗余"
+   },
+   {
+    "plain": "were made more romantic and dramatic",
+    "better": "have been romanticized and dramatized to varying degrees",
+    "note": "使用专业动词的被动态更学术，to varying degrees 体现程度差异更精确"
+   }
+  ]
+ }
+}

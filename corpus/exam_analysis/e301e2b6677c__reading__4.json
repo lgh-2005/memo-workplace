@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "e301e2b6677c__reading__4",
+ "examId": "e301e2b6677c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2014 年考研英语真题",
+ "year": 2014,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:30:15.989Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62287,
+ "usage": {
+  "prompt_tokens": 1752,
+  "completion_tokens": 3954,
+  "total_tokens": 5706,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1752,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3954,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1752,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "批评AAAS报告未触及人文教育的真正危机",
+  "gist": "文章围绕美国人文与科学院发布的《问题的核心》报告展开。作者肯定报告对人文与社科重要性的认可，但批评其未能触及自由教育的真正危机——高校人文社科教育日趋偏狭、沦为左翼宣传工具，保守主义和古典自由主义思想被边缘化，报告回避核心问题反而可能阻碍改革。",
+  "structure": [
+   "第1段：引出报告，总评'值得称赞但未触及危机本质'",
+   "第2-3段：介绍报告背景、委员会组成及报告目标",
+   "第4-5段：批评报告回避高校人文教育偏狭化的核心问题",
+   "第6段：总结报告可能适得其反，阻碍改革"
+  ],
+  "difficulty": "中等",
+  "translation": "美国人文与科学院（AAAS）刚发布的《问题的核心》报告，因肯定人文与社会科学对美国自由民主制度的繁荣与安全的重要性而值得称赞。然而遗憾的是，该报告未能指出自由教育所面临危机的真正本质，这可能弊大于利。\n\n2010年，国会两党重要人物致函AAAS，要求其找出\"联邦、州和地方政府、大学、基金会、教育工作者、个人捐助者及其他各方\"能够采取的行动，以\"保持美国在人文与社会科学学术研究和教育方面的卓越地位\"。作为回应，美国人文与科学院成立了人文与社会科学委员会。委员会51名成员中有顶尖大学校长、学者、律师、法官和企业高管，还有来自外交、电影、音乐和新闻界的知名人士。\n\n报告中提出的目标总体上令人赞赏。由于代议制政府以知情公民为前提，报告支持全面提高读写能力；强调历史和政治的学习，尤其是美国历史和美国政治；并鼓励使用新的数字技术。为促进创新和竞争，报告呼吁加大科研投入，制定连贯的课程体系以提升学生在21世纪解决问题和有效沟通的能力，增加教师经费投入，并鼓励学者将其学识应用于当今重大挑战。报告还倡导加强外语和国际事务的学习，并扩大海外留学项目。\n\n遗憾的是，尽管历时两年半编写，《问题的核心》始终未触及问题的核心：我们顶尖高校中自由教育的偏狭本质。委员会忽视了这样一个事实：数十年来，美国高校培养出的毕业生既不了解自由教育的内容与特质，也因此无法享受其益处。令人痛心的是，校园里曾经的探究精神已被人文和社会科学沦为宣传\"进步主义\"或左翼自由主义意识形态的工具所取代。\n\n如今，教授们习惯性地把对历史的进步主义解读和进步主义公共政策视为理所当然的研究对象，同时将保守主义或古典自由主义思想——如自由市场和自力更生——描绘为超出常规的、有时甚至是超出合法学术探究范围的东西。\n\nAAAS对自由教育表现出极大热情。然而，该报告很可能因掩盖了国会要求其阐明的挑战的深度和广度而阻碍改革。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "Regrettably, however, the report's failure to address the true nature of the crisis facing liberal education may cause more harm than good.",
+    "why": "第1段采用先扬后抑结构：先以'deserves praise'肯定报告，紧接以'Regrettably, however'转折，指出报告未能触及自由教育危机的真正本质，可能'弊大于利'。全段重心在转折之后的批评，因此作者总体态度是批评性的（Critical）。",
+    "traps": "B选项Appreciative（赞赏的）：仅对应转折前的肯定部分，忽略了转折后的核心批评立场，属于以偏概全。C选项Contemptuous（轻蔑的）：语气过重，作者虽批评报告但承认其值得称赞，并非鄙视。D选项Tolerant（宽容的）：作者明确指出报告可能弊大于利，态度绝非宽容包容。",
+    "tip": "态度题关注转折词后的核心观点，先扬后抑重点在'抑'。"
+   },
+   {
+    "number": 37,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "sent letters to the AAAS asking that it identify actions that could be taken by \"federal, state and local governments, universities, foundations, educators, individual benefactors and others\" to \"maintain national excellence in humanities and social scientific scholarship and education.\"",
+    "why": "原文关键信息为'maintain national excellence in humanities and social scientific scholarship and education'，即保持美国在人文社科学术和教育方面的'卓越地位'。D选项'keep a leading position in liberal education'是对此的同义改写：maintain对应keep，national excellence对应leading position，humanities and social sciences对应liberal education。",
+    "traps": "A选项'define the government's role'：原文提到政府只是能采取行动的主体之一，并非要界定政府角色。B选项'safeguard individuals' rights to education'：原文未涉及个人受教育权利，属于无中生有。C选项'retain people's interest'：原文说的是保持'卓越地位'而非保持人们的'兴趣'，interest一词偷换了概念。",
+    "tip": "细节题需精确对应原文关键词，注意同义替换与偷换概念的区别。"
+   },
+   {
+    "number": 38,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "encourages the use of new digital technologies",
+    "why": "第3段原文明确指出报告'encourages the use of new digital technologies'（鼓励使用新的数字技术）。C选项'the application of emerging technologies'是对此的同义改写：application对应use，emerging对应new digital。两者语义完全对等。",
+    "traps": "A选项'an exclusive study of American history'：原文说'particularly American history'是'尤其'而非'exclusively（排他的）'，程度词偷换。B选项'a greater emphasis on theoretical subjects'：原文强调的是解决问题和有效沟通等实践能力，未提及理论科目，属于无中生有。D选项'funding for the study of foreign languages'：原文倡导'greater study of foreign languages'，但未提及为外语学习提供资金支持，funding是针对teachers和research的，张冠李戴。",
+    "tip": "细节题注意限定词的偷换，如exclusive与particularly语义差距很大。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "professors routinely treat the progressive interpretation of history and progressive public policy as the proper subject of study while portraying conservative or classical liberal ideas – such as free markets and self-reliance – as falling outside the boundaries of routine, and sometimes legitimate, intellectual investigation.",
+    "why": "第5段指出教授们将进步主义解读视为'正当研究对象'，却将保守主义和古典自由主义思想描绘为超出'常规甚至合法学术探究范围'。这说明教授们系统性地偏向进步主义立场，歧视和排斥古典自由主义思想，即对古典自由主义思想抱有偏见（biased against）。",
+    "traps": "A选项'supportive of free markets'：原文明确说教授将自由市场视为超出合法研究范围的东西，是排斥而非支持，与原文相反。B选项'conservative about public policy'：教授推崇的是progressive public policy，而非保守的公共政策，正反颠倒。D选项'cautious about intellectual investigation'：原文说的是教授限制学术探究的范围，并非自身对学术探究持谨慎态度，混淆了施动方向。",
+    "tip": "推断题需理解行为背后的立场倾向，while结构常暗示对比态度。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "the illiberal nature of liberal education at our leading colleges and universities",
+    "why": "全文围绕AAAS的《问题的核心》报告展开，核心论点是：该报告虽肯定人文教育的重要性，却未能指出自由教育日趋偏狭（illiberal）的真正危机。B选项'Illiberal Education and \"The Heart of the Matter\"'精准概括了文章两大核心要素——偏狭化的自由教育与该报告之间的关系，涵盖了全文批评主旨。",
+    "traps": "A选项'Ways to Grasp'暗示文章提供了解决方案或理解途径，但文章重在批评报告的不足，而非提供方法。C选项'AAAS's Contribution'暗示积极贡献，与文章批评基调相悖，且contribution过于正面。D选项'Progressive Policy vs. Liberal Education'虽涉及文中部分内容，但仅对应第5段论述，无法涵盖全文对报告的整体批评框架。",
+    "tip": "主旨题标题应涵盖全文核心矛盾，兼顾文章讨论对象与作者立场。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "affirming",
+    "cn": "v. 肯定，确认"
+   },
+   {
+    "w": "regrettably",
+    "cn": "adv. 遗憾地，令人惋惜地"
+   },
+   {
+    "w": "presupposes",
+    "cn": "v. 以……为前提，预先假定"
+   },
+   {
+    "w": "literacy",
+    "cn": "n. 读写能力，文化素养"
+   },
+   {
+    "w": "coherent",
+    "cn": "adj. 连贯的，一致的"
+   },
+   {
+    "w": "curricula",
+    "cn": "n. 课程体系（curriculum的复数）"
+   },
+   {
+    "w": "advocates",
+    "cn": "v. 提倡，主张"
+   },
+   {
+    "w": "illiberal",
+    "cn": "adj. 偏狭的，不自由的"
+   },
+   {
+    "w": "deprived",
+    "cn": "adj./v. 被剥夺的；使丧失"
+   },
+   {
+    "w": "propaganda",
+    "cn": "n. 宣传，鼓吹（常含贬义）"
+   },
+   {
+    "w": "obscuring",
+    "cn": "v. 掩盖，使模糊"
+   },
+   {
+    "w": "self-reliance",
+    "cn": "n. 自力更生，自立"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Because representative government presupposes an informed citizenry, the report supports full literacy; stresses the study of history and government, particularly American history and American government; and encourages the use of new digital technologies.",
+    "cn": "由于代议制政府以知情公民为前提，该报告支持全面提高读写能力；强调历史和政治的学习，尤其是美国历史和美国政治；并鼓励使用新的数字技术。",
+    "note": "Because引导原因状语从句；主句含三个并列谓语supports、stresses、encourages，由分号和and连接；particularly引导补充说明。"
+   },
+   {
+    "en": "Today, professors routinely treat the progressive interpretation of history and progressive public policy as the proper subject of study while portraying conservative or classical liberal ideas – such as free markets and self-reliance – as falling outside the boundaries of routine, and sometimes legitimate, intellectual investigation.",
+    "cn": "如今，教授们习惯性地把对历史的进步主义解读和进步主义公共政策视为理所当然的研究对象，同时将保守主义或古典自由主义思想——如自由市场和自力更生——描绘为超出常规的、有时甚至是超出合法学术探究范围的东西。",
+    "note": "主句treat...as...与while引导的让步/对比状语portray...as...形成鲜明对比；破折号间插入举例说明；falling outside后接复杂名词短语作as的宾补。"
+   },
+   {
+    "en": "The commission ignores that for several decades America's colleges and universities have produced graduates who don't know the content and character of liberal education and are thus deprived of its benefits.",
+    "cn": "委员会忽视了这样一个事实：数十年来，美国高校培养出的毕业生既不了解自由教育的内容与特质，也因此无法享受其益处。",
+    "note": "ignores后接that宾语从句；从句主语graduates后跟who引导的定语从句，其中含don't know和are deprived两个并列谓语，thus表因果。"
+   }
+  ]
+ }
+}

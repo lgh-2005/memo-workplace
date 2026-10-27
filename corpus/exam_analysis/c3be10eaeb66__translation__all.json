@@ -1,0 +1,197 @@
+{
+ "schemaVersion": 1,
+ "id": "c3be10eaeb66__translation__all",
+ "examId": "c3be10eaeb66",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2024 年 6 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:54:55.567Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31576,
+ "usage": {
+  "prompt_tokens": 835,
+  "completion_tokens": 2349,
+  "total_tokens": 3184,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 835,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2349,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 835,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国传统婚礼习俗及其传承",
+  "reference": "China's traditional wedding customs have a long history. A complete set of wedding rituals gradually took shape starting from the Zhou Dynasty, some of which have been followed to this day. Although today's Chinese wedding customs have undergone significant changes, wedding celebrations remain grand and elaborate. The wedding venue is meticulously decorated, dominated by red — the color symbolizing jubilance — and adorned with numerous objects conveying best wishes for the newlyweds' happiness. During the wedding ceremony, the bride and groom are required to bow to Heaven and Earth, bow to their parents, and bow to each other. A banquet is then held to entertain the guests, and the newlyweds propose toasts to express their gratitude. Today, many young people still have a special fondness for traditional Chinese weddings, hoping to experience the unique and wonderful Chinese-style romance.",
+  "sentences": [
+   {
+    "cn": "中国的传统婚礼习俗历史悠久，从周朝开始就逐渐形成了一套完整的婚礼仪式，有些一直沿用至今。",
+    "en": "China's traditional wedding customs have a long history. A complete set of wedding rituals gradually took shape starting from the Zhou Dynasty, some of which have been followed to this day.",
+    "structure": "主系表结构 + 主谓宾结构 + some of which 引导非限制性定语从句，将三个分句合理拆分为两个英文句",
+    "keys": [
+     "传统婚礼习俗 traditional wedding customs",
+     "历史悠久 have a long history",
+     "周朝 the Zhou Dynasty",
+     "一套完整的婚礼仪式 a complete set of wedding rituals",
+     "逐渐形成 gradually took shape",
+     "沿用至今 have been followed to this day"
+    ]
+   },
+   {
+    "cn": "如今的中式婚礼习俗已有很大变化，但婚礼庆典仍然十分隆重。",
+    "en": "Although today's Chinese wedding customs have undergone significant changes, wedding celebrations remain grand and elaborate.",
+    "structure": "although 引导让步状语从句 + 主句用 remain + 形容词作表语，体现转折关系",
+    "keys": [
+     "已有很大变化 have undergone significant changes",
+     "婚礼庆典 wedding celebrations",
+     "隆重 grand and elaborate"
+    ]
+   },
+   {
+    "cn": "婚礼场地经过精心装饰，以象征喜庆(jubilance)的红色为主色调，摆放着许多祝愿新人幸福的物件。",
+    "en": "The wedding venue is meticulously decorated, dominated by red — the color symbolizing jubilance — and adorned with numerous objects conveying best wishes for the newlyweds' happiness.",
+    "structure": "被动语态主句 + 过去分词短语 dominated by 和 adorned with 作伴随状语 + 现在分词 conveying 作后置定语修饰 objects",
+    "keys": [
+     "婚礼场地 wedding venue",
+     "精心装饰 meticulously decorated",
+     "象征喜庆的红色 red symbolizing jubilance",
+     "主色调 dominant color",
+     "新人 the newlyweds",
+     "祝愿幸福的物件 objects conveying best wishes for happiness"
+    ]
+   },
+   {
+    "cn": "在婚礼上，新人要拜天地(bow to Heaven and Earth)、拜父母和相互对拜，然后设宴招待宾客，并向宾客敬酒致谢。",
+    "en": "During the wedding ceremony, the bride and groom are required to bow to Heaven and Earth, bow to their parents, and bow to each other. A banquet is then held to entertain the guests, and the newlyweds propose toasts to express their gratitude.",
+    "structure": "are required to + 三个并列动词短语 bow to 体现婚礼三拜；then 连接后续流程，被动语态 + 主动语态交替使用",
+    "keys": [
+     "拜天地 bow to Heaven and Earth",
+     "拜父母 bow to their parents",
+     "相互对拜 bow to each other",
+     "设宴招待宾客 hold a banquet to entertain the guests",
+     "敬酒致谢 propose toasts to express gratitude"
+    ]
+   },
+   {
+    "cn": "今天，许多年轻人依然钟情于传统的中式婚礼，体验独特而美好的中国式浪漫。",
+    "en": "Today, many young people still have a special fondness for traditional Chinese weddings, hoping to experience the unique and wonderful Chinese-style romance.",
+    "structure": "主谓宾 + 现在分词短语 hoping to experience 作目的或伴随状语，补充逻辑上的目的关系",
+    "keys": [
+     "钟情于 have a special fondness for",
+     "传统的中式婚礼 traditional Chinese weddings",
+     "独特而美好的 unique and wonderful",
+     "中国式浪漫 Chinese-style romance"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "传统婚礼习俗",
+    "en": "traditional wedding customs"
+   },
+   {
+    "cn": "周朝",
+    "en": "the Zhou Dynasty"
+   },
+   {
+    "cn": "婚礼仪式",
+    "en": "wedding rituals / wedding ceremony"
+   },
+   {
+    "cn": "喜庆",
+    "en": "jubilance"
+   },
+   {
+    "cn": "主色调",
+    "en": "dominant color / dominant color scheme"
+   },
+   {
+    "cn": "新人",
+    "en": "the newlyweds / the bride and groom"
+   },
+   {
+    "cn": "拜天地",
+    "en": "bow to Heaven and Earth"
+   },
+   {
+    "cn": "设宴招待宾客",
+    "en": "hold a banquet to entertain the guests"
+   },
+   {
+    "cn": "敬酒致谢",
+    "en": "propose toasts to express gratitude"
+   },
+   {
+    "cn": "中国式浪漫",
+    "en": "Chinese-style romance"
+   }
+  ],
+  "pitfalls": [
+   "「沿用至今」易误译为 use until now，应使用现在完成时被动态 have been followed to this day",
+   "「以红色为主色调」易遗漏被动含义，应译为 dominated by red 而非 use red as",
+   "「设宴招待」不能直译为 make dinner，应译为 hold a banquet to entertain",
+   "「敬酒致谢」中「敬酒」应译为 propose toasts，而非 drink wine 或 toast wine",
+   "「钟情于」为情感表达，应译为 have a fondness for 或 be fond of，避免用 like 过于简单"
+  ],
+  "upgrades": [
+   {
+    "plain": "have a long history",
+    "better": "boast a time-honored history",
+    "note": "boast 语气更自信，time-honored 比 long 更书面典雅"
+   },
+   {
+    "plain": "changed a lot",
+    "better": "have undergone significant changes",
+    "note": "undergo changes 为正式搭配，significant 比 a lot 更学术"
+   },
+   {
+    "plain": "carefully decorated",
+    "better": "meticulously decorated",
+    "note": "meticulously 表示极致细致，比 carefully 更能体现精心程度"
+   },
+   {
+    "plain": "many things that wish happiness",
+    "better": "numerous objects conveying best wishes for happiness",
+    "note": "convey best wishes 为地道表达，避免 wish 作动词的中式英语"
+   },
+   {
+    "plain": "still like traditional Chinese weddings",
+    "better": "still have a special fondness for traditional Chinese weddings",
+    "note": "have a fondness for 比 like 更能体现「钟情」的深层情感"
+   }
+  ]
+ }
+}

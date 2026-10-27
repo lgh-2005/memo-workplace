@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "07a3443e0b67__reading__3",
+ "examId": "07a3443e0b67",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年考研英语真题",
+ "year": 2018,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:37:25.537Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60082,
+ "usage": {
+  "prompt_tokens": 1715,
+  "completion_tokens": 3818,
+  "total_tokens": 5533,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1715,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3818,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1715,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "NHS与DeepMind数据交易引发的隐私与垄断之忧",
+  "gist": "文章围绕英国国家医疗服务体系（NHS）与人工智能公司DeepMind的数据合作展开，指出该协议忽视了患者隐私权。作者认为，比隐私更重要的问题在于数据的处理与聚合才是价值所在，而现行隐私法难以遏制科技巨头利用公共资源形成私人垄断，呼吁警惕\"数字封建主义\"的未来。",
+  "structure": [
+   "第一段：引出NHS与DeepMind交易事件及信息专员的裁决",
+   "第二段：分析隐私并非唯一视角，数据价值源于处理与聚合",
+   "第三段：指出隐私法未能触及监控经济的本质运作",
+   "第四段：揭示真正的隐忧——科技巨头利用公共资源形成数据垄断"
+  ],
+  "difficulty": "较难",
+  "translation": "任何对英国国家医疗服务体系（NHS）与DeepMind之间交易所做的公正评估，都必须首先承认双方本意是好的。DeepMind是全球领先的人工智能公司之一。这项工作应用于医疗保健的潜力巨大，但也可能导致科技巨头的权力进一步集中。正是在这一背景下，信息专员伊丽莎白·德纳姆对NHS旗下的皇家自由医院信托基金做出了严厉裁决——该信托基金于2015年依据一份模糊的协议将160万名患者的病历移交给了DeepMind，而该协议对患者的权利及其隐私期望考虑得远远不够。\n\nDeepMind几乎已经道歉了。NHS信托基金也已改正了做法。NHS与DeepMind之间的进一步安排——可能还会有很多——将受到严格审查，以确保已征得患者的所有必要许可，并清除了所有不必要的数据。关于患者知情同意，还有很多经验教训需要学习。但隐私并非此案的唯一视角，甚至不是最重要的。德纳姆女士选择将责任集中在NHS信托基金上，因为根据现行法律，它\"控制\"数据，而DeepMind只是\"处理\"数据。但这一区分忽略了一个关键问题：赋予数据价值的是处理和聚合，而不仅仅是拥有数据本身。\n\n关键问题在于，谁应该从我们如今的生活所产生的所有数据分析中获益。隐私法建立在\"可识别的个人信息对个人造成损害\"这一概念之上。这忽略了监控经济的运作方式。在监控经济中，个人数据只有在与数百万人的数据进行比较时才能体现其价值。\n\n在这个案例中，用隐私法来遏制科技巨头感觉略有不适。这种做法并未触及真正的隐忧。仅仅说DeepMind开发的算法将造福患者、拯救生命是不够的。真正重要的是，这些算法将属于一个利用公共资源开发它们的私人垄断企业。如果软件有望像现在的药物一样拯救生命，那么大数据也可能会像大型制药公司那样行事。我们仍处于这场革命的起点，现在的小选择日后可能产生巨大的后果。要避免数字封建主义的未来，还需要长期的斗争。德纳姆女士的报告是一个值得欢迎的开始。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "which handed over to DeepMind the records of 1.6 million patients in 2015 on the basis of a vague agreement which took far too little account of the patients' rights and their expectations of privacy.",
+    "why": "原文明确指出NHS信托基金将患者记录移交给DeepMind所依据的协议\"对患者权利和隐私期望考虑得远远不够\"（took far too little account of the patients' rights），B选项\"未能对患者权利给予应有关注\"（failed to pay due attention to patients' rights）是对原文的同义改写，语义完全吻合。",
+    "traps": "A\"引发科技巨头之间的冲突\"——原文未提及科技公司间的冲突，属于无中生有；C\"未达到后者（DeepMind）的期望\"——原文说的是未充分考虑患者的期望，而非DeepMind的期望，属于偷换对象；D\"使双方陷入危险境地\"——原文虽提到dangers，但指的是交易本身的风险评估，并非协议使双方陷入危险，属于曲解原文。",
+    "tip": "注意定位句中的关键修饰词，如far too little，往往是命题点。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The NHS trust has mended its ways. Further arrangements – and there may be many – between the NHS and DeepMind will be carefully scrutinised to ensure that all necessary permissions have been asked of patients and all unnecessary data has been cleaned.",
+    "why": "原文说\"NHS信托基金已经改正了做法\"（mended its ways），后续安排将受到严格审查，确保征得患者许可并清除不必要数据。这说明NHS信托基金以实际行动做出了必要的调整。C选项\"necessary adjustments\"（必要的调整）与\"mended its ways\"语义对应。",
+    "traps": "A\"空洞的承诺\"——原文显示NHS信托基金确实改正了做法，并非空洞承诺，属于过度贬义；B\"强硬的抵制\"——原文未提及任何抵制行为，属于无中生有；D\"真诚的道歉\"——原文说的是\"DeepMind几乎已经道歉\"（DeepMind has almost apologized），道歉主体是DeepMind而非NHS信托基金，且用了almost，说明连DeepMind都不算真正道歉，属于偷换主语。",
+    "tip": "区分不同主语的行为：道歉的是DeepMind，改正做法的是NHS trust。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "But this distinction misses the point that it is processing and aggregation, not the mere possession of bits, that gives the data value.",
+    "why": "作者在第二段末尾明确用强调句式（it is...that...）指出\"赋予数据价值的是处理和聚合，而非仅仅拥有数据\"，directly批评了德纳姆将责任归于\"控制\"数据方的做法。D选项\"数据的价值来自于对其的处理\"精确概括了这一核心论点。",
+    "traps": "A\"隐私保护必须不惜一切代价保障\"——原文第二段明确说隐私\"不是唯一视角，甚至不是最重要的\"，A与原文相悖；B\"泄露患者数据比出售数据更糟\"——原文未对泄露和出售做比较，属于无中生有；C\"从患者数据中获利是违法的\"——原文未提及违法性，属于无中生有。",
+    "tip": "注意作者用But转折后的强调句，往往是段落核心论点所在。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "What matters is that they will belong to a private monopoly which developed them using public resources.",
+    "why": "末段先说\"仅仅说算法造福患者是不够的\"，接着用What matters点明真正要紧的是：这些算法将归属于一个利用公共资源开发它们的\"私人垄断企业\"（private monopoly）。随后以大型制药公司类比，警告大数据可能走上同样的垄断之路。D选项\"科技巨头对大数据的垄断\"准确概括了这一核心担忧。",
+    "traps": "A\"大型制药公司之间的恶性竞争\"——文中提到big pharma只是类比，说明大数据可能重蹈覆辙，并非讨论药企间的竞争，属于曲解类比；B\"隐私法的执行不力\"——虽然文中提到隐私法略有不适（maladapted），但这是手段层面的不足，不是the real worry本身；C\"新软件的不受控使用\"——原文强调的是垄断归属问题，而非使用是否受控，属于偷换概念。",
+    "tip": "What matters is...句型直接点明作者认为的核心问题，是高频命题句。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "The potential of this work applied to healthcare is very great, but it could also lead to further concentration of power in the tech giants.",
+    "why": "作者一方面肯定AI应用于医疗的巨大潜力（potential is very great），另一方面始终警告可能带来权力集中、数据垄断、数字封建主义等风险。文末说\"我们仍处于革命起点，小选择可能产生巨大后果\"，总体呈现出\"认可价值但高度警惕风险\"的审慎态度，对应B选项cautious（谨慎的）。",
+    "traps": "A\"ambiguous（模棱两可）\"——作者观点并不模糊，他明确肯定潜力同时清晰指出垄断风险，是有立场的谨慎而非含糊不清；C\"appreciative（赞赏的）\"——作者虽承认AI潜力，但全文重心在于批评和警示，整体基调远非赞赏；D\"contemptuous（蔑视的）\"——作者并未贬低AI技术本身，属于态度过度消极。",
+    "tip": "态度题需看全篇基调：既有肯定又有担忧，优先选cautious而非极端选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "fair-minded",
+    "cn": "adj. 公正的，不偏不倚的"
+   },
+   {
+    "w": "damning",
+    "cn": "adj. 谴责性的，定罪性的"
+   },
+   {
+    "w": "verdict",
+    "cn": "n. 裁决，判定"
+   },
+   {
+    "w": "scrutinise",
+    "cn": "v. 仔细审查，严格检查"
+   },
+   {
+    "w": "aggregation",
+    "cn": "n. 聚合，汇总"
+   },
+   {
+    "w": "surveillance",
+    "cn": "n. 监控，监视"
+   },
+   {
+    "w": "curb",
+    "cn": "v. 遏制，限制"
+   },
+   {
+    "w": "maladapted",
+    "cn": "adj. 不适应的，不合适的"
+   },
+   {
+    "w": "monopoly",
+    "cn": "n. 垄断，垄断企业"
+   },
+   {
+    "w": "feudalism",
+    "cn": "n. 封建主义，封建制度"
+   },
+   {
+    "w": "pharma",
+    "cn": "n. 制药公司（pharmaceutical的缩写）"
+   },
+   {
+    "w": "gigantic",
+    "cn": "adj. 巨大的，庞大的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It is against that background that the information commissioner, Elizabeth Denham, has issued her damning verdict against the Royal Free hospital trust under the NHS, which handed over to DeepMind the records of 1.6 million patients in 2015 on the basis of a vague agreement which took far too little account of the patients' rights and their expectations of privacy.",
+    "cn": "正是在这一背景下，信息专员伊丽莎白·德纳姆对NHS旗下的皇家自由医院信托基金做出了严厉裁决——该信托基金于2015年依据一份模糊的协议将160万名患者的病历移交给了DeepMind，而该协议对患者的权利及其隐私期望考虑得远远不够。",
+    "note": "主干为强调句It is...that...；that从句主语为the information commissioner，其后which引导非限定性定语从句修饰the Royal Free hospital trust，从句内on the basis of后又嵌套which引导的定语从句修饰agreement。"
+   },
+   {
+    "en": "But this distinction misses the point that it is processing and aggregation, not the mere possession of bits, that gives the data value.",
+    "cn": "但这一区分忽略了一个关键问题：赋予数据价值的是处理和聚合，而不仅仅是拥有数据本身。",
+    "note": "主干为this distinction misses the point；that引导同位语从句，从句内部又是一个强调句it is...that...，其中not the mere possession of bits为插入否定成分，形成对比强调。"
+   },
+   {
+    "en": "If software promises to save lives on the scale that drugs now can, big data may be expected to behave as a big pharma has done.",
+    "cn": "如果软件有望像现在的药物一样大规模拯救生命，那么大数据也可能会像大型制药公司那样行事。",
+    "note": "主句为big data may be expected to behave...；if引导条件状语从句，其中on the scale后接that引导的定语从句修饰scale；as引导方式状语从句，将big data与big pharma进行类比。"
+   }
+  ]
+ }
+}

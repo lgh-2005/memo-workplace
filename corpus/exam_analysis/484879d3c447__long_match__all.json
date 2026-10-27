@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "484879d3c447__long_match__all",
+ "examId": "484879d3c447",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2022 年 9 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:41:13.989Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32458,
+ "usage": {
+  "prompt_tokens": 969,
+  "completion_tokens": 1814,
+  "total_tokens": 2783,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 969,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1814,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 969,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国学校外语教学与编程教育之争",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如coding、foreign language、schools等",
+   "圈出每句中的专有名词、数据、极端词（如all、most）作为首要定位线索",
+   "对比同义替换：如applicants↔job seekers，competence↔proficiency，nurture↔foster等",
+   "按段落顺序扫读，遇到与标记关键词匹配的段落立即细读确认逻辑一致性",
+   "优先处理含具体细节（人名、数据、州名）的题目，再处理概括性较强的题目"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "L",
+    "cn": "雇主对求职者的计算机技能比对其语言能力更为看重。",
+    "keywords": [
+     "employers",
+     "computer skills",
+     "language competence",
+     "more importance"
+    ],
+    "paraphrase": "原文可能用value/prioritize替换attach more importance to，用proficiency/ability替换competence，用hiring managers/recruiters替换employers等，属于同义词替换型。",
+    "tip": "定位employer/hiring相关段落，关注计算机技能与语言能力的比较关系。"
+   },
+   {
+    "number": 37,
+    "answer": "E",
+    "cn": "美国一位州参议员提议允许高中生选择学习外语或计算机编程中的一种。",
+    "keywords": [
+     "state senator",
+     "high school",
+     "foreign language",
+     "computer coding"
+    ],
+    "paraphrase": "原文可能用legislator替换senator，用proposed/suggested替换proposed，用either…or结构表达二选一；be allowed to可能对应give the option to等表述。",
+    "tip": "定位senator或legislator等政治人物相关词汇，快速锁定E段。"
+   },
+   {
+    "number": 38,
+    "answer": "K",
+    "cn": "一位高中语言教师认为，学习语言能拓宽学生的国际视野并培养各民族之间的相互尊重。",
+    "keywords": [
+     "high school language teacher",
+     "international perspective",
+     "mutual respect"
+    ],
+    "paraphrase": "原文可能用broaden one's horizons替换broadens international perspective，用foster/cultivate替换nurtures，属于动词同义替换型。",
+    "tip": "定位language teacher的观点，关注international和respect相关表述。"
+   },
+   {
+    "number": 39,
+    "answer": "G",
+    "cn": "美国某州将确保编程课程由高质量的教师来教授。",
+    "keywords": [
+     "U.S. state",
+     "programming classes",
+     "quality teachers",
+     "see to it"
+    ],
+    "paraphrase": "see to it that意为'确保'，原文可能用ensure/guarantee替换；quality teachers可能对应qualified/well-trained instructors等表述。",
+    "tip": "定位某州关于编程课师资保障的政策性表述，聚焦G段。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "cn": "统计数据显示，自20世纪90年代中期以来，计算机相关岗位持续增长，而外语对美国学生的吸引力却有所下降。",
+    "keywords": [
+     "statistics",
+     "computer-related jobs",
+     "on the rise",
+     "mid-1990s",
+     "less appealing"
+    ],
+    "paraphrase": "原文可能用data/figures替换statistics，用grown/increased替换on the rise，用lost appeal/declined in popularity替换less appealing，含有具体年代数据。",
+    "tip": "定位mid-1990s这一时间节点及数据对比信息，快速锁定D段。"
+   },
+   {
+    "number": 41,
+    "answer": "H",
+    "cn": "据称所有学科对学生的全面发展都是必不可少的。",
+    "keywords": [
+     "all school subjects",
+     "essential",
+     "well-rounded development"
+    ],
+    "paraphrase": "原文可能用every discipline替换all school subjects，用crucial/vital替换essential，用holistic/comprehensive development替换well-rounded development。",
+    "tip": "定位all/every等全称限定词及well-rounded或类似全面发展的表述。"
+   },
+   {
+    "number": 42,
+    "answer": "B",
+    "cn": "大多数教育工作者达成共识：编程应该在学校教授，但不应取代外语。",
+    "keywords": [
+     "consensus",
+     "most educators",
+     "coding",
+     "replace foreign language"
+    ],
+    "paraphrase": "原文可能用agreement替换consensus，用majority of替换most，用substitute for替换replace，核心逻辑是编程与外语并存而非取代。",
+    "tip": "定位consensus/agree等共识类词汇以及coding与foreign language并列出现的段落。"
+   },
+   {
+    "number": 43,
+    "answer": "J",
+    "cn": "一项研究表明，外语学习提高了学生的学业表现。",
+    "keywords": [
+     "study",
+     "foreign language learning",
+     "academic performance",
+     "improved"
+    ],
+    "paraphrase": "原文可能用research/findings替换study，用enhanced/boosted替换improved，用academic achievement/grades替换academic performance，属于研究结论型同义替换。",
+    "tip": "定位study/research引出的结论，关注外语学习与学业成绩的因果关系。"
+   },
+   {
+    "number": 44,
+    "answer": "C",
+    "cn": "由于缺乏资金和合格教师，学校落后于快速发展的计算机科学领域。",
+    "keywords": [
+     "funding",
+     "qualified teachers",
+     "lag behind",
+     "computer science"
+    ],
+    "paraphrase": "原文可能用lack of resources替换short of funding，用trained/certified替换qualified，用fall behind/struggle to keep up替换lag behind。",
+    "tip": "定位资金与师资短缺这一双重困境的描述，快速确认C段。"
+   },
+   {
+    "number": 45,
+    "answer": "N",
+    "cn": "一位杰出的高中语言教师还认为，在更早的年龄开始学习外语是明智的。",
+    "keywords": [
+     "distinguished",
+     "language teacher",
+     "earlier age",
+     "advisable"
+    ],
+    "paraphrase": "原文可能用award-winning/renowned替换distinguished，用beneficial/recommended替换advisable，用younger age/early childhood替换earlier age。",
+    "tip": "定位与K段同一教师（distinguished暗示获奖或知名）关于早期外语学习的观点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "competence",
+    "cn": "n. 能力；胜任力"
+   },
+   {
+    "w": "nurture",
+    "cn": "v. 培养；促进"
+   },
+   {
+    "w": "mutual",
+    "cn": "adj. 相互的；彼此的"
+   },
+   {
+    "w": "see to it",
+    "cn": "短语 确保；务必做到"
+   },
+   {
+    "w": "appealing",
+    "cn": "adj. 有吸引力的；有感染力的"
+   },
+   {
+    "w": "well-rounded",
+    "cn": "adj. 全面发展的；多才多艺的"
+   },
+   {
+    "w": "consensus",
+    "cn": "n. 共识；一致意见"
+   },
+   {
+    "w": "lag behind",
+    "cn": "短语 落后于；跟不上"
+   },
+   {
+    "w": "distinguished",
+    "cn": "adj. 杰出的；卓越的；著名的"
+   },
+   {
+    "w": "advisable",
+    "cn": "adj. 明智的；可取的"
+   }
+  ]
+ }
+}

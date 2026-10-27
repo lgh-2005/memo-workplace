@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "b07d0f41f501__part_b__all",
+ "examId": "b07d0f41f501",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2026 年考研英语真题",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:59:50.072Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44483,
+ "usage": {
+  "prompt_tokens": 1440,
+  "completion_tokens": 2353,
+  "total_tokens": 3793,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1440,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2353,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1440,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "商界人士应多读书及阅读的多重益处",
+  "type": "段落排序题",
+  "strategy": [
+   "先通读所有段落，识别首段（引出话题）和尾段（总结号召）",
+   "利用已固定段落（F、H、C）作为锚点，分析前后衔接关系",
+   "关注转折词（But）、递进词（also、And）、指示代词等逻辑信号词",
+   "追踪主题推进：提出建议→现状反差→具体推荐（科学/小说/诗歌）→益处→总结",
+   "检验排好顺序后全文是否在逻辑和语义上连贯流畅"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "B",
+    "why": "F段末句建议商界人士坐下来读书，B段以\"But for the most part, this isn't what the business community does\"转折，指出商界人士并不这样做，\"the business community\"与F段\"business people\"形成关键词复现。B段末尾提到\"a vast ocean awaits, bountiful with simmering ideas\"，为后文推荐具体阅读内容做铺垫。",
+    "traps": "E段讲科学写作，缺少与F段的转折衔接；A段以\"And\"开头，应接在其他推荐之后而非紧跟F段；D段是总结性段落，不宜置于文章开头部分。",
+    "tip": "抓住B段首句\"But\"转折及\"business community\"与F段的关键词照应。"
+   },
+   {
+    "number": 42,
+    "answer": "E",
+    "why": "B段末尾以\"a vast ocean awaits\"暗示广阔的阅读天地，E段紧接介绍\"a golden age of science writing\"，具体展开这片\"海洋\"中的科学写作领域，属于从概括到具体的推进。同时E段的\"golden age\"与后续H段\"a golden age of translation too\"中的\"too\"形成呼应，证明E在H之前。",
+    "traps": "A段讲诗歌，与H段小说之间缺乏\"too\"的递进关系；G段讲阅读益处，放在此处打断了\"推荐阅读内容\"的主题线。",
+    "tip": "E段\"golden age of science writing\"与H段\"golden age of translation too\"中\"too\"构成递进。"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "why": "H段推荐读小说（fiction），A段首句\"And just read a single poem\"以\"And\"递进，从小说过渡到诗歌，构成第三类阅读推荐。A段末句\"reading is self-help in action\"强调阅读的实际功效，自然过渡到C段用神经科学证据论证阅读益处。",
+    "traps": "G段虽讲阅读益处，但其\"also\"暗示前文已有益处论述，不宜直接跟在H段之后；E段讲科学写作，已在42位置使用。",
+    "tip": "A段首词\"And\"与H段构成并列递进，末句\"self-help\"引出C段科学论证。"
+   },
+   {
+    "number": 44,
+    "answer": "G",
+    "why": "C段论述阅读改善专注力、社会理解力和想象力等益处，G段以\"Reading has also been found to...\"中的\"also\"承接C段，补充更多益处（减少偏见、增加寿命），形成益处论述的递进叠加。括号补充\"physical books than digital ones\"进一步深化讨论。",
+    "traps": "D段是总结号召段，若放在44位置则45无合适段落收尾；A段已在43位置使用。",
+    "tip": "G段\"also\"一词明确表示承接C段已列举的益处继续补充。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "why": "D段以\"It is undoubtedly true that all work and no play really does make Jack, or Jill, dull\"总结全文要旨，末句\"Liberate your imagination this year\"发出行动号召，具有明显的结尾收束功能。\"Reading is cheap, easy and, most important, it's fun\"对全文进行高度概括，与F段开头建议形成首尾呼应。",
+    "traps": "其余选项均已在前面位置使用，且D段的总结号召语气最适合作为全文结尾段。",
+    "tip": "D段\"The cure is right at hand\"和\"Liberate your imagination\"为典型结尾号召语。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "at a pinch",
+    "cn": "在紧要关头，必要时（短语）"
+   },
+   {
+    "w": "foolproof",
+    "cn": "万无一失的，简单易行的（adj.）"
+   },
+   {
+    "w": "bountiful",
+    "cn": "丰富的，充裕的（adj.）"
+   },
+   {
+    "w": "simmering",
+    "cn": "酝酿中的，即将迸发的（adj.）"
+   },
+   {
+    "w": "lucid",
+    "cn": "清晰的，明了的（adj.）"
+   },
+   {
+    "w": "relish",
+    "cn": "享受，品味（v.）"
+   },
+   {
+    "w": "daunted",
+    "cn": "被吓倒的，气馁的（adj.）"
+   },
+   {
+    "w": "stamina",
+    "cn": "耐力，持久力（n.）"
+   },
+   {
+    "w": "loiter",
+    "cn": "徘徊，闲逛（v.）"
+   },
+   {
+    "w": "indulgence",
+    "cn": "放纵，沉溺（n.）"
+   },
+   {
+    "w": "rekindled",
+    "cn": "重新点燃，再次激发（v.）"
+   },
+   {
+    "w": "longevity",
+    "cn": "长寿，持久（n.）"
+   },
+   {
+    "w": "bias",
+    "cn": "偏见，偏向（n.）"
+   },
+   {
+    "w": "fine tunes",
+    "cn": "微调，精细调整（v.）"
+   },
+   {
+    "w": "lay readers",
+    "cn": "非专业读者，外行读者（n.）"
+   },
+   {
+    "w": "glimpsed alternative",
+    "cn": "瞥见的另一种可能（n.）"
+   },
+   {
+    "w": "immersive",
+    "cn": "沉浸式的（adj.）"
+   }
+  ]
+ }
+}

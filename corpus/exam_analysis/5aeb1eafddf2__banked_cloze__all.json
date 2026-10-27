@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "5aeb1eafddf2__banked_cloze__all",
+ "examId": "5aeb1eafddf2",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2020 年 9 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:33:01.734Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62846,
+ "usage": {
+  "prompt_tokens": 1378,
+  "completion_tokens": 3518,
+  "total_tokens": 4896,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1378,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3518,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1378,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "成年子女与父母同住的亲子关系变化",
+  "gist": "文章以作者自身经历切入，讨论成年子女继续与父母同住的现象。社会舆论常将此归因于懒惰或依赖，但作者认为长期同住反而加深了亲子关系。心理学家指出，同住可能带来积极结果，但牢固的亲子纽带并非自然而然形成，需要双方主动调整关系模式，避免重蹈青少年时期的旧有相处模式。",
+  "difficulty": "中等",
+  "translation": "也许正是在我的父母——他们同时也是我的室友——最近离家旅行了几个月的时候，我才恍然意识到自己为何至今还未离开这个家。\n\n这并非因为我在后勤事务上依赖他们，也不是需要他们来打理我的生活、或缓解家中的混乱。如今，我依赖的是他们的陪伴。\n\n我怀念回家后聊聊工作中的一天，我怀念能够读懂他们的表情、感知他们一天过得如何。我怀念对构成生活的那些微小细节拥有独特的洞察。\n\n虽然关于年轻人在家住得更久的讨论总是充斥着有关懒惰、依赖以及年轻人无法自立的论调，但我们很少谈及——至少就我的情况而言——我与父母的关系在同住期间无疑变得更加牢固了。\n\n这些年来，权力的动态关系已经改变，不再被定义为一方是给予者、另一方是索取者。那么，这对我们在家庭中的关系意味着什么？\n\n心理学家萨宾娜·里德认为，\"当成年子女与家人共同生活时，有一些非常积极的可能结果\"，她指出在此过程中\"亲子关系确实可能得到加强和成熟\"。\n\n但她也指出，牢固的纽带并非仅仅随着时间推移而自然形成。\"这段关系中诸多变化的因素需要被正视，而不是期望仅凭时间的流逝就能神奇地将父母与成年子女联结起来。重要的是要认识到关系的边界已经改变，以避免重新陷入青少年时期的旧有模式。\"",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "correct": "dawned",
+    "why": "固定搭配 it dawned on sb. 意为\"某人恍然意识到\"。此处主语为 it，后接 on me，结构完整，语义通顺，表示作者突然领悟自己未搬出家的原因。",
+    "traps": "contemplated（深思）虽与思考有关，但它是及物动词，不构成 it contemplated on me 的搭配；其他词词性或语义均不符合该固定句型。",
+    "tip": "掌握 it dawned on sb. that… 固定句型"
+   },
+   {
+    "number": 27,
+    "answer": "H",
+    "correct": "logistical",
+    "why": "空格后为 reasons，需要形容词修饰。logistical reasons 意为\"后勤/实际事务方面的原因\"，与后文 keep my life in order、ease the chaos 并列，指生活中的实际安排，语义贯通。",
+    "traps": "其他形容词如 bond（名词）、hierarchy（名词）均无法作定语修饰 reasons；上下文语境强调的是实际生活事务而非其他抽象概念。",
+    "tip": "logistical 意为\"后勤的、组织安排方面的\""
+   },
+   {
+    "number": 28,
+    "answer": "E",
+    "correct": "insight",
+    "why": "insight into 是固定搭配，意为\"对……的洞察/了解\"。此处表达作者怀念对构成生活的微小细节拥有独特洞察，与前文的感知、解读他人情绪相呼应。",
+    "traps": "outcomes 虽为名词但搭配 into 不自然且语义不合；patterns 虽也可接 into 但不符合 having unique 的表达逻辑。",
+    "tip": "insight into sth. 是高频固定搭配"
+   },
+   {
+    "number": 29,
+    "answer": "M",
+    "correct": "saturated",
+    "why": "be saturated by/with 意为\"被……充斥/充满\"。此处指关于年轻人在家同住的讨论被有关懒惰、依赖等负面论调所充斥，与转折语境形成对比。",
+    "traps": "contemplated 意为\"被深思\"，语义勉强但不符合 by talk of 的搭配习惯；dawned 已用于第26题且无被动用法。",
+    "tip": "be saturated by/with 表示\"被……充斥\""
+   },
+   {
+    "number": 30,
+    "answer": "L",
+    "correct": "rarely",
+    "why": "此处为倒装句，rarely 置于句首引起部分倒装（rarely do we talk of…），表示\"我们很少谈论……\"，与前半句关于社会偏见的论述形成对比转折。",
+    "traps": "undoubtedly 虽为副词，但放在句首不引起倒装，且语义（毫无疑问地我们谈论）与上下文对比逻辑矛盾。",
+    "tip": "否定副词 rarely 置于句首引起部分倒装"
+   },
+   {
+    "number": 31,
+    "answer": "O",
+    "correct": "undoubtedly",
+    "why": "副词 undoubtedly（毫无疑问地）修饰动词 strengthened，表达作者确信自己与父母的关系因长期同住而变得更加牢固，语气坚定，突出作者的立场。",
+    "traps": "magically（神奇地）语义不太贴合此处作者对个人经历的真切肯定；rarely 已用于第30题且语义矛盾。",
+    "tip": "副词修饰动词，注意语气与上下文立场的一致"
+   },
+   {
+    "number": 32,
+    "answer": "J",
+    "correct": "outcomes",
+    "why": "空格前有 positive possible 修饰，后接 when 从句，需要一个可数名词复数。outcomes（结果）意为\"积极的可能结果\"，是心理学家对同住现象的正面评价。",
+    "traps": "patterns（模式）虽为名词复数，但 positive possible patterns 语义不如 outcomes 契合；bond 为单数形式且通常不用 some…outcomes 的结构。",
+    "tip": "positive outcomes 是\"积极结果\"的常见搭配"
+   },
+   {
+    "number": 33,
+    "answer": "A",
+    "correct": "bond",
+    "why": "a strong bond 意为\"牢固的纽带/关系\"，与前文 relationship strengthen 呼应。心理学家指出牢固的亲子纽带不会随时间自动产生，需要主动经营。",
+    "traps": "hierarchy（等级制度）语义不合，文章讨论的是亲密关系而非等级；outcome 是结果而非关系本身。",
+    "tip": "bond 指人与人之间的情感纽带"
+   },
+   {
+    "number": 34,
+    "answer": "I",
+    "correct": "magically",
+    "why": "magically（神奇地）修饰 connect，带有否定含义——不能指望时间的流逝就能\"神奇地\"自动连接父母与子女，暗示这种想法不切实际。",
+    "traps": "undoubtedly 已用于第31题；且此处语境是否定期望（rather than hoping），用 magically 恰好表达不切实际的幻想。",
+    "tip": "magically 此处含讽刺意味，强调不现实的期望"
+   },
+   {
+    "number": 35,
+    "answer": "K",
+    "correct": "patterns",
+    "why": "fall back into patterns 意为\"重新陷入旧有模式\"。from the teen years 限定这些模式来自青少年时期，呼应全文主题——成年后应建立新的相处方式。",
+    "traps": "hierarchy（等级制度）虽语义上可指青少年时期的权力等级，但 fall back into hierarchy 不是常见搭配；bond 语义与 avoid falling back 矛盾。",
+    "tip": "fall into patterns 是\"陷入某种模式\"的固定表达"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dawned",
+    "cn": "v. 被领悟，被理解（it dawned on sb. 某人恍然意识到）"
+   },
+   {
+    "w": "logistical",
+    "cn": "adj. 后勤的，组织安排方面的"
+   },
+   {
+    "w": "insight",
+    "cn": "n. 洞察力，深刻理解（常搭配 into）"
+   },
+   {
+    "w": "saturated",
+    "cn": "adj./v. 充斥的，饱和的（be saturated by/with）"
+   },
+   {
+    "w": "undoubtedly",
+    "cn": "adv. 毫无疑问地，确实地"
+   },
+   {
+    "w": "contemplated",
+    "cn": "v. 深思，仔细考虑，沉思"
+   },
+   {
+    "w": "hierarchy",
+    "cn": "n. 等级制度，层级体系"
+   },
+   {
+    "w": "outcomes",
+    "cn": "n. 结果，成果（复数）"
+   },
+   {
+    "w": "bond",
+    "cn": "n. 纽带，联系，情感联结"
+   },
+   {
+    "w": "magically",
+    "cn": "adv. 神奇地，不可思议地"
+   },
+   {
+    "w": "parameters",
+    "cn": "n. 参数；（此处指关系的）界限，范围"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨大意和行文逻辑，标记每个空格所在句的结构",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的选择范围",
+   "第三步：先做有固定搭配的空（如 dawned on、insight into、fall into patterns），快速锁定确定答案",
+   "第四步：利用语法线索（如倒装结构、被动语态、冠词后接名词）进一步筛选",
+   "第五步：将选定答案代入原文通读检查，确保语义连贯且无重复使用"
+  ]
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "schemaVersion": 1,
+ "id": "ffd3335a9540__part_b__all",
+ "examId": "ffd3335a9540",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2020 年考研英语真题",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:43:37.598Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35573,
+ "usage": {
+  "prompt_tokens": 1330,
+  "completion_tokens": 1834,
+  "total_tokens": 3164,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1330,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1834,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1330,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "眼神接触的多种社会与生物功能",
+  "type": "小标题匹配",
+  "strategy": [
+   "通读各段，提炼每段核心主题词与论述方向",
+   "浏览七个备选标题，将关键词与段落主旨对应",
+   "利用段首段尾句确认主题句，排除干扰项",
+   "注意段落中高频词或核心概念是否被标题精准概括",
+   "剩余未选标题需回检确认其与任何段落均不匹配"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "C",
+    "why": "该段论述婴儿与母亲的mutual gaze（互相注视）构成依恋关系，成年后注视他人是\"complimentary sign of paying attention\"，还提到\"Eye contact and smile can signal availability and confidence\"，全段围绕眼神接触作为友善社交信号展开，与C项\"friendly social signal\"完全吻合。",
+    "traps": "G项\"aggressive\"与本段友善基调相反；B项\"rude\"和F项\"strangers\"在段中毫无提及，属于无中生有。",
+    "tip": "关键词\"friendly way\"\"complimentary sign\"\"availability and confidence\"锁定C。"
+   },
+   {
+    "number": 42,
+    "answer": "E",
+    "why": "该段提到神经科学家发现催产素（hormone oxytocin）增加眼神接触，还提到特定脑区（specific brain regions）在直视时的反应正被用先进脑扫描技术（brain scanning）研究，全段聚焦眼神接触背后的生物学因素及其研究进展，与E项\"Biological factors behind eye contact are being investigated\"精准对应。",
+    "traps": "D项涉及personality，本段讲的是激素与脑区等生理层面，非人格维度；A项\"eye fixations\"与本段内容无关。",
+    "tip": "关键词\"hormone oxytocin\"\"brain regions\"\"brain scanning\"指向生物学研究。"
+   },
+   {
+    "number": 43,
+    "answer": "G",
+    "why": "该段通过Minson的研究指出眼神接触在对抗情境中更可能与\"dominance or intimidation\"相关，并警告维持眼神接触\"may backfire\"，核心论述眼神接触的攻击性/对抗性一面，与G项\"Eye contact can be aggressive\"直接对应。",
+    "traps": "C项\"friendly\"仅是段中对比性提及，非本段主旨；B项\"rude\"在段中未出现，语义也不够精确。",
+    "tip": "关键词\"dominance\"\"intimidation\"\"adversarial situations\"\"backfire\"锁定G。"
+   },
+   {
+    "number": 44,
+    "answer": "A",
+    "why": "该段描述眼睛观看面孔或图片时\"pause on one spot at a time\"，停留约每秒三次（about three per second），然后跳到另一点，强调注视停留的短暂性，与A项\"Eye fixations are brief\"完美匹配：pauses即fixations，three per second说明极为brief。",
+    "traps": "F项\"not comfortable holding eye contact with strangers\"与本段技术性描述无关；B项\"rude\"同样无涉及。",
+    "tip": "关键词\"pauses\"\"three per second\"\"jump to another spot\"对应\"fixations are brief\"。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "why": "该段以\"neuroticism, a personality dimension\"开篇，指出高神经质人格者面对眼神接触时大脑回避反应更强，高焦虑负面情绪者注视时间更短、别人不看自己时更舒适，全段论证人格特质影响对眼神接触的反应，与D项完全一致。",
+    "traps": "F项虽涉及不舒适感，但本段强调的是人格维度的差异性影响，而非泛泛的陌生人情境；B项\"rude\"在段中毫无体现。",
+    "tip": "关键词\"neuroticism, a personality dimension\"直接点明主题为人格因素。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "antagonistic",
+    "cn": "敌对的，对抗的（adj.）"
+   },
+   {
+    "w": "instinctively",
+    "cn": "本能地（adv.）"
+   },
+   {
+    "w": "mutual gaze",
+    "cn": "相互注视（n. 短语）"
+   },
+   {
+    "w": "complimentary",
+    "cn": "表示赞赏的，恭维的（adj.）"
+   },
+   {
+    "w": "oxytocin",
+    "cn": "催产素（n.）"
+   },
+   {
+    "w": "autistic spectrum",
+    "cn": "自闭症谱系（n. 短语）"
+   },
+   {
+    "w": "eye-tracking",
+    "cn": "眼动追踪（n./adj.）"
+   },
+   {
+    "w": "dominance",
+    "cn": "支配，统治地位（n.）"
+   },
+   {
+    "w": "intimidation",
+    "cn": "恐吓，威胁（n.）"
+   },
+   {
+    "w": "adversarial",
+    "cn": "对抗性的，敌对的（adj.）"
+   },
+   {
+    "w": "backfire",
+    "cn": "适得其反，产生反效果（v.）"
+   },
+   {
+    "w": "fixation",
+    "cn": "注视，注视点（n.）"
+   },
+   {
+    "w": "neuroticism",
+    "cn": "神经质（n.，人格心理学术语）"
+   },
+   {
+    "w": "self-consciousness",
+    "cn": "自我意识过强，害羞（n.）"
+   },
+   {
+    "w": "avoidance",
+    "cn": "回避，逃避（n.）"
+   }
+  ]
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "c3be10eaeb66__writing__all",
+ "examId": "c3be10eaeb66",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2024 年 6 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:54:23.988Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41095,
+ "usage": {
+  "prompt_tokens": 736,
+  "completion_tokens": 2665,
+  "total_tokens": 3401,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 736,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2665,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 736,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，以指定首句开篇，围绕\"培养自主学习能力对个人发展日益重要\"展开论述，可评论、举例或结合个人经历，字数150-200词。",
+    "outline": [
+     "引言段：抄写题目给定首句，引出话题背景，点明在信息爆炸与技术快速迭代的时代，自主学习能力决定个人能否跟上变化。",
+     "主体段：从两到三个层面阐述自主学习能力重要的原因（如课堂知识不足以支撑终身职业、自主学习者具备更强的批判性思维），并辅以个人经历加以佐证。",
+     "结尾段：总结全文，重申自主学习能力是现代社会不可或缺的素养，呼吁学校与个人共同重视对该能力的培养。"
+    ],
+    "sample": "Nowadays, cultivating independent learning ability is becoming increasingly crucial for personal development. In an era characterized by rapid technological advancement and information explosion, the capacity to learn autonomously determines whether an individual can keep pace with the ever-changing world.\n\nThere are several compelling reasons why independent learning matters so profoundly. First and foremost, the knowledge acquired in formal education is far from sufficient to sustain a lifelong career. Only by developing the habit of self-directed learning can one continuously update skills and remain competitive in the job market. Furthermore, independent learners tend to possess stronger critical thinking abilities, enabling them to analyze problems from multiple perspectives rather than passively accepting information.\n\nMy personal experience serves as a vivid illustration. When I decided to master data analysis, no course at my university covered this subject comprehensively. Through online platforms and persistent self-study, I not only acquired practical skills but also cultivated perseverance and self-discipline.\n\nIn conclusion, independent learning ability is an indispensable asset in modern society. Educational institutions and individuals alike should attach greater importance to fostering this vital competence.",
+    "phrases": [
+     {
+      "en": "keep pace with",
+      "cn": "跟上……的步伐；常与 the ever-changing world / rapid development 等搭配"
+     },
+     {
+      "en": "first and foremost",
+      "cn": "首先，最重要的是；比单用 firstly 更正式，适合议论文首要论点"
+     },
+     {
+      "en": "far from sufficient",
+      "cn": "远远不够；用于强调程度，比 not enough 表达更高级"
+     },
+     {
+      "en": "self-directed learning",
+      "cn": "自主导向学习；教育学术语，比 self-study 更学术化"
+     },
+     {
+      "en": "remain competitive in the job market",
+      "cn": "在就业市场保持竞争力；就业话题高频搭配"
+     },
+     {
+      "en": "from multiple perspectives",
+      "cn": "从多角度；替换 from different angles，更书面"
+     },
+     {
+      "en": "serve as a vivid illustration",
+      "cn": "作为一个生动例证；引出个人经历的高级衔接表达"
+     },
+     {
+      "en": "attach greater importance to",
+      "cn": "更加重视……；比 pay more attention to 更正式，后接名词或动名词"
+     },
+     {
+      "en": "an indispensable asset",
+      "cn": "不可或缺的财富/资源；asset 既可指具体资产，也可指抽象优势"
+     },
+     {
+      "en": "characterized by",
+      "cn": "以……为特征的；常作后置定语修饰 era / society 等"
+     }
+    ],
+    "pitfalls": [
+     "忘记抄写题目给定首句或擅自修改首句措辞，直接扣印象分",
+     "全文仅空洞议论，缺少举例或个人经历支撑，论证单薄",
+     "字数不足150词或超出200词，均可能被扣分",
+     "段落之间缺少逻辑连接词，行文跳跃，衔接不流畅",
+     "拼写或主谓一致错误频出，如 ability 误用复数动词"
+    ],
+    "upgrades": [
+     {
+      "plain": "Independent learning is very important.",
+      "better": "Independent learning ability is an indispensable asset in modern society.",
+      "note": "用具体名词短语替换空泛形容词，表达更精准、更有学术感"
+     },
+     {
+      "plain": "We should pay attention to independent learning.",
+      "better": "Educational institutions and individuals alike should attach greater importance to fostering this vital competence.",
+      "note": "主语具体化，动宾搭配更正式，alike 增添平衡感"
+     },
+     {
+      "plain": "I learned data analysis by myself and got some skills.",
+      "better": "Through online platforms and persistent self-study, I not only acquired practical skills but also cultivated perseverance and self-discipline.",
+      "note": "介词短语前置 + not only...but also 并列结构使句式更丰富"
+     },
+     {
+      "plain": "Independent learners can think better.",
+      "better": "Independent learners tend to possess stronger critical thinking abilities, enabling them to analyze problems from multiple perspectives.",
+      "note": "现在分词短语作结果状语，信息密度更高，逻辑更紧凑"
+     },
+     {
+      "plain": "Knowledge from school is not enough.",
+      "better": "The knowledge acquired in formal education is far from sufficient to sustain a lifelong career.",
+      "note": "过去分词后置定语 + far from + 不定式目的补语，句式更复杂高级"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only by developing the habit of self-directed learning can one continuously update skills and remain competitive in the job market. —— 倒装句型 Only by doing... can one...，强调条件，是议论文高分必备句式。",
+   "In an era characterized by rapid technological advancement and information explosion, the capacity to learn autonomously determines whether an individual can keep pace with the ever-changing world. —— 长句融合过去分词定语 + whether 宾语从句，展现复杂句驾驭能力。",
+   "Independent learners tend to possess stronger critical thinking abilities, enabling them to analyze problems from multiple perspectives rather than passively accepting information. —— 现在分词结果状语 + rather than 对比结构，逻辑层次丰富。",
+   "Educational institutions and individuals alike should attach greater importance to fostering this vital competence. —— alike 并列双主语 + attach importance to 正式搭配，适合结尾号召。"
+  ]
+ }
+}

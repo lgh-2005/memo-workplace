@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "f9d11b8b2c79__reading__2",
+ "examId": "f9d11b8b2c79",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年考研英语真题",
+ "year": 2025,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:56:49.668Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57453,
+ "usage": {
+  "prompt_tokens": 1720,
+  "completion_tokens": 3439,
+  "total_tokens": 5159,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1720,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3439,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1720,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学研究的碳排放代价值得付出",
+  "gist": "文章围绕科学研究与碳排放的关系展开论述。作者对部分科学家为减排而缩减研究规模感到震惊，认为科研的碳排放代价是值得的，因为科研成果最终将保护地球未来。文章以太阳能电池技术发明者Green和芬兰碳负超级计算机LUMI为例，说明科技努力的回报以及可持续计算的可行性。",
+  "structure": [
+   "第1段：引出争议——部分科学家欲缩减研究以减排",
+   "第2-3段：承认科研耗能事实，但论证其碳排放物有所值",
+   "第4-5段：强调科学成效的重要性，举Green的发明为例证",
+   "第6-7段：以LUMI为可持续计算的典范，呼吁推广"
+  ],
+  "difficulty": "中等",
+  "translation": "最近得知一些科学家想缩减研究规模以减少碳排放，我感到十分震惊。他们说危机已经来临，我们需要减少高耗能的建模工作。至少，我们需要让能源使用变得更加可持续。\n\n不可否认，我们的实验室、科学仪器、火箭和卫星——我们科学家测量地球脉搏所需的工具——无论是在建造还是运行过程中都需要消耗大量能源。同样不可否认的是，科学对信息永不满足的渴求已经导致全球高耗能数据中心如雨后春笋般涌现。据国际能源署统计，这些建筑目前消耗了全球约1%的电力。\n\n然而，这是我们为了解世界而必须付出的代价。如果我们无法追踪大气中的二氧化碳含量、来源和排放者，我们又如何为决策者提供最佳减排建议呢？技术研究产生的碳排放花得其所：这些研究终将守护我们星球的未来。\n\n科学家可能很难为自己辩护，因为我们的工作复杂，往往在封闭的环境中进行，并且并不总是容易被理解或解释。但是，如果我们要解决人类面临的最大挑战，展示科学的有效性至关重要。\n\n认识到科学和工程能够带来的希望，正是千年技术奖创设的动力，该奖项迄今已进入第20个年头，旨在颂扬人类的创造力。过去的获奖者之一、澳大利亚新南威尔士大学的马丁·格林教授，是钝化发射极和背面电池技术的发明者，该技术如今被用于全球大多数太阳能电池板。得益于他的发明，我们有了真正减少全球碳排放的机会。\n\n每一天，科学家、技术专家和工程师们都在发现利用可再生能源的新方法，并开发各种技术，不仅要更智能地使用能源，还要为我们的智能提供动力。一个绝佳的例子是欧洲最大的超级计算机——芬兰的LUMI，它的碳排放令人惊叹地为负值。它建在一座旧造纸厂中，由附近的河流提供动力，其散发的余热为周边卡亚尼镇的居民供暖。\n\n如果世界要实现净零排放的雄心壮志，我们必须认真思考如何实现可持续计算，并打造更多像LUMI这样的项目。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "I was shocked to learn recently that some scientists want to scale back their research in an effort to decrease carbon emissions.",
+    "why": "原文第一句明确表示作者对'一些科学家想缩减研究规模（scale back their research）以减少碳排放'感到震惊（shocked）。选项B中的'intention to reduce their research'是对'want to scale back their research'的同义替换，与原文完全吻合。",
+    "traps": "A项'不愿减排'与原文相反，这些科学家恰恰是想减排才缩减研究；C项'对可持续能源的怀疑'原文未提及，属无中生有；D项'项目中浪费电力'原文未涉及'浪费'概念，属曲解原文。",
+    "tip": "抓住题干关键词回原文首句精确定位，注意同义替换。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The carbon emissions from technological research are well spent: ultimately this research will safeguard the future of our planet.",
+    "why": "原文指出'技术研究的碳排放花得其所（well spent）'，因为'这些研究最终将守护地球的未来'。'ultimately'表明从长远来看，'well spent'表明作者认为这些排放是合理的、正当的。选项D中'justifiable in the long run'精确对应'well spent...ultimately'。",
+    "traps": "A项'造成严重后果'与作者正面评价相悖，属反向干扰；B项'引起毫无根据的担忧'过于极端，作者承认碳排放是真实问题，只是认为值得；C项'目前难以处理'原文未讨论处理难度问题，属偷换论点。",
+    "tip": "注意把握作者对碳排放的整体态度——必要代价而非无意义消耗。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "Recognising the hope that science and engineering can bring was the impetus behind the creation of the Millennium Technology Prize, which is now entering its 20th year as a celebration of human ingenuity.",
+    "why": "Green的例子出现在第五段，该段首句点明千年技术奖的创设动力是'认识到科学和工程能带来的希望'。Green作为获奖者，其发明的太阳能电池技术使世界有机会减少碳排放，这正是'科学努力的回报（rewards of scientific endeavours）'的具体体现，与上文第三四段论证'科研碳排放物有所值'的主线一致。",
+    "traps": "A项'伟大科学家的成就'过于宽泛，例子的目的不是赞美个人而是论证科学努力有回报；B项'应对气候变化的紧迫性'非该段论证重点，原文强调的是希望而非紧迫性；D项'培养创造力的价值'虽提到'ingenuity'但该段论证的不是如何培养创造力，而是科学成果本身的价值。",
+    "tip": "例证题找论点——看例子所在段的首句或前一段的总结句。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "A great example of this is Europe's largest supercomputer, LUMI in Finland, which is astonishingly carbon-negative. Established in an old paper mill, it is powered by a nearby river and its remote heat warms the people who live in the surrounding town of Kajaani.",
+    "why": "第六段将LUMI作为利用可再生能源的'绝佳范例'，强调其'碳负值'的惊人特性；第七段紧接着呼吁'deliver more LUMIs'来实现净零目标。这表明LUMI被定位为可持续发展努力的典范（model of sustainability efforts），选项A精确匹配。",
+    "traps": "B项'战胜能源短缺的胜利'偷换概念，原文讨论的是可持续性而非能源短缺问题；C项'得益于全球净零倡议'因果倒置，是LUMI为净零目标服务，而非净零倡议催生了LUMI；D项'探索智能的力量'曲解原文中'power our intelligence'的含义，属字面误读。",
+    "tip": "末段往往与全文主旨呼应，LUMI是可持续计算的范例而非其他。"
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "However, this is a price we must pay for understanding the world. The carbon emissions from technological research are well spent: ultimately this research will safeguard the future of our planet.",
+    "why": "作者全文的核心立场是：科研虽然耗能高，但这是认识世界和保护未来不可避免的代价。第二段承认科研需要大量能源，第三段指出这是'必须付出的代价'，第六段则展示如何让高耗能研究更可持续。C项'高耗能的研究工作不可避免'与作者立场完全一致。",
+    "traps": "A项'零排放建模需要额外资金'原文未提及资金问题，属无中生有；B项'超级计算机的需求难以满足'原文未涉及供不应求的问题；D项'研究者的目标应切合实际'与文章主旨无关，作者是在为科研的能源消耗辩护，而非讨论目标设定。",
+    "tip": "全文态度题需综合把握作者的核心观点，排除原文未涉及的内容。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "scale back",
+    "cn": "缩减，削减（动词短语）"
+   },
+   {
+    "w": "unarguable",
+    "cn": "无可争辩的（adj.）"
+   },
+   {
+    "w": "unrelenting",
+    "cn": "不松懈的，持续的（adj.）"
+   },
+   {
+    "w": "mushrooming",
+    "cn": "迅速增长，激增（n./v.）"
+   },
+   {
+    "w": "efficacy",
+    "cn": "功效，有效性（n.）"
+   },
+   {
+    "w": "impetus",
+    "cn": "推动力，刺激（n.）"
+   },
+   {
+    "w": "ingenuity",
+    "cn": "独创性，创造力（n.）"
+   },
+   {
+    "w": "passivated",
+    "cn": "钝化的（adj.，技术术语）"
+   },
+   {
+    "w": "exploit",
+    "cn": "开发，利用（v.）"
+   },
+   {
+    "w": "carbon-negative",
+    "cn": "碳负值的，负碳的（adj.）"
+   },
+   {
+    "w": "net-zero",
+    "cn": "净零排放的（adj.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "How can we inform decision makers about the best ways to bring down carbon emissions if we can't track the amount of carbon dioxide in the atmosphere, where it's coming from and who's producing it?",
+    "cn": "如果我们无法追踪大气中二氧化碳的含量、来源以及排放者，我们又如何为决策者提供最佳减排建议呢？",
+    "note": "反问句式，主干为How can we inform...if we can't track...；track后接三个并列宾语从句：the amount...、where...、who...。"
+   },
+   {
+    "en": "Recognising the hope that science and engineering can bring was the impetus behind the creation of the Millennium Technology Prize, which is now entering its 20th year as a celebration of human ingenuity.",
+    "cn": "认识到科学和工程能够带来的希望，正是千年技术奖创设的推动力，该奖项迄今已进入第20个年头，旨在颂扬人类的创造力。",
+    "note": "动名词短语Recognising...作主语，that引导hope的同位语从句；which引导非限制性定语从句修饰Prize。"
+   },
+   {
+    "en": "It is equally true that science's unrelenting appetite for information has caused a mushrooming of energy-intensive data centres around the world.",
+    "cn": "同样不可否认的是，科学对信息永不满足的渴求已经导致全球高耗能数据中心如雨后春笋般涌现。",
+    "note": "It作形式主语，that引导的主语从句为真正主语；核心结构为appetite has caused a mushrooming of...。"
+   }
+  ]
+ }
+}

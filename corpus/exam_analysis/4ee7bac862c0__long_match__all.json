@@ -1,0 +1,245 @@
+{
+ "schemaVersion": 1,
+ "id": "4ee7bac862c0__long_match__all",
+ "examId": "4ee7bac862c0",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2016 年 12 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:05:38.530Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35512,
+ "usage": {
+  "prompt_tokens": 940,
+  "completion_tokens": 1936,
+  "total_tokens": 2876,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 940,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1936,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 940,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "消费电子展与智能设备市场趋势",
+  "strategy": [
+   "先通读10条陈述句，标记专有名词、数字、态度词等高辨识度关键词",
+   "将关键词回原文快速扫读定位，优先匹配专有名词和具体细节",
+   "注意同义替换：陈述句用词往往是原文的近义改写，需灵活联想",
+   "若多段内容相似，需精读比较细节差异，区分干扰段与正确段",
+   "先做把握大的题，再回头处理模糊题，避免重复选段"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "消费者往往不愿尝试智能家居设备，因为他们担心兼容性问题。",
+    "keywords": [
+     "smart-home devices",
+     "hesitant",
+     "compatibility",
+     "consumers"
+    ],
+    "paraphrase": "陈述句中 hesitant to try 对应原文中表达消费者犹豫或不愿购买的说法；compatibility problems 可能被替换为\"设备之间不能协同工作\"或\"不同品牌产品互不兼容\"等表述。",
+    "tip": "定位 smart-home 和 compatibility，D 段应讨论消费者对设备兼容的顾虑。"
+   },
+   {
+    "number": 37,
+    "answer": "K",
+    "cn": "今年的电子展有许多联邦政府官员出席。",
+    "keywords": [
+     "electronics show",
+     "federal government",
+     "officials",
+     "this year"
+    ],
+    "paraphrase": "陈述句中 featured the presence of many officials from the federal government 可能在原文中被表述为政府代表团参加展会或监管层关注科技行业等。",
+    "tip": "定位 federal government 和 officials，此类政府相关词汇在文中出现频率低，容易锁定 K 段。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "cn": "目前电子设备的市场需求正在下降或增速不如从前。",
+    "keywords": [
+     "market demand",
+     "declining",
+     "not growing",
+     "electronic devices"
+    ],
+    "paraphrase": "陈述句中 declining or not growing as fast as before 属于典型的同义替换，原文可能用 slowing growth、saturated market 或 sales plateau 等表达相同含义。",
+    "tip": "定位 demand/market 与 decline/slow 等负面趋势词，B 段应描述市场放缓的现状。"
+   },
+   {
+    "number": 39,
+    "answer": "L",
+    "cn": "一位分析师建议有必要同时接受创新产品的积极面和消极面。",
+    "keywords": [
+     "analyst",
+     "positive and negative",
+     "innovative products",
+     "accept"
+    ],
+    "paraphrase": "陈述句中 accept both the positive and negative aspects 可能在原文中被表述为 embrace the trade-offs 或 weigh the pros and cons 等近义说法。",
+    "tip": "定位 analyst 和 positive/negative 的对立表达，L 段应含有专家观点及利弊并存的论述。"
+   },
+   {
+    "number": 40,
+    "answer": "F",
+    "cn": "近年来消费电子展开始更多地关注电子设备的实用价值，而非花哨的外表。",
+    "keywords": [
+     "Consumer Electronics Show",
+     "practical value",
+     "showiness",
+     "recent years"
+    ],
+    "paraphrase": "陈述句中 practical value 与 showiness 形成对比，原文可能用 utility/usefulness 替换前者，用 flashy/glitzy/eye-catching 替换后者。",
+    "tip": "定位 practical 与 showy/flashy 的对比词汇，F 段应论述展会风格从炫技转向实用。"
+   },
+   {
+    "number": 41,
+    "answer": "A",
+    "cn": "今年的电子产品展上，创新产品数量更少了。",
+    "keywords": [
+     "fewer",
+     "innovative products",
+     "this year",
+     "show"
+    ],
+    "paraphrase": "陈述句中 fewer innovative products 可能在原文中被表述为 lack of groundbreaking gadgets 或 not as many new inventions 等同义说法。",
+    "tip": "A 段通常为开篇段，定位 fewer/less 与 innovative/new 即可确认。"
+   },
+   {
+    "number": 42,
+    "answer": "H",
+    "cn": "消费者越来越担心将个人信息提供给科技公司以获取定制化产品和服务。",
+    "keywords": [
+     "personal information",
+     "tech companies",
+     "customized",
+     "worried"
+    ],
+    "paraphrase": "陈述句中 giving personal information 对应隐私数据的让渡；customized products and services 可能被替换为 personalized experience 或 tailored recommendations 等。",
+    "tip": "定位 personal information/privacy 与 customized/personalized，H 段应聚焦数据隐私担忧。"
+   },
+   {
+    "number": 43,
+    "answer": "E",
+    "cn": "消费者技术协会是年度消费电子展的主办方。",
+    "keywords": [
+     "Consumer Technology Association",
+     "sponsor",
+     "annual",
+     "Consumer Electronics Show"
+    ],
+    "paraphrase": "陈述句中 sponsor 在原文可能被替换为 organize、host 或 run 等近义词，核心信息是 CTA 与 CES 之间的主办关系。",
+    "tip": "直接定位专有名词 Consumer Technology Association，E 段应介绍该协会与展会的关系。"
+   },
+   {
+    "number": 44,
+    "answer": "I",
+    "cn": "许多消费者质疑是否有必要对自己的健康状况进行监测。",
+    "keywords": [
+     "consumers",
+     "necessity",
+     "fitness monitored",
+     "wonder"
+    ],
+    "paraphrase": "陈述句中 wonder about the necessity 表达消费者的怀疑态度，原文可能用 question the need for 或 skeptical about 等替换；fitness monitored 可能对应 health tracking 或 wearable fitness devices。",
+    "tip": "定位 fitness/health monitoring 以及疑问态度词，I 段应讨论消费者对健康监测需求的质疑。"
+   },
+   {
+    "number": 45,
+    "answer": "C",
+    "cn": "尽管市场上没有出现令人惊叹的产品，但电子行业正在走向成熟。",
+    "keywords": [
+     "maturing",
+     "wonder products",
+     "electronic industry",
+     "no"
+    ],
+    "paraphrase": "陈述句中 maturing 暗示行业进入稳定期；wonder products 指轰动性产品，原文可能用 killer app、game-changer 或 must-have gadget 等同义表达。",
+    "tip": "定位 maturing/mature 及 wonder/breakthrough 等词，C 段应论述行业虽无爆款但趋于成熟。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "compatibility",
+    "cn": "n. 兼容性，相容性"
+   },
+   {
+    "w": "hesitant",
+    "cn": "adj. 犹豫的，迟疑的"
+   },
+   {
+    "w": "showiness",
+    "cn": "n. 华丽，炫耀，花哨"
+   },
+   {
+    "w": "customized",
+    "cn": "adj. 定制的，个性化的"
+   },
+   {
+    "w": "maturing",
+    "cn": "v. 成熟（mature 的现在分词）"
+   },
+   {
+    "w": "innovative",
+    "cn": "adj. 创新的，革新的"
+   },
+   {
+    "w": "declining",
+    "cn": "v./adj. 下降的，减少的"
+   },
+   {
+    "w": "sponsor",
+    "cn": "n./v. 主办方；赞助"
+   },
+   {
+    "w": "practical value",
+    "cn": "n. 实用价值"
+   }
+  ]
+ }
+}

@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "d8e3f65d0ba3__use_of_english__all",
+ "examId": "d8e3f65d0ba3",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2003 年考研英语真题（旧）",
+ "year": 2003,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:13:27.289Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 80599,
+ "usage": {
+  "prompt_tokens": 1707,
+  "completion_tokens": 4682,
+  "total_tokens": 6389,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1707,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4682,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1707,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "青少年教育活动的设计策略",
+  "gist": "文章论述教师应关注青少年在情感、智力和身体方面的变化，并据此设计合适的活动。活动应减少竞争、增强自信，提供多样化的领导机会和团队合作实践，同时考虑青少年注意力持续时间短的特点，帮助他们在能力范围内培养责任感。",
+  "difficulty": "中等",
+  "translation": "教师需要意识到青少年所经历的情感、智力和身体变化。他们还需要认真思考如何才能最好地适应这些变化。正在发育的身体需要运动和锻炼，但不能仅仅以强调竞争的方式进行。因为青少年正在适应他们的新身体以及一系列全新的智力和情感挑战，他们格外在意自己的形象，需要通过取得成功以及知道自己的成就被他人赞赏而获得的自信。然而，典型的青少年生活方式已经充满了太多竞争，因此明智的做法是策划那些赢家多于输家的活动，例如，出版刊载大量学生书评的通讯刊物、展示学生的艺术作品以及赞助读书讨论俱乐部。各种各样的小型社团可以提供多种领导力锻炼的机会，也为成功的团队互动提供实践机会。交朋友对青少年极为重要，许多害羞的学生需要某种组织带来的安全感，同时有一位给予支持的成年人在背后若隐若现地存在。\n\n在这些活动中，重要的是要记住青少年的注意力持续时间较短。应组织多样化的活动，以便参与者可以在想参加的时候保持活跃，然后转去做其他事情，而不会感到内疚，也不会让其他参与者失望。这并不意味着成年人必须接受不负责任的行为。相反，他们可以通过为学生规划在其能力和注意力范围之内的角色，以及制定明确的规则，来帮助学生培养责任感。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "A",
+    "correct": "thought",
+    "why": "固定搭配 give serious thought to 意为\"认真考虑\"，thought 在此作不可数名词使用，与 give 和 to 构成完整搭配，语义通顺。",
+    "traps": "idea 常用于 have an idea 而非 give idea to；opinion 表\"观点\"，与 give serious... to 不构成惯用搭配；advice 意为\"建议\"，语义上不符合\"认真思考如何做\"的逻辑。",
+    "tip": "考查固定搭配 give thought to。"
+   },
+   {
+    "number": 2,
+    "answer": "B",
+    "correct": "accommodate",
+    "why": "accommodate 有\"适应、顺应\"之意，此处指教师应顺应青少年经历的变化，与 such changes 搭配语义最合适，呼应全文\"因势利导\"的主旨。",
+    "traps": "strengthen 意为\"加强\"，不能说加强变化；stimulate 意为\"刺激、激发\"，语义方向偏离；enhance 意为\"增强、提升\"，搭配 changes 不合逻辑。",
+    "tip": "考查 accommodate 的\"适应、顺应\"义项。"
+   },
+   {
+    "number": 3,
+    "answer": "C",
+    "correct": "exercise",
+    "why": "前文说 growing bodies need movement，exercise（锻炼）与 movement 构成语义并列，均属身体活动范畴，且与后文强调的活动设计相呼应。",
+    "traps": "care 意为\"关怀\"，与 movement 不构成同类并列；nutrition 意为\"营养\"，虽与身体发育相关但与 movement 不对等；leisure 意为\"休闲\"，过于笼统且与运动不直接并列。",
+    "tip": "考查并列名词的语义一致性。"
+   },
+   {
+    "number": 4,
+    "answer": "D",
+    "correct": "Because",
+    "why": "本句解释青少年为何格外在意自我形象：正因为他们在适应新身体和新挑战，所以特别 self-conscious。前后为因果关系，需用 Because 引导原因状语从句。",
+    "traps": "If 表假设，与事实陈述矛盾；Although 和 Whereas 均表让步或对比，与上下文因果逻辑不符。",
+    "tip": "考查因果逻辑连词的判断。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "confidence",
+    "why": "上下文指青少年通过取得成功和获得他人认可来建立自信，confidence 与 achieving success 形成因果语义链，逻辑通顺。",
+    "traps": "assistance（帮助）和 guidance（指导）不是来自于 achieving success 的自然结果；tolerance（容忍）与成功和赞赏的语境完全不搭。",
+    "tip": "考查名词与后文 achieving success 的因果逻辑搭配。"
+   },
+   {
+    "number": 6,
+    "answer": "B",
+    "correct": "admired",
+    "why": "accomplishments are admired by others 意为\"成就被他人赞赏\"，与前文 achieving success 和建立 confidence 的逻辑一脉相承，表达他人认可带来的心理满足。",
+    "traps": "claimed 意为\"声称、索取\"，语义不当；ignored 意为\"忽视\"，与上下文褒义语境矛盾；surpassed 意为\"超越\"，不能用被动形式说成就被超越。",
+    "tip": "考查被动语态中动词语义与褒义语境的匹配。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "wise",
+    "why": "前文说青少年生活已充满竞争，因此计划多赢家少输家的活动是\"明智的\"做法。it would be wise to... 表达正面建议，衔接上文的 However 转折。",
+    "traps": "improper（不当的）与后文举的正面例子矛盾；risky（冒险的）语义不符；fair（公平的）虽褒义但不如 wise 精确表达\"建议\"之意。",
+    "tip": "考查 it would be wise to 的建议性表达。"
+   },
+   {
+    "number": 8,
+    "answer": "C",
+    "correct": "for example",
+    "why": "后文列举了出版通讯、展示作品、赞助讨论俱乐部等具体活动，这些都是前文\"赢家多于输家的活动\"的例证，需要举例连接词。",
+    "traps": "in effect（实际上）表事实澄清；as a result（因此）表因果；in a sense（在某种意义上）表程度限定，均非举例功能。",
+    "tip": "考查举例逻辑连接词的识别。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "displaying",
+    "why": "displaying student artwork 意为\"展示学生艺术作品\"，与 publishing newsletters、sponsoring clubs 并列，都是让更多学生成为赢家的活动方式。",
+    "traps": "describing（描述）不符合活动性质；creating（创作）重点在制作过程而非展示成果；exchanging（交换）与语境不太契合。",
+    "tip": "考查动词语义与\"展示成果→增强自信\"逻辑的匹配。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "multiple",
+    "why": "a variety of small clubs 本身强调多样性，与 multiple opportunities（多种机会）相呼应，语义一致、搭配自然。",
+    "traps": "durable（持久的）强调时间维度，与 variety 不搭；excessive（过多的）含贬义；surplus（剩余的）表多余，不符语境。",
+    "tip": "考查 multiple 与 a variety of 的语义呼应。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "group",
+    "why": "group dynamics（团队动力学/群体互动）为固定搭配，指小型社团中成员之间的互动关系和协作方式，与 leadership 并列突出社交技能训练。",
+    "traps": "individual（个人的）与 dynamics 搭配不当且与社团语境矛盾；personnel（人事的）和 corporation（公司的）均属职场用语，不适合青少年活动场景。",
+    "tip": "考查固定搭配 group dynamics。"
+   },
+   {
+    "number": 12,
+    "answer": "D",
+    "correct": "security",
+    "why": "害羞学生需要组织提供的安全感（security），即在有组织结构和成人支持的环境中感到安心，从而更容易交朋友。",
+    "traps": "consent（同意）指许可，与害羞学生需求不符；insurance（保险）为金融术语；admission（准入）指被接纳，语义偏狭。",
+    "tip": "考查 security 的\"安全感\"义项。"
+   },
+   {
+    "number": 13,
+    "answer": "B",
+    "correct": "barely",
+    "why": "barely visible 意为\"几乎看不见的\"，说明成人应退居幕后、不过度干预，只在背后默默支持，给学生自主空间。",
+    "traps": "particularly（尤其）和 definitely（明确地）均强调可见性，与 in the background 的隐匿语境矛盾；rarely（很少地）修饰频率而非可见程度，搭配不当。",
+    "tip": "考查 barely visible 表\"若隐若现\"的语境义。"
+   },
+   {
+    "number": 14,
+    "answer": "D",
+    "correct": "short",
+    "why": "下文紧接着说要让参与者可以随时转换活动，这正是因为青少年注意力持续时间短（short attention spans），前后构成因果链。",
+    "traps": "similar（相似的）和 different（不同的）虽可修饰 attention spans 但无法引出后文的活动设计建议；long（长的）与后文需要灵活切换活动的逻辑相悖。",
+    "tip": "考查 short attention spans 与下文灵活安排的因果关系。"
+   },
+   {
+    "number": 15,
+    "answer": "C",
+    "correct": "so that",
+    "why": "活动被组织的目的是让参与者能自由参与和退出，so that 引导目的状语从句，说明组织活动的目标。",
+    "traps": "if only（但愿）表虚拟愿望；now that（既然）表已知原因；even if（即使）表让步假设，均不表目的。",
+    "tip": "考查 so that 引导目的状语从句。"
+   },
+   {
+    "number": 16,
+    "answer": "D",
+    "correct": "something",
+    "why": "go on to something else 意为\"转去做其他事情\"，something else 指另一项不确定的活动，语义自然。",
+    "traps": "everything else（所有其他事）范围过大，不合逻辑；anything else 多用于疑问或否定句；nothing else（没有其他事）语义矛盾。",
+    "tip": "考查不定代词在肯定陈述句中的选用。"
+   },
+   {
+    "number": 17,
+    "answer": "B",
+    "correct": "down",
+    "why": "let...down 是固定短语，意为\"让……失望\"，此处指参与者退出时不会让其他人感到失望，与 without feeling guilty 并列。",
+    "traps": "let off（放过）、let out（释放/泄露）、let alone（更不用说）均不符合\"使他人失望\"的语境。",
+    "tip": "考查固定短语 let sb. down。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "On the contrary",
+    "why": "前句说\"这不意味着接受不负责任\"，本句转而说成年人可以帮助学生培养责任感，两句形成正反对比，On the contrary（相反）衔接否定与肯定的转折。",
+    "traps": "On the average（平均而言）表统计概括；On the whole（总的来说）表总结；On the other hand（另一方面）表并列对比而非正反对立。",
+    "tip": "考查 On the contrary 衔接\"否定—肯定\"的正反逻辑。"
+   },
+   {
+    "number": 19,
+    "answer": "C",
+    "correct": "planning",
+    "why": "planning for roles 意为\"为角色做规划\"，即成人为学生规划适合其能力的角色，与文末 having clearly stated rules 并列作 by 的宾语。",
+    "traps": "making for（走向）语义无关；standing for（代表）不符语境；taking for 无对应固定搭配或语义不通。",
+    "tip": "考查 plan for 的\"为……做规划\"搭配。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "correct": "capability",
+    "why": "within their capability 意为\"在他们的能力范围之内\"，与 their attention spans 并列，强调角色设计应量力而行。",
+    "traps": "responsibility（责任）强调义务而非能力限度；proficiency（熟练度）过于具体；efficiency（效率）侧重做事速度，均不如 capability 贴切。",
+    "tip": "考查 within one's capability 的固定搭配。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "self-conscious",
+    "cn": "adj. 害羞的，不自在的，忸怩的"
+   },
+   {
+    "w": "accomplishment",
+    "cn": "n. 成就，成绩"
+   },
+   {
+    "w": "accommodate",
+    "cn": "v. 适应，顺应；容纳"
+   },
+   {
+    "w": "dynamics",
+    "cn": "n. 动力学；（群体）互动关系"
+   },
+   {
+    "w": "sponsoring",
+    "cn": "v. 赞助，主办（sponsor 的现在分词）"
+   },
+   {
+    "w": "newsletter",
+    "cn": "n. 通讯刊物，简报"
+   },
+   {
+    "w": "irresponsibility",
+    "cn": "n. 不负责任"
+   },
+   {
+    "w": "commitment",
+    "cn": "n. 承诺，责任感，投入"
+   },
+   {
+    "w": "attention span",
+    "cn": "n. 注意力持续时间"
+   },
+   {
+    "w": "supportive",
+    "cn": "adj. 给予支持的，鼓励的"
+   },
+   {
+    "w": "a whole host of",
+    "cn": "大量的，一系列的"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Because",
+    "role": "引出青少年自我意识强的原因，构建因果关系"
+   },
+   {
+    "w": "However",
+    "role": "转折，引出青少年生活已充满竞争的对比信息"
+   },
+   {
+    "w": "for example",
+    "role": "引出具体活动实例，对前文建议进行举例说明"
+   },
+   {
+    "w": "so that",
+    "role": "引导目的状语从句，说明组织活动的设计意图"
+   },
+   {
+    "w": "On the contrary",
+    "role": "衔接否定句与肯定句，形成正反对立的逻辑关系"
+   },
+   {
+    "w": "as well as",
+    "role": "连接并列成分，补充社团提供的另一项功能"
+   }
+  ]
+ }
+}

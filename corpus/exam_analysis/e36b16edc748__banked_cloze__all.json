@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "e36b16edc748__banked_cloze__all",
+ "examId": "e36b16edc748",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2026 年 6 月英语六级真题（第 3 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:08:20.943Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66426,
+ "usage": {
+  "prompt_tokens": 1392,
+  "completion_tokens": 4799,
+  "total_tokens": 6191,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1392,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4799,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1392,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "个人空间偏好与性格、文化的关系",
+  "gist": "文章探讨了影响个人空间偏好的多种因素。研究表明，宜人性高及外向的人倾向于更小的个人空间；性别、年龄等人口统计特征也会影响空间偏好；来自42个国家的跨文化研究显示，平均气温是与人际距离显著相关的唯一因素；此外，人际吸引力也体现在人们选择的物理距离上。",
+  "difficulty": "中等",
+  "translation": "想象你和一个陌生人坐在一张沙发上。你会坐得离他们多近？事实证明，你偏好多大的缓冲区可能会揭示很多关于你性格的信息。\n\n在一项研究中，研究人员试图确定我们的性格如何与我们偏好的个人空间量相关联。研究人员发现，在宜人性特质上得分较高的人倾向于坐得离别人更近，更开放和外向的人也是如此。\n\n其他个体差异，如性别和年龄，也会影响我们渴求多少个人空间。女性倾向于与陌生人或熟人保持更远的物理距离，老年人通常也倾向于在自己和他人之间保持更远的距离。\n\n除了反映我们的性格和人口统计特征之外，我们偏好的个人空间量还与我们的文化背景有关。在一项涉及来自42个国家参与者的研究中，研究人员发现世界各地人们期望的个人空间量差异很大。例如，在罗马尼亚，人们表示他们与陌生人之间偏好的平均个人空间超过4英尺，而在阿根廷大约只有其一半。\n\n是什么可能造成这种差异？研究人员考察了一些潜在因素，但唯一一个与偏好的人际距离显著相关的因素是平均温度。一个地方越温暖，人们似乎就越\"热情\"，他们与他人之间所需的空间就越少。\n\n个人空间也可能反映人际吸引力。研究人员发现，我们选择的物理距离似乎也反映了我们对他人的喜欢程度。人们越想与对方成为朋友，他们就坐得越近。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "correct": "buffer",
+    "why": "空格处需要一个名词作定语修饰zone。buffer zone（缓冲区/缓冲地带）是固定搭配，在此指人与人之间保持的安全距离区域，与后文讨论的个人空间主题完全吻合。",
+    "traps": "其余名词如trait、proximity、demographics虽然也与文章话题相关，但均无法与zone构成合理的名词短语搭配；ascertain和underlie等动词词性不符。",
+    "tip": "考查固定搭配buffer zone（缓冲区）。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "correct": "ascertain",
+    "why": "空格位于sought to之后，需要动词原形。ascertain意为\"查明、确定\"，与后面how引导的宾语从句搭配，表示研究人员试图查明性格与个人空间的关系，逻辑通顺。",
+    "traps": "crave（渴望）虽为动词，但语义不符，研究人员不会\"渴望\"一个研究关系；underlie也是动词但意为\"构成…基础\"，与sought to及how从句搭配不当。",
+    "tip": "考查动词ascertain（查明）与sought to的搭配。"
+   },
+   {
+    "number": 28,
+    "answer": "N",
+    "correct": "trait",
+    "why": "空格在the...of agreeableness结构中，需要名词。trait意为\"特质、特征\"，the trait of agreeableness即\"宜人性特质\"，是心理学大五人格特征的标准表达，与scored higher in搭配合理。",
+    "traps": "demographics虽为名词但指\"人口统计特征\"，与agreeableness不构成合理的of短语；buffer已用于第26题，且buffer of agreeableness语义不通。",
+    "tip": "考查心理学术语trait（特质）与of搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "correct": "crave",
+    "why": "空格位于we之后、句尾位置，需要及物动词。crave意为\"渴望、渴求\"，宾语为前置的how much personal space，表达\"我们渴求多少个人空间\"，语义契合人们对个人空间的本能需求。",
+    "traps": "ascertain已用于第27题；underlie虽为动词但意为\"构成…基础\"，说\"we underlie personal space\"语义不通；correlated为形容词/过去分词，词性不合。",
+    "tip": "考查动词crave（渴求）表达对个人空间的需求。"
+   },
+   {
+    "number": 30,
+    "answer": "E",
+    "correct": "demographics",
+    "why": "空格前有personality and，需要一个与personality并列的名词。demographics意为\"人口统计特征\"，前文刚提到gender和age等个体差异因素，这些正是典型的人口统计学变量，衔接自然。",
+    "traps": "trait（特质）与personality语义高度重叠，并列不妥；proximity（距离）与personality不属同一范畴，并列后无法概括上文gender和age的内容。",
+    "tip": "考查上下文逻辑衔接：gender和age属于demographics。"
+   },
+   {
+    "number": 31,
+    "answer": "M",
+    "correct": "substantially",
+    "why": "空格位于varied之后，需要副词修饰动词。substantially意为\"显著地、大幅度地\"，表示不同国家人们偏好的个人空间差异很大，后文罗马尼亚与阿根廷的对比数据（4英尺 vs. 约2英尺）正好印证了\"差异显著\"。",
+    "traps": "词库中其他副词选项有限；若误选形容词potential，词性不合，无法修饰动词varied。",
+    "tip": "考查副词substantially修饰varied表程度显著。"
+   },
+   {
+    "number": 32,
+    "answer": "O",
+    "correct": "underlie",
+    "why": "空格位于might之后，需要动词原形。underlie意为\"构成…的基础、是…的根本原因\"，What might underlie this variation表示\"什么可能是这种差异背后的原因\"，引出下文对潜在因素的讨论，逻辑顺畅。",
+    "traps": "ascertain已用于第27题且语义不通（不能说something ascertain this variation）；crave已用于第29题且\"渴望这种差异\"不合逻辑。",
+    "tip": "考查动词underlie表示\"构成…的根本原因\"。"
+   },
+   {
+    "number": 33,
+    "answer": "I",
+    "correct": "potential",
+    "why": "空格修饰名词factors，需要形容词。potential意为\"潜在的\"，potential factors即\"潜在因素\"，表示研究人员考察了多个可能的影响因素，与后文\"但只有一个显著相关\"形成合理的转折。",
+    "traps": "correlated虽也可作形容词，但\"correlated factors\"意为\"相关因素\"，在尚未验证之前称其\"相关\"不合逻辑，且correlated更适合与with搭配使用。",
+    "tip": "考查形容词potential（潜在的）修饰factors。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "correct": "correlated",
+    "why": "空格在was significantly...with结构中，需要形容词或过去分词。correlated意为\"相关的\"，be correlated with是固定搭配，表示\"与…相关\"，指唯一与人际距离偏好显著相关的因素是平均温度。",
+    "traps": "potential虽也是形容词但\"be potential with\"不是合法搭配；其余备选词词性不合或已被使用。",
+    "tip": "考查固定搭配be correlated with（与…相关）。"
+   },
+   {
+    "number": 35,
+    "answer": "J",
+    "correct": "proximity",
+    "why": "空格前有physical，后有also appears to reflect，需要名词作主语的核心词。proximity意为\"距离、接近程度\"，physical proximity即\"物理距离/空间距离\"，是社会心理学常用术语，与全文讨论的个人空间主题高度一致。",
+    "traps": "buffer已用于第26题；trait指\"特质\"，physical trait（身体特征）偏离文意；demographics已用于第30题。",
+    "tip": "考查名词proximity（距离）与physical的学术搭配。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "buffer",
+    "cn": "n. 缓冲物，缓冲区；v. 缓冲"
+   },
+   {
+    "w": "ascertain",
+    "cn": "v. 查明，确定，弄清"
+   },
+   {
+    "w": "trait",
+    "cn": "n. 特征，特质，特性"
+   },
+   {
+    "w": "crave",
+    "cn": "v. 渴望，渴求"
+   },
+   {
+    "w": "demographics",
+    "cn": "n. 人口统计特征（常用复数）"
+   },
+   {
+    "w": "substantially",
+    "cn": "adv. 显著地，大幅度地"
+   },
+   {
+    "w": "underlie",
+    "cn": "v. 构成…的基础，是…的根本原因"
+   },
+   {
+    "w": "proximity",
+    "cn": "n. 接近，邻近；距离"
+   },
+   {
+    "w": "correlated",
+    "cn": "adj. 相关的；v. correlate的过去分词"
+   },
+   {
+    "w": "agreeableness",
+    "cn": "n. 宜人性（大五人格特质之一）"
+   },
+   {
+    "w": "interpersonal",
+    "cn": "adj. 人际的，人与人之间的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，标注每个空格所需词性（名词/动词/形容词/副词）。",
+   "第二步：将15个候选词按词性分组，缩小每空的候选范围。",
+   "第三步：优先处理有固定搭配线索的空格，如buffer zone、be correlated with。",
+   "第四步：利用上下文逻辑和语义衔接确定剩余空格，如前文gender和age对应demographics。",
+   "第五步：填完后回读全文，确认每词只用一次且句意通顺，无逻辑矛盾。"
+  ]
+ }
+}

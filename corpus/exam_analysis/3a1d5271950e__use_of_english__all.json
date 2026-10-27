@@ -1,0 +1,229 @@
+{
+ "schemaVersion": 1,
+ "id": "3a1d5271950e__use_of_english__all",
+ "examId": "3a1d5271950e",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2000 年考研英语真题（旧）",
+ "year": 2000,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "generatedAt": "2026-10-27T06:09:09.844Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 49081,
+ "usage": {
+  "prompt_tokens": 1232,
+  "completion_tokens": 3026,
+  "total_tokens": 4258,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1232,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3026,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1232,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "农民盈余管理与农业成功之道",
+  "gist": "本文围绕农民如何取得成功展开，指出农民必须在生产与消费之间保持较大差距，储存粮食而非立即消耗，并将盈余用于播种、应对恶劣天气以及购买农具和化肥等，若无盈余则需变卖财产或借贷，而低利率贷款并不常见。",
+  "difficulty": "较易",
+  "translation": "如果一个农民想要成功，他必须努力在消费和生产之间保持较大的差距。他必须储存大量粮食，而不是立即消耗掉所有粮食。只有在他生产出盈余的情况下，他才能继续养活自己和家人。他必须以三种方式利用这些盈余：作为播种的种子；作为应对恶劣天气不可预测影响的保障；以及作为一种商品出售，以便更换旧的农具并获取化肥来滋养土壤。他可能还需要资金来修建灌溉渠道，并以其他方式改善他的农场。如果没有盈余，农民就无法自给自足。他必须要么出售部分财产，要么以贷款的形式寻求额外资金。他自然会尝试以低利率借钱，但这种贷款并不容易经常获得。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "C",
+    "correct": "instead of",
+    "why": "上下文逻辑：前句说农民须储存大量粮食，与\"立即消耗所有粮食\"构成对立替代关系，instead of（而不是）准确表达\"储存\"与\"消耗\"之间的取舍对比。",
+    "traps": "A) other than 意为\"除了\"，强调排除而非替代；B) as well as 意为\"以及\"，表并列，与储存和消耗的对立关系矛盾；D) more than 意为\"多于\"，语义不通，无法表达替代关系。",
+    "tip": "instead of 表示\"而不是\"，用于两种行为的取舍对比。"
+   },
+   {
+    "number": 2,
+    "answer": "A",
+    "correct": "only if",
+    "why": "上下文逻辑：农民能养活家人的前提条件是生产出盈余，only if（只有……才）表达必要条件，与全文强调盈余重要性的主旨一致。",
+    "traps": "B) much as 意为\"尽管\"，表让步，与语境不符；C) long before 意为\"在……很久以前\"，时间关系不合逻辑；D) ever since 意为\"自从……以来\"，时间起点关系不适用。",
+    "tip": "only if 引导必要条件状语从句，强调唯一前提。"
+   },
+   {
+    "number": 3,
+    "answer": "B",
+    "correct": "against",
+    "why": "固定搭配：insurance against 意为\"针对……的保险/保障\"，表示防备不利因素，此处指防备恶劣天气的不可预测影响。",
+    "traps": "A) for 搭配 insurance 意为\"为了……的保险\"，语义方向不对；C) of 无法与 insurance 构成合理搭配；D) towards 意为\"朝向\"，与 insurance 不搭配。",
+    "tip": "insurance against 是固定搭配，意为\"防备……的保障\"。"
+   },
+   {
+    "number": 4,
+    "answer": "A",
+    "correct": "replace",
+    "why": "上下文逻辑：修饰对象是 old agricultural implements（旧农具），旧的需要\"更换\"，replace 表示以新换旧，与 old 形成语义呼应。",
+    "traps": "B) purchase 意为\"购买\"，但原文强调的是替换旧物而非单纯购买；C) supplement 意为\"补充\"，无法与 old implements 构成合理搭配；D) dispose 需搭配 of 才表示\"处理/丢弃\"，且语义不完整。",
+    "tip": "replace 与 old 搭配，表示\"以新换旧\"。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "feed",
+    "why": "搭配与语义：feed the soil 意为\"滋养/肥沃土壤\"，与前文 chemical fertilizers（化肥）搭配，化肥的作用正是为土壤提供养分。",
+    "traps": "A) enhance 意为\"增强/提高\"，常用于抽象事物，与 soil 搭配不够地道；B) mix 意为\"混合\"，与 soil 搭配语义不当；D) raise 意为\"提高/抬高\"，不能与 soil 构成合理的农业语境搭配。",
+    "tip": "feed the soil 是农业领域常见表达，意为\"给土壤施肥/滋养土壤\"。"
+   },
+   {
+    "number": 6,
+    "answer": "D",
+    "correct": "channels",
+    "why": "固定搭配：irrigation channels 是\"灌溉渠道\"的标准表达，channels 指人工修建的水渠，用于引水灌溉农田。",
+    "traps": "A) vessels 意为\"容器/船只/血管\"，不用于灌溉系统；B) routes 意为\"路线/航线\"，指交通路径而非水渠；C) paths 意为\"小路/路径\"，指人行通道，与灌溉无关。",
+    "tip": "irrigation channels 是固定搭配，意为\"灌溉渠道\"。"
+   },
+   {
+    "number": 7,
+    "answer": "B",
+    "correct": "self-sufficient",
+    "why": "上下文逻辑：前文说\"如果没有盈余\"，呼应开头农民需保持生产大于消费的论点，self-sufficient（自给自足）正是对有盈余状态的概括描述。",
+    "traps": "A) self-confident 意为\"自信的\"，与盈余和生存话题无关；C) self-satisfied 意为\"自满的\"，带贬义且与语境不符；D) self-restrained 意为\"自我克制的\"，描述性格特征，不切题。",
+    "tip": "self-sufficient 意为\"自给自足\"，是农业经济的核心概念。"
+   },
+   {
+    "number": 8,
+    "answer": "D",
+    "correct": "seek",
+    "why": "搭配与逻辑：seek extra funds 意为\"寻求额外资金\"，与 in the form of loans 搭配，表示主动寻找贷款来源，与前文 sell some of his property 构成并列选择。",
+    "traps": "A) search 意为\"搜索\"，通常搭配 for，且不与 funds 直接搭配；B) save 意为\"节省/储蓄\"，与 in the form of loans 矛盾；C) offer 意为\"提供\"，主语是农民而非资金提供者，方向反了。",
+    "tip": "seek 可直接接宾语，意为\"寻求\"，常用于正式语体。"
+   },
+   {
+    "number": 9,
+    "answer": "C",
+    "correct": "rate",
+    "why": "固定搭配：rate of interest 是\"利率\"的标准表达，是经济金融领域的常用术语。",
+    "traps": "A) proportion 意为\"比例/部分\"，强调整体与部分之比，不与 interest 搭配；B) percentage 意为\"百分比\"，虽涉及数字但不构成 interest 的固定搭配；D) ratio 意为\"比率\"，指两个量的对比关系，不用于利率表达。",
+    "tip": "rate of interest / interest rate 是\"利率\"的固定说法。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "frequently",
+    "why": "上下文逻辑：前句说农民想借低利率贷款，but 转折表示这类贷款不容易得到，frequently（经常地）与 not 搭配表示\"不常能获得\"，暗示此类贷款稀缺。",
+    "traps": "A) genuinely 意为\"真正地\"，修饰 obtainable 语义过于绝对，暗示贷款本身是假的；B) obviously 意为\"显然地\"，与句意不符，且与转折逻辑不搭；C) presumably 意为\"大概/据推测\"，表推测语气，与陈述事实的语境不一致。",
+    "tip": "not frequently obtainable 表示\"不常能获得\"，暗示低息贷款稀缺。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "consumption",
+    "cn": "n. 消费，消耗"
+   },
+   {
+    "w": "surplus",
+    "cn": "n. 盈余，剩余"
+   },
+   {
+    "w": "insurance",
+    "cn": "n. 保险，保障"
+   },
+   {
+    "w": "unpredictable",
+    "cn": "adj. 不可预测的"
+   },
+   {
+    "w": "commodity",
+    "cn": "n. 商品，货物"
+   },
+   {
+    "w": "agricultural implements",
+    "cn": "n. 农具，农业器具"
+   },
+   {
+    "w": "chemical fertilizers",
+    "cn": "n. 化肥，化学肥料"
+   },
+   {
+    "w": "irrigation",
+    "cn": "n. 灌溉"
+   },
+   {
+    "w": "self-sufficient",
+    "cn": "adj. 自给自足的"
+   },
+   {
+    "w": "obtainable",
+    "cn": "adj. 可获得的"
+   },
+   {
+    "w": "sowing",
+    "cn": "n. 播种（sow 的动名词）"
+   },
+   {
+    "w": "construct",
+    "cn": "v. 修建，建造"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "instead of",
+    "role": "表替代对比，强调储存粮食与消耗粮食的取舍关系"
+   },
+   {
+    "w": "only if",
+    "role": "表必要条件，限定养家的唯一前提是有盈余"
+   },
+   {
+    "w": "but",
+    "role": "表转折，指出低息贷款虽理想但实际难以获得"
+   },
+   {
+    "w": "either…or",
+    "role": "表二选一，列出无盈余时的两种出路"
+   },
+   {
+    "w": "Naturally",
+    "role": "表顺承推理，引出农民选择低利率贷款的自然倾向"
+   },
+   {
+    "w": "also",
+    "role": "表递进补充，在三种用途之外追加修建水渠等需求"
+   }
+  ]
+ }
+}

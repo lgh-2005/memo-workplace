@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "522b91adcdfa__reading__1",
+ "examId": "522b91adcdfa",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2007 年考研英语真题（旧）",
+ "year": 2007,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:18:53.684Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56384,
+ "usage": {
+  "prompt_tokens": 1759,
+  "completion_tokens": 3543,
+  "total_tokens": 5302,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1759,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3543,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1759,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "刻意练习造就卓越表现",
+  "gist": "文章以世界杯球员出生月份的奇特现象引入，介绍心理学家Ericsson的研究：通过记忆力训练实验，他发现记忆力并非天生而是可训练的认知活动，关键在于\"刻意练习\"——设定具体目标、获取即时反馈、注重技巧。Ericsson团队进而研究各领域顶尖表现者，得出结论：天赋被高估，卓越表现主要靠后天培养而非先天因素。",
+  "structure": [
+   "第1段：引出现象——世界杯球员多出生在年初",
+   "第2段：提出几种假设猜测，设置悬念",
+   "第3段：介绍Ericsson及其记忆力训练实验",
+   "第4段：得出结论——记忆是认知练习，关键在刻意练习",
+   "第5段：总结观点——天赋被高估，卓越靠后天培养"
+  ],
+  "difficulty": "中等",
+  "translation": "如果你去查看2006年世界杯每位足球运动员的出生证明，你很可能会发现一个值得注意的怪现象：精英足球运动员更可能出生在一年中较早的月份，而非较晚的月份。如果你进一步查看为世界杯和职业队输送人才的欧洲各国青年队，你会发现这一奇怪现象更加明显。\n\n如何解释这一奇怪现象呢？以下是几种猜测：a）某些星座赋予了更出色的足球技能；b）冬季出生的婴儿往往拥有更高的氧气摄取能力，从而增强了足球耐力；c）狂热的球迷父母更可能在春季——也就是足球狂热的年度高峰期——受孕生子；d）以上都不是。\n\n安德斯·埃里克森，佛罗里达州立大学一位58岁的心理学教授，表示他坚信答案是\"以上都不是\"。埃里克森在瑞典长大，原本学习核工程，后来意识到转行心理学能给他更多机会进行自己的研究。他近30年前做的第一个实验与记忆有关：训练一个人听取并复述一串随机数字。\"对于第一个受试者，大约经过20小时的训练后，他能记住的数字位数从7位上升到了20位，\"埃里克森回忆道，\"他持续进步，经过大约200小时的训练后，他能记住80多个数字。\"\n\n这一成功，加上后来研究表明记忆力本身并非由基因决定，使埃里克森得出结论：记忆行为与其说是一种直觉活动，不如说是一种认知练习。换言之，无论两个人在记忆能力上表现出怎样的先天差异，这些差异都会被各自\"编码\"信息的能力所淹没。而埃里克森认为，学习如何有意义地编码信息的最佳方式，是一种被称为\"刻意练习\"的过程。刻意练习不仅仅是简单地重复一项任务，而是涉及设定具体目标、获取即时反馈，以及像关注结果一样关注技巧。\n\n因此，埃里克森和他的同事们开始研究各个领域的专家级表现者，包括足球。他们尽可能收集所有数据，不仅包括表现统计和个人传记资料，还包括他们自己对高成就者进行的实验室实验结果。他们的研究得出了一个颇为惊人的结论：我们通常所说的天赋被大大高估了。或者换个说法，无论是在记忆、外科手术、芭蕾舞还是计算机编程领域，顶尖表现者几乎都是后天造就的，而非天生的。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "If you were to examine the birth certificates of every soccer player in 2006's World Cup tournament, you would most likely find a noteworthy quirk: elite soccer players are more likely to have been born in the earlier months of the year than in the later months.",
+    "why": "足球运动员的生日现象出现在文章开头第1-2段，属于引子部分，目的是引出悬念。紧接着第3段引入Ericsson的研究，第4段提出\"刻意练习\"的概念，第5段得出\"卓越表现靠后天培养\"的结论。因此，这个生日现象的作用是引出\"什么造就了卓越表现\"这一主题，C选项完全吻合。",
+    "traps": "A项\"强调专业训练的重要性\"虽与文章主旨有关，但生日现象本身并未直接涉及训练，且该现象的功能是引出话题而非强调论点；B项\"聚焦世界杯超级明星\"属于字面理解的陷阱，足球只是引子而非讨论核心；D项\"解释某些球队表现更好的原因\"文中完全没有涉及球队间对比。",
+    "tip": "开头段举例/现象通常是引出话题，需关注后文主旨。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "soccer-mad parents are more likely to conceive children in springtime, at the annual peak of soccer mania",
+    "why": "原文语境中\"soccer mania\"修饰的是足球狂热现象的年度高峰，\"soccer-mad parents\"也提示了疯狂、痴迷的含义。mania本意为\"狂热、痴迷\"，craze意为\"狂热、风靡一时的事物\"，二者语义最为接近。在此语境中，mania表达的是对足球的极度热衷和痴迷程度。",
+    "traps": "A项fun意为\"乐趣\"，程度过轻，无法体现mania的狂热程度；C项hysteria意为\"歇斯底里\"，含贬义且带有病态失控的色彩，程度过重且语义偏向精神失常；D项excitement意为\"兴奋\"，虽有积极情感色彩，但缺少mania所含的\"痴迷、狂热\"程度。",
+    "tip": "词义题需结合上下文语境中的程度与感情色彩判断。"
+   },
+   {
+    "number": 23,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "whatever inborn differences two people may exhibit in their abilities to memorize, those differences are swamped by how well each person 'encodes' the information.",
+    "why": "Ericsson的研究表明，记忆力的先天差异会被个人编码信息的能力所淹没（swamped），即良好的记忆力取决于对信息的有意义加工（meaningful processing），而非天赋。A项\"depends on meaningful processing of information\"准确概括了\"encodes the information\"和\"learn how to encode information meaningfully\"的含义。",
+    "traps": "B项颠倒了原文关系，原文说记忆是cognitive exercise（认知练习）而非intuitive（直觉的）；C项与原文相反，原文明确说\"memory itself is not genetically determined\"；D项描述的是刻意练习的特征，而非记忆力本身的决定因素，属于张冠李戴。",
+    "tip": "注意选项是否偷换了原文的因果或主从关系。"
+   },
+   {
+    "number": 24,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "the trait we commonly call talent is highly overrated. Or, put another way, expert performers – whether in memory or surgery, ballet or computer programming – are nearly always made, not born.",
+    "why": "Ericsson团队的核心结论是\"天赋被高估\"，卓越表现者\"几乎都是后天造就的而非天生的\"（made, not born）。D项\"high achievers owe their success mostly to nurture\"（高成就者的成功主要归功于后天培养）准确对应了\"made, not born\"的含义，nurture即指后天培养。",
+    "traps": "A项说\"天赋是职业成功的主导因素\"，与原文\"talent is highly overrated\"直接矛盾；B项说\"传记资料是卓越表现的关键\"，原文只说收集传记资料作为研究数据，并非结论；C项说\"天赋的作用往往被忽视\"，恰好与原文\"overrated（高估）\"意思相反，是反义干扰。",
+    "tip": "overrated（高估）与overlooked（忽视）是常见的反义陷阱。"
+   },
+   {
+    "number": 25,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "expert performers – whether in memory or surgery, ballet or computer programming – are nearly always made, not born.",
+    "why": "全文核心论点是：卓越表现并非源于天赋，而是通过刻意练习（deliberate practice）后天造就的。\"Practice makes perfect\"（熟能生巧）强调的正是通过反复练习达到精通，与文章倡导的刻意练习理念最为契合。",
+    "traps": "A项\"Faith will move mountains\"（精诚所至金石为开）强调信念的力量，文中未涉及信念；B项\"One reaps what one sows\"（种瓜得瓜种豆得豆）强调因果报应，侧重点与练习无关；D项\"Like father, like son\"（有其父必有其子）强调遗传/先天因素，恰好与文章观点相悖。",
+    "tip": "主旨题需抓住全文核心论点，谚语题关注与中心思想的对应。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "noteworthy",
+    "cn": "adj. 值得注意的，显著的"
+   },
+   {
+    "w": "quirk",
+    "cn": "n. 怪事，怪癖"
+   },
+   {
+    "w": "pronounced",
+    "cn": "adj. 明显的，显著的"
+   },
+   {
+    "w": "confer",
+    "cn": "v. 赋予，授予"
+   },
+   {
+    "w": "stamina",
+    "cn": "n. 耐力，持久力"
+   },
+   {
+    "w": "conceive",
+    "cn": "v. 怀孕；构想"
+   },
+   {
+    "w": "intuitive",
+    "cn": "adj. 直觉的，凭直觉的"
+   },
+   {
+    "w": "swamp",
+    "cn": "v. 淹没，压倒"
+   },
+   {
+    "w": "encode",
+    "cn": "v. 编码，将……译成密码"
+   },
+   {
+    "w": "entail",
+    "cn": "v. 需要，牵涉"
+   },
+   {
+    "w": "deliberate",
+    "cn": "adj. 刻意的，有意为之的"
+   },
+   {
+    "w": "startling",
+    "cn": "adj. 令人吃惊的，惊人的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "In other words, whatever inborn differences two people may exhibit in their abilities to memorize, those differences are swamped by how well each person \"encodes\" the information.",
+    "cn": "换言之，无论两个人在记忆能力上表现出怎样的先天差异，这些差异都会被各自\"编码\"信息的能力所淹没。",
+    "note": "whatever引导让步状语从句，主句主语those differences指代前句中的inborn differences，by后接how well引导的宾语从句说明被淹没的方式/原因。"
+   },
+   {
+    "en": "Their work makes a rather startling assertion: the trait we commonly call talent is highly overrated.",
+    "cn": "他们的研究得出了一个颇为惊人的结论：我们通常所说的天赋被大大高估了。",
+    "note": "冒号后为assertion的同位语解释说明其内容；we commonly call talent是定语从句修饰the trait，省略了关系代词that。"
+   },
+   {
+    "en": "Or, put another way, expert performers – whether in memory or surgery, ballet or computer programming – are nearly always made, not born.",
+    "cn": "或者换个说法，无论是在记忆、外科手术、芭蕾舞还是计算机编程领域，顶尖表现者几乎都是后天造就的，而非天生的。",
+    "note": "put another way为插入语（过去分词短语作状语）；两个破折号之间whether...programming为插入性让步结构；made, not born构成对比强调后天与先天的对立。"
+   }
+  ]
+ }
+}

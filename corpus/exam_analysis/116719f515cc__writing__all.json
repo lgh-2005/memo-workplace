@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "116719f515cc__writing__all",
+ "examId": "116719f515cc",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年 6 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:43:02.436Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 45819,
+ "usage": {
+  "prompt_tokens": 725,
+  "completion_tokens": 2759,
+  "total_tokens": 3484,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 725,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2759,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 725,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作：以指定首句开头，围绕\"人们不断学习新技能以适应快速变化的世界\"展开论述，可评论、举例或结合个人经历，150-200词。",
+    "outline": [
+     "引出话题：以题目指定首句开头，点明\"持续学习新技能\"已成为当代社会显著趋势，并简述其背景原因（技术进步、竞争加剧）。",
+     "分析原因并举例：从技术迭代使旧技能过时、就业市场不稳定等角度展开，辅以具体事例（如IT从业者需不断更新知识、亲友转型经历等）增强说服力。",
+     "总结观点与建议：强调终身学习已从可选变为必需，呼吁培养开放心态、主动寻找学习机会，以自信面对未来不确定性。"
+    ],
+    "sample": "Nowadays more and more people keep learning new skills to adapt to a fast-changing world. This trend, driven by rapid technological advancement and intensified competition, has become a defining feature of modern life.\n\nSeveral factors account for this phenomenon. To begin with, the accelerating pace of technological innovation renders previously acquired skills obsolete at an unprecedented rate. For instance, professionals in the IT industry must constantly update their knowledge of programming languages and artificial intelligence to remain competitive. Furthermore, the job market has become increasingly volatile, compelling individuals to diversify their skill sets as a safeguard against unemployment. My cousin, once a print journalist, successfully transitioned into digital media by mastering video editing and data visualization.\n\nFrom my perspective, lifelong learning is no longer a luxury but a necessity. Those who embrace continuous self-improvement will thrive, while those who cling to outdated expertise risk being left behind. Therefore, we should cultivate an open mindset, actively seek learning opportunities, and view every challenge as a chance to grow. Only in this way can we navigate the uncertainties of tomorrow with confidence.",
+    "phrases": [
+     {
+      "en": "adapt to a fast-changing world",
+      "cn": "适应快速变化的世界；adapt to 后接名词，表示\"使自己适应……\""
+     },
+     {
+      "en": "render ... obsolete",
+      "cn": "使……过时；render 作使役动词，后接宾语+形容词补语，比 make 更正式"
+     },
+     {
+      "en": "at an unprecedented rate",
+      "cn": "以前所未有的速度；unprecedented 为高频高分形容词，强调程度之深"
+     },
+     {
+      "en": "diversify one's skill sets",
+      "cn": "使技能多样化；diversify 比 enrich 更精准地表达\"扩展不同类型技能\""
+     },
+     {
+      "en": "a safeguard against ...",
+      "cn": "针对……的保障/防护措施；介词用 against，搭配固定"
+     },
+     {
+      "en": "transition into",
+      "cn": "转型进入（新领域）；比 change to 更书面，常用于职业转型语境"
+     },
+     {
+      "en": "no longer a luxury but a necessity",
+      "cn": "不再是奢侈品而是必需品；对比结构，适用于强调重要性升级"
+     },
+     {
+      "en": "cling to outdated expertise",
+      "cn": "固守过时的专业知识；cling to 含贬义，暗示不愿放手"
+     },
+     {
+      "en": "cultivate an open mindset",
+      "cn": "培养开放的心态；cultivate 比 develop 更能体现主动、持续培育之意"
+     },
+     {
+      "en": "Only in this way can we ...",
+      "cn": "只有这样我们才能……；only + 介词短语置于句首引起部分倒装，属高分句式"
+     }
+    ],
+    "pitfalls": [
+     "未使用题目指定首句开篇，直接导致跑题扣分",
+     "全文仅泛泛而谈缺乏具体事例，论证空洞影响内容分",
+     "词汇重复严重，如反复使用 learn / important 而无同义替换",
+     "段落之间缺少衔接词（如 furthermore, from my perspective），逻辑断裂",
+     "词数不足 150 或超过 200，未满足题目硬性字数要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "Many people think learning new skills is important.",
+      "better": "The accelerating pace of technological innovation renders previously acquired skills obsolete at an unprecedented rate.",
+      "note": "用具体机制代替笼统判断，展示词汇深度与因果逻辑"
+     },
+     {
+      "plain": "My cousin changed his job by learning new things.",
+      "better": "My cousin, once a print journalist, successfully transitioned into digital media by mastering video editing and data visualization.",
+      "note": "补充身份、领域和具体技能，使例证生动可信"
+     },
+     {
+      "plain": "So we should keep learning new skills.",
+      "better": "Only in this way can we navigate the uncertainties of tomorrow with confidence.",
+      "note": "倒装句式 + 比喻动词 navigate 提升句式多样性与表达力"
+     },
+     {
+      "plain": "People who don't learn will fall behind.",
+      "better": "Those who cling to outdated expertise risk being left behind.",
+      "note": "cling to 含情感色彩，risk doing 结构更高级"
+     },
+     {
+      "plain": "Learning all the time is very necessary now.",
+      "better": "Lifelong learning is no longer a luxury but a necessity.",
+      "note": "no longer A but B 对比句式简洁有力，避免 very 等弱修饰词"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The accelerating pace of technological innovation renders previously acquired skills obsolete at an unprecedented rate. —— 技术创新的加速使先前掌握的技能以前所未有的速度变得过时。render+宾语+形容词结构为高分表达。",
+   "The job market has become increasingly volatile, compelling individuals to diversify their skill sets as a safeguard against unemployment. —— 就业市场日益动荡，迫使个人拓展多元技能以防范失业风险。现在分词 compelling 作结果状语，句式紧凑。",
+   "Lifelong learning is no longer a luxury but a necessity. —— 终身学习不再是奢侈品，而是必需品。no longer A but B 对比结构，观点鲜明，适用于总结段。",
+   "Only in this way can we navigate the uncertainties of tomorrow with confidence. —— 只有这样我们才能自信地驾驭明天的不确定性。Only 引导的倒装句 + navigate 隐喻，收束有力。"
+  ]
+ }
+}

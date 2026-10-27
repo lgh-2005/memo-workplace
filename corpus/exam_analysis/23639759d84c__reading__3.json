@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "23639759d84c__reading__3",
+ "examId": "23639759d84c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年考研英语真题",
+ "year": 2024,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:54:28.090Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56349,
+ "usage": {
+  "prompt_tokens": 1760,
+  "completion_tokens": 3522,
+  "total_tokens": 5282,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1760,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3522,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1760,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "艺术家回应AI艺术生成器侵权问题",
+  "gist": "波兰数字艺术家Rutkowski的画风被AI图像生成器Stable Diffusion大量使用，引发版权与伦理争议。他和其他艺术家发现AI工具未经许可抓取网络图片进行训练，导致收入和身份认同受损，由此联合起来寻求政策监管与新的训练方式。",
+  "structure": [
+   "第1-2段：介绍Rutkowski及其画风在AI生成器中的流行",
+   "第3段：指出开源AI工具的版权与伦理问题",
+   "第4-5段：Rutkowski搜索发现AI冒名作品，表达担忧",
+   "第6-8段：其他艺术家的反应及应对策略建议"
+  ],
+  "difficulty": "中等",
+  "translation": "波兰数字艺术家格雷格·鲁特科夫斯基擅长运用古典绘画风格创作梦幻般的奇幻风景画，曾为《龙与地下城》和《万智牌》等游戏创作插画。如今，他在文本转图像AI生成的新世界中突然走红。\n\n他独特的画风现已成为新型开源AI艺术生成器Stable Diffusion中最常用的提示词之一。该工具与其他流行的图像生成AI模型一样，允许任何人根据文本提示词创建令人印象深刻的图像。例如，输入\"手持剑和一个发光的魔法火球的巫师与一条凶猛的龙战斗 格雷格·鲁特科夫斯基\"，系统就会生成与鲁特科夫斯基风格相差无几的作品。\n\n但这些开源程序是通过抓取互联网上的图像构建的，通常未经许可，也没有对艺术家进行适当署名。因此，它们引发了关于伦理和版权的棘手问题。而像鲁特科夫斯基这样的艺术家已经忍无可忍。\n\n据追踪超过一千万张Stable Diffusion图像及提示词的网站Lexica统计，鲁特科夫斯基的名字已被用作提示词约93000次。鲁特科夫斯基最初感到惊讶，但认为这可能是接触新受众的好方式。后来他试着搜索自己的名字，想看看自己的某件作品是否已经发布。网上搜索返回的结果中，有署着他名字的作品，但那些并非出自他之手。\n\n\"这才刚一个月。一年后会怎样？我大概再也找不到自己的作品了，因为互联网将被AI艺术所淹没，\"鲁特科夫斯基说道，\"这令人担忧。\"\n\n除鲁特科夫斯基之外，其他艺术家也对自己的作品在文本转图像生成器中的明显流行感到意外——其中一些人正在开始反击。\n\n旧金山插画家卡拉·奥尔蒂斯发现自己的作品出现在Stable Diffusion的数据集中，此后一直在提高人们对AI艺术与版权相关问题的意识。艺术家们表示，随着人们开始将基于受版权保护材料的AI生成图像用于商业目的，他们面临着收入损失的风险。但奥尔蒂斯说，这也涉及更多个人层面的问题，她认为由于艺术与个人密切相关，这可能引发数据保护和隐私问题。\n\n\"艺术家行业内正在形成一个联盟，研究如何应对或缓解这一问题，\"奥尔蒂斯说。该联盟正处于动员初期，可能涉及推动新政策或法规的制定。奥尔蒂斯说，其中一个建议是，AI模型可以在公共领域的图像上进行训练，AI公司可以与博物馆和艺术家建立合作关系。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "His distinctive style is now one of the most commonly used prompts in the new open-source AI art generator Stable Diffusion.",
+    "why": "原文第二段明确指出Rutkowski独特的画风是Stable Diffusion中\"最常用的提示词之一\"（one of the most commonly used prompts），说明他在该AI艺术生成器用户中非常受欢迎。B选项\"popular with users of an AI art generator\"是对原文的准确同义转述。",
+    "traps": "A项\"热衷于使用AI模型\"属于无中生有，文中未提及他本人使用AI，反而对AI侵权持反对态度。C项\"吸引其他插画家的赞赏\"在前两段无任何依据，属于偷换对象。D项\"专注于古典绘画数字化\"曲解原文，原文说他\"uses classical painting styles to create fantasy landscapes\"，是借用古典风格创作奇幻场景，并非将古典画作数字化。",
+    "tip": "注意区分\"使用古典风格创作\"与\"将古典画作数字化\"的差异。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But these open-source programs are built by scraping images from the Internet, often without permission and proper attribution to artists.",
+    "why": "第三段指出开源程序通过\"抓取互联网图片\"构建，\"通常未经许可且未对艺术家进行适当署名\"。C选项\"make unauthorized use of online images\"（未经授权使用网络图片）是对\"scraping images from the Internet, often without permission\"的精准概括。",
+    "traps": "A项\"缺乏对提示词的灵活响应\"与原文无关，文中反而展示了生成效果相当出色。B项\"以不可预测的风格生成艺术品\"文中未提及，实际生成的作品风格与提示词所指艺术家高度相似。D项\"未经同意收集用户信息\"偷换概念，文中的\"without permission\"指的是未经艺术家许可使用其作品，而非收集用户信息。",
+    "tip": "D项是典型的偷换对象陷阱，将\"艺术家\"偷换为\"用户\"。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The online search brought back work that had his name attached to it but wasn't his.",
+    "why": "第四段末尾说Rutkowski搜索自己名字后，网上返回的结果是\"署着他名字但并非他本人创作的作品\"。结合上下文语境，这些是AI根据他的风格生成的图片，却被标上了他的名字。C选项\"AI-generated work bearing his name\"完全对应此信息。",
+    "traps": "A项\"接触受众的独特方式\"虽在该段出现过，但那是他最初的想法，并非搜索后的发现。B项\"识别AI图像的新方法\"纯属无中生有。D项\"关于其版权的激烈争论\"在搜索结果中未被提及，属于过度推断。",
+    "tip": "注意时间线：先是最初觉得可以接触新受众，后来搜索发现冒名作品，两个阶段不能混淆。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "One suggestion is that AI models could be trained on images in the public domain, and AI companies could forge partnerships with museums and artists, Ortiz says.",
+    "why": "Ortiz在末段提出建议：AI模型可以在公共领域的图像上进行训练，AI公司可以与博物馆和艺术家建立合作关系。这意味着AI公司应改变当前未经许可抓取网络图片的做法，采用不同的训练策略。D选项\"adopt a different strategy for AI model training\"准确概括了这一建议。",
+    "traps": "A项\"推动新政策或法规\"是艺术家联盟可能采取的行动，而非对AI公司的建议，张冠李戴。B项\"向公共机构提供服务\"曲解了\"forge partnerships with museums\"的含义，合作并非提供服务。C项\"加强与AI用户的关系\"文中无依据，属于无中生有。",
+    "tip": "区分行为主体：推动政策是艺术家联盟的行动，训练方式的改变才是对AI公司的建议。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "Other artists besides Rutkowski have been surprised by the apparent popularity of their work in text-to-image generators—and some are now fighting back.",
+    "why": "全文以Rutkowski为引入，讲述其作品被AI生成器大量使用的现象，接着描述他的担忧，再扩展到其他艺术家如Ortiz的反击与应对策略。文章核心主线是艺术家面对AI艺术生成器侵权问题的各种反应——从惊讶、担忧到组建联盟寻求解决方案。A选项最准确地概括了全文主旨。",
+    "traps": "B项\"AI在艺术创作中扩展的角色\"仅涉及背景信息，非文章重心。C项\"AI应用中的隐私问题\"只是Ortiz的一个观点，是局部细节。D项\"关于AI发展的对立观点\"不符合文章内容，文中未呈现对立双方的辩论，主要是艺术家一方的立场和回应。",
+    "tip": "主旨题需把握全文主线，避免被某一段的细节诱导选择以偏概全的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "prompt",
+    "cn": "n. 提示词；v. 促使"
+   },
+   {
+    "w": "scraping",
+    "cn": "v. 抓取，爬取（网络数据）"
+   },
+   {
+    "w": "attribution",
+    "cn": "n. 署名，归属"
+   },
+   {
+    "w": "tricky",
+    "cn": "adj. 棘手的，难处理的"
+   },
+   {
+    "w": "flooded",
+    "cn": "v. 充斥，淹没（be flooded with 被…充斥）"
+   },
+   {
+    "w": "coalition",
+    "cn": "n. 联盟，联合体"
+   },
+   {
+    "w": "mobilization",
+    "cn": "n. 动员，组织行动"
+   },
+   {
+    "w": "mitigate",
+    "cn": "v. 缓解，减轻"
+   },
+   {
+    "w": "forge",
+    "cn": "v. 建立，缔造（关系/合作）"
+   },
+   {
+    "w": "distinctive",
+    "cn": "adj. 独特的，有特色的"
+   },
+   {
+    "w": "commercial",
+    "cn": "adj. 商业的，商用的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But these open-source programs are built by scraping images from the Internet, often without permission and proper attribution to artists.",
+    "cn": "但这些开源程序是通过抓取互联网上的图像构建的，通常未经许可，也没有对艺术家进行适当的署名。",
+    "note": "主干为these programs are built by scraping images；often引导的介词短语作伴随状语，补充说明抓取行为的两个问题：无许可、无署名。"
+   },
+   {
+    "en": "Artists say they risk losing income as people start using AI-generated images based on copyrighted material for commercial purposes.",
+    "cn": "艺术家们表示，随着人们开始将基于受版权保护素材的AI生成图像用于商业目的，他们面临着收入损失的风险。",
+    "note": "主干为Artists say they risk losing income；as引导时间/原因状语从句；based on copyrighted material为后置定语修饰AI-generated images；for commercial purposes为目的状语。"
+   },
+   {
+    "en": "One suggestion is that AI models could be trained on images in the public domain, and AI companies could forge partnerships with museums and artists, Ortiz says.",
+    "cn": "奥尔蒂斯说，其中一个建议是，AI模型可以在公共领域的图像上进行训练，同时AI公司可以与博物馆和艺术家建立合作关系。",
+    "note": "主干为One suggestion is that...；that引导表语从句，内含and连接的两个并列分句，分别提出训练数据来源和合作方式两方面建议；Ortiz says为插入语。"
+   }
+  ]
+ }
+}

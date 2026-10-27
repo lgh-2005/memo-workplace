@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "5082c3c81600__reading__1",
+ "examId": "5082c3c81600",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 6 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:05:02.604Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56128,
+ "usage": {
+  "prompt_tokens": 1815,
+  "completion_tokens": 3543,
+  "total_tokens": 5358,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1815,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3543,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1815,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "模拟学习在组织变革中的价值",
+  "gist": "文章论述了模拟（simulation）作为一种学习工具在推动组织变革中的独特价值。成功的变革需要全员拥抱而非抵制，模拟环境能让参与者体验替代现实、打破固有范式、促进行为改变。模拟优于传统培训和真实经验，因为它能加速时间、压缩空间、提供无风险的反复实践机会，但前提是模拟必须贴近现实，且参与者要将所学即时应用于工作。",
+  "structure": [
+   "第1-2段：引出模拟学习背景，指出组织变革难在员工支持",
+   "第3-4段：阐述如何激发全员变革热情及模拟的作用机制",
+   "第5-6段：对比模拟与传统培训，强调模拟的独特优势",
+   "第7段：提出模拟成功的关键条件与最大化收益的建议"
+  ],
+  "difficulty": "中等",
+  "translation": "模拟器最常被用于核电、航空和外科手术等行业，因为这些领域中的失败会导致灾难性后果。为了最大化模拟学习体验的价值，参与者应立即将所学直接应用于其组织内的具体干预措施。\n\n大多数组织都渴望推行重大变革计划，却发现这些计划几乎不可能落实。这在很大程度上是因为成功的变革不仅需要愿景，还需要一支不仅不抵制变革、而且拥抱变革的员工队伍。\n\n为了取得成功，组织必须建立一个能让变革在各部门和各层级迅速推进的转型计划。无论高层管理层的承诺有多强烈，除非各层级的关键意见领袖都拥抱变革，否则这一举措将会衰竭消亡。为了激发这种广泛的热情，学习领导者必须让员工看到未来的可能性，从而使他们重新审视自己的思维模式，使他们摆脱根深蒂固的范式，拥抱学习的机会。\n\n让参与者进入模拟环境，为他们提供了体验替代现实的机会，这可以促使他们重新审视当前的信念。\n\n行为改变对大多数成年人来说并非易事。讲座、培训项目和研讨会能够解释转型的理性层面，但在触及重大变革举措核心的行为层面上，它们很少有效。此外，在正常的工作条件下，管理者很少能看到员工发展工作的全部效果。因此，像模拟这样的干预手段可以为变革提供刺激动力。\n\n有效的模拟作为学习工具可以优于真实经验，因为它加速了时间、压缩了空间，而且与现实不同，它是专门为最大化参与者的学习效果而设计的。模拟提供沉浸式学习体验，其中技能、流程和知识都能以现实无法做到的方式得到突显。探索、实验和在无限制的无风险模型中反复运用新知识的能力，使模拟成为最高效的学习形式之一。\n\n精心设计的模拟可以使个人和团队对自身的决策和对商业刺激的直觉反应如何影响同伴及整个组织产生深层理解。然而，要想获得这些好处，模拟必须有真实感。在一次成功的模拟结束时，参与者必须感叹\"这就是我们\"。如果他们没有这种感受，他们就会把这次经历当作一场游戏，从而难以将其应用于工作，或者更糟糕的是，认为它与日常工作任务无关。为了从模拟中获得最大收益，参与者应立即将从体验中获得的知识应用于实践，从而在学习与实践之间建立顺畅的联系。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "That is largely because successful change requires more than a vision, it requires a workforce that not only doesn't resist change, but embraces it.",
+    "why": "原文明确指出成功的变革不仅需要愿景，更需要一支\"不仅不抵制变革，而且拥抱变革\"的员工队伍。C选项\"需要来自员工队伍的热情支持\"是对\"a workforce that...embraces it\"的同义改写，embrace（拥抱）对应enthusiastic support（热情支持），完全符合原文逻辑。",
+    "traps": "A\"可以立即轻松实施\"与原文\"nearly impossible to implement\"相矛盾，属于反向干扰。B\"通常由有远见的领导者领导\"虽提及vision但原文说变革需要\"more than a vision\"，偷换了原文逻辑。D\"常常源于模拟学习体验\"属于无中生有，原文未建立这种因果关系。",
+    "tip": "注意\"not only...but\"的强调重心在but之后的内容。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "learning leaders must expose the workforce to what could be, which will enable them to rethink their mental models",
+    "why": "原文指出，学习领导者必须让员工\"看到未来的可能性\"（expose the workforce to what could be），A选项\"Allow them to see what could possibly be achieved\"是对\"expose...to what could be\"的精确同义改写。这是激发热情的第一步行为，后面的重新思考思维模式、摆脱范式等都是这一行为的结果。",
+    "traps": "B\"帮助他们摆脱旧范式\"和C\"鼓励他们重新思考思维模式\"以及D\"激励他们拥抱新机会\"都是expose the workforce to what could be之后的连带结果（由which引导的定语从句表达），并非学习领导者直接应做的事情，属于因果错位。",
+    "tip": "注意区分\"直接行为\"与\"行为带来的结果\"之间的逻辑层次。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Lectures, training programs and workshops can explain the intellectual elements of transformation, but they are seldom effective at getting to the behavioral aspects that lie at the heart of a significant change initiative.",
+    "why": "原文用but转折指出，讲座、培训和研讨会虽能解释转型的理性层面，但在触及行为层面上\"很少有效\"（seldom effective）。A选项\"它们通常无法改变员工的工作行为\"是对\"seldom effective at getting to the behavioral aspects\"的准确概括，generally incapable对应seldom effective。",
+    "traps": "B项说它们是\"不同于模拟的干预手段\"，原文未将三者定义为干预手段（intervention），属于偷换概念。C项说\"旨在转变员工行为\"歪曲了原文——原文说它们能解释理性层面但在行为层面不奏效，并非说其目标是转变行为。D项说\"帮助管理者实现员工发展的全部效果\"，与原文\"managers rarely see the full effect\"直接矛盾。",
+    "tip": "but转折之后才是作者真正要表达的观点，是常见考点。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The ability to explore, experiment and repeatedly apply new knowledge in unlimited, risk-free models is what makes simulation one of the most productive forms of learning.",
+    "why": "原文明确用\"is what makes\"这一强调句型指出：在无限制、无风险模型中探索、实验和反复应用新知识的能力，正是使模拟成为最高效学习形式之一的原因。D选项\"Its potential for learners to explore, experiment and practice without any risk\"精确对应了原文的explore、experiment、repeatedly apply和risk-free，是原文的同义转述。",
+    "traps": "A项\"加速沉浸式学习体验以节省时间\"将accelerates time与immersive learning混搭，属于拼凑信息。B项\"检验技能、知识和学习过程\"中的learning process偷换了原文的processes（流程），且该内容出自前一句而非回答本题的关键句。C项\"为所有参与者提供实践学习体验\"过于笼统，未抓住risk-free和explore/experiment这一核心要素。",
+    "tip": "强调句型\"It is...that/what makes...\"往往是命题的直接依据。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "To maximize benefits from simulation, participants should immediately apply the learning from the experience to forge a smooth link between learning and doing.",
+    "why": "文章末段最后一句明确指出，为了从模拟中获得最大收益，参与者应\"立即将学习所得应用于实践\"，建立学习与实践之间的顺畅联系。B选项\"Apply promptly what they learn to their jobs\"是对immediately apply the learning的同义改写，promptly对应immediately，to their jobs对应forge a smooth link between learning and doing。",
+    "traps": "A项\"将体验仅当作游戏\"恰恰是原文警告的反面情况——如果参与者认为是游戏，就无法从中获益，属于反向干扰。C项\"发展深层理解\"虽在原文出现，但那是描述模拟能达到的效果，而非参与者应采取的行动来最大化收益。D项\"努力与领导者紧密联系\"在原文中完全没有依据，属于无中生有。",
+    "tip": "题目问\"最大收益\"，对应原文maximize benefits，快速定位末段关键句。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deploy",
+    "cn": "v. 部署，实施"
+   },
+   {
+    "w": "aspire",
+    "cn": "v. 渴望，有志于"
+   },
+   {
+    "w": "wither",
+    "cn": "v. 枯萎，衰退，消亡"
+   },
+   {
+    "w": "paradigm",
+    "cn": "n. 范式，典范"
+   },
+   {
+    "w": "immersive",
+    "cn": "adj. 沉浸式的"
+   },
+   {
+    "w": "stimulus",
+    "cn": "n. 刺激，激励（复数stimuli）"
+   },
+   {
+    "w": "intuitive",
+    "cn": "adj. 直觉的"
+   },
+   {
+    "w": "reap",
+    "cn": "v. 收获，获得"
+   },
+   {
+    "w": "forge",
+    "cn": "v. 建立，打造"
+   },
+   {
+    "w": "irrelevant",
+    "cn": "adj. 无关的，不相干的"
+   },
+   {
+    "w": "compress",
+    "cn": "v. 压缩"
+   },
+   {
+    "w": "deep-rooted",
+    "cn": "adj. 根深蒂固的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Regardless of the level of senior management commitment, unless key thought leaders at all levels embrace the change, the initiative will wither and die.",
+    "cn": "无论高层管理层的承诺有多强烈，除非各层级的关键意见领袖都拥抱变革，否则这一举措将会衰竭消亡。",
+    "note": "主句为\"the initiative will wither and die\"；前置两个让步/条件状语：regardless of...表让步，unless...表否定条件，双重修饰强调全员参与的必要性。"
+   },
+   {
+    "en": "An effective simulation can be better than experience as a learning tool because it accelerates time, compresses space, and unlike reality, is specifically designed to maximize participant learning.",
+    "cn": "有效的模拟作为学习工具可以优于真实经验，因为它加速了时间、压缩了空间，而且与现实不同，它是专门为最大化参与者的学习效果而设计的。",
+    "note": "主句为比较结构\"can be better than experience\"；because引导原因从句含三个并列谓语：accelerates/compresses/is designed；\"unlike reality\"为插入语打断并列结构。"
+   },
+   {
+    "en": "The ability to explore, experiment and repeatedly apply new knowledge in unlimited, risk-free models is what makes simulation one of the most productive forms of learning.",
+    "cn": "探索、实验和在无限制的无风险模型中反复应用新知识的能力，使模拟成为最高效的学习形式之一。",
+    "note": "主语为长名词短语\"The ability to...models\"，含三个并列不定式；谓语为\"is what makes...\"强调句型，what引导表语从句，make为使役动词。"
+   }
+  ]
+ }
+}

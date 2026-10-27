@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "fc33c1cb1401__listening__all",
+ "examId": "fc33c1cb1401",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2025 年 12 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:03:28.514Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54360,
+ "usage": {
+  "prompt_tokens": 2299,
+  "completion_tokens": 2756,
+  "total_tokens": 5055,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2299,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2756,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2299,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析仅基于题目选项的语言特征与正确答案进行推断分析，不涉及任何录音原文内容的引用或编造。",
+  "overview": "本场听力共25题，分7段音频。第1段（1-4题）由选项推断话题涉及校园餐饮或食堂的价格、食物、环境与改造；第2段（5-8题）涉及某一代人（如千禧一代或Z世代）的职场表现与价值观；第3段（9-11题）关于饮食选择中素食与肉食的行为引导；第4段（12-15题）聚焦室内空气污染与净化技术研究；第5段（16-18题）涉及动物自我认知的镜像测试研究；第6段（19-21题）讨论电子书与儿童阅读学习效果；第7段（22-25题）探讨如何面对人生决策与后悔心理。",
+  "strategy": [
+   "预读选项时快速划出各选项间的差异关键词，如价格、速度、环境等，预判提问方向。",
+   "选项中出现绝对词（never, always, conclusively）时需高度警惕，此类选项往往是干扰项。",
+   "当四个选项结构高度平行时，重点辨别其中的核心动词或形容词差异，这通常就是考点。",
+   "听到与某个选项高度匹配的原词复现时反而要谨慎，正确答案常采用同义替换。",
+   "对于涉及研究或实验的题目，关注研究方法、研究结论和研究局限三个维度的提问。",
+   "遇到态度或评价类选项时，注意说话者语气中的肯定、否定或让步转折信号词。"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "校园餐饮场所的价格、服务与翻新改造",
+    "optionSignals": "第1题选项围绕价格评价（expensive vs. appropriately priced），第2题含never/always等绝对词，第3题为单一名词选项（food/space/speed/environment）典型问'最满意或不满意的方面'，第4题均为'名词+动名词'结构描述事件变化。",
+    "tips": [
+     "第2题A和B都含never，录音中若语气委婉则可能选含never的负面评价项，但需注意never的极端性。",
+     "第3题四个单词选项极为简短，听力中往往在对比讨论后给出明确偏好，注意转折词but/however后的信息。",
+     "第4题区分renovation（翻新）与refurnishing（重新装修）、expansion（扩建）的语义差异是关键。"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "某代际群体的职场态度、工作方式与价值取向",
+    "optionSignals": "第5题选项均为'They + 负面/中性描述'，问对某群体的常见看法或偏见；第6题选项均以动名词开头，问理解该群体的关键切入点；第7题涉及工作衡量标准（hours/amount/quality）；第8题均以Those开头，问偏好哪类组织或企业。",
+    "tips": [
+     "第5题poor work ethic是对年轻一代的刻板印象关键词，若话题涉及代际偏见，此项概率高。",
+     "第7题四个选项对比'工时 vs. 工作量 vs. 质量'，核心区别在衡量维度，注意录音中对quality的同义表达。",
+     "第8题C选项values align是职场文化讨论中的高频搭配，注意与A选项culture的区分。"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "饮食行为引导与素食选择的研究",
+    "optionSignals": "第9题选项对比greener dishes与eat meat两个方向，问菜单或推荐机制的意外效果；第10题选项描述研究方法（inviting/observing/comparing/requiring），典型问'实验怎么做的'；第11题选项描述实验结果对参与者的影响。",
+    "tips": [
+     "第9题A和B完全相反（帮助选绿色菜 vs. 鼓励吃肉），听力中的转折或出乎意料的结论是判断关键。",
+     "第10题四个选项描述不同研究方法，正确答案C采用对比实验设计，注意compare/contrast等信号词。",
+     "第11题A说less likely to choose vegetarian，与第9题B形成逻辑呼应，可交叉验证。"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "室内空气污染防治与净化技术创新",
+    "optionSignals": "第12题选项均为现在完成时/现在完成进行时，问科学家一直在做什么；第13题讨论现有方案的特征（costly/inefficient vs. perfected）；第14题描述人们的行为习惯；第15题评价研究的意义或应用前景。",
+    "tips": [
+     "第12题C选项seeking a way与D选项cooperating都表持续动作，但C更聚焦于问题解决方向，注意been seeking这种进行时态暗示问题尚未解决。",
+     "第15题D选项household appliances serve an additional air cleaner function表达'家电兼具净化功能'的创新应用，属于具体且独特的表述，在听力中往往对应结尾总结。",
+     "第13题costly and inefficient为负面评价，若讨论现有技术的不足则直接对应。"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "镜像测试与动物自我认知能力研究",
+    "optionSignals": "第16题选项讨论测试的功能或目的（distinguish/reflect/demonstrate/gauge）；第17题描述某种动物的具体表现；第18题评价研究成果的性质（conclusively/advanced/incorporate/raise more questions）。",
+    "tips": [
+     "第16题C选项demonstrate animals' ability to recognize themselves是镜像测试的经典定义，若题目问'什么是镜像测试'则高度匹配。",
+     "第17题B选项behaves similarly to animals capable of self-recognition用类比方式描述，注意录音中表示相似性的词如similarly, like, resemble。",
+     "第18题D选项raise more questions than answers表示研究引发更多问题，常见于科学话题的开放性结尾。"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "电子书与纸质书对儿童阅读学习效果的影响",
+    "optionSignals": "第19题对比父母与孩子的阅读偏好及学习效果；第20题评价已有研究的特征（conflicting/small samples/unanticipated/younger kids）；第21题以Those that开头，问哪类电子书对儿童更有效。",
+    "tips": [
+     "第19题D选项learned more是正面结论，注意与B选项preferred的区别：一个是学习效果，一个是偏好。",
+     "第20题A选项conflicting conclusions暗示研究领域存在争议，这常出现在引出新研究的背景介绍中。",
+     "第21题四个选项都以Those that开头，核心差异在于simple/audio-visual/educational content/interest，注意educational content与interest的区别。"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "面对人生决策、应对后悔情绪的心理策略",
+    "optionSignals": "第22题四个选项围绕对已做决策的态度（regret/different/keep from regretting/live with）；第23题解释为何不应后悔某个决定；第24题为简短名词短语，问人生中总会遇到什么；第25题讨论面对决策的正确做法。",
+    "tips": [
+     "第22题C选项keep ourselves from regretting是积极主动的心理策略，符合励志类话题的正面导向。",
+     "第23题A选项It has made us the person we are now是经典的'过去塑造现在'逻辑，常用于劝导接受过去决定。",
+     "第25题B选项making proper use of the lessons learned与第24题D选项lessons to learn形成语义呼应，可交叉印证答案合理性。"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "appropriately",
+    "cn": "适当地，恰当地"
+   },
+   {
+    "w": "renovation",
+    "cn": "翻新，修缮"
+   },
+   {
+    "w": "work ethic",
+    "cn": "职业道德，工作态度"
+   },
+   {
+    "w": "work-life balance",
+    "cn": "工作与生活的平衡"
+   },
+   {
+    "w": "align with",
+    "cn": "与……一致，与……契合"
+   },
+   {
+    "w": "vegetarian",
+    "cn": "素食的；素食者"
+   },
+   {
+    "w": "pollutant",
+    "cn": "污染物"
+   },
+   {
+    "w": "penetrating",
+    "cn": "渗透，穿透"
+   },
+   {
+    "w": "self-recognition",
+    "cn": "自我认知，自我识别"
+   },
+   {
+    "w": "self-awareness",
+    "cn": "自我意识"
+   },
+   {
+    "w": "conclusively",
+    "cn": "决定性地，最终地"
+   },
+   {
+    "w": "household appliances",
+    "cn": "家用电器"
+   },
+   {
+    "w": "comprehend",
+    "cn": "理解，领悟"
+   },
+   {
+    "w": "regret",
+    "cn": "后悔，遗憾"
+   }
+  ]
+ }
+}

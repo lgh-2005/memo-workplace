@@ -1,0 +1,253 @@
+{
+ "schemaVersion": 1,
+ "id": "146a7d28aee4__long_match__all",
+ "examId": "146a7d28aee4",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2024 年 12 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:58:27.295Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41092,
+ "usage": {
+  "prompt_tokens": 980,
+  "completion_tokens": 2518,
+  "total_tokens": 3498,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 980,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2518,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 980,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "贸易、依赖与人际纽带的悖论",
+  "strategy": [
+   "先通读10条陈述句，归纳主题为'贸易与依赖'，再带着关键词扫读各段",
+   "优先定位专有名词（如Tocqueville）、极端词（extremely、few…not）和数据",
+   "注意同义替换：陈述句常把原文具体表述概括化，或将因果/转折关系换词重述",
+   "遇到多段讨论相似话题时，区分角度：feeling vs reality、primitive vs modern、home vs abroad",
+   "匹配完成后回查，确保每段只用一次，逻辑自洽"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "G",
+    "cn": "人们进入现代社会后在基本需求上越来越依赖他人，尽管他们可能觉得并非如此。",
+    "keywords": [
+     "reliant on others",
+     "basic needs",
+     "modern world",
+     "feel less so"
+    ],
+    "paraphrase": "原文很可能用 dependent/dependence 替换 reliant，用 sense of self-sufficiency 或 perception of independence 来表达'觉得并不那么依赖'，构成'实际依赖加深 vs 主观感受相反'的对比。",
+    "tip": "定位'modern world + basic needs'的对比句式，注意让步/转折连词。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "在贸易话题上，富有成效的辩论或许是可能的，这与讨论其他议题时常见的相互指责形成对比。",
+    "keywords": [
+     "productive debates",
+     "trade",
+     "mutual condemnation",
+     "other issues"
+    ],
+    "paraphrase": "原文可能用 constructive discussion 替换 productive debates，用 blame each other / finger-pointing 替换 mutual condemnation，强调贸易议题与其他议题的可对话性差异。",
+    "tip": "扫读含'debate/discussion + trade'的段落，留意与其他政治议题的对比。"
+   },
+   {
+    "number": 38,
+    "answer": "I",
+    "cn": "我们感到的独立程度大于实际拥有的，因为金钱让我们无需建立任何关系就能购买东西。",
+    "keywords": [
+     "independence",
+     "money",
+     "buy things",
+     "without relationships"
+    ],
+    "paraphrase": "原文可能将 money 表述为 monetary exchange / cash transaction，将 without building any relationships 表述为 anonymous transaction / impersonal exchange，揭示金钱掩盖了人际依赖。",
+    "tip": "定位'money/monetary + independence/relationship'共现段落。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "当今贸易的问题源于误解，而非金钱本身。",
+    "keywords": [
+     "trouble",
+     "today's trade",
+     "misconceptions",
+     "money"
+    ],
+    "paraphrase": "原文可能用 problem/difficulty 替换 trouble，用 misunderstanding/false beliefs 替换 misconceptions，强调贸易争议的根源不在经济层面而在认知层面。",
+    "tip": "定位含'问题根源 + 非金钱因素'的因果判断句。"
+   },
+   {
+    "number": 40,
+    "answer": "M",
+    "cn": "要使自己的论点占上风，自由贸易的倡导者必须设法在国内消费者与海外生产者之间建立情感纽带。",
+    "keywords": [
+     "advocates",
+     "free trade",
+     "forge bonds of affection",
+     "consumers",
+     "producers overseas"
+    ],
+    "paraphrase": "原文可能用 proponents/supporters 替换 advocates，用 emotional connection/ties 替换 bonds of affection，用 foreign/international 替换 overseas，强调自由贸易需要情感而非仅仅经济论据。",
+    "tip": "定位含'free trade + emotional/affection + overseas producers'的建议句。"
+   },
+   {
+    "number": 41,
+    "answer": "J",
+    "cn": "托克维尔认为，与我们的祖先不同，我们和我们进行贸易的人彼此是陌生人。",
+    "keywords": [
+     "Tocqueville",
+     "ancestors",
+     "trade",
+     "strangers"
+    ],
+    "paraphrase": "原文应直接出现专有名词 Tocqueville，可能用 forebears/predecessors 替换 ancestors，用 unknown to one another 替换 strangers，描述现代贸易中人际关系的疏离。",
+    "tip": "专有名词 Tocqueville 可直接全文检索定位，效率最高。"
+   },
+   {
+    "number": 42,
+    "answer": "E",
+    "cn": "在原始社会，人们不得不主要靠自己来满足个人需求。",
+    "keywords": [
+     "primitive societies",
+     "rely on themselves",
+     "personal needs"
+    ],
+    "paraphrase": "原文可能用 early/pre-modern communities 替换 primitive societies，用 self-sufficient/self-reliant 替换 rely on themselves，描述早期社会个体的自给自足状态。",
+    "tip": "定位含'primitive/early society + self-reliance'的描述段。"
+   },
+   {
+    "number": 43,
+    "answer": "H",
+    "cn": "美国家庭中几乎没有哪种商品在制造和销售过程中不依赖海外人员。",
+    "keywords": [
+     "commodities",
+     "American homes",
+     "people abroad",
+     "manufacture and sale"
+    ],
+    "paraphrase": "原文可能用 products/goods 替换 commodities，用 foreign labor/workers overseas 替换 people abroad，用 production and distribution 替换 manufacture and sale，用双重否定或正面的'几乎所有'来表达同义。",
+    "tip": "注意 few…not 双重否定等于'几乎全部'，定位美国家庭商品与海外依赖的举例段。"
+   },
+   {
+    "number": 44,
+    "answer": "A",
+    "cn": "保护主义者通过援引国内生产者和社区所遭受的损失来反对自由贸易。",
+    "keywords": [
+     "protectionists",
+     "free trade",
+     "losses",
+     "domestic producers"
+    ],
+    "paraphrase": "原文可能用 opponents of free trade 替换 protectionists，用 harm/damage/cost 替换 losses，用 local manufacturers/workers 替换 domestic producers，作为文章开篇引出争论背景。",
+    "tip": "A段通常为文章起始段，定位保护主义立场的概述性语言。"
+   },
+   {
+    "number": 45,
+    "answer": "L",
+    "cn": "让人们对海外的陌生人产生依赖感和感激之情是极其困难的。",
+    "keywords": [
+     "extremely hard",
+     "dependent",
+     "grateful",
+     "strangers overseas"
+    ],
+    "paraphrase": "原文可能用 enormously difficult/nearly impossible 替换 extremely hard，用 sense of gratitude/thankfulness 替换 grateful，用 foreign strangers/people far away 替换 strangers overseas，突出建立跨国情感纽带的难度。",
+    "tip": "定位含'difficult/hard + gratitude/dependence + overseas/foreign'共现的段落。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "reliant",
+    "cn": "adj. 依赖的，依靠的"
+   },
+   {
+    "w": "mutual condemnation",
+    "cn": "n. 相互指责，互相谴责"
+   },
+   {
+    "w": "misconceptions",
+    "cn": "n. 误解，错误观念（复数）"
+   },
+   {
+    "w": "prevail",
+    "cn": "v. 占上风，获胜；盛行"
+   },
+   {
+    "w": "forge",
+    "cn": "v. 建立，缔造（关系、纽带等）"
+   },
+   {
+    "w": "bonds of affection",
+    "cn": "n. 情感纽带"
+   },
+   {
+    "w": "Tocqueville",
+    "cn": "n. 托克维尔（法国政治思想家）"
+   },
+   {
+    "w": "primitive",
+    "cn": "adj. 原始的，远古的"
+   },
+   {
+    "w": "commodities",
+    "cn": "n. 商品，货物（复数）"
+   },
+   {
+    "w": "protectionists",
+    "cn": "n. 保护主义者（复数）"
+   },
+   {
+    "w": "stem from",
+    "cn": "v. 源于，起因于"
+   }
+  ]
+ }
+}

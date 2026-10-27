@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "0d213278f813__translation__all",
+ "examId": "0d213278f813",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2019 年考研英语真题",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:41:29.329Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 47541,
+ "usage": {
+  "prompt_tokens": 1364,
+  "completion_tokens": 3031,
+  "total_tokens": 4395,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1364,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3031,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1364,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "医学期刊中劣质科学论文泛滥的原因与对策",
+  "translation": "直到我开始为医学期刊撰写每周专栏，并开始从头到尾阅读科学论文时，我才意识到许多医学文献经常是多么糟糕。我逐渐学会辨识劣质论文的各种迹象：那种声称每周食用超过一公斤西蓝花的人，晚年患恶性贫血的几率比食用较少的人高出1.17倍的论文。医学期刊中有大量此类无稽之谈，一旦被广播媒体和非专业报刊采用，就会引发健康恐慌和昙花一现的饮食热潮。\n\n为什么会有这么多劣质科学研究被发表？最近一篇题为《劣质科学的自然选择》的论文发表在英国皇家学会的开放科学网站上，试图回答这个引人深思且重要的问题。文章指出，问题不仅在于人们做了劣质研究，还在于我们当前的职业晋升体制实际上在鼓励这种行为。重要的不是真理，而是发表，发表本身几乎已成为目的。一种通货膨胀式的过程一直在起作用：如今，任何申请研究职位的人都必须发表论文，其数量是仅仅十年前同一职位所要求的两倍。那就别管质量了，数数数量吧。\n\n人们已经尝试遏制这一趋势，例如，试图在对申请者论文的评估中纳入某种质量标准，而不仅仅是数量标准。这就是著名的引用指数，也就是说，一篇论文在其他科学文献中被引用的次数，其假设是：重要论文被引用的次数会多于无足轻重的论文。如果不是因为以下事实，这一做法本来是合理的：科学家们很容易安排在自己未来的出版物中引用自己的论文，或者让同行为他们这样做，作为类似帮忙的回报。\n\n将个人的科研产出简化为简单的量化指标，如发表论文的数量或期刊影响因子，可以大大节省时间、精力，也减少了模糊性。不幸的是，使用简单的量化指标来评估研究人员价值的长期代价可能相当巨大。如果我们真心想要确保我们的科学研究既有意义又可重复验证，我们就必须确保我们的学术机构鼓励那种科学研究。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "There is a great deal of this kind of nonsense in the medical journals which, when taken up by broadcasters and the lay press, generates both health scares and short-lived dietary enthusiasms.",
+    "cn": "医学期刊中有大量此类无稽之谈，一旦被广播媒体和非专业报刊采用，就会引发健康恐慌和昙花一现的饮食热潮。",
+    "structure": "主句为There is a great deal of this kind of nonsense in the medical journals；which引导非限制性定语从句修饰nonsense（或整个主句信息），从句中插入when taken up by broadcasters and the lay press作时间状语（省略了it is），从句谓语为generates，宾语为both health scares and short-lived dietary enthusiasms。",
+    "points": [
+     "which引导的定语从句需正确还原修饰对象并通顺译出",
+     "when taken up by...需识别为省略主语和be的时间状语从句，译为\"一旦被……采用\"",
+     "lay press译为\"非专业报刊/大众媒体\"，short-lived dietary enthusiasms译为\"昙花一现的饮食热潮\""
+    ],
+    "pitfall": "which从句中间插入了when引导的省略式时间状语从句，容易误将generates的主语判断错误；lay press易误译为\"新闻界\"而忽略\"非专业/外行\"之意。"
+   },
+   {
+    "number": 47,
+    "en": "nowadays anyone applying for a research post has to have published twice the number of papers that would have been required for the same post only 10 years ago.",
+    "cn": "如今，任何申请研究职位的人都必须已经发表了论文，其数量是仅仅十年前同一职位所要求的两倍。",
+    "structure": "主语为anyone，现在分词applying for a research post作后置定语；谓语为has to have published（必须已经发表）；宾语为twice the number of papers；that引导定语从句修饰papers，从句中would have been required为虚拟语气被动态。",
+    "points": [
+     "has to have published需译出\"必须已经发表\"的完成含义",
+     "twice the number of papers that...倍数表达需准确译为\"两倍于……所要求的论文数量\"",
+     "would have been required需识别虚拟语气，体现与过去事实的对比"
+    ],
+    "pitfall": "twice the number of papers that would have been required是倍数+名词+定语从句的复合结构，容易将倍数关系译反或丢失虚拟语气的含义。"
+   },
+   {
+    "number": 48,
+    "en": "Attempts have been made to curb this tendency, for example, by trying to incorporate some measure of quality as well as quantity into the assessment of an applicant's papers.",
+    "cn": "人们已经尝试遏制这一趋势，例如，试图在对申请者论文的评估中纳入某种质量标准，而不仅仅是数量标准。",
+    "structure": "主句为Attempts have been made to curb this tendency（被动句）；for example引出举例说明；by trying to incorporate...为方式状语，说明如何尝试；some measure of quality as well as quantity为incorporate的宾语，into the assessment of an applicant's papers为方向状语。",
+    "points": [
+     "curb this tendency译为\"遏制/抑制这一趋势\"",
+     "some measure of quality as well as quantity中measure译为\"衡量标准/尺度\"而非\"措施\"",
+     "as well as需译出\"既……也……/不仅……而且……\"的并列含义"
+    ],
+    "pitfall": "measure一词在此处为\"衡量标准/尺度\"而非常见义\"措施\"，极易误译；as well as连接quality和quantity的逻辑关系也需准确传达。"
+   },
+   {
+    "number": 49,
+    "en": "This would be reasonable if it were not for the fact that scientists can easily arrange to cite themselves in their future publications, or get associates to do so for them in return for similar favours.",
+    "cn": "如果不是因为以下事实，这一做法本来是合理的：科学家们很容易安排在自己未来的出版物中引用自己的论文，或者让同行为他们这样做，以此作为类似帮忙的回报。",
+    "structure": "主句为This would be reasonable（虚拟语气）；if it were not for the fact that...为虚拟条件状语从句（与现在事实相反）；that引导同位语从句解释fact的内容；从句内有两个并列谓语：arrange to cite themselves和get associates to do so for them；in return for similar favours为目的/交换状语。",
+    "points": [
+     "would be reasonable与if it were not for构成虚拟语气，需译出\"本来是合理的，如果不是因为……\"",
+     "get associates to do so for them需译出使役含义\"让同行替他们这样做\"",
+     "in return for similar favours译为\"作为类似帮忙的回报\""
+    ],
+    "pitfall": "整句为与现在事实相反的虚拟语气（if it were not for...），需译出假设与现实的对比；do so指代前文cite themselves，需明确指代内容。"
+   },
+   {
+    "number": 50,
+    "en": "If we are serious about ensuring that our science is both meaningful and reproducible, we must ensure that our institutions encourage that kind of science.",
+    "cn": "如果我们真心想要确保我们的科学研究既有意义又可重复验证，我们就必须确保我们的学术机构鼓励那种科学研究。",
+    "structure": "If引导条件状语从句，从句谓语为are serious about，宾语为ensuring that...（动名词短语，内含that引导的宾语从句）；主句谓语为must ensure，宾语为that our institutions encourage that kind of science（that引导宾语从句）。",
+    "points": [
+     "are serious about ensuring需译出\"认真对待/真心想要确保\"的语气",
+     "both meaningful and reproducible需译为\"既有意义又可重复验证\"",
+     "able to reproduce的含义需体现科学研究的可重复性/可再现性"
+    ],
+    "pitfall": "reproducible是科学研究术语，意为\"可重复验证的/可再现的\"，不能简单译为\"可复制的\"；that kind of science回指前文有意义且可重复的科学，需注意指代明确。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "purport",
+    "cn": "v. 声称，自称"
+   },
+   {
+    "w": "pernicious anaemia",
+    "cn": "n. 恶性贫血"
+   },
+   {
+    "w": "lay press",
+    "cn": "n. 非专业报刊，大众媒体（lay: adj. 外行的）"
+   },
+   {
+    "w": "short-lived",
+    "cn": "adj. 短暂的，昙花一现的"
+   },
+   {
+    "w": "intriguing",
+    "cn": "adj. 引人入胜的，耐人寻味的"
+   },
+   {
+    "w": "inflationary",
+    "cn": "adj. 通货膨胀的，膨胀式的"
+   },
+   {
+    "w": "curb",
+    "cn": "v. 遏制，抑制"
+   },
+   {
+    "w": "incorporate",
+    "cn": "v. 纳入，包含"
+   },
+   {
+    "w": "citation index",
+    "cn": "n. 引用指数"
+   },
+   {
+    "w": "of small account",
+    "cn": "adj. 无足轻重的，不重要的"
+   },
+   {
+    "w": "associates",
+    "cn": "n. 同事，同行"
+   },
+   {
+    "w": "in return for",
+    "cn": "prep. 作为……的回报/交换"
+   },
+   {
+    "w": "metrics",
+    "cn": "n. 量化指标，衡量标准"
+   },
+   {
+    "w": "entail",
+    "cn": "v. 需要，带来"
+   },
+   {
+    "w": "reproducible",
+    "cn": "adj. 可重复验证的，可再现的"
+   }
+  ],
+  "skills": [
+   "定语从句（尤其是非限制性定语从句）的前置或拆分翻译处理",
+   "虚拟语气（would be / if it were not for）需译出与事实相反的假设含义",
+   "被动语态转主动：如Attempts have been made译为\"人们已经尝试\"",
+   "一词多义辨析：如measure在学术语境中译为\"衡量标准\"而非\"措施\"",
+   "学术术语的准确翻译：如reproducible译为\"可重复验证的\"，citation index译为\"引用指数\""
+  ]
+ }
+}

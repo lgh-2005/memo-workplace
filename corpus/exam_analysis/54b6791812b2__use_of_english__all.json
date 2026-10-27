@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "54b6791812b2__use_of_english__all",
+ "examId": "54b6791812b2",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2005 年考研英语真题（旧）",
+ "year": 2005,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:16:03.149Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 88886,
+ "usage": {
+  "prompt_tokens": 1739,
+  "completion_tokens": 5323,
+  "total_tokens": 7062,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1739,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5323,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1739,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人类嗅觉能力被低估",
+  "gist": "文章指出人类嗅觉常被认为不如动物灵敏，但这主要是因为人类直立行走导致鼻子只能感知空气中飘浮的气味而忽略了附着在物体表面的气味。实际上人类嗅觉极为灵敏，大脑会根据需要激活嗅觉感受器，对陌生和紧急信号保持警觉。",
+  "difficulty": "中等",
+  "translation": "人类的鼻子是一个被低估的工具。人类常常被认为与动物相比嗅觉不够灵敏，但这主要是因为，与动物不同，我们直立行走。这意味着我们的鼻子仅限于感知那些飘浮在空气中的气味，而错过了大多数附着在物体表面的气味。事实上，尽管如此，我们对气味极为敏感，即使我们通常没有意识到这一点。我们的鼻子能够探测到人体气味，即使这些气味被稀释到远低于百万分之一的浓度。\n\n奇怪的是，有些人发现他们能闻到一种花香却闻不到另一种，然而其他人对两种花香都很敏感。这可能是因为某些人不具备在鼻中产生特定嗅觉感受器所需的基因。这些感受器是感知气味并向大脑发送信息的细胞。然而，研究发现，即使是起初对某种气味不敏感的人，在频繁接触该气味后也能突然变得敏感起来。\n\n对嗅觉不敏感的解释似乎是：大脑认为让所有嗅觉感受器一直工作是低效的，但在必要时可以创造新的感受器。这也许还能解释为什么我们通常对自己的气味不敏感——我们根本不需要敏感。我们没有意识到自己家里的惯常气味，但当我们去别人家拜访时却能注意到新的气味。大脑认为最好让嗅觉感受器留给不熟悉的和紧急的信号使用，例如烟味，因为烟味可能预示着火灾的危险。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "C",
+    "correct": "but",
+    "why": "前文说人类\"常被认为嗅觉不灵敏\"，后文用\"this is largely because\"给出原因并暗示这种看法是错误的，构成转折关系，需用 but 连接两个并列分句，表意外或纠正。",
+    "traps": "A) although 引导让步从句，不能连接两个独立主句（缺主句结构）；B) as 表原因或\"随着\"，与上下文转折逻辑不符；D) while 虽可表转折但语气较弱且多用于同时对比，此处需要明确转折。",
+    "tip": "识别前后句语义转折，but 连接并列主句。"
+   },
+   {
+    "number": 2,
+    "answer": "B",
+    "correct": "unlike",
+    "why": "句意为\"与动物不同，我们直立行走\"，unlike 作介词表示对比差异，后接名词 animals，语法和语义均通顺。",
+    "traps": "A) above 表\"在……之上\"，语义不通；C) excluding 表\"排除\"，不表对比；D) besides 表\"除……之外（还）\"，逻辑不合，此处强调的是差异而非补充。",
+    "tip": "介词辨析：unlike 表示与……不同的对比。"
+   },
+   {
+    "number": 3,
+    "answer": "A",
+    "correct": "limited",
+    "why": "be limited to 为固定搭配，意为\"局限于\"，表示人类鼻子只能感知漂浮在空气中的气味，语义准确。",
+    "traps": "B) committed to 意为\"致力于\"，语义不符；C) dedicated to 意为\"奉献给\"，不表局限；D) confined to 虽也有\"限制于\"之意，但多指物理空间限制，与感知能力搭配不如 limited to 自然。",
+    "tip": "固定搭配 be limited to doing sth 表\"局限于\"。"
+   },
+   {
+    "number": 4,
+    "answer": "C",
+    "correct": "missing",
+    "why": "因为人类直立行走，鼻子只能感知空中气味，因此\"错过\"了附着在物体表面的大多数气味。missing 表遗漏，与 limited to 构成因果逻辑。",
+    "traps": "A) catching 意为\"捕捉到\"，与上文\"局限\"的逻辑矛盾；B) ignoring 意为\"故意忽视\"，鼻子并非主动忽视；D) tracking 意为\"追踪\"，语义不符。",
+    "tip": "现在分词作伴随状语，missing 表因能力受限而遗漏。"
+   },
+   {
+    "number": 5,
+    "answer": "B",
+    "correct": "though",
+    "why": "此处 though 作副词插入语（用逗号隔开），起让步转折作用，意为\"然而，尽管如此\"，承接上文\"似乎不灵敏\"转向\"实际上极灵敏\"。",
+    "traps": "A) anyway 语气过于口语化，且表\"无论如何\"，逻辑弱；C) instead 表\"反而、取而代之\"，语气过强；D) therefore 表因果，与上下文转折逻辑相反。",
+    "tip": "though 作插入副词放于句中，表让步转折。"
+   },
+   {
+    "number": 6,
+    "answer": "A",
+    "correct": "even if",
+    "why": "意为\"即使我们通常没意识到\"，even if 引导让步状语从句，强调即便不自知，嗅觉依然灵敏，加强语气。",
+    "traps": "B) if only 表\"要是……就好了\"，表愿望，不合语境；C) only if 表\"只有……才\"，逻辑相反；D) as if 表\"好像\"，语义不通。",
+    "tip": "even if 引导让步从句，强调条件不影响结果。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "detecting",
+    "why": "detect 意为\"探测、察觉\"，指感官发现微弱信号的能力，与后文\"稀释到百万分之一以下\"搭配，突出鼻子灵敏的探测能力。",
+    "traps": "A) distinguishing 意为\"区分\"，强调辨别差异而非发现存在；B) discovering 意为\"发现（新事物）\"，不用于感官探测语境；C) determining 意为\"确定、决定\"，语义不符。",
+    "tip": "detect 强调对微弱或隐蔽事物的探测能力。"
+   },
+   {
+    "number": 8,
+    "answer": "A",
+    "correct": "diluted",
+    "why": "dilute 意为\"稀释\"，常用于描述浓度降低。be diluted to 表示气味被稀释到极低浓度（百万分之一以下），与 one part in one million 搭配准确。",
+    "traps": "B) dissolved 意为\"溶解\"，指固体溶于液体，不适用于气味浓度；C) dispersed 意为\"分散、驱散\"，不表浓度降低；D) diffused 意为\"扩散\"，侧重传播而非浓度变化。",
+    "tip": "dilute 专指降低浓度，与 part in million 搭配。"
+   },
+   {
+    "number": 9,
+    "answer": "D",
+    "correct": "whereas",
+    "why": "前半句说有人只能闻到一种花香，后半句说另一些人两种都能闻到，构成对比关系，whereas 表\"然而，但是\"，用于引导对比从句。",
+    "traps": "A) when 表时间，不能体现对比；B) since 表原因或\"自从\"，逻辑不对；C) for 表原因，与对比语义不符。",
+    "tip": "whereas 引导对比从句，强调两类人的差异。"
+   },
+   {
+    "number": 10,
+    "answer": "B",
+    "correct": "particular",
+    "why": "particular 意为\"特定的\"，指产生针对某种特定气味的感受器。上文提到有人闻不到某种花香，正是因为缺乏相应的\"特定\"感受器。",
+    "traps": "A) unusual 意为\"不寻常的\"，语义偏离；C) unique 意为\"独一无二的\"，过于绝对；D) typical 意为\"典型的\"，与\"缺乏特定感受器导致闻不到\"的逻辑不符。",
+    "tip": "particular 强调\"特定的、具体的\"，对应特定气味。"
+   },
+   {
+    "number": 11,
+    "answer": "C",
+    "correct": "messages",
+    "why": "send messages to the brain 是描述神经信号传递的常见表达，感受器感知气味后向大脑\"发送信息\"，messages 最为通用准确。",
+    "traps": "A) signs 意为\"标志、迹象\"，不用于神经传递；B) stimuli 意为\"刺激\"，是感受器接收的对象而非发出的内容；D) impulses 意为\"神经冲动\"，虽在生理学中存在，但此处为科普文，messages 更通俗达意。",
+    "tip": "send messages to the brain 为科普语境常用搭配。"
+   },
+   {
+    "number": 12,
+    "answer": "A",
+    "correct": "at first",
+    "why": "at first 意为\"起初\"，与后文\"can suddenly become sensitive\"构成时间先后对比：起初不敏感→后来变敏感，逻辑连贯。",
+    "traps": "B) at all 意为\"根本\"，若用则暗示完全无法改变，与后文\"突然变敏感\"矛盾；C) at large 意为\"逍遥法外/总体上\"，语义不合；D) at times 意为\"有时\"，与 suddenly become 的转变逻辑不符。",
+    "tip": "at first 与后文 suddenly 形成\"起初……后来\"的对比。"
+   },
+   {
+    "number": 13,
+    "answer": "D",
+    "correct": "exposed",
+    "why": "be exposed to 为固定搭配，意为\"暴露于、接触\"，此处指反复接触某种气味后变得敏感，语义和搭配均准确。",
+    "traps": "A) subjected to 意为\"遭受（不好的事）\"，语义过重；B) left to 意为\"留给、任由\"，搭配不当；C) drawn to 意为\"被吸引到\"，语义不符。",
+    "tip": "be exposed to 表\"接触\"，为高频考研搭配。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "inefficient",
+    "why": "inefficient 意为\"低效的\"，大脑认为让所有感受器一直运转是\"低效的\"，涉及资源分配的效率问题，符合大脑节能运作的语境。",
+    "traps": "A) ineffective 意为\"无效果的\"，侧重结果无用，但感受器并非无用而是资源浪费；B) incompetent 意为\"无能的\"，用于形容人，不修饰 it（形式宾语）；D) insufficient 意为\"不充足的\"，语义不合。",
+    "tip": "inefficient 侧重效率低、浪费资源，区别于 ineffective（无效）。"
+   },
+   {
+    "number": 15,
+    "answer": "D",
+    "correct": "create",
+    "why": "大脑在必要时可以\"创造\"新的感受器，create 表示从无到有产生，与 new receptors 搭配自然，对应上文 generate 的语义。",
+    "traps": "A) introduce 意为\"引入\"，不符合生物体自行生成的语境；B) summon 意为\"召唤\"，过于拟人化且不合科学语境；C) trigger 意为\"触发\"，指引起某事发生，不表生成新事物。",
+    "tip": "create new receptors 表\"生成新感受器\"，语义直接明确。"
+   },
+   {
+    "number": 16,
+    "answer": "B",
+    "correct": "also",
+    "why": "also 意为\"也\"，表递进补充，前文解释了嗅觉不敏感的原因，此处用 also 引出另一个可以被同一理论解释的现象（对自身气味不敏感）。",
+    "traps": "A) still 意为\"仍然\"，表持续而非补充；C) otherwise 意为\"否则\"，表假设相反情况；D) nevertheless 意为\"然而\"，表转折，与补充逻辑不符。",
+    "tip": "also 表递进补充，用同一理论解释另一现象。"
+   },
+   {
+    "number": 17,
+    "answer": "C",
+    "correct": "aware",
+    "why": "be aware of 为固定搭配，意为\"意识到\"，我们没有意识到自己家里的惯常气味，语义与上下文\"对自身气味不敏感\"一致。",
+    "traps": "A) sure of 意为\"确信\"，语义不合；B) sick of 意为\"厌烦\"，感情色彩不对；D) tired of 意为\"厌倦\"，语义偏离。",
+    "tip": "be aware of 表\"意识到\"，对应嗅觉感知的主题。"
+   },
+   {
+    "number": 18,
+    "answer": "D",
+    "correct": "notice",
+    "why": "notice 意为\"注意到\"，与前句 not aware of 形成对比：对自家气味无感，却能注意到别人家的新气味，逻辑通顺。",
+    "traps": "A) tolerate 意为\"容忍\"，语义不合；B) repel 意为\"排斥\"，感情过于负面；C) neglect 意为\"忽视\"，与语境中\"能感知到新气味\"相反。",
+    "tip": "notice 与 not aware of 构成对比，一忽略一察觉。"
+   },
+   {
+    "number": 19,
+    "answer": "A",
+    "correct": "available",
+    "why": "available 意为\"可用的\"，keep receptors available for 表示\"让感受器保持待命状态以应对\"不熟悉和紧急的信号，语义准确。",
+    "traps": "B) reliable 意为\"可靠的\"，不与 for 搭配表目的；C) identifiable 意为\"可辨认的\"，修饰感受器不合逻辑；D) suitable 意为\"合适的\"，语义模糊，不如 available 表达\"待命\"含义准确。",
+    "tip": "keep sth available for 表\"为……保留/留作备用\"。"
+   },
+   {
+    "number": 20,
+    "answer": "B",
+    "correct": "such as",
+    "why": "such as 用于举例，后接 the smell of smoke 作为\"不熟悉的和紧急信号\"的具体例子，语法和逻辑均正确。",
+    "traps": "A) similar to 意为\"类似于\"，不用于举例；C) along with 意为\"连同\"，表并列而非举例；D) aside from 意为\"除了\"，表排除或补充，语义不符。",
+    "tip": "such as 引出具体例子，是完形填空高频考点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "underrated",
+    "cn": "被低估的（adj.）"
+   },
+   {
+    "w": "insensitive",
+    "cn": "不敏感的（adj.）"
+   },
+   {
+    "w": "perceive",
+    "cn": "感知、察觉（v.）"
+   },
+   {
+    "w": "receptor",
+    "cn": "感受器、受体（n.）"
+   },
+   {
+    "w": "dilute",
+    "cn": "稀释（v.）；稀释的（adj.）"
+   },
+   {
+    "w": "generate",
+    "cn": "产生、生成（v.）"
+   },
+   {
+    "w": "insensitivity",
+    "cn": "不敏感、迟钝（n.）"
+   },
+   {
+    "w": "inefficient",
+    "cn": "低效的（adj.）"
+   },
+   {
+    "w": "unfamiliar",
+    "cn": "不熟悉的（adj.）"
+   },
+   {
+    "w": "detect",
+    "cn": "探测、察觉（v.）"
+   },
+   {
+    "w": "indicate",
+    "cn": "表明、暗示（v.）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "but",
+    "role": "第一段首句与第二句之间的转折，纠正\"嗅觉不灵敏\"的误解"
+   },
+   {
+    "w": "In fact",
+    "role": "进一步反驳前文观点，引出人类嗅觉实际很灵敏的论点"
+   },
+   {
+    "w": "However",
+    "role": "第二段内部转折，引出\"起初不敏感的人也能变敏感\"的新发现"
+   },
+   {
+    "w": "whereas",
+    "role": "对比两类人对花香敏感程度的差异"
+   },
+   {
+    "w": "also",
+    "role": "递进补充，将\"对自身气味不敏感\"纳入同一理论框架"
+   },
+   {
+    "w": "This means that",
+    "role": "因果推导，说明直立行走导致嗅觉受限的具体表现"
+   }
+  ]
+ }
+}

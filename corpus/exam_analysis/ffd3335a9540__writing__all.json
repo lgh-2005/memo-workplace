@@ -1,0 +1,226 @@
+{
+ "schemaVersion": 1,
+ "id": "ffd3335a9540__writing__all",
+ "examId": "ffd3335a9540",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2020 年考研英语真题",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:51:22.323Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 83181,
+ "usage": {
+  "prompt_tokens": 812,
+  "completion_tokens": 4496,
+  "total_tokens": 5308,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 812,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4496,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 812,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 4,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "以校学生会名义，写一则通知，告知留学生一场即将举行的歌唱比赛的相关事宜，约100词，不得使用真名。",
+    "outline": [
+     "第一段：说明通知目的——校学生会将举办歌唱比赛，旨在丰富国际学生的校园文化生活",
+     "第二段：交代比赛的具体信息——时间、地点、参赛形式、报名方式与截止日期",
+     "第三段：补充奖项设置等激励信息，表达对国际学生积极参与的期待"
+    ],
+    "sample": "NOTICE\n\nDecember 20, 2018\n\nIn order to promote cultural exchange and enrich the campus life of international students, the Students' Union is delighted to announce an upcoming singing contest.\n\nThe contest is scheduled to take place in the University Auditorium on January 5, 2019, from 7:00 PM to 9:30 PM. All international students are welcome to participate, either as solo performers or in groups. Songs in any language are acceptable. Those who wish to enter are required to register at the Students' Union office or send an email to su@univ.edu before December 28.\n\nGenerous prizes will be awarded to the top three winners. We sincerely look forward to your active participation!\n\nThe Students' Union",
+    "phrases": [
+     {
+      "en": "be delighted/pleased to announce",
+      "cn": "很高兴宣布……，正式通知类文体的经典开头"
+     },
+     {
+      "en": "is scheduled to take place",
+      "cn": "定于……举行，比will be held更正式地道"
+     },
+     {
+      "en": "promote cultural exchange",
+      "cn": "促进文化交流，国际活动类话题的高频搭配"
+     },
+     {
+      "en": "enrich the campus life of",
+      "cn": "丰富……的校园生活，通知中阐述目的的常用表达"
+     },
+     {
+      "en": "either as solo performers or in groups",
+      "cn": "以独唱或团队形式参加，参赛方式的精准表达"
+     },
+     {
+      "en": "Those who wish to enter are required to…",
+      "cn": "希望报名者须……，通知类指令句型"
+     },
+     {
+      "en": "look forward to your active participation",
+      "cn": "期待您的积极参与，通知结尾的礼貌用语"
+     },
+     {
+      "en": "Generous prizes will be awarded to",
+      "cn": "丰厚的奖品将颁发给……，激励性信息的地道写法"
+     }
+    ],
+    "pitfalls": [
+     "忘写标题NOTICE或日期，格式不完整直接扣分",
+     "落款用了自己真名而非The Students' Union，违反题目要求",
+     "通篇缺乏具体信息（时间、地点、报名方式），内容空洞",
+     "语域不当，通知应正式书面，避免口语化表达如gonna、wanna",
+     "将notice写成了letter格式，出现Dear…或Yours sincerely等书信用语"
+    ],
+    "upgrades": [
+     {
+      "plain": "We will have a singing contest.",
+      "better": "The Students' Union is delighted to announce an upcoming singing contest.",
+      "note": "明确主办方身份，用be delighted to announce提升正式语域"
+     },
+     {
+      "plain": "The contest will be on January 5.",
+      "better": "The contest is scheduled to take place on January 5, 2019.",
+      "note": "be scheduled to比will更体现计划性，take place比be on更正式"
+     },
+     {
+      "plain": "Please sign up before December 28.",
+      "better": "Those who wish to enter are required to register before December 28.",
+      "note": "用主语从句+are required to体现通知的规范指令语气"
+     },
+     {
+      "plain": "We hope you can come.",
+      "better": "We sincerely look forward to your active participation!",
+      "note": "look forward to更热情正式，active participation更具感召力"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "根据图片写160-200词短文，要求简述图片内容、阐释寓意并给出评论。本题图片描绘两位登山者在暮色中登山，一人放弃，一人坚持攀登。",
+    "outline": [
+     "第一段：描述图片——黄昏时分两位登山者在山路上，一人疲惫坐下说天黑太晚不爬了，另一人坚定表示既然来了就坚持登顶",
+     "第二段：揭示寓意——图片传达了坚持不懈的重要性；面对困难时放弃者永远无法品尝成功的喜悦，而坚持者更可能到达成就之巅",
+     "第三段：个人评论——坚持是成功的必备品质，面对困难应鼓起勇气继续前行，唯有坚持到底方能领略顶峰的壮丽风光"
+    ],
+    "sample": "As is vividly depicted in the picture, two climbers are making their way up a mountain at dusk. One of them, sitting on the ground with a weary look, complains, \"It is so dark and so late. I quit.\" The other, however, responds with firm determination, \"Since we have already come this far, let us keep going until we reach the summit.\"\n\nThe picture conveys a thought-provoking message about the significance of perseverance. In our journey through life, we inevitably encounter difficulties and setbacks that tempt us to abandon our goals halfway. Those who choose to give up at the first sign of hardship will never taste the sweetness of success. In contrast, individuals who persist in the face of adversity are far more likely to reach the peak of achievement. History abounds with such examples: Thomas Edison conducted thousands of failed experiments before finally inventing the practical light bulb, yet he never once surrendered.\n\nFrom my perspective, perseverance is an indispensable quality for anyone who aspires to succeed. When confronted with daunting obstacles, we should summon our courage and press forward rather than retreat in fear. Only by persisting to the very end can we ultimately witness the breathtaking scenery awaiting us at the summit of life.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the picture",
+      "cn": "正如图中生动描绘的那样，图画作文经典首句句型"
+     },
+     {
+      "en": "with firm determination",
+      "cn": "带着坚定的决心，描写人物神态的高分短语"
+     },
+     {
+      "en": "convey a thought-provoking message",
+      "cn": "传达一个发人深省的信息，图画寓意过渡的高级表达"
+     },
+     {
+      "en": "the significance of perseverance",
+      "cn": "坚持不懈的重要性，直接点出中心论点"
+     },
+     {
+      "en": "abandon our goals halfway",
+      "cn": "中途放弃目标，搭配abandon比give up更书面"
+     },
+     {
+      "en": "persist in the face of adversity",
+      "cn": "在逆境面前坚持，in the face of是高频介词短语"
+     },
+     {
+      "en": "History abounds with such examples",
+      "cn": "历史上这样的例子比比皆是，举例论证的高级衔接句"
+     },
+     {
+      "en": "an indispensable quality",
+      "cn": "不可或缺的品质，比important/necessary高级得多"
+     },
+     {
+      "en": "Only by persisting… can we…",
+      "cn": "只有坚持……我们才能……，only+介词短语引导的倒装句"
+     },
+     {
+      "en": "the breathtaking scenery at the summit",
+      "cn": "山顶令人叹为观止的风景，呼应登山意象升华主题"
+     }
+    ],
+    "pitfalls": [
+     "第一段描述图片时添加过多个人议论，未能先客观再主观",
+     "忘记引述图中文字或对白，导致描述不完整而失分",
+     "第二段论证空泛，缺少具体事例支撑，说服力不足",
+     "文章三段之间缺乏过渡衔接词，逻辑松散",
+     "词数不足160或超过200，不在规定区间会影响评分"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows two people climbing a mountain.",
+      "better": "As is vividly depicted in the picture, two climbers are making their way up a mountain at dusk.",
+      "note": "用as引导的非限制性定语从句开头更地道，细节更丰富"
+     },
+     {
+      "plain": "This picture tells us that we should not give up.",
+      "better": "The picture conveys a thought-provoking message about the significance of perseverance.",
+      "note": "convey a message比tell us更学术，thought-provoking增强文采"
+     },
+     {
+      "plain": "Edison tried many times before he succeeded.",
+      "better": "Edison conducted thousands of failed experiments before finally inventing the practical light bulb, yet he never once surrendered.",
+      "note": "用具体动词和让步转折yet增强叙事张力与论证深度"
+     },
+     {
+      "plain": "We should keep trying when we meet difficulties.",
+      "better": "When confronted with daunting obstacles, we should summon our courage and press forward rather than retreat in fear.",
+      "note": "被动分词短语开头+对比rather than结构使表达更有力"
+     },
+     {
+      "plain": "If we don't give up, we will succeed.",
+      "better": "Only by persisting to the very end can we ultimately witness the breathtaking scenery awaiting us at the summit of life.",
+      "note": "Only倒装句+隐喻收束全文，兼具语法亮点与修辞美感"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the picture, two climbers are making their way up a mountain at dusk. —— 图画作文黄金首句，as引导的非限制性定语从句+进行时营造画面感",
+   "Those who choose to give up at the first sign of hardship will never taste the sweetness of success. —— 用those who定语从句+taste the sweetness隐喻，正反论证的典范句",
+   "History abounds with such examples: Thomas Edison conducted thousands of failed experiments, yet he never once surrendered. —— abound with开启举例论证，冒号后直接展开，简洁有力",
+   "Perseverance is an indispensable quality for anyone who aspires to succeed. —— aspire to succeed比want to succeed高出两个档次，适用于所有品质论证类主题",
+   "Only by persisting to the very end can we ultimately witness the breathtaking scenery awaiting us at the summit of life. —— Only倒装+现在分词后置定语+summit of life隐喻，堪称满分结尾句"
+  ]
+ }
+}

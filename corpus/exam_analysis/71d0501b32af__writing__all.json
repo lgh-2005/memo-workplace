@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "71d0501b32af__writing__all",
+ "examId": "71d0501b32af",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2017 年 12 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:10:01.467Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 39589,
+ "usage": {
+  "prompt_tokens": 707,
+  "completion_tokens": 2160,
+  "total_tokens": 2867,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 707,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2160,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 707,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕格言\"Respect others, and you will be respected\"发表评论，可举例说明观点，字数150–200词。",
+    "outline": [
+     "第一段：引出格言，阐明其含义——尊重是人际关系的基石，并亮明自己的观点。",
+     "第二段：用具体事例（职场、名人等）论证'尊重他人即赢得尊重'，同时从反面简要对比论证。",
+     "第三段：总结全文，呼吁践行相互尊重，升华至社会和谐层面。"
+    ],
+    "sample": "The time-honored proverb \"Respect others, and you will be respected\" encapsulates a fundamental truth about human interaction: mutual respect serves as the cornerstone of all harmonious relationships. In my view, this saying remains as relevant today as it has ever been.\n\nNumerous examples from everyday life substantiate this claim. In the workplace, managers who treat their subordinates with dignity and genuine appreciation tend to earn heartfelt loyalty and admiration in return. A notable case in point is Nelson Mandela, who, despite enduring decades of imprisonment, chose to respect even his former oppressors after being released. His magnanimity not only won him worldwide reverence but also helped unite a deeply divided nation. Conversely, those who belittle or dismiss others often find themselves isolated and despised, regardless of their social status or wealth.\n\nThe underlying logic is straightforward: respect is inherently reciprocal. When we acknowledge the value and worth of those around us, we create an atmosphere of trust and goodwill that naturally reflects back upon ourselves. In conclusion, if we aspire to be respected, we must first learn to respect others wholeheartedly. Only through such mutual regard can we build a truly civilized and harmonious society.",
+    "phrases": [
+     {
+      "en": "time-honored proverb",
+      "cn": "历史悠久的格言；用于引出名言警句，比 old saying 更正式"
+     },
+     {
+      "en": "encapsulate a fundamental truth",
+      "cn": "概括一个基本真理；精炼表达核心观点的高级搭配"
+     },
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "作为……的基石；强调某事物的根本重要性"
+     },
+     {
+      "en": "substantiate this claim",
+      "cn": "为这一论断提供证据；比 prove 更学术化"
+     },
+     {
+      "en": "a notable case in point",
+      "cn": "一个典型例子；用于衔接具体论据，衔接自然"
+     },
+     {
+      "en": "earn heartfelt loyalty and admiration",
+      "cn": "赢得由衷的忠诚与敬佩；修饰丰富，情感表达到位"
+     },
+     {
+      "en": "magnanimity",
+      "cn": "宽宏大量；高级词汇，替代 generosity 更具感染力"
+     },
+     {
+      "en": "inherently reciprocal",
+      "cn": "本质上是相互的；用于揭示尊重的双向本质"
+     },
+     {
+      "en": "an atmosphere of trust and goodwill",
+      "cn": "信任与善意的氛围；展示抽象概念的具象化能力"
+     },
+     {
+      "en": "mutual regard",
+      "cn": "相互尊重/敬意；总结段的点题表达，比 mutual respect 更正式"
+     }
+    ],
+    "pitfalls": [
+     "审题不清：忽略 commenting on the saying 的要求，未对格言进行解读就直接举例，缺乏分析层次。",
+     "论证单薄：全篇只讲道理不举例，或例子过于笼统（如'my friend'），缺乏说服力。",
+     "词汇重复：通篇反复使用 respect 而无同义替换（如 esteem, regard, reverence），影响语言分数。",
+     "逻辑断裂：正面论证与反面对比之间缺少过渡词（如 conversely, on the contrary），行文生硬。",
+     "字数失控：低于150词会被扣分，超过200词说明详略不当，均需在考前练习控制篇幅。"
+    ],
+    "upgrades": [
+     {
+      "plain": "This saying means we should respect others.",
+      "better": "This time-honored proverb encapsulates a fundamental truth about human interaction: mutual respect serves as the cornerstone of all harmonious relationships.",
+      "note": "用同位语从句展开内涵，避免空洞的一句话概括，信息密度更高且句式更高级。"
+     },
+     {
+      "plain": "For example, Mandela respected his enemies and people respected him.",
+      "better": "A notable case in point is Nelson Mandela, who, despite enduring decades of imprisonment, chose to respect even his former oppressors, winning worldwide reverence.",
+      "note": "用非限制性定语从句+让步状语插入语丰富信息层次，展示复杂句式驾驭能力。"
+     },
+     {
+      "plain": "People who don't respect others will not be respected.",
+      "better": "Conversely, those who belittle or dismiss others often find themselves isolated and despised, regardless of their social status or wealth.",
+      "note": "用反面对比+regardless of附加信息，增强论证力度和句式多样性。"
+     },
+     {
+      "plain": "In a word, we should respect others.",
+      "better": "Only through such mutual regard can we build a truly civilized and harmonious society.",
+      "note": "以 only 引导的倒装句收尾，语言更有力量感，同时升华主题至社会层面。"
+     },
+     {
+      "plain": "Respect can make people like you.",
+      "better": "When we acknowledge the value and worth of those around us, we create an atmosphere of trust and goodwill that naturally reflects back upon ourselves.",
+      "note": "用时间状语从句+定语从句构建因果链条，表达更精准且富有画面感。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "This time-honored proverb encapsulates a fundamental truth about human interaction: mutual respect serves as the cornerstone of all harmonious relationships. ——这句用同位语冒号结构精炼破题，cornerstone 一词形象有力。",
+   "A notable case in point is Nelson Mandela, who, despite enduring decades of imprisonment, chose to respect even his former oppressors. ——非限制性定语从句内嵌让步插入语，信息层次丰富，是论证段的黄金句式。",
+   "His magnanimity not only won him worldwide reverence but also helped unite a deeply divided nation. ——not only...but also 并列结构搭配高级词汇 magnanimity 和 reverence，气势与用词俱佳。",
+   "Conversely, those who belittle or dismiss others often find themselves isolated and despised, regardless of their social status or wealth. ——反面论证句式完整，belittle 和 dismiss 同义并列避免重复，regardless of 补充论证周密。",
+   "Only through such mutual regard can we build a truly civilized and harmonious society. ——only 引导倒装句收束全文，升华有力，是结尾段的万能高分句型。"
+  ]
+ }
+}

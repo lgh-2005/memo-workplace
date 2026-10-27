@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "2503975bfd62__reading__1",
+ "examId": "2503975bfd62",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2010 年考研英语真题",
+ "year": 2010,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:23:35.219Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 76403,
+ "usage": {
+  "prompt_tokens": 1770,
+  "completion_tokens": 4719,
+  "total_tokens": 6489,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1770,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4719,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1770,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英语报纸艺术评论的衰落",
+  "gist": "文章回顾了过去一个世纪英语报纸艺术评论从繁荣到衰落的历程。曾经大城市报纸刊载高质量的艺术评论，评论家以新闻为天职、自由深入地撰写评论。然而如今这一传统几近消亡，以音乐评论家卡杜斯为例，他的作品已被遗忘，复兴前景渺茫，业余评论传统也在全面退却。",
+  "structure": [
+   "第1段：提出论点——报纸艺术评论经历了深远衰落",
+   "第2-3段：回忆黄金时代——报纸曾大量刊载高质量、自由主题的艺术评论",
+   "第4段：举例论证——卡杜斯从名噪一时到几乎被遗忘",
+   "第5段：展望未来——卡杜斯评论复兴无望，业余评论传统全面退却"
+  ],
+  "difficulty": "中等",
+  "translation": "在过去四分之一个世纪中英语报纸所经历的所有变化中，也许影响最深远的变化是其艺术报道在范围和严肃性上不可遏制的衰落。\n\n对于四十岁以下的普通读者来说，要想象曾经大多数大城市报纸上都能找到高质量艺术评论的那个时代，几乎是不可能的。然而，二十世纪出版的最重要的评论文集中，有相当一部分主要由报纸评论组成。今天读到这些书，人们不禁惊叹于这样一个事实：这些学识渊博的内容曾被认为适合在面向大众发行的日报上刊载。\n\n我们与二十世纪之交至第二次世界大战前夕在英国发表的那些不拘主题的报纸评论之间的距离更为遥远。在那个时代，新闻纸极其廉价，优雅的艺术评论被视为其所刊载出版物的一种装饰。在那些遥远的日子里，人们理所当然地认为主要报纸的评论家会对其所报道的事件进行详尽而充分的撰写。他们的工作是一项严肃的事业，即便是那些把学识表现得举重若轻的评论家，如萧伯纳和欧内斯特·纽曼，也完全可以被信任为精通自己所评论的内容。这些人将新闻业视为一种使命，并以能在日报上发表文章而自豪。纽曼写道：\"能在新闻业中凭头脑或文学才华站稳脚跟的作家太少了，以至于我很想把'新闻业'定义为'没人读的作家用来蔑视有人读的作家的一个词'。\"\n\n不幸的是，这些评论家几乎已被人遗忘。内维尔·卡杜斯从1917年起为《曼彻斯特卫报》撰稿，直到1975年去世前不久，但如今他仅仅作为一位板球随笔作家为人所知。然而在他生前，他也是英国最杰出的古典音乐评论家之一，其文风广受赞赏，以至于他的《自传》（1947年）成为了畅销书。他在1967年被封为爵士，是第一位获此殊荣的音乐评论家。然而他的著作中如今仅有一本还在出版，他大量的音乐评论著作除了专家之外无人知晓。\n\n卡杜斯的评论有没有可能迎来复兴？前景似乎渺茫。早在他去世之前，新闻品味就已经发生了变化，后现代读者对他所擅长的那种华丽铺陈的维多利亚—爱德华时代风格的散文几乎不感兴趣。况且，音乐评论中的业余传统也在急速退却。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "perhaps the most far-reaching has been the inexorable decline in the scope and seriousness of their arts coverage.",
+    "why": "第1段指出报纸艺术报道的范围和严肃性经历了不可遏制的衰落；第2段补充说明曾经大城市报纸刊载高质量艺术评论，二十世纪最重要的评论文集大量由报纸评论组成。两段综合可推出：英语报纸过去曾刊载更多的艺术评论。B选项\"used to carry more arts reviews\"精确概括了这一对比关系。",
+    "traps": "A项'disappeared'过于绝对，原文说的是'decline'（衰落）而非完全消失；C项'retain a large body of readers'文中未提及报纸读者数量问题，属于无中生有；D项将原文'难以想象那个时代'曲解为'年轻读者质疑评论在日报上的适宜性'，属于偷换主语和曲解因果。",
+    "tip": "注意区分'衰落'与'消失'，绝对化选项常为陷阱。"
+   },
+   {
+    "number": 22,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "We are even farther removed from the unfocused newspaper reviews published in England between the turn of the 20th century and the eve of World War II",
+    "why": "原文用'unfocused'形容一战前至二战前夕英国的报纸评论，意为'不拘主题的、主题自由的'。结合后文'newsprint was dirt-cheap'（新闻纸极其廉价），评论家可以自由详尽地撰写内容，说明当时评论主题不受约束。A项'free themes'（自由主题）正是对'unfocused'一词的同义转述。",
+    "traps": "B项'casual style'（随意的风格）与原文矛盾，原文强调评论是'serious business'（严肃事业）；C项'elaborate layout'（精心的版面布局）文中完全未提及版面问题，属于无中生有；D项'radical viewpoints'（激进观点）原文未涉及评论的立场是否激进，属于无中生有。",
+    "tip": "'unfocused'在此不是贬义的'不专注'，而是'不受限、主题自由'之意，需结合上下文判断词义。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "So few authors have brains enough or literary gift enough to keep their own end up in journalism, that I am tempted to define 'journalism' as 'a term of contempt applied by writers who are not read to writers who are'.",
+    "why": "纽曼这段话的核心含义是：能在新闻业中站稳脚跟的作家太少了（So few authors have brains enough or literary gift enough）。前文指出萧伯纳和纽曼都将新闻业视为使命（believed in journalism as a calling），他们共同的理念是：不是所有作家都具备从事新闻写作的能力。D项'Not all writers are capable of journalistic writing'与此完全对应。",
+    "traps": "A项'duty to fulfill journalistic goals'将'calling'（使命）偷换为'duty'（义务），且'journalistic goals'过于宽泛；B项'contemptible for writers to be journalists'恰好理解反了，纽曼的话恰恰在讽刺那些鄙视新闻业的作家自己没有读者；C项'tempted into journalism'偷换概念，原文的'tempted'是指纽曼'忍不住想要下定义'，而非作家被引诱进入新闻业。",
+    "tip": "引语题需先理清说话人的真实立场，再比对选项，防止反向理解。"
+   },
+   {
+    "number": 24,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "postmodern readers have little use for the richly upholstered Vicwardian prose in which he specialized. Moreover, the amateur tradition in music criticism has been in headlong retreat.",
+    "why": "最后两段指出卡杜斯评论复兴的前景渺茫（prospect seems remote），原因是后现代读者对他华丽铺陈的维多利亚—爱德华时代文风不感兴趣（have little use for），且业余评论传统也在急速退却。这两点共同说明他的音乐评论对当今读者缺乏吸引力，A项准确概括了这一信息。",
+    "traps": "B项'reputation has long been in dispute'（名声长期存在争议）原文未提及任何争议，属于无中生有；C项'caters largely to modern specialists'（迎合现代专家）与原文矛盾，原文说仅有专家知道他的作品，并非说他的风格迎合专家；D项'fail to follow the amateur tradition'（未能遵循业余传统）与原文矛盾，卡杜斯恰恰属于业余传统的代表。",
+    "tip": "'have little use for'意为'对……不感兴趣/用不上'，是考研常见的否定表达。"
+   },
+   {
+    "number": 25,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "perhaps the most far-reaching has been the inexorable decline in the scope and seriousness of their arts coverage.",
+    "why": "全文围绕英语报纸艺术评论的衰落展开：第1-2段总述衰落现象并回忆过去的辉煌，第3段描绘黄金时代的具体特征，第4段以卡杜斯为例说明评论家被遗忘，第5段指出复兴无望。B项'The Lost Horizon in Newspapers'（报纸中消逝的地平线）用隐喻表达了报纸曾经拥有但已失去的艺术评论辉煌，与全文主旨完美契合。",
+    "traps": "A项'Newspapers of the Good Old Days'只涵盖回忆往昔的部分，忽略了衰落这一核心；C项'Mournful Decline of Journalism'范围过大，文章讨论的是报纸中'艺术评论'的衰落，而非整个新闻业；D项'Prominent Critics in Memory'只涵盖了文中举例部分，未涵盖衰落的整体主题。",
+    "tip": "主旨题需兼顾全文核心论点，过宽、过窄、只涉及部分内容的选项均应排除。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inexorable",
+    "cn": "不可阻挡的，不可遏制的 (adj.)"
+   },
+   {
+    "w": "far-reaching",
+    "cn": "深远的，影响广泛的 (adj.)"
+   },
+   {
+    "w": "deemed",
+    "cn": "被认为，被视为 (v.)"
+   },
+   {
+    "w": "ornament",
+    "cn": "装饰，点缀 (n.)"
+   },
+   {
+    "w": "contempt",
+    "cn": "蔑视，轻蔑 (n.)"
+   },
+   {
+    "w": "foremost",
+    "cn": "最杰出的，最重要的 (adj.)"
+   },
+   {
+    "w": "knighted",
+    "cn": "被封为爵士 (v.)"
+   },
+   {
+    "w": "solely",
+    "cn": "仅仅，唯一地 (adv.)"
+   },
+   {
+    "w": "upholstered",
+    "cn": "华丽铺陈的（此处为比喻用法）(adj.)"
+   },
+   {
+    "w": "headlong",
+    "cn": "猛烈的，急速的 (adj./adv.)"
+   },
+   {
+    "w": "marvel",
+    "cn": "惊叹，感到惊奇 (v.)"
+   },
+   {
+    "w": "revival",
+    "cn": "复兴，复苏 (n.)"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "So few authors have brains enough or literary gift enough to keep their own end up in journalism, that I am tempted to define 'journalism' as 'a term of contempt applied by writers who are not read to writers who are'.",
+    "cn": "能在新闻业中凭头脑或文学才华站稳脚跟的作家太少了，以至于我很想把'新闻业'定义为'没人读的作家用来蔑视有人读的作家的一个词'。",
+    "note": "so…that…结果状语从句；keep their own end up意为'站稳脚跟'；定义部分含双重定语从句：who are not read修饰前一个writers，who are修饰后一个writers，形成鲜明对比。"
+   },
+   {
+    "en": "We are even farther removed from the unfocused newspaper reviews published in England between the turn of the 20th century and the eve of World War II, at a time when newsprint was dirt-cheap and stylish arts criticism was considered an ornament to the publications in which it appeared.",
+    "cn": "我们与二十世纪之交至第二次世界大战前夕在英国发表的那些不拘主题的报纸评论之间的距离更为遥远。在那个时代，新闻纸极其廉价，优雅的艺术评论被视为其所刊载出版物的一种装饰。",
+    "note": "主干为We are removed from the reviews；published in England…为后置定语修饰reviews；at a time when…为时间状语从句，内含并列谓语was dirt-cheap和was considered。"
+   },
+   {
+    "en": "It is difficult to the point of impossibility for the average reader under the age of forty to imagine a time when high-quality arts criticism could be found in most big-city newspapers.",
+    "cn": "对于四十岁以下的普通读者来说，要想象曾经大多数大城市报纸上都能找到高质量艺术评论的那个时代，几乎是不可能的。",
+    "note": "It为形式主语，真正主语为to imagine a time；to the point of impossibility为程度状语，意为'达到不可能的程度'；when引导定语从句修饰a time。"
+   }
+  ]
+ }
+}

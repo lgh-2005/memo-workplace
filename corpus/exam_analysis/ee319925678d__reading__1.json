@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "ee319925678d__reading__1",
+ "examId": "ee319925678d",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 6 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:28:19.431Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62334,
+ "usage": {
+  "prompt_tokens": 1847,
+  "completion_tokens": 4000,
+  "total_tokens": 5847,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1847,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4000,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1847,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 47 题 locate 定位句与原文不符",
+  "longSentences 有原句与原文不符"
+ ],
+ "analysis": {
+  "topic": "职场冷淡关系的价值与合理性",
+  "gist": "作者重返职场后发现与同事建立亲密关系并非必要。学术研究提出\"冷淡关系\"概念，指出职场关系可以是不亲密、无关紧要甚至可替代的。这种关系虽无法解决所有职场问题，但在效率提升、自尊维护和理性评估方面具有实证优势。",
+  "structure": [
+   "第1-2段：作者个人经历引出职场友谊并非必需的观点",
+   "第3段：引入学术概念'冷淡关系'并定义其内涵",
+   "第4段：分析倾向冷淡关系的人群特征",
+   "第5-7段：分别论述冷淡关系的三大优势——效率、自尊和理性评估"
+  ],
+  "difficulty": "中等",
+  "translation": "几年前，在经历了十年独立自雇的生涯后，我重新回到全职工作岗位，当时我最期待的一件事就是：能再次拥有工作中的朋友。然而，直到我进入企业工作后才意识到，至少对我而言，与同事交朋友根本没有成为优先事项。考虑到学者、培训师和管理者们一直强调在工作中培养亲密人际关系的重要性，这一点令人意外。大量研究已经探讨了同事关系如何帮助克服一系列影响生产力和工作产出质量的职场问题，如团队冲突、嫉妒、暗中破坏、愤怒等等。\n\n也许我对午餐聚会、茶水间八卦以及那些真诚深入对话的期待，不过是我上一次处于那种办公环境时留下的记忆遗产。而现在，随着我即将迈入四十岁，我意识到工作完全可以运转良好且令人满足，而不需要跟坐在你身边的人成为最好的朋友。\n\n在刚发表于备受推崇的《管理学杂志》上的一篇学术分析中，研究人员探讨了\"冷淡关系\"这一概念。这是一个简洁的术语，概括了这样一个事实：工作中的关系完全可以是不亲密的、无关紧要的、不重要的，甚至——我斗胆说一句——是可丢弃的或可替代的。\n\n冷淡关系既非积极也非消极。迄今为止有限的研究表明，这种关系在那些重视独立胜过合作、重视和谐胜过对抗的人群中尤为普遍。冷淡也是那些社交上懒惰的人的首选方式。长期维护关系需要付出努力，而对我们中的一些人来说，那太费力了。\n\n如上所述，冷淡关系在解决工作中出现的某些问题时，可能并不总是最有帮助的方式。但尽管如此，它仍然有几个经过实证证明的好处。其中之一就是效率。花更少的时间聊天和社交意味着有更多的时间工作和产出。\n\n另一个好处是自尊。作为人类，我们天生倾向于相互比较，这是一种容易引发焦虑的现象。显然，我们更容易看不起熟人而非朋友。由于前者在倾向于冷淡关系的人群中更为常见，这种关系的主导地位可以增强个体的自我价值感。\n\n抛开自尊不谈，第三个优势是，冷淡关系的情感中立性已被发现能够增强批判性评估、加强对任务解决的专注力，并获得更多有价值的信息。这些也许都不如下班后的社交活动有趣，但是，嘿，我还是愿意接受的。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "It wasn't until I entered the corporate world that I realized, for me at least, being friends with colleagues didn't emerge as a priority at all.",
+    "why": "原文明确指出作者进入企业后才意识到，与同事做朋友根本没有成为优先事项（didn't emerge as a priority at all）。D选项\"建立亲密关系没有他预期的那么重要\"是对该句的准确同义改写。第一段首句提到他曾期待拥有工作朋友，后句用强调句型转折，说明现实与期待之间的落差。",
+    "traps": "A\"交朋友不如预期那样容易\"偷换概念，原文说的是不重要而非不容易；B\"培养积极关系帮助消除孤独感\"无中生有，原文未提及expel solitary feelings；C\"企业工作需要更多人际技巧\"属于无中生有，原文未比较两种工作所需技能。",
+    "tip": "注意强调句型 It wasn't until... that... 的语义重心在转折后。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "So much research has explored the way in which collegial ties can help overcome a range of workplace issues affecting productivity and the quality of work output such as team-based conflict, jealousy, undermining, anger, and more.",
+    "why": "原文说大量研究探讨了同事关系如何帮助克服影响生产力的一系列职场问题，如冲突、嫉妒、暗中破坏和愤怒等。这些问题（冲突、嫉妒、愤怒等）本质上就是不和谐的关系表现，而它们会影响生产力（affecting productivity），即A所述\"不和谐关系对生产力有负面影响\"。这是通过原文的反面表述进行推理。",
+    "traps": "B\"和谐关系是许多公司的培养目标\"过度推断，原文只提到学者和管理者强调其重要性，未说公司以此为目标；C\"亲密同事关系对产品质量贡献甚微\"与原文相反，原文说能帮助克服影响产出质量的问题；D\"职场冲突关系几乎无处不在\"属于过度推断，原文只列举了问题类型，未说无处不在。",
+    "tip": "注意从正面表述中推出反面含义：能帮助克服问题→这些问题确实有害。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "relationships at work can reasonably be non-intimate, inconsequential, unimportant and even, dare I say it, disposable or substitutable.",
+    "why": "原文第三段定义\"冷淡关系\"时指出，职场关系可以合理地是不亲密的（non-intimate）、无关紧要的（inconsequential）、不重要的（unimportant），甚至是可丢弃的或可替代的。B选项\"它们实际上是无关紧要的（virtually irrelevant）\"精确对应了inconsequential和unimportant的语义，是对原文的合理推断。",
+    "traps": "A\"应该被培养\"与原文冷淡关系概念矛盾，文章论点恰恰是不需要刻意培养；C\"对企业文化至关重要\"无中生有，原文未涉及企业文化这一概念；D\"应该适度亲密\"与原文non-intimate直接矛盾。",
+    "tip": "推断题需抓住定位句中的关键形容词群，综合理解其核心含义。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Indifference is also the preferred option among those who are socially lazy. Maintaining relationships over the long term takes effort. For some of us, too much effort.",
+    "why": "原文明确指出冷淡关系是\"社交上懒惰的人\"的首选，紧接着解释原因：长期维护关系需要付出努力，而对某些人来说那太费力了。C选项\"他们不愿意为维护职场关系付出努力\"是对这三句话的精准概括——socially lazy对应unwilling to make efforts，maintaining relationships对应maintain workplace relationships。",
+    "traps": "A\"社交互动时感到不适\"无中生有，原文说的是懒而非不适（uncomfortable）；B\"经常与同事发生对抗\"张冠李戴，confrontation是上文提到的另一类人的特征，且原文说倾向冷淡关系的人偏好harmony over confrontation；D\"缺乏基本沟通技能\"无中生有，原文未提及技能缺失的问题。",
+    "tip": "连续短句往往构成递进解释关系，需整体把握语义。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "One of those is efficiency. Less time chatting and socializing means more time working and churning.",
+    "why": "原文第五段在列举冷淡关系的实证好处时，首先提到的就是效率（efficiency），并具体解释为：减少聊天和社交的时间意味着更多时间用于工作和产出。D选项\"它们提高工作效率\"与此完全对应，efficiency直接同义替换为work efficiency。",
+    "traps": "A\"它们在工作中提供乐趣\"与原文矛盾，最后一段明确说这些好处可能不如社交有趣（not as fun）；B\"它们帮助控制情绪\"偷换概念，原文提到的是emotional neutrality（情感中立性）增强批判性评估，而非控制情绪；C\"它们帮助解决分歧\"与原文矛盾，第五段开头明确说冷淡关系在解决问题方面可能并非最有帮助。",
+    "tip": "当题目问benefits时，直接定位表示好处的段落首句关键词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "solitary",
+    "cn": "adj. 独自的，单独的"
+   },
+   {
+    "w": "prevailing",
+    "cn": "adj. 盛行的，普遍的"
+   },
+   {
+    "w": "cultivating",
+    "cn": "v. 培养，建立（关系）"
+   },
+   {
+    "w": "undermining",
+    "cn": "v. 暗中破坏，逐渐削弱"
+   },
+   {
+    "w": "encapsulates",
+    "cn": "v. 概括，压缩表达"
+   },
+   {
+    "w": "inconsequential",
+    "cn": "adj. 无关紧要的，不重要的"
+   },
+   {
+    "w": "disposable",
+    "cn": "adj. 可丢弃的，一次性的"
+   },
+   {
+    "w": "substitutable",
+    "cn": "adj. 可替代的"
+   },
+   {
+    "w": "empirically",
+    "cn": "adv. 以实证方式，凭经验地"
+   },
+   {
+    "w": "churning",
+    "cn": "v./n. 大量产出，批量制造"
+   },
+   {
+    "w": "bolster",
+    "cn": "v. 增强，支撑，改善"
+   },
+   {
+    "w": "primed",
+    "cn": "adj. 准备好的；天生倾向于的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "So much research has explored the way in which collegial ties can help overcome a range of workplace issues affecting productivity and the quality of work output such as team-based conflict, jealousy, undermining, anger, and more.",
+    "cn": "大量研究已经探讨了同事关系如何帮助克服一系列影响生产力和工作产出质量的职场问题，如团队冲突、嫉妒、暗中破坏、愤怒等等。",
+    "note": "主干为So much research has explored the way；in which引导定语从句修饰the way；affecting...为现在分词短语作后置定语修饰issues；such as后列举具体问题类型。"
+   },
+   {
+    "en": "Since the former is most common among those inclined towards indifferent relationships, their predominance can bolster individuals' sense of self-worth.",
+    "cn": "由于前者（熟人关系）在倾向于冷淡关系的人群中更为常见，这种关系的主导地位可以增强个体的自我价值感。",
+    "note": "Since引导原因状语从句；the former指代上文的acquaintances；those inclined towards...为those+过去分词短语作后置定语；主句主语their predominance中their指代indifferent relationships。"
+   },
+   {
+    "en": "Ego aside, a third advantage is that the emotional neutrality of indifferent relationships has been found to enhance critical evaluation, to strengthen one's focus on task resolution, and to gain greater access to valuable information.",
+    "cn": "抛开自尊不谈，第三个优势是，冷淡关系的情感中立性已被发现能够增强批判性评估、加强对任务解决的专注力，并获得更多有价值的信息。",
+    "note": "Ego aside为独立主格结构作让步状语；主干为a third advantage is that...（表语从句）；三个不定式to enhance, to strengthen, to gain构成并列结构，共同作has been found的宾语补足语。"
+   }
+  ]
+ }
+}

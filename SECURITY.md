@@ -1,4 +1,8 @@
-# v3.7.0 安全审计与敏感信息扫描记录
+# v3.8.0 安全审计与敏感信息扫描记录
+
+v3.8.0 真题参考解析：新增的三个接口（`GET /api/exam/analysis/<examId>`、`/api/exam/analysis/unit/<id>`、`/api/exam/analysis/status`）均为**只读**，且与既有 `/api/*` 处于同一登录闸门内，不新增鉴权面。解析数据来自仓库内静态文件（`corpus/exam_analysis/`），**不接受任何客户端写入**；读取时按 `unitId` 白名单（目录索引内已存在的文件名）取用，不拼接任意路径，无路径穿越风险；`status` 接口只返回相对目录名与计数，**不暴露绝对文件系统路径**。响应体上限由单文件大小自然约束（单单元约 5~20KB），索引缓存按目录 mtime 失效、单文件 LRU 上限 120。
+
+v3.8.0 同时修复一处**安全策略与产品实现冲突**导致的功能性缺陷：`script-src 'self'` 下浏览器拦截全部内联 `on*` 事件处理器，真题页原有 17 处内联处理器使「全真演练」交互实际失效。修复方式为**改结构而非放宽策略**——改为 `data-*` 标记 + `document` 级事件委托，CSP 仍为 `script-src 'self'`，**未引入 `unsafe-inline`**，并加回归断言锁死内联处理器数量为 0。
 
 > v3.7.1 增量（仅运行时可用性，不改鉴权面）：服务端 Piper 解释器路径由硬编码 `venv/bin/python` 改为候选列表探测（`venv/bin/python` → `venv/bin/python3` → `venv/Scripts/python.exe`），在 Windows 与 ECS 上共用同一逻辑。`runtime/piper` 属部署产物目录（不进 git、不参与 `data/` 备份、发布/回滚 rsync 显式排除），语音接口沿用既有登录闸门与 500 字符文本上限，不新增出站请求（有道真人音为既有链路）。
 

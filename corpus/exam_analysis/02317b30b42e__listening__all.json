@@ -1,0 +1,256 @@
+{
+ "schemaVersion": 1,
+ "id": "02317b30b42e__listening__all",
+ "examId": "02317b30b42e",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2026 年 6 月英语六级真题（第 2 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:07:01.204Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 48355,
+ "usage": {
+  "prompt_tokens": 2325,
+  "completion_tokens": 2479,
+  "total_tokens": 4804,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2325,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2479,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2325,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于题目选项的语言特征与正确答案进行推断分析，不涉及任何编造的录音内容。",
+  "overview": "本场听力共7段，第1-2段（题1-8）为长对话，每段4题；第3-7段（题9-25）为短文/讲座，每段2-4题。由选项措辞推测：第1段涉及巴塞罗那旅行与住宿安排，第2段涉及药剂师职业与用药管理，第3段涉及动机与文化差异，第4段涉及自然界图案与形成机制，第5段涉及生活习惯改变与目标设定，第6段涉及冥王星大气研究，第7段涉及父母对儿童音乐品味的影响。",
+  "strategy": [
+   "预读选项圈出关键名词和动词，提前锁定话题方向与提问类型",
+   "选项中出现对立表述（如expensive vs. inexpensive）时，重点听与价格、程度相关的信号词",
+   "注意转折词but/however/actually后的内容，往往是正确答案的出处",
+   "长选项段落优先读首尾词，短选项段落通读全部，建立语义框架",
+   "选项中含有绝对词(all/always/never)的通常是干扰项，需格外谨慎",
+   "听到选项中的原词不要急于选择，注意是否存在同义替换或语境反转"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "巴塞罗那旅行计划、住宿安排与妻子偏好",
+    "optionSignals": "第1题选项均为动词不定式短语，问的是行为目的；第2题选项描述困难/担忧，问的是烦恼所在；第3题选项均为动词原形开头的建议句，问的是解决方案；第4题选项描述妻子特征，问的是人物特点。",
+    "tips": [
+     "第3题四个选项都是具体建议，长度较长，应重点抓住关键区分词如glamorous hotel、all-inclusive、away from the coast",
+     "第4题scared of heights是非常具体的细节，听力中通常会有明确对应表述，注意与cathedral/romantic等词的区分"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "药剂师工作经历、用药管理与患者依从性",
+    "optionSignals": "第5题选项描述两人共同特征，问的是身份或关系；第6题选项描述事件结果；第7题选项含proposal/program/strategy/therapy，问的是方案内容；第8题为名词短语，问的是核心问题。",
+    "tips": [
+     "第5题both pharmacists为身份判断题，通常在对话开头即可确认",
+     "第8题medication non-adherence是医药领域专业术语，意为'不遵医嘱用药'，与第7题的therapy management program形成因果链",
+     "第6题四个选项主语不同（doctor/patient交替），注意区分动作执行者"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "动机模型与文化差异对目标达成的影响",
+    "optionSignals": "第9题选项为动词短语，问的是人们的行为倾向；第10-11题选项含it指代某一概念，问的是特征或评价，且多处出现may表示不确定性。",
+    "tips": [
+     "第10题各选项中differ in various cultures与universal model形成对立，考察对研究结论的准确把握",
+     "第11题四个选项均为'It was + 形容词/过去分词'结构，more subtle(更微妙)与under-investigated(研究不足)、more predictable(更可预测)语义差别大，注意对比"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "自然界图案（pattern）的定义、形成过程与类型",
+    "optionSignals": "第12题四个选项均以It is any开头，问的是定义；第13题选项均以Materials开头，问的是条件或对象；第14-15题分别问主题与图案类型。选项中反复出现pattern(s)、molecules、materials等科学词汇。",
+    "tips": [
+     "第12题为定义题，regularly repeated arrangement of shapes or colors是最完整准确的概括性定义，排除过于具体的incidental或symmetrical",
+     "第15题by accident(偶然)与for specific purposes(特定目的)、artificial intervention(人工干预)形成鲜明对比，注意录音对自然形成过程的描述方向"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "生活方式改变、目标设定与习惯养成策略",
+    "optionSignals": "第16题选项为动名词短语，问的是核心目标或定义；第17题选项描述实验结果中人的行为倾向；第18题选项描述所需条件，含ability/timetable/effort/concentration等抽象名词。",
+    "tips": [
+     "第16题eliminating all含绝对词all，permanent lifestyle change更温和合理，注意排除极端表述",
+     "第18题conscious effort to remember与able to make the process automatic语义相反，构成典型干扰对，需仔细区分"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "冥王星大气层的霾、温度与望远镜观测研究",
+    "optionSignals": "第19题选项描述冥王星大气特征的新发现；第20题选项描述原因或机制；第21题以If引导条件从句，问的是验证条件。涉及天文学专业词汇如haze、atmosphere、spectrum。",
+    "tips": [
+     "第19题haze much thicker与333.4°F cooler都是具体数据描述，听力中出现具体数字时应格外留意其修饰对象",
+     "第21题四个If条件句需判断哪个是科学验证的前提，confirms their idea通常是科研类文章的典型结论句式"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "父母对不同年龄段儿童音乐品味的塑造与影响方式",
+    "optionSignals": "第22题选项涉及父母与8-10岁儿童的音乐关系；第23题描述儿童成长后的行为变化（peers/preference/genres）；第24-25题分别问意义和方式，第25题以By+动名词结构表示方法途径。",
+    "tips": [
+     "第22题mould(塑造)与play a decisive role语义有交叉但程度不同，注意限定年龄段8-to-10",
+     "第23题peers(同龄人)是青少年行为研究中的高频关键词，与parents形成对照",
+     "第25题attending concerts with children强调共同参与，与pushing hard upon形成柔和vs.强硬的对比"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "accommodation",
+    "cn": "住宿，膳宿"
+   },
+   {
+    "w": "pharmacist",
+    "cn": "药剂师"
+   },
+   {
+    "w": "medication non-adherence",
+    "cn": "不遵医嘱用药，用药不依从"
+   },
+   {
+    "w": "therapy management",
+    "cn": "治疗管理"
+   },
+   {
+    "w": "motivation",
+    "cn": "动机，驱动力"
+   },
+   {
+    "w": "subtle",
+    "cn": "微妙的，不易察觉的"
+   },
+   {
+    "w": "pattern",
+    "cn": "图案，模式，规律"
+   },
+   {
+    "w": "molecule",
+    "cn": "分子"
+   },
+   {
+    "w": "all-inclusive",
+    "cn": "全包式的（含食宿等费用）"
+   },
+   {
+    "w": "haze",
+    "cn": "霾，薄雾"
+   },
+   {
+    "w": "spectrum",
+    "cn": "光谱"
+   },
+   {
+    "w": "gravitate",
+    "cn": "被吸引，趋向"
+   },
+   {
+    "w": "genre",
+    "cn": "（音乐/文学等的）类型，流派"
+   },
+   {
+    "w": "glamorous",
+    "cn": "富有魅力的，迷人的"
+   }
+  ]
+ }
+}

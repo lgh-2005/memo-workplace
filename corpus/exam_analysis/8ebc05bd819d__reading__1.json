@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "8ebc05bd819d__reading__1",
+ "examId": "8ebc05bd819d",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 12 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:57:08.621Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62436,
+ "usage": {
+  "prompt_tokens": 1787,
+  "completion_tokens": 3989,
+  "total_tokens": 5776,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1787,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3989,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1787,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 49 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "城市化背景下乡村的生存与未来",
+  "gist": "文章围绕全球城市化加速背景下乡村面临的困境展开讨论。乡村人口外流导致凋敝，农村生活方式能效低于城市，城市富人购买乡村二套房推高房价不利于乡村保护，工业化和技术进步使乡村不断演变。作者认为乡村变化不可避免，其未来相比城市更难以预见。",
+  "structure": [
+   "第1-2段：引出话题，乡村人口外流导致荒芜",
+   "第3段：对比城乡能效，质疑乡村生活方式的合理性",
+   "第4段：城市富人购房推高乡村房价，不利于乡村保护",
+   "第5-6段：工业化与技术使乡村持续演变，变化不可避免",
+   "第7段：总结，乡村未来不明朗"
+  ],
+  "difficulty": "中等",
+  "translation": "随着人口增长和全球城市化不断加速，人们将大量注意力集中在城市的可持续发展上，却很少关注乡村。\n\n乡村生活常与紧密联系的社区、归属感以及简单宁静的生活联系在一起。然而，尽管乡村中存在部分或全部这些要素，保守主义和就业机会匮乏同样存在。而乡村社区之所以衰落，主要是因为后者。受城市地区经济改善的吸引，世界各地的乡村居民纷纷外迁，加剧了人口密集城市的过度拥挤，也使乡村陷入荒凉。\n\n那么，乡村如何在这些变化中求得生存？或者说，它是否应该继续存在？由于住所与设施之间距离遥远，加之公共交通往往不连续，乡村居民是更重度的汽车使用者。农村居民维护大多为独栋的建筑也需要消耗更多能源。我们在城市中或许像箱子一样堆叠在一起，但这带来了乡村无法比拟的能源效率。农村的能源需求导致人均碳排放高于城市，因此支持这种生活方式的选择实际上是不负责任的。\n\n保护乡村是一个热门话题。那些在城市发了财的人往往在乡村购买第二套住房，偶尔前去体验所谓的简单生活。其副作用是，由于需求增加，房价被推高，当地人因此无力购房。这一挑战至今尚未找到解决方案，因为市场力量正进一步迫使居民离开乡村。对于那些信奉乡村保护的人来说，这令人痛惜。\n\n虽然人们对乡村的理想化看法很普遍，但现实是乡村生活一直在不断演变。工业化带来了劳动分工的增加，改变了农村人之间的社会联系。互联网将曾经陌生的文化引入了乡村。交通联系的改善和费用的降低使世界变得更加便捷可达，创造了一个\"地球村\"。考虑到这些变化，一个不断演变的乡村无疑是不可避免的。\n\n也许乡村也应该为未来的大规模人口增长做好准备。随着世界各地的城市迅速发展，当前的城市一代将如何应对大规模城市化带来的必然社会变革？对简单生活的向往是否会更加强烈，从而推动乡村复兴？\n\n随着世界持续城市化，呼吁保护乡村的声音很可能会越来越响亮。但变化是不可避免的。我们知道世界将看到新城市拔地而起，现有城市发展为超级大都市，但乡村的未来则不那么明朗。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Attracted by the improved economics of urban areas, country-dwellers across the world are moving out, contributing to the excessive crowdedness of densely populated cities, and leaving the countryside in desolation.",
+    "why": "原文明确指出乡村居民受城市经济吸引纷纷外迁，使乡村陷入'desolation'（荒凉）。A选项'somewhat deserted'（有些荒废）是对'desolation'的同义转述，且'becoming'体现了这一持续过程，与原文逻辑完全吻合。",
+    "traps": "B'正在日益城市化'——原文说的是居民迁往城市，而非乡村本身被城市化，属于偷换概念；C'紧密联系的社区'——这只是传统印象，原文第二段紧接着用Yet转折说明现实并非如此；D'被保守主义困扰'——保守主义虽被提及，但作者说主要原因是就业机会不足（mostly due to the latter），D以次要因素替代主要结论。",
+    "tip": "注意因果关系中的主次之分，抓住'mostly due to'等信号词。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "We may be piled up like boxes in the city, but this brings energy efficiency that the countryside cannot match. Rural energy requirements result in higher carbon emissions per person than in the city, so it is actually irresponsible to endorse such a lifestyle choice.",
+    "why": "作者在第三段明确对比城乡能效：城市虽然拥挤但带来了乡村'无法匹配'的能源效率，农村人均碳排放更高。B选项'less energy-efficient compared to that in cities'精确概括了作者观点，是对原文的同义改写。",
+    "traps": "A'鉴于持续变化不太可能存续'——第三段讨论的是能效问题而非存续问题，属于跨段嫁接；C'高度依赖重型汽车'——原文说'heavier automobile users'指使用频率更高，而非依赖重型汽车，且这只是论据之一而非作者对乡村生活方式的整体评价；D'更富裕的人会支持的选择'——原文说支持这种生活方式是'irresponsible'，恰好相反。",
+    "tip": "区分论据细节与核心观点，选项应概括作者的主要态度。"
+   },
+   {
+    "number": 48,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "market forces are further forcing residents out of the countryside. For those who believe in rural preservation, this is deplorable.",
+    "why": "第四段论述城市富人购买乡村二套房→推高房价→当地人买不起→居民被迫离开乡村→对信奉乡村保护的人来说这是可悲的。整个因果链表明：富人购房行为最终不利于乡村保护（rural preservation）。D选项'detrimental to rural preservation'正是对这一因果链终点的概括。",
+    "traps": "A'必然破坏传统乡村生活'——原文讨论的是房价和人口流失问题，未涉及'传统乡村生活'被破坏，且'bound to mar'过于绝对；B'对乡村社会稳定产生不利影响'——原文强调的是经济层面（房价、可负担性），社会稳定是无中生有；C'阻碍乡村经济振兴'——原文未提及乡村经济振兴的概念，属于无中生有。",
+    "tip": "注意追踪因果链的最终落脚点，尤其是段落末尾的总结性评价句。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "the reality is that rural life has continuously evolved. Considering these changes, surely an evolving countryside is inevitable.",
+    "why": "第五段指出乡村生活随工业化和技术进步一直在持续演变（continuously evolved），并总结'一个不断演变的乡村是不可避免的'（inevitable）。A选项'destined to change gradually'中'destined'对应'inevitable'，'gradually'对应'continuously evolved'的渐进含义，准确概括了段落主旨。",
+    "traps": "B'将呈现一种理想化的生活方式'——原文用'Whilst an idealised view...is common'作让步，紧接着用'the reality is'转折否定了理想化观点；C'可能会接受外国文化'——这只是演变的一个例证，以偏概全；D'将变得日益多元化'——原文未提及多元化概念，虽然涉及外来文化，但核心论点是变化不可避免而非多元化。",
+    "tip": "区分让步状语从句与主句的重心，作者真正的观点在转折之后。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "we know that the world is going to see new cities emerging from the dust and current cities growing into megacities, but the future of the countryside is less clear.",
+    "why": "末段将城市与乡村的未来做对比：城市的发展方向是明确的（新城市崛起、现有城市变为超级城市），但乡村的未来'less clear'（不那么明朗）。D选项'less easy to envisage'（更难以预见）是'less clear'的同义改写，准确传达了作者的判断。",
+    "traps": "A'对当地人来说将更加困难'——原文末段未讨论当地人的生活难度问题；B'将变得与城市相似'——原文未作此类预测，属于无中生有；C'不太可能保持静止'——虽然全文论述变化不可避免，但此题问的是'与城市相比'的未来前景，C未体现比较关系，且'less likely to stay static'不如D贴合末段原文。",
+    "tip": "末段总结题要紧扣原文最后的对比结构，抓住转折词but后的核心判断。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "urbanisation",
+    "cn": "城市化（n.）"
+   },
+   {
+    "w": "closely-knit",
+    "cn": "紧密联系的（adj.）"
+   },
+   {
+    "w": "tranquil",
+    "cn": "宁静的、平静的（adj.）"
+   },
+   {
+    "w": "conservatism",
+    "cn": "保守主义（n.）"
+   },
+   {
+    "w": "desolation",
+    "cn": "荒凉、荒芜（n.）"
+   },
+   {
+    "w": "intermittent",
+    "cn": "间歇的、断断续续的（adj.）"
+   },
+   {
+    "w": "detached",
+    "cn": "独立的、分离的（指独栋建筑）（adj.）"
+   },
+   {
+    "w": "endorse",
+    "cn": "支持、认可（v.）"
+   },
+   {
+    "w": "deplorable",
+    "cn": "可悲的、令人痛惜的（adj.）"
+   },
+   {
+    "w": "renaissance",
+    "cn": "复兴、文艺复兴（n.）"
+   },
+   {
+    "w": "megacities",
+    "cn": "超级大都市（n.）"
+   },
+   {
+    "w": "fueling",
+    "cn": "推动、助长（v.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Attracted by the improved economics of urban areas, country-dwellers across the world are moving out, contributing to the excessive crowdedness of densely populated cities, and leaving the countryside in desolation.",
+    "cn": "受城市地区经济改善的吸引，世界各地的乡村居民纷纷外迁，加剧了人口密集城市的过度拥挤，也使乡村陷入荒凉。",
+    "note": "过去分词短语Attracted by...作原因状语，主句含两个并列的现在分词短语contributing to...和leaving...作伴随结果状语。"
+   },
+   {
+    "en": "Rural energy requirements result in higher carbon emissions per person than in the city, so it is actually irresponsible to endorse such a lifestyle choice.",
+    "cn": "农村的能源需求导致人均碳排放高于城市，因此支持这种生活方式的选择实际上是不负责任的。",
+    "note": "前半句用比较结构higher...than对比城乡碳排放，so引出因果结论，it为形式主语，真正主语是to endorse such a lifestyle choice。"
+   },
+   {
+    "en": "We know that the world is going to see new cities emerging from the dust and current cities growing into megacities, but the future of the countryside is less clear.",
+    "cn": "我们知道世界将看到新城市拔地而起、现有城市发展为超级大都市，但乡村的未来则不那么明朗。",
+    "note": "that引导宾语从句，含两个并列的宾补结构cities emerging...和cities growing...；but转折引出与城市确定性形成对比的乡村不确定性。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,243 @@
+{
+ "schemaVersion": 1,
+ "id": "470a63948e02__long_match__all",
+ "examId": "470a63948e02",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2023 年 6 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:46:35.576Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33144,
+ "usage": {
+  "prompt_tokens": 940,
+  "completion_tokens": 1785,
+  "total_tokens": 2725,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 940,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1785,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 940,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "感恩心态的益处与研究",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如gratitude、grateful、benefit等",
+   "抓住每句中的特征词（如人名、数据、具体场景）在原文段落快速扫读定位",
+   "注意同义替换：如count our blessings≈be grateful, routinely≈regularly等",
+   "对比选项与原文时关注语义方向是否一致，防止偷换褒贬或范围扩大缩小",
+   "将最具辨识度的题（含专有名词或具体例子）优先匹配，再处理抽象概括题"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "cn": "比起那些令我们悲伤和怨恨的事情，关注我们可以感恩的事情对我们的好处要大得多。",
+    "keywords": [
+     "focus on",
+     "grateful",
+     "sad",
+     "resentful"
+    ],
+    "paraphrase": "原文可能用dwell on negatives对比appreciate positives，或用harmful/detrimental替换sad and resentful，用beneficial/rewarding替换far more good，整体为对比论证结构的同义改写。",
+    "tip": "定位'sad and resentful'等负面情绪词与grateful的对比段落。"
+   },
+   {
+    "number": 37,
+    "answer": "G",
+    "cn": "感恩的积极影响可以从个人延伸到他们的社区乃至更广泛的社会。",
+    "keywords": [
+     "beneficial impacts",
+     "community",
+     "wider society",
+     "extend"
+    ],
+    "paraphrase": "原文可能用ripple effect或spread等词表示'延伸'，用neighborhoods/groups替换community，用society at large替换wider society，强调感恩的社会辐射效应。",
+    "tip": "定位'community''society'等表示感恩影响由小到大扩展的段落。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "cn": "最近一项研究的参与者反复低估了感谢信对收信人的积极影响。",
+    "keywords": [
+     "underestimated",
+     "thank-you notes",
+     "recent study",
+     "positive effect"
+    ],
+    "paraphrase": "原文可能用participants predicted lower impact或failed to anticipate替换underestimated，用letters/notes of appreciation替换thank-you notes，描述实验结果与预期的偏差。",
+    "tip": "定位'thank-you notes'和'underestimated'这两个高辨识度细节词。"
+   },
+   {
+    "number": 39,
+    "answer": "I",
+    "cn": "善行有时会让人感到不自在。",
+    "keywords": [
+     "good deeds",
+     "uncomfortable"
+    ],
+    "paraphrase": "原文可能用acts of kindness替换good deeds，用uneasy/awkward/embarrassed替换uncomfortable，讨论接受善意时可能产生的心理不适或负担感。",
+    "tip": "定位表达善行引发负面感受的段落，注意uncomfortable的近义词。"
+   },
+   {
+    "number": 40,
+    "answer": "F",
+    "cn": "经常表达感恩的人可以在道德层面获益。",
+    "keywords": [
+     "regularly express",
+     "gratitude",
+     "moral",
+     "benefit"
+    ],
+    "paraphrase": "原文可能用ethical/virtuous替换moral，用habitually/frequently替换regularly，描述感恩实践对一个人品德修养或道德行为的提升作用。",
+    "tip": "定位'moral'或其近义词ethical/virtue，锁定讨论感恩与道德关系的段落。"
+   },
+   {
+    "number": 41,
+    "answer": "K",
+    "cn": "一位篮球教练提倡做慷慨的事而不期望任何回报。",
+    "keywords": [
+     "basketball coach",
+     "generous acts",
+     "without expecting",
+     "in return"
+    ],
+    "paraphrase": "原文可能用selfless giving或unconditional kindness替换generous acts without expecting anything in return，并以具体篮球教练的言论或事迹为例进行说明。",
+    "tip": "定位'basketball coach'这一专有身份词，属于高辨识度信息，可快速锁定段落。"
+   },
+   {
+    "number": 42,
+    "answer": "D",
+    "cn": "越来越多的证据表明，经常数算自己的幸福能让我们在精神和身体上更健康。",
+    "keywords": [
+     "evidence",
+     "mentally",
+     "physically",
+     "count our blessings"
+    ],
+    "paraphrase": "原文可能用growing/mounting research替换more and more evidence，用psychological and physical well-being替换mentally and physically healthier，用express thankfulness替换count our blessings。",
+    "tip": "定位'mentally and physically'双重健康益处以及'evidence/research'等学术论证词。"
+   },
+   {
+    "number": 43,
+    "answer": "M",
+    "cn": "在所有心理状态中，感恩被认为是最健康、最有益的状态之一。",
+    "keywords": [
+     "states of mind",
+     "most healthy",
+     "most beneficial",
+     "grateful"
+    ],
+    "paraphrase": "原文可能用emotions/mental states替换states of mind，用healthiest and most advantageous替换most healthy and beneficial，以总结性语言对感恩做出极高评价。",
+    "tip": "定位含有最高级表达（如most healthy）及'states of mind'等概括性措辞的段落。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "cn": "感恩研究背后的基本原理其实一点也不新鲜。",
+    "keywords": [
+     "principles",
+     "research",
+     "gratitude",
+     "nothing new"
+    ],
+    "paraphrase": "原文可能用concepts/ideas替换principles，用have long been known或ancient wisdom替换nothing new，说明感恩理念在哲学或宗教传统中由来已久。",
+    "tip": "定位表示'并非新事物'的措辞，如not new、long history、ancient等。"
+   },
+   {
+    "number": 45,
+    "answer": "H",
+    "cn": "感恩可能会增强一个人与他人之间的联系感。",
+    "keywords": [
+     "enhance",
+     "sense of being connected",
+     "other people",
+     "gratitude"
+    ],
+    "paraphrase": "原文可能用strengthen social bonds替换enhance one's sense of being connected，用foster relationships或build social ties表达与他人建立更紧密联系的含义。",
+    "tip": "定位'connected'或social bonds/ties等表示人际联系的关键表达。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "resentful",
+    "cn": "adj. 愤恨的，怨恨的"
+   },
+   {
+    "w": "beneficial",
+    "cn": "adj. 有益的，有利的"
+   },
+   {
+    "w": "underestimated",
+    "cn": "v. 低估（underestimate的过去式）"
+   },
+   {
+    "w": "generous",
+    "cn": "adj. 慷慨的，大方的"
+   },
+   {
+    "w": "routinely",
+    "cn": "adv. 常规地，例行地"
+   },
+   {
+    "w": "count our blessings",
+    "cn": "短语 数算幸福，知足感恩"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 释义，改述"
+   },
+   {
+    "w": "advocated",
+    "cn": "v. 提倡，主张（advocate的过去式）"
+   },
+   {
+    "w": "enhance",
+    "cn": "v. 增强，提高"
+   }
+  ]
+ }
+}

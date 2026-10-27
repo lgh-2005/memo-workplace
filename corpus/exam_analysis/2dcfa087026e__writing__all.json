@@ -1,0 +1,251 @@
+{
+ "schemaVersion": 1,
+ "id": "2dcfa087026e__writing__all",
+ "examId": "2dcfa087026e",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2015 年考研英语真题",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  51,
+  52
+ ],
+ "generatedAt": "2026-10-27T08:45:59.175Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 121011,
+ "usage": {
+  "prompt_tokens": 735,
+  "completion_tokens": 1618,
+  "total_tokens": 2353,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 735,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1618,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 735,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：以李明身份写一封约100词的电子邮件，向读书俱乐部成员推荐一本书并阐述推荐理由。",
+    "outline": [
+     "开头：说明写信目的——为即将举办的读书会推荐一本书，点明书名与作者",
+     "中间：阐述推荐理由（2-3条），如主题深刻、语言优美、贴近生活、启发思考等",
+     "结尾：表达期待，希望大家阅读后在读书会上共同讨论，礼貌收束"
+    ],
+    "sample": "Dear Club Members,\n\nI am writing to recommend a book for our upcoming reading session:ertaErta To Kill a Mockingbird by Harper Lee.\n\nThere are several reasons why I believe this novel deserves our attention. First, it explores profound themes such as racial justice and moral courage, which remain highly relevant in today's society. Second, the narrative, told through a child's innocent perspective, is both engaging and thought-provoking. Moreover, the vivid characters and compelling plot make it an enjoyable yet intellectually stimulating read that can spark meaningful discussions among us.\n\nI sincerely hope you will find this recommendation worthwhile. I look forward to exchanging insights with all of you at the session.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "I am writing to recommend...",
+      "cn": "我写信是为了推荐……；经典开篇句型，直入主题，适用于推荐信"
+     },
+     {
+      "en": "deserve our attention",
+      "cn": "值得我们关注；比 worth reading 更正式、更具学术气息"
+     },
+     {
+      "en": "remain highly relevant",
+      "cn": "仍高度相关；表达经典作品的现实意义，体现批判性思维"
+     },
+     {
+      "en": "engaging and thought-provoking",
+      "cn": "引人入胜且发人深省；一对高分并列形容词，常用于书评影评"
+     },
+     {
+      "en": "intellectually stimulating",
+      "cn": "启发思维的；比 interesting 更高级，突出智识层面的价值"
+     },
+     {
+      "en": "spark meaningful discussions",
+      "cn": "激发有意义的讨论；spark 比 cause 更生动，collocate 地道"
+     },
+     {
+      "en": "exchange insights",
+      "cn": "交流见解；比 share ideas 更正式、更具深度"
+     },
+     {
+      "en": "from a child's innocent perspective",
+      "cn": "从孩子天真的视角出发；展示对作品叙事手法的理解"
+     },
+     {
+      "en": "I sincerely hope you will find...worthwhile",
+      "cn": "我衷心希望你们觉得……是值得的；礼貌且得体的收尾方式"
+     },
+     {
+      "en": "compelling plot",
+      "cn": "扣人心弦的情节；compelling 为高频写作高分词汇"
+     }
+    ],
+    "pitfalls": [
+     "忘记写称呼或落款格式不完整，应用文格式分不可丢",
+     "推荐理由空泛笼统，仅说 it is a good book 而无具体论据",
+     "词数不足80或超过120，偏离 about 100 words 的要求",
+     "未点明具体书名，题目要求推荐一本书，不能泛泛而谈",
+     "语域不当：对俱乐部成员使用过于随意的口语或过于生硬的公文用语"
+    ],
+    "upgrades": [
+     {
+      "plain": "I think this book is very good and we should read it.",
+      "better": "I firmly believe this novel deserves our collective attention for the following reasons.",
+      "note": "用 firmly believe 和 collective attention 提升语气正式度与词汇丰富度"
+     },
+     {
+      "plain": "The story is interesting and the characters are good.",
+      "better": "The vivid characters and compelling plot make it an enjoyable yet intellectually stimulating read.",
+      "note": "用具体形容词替代笼统评价，yet 形成转折增加层次感"
+     },
+     {
+      "plain": "I hope everyone can come and discuss it.",
+      "better": "I look forward to exchanging insights with all of you at the session.",
+      "note": "exchange insights 比 discuss 更高级，look forward to 表达积极期待更得体"
+     },
+     {
+      "plain": "This book talks about justice.",
+      "better": "It explores profound themes such as racial justice and moral courage, which remain highly relevant today.",
+      "note": "explore 比 talk about 更学术，非限制性定语从句补充论证增强说服力"
+     },
+     {
+      "plain": "It is told by a little girl.",
+      "better": "The narrative, told through a child's innocent perspective, is both engaging and thought-provoking.",
+      "note": "插入式过去分词短语使句式多变，both...and 结构平衡对称"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "大作文看图写作，要求160-200词，需描述图片内容、阐释寓意并发表评论，考查考生综合表达与议论能力。",
+    "outline": [
+     "第一段：描述图片——两人齐心协力搬运重物上坡，一人在后推、一人在前拉，标题为'Together, we make it'，点明合作主题。",
+     "第二段：阐释寓意——在现代社会中，个人力量有限，无论学术研究、企业管理还是社区建设，团队合作都是成功的基石；合力攻坚方能化解难题，单打独斗则容易被困难压倒。",
+     "第三段：发表评论——呼吁在个人生活和职业领域培养合作精神，建议学校增加小组项目、企业重视团队成果；只有拥抱合作才能应对复杂挑战、共同攀登高峰。"
+    ],
+    "sample": "As is vividly depicted in the picture, two individuals are collaborating to carry a heavy load up a steep hill — one pushing from behind and the other pulling from the front. Their expressions reveal determination and mutual trust. The caption beneath reads: Together, we make it.\n\nThe picture conveys a profound message about the significance of cooperation in achieving shared goals. In modern society, no individual can thrive entirely on their own. Whether in academic research, corporate management, or community development, teamwork serves as the cornerstone of success. Just as the two figures in the picture demonstrate, when people combine their strengths and work toward a common objective, even the most daunting challenges become surmountable. Conversely, those who insist on acting alone often find themselves overwhelmed by obstacles that could easily be overcome through collective effort.\n\nIn light of the above analysis, it is imperative that we cultivate a spirit of cooperation in both our personal and professional lives. Educational institutions should incorporate more group projects to foster collaborative skills, and workplaces should reward team achievements alongside individual contributions. Only by embracing cooperation can we navigate the complexities of modern life and reach greater heights together.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the picture",
+      "cn": "正如图中生动描绘的那样——大作文首段经典开头句式，用被动语态引出图片内容"
+     },
+     {
+      "en": "convey a profound message about",
+      "cn": "传达了关于……的深刻信息——用于第二段过渡到寓意阐释"
+     },
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "充当……的基石——比serve as the basis of更高级，突出不可或缺性"
+     },
+     {
+      "en": "work toward a common objective",
+      "cn": "朝着共同目标努力——objective比goal更正式，适合议论文"
+     },
+     {
+      "en": "find themselves overwhelmed by",
+      "cn": "发现自己被……压垮——find+宾语+过去分词结构体现高级语法"
+     },
+     {
+      "en": "in light of the above analysis",
+      "cn": "鉴于以上分析——用于尾段开头，自然引出总结评论"
+     },
+     {
+      "en": "it is imperative that we cultivate",
+      "cn": "我们必须培养……——imperative+虚拟语气（省略should）展示语法功底"
+     },
+     {
+      "en": "navigate the complexities of",
+      "cn": "应对……的复杂性——navigate用作比喻义，比deal with更地道"
+     },
+     {
+      "en": "Only by embracing... can we...",
+      "cn": "只有拥抱……我们才能……——only+介词短语置于句首引起部分倒装，属高分句型"
+     },
+     {
+      "en": "alongside individual contributions",
+      "cn": "与个人贡献并行——alongside比together with更书面、更精炼"
+     }
+    ],
+    "pitfalls": [
+     "首段仅写一句话就转入议论，图片描述过于笼统，缺少画面细节，扣2-4分",
+     "全文无任何从句或高级句式，句型单一，语言档次停留在四级水平",
+     "第二段和第三段内容高度重复，未区分'阐释寓意'与'发表评论'的层次",
+     "拼写错误如cooperation写成coperation、achieve写成acheive，直接影响语言分",
+     "字数不足160或超过200，审题不严导致格式扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows two people carrying something together.",
+      "better": "As is vividly depicted in the picture, two individuals are collaborating to carry a heavy load up a steep hill.",
+      "note": "增加副词vividly、具体名词steep hill，画面感与学术语域同步提升"
+     },
+     {
+      "plain": "Cooperation is very important in our life.",
+      "better": "Teamwork serves as the cornerstone of success in modern society.",
+      "note": "用serve as the cornerstone替代is important，表达更精准有力，避免口语化"
+     },
+     {
+      "plain": "We should learn to cooperate with others.",
+      "better": "Only by embracing cooperation can we navigate the complexities of modern life and reach greater heights together.",
+      "note": "倒装句+比喻义navigate+排比结构，一句话展示三个加分点"
+     },
+     {
+      "plain": "If people work alone, they will fail.",
+      "better": "Those who insist on acting alone often find themselves overwhelmed by obstacles that could easily be overcome through collective effort.",
+      "note": "定语从句+find+宾补结构+被动语态，信息密度高且逻辑严密"
+     },
+     {
+      "plain": "Schools should teach students to cooperate.",
+      "better": "Educational institutions should incorporate more group projects to foster collaborative skills.",
+      "note": "用educational institutions替代schools更正式，incorporate和foster体现高级词汇量"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "I firmly believe this novel deserves our collective attention for the following reasons. — 我坚信这部小说值得我们共同关注，理由如下。（推荐信经典过渡句，逻辑清晰、语气自信）",
+   "The narrative, told through a child's innocent perspective, is both engaging and thought-provoking. — 这部以孩子天真视角展开的叙事既引人入胜又发人深省。（插入语+并列形容词，句式高级）",
+   "The vivid characters and compelling plot make it an enjoyable yet intellectually stimulating read. — 鲜活的人物与扣人心弦的情节使其成为一部愉悦而又启发思维的读物。（make it + 名词短语做宾补，结构紧凑）",
+   "It explores profound themes such as racial justice and moral courage, which remain highly relevant in today's society. — 它探讨了种族公正与道德勇气等深刻主题，这些在当今社会仍高度相关。（非限定性定语从句拓展论证深度）",
+   "I look forward to exchanging insights with all of you at the session. — 我期待在读书会上与大家交流见解。（得体收尾句，语气热情又不失正式）",
+   "As is vividly depicted in the picture, two individuals are collaborating to carry a heavy load up a steep hill. —— 经典首句：被动语态+细节描写，既引出图片又展现语言功底",
+   "Whether in academic research, corporate management, or community development, teamwork serves as the cornerstone of success. —— 三项并列+隐喻cornerstone，论证有力且句式工整",
+   "Those who insist on acting alone often find themselves overwhelmed by obstacles that could easily be overcome through collective effort. —— 双重从句嵌套+find宾补结构，信息密度极高，属考场最强反面论证句",
+   "Only by embracing cooperation can we navigate the complexities of modern life and reach greater heights together. —— 倒装+比喻义navigate+reach greater heights，结尾铿锵有力、余味悠长",
+   "It is imperative that we cultivate a spirit of cooperation in both our personal and professional lives. —— imperative引导虚拟语气+both...and...平衡结构，建议语气正式得体"
+  ]
+ },
+ "mergedFrom": [
+  "2dcfa087026e__writing__51",
+  "2dcfa087026e__writing__52"
+ ]
+}

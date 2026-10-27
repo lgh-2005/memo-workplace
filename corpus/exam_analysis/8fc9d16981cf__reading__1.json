@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "8fc9d16981cf__reading__1",
+ "examId": "8fc9d16981cf",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 6 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:15:04.391Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57965,
+ "usage": {
+  "prompt_tokens": 1795,
+  "completion_tokens": 3486,
+  "total_tokens": 5281,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1795,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3486,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1795,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 46 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "田纳西州高校拒绝设施管理外包",
+  "gist": "田纳西州技术学院和社区学院决定不将设施管理外包给私营公司。即将离任的校董会主席摩根援引校园开支分析数据，指出各校设施管理支出远低于行业标准，质疑外包的必要性。州长哈斯拉姆的外包提案遭到工人权益倡导者批评，州政府表示分析尚未完成。摩根还因反对州长拆分大学治理体系的计划而宣布辞职。",
+  "structure": [
+   "第1-3段：摩根援引开支分析，宣布拒绝外包提案",
+   "第4-5段：工人权益者批评外包计划，摩根正式致信退出",
+   "第6-7段：州政府回应称分析尚未完成，暂无可执行的方案",
+   "第8段：摩根因反对大学治理改组方案而宣布辞职"
+  ],
+  "difficulty": "中等",
+  "translation": "田纳西州的技术学院和社区学院将不会把其设施管理外包给私营公司，一位领导人表示，这一决定得到了对各校园支出分析的支持。\n\n在周一发给田纳西州校董会系统各学院校长的一封电子邮件中，即将离任的校董会主席约翰·摩根表示，一项内部分析显示，各校园在设施管理方面的支出远低于该州确定的行业标准。摩根说，这些发现——包括来自该系统13所社区学院、27所技术学院和6所大学的数据——是决定不推进州长比尔·哈斯拉姆关于将州政府建筑管理私有化以节省资金之提案的部分原因。\n\n\"虽然这些数字仍在接受州政府的验证，但我们认为他们可能提出的任何调整都将是无关紧要的，\"摩根在写给各校长的信中说。\"根据此项分析，系统内各院校的运营效率非常高，这引发了对推行大规模外包计划价值的质疑。\"\n\n工人权益倡导者批评了哈斯拉姆的计划，称这将意味着一些校园工作人员会失去工作或福利。哈斯拉姆曾表示，各学院可以自由选择加入或退出该外包计划，而该计划尚未最终确定。\n\n摩根在上周发出的一封信中通知了哈斯拉姆政府他选择退出的决定。这封信中包含了摩根对该计划的几项顾虑，最初由孟菲斯的《商业诉求报》获得。\n\n在州政府\"以客户为中心的政府办公室\"发出的一封电子邮件声明中（该办公室正在研究外包的可能性），发言人米歇尔·R·马丁表示，官员们仍在分析来自校董会的数据。学院系统和其他州政府部门的管理费用数据将作为\"商业论证\"的一部分，供官员们在商议外包计划的具体细节时使用。\n\n\"州设施管理项目团队仍在制定其商业论证的过程中，预计将于二月底完成并向公众公布，\"马丁说。\"目前没有什么可以采取行动的，因为分析尚未完成。\"\n\n摩根关于外包的评论是他本月第二次公开反对哈斯拉姆的田纳西高等教育计划。摩根上周表示，由于州长提议将校董会系统中的六所大学分离出去，并为每所大学建立单独的管理委员会，他将于一月底退休。在辞职信中，摩根称这一改组\"不可行\"。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Tennessee's technical and community colleges will not outsource management of their facilities to a private company, a decision one leader said was bolstered by an analysis of spending at each campus.",
+    "why": "文章首句明确指出，田纳西州技术学院和社区学院不将设施管理外包的决定，得到了对各校园支出分析的支持（bolstered by an analysis of spending at each campus）。A选项\"It is backed by a campus spending analysis\"是对原文的同义改写，backed对应bolstered，campus spending analysis对应analysis of spending at each campus。",
+    "traps": "B选项\"被州长断然拒绝\"无中生有，州长是提出外包计划的一方，并非拒绝该决定；C选项\"忽视了教职员工的需求\"文中未提及；D选项\"改善财务状况\"文中未涉及，该决定是基于支出已足够高效，而非为了改善财务。",
+    "tip": "首段总括句常为第一题出处，注意同义替换。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "an internal analysis showed that each campus' spending on facilities management fell well below the industry standards identified by the state.",
+    "why": "原文指出内部分析显示各校园设施管理支出远低于（fell well below）州确定的行业标准，摩根进一步说\"系统内各院校运营效率非常高\"（operating very efficiently）。这说明高校自主管理设施比行业标准更节约成本，即B选项所说的\"高校设施管理更具成本效益\"（more cost-effective）。",
+    "traps": "A选项\"私营公司在校园管理中发挥重要作用\"与原文相反，高校正拒绝私营公司介入；C选项\"设施管理近年来大为改善\"文中无时间对比依据；D选项\"高校完全掌控自身财务事务\"属于过度推断，文章仅讨论设施管理开支，并非全部财务。",
+    "tip": "注意将数据结论转化为概括性判断，fell well below industry standards意味着更具成本效益。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Workers' advocates have criticized Haslam's plan, saying it would mean some campus workers would lose their jobs or benefits.",
+    "why": "原文明确表示工人权益倡导者（Workers' advocates）批评哈斯拉姆的计划，认为这意味着一些校园工作人员会失去工作或福利（lose their jobs or benefits）。C选项\"render a number of campus workers jobless\"是对\"some campus workers would lose their jobs\"的同义改写，render jobless对应lose their jobs。",
+    "traps": "A选项\"剥夺高校管理设施的权利\"并非工人支持者的论点，且原文说高校可自由选择；B选项\"使工人工作积极性降低\"文中未提及动机问题；D选项\"导致校园设施私有化\"混淆了管理外包与设施所有权私有化的概念。",
+    "tip": "注意题目问的是workers' supporters的观点，精准定位后做同义转换。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "At this time there is nothing to take action on since the analysis has yet to be completed.",
+    "why": "州发言人马丁回应称，设施管理项目团队仍在制定商业论证，预计二月底完成，目前无可执行之事，因为分析尚未完成。这说明外包计划尚未最终确定（not yet finalized），对应A选项。发言人的回应暗示不急于回应摩根的退出决定，因为一切仍在论证阶段。",
+    "traps": "B选项\"外包计划将被实施\"过于武断，与\"尚在分析\"矛盾；C选项\"州官员对外包计划充满信心\"无依据，发言人语气中性、谨慎；D选项\"高校开支分析证明外包计划合理\"与事实相反，该分析恰恰质疑了外包的必要性。",
+    "tip": "官方回应常以中性或模糊措辞呈现，需准确理解其言外之意。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Morgan said last week that he would retire at the end of January because of the governor's proposal to split off six universities of the Board of Regents system and create separate governing boards for each of them.",
+    "why": "原文末段明确指出，摩根宣布一月底退休的原因是州长提议将校董会系统中的六所大学分离出去并各自建立独立的管理委员会。D选项\"He opposed the governor's plan to reconstruct the college board system\"准确概括了这一原因——反对州长重构高校管理委员会体系的计划。",
+    "traps": "A选项\"对州政府失去信心\"过度推断，摩根反对的是具体政策而非整个政府；B选项\"在高等教育政策上与州长意见不合\"看似正确但过于笼统，辞职的直接原因是具体的大学拆分计划而非泛泛的政策分歧；C选项\"认为外包提案不可行\"张冠李戴，摩根称\"不可行\"（unworkable）的是大学改组计划而非外包计划。",
+    "tip": "末段常出题，注意区分多个事件中的因果对应关系，防止张冠李戴。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "bolster",
+    "cn": "v. 支持，增强"
+   },
+   {
+    "w": "outgoing",
+    "cn": "adj. 即将离任的"
+   },
+   {
+    "w": "Chancellor",
+    "cn": "n. 大学校长；总理"
+   },
+   {
+    "w": "privatize",
+    "cn": "v. 使私有化"
+   },
+   {
+    "w": "validated",
+    "cn": "v. 验证，使生效"
+   },
+   {
+    "w": "immaterial",
+    "cn": "adj. 无关紧要的，不重要的"
+   },
+   {
+    "w": "opt in/out",
+    "cn": "v. 选择加入/退出"
+   },
+   {
+    "w": "deliberate",
+    "cn": "v. 审议，仔细考虑"
+   },
+   {
+    "w": "justification",
+    "cn": "n. 正当理由，论证"
+   },
+   {
+    "w": "split off",
+    "cn": "v. 分离，脱离"
+   },
+   {
+    "w": "unworkable",
+    "cn": "adj. 不可行的，行不通的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Morgan said those findings—which included data from the system's 13 community colleges, 27 technical colleges and six universities—were part of the decision not to move forward with Governor Bill Haslam's proposal to privatize management of state buildings in an effort to save money.",
+    "cn": "摩根说，这些发现——包括来自该系统13所社区学院、27所技术学院和6所大学的数据——是决定不推进州长比尔·哈斯拉姆关于将州政府建筑管理私有化以节省资金之提案的部分原因。",
+    "note": "主干为Morgan said those findings were part of the decision；which引导非限制性定语从句修饰findings；not to move forward with...为decision的后置定语；in an effort to save money为目的状语。"
+   },
+   {
+    "en": "Data on management expenses at the college system and in other state departments will be part of a 'business justification' the state will use as officials deliberate the specifics of an outsourcing plan.",
+    "cn": "学院系统和其他州政府部门的管理费用数据将作为\"商业论证\"的一部分，供官员们在商议外包计划的具体细节时使用。",
+    "note": "主干为Data will be part of a 'business justification'；the state will use为省略了关系代词that的定语从句修饰justification；as引导时间状语从句表示\"当……时候\"。"
+   },
+   {
+    "en": "Morgan said last week that he would retire at the end of January because of the governor's proposal to split off six universities of the Board of Regents system and create separate governing boards for each of them.",
+    "cn": "摩根上周表示，由于州长提议将校董会系统中的六所大学分离出去并为每所大学建立单独的管理委员会，他将于一月底退休。",
+    "note": "主干为Morgan said that he would retire；because of引导原因状语；to split off...and create...为并列不定式作proposal的后置定语。"
+   }
+  ]
+ }
+}

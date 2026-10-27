@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "d8e3f65d0ba3__reading__2",
+ "examId": "d8e3f65d0ba3",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2003 年考研英语真题（旧）",
+ "year": 2003,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:13:33.264Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59761,
+ "usage": {
+  "prompt_tokens": 1700,
+  "completion_tokens": 3613,
+  "total_tokens": 5313,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1700,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3613,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1700,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学家应积极回应动物权利运动对生物医学研究的威胁",
+  "gist": "文章引用伯克名言开篇，指出动物权利运动正威胁生物医学研究。作者以街头老妇人为例，说明公众对动物实验与医学进步之间的关系缺乏了解，呼吁科学家主动与公众沟通，用通俗易懂的方式阐明动物研究的价值，积极反击动物权利倡导者的误导性宣传，以捍卫医学进步的成果。",
+  "structure": [
+   "第一段：引用名言引出论题，指出动物权利运动威胁生物医学研究",
+   "第二段：以街头老妇人为例，说明公众对医学研究的无知",
+   "第三段：呼吁科学家用通俗语言向公众传达动物研究的意义",
+   "第四段：提出科学家应采取的具体行动建议，以应对挑战"
+  ],
+  "difficulty": "中等",
+  "translation": "套用18世纪政治家埃德蒙·伯克的话说，\"一项被误导的事业要取得胜利，所需要的不过是好人袖手旁观。\"眼下就有这样一项事业，试图以动物拥有权利、不可用于实验为由，终结生物医学研究。科学家需要有力地回应动物权利倡导者，他们的论点正在混淆公众视听，从而威胁到健康知识和医疗保健的进步。动物权利运动的领导者将矛头对准生物医学研究，因为这类研究依赖公共资金，而且很少有人了解医疗保健研究的过程。听闻研究场所存在虐待动物的指控，许多人感到困惑，不理解为何有人会故意伤害动物。\n\n例如，在最近一次街头集市上，一位慈祥的老奶奶在动物权利宣传展位前分发小册子，鼓励读者不要使用任何来自动物或在动物身上测试过的东西——不吃肉、不穿皮草、不用药物。当被问到是否反对免疫接种时，她想知道疫苗是否来自动物实验。当被告知确实如此后，她回答说：\"那我只能说是的。\"当被问及瘟疫重来时怎么办，她说：\"别担心，科学家会找到某种使用计算机的方法。\"这些善意的人们就是不了解实情。\n\n科学家必须以一种富有同情心且通俗易懂的方式向公众传达他们的信息——要用人性化的语言，而非分子生物学的术语。我们需要让人们清楚地认识到动物研究与祖母的髋关节置换手术、父亲的心脏搭桥手术、婴儿的疫苗接种乃至宠物的预防针之间的联系。对于那些不知道生产这些疗法以及新疗法和疫苗需要动物研究的人来说，动物研究往好了说是浪费，往坏了说是残忍。\n\n可以做的事情很多。科学家可以\"认领\"初中班级，展示自己的研究。他们应当迅速回应读者来信，以免动物权利方面的错误信息无人质疑，从而获得一种貌似真实的假象。研究机构可以开放参观，以展示实验动物受到了人道的照料。最后，由于最终的利益相关者是患者，卫生研究界不仅应积极争取像斯蒂芬·库珀这样勇敢地为动物研究价值发声的知名人士的支持，还应争取所有接受过医疗治疗的人的支持。如果好人无所作为，那么不知情的公众很有可能会熄灭医学进步的珍贵火苗。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "all that is needed for the triumph of a misguided cause is that good people do nothing. ... Scientists need to respond forcefully to animal rights advocates, whose arguments are confusing the public and thereby threatening advances in health knowledge and care.",
+    "why": "伯克名言的核心含义是\"好人若袖手旁观，被误导的事业就会取得胜利\"。作者紧接着指出科学家需要有力回应动物权利倡导者，整篇文章也在呼吁科学家采取行动。因此引用此名言的目的是号召科学家行动起来（take some actions），与A选项完全吻合。",
+    "traps": "B项\"批评动物权利这一被误导的事业\"虽涉及原文信息，但引用名言的直接目的不是批评，而是呼吁行动；C项\"警告生物医学研究的末日\"过于极端，原文只是说存在威胁，并未断言末日；D项\"展示动物权利运动的胜利\"与原文相反，原文说的是如果好人不作为才可能出现这种结果，是假设而非既成事实。",
+    "tip": "引用名言的目的题，应关注名言之后作者的论点指向。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Hearing allegations of cruelty to animals in research settings, many are perplexed that anyone would deliberately harm an animal. ... animal research seems wasteful at best and cruel at worst.",
+    "why": "第一段末尾指出公众听到虐待动物的指控后感到困惑，不理解为何有人会故意伤害动物，这体现了他们认为此举不人道（inhuman）。第三段末尾说动物研究\"往好了说是浪费，往坏了说是残忍\"，说明被误导的人认为这是不可接受的（unacceptable）。两处信息合在一起对应B选项\"不人道且不可接受\"。",
+    "traps": "A项\"残忍但自然\"中的natural原文无据；C项\"不可避免但恶毒\"中inevitable与原文态度矛盾，被误导的人并不认为动物实验不可避免；D项\"无意义且浪费\"只涵盖了wasteful的一面，遗漏了cruel的一面，且pointless一词过于绝对，不够准确。",
+    "tip": "综合多段信息时，注意选项需完整覆盖原文两个维度。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "Such well-meaning people just don't understand.",
+    "why": "第二段举老妇人的例子：她反对一切动物制品，不知道疫苗来自动物实验，甚至天真地认为计算机可以替代动物研究。段末作者总结道\"这些善意的人们就是不了解实情\"，直接点明该例子旨在说明公众对医学科学的无知（ignorance about medical science），与B选项一致。",
+    "traps": "A项\"对动物研究的不满\"只是表面现象，老妇人的反对源于无知而非深思熟虑后的不满；C项\"对流行病漠不关心\"曲解原文，老妇人并非漠视，而是天真地以为有替代方案；D项\"对动物权利的焦虑\"偏离例证目的，作者意在强调无知而非焦虑。",
+    "tip": "例证题应关注例子后面的总结句，它往往直接揭示论点。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Scientists must communicate their message to the public in a compassionate, understandable way—in human terms, not in the language of molecular biology.",
+    "why": "第三段开篇明确指出科学家必须以通俗易懂的方式与公众沟通。第四段又提出\"认领\"学校班级、回应读者来信、开放实验室参观、争取患者支持等具体建议，所有措施的核心都是加强与公众的沟通交流。A选项\"与公众多交流\"完整概括了作者的建议。",
+    "traps": "B项\"在研究中使用高科技手段\"是老妇人天真的想法（用计算机替代），并非作者的建议；C项\"不为自己的事业感到羞耻\"原文未涉及羞耻问题；D项\"努力开发新疗法\"属于无中生有，文章讨论的是如何应对公众误解，而非研究方向。",
+    "tip": "面对\"作者认为应该怎样\"的题，定位作者提出建议的段落。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "the health research community should actively recruit to its cause not only well-known personalities such as Stephen Cooper, who has made courageous statements about the value of animal research",
+    "why": "原文说卫生研究界应积极争取像Stephen Cooper这样\"勇敢地为动物研究价值发声的知名人士\"的支持。由此可直接推断他是动物研究的支持者（a supporter of animal research），对应D选项。",
+    "traps": "A项\"知名人文主义者\"属于偷换概念，well-known personalities不等于humanist；B项\"医学从业者\"原文未提及其职业身份；C项\"动物权利热衷者\"与原文相反，他是为动物研究的价值发声，而非倡导动物权利。",
+    "tip": "人物身份判断题需紧扣原文修饰语和上下文语境。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "paraphrase",
+    "cn": "v. 转述，意译"
+   },
+   {
+    "w": "triumph",
+    "cn": "n. 胜利，成功"
+   },
+   {
+    "w": "forcefully",
+    "cn": "adv. 有力地，强有力地"
+   },
+   {
+    "w": "allegations",
+    "cn": "n. 指控，声称（allegation的复数）"
+   },
+   {
+    "w": "perplexed",
+    "cn": "adj. 困惑的，不知所措的"
+   },
+   {
+    "w": "immunizations",
+    "cn": "n. 免疫接种（immunization的复数）"
+   },
+   {
+    "w": "compassionate",
+    "cn": "adj. 富有同情心的，有怜悯心的"
+   },
+   {
+    "w": "stakeholders",
+    "cn": "n. 利益相关者（stakeholder的复数）"
+   },
+   {
+    "w": "extinguish",
+    "cn": "v. 熄灭，消灭"
+   },
+   {
+    "w": "embers",
+    "cn": "n. 余烬，余火（ember的复数）"
+   },
+   {
+    "w": "lest",
+    "cn": "conj. 以免，唯恐"
+   },
+   {
+    "w": "deceptive",
+    "cn": "adj. 欺骗性的，具有迷惑性的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Scientists need to respond forcefully to animal rights advocates, whose arguments are confusing the public and thereby threatening advances in health knowledge and care.",
+    "cn": "科学家需要有力地回应动物权利倡导者，他们的论点正在混淆公众视听，从而威胁到健康知识和医疗保健的进步。",
+    "note": "主句为Scientists need to respond...，whose引导非限制性定语从句修饰advocates，thereby连接两个并列的现在分词confusing和threatening，表示递进因果。"
+   },
+   {
+    "en": "They should be quick to respond to letters to the editor, lest animal rights misinformation go unchallenged and acquire a deceptive appearance of truth.",
+    "cn": "他们应当迅速回应读者来信，以免动物权利方面的错误信息无人质疑，从而获得一种貌似真实的假象。",
+    "note": "主句为They should be quick to respond...，lest引导目的状语从句（用虚拟语气），从句中go unchallenged和acquire并列，构成两个递进后果。"
+   },
+   {
+    "en": "Finally, because the ultimate stakeholders are patients, the health research community should actively recruit to its cause not only well-known personalities such as Stephen Cooper, who has made courageous statements about the value of animal research, but all who receive medical treatment.",
+    "cn": "最后，由于最终的利益相关者是患者，卫生研究界不仅应积极争取像斯蒂芬·库珀这样勇敢地为动物研究价值发声的知名人士的支持，还应争取所有接受过医疗治疗的人的支持。",
+    "note": "because引导原因状语从句，主句用not only...but (also)...结构连接两类人；who引导非限制性定语从句修饰Stephen Cooper；such as插入举例说明。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "ff8641a6bc65__reading__1",
+ "examId": "ff8641a6bc65",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 6 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:24:50.319Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72284,
+ "usage": {
+  "prompt_tokens": 1793,
+  "completion_tokens": 4808,
+  "total_tokens": 6601,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1793,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4808,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1793,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "霍金警告人工智能的双面性",
+  "gist": "文章围绕霍金在剑桥大学LCFI开幕式上的讲话展开，他指出AI可能是人类最好或最坏的事情，赞扬LCFI的成立对人类命运至关重要，同时阐述了AI的巨大潜力与超级智能可能带来的毁灭性风险。学术界和科技产业界人士均对AI的前景表达了类似关切。",
+  "structure": [
+   "第1段：霍金总论AI双面性，引出LCFI成立",
+   "第2段：霍金在LCFI开幕式上称研究智能未来是可喜转变",
+   "第3段：霍金详述AI潜在益处与可能风险",
+   "第4-5段：学术界人士对AI研究讨论进展的评价",
+   "第6段：科技产业界人士同样表达对AI的担忧"
+  ],
+  "difficulty": "中等",
+  "translation": "斯蒂芬·霍金教授警告称，强大人工智能（AI）的创造将\"要么是人类历史上最好的事情，要么是最坏的事情\"，并赞扬一所致力于研究智能未来的学术机构的成立\"对我们文明和物种的未来至关重要\"。\n\n霍金在剑桥大学莱弗休姆智能未来中心（LCFI）的开幕式上发表了讲话。该中心是一个多学科研究机构，旨在尝试解决AI研究快速发展所引发的一些开放性问题。\"我们花了大量时间研究历史，\"霍金说，\"坦率地说，那主要是一部愚蠢的历史。所以，人们转而研究智能的未来，这是一个可喜的变化。\"\n\n尽管这位举世闻名的物理学家常常对AI持谨慎态度，担心如果人类创造出具有自主意志的超级智能，人类可能成为自我毁灭的设计者，但他也很快指出了AI研究能带来的积极面。\"创造智能的潜在益处是巨大的，\"他说。\"当我们自身的思维被AI增强时，我们无法预测可能取得什么成就。也许借助这场新技术革命的工具，我们将能够弥补上一场技术革命——工业化——对自然界造成的部分损害。而且我们肯定会致力于最终根除疾病和贫困。我们生活的方方面面都将被改变。简而言之，成功创造AI可能是人类文明史上最重大的事件。\"\n\n该中心的学术主任、剑桥大学伯特兰·罗素哲学教授休·普赖斯（霍金也是该校学者）表示，该中心的成立部分源于该校的\"存在风险研究中心\"。后者审视了人类面临的更广泛的潜在问题，而LCFI则聚焦更为具体。\n\nAI先驱、苏塞克斯大学认知科学教授玛格丽特·博登赞扬了此类讨论的进展。她说，就在2009年，这个话题还不被认真对待，即便在AI研究者中也是如此。\"AI令人非常兴奋，\"她说，\"但它有局限性，如果不加批判地使用，会带来严重危险。\"\n\n学术界并非唯一对AI潜在危险和潜在益处发出警告的群体。科技产业界的一些先驱人物，最著名的是企业家埃隆·马斯克，也表达了他们对超级智能AI可能给人类造成伤害的担忧。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Professor Stephen Hawking has warned that the creation of powerful artificial intelligence (AI) will be \"either the best, or the worst thing, ever to happen to humanity\"",
+    "why": "原文明确使用\"either the best, or the worst thing\"这一选择结构，表明AI要么是最好的事，要么是最坏的事。B选项\"a blessing or a disaster in the making\"（正在形成中的福音或灾难）正是对\"the best or the worst thing\"的同义改写，完全对应原文的二选一逻辑。",
+    "traps": "A项\"vital to the progress\"只强调积极面，忽略了霍金同时提到的\"worst thing\"，属于片面概括；C项\"challenges as well as opportunities\"暗示两者并存，而原文用\"either...or\"表示二者择其一，逻辑不同；D项\"significant expansion of human intelligence\"将第三段提到的amplify偷换为对AI的总评价，属于张冠李戴。",
+    "tip": "注意either...or结构表示二选一，与as well as并存含义不同。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "praised the creation of an academic institute dedicated to researching the future of intelligence as \"crucial to the future of our civilisation and our species\"",
+    "why": "原文霍金称LCFI的成立\"对我们文明和物种的未来至关重要\"（crucial to the future of our civilisation and our species）。C选项\"extremely important to the destiny of humankind\"是对原文的精准同义替换：crucial=extremely important，the future of our civilisation and our species=the destiny of humankind。",
+    "traps": "A项\"accelerate the progress of AI research\"属于无中生有，原文未提及LCFI会加速AI研究进展；B项\"a step forward in the AI industry\"偷换概念，LCFI是学术机构而非AI产业项目；D项\"achievement of multi-disciplinary collaboration\"虽然原文提到multi-disciplinary，但这只是LCFI的特征描述，并非霍金对其意义的评价。",
+    "tip": "同义替换是六级阅读核心考法，crucial=extremely important。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "We spend a great deal of time studying in history... So it's a welcome change that people are studying instead the future of intelligence.",
+    "why": "霍金先说人们花大量时间研究历史（即研究过去），然后说人们转而研究智能的未来是\"a welcome change\"。A选项\"The shift of research focus from the past to the future\"准确概括了从研究历史（过去）到研究智能未来的转变，与原文逻辑完全吻合。",
+    "traps": "B项\"from theory to implementation\"（从理论到实践）在原文中毫无依据，属于无中生有；C项\"greater emphasis on the negative impact\"曲解原文，霍金并未强调AI负面影响是可喜变化；D项\"increasing awareness of mankind's past stupidity\"虽然霍金提到了\"history of stupidity\"，但这只是铺垫，\"welcome change\"指向的是研究未来，而非意识到愚蠢。",
+    "tip": "注意因果逻辑链：先说过去→再说转变→welcome change修饰的是后者。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "raising concerns that humanity could be the architect of its own destruction if it creates a super-intelligence with a will of its own",
+    "why": "原文说霍金担忧\"如果人类创造出具有自主意志的超级智能，人类可能成为自我毁灭的设计者\"。D选项\"Super-intelligence may eventually ruin mankind\"（超级智能可能最终毁灭人类）准确概括了这一担忧：architect of its own destruction=ruin mankind，super-intelligence with a will of its own=super-intelligence。",
+    "traps": "A项\"exceed human intelligence\"（超越人类智能）原文未明确提及，属于过度推断；B项\"over-amplify the human mind\"曲解原文，amplify是在正面论述中出现的，且无over-amplify之意；C项\"cause its own destruction\"偷换主语，原文说的是人类（humanity）可能毁灭自身，而非超级智能毁灭自身，its指代对象被篡改。",
+    "tip": "C项是典型的偷换主语陷阱，需仔细辨别its指代的是humanity还是super-intelligence。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "A number of pioneers from the technology industry, most famously the entrepreneur Elon Musk, have also expressed their concerns about the damage that a super-intelligent AI could do to humanity.",
+    "why": "原文最后一段先说\"The academic community is not alone in warning\"（学术界并非孤军奋战），然后指出科技产业先驱\"也表达了他们的担忧\"（also expressed their concerns）。also一词表明科技界与学术界有相同的关切，C选项\"share the same concerns about AI as academics\"准确对应了这一并列关系。",
+    "traps": "A项\"much influenced by the academic community\"属于无中生有，原文只说两个群体有相同关切，未说科技界受学术界影响；B项\"most likely to benefit from AI\"原文未提及，属于凭空推测；D项\"keep AI under human control\"在原文中毫无依据，属于无中生有。",
+    "tip": "注意also、not alone等关联词暗示的并列或相同立场关系。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dedicated",
+    "cn": "adj. 专门的，致力于…的"
+   },
+   {
+    "w": "multi-disciplinary",
+    "cn": "adj. 多学科的，跨学科的"
+   },
+   {
+    "w": "open-ended",
+    "cn": "adj. 开放性的，无限制的"
+   },
+   {
+    "w": "architect",
+    "cn": "n. 设计者，缔造者（此处为比喻义）"
+   },
+   {
+    "w": "amplified",
+    "cn": "v. 增强，放大（amplify的过去分词）"
+   },
+   {
+    "w": "eradicate",
+    "cn": "v. 根除，消灭"
+   },
+   {
+    "w": "existential",
+    "cn": "adj. 存在的，关乎存在的"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的"
+   },
+   {
+    "w": "uncritical",
+    "cn": "adj. 不加批判的，无鉴别力的"
+   },
+   {
+    "w": "grave",
+    "cn": "adj. 严重的，重大的（此处非\"坟墓\"义）"
+   },
+   {
+    "w": "entrepreneur",
+    "cn": "n. 企业家，创业者"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "While the world-renowned physicist has often been cautious about AI, raising concerns that humanity could be the architect of its own destruction if it creates a super-intelligence with a will of its own, he was also quick to highlight the positives that AI research can bring.",
+    "cn": "尽管这位举世闻名的物理学家常常对AI持谨慎态度，担心如果人类创造出具有自主意志的超级智能，人类可能成为自我毁灭的设计者，但他也很快指出了AI研究能带来的积极面。",
+    "note": "While引导让步状语从句，主句为he was also quick to...；从句内嵌raising现在分词短语作伴随状语，其中又包含that引导的同位语从句和if条件状语从句，形成三层嵌套。"
+   },
+   {
+    "en": "Perhaps with the tools of this new technological revolution, we will be able to undo some of the damage done to the natural world by the last one—industrialisation.",
+    "cn": "也许借助这场新技术革命的工具，我们将能够弥补上一场技术革命——工业化——对自然界造成的部分损害。",
+    "note": "主干为we will be able to undo some of the damage；done to the natural world by the last one是过去分词短语后置修饰damage；破折号中的industrialisation是对the last one的解释说明。"
+   },
+   {
+    "en": "Huw Price, the centre's academic director and the Bertrand Russell professor of philosophy at Cambridge University, where Hawking is also an academic, said that the centre came about partially as a result of the university's Centre for Existential Risk.",
+    "cn": "该中心的学术主任、剑桥大学伯特兰·罗素哲学教授休·普赖斯（霍金也是该校学者）表示，该中心的成立部分源于该校的\"存在风险研究中心\"。",
+    "note": "主语Huw Price后紧跟长同位语补充其身份；where引导非限制性定语从句修饰Cambridge University；said后接that宾语从句，came about为不及物动词短语表示\"产生、成立\"。"
+   }
+  ]
+ }
+}

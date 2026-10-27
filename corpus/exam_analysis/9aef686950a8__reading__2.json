@@ -1,0 +1,163 @@
+{
+ "schemaVersion": 1,
+ "id": "9aef686950a8__reading__2",
+ "examId": "9aef686950a8",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 6 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T04:40:41.555Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 108731,
+ "usage": {
+  "prompt_tokens": 1479,
+  "completion_tokens": 11439,
+  "total_tokens": 12918,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9081
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1479
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "空气、植物与人类生命共享",
+  "gist": "本文从空气污染和公园拥挤现象切入，指出人类争斗的根源可能是争夺清洁空气。作者批评西方传统忽视生命基本条件，政治家未将污染定罪反而允许富国付费污染。通过植物的启示，强调人与植物相互依存，指出毁林和燃烧化石燃料的危险，主张人类与彼此及植物分享生命、共同行动，才能真正生活而不只是生存。",
+  "structure": [
+   "第一段由公园现象引出空气争夺可能为人类争斗根源",
+   "第二段批评西方理论家与政客忽视生命基本条件",
+   "第三段以植物为喻强调人与植物相互依存关系",
+   "第四段提出与彼此和植物分享生命的政治伦理任务"
+  ],
+  "difficulty": "中等",
+  "translation": "世界许多地方的空气污染正在恶化。城市公园阳光一出现就变得拥挤，这一事实证明人们渴望在绿色、开阔的空间呼吸。他们不一定都知道自己在寻求什么，但仍然蜂拥而至。而且，在这些环境中，他们通常既平静又平和。在花园里很少看到人们打架。也许斗争最初并不是在经济或社会层面上展开，而是围绕对空气的占有——空气对生命本身至关重要。如果人类能够呼吸并共享空气，他们就不需要彼此争斗。\n\n不幸的是，在我们的西方传统中，唯物主义和唯心主义理论家都没有对这一生命基本条件给予足够重视。至于政治家们，尽管提议控制环境污染，但他们尚未呼吁将污染定为犯罪。富裕国家甚至可以付费后污染。\n\n但是，我们的生命除了金钱还有什么价值吗？植物世界在沉默中向我们展示了忠实于生命意味着什么。它还帮助我们开启新的开端，敦促我们关心自己的呼吸，不仅在生命层面，也在精神层面。我们必须最密切关注的相互依存关系是我们与植物世界之间的关系。覆盖地球的森林常被描述为“地球之肺”，它们通过释放氧气为我们提供可呼吸的空气这份礼物。但它们更新被工业污染的空气的能力早已达到极限。如果我们缺乏健康生活所需的空气，那是因为我们使空气充满了化学物质，并削弱了植物再生空气的能力。众所周知，快速砍伐森林加上大规模燃烧化石燃料是造成不可逆转灾难的爆炸性配方。\n\n对资源占有的争夺将使整个地球走向地狱，除非人类学会与彼此以及与植物分享生命。这项任务同时是伦理的也是政治的，因为只有当每个人都自己承担起它，并且只有与他人共同完成时，它才能得以实现。植物教给我们的教训是，分享生命会扩展和提升生命领域，而将生命分割为所谓的自然资源或人力资源则会使其萎缩。我们必须逐渐将空气、植物和我们自己视为维护生命和生长的贡献者，而不是一个由我们处置的可量化对象或生产潜力组成的网络。也许到那时，我们才会最终开始生活，而不仅仅是关心生存。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Perhaps struggle unfolds first, not at an economic or social level, but over the appropriation of air, essential to life itself. If human beings can breathe and share air, they don't need to struggle with one another.",
+    "why": "作者在第一段猜测人类之间争斗最初可能并非出于经济或社会原因，而是为了占有空气这一生命必需资源；如果人人都能呼吸并共享空气，便无需争斗。题干中 primary reason 与原文 \"first\" 对应，A 选项“获得自己那份清洁空气”正是对 appropriation of air 的同义转述。",
+    "traps": "B“追求舒适生活”和 C“获得更高社会地位”分别对应原文否定的经济和社会层面，作者明确用 not...but 结构排除；D“寻求经济利益”也属于经济层面，与原文 not at an economic level 相悖。这三项都未抓住“空气”这一核心，且与作者假设相反。",
+    "tip": "注意 not...but 结构的语义重心，答案往往在 but 之后。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "As for politicians, despite proposing curbs on environmental pollution, they have not yet called for it to be made a crime. Wealthy countries are even allowed to pollute if they pay for it.",
+    "why": "第二段批评政治家时，作者指出他们虽提议控制污染，却未将污染定为犯罪，更严重的是富裕国家只要付费就可以污染，这实质上是对富国的偏袒和优惠。C 选项“给予富裕国家优惠待遇”准确概括了 allowed to pollute if they pay 这一批评。",
+    "traps": "A 说剥夺普通人的清洁空气权，原文未提到普通人或权利被剥夺，属过度推断；B 说优先理论而非实际行动，原文虽批评理论家忽视，但政治家的问题是立法不力而非理论与行动失衡；D 说未通过法律遏制污染，原文是“尚未呼吁将其定为犯罪”，且已有提议，程度不同。",
+    "tip": "对政客的批评要抓准具体措辞，注意 allowed to 暗含偏袒。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The interdependence to which we must pay the closest attention is that which exists between ourselves and the plant world.",
+    "why": "第三段直接指出我们最应密切关注的相互依存关系是我们与植物世界之间的关系。题干中的 draw our closest attention to 与原文 pay the closest attention 对应，其宾语就是“我们与植物界之间的相互依存”，B 选项“我们与植物界的关系”为其准确概括。",
+    "traps": "A 大规模燃烧化石燃料、C 植物更新污染空气的能力、D 大规模森林砍伐均在后文作为具体论据出现，但都不是作者强调的最密切注意的对象；题干用了最高级 closest，只能对应原文的 the interdependence... between ourselves and the plant world。",
+    "tip": "当题干出现最高级强调词时，首先回原文定位该表达，答案通常是其直接宾语或同位语。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "This task is simultaneously ethical and political because it can be discharged only when each takes it upon herself or himself and only when it is accomplished together with others.",
+    "why": "第四段提出保护植物/分享生命的任务只有当每个人都自觉承担并且与他人共同完成时才能实现，强调集体协作。D 选项 pooling their efforts together 意为“汇集大家的努力”，是对 together with others 的同义转述，符合文意。",
+    "traps": "A 尊重植物，原文未明确提及“尊重”作为方法；B 保护所有生命形式，范围过大，原文侧重分享生命而非保护一切生命；C 开发所有自然资源，与作者反对将自然当作资源开发的立场完全相反。",
+    "tip": "抓住原文关键条件状语 together with others，识别其同义表达如 pool efforts。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The lesson taught by plants is that sharing life expands and enhances the sphere of the living, while dividing life into so-called natural or human resources diminishes it.",
+    "why": "末段植物给出的启示是分享生命能够扩展和提升生命领域，而将生命分割为自然资源或人力资源则会使其萎缩；作者进而呼吁我们将空气、植物和自身视为维护生命成长的贡献者，这样才能最终开始生活而非只求生存。C 选项“与自然分享生命”正是这一核心建议。",
+    "traps": "A 扩大生命领域是分享生命带来的结果，而非作者直接建议的行动；B 开发自然潜能，文中以“rather than ... productive potentialities”明确反对；D 分配资源，作者反对将生命划分为资源，更未主张分配资源。",
+    "tip": "注意区分“建议的行动”与“行动带来的结果”，题干问的是为不只是在生存应怎么做。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deteriorate",
+    "cn": "v. 恶化，变坏"
+   },
+   {
+    "w": "appropriation",
+    "cn": "n. 占有，挪用"
+   },
+   {
+    "w": "theoretician",
+    "cn": "n. 理论家"
+   },
+   {
+    "w": "curb",
+    "cn": "n. 控制，抑制；v. 限制"
+   },
+   {
+    "w": "deforestation",
+    "cn": "n. 滥伐森林"
+   },
+   {
+    "w": "irreversible",
+    "cn": "adj. 不可逆转的"
+   },
+   {
+    "w": "interdependence",
+    "cn": "n. 相互依存"
+   },
+   {
+    "w": "regenerate",
+    "cn": "v. 使再生，恢复"
+   },
+   {
+    "w": "simultaneously",
+    "cn": "adv. 同时地"
+   },
+   {
+    "w": "ethical",
+    "cn": "adj. 伦理的，道德的"
+   },
+   {
+    "w": "quantifiable",
+    "cn": "adj. 可量化的"
+   },
+   {
+    "w": "at one's disposal",
+    "cn": "由某人支配"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Perhaps struggle unfolds first, not at an economic or social level, but over the appropriation of air, essential to life itself.",
+    "cn": "也许斗争最初并不是在经济或社会层面上展开，而是围绕对空气的占有——空气对生命本身至关重要。",
+    "note": "句子主干为 struggle unfolds first，not...but...结构连接两个并列状语，essential to life itself 为形容词短语作后置定语修饰 air。"
+   },
+   {
+    "en": "This task is simultaneously ethical and political because it can be discharged only when each takes it upon herself or himself and only when it is accomplished together with others.",
+    "cn": "这项任务同时是伦理的也是政治的，因为只有当每个人都自己承担起它，并且只有与他人共同完成时，它才能得以实现。",
+    "note": "because 引导原因状语从句，其中含有两个由 only when 引导的条件状语从句，由 and 并列，共同修饰 can be discharged。"
+   },
+   {
+    "en": "We must come to view the air, the plants and ourselves as the contributors to the preservation of life and growth, rather than a web of quantifiable objects or productive potentialities at our disposal.",
+    "cn": "我们必须逐渐将空气、植物和我们自己视为维护生命和生长的贡献者，而不是一个由我们处置的可量化对象或生产潜力组成的网络。",
+    "note": "主干为 We must come to view A as B rather than C；A 为三个并列宾语，B 为 contributors，C 为 a web of...，rather than 后接被否定的对象。"
+   }
+  ]
+ }
+}

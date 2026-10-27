@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "2503975bfd62__reading__4",
+ "examId": "2503975bfd62",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2010 年考研英语真题",
+ "year": 2010,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:24:15.636Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68133,
+ "usage": {
+  "prompt_tokens": 1763,
+  "completion_tokens": 4023,
+  "total_tokens": 5786,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1763,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4023,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1763,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "银行施压会计准则制定者放松规则",
+  "gist": "文章围绕金融危机背景下银行业与会计准则制定机构之间的博弈展开。银行抱怨公允价值会计规则迫使其报告巨额亏损，并成功游说FASB修改规则。作者对此持批评态度，认为准则制定者的独立性正遭到损害，呼吁以市场化方式认定损失、恢复银行体系健康运转，并对准则制定者迫于压力让步表示同情与担忧。",
+  "structure": [
+   "第1-2段：提出问题，银行指责会计规则不公，游说已见效",
+   "第3-4段：FASB和IASB分别受到政治压力修改或拟修改规则",
+   "第5段：反驳银行立场，指出其高估资产、市场不信任",
+   "第6段：总结论点，呼吁坚持独立准则，警示让步后果"
+  ],
+  "difficulty": "中等",
+  "translation": "银行家们一直在公开场合为自身的困境自我反省。但在幕后，他们却将矛头指向了另一个目标：会计准则制定者。银行抱怨说，这些规则迫使它们报告巨额亏损，这太不公平了。这些规则要求银行必须按照第三方愿意支付的价格来评估某些资产，而非按照管理层和监管者所希望的价格来估值。\n\n不幸的是，银行的游说活动如今似乎正在奏效。具体细节或许不得而知，但对资本市场正常运转至关重要的准则制定者独立性正在遭到损害。而且，除非银行以能够吸引买家的价格持有有毒资产，否则复兴银行体系将困难重重。\n\n在与国会经历了一场激烈交锋之后，美国财务会计准则委员会（FASB）匆忙通过了规则修改。这些修改赋予银行更大的自由，可以使用模型对流动性不足的资产进行估值，也可以更灵活地在利润表中确认长期资产的亏损。FASB主席鲍勃·赫兹强烈反对那些\"质疑我们动机\"的人。然而银行股价随之上涨，而这些修改也增强了一个游说团体所礼貌地称为\"管理层运用判断的空间\"。\n\n欧洲各国部长立即要求国际会计准则委员会（IASB）照此办理。IASB表示不想在没有整体规划的情况下行动，但当其在今年晚些时候完成规则重构时，屈服的压力很大。欧盟委员查理·麦克里维警告IASB，它并非\"生活在政治真空中\"，而是\"身处现实世界\"，欧洲完全可能制定不同的规则。\n\n事实上，脱离现实的是银行自己，它们的账目大幅高估了资产价值。如今它们辩称市场价格夸大了亏损，因为市场价格主要反映的是市场暂时的流动性不足，而非坏账的可能规模。真相要数年之后才能知晓。但银行股价低于其账面价值，表明投资者持怀疑态度。而且市场死气沉沉，部分原因正是银行自身的瘫痪——它们既不愿出售资产以免确认亏损，又不愿买入所有那些所谓的便宜货。\n\n要让体系重新运转起来，亏损必须被确认和处理。美国购买有毒资产的新计划，除非银行将资产标记在买家觉得有吸引力的水平上，否则不会奏效。成功的市场需要独立乃至敢于抗争的准则制定者。FASB和IASB恰恰做到了这一点，例如在来自特殊利益集团的敌意面前，清理了股票期权和养老金方面的规则。但如今向批评者屈服，它们是在招致更多让步的压力。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Their rules, moan the banks, have forced them to report enormous losses, and it's just not fair. These rules say they must value some assets at the price a third party would pay, not the price managers and regulators would like them to fetch.",
+    "why": "原文明确指出银行抱怨会计规则迫使它们按第三方价格评估资产并报告巨额亏损，银行认为这\"不公平\"。选项A\"follow unfavorable asset evaluation rules\"（遵循不利的资产评估规则）准确概括了银行的抱怨：被迫遵循以第三方价格估值的规则，且认为规则对自己不利。这与原文信息高度吻合。",
+    "traps": "B选项\"从第三方收取付款\"曲解了原文中\"third party would pay\"的含义，原文是按第三方愿意支付的价格估值，而非收款；C选项\"与价格管理者合作\"属于无中生有，原文的price managers指的是管理层希望的价格，非合作关系；D选项\"重新评估某些资产\"看似相关，但银行抱怨的不是重新评估本身，而是评估规则不利于自己。",
+    "tip": "注意区分抱怨的对象是\"规则本身\"还是\"评估行为\"。"
+   },
+   {
+    "number": 37,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "the independence of standard-setters, essential to the proper functioning of capital markets, is being compromised.",
+    "why": "第二段指出准则制定者的独立性正在遭到损害，第三段具体描述FASB在国会压力下匆忙修改规则，赋予银行更大的自由裁量权。FASB主席的辩护以及\"银行股上涨\"这一细节，暗示规则修改是迎合银行利益而非出于专业独立判断。因此规则修改的结果是FASB独立性被削弱，对应D选项。",
+    "traps": "A选项\"管理层角色减弱\"与原文相反，修改后管理层的判断空间增大了；B选项\"银行体系复兴\"是第二段所说不太可能实现的结果，因为银行不以合理价格持有有毒资产；C选项\"银行长期资产亏损\"偷换概念，原文说的是更灵活地确认长期资产亏损，并非导致亏损。",
+    "tip": "推断题需关注段落间的逻辑衔接，第二段结论是第三段具体事实的铺垫。"
+   },
+   {
+    "number": 38,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The IASB says it does not want to act without overall planning, but the pressure to fold when it completes its reconstruction of rules later this year is strong. Charlie McCreevy, a European commissioner, warned the IASB that it did 'not live in a political vacuum' but 'in the real world' and that Europe could yet develop different rules.",
+    "why": "IASB表示不想在没有整体规划的情况下单独行动，而麦克里维警告IASB不要自认为生活在\"政治真空\"中，暗示IASB不应独立于政治压力之外自行其是地制定规则。他甚至威胁欧洲可能另立规则。因此麦克里维反对的是IASB在规则制定上的独立自主行为，对应C选项\"act on their own in rule-setting\"。",
+    "traps": "A选项\"远离政治影响\"是IASB的立场而非麦克里维的反对对象，且表述偏差——原文是麦克里维要求IASB不要远离政治；B选项\"逃避同行压力\"无原文依据，属于无中生有；D选项\"在改革中采取渐进措施\"曲解了IASB\"整体规划\"的含义，IASB强调的是整体性而非渐进性。",
+    "tip": "注意区分不同立场：IASB想独立行事，麦克里维反对其独立行事。"
+   },
+   {
+    "number": 39,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "It was banks that were on the wrong planet, with accounts that vastly overvalued assets.",
+    "why": "原文用强调句式指出\"脱离现实的是银行自己\"，紧跟的原因状语明确说明\"它们的账目大幅高估了资产价值\"（vastly overvalued assets）。因此\"on the wrong planet\"的含义是银行对资产价值的判断严重脱离实际，夸大了资产的真实价值，直接对应B选项\"exaggerated the real value of their assets\"。",
+    "traps": "A选项\"误读市场价格指标\"是银行对自身行为的辩解（声称市场价格夸大了亏损），而非作者批评的内容；C选项\"忽视坏账可能存在\"虽有相关性但不精确，原文的核心是高估资产而非忽视坏账；D选项\"拒绝在资产出售中确认亏损\"是第五段末尾提到的市场瘫痪现象，并非\"on the wrong planet\"的直接含义。",
+    "tip": "词义句意题优先看紧邻的解释性语句，with引导的伴随状语即为解释。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "Successful markets require independent and even combative standard-setters. The FASB and IASB have been exactly that, cleaning up rules on stock options and pensions, for example, against hostility from special interests. But by giving in to critics now they are inviting pressure to make more concessions.",
+    "why": "作者在全文中强调准则制定者独立性的重要性，肯定其过去顶住特殊利益压力的功绩，并为其如今被迫屈服感到惋惜。末段\"by giving in to critics now they are inviting pressure\"暗示作者理解准则制定者面临的困境，对其处境表示同情。结合第二段\"independence is being compromised\"的忧虑语气，作者的态度是同情，对应D选项。",
+    "traps": "A选项\"满意\"与作者对规则修改的批评态度矛盾；B选项\"怀疑\"与作者肯定准则制定者过往贡献的立场不符；C选项\"客观\"过于中性，作者明显带有立场——支持准则制定者的独立性并为其让步感到遗憾，并非纯粹客观。",
+    "tip": "态度题要综合全文情感基调，区分对事件的批评和对当事人的同情。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "lobbying",
+    "cn": "n./v. 游说（活动）"
+   },
+   {
+    "w": "compromised",
+    "cn": "v. 损害，使妥协（此处指独立性被损害）"
+   },
+   {
+    "w": "bruising",
+    "cn": "adj. 激烈的，伤元气的"
+   },
+   {
+    "w": "illiquid",
+    "cn": "adj. 流动性不足的，不易变现的"
+   },
+   {
+    "w": "toxic assets",
+    "cn": "n. 有毒资产（指高风险或严重贬值的金融资产）"
+   },
+   {
+    "w": "overstate",
+    "cn": "v. 夸大，言过其实"
+   },
+   {
+    "w": "paralysis",
+    "cn": "n. 瘫痪，麻痹"
+   },
+   {
+    "w": "combative",
+    "cn": "adj. 好战的，敢于抗争的"
+   },
+   {
+    "w": "concessions",
+    "cn": "n. 让步，妥协"
+   },
+   {
+    "w": "hostility",
+    "cn": "n. 敌意，反对"
+   },
+   {
+    "w": "skeptical",
+    "cn": "adj. 怀疑的，持怀疑态度的"
+   },
+   {
+    "w": "reviving",
+    "cn": "v. 复兴，恢复（revive的现在分词）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "And, unless banks carry toxic assets at prices that attract buyers, reviving the banking system will be difficult.",
+    "cn": "而且，除非银行以能够吸引买家的价格持有有毒资产，否则复兴银行体系将困难重重。",
+    "note": "unless引导条件状语从句，其中that attract buyers为定语从句修饰prices；主句为reviving the banking system（动名词短语作主语）+ will be difficult。"
+   },
+   {
+    "en": "And dead markets partly reflect the paralysis of banks which will not sell assets for fear of booking losses, yet are reluctant to buy all those supposed bargains.",
+    "cn": "而且市场死气沉沉，部分原因正是银行自身的瘫痪——它们既不愿出售资产以免确认亏损，又不愿买入所有那些所谓的便宜货。",
+    "note": "which引导定语从句修饰banks，从句内部由will not sell...yet are reluctant to buy构成转折并列结构；for fear of为目的状语表示\"唯恐\"。"
+   },
+   {
+    "en": "The FASB and IASB have been exactly that, cleaning up rules on stock options and pensions, for example, against hostility from special interests.",
+    "cn": "FASB和IASB恰恰做到了这一点，例如在来自特殊利益集团的敌意面前，清理了股票期权和养老金方面的规则。",
+    "note": "that回指前句的independent and combative standard-setters；cleaning up为现在分词短语作伴随状语；against hostility为介词短语表示\"顶住敌意\"。"
+   }
+  ]
+ }
+}

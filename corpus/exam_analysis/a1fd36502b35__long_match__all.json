@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "a1fd36502b35__long_match__all",
+ "examId": "a1fd36502b35",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2023 年 12 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:51:04.764Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35471,
+ "usage": {
+  "prompt_tokens": 991,
+  "completion_tokens": 2144,
+  "total_tokens": 3135,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 991,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2144,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 991,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "沉船打捞中的宝藏归属与考古之争",
+  "strategy": [
+   "先划出各陈述句中的专有名词、人名和数字等定位线索",
+   "关注感情色彩词（hostile、crucial、outrageous）锁定段落语气",
+   "识别同义替换：如susceptible to loss≈vulnerable to losing",
+   "按信息密度先做含人名/地名的题（如Pritchett、Florida），再做概括性题"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "对海底沉船的探索对于更新我们对人类过去的认识至关重要。",
+    "keywords": [
+     "shipwrecks",
+     "sea floor",
+     "crucial",
+     "understanding of humanity's past"
+    ],
+    "paraphrase": "crucial 可能被原文替换为 essential/vital/of great importance；updating our understanding 可能替换为 reshaping/revising what we know，属形容词与动词的同义替换。",
+    "tip": "定位 crucial/essential 与 humanity's past 的搭配所在段落。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "cn": "几个世纪以来，相当多从欧洲驶往美洲的宏伟船只在佛罗里达海岸附近沉没。",
+    "keywords": [
+     "majestic ships",
+     "Europe to America",
+     "Florida coast",
+     "over the centuries"
+    ],
+    "paraphrase": "majestic ships 可能被替换为 grand/magnificent vessels；wrecked off 可能被替换为 sank near/lost off，属近义词替换。",
+    "tip": "用地名 Florida 与 Europe to America 的航线描述快速扫读定位。"
+   },
+   {
+    "number": 38,
+    "answer": "I",
+    "cn": "当一家美国地区法院作出不利于普里切特的裁决时，他遭受了巨大损失。",
+    "keywords": [
+     "Pritchett",
+     "heavy loss",
+     "US district court",
+     "ruled against"
+    ],
+    "paraphrase": "suffered a heavy loss 可能对应原文 lost a fortune/faced devastating financial consequences；ruled against 可能替换为 decided/ruled in favor of the other side。",
+    "tip": "用人名 Pritchett 与 US district court 双重定位。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "最近，在沉船中发现宝藏的人因其拥有权问题而被起诉。",
+    "keywords": [
+     "treasures",
+     "shipwrecks",
+     "sued",
+     "rights to own"
+    ],
+    "paraphrase": "have been sued 可能对应原文 faced lawsuits/legal challenges；rights to own 可能替换为 ownership rights/claims of possession，属名词短语替换。",
+    "tip": "关注 sued/lawsuits 等法律用语以及 ownership/rights 的组合。"
+   },
+   {
+    "number": 40,
+    "answer": "G",
+    "cn": "普里切特声称他为沉船探索获得了来自投资者数百万美元的支持。",
+    "keywords": [
+     "Pritchett",
+     "millions of dollars",
+     "investors",
+     "shipwreck exploration"
+    ],
+    "paraphrase": "claims he got support 可能替换为 says he secured/raised funding；millions of dollars from investors 属具体数字信息，原文中可能直接出现。",
+    "tip": "用 Pritchett + investors/millions 组合定位，注意 claims 暗示信息来源为本人陈述。"
+   },
+   {
+    "number": 41,
+    "answer": "L",
+    "cn": "一位海洋科学先驱认为考古学家应更加努力地发表他们的研究成果。",
+    "keywords": [
+     "pioneer marine scientist",
+     "archaeologists",
+     "publish",
+     "findings"
+    ],
+    "paraphrase": "make greater efforts to publish 可能替换为 do more to share/disseminate their research；pioneer 可能对应 leading/founding figure in the field。",
+    "tip": "定位 publish findings 与 marine scientist 的身份描述所在段。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "cn": "近年来随着技术进步，打捞者现在能探测到埋藏在海底的无价人工制品。",
+    "keywords": [
+     "technological advancement",
+     "salvors",
+     "detect",
+     "man-made objects"
+    ],
+    "paraphrase": "technological advancement 可能替换为 advances in technology/new technologies；detect the invaluable man-made objects 可能替换为 locate priceless artifacts，属动词与形容词同义替换。",
+    "tip": "关注 technology/advancement 与 detect/locate 的搭配定位。"
+   },
+   {
+    "number": 43,
+    "answer": "J",
+    "cn": "一位律师表示，许多寻宝者容易遭受损失，因为他们没有意识到自己在法庭上面对的是财力更雄厚的对手。",
+    "keywords": [
+     "lawyer",
+     "treasure hunters",
+     "susceptible to loss",
+     "financially stronger opponent"
+    ],
+    "paraphrase": "susceptible to loss 可能替换为 vulnerable to defeat/at risk of losing；financially stronger opponent 可能替换为 better-funded adversary/party with deeper pockets。",
+    "tip": "用 lawyer 的身份词与 financially stronger opponent 联合定位。"
+   },
+   {
+    "number": 44,
+    "answer": "E",
+    "cn": "沉船宝藏打捞者和海洋考古学家如今相互敌对。",
+    "keywords": [
+     "salvors",
+     "marine archaeologists",
+     "hostile",
+     "each other"
+    ],
+    "paraphrase": "hostile to each other 可能替换为 at odds/in conflict/antagonistic toward one another，属形容词的同义替换，强调双方对立关系。",
+    "tip": "聚焦 hostile/conflict 等表示对立关系的词汇快速锁定段落。"
+   },
+   {
+    "number": 45,
+    "answer": "K",
+    "cn": "考古学家希望文物能帮助人类理解自己的过去，而不是以离谱的高价卖给私人收藏家。",
+    "keywords": [
+     "archaeologists",
+     "artifacts",
+     "private collectors",
+     "outrageous price"
+    ],
+    "paraphrase": "outrageous price 可能替换为 exorbitant/astronomical price；sold to private collectors 可能替换为 end up in private hands/collections，属动词短语替换。",
+    "tip": "用 private collectors 与 outrageous price 组合快速扫读定位。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "shipwrecks",
+    "cn": "n. 沉船；海难"
+   },
+   {
+    "w": "majestic",
+    "cn": "adj. 宏伟的，壮丽的"
+   },
+   {
+    "w": "wrecked",
+    "cn": "v. （使船只）失事，沉没"
+   },
+   {
+    "w": "salvors",
+    "cn": "n. 打捞者，救助者"
+   },
+   {
+    "w": "invaluable",
+    "cn": "adj. 无价的，极宝贵的"
+   },
+   {
+    "w": "susceptible",
+    "cn": "adj. 易受影响的，易遭受……的"
+   },
+   {
+    "w": "hostile",
+    "cn": "adj. 敌对的，怀有敌意的"
+   },
+   {
+    "w": "artifacts",
+    "cn": "n. 人工制品，手工艺品（尤指有历史价值的）"
+   },
+   {
+    "w": "outrageous",
+    "cn": "adj. 极其过分的，令人震惊的（此处指价格离谱）"
+   },
+   {
+    "w": "pioneer",
+    "cn": "adj./n. 先驱的；先驱者，开拓者"
+   }
+  ]
+ }
+}

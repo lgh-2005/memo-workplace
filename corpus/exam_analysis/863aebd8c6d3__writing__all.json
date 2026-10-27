@@ -1,0 +1,143 @@
+{
+ "schemaVersion": 1,
+ "id": "863aebd8c6d3__writing__all",
+ "examId": "863aebd8c6d3",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2004 年考研英语真题（旧）",
+ "year": 2004,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:16:00.592Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 89790,
+ "usage": {
+  "prompt_tokens": 714,
+  "completion_tokens": 5678,
+  "total_tokens": 6392,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 714,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5678,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 714,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 46,
+    "part": "A",
+    "task": "大作文·图画描述型。要求考生根据所给图画（一位身穿中国传统旗袍的美国女孩）完成三项任务：描述图画内容、阐释寓意、举例论证，约200词。",
+    "outline": [
+     "第一段：客观描述图画——一位美国女孩身着中国传统服饰（旗袍），面带自信微笑，东西方文化在她身上和谐交融。",
+     "第二段：揭示寓意——在全球化背景下，不同文化之间的交流与融合日益加深，人们对异国文化表现出更强烈的理解与尊重意愿。",
+     "第三段：举例论证并总结——以中国饮食、武术、节日在海外的流行以及西方文化元素在中国的传播为例，说明文化交流已成为不可逆转的趋势，呼吁积极推动跨文化沟通。"
+    ],
+    "sample": "As is vividly depicted in the drawing, a young American girl is wearing a traditional Chinese costume—a qipao—with a radiant and confident smile on her face. The elegant dress, adorned with delicate floral patterns, fits her perfectly, suggesting a harmonious blend of Eastern and Western cultures.\n\nThe drawing is intended to illustrate the growing significance of cultural exchange in an increasingly globalized world. People from different cultural backgrounds are demonstrating greater enthusiasm for understanding and embracing foreign traditions. The American girl's choice to wear Chinese traditional attire symbolizes not merely a superficial fascination with exotic fashion, but rather a deeper willingness to appreciate and respect the cultural heritage of another civilization. This trend reflects the openness and inclusiveness that modern society demands.\n\nAbundant examples can be found to support this view. The worldwide popularity of Chinese cuisine, martial arts, and traditional festivals like the Spring Festival shows that cultural exchange has become an irreversible trend. Likewise, Western customs such as Christmas celebrations and Hollywood films have found receptive audiences across China. Such mutual cultural appreciation not only enriches individual experiences but also fosters understanding among nations. Therefore, we should actively promote cross-cultural communication, for it is through embracing diversity that humanity achieves true progress.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the drawing",
+      "cn": "如图所生动描绘的；图画描述类作文经典首句，引出画面内容"
+     },
+     {
+      "en": "a harmonious blend of A and B",
+      "cn": "A与B的和谐融合；用于表达两种事物相互交织、相得益彰"
+     },
+     {
+      "en": "not merely ... but rather ...",
+      "cn": "不仅仅是……而是……；递进对比结构，深化论证层次"
+     },
+     {
+      "en": "cultural heritage",
+      "cn": "文化遗产/文化传承；讨论传统文化话题的核心词汇"
+     },
+     {
+      "en": "an irreversible trend",
+      "cn": "不可逆转的趋势；用于强调某一发展方向不可阻挡"
+     },
+     {
+      "en": "foster understanding among nations",
+      "cn": "增进国家间的理解；常用于国际关系、文化交流话题"
+     },
+     {
+      "en": "in an increasingly globalized world",
+      "cn": "在一个日益全球化的世界里；交代宏观时代背景的万能状语"
+     },
+     {
+      "en": "it is through ... that ...",
+      "cn": "正是通过……才……；强调句型，适合在结尾处升华主题"
+     }
+    ],
+    "pitfalls": [
+     "描述图画时仅罗列要素，缺少对人物表情、服饰细节的刻画，导致画面感不足",
+     "第二段阐释寓意时脱离图画，泛泛而谈全球化，未将图画细节与深层含义衔接",
+     "举例论证时只给一个笼统例子，缺少中西双向交流的对比，说服力弱",
+     "三段之间缺乏过渡衔接词，结构松散，逻辑链条断裂",
+     "词汇单一，反复使用culture、important等基础词，未做同义替换如heritage、appreciation"
+    ],
+    "upgrades": [
+     {
+      "plain": "The drawing shows a girl wearing Chinese clothes.",
+      "better": "As is vividly depicted in the drawing, a young American girl is wearing a traditional Chinese costume with a radiant and confident smile on her face.",
+      "note": "增加修饰语和细节描写，使图画描述更具画面感和感染力"
+     },
+     {
+      "plain": "Cultural exchange is very important in today's world.",
+      "better": "Cultural exchange has become an irreversible trend that enriches individual experiences and fosters understanding among nations.",
+      "note": "用具体效果替代空洞评价important，增强论证深度"
+     },
+     {
+      "plain": "We should learn from other cultures.",
+      "better": "It is through embracing diversity that humanity achieves true progress.",
+      "note": "使用强调句型拔高立意，使结尾更有力度和哲理感"
+     },
+     {
+      "plain": "Many people like Chinese culture now.",
+      "better": "The worldwide popularity of Chinese cuisine, martial arts, and traditional festivals demonstrates that cultural appreciation has permeated every aspect of modern life.",
+      "note": "以具体事例代替笼统陈述，配合高级词汇permeate增加学术感"
+     },
+     {
+      "plain": "The girl wears the dress, which means she likes Chinese culture.",
+      "better": "The girl's choice to wear Chinese traditional attire symbolizes a deeper willingness to appreciate and respect the cultural heritage of another civilization.",
+      "note": "用symbolize替代mean，将表层行为升华为深层精神态度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the drawing, a young American girl is wearing a traditional Chinese costume with a radiant and confident smile on her face. — 经典图画作文首句，as引导非限制性定语从句，vividly增添生动感，值得直接背诵套用。",
+   "The American girl's choice to wear Chinese traditional attire symbolizes not merely a superficial fascination with exotic fashion, but rather a deeper willingness to appreciate and respect the cultural heritage of another civilization. — not merely...but rather构成递进对比，将表象行为升华为文化尊重，逻辑层次清晰。",
+   "Such mutual cultural appreciation not only enriches individual experiences but also fosters understanding among nations. — not only...but also经典并列结构，从个人到国家逐层递进，论证收放自如。",
+   "It is through embracing diversity that humanity achieves true progress. — 强调句型收束全文，embrace diversity搭配精准，适合作为高分结尾句背诵。"
+  ]
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "68c22fd96d6b__translation__all",
+ "examId": "68c22fd96d6b",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2008 年考研英语真题（旧）",
+ "year": 2008,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:21:34.122Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68039,
+ "usage": {
+  "prompt_tokens": 1368,
+  "completion_tokens": 4948,
+  "total_tokens": 6316,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1368,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4948,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1368,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "达尔文自述其智力特点与晚年变化",
+  "translation": "在自传中，达尔文本人以非凡的谦逊谈论自己的智力。他指出，他在清晰简洁地表达自己方面总是感到十分困难，但他认为，正是这一困难可能有其补偿性的优点，因为它迫使他对每个句子都长时间地专注思考，从而使他能够发现推理中以及自己观察中的错误。他否认自己具有像赫胥黎那样出众的敏锐理解力或机智。他还断言，他沿着一长串纯抽象的思路进行思考的能力非常有限，因此他确信自己在数学方面绝不可能取得成功。他还说自己的记忆力虽然广博，但模糊不清。在某种意义上，他的记忆力差到从来记不住一个日期或一行诗歌超过几天。另一方面，他不认为他的一些批评者对他的指责是有充分根据的，即虽然他善于观察，却没有推理能力。他认为这不可能是事实，因为《物种起源》从头到尾就是一个长篇论证，而且已经说服了许多有才能的人。他认为，没有人能在不具备一定推理能力的情况下写出这样的著作。他愿意断言：\"我拥有相当的创造力和常识或判断力，就像每个相当成功的律师或医生所必须具备的那样，但我认为，不会比他们更高。\"他谦虚地补充说，或许他\"在注意到容易被忽略的事物以及仔细观察这些事物方面，要优于普通人\"。\n\n在他生命的最后一年写作时，他表达了这样一种看法：在两三个方面，他的思想在过去二三十年里发生了变化。在三十岁或三十岁之后，许多类型的诗歌都曾给他带来极大的愉悦。以前，绘画也曾给他相当大的乐趣，音乐则给他极大的快乐。然而，在1881年，他说：\"如今多年来我无法忍受读一行诗歌。我也几乎丧失了对绘画和音乐的兴趣。\"达尔文确信，这些兴趣的丧失不仅是幸福的损失，而且可能对智力有害，更可能对道德品质有害。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "he believes that this very difficulty may have had the compensating advantage of forcing him to think long and intently about every sentence, and thus enabling him to detect errors in reasoning and in his own observations.",
+    "cn": "他认为，正是这一困难可能有其补偿性的优点，因为它迫使他对每个句子都长时间地专注思考，从而使他能够发现推理中以及自己观察中的错误。",
+    "structure": "主干为 he believes that...；that 引导宾语从句，主语为 this very difficulty，谓语为 may have had，宾语为 the compensating advantage；of forcing... and thus enabling... 是两个并列的动名词短语作 advantage 的后置定语，说明优点的具体内容。",
+    "points": [
+     "this very difficulty 中 very 作形容词译为\"正是这一\"",
+     "compensating advantage 译为\"补偿性的优点\"",
+     "forcing... and thus enabling... 并列动名词结构需体现因果递进关系"
+    ],
+    "pitfall": "very 极易误译为副词\"非常\"，此处作形容词强调\"正是/恰恰是\"；另外 forcing 与 enabling 为并列关系而非从属关系，需准确传达。"
+   },
+   {
+    "number": 47,
+    "en": "He asserted, also, that his power to follow a long and purely abstract train of thought was very limited, for which reason he felt certain that he never could have succeeded with mathematics.",
+    "cn": "他还断言，他沿着一长串纯抽象的思路进行思考的能力非常有限，因此他确信自己在数学方面绝不可能取得成功。",
+    "structure": "主干为 He asserted that...；that 引导宾语从句，其主语为 his power（to follow... 为不定式后置定语），谓语为 was very limited；for which reason 引导非限制性定语从句，表因果，其中嵌套 that 引导的宾语从句。",
+    "points": [
+     "a long and purely abstract train of thought 译为\"一长串纯抽象的思路\"",
+     "for which reason 非限制性定语从句转译为因果关系\"因此\"",
+     "could have succeeded 虚拟语气译为\"不可能取得成功\""
+    ],
+    "pitfall": "train of thought 是固定短语，意为\"思路/一连串想法\"，切勿将 train 译为\"火车\"；for which reason 需理解为因果关联而非简单修饰。"
+   },
+   {
+    "number": 48,
+    "en": "On the other hand, he did not accept as well founded the charge made by some of his critics that, while he was a good observer, he had no power of reasoning.",
+    "cn": "另一方面，他不认为他的一些批评者对他的指责是有充分根据的，即虽然他善于观察，却没有推理能力。",
+    "structure": "主干为 he did not accept the charge as well founded，其中 as well founded 为宾语补足语前置（因宾语 the charge 后有较长修饰成分）；made by some of his critics 是过去分词短语作 charge 的后置定语；that 引导同位语从句解释 charge 的内容，其中 while 表让步。",
+    "points": [
+     "accept...as well founded 宾补前置结构的还原与准确翻译",
+     "that 引导的同位语从句需译出 charge 的具体内容",
+     "while 在此表让步，译为\"虽然\""
+    ],
+    "pitfall": "句子最大难点在于 as well founded 宾补前置，需还原为 accept the charge as well founded（认为指责有充分根据）；若不识别此结构，极易将 as well founded 理解为状语导致全句误译。"
+   },
+   {
+    "number": 49,
+    "en": "He adds humbly that perhaps he was \"superior to the common run of men in noticing things which easily escape attention, and in observing them carefully.\"",
+    "cn": "他谦虚地补充说，或许他\"在注意到容易被忽略的事物以及仔细观察这些事物方面，要优于普通人\"。",
+    "structure": "主干为 He adds that...；that 引导宾语从句，从句主干为 he was superior to the common run of men；in noticing... and in observing... 是两个并列介词短语作状语，说明\"优于\"的具体方面；which easily escape attention 为定语从句修饰 things。",
+    "points": [
+     "the common run of men 译为\"普通人/一般人\"",
+     "superior to... in... 结构需译出\"在……方面优于……\"",
+     "which easily escape attention 定语从句的准确处理"
+    ],
+    "pitfall": "the common run of men 是固定表达，意为\"普通人、芸芸众生\"，切勿逐字直译为\"人的普通奔跑\"；escape attention 意为\"逃脱注意/被忽略\"。"
+   },
+   {
+    "number": 50,
+    "en": "Darwin was convinced that the loss of these tastes was not only a loss of happiness, but might possibly be injurious to the intellect, and more probably to the moral character.",
+    "cn": "达尔文确信，这些兴趣的丧失不仅是幸福的损失，而且可能对智力有害，更可能对道德品质有害。",
+    "structure": "主干为 Darwin was convinced that...；that 引导宾语从句，从句用 not only...but... 并列结构；but 后省略了主语 the loss of these tastes 和系动词，与 not only 后的 a loss of happiness 构成对比；and more probably to the moral character 与 to the intellect 并列。",
+    "points": [
+     "able tastes 译为\"兴趣/爱好\"而非\"味觉\"",
+     "not only...but... 并列结构的完整对应",
+     "injurious to 译为\"对……有害的\""
+    ],
+    "pitfall": "tastes 在此语境中指\"兴趣、爱好\"（对诗歌、绘画、音乐的兴趣），而非\"味觉/口味\"；injurious 为正式用词，意为\"有害的\"，需与 to the intellect 和 to the moral character 分别搭配。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "concisely",
+    "cn": "adv. 简洁地"
+   },
+   {
+    "w": "intently",
+    "cn": "adv. 专注地，专心地"
+   },
+   {
+    "w": "compensating",
+    "cn": "adj. 补偿性的，弥补的"
+   },
+   {
+    "w": "disclaimed",
+    "cn": "v. 否认，放弃（声称拥有的东西）"
+   },
+   {
+    "w": "apprehension",
+    "cn": "n. 理解力；忧虑"
+   },
+   {
+    "w": "wit",
+    "cn": "n. 机智，才智"
+   },
+   {
+    "w": "asserted",
+    "cn": "v. 断言，声称"
+   },
+   {
+    "w": "train of thought",
+    "cn": "n.（固定短语）思路，一连串想法"
+   },
+   {
+    "w": "hazy",
+    "cn": "adj. 模糊的，朦胧的"
+   },
+   {
+    "w": "well founded",
+    "cn": "adj. 有充分根据的，有理由的"
+   },
+   {
+    "w": "charge",
+    "cn": "n. 指责，控告"
+   },
+   {
+    "w": "the common run of men",
+    "cn": "n.（固定短语）普通人，一般人"
+   },
+   {
+    "w": "injurious",
+    "cn": "adj. 有害的，造成损害的"
+   },
+   {
+    "w": "intellect",
+    "cn": "n. 智力，理解力"
+   },
+   {
+    "w": "moral character",
+    "cn": "n. 道德品质"
+   }
+  ],
+  "skills": [
+   "注意 very 作形容词（意为\"正是/恰恰\"）与作副词的区别",
+   "非限制性定语从句（如 for which reason）常需转译为因果或递进关系",
+   "识别宾补前置结构（accept as well founded the charge），还原正常语序再翻译",
+   "固定短语（train of thought, common run of men）需整体理解，不可逐字硬译",
+   "抽象名词（tastes, charge, power）需结合上下文选择恰当的具体含义"
+  ]
+ }
+}

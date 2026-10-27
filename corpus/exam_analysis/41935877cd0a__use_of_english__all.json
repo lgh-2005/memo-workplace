@@ -1,0 +1,311 @@
+{
+ "schemaVersion": 1,
+ "id": "41935877cd0a__use_of_english__all",
+ "examId": "41935877cd0a",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2016 年考研英语真题",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:33:09.825Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 115603,
+ "usage": {
+  "prompt_tokens": 1746,
+  "completion_tokens": 7728,
+  "total_tokens": 9474,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1746,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 7728,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1746,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "柬埔寨传统婚俗与离婚制度",
+  "gist": "文章介绍了柬埔寨的婚姻习俗，包括择偶过程中家庭和媒人的参与、传统婚礼仪式的流程与演变、新婚后的居住安排，以及离婚的法律规定和财产分割方式，并指出其中存在的性别偏见。",
+  "difficulty": "中等",
+  "translation": "在柬埔寨，对年轻男性而言，选择配偶是一件复杂的事情。这不仅可能涉及他的父母和朋友以及年轻女方的父母和朋友，还可能涉及媒人。年轻男子可以自行选定一位合适的配偶，然后请父母安排婚姻谈判；或者由男方父母选择配偶，孩子在人选上几乎没有发言权。理论上，女孩可以否决父母为她选定的配偶。配偶选定之后，双方家庭会互相调查，以确保自己的孩子嫁入（或娶入）一个好家庭。\n\n传统婚礼是一场漫长而多彩的活动。过去婚礼持续三天，但到20世纪80年代，通常缩短为一天半。佛教僧侣会进行简短的布道并诵读祝福祷文。仪式的部分环节包括仪式性的剪发、将浸泡过圣水的棉线系在新娘和新郎的手腕上，以及在一圈婚姻幸福且受人尊敬的夫妇间传递蜡烛，以祝福这段姻缘。新婚夫妇传统上会搬去与女方父母同住，可能与他们一起住长达一年，直到能在附近建造新房。\n\n离婚是合法的，也容易获得，但并不常见。离婚者会受到一定程度的非议。每位配偶保留各自带入婚姻的任何财产，共同获得的财产则平均分配。离婚者可以再婚，但性别偏见随之显现：离婚男性再婚前没有等待期，而女性则必须等待十个月。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "A",
+    "correct": "as well as",
+    "why": "句中有 not only…but also 结构，空格处需要一个表示并列添加的连接词，将\"他的父母和朋友\"与\"年轻女方的（父母和朋友）\"并列，as well as（以及）完美衔接。",
+    "traps": "B) by way of（经由、通过）表方式，不能并列名词短语；C) on behalf of（代表）表代理关系，语义不合；D) with regard to（关于）表涉及话题，破坏并列结构。",
+    "tip": "not only A as well as B, but also C 多重并列结构识别。"
+   },
+   {
+    "number": 2,
+    "answer": "D",
+    "correct": "decide on",
+    "why": "上下文说年轻男子可以自行\"选定\"配偶然后请父母安排谈判，decide on（决定、选定）符合\"主动选择\"的语义；且与后文 parents may make the choice 形成对比。",
+    "traps": "A) adapt to（适应）语义不通，不能接 spouse 作宾语表选择；B) provide for（供养）指经济上的赡养，逻辑偏离；C) compete with（与…竞争）语义方向完全错误。",
+    "tip": "decide on 表\"选定某人/某物\"，是常考动词短语搭配。"
+   },
+   {
+    "number": 3,
+    "answer": "C",
+    "correct": "arrange",
+    "why": "选定配偶后请父母\"安排\"婚姻谈判，arrange the marriage negotiations 是语义和搭配上的最佳选择，表示操办、筹划。",
+    "traps": "A) renew（续签、更新）暗示谈判已存在，与首次择偶矛盾；B) close（结束）跳过谈判过程不合逻辑；D) postpone（推迟）与积极推进婚事的语境相反。",
+    "tip": "arrange 常搭配 meeting/event/negotiation，表示\"安排、筹备\"。"
+   },
+   {
+    "number": 4,
+    "answer": "A",
+    "correct": "In theory",
+    "why": "前文说父母做主孩子几乎无发言权，此处用 In theory（理论上）引出\"女孩可以否决\"，暗示理论权利与实际情况可能不同，形成隐性转折。",
+    "traps": "B) In time（最终、及时）强调时间推移，不能体现理论与实践的对比；C) Above all（最重要的是）用于强调最关键信息，此处非总结；D) For example（例如）用于举例说明，但此句并非对前文的举例。",
+    "tip": "In theory 常暗含\"理论上如此，实际未必\"的让步转折意味。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "After",
+    "why": "文意为\"配偶选定之后，双方家庭互相调查\"，表示时间先后顺序，After 引导时间状语从句最为恰当。",
+    "traps": "A) Although（虽然）表让步，前后句无转折关系；B) Lest（以免）表目的防范，语义不通；D) Unless（除非）表条件排除，逻辑不符。",
+    "tip": "After 引导时间状语从句，标志事件的先后顺序。"
+   },
+   {
+    "number": 6,
+    "answer": "B",
+    "correct": "into",
+    "why": "marry into a good family 是固定搭配，意为\"嫁入/娶入一个好人家\"，强调通过婚姻成为某家庭一员。",
+    "traps": "A) within（在…之内）不与 marry 构成习惯搭配；C) from（来自）表示出身而非嫁娶方向；D) through（通过）表途径手段，不表示加入家庭。",
+    "tip": "marry into 为固定搭配，意为\"因婚姻而加入（某家庭/阶层）\"。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "but",
+    "why": "前句说婚礼过去持续三天，后句说到80年代缩短为一天半，前后构成转折对比，but 最恰当。",
+    "traps": "A) since（自从、因为）表时间起点或因果，不能体现\"缩短\"这一对比；B) or（或者）表选择关系，不符句间逻辑；C) so（所以）表因果，三天与一天半间无因果关系。",
+    "tip": "前后时间段的变化构成转折，用 but 连接。"
+   },
+   {
+    "number": 8,
+    "answer": "B",
+    "correct": "recite",
+    "why": "佛教僧侣\"诵读\"祝福祷文，recite prayers 是宗教仪式中的常见搭配，意为念诵、背诵。",
+    "traps": "A) test（测试）与祈祷词无搭配关系；C) copy（抄写）指书面复制行为，不符口头仪式场景；D) create（创造）暗示祷文是现编的，不合宗教仪式惯例。",
+    "tip": "recite prayers/poems 为固定搭配，意为\"诵读祈祷文/诗歌\"。"
+   },
+   {
+    "number": 9,
+    "answer": "D",
+    "correct": "tying",
+    "why": "将棉线\"系在\"手腕上，tying...around the wrists 动作搭配准确，且与 around 搭配自然。",
+    "traps": "A) folding（折叠）指对折动作，无法表达绑在手腕上的意思；B) piling（堆放）指堆叠，与线系手腕的动作不符；C) wrapping（缠绕、包裹）虽含围绕义，但强调整体包裹而非系结，不够精确。",
+    "tip": "tying...around 表示\"将…系在…周围\"，常用于绳线类搭配。"
+   },
+   {
+    "number": 10,
+    "answer": "A",
+    "correct": "passing",
+    "why": "在一圈夫妇间\"传递\"蜡烛，passing a candle around a circle 表示轮流传递的仪式动作，around a circle 进一步确认是环绕传递。",
+    "traps": "B) lighting（点燃）只描述点火瞬间，无法与 around a circle 搭配表传递；C) hiding（隐藏）与祝福仪式的公开性相悖；D) serving（端上、提供）不与 candle 构成合理搭配。",
+    "tip": "pass...around 表示\"在人群中传递\"，是常考短语搭配。"
+   },
+   {
+    "number": 11,
+    "answer": "D",
+    "correct": "union",
+    "why": "bless the union 祝福这段\"姻缘/结合\"，union 在婚姻语境中特指夫妻结合，与前文婚礼仪式完美对应。",
+    "traps": "A) association（协会、联合）偏正式组织义，不指婚姻；B) meeting（会面、会议）与婚姻无关；C) collection（收藏品、聚集）语义完全偏离婚姻主题。",
+    "tip": "union 在婚礼语境中专指\"婚姻结合\"，是高频考查语义。"
+   },
+   {
+    "number": 12,
+    "answer": "C",
+    "correct": "live",
+    "why": "新婚夫妇搬去与女方父母\"同住\"，live with them 表示共同居住，与前文 move in with 语义衔接。",
+    "traps": "A) grow（成长）虽可说 grow with，但语义偏\"一起成长\"而非同住；B) part（分离）与搬去同住的语境完全矛盾；D) deal（处理）需加 with 且意为应对，不表居住。",
+    "tip": "live with 表\"与…同住\"，与 move in with 构成语义连贯。"
+   },
+   {
+    "number": 13,
+    "answer": "B",
+    "correct": "until",
+    "why": "与女方父母同住长达一年，\"直到\"能在附近建新房为止。until 表示动作持续的时间终点，逻辑通顺。",
+    "traps": "A) whereas（然而）表对比转折，前后句无对立关系；C) for（因为）表原因，同住与建房之间非因果关系；D) if（如果）表条件假设，但建新房是确定性计划而非不确定条件。",
+    "tip": "until 标志时间终点，常与表持续性的动作连用。"
+   },
+   {
+    "number": 14,
+    "answer": "B",
+    "correct": "obtain",
+    "why": "离婚合法且容易\"获得\"，obtain a divorce 是法律语境中的固定表达，意为取得离婚许可。",
+    "traps": "A) follow（遵循）不与 divorce 搭配，语义不通；C) challenge（挑战、质疑）暗示对抗，与 easy 矛盾；D) avoid（避免）与前文说离婚合法且容易的正面陈述相矛盾。",
+    "tip": "obtain a divorce 是法律用语固定搭配，意为\"获准离婚\"。"
+   },
+   {
+    "number": 15,
+    "answer": "C",
+    "correct": "viewed",
+    "why": "离婚者被\"看待\"时带有一定非议，viewed with disapproval 是固定搭配，意为\"被以不赞成的眼光看待\"。",
+    "traps": "A) isolated with（被孤立）搭配不当，isolated 通常接 from；B) persuaded with（被说服）逻辑不通，无法与 disapproval 搭配；D) exposed with 搭配错误，exposed 通常接 to。",
+    "tip": "be viewed with + 态度名词，表示\"被以某种态度看待\"。"
+   },
+   {
+    "number": 16,
+    "answer": "A",
+    "correct": "whatever",
+    "why": "每位配偶保留\"无论什么\"财产，whatever 引导名词性从句修饰 property，表示\"凡是…的一切财产\"。",
+    "traps": "B) however（无论多么）修饰形容词或副词，不能直接修饰名词 property；C) whenever（无论何时）表时间，不能作 property 的限定语；D) wherever（无论何处）表地点，不能修饰名词 property。",
+    "tip": "whatever + 名词，表\"无论什么样的…\"，引导名词性从句。"
+   },
+   {
+    "number": 17,
+    "answer": "B",
+    "correct": "brought",
+    "why": "各自\"带入\"婚姻中的财产，brought into the marriage 表示婚前携带进入婚姻的个人财产，与 jointly-acquired 形成对比。",
+    "traps": "A) changed into（变成）语义不通，财产不能变成婚姻；C) shaped into（塑造成）不合逻辑；D) pushed into（推入）过于口语且含强迫义，不合财产语境。",
+    "tip": "bring into the marriage 意为\"带入婚姻中（的婚前财产）\"。"
+   },
+   {
+    "number": 18,
+    "answer": "D",
+    "correct": "divided",
+    "why": "共同获得的财产被平均\"分配\"，divided equally 表示均等分割，是离婚财产处理的标准表达。",
+    "traps": "A) withdrawn（撤回、提取）不含\"分配\"义；B) invested（投资）指资金投入，与财产分割无关；C) donated（捐赠）指赠予他人，不是夫妻间分割。",
+    "tip": "divided equally 是财产分割的标准法律用语。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "shows",
+    "why": "性别偏见\"显现出来\"，shows up 意为出现、暴露，表明偏见在再婚规定中浮现。",
+    "traps": "A) clears up（澄清、放晴）表消除而非出现，语义相反；C) warms up（热身、升温）不与 prejudice 搭配；D) breaks up（分裂、分手）含瓦解义，不表显现。",
+    "tip": "show up 意为\"出现、显露\"，是常考动词短语。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "correct": "while",
+    "why": "男性无等待期，\"而\"女性须等十个月，while 表示对比转折，突出男女待遇的不同。",
+    "traps": "B) once（一旦）表时间条件，无法体现性别对比；C) so that（以便）表目的，前后句无目的关系；D) in that（因为）表原因解释，但后句并非对前句的解释。",
+    "tip": "while 表对比转折，连接两种截然不同的情况。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "spouse",
+    "cn": "配偶（n.）"
+   },
+   {
+    "w": "matchmaker",
+    "cn": "媒人（n.）"
+   },
+   {
+    "w": "veto",
+    "cn": "否决、拒绝（v.）"
+   },
+   {
+    "w": "sermon",
+    "cn": "布道、讲道（n.）"
+   },
+   {
+    "w": "ritual",
+    "cn": "仪式的、礼节性的（adj.）"
+   },
+   {
+    "w": "soaked",
+    "cn": "浸泡过的（adj.）"
+   },
+   {
+    "w": "wrist",
+    "cn": "手腕（n.）"
+   },
+   {
+    "w": "newlyweds",
+    "cn": "新婚夫妇（n.）"
+   },
+   {
+    "w": "jointly-acquired",
+    "cn": "共同获得的（adj.）"
+   },
+   {
+    "w": "prejudice",
+    "cn": "偏见、成见（n.）"
+   },
+   {
+    "w": "disapproval",
+    "cn": "不赞成、非议（n.）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "not only…but also",
+    "role": "递进关系，说明择偶所涉及的人群范围逐层扩大。"
+   },
+   {
+    "w": "but（第7题）",
+    "role": "转折对比，婚礼时长由过去三天缩短至一天半。"
+   },
+   {
+    "w": "until",
+    "role": "表示时间终点，与父母同住持续到能建新房为止。"
+   },
+   {
+    "w": "while（第20题）",
+    "role": "对比转折，突出离婚后男女再婚等待期的不平等差异。"
+   },
+   {
+    "w": "After",
+    "role": "时间顺序，标志选定配偶之后开始家庭调查的先后关系。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "23639759d84c__translation__all",
+ "examId": "23639759d84c",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2024 年考研英语真题",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:55:29.054Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63021,
+ "usage": {
+  "prompt_tokens": 1370,
+  "completion_tokens": 4736,
+  "total_tokens": 6106,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1370,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4736,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1370,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "非洲大象的空间记忆与嗅觉觅食能力",
+  "translation": "\"大象从不遗忘\"——至少人们是这么说的——而这一民间说法似乎有一定的根据。\n\n非洲稀树草原象，又称非洲丛林象，分布在37个非洲国家。它们在多种栖息地之间迁移，包括森林、草原、林地、湿地和农田。它们有时会跋涉六十多英里去寻找食物或水源，并且非常善于判断其他大象的位置——即使那些大象不在视线范围内。研究人员利用追踪设备证明，大象具有\"非凡的空间感知力\"。在寻找水坑时，它们能朝着完全正确的方向出发，有一次是从大约三十英里之外。更重要的是，它们似乎几乎总是选择最近的水坑。研究人员确信，大象始终精确地知道自己相对于所需一切资源的位置，因此既能抄近路，也能沿着熟悉的路线行进。\n\n尽管非洲大象用于长距离导航的线索尚不为人所知，但嗅觉很可能在其中发挥了作用。\n\n大象是非常挑剔的食客，但直到最近，人们对它们如何选择食物还知之甚少。一种可能的解释是，它们仅仅用眼睛观察并尝试所发现的植物，但那样做很可能会浪费大量时间和精力，尤其是因为它们的视力其实并不太好。\n\n植物产生的挥发性化学物质能够传播很远的距离，而且具有很强的特异性：每种植物或树木都有其独特的气味标识。此外，即使植物本身并不可见，这些化学物质也能被探测到。新的研究表明，嗅觉是引导大象——也可能包括其他食草动物——找到最佳食物资源的关键因素。\n\n研究人员首先确定了大象在自由觅食时偏好食用或回避哪些植物。然后他们设置了一个\"食物站\"实验，在实验中仅根据气味给大象提供一系列选择。实验表明，大象很可能利用嗅觉来识别适合食用的树丛，其次还能评估每片树丛中树木的质量。自由活动的大象想必也会利用这些信息来定位它们偏好的食物。\n\n大象发达的海马体结构可能使它们像老鼠和人类一样，能够构建认知地图。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "They sometimes travel more than sixty miles to find food or water, and are very good at working out where other elephants are—even when they are out of sight.",
+    "cn": "它们有时会跋涉六十多英里去寻找食物或水源，并且非常善于判断其他大象的位置——即使那些大象不在视线范围内。",
+    "structure": "主语They后接两个并列谓语：travel...和are very good at...；working out后接宾语从句where other elephants are；破折号后even when引导让步状语从句，修饰前面整个判断行为。",
+    "points": [
+     "work out译为\"弄清楚、判断出\"，体现推断含义",
+     "where other elephants are宾语从句须译为\"其他大象在哪里/的位置\"",
+     "out of sight译为\"不在视线范围内/看不见\"，语义完整"
+    ],
+    "pitfall": "work out易误译为\"锻炼\"\"解决\"，此处指通过思考\"判断出、弄清楚\"；out of sight的主语是other elephants而非主语They，需明确是\"那些大象\"看不见。"
+   },
+   {
+    "number": 47,
+    "en": "The researchers are convinced that the elephants always know precisely where they are in relation to all the resources they need, and can therefore take shortcuts, as well as following familiar routes.",
+    "cn": "研究人员确信，大象始终精确地知道自己相对于所需一切资源的位置，因此既能抄近路，也能沿着熟悉的路线行进。",
+    "structure": "主句The researchers are convinced后接that宾语从句；从句中elephants为主语，know和can take为并列谓语；where they are为know的宾语从句；in relation to...为介词短语作状语；as well as following...为补充并列成分。",
+    "points": [
+     "in relation to译为\"相对于、与……的关系\"，体现空间关系",
+     "take shortcuts译为\"抄近路、走捷径\"",
+     "as well as following familiar routes译为\"也能沿着熟悉的路线\"，体现并列补充关系"
+    ],
+    "pitfall": "in relation to易漏译或误解；as well as following familiar routes在句法上与take shortcuts并列，翻译时须体现\"既……也……\"的逻辑关系，不可遗漏。"
+   },
+   {
+    "number": 48,
+    "en": "One possibility was that they merely used their eyes and tried out the plants they found, but that would probably result in a lot of wasted time and energy, not least because their eyesight is actually not very good.",
+    "cn": "一种可能的解释是，它们仅仅用眼睛观察并尝试所发现的植物，但那样做很可能会浪费大量时间和精力，尤其是因为它们的视力其实并不太好。",
+    "structure": "主句One possibility was后接that引导的表语从句；but连接转折分句，主语that指代前述做法；result in为谓语短语；not least because引导原因状语从句说明理由。",
+    "points": [
+     "tried out译为\"尝试\"，区别于try",
+     "result in译为\"导致、造成\"",
+     "not least because译为\"尤其是因为、很大程度上是因为\""
+    ],
+    "pitfall": "not least because是考研高频短语，意为\"尤其是因为\"，易误译为\"不仅仅因为\"或\"至少因为\"；tried out指实际品尝试吃，不可简单译为\"试试看\"。"
+   },
+   {
+    "number": 49,
+    "en": "The volatile chemicals produced by plants can be carried a long way, and they are very characteristic: Each plant or tree has its own particular odor signature.",
+    "cn": "植物产生的挥发性化学物质能够传播很远的距离，而且它们具有很强的特异性：每种植物或树木都有其独特的气味标识。",
+    "structure": "第一分句中produced by plants为过去分词短语作后置定语修饰chemicals；can be carried为被动语态谓语；and连接第二分句；冒号后的句子对characteristic进行解释说明。",
+    "points": [
+     "volatile chemicals译为\"挥发性化学物质\"，专业术语须准确",
+     "odor signature译为\"气味标识/气味特征\"，体现独特性含义",
+     "冒号后解释说明的翻译需与前文衔接通顺"
+    ],
+    "pitfall": "volatile易误译为\"不稳定的\"，此处为化学术语\"挥发性的\"；odor signature是比喻用法，signature指如同签名般独一无二的\"标识\"，不可直译为\"气味签名\"。"
+   },
+   {
+    "number": 50,
+    "en": "The experiment showed that elephants may well use smell to identify patches of trees that are good to eat, and secondly to assess the quality of the trees within each patch.",
+    "cn": "实验表明，大象很可能利用嗅觉来识别适合食用的树丛，其次还能评估每片树丛中树木的质量。",
+    "structure": "主句The experiment showed后接that宾语从句；从句中use smell to identify...and (secondly) to assess...为并列不定式结构共同作目的状语；that are good to eat为定语从句修饰patches of trees；within each patch为介词短语作后置定语。",
+    "points": [
+     "may well译为\"很可能\"，表示较大的可能性",
+     "patches of trees译为\"树丛、成片的树木\"",
+     "to identify...and secondly to assess...并列结构须完整译出两层含义"
+    ],
+    "pitfall": "may well易误译为\"可以很好地\"，实为固定搭配\"很可能\"；patches of trees中patch指\"一片、一块（区域）\"，须译为\"树丛\"而非\"补丁\"；secondly提示两个不定式是并列层次关系。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "spatial acuity",
+    "cn": "空间感知力（名词短语）"
+   },
+   {
+    "w": "waterhole",
+    "cn": "水坑，水塘（n.）"
+   },
+   {
+    "w": "work out",
+    "cn": "弄清楚，判断出（动词短语）"
+   },
+   {
+    "w": "shortcut",
+    "cn": "捷径（n.）"
+   },
+   {
+    "w": "in relation to",
+    "cn": "相对于，与……的关系（介词短语）"
+   },
+   {
+    "w": "choosy",
+    "cn": "挑剔的（adj.）"
+   },
+   {
+    "w": "not least",
+    "cn": "尤其，特别（副词短语）"
+   },
+   {
+    "w": "volatile",
+    "cn": "挥发性的（adj.）"
+   },
+   {
+    "w": "odor signature",
+    "cn": "气味标识，气味特征（名词短语）"
+   },
+   {
+    "w": "herbivore",
+    "cn": "食草动物（n.）"
+   },
+   {
+    "w": "forage",
+    "cn": "觅食（v.）"
+   },
+   {
+    "w": "patch",
+    "cn": "一片，一小块（区域）（n.）"
+   },
+   {
+    "w": "hippocampal",
+    "cn": "海马体的（adj.）"
+   },
+   {
+    "w": "cognitive map",
+    "cn": "认知地图（名词短语）"
+   },
+   {
+    "w": "may well",
+    "cn": "很可能（固定搭配）"
+   }
+  ],
+  "skills": [
+   "注意动词短语的语境义：work out在此为\"判断出\"而非\"锻炼\"，result in为\"导致\"，tried out为\"尝试品尝\"",
+   "固定搭配须准确：may well（很可能）、not least because（尤其是因为）、in relation to（相对于）",
+   "后置定语的前置处理：produced by plants、within each patch等应调整为汉语前置定语语序",
+   "专业术语需精准：volatile chemicals（挥发性化学物质）、odor signature（气味标识）、cognitive map（认知地图）",
+   "冒号与破折号的翻译处理：冒号后为解释说明，破折号后为补充限定，翻译时需保持逻辑衔接"
+  ]
+ }
+}

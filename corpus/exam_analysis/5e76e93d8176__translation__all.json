@@ -1,0 +1,162 @@
+{
+ "schemaVersion": 1,
+ "id": "5e76e93d8176__translation__all",
+ "examId": "5e76e93d8176",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2015 年 12 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T04:36:00.912Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 69695,
+ "usage": {
+  "prompt_tokens": 606,
+  "completion_tokens": 7091,
+  "total_tokens": 7697,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5665
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 606
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中美父母教育方式对比",
+  "reference": "In China, parents always try their best to help their children, even making important decisions for them, regardless of what the children want, because they believe that doing so is for the good of the children. As a result, children's growth and education often yield to their parents' will. If parents decide to sign their child up for an extracurricular class in order to increase the child's chances of being admitted to a key school, they will stick to their decision even if the child is not interested at all. In the United States, however, parents are likely to respect their children's opinions and pay more attention to their views when making decisions. Chinese parents' great emphasis on education may be praiseworthy. However, they should learn from American parents how to balance the relationship between parents and children when it comes to education.",
+  "sentences": [
+   {
+    "cn": "在中国,父母总是竭力帮助孩子，甚至为孩子做重要决定，而不管孩子想要什么,因为他们相信这样做是为孩子好。",
+    "en": "In China, parents always try their best to help their children, even making important decisions for them, regardless of what the children want, because they believe that doing so is for the good of the children.",
+    "structure": "主句 + 现在分词短语作伴随状语 + regardless of 引导让步状语从句 + because 引导原因状语从句。",
+    "keys": [
+     "竭力帮助 try one's best to help",
+     "做重要决定 make important decisions",
+     "为...好 for the good of"
+    ]
+   },
+   {
+    "cn": "结果,孩子的成长和教育往往屈从于父母的意愿。",
+    "en": "As a result, children's growth and education often yield to their parents' will.",
+    "structure": "简单句；句首 as a result 作结果状语，yield to 表示“屈从于”。",
+    "keys": [
+     "结果 as a result",
+     "成长和教育 growth and education",
+     "屈从于 yield to"
+    ]
+   },
+   {
+    "cn": "如果父母决定为孩子报名参加一个课外班,以增加其被重点学校录取的机会，他们会坚持自己的决定，即使孩子根本不感兴趣。",
+    "en": "If parents decide to sign their child up for an extracurricular class in order to increase the child's chances of being admitted to a key school, they will stick to their decision even if the child is not interested at all.",
+    "structure": "if 引导条件状语从句 + in order to 引导目的状语 + 主句 + even if 引导让步状语从句。",
+    "keys": [
+     "报名参加 sign up for",
+     "课外班 extracurricular class",
+     "重点学校 key school",
+     "录取 admission"
+    ]
+   },
+   {
+    "cn": "然而在美国,父母很可能会尊重孩子的意见，并在决策时更注重他们的意见。",
+    "en": "In the United States, however, parents are likely to respect their children's opinions and pay more attention to their views when making decisions.",
+    "structure": "however 插入语表转折；and 连接并列谓语；when making decisions 现在分词作时间状语。",
+    "keys": [
+     "尊重孩子的意见 respect children's opinions",
+     "更注重 pay more attention to",
+     "决策 make decisions"
+    ]
+   },
+   {
+    "cn": "中国父母十分重视教育或许值得称赞。",
+    "en": "Chinese parents' great emphasis on education may be praiseworthy.",
+    "structure": "名词化主语 Chinese parents' great emphasis on education + 谓语 may be + 表语 praiseworthy。",
+    "keys": [
+     "十分重视教育 great emphasis on education",
+     "值得称赞 praiseworthy"
+    ]
+   },
+   {
+    "cn": "然而，他们应向美国父母学习在涉及教育时如何平衡父母与子女间的关系。",
+    "en": "However, they should learn from American parents how to balance the relationship between parents and children when it comes to education.",
+    "structure": "however 句首转折；learn from sb. how to do sth. 结构 + when it comes to 引导话题状语。",
+    "keys": [
+     "向...学习 learn from",
+     "平衡关系 balance the relationship",
+     "涉及教育 when it comes to education"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "课外班",
+    "en": "extracurricular class"
+   },
+   {
+    "cn": "重点学校",
+    "en": "key school"
+   },
+   {
+    "cn": "录取",
+    "en": "admission"
+   },
+   {
+    "cn": "尊重孩子的意见",
+    "en": "respect children's opinions"
+   },
+   {
+    "cn": "平衡父母与子女间的关系",
+    "en": "balance the relationship between parents and children"
+   },
+   {
+    "cn": "涉及教育",
+    "en": "when it comes to education"
+   },
+   {
+    "cn": "值得称赞",
+    "en": "praiseworthy"
+   },
+   {
+    "cn": "报名参加",
+    "en": "sign up for"
+   }
+  ],
+  "pitfalls": [
+   "“而不管孩子想要什么”直译为 no matter what children want 虽可接受但不够简洁，建议用 regardless of what children want。",
+   "“报名参加课外班”漏译“报名”，只写 join a class，应使用 sign up for 或 enroll in。",
+   "“重点学校”误译为 important school，正确说法是 key school。",
+   "“录取机会”误用 admission opportunity，地道说法为 chances of being admitted。",
+   "“平衡父母与子女间的关系”直译为 balance parent-child relationship 易产生歧义，应说明 relationship between parents and children。"
+  ],
+  "upgrades": [
+   {
+    "plain": "try their best to help",
+    "better": "spare no effort to help",
+    "note": "后者语气更强，更能体现“竭力”的主动付出，符合书面语。"
+   },
+   {
+    "plain": "pay more attention to their opinions",
+    "better": "attach greater importance to their views",
+    "note": "后者用词更正式，且用 views 替换 opinions 避免重复。"
+   },
+   {
+    "plain": "Chinese parents attach great importance to education",
+    "better": "The great emphasis Chinese parents place on education",
+    "note": "名词化结构使句子主语更简洁，表达更高级书面化。"
+   },
+   {
+    "plain": "when it comes to education",
+    "better": "in matters of education",
+    "note": "后者更简洁正式，适合在介词短语中替换从句。"
+   }
+  ]
+ }
+}

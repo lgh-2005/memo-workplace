@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "fb33dacfb808__listening__all",
+ "examId": "fb33dacfb808",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2019 年 12 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:22:56.310Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55119,
+ "usage": {
+  "prompt_tokens": 2201,
+  "completion_tokens": 2709,
+  "total_tokens": 4910,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2201,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2709,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2201,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析仅基于题目选项的语言特征与正确答案进行推断分析，不涉及任何编造的录音内容。",
+  "overview": "本场听力共 7 段，前两段（Q1-Q4、Q5-Q8）各 4 题，为长对话；后五段（Q9-Q11、Q12-Q15、Q16-Q18、Q19-Q21、Q22-Q25）分别为 3 题或 4 题，为短文或讲座。话题涵盖：职业与日常工作、影视作品推荐、运动与退休健康、走神与创造力、北欧古建筑保护、婴儿认知能力、团队合作利弊等，题材多元且贴近社会科学与生活。",
+  "strategy": [
+   "预读选项圈出关键名词和形容词，快速锁定每题问的是人物、行为、态度还是原因",
+   "长对话中注意转折词 but/however/actually 后的信息，往往是出题点",
+   "短文听力开头首句与结尾总结句常对应第一题和末题答案",
+   "选项中出现绝对词 all/never/always 的多为干扰项，优先排除",
+   "遇到态度题（fascinating/tiresome/enjoyable 等形容词并列），留意说话者语气和评价性用语",
+   "数字、时间等细节题需边听边记笔记，不要依赖短时记忆"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "时尚媒体从业者的工作内容与职业感受",
+    "optionSignals": "Q1 四选项均为职业身份名词，问\"身份/职业\"；Q2 为动名词短语，问日常工作内容；Q3 为 It is + 形容词，问对工作的评价/态度；Q4 为 Her + 抽象名词，问某种个人品质。",
+    "tips": [
+     "Q1 四个职业中 features editor 最具体且不常见，听到 feature/edit 相关词即可锁定",
+     "Q3 四个形容词感情色彩差异大（正面 fascinating vs. 负面 tiresome），注意说话者语气即可区分",
+     "Q4 persistence 强调坚持不懈，对应 keep trying/not give up 等同义表达"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "关于一部影视作品的讨论与评价",
+    "optionSignals": "Q5 为 It is + 形容词，问整体评价；Q6 四选项为长句描述作品特点；Q7 为祈使句/动词原形，问将要采取的行动；Q8 为 It has/is 句式，问作品的某项事实特征。",
+    "tips": [
+     "Q6 选项 D 提到 written, directed, edited and produced by Frankie himself，信息极具体，若听到'一人包办'相关表述即选",
+     "Q7 download and watch 与 go to the theater 形成对比，注意对话中提到的观看方式",
+     "Q8 showing for over a decade 为时间细节，需留意数字线索"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "运动、退休与健康长寿的关系",
+    "optionSignals": "Q9 四选项均以 They 开头描述某类人的行为/信念，问特定人群特点；Q10 同样以 They 开头涉及退休后寿命，问退休与寿命关系；Q11 为 It + 动词短语，问某事物的作用/好处。",
+    "tips": [
+     "Q9 选项 C keep moving to avoid getting hurt 与 A getting injured when moving too fast 形成对立，是典型的正反干扰对",
+     "Q10 注意 A 和 B 结论完全相反（寿命短 vs. 寿命长），听清因果逻辑即可排除",
+     "Q11 prevents us from worrying 属于否定式好处表述，注意同义替换如 reduce anxiety"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "走神（daydreaming）与创造力、任务表现的研究",
+    "optionSignals": "Q12 以 It 指代人的 mind，描述走神的频率或特征；Q13 以 To find/observe/see/study 开头，问研究目的；Q14-15 分别问走神的好处与实验结果。选项中 daydreaming 反复出现，为核心主题词。",
+    "tips": [
+     "Q12 选项 B 'almost half of their waking time' 含具体比例，属于高频考点细节",
+     "Q14 四选项均为正面效果，需听清具体对应的是 creativity 而非 decision/potential",
+     "Q15 两组对比 daydreamers vs. non-daydreamers 的表现，注意比较结论的方向"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "北欧（斯堪的纳维亚）古老木质建筑的历史与现状",
+    "optionSignals": "Q16 以 They are 描述建筑现状，含 oldest/Christian/tourists/worsening 等线索；Q17 同为 They are/have 句式描述建筑特征，涉及年代、高度、地基等细节；Q18 问原因，四选项分别涉及自然和谐、保暖、木材丰富、维京人偏好。",
+    "tips": [
+     "Q16 worsening condition 为负面评价，若听到 deteriorate/decay/damage 等词即对应",
+     "Q17 without foundations 是极端表述，但作为正确答案说明听力中确有对应信息，注意 no foundation 的同义表达",
+     "Q18 timber was abundant 属于资源充足的因果解释，注意 plentiful/rich in 等替换词"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "人类婴儿的认知与感知能力研究",
+    "optionSignals": "Q19 选项为名词短语概括文章主题，其中 abilities of human babies 最宽泛；Q20 以 They can/love/fall asleep 描述婴儿对音乐的反应；Q21 为短名词短语，问某项研究聚焦的具体方面。",
+    "tips": [
+     "Q19 主旨题宜选概括性最强的选项，D 'Abilities of human babies' 覆盖面最广",
+     "Q20 区分 distinguish（区分）与 love（偏好），两者语义不同，注意动词细节",
+     "Q21 emotions 与 facial expressions 易混淆，注意表情是情绪的外在表现，但研究对象不同"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "团队合作的潜在弊端与利弊权衡",
+    "optionSignals": "Q22-23 选项多含 may/can + 负面结果，问团队合作的缺点；Q24 选项为 They can + 正面结果，问好处；Q25 又回到 may + 负面后果。整组选项正反交替，考查对 teamwork 两面性的把握。",
+    "tips": [
+     "Q22 hinder individual career advancement 与 Q23 hard to get contributions recognized 角度接近但层次不同，前者问宏观影响，后者问具体表现",
+     "Q24 enlarge professional circle 对应 networking/connections 等常见听力表达",
+     "Q25 prevent making a timely decision 涉及效率问题，注意 delay/slow down 等同义词"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "persistence",
+    "cn": "坚持不懈，毅力"
+   },
+   {
+    "w": "fascinating",
+    "cn": "迷人的，极有吸引力的"
+   },
+   {
+    "w": "satire",
+    "cn": "讽刺作品"
+   },
+   {
+    "w": "daydreaming",
+    "cn": "走神，白日梦"
+   },
+   {
+    "w": "creativity",
+    "cn": "创造力"
+   },
+   {
+    "w": "deteriorating",
+    "cn": "恶化的，变坏的"
+   },
+   {
+    "w": "foundation",
+    "cn": "地基，基础"
+   },
+   {
+    "w": "timber",
+    "cn": "木材，木料"
+   },
+   {
+    "w": "cognitive",
+    "cn": "认知的"
+   },
+   {
+    "w": "distinguish",
+    "cn": "区分，辨别"
+   },
+   {
+    "w": "hinder",
+    "cn": "阻碍，妨碍"
+   },
+   {
+    "w": "contribution",
+    "cn": "贡献，功劳"
+   },
+   {
+    "w": "expertise",
+    "cn": "专业知识，专长"
+   },
+   {
+    "w": "divorced from",
+    "cn": "与……脱节，脱离"
+   }
+  ]
+ }
+}

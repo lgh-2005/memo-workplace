@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "26d64559a7b3__writing__all",
+ "examId": "26d64559a7b3",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2020 年 12 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:31:25.064Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44422,
+ "usage": {
+  "prompt_tokens": 692,
+  "completion_tokens": 2786,
+  "total_tokens": 3478,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 692,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2786,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 692,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"为什么应鼓励学生培养有效沟通能力\"展开论述，要求150-200词，需给出理由与论证。",
+    "outline": [
+     "开篇引出话题：在当今社会，有效沟通能力对学生愈发重要，点明应鼓励学生培养该能力。",
+     "主体段分层论证原因：①提升学业表现（课堂讨论、团队协作）；②助力职业发展（雇主看重沟通力）；③促进人际关系与社会适应。",
+     "结尾总结全文，呼吁学校将沟通能力训练纳入课程体系，强调其对学生全面发展的深远意义。"
+    ],
+    "sample": "In the contemporary era, effective communication skills have become increasingly indispensable for students. There are several compelling reasons why educational institutions should actively encourage students to cultivate these essential abilities.\n\nFirst and foremost, proficient communication skills significantly enhance students' academic performance. Those who can articulate their ideas clearly tend to participate more actively in classroom discussions and collaborate more effectively with peers on group projects. Furthermore, strong communication abilities lay a solid foundation for students' future careers. In today's competitive job market, employers consistently prioritize candidates who demonstrate excellent interpersonal and presentation skills over those who merely possess technical expertise.\n\nAdditionally, effective communication fosters stronger social relationships. Students equipped with these skills can resolve conflicts diplomatically, build meaningful connections, and navigate diverse social environments with greater confidence.\n\nIn conclusion, encouraging students to develop effective communication skills is not merely an academic endeavor but a vital investment in their holistic growth. Schools and universities should integrate communication training into their curricula to prepare students for the multifaceted challenges ahead.",
+    "phrases": [
+     {
+      "en": "increasingly indispensable",
+      "cn": "日益不可或缺的；用于强调某事物重要性持续上升，比important更高级"
+     },
+     {
+      "en": "cultivate essential abilities",
+      "cn": "培养核心能力；cultivate比develop更正式，常用于教育语境"
+     },
+     {
+      "en": "articulate one's ideas clearly",
+      "cn": "清晰地表达自己的想法；articulate作动词比express更书面、更精准"
+     },
+     {
+      "en": "lay a solid foundation for",
+      "cn": "为……奠定坚实基础；经典搭配，适用于因果论证段"
+     },
+     {
+      "en": "prioritize A over B",
+      "cn": "优先考虑A而非B；用于对比论证，体现逻辑层次"
+     },
+     {
+      "en": "resolve conflicts diplomatically",
+      "cn": "圆融地解决冲突；diplomatically体现高级副词运用"
+     },
+     {
+      "en": "navigate diverse social environments",
+      "cn": "驾驭多元社交环境；navigate用于抽象语境属高分用法"
+     },
+     {
+      "en": "a vital investment in",
+      "cn": "对……的重要投资；将抽象行为比喻为投资，增强说服力"
+     },
+     {
+      "en": "integrate...into the curricula",
+      "cn": "将……纳入课程体系；curricula为curriculum复数形式，学术感强"
+     },
+     {
+      "en": "not merely...but...",
+      "cn": "不仅仅是……而是……；比not only...but also更正式的递进结构"
+     }
+    ],
+    "pitfalls": [
+     "审题不清：题目问why，必须给出原因论证，不可写成how（如何培养）",
+     "词数不足或超标：低于150词或超过200词均扣分，需提前练习控制篇幅",
+     "论证空洞：只写communication is important却不展开具体场景（学业、职场、社交）",
+     "段落不分或一段到底：六级写作需清晰的三段式结构，缺乏段落感会影响条理分",
+     "用词重复：反复使用important/good等低级词汇，未做同义替换如vital/essential/crucial"
+    ],
+    "upgrades": [
+     {
+      "plain": "Communication skills are very important for students.",
+      "better": "Effective communication skills have become increasingly indispensable for students in the contemporary era.",
+      "note": "添加时代背景，用indispensable替换important，语言更具学术感和层次"
+     },
+     {
+      "plain": "Students with good communication skills can find jobs more easily.",
+      "better": "Employers consistently prioritize candidates who demonstrate excellent interpersonal and presentation skills over those who merely possess technical expertise.",
+      "note": "换主语视角为雇主方，用prioritize...over对比结构增强论证力度"
+     },
+     {
+      "plain": "In a word, students should learn communication skills.",
+      "better": "Encouraging students to develop effective communication skills is not merely an academic endeavor but a vital investment in their holistic growth.",
+      "note": "用not merely...but句式升华主题，holistic growth提升立意高度"
+     },
+     {
+      "plain": "Communication skills help students make friends.",
+      "better": "Students equipped with these skills can resolve conflicts diplomatically, build meaningful connections, and navigate diverse social environments with greater confidence.",
+      "note": "用三个并列动词短语展开具体化论证，避免笼统空洞"
+     },
+     {
+      "plain": "Schools should teach students communication skills.",
+      "better": "Schools and universities should integrate communication training into their curricula to prepare students for the multifaceted challenges ahead.",
+      "note": "integrate into更正式，multifaceted challenges增加结尾的前瞻性与深度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Effective communication skills have become increasingly indispensable for students. —— 有效沟通能力对学生已变得日益不可或缺。（indispensable替代important，开篇定调高级）",
+   "In today's competitive job market, employers consistently prioritize candidates who demonstrate excellent interpersonal skills over those who merely possess technical expertise. —— 在当今竞争激烈的就业市场中，雇主始终优先考虑展现出色人际能力的候选人，而非仅具备技术专长者。（prioritize...over对比结构+定语从句，逻辑严密）",
+   "Encouraging students to develop effective communication skills is not merely an academic endeavor but a vital investment in their holistic growth. —— 鼓励学生培养有效沟通能力不仅是学业层面的努力，更是对其全面成长的重要投资。（not merely...but结构升华主题，适合结尾金句背诵）",
+   "Students equipped with these skills can resolve conflicts diplomatically, build meaningful connections, and navigate diverse social environments with greater confidence. —— 具备这些技能的学生能够圆融地化解冲突、建立有意义的人际关系，并更自信地驾驭多元社交环境。（过去分词作定语+三重并列，句式丰富且论证充实）"
+  ]
+ }
+}

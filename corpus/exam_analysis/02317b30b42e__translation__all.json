@@ -1,0 +1,192 @@
+{
+ "schemaVersion": 1,
+ "id": "02317b30b42e__translation__all",
+ "examId": "02317b30b42e",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2026 年 6 月英语六级真题（第 2 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T06:07:25.673Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 30238,
+ "usage": {
+  "prompt_tokens": 801,
+  "completion_tokens": 1853,
+  "total_tokens": 2654,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 801,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1853,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 801,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "电子商务推动中国农村发展与乡村振兴",
+  "reference": "The booming development of e-commerce is profoundly transforming the landscape of rural China. With the Internet and logistics networks rapidly extending into rural areas, an increasing number of rural residents are selling agricultural products directly to urban consumers through e-commerce platforms. In recent years, live-streaming commerce, which enables urban consumers to interact with sellers in real time, has become a new way to promote rural development. E-commerce has broken down the information barriers between urban and rural areas, broadened the sales channels for agricultural products, and helped rural residents increase their income and achieve prosperity. The deep integration of the digital economy and rural revitalization is injecting unprecedented vitality into the development of rural China.",
+  "sentences": [
+   {
+    "cn": "电子商务的蓬勃发展正在深刻改变中国农村的面貌。",
+    "en": "The booming development of e-commerce is profoundly transforming the landscape of rural China.",
+    "structure": "主谓宾结构，主语为名词短语 the booming development of e-commerce，谓语用现在进行时 is transforming 体现'正在'",
+    "keys": [
+     "电子商务 e-commerce",
+     "蓬勃发展 booming development",
+     "深刻改变 profoundly transform",
+     "面貌 landscape"
+    ]
+   },
+   {
+    "cn": "随着互联网和物流网络快速向农村延伸，越来越多的农村居民通过电子商务平台将农产品直接销售给城市消费者。",
+    "en": "With the Internet and logistics networks rapidly extending into rural areas, an increasing number of rural residents are selling agricultural products directly to urban consumers through e-commerce platforms.",
+    "structure": "with 复合结构作状语，表伴随背景；主句用现在进行时，体现持续趋势",
+    "keys": [
+     "物流网络 logistics networks",
+     "向农村延伸 extend into rural areas",
+     "农产品 agricultural products",
+     "城市消费者 urban consumers"
+    ]
+   },
+   {
+    "cn": "近年来，直播带货(live-streaming commerce)使城市消费者能够与卖家实时互动，已成为促进农村发展的一种新方式。",
+    "en": "In recent years, live-streaming commerce, which enables urban consumers to interact with sellers in real time, has become a new way to promote rural development.",
+    "structure": "非限制性定语从句 which enables... 插入主句中间，补充说明直播带货的功能；主句用现在完成时 has become 表示延续至今的结果",
+    "keys": [
+     "直播带货 live-streaming commerce",
+     "实时互动 interact in real time",
+     "促进农村发展 promote rural development"
+    ]
+   },
+   {
+    "cn": "电子商务打破了城乡之间的信息壁垒，拓宽了农产品销售渠道，帮助农村居民增收致富。",
+    "en": "E-commerce has broken down the information barriers between urban and rural areas, broadened the sales channels for agricultural products, and helped rural residents increase their income and achieve prosperity.",
+    "structure": "三个并列谓语动词 has broken down, broadened, helped 共享同一主语，用现在完成时表已完成的成就",
+    "keys": [
+     "信息壁垒 information barriers",
+     "城乡之间 between urban and rural areas",
+     "销售渠道 sales channels",
+     "增收致富 increase income and achieve prosperity"
+    ]
+   },
+   {
+    "cn": "数字经济与乡村振兴的深度融合，正在为中国农村发展注入前所未有的活力。",
+    "en": "The deep integration of the digital economy and rural revitalization is injecting unprecedented vitality into the development of rural China.",
+    "structure": "主谓宾结构，主语为复杂名词短语 the deep integration of A and B，动词短语 inject...into... 表示'注入'",
+    "keys": [
+     "数字经济 digital economy",
+     "乡村振兴 rural revitalization",
+     "深度融合 deep integration",
+     "前所未有的活力 unprecedented vitality"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "电子商务",
+    "en": "e-commerce"
+   },
+   {
+    "cn": "物流网络",
+    "en": "logistics networks"
+   },
+   {
+    "cn": "农产品",
+    "en": "agricultural products"
+   },
+   {
+    "cn": "直播带货",
+    "en": "live-streaming commerce"
+   },
+   {
+    "cn": "信息壁垒",
+    "en": "information barriers"
+   },
+   {
+    "cn": "销售渠道",
+    "en": "sales channels"
+   },
+   {
+    "cn": "增收致富",
+    "en": "increase income and achieve prosperity"
+   },
+   {
+    "cn": "数字经济",
+    "en": "digital economy"
+   },
+   {
+    "cn": "乡村振兴",
+    "en": "rural revitalization"
+   },
+   {
+    "cn": "深度融合",
+    "en": "deep integration"
+   }
+  ],
+  "pitfalls": [
+   "蓬勃发展易误译为 rapid development，booming/thriving 更贴合语义",
+   "物流网络 logistics networks 中 logistics 拼写易错，且不可漏掉复数",
+   "直播带货若题目未给英文，需准确译为 live-streaming commerce 或 livestream selling",
+   "城乡之间的信息壁垒中 barrier 须用复数 barriers，且搭配 break down 而非 break",
+   "注入活力 inject vitality into 介词搭配易误用为 inject vitality to"
+  ],
+  "upgrades": [
+   {
+    "plain": "is greatly changing the look of rural China",
+    "better": "is profoundly transforming the landscape of rural China",
+    "note": "profoundly transform 比 greatly change 更正式书面；landscape 比 look 更具抽象内涵"
+   },
+   {
+    "plain": "more and more rural residents",
+    "better": "an increasing number of rural residents",
+    "note": "an increasing number of 比 more and more 更符合书面语体，避免口语化"
+   },
+   {
+    "plain": "has removed the information gap",
+    "better": "has broken down the information barriers",
+    "note": "break down barriers 是固定高频搭配，比 remove gap 更地道准确"
+   },
+   {
+    "plain": "give new energy to rural development",
+    "better": "inject unprecedented vitality into rural development",
+    "note": "inject vitality into 搭配更高级；unprecedented 精确对应'前所未有的'"
+   },
+   {
+    "plain": "help rural people make more money",
+    "better": "help rural residents increase their income and achieve prosperity",
+    "note": "increase income and achieve prosperity 完整对应'增收致富'，避免口语化表达"
+   }
+  ]
+ }
+}

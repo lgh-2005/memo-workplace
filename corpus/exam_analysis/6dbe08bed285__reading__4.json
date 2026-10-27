@@ -1,0 +1,173 @@
+{
+ "schemaVersion": 1,
+ "id": "6dbe08bed285__reading__4",
+ "examId": "6dbe08bed285",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2001 年考研英语真题（旧）",
+ "year": 2001,
+ "sub": "4",
+ "questionNumbers": [
+  33,
+  34,
+  35,
+  36
+ ],
+ "generatedAt": "2026-10-27T06:10:58.622Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56109,
+ "usage": {
+  "prompt_tokens": 1648,
+  "completion_tokens": 3650,
+  "total_tokens": 5298,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1648,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3650,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1648,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "全球企业并购浪潮的利弊审视",
+  "gist": "文章围绕全球范围内史无前例的企业并购浪潮展开讨论。作者首先指出大企业愈发壮大的趋势及其引发的担忧，接着分析并购浪潮背后的驱动力（全球化、成本降低、市场扩大等），并以石油、电信、汽车行业为例说明目前集中化尚未明显损害消费者利益，最后指出并购仍需监管，提出银行业巨型合并、跨国公司转移生产等问题，体现了客观辩证的态度。",
+  "structure": [
+   "第1段：引出全球并购浪潮及各国担忧",
+   "第2段：用数据论证大企业日益壮大的趋势",
+   "第3段：分析并购浪潮背后的驱动力，认为对消费者有利",
+   "第4段：以行业实例说明集中化尚未损害消费者",
+   "第5段：指出并购仍需警惕与监管，提出未解问题"
+  ],
+  "difficulty": "中等",
+  "translation": "全球正在经历有史以来最大的企业并购浪潮。这一进程从极度活跃的美国席卷到欧洲，并以前所未有的力量波及新兴国家。这些国家的许多人注视着这一进程，忧心忡忡地问道：\"企业集中化浪潮会不会变成一股不可控的反竞争力量？\"\n\n毫无疑问，大企业正变得更大、更强。1982年，跨国公司在国际贸易中的份额不到20%。如今这一数字已超过25%，且仍在快速增长。在那些对外开放并欢迎外国投资的经济体中，跨国公司的海外分支机构在其生产中所占的份额正快速增长。以阿根廷为例，20世纪90年代初改革之后，跨国公司在最大的200家企业中的工业产值占比从43%上升到近70%。这一现象引发了人们对小型企业的角色、民族企业家的地位以及世界经济最终稳定性的严重关切。\n\n我认为，推动这场大规模并购浪潮的最重要力量，与推动全球化进程的力量是一致的：不断下降的运输和通信成本、更低的贸易和投资壁垒，以及不断扩大的市场——这些市场需要更大规模的运营来满足客户需求。所有这些对消费者都是有利的，而非有害的。随着生产率的提高，世界财富也在增加。\n\n关于当前集中化浪潮的利弊实例还很稀少。然而，很难想象当今几家石油公司的合并会重新制造出近一个世纪前美国标准石油托拉斯被拆分时人们所担忧的那种对竞争的威胁。电信公司的合并，如世通公司，似乎也并未导致消费者支付更高的价格或技术进步步伐的放缓。相反，通信价格正在快速下降。在汽车行业，集中化也在加剧——戴姆勒与克莱斯勒、雷诺与日产的合并便是例证——但消费者似乎并未因此受损。\n\n然而，事实仍然是并购运动必须受到关注。几周前，艾伦·格林斯潘对银行业的超大型并购发出了警告。谁来监管、规范这些正在形成的巨型银行，并在必要时充当最后贷款人？当一个国家对不正当竞争行为管控过严时，跨国公司难道不会将生产从一个地方转移到另一个地方吗？而且，如同美国诉微软案那样，一个国家是否应该在涉及许多其他国家的问题上承担起\"维护竞争\"的角色？",
+  "questions": [
+   {
+    "number": 33,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The world is going through the biggest wave of mergers and acquisitions ever witnessed.",
+    "why": "文章开篇即点明全球正经历史上最大的并购浪潮，第二段进一步以数据说明\"the big are getting bigger and more powerful\"（大企业越来越大、越来越强）。mergers and acquisitions（合并与收购）正是\"combine and become bigger\"（联合并变得更大）的同义改写，因此C项正确。",
+    "traps": "A项\"吸收更多外国资金\"和B项\"更多海外投资\"虽然文中提到了外国投资，但这只是并购浪潮的一个侧面，并非当今企业的典型趋势；D项\"与更多国家贸易\"属于对国际贸易数据的过度推断，文章强调的核心趋势是企业合并壮大，而非贸易国家数量增加。三个干扰项均属于偷换概念。",
+    "tip": "抓住文章反复出现的核心关键词mergers、bigger来判断主趋势。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "falling transportation and communication costs, lower trade and investment barriers and enlarged markets that require enlarged operations capable of meeting customers' demands",
+    "why": "第三段明确列出并购浪潮背后的驱动力，其中\"enlarged markets that require enlarged operations capable of meeting customers' demands\"直接对应A项\"更大的客户需求\"。customers' demands是原文原词，enlarged markets需要更大规模运营来满足客户需求，这正是并购的驱动力之一。",
+    "traps": "B项\"市场供给过剩\"文中从未提及，属于无中生有；C项\"生产率增长\"和D项\"世界财富增加\"出现在第三段最后一句，但它们是并购带来的结果而非驱动力，属于因果倒置的陷阱。",
+    "tip": "区分\"原因\"与\"结果\"是考研阅读常见考点，注意逻辑方向。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Yet it is hard to imagine that the merger of a few oil firms today could re-create the same threats to competition that were feared nearly a century ago in the U.S., when the Standard Oil trust was broken up.",
+    "why": "原文说\"很难想象如今几家石油公司的合并能重新制造出近一个世纪前标准石油托拉斯被拆分时人们所担忧的那种对竞争的威胁\"。言下之意，当年标准石油托拉斯确实曾威胁到竞争（所以才被拆分），只是今天的合并不太可能重蹈覆辙。由此可推断D项\"标准石油托拉斯可能曾威胁竞争\"正确。",
+    "traps": "A项\"集中化一定会伤害消费者\"与第四段举例论证的结论相悖，文中用电信和汽车行业说明消费者并未受损；B项称世通公司同时体现了利弊，而原文只将其作为未伤害消费者的正面例证；C项\"全球化成本巨大\"在第四段中无依据，属于过度推断。",
+    "tip": "注意从反面论述中推出隐含的正面事实，这是推断题常见出题方式。"
+   },
+   {
+    "number": 36,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "I believe that the most important forces behind the massive M&A wave are the same that underlie the globalization process... Yet the fact remains that the merger movement must be watched.",
+    "why": "作者在第三、四段肯定并购浪潮的积极面（有利于消费者、未损害竞争），同时在第五段指出并购仍需监管，并提出一系列需要警惕的问题。这种既肯定积极面又不忽视潜在风险的写法体现了客观辩证的态度，因此B项\"objective（客观的）\"最为准确。",
+    "traps": "A项\"乐观\"只反映了作者对积极面的态度，忽略了第五段的警示与担忧；C项\"悲观\"与作者在第三、四段的正面论述矛盾；D项\"有偏见的\"不符合作者两面兼顾的论述方式。三个干扰项都是片面归纳。",
+    "tip": "态度题需通览全文，兼顾正反两方面论述再下判断。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "mergers and acquisitions",
+    "cn": "n. 兼并与收购（常缩写为M&A）"
+   },
+   {
+    "w": "hyperactive",
+    "cn": "adj. 极度活跃的，过度活跃的"
+   },
+   {
+    "w": "unsurpassed",
+    "cn": "adj. 无与伦比的，未被超越的"
+   },
+   {
+    "w": "affiliates",
+    "cn": "n. 分支机构，附属公司"
+   },
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的，不利的（to）"
+   },
+   {
+    "w": "scanty",
+    "cn": "adj. 不足的，稀少的"
+   },
+   {
+    "w": "megamergers",
+    "cn": "n. 超大型合并"
+   },
+   {
+    "w": "lender of last resort",
+    "cn": "n. 最后贷款人（央行职能术语）"
+   },
+   {
+    "w": "infringements",
+    "cn": "n. 侵犯，违反（常搭配to/of）"
+   },
+   {
+    "w": "underlie",
+    "cn": "v. 构成……的基础，是……的根本原因"
+   },
+   {
+    "w": "concentration",
+    "cn": "n.（企业）集中化，整合"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "I believe that the most important forces behind the massive M&A wave are the same that underlie the globalization process: falling transportation and communication costs, lower trade and investment barriers and enlarged markets that require enlarged operations capable of meeting customers' demands.",
+    "cn": "我认为，推动这场大规模并购浪潮的最重要力量，与推动全球化进程的力量是一致的：不断下降的运输和通信成本、更低的贸易和投资壁垒，以及不断扩大的市场——这些市场需要更大规模的运营来满足客户需求。",
+    "note": "主干为I believe that the forces are the same that...，冒号后为三个并列名词短语作同位语解释forces的具体内容，最后一个名词短语内嵌that定语从句和capable of现在分词短语作后置定语。"
+   },
+   {
+    "en": "Yet it is hard to imagine that the merger of a few oil firms today could re-create the same threats to competition that were feared nearly a century ago in the U.S., when the Standard Oil trust was broken up.",
+    "cn": "然而，很难想象当今几家石油公司的合并会重新制造出近一个世纪前美国标准石油托拉斯被拆分时人们所担忧的那种对竞争的威胁。",
+    "note": "it为形式主语，真正主语为that引导的从句；threats后接that定语从句，从句内又嵌套when引导的时间状语从句，形成多层嵌套结构。"
+   },
+   {
+    "en": "Won't multinationals shift production from one place to another when a nation gets too strict about infringements to fair competition?",
+    "cn": "当一个国家对不正当竞争行为管控过严时，跨国公司难道不会将生产从一个地方转移到另一个地方吗？",
+    "note": "反问句结构，主句为Won't multinationals shift...，when引导时间/条件状语从句；shift...from...to...为核心动词短语，infringements to fair competition为介词宾语。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "07a3443e0b67__translation__all",
+ "examId": "07a3443e0b67",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2018 年考研英语真题",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:38:41.981Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 76441,
+ "usage": {
+  "prompt_tokens": 1369,
+  "completion_tokens": 5526,
+  "total_tokens": 6895,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1369,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5526,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1369,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "莎士比亚时代英国戏剧的兴起与繁荣",
+  "translation": "莎士比亚的一生恰逢戏剧领域非凡活跃和卓越成就的时期。到他出生的时候，欧洲正目睹宗教戏剧的消亡，以及在古典悲剧和喜剧的推动下新戏剧形式的产生。这些新形式起初主要由学者撰写，由业余人士表演，但在英格兰，正如西欧其他各地一样，一个专业演员阶层的壮大正使戏剧趋于大众化，不管它是新的还是旧的，古典的还是中世纪的，文学的还是滑稽的。宫廷、学校、业余组织和巡回演员都在竞相满足人们对戏剧娱乐的广泛需求；任何上过文法学校的男孩都不会不知道，戏剧是一种曾为希腊和罗马带来荣耀的文学形式，而且它也许还能给英国带来荣誉。\n\n莎士比亚十二岁那年，伦敦建成了第一座公共剧场。一度，文学界对这种公共舞台毫无兴趣。追求文学品味的剧作是为学校或宫廷而写的，或是为圣保罗大教堂和皇家礼拜堂的唱诗班男童而写的，不过这些男童既在宫廷也在公开场合演出。但是，专业剧团在其固定的剧场中蓬勃发展，而有文学抱负的大学才子们很快便转向这些剧场，将其视为谋生的手段。到莎士比亚二十五岁时，李利、皮尔和格林已经创作出既受欢迎又具有文学性的喜剧；基德写出了一部座无虚席的悲剧；而马洛则将诗歌与天才带上了公共舞台并取得了辉煌——这是自欧里庇得斯去世以来从未有过的。一种本土的文学戏剧已经被创造出来，它与公共剧场的联盟已经建立，而且它的一些伟大传统也至少已经开始形成。\n\n此后二十五年间伊丽莎白时代戏剧的发展对文学史研究者来说具有非凡的意义，因为在这短短的时期内，我们可以追溯多种戏剧类型以及许多伟大事业的萌生、发展、繁荣与衰落。今天我们不仅对所创作的剧本数量之多感到惊叹，也对同时为这个仅有二十万人口的伦敦进行创作的剧作家人数之多感到惊叹。要认识到当时的戏剧活动有多么繁盛，我们还必须记住，大量的剧作已经失传，而且也许没有一位著名作家的全部作品能够留存至今。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "By the date of his birth Europe was witnessing the passing of the religious drama, and the creation of new forms under the incentive of classical tragedy and comedy.",
+    "cn": "到他（莎士比亚）出生的时候，欧洲正目睹宗教戏剧的消亡，以及在古典悲剧和喜剧的推动下新戏剧形式的产生。",
+    "structure": "主干为 Europe was witnessing A and B，其中 A = the passing of the religious drama，B = the creation of new forms；By the date of his birth 为时间状语；under the incentive of classical tragedy and comedy 为介词短语作方式状语修饰 creation。",
+    "points": [
+     "the passing of the religious drama 中 passing 需译为\"消亡/衰落\"，体现宗教戏剧退出历史舞台",
+     "under the incentive of 需译为\"在……的推动/激励下\"，不可译为\"在……的奖励下\"",
+     "and 并列两个宾语 the passing 与 the creation，需译出\"消亡\"与\"产生\"的对比关系"
+    ],
+    "pitfall": "incentive 常见义为\"奖励、激励\"，此处指古典悲喜剧对新形式产生的推动作用，应译为\"推动、刺激\"，若译为\"奖励\"则语义偏差。同时 passing 不可译为\"经过\"，而应译为\"消亡\"。"
+   },
+   {
+    "number": 47,
+    "en": "no boy who went to a grammar school could be ignorant that the drama was a form of literature which gave glory to Greece and Rome and might yet bring honor to England.",
+    "cn": "任何上过文法学校的男孩都不会不知道，戏剧是一种曾为希腊和罗马带来荣耀的文学形式，而且它也许还能给英国带来荣誉。",
+    "structure": "主干为 no boy could be ignorant that...（双重否定结构）；who went to a grammar school 为定语从句修饰 boy；that 引导宾语从句（ignorant 的补足成分）；从句内 which 引导定语从句修饰 literature，内含并列谓语 gave glory... and might yet bring honor...。",
+    "points": [
+     "no...could be ignorant that 双重否定需正确处理，译为\"都不会不知道\"或正面化为\"都知道\"",
+     "which 定语从句含两个并列谓语 gave 和 might bring，需分别译出过去与将来的时态差异",
+     "yet 在此表\"仍然、还\"，体现对英国戏剧前景的期望"
+    ],
+    "pitfall": "grammar school 是特定历史名词，指\"文法学校\"（英国中等教育机构），不可译为\"语法学校\"。yet 在此不表转折，而表示\"还、仍可能\"，与 might 搭配表达一种期许。"
+   },
+   {
+    "number": 48,
+    "en": "But the professional companies prospered in their permanent theaters, and university men with literary ambitions were quick to turn to these theaters as offering a means of livelihood.",
+    "cn": "但是，专业剧团在其固定的剧场中蓬勃发展，而有文学抱负的大学才子们很快便转向这些剧场，将其视为谋生的手段。",
+    "structure": "由 and 连接的并列复合句。第一分句主干为 the professional companies prospered，in their permanent theaters 为地点状语。第二分句主干为 university men were quick to turn to these theaters，with literary ambitions 为后置定语修饰 university men，as offering a means of livelihood 为介词短语作方式状语（as 表\"作为/视为\"）。",
+    "points": [
+     "able to prosper 译为\"蓬勃发展/兴旺\"需体现积极语义",
+     "as offering a means of livelihood 中 as 表视为，需译出\"将其视为/当作谋生手段\"",
+     "university men with literary ambitions 需译出\"有文学抱负的大学才子\"，体现身份特征"
+    ],
+    "pitfall": "as offering 中的 as 容易误解为\"因为\"，实际表示\"将（剧场）视为/当作\"提供谋生手段的场所。permanent theaters 指\"固定剧场\"，区别于巡回演出，不可译为\"永久剧场\"。"
+   },
+   {
+    "number": 49,
+    "en": "A native literary drama had been created, its alliance with the public playhouses established, and at least some of its great traditions had been begun.",
+    "cn": "一种本土的文学戏剧已经被创造出来，它与公共剧场的联盟已经建立，而且它的一些伟大传统也至少已经开始形成。",
+    "structure": "三个并列成分。第一分句 A native literary drama had been created 为完整被动句；第二部分 its alliance with the public playhouses established 为独立主格结构（省略了 had been）；第三分句 at least some of its great traditions had been begun 为被动句。三者以逗号和 and 并列。",
+    "points": [
+     "its alliance with the public playhouses established 识别为独立主格/省略结构，需补出'已经被'",
+     "native 在此译为\"本土的\"而非\"天生的\"，修饰 literary drama",
+     "had been begun 过去完成时被动语态需译出\"已经开始\"，体现动作在过去某时点之前完成"
+    ],
+    "pitfall": "第二部分 its alliance...established 是独立主格结构，省略了 had been，考生极易将其误解为独立句而遗漏被动含义，或与前后句断句错误。需补译为\"它与公共剧场的联盟已经建立\"。"
+   },
+   {
+    "number": 50,
+    "en": "To realize how great was the dramatic activity, we must remember further that hosts of plays have been lost, and that probably there is no author of note whose entire work has survived.",
+    "cn": "要认识到当时的戏剧活动有多么繁盛，我们还必须记住，大量的剧作已经失传，而且也许没有一位著名作家的全部作品能够留存至今。",
+    "structure": "主干为 we must remember further that...and that...，两个 that 从句并列作 remember 的宾语。To realize how great was the dramatic activity 为不定式作目的/条件状语，其中 how great was the dramatic activity 为倒装语序的宾语从句。whose entire work has survived 为定语从句修饰 author。",
+    "points": [
+     "how great was the dramatic activity 倒装结构需还原为正常语序理解，译为\"戏剧活动有多么繁盛\"",
+     "hosts of 需译为\"大量的/许多\"，不可按 host 本义译为\"主人\"",
+     "of note 为固定搭配，译为\"著名的/有名望的\""
+    ],
+    "pitfall": "hosts of 是考研高频考点，考生容易将 host 误译为\"主人/主持人\"，此处为复数形式表示\"大量\"。同时 how great was the dramatic activity 是倒装句，需还原为 the dramatic activity was how great 来理解。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "coincident",
+    "cn": "adj. 同时发生的，一致的"
+   },
+   {
+    "w": "the passing of",
+    "cn": "n. ……的消亡，……的逝去"
+   },
+   {
+    "w": "incentive",
+    "cn": "n. 激励，刺激，推动力"
+   },
+   {
+    "w": "farcical",
+    "cn": "adj. 滑稽的，闹剧性的"
+   },
+   {
+    "w": "grammar school",
+    "cn": "n. 文法学校（英国历史上的中等学校）"
+   },
+   {
+    "w": "playhouse",
+    "cn": "n. 剧场，戏院"
+   },
+   {
+    "w": "prosper",
+    "cn": "v. 繁荣，兴旺，蓬勃发展"
+   },
+   {
+    "w": "livelihood",
+    "cn": "n. 生计，谋生手段"
+   },
+   {
+    "w": "pit",
+    "cn": "n.（剧场）正厅后座区"
+   },
+   {
+    "w": "alliance",
+    "cn": "n. 联盟，结合，联合"
+   },
+   {
+    "w": "hosts of",
+    "cn": "大量的，许多的"
+   },
+   {
+    "w": "of note",
+    "cn": "adj. 著名的，重要的，有名望的"
+   },
+   {
+    "w": "blossoming",
+    "cn": "n. 开花，繁荣（此处比喻繁盛期）"
+   }
+  ],
+  "skills": [
+   "双重否定结构（no...ignorant）宜先理解为肯定，再斟酌是否保留双重否定以贴近原文语气",
+   "独立主格结构（its alliance...established）需识别省略成分并在译文中补全",
+   "倒装句（how great was the dramatic activity）需还原正常语序后再翻译",
+   "被动语态密集出现时（had been created/established/begun），中文可灵活转为主动或无主语句",
+   "历史文化专有名词（grammar school, playhouse, pit）需按约定俗成译法处理，不可望文生义"
+  ]
+ }
+}

@@ -1,0 +1,203 @@
+{
+ "schemaVersion": 1,
+ "id": "2c00eddfd70a__translation__all",
+ "examId": "2c00eddfd70a",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "1999 年考研英语真题（旧）",
+ "year": 1999,
+ "sub": "all",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:09:09.469Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64536,
+ "usage": {
+  "prompt_tokens": 1230,
+  "completion_tokens": 4751,
+  "total_tokens": 5981,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1230,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4751,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1230,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "历史学方法论的争议与发展",
+  "translation": "虽然关于历史的定义几乎和历史学家一样多，但现代实践最接近于这样一种定义，即把历史看作是对过去重大事件的再现和解释的一种尝试。每一代历史学家都受到其自身所处时代和环境的束缚，都要重新确定过去的哪些事件对自身而言是重要的。在这一探索过程中，所发现的证据总是不完整的、零散的，而且常常带有偏见或党派色彩。历史学家这一行当的讽刺之处在于，其从业者始终知道，他们的努力不过是对一个永无止境的过程的贡献。\n\n人们对历史研究方法产生兴趣，与其说是因为外部对历史作为一门知识学科的有效性提出了挑战，不如说是因为历史学家内部的争论。虽然历史学一度推崇它与文学和哲学的亲缘关系，但新兴的社会科学似乎为提出新问题和找到理解过去的有益方法提供了更大的可能性。社会科学的方法论必须适应这样一门学科：它以历史文献的首要地位为指导原则，而非以当代世界的紧迫需求为准。在这种转变过程中，传统的历史研究方法因旨在解释历史研究中新形式证据的其他方法论而得到了充实。\n\n在历史学界，\"方法论\"一词始终是一个含义本质上模糊的术语。人们对于方法论是指一般历史研究中特有的概念，还是指适用于历史探究各分支的研究技术，尚未达成一致意见。历史学家，尤其是那些因过于专注于自己的研究兴趣而被指责为采用\"管窥方法\"的人，常常成为\"技术谬误\"的牺牲品。这种技术谬误在自然科学中也很常见，它错误地将整个学科等同于其技术实施的某些部分。\n\n这种谬误同样适用于传统历史学家和社会科学历史学家：前者认为历史只是对史料的外部和内部考证，后者则将自己的研究活动等同于具体的技术方法。",
+  "questions": [
+   {
+    "number": 31,
+    "en": "While there are almost as many definitions of history as there are historians, modern practice most closely conforms to one that sees history as the attempt to recreate and explain the significant events of the past.",
+    "cn": "虽然关于历史的定义几乎和历史学家一样多，但现代实践最接近于这样一种定义，即把历史看作是对过去重大事件的再现和解释的一种尝试。",
+    "structure": "While引导让步状语从句，内含as many…as…同级比较结构；主句主语为modern practice，谓语conforms to，宾语one（代指definition）；one后接that引导的定语从句，从句中sees history as…为'视……为……'结构。",
+    "points": [
+     "as many…as…同级比较结构需译出'和……一样多'的含义",
+     "one that定语从句需识别one指代definition并准确翻译",
+     "sees history as the attempt to…需译为'把历史看作是……的尝试'"
+    ],
+    "pitfall": "容易将one孤立翻译或遗漏其指代definition的含义；as many…as…结构易误译为'几乎有同样多的定义'而丢失比较对象。"
+   },
+   {
+    "number": 32,
+    "en": "Interest in historical methods has arisen less through external challenge to the validity of history as an intellectual discipline and more from internal quarrels among historians themselves.",
+    "cn": "人们对历史研究方法产生兴趣，与其说是因为外部对历史作为一门知识学科的有效性提出了挑战，不如说是因为历史学家内部的争论。",
+    "structure": "主语为Interest in historical methods，谓语has arisen；less through…and more from…为核心并列结构，表示'与其说是因为……不如说是因为……'；external challenge to the validity of history后接as an intellectual discipline作history的补充说明。",
+    "points": [
+     "less…more…结构需译为'与其说……不如说……'",
+     "validity译为'有效性'或'合理性'",
+     "as an intellectual discipline需准确译为'作为一门知识/学术学科'"
+    ],
+    "pitfall": "less…and more…结构最易出错，若按字面译为'较少通过……较多通过……'则不符合中文表达习惯，应灵活处理为'与其说……不如说……'。"
+   },
+   {
+    "number": 33,
+    "en": "During this transfer, traditional historical methods were augmented by additional methodologies designed to interpret the new forms of evidence in the historical study.",
+    "cn": "在这种转变过程中，传统的历史研究方法因旨在解释历史研究中新形式证据的其他方法论而得到了充实。",
+    "structure": "During this transfer为时间状语；主句为被动句，主语traditional historical methods，谓语were augmented by，施动者additional methodologies；designed to interpret…为过去分词短语作后置定语修饰methodologies。",
+    "points": [
+     "were augmented by需准确译出被动含义：'被……所充实/补充'",
+     "designed to interpret…后置定语需译为'旨在解释……的'",
+     "this transfer需结合上文语境译为'这种转变'"
+    ],
+    "pitfall": "augment一词较生僻，易误译为'增强'或'扩大'，此处应译为'充实、补充'；designed to…后置定语需前置处理，否则中文句式不通顺。"
+   },
+   {
+    "number": 34,
+    "en": "There is no agreement whether methodology refers to the concepts peculiar to historical work in general or to the research techniques appropriate to the various branches of historical inquiry.",
+    "cn": "人们对于方法论是指一般历史研究中特有的概念，还是指适用于历史探究各分支的研究技术，尚未达成一致意见。",
+    "structure": "There is no agreement为主句；whether…or…引导同位语从句解释agreement的内容；peculiar to historical work in general为形容词短语后置定语修饰concepts；appropriate to the various branches of historical inquiry为形容词短语后置定语修饰techniques。",
+    "points": [
+     "whether…or…同位语从句需译为'是……还是……'",
+     "peculiar to需译为'特有的、独特的'",
+     "appropriate to…需译为'适用于……的'"
+    ],
+    "pitfall": "两个后置形容词短语（peculiar to…和appropriate to…）分别修饰concepts和techniques，翻译时需前置处理；in general修饰historical work而非整句，易产生断句错误。"
+   },
+   {
+    "number": 35,
+    "en": "It applies equally to traditional historians who view history as only the external and internal criticism of sources, and to social science historians who equate their activity with specific techniques.",
+    "cn": "这种谬误同样适用于传统历史学家和社会科学历史学家：前者认为历史只是对史料的外部和内部考证，后者则将自己的研究活动等同于具体的技术方法。",
+    "structure": "It指代上文the technicist fallacy；applies equally to A and to B为并列结构；A为traditional historians，后接who引导的定语从句；B为social science historians，后接who引导的定语从句。",
+    "points": [
+     "applies equally to…and to…并列结构需完整译出'同样适用于……和……'",
+     "the external and internal criticism of sources需译为'对史料的外部和内部考证/批评'",
+     "equate…with…需译为'将……等同于……'"
+    ],
+    "pitfall": "It的指代对象需根据上文确定为'技术谬误'，若译为'它'则指代不明；两个who定语从句较长，建议拆译为'前者……后者……'以符合中文表达习惯。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "conform to",
+    "cn": "v. 符合，遵从"
+   },
+   {
+    "w": "recreate",
+    "cn": "v. 再现，重建"
+   },
+   {
+    "w": "partisan",
+    "cn": "adj. 有偏见的，党派性的"
+   },
+   {
+    "w": "irony",
+    "cn": "n. 讽刺，反讽"
+   },
+   {
+    "w": "craft",
+    "cn": "n. 行业，手艺"
+   },
+   {
+    "w": "validity",
+    "cn": "n. 有效性，合理性"
+   },
+   {
+    "w": "intellectual discipline",
+    "cn": "n. 知识学科，学术学科"
+   },
+   {
+    "w": "revere",
+    "cn": "v. 尊崇，敬仰"
+   },
+   {
+    "w": "affinity",
+    "cn": "n. 亲缘关系，密切联系"
+   },
+   {
+    "w": "primacy",
+    "cn": "n. 首要地位，优先"
+   },
+   {
+    "w": "imperative",
+    "cn": "n. 紧迫的需求，必要之事"
+   },
+   {
+    "w": "augment",
+    "cn": "v. 增加，充实，补充"
+   },
+   {
+    "w": "inherently",
+    "cn": "adv. 内在地，本质上"
+   },
+   {
+    "w": "ambiguous",
+    "cn": "adj. 含糊不清的，模棱两可的"
+   },
+   {
+    "w": "peculiar to",
+    "cn": "adj. 特有的，独有的"
+   },
+   {
+    "w": "fallacy",
+    "cn": "n. 谬误，谬论"
+   },
+   {
+    "w": "equate...with",
+    "cn": "v. 将……等同于……"
+   }
+  ],
+  "skills": [
+   "less…more…结构灵活译为'与其说……不如说……'，避免逐字硬译",
+   "as many…as…同级比较结构需完整体现比较双方",
+   "被动语态根据中文习惯转为主动句或无主语句",
+   "后置定语（形容词短语、分词短语）翻译时需前置处理",
+   "代词指代（如one、it）需结合上下文明确所指对象再翻译"
+  ]
+ }
+}

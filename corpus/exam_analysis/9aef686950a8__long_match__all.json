@@ -1,0 +1,232 @@
+{
+ "schemaVersion": 1,
+ "id": "9aef686950a8__long_match__all",
+ "examId": "9aef686950a8",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2015 年 6 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T04:39:52.815Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 59993,
+ "usage": {
+  "prompt_tokens": 805,
+  "completion_tokens": 6356,
+  "total_tokens": 7161,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4530
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 805
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "艺术品价值与成名机制",
+  "strategy": [
+   "先浏览10个陈述句，划出各句关键词，如人名、专有名词、核心概念。",
+   "按段落顺序扫读原文，定位与关键词同义或近义表达的句子。",
+   "关注同义替换和句式转换，不要只找原词重现。",
+   "注意每段可能有多个匹配信息，但一题只对应一段；匹配后立即标记。",
+   "最后利用排除法核对剩余段落和题目，确保答案唯一。"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "根据邓肯·沃茨的观点，《蒙娜丽莎》相对于达·芬奇其他作品的优势源于累积优势。",
+    "keywords": [
+     "Duncan Watts",
+     "Mona Lisa",
+     "cumulative advantage"
+    ],
+    "paraphrase": "可能将 superiority 同义替换为 greatness 或 advantage；resulted from 替换为 due to 或 attributed to；cumulative advantage 替换为 accumulated advantage 或 compounding effect。",
+    "tip": "先用人名 Duncan Watts 和作品名 Mona Lisa 定位到 E 段，再核对 cumulative advantage 的同义表达。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "cn": "一些社会科学家对某些艺术作品的内在价值提出了质疑。",
+    "keywords": [
+     "social scientists",
+     "doubts",
+     "intrinsic value",
+     "works of art"
+    ],
+    "paraphrase": "可能将 raised doubts about 替换为 questioned 或 expressed skepticism about；intrinsic value 替换为 inherent worth 或 internal value。",
+    "tip": "在 B 段找 social scientists 和 intrinsic value 附近表示怀疑的词，如 question 或 doubt。"
+   },
+   {
+    "number": 38,
+    "answer": "H",
+    "cn": "决定一件艺术品命运的往往是随机事件或个人偏好。",
+    "keywords": [
+     "random events",
+     "preferences",
+     "fate",
+     "art"
+    ],
+    "paraphrase": "可能将 random events 替换为 chance occurrences 或 accidents；determine the fate 替换为 decide the destiny 或 shape the outcome；preferences 可替换为 tastes。",
+    "tip": "在 H 段找强调随机性和偏好决定艺术品命运的内容，注意强调句在原文可能变为顺叙。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "cn": "在实验中，卡廷发现他的受试者因为更多接触而更喜欢不太知名的作品，而非经典作品。",
+    "keywords": [
+     "Cutting",
+     "experiment",
+     "lesser known works",
+     "canonical works",
+     "exposure"
+    ],
+    "paraphrase": "可能将 liked... better than 替换为 preferred... to 或 favored... over；lesser known works 替换为 obscure works；canonical works 替换为 famous works 或 classics；exposure 替换为 familiarity。",
+    "tip": "用 Cutting 和 experiment 定位到 C 段，注意 lesser known 和 canonical 的对比关系以及 exposure 的因果作用。"
+   },
+   {
+    "number": 40,
+    "answer": "K",
+    "cn": "作者认为艺术作品的伟大之处仍在于其内在价值。",
+    "keywords": [
+     "author",
+     "greatness",
+     "intrinsic value"
+    ],
+    "paraphrase": "可能将 greatness 替换为 excellence 或 superiority；lies in 替换为 resides in 或 is found in；intrinsic value 替换为 inherent worth。",
+    "tip": "在 K 段找作者观点词（如 I believe/the author argues），注意 greatness 和 intrinsic value 的同义表达。"
+   },
+   {
+    "number": 41,
+    "answer": "D",
+    "cn": "对评论家和普通人来说都是如此：艺术作品的受欢迎程度与宣传密切相关。",
+    "keywords": [
+     "critics",
+     "ordinary people",
+     "popularity",
+     "publicity"
+    ],
+    "paraphrase": "可能将 It is true of... as well as... 替换为 applies to... and... alike；popularity 替换为 fame 或 renown；is closely associated with 替换为 is linked to 或 is connected with；publicity 替换为 exposure 或 media attention。",
+    "tip": "在 D 段找 critics 和 ordinary people 并列，以及 popularity 与 publicity 的紧密关联。"
+   },
+   {
+    "number": 42,
+    "answer": "L",
+    "cn": "我们需要让自己接触更多的艺术和文学，以便区分优劣。",
+    "keywords": [
+     "expose",
+     "more art and literature",
+     "superior",
+     "inferior"
+    ],
+    "paraphrase": "可能将 expose ourselves to 替换为 immerse ourselves in 或 experience；tell... from... 替换为 distinguish... from... 或 discriminate between...；superior 与 inferior 可替换为 better 与 worse。",
+    "tip": "在 L 段找建议性句子（如 we should/need to），并关注 expose to more art 与 superior/inferior 的对比。"
+   },
+   {
+    "number": 43,
+    "answer": "F",
+    "cn": "一项关于最伟大绘画作品历史的研究表明，即使是一件伟大的艺术作品也可能经历多年的被忽视。",
+    "keywords": [
+     "history",
+     "greatest paintings",
+     "years of neglect"
+    ],
+    "paraphrase": "可能将 A study of the history 替换为 Historical research；suggests 替换为 indicates 或 shows；years of neglect 替换为 long period of being ignored 或 decades of obscurity。",
+    "tip": "在 F 段找 greatest paintings 与 neglect 的搭配，注意“伟大作品也可能被忽视”的转折含义。"
+   },
+   {
+    "number": 44,
+    "answer": "J",
+    "cn": "文化仍被用作区分不同社会阶层的标志。",
+    "keywords": [
+     "Culture",
+     "mark",
+     "distinguish",
+     "social class"
+    ],
+    "paraphrase": "可能将 used as a mark 替换为 serves as a marker 或 functions as a sign；distinguish... from... 替换为 differentiate... from... 或 separate... from...；social class 替换为 class 或 social status。",
+    "tip": "在 J 段找 culture 与 social class 的关联，注意 mark 或 marker 的出现。"
+   },
+   {
+    "number": 45,
+    "answer": "I",
+    "cn": "对文化物品的看法和偏好往往是可遗传的。",
+    "keywords": [
+     "Opinions",
+     "preferences",
+     "cultural objects",
+     "inheritable"
+    ],
+    "paraphrase": "可能将 Opinions about 替换为 Views on 或 Attitudes toward；preferences for 替换为 likings for 或 tastes in；cultural objects 替换为 cultural products 或 artifacts；inheritable 替换为 hereditary 或 passed down genetically。",
+    "tip": "在 I 段找 opinions 和 preferences 并列，并注意 inheritable 与 genetic/hereditary 的对应。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "cumulative advantage",
+    "cn": "累积优势（名词短语）"
+   },
+   {
+    "w": "superiority",
+    "cn": "优越性，优势（名词）"
+   },
+   {
+    "w": "intrinsic",
+    "cn": "内在的，固有的（形容词）"
+   },
+   {
+    "w": "canonical",
+    "cn": "经典的，权威的（形容词）"
+   },
+   {
+    "w": "exposure",
+    "cn": "接触，暴露（名词）"
+   },
+   {
+    "w": "publicity",
+    "cn": "宣传，公众关注（名词）"
+   },
+   {
+    "w": "superior",
+    "cn": "较好的，优秀的（形容词/名词）"
+   },
+   {
+    "w": "inferior",
+    "cn": "较差的，低劣的（形容词/名词）"
+   },
+   {
+    "w": "neglect",
+    "cn": "忽视，忽略（名词/动词）"
+   },
+   {
+    "w": "inheritable",
+    "cn": "可遗传的（形容词）"
+   },
+   {
+    "w": "social class",
+    "cn": "社会阶层（名词短语）"
+   },
+   {
+    "w": "raise doubts about",
+    "cn": "对……提出质疑（动词短语）"
+   }
+  ]
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "0d213278f813__reading__4",
+ "examId": "0d213278f813",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年考研英语真题",
+ "year": 2019,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:40:42.863Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60276,
+ "usage": {
+  "prompt_tokens": 1736,
+  "completion_tokens": 3570,
+  "total_tokens": 5306,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1736,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3570,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1736,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国最高法院裁定网购须缴销售税",
+  "gist": "美国最高法院周四推翻了此前关于实体存在规则的裁决，允许各州要求无实体存在的在线卖家代收销售税。该裁定有利于已在全国收取销售税的大型连锁企业，但对纯线上零售商尤其是小型卖家构成负担，各方对此反应不一。",
+  "structure": [
+   "第1-3段：交代最高法院裁决背景及被推翻旧规则的内容",
+   "第4段：引用大法官肯尼迪阐述旧规则的弊端",
+   "第5-6段：分析裁决对大型连锁店和小型在线卖家的不同影响",
+   "第7段：呈现零售业界和小企业群体对裁决的不同评价"
+  ],
+  "difficulty": "中等",
+  "translation": "根据美国最高法院周四作出的一项裁决，各州将能够强制更多人在网购时缴纳销售税，这将使消费者的钱包变瘪，但对各州来说却是一笔巨大的财政收入。\n\n最高法院周四的意见推翻了数十年前的两项裁决，各州表示这些旧裁决每年让它们损失了数十亿美元的税收。这些旧裁决使各州更难对某些网上购物征收销售税。\n\n被推翻的旧案例规定，如果一家企业将顾客购买的商品运往该企业没有实体存在（如仓库或办公室）的州，该企业就无需为该州代收销售税。消费者在未被收取销售税的情况下，通常需要自行向所在州缴纳，但大多数人并不知道自己欠这笔税，实际缴纳的人也很少。\n\n大法官安东尼·肯尼迪写道，此前的裁决是有缺陷的。\"实体存在规则每年都愈加脱离经济现实，并导致各州税收的重大损失，\"他在一份由另外四位大法官联署的意见书中写道。肯尼迪写道，该规则\"限制了各州追求长期繁荣的能力，并阻碍了市场参与者在公平竞争的环境中竞争\"。\n\n该裁决对在多个州拥有门店的大型连锁企业来说是一场胜利，因为它们通常已经在对网上购物收取销售税。现在，竞争对手也将在此前未收税的地方开始收取销售税。大型连锁企业一直在全国范围内收取销售税，因为它们通常在商品寄往的任何一个州都设有实体店。亚马逊凭借其仓库网络，也在每个征收销售税的州代收销售税，但使用该平台的第三方卖家则不必如此。\n\n到目前为止，许多仅在一个州或少数几个州拥有实体存在的卖家，在向这些州以外的地址发货时可以避免收取销售税。使用eBay和Etsy（为小型卖家提供平台）的卖家也一直未在全国范围内收取销售税。根据周四的裁决，各州可以通过法律，要求州外卖家向消费者代收该州的销售税并上缴给该州。\n\n零售贸易团体对该裁决表示赞赏，称其为线下和线上企业创造了公平的竞争环境。零售分析师尼尔·桑德斯表示，输家是纯线上零售商，尤其是小型零售商。这些零售商可能在遵守各州不同的销售税法时面临难题。小企业与创业委员会倡导团体在一份声明中表示：\"这一裁决对小企业和互联网创业者毫无益处。\"",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "States will be able to force more people to pay sales tax when they make online purchases under a Supreme Court decision Thursday that will leave shoppers with lighter wallets but is a big financial win for states.",
+    "why": "文章首句即明确指出，根据最高法院周四的裁决，各州将能够强制更多的人在网购时缴纳销售税。C选项\"make more online shoppers pay sales tax\"是对首句核心信息的精准同义转述，属于直接定位题。",
+    "traps": "A\"改善企业与各州关系\"原文未提及，属于无中生有。B\"使大多数在线企业陷入两难\"过度推断，原文只说小型在线卖家受到冲击，并非\"大多数\"。D\"迫使一些州削减销售税\"与原文相反，裁决是帮助各州征收更多税。",
+    "tip": "首段往往承担提纲挈领的功能，首题常可从首段找到答案。"
+   },
+   {
+    "number": 37,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The Supreme Court's opinion Thursday overruled a pair of decades-old decisions that states said cost them billions of dollars in lost revenue annually.",
+    "why": "第2段指出各州称这些旧裁决每年让它们损失数十亿美元的税收，第3段进一步说明旧规则使企业可以不代收销售税、消费者也很少自行缴纳。由此可推断各州对这些旧裁决持不满（unfavorable）态度。D选项\"were considered unfavorable by states\"与此完全吻合。",
+    "traps": "A\"导致电子商务占据主导地位\"原文未提及电商主导地位的说法，属于过度推断。B\"多年来让消费者损失很多\"与原文相反，旧规则实际上让消费者少缴了税。C\"被网购者广泛批评\"原文未提及网购者对旧规则的态度，属于无中生有。",
+    "tip": "注意区分信息的主体——到底是谁对旧裁决不满，文中明确说的是states。"
+   },
+   {
+    "number": 38,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Kennedy wrote that the rule \"limited states' ability to seek long-term prosperity and has prevented market participants from competing on an even playing field.\"",
+    "why": "肯尼迪大法官明确指出实体存在规则\"阻碍了市场参与者在公平竞争环境中竞争\"（prevented market participants from competing on an even playing field）。C选项\"harmed fair market competition\"是对该句的高度概括和同义改写，逻辑完全一致。",
+    "traps": "A\"阻碍了经济发展\"有一定迷惑性，但肯尼迪原文说的是limited states' ability to seek long-term prosperity，且题目问的是physical presence rule的影响，A表述过于宽泛且未直接对应。B\"给国家带来了繁荣\"与原文相反，原文说的是限制了各州追求繁荣的能力。D\"促进了各州税收增长\"与原文相反，原文明确说导致significant revenue losses。",
+    "tip": "关注直接引语中的核心语义，even playing field 对应 fair market competition。"
+   },
+   {
+    "number": 39,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "The ruling is a victory for big chains with a presence in many states, since they usually collect sales tax on online purchases already. Now, rivals will be charging sales tax where they hadn't before.",
+    "why": "第5段首句直接点明\"该裁决对在多个州拥有门店的大型连锁企业来说是一场胜利\"，因为它们本来就在收取销售税，现在竞争对手也必须收税，竞争环境更加公平。因此大型连锁店的所有者（big-chain owners）最可能欢迎这一裁决。",
+    "traps": "A\"互联网创业者\"在末段声明中明确表示该裁决对他们无益。C\"第三方卖家\"此前不需要代收税，现在可能需要，属于受冲击的一方。D\"小型零售商\"末段指出小型零售商面临合规难题，是裁决的输家。",
+    "tip": "题目问\"谁最可能欢迎\"，需在原文中找正面评价词，victory是关键词。"
+   },
+   {
+    "number": 40,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "States will be able to force more people to pay sales tax when they make online purchases under a Supreme Court decision Thursday that will leave shoppers with lighter wallets but is a big financial win for states.",
+    "why": "全文结构清晰：首先客观陈述最高法院裁决的内容（第1-3段），然后引用大法官意见阐释裁决依据（第4段），接着分析裁决对不同市场参与者的影响（第5-7段）。作者全程以客观叙述的口吻报道事实并讨论后果，没有表达个人立场。A选项\"gives a factual account of it and discusses its consequences\"准确概括了这一写作方式。",
+    "traps": "B\"描述了其漫长而复杂的制定过程\"文章未涉及裁决的制定过程，属于无中生有。C\"呈现其要点并给出相互冲突的观点\"虽然末段有不同声音，但全文主旨并非围绕争议展开，且各方观点并不构成主要冲突。D\"引用相关案例并分析其含义\"文中虽提到被推翻的旧案例，但目的是交代背景，而非逐案分析含义。",
+    "tip": "写作方式题需把握全文宏观脉络，区分\"客观报道+影响分析\"与\"观点争论\"类文章。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "overrule",
+    "cn": "v. 推翻，否决（先前裁决）"
+   },
+   {
+    "w": "revenue",
+    "cn": "n. 财政收入，税收"
+   },
+   {
+    "w": "physical presence",
+    "cn": "n. 实体存在（指实体店铺、仓库等）"
+   },
+   {
+    "w": "flawed",
+    "cn": "adj. 有缺陷的，有错误的"
+   },
+   {
+    "w": "an even playing field",
+    "cn": "n. 公平的竞争环境"
+   },
+   {
+    "w": "rival",
+    "cn": "n. 竞争对手"
+   },
+   {
+    "w": "comply with",
+    "cn": "v. 遵守，符合"
+   },
+   {
+    "w": "advocacy",
+    "cn": "n. 倡导，支持"
+   },
+   {
+    "w": "entrepreneur",
+    "cn": "n. 企业家，创业者"
+   },
+   {
+    "w": "level the playing field",
+    "cn": "v. 创造公平竞争环境"
+   },
+   {
+    "w": "headache",
+    "cn": "n. 令人头疼的事，难题"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The cases the court overturned said that if a business was shipping a customer's purchase to a state where the business didn't have a physical presence such as a warehouse or office, the business didn't have to collect sales tax for the state.",
+    "cn": "被法院推翻的旧案例规定，如果一家企业将顾客购买的商品运往该企业没有实体存在（如仓库或办公室）的州，该企业就无需为该州代收销售税。",
+    "note": "主句为The cases said that...，其中the court overturned是定语从句修饰cases；that引导宾语从句，内含if条件状语从句；where引导定语从句修饰state。"
+   },
+   {
+    "en": "Each year the physical presence rule becomes further removed from economic reality and results in significant revenue losses to the States",
+    "cn": "实体存在规则每年都愈加脱离经济现实，并导致各州税收的重大损失。",
+    "note": "主语为the physical presence rule，两个并列谓语becomes...and results in...；removed from意为\"脱离、远离\"。"
+   },
+   {
+    "en": "Customers were generally responsible for paying the sales tax to the state themselves if they weren't charged it, but most didn't realize they owed it and few paid.",
+    "cn": "消费者在未被收取销售税的情况下，通常需要自行向所在州缴纳，但大多数人并不知道自己欠这笔税，实际缴纳的人也很少。",
+    "note": "but连接两个转折分句；前句含if条件状语从句；后句most didn't realize和few paid并列，强调旧规则下消费者实际不缴税的现实。"
+   }
+  ]
+ }
+}

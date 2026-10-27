@@ -1,0 +1,257 @@
+{
+ "schemaVersion": 1,
+ "id": "484879d3c447__listening__all",
+ "examId": "484879d3c447",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2022 年 9 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:41:28.085Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55635,
+ "usage": {
+  "prompt_tokens": 2203,
+  "completion_tokens": 3008,
+  "total_tokens": 5211,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2203,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3008,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2203,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与听力原文文稿，以下所有解析均基于题目选项文本的语言特征与正确答案进行推理分析，不涉及对录音内容的引用或编造。",
+  "overview": "本场听力共7段材料、25道题。第1段（1-4题）围绕个人预算与理财；第2段（5-8题）涉及租房看房场景；第3段（9-11题）聚焦儿童与电视广告消费；第4段（12-15题）讨论好人坏人与公平对待的社会心理话题；第5段（16-18题）关于友谊发展与性别差异；第6段（19-21题）涉及求职中残障信息披露；第7段（22-25题）讨论背景噪音/音乐对认知表现的影响。",
+  "strategy": [
+   "预读选项时圈出各选项间的差异词，如动词、形容词不同，可快速定位听音重点。",
+   "选项中出现 the more…the greater 等比较级结构时，注意听因果或递进关系。",
+   "选项均以 They/He/She 开头时，先判断问的是哪类人群，带着人物角色听。",
+   "涉及建议/行动类选项（Keep/Avoid/Play等祈使语气），关注录音结尾处的总结建议。",
+   "同一题四个选项若有两个高度相似，真正答案往往在细微措辞差异上，注意听限定词。",
+   "遇到专业话题（如心理学实验），优先抓实验结论，即 results show / findings suggest 之后的内容。"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "个人预算管理与理财习惯",
+    "optionSignals": "选项多含 budgeting、save money、stick to a budget、keep track of money、unnecessary spending 等理财动作词，问题指向具体行为与好处；Q2 四项均以 Many/Most Americans 开头，问的是现状/调查结论。",
+    "tips": [
+     "Q1 四项分别指向 earn/financing/budgeting/invest，词义差异大，听到哪个关键词即可锁定。",
+     "Q4 中 A 强调种类、B 强调避免花费、C 改变生活方式、D 节省时间，注意区分 shopping list 的直接好处与间接好处，正确项 B 最具因果逻辑。"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "租房看房与签约对话",
+    "optionSignals": "Q5 四项描述房屋属性（brand-new/rooms/mother's/vacant），Q6 为单词选项（Space/Tranquillity/Appliances/Location），Q7 为下一步行动，Q8 为搬家好处。典型对话场景题。",
+    "tips": [
+     "Q6 只有四个名词，预判问 '最看重什么'，听对话中表示偏好的形容词或强调语气。",
+     "Q7 涉及 solicitor（律师）、deposit（押金）、contract terms 等租房高频词，注意动作先后顺序。",
+     "Q8 选项 D 'plenty of space for her shoes' 较幽默具体，听力对话结尾常出现轻松细节作为考点。"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "儿童观看电视广告与消费行为",
+    "optionSignals": "Q9 四项均为 the more…the more/greater/fewer 比较级句式，问相关性结论；Q10 四项为建议性动作（Inform/Shift/Involve/Help）；Q11 问原因，选项涉及 cognitive ability、curiosity、celebrities、social experience。",
+    "tips": [
+     "Q9 比较级并列结构中，注意区分主语是 children 还是 parents，以及结果变量是 stress 还是 conflicts。",
+     "Q11 正确答案 A 'limited cognitive ability' 属于学术表达，听力中可能以 'children can't yet distinguish…' 等通俗说法呈现，注意同义替换。"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "好人与坏人的社会评价与公平感",
+    "optionSignals": "Q12/Q13 问研究发现，选项含 good guys/bad guys、comparison、set standards 等社会心理学词汇；Q14 问应对策略（Learn/Compete/Leave/Cooperate）；Q15 问风险或代价，涉及 hypocritical、reward、sacrifices、misunderstood。",
+    "tips": [
+     "Q12 中 A 与 D 形成对比（坏人做好事 vs 好人受不公），B 与 C 也形成对比，注意听转折词 but/however 后的结论。",
+     "Q15 'dismissed as hypocritical'（被斥为虚伪）是较生僻表达，若听到 hypocrite/hypocritical 等词可直接锁定。",
+     "Q14 四个动作差异明显，compete 与 cooperate 是反义词，听清语境中鼓励的是竞争还是合作。"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "友谊发展的年龄与性别差异",
+    "optionSignals": "Q16 问某年龄段特征，选项涉及 gender differences、positive recollection、same sex；Q17 为男性或某群体特征（competing/forging ties/fashion/family）；Q18 涉及 romance vs friendship 的优先级。",
+    "tips": [
+     "Q16 正确答案 D 'same sex' 是发展心理学经典结论，选项 A 'gender differences' 虽含相关词但含义不同，注意区分。",
+     "Q18 中 A 与 B 方向相反（romance优先 vs 加强同性友谊），听清是哪个阶段的描述。"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "残障人士求职时的信息披露策略",
+    "optionSignals": "Q19 问原因/顾虑，选项涉及 privacy、turned down、discriminated、widely known；Q20 问时间节点（job offer/interview/confirming interview/cover letter）；Q21 问具体策略，选项为动作短语。",
+    "tips": [
+     "Q20 四个时间节点非常具体，预读时按求职流程排序（cover letter → confirming interview → interview → job offer），听清建议的是哪个环节。",
+     "Q21 中 C 'stress the irrelevance' 与 D 'avoid mentioning the name' 都是回避策略但程度不同，注意细节措辞。"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "背景噪音与音乐对认知表现的影响",
+    "optionSignals": "Q22 问实验结果，选项含 background speech、instrumental music、air conditioner 等噪音类型；Q23 问原因机制，涉及 overlap in processing、short-term memory、volume；Q24 问建议（quiet/instrumental/vocal/earphones）；Q25 问个体差异，涉及 sociable/shy/outgoing/confident 等性格词。",
+    "tips": [
+     "Q22 四项分别指向不同噪音类型的影响，需要听清实验中哪种条件下成绩最差（poorest/most depressed/least affected）。",
+     "Q23 正确答案 C 'overlap in processing' 是认知心理学术语，指信息加工的重叠干扰，听到 overlap/interfere/compete 可锁定。",
+     "Q25 涉及性格与噪音易感性，shy quiet people（内向安静者）受影响最大，注意听 introverted/shy/quiet 等同义词。"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "budgeting",
+    "cn": "编制预算，预算管理"
+   },
+   {
+    "w": "stick to",
+    "cn": "坚持，遵守"
+   },
+   {
+    "w": "keep track of",
+    "cn": "记录，追踪"
+   },
+   {
+    "w": "deposit",
+    "cn": "押金，定金；存款"
+   },
+   {
+    "w": "tranquillity",
+    "cn": "安宁，宁静"
+   },
+   {
+    "w": "solicitor",
+    "cn": "（英）律师，法律顾问"
+   },
+   {
+    "w": "cognitive",
+    "cn": "认知的"
+   },
+   {
+    "w": "hypocritical",
+    "cn": "虚伪的，伪善的"
+   },
+   {
+    "w": "dismissed as",
+    "cn": "被当作……而不予理会"
+   },
+   {
+    "w": "discrimination",
+    "cn": "歧视；辨别"
+   },
+   {
+    "w": "overlap",
+    "cn": "重叠，交叉"
+   },
+   {
+    "w": "instrumental",
+    "cn": "器乐的；有帮助的"
+   },
+   {
+    "w": "outgoing",
+    "cn": "外向的，开朗的"
+   },
+   {
+    "w": "adversely",
+    "cn": "不利地，有害地"
+   }
+  ]
+ }
+}

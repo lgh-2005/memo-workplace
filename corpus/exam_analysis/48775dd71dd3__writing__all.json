@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "48775dd71dd3__writing__all",
+ "examId": "48775dd71dd3",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年 6 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:49:34.474Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41957,
+ "usage": {
+  "prompt_tokens": 744,
+  "completion_tokens": 2373,
+  "total_tokens": 3117,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 744,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2373,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 744,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，以给定首句开头，围绕\"面对不同意见时应通过友好讨论和合理论证达成共识\"展开论述，可评论、举例或结合个人经历，字数150-200词（不含给定首句）。",
+    "outline": [
+     "引出话题：在思想多元的时代，分歧不可避免，但处理分歧的方式决定了人际关系与最终结果的质量。",
+     "分论点+举例：友好讨论与合理论证的好处——营造相互尊重的氛围、促进批判性思维；可结合职场或校园事例加以说明，并辅以个人经历佐证。",
+     "总结升华：重申友好沟通是化解分歧的关键工具，呼吁以开放心态将冲突转化为成长机遇。"
+    ],
+    "sample": "When faced with differing opinions, we should try to reach agreement through friendly discussion and reasonable argument.\n\nIn an era characterized by increasing diversity of thought, disagreements are inevitable in both personal and professional settings. However, the manner in which we handle these conflicts largely determines the quality of our relationships and the outcomes we achieve.\n\nFriendly discussion and reasonable argument offer numerous advantages. First, they create an atmosphere of mutual respect, enabling all parties to express their viewpoints without fear of hostility. For instance, in workplace meetings, teams that embrace open dialogue rather than confrontational debate tend to arrive at more innovative and well-rounded solutions. Second, rational argumentation encourages critical thinking, pushing individuals to substantiate their claims with evidence rather than resorting to emotional outbursts.\n\nMy personal experience also confirms this. During a group project in college, my teammates and I held vastly different views on our research direction. Instead of insisting on our own preferences, we sat down, listened to each other patiently, and evaluated each proposal on its merits. Ultimately, we reached a consensus that incorporated the best elements of every suggestion.\n\nIn conclusion, friendly discussion and reasonable argument serve as indispensable tools for resolving disagreements constructively. Only by embracing open-minded communication can we transform conflicts into opportunities for growth.",
+    "phrases": [
+     {
+      "en": "an era characterized by...",
+      "cn": "以……为特征的时代；用于引出时代背景，增强语篇气势"
+     },
+     {
+      "en": "the manner in which we handle...",
+      "cn": "我们处理……的方式；比直接用how更正式、更具书面语色彩"
+     },
+     {
+      "en": "an atmosphere of mutual respect",
+      "cn": "相互尊重的氛围；描述良好讨论环境的高频搭配"
+     },
+     {
+      "en": "resort to emotional outbursts",
+      "cn": "诉诸情绪爆发；与rational argumentation形成对比，突出论证逻辑"
+     },
+     {
+      "en": "evaluate each proposal on its merits",
+      "cn": "根据每个方案自身的优点进行评估；体现客观公正的态度"
+     },
+     {
+      "en": "reach a consensus",
+      "cn": "达成共识；写协商类话题的核心高分词组"
+     },
+     {
+      "en": "incorporate the best elements of",
+      "cn": "融合……中最好的要素；强调兼容并蓄的结果"
+     },
+     {
+      "en": "indispensable tools for...",
+      "cn": "……不可或缺的工具；用于总结段强调重要性"
+     },
+     {
+      "en": "transform conflicts into opportunities for growth",
+      "cn": "将冲突转化为成长的机遇；结尾升华句式，令人印象深刻"
+     },
+     {
+      "en": "embrace open-minded communication",
+      "cn": "拥抱开放心态的沟通；呼吁性表达，适合结尾呼吁"
+     }
+    ],
+    "pitfalls": [
+     "忘记以题目给定首句开头，或擅自修改给定首句，直接判为跑题",
+     "通篇空谈道理而无具体事例支撑，论证单薄，难以拿到高分",
+     "用词重复率高，如反复使用discuss/opinion而不做同义替换",
+     "段落之间缺乏过渡词衔接，逻辑链断裂，影响连贯性得分",
+     "字数不足150词或明显超过200词，均可能被扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "We should discuss things in a friendly way.",
+      "better": "We should create an atmosphere of mutual respect, enabling all parties to voice their perspectives without fear of hostility.",
+      "note": "用具体画面替代笼统建议，信息量更大且句式更复杂"
+     },
+     {
+      "plain": "My experience can prove this.",
+      "better": "My personal experience also confirms this observation.",
+      "note": "confirm比prove更学术；加also与observation增强衔接与正式感"
+     },
+     {
+      "plain": "In the end, we all agreed.",
+      "better": "Ultimately, we reached a consensus that incorporated the best elements of every suggestion.",
+      "note": "用that从句补充具体内容，体现共识的质量而非仅陈述结果"
+     },
+     {
+      "plain": "So we should communicate well.",
+      "better": "Only by embracing open-minded communication can we transform conflicts into opportunities for growth.",
+      "note": "倒装句+transform A into B句型，使结尾更有力且语法亮点突出"
+     },
+     {
+      "plain": "People have different ideas nowadays.",
+      "better": "In an era characterized by increasing diversity of thought, disagreements are inevitable.",
+      "note": "过去分词后置定语+抽象名词，提升句子的学术质感与信息密度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only by embracing open-minded communication can we transform conflicts into opportunities for growth. —— only by引导的倒装句，适用于各类呼吁型结尾，语法亮点+逻辑升华兼备。",
+   "The manner in which we handle these conflicts largely determines the quality of our relationships and the outcomes we achieve. —— 主语用the manner in which引导定语从句，比how从句更正式，展示高级句法能力。",
+   "Rational argumentation encourages critical thinking, pushing individuals to substantiate their claims with evidence rather than resorting to emotional outbursts. —— 现在分词做结果状语+rather than对比结构，一句话内完成正反论证，信息密度极高。",
+   "We sat down, listened to each other patiently, and evaluated each proposal on its merits. —— 三个并列动词短语节奏明快，叙事简洁有力，适合个人经历段使用。"
+  ]
+ }
+}

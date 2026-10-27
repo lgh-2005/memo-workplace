@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "3a1d5271950e__reading__3",
+ "examId": "3a1d5271950e",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2000 年考研英语真题（旧）",
+ "year": 2000,
+ "sub": "3",
+ "questionNumbers": [
+  19,
+  20,
+  21,
+  22
+ ],
+ "generatedAt": "2026-10-27T06:09:41.667Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61787,
+ "usage": {
+  "prompt_tokens": 1524,
+  "completion_tokens": 3828,
+  "total_tokens": 5352,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1524,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3828,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1524,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "评析未来主义诗歌的理论与实践",
+  "gist": "文章首先指出面对新艺术运动应了解其目标，随后介绍未来主义诗歌的核心主张——现代生活的加速要求新的文学表达方式，接着以战斗描写为例展示其荒谬之处，最后得出结论：未来主义诗歌虽提出了合理的前提，但其实践难以被归为真正的文学。",
+  "structure": [
+   "第一段：引出话题，指出未来主义诗歌难以被归为文学",
+   "第二段：阐述未来主义者的核心主张与具体写作手法",
+   "第三段：以战斗描写为例，揭示其荒谬性",
+   "第四段：总结评价，肯定其前提但质疑其结论"
+  ],
+  "difficulty": "中等",
+  "translation": "当一种新的艺术运动获得某种时尚地位时，最好去弄清其倡导者的目标，因为无论他们的原则在今天看来多么牵强和不合理，将来它们都有可能被视为正常。然而，就未来主义诗歌而言，情况却相当棘手，因为不管未来主义诗歌是什么——即使承认其所依据的理论可能是正确的——它也很难被归为文学。\n\n简而言之，未来主义者是这样说的：一个世纪以来，过去的生活条件一直在不断加速，直到现在我们生活在一个充满噪音、暴力和速度的世界里。因此，我们的感受、思想和情感也经历了相应的变化。未来主义者说，这种生活的加速需要一种新的表达形式。如果我们想诠释现代的紧张节奏，就必须加快我们的文学节奏。我们必须倾泻出大量精要的词语，不受句号、限定性形容词或限定动词的束缚。我们不应该去描述声音，而必须造出模仿声音的词；我们必须在同一页上使用多种大小的字体和不同颜色的墨水，并随意缩短或拉长单词。\n\n诚然，他们对战斗的描写是混乱的。但令人有些不安的是，在注释中读到某一行描写的是一名土耳其军官和一名保加利亚军官在一座桥上的搏斗，两人都从桥上掉进了河里——结果却发现那一行只是由他们落水的声响和军官的体重组成：\"扑通！扑通！一百八十五公斤。\"\n\n这虽然满足了未来主义诗歌的法则和要求，却很难被归为文学。尽管如此，任何有思想的人都不能拒绝接受他们的第一个命题：我们情感生活的巨大变化要求表达方式的变化。真正的问题其实在于：我们本质上改变了吗？",
+  "questions": [
+   {
+    "number": 19,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "With regard to Futurist poetry, however, the case is rather difficult, for whatever Futurist poetry may be—even admitting that the theory on which it is based may be right—it can hardly be classed as Literature.",
+    "why": "全文围绕未来主义诗歌展开：第一段引出并给出总评价，第二段介绍其理论主张和写作手法，第三段举例批评其实践效果，第四段做出总结评价。整篇文章就是对未来主义诗歌的评论（review），因此B项最为准确。",
+    "traps": "A项\"对艺术新方法的调查\"范围过大，文章并未涉及多种艺术形式，只集中于未来主义诗歌；C项\"关于未来主义运动的优点\"方向错误，作者态度以批评为主，并非赞扬其优点；D项\"关于文学的法则与要求\"仅在末段提及，并非全文主旨，属以偏概全。",
+    "tip": "主旨题应纵览全文找核心话题，避免被局部细节干扰。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "When a new movement in art attains a certain fashion, it is advisable to find out what its advocates are aiming at",
+    "why": "原文第一句明确指出：当新的艺术运动获得一定影响力时，\"最好去弄清其倡导者的目标（find out what its advocates are aiming at）\"。A项\"determine its purposes（确定其目的）\"是对原文\"find out what...aiming at\"的同义改写，完全对应。",
+    "traps": "B项\"忽略其缺陷\"原文未提及，且与作者审慎态度相悖；C项\"跟随新潮流\"与原文建议相反，原文建议的是了解而非盲从；D项\"接受其原则\"属过度推断，原文只是说要了解目标，并未要求接受原则。",
+    "tip": "细节题注意同义改写，aiming at = purposes。"
+   },
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "This speeding up of life, says the Futurist, requires a new form of expression. We must speed up our literature too, if we want to interpret modern stress.",
+    "why": "原文第二段明确阐述未来主义者的主张：生活的加速\"需要一种新的表达形式（requires a new form of expression）\"。C项\"develop new modes of expression（发展新的表达方式）\"是对\"a new form of expression\"的准确同义转述，与原文核心主张完全一致。",
+    "traps": "A项\"增加文学产出\"曲解了原文，原文说的是改变文学表达形式而非增加数量；B项\"用诗歌缓解现代压力\"错误理解了interpret modern stress，原文是\"诠释现代压力\"而非\"缓解\"；D项\"避免使用形容词和动词\"是对具体手法的片面截取，原文说不受其束缚（unhampered），且这只是手段之一而非核心主张。",
+    "tip": "区分核心主张与具体手段，D项以偏概全属常见陷阱。"
+   },
+   {
+    "number": 22,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "This, though it fulfills the laws and requirements of Futurist poetry, can hardly be classed as Literature.",
+    "why": "作者两次明确表示未来主义诗歌\"很难被归为文学（can hardly be classed as Literature）\"，同时首段提到它获得了\"某种时尚（a certain fashion）\"。综合来看，作者认为它只是一种暂时的时尚现象（transient phenomenon），而不是真正的文学。D项\"与其说是文学，不如说是一种短暂现象\"准确概括了作者的态度。",
+    "traps": "A项\"基于合理原则\"虽然作者承认其理论\"可能是对的（may be right）\"，但用了may表示不确定，且重点在于实践失败，A项表述过于肯定；B项\"新颖且为普通人接受\"缺乏文本依据，作者恰恰对其持批评态度；C项\"表明人类本性的根本变化\"与末句反问\"have we essentially changed?\"相矛盾，作者显然对此持质疑态度。",
+    "tip": "推断题须综合全文态度，注意反问句暗含的否定立场。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "advisable",
+    "cn": "adj. 明智的，可取的"
+   },
+   {
+    "w": "advocates",
+    "cn": "n. 倡导者，拥护者"
+   },
+   {
+    "w": "farfetched",
+    "cn": "adj. 牵强的，不大可能的"
+   },
+   {
+    "w": "Futurist",
+    "cn": "n./adj. 未来主义者（的）"
+   },
+   {
+    "w": "unhampered",
+    "cn": "adj. 不受阻碍的，不受束缚的"
+   },
+   {
+    "w": "qualifying",
+    "cn": "adj. 限定性的，修饰性的"
+   },
+   {
+    "w": "finite",
+    "cn": "adj. 限定的（语法术语：限定动词）"
+   },
+   {
+    "w": "proposition",
+    "cn": "n. 命题，主张，论点"
+   },
+   {
+    "w": "transient",
+    "cn": "adj. 短暂的，转瞬即逝的"
+   },
+   {
+    "w": "interpret",
+    "cn": "v. 诠释，解读"
+   },
+   {
+    "w": "classed",
+    "cn": "v. 归类，分类（class的过去分词）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "When a new movement in art attains a certain fashion, it is advisable to find out what its advocates are aiming at, for, however farfetched and unreasonable their principles may seem today, it is possible that in years to come they may be regarded as normal.",
+    "cn": "当一种新的艺术运动获得某种时尚地位时，最好去弄清其倡导者的目标，因为无论他们的原则在今天看来多么牵强和不合理，将来它们都有可能被视为正常。",
+    "note": "主句为it is advisable to find out...；for引导原因状语从句，其中however引导让步状语从句，主句为it is possible that...；嵌套三层，属典型复合长句。"
+   },
+   {
+    "en": "But it is a little upsetting to read in the explanatory notes that a certain line describes a fight between a Turkish and a Bulgarian officer on a bridge off which they both fall into the river—and then to find that the line consists of the noise of their falling and the weights of the officers",
+    "cn": "但令人有些不安的是，在注释中读到某一行描写的是一名土耳其军官和一名保加利亚军官在一座桥上的搏斗，两人都从桥上掉进了河里——结果却发现那一行只是由他们落水的声响和军官的体重组成的。",
+    "note": "it为形式主语，真正主语是两个并列不定式to read...and then to find...；read后接that从句，bridge后接off which定语从句；破折号后的to find引出转折对比，形成预期与现实的落差。"
+   },
+   {
+    "en": "All the same, no thinking man can refuse to accept their first proposition: that a great change in our emotional life calls for a change of expression.",
+    "cn": "尽管如此，任何有思想的人都不能拒绝接受他们的第一个命题：我们情感生活的巨大变化要求表达方式的变化。",
+    "note": "All the same表让步转折；冒号后的that从句为proposition的同位语从句；refuse to accept双重否定表肯定，即\"必须接受\"。"
+   }
+  ]
+ }
+}

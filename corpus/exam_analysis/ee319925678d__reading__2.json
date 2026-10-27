@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "ee319925678d__reading__2",
+ "examId": "ee319925678d",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 6 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:28:25.765Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58466,
+ "usage": {
+  "prompt_tokens": 1789,
+  "completion_tokens": 3580,
+  "total_tokens": 5369,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1789,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3580,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1789,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "AI时代人类独特价值何在",
+  "gist": "文章围绕人工智能快速发展对人类独特性的冲击展开论述。作者以谷歌自动驾驶汽车的飞速进步为例，指出曾被视为人类专属的技能正被机器逐一攻克，人类真正的独特之处在于创造力。作者呼吁教育体系应着力培养创造性思维，以此与机器的理性互补，从而在未来生态中为人类的存在提供价值。",
+  "structure": [
+   "第一段：引出AI将超越人类多项能力这一核心挑战",
+   "第二段：以谷歌自动驾驶为例展示AI的飞速进步",
+   "第三段：从国际象棋、围棋到驾驶，追问人类的独特性——创造力",
+   "第四段：呼吁教育改革，培养创造力以补充机器理性，确保人类存在价值"
+  ],
+  "difficulty": "中等",
+  "translation": "在未来几十年内，人工智能（AI）将超越我们认为使自身与众不同的许多能力。这是我们这个时代面临的巨大挑战，可能需要一种\"非理性\"的回应。\n\n2017年初，美国最重要的新闻之一是谷歌致力于将自动驾驶变为现实。据一份报告显示，谷歌的自动驾驶汽车累计行驶了1,023,330公里，需要人工干预124次，即大约每行驶8,047公里需要一次人工干预。但更令人印象深刻的是仅仅一年内取得的进步：人工干预从每千英里0.8次降至0.2次，提高了400%。照此进步速度，谷歌的汽车今年晚些时候就将轻松超越我本人的驾驶水平。\n\n驾驶曾经似乎是一项非常\"人类化\"的技能。但我们对国际象棋也曾这么说过。然后计算机多次击败了人类的世界冠军。2016年，围棋取代国际象棋成为检验人类思维的新基准，当时一台计算机击败了世界顶尖的职业围棋选手之一。随着计算机征服了曾经被视为高度人类化的任务，未来\"身为人类\"究竟意味着什么？我为我六岁的儿子感到担忧。在一个机器在一个又一个领域击败我们的世界里，他的位置在哪里？他永远不会计算得更快，永远不会驾驶得更好，甚至也不会飞得更安全。实际上，一切归结为一个相当简单的问题：我们到底有什么特别之处？这不可能是算术之类的技能，因为机器在这方面已经很出色了。到目前为止，机器在模仿创造力方面相当困难——创造力足够随意，以至于计算机无法预测，但又不仅仅是简单的随机性。\n\n也许，如果我们继续改进信息处理机器，很快就会拥有有用的理性助手。因此，我们必须以补充机器的理性为目标，而非与之竞争。如果我说得没错，我们就应该培养创造精神，因为一些非逻辑的创造力将补充机器的理性。然而不幸的是，我们的教育体系还没有跟上即将到来的现实。事实上，我们的学校和大学的设置旨在把学生塑造成理性的顺从仆人，并培养与过时机器交互的过时技能。我们需要帮助孩子学会如何最好地与智能计算机合作，以改善人类的决策。但最重要的是，我们需要保持长远的眼光：即使计算机会在智力上超过我们，我们仍然可以是最具创造力的。因为如果我们做不到，我们就不会在未来的生态系统中提供太多价值，而这可能会动摇我们存在的根基。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "In a few decades, artificial intelligence (AI) will surpass many of the abilities that we believe make us special. This is a grand challenge for our age",
+    "why": "文章首段开宗明义指出AI将超越许多我们认为使自身与众不同的能力，这是我们时代的巨大挑战。后文又通过驾驶、棋类等例子反复说明原本属于人类的技能被机器征服。B选项\"许多能力将不再是人类独有的\"正是对这一核心忧虑的准确概括。",
+    "traps": "A项\"计算机正在执行大量创造性任务\"与原文相反，文中明确指出机器在模仿创造力方面仍很困难；C项\"计算机可能比人类更理性\"虽有相关提及，但并非作者最大的担忧所在，属于以偏概全；D项\"许多人类技能正快速过时\"偷换了概念，原文说的是这些能力不再为人类独有，而非技能本身过时。",
+    "tip": "注意抓首段中心句，文章开头常揭示作者最核心的关切。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But even more impressive is the progress in just a single year: human interventions fell from 0.8 times per thousand miles to 0.2, a 400% improvement.",
+    "why": "作者在列举谷歌自动驾驶数据后，用\"But even more impressive\"明确强调了最令其印象深刻之处——仅仅一年内人工干预次数从每千英里0.8次降至0.2次，提升了400%。C选项\"谷歌在短时间内取得了自动驾驶的巨大进步\"准确对应了这一信息。",
+    "traps": "A项\"需要很少人工干预\"虽是文中事实，但不是作者标注为'even more impressive'的内容；B项\"一年内已超越了他的驾驶水平\"是对原文的曲解，原文说的是'later this year'即将超越，时间点和已完成的含义不同；D项\"世界领先者\"属于无中生有，文中未做此评价。",
+    "tip": "关注表达态度的信号词如'even more impressive'，它直接标示了作者的重点。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "So far, machines have a pretty hard time emulating creativity, arbitrary enough not to be predicted by a computer, and yet more than simple randomness.",
+    "why": "原文使用'so far'表示到目前为止，'have a pretty hard time emulating creativity'说明机器在模仿创造力方面相当困难，即创造力尚未被AI成功模仿。D选项'It is yet to be emulated by AI'（它尚未被AI模仿）完美对应这一表述。",
+    "traps": "A项\"它是理性的\"与原文矛盾，作者将创造力描述为'illogical'的、与理性互补的；B项\"它是可预测的\"与原文'arbitrary enough not to be predicted by a computer'直接矛盾；C项\"它是人类特有的\"虽有暗示，但原文措辞是'have a hard time emulating'而非断言机器永远不能拥有创造力，C的表述过于绝对。",
+    "tip": "注意'so far'等时间限定词，它暗示的是到目前为止的状态而非永久结论。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "we should foster a creative spirit because a dose of illogical creativity will complement the rationality of the machine... We need to help our children learn how to best work with smart computers",
+    "why": "作者在最后一段明确呼吁应培养创造精神（foster a creative spirit），批评教育系统把学生塑造成理性的顺从仆人，并强调即使计算机超越我们，我们仍可以是最具创造力的。A选项'Cultivate original thinking'（培养原创性思维）是对'foster a creative spirit'的同义转述。",
+    "traps": "B项\"学会独立工作\"文中未提及，且原文强调的是与机器合作而非独立工作；C项\"与智能机器竞争\"与原文'complement...rather than to compete'直接矛盾；D项\"理解AI如何运作\"属于无中生有，文章讨论的是培养创造力而非理解AI原理。",
+    "tip": "当题目问'should'时，回文中找作者的建议性表述，如foster、need to等。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Because if we aren't, we won't be providing much value in future ecosystems, and that may put in question the foundation for our existence.",
+    "why": "文章末句指出，如果我们不能保持最具创造力，就不会在未来生态系统中提供太多价值，从而动摇存在的根基。反向推理可知，人类要为自身存在正名，就必须凭借创造力提供价值。D选项'By providing value with our creativity'准确概括了这一逻辑。",
+    "traps": "A项\"不断在智力上胜过计算机\"与原文'even if computers will outsmart us'矛盾，作者已承认计算机会在智力上超越我们；B项\"采取长远眼光\"虽在原文中提及，但它只是作者给出的思考方式，而非证明人类存在合理性的手段；C项\"与AI理性妥协\"属于偷换概念，原文说的是complement（互补）而非compromise（妥协）。",
+    "tip": "注意文末总结句常承载全文核心观点，也是出题重点所在。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "autonomous",
+    "cn": "adj. 自主的，自动的"
+   },
+   {
+    "w": "intervention",
+    "cn": "n. 干预，介入"
+   },
+   {
+    "w": "surpass",
+    "cn": "v. 超越，胜过"
+   },
+   {
+    "w": "conquer",
+    "cn": "v. 征服，攻克"
+   },
+   {
+    "w": "emulate",
+    "cn": "v. 模仿，效仿"
+   },
+   {
+    "w": "randomness",
+    "cn": "n. 随机性"
+   },
+   {
+    "w": "complement",
+    "cn": "v./n. 补充，互补"
+   },
+   {
+    "w": "foster",
+    "cn": "v. 培养，促进"
+   },
+   {
+    "w": "obedient",
+    "cn": "adj. 顺从的，服从的"
+   },
+   {
+    "w": "outsmart",
+    "cn": "v. 在智力上胜过"
+   },
+   {
+    "w": "mould",
+    "cn": "v. 塑造，培养（=mold）"
+   },
+   {
+    "w": "ecosystem",
+    "cn": "n. 生态系统"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "So far, machines have a pretty hard time emulating creativity, arbitrary enough not to be predicted by a computer, and yet more than simple randomness.",
+    "cn": "到目前为止，机器在模仿创造力方面相当困难——创造力足够随意，以至于计算机无法预测，但又不仅仅是简单的随机性。",
+    "note": "主干为machines have a hard time emulating creativity；后接两个并列的形容词短语arbitrary enough not to be predicted和more than simple randomness作creativity的补充说明。"
+   },
+   {
+    "en": "Indeed, our schools and universities are structured to mould pupils to be mostly obedient servants of rationality, and to develop outdated skills in interacting with outdated machines.",
+    "cn": "事实上，我们的学校和大学的设置旨在把学生塑造成主要是理性的顺从仆人，并培养与过时机器交互的过时技能。",
+    "note": "主干为schools and universities are structured to do A and to do B，两个不定式并列；servants of rationality为比喻用法，批评教育体制。"
+   },
+   {
+    "en": "Because if we aren't, we won't be providing much value in future ecosystems, and that may put in question the foundation for our existence.",
+    "cn": "因为如果我们做不到这一点，我们就不会在未来的生态系统中提供太多价值，而这可能会动摇我们存在的根基。",
+    "note": "if引导条件从句，主句包含两个并列分句；put in question意为'使……受到质疑'；that指代前文整个情况。"
+   }
+  ]
+ }
+}

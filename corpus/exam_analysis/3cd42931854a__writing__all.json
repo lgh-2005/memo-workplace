@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "3cd42931854a__writing__all",
+ "examId": "3cd42931854a",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2018 年 6 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:16:22.306Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 39294,
+ "usage": {
+  "prompt_tokens": 703,
+  "completion_tokens": 2606,
+  "total_tokens": 3309,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 703,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2606,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 703,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，论述雇主与雇员之间建立信任的重要性，可举例说明观点，字数150-200词。",
+    "outline": [
+     "引出话题：在职场中，雇主与雇员之间的互信是组织成功的基石，点明论点。",
+     "分层论证信任的重要性：①信任能提升工作效率与主动性（举例Google、华为等企业赋予员工自主权）；②信任有助于降低员工流失率，增强归属感；反面对比缺乏信任的后果。",
+     "总结全文，呼吁双方共同努力培养和维护信任关系。"
+    ],
+    "sample": "In today's competitive business environment, the relationship between employers and employees serves as the cornerstone of organizational success. Among all the factors that contribute to a harmonious workplace, mutual trust stands out as the most indispensable one.\n\nTo begin with, trust between employers and employees can significantly boost productivity. When employees feel trusted by their supervisors, they are more likely to take initiative, embrace challenges, and devote themselves wholeheartedly to their tasks. For instance, companies like Google and Huawei grant their staff considerable autonomy, which in turn fosters innovation and efficiency. Moreover, a trust-based work culture helps reduce employee turnover. Workers who perceive genuine respect and confidence from their employers tend to develop a stronger sense of belonging, making them less inclined to seek opportunities elsewhere. Conversely, a workplace plagued by suspicion and micromanagement often suffers from low morale and frequent resignations.\n\nIn conclusion, building trust is not merely a management strategy but a fundamental principle for sustainable development. Both employers and employees should make conscious efforts to cultivate and maintain this invaluable bond.",
+    "phrases": [
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "充当……的基石；用于强调某事物的根本性地位"
+     },
+     {
+      "en": "stand out as the most indispensable",
+      "cn": "作为最不可或缺的……脱颖而出；适合引出核心论点"
+     },
+     {
+      "en": "devote oneself wholeheartedly to",
+      "cn": "全身心投入……；体现员工高度敬业"
+     },
+     {
+      "en": "grant sb. considerable autonomy",
+      "cn": "赋予某人相当大的自主权；论述企业信任文化时常用"
+     },
+     {
+      "en": "in turn foster innovation and efficiency",
+      "cn": "进而促进创新与效率；表递进因果关系"
+     },
+     {
+      "en": "a trust-based work culture",
+      "cn": "以信任为基础的工作文化；高度概括核心概念"
+     },
+     {
+      "en": "develop a stronger sense of belonging",
+      "cn": "培养更强的归属感；描述信任带来的心理效果"
+     },
+     {
+      "en": "be plagued by suspicion and micromanagement",
+      "cn": "被猜疑和事无巨细的管理所困扰；反面论证用语"
+     },
+     {
+      "en": "make conscious efforts to cultivate",
+      "cn": "有意识地努力去培养；用于结尾呼吁"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只谈团队合作或职场关系而未聚焦trust本身",
+     "举例空泛：仅说some companies而无具体公司或情境支撑",
+     "结构混乱：缺少明确的分论点标志词，逻辑层次不清",
+     "词汇重复：全篇反复使用important/trust而无同义替换",
+     "字数不达标：写完不足150词或远超200词均扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Trust is very important for a company.",
+      "better": "Mutual trust serves as the cornerstone of organizational success.",
+      "note": "用具体比喻cornerstone替代空洞的important，表达更生动有力"
+     },
+     {
+      "plain": "Employees will work harder if they are trusted.",
+      "better": "When employees feel trusted by their supervisors, they are more likely to take initiative and embrace challenges.",
+      "note": "将抽象的work harder具体化为take initiative和embrace challenges，内容更丰富"
+     },
+     {
+      "plain": "If there is no trust, employees will leave the company.",
+      "better": "A workplace plagued by suspicion and micromanagement often suffers from low morale and frequent resignations.",
+      "note": "用被动语态和高级词汇plagued/micromanagement替代简单句式，语言更学术"
+     },
+     {
+      "plain": "In a word, trust is necessary.",
+      "better": "Building trust is not merely a management strategy but a fundamental principle for sustainable development.",
+      "note": "用not merely...but...句式升级总结句，论点更具深度和说服力"
+     },
+     {
+      "plain": "For example, some companies trust their workers.",
+      "better": "For instance, companies like Google and Huawei grant their staff considerable autonomy, which in turn fosters innovation.",
+      "note": "举出具体公司名称并加非限定性定语从句，举例更具说服力"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Mutual trust stands out as the most indispensable factor contributing to a harmonious workplace. 互信是促成和谐职场最不可或缺的要素——stand out as结构适合点题强调。",
+   "When employees feel trusted by their supervisors, they are more likely to take initiative, embrace challenges, and devote themselves wholeheartedly to their tasks. 当员工感受到上级的信任时，他们更可能主动担当、迎接挑战、全身心投入工作——三个并列动词短语节奏感强。",
+   "A workplace plagued by suspicion and micromanagement often suffers from low morale and frequent resignations. 一个充斥猜疑和事无巨细管理的职场往往士气低落、人员频繁流失——反面论证句，对比效果突出。",
+   "Building trust is not merely a management strategy but a fundamental principle for sustainable development. 建立信任不仅是管理策略，更是可持续发展的基本原则——not merely...but...句式适合升华结尾。"
+  ]
+ }
+}

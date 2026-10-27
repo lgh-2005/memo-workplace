@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "10ae747abbd8__translation__all",
+ "examId": "10ae747abbd8",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2009 年考研英语真题（旧）",
+ "year": 2009,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:23:07.500Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65366,
+ "usage": {
+  "prompt_tokens": 1330,
+  "completion_tokens": 4524,
+  "total_tokens": 5854,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1330,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4524,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1330,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社会制度中附带教育与正式教育的区别",
+  "translation": "人人在与他人共同生活中所获得的教育与对年轻人进行的有意识的教育之间存在着显著的差异。在前一种情况下，教育是附带性的；它是自然且重要的，但它并非人们结合在一起的明确原因。可以说，衡量任何社会制度之价值的尺度，是它在扩大和改善经验方面的效果，但这种效果并非其最初动机的组成部分。例如，宗教团体起初是出于获得至高力量庇佑和驱避邪恶影响的愿望；家庭生活起初是出于满足欲望和维持家族延续的愿望；系统性的劳动则大多是因为受人奴役，等等。制度的这种副产品只是逐渐才被注意到，而这种效果被视为制度运作中的指导性因素则经历了更为缓慢的过程。即使在今天的工业生活中，除了勤勉和节俭的某些价值以外，世界上的工作赖以进行的各种人类联合形式所引起的智力和情感反应，与物质产出相比几乎得不到关注。\n\n然而，在与年轻人打交道时，交往本身作为一个直接的人类事实，其重要性便凸显出来。虽然在与年轻人的接触中，我们容易忽视自身行为对他们性情的影响，但这并不像与成年人打交道时那样容易被忽视。培训的需要如此明显，促使他们改变态度和习惯的压力又如此紧迫，以至于不可能完全不考虑这些后果。既然我们与年轻人打交道的主要任务是使他们能够参与共同的生活，我们就不得不考虑自己是否正在培养能够确保这种能力的各种力量。如果人类在认识到每一种制度的终极价值在于其独特的人文效果方面已经取得了一些进步，那么我们完全有理由相信，这一认识在很大程度上是通过与年轻人打交道而获得的。\n\n因此，我们被引导着在迄今一直考虑的广义教育过程中，区分出一种更为正式的教育——即直接的讲授或学校教育。在不发达的社会群体中，正式的教学和训练极少。这些群体主要依靠那种使成年人忠于其群体的同类交往方式来向年轻人灌输必要的品性。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "It may be said that the measure of the worth of any social institution is its effect in enlarging and improving experience, but this effect is not a part of its original motive.",
+    "cn": "可以说，衡量任何社会制度之价值的尺度，是它在扩大和改善经验方面的效果，但这种效果并非其最初动机的组成部分。",
+    "structure": "前半句为形式主语结构：It may be said that...引出主语从句；从句主干为 the measure（主语）is its effect（表语），of the worth of any social institution 为双重 of 后置定语修饰 measure，in enlarging and improving experience 为介词短语作 effect 的后置定语。but 连接转折分句。",
+    "points": [
+     "the measure of the worth 双重 of 短语需译为\"衡量……价值的尺度\"",
+     "enlarging and improving experience 并列动名词需准确译出\"扩大和改善经验\"",
+     "original motive 需译为\"最初的动机\"，体现与 effect 的对比关系"
+    ],
+    "pitfall": "容易将 the measure of the worth 笼统译为\"衡量标准\"而遗漏 worth 一词的含义，或将 its effect 的两个 its 指代混淆，前一个指 institution，后一个也指 institution。"
+   },
+   {
+    "number": 47,
+    "en": "Only gradually was the by-product of the institution noted, and only more gradually still was this effect considered as a directive factor in the conduct of the institution.",
+    "cn": "制度的这种副产品只是逐渐才被注意到，而这种效果被视为制度运作中的指导性因素则经历了更为缓慢的过程。",
+    "structure": "两个并列分句均为 Only + 副词置于句首引起的部分倒装结构。第一句主干还原为 the by-product was noted；第二句主干还原为 this effect was considered as a directive factor。still 修饰 more gradually 表示\"还要更加缓慢\"。in the conduct of the institution 为介词短语作 factor 的后置定语。",
+    "points": [
+     "Only gradually 引导的倒装句需还原语序正确理解并流畅翻译",
+     "by-product 需译为\"副产品\"，体现教育效果的非刻意性",
+     "directive factor in the conduct of the institution 需译为\"制度运作中的指导性因素\""
+    ],
+    "pitfall": "两个倒装句的递进关系（only more gradually still）容易被忽略，still 在此处是\"还要、更加\"之意，非\"仍然\"；conduct 此处为名词\"运作、管理\"，易误译为\"行为\"。"
+   },
+   {
+    "number": 48,
+    "en": "While it is easy to ignore in our contact with them the effect of our acts upon their disposition, it is not so easy as in dealing with adults.",
+    "cn": "虽然在与年轻人的接触中，我们容易忽视自身行为对他们性情的影响，但这并不像与成年人打交道时那样容易被忽视。",
+    "structure": "While 引导让步状语从句，从句主干为 it is easy to ignore the effect，其中 in our contact with them 为插入的状语，将 ignore 与其宾语 the effect 隔开；the effect of our acts upon their disposition 为 ignore 的真正宾语。主句 it is not so easy as in dealing with adults 省略了 to ignore the effect。",
+    "points": [
+     "识别 in our contact with them 为插入状语，the effect 才是 ignore 的宾语",
+     "disposition 译为\"性情/性格\"",
+     "so easy as in dealing with adults 中省略成分需补译完整"
+    ],
+    "pitfall": "最大难点是 in our contact with them 将动词 ignore 与宾语 the effect 分隔，极易误将 them the effect 断句错误。此外 disposition 易误译为\"处置\"。"
+   },
+   {
+    "number": 49,
+    "en": "Since our chief business with them is to enable them to share in a common life we cannot help considering whether or not we are forming the powers which will secure this ability.",
+    "cn": "既然我们与年轻人打交道的主要任务是使他们能够参与共同的生活，我们就不得不考虑自己是否正在培养能够确保这种能力的各种力量。",
+    "structure": "Since 引导原因状语从句，从句主干为 our chief business is to enable them to share in a common life。主句为 we cannot help considering + whether 引导的宾语从句；宾语从句中 the powers 后接 which 引导的定语从句 which will secure this ability。",
+    "points": [
+     "cannot help considering 需译为\"不得不考虑/禁不住考虑\"",
+     "whether or not we are forming the powers 需译出\"是否正在培养力量\"",
+     "which will secure this ability 定语从句需译为\"能够确保这种能力的\""
+    ],
+    "pitfall": "cannot help doing 易误译为\"不能帮助做某事\"，实际意为\"禁不住/不得不做某事\"；forming the powers 中 powers 为抽象含义\"能力/力量\"，非\"权力\"。"
+   },
+   {
+    "number": 50,
+    "en": "We are thus led to distinguish, within the broad educational process which we have been so far considering, a more formal kind of education – that of direct tuition or schooling.",
+    "cn": "因此，我们被引导着在迄今一直考虑的广义教育过程中，区分出一种更为正式的教育——即直接的讲授或学校教育。",
+    "structure": "主句主干为 We are led to distinguish a more formal kind of education（被动语态）。within the broad educational process 为插入的介词短语作状语，其中 which we have been so far considering 为定语从句修饰 process。破折号后 that of direct tuition or schooling 为 a more formal kind of education 的同位语，that 指代 education。",
+    "points": [
+     "within... 插入语需准确处理，不打断主干 distinguish 与宾语的语义联系",
+     "which we have been so far considering 现在完成进行时定语从句需译为\"迄今一直在考虑的\"",
+     "that of direct tuition or schooling 中 that 指代 education，tuition 译为\"讲授/教导\""
+    ],
+    "pitfall": "tuition 在此处意为\"讲授、教学\"而非常见义\"学费\"，属高频翻译陷阱。同时长插入语将 distinguish 与宾语 a more formal kind of education 分隔，易造成主干断裂、理解偏差。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "incidental",
+    "cn": "adj. 附带的，非主要的"
+   },
+   {
+    "w": "deliberate",
+    "cn": "adj. 有意识的，故意的"
+   },
+   {
+    "w": "overruling",
+    "cn": "adj. 至高的，支配一切的"
+   },
+   {
+    "w": "ward off",
+    "cn": "v. 驱避，防止"
+   },
+   {
+    "w": "perpetuity",
+    "cn": "n. 永续，延续"
+   },
+   {
+    "w": "enslavement",
+    "cn": "n. 奴役，束缚"
+   },
+   {
+    "w": "by-product",
+    "cn": "n. 副产品，附带产生的结果"
+   },
+   {
+    "w": "directive",
+    "cn": "adj. 指导性的，指引的"
+   },
+   {
+    "w": "disposition",
+    "cn": "n. 性情，性格；倾向"
+   },
+   {
+    "w": "tuition",
+    "cn": "n. 讲授，教导（此处非\"学费\"）"
+   },
+   {
+    "w": "instilling",
+    "cn": "v. 灌输，逐步培养"
+   },
+   {
+    "w": "thrift",
+    "cn": "n. 节俭，节约"
+   },
+   {
+    "w": "headway",
+    "cn": "n. 进展，进步"
+   }
+  ],
+  "skills": [
+   "识别并还原 Only + 副词引导的倒装结构，先还原正常语序再翻译",
+   "处理长插入语（介词短语、定语从句）分隔动宾的情况，先定主干再补修饰",
+   "注意一词多义的语境选择，如 tuition（讲授≠学费）、conduct（运作≠行为）、disposition（性情≠处置）",
+   "被动语态汉译时灵活转化为主动句或无主语句，使译文符合中文表达习惯",
+   "准确把握 cannot help doing（不得不/禁不住）等固定搭配的正确译法"
+  ]
+ }
+}

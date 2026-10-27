@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "330ff228d4a2__translation__all",
+ "examId": "330ff228d4a2",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年 3 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:49:13.055Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 26008,
+ "usage": {
+  "prompt_tokens": 802,
+  "completion_tokens": 1846,
+  "total_tokens": 2648,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 802,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1846,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 802,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "郑和下西洋的历史功绩",
+  "reference": "Zheng He was the most outstanding navigator in Chinese history, displaying extraordinary wisdom and exceptional talent in many fields such as navigation, diplomacy, and military affairs. He led massive fleets on seven voyages, visiting numerous countries and regions in the Western Pacific and the Indian Ocean, which deepened mutual understanding between China and Southeast Asia as well as East Africa. Zheng He's voyages to the Western Seas played a tremendously positive role in promoting economic and cultural exchanges between China and foreign countries, and also made great contributions to maintaining regional peace. In order to forever commemorate Zheng He and his great achievements, July 11th, the day on which Zheng He first set sail on his voyages with his fleet, has been designated as China's Maritime Day.",
+  "sentences": [
+   {
+    "cn": "郑和是中国历史上最杰出的航海家,在航海、外交、军事等诸多领域都表现出非凡的智慧和卓越的才能。",
+    "en": "Zheng He was the most outstanding navigator in Chinese history, displaying extraordinary wisdom and exceptional talent in many fields such as navigation, diplomacy, and military affairs.",
+    "structure": "主系表结构 + 现在分词短语作伴随状语，补充说明主语特征",
+    "keys": [
+     "航海家 navigator",
+     "非凡的智慧 extraordinary wisdom",
+     "卓越的才能 exceptional talent",
+     "外交 diplomacy"
+    ]
+   },
+   {
+    "cn": "他曾七次率领庞大的船队远航,访问了西太平洋和印度洋的许多国家和地区,加深了中国同东南亚、东非的相互了解。",
+    "en": "He led massive fleets on seven voyages, visiting numerous countries and regions in the Western Pacific and the Indian Ocean, which deepened mutual understanding between China and Southeast Asia as well as East Africa.",
+    "structure": "主谓宾结构 + 现在分词短语作伴随状语 + which 引导非限制性定语从句",
+    "keys": [
+     "庞大的船队 massive fleets",
+     "西太平洋 the Western Pacific",
+     "印度洋 the Indian Ocean",
+     "东南亚 Southeast Asia",
+     "东非 East Africa",
+     "相互了解 mutual understanding"
+    ]
+   },
+   {
+    "cn": "郑和下西洋对中外的经济和文化交流起到了十分积极的推进作用,也为维护区域和平做出了巨大贡献。",
+    "en": "Zheng He's voyages to the Western Seas played a tremendously positive role in promoting economic and cultural exchanges between China and foreign countries, and also made great contributions to maintaining regional peace.",
+    "structure": "并列谓语结构：played a role in... and made contributions to...，两个动宾搭配并列",
+    "keys": [
+     "下西洋 voyages to the Western Seas",
+     "经济和文化交流 economic and cultural exchanges",
+     "推进作用 role in promoting",
+     "区域和平 regional peace",
+     "做出巨大贡献 made great contributions to"
+    ]
+   },
+   {
+    "cn": "为了永远铭记郑和及其丰功伟绩, 7月11日,即郑和首次率船队远航启程的日子,被定为中国的航海节。",
+    "en": "In order to forever commemorate Zheng He and his great achievements, July 11th, the day on which Zheng He first set sail on his voyages with his fleet, has been designated as China's Maritime Day.",
+    "structure": "目的状语 in order to... + 主语 July 11th + 同位语从句（the day on which...）+ 被动语态谓语",
+    "keys": [
+     "铭记 commemorate",
+     "丰功伟绩 great achievements",
+     "首次率船队远航启程 first set sail on his voyages with his fleet",
+     "航海节 Maritime Day",
+     "被定为 has been designated as"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "航海家",
+    "en": "navigator"
+   },
+   {
+    "cn": "下西洋",
+    "en": "voyages to the Western Seas"
+   },
+   {
+    "cn": "西太平洋",
+    "en": "the Western Pacific"
+   },
+   {
+    "cn": "印度洋",
+    "en": "the Indian Ocean"
+   },
+   {
+    "cn": "东南亚",
+    "en": "Southeast Asia"
+   },
+   {
+    "cn": "东非",
+    "en": "East Africa"
+   },
+   {
+    "cn": "航海节",
+    "en": "Maritime Day"
+   },
+   {
+    "cn": "丰功伟绩",
+    "en": "great achievements / remarkable exploits"
+   },
+   {
+    "cn": "区域和平",
+    "en": "regional peace"
+   },
+   {
+    "cn": "经济和文化交流",
+    "en": "economic and cultural exchanges"
+   }
+  ],
+  "pitfalls": [
+   "「下西洋」易直译为 go to the west sea，应译为 voyages to the Western Seas",
+   "「起到推进作用」易遗漏固定搭配 play a role in，误用 promote 作谓语导致与后文重复",
+   "「丰功伟绩」易逐字硬译为 great merits and achievements，表达冗余",
+   "「被定为」时态易错用一般过去时，此处强调延续至今的状态，宜用现在完成时被动 has been designated",
+   "「即……的日子」同位语结构易漏译，或错用 which is 造成句式累赘，建议用 the day on which 同位语"
+  ],
+  "upgrades": [
+   {
+    "plain": "Zheng He is the best navigator",
+    "better": "Zheng He was the most outstanding navigator",
+    "note": "历史人物用过去时；outstanding 比 best 更正式、更符合书面语体"
+   },
+   {
+    "plain": "he sailed seven times with big ships",
+    "better": "he led massive fleets on seven voyages",
+    "note": "massive fleets 体现船队规模；on seven voyages 结构更紧凑地道"
+   },
+   {
+    "plain": "helped promote the exchange",
+    "better": "played a tremendously positive role in promoting",
+    "note": "play a role in 为高分固定搭配，体现推进作用的程度层次"
+   },
+   {
+    "plain": "in order to remember Zheng He",
+    "better": "in order to forever commemorate Zheng He",
+    "note": "commemorate 比 remember 更正式，专指对伟人或大事件的纪念"
+   },
+   {
+    "plain": "was set as China's Navigation Day",
+    "better": "has been designated as China's Maritime Day",
+    "note": "designate 比 set 更正式精准；Maritime Day 为官方译名"
+   }
+  ]
+ }
+}

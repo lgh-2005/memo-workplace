@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "c3be10eaeb66__listening__all",
+ "examId": "c3be10eaeb66",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2024 年 6 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:54:46.474Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 53478,
+ "usage": {
+  "prompt_tokens": 2316,
+  "completion_tokens": 2676,
+  "total_tokens": 4992,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2316,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2676,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2316,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于题目选项的语言特征推断，不涉及任何编造的录音内容。",
+  "overview": "本场听力共7段材料、25题。第1段（1-4题）选项涉及合同谈判、赞助协议与市场竞争，推测为商务对话；第2段（5-8题）涉及天文现象与观测方法；第3段（9-11题）聚焦超加工食品与饮食指南争议；第4段（12-15题）探讨创造力与约束条件的关系；第5段（16-18题）涉及冲突管理策略与动物隐喻；第6段（19-21题）关于物种保护与生物多样性项目；第7段（22-25题）讨论人的个体性与更大世界的关联。",
+  "strategy": [
+   "预读选项时圈出各题关键名词与动词，快速判断话题与提问方向",
+   "选项中出现对比结构（如most、more than）时，重点听录音中的程度副词和比较表达",
+   "四个选项若分别描述不同行为，多为细节题，注意听信号词如but、however后的转折信息",
+   "动物隐喻、专有名词等特殊词汇出现时，留意录音中对其的定义或解释性语句",
+   "长对话中注意男女双方立场差异，答案常出现在回应或反驳的语句中",
+   "短文听力开头两句往往点明主题，结尾常出总结性观点，需格外集中注意力"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "商务合同谈判、赞助协议与市场利益冲突",
+    "optionSignals": "第1题选项均为动词不定式/动词原形开头，问的是某人将要采取的行动；第2题四个选项主语均为They且描述情绪状态，问的是对某方态度的判断；第3、4题分别出现conflict of interest和market，涉及原因与评价。",
+    "tips": [
+     "第1题四选项描述不同行动，注意听对话中女方对合同的最终态度，关键词sign、change可作定位",
+     "第3题四个To开头的目的状语结构，听录音中because、so that、in order to等因果连接词",
+     "第4题考对某市场的评价，negligible（可忽略的）与attractive形成鲜明对比，听说话人语气即可区分"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "罕见天文现象的观测与公众参与",
+    "optionSignals": "第5题选项描述人群的情绪与行为，判断事件背景；第6题含most formidable、closest、over a century等最高级/比较级表达，问天文事件的特殊性；第7、8题分别问观测对象与观测方法。",
+    "tips": [
+     "第6题多个选项都含in over a century等时间限定词，需精准听辨具体搭配的形容词或动词",
+     "第8题四选项为具体建议（equipment/heights/due north/phone apps），听录音中的祈使句或建议句型",
+     "blur（模糊光斑）与stars、galaxy对比明显，第7题注意听描述外观的形容词"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "超加工食品的定义、分类与健康影响",
+    "optionSignals": "第9题四个Whether引导的从句，问争议焦点；第10题四个By引导的方式状语，问分类标准；第11题四选项描述不同后果，问超加工食品的负面影响。",
+    "tips": [
+     "第9题四个Whether结构高度相似，区分关键在于宾语从句的核心名词：warned、consensus、guidelines、concept",
+     "第10题industrial processing与chemical alteration易混淆，注意听录音中对分类方式的明确界定",
+     "第11题chronic diseases（慢性病）是营养健康话题的高频考点，优先关注"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "约束条件对创造力的激发作用",
+    "optionSignals": "第12题They begin to…结构问行为变化；第13题It is…结构问对某种现象的定性；第14、15题均涉及资源与创造力的关系判断，含否定词not/no的干扰项较多。",
+    "tips": [
+     "第14题C选项含no incentive（没有动力），为否定极端表述，若录音未明确表达绝对否定则可优先排除其他三项再验证",
+     "第15题四选项分别给creativity不同定位，constrained一词与全段主题高度吻合，呼应段落核心论点",
+     "第12题see the world in a different way属于概括性表述，通常比具体选项更可能做主旨推断题答案"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "冲突管理风格与谈判策略（动物隐喻）",
+    "optionSignals": "第16题四个Because引导原因，问为何要学习某种技能；第17题选项涉及difference/similarity、expectation、goals/relationship、approaches，问决定策略的关键因素；第18题四个动物名词（fox/owl/shark/turtle）代表不同风格。",
+    "tips": [
+     "第18题考动物隐喻与策略的对应，owl（猫头鹰）常象征智慧与双赢，shark象征竞争，turtle象征回避，fox象征妥协，听录音中的定义句",
+     "第17题importance of one's goals and of the relationship是经典冲突管理理论表述，选项措辞高度学术化",
+     "第16题Because they are learned暗示技能可后天习得，与come naturally形成对比，注意转折词"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "英国物种保护计划与全球生物多样性",
+    "optionSignals": "第19题四个动词不定式开头，问项目目的；第20题It指代地球/自然界的现状判断；第21题四个It is…长句对项目进行评价，选项长度较大且信息密集。",
+    "tips": [
+     "第20题sixth mass extinction（第六次大灭绝）是近年环保话题热点术语，若出现需重点捕捉",
+     "第21题D选项连用四个most修饰词（exciting/relevant/timely/inspirational），这种排比强调结构在录音总结段常见",
+     "第19题save species与boost human health并列，注意听录音中and连接的双重目的"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "人的个体性本质、身体细胞更替与自我认知",
+    "optionSignals": "第22题四个抽象名词短语，问讨论主题；第23题对某观念的评价（delusion/prevalent/myth/rooted）；第24题He believes/has found/contends引导观点陈述；第25题四个By引导方式，问解决途径。",
+    "tips": [
+     "第22题Human individuality为正确答案，Cultural identity与Social evolution为常见干扰，注意听开篇主题句",
+     "第23题delusion（错觉）语气最强烈，若录音有明确否定某观点的措辞则可锁定",
+     "第25题becoming aware that we are part of a bigger world呼应全段从个体到整体的升华，通常出现在结尾总结处"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "sponsorship",
+    "cn": "赞助，资助"
+   },
+   {
+    "w": "conflict of interest",
+    "cn": "利益冲突"
+   },
+   {
+    "w": "negligible",
+    "cn": "可忽略不计的，微不足道的"
+   },
+   {
+    "w": "ultra-processed",
+    "cn": "超加工的"
+   },
+   {
+    "w": "chronic diseases",
+    "cn": "慢性疾病"
+   },
+   {
+    "w": "constraint",
+    "cn": "约束，限制条件"
+   },
+   {
+    "w": "scarcity",
+    "cn": "稀缺，匮乏"
+   },
+   {
+    "w": "biodiversity",
+    "cn": "生物多样性"
+   },
+   {
+    "w": "extinction",
+    "cn": "灭绝，消亡"
+   },
+   {
+    "w": "Copernican",
+    "cn": "哥白尼的，哥白尼学说的"
+   },
+   {
+    "w": "delusion",
+    "cn": "错觉，幻想"
+   },
+   {
+    "w": "astronomic phenomenon",
+    "cn": "天文现象"
+   },
+   {
+    "w": "formidable",
+    "cn": "令人敬畏的，巨大的"
+   },
+   {
+    "w": "incentive",
+    "cn": "动力，激励"
+   }
+  ]
+ }
+}

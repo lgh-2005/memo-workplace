@@ -1,0 +1,252 @@
+{
+ "schemaVersion": 1,
+ "id": "0effd4255078__listening__all",
+ "examId": "0effd4255078",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2017 年 12 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:12:39.724Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58013,
+ "usage": {
+  "prompt_tokens": 2251,
+  "completion_tokens": 2745,
+  "total_tokens": 4996,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2251,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2745,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2251,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析仅基于题目选项的语言特征与正确答案进行推断分析，不涉及任何编造的录音内容。",
+  "overview": "本场听力共7段，前2段（Q1-Q4、Q5-Q8）各含4题，推测为长对话；后5段（Q9-Q11、Q12-Q15、Q16-Q18、Q19-Q22、Q23-Q25）各含3-4题，推测为短文/讲座。话题依次涉及：演讲致辞场景、商业竞争与市场策略、睡眠与营养健康研究、影视行业多元化与种族代表性、家庭保险规划、刻板印象的社会心理学分析、药物使用安全须知。题目涵盖细节辨析、原因推断、建议措施等常见听力考查角度。",
+  "strategy": [
+   "预读选项时快速划出各选项间的差异关键词，听音时重点捕捉这些区分点",
+   "选项中出现具体数字或百分比时，注意听原文中对应数据及其修饰对象，防止张冠李戴",
+   "当四个选项都是动词短语或祈使句式时，题目通常问行动或建议，重点关注录音中should、need to、had better等信号词",
+   "含有比较级、最高级或only、all等绝对化词汇的选项需格外警惕，往往是干扰项的常用陷阱",
+   "长对话中第一题答案常出现在开头几个话轮，最后一题答案常在对话结尾，中间题目按顺序出现",
+   "短文听力中注意转折词but、however、yet后的核心信息，这往往是出题点"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "公开演讲或社团活动中的致辞与评价场景",
+    "optionSignals": "Q1四个选项均为动词原形短语（Say/Introduce/Give/Host），提问说话人即将做的事情；Q2-Q4选项涉及人物经历、演讲评价与失误描述，属于细节识别题。选项中出现local history society、public speaking、town's history等反复出现的关键词，暗示话题围绕地方历史演讲展开。",
+    "tips": [
+     "Q1选项结构高度平行，听音时抓住对话开头说话人的意图关键词即可判断",
+     "Q4四个选项描述不同的演讲失误类型，注意区分embarrassing remark与nervous、forgetting等干扰项的语义差异"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "企业竞争对手分析与海外市场拓展策略",
+    "optionSignals": "Q5选项含retailers、rivals、market等商业词汇，问关注焦点；Q6选项对竞争对手做出评价判断；Q7选项涉及对某物的态度或状态；Q8选项均为动名词短语（Restructuring/Employing/Promoting/Exporting），问具体行动计划。出现Jayal Motors、Indonesia等专有名词，指向海外摩托车市场。",
+    "tips": [
+     "Q5中rivals出现两次（B和C），高频词往往与正确答案相关，实际答案B直接问对手动态",
+     "Q7四个选项描述对某事物的不同反应，需注意听女性说话人的语气与具体措辞",
+     "Q8出现具体公司名和国家名，预读时标记这些专有名词，听音时定位更快"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "睡眠时间与饮食营养、体重关系的研究",
+    "optionSignals": "Q9描述一项研究的特点，选项含claims、focuses on、cautions、shows等学术描述词；Q10描述night owls的特征，含比较结构（greater/higher/less）；Q11为祈使句式，提问建议措施。bedtime、nutrition、night owls等词明确指向睡眠与健康话题。",
+    "tips": [
+     "Q9正确答案B含link between bedtime and nutrition，学术研究题常考研究的核心发现或关注点",
+     "Q11四个选项都是简短建议，听音时注意研究结论部分的建议性表述，答案D（Go to bed earlier）与night owls话题形成逻辑呼应"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "影视行业中种族与性别代表性不足的问题",
+    "optionSignals": "选项中密集出现百分比数字（7%、22%、3.4%、17%、8.5%）以及nominees、directors、characters、people of color、females等统计性描述词汇，属于数据细节辨析题。Q12问争议焦点，Q13-Q15问具体统计数据对应的群体。",
+    "tips": [
+     "数字密集型题组最易出现张冠李戴，预读时在每个选项旁标注数字与对应群体，听音时逐一核对",
+     "Q15正确答案B含most underrepresented这一最高级表述，需听到明确的强调信号才可选择",
+     "Q14正确答案C为Females of color over 40，三重限定条件（性别+肤色+年龄）在听力中通常会被清晰逐一提及"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "家庭不同阶段的保险需求与理财规划",
+    "optionSignals": "Q16四个选项均以One that开头描述保险类型特点，问应购买何种保险；Q17为动词短语（Purchase/Save/Buy/Add），问建议行动；Q18以When引导时间状语从句，问时间节点。insurance、debts、burial expenses、breadwinner、retirement等词指向家庭财务规划。",
+    "tips": [
+     "Q16四个选项描述不同保险功能，听音时注意与family stage相关的限定语",
+     "Q18四个选项都是时间条件句，答案A（children grow up and leave home）暗示保险需求随家庭生命周期变化，注意录音中的时间线索词"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "刻板印象的来源、影响及正负面效应分析",
+    "optionSignals": "Q19和Q22选项含positive/negative对比，讨论刻板印象的性质；Q20问刻板印象的来源（Biased sources/Ignorance/Misinterpretation/Tendency）；Q21问刻板印象的特点或危害。stereotype一词虽仅在Q22出现，但选项中dismiss、negative impact、minorities、ethnic等词汇均指向社会心理学话题。",
+    "tips": [
+     "Q19正确答案D含may not always be negative，双重否定表肯定，这种语义转折在听力中常以but/however引出",
+     "Q22正确答案C提出positive stereotype may help achieve better results，为本题组中唯一肯定积极刻板印象效用的选项，注意听取研究结论中的反直觉发现"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "药物安全使用、副作用处理与儿童用药注意事项",
+    "optionSignals": "Q23为祈使句/建议句式，问出现副作用后的应对措施；Q24以It may开头描述某种药物的潜在影响；Q25选项均以动词原形开头，问对家长的建议。pharmacist、medicine、liver、over-the-counter、side effect等医药词汇贯穿选项。",
+    "tips": [
+     "Q23正确答案B为Quit taking the medicine immediately，含immediately这种极端表述，说明录音中对该副作用的严重性有明确强调",
+     "Q25正确答案A为Tell children to treat medicines with respect，respect一词用法特殊，强调的是对药物的敬畏态度而非具体操作，注意与B选项（物理隔离）的区分"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "nominee",
+    "cn": "被提名者，候选人"
+   },
+   {
+    "w": "retailer",
+    "cn": "零售商"
+   },
+   {
+    "w": "rival",
+    "cn": "竞争对手"
+   },
+   {
+    "w": "breadwinner",
+    "cn": "家庭经济支柱"
+   },
+   {
+    "w": "stereotype",
+    "cn": "刻板印象，成见"
+   },
+   {
+    "w": "pharmacist",
+    "cn": "药剂师"
+   },
+   {
+    "w": "over-the-counter",
+    "cn": "非处方的（药品）"
+   },
+   {
+    "w": "ethnically",
+    "cn": "在种族方面，民族地"
+   },
+   {
+    "w": "underrepresented",
+    "cn": "代表性不足的"
+   },
+   {
+    "w": "burial",
+    "cn": "埋葬，葬礼"
+   },
+   {
+    "w": "forwarding agent",
+    "cn": "货运代理人"
+   },
+   {
+    "w": "night owl",
+    "cn": "夜猫子，习惯晚睡的人"
+   },
+   {
+    "w": "side effect",
+    "cn": "副作用"
+   }
+  ]
+ }
+}

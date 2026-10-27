@@ -1,0 +1,200 @@
+{
+ "schemaVersion": 1,
+ "id": "a9d96394fca2__translation__all",
+ "examId": "a9d96394fca2",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2017 年 12 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:15:58.005Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31126,
+ "usage": {
+  "prompt_tokens": 823,
+  "completion_tokens": 2361,
+  "total_tokens": 3184,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 823,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2361,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 823,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "洞庭湖概况与龙舟赛文化",
+  "reference": "Dongting Lake, located in the northeast of Hunan Province, covers a vast area but remains quite shallow. Serving as a flood basin of the Yangtze River, the size of the lake largely depends on seasonal changes. The provinces of Hubei and Hunan are named after their relative positions to the lake — Hubei meaning \"north of the lake\" and Hunan meaning \"south of the lake.\" As the birthplace of dragon boat racing, Dongting Lake enjoys great fame in Chinese culture. It is said that dragon boat racing originated on the eastern shore of Dongting Lake in an effort to search for the body of Qu Yuan, the patriotic poet of the State of Chu. The dragon boat races, together with the beautiful scenery of Dongting Lake and its surrounding areas, attract thousands upon thousands of tourists from across the country and around the world every year.",
+  "sentences": [
+   {
+    "cn": "洞庭湖位于湖南省东北部，面积很大，但湖水很浅。",
+    "en": "Dongting Lake, located in the northeast of Hunan Province, covers a vast area but remains quite shallow.",
+    "structure": "过去分词短语 located in... 作插入语修饰主语，主句用 but 连接两个并列谓语",
+    "keys": [
+     "洞庭湖 Dongting Lake",
+     "湖南省 Hunan Province",
+     "位于……东北部 be located in the northeast of"
+    ]
+   },
+   {
+    "cn": "洞庭湖是长江的蓄洪池，湖的大小很大程度上取决于季节变化。",
+    "en": "Serving as a flood basin of the Yangtze River, the size of the lake largely depends on seasonal changes.",
+    "structure": "现在分词短语 Serving as... 作原因状语，主句主语为 the size of the lake",
+    "keys": [
+     "蓄洪池 flood basin",
+     "长江 the Yangtze River",
+     "取决于 depend on",
+     "季节变化 seasonal changes"
+    ]
+   },
+   {
+    "cn": "湖北和湖南两省因其与湖的相对位置而得名，湖北意为\"湖的北边\"，而湖南则为\"湖的南边\"。",
+    "en": "The provinces of Hubei and Hunan are named after their relative positions to the lake — Hubei meaning \"north of the lake\" and Hunan meaning \"south of the lake.\"",
+    "structure": "被动语态 are named after 作主句谓语，破折号后接独立主格结构 Hubei meaning... and Hunan meaning... 作补充说明",
+    "keys": [
+     "因……得名 be named after",
+     "相对位置 relative position"
+    ]
+   },
+   {
+    "cn": "洞庭湖作为龙舟赛的发源地，在中国文化中享有盛名。",
+    "en": "As the birthplace of dragon boat racing, Dongting Lake enjoys great fame in Chinese culture.",
+    "structure": "As 引导的介词短语作身份状语前置，主句为 SVO 结构",
+    "keys": [
+     "龙舟赛 dragon boat racing",
+     "发源地 birthplace",
+     "享有盛名 enjoy great fame"
+    ]
+   },
+   {
+    "cn": "据说龙舟赛始于洞庭湖东岸，为的是搜寻楚国爱国诗人屈原的遗体。",
+    "en": "It is said that dragon boat racing originated on the eastern shore of Dongting Lake in an effort to search for the body of Qu Yuan, the patriotic poet of the State of Chu.",
+    "structure": "It is said that... 作主句框架，in an effort to... 不定式短语作目的状语，Qu Yuan 后接同位语补充说明身份",
+    "keys": [
+     "据说 It is said that",
+     "东岸 the eastern shore",
+     "屈原 Qu Yuan",
+     "楚国 the State of Chu",
+     "遗体 body/remains"
+    ]
+   },
+   {
+    "cn": "龙舟赛与洞庭湖及周边的美景，每年都吸引着成千上万来自全国和世界各地的游客。",
+    "en": "The dragon boat races, together with the beautiful scenery of Dongting Lake and its surrounding areas, attract thousands upon thousands of tourists from across the country and around the world every year.",
+    "structure": "together with... 插入结构连接并列主语，介词短语 from across... and around... 作后置定语修饰 tourists",
+    "keys": [
+     "成千上万 thousands upon thousands of",
+     "周边 surrounding areas",
+     "美景 beautiful scenery"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "洞庭湖",
+    "en": "Dongting Lake"
+   },
+   {
+    "cn": "长江",
+    "en": "the Yangtze River"
+   },
+   {
+    "cn": "蓄洪池",
+    "en": "flood basin"
+   },
+   {
+    "cn": "湖南省",
+    "en": "Hunan Province"
+   },
+   {
+    "cn": "湖北省",
+    "en": "Hubei Province"
+   },
+   {
+    "cn": "龙舟赛",
+    "en": "dragon boat racing / dragon boat race"
+   },
+   {
+    "cn": "屈原",
+    "en": "Qu Yuan"
+   },
+   {
+    "cn": "楚国",
+    "en": "the State of Chu"
+   },
+   {
+    "cn": "发源地",
+    "en": "birthplace / place of origin"
+   },
+   {
+    "cn": "爱国诗人",
+    "en": "patriotic poet"
+   }
+  ],
+  "pitfalls": [
+   "「蓄洪池」若译为 storage pool 不够准确，应译为 flood basin",
+   "「因其与湖的相对位置而得名」需用被动语态 be named after，很多考生遗漏被动",
+   "「屈原」「楚国」等专有名词拼写错误会直接扣分，Qu Yuan / the State of Chu 需牢记",
+   "「据说」常错写为 It says that，正确表达为 It is said that 或 Legend has it that",
+   "「成千上万」不可直译为 thousands and ten thousands，应用 thousands of 或 thousands upon thousands of"
+  ],
+  "upgrades": [
+   {
+    "plain": "Dongting Lake is in the northeast of Hunan Province",
+    "better": "Dongting Lake, located in the northeast of Hunan Province",
+    "note": "用过去分词作插入语更紧凑，避免简单句堆砌，体现句式多样性"
+   },
+   {
+    "plain": "to search for the body of Qu Yuan, who was a patriotic poet of the State of Chu",
+    "better": "to search for the body of Qu Yuan, the patriotic poet of the State of Chu",
+    "note": "同位语比定语从句更简洁地补充人物身份，语言更凝练"
+   },
+   {
+    "plain": "The dragon boat races and the beautiful scenery attract tourists",
+    "better": "The dragon boat races, together with the beautiful scenery, attract tourists",
+    "note": "together with 插入结构使主次关系更清晰，逻辑层次更分明"
+   },
+   {
+    "plain": "Dragon boat racing started on the eastern shore",
+    "better": "Dragon boat racing originated on the eastern shore",
+    "note": "originate 比 start 更正式，更符合描述历史起源的语域"
+   },
+   {
+    "plain": "attracts many tourists from China and other countries",
+    "better": "attracts thousands upon thousands of tourists from across the country and around the world",
+    "note": "thousands upon thousands 忠实传达「成千上万」的规模感，介词搭配更地道"
+   }
+  ]
+ }
+}

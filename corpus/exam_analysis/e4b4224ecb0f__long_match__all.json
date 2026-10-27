@@ -1,0 +1,240 @@
+{
+ "schemaVersion": 1,
+ "id": "e4b4224ecb0f__long_match__all",
+ "examId": "e4b4224ecb0f",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2026 年 6 月英语六级真题（第 1 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:06:07.811Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31325,
+ "usage": {
+  "prompt_tokens": 964,
+  "completion_tokens": 1831,
+  "total_tokens": 2795,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 964,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1831,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 964,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "数字游牧民的生活方式与文化体验",
+  "strategy": [
+   "先通读10条陈述句，标记高频专有名词如Pieter Levels、digital nomads，用于快速锁定段落",
+   "抓住每句中的核心动词与逻辑关系词（如enable、transform、provide），在原文中寻找同义替换",
+   "利用人名、数字、绝对表述等唯一性标识词优先匹配，再用语义验证确认"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "Pieter Levels创建了一个聊天系统，以满足数字游牧民对游客通常不会寻求的信息的需求。",
+    "keywords": [
+     "Pieter Levels",
+     "chat system",
+     "digital nomads",
+     "information"
+    ],
+    "paraphrase": "陈述句中'information tourists normally don't seek'可能在原文中被改写为游牧民需要的实用生活信息（如网速、签证、租房等），与普通游客关注的旅游信息形成对比。",
+    "tip": "定位专有名词Pieter Levels与chat system，再确认信息需求差异的描述。"
+   },
+   {
+    "number": 37,
+    "answer": "I",
+    "cn": "据说数字游牧民并不像大多数人所认为的那样享有那么多自由。",
+    "keywords": [
+     "digital nomads",
+     "freedom",
+     "suppose"
+    ],
+    "paraphrase": "陈述句中'not enjoy as much freedom as most people suppose'属于转折/否定类改写，原文可能用限制性表述说明游牧生活的自由度被高估。",
+    "tip": "扫读含有freedom及转折词（but/however/actually）的段落即可快速定位。"
+   },
+   {
+    "number": 38,
+    "answer": "F",
+    "cn": "与游客不同，数字游牧民带着工作前往异国他乡。",
+    "keywords": [
+     "different from tourists",
+     "foreign places",
+     "work"
+    ],
+    "paraphrase": "陈述句用'different from tourists'做对比，原文可能用while/unlike等对比结构说明游牧民旅行时仍需工作。",
+    "tip": "关注将游牧民与普通游客进行对比的段落，核心区别在于是否携带工作任务。"
+   },
+   {
+    "number": 39,
+    "answer": "K",
+    "cn": "数字游牧民认为他们的生活方式使他们能够开阔视野并把工作做得更好。",
+    "keywords": [
+     "lifestyle",
+     "broaden vision",
+     "better job"
+    ],
+    "paraphrase": "'broaden their vision'可能在原文中被替换为expand perspective/see the world differently；'do a better job'可能对应improve work quality/be more productive。",
+    "tip": "定位表达'视野开阔'和'工作表现提升'双重益处的段落。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "cn": "一个典型旅行者到达一座城市后可能做的第一件事是在网上搜索该城市热门旅游景点的信息。",
+    "keywords": [
+     "typical traveller",
+     "search online",
+     "popular tourist attractions"
+    ],
+    "paraphrase": "'the first thing...possibly does'暗示原文可能用first/initially/upon arrival等表时间顺序的词；'popular tourist attractions'可能替换为well-known sights/landmarks。",
+    "tip": "找描述普通旅行者典型行为（上网搜景点）的段落，通常出现在文章前部作为引入对比。"
+   },
+   {
+    "number": 41,
+    "answer": "H",
+    "cn": "一位数字游牧民认为他们在异国城市的生活有其不利之处。",
+    "keywords": [
+     "digital nomad",
+     "foreign cities",
+     "disadvantages"
+    ],
+    "paraphrase": "'disadvantages'在原文中可能用downsides/drawbacks/challenges等近义词替换，描述游牧生活的负面体验。",
+    "tip": "寻找某位游牧民以第一人称谈论游牧生活弊端的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "L",
+    "cn": "四处旅行有助于让数字游牧民保持灵感。",
+    "keywords": [
+     "travelling around",
+     "inspired",
+     "digital nomads"
+    ],
+    "paraphrase": "'keep...inspired'可能在原文中被改写为stay creative/find inspiration/fuel creativity；'travelling around'可能对应moving between cities/changing locations。",
+    "tip": "定位将旅行与灵感/创造力直接关联的段落。"
+   },
+   {
+    "number": 43,
+    "answer": "E",
+    "cn": "过着数字游牧民生活的自雇远程工作者数量正在快速增长。",
+    "keywords": [
+     "self-employed",
+     "remote workers",
+     "fast increasing"
+    ],
+    "paraphrase": "'fast increasing'可能在原文中用rapidly growing/surging/booming等表达；'self-employed remote workers'可能对应freelancers/independent contractors working remotely。",
+    "tip": "扫读含有数据或增长趋势描述的段落，通常伴随统计数字出现。"
+   },
+   {
+    "number": 44,
+    "answer": "M",
+    "cn": "Pieter Levels说他的游牧生活不仅改变了他对公民身份的看法，还改变了他对伙伴的选择。",
+    "keywords": [
+     "Pieter Levels",
+     "nomad",
+     "citizenship",
+     "companions"
+    ],
+    "paraphrase": "'transformed his idea of citizenship'可能对应原文中对国籍/归属感认知变化的描述；'choice of companions'可能替换为选择朋友/社交圈的变化。",
+    "tip": "再次定位Pieter Levels，关注not only...but also双重转变的表述。"
+   },
+   {
+    "number": 45,
+    "answer": "J",
+    "cn": "与当地人和机构的互动为游牧民提供的文化信息远多于参观国家博物馆。",
+    "keywords": [
+     "interactions",
+     "local people",
+     "institutions",
+     "national museum"
+    ],
+    "paraphrase": "陈述句使用'far more...than'的比较结构，原文可能用比较级或对比手法说明日常互动比参观博物馆能获得更深的文化体验。",
+    "tip": "定位national museum这一具体意象，以及与local people互动的描述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "digital nomads",
+    "cn": "数字游牧民（n.），指利用网络远程工作、四处旅行生活的人"
+   },
+   {
+    "w": "seek",
+    "cn": "寻求，寻找（v.）"
+   },
+   {
+    "w": "suppose",
+    "cn": "认为，假设（v.）"
+   },
+   {
+    "w": "broaden",
+    "cn": "开阔，拓宽（v.）"
+   },
+   {
+    "w": "self-employed",
+    "cn": "自雇的，个体经营的（adj.）"
+   },
+   {
+    "w": "remote workers",
+    "cn": "远程工作者（n.）"
+   },
+   {
+    "w": "citizenship",
+    "cn": "公民身份，公民资格（n.）"
+   },
+   {
+    "w": "companions",
+    "cn": "伙伴，同伴（n.）"
+   },
+   {
+    "w": "inspired",
+    "cn": "受到启发的，有灵感的（adj.）"
+   },
+   {
+    "w": "interactions",
+    "cn": "互动，交流（n.）"
+   }
+  ]
+ }
+}

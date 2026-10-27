@@ -1,0 +1,158 @@
+{
+ "schemaVersion": 1,
+ "id": "23639759d84c__part_b__all",
+ "examId": "23639759d84c",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2024 年考研英语真题",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:54:26.030Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42404,
+ "usage": {
+  "prompt_tokens": 1498,
+  "completion_tokens": 2368,
+  "total_tokens": 3866,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1498,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2368,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1498,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "文物是否应归还原属国之争",
+  "type": "小标题匹配（多人观点与概括句匹配）",
+  "strategy": [
+   "先通读七个选项，划出各自核心关键词，如reproductions、security、lawful、flawed reasoning等",
+   "逐段提炼每位发言者的核心论点，找出与选项关键词的对应关系",
+   "利用排除法：将强干扰选项与段落细节逐一比对，排除偷换概念或过度推断的选项",
+   "注意段落中转折词（but/however）和总结句，它们往往揭示作者真正立场",
+   "匹配完成后回读检查，确保每个选项只用一次且逻辑自洽"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "E",
+    "why": "Hannah强调贝宁青铜器对尼日利亚人而言是文化遗产、历史象征和民族自豪感的来源，而在美国博物馆中'serve no purpose…except as curious objects'（仅是猎奇物品）。这说明文物的真正价值只有在其原属国才能被认识，与选项E'The real value…can only be recognized in their countries of origin'完全吻合。",
+    "traps": "选项A提到'补偿(compensated)'，段落未涉及赔偿问题；选项B讨论'推理缺陷'，Hannah并未反驳他人论点，而是正面阐述文物在原属国的价值。",
+    "tip": "关键句：They serve no purpose in a museum…except as curious objects。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "why": "Buck提出可以利用高仿复制品(nearly exact reproductions)来解决文物归还争议，并明确表示展览讲述的故事(the story an exhibit is trying to tell)比展品本身是否为真品更重要，说明观众从复制品中同样能获得知识，与选项C'visitors can still learn as much from artifacts' copies'高度一致。",
+    "traps": "选项D'reproductions cannot take the place of authentic objects'与Buck观点相反，Buck认为复制品可以替代原件发挥教育功能；因此D是最强干扰项但立场完全相悖。",
+    "tip": "关键句：The context of any exhibit is more important…than whether the object…is 2,000 years old or 2 months old。"
+   },
+   {
+    "number": 43,
+    "answer": "F",
+    "why": "Sara先肯定文物的启发作用，随后用转折'Having said that'提出核心主张：博物馆获取文物的途径必须是合法的——on loan, legally purchased, or obtained by treaty，并谴责偷窃文物的行为是obscene。选项F'Ways to get artifacts…must be decent and lawful'精准概括了这一立场。",
+    "traps": "选项A虽涉及'stolen artifacts'，但强调的是'未获赔偿'，Sara并未讨论赔偿问题，而是强调获取方式本身须合法；选项E侧重文物价值归属地，Sara的重点在获取手段。",
+    "tip": "关键句：sanctioned as having been obtained on loan, legally purchased, or obtained by treaty。"
+   },
+   {
+    "number": 44,
+    "answer": "G",
+    "why": "Victor主张文物应归还原属国，并针对'原属国安全保障不如外国'的质疑进行反驳：举出波士顿加德纳博物馆1990年被盗案和欧洲博物馆遭气候活动人士袭击的例子，得出'Nothing is absolutely safe, anywhere'的结论。这表明安全顾虑不能成为拒绝归还的借口，与选项G完全吻合。",
+    "traps": "选项A涉及赔偿，段落未提及；选项B讨论反对归还的'推理缺陷'过于宽泛，Victor具体针对的是安全(security)这一个论点进行反驳。",
+    "tip": "关键句：Nothing is absolutely safe, anywhere。"
+   },
+   {
+    "number": 45,
+    "answer": "B",
+    "why": "Julia通过一系列反问——为何美国人比尼日利亚人更有权接触贝宁青铜器？为何伦敦居民比雅典人更有权观赏埃尔金大理石？——来揭示反对归还文物者的推理逻辑存在根本缺陷(flawed line of reasoning)，尤其是末句'think about why you're assuming that to be true'直指其预设偏见。选项B完美概括了这一论证策略。",
+    "traps": "选项E虽提及文物价值与原属国的关系，但Julia并非在讨论'文物价值在哪里才能被认识'，而是在质疑反对归还的推理本身是否成立；选项A未被Julia涉及。",
+    "tip": "关键句：What intrinsic factors make the West a suitable home…but preclude them from being preserved…by their countries of origin?"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "Benin Bronzes",
+    "cn": "贝宁青铜器（n.）：16-17世纪贝宁王国制作的青铜浮雕与雕塑"
+   },
+   {
+    "w": "artifact",
+    "cn": "文物，手工艺品（n.）"
+   },
+   {
+    "w": "antiquities",
+    "cn": "古董，古物（n. pl.）"
+   },
+   {
+    "w": "reproduction",
+    "cn": "复制品，仿制品（n.）"
+   },
+   {
+    "w": "forgery",
+    "cn": "赝品，伪造物（n.）"
+   },
+   {
+    "w": "sanctioned",
+    "cn": "被批准的，被认可的（adj./v. 过去分词）"
+   },
+   {
+    "w": "obscene",
+    "cn": "可耻的，令人发指的（adj.）"
+   },
+   {
+    "w": "agitator",
+    "cn": "煽动者，鼓动者（n.）"
+   },
+   {
+    "w": "Elgin Marbles",
+    "cn": "埃尔金大理石雕（n.）：原属雅典帕特农神庙的大理石雕塑"
+   },
+   {
+    "w": "preclude",
+    "cn": "排除，阻止（v.）"
+   },
+   {
+    "w": "intrinsic",
+    "cn": "内在的，固有的（adj.）"
+   },
+   {
+    "w": "heritage",
+    "cn": "遗产，传统（n.）"
+   }
+  ]
+ }
+}

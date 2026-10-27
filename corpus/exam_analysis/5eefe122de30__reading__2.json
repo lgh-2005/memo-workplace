@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "5eefe122de30__reading__2",
+ "examId": "5eefe122de30",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2012 年考研英语真题",
+ "year": 2012,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:26:30.841Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61386,
+ "usage": {
+  "prompt_tokens": 1777,
+  "completion_tokens": 3574,
+  "total_tokens": 5351,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1777,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3574,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1777,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "Entergy公司违背承诺挑战Vermont核监管",
+  "gist": "美国能源公司Entergy在2002年收购Vermont核电站时承诺遵守州核监管规定，但在一系列安全事故导致州参议院否决其运营延期后，公司出尔反尔，转向联邦法院挑战州法规的合宪性。文章批评Entergy背信弃义，并指出此举可能影响其在全美的核电业务。",
+  "structure": [
+   "第1-2段：引出事件——Entergy违背承诺，在联邦法院挑战州法规",
+   "第3段：回溯背景——2002年收购协议及2006年立法加码",
+   "第4段：事故频发与公司失信导致州参议院否决延期",
+   "第5段：法律争议——州权力边界问题及作者评论",
+   "第6段：警示——Entergy的失信行为可能殃及其他核电站业务"
+  ],
+  "difficulty": "中等",
+  "translation": "交易就是交易——但显然，当Entergy公司牵涉其中时就不是这么回事了。该公司是新英格兰地区的主要能源供应商，上周在Vermont引发了正当的愤怒，因为它宣布将违背长期以来遵守该州严格核监管规定的承诺。\n\n相反，该公司恰恰做了它长期承诺不会做的事情：在联邦法院挑战Vermont州法规的合宪性，这是其拼命保住Vermont Yankee核电站继续运营的孤注一掷之举。这一举动令人震惊。\n\n这场冲突自2002年就开始浮现，当时该公司收购了Vermont唯一的核电站——位于Vernon的一座老化反应堆。作为获得州政府批准此次收购的条件，公司同意在2012年之后继续运营须获得州监管机构的许可。2006年，该州进一步要求核电站许可证的任何延期必须经Vermont州立法机构批准。当时，公司也表示同意。\n\n要么Entergy从未真正打算履行这些承诺，要么它只是没有预见到接下来会发生什么。一连串事故——包括2007年一座冷却塔的部分倒塌以及地下管道系统泄漏的发现——引发了对Vermont Yankee核电站安全性和Entergy管理能力的严重质疑，尤其是在该公司就管道问题发表了误导性声明之后。Vermont州参议院被Entergy的行为激怒，去年以26票对4票否决了运营延期。\n\n现在，该公司突然声称2002年的协议因2006年的立法而无效，并且只有联邦政府才对核能问题拥有监管权力。此案中的法律问题颇为晦涩：尽管最高法院已裁定各州确实对核能拥有一定的监管权力，但法律学者表示Vermont案将为这些权力的延伸范围提供一个具有判例意义的检验。当然，如果每个州都制定自己的规则，由此可能产生的拼凑式监管确实令人担忧。但如果Entergy信守承诺，这场争论本就毫无意义。\n\n该公司似乎已得出结论：它在Vermont的声誉已经严重受损，与该州开战也不会再有更多损失。但这应当付出代价。运营核电站的许可是一种公共信任。Entergy在美国还运营着另外11座反应堆，包括位于Plymouth的Pilgrim核电站。该公司承诺安全运营Pilgrim核电站，并已申请联邦许可将其再延期运营20年。但当核管理委员会（NRC）审查该公司的申请时，它应该记住Entergy的承诺值几何。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "The company, a major energy supplier in New England, provoked justified outrage in Vermont last week when it announced it was reneging on a longstanding commitment to abide by the state's strict nuclear regulations.",
+    "why": "根据上下文，首句\"A deal is a deal\"暗示有人不守约定；后文第二段明确说公司做了\"it had long promised it would not\"的事，即违背承诺。第四段也用\"never really intended to live by those commitments\"佐证。因此\"reneging on\"意为违背、不履行承诺，与dishonoring（不遵守）同义。",
+    "traps": "A选项condemning（谴责）：张冠李戴，被谴责的是公司行为而非公司在谴责承诺；B选项reaffirming（重申）：与文意完全相反，公司是在违背而非重申承诺；D选项securing（确保）：同样与文意相反，公司并未确保承诺的履行。",
+    "tip": "利用上下文反复出现的\"违背承诺\"线索判断词义。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "As a condition of receiving state approval for the sale, the company agreed to seek permission from state regulators to operate past 2012.",
+    "why": "原文明确指出2002年协议的背景是公司收购Vermont核电站。\"As a condition of receiving state approval for the sale\"说明公司同意遵守州监管是为了获得州政府对此次收购（sale）的批准。因此Entergy签订2002年协议的目的是获得购买核电站的许可，对应D选项。",
+    "traps": "A选项obtain protection from Vermont regulators（获得州监管机构保护）：无中生有，公司是接受监管而非获得保护；B选项seek favor from the federal legislature（寻求联邦立法机构的支持）：偷换概念，协议是与州政府而非联邦的；C选项acquire an extension of its business license（获得营业执照延期）：时间错位，延期运营是2012年后才涉及的问题，不是2002年协议的目的。",
+    "tip": "注意区分协议签订的直接目的与协议中附带的条件内容。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "A string of accidents, including the partial collapse of a cooling tower in 2007 and the discovery of an underground pipe system leakage, raised serious questions about both Vermont Yankee's safety and Entergy's management – especially after the company made misleading statements about the pipe.",
+    "why": "第四段列举了一系列事故，并明确指出这些事故引发了对Entergy\"management\"（管理）的严重质疑，尤其是公司还就管道问题发表了误导性声明，更暴露出管理层面的问题。因此A选项\"managerial practices\"（管理实践）直接对应原文。",
+    "traps": "B选项technical innovativeness（技术创新性）：文中提到的是安全事故和管理问题，与技术创新无关；C选项financial goals（财务目标）：原文未涉及财务问题；D选项business vision（商业远见）：虽然第四段首句提到公司未能预见后续事件，但该段核心问题指向management，D属于以偏概全。",
+    "tip": "段落主旨句中的关键词往往直接对应正确答案。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "legal scholars say that Vermont case will offer a precedent-setting test of how far those powers extend.",
+    "why": "原文指出最高法院已裁定各州对核能拥有一定监管权力，而法律学者认为Vermont案将检验\"how far those powers extend\"（这些权力能延伸多远），即检验各州在核能问题上的权力边界。D选项\"the limits of states' power over nuclear issues\"精确对应这一表述。注意题目问的是\"in the author's view\"，作者引用法律学者观点即代表其认同。",
+    "traps": "A选项Entergy's capacity to fulfill all its promises（Entergy履行承诺的能力）：偷换主语，案件检验的是州权力边界而非公司能力；B选项the nature of states' patchwork regulations（各州拼凑式监管的性质）：虽然文中提及patchwork regulations，但这是附带担忧而非案件的核心检验内容；C选项the federal authority over nuclear issues（联邦对核能的权力）：方向相反，检验的是州权力的边界而非联邦权力。",
+    "tip": "定位关键表述后注意同义替换：how far powers extend = the limits of power。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Entergy runs 11 other reactors in the United States, including Pilgrim Nuclear station in Plymouth. ... But as the Nuclear Regulatory Commission (NRC) reviews the company's application, it should keep in mind what promises from Entergy are worth.",
+    "why": "最后一段提到Entergy在美国还运营着11座反应堆，并正在申请Pilgrim核电站延期运营。作者提醒NRC在审查申请时应考虑Entergy承诺的可信度。这暗示Entergy在Vermont的失信行为可能影响NRC对其其他申请的审批态度，从而影响其在其他地区的业务，对应A选项。",
+    "traps": "B选项the authority of the NRC will be defied（NRC的权威将被挑战）：无中生有，文中未暗示任何人会挑战NRC权威；C选项Entergy will withdraw its Plymouth application（Entergy将撤回Plymouth申请）：过度推断，文中仅建议NRC审慎考虑，未暗示公司会撤回申请；D选项Vermont's reputation might be damaged（Vermont的声誉可能受损）：张冠李戴，受损的是Entergy的声誉而非Vermont的。",
+    "tip": "末段推断题注意作者的言外之意，\"should keep in mind\"暗示会产生负面后果。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "reneging",
+    "cn": "违背，食言（v.）"
+   },
+   {
+    "w": "provoked",
+    "cn": "激起，引发（v.）"
+   },
+   {
+    "w": "constitutionality",
+    "cn": "合宪性（n.）"
+   },
+   {
+    "w": "stunning",
+    "cn": "令人震惊的（adj.）"
+   },
+   {
+    "w": "reactor",
+    "cn": "反应堆（n.）"
+   },
+   {
+    "w": "legislature",
+    "cn": "立法机构（n.）"
+   },
+   {
+    "w": "misleading",
+    "cn": "误导性的（adj.）"
+   },
+   {
+    "w": "obscure",
+    "cn": "晦涩的，不清楚的（adj.）"
+   },
+   {
+    "w": "precedent-setting",
+    "cn": "开创先例的（adj.）"
+   },
+   {
+    "w": "patchwork",
+    "cn": "拼凑的，七拼八凑的（adj.）"
+   },
+   {
+    "w": "beside the point",
+    "cn": "无关紧要，离题（短语）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As a condition of receiving state approval for the sale, the company agreed to seek permission from state regulators to operate past 2012.",
+    "cn": "作为获得州政府批准此次收购的条件，公司同意在2012年之后继续运营须获得州监管机构的许可。",
+    "note": "主干为the company agreed to seek permission；As a condition of...为介词短语作状语，说明同意的前提；to operate past 2012为不定式作permission的补充说明。"
+   },
+   {
+    "en": "whereas the Supreme Court has ruled that states do have some regulatory authority over nuclear power, legal scholars say that Vermont case will offer a precedent-setting test of how far those powers extend.",
+    "cn": "尽管最高法院已裁定各州确实对核能拥有一定的监管权力，但法律学者表示Vermont案将为这些权力的延伸范围提供一个具有判例意义的检验。",
+    "note": "whereas引导让步状语从句；主句主干为legal scholars say that...；how far those powers extend为test的同位语从句，说明检验的具体内容。"
+   },
+   {
+    "en": "But as the Nuclear Regulatory Commission (NRC) reviews the company's application, it should keep in mind what promises from Entergy are worth.",
+    "cn": "但当核管理委员会审查该公司的申请时，它应该记住Entergy的承诺值几何。",
+    "note": "as引导时间状语从句；主句为it should keep in mind...；what promises from Entergy are worth为宾语从句，what在从句中作worth的宾语，具有反讽意味。"
+   }
+  ]
+ }
+}

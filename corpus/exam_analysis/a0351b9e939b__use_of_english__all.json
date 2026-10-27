@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "a0351b9e939b__use_of_english__all",
+ "examId": "a0351b9e939b",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2002 年考研英语真题（旧）",
+ "year": 2002,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:12:33.500Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 102811,
+ "usage": {
+  "prompt_tokens": 1737,
+  "completion_tokens": 5298,
+  "total_tokens": 7035,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1737,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5298,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1737,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "传播技术的历史演进与信息社会",
+  "gist": "文章梳理了从15世纪印刷术传播到20世纪电视与计算机发展的传播技术演进历程，指出报纸、电报、电话、广播等媒介依次出现并加速了通信革命，计算机的引入根本性地改变了信息传播进程，催生了\"信息社会\"概念，但人们对其经济、政治、社会和文化影响仍存在争议。",
+  "difficulty": "中等",
+  "translation": "人们曾把20世纪电视的发展与15至16世纪印刷术的传播加以比较。然而，在这两者之间发生了许多事情。如前所述，直到19世纪，报纸才成为占主导地位的前电子媒介，它追随了小册子和书籍的脚步，并与期刊相伴而行。正是在同一时期，通信革命加速发展，始于交通运输和铁路，随后经由电报、电话、广播和电影继续推进，进入了以汽车和飞机为标志的20世纪世界。并非所有人都能全面地看待这一进程，但这样做是很重要的。\n\n然而，人们普遍认为，20世纪初计算机的引入——随后在20世纪60年代集成电路的发明推动下——从根本上改变了这一进程，尽管它对媒体的影响并非立即显现。随着时间的推移，计算机变得更小、更强大，它们也变得\"个人化\"了，同时也进入了机构领域，显示变得更清晰，存储容量也不断增加。人们像谈论人一样，按\"代\"来谈论计算机，而代与代之间的距离要小得多。\n\n正是在计算机时代，\"信息社会\"一词开始被广泛使用，以描述我们现在生活于其中的大背景。通信革命影响了工作和休闲，也影响了我们对地点和时间的思考与感受，但人们对其经济、政治、社会和文化含义一直存在争议性的观点。人们将\"益处\"与\"有害的\"结果进行了权衡比较。而且，要做出概括性的结论实属困难。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "A",
+    "correct": "between",
+    "why": "上文提到20世纪电视发展与15-16世纪印刷术传播的比较，此处指\"在两者之间\"发生了许多事情，between呼应两个时间节点之间的历史跨度，语义逻辑完整。",
+    "traps": "B项before（之前）语义模糊，缺少明确参照点；C项since（自从）需要完成时态但方向不对，强调从过去到现在；D项later（之后）无法体现\"两者之间\"的含义，且与上下文的历史跨度逻辑不符。",
+    "tip": "注意上文两个时间点构成的逻辑区间。"
+   },
+   {
+    "number": 2,
+    "answer": "D",
+    "correct": "until",
+    "why": "此处为经典强调句型\"It was not until…that…\"，意为\"直到……才……\"，强调报纸成为主导媒介的时间之晚，与上下文历史发展脉络吻合。",
+    "traps": "A项after（在……之后）不能与not构成固定句型；B项by（到……为止）虽与时间搭配但不符合not…that强调结构；C项during（在……期间）与not搭配后语义不通，且不构成标准强调句。",
+    "tip": "识别\"It was not until…that…\"强调句型。"
+   },
+   {
+    "number": 3,
+    "answer": "C",
+    "correct": "medium",
+    "why": "medium意为\"媒介\"，是传播学核心术语，pre-electronic medium指\"前电子媒介\"，准确描述报纸作为信息传播载体的属性，与上下文传播技术演进主题完全契合。",
+    "traps": "A项means（手段/方式）过于笼统，不特指传播载体；B项method（方法）指具体做事方式，不能形容报纸；D项measure（措施/尺度）语义偏离传播领域，与文意无关。",
+    "tip": "medium作\"媒介\"义是传播类文章高频词。"
+   },
+   {
+    "number": 4,
+    "answer": "B",
+    "correct": "company",
+    "why": "in the company of为固定短语，意为\"伴随着、与……一起\"，指报纸与期刊在同一时期相伴发展，逻辑通顺。",
+    "traps": "A项in the process of（在……过程中）语法可用但语义不当，期刊不是报纸的过程；C项in the light of（鉴于/根据）表因果依据，逻辑不合；D项in the form of（以……形式）暗示报纸变成了期刊，与事实不符。",
+    "tip": "掌握in the company of（伴随）固定搭配。"
+   },
+   {
+    "number": 5,
+    "answer": "B",
+    "correct": "speeded",
+    "why": "speed up为固定短语，意为\"加速\"，指通信革命在这一时期加速推进，与后文列举的一系列快速出现的新技术（铁路、电报、电话等）形成呼应。",
+    "traps": "A项gathered up不是常见固定搭配（gather常与steam搭配表加速）；C项worked up（激动/逐步发展）语义偏离，不强调速度；D项picked up虽有\"加速\"义，但更常用于非正式语境且侧重\"恢复/回升\"。",
+    "tip": "speed up（加速）是核心动词短语。"
+   },
+   {
+    "number": 6,
+    "answer": "A",
+    "correct": "on",
+    "why": "lead on意为\"继续前进、引导向前\"，与through搭配表示\"继续经由……推进\"，描述通信革命从铁路依次经过电报、电话等不断向前发展的过程。",
+    "traps": "B项lead out（引出/带出）不与through连用描述历史进程；C项lead over无此常见固定搭配；D项lead off（开始/率先）强调起始而非持续推进，与语境不符。",
+    "tip": "leading on through表示持续推进。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "into",
+    "why": "into表示\"进入\"，leading on through…into the 20th century world描述通信革命经由各种技术最终进入20世纪世界，体现时间推进和阶段转换。",
+    "traps": "A项of无法表达\"进入\"的方向性；B项for表目的或对象，逻辑不通；C项beyond（超越）暗示超出20世纪范围，与文意不符——此处正是进入而非超越20世纪。",
+    "tip": "into强调从一个阶段进入另一个阶段。"
+   },
+   {
+    "number": 8,
+    "answer": "D",
+    "correct": "perspective",
+    "why": "in perspective为固定搭配，意为\"全面地、以正确的眼光\"，指并非所有人都能全面看待通信革命的发展过程，后文\"It is important to do so\"强调全局视角的重要性。",
+    "traps": "A项in concept（在概念上）过于抽象，不表示\"全面审视\"；B项in dimension（在维度上）非惯用搭配；C项in effect（实际上/事实上）是副词性短语，表转折而非观察视角，语义偏离。",
+    "tip": "in perspective（全面地看）是固定表达。"
+   },
+   {
+    "number": 9,
+    "answer": "C",
+    "correct": "however",
+    "why": "第一段说通信革命的全面视角很重要，第二段转入计算机话题并指出其影响并非立即显现，however表示转折过渡，连接前后段落的逻辑关系。",
+    "traps": "A项indeed（的确）表强调递进，无法引出新话题的转折；B项hence（因此）表因果推论，前后段不构成因果关系；D项therefore（所以）同样表因果，与语境不符。",
+    "tip": "段间插入语however常表话题转换。"
+   },
+   {
+    "number": 10,
+    "answer": "B",
+    "correct": "followed",
+    "why": "followed by意为\"随后是/紧接着是\"，指计算机引入之后，随之而来的是60年代集成电路的发明，表时间先后顺序，逻辑清晰。",
+    "traps": "A项brought by搭配不当，通常用brought about by；C项stimulated by（被……刺激）因果方向错误，是集成电路推动了计算机发展而非相反；D项characterized by（以……为特征）语义不当，集成电路不是计算机引入的特征而是后续发展。",
+    "tip": "followed by表示时间上的先后承接。"
+   },
+   {
+    "number": 11,
+    "answer": "D",
+    "correct": "although",
+    "why": "主句说计算机根本改变了进程，从句说其对媒体的影响并非立即显现，两者构成让步关系：虽然影响深远，但并非立竿见影。although引导让步状语从句。",
+    "traps": "A项unless（除非）表条件，逻辑不通；B项since（既然/因为）表原因，与\"影响不明显\"和\"根本改变\"之间的让步关系矛盾；C项lest（以免）表目的，语义完全不合。",
+    "tip": "让步连词although连接看似矛盾的两个事实。"
+   },
+   {
+    "number": 12,
+    "answer": "A",
+    "correct": "apparent",
+    "why": "apparent意为\"明显的、显而易见的\"，not immediately apparent指计算机对媒体的影响不是立即显现的，与although引导的让步逻辑一致：虽然改变深刻，但影响起初并不明显。",
+    "traps": "B项desirable（令人满意的）引入主观评价，偏离客观陈述；C项negative（消极的）过于片面，文章并未在此判断影响好坏；D项plausible（貌似有理的）用于描述论点是否可信，不适用于描述影响的可见程度。",
+    "tip": "apparent常与immediately搭配表\"立即显现\"。"
+   },
+   {
+    "number": 13,
+    "answer": "A",
+    "correct": "institutional",
+    "why": "上文说计算机变得personal（个人化），as well as表并列补充，institutional（机构化的）与personal形成对照——计算机既进入个人领域，也在机构层面广泛应用，体现其普及的两个维度。",
+    "traps": "B项universal（普遍的）虽似合理但与personal不构成对称并列维度；C项fundamental（基本的）是抽象形容词，无法与personal形成\"个人vs机构\"的具体对比；D项instrumental（工具性的）语义模糊，不能与personal形成有意义的配对。",
+    "tip": "personal与institutional构成\"个人—机构\"对比。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "capacity",
+    "why": "storage capacity为固定搭配，意为\"存储容量\"，是计算机领域的标准术语，描述计算机存储空间不断增大，与前文display becoming sharper并列说明技术进步。",
+    "traps": "A项ability（能力）指人的才能，不与storage搭配；B项capability（能力/性能）虽可描述设备但不构成storage capability这一标准术语；D项faculty（才能/官能）多指人的天赋或大学院系，与存储无关。",
+    "tip": "storage capacity（存储容量）是固定技术术语。"
+   },
+   {
+    "number": 15,
+    "answer": "B",
+    "correct": "in terms of",
+    "why": "in terms of意为\"按照/从……角度\"，指人们按\"代\"的概念来谈论计算机，如同谈论人类的世代一样，表示分类或描述的角度。",
+    "traps": "A项by means of（通过……手段）表方式方法，不表分类角度；C项with regard to（关于）表话题范围，不能修饰think of的方式；D项in line with（与……一致）表一致性，语义不合，此处不是说与代保持一致。",
+    "tip": "in terms of表\"从……方面/按照\"的分类视角。"
+   },
+   {
+    "number": 16,
+    "answer": "D",
+    "correct": "smaller",
+    "why": "distance…smaller表示\"距离更小\"，指计算机代与代之间的更替周期比人类世代短得多，呼应前文计算机技术飞速发展的主题。",
+    "traps": "A项deeper（更深）不与distance搭配，距离没有深浅之分；B项fewer（更少）用于修饰可数名词复数，不修饰不可数的distance；C项nearer（更近）虽语义接近，但near修饰的是空间位置而非距离量值，且distance用smaller是标准搭配。",
+    "tip": "distance常用small/smaller修饰表\"间距小\"。"
+   },
+   {
+    "number": 17,
+    "answer": "A",
+    "correct": "context",
+    "why": "context意为\"背景/语境\"，the context within which we now live指\"我们现在生活于其中的大背景\"，准确描述\"信息社会\"作为当代社会环境框架的含义。",
+    "traps": "B项range（范围）侧重变化幅度，不表社会背景；C项scope（范畴）侧重涵盖面，与within which we live搭配不自然；D项territory（领土/领域）偏向地理或学科领域，不适合描述抽象的社会背景。",
+    "tip": "context指宏观的社会/历史背景。"
+   },
+   {
+    "number": 18,
+    "answer": "C",
+    "correct": "influenced",
+    "why": "influence意为\"影响\"，指通信革命影响了工作、休闲以及人们的思维与感受，是对革命效果的客观描述，搭配both…and结构语义完整。",
+    "traps": "A项regarded（看待）为及物动词需要as补语，此处语法不完整；B项impressed（使印象深刻）语义偏情感反应，不能以革命为主语直接作用于work and leisure；D项effected（实现/引起）意为\"促成某事发生\"，与work and leisure搭配不当——革命不是\"促成\"工作和休闲。",
+    "tip": "influence作\"影响\"是最常见的中性动词。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "controversial",
+    "why": "controversial意为\"有争议的\"，指人们对通信革命的经济、政治、社会和文化影响存在不同的、有争议的观点，与末句\"概括很难做出\"形成呼应。",
+    "traps": "A项competitive（竞争的）用于描述对手关系，不形容观点的分歧；C项distracting（分散注意力的）描述干扰效果，不描述观点性质；D项irrational（非理性的）带有强烈负面评价，文章立场中立，不会如此判断。",
+    "tip": "controversial views表\"有争议的观点\"。"
+   },
+   {
+    "number": 20,
+    "answer": "C",
+    "correct": "against",
+    "why": "weigh…against…为固定搭配，意为\"将……与……进行权衡比较\"，指人们将通信革命的\"益处\"与\"有害\"结果相互对比权衡，呼应上文controversial的争议性。",
+    "traps": "A项able（在……之上）表位置或优先，不构成权衡搭配；B项weigh upon（压在……上）表负担而非比较；D项weigh with（对……有影响）语义偏离，不表示两方面的对比权衡。",
+    "tip": "weigh A against B意为\"权衡A与B\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "diffusion",
+    "cn": "n. 传播，扩散"
+   },
+   {
+    "w": "pamphlet",
+    "cn": "n. 小册子"
+   },
+   {
+    "w": "periodical",
+    "cn": "n. 期刊，杂志"
+   },
+   {
+    "w": "telegraph",
+    "cn": "n. 电报"
+   },
+   {
+    "w": "integrated circuit",
+    "cn": "n. 集成电路"
+   },
+   {
+    "w": "radically",
+    "cn": "adv. 根本地，彻底地"
+   },
+   {
+    "w": "apparent",
+    "cn": "adj. 明显的，显而易见的"
+   },
+   {
+    "w": "institutional",
+    "cn": "adj. 机构的，制度化的"
+   },
+   {
+    "w": "controversial",
+    "cn": "adj. 有争议的"
+   },
+   {
+    "w": "implications",
+    "cn": "n. 含义，影响（常用复数）"
+   },
+   {
+    "w": "generalizations",
+    "cn": "n. 概括，泛论（常用复数）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Yet",
+    "role": "转折连接，引出两个时代之间的历史补充"
+   },
+   {
+    "w": "not until",
+    "role": "强调时间之晚，突出报纸成为主导媒介的迟缓"
+   },
+   {
+    "w": "however",
+    "role": "段间转折，从宏观历史视角转入计算机具体话题"
+   },
+   {
+    "w": "although",
+    "role": "让步关系，承认计算机影响深远但显现缓慢"
+   },
+   {
+    "w": "as well as",
+    "role": "并列补充，将institutional与personal并列呈现"
+   },
+   {
+    "w": "but",
+    "role": "末段转折，引出对通信革命影响的争议性观点"
+   }
+  ]
+ }
+}

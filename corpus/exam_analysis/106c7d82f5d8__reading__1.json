@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "106c7d82f5d8__reading__1",
+ "examId": "106c7d82f5d8",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年 12 月英语六级真题（第 3 套）",
+ "year": 2020,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:33:58.253Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56517,
+ "usage": {
+  "prompt_tokens": 1862,
+  "completion_tokens": 3704,
+  "total_tokens": 5566,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1862,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3704,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1862,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社交媒体对心理健康的负面影响",
+  "gist": "文章指出社交媒体本质上是一种印象管理，无法替代真实的人际交往。人们在社交媒体上倾向于美化自我、理想化他人，导致孤独感和不足感。作者建议社交媒体应作为健康社交的补充，而非填补内心不安全感的工具，当线上体验产生负面影响时应回归现实社交。",
+  "structure": [
+   "第1段：提出核心问题——社交媒体引发孤独和不足感，本质是印象管理",
+   "第2-3段：分析线上友谊的局限性及社交媒体成瘾的负面效应",
+   "第4段：人类渴望社交联系，但线上浏览无法替代面对面互动",
+   "第5段：社交媒体导致对完美的不健康追求，应作为健康社交的补充",
+   "第6段：总结建议——当线上体验带来消极影响时，应增加真实社交"
+  ],
+  "difficulty": "中等",
+  "translation": "为什么社交媒体会引发孤独感和不足感？因为它在很大程度上并非真实生活，而是一种印象管理，一种自我营销的方式——人们精心选择和过滤照片与文字，以展示自己最好的一面。\n\n通过社交媒体结交的网络\"朋友\"并不遵循人际关系正常的心理发展过程。你既不会在网上共度实际的相处时光，也不会进行真正的情感交流。你只是向一群因偶然互动而\"加好友\"或\"关注\"的人发送照片和吸引眼球的帖子。这并不是说你的社交媒体朋友不能成为真正的朋友，他们完全可以，但两者并不等同。一般来说，我们的社交媒体页面上不会出现未经过滤的评论或随意拍摄的照片。这也是合情合理的，因为面对一些我们实际上并不了解的、或尚未建立信任的\"朋友\"，完全展露真实和脆弱的自我会让人感到不安全。\n\n社交媒体当然可以成为逃离日常枯燥生活的一种方式，但我们必须警惕其对个人整体心理健康的负面影响，例如成瘾。\n\n作为人类，我们渴望社交联系。然而，浏览一页页的图片和评论并不能提供与面对面互动同等程度的满足感。此外，我们倾向于将他人的生活理想化，拿自己的不如意与别人最大的成就进行比较，最终导致孤独感和不足感。\n\n社交媒体可能会把人们引向对完美的不健康追求。有些人开始为了拍出那张\"完美\"照片而参加特定活动或去不同的地方旅行。他们开始通过\"点赞\"数来寻求认可。要想让社交媒体在你的社交生活中发挥心理健康的作用，它应该是对已有健康社交网络的补充。照片和帖子应该是人生珍贵时刻和快乐时光的副产品，而不是为了填补不安全感或未满足的需求而刻意策划和精心计算后发布到网络空间的形象。\n\n总而言之，社交媒体增强了我们与全球各类人建立联系的能力。它为企业打开了大门，也让我们得以与那些原本无法保持联系的人保持关注。然而，社交媒体应该让人感到是一种愉快的体验，而不是助长消极想法和感受的体验。如果属于后者，那么增加与值得信赖的朋友面对面相处的时间，减少在线浏览的时间，将会提醒你：你的社交网络远比任何\"点赞\"\"关注\"或\"分享\"更有价值。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Why does social media trigger feelings of loneliness and inadequacy?",
+    "why": "文章首句即提出社交媒体会引发孤独感(loneliness)和不足感(inadequacy)。C选项中isolated(孤立的)对应loneliness(孤独)，incompetent(无能的)对应inadequacy(不足感)，属于同义替换。作者通过反问句暗示社交媒体的印象管理本质会让人产生这些负面感受。",
+    "traps": "A项\"促进人际关系\"与文意相反，文章指出网络友谊不遵循正常人际关系发展过程；B项\"过滤对他人的负面印象\"偷换概念，filtering指的是过滤自己发布的内容而非对他人的印象；D项\"使我们脆弱和不真实\"张冠李戴，vulnerable和inauthentic是描述人们不敢在社交媒体上展示的状态，而非社交媒体造成的结果。",
+    "tip": "注意首段反问句往往揭示全文论点，同义替换是六级常见设题手法。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "it wouldn't feel safe to be completely authentic and vulnerable with some of our \"friends\" whom we don't actually know or with whom trust has yet to be built.",
+    "why": "原文明确指出人们不敢在社交媒体上完全真实地表达自己，原因是有些\"朋友\"我们实际上并不了解，或者尚未建立信任(trust has yet to be built)。A选项\"他们并非觉得所有网络朋友都值得信赖\"准确概括了这一原因，trustworthy对应原文trust尚未建立的表述。",
+    "traps": "B项\"想避免冒犯受众\"属于无中生有，文中未提及冒犯问题；C项\"不想失去粉丝\"文中未涉及，属于过度推断；D项\"急于提升人气\"与本段讨论的安全感和信任话题不符，属于偷换话题。",
+    "tip": "定位关键词后要精读上下文因果关系，区分原因和结果。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "we tend to idealize others' lives and compare our downfalls to their greatest accomplishments, ending in feelings of loneliness and inadequacy.",
+    "why": "原文指出人们倾向于将他人的生活理想化(idealize others' lives)。C选项\"paint a rosy picture of other people's lives\"(把别人的生活描绘得很美好)是对idealize others' lives的同义改写，准确对应原文含义。",
+    "traps": "A项\"夸大自己的成就\"与原文相反，人们是拿自己的不如意与别人的成就比较，而非夸大自身成就；B项\"不惜代价追求完美\"虽然第五段提到追求完美，但该题定位在第四段，且regardless of the cost属于过度推断；D项\"从他人失败中吸取教训\"曲解原文，downfalls指的是自己的不如意而非他人的。",
+    "tip": "注意idealize=paint a rosy picture，掌握核心同义替换有助于快速锁定正确项。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Pictures and posts should be byproducts of life's treasured moments and fun times, not the planned and calculated image that one is putting out into cyberspace in an attempt to fill insecurities or unmet needs.",
+    "why": "作者明确表示照片和帖子应该是生活中珍贵时刻和快乐时光的副产品(byproducts of life's treasured moments)，而不是精心策划的形象。A选项\"记录生活中难忘的时刻\"与byproducts of life's treasured moments完全对应，体现了作者的观点。",
+    "traps": "B项\"精心编辑以呈现最佳形象\"恰好是作者反对的做法(planned and calculated image)；C项\"以满足安全需求的方式展示\"曲解原文，作者反对用社交媒体来fill insecurities；D项\"防止人们不健康地追求完美\"虽然文中提及此观点，但这不是作者对照片和帖子本身的看法，属于答非所问。",
+    "tip": "注意作者用should表达的观点态度，区分作者提倡的与反对的。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "If the latter is the case, increasing face-to-face time with trusted friends, and minimizing time scrolling online, will prove to be a reminder that your social network is much more rewarding than any \"like,\" \"follow\" or \"share\" can be.",
+    "why": "文章末尾给出建议：当社交媒体带来消极体验时，应增加与值得信赖的朋友面对面相处的时间，减少在线浏览时间。D选项\"加强与现实朋友的联系，而不是在意网络形象\"准确概括了这一建议，strengthen ties with real-life friends对应increasing face-to-face time with trusted friends。",
+    "traps": "A项\"利用社交媒体增强联系能力\"是文中提到的社交媒体优点，但并非针对消极体验的建议；B项\"与原本无法认识的人保持联系\"同样是社交媒体的优点陈述，非针对性建议；C项\"防止消极想法进入在线页面\"属于无中生有，文中未提出此建议。",
+    "tip": "末段建议类信息常设考点，抓住if条件句和建议性表达定位答案。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inadequacy",
+    "cn": "n. 不足感；不充分"
+   },
+   {
+    "w": "impression management",
+    "cn": "n. 印象管理"
+   },
+   {
+    "w": "synonymous",
+    "cn": "adj. 同义的；等同的"
+   },
+   {
+    "w": "authentic",
+    "cn": "adj. 真实的；真正的"
+   },
+   {
+    "w": "vulnerable",
+    "cn": "adj. 脆弱的；易受伤的"
+   },
+   {
+    "w": "the daily grind",
+    "cn": "n. 日常琐事；每日的辛苦工作"
+   },
+   {
+    "w": "fulfillment",
+    "cn": "n. 满足感；成就感"
+   },
+   {
+    "w": "idealize",
+    "cn": "v. 将……理想化"
+   },
+   {
+    "w": "validation",
+    "cn": "n. 认可；肯定"
+   },
+   {
+    "w": "byproduct",
+    "cn": "n. 副产品；附带结果"
+   },
+   {
+    "w": "cyberspace",
+    "cn": "n. 网络空间"
+   },
+   {
+    "w": "supplement",
+    "cn": "v. 补充；增补"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Generally speaking, there are no unfiltered comments or casually taken photos on our social media pages. And, rightfully so, because it wouldn't feel safe to be completely authentic and vulnerable with some of our \"friends\" whom we don't actually know or with whom trust has yet to be built.",
+    "cn": "一般来说，我们的社交媒体页面上不会出现未经过滤的评论或随意拍摄的照片。这也是合情合理的，因为面对一些我们实际上并不了解的、或尚未建立信任的\"朋友\"，完全展露真实和脆弱的自我会让人感到不安全。",
+    "note": "主句为there be句型；because引导原因状语从句，其中含it形式主语结构；whom引导两个并列的定语从句修饰friends，第二个用with whom引导。"
+   },
+   {
+    "en": "Pictures and posts should be byproducts of life's treasured moments and fun times, not the planned and calculated image that one is putting out into cyberspace in an attempt to fill insecurities or unmet needs.",
+    "cn": "照片和帖子应该是人生珍贵时刻和快乐时光的副产品，而不是为了填补不安全感或未满足的需求而刻意策划和精心计算后发布到网络空间的形象。",
+    "note": "主干为A should be X, not Y的对比结构；that引导定语从句修饰image；in an attempt to为目的状语，fill后接两个并列宾语。"
+   },
+   {
+    "en": "If the latter is the case, increasing face-to-face time with trusted friends, and minimizing time scrolling online, will prove to be a reminder that your social network is much more rewarding than any \"like,\" \"follow\" or \"share\" can be.",
+    "cn": "如果属于后者，那么增加与值得信赖的朋友面对面相处的时间、减少在线浏览的时间，将会提醒你：你的社交网络远比任何\"点赞\"\"关注\"或\"分享\"更有价值。",
+    "note": "if引导条件状语从句；主句主语为两个并列的动名词短语(increasing...and minimizing...)；that引导同位语从句解释reminder的内容，其中含比较结构much more...than。"
+   }
+  ]
+ }
+}

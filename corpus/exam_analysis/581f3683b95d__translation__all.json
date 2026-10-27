@@ -1,0 +1,167 @@
+{
+ "schemaVersion": 1,
+ "id": "581f3683b95d__translation__all",
+ "examId": "581f3683b95d",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2015 年 12 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T04:40:50.225Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 63075,
+ "usage": {
+  "prompt_tokens": 603,
+  "completion_tokens": 5969,
+  "total_tokens": 6572,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4617
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 603
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国助力全球减贫",
+  "reference": "China is playing an increasingly important role in helping the international community to eliminate extreme poverty by 2030. Since the implementation of reform and opening up in the late 1970s, China has lifted as many as 400 million people out of poverty. In the next five years, China will provide assistance to other developing countries in poverty reduction, education development, agricultural modernization, environmental protection, health care and other fields. China has made remarkable progress in reducing poverty and has made unremitting efforts in promoting economic growth, which will encourage other poor countries to cope with the challenges in their own development. While seeking development paths with their own characteristics, these countries can learn from China's experience.",
+  "sentences": [
+   {
+    "cn": "在帮助国际社会于2030年前消除极端贫困过程中，中国正扮演着越来越重要的角色。",
+    "en": "China is playing an increasingly important role in helping the international community to eliminate extreme poverty by 2030.",
+    "structure": "现在分词短语 helping the international community... 作状语；主句使用 play an increasingly important role in 结构。",
+    "keys": [
+     "国际社会 the international community",
+     "极端贫困 extreme poverty",
+     "扮演越来越重要的角色 play an increasingly important role"
+    ]
+   },
+   {
+    "cn": "自20世纪70年代末实施改革开放以来,中国已使多达四亿人摆脱了贫困。",
+    "en": "Since the implementation of reform and opening up in the late 1970s, China has lifted as many as 400 million people out of poverty.",
+    "structure": "Since 引导时间状语，主句用现在完成时；使用 lift ... out of poverty 结构；as many as 表示多达。",
+    "keys": [
+     "改革开放 reform and opening up",
+     "使摆脱贫困 lift ... out of poverty",
+     "多达四亿人 as many as 400 million people"
+    ]
+   },
+   {
+    "cn": "在未来五年中，中国将向其他发展中国家在减少贫困、发展教育、农业现代化、环境保护和医疗保健等方面提供援助。",
+    "en": "In the next five years, China will provide assistance to other developing countries in poverty reduction, education development, agricultural modernization, environmental protection, health care and other fields.",
+    "structure": "一般将来时；In the next five years 时间状语提前，provide assistance to sb. in ... 表示在……方面提供援助，列举名词短语作方面。",
+    "keys": [
+     "发展中国家 developing countries",
+     "减少贫困 poverty reduction",
+     "农业现代化 agricultural modernization",
+     "医疗保健 health care"
+    ]
+   },
+   {
+    "cn": "中国在减少贫困方面取得了显著进步,并在促进经济增长方面做出了不懈努力,这将鼓励其他贫困国家应对自身发展中的挑战。",
+    "en": "China has made remarkable progress in reducing poverty and has made unremitting efforts in promoting economic growth, which will encourage other poor countries to cope with the challenges in their own development.",
+    "structure": "主句并列谓语 has made... and has made...，which 引导非限制性定语从句，指代前面整件事。",
+    "keys": [
+     "显著进步 remarkable progress",
+     "不懈努力 unremitting efforts",
+     "经济增长 economic growth",
+     "应对挑战 cope with challenges"
+    ]
+   },
+   {
+    "cn": "在寻求具有自身特色的发展道路时,这些国家可以借鉴中国的经验。",
+    "en": "While seeking development paths with their own characteristics, these countries can learn from China's experience.",
+    "structure": "While + 现在分词短语作时间状语，主句 these countries can learn from...；用 their own characteristics 表示自身特色。",
+    "keys": [
+     "发展道路 development paths",
+     "自身特色 their own characteristics",
+     "借鉴中国的经验 learn from China's experience"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "国际社会",
+    "en": "the international community"
+   },
+   {
+    "cn": "极端贫困",
+    "en": "extreme poverty"
+   },
+   {
+    "cn": "改革开放",
+    "en": "reform and opening up"
+   },
+   {
+    "cn": "摆脱贫困",
+    "en": "be lifted out of poverty"
+   },
+   {
+    "cn": "发展中国家",
+    "en": "developing countries"
+   },
+   {
+    "cn": "农业现代化",
+    "en": "agricultural modernization"
+   },
+   {
+    "cn": "医疗保健",
+    "en": "health care"
+   },
+   {
+    "cn": "经济增长",
+    "en": "economic growth"
+   },
+   {
+    "cn": "不懈努力",
+    "en": "unremitting efforts"
+   },
+   {
+    "cn": "发展道路",
+    "en": "development path"
+   }
+  ],
+  "pitfalls": [
+   "“消除极端贫困”不能漏译 extreme，只写 eliminate poverty 会失去“极端”这一采分点。",
+   "“改革开放”为固定表达 reform and opening up，不可直译为 open and reform。",
+   "“多达四亿人”要体现 up to/as many as，否则强调程度会减弱。",
+   "“农业现代化”“环境保护”等术语需用标准名词短语，避免中式表达。",
+   "最后一处“在寻求……时”需用 While+现在分词，保持与主句主语一致。"
+  ],
+  "upgrades": [
+   {
+    "plain": "is playing a more and more important role",
+    "better": "is playing an increasingly important role",
+    "note": "increasingly 比 more and more 更正式，符合书面语体。"
+   },
+   {
+    "plain": "help other developing countries reduce poverty",
+    "better": "provide assistance to other developing countries in poverty reduction",
+    "note": "provide assistance to 与名词化 poverty reduction 更正式，符合官方语体。"
+   },
+   {
+    "plain": "made great progress",
+    "better": "made remarkable progress",
+    "note": "remarkable 比 great 更具体，强调显著且引人注目。"
+   },
+   {
+    "plain": "made continuous efforts",
+    "better": "made unremitting efforts",
+    "note": "unremitting 是固定搭配，强调持续不懈，学术语体更佳。"
+   },
+   {
+    "plain": "deal with challenges",
+    "better": "cope with the challenges",
+    "note": "cope with 搭配 challenges 更地道，符合英文习惯。"
+   }
+  ]
+ }
+}

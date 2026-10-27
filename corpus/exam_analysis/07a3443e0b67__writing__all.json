@@ -1,0 +1,249 @@
+{
+ "schemaVersion": 1,
+ "id": "07a3443e0b67__writing__all",
+ "examId": "07a3443e0b67",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2018 年考研英语真题",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  51,
+  52
+ ],
+ "generatedAt": "2026-10-27T08:45:59.153Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 120881,
+ "usage": {
+  "prompt_tokens": 732,
+  "completion_tokens": 1624,
+  "total_tokens": 2356,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 732,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1624,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 732,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：以李明身份写一封英文电子邮件，邀请校内所有国际专家出席毕业典礼，须包含时间、地点及其他相关信息。",
+    "outline": [
+     "开头：自我介绍并说明写信目的——代表学校诚挚邀请国际专家参加毕业典礼",
+     "中间：告知毕业典礼的具体时间、地点，并简要介绍典礼流程或亮点（如校长致辞、学位授予、文艺表演、合影留念等）",
+     "结尾：表达期待，提供回复联系方式，礼貌收束"
+    ],
+    "sample": "Dear International Experts,\n\nOn behalf of the Student Union, I am writing to cordially invite all of you to attend the upcoming graduation ceremony of our university.\n\nThe ceremony is scheduled to take place on June 28, 2025, from 9:00 a.m. to 11:30 a.m. in the Main Auditorium on the East Campus. During the event, there will be an opening address by our president, the conferral of degrees, and wonderful performances by graduating students. A reception with refreshments will follow immediately after the ceremony, offering a great opportunity for networking and celebration.\n\nPlease confirm your attendance by replying to this email before June 20. We would be truly honored by your presence.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "on behalf of",
+      "cn": "代表……，用于正式邮件开头表明身份与授权来源"
+     },
+     {
+      "en": "cordially invite",
+      "cn": "诚挚地邀请，比 sincerely invite 更地道、更正式"
+     },
+     {
+      "en": "is scheduled to take place",
+      "cn": "定于……举行，比 will be held 更具书面正式感"
+     },
+     {
+      "en": "the conferral of degrees",
+      "cn": "学位授予仪式，conferral 为 confer 的名词形式，学术场景高频词"
+     },
+     {
+      "en": "a reception with refreshments",
+      "cn": "备有茶点的招待会，reception 常指正式活动后的社交环节"
+     },
+     {
+      "en": "confirm your attendance",
+      "cn": "确认出席，邀请函结尾常用搭配"
+     },
+     {
+      "en": "We would be truly honored by your presence.",
+      "cn": "您的莅临将是我们莫大的荣幸，礼貌收束的经典句式"
+     },
+     {
+      "en": "offering a great opportunity for networking",
+      "cn": "提供极好的社交机会，networking 体现学术交流氛围"
+     },
+     {
+      "en": "opening address",
+      "cn": "开幕致辞，academic ceremony 中常见表达"
+     },
+     {
+      "en": "reply to this email before...",
+      "cn": "在……之前回复此邮件，用于设定回复截止日期"
+     }
+    ],
+    "pitfalls": [
+     "遗漏时间、地点等题目明确要求的核心信息，直接扣内容分",
+     "格式错误：缺少称呼语 Dear... 或结束语 Yours sincerely 等",
+     "语域不当：对国际专家使用过于随意的口语表达如 Hey / Wanna come",
+     "字数严重不足或超出，低于 80 词或超过 120 词均可能被扣分",
+     "署名使用真名而非题目要求的 Li Ming，属于违规操作"
+    ],
+    "upgrades": [
+     {
+      "plain": "We will hold the graduation ceremony on June 28.",
+      "better": "The ceremony is scheduled to take place on June 28, 2025, from 9:00 a.m. to 11:30 a.m.",
+      "note": "补充年份与具体时间段，信息更完整；scheduled to take place 比 will hold 更正式"
+     },
+     {
+      "plain": "I hope you can come.",
+      "better": "We would be truly honored by your presence.",
+      "note": "使用虚拟语气 would be honored 体现高度礼貌与尊敬，更符合邀请函语域"
+     },
+     {
+      "plain": "There will be speeches and performances.",
+      "better": "There will be an opening address by our president, the conferral of degrees, and wonderful performances by graduating students.",
+      "note": "用具体细节替代笼统描述，展现内容丰富度，增强说服力"
+     },
+     {
+      "plain": "Please tell us if you can come.",
+      "better": "Please confirm your attendance by replying to this email before June 20.",
+      "note": "confirm your attendance 更正式；补充截止日期使邀请更具可操作性"
+     },
+     {
+      "plain": "After the ceremony, we will have food and drinks.",
+      "better": "A reception with refreshments will follow immediately after the ceremony.",
+      "note": "reception 和 refreshments 属于正式活动高频用词，语域更匹配"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "看图写作，要求根据图画内容写一篇160-200词的短文，分三步：描述图画、阐释寓意、给出评论。",
+    "outline": [
+     "第一段：客观描述图画内容——一群人围坐餐桌，各自低头沉浸于手机屏幕，彼此之间毫无交流，点明该现象在当代社会中的普遍性。",
+     "第二段：阐释图画深层寓意——智能手机与信息技术在带来便捷的同时，也在悄然侵蚀真实的人际交往；人们身处咫尺却如远隔天涯，技术若被滥用反而拉大情感距离。",
+     "第三段：发表个人评论——呼吁在数字世界与现实生活之间取得平衡，主动放下手机、珍视面对面交流，强调真诚的线下沟通不可替代。"
+    ],
+    "sample": "As is vividly depicted in the picture, a group of people are sitting around a dinner table, yet instead of communicating with one another, every one of them is fixated on their smartphone screen. The cartoon, though slightly exaggerated, mirrors a ubiquitous phenomenon in modern society.\n\nThe underlying message of this picture is thought-provoking. With the rapid development of information technology, smartphones have become an indispensable part of our daily lives. However, the excessive reliance on mobile devices has gradually eroded genuine interpersonal communication. People who are supposed to cherish face-to-face interactions now find themselves trapped in the virtual world, neglecting the warmth and emotional bonds that real conversations bring. In essence, the convenience of technology, if misused, can paradoxically widen the emotional distance between individuals.\n\nFrom my perspective, striking a balance between the digital world and real life is of paramount importance. We should consciously limit our screen time during social gatherings and devote more attention to the people around us. After all, no amount of online interaction can replace the irreplaceable value of heartfelt, face-to-face communication.",
+    "phrases": [
+     {
+      "en": "be fixated on",
+      "cn": "沉迷于、目不转睛地盯着；用于描述人对某事物的过度关注"
+     },
+     {
+      "en": "mirror a ubiquitous phenomenon",
+      "cn": "反映一种普遍现象；mirror作动词比reflect更生动形象"
+     },
+     {
+      "en": "the excessive reliance on",
+      "cn": "对……的过度依赖；名词化表达比depend on too much更正式"
+     },
+     {
+      "en": "erode genuine interpersonal communication",
+      "cn": "侵蚀真正的人际交流；erode比damage更具渐进感，体现潜移默化"
+     },
+     {
+      "en": "be trapped in the virtual world",
+      "cn": "困于虚拟世界；trapped强调被动与无法自拔的状态"
+     },
+     {
+      "en": "strike a balance between A and B",
+      "cn": "在A与B之间取得平衡；写作中表达'兼顾'的经典搭配"
+     },
+     {
+      "en": "of paramount importance",
+      "cn": "至关重要的；比very important高级，适用于议论收束"
+     },
+     {
+      "en": "no amount of ... can replace",
+      "cn": "再多的……也无法替代；否定强调结构，语气有力"
+     },
+     {
+      "en": "thought-provoking",
+      "cn": "发人深省的；形容图画寓意深刻的常用高分形容词"
+     },
+     {
+      "en": "devote genuine attention to",
+      "cn": "给予真正的关注；比pay attention to更具情感色彩"
+     }
+    ],
+    "pitfalls": [
+     "审题不清，未按描述—阐释—评论三段式展开，结构混乱扣分严重",
+     "图画描述过于笼统或编造细节，未做到忠实于画面内容",
+     "第二段脱离图画空谈大道理，缺乏从画面到寓意的逻辑过渡",
+     "全篇用词单一重复，如反复使用important、people，缺少同义替换",
+     "字数不足160词或严重超出200词，均会影响评分档次"
+    ],
+    "upgrades": [
+     {
+      "plain": "People use phones too much.",
+      "better": "The excessive reliance on mobile devices has gradually eroded genuine interpersonal communication.",
+      "note": "用名词化主语+高级动词erode替代口语化简单句，提升学术质感与信息密度"
+     },
+     {
+      "plain": "This is very important.",
+      "better": "Striking a balance between the digital world and real life is of paramount importance.",
+      "note": "动名词短语作主语搭配of paramount importance，句式与词汇双重升级"
+     },
+     {
+      "plain": "Online talking cannot replace real talking.",
+      "better": "No amount of online interaction can replace the irreplaceable value of heartfelt, face-to-face communication.",
+      "note": "no amount of结构强化否定语气，复合修饰语增强画面感与说服力"
+     },
+     {
+      "plain": "The picture shows people using phones at dinner.",
+      "better": "As is vividly depicted in the picture, every individual is fixated on their smartphone screen, seemingly oblivious to the presence of others.",
+      "note": "被动引导句+分词短语做状语，描述层次更丰富、节奏更流畅"
+     },
+     {
+      "plain": "Technology is good but also bad.",
+      "better": "The convenience of technology, if misused, can paradoxically widen the emotional distance between individuals.",
+      "note": "插入条件短语+paradoxically制造转折张力，展现辩证思维深度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "On behalf of the Student Union, I am writing to cordially invite all of you to attend the upcoming graduation ceremony. —— 代表学生会写信诚邀出席毕业典礼，on behalf of + cordially invite 双重正式表达，适用于各类邀请信开头。",
+   "The ceremony is scheduled to take place on June 28, 2025, from 9:00 a.m. to 11:30 a.m. in the Main Auditorium. —— 典礼定于2025年6月28日上午9:00至11:30在主礼堂举行，一句话涵盖时间与地点，信息密度高且结构清晰。",
+   "A reception with refreshments will follow immediately after the ceremony, offering a great opportunity for networking and celebration. —— 典礼后紧接茶点招待会，提供社交与庆祝的绝佳机会。现在分词 offering 作伴随状语，句式灵活加分。",
+   "We would be truly honored by your presence. —— 您的莅临将是我们莫大的荣幸。would be honored 虚拟语气体现最高级别礼貌，是邀请函万能收束句。",
+   "The cartoon, though slightly exaggerated, mirrors a ubiquitous phenomenon in modern society. —— 插入让步短语+mirror动词+ubiquitous高级词，一句话精炼桥接图画与现实。",
+   "The convenience of technology, if misused, can paradoxically widen the emotional distance between individuals. —— 条件插入语+paradoxically构成语义反转，揭示便利与疏离的深层矛盾，展现批判性思维。",
+   "No amount of online interaction can replace the irreplaceable value of heartfelt, face-to-face communication. —— no amount of否定强调收束全文，heartfelt与face-to-face双重修饰使结尾掷地有声。",
+   "People who are supposed to cherish face-to-face interactions now find themselves trapped in the virtual world. —— who定语从句+be supposed to形成期待与现实的对比，trapped一词极具画面感。"
+  ]
+ },
+ "mergedFrom": [
+  "07a3443e0b67__writing__51",
+  "07a3443e0b67__writing__52"
+ ]
+}

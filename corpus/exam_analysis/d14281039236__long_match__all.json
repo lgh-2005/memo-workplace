@@ -1,0 +1,258 @@
+{
+ "schemaVersion": 1,
+ "id": "d14281039236__long_match__all",
+ "examId": "d14281039236",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2019 年 12 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:26:59.584Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34985,
+ "usage": {
+  "prompt_tokens": 963,
+  "completion_tokens": 2076,
+  "total_tokens": 3039,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 963,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2076,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 963,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "草饲农业的发展与影响",
+  "strategy": [
+   "先通读10条陈述句，标记高频实体词如人名Tim Joseph、专有名词grass-fed等",
+   "利用专有名词、数字、大写词快速锁定段落，再比对语义",
+   "注意同义替换：如cost-effectiveness对应经济效益评估，scarce对应供不应求",
+   "区分相似主题的不同侧重点，如利润优势(D)与价格波动(F)属不同角度",
+   "关注信号词如only one example、many other benefits等限定语，精准匹配段落论点"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "转向草饲的农民不受全球市场上不断变化的牛奶价格的影响。",
+    "keywords": [
+     "grass-fed",
+     "milk prices",
+     "global market",
+     "not affected"
+    ],
+    "paraphrase": "陈述句中'not affected by the ever-changing milk prices'可能对应原文中关于草饲农民不受市场价格波动影响、拥有价格稳定性等表述，属于否定与正面表述的语义转换。",
+    "tip": "定位'milk prices'和'global market'，关注价格波动/稳定性相关描述。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "多年来，Tim Joseph的合作伙伴们已经帮助许多奶农转向了草饲。",
+    "keywords": [
+     "Tim Joseph",
+     "partners",
+     "dairy farmers",
+     "switch to grass-fed"
+    ],
+    "paraphrase": "陈述句中'partners have helped many dairy farmers to switch'可能对应原文中合作方协助奶农转型草饲的相关叙述，helped可能替换为assisted或supported等。",
+    "tip": "定位人名Tim Joseph与partners，扫读关于合作伙伴帮助转型的段落。"
+   },
+   {
+    "number": 38,
+    "answer": "J",
+    "cn": "一位倡导者认为，在评估草饲农业的成本效益时，应该考虑到许多其他益处。",
+    "keywords": [
+     "advocate",
+     "other benefits",
+     "cost-effectiveness",
+     "grass-fed farming"
+    ],
+    "paraphrase": "陈述句中'many other benefits'和'cost-effectiveness'可能对应原文中某位支持者提出在衡量经济效益时需纳入环境、健康等附加价值的论述，属于概括归纳型替换。",
+    "tip": "定位'cost-effectiveness'或经济效益评估等表达，找到倡导者的观点段。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "许多奶农在看到草饲在利润方面的优势后，被说服转向了草饲。",
+    "keywords": [
+     "dairy farmers",
+     "persuaded",
+     "switch",
+     "profits"
+    ],
+    "paraphrase": "陈述句中'saw its advantage in terms of profits'可能对应原文中奶农看到草饲带来更高利润回报后决定转型的描述，persuaded可能替换为convinced或attracted。",
+    "tip": "定位'profits'或利润优势相关词汇，锁定农民转型动机的段落。"
+   },
+   {
+    "number": 40,
+    "answer": "G",
+    "cn": "Tim Joseph的草饲项目只是美国农业实践正在发生变化的一个例子。",
+    "keywords": [
+     "Tim Joseph",
+     "grass-fed program",
+     "one example",
+     "American farming"
+    ],
+    "paraphrase": "陈述句中'only one example of how American farming practice is changing'可能对应原文中将Tim Joseph的项目置于更大的美国农业变革趋势之中进行阐述的内容。",
+    "tip": "定位'one example'或类似概括性表述，关注将个案上升到行业趋势的段落。"
+   },
+   {
+    "number": 41,
+    "answer": "A",
+    "cn": "Tim Joseph对阳光为人类带来能量和财富这一理念深感着迷。",
+    "keywords": [
+     "Tim Joseph",
+     "fascinated",
+     "sunlight",
+     "energy",
+     "wealth"
+    ],
+    "paraphrase": "陈述句中'fascinated by the notion'可能对应原文中Tim Joseph被阳光转化为能量和价值的理念所吸引的描述，fascinated可能替换为intrigued或captivated。",
+    "tip": "定位人名Tim Joseph与sunlight，通常出现在文章开头的人物引入段。"
+   },
+   {
+    "number": 42,
+    "answer": "I",
+    "cn": "草饲产品的一个问题是它们通常比传统产品更贵。",
+    "keywords": [
+     "grass-fed products",
+     "more expensive",
+     "conventional",
+     "problem"
+    ],
+    "paraphrase": "陈述句中'more expensive than conventional ones'可能对应原文中关于草饲产品价格偏高、消费者需为此支付溢价等描述，conventional可能替换为regular或traditional。",
+    "tip": "定位'expensive'或价格对比相关表述，找到讨论草饲产品缺点的段落。"
+   },
+   {
+    "number": 43,
+    "answer": "E",
+    "cn": "草饲产品已被证明更健康、更有营养。",
+    "keywords": [
+     "grass-fed products",
+     "healthier",
+     "more nutritious",
+     "proved"
+    ],
+    "paraphrase": "陈述句中'healthier and more nutritious'可能对应原文中引用研究表明草饲产品含有更多营养成分（如omega-3脂肪酸等）的论述，proved可能替换为studies show或research indicates。",
+    "tip": "定位'healthier'或'nutritious'等健康营养相关词汇，锁定产品优势段。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "cn": "当Tim Joseph创业时，他发现草饲产品供不应求。",
+    "keywords": [
+     "Tim Joseph",
+     "started business",
+     "grass-fed",
+     "fell short of demand"
+    ],
+    "paraphrase": "陈述句中'fell short of demand'即供给不足以满足需求，可能对应原文中描述草饲产品市场需求旺盛但供应不足的表述，如demand exceeded supply等。",
+    "tip": "定位'fell short of demand'或供需关系相关表述，关注Tim Joseph早期创业经历。"
+   },
+   {
+    "number": 45,
+    "answer": "K",
+    "cn": "一家零食棒生产商发现纯草饲野牛肉的供应十分稀缺。",
+    "keywords": [
+     "snack bar producer",
+     "grass-fed bison meat",
+     "supply",
+     "scarce"
+    ],
+    "paraphrase": "陈述句中'purely grass-fed bison meat was scarce'可能对应原文中某零食棒企业在采购百分百草饲野牛肉时遇到货源紧张的描述，scarce可能替换为limited或hard to find。",
+    "tip": "定位'snack bar'和'bison meat'等高辨识度名词，可快速唯一匹配段落。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "grass-fed",
+    "cn": "草饲的（adj.），指以天然牧草为饲料喂养的"
+   },
+   {
+    "w": "ever-changing",
+    "cn": "不断变化的（adj.）"
+   },
+   {
+    "w": "cost-effectiveness",
+    "cn": "成本效益（n.），指投入与产出的比率"
+   },
+   {
+    "w": "fascinated",
+    "cn": "着迷的、被深深吸引的（adj./v. 过去分词）"
+   },
+   {
+    "w": "conventional",
+    "cn": "传统的、常规的（adj.）"
+   },
+   {
+    "w": "nutritious",
+    "cn": "有营养的、滋养的（adj.）"
+   },
+   {
+    "w": "fell short of",
+    "cn": "未能达到、不足以满足（动词短语）"
+   },
+   {
+    "w": "scarce",
+    "cn": "稀缺的、供应不足的（adj.）"
+   },
+   {
+    "w": "bison",
+    "cn": "北美野牛（n.）"
+   },
+   {
+    "w": "advocate",
+    "cn": "倡导者、支持者（n.）"
+   },
+   {
+    "w": "dairy",
+    "cn": "乳制品的（adj.）；乳品业（n.）"
+   },
+   {
+    "w": "persuaded",
+    "cn": "被说服的（v. 过去分词），劝服"
+   }
+  ]
+ }
+}

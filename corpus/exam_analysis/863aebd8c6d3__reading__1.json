@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "863aebd8c6d3__reading__1",
+ "examId": "863aebd8c6d3",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2004 年考研英语真题（旧）",
+ "year": 2004,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:14:30.799Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57533,
+ "usage": {
+  "prompt_tokens": 1751,
+  "completion_tokens": 3565,
+  "total_tokens": 5316,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1751,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3565,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1751,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "互联网求职搜索代理的利弊",
+  "gist": "文章以律师Redmon的求职经历引入，介绍了互联网求职数据库中\"个人搜索代理\"功能的运作方式，分析了其优势（节省时间、持续监测职位动态）与不足（搜索条件过窄、缺乏职业咨询），并指出即使已就业者也可利用该功能掌握行业动态和薪酬信息。",
+  "structure": [
+   "第一段：Redmon利用搜索代理成功求职的案例引入",
+   "第二三段：专家指出搜索代理的局限性及正确使用策略",
+   "第四段：部分网站利用代理设计吸引求职者反复访问",
+   "第五段：搜索代理对非求职者同样有用"
+  ],
+  "difficulty": "中等",
+  "translation": "去年年底，律师甘特·雷德蒙在求职过程中偶然发现了CareerBuilder——一个互联网上的职位数据库。他在上面搜索但未能成功，却被该网站的\"个人搜索代理\"所吸引。这是一项交互功能，访问者可以输入地点、职位和薪资等求职条件，当数据库中出现匹配职位时便会发送电子邮件通知。雷德蒙选择了\"法律\"\"知识产权\"和\"华盛顿特区\"作为关键词。三周后，他收到了第一条职位空缺通知。\"我挖到金子了，\"雷德蒙说。他随即把简历通过电子邮件发给了雇主，并赢得了一家公司内部法律顾问的职位。\n\n互联网上有成千上万个与职业相关的网站，要找到有前景的空缺职位可能既耗时又低效。搜索代理减少了反复访问数据库的需要。但尽管搜索代理对雷德蒙起了作用，职业专家们仍看到了不足之处。比如，缩小搜索条件可能对你不利：\"每次你回答一个问题，就排除了一种可能性，\"一位专家说。\n\n对于任何求职行为，你都应该从一个狭窄的概念出发——你认为自己想做什么——然后再拓宽范围。\"这些程序都做不到这一点，\"另一位专家说，\"所有这些功能中并不包含职业咨询。\"相反，最好的策略是把搜索代理当作一种提示服务来使用，以便随时了解某个特定数据库中的职位动态；当你收到电子邮件时，把它当作再次查看数据库的提醒。\"我不会依赖搜索代理来发现数据库中所有可能让我感兴趣的新增职位，\"一本求职指南的作者说。\n\n一些网站设计它们的搜索代理来吸引求职者回访。例如，当CareerSite的代理向注册用户发送消息时，它只包含三个潜在职位——那些它认为最匹配的职位。数据库中可能还有更多匹配职位；求职者必须再次访问该网站才能找到它们——他们确实这样做了。\"在我们发送消息的第二天，我们看到网站流量急剧增加，\"CareerSite营销副总裁塞思·皮茨说。\n\n即使那些没有在求职的人也可能觉得搜索代理很有价值。一些人利用它们密切关注自己所在行业的需求，或收集薪酬信息，以便在谈判加薪时做好准备。尽管工作愉快，雷德蒙仍保留着他在CareerBuilder上的搜索代理。\"你总要保持关注，\"他说。使用个人搜索代理意味着多了一双替你留意的眼睛。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "He searched it with no success but was attracted by the site's \"personal search agent\". It's an interactive feature that lets visitors key in job criteria such as location, title, and salary, then E-mails them when a matching position is posted in the database.",
+    "why": "原文明确说Redmon直接搜索数据库未成功（searched it with no success），之后是通过网站的\"个人搜索代理\"这一特殊功能（interactive feature）设定关键词后收到通知，再投简历成功获得职位。C项\"using a special service of a database\"准确概括了\"personal search agent\"这一特殊服务。",
+    "traps": "A项\"搜索数据库中的空缺\"与原文矛盾，原文明确说他搜索数据库未成功（no success）；B项\"在数据库中发布匹配职位\"张冠李戴，发布职位的是雇主而非Redmon；D项\"将简历发送给数据库\"偷换对象，他是把简历发给雇主（employer），而非数据库本身。",
+    "tip": "注意区分求职过程中不同步骤的主体和对象，避免张冠李戴。"
+   },
+   {
+    "number": 22,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "There's no career counseling implicit in all of this.",
+    "why": "第三段专家明确指出搜索代理的缺陷：这些程序不具备拓宽搜索范围的功能，其中没有隐含任何职业咨询（no career counseling implicit）。A项\"Lack of counseling\"（缺乏咨询）是对这一缺点的准确概括。第二段也提到缩小条件会排除可能性，但核心缺陷归结为缺乏职业指导。",
+    "traps": "B项\"访问次数有限\"无原文依据，搜索代理是减少重复访问的需要而非限制访问次数；C项\"效率更低\"与原文相反，原文说反复搜索才低效，搜索代理本身是提高效率的工具；D项\"成功匹配更少\"文中未提及，属于无中生有。",
+    "tip": "注意区分文中\"问题本质\"和\"表面现象\"，专家总结性评价往往是答案所在。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "词义句意题",
+    "locate": "Instead, the best strategy is to use the agent as a kind of tip service to keep abreast of jobs in a particular database; when you get E-mail, consider it a reminder to check the database again.",
+    "why": "分号后的内容是对\"tip service\"的解释说明：当你收到邮件时，把它当作再次查看数据库的\"提醒\"（reminder）。因此tip service在此语境中等同于提醒服务，D项\"reminder\"与原文同义复现，是正确答案。",
+    "traps": "A项\"advisory\"（咨询建议）偏离语境，原文恰恰说这些程序不含career counseling；B项\"compensation\"（薪酬/补偿）与上下文毫无关联；C项\"interaction\"（互动）虽然搜索代理有交互功能，但并非tip service在此处的含义。",
+    "tip": "词义题关键在于利用上下文尤其是紧邻的同义解释或并列结构来判断。"
+   },
+   {
+    "number": 24,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Some sites design their agents to tempt job hunters to return. When CareerSite's agent sends out messages to those who have signed up for its service, for example, it includes only three potential jobs",
+    "why": "第四段首句即为段落主旨句：一些网站设计代理是为了\"诱使求职者回访\"（tempt job hunters to return）。CareerSite只发三个职位是作为这一观点的例证，目的是让求职者必须再次访问网站查看更多匹配职位。末句引用的流量数据也证实了这一策略的效果。B项\"吸引更多回访\"与此完全吻合。",
+    "traps": "A项\"专注于更好的匹配\"是表面说法，虽然发送的是best matches，但这只是手段而非目的；C项\"为更多消息留出空间\"纯属臆测，文中未涉及空间问题；D项\"提高成功率\"无原文支撑，文章讨论的是网站流量策略而非匹配成功率。",
+    "tip": "例证题要找到例子所服务的观点句，通常在段首或例子之前。"
+   },
+   {
+    "number": 25,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Even those who aren't hunting for jobs may find search agents worthwhile. Some use them to keep a close watch on the demand for their line of work or gather information on compensation to arm themselves when negotiating for a raise.",
+    "why": "末段首句明确指出\"即使不在求职的人也可能觉得搜索代理有价值\"，随后举例说明已就业者可用它监测行业需求和收集薪酬信息以备谈判加薪，Redmon虽已就业仍保留代理。C项\"搜索代理对已就业者同样有帮助\"与末段主旨完全一致。",
+    "traps": "A项\"不可或缺\"（indispensable）用词过于绝对，文章态度是认为有帮助但也有局限性；B项\"一些网站不断发邮件追踪求职者需求\"属于曲解原文，CareerSite发邮件是为了吸引回访而非追踪需求；D项\"一旦就业就停止发送信息\"与原文矛盾，Redmon就业后仍保留代理并继续接收信息。",
+    "tip": "判断正误题注意极端词（indispensable/always/never），往往是干扰项的标志。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "stumble across",
+    "cn": "偶然发现（动词短语）"
+   },
+   {
+    "w": "interactive",
+    "cn": "交互式的（adj.）"
+   },
+   {
+    "w": "criteria",
+    "cn": "标准，准则（n. 复数，单数criterion）"
+   },
+   {
+    "w": "notification",
+    "cn": "通知，通告（n.）"
+   },
+   {
+    "w": "in-house counsel",
+    "cn": "公司内部法律顾问（n.）"
+   },
+   {
+    "w": "drawback",
+    "cn": "缺点，不足（n.）"
+   },
+   {
+    "w": "eliminate",
+    "cn": "排除，消除（v.）"
+   },
+   {
+    "w": "implicit",
+    "cn": "隐含的，内在的（adj.）"
+   },
+   {
+    "w": "keep abreast of",
+    "cn": "跟上，了解最新情况（动词短语）"
+   },
+   {
+    "w": "compensation",
+    "cn": "薪酬，报酬；补偿（n.）"
+   },
+   {
+    "w": "tempt",
+    "cn": "引诱，吸引（v.）"
+   },
+   {
+    "w": "indispensable",
+    "cn": "不可或缺的（adj.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It's an interactive feature that lets visitors key in job criteria such as location, title, and salary, then E-mails them when a matching position is posted in the database.",
+    "cn": "这是一项交互功能，它允许访问者输入地点、职位和薪资等求职条件，然后在数据库中有匹配职位发布时通过电子邮件通知他们。",
+    "note": "主干为It's a feature that...，that引导定语从句修饰feature，从句内含两个并列谓语lets和E-mails，when引导时间状语从句。"
+   },
+   {
+    "en": "Some use them to keep a close watch on the demand for their line of work or gather information on compensation to arm themselves when negotiating for a raise.",
+    "cn": "一些人利用它们密切关注自己所在行业的需求，或收集薪酬信息，以便在谈判加薪时做好准备。",
+    "note": "主干为Some use them to do A or do B；to arm themselves是目的状语，when negotiating是时间状语从句的省略形式（省略they are）。"
+   },
+   {
+    "en": "Instead, the best strategy is to use the agent as a kind of tip service to keep abreast of jobs in a particular database; when you get E-mail, consider it a reminder to check the database again.",
+    "cn": "相反，最好的策略是把搜索代理当作一种提示服务来使用，以便随时了解某个特定数据库中的职位动态；当你收到电子邮件时，把它当作再次查看数据库的提醒。",
+    "note": "主干为the best strategy is to use...；to keep abreast of是目的状语；分号后为补充说明句，consider it a reminder为双宾语结构。"
+   }
+  ]
+ }
+}

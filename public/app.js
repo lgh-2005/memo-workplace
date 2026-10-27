@@ -3662,9 +3662,9 @@ const EXAM_PROCESSORS = {
           ? Object.entries(q.options).map(([k, v]) => `<option value="${esc(k)}">${esc(k)}. ${esc(String(v).slice(0, 32))}</option>`).join('')
           : '';
         return `<span class="exm-cloze-blank">
-          <span class="exm-cloze-num" onclick="scrollToExamQ(${n})">〖${n}〗</span>
+          <span class="exm-cloze-num" data-exm-scroll="${n}">〖${n}〗</span>
           <span class="exm-cloze-select-wrap" id="exmClozeWrap-${n}">
-            <select data-exmq="${n}" onchange="onExamClozeChange(${n}, this.value)">
+            <select data-exmq="${n}">
               <option value="">— ${n} —</option>${opts}
             </select>
           </span>
@@ -3677,7 +3677,7 @@ const EXAM_PROCESSORS = {
         const qNum = q.number;
         const opts = q.options ? Object.entries(q.options).map(([k, v]) => `
           <label class="exm-opt-item" id="exmOpt-${qNum}-${k}">
-            <input type="radio" name="exmq_${qNum}" value="${esc(k)}" onchange="onExamRadioPick(${qNum}, '${esc(k)}')">
+            <input type="radio" name="exmq_${qNum}" value="${esc(k)}" data-exm-pick="${qNum}" data-exm-pick-val="${esc(k)}">
             <span><b>[ ${esc(k)} ]</b> ${esc(v)}</span>
           </label>
         `).join('') : '';
@@ -3723,7 +3723,7 @@ const EXAM_PROCESSORS = {
           const qNum = q.number;
           const opts = q.options ? Object.entries(q.options).map(([k, v]) => `
             <label class="exm-opt-item" id="exmOpt-${qNum}-${k}">
-              <input type="radio" name="exmq_${qNum}" value="${esc(k)}" onchange="onExamRadioPick(${qNum}, '${esc(k)}')">
+              <input type="radio" name="exmq_${qNum}" value="${esc(k)}" data-exm-pick="${qNum}" data-exm-pick-val="${esc(k)}">
               <span><b>[ ${esc(k)} ]</b> ${esc(v)}</span>
             </label>
           `).join('') : '';
@@ -3780,7 +3780,7 @@ const EXAM_PROCESSORS = {
             const opts = optKeys.map(k => `<option value="${k}">${k}</option>`).join('');
             return `<span class="exm-flow-node" id="exmFlowNode-${num}">
               <span>第 ${num} 空</span>
-              <select data-exmpb="${num}" onchange="onExamPartBChange(${num}, this.value)">
+              <select data-exmpb="${num}" data-exmpb="${num}">
                 <option value="">?</option>${opts}
               </select>
             </span>`;
@@ -3797,7 +3797,7 @@ const EXAM_PROCESSORS = {
           return `<span class="exm-cloze-blank">
             <span class="exm-cloze-num">〖${n} 空〗</span>
             <span class="exm-cloze-select-wrap">
-              <select data-exmpb="${n}" onchange="onExamPartBChange(${n}, this.value)">
+              <select data-exmpb="${n}" data-exmpb="${n}">
                 <option value="">— 选择填入 —</option>${opts}
               </select>
             </span>
@@ -3843,7 +3843,7 @@ const EXAM_PROCESSORS = {
             <div class="kb-q-head-row">
               <span class="kb-q-head">第 ${q.number || 56} 题 · 汉译英（15.0 分）</span>
             </div>
-            <textarea class="input" rows="8" placeholder="在此输入你的英文译文..." style="width:100%" oninput="onExamSubjectiveInput(${q.number || 56})"></textarea>
+            <textarea class="input" rows="8" placeholder="在此输入你的英文译文..." style="width:100%" data-exm-subjective="${q.number || 56}"></textarea>
           </div>`;
       }
 
@@ -3860,7 +3860,7 @@ const EXAM_PROCESSORS = {
               <span class="kb-q-head">第 ${qNum} 题 · 划线句翻译（2.0 分）</span>
             </div>
             <div class="hint" style="margin-bottom:6px;font-style:italic">"${esc(q.text || '')}"</div>
-            <textarea class="input" rows="3" placeholder="在此输入你的中文译文..." style="width:100%" oninput="onExamSubjectiveInput(${qNum})"></textarea>
+            <textarea class="input" rows="3" placeholder="在此输入你的中文译文..." style="width:100%" data-exm-subjective="${qNum}"></textarea>
           </div>
         `;
       }
@@ -3894,7 +3894,7 @@ const EXAM_PROCESSORS = {
             </div>
             <div class="kb-q-text" style="white-space:pre-wrap;margin-bottom:8px">${kbText(it.text)}</div>
             ${imgHtml}
-            <textarea class="input" rows="8" placeholder="在此写作（草稿将自动保存）..." style="width:100%;font-size:14px;line-height:1.7" id="exmEssay-${qNum}" oninput="onExamEssayInput(${qNum}, ${minWc}, ${maxWc})"></textarea>
+            <textarea class="input" rows="8" placeholder="在此写作（草稿将自动保存）..." style="width:100%;font-size:14px;line-height:1.7" id="exmEssay-${qNum}" data-exm-essay="${qNum}" data-exm-min="${minWc}" data-exm-max="${maxWc}"></textarea>
             <div class="exm-wc-status">
               <span class="exm-wc-badge warn" id="exmWcBadge-${qNum}">词数：0 词</span>
               <span>考场建议区间：${minWc} ~ ${maxWc} 词</span>
@@ -3916,7 +3916,7 @@ function cet6RadioCard(q, baseLabel) {
   const qNum = q.number;
   const opts = q.options ? Object.entries(q.options).map(([k, v]) => `
     <label class="exm-opt-item" id="exmOpt-${qNum}-${k}">
-      <input type="radio" name="exmq_${qNum}" value="${esc(k)}" onchange="onExamRadioPick(${qNum}, '${esc(k)}')">
+      <input type="radio" name="exmq_${qNum}" value="${esc(k)}" data-exm-pick="${qNum}" data-exm-pick-val="${esc(k)}">
       <span><b>[ ${esc(k)} ]</b> ${esc(v)}</span>
     </label>
   `).join('') : '';
@@ -3975,7 +3975,7 @@ EXAM_PROCESSORS.banked_cloze = {
     let s = allowU(esc(passage?.text || ''));
     s = s.replace(/〖(\d+)〗/g, (m, n) => {
       const opts = Object.entries(pool).map(([k, v]) => `<option value="${esc(k)}">${esc(k)}. ${esc(String(v).slice(0, 20))}</option>`).join('');
-      return `<span class="exm-cloze-blank"><span class="exm-cloze-num" onclick="scrollToExamQ(${n})">〖${n}〗</span><span class="exm-cloze-select-wrap" id="exmClozeWrap-${n}"><select data-exmq="${n}" onchange="onExamClozeChange(${n}, this.value)"><option value="">— ${n} —</option>${opts}</select></span></span>`;
+      return `<span class="exm-cloze-blank"><span class="exm-cloze-num" data-exm-scroll="${n}">〖${n}〗</span><span class="exm-cloze-select-wrap" id="exmClozeWrap-${n}"><select data-exmq="${n}"><option value="">— ${n} —</option>${opts}</select></span></span>`;
     });
     let html = `<div class="kb-passage">${s.split(/\n+/).filter(p => p.trim()).map(p => `<p>${p}</p>`).join('')}</div>`;
     html += `<div class="exm-pool-box"><div class="exm-pool-title"><span>🔤 候选词池（A–O，选定后自动划线置灰防重复）</span><span id="exmPoolRemaining"></span></div>`;
@@ -4015,7 +4015,7 @@ EXAM_PROCESSORS.long_match = {
             <span class="hint">${q.score != null ? q.score + ' 分' : ''}</span>
           </div>
           <div class="kb-q-text" style="margin-bottom:6px">${kbText(q.text || '')}</div>
-          <select class="input" data-exmpb="${qNum}" onchange="onExamPartBChange(${qNum}, this.value)" style="max-width:180px">
+          <select class="input" data-exmpb="${qNum}" data-exmpb="${qNum}" style="max-width:180px">
             <option value="">— 选择来源段落 —</option>${opts}
           </select>
           <div class="exm-analysis-card" id="exmAnalysis-${qNum}">
@@ -4034,6 +4034,264 @@ function examProcessor(section) {
     analyze(items) { return `${items.length} 个条目`; },
     render: kbExamPassageAndQuestions,
   };
+}
+
+/* ================= v3.8.0：真题参考解析（做完后对照） =================
+   数据来自服务端 /api/exam/analysis/<examId>（离线预生成，corpus/exam_analysis/）。
+   解析按「单元」组织：阅读=一篇文章+其题目，其余题型=整板块，听力=整场。
+   展示策略：
+     - 「全真演练」模式不露任何解析，避免泄题；
+     - 「答案对照」模式逐题注入 定位/正确项理由/干扰项分析/做题启示，
+       并在每个板块末尾追加「📖 本篇参考解析」折叠面板（译文/词汇/长难句/范文等）。
+   解析缺失时一律优雅降级为「暂无解析」，不阻断做题。 */
+
+const EXAM_ANALYSIS_EMPTY = '暂无解析';
+
+function examAnalysisState() {
+  if (!examState.analysis) examState.analysis = { examId: null, ready: false, loading: false, units: [], byQ: new Map(), bySection: new Map(), error: '' };
+  return examState.analysis;
+}
+
+/** 拉取整套解析（同一套题只请求一次；切题清空） */
+async function loadExamAnalysis(examId) {
+  const st = examAnalysisState();
+  if (st.examId === examId && (st.ready || st.loading)) return st;
+  examState.analysis = { examId, ready: false, loading: true, units: [], byQ: new Map(), bySection: new Map(), error: '' };
+  const cur = examState.analysis;
+  try {
+    const r = await api('/api/exam/analysis/' + encodeURIComponent(examId));
+    if (examState.analysis !== cur) return examState.analysis;   // 期间已切题，丢弃
+    cur.units = r.units || [];
+    cur.ready = !!r.ready && cur.units.length > 0;
+    for (const u of cur.units) {
+      if (!cur.bySection.has(u.section)) cur.bySection.set(u.section, []);
+      cur.bySection.get(u.section).push(u);
+      const qs = u.analysis?.questions;
+      if (Array.isArray(qs)) for (const q of qs) if (q && q.number != null) cur.byQ.set(Number(q.number), { ...q, unit: u });
+    }
+    cur.loading = false;
+    return cur;
+  } catch (e) {
+    if (examState.analysis === cur) { cur.loading = false; cur.error = e.message || '解析加载失败'; }
+    return examState.analysis;
+  }
+}
+
+/** 取某道题的解析（跨题型统一入口） */
+function examAnalysisOfQ(num) {
+  return examAnalysisState().byQ.get(Number(num)) || null;
+}
+
+/** 取某板块下与题号区间相关的解析单元 */
+function examAnalysisUnitsForSection(section) {
+  return examAnalysisState().bySection.get(section) || [];
+}
+
+/** 小工具：列表渲染（过滤空值） */
+function exmList(arr, cls = 'exm-an-list') {
+  const items = (Array.isArray(arr) ? arr : []).filter(x => String(x || '').trim());
+  if (!items.length) return '';
+  return `<ul class="${cls}">${items.map(x => `<li>${mdInline(esc(String(x)))}</li>`).join('')}</ul>`;
+}
+
+function exmKV(label, value, cls = '') {
+  const v = String(value == null ? '' : value).trim();
+  if (!v) return '';
+  return `<div class="exm-an-row ${cls}"><span class="exm-an-label">${esc(label)}</span><span class="exm-an-value">${mdInline(esc(v))}</span></div>`;
+}
+
+/** 逐题解析正文（答案对照模式下注入到题卡） */
+function exmQuestionExplainHtml(q, opt = {}) {
+  if (!q) return '';
+  const parts = [];
+  if (q.type) parts.push(`<span class="exm-an-tag">${esc(q.type)}</span>`);
+  if (opt.analysisReady === false) return '';
+  if (q.correct) parts.push(`<span class="exm-an-tag ok">正确项 ${esc(String(q.correct))}</span>`);
+  if (q.answer) parts.push(`<span class="exm-an-tag ok">答案 ${esc(String(q.answer))}</span>`);
+
+  const blocks = [];
+  if (q.cn && !q.why) blocks.push(`<div class="exm-an-block"><b>句意</b>${mdInline(esc(String(q.cn)))}</div>`);
+  if (q.locate) blocks.push(`<div class="exm-an-block"><b>原文定位</b><span class="exm-an-en">${mdInline(esc(String(q.locate)))}</span></div>`);
+  if (q.why) blocks.push(`<div class="exm-an-block"><b>为什么选它</b>${mdInline(esc(String(q.why)))}</div>`);
+  if (q.traps) blocks.push(`<div class="exm-an-block"><b>干扰项分析</b>${mdInline(esc(String(q.traps)))}</div>`);
+  if (Array.isArray(q.keywords) && q.keywords.length) {
+    blocks.push(`<div class="exm-an-block"><b>定位关键词</b>${q.keywords.map(k => `<span class="exm-an-kw">${esc(String(k))}</span>`).join('')}</div>`);
+  }
+  if (q.paraphrase) blocks.push(`<div class="exm-an-block"><b>同义替换</b>${mdInline(esc(String(q.paraphrase)))}</div>`);
+  if (q.structure) blocks.push(`<div class="exm-an-block"><b>结构拆解</b>${mdInline(esc(String(q.structure)))}</div>`);
+  if (q.en && q.cn) blocks.push(`<div class="exm-an-block"><b>原句</b><span class="exm-an-en">${mdInline(esc(String(q.en)))}</span></div>`);
+  if (q.cn && q.why) blocks.push(`<div class="exm-an-block"><b>参考译文</b>${mdInline(esc(String(q.cn)))}</div>`);
+  if (Array.isArray(q.points) && q.points.length) {
+    blocks.push(`<div class="exm-an-block"><b>采分点</b>${q.points.map(p => `<span class="exm-an-kw">${esc(String(p))}</span>`).join('')}</div>`);
+  }
+  if (Array.isArray(q.keys) && q.keys.length) {
+    const first = q.keys[0];
+    if (first && typeof first === 'object') {
+      blocks.push(`<div class="exm-an-block"><b>采分关键词</b><div class="exm-an-pairs">${q.keys.map(k => `<span class="exm-an-pair"><b>${esc(String(k.cn || ''))}</b> → ${esc(String(k.en || ''))}</span>`).join('')}</div></div>`);
+    } else {
+      blocks.push(`<div class="exm-an-block"><b>采分关键词</b>${exmList(q.keys, 'exm-an-list tight')}</div>`);
+    }
+  }
+  if (q.pitfall) blocks.push(`<div class="exm-an-block warn"><b>易错点</b>${mdInline(esc(String(q.pitfall)))}</div>`);
+  if (q.tip) blocks.push(`<div class="exm-an-block tip"><b>做题启示</b>${mdInline(esc(String(q.tip)))}</div>`);
+  if (!blocks.length && !parts.length) return '';
+  return `<div class="exm-an-explain">
+    ${parts.length ? `<div class="exm-an-tags">${parts.join('')}</div>` : ''}
+    ${blocks.join('')}
+  </div>`;
+}
+
+/** 板块级解析面板（译文/词汇/长难句/范文/技巧等） */
+function exmSectionAnalysisHtml(unit) {
+  const a = unit?.analysis;
+  if (!a) return '';
+  const sec = unit.section;
+  const body = [];
+
+  if (a.topic) body.push(`<div class="exm-an-hero"><span class="exm-an-hero-k">主题</span><span class="exm-an-hero-v">${mdInline(esc(String(a.topic)))}</span>${a.difficulty ? `<span class="exm-an-diff">难度 ${esc(String(a.difficulty))}</span>` : ''}</div>`);
+  if (a.gist) body.push(`<div class="exm-an-block"><b>文章主旨</b>${mdInline(esc(String(a.gist)))}</div>`);
+  if (Array.isArray(a.structure) && a.structure.length) body.push(`<div class="exm-an-block"><b>行文结构</b>${exmList(a.structure)}</div>`);
+  if (a.type) body.push(`<div class="exm-an-block"><b>题型</b>${mdInline(esc(String(a.type)))}</div>`);
+  if (a.notice) body.push(`<div class="exm-an-block warn"><b>说明</b>${mdInline(esc(String(a.notice)))}</div>`);
+  if (a.overview) body.push(`<div class="exm-an-block"><b>本场概览</b>${mdInline(esc(String(a.overview)))}</div>`);
+  if (Array.isArray(a.strategy) && a.strategy.length) body.push(`<div class="exm-an-block"><b>解题策略</b>${exmList(a.strategy)}</div>`);
+
+  if (a.translation) body.push(`<details class="exm-an-details"><summary>全文参考译文</summary><div class="exm-an-body">${String(a.translation).split(/\n{2,}/).filter(x => x.trim()).map(p => `<p>${mdInline(esc(p.trim()))}</p>`).join('')}</div></details>`);
+  if (a.reference) body.push(`<details class="exm-an-details"><summary>参考英文译文</summary><div class="exm-an-body"><p>${mdInline(esc(String(a.reference)))}</p></div></details>`);
+
+  if (Array.isArray(a.logicWords) && a.logicWords.length) {
+    body.push(`<div class="exm-an-block"><b>逻辑连接词</b><div class="exm-an-pairs">${a.logicWords.map(l => `<span class="exm-an-pair"><b>${esc(String(l.w || ''))}</b> ${esc(String(l.role || ''))}</span>`).join('')}</div></div>`);
+  }
+  if (Array.isArray(a.skills) && a.skills.length) body.push(`<div class="exm-an-block"><b>技巧要点</b>${exmList(a.skills)}</div>`);
+
+  if (Array.isArray(a.longSentences) && a.longSentences.length) {
+    body.push(`<div class="exm-an-block"><b>长难句拆解</b>${a.longSentences.map(ls => `<div class="exm-an-longsent"><div class="exm-an-en">${mdInline(esc(String(ls.en || '')))}</div><div>${mdInline(esc(String(ls.cn || '')))}</div>${ls.note ? `<div class="exm-an-note">${mdInline(esc(String(ls.note)))}</div>` : ''}</div>`).join('')}</div>`);
+  }
+  if (Array.isArray(a.vocab) && a.vocab.length) {
+    body.push(`<div class="exm-an-block"><b>重点词汇</b><div class="exm-an-vocab">${a.vocab.map(v => `<span class="exm-an-word"><b>${esc(String(v.w || ''))}</b><span>${esc(String(v.cn || ''))}</span></span>`).join('')}</div></div>`);
+  }
+  if (Array.isArray(a.coreVocab) && a.coreVocab.length) {
+    body.push(`<div class="exm-an-block"><b>听力核心词</b><div class="exm-an-vocab">${a.coreVocab.map(v => `<span class="exm-an-word"><b>${esc(String(v.w || ''))}</b><span>${esc(String(v.cn || ''))}</span></span>`).join('')}</div></div>`);
+  }
+
+  // 听力分段
+  if (Array.isArray(a.segments) && a.segments.length) {
+    body.push(`<div class="exm-an-block"><b>分段提示</b>${a.segments.map(sg => `
+      <div class="exm-an-seg">
+        <div class="exm-an-seg-head">第 ${esc(String(sg.pid ?? '?'))} 段${Array.isArray(sg.numbers) && sg.numbers.length ? `（题号 ${sg.numbers.join('/')}）` : ''}</div>
+        ${sg.sharedTopic ? `<div>${mdInline(esc(String(sg.sharedTopic)))}</div>` : ''}
+        ${sg.optionSignals ? `<div class="exm-an-note">${mdInline(esc(String(sg.optionSignals)))}</div>` : ''}
+        ${Array.isArray(sg.tips) && sg.tips.length ? exmList(sg.tips, 'exm-an-list tight') : ''}
+      </div>`).join('')}</div>`);
+  }
+
+  // 作文：逐题范文
+  if (Array.isArray(a.units) && a.units.length) {
+    for (const u of a.units) {
+      const inner = [];
+      if (u.task) inner.push(`<div class="exm-an-block"><b>题目要求</b>${mdInline(esc(String(u.task)))}</div>`);
+      if (Array.isArray(u.outline) && u.outline.length) inner.push(`<div class="exm-an-block"><b>段落提纲</b>${exmList(u.outline)}</div>`);
+      if (u.sample) {
+        const wc = String(u.sample).split(/\s+/).filter(Boolean).length;
+        inner.push(`<details class="exm-an-details" open><summary>参考范文（${wc} 词）</summary><div class="exm-an-body"><p>${mdInline(esc(String(u.sample)))}</p></div></details>`);
+      }
+      if (Array.isArray(u.phrases) && u.phrases.length) {
+        inner.push(`<div class="exm-an-block"><b>高分表达</b><div class="exm-an-pairs">${u.phrases.map(p => `<span class="exm-an-pair"><b>${esc(String(p.en || ''))}</b> ${esc(String(p.cn || ''))}</span>`).join('')}</div></div>`);
+      }
+      if (Array.isArray(u.upgrades) && u.upgrades.length) {
+        inner.push(`<div class="exm-an-block"><b>表达升级</b>${u.upgrades.map(g => `<div class="exm-an-longsent"><div class="exm-an-note">普通：${mdInline(esc(String(g.plain || '')))}</div><div>升级：${mdInline(esc(String(g.better || '')))}</div>${g.note ? `<div class="exm-an-note">${mdInline(esc(String(g.note)))}</div>` : ''}</div>`).join('')}</div>`);
+      }
+      if (Array.isArray(u.pitfalls) && u.pitfalls.length) inner.push(`<div class="exm-an-block warn"><b>常见失分点</b>${exmList(u.pitfalls)}</div>`);
+      body.push(`<div class="exm-an-writing"><div class="exm-an-writing-head">第 ${esc(String(u.number ?? ''))} 题${u.part ? ` · Part ${esc(String(u.part))}` : ''}</div>${inner.join('')}</div>`);
+    }
+  }
+  // 六级译文升级
+  if (Array.isArray(a.upgrades) && a.upgrades.length) {
+    body.push(`<div class="exm-an-block"><b>表达升级</b>${a.upgrades.map(g => `<div class="exm-an-longsent"><div class="exm-an-note">普通：${mdInline(esc(String(g.plain || '')))}</div><div>升级：${mdInline(esc(String(g.better || '')))}</div>${g.note ? `<div class="exm-an-note">${mdInline(esc(String(g.note)))}</div>` : ''}</div>`).join('')}</div>`);
+  }
+  if (Array.isArray(a.keys) && a.keys.length && a.keys[0] && typeof a.keys[0] === 'object') {
+    body.push(`<div class="exm-an-block"><b>术语标准译法</b><div class="exm-an-pairs">${a.keys.map(k => `<span class="exm-an-pair"><b>${esc(String(k.cn || ''))}</b> → ${esc(String(k.en || ''))}</span>`).join('')}</div></div>`);
+  }
+  if (Array.isArray(a.pitfalls) && a.pitfalls.length) body.push(`<div class="exm-an-block warn"><b>常见失分点</b>${exmList(a.pitfalls)}</div>`);
+  if (Array.isArray(a.band9) && a.band9.length) body.push(`<div class="exm-an-block tip"><b>值得背的句子</b>${exmList(a.band9)}</div>`);
+  // 六级译文逐句
+  if (Array.isArray(a.sentences) && a.sentences.length) {
+    body.push(`<div class="exm-an-block"><b>逐句对照</b>${a.sentences.map(sn => `<div class="exm-an-longsent"><div class="exm-an-note">${mdInline(esc(String(sn.cn || '')))}</div><div class="exm-an-en">${mdInline(esc(String(sn.en || '')))}</div>${sn.structure ? `<div class="exm-an-note">${mdInline(esc(String(sn.structure)))}</div>` : ''}${Array.isArray(sn.keys) && sn.keys.length ? `<div class="exm-an-pairs">${sn.keys.map(k => `<span class="exm-an-pair">${esc(String(k))}</span>`).join('')}</div>` : ''}</div>`).join('')}</div>`);
+  }
+
+  if (!body.length) return '';
+  const label = unit.sectionLabel || EXAM_SECTION_NAME_LOCAL[sec] || sec;
+  const sub = sec === 'reading' ? ` · Text ${esc(String(unit.sub))}` : '';
+  return `<div class="exm-an-panel">
+    <div class="exm-an-panel-head">📖 ${esc(label)}${sub} 参考解析</div>
+    ${body.join('')}
+  </div>`;
+}
+
+const EXAM_SECTION_NAME_LOCAL = {
+  reading: '阅读理解', use_of_english: '完形填空', banked_cloze: '选词填空',
+  part_b: '新题型', long_match: '长篇阅读', translation: '翻译',
+  writing: '写作', listening: '听力理解', misc: '其他',
+};
+
+/** 异步填充所有板块解析面板（不阻塞做题渲染） */
+async function fillExamAnalysisPanels(examId) {
+  const st = await loadExamAnalysis(examId);
+  if (!examState.currentExam || examState.currentExam.id !== examId) return;
+  const boxes = $$('#exDetail [data-exm-analyze]');
+  for (const box of boxes) {
+    const sec = box.dataset.exmAnalyze;
+    const units = examAnalysisUnitsForSection(sec);
+    if (!units.length) {
+      box.innerHTML = `<div class="exm-an-empty">${EXAM_ANALYSIS_EMPTY}（该板块解析尚未生成）</div>`;
+      continue;
+    }
+    box.innerHTML = units.map(exmSectionAnalysisHtml).join('') || `<div class="exm-an-empty">${EXAM_ANALYSIS_EMPTY}</div>`;
+  }
+  // 若当前已在答案对照模式，刷新逐题解析
+  if (examState.mode === 'analysis') applyExamQuestionExplain();
+  updateExamAnalysisBadge();
+}
+
+/** 逐题解析注入（仅在答案对照模式） */
+function applyExamQuestionExplain() {
+  const qs = (examState.currentExam?.items || []).filter(i => i.type === 'question' && i.number != null);
+  for (const q of qs) {
+    const card = $(`#exmAnalysis-${q.number}`);
+    if (!card) continue;
+    const node = card.querySelector('.exm-an-explain');
+    const a = examAnalysisOfQ(q.number);
+    if (!a) { if (node) node.remove(); continue; }
+    const html = exmQuestionExplainHtml(a);
+    if (!html) continue;
+    if (node) node.outerHTML = html;
+    else card.insertAdjacentHTML('beforeend', html);
+  }
+  // 主观题（写作/翻译）题卡也挂上解析
+  for (const w of (examState.currentExam?.items || []).filter(i => i.type === 'writing')) {
+    const n = w.number || 51;
+    const card = $(`#exmQCard-${n}`);
+    if (!card || card.querySelector('.exm-an-explain')) continue;
+    const a = examAnalysisOfQ(n);
+    const html = a ? exmQuestionExplainHtml(a) : '';
+    if (html) card.insertAdjacentHTML('beforeend', html);
+  }
+}
+
+/** 移除逐题解析（回到演练模式，防泄题） */
+function clearExamQuestionExplain() {
+  $$('#exDetail .exm-an-explain').forEach(n => n.remove());
+}
+
+function updateExamAnalysisBadge() {
+  const badge = $('#exmAnalyzeBadge');
+  if (!badge) return;
+  const st = examAnalysisState();
+  if (st.loading) { badge.textContent = '解析加载中…'; badge.className = 'exm-an-badge'; return; }
+  if (!st.ready) { badge.textContent = '本题暂未收录解析'; badge.className = 'exm-an-badge empty'; return; }
+  const n = st.byQ.size;
+  badge.textContent = `已收录 ${st.units.length} 篇解析${n ? ` · ${n} 题逐题详解` : ''}`;
+  badge.className = 'exm-an-badge ready';
 }
 
 /** 通用题型渲染 */
@@ -4170,6 +4428,8 @@ async function openExamRecord(exid) {
     examState.currentExam = rec;
     examState.answers = {};
     examState.mode = 'practice';
+    // v3.8.0：切题即清空上一套解析缓存，并异步拉取本题解析（不阻塞做题渲染）
+    examState.analysis = null;
     $('#exmModePractice')?.classList.add('active');
     $('#exmModeAnalysis')?.classList.remove('active');
 
@@ -4189,7 +4449,8 @@ async function openExamRecord(exid) {
     let ixBase = 0;
     for (const b of blocks) {
       const proc = examProcessor(b.key);
-      bodyHtml += `<div class="exm-block" id="exmSecBlock-${b.key}"><div class="kb-sec-title">${proc.icon} ${esc(b.label)}</div><div class="exm-stats">${esc(proc.analyze(b.items))}</div>${proc.render(b.items, ixBase)}</div>`;
+      // v3.8.0：每个板块末尾挂解析面板容器（异步填充；演练模式默认折叠不显示）
+      bodyHtml += `<div class="exm-block" id="exmSecBlock-${b.key}"><div class="kb-sec-title">${proc.icon} ${esc(b.label)}</div><div class="exm-stats">${esc(proc.analyze(b.items))}</div>${proc.render(b.items, ixBase)}<div class="exm-an-mount" data-exm-analyze="${esc(b.key)}"></div></div>`;
       ixBase += b.items.length;
     }
 
@@ -4197,7 +4458,7 @@ async function openExamRecord(exid) {
     const allQs = (rec.items || []).filter(i => i.type === 'question' && i.number != null);
     const writings = (rec.items || []).filter(i => i.type === 'writing');
 
-    const renderBubbles = list => list.map(q => `<button type="button" class="exm-bubble-btn" id="exmBubble-${q.number}" onclick="scrollToExamQ(${q.number})"><span>${q.number}</span></button>`).join('');
+    const renderBubbles = list => list.map(q => `<button type="button" class="exm-bubble-btn" id="exmBubble-${q.number}" data-exm-scroll="${q.number}"><span>${q.number}</span></button>`).join('');
 
     // 各大类答题卡板块顺序与分值口径
     const SHEET_SECS = recTrackMeta.key === 'cet6'
@@ -4221,7 +4482,7 @@ async function openExamRecord(exid) {
           const n = w.number || 51;
           const tag = w.part && w.part !== 'A' ? ` ${w.part}` : '';
           const label = recTrackMeta.key === 'cet6' ? `${n} 作文` : `${n}${tag}`;
-          return `<button type="button" class="exm-bubble-btn" id="exmBubble-${n}" onclick="scrollToExamQ(${n})"><span>${esc(label)}</span></button>`;
+          return `<button type="button" class="exm-bubble-btn" id="exmBubble-${n}" data-exm-scroll="${n}"><span>${esc(label)}</span></button>`;
         }).join('');
         sheetHtml += `<div class="exm-sheet-sec-title"><span>${esc(name)}</span><span>${pts}</span></div>
           <div class="exm-bubble-grid" style="grid-template-columns:1fr 1fr">${btns}</div>`;
@@ -4236,8 +4497,8 @@ async function openExamRecord(exid) {
         </div>
         ${sheetHtml}
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
-          <button type="button" class="btn primary" style="width:100%" onclick="submitExamPaper()">🏁 提交并核对答案</button>
-          <button type="button" class="btn ghost mini" style="width:100%" onclick="resetExamAnswers()">🔄 清空作答</button>
+          <button type="button" class="btn primary" style="width:100%" data-exm-action="submit">🏁 提交并核对答案</button>
+          <button type="button" class="btn ghost mini" style="width:100%" data-exm-action="reset">🔄 清空作答</button>
         </div>
       </div>
     `;
@@ -4249,6 +4510,8 @@ async function openExamRecord(exid) {
       </div>
     `;
     card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // v3.8.0：解析异步加载并填充各板块面板（失败不影响做题）
+    fillExamAnalysisPanels(rec.id).catch(() => { updateExamAnalysisBadge(); });
   } catch (e) {
     $('#exDetail').innerHTML = '❌ ' + esc(e.message);
   }
@@ -4409,6 +4672,8 @@ function switchExamMode(mode) {
   examState.mode = mode;
   $('#exmModePractice')?.classList.toggle('active', mode === 'practice');
   $('#exmModeAnalysis')?.classList.toggle('active', mode === 'analysis');
+  // v3.8.0：解析面板只在「答案对照」出现；演练模式隐藏，杜绝泄题
+  document.body.classList.toggle('exm-show-analysis', mode === 'analysis');
 
   const isAnalysis = mode === 'analysis';
   const qs = (examState.currentExam?.items || []).filter(i => i.type === 'question' && i.number != null);
@@ -4423,7 +4688,15 @@ function switchExamMode(mode) {
     if (isAnalysis) {
       if (analysisCard) {
         analysisCard.classList.add('show');
-        analysisCard.innerHTML = `<b>正确答案：${esc(ans || '未收录')}</b> · 你的作答：<span style="font-weight:700;color:${userPick === ans ? 'var(--ok)' : 'var(--warn)'}">${esc(userPick || '未作答')}</span>`;
+        const a = examAnalysisOfQ(num);
+        const verdict = userPick
+          ? (userPick === ans
+            ? '<span class="exm-verdict ok">✔ 答对</span>'
+            : '<span class="exm-verdict bad">✘ 答错</span>')
+          : '<span class="exm-verdict skip">— 未作答</span>';
+        analysisCard.innerHTML = `<div class="exm-an-head"><b>正确答案：${esc(ans || '未收录')}</b> · 你的作答：<span style="font-weight:700;color:${userPick === ans ? 'var(--ok)' : 'var(--warn)'}">${esc(userPick || '未作答')}</span> ${verdict}</div>`
+          + (a ? exmQuestionExplainHtml(a) : '')
+          + (!a ? `<div class="exm-an-empty">${EXAM_ANALYSIS_EMPTY}</div>` : '');
       }
       if (ans) {
         $(`#exmOpt-${num}-${ans}`)?.classList.add('right');
@@ -4445,6 +4718,7 @@ function switchExamMode(mode) {
       bubble?.classList.remove('wrong');
     }
   }
+  updateExamAnalysisBadge();
 }
 
 function submitExamPaper() {
@@ -4477,6 +4751,52 @@ function resetExamAnswers() {
     updateExamBubbleProgress();
   }
 }
+
+/* ---------- v3.8.0：真题交互改「事件委托」----------
+   背景：CSP 为 script-src 'self'（v3.3.4 起的严格策略），浏览器会拦截全部内联
+   on* 事件处理器——原真题页 17 处 onclick/onchange/oninput 在线上实际全部失效
+   （点选项不加选中态、作答进度不动、提交按钮无反应）。
+   改为 data-* 标记 + 容器级委托监听：既满足 CSP，也不放宽策略换取功能。
+   委托挂在 #exDetail（真题详情根节点），板块重渲染后依然有效。 */
+document.addEventListener('click', e => {
+  const t = e.target instanceof Element ? e.target.closest('[data-exm-scroll],[data-exm-action]') : null;
+  if (!t) return;
+  if (t.dataset.exmScroll != null) { scrollToExamQ(Number(t.dataset.exmScroll)); return; }
+  if (t.dataset.exmAction === 'submit') { submitExamPaper(); return; }
+  if (t.dataset.exmAction === 'reset') { resetExamAnswers(); return; }
+});
+
+document.addEventListener('change', e => {
+  const el = e.target;
+  if (!(el instanceof Element)) return;
+  // 完形填空内联下拉
+  if (el.matches('select[data-exmq]')) {
+    onExamClozeChange(Number(el.dataset.exmq), el.value);
+    return;
+  }
+  // 新题型 / 长匹配下拉
+  if (el.matches('select[data-exmpb]')) {
+    onExamPartBChange(Number(el.dataset.exmpb), el.value);
+    return;
+  }
+  // 单选（radio）
+  if (el.matches('input[data-exm-pick]')) {
+    onExamRadioPick(Number(el.dataset.exmPick), el.dataset.exmPickVal || el.value);
+    return;
+  }
+});
+
+document.addEventListener('input', e => {
+  const el = e.target;
+  if (!(el instanceof Element)) return;
+  if (el.matches('[data-exm-subjective]')) {
+    onExamSubjectiveInput(Number(el.dataset.exmSubjective));
+    return;
+  }
+  if (el.matches('[data-exm-essay]')) {
+    onExamEssayInput(Number(el.dataset.exmEssay), Number(el.dataset.exmMin || 100), Number(el.dataset.exmMax || 200));
+  }
+});
 
 $('#exmModePractice')?.addEventListener('click', () => switchExamMode('practice'));
 $('#exmModeAnalysis')?.addEventListener('click', () => switchExamMode('analysis'));

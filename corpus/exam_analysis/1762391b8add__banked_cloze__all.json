@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "1762391b8add__banked_cloze__all",
+ "examId": "1762391b8add",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2025 年 12 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T07:20:01.213Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66182,
+ "usage": {
+  "prompt_tokens": 1396,
+  "completion_tokens": 3767,
+  "total_tokens": 5163,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1396,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3767,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1396,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中年开始运动是否为时已晚",
+  "gist": "文章介绍了一项新研究：40岁以后才开始增加运动量的人，其早逝风险和慢性病发病率的降幅与终身坚持运动者相近。但研究者也指出，不应因此推迟运动，因为长期运动还能改善认知功能、控制体重，且从青少年时期养成运动习惯更容易终身坚持。",
+  "difficulty": "中等",
+  "translation": "目前人们普遍认为，对于长期保持运动习惯的人而言，规律运动会带来各种各样的健康益处。但开始运动是否真的会太晚？\n\n一项新研究关注了那些在40岁以后将运动量提升到超过年轻时水平的人，结果发现这些人早逝风险的下降幅度与终身坚持运动者相近。与不运动的人相比，风险降幅达到32%至35%。那些在中年开始运动的人，其慢性疾病（如心脏病和癌症）的发病率也出现了下降，降幅与长期稳定运动者相似。\n\n那么，为什么还要费心终身坚持运动呢？该研究的作者承认，有些人可能会将研究结果解读为可以推迟启动运动计划，但这将是一个错误。长期保持活跃所带来的其他身心益处，是我们不应忽视的。这些实实在在的健康益处包括更好的认知功能和更低的体重增加风险。鉴于全球肥胖流行，后者尤为重要。此外，专家指出，越早开始越好，因为如果你年轻时养成了运动习惯，你就更有可能在日后保持这些行为模式。因此，理想情况是人们从儿童或青少年时期就开始运动，并且无论年龄大小，都应保持积极的生活方式。不过，这项研究确实表明，即使你之前一直不太活跃，如果你在四五十岁开始变得活跃，仍然能从中受益。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "H",
+    "correct": "ever",
+    "why": "此处需要副词修饰 too late。'is it ever too late' 是英语常见固定表达，意为'是否真的会太晚'。ever 用于疑问句中表示'究竟、到底'，与上下文讨论'开始运动是否为时已晚'的主题完全吻合。",
+    "traps": "副词 arbitrarily（任意地）和 particularly（尤其）虽然也是副词，但语义不符合 'is it ___ too late' 的搭配。arbitrarily 表示'武断地'，放入语义不通；particularly 语义为'特别地'，虽勉强可读但不如 ever 地道自然。",
+    "tip": "识别 'is it ever too late' 这一疑问句常见搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "J",
+    "correct": "mortality",
+    "why": "空格前有 early 修饰，空格处需要名词。'early mortality'（早逝/过早死亡）是医学与健康领域的常用搭配，且后文提到运动降低该风险，与研究主题高度一致。",
+    "traps": "名词 patterns（模式）和 adolescents（青少年）虽然词性正确，但 'early patterns' 或 'early adolescents' 与 'risk of' 搭配后语义不合理，且不符合后文32%-35%风险降幅的语境。",
+    "tip": "掌握 early mortality（过早死亡）这一健康话题高频搭配。"
+   },
+   {
+    "number": 28,
+    "answer": "G",
+    "correct": "drop",
+    "why": "空格前有冠词 a，需填名词。'a drop of 32% to 35%'（32%至35%的降幅）完美衔接上文提到的风险下降数据。drop 作名词表示'下降、降幅'，与 compared to 构成对比逻辑。",
+    "traps": "其他未使用名词如 mortality 已用于第27题。此处若填 patterns 等名词，'a patterns of 32%' 语法不通且语义不匹配。",
+    "tip": "drop 作名词表示'下降幅度'，常与百分比搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "correct": "chronic",
+    "why": "空格后为 diseases，需形容词修饰。后文举例 heart disease and cancer（心脏病和癌症）均为典型慢性病，'chronic diseases'（慢性疾病）是医学固定搭配，语义完全吻合。",
+    "traps": "形容词 cognitive（认知的）虽然词性正确，但 'cognitive diseases' 不是标准搭配，且后文举例为心脏病和癌症，并非认知类疾病。",
+    "tip": "chronic diseases（慢性疾病）是健康类文章核心词组。"
+   },
+   {
+    "number": 30,
+    "answer": "E",
+    "correct": "concede",
+    "why": "主语为 the authors of the study，空格处需要动词作谓语。concede 意为'承认、让步'，后接 that 从句，表示作者承认有人可能会曲解研究结果，但紧接着用 'this would be a mistake' 进行转折，逻辑通顺。",
+    "traps": "动词 disregard（忽视）虽然词性匹配，但 'the authors disregard that some might interpret...' 语义不合理——作者不是'忽视'而是'承认'这种可能的误读后加以纠正。",
+    "tip": "concede that... 表'承认/让步'，常见于学术讨论语境。"
+   },
+   {
+    "number": 31,
+    "answer": "F",
+    "correct": "disregard",
+    "why": "空格前为 should not，需要动词原形。disregard 意为'忽视、不理会'，'should not disregard'（不应忽视）与前文'there are other benefits'形成逻辑呼应：存在其他益处，我们不应忽视。",
+    "traps": "动词 concede（承认）已用于第30题。若填其他副词或形容词则词性不符，should not 后必须接动词原形。",
+    "tip": "should not disregard = 不应忽视，表示强调重要性。"
+   },
+   {
+    "number": 32,
+    "answer": "D",
+    "correct": "cognitive",
+    "why": "空格后为 functioning（功能运作），需形容词修饰。'cognitive functioning'（认知功能）是心理学和健康领域的标准搭配，且与前文提到的 'mental benefits'（心理益处）直接对应。",
+    "traps": "形容词 chronic（慢性的）已用于第29题。即便未用，'chronic functioning' 也不是合理搭配。此处需要一个与 mental 相关的形容词，cognitive 最为贴切。",
+    "tip": "cognitive functioning（认知功能）对应前文 mental benefits。"
+   },
+   {
+    "number": 33,
+    "answer": "K",
+    "correct": "particularly",
+    "why": "空格修饰形容词 important，需要副词。particularly important 意为'尤为重要'，后接 given the global obesity epidemic（鉴于全球肥胖流行），强调控制体重在当前背景下的特殊重要性，逻辑合理。",
+    "traps": "副词 arbitrarily（任意地）语义不搭，'arbitrarily important' 不构成合理表达。ever 虽为副词但已用于第26题，且 'ever important' 在此语境中不如 particularly 自然。",
+    "tip": "particularly important given...（鉴于……尤为重要）是议论文常见表达。"
+   },
+   {
+    "number": 34,
+    "answer": "L",
+    "correct": "patterns",
+    "why": "空格前有 those 指代，需要复数名词。'keep up those patterns'（保持那些行为模式）中 patterns 指代前文提到的运动习惯，与 'make a habit of exercising' 语义衔接，表示年轻时养成的运动模式更容易延续到晚年。",
+    "traps": "名词 adolescents（青少年）虽为复数，但 'keep up those adolescents' 语义不通。此处 those 回指的是前文提到的运动行为，只有 patterns 能表达'行为模式'之意。",
+    "tip": "patterns 指运动行为模式，与前文 habit 形成语义呼应。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "correct": "adolescents",
+    "why": "空格前为 children or，需要与 children 并列的名词。adolescents（青少年）与 children（儿童）构成年龄递进关系，'children or adolescents' 表示'儿童或青少年'，强调越早开始运动越好，语义完整自然。",
+    "traps": "名词 patterns（模式）已用于第34题。即使未用，'children or patterns' 也无法构成语义合理的并列。mortality（死亡率）放在此处更是语义荒谬。",
+    "tip": "children or adolescents 构成年龄段并列，表'从小开始'。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "assortment",
+    "cn": "n. 各种各样，混合"
+   },
+   {
+    "w": "mortality",
+    "cn": "n. 死亡率；死亡"
+   },
+   {
+    "w": "chronic",
+    "cn": "adj. 慢性的；长期的"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的，与认知有关的"
+   },
+   {
+    "w": "concede",
+    "cn": "v. 承认；让步"
+   },
+   {
+    "w": "disregard",
+    "cn": "v./n. 忽视；不理会"
+   },
+   {
+    "w": "adolescents",
+    "cn": "n. 青少年（复数）"
+   },
+   {
+    "w": "incidence",
+    "cn": "n. 发生率；发病率"
+   },
+   {
+    "w": "obesity",
+    "cn": "n. 肥胖，肥胖症"
+   },
+   {
+    "w": "epidemic",
+    "cn": "n. 流行病；泛滥 adj. 流行的"
+   },
+   {
+    "w": "arbitrarily",
+    "cn": "adv. 武断地；任意地"
+   },
+   {
+    "w": "assert",
+    "cn": "v. 断言；声称；维护"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——本文讨论中年开始运动是否有效。",
+   "第二步：将15个备选词按词性分类（名词/动词/形容词/副词），缩小每空候选范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、情态动词等）判断所需词性。",
+   "第四步：结合上下文语义和常见搭配（如 chronic diseases, cognitive functioning）锁定答案。",
+   "第五步：填完后回读全文，检查语法一致性和语义连贯性，确认无重复使用。"
+  ]
+ }
+}

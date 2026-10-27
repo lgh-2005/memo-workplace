@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "2503975bfd62__reading__2",
+ "examId": "2503975bfd62",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2010 年考研英语真题",
+ "year": 2010,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:23:39.973Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63733,
+ "usage": {
+  "prompt_tokens": 1748,
+  "completion_tokens": 3664,
+  "total_tokens": 5412,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1748,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3664,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1748,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "商业方法专利面临法律限制",
+  "gist": "过去十年大量商业方法专利获批，但联邦巡回上诉法院正准备通过Bilski案重新审视并可能限制此类专利的授予。该文梳理了商业方法专利的兴起、争议及最高法院反专利趋势对其产生的影响，指出此类专利正面临重大威胁。",
+  "structure": [
+   "第1段：背景引入，列举商业方法专利的荒诞案例",
+   "第2段：核心事件，联邦巡回法院拟通过Bilski案限制此类专利",
+   "第3段：回顾历史，此类专利因State Street案兴起及企业跟风申请",
+   "第4段：Bilski案细节，法院全员审理并可能推翻先例",
+   "第5段：背景补充，最高法院反专利趋势影响联邦巡回法院"
+  ],
+  "difficulty": "中等",
+  "translation": "过去十年间，数以千计的专利被授予所谓的商业方法。亚马逊公司因其\"一键式\"在线支付系统获得了一项专利。美林证券为一项资产配置策略获得了法律保护。一位发明者甚至为一种搬箱子的技术申请了专利。\n\n如今，美国最高专利法院似乎已完全准备好缩减商业方法专利的授予范围，自十年前此类专利首次被授权以来，它们就一直饱受争议。在一项令知识产权律师热议的举动中，美国联邦巡回上诉法院表示将借助一桩具体案件对商业方法专利进行广泛审查。该案被称为\"In re Bilski\"，密苏里大学法学院的丹尼斯·D·克劳奇称其为\"一桩非常重大的案件\"，它\"有可能废除整整一类专利\"。\n\n对商业方法专利申请的限制将是一个戏剧性的态度转变，因为正是联邦巡回法院自己在1998年所谓的道富银行案判决中引入了此类专利，批准了一项关于共同基金资产汇集方式的专利。该裁决引发了商业方法专利申请的爆发式增长，最初是新兴互联网公司试图获得特定在线交易类型的独占权。后来，更多老牌公司也争相将此类专利纳入档案，哪怕只是作为对抗可能先发制人的竞争对手的防御手段。2005年，IBM在一份法庭文件中指出，尽管它本身质疑授予此类专利的法律依据，却已获得了300多项商业方法专利。同样，华尔街一些投资公司以金融产品专利武装自己，同时却在法庭上采取反对这种做法的立场。\n\nBilski案涉及一项关于能源市场对冲风险方法的专利申请。联邦巡回法院发出了一项非同寻常的命令，宣布该案将由法院全部12名法官共同审理，而非通常的3人合议庭，并且法院希望评估的问题之一是是否应\"重新考虑\"其道富银行案的裁决。\n\n联邦巡回法院的这一行动是在最高法院最近一系列缩小专利持有人保护范围的裁决之后做出的。例如，去年四月，大法官们发出信号，表明太多专利因显而易见的\"发明\"而被维持。乔治·华盛顿大学法学院的专利律师兼教授哈罗德·C·韦格纳表示，联邦巡回法院的法官们\"正在回应最高法院的反专利趋势\"。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Now the nation's top patent court appears completely ready to scale back on business-method patents, which have been controversial ever since they were first authorized 10 years ago.",
+    "why": "题目问商业方法专利最近引起关注的原因。文章第二段明确指出最高专利法院已完全准备好\"缩减\"（scale back）商业方法专利，并将通过Bilski案进行广泛审查，甚至可能\"废除整整一类专利\"。C选项\"对其授予的可能限制\"正是对scale back的同义改写，准确反映了引起关注的核心原因。",
+    "traps": "A\"对商业价值有限\"文中未提及价值问题，属无中生有；B\"与资产配置有关\"仅是第一段的一个举例，非引起关注的原因，属以偏概全；D\"关于授权的争议\"虽文中提到controversial，但这是十年来的老争议，题目问的是recently引起关注的原因，D不够精确且非最新原因。",
+    "tip": "注意题目中recently的时间限定，定位最新事件而非历史背景。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "It \"has the potential to eliminate an entire class of patents.\"",
+    "why": "文章第二段引用法学教授的话称Bilski案\"有可能废除整整一类专利\"，第四段进一步说明法院将审查是否\"重新考虑\"道富银行案的裁决。如果推翻先例，将从根本上改变商业方法专利的法律实践。D选项\"它可能改变美国的法律实践\"准确概括了该案的潜在影响。",
+    "traps": "A\"其裁决符合法院判决\"案件尚未裁决，且法院正考虑推翻先例，属曲解信息；B\"涉及一桩很大的商业交易\"中的big deal是指\"大事\"而非\"大交易\"，属望文生义；C\"已被联邦巡回法院驳回\"与事实相反，法院正以全员审理的方式高度重视此案，属反向干扰。",
+    "tip": "注意区分big deal的口语含义'大事'与字面含义'大交易'。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "Curbs on business-method claims would be a dramatic about-face, because it was the Federal Circuit itself that introduced such patents with its 1998 decision",
+    "why": "about-face出现在第三段首句。上下文逻辑是：对商业方法专利的限制将是一个dramatic about-face，因为正是联邦巡回法院自己在1998年通过道富银行案引入了此类专利。即法院从当初的支持到如今的限制，形成了180度的态度转变。because引导的原因从句揭示了前后矛盾，故about-face意为\"态度转变\"。",
+    "traps": "A\"商誉损失\"、B\"敌意增加\"、D\"尊严提升\"均与上下文对比转折的逻辑不符，属脱离语境的臆测。about-face是军事术语\"向后转\"，引申为态度或立场的彻底转变。",
+    "tip": "词义猜测题关键在于通过because等逻辑标志词还原上下文因果关系。"
+   },
+   {
+    "number": 29,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "IBM noted in a court filing that it had been issued more than 300 business-method patents, despite the fact that it questioned the legal basis for granting them.",
+    "why": "倒数第二段举了IBM和华尔街投资公司的例子：IBM质疑此类专利的法律依据却获得了300多项；投资公司一边申请专利一边在法庭上反对此做法。最后一段又提到最高法院认为太多专利因\"显而易见\"的发明被维持。这些都说明商业方法专利往往被不必要地授予。B选项\"经常被不必要地授予\"正确概括了这一信息。",
+    "traps": "A\"不受法律挑战影响\"与全文主旨矛盾，文章核心就是法院要限制此类专利；C\"降低了对专利持有人的尊重\"文中未涉及，属无中生有；D\"增加了风险发生率\"与文意无关，文中的risk hedging仅是Bilski案的案情，非论述重点。",
+    "tip": "当多个例子指向同一结论时，要归纳其共同含义而非纠结个例。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "Now the nation's top patent court appears completely ready to scale back on business-method patents",
+    "why": "全文围绕联邦巡回法院准备通过Bilski案限制商业方法专利展开论述：第1-2段引出问题与核心事件，第3段回顾此类专利的历史，第4段介绍案件细节，第5段补充最高法院的反专利趋势。文章重点在于此类专利正面临迫在眉睫的威胁（looming threat），而非已成定论。A选项\"商业方法专利面临的迫近威胁\"最准确地概括了全文主题。",
+    "traps": "B\"对商业方法专利持有人的保护\"与全文论调相反，文章讲的是限制而非保护；C\"一桩关于商业方法专利的法律案件\"过于狭隘，Bilski案只是文章的一个论据，非全文主题；D\"反对商业方法专利的流行趋势\"看似合理，但prevailing（普遍流行的）过度概括，且文章核心在于威胁即将到来而非已成趋势。",
+    "tip": "主旨题要选覆盖全文且程度恰当的选项，避免过窄或过度概括。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "patent",
+    "cn": "n. 专利；专利权"
+   },
+   {
+    "w": "scale back",
+    "cn": "phr. 缩减，削减"
+   },
+   {
+    "w": "abuzz",
+    "cn": "adj. 议论纷纷的，嗡嗡作响的"
+   },
+   {
+    "w": "curb",
+    "cn": "n./v. 限制，约束，遏制"
+   },
+   {
+    "w": "about-face",
+    "cn": "n. （态度、立场的）彻底转变"
+   },
+   {
+    "w": "stake out",
+    "cn": "phr. 圈定，确立（权利或立场）"
+   },
+   {
+    "w": "beat sb. to the punch",
+    "cn": "phr. 先发制人，抢先一步"
+   },
+   {
+    "w": "hedging",
+    "cn": "n. 对冲，套期保值（金融术语）"
+   },
+   {
+    "w": "in the wake of",
+    "cn": "phr. 在……之后，紧随……而来"
+   },
+   {
+    "w": "uphold",
+    "cn": "v. 维持，支持（裁决、判决）"
+   },
+   {
+    "w": "reconsider",
+    "cn": "v. 重新考虑，重新审议"
+   },
+   {
+    "w": "pool",
+    "cn": "v. 汇集，集中（资源、资金）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Later, more established companies raced to add such patents to their files, if only as a defensive move against rivals that might beat them to the punch.",
+    "cn": "后来，更多老牌公司也争相将此类专利纳入档案，哪怕只是作为对抗可能先发制人的竞争对手的防御手段。",
+    "note": "主干为companies raced to add patents；if only引导让步状语表'即便只是'；that引导定语从句修饰rivals；beat them to the punch为习语'抢先一步'。"
+   },
+   {
+    "en": "IBM noted in a court filing that it had been issued more than 300 business-method patents, despite the fact that it questioned the legal basis for granting them.",
+    "cn": "IBM在一份法庭文件中指出，尽管它本身质疑授予此类专利的法律依据，却已获得了300多项商业方法专利。",
+    "note": "主干为IBM noted that...；that引导宾语从句；despite the fact that引导让步状语从句，形成转折对比，突出IBM言行矛盾。"
+   },
+   {
+    "en": "The Federal Circuit issued an unusual order stating that the case would be heard by all 12 of the court's judges, rather than a typical panel of three, and that one issue it wants to evaluate is whether it should \"reconsider\" its State Street Bank ruling.",
+    "cn": "联邦巡回法院发出了一项非同寻常的命令，宣布该案将由法院全部12名法官共同审理，而非通常的3人合议庭，并且法院希望评估的问题之一是是否应\"重新考虑\"其道富银行案的裁决。",
+    "note": "主干为The Federal Circuit issued an order；stating引导现在分词作后置定语；两个that从句并列作stating的宾语；whether引导表语从句；rather than形成对比。"
+   }
+  ]
+ }
+}

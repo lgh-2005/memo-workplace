@@ -1,0 +1,256 @@
+{
+ "schemaVersion": 1,
+ "id": "457ceba875be__listening__all",
+ "examId": "457ceba875be",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2025 年 6 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:02:28.760Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54902,
+ "usage": {
+  "prompt_tokens": 2197,
+  "completion_tokens": 2884,
+  "total_tokens": 5081,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2197,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2884,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2197,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场六级听力的录音音频与原文文稿，以下解析仅基于题目选项的语言特征进行推断分析，不涉及任何编造的录音内容。",
+  "overview": "本场听力共7段，包含长对话与短文。第1段（Q1-4）围绕两位求职候选人的面试评价与最终决策；第2段（Q5-8）涉及时尚设计师的新系列作品与设计理念；第3段（Q9-11）讨论动物对人类行为的响应与相处方式；第4段（Q12-15）讲解冰箱内部温度分区与食物存放常识；第5段（Q16-18）关于健康/衰老方向的研究方法与意义；第6段（Q19-21）探讨烹饪学校教育理念与厨师的生活哲学；第7段（Q22-25）围绕目标设定与自我提升的心理学概念。",
+  "strategy": [
+   "预读选项时快速标注各题关键名词与形容词，判断话题方向，建立预期框架",
+   "选项中出现比较级或两个人名时，重点关注对比信息，听清程度副词如slightly、moderately",
+   "当四个选项结构平行（如都以They/It开头），关注谓语动词差异，这是区分正误的核心",
+   "遇到科普类话题（冰箱、动物、心理学），优先关注因果逻辑和建议类表达",
+   "对话类题目注意说话人语气转折处（but, however, actually），常为出题点",
+   "末尾题常考说话人的建议、计划或总结，注意听对话尾部的祈使句或let's结构"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "两位求职候选人的面试评估与录用决策",
+    "optionSignals": "Q1四个选项均描述对候选人或流程的看法，含both/different等对比词；Q2出现Rachel和Peter的具体比较，含比较级higher/stronger；Q3四个选项均为His+名词短语，问某人某方面特点；Q4均为动词原形开头，问接下来的行动。",
+    "tips": [
+     "Q2中moderately higher与slightly stronger均含程度副词，听时注意区分比较的具体维度（学业vs体能）",
+     "Q4选项均为祈使/建议结构，属于典型的'下一步行动'题，重点听对话结尾处的提议",
+     "Q1中both出现两次，若听到说话人对两位候选人做出整体评价，注意形容词的正负色彩"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "时尚设计师的设计理念与最新系列作品",
+    "optionSignals": "Q5选项涉及品牌名、collection、fashion、designer等时尚领域词汇，在问讨论主题；Q6四个选项均为Something+分词/形容词，在问设计风格特征；Q7选项较长且涉及merge styles、velvet capes、patterns等具体设计手法；Q8问说话人的期待或兴趣。",
+    "tips": [
+     "Q6中absurd与ambiguous为近似干扰项，注意听录音中对设计风格的具体形容词",
+     "Q7四个选项描述不同设计手法，预读时标记核心动词merge/learn/make/draw以快速定位",
+     "Q5属于主旨题，若前几秒提到某个关键话题，优先锁定"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "动物行为与人类互动方式的研究",
+    "optionSignals": "Q9四个选项均以They could开头，描述动物的能力，涉及recognize、understand、domesticated、pointing gestures等；Q10涉及对动物的研究目的；Q11为祈使式建议，问应如何对待这些动物。",
+    "tips": [
+     "Q9中domesticated和without training形成对比暗示，正确答案D强调无需训练即可响应，注意区分先天能力与训练所得",
+     "Q11四个选项都是动词开头的建议，sensitivity and respect与repeated training形成态度对比，注意说话人的情感倾向词"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "冰箱内部温度分布与食物正确存放方法",
+    "optionSignals": "Q12描述冰箱内部特征，四选项涉及temperature/placement/shelves/space；Q13以To+动词开头，问冰箱设计的目的；Q14涉及具体位置（top shelf/middle/doors/bottom），问存放位置；Q15描述食物可能遭遇的后果。",
+    "tips": [
+     "Q14为典型的细节定位题，四个选项对应冰箱不同区域，听时注意与特定食物的搭配",
+     "Q15中contaminated和ruined是常见干扰对，注意区分'污染'与'损坏'的语义差异",
+     "Q12为段落主旨铺垫题，varies from place to place暗示温度不均匀是核心论点"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "某项与健康衰老相关的学术研究及其方法",
+    "optionSignals": "Q16四个选项为具体健康问题（depression/feebleness/hip fracture/infections），问研究对象或关注点；Q17描述研究的价值或特点；Q18以By+动名词开头，问研究方法或途径。",
+    "tips": [
+     "Q16四个医学相关词汇需提前熟悉发音，hip fracture（髋部骨折）为正确答案，注意听具体病症名称",
+     "Q18中combining multiple perspectives为正确答案，听时关注方法论描述中的综合性、跨学科等关键词",
+     "Q17中real and relevant暗示研究的实用性，注意区分'实际意义'与'学术声望'类选项"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "烹饪学校的教育理念与厨师的职业哲学",
+    "optionSignals": "Q19四个选项均以They don't/They+动词开头，描述烹饪学校的不足之处；Q20描述cooking/某事物对厨师的意义；Q21为建议类表达，涉及respect/resources/self-discipline/philosophers。",
+    "tips": [
+     "Q19中basic organization为正确答案的关键词，注意听对学校教育缺陷的批评性表述",
+     "Q20中a way of life与a way of transformation形成对比，注意听说话人对烹饪本质的定义",
+     "Q21涉及资源与时间的明智使用，属于实践性建议，注意听should/need to等建议标志词"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "目标设定与自我衡量进步的心理学理念",
+    "optionSignals": "Q22四个选项均为The+名词+for结构，问某概念的本质或作用；Q23描述人们在某种状态下的心理反应；Q24以We开头描述问题所在；Q25为较长的名词短语，涉及measuring/gap/gain等衡量概念。",
+    "tips": [
+     "Q25中gap与gain是核心对立概念，正确答案C强调衡量已走过的路程而非与目标的差距，注意听against/from等介词搭配",
+     "Q23中stop imagining further progress为正确答案，注意听到表达'停止前进'或'自满'的语义",
+     "Q22选项均为抽象概念，basis for self-improvement为正确答案，听时关注对'不满足'积极意义的阐述"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "competitive",
+    "cn": "有竞争力的，势均力敌的"
+   },
+   {
+    "w": "moderately",
+    "cn": "适度地，中等程度地"
+   },
+   {
+    "w": "spectrum",
+    "cn": "光谱；范围，系列"
+   },
+   {
+    "w": "indigenous",
+    "cn": "本土的，土著的"
+   },
+   {
+    "w": "domesticated",
+    "cn": "被驯化的，家养的"
+   },
+   {
+    "w": "contaminated",
+    "cn": "被污染的，受到污染的"
+   },
+   {
+    "w": "fracture",
+    "cn": "骨折；断裂"
+   },
+   {
+    "w": "feebleness",
+    "cn": "虚弱，衰弱"
+   },
+   {
+    "w": "stagnation",
+    "cn": "停滞，不发展"
+   },
+   {
+    "w": "intricate",
+    "cn": "错综复杂的，精细的"
+   },
+   {
+    "w": "velvet",
+    "cn": "天鹅绒，丝绒"
+   },
+   {
+    "w": "majestic",
+    "cn": "庄严的，雄伟的"
+   },
+   {
+    "w": "misconceptions",
+    "cn": "误解，错误认识"
+   }
+  ]
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "ee319925678d__banked_cloze__all",
+ "examId": "ee319925678d",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2019 年 6 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:28:17.422Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 77836,
+ "usage": {
+  "prompt_tokens": 1446,
+  "completion_tokens": 5127,
+  "total_tokens": 6573,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1446,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5127,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1446,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "新型低温抗脆钢材的研发与应用",
+  "gist": "大多数钢材在低温下会变脆，这一问题在二战中尤为突出。日本科学家Kimura团队通过反复加热和严重机械变形的物理方法，开发出一种无需昂贵添加剂、在极低温度下仍保持强度和韧性的新型钢材，有望减少汽车、建筑和桥梁等领域的钢材用量。",
+  "difficulty": "中等",
+  "translation": "钢铁因其可靠性而备受重视，但遇到寒冷时就不那么可靠了。大多数类型的钢铁在温度低于约-25℃时会突然变脆，除非将其与其他金属混合。不过如今，一种新型钢材已被研发出来，它能在更低的温度下抵抗断裂，同时保持其强度和韧性——而且无需昂贵的添加剂。\n\n钢铁在低温下的脆弱性在第二次世界大战期间首次成为一个重大问题。在德国U型潜艇用鱼雷攻击了众多英国船只之后，一支由2700艘廉价实用的\"自由轮\"组成的船队被引入以替代损失的船只，为被围困的英国人提供了生命线。但数百艘船的钢壳在冰冷的北大西洋中开裂，其中12艘断成两半并沉没。\n\n在寒冷条件下建造钢结构（如北极的石油钻井平台）时，脆性仍然是一个问题。因此，科学家们一直努力通过将钢与镍等昂贵金属混合来寻找解决方案。\n\n日本的Yuuji Kimura及其同事尝试了一种更偏物理的方法。他们没有添加其他金属，而是开发了一种复杂的机械工艺，包括反复加热和极为严重的机械变形，称为温度成形。\n\n由此产生的钢材似乎实现了强度与韧性的结合，可与合金含量极高、因而非常昂贵的现代钢材相媲美。\n\nKimura团队打算用其温度成形钢来制造超高强度零件，如螺栓。他们希望既减少建筑工程中所需构件的数量，又减轻其重量——例如用中空管材替代实心支撑。这将减少从汽车到建筑物和桥梁所需的钢材用量。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "correct": "abruptly",
+    "why": "空格处需要一个副词修饰动词become。abruptly意为\"突然地\"，语义上强调钢铁在低温下会\"突然\"变脆，与后文描述的钢壳在北大西洋突然开裂相呼应，逻辑通顺。",
+    "traps": "候选副词还有ardently（热情地），但\"热情地变脆\"语义荒谬，完全不符合语境。其余候选词均非副词，无法修饰become，可直接排除。",
+    "tip": "副词修饰动词，先定词性再看语义合理性。"
+   },
+   {
+    "number": 27,
+    "answer": "J",
+    "correct": "fractures",
+    "why": "resists后接名词作宾语。fractures意为\"断裂/裂缝\"，指新型钢材能在更低温度下抵抗断裂，与前文提到的变脆问题及后文船壳开裂形成呼应，语义完美契合。",
+    "traps": "其他名词如additives（添加剂）、approach（方法）、components（组件）放在resists后语义不通——\"抵抗添加剂/方法/组件\"均不合逻辑。",
+    "tip": "动宾搭配：resists + 名词，需选语义为\"破损/断裂\"的词。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "correct": "additives",
+    "why": "expensive修饰名词，且上文提到\"mixed with other metals\"，说明传统方法需添加其他金属。additives（添加剂）恰好指代这些额外添加的金属，与上下文\"无需昂贵添加剂\"逻辑一致。",
+    "traps": "components（组件）虽也是名词，但指的是成品零件，不指冶炼过程中添加的物质。approach（方法）放在expensive后虽语法可通，但\"无需昂贵方法\"与上下文讨论的金属混合语境不符。",
+    "tip": "关键线索：前文\"mixed with other metals\"直接提示\"添加物\"。"
+   },
+   {
+    "number": 29,
+    "answer": "E",
+    "correct": "besieged",
+    "why": "空格处需要形容词或分词修饰British。besieged意为\"被围困的\"，二战期间英国被德国U型潜艇封锁海上补给线，用\"被围困的英国人\"描述极为贴切，符合历史背景。",
+    "traps": "hollow（中空的）虽为形容词，但修饰人毫无意义。comparable（可比较的）修饰British语义不通。其余候选词词性不匹配或语义不符。",
+    "tip": "历史常识+语境：德国U艇封锁→英国被围困。"
+   },
+   {
+    "number": 30,
+    "answer": "I",
+    "correct": "cracked",
+    "why": "空格处需要动词过去式作谓语。cracked意为\"开裂\"，描述钢壳在冰冷北大西洋中开裂，与后文\"12 broke in half and sank\"（12艘断成两半并沉没）构成递进关系，语义连贯。",
+    "traps": "strived（努力）语法上可作过去式，但\"船壳努力在北大西洋\"语义完全不通。fractures虽语义相关但已用于第27题，且此处需过去式而非第三人称单数。",
+    "tip": "前后递进逻辑：cracked（开裂）→ broke in half（断裂）→ sank（沉没）。"
+   },
+   {
+    "number": 31,
+    "answer": "N",
+    "correct": "strived",
+    "why": "have后接过去分词构成现在完成时。strived是strive的过去分词，have strived to find意为\"一直努力寻找\"，表示科学家长期以来致力于解决低温脆性问题，语义通顺。",
+    "traps": "cracked虽也可作过去分词，但\"have cracked to find a solution\"语法搭配错误，crack不接to do不定式。其余候选过去分词如besieged语义不通。",
+    "tip": "have + 过去分词构成完成时；strive to do为固定搭配。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "correct": "approach",
+    "why": "a more physical后接名词。approach意为\"方法/途径\"，a more physical approach指\"一种更偏物理的方法\"，与下文描述的机械加工工艺（而非化学添加金属）形成对比，语义精准。",
+    "traps": "additives（添加剂）已用于第28题，且\"a more physical additives\"语法上冠词a与复数名词不搭配。其余可选名词语义均不匹配。",
+    "tip": "关键对比：physical approach（物理方法）vs. 前文adding other metals（化学方法）。"
+   },
+   {
+    "number": 33,
+    "answer": "G",
+    "correct": "comparable",
+    "why": "is ___ to构成固定搭配。comparable to意为\"可与……相比的/堪比\"，表明新型钢材的性能可与昂贵的高合金钢相媲美，突出新型钢材的优势，逻辑完整。",
+    "traps": "此处介词to是关键线索，comparable to是固定搭配。其他形容词如hollow不与to搭配构成此义。ardently是副词，不能放在is后作表语形容词。",
+    "tip": "固定搭配：be comparable to（可与……相媲美）。"
+   },
+   {
+    "number": 34,
+    "answer": "H",
+    "correct": "components",
+    "why": "the number of后接可数名词复数。components意为\"构件/零部件\"，指减少建筑工程中所需构件的数量，与后文提到的bolts（螺栓）、supports（支撑件）等具体部件呼应。",
+    "traps": "fractures（断裂）虽为复数名词，但已用于第27题；且\"减少断裂的数量\"与后文\"减轻重量、用中空管代替实心支撑\"的语境不符。additives已用于第28题。",
+    "tip": "上下文线索：bolts、supports均为零部件，对应components。"
+   },
+   {
+    "number": 35,
+    "answer": "K",
+    "correct": "hollow",
+    "why": "空格修饰名词tubes，需要形容词。hollow意为\"中空的\"，与solid（实心的）形成鲜明对比：用中空管材替代实心支撑以减轻重量，逻辑清晰、对比明确。",
+    "traps": "comparable虽为形容词但已用于第33题，且\"comparable tubes\"语义不明确，缺乏对比对象。其余未用候选词如ardently为副词，无法修饰名词。",
+    "tip": "反义对比：solid supports ↔ hollow tubes，对比是最强线索。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "abruptly",
+    "cn": "突然地（adv.）"
+   },
+   {
+    "w": "additives",
+    "cn": "添加剂（n. 复数）"
+   },
+   {
+    "w": "besieged",
+    "cn": "被围困的；围攻的（adj./v. 过去分词）"
+   },
+   {
+    "w": "fractures",
+    "cn": "断裂；裂缝（n. 复数）；破裂（v.）"
+   },
+   {
+    "w": "comparable",
+    "cn": "可比较的；类似的（adj.）"
+   },
+   {
+    "w": "components",
+    "cn": "组件；构件；成分（n. 复数）"
+   },
+   {
+    "w": "hollow",
+    "cn": "中空的；空洞的（adj.）"
+   },
+   {
+    "w": "strived",
+    "cn": "努力；奋斗（v. strive 的过去式/过去分词）"
+   },
+   {
+    "w": "brittleness",
+    "cn": "脆性；易碎性（n.）"
+   },
+   {
+    "w": "toughness",
+    "cn": "韧性；坚韧（n.）"
+   },
+   {
+    "w": "ardently",
+    "cn": "热情地；热切地（adv.）"
+   },
+   {
+    "w": "deformation",
+    "cn": "变形；形变（n.）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文抓主旨，标出每个空格所在句的核心逻辑关系。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空选择范围。",
+   "第三步：根据空格前后的语法结构（如冠词+___+名词→形容词；have+___→过去分词）锁定词性。",
+   "第四步：结合上下文语义和逻辑关系（如对比、因果、递进）确定唯一答案。",
+   "第五步：填完后回读全文，检查已选词是否重复使用、整体语义是否通顺。"
+  ]
+ }
+}

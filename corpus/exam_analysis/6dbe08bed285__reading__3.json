@@ -1,0 +1,176 @@
+{
+ "schemaVersion": 1,
+ "id": "6dbe08bed285__reading__3",
+ "examId": "6dbe08bed285",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2001 年考研英语真题（旧）",
+ "year": 2001,
+ "sub": "3",
+ "questionNumbers": [
+  29,
+  30,
+  31,
+  32
+ ],
+ "generatedAt": "2026-10-27T06:10:50.686Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 51744,
+ "usage": {
+  "prompt_tokens": 1572,
+  "completion_tokens": 3165,
+  "total_tokens": 4737,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1572,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3165,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1572,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国民众不信任报纸的深层原因",
+  "gist": "文章围绕美国民众对报纸的不信任展开，指出新闻可信度项目仅停留在表层问题，真正根源在于记者与读者之间存在社会文化鸿沟——记者属于精英阶层，其世界观与普通读者严重脱节，而报业始终未认识到这一核心问题，导致读者持续流失。",
+  "structure": [
+   "第1-2段：提出问题——民众不信任报纸，可信度项目收效甚微",
+   "第3-5段：揭示深层原因——记者与读者间存在社会文化鸿沟",
+   "第6段：点明核心矛盾——世界观冲突才是不信任的根源",
+   "第7段：批判报业未能认识真正问题，提出改进建议"
+  ],
+  "difficulty": "中等",
+  "translation": "为什么如此多的美国人不信任他们在报纸上读到的内容？美国报纸编辑协会正试图回答这个令人痛苦的问题。该组织正深入进行一项被称为\"新闻可信度项目\"的长期自我剖析。\n\n遗憾的是，该项目得出的大多是一些低层次的发现，涉及事实错误、拼写和语法错误，加上对读者到底想要什么的大量百思不解的困惑。\n\n但不信任的根源远不止于此。大多数记者学会了通过一套标准模板（模式）来看世界，把每天的事件填入其中。换言之，新闻编辑室文化中有一套约定俗成的叙事主线，为原本令人困惑的新闻提供了骨架和现成的叙事结构。\n\n记者与读者之间存在社会和文化上的脱节，这有助于解释为什么新闻编辑室的\"标准模板\"对许多读者来说显得格格不入。在最近的一项调查中，问卷被发送给全国五个中等城市以及一个大都市地区的记者。然后随机电话采访了这些社区的居民，并向他们提出同样的问题。\n\n调查结果显示，与其他美国人相比，记者更可能居住在高档社区、雇佣女佣、拥有奔驰汽车、炒股票，而他们去教堂、做志愿者工作或在社区扎根的可能性更小。\n\n记者往往属于一个广义上的社会和文化精英阶层，因此他们的工作往往反映这个精英阶层的传统价值观。公众对新闻媒体令人震惊的不信任，并非根源于报道的不准确或记者业务能力的低下，而在于记者与读者之间每天发生的世界观冲突。\n\n这对任何行业而言都是一个危险的局面，对一个正在衰落的行业尤其如此。这是一个问题重重的行业，它不断雇用态度令客户极为恼火的员工，然后又赞助大量研讨会和可信度项目，专门研究客户为何恼怒并大量流失。但它似乎从未注意到那么多前客户所抱怨的文化和阶层偏见。如果它能认识到这一点，就应该扩展其多元化计划——目前该计划狭隘地集中在种族和性别上——去寻找在观念、价值观、教育和阶层方面有广泛差异的记者。",
+  "questions": [
+   {
+    "number": 29,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "Why do so many Americans distrust what they read in their newspapers? The American Society of Newspaper Editors is trying to answer this painful question.",
+    "why": "文章开篇提出核心问题——为什么美国人不信任报纸，随后全文围绕该问题逐层深入分析原因：可信度项目流于表面→记者与读者存在社会文化脱节→世界观冲突是根源→报业未能认识真正问题。B选项\"公众对报纸失望的原因\"精准概括了全文主旨。",
+    "traps": "A\"全世界读者的需求\"——文章只涉及美国读者，且重点不在需求而在不信任的原因，属于偷换范围与偷换概念；C\"报业衰落的起源\"——衰落只在末段作为背景提及，非文章主旨，属于以偏概全；D\"新闻可信度项目的目标\"——项目仅是引出话题的切入点，文章重点在于分析深层原因，属于以偏概全。",
+    "tip": "主旨题要抓住贯穿全文的核心问题，区分引子与主旨。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Sad to say, this project has turned out to be mostly low-level findings about factual errors and spelling and grammar mistakes, combined with lots of head-scratching puzzlement about what in the world those readers really want.",
+    "why": "原文明确评价该项目结果为\"mostly low-level findings\"（大多是低层次发现），涉及的只是拼写、语法等表面错误，并伴随大量困惑。\"low-level\"对应D选项\"rather superficial\"（相当肤浅），即项目只触及表层，未深入根本原因。",
+    "traps": "A\"非常可信\"——原文用\"sad to say\"表达遗憾态度，并以\"low-level\"否定项目成果，与可信无关；B\"有些矛盾\"——原文未提及结果之间相互矛盾，属于无中生有；C\"很有启发性\"——\"low-level findings\"和\"head-scratching puzzlement\"均为负面评价，与\"illuminating\"方向相反。",
+    "tip": "注意原文评价性形容词的语义转换，low-level与superficial构成同义替换。"
+   },
+   {
+    "number": 31,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The astonishing distrust of the news media isn't rooted in inaccuracy or poor reportorial skills but in the daily clash of world views between reporters and their readers.",
+    "why": "作者在第六段做出核心论断：对新闻媒体的不信任并非根源于不准确或业务能力差，而在于记者与读者之间的\"世界观冲突\"（clash of world views）。C选项\"world outlook\"（世界观）直接对应\"world views\"，是作者指出的记者的根本问题所在。",
+    "traps": "A\"工作态度\"——原文虽在末段提及employees whose attitudes annoy customers，但那是对现象的描述，非作者指出的根本问题；B\"传统生活方式\"——第五段描述记者的精英生活方式是为了论证文化鸿沟，而非根本问题本身；D\"教育背景\"——末段仅在建议中提及education作为多元化维度之一，非核心问题。",
+    "tip": "区分\"论据/现象\"与\"论点/根本问题\"，作者的核心判断句常用not...but...结构。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "But it never seems to get around to noticing the cultural and class biases that so many former buyers are complaining about.",
+    "why": "末段指出报业赞助研讨会和可信度项目研究客户流失原因，但\"从未注意到\"读者抱怨的文化和阶层偏见。\"never seems to get around to noticing\"说明报业根本没有认识到真正的问题，这与A选项\"未能认识到真正问题\"完全对应。",
+    "traps": "B\"倾向于雇佣令人恼火的记者\"——虽然原文提到雇用态度令客户恼火的员工，但这是问题的表现而非报业无法满足读者的根本原因；C\"可能做出不准确的报道\"——第六段明确排除了inaccuracy作为根源；D\"在种族和性别问题上有偏见\"——原文说多元化项目狭隘地集中在种族和性别上，并非说报业在这些问题上有偏见，属于曲解原文。",
+    "tip": "末段总结性批判中，要区分现象描述与根因判断，despite类题目常指向根本原因。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "credibility",
+    "cn": "n. 可信度，可靠性"
+   },
+   {
+    "w": "head-scratching",
+    "cn": "adj. 令人困惑的，百思不得其解的"
+   },
+   {
+    "w": "template",
+    "cn": "n. 模板，样板"
+   },
+   {
+    "w": "backbone",
+    "cn": "n. 骨干，支柱；脊梁"
+   },
+   {
+    "w": "narrative",
+    "cn": "adj. 叙事的；n. 叙述，叙事"
+   },
+   {
+    "w": "disconnect",
+    "cn": "n. 脱节，断裂"
+   },
+   {
+    "w": "metropolitan",
+    "cn": "adj. 大都市的；大城市的"
+   },
+   {
+    "w": "upscale",
+    "cn": "adj. 高档的，高端的"
+   },
+   {
+    "w": "elite",
+    "cn": "n. 精英，精英阶层"
+   },
+   {
+    "w": "symposium",
+    "cn": "n. 研讨会，座谈会（复数 symposiums/symposia）"
+   },
+   {
+    "w": "bias",
+    "cn": "n. 偏见，偏差"
+   },
+   {
+    "w": "explosive",
+    "cn": "adj. 爆炸性的，一触即发的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Most journalists learn to see the world through a set of standard templates (patterns) into which they plug each day's events.",
+    "cn": "大多数记者学会了通过一套标准模板（模式）来看世界，把每天的事件填入其中。",
+    "note": "主干为Most journalists learn to see the world through...templates；into which引导定语从句修饰templates，其中plug...into为固定搭配，意为\"将……填入\"。"
+   },
+   {
+    "en": "The astonishing distrust of the news media isn't rooted in inaccuracy or poor reportorial skills but in the daily clash of world views between reporters and their readers.",
+    "cn": "公众对新闻媒体令人震惊的不信任，并非根源于报道的不准确或记者业务能力的低下，而在于记者与读者之间每天发生的世界观冲突。",
+    "note": "核心为not...but...并列结构，两个in短语对比不信任的非根源（inaccuracy/poor skills）与真正根源（clash of world views），between短语修饰clash。"
+   },
+   {
+    "en": "Here is a troubled business that keeps hiring employees whose attitudes vastly annoy the customers.",
+    "cn": "这是一个问题重重的行业，它不断雇用态度令客户极为恼火的员工。",
+    "note": "主干为Here is a troubled business；that引导定语从句修饰business；whose引导第二层定语从句修饰employees，形成双重嵌套定语从句结构。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "e301e2b6677c__reading__1",
+ "examId": "e301e2b6677c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2014 年考研英语真题",
+ "year": 2014,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:29:13.699Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60453,
+ "usage": {
+  "prompt_tokens": 1806,
+  "completion_tokens": 3616,
+  "total_tokens": 5422,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1806,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3616,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1806,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "批评奥斯本削减失业救济的改革方案",
+  "gist": "文章围绕英国财政大臣乔治·奥斯本推出的\"前置求职\"方案展开批评。作者表面引述其改革理据——减少福利依赖、保护纳税人利益，实则揭示该方案对失业者的苛刻与不公，指出失业者本身已承受巨大经济与心理压力，而英国福利水平在欧盟中已属最低，改革实质是剥夺失业者通过缴纳国民保险所获得的正当权利。",
+  "structure": [
+   "第1段：引出奥斯本的前置求职方案及其要求",
+   "第2段：表面赞许后揭示方案实质动机——保护纳税人",
+   "第3段：描述失业者真实困境与心理痛苦",
+   "第4段：批判方案对失业者的错误假设与福利制度的倒退"
+  ],
+  "difficulty": "中等",
+  "translation": "为了\"改善人们的生活\"并减少\"福利依赖\"，英国财政大臣乔治·奥斯本推出了\"前置求职\"计划。只有当失业者带着简历前往就业中心、注册在线求职并开始找工作时，他们才有资格领取救济金——此后他们还须每周（而非每两周）报到一次。还有什么比这更合理的呢？\n\n随后出现了更多表面上的合理性。求职者津贴现在将有七天的等待期。\"最初几天应该用来找工作，而不是用来登记领取救济，\"他声称。\"我们这样做是因为我们知道这些举措能帮助人们远离福利依赖，也能帮助正在领取救济的人更快地找到工作。\"帮助？真的吗？乍一听，这是一位关心社会的财政大臣，试图改善人们的生活，配合着对一个显然过于宽容的制度进行\"改革\"——这个制度对新近失业者找工作的要求太少，还纵容了懒惰。我们应该理解的是，驱动他的是对\"根本公平\"的热忱——保护纳税人、控制支出，并确保只有最值得帮助的申请者才能获得救济。\n\n失去工作是一件痛苦的事：你不会心怀喜悦、哼着歌蹦蹦跳跳地跑到就业中心，为从慷慨的国家那里获得双倍收入的前景而高兴。这在经济上令人恐惧，在心理上令人难堪，而且你知道支持是微乎其微的，也极其难以获得。你现在不被需要了；你被排斥在为你的生活提供目标和结构的工作环境之外。更糟糕的是，用来养活自己和家人、支付账单的关键收入消失了。去问任何一个新近失业的人他们想要什么，答案永远是：一份工作。\n\n但在奥斯本的世界里，你的第一直觉是陷入依赖——如果可能的话就永久依赖——由一个只会过于轻易地纵容你弄虚作假的国家来供养。就好像二十年来对求职和福利管理制度越来越严格的改革从未发生过一样。英国福利制度的原则不再是你可以为自己投保以应对失业风险、并在灾难发生时获得无条件支付。甚至\"求职者津贴\"这个说法本身就是在将失业者重新定义为\"求职者\"，后者并不拥有通过缴纳国民保险获得救济金的基本权利。相反，申请者获得的是一种有时间限制的\"津贴\"，条件是积极求职；没有应得的权利，也没有保险保障，每周仅71.70英镑，是欧盟中最不慷慨的之一。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Only if the jobless arrive at the jobcentre with a CV, register for online job search, and start looking for work will they be eligible for benefit – and then they should report weekly rather than fortnightly.",
+    "why": "原文明确指出该方案要求失业者携带简历、注册在线求职并开始找工作才能领取救济金，还须每周报到。方案名称即\"upfront work search\"（前置求职），目的显然是促使求职者积极主动地投入求职。A选项\"鼓励求职者积极参与求职\"准确概括了这一目的。",
+    "traps": "B项\"让失业者更容易获得救济\"与原文相反，方案提高了领取门槛；C项\"保障求职者领取救济的合法权利\"偷换概念，方案旨在限制而非保障权利；D项\"激励失业者自愿报到\"仅涉及报到频率这一细节，以偏概全且曲解了\"report weekly\"的强制性质。",
+    "tip": "注意方案名称与具体要求的整体逻辑，抓住核心目的。"
+   },
+   {
+    "number": 22,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "Those first few days should be spent looking for work, not looking to sign on",
+    "why": "原文将\"looking for work\"与\"looking to sign on\"对比使用，前者指找工作，后者指另一种行为。结合语境，奥斯本认为失业者头几天应该去找工作而不是忙着去\"登记领取救济金\"。第一段也提到\"register for online job search\"和\"eligible for benefit\"的流程，\"sign on\"即指到就业中心登记以领取失业津贴，因此C选项正确。",
+    "traps": "A项\"查看就业中心是否有工作\"与前半句\"looking for work\"含义重叠，若两者意思相同则对比句失去意义；B项\"接受政府对津贴的限制\"在原文中无依据；D项\"参加政府的职业培训项目\"属无中生有。",
+    "tip": "对比结构中前后两项必然构成语义对立或不同，据此排除同义项。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "What motivated him, we were to understand, was his zeal for \"fundamental fairness\" – protecting the taxpayer, controlling spending and ensuring that only the most deserving claimants received their benefits.",
+    "why": "原文用破折号解释\"fundamental fairness\"的具体内涵：保护纳税人、控制支出、确保只有最值得帮助的人才能获得救济。D选项\"确保对纳税人的公平\"精确对应\"protecting the taxpayer\"和\"fundamental fairness\"。虽然作者对此持讽刺态度，但题目问的是\"what prompted the chancellor\"，即奥斯本自己声称的动机。",
+    "traps": "A项\"为所有人争取更好的生活\"过度泛化，且\"for all\"与原文强调的纳税人视角不符；B项\"保护失业者\"偷换对象，方案对失业者是限制而非保护；C项\"对申请者慷慨\"与原文方案削减福利的方向完全相反。",
+    "tip": "注意区分作者态度与被引述者的立场，题目问的是谁的观点。"
+   },
+   {
+    "number": 24,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "It is financially terrifying, psychologically embarrassing and you know that support is minimal and extraordinarily hard to get.",
+    "why": "第三段集中描述失业后的感受：经济上令人恐惧（financially terrifying）、心理上令人难堪（psychologically embarrassing）、被排斥在工作环境之外、关键收入消失。这些描述整体传达出一种焦虑不安的感受，A选项\"uneasy\"（不安的）是对上述多种负面感受的准确概括，语义涵盖范围最广。",
+    "traps": "B项\"insulted\"（受侮辱的）语义过重且偏离原文，embarrassing指的是难堪而非受辱；C项\"enraged\"（愤怒的）在第三段中完全没有依据，原文强调的是恐惧和无助而非愤怒；D项\"guilty\"（有罪感的）在原文中无任何体现。",
+    "tip": "概括类推断题应选语义涵盖面最广且最温和的选项，避免过度解读。"
+   },
+   {
+    "number": 25,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The principle of British welfare is no longer that you can insure yourself against the risk of unemployment and receive unconditional payments if the disaster happens.",
+    "why": "第四段是作者立场的集中表达。作者惋惜英国福利制度不再允许失业者获得\"无条件支付\"（unconditional payments），批评将救济变为有条件的\"津贴\"（conditional on actively seeking a job），并指出每周71.70英镑在欧盟中属最不慷慨之列。作者显然认为失业救济不应附加条件，A选项与此一致。",
+    "traps": "B项\"英国福利制度纵容求职者的懒惰\"是奥斯本的观点而非作者的立场，作者对此持反讽态度；C项\"求职者津贴满足了实际需求\"与原文\"one of the least generous in the EU\"直接矛盾；D项\"奥斯本的改革将降低失业风险\"属无中生有，作者通篇在批评该改革。",
+    "tip": "作者态度题需综合全文语气判断，注意区分反讽中引述的他人观点与作者本人立场。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "Chancellor of the Exchequer",
+    "cn": "n. 财政大臣（英国）"
+   },
+   {
+    "w": "eligible",
+    "cn": "adj. 有资格的，符合条件的"
+   },
+   {
+    "w": "fortnightly",
+    "cn": "adv./adj. 每两周（的）"
+   },
+   {
+    "w": "indulgent",
+    "cn": "adj. 纵容的，放纵的"
+   },
+   {
+    "w": "subsidise",
+    "cn": "v. 资助，补贴；纵容"
+   },
+   {
+    "w": "zeal",
+    "cn": "n. 热忱，热情"
+   },
+   {
+    "w": "claimant",
+    "cn": "n. 申请人，索赔人"
+   },
+   {
+    "w": "dependency",
+    "cn": "n. 依赖，依赖状态"
+   },
+   {
+    "w": "entitlement",
+    "cn": "n. 应得的权利，津贴"
+   },
+   {
+    "w": "unconditional",
+    "cn": "adj. 无条件的"
+   },
+   {
+    "w": "falsehood",
+    "cn": "n. 虚假，谎言"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Only if the jobless arrive at the jobcentre with a CV, register for online job search, and start looking for work will they be eligible for benefit – and then they should report weekly rather than fortnightly.",
+    "cn": "只有当失业者带着简历前往就业中心、注册在线求职并开始找工作时，他们才有资格领取救济金——此后他们还须每周（而非每两周）报到一次。",
+    "note": "Only if 引导条件状语从句置于句首，主句倒装（will they be eligible）；破折号后补充附加要求，构成递进关系。"
+   },
+   {
+    "en": "What motivated him, we were to understand, was his zeal for \"fundamental fairness\" – protecting the taxpayer, controlling spending and ensuring that only the most deserving claimants received their benefits.",
+    "cn": "我们应该理解的是，驱动他的是对\"根本公平\"的热忱——保护纳税人、控制支出，并确保只有最值得帮助的申请者才能获得救济。",
+    "note": "What引导主语从句，we were to understand 为插入语表反讽语气，破折号后三个并列动名词短语解释fairness的内涵。"
+   },
+   {
+    "en": "Even the very phrase \"jobseeker's allowance\" is about redefining the unemployed as a \"jobseeker\" who had no fundamental right to a benefit he or she has earned through making national insurance contributions.",
+    "cn": "甚至\"求职者津贴\"这个说法本身就是在将失业者重新定义为\"求职者\"，后者并不拥有通过缴纳国民保险获得救济金的基本权利。",
+    "note": "主干为 the phrase is about redefining...；who引导定语从句修饰jobseeker，其中嵌套he or she has earned引导的定语从句修饰benefit。"
+   }
+  ]
+ }
+}

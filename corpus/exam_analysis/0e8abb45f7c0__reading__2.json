@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "0e8abb45f7c0__reading__2",
+ "examId": "0e8abb45f7c0",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 12 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:41:02.897Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62641,
+ "usage": {
+  "prompt_tokens": 1789,
+  "completion_tokens": 4434,
+  "total_tokens": 6223,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1789,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4434,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1789,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人类活动对全球自然环境的破坏与应对",
+  "gist": "联合国环境研究发现，人类对自然资源的破坏速度远超地球自我修复能力。水资源匮乏、温室气体排放、土地退化等问题日益严重，发展中国家面临喂养人口与保护环境的两难困境。国际机构呼吁发展中国家走可持续发展道路，在减贫的同时保护环境。",
+  "structure": [
+   "第1段：引出联合国研究核心结论——人类破坏超出地球承受力",
+   "第2-3段：水资源匮乏与环境恶化的现状及警告",
+   "第4-5段：应对措施匮乏，关键环境问题未得到治理",
+   "第6段：温室气体排放持续上升，农业化肥加剧气候变化",
+   "第7段：发展中国家应走可持续发展之路"
+  ],
+  "difficulty": "中等",
+  "translation": "一项最新的联合国环境研究发现，人类对全球自然资源的破坏速度正在迅速超出地球吸收损害的能力。研究得出结论，如果不采取激进行动，发达国家数百万人所依赖的繁荣水平将无法维持，更无法向较贫穷国家推广。\n\n水资源匮乏是地球上一些最贫困地区的祸害，导致发展中国家越来越无法自给自足，给数百万人带来苦难。如果不采取激进行动，这一绝望局面似乎几乎没有得到改善的希望。水资源正面临来自人口增长、气候变化、快速城市化、消费水平上升以及先前为水资源提供天然补给的土地退化等方面日益增加的威胁。\n\n尽管各方协同努力说服政府采取措施改善环境状况，但研究发现全球范围内对自然环境的破坏速度仍在加快。联合国执行主任阿希姆·施泰纳警告说：\"如果当前趋势持续下去，世界未能改善生产和消费模式，那么全球环境状况将继续恶化。\"\n\n他说，改善数百万人环境的工具在发达国家已经存在，但面临着无法被使用的危险。\n\n研究发现，解决一些造成环境破坏的关键因素的基本措施仍未得到采取。这些措施包括：减少空气污染；控制对海洋生态系统的破坏——海洋生态系统对数亿人赖以生存的鱼类资源有巨大影响；以及遏制那些不顾长期后果而推行现代农业方法所导致的土地退化。\n\n尽管全球最近就削减温室气体排放达成了协议，但全球碳排放量仍在持续上升。这将长期制约发展中经济体养活本国人民的能力。农业中使用的化学肥料和天然肥料排放的温室气体加剧了气候变化，这些排放量在2000年至2010年间增长了超过四分之一。报告中指出的其他问题领域还包括冰川——冰川为数百万人提供重要的水资源，但随着气候变暖正在萎缩。\n\n在富裕国家，这些问题在以牺牲环境为代价追求经济增长的过程中已经积累了数十年甚至数百年。后续修复环境的努力取得了部分成功。但在发展中国家，未来发展道路有更大的改变潜力，这鼓励了国际机构设计更具可持续性的增长路径，这些路径旨在既减轻贫困又保护环境。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Degradation of the world's natural resources by humans is rapidly outpacing the planet's ability to absorb the damage, a recent UN environmental study has found.",
+    "why": "原文首句即为研究的核心发现：人类对自然资源的degradation（破坏）正在rapidly outpacing（迅速超过）地球absorb the damage（吸收损害）的能力。B选项\"doing more damage than it can cope with\"是对\"outpacing the planet's ability to absorb the damage\"的同义改写，cope with对应absorb，逻辑完全一致。",
+    "traps": "A项\"rendered Mother Earth almost uninhabitable\"（几乎不宜居住）过度推断，原文只说破坏速度超出修复能力，未说不宜居住；C项\"weakened human prosperity\"因果倒置，原文说的是繁荣将无法维持，而非已经削弱；D项\"more serious in developed countries\"无中生有，原文未比较发达与发展中国家的环境破坏程度。",
+    "tip": "首段首句常为文章核心论点，注意同义改写的识别。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "There appears little prospect of this desperate situation being remedied without radical action being taken.",
+    "why": "原文用双重否定结构表达：如果不采取radical action（激进措施），这一绝望局面几乎没有被remedied（改善）的prospect（前景）。C选项\"can hardly be relieved if no drastic measures are taken\"精确对应，drastic对应radical，relieved对应remedied，hardly对应little prospect，为标准同义替换。",
+    "traps": "A项\"little hope of solution\"曲解原文，原文强调的是\"没有激进行动就没有希望\"这一条件关系，而A项去掉了条件直接说没有希望，过于绝对；B项\"slow economic development\"文中未提及水资源匮乏与经济发展速度的直接因果关系；D项\"primarily caused by climate change\"以偏概全，气候变化只是多个原因之一。",
+    "tip": "注意条件句中的逻辑关系，不要忽略\"without\"等条件限定词。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "If current trends continue, and the world fails to improve patterns of production and consumption, then the state of the world's environment will continue to decline",
+    "why": "施泰纳的原话指出：如果当前趋势继续、世界未能改善生产和消费模式，那么全球环境状况将continue to decline（持续恶化）。A选项\"It will deteriorate worldwide\"中deteriorate对应decline，worldwide对应the world's environment，准确概括了其警告内容。虽然原文带有条件从句，但题目问的是\"Achim Steiner say about the environmental condition\"，他发出警告本身就表达了环境将恶化的判断。",
+    "traps": "B项\"attracting global attention\"原文未涉及全球关注度问题；C项\"being slowly remedied globally\"与原文信息完全相反，原文说的是continue to decline而非被改善；D项\"shrink the world's population\"属无中生有，原文从未提及人口缩减。",
+    "tip": "引用人物观点时，关注其核心判断而非条件前提。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "This will put a long-term strain on the ability of developing economies to feed their own people. Climate change is aggravated by the emissions of greenhouse gases from chemical and natural fertilisers used in agriculture which increased by more than a quarter between 2000 and 2010.",
+    "why": "原文第六段逻辑链为：农业中使用化学和天然肥料→排放温室气体加剧气候变化→气候变化长期制约发展中国家养活本国人民的能力。发展中国家要养活人民就需要使用肥料提高产量，但肥料会排放温室气体，形成两难困境。C选项\"cannot boost crop yields without causing greenhouse gas emissions\"准确概括了这一矛盾。",
+    "traps": "A项\"modernise farming without causing land degradation\"虽在第五段提及土地退化，但未构成发展中国家特有的两难困境；B项\"pollute waterways\"原文未提及水路污染与工业化的关系；D项\"sacrificing the environment\"过于笼统，且原文最后一段指出发展中国家有潜力走不同道路，并非必须牺牲环境。",
+    "tip": "推断题需梳理段落内因果逻辑链，找出构成矛盾的两个方面。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But in developing countries, the path of future development has more potential to change, which has encouraged international institutions to devise more sustainable growth pathways that are supposed both to alleviate poverty and preserve the environment.",
+    "why": "原文末段指出发展中国家未来发展道路有更大改变潜力，国际机构因此设计了可持续增长路径，旨在both alleviate poverty（减轻贫困）and preserve the environment（保护环境）。D选项\"improve people's livelihood without harming the environment\"是对这一双重目标的概括，livelihood对应alleviate poverty，without harming the environment对应preserve the environment。",
+    "traps": "A项\"turn to developed countries for assistance\"虽然第四段提到工具存在于发达国家，但文章并未建议发展中国家向发达国家求助；B项\"slowing economic growth\"与原文矛盾，原文倡导的是可持续增长而非放慢增长；C项\"avoid damaging interference from international institutions\"完全与原文相反，原文肯定国际机构的作用。",
+    "tip": "末段常总结作者观点或建议，注意both...and...等并列结构的信息整合。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "degradation",
+    "cn": "n. 退化；恶化；破坏"
+   },
+   {
+    "w": "outpace",
+    "cn": "v. 超过；超越"
+   },
+   {
+    "w": "scarcity",
+    "cn": "n. 稀缺；匮乏"
+   },
+   {
+    "w": "replenishment",
+    "cn": "n. 补充；补给"
+   },
+   {
+    "w": "concerted",
+    "cn": "adj. 协调一致的；共同的"
+   },
+   {
+    "w": "curb",
+    "cn": "v. 抑制；遏制"
+   },
+   {
+    "w": "marine",
+    "cn": "adj. 海洋的；海产的"
+   },
+   {
+    "w": "aggravate",
+    "cn": "v. 加剧；使恶化"
+   },
+   {
+    "w": "alleviate",
+    "cn": "v. 缓解；减轻"
+   },
+   {
+    "w": "sustainable",
+    "cn": "adj. 可持续的"
+   },
+   {
+    "w": "remedy",
+    "cn": "v. 补救；纠正；n. 补救措施"
+   },
+   {
+    "w": "prospect",
+    "cn": "n. 前景；可能性"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The study concludes that without radical action the level of prosperity that millions of people in the developed world count on will be impossible to maintain or extend to poorer countries.",
+    "cn": "研究得出结论：如果不采取激进行动，发达国家数百万人所依赖的繁荣水平将无法维持，更无法向较贫穷的国家推广。",
+    "note": "主干为The study concludes that...；that引导宾语从句；从句中without radical action为条件状语；the level of prosperity为主语，后接that引导的定语从句修饰；will be impossible to maintain or extend为谓语。"
+   },
+   {
+    "en": "Climate change is aggravated by the emissions of greenhouse gases from chemical and natural fertilisers used in agriculture which increased by more than a quarter between 2000 and 2010.",
+    "cn": "农业中使用的化学肥料和天然肥料排放的温室气体加剧了气候变化，这些排放量在2000年至2010年间增长了超过四分之一。",
+    "note": "主干为Climate change is aggravated by the emissions；from引导来源状语；used in agriculture为过去分词短语修饰fertilisers；which引导非限制性定语从句修饰emissions。"
+   },
+   {
+    "en": "But in developing countries, the path of future development has more potential to change, which has encouraged international institutions to devise more sustainable growth pathways that are supposed both to alleviate poverty and preserve the environment.",
+    "cn": "但在发展中国家，未来发展道路有更大的改变潜力，这鼓励了国际机构设计更具可持续性的增长路径，旨在既减轻贫困又保护环境。",
+    "note": "主干为the path has more potential to change；which引导非限制性定语从句，先行词为整个主句；that引导定语从句修饰pathways；both to...and...并列结构表双重目标。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,207 @@
+{
+ "schemaVersion": 1,
+ "id": "d14281039236__translation__all",
+ "examId": "d14281039236",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2019 年 12 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:27:17.092Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34823,
+ "usage": {
+  "prompt_tokens": 830,
+  "completion_tokens": 2301,
+  "total_tokens": 3131,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 830,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2301,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 830,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "荷花的特征、功能与文化象征",
+  "reference": "The lotus flower, one of the most renowned flowers in China, is deeply loved by the Chinese people. Lakes and ponds in many parts of China are suitable for the growth of lotus flowers. With bright and vivid colors, the lotus blooms in the early morning in summer and closes at night. Its blooming period can last as long as two to three months, attracting tourists from all over the country to enjoy its beauty. The lotus flower serves multiple functions: it can green the water surface, beautify courtyards and gardens, and also purify water quality, reduce pollution, and improve the environment. Braving the scorching sun without fear and rising from the mud unstained, the lotus symbolizes purity and elegance. It is often used as a metaphor for a person's noble character and has always been an important subject for poets and painters in their creative works. Places where lotus flowers are in full bloom are also frequently visited by many photography enthusiasts.",
+  "sentences": [
+   {
+    "cn": "荷花(lotus flower)是中国的名花之一，深受人们喜爱。",
+    "en": "The lotus flower, one of the most renowned flowers in China, is deeply loved by the Chinese people.",
+    "structure": "主系表结构 + 同位语短语（one of...）补充说明主语，被动语态表达\"深受喜爱\"",
+    "keys": [
+     "名花之一 one of the most renowned flowers",
+     "深受喜爱 is deeply loved by"
+    ]
+   },
+   {
+    "cn": "中国许多地方的湖泊和池塘都适宜荷花生长。",
+    "en": "Lakes and ponds in many parts of China are suitable for the growth of lotus flowers.",
+    "structure": "主系表结构，介词短语 in many parts of China 作后置定语修饰主语",
+    "keys": [
+     "湖泊和池塘 lakes and ponds",
+     "适宜……生长 are suitable for the growth of"
+    ]
+   },
+   {
+    "cn": "荷花色彩鲜艳，夏日清晨绽放，夜晚闭合。",
+    "en": "With bright and vivid colors, the lotus blooms in the early morning in summer and closes at night.",
+    "structure": "with 介词短语作伴随状语前置，主句为并列谓语结构（blooms...and closes...）",
+    "keys": [
+     "色彩鲜艳 bright and vivid colors",
+     "绽放 bloom",
+     "闭合 close"
+    ]
+   },
+   {
+    "cn": "花期长达两三个月，吸引来自各地的游客前往观赏。",
+    "en": "Its blooming period can last as long as two to three months, attracting tourists from all over the country to enjoy its beauty.",
+    "structure": "主谓结构 + 现在分词短语（attracting...）作结果状语",
+    "keys": [
+     "花期 blooming period",
+     "长达 last as long as",
+     "吸引……前往观赏 attracting...to enjoy"
+    ]
+   },
+   {
+    "cn": "荷花具有多种功能，既能绿化水面，又能美化庭园，还可净化水质、减少污染、改善环境。",
+    "en": "The lotus flower serves multiple functions: it can green the water surface, beautify courtyards and gardens, and also purify water quality, reduce pollution, and improve the environment.",
+    "structure": "总分结构，冒号后用并列谓语展开说明多种功能，体现\"既……又……还……\"的递进关系",
+    "keys": [
+     "多种功能 multiple functions",
+     "绿化水面 green the water surface",
+     "美化庭园 beautify courtyards and gardens",
+     "净化水质 purify water quality",
+     "减少污染 reduce pollution",
+     "改善环境 improve the environment"
+    ]
+   },
+   {
+    "cn": "荷花迎骄阳而不惧，出污泥而不染，象征纯洁、高雅，常常用来比喻人的高尚品德，历来是诗人画家创作的重要题材。",
+    "en": "Braving the scorching sun without fear and rising from the mud unstained, the lotus symbolizes purity and elegance. It is often used as a metaphor for a person's noble character and has always been an important subject for poets and painters in their creative works.",
+    "structure": "现在分词短语（Braving...and rising...）作方式状语前置，主句含并列谓语（symbolizes / is used / has been），长句拆分为两句以增强可读性",
+    "keys": [
+     "迎骄阳而不惧 braving the scorching sun without fear",
+     "出污泥而不染 rising from the mud unstained",
+     "象征纯洁、高雅 symbolize purity and elegance",
+     "比喻人的高尚品德 a metaphor for a person's noble character",
+     "诗人画家创作的重要题材 an important subject for poets and painters"
+    ]
+   },
+   {
+    "cn": "荷花盛开的地方也是许多摄影爱好者经常光顾之地。",
+    "en": "Places where lotus flowers are in full bloom are also frequently visited by many photography enthusiasts.",
+    "structure": "where 引导定语从句修饰 places，主句用被动语态表达\"光顾\"",
+    "keys": [
+     "盛开 be in full bloom",
+     "摄影爱好者 photography enthusiasts",
+     "光顾 frequently visit"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "荷花",
+    "en": "lotus flower"
+   },
+   {
+    "cn": "湖泊和池塘",
+    "en": "lakes and ponds"
+   },
+   {
+    "cn": "花期",
+    "en": "blooming period"
+   },
+   {
+    "cn": "绿化水面",
+    "en": "green the water surface"
+   },
+   {
+    "cn": "净化水质",
+    "en": "purify water quality"
+   },
+   {
+    "cn": "出污泥而不染",
+    "en": "rising from the mud unstained"
+   },
+   {
+    "cn": "高尚品德",
+    "en": "noble character"
+   },
+   {
+    "cn": "摄影爱好者",
+    "en": "photography enthusiasts"
+   },
+   {
+    "cn": "骄阳",
+    "en": "scorching sun"
+   }
+  ],
+  "pitfalls": [
+   "'出污泥而不染'是文化意象，需译出'泥'和'不沾染'的双重含义，不可直译为 not dirty",
+   "'花期'误译为 flower period，应使用 blooming period 或 flowering period",
+   "'绿化水面'中 green 作动词使用，许多考生不知 green 可作动词",
+   "'既……又……还……'递进关系需用并列结构或分号体现层次，不可逐个写成独立句",
+   "'历来'表示'从古至今一直'，应译为 has always been，注意用现在完成时体现延续性"
+  ],
+  "upgrades": [
+   {
+    "plain": "The lotus flower has many colors.",
+    "better": "With bright and vivid colors, the lotus blooms...",
+    "note": "用 with 短语前置作状语，句式更紧凑、信息层次更丰富"
+   },
+   {
+    "plain": "It is not afraid of the hot sun and is not made dirty by mud.",
+    "better": "Braving the scorching sun without fear and rising from the mud unstained.",
+    "note": "分词短语前置更具文学性，unstained 一词精准传递文化内涵"
+   },
+   {
+    "plain": "which makes tourists come and watch",
+    "better": "attracting tourists from all over the country to enjoy its beauty",
+    "note": "现在分词作结果状语更简洁地道，enjoy its beauty 比 watch 更优雅"
+   },
+   {
+    "plain": "Poets and painters always write and paint about the lotus.",
+    "better": "has always been an important subject for poets and painters in their creative works",
+    "note": "以荷花为主语保持主题一致性，creative works 涵盖诗画两种形式"
+   },
+   {
+    "plain": "Many photographers often go to places where lotus flowers bloom.",
+    "better": "Places where lotus flowers are in full bloom are also frequently visited by photography enthusiasts.",
+    "note": "被动语态突出地点主语，in full bloom 比 bloom 更生动饱满"
+   }
+  ]
+ }
+}

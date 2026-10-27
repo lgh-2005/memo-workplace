@@ -1,0 +1,163 @@
+{
+ "schemaVersion": 1,
+ "id": "5e76e93d8176__reading__1",
+ "examId": "5e76e93d8176",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 12 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T04:36:03.511Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 83019,
+ "usage": {
+  "prompt_tokens": 1597,
+  "completion_tokens": 8213,
+  "total_tokens": 9810,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5635
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1597
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "种族称呼影响社会认知",
+  "gist": "文章从历史种族称谓演变谈起，指出群体命名充满政治敏感性。一项研究发现，“Black”与“African American”两种称呼会因人们感知的社会经济地位差异而引发不同评价，这种偏见渗透职场。实验证明同一人被贴不同标签会导致对其收入、地位、教育的估计显著不同。作者认为也许需要新词，但最终应关注实质而非名称，呼应杜波依斯理想。",
+  "structure": [
+   "第1段：梳理百年来种族称谓演变，引出命名政治性话题",
+   "第2-3段：指出命名政治敏感，介绍Erika Hall研究揭示偏见根源",
+   "第4-5段：说明职场中的偏见体现，并通过实验验证标签效应",
+   "第6段：总结研究启示，引用杜波依斯理想强调本质重于名称"
+  ],
+  "difficulty": "中等",
+  "translation": "一百年前，“有色人种”是称呼非洲裔美国人的典型方式。二十年后，它被有意弃用，让位于“黑人”（Negro）。到20世纪60年代末，这一称谓又被“Black”取代。随后，1988年在芝加哥的一次新闻发布会上，杰西·杰克逊宣称“非裔美国人”是应该接纳的称谓。这个词被选中，是因为它呼应了诸如“意大利裔美国人”和“爱尔兰裔美国人”等群体标签，这些群体已经摆脱了广泛的歧视。\n\n一个世纪以来有计划的更名表明，给任何群体命名都是一种充满政治意味的行为。2001年的一项研究列举了“Black”一词比“非裔美国人”具有更多负面涵义的所有方面。\n\n但是，即使人们知道“Black”人与“非裔美国人”受到不同的看待，研究人员直到现在也还未确定这种认知差距源自何处。埃默里大学的埃里卡·霍尔最近进行的一项研究发现，之所以“Black”人比“非裔美国人”受到更负面的看待，是因为人们感知到的社会经济地位差异。因此，“Black”人被认为能力较差，性格也更冷漠。\n\n该研究最引人注目的发现揭示了渗透于职业世界中的种族偏见。即使是简历上看似无害的细节，也能触发招聘者的偏见。一份求职申请可能会提到与诸如“威斯康星州非裔美国律师协会”或“全国黑人员工协会”等团体的从属关系，这些名称显然会带来后果，而且这些后果也是其成员无法控制的。\n\n在该研究的一项实验中，受试者得到了一份对一位来自芝加哥、姓氏为威廉姆斯的男士的简短描述。一组被告知他是“非裔美国人”，另一组则被告知他是“Black”。在几乎无其他信息的情况下，他们被要求估计威廉姆斯先生的薪水、职业地位和教育背景。\n\n“非裔美国人”组估计他每年收入约3.7万美元，拥有两年制大学学位。而“Black”组则认为他的薪水约为2.9万美元，并猜测他只接受过“一些”大学教育。第一组近四分之三的人猜测威廉姆斯先生担任管理职务，而第二组中只有38.5%的人这么认为。\n\n霍尔的发现表明，有理由选择使用“非裔美国人”，尽管人们不禁会觉得，这一决定掩盖了持续进步的紧迫性。也许需要一个新的短语，一个能让所有人向实现杜波依斯最初理想主义希望迈进一大步的短语：“重要的不是名称，而是本质。”",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "This one was chosen because it echoed the labels of groups, such as \"Italian Americans\" and \"Irish Americans,\" that had already been freed of widespread discrimination.",
+    "why": "原文明确说明选择“African American”是因为它呼应了诸如“Italian Americans”和“Irish Americans”等群体的标签，而这些群体已经摆脱了广泛的歧视。也就是说，这个称谓本身被认为不带种族偏见色彩。选项A“It is free from racial biases”（它不含种族偏见）与原文“freed of widespread discrimination”构成同义替换，因此正确。",
+    "traps": "B项：原文未提及该称谓代表社会进步，属于无中生有；C项：原文未讨论“普通美国人利益”，属于偷换概念；D项：原文只提到该称谓呼应其他群体标签，并未说这是标准命名做法，属于过度推断。",
+    "tip": "定位首次出现的因果句，注意同义替换：“freed of widespread discrimination”对应“free from racial biases”。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "A century's worth of calculated name changes points to the fact that naming any group is a politically freighted exercise.",
+    "why": "作者在第二段首句直接指出，百年来有计划的更名表明给任何群体命名都是一项“politically freighted exercise”，即充满政治意味的行为，与选项D“politically sensitive”（政治敏感的）意思一致。",
+    "traps": "A项：原文只说是“有计划的更名”，并未说命名随时代进步，属于曲解文意；B项：原文未提及命名基于种族根源，属于无中生有；C项：原文强调的是政治敏感而非研究价值，属于偷换概念。",
+    "tip": "关注段落主旨句，准确理解“politically freighted”这一短语的语境含义。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The study's most striking findings shed light on the racial biases permeating the professional world. Even seemingly harmless details on a resume, it appears, can tap into recruiters' biases.",
+    "why": "研究发现揭示了种族偏见在职业世界中普遍存在，简历上看似无害的细节也能触发招聘者的偏见，说明偏见广泛渗透职场。选项A“Racial biases are widespread in the professional world”（职业世界中种族偏见普遍存在）是对原文的概括。",
+    "traps": "B项：原文未提及申请者是否注意简历细节，属于无中生有；C项：原文提到简历上的affiliations可能触发偏见，但并未给出“所有求职者都应小心”的建议，属于过度推断；D项：原文只说细节能触发招聘者偏见，并未说招聘者无法控制偏见，属于夸大事实。",
+    "tip": "研究结论题优先定位研究发现句，注意同义替换：permeating = widespread。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "The \"African-American\" group estimated that he earned about $37,000 a year and had a two-year college degree. The \"Black\" group, on the other hand, put his salary at about $29,000, and guessed that he had only \"some\" college experience.",
+    "why": "实验中，同一名Williams先生仅因被标记为“African-American”或“Black”，两组受试者对他的收入、教育背景、职业地位的估计就出现显著差异，说明人们对一个人的看法很大程度上取决于其被贴的标签，因此选项C正确。",
+    "traps": "A项：实验未将非裔美国人和其他族裔比较，属于无中生有；B项：实验显示的是人们对标签的偏见认知，而非黑人客观社会经济地位，属于偷换概念；D项：教育背景与职业收入相关虽是常识，但不是本实验的发现，属于无关干扰。",
+    "tip": "实验题需关注实验变量（标签）与结果（评价差异）之间的因果关系。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "Perhaps a new phrase is needed, one that can bring everyone one big step closer to realizing Du Bois's original, idealistic hope: \"It's not the name—it's the Thing that counts.\"",
+    "why": "杜波依斯的理想是“It's not the name—it's the Thing that counts”，强调名称不重要，重要的是实质内容，即人的价值本身。选项B“A person is judged by their worth”（一个人由他的价值来判断）正好概括了这句话的内涵。",
+    "traps": "A项：原文未提及所有美国人享有平等权利，属于偷换概念；C项：原文说也许需要新词，但这不是杜波依斯的理想，属于张冠李戴；D项：原文未提及所有族裔共享进步，属于无中生有。",
+    "tip": "引号内的名言往往揭示观点，理解其比喻义：“the Thing that counts”即人的内在价值。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "descent",
+    "cn": "n. 血统，出身"
+   },
+   {
+    "w": "embrace",
+    "cn": "v. 欣然接受，采纳"
+   },
+   {
+    "w": "freighted",
+    "cn": "adj. 充满（某种意味）的；承载的"
+   },
+   {
+    "w": "connotation",
+    "cn": "n. 隐含意义，涵义"
+   },
+   {
+    "w": "derive from",
+    "cn": "v. 源于，来自"
+   },
+   {
+    "w": "socioeconomic",
+    "cn": "adj. 社会经济的"
+   },
+   {
+    "w": "competent",
+    "cn": "adj. 有能力的，胜任的"
+   },
+   {
+    "w": "permeate",
+    "cn": "v. 渗透，弥漫"
+   },
+   {
+    "w": "affiliation",
+    "cn": "n. 联系，从属关系"
+   },
+   {
+    "w": "managerial",
+    "cn": "adj. 管理层的，经理的"
+   },
+   {
+    "w": "idealistic",
+    "cn": "adj. 理想主义的"
+   },
+   {
+    "w": "calculated",
+    "cn": "adj. 有计划的，故意的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "A century's worth of calculated name changes points to the fact that naming any group is a politically freighted exercise.",
+    "cn": "一个世纪以来有计划的更名表明，给任何群体命名都是一种充满政治意味的行为。",
+    "note": "主句为“A century's worth... points to the fact”，后接that引导的同位语从句说明fact内容；“politically freighted”为形容词短语作定语修饰exercise。"
+   },
+   {
+    "en": "A job application might mention affiliations with groups such as the \"Wisconsin Association of African-American Lawyers\" or the \"National Black Employees Association,\" the names of which apparently have consequences, and are also beyond their members' control.",
+    "cn": "一份求职申请可能会提到与诸如“威斯康星州非裔美国律师协会”或“全国黑人员工协会”等团体的从属关系，这些名称显然会带来后果，而且这些后果也是其成员无法控制的。",
+    "note": "主句为“A job application might mention affiliations...”，后接“with groups such as...”举例说明，“the names of which”引导非限制性定语从句修饰groups，从句中“and are also beyond...”与“have consequences”并列。"
+   },
+   {
+    "en": "Perhaps a new phrase is needed, one that can bring everyone one big step closer to realizing Du Bois's original, idealistic hope: \"It's not the name—it's the Thing that counts.\"",
+    "cn": "也许需要一个新的短语，一个能让所有人向实现杜波依斯最初理想主义希望迈进一大步的短语：“重要的不是名称，而是本质。”",
+    "note": "主句为“Perhaps a new phrase is needed”，后接“one”作同位语，再跟that引导定语从句修饰one；冒号后引语是hope的同位语，其中“It's not... it's...”构成对比强调。"
+   }
+  ]
+ }
+}

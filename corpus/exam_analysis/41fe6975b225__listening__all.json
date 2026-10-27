@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "41fe6975b225__listening__all",
+ "examId": "41fe6975b225",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2018 年 12 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:18:06.950Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56758,
+ "usage": {
+  "prompt_tokens": 2203,
+  "completion_tokens": 2996,
+  "total_tokens": 5199,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2203,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2996,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2203,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下解析仅基于题目选项文本的语言特征与正确答案进行推理分析，不涉及任何录音内容的编造。",
+  "overview": "本场听力共7段，涵盖对话与短文。第1段（Q1-4）围绕一本物理学科普书籍展开；第2段（Q5-8）涉及学术论文写作指导；第3段（Q9-11）关注北极/格陵兰气候异常；第4段（Q12-15）讨论意志力与精力管理的心理学话题；第5段（Q16-18）涉及自动化与机器学习对就业的影响；第6段（Q19-21）关于太阳能等可持续能源技术；第7段（Q22-25）探讨国家医疗与社会护理服务体系问题。",
+  "strategy": [
+   "预读选项时快速标注关键名词和动词，判断每题可能的提问方向（人物/原因/细节/主旨）",
+   "注意选项中出现的绝对化词语（如all, never, only），此类选项常为干扰项",
+   "对话类题目重点关注第二位说话者的建议或结论性语句，通常是出题点",
+   "当四个选项结构高度平行时，区分重点往往在修饰语或宾语上，听音时锁定差异词",
+   "短文类题目首句和尾句常包含主旨信息，中间部分的转折词(but, however)后常出考点",
+   "遇到数字、年份、比较级出现在选项中时，注意听音中的具体数据对应关系"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "一本物理学科普书籍的内容、特色与受众",
+    "optionSignals": "Q1四个选项均以It开头描述书籍特征，属于\"总评/推荐理由\"题；Q2选项含physicists' contribution、female physicists、modern physics等名词短语，在问书中某部分内容；Q3选项以By+动名词构成，在问方式/手段；Q4选项也以It开头描述书对特定读者的作用。",
+    "tips": [
+     "Q1正确答案A强调'professionals and non-professionals alike'，体现受众广泛性，听音时注意'both...and'类并列表达",
+     "Q3四个By选项提问方式方法，排除与书籍本身内容不直接相关的选项，如B'自身经历'需要有强信号支撑",
+     "Q4答案D'experiments they can do themselves'具有很强的具体性，选项越具体越可能通过原文细节直接验证"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "学生论文写作中遇到的选题与推进困难",
+    "optionSignals": "Q5四个选项描述男性遇到的不同困难，属于'问题识别'题；Q6选项为简短形容词短语（too broad, outdated, challenging, interesting），在评价某事物；Q7为单个名词（Biography, Nature, Philosophy, Beauty），在问主题方向；Q8以动词原形开头，在问建议/行动。",
+    "tips": [
+     "Q6答案A'too broad'是学术写作中极常见的导师反馈，与dissertation选题直接相关，听音时注意narrow down类表达",
+     "Q8答案C'Stick to the topic assigned'体现导师建议，注意听祈使句或should/need to等情态动词",
+     "Q7四个抽象名词差异大，听音时只需捕捉一个关键词即可锁定答案"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "北极与格陵兰地区异常高温及其影响",
+    "optionSignals": "Q9四个选项均描述不同气候异常现象（高温、冰层崩塌、寒潮、温度剧变），属于'新闻主事件'题；Q10用It指代某现象并描述其特征，含频率表达'once every ten years'；Q11为名词短语列举后果或预测。",
+    "tips": [
+     "Q9答案A'unprecedented high temperature'中unprecedented为六级高频词，表示前所未有，听音注意record-breaking、highest ever等同义替换",
+     "Q10答案C涉及频率/周期，听音时注意every、cycle、frequency等词",
+     "Q11答案B'Iceless summers in the Arctic'是具体预测，注意听ice-free、no ice等表达"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "意志力、自我控制与精力管理的心理学研究",
+    "optionSignals": "Q12四个选项为名词短语（good start, detailed plan, strong determination, scientific approach），在问成功所需的关键因素；Q13为长句，涉及energy、willpower、breaks等概念，在问研究结论；Q14以They could开头描述实验结果；Q15也以They开头描述某种特质的性质。",
+    "tips": [
+     "Q13答案D强调'confidence in one's willpower'，选项中most important为最高级表达，听音时关注强调句或核心论点句",
+     "Q14答案A'keep on working longer'与意志力持久性直接相关，注意听实验组对比结果",
+     "Q15答案B'subject to change'意为'可以改变的'，与A'part of nature（天生的）'形成对立，这类对立选项中常有一个为正确答案"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "机器学习与自动化对就业和教育的影响",
+    "optionSignals": "Q16四个选项涉及就业预测（automated、threatened、unpredictable、disruptive），属于'观点/预测'题；Q17以They指代某技术并描述其应用能力；Q18也以It描述技术的局限性，属于'缺点/限制'题。",
+    "tips": [
+     "Q16答案A'About half...might be automated'含约数表达，听音时注意nearly half、around 50%等",
+     "Q17答案D'grade high-school essays just like human teachers'中just like为关键比较，注意听as well as、comparable to等",
+     "Q18答案C'rely on huge amounts of previous data'指出机器学习对大数据的依赖，是该技术的经典局限性"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "太阳能与可持续能源技术的研发应用",
+    "optionSignals": "Q19四个选项涉及不同话题角度（工程问题、蒸汽技术、新能源重要性、可持续能源理论），在问文章/段落主题；Q20以动词原形开头描述具体计划或行动；Q21也以动词原形开头描述需要解决的技术任务。",
+    "tips": [
+     "Q19答案D'theoretical aspects of sustainable energy'指理论层面，若文章偏学术综述则此项合理",
+     "Q20答案A'Drive trains with solar energy'非常具体，听音时注意solar-powered train、rail等关键词",
+     "Q21答案B'Find a new material for storing energy'中storing energy为核心概念，注意听storage、store等词"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "英国国家医疗与社会护理服务体系的问题",
+    "optionSignals": "Q22四个选项分析原因（缺乏监管、经济危机、管理不善、关系不佳），属于'原因分析'题；Q23描述过去护理服务的特征；Q24以Their/Fewer/More开头解释某种现象的原因；Q25以They开头描述某群体的处境。",
+    "tips": [
+     "Q22答案D'poor relation between national health and social care services'指两个体系间的衔接问题，听音时注意gap、disconnect、coordination等词",
+     "Q23答案A'mainly provided by voluntary services'中voluntary为关键词，注意听volunteer、unpaid、charity等同义词",
+     "Q25答案B'long been discriminated against'涉及歧视，语气较强烈，注意听prejudice、bias、unfair treatment等表达"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "unprecedented",
+    "cn": "前所未有的，史无前例的"
+   },
+   {
+    "w": "dissertation",
+    "cn": "学位论文，学术论文"
+   },
+   {
+    "w": "automated",
+    "cn": "自动化的"
+   },
+   {
+    "w": "sustainable",
+    "cn": "可持续的"
+   },
+   {
+    "w": "willpower",
+    "cn": "意志力，毅力"
+   },
+   {
+    "w": "disruptive",
+    "cn": "颠覆性的，破坏性的"
+   },
+   {
+    "w": "voluntary",
+    "cn": "自愿的，志愿的"
+   },
+   {
+    "w": "discriminated",
+    "cn": "被歧视的，受到不公正对待的"
+   },
+   {
+    "w": "cumulative",
+    "cn": "累积的（如cumulative grade累积绩点）"
+   },
+   {
+    "w": "calcium oxide",
+    "cn": "氧化钙（化学物质名称）"
+   },
+   {
+    "w": "parameters",
+    "cn": "参数，范围，界限"
+   },
+   {
+    "w": "indigenous",
+    "cn": "本地的，土著的"
+   },
+   {
+    "w": "deteriorated",
+    "cn": "恶化的，变坏的"
+   },
+   {
+    "w": "fascinating",
+    "cn": "极有吸引力的，迷人的"
+   }
+  ]
+ }
+}

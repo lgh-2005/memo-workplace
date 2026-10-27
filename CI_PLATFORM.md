@@ -1,4 +1,6 @@
-# v3.7.0 CI 平台与发布门禁确认
+# v3.8.0 CI 平台与发布门禁确认
+
+v3.8.0 新增 `scripts/exam-analysis-smoke.mjs`（真题参考解析全链路，51 断言，含前端「零内联事件处理器」硬断言与生成器 JSON 修复器单测），已接入 `npm test` 与发布门禁；`release-check.mjs` 新增 3 项（解析回归脚本存在并接入、批处理生成器存在、解析目录随仓库分发），版本断言升至 3.8.0。
 
 > v3.7.1 增量：服务端 Piper 解释器路径改为跨平台候选探测（`venv/bin/python` / `venv/bin/python3` / `venv/Scripts/python.exe`）。CI 不安装 `runtime/piper`，`tts-smoke` 的句子分支走 503 优雅降级断言；本地装好 Piper 后同一套件走 200 音频断言。
 

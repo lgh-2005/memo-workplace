@@ -1,0 +1,267 @@
+{
+ "schemaVersion": 1,
+ "id": "4204c70708cd__long_match__all",
+ "examId": "4204c70708cd",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2018 年 6 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:18:57.131Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 36783,
+ "usage": {
+  "prompt_tokens": 964,
+  "completion_tokens": 2066,
+  "total_tokens": 3030,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 964,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2066,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 964,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "复活植物与抗旱作物基因研究",
+  "strategy": [
+   "先通读10条陈述句，划出专有名词（如Farrant）、数据和核心概念词作为定位锚点",
+   "利用同义替换意识，将陈述句关键词转化为可能的近义表达再回文扫读",
+   "按照专有名词优先、具体概念次之、抽象表述最后的顺序逐题定位",
+   "注意段落首末句往往是信息匹配的高频出题点，优先扫读",
+   "已确认匹配的段落做标记排除，缩小后续题目的搜索范围"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "cn": "有几种植物足够坚韧、适应力足够强，能够在光秃秃的岩石山丘和沙漠中存活。",
+    "keywords": [
+     "a couple of plants",
+     "tough",
+     "adaptable",
+     "bare rocky hills",
+     "deserts"
+    ],
+    "paraphrase": "陈述句用 tough and adaptable 概括植物特性，原文很可能用 hardy、resilient 或 able to withstand harsh conditions 等近义表达；bare rocky hills 和 deserts 为具体场景词，原文或以类似地理描述出现。",
+    "tip": "定位\"rocky hills\"和\"deserts\"两个具体环境词即可快速锁定C段。"
+   },
+   {
+    "number": 37,
+    "answer": "H",
+    "cn": "Farrant正试图从复活植物中分离基因，并将其复制到农作物中。",
+    "keywords": [
+     "Farrant",
+     "isolate genes",
+     "resurrection plants",
+     "reproduce",
+     "crops"
+    ],
+    "paraphrase": "isolate genes 在原文中可能被替换为 identify/extract specific genes；reproduce them in crops 可能对应 transfer/insert genes into crop species，属于基因工程常见同义替换。",
+    "tip": "人名Farrant + isolate genes 双重定位，快速锁定H段。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "cn": "南非的农民更加受制于自然，尤其是不稳定的降雨。",
+    "keywords": [
+     "South Africa",
+     "farmers",
+     "at the mercy of nature",
+     "inconsistent rainfall"
+    ],
+    "paraphrase": "at the mercy of nature 是\"受自然支配\"的固定表达，原文可能用 vulnerable to / dependent on natural conditions；inconsistent rainfall 可替换为 unpredictable/irregular precipitation。",
+    "tip": "South Africa 为专有地名，结合 farmers 和 rainfall 即可定位A段（通常为文章开篇背景段）。"
+   },
+   {
+    "number": 39,
+    "answer": "K",
+    "cn": "复活作物最有可能成为自给型农民的选择。",
+    "keywords": [
+     "resurrection crops",
+     "subsistence farmers",
+     "most likely",
+     "choice"
+    ],
+    "paraphrase": "subsistence farmers 指自给自足的小农户，原文可能用 small-scale farmers 或 those who grow food for their own consumption；most likely to be the choice 可能对应 the primary/intended beneficiaries。",
+    "tip": "关注 subsistence farmers 这一社会经济类术语，在偏后段落K段出现概率高。"
+   },
+   {
+    "number": 40,
+    "answer": "E",
+    "cn": "尽管许多植物已进化出多种应对干旱天气的策略，但它们无法在长期干旱中存活。",
+    "keywords": [
+     "various tactics",
+     "dry weather",
+     "cannot survive",
+     "prolonged drought"
+    ],
+    "paraphrase": "various tactics 原文可能用 different strategies/mechanisms；prolonged drought 可替换为 extended/sustained period of water scarcity；整句为让步转折逻辑，原文常以 although/however 衔接。",
+    "tip": "抓住让步关系词和 prolonged drought 这一程度限定词定位E段。"
+   },
+   {
+    "number": 41,
+    "answer": "I",
+    "cn": "尽管消费者存在抵触情绪，研究人员仍在推进农作物的基因改造。",
+    "keywords": [
+     "consumer resistance",
+     "researchers",
+     "genetic modification",
+     "pushing ahead"
+    ],
+    "paraphrase": "consumer resistance 在原文中可能表述为 public opposition/skepticism toward GM food；pushing ahead 可能对应 continuing/proceeding with their work despite criticism。",
+    "tip": "consumer resistance 与 genetic modification 为对立概念组合，可快速定位I段。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "cn": "大多数种子可以挺过干旱期，并在条件成熟时开始生长，但这一过程一旦启动就无法逆转。",
+    "keywords": [
+     "seeds",
+     "pull through dry spells",
+     "begin growing",
+     "cannot be held back"
+    ],
+    "paraphrase": "pull through dry spells 原文可能用 survive/endure periods of dryness；cannot be held back 可替换为 irreversible process；条件成熟对应 when water is available / favorable conditions return。",
+    "tip": "抓住 seeds + irreversible process 的逻辑组合定位G段。"
+   },
+   {
+    "number": 43,
+    "answer": "B",
+    "cn": "Farrant正通过研究珍稀野生植物的特性，努力培育能够在极端干旱中存活的粮食作物。",
+    "keywords": [
+     "Farrant",
+     "cultivate food crops",
+     "extreme dryness",
+     "rare wild plants"
+    ],
+    "paraphrase": "rare wild plants 原文可能用 uncommon/unusual species found in the wild；extreme dryness 对应 severe dehydration/drought；cultivate food crops 可替换为 develop/breed agricultural crops。",
+    "tip": "Farrant + food crops + rare wild plants 三重线索组合锁定B段。"
+   },
+   {
+    "number": 44,
+    "answer": "F",
+    "cn": "通过调节自身的新陈代谢，复活植物可以从长期干旱中恢复。",
+    "keywords": [
+     "adjusting metabolism",
+     "resurrection plants",
+     "recover",
+     "extended drought"
+    ],
+    "paraphrase": "adjusting their metabolism 原文可能用 altering/modifying metabolic processes；recover from 可对应 bounce back / regain normal function；extended period of drought 与 prolonged dry conditions 同义。",
+    "tip": "metabolism 为科学术语，结合 resurrection plants 可精准定位F段。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "cn": "复活植物能在一场降雨后短时间内恢复生机。",
+    "keywords": [
+     "resurrection plants",
+     "come back to life",
+     "short time",
+     "rainfall"
+    ],
+    "paraphrase": "come back to life 在原文中可能用 revive/rehydrate/resume growth；in a short time 对应 within hours/days/rapidly；after a rainfall 可替换为 when rain falls / upon receiving water。",
+    "tip": "come back to life + short time 是复活植物最显著特征的描述，直接定位D段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "resurrection",
+    "cn": "n. 复活，复苏"
+   },
+   {
+    "w": "adaptable",
+    "cn": "adj. 适应性强的，能适应的"
+   },
+   {
+    "w": "bare",
+    "cn": "adj. 光秃秃的，荒芜的"
+   },
+   {
+    "w": "isolate",
+    "cn": "v. 分离，隔离"
+   },
+   {
+    "w": "reproduce",
+    "cn": "v. 复制，繁殖"
+   },
+   {
+    "w": "at the mercy of",
+    "cn": "短语 受…支配，任凭…摆布"
+   },
+   {
+    "w": "inconsistent",
+    "cn": "adj. 不稳定的，不一致的"
+   },
+   {
+    "w": "subsistence",
+    "cn": "n./adj. 自给自足（的），糊口（的）"
+   },
+   {
+    "w": "prolonged",
+    "cn": "adj. 长期的，持久的"
+   },
+   {
+    "w": "tactics",
+    "cn": "n. 策略，战术（复数）"
+   },
+   {
+    "w": "genetic modification",
+    "cn": "n. 基因改造，转基因"
+   },
+   {
+    "w": "pull through",
+    "cn": "短语 挺过，渡过（难关）"
+   },
+   {
+    "w": "metabolism",
+    "cn": "n. 新陈代谢"
+   },
+   {
+    "w": "cultivate",
+    "cn": "v. 培育，种植"
+   }
+  ]
+ }
+}

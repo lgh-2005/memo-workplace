@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "2bf75860cf1c__reading__4",
+ "examId": "2bf75860cf1c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2011 年考研英语真题",
+ "year": 2011,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:25:58.474Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72052,
+ "usage": {
+  "prompt_tokens": 1804,
+  "completion_tokens": 4146,
+  "total_tokens": 5950,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1804,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4146,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1804,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "名人效应下的育儿幸福感反思",
+  "gist": "文章以Jennifer Senior的封面文章为引，探讨养育子女与幸福感的关系。作者指出，社会持续歌颂生育，名人杂志呈现的单亲育儿形象极不真实，无子女者承受社会压力，而名人轻松育儿的媒体形象可能在潜意识中加深了普通父母对真实育儿体验的不满。",
+  "structure": [
+   "第1段：引出Senior文章观点——育儿幸福应以回顾视角衡量",
+   "第2段：列举名人育儿形象在媒体上的泛滥现象",
+   "第3段：指出社会崇尚生育，无子女者遭受舆论压力",
+   "第4段：揭示名人杂志呈现的育儿形象严重失真",
+   "第5段：推论名人育儿形象潜移默化影响公众心态"
+  ],
+  "difficulty": "中等",
+  "translation": "Jennifer Senior那篇富有洞见且引发争议的杂志封面文章《我爱我的孩子，我恨我的生活》引起热议，这并不令人意外——没有什么比暗示养育孩子并非完全令人满足、丰富人生的体验更能引发话题了。Senior并没有得出孩子让父母快乐或痛苦的结论，而是建议我们需要重新定义幸福：不要把它视为可以用即时快乐来衡量的东西，而应该把幸福视为一种过去时态的状态。尽管日复一日养育孩子的经历可能令人身心俱疲，Senior写道，\"那些在当下让我们情绪低落的事情，日后却可能成为强烈满足感和愉悦感的来源。\"\n\n展示一位漂亮母亲抱着可爱婴儿的杂志封面，绝非本周报刊摊上唯一的\"圣母与圣婴\"形象。还有关于新近领养孩子且新近恢复单身的Sandra Bullock的报道，以及惯常的\"Jennifer Aniston怀孕了\"的新闻。几乎每周都至少有一位名人妈妈或准妈妈微笑着出现在报刊摊上。\n\n在一个如此执著地歌颂生育的社会中，承认后悔生孩子等同于承认你支持虐杀小猫，这有什么好奇怪的呢？那么，把有孩子的父母的遗憾与无子女者的遗憾进行比较似乎也不太公平。不快乐的父母很少会被刺激去想自己是否不该要孩子，但不快乐的无子女者却不断被这样的观念所困扰：孩子是世界上最重要的东西——显然他们的痛苦一定是因为生活中缺了一个婴儿大小的空洞。\n\n当然，《Us Weekly》和《People》等名人杂志所呈现的为人父母的形象极不真实，尤其是当父母是像Bullock那样的单身母亲时。根据几项研究得出的父母不如无子女夫妇快乐的结论，单亲父母是所有人中最不快乐的。这一点并不令人震惊，考虑到没有伴侣可以依靠、独自抚养孩子要付出多大的辛劳；然而听Sandra和Britney说来，\"独自\"（实际上是有全天候保姆帮助）养一个孩子简直轻而易举。\n\n很难想象会有多少人蠢到仅仅因为Reese和Angelina让育儿看起来那么光鲜就想要孩子：大多数成年人都明白婴儿不是换个发型那么简单。但有趣的是，我们是否该想想，每周看到的那些无压力、增进幸福感的育儿形象，是否在某种微小的、潜意识的层面上加深了我们对真实育儿体验的不满——就像我们内心曾有一小部分人希望剪一个\"Rachel\"发型就能让自己看起来像Jennifer Aniston一样。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "instead of thinking of it as something that can be measured by moment-to-moment joy, we should consider being happy as a past-tense condition.",
+    "why": "原文明确指出Senior建议将幸福重新定义为\"a past-tense condition\"（过去时态的状态），即回顾过去时才能感受到的幸福。后文又补充\"the very things that in the moment dampen our moods can later be sources of intense gratification\"，再次强调\"日后回顾\"才获得满足感。C选项\"happiness in retrospect\"（回顾中的幸福）精准对应\"past-tense condition\"。",
+    "traps": "A\"temporary delight\"（暂时的快乐）将幸福理解为短暂即时的，与原文\"past-tense\"相矛盾；B\"enjoyment in progress\"（进行中的享受）恰恰是原文否定的\"moment-to-moment joy\"；D\"lasting reward\"（持久的回报）虽有回报之意，但\"lasting\"强调持续性，原文强调的是事后回顾而非持续过程。",
+    "tip": "注意关键短语\"past-tense condition\"的语义转换。"
+   },
+   {
+    "number": 37,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Practically every week features at least one celebrity mom, or mom-to-be, smiling on the newsstands.",
+    "why": "第2段列举了大量名人妈妈登上杂志封面的现象：Sandra Bullock领养孩子、Jennifer Aniston怀孕传闻、几乎每周都有名人妈妈或准妈妈微笑登上报摊。这些现象共同反映出媒体对生育话题的高度关注，而媒体关注的背后是公众对生育的高度重视。D选项\"having children is highly valued by the public\"是对这一系列现象的合理归纳推断。",
+    "traps": "A\"permanent source for gossip\"过度推断，文章侧重点是社会对生育的推崇而非八卦；B\"deserve greater attention\"文中未表达单身妈妈应获更多关注的观点；C\"entertaining\"将怀孕新闻定性为娱乐，偏离了段落主旨。",
+    "tip": "列举多个同类现象时，要归纳其共同指向的深层含义。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "unhappy childless folks are bothered with the message that children are the single most important thing in the world: obviously their misery must be a direct result of the gaping baby-size holes in their lives.",
+    "why": "原文指出无子女者不断被\"孩子是世上最重要的东西\"这一观念所困扰（bothered），社会暗示他们的不幸必定源于生活中缺少孩子。此外，第3段开头将\"承认后悔生育\"比作\"支持虐杀小猫\"，可见社会对不生育的态度极为负面。这说明无子女者持续暴露在社会批判和舆论压力之下，对应A选项\"constantly exposed to criticism\"。",
+    "traps": "B\"largely ignored by the media\"与原文相反，媒体恰恰在持续传播生育至上的信息；C\"fail to fulfill their social responsibilities\"文中未提及社会责任问题，属无中生有；D\"less likely to be satisfied with their life\"文中只说社会认为他们应该不满，并非作者观点，且偷换了批评与不满的概念。",
+    "tip": "注意区分\"社会施加的压力\"和\"个人真实感受\"。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "the image of parenthood that celebrity magazines like Us Weekly and People present is hugely unrealistic",
+    "why": "第4段明确指出名人杂志呈现的育儿形象\"hugely unrealistic\"（极不真实），随后用事实对比：研究表明单亲父母最不快乐，但名人却声称独自育儿轻而易举（a piece of cake），而实际上她们有全天候帮手。杂志传递的信息与现实严重不符，因此是\"misleading\"（误导性的）。D选项精确对应。",
+    "traps": "A\"soothing\"（令人安慰的）虽然名人形象看似轻松，但作者态度是批判而非认可其安慰作用；B\"ambiguous\"（模糊的）与原文相反，杂志传递的信息非常明确——育儿轻松美好，只是不真实；C\"compensatory\"（补偿性的）文中无任何补偿含义。",
+    "tip": "当原文出现\"unrealistic\"等明确评价词时，直接对应选项语义。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "it's interesting to wonder if the images we see every week of stress-free, happiness-enhancing parenthood aren't in some small, subconscious way contributing to our own dissatisfactions with the actual experience",
+    "why": "末段核心句用反问形式指出：每周看到的名人无压力育儿形象可能在潜意识中加深了我们对真实育儿体验的不满。这说明名人妈妈的形象确实影响了我们对育儿的态度和期望，对应B选项\"Celebrity moms have influenced our attitude towards child rearing\"。末尾的\"Rachel发型\"类比进一步证实了这种潜移默化的影响。",
+    "traps": "A\"contributes little to the glamour\"与文意无关，文章讨论的是名人形象对公众的影响而非名人自身的魅力来源；C\"intensifies our dissatisfaction with life\"范围过大，原文特指对\"育儿体验\"的不满，非对\"生活\"整体的不满；D\"neglect the happiness\"文章讨论的是期望与现实的落差，而非忽视育儿幸福。",
+    "tip": "反问句\"aren't...contributing\"实际上是肯定表述，表明作者认为确有影响。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "insightful",
+    "cn": "adj. 富有洞察力的"
+   },
+   {
+    "w": "provocative",
+    "cn": "adj. 引发争议的，发人深省的"
+   },
+   {
+    "w": "procreation",
+    "cn": "n. 生育，繁殖"
+   },
+   {
+    "w": "gratification",
+    "cn": "n. 满足感，欣慰"
+   },
+   {
+    "w": "soul-crushingly",
+    "cn": "adv. 令人身心俱疲地"
+   },
+   {
+    "w": "dampen",
+    "cn": "v. 抑制，降低（情绪等）"
+   },
+   {
+    "w": "equivalent",
+    "cn": "adj. 等同的，相当的"
+   },
+   {
+    "w": "gaping",
+    "cn": "adj. 巨大的，豁开的"
+   },
+   {
+    "w": "subconscious",
+    "cn": "adj. 潜意识的"
+   },
+   {
+    "w": "dissatisfaction",
+    "cn": "n. 不满，不满意"
+   },
+   {
+    "w": "round-the-clock",
+    "cn": "adj. 全天候的，日夜不停的"
+   },
+   {
+    "w": "glamorous",
+    "cn": "adj. 光鲜亮丽的，迷人的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Rather than concluding that children make parents either happy or miserable, Senior suggests we need to redefine happiness: instead of thinking of it as something that can be measured by moment-to-moment joy, we should consider being happy as a past-tense condition.",
+    "cn": "Senior并没有得出孩子让父母快乐或痛苦的结论，而是建议我们需要重新定义幸福：不要把它视为可以用即时快乐来衡量的东西，而应该把幸福视为一种过去时态的状态。",
+    "note": "主句为Rather than...Senior suggests...结构，冒号后为解释说明，内含instead of...we should...的对比结构，层层递进阐明Senior的核心观点。"
+   },
+   {
+    "en": "But it's interesting to wonder if the images we see every week of stress-free, happiness-enhancing parenthood aren't in some small, subconscious way contributing to our own dissatisfactions with the actual experience, in the same way that a small part of us hoped getting 'the Rachel' might make us look just a little bit like Jennifer Aniston.",
+    "cn": "但有趣的是，我们是否该想想，每周看到的那些无压力、增进幸福感的育儿形象，是否在某种微小的、潜意识的层面上加深了我们对真实育儿体验的不满——就像我们内心曾有一小部分人希望剪一个\"Rachel\"发型就能让自己看起来像Jennifer Aniston一样。",
+    "note": "主干为it's interesting to wonder if...aren't contributing to...，否定疑问实为肯定推测；in the same way that引导类比从句，用发型类比说明潜意识影响机制。"
+   },
+   {
+    "en": "In a society that so persistently celebrates procreation, is it any wonder that admitting you regret having children is equivalent to admitting you support kitten-killing?",
+    "cn": "在一个如此执著地歌颂生育的社会中，承认后悔生孩子等同于承认你支持虐杀小猫，这有什么好奇怪的呢？",
+    "note": "反问句结构：is it any wonder that...表示\"这有什么好奇怪的\"，that从句中包含admitting...is equivalent to admitting...的主谓结构，用极端类比突显社会对生育的推崇。"
+   }
+  ]
+ }
+}

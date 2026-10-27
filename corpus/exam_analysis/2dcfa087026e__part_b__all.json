@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "2dcfa087026e__part_b__all",
+ "examId": "2dcfa087026e",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2015 年考研英语真题",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:31:38.460Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44557,
+ "usage": {
+  "prompt_tokens": 1423,
+  "completion_tokens": 2247,
+  "total_tokens": 3670,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1423,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2247,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1423,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "阅读理解的本质与多元阐释机制",
+  "type": "七选五",
+  "strategy": [
+   "通读全文，把握文章从'词义理解→推理参与→读者差异→阅读目的'的递进逻辑",
+   "重点关注空格前后的衔接词（Rather、Such、further）、代词指代和重复关键词",
+   "先做逻辑线索最明显的空（如43前的否定+G的Rather转折），再处理较难空",
+   "利用排除法，将已确定选项划去，缩小备选范围",
+   "检查全文连贯性，确认每段主题句与填入选项语义流畅"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "C",
+    "why": "41前句讲'识别单词含义、利用语法知识推导词间关系'，属于基本词汇-语法层面的理解。C项承接此话题，讲'遇到不熟悉的词或习语时根据语境线索猜测含义，并记下语篇实体及其可能联系'。41后句以You begin to infer a context转入语境推理，C项正好是从词汇理解到语境推理的过渡桥梁。",
+    "traps": "D项讲'重构可能的意义或效果'，侧重作者意图，与前文讨论基本词汇-语法层面不衔接；F项讲戏剧小说中人物非作者代言，话题完全无关。",
+    "tip": "前句关键词individual words/grammar，C项关键词unfamiliar with words/guess at meaning形成词汇层衔接。"
+   },
+   {
+    "number": 42,
+    "answer": "E",
+    "why": "42前句讲'你推断出你认为作者通过呈现特定证据和线索邀请你理解的信息'，强调作者主导的推理。E项以You make further inferences开头，用further一词递进，转向读者个人层面的推理（文本对你的意义、文本的有效性），并指出'作者对此承担的责任要小得多'，与前句形成从'作者引导的推理'到'读者自主推理'的推进。",
+    "traps": "D项虽提到作者意图，但内容是'重构句子/意象可能有的意义'，与前文'证据与线索'衔接不紧密，且缺少further递进逻辑；C项已用于41。",
+    "tip": "关键衔接词further inferences与前句infer形成递进，author will inevitably be far less responsible与前句the writer has invited形成对比。"
+   },
+   {
+    "number": 43,
+    "answer": "G",
+    "why": "43前句用否定结构'What is in question is not the retrieval of an absolute, fixed or true meaning'，G项以Rather开头，构成典型的'not X, rather Y'转折结构，阐明'我们基于文本材料与语境材料的互动来赋予文本意义'，其中background, social knowledge等概念直接引出下段首句Such background material。",
+    "traps": "D项虽涉及意义重构，但缺少与前句否定结构的转折衔接词；B项讲影响因素，但放在此处会使Such background material失去先行语。",
+    "tip": "核心线索：前句not...固定意义 + G项Rather引出替代解释，逻辑严密。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "why": "44前句说'Such background material inevitably reflects who we are（这些背景材料不可避免地反映了我们是谁）'，B项具体展开who we are的内涵：place, period, gender, ethnicity, age, social class等因素如何引导我们做出某些阐释同时遮蔽其他阐释。44后句This doesn't, however, make interpretation merely relative中的This指代B项所述'不同身份因素导致不同解读'这一现象。",
+    "traps": "A项讲阅读目的与场景，与'who we are'的身份属性不匹配；F项讲文学作品中人物角色，与此处讨论的读者身份无关。",
+    "tip": "who we are → B项的gender, ethnicity, age, social class是对其的具体化阐释。"
+   },
+   {
+    "number": 45,
+    "answer": "A",
+    "why": "45前句说'我们如何阅读某一文本在一定程度上也取决于我们阅读它的特定兴趣（particular interest）'。A项紧接着用一连串问句列举不同阅读兴趣与目的：为课程学习？为消遣？为获取信息？并补充不同场景（火车上、床上vs研讨室）下阅读方式的差异。45后句Such dimensions of reading中的Such回指A项所列举的多种阅读维度。",
+    "traps": "B项讲身份因素影响阐释，与particular interest话题不符，已用于44；D项讲重构意义，与阅读目的/兴趣的话题不匹配。",
+    "tip": "particular interest → A项的studying/pleasure/skimming构成兴趣的具体例证。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "comprehension",
+    "cn": "理解，领悟（n.）"
+   },
+   {
+    "w": "implicit",
+    "cn": "隐含的，不言明的（adj.）"
+   },
+   {
+    "w": "utterance",
+    "cn": "话语，言论（n.）"
+   },
+   {
+    "w": "assimilation",
+    "cn": "吸收，同化（n.）"
+   },
+   {
+    "w": "inference",
+    "cn": "推理，推断（n.）"
+   },
+   {
+    "w": "retrieval",
+    "cn": "检索，取回（n.）"
+   },
+   {
+    "w": "ascribe",
+    "cn": "归因于，赋予（v.）"
+   },
+   {
+    "w": "patterning",
+    "cn": "模式化，图案构成（n.）"
+   },
+   {
+    "w": "obscure",
+    "cn": "使模糊，遮蔽（v.）"
+   },
+   {
+    "w": "mouthpiece",
+    "cn": "代言人，传声筒（n.）"
+   },
+   {
+    "w": "discourse entities",
+    "cn": "语篇实体（n.短语）"
+   },
+   {
+    "w": "overlapping",
+    "cn": "重叠的，交叉的（adj.）"
+   },
+   {
+    "w": "counterbalance",
+    "cn": "制衡，平衡力（n.）"
+   },
+   {
+    "w": "literacy",
+    "cn": "读写能力，素养（n.）"
+   },
+   {
+    "w": "idiom",
+    "cn": "习语，惯用语（n.）"
+   },
+   {
+    "w": "seminar",
+    "cn": "研讨会，研讨课（n.）"
+   },
+   {
+    "w": "validity",
+    "cn": "有效性，正当性（n.）"
+   },
+   {
+    "w": "constructs",
+    "cn": "建构物，构念（n.）"
+   }
+  ]
+ }
+}

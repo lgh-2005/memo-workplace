@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "c620e17f5aba__banked_cloze__all",
+ "examId": "c620e17f5aba",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2019 年 6 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:26:24.596Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56631,
+ "usage": {
+  "prompt_tokens": 1408,
+  "completion_tokens": 3460,
+  "total_tokens": 4868,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1408,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3460,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1408,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "飞行汽车与未来个人交通变革",
+  "gist": "文章围绕个人飞行梦想展开，介绍了飞行汽车、喷气背包等各类发明的现状，指出这些概念造价高昂、认证复杂，难以普及。专家认为空中出租车更为现实。文章最后指出，真正推动民用航空变革的并非速度与浪漫，而是应对气候变化的迫切需要，电动引擎与自主系统将助力打造更高效、更环保的交通体系。",
+  "difficulty": "中等",
+  "translation": "个人飞行的梦想在许多发明家心中依然鲜活，一些人在开发人力驱动飞行器，另一些人则把资金投入喷气飞行背包。然而，飞行汽车始终是个人交通自由的终极象征。\n\n全球多家公司已经制造出既能在公路上行驶又能飞行的原型机。空客公司提出了一种充满未来感的组件式概念，涉及一个可以从公路底盘上拆卸下来、再由直升机式飞行器接走的乘客舱。\n\n但所有这些概念都造价极其高昂，需要同时满足公路和航空的安全认证标准，需要双重操控系统，涉及复杂的可折叠机翼和螺旋桨，而且必须从跑道起飞。因此它们很可能仍是富人的玩物，而非大众的实用交通方案。\n\n\"一辆从伦敦某条街道起飞、然后降落在另一条随机街道上的汽车是不太可能出现的，\"著名航空工程师格雷教授说，\"空中出租车的可能性要大得多。\"但这不会阻止发明家们构想新的飞行方式，并试图说服投资者支持他们有时近乎疯狂的计划。\n\n民用航空正在被颠覆，推动力并非人们自古以来对速度、浪漫和魅力的渴望，而是应对气候变化的迫切需要。新型电动引擎加上人工智能和自主系统，将有助于打造一个污染更少、噪音更低的更高效、更一体化的交通体系。这听起来或许简单，但正如格雷教授所说：\"当我去某个地方旅行时，我希望旅程结束时感觉比出发时更好。这与我今天的实际感受完全相悖。\"如果能做到这一点，那才是真正的进步。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "I",
+    "correct": "pouring",
+    "why": "此处需要动词现在分词与前文 some developing 形成并列结构（others pouring...）。pour money into 是固定搭配，意为\"把资金投入……\"，语义和语法均完全吻合。",
+    "traps": "其他词如 autonomous、detached 等均非动词现在分词形式，无法与 others 构成并列分词短语，且语义不符\"把钱投入喷气背包\"的语境。",
+    "tip": "并列分词结构识别 + pour money into 固定搭配"
+   },
+   {
+    "number": 27,
+    "answer": "O",
+    "correct": "ultimate",
+    "why": "空格处需要形容词修饰 symbol。ultimate symbol 意为\"终极象征\"，表达飞行汽车一直是个人交通自由的最高代表，语义逻辑通顺，且 ultimate 常与 symbol/goal 等搭配。",
+    "traps": "random、outrageous 虽也是形容词，但\"随机的象征\"\"离谱的象征\"语义不合理；dual 表\"双重的\"，与语境不搭。",
+    "tip": "形容词与名词的搭配语义判断"
+   },
+   {
+    "number": 28,
+    "answer": "J",
+    "correct": "prototypes",
+    "why": "空格处需要名词作 produced 的宾语，后接 that 定语从句。prototypes（原型机）指公司制造的可上路又可飞行的试验性产品，完全符合语境。",
+    "traps": "odds 虽为名词，但意为\"几率/不一致\"，放此处语义不通；glamour 为不可数名词，且语义不符。",
+    "tip": "名词作宾语 + 科技语境常用词 prototype"
+   },
+   {
+    "number": 29,
+    "answer": "B",
+    "correct": "detached",
+    "why": "空格处需要动词过去分词与 be 构成被动语态。detach from 意为\"从……上拆卸/分离\"，乘客舱可以从底盘上拆卸下来，语义精准。",
+    "traps": "pouring 为现在分词，不能与 be 构成被动；autonomous 是形容词，不能用于 be + adj. + from 此结构表达拆卸含义。",
+    "tip": "be detached from 固定被动搭配，表\"分离/拆卸\""
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "correct": "dual",
+    "why": "空格修饰 controls，dual controls 意为\"双重操控系统\"，指飞行汽车既需公路操控又需航空操控，与前文 standards for road and air 呼应。",
+    "traps": "autonomous controls（自主操控）虽语法成立，但上下文强调的是\"公路+航空\"两套标准带来的\"双重\"需求，dual 更贴切。",
+    "tip": "dual 表\"双重的\"，与 road and air 双重语境对应"
+   },
+   {
+    "number": 31,
+    "answer": "K",
+    "correct": "random",
+    "why": "空格修饰 street，another random street 意为\"另一条随意/随机的街道\"，强调飞行汽车随意降落的不现实性，与 takes off from some London street 形成对比。",
+    "traps": "ultimate street、outrageous street 语义均不合理；autonomous street 缺乏逻辑。random 最能体现\"任意一条\"的不确定性。",
+    "tip": "random 修饰地点，强调随机性与不可控性"
+   },
+   {
+    "number": 32,
+    "answer": "H",
+    "correct": "outrageous",
+    "why": "空格修饰 schemes（方案），outrageous 意为\"离谱的、异想天开的\"，与前面 sometimes 搭配，表达发明家的计划有时近乎疯狂，语气恰到好处。",
+    "traps": "autonomous schemes（自主方案）语义不当；random schemes（随机方案）搭配生硬且缺乏\"荒诞\"的感情色彩。",
+    "tip": "outrageous 含贬义/夸张语气，修饰 schemes 表\"异想天开\""
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "correct": "glamour",
+    "why": "空格与 speed、romanticism 并列，需要名词。glamour（魅力/光鲜）与速度、浪漫主义同属人类对飞行的古老向往，三者语义层层递进，逻辑连贯。",
+    "traps": "odds 虽是名词但意为\"可能性/不一致\"，放在 desires for 后面与 speed、romanticism 不构成语义并列。",
+    "tip": "并列名词语义一致性：speed, romanticism and glamour"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "correct": "autonomous",
+    "why": "空格修饰 systems，autonomous systems 意为\"自主系统/自动驾驶系统\"，与 artificial intelligence 并列，共同代表未来智能交通技术，语义高度契合。",
+    "traps": "dual systems 虽语法可行，但 dual 已用于第30题；且此处强调的是AI驱动的\"自主性\"而非\"双重性\"。",
+    "tip": "autonomous systems 是交通/科技领域核心术语"
+   },
+   {
+    "number": 35,
+    "answer": "F",
+    "correct": "odds",
+    "why": "at odds with 是固定短语，意为\"与……相悖/不一致\"。教授表示理想的旅行感受与当下实际体验完全相悖，语义完美契合。",
+    "traps": "其他词均无法与 at ... with 构成固定搭配；此处只有 at odds with 是地道英语表达。",
+    "tip": "固定搭配 at odds with，意为\"与……相矛盾\""
+   }
+  ],
+  "vocab": [
+   {
+    "w": "autonomous",
+    "cn": "adj. 自主的，自治的，自动驾驶的"
+   },
+   {
+    "w": "detached",
+    "cn": "adj./v. 分离的；拆卸（detach 的过去分词）"
+   },
+   {
+    "w": "dual",
+    "cn": "adj. 双重的，双的"
+   },
+   {
+    "w": "glamour",
+    "cn": "n. 魅力，光鲜，吸引力"
+   },
+   {
+    "w": "odds",
+    "cn": "n. 几率；不一致（at odds with 与……相悖）"
+   },
+   {
+    "w": "outrageous",
+    "cn": "adj. 离谱的，骇人听闻的，异想天开的"
+   },
+   {
+    "w": "pouring",
+    "cn": "v. 倾注，大量投入（pour 的现在分词）"
+   },
+   {
+    "w": "prototypes",
+    "cn": "n. 原型，原型机（prototype 的复数）"
+   },
+   {
+    "w": "random",
+    "cn": "adj. 随机的，任意的"
+   },
+   {
+    "w": "ultimate",
+    "cn": "adj. 最终的，终极的，根本的"
+   },
+   {
+    "w": "chassis",
+    "cn": "n. 底盘，车架（文中出现的重要生词）"
+   },
+   {
+    "w": "certification",
+    "cn": "n. 认证，证明（文中 safety certification 安全认证）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握飞行汽车与未来交通主题，建立语境框架。",
+   "第二步：将15个备选词按词性分类（名词/动词/形容词/副词），缩小每空候选范围。",
+   "第三步：根据空格前后语法结构（如并列、被动、定语）判断所需词性，排除不符选项。",
+   "第四步：结合上下文语义与固定搭配（如 pour money into、at odds with）锁定唯一答案。",
+   "第五步：填完后回读全文，检查每个选项是否仅使用一次，整体语义是否连贯。"
+  ]
+ }
+}

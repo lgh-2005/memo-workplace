@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "150220e367dd__writing__all",
+ "examId": "150220e367dd",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2021 年 6 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:38:24.053Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44105,
+ "usage": {
+  "prompt_tokens": 711,
+  "completion_tokens": 2642,
+  "total_tokens": 3353,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 711,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2642,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 711,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "图表作文：根据图表简要描述中国贫困人口变化趋势，并就中国脱贫攻坚成就发表评论，150–200词。",
+    "outline": [
+     "第一段：描述图表数据，指出中国农村贫困人口在过去若干年间大幅下降的趋势，点明关键数据节点。",
+     "第二段：分析取得脱贫成就的原因，如政府精准扶贫政策、产业扶贫与电商助农、基层干部驻村帮扶等。",
+     "第三段：总结评价中国脱贫成就的世界意义，并指出仍需巩固成果、推进共同富裕。"
+    ],
+    "sample": "As is vividly illustrated in the chart, the number of rural residents living below the poverty line in China has decreased dramatically over the past decade. Specifically, the figure plummeted from approximately 98.99 million in 2012 to zero by the end of 2020, marking a historic milestone in the nation's development.\n\nSeveral factors have contributed to this remarkable achievement. First and foremost, the Chinese government implemented a series of targeted poverty alleviation policies, including relocating residents from inhospitable areas and providing vocational training to enhance their employability. Furthermore, the rapid expansion of e-commerce and digital infrastructure in rural regions opened up new channels for farmers to boost their income. Additionally, a large number of officials and volunteers were dispatched to impoverished villages to offer on-the-ground guidance and support.\n\nIn conclusion, China's accomplishment in eliminating absolute poverty is truly extraordinary and serves as an inspiring model for other developing nations. Nevertheless, sustained efforts are still needed to prevent any return to poverty and to promote common prosperity.",
+    "phrases": [
+     {
+      "en": "targeted poverty alleviation",
+      "cn": "精准扶贫；考试高频政策类表达，体现对题目主题的准确把握"
+     },
+     {
+      "en": "live below the poverty line",
+      "cn": "生活在贫困线以下；描述贫困状态的核心短语"
+     },
+     {
+      "en": "mark a historic milestone",
+      "cn": "标志着一个历史性里程碑；用于总结重大成就"
+     },
+     {
+      "en": "vocational training",
+      "cn": "职业培训；扶贫措施类常用搭配"
+     },
+     {
+      "en": "open up new channels for",
+      "cn": "为……开辟新渠道；描述途径拓展的地道表达"
+     },
+     {
+      "en": "on-the-ground guidance",
+      "cn": "实地指导；强调基层帮扶的具体性，比 practical 更生动"
+     },
+     {
+      "en": "plummet from … to …",
+      "cn": "从……骤降至……；比 decrease 更具表现力的下降动词"
+     },
+     {
+      "en": "serve as an inspiring model for",
+      "cn": "为……树立鼓舞人心的榜样；用于评价意义"
+     },
+     {
+      "en": "common prosperity",
+      "cn": "共同富裕；与脱贫话题衔接的时政热词"
+     },
+     {
+      "en": "prevent a return to poverty",
+      "cn": "防止返贫；体现对巩固成果的关注，展示深度思考"
+     }
+    ],
+    "pitfalls": [
+     "图表描述缺少具体数字，显得空泛，阅卷老师会扣描述分。",
+     "通篇只罗列数据而无评论分析，未满足 comment on 的指令要求。",
+     "poverty alleviation 拼写错误（常见误拼为 allevation/elevation）。",
+     "字数不足150词或严重超过200词，均可能被扣分。",
+     "段落之间缺乏过渡词，逻辑显得松散，影响连贯性得分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "The number of poor people decreased a lot.",
+      "better": "The number of rural residents living below the poverty line plummeted dramatically.",
+      "note": "用定语从句限定主语、用 plummet 替换 decrease，信息更精确、词汇更高级"
+     },
+     {
+      "plain": "The government made many policies to help poor people.",
+      "better": "The government implemented a series of targeted poverty alleviation policies.",
+      "note": "implement 比 make 更正式，targeted 体现精准性，名词短语更专业"
+     },
+     {
+      "plain": "This is a good example for other countries.",
+      "better": "This accomplishment serves as an inspiring model for other developing nations.",
+      "note": "serve as 结构更学术，inspiring model 比 good example 更具感染力"
+     },
+     {
+      "plain": "E-commerce helped farmers make more money.",
+      "better": "The rapid expansion of e-commerce opened up new channels for farmers to boost their income.",
+      "note": "加入修饰语与动词短语，句式更丰满，表达更地道"
+     },
+     {
+      "plain": "We should keep working hard to solve poverty.",
+      "better": "Sustained efforts are still needed to prevent any return to poverty and to promote common prosperity.",
+      "note": "被动语态更客观正式，prevent a return to poverty 表达更精准专业"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The figure plummeted from approximately 98.99 million in 2012 to zero by the end of 2020, marking a historic milestone in the nation's development. （数据+分词短语点评，图表描述的黄金句式）",
+   "The Chinese government implemented a series of targeted poverty alleviation policies, including relocating residents from inhospitable areas and providing vocational training to enhance their employability. （including 引出并列动名词，展示措施细节的高效句型）",
+   "China's accomplishment in eliminating absolute poverty serves as an inspiring model for other developing nations. （serve as 评价句型，简洁有力地升华主题）",
+   "Sustained efforts are still needed to prevent any return to poverty and to promote common prosperity. （展望未来的经典收尾句，体现辩证思维）",
+   "The rapid expansion of e-commerce and digital infrastructure in rural regions opened up new channels for farmers to boost their income. （长主语+动词短语+不定式目的状语，信息密度高且结构清晰）"
+  ]
+ }
+}

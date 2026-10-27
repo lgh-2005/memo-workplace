@@ -1,0 +1,256 @@
+{
+ "schemaVersion": 1,
+ "id": "02317b30b42e__long_match__all",
+ "examId": "02317b30b42e",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2026 年 6 月英语六级真题（第 2 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:07:14.515Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34255,
+ "usage": {
+  "prompt_tokens": 967,
+  "completion_tokens": 1904,
+  "total_tokens": 2871,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 967,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1904,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 967,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "全球森林恢复与重新造林",
+  "strategy": [
+   "先通读10条陈述句，提炼高频主题词如reforestation、Land Life Company等",
+   "圈出每句中的专有名词、数字、特殊表述作为定位锚点",
+   "注意同义替换：如restore↔revival、scores of years↔decades等",
+   "将涉及同一实体的题目归组，缩小扫读段落范围",
+   "优先匹配含独特信息的题（如公司名、具体论据类型），再处理泛化表述题"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "Land Life Company的努力与全球恢复数百万公顷已毁林和退化土地的目标相契合。",
+    "keywords": [
+     "Land Life Company",
+     "global goal",
+     "restore",
+     "deforested and degraded land"
+    ],
+    "paraphrase": "陈述句中的'fit into the global goal'可能对应原文中'align with / contribute to an international target'等表述；'millions of hectares'为具体数字定位线索。",
+    "tip": "锁定Land Life Company及'全球目标+百万公顷'双重定位词快速扫读。"
+   },
+   {
+    "number": 37,
+    "answer": "J",
+    "cn": "将树木或灌木与农作物一起种植可以帮助提高土地产量，同时为小规模农户提供谋生的机会。",
+    "keywords": [
+     "trees or shrubs",
+     "crops",
+     "yield",
+     "small-scale farmers"
+    ],
+    "paraphrase": "陈述句中'planting trees or shrubs together with crops'是农林间作(agroforestry)的描述，原文可能使用agroforestry一词；'make a living'可能替换为earn income/livelihood。",
+    "tip": "定位'树木+农作物混种'及'小农户生计'即可快速匹配J段。"
+   },
+   {
+    "number": 38,
+    "answer": "G",
+    "cn": "有一个重新造林项目以经济效益和投资回报作为其论据基础。",
+    "keywords": [
+     "reforestation project",
+     "economic benefits",
+     "investment returns"
+    ],
+    "paraphrase": "陈述句'bases its argument on economic benefits and investment returns'在原文中可能以'make a case for / justify through financial gains and return on investment'等形式出现。",
+    "tip": "聚焦'经济论据+投资回报'组合，区别于H段的具体收入来源。"
+   },
+   {
+    "number": 39,
+    "answer": "M",
+    "cn": "随着时间推移，如果地点合适，自然可能在没有人为干预的情况下恢复到原始状态。",
+    "keywords": [
+     "nature",
+     "original state",
+     "without human intervention",
+     "appropriate location"
+    ],
+    "paraphrase": "'return to its original state'可能对应原文'recover/regenerate naturally'；'if the location is appropriate'可能替换为'given the right site conditions'。",
+    "tip": "关注'自然自我恢复+地点条件'的组合信息，与C段的长时间恢复区分开。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "cn": "一位森林和气候专家表示，在必要条件下，森林覆盖率的恢复是可以实现的。",
+    "keywords": [
+     "forest and climate expert",
+     "revival",
+     "forest cover",
+     "necessary conditions"
+    ],
+    "paraphrase": "'revival of forest cover'可能对应原文'recovery/regrowth of forests'；'necessary conditions'可能替换为'right conditions / prerequisites'。",
+    "tip": "定位'专家身份（森林与气候）+森林恢复条件'双线索。"
+   },
+   {
+    "number": 41,
+    "answer": "L",
+    "cn": "有一家公司仅在风险不高的国家开展其主要业务。",
+    "keywords": [
+     "major operations",
+     "exclusively",
+     "countries",
+     "risks not high"
+    ],
+    "paraphrase": "'exclusively in countries where risks are not high'可能对应原文'only in low-risk countries / avoids high-risk regions'等表述。",
+    "tip": "抓住'exclusively/only+低风险国家'这一独特限定快速锁定L段。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "cn": "如果无人干预，自然界可能需要数十年甚至数百年才能自我修复。",
+    "keywords": [
+     "scores of years",
+     "centuries",
+     "repair itself",
+     "left alone"
+    ],
+    "paraphrase": "'scores of years'（数十年）可能在原文中以decades呈现；'repair itself'可能替换为'natural regeneration / heal on its own'。",
+    "tip": "重点定位时间跨度词'数十年或数百年'，与M段的'恢复原始状态'加以区分。"
+   },
+   {
+    "number": 43,
+    "answer": "H",
+    "cn": "出售木材、非木材产品以及碳信用额度可以带来经济回报。",
+    "keywords": [
+     "timber",
+     "non-wood products",
+     "carbon credits",
+     "economic returns"
+    ],
+    "paraphrase": "陈述句列举三类收入来源，原文可能使用'revenue from lumber, non-timber forest products, and carbon offsets'等近义表达。",
+    "tip": "三个并列收入来源是极强的定位线索，直接扫读含这些词汇的段落。"
+   },
+   {
+    "number": 44,
+    "answer": "K",
+    "cn": "一项研究正在全球范围内寻找能够在树木间生长的农作物。",
+    "keywords": [
+     "study",
+     "under way",
+     "crops",
+     "grow among trees"
+    ],
+    "paraphrase": "'under way'可能替换为'ongoing/being conducted'；'crops that can grow among trees'对应农林复合研究的具体内容。",
+    "tip": "定位'正在进行的全球研究+树间种植作物'快速匹配K段。"
+   },
+   {
+    "number": 45,
+    "answer": "B",
+    "cn": "Land Life Company的运营通常位于没有人为干预便无法实现重新造林的地方。",
+    "keywords": [
+     "Land Life Company",
+     "operations",
+     "reforestation impossible",
+     "human intervention"
+    ],
+    "paraphrase": "'where reforestation is impossible without human intervention'可能对应原文'areas that cannot regenerate naturally / sites requiring active restoration'。",
+    "tip": "定位Land Life Company+无法自然恢复的地点，与36题F段的公司全球目标区分开。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deforested",
+    "cn": "adj. 被砍伐森林的，毁林的"
+   },
+   {
+    "w": "degraded",
+    "cn": "adj. 退化的，恶化的（指土地质量下降）"
+   },
+   {
+    "w": "reforestation",
+    "cn": "n. 重新造林，再造林"
+   },
+   {
+    "w": "shrubs",
+    "cn": "n. 灌木（shrub的复数）"
+   },
+   {
+    "w": "yield",
+    "cn": "n. 产量，收益"
+   },
+   {
+    "w": "intervention",
+    "cn": "n. 干预，介入"
+   },
+   {
+    "w": "scores of",
+    "cn": "数十个的，许多的（一score等于二十）"
+   },
+   {
+    "w": "carbon credits",
+    "cn": "n. 碳信用额度，碳排放权"
+   },
+   {
+    "w": "timber",
+    "cn": "n. 木材，木料"
+   },
+   {
+    "w": "exclusively",
+    "cn": "adv. 专门地，排他地，仅仅"
+   },
+   {
+    "w": "revival",
+    "cn": "n. 恢复，复兴"
+   },
+   {
+    "w": "hectares",
+    "cn": "n. 公顷（hectare的复数）"
+   }
+  ]
+ }
+}

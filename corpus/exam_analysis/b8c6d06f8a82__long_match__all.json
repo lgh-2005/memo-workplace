@@ -1,0 +1,234 @@
+{
+ "schemaVersion": 1,
+ "id": "b8c6d06f8a82__long_match__all",
+ "examId": "b8c6d06f8a82",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2015 年 6 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T04:45:50.023Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 36289,
+ "usage": {
+  "prompt_tokens": 783,
+  "completion_tokens": 3751,
+  "total_tokens": 4534,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2072
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 783
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "EMV芯片卡与磁条卡安全问题",
+  "strategy": [
+   "先读题干，划出专有名词、数字、比较、因果、观点等关键词。",
+   "扫读段落时优先定位同义替换，而非原词复现。",
+   "关注题干中的逻辑关系，如因果、转折、对比，在原文中找对应表达。",
+   "答案字母顺序不一定与段落顺序一致，以关键词匹配为准。",
+   "注意一段可能被多题选为答案，扫读时做好段落标记。"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "H",
+    "cn": "国际旅行最好使用 EMV 卡。",
+    "keywords": [
+     "EMV card",
+     "international travel",
+     "best"
+    ],
+    "paraphrase": "题干中的 best 可能对应原文的 advisable/recommended；international travel 可能替换为 overseas trips/going abroad；EMV card 可能替换为 chip-enabled card 或 chip-and-PIN card。",
+    "tip": "定位 H 段中同时出现 international travel 与 EMV/chip 的句子。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "cn": "信用卡和借记卡上的个人信息越来越容易受到黑客攻击。",
+    "keywords": [
+     "personal information",
+     "credit and debit cards",
+     "hacking",
+     "vulnerable"
+    ],
+    "paraphrase": "vulnerable to hacking 可能替换为 susceptible to cyber attacks/data breaches；personal information 可能替换为 sensitive data/account details；increasingly 可能替换为 growing/increasing。",
+    "tip": "扫读 B 段，找 hacking/identity theft 与 card information 同现。"
+   },
+   {
+    "number": 38,
+    "answer": "G",
+    "cn": "法国卡公司采用 EMV 技术部分原因是电话服务效率低下。",
+    "keywords": [
+     "French card companies",
+     "EMV technology",
+     "inefficient telephone service",
+     "adopted"
+    ],
+    "paraphrase": "partly because of 可能对应 due in part to/one reason was；inefficient telephone service 可能替换为 poor/unreliable phone lines；adopted 可能替换为 switched to/embraced。",
+    "tip": "定位 G 段中 France/French 与电话、EMV 的因果表述。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "cn": "虽然许多国家使用更智能的 EMV 卡，美国仍坚持使用旧的磁条技术。",
+    "keywords": [
+     "many countries",
+     "EMV cards",
+     "U.S.",
+     "magstripe technology"
+    ],
+    "paraphrase": "smarter 可能替换为 chip-based/more secure；clings to 可能替换为 still relies on/has not adopted；old magstripe technology 可能替换为 outdated magnetic stripe cards。",
+    "tip": "扫读 C 段，注意对比转折 while，找 U.S. 与 magstripe。"
+   },
+   {
+    "number": 40,
+    "answer": "A",
+    "cn": "正在采取措施防止黑客实施身份盗窃。",
+    "keywords": [
+     "attempts",
+     "prevent hackers",
+     "identity theft"
+    ],
+    "paraphrase": "attempts 可能替换为 efforts/steps/measures；prevent hackers from carrying out identity theft 可能替换为 combat identity fraud/protect consumers from cybercriminals。",
+    "tip": "定位 A 段中 identity theft 与 prevent/combat 同现。"
+   },
+   {
+    "number": 41,
+    "answer": "I",
+    "cn": "使用信用卡比借记卡安全得多。",
+    "keywords": [
+     "credit cards",
+     "safer",
+     "debit cards"
+    ],
+    "paraphrase": "much safer 可能替换为 offer far greater protection/significantly less risky；credit cards 与 debit cards 可能用比较级或对比句表达。",
+    "tip": "扫读 I 段找 credit 与 debit 的安全性对比。"
+   },
+   {
+    "number": 42,
+    "answer": "D",
+    "cn": "大银行一直不愿转向更安全的技术，因为涉及更高的成本。",
+    "keywords": [
+     "big banks",
+     "reluctant",
+     "switch",
+     "more secure technology",
+     "higher costs"
+    ],
+    "paraphrase": "reluctant 可能替换为 unwilling/hesitant；switch to more secure technology 可能替换为 adopt EMV/chip technology；higher costs 可能替换为 expensive/costly upgrade。",
+    "tip": "定位 D 段中 banks 与 cost 及 reluctant/unwilling 因果。"
+   },
+   {
+    "number": 43,
+    "answer": "L",
+    "cn": "使用磁条的零售商潜在责任远比升级其收银机成本更高。",
+    "keywords": [
+     "potential liability",
+     "retailers",
+     "magstripe",
+     "upgrading registers",
+     "costly"
+    ],
+    "paraphrase": "liability 可能替换为 financial responsibility/legal risk；upgrading registers 可能替换为 installing new POS terminals/chip readers；far more costly 可能替换为 much more expensive。",
+    "tip": "扫读 L 段找 liability 与 register/upgrade 的成本对比。"
+   },
+   {
+    "number": 44,
+    "answer": "F",
+    "cn": "美国零售商使用磁条卡使消费者面临丢失账户信息的风险。",
+    "keywords": [
+     "magstripe cards",
+     "American retailers",
+     "consumers",
+     "risks",
+     "losing account information"
+    ],
+    "paraphrase": "leaves consumers exposed to risks 可能替换为 puts customers at risk/makes them vulnerable；losing account information 可能替换为 having account data stolen/compromised。",
+    "tip": "定位 F 段中 retailers 使用 magstripe 导致消费者信息风险。"
+   },
+   {
+    "number": 45,
+    "answer": "O",
+    "cn": "消费者将成为从磁条向 EMV 技术转换的推动力量。",
+    "keywords": [
+     "consumers",
+     "driving force",
+     "conversion",
+     "magstripe to EMV"
+    ],
+    "paraphrase": "driving force 可能替换为 main driver/key factor；conversion 可能替换为 transition/migration；consumers 可能保持或替换为 card users/customers。",
+    "tip": "定位 O 段中 consumer demand/pressure 与 EMV adoption。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "EMV",
+    "cn": "芯片卡标准（名词）"
+   },
+   {
+    "w": "magstripe",
+    "cn": "磁条（名词）"
+   },
+   {
+    "w": "vulnerable",
+    "cn": "易受攻击的（形容词）"
+   },
+   {
+    "w": "hacking",
+    "cn": "黑客攻击（名词）"
+   },
+   {
+    "w": "identity theft",
+    "cn": "身份盗窃（名词）"
+   },
+   {
+    "w": "liability",
+    "cn": "责任（名词）"
+   },
+   {
+    "w": "retailer",
+    "cn": "零售商（名词）"
+   },
+   {
+    "w": "debit card",
+    "cn": "借记卡（名词）"
+   },
+   {
+    "w": "credit card",
+    "cn": "信用卡（名词）"
+   },
+   {
+    "w": "register",
+    "cn": "收银机；登记终端（名词）"
+   },
+   {
+    "w": "reluctant",
+    "cn": "不情愿的（形容词）"
+   },
+   {
+    "w": "conversion",
+    "cn": "转换；转变（名词）"
+   }
+  ]
+ }
+}

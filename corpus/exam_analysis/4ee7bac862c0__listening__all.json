@@ -1,0 +1,257 @@
+{
+ "schemaVersion": 1,
+ "id": "4ee7bac862c0__listening__all",
+ "examId": "4ee7bac862c0",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2016 年 12 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:05:43.237Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52677,
+ "usage": {
+  "prompt_tokens": 2215,
+  "completion_tokens": 2656,
+  "total_tokens": 4871,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2215,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2656,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2215,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于题目选项文本的语言特征推断，不涉及任何录音原文内容的引用或编造。",
+  "overview": "本场听力共 7 段材料、25 题。第 1 段（Q1-4）选项围绕全球气候变化与经济政策；第 2 段（Q5-8）涉及成功要素——运气、天赋、练习与热情；第 3 段（Q9-12）关于某自然地貌及印第安传说；第 4 段（Q13-15）讨论日常消费习惯与储蓄理财；第 5 段（Q16-18）探讨生活中压力/挑战的必要性与积极作用；第 6 段（Q19-22）涉及 3D 打印与时尚设计；第 7 段（Q23-25）关注技术发展带来的行业竞争与成本分担。",
+  "strategy": [
+   "预读选项时快速圈出各题关键名词和动词，判断话题方向，减少听时认知负荷",
+   "选项中含有绝对词（only, always, no one）的往往是干扰项，听时重点留意是否有相应限定",
+   "对比四个选项的差异点：相同部分是背景，不同部分才是考点，听时聚焦差异词",
+   "因果关系常考：留意 because, so, as a result, lead to 等信号词出现的前后内容",
+   "当两个选项意思相反时，答案大概率在其中之一，可据此缩小范围",
+   "短文听力第一句和最后一句常含主旨信息，注意首尾句的关键词"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "全球气候变化与经济政策应对",
+    "optionSignals": "Q1 四个选项均以 It 开头描述某研究/机构的功能方向，考查主旨定位；Q2 含比较级 more costly 及 most pressing，考查观点判断；Q3 均为名词短语，问关键举措；Q4 均为动词短语，问建议行动。",
+    "tips": [
+     "Q1 四项都描述研究方向，但 C 项 links...to 表示\"关联两个领域\"，语义更具综合性，与学术机构定位吻合",
+     "Q2 中 A 含 a long time、D 含 endless disputes 属极端表述，听时注意是否有对应依据",
+     "Q4 选项均为祈使/建议式短语，听时关注 should, need to, had better 等建议信号词"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "成功的决定因素：运气、天赋、练习与热情",
+    "optionSignals": "Q5 为 wh- 疑问句式选项，问讨论话题；Q6 以 It 开头解释某概念（luck）的内涵；Q7 四项均为观点陈述句，问说话者的核心论点；Q8 涉及 passionate, fun, money 等词，考查热情与财富的关系。",
+    "tips": [
+     "Q6 中 A 含 only once in a while 语气绝对，B 含 no one can possibly 同样极端，优先排除",
+     "Q7 中 A 含 rarely、B 含 must，绝对化程度高；D 项 essential 虽强但属常见论点，需听到明确支撑",
+     "Q8 四项都谈工作/金钱关系，C 项 passionate...wealthy 逻辑积极且不极端，符合励志语境"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11,
+     12
+    ],
+    "sharedTopic": "自然奇观（巨树桩/岩石地貌）及印第安传说",
+    "optionSignals": "Q9 四项均为名词短语描述某物外观，问 what 类细节；Q10 问成因，选项含 human activity, wind, chemical, fire 等；Q11-12 涉及 sacred place, supernatural powers, sheltering, lifting，带有传说/神话色彩。",
+    "tips": [
+     "Q9 中 stump（树桩）、chimney（烟囱）等词较生僻，需提前熟悉发音",
+     "Q10 考查自然侵蚀成因，wind and water 属地质学常见搭配，选项间对比即可缩小范围",
+     "Q12 四项描述保护方式，C 项 lifting them well above the ground 带有超自然特征，与 Q11 正确答案 D（supernatural powers）形成呼应"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "日常消费习惯与小额储蓄的重要性",
+    "optionSignals": "Q13 均以 They will 开头描述行为预测；Q14 以 They 开头评价某类消费（luxury/impulse purchases）；Q15 为完整观点句，涉及 savings, budgeting, affordable 等理财词汇。",
+    "tips": [
+     "Q13 四项行为截然不同，听时抓住地点或场景关键词即可定位",
+     "Q15 中 D 项 Small daily savings can make a big difference 属经典理财格言式表述，选项本身逻辑自洽度高",
+     "Q14 中 B 含 extremely wealthy、C 含 altogether 属极端表述，可优先标记为疑似干扰项"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "生活中压力或挑战的必要性与积极作用",
+    "optionSignals": "Q16 四项对某事物做价值判断（necessary, harmful, enrich, done away with）；Q17 描述人的感受状态（stressed, overwhelmed, anxious, exhausted）；Q18 描述积极效果（expand, prolong, narrow, lessen），含反义对比。",
+    "tips": [
+     "Q16 中 A 与 B 完全对立（取消 vs 必要），答案很可能在二者之一",
+     "Q18 中 A expand 与 C narrow 语义相反，构成典型反义对，重点听相关描述",
+     "Q17 四项都描述负面感受但程度不同，需听清程度副词和具体语境"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "3D 打印技术在时尚设计领域的应用",
+    "optionSignals": "Q19 以 It 开头描述物品特征；Q20 四项均以 When 引导时间状语，问事件发生时间；Q21 描述材料特性（difficult, hard, breakable, expensive）；Q22 描述某物的意义或本质，含 breakthrough 等评价词。",
+    "tips": [
+     "Q19 中 B 项 3D printer 是本段核心技术词，若听到该词即可快速锁定",
+     "Q20 四个时间节点各不相同，听时关注时间线索词如 when, during, at that time",
+     "Q22 中 D 项 breakthrough in printing material 与 3D 打印话题高度契合，属总结性评价"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "技术进步带来的行业竞争与企业应对策略",
+    "optionSignals": "Q23 以 They 开头描述问题来源或性质；Q24 描述某行业/市场特征（attractive, competitive, huge investment）；Q25 为名词短语描述解决方案（cooperation, recruiting, training, sharing）。",
+    "tips": [
+     "Q23 中 A 与 C 都提到 technology 但立场不同（引发问题 vs 解决问题），需听清语境",
+     "Q25 四项均为应对策略，D 项 sharing of costs 与中小企业抱团降本的逻辑一致",
+     "Q24 中 intensely competitive 与 technology 行业的普遍认知吻合，属高频考查搭配"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "consensus",
+    "cn": "共识，一致意见"
+   },
+   {
+    "w": "transition",
+    "cn": "转型，过渡"
+   },
+   {
+    "w": "low-carbon",
+    "cn": "低碳的"
+   },
+   {
+    "w": "passionate",
+    "cn": "充满热情的"
+   },
+   {
+    "w": "supernatural",
+    "cn": "超自然的"
+   },
+   {
+    "w": "bankruptcy",
+    "cn": "破产"
+   },
+   {
+    "w": "overwhelmed",
+    "cn": "不堪重负的，压倒性的"
+   },
+   {
+    "w": "breakable",
+    "cn": "易碎的"
+   },
+   {
+    "w": "breakthrough",
+    "cn": "突破"
+   },
+   {
+    "w": "entrepreneur",
+    "cn": "企业家，创业者"
+   },
+   {
+    "w": "intensely",
+    "cn": "激烈地，强烈地"
+   },
+   {
+    "w": "budgeting",
+    "cn": "预算编制"
+   },
+   {
+    "w": "convenience store",
+    "cn": "便利店"
+   }
+  ]
+ }
+}

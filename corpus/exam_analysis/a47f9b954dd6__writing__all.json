@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "a47f9b954dd6__writing__all",
+ "examId": "a47f9b954dd6",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年 3 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:48:25.078Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 53197,
+ "usage": {
+  "prompt_tokens": 727,
+  "completion_tokens": 4138,
+  "total_tokens": 4865,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 727,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4138,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 727,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕\"外貌焦虑\"展开论述，可评论、举例或结合个人经历，字数150-200词。",
+    "outline": [
+     "第一段：以题目给定首句引入话题，点明外貌焦虑日益严重，值得关注。",
+     "第二段：分析外貌焦虑的危害——损害心理健康（举例说明）、浪费时间精力、助长不切实际的审美标准。",
+     "第三段：提出应对策略——学校开展媒介素养教育、平台承担责任、个人学会悦纳自我；总结收束。"
+    ],
+    "sample": "People are now increasingly aware of the danger of 'appearance anxiety' or being obsessed with one's looks. This growing concern deserves serious attention, as it has profound implications for both individuals and society.\n\nTo begin with, appearance anxiety can severely undermine mental health. Individuals who constantly compare themselves to idealized images on social media are prone to depression, low self-esteem, and even eating disorders. A friend of mine, for instance, developed an unhealthy obsession with cosmetic filters, which gradually eroded her confidence in real-life interactions. Moreover, this obsession diverts energy from more meaningful pursuits. Instead of cultivating talents or nurturing relationships, many young people spend excessive time and money on altering their appearance, chasing unrealistic standards of beauty manufactured by commercial interests.\n\nTo combat this troubling trend, a multifaceted approach is needed. Schools should incorporate media literacy programs that teach students to critically evaluate beauty standards. Meanwhile, social media platforms ought to take responsibility by reducing the promotion of unrealistic body images. Most importantly, individuals must learn to embrace their uniqueness and recognize that true worth extends far beyond physical appearance.\n\nIn conclusion, only by addressing appearance anxiety collectively can we foster a healthier and more inclusive society.",
+    "phrases": [
+     {
+      "en": "be obsessed with",
+      "cn": "沉迷于、过度关注；常用于描述对某事的不健康执念"
+     },
+     {
+      "en": "undermine one's mental health",
+      "cn": "损害心理健康；undermine 比 damage 更正式，含'逐渐侵蚀'之意"
+     },
+     {
+      "en": "be prone to",
+      "cn": "易于、倾向于；后接名词或动名词，表示某种消极倾向"
+     },
+     {
+      "en": "erode one's confidence",
+      "cn": "侵蚀某人的信心；erode 为高分动词，比 reduce 更生动形象"
+     },
+     {
+      "en": "divert energy from",
+      "cn": "将精力从……转移走；divert 强调方向偏离，属高级用词"
+     },
+     {
+      "en": "a multifaceted approach",
+      "cn": "多层面的方法；multifaceted 比 comprehensive 更具体、更高级"
+     },
+     {
+      "en": "incorporate ... into",
+      "cn": "将……纳入；常用于建议类段落，搭配 programs/curricula 等"
+     },
+     {
+      "en": "embrace one's uniqueness",
+      "cn": "欣然接纳自身独特性；embrace 语义积极，比 accept 更有力度"
+     },
+     {
+      "en": "manufactured by commercial interests",
+      "cn": "由商业利益制造出的；manufactured 暗示'人为操控'，批判性强"
+     },
+     {
+      "en": "extend far beyond",
+      "cn": "远远超出；常用于强调某事物的价值不限于表面"
+     }
+    ],
+    "pitfalls": [
+     "未使用题目给定首句或擅自修改首句，直接扣分",
+     "全文只泛泛而谈无具体例证，内容空洞，影响内容分",
+     "用词重复严重，如多次使用 important/think，缺乏同义替换",
+     "段落缺乏逻辑连接词（moreover, meanwhile 等），结构松散",
+     "字数不足150词或超过200词，不符合题目硬性要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "Many people care too much about their looks.",
+      "better": "Individuals who constantly compare themselves to idealized images on social media are prone to depression and low self-esteem.",
+      "note": "用定语从句细化主语，增加具体危害，避免笼统表达"
+     },
+     {
+      "plain": "We should solve this problem in many ways.",
+      "better": "To combat this troubling trend, a multifaceted approach is needed.",
+      "note": "combat 比 solve 更有力度，multifaceted 展示词汇深度"
+     },
+     {
+      "plain": "People should accept themselves.",
+      "better": "Individuals must learn to embrace their uniqueness and recognize that true worth extends far beyond physical appearance.",
+      "note": "embrace 比 accept 更积极，并用 that 从句扩展论证深度"
+     },
+     {
+      "plain": "This wastes people's time.",
+      "better": "This obsession diverts energy from more meaningful pursuits.",
+      "note": "divert 和 pursuits 属六级高频词汇，表达更精确学术"
+     },
+     {
+      "plain": "In a word, we should pay attention to this problem.",
+      "better": "Only by addressing appearance anxiety collectively can we foster a healthier and more inclusive society.",
+      "note": "倒装句式展示语法能力，collectively 和 foster 提升用词档次"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only by addressing appearance anxiety collectively can we foster a healthier and more inclusive society. —— only by... 引导的倒装句，适用于总结段，展示高级语法。",
+   "Individuals who constantly compare themselves to idealized images on social media are prone to depression, low self-esteem, and even eating disorders. —— 定语从句+三项并列，兼顾句式复杂度与信息密度。",
+   "A friend of mine developed an unhealthy obsession with cosmetic filters, which gradually eroded her confidence in real-life interactions. —— 非限制性定语从句+个人举例，增强说服力与真实感。",
+   "Instead of cultivating talents or nurturing relationships, many young people spend excessive time and money on altering their appearance, chasing unrealistic standards of beauty manufactured by commercial interests. —— instead of 对比结构+现在分词短语+过去分词后置定语，一句话涵盖三层语法亮点。",
+   "True worth extends far beyond physical appearance. —— 简洁有力的哲理性收束句，适合点睛使用。"
+  ]
+ }
+}

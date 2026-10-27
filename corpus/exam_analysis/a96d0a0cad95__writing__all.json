@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "a96d0a0cad95__writing__all",
+ "examId": "a96d0a0cad95",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2021 年 12 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:37:29.101Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42997,
+ "usage": {
+  "prompt_tokens": 762,
+  "completion_tokens": 2683,
+  "total_tokens": 3445,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 762,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2683,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 762,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "针对青少年追星现象进行评论，分析其原因或影响，并提出解决措施。要求150-200词。",
+    "outline": [
+     "第一段：引出追星现象，概述其表现及社会关注度，点明其可能带来的负面影响。",
+     "第二段：分析该现象产生的原因（如社交媒体推波助澜、青少年心理特点、娱乐产业商业化运作等）。",
+     "第三段：从家庭、学校、政府等多角度提出应对措施，并以呼吁性总结收束全文。"
+    ],
+    "sample": "In recent years, star chasing has become increasingly prevalent among teenagers, raising widespread concern in society. Many young people blindly worship pop stars, imitating their speech and dress, and even spending exorbitant sums to attend concerts or meet their idols in person. This phenomenon, if left unchecked, may lead to serious consequences.\n\nSeveral factors contribute to this trend. First, the rapid development of social media has made celebrities more accessible, fueling teenagers' obsession. Second, adolescents are at a stage where they are still shaping their identities and are therefore susceptible to external influences. Third, some entertainment companies deliberately exploit young fans' enthusiasm for commercial profits.\n\nTo address this issue, concerted efforts from multiple parties are essential. Parents should maintain open communication with their children, guiding them to distinguish between healthy admiration and blind worship. Schools ought to incorporate media literacy programs into their curricula, helping students develop critical thinking skills. Furthermore, the government should impose stricter regulations on the entertainment industry to prevent the exploitation of young consumers. Only through collective efforts can we ensure that teenagers channel their energy into more constructive pursuits.",
+    "phrases": [
+     {
+      "en": "raise widespread concern",
+      "cn": "引起广泛关注；常用于引出社会现象，搭配 in society / among the public"
+     },
+     {
+      "en": "if left unchecked",
+      "cn": "如果不加以遏制；插入语结构，用于警示后果，增加行文层次感"
+     },
+     {
+      "en": "contribute to this trend",
+      "cn": "导致/促成该趋势；正式表达因果关系，比 cause 更书面"
+     },
+     {
+      "en": "be susceptible to external influences",
+      "cn": "容易受到外部影响；形容青少年心理特征的高分搭配"
+     },
+     {
+      "en": "concerted efforts from multiple parties",
+      "cn": "多方协同努力；提建议段落的经典开头表达"
+     },
+     {
+      "en": "distinguish between A and B",
+      "cn": "区分A与B；比 tell apart 更正式，适用于议论文"
+     },
+     {
+      "en": "incorporate … into …",
+      "cn": "将……纳入……；常用于建议学校或机构采取行动"
+     },
+     {
+      "en": "impose stricter regulations on",
+      "cn": "对……实施更严格的监管；政策建议类常用搭配"
+     },
+     {
+      "en": "channel one's energy into",
+      "cn": "将精力投入到……；比 put effort into 更生动地道"
+     },
+     {
+      "en": "at great expenses",
+      "cn": "花费巨大代价；与题干呼应，可灵活用于描写不理性消费行为"
+     }
+    ],
+    "pitfalls": [
+     "审题遗漏：题目明确要求 comment + suggest measures，缺少任一部分将严重扣分",
+     "通篇空泛说理而不结合题干所给的追星具体表现（模仿言行、花重金追见面会等）",
+     "建议段只写一个角度（如只写家长应如何做），缺乏多主体、多层次的措施",
+     "词汇重复：反复使用 teenagers / stars 而不用同义替换如 adolescents / celebrities / idols",
+     "段落无过渡词衔接，三段之间逻辑跳跃，缺少 First/Second/Furthermore 等信号词"
+    ],
+    "upgrades": [
+     {
+      "plain": "Many teenagers like chasing stars very much.",
+      "better": "Star chasing has become increasingly prevalent among teenagers.",
+      "note": "用 become prevalent 替代 like … very much，表达更学术正式，避免口语化"
+     },
+     {
+      "plain": "This is because social media develops fast.",
+      "better": "The rapid development of social media has made celebrities more accessible.",
+      "note": "名词化表达 + make + O + C 结构，信息密度更高，句式更成熟"
+     },
+     {
+      "plain": "We should solve this problem together.",
+      "better": "Only through collective efforts can we ensure that teenagers channel their energy into more constructive pursuits.",
+      "note": "Only + 介词短语引导部分倒装，增强语气与句式多样性，属高分亮点句"
+     },
+     {
+      "plain": "Schools should teach students to think carefully.",
+      "better": "Schools ought to incorporate media literacy programs into their curricula, helping students develop critical thinking skills.",
+      "note": "具体化建议内容（media literacy）+ 现在分词伴随状语，比笼统表述更有说服力"
+     },
+     {
+      "plain": "Some companies use fans to make money.",
+      "better": "Some entertainment companies deliberately exploit young fans' enthusiasm for commercial profits.",
+      "note": "exploit / enthusiasm / commercial profits 替代基础词汇，展现词汇广度与深度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "This phenomenon, if left unchecked, may lead to serious consequences. —— 插入条件状语 if left unchecked 使行文紧凑，语气具有警示力，是议论文\"敲警钟\"的经典句式。",
+   "Adolescents are at a stage where they are still shaping their identities and are therefore susceptible to external influences. —— 定语从句 + therefore 因果衔接，精准描述青少年心理特征，展现分析深度。",
+   "Parents should maintain open communication with their children, guiding them to distinguish between healthy admiration and blind worship. —— 现在分词作伴随状语，healthy admiration 与 blind worship 形成对比，表达辩证观点。",
+   "Only through collective efforts can we ensure that teenagers channel their energy into more constructive pursuits. —— Only 引导的倒装句收束全文，channel energy into 用词精准，结尾铿锵有力。"
+  ]
+ }
+}

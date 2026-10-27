@@ -1,0 +1,319 @@
+{
+ "schemaVersion": 1,
+ "id": "522b91adcdfa__use_of_english__all",
+ "examId": "522b91adcdfa",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2007 年考研英语真题（旧）",
+ "year": 2007,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:19:22.450Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 93274,
+ "usage": {
+  "prompt_tokens": 1721,
+  "completion_tokens": 5049,
+  "total_tokens": 6770,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1721,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5049,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1721,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "拉美独立后的国家建设与挑战",
+  "gist": "文章讲述了19世纪30年代前西班牙和葡萄牙殖民地独立后，新兴国家领导人在代议制政府、宗教自由、废除奴隶制和平等主义等方面的理想追求与现实困境，揭示了保守势力、财政需求和民众自治能力不足等因素对改革进程的制约。",
+  "difficulty": "中等",
+  "translation": "到1830年，昔日的西班牙和葡萄牙殖民地已成为独立国家。这些国家大约两千万居民满怀希望地展望未来。诞生于旧政权和伊比利亚殖民主义的危机之中，许多独立运动的领导人共同拥有以下理想：代议制政府、向人才开放的职业机会、商贸自由、私有财产权，以及以个人作为社会基础的信念。总体而言，人们相信新生国家应该是主权独立的，领土面积足够大以保证经济上的自主运行，并由一套共同的法律加以整合。\n\n然而，在宗教自由和教会地位的问题上，领导层之间的共识要少得多。罗马天主教一直是国教，也是西班牙王室唯一允许存在的宗教。尽管大多数领导人试图维持天主教作为新国家的官方宗教，一些人却试图结束对其他信仰的排斥。捍卫教会成为保守势力的战斗口号。\n\n早期独立领导人的理想往往是平等主义的，崇尚万物平等。玻利瓦尔曾接受海地的援助，并承诺作为回报在其解放的地区废除奴隶制。到1854年，除了西班牙剩余的殖民地外，奴隶制已在各地被废除。早期关于废除印第安人贡赋和混血人口税的承诺，兑现起来要缓慢得多，因为新兴国家仍然需要此类政策所产出的财政收入。平等主义情怀常常因为担忧大众缺乏自治和民主的准备而受到抑制。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "B",
+    "correct": "inhabitants",
+    "why": "inhabitants指\"居民、住民\"，用来描述居住在这些国家的约两千万人口最为恰当。上下文强调的是这些国家中生活的全体人口，inhabitants与of these nations搭配自然通顺。",
+    "traps": "A) natives强调\"本地人、土著\"，忽略了殖民后裔等非原住民人口；C) peoples指\"民族\"，强调种族或民族群体而非一般人口；D) individuals指\"个体\"，语义过于零散，不适合与20 million搭配描述国家人口。",
+    "tip": "inhabitants强调\"居住\"属性，适用于描述国家人口总体。"
+   },
+   {
+    "number": 2,
+    "answer": "D",
+    "correct": "hopefully",
+    "why": "文章整体语境是新生国家刚独立、领导人怀抱理想，对未来充满期待，因此looked hopefully to the future（满怀希望地展望未来）最符合积极向前的上下文逻辑。",
+    "traps": "A) confusedly表\"困惑地\"，语义偏消极且无上下文支撑；B) cheerfully表\"兴高采烈地\"，程度过强且不如hopefully贴合\"展望未来\"的语境；C) worriedly表\"忧虑地\"，与下文描述领导人拥有诸多积极理想的基调矛盾。",
+    "tip": "looked hopefully to the future是固定表达，意为\"满怀希望地展望未来\"。"
+   },
+   {
+    "number": 3,
+    "answer": "A",
+    "correct": "shared",
+    "why": "shared the ideals表示\"共同拥有/分享这些理想\"，呼应many of the leaders表明不止一人，强调领导人之间的共识。后文列举了多项具体理想，说明这些是他们共同认可的。",
+    "traps": "B) forgot\"忘记\"与上下文积极描述理想的语境矛盾；C) attained\"达到\"，理想尚未实现，不合逻辑；D) rejected\"拒绝\"与下文详细列举理想的内容完全相悖。",
+    "tip": "share ideals是常见搭配，表示\"共同拥有理想信念\"。"
+   },
+   {
+    "number": 4,
+    "answer": "C",
+    "correct": "open",
+    "why": "careers open to talent是一个经典的政治理念表达，源于法国大革命，意为\"职业向有才能者开放\"，即任人唯才。open to表示\"对……开放\"，与talent搭配构成完整政治理念。",
+    "traps": "A) related to talent指\"与才能有关的职业\"，语义模糊；B) close to talent指\"接近才能\"，搭配不当；D) devoted to talent指\"献身于才能\"，语义不通。",
+    "tip": "careers open to talent是源自拿破仑时期的经典政治术语。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "right",
+    "why": "the right to private property意为\"私有财产权\"，是政治理念中的核心概念，与前后文列举的代议制政府、商贸自由等平行，构成一系列基本权利的罗列。",
+    "traps": "A) access to指\"接触/获取途径\"，不够准确，强调的是通道而非权利；B) succession to指\"继承\"，语义不符；D) return to指\"回归\"，与private property搭配不合理。",
+    "tip": "the right to property是政治学核心术语，意为\"财产权\"。"
+   },
+   {
+    "number": 6,
+    "answer": "D",
+    "correct": "Generally",
+    "why": "Generally表示\"总体而言、一般来说\"，引出对前述诸多理想的概括性总结：新国家应主权独立且由共同法律整合。这是一种总结性过渡，且为下一段\"however, there was less agreement\"的转折做铺垫。",
+    "traps": "A) Presumably\"大概\"表推测，语气不确定，不符合陈述事实的语境；B) Incidentally\"顺便说\"表附带信息，逻辑关系不对；C) Obviously\"显然\"语气过于强烈，且该信息并非不言而喻。",
+    "tip": "Generally用于总括性陈述，常出现在段落开头起承上启下作用。"
+   },
+   {
+    "number": 7,
+    "answer": "B",
+    "correct": "common",
+    "why": "a common set of laws意为\"一套共同的法律\"，与前文integrated（整合）呼应：用共同的法律体系将国家整合起来。common强调\"共有的、共通的\"，逻辑上最为贴切。",
+    "traps": "A) unique\"独特的\"强调独一无二，与integrated的整合含义不搭；C) particular\"特定的\"过于具体，缺乏\"共同\"的含义；D) typical\"典型的\"强调代表性而非共享性，语义偏离。",
+    "tip": "common set of laws强调法律的共通性与统一性。"
+   },
+   {
+    "number": 8,
+    "answer": "A",
+    "correct": "freedom",
+    "why": "freedom of religion意为\"宗教自由\"，与下文讨论是否允许其他信仰（other faiths）、天主教的国教地位等内容完全吻合。整段围绕宗教信仰自由展开讨论。",
+    "traps": "B) origin of religion\"宗教起源\"属于学术话题，与政治讨论无关；C) impact of religion\"宗教影响\"过于笼统，下文具体谈的是信仰自由问题；D) reform of religion\"宗教改革\"并非本段主题。",
+    "tip": "freedom of religion是核心政治术语，意为\"宗教信仰自由\"。"
+   },
+   {
+    "number": 9,
+    "answer": "B",
+    "correct": "however",
+    "why": "however表转折，连接第一段的\"领导人共享诸多理想\"与第二段的\"在宗教问题上共识较少\"，形成对比。上下文存在明显的语义反差。",
+    "traps": "A) therefore表因果，前后不构成因果关系；C) indeed表强调或递进，但这里是语义转向而非加强；D) moreover表递进补充，但此处是转折而非添加信息。",
+    "tip": "however作为插入语常用于段内转折，提示前后语义对比。"
+   },
+   {
+    "number": 10,
+    "answer": "C",
+    "correct": "among",
+    "why": "agreement among the leadership意为\"领导层之间的共识\"，among表示\"在（三者或以上）之间\"，用于描述领导层内部不同成员之间意见分歧，与leadership为集体名词的特点吻合。",
+    "traps": "A) with指\"与……一致\"，需要有明确的另一方，此处领导层是内部分歧；B) about指\"关于\"，agreement about改变了句意方向；D) by搭配agreement不构成常见用法。",
+    "tip": "agreement among强调群体内部的共识或分歧。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "allowed",
+    "why": "allowed by the Spanish crown意为\"被西班牙王室所允许的\"，表示天主教是王室唯一准许存在的宗教，与前文state religion呼应，反映殖民时期的宗教垄断政策。",
+    "traps": "B) preached\"传道、宣讲\"描述的是传教行为，不是王室的政策行为；C) granted\"授予\"强调赋予权利，但此处重点是\"允许存在\"；D) funded\"资助\"仅涉及经济层面，过于片面。",
+    "tip": "allowed by强调权力机构的许可与准入。"
+   },
+   {
+    "number": 12,
+    "answer": "D",
+    "correct": "While",
+    "why": "While在此表让步，意为\"尽管\"，引出\"大多数人维持天主教国教地位\"与\"一些人试图结束对其他信仰的排斥\"之间的对比，构成While most...some...的经典让步转折结构。",
+    "traps": "A) Since表原因或时间，前后不构成因果关系；B) If表假设，但本句陈述的是事实而非假设；C) Unless表否定条件，逻辑不通。",
+    "tip": "While most...some...是典型的让步转折句型。"
+   },
+   {
+    "number": 13,
+    "answer": "A",
+    "correct": "as",
+    "why": "maintain Catholicism as the official religion意为\"维持天主教作为官方宗教\"，as在此表身份或资格，即\"作为\"，是maintain...as...的常见搭配。",
+    "traps": "B) for做介词时不能表达\"作为（身份）\"的含义，搭配不当；C) under\"在……之下\"语义不通；D) against\"反对\"与maintain的含义完全矛盾。",
+    "tip": "maintain A as B表示\"维持A作为B的身份/地位\"。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "exclusion",
+    "why": "end the exclusion of other faiths意为\"结束对其他信仰的排斥/排除\"，与前文only one allowed呼应：既然天主教是唯一被允许的，那其他宗教就是被排斥的，改革派想终结这种排斥。",
+    "traps": "A) spread\"传播\"语义方向相反，结束传播不合逻辑；B) interference\"干涉\"指外部介入，不符合宗教垄断的语境；D) influence\"影响\"过于宽泛模糊，不能精确表达宗教排斥。",
+    "tip": "exclusion与前文only one allowed形成语义呼应。"
+   },
+   {
+    "number": 15,
+    "answer": "B",
+    "correct": "cry",
+    "why": "rallying cry是固定搭配，意为\"战斗口号、号召口号\"，指捍卫教会成为保守势力聚集力量的口号。rallying cry在政治语境中非常常见。",
+    "traps": "A) support虽有\"支持\"之意，但rallying support不是标准固定搭配；C) plea指\"请求、恳求\"，语气偏弱，不符合保守势力积极动员的语境；D) wish指\"愿望\"，过于温和被动。",
+    "tip": "rallying cry是固定搭配，意为\"号召口号、战斗呐喊\"。"
+   },
+   {
+    "number": 16,
+    "answer": "D",
+    "correct": "promised",
+    "why": "promised in return to abolish slavery意为\"承诺作为回报废除奴隶制\"，与前文received aid from Haiti形成\"接受援助—作出承诺\"的对应逻辑，且下文Early promises也回扣promise这一关键词。",
+    "traps": "A) urged\"敦促\"需要敦促对象，此处缺少宾语；B) intended\"打算\"语气不够强，无法与in return形成对等交换关系；C) expected\"期望\"不表示主动承诺，逻辑不通。",
+    "tip": "promised in return构成\"作为回报而承诺\"的因果交换逻辑。"
+   },
+   {
+    "number": 17,
+    "answer": "C",
+    "correct": "remaining",
+    "why": "remaining colonies意为\"剩余的殖民地\"，指到1854年仍未独立、继续处于西班牙控制下的殖民地（如古巴、波多黎各），与前文everywhere except构成\"除了仍存殖民地之外到处都废除了\"的逻辑。",
+    "traps": "A) controlling\"控制中的\"做形容词不常见，且语义重心偏差；B) former\"以前的\"指已不存在的，与except矛盾——已不存在的殖民地无需排除；D) original\"最初的\"强调起源而非现存状态。",
+    "tip": "remaining强调\"依然存在的\"，与except的排除逻辑吻合。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "slower",
+    "why": "came much slower意为\"来得慢得多\"，because引出原因：新国家仍需要这些政策带来的财政收入，因此废除贡赋和税收的承诺兑现缓慢。与前文early promises形成\"承诺早但兑现慢\"的对比。",
+    "traps": "B) faster\"更快\"与because后给出的阻碍原因矛盾；C) easier\"更容易\"同样与财政困难的原因矛盾；D) tougher\"更艰难\"虽语义接近，但came tougher搭配不自然，且slower更精准表达时间维度的延迟。",
+    "tip": "came slower与because构成\"结果慢—原因是需要收入\"的因果链。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "produced",
+    "why": "able policies produced意为\"此类政策所产出的（收入）\"，produced与revenue搭配，表示政策带来/产出财政收入。produce revenue是标准搭配。",
+    "traps": "A) created语义上可行但created revenue不如produced revenue地道常见；C) contributed\"贡献\"为不及物动词，需加to，语法不通；D) preferred\"偏好\"语义完全不合，政策不能\"偏好\"收入。",
+    "tip": "produce revenue是标准经济类搭配，意为\"产生收入\"。"
+   },
+   {
+    "number": 20,
+    "answer": "D",
+    "correct": "unprepared for",
+    "why": "unprepared for self-rule and democracy意为\"没有为自治和民主做好准备\"，与前文fears（担忧）呼应：担忧民众尚未准备好实行自治民主，因此平等主义情怀受到抑制。",
+    "traps": "A) puzzled by指\"被困惑\"，民众困惑于民主不等于不适合民主，逻辑偏离；B) hostile to指\"敌对\"，过于极端且无上下文支撑；C) pessimistic about指\"悲观\"，主语应是有判断力的人而非mass of the population在此语境中的用法不当。",
+    "tip": "unprepared for与fears构成\"担忧民众未做好准备\"的因果逻辑。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "Iberian",
+    "cn": "伊比利亚的（adj.），指西班牙和葡萄牙所在半岛"
+   },
+   {
+    "w": "colonialism",
+    "cn": "殖民主义（n.）"
+   },
+   {
+    "w": "representative government",
+    "cn": "代议制政府（n. 短语）"
+   },
+   {
+    "w": "sovereign",
+    "cn": "拥有主权的，至高无上的（adj.）"
+   },
+   {
+    "w": "economically viable",
+    "cn": "经济上可行的（adj. 短语）"
+   },
+   {
+    "w": "Roman Catholicism",
+    "cn": "罗马天主教（n.）"
+   },
+   {
+    "w": "rallying cry",
+    "cn": "战斗口号，号召（n. 短语）"
+   },
+   {
+    "w": "egalitarian",
+    "cn": "平等主义的（adj.）"
+   },
+   {
+    "w": "abolish",
+    "cn": "废除（v.）"
+   },
+   {
+    "w": "tribute",
+    "cn": "贡赋，贡品（n.）"
+   },
+   {
+    "w": "tempered",
+    "cn": "被调和的，被缓和的（v. 过去分词）"
+   },
+   {
+    "w": "revenue",
+    "cn": "财政收入，税收（n.）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Generally",
+    "role": "总括前文多项理想，引出概括性论述"
+   },
+   {
+    "w": "however",
+    "role": "段内插入语，标记从共识到分歧的转折"
+   },
+   {
+    "w": "While",
+    "role": "让步连词，引出most与some的对比让步关系"
+   },
+   {
+    "w": "because",
+    "role": "因果连词，解释承诺兑现缓慢的原因"
+   },
+   {
+    "w": "except",
+    "role": "排除连词，限定奴隶制废除的例外范围"
+   },
+   {
+    "w": "often",
+    "role": "频率副词，暗示理想与现实之间的落差并非偶然"
+   }
+  ]
+ }
+}

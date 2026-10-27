@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "2efb108c52cc__writing__all",
+ "examId": "2efb108c52cc",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2024 年 6 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:55:28.300Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41050,
+ "usage": {
+  "prompt_tokens": 740,
+  "completion_tokens": 2734,
+  "total_tokens": 3474,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 740,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2734,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 740,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 2,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，以指定首句开头，围绕\"社会实践与学业同等重要\"展开论述，可举例或结合个人经历，150-200词。",
+    "outline": [
+     "第一段：以题目给定首句开篇，引出话题——当代大学生日益认识到社会实践与学术学习同等重要，并简述这一认知转变的背景。",
+     "第二段：分两方面论证。学术学习提供理论基础；社会实践培养实际能力，并以个人经历或他人事例加以佐证，说明二者相辅相成。",
+     "第三段：总结全文，呼吁大学生在学业与实践之间取得平衡，展望二者结合能更好地为未来做准备。"
+    ],
+    "sample": "Nowadays more and more college students have come to realize social practice and academic learning are equally important. This growing awareness reflects a significant shift in how young people perceive the true purpose of higher education.\n\nOn the one hand, academic learning provides students with a solid theoretical foundation, which is indispensable for their future career development. On the other hand, social practice enables them to apply what they have learned in the classroom to real-world situations, thereby sharpening their problem-solving and interpersonal skills. For instance, a friend of mine who majored in marketing found that her internship at an advertising firm deepened her understanding of consumer behavior far beyond what textbooks could offer. The experience not only reinforced her academic knowledge but also equipped her with practical competence that proved invaluable during job interviews.\n\nIn my view, students should strike a balance between these two dimensions. Universities could design more programs that integrate fieldwork with coursework, encouraging students to grow both intellectually and practically. Only by combining theory with practice can college students fully prepare themselves for the challenges that lie ahead.",
+    "phrases": [
+     {
+      "en": "a solid theoretical foundation",
+      "cn": "扎实的理论基础；用 solid 修饰 foundation 比 good 更正式、更有学术感"
+     },
+     {
+      "en": "apply ... to real-world situations",
+      "cn": "将……应用于现实情境；体现学以致用，为高频论证表达"
+     },
+     {
+      "en": "sharpen one's problem-solving and interpersonal skills",
+      "cn": "提升解决问题与人际交往能力；sharpen 比 improve 更形象生动"
+     },
+     {
+      "en": "far beyond what textbooks could offer",
+      "cn": "远超课本所能提供的；用 far beyond 加强对比力度"
+     },
+     {
+      "en": "not only ... but also ...",
+      "cn": "不仅……而且……；经典并列连词结构，适合展示双重收益"
+     },
+     {
+      "en": "strike a balance between A and B",
+      "cn": "在 A 与 B 之间取得平衡；议论文万能高分短语"
+     },
+     {
+      "en": "equip sb. with practical competence",
+      "cn": "使某人具备实际能力；equip with 比 give 更正式，competence 比 ability 更学术"
+     },
+     {
+      "en": "integrate fieldwork with coursework",
+      "cn": "将实地实践与课堂学习相结合；integrate 体现深度融合"
+     },
+     {
+      "en": "Only by combining ... can ...",
+      "cn": "只有通过……才能……；倒装句式，适合用在结尾升华观点"
+     }
+    ],
+    "pitfalls": [
+     "忘记在文章开头抄写题目给定的首句，直接扣分",
+     "全文只谈社会实践好处，忽略学术学习，偏离\"equally important\"主旨",
+     "举例过于笼统（如\"many students\"），缺乏具体细节，说服力不足",
+     "词数不足150或超过200，未按要求控制篇幅",
+     "段落之间缺少过渡词（On the one hand / In my view），逻辑衔接松散"
+    ],
+    "upgrades": [
+     {
+      "plain": "Social practice is very important for students.",
+      "better": "Social practice plays an indispensable role in cultivating students' comprehensive competence.",
+      "note": "用 play an indispensable role 替换 is very important，表达更正式且避免口语化"
+     },
+     {
+      "plain": "Students can learn many things from internships.",
+      "better": "Internship experience enables students to translate theoretical knowledge into tangible professional skills.",
+      "note": "用 enable sb. to do 及 translate ... into ... 展现因果逻辑与高级词汇"
+     },
+     {
+      "plain": "We should pay attention to both study and practice.",
+      "better": "Students should strike a dynamic balance between academic pursuit and hands-on engagement.",
+      "note": "strike a balance 更地道，dynamic 与 hands-on 体现用词多样性"
+     },
+     {
+      "plain": "If we combine theory with practice, we can succeed.",
+      "better": "Only by combining theory with practice can college students fully prepare themselves for future challenges.",
+      "note": "Only by ... can ... 倒装句式增加句式复杂度，为评分加分"
+     },
+     {
+      "plain": "My friend did an internship and learned a lot.",
+      "better": "A friend of mine found that her internship deepened her understanding of consumer behavior far beyond what textbooks could offer.",
+      "note": "加入具体领域与 far beyond what ... 对比，使举例更具说服力"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only by combining theory with practice can college students fully prepare themselves for the challenges that lie ahead. —— 只有将理论与实践相结合，大学生才能为未来的挑战做好充分准备。（倒装+高级词汇，适合结尾点睛）",
+   "Social practice enables students to apply what they have learned in the classroom to real-world situations, thereby sharpening their problem-solving and interpersonal skills. —— 社会实践使学生能将课堂所学应用于现实情境，从而提升其解决问题与人际交往能力。（thereby + 现在分词表结果，逻辑紧凑）",
+   "The experience not only reinforced her academic knowledge but also equipped her with practical competence that proved invaluable during job interviews. —— 这段经历不仅强化了她的学术知识，还赋予她在求职面试中极具价值的实际能力。（not only...but also + 定语从句，句式丰富）",
+   "This growing awareness reflects a significant shift in how young people perceive the true purpose of higher education. —— 这种日益增长的认识反映出年轻人对高等教育真正目的的观念转变。（宾语从句嵌套，表达精炼且有深度）"
+  ]
+ }
+}

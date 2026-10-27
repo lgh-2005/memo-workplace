@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "5e76e93d8176__long_match__all",
+ "examId": "5e76e93d8176",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2015 年 12 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T04:38:38.374Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 56682,
+ "usage": {
+  "prompt_tokens": 764,
+  "completion_tokens": 5593,
+  "total_tokens": 6357,
+  "prompt_tokens_details": {
+   "cached_tokens": 640
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3586
+  },
+  "prompt_cache_hit_tokens": 640,
+  "prompt_cache_miss_tokens": 124
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "能源转型与动量类比",
+  "strategy": [
+   "先逐条读题，标记名词短语和逻辑词如因果、比较、递进。",
+   "扫读各段首尾句，重点匹配标记词或其同义替换。",
+   "利用独特比喻（如航母）和专有名词快速定位相关段落。",
+   "注意段落可能被多题匹配，验证后不要漏掉同段答案。",
+   "关注题干中比较、因果、否定结构，这些往往是原文改写重点。"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "cn": "不仅移动的物体和人，所有系统都有动量。",
+    "keywords": [
+     "moving objects",
+     "people",
+     "systems",
+     "momentum"
+    ],
+    "paraphrase": "题干用 not only...but... 递进结构概括，原文可能先举移动中的人和物体为例，再延伸到所有系统；momentum 可能保留原词，但句式由并列转为递进，定位时需注意该逻辑关系。",
+    "tip": "扫读含 momentum 的句子，优先看 C 段开头或总结句。"
+   },
+   {
+    "number": 37,
+    "answer": "I",
+    "cn": "改变当前能源系统需要对专业人员和熟练劳动力进行系统培训。",
+    "keywords": [
+     "changing",
+     "energy system",
+     "systematic training",
+     "professionals and skilled labor"
+    ],
+    "paraphrase": "题干将原文中“需要培训”的动作具体化为系统培训，并明确对象为专业人员和熟练劳动力；changing 可能对应 transform/reform，systematic training 对应培养体系。定位时不必强求原词。",
+    "tip": "关注 energy system 与 training、labor 同现段，I 段可能讨论人力培养。"
+   },
+   {
+    "number": 38,
+    "answer": "E",
+    "cn": "换灯泡比更换安装它的灯具装置更容易。",
+    "keywords": [
+     "light bulb",
+     "easier",
+     "fixture",
+     "housing"
+    ],
+    "paraphrase": "比较级 easier than 是核心，题干中 fixture housing it 指容纳灯泡的灯具装置；原文可能用“灯泡本身容易更换，但灯具外壳/底座难换”来体现对比，注意比较逻辑和 fixture 替换。",
+    "tip": "找 bulb 与 fixture/housing 同现且含比较级的句子。"
+   },
+   {
+    "number": 39,
+    "answer": "K",
+    "cn": "加速当前能源转型的努力并未如预期那样成功。",
+    "keywords": [
+     "efforts",
+     "accelerate",
+     "energy transitions",
+     "succeed as expected"
+    ],
+    "paraphrase": "didn't succeed as expected 属于结果否定，原文可能用 fell short、failed to deliver 等表达；efforts to accelerate 可替换为 attempts to speed up。定位时要关注能源转型进展的负面评价。",
+    "tip": "扫读 energy transitions 附近表示结果不如预期的词，如 not as expected。"
+   },
+   {
+    "number": 40,
+    "answer": "G",
+    "cn": "更换光源成本高，因为你必须更换整个灯具装置。",
+    "keywords": [
+     "light source",
+     "costly",
+     "whole fixture"
+    ],
+    "paraphrase": "题干用 because 将成本高与更换整个装置构成因果；costly 可替换为 expensive，light source 可替换为 bulb/lamp。原文可能先说更换光源昂贵，再解释需要更换整套灯具。",
+    "tip": "定位同时含 light source 和 costly/expensive 的 G 段因果句。"
+   },
+   {
+    "number": 41,
+    "answer": "A",
+    "cn": "能源系统，就像启动的航空母舰一样，具有巨大的动量。",
+    "keywords": [
+     "aircraft carrier",
+     "set in motion",
+     "huge momentum",
+     "energy systems"
+    ],
+    "paraphrase": "题干使用 like 类比，将能源系统比作启动中的航母；set in motion 可能对应 moving/underway，huge momentum 对应 enormous momentum。定位时优先找 aircraft carrier 这一独特比喻。",
+    "tip": "直接扫读含 aircraft carrier 的段落，通常在 A 段。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "cn": "照明方面的问题，如果出现的话，往往不在于光源，而在于其应用。",
+    "keywords": [
+     "problem",
+     "lighting",
+     "light sources",
+     "applications"
+    ],
+    "paraphrase": "核心为 not...but... 否定对比，原文可能用 lie in/rest with 等表达“问题出自”；applications 可替换为 use/application。定位时关注照明问题与“不是光源而是使用方式”的对比。",
+    "tip": "找 lighting 和 not...but... 对比结构，注意 G 段重复考查。"
+   },
+   {
+    "number": 43,
+    "answer": "J",
+    "cn": "能源转型最大的障碍是当前能源系统过于昂贵，难以替换。",
+    "keywords": [
+     "biggest obstacle",
+     "energy transition",
+     "present energy system",
+     "too expensive to replace"
+    ],
+    "paraphrase": "biggest obstacle 可替换为 main barrier/hurdle；too expensive to replace 说明替换成本过高，原文可能用 prohibitively expensive 等。定位时关注能源转型与最高级/强调词同现。",
+    "tip": "扫读 energy transition 附近含 biggest/main 和 costly 的句子。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "一项技术的应用可以影响其自身以外的领域。",
+    "keywords": [
+     "application",
+     "technology",
+     "impact",
+     "beyond itself"
+    ],
+    "paraphrase": "beyond itself 表示超出自身范围，可替换为 outside its own field；impact 可对应 affect/influence。原文可能强调技术应用的溢出效应。定位时关注 technology application 和范围扩展表达。",
+    "tip": "找 technology 与 application/impact 同现的句子，注意 beyond 同义替换。"
+   },
+   {
+    "number": 45,
+    "answer": "B",
+    "cn": "运动物体的物理特性有助于解释能源系统的动态。",
+    "keywords": [
+     "physical characteristics",
+     "moving objects",
+     "dynamics",
+     "energy systems"
+    ],
+    "paraphrase": "physical characteristics 可替换为 physical properties；help explain 可对应 account for/shed light on。题干将物理学概念用于解释能源系统，原文可能用类比或原理说明。",
+    "tip": "定位 physical 与 moving objects 或 momentum 相关的比喻段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "momentum",
+    "cn": "动量；势头（名词）"
+   },
+   {
+    "w": "fixture",
+    "cn": "固定装置；灯具装置（名词）"
+   },
+   {
+    "w": "housing",
+    "cn": "外壳；罩（名词）"
+   },
+   {
+    "w": "skilled labor",
+    "cn": "熟练劳动力（名词短语）"
+   },
+   {
+    "w": "accelerate",
+    "cn": "加速（动词）"
+   },
+   {
+    "w": "obstacle",
+    "cn": "障碍（名词）"
+   },
+   {
+    "w": "dynamics",
+    "cn": "动态；动力学（名词）"
+   },
+   {
+    "w": "aircraft carrier",
+    "cn": "航空母舰（名词短语）"
+   },
+   {
+    "w": "set in motion",
+    "cn": "启动；使运动（动词短语）"
+   },
+   {
+    "w": "application",
+    "cn": "应用（名词）"
+   },
+   {
+    "w": "beyond itself",
+    "cn": "自身之外（介词短语）"
+   },
+   {
+    "w": "costly",
+    "cn": "昂贵的（形容词）"
+   },
+   {
+    "w": "systematic",
+    "cn": "系统的（形容词）"
+   },
+   {
+    "w": "transition",
+    "cn": "转型；过渡（名词）"
+   },
+   {
+    "w": "professionals",
+    "cn": "专业人员（名词）"
+   },
+   {
+    "w": "current",
+    "cn": "当前的（形容词）"
+   },
+   {
+    "w": "replace",
+    "cn": "替换（动词）"
+   },
+   {
+    "w": "light source",
+    "cn": "光源（名词短语）"
+   },
+   {
+    "w": "light bulb",
+    "cn": "灯泡（名词短语）"
+   }
+  ]
+ }
+}

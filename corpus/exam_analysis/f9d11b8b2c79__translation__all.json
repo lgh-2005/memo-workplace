@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "f9d11b8b2c79__translation__all",
+ "examId": "f9d11b8b2c79",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2025 年考研英语真题",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:57:51.149Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 46672,
+ "usage": {
+  "prompt_tokens": 1324,
+  "completion_tokens": 2926,
+  "total_tokens": 4250,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1324,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2926,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1324,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "公民科学推动科研民主化",
+  "translation": "几个世纪以来，创新和研究一直依赖公众对科学的参与。正是一位音乐家在18世纪用自己制作的由铜和锡制成的镜片望远镜发现了天王星。近几十年来，科学已步入一种惯例，即只有通过大学等机构才能参与科学研究。公民科学为更广泛的公众参与和科学的民主化提供了契机。\n\n在信息时代，庞大的数据集、小规模的团队以及资金限制拖慢了科学进程。但是，通过利用公众天然的好奇心，让非科学家直接参与研究过程，就有可能克服其中许多挑战。任何人都可以成为公民科学家，不论年龄、国籍或学术经历。你甚至不需要任何正式培训，只需要一颗好奇的心和加入数以千计的公民科学项目的热情，就能产生新知识，并找到理解真正科学成果的途径。\n\n科学家们采用了多种方式让公众参与到他们的研究中，例如将数据分析变为在线游戏，或将样本收集变为智能手机应用程序。他们恳请公民科学家帮助数昆虫、分类癌细胞，甚至识别遥远的星系。\n\n这种易于参与的科学形式意味着优秀人才能够加入创建和开发具有改变世界潜力的项目。基于公民科学的方法可以拓宽视野，纳入更多想法和不同的头脑来解决问题和进行创造，从而使创新更快、更有效。\n\n公民科学的兴起与世界各地自助式生物实验室的兴起同步发展。这些群体是一场迅速壮大的生物技术社会运动的一部分，该运动由公民科学家和专业科学家组成，他们致力于将科学发现从机构中带出来，交到任何有热情的人手中。\n\n全球大约有40个官方的自助式生物中心，分布在巴黎、伦敦、悉尼和特拉维夫等地。他们汇集资源、协同合作、突破常规思维，寻找解决方案和绕过障碍的办法，为科学而探索科学，不受在正式环境中工作的传统限制。那么，是时候把培养皿从实验室搬到车库里了吗？",
+  "questions": [
+   {
+    "number": 46,
+    "en": "Recent decades have seen science move into a convention where engagement in the subject can only be done through institutions such as a university.",
+    "cn": "近几十年来，科学已步入一种惯例，即只有通过大学等机构才能参与科学研究。",
+    "structure": "主句为 Recent decades have seen science move into a convention，采用\"时间段 + have seen\"的拟人结构，主语是 recent decades；where 引导定语从句修饰 convention，从句中 engagement in the subject 为主语，can only be done through institutions 为谓语，such as a university 为举例补充说明。",
+    "points": [
+     "have seen 拟人结构的处理：需译为\"近几十年来……\"，将时间段作状语",
+     "where 定语从句的翻译：译为\"即……\"或\"在这种惯例下……\"",
+     "engagement in the subject 需准确译为\"参与科学研究\"或\"对该学科的参与\""
+    ],
+    "pitfall": "have seen 的拟人用法容易误译为\"看见\"；engagement in the subject 中 subject 指代\"科学这一学科\"，不可泛译为\"主题\"或\"课题\"。"
+   },
+   {
+    "number": 47,
+    "en": "But by utilising the natural curiosity of the general public it is possible to overcome many of these challenges by engaging non-scientists directly in the research process.",
+    "cn": "但是，通过利用公众天然的好奇心，让非科学家直接参与研究过程，就有可能克服其中许多挑战。",
+    "structure": "主干为 it is possible to overcome many of these challenges，it 为形式主语；句中有两个 by 介词短语作方式状语：by utilising the natural curiosity of the general public 和 by engaging non-scientists directly in the research process，分别说明克服挑战的途径。",
+    "points": [
+     "两个 by 短语的准确翻译：需分别译出\"通过利用……\"和\"通过让……参与\"",
+     "it is possible to 的处理：译为\"有可能……\"或\"就有可能……\"",
+     "natural curiosity 需译为\"天然的好奇心\"或\"与生俱来的好奇心\""
+    ],
+    "pitfall": "两个 by 短语容易混淆或遗漏其中一个；engage 在此处为\"使……参与\"之意，不可译为\"雇用\"或\"吸引\"。"
+   },
+   {
+    "number": 48,
+    "en": "Scientists have employed a variety of ways to engage the general public in their research, such as making data analysis into an online game or sample collection into a smartphone application.",
+    "cn": "科学家们采用了多种方式让公众参与到他们的研究中，例如将数据分析变为在线游戏，或将样本收集变为智能手机应用程序。",
+    "structure": "主干为 Scientists have employed a variety of ways，不定式 to engage the general public in their research 作目的状语；such as 后接两个并列的动名词短语 making data analysis into an online game 和 (making) sample collection into a smartphone application，对 ways 进行举例说明。",
+    "points": [
+     "employ 在此处译为\"采用/运用\"而非\"雇用\"",
+     "such as 后并列结构的完整译出：两个 making...into... 需对称翻译",
+     "engage the general public in 译为\"让公众参与到……中\""
+    ],
+    "pitfall": "employ 极易误译为\"雇用\"；such as 后第二个并列项省略了 making，翻译时需补出\"将……变为\"，不可遗漏。"
+   },
+   {
+    "number": 49,
+    "en": "These groups of people are part of a rapidly expanding biotechnological social movement of citizen scientists and professional scientists seeking to take discovery out of institutions and put it into the hands of anyone with the enthusiasm.",
+    "cn": "这些群体是一场迅速壮大的生物技术社会运动的一部分，该运动由公民科学家和专业科学家组成，他们致力于将科学发现从机构中带出来，交到任何有热情的人手中。",
+    "structure": "主干为 These groups of people are part of a...social movement；rapidly expanding biotechnological 为多层前置定语修饰 social movement；of citizen scientists and professional scientists 为后置定语说明运动的参与者；seeking to... 为现在分词短语作后置定语，其中包含 take...out of... and put...into... 两个并列动作。",
+    "points": [
+     "长串名词短语的准确拆解：a rapidly expanding biotechnological social movement 需层层译出",
+     "seeking to 引导的分词短语作定语的处理：可译为\"致力于……的\"或另起分句",
+     "take...out of...and put...into the hands of... 并列结构需对称翻译"
+    ],
+    "pitfall": "多重定语叠加导致句意模糊，需理清 of citizen scientists and professional scientists 修饰 movement 而非 part；anyone with the enthusiasm 中 the enthusiasm 特指对科学的热情，不可漏译。"
+   },
+   {
+    "number": 50,
+    "en": "They pool resources, collaborate, think outside the box, and find solutions and ways around obstacles to explore science for the sake of science without the traditional boundaries of working inside a formal setting.",
+    "cn": "他们汇集资源、协同合作、突破常规思维，寻找解决方案和绕过障碍的办法，为科学而探索科学，不受在正式环境中工作的传统限制。",
+    "structure": "主干由四个并列谓语构成：pool resources, collaborate, think outside the box, and find solutions and ways around obstacles；不定式 to explore science 作目的状语；for the sake of science 为介词短语表目的；without the traditional boundaries of working inside a formal setting 为介词短语作伴随状语。",
+    "points": [
+     "四个并列谓语的完整译出：pool, collaborate, think outside the box, find 缺一不可",
+     "think outside the box 为固定表达，需译为\"跳出固有思维\"或\"突破常规思维\"",
+     "for the sake of science 译为\"为了科学本身\"或\"为科学而……\""
+    ],
+    "pitfall": "ways around obstacles 容易误译，around obstacles 修饰 ways，意为\"绕过障碍的方法/途径\"；without the traditional boundaries 不可漏译，需理解为\"不受……的传统限制/束缚\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "convention",
+    "cn": "n. 惯例，常规；大会"
+   },
+   {
+    "w": "engagement",
+    "cn": "n. 参与，投入；约定"
+   },
+   {
+    "w": "democratisation",
+    "cn": "n. 民主化"
+   },
+   {
+    "w": "utilise",
+    "cn": "v. 利用，使用"
+   },
+   {
+    "w": "inquisitive",
+    "cn": "adj. 好奇的，好问的"
+   },
+   {
+    "w": "implore",
+    "cn": "v. 恳求，恳请"
+   },
+   {
+    "w": "categorise",
+    "cn": "v. 分类，归类"
+   },
+   {
+    "w": "biotechnological",
+    "cn": "adj. 生物技术的"
+   },
+   {
+    "w": "pool",
+    "cn": "v. 汇集，集中（资源等）"
+   },
+   {
+    "w": "Petri dish",
+    "cn": "n. 培养皿"
+   },
+   {
+    "w": "for the sake of",
+    "cn": "prep. 为了……的缘故"
+   }
+  ],
+  "skills": [
+   "拟人结构（如 decades have seen）需转换为中文习惯的时间状语表达",
+   "长定语链（多重前置与后置定语）应拆分为多个短句，层层递进翻译",
+   "并列结构需保持对称完整，省略成分在译文中应补全",
+   "固定搭配（如 think outside the box, for the sake of）应按习语意译而非逐词直译",
+   "被动语态（如 can only be done）宜转化为中文主动句式以符合表达习惯"
+  ]
+ }
+}

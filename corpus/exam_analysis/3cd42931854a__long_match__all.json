@@ -1,0 +1,250 @@
+{
+ "schemaVersion": 1,
+ "id": "3cd42931854a__long_match__all",
+ "examId": "3cd42931854a",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2018 年 6 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:16:39.286Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33793,
+ "usage": {
+  "prompt_tokens": 958,
+  "completion_tokens": 1877,
+  "total_tokens": 2835,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 958,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1877,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 958,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "同伴影响与青少年学习行为",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如peers、adolescents、brain、risk-taking、learning",
+   "将每条陈述句中的专有名词、数据、人名（如Steinberg）作为优先定位锚点",
+   "注意同义替换：如presence of peers可能被改写为being around friends/with companions等",
+   "按照从易到难的顺序先匹配含有人名或显著特征词的题目，再处理抽象概括类题目",
+   "关注段落首尾句，信息匹配题的对应信息常出现在段首主题句或段末总结句"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "H",
+    "cn": "人们认为，人类大脑很可能特别擅长捕捉具有社会重要性的信息。",
+    "keywords": [
+     "human brain",
+     "socially important information",
+     "picking up",
+     "probable"
+    ],
+    "paraphrase": "题目中picking up socially important information可能对应原文中detect/process social cues或类似表述；thought probable可能对应原文中likely/presumably等推测性表达。",
+    "tip": "定位brain与socially important的共现，注意推测语气词。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "从实验中可以得出结论：同伴的在场会增加青少年和年轻人的冒险行为。",
+    "keywords": [
+     "experiments",
+     "presence of peers",
+     "risk-taking",
+     "adolescents"
+    ],
+    "paraphrase": "题目中concluded from experiments对应原文中实验描述或研究发现的总结；able risk-taking by adolescents可能对应原文中teens/young people engage in more risky behavior等。",
+    "tip": "定位experiments/studies与risk-taking的共现，锁定实验结论段。"
+   },
+   {
+    "number": 38,
+    "answer": "L",
+    "cn": "应该告诉学生，课堂上的冒险行为可以是一件积极的事情。",
+    "keywords": [
+     "students",
+     "risk-taking",
+     "classroom",
+     "positive"
+    ],
+    "paraphrase": "题目中risk-taking in the classroom can be something positive可能对应原文中taking academic risks is beneficial/encouraged等表述；should be told可能对应原文中教师建议类语句。",
+    "tip": "定位classroom与risk-taking的组合，该搭配在全文中较独特。"
+   },
+   {
+    "number": 39,
+    "answer": "J",
+    "cn": "寻找伴侣和结婚的冲动解释了青少年为何更加关注社会互动。",
+    "keywords": [
+     "finding a mate",
+     "getting married",
+     "adolescents",
+     "social interactions"
+    ],
+    "paraphrase": "题目中finding a mate and getting married可能对应原文中reproductive goals/romantic partnerships等表述；accounts for对应原文中explains/is the reason for等因果表达。",
+    "tip": "finding a mate和getting married极具辨识度，可直接全文扫读定位。"
+   },
+   {
+    "number": 40,
+    "answer": "G",
+    "cn": "根据Steinberg的观点，同伴的在场会提高青少年学习的速度和效果。",
+    "keywords": [
+     "Steinberg",
+     "presence of peers",
+     "speed",
+     "effectiveness",
+     "learning"
+    ],
+    "paraphrase": "题目中speed and effectiveness of learning可能对应原文中learn faster and better/more efficiently等表述；人名Steinberg为精确定位锚点，但需注意该人名可能出现在多个段落。",
+    "tip": "以人名Steinberg为锚点，同时匹配learning与peers两个关键词共现段。"
+   },
+   {
+    "number": 41,
+    "answer": "A",
+    "cn": "青少年的父母经常担心来自同伴的负面影响。",
+    "keywords": [
+     "parents",
+     "concerned",
+     "negative peer influence"
+    ],
+    "paraphrase": "题目中concerned about negative peer influence可能对应原文中worry about bad influence from friends/fear that peers lead children astray等表述；A段常为引入话题段，以家长担忧引出讨论。",
+    "tip": "parents与negative peer influence组合定位，通常出现在文章开头引出话题处。"
+   },
+   {
+    "number": 42,
+    "answer": "I",
+    "cn": "激活大脑中与社会动机驱动的学习和记忆相关的社交网络，可能使学生发掘未被利用的心智潜能。",
+    "keywords": [
+     "social network",
+     "socially motivated learning",
+     "memory",
+     "unused mental powers"
+    ],
+    "paraphrase": "题目中tap unused mental powers可能对应原文中unlock/access untapped cognitive resources等表述；brain's social network可能对应原文中neural circuits for social processing等。",
+    "tip": "定位tap unused mental powers或social network involved in learning等独特表达。"
+   },
+   {
+    "number": 43,
+    "answer": "F",
+    "cn": "同伴的在场会增强青少年大脑中的奖赏感受。",
+    "keywords": [
+     "presence of peers",
+     "feeling of rewards",
+     "teens",
+     "brains"
+    ],
+    "paraphrase": "题目中intensifies the feeling of rewards可能对应原文中heightens/amplifies reward sensitivity或activates reward centers等神经科学表述。",
+    "tip": "定位rewards与brains的神经科学描述段，与risk-taking段区分开来。"
+   },
+   {
+    "number": 44,
+    "answer": "K",
+    "cn": "当我们为了将信息传授给他人而吸收信息时，我们会以更高的准确性和深度来做这件事。",
+    "keywords": [
+     "absorb information",
+     "imparting",
+     "others",
+     "accuracy",
+     "depth"
+    ],
+    "paraphrase": "题目中absorb information for the purpose of imparting it to others可能对应原文中learn in order to teach/learning with the intention of teaching等表述；greater accuracy and depth可能对应原文中more thoroughly/with better retention等。",
+    "tip": "定位imparting to others这一独特教学动机描述，区别于一般学习场景。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "cn": "一些专家建议我们在教育中善用同伴影响。",
+    "keywords": [
+     "experts",
+     "peer influence",
+     "good use",
+     "education"
+    ],
+    "paraphrase": "题目中turn peer influence to good use可能对应原文中harness/leverage peer effects for educational purposes等表述；suggesting对应原文中propose/recommend等。",
+    "tip": "定位experts与education的共现，注意该句为转折性观点，将负面印象转向正面应用。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "picking up",
+    "cn": "捕捉、获取（动词短语）"
+   },
+   {
+    "w": "risk-taking",
+    "cn": "冒险行为（名词/形容词）"
+   },
+   {
+    "w": "accounts for",
+    "cn": "解释、说明（动词短语）"
+   },
+   {
+    "w": "intensifies",
+    "cn": "加强、增强（动词，v.）"
+   },
+   {
+    "w": "imparting",
+    "cn": "传授、给予（动词，v.）"
+   },
+   {
+    "w": "tap",
+    "cn": "发掘、利用（动词，v.）"
+   },
+   {
+    "w": "socially motivated",
+    "cn": "由社会动机驱动的（形容词短语）"
+   },
+   {
+    "w": "peer influence",
+    "cn": "同伴影响（名词短语）"
+   },
+   {
+    "w": "adolescents",
+    "cn": "青少年（名词，n.）"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "同义改写（名词/动词）"
+   }
+  ]
+ }
+}

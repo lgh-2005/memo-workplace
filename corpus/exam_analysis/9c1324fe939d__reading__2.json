@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "9c1324fe939d__reading__2",
+ "examId": "9c1324fe939d",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年考研英语真题",
+ "year": 2017,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:34:43.770Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63330,
+ "usage": {
+  "prompt_tokens": 1806,
+  "completion_tokens": 3845,
+  "total_tokens": 5651,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1806,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3845,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1806,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "夏威夷莫纳克亚山天文台建设争议",
+  "gist": "文章围绕三十米望远镜（TMT）在夏威夷莫纳克亚山的建设争议展开，介绍了该山既是理想天文观测点又是当地神圣之地的双重身份，分析了反对者的文化与历史原因，指出天文学与夏威夷文化拥有共同的探索精神，最终表达了对在莫纳克亚山建设TMT的支持态度。",
+  "structure": [
+   "第1段引出话题：夏威夷天文传统与TMT建设争议",
+   "第2-3段交代争议焦点：莫纳克亚山的科学与文化双重价值",
+   "第4段反思天文学家忽视当地文化的责任",
+   "第5段论证天文探索与夏威夷文化的共通性",
+   "第6段介绍妥协措施，表达支持与包容立场"
+  ],
+  "difficulty": "中等",
+  "translation": "\"古代夏威夷人就是天文学家，\"夏威夷最后一位在位君主莉留卡拉尼女王在1897年写道。观星者是夏威夷社会中最受尊敬的成员之一。遗憾的是，如今夏威夷的天文学发展并非一帆风顺。围绕三十米望远镜（TMT）的建设爆发了抗议活动，这座巨型天文台有望彻底改变人类对宇宙的认识。\n\n争议的焦点在于TMT计划选址莫纳克亚山——一座休眠火山，被部分夏威夷人奉为连接夏威夷群岛与天界的\"脐带\"（piko）。但莫纳克亚山同时也是世界上一些最强大望远镜的所在地。它坐落于太平洋中，山峰高耸于地球稠密大气层的大部分之上，那里的条件使望远镜能够获得清晰度无与伦比的图像。\n\n反对在莫纳克亚山建造望远镜并非新鲜事。一小群但声音响亮的夏威夷人和环保主义者长期以来一直认为，望远镜的存在是对神圣土地的亵渎，也是对一个曾经主权国家被占领历史的痛苦提醒。\n\n当前争议的部分责任在于天文学家。他们急于建造更大的望远镜，却忘记了科学并非理解世界的唯一方式。他们并不总是优先保护莫纳克亚山脆弱的生态系统或其对岛上居民的神圣意义。夏威夷文化并非过去的遗迹；它是一种正在经历复兴的活态文化。\n\n然而，科学也有其文化历史，其根源可以追溯到文明的曙光时期。当初驱使早期波利尼西亚人来到夏威夷海岸的那种探索地平线之外世界的好奇心，如今同样激励着天文学家探索天际。要求拆除莫纳克亚山上所有望远镜或禁止未来在那里开发的呼声，忽视了一个现实：天文学和夏威夷文化都在寻求回答关于我们是谁、我们从哪里来、我们要去向何方的重大问题。或许这就是我们探索星空的原因，仿佛是在回应一种原始的召唤，去认识我们自己以及我们真正的祖先家园。\n\n天文学界正在做出妥协以改变其对莫纳克亚山的使用方式。TMT选址经过精心考量，以最大限度减少望远镜在岛上的可见度，并避免对考古遗址和环境造成影响。为了限制莫纳克亚山上望远镜的数量，旧望远镜将在使用寿命结束后被拆除，其所在地将恢复自然状态。没有理由不欢迎每个人来到莫纳克亚山，既拥抱其文化遗产，又研究星空。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Star watchers were among the most esteemed members of Hawaiian society.",
+    "why": "莉留卡拉尼女王说\"古代夏威夷人就是天文学家\"，紧接着下一句补充说明\"观星者是夏威夷社会中最受尊敬的成员之一\"。两句话合在一起直接表明天文学在古代夏威夷社会中的重要地位，B选项\"天文学在古代夏威夷社会中的重要性\"完全对应原文信息。",
+    "traps": "A\"保守观点\"无中生有，女王的话是在肯定天文学的地位，并非保守看法；C\"天文学在古代的遗憾衰落\"属于时间偷换，衰落发生在今天而非古代；D\"对她所处时代观星者功绩的赞赏\"属于时间偷换，女王谈的是ancient Hawaiians，而非她那个时代。",
+    "tip": "注意引用语后面的解释句，它往往是命题人设置正确答案的依据。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Resting in the Pacific Ocean, Mauna Kea's peak rises above the bulk of our planet's dense atmosphere, where conditions allow telescopes to obtain images of unsurpassed clarity.",
+    "why": "原文指出莫纳克亚山坐落于太平洋中、山峰高耸于大气层之上，这些都是地理特征（geographical features），正是这些地理条件使望远镜能获得无与伦比的清晰图像。A选项\"地理特征\"准确概括了这一原因。",
+    "traps": "B\"保护性环境\"过度引申，原文说的是大气条件适合观测，而非环境起保护作用；C\"宗教含义\"是莫纳克亚山的另一层身份（piko），但不是它成为理想天文台选址的原因；D\"现有基础设施\"虽然原文提到山上已有强大望远镜，但这是结果而非原因，因果倒置。",
+    "tip": "区分\"特征描述\"与\"已有设施\"，原因题需找到根本性条件。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "a painful reminder of the occupation of what was once a sovereign nation.",
+    "why": "第三段明确指出，部分夏威夷人和环保主义者认为望远镜的存在是\"对曾经主权国家被占领的痛苦提醒\"。B选项\"它提醒他们一段屈辱的历史\"准确对应了原文中\"painful reminder of the occupation\"这一信息，occupation（占领）即屈辱历史。",
+    "traps": "A\"可能毁掉他们的精神生活\"无中生有，原文未提及知识或精神生活受到破坏；C\"他们的文化将失去复兴机会\"与原文相反，第四段明确说夏威夷文化正在经历复兴；D\"他们担心失去对莫纳克亚山的控制权\"属于过度推断，原文的反对理由是对神圣土地的亵渎和历史创痛，并非控制权问题。",
+    "tip": "partly because提示答案只需匹配部分原因，注意关键词painful reminder的同义替换。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The same curiosity to find what lies beyond the horizon that first brought early Polynesians to Hawaii's shores inspires astronomers today to explore the heavens.",
+    "why": "第五段将早期波利尼西亚人探索地平线以外世界的好奇心与当今天文学家探索星空的动力进行类比，说明两者都源于同一种探索精神。早期波利尼西亚人即古代夏威夷人的祖先，他们怀有探索未知世界的梦想；如今天文学的进步正是在延续并实现这一探索梦想，因此可推断A\"正在实现古代夏威夷人的梦想\"。",
+    "traps": "B\"帮助夏威夷文化传播到世界各地\"无中生有，原文未提及文化传播；C\"可能揭示夏威夷文化的起源\"过度引申，原文讨论的是共同的探索精神而非文化起源的考古发现；D\"最终会软化夏威夷人的敌意\"属于无据推断，原文未暗示敌意会因天文进步而消解。",
+    "tip": "类比论证中，两个被比较对象共享的核心特征往往是推断题的关键。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "There is no reason why everyone cannot be welcomed on Mauna Kea to embrace their cultural heritage and to study the stars.",
+    "why": "末段作者详细介绍了天文学界为在莫纳克亚山建TMT所做的各种妥协与环保措施，最后以\"没有理由不欢迎每个人来到莫纳克亚山\"的双重否定句式表达强烈肯定态度。全文论证逻辑也指向支持：天文与文化同源、妥协措施已到位。因此作者态度是D\"完全赞同\"。",
+    "traps": "A\"严厉批评\"与全文基调完全相反，作者通篇为TMT建设辩护；B\"被动接受\"语气过于消极，作者是积极论证而非勉强接受；C\"略有犹豫\"不准确，虽然第四段承认天文学家有责任，但这是为了更有力地论证和解的可行性，最终立场明确坚定。",
+    "tip": "态度题需综合全文尤其是结尾段判断，双重否定句式常表达强烈肯定。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dormant",
+    "cn": "adj. 休眠的，蛰伏的"
+   },
+   {
+    "w": "esteemed",
+    "cn": "adj. 受人尊敬的，受推崇的"
+   },
+   {
+    "w": "unsurpassed",
+    "cn": "adj. 无与伦比的，未被超越的"
+   },
+   {
+    "w": "vocal",
+    "cn": "adj. 直言不讳的，大声表达的"
+   },
+   {
+    "w": "sovereign",
+    "cn": "adj. 有主权的，至高无上的；n. 君主"
+   },
+   {
+    "w": "relic",
+    "cn": "n. 遗迹，遗物，残留物"
+   },
+   {
+    "w": "renaissance",
+    "cn": "n. 复兴，文艺复兴"
+   },
+   {
+    "w": "primal",
+    "cn": "adj. 原始的，最初的"
+   },
+   {
+    "w": "disassemble",
+    "cn": "v. 拆卸，拆解"
+   },
+   {
+    "w": "archaeological",
+    "cn": "adj. 考古学的"
+   },
+   {
+    "w": "prioritize",
+    "cn": "v. 优先考虑，给予优先权"
+   },
+   {
+    "w": "observatory",
+    "cn": "n. 天文台，观测台"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The same curiosity to find what lies beyond the horizon that first brought early Polynesians to Hawaii's shores inspires astronomers today to explore the heavens.",
+    "cn": "当初驱使早期波利尼西亚人来到夏威夷海岸的那种探索地平线之外世界的好奇心，如今同样激励着天文学家探索天际。",
+    "note": "主干为The same curiosity inspires astronomers to explore the heavens；to find...horizon为后置定语修饰curiosity；that引导定语从句修饰curiosity，中间插入较长修饰成分造成主谓分离。"
+   },
+   {
+    "en": "Calls to disassemble all telescopes on Mauna Kea or to ban future development there ignore the reality that astronomy and Hawaiian culture both seek to answer big questions about who we are, where we come from and where we are going.",
+    "cn": "要求拆除莫纳克亚山上所有望远镜或禁止未来在那里开发的呼声，忽视了一个现实：天文学和夏威夷文化都在寻求回答关于我们是谁、我们从哪里来、我们要去向何方的重大问题。",
+    "note": "主干为Calls ignore the reality；to disassemble...和to ban...为并列不定式作后置定语修饰Calls；that引导同位语从句解释reality；about后接三个并列的宾语从句。"
+   },
+   {
+    "en": "Resting in the Pacific Ocean, Mauna Kea's peak rises above the bulk of our planet's dense atmosphere, where conditions allow telescopes to obtain images of unsurpassed clarity.",
+    "cn": "它坐落于太平洋中，山峰高耸于地球稠密大气层的大部分之上，那里的条件使望远镜能够获得清晰度无与伦比的图像。",
+    "note": "Resting...为现在分词短语作状语表伴随；主干为peak rises above the bulk；where引导非限制性定语从句修饰atmosphere所在的高空位置。"
+   }
+  ]
+ }
+}

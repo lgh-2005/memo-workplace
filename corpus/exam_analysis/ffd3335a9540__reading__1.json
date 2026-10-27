@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "ffd3335a9540__reading__1",
+ "examId": "ffd3335a9540",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年考研英语真题",
+ "year": 2020,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:42:37.900Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68568,
+ "usage": {
+  "prompt_tokens": 1710,
+  "completion_tokens": 4080,
+  "total_tokens": 5790,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1710,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4080,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1710,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英国设立\"文化小镇\"奖的提议及评价",
+  "gist": "一批工党议员提议在英国设立\"文化小镇\"奖，以弥补小镇在竞争\"文化城市\"称号时资源不足的劣势，从而吸引投资、创造就业。文章分析了该提议可能面临的质疑，指出成功的关键在于实现长远发展而非短期繁荣，并以格拉斯哥为正面案例，最终表达了对该提议的支持态度。",
+  "structure": [
+   "第1段：提出'文化小镇'奖的背景、理由与预期经济效益",
+   "第2段：引述质疑声音，指出该提议可能被视为自欺欺人的安慰奖",
+   "第3段：分析文化称号成功的条件，以格拉斯哥为正面例证",
+   "第4段：作者表明支持立场，呼吁政府将提议付诸行动"
+  ],
+  "difficulty": "中等",
+  "translation": "一批工党议员——其中包括伊薇特·库珀——在新年伊始便呼吁设立英国\"文化小镇\"奖。该提议是让它与现有的\"文化城市\"称号并行，后者2017年由赫尔市获得，2021年已授予考文垂。库珀及其同僚认为，赫尔市获得该称号后的成功——带来了2.2亿英镑的投资和大量艺术活动——不应仅局限于城市。诚然，英国的小镇并没有被禁止申请，但它们通常缺乏资源去准备一份能击败大城市竞争对手的申请方案。有人主张，\"文化小镇\"奖可以成为一项年度盛事，吸引资金并创造就业岗位。\n\n有些人可能会将该提议视为一种安慰奖——因为英国已无法再申请更具声望的\"欧洲文化之都\"称号，该奖项曾于1990年被格拉斯哥、2008年被利物浦收入囊中。愤世嫉俗者或许会猜测，英国正处于陷入无尽自我庆祝狂热的边缘，迫切地想要为脱欧后的世界重塑自我：继\"文化小镇\"之后，谁知道还会出现什么——\"文化村庄\"？\"文化郊区\"？\"文化小村落\"？\n\n同样值得注意的是，此类称号并非万能药。一个运营不善的\"文化年\"如潮水般涌入又退出一个地方，短期内带来知名度，却不会给社区留下持久的益处。真正成功的称号持有者，所做的远不止于让酒店客满、引进高知名度的艺术活动和一年的正面媒体报道。它们改变当地居民的抱负；它们将城市的自我形象推向更大胆、更乐观的方向。这很难做到，需要非凡的远见，也需要市政当局、私营部门、社区团体和文化机构之间的合作。但这是可以做到的：格拉斯哥作为欧洲文化之都的那一年，无疑可以被视为一系列复杂因素中的一个，这些因素共同将这座城市打造成了如今依然是艺术、音乐和戏剧重镇的城市。\n\n\"文化小镇\"奖不应仅仅关乎艺术，还应关乎尊重一个小镇的独特之处——帮助维持其商业街的活力，支持当地设施，最重要的是，赞颂当地的居民。文化大臣杰里米·赖特应该欢迎这一积极的、充满希望的提议，并将其付诸行动。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "the success of the crown for Hull, where it brought in £220m of investment and an avalanche of arts, ought not to be confined to cities. ... A town of culture award could, it is argued, become an annual event, attracting funding and creating jobs.",
+    "why": "原文明确指出赫尔市获得文化称号后带来了2.2亿英镑投资，库珀等人据此论证\"文化小镇\"奖同样能\"吸引资金、创造就业\"。\"attracting funding and creating jobs\"直接对应C选项\"增强小镇的经济实力\"，属于同义改写。",
+    "traps": "A\"巩固城镇关系\"原文未提及城镇之间的联系，属无中生有；B\"促进小镇之间合作\"文中合作出现在第三段且指城市内部各方合作，非小镇之间，属张冠李戴；D\"将有限资源集中于文化活动\"原文说小镇缺乏资源，而非要集中资源，属曲解原意。",
+    "tip": "抓住论据中的具体数据和关键动词，精准对应选项的同义改写。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "A cynic might speculate that the UK is on the verge of disappearing into an endless fever of self-celebration in its desperation to reinvent itself for the post-Brexit world",
+    "why": "第二段先说该提议可能被视为\"booby prize\"（安慰奖），接着以讽刺语气指出英国可能陷入\"无尽的自我庆祝狂热\"，试图在脱欧后\"重塑自我\"。这说明批评者认为该提议是一种自我欺骗的尝试，即明知问题不在于奖项却用奖项掩饰困境，对应B选项\"a self-deceiving attempt\"。",
+    "traps": "A\"明智的妥协\"与段落讽刺基调矛盾，cynical语境不会给出正面评价；C\"引人注目的额外奖励\"中bonus过于正面，而booby prize是负面意味的安慰奖；D\"难以实现的目标\"原文未讨论提议的可行性，而是质疑其动机和价值。",
+    "tip": "注意段落的情感色调词（cynic, desperation, self-celebration）来判断隐含态度。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The really successful holders of such titles are those that do a great deal more than fill hotel bedrooms and bring in high-profile arts events and good press for a year. They transform the aspirations of the people who live there; they nudge the self-image of the city into a bolder and more optimistic light.",
+    "why": "作者先以潮水比喻批评\"短期繁荣、无持久益处\"的情形，再指出真正成功者不只追求一年的热闹，而是\"改变居民抱负\"\"推动城市自我形象升级\"。这些都指向深层的、长期的社区发展与蜕变，即D选项\"致力于长期发展\"。关键对比词是\"for a year\"与长久转变之间的对立。",
+    "traps": "A\"努力维持形象\"原文说的是\"nudge the self-image into a bolder light\"即积极转变形象，而非维持现有形象；B\"满足居民抱负\"原文是\"transform the aspirations\"即改变抱负而非满足抱负，属偷换动词；C\"使本地艺术获得知名度\"仅是短期效应，正是作者否定的做法。",
+    "tip": "注意区分\"改变抱负\"与\"满足抱负\"、\"维持形象\"与\"提升形象\"的动词差异。"
+   },
+   {
+    "number": 24,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "But it can be done: Glasgow's year as European capital of culture can certainly be seen as one of a complex series of factors that have turned the city into the powerhouse of art, music and theatre that it remains today.",
+    "why": "作者在论述文化称号可以带来长远转变但很难做到之后，用\"But it can be done\"转折引出格拉斯哥的案例，证明文化称号确实能成功地长期改变一座城市。格拉斯哥是支撑\"文化称号可以做好\"这一论点的正面例证，对应B选项。",
+    "traps": "A\"对比案例\"格拉斯哥是正面例证而非反面对比；C\"背景故事\"格拉斯哥案例是论据而非背景铺垫；D\"相关话题\"格拉斯哥并非引入新话题，而是服务于现有论点的例证。",
+    "tip": "例证题核心在于找出例子所服务的论点，关注例子前后的观点句。"
+   },
+   {
+    "number": 25,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "Jeremy Wright, the culture secretary, should welcome this positive, hope-filled proposal, and turn it into action.",
+    "why": "末段作者直接用\"positive\"\"hope-filled\"等褒义词形容该提议，并呼吁文化大臣\"欢迎\"并\"付诸行动\"，表达了明确的支持立场。此外全文虽提及质疑声音，但第三段用格拉斯哥证明可行性，末段给出具体建议，整体基调积极，对应C选项\"favourable\"（赞成的）。",
+    "traps": "A\"怀疑的\"与末段积极措辞矛盾；B\"客观的\"作者明确表态支持，并非中立旁观；D\"批评的\"与作者呼吁付诸行动的立场完全相反。",
+    "tip": "态度题优先看首尾段中的形容词和建议性表述，明确作者立场。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "avalanche",
+    "cn": "n. 大量涌现，雪崩"
+   },
+   {
+    "w": "confined",
+    "cn": "adj. 被限制的，局限的（confine v.）"
+   },
+   {
+    "w": "prestigious",
+    "cn": "adj. 有声望的，享有盛誉的"
+   },
+   {
+    "w": "sought-after",
+    "cn": "adj. 受追捧的，很吃香的"
+   },
+   {
+    "w": "cynic",
+    "cn": "n. 愤世嫉俗者，怀疑者"
+   },
+   {
+    "w": "on the verge of",
+    "cn": "prep. 在……的边缘，即将"
+   },
+   {
+    "w": "cure-all",
+    "cn": "n. 万能药，万灵丹"
+   },
+   {
+    "w": "prominence",
+    "cn": "n. 显著，知名度"
+   },
+   {
+    "w": "nudge",
+    "cn": "v. 推动，轻推（使逐渐改变）"
+   },
+   {
+    "w": "aspirations",
+    "cn": "n. 抱负，志向（常用复数）"
+   },
+   {
+    "w": "powerhouse",
+    "cn": "n. 强大的集团/中心，发电站"
+   },
+   {
+    "w": "peculiarities",
+    "cn": "n. 独特之处，特性（常用复数）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The really successful holders of such titles are those that do a great deal more than fill hotel bedrooms and bring in high-profile arts events and good press for a year.",
+    "cn": "真正成功的称号持有者，所做的远不止于让酒店客满、引进高知名度的艺术活动和获得一年的正面媒体报道。",
+    "note": "主干为 holders are those that do more than…；than后跟三个并列宾语：fill…、bring in…events和(bring in)…good press，for a year修饰整个than后内容，强调仅一年的短期效应。"
+   },
+   {
+    "en": "A cynic might speculate that the UK is on the verge of disappearing into an endless fever of self-celebration in its desperation to reinvent itself for the post-Brexit world: after town of culture, who knows what will follow—village of culture?",
+    "cn": "愤世嫉俗者或许会猜测，英国正处于陷入无尽自我庆祝狂热的边缘，迫切地想要为脱欧后的世界重塑自我：继\"文化小镇\"之后，谁知道还会出现什么——\"文化村庄\"？",
+    "note": "主干为A cynic might speculate that…；that从句中on the verge of接动名词短语作表语；in its desperation为原因状语；冒号后为补充说明，用反问加强讽刺语气。"
+   },
+   {
+    "en": "Glasgow's year as European capital of culture can certainly be seen as one of a complex series of factors that have turned the city into the powerhouse of art, music and theatre that it remains today.",
+    "cn": "格拉斯哥作为欧洲文化之都的那一年，无疑可以被视为一系列复杂因素中的一个，这些因素共同将这座城市打造成了如今依然是艺术、音乐和戏剧重镇的城市。",
+    "note": "主干为Glasgow's year can be seen as one of factors；第一个that引导定语从句修饰factors；第二个that引导定语从句修饰powerhouse；it remains today为省略关系代词的补充说明。"
+   }
+  ]
+ }
+}

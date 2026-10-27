@@ -1,0 +1,244 @@
+{
+ "schemaVersion": 1,
+ "id": "48775dd71dd3__long_match__all",
+ "examId": "48775dd71dd3",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2023 年 6 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:49:47.784Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 36579,
+ "usage": {
+  "prompt_tokens": 937,
+  "completion_tokens": 2065,
+  "total_tokens": 3002,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 937,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2065,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 937,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "大学生与年轻人的完美主义倾向",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如perfectionism、college students等",
+   "圈出每题中的专有名词、数字、人名（如Jessica Pryor、Amy Bach）作为优先定位线索",
+   "对无人名的题目，提取核心概念短语如socially prescribed、constructive等进行段落扫读",
+   "注意同义替换：陈述句用词往往是原文的改写，需关注语义而非字面匹配",
+   "按人名题→具体概念题→抽象观点题的顺序做题，提高效率"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "社会规定型完美主义被描述为一个人的自尊取决于他人的看法。",
+    "keywords": [
+     "socially prescribed perfectionism",
+     "self-esteem",
+     "other people's opinion"
+    ],
+    "paraphrase": "陈述句中的 self-esteem depending on other people's opinion 很可能是对原文中关于社会规定型完美主义定义的同义改写，原文或用 self-worth / contingent on external evaluation 等表达。",
+    "tip": "定位专业术语 socially prescribed perfectionism 的定义句，该术语出现频率低，易锁定段落。"
+   },
+   {
+    "number": 37,
+    "answer": "A",
+    "cn": "杰西卡·普赖尔了解到，一些研究生在实验室工作时间很长，几乎没有时间用于娱乐或社交。",
+    "keywords": [
+     "Jessica Pryor",
+     "graduate students",
+     "long hours",
+     "lab"
+    ],
+    "paraphrase": "陈述句中 little time for entertainment or socializing 可能对应原文中 no time for fun / social life / leisure 等表达，work such long hours 可能对应 spend excessive time。",
+    "tip": "直接用人名 Jessica Pryor 定位到A段，再核实研究生与实验室信息。"
+   },
+   {
+    "number": 38,
+    "answer": "F",
+    "cn": "作者认为完美主义有时可能是有建设性的。",
+    "keywords": [
+     "perfectionism",
+     "constructive",
+     "the author believes"
+    ],
+    "paraphrase": "陈述句中 constructive 可能在原文中被表述为 positive / beneficial / adaptive / healthy 等近义词，sometimes 暗示原文对完美主义持部分肯定态度。",
+    "tip": "关注表达正面评价完美主义的段落，留意 adaptive perfectionism 或 healthy striving 等说法。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "cn": "研究发现，完美主义在大学生中越来越普遍。",
+    "keywords": [
+     "perfectionism",
+     "more prevalent",
+     "college students"
+    ],
+    "paraphrase": "陈述句中 getting more and more prevalent 可能对应原文中 on the rise / increasing / growing 等趋势表达，college students 可能对应 university students / undergraduates。",
+    "tip": "定位含有数据或研究发现（It is found）的段落，关注趋势类表述如 rise、increase。"
+   },
+   {
+    "number": 40,
+    "answer": "H",
+    "cn": "一些专家建议家长和教育者应该让学生为失败做好准备。",
+    "keywords": [
+     "parents",
+     "educators",
+     "prepare",
+     "failures"
+    ],
+    "paraphrase": "陈述句中 prepare students for failures 可能对应原文中 teach students to cope with setbacks / help them accept imperfection / normalize failure 等建议性表达。",
+    "tip": "扫读含建议语气（should / recommend / advise）的段落，同时关注 parents 和 educators 并列出现的位置。"
+   },
+   {
+    "number": 41,
+    "answer": "B",
+    "cn": "一些治疗师警告说，年轻人倾向于在工作中追求完美。",
+    "keywords": [
+     "therapists",
+     "young adults",
+     "pursue perfection",
+     "work"
+    ],
+    "paraphrase": "陈述句中 tend to pursue perfection in their work 可能在原文中表述为 strive for flawlessness / demand excellence / set unrealistically high standards in professional tasks。",
+    "tip": "定位 therapists 或 counselors 发出警告的段落，关注 B 段中涉及年轻人职场表现的内容。"
+   },
+   {
+    "number": 42,
+    "answer": "I",
+    "cn": "心理学家艾米·巴赫鼓励她的学生志存高远，但也要满足于不那么完美的结果。",
+    "keywords": [
+     "Amy Bach",
+     "aim high",
+     "content",
+     "less than perfect"
+    ],
+    "paraphrase": "陈述句中 aim high but be content with something less than perfect 可能对应原文中 set ambitious goals while accepting good enough / strive for excellence but tolerate imperfection。",
+    "tip": "用人名 Amy Bach 快速定位到I段，核实其鼓励学生的具体建议内容。"
+   },
+   {
+    "number": 43,
+    "answer": "E",
+    "cn": "一位临床心理学家发现，完美主义在他的来访者中非常普遍。",
+    "keywords": [
+     "clinical psychologist",
+     "perfectionism",
+     "widespread",
+     "clients"
+    ],
+    "paraphrase": "陈述句中 widespread among his clients 可能对应原文中 common / pervasive / frequently seen in patients 等表达，clinical psychologist 可能有具体人名。",
+    "tip": "注意本题与第36题同属E段，说明该段信息量大；定位 clinical psychologist 及 clients 两个关键词。"
+   },
+   {
+    "number": 44,
+    "answer": "K",
+    "cn": "在试图克服完美主义的过程中，一些人仍然在追求完美。",
+    "keywords": [
+     "overcome perfectionism",
+     "still pursuing perfection"
+    ],
+    "paraphrase": "陈述句描述了一种悖论：想克服完美主义本身也变成了追求完美的行为。原文可能用 irony / paradox / trying to perfectly overcome 等方式表达这一矛盾。",
+    "tip": "关注含有矛盾或讽刺语气的段落，寻找 overcome 与 perfection 同时出现的句子。"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "cn": "在追求完美的过程中，一些完美主义者未能按时完成任务。",
+    "keywords": [
+     "pursuing perfection",
+     "perfectionists",
+     "fail to complete",
+     "on time"
+    ],
+    "paraphrase": "陈述句中 fail to complete their tasks on time 可能对应原文中 miss deadlines / procrastinate / delay submission 等表达，体现完美主义的负面后果。",
+    "tip": "定位描述完美主义负面影响的段落，关注 deadline、procrastination、delay 等与时间相关的词汇。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "socially prescribed",
+    "cn": "社会规定的（adj. 短语），指由外部社会期望所驱动的"
+   },
+   {
+    "w": "perfectionism",
+    "cn": "完美主义（n.），对完美的过度追求"
+   },
+   {
+    "w": "self-esteem",
+    "cn": "自尊（n.），对自身价值的评价"
+   },
+   {
+    "w": "prevalent",
+    "cn": "普遍的、流行的（adj.）"
+   },
+   {
+    "w": "constructive",
+    "cn": "建设性的、有益的（adj.）"
+   },
+   {
+    "w": "therapists",
+    "cn": "治疗师（n.），提供心理或身体治疗的专业人员"
+   },
+   {
+    "w": "clinical psychologist",
+    "cn": "临床心理学家（n.），从事心理疾病诊断与治疗的专业人员"
+   },
+   {
+    "w": "socializing",
+    "cn": "社交活动（n./v.-ing），与他人进行交往"
+   },
+   {
+    "w": "be content with",
+    "cn": "满足于……（v. 短语）"
+   },
+   {
+    "w": "procrastinate",
+    "cn": "拖延（v.），推迟行动或任务（补充词汇，与第45题高度相关）"
+   }
+  ]
+ }
+}

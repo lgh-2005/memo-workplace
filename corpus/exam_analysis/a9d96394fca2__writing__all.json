@@ -1,0 +1,148 @@
+{
+ "schemaVersion": 1,
+ "id": "a9d96394fca2__writing__all",
+ "examId": "a9d96394fca2",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2017 年 12 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:15:22.691Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 45264,
+ "usage": {
+  "prompt_tokens": 710,
+  "completion_tokens": 2852,
+  "total_tokens": 3562,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 710,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2852,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 710,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作：围绕\"帮助他人，自己有难时也会得到帮助\"这一名言，举例论证观点，字数150-200词。",
+    "outline": [
+     "引出名言并点明主旨：互助是人际关系与社会和谐的基石，帮助他人终将惠及自身。",
+     "分两层论证：①帮助他人能营造善意循环的社会氛围（举具体事例）；②善举能巩固人际纽带、建立信任，受助者日后倾向于回报。",
+     "总结升华：助人并非单纯的无私行为，更是对自身未来的明智投资，呼吁共建互助社会。"
+    ],
+    "sample": "There is a well-known saying that goes, \"Help others, and you will be helped when you are in need.\" This adage highlights the reciprocal nature of kindness and underscores the importance of mutual assistance in our society.\n\nTo begin with, helping others cultivates a culture of generosity that ultimately benefits everyone. When we extend a helping hand to those around us, we create an environment where goodwill circulates freely. A compelling example is the story of a businessman who regularly donated to local charities. When his company later faced a severe financial crisis, the community he had long supported rallied together to help him survive the hardship.\n\nFurthermore, acts of kindness strengthen interpersonal bonds and foster trust. People naturally remember those who offered assistance during their difficult times, and they are inclined to reciprocate when the opportunity arises. This creates a virtuous cycle that reinforces social harmony.\n\nIn conclusion, helping others is not merely an act of selflessness but a wise investment in our own future. By embracing this philosophy, we can build a more compassionate and cooperative society where no one faces adversity alone.",
+    "phrases": [
+     {
+      "en": "the reciprocal nature of kindness",
+      "cn": "善意的互惠本质；reciprocal 强调双向性，用于阐述'帮助是相互的'核心论点"
+     },
+     {
+      "en": "underscore the importance of",
+      "cn": "强调……的重要性；比 emphasize 更书面，适合议论文首段"
+     },
+     {
+      "en": "cultivate a culture of generosity",
+      "cn": "培育慷慨互助的文化氛围；cultivate 搭配抽象名词显学术感"
+     },
+     {
+      "en": "extend a helping hand to",
+      "cn": "向……伸出援手；经典固定搭配，写互助话题必备"
+     },
+     {
+      "en": "rally together to do sth.",
+      "cn": "团结起来做某事；rally 比 unite 更具画面感，适合叙述事例"
+     },
+     {
+      "en": "be inclined to reciprocate",
+      "cn": "倾向于回报；inclined + to do 表示倾向，reciprocate 呼应主题"
+     },
+     {
+      "en": "a virtuous cycle",
+      "cn": "良性循环；与 vicious cycle（恶性循环）对应，议论文高频表达"
+     },
+     {
+      "en": "not merely … but …",
+      "cn": "不仅仅是……而是……；比 not only … but also 更正式的升级写法"
+     },
+     {
+      "en": "face adversity alone",
+      "cn": "独自面对逆境；adversity 比 difficulty 更高级，适合结尾升华"
+     }
+    ],
+    "pitfalls": [
+     "审题偏离：只泛谈'助人为乐'而忽略'自己也会得到帮助'的互惠逻辑",
+     "举例空洞：只写'比如有人帮了别人'却无具体情境与细节支撑",
+     "逻辑断裂：论点与论据之间缺少因果过渡句，段落衔接生硬",
+     "词汇重复：全篇反复使用 help/important，缺乏同义替换（如 assist/crucial）",
+     "字数失控：低于150词或超过200词均会扣分，写完务必快速计数"
+    ],
+    "upgrades": [
+     {
+      "plain": "Helping others is very important in our daily life.",
+      "better": "Helping others cultivates a culture of generosity that ultimately benefits everyone.",
+      "note": "用具体动词 cultivate 代替空泛的 is important，信息量更大、逻辑更清晰"
+     },
+     {
+      "plain": "People will remember you if you help them.",
+      "better": "People naturally remember those who offered assistance during their difficult times, and they are inclined to reciprocate when the opportunity arises.",
+      "note": "增加时间状语与从句，使因果链完整，同时用 reciprocate 提升词汇档次"
+     },
+     {
+      "plain": "In a word, we should help others.",
+      "better": "In conclusion, helping others is not merely an act of selflessness but a wise investment in our own future.",
+      "note": "not merely … but 句式更高级，investment 隐喻紧扣'回报'主题，结尾有深度"
+     },
+     {
+      "plain": "This is a good thing for society.",
+      "better": "This creates a virtuous cycle that reinforces social harmony.",
+      "note": "用 virtuous cycle 和 reinforce 替代笼统评价，论证更具学术色彩"
+     },
+     {
+      "plain": "For example, some people help others and then get help back.",
+      "better": "A compelling example is the story of a businessman who regularly donated to local charities; when his company faced a severe crisis, the community rallied together to help him.",
+      "note": "将抽象描述变为有人物、有情节的具体事例，说服力显著增强"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "This adage highlights the reciprocal nature of kindness and underscores the importance of mutual assistance in our society. 该句用 reciprocal nature 与 underscore 两个高级表达精准破题，适合首段收束。",
+   "When we extend a helping hand to those around us, we create an environment where goodwill circulates freely. 用 goodwill circulates freely 比喻善意流动，画面感强，展示词汇深度。",
+   "People naturally remember those who offered assistance during their difficult times, and they are inclined to reciprocate when the opportunity arises. 长句中嵌套定语从句与时间状语从句，结构紧凑、逻辑链完整。",
+   "Helping others is not merely an act of selflessness but a wise investment in our own future. not merely … but 并列结构将'无私'与'投资'对比，升华主题，适合背诵用作结尾金句。",
+   "By embracing this philosophy, we can build a more compassionate and cooperative society where no one faces adversity alone. 介词短语前置+where 定语从句，节奏优美，compassionate 与 cooperative 头韵增强表达力。"
+  ]
+ }
+}

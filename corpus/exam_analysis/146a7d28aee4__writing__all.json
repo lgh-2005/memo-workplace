@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "146a7d28aee4__writing__all",
+ "examId": "146a7d28aee4",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2024 年 12 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:57:59.218Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 38136,
+ "usage": {
+  "prompt_tokens": 738,
+  "completion_tokens": 2138,
+  "total_tokens": 2876,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 738,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2138,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 738,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕\"大学为学生提供探索各种可能性、找到适合自己道路的绝佳机会\"展开论述，可评论、举例或结合个人经历，150-200词。",
+    "outline": [
+     "第一段：以指定首句开头，引出大学是探索自我、发现人生方向的重要阶段，总述大学提供的多元机会。",
+     "第二段：分层论述大学如何帮助学生探索可能性——学术课程的多样性让学生发现兴趣；课外活动与实习提供实践平台、培养关键能力；并辅以具体例子或个人经历加以佐证。",
+     "第三段：总结全文，重申大学是人生探索的关键阶段，呼吁学生珍惜机会、勇于尝试，最终找到真正属于自己的道路。"
+    ],
+    "sample": "College provides a great opportunity for students to explore various possibilities and find the right path for themselves. During the formative years of higher education, young people are exposed to diverse disciplines, extracurricular activities, and social experiences that collectively broaden their horizons and shape their identities.\n\nTo begin with, college offers an abundance of courses spanning different fields, enabling students to discover their true passions and talents. For instance, a student who initially majors in engineering may develop a keen interest in psychology after taking an elective course, ultimately redirecting his career trajectory. Furthermore, college life presents numerous platforms for personal growth, such as student organizations, volunteer programs, and internships. Through these experiences, students cultivate essential skills like leadership, teamwork, and critical thinking, which prove invaluable in their future careers. From my own experience, joining a debate club during college not only sharpened my communication skills but also helped me realize my passion for law.\n\nIn conclusion, college serves as a vital stage where students can experiment, reflect, and ultimately chart a course that aligns with their aspirations and strengths. Every student should seize this precious opportunity and embrace the journey of self-discovery.",
+    "phrases": [
+     {
+      "en": "explore various possibilities",
+      "cn": "探索各种可能性；用于表达大学期间尝试不同方向的语境"
+     },
+     {
+      "en": "formative years of higher education",
+      "cn": "高等教育的塑造性阶段；比 'college years' 更高级，强调成长意义"
+     },
+     {
+      "en": "broaden one's horizons",
+      "cn": "拓宽视野；常用于教育类作文，搭配 experiences/activities"
+     },
+     {
+      "en": "redirect one's career trajectory",
+      "cn": "重新调整职业轨迹；比 'change one's job plan' 更学术化"
+     },
+     {
+      "en": "cultivate essential skills",
+      "cn": "培养核心技能；cultivate 比 develop 更正式，适合议论文"
+     },
+     {
+      "en": "prove invaluable in",
+      "cn": "在……中被证明极其宝贵；用于强调技能或经验的长远价值"
+     },
+     {
+      "en": "chart a course that aligns with",
+      "cn": "规划一条与……一致的路线；chart a course 为高分搭配，align with 表契合"
+     },
+     {
+      "en": "embrace the journey of self-discovery",
+      "cn": "拥抱自我发现之旅；适合结尾升华，情感色彩积极"
+     },
+     {
+      "en": "present numerous platforms for",
+      "cn": "提供众多平台去……；present 作动词比 provide 更书面"
+     },
+     {
+      "en": "seize this precious opportunity",
+      "cn": "抓住这一宝贵机会；seize 比 grasp/take 更有力度"
+     }
+    ],
+    "pitfalls": [
+     "忘记在文章开头抄写指定首句，直接导致跑题扣分",
+     "全文只有空泛议论而无具体例子或个人经历支撑，论证单薄",
+     "词数不足150词或超过200词，不符合题目硬性要求会被扣分",
+     "段落之间缺乏过渡词衔接（如 furthermore, in conclusion），逻辑松散",
+     "反复使用 important / good / many 等低频词汇，未体现词汇多样性"
+    ],
+    "upgrades": [
+     {
+      "plain": "College life is very important for students.",
+      "better": "College serves as a vital stage where students can experiment, reflect, and ultimately find their true calling.",
+      "note": "用 serves as + where 定语从句替代空泛形容词，表达更具体、句式更丰富"
+     },
+     {
+      "plain": "Students can learn many things in college.",
+      "better": "Students are exposed to diverse disciplines, extracurricular activities, and social experiences that collectively broaden their horizons.",
+      "note": "be exposed to + 三项并列 + that 定语从句，信息量更大且结构更高级"
+     },
+     {
+      "plain": "For example, I joined a club and it was useful.",
+      "better": "From my own experience, joining a debate club not only sharpened my communication skills but also helped me realize my passion for law.",
+      "note": "not only...but also 并列结构 + 具体化动词 sharpen/realize，比 useful 更精准"
+     },
+     {
+      "plain": "Students should use the chance to try different things.",
+      "better": "Every student should seize this precious opportunity and embrace the journey of self-discovery.",
+      "note": "seize + embrace 两个有力动词搭配抽象名词，结尾更有感召力"
+     },
+     {
+      "plain": "College has many courses for students to choose.",
+      "better": "College offers an abundance of courses spanning different fields, enabling students to discover their true passions.",
+      "note": "an abundance of + 现在分词短语 spanning + enabling 非谓语，句式紧凑高级"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "College serves as a vital stage where students can experiment, reflect, and ultimately chart a course that aligns with their aspirations and strengths. — 大学是学生尝试、反思并最终规划与自身志向和优势相契合之路的关键阶段。（where 引导定语从句 + chart a course 高分搭配）",
+   "Students are exposed to diverse disciplines, extracurricular activities, and social experiences that collectively broaden their horizons and shape their identities. — 学生接触到多元学科、课外活动和社交经历，这些共同拓宽了他们的视野并塑造了他们的身份认同。（三项并列 + that 定语从句，信息密度高）",
+   "Through these experiences, students cultivate essential skills like leadership, teamwork, and critical thinking, which prove invaluable in their future careers. — 通过这些经历，学生培养了领导力、团队合作和批判性思维等核心技能，这些在未来职业中被证明极其宝贵。（非限制性定语从句 + prove invaluable 高级表达）",
+   "Every student should seize this precious opportunity and embrace the journey of self-discovery. — 每位学生都应抓住这一宝贵机会，拥抱自我发现之旅。（结尾金句，seize + embrace 双动词并列，感召力强）"
+  ]
+ }
+}

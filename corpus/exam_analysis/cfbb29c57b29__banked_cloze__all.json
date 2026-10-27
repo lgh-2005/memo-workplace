@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "cfbb29c57b29__banked_cloze__all",
+ "examId": "cfbb29c57b29",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2018 年 12 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:22:24.224Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60364,
+ "usage": {
+  "prompt_tokens": 1357,
+  "completion_tokens": 3582,
+  "total_tokens": 4939,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1357,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3582,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1357,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "在牛臀上画眼睛以保护狮子",
+  "gist": "科学家在牛臀部画上眼睛，利用伏击型捕食者在被\"注视\"时会放弃攻击的心理原理，试图减少狮子对家畜的袭击，从而避免农民为保护牲畜而射杀狮子，为野生动物保护提供低成本可持续方案。",
+  "difficulty": "中等",
+  "translation": "在这篇可能是我写过的最疯狂的标题中，我报道了在牲畜保护方面正在发生的进步——科学家们正在牛的臀部上画眼睛。这项实验基于这样一个想法：保护牛群免受狮子侵害的农民会为了保护牲畜而射杀狮子。虽然这很合理，但它导致了许多原本不必要的狮子死亡。澳大利亚的研究人员一直在设计并测试一种欺骗方法，让狮子以为自己正被牛臀上画的眼睛注视着。\n\n这一想法基于这样一个原理：狮子和其他捕食者在感觉被注视时攻击的可能性要小得多。随着保护区面积缩小，狮子越来越多地与人类群体接触，而人类活动正扩展到这些保护区的边界。\n\n像在牛臀上画眼睛这样的努力乍看起来很疯狂，但它们可以在保护工作中取得实际进展。\"如果这种方法有效，它可以为博茨瓦纳——以及其他地方——的农民提供一种低成本、可持续的工具来保护牲畜，并让狮子免于被猎杀。\"\n\n狮子主要是伏击型猎手，所以当它们觉得猎物已经发现了它们时，通常会放弃捕猎。研究人员目前正在一个选定的牛群上测试他们的想法。他们给一半的牛画了眼睛，另一半保持原样。通过对牛群和该地区狮子的卫星追踪，他们将能够确定这种心理欺骗手段是否能帮助阻止农民射杀狮子。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "correct": "advances",
+    "why": "此处需要名词作主语。\"advances in livestock protection are happening\" 意为\"牲畜保护方面的进步正在发生\"，advances 作复数名词，与 in 搭配表示\"在……方面的进展\"，语义与后文描述的新方法完全吻合。",
+    "traps": "boundaries 虽也是名词，但\"边界在发生\"语义不通；其余候选词词性不符（副词、动词等），无法充当 that 引导的从句主语。",
+    "tip": "注意 advances in sth 表示\"某方面的进展\"这一常见搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "I",
+    "correct": "otherwise",
+    "why": "此处需要副词修饰 would have been。otherwise 意为\"否则、在其他情况下\"，表示\"如果不射杀的话，这些狮子的死亡本来是不必要的\"，构成虚拟语气含义，逻辑通顺。",
+    "traps": "currently 虽是副词，但\"目前本来是不必要的\"语义不合理；primarily 放在此处无法体现条件转折的逻辑关系。",
+    "tip": "otherwise + would have done 表示与事实相反的假设。"
+   },
+   {
+    "number": 28,
+    "answer": "F",
+    "correct": "devising",
+    "why": "此处与 testing 并列，需要现在分词形式。have been devising and testing 构成现在完成进行时，devising 意为\"设计、发明\"，与后文 a method of trickery 搭配，表示研究人员一直在设计并测试一种欺骗方法。",
+    "traps": "challenging 虽也是现在分词，但\"挑战并测试一种方法\"语义不当；spotted 是过去分词，无法与 have been...and testing 并列。",
+    "tip": "并列结构要求词性与形式一致，且语义需匹配。"
+   },
+   {
+    "number": 29,
+    "answer": "J",
+    "correct": "predators",
+    "why": "此处需要名词与 lions 并列。\"lions and other predators\" 意为\"狮子和其他捕食者\"，predators 与上下文讨论的猎杀、伏击主题高度一致，other 暗示狮子属于同一类别。",
+    "traps": "advances 和 boundaries 虽也是名词，但\"狮子和其他进展/边界\"语义荒谬，无法与 are far less likely to attack 搭配。",
+    "tip": "other + 名词复数表同类并列，需确保语义归类合理。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "correct": "boundaries",
+    "why": "此处需要名词作介词 to the 的宾语。\"expanding to the boundaries of these protected areas\" 意为\"扩展到保护区的边界\"，表示人类活动范围已延伸到保护区边缘，解释了人狮冲突加剧的原因。",
+    "traps": "advances 放入后\"扩展到保护区的进展\"不合逻辑；此处需要具有空间含义的名词，其他候选名词均不具备。",
+    "tip": "to the boundaries of 表示\"延伸到……的边界\"，常见空间搭配。"
+   },
+   {
+    "number": 31,
+    "answer": "G",
+    "correct": "elsewhere",
+    "why": "此处用破折号插入补充说明，与 in Botswana 形成递进。elsewhere 意为\"其他地方\"，表示该方法不仅适用于博茨瓦纳，也适用于其他地区，符合推广应用的语境。",
+    "traps": "otherwise 虽也是副词，但意为\"否则\"，表转折条件，不能表地点扩展；currently 表时间，不合语境。",
+    "tip": "elsewhere 常用于表示\"在其他地方也适用\"的推广语境。"
+   },
+   {
+    "number": 32,
+    "answer": "K",
+    "correct": "primarily",
+    "why": "此处需要副词修饰名词短语 ambush hunters。primarily 意为\"主要地\"，\"Lions are primarily ambush hunters\" 表示狮子主要是伏击型猎手，为下文\"被发现就放弃\"提供因果前提。",
+    "traps": "currently 放在此处变成\"狮子目前是伏击猎手\"，暗示以前不是，与常识不符；otherwise 表假设转折，语义不通。",
+    "tip": "primarily 修饰名词/名词短语表\"本质上主要是\"。"
+   },
+   {
+    "number": 33,
+    "answer": "M",
+    "correct": "spotted",
+    "why": "此处需要动词过去分词/过去式，作 has 之后的完成时态动词。spotted 意为\"发现、注意到\"，\"their prey has spotted them\" 意为\"猎物已经发现了它们\"，与伏击猎手被发现就放弃捕猎的逻辑完全吻合。",
+    "traps": "devising 是现在分词，不能用于 has + V 结构；其他候选动词如 determine 语义不当——猎物不会\"确定\"捕食者。",
+    "tip": "spot 作动词意为\"发现、认出\"，完成时 has spotted。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "correct": "currently",
+    "why": "此处需要副词修饰 testing。currently 意为\"目前\"，表示研究正在进行中，与后文描述的实验细节（画了一半牛、卫星追踪）相呼应，体现实验的进行时态。",
+    "traps": "primarily 放入后变成\"主要地测试\"，削弱了时间信息；elsewhere 是地点副词，不能修饰动词 testing 的方式。",
+    "tip": "currently + 进行时态表示\"目前正在进行\"。"
+   },
+   {
+    "number": 35,
+    "answer": "E",
+    "correct": "determine",
+    "why": "此处需要动词原形，位于 able to 之后。determine 意为\"确定、判定\"，\"able to determine if...\" 表示\"能够确定是否……\"，与后文 psychological trickery will work 构成宾语从句，逻辑完整。",
+    "traps": "其余未用候选词中 challenging 是形容词/分词，不能用于 able to + V 结构；advance 在此处语义不符。",
+    "tip": "be able to determine if/whether 是\"确定是否\"的常见表达。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "advances",
+    "cn": "n. 进步，进展（名词复数）"
+   },
+   {
+    "w": "boundaries",
+    "cn": "n. 边界，界限（名词复数）"
+   },
+   {
+    "w": "devising",
+    "cn": "v. 设计，发明（devise 的现在分词）"
+   },
+   {
+    "w": "predators",
+    "cn": "n. 捕食者，掠食动物（名词复数）"
+   },
+   {
+    "w": "primarily",
+    "cn": "adv. 主要地，首要地"
+   },
+   {
+    "w": "spotted",
+    "cn": "v. 发现，注意到（spot 的过去式/过去分词）"
+   },
+   {
+    "w": "elsewhere",
+    "cn": "adv. 在别处，到其他地方"
+   },
+   {
+    "w": "otherwise",
+    "cn": "adv. 否则；在其他方面"
+   },
+   {
+    "w": "determine",
+    "cn": "v. 确定，判定；决定"
+   },
+   {
+    "w": "livestock",
+    "cn": "n. 牲畜，家畜"
+   },
+   {
+    "w": "trickery",
+    "cn": "n. 欺骗，诡计"
+   },
+   {
+    "w": "headway",
+    "cn": "n. 进展，前进（常用于 make headway）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——在牛臀画眼睛保护狮子的实验。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、助动词、并列连词等）判定所需词性。",
+   "第四步：结合上下文语义与逻辑关系（因果、转折、并列）从同词性候选中精选答案。",
+   "第五步：填完后回读全文，检查语法一致性和语义连贯性，确保无重复使用。"
+  ]
+ }
+}

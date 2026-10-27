@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "02317b30b42e__reading__1",
+ "examId": "02317b30b42e",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年 6 月英语六级真题（第 2 套）",
+ "year": 2026,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:08:04.924Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 74332,
+ "usage": {
+  "prompt_tokens": 1832,
+  "completion_tokens": 4818,
+  "total_tokens": 6650,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1832,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4818,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1832,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "自律的本质与强化方式",
+  "gist": "文章围绕职场中的自律展开，指出人们对自律本质的认知（认为它越用越少还是越用越强）直接决定其体验。作者建议通过回忆成功经历、转换心态、以榜样为参照等方式，将自律视为一块可越练越强的\"肌肉\"，从而持续提升意志力。",
+  "structure": [
+   "第1-2段：引出自律话题，提出关于自律本质的两种观点",
+   "第3段（核心论证）：阐明心态对自律体验的决定性作用",
+   "第4-5段：分别针对两类人群给出转变信念的实操建议",
+   "第6-7段：榜样激励与'自律如肌肉'的类比总结"
+  ],
+  "difficulty": "中等",
+  "translation": "职场中的自律是什么样的？有时候，它是抵御诱惑的能力，比如避免因分心而逃避某项任务。有时候，它是在精力和动力似乎都很低的时候坚持完成任务的能力。\n\n你如何看待自身自律的本质？它是一种随使用而消耗的内在能量吗？还是在你不断运用并坚持的过程中反而得到增强的东西？\n\n你的答案很重要，因为它决定了你能体验到多大程度的自律。多年来，心理学研究将自控力指向一种会随使用而耗竭、需要通过休息、放松或睡眠来恢复的资源。然而，近年来的研究指出了心态的重要性。如果你把自律视为一种可消耗的资源，你的意志力就容易随使用而衰退。如果你相信锻炼自控力会增强并充实它，那么当你抵御诱惑或逼迫自己完成一件不那么有吸引力的事情时，这更可能成为你的真实体验。\n\n如果你尚未将自律视为一种自我滋养的力量，你可以怎么做呢？回想那些你最初在抵御诱惑、着手做某事或坚持下去时遇到困难，但依然挺过来并完成了任务或达成了目标的经历。这正是我们在谈论这种关于自律的特定信念时所指的那类体验，而你已经有过这样的经历，所以你已经证明了这是可能的。当你感到意志力和动力在消退时，提醒自己过去的那些经历，并想象同样的事情正在此刻发生。\n\n如果你的经历似乎一直表明你的自控力会随使用而减弱，你需要休息来恢复精力呢？只要你有条件去休息，这也没什么问题。如果没有条件休息，请提醒自己：并非所有人都把自律体验为一种可耗尽的资源，如果你此刻专注于汲取更多能量，而不是关注继续下去有多困难或对休息的需求，你的体验可能会不同。\n\n另外，如果你认识某位自律的榜样，就想象那个人身处你的境况中坚持完成任务。无论你采用何种方法，当你继续向前推进以取得成果时，一定要在心理上肯定自己——为自己在坚持过程中能发挥更多意志力而感到自豪。\n\n发挥意志力的好处是累积性的。你的自律就像一块肌肉，每当你抵御诱惑或在缺乏动力的情况下坚持任务时，你就在强化这块肌肉，从而在未来类似的情况下减少所需的努力和阻力。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Your answer matters, as it determines how much self-discipline you experience.",
+    "why": "第三段开头明确指出\"你的答案很重要，因为它决定了你能体验到多大程度的自律\"，这里的\"answer\"指的是前一段提出的关于自律本质的两个问题的回答，即你对自律的认知/观念。C选项\"Their conception of self-discipline\"（他们对自律的认知）精准对应了\"your answer\"所指代的内容以及后文所强调的\"mindset\"（心态）。",
+    "traps": "A选项\"关于动力本质的信念\"偷换概念，原文核心是self-discipline而非motivation；B选项\"使用内在能量来坚持\"仅是两种观点中的一种，属于以偏概全；D选项\"抵御诱惑的能力\"是自律的一种表现形式，见第一段，而非决定自律体验程度的因素。",
+    "tip": "题目问\"决定因素\"，要找因果关系的\"因\"，不要被现象描述干扰。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "For years, research in psychology pointed to self-control as a resource that is depleted with use and needs to be restored through breaks, rest, or sleep.",
+    "why": "原文第三段明确指出\"多年来，心理学研究将自控力指向一种会随使用而耗竭的资源\"。A选项\"It is a depletable resource\"（它是一种可耗尽的资源）与原文\"a resource that is depleted with use\"完全对应，depleted和depletable词根相同，语义一致。",
+    "traps": "B选项\"通过使用而增强\"是近期研究中另一种信念的内容，与\"多年来的研究\"方向相反，属于张冠李戴；C选项\"其强度取决于意志力\"原文未提及这种因果关系；D选项\"锻炼自律是令人精疲力竭的体验\"过度推断，原文说的是\"资源被耗尽\"，而非\"体验令人精疲力竭\"。",
+    "tip": "注意时间限定词\"for years\"对应的是旧观点，与\"more recently\"的新观点要区分。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "If you don't already view self-discipline as a force that feeds itself, what might you do? Reflect on times that you had initial difficulty resisting temptation, getting started on something, or sticking with it, but pushed ahead and accomplished the task or met the goal.",
+    "why": "第四段的逻辑链是：如果你尚未将自律视为\"自我滋养的力量\"→你可以回忆那些克服初始困难最终达成目标的经历→你已经证明这是可能的。作者让读者回忆的目的，是帮助他们认识到自律确实可以\"越用越强\"，即证明将自律视为自我滋养力量的可行性。B选项\"展示将自律视为自我充能力量的可行性\"完美匹配此论证目的。",
+    "traps": "A选项\"展示放弃过时信念的紧迫性\"——作者语气温和建议，并未强调\"紧迫性\"或\"过时\"，属于程度过重；C选项\"支持职场坚持的论点\"范围过窄，文章不限于职场；D选项\"为先前心理学研究添加证据\"方向错误，作者恰恰在提出不同于传统研究的新视角。",
+    "tip": "例证题要看所举例子服务的上层观点，回到例子前的论点句寻找答案。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "If not, remind yourself that not everyone experiences self-discipline as a depletable resource and that your experience might be different if you focus on gathering more energy at this point rather than focusing on how difficult it is to continue or the need for a break.",
+    "why": "第五段讨论的情境是：如果你无法负担休息来恢复精力。建议是提醒自己并非所有人都认为自律是可耗尽的资源，如果你专注于\"汲取更多能量\"而非\"关注困难或休息需求\"，体验可能会不同。核心意思是转变心态、继续努力，即C选项\"鞭策自己继续工作\"。",
+    "traps": "A选项\"弄清哪里出了问题\"原文无对应内容，属于无中生有；B选项\"专注于任务最困难的部分\"与原文相反，原文明确说不要聚焦于困难；D选项\"从周围人那里获取新能量\"偷换概念，原文\"gathering more energy\"是指自我心态调整，并非从他人处获取。",
+    "tip": "注意选项中介词短语的细微偏差，\"gather energy\"≠\"gather energy from people around\"。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "Your self-discipline is akin to a muscle, and each time you resist temptation or persist in a task despite a lack of motivation, you strengthen that muscle, leading to less effort and resistance in similar instances in the future.",
+    "why": "最后一段将自律比作肌肉，核心观点是：每次你抵御诱惑或在缺乏动力时坚持，你就在\"强化这块肌肉\"，未来遇到类似情况时所需的努力和阻力都会减少。D选项\"越锻炼就越强壮\"精准概括了\"strengthen that muscle\"的含义，体现了自律越用越强的核心主旨。",
+    "traps": "A选项\"越运用遇到的阻力越大\"与原文\"leading to less effort and resistance\"直接矛盾；B选项\"越施展越自豪\"虽然前文提到过take pride，但不是比喻肌肉的原因；C选项\"越强制执行意志力越强\"因果关系模糊，且未体现\"肌肉\"类比的核心含义——越练越强、越来越省力。",
+    "tip": "比喻/类比题要抓住喻体与本体的共同特征，即核心相似点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "bolstered",
+    "cn": "增强，支撑（v.）"
+   },
+   {
+    "w": "depleted",
+    "cn": "耗尽的，枯竭的（adj./v.过去分词）"
+   },
+   {
+    "w": "expendable",
+    "cn": "可消耗的，用完即弃的（adj.）"
+   },
+   {
+    "w": "depletable",
+    "cn": "可耗尽的（adj.）"
+   },
+   {
+    "w": "cumulative",
+    "cn": "累积的，渐增的（adj.）"
+   },
+   {
+    "w": "akin",
+    "cn": "类似的，相似的（adj.，常与to连用）"
+   },
+   {
+    "w": "persist",
+    "cn": "坚持，持续（v.）"
+   },
+   {
+    "w": "diminishes",
+    "cn": "减少，减弱（v.）"
+   },
+   {
+    "w": "reinforce",
+    "cn": "强化，加强（v.）"
+   },
+   {
+    "w": "exert",
+    "cn": "施加，运用（v.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "If you believe that exercising your self-control strengthens and fuels it, that is more likely to be your experience as you resist temptation or push yourself to get something done that is not appealing.",
+    "cn": "如果你相信锻炼自控力会增强并充实它，那么当你抵御诱惑或逼迫自己完成一件不那么有吸引力的事情时，这更可能成为你的真实体验。",
+    "note": "If引导条件状语从句，主句主语that回指前半句内容；as引导时间状语从句，其中含or连接的两个并列动作；that is not appealing为定语从句修饰something。"
+   },
+   {
+    "en": "If not, remind yourself that not everyone experiences self-discipline as a depletable resource and that your experience might be different if you focus on gathering more energy at this point rather than focusing on how difficult it is to continue or the need for a break.",
+    "cn": "如果没有条件休息，请提醒自己：并非所有人都把自律体验为一种可耗尽的资源，而且如果你此刻专注于汲取更多能量，而不是关注继续下去有多困难或对休息的需求，你的体验可能会不同。",
+    "note": "remind yourself后接两个that并列宾语从句；第二个that从句内嵌if条件状语从句；rather than连接对比结构；how difficult为感叹/程度从句作focusing on的宾语。"
+   },
+   {
+    "en": "Regardless of how you do it, as you push forward to continue to accomplish progress, be sure to mentally reinforce yourself by taking pride in your ability to exert more willpower as you persist.",
+    "cn": "无论你采用何种方法，当你继续向前推进以取得成果时，一定要在心理上肯定自己——为自己在坚持过程中能发挥更多意志力而感到自豪。",
+    "note": "Regardless of引导让步状语；as引导时间状语从句；be sure to为祈使句主干；by taking pride为方式状语；最后as you persist为时间状语从句嵌套。"
+   }
+  ]
+ }
+}

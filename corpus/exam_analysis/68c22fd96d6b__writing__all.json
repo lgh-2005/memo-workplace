@@ -1,0 +1,226 @@
+{
+ "schemaVersion": 1,
+ "id": "68c22fd96d6b__writing__all",
+ "examId": "68c22fd96d6b",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2008 年考研英语真题（旧）",
+ "year": 2008,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:21:48.525Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72513,
+ "usage": {
+  "prompt_tokens": 857,
+  "completion_tokens": 3974,
+  "total_tokens": 4831,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 857,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3974,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 857,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "书信写作（道歉信）：因回国后发现行李中有房东Bob的音乐CD未归还，写信致歉并提出解决方案。约100词。",
+    "outline": [
+     "第一段：开门见山表明写信目的，说明发现CD未归还的情况并诚恳致歉",
+     "第二段：提出具体的解决方案，如国际快递寄回或网购新CD直邮到其地址",
+     "第三段：再次表达歉意，期待回复，礼貌收尾"
+    ],
+    "sample": "Dear Bob,\n\nI am writing to express my sincere apology for an oversight. Upon unpacking my luggage after returning to China, I found one of your music CDs among my belongings. I must have accidentally packed it while I was in a rush before departure. I feel terribly sorry for the inconvenience this may have caused you.\n\nI would like to mail the CD back to you by international express delivery at my own expense. Alternatively, if you prefer, I could purchase a replacement copy online and have it shipped directly to your address. Please let me know which option suits you best.\n\nOnce again, please accept my heartfelt apology. I truly cherish the wonderful time I spent at your place, and I hope this incident will not affect our friendship.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "express my sincere apology for…",
+      "cn": "对……表达诚挚的歉意；道歉信首段高频表达"
+     },
+     {
+      "en": "upon unpacking my luggage",
+      "cn": "打开行李时；upon + doing 表示\"一……就……\"，时间状语结构"
+     },
+     {
+      "en": "among my belongings",
+      "cn": "在我的物品当中；belongings 指随身物品，比things更正式"
+     },
+     {
+      "en": "in a rush",
+      "cn": "匆忙地；常用于解释疏忽原因"
+     },
+     {
+      "en": "at my own expense",
+      "cn": "自费；表达承担费用的诚意，加分细节"
+     },
+     {
+      "en": "have it shipped directly to your address",
+      "cn": "直接寄到您的地址；have sth. done 使役结构"
+     },
+     {
+      "en": "please accept my heartfelt apology",
+      "cn": "请接受我衷心的道歉；结尾再次致歉的常用表达"
+     },
+     {
+      "en": "I truly cherish the wonderful time",
+      "cn": "我非常珍惜那段美好时光；情感升华，体现真诚"
+     }
+    ],
+    "pitfalls": [
+     "忘记包含道歉和解决方案两个要点，缺一扣分严重",
+     "语气过于随意或过于卑微，应保持礼貌得体的朋友间语气",
+     "格式不规范：缺少Dear Bob开头或Yours sincerely结尾",
+     "解决方案过于笼统（如仅说I will return it），缺乏具体可操作的细节",
+     "超出词数过多（超过150词）或不足（少于80词）"
+    ],
+    "upgrades": [
+     {
+      "plain": "I am sorry that I forgot to return your CD.",
+      "better": "I am writing to express my sincere apology for inadvertently taking your music CD back to China.",
+      "note": "用inadvertently替代forgot，语气更正式委婉，且一句话交代清楚事件经过"
+     },
+     {
+      "plain": "I will send it back to you.",
+      "better": "I would like to mail the CD back to you by international express delivery at my own expense.",
+      "note": "补充寄送方式和费用承担，细节具体，展现解决问题的诚意"
+     },
+     {
+      "plain": "I hope you are not angry.",
+      "better": "I hope this incident will not affect our friendship.",
+      "note": "从维护友谊角度收束，立意更高且避免了暗示对方生气的不妥表达"
+     },
+     {
+      "plain": "Please tell me what you want.",
+      "better": "Please let me know which option suits you best.",
+      "note": "which option suits you best 更尊重对方选择权，措辞更得体"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "图画作文：根据图画描述内容、阐释寓意并发表评论。图画为两个各失去一条腿的残疾人互相搀扶前行，配文\"你一条腿，我一条腿；你我一起，走南闯北\"。160-200词。",
+    "outline": [
+     "第一段：客观描述图画内容——两个残疾人各缺一条腿，互相搀扶坚定前行，并引述配文",
+     "第二段：揭示图画深层寓意——合作互助、取长补短可以克服个体的局限与困难",
+     "第三段：发表评论——在现代社会中合作精神不可或缺，呼吁人们寻求互补合作、共克难关"
+    ],
+    "sample": "As is vividly depicted in the drawing, two disabled men are striding forward with remarkable determination. One has lost his left leg while the other has lost his right leg. By supporting each other shoulder to shoulder, they manage to walk steadily and confidently. The caption below reads: \"You have one leg and I have one; together, we can travel far and wide.\"\n\nThe drawing conveys a profound message about cooperation and mutual support. In reality, every individual has limitations and weaknesses that may seem insurmountable when faced alone. However, when people combine their respective strengths and compensate for each other's shortcomings, they can overcome obstacles that would otherwise be impossible to conquer. Just as the two men in the picture rely on each other to walk, we too can accomplish far more through collaboration than through solitary effort.\n\nIn my view, the spirit of mutual assistance deserves wider recognition and promotion in contemporary society. Whether in academic research, professional careers, or everyday life, teamwork remains indispensable. Rather than struggling alone with our individual deficiencies, we should actively seek partners whose abilities complement our own. Only through such sincere cooperation can we navigate the challenges of life and ultimately reach our full potential.",
+    "phrases": [
+     {
+      "en": "as is vividly depicted in the drawing",
+      "cn": "正如图画中生动描绘的那样；图画作文经典开篇句式"
+     },
+     {
+      "en": "stride forward with remarkable determination",
+      "cn": "以非凡的决心大步前行；stride比walk更有画面感和力量感"
+     },
+     {
+      "en": "supporting each other shoulder to shoulder",
+      "cn": "肩并肩互相支撑；生动再现图画细节"
+     },
+     {
+      "en": "convey a profound message about…",
+      "cn": "传达了关于……的深刻信息；从描述过渡到分析的衔接句"
+     },
+     {
+      "en": "compensate for each other's shortcomings",
+      "cn": "弥补彼此的不足；合作类话题核心表达"
+     },
+     {
+      "en": "seemingly insurmountable obstacles",
+      "cn": "看似不可逾越的障碍；insurmountable为高级形容词"
+     },
+     {
+      "en": "through collaboration rather than solitary effort",
+      "cn": "通过合作而非单打独斗；对比结构增强说服力"
+     },
+     {
+      "en": "whose abilities complement our own",
+      "cn": "其能力与我们互补的；complement作动词表示\"互补\""
+     },
+     {
+      "en": "navigate the challenges of life",
+      "cn": "应对生活中的挑战；navigate比face/deal with更形象高级"
+     },
+     {
+      "en": "reach our full potential",
+      "cn": "发挥我们的全部潜能；常用于结尾升华"
+     }
+    ],
+    "pitfalls": [
+     "第一段描述图画不够具体，未提及关键细节（如各缺一条腿、互相搀扶）",
+     "忽视配文内容，未引用或解读图下文字，丢失关键信息",
+     "寓意挖掘停留在表面（如仅说残疾人很坚强），未提炼出合作互助的核心主题",
+     "第三段评论空泛，缺少具体领域的举例或呼吁",
+     "词数不足160或超过200，影响评分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Two men who have lost one leg each are walking together.",
+      "better": "Two disabled men, one having lost his left leg and the other his right, are striding forward shoulder to shoulder with remarkable determination.",
+      "note": "独立主格结构补充细节，stride替换walk，画面感和语言层次均提升"
+     },
+     {
+      "plain": "The picture tells us that cooperation is important.",
+      "better": "The drawing conveys a profound message that mutual support enables individuals to transcend their limitations.",
+      "note": "用transcend their limitations替代泛泛而谈的important，寓意阐释更深刻精准"
+     },
+     {
+      "plain": "We should help each other in life.",
+      "better": "Rather than struggling alone with our individual deficiencies, we should actively seek partners whose strengths complement our own.",
+      "note": "rather than引导对比，complement点明互补关系，建议更具体、更有说服力"
+     },
+     {
+      "plain": "I think cooperation is very useful.",
+      "better": "Only through such sincere cooperation can we navigate the challenges of life and ultimately reach our full potential.",
+      "note": "only倒装句式增强语势，navigate和reach our full potential均为高分词汇"
+     },
+     {
+      "plain": "Everyone has problems.",
+      "better": "Every individual has limitations and weaknesses that may seem insurmountable when faced alone.",
+      "note": "定语从句扩展细节，insurmountable提升词汇档次，逻辑上为下文合作做铺垫"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the drawing, two disabled men are striding forward with remarkable determination, supporting each other shoulder to shoulder. —— 开篇描图句：as引导非限定性定语从句 + 现在分词作伴随状语，结构紧凑、画面鲜明。",
+   "When people combine their respective strengths and compensate for each other's shortcomings, they can overcome obstacles that would otherwise be impossible to conquer. —— 寓意阐释核心句：otherwise虚拟语气暗含对比，逻辑严密，合作主题一击即中。",
+   "Rather than struggling alone with our individual deficiencies, we should actively seek partners whose abilities complement our own. —— 建议句：rather than + doing 引出对比，whose引导定语从句修饰partners，句式多变且论证有力。",
+   "Only through such sincere cooperation can we navigate the challenges of life and ultimately reach our full potential. —— 结尾升华句：only + 介词短语置于句首引发倒装，语势强烈，适合作文压轴。",
+   "I would like to mail the CD back to you by international express delivery at my own expense. —— 小作文解决方案句：具体方式 + 费用承担，体现道歉信中诚意和细节并重的高分策略。"
+  ]
+ }
+}

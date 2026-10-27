@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "48c35b13a250__reading__1",
+ "examId": "48c35b13a250",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 6 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:42:59.326Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64354,
+ "usage": {
+  "prompt_tokens": 1829,
+  "completion_tokens": 3975,
+  "total_tokens": 5804,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1829,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3975,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1829,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "为美国精英高校教育模式辩护",
+  "gist": "文章针对美国精英大学遭受的\"过于精英化、费用高昂、忽视职业训练\"等批评，逐一进行反驳：指出其毕业生职业表现优秀，文理教育培养了批判性思维等关键能力；该教育模式推动了经济增长与创新；通过捐赠基金提供助学金使更多中低收入家庭获益；而税改对捐赠基金征税反而削弱了教育机会的公平性。",
+  "structure": [
+   "第1-2段：引出争议并正面肯定精英高校的价值与成效",
+   "第3-4段：以税改法案为例说明高校面临的政策威胁，呼吁更好地自我辩护",
+   "第5段：以数据和研究反驳'文理教育无用'的论点",
+   "第6-7段：论述捐赠基金如何促进教育机会公平，批评新税制的反效果"
+  ],
+  "difficulty": "中等",
+  "translation": "美国的精英大学正因过于精英化、费用过于高昂以及未能为毕业生适应职场做好准备而饱受抨击。这些指控忽视了一个事实：这些院校一直在为学生的事业成功、深思熟虑地参与公民生活、终身学习，以及理解世界和与之共处的人做着持续的准备。\n\n这些大学一定做对了什么。入学申请数量创下了历史新高，其助学金项目也使它们比以往更加开放。这种教育模式长期以来在创造机会、推动经济增长和激发创新方面发挥着核心作用。\n\n然而，人们对这种模式的价值日益持怀疑态度。最近的税改法案敲响了警钟，表明我们最优秀的学院和大学正在遭受政府中某些人的攻击。最初的提案通过对研究生学费减免征税和取消学生贷款利息扣减，会让许多人负担不起教育费用。值得庆幸的是，这些条款最终从法案中被删除了，但立法者保留了对部分学院和大学投资收入征收的一项新税。\n\n虽然这些攻击源于错误的观念，但我们需要更好地解释为什么这些指控是错误的，以及为什么我们所做的一切是有价值的。我们不能想当然地认为这些都是不言自明的。\n\n人们常说，精英大学并没有为学生——特别是那些学习文科的学生——做好进入职场的准备。但这可以用学术研究来驳斥。数据很清楚：文科教育是极好的职业准备，无论是在出色的终身收入方面，还是在对工作的满意度方面。这种教育培养了批判性思维、对数据和事实的严谨分析、书面和口头表达能力、对文化差异和问题的理解，以及持续学习的能力。事实上，文科毕业生在每一个可以想象的领域都表现出色。\n\n如今，中低收入家庭比以往任何时候都更容易进入精英大学接受教育。我们通过理解和认同我们提供入学机会这一使命的校友和家长的捐赠建立了捐赠基金，而这些基金回报的很大一部分被用于资助助学金。\n\n讽刺的是，对捐赠基金征收的新税恰恰从最有能力为那些虽然凭实力获得了入学资格但无力承担费用的学生提供机会的学校中抽走了助学资金。除了让那些凭实力获得入学资格的学生能够入学这一优点之外，经济背景的多样性还提升了我们所有学生的教育质量和体验。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Such charges ignore the fact that these institutions continue to prepare students for success in their work, for thoughtful engagement in civic life, for lifelong learning, and for understanding the world and those with whom they live.",
+    "why": "原文第一段指出，对精英大学的种种指控忽视了一个事实：这些院校持续为学生在事业成功、公民参与、终身学习和理解世界等方面做好准备。'prepare students for success'直接对应B选项'doing well in ensuring their students a successful future'，即作者强调的是精英高校在确保学生成功未来方面做得很好这一事实。",
+    "traps": "A项'忽视职业训练'是外界的指控而非作者强调的事实，属于张冠李戴；C项'不断遭受攻击'虽在原文提及，但这是背景信息而非作者强调的事实；D项'积极参与公民生活'是学生培养目标之一，并非对学校本身的描述，属于偷换主语。",
+    "tip": "区分'外界指控'与'作者强调的事实'，注意转折词后的信息。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "This model of education has long played a central role in creating opportunity, driving economic growth, and spurring innovation.",
+    "why": "第二段明确指出这种教育模式在创造机会、推动经济增长和激发创新方面长期发挥核心作用。这三个方面（机会、经济增长、创新）涵盖了国家整体发展的多个维度，A选项'对国家整体发展做出了重大贡献'是对此的高度概括，完全吻合。",
+    "traps": "B项'维持可持续的助学金项目'虽提及助学金，但原文说的是申请量创新高和更易获得，并非论证该模式价值的核心论点；C项'优先发展研究生创新项目'在原文中无依据，属于无中生有；D项'吸引国际申请者'原文完全未提及，属于无中生有。",
+    "tip": "关注段落中直接阐述教育模式价值的核心论述句。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The initial proposals would have made education unaffordable for many by taxing tuition waivers for graduate students and ending deductions for student loan interest.",
+    "why": "原文明确指出最初的提案会通过对研究生学费减免征税和取消学生贷款利息扣减使许多人负担不起教育费用。'made education unaffordable for many'意味着增加了学生的经济负担，直接对应C选项'会增加许多学生的经济负担'。",
+    "traps": "A项'剥夺许多学生人生机会'过度引申，原文说的是经济负担加重而非剥夺人生机会；B项'扣减研究生贷款利息'属于曲解原文，原文是'ending deductions'即取消利息扣减，而非进行扣减；D项'增加学费减免数量'与原文相反，原文是对学费减免征税，属于反向干扰。",
+    "tip": "注意区分'取消某项优惠政策'与'增加某项优惠政策'的本质区别。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The data are clear: a liberal arts education is great career preparation, both for excellent lifetime earnings and for satisfaction with the work. ... In fact, liberal arts graduates do extremely well in every imaginable field.",
+    "why": "第五段先指出数据清楚表明文科教育是极好的职业准备，然后总结说文科毕业生在'every imaginable field'都表现出色。D选项'文科教育使毕业生在任何领域都能出类拔萃'是对'do extremely well in every imaginable field'的准确复述。",
+    "traps": "A项'缺乏统计分析所需的严谨性'与原文相反，原文强调文科教育培养'rigorous analysis of data and facts'；B项'未充分为职业做好准备'与原文论点完全相反，属于反向干扰；C项'对研究的关注有助于培养批判性思维'偷换了概念，原文说的是文科教育而非'focus on research'培养批判性思维。",
+    "tip": "当题目问'数据表明什么'时，聚焦原文中紧跟'data'或总结性表述的信息。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Beyond the virtue of access to those who have earned a place at these schools, the diversity of economic backgrounds enhances the education and experience of all of our students.",
+    "why": "文章最后一句指出，除了让凭实力获得入学资格的学生能够入学之外，经济背景的多样性提升了'所有学生'的教育和体验。助学金使得更多不同经济背景的学生入学，从而形成多元化的学生群体，所有学生都能从中受益，这与B选项完全一致。",
+    "traps": "A项'每个学生都能选择想去的学校'原文未提及且过度绝对；C项'所有学生都能获得入学名额'偷换了概念，原文说的是'earned a spot'即凭实力获得的名额，而非人人都能获得；D项'弱势学生在精英学校更有竞争力'原文未涉及竞争力的比较，属于无中生有。",
+    "tip": "注意末段总结句往往是出题点，'all of our students'是关键限定词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "under fire",
+    "cn": "遭受抨击、受到批评（短语）"
+   },
+   {
+    "w": "spurring",
+    "cn": "激励，刺激（v. spur的现在分词）"
+   },
+   {
+    "w": "skepticism",
+    "cn": "怀疑态度，质疑（n.）"
+   },
+   {
+    "w": "assault",
+    "cn": "攻击，抨击（n./v.）"
+   },
+   {
+    "w": "tuition waivers",
+    "cn": "学费减免（名词短语）"
+   },
+   {
+    "w": "deductions",
+    "cn": "扣减，减免额（n.）"
+   },
+   {
+    "w": "provisions",
+    "cn": "条款，规定（n.）"
+   },
+   {
+    "w": "stripped",
+    "cn": "删除，剥去（v. strip的过去式）"
+   },
+   {
+    "w": "refuted",
+    "cn": "反驳，驳斥（v. refute的过去分词）"
+   },
+   {
+    "w": "rigorous",
+    "cn": "严谨的，严格的（adj.）"
+   },
+   {
+    "w": "endowments",
+    "cn": "捐赠基金（n.）"
+   },
+   {
+    "w": "ironically",
+    "cn": "讽刺的是（adv.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The initial proposals would have made education unaffordable for many by taxing tuition waivers for graduate students and ending deductions for student loan interest.",
+    "cn": "最初的提案会通过对研究生学费减免征税和取消学生贷款利息扣减，使许多人负担不起教育费用。",
+    "note": "主干为'proposals would have made education unaffordable'，by后接两个并列的动名词短语作方式状语，说明导致负担不起的两种途径。"
+   },
+   {
+    "en": "Ironically, the new tax on endowments drains financial aid funds from the very schools most able to offer opportunity to those who have earned a spot but cannot otherwise afford this education.",
+    "cn": "讽刺的是，对捐赠基金征收的新税恰恰从最有能力为那些凭实力获得入学资格但无力承担费用的学生提供机会的学校中抽走了助学资金。",
+    "note": "主干为'the new tax drains funds from the schools'；'most able to offer opportunity'为后置定语修饰schools；'those who...but cannot...'为offer的间接宾语，内含转折。"
+   },
+   {
+    "en": "Beyond the virtue of access to those who have earned a place at these schools, the diversity of economic backgrounds enhances the education and experience of all of our students.",
+    "cn": "除了让那些凭实力获得入学资格的学生能够入学这一优点之外，经济背景的多样性还提升了我们所有学生的教育质量和体验。",
+    "note": "Beyond引导介词短语作让步状语，主干为'the diversity enhances the education and experience'；'those who have earned a place'为access的宾语从句。"
+   }
+  ]
+ }
+}

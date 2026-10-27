@@ -1,0 +1,199 @@
+{
+ "schemaVersion": 1,
+ "id": "d8e3f65d0ba3__translation__all",
+ "examId": "d8e3f65d0ba3",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2003 年考研英语真题（旧）",
+ "year": 2003,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:14:17.316Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60514,
+ "usage": {
+  "prompt_tokens": 1367,
+  "completion_tokens": 4025,
+  "total_tokens": 5392,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1367,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4025,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1367,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人类学的学科定义与文化概念",
+  "translation": "各个时代、各个地区的人类都会思考他们所生活的世界，并对自己在其中的位置感到惊奇。人类善于思考且富有创造力，拥有永不满足的好奇心。此外，人类有能力改变自己的生存环境，从而使所有其他生命形式服从于人类自己独特的想法和想象。因此，以冷静而系统的方式研究人类的丰富性和多样性就显得十分重要，其目的是希望由此类研究所获得的知识能够引导人类以一种更加和谐的方式与自身以及地球上所有其他生命形式共处。\n\n\"人类学\"一词源自希腊语中的 anthropos（人类）和 logos（研究）。顾名思义，人类学涵盖了对全人类的研究。\n\n人类学是社会科学之一。社会科学是知识探索的一个分支，它力图以自然科学家研究自然现象时所采用的同样理性的、有序的、系统的和客观冷静的方式来研究人类及其行为活动。\n\n社会科学的学科包括地理学、经济学、政治学、心理学和社会学。每一门社会科学都有一个与人类学联系尤为密切的分支领域或专业方向。\n\n所有社会科学都以人类为研究重点。人类学是一门以实地研究为导向的学科，在分析中广泛使用比较方法。对第一手资料的重视，加上在分析过去和现在的文化时所采用的跨文化视角，使得这门学科成为一门独特且极为重要的社会科学。\n\n人类学分析在很大程度上依赖于文化这一概念。爱德华·泰勒爵士对文化概念的阐述是19世纪科学中最伟大的学术成就之一。泰勒将文化定义为\"……一个复合的整体，它包括信仰、艺术、道德、法律、风俗以及人作为社会成员所获得的其他一切能力和习惯\"。这一见解虽质朴却意义深远，它开辟了一种全新的感知和理解人类生活的方式。泰勒的定义中隐含着这样一个概念：文化是习得的、共享的和模式化的行为。\n\n因此，人类学中\"文化\"的概念，就像数学中\"集合\"的概念一样，是一个抽象概念，它使大量的具体研究和认识成为可能。",
+  "questions": [
+   {
+    "number": 41,
+    "en": "Furthermore, humans have the ability to modify the environment in which they live, thus subjecting all other life forms to their own peculiar ideas and fancies.",
+    "cn": "此外，人类有能力改变自己的生存环境，从而使所有其他生命形式服从于人类自己独特的想法和想象。",
+    "structure": "主句：humans（主语）have（谓语）the ability to modify the environment（宾语）；in which they live 为定语从句修饰 environment；thus subjecting... 为现在分词短语作结果状语，表示前述行为带来的结果。",
+    "points": [
+     "in which they live 定语从句需译为\"他们所生活的（环境）\"",
+     "thus subjecting 现在分词作结果状语，须译出\"从而使……\"的因果逻辑",
+     "able to modify / peculiar ideas and fancies 关键词的准确翻译"
+    ],
+    "pitfall": "subjecting...to... 容易误译；此处 subject A to B 意为\"使A服从于/受制于B\"，而非\"使A接触B\"。fancies 不是\"幻想\"而是\"奇思异想、想象\"。"
+   },
+   {
+    "number": 42,
+    "en": "Social science is that branch of intellectual enquiry which seeks to study humans and their endeavors in the same reasoned, orderly, systematic, and dispassioned manner that natural scientists use for the study of natural phenomena.",
+    "cn": "社会科学是知识探索的一个分支，它力图以自然科学家研究自然现象时所采用的同样理性的、有序的、系统的和冷静客观的方式来研究人类及其行为活动。",
+    "structure": "主句：Social science（主语）is（系动词）that branch of intellectual enquiry（表语）；which seeks to study... 为定语从句修饰 branch；in the same...manner 为方式状语；that natural scientists use... 为定语从句修饰 manner。",
+    "points": [
+     "that branch of intellectual enquiry which... 含定语从句的表语结构需通顺译出",
+     "in the same...manner that... 方式状语中嵌套定语从句，须理清逻辑关系",
+     "reasoned, orderly, systematic, and dispassioned 四个并列形容词需逐一准确翻译"
+    ],
+    "pitfall": "dispassioned 易误译为\"缺乏热情的\"，实际意为\"冷静客观的、不带感情色彩的\"。endeavors 此处泛指人类的各种行为活动与努力，不宜窄译为\"努力\"。"
+   },
+   {
+    "number": 43,
+    "en": "The emphasis on data gathered first-hand, combined with a cross-cultural perspective brought to the analysis of cultures past and present, makes this study a unique and distinctly important social science.",
+    "cn": "对第一手收集的资料的重视，加上在分析过去和现在的文化时所采用的跨文化视角，使得这门学科成为一门独特且极为重要的社会科学。",
+    "structure": "主语为 The emphasis on data gathered first-hand，其中 gathered first-hand 为过去分词短语后置修饰 data；combined with a cross-cultural perspective brought to the analysis of cultures past and present 为过去分词短语作伴随/补充说明，与主语构成复合主语；谓语为 makes；this study 为宾语；a unique and distinctly important social science 为宾语补足语。",
+    "points": [
+     "gathered first-hand 过去分词作后置定语修饰 data，须译为'第一手收集的资料'",
+     "combined with 连接的成分与主语共同构成复合主语，需体现'加上/结合'的并列关系",
+     "cultures past and present 后置形容词修饰 cultures，须译为'过去和现在的文化'"
+    ],
+    "pitfall": "本句主语较长，容易误判句子主干。需注意 makes 为全句唯一谓语动词（第三人称单数），主语核心词为 emphasis。cultures past and present 中 past and present 是后置形容词，不是独立名词。"
+   },
+   {
+    "number": 44,
+    "en": "Tylor defined culture as \"…that complex whole which includes belief, art, morals, law, custom, and any other capabilities and habits acquired by man as a member of society.\"",
+    "cn": "泰勒将文化定义为\"……一个复合的整体，它包括信仰、艺术、道德、法律、风俗以及人作为社会成员所获得的其他一切能力和习惯\"。",
+    "structure": "主句：Tylor（主语）defined（谓语）culture（宾语）as…（介词短语作宾补）；that complex whole 为 as 的宾语；which includes... 为定语从句修饰 whole；acquired by man as a member of society 为过去分词短语后置修饰 capabilities and habits。",
+    "points": [
+     "define...as... 固定搭配须译为'将……定义为……'",
+     "which includes 定语从句内多个并列名词需完整译出",
+     "acquired by man as a member of society 过去分词作后置定语，须译为'人作为社会成员所获得的'"
+    ],
+    "pitfall": "that complex whole 中 that 为指示代词而非引导从句的连词，whole 为名词\"整体\"而非形容词。any other capabilities and habits 中 acquired 修饰的是 capabilities and habits 两者，不可漏译。"
+   },
+   {
+    "number": 45,
+    "en": "Thus, the anthropological concept of \"culture,\" like the concept of \"set\" in mathematics, is an abstract concept which makes possible immense amounts of concrete research and understanding.",
+    "cn": "因此，人类学中\"文化\"的概念，就像数学中\"集合\"的概念一样，是一个抽象概念，它使大量的具体研究和认识成为可能。",
+    "structure": "主语为 the anthropological concept of \"culture\"；like the concept of \"set\" in mathematics 为插入比较成分；系动词 is + 表语 an abstract concept；which makes possible immense amounts of concrete research and understanding 为定语从句修饰 concept，其中 makes possible 为谓语，possible 是宾补前置，immense amounts of concrete research and understanding 为后置宾语。",
+    "points": [
+     "like the concept of 'set' in mathematics 插入语需准确译为类比结构'就像……一样'",
+     "makes possible immense amounts of... 宾补前置结构须识别，译为'使……成为可能'",
+     "immense amounts of concrete research and understanding 关键名词短语需完整译出"
+    ],
+    "pitfall": "makes possible immense amounts of... 是 make + 宾语 + 宾补 的变体（宾补 possible 前置，因宾语过长后置），易误解为 makes possible 是固定短语。concrete 此处意为'具体的'而非'混凝土'。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "insatiable",
+    "cn": "adj. 永不满足的，贪得无厌的"
+   },
+   {
+    "w": "modify",
+    "cn": "v. 改变，修改"
+   },
+   {
+    "w": "subjecting...to",
+    "cn": "v. 使……服从于，使……受制于"
+   },
+   {
+    "w": "peculiar",
+    "cn": "adj. 独特的，特有的"
+   },
+   {
+    "w": "fancies",
+    "cn": "n. 想象，奇思异想（fancy 的复数）"
+   },
+   {
+    "w": "harmonious",
+    "cn": "adj. 和谐的，协调的"
+   },
+   {
+    "w": "encompasses",
+    "cn": "v. 包含，涵盖"
+   },
+   {
+    "w": "enquiry",
+    "cn": "n. 探索，探究（=inquiry）"
+   },
+   {
+    "w": "endeavors",
+    "cn": "n. 努力，行为活动"
+   },
+   {
+    "w": "dispassioned",
+    "cn": "adj. 冷静客观的，不带感情色彩的"
+   },
+   {
+    "w": "cross-cultural",
+    "cn": "adj. 跨文化的"
+   },
+   {
+    "w": "distinctly",
+    "cn": "adv. 明显地，极为"
+   },
+   {
+    "w": "formulation",
+    "cn": "n. 阐述，构想，表述"
+   },
+   {
+    "w": "implicit",
+    "cn": "adj. 隐含的，不言明的"
+   },
+   {
+    "w": "immense",
+    "cn": "adj. 巨大的，大量的"
+   },
+   {
+    "w": "concrete",
+    "cn": "adj. 具体的，实在的"
+   }
+  ],
+  "skills": [
+   "识别过去分词短语作后置定语（gathered first-hand / acquired by man），翻译时需前置处理",
+   "处理长主语结构时先找准谓语动词，再拆分主语中的修饰成分",
+   "插入语（like...）翻译时保留类比结构，用\"就像……一样\"衔接",
+   "宾补前置结构（makes possible + 长宾语）需还原为\"使……成为可能\"",
+   "多个并列形容词（reasoned, orderly, systematic, dispassioned）翻译时逐一对应，保持并列节奏"
+  ]
+ }
+}

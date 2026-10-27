@@ -1,0 +1,247 @@
+{
+ "schemaVersion": 1,
+ "id": "8ebc05bd819d__long_match__all",
+ "examId": "8ebc05bd819d",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2024 年 12 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:56:39.242Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 38487,
+ "usage": {
+  "prompt_tokens": 964,
+  "completion_tokens": 1943,
+  "total_tokens": 2907,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 964,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1943,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 964,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "月球现象与特殊满月命名解析",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如moon、supermoon、blue moon等",
+   "圈出每句中的专有名词、数字、因果逻辑词作为定位锚点",
+   "利用同义替换思维，将陈述句关键表达转化为可能的原文近义说法",
+   "按段落顺序扫读，遇到与陈述句关键词重合处细读上下文确认匹配",
+   "注意区分相似话题的不同细节，如blue moon与blood moon容易混淆"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "当月球恰好位于地球和太阳之间时，我们有时看不到月亮。",
+    "keywords": [
+     "positioned",
+     "between the earth and the sun",
+     "cannot see the moon"
+    ],
+    "paraphrase": "陈述句描述的是新月（new moon）现象，原文可能用'new moon phase'或'aligned between'等表达替换'positioned right between'，用'invisible/not visible'替换'cannot see'。",
+    "tip": "定位\"地球-月球-太阳连线\"的天文位置描述即可锁定段落。"
+   },
+   {
+    "number": 37,
+    "answer": "K",
+    "cn": "火山喷发可能导致月亮呈现出忧郁的蓝色。",
+    "keywords": [
+     "volcanic eruptions",
+     "blue color",
+     "moody"
+    ],
+    "paraphrase": "陈述句用moody blue描述颜色，原文可能用'bluish tint/hue'替换；volcanic eruptions可能对应'volcanic ash in the atmosphere'等因果说明。",
+    "tip": "定位'volcanic'与'blue'共现的段落即可快速匹配。"
+   },
+   {
+    "number": 38,
+    "answer": "G",
+    "cn": "二月份出现超级月亮时，月球将最接近地球。",
+    "keywords": [
+     "closest to the earth",
+     "supermoon",
+     "February"
+    ],
+    "paraphrase": "陈述句用closest to the earth表达近地点，原文可能使用'perigee'或'nearest point in its orbit'等天文术语进行同义替换。",
+    "tip": "锁定'February'这一时间信息与'supermoon'共现位置。"
+   },
+   {
+    "number": 39,
+    "answer": "B",
+    "cn": "超级血狼月并没有什么不寻常之处，它看起来也不会像一个血淋淋的狼头。",
+    "keywords": [
+     "super blood wolf moon",
+     "nothing unusual",
+     "no resemblance",
+     "bloody wolf head"
+    ],
+    "paraphrase": "陈述句用nothing unusual和bear no resemblance进行否定描述，原文可能以更口语化的方式解释该名称只是多种天文现象叠加命名，并非外观如其名。",
+    "tip": "扫读含'super blood wolf moon'完整名称的段落，关注否定语气。"
+   },
+   {
+    "number": 40,
+    "answer": "H",
+    "cn": "当月亮反射的光线穿过比平常更厚的大气层时，月亮会呈现橙色。",
+    "keywords": [
+     "appear orange",
+     "atmosphere thicker",
+     "light reflecting"
+    ],
+    "paraphrase": "陈述句用atmosphere thicker than usual描述大气条件，原文可能用'denser atmosphere'或'more atmosphere to pass through'替换；orange可能对应'reddish-orange'。",
+    "tip": "定位'orange'颜色与'atmosphere/大气层厚度'的因果解释段。"
+   },
+   {
+    "number": 41,
+    "answer": "M",
+    "cn": "声称\"狼月\"这一名称源自美洲印第安人文化，这不合逻辑。",
+    "keywords": [
+     "contrary to logic",
+     "wolf moon",
+     "American Indians",
+     "originates"
+    ],
+    "paraphrase": "陈述句用contrary to logic质疑来源说法，原文可能用'illogical/questionable/misleading'等词替换，并讨论wolf moon命名归属的争议。",
+    "tip": "定位'wolf moon'与'Native American/American Indian'共现处，关注质疑语气。"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "cn": "由于月球的轨道并非百分之百的圆形，它与地球的距离会发生变化。",
+    "keywords": [
+     "orbit",
+     "not a hundred-percent circle",
+     "distance changes"
+    ],
+    "paraphrase": "陈述句用not a hundred-percent circle口语化描述椭圆轨道，原文可能用'elliptical orbit'这一标准天文术语进行同义替换。",
+    "tip": "扫读涉及'orbit shape/elliptical'与距离变化的段落。"
+   },
+   {
+    "number": 43,
+    "answer": "N",
+    "cn": "在不同文化中，某个月份或季节的满月会有一个特定的名称。",
+    "keywords": [
+     "full moon",
+     "specific name",
+     "different cultures",
+     "given month or season"
+    ],
+    "paraphrase": "陈述句概述命名传统，原文可能列举具体文化实例来说明满月按月份/季节获得专属名称的现象。",
+    "tip": "定位讨论满月命名文化多样性的总述性段落。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "可能有很多人对月亮为何看起来会规律性地改变大小一无所知，却装作自己知道。",
+    "keywords": [
+     "know absolutely nothing",
+     "appears to change its size",
+     "act like they know"
+    ],
+    "paraphrase": "陈述句描述人们'不懂装懂'的现象，原文可能用'pretend to understand'或'feign knowledge'替换'act like they know'，用'lunar phases/apparent size variation'替换尺寸变化描述。",
+    "tip": "关注带有讽刺或评论公众认知态度的段落。"
+   },
+   {
+    "number": 45,
+    "answer": "J",
+    "cn": "当一个月内出现两次满月时，第二次被昵称为蓝月亮。",
+    "keywords": [
+     "full moon",
+     "twice",
+     "same month",
+     "blue moon"
+    ],
+    "paraphrase": "陈述句用nicknamed表示俗称，原文可能用'called/referred to as/known as'替换；twice in the same month可能对应'second full moon in a calendar month'。",
+    "tip": "定位'blue moon'定义段，确认'同一月份两次满月'这一核心信息。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "positioned",
+    "cn": "v. 被放置于某位置，处于某位置"
+   },
+   {
+    "w": "volcanic eruptions",
+    "cn": "n. 火山喷发"
+   },
+   {
+    "w": "assume",
+    "cn": "v. 呈现（某种外观/颜色）"
+   },
+   {
+    "w": "moody",
+    "cn": "adj. 忧郁的，阴沉的"
+   },
+   {
+    "w": "resemblance",
+    "cn": "n. 相似，相像（bear no resemblance to 意为与……毫无相似之处）"
+   },
+   {
+    "w": "contrary to",
+    "cn": "prep. 与……相反，违背"
+   },
+   {
+    "w": "orbit",
+    "cn": "n. 轨道（天体运行的路径）"
+   },
+   {
+    "w": "reflecting",
+    "cn": "v. 反射（光线等）"
+   },
+   {
+    "w": "atmosphere",
+    "cn": "n. 大气层"
+   },
+   {
+    "w": "nicknamed",
+    "cn": "v. 被昵称为，被称为"
+   },
+   {
+    "w": "perigee",
+    "cn": "n.（天文）近地点（月球/卫星轨道上离地球最近的点）"
+   }
+  ]
+ }
+}

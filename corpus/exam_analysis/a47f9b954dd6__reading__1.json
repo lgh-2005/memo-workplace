@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "a47f9b954dd6__reading__1",
+ "examId": "a47f9b954dd6",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 3 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:49:11.202Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60639,
+ "usage": {
+  "prompt_tokens": 1831,
+  "completion_tokens": 3894,
+  "total_tokens": 5725,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1831,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3894,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1831,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "新生小鸭具备抽象思维能力",
+  "gist": "一项发表在《科学》上的研究表明，新生小鸭能够在未经训练的情况下进行\"同-异\"辨别，这种抽象智能思维能力此前被认为是人类独有的。该发现挑战了人们对鸟类智力的传统认知，也说明比较抽象概念的能力对动物生存的重要性远超先前预期，我们正处于理解动物心智的革命性阶段。",
+  "structure": [
+   "第1-3段：引出研究背景，'同-异辨别'曾被视为人类独有能力，鸟类实则非常聪明",
+   "第4-6段：详述实验过程及结果，约70%小鸭能识别同/异关系",
+   "第7-9段：解释印随学习机制，首次证明动物无需训练即可学习抽象概念关系",
+   "第10-12段：与先前研究对比，强调该发现的深远意义及我们正处于理解动物心智的革命阶段"
+  ],
+  "difficulty": "中等",
+  "translation": "从相同与不同中做出推理的能力，曾被认为是人类独有的，被视为抽象智能思维的基石。然而，一项新研究表明，心理学家所称的\"同-异辨别\"存在于通常被认为不聪明的生物身上：新生小鸭。\n\n爱荷华大学实验心理学家爱德华·沃瑟曼为该研究撰写了独立评论，他说，这项周四发表在《科学》杂志上的研究挑战了我们对\"笨鸟\"这一概念的认知。\n\n\"事实上，鸟类极其聪明，我们的问题主要在于如何让它们'开口'告诉我们，或者让我们知道它们到底有多聪明，\"他说。\n\n这篇新论文的共同作者安东尼·马丁尼奥和亚历克斯·卡塞尔尼克设计了一个巧妙的实验，以更好地测试鸟类智力。\n\n首先，他们取出出生仅一天的小鸭，让它们接触一对移动物体。这两个物体在形状或颜色上要么相同，要么不同。然后，他们让每只小鸭接触两对全新的移动物体。\n\n研究人员发现，约70%的小鸭倾向于走向与它们最初看到的物体具有相同形状或颜色关系的那对物体。换句话说，一只最初看到两个绿色球体的小鸭，更可能走向一对蓝色球体，而非一对颜色不匹配的橙色和紫色球体。\n\n小鸭在出生后不久会经历一种叫做\"印随\"的快速学习过程——正是这一过程使它们能够识别并跟随母亲。\n\n卡塞尔尼克博士说，这些发现表明，小鸭利用颜色、形状、声音和气味等感官输入之间的抽象关系来识别它们的母亲。\n\n奥本大学实验心理学家杰弗里·卡茨未参与该研究，他表示，通过研究印随现象，该研究的作者首次证明了动物可以在未经训练的情况下学习概念之间的关系。\n\n先前的研究表明，包括鸽子、海豚、蜜蜂和一些灵长类动物在内的其他动物也能辨别同与异，但前提是经过大量训练。\n\n将小鸭加入这一名单——尤其是未经训练的新生小鸭——表明比较抽象概念的能力\"对更多种类的动物生存而言，远比我们此前认为的更加必要\"，马丁尼奥博士说。他认为这种能力至关重要，因为它帮助动物在识别环境中的物体时考虑到上下文关系。\n\n从这项研究和其他类似研究中可以清楚地看出，\"动物对其世界中的复杂性的处理和理解远超我们的认知\"，沃瑟曼博士说。\"在理解其他动物心智的能力方面，我们正处于一个革命性阶段。\"",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The ability to make inferences from same and different, once thought to be unique to humans, is viewed as a cornerstone of abstract intelligent thought.",
+    "why": "原文首句明确指出\"从相同与不同中做出推理的能力，曾被认为是人类独有的\"。这里的'make inferences from same and different'即心理学家所说的'same-different discrimination'（同-异辨别）。C选项'Being capable of same-different discrimination'是对原文的精确同义改写，完全对应。",
+    "traps": "A项\"作为动物智力的主要来源\"原文未提及，属于无中生有；B项\"作为创造性世界的基石\"偷换了原文'abstract intelligent thought'（抽象智能思维）的概念；D项\"能够区分抽象与具体\"曲解了原文含义，原文说的是具备同-异辨别能力，而非区分抽象与具体。",
+    "tip": "首句定位题注意同义改写，抓住关键短语精准对应。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The study, published Thursday in Science, challenges our idea of what it means to have a birdbrain",
+    "why": "原文第二段说该研究'challenges our idea of what it means to have a birdbrain'（挑战了我们对'笨鸟'含义的认知），结合第三段Wasserman所说'birds are extremely intelligent'（鸟类极其聪明），可知该研究证明我们以往认为鸟类不聪明的观念是错误的。B选项'我们对鸟类智力的认知是错误的'准确概括了这一核心含义。",
+    "traps": "A项\"我们对鸟类世界的理解有偏见\"过于笼统宽泛，原文针对的是智力认知而非整个鸟类世界；C项\"我们与鸟类的沟通远远不够\"虽然第三段提到让鸟'talk to us'，但这只是Wasserman的补充说明而非研究结论；D项\"我们关于鸟类心理学的知识需要更新\"偷换了概念，原文重点不在心理学知识层面。",
+    "tip": "'challenge our idea'即表明原有观念是错的，注意把握语义强度。"
+   },
+   {
+    "number": 48,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The researchers found that about 70% of the ducklings preferred to move toward the pair of objects that had the same shape or color relationship as the first objects they saw.",
+    "why": "原文第六段指出约70%的小鸭倾向于走向与最初看到的物体具有相同形状或颜色\"关系\"的那对物体。这说明大多数小鸭能够辨别物体之间是'相同'还是'不同'的关系，即D选项'它们能分辨物体是否相同'。实验核心就是验证小鸭的同-异辨别能力。",
+    "traps": "A项\"它们能将形状与颜色联系起来\"曲解了实验设计，实验分别测试形状或颜色关系，并非让小鸭将两者关联；B项\"它们对移动物体反应迅速\"原文未提及反应速度，属于无中生有；C项\"它们偏爱有颜色的物体而非无色物体\"实验中均为有颜色的物体，不涉及有色与无色的比较。",
+    "tip": "实验结论题要抓住数据和核心发现，不被细节枝节干扰。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "the authors of this study have shown for the first time that an animal can learn relationships between concepts without training",
+    "why": "原文第九段明确指出该研究'首次证明动物可以在未经训练的情况下学习概念间的关系'，第十段进一步对比说明先前的研究中动物'only after extensive training'才能辨别同异。因此该实验的创新之处在于实验对象（新生小鸭）未经任何训练，A选项'所用动物未接受训练'准确概括了这一创新点。",
+    "traps": "B项\"使用了大量颜色和形状\"虽然实验涉及颜色和形状，但这不是该实验的创新之处；C项\"由实验心理学家实施\"这是常规做法，不构成创新点；D项\"将小鸭与其他动物进行比较\"文中虽提到其他动物的先前研究作对比，但实验本身并未直接比较不同动物。",
+    "tip": "'novel'问的是创新点，需结合对比信息找差异化特征。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "We are in a revolutionary phase in terms of our ability to understand the minds of other animals.",
+    "why": "Wasserman在文末说'我们正处于理解其他动物心智的能力的革命性阶段'，'revolutionary phase'意味着该领域正在取得突破性、显著的进展。D选项'正在取得显著进步（Remarkable progress is being made）'是对'revolutionary phase'的准确同义概括，语义完全吻合。",
+    "traps": "A项\"变得越来越复杂\"虽然文中提到'intricacies'（复杂性），但那是描述动物世界的复杂性，而非研究本身变得复杂；B项\"研究方法正在更新\"原文未提及研究方法的更新；C项\"正在吸引更多公众关注\"原文未涉及公众关注度的话题，属于无中生有。",
+    "tip": "尾段评价题常考态度或总结，注意'revolutionary'等关键评价词的同义替换。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inference",
+    "cn": "n. 推理，推断"
+   },
+   {
+    "w": "cornerstone",
+    "cn": "n. 基石，基础"
+   },
+   {
+    "w": "discrimination",
+    "cn": "n. 辨别（力），区分"
+   },
+   {
+    "w": "birdbrain",
+    "cn": "n. 笨蛋，傻瓜（此处指鸟类智力低下的偏见）"
+   },
+   {
+    "w": "devise",
+    "cn": "v. 设计，发明"
+   },
+   {
+    "w": "imprinting",
+    "cn": "n. 印随（动物行为学术语，指幼崽出生后快速学习识别亲代的过程）"
+   },
+   {
+    "w": "sensory",
+    "cn": "adj. 感官的，感觉的"
+   },
+   {
+    "w": "discern",
+    "cn": "v. 辨别，识别"
+   },
+   {
+    "w": "extensive",
+    "cn": "adj. 大量的，广泛的"
+   },
+   {
+    "w": "crucial",
+    "cn": "adj. 至关重要的"
+   },
+   {
+    "w": "intricacy",
+    "cn": "n. 错综复杂的事物，复杂细节"
+   },
+   {
+    "w": "mismatched",
+    "cn": "adj. 不匹配的，不协调的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The ability to make inferences from same and different, once thought to be unique to humans, is viewed as a cornerstone of abstract intelligent thought.",
+    "cn": "从相同与不同中做出推理的能力，曾被认为是人类独有的，被视为抽象智能思维的基石。",
+    "note": "主语为'The ability'，'once thought to be unique to humans'为插入语（过去分词短语作状语），谓语为'is viewed as'，全句为主系表结构。"
+   },
+   {
+    "en": "The researchers found that about 70% of the ducklings preferred to move toward the pair of objects that had the same shape or color relationship as the first objects they saw.",
+    "cn": "研究人员发现，约70%的小鸭倾向于走向与它们最初看到的物体具有相同形状或颜色关系的那对物体。",
+    "note": "found后接that宾语从句；从句中'the pair of objects'后跟that引导的定语从句；'as the first objects they saw'为比较状语，其中'they saw'为省略了关系代词的定语从句修饰objects。"
+   },
+   {
+    "en": "Adding ducklings to the list—particularly untrained newborn ducklings—suggests that the ability to compare abstract concepts 'is far more necessary to a wider variety of animals' survival than we previously thought.'",
+    "cn": "将小鸭加入这一名单——尤其是未经训练的新生小鸭——表明比较抽象概念的能力'对更多种类的动物生存而言，远比我们此前认为的更加必要'。",
+    "note": "动名词短语'Adding ducklings to the list'作主语，破折号内容为插入补充说明；谓语suggests后接that宾语从句；从句中含'far more...than...'比较结构。"
+   }
+  ]
+ }
+}

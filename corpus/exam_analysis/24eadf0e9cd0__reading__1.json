@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "24eadf0e9cd0__reading__1",
+ "examId": "24eadf0e9cd0",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 12 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:07:25.066Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67051,
+ "usage": {
+  "prompt_tokens": 1770,
+  "completion_tokens": 3460,
+  "total_tokens": 5230,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1770,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3460,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1770,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "电池储能技术引领未来能源变革",
+  "gist": "文章围绕电池储能技术展开，指出以Sadoway博士为代表的科学家认为储能是通往更清洁、高效能源未来的关键。先进电池正从专业市场走向主流，将深刻改变交通、家庭乃至整个社区的用能方式。储能产业规模快速增长，连传统电力公司也开始拥抱这一技术。文章最后指出，尽管电池技术仍面临挑战，但能源的未来在于如何储存它。",
+  "structure": [
+   "第1-2段：引出储能主题，指出电池技术正走向主流",
+   "第3-4段：电池已改变通讯，即将变革更多领域，包括新兴经济体",
+   "第5-6段：储能产业增长迅速，电力公司也开始拥抱该技术",
+   "第7-8段：电池技术仍有挑战与风险，但储能是能源的未来"
+  ],
+  "difficulty": "中等",
+  "translation": "麻省理工学院的唐纳德·萨多韦博士创办了自己的电池公司，希望改变世界的能源未来。对于一项大多数人只有在智能手机没电时才会想到的技术而言，这是一种颇具戏剧性的认可。但萨多韦并非唯一宣扬储能是通往更清洁、更高效、更公平能源未来之\"缺失环节\"的人。\n\n科学家和工程师们长期以来一直相信电池改变世界的潜力。先进电池正在走出专业市场，逐渐进入主流，标志着电动汽车和屋顶太阳能板等前瞻性技术的一个转折点。\n\n当然，无处不在的电池本身已经走过了很长的路。不论好坏，电池使我们\"移动优先\"的生活方式、屏幕文化以及日益全球化的世界成为可能。然而，尽管这一切已经令人印象深刻，但与即将到来的变化相比，这些可能微不足道。电池已经催生了一场通信革命，现在它即将改变几乎所有其他领域。\n\n无线时代正在扩展，不仅涵盖我们的手机、平板和笔记本电脑，还包括汽车、家庭，甚至整个社区。在新兴经济体中，农村社区正在跳过用于输送电力的电线和木杆。相反，非洲和亚洲的一些地方的人们正第一次看到由储存在电池中的太阳能点亮的灯泡。\n\n如今，储能是一个年产近1000亿瓦时电力、价值330亿美元的全球性产业。预计到本世纪末，其价值将超过500亿美元，发电量将达到1600亿瓦时——足以吸引那些原本可能对这种看似平淡无奇的技术不感兴趣的大公司的关注。甚至长期以来将电池和替代能源形式视为威胁的公用事业公司，也开始学会拥抱这些技术，将其视为赋能而非颠覆。\n\n今天的电池突破正值全世界致力于将现代能源普及到大约十亿尚未获得电力的人群，同时减少导致全球变暖的燃料。随着对一个几百年来的问题——如何让电力变得可携带——的回答越来越好，这些同步面临的挑战看起来不再那么难以应对。\n\n当然，在每晚充电完全取代每周加油之前，电池还有很长的路要走。电池驱动的世界也有其自身的风险。当越来越多的人成为\"产消者\"——在本地生产和消费自己的能源时，花了数十年和数十亿美元建设的集中式电网将会怎样？\n\n没有人知道哪种电池技术——如果有的话——最终会占主导地位，但有一点始终是清楚的：能源的未来在于我们如何储存它。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Dr. Donald Sadoway at MIT started his own battery company with the hope of changing the world's energy future. It's a dramatic endorsement for a technology most people think about only when their smartphone goes dark.",
+    "why": "原文指出萨多韦博士创办电池公司，希望改变世界能源未来，并将储能称为通往更清洁、更高效、更公平能源未来的\"缺失环节\"（missing link）。这说明他认为储能是能源发展应走的方向，B项\"It is the direction energy development should follow\"是对原文的合理概括。",
+    "traps": "A项\"涉及尖端技术的应用\"原文未提及技术复杂度，属无中生有；C项\"将是有利可图的生意\"偷换概念，原文强调的是改变能源未来而非盈利；D项\"惠及每个人\"过度引申，原文说的是更公平的能源未来，并非直接说惠及所有人。",
+    "tip": "注意区分\"改变未来方向\"与\"盈利\"\"惠及所有人\"等表述的差异。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Still, as impressive as all this is, it may be trivial compared with what comes next. Having already enabled a communications revolution, the battery is now poised to transform just about everything else.",
+    "why": "原文明确指出，电池已有的成就（通信革命等）与即将发生的变化相比可能\"微不足道\"（trivial），电池\"准备好改变几乎所有其他领域\"（transform just about everything else）。D项\"世界将经历革命性变化\"准确对应了这一表述。",
+    "traps": "A项\"移动优先的生活方式将流行\"是电池已经带来的变化，而非未来变化；B项\"全球化进程将加速\"同样属于已实现的功能；C项\"通信将呈现更多样形式\"是对communication revolution的过度推断，原文说的是电池将超越通信领域改变一切。",
+    "tip": "注意时态和对比关系——\"已有的\"vs\"即将到来的\"。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Instead, some in Africa and Asia are seeing their first lightbulbs illuminated by the power of sunlight stored in batteries.",
+    "why": "原文第四段明确指出，非洲和亚洲新兴经济体的一些农村社区正在用储存在电池中的太阳能点亮灯泡，C项\"用储存的太阳能照亮家园\"是对原文的直接同义转述。",
+    "traps": "A项\"发现数字设备不可或缺\"原文未提及农村社区使用数字设备的情况；B项\"主要通过手机通讯\"属于无中生有，原文讨论的是照明而非通信方式；D项\"用电线和木杆分配电力\"恰好与原文相反，原文说这些社区正在跳过（bypassing）电线和木杆。",
+    "tip": "注意反义陷阱——原文说bypassing，D项却说使用。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Even utility companies, which have long viewed batteries and alternative forms of energy as a threat, are learning to embrace the technologies as enabling rather than disrupting.",
+    "why": "原文说电力公司过去视电池技术为威胁，现在开始将其视为\"赋能\"（enabling）而非\"颠覆\"（disrupting），即认识到电池技术对其业务有利，A项\"benefit their business\"准确对应enabling的含义。",
+    "traps": "B项\"更快传输电力\"原文未涉及传输速度问题，属无中生有；C项\"促进创新\"过度引申，原文说的是赋能而非创新；D项\"鼓励竞争\"与原文语境不符，原文的重点是电池技术对电力公司是有利的而非带来竞争。",
+    "tip": "enabling一词是解题关键，对应\"有利于业务\"。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "What happens to the centralized electric grid, which took decades and billions of dollars to build, as more and more people become 'prosumers,' who produce and consume their own energy onsite?",
+    "why": "原文以反问形式提出：当越来越多的人成为自产自消能源的\"产消者\"时，耗费数十年和数十亿美元建设的集中式电网会怎样？这暗示集中式电网可能会因为分布式能源的普及而逐渐被淘汰，A项\"它可能成为过去式\"是对这一暗示的合理推断。",
+    "traps": "B项\"它可能变成产消者\"混淆概念，产消者是人而非电网；C项\"将更容易运营和维护\"与原文暗示的电网面临威胁的语气相反；D项\"将不得不被彻底改造\"过于绝对，原文只是以反问暗示风险，并未断言必须改造。",
+    "tip": "反问句往往暗含否定意味，要体会作者的弦外之音。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "endorsement",
+    "cn": "n. 认可，支持，背书"
+   },
+   {
+    "w": "trumpeting",
+    "cn": "v. 大力宣扬，吹嘘"
+   },
+   {
+    "w": "equitable",
+    "cn": "adj. 公平的，公正的"
+   },
+   {
+    "w": "tipping point",
+    "cn": "n. 转折点，临界点"
+   },
+   {
+    "w": "ubiquitous",
+    "cn": "adj. 无处不在的，普遍存在的"
+   },
+   {
+    "w": "poised",
+    "cn": "adj. 准备好的，蓄势待发的"
+   },
+   {
+    "w": "bypassing",
+    "cn": "v. 绕过，跳过"
+   },
+   {
+    "w": "pedestrian",
+    "cn": "adj. 平淡无奇的，乏味的（此处非\"行人\"义）"
+   },
+   {
+    "w": "disrupting",
+    "cn": "v. 颠覆，扰乱"
+   },
+   {
+    "w": "prosumers",
+    "cn": "n. 产消者（既生产又消费能源的人）"
+   },
+   {
+    "w": "onsite",
+    "cn": "adv. 在现场，就地"
+   },
+   {
+    "w": "overwhelming",
+    "cn": "adj. 压倒性的，令人难以应对的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Having already enabled a communications revolution, the battery is now poised to transform just about everything else.",
+    "cn": "电池已经催生了一场通信革命，现在它蓄势待发，准备改变几乎所有其他领域。",
+    "note": "Having already enabled...为完成时分词状语，表已完成动作；主句the battery is poised to...表即将发生的动作，形成过去与将来的对比。"
+   },
+   {
+    "en": "Even utility companies, which have long viewed batteries and alternative forms of energy as a threat, are learning to embrace the technologies as enabling rather than disrupting.",
+    "cn": "甚至长期以来将电池和替代能源视为威胁的公用事业公司，也开始学着将这些技术视为赋能而非颠覆。",
+    "note": "主干为Even utility companies are learning to embrace...；which引导非限制性定语从句补充说明其过去态度；as enabling rather than disrupting为介词短语作宾补，表看法转变。"
+   },
+   {
+    "en": "What happens to the centralized electric grid, which took decades and billions of dollars to build, as more and more people become 'prosumers,' who produce and consume their own energy onsite?",
+    "cn": "当越来越多的人成为在本地自产自消能源的\"产消者\"时，耗费数十年和数十亿美元建设的集中式电网将何去何从？",
+    "note": "主干为What happens to the centralized electric grid；which引导非限制性定语从句修饰grid；as引导时间状语从句；who引导定语从句解释prosumers。"
+   }
+  ]
+ }
+}

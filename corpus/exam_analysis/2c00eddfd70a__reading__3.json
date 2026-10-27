@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "2c00eddfd70a__reading__3",
+ "examId": "2c00eddfd70a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "1999 年考研英语真题（旧）",
+ "year": 1999,
+ "sub": "3",
+ "questionNumbers": [
+  19,
+  20,
+  21,
+  22
+ ],
+ "generatedAt": "2026-10-27T05:03:07.110Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 82898,
+ "usage": {
+  "prompt_tokens": 1690,
+  "completion_tokens": 4809,
+  "total_tokens": 6499,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1690,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4809,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1690,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "计算机进课堂的目的之争",
+  "gist": "文章围绕\"计算机进课堂\"的运动展开批判。作者指出该运动混淆了职业培训与通识教育两种截然不同的目的，放弃了\"人人皆可受教育\"的乐观理念而偏向就业导向；同时论证欧洲职业培训模式不适合美国国情，并强调基本计算机技能只是辅助性的，学校不应因目的混淆而迷失方向。",
+  "structure": [
+   "第一段：提出核心矛盾——计算机进课堂的职业目的与教育改革目的之分",
+   "第二段：对比通识教育理念与计算机倡导者的悲观倾向",
+   "第三段：讨论职业培训的局限性，指出欧洲模式不适用于美国",
+   "第四段：承认少数学生可受益于职业训练，但强调计算机基本技能仅是辅助"
+  ],
+  "difficulty": "较难",
+  "translation": "一条无形的分界线将两类人隔开：一类人以学生的职业前景为由主张在课堂中引入计算机，另一类人则出于彻底教育改革的更宏大理由主张在课堂中引入计算机。很少有讨论该话题的作者深入探究过这种区别——实际上是矛盾——而这恰恰触及了将计算机引入课堂运动问题的核心。\n\n以帮助学生获得某种工作为目标的教育是一种技术教育，其存在的理由与法律普遍要求接受教育的理由截然不同。法律要求所有孩子上学到十几岁，并非仅仅为了提高每个人的就业前景。恰恰相反，我们对美国公民有一种特定的期许：一个人如果不能胜任地评估外部事物如何影响自己的生计与幸福，那他作为公民就是不完整的。但情况并非一直如此；在法律强制所有孩子到一定年龄必须上学之前，人们普遍认为有些人天生不适合接受这种教育。带着所有工业化国家共有的乐观精神，我们逐渐接受了人人都适合接受教育这一理念。然而，计算机教育倡导者抛弃了这种乐观理念，转而持一种悲观态度，这暴露了他们在其他方面开朗外表下的真实想法。利用人们对将计算机引入学校的教育理由与职业理由之间的混淆，计算机倡导者往往强调毕业生的就业前景而非他们的教育成就。\n\n在学生条件合适的前提下，技术教育确有一些合理论据。许多欧洲学校很早就引入了职业培训的概念，以确保孩子们为其想要从事的职业做好充分准备。然而，武断地认为只需要这么多科学家、这么多商人、这么多会计师，未免太自以为是了。此外，在像我们这样幅员辽阔、经济遍布众多州并涉及众多跨国企业的国家，这种做法不太可能培养出各类所需数量的专业人才。\n\n但是，对于一小部分学生而言，职业培训或许是可行之路，因为在其他条件相同的情况下，娴熟的技能可以决定一个人能否找到工作。当然，如今使用任何计算机的基本操作都非常简单，不需要终身学习才能掌握各种软件程序。如果有人想成为计算机工程师，那当然是完全不同的事情了。基本的计算机技能最多只需要几个月就能学会。无论如何，基本的计算机技能只是成为任何一种专业人士所需大量真正技能的补充。当然，应当指出的是，无论是职业学校还是非职业学校，目的上的混淆对其都没有好处。",
+  "questions": [
+   {
+    "number": 19,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "Banking on the confusion between educational and vocational reasons for bringing computers into schools, computer advocates often emphasize the job prospects of graduates over their educational achievement.",
+    "why": "作者在第一段指出\"计算机进课堂\"运动存在一个核心矛盾：职业目的与教育改革目的的混淆；第二段末进一步揭示倡导者利用这种混淆(confusion)，偏重就业前景而忽视教育成就。dubiously oriented意为\"方向/导向可疑\"，准确概括了作者对这场运动目的不纯、方向含混的批评。",
+    "traps": "A项far reaching（影响深远）：文中未讨论该运动的影响范围，属无中生有。C项self contradictory（自相矛盾）：虽然第一段出现contradiction一词，但该词描述的是两类倡导者之间的分歧，而非运动本身逻辑自相矛盾，属偷换概念。D项radically reformatory（彻底改革的）：这仅是一方倡导者的主张，并非作者对整个运动的评价，属以偏概全。",
+    "tip": "态度题需把握作者的整体论点，避免被文中个别词汇（如contradiction）干扰。"
+   },
+   {
+    "number": 20,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "With optimism characteristic of all industrialized countries, we came to accept that everyone is fit to be educated.",
+    "why": "原文明确指出，\"带着所有工业化国家特有的乐观精神，我们逐渐接受了人人都适合受教育的理念。\"这说明\"教育对所有孩子不可或缺\"这一信念源于工业化国家的乐观态度。D项originated from the optimistic attitude of industrialized countries与原文完全对应。",
+    "traps": "A项pessimism in disguise（伪装的悲观）：悲观主义是作者用来批评计算机教育倡导者的，而非形容\"人人需受教育\"这一信念，属张冠李戴。B项came into being along with the arrival of computers（随计算机出现而产生）：该信念出现在计算机之前，时间逻辑错误。C项deeply rooted in the minds of computer-education（深植于计算机教育者心中）：原文恰恰指出计算机教育倡导者forsake（抛弃）了这一理念，与原文相反。",
+    "tip": "细节题要精确定位原文因果关系，注意区分不同观点的归属主体。"
+   },
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Besides, this is unlikely to produce the needed number of every kind of professional in a country as large as ours and where the economy is spread over so many states and involves so many international corporations.",
+    "why": "作者先说欧洲学校的职业培训模式有其合理性，随后用however和besides转折指出：在像美国这样幅员辽阔、经济分布广泛的国家，这种模式不太可能培养出所需数量的各类专业人才。由此可推断，欧洲模式在作者所在国家实际价值有限，即of little practical value。",
+    "traps": "A项dependent upon the starting age of candidates（取决于候选人起始年龄）：原文提到欧洲学校early on引入职业培训，但作者并未以此作为该模式在美国是否可行的依据，属偷换论点。B项worth trying in various social sections（值得在各社会领域尝试）：作者态度明显是否定的，该选项与作者立场相反。D项attractive to every kind of professional（对每种专业人士都有吸引力）：原文正是质疑无法满足所有专业人才的需求，属曲解原意。",
+    "tip": "推断题需关注转折词（however, besides）后的真正观点，不要被让步部分误导。"
+   },
+   {
+    "number": 22,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "basic computer skills are only complementary to the host of real skills that are necessary to becoming any kind of professional.",
+    "why": "原文指出基本计算机技能只是(only complementary)成为任何专业人士所需大量真正技能的\"补充\"。complementary（补充的、辅助的）对应A选项中的auxiliary（辅助的），且前文提到基本技能最多几个月可学会，暗示可作为辅助课程纳入学校教育，而非核心课程。",
+    "traps": "B项highlighted in acquisition of professional qualifications（在获取职业资格中应被重点强调）：原文用only complementary明确表示基本计算机技能是辅助而非重点，与highlighted矛盾。C项mastered through a life-long course（通过终身课程掌握）：原文明确说It does not take a lifelong acquaintance，直接与此选项相反。D项equally emphasized by any school（被任何学校同等强调）：原文最后一句强调学校不应因目的混淆而受损，并未主张所有学校同等重视计算机技能，属过度引申。",
+    "tip": "同义替换是考研阅读核心考点，complementary=auxiliary要敏感识别。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "radical",
+    "cn": "adj. 根本的，彻底的；激进的"
+   },
+   {
+    "w": "forsake",
+    "cn": "v. 抛弃，摒弃（过去式forsook，过去分词forsaken）"
+   },
+   {
+    "w": "presumptuous",
+    "cn": "adj. 专横的，冒昧的，自以为是的"
+   },
+   {
+    "w": "vocational",
+    "cn": "adj. 职业的，职业培训的"
+   },
+   {
+    "w": "complementary",
+    "cn": "adj. 补充的，辅助的，互补的"
+   },
+   {
+    "w": "livelihood",
+    "cn": "n. 生计，谋生之道"
+   },
+   {
+    "w": "betray",
+    "cn": "v. 暴露，泄露；背叛"
+   },
+   {
+    "w": "competently",
+    "cn": "adv. 胜任地，能干地"
+   },
+   {
+    "w": "acquaintance",
+    "cn": "n. 了解，熟悉；相识的人"
+   },
+   {
+    "w": "cheery",
+    "cn": "adj. 愉快的，开朗的"
+   },
+   {
+    "w": "auxiliary",
+    "cn": "adj. 辅助的，附属的（题目选项词，与complementary同义）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Rather, we have a certain conception of the American citizen, a character who is incomplete if he cannot competently assess how his livelihood and happiness are affected by things outside of himself.",
+    "cn": "恰恰相反，我们对美国公民有一种特定的期许：一个人如果不能胜任地评估外部事物如何影响自己的生计与幸福，那他作为公民就是不完整的。",
+    "note": "主干为we have a certain conception；a character为American citizen的同位语；who引导定语从句修饰character；how引导宾语从句作assess的宾语，内含被动语态。"
+   },
+   {
+    "en": "Banking on the confusion between educational and vocational reasons for bringing computers into schools, computer advocates often emphasize the job prospects of graduates over their educational achievement.",
+    "cn": "利用人们对将计算机引入学校的教育理由与职业理由之间的混淆，计算机倡导者往往强调毕业生的就业前景而非他们的教育成就。",
+    "note": "Banking on...schools为现在分词短语作原因状语；between...and...构成介词短语修饰confusion；emphasize...over...表示\"重A轻B\"。"
+   },
+   {
+    "en": "Besides, this is unlikely to produce the needed number of every kind of professional in a country as large as ours and where the economy is spread over so many states and involves so many international corporations.",
+    "cn": "此外，在像我们这样幅员辽阔、经济遍布众多州并涉及众多跨国企业的国家，这种做法不太可能培养出各类所需数量的专业人才。",
+    "note": "主干为this is unlikely to produce...；in a country后接两个并列修饰成分：as large as ours（比较结构作后置定语）和where引导的定语从句，从句内含spread over和involves两个并列谓语。"
+   }
+  ]
+ }
+}

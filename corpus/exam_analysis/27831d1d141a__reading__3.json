@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "27831d1d141a__reading__3",
+ "examId": "27831d1d141a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年考研英语真题",
+ "year": 2022,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:49:03.361Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59889,
+ "usage": {
+  "prompt_tokens": 1737,
+  "completion_tokens": 3879,
+  "total_tokens": 5616,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1737,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3879,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1737,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "艺术与科学跨界合作的价值与前景",
+  "gist": "文章围绕《自然》杂志的读者调查展开，指出艺术与科学的合作广受好评。通过悉尼交响乐团改编《四季》的案例说明艺术可使科学触达大众，同时强调真正的合作应是双向的、平等的，不应将艺术家的角色局限于辅助科学传播，而应追求共同设计、相互批评，以激发新研究和有力的艺术作品。",
+  "structure": [
+   "第1-2段：调查结果引出话题，艺术-科学合作获积极反馈",
+   "第3段：以《四季》改编为例证明合作的实际效果",
+   "第4段：强调合作应双向平等，艺术家不应被低估",
+   "第5段：MIT的CAVS中心作为成功合作的典范",
+   "第6段：总结呼吁合作应超越传播功能，避免刻板印象"
+  ],
+  "difficulty": "中等",
+  "translation": "启发性的、有挑战的、激励人心的、有趣的。这些是《自然》杂志的读者在一系列关于艺术家与研究人员之间合作关系的文章中，用来描述他们对艺术与科学合作体验的一些词语。在大约350名受访者中，近40%的人表示曾与艺术家合作过；几乎所有人都表示将来会考虑这样做。\n\n如此令人鼓舞的结果并不令人意外。科学家们正越来越多地寻求视觉艺术家的帮助，以便向新受众传播他们的工作。一位受访者说：\"艺术家帮助科学家触达更广泛的受众，并建立增强学习效果的情感联系。\"\n\n艺术家和科学家如何共同震撼舞台的一个例子出现在上个月，悉尼交响乐团演奏了安东尼奥·维瓦尔第《四季》的改编版本。他们将莫纳什大学气候变化传播研究中心提供的最新气候预测数据注入到每个季节的乐章中，重新演绎了这部有300年历史的乐谱。这场演出是在英国格拉斯哥联合国气候变化大会召开之前发出的一个富有创意的行动号召。\n\n但真正的合作必须是双向的。回应《自然》杂志调查的艺术家人数少于科学家；然而，几位受访者指出，艺术家并不仅仅是在科学家的传播需求方面提供协助。他们的作品也不应仅被视为研究对象。当科学家和艺术家在一个项目中拥有共同的利益关系、能够共同设计项目并能够相互批评彼此的工作时，这种联盟才最有价值。这种方式既能激发新的研究，也能产生有力的艺术作品。\n\n半个多世纪前，麻省理工学院成立了高级视觉研究中心（CAVS），以探索技术在文化中的作用。创始人有意将项目聚焦于光——因此名称中有\"视觉研究\"。光是艺术家和科学家都感兴趣的东西，因此可以构成合作的基础。随着科学技术的进步并分化为更多的子学科，该中心同时也展望着这样一个时代：顶尖研究人员也可以是艺术家、作家和诗人，反之亦然。\n\n《自然》杂志的调查结果表明，这一趋势一如既往地强劲，但要使合作成功，双方都需要投入时间，拥抱意外和挑战。艺术与科学联合的影响范围需要超越研究传播这一必要目的，参与者不能陷入对彼此刻板印象的陷阱。艺术家和科学家都沉浸在发现和发明之中，挑战和批判对两者来说也同样是核心。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Enlightening, challenging, stimulating, fun. These were some of the words that Nature readers used to describe their experience of art-science collaborations...Nearly 40% of the roughly 350 people who responded to an accompanying poll said they had collaborated with artists; and almost all said they would consider doing so in future.",
+    "why": "第一段列举了读者用来描述艺术-科学合作体验的词汇——\"启发性的、有挑战的、激励人心的、有趣的\"，这些都是正面积极的评价。同时近40%的受访者曾与艺术家合作，几乎所有人都愿意未来尝试。第二段开头又以\"Such an encouraging result\"进行总结。这些信息综合表明合作获得了正面反馈，即favorable responses。",
+    "traps": "A\"caught the attention of critics\"（引起批评家关注）原文未提及任何批评家，属于无中生有；C\"promoted academic publishing\"（促进学术出版）原文提到的是Nature杂志上的系列文章和调查，并非说合作促进了学术出版，属于偷换概念；D\"sparked heated public disputes\"（引发激烈公众争论）与原文积极正面的基调完全相反，属于反向干扰。",
+    "tip": "注意首段情感色彩词汇的褒贬判断，可快速排除负面选项。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "Artists help scientists reach a broader audience and make emotional connections that enhance learning",
+    "why": "第二段提出观点：科学家越来越多地寻求艺术家帮助向新受众传播工作。第三段紧接着用悉尼交响乐团改编《四季》、将气候预测数据融入古典音乐的例子来论证这一观点。这个例子说明艺术（古典音乐）可以将科学（气候数据）以大众容易接受的方式呈现出来，即art can offer audiences easy access to science。",
+    "traps": "B\"science can help with the expression of emotions\"（科学帮助表达情感）颠倒了原文中艺术帮助科学传播的主从关系，属于因果倒置；C\"public participation in science has a promising future\"（公众参与科学前景光明）原文并未讨论公众参与科学研究，属于无中生有；D\"art is effective in facilitating scientific innovations\"（艺术有效促进科学创新）原文例子强调的是科学的传播而非创新，属于偷换概念。",
+    "tip": "例证题需回到例子所服务的论点（通常在上一段末或本段首），而非例子本身的细节。"
+   },
+   {
+    "number": 33,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "several respondents noted that artists do not simply assist scientists with their communication requirements. Nor should their work be considered only as an object of study.",
+    "why": "第四段指出部分受访者强调艺术家不仅仅是协助科学家传播的工具，他们的作品也不应仅被视为研究对象。言下之意，艺术家担心自己在合作中被矮化为辅助角色，其角色价值被低估（underestimated）。随后原文进一步指出最有价值的联盟应让双方拥有共同利益并能相互批评，也佐证了这一担忧。",
+    "traps": "B\"their reputation may be impaired\"（声誉受损）原文并未涉及艺术家的声誉问题，属于无中生有；C\"their creativity may be inhibited\"（创造力受抑制）原文讨论的是角色定位而非创造力的压制，属于偷换概念；D\"their work may be misguided\"（工作被误导）原文说的是作品不应仅被当作研究对象，而非工作方向被误导，属于曲解原意。",
+    "tip": "注意\"not simply...Nor should...\"等否定句式暗含的立场和担忧。"
+   },
+   {
+    "number": 34,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "The founders deliberately focused their projects around light—hence the \"visual studies\" in the name. Light was something that both artists and scientists had an interest in, and therefore could form the basis of collaboration.",
+    "why": "第五段介绍MIT的CAVS中心以\"光\"为共同兴趣点，搭建了科学家和艺术家合作的平台。该中心还展望研究人员同时是艺术家、诗人的未来。这与第四段提出的理想合作模式（共同利益、共同设计、相互批评）高度吻合，说明CAVS正是有价值的艺术-科学联盟的典范（exemplified valuable art-science alliances）。",
+    "traps": "A\"headed alternately by artists and scientists\"（由艺术家和科学家轮流领导）原文完全没有提及领导权轮换，属于无中生有；C\"its projects aimed at advancing visual studies\"（项目旨在推进视觉研究）原文说聚焦于光是因为它能成为合作基础，目的是探索技术在文化中的作用，而非推进视觉研究本身，属于字面曲解；D\"its founders sought to raise the status of artists\"（创始人试图提升艺术家地位）原文强调的是跨界融合而非单方面提升某方地位，属于以偏概全。",
+    "tip": "段落举例在全文中的论证功能比其字面细节更重要。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The reach of art-science tie-ups needs to go beyond the necessary purpose of research communication, and participants must not fall into the trap of stereotyping each other.",
+    "why": "末段明确指出\"艺术与科学联合的影响范围需要超越研究传播这一必要目的\"（go beyond the necessary purpose of research communication），这直接对应C选项\"should do more than communicating science\"。作者认为合作不应止步于科学传播，还应包括共同发现、发明以及相互挑战与批判。",
+    "traps": "A\"are likely to go beyond public expectations\"（可能超出公众预期）原文说的是超越传播目的，而非超出公众预期，属于偷换对象；B\"will intensify interdisciplinary competition\"（会加剧跨学科竞争）原文强调的是合作而非竞争，属于反向干扰；D\"are becoming more popular than before\"（比以前更受欢迎）原文说趋势\"as strong as ever\"（一如既往地强劲），并非说比以前更流行，属于程度失当。",
+    "tip": "注意go beyond与do more than的同义替换，这是考研常见的正确选项改写方式。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "collaboration",
+    "cn": "n. 合作，协作"
+   },
+   {
+    "w": "respondent",
+    "cn": "n. 受访者，调查对象"
+   },
+   {
+    "w": "reimagine",
+    "cn": "v. 重新构想，重新演绎"
+   },
+   {
+    "w": "inject",
+    "cn": "v. 注入，引入"
+   },
+   {
+    "w": "alliance",
+    "cn": "n. 联盟，合作关系"
+   },
+   {
+    "w": "stake",
+    "cn": "n. 利害关系，利益"
+   },
+   {
+    "w": "critique",
+    "cn": "v. 评论，批评（也可作n.）"
+   },
+   {
+    "w": "sub-discipline",
+    "cn": "n. 子学科，分支学科"
+   },
+   {
+    "w": "vice versa",
+    "cn": "adv. 反之亦然"
+   },
+   {
+    "w": "stereotyping",
+    "cn": "n./v. 刻板印象化，模式化看待"
+   },
+   {
+    "w": "immersed",
+    "cn": "adj. 沉浸的，专注的"
+   },
+   {
+    "w": "tie-up",
+    "cn": "n. 联合，合作关系"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "They reimagined the 300-year-old score by injecting the latest climate prediction data for each season—provided by Monash University's Climate Change Communication Research Hub.",
+    "cn": "他们将莫纳什大学气候变化传播研究中心提供的最新气候预测数据注入到每个季节的乐章中，重新演绎了这部有300年历史的乐谱。",
+    "note": "主干为They reimagined the score by injecting data；破折号后provided by...为过去分词短语作后置定语修饰data；by injecting为方式状语。"
+   },
+   {
+    "en": "The alliances are most valuable when scientists and artists have a shared stake in a project, are able to jointly design it and can critique each other's work.",
+    "cn": "当科学家和艺术家在一个项目中拥有共同的利益关系、能够共同设计项目并能够相互批评彼此的工作时，这种联盟才最有价值。",
+    "note": "主句为The alliances are most valuable；when引导时间/条件状语从句，从句内含三个并列谓语：have a shared stake、are able to jointly design、can critique。"
+   },
+   {
+    "en": "The reach of art-science tie-ups needs to go beyond the necessary purpose of research communication, and participants must not fall into the trap of stereotyping each other.",
+    "cn": "艺术与科学联合的影响范围需要超越研究传播这一必要目的，参与者不能陷入对彼此刻板印象化的陷阱。",
+    "note": "由and连接两个并列分句；第一分句主语为The reach of art-science tie-ups；第二分句中fall into the trap of为固定搭配，stereotyping each other为动名词短语作of的宾语。"
+   }
+  ]
+ }
+}

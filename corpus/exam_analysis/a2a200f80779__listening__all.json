@@ -1,0 +1,239 @@
+{
+ "schemaVersion": 1,
+ "id": "a2a200f80779__listening__all",
+ "examId": "a2a200f80779",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2015 年 12 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T04:42:17.175Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 86948,
+ "usage": {
+  "prompt_tokens": 2034,
+  "completion_tokens": 9314,
+  "total_tokens": 11348,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7143
+  },
+  "prompt_cache_hit_tokens": 256,
+  "prompt_cache_miss_tokens": 1778
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力音频与原文文稿，以下解析仅基于选项文本的语言特征展开，不涉及具体录音内容。",
+  "overview": "本场听力共7段25题，题型以短文理解为主，可能穿插长对话。根据选项措辞推断：第1段为海豚学习能力实验；第2段介绍英国Harrogate小镇；第3段为大学宿舍跨种族室友研究；第4段涉及全球粮食或食物创新；第5段为疲劳与减压健康话题；第6段为政治竞选与媒体；第7段为民意调查方法。话题涵盖自然科学、社会文化、健康、政治传播等，需注意抓取主旨和细节。",
+  "strategy": [
+   "预读选项标记关键词，预测问题类型和听力重点，如看到不定式预测问目的。",
+   "注意转折词（but, however）和因果词（because, so）后常出答案，做好笔记。",
+   "听到与选项高度重合的词汇要警惕同义替换，正确答案往往不是原词重现。",
+   "数字、比较级、最高级处常设考点，如more influence, improved等需重点记录。",
+   "主旨题关注开头和结尾总结句，细节题按题目顺序定位听力内容。",
+   "排除无中生有、夸大绝对（如eliminate diseases）、答非所问的干扰项。"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "海豚学习能力与训练实验（可能涉及交流或操作杠杆）",
+    "optionSignals": "第1题为To do不定式问目的；第2、3题为动词原形短语描述动作，可能问海豚被训练的具体步骤或正确顺序；第4题为完整句子描述实验结果或现象。答案均为C或B，提示关注动作顺序和结果评价。",
+    "tips": [
+     "听到与“按压杠杆”相关的动作时注意顺序，干扰项常替换其他动作或顺序颠倒。",
+     "第1题目的类题目注意听开头介绍实验目标的句子，排除与“聪明程度比较”等无关选项。",
+     "第4题结果题关注最后总结句，注意是否“完美完成”和奖励信息。"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "介绍英国Harrogate小镇的特色与景点（度假、矿泉、花园）",
+    "optionSignals": "第5题为地点状语，可能问对话发生或谈论的地点；第6-8题多为描述性句子或名词短语，涉及小镇特点、公园法律地位、自然景观，需区分各题问的对象是“小镇”“公园”还是“花卉”。",
+    "tips": [
+     "第5题听开头场景判断，注意resort town与botanical garden等地点词的出现。",
+     "第6、7题注意题干主语，可能是Harrogate本身或某个公园，关注“理想退休地”“受法律保护”等关键信息。",
+     "第8题名词短语题，听完后可能问“什么最美”，注意花朵、草地、空气、矿泉的修饰关系，排除未提及或与问题无关的选项。"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11,
+     12
+    ],
+    "sharedTopic": "大学宿舍跨种族室友研究（心理学/社会学方向）",
+    "optionSignals": "第9题描述人物职业或专长，可能问说话者身份；第10题四个名词短语描述学生群体，可能问研究对象；第11、12题为完整句子描述研究发现或结果，涉及室友关系维持与种族态度变化，需注意比较关系。",
+    "tips": [
+     "第9题关注开头人物介绍，教授心理学与提供咨询易混淆，听清现在的工作单位或教学领域。",
+     "第10题注意限定词如“low income”“high standardized test scores”，研究对象是“黑人大一新生高分者”，排除低收入或低分选项。",
+     "第11、12题听结论时注意比较词（more often, improved）和因果关系，排除未提及的“搬出宿舍”或“做相似活动”等无中生有选项。"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "某种食物或农业创新的作用与供应现状（可能涉及全球粮食问题）",
+    "optionSignals": "第13题四个It开头的句子描述其意义或趋势，可能问该事物的主要作用；第14题主语It指代不明，选项涉及供应来源或数量，可能问某资源或资金的情况；第15题They are描述属性变化，可能问对某类食物的新认识。答案A/D/A提示关注转折和否定比较。",
+    "tips": [
+     "第13题问作用时注意“help solve”“change concept”“attract attention”等动宾搭配，答案A强调解决全球粮食危机，其他选项是次要或未提及。",
+     "第14题注意听数字或程度词，答案D“still far from sufficient”表明存在不足，与“increased over years”形成对比。",
+     "第15题They指代需明确，注意“not as natural as we believed”等否定比较，避免选成健康或价格方面。"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "疲劳原因与减压/恢复精力的方法（健康生活话题）",
+    "optionSignals": "第16题为四个名词并列短语，可能问导致疲劳或健康问题的因素；第17题四个名词或动词短语，可能问哪种活动能帮助恢复或放松；第18题四个完整句子关于按摩或精油的好处，可能问按摩的作用，需注意是“massage”本身还是“essential oils”的作用。",
+    "tips": [
+     "第16题听原因类列举，答案D两个因素并列，注意排除只包含一个因素的选项或无关的污染、认知衰退。",
+     "第17题四个选项简短，可能问“什么不是”或“什么有效”，注意否定或肯定表述，答案C音乐，听清问题要求。",
+     "第18题区分按摩与精油的不同功效，答案A强调改善身体功能和减压，B项“mood-boosting and sleep”可能是精油或其他，C项“eliminate diseases”夸大，D项“memory and thinking”不相关。"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "美国政治竞选与媒体报道的影响（政党、候选人、电视辩论）",
+    "optionSignals": "第19题They开头描述政党或组织的变化，可能问政治体系中某部分的影响；第20题It made/allowed/placed等描述某事物（如电视或媒体）的作用；第21、22题以Politicians或They为主语，讨论政客行为或动机，需把握政治类话题常见单词。",
+    "tips": [
+     "第19题注意比较级“more influence”与金钱、成员等干扰项，关注“selection of candidates”这一核心。",
+     "第20题听媒体作用时注意“historical context”与“intimate”“detailed information”的差别，答案D强调历史背景，可能来自原文中某句话的转述。",
+     "第21题答案B“make claims without providing arguments”注意否定“without”，排除Politicians dislike/enjoy等情感倾向选项。",
+     "第22题问动机或好处，答案A“obtain more television coverage”与媒体相关，排除直接与选民交流或辩论等选项。"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "民意调查方法的优缺点（抽样、问卷设计、采访方式）",
+    "optionSignals": "第23题They are开头描述某些调查的问题，答案A指向抽样不具代表性；第24题名词短语列举调查质量的关键因素；第25题比较live interviews与其他方式，可能问其优势，注意比较级和优缺点表述。",
+    "tips": [
+     "第23题注意批评类观点，答案A“not based on representative sampling”是方法缺陷，排除仅描述用途或反映民意的选项。",
+     "第24题听要求或建议，答案B“carefully worded questions”与干扰项“large number respondents”“interviewer's ability”区分，强调问题设计。",
+     "第25题比较型题目，注意听live interviews的正面评价，答案B“obtain more information”而非成本或便利性，排除负面或无关选项。"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "communicate",
+    "cn": "交流，沟通"
+   },
+   {
+    "w": "lever",
+    "cn": "杠杆，控制杆"
+   },
+   {
+    "w": "resort",
+    "cn": "度假胜地"
+   },
+   {
+    "w": "mineral waters",
+    "cn": "矿泉水"
+   },
+   {
+    "w": "counseling",
+    "cn": "咨询，辅导"
+   },
+   {
+    "w": "standardized",
+    "cn": "标准化的"
+   },
+   {
+    "w": "racial attitudes",
+    "cn": "种族态度"
+   },
+   {
+    "w": "global food crises",
+    "cn": "全球粮食危机"
+   },
+   {
+    "w": "nutritious",
+    "cn": "有营养的"
+   },
+   {
+    "w": "massage",
+    "cn": "按摩"
+   },
+   {
+    "w": "political candidates",
+    "cn": "政治候选人"
+   },
+   {
+    "w": "coverage",
+    "cn": "报道"
+   },
+   {
+    "w": "sampling",
+    "cn": "抽样"
+   },
+   {
+    "w": "respondents",
+    "cn": "受访者"
+   }
+  ]
+ }
+}

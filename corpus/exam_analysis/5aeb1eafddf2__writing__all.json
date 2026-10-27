@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "5aeb1eafddf2__writing__all",
+ "examId": "5aeb1eafddf2",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2020 年 9 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:32:41.538Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 46567,
+ "usage": {
+  "prompt_tokens": 695,
+  "completion_tokens": 2530,
+  "total_tokens": 3225,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 695,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2530,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 695,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "围绕英文谚语\"What is worth doing is worth doing well\"写一篇议论文，阐释其含义、论证其正确性并联系实际，字数150-200词。",
+    "outline": [
+     "引出谚语并解释其含义：值得做的事就值得把它做好，即做事应追求卓越而非敷衍了事。",
+     "从多角度论证该观点的合理性：可从个人成长、效率与成果、名人事例等方面展开。",
+     "总结全文，呼吁行动：在浮躁时代更应践行此理念，精选目标、全力以赴。"
+    ],
+    "sample": "\"What is worth doing is worth doing well.\" This thought-provoking saying conveys a profound truth: once we commit to a task, we should strive for excellence rather than settle for mediocrity.\n\nThe wisdom behind this saying is multifaceted. First and foremost, dedicating ourselves wholeheartedly to meaningful endeavors is the cornerstone of personal growth. When we approach every worthwhile task with diligence and precision, we not only sharpen our skills but also cultivate a mindset of excellence that permeates all aspects of life. Furthermore, a half-hearted effort often yields disappointing results, rendering the entire undertaking a waste of time and resources. History abounds with examples of individuals who achieved greatness precisely because they refused to do things by halves. Thomas Edison, for instance, conducted thousands of experiments before perfecting the light bulb, demonstrating that relentless dedication transforms the ordinary into the extraordinary.\n\nIn conclusion, this saying serves as a timely reminder in an era of distraction and impatience. We should internalize this principle by selecting our commitments carefully and then pursuing them with unwavering determination. Only in this way can we truly realize our potential and lead a fulfilling life.",
+    "phrases": [
+     {
+      "en": "strive for excellence",
+      "cn": "追求卓越；常用于表达对高标准的追求，搭配介词 for"
+     },
+     {
+      "en": "settle for mediocrity",
+      "cn": "安于平庸；settle for 意为'勉强接受'，与 strive for 形成对比"
+     },
+     {
+      "en": "the cornerstone of",
+      "cn": "……的基石/根基；用于强调某事物的根本重要性"
+     },
+     {
+      "en": "permeate all aspects of life",
+      "cn": "渗透到生活的方方面面；permeate 比 influence 更高级，强调深层影响"
+     },
+     {
+      "en": "yield disappointing results",
+      "cn": "产生令人失望的结果；yield 作动词表示'产出'，比 get 更正式"
+     },
+     {
+      "en": "render the undertaking a waste",
+      "cn": "使这项事业沦为浪费；render + 宾语 + 补语结构，替代 make 更书面"
+     },
+     {
+      "en": "do things by halves",
+      "cn": "做事半途而废/敷衍了事；固定短语，常与 refuse to 搭配"
+     },
+     {
+      "en": "unwavering determination",
+      "cn": "坚定不移的决心；unwavering 比 firm/strong 更高级"
+     },
+     {
+      "en": "History abounds with examples of",
+      "cn": "历史上有大量……的例子；abounds with 比 has many 更地道，适合举例论证"
+     },
+     {
+      "en": "Only in this way can we...",
+      "cn": "只有这样我们才能……；only + 介词短语置于句首引起倒装，是高分句型"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只泛泛谈'努力'而未扣住'值得做的事'与'做好'之间的逻辑关系",
+     "论证空洞：只有观点没有具体事例或细节支撑，缺乏说服力",
+     "语言单一：全篇只用 important/good/try hard 等初级词汇，缺少同义替换和高级表达",
+     "结构松散：缺少过渡词衔接，三段之间逻辑跳跃，没有首尾呼应",
+     "字数不达标：低于150词或超过200词均会被扣分，须提前练习控制篇幅"
+    ],
+    "upgrades": [
+     {
+      "plain": "This saying is very important and meaningful.",
+      "better": "This thought-provoking saying conveys a profound truth.",
+      "note": "用 thought-provoking 和 convey a profound truth 替代空泛的 important，语言更具体更有学术感"
+     },
+     {
+      "plain": "If we don't try hard, we will waste time.",
+      "better": "A half-hearted effort often yields disappointing results, rendering the entire undertaking a waste of time and resources.",
+      "note": "用 half-hearted effort、yields、rendering 等提升词汇层次，同时使用现在分词作结果状语"
+     },
+     {
+      "plain": "We can learn from many successful people in history.",
+      "better": "History abounds with examples of individuals who achieved greatness precisely because they refused to do things by halves.",
+      "note": "abounds with 替代 has many，定语从句增加句子复杂度，precisely 加强因果逻辑"
+     },
+     {
+      "plain": "We should work hard to achieve our goals.",
+      "better": "We should internalize this principle by selecting our commitments carefully and then pursuing them with unwavering determination.",
+      "note": "internalize 体现深度思考，by doing 结构使建议具体可操作，unwavering determination 词汇更高级"
+     },
+     {
+      "plain": "Only by doing this can we succeed.",
+      "better": "Only in this way can we truly realize our potential and lead a fulfilling life.",
+      "note": "realize our potential 和 lead a fulfilling life 比 succeed 更丰满，体现多维度的成功观"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "\"This thought-provoking saying conveys a profound truth: once we commit to a task, we should strive for excellence rather than settle for mediocrity.\" — 开篇破题句，commit to / strive for / settle for 三个短语形成递进逻辑，适合背诵用于谚语类作文首段。",
+   "\"When we approach every worthwhile task with diligence and precision, we not only sharpen our skills but also cultivate a mindset of excellence that permeates all aspects of life.\" — not only...but also 并列 + 定语从句，一句话完成'做好事情→提升能力→塑造心态'的因果链条。",
+   "\"A half-hearted effort often yields disappointing results, rendering the entire undertaking a waste of time and resources.\" — 现在分词 rendering 作结果状语是六级高分标志句型，可灵活套用于反面论证。",
+   "\"History abounds with examples of individuals who achieved greatness precisely because they refused to do things by halves.\" — 举例过渡金句，abounds with 和 do things by halves 均为地道表达，可直接迁移到其他话题。",
+   "\"Only in this way can we truly realize our potential and lead a fulfilling life.\" — 倒装结尾句，简洁有力，realize our potential 和 fulfilling life 升华主题，适合所有励志类话题收尾。"
+  ]
+ }
+}

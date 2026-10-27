@@ -1,0 +1,212 @@
+{
+ "schemaVersion": 1,
+ "id": "48c35b13a250__translation__all",
+ "examId": "48c35b13a250",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年 6 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:42:51.486Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35107,
+ "usage": {
+  "prompt_tokens": 827,
+  "completion_tokens": 2514,
+  "total_tokens": 3341,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 827,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2514,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 827,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "卢沟桥的历史、石狮与建筑价值",
+  "reference": "Located 15 kilometers southwest of Tian'anmen Square and spanning the Yongding River, Lugou Bridge is the oldest existing multi-arch stone bridge in Beijing. Originally built in 1192 and reconstructed in 1698, the bridge is supported by 281 pillars. Each pillar features a stone lion on top. More lions are hidden on the heads, backs, bellies, or paws of these stone lions. Vivid, lifelike, and in a myriad of poses, these stone lions are regarded as masterpieces of the stone carving art of Lugou Bridge. The stone lions on the bridge are too numerous to count, hence a popular saying in the Beijing area goes: \"The stone lions on Lugou Bridge are simply uncountable.\" Lugou Bridge is not only world-renowned for its aesthetic features, but also universally recognized as a milestone in the history of stone bridge architecture.",
+  "sentences": [
+   {
+    "cn": "卢沟桥位于天安门广场西南15公里处，横跨永定河，是北京现存最古老的多拱石桥。",
+    "en": "Located 15 kilometers southwest of Tian'anmen Square and spanning the Yongding River, Lugou Bridge is the oldest existing multi-arch stone bridge in Beijing.",
+    "structure": "过去分词短语 Located... and spanning... 作状语，主句为主系表结构，简洁地整合三层信息",
+    "keys": [
+     "天安门广场 Tian'anmen Square",
+     "横跨 span",
+     "永定河 the Yongding River",
+     "多拱石桥 multi-arch stone bridge",
+     "现存最古老的 the oldest existing"
+    ]
+   },
+   {
+    "cn": "卢沟桥最初建成于1192年，1698年重建，由281根柱子支撑。",
+    "en": "Originally built in 1192 and reconstructed in 1698, the bridge is supported by 281 pillars.",
+    "structure": "过去分词短语 Originally built... and reconstructed... 作时间状语，主句用被动语态 is supported by",
+    "keys": [
+     "最初建成于 originally built in",
+     "重建 reconstructed",
+     "柱子 pillars",
+     "支撑 be supported by"
+    ]
+   },
+   {
+    "cn": "每根柱子上都有一头石狮。",
+    "en": "Each pillar features a stone lion on top.",
+    "structure": "简单主谓宾结构，用 features 替代 has 更为生动",
+    "keys": [
+     "石狮 stone lion"
+    ]
+   },
+   {
+    "cn": "这些石狮的头、背、腹部或爪子上都藏着更多的狮子。",
+    "en": "More lions are hidden on the heads, backs, bellies, or paws of these stone lions.",
+    "structure": "被动语态 are hidden，介词短语 on the heads, backs, bellies, or paws 作地点状语，并列名词注意用逗号和 or 连接",
+    "keys": [
+     "腹部 belly/bellies",
+     "爪子 paw/paws",
+     "藏着 be hidden on"
+    ]
+   },
+   {
+    "cn": "这些石狮生动逼真、千姿百态，是卢沟桥石刻艺术的精品。",
+    "en": "Vivid, lifelike, and in a myriad of poses, these stone lions are regarded as masterpieces of the stone carving art of Lugou Bridge.",
+    "structure": "形容词短语 Vivid, lifelike, and in a myriad of poses 前置作状语，主句用 be regarded as 表评价",
+    "keys": [
+     "生动逼真 vivid and lifelike",
+     "千姿百态 in a myriad of poses",
+     "石刻艺术 stone carving art",
+     "精品 masterpieces"
+    ]
+   },
+   {
+    "cn": "桥上的石狮不计其数，因而北京地区流传着\"卢沟桥上的石狮子——数不清\"的说法。",
+    "en": "The stone lions on the bridge are too numerous to count, hence a popular saying in the Beijing area goes: \"The stone lions on Lugou Bridge are simply uncountable.\"",
+    "structure": "too...to... 结构表示\"不计其数\"，冒号引出直接引语呈现民间说法，hence 连接因果",
+    "keys": [
+     "不计其数 too numerous to count",
+     "流传着……的说法 a popular saying goes",
+     "数不清 uncountable/innumerable"
+    ]
+   },
+   {
+    "cn": "卢沟桥不仅以其美学特征闻名于世，还被公认为石桥建筑史上的一座丰碑。",
+    "en": "Lugou Bridge is not only world-renowned for its aesthetic features, but also universally recognized as a milestone in the history of stone bridge architecture.",
+    "structure": "not only...but also... 并列结构，两个表语共享系动词 is，形成紧凑的主系表句",
+    "keys": [
+     "美学特征 aesthetic features",
+     "闻名于世 world-renowned",
+     "公认为 universally recognized as",
+     "丰碑 milestone",
+     "石桥建筑史 the history of stone bridge architecture"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "卢沟桥",
+    "en": "Lugou Bridge (Marco Polo Bridge)"
+   },
+   {
+    "cn": "天安门广场",
+    "en": "Tian'anmen Square"
+   },
+   {
+    "cn": "永定河",
+    "en": "the Yongding River"
+   },
+   {
+    "cn": "多拱石桥",
+    "en": "multi-arch stone bridge"
+   },
+   {
+    "cn": "石狮",
+    "en": "stone lion"
+   },
+   {
+    "cn": "石刻艺术",
+    "en": "stone carving art"
+   },
+   {
+    "cn": "美学特征",
+    "en": "aesthetic features"
+   },
+   {
+    "cn": "丰碑",
+    "en": "milestone / monument"
+   },
+   {
+    "cn": "千姿百态",
+    "en": "in a myriad of poses"
+   },
+   {
+    "cn": "不计其数",
+    "en": "too numerous to count / innumerable"
+   }
+  ],
+  "pitfalls": [
+   "「多拱石桥」漏译 multi-arch，仅写 stone bridge 丢采分点",
+   "「横跨」误用 cross，应用 span 表示桥梁跨越河流",
+   "「千姿百态」直译为 thousand poses 不地道，应用 a myriad of poses 或 various postures",
+   "「丰碑」误译为 monument（实体碑），此处应译为 milestone（里程碑）更贴切",
+   "「流传着……的说法」遗漏 saying/folk saying，导致句意不完整"
+  ],
+  "upgrades": [
+   {
+    "plain": "Lugou Bridge has a stone lion on each pillar.",
+    "better": "Each pillar features a stone lion on top.",
+    "note": "features 比 has 更具描写感，且以 each pillar 作主语更突出细节"
+   },
+   {
+    "plain": "These stone lions are vivid and have many different poses.",
+    "better": "Vivid, lifelike, and in a myriad of poses, these stone lions are regarded as masterpieces.",
+    "note": "前置形容词短语作状语使句式更紧凑高级，a myriad of 替代 many different 更文雅"
+   },
+   {
+    "plain": "Lugou Bridge is famous in the world for its beauty.",
+    "better": "Lugou Bridge is world-renowned for its aesthetic features.",
+    "note": "world-renowned 比 famous in the world 更地道，aesthetic features 比 beauty 更精准学术"
+   },
+   {
+    "plain": "It is thought to be an important work in bridge history.",
+    "better": "It is universally recognized as a milestone in the history of stone bridge architecture.",
+    "note": "universally recognized 语气更强，milestone 比 important work 更能体现「丰碑」的分量"
+   },
+   {
+    "plain": "There are so many lions that people cannot count them.",
+    "better": "The stone lions are too numerous to count, hence a popular saying goes...",
+    "note": "too...to 结构更简练，hence + saying 的衔接体现高级语篇连贯能力"
+   }
+  ]
+ }
+}

@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "24eadf0e9cd0__reading__2",
+ "examId": "24eadf0e9cd0",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 12 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:07:44.352Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 81180,
+ "usage": {
+  "prompt_tokens": 1839,
+  "completion_tokens": 5214,
+  "total_tokens": 7053,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1839,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5214,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1839,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "longSentences 有原句与原文不符"
+ ],
+ "analysis": {
+  "topic": "种族是社会建构而非生物概念",
+  "gist": "文章围绕\"种族是否具有生物学意义\"展开讨论。从杜波依斯百年前的质疑，到现代基因组比较研究，再到医学误诊案例，论证了种族作为生物学概念的不合理性。学者建议在生物科学中淘汰种族术语，改用\"血统\"或\"人群\"等更精确的表述，但承认种族概念在研究社会不平等和歧视等领域仍有存在价值。",
+  "structure": [
+   "第1-2段：引入杜波依斯观点，提出种族是社会建构这一核心论点",
+   "第3-4段：以基因组研究为例证，揭示种族定义的悖论",
+   "第5段：以囊性纤维化为例说明种族分类在医学上的危害",
+   "第6-7段：建议用更精确术语替代种族概念，但保留其社会政治研究价值"
+  ],
+  "difficulty": "中等",
+  "translation": "一百多年前，美国社会学家W·E·B·杜波依斯就对种族被用作生物学解释感到担忧——他认为不同人群之间的差异实际上是社会和文化层面的。他公开反对将\"白人\"和\"黑人\"视为截然不同的群体，声称这些区分忽视了人类多样性的广度。\n\n科学会站在杜波依斯这边。如今，科学家的主流观点认为种族是一种没有生物学意义的社会建构。在《科学》杂志发表的一篇文章中，四位学者表示种族分类需要被逐步淘汰。\n\n\"从本质上说，我完全同意作者们的观点，\"德国马克斯·普朗克进化人类学研究所所长、生物学家斯万特·帕博说。在一个证明遗传差异并非沿种族界线固定分布的例子中，两位具有欧洲血统的美国著名科学家詹姆斯·沃森和克雷格·文特尔的全基因组，被拿来与韩国科学家金成镇的基因组进行比较。结果发现，沃森和文特尔之间共有的基因序列变异，比他们各自与金成镇共有的还要少。\n\n费城德雷塞尔大学公共卫生学教授迈克尔·尤德尔说，现代遗传学研究正处于一个悖论之中：一方面，种族被认为是阐明人类基因多样性的有用工具；另一方面，种族也被认为是衡量这种多样性的一个定义不当的标记。\n\n基于不同种族之间存在遗传差异的假设，在医学环境中可能尤其危险。\"如果你根据某人的种族做出临床预测，那你很大一部分时候会判断错误，\"尤德尔告诉《生活科学》杂志。在论文中，他和同事们以囊性纤维化为例：由于它被视为一种\"白人\"疾病，在非洲裔人群中经常被漏诊。\n\n那么如果抛弃种族概念，可以使用哪些其他变量呢？尤德尔说，科学家们需要在语言上更加具体，或许可以使用\"血统\"或\"人群\"等术语，以便在个体和群体层面更精确地反映人类与其基因之间的关系。研究人员还承认，在某些领域中，种族作为一种建构在科学研究中可能仍然有用——但仅作为政治和社会变量，而非生物学变量。\n\n\"尽管我们主张在生物科学中逐步淘汰种族术语，但我们也承认，将种族用作政治或社会类别来研究种族主义——尽管充满挑战——仍然是必要的，因为我们需要了解结构性不平等和歧视是如何在不同群体之间造成健康差异的。\"尤德尔说。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "race was being used as a biological explanation for what he understood to be social and cultural differences between different populations of people.",
+    "why": "原文明确指出杜波依斯担忧的是种族被用作对社会和文化差异的生物学解释。他认为不同人群之间的差异本质上是社会和文化层面的，反对将种族作为对这些差异的解释手段。C选项\"an explanation for social and cultural differences\"正是对此的准确概括。",
+    "traps": "A项\"解释人类基因多样性的基础\"——杜波依斯关注的是社会文化差异而非基因多样性，属于偷换概念；B项\"帮助理解不同人群\"——杜波依斯反对的是种族被用作解释工具，而非\"帮助理解\"，且原文未提此含义；D项\"描述个体人类特征的术语\"——原文讨论的是群体间差异而非个体特征，属于无中生有。",
+    "tip": "注意区分\"被解释的对象\"和\"解释工具\"，精准对应原文语义。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "race is also understood to be a poorly defined marker of that diversity.",
+    "why": "帕博引用沃森、文特尔与金成镇的基因组比较实例，证明同为欧洲血统的两人之间基因差异反而大于他们分别与亚洲人的差异，说明遗传差异并不沿种族界线分布。这直接论证了种族作为衡量基因多样性的标记是定义不当的。虽然该定义出自第四段尤德尔之口，但第三段的实例正是为这一论点提供证据支撑。",
+    "traps": "A项\"现代遗传学研究可能加剧种族冲突\"——文中未提及种族冲突，属于无中生有；C项\"种族作为生物学术语能解释基因多样性\"——与实例结论完全相反，实例恰恰说明种族不能准确反映基因差异；D项\"遗传学研究应考虑社会文化变量\"——这是后文的建议而非此例要证明的观点，张冠李戴。",
+    "tip": "例证题要看例子所服务的论点，而非例子本身的细节。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "If you make clinical predictions based on somebody's race, you're going to be wrong a good chunk of the time.",
+    "why": "原文先提出基于种族的遗传差异假设在医学环境中尤其危险，接着引用尤德尔的话指出基于种族做临床预测\"很大一部分时候会判断错误\"，然后以囊性纤维化在非洲裔中被漏诊为具体例证。C选项准确概括了这一逻辑：用种族分类来界定基因多样性会导致错误的临床预测。",
+    "traps": "A项\"诊断中绝对有必要抛开种族\"——\"absolutely\"过于绝对，原文只是说会出错较多，并非完全否定；B项\"在遗传学研究中纳入社会变量很重要\"——该例讨论的是医学临床预测而非遗传学研究方法论；D项\"对黑人的歧视可能导致临床治疗中的忽视\"——原文说的是认知偏差导致漏诊，而非歧视导致忽视，偷换了因果关系。",
+    "tip": "注意选项中的绝对化词语（absolutely），往往是干扰项的标志。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Yudell said scientists need to get more specific with their language, perhaps using terms like \"ancestry\" or \"population\" that might more precisely reflect the relationship between humans and their genes",
+    "why": "原文明确记录尤德尔建议科学家在用语上\"更加具体\"（get more specific），并举例建议使用\"血统\"或\"人群\"等术语来\"更精确地\"反映人类与基因的关系。A选项\"They should be more precise with the language they use\"是对\"get more specific with their language\"和\"more precisely\"的同义转述。",
+    "traps": "B项\"避免使用政治敏感的术语\"——原文恰恰承认种族作为政治社会变量仍有用处，并未建议回避政治敏感术语；C项\"抛弃研究中不相关的概念\"——尤德尔建议逐步淘汰种族的生物学含义而非一切不相关概念，过度泛化；D项\"检验研究中所有可能的变量\"——原文未提及\"所有可能的变量\"，属于无中生有。",
+    "tip": "看清建议的具体内容，警惕选项对范围的扩大或缩小。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "we also acknowledge that using race as a political or social category to study racism, although filled with lots of challenges, remains necessary given our need to understand how structural inequities and discrimination produce health disparities between groups.",
+    "why": "尤德尔在最后一段表示，虽然主张在生物科学中淘汰种族术语，但承认将种族用作政治或社会类别来研究种族主义\"仍然是必要的\"。这说明种族术语在某些研究领域（如研究种族主义、社会不平等、健康差异等）中依然有用。D选项\"Racial terms are still useful in certain fields of study\"正是对此的合理推断。",
+    "traps": "A项\"坚持种族主义会延续不平等和歧视\"——原文讨论的是用种族概念来研究不平等，而非坚持种族主义导致不平等，因果逻辑错误；B项\"种族之间的生理差异非常显著\"——原文通篇论证种族不具有生物学意义，该选项与主旨相悖；C项\"消除种族歧视具有挑战性\"——虽然原文提到\"filled with lots of challenges\"，但这里的挑战指的是用种族概念做研究时面临的困难，而非消除歧视的困难，属于偷换对象。",
+    "tip": "推断题需紧扣原文信息做合理延伸，切勿过度解读。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "phase out",
+    "cn": "逐步淘汰；逐步废除（动词短语）"
+   },
+   {
+    "w": "paradox",
+    "cn": "悖论；矛盾的情况（n.）"
+   },
+   {
+    "w": "illuminate",
+    "cn": "阐明；阐释（v.）"
+   },
+   {
+    "w": "ancestry",
+    "cn": "祖先；血统；世系（n.）"
+   },
+   {
+    "w": "underdiagnosed",
+    "cn": "诊断不足的；漏诊的（adj.）"
+   },
+   {
+    "w": "cystic fibrosis",
+    "cn": "囊性纤维化（n.，一种遗传性疾病）"
+   },
+   {
+    "w": "construct",
+    "cn": "（此处为名词）建构；概念"
+   },
+   {
+    "w": "inequities",
+    "cn": "不公平；不公正（n.）"
+   },
+   {
+    "w": "disparities",
+    "cn": "差异；悬殊（n.）"
+   },
+   {
+    "w": "terminology",
+    "cn": "术语；专门用语（n.）"
+   },
+   {
+    "w": "genome",
+    "cn": "基因组（n.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "More than 100 years ago, American sociologist W. E. B. Du Bois was concerned that race was being used as a biological explanation for what he understood to be social and cultural differences between different populations of people.",
+    "cn": "一百多年前，美国社会学家W·E·B·杜波依斯就对种族被用作生物学解释感到担忧——他认为不同人群之间的差异实际上是社会和文化层面的。",
+    "note": "主干为Du Bois was concerned that...；that引导宾语从句；what引导的名词性从句作explanation for的宾语，其中he understood to be是插入成分，说明这是杜波依斯本人的理解。"
+   },
+   {
+    "en": "In one example that demonstrated genetic differences were not fixed along racial lines, the full genomes of James Watson and Craig Venter, two famous American scientists of European ancestry, were compared to that of a Korean scientist, Seong-Jin Kim.",
+    "cn": "在一个证明遗传差异并非沿种族界线固定分布的例子中，两位具有欧洲血统的美国著名科学家詹姆斯·沃森和克雷格·文特尔的全基因组，被拿来与韩国科学家金成镇的基因组进行比较。",
+    "note": "主干为the full genomes...were compared to that of...；that引导定语从句修饰example；two famous American scientists of European ancestry为同位语；that指代前文的genome。"
+   },
+   {
+    "en": "While we argue phasing out racial terminology in the biological sciences, we also acknowledge that using race as a political or social category to study racism, although filled with lots of challenges, remains necessary given our need to understand how structural inequities and discrimination produce health disparities between groups.",
+    "cn": "尽管我们主张在生物科学中逐步淘汰种族术语，但我们也承认，将种族用作政治或社会类别来研究种族主义——尽管充满挑战——仍然是必要的，因为我们需要了解结构性不平等和歧视是如何在不同群体之间造成健康差异的。",
+    "note": "While引导让步状语从句；主句中that引导宾语从句，其主语为using race...动名词短语；although filled with...为插入的让步状语；given引导原因状语，how引导的从句作understand的宾语。"
+   }
+  ]
+ }
+}

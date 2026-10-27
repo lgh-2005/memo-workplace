@@ -1,0 +1,217 @@
+{
+ "schemaVersion": 1,
+ "id": "4204c70708cd__translation__all",
+ "examId": "4204c70708cd",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2018 年 6 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:19:32.734Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35600,
+ "usage": {
+  "prompt_tokens": 800,
+  "completion_tokens": 2035,
+  "total_tokens": 2835,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 800,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2035,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 800,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国高速铁路的发展与影响",
+  "reference": "China currently has the largest and fastest high-speed rail network in the world. The operating speed of high-speed trains will continue to increase, and more cities will build high-speed railway stations. High-speed rail has greatly shortened people's travel time. Compared with air travel, the outstanding advantage of high-speed trains lies in their punctuality, as they are largely unaffected by weather conditions or air traffic control. High-speed rail has dramatically changed the lifestyle of the Chinese people. Nowadays, it has become the preferred mode of transportation for many people on business trips. An increasing number of people also travel by high-speed rail during holidays. Moreover, quite a few young people choose to work in one city while living in a neighboring city, commuting by high-speed train on a daily basis.",
+  "sentences": [
+   {
+    "cn": "中国目前拥有世界上最大最快的高速铁路网。",
+    "en": "China currently has the largest and fastest high-speed rail network in the world.",
+    "structure": "主谓宾结构，含形容词最高级并列修饰名词",
+    "keys": [
+     "高速铁路网 high-speed rail network",
+     "最大最快 the largest and fastest"
+    ]
+   },
+   {
+    "cn": "高铁列车的运行速度还将继续提升，更多的城市将修建高铁站。",
+    "en": "The operating speed of high-speed trains will continue to increase, and more cities will build high-speed railway stations.",
+    "structure": "并列句，两个 will 构成的一般将来时分句用 and 连接",
+    "keys": [
+     "运行速度 operating speed",
+     "高铁站 high-speed railway station",
+     "继续提升 continue to increase"
+    ]
+   },
+   {
+    "cn": "高铁大大缩短了人们出行的时间。",
+    "en": "High-speed rail has greatly shortened people's travel time.",
+    "structure": "主谓宾结构，现在完成时表示对当下的影响",
+    "keys": [
+     "大大缩短 greatly shortened",
+     "出行的时间 travel time"
+    ]
+   },
+   {
+    "cn": "相对飞机而言，高铁列车的突出优势在于准时，因为基本不受天气或交通管制的影响。",
+    "en": "Compared with air travel, the outstanding advantage of high-speed trains lies in their punctuality, as they are largely unaffected by weather conditions or air traffic control.",
+    "structure": "过去分词短语作状语 + 主句 + as 引导的原因状语从句，被动语态表示'不受影响'",
+    "keys": [
+     "相对……而言 compared with",
+     "突出优势 outstanding advantage",
+     "准时 punctuality",
+     "交通管制 air traffic control",
+     "基本不受……影响 largely unaffected by"
+    ]
+   },
+   {
+    "cn": "高铁极大地改变了中国人的生活方式。",
+    "en": "High-speed rail has dramatically changed the lifestyle of the Chinese people.",
+    "structure": "主谓宾结构，现在完成时强调已产生的深远影响",
+    "keys": [
+     "极大地改变 dramatically changed",
+     "生活方式 lifestyle"
+    ]
+   },
+   {
+    "cn": "如今，它已经成了很多人商务旅行的首选交通工具。",
+    "en": "Nowadays, it has become the preferred mode of transportation for many people on business trips.",
+    "structure": "时间状语 + 主系表结构，现在完成时表示状态延续至今",
+    "keys": [
+     "首选交通工具 the preferred mode of transportation",
+     "商务旅行 business trip"
+    ]
+   },
+   {
+    "cn": "越来越多的人也在假日乘高铁外出旅游。",
+    "en": "An increasing number of people also travel by high-speed rail during holidays.",
+    "structure": "主谓结构，介词短语 by high-speed rail 和 during holidays 作方式及时间状语",
+    "keys": [
+     "越来越多的人 an increasing number of people",
+     "乘高铁 by high-speed rail",
+     "假日 holidays"
+    ]
+   },
+   {
+    "cn": "还有不少年轻人选择在一个城市工作而在邻近城市居住，每天乘高铁上下班。",
+    "en": "Moreover, quite a few young people choose to work in one city while living in a neighboring city, commuting by high-speed train on a daily basis.",
+    "structure": "主句 + while 引导的对比状语从句 + 现在分词短语作伴随状语，体现'工作与居住'的对比关系",
+    "keys": [
+     "不少 quite a few",
+     "邻近城市 neighboring city",
+     "上下班 commute",
+     "每天 on a daily basis"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "高速铁路网",
+    "en": "high-speed rail network"
+   },
+   {
+    "cn": "运行速度",
+    "en": "operating speed"
+   },
+   {
+    "cn": "高铁站",
+    "en": "high-speed railway station"
+   },
+   {
+    "cn": "交通管制",
+    "en": "air traffic control"
+   },
+   {
+    "cn": "准时",
+    "en": "punctuality"
+   },
+   {
+    "cn": "首选交通工具",
+    "en": "the preferred mode of transportation"
+   },
+   {
+    "cn": "商务旅行",
+    "en": "business trip"
+   },
+   {
+    "cn": "生活方式",
+    "en": "lifestyle"
+   },
+   {
+    "cn": "上下班（通勤）",
+    "en": "commute"
+   },
+   {
+    "cn": "邻近城市",
+    "en": "neighboring city"
+   }
+  ],
+  "pitfalls": [
+   "'交通管制'易误译为 traffic control，此处语境应为 air traffic control（空中交通管制）",
+   "'首选交通工具'中 preferred 易拼写错误或误用为 favorable/favorite",
+   "'上下班'需译为 commute，很多考生不知此词而用 go to and from work 导致冗长",
+   "'基本不受……影响'中 largely unaffected by 的被动结构易漏写 by 或用主动语态造成语法错误",
+   "'越来越多的'不可写成 more and more people（口语化），建议用 an increasing number of（更书面正式）"
+  ],
+  "upgrades": [
+   {
+    "plain": "more and more people",
+    "better": "an increasing number of people",
+    "note": "更书面化、正式，符合四六级翻译评分对措辞的要求"
+   },
+   {
+    "plain": "has greatly changed",
+    "better": "has dramatically transformed",
+    "note": "dramatically 语气更强烈，transform 比 change 更能体现深层变革"
+   },
+   {
+    "plain": "because it is not affected by weather",
+    "better": "as they are largely unaffected by weather conditions",
+    "note": "as 引导原因更书面；largely 比 basically 更精准；conditions 搭配更地道"
+   },
+   {
+    "plain": "take the high-speed train to travel",
+    "better": "travel by high-speed rail",
+    "note": "by + 交通方式是英语中标准简洁的表达方式，避免动词赘余"
+   },
+   {
+    "plain": "go to work and come back every day",
+    "better": "commute on a daily basis",
+    "note": "commute 一词精确表达通勤含义，on a daily basis 比 every day 更正式"
+   }
+  ]
+ }
+}

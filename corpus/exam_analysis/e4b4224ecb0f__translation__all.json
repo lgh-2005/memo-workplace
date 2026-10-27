@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "e4b4224ecb0f__translation__all",
+ "examId": "e4b4224ecb0f",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2026 年 6 月英语六级真题（第 1 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T06:06:27.799Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 26426,
+ "usage": {
+  "prompt_tokens": 791,
+  "completion_tokens": 1840,
+  "total_tokens": 2631,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 791,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1840,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 791,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科技进步推动中国医疗事业发展",
+  "reference": "Technological advances have brought about rapid development in China's healthcare sector. In recent years, telemedicine has made quality medical resources accessible to more patients. Medical experts can provide consultations for patients in remote areas via video, guiding local doctors in formulating and implementing treatment plans. AI-assisted diagnostic systems help doctors identify patients' early symptoms and improve diagnostic accuracy. The widespread adoption of electronic health records enables doctors to quickly access patients' medical histories, thus avoiding redundant examinations. Online medical consultation platforms have greatly facilitated patients' access to healthcare services. The deep integration of technology and healthcare has better met the health needs of the people.",
+  "sentences": [
+   {
+    "cn": "科技进步使中国的医疗事业得到快速发展。",
+    "en": "Technological advances have brought about rapid development in China's healthcare sector.",
+    "structure": "主语 + have done + 宾语结构；使役含义用 bring about 表达，避免机械使用 make",
+    "keys": [
+     "科技进步 technological advances",
+     "医疗事业 healthcare sector",
+     "快速发展 rapid development"
+    ]
+   },
+   {
+    "cn": "近年来，远程医疗使优质医疗资源惠及更多患者。",
+    "en": "In recent years, telemedicine has made quality medical resources accessible to more patients.",
+    "structure": "make + 宾语 + 宾补(形容词短语)结构；accessible to 表示'可获得的'",
+    "keys": [
+     "远程医疗 telemedicine",
+     "优质医疗资源 quality medical resources",
+     "惠及 able accessible to"
+    ]
+   },
+   {
+    "cn": "医学专家可以通过视频为偏远地区患者提供咨询，指导当地医生制定并实施治疗方案。",
+    "en": "Medical experts can provide consultations for patients in remote areas via video, guiding local doctors in formulating and implementing treatment plans.",
+    "structure": "主句 + 现在分词短语作伴随状语；guide sb. in doing sth. 搭配",
+    "keys": [
+     "偏远地区 remote areas",
+     "提供咨询 provide consultations",
+     "制定并实施治疗方案 formulate and implement treatment plans"
+    ]
+   },
+   {
+    "cn": "人工智能辅助诊断系统帮助医生识别患者的早期症状，提高诊断准确率。",
+    "en": "AI-assisted diagnostic systems help doctors identify patients' early symptoms and improve diagnostic accuracy.",
+    "structure": "help sb. do sth. 并列两个动词不定式结构，共享同一主语",
+    "keys": [
+     "人工智能辅助诊断系统 AI-assisted diagnostic systems",
+     "早期症状 early symptoms",
+     "诊断准确率 diagnostic accuracy"
+    ]
+   },
+   {
+    "cn": "电子健康档案的普及让医生能够快速了解患者病史，避免重复检查。",
+    "en": "The widespread adoption of electronic health records enables doctors to quickly access patients' medical histories, thus avoiding redundant examinations.",
+    "structure": "enable sb. to do 结构 + thus doing 分词短语表结果",
+    "keys": [
+     "电子健康档案 electronic health records",
+     "病史 medical histories",
+     "重复检查 redundant examinations"
+    ]
+   },
+   {
+    "cn": "线上医疗咨询平台极大地方便了患者就诊。",
+    "en": "Online medical consultation platforms have greatly facilitated patients' access to healthcare services.",
+    "structure": "主语 + have done + 宾语；用 facilitate 替代 make convenient 更为地道",
+    "keys": [
+     "线上医疗咨询平台 online medical consultation platforms",
+     "方便了患者就诊 facilitated patients' access to healthcare services"
+    ]
+   },
+   {
+    "cn": "科技与医疗的深度融合更好地满足了人民的健康需求。",
+    "en": "The deep integration of technology and healthcare has better met the health needs of the people.",
+    "structure": "主语(名词短语) + has done + 宾语；A and B 的 integration 表示融合",
+    "keys": [
+     "深度融合 deep integration",
+     "健康需求 health needs"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "科技进步",
+    "en": "technological advances"
+   },
+   {
+    "cn": "远程医疗",
+    "en": "telemedicine"
+   },
+   {
+    "cn": "优质医疗资源",
+    "en": "quality medical resources"
+   },
+   {
+    "cn": "人工智能辅助诊断系统",
+    "en": "AI-assisted diagnostic systems"
+   },
+   {
+    "cn": "电子健康档案",
+    "en": "electronic health records (EHR)"
+   },
+   {
+    "cn": "诊断准确率",
+    "en": "diagnostic accuracy"
+   },
+   {
+    "cn": "治疗方案",
+    "en": "treatment plans"
+   },
+   {
+    "cn": "病史",
+    "en": "medical history"
+   },
+   {
+    "cn": "线上医疗咨询平台",
+    "en": "online medical consultation platforms"
+   },
+   {
+    "cn": "深度融合",
+    "en": "deep integration"
+   }
+  ],
+  "pitfalls": [
+   "远程医疗误译为 remote medical 或 long-distance medicine，应用专业术语 telemedicine",
+   "惠及更多患者不宜直译为 benefit more patients，用 accessible to 更地道",
+   "制定并实施应体现两个并列动词 formulate and implement，漏译 implement 扣分",
+   "电子健康档案 误写为 electric health files，应为 electronic health records",
+   "重复检查中的重复应译为 redundant 或 unnecessary，而非 repeated"
+  ],
+  "upgrades": [
+   {
+    "plain": "make patients go to hospital conveniently",
+    "better": "facilitate patients' access to healthcare services",
+    "note": "facilitate 比 make convenient 更正式简洁，access to 搭配医疗语境更地道"
+   },
+   {
+    "plain": "benefit more patients",
+    "better": "make quality medical resources accessible to more patients",
+    "note": "make sth. accessible to sb. 更准确体现资源可及性，语义层次更丰富"
+   },
+   {
+    "plain": "know the patient's medical history",
+    "better": "access patients' medical histories",
+    "note": "access 比 know 更契合医疗信息查阅语境，体现专业性"
+   },
+   {
+    "plain": "the popularity of electronic health records",
+    "better": "the widespread adoption of electronic health records",
+    "note": "adoption 强调技术被采纳推广，比 popularity 更符合技术应用语境"
+   },
+   {
+    "plain": "technology helps doctors find early symptoms",
+    "better": "AI-assisted diagnostic systems help doctors identify early symptoms",
+    "note": "identify 比 find 更精准，体现医学诊断中的专业辨识过程"
+   }
+  ]
+ }
+}

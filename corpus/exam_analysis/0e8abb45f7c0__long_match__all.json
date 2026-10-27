@@ -1,0 +1,247 @@
+{
+ "schemaVersion": 1,
+ "id": "0e8abb45f7c0__long_match__all",
+ "examId": "0e8abb45f7c0",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2022 年 12 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:40:35.084Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 37845,
+ "usage": {
+  "prompt_tokens": 957,
+  "completion_tokens": 1860,
+  "total_tokens": 2817,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 957,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1860,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 957,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "Wardian参加极限马拉松系列赛",
+  "strategy": [
+   "先通读10条陈述句，标记高频专有名词如Wardian，再按细节差异定位不同段落",
+   "优先利用数字、地点、人名等不易替换的信息词锁定段落范围",
+   "注意同义替换：如physical endurance↔体能极限、worthy cause↔慈善目的等",
+   "区分相似题（如36与44都涉及挑战，但侧重点分别是体能测试与战胜极寒）",
+   "两道题指向同一段落（I段）时，需确认该段包含两层信息"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "Wardian将各种非凡的挑战视为对自己体能耐力的考验。",
+    "keywords": [
+     "Wardian",
+     "extraordinary challenges",
+     "physical endurance",
+     "test"
+    ],
+    "paraphrase": "陈述句中regards...as a test of his physical endurance可能对应原文中将挑战看作检验/推动身体极限等表述，extraordinary challenges可能被替换为各种极端赛事或不寻常的比赛。",
+    "tip": "定位\"physical endurance\"及\"test\"相关表述，锁定Wardian对挑战的态度描写段。"
+   },
+   {
+    "number": 37,
+    "answer": "I",
+    "cn": "Wardian希望他参加为期七天的马拉松系列赛能为一项有价值的事业做出贡献。",
+    "keywords": [
+     "participation",
+     "seven-day marathon",
+     "worthy cause",
+     "contribute"
+    ],
+    "paraphrase": "worthy cause常被替换为charity、good cause或raise awareness等公益/慈善相关表达；contribute to可能对应help、support、make a difference等。",
+    "tip": "聚焦\"worthy cause\"这一关键短语，在I段寻找慈善或公益目的的相关描述。"
+   },
+   {
+    "number": 38,
+    "answer": "D",
+    "cn": "Wardian将和其他三十多名跑者一起参加为期一周的马拉松系列赛。",
+    "keywords": [
+     "over thirty",
+     "other runners",
+     "week-long",
+     "marathon series"
+    ],
+    "paraphrase": "over thirty可能对应原文中的具体数字（如35、37等）或more than thirty；week-long marathon series与seven-day marathon series为同义表达。",
+    "tip": "定位具体数字\"三十多人\"及\"一周系列赛\"等核心数据信息，快速锁定D段。"
+   },
+   {
+    "number": 39,
+    "answer": "A",
+    "cn": "在极端寒冷中过度用力会使人的体温降低到危险的程度。",
+    "keywords": [
+     "over-exertion",
+     "extreme cold",
+     "body temperature",
+     "dangerous"
+    ],
+    "paraphrase": "over-exertion可能对应原文中的pushing too hard、excessive physical effort等；lower one's body temperature to a dangerous point可能对应hypothermia（体温过低症）或类似医学描述。",
+    "tip": "关注医学/生理风险描述，如hypothermia、体温下降等关键词定位A段。"
+   },
+   {
+    "number": 40,
+    "answer": "F",
+    "cn": "Wardian对一位赛事总监的冒险精神印象深刻。",
+    "keywords": [
+     "Wardian",
+     "impressed",
+     "race director",
+     "sense of adventure"
+    ],
+    "paraphrase": "impressed可能替换为inspired、struck by、drawn to等；sense of adventure可对应adventurous spirit、love of exploration等近义表达。",
+    "tip": "定位\"race director\"这一身份名词，结合Wardian的正面评价锁定F段。"
+   },
+   {
+    "number": 41,
+    "answer": "K",
+    "cn": "Wardian一旦下定决心做某事，就一定会让它实现。",
+    "keywords": [
+     "sets his mind",
+     "determined",
+     "make it happen"
+    ],
+    "paraphrase": "sets his mind on something与determined to make it happen描述意志坚定，原文可能用once he decides/commits、nothing can stop him、sees it through等替换。",
+    "tip": "寻找描写Wardian坚定意志和执行力的段落，定位K段。"
+   },
+   {
+    "number": 42,
+    "answer": "H",
+    "cn": "一位美国顶尖马拉松选手因身体状况而放弃了跑步生涯。",
+    "keywords": [
+     "top American marathoner",
+     "quit",
+     "running career",
+     "physical condition"
+    ],
+    "paraphrase": "quit his running career可替换为retired from running、gave up competitive running等；physical condition可能指伤病injury或健康问题health issues。",
+    "tip": "定位\"另一位跑者\"这一信息差异——非Wardian本人，结合退出/伤病等关键词找H段。"
+   },
+   {
+    "number": 43,
+    "answer": "I",
+    "cn": "对于许多为期一周马拉松的参赛者来说，完成比赛本身就是一种成功。",
+    "keywords": [
+     "week-long marathon",
+     "participants",
+     "completing",
+     "success in itself"
+    ],
+    "paraphrase": "completing the race will be a success in itself可能对应原文中finishing is an achievement、just crossing the finish line is a victory等表述。",
+    "tip": "注意本题与第37题同指I段，该段兼含公益目标与完赛即胜利两层信息。"
+   },
+   {
+    "number": 44,
+    "answer": "C",
+    "cn": "对Wardian而言，北极马拉松更多是关于如何战胜极端寒冷。",
+    "keywords": [
+     "Wardian",
+     "Arctic",
+     "triumph over",
+     "extreme cold"
+    ],
+    "paraphrase": "more about how to triumph over the extreme cold可能对应原文中overcoming/battling/conquering the cold、the cold was the real challenge等表达；Arctic对应North Pole或polar region。",
+    "tip": "锁定\"Arctic/北极\"这一地理专有名词，结合\"战胜寒冷\"的语义定位C段。"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "cn": "为了参加为期七天的马拉松系列赛，Wardian必须筹集大量资金并获得妻子的支持。",
+    "keywords": [
+     "seven-day marathon",
+     "raise money",
+     "wife's support"
+    ],
+    "paraphrase": "raise a lot of money可能对应原文中fundraising、securing sponsorship或come up with the funds等；wife's support可对应spouse's backing/approval/blessing等。",
+    "tip": "同时包含\"筹钱\"和\"妻子支持\"两个并列条件的段落，双重定位锁定G段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "endurance",
+    "cn": "n. 耐力，忍耐力"
+   },
+   {
+    "w": "over-exertion",
+    "cn": "n. 过度用力，过度劳累"
+   },
+   {
+    "w": "worthy cause",
+    "cn": "n. 有价值的事业（常指慈善或公益）"
+   },
+   {
+    "w": "triumph over",
+    "cn": "v. 战胜，克服"
+   },
+   {
+    "w": "marathon",
+    "cn": "n. 马拉松（赛跑）"
+   },
+   {
+    "w": "participation",
+    "cn": "n. 参与，参加"
+   },
+   {
+    "w": "sets his mind on",
+    "cn": "v. 下定决心做…"
+   },
+   {
+    "w": "impressed",
+    "cn": "adj. 印象深刻的"
+   },
+   {
+    "w": "quit",
+    "cn": "v. 放弃，退出"
+   },
+   {
+    "w": "extreme",
+    "cn": "adj. 极端的，极度的"
+   }
+  ]
+ }
+}

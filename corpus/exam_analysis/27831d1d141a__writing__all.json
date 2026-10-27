@@ -1,0 +1,251 @@
+{
+ "schemaVersion": 1,
+ "id": "27831d1d141a__writing__all",
+ "examId": "27831d1d141a",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年考研英语真题",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  51,
+  52
+ ],
+ "generatedAt": "2026-10-27T08:45:59.171Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 131357,
+ "usage": {
+  "prompt_tokens": 720,
+  "completion_tokens": 2154,
+  "total_tokens": 2874,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 720,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2154,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 720,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作（书信）：以李明身份给一位英国大学教授写邮件，邀请其组建团队参加在你校举办的国际创新大赛。",
+    "outline": [
+     "第一段：自我介绍+写信目的（邀请该教授组队参加国际创新大赛）",
+     "第二段：大赛具体信息（时间、主题、形式等）+说明邀请理由或表达诚意",
+     "第三段：提供后勤保障说明+期待回复+礼貌收尾"
+    ],
+    "sample": "Dear Professor Smith,\n\nI am Li Ming, a postgraduate student at Peking University. I am writing to cordially invite you to organize a team from your university for the International Innovation Contest to be held at our campus from March 15 to 18, 2025.\n\nThe contest aims to foster cross-cultural collaboration and inspire innovative thinking among students worldwide. Participants will work in teams to propose creative solutions to real-world challenges. We would be truly honored to have your distinguished team join this exciting event.\n\nWe will cover accommodation and travel expenses for all participants. Should you need further details, please do not hesitate to contact me.\n\nI look forward to your favorable reply.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "I am writing to cordially invite you to...",
+      "cn": "我写信诚挚地邀请您……；书信邀请的经典开头句式，cordially 体现正式语气"
+     },
+     {
+      "en": "organize a team for...",
+      "cn": "为……组建团队；准确对应题目要求的核心动作"
+     },
+     {
+      "en": "to be held at our campus",
+      "cn": "将在我校举办；不定式作后置定语，简洁说明赛事地点"
+     },
+     {
+      "en": "foster cross-cultural collaboration",
+      "cn": "促进跨文化合作；foster 比 promote 更书面高级，适合学术语境"
+     },
+     {
+      "en": "inspire innovative thinking",
+      "cn": "激发创新思维；inspire 搭配 thinking 为高频学术表达"
+     },
+     {
+      "en": "propose creative solutions to real-world challenges",
+      "cn": "针对现实挑战提出创新方案；solutions to challenges 为固定搭配"
+     },
+     {
+      "en": "We would be truly honored to have...",
+      "cn": "若能……我们将深感荣幸；虚拟语气表邀请诚意，比 We hope 高级"
+     },
+     {
+      "en": "Should you need further details",
+      "cn": "如果您需要更多细节；倒装条件句代替 If you need…，彰显书面功底"
+     },
+     {
+      "en": "please do not hesitate to contact me",
+      "cn": "请随时联系我；邀请信/求助信万用礼貌收尾句"
+     },
+     {
+      "en": "I look forward to your favorable reply",
+      "cn": "期待您的肯定回复；favorable 比 early 更贴合邀请信语境"
+     }
+    ],
+    "pitfalls": [
+     "格式不完整：缺少称呼 Dear Professor… 或落款 Yours sincerely 会扣格式分",
+     "语域不当：邀请信应正式得体，避免口语化表达如 wanna、gonna、pretty cool 等",
+     "内容遗漏：题目明确要求邀请其'组建团队'，仅写邀请参加而未提 organize a team 会偏题",
+     "词数不足或严重超标：要求约100词，低于80词或超过130词均可能被扣分",
+     "人称署名错误：使用真实姓名而非 Li Ming 会违反指令要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "I want to invite you to join our contest.",
+      "better": "I am writing to cordially invite you to organize a team for the International Innovation Contest.",
+      "note": "补充写信目的句式，明确赛事名称和具体任务，更符合书信规范且信息更完整"
+     },
+     {
+      "plain": "The contest is very good and meaningful.",
+      "better": "The contest aims to foster cross-cultural collaboration and inspire innovative thinking among students worldwide.",
+      "note": "用具体目标替代空洞评价，体现学术写作的信息密度与准确性"
+     },
+     {
+      "plain": "If you need more information, you can email me.",
+      "better": "Should you need further details, please do not hesitate to contact me.",
+      "note": "倒装条件句+固定礼貌用语，展现句式多样性与正式语域意识"
+     },
+     {
+      "plain": "We hope you can come.",
+      "better": "We would be truly honored to have your distinguished team join this exciting event.",
+      "note": "虚拟语气+honored 表达诚意，distinguished 体现对对方的尊重，语气更得体"
+     },
+     {
+      "plain": "We will pay for your hotel.",
+      "better": "We will cover accommodation and travel expenses for all participants.",
+      "note": "cover expenses 替代 pay for，accommodation 替代 hotel，用词更正式精准"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "看图作文：根据图片进行三段式写作，第一段简要描述图片内容，第二段阐释图片寓意，第三段给出个人评论，160-200词。",
+    "outline": [
+     "第一段：客观描述图片内容——一个人正沿着由书籍搭成的阶梯向上攀登，朝着天空中的星辰前行，面带坚定神情，点明图片主题。",
+     "第二段：阐释图片深层寓意——书籍与知识是个人成长的阶梯，持续学习在当今竞争激烈的社会中不可或缺；辅以道理论证说明知识积累对成功的关键作用。",
+     "第三段：给出个人评论与建议——从个人层面提倡培养阅读习惯、减少屏幕时间，从社会层面呼吁学校与政府推广阅读文化，以倒装句收束全文。"
+    ],
+    "sample": "As is vividly depicted in the picture, a young person is ascending a staircase built entirely of books, stretching toward a shining star in the sky above. With a look of determination, the figure symbolizes the relentless pursuit of knowledge and dreams.\n\nThe intended meaning of this illustration is both clear and profound. Books, serving as stepping stones, represent the accumulated knowledge that elevates individuals to greater heights. In today's competitive world, continuous learning has become indispensable for personal growth and career advancement. Each book we read sharpens our thinking, broadens our perspective, and brings us one step closer to our aspirations. History has repeatedly demonstrated that those who devote themselves to reading and self-improvement are more likely to achieve remarkable success. The picture thus emphasizes that there is no shortcut to excellence—only the steady accumulation of wisdom can lead us to our goals.\n\nFrom my perspective, cultivating a reading habit is of paramount importance in the modern era. Individuals should consciously reduce screen time and dedicate more hours to meaningful reading. Meanwhile, schools and governments ought to launch initiatives that promote a culture of reading across society. Only by embracing lifelong learning can we truly reach for the stars.",
+    "phrases": [
+     {
+      "en": "as is vividly depicted in the picture",
+      "cn": "如图所生动描绘的那样；首段描述图片的经典开头句式，考官熟悉且认可"
+     },
+     {
+      "en": "the relentless pursuit of knowledge",
+      "cn": "对知识的不懈追求；relentless比simple更具情感力度，适合描述图片中人物精神状态"
+     },
+     {
+      "en": "serving as stepping stones",
+      "cn": "充当垫脚石/阶梯；插入式现在分词短语作同位补充，使句式更灵活"
+     },
+     {
+      "en": "continuous learning has become indispensable",
+      "cn": "持续学习已变得不可或缺；indispensable替代important/necessary，词汇档次更高"
+     },
+     {
+      "en": "broaden our perspective",
+      "cn": "拓宽我们的视野；与sharpen our thinking并列使用，形成排比效果"
+     },
+     {
+      "en": "devote themselves to",
+      "cn": "全身心投入于……；搭配reading/self-improvement，体现主动性"
+     },
+     {
+      "en": "the steady accumulation of wisdom",
+      "cn": "智慧的稳步积累；steady强调渐进性，呼应图片阶梯意象"
+     },
+     {
+      "en": "of paramount importance",
+      "cn": "至关重要；替代very important，是考研写作中的高级表达"
+     },
+     {
+      "en": "launch initiatives that promote",
+      "cn": "发起推动……的倡议；用于第三段建议层面，体现社会责任视角"
+     },
+     {
+      "en": "only by embracing lifelong learning can we",
+      "cn": "唯有拥抱终身学习我们才能……；only+介词短语前置引导倒装句，结尾点睛"
+     }
+    ],
+    "pitfalls": [
+     "首段只罗列图中元素却不点明象征意义，导致描述与寓意脱节",
+     "第二段论证单薄，仅有观点没有展开分析或举例支撑，缺乏说服力",
+     "第三段建议角度单一，未从个人与社会双层面展开，内容显得空泛",
+     "全文反复使用important、good、should等基础词，词汇丰富度不足扣分",
+     "忽视字数要求，写不够160词或超过200词均可能被扣卷面分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Reading is very important for us.",
+      "better": "Reading is of paramount importance in shaping one's intellectual and moral character.",
+      "note": "用of paramount importance替代very important，并补充具体作用方向，更学术"
+     },
+     {
+      "plain": "The picture shows a person climbing on books.",
+      "better": "As is vividly depicted in the picture, a young person is ascending a staircase built entirely of books.",
+      "note": "被动语态开篇更正式，ascending替代climbing更文雅，built entirely of细节更丰满"
+     },
+     {
+      "plain": "We should read more books and study harder.",
+      "better": "Individuals should consciously reduce screen time and dedicate more hours to meaningful reading.",
+      "note": "建议具体化、可操作化，主语用individuals更正式，避免口语化的we should"
+     },
+     {
+      "plain": "Knowledge helps people to succeed in life.",
+      "better": "History has repeatedly demonstrated that those who devote themselves to reading and self-improvement are more likely to achieve remarkable success.",
+      "note": "以history作主语增强权威感，定语从句丰富句式，remarkable success更有力"
+     },
+     {
+      "plain": "In conclusion, learning is good for everyone.",
+      "better": "Only by embracing lifelong learning can we truly reach for the stars.",
+      "note": "only引导的倒装句替代平淡总结，reach for the stars呼应图片意象，首尾呼应"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "I am writing to cordially invite you to organize a team for the International Innovation Contest. — 写信目的句，cordially + invite + 具体任务，一句话点明主旨，开门见山。",
+   "The contest aims to foster cross-cultural collaboration and inspire innovative thinking among students worldwide. — 用 aim to + 双动词并列结构阐明赛事目标，信息密度高且句式工整。",
+   "We would be truly honored to have your distinguished team join this exciting event. — would be honored + have sb do sth 结构表达诚挚邀请，distinguished 体现对教授的敬意。",
+   "Should you need further details, please do not hesitate to contact me. — 倒装虚拟条件句，是书信写作中展示语法功底的经典高分句型。",
+   "I look forward to your favorable reply. — 邀请信标准结尾，look forward to + 名词短语，favorable 一词画龙点睛。",
+   "Each book we read sharpens our thinking, broadens our perspective, and brings us one step closer to our aspirations. 每一本书都磨砺思维、拓宽视野，使我们离梦想更近一步。——三组动宾并列构成排比，节奏感强，论证有力。",
+   "There is no shortcut to excellence—only the steady accumulation of wisdom can lead us to our goals. 通往卓越没有捷径——唯有智慧的稳步积累方能引领我们达成目标。——破折号前后形成转折对比，语势铿锵，适合段末总结。",
+   "Only by embracing lifelong learning can we truly reach for the stars. 唯有拥抱终身学习，我们才能真正摘取星辰。——only+介词短语引导部分倒装，reach for the stars回扣图片意象，堪称点睛之句。",
+   "Books, serving as stepping stones, represent the accumulated knowledge that elevates individuals to greater heights. 书籍如同阶梯，代表着将个人推向更高境界的知识积累。——插入分词短语+定语从句，句式层次丰富，适合第二段论证段开头。",
+   "History has repeatedly demonstrated that those who devote themselves to reading and self-improvement are more likely to achieve remarkable success. 历史反复证明，潜心阅读与自我提升的人更可能取得卓越成就。——以history为主语增强客观说服力，宾语从句内嵌定语从句，展现高级语法能力。"
+  ]
+ },
+ "mergedFrom": [
+  "27831d1d141a__writing__51",
+  "27831d1d141a__writing__52"
+ ]
+}

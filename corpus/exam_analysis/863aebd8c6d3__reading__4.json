@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "863aebd8c6d3__reading__4",
+ "examId": "863aebd8c6d3",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2004 年考研英语真题（旧）",
+ "year": 2004,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:15:15.239Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57921,
+ "usage": {
+  "prompt_tokens": 1774,
+  "completion_tokens": 3496,
+  "total_tokens": 5270,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1774,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3496,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1774,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 38 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "美国社会与学校中的反智主义",
+  "gist": "文章探讨了美国社会根深蒂固的反智主义倾向。作者指出美国学校注重实用教育而非知识探求，引用多位学者观点论证反智传统的历史根源及其危害，强调智识对民主社会和批判性思维的重要性，呼吁学校应成为抵抗反智主义的力量。",
+  "structure": [
+   "第1-2段：提出美国社会与学校普遍存在反智主义现象",
+   "第3-4段：论述反智主义的危害及其历史根源",
+   "第5段：以爱默生和马克·吐温为例佐证反智传统",
+   "第6-7段：区分智识与天赋智力，指出学校仍敌视智识"
+  ],
+  "difficulty": "中等",
+  "translation": "当今美国人并不十分重视智识。我们的英雄是运动员、演艺人员和企业家，而非学者。甚至我们的学校也只是家长送孩子去接受实用教育的场所——而非追求知识本身的地方。在我们的学校中，弥漫性反智主义的症状不难发现。\n\n教育作家黛安·拉维奇说：\"学校一直处在一个实用比智识更重要的社会中。学校本可以成为一种制衡力量。\"拉维奇的新书《落后：一个世纪失败的学校改革》追溯了学校中反智主义的根源，得出的结论是：学校绝非美国人厌恶智识追求的制衡力量。\n\n但学校能够、也应该成为这样的制衡力量。鼓励孩子拒绝思想生活，会使他们容易遭到利用和控制。没有批判性思维的能力，无法捍卫自己的观点、理解他人的观点，他们就不能充分参与我们的民主。作家厄尔·肖里斯说，沿着这条路走下去，\"我们将成为一个二流国家，我们的社会将更不文明。\"\n\n历史学家兼教授理查德·霍夫施塔特在其获普利策奖的著作《美国生活中的反智主义》中写道：\"智识被视为一种权力或特权的形式而遭到怨恨。\"霍夫施塔特说，从我们历史的起点开始，我们的民主和民粹主义冲动就驱使我们拒绝任何带有精英主义气息的东西。务实精神、常识和天赋智力一直被认为比从书本上学到的任何东西都更为高尚。\n\n拉尔夫·沃尔多·爱默生和其他超验主义哲学家认为，学校教育和严格的书本学习对儿童施加了不自然的束缚：\"我们被关在学校和大学课堂里十到十五年，最终出来时满脑子都是文字，却什么也不懂。\"马克·吐温的《哈克贝利·费恩》是美国反智主义的典范。它的主人公逃避文明化——上学和识字——以保留他天生的善良。\n\n霍夫施塔特认为，智识不同于天赋智力——天赋智力是我们勉强欣赏的一种品质。智识是头脑中批判性的、创造性的和沉思性的一面。天赋智力追求的是掌握、操控、重组和调整，而智识则审视、深思、好奇、理论化、批判和想象。\n\n学校仍然是一个智识被不信任的地方。霍夫施塔特说，我们国家的教育体制被这样一些人所控制——他们\"欢天喜地、斗志昂扬地宣称他们对智识的敌意，并急切地要与那些表现出最少智识前景的孩子站在一起。\"",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Even our schools are where we send our children to get a practical education—not to pursue knowledge for the sake of knowledge.",
+    "why": "原文第一段明确指出，美国的学校是家长送孩子去获得\"实用教育\"（practical education）的地方，而非追求知识本身。C选项\"practical abilities for future career\"（为未来职业获取实用能力）是对\"practical education\"的同义改写，与原文信息完全吻合。",
+    "traps": "A\"独立思考的习惯\"属于智识追求的一部分，原文说美国家长恰恰不重视这些；B\"对世界的深刻认识\"属于无中生有，原文未提及；D\"对智识追求的信心\"与原文相反，美国社会整体轻视智识追求。",
+    "tip": "注意原文中破折号后的否定信息，对比正反两面确定答案。"
+   },
+   {
+    "number": 37,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "From the beginning of our history, says Hofstadter, our democratic and populist urges have driven us to reject anything that smells of elitism.",
+    "why": "原文第四段霍夫施塔特指出，从美国历史之初，民主和民粹冲动就驱使美国人拒绝精英主义。第二段拉维奇追溯了学校反智主义的根源，全文多处论证反智主义是美国长期的历史传统。A选项\"undervaluing intellect\"（低估智识）准确概括了这一历史现象。",
+    "traps": "B\"favoring intellectualism\"与全文主旨完全相反；C\"supporting school reform\"文中仅提及改革失败，并非美国人有支持改革的历史；D\"suppressing native intelligence\"原文第六段明确说天赋智力是美国人\"勉强欣赏\"的品质，并非被压制。",
+    "tip": "通篇反复出现的核心观点即为正确推断的依据。"
+   },
+   {
+    "number": 38,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Schools could be a counterbalance. / schooling and rigorous book learning put unnatural restraints on children",
+    "why": "拉维奇认为学校应当成为反智主义的制衡力量，即学校应该推动智识教育；而爱默生认为学校教育和严格的书本学习对儿童施加了不自然的束缚，本质上反对学校的智识教育。两人对学校教育的态度截然相反，因此答案为D\"opposite\"。",
+    "traps": "A\"identical\"（完全相同）与事实完全不符；B\"similar\"（相似）同样错误，两人观点明显对立；C\"complementary\"（互补）暗示两者观点可以相互补充，但两人是根本性对立，而非互补关系。",
+    "tip": "比较两人观点时，需抓住各自对\"学校教育\"这一核心对象的态度。"
+   },
+   {
+    "number": 39,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Ralph Waldo Emerson and other Transcendentalist philosophers thought schooling and rigorous book learning put unnatural restraints on children",
+    "why": "原文第五段指出爱默生认为学校教育和书本学习是对儿童不自然的束缚，并引用其原话批评学校教育让人满脑子文字却一无所知。这表明爱默生反对正规学校教育和严格的书本学习，即反对智识主义。B选项\"an opponent of intellectualism\"准确概括了其立场。",
+    "traps": "A\"教育改革先驱\"无原文依据，爱默生是反对学校教育而非改革学校教育；C\"支持智识的学者\"与原文相反，他批判书本学习；D\"倡导正规学校教育\"与原文完全矛盾，他认为学校教育是不自然的束缚。",
+    "tip": "通过人物的直接引语判断其立场和态度。"
+   },
+   {
+    "number": 40,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "Encouraging kids to reject the life of the mind leaves them vulnerable to exploitation and control. Without the ability to think critically, to defend their ideas and understand the ideas of others, they cannot fully participate in our democracy.",
+    "why": "第三段作者明确表态：鼓励孩子拒绝思想生活会使他们易被利用和控制，缺乏批判性思维就无法充分参与民主。作者用\"could and should be\"强调学校应当推动智识教育，全文论调都在批判反智主义、呼吁重视智识。因此C\"It is to be pursued\"（智识值得追求）准确反映了作者的立场。",
+    "traps": "A\"智识次于天赋智力\"原文第六段区分了两者但未说智识次等，且作者显然更推崇智识；B\"智识源于常识\"属于无中生有，原文将常识与智识对立而非因果关系；D\"智识是权力的基础\"是对霍夫施塔特所引观点的曲解，原文说智识\"被视为\"权力形式而遭到怨恨，这是他人的偏见而非作者的看法。",
+    "tip": "判断作者态度需综合全文论证方向，而非仅看个别引述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "pervasive",
+    "cn": "adj. 弥漫的，无处不在的"
+   },
+   {
+    "w": "counterbalance",
+    "cn": "n./v. 制衡力量；抵消"
+   },
+   {
+    "w": "vulnerable",
+    "cn": "adj. 易受攻击的，脆弱的"
+   },
+   {
+    "w": "exploitation",
+    "cn": "n. 利用，剥削"
+   },
+   {
+    "w": "populist",
+    "cn": "adj. 民粹主义的"
+   },
+   {
+    "w": "elitism",
+    "cn": "n. 精英主义"
+   },
+   {
+    "w": "rigorous",
+    "cn": "adj. 严格的，严谨的"
+   },
+   {
+    "w": "restraint",
+    "cn": "n. 束缚，限制"
+   },
+   {
+    "w": "innate",
+    "cn": "adj. 天生的，固有的"
+   },
+   {
+    "w": "contemplative",
+    "cn": "adj. 沉思的，冥想的"
+   },
+   {
+    "w": "militantly",
+    "cn": "adv. 好斗地，激进地"
+   },
+   {
+    "w": "Transcendentalist",
+    "cn": "n./adj. 超验主义者（的）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Without the ability to think critically, to defend their ideas and understand the ideas of others, they cannot fully participate in our democracy.",
+    "cn": "没有批判性思考的能力，没有捍卫自己观点和理解他人观点的能力，他们就无法充分参与我们的民主。",
+    "note": "Without引导条件状语，其中to defend和to understand是并列不定式，作ability的后置定语；主句为they cannot fully participate。"
+   },
+   {
+    "en": "From the beginning of our history, says Hofstadter, our democratic and populist urges have driven us to reject anything that smells of elitism.",
+    "cn": "霍夫施塔特说，从我们历史的起点开始，我们的民主和民粹主义冲动就驱使我们拒绝任何带有精英主义气息的东西。",
+    "note": "says Hofstadter为插入语；主干为urges have driven us to reject anything；that引导定语从句修饰anything。"
+   },
+   {
+    "en": "Hofstadter says our country's educational system is in the grips of people who joyfully and militantly proclaim their hostility to intellect and their eagerness to identify with children who show the least intellectual promise.",
+    "cn": "霍夫施塔特说，我们国家的教育体制被这样一些人所控制——他们欢天喜地、斗志昂扬地宣称他们对智识的敌意，并急切地要与那些表现出最少智识前景的孩子站在一起。",
+    "note": "主干为system is in the grips of people；who引导定语从句修饰people；proclaim后接两个并列宾语hostility和eagerness；末尾who引导第二层定语从句修饰children。"
+   }
+  ]
+ }
+}

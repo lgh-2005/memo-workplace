@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "2503975bfd62__reading__3",
+ "examId": "2503975bfd62",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2010 年考研英语真题",
+ "year": 2010,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:23:43.777Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66474,
+ "usage": {
+  "prompt_tokens": 1788,
+  "completion_tokens": 4079,
+  "total_tokens": 5867,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1788,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4079,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1788,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社会流行传播中影响力人物的作用被高估",
+  "gist": "文章围绕\"社会流行病\"的传播机制展开讨论。先引出Gladwell关于少数影响力人物驱动社会流行的观点及\"两步流动理论\"，再引入最新研究发现：影响力人物的作用远不如人们所想，社会流行的关键不在于少数有影响力的人，而在于足够多的\"易受影响者\"的存在。",
+  "structure": [
+   "第1段：引出影响力人物驱动社会流行的观点，指出其局限",
+   "第2段：介绍两步流动理论及其表面上的合理性",
+   "第3段：过渡段，点明研究者的新发现与旧理论相悖",
+   "第4段：从社会互动角度论证影响力人物作用有限",
+   "第5段：总结研究结论——关键在于大量易受影响者"
+  ],
+  "difficulty": "中等",
+  "translation": "在《引爆点》一书中，马尔科姆·格拉德威尔认为，\"社会流行病\"在很大程度上是由一小撮被称为\"影响力人物\"的特殊个体所驱动的，他们见多识广、善于说服或人脉广泛。这个观点直觉上很有说服力，但它并不能解释思想实际上是如何传播的。\n\n影响力人物被认为重要，源于一个听上去合理但基本未经验证的理论，即\"两步传播流\"：信息从媒体流向影响力人物，再从他们流向其他所有人。营销人员欣然接受了这一理论，因为它暗示只要找到并影响那些影响力人物，这些精挑细选的人就会替他们完成大部分工作。这一理论似乎也解释了某些造型、品牌或社区突然间出人意料的走红。在许多此类案例中，粗略地追溯原因就会发现，某个小群体在其他人关注之前就已经在穿戴、推广或开发那些东西了。这类轶事性证据恰好与\"只有某些特殊人物才能引领潮流\"的观点相吻合。\n\n然而，在最近的研究中，一些研究者得出了这样的发现：影响力人物对社会流行的影响远不如人们通常所认为的那样大。事实上，他们似乎根本不是必需的。\n\n研究者的论点源于对社会影响力的一个简单观察：除了少数像奥普拉·温弗瑞这样的名人——她的巨大影响力主要来自媒体而非人际影响——即便是群体中最有影响力的成员，也不会与太多人互动。然而，根据两步传播流理论，恰恰是这些非名人型的影响力人物应当通过直接影响朋友和同事来驱动社会流行。但要使社会流行发生，每个被影响的人必须继而影响他自己的熟人，而这些熟人又必须依次影响他们的熟人，如此类推；而这些人中每个人能引起多少人的注意，与最初的影响力人物几乎无关。例如，如果网络中与最初影响力人物相隔两步的人表现出抵触，变革的连锁反应就不会传播很远，也不会影响很多人。\n\n在这一关于人际影响力的基本事实基础上，研究人员通过对人群进行数千次计算机模拟来研究社会影响力的动态机制，他们操控了多个与人们影响他人的能力及其被影响倾向相关的变量。他们发现，所谓\"全局级联\"——即影响力在网络中广泛传播——的首要条件不是少数影响力人物的存在，而是足够数量的易受影响者的存在。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "Malcolm Gladwell argues that \"social epidemics\" are driven in large part by the actions of a tiny minority of special individuals, often called influentials, who are unusually informed, persuasive, or well connected. The idea is intuitively compelling, but it doesn't explain how ideas actually spread.",
+    "why": "作者引用《引爆点》一书，提出了影响力人物驱动社会流行传播的观点，并指出该观点虽直觉上有说服力但无法解释思想如何实际传播。引用此书的目的是引出并讨论影响力人物在传播思想中的功能，这正是全文讨论的起点和核心话题。B选项\"discuss influentials' function in spreading ideas\"准确概括了引用目的。",
+    "traps": "A项\"分析社会流行的后果\"：文章未讨论社会流行的后果，属无中生有。C项\"举例说明人们对社会流行的直觉反应\"：虽提到\"intuitively compelling\"，但引用目的不是例证直觉反应，而是引出讨论话题，属偷换论证目的。D项\"描述影响力人物的本质特征\"：文中虽简要提及informed/persuasive/well connected，但这只是附带信息，非引用目的，属以偏概全。",
+    "tip": "例证题需区分\"例子本身说了什么\"和\"作者用例子要证明什么\"。"
+   },
+   {
+    "number": 32,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The supposed importance of influentials derives from a plausible-sounding but largely untested theory called the \"two-step flow of communication\"",
+    "why": "原文明确说两步传播流理论\"plausible-sounding but largely untested\"（听起来合理但基本未经验证），说明作者认为该理论缺乏实证支持。D选项\"requires solid evidence for its validity\"（需要坚实证据来证明其有效性）恰好对应\"largely untested\"的含义，是对作者态度的准确推断。",
+    "traps": "A项\"解决营销问题的方案\"：原文说营销人员接受了该理论，但作者并不认可其有效性，且\"solution\"过于绝对，属曲解原意。B项\"帮助解释了某些流行趋势\"：原文用\"seems to explain\"表示\"似乎解释了\"，带有质疑语气，而B项说\"has helped explain\"暗示确实有效，忽略了作者的保留态度。C项\"得到了影响力人物的支持\"：原文说得到的是marketers的拥护，非influentials，属张冠李戴。",
+    "tip": "注意作者对所述理论的评价性措辞，如untested、supposed、seems等暗含质疑态度。"
+   },
+   {
+    "number": 33,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "even the most influential members of a population simply don't interact with that many others. Yet it is precisely these non-celebrity influentials who, according to the two-step-flow theory, are supposed to drive social epidemics, by influencing their friends and colleagues directly.",
+    "why": "研究者的核心观察是：即使最有影响力的人也不会与太多人互动，因此影响力的传播受限于社会互动的范围和程度。这说明影响力的大小与社会互动的广度密切相关，即\"the power of influence goes with social interactions\"（影响力的效果与社会互动相伴而生）。A选项准确概括了这一观察结论。",
+    "traps": "B项\"人际关系可通过媒体增强\"：原文将媒体影响与人际影响区分开来，并非说媒体增强人际关系，属曲解原文。C项\"影响力人物有更多渠道接触公众\"：研究者的发现恰恰相反，影响力人物与他人互动有限，此选项与原文矛盾。D项\"大多数名人享有广泛媒体关注\"：名人只是作为例外被提及，不是研究观察的重点，属以偏概全。",
+    "tip": "推断题需紧扣研究者论证的核心逻辑，而非抓住某个细节信息。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "type": "指代题",
+    "locate": "each person so affected must then influence his or her own acquaintances, who must in turn influence theirs, and so on; and just how many others pay attention to each of these people has little to do with the initial influential.",
+    "why": "\"these people\"出现在描述影响力传递链条的语境中。前文说每个被影响的人必须继而影响自己的熟人，熟人又影响他们的熟人，如此类推。\"each of these people\"指的正是这条传递链中的每一个环节上的人——他们既是被影响者，又承担着继续影响他人的角色。C选项\"are influenced and then influence others\"准确描述了这一双重身份。",
+    "traps": "A项\"处于社会影响力网络之外\"：这些人恰恰在网络之内层层传递影响，与原文矛盾。B项\"与影响力源头几乎没有接触\"：虽然传递链中距离初始影响者较远的人确实与源头联系少，但这不是\"these people\"的定义性特征，属以偏概全。D项\"受到初始影响力人物影响的人\"：只涵盖了\"被影响\"这一面，忽略了\"继续影响他人\"的角色，不够完整。",
+    "tip": "指代题需回到上下文完整语境，关注指代对象的完整特征而非单一方面。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "They found that the principal requirement for what is called \"global cascades\" – the widespread propagation of influence through networks – is the presence not of a few influentials but, rather, of a critical mass of easily influenced people.",
+    "why": "末段明确给出研究结论：全局级联（即社会影响力的大范围传播）的首要条件是\"a critical mass of easily influenced people\"（足够数量的易受影响者）。C选项\"The readiness to be influenced\"（容易被影响的状态）正是对\"easily influenced\"的同义替换，准确对应了社会影响力动态机制的核心要素。",
+    "traps": "A项\"渴望被接受\"：文章未提及人们渴望被接受的心理，属无中生有。B项\"影响他人的冲动\"：研究发现关键不在于影响他人的能力或冲动，而在于被影响的容易程度，属偷换概念。D项\"依赖他人的倾向\"：原文强调的是\"易受影响\"而非\"依赖他人\"，二者含义不同，属过度引申。",
+    "tip": "细节题抓住原文中的关键结论句，注意同义替换的准确性。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "epidemic",
+    "cn": "n. 流行病；（迅速的）传播、蔓延"
+   },
+   {
+    "w": "intuitive",
+    "cn": "adj. 直觉的，凭直觉获知的"
+   },
+   {
+    "w": "plausible",
+    "cn": "adj. 貌似有理的，看似合理的"
+   },
+   {
+    "w": "cursory",
+    "cn": "adj. 粗略的，匆忙的"
+   },
+   {
+    "w": "anecdotal",
+    "cn": "adj. 轶事的，基于个人经历的（非系统性证据）"
+   },
+   {
+    "w": "propagate",
+    "cn": "v. 传播，扩散；繁殖"
+   },
+   {
+    "w": "cascade",
+    "cn": "n. 级联，瀑布式传递；v. 大量落下"
+   },
+   {
+    "w": "outsize",
+    "cn": "adj. 超大的，特大的"
+   },
+   {
+    "w": "manipulation",
+    "cn": "n. 操控，处理（文中动词manipulating）"
+   },
+   {
+    "w": "resistant",
+    "cn": "adj. 抵制的，有抵抗力的"
+   },
+   {
+    "w": "interpersonal",
+    "cn": "adj. 人际的，人与人之间的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The supposed importance of influentials derives from a plausible-sounding but largely untested theory called the \"two-step flow of communication\": Information flows from the media to the influentials and from them to everyone else.",
+    "cn": "影响力人物被认为重要，源于一个听上去合理但基本未经验证的理论，即\"两步传播流\"：信息从媒体流向影响力人物，再从他们流向其他所有人。",
+    "note": "主句主语为importance，谓语derives from，宾语为theory；冒号后为同位语解释theory内容；注意supposed和largely untested暗含作者质疑态度。"
+   },
+   {
+    "en": "For a social epidemic to occur, however, each person so affected must then influence his or her own acquaintances, who must in turn influence theirs, and so on; and just how many others pay attention to each of these people has little to do with the initial influential.",
+    "cn": "但要使社会流行发生，每个被如此影响的人必须继而影响自己的熟人，而这些熟人又必须依次影响他们的熟人，如此类推；而这些人中每个人能引起多少人的注意，与最初的影响力人物几乎无关。",
+    "note": "前半句含for...to不定式作目的状语，who引导非限制性定语从句；分号后主语为how many others pay attention to each of these people这一名词性从句，谓语为has little to do with。"
+   },
+   {
+    "en": "They found that the principal requirement for what is called \"global cascades\" – the widespread propagation of influence through networks – is the presence not of a few influentials but, rather, of a critical mass of easily influenced people.",
+    "cn": "他们发现，所谓\"全局级联\"——即影响力在网络中的广泛传播——的首要条件不是少数影响力人物的存在，而是足够数量的易受影响者的存在。",
+    "note": "that引导宾语从句；主语为the principal requirement，其中what引导的从句作for的宾语；破折号内容为global cascades的解释性同位语；not...but rather构成否定-转折结构，点明核心论点。"
+   }
+  ]
+ }
+}

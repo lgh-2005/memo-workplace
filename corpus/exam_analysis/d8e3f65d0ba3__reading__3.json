@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "d8e3f65d0ba3__reading__3",
+ "examId": "d8e3f65d0ba3",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2003 年考研英语真题（旧）",
+ "year": 2003,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:13:37.580Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62882,
+ "usage": {
+  "prompt_tokens": 1788,
+  "completion_tokens": 3701,
+  "total_tokens": 5489,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1788,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3701,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1788,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "铁路合并引发垄断与运费争议",
+  "gist": "近年来美国铁路业大规模合并形成超级系统，支持者认为可降低成本且有公路运输竞争制约垄断，但大量\"被俘获\"托运商面临运费歧视、申诉困难等问题，铁路公司继续举债收购更加剧了托运商对未来大幅涨价的担忧。",
+  "structure": [
+   "第1段：铁路合并趋势及垄断担忧的背景",
+   "第2段：支持者与反对者的观点交锋",
+   "第3段：合并导致托运商受制于单一铁路公司",
+   "第4段：铁路为运费歧视辩护及其争议",
+   "第5段：托运商担忧收购导致运费大涨"
+  ],
+  "difficulty": "中等",
+  "translation": "近年来，各铁路公司不断合并，形成超级系统，引发了人们对垄断问题日益加重的担忧。就在1995年，排名前四的铁路公司在铁路总吨英里运量中所占比例还不到70%。而明年，在一系列合并完成后，仅四家铁路公司就将控制主要铁路承运商所运货物总量的90%以上。\n\n新超级系统的支持者认为，这些合并将带来大幅度的成本削减和更加协调的服务。他们辩称，来自公路货运的激烈竞争消除了任何垄断威胁。但许多托运商抱怨说，对于煤炭、化工产品和谷物等需要长途运输的大宗散装商品而言，公路运输成本太高，铁路公司因此扼住了他们的咽喉。\n\n铁路行业的大规模整合意味着大多数托运商只有一家铁路公司可供选择。铁路公司向这类\"被俘获的\"托运商收取的运费通常比有另一家铁路公司参与竞争时高出20%到30%。那些认为自己被过度收费的托运商有权向联邦政府的地面运输委员会申诉，要求运费减免，但该程序费用高昂、耗时漫长，而且只在确实极端的情况下才会奏效。\n\n铁路公司为对被俘获托运商实施运费歧视所做的辩护理由是，从长远来看这会降低所有人的成本。他们辩称，如果铁路公司对所有客户收取同样的平均费率，那些有条件转向公路运输或其他运输方式的托运商就会转走，剩下的客户将不得不承担维持线路运营的费用。许多经济学家赞同这一理论，但在实际操作中，它常常使铁路公司处于决定哪些企业兴旺、哪些企业衰败的位置。\"我们真的希望铁路公司成为市场中谁赢谁输的仲裁者吗？\"经常代理托运商案件的华盛顿律师马丁·贝尔科维奇如此质问道。\n\n许多被俘获的托运商还担心，他们很快将面临一轮大幅运费上涨。整个铁路行业尽管前景日渐光明，但所获利润仍不足以覆盖为应对不断增长的运输量而必须投入的资本成本。然而，铁路公司仍在大举借贷以收购彼此，华尔街还在一旁鼓掌助威。以今年诺福克南方公司和CSX公司以102亿美元竞购联合铁路公司为例，联合铁路公司1996年的铁路净营业收入仅为4.27亿美元，还不到这笔交易融资成本的一半。剩下的账单谁来买单？许多被俘获的托运商担心是他们，因为诺福克南方公司和CSX公司正在加强对市场的控制。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Any threat of monopoly, they argue, is removed by fierce competition from trucks.",
+    "why": "题目问合并支持者为何认为铁路垄断不太可能发生。原文第二段明确指出，支持者辩称来自卡车运输的激烈竞争消除了任何垄断威胁。C选项\"外部竞争者将继续存在\"正是对trucks作为外部竞争力量这一论点的同义转述。",
+    "traps": "A\"成本削减基于竞争\"混淆了支持者提出的两个独立论点（成本削减和卡车竞争），两者无因果关系；B\"服务需要跨行业协调\"是合并的好处而非反垄断理由；D\"托运商将扼住铁路的咽喉\"与原文方向相反，原文说铁路扼住了托运商的咽喉。",
+    "tip": "注意区分同一段中并列出现的不同论据，不要张冠李戴。"
+   },
+   {
+    "number": 32,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "Many captive shippers also worry they will soon be hit with a round of huge rate increases.",
+    "why": "文章第三段提到被俘获的托运商抱怨被多收费用，第五段更明确指出他们\"worry\"即将面临大幅涨价，并\"fear\"自己将为收购买单。这些措辞都表达了一种担忧和不安的情绪。D选项apprehensive意为\"忧虑的、担心的\"，与worry和fear完全吻合。",
+    "traps": "A（漠不关心）与原文多处抱怨和担忧相矛盾；B（支持）与托运商反对垄断的立场完全相悖；C（愤怒的）虽然托运商有不满，但原文主要用worry/fear等词表达担忧，而非indignant所暗示的道义上的义愤。",
+    "tip": "态度题需要从原文关键情感词汇（worry/fear/complain）入手，精准匹配选项情感色彩。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Shippers who feel they are being overcharged have the right to appeal to the federal government's Surface Transportation Board for rate relief, but the process is expensive, time consuming, and will work only in truly extreme cases.",
+    "why": "原文说虽然托运商有权向地面运输委员会申诉，但该程序\"费用高昂、耗时漫长，且只在极端情况下才奏效\"。三重障碍叠加，可以合理推断大多数被过度收费的托运商不太可能真正去申诉。C选项正是对这一推断的准确概括。",
+    "traps": "A与原文相反，没有竞争对手时托运商被多收20%-30%；B属于过度推断，原文说大多数托运商只有一家铁路可选，但未说全国将只剩一家铁路公司；D与原文相悖，政府委员会的申诉机制实际上难以有效保障公平。",
+    "tip": "推断题需在原文信息基础上合理前推一步，注意but转折后的信息往往是推断依据。"
+   },
+   {
+    "number": 34,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "Do we really want railroads to be the arbiters of who wins and who loses in the marketplace?",
+    "why": "根据上下文，前文说铁路运费歧视\"often leaves railroads in the position of determining which companies will flourish and which will fail\"，即铁路公司处于决定企业成败的地位。紧接着律师用arbiters一词指代这种角色——决定市场中谁赢谁输的人。因此arbiters意为\"仲裁者、裁决者\"，即judges（裁判者）。",
+    "traps": "A（协调者）强调的是沟通协调功能，而非裁决权力；C（监督交易者）侧重监督职能，与原文决定成败的含义不符；D（决定价格者）虽然铁路确实影响运费，但arbiter强调的是对整体胜负的裁决权，而非单纯的定价行为。",
+    "tip": "词义题需结合上下文语境，尤其关注该词前后的同义解释性表述。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Yet railroads continue to borrow billions to acquire one another, with Wall Street cheering them on. Consider the $10.2 billion bid by Norfolk Southern and CSX to acquire Conrail this year.",
+    "why": "第五段指出铁路行业收入不足以覆盖资本成本，但铁路公司仍继续大举借贷互相收购。以102亿美元收购案为例，收购标的年净收入仅4.27亿美元，不及交易融资成本的一半。巨额收购借贷是导致行业成本攀升的主要原因，被俘获的托运商最终将为此买单。",
+    "traps": "B（不断增长的运输量）是铁路需要投资的原因之一，但不是成本上涨的主因；C（华尔街的欢呼）只是推波助澜的外部因素，非直接原因；D（市场萎缩）与原文\"surging traffic\"和\"brightening fortunes\"相矛盾。",
+    "tip": "注意区分\"根本原因\"与\"背景因素\"，题目问的是主要原因。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "supersystem",
+    "cn": "n. 超级系统"
+   },
+   {
+    "w": "monopoly",
+    "cn": "n. 垄断"
+   },
+   {
+    "w": "consolidation",
+    "cn": "n. 合并，整合"
+   },
+   {
+    "w": "captive",
+    "cn": "adj. 被俘获的，受制于人的"
+   },
+   {
+    "w": "rate discrimination",
+    "cn": "n. 费率歧视"
+   },
+   {
+    "w": "subscribe",
+    "cn": "v. 赞同，同意（subscribe to a theory）"
+   },
+   {
+    "w": "arbiter",
+    "cn": "n. 仲裁者，裁决者"
+   },
+   {
+    "w": "surging",
+    "cn": "adj. 急剧增长的"
+   },
+   {
+    "w": "carrying cost",
+    "cn": "n. 融资成本，持有成本"
+   },
+   {
+    "w": "bulk commodity",
+    "cn": "n. 大宗散装商品"
+   },
+   {
+    "w": "coordinate",
+    "cn": "v. 协调，配合"
+   },
+   {
+    "w": "shoulder",
+    "cn": "v. 承担（费用、责任）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "If railroads charged all customers the same average rate, they argue, shippers who have the option of switching to trucks or other forms of transportation would do so, leaving remaining customers to shoulder the cost of keeping up the line.",
+    "cn": "他们辩称，如果铁路公司对所有客户收取同样的平均费率，那些有条件转向卡车运输或其他运输方式的托运商就会转走，剩下的客户将不得不承担维持线路运营的费用。",
+    "note": "主干为虚拟条件句If...charged..., shippers...would do so；they argue为插入语；leaving引导结果状语从句，表示转走后的后果；who引导定语从句修饰shippers。"
+   },
+   {
+    "en": "Shippers who feel they are being overcharged have the right to appeal to the federal government's Surface Transportation Board for rate relief, but the process is expensive, time consuming, and will work only in truly extreme cases.",
+    "cn": "那些认为自己被过度收费的托运商有权向联邦政府的地面运输委员会申诉要求运费减免，但该程序费用高昂、耗时漫长，且只在确实极端的情况下才会奏效。",
+    "note": "主干为Shippers have the right...but the process is...；who引导定语从句修饰shippers；but转折后用三个并列成分（expensive, time consuming, will work only...）强调申诉之难。"
+   },
+   {
+    "en": "It's a theory to which many economists subscribe, but in practice it often leaves railroads in the position of determining which companies will flourish and which will fail.",
+    "cn": "许多经济学家赞同这一理论，但在实践中，它常常使铁路公司处于决定哪些企业兴旺、哪些企业衰败的地位。",
+    "note": "主干为It's a theory...but it leaves railroads in the position of...；to which引导定语从句修饰theory；determining后接两个which引导的宾语从句形成对比。"
+   }
+  ]
+ }
+}

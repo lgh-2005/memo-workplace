@@ -1,0 +1,193 @@
+{
+ "schemaVersion": 1,
+ "id": "116719f515cc__translation__all",
+ "examId": "116719f515cc",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年 6 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:43:33.375Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31408,
+ "usage": {
+  "prompt_tokens": 817,
+  "completion_tokens": 2163,
+  "total_tokens": 2980,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 817,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2163,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 817,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "南京长江大桥的建设意义",
+  "reference": "Nanjing Yangtze River Bridge is the first rail-road dual-use bridge over the Yangtze River that was designed by China and built with domestic materials. The upper deck is a four-lane highway bridge with a length of 4,589 meters, while the lower deck is a double-track railway bridge stretching 6,772 meters. The railway bridge connects the former Tianjin-Pukou and Shanghai-Nanjing railway lines, reducing the time for trains to cross the river from one and a half hours to a mere two minutes. The bridge serves as a vital transportation hub linking the north and the south, and is also one of the famous attractions in Nanjing. The completion of the Nanjing Yangtze River Bridge marked a great leap in China's bridge construction, greatly facilitating the exchange of goods and flow of people between the two banks of the Yangtze River, and playing a tremendous role in promoting economic development and improving people's livelihood.",
+  "sentences": [
+   {
+    "cn": "南京长江大桥是长江上首座由中国设计、采用国产材料建造的铁路、公路两用桥，",
+    "en": "Nanjing Yangtze River Bridge is the first rail-road dual-use bridge over the Yangtze River that was designed by China and built with domestic materials.",
+    "structure": "主系表结构 + that 引导的定语从句修饰 bridge，从句内含并列被动语态 was designed... and built...",
+    "keys": [
+     "首座 the first",
+     "铁路、公路两用桥 rail-road dual-use bridge",
+     "国产材料 domestic materials",
+     "由中国设计 designed by China"
+    ]
+   },
+   {
+    "cn": "上层的4车道公路桥长4589米，下层的双轨道铁路桥长6772米。",
+    "en": "The upper deck is a four-lane highway bridge with a length of 4,589 meters, while the lower deck is a double-track railway bridge stretching 6,772 meters.",
+    "structure": "while 连接的并列句，前后形成上层与下层的对比结构；用 with a length of 和现在分词 stretching 交替表达长度以避免重复",
+    "keys": [
+     "上层 upper deck",
+     "下层 lower deck",
+     "4车道公路桥 four-lane highway bridge",
+     "双轨道铁路桥 double-track railway bridge"
+    ]
+   },
+   {
+    "cn": "铁路桥连接原来的天津一浦口和上海―南京两条铁路线，使火车过江从过去一个半小时缩短为现在的2分钟。",
+    "en": "The railway bridge connects the former Tianjin-Pukou and Shanghai-Nanjing railway lines, reducing the time for trains to cross the river from one and a half hours to a mere two minutes.",
+    "structure": "主句 + 现在分词短语 reducing... 作结果状语；from... to... 结构表示时间缩短",
+    "keys": [
+     "天津-浦口铁路线 Tianjin-Pukou railway line",
+     "上海-南京铁路线 Shanghai-Nanjing railway line",
+     "缩短为 reduce... from... to...",
+     "过江 cross the river"
+    ]
+   },
+   {
+    "cn": "大桥是南北交通的重要枢纽，也是南京的著名景点之一。",
+    "en": "The bridge serves as a vital transportation hub linking the north and the south, and is also one of the famous attractions in Nanjing.",
+    "structure": "serves as... and is also... 并列谓语结构；linking... 现在分词作后置定语修饰 hub",
+    "keys": [
+     "交通枢纽 transportation hub",
+     "著名景点之一 one of the famous attractions"
+    ]
+   },
+   {
+    "cn": "南京长江大桥的建成标志着中国桥梁建设的一个飞跃，大大方便了长江两岸的物资交流和人员来往，对促进经济发展和改善人民生活起到了巨大作用。",
+    "en": "The completion of the Nanjing Yangtze River Bridge marked a great leap in China's bridge construction, greatly facilitating the exchange of goods and flow of people between the two banks of the Yangtze River, and playing a tremendous role in promoting economic development and improving people's livelihood.",
+    "structure": "主句 marked... + 两个并列现在分词短语 facilitating... and playing... 作伴随状语；play a role in doing 固定搭配嵌套并列动名词",
+    "keys": [
+     "建成 completion",
+     "标志着 marked",
+     "飞跃 a great leap",
+     "物资交流 exchange of goods",
+     "人员来往 flow of people",
+     "起到巨大作用 play a tremendous role"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "南京长江大桥",
+    "en": "Nanjing Yangtze River Bridge"
+   },
+   {
+    "cn": "铁路、公路两用桥",
+    "en": "rail-road dual-use bridge"
+   },
+   {
+    "cn": "国产材料",
+    "en": "domestic materials"
+   },
+   {
+    "cn": "双轨道铁路桥",
+    "en": "double-track railway bridge"
+   },
+   {
+    "cn": "天津-浦口铁路线",
+    "en": "Tianjin-Pukou Railway Line"
+   },
+   {
+    "cn": "交通枢纽",
+    "en": "transportation hub"
+   },
+   {
+    "cn": "桥梁建设",
+    "en": "bridge construction"
+   },
+   {
+    "cn": "物资交流",
+    "en": "exchange of goods"
+   },
+   {
+    "cn": "人员来往",
+    "en": "flow of people"
+   },
+   {
+    "cn": "改善人民生活",
+    "en": "improve people's livelihood"
+   }
+  ],
+  "pitfalls": [
+   "「首座」漏译或误译为 a first，应为 the first 加定冠词表唯一性",
+   "「铁路、公路两用桥」译为 bridge for railway and road 不够专业，应用 dual-use bridge",
+   "「使火车过江从…缩短为…」句式复杂，容易漏掉 reducing 的逻辑主语或 from...to... 搭配",
+   "「飞跃」误译为 fly 或 jump，应为 a great leap 表示重大进步",
+   "「对…起到巨大作用」中 play a role in 后须接动名词，常见错误为接不定式"
+  ],
+  "upgrades": [
+   {
+    "plain": "is a very important transportation center",
+    "better": "serves as a vital transportation hub",
+    "note": "serve as 比 is 更正式地道，hub 比 center 更契合交通枢纽语境"
+   },
+   {
+    "plain": "made the time shorter from one and a half hours to two minutes",
+    "better": "reducing the time from one and a half hours to a mere two minutes",
+    "note": "现在分词作状语更简洁，a mere 强调时间之短，表达更精炼"
+   },
+   {
+    "plain": "had a great effect on promoting economic development",
+    "better": "played a tremendous role in promoting economic development",
+    "note": "play a role in 是固定高分搭配，tremendous 比 great 更具书面语色彩"
+   },
+   {
+    "plain": "made it very convenient for goods exchange and people communication",
+    "better": "greatly facilitating the exchange of goods and flow of people",
+    "note": "分词结构避免多个简单句堆砌，facilitate 比 make convenient 更学术"
+   },
+   {
+    "plain": "was a big improvement in bridge building",
+    "better": "marked a great leap in bridge construction",
+    "note": "marked a leap 更具里程碑意味，construction 比 building 更正式专业"
+   }
+  ]
+ }
+}

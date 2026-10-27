@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "2dcfa087026e__reading__2",
+ "examId": "2dcfa087026e",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年考研英语真题",
+ "year": 2015,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:31:00.848Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63390,
+ "usage": {
+  "prompt_tokens": 1745,
+  "completion_tokens": 3746,
+  "total_tokens": 5491,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1745,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3746,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1745,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 27 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "数字隐私的宪法保护问题",
+  "gist": "文章围绕最高法院是否应允许警方在逮捕时无搜查令搜查手机内容展开讨论。作者反对加州提出的保守立场，认为智能手机堪比个人住宅，公民数字隐私应受宪法保护，并引用法学教授观点指出新技术要求对宪法保护进行新的解释与适用。",
+  "structure": [
+   "第1段：引出核心议题——警方能否无证搜查手机",
+   "第2-3段：介绍并反驳加州的保守论点",
+   "第4段：论证手机搜查类似入室搜查，应受宪法保护",
+   "第5-6段：讨论隐私保护与执法平衡的现实挑战",
+   "第7段：引用学者类比，强调宪法须与时俱进"
+  ],
+  "difficulty": "中等",
+  "translation": "宪法究竟在多大程度上保护你的数字数据？最高法院将考虑一个问题：在逮捕过程中，如果手机在嫌疑人身上或其附近，警方是否可以在无搜查令的情况下搜查手机内容。\n\n加利福尼亚州请求大法官们避免做出一项影响广泛的裁决，尤其是推翻以下旧有假定的裁决——即当局可以在逮捕嫌疑人时搜查其随身物品。该州辩称，法官很难评估日新月异的新技术所带来的影响。\n\n如果最高法院采纳加州的建议，那就是不负责任的谦逊。这些影响中有足够多的部分是可以辨识的，甚至是显而易见的，因此大法官们能够也应当为警方、律师和被告提供最新的指导方针。\n\n他们应当首先抛弃加州站不住脚的论点，即搜查智能手机的内容——一个巨大的数字信息仓库——类似于翻查嫌疑人的手提包。法院曾裁定，警方在无搜查令的情况下翻查被逮捕者的钱包或手提包并不违反第四修正案。但搜查一个人的智能手机更类似于进入其住宅。一部智能手机可能包含被逮捕者的阅读记录、财务记录、医疗记录以及近期通信的完整记录。与此同时，\"云计算\"的发展使这种搜查变得更加容易。\n\n美国人应当采取措施保护自己的数字隐私。但在这些设备上保存敏感信息日益成为正常生活的一项需求。公民仍然有权期望私人文件保持私密，并受到宪法中关于禁止不合理搜查条款的保护。\n\n通常情况下，阐明这一原则并不能减轻划定界限的挑战。在许多情况下，当局获取搜查令来搜查手机内容并非过于繁重。在面临严峻、紧急的情况时，他们仍然可以使第四修正案的保护失效，同时也可以采取合理措施确保手机数据在等待搜查令期间不被擦除或篡改。不过，法院可能希望给警方留出空间，让其可以援引某些情况以获得更大的自由度。\n\n但大法官们不应全盘接受加州的论点。具有颠覆性的新技术有时需要对宪法保护条款进行新的适用。法学教授奥林·科尔将21世纪数字信息的爆炸性增长和易获取性，与20世纪汽车使用成为生活中几乎不可或缺的必需品进行了类比：当时大法官们不得不为乘用车这一新的私人领域制定新规则；现在他们必须厘清第四修正案如何适用于数字信息。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The Supreme Court will now consider whether police can search the contents of a mobile phone without a warrant if the phone is on or around a person during an arrest.",
+    "why": "原文明确指出最高法院将考虑的问题是\"警方能否在逮捕时无搜查令搜查手机内容\"。C选项中\"check suspects' phone contents\"对应\"search the contents of a mobile phone\"，\"without being authorized\"对应\"without a warrant\"（无搜查令即未获授权），是对原文的准确同义改写。",
+    "traps": "A项\"阻止嫌疑人删除手机内容\"属于第六段讨论的附带措施，非最高法院审议的核心问题，属张冠李戴；B项\"搜索嫌疑人的手机\"偷换了对象，原文是搜查手机\"内容\"而非搜索手机本身；D项\"禁止嫌疑人使用手机\"在原文中完全没有提及，属无中生有。",
+    "tip": "注意区分search for phones与search phone contents的本质区别。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "The court would be recklessly modest if it followed California's advice. They should start by discarding California's lame argument.",
+    "why": "作者用\"recklessly modest\"（鲁莽的谦虚）形容采纳加州建议的后果，又用\"lame argument\"（站不住脚的论点）直接评价加州的论点，末段又说\"should not swallow California's argument whole\"，处处表明作者对加州论点持否定、不赞同的态度，A项disapproval（不赞成）完全吻合。",
+    "traps": "B项indifference（漠不关心）与作者明确表态的立场矛盾；C项tolerance（容忍）暗示接受或包容，与\"discarding\"\"lame\"等措辞格格不入；D项cautiousness（谨慎）未体现出作者鲜明的批评立场，属程度偏离。",
+    "tip": "态度题需关注评价性形容词和动词，如lame、discard等带有明确感情色彩的词。"
+   },
+   {
+    "number": 28,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But exploring one's smartphone is more like entering his or her home.",
+    "why": "原文第四段明确将搜查智能手机比作\"entering his or her home\"（进入某人的住宅）。D选项\"getting into one's residence\"是对\"entering his or her home\"的精确同义替换，residence对应home，getting into对应entering。",
+    "traps": "A项\"翻查钱包\"是加州的论点，作者明确否定了这种类比，用其来衬托手机搜查的严重性；B项\"处理历史记录\"和C项\"浏览通信记录\"是作者用来说明手机包含大量私人信息的举例论据，并非类比的喻体，属偷换逻辑角色。",
+    "tip": "区分论点（类比结论）与论据（支撑例子），选项可能用论据冒充论点。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Citizens still have a right to expect private documents to remain private and protected by the Constitution's prohibition on unreasonable searches.",
+    "why": "第五段指出在设备上保存敏感信息已成为现代生活的必然要求，公民有权期望隐私受宪法保护；第六段讨论划界的困难，指出虽有获取搜查令等措施，但法院可能还想给警方更多自由度。两段综合来看，作者担忧的核心是公民的数字隐私在实际操作中难以得到有效保护，D项准确概括了这一关切。",
+    "traps": "A项\"原则难以清楚表述\"曲解了原文'stating that principle doesn't ease the challenge'的含义，原文说的是阐明原则不能解决实际划界难题，而非原则本身难以表述；B项\"法院给警方更少空间\"与第六段末句相矛盾；C项\"手机被用来存储敏感信息\"只是第五段的一个事实陈述，并非作者的核心担忧。",
+    "tip": "推断作者concern时需综合多段信息，找出贯穿的核心关切而非单一细节。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "New, disruptive technology sometimes demands novel applications of the Constitution's protections.",
+    "why": "Orin Kerr的类比紧跟在\"新的颠覆性技术有时需要对宪法保护进行新的适用\"这一论点之后，将21世纪数字信息的爆发与20世纪汽车的普及类比，说明当年需要为汽车制定新规则，如今也必须为数字信息制定新规则。这直接支持了D项\"新技术要求对宪法进行重新解释\"的观点。",
+    "traps": "A项\"宪法应被灵活实施\"过于笼统，未抓住\"新技术推动宪法重新解释\"这一核心逻辑；B项\"宪法原则永远不应改变\"与原文强调的与时俱进完全相反；C项\"加州的论点违反宪法原则\"是对引文功能的错误理解，Kerr的类比目的是说明宪法需要新适用，而非论证加州违宪。",
+    "tip": "例证题要回到例子所服务的论点句，通常在例子的前一两句。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "warrant",
+    "cn": "n. 搜查令；授权令"
+   },
+   {
+    "w": "sweeping",
+    "cn": "adj. 影响广泛的；大范围的"
+   },
+   {
+    "w": "refrain",
+    "cn": "v. 克制，避免（做某事）"
+   },
+   {
+    "w": "discernable",
+    "cn": "adj. 可辨识的，可察觉的"
+   },
+   {
+    "w": "lame",
+    "cn": "adj. 站不住脚的，无说服力的"
+   },
+   {
+    "w": "storehouse",
+    "cn": "n. 仓库，宝库"
+   },
+   {
+    "w": "arrestee",
+    "cn": "n. 被逮捕者"
+   },
+   {
+    "w": "burdensome",
+    "cn": "adj. 繁重的，负担沉重的"
+   },
+   {
+    "w": "invalidate",
+    "cn": "v. 使无效，使作废"
+   },
+   {
+    "w": "disruptive",
+    "cn": "adj. 颠覆性的，破坏性的"
+   },
+   {
+    "w": "novel",
+    "cn": "adj. 新颖的，新的（此处指前所未有的）"
+   },
+   {
+    "w": "sort out",
+    "cn": "v. 理清，解决"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The court would be recklessly modest if it followed California's advice. Enough of the implications are discernable, even obvious, so that the justices can and should provide updated guidelines to police, lawyers and defendants.",
+    "cn": "如果最高法院采纳加州的建议，那就是不负责任的谦逊。这些影响中有足够多的部分是可以辨识的，甚至是显而易见的，因此大法官们能够也应当为警方、律师和被告提供最新的指导方针。",
+    "note": "第一句为虚拟语气表假设；第二句中enough of...为主语，so that引导结果状语从句，can and should并列强调态度。"
+   },
+   {
+    "en": "Orin Kerr, a law professor, compares the explosion and accessibility of digital information in the 21st century with the establishment of automobile use as a virtual necessity of life in the 20th: The justices had to specify novel rules for the new personal domain of the passenger car then; they must sort out how the Fourth Amendment applies to digital information now.",
+    "cn": "法学教授奥林·科尔将21世纪数字信息的爆炸性增长和易获取性，与20世纪汽车使用成为生活中几乎不可或缺的必需品进行了类比：当时大法官们不得不为乘用车这一新的私人领域制定新规则；现在他们必须厘清第四修正案如何适用于数字信息。",
+    "note": "主句为compare...with...结构；冒号后用分号连接两个并列分句，形成then与now的时间对比；how引导宾语从句。"
+   },
+   {
+    "en": "They could still invalidate Fourth Amendment protections when facing severe, urgent circumstances, and they could take reasonable measures to ensure that phone data are not erased or altered while waiting for a warrant.",
+    "cn": "在面临严峻、紧急的情况时，他们仍然可以使第四修正案的保护失效，同时也可以采取合理措施确保手机数据在等待搜查令期间不被擦除或篡改。",
+    "note": "and连接两个并列分句；第一分句含when引导的时间状语；第二分句中ensure后接that宾语从句，从句内含while引导的时间状语。"
+   }
+  ]
+ }
+}

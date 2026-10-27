@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "1603261fb074__reading__1",
+ "examId": "1603261fb074",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 6 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:14:06.424Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64109,
+ "usage": {
+  "prompt_tokens": 1836,
+  "completion_tokens": 3907,
+  "total_tokens": 5743,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1836,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3907,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1836,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国女设计师对时装界的革新贡献",
+  "gist": "文章回顾了20世纪中叶美国女性设计师如何摆脱巴黎时装的束缚，开创以实用性、便于打理和多功能性为核心的美国运动休闲装风格，确立了具有美国特色的现代着装规范，并倡导了性别平等理念，深刻影响了20世纪后期的时装走向。",
+  "structure": [
+   "第一段：美国女设计师确立独立于巴黎的现代着装规范",
+   "第二段：美国运动装的原创性及便于打理等实用特征",
+   "第三段：30-40年代从追求美感到注重实用性的转变",
+   "第四段：总结美国运动装设计师的历史地位与性别平等贡献"
+  ],
+  "difficulty": "中等",
+  "translation": "我们今天的生活受惠于麦卡德尔、卡辛、霍斯、威尔金斯、麦克斯韦尔以及其他将美国时装从巴黎设计的桎梏中解放出来的女性。独立体现在对衣橱的系搭、包裹、存放、协调和合理化上。这些设计师确立了现代着装规范：让运动套装和其他运动服充当休闲服装，让长裤进入衣橱，并在着装中推崇理性主义和多功能性，一改按场合或时段着装的传统。美国时装是合乎逻辑的，听从穿着者——女性——的意愿。无论是含蓄还是明确地，美国时装面向的是民主理念，而以巴黎为中心的传统时装则是强加于女性身上的，不管她们是否情愿。\n\n在更早的时期，美国时装也曾遵循巴黎的指令，甚至照搬和盗用特定的法国设计。设计师运动装并不是仿照欧洲的模式——不像后来的\"现代艺术\"那样；它是在美国真正发明和发展起来的。其设计师并非兼做副线的高端设计师。设计目标和商业定位都指向运动装，其鲜明特征是解决问题的巧思和贴合现实生活的实用性。便于打理是最重要的：夏季裙装和套装尤其以棉质为主，很容易在家清洗和熨烫。扣合方式简单、实用且易于操作，因为现代女性不再依赖贴身女仆为她穿衣。美国设计师推崇的是穿着这些服装的女性的自主能力和自由。\n\n许多人认为，这一时期的女性设计师能够将自己的着装价值观投射到一种新风格中。当然，20世纪30至40年代的这一论点之所以被提出，很大程度上是因为当时几乎没有以实用性为依据来为服装辩护的先例。如果巴黎被抛在一边，美的传统在某种程度上也会被忽视。设计师运动装必须以纯粹的美以外的标准来验证；在设计师运动装中模仿设计师的生活方式，是这一关系的一种粗略版本。消费者最终也被纳入考量，尤其是通过多萝西·肖弗这样的人物——她能以洛德与泰勒百货的销售数据来佐证。\n\n仅凭实用性就能为美国设计师的新理念正名吗？时装常被视为对美的追求，有些人珍视时装与纯艺术之间那种微妙的联系。美国运动装的设计师所证明的是：时装是一种真正的设计艺术，需要满足服务的严格需求。当然，这些务实而富有洞察力的设计师决定了20世纪后期时装的走向。她们是性别平等的先驱，她们设计的实用、百搭的服装，既为大众制造，又能实现自我表达。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "These designers established the modern dress code, letting playsuits and other active wear outfits suffice for casual clothing, allowing pants to enter the wardrobe, and prizing rationalism and versatility in dress, in contradiction to dressing for an occasion or allotment of the day.",
+    "why": "原文明确指出\"这些设计师确立了现代着装规范\"（established the modern dress code），并详细列举了其特征：休闲运动装、长裤入衣橱、注重理性与多功能，这些都区别于巴黎传统，体现了鲜明的美国特色。B选项\"制定了具有独特美国特色的着装规范\"是对原文的准确概括。",
+    "traps": "A项\"对传统巴黎设计做了一些改进\"错误，原文强调的是\"解放\"而非改进，美国设计是独立于巴黎的；C项\"提出全新的设计流程\"文中未提及设计流程/程序，属无中生有；D项\"将原创性置于首位\"虽有一定道理但文章强调的是实用性和民主性，并非以原创性为最高优先级。",
+    "tip": "注意区分\"摆脱、解放\"与\"改进\"之间的本质不同。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Designer sportswear was not modeled on that of Europe, as 'modern art' would later be; it was genuinely invented and developed in America.",
+    "why": "原文用\"was not modeled on that of Europe\"否定了模仿欧洲，紧接着用\"genuinely invented and developed in America\"强调它是真正在美国被发明和发展起来的。D选项\"它是一项全新的发明\"与原文\"genuinely invented\"完全吻合。",
+    "traps": "A项\"模仿了欧洲模式\"与原文\"was not modeled on that of Europe\"直接矛盾，属正反混淆；B项\"强调女性美感\"在第二段未提及，反而强调实用性；C项\"代表了真正的美国艺术\"虽似有道理，但原文说的是\"invented\"（发明），而非称其为\"艺术\"，且第四段才提到\"design art\"，此处考查的是第二段内容。",
+    "tip": "注意\"not modeled on\"这种否定结构的精确含义。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Ease of care was most important: summer dresses and outfits, in particular, were chiefly cotton, readily capable of being washed and pressed at home.",
+    "why": "原文用\"most important\"这一最高级明确指出\"便于打理\"是最重要的特征，随后以棉质面料、易于在家清洗熨烫作为例证加以说明。C选项\"Ease of care\"与原文完全一致，是直接的原词复现。",
+    "traps": "A项\"追求美感\"与本段主旨相悖，第二段强调的是实用而非美观；B项\"装饰性的扣合\"与原文\"Closings were simple, practical, and accessible\"矛盾，扣合方式是简单实用的；D项\"面料质量\"文中虽提到棉质面料，但这是为了说明易于打理，并非强调面料品质本身。",
+    "tip": "最高级词汇如most important往往是命题点，要高度关注。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "If Paris was cast aside, the tradition of beauty was also to some degree slighted. Designer sportswear would have to be verified by a standard other than that of pure beauty",
+    "why": "第三段讨论30-40年代的变化：巴黎被抛弃的同时，美的传统也在某种程度上被忽视，运动装需要用纯粹美感之外的标准来验证，并最终以销售数据（实用性的体现）为依据。这清楚地表明了从追求美到注重实用性的转变，对应A选项。",
+    "traps": "B项\"模仿传统巴黎设计\"与\"Paris was cast aside\"矛盾；C项\"在传统与新颖之间寻求平衡\"文中未体现平衡的意思，原文表明美的传统被削弱；D项\"更多女性参与时装设计\"虽然第三段提到女性设计师，但重点是设计理念的转变而非参与人数的增加。",
+    "tip": "把握段落的核心转折关系，注意cast aside和slighted等关键词。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "They were the pioneers of gender equity, in their useful, adaptable clothing, which was both made for the masses and capable of self-expression.",
+    "why": "原文最后一句明确称这些设计师为\"性别平等的先驱\"（the pioneers of gender equity），通过她们实用、百搭的服装来体现这一理念。C选项\"她们倡导男女平等\"与原文\"pioneers of gender equity\"直接对应。",
+    "traps": "A项\"迎合年轻一代的品味\"文中没有提到年轻人，属无中生有；B项\"从根本上改变了人们的美感概念\"过度推断，原文仅说证明了时装是设计艺术，并未说改变了美的概念；D项\"成为巴黎同行的竞争对手\"原文虽对比了美国与巴黎设计，但未提及竞争关系。",
+    "tip": "文章末段常含总结性判断，是出题高频区。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "confines",
+    "cn": "n. 范围，限制，束缚"
+   },
+   {
+    "w": "suffice",
+    "cn": "v. 足够，满足需要"
+   },
+   {
+    "w": "versatility",
+    "cn": "n. 多功能性，多用途"
+   },
+   {
+    "w": "prescriptive",
+    "cn": "adj. 规定性的，指令性的"
+   },
+   {
+    "w": "dictates",
+    "cn": "n. 命令，指令；支配"
+   },
+   {
+    "w": "pirated",
+    "cn": "v. 盗用，剽窃"
+   },
+   {
+    "w": "ingenuity",
+    "cn": "n. 独创性，巧妙，精巧"
+   },
+   {
+    "w": "resourcefulness",
+    "cn": "n. 足智多谋，善于应变"
+   },
+   {
+    "w": "slighted",
+    "cn": "v. 轻视，忽视"
+   },
+   {
+    "w": "emulation",
+    "cn": "n. 仿效，效仿"
+   },
+   {
+    "w": "allotment",
+    "cn": "n. 分配，指定"
+   },
+   {
+    "w": "trivial",
+    "cn": "adj. 微不足道的，琐碎的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "These designers established the modern dress code, letting playsuits and other active wear outfits suffice for casual clothing, allowing pants to enter the wardrobe, and prizing rationalism and versatility in dress, in contradiction to dressing for an occasion or allotment of the day.",
+    "cn": "这些设计师确立了现代着装规范：让运动套装和其他运动服充当休闲服装，让长裤进入衣橱，并在着装中推崇理性主义和多功能性，一改按场合或时段着装的传统。",
+    "note": "主干为designers established the dress code，后接三个并列的现在分词短语letting/allowing/prizing作伴随状语，末尾in contradiction to引出对比。"
+   },
+   {
+    "en": "Implicitly or explicitly, American fashion addressed a democracy, whereas traditional Paris-based fashion was prescriptive and imposed on women, willing or not.",
+    "cn": "无论是含蓄还是明确地，美国时装面向的是民主理念，而以巴黎为中心的传统时装则是强加于女性身上的，不管她们是否情愿。",
+    "note": "whereas引导转折对比从句，将美国时装的民主性与巴黎时装的强制性形成鲜明对照；willing or not为省略结构。"
+   },
+   {
+    "en": "Designer sportswear would have to be verified by a standard other than that of pure beauty; the emulation of a designer's life in designer sportswear was a crude version of this relationship.",
+    "cn": "设计师运动装必须以纯粹的美以外的标准来验证；在设计师运动装中模仿设计师的生活方式，是这一关系的一种粗略版本。",
+    "note": "分号连接两个并列分句；other than表示\"除……以外\"；that指代前文的standard；this relationship指代运动装与验证标准之间的关系。"
+   }
+  ]
+ }
+}

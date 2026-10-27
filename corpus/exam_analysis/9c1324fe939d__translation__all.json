@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "9c1324fe939d__translation__all",
+ "examId": "9c1324fe939d",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2017 年考研英语真题",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:35:50.010Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66238,
+ "usage": {
+  "prompt_tokens": 1372,
+  "completion_tokens": 4876,
+  "total_tokens": 6248,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1372,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4876,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1372,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英语全球主导地位面临挑战",
+  "translation": "英语作为国际交流的世界主要语言，其使用的增长显然已持续了几十年。但即使英语使用者的数量进一步扩大，仍有迹象表明，英语在全球的主导地位可能在可预见的未来逐渐消退。\n\n复杂的国际、经济、技术和文化变革可能开始削弱英语作为世界市场语言的领先地位，而从英语广泛使用中获益的英国利益方也将因此面临新的压力。戴维·格拉多尔的研究报告突出强调了这些现实的可能性。因此，他的分析应当消除那些人的自满情绪——他们可能认为英语的全球地位非常稳固，以至于英国的年轻一代不需要额外的语言能力。\n\n戴维·格拉多尔得出结论认为，只会英语的英国毕业生面临着暗淡的经济前景，因为来自其他国家的合格的多语种年轻人在全球公司和组织中正在证明他们比英国同龄人更具竞争优势。与此同时，许多国家正在将英语纳入小学课程，但英国中小学生和大学生似乎并没有得到更大的鼓励去熟练掌握其他语言。\n\n如果任其发展，这些趋势将削弱英语在国际教育市场中的相对优势地位，因为对西班牙语、阿拉伯语和普通话等语言教育资源的需求在增长，同时日语、法语和德语等其他语言的国际业务流程外包也在扩展。\n\n戴维·格拉多尔所指出的这些变化，对英国向其他国家民众提供英语教学的机构以及更广泛的教育商业领域都构成了明显的重大挑战。英语教学行业以无形出口的形式直接为英国赚取近13亿英镑，而其他与教育相关的出口每年还能额外赚取多达100亿英镑。随着国际教育市场的扩大，在主要英语国家学习的国际学生人数近期的下滑很可能会持续，尤其是在没有有效的战略性政策来防止这种下滑的情况下。\n\n本研究对需求可能发生的变化所做的预测意义重大：它为所有致力于推广英语学习和使用的组织提供了一个基础，一个制定规划以应对未来可能截然不同的运营环境的基础。这是一种必要且务实的做法。在这方面，一如在其他许多方面一样，那些希望影响未来的人必须为之做好准备。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "But even as the number of English speakers expands further there are signs that the global predominance of the language may fade within the foreseeable future.",
+    "cn": "但即使英语使用者的数量进一步扩大，仍有迹象表明，英语在全球的主导地位可能在可预见的未来逐渐消退。",
+    "structure": "主句为 there are signs（有迹象表明），that 引导同位语从句解释 signs 的内容；even as 引导让步状语从句，表示\"即使……\"；同位语从句中 the global predominance of the language 为主语，may fade 为谓语，within the foreseeable future 为时间状语。",
+    "points": [
+     "even as 译为\"即使/尽管\"，体现让步关系",
+     "predominance 译为\"主导地位/优势地位\"",
+     "that 同位语从句准确译出，与 signs 构成解说关系"
+    ],
+    "pitfall": "even as 容易误译为\"正当……的时候\"（时间义），此处应强调让步义，即\"即使\"；predominance 不能简单译为\"优势\"，需体现\"主导地位\"之意。"
+   },
+   {
+    "number": 47,
+    "en": "His analysis should therefore end any self-contentedness among those who may believe that the global position of English is so stable that the young generations of the United Kingdom do not need additional language capabilities.",
+    "cn": "因此，他的分析应当消除那些人的自满情绪——他们可能认为英语的全球地位非常稳固，以至于英国的年轻一代不需要额外的语言能力。",
+    "structure": "主干为 His analysis should end any self-contentedness（他的分析应当消除自满情绪）；among those 为后置定语修饰 self-contentedness 的范围；who 引导定语从句修饰 those；定语从句内嵌套 that 宾语从句，其中又包含 so stable that... 结果状语从句。",
+    "points": [
+     "self-contentedness 译为\"自满/沾沾自喜\"",
+     "so...that... 结构完整译出因果/程度关系",
+     "among those who... 定语从句的准确归属与翻译"
+    ],
+    "pitfall": "句子嵌套层次多（定语从句→宾语从句→so...that...结果从句），容易漏译或层次混乱；self-contentedness 为生僻词，需根据词根 content（满足）推断词义。"
+   },
+   {
+    "number": 48,
+    "en": "many countries are introducing English into the primary-school curriculum but British schoolchildren and students do not appear to be gaining greater encouragement to achieve fluency in other languages.",
+    "cn": "许多国家正在将英语纳入小学课程，但英国中小学生和大学生似乎并没有得到更大的鼓励去熟练掌握其他语言。",
+    "structure": "由 but 连接的并列句。前半句主语为 many countries，谓语为 are introducing...into...；后半句主语为 British schoolchildren and students，谓语为 do not appear to be gaining，不定式 to achieve fluency 作目的状语。",
+    "points": [
+     "introducing...into... 译为\"将……纳入/引入\"",
+     "do not appear to be gaining 译为\"似乎没有得到\"，体现委婉语气",
+     "achieve fluency in other languages 译为\"熟练掌握其他语言\""
+    ],
+    "pitfall": "do not appear to be gaining 中 appear 表推测语气，不能译为\"没有获得\"（过于肯定），应译为\"似乎没有得到\"；schoolchildren 和 students 指不同教育阶段，前者指中小学生，后者指大学生。"
+   },
+   {
+    "number": 49,
+    "en": "The changes identified by David Graddol all present clear and major challenges to the UK's providers of English language teaching to people of other countries and to broader education business sectors.",
+    "cn": "戴维·格拉多尔所指出的这些变化，对英国向其他国家民众提供英语教学的机构以及更广泛的教育商业领域都构成了明显的重大挑战。",
+    "structure": "主语为 The changes，identified by David Graddol 为过去分词短语作后置定语；谓语为 all present；宾语为 clear and major challenges；后接两个并列的 to 短语：to the UK's providers of English language teaching to people of other countries 以及 to broader education business sectors。",
+    "points": [
+     "identified by 译为\"所指出的/所发现的\"，过去分词作后置定语",
+     "present challenges to 译为\"对……构成挑战\"",
+     "两个并列 to 短语的准确切分与翻译"
+    ],
+    "pitfall": "句中有三个 to，需正确区分层次：第一个 to 与 challenges 搭配（对……的挑战），第二个 to 与 teaching 搭配（向……教授），第三个 to 与第一个 to 并列；若切分错误，整句意思会混乱。"
+   },
+   {
+    "number": 50,
+    "en": "It gives a basis to all organisations which seek to promote the learning and use of English, a basis for planning to meet the possibilities of what could be a very different operating environment.",
+    "cn": "它为所有致力于推广英语学习和使用的组织提供了一个基础，一个制定规划以应对未来可能截然不同的运营环境的基础。",
+    "structure": "主干为 It gives a basis to all organisations（它为所有组织提供了基础）；which 引导定语从句修饰 organisations；逗号后 a basis for planning... 为前面 a basis 的同位语，进一步补充说明；what could be... 为 of 的宾语从句。",
+    "points": [
+     "a basis for planning... 同位语结构的识别与翻译",
+     "what could be a very different operating environment 中 what 引导宾语从句的准确译出",
+     "seek to promote 译为\"致力于推广\""
+    ],
+    "pitfall": "逗号后第二个 a basis 是同位语重述，不能误认为新的并列宾语；what could be 表示一种可能性推测，应译为\"可能会是……的\"，不能译成确定语气。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "predominance",
+    "cn": "主导地位，优势（n.）"
+   },
+   {
+    "w": "foreseeable",
+    "cn": "可预见的（adj.）"
+   },
+   {
+    "w": "self-contentedness",
+    "cn": "自满，沾沾自喜（n.）"
+   },
+   {
+    "w": "monoglot",
+    "cn": "只会一种语言的（adj.）"
+   },
+   {
+    "w": "bleak",
+    "cn": "暗淡的，凄凉的（adj.）"
+   },
+   {
+    "w": "multilingual",
+    "cn": "多语言的，通晓多种语言的（adj.）"
+   },
+   {
+    "w": "counterpart",
+    "cn": "对应的人，同行（n.）"
+   },
+   {
+    "w": "curriculum",
+    "cn": "课程，课程体系（n.）"
+   },
+   {
+    "w": "fluency",
+    "cn": "流利，熟练（n.）"
+   },
+   {
+    "w": "outsourcing",
+    "cn": "外包（n.）"
+   },
+   {
+    "w": "slippage",
+    "cn": "下滑，滑落（n.）"
+   },
+   {
+    "w": "anticipation",
+    "cn": "预测，预期（n.）"
+   },
+   {
+    "w": "diminish",
+    "cn": "减少，削弱（v.）"
+   },
+   {
+    "w": "invisible exports",
+    "cn": "无形出口（n.）"
+   }
+  ],
+  "skills": [
+   "多层嵌套从句需先理清主干再逐层翻译，避免漏译或错译",
+   "过去分词短语作后置定语应前置处理，如 identified by 译为\"所指出的\"",
+   "同位语结构（如逗号后重复名词）需识别并用破折号或重述方式翻译",
+   "so...that... 等关联结构须完整译出程度与结果的逻辑关系",
+   "介词 to 在不同搭配中含义不同，需根据语境区分\"对……\"\"向……\"\"为……\""
+  ]
+ }
+}

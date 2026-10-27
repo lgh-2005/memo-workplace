@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "10ae747abbd8__reading__4",
+ "examId": "10ae747abbd8",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2009 年考研英语真题（旧）",
+ "year": 2009,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:22:37.299Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63174,
+ "usage": {
+  "prompt_tokens": 1725,
+  "completion_tokens": 3992,
+  "total_tokens": 5717,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1725,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3992,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1725,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "十七世纪新英格兰移民的知识背景差异",
+  "gist": "文章围绕十七世纪新英格兰的知识文化生活展开，指出早期牧师与政治领袖受过良好教育，营造了浓厚的知识氛围；但多数普通移民教育程度较低，思维带有迷信色彩；还有部分移民对宗教毫无兴趣，来新大陆只为谋生。全文旨在说明早期移民来自不同的知识背景。",
+  "structure": [
+   "第1段：引出新英格兰知识分子研究及清教传统的重要性",
+   "第2段：提出将清教徒视为欧洲文化携带者的研究视角",
+   "第3段：介绍早期马萨诸塞湾受过良好教育的领袖群体",
+   "第4段：转折论述多数移民教育程度低、带有迷信倾向",
+   "第5段：补充说明部分移民宗教意识淡薄、只为谋生"
+  ],
+  "difficulty": "中等",
+  "translation": "在新大陆历史上被研究得最为透彻的知识分子，是十七世纪新英格兰的牧师和政治领袖。根据美国哲学的标准史书记载，在殖民地美洲的其他任何地方，都没有\"如此重视知识追求\"。许多著作和文章指出，新英格兰的领袖们确立了美国知识生活中一个不断发展的、占主导地位的清教传统的基本主题和核心关切。\n\n采用这种方法来研究新英格兰人，通常意味着从清教徒的神学创新以及他们关于教会的独特思想入手——这些是我们不可忽视的重要课题。但是，为了与我们对南方知识生活的考察保持一致，我们可以将最初的清教徒视为欧洲文化的携带者，正在适应新大陆的环境。新英格兰各殖民地曾是追求广泛认可的文明与精湛技艺理想的重要舞台。\n\n马萨诸塞湾的早期定居者中，有一些在英国受过良好教育且具有影响力的人物。除了在1629年之后的十年间来到马萨诸塞教堂的大约九十位博学的牧师外，还有像约翰·温斯罗普这样的政治领袖——他在前往波士顿之前，就是一位受过良好教育的绅士、律师和王室官员。这些人著述广泛并大量出版，读者遍及新旧两个大陆，为新英格兰营造了一种严肃认真的知识氛围。\n\n然而，我们不应忘记，大多数新英格兰人受教育程度较低。虽然几乎没有工匠或农民——更不用说家属和佣人——留下可供分析的文学作品，但显而易见的是，他们的观点远没有那么充分的理性化。他们的思维通常带有一种传统的迷信色彩。一个名叫约翰·戴恩的裁缝在十七世纪三十年代末移居新大陆，他留下了一份关于离开英国原因的记述，其中充满了各种征兆。性的困惑、经济上的挫折和宗教上的希望——所有这些汇聚在一个决定性的时刻：他翻开《圣经》，对父亲说他看到的第一行字将决定他的命运，然后读到了那句神奇的话：\"从他们中间走出来，不要沾染不洁之物，我就做你们的上帝，你们就做我的子民。\"人们不禁要想，戴恩对他在清教教堂里听到的那些精心准备的解经布道作何感想。\n\n与此同时，许多定居者的宗教信仰比戴恩还要淡薄，正如一位牧师在与沿海地区的居民打交道时了解到的那样——那些人嘲笑说他们来新大陆并不是为了宗教。\"我们的主要目的是捕鱼。\"",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "According to the standard history of American philosophy, nowhere else in colonial America was \"so much importance attached to intellectual pursuits.\"",
+    "why": "原文第一段明确引用美国哲学标准史书的说法：在殖民地美洲没有其他任何地方像新英格兰那样如此重视知识追求（intellectual pursuits），即知识兴趣受到鼓励。B选项\"intellectual interests were encouraged\"是对原文的同义转述，将\"so much importance attached to intellectual pursuits\"概括为知识兴趣受到鼓励，语义完全吻合。",
+    "traps": "A项\"清教传统主导了政治生活\"将\"intellectual life\"偷换为\"political life\"，属于偷换概念；C项\"政治从知识活动中获益匪浅\"在原文中没有依据，属于无中生有；D项\"知识追求享有自由宽松的环境\"中\"liberal environment\"过度推断，原文只说重视知识追求，未提及环境是否自由宽松。",
+    "tip": "注意区分\"重视知识追求\"与\"自由环境\"的概念差异。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "we may consider the original Puritans as carriers of European culture, adjusting to New World circumstances.",
+    "why": "第二段明确指出，我们可以将最初的清教徒视为欧洲文化的携带者（carriers of European culture），正在适应新大陆环境。这说明新英格兰人将旧大陆的文化带到了新大陆。B选项\"brought with them the culture of the Old World\"是对此的准确概括，European culture即Old World的文化。",
+    "traps": "A项\"经历了相对和平的早期历史\"原文未提及，属于无中生有；C项\"很少关注南方知识生活\"曲解了原文，原文说\"in keeping with our examination of southern intellectual life\"是作者的研究方法，并非新英格兰人不关注南方；D项\"痴迷于宗教创新\"过度引申，原文提到神学创新是研究切入点，并非新英格兰人\"痴迷\"于此。",
+    "tip": "把握段落核心论点，区分作者观点与研究方法的表述。"
+   },
+   {
+    "number": 38,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "These men wrote and published extensively, reaching both New World and Old World audiences, and giving New England an atmosphere of intellectual earnestness.",
+    "why": "第三段末句指出这些人（早期牧师和政治领袖）著述广泛，读者遍及新旧两个大陆，为新英格兰营造了一种严肃认真的知识氛围（atmosphere of intellectual earnestness）。D选项\"created a new intellectual atmosphere in New England\"准确对应了原文\"giving New England an atmosphere of intellectual earnestness\"。",
+    "traps": "A项\"因写作闻名于新大陆\"缩小了范围，原文说读者遍及新旧两个大陆（both New World and Old World），且强调的是营造氛围而非因写作出名；B项\"在宗教事务中日益重要\"原文未提及，属于无中生有；C项\"来新大陆前放弃了高位\"曲解原文，温斯罗普来之前确实是官员和律师，但原文未说他\"放弃\"了高位，只说他此前担任过这些职务。",
+    "tip": "注意选项中范围词和动词的准确性，避免缩小或歪曲原文信息。"
+   },
+   {
+    "number": 39,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "Their thinking often had a traditional superstitious quality. A tailor named John Dane, who emigrated in the late 1630s, left an account of his reasons for leaving England that is filled with signs.",
+    "why": "第四段先提出论点：受教育程度低的新英格兰人的思维通常带有传统迷信色彩（traditional superstitious quality），然后以裁缝约翰·戴恩为例进行说明——他翻开圣经用第一行字决定命运，充满了各种征兆（signs）。A选项\"influenced by superstitions\"（受迷信影响）直接对应论点句，是例证所支撑的观点。",
+    "traps": "B项\"被宗教信仰所困扰\"不准确，戴恩的故事重点在于展示迷信思维方式而非被信仰困扰；C项\"被教堂布道所困惑\"虽然原文末尾提到\"One wonders what Dane thought of the careful sermons\"，但这是作者的反思性评论，并非戴恩故事的核心论点；D项\"对家庭收入感到挫折\"只是其离开英国的原因之一（economic frustrations），不是故事要说明的主旨。",
+    "tip": "例证题要回到论点句找答案，不要被例子中的细节干扰。"
+   },
+   {
+    "number": 40,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "Besides the ninety or so learned ministers who came to Massachusetts churches in the decade after 1629, there were political leaders like John Winthrop",
+    "why": "全文通过三个层次展现了早期移民的不同知识背景：第三段写受过良好教育的牧师和政治领袖，第四段写受教育程度较低、带有迷信色彩的普通移民（如裁缝戴恩），第五段写对宗教毫无兴趣、只为谋生的沿海居民。三者形成鲜明对比，说明早期移民来自不同的知识背景。C选项\"came from different intellectual backgrounds\"是对全文信息的准确综合概括。",
+    "traps": "A项\"多数从事政治活动\"原文无据，且第五段提到有人只为捕鱼谋生；B项\"被虚幻的前景所驱动\"过度推断，原文提到的动机包括宗教、经济、捕鱼等多种，并未说是\"虚幻的\"；D项\"很少留下正式记录\"与原文矛盾，第三段明确说这些人\"wrote and published extensively\"。",
+    "tip": "主旨题需综合全文各段信息，注意文章是否存在层次对比的结构。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "preoccupation",
+    "cn": "n. 关注的事；核心关切"
+   },
+   {
+    "w": "unfolding",
+    "cn": "adj. 不断发展的；逐渐展开的"
+   },
+   {
+    "w": "theological",
+    "cn": "adj. 神学的"
+   },
+   {
+    "w": "civility",
+    "cn": "n. 文明；礼貌"
+   },
+   {
+    "w": "virtuosity",
+    "cn": "n. 精湛技艺；高超技能"
+   },
+   {
+    "w": "earnestness",
+    "cn": "n. 认真；严肃"
+   },
+   {
+    "w": "let alone",
+    "cn": "更不用说（连词短语）"
+   },
+   {
+    "w": "intellectualized",
+    "cn": "adj. 理性化的；理智化的"
+   },
+   {
+    "w": "superstitious",
+    "cn": "adj. 迷信的"
+   },
+   {
+    "w": "emigrate",
+    "cn": "v. 移居国外"
+   },
+   {
+    "w": "clergyman",
+    "cn": "n. 牧师；神职人员"
+   },
+   {
+    "w": "mock",
+    "cn": "v. 嘲笑；嘲弄"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "While few craftsmen or farmers, let alone dependents and servants, left literary compositions to be analyzed, it is obvious that their views were less fully intellectualized.",
+    "cn": "虽然几乎没有工匠或农民——更不用说家属和佣人——留下可供分析的文学作品，但显而易见的是，他们的观点远没有那么充分的理性化。",
+    "note": "While引导让步状语从句，let alone为插入成分表递进补充，主句为it is obvious that...形式主语结构，that从句为真正主语。"
+   },
+   {
+    "en": "Sexual confusion, economic frustrations, and religious hope – all came together in a decisive moment when he opened the Bible, told his father that the first line he saw would settle his fate, and read the magical words: \"Come out from among them, touch no unclean thing, and I will be your God and you shall be my people.\"",
+    "cn": "性的困惑、经济上的挫折和宗教上的希望——所有这些汇聚在一个决定性的时刻：他翻开《圣经》，对父亲说他看到的第一行字将决定他的命运，然后读到了那句神奇的话：\"从他们中间走出来，不要沾染不洁之物，我就做你们的上帝，你们就做我的子民。\"",
+    "note": "三个并列名词短语作主语，破折号后all总括；when引导时间状语从句，内含opened、told、read三个并列谓语；told后接that宾语从句；冒号后为圣经引文。"
+   },
+   {
+    "en": "Meanwhile, many settlers had slighter religious commitments than Dane's, as one clergyman learned in confronting folk along the coast who mocked that they had not come to the New World for religion.",
+    "cn": "与此同时，许多定居者的宗教信仰比戴恩还要淡薄，正如一位牧师在与沿海地区的居民打交道时了解到的那样——那些人嘲笑说他们来新大陆并不是为了宗教。",
+    "note": "主句用比较级slighter...than Dane's进行对比；as引导方式状语从句；who引导定语从句修饰folk；that引导mocked的宾语从句。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "484879d3c447__reading__1",
+ "examId": "484879d3c447",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 9 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:41:54.969Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58593,
+ "usage": {
+  "prompt_tokens": 1840,
+  "completion_tokens": 3644,
+  "total_tokens": 5484,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1840,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3644,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1840,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "全球对科技巨头反垄断监管趋势",
+  "gist": "文章指出美国、中国、欧盟等全球主要经济体在科技公司过于庞大和强势这一问题上达成共识，纷纷采取反垄断措施。中国出台反垄断新规，欧盟积极推动公平竞争，美国公众对社交媒体日益持怀疑态度，各国正通过立法、诉讼等手段遏制科技巨头的垄断力量。",
+  "structure": [
+   "第1段：总论各国共识——科技公司过大过强，须加以应对",
+   "第2-3段：中国反垄断新规与欧洲议员观点作为例证",
+   "第4段：新反垄断时代的特征——定价权标准已过时",
+   "第5-6段：欧盟与中国各自应对科技巨头的具体举措",
+   "第7段：美国反垄断新思路及公众对社交媒体的负面看法"
+  ],
+  "difficulty": "中等",
+  "translation": "美国和中国近来在很多问题上意见不合。德国和法国虽共享边界和货币，却经常产生分歧。英国和印度喜欢各行其是。但有一个议题让所有这些国家达成了共识：科技公司太大、太强、太赚钱了。而且这种力量只会继续加剧，使各国政府别无选择，只能正面对抗——将这些公司告上法庭、通过新的竞争法律，甚至可能拆分科技巨头。\n\n中国是最新实施反垄断打击的国家，上个月公布了反垄断规则草案。该规则草案出台前，亿万富翁马云旗下的蚂蚁集团370亿美元的上市计划被突然叫停，这明确表明没有任何公司能够逃避政府监管。中国的举措与美国和欧洲加速遏制亚马逊、苹果、脸书和谷歌的努力不谋而合。\n\n\"大公司越来越大，却并没有变得更好，\"安德烈亚斯·施瓦布说。他是欧洲议会的德国籍议员，曾推动2014年一项拆分谷歌的决议。\"经济实力的增长、对全球各地方市场影响力的增长，以及竞争对手和消费者日益加剧的担忧，共同促成了当前的局面。\"\n\n在这个反垄断新时代，过去关注定价权的做法已不再适用，因为几家最大的科技公司是通过向消费者收取极低费用来建立起万亿美元级别的垄断地位的。科技巨头在银行、金融、广告、零售等市场中占据越来越强势的地位，迫使小企业不得不依赖它们的平台来触达客户。\n\n多年来，只有欧洲在对抗数字巨头的力量。各国政府对欧洲公司无法匹敌硅谷的创新能力、也无法阻止谷歌和脸书大量收集个人数据及由此获取广告收入感到担忧。在欧盟竞争事务负责人玛格丽特·韦斯塔格的领导下，各国一直在努力维护市场秩序，促进公平竞争。\n\n在中国，这场打压行动至少部分是出于对本土科技产业变得过于强大的担忧。中国长期以来一直扶持阿里巴巴和腾讯，但它们对中国公民数据的大规模积累日益引起北京的关注。\n\n在美国，新一代反垄断专家认为，应将隐私、数据控制权、劳动者权益以及对小企业的整体影响纳入考量。而且公众总体上对社交媒体公司的怀疑态度日益加深。根据皮尤研究中心2020年的一项研究，超过60%的人认为该行业对国家有负面影响，近一半的人希望加强对社交媒体的监管。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Technology companies are too big, too powerful, and too profitable. And that power is only likely to intensify, leaving governments with no choice but to confront it head-on by taking the companies to court, passing new competition laws, and perhaps even breaking up the tech giants.",
+    "why": "原文第一段明确指出各国共识是科技公司\"太大、太强、太赚钱\"，且这种力量只会加剧，政府不得不通过诉讼、立法乃至拆分来应对。D选项\"如何阻止科技公司获得垄断地位\"是对这一问题的准确概括——各国要应对的核心问题正是科技公司日益膨胀的垄断性力量。",
+    "traps": "A\"确保科技巨头可持续增长\"与原文方向相反，各国是要遏制而非扶持其增长；B\"保持科技公司竞争力\"偷换概念，原文关注的是垄断问题而非竞争力维护；C\"拆分科技巨头\"只是原文提到的应对手段之一（perhaps even breaking up），并非要解决的核心问题本身，属于以偏概全。",
+    "tip": "区分\"问题本身\"与\"解决手段\"，不要将手段误认为问题。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "The draft rules followed the surprise suspension of a $37 billion stock offering by billionaire Jack Ma's Ant Group Co., making clear that no company can evade the government's regulation.",
+    "why": "原文用蚂蚁集团上市被叫停的事件说明\"没有任何公司能逃避政府监管\"（no company can evade the government's regulation）。C选项\"所有公司都必须受到政府监管\"是对原文这一结论的忠实转述，体现了该事件传达的信号。",
+    "traps": "A\"所有逃避监管的企图都注定失败\"看似接近，但原文强调的是\"所有公司都须受监管\"这一规则，而非\"逃避注定失败\"这一结果，且A项有过度推断之嫌；B\"所有垄断销售的企图都必须被打击\"中\"monopolize sales\"在原文无对应；D\"所有公司不论国内外一律平等\"纯属无中生有。",
+    "tip": "推断题要紧扣原文明示的结论，不要过度引申。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Tech giants are increasingly assuming powerful positions in banking, finance, advertising, retail, and other markets that force smaller businesses to rely on their platforms to reach customers.",
+    "why": "原文第四段明确指出科技巨头在多个市场中占据强势地位，\"迫使小企业不得不依赖它们的平台来触达客户\"。A选项\"它们再也无法独立于科技巨头做生意\"准确概括了这种被迫依赖的关系。",
+    "traps": "B\"它们经常被拒绝使用科技巨头的平台\"与原文相反，原文说的是被迫依赖平台，而非被拒绝；C\"它们不得不改变营销策略以留住客户\"原文未提及改变策略；D\"它们不再有能力为自己的产品定价\"张冠李戴，原文讨论的定价权问题是关于科技巨头的，与小企业无关。",
+    "tip": "注意选项中的方向性词汇，\"rely on\"对应\"independent of\"的反义关系。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Led by Margrethe Vestager, the European Union's competition chief, countries have sought to police the market and encourage fair play.",
+    "why": "原文第五段指出，在欧盟竞争事务负责人韦斯塔格的领导下，各国\"努力维护市场秩序、促进公平竞争\"（sought to police the market and encourage fair play）。B选项\"它们考虑采取监管行动以促进公平竞争\"与此高度吻合，是原文的同义改写。",
+    "traps": "A\"对数字巨头的广告实施严格监管\"过于具体，原文虽提到广告收入问题，但欧盟的行动是整体性的市场监管，而非仅针对广告；C\"限制数字巨头产品的销售\"原文完全没有提及；D\"保护消费者隐私\"是美国部分的内容，不是欧盟采取的行动。",
+    "tip": "注意不同段落对应不同国家/地区的措施，避免张冠李戴。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "And the public in general has grown increasingly skeptical of social media companies. More than 60% say the sector has a negative effect on the country.",
+    "why": "原文最后一段明确指出美国公众对社交媒体公司\"日益持怀疑态度\"（grown increasingly skeptical），超过60%的人认为该行业对国家有负面影响。C选项\"它们变得越来越不可信\"（becoming untrustworthy）与\"skeptical\"（怀疑的）语义一致，准确概括了美国公众的态度。",
+    "traps": "A\"它们在侵犯人们的隐私\"虽然文中提到隐私问题，但这是反垄断专家的关注点，并非公众普遍看法的直接表述；B\"它们越来越有影响力\"并非公众的态度评价；D\"它们正在失控\"原文未体现这一含义，属于过度推断。",
+    "tip": "态度题要精准匹配原文情感色彩词，skeptical=不信任。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "at odds",
+    "cn": "意见不合，有分歧（短语）"
+   },
+   {
+    "w": "see eye to eye",
+    "cn": "看法一致，意见相同（短语）"
+   },
+   {
+    "w": "head-on",
+    "cn": "正面地，直接地（adv.）"
+   },
+   {
+    "w": "crackdown",
+    "cn": "打压，严厉打击（n.）"
+   },
+   {
+    "w": "unveiling",
+    "cn": "公布，揭示（v.）"
+   },
+   {
+    "w": "evade",
+    "cn": "逃避，规避（v.）"
+   },
+   {
+    "w": "rein in",
+    "cn": "约束，控制（短语）"
+   },
+   {
+    "w": "monopoly",
+    "cn": "垄断，垄断地位（n.）"
+   },
+   {
+    "w": "vacuuming up",
+    "cn": "大量吸收，大肆搜集（短语）"
+   },
+   {
+    "w": "homegrown",
+    "cn": "本土的，国产的（adj.）"
+   },
+   {
+    "w": "skeptical",
+    "cn": "怀疑的，持怀疑态度的（adj.）"
+   },
+   {
+    "w": "accumulation",
+    "cn": "积累，积聚（n.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "And that power is only likely to intensify, leaving governments with no choice but to confront it head-on by taking the companies to court, passing new competition laws, and perhaps even breaking up the tech giants.",
+    "cn": "而且这种力量只会继续加剧，使各国政府别无选择，只能通过将这些公司告上法庭、通过新的竞争法律、甚至可能拆分科技巨头来正面对抗。",
+    "note": "主句为that power is likely to intensify；leaving引导结果状语从句，其中by后接三个并列动名词短语，说明对抗的具体方式。"
+   },
+   {
+    "en": "Tech giants are increasingly assuming powerful positions in banking, finance, advertising, retail, and other markets that force smaller businesses to rely on their platforms to reach customers.",
+    "cn": "科技巨头在银行、金融、广告、零售等市场中占据越来越强势的地位，迫使小企业不得不依赖它们的平台来触达客户。",
+    "note": "主句为Tech giants are assuming positions；that引导定语从句修饰markets，force后接不定式结构说明对小企业的影响。"
+   },
+   {
+    "en": "Governments were alarmed that European companies were failing to match Silicon Valley's innovations or to stop Google and Facebook from vacuuming up personal data and, with that, advertising revenue.",
+    "cn": "各国政府对欧洲公司无法匹敌硅谷的创新能力、也无法阻止谷歌和脸书大量搜集个人数据及由此获取广告收入感到担忧。",
+    "note": "主句为Governments were alarmed；that引导宾语从句，其中failing to后接match和stop两个并列不定式；with that为插入语，指代搜集数据这一行为。"
+   }
+  ]
+ }
+}

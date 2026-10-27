@@ -1,0 +1,229 @@
+{
+ "schemaVersion": 1,
+ "id": "23639759d84c__writing__all",
+ "examId": "23639759d84c",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2024 年考研英语真题",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:55:52.212Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 84120,
+ "usage": {
+  "prompt_tokens": 867,
+  "completion_tokens": 5362,
+  "total_tokens": 6229,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 867,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5362,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 867,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文：回复国际学生 Paul 的邮件，就其关于\"如何准备一篇有关中国古代科学家的口头报告\"的求助提出具体建议。格式为书信，约100词。",
+    "outline": [
+     "第一段：问候并表明写信目的，表示乐意提供建议",
+     "第二段：给出具体建议（推荐科学家人选、查找资料途径、报告准备技巧等），建议分条阐述",
+     "第三段：表达祝愿，提出如需进一步帮助可随时联系"
+    ],
+    "sample": "Dear Paul,\n\nI am delighted to receive your email and would be happy to offer some advice on your oral report about an ancient Chinese scientist.\n\nFirst, I recommend selecting a scientist with outstanding and well-documented contributions, such as Zhang Heng, who invented the world's first seismoscope, or Zu Chongzhi, celebrated for his remarkably precise calculation of pi. Second, you may search for credible materials in our university library or on academic databases online. Third, to make your presentation engaging, consider incorporating vivid anecdotes and visual aids such as images or short videos.\n\nI hope these suggestions prove useful. Please feel free to contact me if you need further help.\n\nYours,\nLi Ming",
+    "phrases": [
+     {
+      "en": "I am delighted to receive your email",
+      "cn": "很高兴收到你的来信；书信开头常用的礼貌表达，比 I got your email 更正式"
+     },
+     {
+      "en": "offer some advice on...",
+      "cn": "就……提供一些建议；on 后接具体话题，搭配正式"
+     },
+     {
+      "en": "well-documented contributions",
+      "cn": "有充分文献记载的贡献；体现学术语境用词精准"
+     },
+     {
+      "en": "celebrated for...",
+      "cn": "因……而闻名；比 famous for 更书面高级"
+     },
+     {
+      "en": "remarkably precise calculation",
+      "cn": "极为精确的计算；副词+形容词+名词的三词搭配，增色"
+     },
+     {
+      "en": "credible materials",
+      "cn": "可靠的资料；比 good materials 更具学术感"
+     },
+     {
+      "en": "incorporate vivid anecdotes",
+      "cn": "融入生动的轶事；incorporate 比 use 更高级"
+     },
+     {
+      "en": "visual aids",
+      "cn": "视觉辅助材料；口头报告建议中的实用表达"
+     },
+     {
+      "en": "I hope these suggestions prove useful",
+      "cn": "希望这些建议对你有用；prove useful 比 be helpful 更地道"
+     },
+     {
+      "en": "feel free to contact me",
+      "cn": "请随时联系我；书信结尾常用礼貌套语"
+     }
+    ],
+    "pitfalls": [
+     "未按书信格式写（缺少称呼 Dear Paul 或落款 Li Ming），扣格式分",
+     "建议过于笼统空泛（如只说 work hard），缺乏针对性内容",
+     "词数严重不足或超出，偏离 about 100 words 要求",
+     "误用自己真实姓名而非题目要求的 Li Ming",
+     "语气不得体，对同辈国际学生过于正式或过于随意"
+    ],
+    "upgrades": [
+     {
+      "plain": "You can choose Zhang Heng.",
+      "better": "I recommend selecting a scientist with outstanding contributions, such as Zhang Heng, who invented the world's first seismoscope.",
+      "note": "增加定语从句补充信息，展示语法多样性，内容也更充实"
+     },
+     {
+      "plain": "You can find information on the Internet.",
+      "better": "You may search for credible materials in our university library or on academic databases online.",
+      "note": "给出具体渠道，用 credible、academic databases 提升用词档次"
+     },
+     {
+      "plain": "You should use pictures in your report.",
+      "better": "Consider incorporating vivid anecdotes and visual aids such as images or short videos to engage your audience.",
+      "note": "consider doing 更委婉得体，并列补充多种手段，表达更丰富"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "大作文：根据图画和图表，描述画面与数据，阐释其隐含意义，并给出个人评论。要求160-200词。",
+    "outline": [
+     "第一段：客观描述图画内容（人们在博物馆参观的场景）与图表数据（近年博物馆参观人数持续增长）",
+     "第二段：揭示隐含意义——公众对传统文化和历史遗产的热情日益高涨，并分析原因（政策推动、生活水平提升、社交媒体传播等）",
+     "第三段：发表评论，肯定趋势并提出建议（加大资源投入、丰富展览内容），展望未来"
+    ],
+    "sample": "As is vividly illustrated in the picture, a group of visitors are admiring exhibits in a museum, their faces radiating curiosity and admiration. The accompanying chart reveals a steady growth in the number of museum visitors nationwide over recent years, climbing from approximately 800 million in 2019 to over 1.2 billion in 2023.\n\nThe picture and chart jointly convey a heartening message: the Chinese public is demonstrating an ever-growing enthusiasm for exploring traditional culture and historical heritage. This encouraging trend can be attributed to several factors. To begin with, the government has implemented favorable policies to promote cultural education and make museums more accessible. Additionally, as living standards continue to improve, people are increasingly seeking spiritual enrichment beyond material comforts. Furthermore, the widespread use of social media has effectively raised public awareness of cultural attractions, inspiring more people to visit museums in person.\n\nFrom my perspective, this positive trend deserves sustained encouragement. Museums serve as vital bridges connecting the present with the past, fostering cultural identity and national pride. It is advisable that more resources be allocated to enrich collections and enhance visitor experiences, thereby ensuring that this cultural renaissance continues to flourish.",
+    "phrases": [
+     {
+      "en": "As is vividly illustrated in the picture",
+      "cn": "正如图画中生动描绘的那样；大作文开头描述图画的经典句型"
+     },
+     {
+      "en": "their faces radiating curiosity and admiration",
+      "cn": "他们的脸上洋溢着好奇与赞叹；独立主格结构，增强画面感"
+     },
+     {
+      "en": "a steady growth in the number of...",
+      "cn": "……数量的稳步增长；描述图表上升趋势的常用表达"
+     },
+     {
+      "en": "convey a heartening message",
+      "cn": "传递一个令人振奋的信息；heartening 比 good 更具感染力"
+     },
+     {
+      "en": "an ever-growing enthusiasm for...",
+      "cn": "对……不断增长的热情；ever-growing 复合形容词，表达动态递增"
+     },
+     {
+      "en": "can be attributed to several factors",
+      "cn": "可归因于几个因素；分析原因时的高级过渡表达"
+     },
+     {
+      "en": "seeking spiritual enrichment beyond material comforts",
+      "cn": "在物质享受之外追求精神充实；精神与物质对比，立意深刻"
+     },
+     {
+      "en": "raise public awareness of...",
+      "cn": "提升公众对……的认知；社会话题常用搭配"
+     },
+     {
+      "en": "serve as vital bridges connecting the present with the past",
+      "cn": "作为连接现在与过去的重要桥梁；比喻修辞，形象贴切"
+     },
+     {
+      "en": "It is advisable that more resources be allocated",
+      "cn": "建议投入更多资源；虚拟语气 It is advisable that... be done，展示高级语法"
+     }
+    ],
+    "pitfalls": [
+     "第一段只描述图画而忽略图表数据，或反之，导致内容不完整",
+     "三段结构不清晰，描述、分析、评论混在一起，逻辑混乱",
+     "全文低于160词或超过200词，不符合字数要求会被扣分",
+     "只罗列现象不分析原因，第二段缺乏深度解读",
+     "结尾段空喊口号而无具体建议，显得空洞无力"
+    ],
+    "upgrades": [
+     {
+      "plain": "More and more people go to museums.",
+      "better": "The Chinese public is demonstrating an ever-growing enthusiasm for exploring traditional culture and historical heritage.",
+      "note": "将简单陈述升级为含有抽象名词和动名词短语的复杂表达，信息量更大"
+     },
+     {
+      "plain": "Because people are richer now, they visit museums.",
+      "better": "As living standards continue to improve, people are increasingly seeking spiritual enrichment beyond material comforts.",
+      "note": "用 as 引导时间/原因状语从句，spiritual enrichment 与 material comforts 形成对比，层次更高"
+     },
+     {
+      "plain": "The government should spend more money on museums.",
+      "better": "It is advisable that more resources be allocated to enrich collections and enhance visitor experiences.",
+      "note": "虚拟语气显示语法功底，enrich 和 enhance 平行结构使表达更工整"
+     },
+     {
+      "plain": "Museums are important for culture.",
+      "better": "Museums serve as vital bridges connecting the present with the past, fostering cultural identity and national pride.",
+      "note": "比喻+现在分词短语作状语，修辞与句法双重升级"
+     },
+     {
+      "plain": "This trend is good and should continue.",
+      "better": "This positive trend deserves sustained encouragement, thereby ensuring that this cultural renaissance continues to flourish.",
+      "note": "thereby ensuring 引出结果，cultural renaissance 用词精准且富有文采"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "I recommend selecting a scientist with outstanding and well-documented contributions, such as Zhang Heng, who invented the world's first seismoscope. —— 推荐选择一位贡献卓越且有充分文献记载的科学家，例如发明了世界上第一台地动仪的张衡。（定语从句嵌套，信息密度高，适用于建议类书信）",
+   "The Chinese public is demonstrating an ever-growing enthusiasm for exploring traditional culture and historical heritage. —— 中国公众正展现出对探索传统文化和历史遗产日益增长的热情。（抽象名词+动名词短语，学术感强，适用于社会现象类大作文）",
+   "As living standards continue to improve, people are increasingly seeking spiritual enrichment beyond material comforts. —— 随着生活水平持续提高，人们越来越多地在物质享受之外追求精神充实。（精神与物质的对比论证，立意深刻，百搭句型）",
+   "Museums serve as vital bridges connecting the present with the past, fostering cultural identity and national pride. —— 博物馆作为连接现在与过去的重要桥梁，培育着文化认同感和民族自豪感。（比喻+现在分词状语，修辞与句法双重加分）",
+   "It is advisable that more resources be allocated to enrich collections and enhance visitor experiences, thereby ensuring that this cultural renaissance continues to flourish. —— 建议投入更多资源以丰富馆藏和提升参观体验，从而确保这场文化复兴持续蓬勃发展。（虚拟语气+thereby引出目的，展示高阶语法掌控力）"
+  ]
+ }
+}

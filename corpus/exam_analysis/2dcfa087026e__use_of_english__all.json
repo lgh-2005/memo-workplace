@@ -1,0 +1,311 @@
+{
+ "schemaVersion": 1,
+ "id": "2dcfa087026e__use_of_english__all",
+ "examId": "2dcfa087026e",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2015 年考研英语真题",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:30:53.900Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 74061,
+ "usage": {
+  "prompt_tokens": 1744,
+  "completion_tokens": 4452,
+  "total_tokens": 6196,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1744,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4452,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1744,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "朋友间的基因相似性研究",
+  "gist": "加州大学与耶鲁大学联合发表的一项基因组研究发现，虽然没有血缘关系，朋友之间却共享约1%的基因，相当于第四代表亲的亲缘程度。研究还发现嗅觉基因在朋友间尤为相似，且这些共有基因的进化速度更快，有助于解释近三万年来人类加速进化的现象。",
+  "difficulty": "中等",
+  "translation": "虽然没有生物学上的血缘关系，但朋友之间的\"亲缘\"程度相当于第四代表亲，共享约1%的基因。这就是加州大学和耶鲁大学发表在《美国国家科学院院刊》上的一项研究所得出的结论。\n\n该研究是一项针对1,932名独立受试者进行的全基因组分析，比较了无血缘关系的朋友组合与无血缘关系的陌生人组合。同一批人被用于两组样本中。\n\n虽然1%看起来微不足道，但对遗传学家来说并非如此。正如加州大学圣迭戈分校医学遗传学教授詹姆斯·福勒所说：\"大多数人甚至不认识自己的第四代表亲，但却不知怎地选择了与我们亲属相似的人作为朋友。\"\n\n该研究还发现，嗅觉相关基因是朋友间共有的，而免疫相关基因则不是。目前还难以解释为何嗅觉基因存在这种相似性。也许，正如研究团队所指出的，它把我们吸引到相似的环境中，但其中还有更多的奥秘。可能有许多机制共同作用，驱使我们选择基因相似的朋友，而不是与拥有\"功能性亲缘关系\"的人做朋友所带来的好处！\n\n该研究的一个显著发现是，这些相似的基因似乎比其他基因进化得更快。对此进行研究有助于理解为何人类进化在过去三万年中加快了步伐，而社会环境是一个重要的促成因素。\n\n研究人员表示，这些发现并不能简单地解释为人们倾向于与相似种族背景的人交朋友。虽然所有受试者均来自欧洲裔群体，但研究人员注意确保所有受试者——无论朋友还是陌生人——都来自同一群体。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "D",
+    "correct": "what",
+    "why": "此处是表语从句，that引导的从句缺主语，what既引导表语从句又在从句中充当宾语（concluded的宾语），语法上只有what能同时满足连接词和代词双重功能。",
+    "traps": "A) when表时间、B) why表原因、C) how表方式，三者均为副词，不能充当concluded的宾语，语法结构不完整。",
+    "tip": "what引导名词性从句，兼作从句宾语。"
+   },
+   {
+    "number": 2,
+    "answer": "B",
+    "correct": "concluded",
+    "why": "上文阐述了研究结论（朋友共享1%基因），此处需要表示\"得出结论\"的动词，concluded与study搭配表示研究得出的发现，语义通顺。",
+    "traps": "A) defended意为\"辩护\"，与研究发表结果的语境不符；C) withdrawn意为\"撤回\"，语义相反；D) advised意为\"建议\"，研究是陈述事实而非提建议。",
+    "tip": "conclude表示研究得出结论，是学术语境高频词。"
+   },
+   {
+    "number": 3,
+    "answer": "C",
+    "correct": "on",
+    "why": "conducted on sb. 表示\"以某人为对象进行（研究）\"，是学术论文中常见搭配，on后接研究对象1,932名受试者。",
+    "traps": "A) for表目的或持续时间，不合搭配；B) with表伴随或工具，不符合\"以……为对象\"的含义；D) by表方式或施动者，语义不通。",
+    "tip": "conduct a study on sb.是学术语境固定搭配。"
+   },
+   {
+    "number": 4,
+    "answer": "A",
+    "correct": "compared",
+    "why": "研究设计需要对比无血缘朋友组和无血缘陌生人组，compared表示\"比较\"，which compared...是定语从句修饰analysis，逻辑上合理。",
+    "traps": "B) sought意为\"寻找\"，不符合实验设计逻辑；C) separated意为\"分离\"，未体现对比含义；D) connected意为\"连接\"，与实验对照设计相悖。",
+    "tip": "基因组分析的核心方法是compared对比两组。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "samples",
+    "why": "前文提到朋友组和陌生人组，同一批人被用于两组样本中。samples指实验中的\"样本组\"，与基因研究语境高度吻合。",
+    "traps": "A) tests指测试，不能说\"用于两个测试中\"来表达同批受试者；B) objects指物体或目标，搭配不当；D) examples指例子，不符合实验术语。",
+    "tip": "sample在科学实验中指样本/样本组。"
+   },
+   {
+    "number": 6,
+    "answer": "A",
+    "correct": "insignificant",
+    "why": "后文用not so（并非如此）转折，说明遗传学家认为1%并不小。因此前半句应表达\"1%看起来微不足道\"，insignificant（微不足道的）构成让步逻辑。",
+    "traps": "B) unexpected意为\"出乎意料\"，与后文转折内容不对应；C) unreliable意为\"不可靠\"，偏离讨论数值大小的语境；D) incredible意为\"难以置信\"，程度过强且方向不对。",
+    "tip": "insignificant与not so构成让步-转折关系。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "know",
+    "why": "语境是大多数人甚至不\"认识\"自己的第四代表亲，know表示\"认识、了解\"，与后文somehow manage to select形成\"不认识却能选出\"的反差。",
+    "traps": "A) visit意为\"拜访\"，预设已知对方，逻辑不通；B) miss意为\"想念\"，预设有情感联系，不合理；C) seek意为\"寻找\"，与语境无关。",
+    "tip": "know与select构成认知层面的对比反差。"
+   },
+   {
+    "number": 8,
+    "answer": "A",
+    "correct": "resemble",
+    "why": "全文主旨是朋友在基因上与亲属相似，resemble our kin意为\"像我们的亲属\"，直接呼应共享1%基因的研究结论。",
+    "traps": "B) influence意为\"影响\"，不体现相似性主题；C) favor意为\"偏爱\"，语义不通；D) surpass意为\"超越\"，与相似性无关。",
+    "tip": "resemble呼应全文核心主题——基因相似性。"
+   },
+   {
+    "number": 9,
+    "answer": "B",
+    "correct": "also",
+    "why": "此段引入嗅觉基因这一额外发现，also表示\"还/也\"，承接前文1%基因共享的结论，增添新信息。",
+    "traps": "A) again意为\"再次\"，暗示重复而非递进；C) instead意为\"反而\"，表转折，不符合递进逻辑；D) thus意为\"因此\"，表因果，与上文非因果关系。",
+    "tip": "also表递进，引出研究的另一发现。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "Perhaps",
+    "why": "前文说原因难以解释，此处用Perhaps（也许）引出研究团队的推测性解释，表不确定语气，与as the team suggests的推测口吻一致。",
+    "traps": "A) Meanwhile意为\"与此同时\"，表并列时间；B) Furthermore意为\"此外\"，表递进，过于肯定；C) Likewise意为\"同样地\"，表类比，不符合推测语境。",
+    "tip": "Perhaps表推测语气，呼应suggests的不确定性。"
+   },
+   {
+    "number": 11,
+    "answer": "B",
+    "correct": "to",
+    "why": "there is more to it是固定表达，意为\"其中还有更多的奥秘/不止于此\"，to在此表示\"关于、对于\"。",
+    "traps": "A) about虽也可表\"关于\"，但more about it不是固定搭配，缺少\"深层原因\"的含义；C) from搭配more无此惯用法；D) like意为\"像\"，语义不通。",
+    "tip": "there is more to it是固定搭配，表示事情更复杂。"
+   },
+   {
+    "number": 12,
+    "answer": "A",
+    "correct": "drive",
+    "why": "drive us in choosing意为\"驱使我们去选择\"，表示多种机制共同推动人们选择基因相似的朋友，drive有\"驱动、促使\"之义。",
+    "traps": "B) observe意为\"观察\"，主语是mechanisms（机制），机制不能\"观察\"我们；C) confuse意为\"困惑\"，语义消极且不合逻辑；D) limit意为\"限制\"，与选择朋友的积极行为不符。",
+    "tip": "drive表示内在机制的驱动力。"
+   },
+   {
+    "number": 13,
+    "answer": "B",
+    "correct": "rather than",
+    "why": "文意是多种机制驱使我们选择基因相似的朋友，而不仅仅是\"功能性亲缘关系\"带来的好处。rather than表示\"而非\"，引出被排除或对比的一方。",
+    "traps": "A) according to意为\"根据\"，不构成对比；C) regardless of意为\"不管\"，让步逻辑不合语境；D) along with意为\"连同\"，表并列，削弱了对比意义。",
+    "tip": "rather than引出对比项，强调前者而非后者。"
+   },
+   {
+    "number": 14,
+    "answer": "D",
+    "correct": "benefits",
+    "why": "与拥有\"功能性亲缘关系\"的人交友会带来好处（benefits），此处讨论的是交友动机——是基因驱动还是利益驱动，benefits语义合理。",
+    "traps": "A) chances意为\"机会\"，搭配functional kinship语义模糊；B) responses意为\"回应\"，不符合交友动机的讨论；C) missions意为\"使命\"，过于正式且不合语境。",
+    "tip": "benefits指功能性亲缘关系带来的实际好处。"
+   },
+   {
+    "number": 15,
+    "answer": "C",
+    "correct": "faster",
+    "why": "后文提到人类进化在近三万年加快步伐（picked pace），相似基因进化更快（faster）才能与加速进化的论述形成因果呼应。",
+    "traps": "A) later意为\"更晚\"，不涉及速度概念；B) slower意为\"更慢\"，与后文picked pace（加速）矛盾；D) earlier意为\"更早\"，涉及时间先后而非速度。",
+    "tip": "faster与后文picked pace构成因果逻辑链。"
+   },
+   {
+    "number": 16,
+    "answer": "C",
+    "correct": "understand",
+    "why": "研究这一现象有助于\"理解\"人类加速进化的原因，help understand why是常见搭配，表示帮助解释某一现象。",
+    "traps": "A) forecast意为\"预测\"，人类进化已经发生，无需预测；B) remember意为\"记住\"，不涉及科学解释；D) express意为\"表达\"，与科学研究的认知目的不符。",
+    "tip": "understand why是科学研究解释现象的常见表达。"
+   },
+   {
+    "number": 17,
+    "answer": "B",
+    "correct": "contributory",
+    "why": "社会环境是人类加速进化的一个重要\"促成\"因素，contributory factor是固定搭配，意为\"促成因素\"。",
+    "traps": "A) unpredictable意为\"不可预测的\"，描述性质而非作用；C) controllable意为\"可控的\"，偏离因果讨论；D) disruptive意为\"破坏性的\"，语义消极，与文章积极讨论基调不符。",
+    "tip": "contributory factor是学术文本中的固定搭配。"
+   },
+   {
+    "number": 18,
+    "answer": "D",
+    "correct": "tendency",
+    "why": "tendency to do sth.意为\"做某事的倾向\"，人们倾向于与相似种族背景的人交友，tendency准确表达这种行为倾向。",
+    "traps": "A) endeavor意为\"努力\"，暗示刻意为之，不符合自然交友行为；B) decision意为\"决定\"，过于主动和刻意；C) arrangement意为\"安排\"，暗示有计划性，不合语境。",
+    "tip": "tendency to表示自然倾向，常用于社科研究。"
+   },
+   {
+    "number": 19,
+    "answer": "C",
+    "correct": "ethnic",
+    "why": "后文提到受试者均为欧洲裔（European extraction），讨论的是种族/族裔背景，ethnic backgrounds（种族背景）与此对应。",
+    "traps": "A) political意为\"政治的\"，文章未涉及政治背景；B) religious意为\"宗教的\"，文章未涉及宗教因素；D) economic意为\"经济的\"，与European extraction无关。",
+    "tip": "ethnic与European extraction形成语义照应。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "correct": "see",
+    "why": "care was taken to see that意为\"注意确保\"，see that在此相当于make sure that/ensure that，是确认、保证之意的固定用法。",
+    "traps": "B) show意为\"展示\"，主语是care（注意），不能\"展示\"某事；C) prove意为\"证明\"，语义过强，此处强调操作层面的确保；D) tell意为\"告诉/辨别\"，搭配不当。",
+    "tip": "see that = ensure that，表示确保某事。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "genome-wide",
+    "cn": "adj. 全基因组的"
+   },
+   {
+    "w": "cousins",
+    "cn": "n. 表亲，堂亲"
+   },
+   {
+    "w": "geneticist",
+    "cn": "n. 遗传学家"
+   },
+   {
+    "w": "immunity",
+    "cn": "n. 免疫力（名词）"
+   },
+   {
+    "w": "mechanisms",
+    "cn": "n. 机制，机理（名词复数）"
+   },
+   {
+    "w": "kinship",
+    "cn": "n. 亲缘关系，亲属关系（名词）"
+   },
+   {
+    "w": "remarkable",
+    "cn": "adj. 显著的，值得注意的"
+   },
+   {
+    "w": "extraction",
+    "cn": "n. 血统，出身（名词）"
+   },
+   {
+    "w": "kin",
+    "cn": "n. 亲属，亲族（名词）"
+   },
+   {
+    "w": "befriend",
+    "cn": "v. 与……交朋友"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Though",
+    "role": "让步连词，引出与主旨相反的前提（无血缘）以突出转折"
+   },
+   {
+    "w": "While",
+    "role": "让步连词，引出1%看似微不足道，为后文转折铺垫"
+   },
+   {
+    "w": "but",
+    "role": "转折连词，对比嗅觉基因共享与免疫基因不共享"
+   },
+   {
+    "w": "Perhaps",
+    "role": "表推测语气，引出研究团队对嗅觉基因相似性的假设"
+   },
+   {
+    "w": "rather than",
+    "role": "对比连词，区分基因驱动与功能性亲缘利益两种解释"
+   },
+   {
+    "w": "Though",
+    "role": "末段让步连词，承认样本来源局限但说明已有控制措施"
+   }
+  ]
+ }
+}

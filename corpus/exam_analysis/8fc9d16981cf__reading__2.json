@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "8fc9d16981cf__reading__2",
+ "examId": "8fc9d16981cf",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 6 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:15:26.876Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62098,
+ "usage": {
+  "prompt_tokens": 1827,
+  "completion_tokens": 4186,
+  "total_tokens": 6013,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1827,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4186,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1827,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "欧洲贵族\"壮游\"的历史与影响",
+  "gist": "文章介绍了16世纪末兴起的\"壮游\"（Grand Tour）现象：欧洲年轻贵族前往法国、意大利等地接受古典艺术熏陶。壮游者通常具备文学素养并对艺术感兴趣，意大利尤其是罗马是必到之地。由于当时欧洲博物馆稀少，壮游者常参观私人收藏，并将所学带回本国，影响了英国等地的建筑风格。",
+  "structure": [
+   "第一段：壮游的起源、时间跨度及参与阶层",
+   "第二段：壮游者的典型特征、目的与期望收获",
+   "第三段：壮游的路线、核心目的地及对英国建筑的影响"
+  ],
+  "difficulty": "中等",
+  "translation": "从十六世纪末开始，年轻贵族访问巴黎、威尼斯、佛罗伦萨，尤其是罗马，成为完成古典教育的终极体验，这在当时十分流行。\"壮游\"的概念由此诞生，这一做法在此后三百年间将英国人、德国人、斯堪的纳维亚人以及美国人引入了法国和意大利的艺术与文化之中。在整个时期，旅行既艰辛又昂贵，只有特权阶层才负担得起——正是这个阶层培养出了绅士科学家、作家、古董专家和艺术赞助人。\n\n典型的壮游者是一位对希腊和拉丁文学有扎实基础的年轻人，同时拥有一些闲暇时间、一定的经济实力和对艺术的兴趣。德国旅行家温克尔曼通过对希腊和罗马雕塑的全面研究开创了艺术史领域；他的朋友安东·拉斐尔·门斯在他长期旅居罗马之初为他绘制了肖像。然而，大多数壮游者停留时间较短，出发时学术目的也不那么强烈，他们由一位老师或监护人陪同，期望带着旅行纪念品以及通过欣赏伟大杰作而形成的对艺术和建筑的理解返回家乡。\n\n伦敦是壮游者常见的出发地，巴黎则是必到之处；许多人前往荷兰，一些人去瑞士和德国，极少数冒险者去西班牙、希腊或土耳其。然而，必去的地方是意大利。英国旅行家查尔斯·汤普森在1744年代表众多壮游者说出了心声，他形容自己\"迫不及待地渴望参观这个在历史上如此闻名的国家，一个曾经向全世界颁布法律的国家，它目前是最伟大的音乐和绘画学府，拥有最崇高的雕塑和建筑作品，并且充满了珍奇陈列室和各类历史遗物收藏\"。在意大利境内，最受关注的焦点是罗马，那里的古代遗迹和较近时代的成就向每一位壮游者展示。帕尼尼的《古代罗马》和《现代罗马》呈现了最受珍视的景观，包括著名的希腊-罗马雕像以及著名废墟、喷泉和教堂的景色。由于十八世纪末之前欧洲几乎没有博物馆，壮游者常常通过获准进入私人收藏来观赏绘画和雕塑，许多人渴望为自己的收藏获取希腊-罗马和意大利艺术品。在英国，建筑日益被视为贵族的追求，贵族们常常将从威尼托地区帕拉迪奥别墅和罗马令人追忆的废墟中学到的东西应用到自己的乡间宅邸和花园中。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Travel was arduous and costly throughout the period, possible only for a privileged class—the same that produced gentlemen scientists, authors, antique experts, and patrons of the arts.",
+    "why": "原文明确指出旅行在整个时期都\"艰辛且昂贵\"（arduous and costly），并且\"只有特权阶层才有可能\"（possible only for a privileged class）。B选项\"普通人负担不起\"是对这一信息的准确同义改写：既然只有特权阶层才能负担，那么普通人自然无法承受。",
+    "traps": "A项偷换概念：原文说的是young aristocrats（年轻贵族），而非泛指young people（年轻人）；C项无中生有：原文说特权阶层产生了科学家、作家等，但未说壮游产生了著名艺术家；D项曲解原文：壮游是古典教育的\"终极体验\"（culmination），但并非大学教育的\"必修部分\"（compulsory part）。",
+    "tip": "注意区分\"特权阶层的年轻人\"和\"所有年轻人\"的区别。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The Grand Tourist was typically a young man with a thorough grounding in Greek and Latin literature as well as some leisure time, some means, and some interest in art.",
+    "why": "原文明确描述典型的壮游者具有\"对希腊和拉丁文学的扎实基础\"（thorough grounding in Greek and Latin literature）以及\"对艺术的一些兴趣\"（some interest in art），C选项\"精通文学且对艺术感兴趣\"（versed in literature and interested in art）是对这两个特征的准确概括。",
+    "traps": "A项无中生有：原文未提及壮游者具备丰富的地理知识；B项以偏概全：原文说仅\"极少数冒险者\"（a very few adventurers）去西班牙等地，不能说壮游者普遍勇敢冒险；D项无中生有：原文未提及壮游者拥有充足的旅行和户外生活经验。",
+    "tip": "题目问\"共同点\"，须找原文中对壮游者群体的概括性描述。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "expected to return home with souvenirs of their travels as well as an understanding of art and architecture formed by exposure to great masterpieces.",
+    "why": "原文指出大多数壮游者期望带着\"通过接触伟大杰作而形成的对艺术和建筑的理解\"（an understanding of art and architecture）回家。D选项\"获得了古典艺术和建筑方面的知识\"准确对应了这一信息，其中classical art对应原文中反复提及的希腊-罗马杰作。",
+    "traps": "A项过度推断：原文说通过接触杰作形成理解，但未明确说获得了\"灵感\"（inspiration）；B项范围扩大：原文谈的是艺术和建筑的理解，而非对\"早期人类文明\"的广泛认识；C项无中生有：原文未提及壮游者对\"现代艺术形式的起源\"产生兴趣。",
+    "tip": "注意选项中\"knowledge\"与原文\"understanding\"的同义替换。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Since there were few museums anywhere in Europe before the close of the eighteenth century, Grand Tourists often saw paintings and sculptures by gaining admission to private collections",
+    "why": "原文用\"Since\"引出原因状语从句，明确指出\"十八世纪末之前欧洲几乎没有博物馆\"，这正是壮游者参观私人收藏的原因。B选项\"十九世纪之前欧洲几乎没有博物馆\"是对\"before the close of the eighteenth century\"的同义表达（十八世纪末即十九世纪之前）。",
+    "traps": "A项偷换概念：原文说壮游者渴望为自己的收藏获取艺术品，但未说私人收藏处可以购买独特纪念品，且这不是参观的原因；C项无中生有：原文未比较私人收藏与博物馆中古董的价值高低；D项无中生有：原文未提及私人收藏种类更丰富。",
+    "tip": "注意因果关系词since的逻辑提示作用。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "In England, where architecture was increasingly seen as an aristocratic pursuit, noblemen often applied what they learned from the villas of Palladio in the Veneto and the evocative ruins of Rome to their own country houses and gardens.",
+    "why": "原文指出英国贵族常常将从帕拉迪奥别墅和罗马废墟中学到的东西\"应用\"（applied）到自己的乡间宅邸和花园中。这意味着英国出现了越来越多受罗马/意大利风格影响的建筑，A选项\"出现了越来越多罗马风格的建筑\"是合理推断。",
+    "traps": "B项曲解原文：贵族是将罗马风格应用于自家宅邸，而非搬进罗马式别墅；C项绝对化：原文用often（经常）而非all（全部），且说的是country houses and gardens，C项用all过于绝对；D项无中生有：原文说贵族自己运用所学，未提及雇佣意大利建筑师。",
+    "tip": "注意区分\"借鉴风格自己建造\"与\"雇人建造\"的区别。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "aristocrat",
+    "cn": "n. 贵族"
+   },
+   {
+    "w": "culmination",
+    "cn": "n. 顶点，终极"
+   },
+   {
+    "w": "arduous",
+    "cn": "adj. 艰辛的，费力的"
+   },
+   {
+    "w": "grounding",
+    "cn": "n. 基础训练，基本知识"
+   },
+   {
+    "w": "compulsory",
+    "cn": "adj. 必修的，强制性的"
+   },
+   {
+    "w": "pioneered",
+    "cn": "v. 开创，做先驱"
+   },
+   {
+    "w": "comprehensive",
+    "cn": "adj. 全面的，综合的"
+   },
+   {
+    "w": "scholarly",
+    "cn": "adj. 学术的，博学的"
+   },
+   {
+    "w": "masterpiece",
+    "cn": "n. 杰作，代表作"
+   },
+   {
+    "w": "patronn",
+    "cn": "n. 赞助人，资助者"
+   },
+   {
+    "w": "nobleman",
+    "cn": "n. 贵族"
+   },
+   {
+    "w": "admission",
+    "cn": "n. 进入许可，准入"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The British traveler Charles Thompson spoke for many Grand Tourists when in 1744 he described himself as \"being impatiently desirous of viewing a country so famous in history, a country which once gave laws to the world, and which is at present the greatest school of music and painting, contains the noblest productions of sculpture and architecture, and is filled with cabinets of rarities, and collections of all kinds of historical relics\".",
+    "cn": "英国旅行家查尔斯·汤普森在1744年代表许多壮游者说出了心声，他形容自己\"迫不及待地渴望参观一个在历史上如此闻名的国家，一个曾经向全世界颁布法律的国家，它目前是最伟大的音乐和绘画学府，拥有最崇高的雕塑和建筑作品，并且充满了珍奇陈列室和各类历史遗物收藏\"。",
+    "note": "主句为Thompson spoke for...，when引导时间状语从句；described himself as后接动名词短语；a country后跟两个which引导的并列定语从句，第二个which从句中包含三个并列谓语（is, contains, is filled with）。"
+   },
+   {
+    "en": "Most Grand Tourists, however, stayed for briefer periods and set out with less scholarly intentions, accompanied by a teacher or guardian, and expected to return home with souvenirs of their travels as well as an understanding of art and architecture formed by exposure to great masterpieces.",
+    "cn": "然而，大多数壮游者停留时间较短，出发时学术目的也不那么强烈，他们由一位老师或监护人陪同，期望带着旅行纪念品以及通过欣赏伟大杰作而形成的对艺术和建筑的理解返回家乡。",
+    "note": "主语Most Grand Tourists接三个并列谓语stayed, set out, expected；accompanied by为过去分词短语作伴随状语；as well as连接souvenirs和understanding两个并列宾语；formed by为过去分词短语作后置定语修饰understanding。"
+   },
+   {
+    "en": "In England, where architecture was increasingly seen as an aristocratic pursuit, noblemen often applied what they learned from the villas of Palladio in the Veneto and the evocative ruins of Rome to their own country houses and gardens.",
+    "cn": "在英国，建筑日益被视为贵族的追求，贵族们常常将从威尼托地区帕拉迪奥别墅和罗马那令人追忆的废墟中学到的东西应用到自己的乡间宅邸和花园中。",
+    "note": "主句为noblemen applied...to...；where引导非限制性定语从句修饰England；what引导宾语从句作applied的宾语；from the villas...and the ruins...为并列介词短语作learned的状语。"
+   }
+  ]
+ }
+}

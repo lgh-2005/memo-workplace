@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "b26add36f5e1__long_match__all",
+ "examId": "b26add36f5e1",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2018 年 12 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:20:24.406Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34106,
+ "usage": {
+  "prompt_tokens": 930,
+  "completion_tokens": 1959,
+  "total_tokens": 2889,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 930,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1959,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 930,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "Merian的科学贡献与历史评价",
+  "strategy": [
+   "先通读10条陈述句，提炼专有名词、数字、极端词等高区分度定位词",
+   "按关键词在原文各段快速扫读，优先匹配含数字、时间、地名的题目",
+   "注意同义替换：题目用词常与原文不同但语义一致，需灵活转换",
+   "已匹配段落可排除，缩小剩余题目的搜索范围",
+   "对比相似主题的题目（如36与43都涉及drawings），区分细节差异再定位"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "K",
+    "cn": "Merian是第一位研究一种美洲蚂蚁的科学家。",
+    "keywords": [
+     "first scientist",
+     "American ant",
+     "study"
+    ],
+    "paraphrase": "题目中'the first scientist to study'可能对应原文中'最早/首次记录或研究'该蚂蚁的表述；'a type of American ant'可能在原文中有具体蚂蚁名称或描述。",
+    "tip": "定位'first'与'ant'两个高辨识度词，在原文中寻找'首次研究+蚂蚁'的段落。"
+   },
+   {
+    "number": 37,
+    "answer": "I",
+    "cn": "欧洲观众对Merian画作的兴趣超过了对她性别的关注。",
+    "keywords": [
+     "European audience",
+     "drawings",
+     "gender"
+    ],
+    "paraphrase": "题目中'more interested in her drawings than her gender'可能对应原文中'人们关注的是她的作品而非其女性身份'的表述，属于比较级同义转换。",
+    "tip": "定位'European audience'和'gender'，在原文中找到关于受众反应与性别的对比描述。"
+   },
+   {
+    "number": 38,
+    "answer": "E",
+    "cn": "Merian的杰作在出版一个世纪后遭到了攻击。",
+    "keywords": [
+     "masterpiece",
+     "attack",
+     "a century",
+     "publication"
+    ],
+    "paraphrase": "题目中'came under attack'可能在原文中表达为'受到质疑/批评/挑战'；'a century after its publication'表示时间跨度约100年，原文可能给出具体年份。",
+    "tip": "定位时间线索'a century after'与'attack/criticism'，快速锁定含时间差与批评信息的段落。"
+   },
+   {
+    "number": 39,
+    "answer": "M",
+    "cn": "Merian画作中的错误可能归因于她在南美洲的逗留时间缩短了。",
+    "keywords": [
+     "mistakes",
+     "drawings",
+     "shortened stay",
+     "South America"
+    ],
+    "paraphrase": "题目中'may be attributed to'表因果推断，原文可能用'because/due to/as a result of'等因果标记词；'shortened stay'可能对应原文中提前离开或因病缩短行程的描述。",
+    "tip": "定位'shortened stay'与'mistakes'的因果关系，寻找关于Merian提前返程的段落。"
+   },
+   {
+    "number": 40,
+    "answer": "G",
+    "cn": "Merian经常整夜不睡来观察和描绘昆虫。",
+    "keywords": [
+     "sat up",
+     "whole night",
+     "observe",
+     "draw insects"
+    ],
+    "paraphrase": "题目中'sat up the whole night through'可能在原文中表述为'通宵/彻夜/整晚工作'；'observe and draw'可能对应原文中'观察并记录/描绘'。",
+    "tip": "定位'whole night'或'通宵'相关表述，找到描写Merian夜间工作习惯的段落。"
+   },
+   {
+    "number": 41,
+    "answer": "O",
+    "cn": "Merian对南美洲当地居民给予她的帮助表示了感谢。",
+    "keywords": [
+     "acknowledged",
+     "help",
+     "natives",
+     "South America"
+    ],
+    "paraphrase": "题目中'acknowledged the help'可能在原文中表述为'credited/thanked/recognized the assistance from'；'natives'可能对应'indigenous people/local inhabitants'。",
+    "tip": "定位'acknowledged/credited'与'natives/indigenous'，找到Merian致谢当地人的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "cn": "Merian对人们更好地理解医学和科学做出了巨大贡献。",
+    "keywords": [
+     "contributed greatly",
+     "medicine",
+     "science",
+     "understanding"
+    ],
+    "paraphrase": "题目中'contributed greatly to'可能对应原文中'made significant contributions to/advanced the understanding of'；'medicine and science'可能在原文中分别展开论述。",
+    "tip": "定位'medicine'与'science'两个并列领域，找到评价Merian贡献的总论段落。"
+   },
+   {
+    "number": 43,
+    "answer": "L",
+    "cn": "Merian偶尔会在她的昆虫和鸟类画作中犯错误。",
+    "keywords": [
+     "occasionally",
+     "mistakes",
+     "drawings",
+     "insects",
+     "birds"
+    ],
+    "paraphrase": "题目中'occasionally made mistakes'可能在原文中表述为'有时出现不准确/错误之处'；'insects and birds'指出错误涉及的具体类别，原文可能举出具体实例。",
+    "tip": "定位'mistakes'与'birds'的共现，注意与第39题区分：本题说'偶尔犯错'，39题说'错误的原因'。"
+   },
+   {
+    "number": 44,
+    "answer": "F",
+    "cn": "如今，Merian作为科学界女性先驱的角色已被重新确立。",
+    "keywords": [
+     "female forerunner",
+     "sciences",
+     "re-established",
+     "now"
+    ],
+    "paraphrase": "题目中'female forerunner'可能对应原文中'female pioneer/trailblazer'；'re-established'暗示她的地位曾被遗忘后又被重新认可，原文可能用'restored/revived/recognized again'。",
+    "tip": "定位'female forerunner/pioneer'与're-established/restored'，找到讨论Merian当代评价的段落。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "cn": "三百多年前，Merian远航到南美洲研究丛林昆虫。",
+    "keywords": [
+     "long voyage",
+     "South America",
+     "jungle insects",
+     "three centuries ago"
+    ],
+    "paraphrase": "题目中'over three centuries ago'可能在原文中以具体年份呈现（如1699年或1700年前后）；'long voyage'可能对应原文中描述的跨大西洋航行；'jungle insects'可能对应'热带雨林昆虫'。",
+    "tip": "定位具体出发年份或'voyage/journey to South America'，快速匹配时间与地点信息。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "forerunner",
+    "cn": "n. 先驱，先行者"
+   },
+   {
+    "w": "masterpiece",
+    "cn": "n. 杰作，代表作"
+   },
+   {
+    "w": "attributed to",
+    "cn": "v. 归因于，归咎于"
+   },
+   {
+    "w": "acknowledged",
+    "cn": "v. 承认，感谢，致谢"
+   },
+   {
+    "w": "re-established",
+    "cn": "v. 重新确立，恢复"
+   },
+   {
+    "w": "occasionally",
+    "cn": "adv. 偶尔，间或"
+   },
+   {
+    "w": "gender",
+    "cn": "n. 性别"
+   },
+   {
+    "w": "natives",
+    "cn": "n. 当地人，土著居民"
+   },
+   {
+    "w": "publication",
+    "cn": "n. 出版，发表"
+   },
+   {
+    "w": "shortened",
+    "cn": "adj. 缩短的，减少的"
+   }
+  ]
+ }
+}

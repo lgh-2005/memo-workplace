@@ -1,0 +1,201 @@
+{
+ "schemaVersion": 1,
+ "id": "fb33dacfb808__translation__all",
+ "examId": "fb33dacfb808",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2019 年 12 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:23:17.342Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29070,
+ "usage": {
+  "prompt_tokens": 815,
+  "completion_tokens": 1981,
+  "total_tokens": 2796,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 815,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1981,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 815,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "牡丹文化与洛阳牡丹节",
+  "reference": "With its brilliant colors and elegant appearance, the peony, symbolizing peace and prosperity, is known as the \"King of Flowers\" in China. Peonies are cultivated and grown in many parts of China. Over the centuries, numerous poems and paintings have been created to celebrate the peony. During the Tang Dynasty, peonies were widely planted in royal gardens and were honored as the national flower, thus gaining exceptional popularity. In the tenth century, the ancient city of Luoyang became the center of peony cultivation, and it has maintained this status to this day. Nowadays, tens of thousands of domestic tourists flock to Luoyang for the annual Peony Festival, where they can admire the unique beauty of Luoyang's peonies while exploring the history of this ancient capital of nine dynasties.",
+  "sentences": [
+   {
+    "cn": "牡丹花色艳丽，形象高雅，象征着和平与繁荣，因而在中国被称为\"花中之王\"。",
+    "en": "With its brilliant colors and elegant appearance, the peony, symbolizing peace and prosperity, is known as the \"King of Flowers\" in China.",
+    "structure": "with 复合结构作状语表伴随特征，现在分词短语 symbolizing... 作插入语，被动语态 is known as 表称谓",
+    "keys": [
+     "花色艳丽 brilliant colors",
+     "形象高雅 elegant appearance",
+     "象征 symbolize",
+     "和平与繁荣 peace and prosperity",
+     "花中之王 King of Flowers"
+    ]
+   },
+   {
+    "cn": "中国许多地方都培育和种植牡丹。",
+    "en": "Peonies are cultivated and grown in many parts of China.",
+    "structure": "简单被动语态句，主语为 peonies，地点状语后置",
+    "keys": [
+     "培育和种植 cultivate and grow",
+     "许多地方 many parts of"
+    ]
+   },
+   {
+    "cn": "千百年来，创造了许多诗歌和绘画赞美牡丹。",
+    "en": "Over the centuries, numerous poems and paintings have been created to celebrate the peony.",
+    "structure": "现在完成时被动语态，时间状语前置，不定式 to celebrate 表目的",
+    "keys": [
+     "千百年来 over the centuries",
+     "诗歌和绘画 poems and paintings",
+     "赞美 celebrate"
+    ]
+   },
+   {
+    "cn": "唐代时期，牡丹在皇家园林普遍种植并被誉为国花，因而特别风行。",
+    "en": "During the Tang Dynasty, peonies were widely planted in royal gardens and were honored as the national flower, thus gaining exceptional popularity.",
+    "structure": "并列被动结构 were planted and were honored，现在分词短语 thus gaining... 表结果",
+    "keys": [
+     "唐代 the Tang Dynasty",
+     "皇家园林 royal gardens",
+     "国花 national flower",
+     "风行 gain exceptional popularity"
+    ]
+   },
+   {
+    "cn": "十世纪时，洛阳古城成为牡丹栽培中心，而且这一地位一直保持到今天。",
+    "en": "In the tenth century, the ancient city of Luoyang became the center of peony cultivation, and it has maintained this status to this day.",
+    "structure": "并列句，前半句一般过去时 became，后半句现在完成时 has maintained 表延续至今",
+    "keys": [
+     "洛阳古城 the ancient city of Luoyang",
+     "栽培中心 the center of cultivation",
+     "保持到今天 maintain this status to this day"
+    ]
+   },
+   {
+    "cn": "现在，成千上万的国内游客蜂拥到洛阳参加一年一度的牡丹节，欣赏洛阳牡丹独特之美，同时探索九朝古都的历史。",
+    "en": "Nowadays, tens of thousands of domestic tourists flock to Luoyang for the annual Peony Festival, where they can admire the unique beauty of Luoyang's peonies while exploring the history of this ancient capital of nine dynasties.",
+    "structure": "主句 + where 引导非限制性定语从句，while exploring 为省略主语的时间状语从句，三个动作并列",
+    "keys": [
+     "成千上万 tens of thousands of",
+     "蜂拥 flock to",
+     "一年一度的牡丹节 the annual Peony Festival",
+     "九朝古都 ancient capital of nine dynasties"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "牡丹",
+    "en": "peony"
+   },
+   {
+    "cn": "花中之王",
+    "en": "King of Flowers"
+   },
+   {
+    "cn": "唐代",
+    "en": "the Tang Dynasty"
+   },
+   {
+    "cn": "皇家园林",
+    "en": "royal gardens"
+   },
+   {
+    "cn": "国花",
+    "en": "national flower"
+   },
+   {
+    "cn": "洛阳",
+    "en": "Luoyang"
+   },
+   {
+    "cn": "牡丹栽培中心",
+    "en": "the center of peony cultivation"
+   },
+   {
+    "cn": "牡丹节",
+    "en": "Peony Festival"
+   },
+   {
+    "cn": "九朝古都",
+    "en": "ancient capital of nine dynasties"
+   },
+   {
+    "cn": "国内游客",
+    "en": "domestic tourists"
+   }
+  ],
+  "pitfalls": [
+   "peony 拼写错误，常误写为 peoney 或 paony",
+   "千百年来应用现在完成时 have been created，不可用一般过去时",
+   "九朝古都若直译为 nine-dynasty ancient capital 不地道，应译为 ancient capital of nine dynasties",
+   "花中之王中 King 首字母需大写并加引号，体现专名特征",
+   "蜂拥 flock to 常被遗忘，误用 rush to 语义单薄"
+  ],
+  "upgrades": [
+   {
+    "plain": "The peony has bright colors.",
+    "better": "With its brilliant colors and elegant appearance, the peony...",
+    "note": "with 复合结构将多个特征压缩为状语，句式紧凑高级"
+   },
+   {
+    "plain": "Many poems and paintings were created to praise the peony.",
+    "better": "Numerous poems and paintings have been created to celebrate the peony.",
+    "note": "celebrate 比 praise 更正式书面，numerous 比 many 更学术"
+   },
+   {
+    "plain": "Peonies became very popular.",
+    "better": "Peonies gained exceptional popularity.",
+    "note": "名词化表达 gain popularity 比 become popular 更地道高级"
+   },
+   {
+    "plain": "Many tourists come to Luoyang.",
+    "better": "Tens of thousands of domestic tourists flock to Luoyang.",
+    "note": "flock to 形象表达蜂拥而至，比 come to 更生动传神"
+   },
+   {
+    "plain": "...and at the same time explore the history",
+    "better": "...while exploring the history of this ancient capital of nine dynasties",
+    "note": "while + 现在分词结构比 and at the same time 更简洁流畅"
+   }
+  ]
+ }
+}

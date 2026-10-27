@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "a0fd8546a451__reading__1",
+ "examId": "a0fd8546a451",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 12 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:09:26.510Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 78897,
+ "usage": {
+  "prompt_tokens": 1844,
+  "completion_tokens": 4619,
+  "total_tokens": 6463,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1844,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4619,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1844,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 50 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "英国香烟统一包装立法之争",
+  "gist": "文章讨论了英国政府在控烟组织和反对党压力下同意推进香烟标准化（素面）包装立法的过程。素面包装旨在减少对新一代吸烟者的吸引力。澳大利亚的实践表明该政策有效。然而，由于首相卡梅伦与烟草利益集团的潜在关联及其对公共卫生干预的犹豫态度，这一进程被严重拖延，最终政治功劳归于反对党。",
+  "structure": [
+   "第1-2段：引出素面包装的目的——阻止新生代开始吸烟",
+   "第3段：烟草业反对，但澳大利亚的证据支持素面包装有效",
+   "第4段：立法进程被拖延，卡梅伦顾问与烟草公司的利益关联",
+   "第5-6段：卡梅伦意志力不足，被迫行动，功劳归反对党"
+  ],
+  "difficulty": "中等",
+  "translation": "任何资深的尼古丁成瘾者都会证明，花哨的包装在他们决定继续吸烟时毫无作用。因此有人认为，去掉烟盒上的品牌标识不会引发大规模的戒烟运动。\n\n但这并不是政府——在癌症慈善机构、卫生工作者和工党的压力下——同意为标准化包装立法的原因。其理论是，应剥去吸烟的一切吸引力，从源头上阻止新一代人开始吸烟。素面包装将是把香烟从诱人的消费品重新归类为麻醉剂的又一步。\n\n自然，烟草行业强烈反对。没有哪家企业愿意承认自己把令人上瘾的毒物当作一种生活方式选择来销售。这就是为什么政府历来进行干预——禁止广告、强制加印健康警示以及征收惩罚性关税。这种做法长期以来已导致吸烟人数下降，自20世纪70年代以来大约减半。来自澳大利亚的证据表明，素面包装推动社会在这条路上走得更远。由于烟草是英国过早死亡的最大原因之一，一项哪怕只能些许抑制这一习惯的措施也值得一试。\n\n那么为什么花了这么长时间？卫生部于2010年11月宣布有意考虑此举，并在2012年进行了咨询。但该计划在2013年7月被搁置。人们注意到，由林顿·克罗斯比——戴维·卡梅伦的竞选活动主管——创办的一家游说公司此前曾为菲利普·莫里斯国际公司服务。（首相否认其新顾问的外部利益与立法议程的改变之间存在关联。）2013年11月，经过一轮不必要的额外咨询后，卫生部长简·埃里森表示政府最终还是倾向于推进。现在我们被告知，在议会三月份解散之前，议员们将进行自由投票。\n\n事实上，议会已经授权政府管制烟草贸易。去年二月，议员们以压倒性多数投票赞成工党对《儿童和家庭法案》的修正案，其中包括对素面包装进行监管的权力。如果唐宁街有足够的决心，这件事早就完成了。但在卡梅伦与公共卫生问题上，缺少的正是决心。自从他2006年发出那番奇怪的感叹——超市收银台旁摆放得极具诱惑力的巧克力橙助长了肥胖——以来，他对国家干预的态度就一直显得混乱不清。\n\n政府已勉强转向一项明智的公共卫生政策，但表现出如此明显的过度谨慎，以至于任何应得的政治功劳都归属于反对党。如果没有持续的外部压力，卡梅伦似乎肯定仍会紧抱烟草大公司的利益不放。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Any veteran nicotine addict will testify that fancy packaging plays no role in the decision to keep smoking.",
+    "why": "原文第一句明确指出，任何资深尼古丁成瘾者都会证明，花哨的包装在其决定继续吸烟的过程中不起任何作用。D选项\"对他们是否戒烟的决定影响不大\"是对'plays no role in the decision to keep smoking'的准确同义转述。此处'keep smoking'对应'whether or not to quit'，逻辑完全一致。",
+    "traps": "A项\"花哨包装有助于吸引新烟民\"是第二段政府的理论立场，而非老烟民的看法，属于张冠李戴；B项\"与香烟质量或口味关系不大\"原文未提及质量和口味，属于无中生有；C项\"素面包装阻止非吸烟者开始吸烟\"同样是政府的立法理由，不是老烟民的观点，且题目问的是chain smokers的看法。",
+    "tip": "注意题目主语是chain smokers，要从他们的视角定位信息。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "the government—under pressure from cancer charities, health workers and the Labour party—has agreed to legislate for standardised packaging.",
+    "why": "原文第二段明确指出政府\"已同意为标准化包装立法\"(agreed to legislate for standardised packaging)。A选项\"通过法律来标准化香烟包装\"是对原文的准确转述，legislate对应pass a law，standardised packaging直接对应。",
+    "traps": "B项\"去掉烟盒上的所有广告\"过于绝对，原文说的是标准化包装而非仅去除广告；C项\"补贴公司采用素面包装\"原文完全未提及补贴，属于无中生有；D项\"根据包装重新分类香烟\"曲解了原文reclassification的含义，原文是将香烟从消费品重新归类为麻醉剂，而非按包装分类。",
+    "tip": "注意区分legislate（立法）与具体执行措施的不同。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "This approach has led over time to a fall in smoking with numbers having roughly halved since the 1970s. Evidence from Australia suggests plain packaging pushes society further along that road.",
+    "why": "原文先说英国自1970年代以来吸烟人数大约减半，接着说澳大利亚的证据表明素面包装使社会在这条路上走得更远（further along that road）。'这条路'指吸烟人数下降的趋势，'更远'意味着澳大利亚的下降幅度比英国更大。因此B选项\"吸烟人数比英国下降得更快\"是合理推断。",
+    "traps": "A项\"因吸烟导致的过早死亡率下降\"原文未就澳大利亚提及死亡率数据，且premature death是在讨论英国时提到的；C项\"烟草替代品销量大幅增加\"原文完全未涉及替代品；D项\"香烟销量下降远快于英国\"与B相似但将'smokers'偷换为'cigarette sales'，且'far more quickly'程度过强，原文仅说'further along that road'。",
+    "tip": "further along that road是隐含比较，需理解比较对象和比较内容。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "With sufficient will in Downing Street this would have been done already. But strength of will is the missing ingredient where Mr. Cameron and public health are concerned.",
+    "why": "原文第五段明确指出\"如果唐宁街有足够的意志力，这件事早就完成了\"，紧接着说\"卡梅伦在公共卫生问题上缺少的正是意志力\"。末段又说政府\"勉强\"转向明智政策。这些都直接表明拖延的根本原因是卡梅伦本人不愿采取行动，A选项完全吻合。",
+    "traps": "B项\"资深烟民强烈反对\"原文开头只说老烟民认为包装无关紧要，并未提及他们组织反对立法；C项\"许多议员沉迷吸烟\"纯属无中生有，原文说议员们以压倒性多数支持该法案；D项\"烟草制造商的压力仍然强大\"虽然文中暗示了烟草游说的影响，但作者将拖延的核心原因归结于卡梅伦个人意愿不足。",
+    "tip": "题目问原因时，要抓文章归因的核心逻辑，而非表面现象。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "his bizarre 2006 lament that chocolate oranges placed seductively at supermarket checkouts fueled obesity.",
+    "why": "原文明确记载卡梅伦在2006年感叹超市收银台旁诱人摆放的巧克力橙助长了肥胖（fueled obesity）。C选项\"它们使更多英国人变得肥胖\"是对'fueled obesity'的准确同义改写，fueled意为助长、加剧，对应made more people obese。",
+    "traps": "A项\"引发了大量争议\"将fueled obesity曲解为fueled controversy，偷换宾语；B项\"吸引了大量吸烟者\"与原文无关，巧克力橙的例子与吸烟者无直接联系；D项\"缺少某些成分\"利用missing ingredient进行干扰，但那是描述卡梅伦缺乏意志力，与巧克力橙无关，属于移花接木。",
+    "tip": "注意区分文中不同语境下的关键词，避免混淆信息来源。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "testify",
+    "cn": "v. 证实，证明；作证"
+   },
+   {
+    "w": "stripping",
+    "cn": "v. 剥去，去除（strip的现在分词）"
+   },
+   {
+    "w": "trigger",
+    "cn": "v. 引发，触发"
+   },
+   {
+    "w": "reclassification",
+    "cn": "n. 重新分类，重新归类"
+   },
+   {
+    "w": "punitive",
+    "cn": "adj. 惩罚性的，处罚性的"
+   },
+   {
+    "w": "premature",
+    "cn": "adj. 过早的，早产的"
+   },
+   {
+    "w": "lobbying",
+    "cn": "n./v. 游说（活动）"
+   },
+   {
+    "w": "dissolved",
+    "cn": "v. 解散（议会）；溶解（dissolve的过去分词）"
+   },
+   {
+    "w": "overwhelmingly",
+    "cn": "adv. 压倒性地，以绝对优势地"
+   },
+   {
+    "w": "seductively",
+    "cn": "adv. 诱惑地，引人注目地"
+   },
+   {
+    "w": "bizarre",
+    "cn": "adj. 奇怪的，古怪的"
+   },
+   {
+    "w": "sustained",
+    "cn": "adj. 持续的，持久的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It did not escape notice that a lobbying firm set up by Lynton Crosby, David Cameron's election campaign director, had previously acted for Philip Morris International.",
+    "cn": "人们注意到，由戴维·卡梅伦的竞选活动主管林顿·克罗斯比创办的一家游说公司此前曾为菲利普·莫里斯国际公司服务。",
+    "note": "It为形式主语，真正主语为that引导的从句；set up by...为过去分词短语作后置定语修饰lobbying firm；David Cameron's election campaign director为Lynton Crosby的同位语。"
+   },
+   {
+    "en": "His attitude to state intervention has looked confused ever since his bizarre 2006 lament that chocolate oranges placed seductively at supermarket checkouts fueled obesity.",
+    "cn": "自从他2006年发出那番奇怪的感叹——超市收银台旁诱人摆放的巧克力橙助长了肥胖——以来，他对国家干预的态度就一直显得混乱不清。",
+    "note": "主干为His attitude has looked confused；ever since引导时间状语；that引导同位语从句解释lament的内容；placed seductively at supermarket checkouts为过去分词短语作后置定语修饰chocolate oranges。"
+   },
+   {
+    "en": "The government has moved reluctantly into a sensible public health policy, but with such obvious over-cautiousness that any political credit due belongs to the opposition.",
+    "cn": "政府已勉强转向一项明智的公共卫生政策，但表现出如此明显的过度谨慎，以至于任何应得的政治功劳都归属于反对党。",
+    "note": "主干为The government has moved...but with...结构；such...that...构成结果状语从句；due为形容词后置修饰credit，意为\"应得的\"。"
+   }
+  ]
+ }
+}

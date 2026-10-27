@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "07a3443e0b67__reading__2",
+ "examId": "07a3443e0b67",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年考研英语真题",
+ "year": 2018,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:36:48.485Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58473,
+ "usage": {
+  "prompt_tokens": 1724,
+  "completion_tokens": 3535,
+  "total_tokens": 5259,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1724,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3535,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1724,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "年轻人提升社交媒体新闻辨别能力",
+  "gist": "文章指出哈佛调查显示多数美国年轻人对特朗普使用推特持质疑态度，随着对媒体不信任加深，年轻人正提升媒体素养，通过交叉验证信息源辨别真假新闻，并意识到在社交媒体上分享新闻的个人责任，展现出批判性思维能力的增长。",
+  "structure": [
+   "第1-2段：引出话题——年轻人质疑社交媒体新闻可靠性，媒体素养需提升",
+   "第3段：举证说明——年轻人通过多源交叉验证辨别网络信息真伪",
+   "第4-5段：深入分析——社交媒体促进参与，假新闻根源在于读者误读与分享",
+   "第6段：总结全文——年轻人批判态度体现思维能力与分享自律"
+  ],
+  "difficulty": "中等",
+  "translation": "哈佛大学一项新调查发现，超过三分之二的美国年轻人不赞成特朗普总统使用推特的方式。言下之意是，千禧一代更希望白宫新闻经过其他渠道过滤，而非通过总统的社交媒体平台直接发布。\n\n大多数美国人依赖社交媒体浏览每日头条新闻。然而，随着人们对所有媒体的不信任感上升，人们可能正开始加强自身的媒体素养技能。这一趋势亟为需要。据牛津大学研究，在2016年总统竞选期间，在具有政治关键意义的密歇根州，推特用户分享的网络内容中有近四分之一是假新闻。而一项为BuzzFeed新闻所做的调查发现，44%的Facebook用户很少或从不信任这一媒体巨头上的新闻。\n\n作为数字原住民的年轻人确实在网络空间中越来越擅长辨别事实与虚构。奈特基金会一项针对14至24岁年轻人的焦点小组调查发现，他们使用\"分布式信任\"来核实新闻报道。他们交叉核对信息来源，偏好来自不同视角的新闻——尤其是那些对自身偏见持开放态度的来源。调查总结道：\"许多年轻人承担了大量个人责任来自我教育，并积极寻找对立观点。\"\n\n这种主动研究还能产生另一种效果。威斯康星大学麦迪逊分校2014年在澳大利亚、英国和美国开展的一项调查发现，年轻人对社交媒体的依赖导致了更高的政治参与度。\n\n社交媒体使用户能够更亲密、更即时地体验新闻事件，同时也允许他们将新闻作为自身价值观和兴趣的投射进行再次分享。这迫使用户更加意识到自己在传递信息中所扮演的角色。巴纳研究集团的一项调查发现，美国人认为假新闻现象的首要原因是\"读者失误\"，其重要性超过编造故事或报道中的事实错误。约三分之一的人表示假新闻问题在于通过社交媒体对\"真实新闻的误读或夸大\"。换言之，在社交媒体上选择分享新闻可能才是问题的核心。巴纳集团主编罗克珊·斯通说：\"这表明在应对这一问题上存在真正的个人责任。\"\n\n因此，当年轻人批评一位过度发推的总统时，他们展现出的是思维能力上的心智自律——以及在何时于社交媒体上分享内容方面的审慎选择。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Yet as distrust has risen toward all media, people may be starting to beef up their media literacy skills. ... And a survey conducted for BuzzFeed News found 44 percent of Facebook users rarely or never trust news from the media giant.",
+    "why": "第1段指出年轻人不赞成总统使用推特，第2段进一步说明人们对所有媒体的不信任上升，44%的Facebook用户很少或从不信任其上的新闻。综合来看，年轻人对社交媒体作为可靠新闻来源持怀疑态度，D项\"social media as a reliable source of news\"是对两段核心信息的正确概括。",
+    "traps": "A项\"新闻过滤做法的正当性\"——原文只提到千禧一代偏好新闻经过过滤，并未质疑过滤本身的正当性，属于曲解原文；B项\"人们对社交媒体平台的偏好\"——原文并非质疑偏好本身，而是质疑其可靠性，偷换论述对象；C项\"政府处理信息的能力\"——原文质疑的是特朗普用推特发布新闻的方式，而非政府的信息处理能力，属于过度推断。",
+    "tip": "多段综合推断题需找各段共同指向的核心信息。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "type": "词义句意题",
+    "locate": "Yet as distrust has risen toward all media, people may be starting to beef up their media literacy skills.",
+    "why": "上下文语境为：对媒体的不信任上升，人们可能开始\"beef up\"媒体素养技能，后文又说这一趋势非常需要。根据语境，人们因不信任而需要提升、加强辨别能力。sharpen意为\"磨练、提升\"，与\"加强技能\"语义一致，故A正确。",
+    "traps": "B项define意为\"定义\"，与提升技能不搭配；C项boast意为\"吹嘘\"，语义荒谬，与上下文逻辑完全不符；D项share意为\"分享\"，无法与\"提升技能\"对应，属于利用文中高频出现的share一词设置干扰。",
+    "tip": "词义猜测题需结合上下文因果逻辑判断词义方向。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "They cross-check sources and prefer news from different perspectives – especially those that are open about any bias.",
+    "why": "原文第3段明确指出奈特基金会调查发现年轻人使用\"分布式信任\"来核实新闻，具体方式是\"交叉核对信息来源\"并\"偏好不同视角的新闻\"。B项\"verify news by referring to diverse sources\"是对cross-check sources和different perspectives的同义转述，完全吻合原文。",
+    "traps": "A项\"倾向于在网络空间表达意见\"——原文说的是核实新闻而非发表意见，属于无中生有；C项\"有强烈的责任感\"——虽然原文提到personal responsibility，但这是调查的附带结论而非核心发现，且题目问的是调查发现的行为特征；D项\"喜欢交流关于分布式信任的看法\"——distributed trust是他们使用的方法，而非讨论的话题，属于偷换概念。",
+    "tip": "细节题注意区分核心发现与辅助信息。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "About a third say the problem of fake news lies in 'misinterpretation or exaggeration of actual news' via social media.",
+    "why": "第5段巴纳调查指出假新闻的首要原因是\"reader error\"，约三分之一的人认为问题在于通过社交媒体对真实新闻的\"误读或夸大\"（misinterpretation or exaggeration）。C项\"readers' misinterpretation\"精准对应原文中的misinterpretation，且主体reader也完全一致。",
+    "traps": "A项\"读者过时的价值观\"——原文提到values是用户分享新闻时投射的价值观，并非假新闻的原因，属于张冠李戴；B项\"记者有偏见的报道\"——原文提到的是reader error而非记者问题，且明确说reader error比factual mistakes更重要；D项\"记者编造的故事\"——原文确实提到made-up stories，但明确指出其重要性低于reader error，不是主要原因。",
+    "tip": "注意原文中的比较关系，\"more so than\"表明主次之分。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "So when young people are critical of an over-tweeting president, they reveal a mental discipline in thinking skills – and in their choices on when to share on social media.",
+    "why": "全文围绕年轻人在社交媒体时代批判性思维能力提升展开：从质疑推特新闻到交叉验证来源，再到认识分享新闻的个人责任。末段点题，年轻人展现出思维技能的自律和分享选择的审慎。A项\"在线分享新闻的批判性技能提升\"完整概括了文章主旨。",
+    "traps": "B项\"对过度发推趋势的反击\"——过度发推只是文章引子而非核心主题，以偏概全；C项\"社交媒体上互信的积累\"——文章讨论的是批判性辨别而非互信积累，曲解主旨；D项\"个人兴趣投射的平台\"——仅是第5段的一个细节，无法涵盖全文，以偏概全。",
+    "tip": "主旨题需关注首尾段的核心论点和全文线索的统一方向。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "disapprove",
+    "cn": "v. 不赞成，反对"
+   },
+   {
+    "w": "implication",
+    "cn": "n. 含意，暗示"
+   },
+   {
+    "w": "Millennials",
+    "cn": "n. 千禧一代（约1981-1996年出生）"
+   },
+   {
+    "w": "distrust",
+    "cn": "n./v. 不信任，怀疑"
+   },
+   {
+    "w": "media literacy",
+    "cn": "n. 媒体素养"
+   },
+   {
+    "w": "cyberspace",
+    "cn": "n. 网络空间"
+   },
+   {
+    "w": "distributed trust",
+    "cn": "n. 分布式信任"
+   },
+   {
+    "w": "cross-check",
+    "cn": "v. 交叉核实，多方验证"
+   },
+   {
+    "w": "opposing viewpoints",
+    "cn": "n. 对立观点"
+   },
+   {
+    "w": "intimately",
+    "cn": "adv. 密切地，深入地"
+   },
+   {
+    "w": "counteracting",
+    "cn": "v. 抵消，应对（counteract的现在分词）"
+   },
+   {
+    "w": "projection",
+    "cn": "n. 投射，表达"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "A Knight Foundation focus-group survey of young people between ages 14 and 24 found they use \"distributed trust\" to verify stories.",
+    "cn": "奈特基金会一项针对14至24岁年轻人的焦点小组调查发现，他们使用\"分布式信任\"来核实新闻报道。",
+    "note": "主语为A Knight Foundation focus-group survey（含of介词短语作后置定语），谓语found，后接省略that的宾语从句。"
+   },
+   {
+    "en": "Social media allows users to experience news events more intimately and immediately while also permitting them to re-share news as a projection of their values and interests.",
+    "cn": "社交媒体使用户能够更亲密、更即时地体验新闻事件，同时也允许他们将新闻作为自身价值观和兴趣的投射进行再次分享。",
+    "note": "主句为allows users to experience...，while引导时间/伴随状语从句，as a projection作re-share的目的或方式状语。"
+   },
+   {
+    "en": "A survey by Barna research group found the top reason given by Americans for the fake news phenomenon is \"reader error,\" more so than made-up stories or factual mistakes in reporting.",
+    "cn": "巴纳研究集团的一项调查发现，美国人认为假新闻现象的首要原因是\"读者失误\"，其重要性超过编造故事或报道中的事实错误。",
+    "note": "found后接宾语从句，the top reason为主语，given by Americans作后置定语，more so than引出比较对象，强调reader error排在首位。"
+   }
+  ]
+ }
+}

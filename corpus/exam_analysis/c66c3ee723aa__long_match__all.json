@@ -1,0 +1,241 @@
+{
+ "schemaVersion": 1,
+ "id": "c66c3ee723aa__long_match__all",
+ "examId": "c66c3ee723aa",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2025 年 6 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:01:30.168Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29196,
+ "usage": {
+  "prompt_tokens": 971,
+  "completion_tokens": 1824,
+  "total_tokens": 2795,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 971,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1824,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 971,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "公共图书馆的社区功能与价值",
+  "strategy": [
+   "先通读10条陈述句，标注高频主题词如library、community、public等，把握整体话题",
+   "为每条陈述句圈定2-3个具体关键词（如数字、专有名词、独特表达），用于快速扫读原文定位",
+   "注意同义替换：陈述句常将原文换词表达，如free of charge替换at no cost，narrow the gap替换bridge the divide",
+   "按关键词独特性排序优先做题：含具体概念（如archive、family history、digitalized）的题优先定位",
+   "匹配成功后在原文段落做标记，已匹配段落一般不会重复使用，可缩小后续扫读范围"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "G",
+    "cn": "去图书馆查找信息的人们可以在那里彼此建立联系。",
+    "keywords": [
+     "search of information",
+     "build connections",
+     "library"
+    ],
+    "paraphrase": "陈述句中build connections可能对应原文中forge ties/form relationships/create bonds等表达；in search of information可能对应looking for/seeking information。",
+    "tip": "定位\"建立联系\"与\"查找信息\"两个动作同时出现的段落。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "图书馆作为社区建设者的倡导者认为，如果图书馆员没有改变他们的社区，那就是没有做好自己的工作。",
+    "keywords": [
+     "advocates",
+     "community builders",
+     "librarians",
+     "change communities"
+    ],
+    "paraphrase": "陈述句中not doing their job well可能对应原文中failing in their duty/not fulfilling their role等表述；advocates可能对应proponents/supporters。",
+    "tip": "定位含librarians职责与change communities因果关系的段落。"
+   },
+   {
+    "number": 38,
+    "answer": "I",
+    "cn": "随着教育成本的不断上升，公共图书馆仍然是所有人都能获得教育的地方。",
+    "keywords": [
+     "costs of education",
+     "continually rising",
+     "access to education"
+    ],
+    "paraphrase": "陈述句中costs continually rising可能对应原文中ever-increasing expenses/soaring tuition等；have access to education可能对应educational opportunities available to all。",
+    "tip": "定位同时提到\"教育费用上涨\"和\"图书馆提供教育机会\"的段落。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "图书馆吸引了大量人群，从而在周边地区创造了许多商业机会。",
+    "keywords": [
+     "large crowds",
+     "business opportunities",
+     "neighboring areas"
+    ],
+    "paraphrase": "陈述句中draw large crowds可能对应原文attract many visitors/bring in foot traffic；business opportunities可能对应economic/commercial activity。",
+    "tip": "定位涉及图书馆带动周边商业发展的段落。"
+   },
+   {
+    "number": 40,
+    "answer": "A",
+    "cn": "随着世界日益数字化，人们有时低估了图书馆作为社区和文化中心的作用。",
+    "keywords": [
+     "digitalized",
+     "underestimate",
+     "community and cultural centers"
+    ],
+    "paraphrase": "陈述句中underestimate可能对应原文overlook/fail to recognize/undervalue；digitalized可能对应digital age/increasingly digital world。",
+    "tip": "作为首段A，通常引出全文话题；定位\"数字化\"与\"低估图书馆作用\"的论述。"
+   },
+   {
+    "number": 41,
+    "answer": "L",
+    "cn": "公共图书馆为儿童和青少年组织的各种项目有助于缩小不同经济背景学生之间的差距。",
+    "keywords": [
+     "children and adolescents",
+     "narrow the gap",
+     "economic backgrounds"
+    ],
+    "paraphrase": "陈述句中narrow the gap可能对应原文bridge the divide/reduce inequality/close the gap；varying economic backgrounds可能对应different income levels/socioeconomic status。",
+    "tip": "定位涉及青少年项目与经济差距缩小的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "cn": "在有组织的档案馆中，人们可以研究自己的家族历史，了解祖先是如何来到新大陆定居的。",
+    "keywords": [
+     "organized archive",
+     "family history",
+     "ancestors",
+     "settle in the new land"
+    ],
+    "paraphrase": "陈述句中organized archive可能对应原文structured/well-maintained collection of records；family history可能对应genealogy/lineage research。",
+    "tip": "定位含archive、ancestors或genealogy等独特词汇的段落，非常容易辨识。"
+   },
+   {
+    "number": 43,
+    "answer": "H",
+    "cn": "公共图书馆组织文化活动，通常允许不同收入水平的人免费参加。",
+    "keywords": [
+     "cultural events",
+     "different income levels",
+     "free of charge"
+    ],
+    "paraphrase": "陈述句中free of charge可能对应原文at no cost/without charge/complimentary；cultural events可能对应art exhibitions/concerts/cultural programming。",
+    "tip": "定位同时出现\"文化活动\"与\"免费参加\"及\"不同收入\"的段落。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "cn": "除了作为信息提供者之外，图书馆还为社区提供许多其他重要服务。",
+    "keywords": [
+     "information provider",
+     "other important services",
+     "community"
+    ],
+    "paraphrase": "陈述句中besides being an information provider可能对应原文beyond/in addition to providing information；many other important services为概括性表述，原文可能列举具体服务。",
+    "tip": "作为B段通常承接A段展开论述，定位\"信息提供之外的其他功能\"这一过渡性总述。"
+   },
+   {
+    "number": 45,
+    "answer": "K",
+    "cn": "公共图书馆可以帮助建立由不同背景和意识形态的人组成的小型社区。",
+    "keywords": [
+     "small communities",
+     "different backgrounds",
+     "ideologies"
+    ],
+    "paraphrase": "陈述句中different backgrounds and ideologies可能对应原文diverse perspectives/varying viewpoints/people of different beliefs；small communities可能对应micro-communities/groups。",
+    "tip": "定位涉及不同意识形态人群在图书馆形成社区的段落，ideologies为强标志词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "digitalized",
+    "cn": "数字化的（adj.）"
+   },
+   {
+    "w": "underestimate",
+    "cn": "低估（v.）"
+   },
+   {
+    "w": "advocates",
+    "cn": "倡导者，支持者（n.）"
+   },
+   {
+    "w": "archive",
+    "cn": "档案馆；档案（n.）"
+   },
+   {
+    "w": "ancestors",
+    "cn": "祖先（n.）"
+   },
+   {
+    "w": "adolescents",
+    "cn": "青少年（n.）"
+   },
+   {
+    "w": "ideologies",
+    "cn": "意识形态，思想体系（n.）"
+   },
+   {
+    "w": "neighboring",
+    "cn": "邻近的（adj.）"
+   },
+   {
+    "w": "free of charge",
+    "cn": "免费（adv. 短语）"
+   },
+   {
+    "w": "narrow the gap",
+    "cn": "缩小差距（动词短语）"
+   }
+  ]
+ }
+}

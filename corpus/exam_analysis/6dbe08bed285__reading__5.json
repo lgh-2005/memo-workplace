@@ -1,0 +1,176 @@
+{
+ "schemaVersion": 1,
+ "id": "6dbe08bed285__reading__5",
+ "examId": "6dbe08bed285",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2001 年考研英语真题（旧）",
+ "year": 2001,
+ "sub": "5",
+ "questionNumbers": [
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:11:11.395Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62557,
+ "usage": {
+  "prompt_tokens": 1711,
+  "completion_tokens": 3582,
+  "total_tokens": 5293,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1711,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3582,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1711,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "职场精英转向简约生活的\"降速\"趋势",
+  "gist": "作者离开高压全职工作后，意外加入了\"降速\"潮流。经过两年半的实践，她发现放弃\"兼顾一切\"的信条，转向更简朴的生活方式带来的回报远超经济成功和社会地位。文章对比了美英两国\"降速\"趋势产生的不同原因：美国源于经济衰退，英国则更多出于对自身局限的认知。",
+  "structure": [
+   "第1段：交代作者离职背景与动因",
+   "第2-3段：作者亲身体验降速生活，对比旧哲学与新感悟",
+   "第4段：美国降速趋势的表现与反消费主义现象",
+   "第5-6段：对比英美降速动因差异，点明英国中产的个人反思"
+  ],
+  "difficulty": "中等",
+  "translation": "当我决定辞去全职工作时，我从未想到自己可能会成为一种新的国际趋势的一部分。一次平级调动伤害了我的自尊心，阻碍了我的职业发展，促使我放弃了相对高知名度的职业生涯——尽管我像一位名誉扫地的政府部长那样，以\"想多花时间陪家人\"为借口掩饰了自己的离去。\n\n奇妙的是，大约两年半和两部小说之后，我在美国人所称的\"降速\"方面的尝试，已经把我那个疲惫的借口变成了绝对的现实。我已经从一个热情倡导\"拥有一切\"哲学的人——这一哲学由琳达·凯尔西在过去七年间通过《She》杂志不断宣扬——变成了一个乐于接受\"每样都有一点\"的女人。\n\n我发现——也许凯尔西在因压力累积而从《She》杂志主编一职高调辞职后也会发现——放弃\"兼顾生活\"的信条，转而选择\"降速\"所带来的回报，远比经济成功和社会地位要大得多。没有什么能说服我回到凯尔西过去所倡导的、我曾经也享受过的那种生活：每天工作12小时、紧迫的截止日期、办公室政治令人生畏的压力，以及作为一个只能享有\"优质时间\"的家长的种种局限。\n\n在美国，从忙碌兼顾转向更简单、更少物质主义的生活方式，已经是一种成熟的趋势。\"降速\"——在美国也被称为\"自愿简朴\"——具有讽刺意味的是，甚至催生了一个可以称之为\"反消费主义\"的新领域。市面上有大量畅销的降速自助类书籍，面向那些想要简化生活的人；有像《吝啬公报》这样的通讯刊物，为数十万美国人提供从回收保鲜膜到自制肥皂等方方面面的实用建议；甚至还有互助团体，帮助那些想要实现90年代中期版本的\"退出主流\"的人。\n\n在美国，这一趋势始于对经济衰退的反应——起因于80年代末企业裁员潮导致的大规模冗员——并且至今仍与节俭政治相关联；而在英国，至少在我所认识的中产阶级降速者中，我们寻求简化生活有着不同的原因。\n\n对于我这一代在整个80年代被敦促不断兼顾一切的女性来说，90年代中期的降速与其说是在追寻那种神话般的美好生活——自己种有机蔬菜，还冒着自己变成蔬菜的风险——不如说是对自身局限性的一种个人认知。",
+  "questions": [
+   {
+    "number": 37,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "A lateral move that hurt my pride and blocked my professional progress prompted me to abandon my relatively high profile career",
+    "why": "原文明确指出\"一次平级调动伤害了作者的自尊心并阻碍了职业发展\"，这使她被迫放弃了高知名度的职业。B选项\"被客观情况所迫而离职\"准确概括了这一因果关系：lateral move（外因）→hurt pride & blocked progress→prompted to abandon career，说明离职并非出于自愿意愿，而是被外部情势逼迫。",
+    "traps": "A项张冠李戴：原文说作者成为\"新国际趋势的一部分\"，并非说全职工作是新趋势。C项偷换概念：lateral move指公司内部的平级调动，而非离开全职工作。D项正反混淆：原文明确说\"陪家人\"只是掩饰离职的借口（covered my exit by claiming），并非真正渴望，only too eager与原文相悖。",
+    "tip": "注意区分作者的真实动机与表面借口，关注因果关系词如prompted。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "I have been transformed from a passionate advocate of the philosophy of \"having it all\" into a woman who is happy to settle for a bit of everything.",
+    "why": "原文说作者经历降速实验后，从\"拥有一切\"哲学的狂热支持者转变为满足于\"每样有一点\"的人。这表明降速帮助她重塑了人生哲学，从追求极致转向知足常乐。B选项\"帮助她塑造了新的人生哲学\"精确对应了这一转变过程，即从旧哲学（having it all）到新哲学（settle for a bit of everything）。",
+    "traps": "A项无中生有：原文未提及作者有什么\"梦想\"需要实现。C项因果颠倒：是先离职后才降速，且降速的收获是精神层面的，放弃高地位是降速的前提而非结果。D项正反混淆：作者明确反对《She》杂志的教条（having it all），转向了新的哲学，而非接受其教条。",
+    "tip": "推断题需关注人物前后变化对比，抓住transformed等转折标志词。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "abandoning the doctrine of \"juggling your life\", and making the alternative move into \"downshifting\" brings with it far greater rewards",
+    "why": "原文将juggling your life与downshifting对立；紧接着描述了juggling生活的具体内容：12小时工作日、紧迫的截止日期、办公室政治的可怕压力、作为家长的局限。这些细节无一不指向极度紧张和压力，因此C选项\"极度压力\"最为准确。juggling本义为\"抛接杂耍\"，比喻同时应付多项事务的高压生活。",
+    "traps": "A项张冠李戴：非物质主义生活方式是downshifting的特征，而非juggling的特征，两者恰恰相反。B项移花接木：\"a bit of everything\"是作者降速后的状态，而非juggling的含义。D项偷换对象：反消费主义是降速趋势催生的现象，与juggling无关。",
+    "tip": "理解比喻性短语需结合上下文具体描写，尤其关注并列或对比结构中的信息。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "While in America the trend started as a reaction to the economic decline—after the mass redundancies caused by downsizing in the late '80s",
+    "why": "第五段明确指出美国的降速趋势\"始于对经济衰退的反应\"，具体原因是80年代末企业缩编造成的大规模裁员，并且至今仍与\"节俭政治\"相关联。D选项\"经济形势\"完整准确地对应了economic decline这一核心原因，属于同义改写。",
+    "traps": "A项无中生有：文中未提及美国降速趋势与\"快节奏的现代生活\"直接相关，这是一个合理但缺乏原文依据的推测。B项无中生有：原文没有任何关于\"冒险精神\"的表述。C项张冠李戴：mythical good life出现在末段对英国中产女性的描述中，且作者否认降速是追寻神话般的体验，与美国的降速原因无关。",
+    "tip": "对比类文章注意区分不同对象的具体表述，定位到对应主语再作答。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "lateral",
+    "cn": "adj. 横向的，平级的"
+   },
+   {
+    "w": "high profile",
+    "cn": "adj. 高知名度的，引人注目的"
+   },
+   {
+    "w": "downshifting",
+    "cn": "n. 降速生活，放慢生活节奏（从高压生活转向简朴生活）"
+   },
+   {
+    "w": "advocate",
+    "cn": "n./v. 倡导者；提倡，拥护"
+   },
+   {
+    "w": "doctrine",
+    "cn": "n. 教条，信条，学说"
+   },
+   {
+    "w": "anticonsumerism",
+    "cn": "n. 反消费主义"
+   },
+   {
+    "w": "redundancies",
+    "cn": "n.（pl.）裁员，冗员（尤指英式英语中因岗位撤销而被辞退）"
+   },
+   {
+    "w": "thrift",
+    "cn": "n. 节俭，节约"
+   },
+   {
+    "w": "materialistic",
+    "cn": "adj. 物质主义的，追求物质享受的"
+   },
+   {
+    "w": "preach",
+    "cn": "v. 宣扬，鼓吹；布道"
+   },
+   {
+    "w": "prompt",
+    "cn": "v. 促使，推动"
+   },
+   {
+    "w": "resignation",
+    "cn": "n. 辞职；顺从，听任"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "I have discovered, as perhaps Kelsey will after her much-publicized resignation from the editorship of She after a build-up of stress, that abandoning the doctrine of \"juggling your life\", and making the alternative move into \"downshifting\" brings with it far greater rewards than financial success and social status.",
+    "cn": "我发现——也许凯尔西在因压力累积而从《She》杂志主编一职高调辞职后也会发现——放弃\"兼顾生活\"的信条，转而选择\"降速\"所带来的回报，远比经济成功和社会地位要大得多。",
+    "note": "主干为I have discovered that...，that引导宾语从句；as perhaps Kelsey will为插入比较，其中will后省略discover；after her resignation为时间状语修饰Kelsey；宾语从句中abandoning...and making...为并列动名词短语作主语。"
+   },
+   {
+    "en": "I have been transformed from a passionate advocate of the philosophy of \"having it all\", preached by Linda Kelsey for the past seven years in the pages of She magazine, into a woman who is happy to settle for a bit of everything.",
+    "cn": "我已经从一个热情倡导\"拥有一切\"哲学的人——这一哲学由琳达·凯尔西在过去七年间通过《She》杂志不断宣扬——变成了一个乐于接受\"每样都有一点\"的女人。",
+    "note": "主干为I have been transformed from...into...；preached by...为过去分词短语作后置定语修饰philosophy；who引导定语从句修饰a woman；from...into构成前后对比。"
+   },
+   {
+    "en": "While in America the trend started as a reaction to the economic decline—after the mass redundancies caused by downsizing in the late '80s—and is still linked to the politics of thrift, in Britain, at least among the middle-class downshifters of my acquaintance, we have different reasons for seeking to simplify our lives.",
+    "cn": "在美国，这一趋势始于对经济衰退的反应——起因于80年代末企业裁员潮导致的大规模冗员——并且至今仍与节俭政治相关联；而在英国，至少在我所认识的中产阶级降速者中，我们寻求简化生活有着不同的原因。",
+    "note": "While引导让步/对比状语从句，主句为we have different reasons...；破折号中caused by downsizing为过去分词短语修饰redundancies；and连接started和is still linked两个并列谓语。"
+   }
+  ]
+ }
+}

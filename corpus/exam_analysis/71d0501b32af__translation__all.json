@@ -1,0 +1,203 @@
+{
+ "schemaVersion": 1,
+ "id": "71d0501b32af__translation__all",
+ "examId": "71d0501b32af",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2017 年 12 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:10:34.292Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31927,
+ "usage": {
+  "prompt_tokens": 846,
+  "completion_tokens": 2392,
+  "total_tokens": 3238,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 846,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2392,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 846,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "太湖概况及经济文化价值",
+  "reference": "Taihu Lake is a freshwater lake in eastern China, covering an area of 2,250 square kilometers. It is the third largest freshwater lake in China, only after Poyang Lake and Dongting Lake. The lake has about 90 islands, ranging in size from a few square meters to several square kilometers. Taihu Lake is famous for its unique \"Taihu Stone,\" which is often used to decorate traditional Chinese gardens. The lake is also renowned for its highly productive fishing industry. Since the late 1970s, fishing for fish and crabs has been extremely important for the residents living along the lake and has made significant contributions to the economy of the surrounding areas. The Taihu Lake region is one of the bases of China's ceramics industry, where pottery manufacturers in Yixing produce the world-famous Yixing clay teapots.",
+  "sentences": [
+   {
+    "cn": "太湖是中国东部的一个淡水湖,占地面积2250平方公里,是中国第三大淡水湖,仅次于鄱阳和洞庭。",
+    "en": "Taihu Lake is a freshwater lake in eastern China, covering an area of 2,250 square kilometers. It is the third largest freshwater lake in China, only after Poyang Lake and Dongting Lake.",
+    "structure": "主系表结构 + 现在分词短语作伴随状语(covering...) + 形容词最高级 + only after 补充说明",
+    "keys": [
+     "淡水湖 freshwater lake",
+     "占地面积 covering an area of",
+     "仅次于 only after / second only to",
+     "鄱阳 Poyang Lake",
+     "洞庭 Dongting Lake"
+    ]
+   },
+   {
+    "cn": "太湖约有90个岛屿,大小从几平方米到几平方公里不等。",
+    "en": "The lake has about 90 islands, ranging in size from a few square meters to several square kilometers.",
+    "structure": "主谓宾结构 + 现在分词短语作后置定语/伴随状语(ranging...)，from...to... 表范围",
+    "keys": [
+     "大小不等 ranging in size",
+     "从…到…不等 ranging from...to...",
+     "平方公里 square kilometers"
+    ]
+   },
+   {
+    "cn": "太湖以其独特的\"太湖石\"而闻名,太湖石常用于装饰中国传统园林。",
+    "en": "Taihu Lake is famous for its unique \"Taihu Stone,\" which is often used to decorate traditional Chinese gardens.",
+    "structure": "be famous for 主干 + which 引导非限制性定语从句对太湖石进行补充说明",
+    "keys": [
+     "以…闻名 be famous/renowned for",
+     "太湖石 Taihu Stone",
+     "传统园林 traditional Chinese gardens",
+     "用于装饰 be used to decorate"
+    ]
+   },
+   {
+    "cn": "太湖也以高产的捕鱼业闻名。",
+    "en": "The lake is also renowned for its highly productive fishing industry.",
+    "structure": "主系表结构，be renowned for 固定搭配",
+    "keys": [
+     "高产的 highly productive",
+     "捕鱼业 fishing industry"
+    ]
+   },
+   {
+    "cn": "自上世纪70年代后期以来,捕捞鱼蟹对沿湖的居民来说极为重要,并对周边地区的经济作出了重大贡献。",
+    "en": "Since the late 1970s, fishing for fish and crabs has been extremely important for the residents living along the lake and has made significant contributions to the economy of the surrounding areas.",
+    "structure": "since 引导时间状语 + 现在完成时态并列谓语(has been... and has made...)，living along the lake 现在分词作后置定语",
+    "keys": [
+     "上世纪70年代后期 the late 1970s",
+     "捕捞鱼蟹 fishing for fish and crabs",
+     "沿湖的居民 residents living along the lake",
+     "作出重大贡献 make significant contributions to",
+     "周边地区 surrounding areas"
+    ]
+   },
+   {
+    "cn": "太湖地区是中国陶瓷业基地之一,其中宜兴的陶瓷厂家生产举世闻名的宜兴紫砂壶。",
+    "en": "The Taihu Lake region is one of the bases of China's ceramics industry, where pottery manufacturers in Yixing produce the world-famous Yixing clay teapots.",
+    "structure": "主系表结构(one of + 名词复数) + where 引导非限制性定语从句补充说明宜兴生产情况",
+    "keys": [
+     "陶瓷业基地 bases of ceramics industry",
+     "宜兴紫砂壶 Yixing clay teapots",
+     "举世闻名的 world-famous",
+     "…之一 one of the..."
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "太湖",
+    "en": "Taihu Lake"
+   },
+   {
+    "cn": "淡水湖",
+    "en": "freshwater lake"
+   },
+   {
+    "cn": "鄱阳湖",
+    "en": "Poyang Lake"
+   },
+   {
+    "cn": "洞庭湖",
+    "en": "Dongting Lake"
+   },
+   {
+    "cn": "太湖石",
+    "en": "Taihu Stone"
+   },
+   {
+    "cn": "陶瓷业",
+    "en": "ceramics industry"
+   },
+   {
+    "cn": "宜兴紫砂壶",
+    "en": "Yixing clay teapot(s)"
+   },
+   {
+    "cn": "捕鱼业",
+    "en": "fishing industry"
+   },
+   {
+    "cn": "传统园林",
+    "en": "traditional Chinese garden(s)"
+   },
+   {
+    "cn": "周边地区",
+    "en": "surrounding areas"
+   }
+  ],
+  "pitfalls": [
+   "「仅次于」误译为 only less than，应用 only after 或 second only to",
+   "「自上世纪70年代后期以来」需使用现在完成时 has been / has made，不可用一般过去时",
+   "「大小从…到…不等」遗漏 ranging in size 结构，或 from...to... 搭配错误",
+   "「捕捞鱼蟹」中「蟹」漏译，应译为 fishing for fish and crabs",
+   "「基地之一」中 one of 后须接名词复数 bases，不可写 base"
+  ],
+  "upgrades": [
+   {
+    "plain": "Taihu Lake is famous for",
+    "better": "Taihu Lake is renowned/celebrated for",
+    "note": "renowned 和 celebrated 更正式书面，适合说明文语体，避免与上文重复"
+   },
+   {
+    "plain": "the fishing industry that produces a lot",
+    "better": "its highly productive fishing industry",
+    "note": "highly productive 更简洁地道，避免定语从句冗长"
+   },
+   {
+    "plain": "has been very important and has helped the economy",
+    "better": "has been extremely important... and has made significant contributions to the economy",
+    "note": "make significant contributions to 是固定高分搭配，表达更精准"
+   },
+   {
+    "plain": "ceramic factories in Yixing make",
+    "better": "pottery manufacturers in Yixing produce",
+    "note": "manufacturer 比 factory 更正式，produce 比 make 更学术专业"
+   },
+   {
+    "plain": "which are different in size from...to...",
+    "better": "ranging in size from...to...",
+    "note": "分词短语更简洁紧凑，避免定语从句堆叠，提升句式多样性"
+   }
+  ]
+ }
+}

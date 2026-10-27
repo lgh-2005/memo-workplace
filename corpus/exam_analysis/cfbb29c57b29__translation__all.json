@@ -1,0 +1,202 @@
+{
+ "schemaVersion": 1,
+ "id": "cfbb29c57b29__translation__all",
+ "examId": "cfbb29c57b29",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2018 年 12 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:22:24.595Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 28213,
+ "usage": {
+  "prompt_tokens": 793,
+  "completion_tokens": 1920,
+  "total_tokens": 2713,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 793,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1920,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 793,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国体育馆建设与全民健身",
+  "reference": "In recent years, the Chinese government has further increased its investment in the construction of gymnasiums to better meet people's rapidly growing fitness needs. In addition to building new gymnasiums, many cities have also taken measures such as renovating old factories and commercial buildings to increase the number of local gymnasiums. With the support of government funding, an increasing number of gymnasiums have been opened to the public free of charge or for only a small fee. Many gymnasiums have significantly improved their service quality by applying modern information technology. People can conveniently book venues and make payments online. It is foreseeable that with the continuous improvement of sports facilities, more and more people will go to gymnasiums to work out.",
+  "sentences": [
+   {
+    "cn": "近年来，中国政府进一步加大体育馆建设投资，以更好地满足人们快速增长的健身需求。",
+    "en": "In recent years, the Chinese government has further increased its investment in the construction of gymnasiums to better meet people's rapidly growing fitness needs.",
+    "structure": "主谓宾 + 不定式目的状语；主语为 the Chinese government，谓语用现在完成时 has increased，to do 表目的",
+    "keys": [
+     "进一步加大投资 further increased its investment",
+     "体育馆建设 the construction of gymnasiums",
+     "健身需求 fitness needs",
+     "快速增长的 rapidly growing"
+    ]
+   },
+   {
+    "cn": "除了新建体育馆外，许多城市还采取了改造旧工厂和商业建筑等措施，来增加当地体育馆的数量。",
+    "en": "In addition to building new gymnasiums, many cities have also taken measures such as renovating old factories and commercial buildings to increase the number of local gymnasiums.",
+    "structure": "In addition to ... 介词短语作状语 + 主谓宾 + such as 举例 + 不定式目的状语",
+    "keys": [
+     "除了……外 in addition to",
+     "采取措施 taken measures",
+     "改造旧工厂 renovating old factories",
+     "商业建筑 commercial buildings"
+    ]
+   },
+   {
+    "cn": "在政府资金的支持下，越来越多的体育馆向公众免费开放，或者只收取少量费用。",
+    "en": "With the support of government funding, an increasing number of gymnasiums have been opened to the public free of charge or for only a small fee.",
+    "structure": "With 介词短语作状语 + 主语 + 现在完成时被动语态；or 连接两个并列的介词短语表方式",
+    "keys": [
+     "在……的支持下 with the support of",
+     "政府资金 government funding",
+     "免费开放 opened ... free of charge",
+     "收取少量费用 for only a small fee"
+    ]
+   },
+   {
+    "cn": "许多体育馆通过应用现代信息技术大大提高了服务质量。",
+    "en": "Many gymnasiums have significantly improved their service quality by applying modern information technology.",
+    "structure": "主谓宾结构 + by doing 方式状语；谓语用现在完成时强调结果",
+    "keys": [
+     "现代信息技术 modern information technology",
+     "服务质量 service quality",
+     "大大提高 significantly improved"
+    ]
+   },
+   {
+    "cn": "人们可以方便地在线预订场地和付费。",
+    "en": "People can conveniently book venues and make payments online.",
+    "structure": "主语 + 情态动词 can + 并列谓语（book ... and make ...）+ 副词 online 作状语",
+    "keys": [
+     "在线预订场地 book venues online",
+     "付费 make payments",
+     "方便地 conveniently"
+    ]
+   },
+   {
+    "cn": "可以预见，随着运动设施的不断改善，愈来愈多的人将会去体育馆健身。",
+    "en": "It is foreseeable that with the continuous improvement of sports facilities, more and more people will go to gymnasiums to work out.",
+    "structure": "It is foreseeable that ... 形式主语从句 + with 介词短语作伴随状语 + 主句用一般将来时",
+    "keys": [
+     "可以预见 it is foreseeable that",
+     "运动设施 sports facilities",
+     "不断改善 continuous improvement",
+     "健身 work out"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "体育馆",
+    "en": "gymnasium / gym"
+   },
+   {
+    "cn": "健身需求",
+    "en": "fitness needs / demand for fitness"
+   },
+   {
+    "cn": "商业建筑",
+    "en": "commercial buildings"
+   },
+   {
+    "cn": "现代信息技术",
+    "en": "modern information technology"
+   },
+   {
+    "cn": "服务质量",
+    "en": "service quality"
+   },
+   {
+    "cn": "运动设施",
+    "en": "sports facilities"
+   },
+   {
+    "cn": "政府资金",
+    "en": "government funding / government funds"
+   },
+   {
+    "cn": "免费开放",
+    "en": "open to the public free of charge"
+   },
+   {
+    "cn": "在线预订场地",
+    "en": "book venues online"
+   },
+   {
+    "cn": "收取少量费用",
+    "en": "charge a small / nominal fee"
+   }
+  ],
+  "pitfalls": [
+   "「进一步加大投资」易漏译 further，且 investment 后常需搭配 in",
+   "「除了……外，还……」需用 in addition to 而非 except，且主句须体现「还」（also）",
+   "「免费开放」不可直译为 open freely，应为 free of charge 或 at no cost",
+   "「改造旧工厂」的「改造」应译为 renovate / convert，而非 reform / transform",
+   "「可以预见」为无人称表达，宜用 it is foreseeable that 形式主语结构，而非 we can foresee"
+  ],
+  "upgrades": [
+   {
+    "plain": "more and more gymnasiums",
+    "better": "an increasing / growing number of gymnasiums",
+    "note": "用 an increasing number of 替代口语化的 more and more，更书面正式"
+   },
+   {
+    "plain": "to meet people's needs",
+    "better": "to better meet people's rapidly growing fitness needs",
+    "note": "补充副词 better 与修饰语 rapidly growing，信息更完整，层次更丰富"
+   },
+   {
+    "plain": "use modern information technology",
+    "better": "by applying modern information technology",
+    "note": "用 by doing 结构体现方式状语，apply 比 use 更正式、搭配更学术"
+   },
+   {
+    "plain": "charge a little money",
+    "better": "charge only a small / nominal fee",
+    "note": "nominal fee 为固定搭配，表达「象征性收费」更地道精准"
+   },
+   {
+    "plain": "We can expect that ...",
+    "better": "It is foreseeable that ...",
+    "note": "形式主语句式更客观正式，避免主观化的 we 开头，更符合书面语体"
+   }
+  ]
+ }
+}

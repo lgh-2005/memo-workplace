@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "1762391b8add__writing__all",
+ "examId": "1762391b8add",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2025 年 12 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T07:18:00.797Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 37514,
+ "usage": {
+  "prompt_tokens": 739,
+  "completion_tokens": 2340,
+  "total_tokens": 3079,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 739,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2340,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 739,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕\"追逐中国梦的过程中年轻人拥有更多机会实现自我价值\"展开论述，可评论、举例或结合个人经历，150-200词。",
+    "outline": [
+     "第一段：抄写指定首句，引出主题——中国梦为青年提供了广阔的舞台，点明国家发展与个人价值实现之间的正向关系。",
+     "第二段：分层论证，从科技创新创业机遇、政策扶持、教育与技能提升等角度举例说明年轻人如何借助时代红利实现自我价值。",
+     "第三段：总结升华，强调中国梦既是集体愿景也是个人成长的催化剂，号召青年积极把握机遇。"
+    ],
+    "sample": "While striving for the Chinese Dream, young people enjoy more opportunities to realize their self-worth. In an era of unprecedented national development, the ambitious goals of rejuvenating the Chinese nation have opened up vast arenas for the younger generation to showcase their talents and fulfill their aspirations.\n\nTo begin with, the rapid advancement of technology and innovation has created numerous career paths that were unimaginable decades ago. Young entrepreneurs, for instance, can leverage cutting-edge platforms to launch startups, transforming creative ideas into thriving businesses. Moreover, government policies such as tax incentives and funding programs have significantly lowered the barriers for youth to pursue their dreams. Furthermore, the emphasis on education and skill development within the framework of the Chinese Dream ensures that young people are well-equipped to seize these opportunities. Volunteering in rural areas, engaging in scientific research, or participating in international exchanges — all these endeavors enable the youth to contribute meaningfully to society while discovering their own potential.\n\nIn conclusion, the Chinese Dream is not merely a collective vision but also a powerful catalyst that empowers young individuals to achieve personal fulfillment and growth.",
+    "phrases": [
+     {
+      "en": "realize one's self-worth",
+      "cn": "实现自我价值；常用于描述个人追求与社会贡献的结合"
+     },
+     {
+      "en": "unprecedented national development",
+      "cn": "前所未有的国家发展；用于强调时代背景的独特性"
+     },
+     {
+      "en": "open up vast arenas for",
+      "cn": "为……开辟广阔舞台；比喻提供大量发展空间"
+     },
+     {
+      "en": "leverage cutting-edge platforms",
+      "cn": "利用前沿平台；体现科技语境下的主动作为"
+     },
+     {
+      "en": "lower the barriers for",
+      "cn": "降低……的门槛；常搭配政策、制度类主语"
+     },
+     {
+      "en": "well-equipped to seize opportunities",
+      "cn": "有充分准备去抓住机遇；形容能力与机会的匹配"
+     },
+     {
+      "en": "contribute meaningfully to society",
+      "cn": "为社会做出有意义的贡献；比 make contributions 更高级"
+     },
+     {
+      "en": "a powerful catalyst that empowers",
+      "cn": "赋能的强大催化剂；将抽象概念具象化的高分表达"
+     },
+     {
+      "en": "fulfill one's aspirations",
+      "cn": "实现抱负；比 realize dreams 更正式书面"
+     },
+     {
+      "en": "transform creative ideas into thriving businesses",
+      "cn": "将创意转化为蓬勃发展的企业；适用于创新创业话题"
+     }
+    ],
+    "pitfalls": [
+     "遗忘抄写指定首句或篡改原句用词，直接扣分",
+     "通篇空谈口号，缺乏具体事例支撑，论证单薄",
+     "词数不足150或超过200，审题不仔细导致硬性失分",
+     "中式英语频现，如 'realize self-value' 应为 'realize self-worth'",
+     "段落之间缺乏逻辑衔接词，行文松散无层次感"
+    ],
+    "upgrades": [
+     {
+      "plain": "Young people have many chances to succeed.",
+      "better": "Young people enjoy more opportunities to realize their self-worth.",
+      "note": "用 enjoy 替代 have，搭配 realize self-worth 更正式且贴合题目原句表述"
+     },
+     {
+      "plain": "The government helps young people start businesses.",
+      "better": "Government policies such as tax incentives and funding programs have significantly lowered the barriers for youth to pursue their dreams.",
+      "note": "具体列举政策类型，动词用 lower the barriers，信息密度与学术感更强"
+     },
+     {
+      "plain": "The Chinese Dream is good for young people.",
+      "better": "The Chinese Dream is not merely a collective vision but also a powerful catalyst that empowers young individuals to achieve personal fulfillment.",
+      "note": "not merely...but also 加 catalyst 隐喻，句式更复杂，表达更深刻"
+     },
+     {
+      "plain": "Young people can do many things to help society.",
+      "better": "Volunteering in rural areas, engaging in scientific research, or participating in international exchanges — all these endeavors enable the youth to contribute meaningfully to society.",
+      "note": "并列动名词短语前置 + 破折号总结，结构工整且例证丰富"
+     },
+     {
+      "plain": "Technology gives young people new jobs.",
+      "better": "The rapid advancement of technology and innovation has created numerous career paths that were unimaginable decades ago.",
+      "note": "主语用抽象名词组，定语从句补充时间对比，增强表达深度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "While striving for the Chinese Dream, young people enjoy more opportunities to realize their self-worth. — 追逐中国梦的过程中，年轻人拥有更多实现自我价值的机会。（指定首句，while + 现在分词作时间/伴随状语）",
+   "The ambitious goals of rejuvenating the Chinese nation have opened up vast arenas for the younger generation to showcase their talents. — 振兴中华民族的宏伟目标为年轻一代展示才华开辟了广阔舞台。（of 短语作后置定语 + 不定式作目的状语）",
+   "Government policies such as tax incentives and funding programs have significantly lowered the barriers for youth to pursue their dreams. — 税收优惠和资金扶持等政策大幅降低了青年追梦的门槛。（such as 举例 + lower the barriers 搭配地道）",
+   "The Chinese Dream is not merely a collective vision but also a powerful catalyst that empowers young individuals to achieve personal fulfillment and growth. — 中国梦不仅是集体愿景，更是赋能青年实现个人成就与成长的强大催化剂。（not merely...but also + 定语从句，升华全文）"
+  ]
+ }
+}

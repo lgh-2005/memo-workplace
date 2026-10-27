@@ -1,0 +1,203 @@
+{
+ "schemaVersion": 1,
+ "id": "e301e2b6677c__translation__all",
+ "examId": "e301e2b6677c",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2014 年考研英语真题",
+ "year": 2014,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:30:37.379Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67845,
+ "usage": {
+  "prompt_tokens": 1404,
+  "completion_tokens": 4300,
+  "total_tokens": 5704,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1404,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4300,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1404,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "音乐的形而上本质与贝多芬的精神遗产",
+  "translation": "音乐对不同的人意味着不同的东西，有时甚至对同一个人在人生不同时刻也意味着不同的东西。音乐可以是诗意的、哲学的、感性的或数学的，但无论如何，在我看来，它必须与人的灵魂有所关联。因此，音乐是形而上的；但其表达手段却纯粹是物质性的：声音。我相信，正是这种形而上的信息与物质手段之间的永恒共存，构成了音乐的力量。这也是为什么当我们试图用文字描述音乐时，我们所能做的只是表达自己对音乐的感受，而无法把握音乐本身的原因。\n\n贝多芬在音乐上的重要性，主要体现在其作品的革命性上。他将音乐从此前盛行的和声与结构规范中解放了出来。有时我在他的晚期作品中感受到一种打破一切连续性迹象的意志。那些音乐是突兀的、看似断裂的，正如他最后一首钢琴奏鸣曲那样。在音乐表达方面，他并不觉得受到传统规范的束缚。人们普遍认为，他是一个思想自由且勇敢无畏的人，而我认为勇气是理解他的作品——更不用说演奏他的作品——所不可或缺的品质。\n\n这种勇敢的态度事实上成为演奏贝多芬音乐的一项要求。他的作品要求演奏者展现勇气，例如在力度变化的运用上。贝多芬惯于以极强的力度将音量推至顶峰，然后骤然转入一段轻柔的乐句，而这种手法在他之前的作曲家中很少使用。\n\n贝多芬是一个具有广义上的深刻政治意识的人。他对日常政治不感兴趣，但关注道德行为问题以及影响整个社会的是非对错等更宏大的问题。尤为重要的是他对自由的看法，在他看来，自由与个人的权利和责任紧密相连：他倡导思想自由和个人表达的自由。\n\n贝多芬的音乐倾向于从混乱走向秩序，仿佛秩序是人类存在的必然要求。对他而言，秩序并非源于遗忘或无视困扰我们生存的种种混乱；秩序是一种必要的发展，一种可能通往希腊式精神升华理想的提升。《英雄交响曲》中的葬礼进行曲并非末乐章，而是第二乐章，这绝非偶然，如此一来，苦难便不会成为最后的定论。我们可以这样诠释贝多芬的大部分作品：苦难不可避免，但与之抗争的勇气使人生变得值得一过。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "It is also the reason why when we try to describe music with words, all we can do is articulate our reactions to it, and not grasp music itself.",
+    "cn": "这也是为什么当我们试图用文字描述音乐时，我们所能做的只是表达自己对音乐的感受，而无法把握音乐本身的原因。",
+    "structure": "主干为 It is the reason why...（表语从句说明原因）。why 引导的定语从句中嵌套了 when 引导的时间状语从句；从句主干为 all we can do is articulate... and not grasp...，其中 all 后省略了 that 引导的定语从句修饰 all。",
+    "points": [
+     "articulate 译为\"表达/阐述\"而非\"发音\"，体现准确选词",
+     "why 引导定语从句修饰 reason，需译出\"……的原因\"",
+     "all we can do is... and not... 的并列否定结构须完整译出"
+    ],
+    "pitfall": "容易将 articulate 误译为\"清晰发音\"；也容易忽略 why 从句中嵌套的 when 从句，导致句意层次混乱，应先译时间状语再译主句。"
+   },
+   {
+    "number": 47,
+    "en": "By all accounts he was a freethinking person, and a courageous one, and I find courage an essential quality for the understanding, let alone the performance, of his works.",
+    "cn": "人们普遍认为，他是一个思想自由且勇敢无畏的人，而我认为勇气是理解他的作品——更不用说演奏他的作品——所不可或缺的品质。",
+    "structure": "句子由两个并列分句组成：① By all accounts he was a freethinking person, and a courageous one；② I find courage an essential quality for the understanding... of his works。第②句用 find+O+OC 结构，let alone the performance 为插入语，构成递进关系。",
+    "points": [
+     "By all accounts 译为\"人们普遍认为/众所周知\"",
+     "find courage an essential quality 为 find+宾语+宾补结构，需译出\"认为勇气是……品质\"",
+     "let alone 译为\"更不用说\"，体现递进语气"
+    ],
+    "pitfall": "let alone the performance 是插入成分，打断了 for the understanding of his works 的完整结构，容易误解为 performance 与 understanding 是平行宾语而非递进关系。"
+   },
+   {
+    "number": 48,
+    "en": "Beethoven's habit of increasing the volume with an extreme intensity and then abruptly following it with a sudden soft passage was only rarely used by composers before him.",
+    "cn": "贝多芬惯于以极强的力度将音量推至顶峰，然后骤然转入一段轻柔的乐句，而这种手法在他之前的作曲家中很少使用。",
+    "structure": "主语为超长名词短语 Beethoven's habit of doing A and then doing B；谓语为被动结构 was only rarely used；by composers before him 为施动者状语。of 后接两个并列的动名词短语作 habit 的后置定语。",
+    "points": [
+     "识别长主语 Beethoven's habit of... passage 并完整译出，主谓不可断裂",
+     "with an extreme intensity 译为\"以极强的力度\"，体现方式状语",
+     "was only rarely used 被动语态需灵活处理为主动或无主句"
+    ],
+    "pitfall": "主语过长（含两个并列动名词短语），考生容易在 passage 处断句错误，将 was 误认为从句谓语；abruptly 和 sudden 语义相近但修饰对象不同，翻译时需区分。"
+   },
+   {
+    "number": 49,
+    "en": "Especially significant was his view of freedom, which, for him, was associated with the rights and responsibilities of the individual: he advocated freedom of thought and of personal expression.",
+    "cn": "尤为重要的是他对自由的看法，在他看来，自由与个人的权利和责任紧密相连：他倡导思想自由和个人表达的自由。",
+    "structure": "句首为倒装结构，正常语序为 His view of freedom was especially significant。which 引导非限制性定语从句，for him 为插入语。冒号后为解释说明部分，of thought 和 of personal expression 并列修饰 freedom。",
+    "points": [
+     "识别表语前置的完全倒装结构，还原主语 his view of freedom",
+     "which 引导的非限制性定语从句及插入语 for him 的准确处理",
+     "冒号后的解释句与前文的逻辑衔接需译出"
+    ],
+    "pitfall": "倒装结构是最大难点，考生易将 Especially significant 误认为副词修饰动词；for him 作为插入语若遗漏会丢失\"在他看来\"的主观视角。"
+   },
+   {
+    "number": 50,
+    "en": "One could interpret much of the work of Beethoven by saying that suffering is inevitable, but the courage to fight it renders life worth living.",
+    "cn": "我们可以这样诠释贝多芬的大部分作品：苦难不可避免，但与之抗争的勇气使人生变得值得一过。",
+    "structure": "主干为 One could interpret much of the work of Beethoven；by saying that... 为方式状语。that 引导的宾语从句内含两个并列分句：suffering is inevitable 与 the courage to fight it renders life worth living。renders 为使役动词，接 life（宾语）+worth living（宾补）。",
+    "points": [
+     "renders life worth living 中 render 译为\"使/使得\"，worth living 译为\"值得一过\"",
+     "One could 译为\"我们可以\"，体现泛指主语的汉语习惯",
+     "by saying that 引出方式状语，可灵活调整为冒号或\"通过……来\""
+    ],
+    "pitfall": "render 一词考生较陌生，容易漏译或误译；worth living 是固定搭配，须译出\"值得度过/值得一过\"的完整含义，不可仅译为\"有价值\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "metaphysical",
+    "cn": "形而上的（adj.）"
+   },
+   {
+    "w": "articulate",
+    "cn": "清楚地表达，阐明（v.）"
+   },
+   {
+    "w": "hitherto",
+    "cn": "迄今为止（adv.）"
+   },
+   {
+    "w": "prevailing",
+    "cn": "盛行的，普遍的（adj.）"
+   },
+   {
+    "w": "abrupt",
+    "cn": "突然的，唐突的（adj.）"
+   },
+   {
+    "w": "sonata",
+    "cn": "奏鸣曲（n.）"
+   },
+   {
+    "w": "restrained",
+    "cn": "受约束的，克制的（adj.）"
+   },
+   {
+    "w": "freethinking",
+    "cn": "思想自由的，自由思考的（adj.）"
+   },
+   {
+    "w": "let alone",
+    "cn": "更不用说（连词短语）"
+   },
+   {
+    "w": "by all accounts",
+    "cn": "人们普遍认为，据大家所说（固定短语）"
+   },
+   {
+    "w": "dynamics",
+    "cn": "力度变化（n.，音乐术语）"
+   },
+   {
+    "w": "passage",
+    "cn": "乐段，段落（n.）"
+   },
+   {
+    "w": "imperative",
+    "cn": "必要之事，紧迫之事（n.）；必要的（adj.）"
+   },
+   {
+    "w": "plague",
+    "cn": "困扰，折磨（v.）"
+   },
+   {
+    "w": "Eroica Symphony",
+    "cn": "《英雄交响曲》（专有名词）"
+   },
+   {
+    "w": "render",
+    "cn": "使成为，使变得（v.）"
+   },
+   {
+    "w": "inevitable",
+    "cn": "不可避免的（adj.）"
+   }
+  ],
+  "skills": [
+   "长主语句（如第48题）须先识别主谓边界，再分层翻译修饰成分",
+   "倒装结构（如第49题）需还原正常语序后再组织中文译文",
+   "插入语（如 for him、let alone...）可用破折号或逗号隔开，保持主句连贯",
+   "被动语态灵活转化为中文主动句或无主句，避免生硬的\"被\"字句",
+   "抽象名词（如 courage、freedom）翻译时可适当增词，使语义具体化"
+  ]
+ }
+}

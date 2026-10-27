@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "a2a200f80779__banked_cloze__all",
+ "examId": "a2a200f80779",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2015 年 12 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T04:42:12.380Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 68770,
+ "usage": {
+  "prompt_tokens": 1175,
+  "completion_tokens": 6132,
+  "total_tokens": 7307,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4124
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1175
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "睡眠不足与补觉研究",
+  "gist": "文章指出当下社会轻视睡眠、许多成年人长期睡眠不足，是否周末补觉在研究人员中存在争议。新证据显示补觉虽非理想但有部分改善作用，可部分修复睡眠剥夺造成的代谢损害，但专家仍不愿鼓励少睡后补觉。安眠药也并非完美解决方案。",
+  "difficulty": "中等",
+  "translation": "事实上，睡眠被如此低估，以至于少睡几小时也能成为一种荣誉徽章。此外，我们生活在一个迎合熬夜者的文化中，从24小时便利店到从不关门的网上购物网站，都是如此。因此，超过一半的美国成年人没有像睡眠专家建议的那样每晚获得7至9小时的睡眠，也就不足为奇了。\n\n我们能否补觉——比如在周末补觉——是睡眠研究者中一个激烈争论的话题。最新证据表明，虽然补觉并非理想做法，但可能有所帮助。当加州大学洛杉矶分校睡眠研究员兼医学教授刘将长期睡眠受限的人带进实验室，让他们周末每晚安睡约10小时后，他们的胰岛素处理血糖的能力出现了改善。这表明补觉可能消除睡眠不足造成的部分——但并非全部——损害，考虑到每晚睡眠不足的成年人如此之多，这一点令人鼓舞。不过，刘还没有准备好认可少睡之后再补觉的习惯。\n\n安眠药虽然对一些人有益，但并不一定是一种有效的疗法。埃默里大学睡眠中心主任南希·科洛普博士说：“安眠药会作用于大脑的某一个区域，但永远不会存在完美的安眠药，因为你无法真正复制不同化学物质在大脑不同部位进出以经历不同睡眠阶段的过程。”",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "correct": "caters",
+    "why": "空格前为关系代词 that 指代 culture，空后是 to the late-nighter；主语为单数 culture，需用动词第三人称单数。固定搭配 cater to 表示“迎合”，符合“文化迎合熬夜者”的语境。",
+    "traps": "alternatively/chronically/necessarily 是副词，不能作谓语；debated 虽可作谓语，但多用 about/on 或接宾语，不能接 to；ideal/improvements/deprivation/ready 等词性或语义不符。",
+    "tip": "熟记 cater to 固定搭配，并根据主语单数判断动词形式。"
+   },
+   {
+    "number": 27,
+    "answer": "M",
+    "correct": "recommended",
+    "why": "空格前为 as，后为 by sleep experts，构成“as recommended by...”过去分词短语，意为“如睡眠专家建议的那样”。recommended 与 7 至 9 小时睡眠建议吻合。",
+    "traps": "debated/caters/chronically 等不能填入 as...by 结构；ready 和 ideal 不表示专家建议；necessarily 语义不通，且位置不当。",
+    "tip": "as...by experts 结构常见用过去分词 recommended。"
+   },
+   {
+    "number": 28,
+    "answer": "D",
+    "correct": "debated",
+    "why": "空前 hotly 为副词，空后 topic 为名词，需要形容词或过去分词作定语；hotly debated 为固定搭配，表示“激烈争论的”，与研究者间存在争议的句意吻合。",
+    "traps": "chronically 是副词不能修饰名词；ideal 虽为形容词但不与 hotly 搭配；recommended 不与 hotly 构成常见搭配，且语义不符。",
+    "tip": "hotly debated 是高频形容词搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "F",
+    "correct": "ideal",
+    "why": "空格前 isn't，后接形容词作表语；句子对比“并不理想但可能有帮助”，ideal 表示“理想的”，使让步转折逻辑成立。",
+    "traps": "ready 虽为形容词，但常见用法是 be ready to do；debated 是过去分词，语义“被争论”不通；improvements/deprivation 为名词，不能直接作表语。",
+    "tip": "让步逻辑中 ideal 与 might help 形成对比。"
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "correct": "chronically",
+    "why": "空格处于 brought 与 sleep-restricted people 之间，需用副词修饰形容词；chronically 表示“长期地”，搭配“长期睡眠受限的人”准确。",
+    "traps": "alternatively/necessarily 虽为副词，但语义不符合实验对象的背景；caters/ideal/debated 等词性或语义不符。",
+    "tip": "形容词前的程度或时间副词判断词性。"
+   },
+   {
+    "number": 31,
+    "answer": "G",
+    "correct": "improvements",
+    "why": "show 后接名词作宾语，空后 in the ability 提示 improvements in... 结构，表示“在能力方面出现改善”；用复数指可测量的提升。",
+    "traps": "ideal/ready 为形容词，不能作 show 的宾语；deprivation 意为剥夺，与胰岛素能力改善无关；chronically 为副词，不能作宾语。",
+    "tip": "show improvements in... 是常见名词搭配。"
+   },
+   {
+    "number": 32,
+    "answer": "E",
+    "correct": "deprivation",
+    "why": "空前有 sleep，空后 causes 是谓语，需要名词作主语构成 sleep deprivation（睡眠剥夺/缺乏），表达“睡眠缺乏造成的损害”。",
+    "traps": "chronically 是副词不能作主语；improvements 意义反了；recommended 为过去分词，不能与 sleep 构成固定主语。",
+    "tip": "sleep deprivation 为固定医学术语。"
+   },
+   {
+    "number": 33,
+    "answer": "L",
+    "correct": "ready",
+    "why": "空前 isn't，空后 to endorse；be ready to do 为固定搭配，表示“准备好/愿意做”；句意为刘尚未准备好认可这种习惯。",
+    "traps": "ideal 后不接 to do；recommended/debated 用于被动意义，但主语是人且后接 to endorse 不成立；necessarily 副词位置不当。",
+    "tip": "be ready to do 表示准备好做某事。"
+   },
+   {
+    "number": 34,
+    "answer": "H",
+    "correct": "necessarily",
+    "why": "空处位于 not 与 an effective remedy 之间，需要副词；not necessarily 为固定搭配，表示“不一定”，语气委婉准确。",
+    "traps": "chronically/alternatively 虽为副词，但不与 not 构成该意义；ready/ideal 为形容词，不能修饰 an effective remedy；deprivation/improvements 为名词，词性不符。",
+    "tip": "not necessarily 是固定否定表达。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "target",
+    "why": "空前 will，空后 one area of the brain，需要原形动词；target 表示“以…为目标/作用于”，符合安眠药作用于某个大脑区域的语境。",
+    "traps": "caters 是第三人称单数且搭配 to；recommended/debated 不是原形动词；chronically 为副词不能作谓语；improvements/deprivation 为名词，词性不符。",
+    "tip": "will 后接动词原形，target 符合语义。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "cater",
+    "cn": "v. 迎合；满足需要（cater to...）"
+   },
+   {
+    "w": "chronically",
+    "cn": "adv. 长期地；慢性地"
+   },
+   {
+    "w": "debated",
+    "cn": "adj. 有争议的；被讨论的"
+   },
+   {
+    "w": "deprivation",
+    "cn": "n. 剥夺；缺乏"
+   },
+   {
+    "w": "ideal",
+    "cn": "adj. 理想的；n. 理想"
+   },
+   {
+    "w": "improvement",
+    "cn": "n. 改善，改进"
+   },
+   {
+    "w": "necessarily",
+    "cn": "adv. 必然地；必要地"
+   },
+   {
+    "w": "ready",
+    "cn": "adj. 准备好的；愿意的"
+   },
+   {
+    "w": "recommended",
+    "cn": "adj. 被推荐的；v. 建议（过去分词）"
+   },
+   {
+    "w": "target",
+    "cn": "v. 把…作为目标；n. 目标"
+   },
+   {
+    "w": "alternatively",
+    "cn": "adv. 或者，作为替代"
+   }
+  ],
+  "skills": [
+   "先快速浏览全文，抓住睡眠与补觉主题。",
+   "分析空格所在句语法，判断所需词性与成分。",
+   "利用固定搭配和上下文逻辑缩小选项范围。",
+   "代入答案回读全文，检查语法、语义是否连贯。"
+  ]
+ }
+}

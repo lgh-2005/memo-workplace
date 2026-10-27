@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "116719f515cc__reading__1",
+ "examId": "116719f515cc",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 6 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:43:49.364Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57874,
+ "usage": {
+  "prompt_tokens": 1810,
+  "completion_tokens": 3885,
+  "total_tokens": 5695,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1810,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3885,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1810,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "AI技术在音乐创作中的应用与争议",
+  "gist": "文章围绕AI在音乐创作中的应用展开讨论。首先以Taryn Southern为例说明AI可辅助音乐创作，随后指出部分音乐人认为AI音乐缺乏人情味且质量不高，又从音乐的人文属性角度解释了人们对AI音乐的抵触，最后作者认为AI音乐终将成为新常态。",
+  "structure": [
+   "第一段：引出AI用于音乐创作的两种对立看法",
+   "第二段：以Taryn Southern为正面案例说明AI辅助创作的优势",
+   "第三段：呈现反对方观点——AI音乐质量低且缺乏人情味",
+   "第四段：从音乐的人文属性角度阐释人们对AI音乐的抗拒",
+   "第五段：作者表态——AI音乐将不可避免地成为新常态"
+  ],
+  "difficulty": "中等",
+  "translation": "自从美国偶像明星塔琳·萨瑟恩于2017年开始利用AI作曲以来，全世界的音乐人都开始思考AI和现代技术对音乐制作意味着什么。有人将AI用于音乐创作视为一种有益的工具，也有人将其视为近乎\"末日的开端\"。\n\n就塔琳而言，AI软件使她能够表达出自己不知道如何组合的旋律和和弦。因此，最终作品是一种协作成果，而非完全由技术产出的作品。塔琳的故事带有明显的积极色彩，凸显了AI在音乐制作中的优势。它可以作为灵感来源，也可以在音乐人遭遇文思枯竭时充当理想的创作起点。\n\n与将AI视为工具相反，一些音乐人认为AI对音乐界极其有害。目前，由于此类技术尚处于起步阶段，它所创作的音乐未必是我们想听的。简而言之，质量不高。那些自己创作过音乐的人，甚至是真正的、有艺术性的音乐的乐迷，也会认为电脑永远无法模仿真正音乐人的作品（及其人情味）。\n\n音乐一直是人类历史不可分割的一部分；事实上，已知最早的音乐作品据信有大约3400年的历史。歌曲长期以来被用作传递信息和民间故事的手段，涵盖了从社会伦理到世界历史的方方面面。由于许多人将音乐视为一种内在的人类表达方式，因此它往往被认为太过珍贵而不能交给技术。一台电脑生成一首并非由艺术家苦心创作的\"随机\"音乐作品，这种想法几乎被视为是亵渎神圣的。\n\n无论你站在争论的哪一方，AI在音乐制作中的使用似乎只会越来越频繁。我们的现代世界热衷于技术进步。与其回避这一看似暗淡的未来，最好的态度是保持乐观和好奇。虽然总会有固执的守旧派音乐人拒绝使用技术，但音乐制作人应该将AI视为值得拥抱的事物。AI音乐软件目前仍处于萌芽阶段，但随着更多投资者对此类技术的发展和成果感兴趣，加上近年来其他技术进步的快速增长，AI制作的音乐被视为新常态只是时间问题。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "some musicians consider it to be hugely detrimental to the music scene.",
+    "why": "题目问\"一些音乐人如何看待AI用于音乐创作\"。第三段明确指出\"some musicians consider it to be hugely detrimental to the music scene\"（一些音乐人认为AI对音乐界极其有害）。B选项\"It would be detrimental to music production\"是对原文detrimental的近乎原词复现，与原文完全吻合。",
+    "traps": "A选项\"产生更多音乐偶像\"原文未提及，属于无中生有；C选项\"阻碍对真正音乐的理解\"偷换概念，原文说的是质量不高和缺乏人情味，并非\"阻碍理解\"；D选项\"音乐创作新时代的开始\"属于正反混淆，原文说的是\"the beginning of the end\"（末日的开端），而非新时代的开端。",
+    "tip": "注意题目中some的限定词，精准定位持某一立场的观点。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "Taryn's story has a distinctly positive feel that highlights the advantages of using AI in music production.",
+    "why": "题目问Taryn Southern的故事说明了什么。第二段总结句明确指出\"Taryn's story has a distinctly positive feel that highlights the advantages of using AI in music production\"，即她的故事凸显了AI在音乐制作中的优势。A选项\"AI technology is conducive to music composition\"（AI技术有助于音乐创作）是对advantages的同义改写。",
+    "traps": "B选项\"没有高科技音乐人将无法创作\"过度推断，原文只说AI是辅助工具而非不可或缺；C选项\"音乐人常常黔驴技穷\"以偏概全，writer's block只是一种可能的情况；D选项\"AI对创作旋律和和弦不可或缺\"将AI的辅助作用夸大为indispensable（不可或缺的），偷换程度。",
+    "tip": "例证题要看例子之后的总结句，而非只看例子本身的细节。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Those who have produced their own music, or even fans of authentic, artistic music, will also argue that a computer could never emulate the work (and human touch) of a true musician.",
+    "why": "题目问一些音乐人反对AI创作音乐的原因。第三段末句指出电脑永远无法模仿真正音乐人的作品及其\"human touch\"（人情味），即AI音乐缺乏人性化因素。A选项\"Music produced with AI technology lacks humanness\"是对\"could never emulate the human touch\"的同义概括。",
+    "traps": "B选项\"AI音乐容易被模仿\"与原文相反，原文说的是AI无法模仿人类音乐家，而非AI音乐容易被模仿；C选项\"贬低人类的角色\"虽有一定关联但偏离重点，原文强调的是AI产品缺乏人情味而非人类角色被贬低；D选项\"耗尽年轻音乐人的创作灵感\"属于无中生有，原文未提及此内容。",
+    "tip": "关注原文中括号内的补充信息，它往往是命题的关键依据。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Since many people see music as such an inherently human expression, it is often considered as too precious to impart to technology.",
+    "why": "题目问为什么许多人认为音乐太珍贵而不能交给AI。第四段因果句清楚指出原因：\"many people see music as such an inherently human expression\"（音乐是一种内在的人类表达方式）。D选项\"It is human specific\"（它是人类特有的）是对\"inherently human expression\"的精准概括。",
+    "traps": "A选项\"不经过痛苦就无法创作\"虽然原文提到painstakingly，但那是描述传统创作过程，并非人们认为音乐珍贵的原因；B选项\"不能随机产生\"只是对sacrilegious情景的描述，不是根本原因；C选项\"它是人类生活的一部分\"虽与原文相关，但不够精准，原文强调的是\"inherently human expression\"即人类特有性，而非仅仅是\"生活的一部分\"。",
+    "tip": "因果关系题要精准抓住since/because引导的原因从句，区分原因与表现。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "it's only a matter of time before AI-produced music is seen as the new norm.",
+    "why": "题目问作者对AI音乐未来的看法。末段最后一句明确表态\"it's only a matter of time before AI-produced music is seen as the new norm\"（AI制作的音乐被视为新常态只是时间问题）。B选项\"It has the prospect of becoming the norm in the future\"与原文完全对应，norm一词直接复现。",
+    "traps": "A选项\"继续引起音乐投资者的兴趣\"虽然原文提到了investors，但这只是作为支撑论据出现，并非作者对AI音乐未来的核心判断；C选项\"逐渐被守旧音乐人接受\"与原文矛盾，原文说的是\"stubborn old-school musicians who refuse to use tech\"；D选项\"最终失去新鲜感和吸引力\"属于无中生有，原文未暗示AI音乐会失去吸引力。",
+    "tip": "作者态度题重点关注末段总结性语句，尤其是带有判断性质的表述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "implications",
+    "cn": "n. 含义；影响；暗示"
+   },
+   {
+    "w": "collaborative",
+    "cn": "adj. 合作的；协作的"
+   },
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的；不利的"
+   },
+   {
+    "w": "emulate",
+    "cn": "v. 模仿；效仿"
+   },
+   {
+    "w": "integral",
+    "cn": "adj. 不可分割的；必需的"
+   },
+   {
+    "w": "inherently",
+    "cn": "adv. 内在地；固有地"
+   },
+   {
+    "w": "impart",
+    "cn": "v. 给予；传授；赋予"
+   },
+   {
+    "w": "sacrilegious",
+    "cn": "adj. 亵渎神圣的；大不敬的"
+   },
+   {
+    "w": "preoccupied",
+    "cn": "adj. 全神贯注的；专注于…的"
+   },
+   {
+    "w": "infancy",
+    "cn": "n. 初期；萌芽阶段；婴儿期"
+   },
+   {
+    "w": "painstakingly",
+    "cn": "adv. 煞费苦心地；精心地"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Since many people see music as such an inherently human expression, it is often considered as too precious to impart to technology.",
+    "cn": "由于许多人将音乐视为一种内在的人类表达方式，因此它往往被认为太过珍贵而不能交给技术。",
+    "note": "Since引导原因状语从句，主句用too...to...结构表示\"太……以至于不能……\"，impart to意为\"赋予/交给\"。"
+   },
+   {
+    "en": "Those who have produced their own music, or even fans of authentic, artistic music, will also argue that a computer could never emulate the work (and human touch) of a true musician.",
+    "cn": "那些自己创作过音乐的人，甚至是真正的、有艺术性的音乐的乐迷，也会认为电脑永远无法模仿真正音乐人的作品（及其人情味）。",
+    "note": "主语由Those who...or even fans of...并列构成，argue后接that引导的宾语从句，括号内and human touch是补充说明。"
+   },
+   {
+    "en": "AI music software is still very much in its infancy, but with more investors interested in the development and outcomes of such technology, and considering the rapid growth rate of other tech advances in recent years, it's only a matter of time before AI-produced music is seen as the new norm.",
+    "cn": "AI音乐软件目前仍处于萌芽阶段，但随着更多投资者对此类技术的发展和成果感兴趣，加上近年来其他技术进步的快速增长，AI制作的音乐被视为新常态只是时间问题。",
+    "note": "but连接转折关系；with+名词+形容词构成伴随状语，considering引导现在分词短语作补充条件状语；before引导时间状语从句修饰主句it's only a matter of time。"
+   }
+  ]
+ }
+}

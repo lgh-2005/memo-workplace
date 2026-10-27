@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "48c35b13a250__banked_cloze__all",
+ "examId": "48c35b13a250",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2022 年 6 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:42:45.110Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67336,
+ "usage": {
+  "prompt_tokens": 1373,
+  "completion_tokens": 3901,
+  "total_tokens": 5274,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1373,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3901,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1373,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英国巴斯城温泉与历史沿革",
+  "gist": "文章介绍了巴斯城由罗马人建立近两千年的历史，重点叙述了其三处温泉的发展，从罗马时期到乔治时期，再到查理二世、詹姆斯等王室成员前来\"取水\"治疗的故事，最终巴斯因\"奇迹\"名声大振，安妮女王到访后全国蜂拥而至，直至现代温泉浴场于2006年重新开放。",
+  "difficulty": "中等",
+  "translation": "巴斯城由罗马人建立，距今已近两千年。自那以后，它一直因其美学上令人愉悦的建筑和具有疗愈功效的温泉而闻名。\n\n巴斯有三处温泉；其中之一是国王泉，罗马浴场和一座神庙就建造在这处泉水之上。另外两处是十字泉和赫特林泉，彼此相邻，位于温泉浴场街上。虽然巴斯主要以罗马和乔治时期的城市而闻名，但在这几个世纪之间，许多人前来利用这里的天然泉水。\n\n尽管是乔治时期的人让\"取水\"或沐浴变得尤为时尚，但正是之前的几代人铺平了道路，激发了人们对巴斯及其温泉更大的兴趣。查理二世急切地想要一位继承人，却无法生出一个合法的儿子，于是来到巴斯取水，希望泉水的神奇力量能够在一定程度上补救这一局面。渴望男性继承人的詹姆斯和玛丽也双双来到巴斯，不久之后便生了一个儿子，这引发了许多关于他们后代真正父亲是谁的阴谋论。不管怎样，这一\"奇迹\"在一定程度上为巴斯创造了旅游业的繁荣，而一旦安妮女王在1702年到访，确立了巴斯作为必去之地的地位，全国民众便蜂拥而至这座城市。\n\n此后，巴斯的温泉浴场在150多年里不断地时兴时衰，直至完全关闭。2006年开放的新巴斯温泉浴场将现代建筑与古老的泉水融为一体，即现在的新皇家浴场。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "correct": "aesthetically",
+    "why": "此处需要副词修饰形容词 pleasing，构成\"aesthetically pleasing（在美学上令人愉悦的）\"这一固定搭配。候选副词中只有 aesthetically 能与 pleasing 搭配修饰 architecture，语义完美契合\"建筑之美\"的语境。",
+    "traps": "principally 虽也是副词，但\"principally pleasing\"语义不通，不能修饰 pleasing 表达美学含义。其余词均非副词，词性不匹配。",
+    "tip": "识别副词修饰形容词的搭配：aesthetically pleasing 是高频固定搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "constructed",
+    "why": "空格前有 were，构成被动语态 were constructed，意为\"（浴场和神庙）被建造\"。constructed 是动词过去分词，词性和语义均吻合，表示罗马浴场和神庙建在国王泉之上。",
+    "traps": "designates 是动词第三人称单数形式，无法与 were 构成被动语态；其余候选词词性不符，无法填入 were _____ 的结构。",
+    "tip": "were + 过去分词构成被动语态，锁定 constructed。"
+   },
+   {
+    "number": 28,
+    "answer": "K",
+    "correct": "principally",
+    "why": "空格修饰动词 known，需要副词。principally known as 意为\"主要以……而闻名\"，与后半句 many people came in the intervening centuries 形成转折：虽然主要以罗马和乔治时期闻名，但其间也有很多人来此。",
+    "traps": "aesthetically 虽也是副词，但\"aesthetically known\"语义不搭；需要表达\"主要地\"这一让步语义，只有 principally 合适。",
+    "tip": "Although...principally known...构成让步逻辑，副词修饰 known。"
+   },
+   {
+    "number": 29,
+    "answer": "H",
+    "correct": "natural",
+    "why": "此处需要形容词修饰名词 waters。natural waters 意为\"天然泉水\"，与上文 thermal springs、hot springs 语义呼应，说明人们前来利用这里的天然水源进行疗养。",
+    "traps": "legitimate 虽也是形容词，但\"legitimate waters（合法的水）\"语义荒谬；previous waters 也不合逻辑。natural 与温泉语境完美搭配。",
+    "tip": "形容词修饰名词，natural waters 符合温泉疗养语境。"
+   },
+   {
+    "number": 30,
+    "answer": "J",
+    "correct": "previous",
+    "why": "句意为\"正是之前的几代人铺平了道路\"。it was...who 构成强调句型，previous generations 与前句 the Georgians 形成对比，强调在乔治时期之前的人们已为巴斯温泉的流行奠定了基础。",
+    "traps": "legitimate generations（合法的几代人）语义不通；natural generations 搭配不当。只有 previous 表达时间上的\"先前\"，与对比逻辑吻合。",
+    "tip": "previous 与 Georgians 形成时间先后对比，强调句型 it was...who。"
+   },
+   {
+    "number": 31,
+    "answer": "G",
+    "correct": "legitimate",
+    "why": "查理二世\"无法生出一个合法的儿子\"，legitimate son 意为\"合法继承人/婚生子\"。历史背景是查理二世虽有私生子但无合法继承人，desperate for an heir 进一步佐证需要的是\"合法\"的儿子。",
+    "traps": "natural son 在英语中恰恰指\"私生子\"，与语境相反；previous son 语义不通。legitimate 是描述王位继承合法性的精准用词。",
+    "tip": "legitimate son 指合法继承人，契合王室继承的历史背景。"
+   },
+   {
+    "number": 32,
+    "answer": "L",
+    "correct": "remedy",
+    "why": "do something to remedy the situation 意为\"做点什么来补救/改善这一局面\"。remedy 作动词意为\"纠正、补救\"，与前文\"无法生出合法儿子\"的困境形成因果逻辑：希望温泉的神奇力量能改善状况。",
+    "traps": "extract the situation（提取局面）语义不通；designates 是第三人称单数，与 to 后接原形的语法不符。remedy 语义和语法均正确。",
+    "tip": "to + 动词原形，remedy the situation 是常见搭配，意为补救局面。"
+   },
+   {
+    "number": 33,
+    "answer": "I",
+    "correct": "offspring",
+    "why": "前文说詹姆斯和玛丽生了一个儿子，引发关于\"他们后代真正父亲\"的阴谋论。offspring 意为\"后代、子嗣\"，用作 their offspring 指代他们刚出生的儿子，与整段王室继承的主题一致。",
+    "traps": "extract 作名词指\"摘录、提取物\"，语义不合；其他候选词均无\"后代\"含义。offspring 是该语境中唯一合适的名词。",
+    "tip": "offspring 指后代子嗣，与王室继承人话题紧密相关。"
+   },
+   {
+    "number": 34,
+    "answer": "E",
+    "correct": "flocked",
+    "why": "the whole nation flocked to the city 意为\"全国民众蜂拥至这座城市\"。flock to 是固定搭配，表示大量涌向某地，与前文旅游繁荣（boom in tourism）的语境完美呼应，且时态为一般过去时。",
+    "traps": "incorporates 是第三人称单数现在时，与主语 the whole nation 搭配后时态与上下文过去时不一致；designates 语义不合。flocked 语义和时态均正确。",
+    "tip": "flock to 表示蜂拥而至，是描写人群涌向某地的经典搭配。"
+   },
+   {
+    "number": 35,
+    "answer": "F",
+    "correct": "incorporates",
+    "why": "主语是 The new Bath Spa（第三人称单数），谓语需用第三人称单数形式。incorporates...with... 意为\"将……与……融合\"，表达新浴场将现代建筑与古老泉水相结合，语义和语法均吻合。",
+    "traps": "designates 虽也是第三人称单数，但意为\"指定、命名\"，与 modern architecture with the ancient spring 的搭配语义不通。incorporates 准确表达\"融合\"之意。",
+    "tip": "incorporate...with... 表示将不同元素融为一体，第三人称单数形式。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "aesthetically",
+    "cn": "adv. 在美学上，审美地"
+   },
+   {
+    "w": "constructed",
+    "cn": "v. 建造，修建（construct 的过去分词）"
+   },
+   {
+    "w": "principally",
+    "cn": "adv. 主要地，首要地"
+   },
+   {
+    "w": "legitimate",
+    "cn": "adj. 合法的，正当的；婚生的"
+   },
+   {
+    "w": "remedy",
+    "cn": "v./n. 补救，纠正；疗法"
+   },
+   {
+    "w": "offspring",
+    "cn": "n. 后代，子嗣（单复数同形）"
+   },
+   {
+    "w": "flocked",
+    "cn": "v. 蜂拥，聚集（flock to 蜂拥而至）"
+   },
+   {
+    "w": "incorporates",
+    "cn": "v. 包含，合并，将……融入（incorporate 的第三人称单数）"
+   },
+   {
+    "w": "designates",
+    "cn": "v. 指定，命名（designate 的第三人称单数）"
+   },
+   {
+    "w": "extract",
+    "cn": "v./n. 提取，摘录；提取物"
+   },
+   {
+    "w": "thermal",
+    "cn": "adj. 热的，温泉的"
+   },
+   {
+    "w": "conspiracy",
+    "cn": "n. 阴谋，密谋"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握文章主题（巴斯城温泉历史），理解整体逻辑脉络。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的选择范围。",
+   "第三步：根据空格前后语法结构判断所需词性，如 were + 过去分词、to + 动词原形、形容词 + 名词等。",
+   "第四步：结合上下文语义和逻辑关系（转折、因果、对比）确定具体词汇，注意固定搭配如 flock to、remedy the situation。",
+   "第五步：填完后回读全文，检查语法一致性（时态、单复数）和语义连贯性，确保无重复选用。"
+  ]
+ }
+}

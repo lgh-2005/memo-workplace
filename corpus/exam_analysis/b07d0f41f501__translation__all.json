@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "b07d0f41f501__translation__all",
+ "examId": "b07d0f41f501",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2026 年考研英语真题",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T07:00:40.945Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52943,
+ "usage": {
+  "prompt_tokens": 1400,
+  "completion_tokens": 3238,
+  "total_tokens": 4638,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1400,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3238,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1400,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学素养概念的历史演变与教育目标",
+  "translation": "当今的科学教育围绕科学素养这一理念展开——科学素养是指非科学专业人士在社会中有效生活所需的基础科学知识。自近80年前这一概念被提出以来，它一直是课程开发者、地方学校董事会、企业和社区领导人以及政策制定者的核心目标。\n\n追溯这一术语的历史，我们可以看到科学素养的定义是如何随着时间推移而不断变化的，这在确定科学教育目标时造成了混乱。这是令人遗憾的，因为1945年最初提出的科学素养理念有很多值得推荐之处。当时，科学似乎是通往进步的关键，科学家们似乎掌握着世界的命运。回归到那个版本的科学素养——更注重教授科学是什么以及科学如何运作，而非死记硬背科学事实——似乎正是当今社会迫切需要的。\n\n在美国，为公众提供通识性、非技术性科学教育的愿望最早可追溯到19世纪末。教育工作者提出了让学生在高中完成详细的实验室练习的主张，他们认为这类训练的益处主要在于提升逻辑推理和观察能力。1915年出现的广受欢迎的新课程\"通识科学\"是另一项旨在训练学生将科学原理应用于日常非科学问题的努力。\n\n尽管这些努力是面向非科学方向的学生的，但它们从未真正进入主流思想和公共话语之中，成为凝聚广泛支持以推动学校科学教学重要性的手段。直到20世纪40年代\"科学素养\"这一短语的出现，科学才有了它所需要的有力口号，以此引起公众关注，并使改善科学教育成为一项重要的国家目标。\n\n美国对科学素养的高度重视最初源于科学技术在第二次世界大战期间所发挥的关键作用，以及人们所感知到的美国士兵的不足之处。随着战争的推进，科学迅速占据了核心地位。战斗越来越多地依赖于雷达和近炸引信等新型军事技术。基于科学的分析方法在大西洋搜寻德国潜艇的行动中取得了显著成功。此外，还有建造世界上第一颗原子弹的（当时属于机密的）工作。因此，科学家——尤其是物理学家——发现自己变得炙手可热。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "Tracing the history of the term, we can see how the definition of scientific literacy has shifted over time, muddying the waters when it comes to determining the goals of science education.",
+    "cn": "追溯这一术语的历史，我们可以看到科学素养的定义是如何随时间推移而不断变化的，这在确定科学教育目标时造成了混乱。",
+    "structure": "主句为 we can see how...（宾语从句）。句首 Tracing the history of the term 是现在分词短语作伴随状语；句末 muddying the waters 是现在分词短语作结果状语；when it comes to 引导时间/条件状语从句修饰 muddying the waters。",
+    "points": [
+     "muddying the waters 比喻义译为\"使情况变得模糊混乱\"",
+     "when it comes to 译为\"当涉及到……时/在……方面\"",
+     "现在分词 Tracing 作伴随状语、muddying 作结果状语的准确处理"
+    ],
+    "pitfall": "muddying the waters 是英语习语，字面意思为\"搅浑水\"，若直译则不符合中文表达习惯，需意译为\"造成混乱/使问题变得模糊不清\"。"
+   },
+   {
+    "number": 47,
+    "en": "A return to that version of scientific literacy, which focused more on teaching what science is and how it works and less on memorizing scientific facts, seems like something society today desperately needs.",
+    "cn": "回归到那个版本的科学素养——更注重教授科学是什么以及科学如何运作，而非死记硬背科学事实——似乎正是当今社会迫切需要的。",
+    "structure": "主语为 A return to that version of scientific literacy，谓语为 seems like，表语为 something (that) society today desperately needs（省略关系代词的定语从句）。中间 which focused more on...and less on... 是非限制性定语从句修饰 that version of scientific literacy，其中包含 what science is 和 how it works 两个宾语从句。",
+    "points": [
+     "非限制性定语从句 which focused more on...and less on... 的准确翻译，注意 more on...less on 的对比结构",
+     "what science is 和 how it works 两个并列宾语从句的处理",
+     "desperately 译为\"迫切地\"，体现程度之深"
+    ],
+    "pitfall": "句子主语较长且中间嵌入非限制性定语从句，容易导致主谓分离后误判句子结构。需识别出真正的谓语 seems like，并将定语从句以破折号插入语或前置方式处理。"
+   },
+   {
+    "number": 48,
+    "en": "Educators advanced the idea of having students complete detailed laboratory exercises in high schools in the belief that such work was beneficial primarily as a way to enhance logical reasoning and observational skills.",
+    "cn": "教育工作者提出了让学生在高中完成详细的实验室练习的主张，他们认为这类训练的益处主要在于提升逻辑推理和观察能力。",
+    "structure": "主句为 Educators advanced the idea of having students complete...。of having students complete 是介词短语作后置定语修饰 idea；in the belief that... 是介词短语作原因/方式状语，that 引导同位语从句解释 belief 的内容；primarily as a way to enhance... 作表语补足成分。",
+    "points": [
+     "in the belief that 译为\"认为……/相信……\"，识别 that 从句为 belief 的同位语从句",
+     "advanced the idea 译为\"提出了……主张/倡导了……理念\"",
+     "having students complete 动名词结构中 have sb do sth 的使役用法"
+    ],
+    "pitfall": "in the belief that 容易与前面的 in high schools 混淆层次，误将其理解为修饰 exercises 的成分。需正确判断 in the belief that 是修饰整个主句的状语，表示动机或依据。"
+   },
+   {
+    "number": 49,
+    "en": "It wasn't until the phrase \"scientific literacy\" came along in the 1940s that science had the formidable slogan it needed to command public attention and make improving science education an important national goal.",
+    "cn": "直到20世纪40年代\"科学素养\"这一短语的出现，科学才有了它所需要的有力口号，以此引起公众关注，并使改善科学教育成为一项重要的国家目标。",
+    "structure": "本句为 It wasn't until...that... 强调句型，强调时间状语 until the phrase \"scientific literacy\" came along in the 1940s。that 从句中 the formidable slogan 后跟省略了关系代词的定语从句 it needed；to command...and make... 为不定式短语作目的状语；make improving science education an important national goal 为 make+宾语+宾补结构。",
+    "points": [
+     "It wasn't until...that... 强调句型译为\"直到……才……\"",
+     "formidable 译为\"强有力的/令人敬畏的\"",
+     "make improving science education an important national goal 中 make+宾语+宾补结构的准确处理"
+    ],
+    "pitfall": "it needed 后省略了关系代词 that/which，容易忽略这是一个定语从句修饰 slogan。此外 command public attention 中 command 不是\"命令\"，而是\"博得、赢得（注意力/尊重）\"。"
+   },
+   {
+    "number": 50,
+    "en": "The intense focus on scientific literacy in the United States originally grew out of the critical role of science and technology during World War II, as well as the perceived deficiencies of American soldiers.",
+    "cn": "美国对科学素养的高度重视最初源于科学技术在第二次世界大战期间所发挥的关键作用，以及人们所感知到的美国士兵的不足之处。",
+    "structure": "主语为 The intense focus on scientific literacy in the United States，谓语为 grew out of，宾语为两个并列成分：the critical role of science and technology during World War II 和 the perceived deficiencies of American soldiers，由 as well as 连接。",
+    "points": [
+     "grew out of 译为\"源于/产生于\"，不能直译为\"生长出\"",
+     "perceived deficiencies 译为\"（人们）感知到的/察觉到的不足\"，注意 perceived 的含义",
+     "as well as 连接两个并列宾语，需完整译出"
+    ],
+    "pitfall": "perceived 是过去分词作定语，含有\"被认为的、人们所感知到的\"之意，暗示这种不足是一种主观判断而非客观事实，翻译时需体现这层含义，不能简单忽略。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "scientific literacy",
+    "cn": "科学素养（名词短语）"
+   },
+   {
+    "w": "revolve around",
+    "cn": "围绕……展开（动词短语）"
+   },
+   {
+    "w": "muddy the waters",
+    "cn": "搅浑水，使情况变得混乱（习语）"
+   },
+   {
+    "w": "articulate",
+    "cn": "清晰表述，明确阐明（动词）"
+   },
+   {
+    "w": "desperately",
+    "cn": "迫切地，极度地（副词）"
+   },
+   {
+    "w": "advance",
+    "cn": "提出，推进（动词）"
+   },
+   {
+    "w": "in the belief that",
+    "cn": "相信……，认为……（介词短语）"
+   },
+   {
+    "w": "formidable",
+    "cn": "强有力的，令人敬畏的（形容词）"
+   },
+   {
+    "w": "command",
+    "cn": "博得，赢得（注意力等）（动词）"
+   },
+   {
+    "w": "grew out of",
+    "cn": "源于，产生于（动词短语）"
+   },
+   {
+    "w": "perceived",
+    "cn": "被感知的，被认为的（形容词/过去分词）"
+   },
+   {
+    "w": "deficiency",
+    "cn": "不足，缺陷（名词）"
+   },
+   {
+    "w": "proximity fuze",
+    "cn": "近炸引信（名词短语）"
+   },
+   {
+    "w": "rally",
+    "cn": "凝聚，召集（动词）"
+   },
+   {
+    "w": "come along",
+    "cn": "出现，到来（动词短语）"
+   }
+  ],
+  "skills": [
+   "现在分词短语作状语（伴随/结果）需根据逻辑关系灵活翻译，不可机械对应",
+   "非限制性定语从句可用破折号插入语或拆译为独立分句处理",
+   "强调句型 It wasn't until...that... 需整体识别并译为\"直到……才……\"",
+   "英语习语（如 muddy the waters）需意译，避免字面直译导致语义不通",
+   "长主语中嵌套定语从句时，需先找准主句谓语，再处理修饰成分的翻译位置"
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "2dcfa087026e__reading__3",
+ "examId": "2dcfa087026e",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年考研英语真题",
+ "year": 2015,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:31:14.220Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58227,
+ "usage": {
+  "prompt_tokens": 1769,
+  "completion_tokens": 3601,
+  "total_tokens": 5370,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1769,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3601,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1769,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "Science期刊加强统计审查",
+  "gist": "Science期刊宣布在同行评审中增加统计审查环节，邀请统计专家组成审查委员会（SBoRE），对论文数据分析进行把关。多位学者对此举表示肯定，认为有助于提高研究可重复性，但也有人指出该机制仍存在依赖编辑识别问题论文的不足。",
+  "structure": [
+   "第1段：引出话题——Science增加统计审查环节及其背景",
+   "第2-3段：介绍SBoRE的运作机制及McNutt的解释",
+   "第4-5段：学者正面评价——示范效应与统计审查的必要性",
+   "第6段：David Vaux肯定举措但指出其局限性"
+  ],
+  "difficulty": "中等",
+  "translation": "《科学》杂志主编玛西娅·麦克纳特今天宣布，该杂志将在其同行评审流程中增加一轮额外的统计审查。此前，由于普遍担忧数据分析中的基础性错误正导致许多已发表研究成果无法被重复验证，其他期刊也采取了类似措施。\n\n麦克纳特在一篇社论中写道：\"读者必须对我们期刊发表的结论抱有信心。\"该杂志与美国统计学会合作，已任命七位专家组成统计审查编辑委员会（SBoRE）。稿件将由期刊内部编辑、现有的审稿编辑委员会或外部同行评审人员标记出来以进行额外审查。SBoRE小组随后将寻找外部统计学家来审查这些稿件。\n\n当被问及是否有某些特定论文促成了这一变化时，麦克纳特说：\"'统计委员会'的设立源于对科学研究中统计学和数据分析应用的广泛关切，也是《科学》杂志为提高所发表研究的可重复性而做出的整体努力的一部分。\"\n\n哈佛大学公共卫生学院的生物统计学家乔瓦尼·帕米贾尼是SBoRE小组的成员，他表示预计该委员会将\"主要发挥咨询作用\"。他之所以同意加入，是因为他\"认为设立SBoRE背后的远见卓识是新颖、独特的，且可能产生持久的影响。这种影响不仅体现在《科学》杂志本身的出版物上，而且有望影响更多出版机构，使它们以《科学》为榜样来改进自身的做法。\"\n\n研究方法论的医学研究者约翰·约阿尼迪斯表示，这一政策是\"最受欢迎的一步进展\"，并且\"早该如此\"。\"大多数期刊在统计审查方面都很薄弱，这损害了它们所发表内容的质量。我认为，对于当今大多数科学论文来说，统计审查比专家评审更为重要，\"他说道，但他也指出《内科学年鉴》《美国医学会杂志》和《柳叶刀》等生物医学期刊十分重视统计审查。\n\n细胞生物学家大卫·沃克斯指出，专业科学家理应知道如何分析数据，但已发表的研究中统计错误却多得令人警觉。他在2012年写道，研究人员应该提高自身标准，但期刊也应该采取更严格的路线，\"聘用具备统计素养的审稿人和能够核实流程的编辑\"。沃克斯表示，《科学》杂志将部分论文交给统计学家审查的做法\"有一定价值，但其弱点在于，它首先依赖审稿编辑委员会来识别'需要审查的论文'\"。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "The policy follows similar efforts from other journals, after widespread concern that basic mistakes in data analysis are contributing to the irreproducibility of many published research findings.",
+    "why": "原文第一段指出Science增加统计审查，并说\"该政策是继其他期刊类似努力之后\"推出的，说明不只Science一家，多家期刊都在加强统计审查。B选项\"journals are strengthening their statistical checks\"是对原文\"similar efforts from other journals\"和Science自身做法的概括总结，属于合理推断。",
+    "traps": "A项\"简化同行评审\"与原文\"adding an extra round\"（增加一轮）矛盾，属于反义干扰；C项\"few journals are blamed\"与原文\"widespread concern\"（普遍担忧）矛盾，且原文指的是数据分析错误普遍而非少数被指责；D项\"lack of data analysis\"偷换概念，原文说的是数据分析中的基础性\"错误\"（mistakes），不是\"缺乏\"数据分析。",
+    "tip": "注意区分\"数据分析中有错误\"与\"缺乏数据分析\"的语义差异。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "Manuscripts will be flagged up for additional scrutiny by the journal's internal editors, or by its existing Board of Reviewing Editors or by outside peer reviewers.",
+    "why": "原文描述的是稿件被内部编辑等\"标记出来\"以便做进一步审查的流程。flagged up意为\"标示、标记\"，即把需要额外审查的论文挑出来做标记。C选项marked（标记）与此语义最为一致，在语境中可以完美替换。",
+    "traps": "A项found（发现）虽有一定相关性，但不强调\"做标记以备后续处理\"的动作；B项revised（修改）与原文语境不符，此处是识别标记而非修改稿件；D项stored（存储）与上下文的\"额外审查\"逻辑不搭配，属于无关词义。",
+    "tip": "词义题需带入原句验证替换后语义是否通顺完整。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "This impact will not only be through the publications in Science itself, but hopefully through a larger group of publishing places that may want to model their approach after Science.",
+    "why": "Parmigiani明确表示SBoRE的影响不仅限于Science自身，还希望能影响\"更多出版机构以Science为榜样改进做法\"。model their approach after Science即\"以Science为范本\"，D选项\"set an example for other journals\"（为其他期刊树立榜样）是对此句的同义转述。",
+    "traps": "A项\"pose a threat to all its peers\"（对同行构成威胁）属于过度推断，原文说的是积极的示范效应而非威胁；B项\"meet with strong opposition\"（遭遇强烈反对）在原文中没有任何依据，属于无中生有；C项\"increase Science's circulation\"（增加发行量）偷换了\"impact\"的含义，原文讨论的是学术影响力而非商业发行。",
+    "tip": "注意原文中model after的含义，即\"以……为范例\"。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "Vaux says that Science's idea to pass some papers to statisticians \"has some merit, but a weakness is that it relies on the board of reviewing editors to identify 'the papers that need scrutiny' in the first place\".",
+    "why": "Vaux对Science的做法持\"肯定但有保留\"的态度：一方面认为\"has some merit\"（有一定价值），另一方面指出\"a weakness\"（弱点），即依赖编辑来识别需要审查的论文。C选项\"has room for further improvement\"（仍有改进空间）准确概括了这种有优点也有不足的评价。",
+    "traps": "A项\"adds to researchers' workload\"（增加研究者工作量）文中未提及，属于无中生有；B项\"diminishes the role of reviewers\"（削弱审稿人角色）与原文相反，Vaux反而强调应聘请有统计素养的审稿人；D项\"is to fail in the foreseeable future\"（注定失败）过于极端，Vaux只是指出弱点，并未预测失败。",
+    "tip": "先肯定再指不足的表述，通常对应\"有改进空间\"类选项。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "The journal Science is adding an extra round of statistical checks to its peer-review process, editor-in-chief Marcia McNutt announced today.",
+    "why": "全文围绕Science期刊加入统计审查这一核心事件展开，后续各段分别介绍机制、动因及各方评价。A选项\"Science Joins Push to Screen Statistics in Papers\"（Science加入对论文统计数据的审查行动）精准概括了这一主题，其中joins push对应第一段提到的\"follows similar efforts from other journals\"，screen statistics对应统计审查。",
+    "traps": "B项\"Professional Statisticians Deserve More Respect\"（专业统计学家值得更多尊重）偏离主题，文章讨论的是审查机制而非统计学家的社会地位；C项\"Data Analysis Finds Its Way onto Editors' Desks\"只涉及编辑层面，未突出Science期刊这一主体和统计审查的制度性变革；D项\"Statisticians Are Coming Back with Science\"表述含糊且不准确，未体现\"筛查论文中统计问题\"这一核心内容。",
+    "tip": "主旨题标题应涵盖核心主体（Science）和核心事件（统计审查），缺一不可。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "peer-review",
+    "cn": "同行评审（n.）"
+   },
+   {
+    "w": "irreproducibility",
+    "cn": "不可重复性（n.）"
+   },
+   {
+    "w": "scrutiny",
+    "cn": "仔细审查，详细检查（n.）"
+   },
+   {
+    "w": "manuscript",
+    "cn": "手稿，投稿论文（n.）"
+   },
+   {
+    "w": "impel",
+    "cn": "推动，驱使（v.）"
+   },
+   {
+    "w": "foresight",
+    "cn": "远见，先见之明（n.）"
+   },
+   {
+    "w": "overdue",
+    "cn": "迟到的，早该发生的（adj.）"
+   },
+   {
+    "w": "biostatistician",
+    "cn": "生物统计学家（n.）"
+   },
+   {
+    "w": "alarmingly",
+    "cn": "令人警觉地，令人担忧地（adv.）"
+   },
+   {
+    "w": "literate",
+    "cn": "有……素养的，精通的（adj.）"
+   },
+   {
+    "w": "merit",
+    "cn": "优点，价值（n.）"
+   },
+   {
+    "w": "reproducibility",
+    "cn": "可重复性（n.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The policy follows similar efforts from other journals, after widespread concern that basic mistakes in data analysis are contributing to the irreproducibility of many published research findings.",
+    "cn": "此前，由于普遍担忧数据分析中的基础性错误正在导致许多已发表研究成果无法被重复验证，其他期刊也采取了类似措施，而该政策正是在此背景下推出的。",
+    "note": "主干为The policy follows similar efforts；after引导原因状语从句；that引导concern的同位语从句，解释担忧的具体内容。"
+   },
+   {
+    "en": "This impact will not only be through the publications in Science itself, but hopefully through a larger group of publishing places that may want to model their approach after Science.",
+    "cn": "这种影响不仅体现在《科学》杂志本身的出版物上，还有望影响更多出版机构，使它们以《科学》为榜样来改进自身的做法。",
+    "note": "not only...but (also)并列结构；that引导定语从句修饰publishing places；model...after意为\"以……为范本\"。"
+   },
+   {
+    "en": "Vaux says that Science's idea to pass some papers to statisticians \"has some merit, but a weakness is that it relies on the board of reviewing editors to identify 'the papers that need scrutiny' in the first place\".",
+    "cn": "沃克斯表示，《科学》杂志将部分论文交给统计学家审查的做法\"有一定价值，但其弱点在于它首先依赖审稿编辑委员会来识别'需要审查的论文'\"。",
+    "note": "主干为Vaux says that...；but连接两个并列分句，表转折；第二个that引导表语从句；in the first place意为\"首先、一开始\"。"
+   }
+  ]
+ }
+}

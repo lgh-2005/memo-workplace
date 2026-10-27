@@ -1,0 +1,194 @@
+{
+ "schemaVersion": 1,
+ "id": "5082c3c81600__translation__all",
+ "examId": "5082c3c81600",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2025 年 6 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T06:04:41.316Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29134,
+ "usage": {
+  "prompt_tokens": 815,
+  "completion_tokens": 2101,
+  "total_tokens": 2916,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 815,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2101,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 815,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "南水北调工程及其成效",
+  "reference": "Since ancient times, water resources in China have been unevenly distributed, with the north suffering from scarcity while the south enjoys abundance. To effectively address the severe water shortage in the north, the Chinese government launched the South-to-North Water Diversion Project. It is a grand water conservancy project designed to redistribute water resources across regions. After decades of planning and preparation, construction of the project began in 2002. It is divided into three routes — the Eastern, Central, and Western lines — with a total length of 4,350 kilometers, and is expected to benefit a population of over 400 million. Since water was first diverted in 2014, the project has cumulatively transferred more than 50 billion cubic meters of water to the north, providing a reliable water supply for the people in northern regions. Meanwhile, it has also significantly improved the ecological environment of the area and promoted sustainable and healthy economic development.",
+  "sentences": [
+   {
+    "cn": "自古以来,中国的水资源北缺南丰,分布极不均衡。",
+    "en": "Since ancient times, water resources in China have been unevenly distributed, with the north suffering from scarcity while the south enjoys abundance.",
+    "structure": "with 复合结构 + while 对比并列，用介词短语实现\"北缺南丰\"的对照表达",
+    "keys": [
+     "自古以来 since ancient times",
+     "北缺南丰 the north suffering from scarcity while the south enjoys abundance",
+     "分布极不均衡 unevenly distributed"
+    ]
+   },
+   {
+    "cn": "为了有效解决北方严重缺水问题,中国政府实施了南水北调工程(the South-to-North Water Diversion Project)。",
+    "en": "To effectively address the severe water shortage in the north, the Chinese government launched the South-to-North Water Diversion Project.",
+    "structure": "不定式作目的状语 + 主谓宾结构，目的状语前置突出工程动因",
+    "keys": [
+     "有效解决 effectively address",
+     "严重缺水问题 severe water shortage",
+     "实施 launch",
+     "南水北调工程 the South-to-North Water Diversion Project"
+    ]
+   },
+   {
+    "cn": "这是一项跨区域配置水资源的宏大水利工程。",
+    "en": "It is a grand water conservancy project designed to redistribute water resources across regions.",
+    "structure": "主系表结构 + 过去分词短语作后置定语修饰 project",
+    "keys": [
+     "跨区域配置 redistribute...across regions",
+     "水利工程 water conservancy project",
+     "宏大 grand"
+    ]
+   },
+   {
+    "cn": "历经数十年的规划与筹备,工程于2002年开工建设,分为东、中、西三条线路,总长4350公里,惠及人口将超过4亿。",
+    "en": "After decades of planning and preparation, construction of the project began in 2002. It is divided into three routes — the Eastern, Central, and Western lines — with a total length of 4,350 kilometers, and is expected to benefit a population of over 400 million.",
+    "structure": "介词短语作时间状语 + 被动语态 + 破折号插入语补充说明 + 并列谓语，长句拆分为两句提高可读性",
+    "keys": [
+     "历经数十年 after decades of",
+     "规划与筹备 planning and preparation",
+     "开工建设 construction began",
+     "东、中、西三条线路 the Eastern, Central, and Western lines",
+     "惠及人口 benefit a population of"
+    ]
+   },
+   {
+    "cn": "自2014年通水以来,工程向北方调水累计已超500亿立方米,为北方地区的人民提供了可靠的水资源,同时也极大地改善了这一地区的生态环境,促进了经济的可持续健康发展。",
+    "en": "Since water was first diverted in 2014, the project has cumulatively transferred more than 50 billion cubic meters of water to the north, providing a reliable water supply for the people in northern regions. Meanwhile, it has also significantly improved the ecological environment of the area and promoted sustainable and healthy economic development.",
+    "structure": "since 引导时间状语从句 + 现在完成时表持续成果 + 现在分词短语作伴随状语 + 并列谓语，体现因果与递进关系",
+    "keys": [
+     "通水 water was first diverted",
+     "累计 cumulatively",
+     "立方米 cubic meters",
+     "可靠的水资源 a reliable water supply",
+     "生态环境 ecological environment",
+     "可持续健康发展 sustainable and healthy development"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "南水北调工程",
+    "en": "the South-to-North Water Diversion Project"
+   },
+   {
+    "cn": "水利工程",
+    "en": "water conservancy project"
+   },
+   {
+    "cn": "跨区域配置水资源",
+    "en": "redistribute water resources across regions"
+   },
+   {
+    "cn": "东、中、西三条线路",
+    "en": "the Eastern, Central, and Western routes/lines"
+   },
+   {
+    "cn": "立方米",
+    "en": "cubic meters"
+   },
+   {
+    "cn": "生态环境",
+    "en": "ecological environment"
+   },
+   {
+    "cn": "可持续发展",
+    "en": "sustainable development"
+   },
+   {
+    "cn": "开工建设",
+    "en": "commence/begin construction"
+   },
+   {
+    "cn": "通水",
+    "en": "water diversion / water was first diverted"
+   },
+   {
+    "cn": "惠及人口",
+    "en": "benefit a population of"
+   }
+  ],
+  "pitfalls": [
+   "\"北缺南丰\"需译出对比关系，不可笼统说 different，要体现 scarcity 与 abundance 的对照",
+   "\"通水\"不能直译为 open water，应译为 water was (first) diverted",
+   "数字表达易错：500亿立方米应为 50 billion cubic meters，不可写成 500 hundred million",
+   "\"惠及人口将超过4亿\"含将来意味，应使用 is expected to benefit 而非一般过去时",
+   "\"可持续健康发展\"中\"健康\"修饰\"发展\"，应译为 sustainable and healthy development，不可译为 health development"
+  ],
+  "upgrades": [
+   {
+    "plain": "solve the water shortage problem",
+    "better": "address the severe water shortage",
+    "note": "address 比 solve 更正式且常用于政策语境，搭配更地道"
+   },
+   {
+    "plain": "is a big water project",
+    "better": "is a grand water conservancy project",
+    "note": "grand 体现工程宏大规模，water conservancy 是水利工程标准术语"
+   },
+   {
+    "plain": "has sent more than 50 billion cubic meters of water",
+    "better": "has cumulatively transferred more than 50 billion cubic meters of water",
+    "note": "cumulatively transferred 体现累计调水的精确表达，更具学术严谨性"
+   },
+   {
+    "plain": "the project started in 2002",
+    "better": "construction of the project began/commenced in 2002",
+    "note": "construction began 明确指\"开工建设\"，比 started 更准确"
+   },
+   {
+    "plain": "helped the economy develop well",
+    "better": "promoted sustainable and healthy economic development",
+    "note": "动宾搭配更紧凑，promoted...development 为政经文本常见高级搭配"
+   }
+  ]
+ }
+}

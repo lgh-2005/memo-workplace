@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "522b91adcdfa__part_b__all",
+ "examId": "522b91adcdfa",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2007 年考研英语真题（旧）",
+ "year": 2007,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:19:27.359Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33672,
+ "usage": {
+  "prompt_tokens": 1396,
+  "completion_tokens": 1965,
+  "total_tokens": 3361,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1396,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1965,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1396,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "父母如何帮助子女做好步入成年的准备",
+  "type": "小标题匹配",
+  "strategy": [
+   "通读各段首尾句，提炼段落核心主题词",
+   "将选项关键词与段落高频词/核心概念进行匹配",
+   "利用段落中的具体细节验证标题的概括是否准确",
+   "排除法：将已确定的选项剔除，缩小剩余段落的选择范围"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "F",
+    "why": "该段讲的是从11-12岁起帮孩子审视自身strengths and weaknesses（优缺点），并识别他们反复出现的interests（兴趣）以找到最适合的职业方向。这些内容的核心是帮助孩子认识自我，与F选项'Help Your Kids Figure Out Who They Are'完美对应。",
+    "traps": "B选项侧重工作技能培养，但本段强调的是自我认知而非技能训练；D选项关注谈论未来，但本段重点是审视优缺点和兴趣，而非讨论未来规划。",
+    "tip": "定位线索：review their emerging strengths and weaknesses 与 figure out who they are 呼应。"
+   },
+   {
+    "number": 42,
+    "answer": "D",
+    "why": "该段要求家长在餐桌上定期讨论(regular dinner-table discussions)身边人的职业经历，讨论自身职业的喜与忧，鼓励孩子对自己的未来形成想法(form some ideas about their own future)，不允许说'I have no idea'。核心是经常性地谈论未来，与D选项完全吻合。",
+    "traps": "A选项'树立好榜样'虽涉及role models，但段落重点不是父母以身作则，而是通过讨论他人经历来引导孩子思考未来。",
+    "tip": "定位线索：regular dinner-table discussions 对应 Talk about the Future on a Regular Basis。"
+   },
+   {
+    "number": 43,
+    "answer": "B",
+    "why": "该段明确指出parents should be responsible for teaching them how to work，并列举了分配家务(assign responsibilities)、督促作业截止日期、鼓励兼职打工(part-time job)、练习延迟满足和组织技能(organizational skills)等措施，全部围绕培养工作能力展开，与B选项'Build Your Kids' Work Skills'完全一致。",
+    "traps": "G选项'培养责任感'虽与assign responsibilities有关联，但本段核心主题词是how to work，责任分配只是手段之一，段落涵盖更广泛的工作技能。",
+    "tip": "定位线索：teaching them how to work 直接对应 Build Your Kids' Work Skills。"
+   },
+   {
+    "number": 44,
+    "answer": "C",
+    "why": "该段逐一列举了电子游戏(video games)、电视节目(TV shows)、长时间戴耳机听音乐等休闲活动的负面影响，指出这些活动阻碍沟通思维技能发展、妨碍专注力培养。段落意在警告应限制这些休闲活动的时间，与C选项'Place Time Limits on Leisure Activities'对应。",
+    "traps": "选项中无其他涉及娱乐/休闲话题的标题，本题干扰较小；关键是理解段落虽未直接说'限制时间'，但通篇论证这些活动的危害，暗含应加以限制的建议。",
+    "tip": "定位线索：video games、TV shows、earphones 均为 Leisure Activities 的具体例证。"
+   },
+   {
+    "number": 45,
+    "answer": "E",
+    "why": "该段提到孩子应学会应对setbacks（挫折）、stresses（压力）和feelings of inadequacy（不足感），还应学会solve problems（解决问题）、resolve conflicts（化解冲突）、brainstorm（头脑风暴）和think critically（批判性思考）。这些都属于应对策略(coping strategies)的范畴，与E选项完全匹配。",
+    "traps": "其余选项均已匹配完毕；即使排除法不用，段落中deal with setbacks, stresses也与coping strategies形成直接的语义对应，指向唯一。",
+    "tip": "定位线索：deal with setbacks, stresses and feelings of inadequacy 对应 Develop Coping Strategies。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "emerging adult",
+    "cn": "初入社会的成年人（名词短语）"
+   },
+   {
+    "w": "setback",
+    "cn": "挫折，挫败（n.）"
+   },
+   {
+    "w": "start-up adult",
+    "cn": "刚起步的成年人（名词短语）"
+   },
+   {
+    "w": "shortcomings",
+    "cn": "缺点，不足之处（n.）"
+   },
+   {
+    "w": "collaborating",
+    "cn": "合作，协作（v.）"
+   },
+   {
+    "w": "clique",
+    "cn": "小圈子，小集团（n.）"
+   },
+   {
+    "w": "vaunted",
+    "cn": "被吹捧的，被夸耀的（adj.）"
+   },
+   {
+    "w": "foggy",
+    "cn": "模糊的，朦胧的（adj.）"
+   },
+   {
+    "w": "delaying gratification",
+    "cn": "延迟满足（动名词短语）"
+   },
+   {
+    "w": "deploying",
+    "cn": "运用，部署（v.）"
+   },
+   {
+    "w": "canned laughter",
+    "cn": "预先录制的笑声，罐头笑声（名词短语）"
+   },
+   {
+    "w": "monotonous",
+    "cn": "单调的，乏味的（adj.）"
+   },
+   {
+    "w": "sustained concentration",
+    "cn": "持续的专注力（名词短语）"
+   },
+   {
+    "w": "inadequacy",
+    "cn": "不足感，不胜任感（n.）"
+   },
+   {
+    "w": "brainstorm",
+    "cn": "头脑风暴，集体讨论（v.）"
+   },
+   {
+    "w": "fledgling",
+    "cn": "初出茅庐的，羽翼未丰的（adj.）"
+   },
+   {
+    "w": "ill conceived",
+    "cn": "构想不周的，考虑欠妥的（adj.）"
+   },
+   {
+    "w": "endeavors",
+    "cn": "努力，尝试（n.）"
+   }
+  ]
+ }
+}

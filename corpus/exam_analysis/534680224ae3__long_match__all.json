@@ -1,0 +1,256 @@
+{
+ "schemaVersion": 1,
+ "id": "534680224ae3__long_match__all",
+ "examId": "534680224ae3",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2023 年 6 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:51:51.180Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 37198,
+ "usage": {
+  "prompt_tokens": 967,
+  "completion_tokens": 1891,
+  "total_tokens": 2858,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 967,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1891,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 967,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "小型大学在高等教育中的价值与角色",
+  "strategy": [
+   "先通读10条陈述句，标记高频核心词如tiny college、educating、growth等，建立全局主题感",
+   "抓取每题中的专有名词、数字、极端词（如only、most、must）作为优先定位锚点",
+   "注意同义替换：如well-rounded citizens↔全面发展的公民、conducive to↔有助于、rigorous↔严格的",
+   "对比相似题干（如36与42都涉及tiny college的使命），利用差异化细节区分所在段落",
+   "按信息密度由高到低扫读：先定位含具体场景描述的题（如cattle farm），再处理抽象观点题"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "G",
+    "cn": "一所坐落在牧牛场上的美国小型大学致力于教育学生终其一生服务人类。",
+    "keywords": [
+     "cattle farm",
+     "tiny American college",
+     "serve mankind",
+     "throughout their lives"
+    ],
+    "paraphrase": "题干用cattle farm和serve mankind定位；原文可能用ranch/farm及devote/dedicate life to service等近义表达进行替换，属于具体细节型匹配。",
+    "tip": "cattle farm是极具辨识度的定位词，全文唯一，快速锁定G段。"
+   },
+   {
+    "number": 37,
+    "answer": "D",
+    "cn": "令作者深感失望的是，她曾任教的三所高等院校在很大程度上忽视了学生作为社会人的成长。",
+    "keywords": [
+     "author's disappointment",
+     "three institutions",
+     "ignore",
+     "social beings"
+    ],
+    "paraphrase": "题干中largely ignore与原文可能出现的neglect/overlook对应；students' growth as social beings可能被改写为social development或personal growth。",
+    "tip": "定位数字three和情感词disappointment，在D段中找作者的教学经历与不满。"
+   },
+   {
+    "number": 38,
+    "answer": "J",
+    "cn": "小型大学必须在费用上让人负担得起，才能在高等教育中发挥作用。",
+    "keywords": [
+     "affordable",
+     "tiny colleges",
+     "play a role",
+     "higher education"
+    ],
+    "paraphrase": "affordable可能在原文中被替换为low tuition、cost-effective或financially accessible等表达；play a role可能改写为contribute to。",
+    "tip": "抓住affordable这一经济类关键词，在J段中寻找费用、学费相关信息。"
+   },
+   {
+    "number": 39,
+    "answer": "H",
+    "cn": "一位小型大学的应届毕业生表示，与教师和同学共同生活有助于学生的个人成长。",
+    "keywords": [
+     "recent graduate",
+     "living together",
+     "faculty",
+     "conducive to"
+    ],
+    "paraphrase": "题干recent graduate表明引用了某毕业生的话；conducive to（有助于）在原文中可能被替换为help/promote/foster；living together可能对应shared living或residential community。",
+    "tip": "锁定recent graduate这一人物身份标识，在H段寻找毕业生的直接引语或转述。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "cn": "大多数美国大学不是在走小型化路线，而是在努力做大。",
+    "keywords": [
+     "most American universities",
+     "go big",
+     "rather than",
+     "go small"
+    ],
+    "paraphrase": "go big在原文中可能表现为expand enrollment、increase size或pursue growth等；rather than going small形成对比，原文可能用instead/while等转折词。",
+    "tip": "利用most和go big这一对比结构，在B段寻找美国大学扩张趋势的描述。"
+   },
+   {
+    "number": 41,
+    "answer": "I",
+    "cn": "在某所小型大学里，严谨的学术工作和传统的体力劳动被融为一体。",
+    "keywords": [
+     "rigorous academic work",
+     "manual labor",
+     "integrated",
+     "tiny college"
+    ],
+    "paraphrase": "rigorous academic work可能对应demanding coursework或intensive study；manual labor可能被表述为physical work/hands-on work；integrated可能替换为combine/blend/merge。",
+    "tip": "manual labor是强特征词，与学术结合的独特模式可快速在I段定位。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "cn": "小型大学注重将学生培养成全面发展的公民，而非追求自身的扩张。",
+    "keywords": [
+     "well-rounded citizens",
+     "expansion",
+     "tiny colleges",
+     "educating"
+    ],
+    "paraphrase": "well-rounded citizens在原文中可能用complete individuals或holistic education替换；seeking expansion可能对应grow bigger或enlarge，形成对比。",
+    "tip": "well-rounded和expansion构成正反对比，在C段找教育目标与办学理念。"
+   },
+   {
+    "number": 43,
+    "answer": "L",
+    "cn": "教育的本质在于人与人之间的互动。",
+    "keywords": [
+     "essence of education",
+     "interaction",
+     "between people"
+    ],
+    "paraphrase": "essence可能被替换为heart/core/fundamental nature；interaction between people可能改写为human connection或interpersonal engagement。",
+    "tip": "题干高度概括抽象，用essence和interaction双词联合定位L段的教育理念论述。"
+   },
+   {
+    "number": 44,
+    "answer": "E",
+    "cn": "退休后，作者决定在自己的家乡创办一所小型大学。",
+    "keywords": [
+     "retirement",
+     "set up",
+     "tiny college",
+     "hometown"
+    ],
+    "paraphrase": "set up可能在原文中被改写为establish/found/create；retirement可能对应after leaving her teaching position或类似表述；hometown是具体地点线索。",
+    "tip": "retirement和hometown是强定位词，直接在E段搜索作者个人经历的叙述。"
+   },
+   {
+    "number": 45,
+    "answer": "N",
+    "cn": "小型大学的存在是合理的，因为人们相信我们成长为完整人格的过程来自与身边亲近之人的互动。",
+    "keywords": [
+     "justified",
+     "full humanity",
+     "interaction",
+     "near and dear"
+    ],
+    "paraphrase": "justified可能对应rationale/reason/make sense；full humanity可能替换为complete human beings或whole persons；near and dear意为亲近之人，原文可能用close relationships表达。",
+    "tip": "near and dear是较罕见的固定搭配，可作为精准定位N段的锚点词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "devoted to",
+    "cn": "致力于（介词短语）"
+   },
+   {
+    "w": "conducive to",
+    "cn": "有助于，有利于（形容词短语）"
+   },
+   {
+    "w": "well-rounded",
+    "cn": "全面发展的（形容词）"
+   },
+   {
+    "w": "rigorous",
+    "cn": "严格的，严谨的（adj.）"
+   },
+   {
+    "w": "manual labor",
+    "cn": "体力劳动（名词短语）"
+   },
+   {
+    "w": "justified",
+    "cn": "合理的，正当的（adj.）"
+   },
+   {
+    "w": "full humanity",
+    "cn": "完整的人性/人格（名词短语）"
+   },
+   {
+    "w": "near and dear",
+    "cn": "亲近的人，至亲至爱的人（固定搭配）"
+   },
+   {
+    "w": "affordable",
+    "cn": "负担得起的（adj.）"
+   },
+   {
+    "w": "essence",
+    "cn": "本质，精髓（n.）"
+   },
+   {
+    "w": "interaction",
+    "cn": "互动，交流（n.）"
+   },
+   {
+    "w": "social beings",
+    "cn": "社会人（名词短语）"
+   }
+  ]
+ }
+}

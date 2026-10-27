@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "23639759d84c__reading__1",
+ "examId": "23639759d84c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年考研英语真题",
+ "year": 2024,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:53:31.738Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61424,
+ "usage": {
+  "prompt_tokens": 1793,
+  "completion_tokens": 3626,
+  "total_tokens": 5419,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1793,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3626,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1793,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "廉价技术改变世界——以钉子为例",
+  "gist": "文章以罗马人埋藏百万钉子的故事为引，追溯钉子从稀缺昂贵到大幅降价的历史，借经济学家Sichel的研究说明生产效率提升是降价主因，并由钉子价格的变化引出核心论点：真正改变世界的不是高深技术，而是廉价技术。",
+  "structure": [
+   "第1-2段：罗马人撤离苏格兰时埋藏百万钉子的历史背景与原因",
+   "第3段：17世纪弗吉尼亚人焚屋取钉，凸显钉子制造技术的珍贵",
+   "第4-5段：经济学家Sichel研究钉子价格下降的原因及选择钉子作为研究对象的理由",
+   "第6-7段：作者提出核心观点——廉价技术才是真正改变世界的力量"
+  ],
+  "difficulty": "中等",
+  "translation": "大约2000年前，罗马人开始从苏格兰撤离时，留下了一批奇特的宝藏：10吨钉子，将近一百万枚。这批钉子于1960年在一个四米深、上面覆盖着两米砾石的坑中被发现。\n\n罗马人为什么要埋掉一百万枚钉子？最可能的解释是，撤退非常匆忙，他们不想让当地的喀里多尼亚人得到10吨武器级的铁。罗马人把钉子埋得如此之深，以至于近两千年都未被发现。\n\n后来的文明对钉子中蕴含的熟练铁匠劳动的重视程度甚至超过了对原材料本身的重视。正如罗玛·阿格拉瓦尔在她令人愉悦的新书《螺母与螺栓》中所解释的那样，17世纪初的弗吉尼亚人如果打算搬迁，有时会烧掉自己的房屋。这是为了回收珍贵的钉子——筛过灰烬后钉子可以重复使用。为了回收钉子而烧掉整座房屋，这一想法充分说明了这项看似简单的技术是多么稀缺、昂贵和珍贵。\n\n正如经济学家丹尼尔·西谢尔在一篇研究论文中指出的，从18世纪末到20世纪中期，钉子的价格下降了90%。西谢尔认为，虽然钉子价格的下降部分是由更便宜的铁和更便宜的能源推动的，但大部分功劳应归于那些找到了更高效方法将钢铁变成钉子的制钉商。\n\n钉子本身多年来确实有所变化，但西谢尔之所以研究它们，是因为它们变化不大。罗马时代的油灯和罗马战车与LED灯带和跑车大相径庭，但罗马时代的钉子显然仍然是钉子。试图追踪自1695年以来跑车的价格变化是荒谬的，但对钉子提出同样的问题则完全合理。\n\n我毫不讳言自己对日常物品某一特征的痴迷：它们的价格。毕竟我是一位经济学家。在写了两本关于发明史的书之后，我学到的一件事是：虽然令人着迷的高深技术获得了所有的关注，但真正改变世界的是廉价技术。\n\n古登堡印刷术改变文明，不是因为它改变了书写的性质，而是因为它改变了书写的成本——而且如果没有书写载体价格的同步大幅下降，它也不会取得多大成就，这要归功于一项经常被忽视的技术——纸张。太阳能电池板在变得廉价之前只有少数小众用途；如今，它们正在改变全球能源系统。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "the withdrawal was rushed, and they didn't want the local Caledonians getting their hands on 10 tons of weapon-grade iron.",
+    "why": "原文明确指出罗马人匆忙撤退，不想让当地喀里多尼亚人获得10吨武器级铁材，因此将钉子深埋。D选项\"hiding them from the locals\"（对当地人隐藏）是对原文\"didn't want the local Caledonians getting their hands on\"的准确同义改写，构成正确答案。",
+    "traps": "A项\"留作日后使用\"属于无中生有，罗马人是在撤退，并无返回取用之意；B项\"防止生锈\"文中完全未提及，属于凭空臆造；C项\"让它们增值\"也毫无原文依据，罗马人深埋的目的是阻止敌方获取而非投资增值。",
+    "tip": "细节题需回到原文精准定位，抓住因果关系中的核心目的。"
+   },
+   {
+    "number": 22,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "The idea that one might burn down an entire house just to reclaim the nails underlines how scarce, costly and valuable the simple-seeming technology was.",
+    "why": "该例子之后的总结句明确点出：为回收钉子不惜烧掉整栋房屋，恰恰说明了这项看似简单的技术是多么稀缺、昂贵和珍贵。D选项\"show the preciousness of nail-making technology at that time\"与原文结论完全对应，是该例证所要证明的观点。",
+    "traps": "A项\"突显早期美国殖民者的节俭\"偷换论证对象，文章强调的是技术的珍贵而非人的品质；B项\"说明铁匠的高地位\"虽然上文提到铁匠劳动的价值，但这并非该例子的论证目的；C项\"对比不同文明对钉子的态度\"属于过度引申，例子的重点不在对比而在突出钉子技术的珍贵。",
+    "tip": "例证题要找例子之后或之前的论点句，而非就事论事。"
+   },
+   {
+    "number": 23,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "most of the credit goes to nail manufacturers who simply found more efficient ways to turn steel into nails.",
+    "why": "原文用\"most of the credit\"明确指出最主要的功劳归于制钉商找到了更高效地将钢铁变成钉子的方法。\"more efficient ways\"对应A选项\"Increased productivity\"（生产效率提升），即生产率的提高是钉子降价的主因。",
+    "traps": "B项\"更广泛使用新能源\"与原文\"cheaper energy\"不符，原文说的是能源更便宜而非新能源，且这只是部分原因；C项\"更激烈的市场竞争\"在原文中完全未提及，属于无中生有；D项\"原材料成本降低\"虽在文中提及（cheaper iron），但原文用\"partly\"限定，说明这只是次要因素，非主要原因。",
+    "tip": "注意原文中表示主次程度的词如most/partly，它们决定了正确选项。"
+   },
+   {
+    "number": 24,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Nails themselves have changed over the years, but Sichel studied them because they haven't changed much. Roman nails are still clearly nails.",
+    "why": "第五段先以让步语气承认钉子有所变化，再用but转折强调钉子变化不大，并举例说明罗马时代的钉子今天看来仍然是钉子。B选项\"自罗马时代以来基本保持不变\"准确概括了段落核心信息，与原文\"haven't changed much\"和\"Roman nails are still clearly nails\"完全吻合。",
+    "traps": "A项\"经历了许多技术改进\"与段落转折后的重点矛盾，原文强调的恰恰是变化不大；C项\"比其他日常产品研究得少\"文中未有此意，Sichel选择研究钉子是因其稳定性好适合做价格追踪；D项\"世界上最重要的发明之一\"本段未做此论断，属于过度推断。",
+    "tip": "含有but转折的段落，重心往往在转折之后。"
+   },
+   {
+    "number": 25,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "it's the cheap technologies that change the world.",
+    "why": "第六段末尾用强调句型直接点明核心论点：改变世界的是廉价技术。第七段以印刷术降低书写成本、纸张降低书写载体价格、太阳能电池板因廉价而改变能源系统三个例证支撑这一论点。A选项\"廉价技术带来革命性变革\"完美概括了这两段的中心思想。",
+    "traps": "B项\"技术创新是经济成功的关键\"偏离了最后两段的核心话题，文章讨论的是价格与技术推广的关系而非经济成功；C项\"技术定义了人们对世界的理解\"过于宽泛抽象，文中并未涉及认知层面的讨论；D项\"高深技术源于小发明\"属于无中生有，文章并未讨论技术之间的演化关系。",
+    "tip": "最后两段概括题要找到反复出现的核心关键词，此处是cheap/cost/price。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "hoard",
+    "cn": "n. 贮藏物，窖藏"
+   },
+   {
+    "w": "gravel",
+    "cn": "n. 砾石，碎石"
+   },
+   {
+    "w": "Caledonians",
+    "cn": "n. 喀里多尼亚人（古苏格兰居民）"
+   },
+   {
+    "w": "millennia",
+    "cn": "n. millennium的复数，千年"
+   },
+   {
+    "w": "sift",
+    "cn": "v. 筛，过滤"
+   },
+   {
+    "w": "underline",
+    "cn": "v. 强调，凸显"
+   },
+   {
+    "w": "scarce",
+    "cn": "adj. 稀缺的，不足的"
+   },
+   {
+    "w": "absurd",
+    "cn": "adj. 荒谬的，荒唐的"
+   },
+   {
+    "w": "enchantingly",
+    "cn": "adv. 令人着迷地，迷人地"
+   },
+   {
+    "w": "hype",
+    "cn": "n. 大肆宣传，炒作"
+   },
+   {
+    "w": "niche",
+    "cn": "adj./n. 小众的；利基市场"
+   },
+   {
+    "w": "reclaim",
+    "cn": "v. 回收，取回"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The idea that one might burn down an entire house just to reclaim the nails underlines how scarce, costly and valuable the simple-seeming technology was.",
+    "cn": "为了回收钉子而烧掉整座房屋，这一想法充分说明了这项看似简单的技术是多么稀缺、昂贵和珍贵。",
+    "note": "主干为The idea underlines how...。that引导同位语从句修饰idea；how引导宾语从句，内含三个并列形容词scarce, costly, valuable。"
+   },
+   {
+    "en": "After writing two books about the history of inventions, one thing I've learnt is that while it is the enchantingly sophisticated technologies that get all the hype, it's the cheap technologies that change the world.",
+    "cn": "在写了两本关于发明史的书之后，我学到的一件事是：虽然令人着迷的高深技术获得了所有的关注，但真正改变世界的是廉价技术。",
+    "note": "主干为one thing I've learnt is that...。that从句内部用while引导让步状语从句，主句与让步从句各含一个it is...that强调句型，形成对比。"
+   },
+   {
+    "en": "The Gutenberg printing press transformed civilisation not by changing the nature of writing but by changing its cost—and it would have achieved little without a parallel collapse in the price of surfaces to write on, thanks to an often-overlooked technology called paper.",
+    "cn": "古登堡印刷术改变文明，不是因为它改变了书写的性质，而是因为它改变了书写的成本——而且如果没有书写载体价格的同步大幅下降，它也不会取得多大成就，这要归功于一项经常被忽视的技术——纸张。",
+    "note": "主干为The press transformed civilisation not by A but by B，破折号后是补充说明，含虚拟语气would have achieved little without...，thanks to引出原因。"
+   }
+  ]
+ }
+}

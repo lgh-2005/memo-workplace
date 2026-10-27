@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "41935877cd0a__reading__4",
+ "examId": "41935877cd0a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年考研英语真题",
+ "year": 2016,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:33:40.437Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61446,
+ "usage": {
+  "prompt_tokens": 1781,
+  "completion_tokens": 3584,
+  "total_tokens": 5365,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1781,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3584,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1781,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "纽约时报纸质版转型策略",
+  "gist": "文章围绕《纽约时报》是否应终止纸质版展开讨论。BuzzFeed CEO佩雷蒂认为不应仓促取消，而应逐步提价，将纸质版打造为面向忠实读者的高端遗产产品，既留住核心用户，又增加营收，在市场变革中采取更积极的策略应对挑战。",
+  "structure": [
+   "第1-2段：提出背景——纸质版面临高成本与读者流失等困境",
+   "第3-4段：引出佩雷蒂观点——不应草率取消，应正确过渡",
+   "第5-6段：具体建议——提价使纸质版成为遗产产品，服务忠实读者",
+   "第7段：总结态度——面对变化应采取更积极而非保守的策略"
+  ],
+  "difficulty": "中等",
+  "translation": "终有一天，《纽约时报》会停止在新闻纸上刊印报道。确切的时间尚有争议。该报出版人早在2010年就说过：\"未来某个时候。\"\n\n撇开对油墨印纸和翻阅书页沙沙声的怀旧情怀不谈，放弃纸质版有充足的理由。制作一份实体报纸所需的基础设施——印刷机、送货卡车——不仅昂贵，而且在纯线上竞争对手没有同等财务负担的时代显得过于奢侈。读者本来就在逐渐远离纸质版。尽管纸质广告销售收入仍远超线上和移动端，但纸质版的收入仍在下降。\n\n运营成本可能很高，发行量也在下降，但BuzzFeed首席执行官乔纳·佩雷蒂表示，急于取消纸质版将是一个错误。\n\n佩雷蒂说，《纽约时报》不应浪费时间退出纸质业务，但前提是要以正确的方式进行。\"找到一种加速这一过渡的方式对他们来说是合理的，\"他说，\"但如果你直接停掉它，你最忠实的客户会对你非常不满。\"\n\n有时候即便如此也值得做出改变。佩雷蒂举了Netflix停止DVD邮寄服务、转向流媒体的例子。\"当时这被视为一个失误，\"他说。但事实证明这一举措具有远见。如果佩雷蒂掌管《纽约时报》呢？\"我不会选定一个年份来终止纸质版，\"他说。\"我会提高价格，把它变成更像是一种遗产产品。\"\n\n其理念是，最忠实的客户仍然能获得他们青睐的产品，而且他们会觉得自己在帮助维持他们所信赖之物的品质。\"所以如果你为纸质版多付了钱，你会觉得自己是在提供帮助，\"佩雷蒂说。\"然后每年以更高的幅度涨价，从本质上试图创造额外的收入。\"换句话说，如果你要做纸质产品，就为那些已经对它痴迷的人来做。这可能正是《纽约时报》已经在做的事情。获得一周七天的纸质版每年花费近500美元——是纯数字订阅价格的两倍多。\n\n\"这真的是一件很难的事，BuzzFeed没有遗留业务是一种巨大的幸运，\"佩雷蒂评论道。\"但我们也会面临类似的问题，即我们正在做的一些事情在市场变化、世界变化时不再合理。在那些情况下，更积极比不够积极要好。\"",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The infrastructure required to make a physical newspaper—printing presses, delivery trucks – isn't just expensive; it's excessive at a time when online-only competitors don't have the same set of financial constraints.",
+    "why": "原文第二段明确指出制作实体报纸所需的基础设施\"不仅昂贵，而且过度\"，同时提到发行量下降、纸质收入持续走低，这些都指向运营成本高昂。A选项\"高运营成本\"是对原文\"expensive\"\"excessive\"\"Overhead may be high\"等信息的准确概括，构成纽约时报考虑终止纸质版的重要原因之一。",
+    "traps": "B项\"线上广告销售增长\"属于无中生有，原文只说纸质广告收入仍远超线上，并未提及线上广告在增长；C项\"投资者的压力\"在全文中从未提及，属于凭空捏造；D项\"读者的抱怨\"也无原文依据，原文说的是读者在流失，而非读者抱怨。",
+    "tip": "细节题需紧扣原文，区分'事实陈述'与'无中生有'。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Figuring out a way to accelerate that transition would make sense for them... I would raise prices and make it into more of a legacy product.",
+    "why": "佩雷蒂的建议贯穿第3-6段：不应草率取消纸质版，而应找到加速过渡的正确方式——提价、将纸质版转化为遗产产品、面向忠实客户。这些都属于\"战略性调整\"，B选项\"make strategic adjustments\"是对佩雷蒂一系列具体建议的高度概括，完全吻合原文。",
+    "traps": "A项\"彻底终止纸质版\"与佩雷蒂观点相悖，他明确反对直接停刊；C项\"寻找新的读者来源\"原文未提及，佩雷蒂强调的是服务现有忠实客户而非开拓新读者；D项\"追求高效管理\"在文中没有对应信息，属于偷换概念。",
+    "tip": "建议类细节题要通读人物完整观点，避免以偏概全。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "I would raise prices and make it into more of a legacy product... The most loyal customers would still get the product they favor... if you're going to make a print product, make it for the people who are already obsessed with it.",
+    "why": "第五段佩雷蒂提出将纸质版变为\"legacy product\"，第六段紧接着解释其含义：最忠实的客户仍能获得他们喜爱的产品，并以\"为已经痴迷的人做产品\"收束论述。由此可推断，legacy product的核心定位就是面向最忠实的客户，B选项与此完全一致。",
+    "traps": "A项\"恢复昔日荣光\"属于过度推断，原文并无恢复辉煌之意，只是服务现有忠实用户；C项\"降低印刷成本\"与原文相悖，佩雷蒂建议的是提价而非降低成本；D项\"扩大报纸的受欢迎程度\"与原文方向相反，legacy product的目标是缩小至核心忠实群体而非扩大受众。",
+    "tip": "推断题需在上下文中寻找对概念的具体解释和阐述。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "In those situations, it's better to be more aggressive than less aggressive.",
+    "why": "文章最后一段佩雷蒂总结道：当市场和世界发生变化时，我们做的一些事情会变得不合理，在那种情况下\"更积极比不够积极要好\"。C选项\"aggressiveness better meets challenges\"（积极进取更能应对挑战）是对这句话的准确转述，与佩雷蒂在变革时代应主动出击的态度完全一致。",
+    "traps": "A项\"传统奢侈品不受影响\"与原文相悖，佩雷蒂明确说市场变化时原有做法会变得不合理；B项\"谨慎有利于解决问题\"恰好与原文\"more aggressive than less aggressive\"的立场相反，属于反向干扰；D项\"遗留业务正在过时\"虽有一定关联，但过于绝对，且不是佩雷蒂在该段的核心观点。",
+    "tip": "末段总结性语句常为出题点，注意区分正反态度。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "I would raise prices and make it into more of a legacy product.",
+    "why": "全文核心论点围绕佩雷蒂对《纽约时报》纸质版的转型建议展开：不应草率取消，而应通过提价将其打造为面向忠实用户的高端产品。B选项\"Make Your Print Newspaper a Luxury Good\"（让你的纸质报纸成为奢侈品）精确概括了这一核心策略，与\"raise prices\"\"legacy product\"\"overpaying\"等关键信息高度契合。",
+    "traps": "A项\"一次性全面转向在线报纸\"与文章主旨相悖，佩雷蒂反对一刀切式的转型；C项\"让报纸永远时尚\"过于笼统，未体现提价转型为奢侈品的核心论点；D项\"珍惜手中的报纸\"带有感性怀旧色彩，偏离了文章的商业策略讨论主题。",
+    "tip": "主旨题需提炼全文核心论点，标题应反映作者/主要人物的立场和建议。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "nostalgia",
+    "cn": "n. 怀旧，念旧"
+   },
+   {
+    "w": "incentive",
+    "cn": "n. 动机，激励因素"
+   },
+   {
+    "w": "ditch",
+    "cn": "v. 抛弃，摒弃"
+   },
+   {
+    "w": "infrastructure",
+    "cn": "n. 基础设施"
+   },
+   {
+    "w": "dwarf",
+    "cn": "v. 使相形见绌，远超"
+   },
+   {
+    "w": "counterpart",
+    "cn": "n. 对应的事物，同行"
+   },
+   {
+    "w": "circulation",
+    "cn": "n.（报刊的）发行量"
+   },
+   {
+    "w": "blunder",
+    "cn": "n. 愚蠢的错误，失误"
+   },
+   {
+    "w": "foresighted",
+    "cn": "adj. 有远见的"
+   },
+   {
+    "w": "legacy",
+    "cn": "n./adj. 遗产（的），遗留（的）"
+   },
+   {
+    "w": "obsessed",
+    "cn": "adj. 着迷的，痴迷的"
+   },
+   {
+    "w": "aggressive",
+    "cn": "adj. 积极进取的，有闯劲的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The infrastructure required to make a physical newspaper—printing presses, delivery trucks – isn't just expensive; it's excessive at a time when online-only competitors don't have the same set of financial constraints.",
+    "cn": "制作一份实体报纸所需的基础设施——印刷机、送货卡车——不仅昂贵；在纯线上竞争对手没有同等财务负担的时代，它更显得过于奢侈。",
+    "note": "主语为The infrastructure，后接过去分词短语required to...作定语；破折号插入举例说明；分号连接两个并列分句；when引导时间状语从句修饰a time。"
+   },
+   {
+    "en": "And though print ad sales still dwarf their online and mobile counterparts, revenue from print is still declining.",
+    "cn": "尽管纸质广告销售收入仍远超线上和移动端的对应收入，但纸质版的收入仍在下降。",
+    "note": "though引导让步状语从句，形成转折逻辑；dwarf用作动词表示\"使相形见绌\"；counterparts指代online and mobile ad sales。"
+   },
+   {
+    "en": "In other words, if you're going to make a print product, make it for the people who are already obsessed with it.",
+    "cn": "换句话说，如果你要做纸质产品，就为那些已经对它痴迷的人来做。",
+    "note": "In other words为总结性过渡语；if引导条件状语从句；who引导定语从句修饰the people；该句是对前文legacy product策略的高度概括。"
+   }
+  ]
+ }
+}

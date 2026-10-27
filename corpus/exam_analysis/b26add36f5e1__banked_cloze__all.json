@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "b26add36f5e1__banked_cloze__all",
+ "examId": "b26add36f5e1",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2018 年 12 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:20:36.037Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63301,
+ "usage": {
+  "prompt_tokens": 1447,
+  "completion_tokens": 4006,
+  "total_tokens": 5453,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1447,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4006,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1447,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "课堂上网对学业表现的负面影响",
+  "gist": "密歇根州立大学的一项新研究表明，课堂上浏览与学业无关的网页会导致所有学生——包括高分学生——的学业表现下降。研究发现即使智力水平较高的学生也无法免受课堂数字设备的干扰，而当前大学生在课堂上使用电子设备已极为普遍，教授们采取的限制措施往往收效甚微。",
+  "difficulty": "中等",
+  "translation": "上课时浏览网页不仅会分散教育者的注意力，还会对那些已经在努力理解（grasp）学习材料的学生造成伤害。然而，密歇根州立大学的一项新研究指出，当学生在课堂上出于非学术目的浏览互联网时，所有学生——包括成绩优异者——的学业表现都会下降。\n\n为了衡量课堂上基于网络的干扰所产生的影响，研究人员评估（evaluated）了密歇根州立大学500名修读心理学导论课程的学生。研究人员使用ACT分数作为衡量智力资质（aptitude）的指标。由于先前的研究表明，智力水平较高的人更擅长过滤（filtering）干扰信息，研究人员认为ACT高分学生不会因使用数字设备而出现显著的（significant）成绩下降。但在课堂上浏览网页的学生考试成绩确实更差，且与其ACT分数无关，这表明即使是学业最优秀的学生在课堂上分心时也会受到影响。\n\n大学教授们越来越多地敲响（raising）警钟，警告智能手机、笔记本电脑和平板电脑对学业表现的影响。2013年一项针对大学生的研究发现，80%的学生在上课时使用手机或笔记本电脑，平均每个学生在一节普通的（typical）课堂上查看数字设备11次。四分之一的学生表示，他们在课堂上使用数字设备导致成绩下滑（suffer）。\n\n教授们有时会制定旨在尽量减少（minimize）学生使用数字设备的政策，一些教师甚至会没收平板电脑和手机。然而，在一个人们越来越依赖手机的世界里，这些策略往往以失败告终。一项国际研究发现，84%的人表示他们一天也离不开智能手机。除非学生们能够抵制（resist）社交网络、短信和无止境网络浏览的诱惑，否则他们可能会在学业上继续挣扎。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "F",
+    "correct": "grasp",
+    "why": "此处需要动词原形，与前面的 to 构成不定式结构。struggling to grasp the material 意为\"努力理解学习材料\"，语义上与前文\"已经在挣扎的学生\"完美契合，grasp 有\"理解、领会\"之意。",
+    "traps": "resist 虽也是动词原形，但 resist the material（抵制材料）语义不通；able to resist 在第35题更合适。suffer 也是动词原形，但\"遭受材料\"不合逻辑。",
+    "tip": "grasp 作\"理解\"义是六级高频考点，注意与 to 搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "C",
+    "correct": "evaluated",
+    "why": "此处需要过去式动词作谓语。researchers evaluated 500 students 意为\"研究人员评估了500名学生\"，主语是 researchers，宾语是 500 students，evaluated 作谓语完全合适，且时态与全文的过去式叙述一致。",
+    "traps": "evaporated（蒸发）虽然也是过去式动词，但语义荒谬，研究人员不可能\"蒸发\"学生。其他动词如 filtering 为现在分词形式，不能直接作谓语。",
+    "tip": "识别句子缺谓语动词，结合主语和宾语判断语义。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "aptitude",
+    "why": "此处需要名词，位于 intellectual 之后构成名词短语。intellectual aptitude 意为\"智力资质/才能\"，与前文使用 ACT 分数作为衡量指标的语境完全吻合，且 aptitude 常与 intellectual 搭配。",
+    "traps": "eradication（根除）虽是名词，但 intellectual eradication（智力根除）语义不通，且与衡量（measure）的语境不符。",
+    "tip": "intellectual aptitude 是固定搭配，意为\"智力天赋\"。"
+   },
+   {
+    "number": 29,
+    "answer": "E",
+    "correct": "filtering",
+    "why": "此处需要动名词形式，与 better at 搭配（at 为介词后接 -ing 形式）。filter out distractions 是固定搭配，意为\"过滤掉干扰信息\"，语义与\"高智力者更擅长排除干扰\"的上下文完全一致。",
+    "traps": "raising 虽也是 -ing 形式，但 raising out distractions 不是有效搭配；raising 在第31题与 alarm bells 搭配更为合适。",
+    "tip": "be better at + doing 结构；filter out 意为\"过滤、排除\"。"
+   },
+   {
+    "number": 30,
+    "answer": "M",
+    "correct": "significant",
+    "why": "此处需要形容词修饰名词 decrease。significant decrease 意为\"显著下降\"，语义上表达研究人员预期高分学生不会出现明显的成绩下降，与后文 But 转折形成对比，逻辑通顺。",
+    "traps": "typical 虽也是形容词，但 typical decrease（典型的下降）语义不够精确，且 typical 在第32题修饰 class 更恰当。",
+    "tip": "significant 修饰表程度的名词（decrease/increase）是常见搭配。"
+   },
+   {
+    "number": 31,
+    "answer": "K",
+    "correct": "raising",
+    "why": "此处需要现在分词与 are increasingly 构成现在进行时。raise alarm bells 是固定短语，意为\"敲响警钟\"，描述教授们对电子设备影响学业表现日益担忧，语义完全契合。",
+    "traps": "filtering 虽也是 -ing 形式，但 filtering alarm bells 不构成任何有意义的搭配。其他 -ing 形式的词已在别处使用。",
+    "tip": "raise alarm bells 是固定搭配，意为\"发出警告/敲响警钟\"。"
+   },
+   {
+    "number": 32,
+    "answer": "O",
+    "correct": "typical",
+    "why": "此处需要形容词修饰名词 class。in a typical class 意为\"在一节普通/典型的课堂上\"，与前文描述学生平均查看设备11次的统计数据相呼应，typical 表示常规情况下。",
+    "traps": "significant 虽也是形容词，但 significant class（重要的课）与此处描述一般课堂情况的语境不符，且 significant 已用于第30题。",
+    "tip": "typical 修饰名词表\"典型的、普通的\"，常出现在数据描述语境中。"
+   },
+   {
+    "number": 33,
+    "answer": "N",
+    "correct": "suffer",
+    "why": "此处需要动词原形，与 causes...to 构成\"cause + 宾语 + to do\"结构。grades suffer 意为\"成绩受损/下滑\"，表达使用电子设备导致成绩变差，语义与上下文一致。",
+    "traps": "able to 后也需动词原形，但此处结构是 cause...to do；resist 语义不合适，成绩不能\"抵制\"；grasp 已用于第26题。",
+    "tip": "cause + 宾语 + to do 结构；suffer 表示\"受损、变差\"。"
+   },
+   {
+    "number": 34,
+    "answer": "H",
+    "correct": "minimize",
+    "why": "此处需要动词原形，与 designed to 构成不定式表目的。minimize students' use 意为\"尽量减少学生的使用\"，描述教授制定政策来限制设备使用，语义通顺，且与后文没收设备的措施形成递进。",
+    "traps": "resist 虽也是动词原形，但主语是 policies（政策），政策\"抵制\"学生使用不如\"最小化\"使用自然；resist 在第35题与 the pull 搭配更佳。",
+    "tip": "be designed to do 意为\"旨在做某事\"；minimize 意为\"使最小化\"。"
+   },
+   {
+    "number": 35,
+    "answer": "L",
+    "correct": "resist",
+    "why": "此处需要动词原形，与 able to 构成搭配。resist the pull 意为\"抵制……的诱惑/吸引力\"，表达学生需要克服社交网络等的吸引才能改善学业，与全文总结性结尾的语境完美匹配。",
+    "traps": "able to grasp the pull（理解吸引力）虽语法正确但语义与上下文不符，此处强调的是\"抗拒\"而非\"理解\"；grasp 已用于第26题。",
+    "tip": "resist the pull of 是固定搭配，意为\"抵制……的吸引力\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "aptitude",
+    "cn": "n. 天赋，资质，才能"
+   },
+   {
+    "w": "eradication",
+    "cn": "n. 根除，消灭"
+   },
+   {
+    "w": "evaluated",
+    "cn": "v. 评估，评价（evaluate 的过去式）"
+   },
+   {
+    "w": "evaporated",
+    "cn": "v. 蒸发，消失（evaporate 的过去式）"
+   },
+   {
+    "w": "filtering",
+    "cn": "v. 过滤，筛选（filter 的现在分词）"
+   },
+   {
+    "w": "grasp",
+    "cn": "v./n. 理解，领会；抓住"
+   },
+   {
+    "w": "minimize",
+    "cn": "v. 使最小化，尽量减少"
+   },
+   {
+    "w": "significant",
+    "cn": "adj. 显著的，重大的，有意义的"
+   },
+   {
+    "w": "resist",
+    "cn": "v. 抵制，抗拒，忍住"
+   },
+   {
+    "w": "confiscate",
+    "cn": "v. 没收，充公"
+   },
+   {
+    "w": "distraction",
+    "cn": "n. 干扰，分心之事"
+   },
+   {
+    "w": "implement",
+    "cn": "v. 实施，执行"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——课堂上网对学业的负面影响。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词等），缩小每题选择范围。",
+   "第三步：根据空格前后的语法结构判断所需词性（如 to + 动词原形、at + 动名词、形容词 + 名词）。",
+   "第四步：结合上下文语义和固定搭配（如 raise alarm bells、filter out、resist the pull）确定最佳选项。",
+   "第五步：填完所有空后回读全文，检查语义连贯性和语法正确性，确保无重复选用。"
+  ]
+ }
+}

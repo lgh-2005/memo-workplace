@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "e4b4224ecb0f__banked_cloze__all",
+ "examId": "e4b4224ecb0f",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2026 年 6 月英语六级真题（第 1 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:06:51.755Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 75544,
+ "usage": {
+  "prompt_tokens": 1404,
+  "completion_tokens": 4562,
+  "total_tokens": 5966,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1404,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4562,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1404,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国各州租金管控立法争议",
+  "gist": "美国某州立法机构正审议两项租金管控提案，旨在限制租金涨幅以缓解无家可归问题。支持者援引研究数据和选民真实遭遇说明立法必要性，而租赁住房协会则反对，认为租金管控政策在各地均已失败，且无法区分贫富受益群体。",
+  "difficulty": "中等",
+  "translation": "州立法机构正面临两项提案，旨在对不断上涨的房租价格施加一定限制，一些议员称房租上涨正在加剧无家可归率的上升。\n\n这些提案对租金涨幅施加上限，在大多数情况下阻止该州房东将租金涨幅提高到超过通货膨胀率的水平。对于建成不足十年的建筑、公共住房、超出日常维护的改善措施，以及困难豁免情况，则有例外规定。\n\n在2020年的一项研究中，美国政府问责局的研究人员估计，每增加100美元的租金与无家可归率上升9%相关。租金上涨对某些人口群体（如少数族裔）产生了更为有害的影响。\n\n众议员亚历克斯·拉梅尔解释了为何他认为这类立法如此重要，并讲述了一位选区居民在社区中艰难生活的故事。\n\n拉梅尔指出了两位数租金涨幅的毁灭性影响，并表示他是在贝灵厄姆与一位年轻人交谈时决定提出该立法的。\"他是西华盛顿大学的应届毕业生，刚找到一份新工作，\"拉梅尔说。\"他正准备离开我们的社区，因为他的房东通知他，月租金将上涨600美元。\"\n\n华盛顿州租赁住房协会反对该立法。该协会声称，这项政策实际上并不能解决租金价格问题，反而会惩罚小房东，并让富裕的租户轻松获得廉价住房。\n\n\"租金管控政策在本地区实施过的每一个地方都已经失败了。它没有在任何地方解决过哪怕一个住房问题。在决定谁能获得租金管控的好处时，它也不区分贫富，\"租赁住房联盟的切斯特·鲍德温说道。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "J",
+    "correct": "impose",
+    "why": "此处主语为 The proposals，谓语需要动词原形（主语复数）。impose caps on 是固定搭配，意为\"对……施加上限\"，语义与上文 put some limits 形成呼应，逻辑通顺。",
+    "traps": "asserts 虽为动词但意为\"声称\"，与 caps 搭配不当；enacted 意为\"颁布\"，主语是提案本身而非颁布者，语义不合。其他形容词、名词类选项词性不符。",
+    "tip": "动词与宾语的固定搭配：impose caps/limits on"
+   },
+   {
+    "number": 27,
+    "answer": "I",
+    "correct": "exemption",
+    "why": "空格前为 hardship（困难），后无动词需求，需要一个名词构成名词短语。hardship exemption 意为\"困难豁免\"，与前文 exceptions 语义衔接，表示因经济困难可获豁免。",
+    "traps": "constituent 虽为名词但意为\"选民/成分\"，hardship constituent 无实际搭配意义；anywhere 为副词，词性不符。",
+    "tip": "名词搭配：hardship + exemption（困难豁免）"
+   },
+   {
+    "number": 28,
+    "answer": "D",
+    "correct": "correlated",
+    "why": "is ___ to 构成被动/系表结构。be correlated to 意为\"与……相关\"，表示租金每上涨100美元与无家可归率上升9%存在相关性，符合研究结论的表述方式。",
+    "traps": "devastating 虽可作表语但后接 to 不构成常见搭配；asserts 为动词原形不能用于 is ___ to 结构。",
+    "tip": "固定搭配：be correlated to/with（与……相关）"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "correct": "constituent",
+    "why": "冠词 a 后需要名词，且该名词指代\"在社区中挣扎求生的人\"。constituent 意为\"选区居民\"，拉梅尔作为众议员讲述选民故事，身份逻辑完全吻合。",
+    "traps": "exemption 意为\"豁免\"，作为 a ___ struggling to live 的主语语义不通；其他动词或副词词性均不符合冠词后接名词的语法要求。",
+    "tip": "根据人物身份推断：议员讲的是 constituent（选民）的故事"
+   },
+   {
+    "number": 30,
+    "answer": "F",
+    "correct": "devastating",
+    "why": "the ___ effect 需要形容词修饰 effect。devastating 意为\"毁灭性的\"，修饰两位数租金涨幅的影响效果，语气强烈，与下文年轻人被迫离开社区的事例相呼应。",
+    "traps": "correlated 意为\"相关的\"，修饰 effect 语义模糊不当；其他选项如 anywhere 为副词、impose 为动词，均无法修饰名词。",
+    "tip": "形容词修饰名词：devastating effect（毁灭性影响）"
+   },
+   {
+    "number": 31,
+    "answer": "K",
+    "correct": "notified",
+    "why": "his landlord ___ him that... 需要过去式及物动词，构成\"通知某人某事\"结构。notified 是 notify 的过去式，notify sb. that... 为标准搭配，表示房东正式告知租客涨租消息。",
+    "traps": "asserts 意为\"声称\"，主语通常为组织或发言人，房东用 assert 告知租客不合语境且 assert 后一般不接双宾语；imposed 语义不符。",
+    "tip": "动词搭配：notify sb. that...（通知某人……）"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "correct": "asserts",
+    "why": "The association ___ that... 需要第三人称单数动词。asserts 意为\"声称/断言\"，主语为协会，后接 that 从句表达反对立场的观点主张，符合议论语境。",
+    "traps": "notified 意为\"通知\"，用于正式告知具体事项，此处是表达观点而非通知，语义不当；其他动词如 impose 与 that 从句搭配不当。",
+    "tip": "表示\"声称/主张\"：assert that...（断言……）"
+   },
+   {
+    "number": 33,
+    "answer": "G",
+    "correct": "enacted",
+    "why": "it has been ___ 为现在完成时被动语态，需要过去分词。enacted 意为\"被颁布实施\"，指租金管控政策在各地被立法实施过，与 policy/legislation 语义完美契合。",
+    "traps": "correlated 虽为过去分词但 policy has been correlated 缺少 to/with 且语义不合；determined 与政策实施无关。",
+    "tip": "被动语态搭配：policy has been enacted（政策被颁布实施）"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "correct": "anywhere",
+    "why": "has not fixed one housing problem ___ 中，anywhere 用于否定句中表示\"在任何地方\"，强调该政策在所有实施地区都未能解决住房问题，语气绝对化以增强论证力度。",
+    "traps": "其余剩余选项词性或语义均无法充当此处的地点副词；如 determining 为动名词/现在分词，不能修饰整句表地点。",
+    "tip": "否定句中用 anywhere 加强\"无一例外\"的语气"
+   },
+   {
+    "number": 35,
+    "answer": "E",
+    "correct": "determining",
+    "why": "when ___ who gets... 中 when 后省略主语，需要现在分词构成状语从句的省略形式（when determining = when it is determining）。determining 意为\"决定\"，指在决定谁获得租金管控福利时不区分贫富。",
+    "traps": "asserts 虽可作动词但 when asserts 语法错误（省略结构需要分词形式）；enacted 为过去分词，用在此处时态语态不当。",
+    "tip": "when + 现在分词构成时间状语从句的省略"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "impose",
+    "cn": "v. 强制推行；施加（限制、惩罚等）"
+   },
+   {
+    "w": "exemption",
+    "cn": "n. 豁免；免除"
+   },
+   {
+    "w": "correlated",
+    "cn": "adj./v. 相关的；使相关联（correlate 的过去分词）"
+   },
+   {
+    "w": "constituent",
+    "cn": "n. 选区居民；成分 adj. 组成的"
+   },
+   {
+    "w": "devastating",
+    "cn": "adj. 毁灭性的；极具破坏力的"
+   },
+   {
+    "w": "notify",
+    "cn": "v. 正式通知；告知（notify sb. of/that）"
+   },
+   {
+    "w": "assert",
+    "cn": "v. 声称；断言；维护（权利）"
+   },
+   {
+    "w": "enact",
+    "cn": "v. 颁布（法律）；制定；实施"
+   },
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的；不利的"
+   },
+   {
+    "w": "demographic",
+    "cn": "adj. 人口统计的 n. 人口群体"
+   },
+   {
+    "w": "inflation",
+    "cn": "n. 通货膨胀；膨胀"
+   },
+   {
+    "w": "legislation",
+    "cn": "n. 立法；法律；法规"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性（名词/动词/形容词/副词）分组标注。",
+   "第二步：根据空格前后语法线索（冠词、介词、助动词、主语单复数）判断所需词性，缩小范围。",
+   "第三步：利用固定搭配（如 impose caps、be correlated to、hardship exemption）快速锁定答案。",
+   "第四步：结合上下文逻辑（因果、转折、举例）验证语义是否通顺，排除语义不当的干扰项。",
+   "第五步：已选词即时划去，避免重复使用；最后回读全文确认整体连贯性。"
+  ]
+ }
+}

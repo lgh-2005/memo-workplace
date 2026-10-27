@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "11d0bb69466f__reading__3",
+ "examId": "11d0bb69466f",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2013 年考研英语真题",
+ "year": 2013,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:28:11.261Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55390,
+ "usage": {
+  "prompt_tokens": 1717,
+  "completion_tokens": 3490,
+  "total_tokens": 5207,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1717,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3490,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1717,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人类未来前景依然光明",
+  "gist": "文章回顾了人类对未来看法的变迁：过去因科技信念而乐观，如今因各种威胁转向悲观。但作者指出悲观情绪缺乏依据，人类作为物种生存前景良好，通过研究长期历史规律可以对未来做出有据预测，过去的经验能帮助我们降低风险、保障未来。",
+  "structure": [
+   "第1-2段：对比过去乐观与当下悲观的未来观",
+   "第3段：以IUCN红色名录论证人类生存前景良好",
+   "第4-5段：引出对未来的研究及近期未来的复杂性",
+   "第6-7段：强调历史规律可预测未来，悲观只是暂时"
+  ],
+  "difficulty": "中等",
+  "translation": "直到几十年前，我们对未来的愿景在很大程度上——尽管绝非一致——都是极其乐观的。科学和技术将治愈人类的一切弊病，使所有人都过上充实而充满机遇的生活。\n\n如今，乌托邦已经不再时兴，因为我们更深刻地认识到了所面临的各种威胁，从小行星撞击到流感大流行再到气候变化。你甚至可能会忍不住认为，人类几乎没有什么值得期待的未来。\n\n但这种悲观情绪是没有根据的。化石记录表明，许多物种已经存续了数百万年——那么我们为什么不能呢？以更宏观的视角审视我们物种在宇宙中的位置，就会清楚地发现，我们有极大的机会存续数万年，甚至数十万年。查阅国际自然保护联盟（IUCN）濒危物种\"红色名录\"中关于智人的条目，你会读到：\"被列为无危物种，因为该物种分布极为广泛、适应力强、数量目前仍在增长，且不存在导致总体种群数量下降的重大威胁。\"\n\n那么，我们遥远的未来将会怎样？越来越多的研究人员和机构正在认真思考这个问题。例如，\"长今基金会\"的旗舰项目是一座机械钟，其设计目的是在数千年后仍能计时。\n\n也许出乎意料的是，思考如此漫长的时间尺度可能比思考更近的未来更容易。当今技术的潜在演变及其社会后果极其复杂，也许最好留给科幻作家和未来学家去探索我们所能设想的种种可能性。这也是我们创办Arc——一本专注于近未来的新刊物——的原因之一。\n\n但如果放眼更长远，我们能以相当大的把握做出的判断多得令人惊讶。正如常说的那样，过去是通向未来的钥匙：我们现在已经识别出了足够多的塑造地球和人类历史的长期规律，从而可以基于证据预测我们后代将面临的处境。\n\n这种长远的视角使得对我们前景的悲观看法更像是一种短暂的风潮。当然，未来并非一切都美好。但我们现在已经拥有足够的知识，可以减少许多曾威胁早期人类生存的风险，并改善后人的命运。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Science and technology would cure all the ills of humanity, leading to lives of fulfilment and opportunity for all.",
+    "why": "第一段指出，过去我们对未来的愿景\"glowingly positive\"，紧接着解释原因：科学和技术将治愈人类一切弊病。可见过去的乐观愿景源于对科技的信念。B项\"our faith in science and technology\"精确对应原文\"Science and technology would cure all the ills of humanity\"。",
+    "traps": "A项\"desire for lives of fulfillment\"偷换逻辑，充实的生活是科技带来的结果而非愿景的来源；C项\"awareness of potential risks\"对应第二段当下的悲观视角，属于张冠李戴；D项\"belief in equal opportunity\"过度引申了\"opportunity for all\"，原文说的是科技创造机遇，而非平等机会的信念激发了愿景。",
+    "tip": "区分原因与结果，找准逻辑主语与因果链方向。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Listed as Least Concern as the species is very widely distributed, adaptable, currently increasing, and there are no major threats resulting in an overall population decline.",
+    "why": "IUCN红色名录将智人列为\"无危物种\"（Least Concern），理由是分布广、适应力强、数量增长且无重大威胁导致种群下降。这一系列描述说明人类是一个能够持续存在的物种。A项\"a sustained species\"（一个可持续存在的物种）准确概括了这段引文的核心含义。",
+    "traps": "B项\"the world's dominant power\"原文未提及人类在全球的主导地位，属于无中生有；C项\"a threat to the environment\"偷换概念，原文说的是没有重大威胁导致人类数量下降，而非人类对环境构成威胁；D项\"a misplaced race\"借用了前文\"gloominess is misplaced\"的措辞，属于移花接木式干扰。",
+    "tip": "IUCN引文的关键词是Least Concern和no major threats，指向物种的持续生存。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The potential evolution of today's technology, and its social consequences, is dazzlingly complicated, and it's perhaps best left to science fiction writers and futurologists to explore the many possibilities we can envisage.",
+    "why": "第五段首句指出思考漫长时间尺度可能比思考\"更近的未来\"（the more immediate future）更容易，接着解释原因：当今技术的潜在演变及其社会后果\"极其复杂\"（dazzlingly complicated）。D项\"Our immediate future is hard to conceive\"正是对这一论述的准确概括——近未来难以设想。",
+    "traps": "A项\"interest in science fiction is on the rise\"无中生有，原文只是说这类探索可以留给科幻作家，并未说科幻兴趣在上升；B项\"Arc helps limit the scope\"方向相反，Arc是专注于近未来的刊物，是拓展而非限制研究范围；C项\"Technology offers solutions to social problems\"曲解原文，原文说的是技术演变带来复杂的社会后果，并非技术解决社会问题。",
+    "tip": "段落首句的比较结构（easier…than）暗示了近未来的高度复杂性。"
+   },
+   {
+    "number": 34,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "As so often, the past holds the key to the future: we have now identified enough of the long-term patterns shaping the history of the planet, and our species, to make evidence-based forecasts about the situations in which our descendants will find themselves.",
+    "why": "第六段明确指出\"过去是通向未来的钥匙\"，我们已识别出足够多的长期历史规律来做出有据预测；第七段进一步说我们有足够知识减少威胁早期人类的风险。两段共同指向：借鉴过去的经验是保障未来的关键。B项\"draw on our experience from the past\"完美对应。",
+    "traps": "A项\"adopt an optimistic view\"过于笼统，作者虽然反对悲观但强调的是基于证据的理性判断而非单纯乐观；C项\"explore our planet's abundant resources\"原文从未涉及资源开发问题，属于无中生有；D项\"curb our ambition to reshape history\"原文未提及抑制改写历史的野心，属于凭空捏造。",
+    "tip": "\"the past holds the key to the future\"是全文核心论点句，直接对应答案。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "This long perspective makes the pessimistic view of our prospects seem more likely to be a passing fad.",
+    "why": "全文结构为：过去乐观→当下悲观→反驳悲观（化石记录、IUCN名录、长期历史规律）→结论：悲观只是暂时风潮，人类前景光明。文章核心立场是驳斥悲观、肯定人类长远前景。A项\"The Ever-bright Prospects of Mankind\"（人类永远光明的前景）最贴合全文主旨和积极基调。",
+    "traps": "B项\"Science, Technology and Humanity\"过于宽泛，科技只在第一段提及，非文章主线；C项\"Evolution of the Human Species\"偏离主题，文章讨论的是未来前景而非物种进化过程；D项\"Uncertainty about Our Future\"与文章立场相反，作者恰恰认为我们对未来有相当把握。",
+    "tip": "主旨题需兼顾全文论证走向和作者态度倾向，避免被局部段落误导。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "uniformly",
+    "cn": "adv. 一致地，统一地"
+   },
+   {
+    "w": "utopia",
+    "cn": "n. 乌托邦，理想国"
+   },
+   {
+    "w": "gloominess",
+    "cn": "n. 悲观，阴郁"
+   },
+   {
+    "w": "misplaced",
+    "cn": "adj. 不恰当的，错误的"
+   },
+   {
+    "w": "endure",
+    "cn": "v. 持续，存续；忍受"
+   },
+   {
+    "w": "flagship",
+    "cn": "n. 旗舰项目；adj. 最重要的"
+   },
+   {
+    "w": "willfully",
+    "cn": "adv. 故意地，任性地"
+   },
+   {
+    "w": "dazzlingly",
+    "cn": "adv. 令人眼花缭乱地，极其"
+   },
+   {
+    "w": "envisage",
+    "cn": "v. 设想，预见"
+   },
+   {
+    "w": "assurance",
+    "cn": "n. 确信，把握；保证"
+   },
+   {
+    "w": "descendants",
+    "cn": "n. 后代，后裔"
+   },
+   {
+    "w": "fad",
+    "cn": "n. 一时的风尚，短暂的潮流"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Take a broader look at our species' place in the universe, and it becomes clear that we have an excellent chance of surviving for tens, if not hundreds, of thousands of years.",
+    "cn": "以更宏观的视角审视我们物种在宇宙中的位置，就会清楚地发现，我们有极大的机会存续数万年，甚至可能是数十万年。",
+    "note": "祈使句+and+陈述句构成条件关系；if not hundreds插入语表递进让步，意为\"即使不是数十万年\"。"
+   },
+   {
+    "en": "The potential evolution of today's technology, and its social consequences, is dazzlingly complicated, and it's perhaps best left to science fiction writers and futurologists to explore the many possibilities we can envisage.",
+    "cn": "当今技术的潜在演变及其社会后果极其复杂，也许最好留给科幻作家和未来学家去探索我们所能设想的种种可能性。",
+    "note": "主语为The potential evolution…and its social consequences（双主语共用is）；it's best left to…为形式主语结构，真正主语为不定式to explore…。"
+   },
+   {
+    "en": "We have now identified enough of the long-term patterns shaping the history of the planet, and our species, to make evidence-based forecasts about the situations in which our descendants will find themselves.",
+    "cn": "我们现在已经识别出了足够多的塑造地球和人类历史的长期规律，从而可以基于证据预测我们后代将面临的处境。",
+    "note": "enough…to构成\"足够……以至于能……\"结构；shaping…为现在分词作后置定语修饰patterns；in which引导定语从句修饰situations。"
+   }
+  ]
+ }
+}

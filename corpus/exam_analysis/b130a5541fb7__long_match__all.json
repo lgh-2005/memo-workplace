@@ -1,0 +1,249 @@
+{
+ "schemaVersion": 1,
+ "id": "b130a5541fb7__long_match__all",
+ "examId": "b130a5541fb7",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2020 年 12 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:30:40.639Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35050,
+ "usage": {
+  "prompt_tokens": 960,
+  "completion_tokens": 1896,
+  "total_tokens": 2856,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 960,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1896,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 960,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人工智能技术在农业中的应用与挑战",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如agriculture、AI、farmer、replant、software等",
+   "利用专有名词、数字、特殊概念（如UAV、remote sensors、agronomist）快速定位段落",
+   "注意同义替换：profit≈benefit、contained≈closed、challenging≈difficult、arouse doubts≈raise questions",
+   "优先匹配含独特细节的题目（如UAV、agronomist、remote sensors），再处理主题重叠的题目",
+   "对比易混淆项（如36与43都涉及replant，44与45都涉及agriculture的困难），区分细微差异"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "农民一旦将大部分化肥和其他化学品施到田里，重新种植就无法获利。",
+    "keywords": [
+     "replanting",
+     "fertilizer",
+     "chemicals",
+     "profit"
+    ],
+    "paraphrase": "题目中的profit from replanting可能对应原文中关于重新播种的经济回报，most of the fertilizer and other chemicals对应原文关于已投入的农资成本，强调沉没成本导致重播无利可图。",
+    "tip": "定位replant与fertilizer/chemicals共现段落，聚焦经济成本分析。"
+   },
+   {
+    "number": 37,
+    "answer": "L",
+    "cn": "农业与人体医学的不同之处在于，农业的环境不是一个封闭的环境。",
+    "keywords": [
+     "agriculture",
+     "medical science",
+     "human body",
+     "contained"
+    ],
+    "paraphrase": "题目用differs from和not a contained one表达农业与医学的对比；原文可能用open/uncontrolled environment与closed/controlled body system做类比对照。",
+    "tip": "定位medical science或human body等跨领域类比词，该对比具有唯一性，易锁定段落。"
+   },
+   {
+    "number": 38,
+    "answer": "E",
+    "cn": "这位农学家确信他的软件能获得近乎精确的植株数量统计。",
+    "keywords": [
+     "agronomist",
+     "nearly accurate",
+     "plant population",
+     "software"
+    ],
+    "paraphrase": "题目中nearly accurate count对应原文中对精度的描述；plant population对应植株/作物数量统计；agronomist为专有身份词，便于定位。",
+    "tip": "抓住agronomist这一独特身份词，配合software和plant population快速定位。"
+   },
+   {
+    "number": 39,
+    "answer": "N",
+    "cn": "将人工智能应用于农业比应用于大多数其他行业更具挑战性。",
+    "keywords": [
+     "artificial intelligence",
+     "agriculture",
+     "challenging",
+     "other industries"
+    ],
+    "paraphrase": "题目用much more challenging than做程度比较；原文可能用harder/more complex/more difficult等同义词表达AI在农业领域面临的独特困难。",
+    "tip": "定位AI/artificial intelligence与其他行业的对比句，关注比较级表达。"
+   },
+   {
+    "number": 40,
+    "answer": "F",
+    "cn": "就连农民自己也知道无人机提供的数据是不正确的。",
+    "keywords": [
+     "farmers",
+     "UAV",
+     "data",
+     "not correct"
+    ],
+    "paraphrase": "题目中Even the farmers know强调连农民都能看出问题；UAV即无人机，data not correct对应原文中关于无人机数据不准确或存在误差的描述。",
+    "tip": "UAV是高辨识度缩写词，直接扫读定位含UAV/drone的段落。"
+   },
+   {
+    "number": 41,
+    "answer": "Q",
+    "cn": "对快速成果的压力导致产品失败，进而引发人们对人工智能技术在农业中适用性的质疑。",
+    "keywords": [
+     "pressure",
+     "quick results",
+     "product failure",
+     "doubts",
+     "applicability"
+    ],
+    "paraphrase": "题目呈因果链：pressure → product failure → doubts about applicability；原文可能用rush/hurry对应quick results，用skepticism/questioning对应doubts。",
+    "tip": "定位pressure/quick results与failure的因果逻辑链，注意arouse doubts的同义表达。"
+   },
+   {
+    "number": 42,
+    "answer": "H",
+    "cn": "遥感传感器旨在帮助农民改进决策以提高产量。",
+    "keywords": [
+     "remote sensors",
+     "decision-making",
+     "increase yields"
+    ],
+    "paraphrase": "题目中remote sensors对应遥感技术；improve decision-making对应优化农事决策；increase yields对应提高作物产量，原文可能用boost/enhance产量等替换。",
+    "tip": "定位remote sensors这一技术术语，配合yields/产量关键词锁定段落。"
+   },
+   {
+    "number": 43,
+    "answer": "C",
+    "cn": "这位农民期望该软件能告诉他是否需要对农田的某些部分进行重新种植。",
+    "keywords": [
+     "farmer",
+     "software",
+     "replant",
+     "farm fields"
+    ],
+    "paraphrase": "题目中expects the software to tell him表达农民对软件功能的期待；replant any parts强调局部重播需求；原文可能用inform/indicate等替换tell。",
+    "tip": "注意与第36题区分：本题聚焦farmer对software功能的期待，36题聚焦replant的经济可行性。"
+   },
+   {
+    "number": 44,
+    "answer": "K",
+    "cn": "由于涉及不断变化的条件，农业被证明非常难以量化。",
+    "keywords": [
+     "agriculture",
+     "quantify",
+     "constantly changing",
+     "conditions"
+    ],
+    "paraphrase": "题目中difficult to quantify强调农业难以用数据精确衡量；constantly changing conditions指气候、土壤等变量，原文可能用variable/dynamic/fluctuating等替换。",
+    "tip": "定位quantify一词及与变化条件相关的描述，注意与45题区分：本题强调量化困难，45题强调结果差异。"
+   },
+   {
+    "number": 45,
+    "answer": "M",
+    "cn": "相同的种子和化肥方案在不同地方可能产生完全不同的结果。",
+    "keywords": [
+     "same seed",
+     "fertilizer program",
+     "different outcomes",
+     "different places"
+    ],
+    "paraphrase": "题目用same…different构成对比，强调农业投入与产出在空间维度上的不一致性；原文可能用identical inputs/varying results等表达同义替换。",
+    "tip": "抓住same与different的强对比逻辑，定位讨论地域差异导致产出不同的段落。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "agronomist",
+    "cn": "农学家（n.）"
+   },
+   {
+    "w": "UAV",
+    "cn": "无人机（n.，unmanned aerial vehicle的缩写）"
+   },
+   {
+    "w": "replant",
+    "cn": "重新种植（v.）"
+   },
+   {
+    "w": "contained",
+    "cn": "封闭的、受控的（adj.）"
+   },
+   {
+    "w": "applicability",
+    "cn": "适用性（n.）"
+   },
+   {
+    "w": "quantify",
+    "cn": "量化（v.）"
+   },
+   {
+    "w": "remote sensors",
+    "cn": "遥感传感器（n.）"
+   },
+   {
+    "w": "yields",
+    "cn": "产量（n.）"
+   },
+   {
+    "w": "fertilizer",
+    "cn": "化肥（n.）"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "同义转述（n./v.）"
+   }
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "48775dd71dd3__reading__1",
+ "examId": "48775dd71dd3",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 6 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:50:29.290Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 76233,
+ "usage": {
+  "prompt_tokens": 1841,
+  "completion_tokens": 4768,
+  "total_tokens": 6609,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1841,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4768,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1841,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "呼吁禁止针对儿童的广告",
+  "gist": "文章指出广告商几乎不受限制地接触儿童，将其塑造为消费者而非有社会贡献意识的公民。作者援引专家研究表明终身消费主义导致心理问题日益严重，并针对反对意见进行回应，最终呼吁全面禁止面向小学及以下年龄儿童的广告。",
+  "structure": [
+   "第1-2段：提出问题——广告商不受约束地影响儿童，扭曲其价值观",
+   "第3-4段：追溯历史并引用专家研究，指出消费主义导致心理疾病",
+   "第5段：让步段，承认部分心理学家与广告业合作，列举广告可能的正面作用",
+   "第6-8段：亮明立场，回应反对意见，呼吁立法禁止向幼童投放广告"
+  ],
+  "difficulty": "中等",
+  "translation": "我们到底是怎么走到这一步的？我们过度保护孩子免受一切伤害；我们仔细审查与他们接触的每一位看护人、教师或医生。然而，尽管如此，有一个群体——完全不以儿童的最大利益为出发点——却几乎可以不受限制地接触他们。\n\n我们似乎理所当然地认为，广告商和营销人员有权影响甚至是最年幼的孩子。在孩子尚未建立正确的自我认知，或学会使用金钱之前，他们就被引导着将地位和自我价值与物质挂钩，并向名望和财富等外在事物寻求认可。我们培养出的是小消费者，而不是那些因自身对所在社会的贡献而认可自我价值的小公民。\n\n我们是如此缓慢地走到了这一步，以至于许多人从未质疑过它。在过去六十年里，它悄悄地影响了我们——自从广告商开始瞄准青少年，并发现可以利用他们对父母发动一场商业攻势。我们后来将其称为\"纠缠力量\"，即儿童向父母施压促使其购买特定商品的能力。\n\n许多心理学家、儿童发展专家和教育工作者指出，研究表明这种正在兴起的从摇篮到坟墓的消费主义正导致低自尊、抑郁和其他形式心理疾病的发病率不断上升。\n\n并非所有心理学家都同意这一观点。有不少心理学家与一个年产值120亿英镑的产业密切合作，该产业已将对成人情感和欲望的操纵变成了一种艺术形式——常常是字面意义上的。它也在不断开发新的方式来说服我们的孩子渴望物质财富，而且由于广告的病毒式传播效应，他们只需感染少数人就能影响到大多数人。广告和营销对儿童也可能有积极作用。营销可以帮助儿童融入消费社会，让他们了解产品信息，并在他们步入成年时帮助他们塑造独特的身份。\n\n那么，我们是否应该禁止所有针对幼童的广告呢？我的回答是肯定的。\n\n当然，彻底禁止向11岁以下儿童投放广告的做法会遭到很多反对意见。有人会辩称这将违反言论自由，侵犯企业对幼童进行洗脑以促使其索要产品的权利。\n\n大多数父母都厌恶广告对孩子的影响，但我们确实有能力结束这一切，让我们的孩子在成长过程中远离消费主义的诸多压力，直到他们长大到能够做出自己的决定。虽然广告只是无处不在的营销文化的一部分，但我们需要从某处开始。让我们现在就禁止所有针对小学及更低年龄段儿童的广告吧。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Yet despite all this, one group, which in no way has their best interests at heart, has almost unconstrained access.",
+    "why": "第一段末尾提到某个群体\"几乎不受约束地接触儿童\"，紧接着第二段首句明确指出\"We seem to take it for granted that advertisers and marketers are allowed to condition even the youngest children\"，直接点明该群体即为广告商和营销人员。两段逻辑上紧密衔接，unconstrained对应题干中的unrestricted。",
+    "traps": "B（Carers）、C（Teachers）、D（Doctors）均出现在第一段第二句中，它们恰恰是被\"仔细审查\"（scrutinize）的对象，与\"不受约束地接触\"完全相反，属于典型的张冠李戴、利用原词设置干扰。",
+    "tip": "当某段以代词或模糊指代结尾时，答案往往在下一段首句被揭示。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "We're turning out little consumers rather than young citizens who will value themselves for what they contribute to the society in which they live.",
+    "why": "作者用rather than构成对比，批评现状是培养\"小消费者\"，而理想目标是培养\"因对社会贡献而认可自身价值的小公民\"。B选项\"value themselves because of their contribution to society\"与原文\"value themselves for what they contribute to the society\"完全对应，是对原文的同义转述。",
+    "traps": "A项\"look to fame and wealth for validation\"是作者批评的现象而非理想目标，属于正反混淆；C项\"associate self-worth with the ability to handle money\"将\"学会用钱\"与\"自我价值\"进行了原文中不存在的关联，属于拼凑嫁接；D项\"developed a proper sense of their own identity\"是作者提到儿童尚未达到的状态，并非作者提出的培养目标。",
+    "tip": "rather than结构常揭示作者真正的主张，重点关注其前后的对比信息。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "this emerging cradle-to-grave consumerism is contributing to growing rates of low self-esteem, depression and other forms of mental illness.",
+    "why": "原文cradle-to-grave意为\"从摇篮到坟墓\"即\"终身的\"，对应A选项的life-long；low self-esteem, depression and other forms of mental illness属于心理问题（psychological problems）；growing rates对应more and more cases。A选项是对原文的精确同义改写。",
+    "traps": "B项\"commercialization of education\"（教育商业化）偏离原文主题，属于无中生有；C项将原因窄化为\"对财富的渴望\"（desire for wealth），而原文说的是整体消费主义，属于以偏概全；D项描述了\"终身购物欲被培养\"，但原文此处重点不是\"被培养\"而是其导致的心理后果，答非所问。",
+    "tip": "注意识别同义替换：cradle-to-grave=life-long，mental illness=psychological problems。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "because of advertisements' viral effect they only need to infect a few to reach the many.",
+    "why": "原文表述\"只需感染少数人就能影响多数人\"，言下之意是广告的实际影响力远超直接接触的少数人，最终感染的是多数人。A选项\"It is actually infectious to many rather than a few\"准确概括了这一推断含义：广告的真实影响对象是多数人而非少数人。",
+    "traps": "B项\"rooted in our desire for material possessions\"混淆了广告的效果与根源，原文未说广告根植于人的物欲；C项\"comparable to that of virus\"仅停留在比喻层面，未触及作者的深层含义——强调影响范围之广，且题目问的是impact（影响），不是mechanism（机制）；D项\"literally limited to children\"与原文矛盾，原文说广告也操纵成人情感。",
+    "tip": "推断题需透过字面比喻抓住作者真正想表达的观点。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "There'll be those who argue that would be a breach of freedom of speech and infringe the rights of corporations to brainwash little children into demanding their products.",
+    "why": "原文明确指出反对者会辩称禁令将\"侵犯企业的权利\"（infringe the rights of corporations）。D选项\"violate the rights endowed upon advertisers\"中violate对应infringe，advertisers对应corporations，是对原文的同义改写。注意\"to brainwash...\"是作者讽刺性的补充说明，并非反对者的原话。",
+    "traps": "A项\"deprive them of the chance to learn about products\"和B项\"render them unable to carve out unique identities\"的内容来自第五段中作者让步承认的广告正面作用，并非反对者反对禁令的论据，属于张冠李戴、移花接木；C项\"breach their freedom as would-be consumers\"将\"言论自由\"偷换为\"消费者自由\"，且将自由的主体从企业偷换为儿童，属于偷换概念。",
+    "tip": "注意区分\"作者自己让步承认的内容\"与\"反对者的论据\"，不可混为一谈。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "obsessively",
+    "cn": "adv. 过度地，着魔似地"
+   },
+   {
+    "w": "scrutinize",
+    "cn": "v. 仔细检查，审查"
+   },
+   {
+    "w": "unconstrained",
+    "cn": "adj. 不受约束的，无拘无束的"
+   },
+   {
+    "w": "validation",
+    "cn": "n. 认可，确认，证实"
+   },
+   {
+    "w": "consumerism",
+    "cn": "n. 消费主义"
+   },
+   {
+    "w": "cradle-to-grave",
+    "cn": "adj. 从摇篮到坟墓的，终身的"
+   },
+   {
+    "w": "manipulation",
+    "cn": "n. 操纵，控制"
+   },
+   {
+    "w": "viral",
+    "cn": "adj. 病毒式的，病毒性传播的"
+   },
+   {
+    "w": "outright",
+    "cn": "adj./adv. 完全的（地），彻底的（地）"
+   },
+   {
+    "w": "infringe",
+    "cn": "v. 侵犯，违反"
+   },
+   {
+    "w": "all-pervasive",
+    "cn": "adj. 无处不在的，遍及各处的"
+   },
+   {
+    "w": "hand in glove",
+    "cn": "phr. 密切合作，沆瀣一气"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Before children have even developed a proper sense of their own identity, or learned to handle money, they're encouraged to associate status and self-worth with stuff, and to look to external things such as fame and wealth for validation.",
+    "cn": "在孩子尚未建立正确的自我认知或学会使用金钱之前，他们就被引导着将地位和自我价值与物质挂钩，并向名望和财富等外在事物寻求认可。",
+    "note": "Before引导时间状语从句，含两个并列谓语developed和learned；主句被动语态they're encouraged后接两个并列不定式to associate...and to look to...，such as引出举例。"
+   },
+   {
+    "en": "It's crept up on us in the 60 years since advertisers started to target the young and found that they could recruit them to a commercial assault on their parents.",
+    "cn": "在过去六十年里，自从广告商开始瞄准年轻人并发现他们可以利用年轻人对其父母发动商业攻势以来，这一现象悄悄地影响了我们。",
+    "note": "since引导时间状语从句，从句中started和found并列；found后接that宾语从句；recruit sb to sth意为'招募某人参与某事'，此处为比喻用法。"
+   },
+   {
+    "en": "There'll be those who argue that would be a breach of freedom of speech and infringe the rights of corporations to brainwash little children into demanding their products.",
+    "cn": "有人会辩称这将违反言论自由，并侵犯企业对幼童进行洗脑以促使其索要产品的权利。",
+    "note": "those后接who引导的定语从句；argue后省略了that引导的宾语从句；a breach of和infringe并列说明两种后果；to brainwash作后置定语修饰rights，带有强烈讽刺意味。"
+   }
+  ]
+ }
+}

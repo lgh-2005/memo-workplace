@@ -1,0 +1,170 @@
+{
+ "schemaVersion": 1,
+ "id": "f9d11b8b2c79__part_b__all",
+ "examId": "f9d11b8b2c79",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2025 年考研英语真题",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:57:32.550Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42880,
+ "usage": {
+  "prompt_tokens": 1485,
+  "completion_tokens": 2127,
+  "total_tokens": 3612,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1485,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2127,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1485,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "摄影师Peters拍摄英国蝴蝶起飞的故事",
+  "type": "段落排序题",
+  "strategy": [
+   "先通读所有段落，识别人物首次出现（全名）的段落作为开头",
+   "寻找代词指代、时间线索和逻辑递进关系确定先后顺序",
+   "关注段首衔接词（So, That, Unlike等）判断前文内容",
+   "利用已给定位置的段落C和H作为锚点，前后验证衔接",
+   "检查整体叙事逻辑：起因→背景→技术→挑战→感悟"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "D",
+    "why": "D段首次以全名Andrew Fusek Peters引出人物，交代故事起因：五年前被确诊肠癌，在花园中看到蝴蝶，感受到脆弱生命的希望与抗争，属于典型的叙事开篇段。全名出现通常标志文章起始位置。",
+    "traps": "B段直接提到Peters' signature shot，缺乏人物介绍铺垫；F段以So开头，明显是总结段，不适合放在首位。",
+    "tip": "全名首次出现+故事起因（癌症诊断）= 文章开头"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "why": "G段承接D段，用代词指代D中提到的Peters，说明他是儿童作家和业余摄影师，'watched the butterflies'呼应D段花园中看蝴蝶的场景，'recovered from a successful operation'承接D段的'waiting for surgery'，时间线完美衔接，并引出拍摄所有58种蝴蝶、出版新书的主线。",
+    "traps": "B段虽涉及拍摄技术，但跳过了人物背景交代，与D段之间缺乏过渡；C段讲蝴蝶种群衰退，放在此处缺少与D段的衔接。",
+    "tip": "surgery→operation、watched the butterflies 与D段花园场景呼应"
+   },
+   {
+    "number": 43,
+    "answer": "B",
+    "why": "前文C段介绍了英国蝴蝶物种现状，B段以Peters' signature shot转回摄影主线，引出'take-off'核心概念，并介绍高速相机技术（120帧/秒），为后文H段解释具体拍摄流程（半按快门保存前70帧、Photoshop合成）做铺垫，B→H技术细节层层递进。",
+    "traps": "E段虽也涉及拍摄技术，但以That makes it sound easy开头，需要前文先交代'听起来容易'的内容，放在C之后不合逻辑；A段讲广角风景拍摄，与H段的起飞技术无直接衔接。",
+    "tip": "B段引出take-off概念和高速相机，H段紧接详述操作流程"
+   },
+   {
+    "number": 44,
+    "answer": "E",
+    "why": "E段首句That makes it sound easy承接H段中Peters描述的'时间旅行'技术和Photoshop合成过程，用转折指出实际拍摄仍然极具挑战：需拍摄10000-20000张才能得到一组清晰序列，景深极浅，蝴蝶飞行路线不规则。That指代H段所述技术手段，逻辑衔接紧密。",
+    "traps": "A段讲广角风景拍摄，虽也涉及挑战，但与H段技术细节无直接语义衔接；F段是情感总结，放在此处过早结束叙事。",
+    "tip": "That makes it sound easy 中的That回指H段的技术描述"
+   },
+   {
+    "number": 45,
+    "answer": "F",
+    "why": "F段以So what's the appeal开头，是对全文的情感总结：Peters表达拍摄蝴蝶带来的精神满足感（spiritual bank），呼应D段开头的心灵触动（appealed to my soul），形成首尾呼应。放在A段之后，从技术与伦理层面过渡到情感升华，自然收束全文。",
+    "traps": "其余选项均已使用。F段的总结性语气（So引导的反问+直接引语表达感受）也明确标志其为结尾段，不可能出现在中间位置。",
+    "tip": "So what's the appeal 总结反问 + spiritual bank 与开篇soul首尾呼应"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "fritillary",
+    "cn": "豹纹蝶（n. 蝴蝶的一种）"
+   },
+   {
+    "w": "skittish",
+    "cn": "易受惊的，胆怯的（adj.）"
+   },
+   {
+    "w": "tamper",
+    "cn": "篡改，擅自摆弄（v.）"
+   },
+   {
+    "w": "shutter",
+    "cn": "快门（n.）"
+   },
+   {
+    "w": "depth of field",
+    "cn": "景深（n. 摄影术语）"
+   },
+   {
+    "w": "fieldcraft",
+    "cn": "野外技能，实地拍摄技巧（n.）"
+   },
+   {
+    "w": "hoverflies",
+    "cn": "食蚜蝇（n.）"
+   },
+   {
+    "w": "SLR camera",
+    "cn": "单反相机（n. Single Lens Reflex的缩写）"
+   },
+   {
+    "w": "bowel cancer",
+    "cn": "肠癌（n.）"
+   },
+   {
+    "w": "painted lady",
+    "cn": "小红蛱蝶（n. 蝴蝶品种名）"
+   },
+   {
+    "w": "elusive",
+    "cn": "难以捉摸的，难以找到的（adj.）"
+   },
+   {
+    "w": "wide-angle lens",
+    "cn": "广角镜头（n.）"
+   },
+   {
+    "w": "sea-pinks",
+    "cn": "海石竹（n. 一种海边植物）"
+   },
+   {
+    "w": "pesticides",
+    "cn": "杀虫剂，农药（n.）"
+   },
+   {
+    "w": "pollinate",
+    "cn": "授粉（v.）"
+   }
+  ]
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "6dbe08bed285__writing__all",
+ "examId": "6dbe08bed285",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2001 年考研英语真题（旧）",
+ "year": 2001,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:11:43.043Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52734,
+ "usage": {
+  "prompt_tokens": 741,
+  "completion_tokens": 2757,
+  "total_tokens": 3498,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 741,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2757,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 741,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 46,
+    "part": "A",
+    "task": "看图作文，要求理解图片的象征含义（爱心是一盏灯，越黑暗处越明亮），举具体例子，并提出展示爱的最佳方式建议。约200词。",
+    "outline": [
+     "第一段：描述图片内容（一盏在黑暗中发光的油灯），揭示象征含义——爱心如灯，在最困难、最黑暗的地方最能彰显其价值。",
+     "第二段：举出具体事例（如特蕾莎修女、希望工程志愿者等），用事实论证爱在困境中的巨大力量。",
+     "第三段：提出建议——表达爱的最佳方式是付诸行动，主动关注弱势群体，以实际行为传递温暖，而非停留在口头。"
+    ],
+    "sample": "As is vividly depicted in the picture, a lamp is shining brightly in the dark, with a caption underneath reading \"Love is a lamp: the darker the place, the brighter it glows.\" The symbolic meaning is both profound and thought-provoking: love is most valuable and powerful when it reaches those who are suffering the most.\n\nA compelling example that illustrates this point is the story of Mother Teresa, who devoted her entire life to caring for the poorest of the poor in Calcutta, India. Surrounded by disease, poverty, and despair, she brought hope and warmth to countless abandoned souls. Her selfless love shone like a brilliant lamp in the darkest corner of the world, inspiring millions around the globe to follow her example of compassion and unwavering dedication.\n\nIn my view, the best way to show love is through concrete actions rather than mere words. We should actively seek out those who are most vulnerable — the elderly living alone, children deprived of education, and families stricken by natural disasters — and extend to them practical assistance. Love, after all, is not an abstract concept but a living force that gains its power through being shared. Only when we translate our genuine feelings into tangible deeds can love truly illuminate the world around us.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the picture",
+      "cn": "正如图片中生动描绘的那样；图画作文经典开头句型，展示对图片内容的描述能力"
+     },
+     {
+      "en": "profound and thought-provoking",
+      "cn": "深刻且发人深省的；用于评价象征意义，体现思辨深度"
+     },
+     {
+      "en": "devote one's entire life to (doing) sth.",
+      "cn": "将毕生精力投入某事；注意 to 为介词，后接名词或动名词"
+     },
+     {
+      "en": "selfless love / unwavering dedication",
+      "cn": "无私的爱 / 坚定不移的奉献；高频正面品质描述词组"
+     },
+     {
+      "en": "inspire sb. to follow one's example",
+      "cn": "激励某人效仿其榜样；用于举例后升华影响力"
+     },
+     {
+      "en": "concrete actions rather than mere words",
+      "cn": "切实的行动而非空洞的话语；对比强调行动的重要性"
+     },
+     {
+      "en": "those who are most vulnerable",
+      "cn": "最弱势的群体；替代 the poor 等简单表达，更具学术感"
+     },
+     {
+      "en": "translate feelings into tangible deeds",
+      "cn": "将情感转化为切实的行动；用 translate…into 构成隐喻，比 change 更高级"
+     },
+     {
+      "en": "a beacon of light / a living force",
+      "cn": "一盏明灯 / 一种鲜活的力量；用于抽象概念的具象化表达"
+     },
+     {
+      "en": "extend practical assistance to sb.",
+      "cn": "向某人提供切实帮助；extend 比 give 更正式，适用于书面语"
+     }
+    ],
+    "pitfalls": [
+     "忽视图片描述，直接议论，导致首段与题目要求脱节，扣3-5分",
+     "举例过于笼统（如 many people help others），缺乏具体人物、时间、事件，说服力不足",
+     "建议段空喊口号（如 we should love each other），未给出可操作的具体方式",
+     "通篇简单句堆砌，缺少复合句（定语从句、状语从句）和高级词汇，语言档次低",
+     "审题不全，漏写三项要求中的任一项（象征含义、具体例子、建议），结构不完整"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows a lamp in the dark.",
+      "better": "As is vividly depicted in the picture, a lamp is shining brightly in the dark, with a caption underneath reading '...'",
+      "note": "用 as 引导的非限定性定语从句 + with 独立主格，句式复杂度和描写精度均大幅提升"
+     },
+     {
+      "plain": "She helped poor people all her life.",
+      "better": "She devoted her entire life to caring for the poorest of the poor, bringing hope and warmth to countless abandoned souls.",
+      "note": "devote...to + 现在分词伴随状语，信息密度更高，语言更具感染力"
+     },
+     {
+      "plain": "We should help weak people.",
+      "better": "We should actively seek out those who are most vulnerable and extend to them practical assistance.",
+      "note": "seek out + 定语从句 + extend 正式动词，比 help weak people 更具体且更书面化"
+     },
+     {
+      "plain": "Love is important.",
+      "better": "Love is not an abstract concept but a living force that gains its power through being shared.",
+      "note": "not...but 对比 + 定语从句，将抽象观点具象化，兼具逻辑性和修辞美感"
+     },
+     {
+      "plain": "Only action can show real love.",
+      "better": "Only when we translate our genuine feelings into tangible deeds can love truly illuminate the world around us.",
+      "note": "Only when 引导部分倒装句，translate...into 隐喻 + illuminate 呼应灯的意象，首尾照应"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the picture, a lamp is shining brightly in the dark — love is most valuable and powerful when it reaches those who are suffering the most. （图画描述+象征揭示一气呵成，适用于所有看图作文首段）",
+   "Her selfless love shone like a brilliant lamp in the darkest corner of the world, inspiring millions around the globe to follow her example. （用 shine like a lamp 呼应图片意象，现在分词伴随状语拓展影响力，举例段高分句）",
+   "Love is not an abstract concept but a living force that gains its power through being shared. （not...but 对比+定语从句，把'爱'定义得既哲理又具体，可用于各类情感话题结尾升华）",
+   "Only when we translate our genuine feelings into tangible deeds can love truly illuminate the world around us. （Only when 倒装+translate...into 隐喻+illuminate 照应全文灯的意象，堪称满分结尾句）"
+  ]
+ }
+}

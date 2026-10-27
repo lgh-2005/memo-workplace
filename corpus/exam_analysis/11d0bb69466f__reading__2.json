@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "11d0bb69466f__reading__2",
+ "examId": "11d0bb69466f",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2013 年考研英语真题",
+ "year": 2013,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:28:05.054Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54727,
+ "usage": {
+  "prompt_tokens": 1742,
+  "completion_tokens": 3357,
+  "total_tokens": 5099,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1742,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3357,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1742,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "行为广告与\"禁止追踪\"功能之争",
+  "gist": "文章围绕互联网行为广告的追踪与隐私问题展开，介绍了美国联邦贸易委员会提出的\"禁止追踪\"（DNT）选项，重点讨论了微软将DNT设为默认引发的行业争议：广告商担忧失去用户数据、消费者权益受损，而DNT的实际效果和微软的真实动机均存疑。",
+  "structure": [
+   "第1-2段：引出行为广告的价值及追踪与许可之争",
+   "第3-4段：介绍DNT提案背景及微软将DNT设为默认引发争议",
+   "第5-6段：广告商的反对立场与DNT实际执行的不确定性",
+   "第7段：质疑微软此举的真实动机"
+  ],
+  "difficulty": "中等",
+  "translation": "有句老话说，所有广告预算有一半是浪费的——问题是，没人知道是哪一半。在互联网时代，至少在理论上，这个浪费的比例可以大大降低。通过观察人们在网上搜索什么、点击什么和说了什么，公司可以将\"行为\"广告精准投放给最有可能购买的人。\n\n在过去几周里，一场争论凸显了这类精细信息对广告商的价值：广告商是否应该假定人们乐于被追踪并接收行为广告？还是他们应该获得用户的明确许可？\n\n2010年12月，美国联邦贸易委员会（FTC）提议在互联网浏览器中添加\"禁止追踪\"（DNT）选项，以便用户可以告知广告商他们不希望被跟踪。微软的Internet Explorer和苹果的Safari都提供了DNT功能；谷歌的Chrome也计划在今年推出。2月份，FTC与数字广告联盟（DAA）达成协议，行业将着手回应DNT请求。\n\n5月31日，微软引发了这场争端。微软宣布，将随Windows 8推出的Internet Explorer 10将把DNT设为默认选项。\n\n广告商对此感到震惊。鉴于人的本性，大多数人会沿用默认设置。目前很少有人主动开启DNT，但如果追踪功能默认关闭，它就会一直保持关闭状态。美国全国广告商协会首席执行官鲍勃·利奥迪斯表示，如果行业无法收集消费者偏好信息，消费者的处境会更糟。他说，人们收到的广告不会减少，\"他们会收到更多无意义、更不精准的广告。\"\n\n目前尚不清楚广告商将如何回应。收到DNT信号并不意味着必须停止追踪，尽管一些公司已承诺会这么做。由于无法分辨某人是真的反对行为广告，还是只是沿用了微软的默认设置，一些广告商可能会忽略DNT信号，照常追踪。\n\n同样不清楚的是，微软为何要单独行动。毕竟，微软自己也有广告业务，它表示将遵从DNT请求，尽管具体方式仍在制定中。如果微软是想打击几乎完全依赖广告的谷歌，它选择了一种间接方式：DNT默认开启成为行业标准并无保证。DNT似乎并不是Windows 8一个明显的重大卖点——尽管微软此前曾在隐私方面将自家一些产品与谷歌的产品进行了有利于己的比较。微软首席隐私官布伦登·林奇在博客中写道：\"我们相信消费者应该拥有更多控制权。\"事情真的这么简单吗？",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "By watching what people search for, click on and say online, companies can aim \"behavioural\" ads at those most likely to buy.",
+    "why": "第一段先引用老话说广告预算有一半被浪费，接着说在互联网时代这个浪费比例可以大大降低，因为行为广告能精准投放给最可能购买的人。由\"减少浪费比例\"可推出行为广告帮助广告商降低了运营成本（减少无效广告投入），对应D选项。",
+    "traps": "A\"提供更好的在线服务\"文中未提及，属于无中生有；B\"缓解彼此间的竞争\"文中未涉及广告商之间的竞争关系，属于无中生有；C\"避免消费者投诉\"文中未提及消费者投诉问题，属于无中生有。",
+    "tip": "注意推断题需将原文信息做一步合理推导，\"减少浪费\"即\"降低成本\"。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "词义句意题",
+    "locate": "In February the FTC and the Digital Advertising Alliance (DAA) agreed that the industry would get cracking on responding to DNT requests.",
+    "why": "该句说的是FTC与数字广告联盟（DAA）达成协议，\"the industry\"将着手回应DNT请求。DAA本身就是广告行业组织，与FTC协商的对象正是在线广告行业。因此\"the industry\"指的是在线广告商，对应D。",
+    "traps": "A\"浏览器开发商\"虽然上文提到了浏览器，但此处语境是DAA（数字广告联盟）所代表的行业；B\"数字信息分析师\"无原文依据，属于无中生有；C\"电子商务经营者\"文中未讨论电商，属于偷换概念。",
+    "tip": "指代题需紧扣上下文语境，关注所在句子的主语和涉及的组织名称。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Bob Liodice, the chief executive of the Association of National Advertisers, says consumers will be worse off if the industry cannot collect information about their preferences.",
+    "why": "原文明确引用Bob Liodice的话：如果行业无法收集消费者偏好信息，消费者的处境会更糟；他们不会收到更少的广告，而是会收到更多无意义、不精准的广告。这说明他认为DNT默认开启不会让消费者受益，反而有害，对应C\"不会使消费者受益\"。",
+    "traps": "A\"可能减少垃圾广告数量\"与原文矛盾，Bob明确说广告数量不会减少；B\"不会影响广告行业\"与原文相反，Bob认为影响很大；D\"违背人性\"虽然文中提到human nature，但那是解释为何默认设置有效，并非Bob对DNT的评价。",
+    "tip": "注意区分作者的客观叙述与引用人物的观点立场。"
+   },
+   {
+    "number": 29,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Unable to tell whether someone really objects to behavioural ads or whether they are sticking with Microsoft's default, some may ignore a DNT signal and press on anyway.",
+    "why": "第六段指出：收到DNT信号并不强制要求停止追踪；广告商无法区分用户是真的反对追踪还是仅仅沿用默认设置，因此一些广告商可能会忽略DNT信号继续追踪。这说明DNT可能无法实现其预期目的（保护用户不被追踪），对应B。",
+    "traps": "A\"广告商愿意执行DNT\"与原文相反，原文说some may ignore a DNT signal；C\"DNT在消费者中失去人气\"文中未提及；D\"广告商有义务提供行为广告\"文中未提及此类义务，属于无中生有。",
+    "tip": "段落推断题需综合段落整体信息，抓住转折和让步关系。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "Brendon Lynch, Microsoft's chief privacy officer, blogged: \"We believe consumers should have more control.\" Could it really be that simple?",
+    "why": "作者在引用Lynch的博客后，紧接着以反问句\"Could it really be that simple?\"（事情真的这么简单吗？）收束全文。这个反问句明确表达了作者对Lynch所言的怀疑态度，认为微软的动机并非表面上那么单纯，对应D\"skepticism（怀疑）\"。",
+    "traps": "A\"indulgence（纵容/放任）\"不符合语境，作者并非宽容对待；B\"understanding（理解）\"暗示认同，但反问句表明质疑；C\"appreciation（赞赏）\"与反问语气矛盾，作者明显不认可这一说法。",
+    "tip": "态度题关注反问句、转折词等语气标志，反问句常暗示否定或怀疑。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "fine-grained",
+    "cn": "adj. 精细的，细粒度的"
+   },
+   {
+    "w": "explicit",
+    "cn": "adj. 明确的，清楚的"
+   },
+   {
+    "w": "get cracking",
+    "cn": "v. 开始着手做，赶紧行动"
+   },
+   {
+    "w": "default",
+    "cn": "n./adj. 默认（设置）"
+   },
+   {
+    "w": "horrified",
+    "cn": "adj. 震惊的，惊骇的"
+   },
+   {
+    "w": "comply with",
+    "cn": "v. 遵从，遵守"
+   },
+   {
+    "w": "oblige",
+    "cn": "v. 强制，迫使"
+   },
+   {
+    "w": "press on",
+    "cn": "v. 继续前进，坚持下去"
+   },
+   {
+    "w": "norm",
+    "cn": "n. 标准，常规"
+   },
+   {
+    "w": "favourably",
+    "cn": "adv. 有利地，赞许地"
+   },
+   {
+    "w": "fraction",
+    "cn": "n. 比例，部分，小部分"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "By watching what people search for, click on and say online, companies can aim \"behavioural\" ads at those most likely to buy.",
+    "cn": "通过观察人们在网上搜索什么、点击什么和说了什么，公司可以将\"行为\"广告精准投放给那些最有可能购买的人。",
+    "note": "By watching引导方式状语，含三个并列宾语从句what people search for / click on / say online；主句中those most likely to buy为省略了who are的定语从句。"
+   },
+   {
+    "en": "Unable to tell whether someone really objects to behavioural ads or whether they are sticking with Microsoft's default, some may ignore a DNT signal and press on anyway.",
+    "cn": "由于无法分辨某人是真的反对行为广告，还是只是沿用了微软的默认设置，一些广告商可能会忽略DNT信号，照常继续追踪。",
+    "note": "句首Unable to tell为形容词短语作原因状语；whether...or whether...构成选择疑问，是tell的两个宾语从句；主句主语some指代advertisers。"
+   },
+   {
+    "en": "If it is trying to upset Google, which relies almost wholly on advertising, it has chosen an indirect method: there is no guarantee that DNT by default will become the norm.",
+    "cn": "如果微软是想打击几乎完全依赖广告的谷歌，它选择了一种间接方式：DNT默认开启成为行业标准并无保证。",
+    "note": "If引导条件状语从句；which引导非限制性定语从句修饰Google；冒号后为主句的解释说明，其中that引导同位语从句修饰guarantee。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "cccaddf69626__reading__2",
+ "examId": "cccaddf69626",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 6 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:12:00.865Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54778,
+ "usage": {
+  "prompt_tokens": 1861,
+  "completion_tokens": 3465,
+  "total_tokens": 5326,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1861,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3465,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1861,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "梅西百货面临销售困境与转型",
+  "gist": "梅西百货在假日季销售大幅下滑，主要受强势美元削弱国际游客消费、暖冬天气及消费者兴趣转移等多重因素影响。公司采取裁员、关店、削减成本等措施，并积极布局折扣店和美妆业务以应对挑战，线上渠道成为少有的亮点。",
+  "structure": [
+   "第1-2段：梅西百货假日季销售暴跌及归因分析",
+   "第3-4段：深层危机与裁员关店等成本削减措施",
+   "第5段：转型尝试——折扣店与美妆业务扩张",
+   "第6段：线上渠道表现亮眼，线下持续疲软"
+  ],
+  "difficulty": "中等",
+  "translation": "梅西百货报告称，在营业超过一年的门店中，11月和12月的销售额暴跌5.2%，这一令人失望的假日季表现为这家面临诸多挑战的百货连锁店艰难的一年画上了句号。其位于美国主要城市的旗舰店严重依赖国际游客消费，而由于美元走强，许多零售商的国际游客消费都出现了缩减。与此同时，梅西百货一直难以吸引那些更愿意把钱花在旅行或外出就餐上、而非购买新衣服或配饰的消费者。\n\n该公司将11月和12月的糟糕业绩在很大程度上归咎于异常温暖的天气。首席执行官特里·伦德格伦在新闻稿中表示：\"我们公司同比可比销售额下降的约80%可归因于寒冷天气商品的短缺。\"这促使公司下调了整个第四季度的预期。\n\n然而，显然梅西百货认为其问题远比温度计上的暂时偏差更为深层。这家零售巨头表示，今年糟糕的财务表现已促使其开始实施4亿美元的成本削减计划。公司承诺将裁减600个后台岗位，不过其中约150名员工将被重新分配到其他岗位。公司还计划向165名高管提供\"自愿离职\"方案。它将削减旗下770家门店的人员配置，这一举措将影响约3000名员工。\n\n该零售商还公布了将于2016年初关闭的36家门店的具体地址。公司此前已宣布了关店计划，但并未透露哪些门店将受到影响。该连锁店在华盛顿都市区的所有门店均不在关闭之列。\n\n梅西百货一直在积极尝试为新的购物时代重塑自我。它计划开设更多Macy's Backstage门店——一个新开发的折扣概念店，这可能帮助其更好地与雄心勃勃的T.J. Maxx竞争。公司还在2016年推进对Bluemercury的扩张，这是它去年收购的一家美妆连锁店。在年轻美妆消费者越来越多地转向丝芙兰或Ulta而非百货商店美妆柜台的时代，梅西百货希望Bluemercury能帮助巩固其在该品类中的地位。\n\n假日季期间，梅西百货一个相对亮眼的表现是线上渠道，其线上销售额实现了\"两位数\"增长，订单处理量增加了25%。这种相对优势与假日季前期整个零售业的表现一致。尽管感恩节、黑色星期五和网络星期一的线上消费都创下纪录，但假日周末期间实体店销售却大幅下滑。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Its flagship stores in major U.S. cities depend heavily on international tourist spending, which shrank at many retailers due to a strong dollar.",
+    "why": "原文明确指出，由于美元走强（a strong dollar），许多零售商的国际游客消费出现缩减。选项A \"the rising value of the U.S. dollar\" 即\"美元升值\"，是对原文 \"a strong dollar\" 的同义改写，完全吻合原文因果逻辑。",
+    "traps": "B项\"全球经济衰退\"属于无中生有，原文从未提及全球经济衰退；C项\"消费者兴趣转移\"是针对美国本土消费者的描述，而非国际游客消费缩减的原因，属于张冠李戴；D项\"对美国零售业构成潜在威胁\"虽有一定道理，但原文未将其定性为\"潜在威胁\"，且题目问的是原因而非影响，属于答非所问。",
+    "tip": "抓住原文因果关系词 due to，精确匹配因果链。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "However, it's clear that Macy's believes its troubles run deeper than a temporary aberration off the thermometer.",
+    "why": "原文用 however 转折，指出梅西百货认为其问题远比\"温度计上的暂时偏差\"更为深层。这说明公司认为天气只是表面原因，问题不能仅仅归咎于天气。选项B \"They cannot be attributed to weather only\" 准确概括了这层含义，是对原文的合理推断。",
+    "traps": "A项\"更好的管理可以解决\"属于无中生有，原文未提及管理改善的问题；C项\"线上门店问题不严重\"虽然第六段提到线上表现较好，但这不是梅西百货对自身问题的认知判断，属于偷换概念；D项\"需要增加投资\"原文未提及，且梅西实际采取的是削减成本的措施，与增加投资相悖。",
+    "tip": "转折词 however 后常是作者或主体的核心观点，需重点关注。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The company pledged to cut 600 back-office positions, though some 150 workers in those roles would be reassigned to other jobs. It also plans to offer \"voluntary separation\" packages to 165 senior executives. It will slash staffing at its fleet of 770 stores, a move affecting some 3,000 employees.",
+    "why": "原文第三段列举了多项削减成本措施：裁减600个后台岗位、向165名高管提供自愿离职方案、削减770家门店人员配置影响约3000名员工。这些措施的核心都是减少员工数量，即选项D \"reduce the size of its staff\"（缩减人员规模）。",
+    "traps": "A项\"削减高管薪酬\"属于偷换概念，原文说的是向高管提供自愿离职方案（voluntary separation），不是降薪；B项\"迁移部分连锁门店\"属于无中生有，原文提到的是关店而非搬迁；C项\"调整促销策略\"在原文中完全没有依据。",
+    "tip": "多个并列细节指向同一个概括性选项时，要善于归纳提炼共性。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "At a time when young beauty shoppers are often turning to Sephora or Ulta instead of department store beauty counters, Macy's hopes Bluemercury will help strengthen its position in the category.",
+    "why": "原文指出年轻美妆消费者正转向丝芙兰和Ulta，而非百货店美妆柜台，梅西百货希望通过Bluemercury巩固其在美妆品类中的地位。这直接对应选项D——在美妆产品销售方面变得更有竞争力（to be more competitive in sales of beauty products）。",
+    "traps": "A项\"试验新商业概念\"是指Macy's Backstage折扣店概念，与Bluemercury无关，属于混淆对象；B项\"更关注美妆而非服装\"过度推断，原文只说扩张美妆业务，并未表示要放弃服装业务；C项\"通过降价促销\"属于无中生有，Bluemercury是美妆连锁品牌，原文未提及降价。",
+    "tip": "注意区分同段出现的不同业务线，避免张冠李戴。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "While Thanksgiving, Black Friday and Cyber Monday all saw record spending online, in-store sales plunged over the holiday weekend.",
+    "why": "原文最后一段明确指出，假日周末期间实体店销售大幅下滑（in-store sales plunged），而线上销售创下纪录。选项A \"Sales dropped sharply in its physical stores\" 是对 \"in-store sales plunged\" 的同义改写，完全吻合。",
+    "traps": "B项\"零售销售超过T.J. Maxx\"属于无中生有，原文只提到梅西百货试图与T.J. Maxx竞争，未涉及销售额对比；C项\"帮助Bluemercury确立全球地位\"属于无中生有，原文未提及全球地位；D项\"店内商品供应充足\"与原文内容无关，纯属臆造。",
+    "tip": "注意文末总结段，常出题且对比关系明确。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "plunge",
+    "cn": "v. 骤降，暴跌"
+   },
+   {
+    "w": "cap",
+    "cn": "v. 为……画上句号；给……加上上限"
+   },
+   {
+    "w": "flagship",
+    "cn": "n. 旗舰店；adj. 旗舰的"
+   },
+   {
+    "w": "lure",
+    "cn": "v. 吸引，引诱"
+   },
+   {
+    "w": "unseasonably",
+    "cn": "adv. 不合时令地，反常地"
+   },
+   {
+    "w": "aberration",
+    "cn": "n. 偏离，异常；失常"
+   },
+   {
+    "w": "implement",
+    "cn": "v. 实施，执行"
+   },
+   {
+    "w": "reassign",
+    "cn": "v. 重新分配，调任"
+   },
+   {
+    "w": "slash",
+    "cn": "v. 大幅削减；砍"
+   },
+   {
+    "w": "aggressively",
+    "cn": "adv. 积极进取地；激进地"
+   },
+   {
+    "w": "off-price",
+    "cn": "adj. 折扣的，低价的"
+   },
+   {
+    "w": "double-digit",
+    "cn": "adj. 两位数的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Its flagship stores in major U.S. cities depend heavily on international tourist spending, which shrank at many retailers due to a strong dollar.",
+    "cn": "其位于美国主要城市的旗舰店严重依赖国际游客消费，而由于美元走强，许多零售商的国际游客消费都出现了缩减。",
+    "note": "主句为 stores depend on spending，which 引导非限制性定语从句修饰 spending，due to 引出原因状语。"
+   },
+   {
+    "en": "At a time when young beauty shoppers are often turning to Sephora or Ulta instead of department store beauty counters, Macy's hopes Bluemercury will help strengthen its position in the category.",
+    "cn": "在年轻美妆消费者越来越多地转向丝芙兰或Ulta而非百货商店美妆柜台的时代，梅西百货希望Bluemercury能帮助巩固其在该品类中的地位。",
+    "note": "At a time when... 为时间状语从句交代背景，主句 Macy's hopes 后接省略 that 的宾语从句，instead of 表对比转向。"
+   },
+   {
+    "en": "The retail giant said the poor financial performance this year has pushed it to begin implementing $400 million in cost-cutting measures.",
+    "cn": "这家零售巨头表示，今年糟糕的财务表现已促使其开始实施4亿美元的成本削减计划。",
+    "note": "主句为 The retail giant said，后接宾语从句；push sb. to do 表\"促使\"，implementing 后接金额短语作宾语。"
+   }
+  ]
+ }
+}

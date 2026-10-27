@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "10ae747abbd8__reading__2",
+ "examId": "10ae747abbd8",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2009 年考研英语真题（旧）",
+ "year": 2009,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:22:11.978Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 70224,
+ "usage": {
+  "prompt_tokens": 1656,
+  "completion_tokens": 4163,
+  "total_tokens": 5819,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1656,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4163,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1656,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "DNA亲子鉴定试剂盒的普及及其问题",
+  "gist": "文章先介绍亲子鉴定试剂盒（PTK）在药店便捷销售的现状及DNA检测的多种用途，随后引用怀疑论者的观点，指出祖源检测存在精度虚高、数据库不系统、分析程序缺乏同行评审等问题，整体呈现DNA检测的发展与不足。",
+  "structure": [
+   "第1-2段：引出PTK，强调其获取便捷和市场规模",
+   "第3-4段：列举DNA检测的热门用途与基本操作流程",
+   "第5段：怀疑者质疑祖源检测的精确度存在虚假宣传",
+   "第6段：批评者指出商业基因检测数据库与分析程序的缺陷"
+  ],
+  "difficulty": "中等",
+  "translation": "俗话说\"知子莫若父\"，而如今一个男人可以增强他作为父亲的智慧——或者至少确认他就是孩子的父亲。他需要做的不过是在当地药店花30美元买一套亲子鉴定试剂盒（PTK），再花120美元拿到结果。\n\n据生产这种非处方试剂盒的Identigene公司首席运营官道格·福格称，自去年PTK开始无需处方即可购买以来，已有超过6万人购买了该产品。二十多家公司直接向公众出售DNA检测服务，价格从几百美元到2500美元以上不等。\n\n其中最受欢迎的项目包括：亲子关系和亲属关系检测，被收养的孩子可以借此找到亲生亲属，家庭也可以用它追踪被送去收养的孩子。DNA检测也是热衷于家谱研究的人们的最新风潮——并支撑着那些提供家族地理起源搜索服务的企业。\n\n大多数检测需要用棉签在口腔内刮取唾液中的细胞，然后寄给公司进行检测。所有检测都需要一个可以进行DNA比对的潜在对象。\n\n但一些观察者持怀疑态度。\"那些声称在做祖源检测的人在兜售一种虚假的精确性，\"纽约大学社会学家特洛伊·达斯特说。他指出，每个人都有许多祖先——仅仅往回追溯几个世纪就达到数百人。然而大多数祖源检测只考虑单一谱系，要么是通过父系男性遗传的Y染色体，要么是仅由母亲传递的线粒体DNA。这种DNA只能揭示一两个祖先的遗传信息，尽管比如仅往回三代人们就还有其他六个曾祖父母，或者往回四代就有其他十四个高祖父母。\n\n批评者还认为，商业基因检测的好坏取决于与样本进行比对的参考数据库。一些公司使用的数据库并不依赖系统收集的数据，而是将来自不同研究项目的信息混杂在一起。这意味着一个DNA数据库可能拥有某些地区的大量数据而缺少其他地区的数据，因此一个人的检测结果可能因处理结果的公司不同而有所差异。此外，公司用来估算亲缘关系的计算机程序可能已获得专利，不接受同行评审或外部评估。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "All he needs to do is shell out $30 for a paternity testing kit (PTK) at his local drugstore – and another $120 to get the results.",
+    "why": "第1段指出只需在当地药店花30美元就能买到PTK，第2段补充说明PTK去年起已无需处方即可购买（without prescriptions），超过6万人已购买。这两段核心信息都围绕PTK\"容易获得\"展开：地点便捷（药店）、价格低廉（30美元）、无需处方，因此A\"easy availability（容易获得）\"准确概括了这两段内容。",
+    "traps": "B\"定价灵活\"：虽然第2段提到不同公司价格从几百到2500美元不等，但这是描述整个DNA检测市场而非PTK本身，且重点不在价格弹性。C\"成功推广\"：6万人购买是结果呈现，并非在讨论推广策略或营销手段。D\"受家庭欢迎\"：文中提到的购买者是individuals，households（家庭）属于偷换概念，且受欢迎不是这两段的论述重心。",
+    "tip": "注意题目限定段落范围，抓住核心反复出现的信息进行概括。"
+   },
+   {
+    "number": 27,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "All he needs to do is shell out $30 for a paternity testing kit (PTK) at his local drugstore",
+    "why": "文章第1段开篇即点明PTK的全称是paternity testing kit（亲子鉴定试剂盒），paternity意为\"父亲身份\"，其用途就是确认一个人是否是孩子的亲生父亲。第3段进一步提到paternity and kinship testing，再次印证PTK用于鉴定亲子及亲属关系。C选项\"identify parent-child kinship（确认亲子关系）\"是对paternity testing的准确同义改写。",
+    "traps": "A\"确定出生地\"：文中提到的是搜索家族地理起源（geographic roots），这是DNA祖源检测的功能而非PTK的功能，张冠李戴。B\"促进基因研究\"：文中未提及PTK对科学研究的推动作用，属于无中生有。D\"为收养选择孩子\"：文中说被收养的孩子可以找到亲生亲属，而非用PTK来选择收养对象，曲解原意。",
+    "tip": "题目问PTK的用途，应回到PTK定义处找答案，不要与DNA检测的其他用途混淆。"
+   },
+   {
+    "number": 28,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "There's a kind of false precision being hawked by people claiming they are doing ancestry testing",
+    "why": "第5段Troy Duster明确指出祖源检测存在\"false precision（虚假的精确性）\"，即宣称的精确度是假的。随后他以具体例子说明：大多数祖源检测只追踪单一谱系（Y染色体或线粒体DNA），只能揭示一两个祖先的信息，而人们实际上有数百个祖先。这些论据都在证明祖源检测未能达到其所宣称的精确度。D\"achieve the claimed accuracy（达到所宣称的精确度）\"与false precision形成精准对应。",
+    "traps": "A\"追踪远祖\"：文中说的是检测只考虑单一谱系而非不能追踪远祖，且\"distant ancestors\"过于宽泛，不是质疑的核心。B\"重建可靠血统\"：文中讨论的是精确度问题而非血统重建，属于偏离原文论点。C\"充分利用遗传信息\"：虽然文中提到只能揭示一两个祖先的信息，但批评的本质是精确度虚假，而非信息利用不充分，该选项以偏概全。",
+    "tip": "抓住核心评价词\"false precision\"，它直接对应\"未达到所宣称的精确度\"。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Databases used by some companies don't rely on data collected systematically but rather lump together information from different research projects.",
+    "why": "最后一段指出一些公司的数据库并非依赖系统性收集的数据，而是将不同研究项目的信息混杂拼凑在一起（lump together）。这导致数据库中各地区数据分布不均，检测结果因公司不同而异。A选项\"disorganized data collection（数据收集无序/不系统）\"是对\"don't rely on data collected systematically\"的准确同义转述，systematically的反义正是disorganized。",
+    "traps": "B\"重叠的数据库建设\"：文中说的是不同研究项目信息被混杂，而非数据库之间存在重叠，overlapping曲解了lump together的含义。C\"过度的样本比对\"：文中说数据库某些地区数据多、某些地区少，这是数据不均而非比对过多，excessive属于无中生有。D\"缺乏专利评估\"：文中说计算机程序可能已获专利且不接受同行评审，问题是缺乏peer review而非缺乏patent evaluation，偷换了评审与专利的关系。",
+    "tip": "注意同义替换：systematically ↔ organized，反义即disorganized。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "Most tests require collecting cells by swabbing saliva in the mouth and sending it to the company for testing.",
+    "why": "文章前四段介绍DNA检测（尤其是PTK）的背景、用途和操作流程，后两段转向怀疑者和批评者对DNA检测精确度和数据库质量的质疑。全文结构为\"介绍DNA检测+指出其问题\"，B选项\"DNA Testing and Its Problems（DNA检测及其问题）\"完整覆盖了文章两大板块，最为全面准确。",
+    "traps": "A\"DNA检测的正反方\"：文中虽有支持和质疑的声音，但并未系统呈现\"正方\"论点进行辩论，Fors and Againsts暗示对等辩论结构，与原文不符。C\"实验室外的DNA检测\"：虽然文章提到在药店购买试剂盒，但\"outside the lab\"只涵盖了第1-2段的部分内容，未能涵盖后文对问题的讨论。D\"DNA检测背后的谎言\"：lies语气过于极端，文中用的是false precision和skeptical，属于学术质疑而非揭露谎言，感情色彩偏离原文。",
+    "tip": "主旨题需覆盖全文，注意文章前半段介绍+后半段问题的双层结构。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "paternal",
+    "cn": "adj. 父亲的，父系的"
+   },
+   {
+    "w": "shell out",
+    "cn": "v. 支付，花费（尤指不情愿地）"
+   },
+   {
+    "w": "over-the-counter",
+    "cn": "adj. 非处方的，可在柜台直接购买的"
+   },
+   {
+    "w": "genealogist",
+    "cn": "n. 家谱学家，系谱学家"
+   },
+   {
+    "w": "swabbing",
+    "cn": "v. 用拭子擦拭，用棉签采集"
+   },
+   {
+    "w": "skeptical",
+    "cn": "adj. 持怀疑态度的"
+   },
+   {
+    "w": "hawked",
+    "cn": "v. 兜售，叫卖（含贬义）"
+   },
+   {
+    "w": "lineage",
+    "cn": "n. 血统，世系，谱系"
+   },
+   {
+    "w": "mitochondrial",
+    "cn": "adj. 线粒体的"
+   },
+   {
+    "w": "lump together",
+    "cn": "v. 把……混为一谈，混杂在一起"
+   },
+   {
+    "w": "patented",
+    "cn": "adj. 获得专利的，受专利保护的"
+   },
+   {
+    "w": "peer review",
+    "cn": "n. 同行评审"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "He notes that each individual has many ancestors – numbering in the hundreds just a few centuries back. Yet most ancestry testing only considers a single lineage, either the Y chromosome inherited through men in a father's line or mitochondrial DNA, which is passed down only from mothers.",
+    "cn": "他指出每个人都有许多祖先——仅仅往回追溯几个世纪就达到数百人。然而大多数祖源检测只考虑单一谱系，要么是通过父系男性遗传的Y染色体，要么是仅由母亲传递的线粒体DNA。",
+    "note": "两句形成转折对比：前句用破折号补充说明祖先数量之多，后句用either…or列举两种单一谱系检测方式，which引导非限定性定语从句修饰mitochondrial DNA。"
+   },
+   {
+    "en": "This means that a DNA database may have a lot of data from some regions and not others, so a person's test results may differ depending on the company that processes the results.",
+    "cn": "这意味着一个DNA数据库可能拥有某些地区的大量数据而缺少其他地区的数据，因此一个人的检测结果可能因处理结果的公司不同而有所差异。",
+    "note": "This指代前句数据非系统收集的事实；that引导宾语从句，内含so连接因果关系；depending on引导条件状语，that引导定语从句修饰company。"
+   },
+   {
+    "en": "In addition, the computer programs a company uses to estimate relationships may be patented and not subject to peer review or outside evaluation.",
+    "cn": "此外，公司用来估算亲缘关系的计算机程序可能已获得专利，不接受同行评审或外部评估。",
+    "note": "a company uses to estimate relationships为省略关系代词that的定语从句修饰programs；be subject to意为\"受制于、接受\"；not subject to与patented并列，揭示专利保护导致缺乏外部监督的问题。"
+   }
+  ]
+ }
+}

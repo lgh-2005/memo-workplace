@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "7185c0af175d__translation__all",
+ "examId": "7185c0af175d",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2024 年 12 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:54:07.228Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29600,
+ "usage": {
+  "prompt_tokens": 792,
+  "completion_tokens": 1811,
+  "total_tokens": 2603,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 792,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1811,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 792,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "北斗卫星导航系统的成就与应用",
+  "reference": "The successful development of the Beidou Navigation Satellite System is a major scientific and technological achievement that China has made since the reform and opening up. Through unremitting efforts, the researchers overcame a series of technical challenges, and the Beidou system ultimately achieved global coverage and high-precision positioning, making China one of the few countries in the world that independently possess a global satellite navigation system. The Beidou system has been widely applied in numerous fields such as transportation, disaster relief, weather forecasting, and public safety. Now the Beidou system has gained widespread international recognition and has begun to provide quality services for an increasing number of countries and regions.",
+  "sentences": [
+   {
+    "cn": "北斗(Beidou)卫星导航系统的成功研制是中国自改革开放以来取得的一项重大科技成就。",
+    "en": "The successful development of the Beidou Navigation Satellite System is a major scientific and technological achievement that China has made since the reform and opening up.",
+    "structure": "主系表结构 + that 引导的定语从句修饰 achievement，since 引导时间状语",
+    "keys": [
+     "北斗卫星导航系统 the Beidou Navigation Satellite System",
+     "成功研制 successful development",
+     "改革开放 reform and opening up",
+     "重大科技成就 major scientific and technological achievement"
+    ]
+   },
+   {
+    "cn": "研发人员经过不懈努力,攻克了一系列技术难题,北斗系统最终实现了全球覆盖和高精度定位,使中国成为世界上少数几个独立拥有全球卫星导航系统的国家之一。",
+    "en": "Through unremitting efforts, the researchers overcame a series of technical challenges, and the Beidou system ultimately achieved global coverage and high-precision positioning, making China one of the few countries in the world that independently possess a global satellite navigation system.",
+    "structure": "并列句（and 连接两个分句）+ 现在分词 making 作结果状语 + that 定语从句修饰 countries + one of the few... 结构",
+    "keys": [
+     "不懈努力 unremitting efforts",
+     "攻克技术难题 overcome technical challenges",
+     "全球覆盖 global coverage",
+     "高精度定位 high-precision positioning",
+     "世界上少数几个...之一 one of the few countries in the world that..."
+    ]
+   },
+   {
+    "cn": "北斗系统已广泛应用于交通运输、灾害救援、天气预报、公共安全等诸多领域。",
+    "en": "The Beidou system has been widely applied in numerous fields such as transportation, disaster relief, weather forecasting, and public safety.",
+    "structure": "现在完成时被动语态 has been applied in + such as 列举结构",
+    "keys": [
+     "广泛应用于 has been widely applied in",
+     "交通运输 transportation",
+     "灾害救援 disaster relief",
+     "天气预报 weather forecasting",
+     "公共安全 public safety"
+    ]
+   },
+   {
+    "cn": "北斗系统现在已经在国际上得到广泛认可,开始为越来越多的国家和地区提供优质服务。",
+    "en": "Now the Beidou system has gained widespread international recognition and has begun to provide quality services for an increasing number of countries and regions.",
+    "structure": "并列谓语结构 has gained... and has begun to...，现在完成时表达已完成且持续的动作",
+    "keys": [
+     "得到广泛认可 gain widespread recognition",
+     "越来越多的 an increasing number of",
+     "优质服务 quality services",
+     "国家和地区 countries and regions"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "北斗卫星导航系统",
+    "en": "the Beidou Navigation Satellite System"
+   },
+   {
+    "cn": "改革开放",
+    "en": "reform and opening up"
+   },
+   {
+    "cn": "高精度定位",
+    "en": "high-precision positioning"
+   },
+   {
+    "cn": "全球覆盖",
+    "en": "global coverage"
+   },
+   {
+    "cn": "灾害救援",
+    "en": "disaster relief"
+   },
+   {
+    "cn": "天气预报",
+    "en": "weather forecasting"
+   },
+   {
+    "cn": "公共安全",
+    "en": "public safety"
+   },
+   {
+    "cn": "交通运输",
+    "en": "transportation"
+   },
+   {
+    "cn": "重大科技成就",
+    "en": "major scientific and technological achievement"
+   },
+   {
+    "cn": "研发人员",
+    "en": "researchers / R&D personnel"
+   }
+  ],
+  "pitfalls": [
+   "「改革开放」漏译 opening up 或拼写错误，属高频专有名词失分点",
+   "「攻克技术难题」误用 solve 语义偏弱，应选 overcome / conquer 更贴切",
+   "「使中国成为…之一」漏用 one of the few 结构或 few 后名词忘记用复数",
+   "「高精度定位」中 precision 与 accuracy 混用，前者强调精密度，此处应用 precision",
+   "长句中 making 结果状语被写成独立句，导致句间逻辑断裂，扣结构分"
+  ],
+  "upgrades": [
+   {
+    "plain": "solved many technical problems",
+    "better": "overcame a series of technical challenges",
+    "note": "overcome 搭配 challenges 更正式学术，series 体现连续攻关的艰辛"
+   },
+   {
+    "plain": "has been used in many areas",
+    "better": "has been widely applied in numerous fields",
+    "note": "applied in fields 更贴合科技语域，widely 和 numerous 双重强调覆盖面"
+   },
+   {
+    "plain": "more and more countries",
+    "better": "an increasing number of countries",
+    "note": "书面语中 an increasing number of 替代口语化的 more and more，文体更正式"
+   },
+   {
+    "plain": "became known internationally",
+    "better": "has gained widespread international recognition",
+    "note": "gain recognition 为固定搭配，widespread 与 international 叠加强调认可度"
+   },
+   {
+    "plain": "good services",
+    "better": "quality services",
+    "note": "quality 作形容词修饰 services 更精准专业，避免 good 的模糊笼统"
+   }
+  ]
+ }
+}

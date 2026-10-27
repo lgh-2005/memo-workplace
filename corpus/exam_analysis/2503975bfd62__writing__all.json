@@ -1,0 +1,221 @@
+{
+ "schemaVersion": 1,
+ "id": "2503975bfd62__writing__all",
+ "examId": "2503975bfd62",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2010 年考研英语真题",
+ "year": 2010,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:24:53.253Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 78032,
+ "usage": {
+  "prompt_tokens": 850,
+  "completion_tokens": 4195,
+  "total_tokens": 5045,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 850,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4195,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 850,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：以研究生会名义撰写一则通知，为全球化国际学术会议招募志愿者，须包含应聘者基本条件及其他相关信息。",
+    "outline": [
+     "开头：说明通知目的——为全球化国际会议招募志愿者，简述会议时间地点。",
+     "主体：列出志愿者基本资质要求（英语能力、责任心、相关经验等）以及志愿者职责与待遇。",
+     "结尾：说明报名方式、截止日期及联系方式，落款为 Postgraduates' Association。"
+    ],
+    "sample": "NOTICE\n\nJanuary 15, 2010\n\nVolunteers Needed for International Conference on Globalization\n\nThe Postgraduates' Association is recruiting volunteers for the International Conference on Globalization, which is scheduled for March 10, 2010 at our university's lecture hall.\n\nBasic qualifications are as follows: first, a good command of English with the ability to communicate fluently with foreign delegates; second, a strong sense of responsibility and an excellent teamwork spirit; third, previous experience in international events or conferences will be given preference.\n\nVolunteers are expected to assist in reception, translation, and conference logistics. A certificate of service will be issued upon completion. Those who are interested please sign up at the Association office before February 15, 2010. For further inquiries, please email us at pga@postgrad.edu.cn.\n\nPostgraduates' Association",
+    "phrases": [
+     {
+      "en": "recruit volunteers for …",
+      "cn": "为……招募志愿者；应用文招募类通知的核心动词搭配"
+     },
+     {
+      "en": "a good command of English",
+      "cn": "良好的英语功底；比 good English 更正式地道"
+     },
+     {
+      "en": "a strong sense of responsibility",
+      "cn": "强烈的责任感；招募类公文常用品质要求表达"
+     },
+     {
+      "en": "be given preference / be preferred",
+      "cn": "将被优先考虑；用于说明加分项，避免绝对化"
+     },
+     {
+      "en": "assist in reception, translation, and conference logistics",
+      "cn": "协助接待、翻译和会务后勤；具体列出志愿者职责更显真实"
+     },
+     {
+      "en": "a certificate of service will be issued",
+      "cn": "将颁发服务证书；被动语态使通知语气更正式客观"
+     },
+     {
+      "en": "sign up at …",
+      "cn": "在……处报名；简洁的报名方式表达"
+     },
+     {
+      "en": "for further inquiries",
+      "cn": "如需进一步咨询；通知结尾常用的联系引导语"
+     }
+    ],
+    "pitfalls": [
+     "忘写标题 NOTICE 和日期，格式不完整直接扣分",
+     "落款误签个人姓名，题目要求必须用 Postgraduates' Association",
+     "通篇只谈要求却不提报名方式、截止日期等实用信息，内容不全",
+     "语气过于随意，应用文应使用正式书面语，不宜用缩略或口语",
+     "字数过短（不足 80 词）或过长（超 130 词），偏离 about 100 words 要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "We need some volunteers who can speak English well.",
+      "better": "We are recruiting volunteers with a good command of English and the ability to communicate fluently with foreign delegates.",
+      "note": "用 recruit 和 a good command of 替代口语化表达，正式感更强，细节更具体"
+     },
+     {
+      "plain": "If you want to join, please come to our office.",
+      "better": "Those who are interested please sign up at the Association office before February 15, 2010.",
+      "note": "加入截止日期，用 sign up at 替代 come to，信息更完整、措辞更书面"
+     },
+     {
+      "plain": "People who have done this before are better.",
+      "better": "Previous experience in international events or conferences will be given preference.",
+      "note": "被动语态+名词短语使行文更客观正式，避免口语化判断"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "大作文：根据图画写 160-200 词短文，描述图画内容、解释寓意并发表评论。图画为一口标注\"文化火锅\"的火锅，锅内翻滚着佛、道、儒、莎士比亚、爱因斯坦、功夫、芭蕾等中西文化元素。",
+    "outline": [
+     "第一段（描述图画）：描绘火锅及锅中各类中西文化符号（如后现代、功夫、莎士比亚、佛、儒、芭蕾等），点明\"文化火锅\"主题。",
+     "第二段（阐释寓意）：在全球化背景下，各国文化频繁交流、相互融合；火锅隐喻文化多样性与包容共存，不同文化如食材般各献其味、丰富人类文明。",
+     "第三段（个人评论）：我们应在拥抱文化融合的同时保持本民族文化身份，取长补短，在开放与传承之间取得平衡，才能真正受益于全球化。"
+    ],
+    "sample": "As is vividly depicted in the drawing, a gigantic hot pot is simmering with an astonishing variety of cultural ingredients. Labeled \"Cultural Hot Pot,\" the pot contains elements from both Eastern and Western civilizations, including Buddhism, Confucianism, kung fu, Shakespeare, ballet, and Einstein, all boiling together in perfect harmony. The image delivers a clear message about cultural blending in the era of globalization.\n\nThe intended meaning of this drawing is thought-provoking. With the acceleration of globalization, cultural exchanges between nations have become increasingly frequent and profound. Just as diverse ingredients contribute their unique flavors to a hot pot, different cultures bring their distinctive values and traditions to the global stage, thereby enriching human civilization as a whole. The hot pot serves as an apt metaphor, suggesting that seemingly incompatible cultural elements can coexist harmoniously and even complement one another.\n\nFrom my perspective, we should embrace cultural integration while simultaneously preserving our own cultural identity. On the one hand, it is advisable to remain open-minded and absorb the merits of foreign cultures. On the other hand, we must safeguard our traditional cultural heritage from being diluted. Only by striking a balance between cultural openness and preservation can we truly benefit from this era of globalization and build a more colorful world.",
+    "phrases": [
+     {
+      "en": "as is vividly depicted in the drawing",
+      "cn": "如图所生动描绘的；图画作文经典开篇句型，被动+倒装增加文采"
+     },
+     {
+      "en": "simmering with an astonishing variety of …",
+      "cn": "翻滚着各种令人惊叹的……；simmer 一词精准描绘火锅沸腾场景"
+     },
+     {
+      "en": "deliver a clear message about …",
+      "cn": "传达了关于……的清晰信息；用于从描述过渡到分析"
+     },
+     {
+      "en": "with the acceleration of globalization",
+      "cn": "随着全球化的加速；独立主格式状语，简洁引出背景"
+     },
+     {
+      "en": "an apt metaphor",
+      "cn": "一个恰当的隐喻；apt 比 good 更学术精准"
+     },
+     {
+      "en": "coexist harmoniously and complement one another",
+      "cn": "和谐共存、相互补充；文化融合主题的高频高分搭配"
+     },
+     {
+      "en": "embrace … while simultaneously preserving …",
+      "cn": "在拥抱……的同时保持……；while 引出辩证观点，显示思维深度"
+     },
+     {
+      "en": "safeguard … from being diluted",
+      "cn": "保护……不被稀释；safeguard 比 protect 更正式，diluted 形象生动"
+     },
+     {
+      "en": "strike a balance between … and …",
+      "cn": "在……和……之间取得平衡；议论文辩证结尾的万金油高分表达"
+     },
+     {
+      "en": "only by … can we …",
+      "cn": "只有通过……我们才能……；倒装句式用于总结段，有力收束全文"
+     }
+    ],
+    "pitfalls": [
+     "第一段跳过描述直接议论，未完成 describe the drawing briefly 的要求",
+     "文化元素列举时拼写错误（如 Erta → Shakespeare），细节失分",
+     "三段结构不清晰，缺少过渡衔接词导致逻辑断裂",
+     "只谈融合好处不谈保护传统，观点偏颇，缺乏辩证思维",
+     "字数不足 160 或超过 220，偏离题目 160-200 words 的硬性要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows a hot pot with many things in it.",
+      "better": "As is vividly depicted in the drawing, a gigantic hot pot is simmering with an astonishing variety of cultural ingredients.",
+      "note": "被动倒装开篇更高级，simmering 和 astonishing variety 比 many things 形象丰富"
+     },
+     {
+      "plain": "Different cultures can live together.",
+      "better": "Seemingly incompatible cultural elements can coexist harmoniously and even complement one another.",
+      "note": "seemingly incompatible 增加让步语义层次，complement 体现互利关系，表达更深刻"
+     },
+     {
+      "plain": "We should learn from other cultures but keep our own culture.",
+      "better": "We should embrace cultural integration while simultaneously preserving our own cultural identity.",
+      "note": "embrace/preserve 动词更高级，cultural identity 比 our own culture 更学术精准"
+     },
+     {
+      "plain": "We need to find a middle way.",
+      "better": "Only by striking a balance between cultural openness and preservation can we truly benefit from this era of globalization.",
+      "note": "only by 倒装+strike a balance 名词对仗，将空洞口号升级为有力论断"
+     },
+     {
+      "plain": "This drawing tells us that globalization is important.",
+      "better": "The image delivers a clear message about cultural blending in the era of globalization.",
+      "note": "deliver a message 比 tell us 更书面，cultural blending 比 globalization is important 更切题"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the drawing, a gigantic hot pot is simmering with an astonishing variety of cultural ingredients. —— 被动倒装+精准动词 simmer 开篇，为图画描述段定下高分基调。",
+   "Just as diverse ingredients contribute their unique flavors to a hot pot, different cultures bring their distinctive values and traditions to the global stage. —— just as 类比句将火锅食材与文化元素精妙关联，逻辑清晰、画面感强。",
+   "We should embrace cultural integration while simultaneously preserving our own cultural identity. —— while 连接拥抱与保护，一句话浓缩辩证立场，是观点段的核心金句。",
+   "Only by striking a balance between cultural openness and preservation can we truly benefit from this era of globalization. —— only by 倒装收束全文，strike a balance 体现成熟思辨能力，极具说服力。",
+   "Seemingly incompatible cultural elements can coexist harmoniously and even complement one another. —— seemingly incompatible 先抑后扬，coexist 与 complement 递进搭配，展现高级词汇储备。"
+  ]
+ }
+}

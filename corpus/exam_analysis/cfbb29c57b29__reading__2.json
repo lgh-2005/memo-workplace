@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "cfbb29c57b29__reading__2",
+ "examId": "cfbb29c57b29",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 12 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:22:48.269Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60516,
+ "usage": {
+  "prompt_tokens": 1757,
+  "completion_tokens": 4100,
+  "total_tokens": 5857,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1757,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4100,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1757,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "智能手机推动行为科学研究变革",
+  "gist": "文章以iPhone十周年为契机，指出智能手机除了带来便利和引发隐私等负面担忧外，还有一个不太明显的优势——有望革新行为科学研究。智能手机能持续记录人类行为数据，帮助研究者突破传统实验室研究的局限，在真实情境中开展更多样化的心理学研究，从而提升个体和社会福祉。",
+  "structure": [
+   "第1-2段：引出iPhone发布背景与智能手机普及现状",
+   "第3段：智能手机的负面影响引发关注，作为过渡",
+   "第4-6段：核心论证——智能手机革新行为科学研究的潜力与具体方式",
+   "第7-8段：智能手机数据契合心理学转型趋势，总结展望"
+  ],
+  "difficulty": "中等",
+  "translation": "2007年1月9日，史蒂夫·乔布斯正式发布了苹果公司的\"革命性手机\"——一款将iPod、电话和互联网通信功能集于一身、通过触控操作的设备。\n\n这是智能手机发展史上的一个重大里程碑。如今，大多数美国成年人已拥有智能手机，它们在全球也日益普及。\n\n随着智能手机的普及，人们对其如何影响我们的生活和工作方式也产生了越来越多的疑问。便携移动技术的优势往往既显而易见又被人们习以为常，留给人们关切讨论的是一些更为隐晦的话题：智能手机是否在干扰孩子的睡眠？无法摆脱工作是否正在对健康产生负面影响？对隐私又有何影响？\n\n但在iPhone问世十周年的今天，让我们花点时间来思考一个不太明显的优势：智能手机技术有望彻底改变行为科学。这是因为，在人类历史上，这是第一次有如此大比例的人群持续接触能够记录个体行为和环境关键特征的技术。\n\n研究人员已经开始在社会科学研究中使用智能手机，或在人们日常生活中定期向他们提问，或利用设备内置传感器记录活动。这些研究正在验证、挑战和拓展通过更传统方法得出的发现——在传统方法中，人们报告自己在现实生活中的行为，或参与相对短暂且人为设定的实验室任务。\n\n这些研究只是第一步。随着更多数据的收集和分析方法的改进，研究人员将能更好地识别不同经历、行为和环境之间的关联及其随时间的演变，从而有望在多个领域提升人们的生产力和幸福感。除了揭示全群体模式之外，数据与分析的恰当结合还能帮助个体识别自身行为的独特特征，包括可能表明需要某种干预的状况——例如，某些行为的异常增加可能预示着一段抑郁期。\n\n基于智能手机的数据收集恰逢心理科学发展演变的合适时机。如今，该领域正处于转型期，正在从以本科生为参与者的实验室研究转向更复杂的现实情境研究，研究对象也更加多样化。智能手机为实现这些目标提供了新工具，能够在多种情境下提供关于日常行为的丰富数据。\n\n因此，智能手机可能以另一种方式改变我们的生活和工作方式：通过提供对人类心理和行为的洞察，从而支撑更加智慧的社会科学。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Often the advantages of convenient, mobile technology are both obvious and taken for granted, leaving more subtle topics for concerned discussion: Are smartphones disturbing children's sleep?",
+    "why": "原文指出移动技术的优势\"显而易见且被习以为常\"，而留给人们\"关切讨论\"（concerned discussion）的是\"更隐晦的话题\"（more subtle topics），即智能手机的负面影响。C选项\"not so obvious\"对应\"subtle\"，\"caused some concern\"对应\"concerned discussion\"，完全吻合原文语义。",
+    "traps": "A\"被正面影响所掩盖\"——原文说优势被taken for granted，并未说负面影响被正面影响掩盖，属于过度推断。B\"负面影响经常被视为理所当然\"——张冠李戴，原文中\"taken for granted\"的主语是advantages（优势），不是负面影响。D\"隐晦但绝不应被夸大\"——\"should by no means be overstated\"属无中生有，原文未涉及是否夸大的问题。",
+    "tip": "注意区分原文中\"taken for granted\"的修饰对象，防止张冠李戴。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "let's take a moment to consider a less obvious advantage: the potential for smartphone technology to revolutionize behavioral science.",
+    "why": "原文明确指出\"一个不太明显的优势\"是智能手机技术\"有望彻底改变行为科学\"（revolutionize behavioral science）。D选项\"greatly improves research on human behavior\"是对\"revolutionize behavioral science\"的同义改写，behavioral science即关于人类行为的研究，revolutionize对应greatly improves。",
+    "traps": "A\"系统地记录真实的人际互动\"——原文说记录个体行为和环境的关键特征，并非专指\"人际互动\"（human interactions），属于偷换概念。B\"帮助人们从技术进步中受益\"——表述过于笼统宽泛，未点明行为科学这一核心优势。C\"使人们彼此联系更紧密\"——这是智能手机的一般功能，并非文中所说的\"less obvious advantage\"。",
+    "tip": "当题目问\"less obvious advantage\"时，直接回原文找该短语后的冒号或破折号解释。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "in which people report how they behaved in real life or participate in relatively short and artificial laboratory-based tasks.",
+    "why": "原文用定语从句描述传统方法（more traditional approaches）的特征：人们\"报告\"（report）自己在现实生活中的行为，或\"参与相对短暂且人为设定的实验室任务\"（laboratory-based tasks）。B选项\"lab observations\"对应laboratory-based tasks，\"participants' reports\"对应people report，两者完全对应。",
+    "traps": "A\"基于大量精心收集的数据\"——原文未提及传统研究的数据量大小，且智能手机研究才强调大量数据收集，属于张冠李戴。C\"使用问卷调查法\"——原文提到的是query people和report，并未特指问卷法（questionnaire），属于过度具体化。D\"往往昂贵且耗时\"——原文完全没有提及传统研究的费用和时间问题，属于无中生有。",
+    "tip": "传统方法的特征要从原文对比句中提取，注意同义替换。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "the right combination of data and analysis can also help individuals identify unique characteristics of their own behavior, including conditions that could indicate the need for some form of intervention—such as an unusual increase in behaviors that signal a period of depression.",
+    "why": "原文说数据和分析的恰当结合能帮助个体\"识别自身行为的独特特征\"，包括\"可能表明需要干预的状况\"，如\"某些行为的异常增加\"。A选项\"pin down their unusual behaviors\"（确定其异常行为）是对\"identify unique characteristics of their own behavior\"和\"unusual increase in behaviors\"的概括，语义吻合。",
+    "traps": "B\"帮助他们保持积极心态\"——原文举例是识别抑郁信号，并非直接帮助保持积极心态，属于过度推断。C\"帮助他们以独特方式生活\"——将\"unique characteristics\"错误理解为独特的生活方式，偷换了概念。D\"帮助他们应对异常情况\"——原文强调的是\"识别\"（identify）异常行为，而非\"应对\"（cope with），动作偏差。",
+    "tip": "注意区分\"识别问题\"和\"解决问题\"的差异，原文侧重前者。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Today, the field is in transition, moving away from a focus on laboratory studies with undergraduate participants towards more complex, real-world situations studied with more diverse groups of people.",
+    "why": "原文指出心理学领域正在转型，\"从聚焦本科生参与的实验室研究转向更复杂的现实情境研究\"（towards more complex, real-world situations）。B选项\"increasingly focused on real-life situations\"是对\"moving towards real-world situations\"的同义改写，表示越来越关注现实生活情境。",
+    "traps": "A\"正在经历一段痛苦的转型期\"——原文只说in transition（转型中），并未说painful（痛苦的），属于添加感情色彩。C\"以更严格的方式进行\"——原文未涉及研究严格程度（rigorous）的变化，属于无中生有。D\"主要以本科生为目标\"——原文说的是\"moving away from\"以本科生为参与者的研究，即正在远离这种模式，D选项与原文表述相反。",
+    "tip": "注意\"moving away from A towards B\"结构，现状是趋向B而非停留在A。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "navigate",
+    "cn": "v. 操作，导航，操控"
+   },
+   {
+    "w": "milestone",
+    "cn": "n. 里程碑，重大事件"
+   },
+   {
+    "w": "subtle",
+    "cn": "adj. 微妙的，不明显的，隐晦的"
+   },
+   {
+    "w": "implication",
+    "cn": "n. 含义，暗示，可能的影响"
+   },
+   {
+    "w": "revolutionize",
+    "cn": "v. 彻底改变，使发生革命性变化"
+   },
+   {
+    "w": "query",
+    "cn": "v. 询问，查询；n. 疑问"
+   },
+   {
+    "w": "sensor",
+    "cn": "n. 传感器，感应器"
+   },
+   {
+    "w": "intervention",
+    "cn": "n. 干预，介入"
+   },
+   {
+    "w": "wellbeing",
+    "cn": "n. 幸福，健康，福祉"
+   },
+   {
+    "w": "diverse",
+    "cn": "adj. 多样的，不同的"
+   },
+   {
+    "w": "proportion",
+    "cn": "n. 比例，部分"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Often the advantages of convenient, mobile technology are both obvious and taken for granted, leaving more subtle topics for concerned discussion: Are smartphones disturbing children's sleep? Is an inability to get away from work having a negative impact on health? And what are the implications for privacy?",
+    "cn": "便携移动技术的优势往往既显而易见又被人们习以为常，留给人们关切讨论的是一些更为隐晦的话题：智能手机是否在干扰孩子的睡眠？无法摆脱工作是否正在对健康产生负面影响？对隐私又有何影响？",
+    "note": "主句用both...and...并列两个表语，leaving引导结果状语从句，冒号后用三个问句具体展开subtle topics的内容。"
+   },
+   {
+    "en": "As more data are collected and methods for analysis improve, researchers will be in a better position to identify how different experiences, behaviors and environments relate to each other and evolve over time, with the potential to improve people's productivity and wellbeing in a variety of domains.",
+    "cn": "随着更多数据的收集和分析方法的改进，研究人员将能更好地识别不同经历、行为和环境之间的关联及其随时间的演变，从而有望在多个领域提升人们的生产力和幸福感。",
+    "note": "As引导时间状语从句含两个并列谓语；主句中identify后接how引导的宾语从句，内含两个并列动词relate和evolve；with短语作伴随状语表结果。"
+   },
+   {
+    "en": "Beyond revealing population-wide patterns, the right combination of data and analysis can also help individuals identify unique characteristics of their own behavior, including conditions that could indicate the need for some form of intervention—such as an unusual increase in behaviors that signal a period of depression.",
+    "cn": "除了揭示全群体模式之外，数据与分析的恰当结合还能帮助个体识别自身行为的独特特征，包括可能表明需要某种干预的状况——例如，某些行为的异常增加可能预示着一段抑郁期。",
+    "note": "Beyond引导介词短语表递进；主句核心为help sb. do sth.结构；including后接补充说明，内含that定语从句修饰conditions；破折号后such as举例进一步解释。"
+   }
+  ]
+ }
+}

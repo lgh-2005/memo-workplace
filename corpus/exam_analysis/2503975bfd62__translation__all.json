@@ -1,0 +1,223 @@
+{
+ "schemaVersion": 1,
+ "id": "2503975bfd62__translation__all",
+ "examId": "2503975bfd62",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2010 年考研英语真题",
+ "year": 2010,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:24:46.418Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 73937,
+ "usage": {
+  "prompt_tokens": 1376,
+  "completion_tokens": 5417,
+  "total_tokens": 6793,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1376,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5417,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1376,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "基于经济动机的保护体系的根本缺陷",
+  "translation": "完全基于经济动机的保护体系有一个根本弱点，即土地群落中的大多数成员没有经济价值。然而，这些生物是生物群落的成员，如果群落的稳定性取决于其完整性，那么它们就有权继续存在。\n\n当这些没有经济价值的物种之一受到威胁时，如果我们恰好喜爱它，我们就会编造借口赋予它经济上的重要性。在上世纪初，鸣禽被认为正在消失。科学家们急忙用一些明显站不住脚的证据前来救援，这些证据大意是说：如果鸟类不能控制昆虫，昆虫就会把我们吃光。这些证据必须是经济方面的，才能被认为是有效的。\n\n如今读这些拐弯抹角的说法令人痛心。我们至今还没有形成土地伦理，但我们至少已经更加接近于承认这样一个观点：鸟类应当作为一种固有的权利而继续存在，不管它们对我们是否具有经济上的利益。\n\n在食肉哺乳动物和食鱼鸟类方面也存在类似的情况。曾几何时，生物学家们过度引用这样的证据：这些生物通过杀死体弱者来维护猎物种群的健康，或者它们只捕食\"没有价值的\"物种。在这里，证据同样必须是经济方面的才能有效。只是在近年来，我们才听到更为诚实的论点：食肉动物是生物群落的成员，任何特殊利益集团都无权为了自身的利益——不论是真实的还是想象的——而将它们消灭。\n\n有些树种因为生长太慢或售价太低而不能作为木材作物获利，已被注重经济的林业人员\"开除出党\"。在欧洲，那里的林业在生态学上更为先进，非商业性树种被视为原始森林群落的成员，并在合理范围内予以保护。此外，已经发现其中一些树种在增进土壤肥力方面具有宝贵的功能。森林及其组成树种、地被植物群和动物群之间的相互依存关系被视为理所当然。\n\n总而言之，一个完全基于经济私利的保护体系是极其片面的。它往往忽视、进而最终消灭土地群落中许多缺乏商业价值但对其健康运转至关重要的成分。它错误地假定，生物时钟中有经济价值的部分可以脱离没有经济价值的部分而运转。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "Scientists jumped to the rescue with some distinctly shaky evidence to the effect that insects would eat us up if birds failed to control them.",
+    "cn": "科学家们急忙用一些明显站不住脚的证据前来救援，这些证据大意是说：如果鸟类不能控制昆虫，昆虫就会把我们吃光。",
+    "structure": "主干：Scientists(主语) jumped to the rescue(谓语+介词短语作目的状语)；with some distinctly shaky evidence 为方式状语；to the effect that 引导同位语从句解释 evidence 的内容，其中嵌套 if 条件状语从句。",
+    "points": [
+     "jumped to the rescue 译为\"急忙前来救援/挺身而出\"，体现动作的仓促",
+     "to the effect that 译为\"大意是说/其内容是\"，属固定搭配",
+     "distinctly shaky evidence 译为\"明显站不住脚的证据\"，shaky 的语义准确传达"
+    ],
+    "pitfall": "to the effect that 容易被误译为\"为了达到……的效果\"，实际意为\"大意是说/其内容是\"，这是固定搭配，表示对前面名词内容的解释说明。"
+   },
+   {
+    "number": 47,
+    "en": "but we have at least drawn nearer the point of admitting that birds should continue as a matter of intrinsic right, regardless of the presence or absence of economic advantage to us.",
+    "cn": "但我们至少已经更加接近于承认这样一个观点：鸟类应当作为一种固有的权利而继续存在，不管它们对我们是否具有经济上的利益。",
+    "structure": "主干：we(主语) have drawn nearer(谓语，现在完成时) the point(宾语)；of admitting 为介词短语作后置定语修饰 point；that 引导宾语从句作 admitting 的宾语；regardless of... 为让步状语，其中 presence or absence 构成并列。",
+    "points": [
+     "as a matter of intrinsic right 译为\"作为一种固有的权利\"，intrinsic 的准确理解是关键",
+     "regardless of the presence or absence of 译为\"不管有没有/不管是否存在\"",
+     "drawn nearer the point of admitting 译为\"更加接近于承认……的观点\"，逻辑通顺"
+    ],
+    "pitfall": "intrinsic right 容易被笼统译为\"本身的权利\"，应准确译为\"固有的/内在的权利\"，强调权利的天然属性而非外部赋予；continue 此处指\"继续存在\"而非简单的\"继续\"。"
+   },
+   {
+    "number": 48,
+    "en": "Time was when biologists somewhat overworked the evidence that these creatures preserve the health of game by killing the physically weak, or that they prey only on \"worthless\" species.",
+    "cn": "曾几何时，生物学家们过度引用这样的证据：这些生物通过杀死体弱者来维护猎物种群的健康，或者它们只捕食\"没有价值的\"物种。",
+    "structure": "主干：Time was when...(倒装句式，相当于 There was a time when...)；when 引导表语从句；biologists(主语) overworked(谓语) the evidence(宾语)；两个 that 从句为并列同位语从句，说明 evidence 的具体内容。",
+    "points": [
+     "Time was when 译为\"曾几何时/曾经有一段时期\"，识别该固定句式",
+     "overworked the evidence 译为\"过度引用/滥用证据\"，overwork 作及物动词的特殊含义",
+     "game 在此语境中译为\"猎物/野味\"而非\"游戏\""
+    ],
+    "pitfall": "overworked 极易按常义译为\"工作过度\"，此处为及物动词，意为\"过度使用/滥用\"；game 在生态语境下指\"猎物、野禽兽\"，而非\"游戏\"，需根据上下文判断词义。"
+   },
+   {
+    "number": 49,
+    "en": "In Europe, where forestry is ecologically more advanced, the noncommercial tree species are recognized as members of the native forest community, to be preserved as such, within reason.",
+    "cn": "在欧洲，那里的林业在生态学上更为先进，非商业性树种被视为原始森林群落的成员，并在合理范围内作为群落成员予以保护。",
+    "structure": "主干：the noncommercial tree species(主语) are recognized(谓语，被动语态) as members of the native forest community(介词短语作主语补足语)；In Europe 为地点状语；where 引导非限制性定语从句修饰 Europe；to be preserved as such 为目的/结果状语不定式；within reason 为条件状语。",
+    "points": [
+     "where 引导的非限制性定语从句正确翻译为\"在那里……\"或融入主句",
+     "as such 译为\"照此/同样地/作为这样的成员\"，指代前文所说的群落成员身份",
+     "within reason 译为\"在合理范围内\"，属固定搭配"
+    ],
+    "pitfall": "as such 容易被忽略或误译，此处指代前文\"作为原始森林群落的成员\"这一身份，应译为\"作为这样的成员/照此\"；within reason 如漏译会丢分。"
+   },
+   {
+    "number": 50,
+    "en": "It tends to ignore, and thus eventually to eliminate, many elements in the land community that lack commercial value, but that are essential to its healthy functioning.",
+    "cn": "这一体系往往忽视、进而最终消灭土地群落中许多缺乏商业价值但对其健康运转至关重要的成分。",
+    "structure": "主干：It(主语) tends to ignore... and to eliminate(并列谓语不定式) many elements(宾语)；in the land community 为后置定语修饰 elements；两个 that 引导的定语从句并列修饰 elements：that lack commercial value 与 but that are essential to its healthy functioning 以 but 连接，构成转折关系。",
+    "points": [
+     "tends to ignore, and thus eventually to eliminate 两个并列不定式中间插入成分的准确处理，译出递进关系",
+     "两个 that 定语从句的并列转折关系：缺乏商业价值\"但\"对……至关重要",
+     "its healthy functioning 中 its 指代 land community，译为\"其健康运转\""
+    ],
+    "pitfall": "两个并列不定式 to ignore 和 to eliminate 之间由逗号和 and thus 连接形成插入结构，容易漏译 thus 所表达的因果递进关系；but that 中的 but 表转折，连接两个并列定语从句，不可遗漏。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "conservation",
+    "cn": "n. 保护，保存"
+   },
+   {
+    "w": "biotic",
+    "cn": "adj. 生物的，与生命有关的"
+   },
+   {
+    "w": "integrity",
+    "cn": "n. 完整性；正直"
+   },
+   {
+    "w": "continuance",
+    "cn": "n. 继续存在，延续"
+   },
+   {
+    "w": "distinctly",
+    "cn": "adv. 明显地，显然地"
+   },
+   {
+    "w": "shaky",
+    "cn": "adj. 不可靠的，站不住脚的"
+   },
+   {
+    "w": "to the effect that",
+    "cn": "固定搭配，大意是说，内容是"
+   },
+   {
+    "w": "roundabout",
+    "cn": "adj. 拐弯抹角的，迂回的"
+   },
+   {
+    "w": "intrinsic",
+    "cn": "adj. 固有的，内在的，本质的"
+   },
+   {
+    "w": "predatory",
+    "cn": "adj. 食肉的，掠食性的"
+   },
+   {
+    "w": "overwork",
+    "cn": "v.（此处）过度使用，滥用"
+   },
+   {
+    "w": "game",
+    "cn": "n.（此处）猎物，野禽兽"
+   },
+   {
+    "w": "prey on",
+    "cn": "v. 捕食，以……为食"
+   },
+   {
+    "w": "exterminate",
+    "cn": "v. 消灭，根除"
+   },
+   {
+    "w": "fancied",
+    "cn": "adj. 想象的，虚构的"
+   },
+   {
+    "w": "noncommercial",
+    "cn": "adj. 非商业性的"
+   },
+   {
+    "w": "as such",
+    "cn": "固定搭配，照此，作为这样的"
+   },
+   {
+    "w": "within reason",
+    "cn": "固定搭配，在合理范围内"
+   },
+   {
+    "w": "lopsided",
+    "cn": "adj. 片面的，不平衡的"
+   },
+   {
+    "w": "constituent",
+    "cn": "adj. 组成的，构成的"
+   },
+   {
+    "w": "flora",
+    "cn": "n. 植物群"
+   },
+   {
+    "w": "fauna",
+    "cn": "n. 动物群"
+   }
+  ],
+  "skills": [
+   "注意固定搭配的准确翻译，如 to the effect that、as such、within reason 等",
+   "被动语态多转译为汉语主动句或无主语句，使译文自然流畅",
+   "并列结构（如两个 that 从句、两个不定式）需理清逻辑关系，译出递进或转折",
+   "熟词僻义需结合语境判断，如 game（猎物）、overwork（过度使用）、shaky（站不住脚的）",
+   "长句翻译时先抓主干再处理修饰成分，必要时拆分为短句以符合中文表达习惯"
+  ]
+ }
+}

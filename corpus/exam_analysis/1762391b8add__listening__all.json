@@ -1,0 +1,254 @@
+{
+ "schemaVersion": 1,
+ "id": "1762391b8add__listening__all",
+ "examId": "1762391b8add",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2025 年 12 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T07:18:55.028Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54228,
+ "usage": {
+  "prompt_tokens": 2128,
+  "completion_tokens": 2676,
+  "total_tokens": 4804,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2128,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2676,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2128,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有分析均基于题目选项的语言特征与正确答案进行推断，不涉及任何编造的录音内容。",
+  "overview": "本场听力共7段材料、25道题。第1段（1-4题）围绕外交与外交官话题；第2段（5-8题）涉及工作合同与项目推进；第3段（9-11题）讨论冲突处理与事实认定；第4段（12-15题）关于饮食习惯与消费方式变迁；第5段（16-18题）讲行李丢失与航空托运注意事项；第6段（19-21题）涉及社会孤立或某现象的社会危害；第7段（22-25题）围绕住宿经营（如民宿/B&B）展开。",
+  "strategy": [
+   "预读选项时快速标注各题选项的共性词，判断提问方向（原因/建议/态度等）",
+   "关注选项中的极端词（all、must、never），此类选项往往是干扰项",
+   "同义替换是听力出题核心手段，注意选项用词与录音用词的近义转换",
+   "当两个选项语义接近时，正确答案往往在其中之一，可优先关注",
+   "末题常考全文主旨或建议，提前看末题选项有助把握全篇方向",
+   "听到某选项原词不一定对，录音原词重现常为干扰陷阱"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "外交官的职业背景、技能与成长路径",
+    "optionSignals": "Q1各项描述人物身份/特质，Q2选项均为政治类名词短语，Q3含prerequisite/must等限定词暗示在问条件，Q4为名词短语问主题。选项多用外交专业词汇如ambassador、diplomacy、envoys。",
+    "tips": [
+     "Q3中含all和must的A、D选项措辞过于绝对，听力中此类极端表述多为干扰",
+     "Q4为主旨题，可通过全段整体印象作答，不必纠结细节"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "工作场景中合同项目推进的疲惫与期望",
+    "optionSignals": "Q5各项给出对话即将结束的原因，Q6选项围绕时间与进度，Q7为四个形容词考态度评价，Q8为名词短语问期望或目标。形容词题需特别留意语气词。",
+    "tips": [
+     "Q7四个形容词差异明显，delusional（妄想的）语义最负面，注意听说话人的否定语气",
+     "Q6中B和C都提到two months，但侧重点不同，注意区分'花了两个月'与'毫无进展'的差异"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "职场或人际冲突的界定与处理方式",
+    "optionSignals": "Q9用When引导，问情境条件；Q10用How/What/When问冲突的某个方面；Q11描述具体行动。选项涉及dispute、conflict、ascertain等正式用语。",
+    "tips": [
+     "Q11四个选项描述不同处理策略，assumed the best（善意推定）与其他积极干预形成对比，注意听处理态度",
+     "Q9中A和D都涉及'两个人说法不同'，但D更具体指向同一事件的不同叙述，注意细微差别"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "现代人饮食消费习惯与生活技能的变化",
+    "optionSignals": "Q12和Q13问行为习惯（动词/动名词），Q14问目的（satisfy/cut down/eat healthily），Q15为较长名词短语问原因或趋势。选项涉及日常生活词汇。",
+    "tips": [
+     "Q13中sewing（缝纫）与其他选项话题差异大，若听到相关表述可快速锁定",
+     "Q15各项均以People's开头，结构高度平行，需重点听核心名词区分dislike of cooking与其他选项"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "航空行李丢失的原因与应对建议",
+    "optionSignals": "Q16和Q17都问原因/风险，选项含tag、conveyor belt、sorting machine等航空场景词；Q18为建议类题，选项以动词原形开头。",
+    "tips": [
+     "Q18为建议题，avoid packing valuables（避免托运贵重物品）是最具普适性的实用建议，符合听力常考的安全提示逻辑",
+     "Q16和Q17都涉及tag（标签），注意区分'没有标签'与'标签被撕掉'的不同情境"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "某社会现象（如孤立/孤独）的危害与认知",
+    "optionSignals": "Q19用It can be…句式问性质，Q20问态度（inevitable/negative/concerned），Q21为名词短语问具体影响。选项含hazardous、harmful、detachment等负面词汇，整体基调偏消极。",
+    "tips": [
+     "Q20为态度题，四个选项从中性到负面排列，注意听评价性形容词和语气",
+     "Q21中vicious cycles of detachment（疏离的恶性循环）语义最严重，若全段基调偏负面则与之吻合"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "民宿或家庭旅馆的经营模式与开办条件",
+    "optionSignals": "Q22问旅客不满的原因，Q23描述民宿特点，Q24和Q25问经营条件或考量因素。选项含accommodations、chain hotels、property、income等商业词汇。",
+    "tips": [
+     "Q24中property（房产）与personality（性格）形成鲜明对比，注意听是讨论物质条件还是个人特质",
+     "Q25各项为经营决策的不同考量，opportunities for income暗示收入潜力是关键因素"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "distinguished",
+    "cn": "杰出的，卓越的"
+   },
+   {
+    "w": "legitimacy",
+    "cn": "合法性，正当性"
+   },
+   {
+    "w": "prerequisite",
+    "cn": "先决条件，前提"
+   },
+   {
+    "w": "alignment",
+    "cn": "对齐，协调一致"
+   },
+   {
+    "w": "delusional",
+    "cn": "妄想的，抱有幻想的"
+   },
+   {
+    "w": "ascertain",
+    "cn": "查明，确定"
+   },
+   {
+    "w": "rectification",
+    "cn": "纠正，修正"
+   },
+   {
+    "w": "conveyor belt",
+    "cn": "传送带"
+   },
+   {
+    "w": "irretrievably",
+    "cn": "不可挽回地"
+   },
+   {
+    "w": "detachment",
+    "cn": "疏离，超然；分离"
+   },
+   {
+    "w": "aversion",
+    "cn": "厌恶，反感"
+   },
+   {
+    "w": "reshuffle",
+    "cn": "改组，重新洗牌"
+   },
+   {
+    "w": "impersonal",
+    "cn": "缺乏人情味的，冷淡的"
+   },
+   {
+    "w": "envoy",
+    "cn": "使节，外交代表"
+   }
+  ]
+ }
+}

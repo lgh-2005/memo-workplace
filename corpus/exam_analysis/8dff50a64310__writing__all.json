@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "8dff50a64310__writing__all",
+ "examId": "8dff50a64310",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2018 年 6 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:21:09.154Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44744,
+ "usage": {
+  "prompt_tokens": 702,
+  "completion_tokens": 2870,
+  "total_tokens": 3572,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 702,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2870,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 702,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕企业与消费者之间建立信任的重要性展开论述，要求举例说明观点，字数150-200词。",
+    "outline": [
+     "开篇引出话题：在当今商业环境中，企业与消费者之间的信任至关重要，是一切成功交易的基石。",
+     "主体段论述信任的多方面意义：影响消费者购买决策、培养品牌忠诚度、降低交易成本，并举具体企业实例加以佐证；同时指出信任脆弱易失，企业需诚信经营。",
+     "总结全文：信任不仅是道德品质，更是战略资产；唯有建立真诚互信，企业方能在激烈竞争中持续发展。"
+    ],
+    "sample": "In the modern commercial landscape, building trust between businesses and consumers has become increasingly vital for sustainable development. Trust serves as the cornerstone of every successful transaction and long-term business relationship.\n\nThe significance of such trust is multifaceted. First and foremost, trust directly influences consumers' purchasing decisions. When customers believe in a brand's integrity, they are more willing to make repeated purchases and recommend products to others. For instance, companies like Apple and Huawei have cultivated loyal customer bases largely because of their consistent commitment to quality and transparency. Furthermore, trust reduces transaction costs. When mutual confidence exists, consumers spend less time comparing alternatives, and businesses invest fewer resources in persuading hesitant buyers.\n\nHowever, trust is fragile and hard-won. Businesses must prioritize honesty in advertising, ensure product quality, and handle complaints promptly. Any deceptive practice can shatter consumer confidence overnight, as evidenced by numerous corporate scandals that led to devastating boycotts.\n\nIn conclusion, trust is not merely a moral virtue but a strategic asset. Only by fostering genuine trust can businesses thrive in an increasingly competitive marketplace.",
+    "phrases": [
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "充当……的基石；用于强调某事物的根本性地位，比foundation更正式"
+     },
+     {
+      "en": "consistent commitment to quality and transparency",
+      "cn": "对品质与透明度的一贯承诺；体现企业诚信的高分搭配"
+     },
+     {
+      "en": "cultivate a loyal customer base",
+      "cn": "培养忠实的客户群体；比build customers更地道高级"
+     },
+     {
+      "en": "reduce transaction costs",
+      "cn": "降低交易成本；经济学术语，用于论证信任的实际商业价值"
+     },
+     {
+      "en": "shatter consumer confidence overnight",
+      "cn": "一夜之间摧毁消费者信心；shatter比destroy更生动形象"
+     },
+     {
+      "en": "as evidenced by",
+      "cn": "正如……所证明的；用于引出论据，替代for example更学术"
+     },
+     {
+      "en": "not merely ... but ...",
+      "cn": "不仅仅是……而且是……；比not only ... but also更书面"
+     },
+     {
+      "en": "thrive in a competitive marketplace",
+      "cn": "在竞争激烈的市场中蓬勃发展；thrive比survive层次更高"
+     },
+     {
+      "en": "mutual confidence",
+      "cn": "相互信任；mutual一词体现双向关系，切合题目双方视角"
+     },
+     {
+      "en": "prioritize honesty in advertising",
+      "cn": "在广告宣传中以诚信为先；prioritize体现主动性，比keep honest更佳"
+     }
+    ],
+    "pitfalls": [
+     "审题不清，未围绕'businesses and consumers双方关系'论述，只谈单方面",
+     "通篇空谈重要性而缺少题目明确要求的具体examples举例",
+     "词数不足150词或超出200词，直接影响评分档次",
+     "段落缺乏逻辑连接词，论证显得松散，衔接不紧凑",
+     "用词重复率高，反复使用important/very等初级词汇，缺乏同义替换"
+    ],
+    "upgrades": [
+     {
+      "plain": "Trust is very important for businesses.",
+      "better": "Trust serves as the cornerstone of every successful transaction and long-term business relationship.",
+      "note": "用具体比喻cornerstone替代空泛的very important，表达更有画面感和说服力"
+     },
+     {
+      "plain": "For example, some companies are trusted by customers.",
+      "better": "Companies like Apple and Huawei have cultivated loyal customer bases largely because of their consistent commitment to quality and transparency.",
+      "note": "具体点明企业名称与原因，使论据具有说服力而非泛泛而谈"
+     },
+     {
+      "plain": "If businesses are not honest, customers will not trust them.",
+      "better": "Any deceptive practice can shatter consumer confidence overnight, as evidenced by numerous corporate scandals.",
+      "note": "shatter与overnight构成强烈语义冲击，as evidenced by引出论据更学术"
+     },
+     {
+      "plain": "Businesses should try to build trust with customers.",
+      "better": "Only by fostering genuine trust can businesses thrive in an increasingly competitive marketplace.",
+      "note": "Only by + 倒装句式体现高级语法，fostering genuine trust比build trust更精准"
+     },
+     {
+      "plain": "Trust can make customers buy more things.",
+      "better": "Trust directly influences consumers' purchasing decisions, making them more willing to make repeated purchases.",
+      "note": "用influence和purchasing decisions等正式词汇替代口语化表达，层次明显提升"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Trust serves as the cornerstone of every successful transaction and long-term business relationship. — 信任是一切成功交易与长期商业关系的基石。（cornerstone比喻精准，适用于论述根本性意义的开篇句）",
+   "Any deceptive practice can shatter consumer confidence overnight, as evidenced by numerous corporate scandals that led to devastating boycotts. — 任何欺骗行为都能在一夜之间摧毁消费者信心，众多企业丑闻引发的毁灭性抵制即为明证。（shatter + overnight制造强烈反差，as evidenced by学术感强）",
+   "Only by fostering genuine trust can businesses thrive in an increasingly competitive marketplace. — 唯有培育真诚的信任，企业才能在日趋激烈的市场竞争中蓬勃发展。（Only by引导的倒装句是写作高分句式的经典代表）",
+   "Companies like Apple and Huawei have cultivated loyal customer bases largely because of their consistent commitment to quality and transparency. — 苹果和华为之所以培养出忠实客户群，很大程度上源于它们对品质与透明度的一贯承诺。（举例具体、因果逻辑清晰，是论证段的优秀范例句）",
+   "Trust is not merely a moral virtue but a strategic asset. — 信任不仅仅是一种道德品质，更是一种战略资产。（not merely ... but ... 结构简洁有力，适合收尾段升华主题）"
+  ]
+ }
+}

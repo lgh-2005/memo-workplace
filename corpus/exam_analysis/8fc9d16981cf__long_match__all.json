@@ -1,0 +1,245 @@
+{
+ "schemaVersion": 1,
+ "id": "8fc9d16981cf__long_match__all",
+ "examId": "8fc9d16981cf",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2017 年 6 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:14:37.424Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34015,
+ "usage": {
+  "prompt_tokens": 951,
+  "completion_tokens": 1859,
+  "total_tokens": 2810,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 951,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1859,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 951,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国贫富家庭育儿方式差异",
+  "strategy": [
+   "先通读10条陈述句，标注高频主题词如parenting、rich/poor、working-class、children等",
+   "利用专有名词（如Ms. Lareau）、数字、极端表达等唯一性线索快速锁定段落",
+   "注意同义替换：如affluent≈wealthy≈higher-income，obedient≈compliant，well-being≈mental health",
+   "区分相似陈述句的细微差别，如第38题与第44题都涉及富裕家庭对心理健康的关注，但侧重点不同",
+   "先做有明显定位词的题（如人名Ms. Lareau），再处理概括性较强的题"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "G",
+    "cn": "工薪阶层的父母教导孩子要听话，并对成年人表示尊重。",
+    "keywords": [
+     "working-class",
+     "obedient",
+     "respect",
+     "adults"
+    ],
+    "paraphrase": "原文可能用compliant、deferential、listen to等词替换obedient和show respect；working-class可能被替换为lower-income或blue-collar等近义表达。",
+    "tip": "定位working-class与obedient/respect的组合，G段同时涉及两种家庭的优势。"
+   },
+   {
+    "number": 37,
+    "answer": "F",
+    "cn": "美国父母无论贫富，尽管教养方式不同，但对孩子有着相似的期望。",
+    "keywords": [
+     "American parents",
+     "rich or poor",
+     "similar expectations",
+     "different ways"
+    ],
+    "paraphrase": "原文可能将similar expectations改写为share the same goals或have common aspirations；different ways of parenting可能表述为divergent approaches。",
+    "tip": "抓住'相似期望'与'不同方式'这一对比关系定位F段。"
+   },
+   {
+    "number": 38,
+    "answer": "M",
+    "cn": "富裕父母更关心孩子的心理健康，而贫穷父母更担心孩子的安全。",
+    "keywords": [
+     "psychological well-being",
+     "safety",
+     "rich",
+     "poor"
+    ],
+    "paraphrase": "原文可能用emotional health替换psychological well-being，用physical safety或security替换safety；对比结构while可能以whereas或in contrast呈现。",
+    "tip": "定位psychological well-being与safety的对比，区别于第44题的mental health。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "贫富家庭之间日益加大的育儿差异反映了日益加剧的社会不平等。",
+    "keywords": [
+     "increasing differences",
+     "child rearing",
+     "social inequality"
+    ],
+    "paraphrase": "原文可能用growing gap、widening divide替换increasing differences；reflect可能用mirror、be indicative of替换；social inequality可能表述为class divide。",
+    "tip": "关注'差异扩大'与'社会不平等'两个核心概念的共现来锁定D段。"
+   },
+   {
+    "number": 40,
+    "answer": "G",
+    "cn": "工薪阶层家庭和富裕家庭的育儿方式各有优势。",
+    "keywords": [
+     "working-class",
+     "affluent",
+     "advantages",
+     "parenting approaches"
+    ],
+    "paraphrase": "原文可能用benefits、strengths、merits替换advantages；both have advantages可能表述为each has its own merit。",
+    "tip": "G段同时出现第36题和第40题答案，注意该段涵盖工薪阶层育儿特点及两种方式的优缺点。"
+   },
+   {
+    "number": 41,
+    "answer": "O",
+    "cn": "高收入家庭和工薪阶层家庭现在倾向于居住在不同的社区。",
+    "keywords": [
+     "higher-income",
+     "working-class",
+     "different neighborhoods"
+    ],
+    "paraphrase": "原文可能用separate communities、distinct areas替换different neighborhoods；tend to live可能用are more likely to reside替换。",
+    "tip": "定位neighborhoods/communities等居住地点相关词汇，快速锁定O段。"
+   },
+   {
+    "number": 42,
+    "answer": "K",
+    "cn": "受过良好教育的父母很少使用体罚。",
+    "keywords": [
+     "physical punishment",
+     "well-educated",
+     "much less"
+    ],
+    "paraphrase": "原文可能用spanking、corporal punishment替换physical punishment；well-educated可能用college-educated、highly educated替换；much less可能用rarely、seldom或decline表达。",
+    "tip": "抓住physical punishment这一具体行为描述，在K段中定位相关内容。"
+   },
+   {
+    "number": 43,
+    "answer": "H",
+    "cn": "拉罗女士不认为参加较少的课外活动会对孩子的发展产生负面影响。",
+    "keywords": [
+     "Ms. Lareau",
+     "after-class activities",
+     "negatively affect",
+     "development"
+    ],
+    "paraphrase": "原文可能用extracurricular activities替换after-class activities；negatively affect可能用harm、hinder、be detrimental to替换；doesn't believe可能用否定表达或反义词呈现。",
+    "tip": "人名Ms. Lareau是强定位词，直接在H段搜索该专有名词即可快速匹配。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "cn": "富裕的父母担心孩子的心理健康和繁忙的日程安排。",
+    "keywords": [
+     "wealthy parents",
+     "mental health",
+     "busy schedules"
+    ],
+    "paraphrase": "原文可能用well-off、affluent替换wealthy；able to be concerned about可能用worry about替换；busy schedules可能用overscheduling、packed calendars替换。",
+    "tip": "注意区分第38题（贫富对比，含safety）和第44题（仅谈富裕家庭，含busy schedules）。"
+   },
+   {
+    "number": 45,
+    "answer": "P",
+    "cn": "在过去十年中，一些社会经济方面的育儿差异已经缩小。",
+    "keywords": [
+     "socioeconomic differences",
+     "child rearing",
+     "shrunk",
+     "past ten years"
+    ],
+    "paraphrase": "原文可能用narrowed、decreased、diminished替换shrunk；socioeconomic differences可能用class-based gaps替换；past ten years可能用over the last decade替换。",
+    "tip": "抓住shrunk/缩小这一方向性词汇与ten years时间线索定位P段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "obedient",
+    "cn": "adj. 顺从的，听话的"
+   },
+   {
+    "w": "parenting",
+    "cn": "n. 养育，育儿"
+   },
+   {
+    "w": "psychological well-being",
+    "cn": "n. 心理健康，心理幸福感"
+   },
+   {
+    "w": "child rearing",
+    "cn": "n. 养育子女，育儿"
+   },
+   {
+    "w": "social inequality",
+    "cn": "n. 社会不平等"
+   },
+   {
+    "w": "affluent",
+    "cn": "adj. 富裕的，富足的"
+   },
+   {
+    "w": "physical punishment",
+    "cn": "n. 体罚"
+   },
+   {
+    "w": "socioeconomic",
+    "cn": "adj. 社会经济的"
+   },
+   {
+    "w": "shrunk",
+    "cn": "v. 缩小，减少（shrink的过去分词）"
+   },
+   {
+    "w": "negatively affect",
+    "cn": "v. 产生负面影响"
+   }
+  ]
+ }
+}

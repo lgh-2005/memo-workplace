@@ -1,0 +1,239 @@
+{
+ "schemaVersion": 1,
+ "id": "54b6791812b2__writing__all",
+ "examId": "54b6791812b2",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2005 年考研英语真题（旧）",
+ "year": 2005,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:17:28.148Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 84996,
+ "usage": {
+  "prompt_tokens": 877,
+  "completion_tokens": 4583,
+  "total_tokens": 5460,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 877,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4583,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 877,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "辞职信写作：以杂志编辑身份向上司Mr. Wang说明辞职决定、陈述理由并致歉，不少于100词，署名Li Ming。",
+    "outline": [
+     "第一段：开门见山，表明写信目的——辞去Designs & Fashions杂志编辑一职",
+     "第二段：详细说明辞职原因——实际工作内容与预期不符，可具体举例说明期望与现实的落差",
+     "第三段：为辞职带来的不便致歉，表示愿意配合交接，礼貌收尾并表达祝愿"
+    ],
+    "sample": "Dear Mr. Wang,\n\nI am writing to inform you of my decision to resign from my position as an editor for the magazine Designs & Fashions. I do appreciate the opportunity you offered me two months ago, but after careful consideration, I have decided that this role is not the right fit for me.\n\nMy primary reason for leaving is that the nature of the work has turned out to be quite different from what I had expected. When I accepted the position, I anticipated being actively involved in creative content development and fashion commentary. In practice, however, the job has largely revolved around routine proofreading and administrative tasks, which leaves little room for the creative input I had envisioned. This significant gap between my expectations and the actual responsibilities has made it difficult for me to feel professionally fulfilled.\n\nI sincerely apologize for any inconvenience my departure may cause to the editorial team. I am more than willing to help with the transition during the notice period, including training a replacement. Thank you for your understanding, and I wish the magazine every success in the future.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "inform you of my decision to resign",
+      "cn": "通知您我的辞职决定；正式辞职信的标准开头表达"
+     },
+     {
+      "en": "after careful consideration",
+      "cn": "经过深思熟虑；体现辞职并非草率之举，语气得体"
+     },
+     {
+      "en": "not the right fit for me",
+      "cn": "不太适合我；委婉表达工作与自身不匹配"
+     },
+     {
+      "en": "turn out to be quite different from",
+      "cn": "结果与……大不相同；用于描述预期与现实的落差"
+     },
+     {
+      "en": "revolve around routine tasks",
+      "cn": "围绕日常事务性工作；说明工作内容单调"
+     },
+     {
+      "en": "leave little room for creative input",
+      "cn": "几乎没有创造性发挥的空间；具体说明不满的原因"
+     },
+     {
+      "en": "feel professionally fulfilled",
+      "cn": "获得职业成就感；高级表达，胜过简单的feel happy"
+     },
+     {
+      "en": "I sincerely apologize for any inconvenience",
+      "cn": "对可能造成的不便深表歉意；道歉的正式用语"
+     },
+     {
+      "en": "more than willing to help with the transition",
+      "cn": "非常愿意协助交接工作；体现职业素养和诚意"
+     },
+     {
+      "en": "wish the magazine every success",
+      "cn": "祝杂志一切顺利；礼貌收尾的常用祝愿语"
+     }
+    ],
+    "pitfalls": [
+     "辞职信语气过于随意或情绪化，应保持正式、客观、礼貌",
+     "忘记三个要点之一（决定、原因、道歉），导致要点不全扣分",
+     "理由过于笼统如仅说I don't like it，缺乏具体展开，内容空洞",
+     "格式错误：缺少Dear Mr. Wang称呼或Yours sincerely结尾",
+     "误用自己真实姓名署名，题目要求必须使用Li Ming"
+    ],
+    "upgrades": [
+     {
+      "plain": "I want to quit my job.",
+      "better": "I am writing to inform you of my decision to resign from my position.",
+      "note": "升级为正式书信语体，使用resign替代口语化的quit，更符合辞职信规范"
+     },
+     {
+      "plain": "The job is different from what I thought.",
+      "better": "The nature of the work has turned out to be quite different from what I had expected.",
+      "note": "使用turn out to be和过去完成时had expected，句式更精准高级"
+     },
+     {
+      "plain": "I am sorry for the trouble.",
+      "better": "I sincerely apologize for any inconvenience my departure may cause to the editorial team.",
+      "note": "道歉对象更具体，用apologize替代sorry，departure替代leaving，更正式得体"
+     },
+     {
+      "plain": "I hope the magazine will be successful.",
+      "better": "I wish the magazine every success in the future.",
+      "note": "wish sb. every success为地道祝愿句式，简洁优雅"
+     },
+     {
+      "plain": "I can help find a new person.",
+      "better": "I am more than willing to help with the transition, including training a replacement.",
+      "note": "more than willing语气更诚恳，transition和replacement为职场正式用词"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "图画作文：描述漫画内容（老人被子女像踢足球一样踢来踢去，标题为'养老足球赛'），阐释寓意并发表评论，160-200词。",
+    "outline": [
+     "第一段：客观描述图画内容——一位老人被成年子女像足球一样踢来踢去，无人愿意赡养，点明标题'养老足球赛'的讽刺意味",
+     "第二段：揭示深层含义——部分成年子女逃避赡养老人的责任，分析经济压力、传统孝道观念淡化等原因",
+     "第三段：发表评论——呼吁加强道德教育、完善社会保障制度，强调赡养父母是子女的神圣义务"
+    ],
+    "sample": "As is vividly depicted in the drawing, an elderly father is being kicked around like a football by his grown-up sons and daughters, each of whom stands in a goal and refuses to take the old man in. The caption beneath reads An Elderly Care Football Match, which is both deeply ironic and profoundly thought-provoking.\n\nThe drawing sheds light on a disturbing social phenomenon: some adult children deliberately shirk their responsibility of supporting their aging parents. Several factors account for this problem. To begin with, the accelerating pace of modern life and mounting economic pressure have rendered some young people reluctant to shoulder the additional burden of elderly care. Furthermore, the gradual erosion of traditional values, particularly the Confucian virtue of filial piety, has considerably weakened the sense of family obligation among younger generations. Driven by selfishness, certain individuals prioritize their own comfort over their parents' well-being.\n\nThis issue demands immediate attention from both individuals and society at large. On the one hand, moral education should be reinforced to revive the time-honored virtue of respecting and caring for the elderly. On the other hand, the government ought to improve the social welfare system and establish more care facilities for senior citizens. Above all, we should bear in mind that our parents devoted their entire lives to raising us, and it is our sacred duty to repay their selfless love. Only through collective efforts can we build a harmonious society where every elderly person lives with dignity and warmth.",
+    "phrases": [
+     {
+      "en": "be kicked around like a football",
+      "cn": "像足球一样被踢来踢去；形象描述漫画核心场景"
+     },
+     {
+      "en": "shed light on a disturbing phenomenon",
+      "cn": "揭示一个令人不安的现象；用于从图画过渡到社会问题分析"
+     },
+     {
+      "en": "shirk their responsibility of",
+      "cn": "逃避……的责任；准确描述子女推卸赡养义务的行为"
+     },
+     {
+      "en": "mounting economic pressure",
+      "cn": "不断增大的经济压力；mount作形容词表示'日益增长的'"
+     },
+     {
+      "en": "the erosion of traditional values",
+      "cn": "传统价值观的侵蚀/淡化；抽象名词erosion用于社会分析十分地道"
+     },
+     {
+      "en": "filial piety",
+      "cn": "孝道；中国文化核心概念的标准英文表达，考研高频词"
+     },
+     {
+      "en": "prioritize A over B",
+      "cn": "将A置于B之上/重A轻B；用于对比个人利益与家庭责任"
+     },
+     {
+      "en": "demand immediate attention",
+      "cn": "亟需关注；比need更有力度的呼吁表达"
+     },
+     {
+      "en": "the time-honored virtue of",
+      "cn": "历史悠久的美德；time-honored为高分形容词，强调传统"
+     },
+     {
+      "en": "Only through collective efforts can we...",
+      "cn": "只有通过共同努力我们才能……；倒装句式，适合作结尾升华"
+     }
+    ],
+    "pitfalls": [
+     "第一段描述图画时遗漏关键细节（如标题'养老足球赛'），导致描写不完整",
+     "全文只描述不分析，缺乏对社会现象原因的深入探讨，内容单薄",
+     "建议段空喊口号（如we should try our best），缺乏具体可行措施",
+     "词汇重复严重，如反复使用old people而不变换为the elderly/senior citizens",
+     "字数不足160词或超过200词，均可能被酌情扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows an old man and his children.",
+      "better": "As is vividly depicted in the drawing, an elderly father is being kicked around like a football by his grown-up sons and daughters.",
+      "note": "使用被动语态和生动比喻，画面感更强，开篇即展示语言功底"
+     },
+     {
+      "plain": "Some children don't want to take care of their old parents.",
+      "better": "Some adult children deliberately shirk their responsibility of supporting their aging parents.",
+      "note": "shirk responsibility语义精准，deliberately增强批判力度，aging parents比old parents更正式"
+     },
+     {
+      "plain": "We should respect old people because it is important.",
+      "better": "We should bear in mind that our parents devoted their entire lives to raising us, and it is our sacred duty to repay their selfless love.",
+      "note": "从空洞的说教升级为具体的情感呼唤，sacred duty和selfless love使文章更有感染力"
+     },
+     {
+      "plain": "If everyone works hard, society will be better.",
+      "better": "Only through collective efforts can we build a harmonious society where every elderly person lives with dignity and warmth.",
+      "note": "only引导的倒装句+where定语从句，句式高级；dignity and warmth具体而有温度"
+     },
+     {
+      "plain": "This is a serious problem in society.",
+      "better": "This issue demands immediate attention from both individuals and society at large.",
+      "note": "demand比need更紧迫，at large为高级搭配，个人与社会并提使论述更全面"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "I am writing to inform you of my decision to resign from my position as an editor for the magazine. — 辞职信标准开头，inform sb. of sth. 正式且清晰，可直接套用于任何辞职场景。",
+   "The nature of the work has turned out to be quite different from what I had expected. — 用turn out to be表达'结果是'，搭配过去完成时had expected形成时态对比，精准表达预期落差。",
+   "As is vividly depicted in the drawing, an elderly father is being kicked around like a football by his grown-up sons and daughters. — 图画作文经典首句，as引导非限制性定语从句+被动语态+比喻，一句话完成描图。",
+   "The gradual erosion of traditional values has considerably weakened the sense of family obligation among younger generations. — 抽象名词作主语（erosion）使句子更学术化，considerably增强程度，是分析社会原因的高分句型。",
+   "Only through collective efforts can we build a harmonious society where every elderly person lives with dignity and warmth. — only引导状语前置触发倒装+where引导定语从句，适合作为大作文结尾的升华金句。"
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "a9d96394fca2__reading__2",
+ "examId": "a9d96394fca2",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 12 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:16:17.680Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54985,
+ "usage": {
+  "prompt_tokens": 1787,
+  "completion_tokens": 3544,
+  "total_tokens": 5331,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1787,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3544,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1787,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "忙碌成为新的社会地位象征",
+  "gist": "文章指出，过去休闲被视为高社会地位的标志，而如今超过半数美国员工不会用完带薪假期，忙碌反而成了身份的象征。研究者通过系列实验证实了人们对忙碌的推崇，并将这一转变归因于知识密集型经济的发展——忙碌暗示个人被市场高度需求，从而提升感知地位。文末建议人们至少保留周末不安排工作。",
+  "structure": [
+   "第1段：引出现象——多数员工不休完带薪假",
+   "第2-3段：对比古今态度变化，实验证明忙碌受推崇",
+   "第4-5段：分析原因——知识经济使忙碌成为地位信号",
+   "第6段：建议至少保留周末休息时间"
+  ],
+  "difficulty": "中等",
+  "translation": "又到了年底疯狂算假期的季节——全国各行各业的员工都在倒数，试图弄清自己还剩多少带薪假。然而，更多人会跳过这些计算，一路埋头苦干到2017年：超过一半的美国员工每年都用不完分配的假期天数。\n\n不久之前，人们还会对这种对工作的投入嗤之以鼻。正如营销学教授西尔维娅·贝莱扎、尼鲁·帕哈里亚和安纳特·凯南最近在《哈佛商业评论》中所解释的，休闲时间曾被视为高社会地位的标志，只有处于顶层的人才能拥有。然而，自20世纪中叶以来，情况已完全反转——如今，长时间伏案工作而非休假，才被视为一个重要人物的标志。\n\n在一系列实验中，研究人员展示了我们对忙碌——至少是对忙碌的表象——的推崇程度之深。志愿者们阅读了两段文字，一段描述一个过着悠闲生活的人，另一段描述一个过度劳累、日程满满的人；当被要求判断两人中谁的社会地位更高时，大多数参与者选择了后者。对于使用暗示自己时间紧迫的产品的人，结果也是如此：例如，在一项实验中，杂货配送服务Peapod的用户被认为地位高于在同等价位杂货店购物的人；在另一项实验中，戴无线耳机的人被认为在社会阶梯上高于戴普通耳机的人，即使两者都只是用来听音乐。\n\n作者在《哈佛商业评论》中写道，这种模式在一定程度上可能与过去几十年来工作本身的变化有关。\n\n我们认为，从\"休闲即地位\"到\"忙碌即地位\"的转变，可能与知识密集型经济的发展有关。在这种经济中，拥有雇主或客户所看重的人力资本特质（如能力和抱负）的个人，在就业市场上预期供不应求。因此，当我们告诉别人自己很忙、一直在工作时，我们实际上在暗示自己是被追捧的，这提升了我们被感知到的地位。\n\n即使你忍不住想为了虚假的忙碌而牺牲自己的假期，至少也要考虑让你的周末不被安排满。这是为了你自己好。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "More of them, though, will skip those calculations altogether and just power through the holidays into 2017: More than half of American workers don't use up all of their allotted vacation days each year.",
+    "why": "原文明确指出\"更多人会跳过假期计算，一路埋头苦干到2017年\"，且\"超过一半的美国员工每年用不完带薪假\"。这说明大多数员工在年底的计划是继续工作而非休假，B选项\"Keep on working\"（继续工作）与原文\"power through the holidays\"完全对应。",
+    "traps": "A选项\"Go for a vacation\"与原文相反，原文说多数人不会休完假期；C选项\"Set an objective for next year\"在原文中无任何提及，属无中生有；D选项\"Review the year's achievements\"同样在原文中找不到依据，属于利用\"年末\"这一背景进行的常识干扰。",
+    "tip": "注意转折词though后的信息往往是出题重点。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Not so long ago, people would have turned up their noses at that kind of dedication to the job.",
+    "why": "原文用\"turned up their noses at\"（嗤之以鼻）来描述过去人们对工作投入的态度。这个短语表达轻蔑、看不起的意思，与C选项\"look upon it with contempt\"（以鄙视的态度看待）语义一致。后文进一步解释，过去休闲才是高地位的标志，因此过度工作被人鄙视。",
+    "traps": "A选项\"regard it as a matter of course\"（视为理所当然）语气中性，与原文的负面态度不符；B选项\"consider it a must for success\"（认为是成功的必要条件）是对现代态度的描述，而非过去；D选项\"deem it a trick of businessmen\"（认为是商人的把戏）在原文中毫无依据，属无中生有。",
+    "tip": "短语turn up one's nose at意为\"嗤之以鼻\"，是六级高频短语，需牢记。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "In a series of several experiments, the researchers illustrated just how much we've come to admire busyness, or at least the appearance of it.",
+    "why": "原文第三段通过多个实验说明人们对忙碌的推崇：忙碌的人被认为地位更高，使用暗示时间紧张的产品的人也被认为地位更高。A选项\"The busier one appears, the more respect one earns\"（一个人看起来越忙，越受尊重）准确概括了实验结论，且与原文\"admire busyness, or at least the appearance of it\"高度吻合。",
+    "traps": "B选项\"feels exploited\"（感觉被剥削）在原文中无任何提及，属无中生有；C选项将\"knowledge\"与\"competent\"联系起来，混淆了第五段的知识经济概念与实验内容，偷换论据；D选项\"地位越高假期越多\"与原文实验结论相反，原文显示忙碌者被认为地位更高。",
+    "tip": "实验类题目要抓住实验结论的概括句，通常在实验描述之前或之后出现。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "We think that the shift from leisure-as-status to busyness-as-status may be linked to the development of knowledge-intensive economics.",
+    "why": "原文第五段明确指出，从\"休闲即地位\"到\"忙碌即地位\"的转变可能与知识密集型经济的发展有关。D选项\"The role of knowledge in modern economy\"（知识在现代经济中的作用）准确对应了\"knowledge-intensive economics\"这一原因，是对原文的同义改写。",
+    "traps": "A选项\"fast pace of life\"（快节奏生活）是常识性干扰，原文并未提及生活节奏快作为原因；B选项\"fierce competition in the job market\"（激烈的就业竞争）虽然原文提到job market，但原文强调的是知识型人才供不应求，而非竞争激烈，属曲解原文；C选项\"widespread use of computer technology\"（计算机技术的普及）在原文中完全没有出现。",
+    "tip": "因果关系题要精准定位原文因果标志词，如linked to、due to等。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Even if you feel tempted to sacrifice your own vacation days for fake busyness, though, at least consider leaving your weekends unscheduled. It's for your own good.",
+    "why": "文末作者建议，即使忍不住想为虚假的忙碌牺牲假期，也至少要保留周末不安排工作，并强调这是为了你好。C选项\"Find time to relax however busy we are\"（无论多忙都要找时间放松）准确捕捉了作者\"至少保留周末\"这一底线建议的核心精神，即再忙也要有放松时间。",
+    "traps": "A选项\"Schedule our time properly for efficiency\"（合理安排时间以提高效率）强调效率，而原文强调的是休息，方向偏离；B选项\"Plan our weekends in a meaningful way\"（有意义地规划周末）与原文\"leaving your weekends unscheduled\"（不安排周末）恰恰相反；D选项\"Avoid appearing busy when we are not\"（不忙时不要假装忙）虽涉及fake busyness，但不是作者的建议重点，作者建议的是要留出休息时间。",
+    "tip": "末段建议题要抓住作者的真实意图，注意at least等让步表达背后的核心主张。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "frantic",
+    "cn": "adj. 疯狂的，手忙脚乱的"
+   },
+   {
+    "w": "allotted",
+    "cn": "adj. 分配的，拨给的"
+   },
+   {
+    "w": "turn up one's nose at",
+    "cn": "短语 对……嗤之以鼻，看不起"
+   },
+   {
+    "w": "attainable",
+    "cn": "adj. 可达到的，可获得的"
+   },
+   {
+    "w": "over-scheduled",
+    "cn": "adj. 日程排得过满的"
+   },
+   {
+    "w": "implicitly",
+    "cn": "adv. 含蓄地，暗示地"
+   },
+   {
+    "w": "sought after",
+    "cn": "adj. 受追捧的，抢手的"
+   },
+   {
+    "w": "perceived",
+    "cn": "adj. 被感知的，被认为的"
+   },
+   {
+    "w": "competence",
+    "cn": "n. 能力，胜任力"
+   },
+   {
+    "w": "knowledge-intensive",
+    "cn": "adj. 知识密集型的"
+   },
+   {
+    "w": "stripe",
+    "cn": "n. 类型，种类（此处指各行各业的人）"
+   },
+   {
+    "w": "contempt",
+    "cn": "n. 蔑视，鄙视"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "In such economies, individuals who possess the human capital characteristics that employers or clients value (e.g., competence and ambition) are expected to be in high demand and short supply on the job market.",
+    "cn": "在这种经济中，拥有雇主或客户所看重的人力资本特质（如能力和抱负）的个人，在就业市场上预期供不应求。",
+    "note": "主干为individuals are expected to be in high demand and short supply；who引导定语从句修饰individuals；that引导定语从句修饰characteristics；括号为举例补充说明。"
+   },
+   {
+    "en": "Volunteers read two passages, one about a man who led a life of leisure and another about a man who was over-worked and over-scheduled; when asked to determine which of the two had a higher social status, the majority of the participants said the latter.",
+    "cn": "志愿者们阅读了两段文字，一段描述一个过着悠闲生活的人，另一段描述一个过度劳累、日程满满的人；当被要求判断两人中谁的社会地位更高时，大多数参与者选择了后者。",
+    "note": "分号连接两个分句；前半句主干为Volunteers read two passages，后接两个同位语补充说明；后半句when引导时间状语从句，省略了主语they were。"
+   },
+   {
+    "en": "Thus, by telling others that we are busy and working all the time, we are implicitly suggesting that we are sought after, which enhances our perceived status.",
+    "cn": "因此，当我们告诉别人自己很忙、一直在工作时，我们实际上在暗示自己是被追捧的，这提升了我们被感知到的地位。",
+    "note": "主干为we are suggesting that...；by telling others为方式状语；which引导非限制性定语从句修饰前面整个主句内容。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "484879d3c447__writing__all",
+ "examId": "484879d3c447",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年 9 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:40:56.374Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43856,
+ "usage": {
+  "prompt_tokens": 729,
+  "completion_tokens": 2840,
+  "total_tokens": 3569,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 729,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2840,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 729,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，以指定首句开头，围绕\"学生越来越意识到培养数字技能的重要性\"展开论述，可评论、举例或结合个人经历，词数150-200词。",
+    "outline": [
+     "引出话题：以题目给定首句开头，点明数字技能在当今时代已从锦上添花变为刚需。",
+     "分层论证：从就业市场需求、学业表现提升、日常信息辨别三个角度阐述数字技能重要性的原因。",
+     "总结建议：呼吁高校完善课程设置，学生主动抓住机会提升数字素养，以在数字时代保持竞争力。"
+    ],
+    "sample": "Nowadays more and more students are becoming increasingly aware of the importance of developing digital skills. In an era dominated by rapid technological advancement, possessing such competencies has shifted from being a luxury to a necessity.\n\nThere are several compelling reasons behind this growing awareness. First, the modern job market places a premium on candidates who can navigate digital tools proficiently. Whether it involves data analysis, programming, or social media management, employers consistently prioritize applicants equipped with relevant technical expertise. Second, digital skills significantly enhance academic performance. Students who master online research methods, digital collaboration platforms, and presentation software tend to accomplish their tasks more efficiently and creatively. Furthermore, in daily life, digital literacy empowers individuals to discern credible information from misinformation, a skill that proves increasingly vital in the age of information overload.\n\nIn light of these factors, students should proactively cultivate their digital competencies. Universities could integrate more technology-oriented courses into their curricula, while students themselves ought to seize every opportunity to practice and refine these indispensable skills. Only through sustained effort can they remain competitive in an ever-evolving digital landscape.",
+    "phrases": [
+     {
+      "en": "place a premium on",
+      "cn": "高度重视……；常用于强调某事物被格外看重，后接名词或动名词。"
+     },
+     {
+      "en": "navigate digital tools proficiently",
+      "cn": "熟练运用数字工具；navigate此处为比喻用法，比use更生动高级。"
+     },
+     {
+      "en": "equipped with relevant technical expertise",
+      "cn": "具备相关技术专长；过去分词短语作后置定语，结构紧凑。"
+     },
+     {
+      "en": "in the age of information overload",
+      "cn": "在信息过载的时代；点明时代背景，增强论证说服力。"
+     },
+     {
+      "en": "discern credible information from misinformation",
+      "cn": "辨别可靠信息与虚假信息；discern比distinguish更正式，适合书面语。"
+     },
+     {
+      "en": "in light of these factors",
+      "cn": "鉴于这些因素；比because of更正式，适合总结段开头。"
+     },
+     {
+      "en": "integrate...into...",
+      "cn": "将……融入……；常用于讨论课程改革、制度完善等话题。"
+     },
+     {
+      "en": "an ever-evolving digital landscape",
+      "cn": "不断演变的数字环境；ever-evolving为高分复合形容词，体现词汇丰富度。"
+     },
+     {
+      "en": "shift from...to...",
+      "cn": "从……转变为……；描述趋势变化的经典句型，适用面广。"
+     },
+     {
+      "en": "proactively cultivate",
+      "cn": "主动培养；proactively体现主观能动性，比actively层次更高。"
+     }
+    ],
+    "pitfalls": [
+     "未使用题目给定首句原文开头，或擅自修改首句措辞导致扣分。",
+     "全文仅罗列观点缺乏具体例证，论证空泛、说服力不足。",
+     "词数不足150或超过200，未按要求控制篇幅。",
+     "段落之间缺少过渡衔接词，逻辑跳跃，结构松散。",
+     "通篇使用简单句式如'I think...because...'，缺乏句式变化，影响语言分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Digital skills are very important for students.",
+      "better": "Possessing digital competencies has shifted from being a luxury to a necessity for students.",
+      "note": "用shift from...to...句型替代be important，表达更具体、更有画面感。"
+     },
+     {
+      "plain": "Companies want people who can use computers.",
+      "better": "Employers consistently prioritize applicants equipped with relevant technical expertise.",
+      "note": "prioritize搭配equipped过去分词短语，用词更精准，句式更紧凑。"
+     },
+     {
+      "plain": "Students should try hard to learn digital skills.",
+      "better": "Only through sustained effort can they remain competitive in an ever-evolving digital landscape.",
+      "note": "Only+介词短语前置引起部分倒装，句式高级，收束有力。"
+     },
+     {
+      "plain": "Digital skills help students study better.",
+      "better": "Digital skills significantly enhance academic performance, enabling students to accomplish tasks more efficiently and creatively.",
+      "note": "现在分词enabling作结果状语，增加信息密度，避免短句堆砌。"
+     },
+     {
+      "plain": "It is important to tell real news from fake news.",
+      "better": "Digital literacy empowers individuals to discern credible information from misinformation.",
+      "note": "empower+不定式结构更正式，discern比tell apart更具学术色彩。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Possessing such competencies has shifted from being a luxury to a necessity. — 拥有这些能力已从锦上添花变为必不可少；shift from A to B句型简洁有力，适用于描述趋势变化。",
+   "The modern job market places a premium on candidates who can navigate digital tools proficiently. — 现代就业市场高度重视能熟练运用数字工具的求职者；place a premium on为高分固定搭配，navigate比use更地道。",
+   "Digital literacy empowers individuals to discern credible information from misinformation, a skill that proves increasingly vital in the age of information overload. — 数字素养使人们能辨别可信信息与虚假信息，这一能力在信息过载时代愈发重要；同位语+定语从句组合，信息层次丰富。",
+   "Only through sustained effort can they remain competitive in an ever-evolving digital landscape. — 唯有持续努力，他们才能在不断演变的数字环境中保持竞争力；Only引导的倒装句，适合用作结尾金句。",
+   "Universities could integrate more technology-oriented courses into their curricula, while students themselves ought to seize every opportunity to practice and refine these indispensable skills. — 高校应将更多技术导向课程纳入教学体系，学生自身也应抓住一切机会练习并打磨这些不可或缺的技能；while连接的并列句兼顾双方，论述全面均衡。"
+  ]
+ }
+}

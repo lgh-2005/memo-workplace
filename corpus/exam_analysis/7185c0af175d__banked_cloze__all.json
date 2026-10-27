@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "7185c0af175d__banked_cloze__all",
+ "examId": "7185c0af175d",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2024 年 12 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:54:11.421Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66881,
+ "usage": {
+  "prompt_tokens": 1413,
+  "completion_tokens": 3994,
+  "total_tokens": 5407,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1413,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3994,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1413,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "消费观念的转变与借贷消费的合理性",
+  "gist": "文章围绕经济快速发展背景下人们消费观念的转变展开。作者从自身经历出发，由崇尚节俭转向理解消费的价值，指出借贷消费在房地产和教育投资中均可获益，最终得出结论：只要不超出能力范围，花钱是值得称赞的。",
+  "difficulty": "中等",
+  "translation": "随着经济的快速发展，人们的思想观念必然会发生变化。节俭在一些人看来不再是一种美德，而且持这种观点的并非少数。每个人对如何过自己的生活可能有不同的看法：有些人崇尚简朴，有些人热爱奢华，有些人花钱挥霍无度，有些人则像乡下老鼠一样尽可能多地积攒。由于我出身贫寒、来自农村，简朴的乡村生活对我很少失去其吸引力，但随着我身份地位的变化，我有机会与新富阶层交往，这段经历彻底改变了我对生活方式的看法。\n\n少花钱、多存钱是邪恶的或有罪的——这一观念最近才向我揭示。事实上，整个世界都在疯狂地借钱和消费，美国引领了这一趋势。美国仍然是世界上最富有、最强大的国家，但讽刺的是，他们向我们借钱。虽然我是经济学的门外汉，但至少我知道，用借来的钱投资会使借款人变成掠夺者，而非体面善良的贷方。一个明显的例子是房地产。那些精明且从银行获得贷款的人，通过以高出数倍的价格出售所购住房而变得相对富裕。即使教育也不能免于这一理论。许多有远见将子女送去上大学的贫困家长从这一投资中获益，尽管他们不得不勉强维持生计。可以合理地得出结论：花钱是值得称赞的，前提是不超出你的能力范围。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "O",
+    "correct": "thrifty",
+    "why": "空格位于Being与is之间，作表语，需要形容词。上下文\"no longer a virtue\"暗示此处描述一种曾被视为美德的品质，结合后文讨论花钱与存钱的对比，thrifty（节俭的）完美契合语境。",
+    "traps": "shrewd（精明的）虽是形容词，但语义侧重于机智、敏锐，与virtue的传统美德含义不符；intrinsically是副词，词性不匹配。",
+    "tip": "结合\"virtue\"与消费主题判断传统美德为\"节俭\"。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "extravagantly",
+    "why": "空格位于spend后面，需要副词修饰动词。该句列举四种生活方式形成对比：simplicity对luxuries，spend extravagantly（挥霍）对accumulate（积攒），构成排比中的一对反义关系。",
+    "traps": "intrinsically虽也是副词，但意为\"本质上\"，修饰spend语义不通；其他形容词或名词词性不符，无法修饰动词spend。",
+    "tip": "spend + 副词搭配，注意排比中的对比逻辑。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "appeal",
+    "why": "空格前为its，需要名词。固定搭配lose its appeal to sb.意为\"对某人失去吸引力\"。作者说简朴的乡村生活很少对他失去吸引力，说明他一直热爱乡村生活。",
+    "traps": "irony虽也是名词，但\"lose its irony\"（失去讽刺性）语义不合逻辑；rage作名词时常用于in a rage搭配，此处不适用。",
+    "tip": "识别lose its appeal to sb.固定搭配是关键。"
+   },
+   {
+    "number": 29,
+    "answer": "J",
+    "correct": "mingle",
+    "why": "空格前为to，需要动词原形。mingle with意为\"与……交往、混在一起\"，搭配the newly rich（新富阶层），表达作者开始接触富人群体，与后文\"revolutionized my view\"的经历转变逻辑吻合。",
+    "traps": "scrape虽也是动词，但scrape with无此搭配，且scrape常与a living搭配表示\"勉强维生\"，语境不合；appeal作动词意为\"呼吁/吸引\"，与with搭配不当。",
+    "tip": "mingle with sb.为固定搭配，表示\"与某人交往\"。"
+   },
+   {
+    "number": 30,
+    "answer": "L",
+    "correct": "rage",
+    "why": "空格前为in a，构成in a rage to do sth.结构，此处rage引申为\"风靡、狂热\"之意，表示全世界都在疯狂地借贷和消费。all the rage也是常见表达，意为\"风靡一时\"。",
+    "traps": "irony虽是名词，但in an irony语义为\"讽刺的是\"，后面不接to borrow这种目的性表达，结构不通；layman放入此处语法和语义均不成立。",
+    "tip": "in a rage / all the rage表示\"风靡、狂热\"。"
+   },
+   {
+    "number": 31,
+    "answer": "D",
+    "correct": "irony",
+    "why": "空格前为the，后跟is that从句，需要名词作主语。the irony is that…意为\"讽刺的是……\"，美国最富有却向别国借钱，构成明显的讽刺反差，语义完美。",
+    "traps": "appeal虽是名词，但the appeal is that…表示\"吸引力在于\"，与\"向我们借钱\"这一反差事实不匹配；layman放入此处语法虽通但语义荒谬。",
+    "tip": "the irony is that…为常见句式，表示\"讽刺的是\"。"
+   },
+   {
+    "number": 32,
+    "answer": "E",
+    "correct": "layman",
+    "why": "空格前为a，后有of economics，需要可数名词。a layman of economics意为\"经济学的门外汉\"，与后文\"at least I know\"形成让步关系：虽是外行，但至少知道一些道理。",
+    "traps": "predator虽是可数名词，但a predator of economics（经济学的掠夺者）语义荒谬，且与though引导的让步逻辑不符。",
+    "tip": "layman意为\"外行、门外汉\"，常用于自谦语境。"
+   },
+   {
+    "number": 33,
+    "answer": "K",
+    "correct": "predator",
+    "why": "空格前为the，需要名词。句中将borrower与lender对比，用borrowed money投资的人会变成predator（掠夺者），与decent and kind lender形成鲜明的褒贬对比，揭示借贷投资中借方的强势地位。",
+    "traps": "irony和appeal已被使用，且语义不合；此处需要一个带有负面色彩的名词，与rather than后的正面描述形成反差，predator最为贴切。",
+    "tip": "predator与decent lender形成对比，注意rather than的反义信号。"
+   },
+   {
+    "number": 34,
+    "answer": "N",
+    "correct": "shrewd",
+    "why": "空格位于are后，与have got并列，需要形容词作表语。shrewd意为\"精明的\"，形容那些懂得从银行贷款买房、再高价卖出获利的人，与整个句子描述的投资获利行为高度吻合。",
+    "traps": "thrifty（节俭的）虽是形容词，但节俭的人不太可能主动贷款投资，与语境矛盾；extravagantly是副词，词性不符。",
+    "tip": "shrewd强调投资眼光的精明，与贷款买房获利场景匹配。"
+   },
+   {
+    "number": 35,
+    "answer": "M",
+    "correct": "scrape",
+    "why": "空格后紧跟a living，scrape a living是固定搭配，意为\"勉强维持生计\"。描述贫困家长虽然生活拮据，但仍有远见送孩子上大学，与前面poor parents呼应，体现家庭的经济困难。",
+    "traps": "mingle虽是动词，但mingle a living无此搭配；appeal a living同样不存在。scrape a living是唯一符合语义和搭配的选项。",
+    "tip": "scrape a living为固定搭配，意为\"勉强糊口\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "thrifty",
+    "cn": "adj. 节俭的，节省的"
+   },
+   {
+    "w": "extravagantly",
+    "cn": "adv. 挥霍地，奢侈地"
+   },
+   {
+    "w": "mingle",
+    "cn": "v. 混合；交往（mingle with与……交往）"
+   },
+   {
+    "w": "layman",
+    "cn": "n. 外行，门外汉"
+   },
+   {
+    "w": "predator",
+    "cn": "n. 掠夺者；捕食者"
+   },
+   {
+    "w": "shrewd",
+    "cn": "adj. 精明的，敏锐的"
+   },
+   {
+    "w": "scrape",
+    "cn": "v. 刮擦；勉强维持（scrape a living勉强糊口）"
+   },
+   {
+    "w": "irony",
+    "cn": "n. 讽刺，反语"
+   },
+   {
+    "w": "intrinsically",
+    "cn": "adv. 本质上，内在地"
+   },
+   {
+    "w": "immune",
+    "cn": "adj. 免疫的；不受影响的（immune from不受……影响）"
+   },
+   {
+    "w": "revolutionize",
+    "cn": "v. 彻底改变，使发生革命性变化"
+   },
+   {
+    "w": "praiseworthy",
+    "cn": "adj. 值得称赞的，可嘉的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——消费观念转变与借贷消费的合理性。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法标志词（冠词、介词、be动词等）锁定所需词性。",
+   "第四步：利用上下文逻辑关系（对比、让步、因果）和固定搭配（如lose its appeal、scrape a living）精准选词。",
+   "第五步：选完后回读全文验证语义连贯性，确保每词只用一次且无重复。"
+  ]
+ }
+}

@@ -1,0 +1,249 @@
+{
+ "schemaVersion": 1,
+ "id": "c14782c14563__long_match__all",
+ "examId": "c14782c14563",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2016 年 6 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:09:21.875Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34105,
+ "usage": {
+  "prompt_tokens": 956,
+  "completion_tokens": 1818,
+  "total_tokens": 2774,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 956,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1818,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 956,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国医疗费用与医保改革政策",
+  "strategy": [
+   "先通读10条陈述句，归纳主题关键词群：税收、保险、电子病历、医疗费用等",
+   "在陈述句中圈出专有名词、数字、大写词（如Republicans）作为优先定位线索",
+   "注意同义替换：如curb≈control/reduce, compensated≈paid, incentive≈motivation等",
+   "对比多段出现相似话题时，需精读细节差异，如费用上涨的不同原因分布在不同段",
+   "先做含明显定位词的题（如40题Republicans），再做概括性强的题（如38题）"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "由于对昂贵的医疗保险计划征税，大多数雇主可能会将资金从医疗支出转移到工资中。",
+    "keywords": [
+     "tax",
+     "expensive health insurance",
+     "employers",
+     "transfer money",
+     "wages"
+    ],
+    "paraphrase": "原文可能用levy/impose a tax表示\"征税\"，用shift/redirect funds替换transfer money，用compensation/salary替换wages，整体属于因果逻辑型同义转述。",
+    "tip": "定位\"对高价医保征税\"及\"雇主将钱转为工资\"两个核心信息点。"
+   },
+   {
+    "number": 37,
+    "answer": "J",
+    "cn": "政策变动将作为一个整体被批准或否决，这样说客就很难影响立法者。",
+    "keywords": [
+     "approved or rejected as a whole",
+     "lobbyists",
+     "influence lawmakers"
+    ],
+    "paraphrase": "原文可能用up-or-down vote/package deal表达\"整体通过或否决\"，用special interests/lobbying groups替换lobbyists，用legislators/members of Congress替换lawmakers。",
+    "tip": "定位lobbyists和as a whole的表述，这是该段独特信息。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "cn": "在美国，遏制不断上涨的医疗费用并非易事。",
+    "keywords": [
+     "curb",
+     "rising medical costs",
+     "not easy"
+    ],
+    "paraphrase": "原文可能用contain/control替换curb，用difficult/challenging替换not easy，用soaring/escalating healthcare expenditures替换rising medical costs，属于首段引出话题型。",
+    "tip": "此句为全文总论点，通常出现在文章开头A段。"
+   },
+   {
+    "number": 39,
+    "answer": "G",
+    "cn": "将表格标准化以实现自动处理，可以节省大量医疗费用。",
+    "keywords": [
+     "standardization",
+     "forms",
+     "automatic processing",
+     "save medical expenses"
+    ],
+    "paraphrase": "原文可能用uniform/standardized billing forms替换standardization of forms，用automated/electronic processing替换automatic processing，用cut/reduce costs替换save expenses。",
+    "tip": "定位standardization和forms两个具体名词即可快速锁定段落。"
+   },
+   {
+    "number": 40,
+    "answer": "L",
+    "cn": "共和党人和保险业强烈反对创建公共保险计划。",
+    "keywords": [
+     "Republicans",
+     "insurance industry",
+     "strongly opposed",
+     "public insurance plan"
+    ],
+    "paraphrase": "原文可能用fiercely resist/vehemently oppose替换strongly opposed，用government-run plan/public option替换public insurance plan，Republican为专有名词可直接定位。",
+    "tip": "Republicans和insurance industry是最强定位词，大写名词优先扫读。"
+   },
+   {
+    "number": 41,
+    "answer": "H",
+    "cn": "将纸质医疗记录转为电子记录有助于消除多余的检查并防止药物相互作用。",
+    "keywords": [
+     "electronic medical records",
+     "eliminate redundant tests",
+     "drug interactions"
+    ],
+    "paraphrase": "原文可能用digitize/computerize替换conversion to electronic，用unnecessary/duplicate替换redundant，用adverse drug reactions/medication conflicts替换drug interactions。",
+    "tip": "electronic medical records和drug interactions是本句独有信息，可快速定位。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "cn": "高昂的医疗服务费用以及不必要的检查和治疗推高了医疗支出。",
+    "keywords": [
+     "high cost",
+     "medical services",
+     "unnecessary tests",
+     "treatments",
+     "driven up"
+    ],
+    "paraphrase": "原文可能用overpriced/costly替换high cost，用superfluous/unneeded procedures替换unnecessary tests and treatments，用increased/inflated替换driven up。",
+    "tip": "关注\"费用高\"与\"不必要检查治疗\"双因素并存的段落。"
+   },
+   {
+    "number": 43,
+    "answer": "I",
+    "cn": "推高医疗支出的一个主要因素是，医生的报酬取决于医疗服务的数量而非效果。",
+    "keywords": [
+     "compensated",
+     "amount of care",
+     "effect",
+     "driven up",
+     "main factor"
+    ],
+    "paraphrase": "原文可能用paid/reimbursed for volume of services替换compensated for amount of care，用quality/outcome替换effect，属于fee-for-service模式的描述。",
+    "tip": "定位\"按数量而非效果付费\"这一核心对比关系。"
+   },
+   {
+    "number": 44,
+    "answer": "P",
+    "cn": "与分析人士的质疑相反，作者认为药品价格可以通过谈判来降低。",
+    "keywords": [
+     "analysts' doubts",
+     "drug prices",
+     "lowered",
+     "negotiation"
+    ],
+    "paraphrase": "原文可能用skeptics/critics替换analysts，用negotiate down/bargain替换negotiation，用contrary to/despite替换contrary to，属于转折观点型表述。",
+    "tip": "contrary to结构暗示观点对立，定位作者与分析人士的分歧即可。"
+   },
+   {
+    "number": 45,
+    "answer": "K",
+    "cn": "公平竞争可能为保险公司降低收费提供强大动力。",
+    "keywords": [
+     "fair competition",
+     "incentive",
+     "insurers",
+     "charge less"
+    ],
+    "paraphrase": "原文可能用level playing field/genuine competition替换fair competition，用motivation/impetus替换incentive，用lower premiums/reduce rates替换charge less。",
+    "tip": "定位competition与insurers的搭配关系，注意与L段公共保险话题相区分。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "curb",
+    "cn": "v. 遏制，控制"
+   },
+   {
+    "w": "impose",
+    "cn": "v. 征收（税），施加"
+   },
+   {
+    "w": "lobbyists",
+    "cn": "n. 说客，游说者"
+   },
+   {
+    "w": "standardization",
+    "cn": "n. 标准化"
+   },
+   {
+    "w": "redundant",
+    "cn": "adj. 多余的，冗余的"
+   },
+   {
+    "w": "drug interactions",
+    "cn": "n. 药物相互作用"
+   },
+   {
+    "w": "compensated",
+    "cn": "v. 给予报酬，补偿（compensate的过去分词）"
+   },
+   {
+    "w": "incentive",
+    "cn": "n. 激励，动机"
+   },
+   {
+    "w": "conversion",
+    "cn": "n. 转换，转变"
+   },
+   {
+    "w": "insurers",
+    "cn": "n. 保险公司，承保人"
+   }
+  ]
+ }
+}

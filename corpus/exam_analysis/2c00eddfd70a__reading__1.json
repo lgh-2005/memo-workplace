@@ -1,0 +1,176 @@
+{
+ "schemaVersion": 1,
+ "id": "2c00eddfd70a__reading__1",
+ "examId": "2c00eddfd70a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "1999 年考研英语真题（旧）",
+ "year": 1999,
+ "sub": "1",
+ "questionNumbers": [
+  11,
+  12,
+  13,
+  14
+ ],
+ "generatedAt": "2026-10-27T05:02:41.773Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57560,
+ "usage": {
+  "prompt_tokens": 1611,
+  "completion_tokens": 3258,
+  "total_tokens": 4869,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1611,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3258,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1611,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "产品警示标签与法律责任的演变",
+  "gist": "文章回顾了自1980年代以来，消费者因产品事故起诉厂商获赔的趋势，导致厂商大量添加冗长警告标签以规避法律责任。近年来法律界开始转向，法院在一些案件中支持被告，美国法律研究所也发布新指南，主张厂商无需就显而易见的危险进行警告，提倡产品信息应真正服务于消费者。",
+  "structure": [
+   "第一段：引出话题——80年代起消费者可通过诉讼获赔",
+   "第二段：厂商应对——撰写冗长荒谬的警告标签",
+   "第三段：过渡——警告标签未必能保护厂商免于责任",
+   "第四段：转折——法律界开始转向，以案例和新指南佐证"
+  ],
+  "difficulty": "中等",
+  "translation": "外面的世界充满风险。走出家门，你可能因踩到门垫滑倒而摔断腿。点燃炉子，你可能把房子烧掉。幸运的是，如果门垫或炉子没有对即将到来的灾难发出警告，一场成功的诉讼或许能补偿你所遭受的麻烦。至少自1980年代初以来，人们一直这样认为——当时陪审团开始让更多公司为顾客的不幸承担责任。\n\n感受到威胁后，各公司纷纷撰写越来越长的警告标签，试图预见每一种可能的事故。如今，折叠梯上贴着好几英寸长的标签，其中警告说——令人惊讶！——你可能会从上面摔下来。一件儿童蝙蝠侠披风上的标签提醒说，这件玩具\"不能使使用者飞行\"。\n\n虽然警告往往是恰当且必要的——例如药物相互作用的危险——而且许多警告是州或联邦法规所要求的，但并不清楚这些警告是否真的能在顾客受伤时保护制造商和销售商免于承担责任。大约百分之五十的公司在受伤顾客将其告上法庭时败诉。\n\n现在形势似乎正在转变。尽管人身伤害索赔仍在继续，但一些法院开始站在被告一边，尤其是在那些即使有警告标签也可能不会改变任何结果的案件中。五月份，伊利诺伊州Schutt体育公司总裁朱莉·尼蒙斯成功地打赢了一场诉讼，涉及一名在比赛中佩戴Schutt头盔时瘫痪的橄榄球运动员。\"我们对他的瘫痪深感遗憾，但头盔并非为防止这类伤害而设计的，\"尼蒙斯说。陪审团认定，造成该运动员受伤的是比赛本身的性质，而非头盔。与此同时，美国法律研究所——一个由法官、律师和学者组成的团体，其建议极具分量——发布了新的侵权法指南，指出公司无需就显而易见的危险警告顾客，也无需向他们罗列一大堆可能的危险。\"重要信息可能会淹没在琐碎信息的海洋中，\"康奈尔大学法学院一位帮助起草新指南的法学教授说。如果法律界的温和派能够如愿，产品上的信息实际上可能是为了消费者的利益而提供的，而不是作为防范法律责任的手段。",
+  "questions": [
+   {
+    "number": 11,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Or so the thinking has gone since the early 1980s, when juries began holding more companies liable for their customers' misfortunes.",
+    "why": "题目问1980年代发生事故时情况如何。原文第一段指出，如果产品未警告灾难，成功的诉讼可以补偿消费者损失，而自1980年代起陪审团开始让更多公司为顾客不幸担责。B选项\"受伤顾客可以期待法律体系的保护\"是对这一趋势的准确概括：消费者能通过法律途径获得赔偿。",
+    "traps": "A项\"通过诉讼免除灾难\"表述不当，诉讼是获得赔偿而非免除灾难本身；C项\"公司通过提供新警告避免被起诉\"是1980年代之后的应对措施，且文中说这并不一定有效；D项\"陪审团倾向于认为公司承诺的赔偿有问题\"属无中生有，原文未提及赔偿承诺的问题。",
+    "tip": "注意区分\"获得赔偿\"与\"免除灾难\"的语义差别。"
+   },
+   {
+    "number": 12,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Feeling threatened, companies responded by writing ever-longer warning labels, trying to anticipate every possible accident.",
+    "why": "第二段明确指出厂商因感到受威胁而撰写越来越长的警告标签，试图预见所有可能的事故。第三段补充说明这些标签是否真的保护厂商免于责任尚不明确。这说明厂商撰写标签的根本目的是规避法律责任（avoid legal liability），而非真正为消费者安全考虑。C项\"充分利用标签规避法律责任\"准确概括了这一动机。",
+    "traps": "A项\"通过写长警告来满足顾客\"错误，厂商目的不是满足顾客而是自保；B项\"诚实描述产品不足\"与文中荒诞标签的例子矛盾，标签内容是为规避风险而非诚实描述；D项\"觉得有义务将顾客安全放在首位\"是对厂商动机的美化，与原文不符。",
+    "tip": "抓住行为背后的动机，区分表面行为和真实目的。"
+   },
+   {
+    "number": 13,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "some courts are beginning to side with defendants, especially in cases where a warning label probably wouldn't have changed anything.",
+    "why": "Schutt头盔案是作为\"法律界转向\"的例证出现的。该段首句指出形势正在转变，一些法院开始支持被告。头盔案中陪审团认定是运动本身的性质而非头盔导致了伤害，公司胜诉。A项\"一些伤害索赔不再得到法律支持\"准确概括了该案例所证明的论点——法院不再一味支持原告的索赔请求。",
+    "traps": "B项\"头盔不是为防止伤害设计的\"只是案件中被告的具体辩护理由，是案例细节而非案例论证的观点；C项\"产品标签最终会被丢弃\"过度推断，文中未暗示标签将被废除；D项\"一些运动可能不再受运动员欢迎\"属无中生有。",
+    "tip": "例证题要找例子所服务的论点，通常在例子前一两句。"
+   },
+   {
+    "number": 14,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "If the moderate end of the legal community has its way, the information on products might actually be provided for the benefit of customers and not as protection against legal liability.",
+    "why": "全文作者以客观叙述的口吻回顾了产品责任法律的演变过程：先介绍80年代消费者诉讼趋势，再描述厂商应对，接着指出标签未必有效，最后介绍法律界的新动向。作者未明显表达个人立场或偏好，而是如实呈现各方事实与观点，符合D项\"客观的\"（objective）态度。",
+    "traps": "A项\"有偏见的\"（biased）不当，作者并未偏袒任何一方；B项\"漠不关心的\"（indifferent）不准确，作者对话题有持续关注和分析；C项\"令人困惑的\"（puzzling）是对文章效果而非态度的描述，且文章逻辑清晰，并不令人困惑。",
+    "tip": "态度题注意区分\"客观陈述\"与\"主观偏向\"，作者平衡呈现各方即为客观。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "liable",
+    "cn": "adj. 有法律责任的，应负责的"
+   },
+   {
+    "w": "compensate",
+    "cn": "v. 赔偿，补偿"
+   },
+   {
+    "w": "anticipate",
+    "cn": "v. 预见，预料"
+   },
+   {
+    "w": "caution",
+    "cn": "v. 警告，告诫"
+   },
+   {
+    "w": "liability",
+    "cn": "n. 法律责任；债务"
+   },
+   {
+    "w": "defendant",
+    "cn": "n. 被告"
+   },
+   {
+    "w": "paralyzed",
+    "cn": "adj. 瘫痪的"
+   },
+   {
+    "w": "tort",
+    "cn": "n. 侵权行为（法律术语）"
+   },
+   {
+    "w": "bombard",
+    "cn": "v. 轰炸；连珠炮般提出"
+   },
+   {
+    "w": "triviality",
+    "cn": "n. 琐事，琐碎之事"
+   },
+   {
+    "w": "draft",
+    "cn": "v. 起草，草拟"
+   },
+   {
+    "w": "moderate",
+    "cn": "adj. 温和的，中立的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Or so the thinking has gone since the early 1980s, when juries began holding more companies liable for their customers' misfortunes.",
+    "cn": "至少自1980年代初以来，人们一直这样认为——当时陪审团开始让更多公司为顾客的不幸承担责任。",
+    "note": "主句为so the thinking has gone，or so表\"至少如此\"；since引导时间状语，when引导非限定性定语从句修饰the early 1980s；hold...liable为固定搭配。"
+   },
+   {
+    "en": "At the same time, the American Law Institute—a group of judges, lawyers, and academics whose recommendations carry substantial weight—issued new guidelines for tort law stating that companies need not warn customers of obvious dangers or bombard them with a lengthy list of possible ones.",
+    "cn": "与此同时，美国法律研究所——一个由法官、律师和学者组成的团体，其建议极具分量——发布了新的侵权法指南，指出公司无需就显而易见的危险警告顾客，也无需向他们罗列一大堆可能的危险。",
+    "note": "主干为the American Law Institute issued new guidelines；两个破折号之间为同位语解释说明该机构；stating引导现在分词作后置定语修饰guidelines；that引导宾语从句，其中warn和bombard为并列谓语。"
+   },
+   {
+    "en": "If the moderate end of the legal community has its way, the information on products might actually be provided for the benefit of customers and not as protection against legal liability.",
+    "cn": "如果法律界的温和派能够如愿，产品上的信息实际上可能是为了消费者的利益而提供的，而不是作为防范法律责任的手段。",
+    "note": "if引导条件状语从句；has its way意为\"如愿以偿\"；主句中for the benefit of与not as protection构成对比，点明产品信息的理想用途。"
+   }
+  ]
+ }
+}

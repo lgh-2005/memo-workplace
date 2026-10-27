@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "27831d1d141a__reading__4",
+ "examId": "27831d1d141a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年考研英语真题",
+ "year": 2022,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:49:24.632Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63693,
+ "usage": {
+  "prompt_tokens": 1738,
+  "completion_tokens": 3718,
+  "total_tokens": 5456,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1738,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3718,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1738,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "新西兰就业保护法对企业和员工的悖论性影响",
+  "gist": "文章围绕新西兰《雇佣关系法》中的个人申诉条款展开，指出该法本意是保护普通工人免遭不正当解雇，但在应用于高薪管理层时反而制约了企业生产率、压低了工人工资、阻碍了社会整体福祉，形成了保护法反而危害被保护者的悖论。文末以澳大利亚的'高收入门槛'豁免机制作为对比参照。",
+  "structure": [
+   "第1-2段：介绍ERA个人申诉条款的立法初衷——保护普通工人",
+   "第3-5段：论证该条款对企业生产率、工人工资的负面影响（核心悖论）",
+   "第6-7段：拓展论述对高薪管理者和社会整体的危害",
+   "第8段：引入澳大利亚对比方案及新西兰改革尝试的失败"
+  ],
+  "difficulty": "中等",
+  "translation": "新西兰《2000年雇佣关系法》（ERA）中的个人申诉条款禁止雇主无正当理由解雇员工。相反，解雇必须具有正当性。雇主既要说明理由，又要以程序公正的方式行事。\n\n个人申诉程序旨在保护普通工人的工作岗位，使其免遭\"不正当解雇\"。其前提是，普通法中的合同法缺乏足够的保障措施来防止管理层对工人的任意行为。老板仅凭合同通知就能解雇员工的时代早已一去不复返。\n\n但当这些条款适用于高薪经理和高管时，便给企业制造了困难。正如无数董事会和企业主所证实的那样，限制企业解雇表现不佳的高薪管理人员，是提升生产率和整体业绩的一大阻碍。C级管理者与A级管理者之间的差距，很可能就是企业成败之间的差距，也是普通工人保住或失去工作之间的差距。然而，平庸不再足以成为解雇的正当理由。\n\n因此——也颇为矛盾的是——旨在保护普通工人就业的法律，可能反而使那些工作岗位面临风险。\n\n即便不是将工作岗位置于风险之中，就就业保护法限制企业主解雇表现不佳的管理人员而言，这些法律也构成了对企业生产率的制约，进而制约了工人的工资水平。事实上，在2014年的《从国际视角看新西兰的生产率悖论》一文中，生产力委员会将管理能力的低质量列为该国生产率增长记录不佳的一个原因。\n\n高薪管理人员本身也未能免受ERA不正当解雇程序所造成的危害。由于就业保护法使解雇员工的成本更高，雇主在招聘新员工时更加谨慎。这使得处于边缘水平的管理人员更难获得就业机会。而且，由于企业承担着雇佣关系出问题的负担，它们支付给员工的薪酬也更低。\n\n过度的就业保护也使社会受到损害。严格的解雇规定对生产率增长产生了不利影响，并阻碍了繁荣和整体福祉。\n\n在塔斯曼海的另一边，澳大利亚通过将收入超过规定\"高收入门槛\"的员工排除在不公平解雇法保护之外来应对不正当解雇悖论。在新西兰，2016年的一项议员个人提案试图允许企业和高收入员工选择退出不正当解雇制度。然而，所提出的机制过于笨拙，该法案在当年晚些时候政府更迭后被否决。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Personal grievance procedures were designed to guard the jobs of ordinary workers from \"unjustified dismissals\".",
+    "why": "原文第2段明确指出\"个人申诉程序旨在保护普通工人的工作岗位免遭不正当解雇\"，D选项\"protect the rights of ordinary workers\"（保护普通工人的权利）是对原文的同义改写，guard the jobs对应protect the rights，ordinary workers直接对应。",
+    "traps": "A\"惩罚可疑的企业行为\"属于无中生有，原文未提及惩罚性质；B\"改善传统招聘程序\"偷换概念，条款针对的是解雇而非招聘；C\"免除雇主某些义务\"与原文相反，条款是给雇主增加义务（需说明理由、程序公正），属于反向干扰。",
+    "tip": "题干问立法目的时，优先定位含designed/intended/aim等目的标志词的句子。"
+   },
+   {
+    "number": 37,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "constraining firms from firing poorly performing, high-earning managers is a handbrake on boosting productivity and overall performance.",
+    "why": "第3段指出这些条款限制企业解雇表现不佳的高薪管理者，是提升生产率和整体业绩的\"手刹\"（handbrake），并进一步说明C级与A级管理者的差距可能决定企业的成败。这些论述综合表明该条款阻碍了企业发展，A选项\"hinder business development\"是对此的准确概括。",
+    "traps": "B\"削弱管理者的权威\"无中生有，原文讨论的是解雇管理者的限制而非管理者的权力；C\"影响企业的公众形象\"在原文中完全没有涉及；D\"恶化劳资关系\"属于过度推断，原文讨论的是对企业业绩的制约，未提及劳资关系紧张。",
+    "tip": "handbrake（手刹）是比喻用法，理解为\"阻碍、制约\"，可快速锁定答案方向。"
+   },
+   {
+    "number": 38,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "the Productivity Commission singled out the low quality of managerial capabilities as a cause of the country's poor productivity growth record.",
+    "why": "第5段提到生产力委员会特别指出\"管理能力的低质量\"是新西兰生产率增长不佳的原因。结合上文语境，该条款限制企业解雇表现不佳的管理者导致了管理质量低下，因此委员会逻辑上应支持解雇表现不佳的管理者以提升管理质量和生产率，D选项与之契合。",
+    "traps": "A\"实施合理的工资限制\"在原文中没有依据，委员会关注的是管理能力而非工资限制；B\"执行就业保护法\"与文意相反，正是这些法律导致了管理低质问题；C\"限制企业主的权力\"同样与文意相反，委员会的观点暗示应赋予企业主更大的用人自主权。",
+    "tip": "推断题需把握\"原因→解决方案\"的逻辑链：低管理质量导致低生产率，故应支持淘汰低质管理者。"
+   },
+   {
+    "number": 39,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "And firms pay staff less because firms carry the burden of the employment arrangement going wrong.",
+    "why": "第6段明确指出，由于就业保护法使解雇成本更高，企业承担着雇佣关系出问题的风险负担，因此给员工的薪酬更低。B选项\"Employees suffer from salary cuts\"（员工遭受薪资削减）是对\"firms pay staff less\"的同义转述，准确反映了不正当解雇程序的一个后果。",
+    "traps": "A\"高薪管理者失去工作\"与原文相反，不正当解雇程序的问题恰恰在于让表现不佳的管理者难以被解雇；C\"社会整体福祉上升\"与第7段相反，原文明确说过度保护\"hamper overall well-being\"；D\"雇主需要招聘新员工\"与原文相反，原文说雇主因此\"更加谨慎\"招聘，即减少招聘。",
+    "traps_note": "各干扰项均采用反向设置策略，将原文的负面效果反转为正面或将原文否定的内容设为选项。",
+    "tip": "注意because引导的因果句，往往是命题人出题的关键信息点。"
+   },
+   {
+    "number": 40,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Australia deals with the unjustified dismissal paradox by excluding employees earning above a specified \"high-income threshold\" from the protection of its unfair dismissal laws.",
+    "why": "澳大利亚将高收入员工排除在不公平解雇法保护之外，意味着企业主可以更自由地解雇高薪但表现不佳的管理者，不再受制于繁琐的解雇保护程序。结合前文论述——这些保护制约了企业生产率和业绩——可推断该门槛制度有利于企业主更灵活地管理人员，C选项正确。",
+    "traps": "A\"保障了管理者的收入\"与实际效果相反，该门槛使高薪管理者失去解雇保护而非保障收入；B\"产生了不良结果\"无依据，文章将澳大利亚的做法作为解决悖论的正面范例引出；D\"难以付诸实践\"张冠李戴，原文说\"难以实施\"的是新西兰2016年的提案（unwieldy），而非澳大利亚的门槛制度。",
+    "tip": "末段对比两国方案时，注意区分哪个成功实施、哪个被否决，是命题常见的混淆手段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "grievance",
+    "cn": "n. 申诉，不满，委屈"
+   },
+   {
+    "w": "dismissal",
+    "cn": "n. 解雇，免职"
+   },
+   {
+    "w": "attest",
+    "cn": "v. 证明，证实"
+   },
+   {
+    "w": "handbrake",
+    "cn": "n. 手刹（此处比喻为阻碍）"
+   },
+   {
+    "w": "mediocrity",
+    "cn": "n. 平庸，庸才"
+   },
+   {
+    "w": "paradoxically",
+    "cn": "adv. 矛盾地，自相矛盾地"
+   },
+   {
+    "w": "constrain",
+    "cn": "v. 限制，约束"
+   },
+   {
+    "w": "singled out",
+    "cn": "v. 挑出，特别指出"
+   },
+   {
+    "w": "stringent",
+    "cn": "adj. 严格的，严厉的"
+   },
+   {
+    "w": "hamper",
+    "cn": "v. 阻碍，妨碍"
+   },
+   {
+    "w": "unwieldy",
+    "cn": "adj. 笨拙的，难以操作的"
+   },
+   {
+    "w": "marginal",
+    "cn": "adj. 边缘的，处于临界水平的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "If not placing jobs at risk, to the extent employment protection laws constrain business owners from dismissing under-performing managers, those laws act as a constraint on firm productivity and therefore on workers' wages.",
+    "cn": "即便不是将工作岗位置于风险之中，就就业保护法限制企业主解雇表现不佳的管理人员而言，这些法律也构成了对企业生产率的制约，进而制约了工人的工资水平。",
+    "note": "主干为those laws act as a constraint on...；if not...为让步省略结构；to the extent...managers为限定范围的状语从句；therefore on workers' wages为递进补充。"
+   },
+   {
+    "en": "Because employment protection laws make it costlier to fire an employee, employers are more cautious about hiring new staff.",
+    "cn": "由于就业保护法使解雇员工的成本更高，雇主在招聘新员工时更加谨慎。",
+    "note": "Because引导原因状语从句；make it costlier to fire为make+it+adj.+to do结构，it为形式宾语；主句点明结果。"
+   },
+   {
+    "en": "Across the Tasman Sea, Australia deals with the unjustified dismissal paradox by excluding employees earning above a specified \"high-income threshold\" from the protection of its unfair dismissal laws.",
+    "cn": "在塔斯曼海的另一边，澳大利亚通过将收入超过规定\"高收入门槛\"的员工排除在不公平解雇法保护之外来应对不正当解雇悖论。",
+    "note": "主干为Australia deals with...paradox by...；by excluding...为方式状语；earning above...threshold为现在分词短语作后置定语修饰employees。"
+   }
+  ]
+ }
+}

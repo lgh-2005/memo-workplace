@@ -1,0 +1,213 @@
+{
+ "schemaVersion": 1,
+ "id": "ff8641a6bc65__translation__all",
+ "examId": "ff8641a6bc65",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2019 年 6 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:24:25.256Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31672,
+ "usage": {
+  "prompt_tokens": 784,
+  "completion_tokens": 2075,
+  "total_tokens": 2859,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 784,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2075,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 784,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国成语的特点、来源与使用价值",
+  "reference": "Chinese idioms are a unique form of expression in the Chinese language, most of which consist of four Chinese characters. They are highly concise and fixed in form, yet usually can vividly convey profound meanings. The majority of Chinese idioms originate from ancient Chinese literary works, and are usually associated with certain myths, legends, or historical events. If one does not know the origin of a particular idiom, it will be difficult to understand its exact meaning. Therefore, learning idioms helps people gain a better understanding of traditional Chinese culture. Idioms are widely used in daily conversations and literary creation. The appropriate use of idioms can make one's language more expressive and communication more effective.",
+  "sentences": [
+   {
+    "cn": "成语(Chinese idioms)是汉语中的一种独特的表达方式，大多由四个汉字组成。",
+    "en": "Chinese idioms are a unique form of expression in the Chinese language, most of which consist of four Chinese characters.",
+    "structure": "主系表结构 + most of which 引导的非限制性定语从句，对主语进行补充说明",
+    "keys": [
+     "成语 Chinese idioms",
+     "独特的表达方式 a unique form of expression",
+     "汉字 Chinese characters",
+     "由……组成 consist of"
+    ]
+   },
+   {
+    "cn": "它们高度简练且形式固定，但通常能形象地表达深刻的含义。",
+    "en": "They are highly concise and fixed in form, yet usually can vividly convey profound meanings.",
+    "structure": "主系表并列结构（concise and fixed）+ but/yet 转折连接的并列句",
+    "keys": [
+     "高度简练 highly concise",
+     "形式固定 fixed in form",
+     "形象地 vividly",
+     "深刻的含义 profound meanings"
+    ]
+   },
+   {
+    "cn": "成语大多数来源于中国古代的文学作品，通常与某些神话、传说或者历史事件有关。",
+    "en": "The majority of Chinese idioms originate from ancient Chinese literary works, and are usually associated with certain myths, legends, or historical events.",
+    "structure": "主语 + 并列谓语（originate from... and are associated with...）结构",
+    "keys": [
+     "来源于 originate from",
+     "古代的文学作品 ancient Chinese literary works",
+     "神话 myths",
+     "传说 legends",
+     "历史事件 historical events",
+     "与……有关 be associated with"
+    ]
+   },
+   {
+    "cn": "如果不知道某个成语的出处，就很难理解其确切含义。",
+    "en": "If one does not know the origin of a particular idiom, it will be difficult to understand its exact meaning.",
+    "structure": "if 引导的条件状语从句 + 主句用 it 作形式主语（it is difficult to do）",
+    "keys": [
+     "出处 origin",
+     "确切含义 exact meaning",
+     "某个 a particular"
+    ]
+   },
+   {
+    "cn": "因为，学习成语有助于人们更好地理解中国传统文化。",
+    "en": "Therefore, learning idioms helps people gain a better understanding of traditional Chinese culture.",
+    "structure": "Therefore 引导因果结论句 + 动名词短语 learning idioms 作主语",
+    "keys": [
+     "有助于 help / contribute to",
+     "中国传统文化 traditional Chinese culture",
+     "理解 gain a better understanding of"
+    ]
+   },
+   {
+    "cn": "成语在日常会话和文学创作中广泛使用。",
+    "en": "Idioms are widely used in daily conversations and literary creation.",
+    "structure": "被动语态 be widely used in，主语为 idioms",
+    "keys": [
+     "日常会话 daily conversations",
+     "文学创作 literary creation",
+     "广泛使用 be widely used"
+    ]
+   },
+   {
+    "cn": "恰当使用成语可以使一个人的语言更具表现力，交流更有效。",
+    "en": "The appropriate use of idioms can make one's language more expressive and communication more effective.",
+    "structure": "make + 宾语 + 宾补（形容词）的复合宾语结构，两组并列宾补",
+    "keys": [
+     "恰当使用 the appropriate use of",
+     "表现力 expressive",
+     "交流更有效 communication more effective"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "成语",
+    "en": "Chinese idioms"
+   },
+   {
+    "cn": "汉语",
+    "en": "the Chinese language"
+   },
+   {
+    "cn": "汉字",
+    "en": "Chinese characters"
+   },
+   {
+    "cn": "文学作品",
+    "en": "literary works"
+   },
+   {
+    "cn": "神话",
+    "en": "myths"
+   },
+   {
+    "cn": "传说",
+    "en": "legends"
+   },
+   {
+    "cn": "历史事件",
+    "en": "historical events"
+   },
+   {
+    "cn": "中国传统文化",
+    "en": "traditional Chinese culture"
+   },
+   {
+    "cn": "日常会话",
+    "en": "daily conversations"
+   },
+   {
+    "cn": "文学创作",
+    "en": "literary creation"
+   }
+  ],
+  "pitfalls": [
+   "「大多由四个汉字组成」易误译为 most of them are made up by four...，应注意 consist of 无被动形式",
+   "「形象地表达」的 vividly 常被遗漏，或误用 lively（形容词）替代副词",
+   "「出处」origin 易误写为 resource 或 source，后者虽可接受但 origin 更贴切",
+   "原文「因为」实为「因此」（therefore），若译成 because 则逻辑不通，需根据上下文判断",
+   "「更具表现力」应译为 more expressive，易误译为 more expression（词性错误）"
+  ],
+  "upgrades": [
+   {
+    "plain": "are made up of four Chinese characters",
+    "better": "consist of four Chinese characters",
+    "note": "consist of 更正式简洁，且避免了 make up 被动介词搭配错误"
+   },
+   {
+    "plain": "help people better understand",
+    "better": "help people gain a better understanding of",
+    "note": "名词化表达更正式，体现书面语水平"
+   },
+   {
+    "plain": "Chinese idioms mostly come from ancient Chinese books",
+    "better": "The majority of Chinese idioms originate from ancient Chinese literary works",
+    "note": "originate from 比 come from 更学术；literary works 比 books 更精准"
+   },
+   {
+    "plain": "If you don't know where an idiom comes from",
+    "better": "If one does not know the origin of a particular idiom",
+    "note": "用 one 代替 you 更正式客观；origin 比 where...comes from 更简练"
+   },
+   {
+    "plain": "can make a person's language better",
+    "better": "can make one's language more expressive and communication more effective",
+    "note": "expressive 和 effective 用词精准，并列宾补结构更高级"
+   }
+  ]
+ }
+}

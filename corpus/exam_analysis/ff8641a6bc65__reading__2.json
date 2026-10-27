@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "ff8641a6bc65__reading__2",
+ "examId": "ff8641a6bc65",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 6 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:24:36.481Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56360,
+ "usage": {
+  "prompt_tokens": 1845,
+  "completion_tokens": 3611,
+  "total_tokens": 5456,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1845,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3611,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1845,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "初创公司入住养老社区收集产品反馈",
+  "gist": "文章介绍了美国最大退休社区运营商Brookdale邀请初创公司创业者入住社区，通过与老年居民日常互动来收集对新产品的真实反馈。以Sentab公司的Rodriguez为例，说明了被动式、建立信任的方式比直接调查更能获取诚实意见，并揭示了该社区老人实际上比预期更擅长使用科技产品。",
+  "structure": [
+   "第1段：引出背景——老年市场巨大，初创公司缺乏用户反馈，Brookdale提供入住机会",
+   "第2-5段：以Rodriguez为例，介绍SentabTV产品及其以信任为基础的被动反馈策略",
+   "第6-7段：补充其他入住案例及居民Mary Lou的真实反馈",
+   "第8-10段：反转揭示该社区老人科技素养高，Rodriguez收获意外认知"
+  ],
+  "difficulty": "中等",
+  "translation": "专为老年人设计的产品市场到明年可能达到300亿美元，初创公司也想分一杯羹。然而他们有时缺少的是来自目标用户的反馈。因此，全美最大的退休社区运营商Brookdale一直在邀请少数精选创业者入住几天，展示他们的产品，并听听住户们怎么说。\n\n正是这个项目，把28岁的Dayle Rodriguez从英国一路带到了加利福尼亚州托兰斯的Brookdale South Bay社区的餐厅。Rodriguez是一家名为Sentab的公司的社区与市场经理。这家初创公司的产品SentabTV，使那些可能不太习惯使用电脑的老年人能够仅通过电视机和遥控器来使用电子邮件、视频聊天和社交媒体。\n\n\"这没什么新奇的，也不太复杂，而且很自然，因为很多人都有电视遥控器，\"Rodriguez说。\n\n但这些都不是Brookdale餐厅里的谈话话题。相反，Rodriguez征求住户们的建议，问他芝士汉堡该加什么配料，下午该怎么度过。打牌被列入了日程，还有学打麻将。\n\n Rodriguez说，重要的是这里的住户不要觉得他在向他们推销什么。\"用被动的方式，我获得了更多反馈，\"他说。\"打台球、打牌、一起吃晚餐、吃午餐\"，这些方式都\"比做问卷调查效果好得多。当他们了解我、信任我，确信我不是在向他们推销东西的时候——他们给出的反馈会更加诚实。\"\n\nRodriguez只是第七位入住Brookdale旗下1100个老年生活社区之一的创业者。该项目中的其他新产品包括一种全身吹干器，以及专门设计的服装，可以让残障人士自行穿脱衣物。\n\n93岁的Mary Lou Busch同意试用Sentab系统。她告诉Rodriguez，这也许对某些人有用，但不适合她。\"我有电脑和FaceTime，我用它们跟家人通话，\"她解释道。她还有一部iPad和一部智能手机。\"所以我基本上能做我需要做的一切了。\"\n\n说句公道话，如果Rodriguez想从一些更害怕技术的老年人那里获取反馈，他可能来错了Brookdale社区。这个社区位于南加州航空航天走廊的中心地带。许多住户有工程、商业和学术界的背景。\n\n但Rodriguez说，入住这个Brookdale社区他仍然学到了一些重要的东西：\"人们比我们想象的更精通科技。\"\n\n而且，除了这里，他还能去哪儿学打麻将呢？",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The market for products designed specifically for older adults could reach $30 billion by next year, and startups want in on the action.",
+    "why": "原文明确指出老年人专用产品市场可达300亿美元，初创公司\"want in on the action\"（想要参与其中/分一杯羹）。B选项\"want to have a share of the seniors' goods market\"（想在老年人商品市场中分得一杯羹）是对原文的同义改写，语义完全对应。",
+    "traps": "A项\"never lose time in upgrading products\"（抓紧时间升级产品）原文未提及，属于无中生有；C项\"invite seniors to their companies\"与原文相反，是Brookdale邀请创业者入住社区，而非邀请老人去公司，属于张冠李戴；D项\"profit from promoting digital products\"将初创公司目的窄化为推广数字产品牟利，原文并未强调这一点，属于过度推断。",
+    "tip": "注意\"want in on the action\"这一口语化表达，意为\"想要参与分享利益\"。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "So Brookdale, the country's largest owner of retirement communities, has been inviting a few select entrepreneurs just to move in for a few days, show off their products and hear what the residents have to say.",
+    "why": "原文说Brookdale邀请创业者入住几天，展示产品并\"hear what the residents have to say\"（听听住户怎么说），即收集住户对产品的反馈意见。C选项\"collect residents' feedback on their products\"是对原文的准确概括。",
+    "traps": "A项\"have an interview with potential customers\"（对潜在客户进行采访）过于正式，原文强调的是自然互动而非正式访谈，属于曲解原意；B项\"conduct a survey of retirement communities\"（对退休社区进行调查）偷换了调查对象，原文是了解产品反馈而非调查社区；D项\"show senior residents how to use IT products\"（教老人使用IT产品）只涉及展示环节，遗漏了核心目的——听取反馈，以偏概全。",
+    "tip": "注意抓住句子核心目的——hear what the residents have to say才是关键。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The startup's product, SentabTV, enables older adults who may not be comfortable with computers to access email, video chat and social media using just their televisions and a remote control.",
+    "why": "原文说SentabTV让不习惯使用电脑的老年人通过电视和遥控器就能使用电子邮件、视频聊天和社交媒体。这说明它本质上是一个通过电视替代电脑来实现通讯功能的系统。D选项\"a communication system via TV instead of a computer\"准确概括了这一特征。",
+    "traps": "A项\"a TV program catering to the interest of the elderly\"（迎合老年人兴趣的电视节目）将产品性质完全搞错，SentabTV不是电视节目，属于偷换概念；B项\"a digital TV which enjoys popularity among seniors\"（在老年人中受欢迎的数字电视）原文并未提及受欢迎程度，属于无中生有；C项\"a TV specially designed for seniors to view programs\"（专为老人观看节目而设计的电视）将其功能窄化为看节目，忽略了通讯核心功能。",
+    "tip": "识别产品本质功能——email、video chat、social media都属于通讯功能。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "When they get to know me and to trust me, knowing for sure I'm not selling them something—there'll be more honest feedback from them.",
+    "why": "Rodriguez在原文中强调住户不能觉得他在推销东西，当他们了解他并信任他之后，才会给出更诚实的反馈。他采用打牌、吃饭等被动方式来建立信任关系。A选项\"Winning trust from prospective customers\"（赢得潜在客户的信任）精准对应了他反复强调的\"trust\"和\"not selling\"策略。",
+    "traps": "B项\"Knowing the likes and dislikes of customers\"（了解客户好恶）虽然涉及了解客户，但原文强调的核心是建立信任而非了解偏好，属于偏离重点；C项\"Demonstrating their superiority on the spot\"（当场展示产品优越性）与Rodriguez的被动策略完全相反，他刻意避免推销；D项\"Responding promptly to customer feedback\"（及时回应客户反馈）原文未提及，属于无中生有。",
+    "tip": "关键词\"trust\"在原文中反复出现，是Rodriguez推广策略的核心。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "To be fair, if Rodriguez had wanted feedback from some more technophobic seniors, he might have ended up in the wrong Brookdale community.",
+    "why": "原文通过Mary Lou Busch的例子（拥有电脑、iPad、智能手机、FaceTime）说明住户科技能力强，又指出该社区位于航空航天走廊，许多住户有工程和学术背景。Rodriguez总结道\"People are more tech-proficient than we thought\"。B选项\"They are quite at ease with high-tech products\"（他们对高科技产品非常自如）准确概括了这一特征。",
+    "traps": "A项\"Most of them are interested in using the Sentab\"与原文相反，Mary Lou明确拒绝了Sentab，属于反向干扰；C项\"They have much in common with seniors elsewhere\"（与其他地方的老人有很多共同点）与原文相反，文中强调这个社区的老人与一般老人不同；D项\"Most of them enjoy a longer life than average people\"（大多数人比普通人更长寿）原文未提及寿命问题，属于无中生有。",
+    "tip": "注意文章末尾的转折和总结往往是出题重点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "startups",
+    "cn": "n. 初创公司，新兴企业"
+   },
+   {
+    "w": "entrepreneurs",
+    "cn": "n. 创业者，企业家"
+   },
+   {
+    "w": "solicits",
+    "cn": "v. 征求，请求（意见、帮助等）"
+   },
+   {
+    "w": "agenda",
+    "cn": "n. 议程，日程安排"
+   },
+   {
+    "w": "passive",
+    "cn": "adj. 被动的，消极的"
+   },
+   {
+    "w": "survey",
+    "cn": "n. 调查问卷，调查"
+   },
+   {
+    "w": "technophobic",
+    "cn": "adj. 害怕技术的，技术恐惧的"
+   },
+   {
+    "w": "aerospace",
+    "cn": "n./adj. 航空航天（的）"
+   },
+   {
+    "w": "corridor",
+    "cn": "n. 走廊；通道，地带"
+   },
+   {
+    "w": "tech-proficient",
+    "cn": "adj. 精通技术的，技术熟练的"
+   },
+   {
+    "w": "disabilities",
+    "cn": "n. 残障，残疾（复数）"
+   },
+   {
+    "w": "feedback",
+    "cn": "n. 反馈，反馈意见"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The startup's product, SentabTV, enables older adults who may not be comfortable with computers to access email, video chat and social media using just their televisions and a remote control.",
+    "cn": "这家初创公司的产品SentabTV，使那些可能不太习惯使用电脑的老年人能够仅通过电视机和遥控器来使用电子邮件、视频聊天和社交媒体。",
+    "note": "主干为SentabTV enables older adults to access email...；who引导定语从句修饰older adults；using引导方式状语，说明实现途径。"
+   },
+   {
+    "en": "When they get to know me and to trust me, knowing for sure I'm not selling them something—there'll be more honest feedback from them.",
+    "cn": "当他们了解我、信任我，确信我不是在向他们推销东西的时候——他们给出的反馈会更加诚实。",
+    "note": "When引导时间状语从句，从句中含并列不定式to know和to trust；knowing for sure为现在分词短语作伴随状语；破折号后为主句。"
+   },
+   {
+    "en": "To be fair, if Rodriguez had wanted feedback from some more technophobic seniors, he might have ended up in the wrong Brookdale community.",
+    "cn": "说句公道话，如果Rodriguez想从一些更害怕技术的老年人那里获取反馈，他可能来错了Brookdale社区。",
+    "note": "To be fair为插入语；if引导虚拟条件句，had wanted为过去完成时，might have ended up为虚拟主句，暗示该社区老人并不害怕技术。"
+   }
+  ]
+ }
+}

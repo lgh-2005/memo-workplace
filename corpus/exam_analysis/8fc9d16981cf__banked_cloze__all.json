@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "8fc9d16981cf__banked_cloze__all",
+ "examId": "8fc9d16981cf",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2017 年 6 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:15:08.682Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 74169,
+ "usage": {
+  "prompt_tokens": 1391,
+  "completion_tokens": 3984,
+  "total_tokens": 5375,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1391,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3984,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1391,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "自言自语有助于认知表现",
+  "gist": "最新研究表明，自言自语并非不成熟的表现，反而能帮助人们保持专注、加快任务执行速度并提升感知能力。实验证明，出声说出要找的物品名称能加速搜索过程，两位教授认为语言不仅用于沟通，还能辅助思维。",
+  "difficulty": "中等",
+  "translation": "让我们停止对自言自语的人品头论足吧。新研究表明，那些似乎无法把内心独白藏住的人，实际上更有可能保持专注于任务、更好地集中注意力，并表现出更强的感知能力。对于一些额外的喃喃自语来说，这真的不赖。\n\n根据加里·卢平和丹尼尔·斯温利两位教授发表在《实验心理学季刊》上的一系列实验，使用语言线索来激发心理图像的行为能帮助人们更快速地运作。\n\n在一项实验中，他们向二十名志愿者展示了各种物品的图片，并要求他们只找出其中一个——香蕉。其中一半人被指示大声重复他们正在寻找的东西，另一半则紧闭嘴唇。研究人员说，自言自语的人比不说话的人找到香蕉的速度略快。在其他实验中，卢平和斯温利发现，在寻找某种常见商品时说出它的名字有助于加快寻找速度，但谈论不常见的物品则没有优势，反而会让你变慢。\n\n以往的研究一直认为，在完成任务时自言自语有助于儿童学习，不过在你明显已经成年之后还这么做，并不是聪明的好兆头。两位教授希望反驳这一观点，声称就像孩子在做事时自我引导一样，成年人也能从使用语言中受益——语言不仅用于交流，还能帮助\"增强思维\"。\n\n当然，我们仍然建议你把说话声控制在图书馆般的音量，而且无论你做什么，分享的信息要保持简单，像购物清单那样。不管声音大小如何，信息过多这回事仍然是存在的。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "F",
+    "correct": "focused",
+    "why": "此处需要形容词作remain的表语，与前后的'stay on task'和'show improved perception capabilities'并列描述积极效果。remain focused（保持专注）搭配自然，语义与上下文对任务专注度的讨论高度吻合。",
+    "traps": "其他形容词如sealed语义不合，apparently是副词不能作表语。arrogance和brilliance是名词，词性不符。此处需要正面含义的形容词来描述能力提升。",
+    "tip": "remain后接形容词作表语，注意并列结构语义一致性。"
+   },
+   {
+    "number": 27,
+    "answer": "L",
+    "correct": "trigger",
+    "why": "此处需要动词原形（to + V），表示'使用语言线索来激发心理图像'。trigger mental pictures意为'触发/激活脑海中的画面'，动宾搭配合理，符合实验研究语境。",
+    "traps": "其他可用动词如uttering是动名词形式、instructed是过去分词形式，均不符合'to + 动词原形'结构。且语义上只有trigger能与mental pictures合理搭配。",
+    "tip": "to后接动词原形，注意动宾搭配的语义合理性。"
+   },
+   {
+    "number": 28,
+    "answer": "O",
+    "correct": "volunteers",
+    "why": "空格前为数词twenty，后为and asked them，需要一个可数名词复数作宾语。volunteers（志愿者）是心理学实验中描述受试者的常用词汇，与实验场景完美契合。",
+    "traps": "arrogance、brilliance等名词为不可数名词，不能用于twenty之后计数。volume虽为名词但语义完全不合。此处必须是表示人的复数名词。",
+    "tip": "数词后需可数名词复数，结合实验语境锁定volunteers。"
+   },
+   {
+    "number": 29,
+    "answer": "H",
+    "correct": "instructed",
+    "why": "'Half were ___ to repeat'是被动语态结构，需要过去分词。be instructed to do意为'被指示去做某事'，表明实验者对受试者发出指令，符合实验操作描述。",
+    "traps": "sealed虽也是过去分词，但be sealed to do不构成合理搭配。focused作过去分词时不与to do连用。只有instructed能接to do构成'被要求做某事'的被动结构。",
+    "tip": "were ___ to do结构需过去分词，注意被动语态搭配。"
+   },
+   {
+    "number": 30,
+    "answer": "J",
+    "correct": "sealed",
+    "why": "'kept their lips sealed'意为'紧闭嘴唇/保持沉默'，是固定搭配。keep + 宾语 + 过去分词的结构表示'使……保持某种状态'，与前半句'大声重复'形成对比。",
+    "traps": "focused虽可作过去分词，但lips focused搭配不通。此处是lips的物理状态描述，sealed（封住的/紧闭的）是唯一合理选项。",
+    "tip": "keep their lips sealed是固定表达，意为保持沉默。"
+   },
+   {
+    "number": 31,
+    "answer": "M",
+    "correct": "uttering",
+    "why": "found that后引导宾语从句，空格处作从句主语，需要动名词或名词。uttering the name意为'说出名字'，动名词短语作主语，与文章讨论'自言自语'的主题一致。",
+    "traps": "claiming虽也是动名词形式，但'声称某产品名字'语义不通。此处强调的是发声说出名称这个动作本身，uttering（发声说出）精准对应。",
+    "tip": "that从句缺主语，用动名词短语充当，注意语义契合。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "correct": "apparently",
+    "why": "'you've apparently matured'中apparently修饰动词matured，作副词表示'显然地/看上去'。暗含'表面上成熟了但行为上似乎不够成熟'的微妙语气，与后文'不是聪明的标志'形成语义配合。",
+    "traps": "其他副词选项已无剩余。此处需要副词修饰过去分词matured，apparently放在have和过去分词之间是标准副词位置，语法和语义均合理。",
+    "tip": "助动词与过去分词之间填副词，apparently表'明显地'。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "correct": "brilliance",
+    "why": "'a great sign of ___'中of后需接名词。brilliance意为'才华/聪颖'，'不是聪明的好兆头'表达了传统观点认为成人自言自语显得不够聪明的偏见，与下文教授试图反驳该观点呼应。",
+    "traps": "arrogance（傲慢）语义不符，上下文讨论的是智力表现而非态度问题。volume（音量）也是名词但与sign of搭配后语义不通。",
+    "tip": "sign of后接抽象名词，根据上下文'成熟与智力'语境选brilliance。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "correct": "claiming",
+    "why": "'hope to refute that idea, claiming that...'中claiming作现在分词引导伴随状语，解释教授们反驳的具体内容。claiming that意为'声称/主张'，逻辑上表明教授的立场和论点。",
+    "traps": "uttering虽也是现在分词，但utter that从句搭配不当，utter侧重'发出声音'而非'主张观点'。此处需要表达观点陈述的动词，claiming最为精准。",
+    "tip": "逗号后现在分词作伴随状语，claiming that表'主张认为'。"
+   },
+   {
+    "number": 35,
+    "answer": "N",
+    "correct": "volume",
+    "why": "'At any volume'意为'不管音量大小'，与前文'keep the talking at library tones'关于控制音量的建议前后呼应。同时volume也有'量'的含义，与后面'too much information'中'过多'的概念巧妙双关。",
+    "traps": "arrogance语义完全不符。at any rate虽是常见搭配但rate不在选项中。此处volume一语双关，既指说话音量又暗指信息量，是命题者的巧妙设计。",
+    "tip": "at any volume与前文library tones呼应，兼有音量和信息量双关。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "monologue",
+    "cn": "n. 独白，自言自语"
+   },
+   {
+    "w": "perception",
+    "cn": "n. 感知力，洞察力"
+   },
+   {
+    "w": "trigger",
+    "cn": "v. 触发，引起，激发"
+   },
+   {
+    "w": "uttering",
+    "cn": "v. 说出，发出（utter的现在分词）"
+   },
+   {
+    "w": "sealed",
+    "cn": "adj. 密封的，紧闭的（seal的过去分词）"
+   },
+   {
+    "w": "brilliance",
+    "cn": "n. 才华，聪颖，光辉"
+   },
+   {
+    "w": "arrogance",
+    "cn": "n. 傲慢，自大"
+   },
+   {
+    "w": "refute",
+    "cn": "v. 反驳，驳斥"
+   },
+   {
+    "w": "augment",
+    "cn": "v. 增强，增大，提高"
+   },
+   {
+    "w": "instructed",
+    "cn": "v. 指示，指导（instruct的过去分词）"
+   },
+   {
+    "w": "quicken",
+    "cn": "v. 加速，加快"
+   },
+   {
+    "w": "verbal",
+    "cn": "adj. 口头的，言语的"
+   }
+  ],
+  "skills": [
+   "先通读全文把握主旨，再将15个候选词按词性分类（名词/动词/形容词/副词）。",
+   "根据空格前后的语法标志判断所需词性：如冠词/数词后填名词，be/remain后填形容词或分词。",
+   "利用固定搭配快速锁定答案，如keep lips sealed、be instructed to do等。",
+   "结合上下文逻辑和语义场选词，注意前后句的对比、并列和因果关系。",
+   "填完后回读全文验证语法和语义通顺性，确保每词只使用一次。"
+  ]
+ }
+}

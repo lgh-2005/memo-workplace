@@ -1,0 +1,226 @@
+{
+ "schemaVersion": 1,
+ "id": "5eefe122de30__writing__all",
+ "examId": "5eefe122de30",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2012 年考研英语真题",
+ "year": 2012,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:27:53.921Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 71754,
+ "usage": {
+  "prompt_tokens": 844,
+  "completion_tokens": 4130,
+  "total_tokens": 4974,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 844,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4130,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 844,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：以学生会名义给即将到来的国际留学生写一封欢迎邮件，表达欢迎并就校园生活提出建议，约100词。",
+    "outline": [
+     "第一段：自我介绍（学生会身份）并表达热烈欢迎",
+     "第二段：就校园生活提出3条具体建议（迎新活动、学生社团、求助渠道等）",
+     "第三段：表达良好祝愿，期待留学生的到来"
+    ],
+    "sample": "Dear International Students,\n\nOn behalf of the Students' Union, I am writing to extend our warmest welcome to you all. We are truly delighted that you have chosen our university for further studies.\n\nTo help you adapt to campus life smoothly, I would like to offer some practical suggestions. First, attending the orientation session in the first week is highly advisable, as it covers academic resources and campus facilities. Second, joining student clubs is an excellent way to make friends and experience Chinese culture firsthand. Finally, do not hesitate to approach the International Students' Office whenever you encounter any difficulties.\n\nWe sincerely hope your stay here will be both rewarding and memorable.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "On behalf of the Students' Union",
+      "cn": "代表学生会；正式书信中表明写信身份的常用表达"
+     },
+     {
+      "en": "extend our warmest welcome to",
+      "cn": "向……致以最热烈的欢迎；比 welcome you 更正式地道"
+     },
+     {
+      "en": "adapt to campus life smoothly",
+      "cn": "顺利适应校园生活；adapt to 为考研高频搭配"
+     },
+     {
+      "en": "highly advisable",
+      "cn": "非常值得推荐的；比 very good 更具学术写作色彩"
+     },
+     {
+      "en": "experience Chinese culture firsthand",
+      "cn": "亲身体验中国文化；firsthand 作副词加强语气"
+     },
+     {
+      "en": "do not hesitate to",
+      "cn": "请尽管……；书信中表达鼓励对方行动的礼貌用语"
+     },
+     {
+      "en": "encounter any difficulties",
+      "cn": "遇到任何困难；比 have problems 更正式"
+     },
+     {
+      "en": "both rewarding and memorable",
+      "cn": "既有收获又难忘；并列形容词作表语，增强表达力"
+     }
+    ],
+    "pitfalls": [
+     "忘记写称呼和落款格式，直接进入正文，扣格式分",
+     "建议内容空泛笼统，缺少具体细节如orientation、clubs等",
+     "语气过于随意，用 Hi guys 等口语化表达不符合正式邮件要求",
+     "超出或远低于100词要求，偏差过大会被扣分",
+     "签名写了自己真名而非题目要求的 Li Ming"
+    ],
+    "upgrades": [
+     {
+      "plain": "Welcome to our university.",
+      "better": "On behalf of the Students' Union, I am writing to extend our warmest welcome to you all.",
+      "note": "点明身份、使用正式句式，符合书信写作规范，体现层次感"
+     },
+     {
+      "plain": "You can join some clubs.",
+      "better": "Joining student clubs is an excellent way to make friends and experience Chinese culture firsthand.",
+      "note": "动名词作主语使句式更成熟，补充目的说明更具说服力"
+     },
+     {
+      "plain": "If you have problems, you can ask for help.",
+      "better": "Do not hesitate to approach the International Students' Office whenever you encounter any difficulties.",
+      "note": "使用正式祈使句和让步状语从句，指明具体求助对象更实用"
+     },
+     {
+      "plain": "I hope you will be happy here.",
+      "better": "We sincerely hope your stay here will be both rewarding and memorable.",
+      "note": "用 we 代替 I 符合学生会集体口吻，并列形容词更有文采"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "图画作文：根据漫画（两人乘船游河，河面漂满垃圾，标题'旅途之余'）写160-200词短文，描述图画、阐释寓意并给出评论。",
+    "outline": [
+     "第一段：客观描述漫画内容——两名游客坐在小船上，河面布满塑料袋、瓶子等垃圾，标题为谐音双关'旅途之余'",
+     "第二段：阐释寓意——旅游业高速发展背景下，部分游客环保意识薄弱，随意丢弃垃圾，破坏自然景观与生态系统",
+     "第三段：发表评论——政府应加强监管与处罚，同时通过教育宣传提升公众环保意识，呼吁人人承担环保责任"
+    ],
+    "sample": "As is vividly depicted in the drawing, two tourists are sitting in a small boat, traveling along a river. Strikingly, the entire surface of the river is littered with all sorts of garbage, including plastic bags, bottles, and food wrappers. The caption beneath the picture reads \"The 'Residue' of a Journey,\" a clever pun that provokes deep reflection.\n\nThe cartoon is intended to raise public awareness about environmental damage caused by irresponsible tourism. In recent years, as the tourism industry has boomed across China, numerous scenic spots have suffered severe environmental degradation. Some tourists casually discard waste wherever they go, transforming once-picturesque rivers and landscapes into virtual garbage dumps. This shortsighted behavior not only destroys the very natural beauty that attracts visitors in the first place but also poses a serious threat to fragile ecological systems.\n\nFrom my perspective, urgent and comprehensive measures should be taken to tackle this problem. On the one hand, the government ought to enforce stricter regulations and impose heavier fines on those who litter in scenic areas. On the other hand, extensive public education campaigns should be launched to cultivate environmental consciousness among tourists. Only when every individual assumes responsibility for protecting the environment can we genuinely preserve the beauty of nature for future generations.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the drawing",
+      "cn": "正如图画中生动描绘的那样；图画作文经典开篇句式"
+     },
+     {
+      "en": "the entire surface is littered with",
+      "cn": "整个表面布满了……；litter with 形象描述垃圾遍布的场景"
+     },
+     {
+      "en": "provoke deep reflection",
+      "cn": "引发深刻反思；比 make people think 更具学术色彩"
+     },
+     {
+      "en": "environmental degradation",
+      "cn": "环境恶化/退化；环保类话题核心词汇"
+     },
+     {
+      "en": "transforming once-picturesque landscapes into",
+      "cn": "把曾经如画的风景变成……；现在分词作伴随状语，增强文采"
+     },
+     {
+      "en": "poses a serious threat to",
+      "cn": "对……构成严重威胁；pose a threat to 为议论文高频搭配"
+     },
+     {
+      "en": "enforce stricter regulations",
+      "cn": "执行更严格的法规；政策建议类常用表达"
+     },
+     {
+      "en": "cultivate environmental consciousness",
+      "cn": "培养环保意识；cultivate 比 develop 更高级"
+     },
+     {
+      "en": "Only when … can we …",
+      "cn": "只有当……我们才能……；倒装句式，适合用于结尾升华"
+     },
+     {
+      "en": "preserve … for future generations",
+      "cn": "为子孙后代保护……；呼吁类结尾的经典表达"
+     }
+    ],
+    "pitfalls": [
+     "第一段只写一句话概括图画，缺少对垃圾种类、人物表情等细节的描写",
+     "忽略图片标题'旅途之余'的双关含义，未能点出谐音讽刺效果",
+     "三段之间缺乏逻辑过渡词，如 from my perspective、on the one hand 等",
+     "建议段只泛泛而谈 protect the environment，未分层提出具体措施",
+     "词数不足160或超过200，审题不严会影响整体印象分"
+    ],
+    "upgrades": [
+     {
+      "plain": "The river is full of garbage.",
+      "better": "The entire surface of the river is littered with all sorts of garbage, including plastic bags, bottles, and food wrappers.",
+      "note": "添加具体垃圾种类使描写更生动，litter with 比 full of 更贴切"
+     },
+     {
+      "plain": "This behavior is bad for the environment.",
+      "better": "This shortsighted behavior not only destroys the very natural beauty that attracts visitors in the first place but also poses a serious threat to fragile ecological systems.",
+      "note": "not only...but also 双重论证，fragile ecological systems 体现专业词汇"
+     },
+     {
+      "plain": "The government should make laws to stop this.",
+      "better": "The government ought to enforce stricter regulations and impose heavier fines on those who litter in scenic areas.",
+      "note": "具体措施（enforce regulations + impose fines）比笼统建议更有说服力"
+     },
+     {
+      "plain": "Everyone should protect the environment.",
+      "better": "Only when every individual assumes responsibility for protecting the environment can we genuinely preserve the beauty of nature for future generations.",
+      "note": "Only when 引导的倒装句式使结尾更有力，兼顾形式与内容的升华"
+     },
+     {
+      "plain": "We should teach people to care about nature.",
+      "better": "Extensive public education campaigns should be launched to cultivate environmental consciousness among tourists.",
+      "note": "被动语态更符合建议语体，education campaigns 比 teach people 更具体专业"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "On behalf of the Students' Union, I am writing to extend our warmest welcome to you all. —— 代表学生会向你们致以最热烈的欢迎。（书信开头点明身份与目的的经典句式，适用于各类欢迎信）",
+   "This shortsighted behavior not only destroys the very natural beauty that attracts visitors in the first place but also poses a serious threat to fragile ecological systems. —— 这种目光短浅的行为不仅破坏了最初吸引游客的自然美景，还对脆弱的生态系统构成严重威胁。（not only...but also 并列结构搭配定语从句，逻辑严密、词汇高级）",
+   "Only when every individual assumes responsibility for protecting the environment can we genuinely preserve the beauty of nature for future generations. —— 只有当每个人都承担起保护环境的责任，我们才能真正为子孙后代守护自然之美。（Only when 倒装句，气势磅礴，适合用作议论文结尾升华）",
+   "Joining student clubs is an excellent way to make friends and experience Chinese culture firsthand. —— 加入学生社团是结交朋友、亲身体验中国文化的绝佳方式。（动名词主语+不定式表语，句式简洁优雅，建议类写作通用）",
+   "As the tourism industry has boomed across China, numerous scenic spots have suffered severe environmental degradation. —— 随着中国旅游业的蓬勃发展，众多景区遭受了严重的环境恶化。（as 引导时间/原因状语从句，boom 与 degradation 形成鲜明对比，论证有力）"
+  ]
+ }
+}

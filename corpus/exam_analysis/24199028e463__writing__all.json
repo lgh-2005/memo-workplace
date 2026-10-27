@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "24199028e463__writing__all",
+ "examId": "24199028e463",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年 6 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:45:02.075Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 36528,
+ "usage": {
+  "prompt_tokens": 722,
+  "completion_tokens": 1915,
+  "total_tokens": 2637,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 722,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1915,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 722,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文：以指定首句开头，围绕\"越来越多人乐于帮助有需要的人\"展开评论，可举例或结合个人经历，150-200词。",
+    "outline": [
+     "第一段：以指定首句引出话题，概述乐于助人蔚然成风的社会现象，点明其积极意义。",
+     "第二段：从多角度分析该现象的成因（如社交媒体传播、政策鼓励、文化传统等），并辅以具体事例加以论证。",
+     "第三段：总结该趋势带来的深远影响，发出呼吁或展望，升华主题。"
+    ],
+    "sample": "Nowadays more and more people take delight in offering help to the needy. This heartening trend reflects a growing awareness of social responsibility and the power of collective compassion in our modern society.\n\nSeveral factors contribute to this positive phenomenon. First, the rapid development of social media platforms has made it considerably easier for individuals to learn about those in need and take immediate action. For instance, numerous charitable campaigns launched on WeChat and Weibo have successfully raised millions of yuan for underprivileged children and disaster-stricken regions. Second, the government has introduced favorable policies, such as tax deductions for charitable donations, which effectively incentivize philanthropic behavior. Moreover, a deeply rooted cultural tradition of mutual assistance continues to inspire ordinary citizens to extend a helping hand to strangers.\n\nThe benefits of this trend are far-reaching. Not only does it alleviate the suffering of disadvantaged groups, but it also fosters a profound sense of fulfillment among the helpers themselves. In my view, we should actively participate in charitable endeavors and encourage others to do likewise, thereby building a more harmonious and caring society.",
+    "phrases": [
+     {
+      "en": "take delight in doing sth.",
+      "cn": "乐于做某事；比enjoy更正式，适合议论文开篇"
+     },
+     {
+      "en": "a growing awareness of social responsibility",
+      "cn": "日益增长的社会责任意识；常用于分析社会现象的原因"
+     },
+     {
+      "en": "incentivize philanthropic behavior",
+      "cn": "激励慈善行为；incentivize比encourage更高级，体现政策层面推动"
+     },
+     {
+      "en": "extend a helping hand to",
+      "cn": "向……伸出援手；形象生动的固定搭配，适用于助人话题"
+     },
+     {
+      "en": "far-reaching benefits",
+      "cn": "深远的益处；比great benefits更地道，适合总结段"
+     },
+     {
+      "en": "Not only does it ... but it also ...",
+      "cn": "不仅……而且……；倒装句式，展示语法功底，提升文章档次"
+     },
+     {
+      "en": "alleviate the suffering of disadvantaged groups",
+      "cn": "减轻弱势群体的痛苦；alleviate比reduce更书面"
+     },
+     {
+      "en": "foster a profound sense of fulfillment",
+      "cn": "培养一种深刻的成就感；foster搭配抽象名词为高分用法"
+     },
+     {
+      "en": "do likewise",
+      "cn": "照样做，效仿；比do the same thing更简练地道"
+     },
+     {
+      "en": "a deeply rooted cultural tradition",
+      "cn": "根深蒂固的文化传统；修饰传统/习俗的经典搭配"
+     }
+    ],
+    "pitfalls": [
+     "未以题目指定首句开头或擅自改动原句，直接扣分。",
+     "全文泛泛而谈缺少具体事例，论证空洞，难以拿到中上档分数。",
+     "通篇简单句堆砌，缺乏复合句与倒装等高级句式，语言档次偏低。",
+     "词数不足150或超过200，均可能被扣分；写完务必快速点数。",
+     "拼写或主谓一致错误频出（如peoples、has make），影响语言准确性得分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Many people like to help others.",
+      "better": "An increasing number of individuals take delight in offering assistance to those in need.",
+      "note": "用具体短语替代笼统动词like，语言更精确、更正式"
+     },
+     {
+      "plain": "The government encourages people to donate money.",
+      "better": "The government has introduced favorable policies, such as tax deductions for charitable donations, which effectively incentivize philanthropic behavior.",
+      "note": "用具体政策举例+定语从句，论证更充分、句式更复杂"
+     },
+     {
+      "plain": "Helping others is good for society and for ourselves.",
+      "better": "Not only does it alleviate the suffering of disadvantaged groups, but it also fosters a profound sense of fulfillment among the helpers themselves.",
+      "note": "倒装+并列结构使论点更有力，用词更书面化"
+     },
+     {
+      "plain": "We should help others more.",
+      "better": "We should actively participate in charitable endeavors and encourage others to do likewise, thereby building a more harmonious society.",
+      "note": "thereby+现在分词作结果状语，逻辑更紧密、尾句更有力"
+     },
+     {
+      "plain": "Because of the Internet, people can know who needs help.",
+      "better": "The rapid development of social media platforms has made it considerably easier for individuals to learn about those in need and take immediate action.",
+      "note": "make it+adj.+for sb. to do 句型更流畅，用词更学术"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Not only does it alleviate the suffering of disadvantaged groups, but it also fosters a profound sense of fulfillment among the helpers themselves. —— 倒装+并列，既谈受助者又谈施助者，论证全面且句式高级。",
+   "The rapid development of social media platforms has made it considerably easier for individuals to learn about those in need and take immediate action. —— make it + adj. + for sb. to do 经典句型，分析原因时万能且地道。",
+   "We should actively participate in charitable endeavors and encourage others to do likewise, thereby building a more harmonious and caring society. —— thereby + doing 结果状语收束全文，逻辑自洽、气势充足。",
+   "A deeply rooted cultural tradition of mutual assistance continues to inspire ordinary citizens to extend a helping hand to strangers. —— 文化角度论证，过去分词前置修饰+不定式作宾补，结构紧凑。"
+  ]
+ }
+}

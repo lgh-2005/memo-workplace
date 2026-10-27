@@ -1,0 +1,217 @@
+{
+ "schemaVersion": 1,
+ "id": "2c00eddfd70a__use_of_english__all",
+ "examId": "2c00eddfd70a",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "1999 年考研英语真题（旧）",
+ "year": 1999,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "generatedAt": "2026-10-27T05:02:44.284Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60072,
+ "usage": {
+  "prompt_tokens": 1234,
+  "completion_tokens": 3300,
+  "total_tokens": 4534,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1234,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3300,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1234,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "工业安全计划的实施与价值",
+  "gist": "文章阐述了工业安全并非自然发生，低事故率的公司需精心策划安全计划并持续推进。不同企业侧重点各异，有的重视机械防护，有的强调遵守规章，有的诉诸情感。从经济角度看，安全计划可以带来回报，减少伤害索赔、降低保险费率，决定企业盈亏。",
+  "difficulty": "中等",
+  "translation": "工业安全不会凭空出现。事故率低的公司会规划其安全计划，努力组织这些计划，并持续工作以保持其鲜活且积极有效。当工作做得好时，一种无事故运营的氛围便会形成，因伤造成的工时损失被控制在最低限度。\n\n成功的安全计划在对某些方面的侧重上可能差异很大。一些公司非常重视机械防护。另一些则通过遵守规章制度来强调安全操作规程。还有一些公司则依靠对工人的情感诉求。但是，如果要取得最大成效，每个计划中都必须运用一些基本理念。\n\n安全计划的价值毋庸置疑。仅从财务角度来看，安全就是值得的。伤害索赔越少，工人的保险费率就越有利。这可能意味着盈利经营和亏损经营之间的差别。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "D",
+    "correct": "with",
+    "why": "此处表示\"具有/拥有低事故率的公司\"，with表伴随或具备某种特征，是\"名词+with+名词\"结构作后置定语修饰companies，语法与语义均契合。",
+    "traps": "A) at表示地点或状态，不能表示\"具有\"特征；B) in表示在某范围内，搭配accident rates不合逻辑；C) on表示在…上面或关于，与low accident rates不构成合理修饰关系。",
+    "tip": "with作后置定语表\"具备某特征\"的用法。"
+   },
+   {
+    "number": 2,
+    "answer": "A",
+    "correct": "alive",
+    "why": "alive与active并列，表示\"保持（安全计划）鲜活且积极\"。alive常用于keep...alive结构，比喻保持事物的生命力与活力，与上下文持续推动安全计划的语境吻合。",
+    "traps": "B) vivid意为\"生动的\"，常形容描述或色彩，不用于keep...vivid搭配；C) mobile意为\"移动的\"，与安全计划无关；D) diverse意为\"多样的\"，不符合此处\"持续保持活力\"的语境。",
+    "tip": "alive侧重\"有活力、仍在运行\"，与active构成近义并列。"
+   },
+   {
+    "number": 3,
+    "answer": "B",
+    "correct": "climate",
+    "why": "climate此处为比喻义，指\"氛围、风气\"，a climate of accident-free operations意为\"一种无事故运营的氛围\"，表示安全工作做好后形成的整体环境与风气。",
+    "traps": "A) regulation意为\"规章\"，与后面of accident-free operations搭配不当；C) circumstance意为\"环境/情况\"，一般用复数，且不表示主动营造的氛围；D) requirement意为\"要求\"，语义不合，无事故运营不是\"要求\"而是\"氛围\"。",
+    "tip": "climate的比喻义\"风气、氛围\"是完形高频考点。"
+   },
+   {
+    "number": 4,
+    "answer": "A",
+    "correct": "where",
+    "why": "where引导非限制性定语从句，修饰前面所建立的a climate of accident-free operations，在从句中充当地点/情境状语，意为\"在这种氛围中，工时损失被控制在最低\"。",
+    "traps": "B) how引导方式状语从句，此处不需要说明方式；C) what不能引导定语从句，它引导名词性从句；D) unless表\"除非\"，引导条件状语从句，与句意不符。",
+    "tip": "where可引导定语从句修饰抽象名词如climate/situation等。"
+   },
+   {
+    "number": 5,
+    "answer": "B",
+    "correct": "differ",
+    "why": "differ in意为\"在…方面不同/有差异\"，是固定搭配。句意为\"成功的安全计划在侧重点上可能差异很大\"，与后文列举不同侧重点（机械防护、规章制度、情感诉求）形成逻辑呼应。",
+    "traps": "A) alter意为\"改变\"，是及物动词，不与in搭配表示差异；C) shift意为\"转移、变化\"，强调变动而非差别；D) distinguish意为\"区分\"，常用distinguish between/from，语义和搭配均不合。",
+    "tip": "differ in是表示\"在某方面存在差异\"的固定搭配。"
+   },
+   {
+    "number": 6,
+    "answer": "C",
+    "correct": "observing",
+    "why": "observe rules/regulations意为\"遵守规章制度\"，是固定搭配。句意为\"通过遵守规章制度来强调安全操作规程\"，by observing构成方式状语，逻辑通顺。",
+    "traps": "A) constituting意为\"构成/组成\"，不能与rules搭配表\"遵守\"；B) aggravating意为\"加重/恶化\"，语义完全相反；D) justifying意为\"证明…正当\"，与rules搭配不构成\"遵守规则\"之义。",
+    "tip": "observe除\"观察\"外，还有\"遵守（规则/法律）\"之义。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "Still",
+    "why": "Still others意为\"还有另一些\"，与前文Some...Others...构成三层递进并列，是英语中常见的列举结构Some...Others...Still others...，表示第三类情况。",
+    "traps": "A) Some已在前文出现，此处重复使用不符合递进列举的行文逻辑；B) Many不能与others搭配构成标准的递进列举结构；C) Even others强调\"甚至\"，语气过强，此处三类方法是并列关系而非递进程度关系。",
+    "tip": "Some...Others...Still others...是经典三层并列列举结构。"
+   },
+   {
+    "number": 8,
+    "answer": "C",
+    "correct": "pays off",
+    "why": "pay off意为\"有回报、值得\"，与前句from a financial standpoint（从财务角度）呼应，表明安全在经济上是划算的。后文保险费率、盈亏的论述进一步佐证此意。",
+    "traps": "A) comes off意为\"成功/脱落\"，不表示经济回报；B) turns up意为\"出现/露面\"，与财务收益无关；D) holds up意为\"支撑/阻碍\"，与\"安全在财务上有回报\"的语义不匹配。",
+    "tip": "pay off表\"获得回报、有成效\"，常见于经济语境。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "claims",
+    "why": "injury claims是\"伤害索赔\"的固定搭配，指工人因工伤向保险公司提出的赔偿申请。与后半句workman's insurance rate（工人保险费率）形成紧密的逻辑链：索赔越少，费率越低。",
+    "traps": "B) reports意为\"报告\"，虽可搭配injury但不涉及保险赔付概念；C) declarations意为\"声明/宣告\"，属正式文件用语，不用于保险索赔语境；D) proclamations意为\"公告/宣言\"，用于政府或官方场合，与保险语境无关。",
+    "tip": "claim在保险领域特指\"索赔\"，是核心商务词汇。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "a profit",
+    "why": "at a profit意为\"盈利地\"，与后面的at a loss（亏损地）形成反义对比，the difference between...or...结构要求前后对称。operate at a profit是\"盈利经营\"的固定商业表达。",
+    "traps": "A) at an advantage意为\"处于优势\"，不是与at a loss对称的财务术语；B) at a benefit搭配不成立，benefit前一般不用at a修饰来表示经营状态；C) at an interest不是固定搭配，interest在财务中指\"利息\"，不表示\"盈利经营\"。",
+    "tip": "at a profit与at a loss是一对固定反义商业搭配。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "mechanical guarding",
+    "cn": "机械防护（名词短语）"
+   },
+   {
+    "w": "emotional appeal",
+    "cn": "情感诉求（名词短语）"
+   },
+   {
+    "w": "standpoint",
+    "cn": "立场，观点（n.）"
+   },
+   {
+    "w": "insurance rate",
+    "cn": "保险费率（名词短语）"
+   },
+   {
+    "w": "at a minimum",
+    "cn": "在最低限度（介词短语）"
+   },
+   {
+    "w": "stress",
+    "cn": "强调，着重（v.）"
+   },
+   {
+    "w": "maximum",
+    "cn": "最大限度的（adj./n.）"
+   },
+   {
+    "w": "obtain",
+    "cn": "获得，取得（v.）"
+   },
+   {
+    "w": "operate",
+    "cn": "运营，经营（v.）"
+   },
+   {
+    "w": "injury",
+    "cn": "伤害，损伤（n.）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "When",
+    "role": "引导时间状语从句，说明安全氛围形成的前提条件"
+   },
+   {
+    "w": "But",
+    "role": "转折连接，从不同侧重点转向强调共同的基本理念"
+   },
+   {
+    "w": "Some...Others...Still others",
+    "role": "三层并列列举，分述安全计划的不同侧重类型"
+   },
+   {
+    "w": "From a financial standpoint alone",
+    "role": "限定论证角度，将论述聚焦于经济价值层面"
+   },
+   {
+    "w": "if",
+    "role": "引导条件状语从句，说明获得最大成效的必要前提"
+   }
+  ]
+ }
+}

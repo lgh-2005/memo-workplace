@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "524855593c06__reading__1",
+ "examId": "524855593c06",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 6 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:35:33.736Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 84170,
+ "usage": {
+  "prompt_tokens": 1805,
+  "completion_tokens": 5907,
+  "total_tokens": 7712,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1805,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5907,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1805,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "基因与智力关系的争论",
+  "gist": "文章围绕遗传论科学展开讨论。一篇论文声称学生学业差异反映基因差异，但作者认为该结论不可靠：DNA与智力之间至多存在微弱统计关联而非因果关系。作者批评遗传论者过度宣扬基因决定论，呼吁更平衡地解读数据，警告不应将歧视披上科学外衣。",
+  "structure": [
+   "第1-2段：引出遗传论争论，介绍论文主张及作者质疑",
+   "第3段：指出遗传论核心主张在多层面上存在问题",
+   "第4段：强调环境因素不可忽视，呼吁平衡解读",
+   "第5段：警告不可将歧视提升为科学，呼吁社会责任"
+  ],
+  "difficulty": "较难",
+  "translation": "人类对自身缺陷和美德的根源十分着迷：这种关注不可避免地引向一个古老的争论——先天还是后天对我们的塑造更大。遗传学领域的一场革命将此提升为关于社会特征的现代政治问题：如果个性已经硬编码在我们的基因中，政府能做什么来帮助我们？这在道德上令人质疑，但基于智力进行基因选择的说法正在成为头条新闻。\n\n这要归因于\"遗传论\"科学，最近一篇论文声称\"就读选拔性学校和非选拔性学校的学生之间的考试成绩差异反映了他们之间的基因差异\"。由于这一断言，该研究不出所料地引来了大量关于\"基因决定学业成功\"的荒谬说法。研究揭示的其实是一个不那么令人惊讶的结果：一旦将学生的先天能力和社会经济背景考虑在内，选拔性学校的教育优势基本上就消失了。这不过是对显而易见之事的一瞥——而且没有什么能有力地支持遗传论或环境论中的任何一方。\n\n然而，该论文确实指出儿童被学校系统\"无意中进行了基因选择\"。遗传论科学的核心是一个大胆的主张：可识别的基因序列变异能够预测个体学习、推理和解决问题的能力。这在许多层面上都存在问题。一位老师不可能在外部因素明显存在的情况下，严肃地告诉家长他们的孩子在学习方面的基因倾向较低。持不同意见的学者认为，人类特征的可遗传性在科学上是站不住脚的。DNA与智力之间充其量只有微弱的统计关联，而非因果联系。然而，复杂的统计数据被用来营造一种科学确定性的威慑氛围。\n\n虽然个体差异确实存在遗传基础，但认为社会定义的群体可以用基因来解释是错误的。将基因视为命运的执念也必定是错误的。医学预测很少能仅仅基于DNA；环境同样重要。像智力这样复杂的东西很可能受到基因之外许多因素的影响。如果遗传论者想推进他们的事业，就需要更加平衡的解读，而不仅仅是鼓吹行为。\n\n基因选择是对他人施加影响的一种方式，正如作家H.G.威尔斯所说的\"对人类命运的终极集体控制\"。知识就是力量，而力量需要责任感。在理解认知能力时，我们绝不能将歧视提升为科学，只允许人们在其细胞可能暗示的范围内攀登人生的阶梯。这需要我们以更加怀疑的眼光审视科学。随着技术的进步，我们都有责任确保塑造一个我们自己愿意置身其中的未来。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "a recent paper claimed 'differences in exam performance between pupils attending selective and non-selective schools mirror the genetic differences between them'. With such an assertion, the work was predictably greeted by a lot of absurd claims about 'genetics determining academic success'.",
+    "why": "论文声称选拔性学校与非选拔性学校学生之间的考试成绩差异\"反映了他们之间的基因差异\"（mirror the genetic differences），即考试表现由基因差异所决定。D选项\"学生的学业表现由基因决定\"是对论文原始主张的准确同义改写，mirror在此处等同于\"由……决定\"。",
+    "traps": "A\"学校类型对学生未来有影响\"——原文说选拔性学校的优势在控制变量后基本消失，与论文主张方向相反；B\"学生间基因差异比预想大得多\"——论文讨论的是基因差异与成绩差异的对应关系，并未涉及差异大小的比较；C\"选拔性学校的优势太明显不可忽视\"——原文恰恰说这些优势largely disappear，属于曲解原文。",
+    "tip": "注意区分论文本身的主张与作者对论文的评价，题目问的是论文声称什么。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "It is a glimpse of the blindingly obvious—and there's nothing to back strongly either a hereditary or environmental argument.",
+    "why": "作者对该研究持质疑态度。首先，作者用\"absurd claims\"形容该论文引发的说法；其次，认为研究结论不过是\"显而易见之事\"（blindingly obvious）；最后明确指出\"没有什么能有力地支持遗传论或环境论中的任何一方\"，说明研究结论缺乏充分证据支撑，结果值得质疑（questionable）。",
+    "traps": "B\"影响是积极的\"——作者通篇持批评态度，认为研究被过度解读，影响并非正面；C\"影响相当微不足道\"——文章大篇幅讨论此研究带来的广泛争论，说明影响不小；D\"结论具有启发性\"——作者称结论是blindingly obvious，即毫无新意，谈不上enlightening。",
+    "tip": "作者态度题需综合全段语气词和评价性表述来判断，不可仅看一处。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "At best there is a weak statistical association and not a causal link between DNA and intelligence.",
+    "why": "原文明确指出DNA与智力之间\"充其量只有微弱的统计关联，而非因果联系\"（not a causal link）。B选项\"并非因果关系\"（not one of cause and effect）是对原文\"not a causal link\"的精准同义替换，完全吻合作者观点。",
+    "traps": "A\"是一种科学确定性的关系\"——原文说\"sophisticated statistics are used to create an intimidatory atmosphere of scientific certainty\"，这种确定性氛围是人为营造的假象，并非作者认同的观点；C\"取决于统计数据的解读\"——虽然原文提到统计被滥用，但这不是作者对DNA与智力关系本身的定性；D\"未被基因科学家充分研究\"——原文未提及研究不充分，而是说研究结论本身不成立。",
+    "tip": "对因果关系的考查是六级常见考点，注意区分correlation（关联）与causation（因果）。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "If hereditarians want to advance their cause it will require more balanced interpretation and not just acts of advocacy.",
+    "why": "原文指出遗传论者若要推进其主张，需要\"更加平衡的解读\"（more balanced interpretation），而不仅仅是鼓吹行为。上文还强调环境因素、社会经济背景等多种因素都会影响智力。A选项\"在解读数据时考虑所有相关因素\"正是\"more balanced interpretation\"的具体体现——即不能只看基因，还要纳入环境等其他因素。",
+    "traps": "B\"使用更先进的技术进行研究\"——原文并未涉及研究技术是否先进的问题；C\"收集所有社会阶层的基因数据\"——原文未要求扩大数据收集范围；D\"与社会科学家合作研究\"——原文未提及跨学科合作的建议。",
+    "tip": "看到原文中的\"balanced interpretation\"，需理解其隐含义为\"全面考虑各类因素\"。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "In understanding cognitive ability, we must not elevate discrimination to a science, allowing people to climb the ladder of life only as far as their cells might suggest.",
+    "why": "文章最后一段是作者的核心警告。原文明确说\"我们绝不能将歧视提升为科学\"（elevate discrimination to a science），即不能打着科学旗号行歧视之实，用基因决定论限制人的发展机会。D选项\"以科学之名推行歧视\"（promoting discrimination in the name of science）是对这句话的精准概括。",
+    "traps": "A\"夸大技术塑造世界的力量\"——虽然末段提到技术进步，但这不是作者警告的核心内容；B\"在研究中丧失职业道德\"——原文未讨论职业道德问题；C\"误解人类认知研究的发现\"——虽然涉及认知研究，但作者核心警告不是\"误解\"，而是\"将歧视科学化\"这一更严重的问题。",
+    "tip": "最后一段往往是作者总结立场之处，把握核心警示句即可锁定答案。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "preoccupation",
+    "cn": "n. 专注，关注，忧虑"
+   },
+   {
+    "w": "hard-wired",
+    "cn": "adj. 天生固有的，根深蒂固的"
+   },
+   {
+    "w": "hereditarian",
+    "cn": "adj./n. 遗传论的；遗传论者"
+   },
+   {
+    "w": "assertion",
+    "cn": "n. 断言，声明"
+   },
+   {
+    "w": "aptness",
+    "cn": "n. 能力，倾向，适合性"
+   },
+   {
+    "w": "intimidatory",
+    "cn": "adj. 恐吓性的，威慑性的"
+   },
+   {
+    "w": "inheritability",
+    "cn": "n. 可遗传性"
+   },
+   {
+    "w": "fixation",
+    "cn": "n. 执念，迷恋，固着"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的"
+   },
+   {
+    "w": "sceptical",
+    "cn": "adj. 怀疑的，持怀疑态度的"
+   },
+   {
+    "w": "advocacy",
+    "cn": "n. 鼓吹，倡导，拥护"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Central to hereditarian science is a tall claim: that identifiable variations in genetic sequences can predict an individual's aptness to learn, reason and solve problems.",
+    "cn": "遗传论科学的核心是一个大胆的主张：可识别的基因序列变异能够预测个体学习、推理和解决问题的能力。",
+    "note": "倒装句，主语为a tall claim，Central to hereditarian science为表语前置；冒号后的that从句为claim的同位语从句，解释主张的具体内容。"
+   },
+   {
+    "en": "What the research revealed was the rather less surprising result: the educational benefits of selective schools largely disappear once pupils' inborn ability and socio-economic background were taken into account.",
+    "cn": "研究揭示的其实是一个不那么令人惊讶的结果：一旦将学生的先天能力和社会经济背景考虑在内，选拔性学校的教育优势基本上就消失了。",
+    "note": "What引导主语从句作主语；冒号后为result的同位语，具体说明结果内容；once引导时间状语从句表示条件。"
+   },
+   {
+    "en": "In understanding cognitive ability, we must not elevate discrimination to a science, allowing people to climb the ladder of life only as far as their cells might suggest.",
+    "cn": "在理解认知能力时，我们绝不能将歧视提升为科学，只允许人们在其细胞可能暗示的范围内攀登人生的阶梯。",
+    "note": "主句为we must not elevate...；allowing引导现在分词短语作结果状语；as far as引导程度状语从句，修饰climb的范围限度。"
+   }
+  ]
+ }
+}

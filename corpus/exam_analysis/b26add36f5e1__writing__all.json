@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "b26add36f5e1__writing__all",
+ "examId": "b26add36f5e1",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2018 年 12 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:19:53.850Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 47135,
+ "usage": {
+  "prompt_tokens": 691,
+  "completion_tokens": 2702,
+  "total_tokens": 3393,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 691,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2702,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 691,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"如何平衡工作职责与个人兴趣\"展开论述，要求不少于150词、不超过200词。",
+    "outline": [
+     "第一段：引出话题，指出在快节奏的现代社会中，平衡工作职责与个人兴趣是许多职场人士面临的重要课题。",
+     "第二段：分层提出具体建议——有效的时间管理、明确工作与生活的边界、以及尽量选择与兴趣契合的职业方向。",
+     "第三段：总结全文，强调实现二者平衡对个人长期幸福与职业可持续发展的重要意义。"
+    ],
+    "sample": "In today's fast-paced world, striking a balance between job responsibilities and personal interests has become an increasingly pressing concern for many professionals. How to achieve this equilibrium deserves serious consideration.\n\nTo begin with, effective time management serves as the cornerstone of maintaining this balance. By setting clear priorities and creating structured schedules, individuals can allocate sufficient time for both career obligations and personal pursuits. Moreover, it is essential to establish firm boundaries between work and leisure. Refusing to let professional duties encroach upon personal time enables people to engage wholeheartedly in hobbies and activities that rejuvenate their spirits. Additionally, seeking a career that aligns with one's passions can significantly reduce the perceived conflict between the two domains, as work itself becomes a source of fulfillment rather than a burden.\n\nIn conclusion, balancing job responsibilities and personal interests is not merely desirable but indispensable for long-term well-being. Through disciplined time management, clear boundaries, and thoughtful career choices, individuals can lead a more harmonious and rewarding life.",
+    "phrases": [
+     {
+      "en": "strike a balance between A and B",
+      "cn": "在A与B之间取得平衡；常用于议论文首段引出两难话题"
+     },
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "充当……的基石；比 is the basis of 更高级，适合论述核心观点"
+     },
+     {
+      "en": "allocate sufficient time for",
+      "cn": "为……分配充足的时间；比 spend enough time on 更正式"
+     },
+     {
+      "en": "establish firm boundaries between",
+      "cn": "在……之间建立明确界限；适合讨论工作与生活边界话题"
+     },
+     {
+      "en": "encroach upon",
+      "cn": "侵占、蚕食；用于表达工作对私人时间的侵蚀，词汇档次高"
+     },
+     {
+      "en": "align with one's passions",
+      "cn": "与个人热情/兴趣相契合；用于表达职业与兴趣的匹配"
+     },
+     {
+      "en": "not merely...but indispensable",
+      "cn": "不仅仅是……而且是不可或缺的；升级版 not only...but also 结构"
+     },
+     {
+      "en": "rejuvenate one's spirits",
+      "cn": "恢复精力、使精神焕发；比 relax oneself 更生动地道"
+     },
+     {
+      "en": "a source of fulfillment rather than a burden",
+      "cn": "成就感的来源而非负担；对比结构增强表达力度"
+     },
+     {
+      "en": "lead a harmonious and rewarding life",
+      "cn": "过上和谐且有意义的生活；适合用于结尾段升华主题"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只谈工作重要性或只谈兴趣爱好，未扣住\"如何平衡\"这一核心",
+     "段落结构混乱：建议、原因、举例混在一起，缺乏逻辑层次标志词",
+     "词汇重复：全篇反复使用 important/good，未做同义替换显得单调",
+     "连接词堆砌：过度使用 firstly/secondly/thirdly 而缺乏实质性论证内容",
+     "字数不达标：低于150词将被直接扣分，应在写作时预估段落长度"
+    ],
+    "upgrades": [
+     {
+      "plain": "We should manage our time well.",
+      "better": "Effective time management serves as the cornerstone of maintaining this balance.",
+      "note": "用主语抽象化+serve as句型替代口语化祈使句，更具学术文风"
+     },
+     {
+      "plain": "We should not let work take up all our free time.",
+      "better": "Refusing to let professional duties encroach upon personal time enables people to engage wholeheartedly in restorative activities.",
+      "note": "动名词作主语+高级动词encroach+结果状语，句式更复杂丰富"
+     },
+     {
+      "plain": "It is important to balance work and interests.",
+      "better": "Balancing job responsibilities and personal interests is not merely desirable but indispensable for long-term well-being.",
+      "note": "动名词主语+not merely...but结构+具体化修饰语，层次感更强"
+     },
+     {
+      "plain": "If your job matches your interests, you will feel happy.",
+      "better": "Seeking a career that aligns with one's passions can significantly reduce the perceived conflict between the two domains.",
+      "note": "定语从句+学术用词perceived conflict，论证更严谨有深度"
+     },
+     {
+      "plain": "In a word, we should try to balance them.",
+      "better": "Through disciplined time management, firm boundaries, and thoughtful career choices, individuals can lead a more harmonious and rewarding life.",
+      "note": "介词短语前置+三项并列回扣论点，结尾有力且首尾呼应"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Striking a balance between job responsibilities and personal interests has become an increasingly pressing concern for many professionals. —— 动名词作主语引出话题，pressing concern 比 important problem 更高级",
+   "Refusing to let professional duties encroach upon personal time enables people to engage wholeheartedly in hobbies that rejuvenate their spirits. —— 动名词主语+enable sb. to do+定语从句，一句话展示三种高分句式",
+   "Seeking a career that aligns with one's passions can significantly reduce the perceived conflict between the two domains. —— align with 搭配精准，perceived conflict 体现批判性思维深度",
+   "Balancing job responsibilities and personal interests is not merely desirable but indispensable for long-term well-being. —— not merely...but... 升级对比结构，indispensable 一词胜过 very important",
+   "Through disciplined time management, firm boundaries, and thoughtful career choices, individuals can lead a more harmonious and rewarding life. —— 三项并列的介词短语前置，结尾段回扣全文论点，结构工整有力"
+  ]
+ }
+}

@@ -1,0 +1,177 @@
+{
+ "schemaVersion": 1,
+ "id": "b07d0f41f501__reading__1",
+ "examId": "b07d0f41f501",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年考研英语真题",
+ "year": 2026,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:58:43.523Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58708,
+ "usage": {
+  "prompt_tokens": 1740,
+  "completion_tokens": 3480,
+  "total_tokens": 5220,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1740,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3480,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1740,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "基因组研究揭示驴的驯化起源",
+  "gist": "研究人员通过分析200多头驴的基因组，将驴的驯化追溯至约7000年前东非的一次事件，比马的驯化早约3000年。研究还揭示了驴如何从非洲扩散至欧亚大陆，其驯化可能与撒哈拉沙漠扩张有关。该研究有助于未来对驴的科学管理。",
+  "structure": [
+   "第1-2段：引出研究发现——驴的驯化起源及DNA证据价值",
+   "第3-4段：研究方法与驯化原因的可能解释",
+   "第5-6段：研究意义——聚焦驴的未来保护与管理"
+  ],
+  "difficulty": "中等",
+  "translation": "数千年来，驴对推动人类文明进步至关重要。它们帮助拉动轮式车辆、运载旅行者并在全球范围内运送货物。但这些动物最初在何时何地与人类产生联系一直是个谜。如今，研究人员利用200多头驴的基因组，将其驯化追溯到约7000年前发生在东非的一次事件——比人类驯服马匹早了约3000年。该团队本月在《科学》杂志上发表了他们的研究成果。\n\n\"通过它们的DNA，这些动物正在讲述自己的历史，\"共同作者、佛罗里达大学马科动物研究员萨曼莎·布鲁克斯在一份声明中说。\"我们通常只能通过文字记录获得人类一方的历史，但文字历史当然并不总是准确记录事情的经过。通过研究这些DNA序列，我们获得了关于这些动物所生活的环境和它们所经历的生存考验的生物学证词。\"\n\n研究人员检测了来自全球31个国家的207头现代驴的基因组。他们还研究了15头野生马科动物和31头生活在约4000年前至100年前的早期驴的基因组。该团队重建了这些动物的进化树，并使用计算机模型精确定位了肯尼亚和非洲之角的牧民驯服野驴的驯化事件。随后，他们追踪了这些动物如何在大约2500年后从非洲大陆扩散到欧洲和亚洲。\n\n尽管最初的驯化为何发生仍不清楚，但《科学新闻》的弗雷达·克里尔报道称，该事件恰逢撒哈拉变得更大、更干燥。\"驴在运输物资方面是冠军，而且擅长穿越沙漠，\"共同作者、法国保罗·萨巴蒂埃大学的进化生物学家卢多维克·奥兰多告诉该刊物。史前人类可能驯化了驴来帮助穿越不断扩张的撒哈拉。\n\n研究人员表示，这些发现有助于让驴受到更多关注。这些动物可以从更多研究中受益：目前，在非洲赤道以南的驴尚无已发表的基因组数据。但了解这些动物最初在哪里被驯化，可以引导考古学家到一个狭窄的区域去搜寻有关最初被驯化的驴的线索。\n\n作者们写道，了解马科动物的基因构成不仅有助于揭示它们对人类历史的贡献，还可能在气候变化改变地球环境的情况下改善对它们的未来管理。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Now, researchers have used genomes of over 200 donkeys to trace their domestication back to a single event around 7,000 years ago in East Africa — about 3,000 years before humans tamed horses.",
+    "why": "原文明确指出驴的驯化发生在约7000年前，比人类驯服马匹早约3000年。选项C\"驴比马更早被驯化\"是对原文\"about 3,000 years before humans tamed horses\"的准确同义转述，逻辑直接对应，无需额外推理。",
+    "traps": "A项\"对人类祖先而言显得神秘\"偷换概念，原文说驴与人类联系的起源是个谜(mystery)，而非驴本身神秘；B项\"经历了多次驯化事件\"与原文\"a single event\"直接矛盾，属于反义干扰；D项\"被古代旅行者生动描绘\"无中生有，原文仅提及驴帮助运载旅行者，并非被旅行者描绘。",
+    "tip": "注意区分\"what is mysterious\"的主语，避免偷换概念。"
+   },
+   {
+    "number": 22,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Through their DNA, the animals are telling their history themselves... Looking at these DNA sequences, we get a biological testimony to the environment these animals lived in and the experiences they survived.",
+    "why": "布鲁克斯的核心观点是：通过分析驴的DNA序列，我们能获得关于这些动物所处环境和经历的\"生物学证词\"，即DNA分析能够揭示驴的历史。选项D\"基因分析提供了对驴的历史的洞察\"准确概括了这一观点，\"genetic analysis\"对应\"DNA sequences\"，\"insight\"对应\"biological testimony\"。",
+    "traps": "A项\"最早的栖息地难以追踪\"与布鲁克斯观点相悖，她强调DNA恰恰能揭示这些信息；B项\"读取DNA序列越来越容易\"原文未提及难易程度的变化，属于无中生有；C项\"文字记录包含重要线索\"曲解原文，布鲁克斯实际上在说文字记录有局限性（does not always record exactly），不如DNA证据可靠。",
+    "tip": "把握引言的核心对比：文字记录的局限vs. DNA证据的优势。"
+   },
+   {
+    "number": 23,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "They then traced how the animals spread across the rest of the continent into Europe and Asia about 2,500 years later.",
+    "why": "第三段描述研究方法时，明确提到研究人员追踪了驴如何从非洲扩散到欧洲和亚洲。选项A\"在世界范围内广泛扩散\"是对\"spread across the rest of the continent into Europe and Asia\"的同义概括，\"dispersed widely\"对应\"spread across\"。",
+    "traps": "B项\"在牧民帮助下生存\"张冠李戴，原文提到牧民是驯化的施动者，但研究并非调查驴如何在牧民帮助下生存；C项\"发展出某些行为特征\"无中生有，文章未涉及行为特征研究；D项\"适应不断变化的环境\"虽然文中提到环境变化（撒哈拉扩大），但研究内容是追踪扩散路径，而非适应机制。",
+    "tip": "题目问\"研究调查了什么\"，需回归研究方法段落精准定位。"
+   },
+   {
+    "number": 24,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "Donkeys are champions when it comes to carrying stuff and are good at crossing deserts... Prehistoric humans may have tamed donkeys to help navigate the expanding Sahara.",
+    "why": "尽管原文说驯化原因\"仍不清楚\"，但奥兰多指出驴擅长运输和穿越沙漠，并推测史前人类可能驯化驴来穿越扩张的撒哈拉。\"may have tamed\"表明这是一种可能的解释，而非定论。选项B\"提供了一种可能的解释\"准确反映了这种推测性语气。",
+    "traps": "A项\"挑战传统观点\"无据，文中未提及任何传统观点供挑战；C项\"呼吁来自撒哈拉的证据\"无中生有，奥兰多只是提出推测，并未呼吁寻找证据；D项\"与克里尔持不同观点\"曲解关系，克里尔是报道者而非观点持有者，二者并无分歧。",
+    "tip": "注意\"may have\"等情态动词传达的推测语气，对应\"possible explanation\"。"
+   },
+   {
+    "number": 25,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Not only does understanding the equines' genetic makeup help reveal their contribution to human history, but it also might improve their management in the future, as climate change alters the planet's environment, write the authors.",
+    "why": "文章最后一段作者明确写道，了解马科动物的基因构成不仅能揭示它们对人类历史的贡献，还可能\"改善对它们的未来管理\"。选项B\"更好地管理驴\"直接对应\"improve their management in the future\"。",
+    "traps": "A项\"更好地保护野生动物\"扩大范围，文章讨论的是驯化动物（驴）的管理，而非野生动物保护；C项\"恢复早期类型的驴\"无中生有，文中未提及恢复早期品种；D项\"提高对气候变化的意识\"偷换目的，气候变化在原文中是背景条件（as climate change alters...），而非研究想要提高意识的对象。",
+    "tip": "末段常出总结性观点，注意区分\"背景条件\"与\"研究目的\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "propelling",
+    "cn": "推动，驱动（v.）"
+   },
+   {
+    "w": "intertwined",
+    "cn": "紧密交织的，密切关联的（adj.）"
+   },
+   {
+    "w": "domestication",
+    "cn": "驯化（n.）"
+   },
+   {
+    "w": "testimony",
+    "cn": "证词，证据（n.）"
+   },
+   {
+    "w": "equids",
+    "cn": "马科动物（n.）"
+   },
+   {
+    "w": "pinpoint",
+    "cn": "精确定位，确定（v.）"
+   },
+   {
+    "w": "coincided",
+    "cn": "同时发生，吻合（v.）"
+   },
+   {
+    "w": "navigate",
+    "cn": "穿越，导航（v.）"
+   },
+   {
+    "w": "spotlight",
+    "cn": "聚光灯，公众关注（n.）"
+   },
+   {
+    "w": "genetic makeup",
+    "cn": "基因构成（n.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Now, researchers have used genomes of over 200 donkeys to trace their domestication back to a single event around 7,000 years ago in East Africa — about 3,000 years before humans tamed horses.",
+    "cn": "如今，研究人员利用200多头驴的基因组，将其驯化追溯到约7000年前发生在东非的一次事件——比人类驯服马匹早了约3000年。",
+    "note": "主干为researchers have used genomes to trace...back to...；破折号后为补充说明时间对比，about 3,000 years before引出与马驯化的时间差。"
+   },
+   {
+    "en": "We usually only get the human's side of history through written accounts, but of course written history does not always record exactly how something happened.",
+    "cn": "我们通常只能通过文字记录获得人类一方的历史，但文字历史当然并不总是准确记录事情的经过。",
+    "note": "but连接转折，前句说文字记录的局限（only...human's side），后句进一步否定其准确性（not always record exactly），为下文DNA证据的优势做铺垫。"
+   },
+   {
+    "en": "Not only does understanding the equines' genetic makeup help reveal their contribution to human history, but it also might improve their management in the future, as climate change alters the planet's environment, write the authors.",
+    "cn": "作者们写道，了解马科动物的基因构成不仅有助于揭示它们对人类历史的贡献，还可能在气候变化改变地球环境的情况下改善对它们的未来管理。",
+    "note": "Not only...but also...倒装结构，主语为understanding...makeup（动名词短语）；as引导原因/背景状语从句；write the authors为插入语，表明信息来源。"
+   }
+  ]
+ }
+}

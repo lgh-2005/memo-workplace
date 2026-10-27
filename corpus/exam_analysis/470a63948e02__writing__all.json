@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "470a63948e02__writing__all",
+ "examId": "470a63948e02",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年 6 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:46:29.495Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42134,
+ "usage": {
+  "prompt_tokens": 725,
+  "completion_tokens": 2506,
+  "total_tokens": 3231,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 725,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2506,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 725,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作：以指定首句开头，围绕\"心理健康应受到与身体健康同等重视\"展开论述，可评论、举例或结合个人经历，字数150-200词。",
+    "outline": [
+     "引出话题：以题目给定首句开篇，指出当代社会心理健康问题日益突出的背景与现状。",
+     "分析原因与举例论证：阐述为何心理健康值得同等关注（如心理问题对身体的影响、社会偏见导致的危害等），可结合研究或个人经历。",
+     "提出建议与总结：从政府、学校/职场、个人三个层面给出应对措施，呼吁将心理健康提升到与身体健康同等的地位。"
+    ],
+    "sample": "Today there is a growing awareness that mental well-being needs to be given as much attention as physical health. In an era dominated by relentless competition and information overload, psychological distress has become increasingly prevalent among people of all ages.\n\nThere are compelling reasons why mental health deserves equal priority. First, numerous studies have demonstrated that chronic stress and untreated depression can trigger severe physical ailments, including cardiovascular disease and weakened immunity. In other words, neglecting the mind inevitably undermines the body. Second, the stigma historically attached to mental disorders has prevented countless individuals from seeking timely professional help, leading to tragic consequences such as rising suicide rates among young adults. My own experience of battling exam anxiety in college taught me that acknowledging psychological struggles is the crucial first step toward recovery.\n\nTo address this issue, concerted efforts are required from multiple stakeholders. Governments should allocate more resources to public mental health services, while schools and workplaces ought to integrate psychological counseling into their support systems. Meanwhile, individuals can cultivate healthy habits like meditation and open communication with trusted companions. Only by treating mental well-being on an equal footing with physical health can we build a truly harmonious society.",
+    "phrases": [
+     {
+      "en": "a growing awareness that...",
+      "cn": "越来越多的人意识到……；用于引出社会共识型话题，后接同位语从句。"
+     },
+     {
+      "en": "psychological distress",
+      "cn": "心理困扰；比 mental problem 更正式、学术，适合议论文使用。"
+     },
+     {
+      "en": "on an equal footing with",
+      "cn": "与……处于同等地位；常用于强调两者应被平等对待。"
+     },
+     {
+      "en": "the stigma attached to",
+      "cn": "附加于……的社会偏见/污名；讨论心理健康话题的高频搭配。"
+     },
+     {
+      "en": "trigger severe physical ailments",
+      "cn": "引发严重的身体疾病；trigger 比 cause 更强调诱因关系。"
+     },
+     {
+      "en": "concerted efforts from multiple stakeholders",
+      "cn": "多方利益相关者的协同努力；体现多角度论证的高级表达。"
+     },
+     {
+      "en": "allocate more resources to",
+      "cn": "向……分配更多资源；政策建议类常用动宾搭配。"
+     },
+     {
+      "en": "integrate...into...",
+      "cn": "将……纳入/融入……；建议类段落的实用句型。"
+     },
+     {
+      "en": "the crucial first step toward recovery",
+      "cn": "迈向康复的关键第一步；适用于个人经历叙述。"
+     },
+     {
+      "en": "cultivate healthy habits",
+      "cn": "培养健康习惯；cultivate 比 develop 更书面、更有文采。"
+     }
+    ],
+    "pitfalls": [
+     "首句必须原文照抄，不可遗漏或改写任何单词，否则扣分。",
+     "全文应紧扣\"心理健康 vs 身体健康\"的对比主线，切忌跑题泛谈健康。",
+     "词数须在150-200之间，过短内容单薄扣分，超出200词也可能被扣分。",
+     "避免中式英语如 protect our mental（应为 safeguard our mental well-being）。",
+     "段落之间需有逻辑衔接词（如 First/Second/Meanwhile），不可三段散装。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Mental health is very important.",
+      "better": "Mental well-being deserves no less attention than its physical counterpart.",
+      "note": "用 no less...than 和 counterpart 替代空泛的 very important，表达更精准、更具对比感。"
+     },
+     {
+      "plain": "Many people have mental problems but do not see a doctor.",
+      "better": "The stigma historically attached to mental disorders has prevented countless individuals from seeking timely professional help.",
+      "note": "将原因（社会偏见）融入主语，使用现在完成时体现持续性，信息密度更高。"
+     },
+     {
+      "plain": "The government should do something to help.",
+      "better": "Governments should allocate more resources to public mental health services.",
+      "note": "用具体动作 allocate resources 替代模糊的 do something，建议更有力、更可操作。"
+     },
+     {
+      "plain": "We should pay attention to mental health.",
+      "better": "Only by treating mental well-being on an equal footing with physical health can we build a truly harmonious society.",
+      "note": "使用 only by... 倒装句收束全文，呼应主题且句式高级，令结尾更有力量感。"
+     },
+     {
+      "plain": "I also had mental health problems before.",
+      "better": "My own experience of battling exam anxiety in college taught me that acknowledging psychological struggles is the crucial first step toward recovery.",
+      "note": "用 battling、acknowledging 等动名词结构丰富细节，比笼统叙述更有说服力。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only by treating mental well-being on an equal footing with physical health can we build a truly harmonious society. —— 只有将心理健康提升到与身体健康同等的地位，我们才能构建真正和谐的社会。（only by... 倒装句，适合结尾点题）",
+   "The stigma historically attached to mental disorders has prevented countless individuals from seeking timely professional help. —— 长期以来附加在心理疾病上的社会偏见使无数人无法及时寻求专业帮助。（过去分词后置定语 + prevent...from... 经典结构）",
+   "Chronic stress and untreated depression can trigger severe physical ailments, including cardiovascular disease and weakened immunity. —— 长期压力和未经治疗的抑郁症可引发严重的身体疾病，包括心血管疾病和免疫力下降。（医学词汇提升专业感）",
+   "In an era dominated by relentless competition and information overload, psychological distress has become increasingly prevalent. —— 在激烈竞争和信息过载主导的时代，心理困扰变得愈加普遍。（过去分词短语作后置定语，开篇造势）",
+   "Acknowledging psychological struggles is the crucial first step toward recovery. —— 承认心理上的挣扎是迈向康复的关键第一步。（动名词作主语，简洁有力，适合引述个人感悟）"
+  ]
+ }
+}

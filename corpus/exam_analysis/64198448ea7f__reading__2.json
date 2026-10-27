@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "64198448ea7f__reading__2",
+ "examId": "64198448ea7f",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 12 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:45:58.782Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54543,
+ "usage": {
+  "prompt_tokens": 1801,
+  "completion_tokens": 3459,
+  "total_tokens": 5260,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1801,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3459,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1801,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学家意外创造出降解塑料的酶",
+  "gist": "科学家在研究2016年日本发现的天然降解塑料细菌时，意外改良了一种能分解塑料饮料瓶的酶。该酶有望实现塑料瓶的完全回收，减少石油开采和环境中的塑料污染，但专家提醒需评估其全生命周期的环境影响。",
+  "structure": [
+   "第1-3段：酶的意外发现与改良经过",
+   "第4-5段：酶的工作原理及回收前景",
+   "第6-7段：塑料污染现状与酶的优势",
+   "第8-9段：经济可行性讨论与环保提醒"
+  ],
+  "difficulty": "中等",
+  "translation": "科学家意外创造了一种能分解塑料饮料瓶的酶。这一突破可能有助于解决全球塑料污染危机，因为它首次实现了塑料瓶的完全回收。\n\n这项新研究受到2016年一项发现的推动——在日本一个垃圾场发现了第一种自然进化出吞食塑料能力的细菌。科学家现已揭示了该细菌产生的关键酶的详细结构。\n\n随后，一个国际团队对该酶进行了调整，以了解它是如何进化的，但测试表明他们意外地使这种分子在分解饮料瓶所用塑料方面变得更加高效。\"实际结果是我们改进了这种酶，这让人有点震惊，\"英国朴茨茅斯大学的首席研究员麦吉汉教授说。\n\n目前，该酶需要几天时间才能开始分解塑料，这比塑料在海洋中需要数百年才能降解要快得多，但研究人员对进一步加速这一过程并使其成为可行的大规模工艺持乐观态度。\n\n\"我们希望做的是利用这种酶将塑料恢复为其原始成分，这样我们就可以真正将其回收再造成塑料，\"麦吉汉说。\"这意味着我们不再需要开采更多石油，从根本上说，它应该能减少环境中的塑料数量。\"\n\n全球每分钟售出约一百万个塑料瓶，其中仅14%被回收，许多最终流入海洋，污染了最偏远的地区，危害海洋生物，并可能影响食用海鲜的人类。\"塑料对降解具有令人难以置信的抵抗力，\"麦吉汉说。\"它是那些被制造得稍微过于完美的神奇材料之一。\"\n\n目前，那些被回收的瓶子只能被转化为用于制作衣服或地毯的不透明纤维，而这种新酶则展示了一种将旧的透明塑料瓶回收再造成新的透明塑料瓶的途径。\n\n\"你总是面临着石油便宜、因此塑料也便宜这个事实，\"麦吉汉说。\"对制造商来说，生产更多这种东西比尝试回收要容易得多，但我相信这里存在公共利益：公众认知变化如此之大，以至于企业开始研究如何真正回收这些瓶子。\"\n\n英国曼彻斯特大学的阿迪萨·阿扎帕季奇教授同意该酶可能有用，但补充道：\"需要进行完整的生命周期评估，以确保该技术不会在解决一个环境问题——废弃物——的同时，引发其他问题，包括额外的温室气体排放。\"",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The breakthrough could help solve the global plastic pollution crisis by enabling for the first time the full recycling of bottles.",
+    "why": "原文第一段明确指出，这一突破\"首次实现塑料瓶的完全回收\"（enabling for the first time the full recycling of bottles），B选项\"可能使塑料瓶的完全回收成为现实\"是对此的准确同义改写，full recycling对应full recycling，a reality对应enabling for the first time。",
+    "traps": "A选项\"在一次实验室实验事故中被识别\"偷换概念，原文说的是\"意外改良\"而非\"意外发现\"，且发现源于日本垃圾场而非实验室；C选项\"通过不懈努力取得的突破\"与原文\"by accident（意外）\"直接矛盾；D选项\"可能引发塑料行业的根本性变革\"属于过度推断，原文未提及塑料行业改革。",
+    "tip": "注意区分\"意外发现\"和\"意外改良\"的区别。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "the discovery in 2016 of the first bacterium that had naturally evolved to eat plastic at a waste dump in Japan",
+    "why": "原文第二段明确说明，2016年发现了第一种\"自然进化出吞食塑料能力\"的细菌（naturally evolved to eat plastic）。A选项\"它天生具有消耗塑料的能力\"是对naturally evolved to eat plastic的准确同义转述，natural ability对应naturally evolved，consume对应eat。",
+    "traps": "B选项\"高速繁殖的细菌\"原文完全未提及繁殖速率，属于无中生有；C选项\"对塑料瓶回收至关重要\"虽有一定关联，但原文强调的是该细菌的天然特性而非其在回收中的作用，偷换问题焦点；D选项\"化学结构不为科学家所知\"与原文\"Scientists have now revealed the detailed structure\"矛盾。",
+    "tip": "题目问的是bug的特征，定位到细菌本身的描述即可。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "An international team then adjusted the enzyme to see how it had evolved, but tests showed they had accidentally made the molecule even better at breaking down the plastic",
+    "why": "原文第三段说科学家调整酶后，测试表明他们\"意外地使该分子在分解塑料方面更加高效\"（accidentally made the molecule even better）。A选项\"偶然使其更有效\"完全对应：by chance对应accidentally，more effective对应even better at breaking down。",
+    "traps": "B选项\"发现了一种非凡的化学物质\"属于无中生有，原文是改良而非发现新物质；C选项\"改变了其基本分子组成\"过度引申，原文说的是adjusted（调整）而非根本性改变分子组成；D选项\"发现其进化过程加速了\"混淆了研究目的与实际结果，加速的是分解能力而非进化过程。",
+    "tip": "关注转折词but后的信息，往往是出题的关键。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "perception is changing so much that companies are starting to look at how they can properly recycle these bottles.",
+    "why": "原文最后一段麦吉汉教授说\"公众认知变化如此之大，以至于企业开始研究如何真正回收这些瓶子\"（companies are starting to look at how they can properly recycle）。D选项\"制造商正开始探索回收方法\"准确对应：beginning to explore对应starting to look at，ways of doing it对应how they can properly recycle。",
+    "traps": "A选项\"制造商正在越来越大规模地实施\"过度推断，原文只说\"开始研究\"而非\"正在大规模实施\"；B选项\"为制造商带来巨大商机\"无中生有，原文未提及商业机会；C选项\"引发了公众的持续兴趣\"偷换主语，原文是perception is changing（认知在变化）而非persistent interest（持续兴趣），且描述对象是公众认知而非兴趣。",
+    "tip": "注意starting to look at表示\"刚开始探索\"，与\"已大规模实施\"有本质区别。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "A full life-cycle assessment would be needed to ensure that the technology does not solve one environmental problem—waste—at the expense of others, including additional greenhouse gas emissions.",
+    "why": "阿扎帕季奇教授建议需要进行完整的生命周期评估，以确保该技术不会在解决一个环境问题的同时\"以牺牲其他环境问题为代价\"（at the expense of others），包括额外的温室气体排放。C选项\"评估其对环境可能产生的负面影响\"准确概括了这一建议的核心。",
+    "traps": "A选项\"开发技术解决温室气体排放\"偷换了建议重点，温室气体排放只是可能的负面影响之一，并非建议开发相关技术；B选项\"考虑生产酶的额外成本\"无中生有，原文未提及生产成本问题；D选项\"研究酶的完整生命周期作为第一步\"混淆概念，full life-cycle assessment指的是对该技术（而非酶本身）进行全生命周期环境评估，而非研究酶的生命周期。",
+    "tip": "at the expense of others是关键短语，表明核心关切是可能带来的其他环境问题。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "spurred",
+    "cn": "v. 刺激，推动，促进"
+   },
+   {
+    "w": "bacterium",
+    "cn": "n. 细菌（复数bacteria）"
+   },
+   {
+    "w": "molecule",
+    "cn": "n. 分子"
+   },
+   {
+    "w": "viable",
+    "cn": "adj. 可行的，切实可行的"
+   },
+   {
+    "w": "degradation",
+    "cn": "n. 降解，分解；退化"
+   },
+   {
+    "w": "opaque",
+    "cn": "adj. 不透明的；难理解的"
+   },
+   {
+    "w": "perception",
+    "cn": "n. 认知，看法；感知"
+   },
+   {
+    "w": "fundamentally",
+    "cn": "adv. 从根本上，基本上"
+   },
+   {
+    "w": "remotest",
+    "cn": "adj. 最偏远的（remote的最高级）"
+   },
+   {
+    "w": "at the expense of",
+    "cn": "prep. 以……为代价"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The breakthrough could help solve the global plastic pollution crisis by enabling for the first time the full recycling of bottles.",
+    "cn": "这一突破可能有助于解决全球塑料污染危机，因为它首次实现了塑料瓶的完全回收。",
+    "note": "主干为The breakthrough could help solve the crisis；by enabling引导方式状语，for the first time为插入成分修饰enabling。"
+   },
+   {
+    "en": "A full life-cycle assessment would be needed to ensure that the technology does not solve one environmental problem—waste—at the expense of others, including additional greenhouse gas emissions.",
+    "cn": "需要进行完整的生命周期评估，以确保该技术不会在解决一个环境问题——废弃物——的同时，以牺牲其他环境问题为代价，包括额外的温室气体排放。",
+    "note": "主干为A full life-cycle assessment would be needed；to ensure引导目的状语从句；waste为破折号插入的同位语解释problem；at the expense of others为介词短语表代价；including引出补充说明。"
+   },
+   {
+    "en": "It is so easy for manufacturers to generate more of that stuff, rather than even try to recycle, but I believe there is a public interest here: perception is changing so much that companies are starting to look at how they can properly recycle these bottles.",
+    "cn": "对制造商来说，生产更多这种东西比尝试回收要容易得多，但我相信这里存在公共利益：公众认知变化如此之大，以至于企业开始研究如何真正回收这些瓶子。",
+    "note": "前半句It is so easy for...to...为形式主语结构，rather than引出对比；but转折后I believe引出宾语从句；冒号后so...that...为结果状语从句，how引导宾语从句嵌套其中。"
+   }
+  ]
+ }
+}

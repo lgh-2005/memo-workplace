@@ -14,15 +14,15 @@ const checks = [];
 const check = (name, ok, detail = '') => { checks.push({ name, ok, detail }); console.log(`${ok ? 'PASS' : 'FAIL'} ${name}${detail ? `: ${detail}` : ''}`); };
 const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
 const version = String(pkg.version);
-check('release version', version === '3.7.1', version);
-for (const file of ['server.js', 'public/index.html', 'public/app.js', 'public/sw.js', 'scripts/deploy.sh', 'scripts/rollback.sh', 'scripts/backup-restore-drill.sh', 'scripts/backup-restore-drill.mjs', 'scripts/online-health.mjs', 'scripts/security-audit.mjs', 'scripts/mobile-device-check.mjs', 'scripts/docs-consistency.mjs', 'scripts/study-plan-smoke.mjs', 'scripts/tts-smoke.mjs', 'scripts/ecdict-smoke.mjs', 'scripts/ecdict-bubble-ui-smoke.mjs', 'scripts/ecdict-build-lemma.mjs', 'scripts/today-response-smoke.mjs', 'scripts/today-snapshot-smoke.mjs', 'scripts/frontend-refinement-smoke.mjs', 'tools/tts/piper_worker.py', 'tools/tts/setup_piper.sh']) {
+check('release version', version === '3.8.0', version);
+for (const file of ['server.js', 'public/index.html', 'public/app.js', 'public/sw.js', 'scripts/deploy.sh', 'scripts/rollback.sh', 'scripts/backup-restore-drill.sh', 'scripts/backup-restore-drill.mjs', 'scripts/online-health.mjs', 'scripts/security-audit.mjs', 'scripts/mobile-device-check.mjs', 'scripts/docs-consistency.mjs', 'scripts/study-plan-smoke.mjs', 'scripts/tts-smoke.mjs', 'scripts/ecdict-smoke.mjs', 'scripts/ecdict-bubble-ui-smoke.mjs', 'scripts/ecdict-build-lemma.mjs', 'scripts/today-response-smoke.mjs', 'scripts/today-snapshot-smoke.mjs', 'scripts/frontend-refinement-smoke.mjs', 'tools/tts/piper_worker.py', 'tools/tts/setup_piper.sh', 'scripts/exam-analysis-build.mjs', 'scripts/exam-analysis-audit.mjs', 'scripts/exam-analysis-smoke.mjs']) {
   check(`required file ${file}`, existsSync(join(root, file)));
 }
 const index = await readFile(join(root, 'public', 'index.html'), 'utf8');
 const sw = await readFile(join(root, 'public', 'sw.js'), 'utf8');
-// v3.7.1：断言当前版本标识（原先写死 v3.7.0，升版后必然误报）
+// v3.8.0：断言跟随 package.json 版本（沿用 v3.7.1 的动态方案），并复核 SW 缓存名
 check('HTML version markers', (index.match(new RegExp(`v${version.replace(/\./g, '\\.')}`, 'g')) || []).length >= 3);
-check('service worker cache marker', sw.includes('wb-shell-v3.7.1'));
+check('service worker cache marker', sw.includes(`wb-shell-v${version}`));
 const diff = spawnSync('git', ['-C', root, 'diff', '--check'], { encoding: 'utf8' });
 if (existsSync(join(root, '.git'))) check('git whitespace', diff.status === 0, diff.status === 0 ? '' : (diff.stderr.trim() || diff.stdout.trim()));
 if (args.includes('--refs') || args.includes('--remote')) {

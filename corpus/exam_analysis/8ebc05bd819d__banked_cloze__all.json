@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "8ebc05bd819d__banked_cloze__all",
+ "examId": "8ebc05bd819d",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2024 年 12 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:56:58.114Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61524,
+ "usage": {
+  "prompt_tokens": 1435,
+  "completion_tokens": 3596,
+  "total_tokens": 5031,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1435,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3596,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1435,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "对话中的对称性与协作沟通技巧",
+  "gist": "文章指出协作式对话需要倾听、积极态度和情绪管控等技能，并重点阐述了对话中\"对称性\"的重要性——包括双方发言时间、语速音量和观点权重的均衡。一旦对称性被打破，对话效果和关系质量都会下降，因此需要有意识地调整不平衡模式。",
+  "difficulty": "中等",
+  "translation": "你是否曾与在乎的人讨论重要的事情，结果发现讨论令人沮丧而非富有成效？负面情绪会给你们建立共识的努力蒙上一层阴影。\n\n事实上，协作式问题解决对话需要技巧。强大的倾听能力至关重要。通过表达欣赏、给予亲切的微笑和温暖的评论来注入积极情绪也很有帮助。保持情绪基调处于平静状态的基本能力同样重要。如果对话的基调升温、愤怒爆发，对话就会从协作式转变为对抗式，进展很可能立刻停滞。\n\n此外，有效的对话通常还具有另一个重要特征：对称性。\n\n对话中的对称性是指双方发言量的平衡。你们是否各自获得了同等的发言时间？当一方占据了大部分发言时间时，这种不对称或缺乏平衡往往会让一方或双方都感到恼火。沉默的一方通常会厌倦只是倾听，而健谈的一方则可能感到负担过重。通常，双方都更希望有更平等的你来我往。\n\n不同的语速和音量也会侵蚀对称性。语速更快或音量更大的一方很容易开始占据更多的发言时间。语速较慢或声音较柔和的一方则难以获得发言机会。\n\n当一方的观点比另一方更受重视时，对话也会失去平衡。一个人的意见可能更具影响力，因为其表达方式更加有力。另一种观点可能往往被忽略，因为它的表达更加犹豫试探。\n\n如果任何一方相当持续地占据主导地位或消失无声，调整这种模式将会有所帮助。对话会感觉更有成效，同时整体关系也可能会感觉更加积极。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "L",
+    "correct": "shadow",
+    "why": "固定搭配 cast a shadow over 意为\"给……蒙上阴影\"，此处描述负面情绪对沟通努力的消极影响。空格前有冠词 a，需填名词，shadow 完美契合语境和搭配。",
+    "traps": "halt 虽也是名词，但 cast a halt 不构成英语搭配；其他名词类选项语义不符或词性不对，均可排除。",
+    "tip": "考查固定搭配 cast a shadow over。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "correct": "affectionate",
+    "why": "空格位于名词 smiles 之前，需要形容词修饰。上下文在列举传递积极情绪的方式：appreciation, ____ smiles, warm comments，affectionate（亲切的）与 warm 构成并列语义，逻辑通顺。",
+    "traps": "vigorous 虽为形容词，但\"有力的微笑\"语义不当；approximately 是副词，不能修饰名词，均不适用。",
+    "tip": "考查形容词修饰名词，需与 warm 语义并列。"
+   },
+   {
+    "number": 28,
+    "answer": "F",
+    "correct": "flips",
+    "why": "空格处需动词作谓语，主语为 the dialogue。flips from…to… 意为\"从……翻转/转变为……\"，描述对话性质从协作变为对抗的突然转变，语义和句法均吻合。",
+    "traps": "elapses 意为\"（时间）流逝\"，主语应为时间；erode 意为\"侵蚀\"，不与 from…to… 搭配，均不合适。",
+    "tip": "考查 flip from…to… 表示性质急剧转变。"
+   },
+   {
+    "number": 29,
+    "answer": "G",
+    "correct": "halt",
+    "why": "固定搭配 come to a halt 意为\"停下来、停滞\"，前面有 immediate 修饰，表达进展立刻中断。空格前有冠词，需填名词，halt 完美匹配。",
+    "traps": "shadow 虽为名词，但 come to a shadow 无此搭配；其他候选名词语义均不符合此处语境。",
+    "tip": "考查固定搭配 come to a halt（陷入停滞）。"
+   },
+   {
+    "number": 30,
+    "answer": "N",
+    "correct": "typically",
+    "why": "空格位于主语 the silent partner 和谓语 tires of 之间，需要副词修饰动词。typically 意为\"通常地\"，表示沉默一方一般会厌倦只听不说，符合语义逻辑。",
+    "traps": "approximately 虽为副词，但意为\"大约\"，修饰 tires of 语义不通；tentatively 意为\"试探性地\"，也不符合此处语境。",
+    "tip": "考查副词作状语修饰谓语动词。"
+   },
+   {
+    "number": 31,
+    "answer": "H",
+    "correct": "overburdened",
+    "why": "空格前为 feel，构成系表结构，需填形容词或过去分词。语境中 talker 承担了大部分说话责任，feel overburdened 意为\"感到负担过重\"，与前文 silent partner tires of listening 形成对比。",
+    "traps": "affectionate 意为\"亲切的\"，与 talker 感受的负面体验不符；vigorous 意为\"有力的\"，也不符合此处抱怨语境。",
+    "tip": "考查 feel + 形容词/过去分词构成系表结构。"
+   },
+   {
+    "number": 32,
+    "answer": "D",
+    "correct": "erode",
+    "why": "空格前为情态动词 can，需填动词原形。erode symmetry 意为\"侵蚀/削弱对称性\"，表示语速和音量差异会破坏对话平衡，语义恰当。",
+    "traps": "flips 语义为\"翻转\"，与 symmetry 搭配不当；predominates 为不及物动词，不能直接接宾语 symmetry。",
+    "tip": "考查动词与抽象名词的搭配，erode 常与平衡/信任类词共现。"
+   },
+   {
+    "number": 33,
+    "answer": "O",
+    "correct": "vigorous",
+    "why": "空格前为 more，空格处修饰 style of expression，需填形容词。vigorous 意为\"有力的、强劲的\"，表达方式更有力所以更有影响力，与下文 tentatively 形成鲜明对比。",
+    "traps": "affectionate 意为\"亲切的\"，不能解释为何观点更具影响力；其他形容词已在前文使用或语义不符。",
+    "tip": "考查形容词比较级结构，与下文 tentatively 构成对比。"
+   },
+   {
+    "number": 34,
+    "answer": "M",
+    "correct": "tentatively",
+    "why": "空格前为 more，修饰 expressed，需填副词。tentatively 意为\"试探性地、犹豫地\"，表达越犹豫则观点越容易被忽视，与上文 vigorous 形成反义对比，逻辑清晰。",
+    "traps": "approximately 意为\"大约地\"，修饰 expressed 语义不通；typically 意为\"通常\"，不能解释观点被忽略的原因。",
+    "tip": "考查副词修饰过去分词，与上段 vigorous 构成对比。"
+   },
+   {
+    "number": 35,
+    "answer": "I",
+    "correct": "predominates",
+    "why": "空格与 evaporates 由 or 并列，需填动词第三人称单数形式。predominates 意为\"占主导地位\"，与 evaporates（消失/沉默）形成两个极端——要么说太多要么完全沉默，完美概括全文讨论的不平衡现象。",
+    "traps": "elapses 意为\"（时间）流逝\"，主语为 partner 不合适；erode 为及物动词，此处无宾语，不符合句法要求。",
+    "tip": "考查并列动词语义对比，predominates 与 evaporates 构成两极。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "adversarial",
+    "cn": "adj. 对抗性的，敌对的"
+   },
+   {
+    "w": "symmetry",
+    "cn": "n. 对称性，均衡"
+   },
+   {
+    "w": "asymmetry",
+    "cn": "n. 不对称，不均衡"
+   },
+   {
+    "w": "affectionate",
+    "cn": "adj. 亲切的，充满深情的"
+   },
+   {
+    "w": "overburdened",
+    "cn": "adj. 负担过重的"
+   },
+   {
+    "w": "predominates",
+    "cn": "v. 占主导地位，占优势"
+   },
+   {
+    "w": "tentatively",
+    "cn": "adv. 试探性地，犹豫不决地"
+   },
+   {
+    "w": "vigorous",
+    "cn": "adj. 有力的，精力充沛的"
+   },
+   {
+    "w": "erode",
+    "cn": "v. 侵蚀，逐渐削弱"
+   },
+   {
+    "w": "sway",
+    "cn": "n. 影响力，支配（carry more sway 更有影响力）"
+   },
+   {
+    "w": "elapses",
+    "cn": "v.（时间）流逝，消逝"
+   },
+   {
+    "w": "collaborative",
+    "cn": "adj. 协作的，合作的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性（名词/动词/形容词/副词）分类标注。",
+   "第二步：根据空格前后的冠词、介词、助动词等语法标志判断所需词性，缩小候选范围。",
+   "第三步：结合上下文语义逻辑和固定搭配（如 cast a shadow, come to a halt）确定唯一答案。",
+   "第四步：注意段落间的对比关系（如 vigorous 与 tentatively），利用反义对照快速锁定答案。",
+   "第五步：填完后回读全文，检查语法一致性（主谓一致、时态）和语义连贯性，确保无遗漏冲突。"
+  ]
+ }
+}

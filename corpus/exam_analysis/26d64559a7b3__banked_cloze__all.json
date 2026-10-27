@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "26d64559a7b3__banked_cloze__all",
+ "examId": "26d64559a7b3",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2020 年 12 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:32:03.767Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62998,
+ "usage": {
+  "prompt_tokens": 1431,
+  "completion_tokens": 3735,
+  "total_tokens": 5166,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1431,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3735,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1431,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "新冠疫情对美国社会及各行业的深远影响",
+  "gist": "文章讨论了新冠疫情对旅行、酒店、百老汇、高校、企业等行业的严重冲击，指出虽然人们终将恢复面对面交往，但历史表明重大disruptions往往带来永久性的社会变革，部分行业（如邮轮业、公共交通）甚至可能无法在没有联邦援助的情况下存活下来。",
+  "difficulty": "中等",
+  "translation": "随着冠状病毒疫情暴发使美国人的出行意愿骤降，几乎所有涉及或促进面对面人际交往的活动似乎都在全面崩溃之中。美国国铁公司表示订票量下降了50%，退票量上升了300%。旧金山的酒店空置率介于70%至80%之间。百老汇于周四夜间停演。各大学正在清空校园，它们从未以如此大的规模尝试过在线教学。亚马逊、苹果和《纽约时报》等白领企业正要求员工在可预见的未来居家办公。\n\n但冠状病毒之后会发生什么呢？\n\n从某种程度上说，答案是：一切照旧。这场大流行病会夺去生命、扼杀经济、摧毁日常秩序，但它终将过去。美国人永远不会停止去看篮球比赛，不会停止去度假，他们仍会见面谈生意。迄今为止，没有任何去中心化的技术——无论是电话、电视还是互联网——曾削弱过人类想要握手交流的愿望，尽管技术专家们做出了相反的预测。\n\n然而，有切实的理由让人认为事情不会恢复到上周的样子。小的动荡引发小的社会变动；大的动荡则会带来永久性的改变。1980年纽约交通罢工被认为促成了该市若干长期变化，包括公交车道和自行车道的设立以及女性穿运动鞋上班的风气。1918年的西班牙流感大流行推动了欧洲国家医疗保健体系的发展。\n\n就此时此地而言，这甚至可能不是一个偏好选择的问题。邮轮业能否存活下来尚不确定。公共交通如果没有联邦政府的援助可能会破产。我们在2019年赖以运转的基础设施可能都将不复存在。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "N",
+    "correct": "vacancy",
+    "why": "空格处需要名词修饰 rates，构成\"_____ rates between 70 and 80 percent\"。vacancy rates（空置率）是酒店行业的常用术语，与前文酒店遭遇冲击的语境完全吻合。",
+    "traps": "credentials（资质证书）虽是名词但语义不通，cumulative（累积的）是形容词且无法构成合理的行业指标搭配。",
+    "tip": "识别行业术语 vacancy rate（空置率）是关键。"
+   },
+   {
+    "number": 27,
+    "answer": "I",
+    "correct": "scale",
+    "why": "空格前有 this，空格处需要名词。on this scale（以这样的规模）是固定搭配，表示大学从未以如此大的规模尝试过在线教学，与上下文逻辑一致。",
+    "traps": "其他名词如 preference、predictions 虽然也可以放在 this 后面，但与 tried online learning on this ___ 的语义搭配不合理。",
+    "tip": "熟悉固定搭配 on this/a...scale。"
+   },
+   {
+    "number": 28,
+    "answer": "F",
+    "correct": "foreseeable",
+    "why": "空格位于冠词 the 与名词 future 之间，需要形容词。for the foreseeable future（在可预见的未来）是高频固定搭配，指短期内不会改变的安排。",
+    "traps": "cumulative（累积的）虽也是形容词，但 cumulative future 不是合理搭配，语义上不通顺。",
+    "tip": "掌握固定搭配 for the foreseeable future。"
+   },
+   {
+    "number": 29,
+    "answer": "J",
+    "correct": "strangle",
+    "why": "空格与 take lives 和 destroy routines 并列，需要动词原形，且宾语为 economies。strangle economies（扼杀经济）形象表达疫情对经济的毁灭性打击，与并列动词语义等级一致。",
+    "traps": "survive 虽然也是动词原形，但语义不符（survive economies 不构成合理搭配）；disruptions 是名词不能作谓语动词。",
+    "tip": "并列结构要求词性一致，语义递进合理。"
+   },
+   {
+    "number": 30,
+    "answer": "G",
+    "correct": "predictions",
+    "why": "空格前有所有格 technologists'，需要名词。predictions to the contrary（相反的预测）表示尽管技术专家预言远程技术将取代面对面交流，但实际并未如此。",
+    "traps": "credentials（资质）语义不符；preference（偏好）接 to the contrary 不构成惯用表达。",
+    "tip": "所有格后必填名词，to the contrary 是关键搭配线索。"
+   },
+   {
+    "number": 31,
+    "answer": "D",
+    "correct": "disruptions",
+    "why": "空格前有形容词 Small，后谓语 create，需要可数名词复数。disruptions（动荡/干扰）与后文 big ones 对应，构成\"小动荡→小变动，大动荡→永久改变\"的对比逻辑。",
+    "traps": "credentials（资质证书）、predictions（预测）虽是复数名词，但放入此处与 create small societal shifts 的因果逻辑不符。",
+    "tip": "前后句对比结构是重要的语境线索。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "correct": "credited",
+    "why": "is ___ with prompting 构成被动结构，需要过去分词。be credited with（被认为促成了…）是固定搭配，表示1980年纽约交通罢工被认为促成了多项长期变化。",
+    "traps": "其他候选词中没有能与 is...with 构成被动固定搭配的过去分词形式。",
+    "tip": "掌握固定搭配 be credited with doing sth.。"
+   },
+   {
+    "number": 33,
+    "answer": "H",
+    "correct": "preference",
+    "why": "空格前有介词 of，需要名词。a question of preference（偏好/选择的问题）表明疫情后的变化可能不是人们主观意愿能决定的，而是客观必然，与下文行业可能无法存活的论述呼应。",
+    "traps": "credentials（资质）放入后语义为\"资质问题\"，与上下文讨论的是否能恢复原状的主题不符。",
+    "tip": "注意上下文因果逻辑：不是偏好问题，而是生存问题。"
+   },
+   {
+    "number": 34,
+    "answer": "M",
+    "correct": "survive",
+    "why": "空格前有情态动词 will，需要动词原形。survive（存活）表示邮轮业能否在疫情后存活下来都不确定，与全段悲观论调一致。",
+    "traps": "strangle 虽是动词原形，但为及物动词且语义（扼杀）用于此处不通——邮轮业不会\"扼杀\"（缺宾语）。",
+    "tip": "will 后接动词原形，注意及物/不及物动词的区分。"
+   },
+   {
+    "number": 35,
+    "answer": "E",
+    "correct": "federal",
+    "why": "空格位于介词 without 与名词 assistance 之间，需要形容词。federal assistance（联邦援助）是政府经济救助的常见表达，指公共交通若无联邦拨款可能破产。",
+    "traps": "cumulative（累积的）虽为形容词，但 cumulative assistance 语义不自然，且不符合文中讨论政府干预的语境。",
+    "tip": "政治经济类语境中 federal 是高频搭配词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "entail",
+    "cn": "v. 涉及，需要，使必要"
+   },
+   {
+    "w": "meltdown",
+    "cn": "n. 崩溃，（经济或形势的）急剧恶化"
+   },
+   {
+    "w": "vacancy",
+    "cn": "n. 空缺，空置；vacancy rate 空置率"
+   },
+   {
+    "w": "foreseeable",
+    "cn": "adj. 可预见的；for the foreseeable future 在可预见的未来"
+   },
+   {
+    "w": "strangle",
+    "cn": "v. 扼杀，抑制，使窒息"
+   },
+   {
+    "w": "credentials",
+    "cn": "n. 资格证书，证明；（pl.）资历"
+   },
+   {
+    "w": "disruption",
+    "cn": "n. 扰乱，中断，破裂"
+   },
+   {
+    "w": "credited",
+    "cn": "v. 归功于；be credited with 被认为促成了"
+   },
+   {
+    "w": "cumulative",
+    "cn": "adj. 累积的，渐增的"
+   },
+   {
+    "w": "decentralizing",
+    "cn": "adj. 去中心化的，分散的"
+   },
+   {
+    "w": "dent",
+    "cn": "v. 削弱，损害；n. 凹痕"
+   },
+   {
+    "w": "infrastructure",
+    "cn": "n. 基础设施"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——疫情冲击各行业及其长远影响。",
+   "第二步：将15个备选词按词性分类（名词/动词/形容词/副词），缩小每空候选范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、情态动词、所有格等）锁定所需词性。",
+   "第四步：利用固定搭配（如 on this scale, for the foreseeable future, be credited with）快速定位答案。",
+   "第五步：回读检查语义连贯性，确保已选词不重复且剩余词无法替代。"
+  ]
+ }
+}

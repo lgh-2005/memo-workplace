@@ -1,0 +1,170 @@
+{
+ "schemaVersion": 1,
+ "id": "07a3443e0b67__part_b__all",
+ "examId": "07a3443e0b67",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2018 年考研英语真题",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:37:35.972Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 47484,
+ "usage": {
+  "prompt_tokens": 1405,
+  "completion_tokens": 2147,
+  "total_tokens": 3552,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1405,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2147,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1405,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "艾森豪威尔行政办公楼的历史与建筑",
+  "type": "段落排序题",
+  "strategy": [
+   "先找首段：寻找对全文主题进行总括性介绍的段落，通常含有定义或概述性语言",
+   "关注时间线索：本文按时间顺序展开，注意各段中的年份并按先后排列",
+   "抓段落间衔接：关注代词指代、关键词复现（如建筑名称、人名）以及逻辑承接关系",
+   "利用已给定段落（C和F）的位置，前后推断空缺段的内容范围",
+   "检查排列后全文是否形成通顺的逻辑链：总介→意义→前史→立项→施工→完工→人物"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "E",
+    "why": "E段是全文的总起段，首次完整引出Eisenhower Executive Office Building (EEOB)这一核心主题，概括其在国家历史与建筑遗产中的独特地位，并交代设计者Mullett、建造年份(1871-1888)及建筑风格(French Second Empire)，为后续C段展开具体历史意义提供总括。",
+    "traps": "G段虽含早期历史，但以'The history of the EEOB began long before…'开头，预设读者已知EEOB，不适合作首段；A段涉及具体立项细节，也不宜开篇。",
+    "tip": "首段须总括全文主题，E段首句点明EEOB的独特地位即为标志。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "why": "C段末尾提到该建筑见证了许多历史事件，G段以'The history of the EEOB began long before its foundations were laid'自然承接，将叙述拉回建筑奠基之前的早期历史(1799-1820)，讲述旧建筑的火灾与拆除，为下一段A段介绍国会任命委员会重新选址建造做铺垫。时间线从早期历史过渡到1866年旧楼拆除。",
+    "traps": "A段起始于1869年，若直接接C段会跳过前史背景，缺少过渡；D段讲名人故事，属于尾声内容，放此处时间线断裂。",
+    "tip": "G段'began long before'回溯前史，紧承C段的历史意义概述。"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "why": "G段末尾提到1866年旧国务院大楼被拆除，A段紧接着讲述1869年国会任命委员会选址并规划新楼，Mullett的法国第二帝国风格设计被选中，1871年6月开工。时间线从1866→1869→1871年6月，完美衔接，且A段末尾'construction…began in June of 1871'为已知的F段（讲述17年施工过程）提供直接铺垫。",
+    "traps": "B段讲1875年完工入驻，时间上应在施工过程F段之后；D段无时间承接关系。",
+    "tip": "A段1869年立项→1871年开工，恰好衔接G段1866年拆楼与F段施工过程。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "why": "F段详细描述了施工过程和建筑内部细节（走廊、铸铁、楼梯等），B段以'Completed in 1875'开头，从施工转入完工与使用阶段，先讲国务院南翼1875年启用，再讲海军部东翼1879年入驻，按时间顺序自然承接F段的建造描写，且B段的interior decoration细节呼应F段的interior detail描述。",
+    "traps": "D段虽也涉及建筑使用，但聚焦名人轶事，属总结性内容，应置于更后；A段时间线在F段之前，不可能放在F段之后。",
+    "tip": "B段'Completed in 1875'直接承接F段的施工描写，进入启用阶段。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "why": "B段介绍了各部门陆续入驻的情况，D段进一步升华，列举在该建筑中办公过的著名总统（Theodore Roosevelt、Taft、Eisenhower等）、国务卿、战争部长和海军部长人数，以及Churchill到访、珍珠港事件后日本特使会面等重大历史事件，作为全文的收束段，呼应E段和C段提到的'历史意义'与'历史事件'，形成首尾呼应。",
+    "traps": "其余选项（A、G）均已在前文使用，且D段的总结性、列举性语言明显适合放在末尾压轴。",
+    "tip": "D段以名人与重大事件收束全文，呼应开篇'unique position in national history'。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "French Second Empire",
+    "cn": "法国第二帝国风格（n. 建筑风格名称）"
+   },
+   {
+    "w": "Supervising Architect",
+    "cn": "监造建筑师（n. 官方建筑设计职位）"
+   },
+   {
+    "w": "commission",
+    "cn": "委员会（n.）；委托（v.）"
+   },
+   {
+    "w": "elaborate",
+    "cn": "精心制作的，精美的（adj.）"
+   },
+   {
+    "w": "marquetry",
+    "cn": "镶嵌细工，木质拼花（n.）"
+   },
+   {
+    "w": "stenciled",
+    "cn": "用模板印刷的（adj.）"
+   },
+   {
+    "w": "balusters",
+    "cn": "栏杆柱，栏杆小柱（n.）"
+   },
+   {
+    "w": "rotundas",
+    "cn": "圆形大厅（n.）"
+   },
+   {
+    "w": "necessitated",
+    "cn": "使成为必要（v.）"
+   },
+   {
+    "w": "emissaries",
+    "cn": "使者，特使（n.）"
+   },
+   {
+    "w": "granite",
+    "cn": "花岗岩（n.）"
+   },
+   {
+    "w": "corridors",
+    "cn": "走廊，过道（n.）"
+   },
+   {
+    "w": "skylight domes",
+    "cn": "天窗穹顶（n.）"
+   },
+   {
+    "w": "demolition",
+    "cn": "拆除，拆毁（n.）"
+   },
+   {
+    "w": "Greek Revival",
+    "cn": "希腊复兴风格（n. 建筑风格名称）"
+   }
+  ]
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "3a1d5271950e__writing__all",
+ "examId": "3a1d5271950e",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2000 年考研英语真题（旧）",
+ "year": 2000,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:10:02.509Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 46289,
+ "usage": {
+  "prompt_tokens": 735,
+  "completion_tokens": 2195,
+  "total_tokens": 2930,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 735,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2195,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 735,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 36,
+    "part": "A",
+    "task": "看图作文：描述两幅对比图（1900年鱼多船少 vs. 1995年船多鱼少），推断画家意图，并提出应对措施。至少150词。",
+    "outline": [
+     "第一段：客观描述两幅图的内容——1900年海洋鱼群丰富、渔船稀少；1995年渔船密布、鱼几乎消失，形成鲜明对比。",
+     "第二段：推断画家意图——揭示人类过度捕捞导致海洋资源枯竭的严峻现实，警示人们自然资源并非取之不尽。",
+     "第三段：提出对策——政府立法限制捕捞、发展可持续渔业、提升公众环保意识等具体措施。"
+    ],
+    "sample": "As is vividly depicted in the two pictures, dramatic changes have taken place in the world's oceans over the past century. In the first picture, set in the year 1900, the sea is teeming with fish of all sizes, while only one small fishing boat floats on the vast surface. By contrast, the second picture, which is set in 1995, presents a strikingly different scene: the ocean is crowded with a large fleet of fishing vessels, yet barely a single fish can be spotted in the water beneath them.\n\nThe painter's purpose is profound and thought-provoking. Through this sharp contrast, the artist intends to sound an alarm about the reckless overexploitation of marine resources. The abundance of fish in the earlier era symbolizes the generous gifts of nature, whereas the barren ocean in the later period serves as a stark reminder that natural resources, if consumed without restraint, will eventually be exhausted. In essence, human greed and short-sightedness have pushed the ecological balance to the brink of collapse.\n\nTo reverse this disturbing trend, a series of counter-measures should be adopted without delay. First and foremost, governments must enact and enforce stricter laws to regulate fishing activities, including imposing seasonal bans and setting catch quotas. In addition, investment in sustainable aquaculture should be encouraged so that the demand for seafood can be met without further depleting wild stocks. Equally important is the need to raise public awareness of environmental conservation through education campaigns, enabling every citizen to understand that protecting natural resources is not merely an option but a responsibility. Only through the combined efforts of individuals, enterprises, and governments can we restore the health of our oceans and ensure a sustainable future for generations to come.",
+    "phrases": [
+     {
+      "en": "be teeming with",
+      "cn": "充满、充斥着（常用于描述大量生物聚集的场景）"
+     },
+     {
+      "en": "a strikingly different scene",
+      "cn": "一幅截然不同的景象（用于图画对比的高频表达）"
+     },
+     {
+      "en": "sound an alarm about",
+      "cn": "就……敲响警钟（适用于揭示社会问题类作文）"
+     },
+     {
+      "en": "reckless overexploitation",
+      "cn": "肆无忌惮的过度开发（名词短语，简洁有力）"
+     },
+     {
+      "en": "push ... to the brink of collapse",
+      "cn": "将……推向崩溃的边缘（形象表达危机程度）"
+     },
+     {
+      "en": "enact and enforce stricter laws",
+      "cn": "制定并执行更严格的法律（对策段高分搭配）"
+     },
+     {
+      "en": "sustainable aquaculture",
+      "cn": "可持续水产养殖（专业术语，展示词汇深度）"
+     },
+     {
+      "en": "deplete wild stocks",
+      "cn": "耗尽野生种群资源（环保话题核心词汇）"
+     },
+     {
+      "en": "combined efforts of ... ",
+      "cn": "……的共同努力（结尾呼吁的经典结构）"
+     },
+     {
+      "en": "for generations to come",
+      "cn": "为子孙后代（结尾升华常用短语）"
+     }
+    ],
+    "pitfalls": [
+     "只描述一幅图而忽视对比，未能体现两图之间的反差关系",
+     "推断画家意图时停留在表面复述图片，缺乏深层分析",
+     "对策段空喊口号（如'we should protect the environment'），缺少具体可行措施",
+     "时态混乱：描述图片时应以一般现在时或一般过去时为主，分析和建议用一般现在时",
+     "词汇贫乏，反复使用many fish / no fish，缺少同义替换与高级表达"
+    ],
+    "upgrades": [
+     {
+      "plain": "There are many fish in the sea in 1900.",
+      "better": "In the first picture, set in 1900, the sea is teeming with fish of all sizes.",
+      "note": "用分词短语作后置定语，同时以teeming with替换many，更生动地道"
+     },
+     {
+      "plain": "The painter wants to tell us that we should protect the ocean.",
+      "better": "Through this sharp contrast, the artist intends to sound an alarm about the reckless overexploitation of marine resources.",
+      "note": "明确点出对比手法，用sound an alarm替代直白的tell us，学术感更强"
+     },
+     {
+      "plain": "The government should make laws to stop too much fishing.",
+      "better": "Governments must enact and enforce stricter laws to regulate fishing activities, including imposing seasonal bans and setting catch quotas.",
+      "note": "用具体政策（季节性禁渔、捕捞配额）代替笼统说法，论证更有说服力"
+     },
+     {
+      "plain": "Everyone should work together to solve this problem.",
+      "better": "Only through the combined efforts of individuals, enterprises, and governments can we restore the health of our oceans.",
+      "note": "Only + 介词短语置于句首引起倒装，既有气势又展示语法功底"
+     },
+     {
+      "plain": "We need to let people know about this problem.",
+      "better": "Equally important is the need to raise public awareness of environmental conservation through education campaigns.",
+      "note": "用表语前置倒装句式开头，raise public awareness为高频学术表达"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "In the first picture, the sea is teeming with fish of all sizes, while only one small fishing boat floats on the vast surface. —— 用teeming with + while对比句描述图一，画面感强且结构工整。",
+   "The barren ocean in the later period serves as a stark reminder that natural resources, if consumed without restraint, will eventually be exhausted. —— serve as a stark reminder引出警示主题，if省略句嵌入条件，句式高级。",
+   "Human greed and short-sightedness have pushed the ecological balance to the brink of collapse. —— 将抽象品质（贪婪、短视）作主语，push to the brink of collapse隐喻生动，适用于各类环保话题。",
+   "Only through the combined efforts of individuals, enterprises, and governments can we restore the health of our oceans and ensure a sustainable future for generations to come. —— Only倒装+三方并列+双动词宾语，气势磅礴，是结尾升华的万能金句。"
+  ]
+ }
+}

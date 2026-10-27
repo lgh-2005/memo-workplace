@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "48c35b13a250__writing__all",
+ "examId": "48c35b13a250",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年 6 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:41:55.197Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41205,
+ "usage": {
+  "prompt_tokens": 720,
+  "completion_tokens": 2614,
+  "total_tokens": 3334,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 720,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2614,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 720,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "以指定首句开头，围绕\"越来越多人选择环保生活方式\"展开议论，可评论、举例或结合个人经历，字数150-200词。",
+    "outline": [
+     "引出话题：以题目给定首句开篇，分析这一趋势产生的原因（环保意识增强、环境恶化等）。",
+     "举例论证：列举人们践行绿色生活的具体方式，并结合个人经历加以说明，增强说服力。",
+     "辩证总结：承认挑战，但强调个体行动的积极意义，呼吁每个人承担环保责任。"
+    ],
+    "sample": "Nowadays more and more people choose to live an environmentally friendly lifestyle. This growing trend can be attributed to the increasing awareness of environmental degradation and the desire to preserve our planet for future generations.\n\nThere are numerous ways in which individuals are embracing green living. For instance, many consumers now prefer reusable shopping bags over plastic ones, and an increasing number of commuters opt for public transportation or cycling instead of driving private cars. In my own experience, I have switched to energy-efficient appliances and made a conscious effort to reduce food waste, which not only benefits the environment but also saves money in the long run.\n\nHowever, adopting an eco-friendly lifestyle is not without challenges. Some sustainable products remain considerably more expensive than their conventional counterparts, and certain green practices demand extra time and effort. Despite these obstacles, I firmly believe that every small step counts. If each individual commits to even minor environmental changes, the collective impact will be profound. Ultimately, living green is not merely a trend but a responsibility we all share.",
+    "phrases": [
+     {
+      "en": "be attributed to",
+      "cn": "归因于……；用于分析原因，比 because of 更正式学术"
+     },
+     {
+      "en": "environmental degradation",
+      "cn": "环境恶化；话题核心高频词组，搭配 awareness of 效果更佳"
+     },
+     {
+      "en": "opt for ... instead of ...",
+      "cn": "选择……而非……；用于对比两种做法，逻辑清晰"
+     },
+     {
+      "en": "make a conscious effort to do",
+      "cn": "有意识地努力做某事；体现主动性，比 try to 更高级"
+     },
+     {
+      "en": "in the long run",
+      "cn": "从长远来看；常用于论述长期影响与收益"
+     },
+     {
+      "en": "is not without challenges",
+      "cn": "并非没有挑战；双重否定表肯定，语气委婉而有力"
+     },
+     {
+      "en": "conventional counterparts",
+      "cn": "传统的同类产品；counterpart 一词可替代 similar product，更地道"
+     },
+     {
+      "en": "the collective impact",
+      "cn": "集体影响/合力效应；用于从个体上升到整体层面的论述"
+     },
+     {
+      "en": "not merely ... but ...",
+      "cn": "不仅仅是……而是……；升级版 not only ... but also 结构"
+     },
+     {
+      "en": "commit to",
+      "cn": "致力于/承诺做……；比 decide to 更能体现决心与责任感"
+     }
+    ],
+    "pitfalls": [
+     "忘记以题目指定首句开头或擅自修改首句，直接扣分",
+     "全文仅泛泛而谈缺乏具体例子，内容空洞得分偏低",
+     "用词重复严重，如反复使用 good/important 而无同义替换",
+     "段落之间缺少过渡词，逻辑衔接生硬影响连贯性得分",
+     "词数不足150或超过200，均可能被扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Many people use cloth bags when shopping.",
+      "better": "An increasing number of consumers now prefer reusable shopping bags over disposable plastic ones.",
+      "note": "用具体比较结构替代简单陈述，信息量更大、表达更精准"
+     },
+     {
+      "plain": "I try to save energy at home.",
+      "better": "I have switched to energy-efficient appliances and made a conscious effort to reduce food waste.",
+      "note": "用具体行为代替笼统说法，细节丰富更有说服力"
+     },
+     {
+      "plain": "Green living is a good thing for everyone.",
+      "better": "Living green is not merely a trend but a responsibility we all share.",
+      "note": "not merely ... but 结构提升句式层次，立意从现象升华到责任"
+     },
+     {
+      "plain": "Every person should do something for the environment.",
+      "better": "If each individual commits to even minor environmental changes, the collective impact will be profound.",
+      "note": "条件句+collective impact，逻辑更严密，用词更高级"
+     },
+     {
+      "plain": "Some green products are expensive, so it is hard.",
+      "better": "Some sustainable products remain considerably more expensive than their conventional counterparts.",
+      "note": "用 remain/considerably/counterparts 提升用词档次和学术感"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "This growing trend can be attributed to the increasing awareness of environmental degradation. 这一增长趋势可归因于人们对环境恶化的认识不断增强。（be attributed to 因果分析经典句型）",
+   "I have switched to energy-efficient appliances and made a conscious effort to reduce food waste, which not only benefits the environment but also saves money in the long run. 我已改用节能电器并有意识地减少食物浪费，这不仅有利于环境，从长远看还能省钱。（个人经历+非限制性定语从句+not only...but also 三重加分）",
+   "Adopting an eco-friendly lifestyle is not without challenges. 践行环保生活方式并非没有挑战。（双重否定表肯定，语气委婉有力，适用于辩证分析段）",
+   "If each individual commits to even minor environmental changes, the collective impact will be profound. 如果每个人都致力于哪怕微小的环保改变，其合力影响将是深远的。（条件句+从个体到集体的逻辑升华）",
+   "Living green is not merely a trend but a responsibility we all share. 绿色生活不仅仅是一种潮流，更是我们共同的责任。（not merely...but 结构收束全文，立意升华）"
+  ]
+ }
+}

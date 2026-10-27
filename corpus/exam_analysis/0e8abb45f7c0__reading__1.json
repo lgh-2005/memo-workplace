@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "0e8abb45f7c0__reading__1",
+ "examId": "0e8abb45f7c0",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 12 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:40:57.678Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59802,
+ "usage": {
+  "prompt_tokens": 1833,
+  "completion_tokens": 3742,
+  "total_tokens": 5575,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1833,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3742,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1833,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "工作相关自尊心的利与弊",
+  "gist": "文章基于一项对370名全职员工的心理学研究，探讨了将自我价值与工作挂钩的复杂后果。追求工作相关的自尊心可能导致消极动机、损害身心健康和个人生活，但研究也发现积极动机（如追求目标本身的乐趣和情感回报）可以中和消极影响，关键在于人是否拥有动力本身，而非动力的来源。",
+  "structure": [
+   "第1段：引出话题，指出追求工作自尊的后果既有正面也有负面",
+   "第2-3段：详述追求工作自尊带来的消极动机和身心损害",
+   "第4段：进一步说明负面情绪对个人生活的影响",
+   "第5段：转折揭示积极发现，正面动机可中和负面动机",
+   "第6段：总结，重点在于是否有动力而非动力来源"
+  ],
+  "difficulty": "中等",
+  "translation": "许多人将自我价值与工作联系在一起。职业越成功，他们对自己的感觉就越好。因此，与工作相关的自尊心是一个值得大力追求的理想目标，对吗？嗯，并非总是如此。根据最近一项研究——心理学家在三周内对370名全职员工进行了访谈——现实情况要复杂一些，其中既有消极后果，也有积极后果。\n\n人们天生趋向快乐、远离痛苦。在职场中，如果这种快乐来自一次提升了我们自尊心的胜利，人们就会试图重复这一成就。但重复这种成就往往并不现实，当它没有再次发生时，就可能导致严重的消极情绪后果。这种动机形式被普遍认为是一种消极的动机类型。它会阻碍其他更积极的动机类型，例如纯粹因为一项任务令人满足或愉悦而去完成它。\n\n取而代之占据员工内心的是一种迫切需要感到强大和自信的压力。于是他们只承担那些能满足自我驱动需求的任务和目标。结果，为了避免与失败相关的羞耻感和无价值感，他们过度透支自己，以至于随后对他们的身心健康产生了不利影响。这种不惜一切代价追求成功的内在压力需要付出大量努力。它耗尽了他们的精力，最终导致了不成比例的破坏性情绪。\n\n这些消极情绪不断累积，变成更加强烈的焦虑，影响了他们充分享受个人生活的能力。他们想要避免感到低人一等，最终却在友谊和休闲能力日渐萎缩方面真的感到低人一等。他们最终在工作中和工作之外都感到不满。\n\n但值得庆幸的是，对于那些几乎完全受这种特定动机形式驱动的人来说，消息并非全是坏的，甚至根本不坏。研究还发现了几个积极的结果，实际上可以超过那些有害的结果。虽然这类员工受到避免消极后果的驱动，但他们同样受到追求情感回报的兴奋感的激励。这种兴奋感使追求目标变得愉快，并激发了成功后将产生的快乐和自豪感。积极动机的一个效果是它能中和消极动机的存在。\n\n当然，它确实在一定程度上影响了人们的个人生活，其程度可被视为不健康的，因为休闲活动往往被视为生活中必须牺牲的部分，以应对工作和家庭的需求。然而，人们对工作的感受与其说与他们是否受自尊维护的驱动有关，不如说与他们仅仅是被激励着这一事实本身更有关。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "This form of motivation is widely regarded as a negative type of motivation. It can hinder other more positive motivation types, such as completing a task purely because it's fulfilling or enjoyable.",
+    "why": "文章第二段指出，当职场中的快乐来自于提升自尊的成功，人们会试图重复这一成就，但这往往不现实，由此产生严重的消极情绪后果。文章紧接着明确指出'这种动机形式被普遍认为是一种消极的动机类型'，直接对应A选项'它可能导致消极动机'。",
+    "traps": "B选项'有助于个人成就'——文章未说追求工作自尊有助于成就，反而强调重复成就不现实，属于无中生有。C选项'持续尝试能增加活力'——文中vigor只在第一段反问句中出现，且后文立即否定了这一乐观假设，属于曲解原文。D选项'情感和心理代价太大'——虽然文中提到消极影响，但这不是对追求工作自尊的整体概括，文章同时提到了积极方面，过于片面。",
+    "tip": "注意反问句后的转折，作者真正的态度往往在转折之后。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "As a result, to avoid feelings of shame and worthlessness associated with failure, they extend themselves to such a degree that there's a subsequent adverse effect on their well-being.",
+    "why": "第三段明确说明员工为避免失败带来的羞耻感和无价值感，过度透支自己，导致对身心健康产生不利影响。'extend themselves to such a degree'对应'不惜代价地努力'，'adverse effect on their well-being'直接对应B选项中的'at the expense of their well-being'（以身心健康为代价追求成功）。",
+    "traps": "A选项'承担远超能力的任务'——原文说他们只承担满足自我需求的任务，并非超出能力范围，属于偷换概念。C选项'不顾后果采取一切手段'——原文说的是内在压力导致过度付出，而非不择手段，属于过度推断。D选项'夸大羞耻感和无价值感'——原文是说他们试图避免这些感受，而非夸大它们，属于张冠李戴。",
+    "tip": "注意'at the expense of'是六级高频同义替换，常对应原文的adverse effect。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Those negative emotions mount into heightened anxiety, impacting their ability to make the most of their personal life.",
+    "why": "第四段明确指出，消极情绪升级为强烈焦虑，影响了他们'充分利用个人生活的能力'（make the most of their personal life）。B选项'不能充分享受个人生活'是对原文的准确同义改写，'enjoy their personal life to the full'对应'make the most of their personal life'。",
+    "traps": "A选项'常觉得不如同事'——原文说的是在友谊和休闲能力方面感到低人一等，并非与同事比较，属于偷换对象。C选项'对成就永不满足'——原文说的是在工作内外都不满，而非特指对成就不满，属于缩小范围。D选项'对友谊和休闲有自己的看法'——原文说的是友谊和休闲能力受损，而非有独特看法，属于曲解原文。",
+    "tip": "make the most of = enjoy to the full，注意这类常见同义替换。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "This excitement makes pursuing goals enjoyable and stimulates pleasure and pride that would result from success.",
+    "why": "第五段是好消息所在段。文章指出虽然这类员工受避免消极后果的驱动，但他们也受追求情感回报的兴奋感激励。这种兴奋感'使追求目标变得愉快'（makes pursuing goals enjoyable），并激发快乐和自豪感。A选项'追求目标可能是愉快的'准确对应此句。",
+    "traps": "B选项'情感回报值得付出的痛苦'——原文说积极结果可以超过消极结果，但未明确说'值得痛苦'，属于过度推断。C选项'消极后果大多可以避免'——原文说积极动机可以中和消极动机，而非'大多可避免'，属于程度夸大。D选项'持续尝试可实现膨胀自尊的目标'——原文未提及持续尝试就能实现目标，属于无中生有。",
+    "tip": "好消息类题目要精准定位转折段，关注also、but等信号词。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "However, the way people feel about their work has less to do with whether they're motivated by the preservation of self-esteem but more with the fact that they're simply motivated.",
+    "why": "末段最后一句是全文的总结性论点：人们对工作的感受与是否由自尊维护驱动关系不大，更重要的是他们'仅仅是被激励着'这一事实。D选项'只要有动力，人们就会对工作持积极态度'是对'more with the fact that they're simply motivated'的合理推断和同义改写。",
+    "traps": "A选项'员工必须牺牲以维护自尊'——原文提到牺牲休闲，但末句的重点在于动力本身而非牺牲，属于以偏概全。B选项'强动力使自尊膨胀'——原文未建立动力强度与自尊膨胀之间的因果关系，属于无中生有。C选项'追求目标影响个人生活到不健康的程度'——虽然文中有此表述，但这只是末段的让步部分，非作者最终结论，属于以偏概全。",
+    "tip": "末段推断题要抓住however后的核心论点，让步部分不是作者真正的结论。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "self-esteem",
+    "cn": "n. 自尊，自我评价"
+   },
+   {
+    "w": "vigor",
+    "cn": "n. 活力，精力，力量"
+   },
+   {
+    "w": "accomplishment",
+    "cn": "n. 成就，成绩；完成"
+   },
+   {
+    "w": "hinder",
+    "cn": "v. 阻碍，妨碍"
+   },
+   {
+    "w": "ego-driven",
+    "cn": "adj. 自我驱动的，受自我意识驱使的"
+   },
+   {
+    "w": "deplete",
+    "cn": "v. 耗尽，大量减少"
+   },
+   {
+    "w": "culminate",
+    "cn": "v. 达到顶点，以……告终"
+   },
+   {
+    "w": "disproportionate",
+    "cn": "adj. 不成比例的，不相称的"
+   },
+   {
+    "w": "mount",
+    "cn": "v. 增加，增长；攀登"
+   },
+   {
+    "w": "neutralize",
+    "cn": "v. 中和，抵消，使无效"
+   },
+   {
+    "w": "compel",
+    "cn": "v. 强迫，迫使；驱动"
+   },
+   {
+    "w": "outweigh",
+    "cn": "v. 超过，大于（在重要性或影响上）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As a result, to avoid feelings of shame and worthlessness associated with failure, they extend themselves to such a degree that there's a subsequent adverse effect on their well-being.",
+    "cn": "结果，为了避免与失败相关的羞耻感和无价值感，他们过度透支自己，以至于随后对他们的身心健康产生了不利影响。",
+    "note": "主干为they extend themselves to such a degree that...，其中to avoid...是目的状语，that引导结果状语从句，associated with failure是过去分词短语修饰feelings。"
+   },
+   {
+    "en": "Their desire to avoid feeling inferior ends up making them feel inferior when it comes to their diminished capacity for friendship and leisure.",
+    "cn": "他们想要避免感到低人一等的愿望，最终却在友谊和休闲能力日渐萎缩方面使他们真的感到低人一等。",
+    "note": "主语是Their desire（含to avoid...不定式作后置定语），谓语是ends up making，when it comes to引导条件状语，形成讽刺性的语义对比。"
+   },
+   {
+    "en": "However, the way people feel about their work has less to do with whether they're motivated by the preservation of self-esteem but more with the fact that they're simply motivated.",
+    "cn": "然而，人们对工作的感受与其说与他们是否受自尊维护的驱动有关，不如说与他们仅仅是被激励着这一事实更有关。",
+    "note": "主干为the way...has less to do with...but more with...，构成less...but more对比结构；whether引导宾语从句，that引导同位语从句修饰the fact。"
+   }
+  ]
+ }
+}

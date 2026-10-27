@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "41935877cd0a__reading__2",
+ "examId": "41935877cd0a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年考研英语真题",
+ "year": 2016,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:32:52.068Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67559,
+ "usage": {
+  "prompt_tokens": 1772,
+  "completion_tokens": 4090,
+  "total_tokens": 5862,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1772,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4090,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1772,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英国乡村保护与政治态度之间的矛盾",
+  "gist": "文章指出英国公众虽然高度珍视乡村，但这种情感未能在政治层面得到充分体现。各主要政党大多偏向乡村开发而非保护，作者批评了以\"住房危机\"为借口侵占绿地的做法，主张在城镇现有基础设施上建房，并赞赏英国半个世纪以来的城乡规划成就，呼吁继续有序发展、保护乡村面貌。",
+  "structure": [
+   "第1段：引出矛盾——公众热爱乡村但缺乏政治支持",
+   "第2段：回顾国家信托的历史贡献及乡村面临的威胁",
+   "第3段：各政党对乡村保护的立场对比",
+   "第4-5段：批驳'住房危机=水泥覆盖草地'的说辞，指出应在城市建房",
+   "第6段：总结——赞赏英国城乡规划成就，呼吁有序发展"
+  ],
+  "difficulty": "中等",
+  "translation": "历史上第一次，住在城镇的人口多于住在乡村的人口。在英国，这产生了一个奇特的结果。尽管民意调查显示，英国人将\"乡村\"与皇室、莎士比亚和国民医疗服务体系一同视为最令他们引以为豪的国家象征，但这种情感在政治上的支持却十分有限。\n\n一个世纪前，奥克塔维亚·希尔创建国家信托，并非为了拯救华丽的宅邸，而是为了\"永远为所有人保存自然之美\"。其目的专门是为城市居民提供休闲空间，让他们能体验\"清新的空气\"。希尔的推动后来促成了国家公园和绿化带的设立。乡村不会再增加了，而每年混凝土都在吞噬更多的乡村土地。乡村需要持续不断的守护。\n\n在下一次大选中，各大政党似乎都不太可能支持这种理念。保守党的规划改革明确将乡村开发置于保护之上，甚至授权在当地居民可能反对的地方进行\"规划外\"建设。可持续发展的概念被定义为有利可图。工党同样希望在地方议会反对开发时取消地方规划权。自由民主党则保持沉默。只有英国独立党嗅到了机会，站在了那些呼吁更审慎利用绿地的人一边。它发起的\"保护英格兰乡村运动\"令许多地方保守党组织惊恐不安。\n\n建设新房屋、工厂和办公室的合理地点是人口聚集之处，即基础设施已经到位的城市和城镇。伦敦房产代理机构斯特灵·阿克罗伊德最近确认，仅在伦敦地区就有足够的地块可建造五十万套住房，而且不会侵占绿化带。伦敦如此，各地方城市更是如此。\n\n\"住房危机\"等于\"草地被混凝土覆盖\"这一观念纯属游说团体的说辞。问题不在于是否需要更多住房，而一如既往在于把房子建在哪里。在游说压力下，乔治·奥斯本偏好在乡村新建住房，而非进行城市翻新改造。他偏好城外购物中心，而非城镇商业街。这不是自由市场，而是一个有偏见的市场。乡村城镇和村庄已经在发展，也将一直发展下去。最好的方式是让建设紧贴村镇边缘，尊重其特色。我们不会毁掉城市保护区，为什么要毁掉乡村保护区呢？\n\n发展应该是有规划的，而不是放任自流。仅次于荷兰，英国是欧洲人口最稠密的国家。半个世纪的城乡规划使英国得以保持令人羡慕的乡村和谐面貌，同时仍然允许低密度的城市生活。替代方案毫无悬念——那就是葡萄牙南部、西班牙或爱尔兰那样被破坏的景观。避免这种情况而非推动这种情况，应该成为左翼和右翼在政治光谱上的共识。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "While polls show Britons rate \"the countryside\" alongside the royal family, Shakespeare and the National Health Service (NHS) as what makes them proudest of their country, this has limited political support.",
+    "why": "原文第一段末句用 while 引出转折：虽然民调显示英国人将乡村与皇室、莎士比亚和NHS并列为最引以为豪的事物，但\"this has limited political support\"（这在政治上的支持十分有限）。A选项\"is not well reflected in politics\"（在政治上未能得到良好体现）是对原文\"limited political support\"的同义改写，完全吻合。",
+    "traps": "B项\"fully backed by the royal family\"偷换概念，原文仅将乡村与皇室并列为自豪对象，并非说皇室支持乡村情感；C项\"didn't start till the Shakespearean age\"无中生有，莎士比亚只是并列的自豪对象之一，与情感起始时间无关；D项\"brought much benefit to the NHS\"同属偷换关系，NHS只是同一组并列中的一项，未提及乡村情感对NHS有何好处。",
+    "tip": "注意 while 引导的让步转折，转折后的信息往往是考查重点。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "They don't make countryside any more, and every year concrete consumes more of it. It needs constant guardianship.",
+    "why": "第二段先回顾国家信托的成就——推动建立国家公园和绿化带。随后笔锋一转：\"They don't make countryside any more, and every year concrete consumes more of it\"（乡村不再增加，混凝土每年吞噬更多），说明这些成就正在被逐步蚕食破坏。又以\"It needs constant guardianship\"强调紧迫性。D选项\"gradually destroyed\"正对应\"every year concrete consumes more of it\"所传达的逐步破坏之意。",
+    "traps": "A项\"largely overshadowed\"（被遮蔽）文中无据，原文说的是被具体破坏而非被忽视；B项\"properly protected\"与原文语气完全相反，原文强调保护不力；C项\"effectively reinforced\"（有效加强）也与原文呼吁\"constant guardianship\"的忧虑语气矛盾。",
+    "tip": "注意段落内部的转折逻辑，先扬后抑常提示现状与过去成就的反差。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Only Ukip, sensing its chance, has sided with those pleading for a more considered approach to using green land. Its Campaign to Protect Rural England struck terror into many local Conservative parties.",
+    "why": "原文说Ukip\"sensing its chance\"（嗅到了机会），站在支持乡村保护一方，且其运动\"struck terror into many local Conservative parties\"（令许多地方保守党组织惊恐）。\"Sensing its chance\"暗示Ukip可能从中获益，而令保守党恐惧说明其影响力在扩大。C选项\"Ukip may gain from its support for rural conservation\"是对此推理的准确归纳。",
+    "traps": "A项\"Labour is under attack for opposing development\"张冠李戴，工党是支持开发而非反对开发；B项\"The Conservatives may abandon off-plan building\"与原文相反，保守党是授权off-plan建设的；D项\"The Liberal Democrats are losing political influence\"过度推断，原文仅说自民党对此问题保持沉默，并不等于失去政治影响力。",
+    "tip": "推断题需紧扣原文线索，\"sensing its chance\"是关键暗示词。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Under lobby pressure, George Osborne favours rural new-build against urban renovation and renewal. He favours out-of-town shopping sites against high streets.",
+    "why": "作者在第五段批评奥斯本在游说压力下偏好乡村新建而非城市翻新，偏好城外购物中心而非商业街，并称\"This is not a free market but a biased one\"。紧接着作者指出\"They do so best where building sticks to their edges and respects their character\"，暗示奥斯本的做法恰恰不尊重乡村特色。A选项\"shows his disregard for the character of rural areas\"与作者的批评一致。",
+    "traps": "B项\"stresses the necessity of easing the housing crisis\"错误，作者明确说住房危机是游说团体的说辞，奥斯本的做法并非真正解决住房问题；C项\"highlights his firm stand against lobby pressure\"与原文完全相反，原文说他是\"under lobby pressure\"（在游说压力下）行事；D项\"reveals a strong prejudice against urban areas\"方向偏差，作者的核心批评是对乡村的不尊重，而非对城市的偏见。",
+    "tip": "注意作者的评价态度，\"biased\"和\"respects their character\"是判断作者立场的关键词。"
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "Half a century of town and country planning has enabled it to retain an enviable rural coherence, while still permitting low-density urban living.",
+    "why": "最后一段作者用\"enviable rural coherence\"（令人羡慕的乡村和谐面貌）高度评价英国半个世纪的城乡规划成就，又以南欧被破坏的景观作反面例证来反衬这一规划的价值。C选项\"the town-and-country planning in Britain\"精准对应作者的赞赏对象。",
+    "traps": "A项\"the size of population\"非赞赏对象，作者提及人口稠密只是为了说明规划的重要性；B项\"the enviable urban lifestyle\"偷换原文，原文说的是enviable rural coherence而非urban lifestyle；D项\"the political life in today's Britain\"与作者态度相反，全文对当前政治生态持批评态度。",
+    "tip": "态度题需辨别作者赞赏的具体对象，不可混淆修饰语的搭配。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sentiment",
+    "cn": "n. 情感，感情；观点"
+   },
+   {
+    "w": "endorse",
+    "cn": "v. 支持，赞同；背书"
+   },
+   {
+    "w": "conservation",
+    "cn": "n. 保护，保存（尤指自然环境）"
+   },
+   {
+    "w": "sustainable",
+    "cn": "adj. 可持续的"
+   },
+   {
+    "w": "intrusion",
+    "cn": "n. 侵入，侵犯"
+   },
+   {
+    "w": "lobby",
+    "cn": "n. 游说团体；v. 游说"
+   },
+   {
+    "w": "renovation",
+    "cn": "n. 翻新，修缮"
+   },
+   {
+    "w": "coherence",
+    "cn": "n. 一致性，连贯性；和谐"
+   },
+   {
+    "w": "spectrum",
+    "cn": "n. 光谱；范围，系列"
+   },
+   {
+    "w": "dweller",
+    "cn": "n. 居住者，居民"
+   },
+   {
+    "w": "guardianship",
+    "cn": "n. 守护，监护"
+   },
+   {
+    "w": "corrupted",
+    "cn": "adj. 被破坏的，被损毁的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "While polls show Britons rate \"the countryside\" alongside the royal family, Shakespeare and the National Health Service (NHS) as what makes them proudest of their country, this has limited political support.",
+    "cn": "尽管民意调查显示英国人将\"乡村\"与皇室、莎士比亚和国民医疗服务体系一同视为最令他们引以为豪的国家象征，但这种情感在政治上的支持却十分有限。",
+    "note": "While引导让步状语从句，主句为this has limited political support；从句中rate...as...为核心结构，what引导宾语从句作as的宾语。"
+   },
+   {
+    "en": "The Conservatives' planning reform explicitly gives rural development priority over conservation, even authorising \"off-plan\" building where local people might object.",
+    "cn": "保守党的规划改革明确将乡村开发置于保护之上，甚至授权在当地居民可能反对的地方进行\"规划外\"建设。",
+    "note": "give A priority over B意为'使A优先于B'；even authorising为现在分词作补充说明；where引导地点状语从句修饰building。"
+   },
+   {
+    "en": "Half a century of town and country planning has enabled it to retain an enviable rural coherence, while still permitting low-density urban living.",
+    "cn": "半个世纪的城乡规划使英国得以保持令人羡慕的乡村和谐面貌，同时仍然允许低密度的城市生活。",
+    "note": "enable...to...为主干；while still permitting为让步/并列状语，表示'在……的同时'；it指代Britain。"
+   }
+  ]
+ }
+}

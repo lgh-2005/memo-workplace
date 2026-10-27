@@ -1,0 +1,209 @@
+{
+ "schemaVersion": 1,
+ "id": "4ee7bac862c0__translation__all",
+ "examId": "4ee7bac862c0",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2016 年 12 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:06:06.040Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35023,
+ "usage": {
+  "prompt_tokens": 809,
+  "completion_tokens": 2467,
+  "total_tokens": 3276,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 809,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2467,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 809,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国旅游业的迅速发展与前景",
+  "reference": "With the improvement of living standards, vacations have played an increasingly important role in the lives of Chinese people. In the past, Chinese people spent most of their time making a living and rarely had the opportunity to travel. In recent years, however, China's tourism industry has developed rapidly. The prosperity of the economy and the emergence of the affluent middle class have triggered an unprecedented tourism boom. Chinese people are not only traveling domestically, but traveling abroad has also become increasingly common. During the National Day holiday in 2016, tourism consumption totaled more than 400 billion yuan. According to the estimates of the World Trade Organization, China will become the world's largest tourism country by 2020 and will become the fastest-growing country in outbound tourism spending in the coming years.",
+  "sentences": [
+   {
+    "cn": "随着生活水平的提高，度假在中国人生活中的作用越来越重要。",
+    "en": "With the improvement of living standards, vacations have played an increasingly important role in the lives of Chinese people.",
+    "structure": "with + 名词 + of + 名词 引导伴随/背景状语，主句用现在完成时表示持续影响",
+    "keys": [
+     "生活水平 living standards",
+     "度假 vacation",
+     "越来越重要 an increasingly important role"
+    ]
+   },
+   {
+    "cn": "过去，中国人的时间主要花在谋生上，很少有机会外出旅行。",
+    "en": "In the past, Chinese people spent most of their time making a living and rarely had the opportunity to travel.",
+    "structure": "时间状语 In the past 置于句首，并列谓语 spent...and rarely had...，spend time doing sth 句型",
+    "keys": [
+     "谋生 make a living",
+     "很少有机会 rarely had the opportunity"
+    ]
+   },
+   {
+    "cn": "然而，近年来中国旅游业发展迅速。",
+    "en": "In recent years, however, China's tourism industry has developed rapidly.",
+    "structure": "however 插入语置于主语前，现在完成时表示近年来的持续发展",
+    "keys": [
+     "旅游业 tourism industry",
+     "发展迅速 has developed rapidly"
+    ]
+   },
+   {
+    "cn": "经济的繁荣和富裕中产阶级的出现，引发了一个前所未有的旅游热潮。",
+    "en": "The prosperity of the economy and the emergence of the affluent middle class have triggered an unprecedented tourism boom.",
+    "structure": "A and B 并列主语 + have triggered + 宾语，注意并列主语用复数谓语",
+    "keys": [
+     "经济的繁荣 the prosperity of the economy",
+     "富裕中产阶级 the affluent middle class",
+     "前所未有的 unprecedented",
+     "旅游热潮 tourism boom"
+    ]
+   },
+   {
+    "cn": "中国人不仅在国内旅游，出国旅游也越来越普遍。",
+    "en": "Chinese people are not only traveling domestically, but traveling abroad has also become increasingly common.",
+    "structure": "not only...but (also)... 并列结构，前后两个分句主语不同，后句用 has become 表趋势",
+    "keys": [
+     "国内旅游 travel domestically",
+     "出国旅游 travel abroad",
+     "越来越普遍 increasingly common"
+    ]
+   },
+   {
+    "cn": "2016年国庆节假日期间，旅游消费总计超过4000亿元。",
+    "en": "During the National Day holiday in 2016, tourism consumption totaled more than 400 billion yuan.",
+    "structure": "介词短语 During...作时间状语前置，主句主谓结构简洁，total 作动词使用",
+    "keys": [
+     "国庆节假日 the National Day holiday",
+     "旅游消费 tourism consumption",
+     "总计超过 totaled more than",
+     "4000亿元 400 billion yuan"
+    ]
+   },
+   {
+    "cn": "据世界贸易组织估计，2020年中国将成为世界上最大的旅游国，在未来几年里将成为出境旅游支出增长最快的国家。",
+    "en": "According to the estimates of the World Trade Organization, China will become the world's largest tourism country by 2020 and will become the fastest-growing country in outbound tourism spending in the coming years.",
+    "structure": "According to... 引导来源状语，主句含两个 will become 并列谓语，最高级 largest/fastest-growing 修饰名词",
+    "keys": [
+     "据……估计 according to the estimates of",
+     "世界贸易组织 the World Trade Organization",
+     "出境旅游支出 outbound tourism spending",
+     "增长最快的 the fastest-growing"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "生活水平",
+    "en": "living standards"
+   },
+   {
+    "cn": "谋生",
+    "en": "make a living"
+   },
+   {
+    "cn": "旅游业",
+    "en": "tourism industry"
+   },
+   {
+    "cn": "中产阶级",
+    "en": "middle class"
+   },
+   {
+    "cn": "旅游热潮",
+    "en": "tourism boom"
+   },
+   {
+    "cn": "国庆节",
+    "en": "National Day"
+   },
+   {
+    "cn": "旅游消费",
+    "en": "tourism consumption / tourism spending"
+   },
+   {
+    "cn": "世界贸易组织",
+    "en": "the World Trade Organization (WTO)"
+   },
+   {
+    "cn": "出境旅游",
+    "en": "outbound tourism"
+   },
+   {
+    "cn": "前所未有的",
+    "en": "unprecedented"
+   }
+  ],
+  "pitfalls": [
+   "4000亿元须译为 400 billion yuan，易误写为 4000 billion",
+   "not only...but also 连接两个分句时注意主语和谓语的一致性",
+   "unprecedented 拼写较难，常见错误如 unprecedent 或 unprецedented",
+   "spend time doing sth 中 doing 不可换为 to do，属固定搭配",
+   "the fastest-growing 需加连字符构成复合形容词，遗漏连字符会扣分"
+  ],
+  "upgrades": [
+   {
+    "plain": "China's tourism has developed very fast",
+    "better": "China's tourism industry has developed rapidly",
+    "note": "rapidly 比 very fast 更书面正式，加 industry 表述更精准"
+   },
+   {
+    "plain": "caused a tourism fever that has never been seen before",
+    "better": "triggered an unprecedented tourism boom",
+    "note": "unprecedented 一词替代冗长从句，boom 比 fever 搭配更地道"
+   },
+   {
+    "plain": "rich middle class people appeared",
+    "better": "the emergence of the affluent middle class",
+    "note": "名词化表达 emergence 更学术，affluent 比 rich 更正式高级"
+   },
+   {
+    "plain": "it is estimated by the World Trade Organization",
+    "better": "according to the estimates of the World Trade Organization",
+    "note": "according to 结构更简洁地道，避免被动语态的累赘感"
+   },
+   {
+    "plain": "going abroad for tourism is becoming more and more popular",
+    "better": "traveling abroad has also become increasingly common",
+    "note": "increasingly 替代 more and more 更书面，common 比 popular 语义更准确"
+   }
+  ]
+ }
+}

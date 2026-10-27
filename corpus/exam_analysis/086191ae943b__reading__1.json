@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "086191ae943b__reading__1",
+ "examId": "086191ae943b",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 6 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:57:56.106Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57989,
+ "usage": {
+  "prompt_tokens": 1848,
+  "completion_tokens": 3579,
+  "total_tokens": 5427,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1848,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3579,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1848,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "讽刺的危害及与机智幽默的区别",
+  "gist": "文章指出讽刺本质上是披着幽默外衣的敌意，会伤害他人并加剧说话者自身的不安全感与敌意。作者建议减少使用讽刺，转而培养无敌意的机智幽默，并详细对比了讽刺与机智的核心区别：前者意在伤害，后者旨在以无害的方式揭示问题的荒谬。",
+  "structure": [
+   "首段以爵士乐类比引出讽刺的定义及识别方式",
+   "中间段落论述讽刺的本质危害及停止讽刺的好处",
+   "末段对比讽刺与机智幽默的根本区别，总结全文"
+  ],
+  "difficulty": "中等",
+  "translation": "讽刺和爵士乐有一个令人意外的共同点：你一听就能辨认出来。讽刺主要通过语气来传达，用以表达与字面意思相反的含义。例如，当一个人说\"嗯，这正是我现在需要的\"时，他的语气会告诉你那根本不是他需要的。\n\n最常见的情况是，讽刺要么凸显一种恼怒，要么非常单纯地就是刻薄。\n\n如果你想变得更快乐、改善人际关系，那就戒掉讽刺吧。为什么？因为讽刺实际上是伪装成幽默的敌意。\n\n尽管表面上面带微笑，许多被讽刺的人会觉得被贬低，并且常常认为讽刺者粗鲁或令人鄙视。事实上，\"sarcasm\"（讽刺）这个词源自希腊语\"sarkazein\"，字面意思是\"撕裂或剥去肉\"，这一点并不令人意外。因此，讽刺前面常常被冠以\"尖刻的\"这个修饰词，而且它确实会造成伤害，这也就不足为奇了。\n\n更重要的是，由于行为在很大程度上决定了思想和感情，当一个人持续表现出讽刺的态度时，这只会加剧他内心深处的敌意和不安全感。毕竟，归根结底，讽刺可以被用作一种微妙的霸凌形式——而大多数施暴者都是愤怒的、不安的或怯懦的。\n\n反过来说，当一个人停止发表负面评论，尤其是讽刺性评论时，他可能很快就会开始感到更快乐、更自信。而且，他们生活中的其他人受益更多，因为他们不再需要听到讽刺这种在情感上具有伤害性的语言了。\n\n我并不是说所有的讽刺都不好。只是讽刺可能像烹饪中的一味浓烈香料一样，最好少量使用。香料放太多，整道菜就会被其味道盖过。同样，偶尔来一点讽刺的妙语可以为聊天增添趣味和幽默元素。但大量或持续的讽刺会压过任何对话的情感风味，对接收者来说尝起来会非常苦涩。\n\n所以，收敛讽刺，转而培养巧妙的机智吧——机智通常不带任何敌意，因此更受你的沟通对象的欣赏。本质上，讽刺很容易做到，而真正无害的机智则需要天赋。\n\n因此，机智与讽刺之间的主要区别在于，如前所述，讽刺往往是伪装成幽默的敌意。它可能意在伤害，且常常尖酸刻薄。机智的话语通常是对某人无益的言论或行为的回应，其目的是通过强调事物的荒谬之处来理清和澄清问题。讽刺性的话语以尖刻的方式表达；而机智的话语则以坦荡且无害的幽默来传递。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Sarcasm and jazz have something surprisingly in common: You know them when you hear them.",
+    "why": "原文第一句明确指出讽刺与爵士乐的共同点是\"You know them when you hear them\"（你一听就能辨认出来）。A选项\"Both are recognized when heard\"是对该句的同义改写，\"recognized when heard\"对应\"you know them when you hear them\"，语义完全一致。",
+    "traps": "B选项\"有完全相同的语气\"属于无中生有，原文并未比较二者的tone；C选项\"都表达与表面相反的意思\"张冠李戴，只有讽刺具有此特征，爵士乐并非如此；D选项\"都暗含明显的恼怒\"同样仅适用于讽刺，与爵士乐无关，属于以偏概全。",
+    "tip": "共同点题应精确定位比较句，排除仅适用于一方的特征。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "many people who receive sarcastic comments feel put down and often think the sarcastic person is rude, or contemptible.",
+    "why": "原文明确指出收到讽刺评论的人\"feel put down\"（觉得被贬低），并认为讽刺者\"rude\"（粗鲁）或\"contemptible\"（令人鄙视）。B选项\"feel belittled and disrespected\"中，belittled（被小看）对应feel put down，disrespected（不被尊重）对应rude，是对原文的准确概括。",
+    "traps": "A选项\"对讽刺者感到敌意\"原文未提及被讽刺者产生敌意情绪，属于过度推断；C选项\"强烈的报复冲动\"在原文中完全没有依据，属于无中生有；D选项\"无法掩饰恼怒\"与原文描述不符，原文强调的是感到被贬低而非恼怒的表达。",
+    "tip": "注意同义替换：put down=belittled，rude=disrespected。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "when a person consistently acts sarcastically it may only serve to heighten their underlying hostility and insecurity.",
+    "why": "原文指出一个人持续表现讽刺态度时，这只会\"heighten their underlying hostility and insecurity\"（加剧其内心深处的敌意和不安全感）。B选项\"feel increasingly insecure and hostile\"中increasingly对应heighten（加剧），insecure and hostile对应insecurity and hostility，为精准的同义改写。",
+    "traps": "A选项\"尊严大大提升\"属于曲解原文，heighten的对象是hostility和insecurity而非dignity；C选项\"在幽默伪装下忍受敌意\"偷换了主客体关系，原文是说讽刺者自身的敌意加剧而非忍受他人敌意；D选项\"即使在愉快交流中也感到苦涩\"将后文关于讽刺像调料的比喻错误嫁接到此处，属于张冠李戴。",
+    "tip": "注意heighten的宾语，理清\"谁的情绪被加剧\"。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "when a person stops voicing negative comments, especially sarcastic ones, they may soon start to feel happier and more self-confident. Also, other people in their life benefit even more",
+    "why": "原文先说停止讽刺的人自己会\"feel happier and more self-confident\"（更快乐更自信），接着用Also引出\"other people in their life benefit even more\"（他们生活中的其他人受益更多）。C选项\"不仅有利于自己，也有利于周围的人\"完整涵盖了这两层意思，与原文逻辑一致。",
+    "traps": "A选项\"让别人更快乐更自信\"偷换了主语，原文说的是停止讽刺者本人变得更快乐更自信，而非他人；B选项\"约束自己不恼人和欺凌\"原文未提及此效果，属于无中生有；D选项\"保护自己免受负面评论和敌意\"原文未涉及这种自我保护效果，属于过度引申。",
+    "tip": "注意原文用Also连接两层好处，选项需涵盖双重受益。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "sarcasm is often hostility disguised as humor. It can be intended to hurt and is often bitter and biting. Witty statements are usually in response to someone's unhelpful remarks or behaviors, and the intent is to untangle and clarify the issue",
+    "why": "原文末段详细比较讽刺与机智的区别：讽刺\"intended to hurt\"（意在伤害），机智的\"intent is to untangle and clarify the issue\"（目的是理清和澄清问题）。两者的根本差异在于意图（intention）不同。D选项\"Their intention\"准确概括了这一核心区别。",
+    "traps": "A选项\"清晰度\"虽然原文提到clarify，但这是机智的目的而非二者的区别维度，属于以偏概全；B选项\"欣赏程度\"虽然上一段提到机智更受appreciated，但这是结果而非核心区别；C选项\"强调点\"虽然原文提到emphasizing absurdities，但这只是机智的手段，非二者的首要区别。",
+    "tip": "区分\"核心区别\"与\"附带特征\"，intended/intent反复出现即为关键线索。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sarcasm",
+    "cn": "n. 讽刺，挖苦"
+   },
+   {
+    "w": "portray",
+    "cn": "v. 描绘，表现"
+   },
+   {
+    "w": "hostility",
+    "cn": "n. 敌意，敌对"
+   },
+   {
+    "w": "contemptible",
+    "cn": "adj. 令人鄙视的，卑劣的"
+   },
+   {
+    "w": "sarkazein",
+    "cn": "n.（希腊语）撕裂肉体（sarcasm的词源）"
+   },
+   {
+    "w": "heighten",
+    "cn": "v. 加剧，增强"
+   },
+   {
+    "w": "bullying",
+    "cn": "n. 霸凌，欺凌"
+   },
+   {
+    "w": "sparingly",
+    "cn": "adv. 节制地，少量地"
+   },
+   {
+    "w": "potent",
+    "cn": "adj. 强效的，有力的"
+   },
+   {
+    "w": "undisguised",
+    "cn": "adj. 不加掩饰的，公开的"
+   },
+   {
+    "w": "absurdities",
+    "cn": "n. 荒谬之处（absurdity的复数）"
+   },
+   {
+    "w": "untangle",
+    "cn": "v. 理清，解开"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Despite smiling outwardly, many people who receive sarcastic comments feel put down and often think the sarcastic person is rude, or contemptible.",
+    "cn": "尽管表面上面带微笑，许多被讽刺的人会觉得被贬低，并且常常认为讽刺者粗鲁或令人鄙视。",
+    "note": "Despite引导让步状语，主语为many people，who引导定语从句修饰people，谓语为feel和think并列。"
+   },
+   {
+    "en": "What's more, since actions strongly determine thoughts and feelings, when a person consistently acts sarcastically it may only serve to heighten their underlying hostility and insecurity.",
+    "cn": "更重要的是，由于行为在很大程度上决定了思想和感情，当一个人持续表现出讽刺的态度时，这只会加剧他内心深处的敌意和不安全感。",
+    "note": "since引导原因状语从句，when引导时间状语从句，主句为it may only serve to heighten...，serve to do表示\"起到……作用\"。"
+   },
+   {
+    "en": "Witty statements are usually in response to someone's unhelpful remarks or behaviors, and the intent is to untangle and clarify the issue by emphasizing its absurdities.",
+    "cn": "机智的话语通常是对某人无益的言论或行为的回应，其目的是通过强调事物的荒谬之处来理清和澄清问题。",
+    "note": "主句为并列句，and连接两个分句；in response to表示\"作为……的回应\"；by emphasizing为方式状语，说明如何实现intent。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "0effd4255078__banked_cloze__all",
+ "examId": "0effd4255078",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2017 年 12 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:12:46.294Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64127,
+ "usage": {
+  "prompt_tokens": 1373,
+  "completion_tokens": 3536,
+  "total_tokens": 4909,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1373,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3536,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1373,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "帕劳建立大型海洋保护区",
+  "gist": "太平洋岛国帕劳将其80%的海洋领土划为全面保护的海洋保护区，成为世界第六大海洋庇护所。总统强调此举对岛国生存至关重要，旨在恢复海洋健康、造福后代，同时延续帕劳数百年来限制捕鱼、让鱼类种群得以补充的传统保护习俗。",
+  "difficulty": "中等",
+  "translation": "太平洋岛国帕劳已成为世界第六大海洋庇护所的所在地。这一新的海洋保护区，现为太平洋地区最大的海洋保护区，将不允许任何捕鱼或采矿活动。帕劳还在2009年建立了世界上第一个鲨鱼保护区。\n\n这个小小的岛国划出了50万平方公里——即其海洋领土的80%——作为全面保护区。这是世界上任何国家将其专属经济区用于海洋保护的最高比例。帕劳海域剩余的20%将保留给个人和小规模商业捕鱼企业进行本地捕鱼，且出口有限。\n\n\"岛屿社区是受海洋威胁打击最严重的群体之一，\"总统小汤米·雷门格绍在一份声明中说。\"建立这个保护区是一个大胆的举措，帕劳人民认为这对我们的生存至关重要。我们希望在为子孙后代恢复海洋健康方面起带头作用。\"\n\n帕劳独立建国仅二十年，却有着悠久的环境保护历史。它拥有世界上最优秀的海洋生态系统之一，有超过1300种鱼类和700种珊瑚。\n\n参议员霍克恩斯·鲍莱斯是《帕劳国家海洋庇护所法案》的主要发起人，他表示该保护区将\"通过尊重我们过去的保护传统，帮助帕劳人民建立一个安全的未来\"。这些传统包括有数百年历史的\"bul\"习俗，即领导者会宣布暂时停止捕捞关键物种，以便给鱼类种群一个补充的机会。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "I",
+    "correct": "permit",
+    "why": "此处需要动词原形与 will 构成谓语。\"will permit no fishing or mining\" 意为\"将不允许任何捕鱼或采矿\"，permit 作动词表示\"允许\"，语法和语义均通顺。",
+    "traps": "allocate 意为\"分配\"，语义不合，不能说\"分配捕鱼\"；其他候选动词均无法与 no fishing or mining 形成合理搭配。",
+    "tip": "will + 动词原形结构，结合宾语 no fishing 判断语义。"
+   },
+   {
+    "number": 27,
+    "answer": "O",
+    "correct": "territory",
+    "why": "空格前有形容词 maritime 修饰，后有逗号补充说明，需要一个名词。maritime territory 意为\"海洋领土/领海\"，指帕劳所管辖的海域范围，搭配恰当。",
+    "traps": "communities 虽为名词，但 maritime communities 指\"海洋社区\"，与后文\"for full protection\"的保护对象不符；stocks 语义也不搭配。",
+    "tip": "maritime territory 为常见地理/政治术语搭配。"
+   },
+   {
+    "number": 28,
+    "answer": "F",
+    "correct": "exclusive",
+    "why": "exclusive economic zone（专属经济区，简称 EEZ）是国际海洋法中的固定术语，指沿海国享有专属管辖权的海域。此处用 exclusive 完全符合专业表达。",
+    "traps": "independent 虽为形容词，但 independent economic zone 非标准用语；commercial economic zone 也不是专业术语。",
+    "tip": "固定术语 exclusive economic zone（专属经济区）是本题关键。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "correct": "commercial",
+    "why": "空格修饰 fishing businesses，需要形容词。commercial fishing businesses 意为\"商业捕鱼企业\"，与前文 small-scale（小规模）并列修饰，表达本地小型商业渔业，语义合理。",
+    "traps": "exclusive 虽也是形容词，但 exclusive fishing businesses 意为\"专属捕鱼企业\"，与语境中\"保留给本地\"的开放含义不符。",
+    "tip": "commercial 修饰 fishing 是常见经济类搭配。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "correct": "communities",
+    "why": "空格前为 Island，后谓语 have been，需要复数名词作主语。Island communities 意为\"岛屿社区/群体\"，指代像帕劳这样的岛国居民，语义通顺。",
+    "traps": "celebrities 意为\"名人\"，与岛屿受海洋威胁的语境毫不相关；stocks 语义也完全不搭配。",
+    "tip": "Island communities 指岛屿居民群体，是常见社会学表达。"
+   },
+   {
+    "number": 31,
+    "answer": "E",
+    "correct": "essential",
+    "why": "空格前为 as，后接 to our survival，需要形容词。recognize...as essential to our survival 意为\"认为这对我们的生存至关重要\"，essential to 为固定搭配。",
+    "traps": "secure 虽是形容词，但 secure to survival 搭配不当，secure 一般不与 to 连用表示\"对……重要\"。",
+    "tip": "essential to 是固定搭配，表示\"对……不可或缺\"。"
+   },
+   {
+    "number": 32,
+    "answer": "G",
+    "correct": "independent",
+    "why": "空格前有冠词 an，后接 nation，需要元音开头的形容词。independent nation 意为\"独立国家\"，与后文 for twenty years（仅二十年）呼应帕劳建国时间短。",
+    "traps": "exclusive 虽以元音开头，但 exclusive nation 意为\"排外的国家\"，与语境不符；essential nation 也语义不通。",
+    "tip": "an 提示后接元音开头词，结合 nation 和\"二十年\"判断为 independent。"
+   },
+   {
+    "number": 33,
+    "answer": "M",
+    "correct": "sponsor",
+    "why": "空格前有 lead 作形容词修饰，后有 of the...Act，需要名词。lead sponsor 意为\"主要发起人/提案人\"，指法案的牵头推动者，为政治/立法领域常见搭配。",
+    "traps": "celebrities 意为\"名人\"，lead celebrities of the Act 表达不通；此处需要表示\"发起、推动\"含义的名词。",
+    "tip": "lead sponsor of a bill/act 是立法领域固定表达。"
+   },
+   {
+    "number": 34,
+    "answer": "J",
+    "correct": "secure",
+    "why": "空格在冠词 a 与名词 future 之间，需要形容词。secure future 意为\"安全的/有保障的未来\"，与 build（建立）搭配表达为人民创造稳定未来的愿景。",
+    "traps": "essential 虽为形容词，但 essential future 语义奇怪，不能说\"必要的未来\"；independent future 也不够贴切。",
+    "tip": "build a secure future 是常见政策类表达搭配。"
+   },
+   {
+    "number": 35,
+    "answer": "N",
+    "correct": "stocks",
+    "why": "空格在 fish 之后、an opportunity 之前，需要名词。fish stocks 意为\"鱼类种群/鱼群资源量\"，是海洋生态与渔业管理领域的专业术语，与后文 replenish（补充）呼应。",
+    "traps": "communities 已用于第30题；且 fish communities 虽在生态学中偶尔出现，但此处强调\"数量补充\"，stocks 更精准。",
+    "tip": "fish stocks 是渔业与海洋保护领域的核心术语。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sanctuary",
+    "cn": "n. 庇护所；保护区；避难所"
+   },
+   {
+    "w": "exclusive",
+    "cn": "adj. 专属的；排他的；独有的"
+   },
+   {
+    "w": "maritime",
+    "cn": "adj. 海洋的；海事的；沿海的"
+   },
+   {
+    "w": "replenish",
+    "cn": "v. 补充；重新装满"
+   },
+   {
+    "w": "territory",
+    "cn": "n. 领土；领域；版图"
+   },
+   {
+    "w": "commercial",
+    "cn": "adj. 商业的；商务的"
+   },
+   {
+    "w": "sponsor",
+    "cn": "n. 发起人；赞助者 v. 赞助；发起"
+   },
+   {
+    "w": "allocate",
+    "cn": "v. 分配；拨出（资源、资金等）"
+   },
+   {
+    "w": "stocks",
+    "cn": "n. 种群；库存；股票（此处指鱼类种群）"
+   },
+   {
+    "w": "ecosystem",
+    "cn": "n. 生态系统"
+   },
+   {
+    "w": "conservation",
+    "cn": "n. 保护；保存（尤指自然环境）"
+   },
+   {
+    "w": "essential",
+    "cn": "adj. 必要的；不可或缺的；本质的"
+   }
+  ],
+  "skills": [
+   "先通读全文把握主旨，再按词性将15个候选词分为名词、动词、形容词三组。",
+   "根据空格前后的冠词、介词、助动词等语法标志判断所需词性，缩小选择范围。",
+   "优先识别固定搭配与专业术语（如 exclusive economic zone、fish stocks、lead sponsor）直接锁定答案。",
+   "利用上下文逻辑与语义连贯性验证选项，注意前后句的因果、并列、对比关系。",
+   "每填一词即从候选池中划去，避免重复使用，最后回读全文检查语义是否通顺。"
+  ]
+ }
+}

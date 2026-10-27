@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "106c7d82f5d8__banked_cloze__all",
+ "examId": "106c7d82f5d8",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2020 年 12 月英语六级真题（第 3 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:33:53.983Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72442,
+ "usage": {
+  "prompt_tokens": 1349,
+  "completion_tokens": 5004,
+  "total_tokens": 6353,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1349,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5004,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1349,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社交隔离背后的爱与牺牲",
+  "gist": "文章围绕新冠疫情期间的社交隔离展开，指出社交隔离虽由恐惧驱动，但其核心是爱与自我牺牲，目的是保护老年人和免疫力低下者。社交隔离的独特之处在于完全利他，文章呼吁人们利用这段特殊时期在精神上关爱老人，拉近彼此距离。",
+  "difficulty": "中等",
+  "translation": "社交隔离正在使人们失业、停课，并使股市暴跌。它一直被恐惧所驱动，并且随着经济问题和不确定性的加剧，它正在制造更多的恐惧。然而，其核心是爱，是一种保护那些最容易受到冠状病毒影响的人群的牺牲——老年人、免疫系统受损的人，以及那些救命资源将被一场恶性疫情耗尽的人。\n\n美国人每天都理所当然地做出保护生命的决定。我们把食物切成一口大小的块，我们系安全带，我们注意不超速。但社交隔离的独特之处在于它是完全自我牺牲的。受益者可能是我们在星巴克、地铁或电梯里没有遇到的那个素不相识之人的年迈亲属。\n\n社交隔离是数百万人做出无数牺牲来维持老年人的生命。它不包括逃离社会或以此为借口逃避义务的诱惑——例如救死扶伤的医疗工作或父母购买生活用品的义务。它所包含的是通过谨慎来传递爱。在此过程中，它为关心老年人的人提供了一个绝佳的机会，让他们找到爱老年人的新方式。\n\n如果我们没有像往常那样投入到正常的工作或学习中，我们就有额外的时间打电话给父母和祖父母。我们还可以询问年长的亲人如何在精神上最好地支持他们，并利用我们的牺牲作为契机，让我们、我们的社区和整个世界更加亲近。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "correct": "driven",
+    "why": "空格处位于\"has been _____ by fear\"结构中，需要过去分词构成被动语态。\"be driven by\"是固定搭配，意为'被……驱动/驱使'，语义上表示社交隔离是由恐惧推动的，逻辑通顺。",
+    "traps": "engaged 虽然也是过去分词，但 be engaged by 不构成常见搭配，且语义不符。其他形容词如 amazing、closer 无法构成被动语态结构。",
+    "tip": "识别被动语态结构，考查 be driven by 固定搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "O",
+    "correct": "vulnerable",
+    "why": "空格处位于\"those most _____ to the coronavirus effects\"中，需要形容词且能与 to 搭配。vulnerable to 是固定搭配，意为'易受……影响的'，指老年人等群体最容易受病毒侵害，与下文的破折号解释完全吻合。",
+    "traps": "其他形容词如 unique、amazing 不与 to 搭配表示'易受影响'之意。closer to 虽语法成立但语义不符，此处强调的是脆弱性而非距离。",
+    "tip": "考查 vulnerable to 固定搭配，语义需对应'脆弱、易受伤害'。"
+   },
+   {
+    "number": 28,
+    "answer": "E",
+    "correct": "malignant",
+    "why": "空格处修饰名词 epidemic，需要形容词。malignant 意为'恶性的、有害的'，a malignant epidemic 指'恶性疫情'，语义上强调疫情严重会耗尽救命资源，与上下文逻辑一致。",
+    "traps": "amazing epidemic（令人惊叹的疫情）语义不当，不符合负面语境。random epidemic（随机的疫情）语义牵强。此处需要一个表示'严重、恶性'含义的形容词。",
+    "tip": "根据负面语境选择贬义形容词，malignant 常见于医学语境。"
+   },
+   {
+    "number": 29,
+    "answer": "N",
+    "correct": "unique",
+    "why": "空格处位于\"social distancing is _____ in that\"结构中，需要形容词作表语。unique in that 是固定表达，意为'独特之处在于'，引出社交隔离与日常保护生命行为的区别——完全的自我牺牲。",
+    "traps": "amazing in that 虽语法上可接受但不构成常见固定表达。driven 是过去分词，不宜作表语接 in that 从句。此处语义强调'与众不同'，unique 最贴切。",
+    "tip": "识别 unique in that 固定句式，表示'独特之处在于'。"
+   },
+   {
+    "number": 30,
+    "answer": "H",
+    "correct": "random",
+    "why": "空格处修饰名词 person，需要形容词。random person 意为'随机的人、素不相识的人'，强调社交隔离的受益者可能是我们从未谋面的陌生人的亲属，凸显社交隔离的利他性。",
+    "traps": "amazing person（了不起的人）偏离文章强调的'陌生、不可预知'之意。此处需要表达'随意的、不确定的'含义，random 最为恰当。",
+    "tip": "random 修饰 person 强调不确定性和陌生感。"
+   },
+   {
+    "number": 31,
+    "answer": "K",
+    "correct": "temptations",
+    "why": "空格处位于\"the _____ to run from society\"中，需要名词且能接不定式。temptation to do sth 是固定搭配，意为'做某事的诱惑'。句意为社交隔离不包括逃离社会或逃避义务的诱惑，逻辑清晰。",
+    "traps": "名词位置需要能搭配 to do 不定式的词。其他候选名词若不能自然接 to do 结构则不适用。temptation 的复数形式暗示有多种诱惑。",
+    "tip": "考查 temptation to do sth 搭配，注意名词与不定式的衔接。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "correct": "amazing",
+    "why": "空格处位于\"an _____ opportunity\"中，需要形容词修饰名词 opportunity。amazing 意为'令人惊叹的、绝佳的'，an amazing opportunity 表示社交隔离提供了一个绝佳的机会去关爱老人，语义积极，与上下文呼应。",
+    "traps": "unique opportunity 虽语义成立但 unique 已在第29题使用（每词只用一次）。其余候选形容词如 malignant 语义不合，不能修饰 opportunity。",
+    "tip": "注意选词填空每词限用一次，排除已用选项后锁定 amazing。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "correct": "engaged",
+    "why": "空格处位于\"not _____ as much in our normal work\"中，需要过去分词或形容词与 be 构成系表结构。be engaged in 是固定搭配，意为'从事于、投入于'。句意为如果我们没有像往常那样投入工作或学习，就有时间陪伴老人。",
+    "traps": "driven in 不构成常见搭配。be engaged in 是高频词组，表示参与或忙于某事，且 not engaged as much 表示程度降低，逻辑通顺。",
+    "tip": "考查 be engaged in 固定搭配，表示'从事、参与'。"
+   },
+   {
+    "number": 34,
+    "answer": "J",
+    "correct": "spiritually",
+    "why": "空格处位于\"support them _____\"中，需要副词修饰动词 support。spiritually 意为'在精神上'，表示询问如何在精神层面支持年长亲人，与物质支持形成互补，语义合理且呼应文章核心主题'爱'。",
+    "traps": "此处需要副词，排除所有形容词和名词。spiritually 是候选词池中唯一适合修饰 support 的副词，语义上也与全文'爱与关怀'的主旨契合。",
+    "tip": "识别需要副词修饰动词的位置，spiritually 呼应全文情感主题。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "correct": "closer",
+    "why": "空格处位于\"bring us, our community and the world _____\"中，需要形容词比较级作宾语补足语。bring...closer 意为'使……更亲近'，表达通过牺牲拉近人与人、社区与世界之间的距离，为全文画上升华性的结尾。",
+    "traps": "此处 bring 后接宾语再接补语，需要形容词比较级。closer 作为 close 的比较级，语义上与文章呼吁团结、关爱的主旨完美契合，是唯一合理选项。",
+    "tip": "bring sb/sth closer 是常见搭配，比较级作宾补表示状态变化。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "vulnerable",
+    "cn": "adj. 易受伤害的，脆弱的"
+   },
+   {
+    "w": "malignant",
+    "cn": "adj. 恶性的，有害的；（肿瘤）恶性的"
+   },
+   {
+    "w": "temptation",
+    "cn": "n. 诱惑，引诱"
+   },
+   {
+    "w": "compromised",
+    "cn": "adj. 受损的，被削弱的（此处指免疫系统受损）"
+   },
+   {
+    "w": "epidemic",
+    "cn": "n. 流行病，疫情"
+   },
+   {
+    "w": "obligation",
+    "cn": "n. 义务，责任"
+   },
+   {
+    "w": "sacrifice",
+    "cn": "n./v. 牺牲，献出"
+   },
+   {
+    "w": "spiritually",
+    "cn": "adv. 在精神上，心灵上"
+   },
+   {
+    "w": "caution",
+    "cn": "n. 谨慎，小心；v. 告诫"
+   },
+   {
+    "w": "exceed",
+    "cn": "v. 超过，超越"
+   },
+   {
+    "w": "tanking",
+    "cn": "v. 暴跌，急剧下降（非正式用法）"
+   },
+   {
+    "w": "grocery",
+    "cn": "n. 食品杂货（常用复数 groceries）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——社交隔离的本质是爱与牺牲。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每题选择范围。",
+   "第三步：根据空格前后的语法结构（如 be + ___ + by → 被动语态需过去分词）判断所需词性。",
+   "第四步：利用固定搭配锁定答案，如 driven by、vulnerable to、engaged in、unique in that。",
+   "第五步：每词限用一次，填完有把握的题后用排除法攻克剩余题目，最后回读检验语义连贯性。"
+  ]
+ }
+}

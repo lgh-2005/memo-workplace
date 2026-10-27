@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "6dbe08bed285__reading__1",
+ "examId": "6dbe08bed285",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2001 年考研英语真题（旧）",
+ "year": 2001,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24
+ ],
+ "generatedAt": "2026-10-27T06:10:27.893Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 46224,
+ "usage": {
+  "prompt_tokens": 1612,
+  "completion_tokens": 2948,
+  "total_tokens": 4560,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1612,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2948,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1612,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学专业化与职业化的发展",
+  "gist": "文章论述了科学知识积累导致的专业化与职业化趋势。专业化使业余人士参与科学的门槛提高，以英国地质学发展为例，说明专业期刊对论文要求的变化、审稿制度的引入以及学术团体的分化，指出19世纪是科学结构变革的关键时期。",
+  "structure": [
+   "第一段：引出专业化与职业化两大趋势",
+   "第二段：区分专业与业余人士，指出专业化对业余参与者的影响",
+   "第三段：以英国地质学为例论证专业化与职业化的具体表现",
+   "第四段：总结19世纪是科学结构变革的关键时期"
+  ],
+  "difficulty": "中等",
+  "translation": "专业化可以被视为对科学知识不断积累这一问题的回应。通过将学科内容划分为更小的单元，个人能够继续掌握相关信息，并将其作为进一步研究的基础。但专业化只是影响科学交流过程的一系列相关发展之一。另一个发展是科学活动日益职业化。\n\n在科学领域，专业人士和业余人士之间很难划出一条明确的界线：任何规则都能找到例外。然而，\"业余\"一词确实暗含着这样的意思：相关人员并未完全融入科学共同体，尤其可能并不完全认同其价值观。19世纪专业化的发展及其对更长期、更复杂训练的要求，意味着业余人士参与科学面临更大的困难。这一趋势在那些尤其以数学或实验室训练为基础的科学领域中最为明显，这可以从英国地质学的发展中得到说明。\n\n对过去一个半世纪英国地质学出版物的比较不仅揭示了对研究首要性的日益重视，还揭示了对何为可接受的研究论文之定义的变化。因此，在19世纪，地方性地质研究本身就代表着有价值的研究；但在20世纪，地方性研究越来越只有在纳入并反映更宏观的地质图景时，才被专业人士接受。另一方面，业余人士继续以旧方式进行地方性研究。总体结果是使业余人士进入专业地质期刊变得更加困难，这一结果因审稿制度的广泛引入而得到加强——先是19世纪国家级期刊引入，然后是20世纪若干地方地质期刊引入。作为这一发展的逻辑结果，现在已出现了分别主要面向专业读者或业余读者的独立期刊。一个颇为相似的分化过程使得专业地质学家在全国范围内汇聚于一两个特定的学会，而业余人士则倾向于留在地方学会中，或以不同的方式在全国范围内联合。\n\n尽管职业化与专业化的进程在19世纪的英国地质学界就已经充分展开，但其全部后果直到20世纪才显现。然而，就一般科学而言，19世纪必须被视为科学结构发生这一变革的关键时期。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The trend was naturally most obvious in those areas of science based especially on a mathematical or laboratory training, and can be illustrated in terms of the development of geology in the United Kingdom.",
+    "why": "原文明确指出，专业化趋势在\"尤其以数学或实验室训练为基础的\"科学领域最为明显。physics（物理学）是典型的以数学和实验室训练为基础的学科，chemistry（化学）是典型的以实验室训练为基础的学科，两者完全符合原文描述，故D正确。",
+    "traps": "A项sociology（社会学）不以数学或实验室训练为基础，排除；B项psychology（心理学）在19世纪主要属于哲学范畴，并非典型的数学/实验室学科，排除；C项同时包含sociology和psychology两个不符合条件的学科，排除。",
+    "tip": "抓住原文关键限定条件'mathematical or laboratory training'来判断学科归属。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "No clear-cut distinction can be drawn between professionals and amateurs in science: exceptions can be found to any rule.",
+    "why": "原文指出专业人士与业余人士之间\"很难划出明确的界线\"，\"任何规则都有例外\"，这意味着在某些科学领域，业余人士可以与专业人士竞争。此外，第三段提到业余人士继续进行地方性研究，说明他们在某些领域仍有参与空间，故可推断B正确。",
+    "traps": "A项混淆了specialisation和professionalisation，文章将两者作为不同概念分别论述；C项与原文相反，文章说专业期刊对业余人士的门槛越来越高，并未表示专业人士欢迎业余人士；D项张冠李戴，原文说业余人士倾向留在地方学会或以不同方式全国联合，而非没有地方学会。",
+    "tip": "推断题注意从原文隐含信息合理推理，避免过度推断。"
+   },
+   {
+    "number": 23,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "The trend was naturally most obvious in those areas of science based especially on a mathematical or laboratory training, and can be illustrated in terms of the development of geology in the United Kingdom.",
+    "why": "原文明确说专业化趋势\"可以从英国地质学的发展中得到说明\"（can be illustrated），第三段整段以地质学为例展示了专业化和职业化如何影响论文标准、审稿制度和学术团体分化，因此地质学例子是为了论证A项——专业化与职业化的过程。",
+    "traps": "B项\"业余人士的困难\"只是论证中的一个方面，不是举例的核心目的；C项\"出版政策的变化\"同样只是论证的一个细节，非核心论点；D项\"歧视\"一词过于极端，原文并未表达专业人士歧视业余人士的态度。",
+    "tip": "例证题应关注例子所服务的上层论点，而非例子本身的细节。"
+   },
+   {
+    "number": 24,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Specialisation can be seen as a response to the problem of an increasing accumulation of scientific knowledge.",
+    "why": "文章第一句话就明确指出，专业化可以被看作是对\"科学知识不断积累\"这一问题的回应。这直接表明专业化的直接原因是科学知识的扩张（expansion of scientific knowledge），故C项正确。",
+    "traps": "A项\"通信/交流的发展\"是专业化带来的结果之一，而非专业化的原因，因果倒置；B项\"职业化的发展\"是与专业化并列的另一趋势，而非其原因；D项\"学术团体的分裂\"是专业化的后果之一，属于无中生有的因果关系。",
+    "tip": "因果关系题要准确区分原因和结果，注意因果倒置陷阱。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "accumulation",
+    "cn": "n. 积累，积聚"
+   },
+   {
+    "w": "professionalisation",
+    "cn": "n. 职业化，专业化"
+   },
+   {
+    "w": "connotation",
+    "cn": "n. 隐含意义，言外之意"
+   },
+   {
+    "w": "consequent",
+    "cn": "adj. 随之发生的，作为结果的"
+   },
+   {
+    "w": "primacy",
+    "cn": "n. 首要地位，首位"
+   },
+   {
+    "w": "constitute",
+    "cn": "v. 构成，组成；被视为"
+   },
+   {
+    "w": "incorporate",
+    "cn": "v. 纳入，包含，合并"
+   },
+   {
+    "w": "refereeing",
+    "cn": "n. 审稿，同行评审"
+   },
+   {
+    "w": "differentiation",
+    "cn": "n. 分化，区别化"
+   },
+   {
+    "w": "clear-cut",
+    "cn": "adj. 明确的，清晰的"
+   },
+   {
+    "w": "reckoned",
+    "cn": "v. 被认为，被视为"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The growth of specialisation in the nineteenth century, with its consequent requirement of a longer, more complex training, implied greater problems for amateur participation in science.",
+    "cn": "19世纪专业化的发展，以及随之而来的对更长期、更复杂训练的要求，意味着业余人士参与科学面临更大的困难。",
+    "note": "主语为the growth of specialisation，with its consequent requirement...为伴随状语，implied为谓语，greater problems为宾语，for amateur participation为目的/对象状语。"
+   },
+   {
+    "en": "Thus, in the nineteenth century, local geological studies represented worthwhile research in their own right; but, in the twentieth century, local studies have increasingly become acceptable to professionals only if they incorporate, and reflect on, the wider geological picture.",
+    "cn": "因此，在19世纪，地方性地质研究本身就代表着有价值的研究；但在20世纪，地方性研究越来越只有在纳入并反映更宏观的地质图景时，才被专业人士接受。",
+    "note": "分号连接两个对比分句；前句in their own right意为'本身'；后句only if引导条件状语从句，incorporate和reflect on并列，被and reflect on插入语隔开。"
+   },
+   {
+    "en": "The overall result has been to make entrance to professional geological journals harder for amateurs, a result that has been reinforced by the widespread introduction of refereeing, first by national journals in the nineteenth century and then by several local geological journals in the twentieth century.",
+    "cn": "总体结果是使业余人士进入专业地质期刊变得更加困难，这一结果因审稿制度的广泛引入而得到加强——先是19世纪国家级期刊引入，然后是20世纪若干地方地质期刊引入。",
+    "note": "主语the overall result，系表结构；a result为同位语，that引导定语从句修饰a result；first...and then...构成时间递进。"
+   }
+  ]
+ }
+}

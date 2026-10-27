@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "5aeb1eafddf2__reading__1",
+ "examId": "5aeb1eafddf2",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年 9 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:33:12.801Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66452,
+ "usage": {
+  "prompt_tokens": 1905,
+  "completion_tokens": 3835,
+  "total_tokens": 5740,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1905,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3835,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1905,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "对丹妮尔·斯蒂尔每天工作20小时的质疑",
+  "gist": "文章围绕畅销小说家丹妮尔·斯蒂尔声称每天工作20小时展开讨论。虽然她的高产令人钦佩，但睡眠专家和怀疑者质疑其说法的真实性，指出长期睡眠不足会严重影响效率。专家认为自我剥夺睡眠已成为一种错误的\"地位象征\"，鼓励普通人效仿这种作息是不负责任的。",
+  "structure": [
+   "第1-2段：介绍斯蒂尔的高产及其极端工作方式",
+   "第3-5段：各方对其20小时工作制的质疑与批评",
+   "第6-7段：分析自我剥夺睡眠的社会风气与反思",
+   "第8-9段：睡眠专家指出极少数人天生短睡，不应推广"
+  ],
+  "difficulty": "中等",
+  "translation": "71岁的言情小说家丹妮尔·斯蒂尔以高产著称，她以每年最多七本的速度出版了179本书。但《魅力》杂志最近一篇人物专访中顺带提到她每天工作20小时，这引发了一片赞叹之声。\n\n斯蒂尔过去在描述其\"令人精疲力竭\"的写作过程时曾给出过这个20小时的数字：\"我一旦开始写书，就不会离开书桌，直到初稿完成。\"她的生活就是从床到书桌，再到浴缸，再到床，除了与九个孩子通电话外，避免一切接触。\"我好几个星期不梳头，\"她说。饭菜被送到书桌旁，她一直打字，直到手指肿胀、指甲流血。\n\n商业新闻网站Quartz将斯蒂尔树为榜样，写道如果我们都效仿她那\"实际上极其解放人的\"勤勉不眠的榜样，就会很快看到成效。\n\n确实如此。随着研究结果显示睡眠不足的累积效应及其对生产力的影响，人们对斯蒂尔自我评估的准确性提出了质疑。她的产量不可否认，但怀疑者认为，往坏了说，她隐瞒了代笔人的作用；往好了说，也是严重夸大其词。\n\n斯蒂尔说每天工作20小时\"在身体上相当残酷\"。但这真的可能吗？睡眠工作室的玛丽安·泰勒说：\"不可能。\"虽然你可以工作那么长时间，但对生产力的影响会使其得不偿失。睡眠改善项目Sleepstation的创始人艾莉森·加德纳说，如果斯蒂尔经常每晚只睡四个小时，她就会大大低估了负面影响。\"这就相当于喝醉了一样。\"\n\n斯蒂尔可能夸大了她的日程安排的严苛程度。泰勒说，自我强加的无眠\"已经变成了一种地位象征\"，一种被误导的衡量标准，用来证明自己有多强大和高效。据说撒切尔夫人也是每晚只睡四小时，而科技领袖们每周忍受130小时的工作也被视为他们成功的关键。\n\n随着人们越来越意识到睡眠对心理健康的重要性，这种情况正在开始改变。泰勒说：\"人们开始意识到，睡眠不应该是你在其他所有事情之间挤出来的东西。\"\n\n但睡眠专家索菲·博斯托克博士说，斯蒂尔确实有可能——尽管从统计学上看极不可能——天生就是一个拥有异常生物钟的\"短睡眠者\"。\"这种人在人群中可能不到1%。\"\n\n博斯托克说，即使斯蒂尔恰好属于这极少数人，暗示每天工作20小时对我们其余人来说只是一个纪律问题，这也是\"相当不负责任的\"。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "But a passing reference in a recent profile by Glamour magazine to her 20-hour workdays prompted an outpouring of admiration.",
+    "why": "原文说《魅力》杂志的文章提到斯蒂尔每天工作20小时后，引发了读者\"如潮的赞叹\"（an outpouring of admiration）。选项C说读者对她的每日工作日程\"印象深刻\"（deeply impressed），是对\"an outpouring of admiration\"的合理同义改写，因此正确。",
+    "traps": "A项\"被小说中的异国情调吸引\"，文中未提及读者对小说内容的反应，属于无中生有；B项\"对书的数量感到惊讶\"，虽然文中提到179本书，但引发赞叹的是20小时工作制而非数量，属于偷换对象；D项\"被她的产量高度激励\"，admiration是赞叹钦佩，不等于motivated（受到激励去行动），属于程度和语义偷换。",
+    "tip": "注意区分引发赞叹的具体对象是什么，避免张冠李戴。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The business news website Quartz held Steel up as an inspiration, writing that if only we all followed her \"actually extremely liberating\" example of industrious sleeplessness, we would be quick to see results.",
+    "why": "原文明确说Quartz将斯蒂尔\"树为榜样\"（held Steel up as an inspiration），称如果人们效仿她\"勤勉不眠\"的榜样就能很快看到成效。选项A\"她可以作为勤勉的典范\"是对原文\"industrious sleeplessness\"和\"held up as an inspiration\"的准确概括。",
+    "traps": "B项\"她证明了我们可以从睡眠中解放出来\"，原文的\"liberating\"是形容她的工作方式令人解放，并非说人能从睡眠中解脱，属于曲解原文；C项\"她可以激励全世界的小说家\"，原文说的是激励所有人（we all），而非仅限于小说家，属于范围缩小；D项\"她表明我们不用睡觉也能完成工作\"，原文并非说不睡觉能完成所有工作，属于过度推断。",
+    "tip": "选项中的概括词需与原文对应，注意区分inspiration和具体鼓励内容。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "doubt has been voiced about the accuracy of Steel's self-assessment. Her output may be undeniable, but sceptics have suggested that she is guilty of erasing the role of ghost writers at worst, gross exaggeration at best.",
+    "why": "原文指出人们对斯蒂尔\"自我评估的准确性\"提出了质疑（doubt），怀疑者认为她要么隐瞒代笔人的作用，要么严重夸大其词。这说明怀疑者认为她的说法是\"可疑的\"（questionable），与A项完全吻合。",
+    "traps": "B项\"可改变的\"（alterable），文中未提及日程可以调整；C项\"不可抗拒的\"（irresistible），与怀疑态度完全相反；D项\"可验证的\"（verifiable），怀疑者的态度是质疑而非认为可以验证。三个干扰项均与原文怀疑态度不符，属于语义不符。",
+    "tip": "抓住段落中表态度的关键词doubt和sceptics，直接锁定答案方向。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Self-imposed sleeplessness has \"become a bit of a status symbol\", says Taylor, a misguided measure to prove how powerful and productive you are.",
+    "why": "原文引用泰勒的话，明确说自我强加的无眠\"已经变成了一种地位象征\"（status symbol），是一种被误导的衡量标准，用来证明自己有多强大和高效。选项C说\"它可能象征一个人的重要性和成功\"，是对status symbol和powerful and productive的准确同义转述。",
+    "traps": "A项\"它可能是成功职业的关键\"，泰勒对此持批判态度，认为是\"misguided\"，并非认可它是成功关键；B项\"它可能只被某些科技领袖实践\"，科技领袖只是例证之一，泰勒的论述范围更广；D项\"它可以作为自律的衡量标准\"，原文说这是measure to prove how powerful you are，而非自律的标准，属于偷换概念。",
+    "tip": "注意说话者对所述内容的态度是赞同还是批判，区分客观描述与主观评价。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "it's \"pretty irresponsible\" to suggest that 20-hour days are simply a question of discipline for the rest of us.",
+    "why": "博斯托克博士在文末指出，即使斯蒂尔天生是极少数\"短睡眠者\"，暗示每天工作20小时对普通人只是自律问题也是\"相当不负责任的\"（pretty irresponsible）。这表明她认为不应鼓励大众效仿这种作息，与选项B\"不应鼓励普通大众效仿\"完全一致。",
+    "traps": "A项\"不应在未咨询睡眠专家的情况下采用\"，文中未提及需要咨询专家这一建议，属于无中生有；C项\"必须有足够的自律才能坚持\"，博斯托克恰恰反对将其简单归结为自律问题；D项\"大多数人必须调整生物钟\"，博斯托克强调的是大多数人不具备短睡基因，而非建议调整生物钟，属于曲解原意。",
+    "tip": "最后一段常承载作者或专家的总结态度，注意irresponsible等评价性词汇。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "notoriously",
+    "cn": "adv. 众所周知地（常含贬义）"
+   },
+   {
+    "w": "outpouring",
+    "cn": "n. 涌现，迸发（情感等的大量流露）"
+   },
+   {
+    "w": "cumulative",
+    "cn": "adj. 累积的，逐渐增长的"
+   },
+   {
+    "w": "sceptics",
+    "cn": "n. 怀疑者，持怀疑态度的人"
+   },
+   {
+    "w": "gross exaggeration",
+    "cn": "n. 严重的夸大其词"
+   },
+   {
+    "w": "drastically",
+    "cn": "adv. 大幅度地，急剧地"
+   },
+   {
+    "w": "akin to",
+    "cn": "prep. 类似于，近似于"
+   },
+   {
+    "w": "self-imposed",
+    "cn": "adj. 自我强加的，自愿承受的"
+   },
+   {
+    "w": "misguided",
+    "cn": "adj. 被误导的，不明智的"
+   },
+   {
+    "w": "endured",
+    "cn": "v. 忍受，经历（endure的过去分词）"
+   },
+   {
+    "w": "irresponsible",
+    "cn": "adj. 不负责任的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The business news website Quartz held Steel up as an inspiration, writing that if only we all followed her \"actually extremely liberating\" example of industrious sleeplessness, we would be quick to see results.",
+    "cn": "商业新闻网站Quartz将斯蒂尔树为榜样，写道如果我们都效仿她那\"实际上极其解放人的\"勤勉不眠的榜样，就会很快看到成效。",
+    "note": "主句为Quartz held Steel up as an inspiration；writing引导现在分词作伴随状语；if only引导虚拟条件从句，与主句would构成虚拟语气。"
+   },
+   {
+    "en": "Her output may be undeniable, but sceptics have suggested that she is guilty of erasing the role of ghost writers at worst, gross exaggeration at best.",
+    "cn": "她的产量不可否认，但怀疑者认为，往坏了说，她隐瞒了代笔人的作用；往好了说，也是严重夸大其词。",
+    "note": "but连接让步转折；that引导宾语从句；at worst...at best构成对比结构，分别列举两种可能的最坏和最好情况。"
+   },
+   {
+    "en": "But it is possible—if statistically extremely unlikely—that Steel could be born a \"short sleeper\" with an unusual body clock, says sleep expert Dr. Sophie Bostock.",
+    "cn": "但睡眠专家索菲·博斯托克博士说，斯蒂尔确实有可能——尽管从统计学上看极不可能——天生就是一个拥有异常生物钟的\"短睡眠者\"。",
+    "note": "it为形式主语，真正主语是that从句；破折号间的if statistically extremely unlikely为插入语，起让步补充作用；says引导的是全句的主句倒装。"
+   }
+  ]
+ }
+}

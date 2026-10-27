@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "e4b4224ecb0f__reading__2",
+ "examId": "e4b4224ecb0f",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年 6 月英语六级真题（第 1 套）",
+ "year": 2026,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T06:06:55.433Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58371,
+ "usage": {
+  "prompt_tokens": 1875,
+  "completion_tokens": 3628,
+  "total_tokens": 5503,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1875,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3628,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1875,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "跨国企业利用避税天堂转移利润问题",
+  "gist": "文章指出G-20十年前就协议打击跨国公司滥用避税天堂，但问题反而加剧。研究显示，2019年全球最大跨国企业将37%的海外利润转移至避税天堂，主因是避税产业增长和美国宽松政策。作者认为实施全球最低企业税率（如20%）可根除避税天堂，但美国尚未通过相关立法，使问题难以彻底解决。",
+  "structure": [
+   "第1-2段：G-20协议未能遏制避税天堂问题，反而恶化",
+   "第3-5段：研究数据揭示利润转移规模、原因及税收损失",
+   "第6-7段：政策应对方式及根本解决之道——全球最低税率",
+   "第8-9段：多国签署协议但美国缺席，改革仍有必要"
+  ],
+  "difficulty": "中等",
+  "translation": "大约十年前，由全球最大经济体组成的论坛——二十国集团（G-20）同意打击跨国公司对避税天堂的滥用。这一举措催生了一项计划，旨在遏制将大量企业利润置于税务机关监管之外的做法。\n\n然而，避税天堂的使用不但没有被遏制——巴哈马和开曼群岛等国家拥有极低或实际上为零的税率——问题反而愈发严重了。\n\n在一项新研究中，我们测量了在避税天堂报告的、无法用该国常规经济活动（如雇员、工厂和研发）解释的超额利润。我们的研究发现了一个惊人的规律：企业将账面利润人为转移到避税天堂的现象自20世纪80年代以来有增无减。\n\n我们发现，2019年全球最大的跨国企业将其在其他国家赚取的37%的利润——即9690亿美元——转移到了避税天堂。这一数字在20世纪70年代还不到2%。大幅增长的主要原因是20世纪80年代避税产业的增长，以及美国推出的更便于将利润从高税率国家转移到避税天堂的政策。\n\n我们估计，由此导致的企业税损失在2019年达到了企业税总收入的10%，而在20世纪70年代还不到0.1%。2019年，全球政府税收损失总计为2500亿美元。仅美国跨国公司就占了其中约一半，其次是英国和德国。\n\n政策制定者该如何解决这一问题？迄今为止，全世界一直在试图通过非常渐进地削减或取消企业税来解决这个问题。在过去40年里，全球实际企业税率已从23%降至17%。与此同时，各国政府更加依赖消费税。\n\n但利润转移的根本原因在于相关激励机制，例如其他国家慷慨或宽松的企业税率。如果各国能就全球最低企业税率（比如20%）达成一致，利润转移问题将在很大程度上消失，因为避税天堂将不复存在。\n\n这种机制正是130多个国家在2021年签署的协议的核心内容，15%的最低税率将很快在欧盟、英国、日本、印度尼西亚和许多其他国家开始实施。值得注意的是，美国未能通过这项立法。\n\n我们的研究表明，实施这类税制改革对于扭转越来越多的企业利润流向避税天堂的趋势是必要的——这些利润本应由企业实际运营和创造价值所在国的政府来征税。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But, instead of reining in the use of tax havens—countries such as the Bahamas and Cayman Islands with very low or no effective tax rates—the problem has only gotten worse.",
+    "why": "第一段提到G-20同意打击避税天堂滥用并形成了计划，第二段用\"But\"转折，明确指出\"问题不但没有被遏制，反而更加严重了\"。这说明该协议未能达到预期效果，与C项\"未能实现预期结果\"完全吻合。",
+    "traps": "A\"在非G-20国家加剧了问题\"——原文未区分G-20与非G-20国家，属无中生有；B\"对开曼群岛等国造成了损失\"——原文仅以这些国家为避税天堂的举例，未提及协议对它们的负面影响，属曲解原文；D\"未能产生任何长期计划\"——原文明确说\"resulted in a plan\"，即确实产生了计划，D与原文直接矛盾。",
+    "tip": "注意转折词But后的信息常为命题点，是对前文预期的否定。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The main reasons for the large increase were the growth of the tax avoidance industry in the 1980s and U.S. policies that made it easier to shift profits from high-tax countries to tax havens.",
+    "why": "原文明确指出大幅增长的两个主因：一是80年代避税产业的增长，二是美国推出的便于利润转移的政策。B项\"美国的宽松政策\"直接对应\"U.S. policies that made it easier to shift profits\"，是两大主因之一，lenient与made it easier语义匹配。",
+    "traps": "A\"全球税率波动\"——原文未提到税率波动（fluctuating），属无中生有；C\"对它们征收重税\"——原文未说跨国企业被征重税是转移利润增加的原因，属因果错置；D\"业务快速增长\"——原文说的是避税产业的增长而非企业业务本身的增长，属偷换概念。",
+    "tip": "题目问\"mainly accounted for\"，需回到原文定位\"main reasons\"，选项要与原因精准对应。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "So far, the world as a whole has been trying to solve this problem by cutting or scrapping corporate taxes in a very gradual way.",
+    "why": "原文第六段明确指出，迄今为止全球一直在试图通过\"非常渐进地削减或取消企业税\"来解决利润转移问题。A项\"逐步削减企业税\"（Reducing corporate taxes step by step）与\"cutting corporate taxes in a very gradual way\"精确对应。",
+    "traps": "B\"逐步取消消费税\"——原文说的是各国政府更加依赖消费税（relied more heavily on consumption taxes），并非取消消费税，属反向曲解；C\"联合征收企业税\"——原文未提及各国联合征税的做法，属无中生有；D\"调整全球实际企业税率\"——原文陈述的是税率下降的事实，并非政策制定者主动调整全球税率，属曲解因果。",
+    "tip": "注意同义替换：step by step = in a very gradual way，六级常考近义表述转换。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "If countries could agree on a global minimum corporate tax rate of, say, 20%, the problem of profit-shifting would largely disappear, as tax havens would simply cease to exist.",
+    "why": "原文第七段明确指出，如果各国能就全球最低企业税率达成一致（如20%），利润转移问题将在很大程度上消失，因为避税天堂将不复存在。D项\"实施全球最低企业税率\"与此完全对应，cease to exist即bring to an end。",
+    "traps": "A\"企业税与消费税接轨\"——原文从未提出让企业税与消费税挂钩的主张，属无中生有；B\"所有国家实施优惠税率\"——generous tax rates在原文中恰恰是导致利润转移的根本原因，不是解决方案，属因果倒置；C\"就利润转移的根源达成共识\"——仅达成\"共识\"不够，作者强调的是就最低税率达成协议，属偷换核心概念。",
+    "tip": "题目中bring to an end与原文cease to exist是同义替换，需敏感识别。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The U.S. has notably not been able to pass this legislation. Our research suggests implementing this type of tax reform is necessary in reversing the shift of ever-greater amounts of corporate profits to tax havens.",
+    "why": "文章倒数第二段指出美国\"显著地未能通过这项立法\"，而末段强调此类税制改革对扭转利润转移趋势是\"必要的\"。鉴于美国跨国公司占全球税收损失的约一半（第五段），美国的不合作意味着问题在近期难以解决，利润转移将继续。D项准确概括了这一推断。",
+    "traps": "A\"更多国家降低税率即可解决\"——降低税率是当前无效的做法，不是解决方案，属曲解原文；B\"政府意识到严重性即可终结\"——意识到问题不等于解决问题，原文强调的是立法行动，属过度简化；C\"有企业支持即可消失\"——原文从未提及企业界的支持，且问题的解决依赖国家间税收协议，属无中生有。",
+    "tip": "最后一题常需综合末段信息进行推断，注意notably等强调词暗示的命题倾向。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "crack down on",
+    "cn": "打击，严厉取缔（动词短语）"
+   },
+   {
+    "w": "abusive",
+    "cn": "滥用的，不当的（adj.）"
+   },
+   {
+    "w": "curb",
+    "cn": "遏制，抑制（v.）"
+   },
+   {
+    "w": "shield",
+    "cn": "保护，使免受（v.）"
+   },
+   {
+    "w": "rein in",
+    "cn": "控制，遏制（动词短语）"
+   },
+   {
+    "w": "relentless",
+    "cn": "不间断的，持续不减的（adj.）"
+   },
+   {
+    "w": "scrapping",
+    "cn": "废除，取消（v.，scrap的现在分词）"
+   },
+   {
+    "w": "lenient",
+    "cn": "宽松的，宽大的（adj.）"
+   },
+   {
+    "w": "incentive",
+    "cn": "激励机制，诱因（n.）"
+   },
+   {
+    "w": "implementation",
+    "cn": "实施，执行（n.）"
+   },
+   {
+    "w": "notably",
+    "cn": "尤其，特别是；显著地（adv.）"
+   },
+   {
+    "w": "cease",
+    "cn": "停止，终止（v.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "In a new study, we measured the excessive profits reported in tax havens that cannot be explained by ordinary economic activity such as employees, factories and research in that country.",
+    "cn": "在一项新研究中，我们测量了在避税天堂报告的、无法用该国常规经济活动（如雇员、工厂和研发）来解释的超额利润。",
+    "note": "主干为we measured the excessive profits；reported in tax havens为过去分词短语作后置定语修饰profits；that引导定语从句进一步限定profits；such as引出举例说明。"
+   },
+   {
+    "en": "The main reasons for the large increase were the growth of the tax avoidance industry in the 1980s and U.S. policies that made it easier to shift profits from high-tax countries to tax havens.",
+    "cn": "大幅增长的主要原因是20世纪80年代避税产业的增长，以及美国推出的更便于将利润从高税率国家转移到避税天堂的政策。",
+    "note": "主干为The main reasons were A and B（表语并列）；that引导定语从句修饰U.S. policies；it为形式宾语，真正宾语为to shift profits...。"
+   },
+   {
+    "en": "Our research suggests implementing this type of tax reform is necessary in reversing the shift of ever-greater amounts of corporate profits to tax havens—instead of being taxed by the governments where they operate and create value.",
+    "cn": "我们的研究表明，实施这类税制改革对于扭转越来越多的企业利润流向避税天堂的趋势是必要的——这些利润本应由企业实际运营和创造价值所在国的政府来征税。",
+    "note": "主干为Our research suggests (that) implementing...is necessary；implementing为动名词作主语从句的主语；破折号后instead of补充说明利润本应被征税的去向；where引导定语从句修饰governments。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,175 @@
+{
+ "schemaVersion": 1,
+ "id": "3a1d5271950e__reading__2",
+ "examId": "3a1d5271950e",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2000 年考研英语真题（旧）",
+ "year": 2000,
+ "sub": "2",
+ "questionNumbers": [
+  15,
+  16,
+  17,
+  18
+ ],
+ "generatedAt": "2026-10-27T06:09:16.217Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 51119,
+ "usage": {
+  "prompt_tokens": 1640,
+  "completion_tokens": 3175,
+  "total_tokens": 4815,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1640,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3175,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1640,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人类进化已趋于停滞",
+  "gist": "文章论述了人类进化正在走向终结。首先，现代医学使男婴存活率大幅提高，体重差异不再决定生死，自然选择的一个途径被消除；其次，人们生育数量趋于均等化，自然选择丧失了大部分作用力；最终作者得出结论：机器与社会替代了生物进化，人类身体已停止进化。",
+  "structure": [
+   "第一段：男性死亡率下降，婴儿存活率均等化削弱了自然选择",
+   "第二段：生育数量趋同进一步削弱自然选择，以印度为例说明",
+   "第三段：总结人类进化已终结，技术与社会替代了生物进化"
+  ],
+  "difficulty": "中等",
+  "translation": "做男人向来是危险的。每出生100个女婴，大约就有105个男婴出生，但这一比例到成年时就接近平衡，而在70岁的老人中，女性人数是男性的两倍。然而，男性高死亡率这一普遍规律正在被改变。如今，男婴的存活率几乎与女婴一样高。这意味着，有史以来第一次，在那些寻找伴侣的关键年龄段，男性将会过剩。更重要的是，自然选择的又一个机会被消除了。五十年前，婴儿（尤其是男婴）能否存活取决于其体重。过轻或过重一公斤几乎意味着必死无疑。如今这几乎不再有什么影响。由于体重的差异很大程度上是由基因决定的，进化的又一个推动力消失了。\n\n还有另一种方式可以走上进化的自杀之路：活着，但少生孩子。现在很少有人像过去那样多产。除了在某些宗教社区，很少有女性会生15个孩子。如今，出生数量和死亡年龄一样，已趋于平均化。我们大多数人的后代数量大致相同。同样，人与人之间的差异以及自然选择可以利用这种差异的机会都减少了。印度的情况说明了正在发生的事情。这个国家为大城市中的少数人提供了财富，而其余的部落民众则生活在贫困之中。当今巨大的平庸化——每个人在存活率和后代数量上都趋于相同——意味着在印度中上阶层中，自然选择已经丧失了80%的作用力（与部落相比）。\n\n对我们来说，这意味着进化已经结束；生物学上的乌托邦已经到来。奇怪的是，这一过程几乎没有涉及身体上的变化。没有其他物种能像人类一样占据自然界如此多的生态位。但在过去的十万年里——甚至在过去的一百年里——我们的生活已经发生了翻天覆地的变化，而我们的身体却没有改变。我们没有进化，因为机器和社会替我们完成了这一切。达尔文曾用一句话来形容那些对进化一无所知的人：他们\"看待一个有机体，就如同野蛮人看待一艘船，把它当作完全超出自己理解能力的东西。\"毫无疑问，我们会记住20世纪的生活方式，因其丑陋而令人难以理解。但无论我们的后代对我们距乌托邦有多远感到多么惊讶，他们的外貌看起来将和我们一模一样。",
+  "questions": [
+   {
+    "number": 15,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "There are about 105 males born for every 100 females, but this ratio drops to near balance at the age of maturity, and among 70-year-olds there are twice as many women as men.",
+    "why": "原文第一句指出'做男人向来是危险的'，随后用数据说明：出生时男女比例约为105:100，但到成年时趋于平衡，70岁时女性是男性的两倍。这说明男性在成长过程中不断死亡，存活率低于女性。C选项'更低的存活率'准确概括了这一危险。",
+    "traps": "A'缺少伴侣'是男婴存活率提高后的新问题，而非过去的危险，属于张冠李戴；B'激烈竞争'原文未提及，属于无中生有；D'基因缺陷'虽然文末提到基因，但原文并未说男性有基因缺陷，属于曲解原文。",
+    "tip": "注意时间标志词'used to be'，定位到描述过去情况的句子。"
+   },
+   {
+    "number": 16,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "The grand mediocrity of today—everyone being the same in survival and number of offspring—means that natural selection has lost 80% of its power in upper-middle-class India compared to the tribes.",
+    "why": "印度的例子出现在第二段，用于论证该段的核心论点：人与人之间在存活率和后代数量上的差异正在缩小，自然选择的作用力正在丧失。原文指出在印度中上阶层中，自然选择已丧失80%的作用力。B选项'自然选择在富人和穷人中几乎不再起作用'最接近这一论点。",
+    "traps": "A'富人比穷人生育少'虽可能是事实暗示，但不是该例证要说明的核心观点，属于以偏概全；C'中产阶级人口比部落少80%'是对原文80%数据的曲解，原文说的是自然选择丧失了80%的作用力；D'印度是高出生率国家之一'原文未提及，属于无中生有。",
+    "tip": "例证题要找论点而非例子本身，关注例子前后的总结性语句。"
+   },
+   {
+    "number": 17,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "We did not evolve, because machines and society did it for us.",
+    "why": "第三段明确指出'我们没有进化，因为机器和社会替我们完成了这一切'。整段论述了过去十万年甚至一百年来，人类生活发生了巨大变化，但身体没有改变，原因是技术进步和社会发展替代了生物进化的功能。A选项'科技进步改善了生活'正是对'machines and society did it for us'的同义改写。",
+    "traps": "B'女婴数量下降'原文未提及，属于无中生有；C'人类已到达进化的最高阶段'是对'biological Utopia has arrived'的曲解，作者并非说人类达到了进化顶峰，而是说进化机制不再起作用；D'贫富差距正在消失'虽然第二段提及贫富差异，但这不是身体停止进化的原因，属于偷换概念。",
+    "tip": "因果关系题要精确定位because/since等因果标志词。"
+   },
+   {
+    "number": 18,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "For us, this means that evolution is over; the biological Utopia has arrived.",
+    "why": "全文围绕一个核心论点展开：人类进化正在走向终结。第一段论述存活率均等化消除了自然选择，第二段论述生育数量均等化进一步削弱自然选择，第三段总结进化已经结束，身体不再变化。D选项'人类进化走向停滞（无处可去）'完美概括了全文主旨。",
+    "traps": "A'人类进化中的性别比例变化'仅涉及第一段部分内容，以偏概全；B'延续人类进化的方式'与文章论点相反，文章讨论的是进化终结而非如何延续进化；C'自然的进化未来'过于宽泛，文章聚焦于人类而非整个自然界。",
+    "tip": "主旨题要把握全文反复出现的核心概念，本文核心词是evolution和over/ended。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "maturity",
+    "cn": "n. 成熟；成年"
+   },
+   {
+    "w": "excess",
+    "cn": "n. 过剩，过量"
+   },
+   {
+    "w": "crucial",
+    "cn": "adj. 关键的，至关重要的"
+   },
+   {
+    "w": "fertile",
+    "cn": "adj. 多产的，能生育的"
+   },
+   {
+    "w": "offspring",
+    "cn": "n. 后代，子女"
+   },
+   {
+    "w": "diminish",
+    "cn": "v. 减少，削弱"
+   },
+   {
+    "w": "mediocrity",
+    "cn": "n. 平庸，平凡"
+   },
+   {
+    "w": "tribal",
+    "cn": "adj. 部落的"
+   },
+   {
+    "w": "Utopia",
+    "cn": "n. 乌托邦，理想国"
+   },
+   {
+    "w": "comprehension",
+    "cn": "n. 理解，领悟"
+   },
+   {
+    "w": "descendant",
+    "cn": "n. 后代，后裔"
+   },
+   {
+    "w": "agent",
+    "cn": "n. 因素，推动力（此处指进化的推动因素）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The grand mediocrity of today—everyone being the same in survival and number of offspring—means that natural selection has lost 80% of its power in upper-middle-class India compared to the tribes.",
+    "cn": "当今巨大的平庸化——每个人在存活率和后代数量上都趋于相同——意味着与部落相比，自然选择在印度中上阶层中已丧失了80%的作用力。",
+    "note": "主干为The grand mediocrity means that...；破折号中间为同位语解释mediocrity的含义；compared to the tribes为比较状语。"
+   },
+   {
+    "en": "Darwin had a phrase to describe those ignorant of evolution: they \"look at an organic being as a savage looks at a ship, as at something wholly beyond his comprehension.\"",
+    "cn": "达尔文曾用一句话来形容那些对进化一无所知的人：他们\"看待一个有机体，就如同野蛮人看待一艘船，把它当作完全超出自己理解能力的东西。\"",
+    "note": "主干为Darwin had a phrase to describe those...；冒号后为引语内容；as a savage looks at a ship为类比状语从句；as at something...为省略了look的并列比较。"
+   },
+   {
+    "en": "But however amazed our descendants may be at how far from Utopia we were, they will look just like us.",
+    "cn": "但无论我们的后代对我们距乌托邦有多远感到多么惊讶，他们的外貌看起来将和我们一模一样。",
+    "note": "however amazed...引导让步状语从句，为倒装结构；how far from Utopia we were为介词at的宾语从句；主句为they will look just like us。"
+   }
+  ]
+ }
+}

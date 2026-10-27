@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "2efb108c52cc__reading__2",
+ "examId": "2efb108c52cc",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 6 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:56:06.183Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52809,
+ "usage": {
+  "prompt_tokens": 1736,
+  "completion_tokens": 3405,
+  "total_tokens": 5141,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1736,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3405,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1736,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "工作与身份认同的关系",
+  "gist": "文章探讨了人们常将职业等同于自我身份的现象，指出失去工作会引发身份危机。作者认为身份远比表面看来复杂，我们在不同角色中展现不同自我，且职场身份会随时间变化。在多变的就业市场中，我们应学会管理不确定性，通过改变自我信念来拓展职业选择。",
+  "structure": [
+   "第一、二段：引出工作与身份认同的紧密关系及失业引发的身份危机",
+   "第三段：阐述身份的多元性与动态性，强调管理不确定性的重要",
+   "第四段：论述自我认知信念可改变，鼓励挑战自我定义以拓展职业"
+  ],
+  "difficulty": "中等",
+  "translation": "当有人问我们\"你是做什么的？\"时，我们几乎总是以自己的职业作答。对我们许多人来说，工作远不止是一份差事，它是定义我们身份的核心方面。对许多人而言，正是通过工作，我们才得以界定自己。\n\n\"没有工作，我不知道自己是谁\"，这句话在我的办公椅前已被不止一小撮人说过。确实，这可能是我在与那些失去工作或被迫转行的来访者一起工作时面临的最具挑战性的问题之一。这种失去所引发的身份危机远大于失去工作本身。\n\n然而，我逐渐理解的一件事是：我们的身份远比我们乍看之下认识到的要复杂得多。如果我们花时间去反思，就会发现除了工作之外，我们还可以被认定为朋友、配偶、儿女、父母、运动队成员或宗教社群成员。我们可能会意识到，在这些角色和关系中，我们的感受和行为方式与工作中不同。一个顺从的女儿可能在工作中成为一个果断的领导者。此外，我们在工作中的身份也不是一成不变的，它们会随时间而改变。我本人就做过店员、服务员、学生、毕业生和临床心理学家。在每一个阶段，我适应和发展职业身份的能力对我的幸福感都至关重要。虽然我们希望在生活中消除不确定性，但在某种程度上我们必须管理不确定性，尤其是在当今动荡且不断变化的就业市场中。\n\n我们如何看待自己是身份问题的核心。当我们告诉自己\"我擅长启动项目，但不太擅长坚持到底\"时，这可能会成为我们信念体系的一部分。但如果你不幸经历了被迫换工作的情况，你就需要审视这些信念，看看它们在多大程度上符合现实。你需要问自己这些信念是否有用，并考虑做出个人改变。通过实验、练习和有意识的自律，我们可以随时改变自己的信念、行为和情感体验。在职业发展可能把我们引向新行业的时代，挑战我们的自我认知，探索是否可以通过改变你对自己的看法来创造新的身份体验，从而拓展职业选择，变得前所未有地重要。最终，定义你是谁的人是你自己。你只有允许工作定义你时，工作才会成为你的全部身份。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "This loss provokes an identity crisis much greater than the loss of the job itself.",
+    "why": "原文第二段指出\"没有工作，我不知道自己是谁\"，并明确说失去工作引发的身份危机远大于失去工作本身。C选项\"renders them puzzled about who they are\"（使他们困惑于自己是谁）正是对\"identity crisis\"和\"I don't know who I am\"的同义改写，与原文逻辑完全吻合。",
+    "traps": "A项\"迫使他们看心理医生\"属于无中生有，原文只是作者作为心理学家的工作观察，并非所有失业者都去看心理医生；B项\"提供扮演不同角色的机会\"是对第三段多元身份内容的张冠李戴，与失业问题无直接关联；D项\"迫使他们重新定义人生目标\"偷换概念，原文说的是身份危机而非重新定义人生目标。",
+    "tip": "注意区分\"身份危机\"与\"重新定义目标\"的细微差别。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "One of the things I have come to understand, however, is that our identity is much more complex than we recognise at first glance.",
+    "why": "原文第三段首句明确表示\"我逐渐理解的一件事是，我们的身份远比我们乍看之下认识到的要复杂得多\"。D选项\"It is more complicated than it appears\"是对\"much more complex than we recognise at first glance\"的精准同义改写，complicated对应complex，than it appears对应than we recognise at first glance。",
+    "traps": "A项\"对情感幸福至关重要\"虽然原文提及wellbeing，但那是说适应职业身份变化的能力对幸福感重要，并非作者\"理解到\"的核心内容；B项\"在生活多方面扮演重要角色\"是对多元身份描述的过度推断，原文重点是身份的复杂性而非重要性；C项\"反映我们在社会中变化的地位\"属于无中生有，原文未涉及社会地位问题。",
+    "tip": "题干中\"come to understand\"是精准定位信号词，直接对应原文。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Furthermore, our identities at work are not static. They change over time.",
+    "why": "原文第三段明确指出\"我们在工作中的身份也不是一成不变的，它们会随时间而改变\"，并以作者自身经历（店员→服务员→学生→毕业生→心理学家）为例加以佐证。B选项\"They evolve with the passage of time\"是对\"They change over time\"的同义表达，evolve对应change，with the passage of time对应over time。",
+    "traps": "A项\"对自尊至关重要\"在原文中无对应依据，属于无中生有；C项\"凌驾于所有其他自我认知之上\"与原文强调身份多元性的观点相矛盾；D项\"是理解自我的关键\"过度引申，原文并未将工作身份定位为理解自我的唯一关键。",
+    "tip": "not static是change over time的另一种表达，注意识别同义转换。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Whilst we like to eliminate uncertainty in our lives at some level we have to manage uncertainty, especially in today's volatile and ever-shifting job market.",
+    "why": "原文第三段末尾明确指出，虽然我们想消除不确定性，但在某种程度上我们必须管理不确定性，尤其在当今动荡且不断变化的就业市场中。D选项\"Learn to manage uncertainty\"直接对应原文\"we have to manage uncertainty\"，几乎是原词复现。",
+    "traps": "A项\"努力发展社会身份\"属于无中生有，原文并未提及社会身份的概念；B项\"为不同职业道路做准备\"虽有一定关联性但过于具体，原文表述的是更宏观的\"管理不确定性\"；C项\"时刻保持果断\"是对assertive一词的断章取义，原文仅以assertive举例说明角色转换，与应对就业市场无关。",
+    "tip": "题干关键词ever-changing直接对应原文ever-shifting，精准定位即可。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "it is ever more important to challenge our sense of self and explore whether you can create a new experience of your identity by changing the beliefs you hold about yourself in order to expand your career options.",
+    "why": "原文最后一段指出，为了拓展职业选择，重要的是挑战我们的自我认知，探索能否通过改变对自己的信念来创造新的身份体验。A选项\"Alter our perceptions of ourselves\"（改变我们对自己的看法）是对\"challenge our sense of self\"和\"changing the beliefs you hold about yourself\"的高度概括，perception对应sense of self和beliefs。",
+    "traps": "B项\"比较各种工作机会\"在原文中完全没有提及，属于无中生有；C项\"研究新兴行业\"是对\"new sectors\"的曲解，原文说的是职业发展可能引向新行业，而非建议我们去研究新行业；D项\"有意识地自律\"虽然原文提及conscious self-discipline，但那是改变信念的手段之一，而非拓展职业选择的直接方法，属于以偏概全。",
+    "tip": "in order to之前的内容是方法，之后是目的，题目问方法则往前找。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "occupation",
+    "cn": "n. 职业；占据"
+   },
+   {
+    "w": "utter",
+    "cn": "v. 说出，发出（声音）"
+   },
+   {
+    "w": "provoke",
+    "cn": "v. 引发，激起"
+   },
+   {
+    "w": "assertive",
+    "cn": "adj. 果断的，自信而坚定的"
+   },
+   {
+    "w": "static",
+    "cn": "adj. 静态的，不变的"
+   },
+   {
+    "w": "volatile",
+    "cn": "adj. 动荡的，不稳定的"
+   },
+   {
+    "w": "enforced",
+    "cn": "adj. 被迫的，强制的"
+   },
+   {
+    "w": "grounded",
+    "cn": "adj. 有根据的，基于现实的"
+   },
+   {
+    "w": "experimentation",
+    "cn": "n. 实验，试验"
+   },
+   {
+    "w": "wellbeing",
+    "cn": "n. 幸福感，身心健康"
+   },
+   {
+    "w": "spouse",
+    "cn": "n. 配偶"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "In an age where career progression may lead us into new sectors it is ever more important to challenge our sense of self and explore whether you can create a new experience of your identity by changing the beliefs you hold about yourself in order to expand your career options.",
+    "cn": "在职业发展可能把我们引向新行业的时代，挑战我们的自我认知，探索是否可以通过改变你对自己持有的信念来创造新的身份体验，从而拓展职业选择，变得前所未有地重要。",
+    "note": "主句为it is important to do A and do B结构；where引导定语从句修饰age；whether引导宾语从句；by changing为方式状语；in order to表目的。"
+   },
+   {
+    "en": "Whilst we like to eliminate uncertainty in our lives at some level we have to manage uncertainty, especially in today's volatile and ever-shifting job market.",
+    "cn": "虽然我们希望在生活中消除不确定性，但在某种程度上我们必须管理不确定性，尤其是在当今动荡且不断变化的就业市场中。",
+    "note": "Whilst引导让步状语从句，主句为we have to manage uncertainty；especially引出补充说明；volatile和ever-shifting为并列形容词修饰job market。"
+   },
+   {
+    "en": "But if you have the unfortunate experience of an enforced job change you will need to examine those beliefs to see how grounded in reality they are.",
+    "cn": "但如果你不幸经历了被迫换工作的情况，你就需要审视这些信念，看看它们在多大程度上符合现实。",
+    "note": "if引导条件状语从句；to see为目的状语；how grounded in reality they are为感叹语序的宾语从句，grounded in reality为表语。"
+   }
+  ]
+ }
+}

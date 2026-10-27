@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "6dd82042fcd8__use_of_english__all",
+ "examId": "6dd82042fcd8",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2023 年考研英语真题",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:50:51.311Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 86324,
+ "usage": {
+  "prompt_tokens": 1802,
+  "completion_tokens": 4995,
+  "total_tokens": 6797,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1802,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4995,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1802,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "丝绸之路上的驿站——商队旅馆",
+  "gist": "文章介绍了丝绸之路沿线的商队旅馆（caravanserais）的选址、资金来源、词源、功能与历史意义。它们为旅者提供安全的歇脚处，促进了文化交流与商品贸易，对多个文明的发展产生了深远影响。如今仅约3000座留存，且大多已成废墟。",
+  "difficulty": "中等",
+  "translation": "商队旅馆是沿丝绸之路修建的路边客栈，分布在中国、北非和中东等地区。它们通常坐落于城市或村庄的城墙之外，资金通常来自当地政府或私人资助。\n\n\"caravanserai\"一词是波斯语\"karvan\"（意为一群旅行者或商队）和\"saray\"（宫殿或封闭建筑）的组合。\"caravan\"这个术语被用来描述出于安全原因结伴穿越古代交通网络的人群，例如商人、旅行者或朝圣者。\n\n从十世纪起，随着商贸和旅行路线日益发达，商队旅馆的建造数量不断增加，它们为人们提供了夜间安全歇息的场所。丝绸之路上的旅行者面临着被盗贼袭击或遭受极端天气侵袭的风险。因此，商队旅馆被战略性地布置，以便人们在一天的行程内即可到达。\n\n商队旅馆是丝绸之路上各类旅行者的非正式聚会点。因此，这些建筑成为重要的文化交流与互动中心，旅行者在此分享各自的文化、思想和信仰，同时也将知识带走，极大地影响了多个文明的发展。\n\n商队旅馆也是重要的商品交易市场，有力地促进了丝绸之路上的货物贸易。事实上，它往往是商人们出售货物和为自己的旅途囤积补给的第一站。据信，沿丝绸之路共修建了约12000至15000座商队旅馆，尽管如今已知仅存约3000座，其中许多已成废墟。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "C",
+    "correct": "located",
+    "why": "be located outside the walls 表示\"坐落于城墙之外\"，是描述建筑地理位置的固定搭配。上下文说明驿站的选址特征，用 located 最为准确。",
+    "traps": "A) displayed 意为\"展示\"，不用于描述建筑位置；B) occupied 意为\"占据/居住\"，语义和句式搭配不当；D) equipped 意为\"配备\"，需搭配 with，且语义偏离选址。",
+    "tip": "be located + 地点介词短语是描述位置的常见搭配。"
+   },
+   {
+    "number": 2,
+    "answer": "A",
+    "correct": "privately",
+    "why": "句意为资金来自当地政府或私人资助。funded by local governments 与 privately（私人地）构成\"公 vs 私\"的对比并列，逻辑完整。privately funded 即\"私人出资\"。",
+    "traps": "B) regularly 意为\"定期地\"修饰频率，不能与 governments 形成并列对比；C) respectively 意为\"分别地\"，不能作 funded 的方式状语独立使用；D) permanently 意为\"永久地\"，语义与资金来源无关。",
+    "tip": "or 连接的并列结构要找语义上的对等或对比关系。"
+   },
+   {
+    "number": 3,
+    "answer": "D",
+    "correct": "combination",
+    "why": "下文用 and 连接了两个波斯语词 karvan 和 saray，说明 caravanserai 是两个词的组合。a combination of A and B 是固定搭配，完美契合语境。",
+    "traps": "A) definition 意为\"定义\"，后面应接对词义的解释而非构成成分；B) transition 意为\"过渡/转变\"，语义不符；C) substitution 意为\"替代\"，与词源合成无关。",
+    "tip": "a combination of ... and ... 表示\"……的结合/组合\"。"
+   },
+   {
+    "number": 4,
+    "answer": "C",
+    "correct": "describe",
+    "why": "句意为 caravan 这个术语被用来描述结伴旅行的人群。be used to describe 表示\"被用来描述\"，符合对术语含义进行说明的语境。",
+    "traps": "A) classify 意为\"分类\"，后面缺少 into/as 等必要搭配成分；B) record 意为\"记录\"，与术语的用途不符；D) connect 意为\"连接\"，语义偏离对术语的解释。",
+    "tip": "was used to describe 是学术文章中解释术语含义的常见表达。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "such as",
+    "why": "merchants, travellers or pilgrims 是对前文 groups of people 的举例说明，such as 表示\"例如\"，引出具体例子，逻辑正确。",
+    "traps": "A) apart from 意为\"除了……之外\"，暗示排除，语义不符；B) instead of 意为\"而非\"，表替代关系，逻辑相反；D) along with 意为\"连同\"，表伴随，不用于举例。",
+    "tip": "such as 后接名词短语，用于举例说明前文的概括性描述。"
+   },
+   {
+    "number": 6,
+    "answer": "A",
+    "correct": "construction",
+    "why": "上文说从十世纪起商贸路线更加发达，因此商队旅馆的建造（construction）数量增加。the construction of caravanserais increased 表示\"建造量增加\"，逻辑通顺。",
+    "traps": "B) restoration 意为\"修复\"，强调对已有建筑的修缮，与 increased 搭配不合理；C) impression 意为\"印象\"，与建筑数量无关；D) evaluation 意为\"评估\"，语义偏离。",
+    "tip": "construction 在此为不可数名词，指\"建造（活动/数量）\"。"
+   },
+   {
+    "number": 7,
+    "answer": "B",
+    "correct": "faced",
+    "why": "句意为旅行者面临被盗贼袭击或遭遇极端天气的可能。face the possibility of 是固定搭配，意为\"面对……的可能性\"，符合描述旅途危险的语境。",
+    "traps": "A) doubted 意为\"怀疑\"，语义不合，旅行者不是怀疑而是真实面对危险；C) accepted 意为\"接受\"，暗示主动认可，与语境中的被动风险不符；D) reduced 意为\"减少\"，与 the possibility 搭配后语义不通。",
+    "tip": "face the possibility of 表示\"面临……的可能性\"，是高频搭配。"
+   },
+   {
+    "number": 8,
+    "answer": "B",
+    "correct": "subjected",
+    "why": "be subjected to 意为\"遭受/经受\"，此处指遭受极端天气的侵袭。与 being attacked 并列，两者都表示旅途中的不利遭遇，逻辑一致。",
+    "traps": "A) be assigned to 意为\"被分配到\"，不能搭配天气条件；C) be accustomed to 意为\"习惯于\"，语义偏差，强调习惯而非遭遇风险；D) be opposed to 意为\"反对\"，与天气条件的搭配不合理。",
+    "tip": "be subjected to 表示\"遭受（不好的事情）\"，常考被动搭配。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "so that",
+    "why": "前文说驿站被\"战略性地布置\"，后文说\"能在一天行程内到达\"，二者构成目的关系。so that 引导目的状语从句，逻辑完美衔接。",
+    "traps": "B) even if 意为\"即使\"，表让步，不符合此处因果/目的逻辑；C) now that 意为\"既然\"，表原因，语义方向错误；D) in case 意为\"以防万一\"，虽有目的色彩但侧重预防不良后果，语义偏离。",
+    "tip": "so that + 情态动词 could 是典型的目的状语从句结构。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "meeting",
+    "why": "驿站是丝绸之路上各类旅行者的非正式聚会点。meeting point 意为\"集合点/碰面处\"，是固定搭配，准确概括了驿站作为人群汇聚之所的功能。",
+    "traps": "A) talking point 意为\"话题/谈资\"，语义完全偏离建筑功能；B) starting point 意为\"起点\"，驿站是途中歇脚处而非起点；C) breaking point 意为\"崩溃点/临界点\"，语义不合。",
+    "tip": "meeting point 是固定搭配，表示\"聚会点/会合处\"。"
+   },
+   {
+    "number": 11,
+    "answer": "D",
+    "correct": "As a result",
+    "why": "前句说驿站是各类旅行者的聚会点，后句说它们成为文化交流中心。聚集→交流是因果关系，As a result（因此）完美衔接。",
+    "traps": "A) By the way 意为\"顺便说一下\"，用于插入话题，不表因果；B) On occasion 意为\"偶尔\"，表频率，与逻辑关系无关；C) In comparison 意为\"相比之下\"，表对比，上下文无对比对象。",
+    "tip": "As a result 连接因果关系，前因后果。"
+   },
+   {
+    "number": 12,
+    "answer": "C",
+    "correct": "exchange",
+    "why": "后文提到旅行者分享文化、思想和信仰，这正是文化交流（cultural exchange）的体现。cultural exchange 是高频固定搭配，与 interaction 并列，语义协调。",
+    "traps": "A) cultural heritage 意为\"文化遗产\"，虽是常见搭配但与 interaction 并列及后文 sharing 的语境不符；B) cultural revival 意为\"文化复兴\"，语义偏离；D) cultural status 意为\"文化地位\"，与 interaction 并列不当。",
+    "tip": "cultural exchange and interaction 是描述文化互动的经典搭配。"
+   },
+   {
+    "number": 13,
+    "answer": "C",
+    "correct": "as well as",
+    "why": "前文说旅行者分享文化，后文说他们带走知识。分享与带走是两个并行的行为，as well as 表示\"同时也/以及\"，起递进并列作用。",
+    "traps": "A) with regard to 意为\"关于\"，引出话题而非并列行为；B) in spite of 意为\"尽管\"，表让步，逻辑不符；D) in line with 意为\"与……一致\"，表一致性，语义偏离。",
+    "tip": "as well as 连接两个并列成分，表示\"也/还\"。"
+   },
+   {
+    "number": 14,
+    "answer": "B",
+    "correct": "influencing",
+    "why": "旅行者传播文化与知识，由此极大地影响了多个文明的发展。able to greatly influence the development 是符合上下文因果链的表达。influencing 作伴随/结果状语，逻辑通顺。",
+    "traps": "A) completing 意为\"完成\"，与 the development of civilisations 搭配后暗示终结，语义不当；C) resuming 意为\"恢复/重新开始\"，不合语境；D) pioneering 意为\"开创\"，语气过强，且不符合驿站间接促进文明的语义。",
+    "tip": "influence the development of 是描述间接推动作用的常见搭配。"
+   },
+   {
+    "number": 15,
+    "answer": "A",
+    "correct": "aided",
+    "why": "句意为商队旅馆也是重要的市场，并且有力地促进了贸易。aided in the trade of goods 意为\"在商品贸易中起到帮助/促进作用\"，与前文 marketplace 的语义一脉相承。",
+    "traps": "B) invested 意为\"投资\"，invested in the trade 虽语法可行但主语为 caravanserais 不能做投资主体；C) failed 意为\"失败\"，语义完全相反；D) competed 意为\"竞争\"，语义不符，驿站不参与竞争。",
+    "tip": "aid in 意为\"在……方面起帮助作用\"，注意介词搭配。"
+   },
+   {
+    "number": 16,
+    "answer": "B",
+    "correct": "Indeed",
+    "why": "前句说驿站是重要市场并促进贸易，本句进一步说它是商人的第一站。Indeed 表示\"事实上/的确\"，起补充强调作用，加强前文论点。",
+    "traps": "A) Rather 意为\"相反/更确切地说\"，暗示转折或修正，不合语境；C) Otherwise 意为\"否则\"，表假设相反情况，逻辑不通；D) However 意为\"然而\"，表转折，与上下文递进关系矛盾。",
+    "tip": "Indeed 用于句首起补充强调、进一步论证的作用。"
+   },
+   {
+    "number": 17,
+    "answer": "D",
+    "correct": "stock up on",
+    "why": "商人在驿站出售货物并为旅途囤积补给。stock up on supplies 意为\"囤积/储备物资\"，是固定搭配，完美契合商旅补给的语境。",
+    "traps": "A) go in for 意为\"参加/爱好\"，与 supplies 搭配不当；B) stand up for 意为\"支持/捍卫\"，语义完全偏离；C) close in on 意为\"逼近/包围\"，与补给语境无关。",
+    "tip": "stock up on 意为\"大量储备/囤积\"，常搭配 supplies, food 等。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "believed",
+    "why": "It is believed that 意为\"据信/人们认为\"，是学术文章中引出估计数据的经典被动句式，用于引出 12000-15000 座驿站的估算数据。",
+    "traps": "B) predicted 意为\"预测\"，指对未来的预测，而文中说的是历史已发生之事；C) recalled 意为\"回忆\"，不用于 It is recalled that 句式中表述历史估计；D) implied 意为\"暗示\"，语义过于含蓄，不适合引出具体数据。",
+    "tip": "It is believed that 是考研高频句型，用于表达普遍认知。"
+   },
+   {
+    "number": 19,
+    "answer": "D",
+    "correct": "although",
+    "why": "前文说曾建有 12000-15000 座驿站，后文说如今仅知约 3000 座留存。数量巨大与留存极少之间构成转折让步关系，although（尽管）完美衔接。",
+    "traps": "A) until 意为\"直到\"，表时间，不适用于此处数量对比；B) because 意为\"因为\"，表因果，逻辑方向错误；C) unless 意为\"除非\"，表条件，与语境不符。",
+    "tip": "although 引导让步状语从句，连接\"过去多\"与\"现存少\"的对比。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "correct": "ruins",
+    "why": "in ruins 是固定搭配，意为\"成为废墟\"。文中说现存的约 3000 座中许多已成废墟，符合古代建筑历经千年后破败的常识。",
+    "traps": "B) in debt 意为\"负债\"，用于描述人或机构的财务状况，不适用于建筑；C) in fashion 意为\"流行\"，与古建筑的现状描述不符；D) in series 意为\"连续地/成系列\"，语义偏离。",
+    "tip": "in ruins 为固定搭配，意为\"破败不堪/成为废墟\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "caravanserai",
+    "cn": "n. 商队旅馆，驿站"
+   },
+   {
+    "w": "pilgrim",
+    "cn": "n. 朝圣者，香客"
+   },
+   {
+    "w": "strategically",
+    "cn": "adv. 战略性地，有策略地"
+   },
+   {
+    "w": "commodities",
+    "cn": "n. 商品，货物（常指大宗商品）"
+   },
+   {
+    "w": "merchants",
+    "cn": "n. 商人（复数）"
+   },
+   {
+    "w": "wares",
+    "cn": "n. 货物，商品（常用复数）"
+   },
+   {
+    "w": "enclosed",
+    "cn": "adj. 封闭的，围起来的"
+   },
+   {
+    "w": "onwards",
+    "cn": "adv. 从……起，向前"
+   },
+   {
+    "w": "informal",
+    "cn": "adj. 非正式的"
+   },
+   {
+    "w": "interaction",
+    "cn": "n. 互动，交流"
+   },
+   {
+    "w": "extreme",
+    "cn": "adj. 极端的，极度的"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "For this reason",
+    "role": "承接上文旅途危险，引出驿站战略布局的原因"
+   },
+   {
+    "w": "As a result",
+    "role": "连接因果：人群汇聚（因）→ 文化交流中心（果）"
+   },
+   {
+    "w": "Indeed",
+    "role": "对前句\"重要市场\"进行补充强调和进一步论证"
+   },
+   {
+    "w": "although",
+    "role": "引出让步：曾建万余座，但现存仅约三千座"
+   },
+   {
+    "w": "also",
+    "role": "递进连接驿站的另一功能：从文化交流到商品贸易"
+   },
+   {
+    "w": "as well as",
+    "role": "并列两个行为：分享文化与带走知识"
+   }
+  ]
+ }
+}

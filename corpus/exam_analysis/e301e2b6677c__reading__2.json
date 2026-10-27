@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "e301e2b6677c__reading__2",
+ "examId": "e301e2b6677c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2014 年考研英语真题",
+ "year": 2014,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:29:39.528Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67499,
+ "usage": {
+  "prompt_tokens": 1738,
+  "completion_tokens": 4052,
+  "total_tokens": 5790,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1738,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4052,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1738,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国法律行业弊端及改革建议",
+  "gist": "文章指出美国法律行业存在两大问题：法律教育成本过高（需先读四年本科再读三年法学院）和限制性的行业所有权结构（禁止非律师持有律所股份）。这些问题推高了法律服务费用、抑制了创新。作者提出允许本科阶段学法律、缩短学制、开放律所所有权等改革方案，并以澳大利亚和英国为例呼吁美国效仿。",
+  "structure": [
+   "第1-2段：引出问题——美国法律服务费用飙升，法学生过多但就业困难",
+   "第3段：原因之一——法律教育成本过高，学制冗长导致债务沉重",
+   "第4段：改革建议——允许本科学法、缩短法学院年限，但监管机构保守",
+   "第5段：原因之二——律所限制性所有权结构推高费用、阻碍创新",
+   "第6段：呼吁开放律所所有权，借鉴他国经验推动改革"
+  ],
+  "difficulty": "中等",
+  "translation": "在全世界范围内，律师比其他任何职业的从业者都更容易招致敌意——新闻业或许是唯一的例外。但很少有地方像美国这样，让客户有更多理由去抱怨。\n\n在经济危机之前的十年里，美国在法律服务上的支出增速是通货膨胀率的两倍。最优秀的律师赚得盆满钵满，吸引了越来越多的学生涌入法学院。但大多数法学毕业生从未获得大律所的工作。他们中的许多人转而成为提起骚扰性诉讼的人，使侵权诉讼体系成为代价高昂的噩梦。\n\n造成这种状况的原因很多。其一是法律教育成本过高。在美国大多数州，成为律师只有一条路：先完成四年与法律无关的本科学位，再在美国律师协会认可的两百所法学院之一攻读三年法学学位，然后还要花巨资准备律师资格考试。这使得如今法学院毕业生平均在本科债务之上又背负了十万美元的债务。法学院的债务意味着他们不得不拼命工作。\n\n改革体制将同时惠及律师和他们的客户。合理的方案早已存在，但管理该行业的州级机构过于保守，不愿付诸实施。一个方案是允许人们在本科阶段就攻读法律学位。另一个方案是让学生在法学院学习两年后即可参加律师资格考试。如果律师资格考试确实足够严格，能够检验一个准律师的能力，那么那些能够提前参加考试的人就应该被允许这样做。不需要额外培训的学生可以将其债务负担削减三分之一。\n\n费用如此之高的另一个原因是该行业限制性的行会式所有权结构。除哥伦比亚特区外，非律师不得持有律师事务所的任何股份。这使得收费居高不下，创新步伐缓慢。行业内部要求变革的压力确实存在，但监管者中的反对者坚持认为，将外部人士排除在律所之外，可以使律师免受赚钱压力的影响，从而更好地以合乎道德的方式服务客户。\n\n事实上，允许非律师持有律所股份将降低成本、改善客户服务，因为这将鼓励律所利用技术手段，并聘用专业管理人员来提升事务所的运营效率。毕竟，澳大利亚和英国等国家已经开始推进法律行业自由化。美国应当效仿。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The best lawyers made skyscrapers-full of money, tempting ever more students to pile into law schools.",
+    "why": "原文明确指出\"最优秀的律师赚得盆满钵满（made skyscrapers-full of money）\"，这种丰厚的收入\"诱使越来越多的学生涌入法学院（tempting ever more students to pile into law schools）\"。'skyscrapers-full of money'即巨额财富，对应D选项'the attraction of financial rewards'（经济回报的吸引力），两者形成同义替换。",
+    "traps": "A选项'客户需求增长'——原文说的是法律服务支出增长，并未提及客户需求增长吸引学生入行，属于无中生有；B选项'通胀压力增大'——原文提到法律服务支出增速是通胀的两倍，通胀只是参照物，并非学生选择法律的原因，属于偷换概念；C选项'在大律所工作的前景'——原文明确说大多数法学毕业生从未获得大律所工作，原文用此反衬现实残酷，并非吸引学生的原因。",
+    "tip": "注意分词短语tempting表示因果关系，找准吸引学生的真正原因。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "There is just one path for a lawyer in most American states: a four-year undergraduate degree in some unrelated subject, then a three-year law degree at one of 200 law schools authorized by the American Bar Association and an expensive preparation for the bar exam.",
+    "why": "原文指出在美国大多数州成为律师的唯一路径是先取得'四年与法律无关的本科学位（a four-year undergraduate degree in some unrelated subject）'，然后再读三年法学院。这意味着学生必须先花四年学一个与法律无关的专业，增加了时间和经济成本。D选项'在另一个专业攻读学士学位'正是对此的同义改写。",
+    "traps": "A选项'本科学费更高'——原文未提及本科学费高于其他阶段，只强调了必须先读四年无关本科，属于无中生有；B选项'接受专业协会培训'——原文提到律师协会认可法学院，而非提供培训，属于曲解原文；C选项'律师协会的录取审批'——原文说法学院由律师协会授权（authorized），指的是对学校的认证资质，而非对学生的录取审批，属于偷换对象。",
+    "tip": "注意题目问的是'增加成本'的因素，需找到多余环节。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Sensible ideas have been around for a long time, but the state-level bodies that govern the profession have been too conservative to implement them.",
+    "why": "原文明确指出'合理的方案早已存在，但管理该行业的州级机构过于保守而未能实施'。'the state-level bodies that govern the profession'即管理行业的州级机构，'too conservative to implement them'说明这些机构因保守而阻碍改革。A选项'管理行业的僵化机构（the rigid bodies governing the profession）'中rigid对应conservative，governing the profession对应that govern the profession，构成精确的同义替换。",
+    "traps": "B选项'律师和客户的强烈抵制'——原文说改革对律师和客户都有利，未提及他们抵制改革，属于无中生有；C选项'准律师的严格考试'——严格的律师资格考试是改革方案的一个前提条件，并非改革的障碍，属于逻辑错位；D选项'非专业人士的尖锐批评'——原文未提及非专业人士批评改革，属于无中生有。",
+    "tip": "题目问'阻碍的来源'，需定位到转折词but后的关键信息。"
+   },
+   {
+    "number": 29,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "Except in the District of Columbia, non-lawyers may not own any share of a law firm. This keeps fees high and innovation slow.",
+    "why": "原文解释了这种所有权结构的限制性：'除哥伦比亚特区外，非律师不得持有律所的任何股份（non-lawyers may not own any share of a law firm）'。这正说明该结构之所以'具有限制性'，是因为它禁止外部人士参与律所所有权。B选项'禁止外部人士介入该行业（bans outsiders' involvement in the profession）'准确概括了non-lawyers may not own any share这一核心限制。",
+    "traps": "A选项'阻止律师获得应有利润'——原文说这种结构推高了收费，律师并非利润受损方，反而是客户利益受损，属于张冠李戴；C选项'加剧行业道德状况'——原文提到反对者认为这种结构有助于律师坚守道德，而非加剧道德问题，属于曲解原文；D选项'阻止律师持有律所股份'——原文限制的是非律师（non-lawyers）持股，而非律师本身，属于偷换主语。",
+    "tip": "理解restrictive需回到原文找具体限制措施，注意限制的对象是谁。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "Reforming the system would help both lawyers and their customers.",
+    "why": "全文围绕美国法律行业的问题展开：第1-2段引出美国法律服务费用过高的总问题，第3段分析原因之一（教育成本），第4段提出教育改革方案，第5段分析原因之二（所有权结构），第6段提出开放所有权的解决方案并呼吁效仿他国。文章结构为'提出问题→分析原因→给出方案'，完全对应B选项'美国法律行业的一个问题及其解决方案'。",
+    "traps": "A选项'在美国成为成功律师的因素'——文章讨论的是行业弊端和改革，而非如何成为成功律师，属于偏离主题；C选项'本科学习在法律教育中的角色'——本科学习只是第3-4段的部分内容，不能概括全文，属于以偏概全；D选项'律所所有权缺陷及其原因'——所有权问题只是文章后半部分的内容，且文章不仅讨论原因还讨论解决方案，属于以偏概全。",
+    "tip": "主旨题需纵观全文结构，选最全面概括的选项，避免以偏概全。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "hostility",
+    "cn": "n. 敌意，敌对"
+   },
+   {
+    "w": "inflation",
+    "cn": "n. 通货膨胀"
+   },
+   {
+    "w": "tempting",
+    "cn": "adj. 诱人的；此处为现在分词作结果状语，意为'引诱'"
+   },
+   {
+    "w": "nuisance-lawsuit",
+    "cn": "n. 骚扰性诉讼，无聊诉讼"
+   },
+   {
+    "w": "tort",
+    "cn": "n. 侵权行为（法律术语）"
+   },
+   {
+    "w": "the bar exam",
+    "cn": "n. 律师资格考试"
+   },
+   {
+    "w": "fearsomely",
+    "cn": "adv. 极其，可怕地"
+   },
+   {
+    "w": "implement",
+    "cn": "v. 实施，执行"
+   },
+   {
+    "w": "guild-like",
+    "cn": "adj. 行会式的，同业公会式的"
+   },
+   {
+    "w": "restrictive",
+    "cn": "adj. 限制性的，约束性的"
+   },
+   {
+    "w": "ethically",
+    "cn": "adv. 合乎道德地"
+   },
+   {
+    "w": "liberalizing",
+    "cn": "v. 使自由化，放宽管制（liberalize的现在分词）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "There is just one path for a lawyer in most American states: a four-year undergraduate degree in some unrelated subject, then a three-year law degree at one of 200 law schools authorized by the American Bar Association and an expensive preparation for the bar exam.",
+    "cn": "在美国大多数州，成为律师只有一条路：先完成四年与法律无关的本科学位，再在美国律师协会认可的两百所法学院之一攻读三年法学学位，然后还要花巨资准备律师资格考试。",
+    "note": "冒号后为同位语解释one path的具体内容，包含三个并列步骤：a four-year degree → a three-year law degree → an expensive preparation，其中authorized by...为过去分词短语作后置定语修饰law schools。"
+   },
+   {
+    "en": "There is pressure for change from within the profession, but opponents of change among the regulators insist that keeping outsiders out of a law firm isolates lawyers from the pressure to make money rather than serve clients ethically.",
+    "cn": "行业内部要求变革的压力确实存在，但监管者中的反对者坚持认为，将外部人士排除在律所之外，可以使律师免受赚钱压力的影响，从而更好地以合乎道德的方式服务客户。",
+    "note": "but连接转折；insist后接that宾语从句，从句中keeping outsiders out为动名词短语作主语，isolates为谓语；rather than连接make money与serve clients ethically形成对比。"
+   },
+   {
+    "en": "In fact, allowing non-lawyers to own shares in law firms would reduce costs and improve services to customers, by encouraging law firms to use technology and to employ professional managers to focus on improving firms' efficiency.",
+    "cn": "事实上，允许非律师持有律所股份将降低成本、改善客户服务，因为这将鼓励律所利用技术手段，并聘用专业管理人员来提升事务所的运营效率。",
+    "note": "主语为动名词短语allowing non-lawyers to own shares；by引导方式状语说明实现途径，其中包含两个并列不定式to use technology和to employ professional managers。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "cccaddf69626__translation__all",
+ "examId": "cccaddf69626",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2017 年 6 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:11:42.164Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32974,
+ "usage": {
+  "prompt_tokens": 789,
+  "completion_tokens": 2217,
+  "total_tokens": 3006,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 789,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2217,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 789,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "明朝的经济、航海与文学成就",
+  "reference": "The Ming Dynasty ruled China for 276 years and has been depicted as one of the greatest eras in human history, an era of well-organized governance and social stability. During this period, the development of the handicraft industry promoted the market economy and urbanization. A great number of commodities, including wine and silk, were sold on the market. Meanwhile, many foreign goods, such as clocks and tobacco, were also imported. Major commercial centers like Beijing, Nanjing, Yangzhou and Suzhou emerged one after another. It was also during the Ming Dynasty that the fleet led by Zheng He made seven large-scale expeditionary voyages to the Indian Ocean. It is also worth mentioning that three of the four classic masterpieces of Chinese literature were written during the Ming Dynasty.",
+  "sentences": [
+   {
+    "cn": "明朝统治中国276年，被人们描绘成人类历史上治理有序、社会稳定的最伟大的时代之一。",
+    "en": "The Ming Dynasty ruled China for 276 years and has been depicted as one of the greatest eras in human history, an era of well-organized governance and social stability.",
+    "structure": "并列句 + 被动语态 + 同位语补充说明'时代'的特征，末尾用名词短语做同位语避免从句累赘",
+    "keys": [
+     "明朝 the Ming Dynasty",
+     "治理有序 well-organized governance",
+     "社会稳定 social stability",
+     "被描绘成 be depicted as"
+    ]
+   },
+   {
+    "cn": "这一时期，手工业的发展促进了市场经济和城市化。",
+    "en": "During this period, the development of the handicraft industry promoted the market economy and urbanization.",
+    "structure": "时间状语前置 + 主谓宾简单句，主语为 the development of...",
+    "keys": [
+     "手工业 handicraft industry",
+     "城市化 urbanization"
+    ]
+   },
+   {
+    "cn": "大量商品，包括酒和丝绸，都在市场销售。",
+    "en": "A great number of commodities, including wine and silk, were sold on the market.",
+    "structure": "主语 + 插入语 including... + 被动语态谓语，插入语用逗号隔开",
+    "keys": [
+     "大量商品 a great number of commodities",
+     "丝绸 silk"
+    ]
+   },
+   {
+    "cn": "同时，还进口许多外国商品，如时钟和烟草。",
+    "en": "Meanwhile, many foreign goods, such as clocks and tobacco, were also imported.",
+    "structure": "连接副词 Meanwhile 引导 + 被动语态，such as 引出举例，注意无人称主语时需转为被动",
+    "keys": [
+     "时钟 clocks",
+     "烟草 tobacco"
+    ]
+   },
+   {
+    "cn": "北京、南京、扬州、苏州这样的大商业中心相继形成。",
+    "en": "Major commercial centers like Beijing, Nanjing, Yangzhou and Suzhou emerged one after another.",
+    "structure": "主语（中心词 + like 引出列举）+ 不及物动词 + 副词短语，like 比 such as 更简洁流畅",
+    "keys": [
+     "大商业中心 major commercial centers",
+     "相继 one after another",
+     "扬州 Yangzhou"
+    ]
+   },
+   {
+    "cn": "也是在明代，由郑和率领的船队曾到印度洋进行了七次大规模探险航行。",
+    "en": "It was also during the Ming Dynasty that the fleet led by Zheng He made seven large-scale expeditionary voyages to the Indian Ocean.",
+    "structure": "强调句型 It was...that...，强调时间状语；led by Zheng He 作后置定语修饰 fleet",
+    "keys": [
+     "郑和 Zheng He",
+     "印度洋 the Indian Ocean",
+     "探险航行 expeditionary voyages",
+     "船队 fleet"
+    ]
+   },
+   {
+    "cn": "还值得一提的是，中国文学的四大经典名著中有三部写于明代。",
+    "en": "It is also worth mentioning that three of the four classic masterpieces of Chinese literature were written during the Ming Dynasty.",
+    "structure": "It is worth mentioning that... 固定句型引导主语从句 + 被动语态，部分与整体用 three of the four 表达",
+    "keys": [
+     "四大经典名著 the four classic masterpieces",
+     "值得一提 worth mentioning"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "明朝",
+    "en": "the Ming Dynasty"
+   },
+   {
+    "cn": "手工业",
+    "en": "handicraft industry"
+   },
+   {
+    "cn": "城市化",
+    "en": "urbanization"
+   },
+   {
+    "cn": "市场经济",
+    "en": "market economy"
+   },
+   {
+    "cn": "郑和",
+    "en": "Zheng He"
+   },
+   {
+    "cn": "印度洋",
+    "en": "the Indian Ocean"
+   },
+   {
+    "cn": "四大经典名著",
+    "en": "the four classic masterpieces of Chinese literature"
+   },
+   {
+    "cn": "扬州",
+    "en": "Yangzhou"
+   },
+   {
+    "cn": "探险航行",
+    "en": "expeditionary voyage(s)"
+   },
+   {
+    "cn": "烟草",
+    "en": "tobacco"
+   }
+  ],
+  "pitfalls": [
+   "'治理有序、社会稳定'需译为名词短语或形容词短语作同位语/定语，不可逐字硬译为两个句子",
+   "'相继形成'易遗漏 one after another，只写 were formed 丢失'相继'语义",
+   "'由郑和率领的船队'应使用过去分词短语 led by Zheng He 作后置定语，勿写成 which is led by 时态错误",
+   "'也是在明代'应使用强调句 It was also during the Ming Dynasty that...，而非简单 also in Ming Dynasty",
+   "专有名词拼写易错：Yangzhou 非 Yang Zhou，tobacco 双 c 单 b，the Indian Ocean 需加定冠词"
+  ],
+  "upgrades": [
+   {
+    "plain": "The Ming Dynasty ruled China for 276 years. People described it as...",
+    "better": "The Ming Dynasty ruled China for 276 years and has been depicted as one of the greatest eras...",
+    "note": "用被动语态 be depicted as 避免出现模糊主语 people，更符合学术文体"
+   },
+   {
+    "plain": "many goods were sold in the market",
+    "better": "a great number of commodities were sold on the market",
+    "note": "commodities 比 goods 更正式，a great number of 比 many 更具书面色彩"
+   },
+   {
+    "plain": "Zheng He led the fleet to the Indian Ocean seven times",
+    "better": "the fleet led by Zheng He made seven large-scale expeditionary voyages to the Indian Ocean",
+    "note": "用 made voyages 搭配更地道，expeditionary 体现探险性质，信息更完整"
+   },
+   {
+    "plain": "It should also be mentioned that...",
+    "better": "It is also worth mentioning that...",
+    "note": "worth mentioning 更简练地道，属于六级高频加分句型"
+   },
+   {
+    "plain": "Big business centers such as Beijing... appeared",
+    "better": "Major commercial centers like Beijing... emerged one after another",
+    "note": "major commercial centers 用词更专业，emerged 比 appeared 更适合描述城市兴起"
+   }
+  ]
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "schemaVersion": 1,
+ "id": "5e76e93d8176__listening__all",
+ "examId": "5e76e93d8176",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2015 年 12 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T04:34:40.487Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 56153,
+ "usage": {
+  "prompt_tokens": 2043,
+  "completion_tokens": 4745,
+  "total_tokens": 6788,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3074
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 2043
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力音频与原文，以下解析仅基于选项文本语言特征推断，不涉及录音具体内容。",
+  "overview": "本场共7段材料、25题。第1-4题围绕个人音乐偏好与歌唱感受；第5-8题与播音工作流程相关；第9-11题涉及高等教育理念；第12-15题讨论能源使用与效率；第16-18题关注情绪调节与日常习惯；第19-22题可能以金钱相关表达为线索，举例涉及战时间谍；第23-25题聚焦美国家庭结构与角色变化。以上均为选项措辞推断，非录音内容复述。",
+  "strategy": [
+   "预读选项标记名词、动词差异，预测问题类型：动作、原因、数字、态度。",
+   "听到与选项构成同义替换的表达时优先选，不要只等原词复现。",
+   "注意转折词 but, however, actually 之后的信息，常为出题点。",
+   "两个选项含义相反或包含相同关键词时，答案往往在二者之间。",
+   "数字题听到多个数字要记录对应事物，不能只选出现过的数字。",
+   "边听边排除与题干限定词（时间、地点、人称）不符的选项。"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "男士对音乐的感受、唱歌能力偏好和应对情绪的方式。",
+    "optionSignals": "第1、4题多为使役动词短语，可能问“音乐让他怎样/他会做什么”；第2、3题含 can/can't 及 like，可能问能力或喜好。",
+    "tips": [
+     "注意听男士对“喜欢/不喜欢”的表达，第2、3题可直接对应。",
+     "情感影响类选项近义较多（touch heart/make cry/remind），需抓住程度和对象。",
+     "听到“complex/opera/country”等关键词时，注意是说话者本人还是他人。"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "播音员工作流程、分工及信号提醒。",
+    "optionSignals": "第5题以 How he... 开头，可能问工作方式；第6题 They 开头表第三方职责；第7题动名词短语表工作困难；第8题 It 指代某个标志或信号。",
+    "tips": [
+     "注意区分播音员本人与新闻团队其他成员的动作。",
+     "听到时间紧、语调变化等可对应第7题。",
+     "第8题需听清“信号”出现时的具体作用，避免与广告提示混淆。"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "大学招生、教育权利及教师教学偏好。",
+    "optionSignals": "第9题 They 指代学校，含 attract/admit/trouble 等动词；第10题为抽象教育观点；第11题 He 开头描述教师特点。",
+    "tips": [
+     "注意第9题中“they”的指代是大学，听清是吸引、录取还是应对留学生。",
+     "第10题若出现“right/prosperity/social ladder”等，重点听观点归属。",
+     "第11题捕捉教师对学生的偏好或公平性表述。"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "能源特征、使用效率及环境影响。",
+    "optionSignals": "第12题含数字与比较，可能问数量或影响；第13题描述能源最终去向与污染；第14题 When... 表条件；第15题均为负面现象名词。",
+    "tips": [
+     "数字题注意“more than 30 million barrels”可能对应数据，听清是否 total/day。",
+     "第13题区分 heat、forms、pollution、loss 等能源不同去向。",
+     "第14题若问效率最高条件，抓“near capacity/regular times”等条件状语。"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "改善情绪、处理琐事与养成习惯的方法。",
+    "optionSignals": "第16题为动名词短语，可能问推荐的行为；第17题反复出现 one minute，且选项含 within/without；第18题为抽象名词短语。",
+    "tips": [
+     "第16题听到具体行为时，注意与选项动词的替换（smell/set/talk/listen）。",
+     "第17题若出现“one minute rule”，听清动作完成时限是 within 还是 without delay。",
+     "第18题抓住说话人对习惯/规则的定性：strict/hard/positive/decision-making。"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "财富态度、金钱相关表达及以间谍为例的说明。",
+    "optionSignals": "第19题为财富满足度观点；第20题为说话行为动名词；第21题描述德国/英国间谍；第22题列举金钱表达和美国生活等话题。",
+    "tips": [
+     "第19题注意 never/not everyone 等否定范围，答案常是概括性判断。",
+     "第20题问说话人当前动作时，听开头导入语或语气（抱怨/引入/讲故事）。",
+     "第21、22题涉及例证与主题，听清例子服务的主旨，避免以例为本。"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "美国家庭中父母子女角色变化。",
+    "optionSignals": "第23题对比丈夫与妻子职责；第24题描述孩子过去由母亲照顾；第25题为宏观变化陈述。",
+    "tips": [
+     "第23题若是“主要变化”题，听清是丈夫还是妻子承担双重工作。",
+     "第24题关注过去母亲早起帮忙与驾车送学等细节，勿与现在混。",
+     "第25题答案可能是原文对家庭结构变化现象的概括，避免只选细节。"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "opera",
+    "cn": "歌剧"
+   },
+   {
+    "w": "complicated",
+    "cn": "复杂的"
+   },
+   {
+    "w": "announcer",
+    "cn": "播音员"
+   },
+   {
+    "w": "news stories",
+    "cn": "新闻报道"
+   },
+   {
+    "w": "on the air",
+    "cn": "播出中"
+   },
+   {
+    "w": "potential",
+    "cn": "潜力"
+   },
+   {
+    "w": "motivation",
+    "cn": "积极性/动力"
+   },
+   {
+    "w": "transmission",
+    "cn": "输送/传输"
+   },
+   {
+    "w": "capacity",
+    "cn": "产能/容量"
+   },
+   {
+    "w": "scented candles",
+    "cn": "香薰蜡烛"
+   },
+   {
+    "w": "overwhelming",
+    "cn": "令人不知所措的"
+   },
+   {
+    "w": "household",
+    "cn": "家庭"
+   },
+   {
+    "w": "spies",
+    "cn": "间谍"
+   },
+   {
+    "w": "expressions",
+    "cn": "表达/习语"
+   }
+  ]
+ }
+}

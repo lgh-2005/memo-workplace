@@ -1,0 +1,198 @@
+{
+ "schemaVersion": 1,
+ "id": "9c1324fe939d__part_b__all",
+ "examId": "9c1324fe939d",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2017 年考研英语真题",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:35:11.981Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 40599,
+ "usage": {
+  "prompt_tokens": 1450,
+  "completion_tokens": 2108,
+  "total_tokens": 3558,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1450,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2108,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1450,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "狄更斯生平与文学创作历程",
+  "type": "段落排序题",
+  "strategy": [
+   "先通读各段，识别人物传记的时间线索（出生→童年→成年→成名→后续创作）",
+   "找首尾段：D为总起介绍段，B/G含后续发展信息，锁定框架",
+   "利用时间标志词（soon after, from then on, after）和指代关系确定前后衔接",
+   "关注专有名词首次出现与再次提及的顺序，确认逻辑链完整",
+   "验证排好的全文是否在时间和逻辑上通顺连贯"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "F",
+    "why": "D段总括狄更斯是19世纪最伟大的小说家，紧接着应介绍其出生背景。F段以'Dickens was born in Portsmouth'开头，承接D段的人物总述，从出生地、家庭背景、童年苦难依次展开，符合传记'先介绍身世'的常规逻辑。",
+    "traps": "E段提到'Soon after his father's release from prison'，需先有F段交代父亲入狱才可衔接；A段提到发表作品，时间上晚于童年经历，不能直接接D段。",
+    "tip": "D段总述人物后，F段'was born'是传记的自然起点。"
+   },
+   {
+    "number": 42,
+    "answer": "E",
+    "why": "F段末尾讲述父亲因债入狱及在鞋油厂工作的屈辱经历。E段以'Soon after his father's release from prison'开头，直接承接F段父亲入狱的情节，时间衔接紧密。E段记叙狄更斯获得更好工作、自学速记、向杂志投稿短篇素描，是从童年苦难到早期职业生涯的过渡。",
+    "traps": "A段虽也涉及写作，但提到'first published sketch'，需在E段交代'submitted short sketches to obscure magazines'之后才合理。",
+    "tip": "E段'Soon after his father's release from prison'精准对接F段父亲入狱。"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "why": "E段末尾提到狄更斯向不知名杂志投稿短篇素描（submitted short sketches to obscure magazines）。A段紧接讲述第一篇发表的素描'A Dinner at Poplar Walk'刊登在The Monthly Magazine上，并提到后续以笔名'Boz'在The Evening Chronicle发表，赢得初步声誉。从'投稿'到'发表'逻辑顺畅。",
+    "traps": "C段提到'Soon after Sketches by Boz appeared'，必须先有A段交代笔名Boz的来源，C段才可衔接；G段讲的是Pickwick之后的创作，时序过晚。",
+    "tip": "E段'投稿素描'→A段'首篇素描发表'，写作生涯递进。"
+   },
+   {
+    "number": 44,
+    "answer": "C",
+    "why": "A段末尾提到狄更斯以笔名Boz发表的素描为其赢得声誉。C段开头'Soon after Sketches by Boz appeared'直接承接A段中的Boz素描集，讲述出版商邀请狄更斯写连载故事，进而诞生《匹克威克外传》。C段末尾提及该书于1836-1837年连载出版，与后续B段讲述该书大获成功完美衔接。",
+    "traps": "G段讲的是Pickwick之后的作品，不能插在C与B之间；E段已在42题使用，且内容不涉及出版合作。",
+    "tip": "C段'Soon after Sketches by Boz appeared'直接回扣A段的Boz笔名。"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "why": "B段讲述《匹克威克外传》的巨大成功使狄更斯名声大振。G段以'After Pickwick'开头，承接B段内容，讲述狄更斯转向更阴郁的创作世界，先后创作《雾都孤儿》和《尼古拉斯·尼克尔贝》，巩固了其国内外文坛地位。这是传记从成名到持续创作的自然延伸，作为全文结尾恰到好处。",
+    "traps": "其余选项（A、C、E、F）均已使用，且G段'After Pickwick'明确的时间标记只能接在B段之后，位置唯一确定。",
+    "tip": "G段'After Pickwick'与B段讲述Pickwick成功形成直接衔接。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "panorama",
+    "cn": "全景，全貌（n.）"
+   },
+   {
+    "w": "moralist",
+    "cn": "道德家，伦理学家（n.）"
+   },
+   {
+    "w": "satirist",
+    "cn": "讽刺作家（n.）"
+   },
+   {
+    "w": "paternal",
+    "cn": "父系的，父方的（adj.）"
+   },
+   {
+    "w": "steward",
+    "cn": "管家，管事（n.）"
+   },
+   {
+    "w": "blacking",
+    "cn": "鞋油，黑色光亮剂（n.）"
+   },
+   {
+    "w": "humiliation",
+    "cn": "屈辱，丢脸（n.）"
+   },
+   {
+    "w": "confide",
+    "cn": "吐露，倾诉（v.）"
+   },
+   {
+    "w": "stenographer",
+    "cn": "速记员（n.）"
+   },
+   {
+    "w": "shorthand",
+    "cn": "速记，速记法（n.）"
+   },
+   {
+    "w": "errand boy",
+    "cn": "跑腿的小工，勤杂工（n.）"
+   },
+   {
+    "w": "obscure",
+    "cn": "不知名的，晦涩的（adj.）"
+   },
+   {
+    "w": "installment",
+    "cn": "（连载的）一期，分册（n.）"
+   },
+   {
+    "w": "backdrop",
+    "cn": "背景，衬托（n.）"
+   },
+   {
+    "w": "woodcut",
+    "cn": "木刻版画（n.）"
+   },
+   {
+    "w": "serially",
+    "cn": "连载地，连续地（adv.）"
+   },
+   {
+    "w": "runaway",
+    "cn": "轻易取得的，势不可挡的（adj.）"
+   },
+   {
+    "w": "plump",
+    "cn": "丰满的，圆胖的（adj.）"
+   },
+   {
+    "w": "spectacled",
+    "cn": "戴眼镜的（adj.）"
+   },
+   {
+    "w": "consolidated",
+    "cn": "巩固，加强（v.）"
+   },
+   {
+    "w": "workhouse",
+    "cn": "济贫院（n.）"
+   },
+   {
+    "w": "slum",
+    "cn": "贫民窟（n.）"
+   }
+  ]
+ }
+}

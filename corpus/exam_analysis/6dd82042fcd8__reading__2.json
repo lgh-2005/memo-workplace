@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "6dd82042fcd8__reading__2",
+ "examId": "6dd82042fcd8",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年考研英语真题",
+ "year": 2023,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:51:55.963Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64648,
+ "usage": {
+  "prompt_tokens": 1752,
+  "completion_tokens": 3947,
+  "total_tokens": 5699,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1752,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3947,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1752,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "新英格兰地区短租市场监管争议",
+  "gist": "文章围绕新英格兰地区短租市场的监管问题展开。当地房价创新高、库存极低，短租市场加剧住房紧张。各方观点分歧：住房倡导者呼吁增加经济适用房，旅游业人士强调短租对旅游业的支撑，政策专家则指出核心问题在于开发商变相建酒店以逃避税收监管，并认为注册制度虽有帮助但不足以解决住房根本问题，还需大量建房。",
+  "structure": [
+   "第1-2段：交代背景——新英格兰房荒严峻，短租监管成为热点",
+   "第3-4段：正反两方——Taylor强调住房危机，Castle强调短租对旅游业的价值",
+   "第5段：专家Hom点明核心矛盾在于开发商变相建酒店逃税",
+   "第6-7段：马萨诸塞州立法应对，Hom总结注册制有益但不够，根本在于多建房"
+  ],
+  "difficulty": "中等",
+  "translation": "自Airbnb等平台于2010年代兴起以来，新英格兰各社区一直试图对短期租赁进行监管。如今，由于房价创历史新高、库存处于历史低位，这种监管变得更加紧迫，尤其是对于那些担心开发商会涌入并大量收购住房、再通过短租市场牟取暴利的人而言。\n\n在新罕布什尔州，租房空置率已降至1%以下，住房倡导者担心不受约束的短期租赁将给本已紧张的市场带来更大压力。该州议会近日投票否决了一项法案，该法案原本将禁止各城镇制定限制短期租赁的法规。\n\n\"我们在租房供应方面已经处于危机水平，\"大海岸劳动力住房联盟执行主任尼克·泰勒说。他表示，由于新罕布什尔州南部城镇缺乏足够的经济适用房，\"雇主难以吸引员工，而工人也很难找到住处。\"\n\n然而，当地房地产经纪人协会首席执行官瑞安·卡斯尔指出，短期租赁也为游客提供了住宿。\"很多工人服务于旅游业，而旅游业的运转依赖于短期入住的游客，\"卡斯尔说，\"所以这是一个循环效应。\"\n\n短期租赁本身并不是问题的症结所在，经济适用房政策专家凯伦·霍姆说。\"我认为个人能够出租自己的第二套房是好事。如果那本来就是他们的度假屋，空着也是空着，为什么不能拿来赚钱呢？\"霍姆说。然而，问题出在开发商试图创建大规模的短租设施——即事实上的酒店——以规避税收和监管的时候。\"我认为问题是，一个实际上在建酒店、却把它伪装成非酒店的开发商，难道不应该像酒店一样被对待、征税和监管吗？\"霍姆说。\n\n2018年底，马萨诸塞州州长查理·贝克签署了一项法案，以遏制那些潜在的投资购房者。该法案要求每位出租房东在州政府注册登记，强制他们购买保险，并在新的州税之上为地方征税打开了可能性。波士顿更进一步，要求出租者在该市检查服务部门注册登记。\n\n霍姆表示，类似的注册要求可能有益于那些处境困难的城镇，但\"如果我们想改变住房市场，最主要的是我们必须大量建造更多住房。\"",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Now, with record-high home prices and historically low inventory, there's an increased urgency in such regulation",
+    "why": "原文第1段明确指出新英格兰地区房价创历史新高、房屋库存处于历史低位（historically low inventory），第2段补充新罕布什尔州租房空置率降至1%以下，第3段Taylor称租房供应处于危机水平。这些信息均表明住房供给水平极低，A项是对原文多处信息的准确概括。",
+    "traps": "B项\"社区需要资金\"属于无中生有，原文未提及资金问题；C项\"空置率缓慢上升\"与原文相反，原文说空置率降至1%以下；D项\"房价受到严格控制\"与原文矛盾，原文说房价创历史新高，恰恰说明未被控制。",
+    "tip": "注意区分正向信息与反向信息，low inventory直接对应supply at a low level。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The state Legislature recently voted against a bill that would've made it illegal for towns to create legislation restricting short-term rentals.",
+    "why": "该法案的内容是\"禁止城镇制定限制短期租赁的法规\"，即法案意图阻止地方政府限制短租市场。换言之，如果法案通过，各城镇将无权对短租市场施加限制，短租市场将处于自由运作状态。因此法案的目的就是允许短租市场自由发展，对应D项。注意该法案已被议会否决（voted against）。",
+    "traps": "A项\"遏制短租投机\"与法案目的相反，法案恰恰是为了保护短租自由；B项\"确保廉价住房供应\"是住房倡导者的诉求而非该法案的目的；C项\"惩罚非法住房交易\"属于无中生有，原文未涉及。",
+    "tip": "多重否定是考研常见陷阱，需理清逻辑链：法案要'禁止限制'，即'允许自由'。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Without enough affordable housing in southern New Hampshire towns, employers are having a hard time attracting employees, and workers are having a hard time finding a place to live",
+    "why": "Taylor明确指出租房供应处于危机水平，并强调南部城镇缺乏足够的经济适用房导致雇主难以招到员工、工人难以找到住处。他关注的核心是经济适用房的供给不足。而Castle则强调短租对旅游业的循环支撑作用。两相对比，Taylor更可能支持增加经济适用房供应，对应B项。",
+    "traps": "A项\"加大旅游投资\"是Castle的立场方向而非Taylor的主张；C项\"严格管理房产中介\"原文未涉及；D项\"对短期工人的优惠政策\"虽与劳动力相关，但Taylor关注的是住房问题而非工人政策。",
+    "tip": "比较类题目需分别提炼两人立场的核心差异，再做判断。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Issues arise, however, when developers attempt to create large-scale short-term rental facilities—de facto hotels—to bypass taxes and regulations.",
+    "why": "第5段Hom先肯定个人出租第二套房是好事，然后用however转折，指出真正的问题在于开发商试图建造大规模短租设施（实质上是酒店）以规避税收和监管。她最后用反问句强调这类开发商应该像酒店一样被征税和监管。全段核心论点是必须阻止开发商以短租为名逃避酒店税和监管，对应C项。",
+    "traps": "A项\"升级短租设施的紧迫性\"属于曲解原文，Hom关注的不是设施升级而是税收监管问题；B项\"住房市场的高效运转\"过于笼统，非本段重点；D项\"出租空余房屋的正当程序\"是段首铺垫内容而非强调的重点。",
+    "tip": "注意however等转折词后的内容往往是作者真正想强调的核心观点。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "Hom said similar registration requirements could benefit struggling cities and towns, but if we want to make a change in the housing market, the main one is we have to build a lot more.",
+    "why": "Hom先肯定注册制度\"可能有益于困难城镇\"（could benefit），但紧接着用but转折，指出要真正改变住房市场，最主要的是必须大量建造更多住房。这说明她认为注册制度虽有一定帮助，但远远不够，不足以从根本上解决问题，即注册要求是一个不充分的解决方案，对应D项inadequate solution。",
+    "traps": "A项\"不合理的决定\"过于否定，Hom承认注册有益处；B项\"不可行的提议\"与原文矛盾，Hom认为注册要求可行且有益；C项\"不必要的措施\"同样过于否定，Hom说它could benefit，并非不必要。",
+    "tip": "but转折后是真正态度所在；区分'不够好'与'不好'是解题关键。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inventory",
+    "cn": "n. 库存，存量（此处指房源供给量）"
+   },
+   {
+    "w": "swaths",
+    "cn": "n. 大片，大量（buy up swaths of housing 大量收购房产）"
+   },
+   {
+    "w": "flip",
+    "cn": "v. 快速转手倒卖（房产等以牟利）"
+   },
+   {
+    "w": "vacancy rate",
+    "cn": "n. 空置率"
+   },
+   {
+    "w": "strained",
+    "cn": "adj. 紧张的，承受压力的"
+   },
+   {
+    "w": "crux",
+    "cn": "n. 症结，关键问题"
+   },
+   {
+    "w": "de facto",
+    "cn": "adj./adv. 事实上的（拉丁语借词）"
+   },
+   {
+    "w": "bypass",
+    "cn": "v. 绕过，规避（税收、法规等）"
+   },
+   {
+    "w": "rein in",
+    "cn": "v. 遏制，控制"
+   },
+   {
+    "w": "levy",
+    "cn": "n. 征税，税款"
+   },
+   {
+    "w": "mandate",
+    "cn": "v. 强制要求，规定"
+   },
+   {
+    "w": "cyclical",
+    "cn": "adj. 循环的，周期性的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Now, with record-high home prices and historically low inventory, there's an increased urgency in such regulation, particularly among those who worry that developers will come in and buy up swaths of housing to flip for a fortune on the short-term rental market.",
+    "cn": "如今，由于房价创历史新高、库存处于历史低位，这种监管变得更加紧迫，尤其是对于那些担心开发商会涌入并大量收购住房、再通过短租市场牟取暴利的人而言。",
+    "note": "主干为there's an increased urgency；with引导伴随状语说明背景；particularly后为补充说明对象；who引导定语从句修饰those，从句中含动词不定式to flip作目的状语。"
+   },
+   {
+    "en": "The state Legislature recently voted against a bill that would've made it illegal for towns to create legislation restricting short-term rentals.",
+    "cn": "该州议会近日投票否决了一项法案，该法案原本将禁止各城镇制定限制短期租赁的法规。",
+    "note": "主干为Legislature voted against a bill；that引导定语从句修饰bill；would've made是虚拟语气表示未实现；it为形式宾语，真正宾语是for towns to create legislation；含三层嵌套否定逻辑。"
+   },
+   {
+    "en": "The bill requires every rental host to register with the state, mandates they carry insurance, and opens the potential for local taxes on top of a new state levy.",
+    "cn": "该法案要求每位出租房东在州政府注册登记，强制他们购买保险，并在新的州税之上为地方征税打开了可能性。",
+    "note": "主干为三个并列谓语requires...mandates...opens...；on top of表示\"在……之上，除……之外\"；levy指税款，与前文taxes构成同义复现。"
+   }
+  ]
+ }
+}

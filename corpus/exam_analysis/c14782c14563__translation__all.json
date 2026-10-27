@@ -1,0 +1,212 @@
+{
+ "schemaVersion": 1,
+ "id": "c14782c14563__translation__all",
+ "examId": "c14782c14563",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2016 年 6 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:09:44.305Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 30597,
+ "usage": {
+  "prompt_tokens": 805,
+  "completion_tokens": 2093,
+  "total_tokens": 2898,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 805,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2093,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 805,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "深圳经济特区的发展与成就",
+  "reference": "Shenzhen is a newly developed city in Guangdong Province, China. Before the reform and opening-up, Shenzhen was nothing but a fishing village with a population of only over 30,000. In the 1980s, the Chinese government established the Shenzhen Special Economic Zone as an experimental ground for implementing the socialist market economy. Today, Shenzhen has a population of over 10 million and the city has undergone tremendous changes. By 2014, Shenzhen's per-capita GDP had reached 25,000 US dollars, equivalent to the level of some developed countries in the world. In terms of overall economic strength, Shenzhen ranks among the top cities in China. Owing to its unique status, Shenzhen is also an ideal place for entrepreneurs both at home and abroad to start their businesses.",
+  "sentences": [
+   {
+    "cn": "深圳是中国广东省一座新开发的城市。",
+    "en": "Shenzhen is a newly developed city in Guangdong Province, China.",
+    "structure": "简单主系表结构，介词短语作后置定语修饰 city",
+    "keys": [
+     "广东省 Guangdong Province",
+     "新开发的 newly developed"
+    ]
+   },
+   {
+    "cn": "在改革开放之前,深圳不过是一个渔村,仅有三万多人。",
+    "en": "Before the reform and opening-up, Shenzhen was nothing but a fishing village with a population of only over 30,000.",
+    "structure": "时间状语从句 + 主系表结构 + with 介词短语作后置定语补充人口信息",
+    "keys": [
+     "改革开放 the reform and opening-up",
+     "不过是 nothing but / merely",
+     "渔村 fishing village",
+     "三万多人 a population of over 30,000"
+    ]
+   },
+   {
+    "cn": "20世纪80年代,中国政府创建了深圳经济特区,作为实施社会主义市场经济的试验田。",
+    "en": "In the 1980s, the Chinese government established the Shenzhen Special Economic Zone as an experimental ground for implementing the socialist market economy.",
+    "structure": "时间状语 + 主谓宾结构 + as 引导的介词短语作目的/角色状语",
+    "keys": [
+     "经济特区 Special Economic Zone",
+     "社会主义市场经济 the socialist market economy",
+     "试验田 experimental ground / testing ground",
+     "实施 implement"
+    ]
+   },
+   {
+    "cn": "如今,深圳的人口已经超过1,000万,整个城市发生了巨大的变化。",
+    "en": "Today, Shenzhen has a population of over 10 million and the city has undergone tremendous changes.",
+    "structure": "并列句，and 连接两个完整分句，均使用现在完成时表示结果",
+    "keys": [
+     "人口已经超过 has a population of over",
+     "巨大的变化 tremendous changes",
+     "发生了变化 has undergone changes"
+    ]
+   },
+   {
+    "cn": "到2014年,深圳的人均(per-capita)GDP已达25,000美元,相当于世界上一些发达国家的水平。",
+    "en": "By 2014, Shenzhen's per-capita GDP had reached 25,000 US dollars, equivalent to the level of some developed countries in the world.",
+    "structure": "by + 过去时间点引导时间状语，主句用过去完成时；equivalent to 引导形容词短语作补充说明",
+    "keys": [
+     "人均GDP per-capita GDP",
+     "发达国家 developed countries",
+     "相当于 equivalent to",
+     "到2014年 by 2014（触发过去完成时）"
+    ]
+   },
+   {
+    "cn": "就综合经济实力而言,深圳居于中国顶尖城市之列。",
+    "en": "In terms of overall economic strength, Shenzhen ranks among the top cities in China.",
+    "structure": "介词短语 in terms of 作状语前置 + 主谓结构",
+    "keys": [
+     "综合经济实力 overall economic strength",
+     "居于……之列 rank among",
+     "顶尖城市 top cities"
+    ]
+   },
+   {
+    "cn": "由于其独特的地位,深圳也是国内外企业家创业的理想之地。",
+    "en": "Owing to its unique status, Shenzhen is also an ideal place for entrepreneurs both at home and abroad to start their businesses.",
+    "structure": "owing to 引导原因状语 + 主系表结构 + for sb. to do sth. 不定式作后置定语",
+    "keys": [
+     "独特的地位 unique status",
+     "国内外 both at home and abroad",
+     "企业家 entrepreneurs",
+     "创业 start their businesses",
+     "理想之地 ideal place"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "改革开放",
+    "en": "the reform and opening-up"
+   },
+   {
+    "cn": "经济特区",
+    "en": "Special Economic Zone (SEZ)"
+   },
+   {
+    "cn": "社会主义市场经济",
+    "en": "the socialist market economy"
+   },
+   {
+    "cn": "试验田",
+    "en": "experimental ground / testing ground"
+   },
+   {
+    "cn": "人均GDP",
+    "en": "per-capita GDP"
+   },
+   {
+    "cn": "发达国家",
+    "en": "developed countries"
+   },
+   {
+    "cn": "综合经济实力",
+    "en": "overall economic strength"
+   },
+   {
+    "cn": "企业家",
+    "en": "entrepreneurs"
+   },
+   {
+    "cn": "广东省",
+    "en": "Guangdong Province"
+   },
+   {
+    "cn": "创业",
+    "en": "start a business / launch a venture"
+   }
+  ],
+  "pitfalls": [
+   "'到2014年'须用 by 2014，主句应使用过去完成时 had reached，而非一般过去时",
+   "'不过是'应译为 nothing but 或 merely，不可直译为 not more than",
+   "'试验田'是比喻义，应译为 experimental ground / testing ground，不可译为 experimental field（农业含义）",
+   "'国内外'应译为 both at home and abroad 或 domestic and foreign，不可漏译",
+   "'居于……之列'应使用 rank among，不可误写为 rank in 或 rank at"
+  ],
+  "upgrades": [
+   {
+    "plain": "Shenzhen is one of the top cities in China",
+    "better": "Shenzhen ranks among the top cities in China",
+    "note": "rank among 比 is one of 更具学术正式感，体现排名与地位"
+   },
+   {
+    "plain": "Because of its unique status",
+    "better": "Owing to its unique status",
+    "note": "owing to 比 because of 更书面正式，适合译文语体"
+   },
+   {
+    "plain": "Shenzhen was only a fishing village",
+    "better": "Shenzhen was nothing but a fishing village",
+    "note": "nothing but 强调'不过是'的限定语气，更忠实原文"
+   },
+   {
+    "plain": "the city has had great changes",
+    "better": "the city has undergone tremendous changes",
+    "note": "undergo changes 是地道搭配，tremendous 比 great 更具书面色彩"
+   },
+   {
+    "plain": "equal to the level of some developed countries",
+    "better": "equivalent to the level of some developed countries",
+    "note": "equivalent to 更精准表达经济数据的对等关系，学术感更强"
+   }
+  ]
+ }
+}

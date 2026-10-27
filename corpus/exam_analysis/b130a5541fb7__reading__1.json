@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "b130a5541fb7__reading__1",
+ "examId": "b130a5541fb7",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年 12 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:31:29.610Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 70751,
+ "usage": {
+  "prompt_tokens": 1897,
+  "completion_tokens": 3946,
+  "total_tokens": 5843,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1897,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3946,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1897,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "注意力缺失时代的艺术欣赏困境",
+  "gist": "文章探讨在大众旅游和注意力缺失的时代，人们是否还能真正欣赏艺术。作者以卢浮宫蒙娜丽莎前的匆忙场景切入，指出工业化的匆忙让观看品质丧失，并通过哲学家沃尔海姆的极端例子、乌菲兹美术馆的管理经验、埃利亚松的展览等论据，说明深度欣赏艺术仍有可能，最后引用普鲁斯特名言强调艺术的价值在于让人以他者视角看世界。",
+  "structure": [
+   "第1段：卢浮宫现象引出注意力缺失问题",
+   "第2段：大众旅游使体验商品化，欣赏变得不可能",
+   "第3段：深度观看的价值及管理改善的可能性",
+   "第4段：埃利亚松展览证明娱乐与严肃艺术可兼得",
+   "第5段：引普鲁斯特名言点明艺术的真正价值"
+  ],
+  "difficulty": "中等",
+  "translation": "在一个注意力缺失的文化中，艺术的位置在哪里？近期到卢浮宫参观的游客反映，如今游客在蒙娜丽莎前只能停留一分钟就会被要求继续前行。其中一些人的大部分时间甚至不是在拍画作本身，而是以画作为背景拍自己的照片。\n\n一种观点认为，我们将旅游和参观画廊民主化到了如此程度，以至于实际上已不可能欣赏我们远道而来想看的东西。在这个供不应求的社会里，体验变成了和其他东西一样的商品。攀登珠穆朗玛峰要排队，观赏名画也要排队。如此理解的休闲其实是苦差事，回去上班反倒成了从这种折磨中获得的当之无愧的休息。\n\n在这种工业化的匆忙中失去的是观看的品质。以一个极端的例子为例——已故哲学家理查德·沃尔海姆。他参观卢浮宫时，能在一幅画前坐上长达四个小时。他声称，第一个小时是消除错误感知所必需的，只有在那之后画作才开始真正展现自身。这在今天看来不可思议，但仍然可以做到。即使在最繁忙的博物馆里，也有许多展厅和许多值得数小时凝神细赏的画作，而人群大多对其视而不见。有时最大的拥挤部分是管理不善造成的；蒙娜丽莎之所以成为如今这样匆忙的体验，部分原因是博物馆正在重新整修。佛罗伦萨的乌菲兹美术馆——另一个文化朝圣之地——通过巧妙的管理将入场排队时间缩短到了七分钟。而且有些艺术形式，那些既是壮观场景又是沉思对象的艺术，在面对庞大人群时依然能完美运作。\n\n例如，奥拉维尔·埃利亚松目前在泰特现代美术馆的展览，乍看之下或许只是一种娱乐，到处都是在雾气房间和喷雾装置中喧闹玩耍的孩子。但它不止于此：埃利亚松在最具娱乐性的时候也是最严肃的，他那令人迷失方向的装置艺术让人切身感受到我们正在对地球造成的破坏性影响——尤其是我们正在对埃利亚松深爱的冰岛冰川所做的事情。\n\n马塞尔·普鲁斯特，另一位卢浮宫的热爱者，写道：\"只有通过艺术，我们才能逃离自身，了解另一个人如何看待这个宇宙，否则那些风景对我们来说就会像月球上的风景一样陌生。\"如果任何艺术仍值得一看，它就必须引领我们实现这样的逃离。但在匆忙的人群中，在一幅画前停留一分钟做不到这一点。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "One view is that we have democratised tourism and gallery-going so much that we have made it effectively impossible to appreciate what we've travelled to see.",
+    "why": "第一段描述卢浮宫游客在蒙娜丽莎前只停留一分钟且忙于自拍的场景，紧接着第二段开头明确总结：旅游和参观画廊的过度民主化使人们'实际上不可能欣赏我们远道而来要看的东西'。B选项中'near impossibility of appreciating art'精准对应'effectively impossible to appreciate'，'age of mass tourism'对应'democratised tourism'。",
+    "traps": "A项'巨大吸引力'虽然人多暗示画作有吸引力，但作者核心论点不在此，属于偷换论点；C项'商业价值'原文未涉及艺术品商业价值，属于无中生有；D项'难以一睹名画'把问题简化为物理层面的'看到'，而作者强调的是深层次的'欣赏'(appreciate)，属于曲解原意。",
+    "tip": "注意区分'看到'(get a glimpse)与'欣赏'(appreciate)的本质差异。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The first hour, he claimed, was necessary for misperceptions to be eliminated. It was only then that the picture would begin to disclose itself.",
+    "why": "沃尔海姆花四小时看画的原因在原文中有明确解释：第一个小时是消除错误感知所必需的，之后画作才开始真正展现自身。这说明充分欣赏一幅艺术作品需要足够的时间，与A选项'充分欣赏艺术作品需要时间'完全吻合。沃尔海姆的例子是为了论证'观看品质'(the quality of looking)需要时间投入。",
+    "traps": "B项'误解艺术品很常见'虽然原文提到misperceptions，但这只是过程的一部分，非花四小时的原因，属于以偏概全；C项'越久越可能享受'将时间与享受建立了原文不存在的线性关系，属于过度推断；D项'越久越觉得有价值'原文完全未提及价值判断，属于无中生有。",
+    "tip": "注意区分'原因'和'过程中的现象'，避免以偏概全。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "The Uffizi in Florence, another site of cultural pilgrimage, has cut its entry queues down to seven minutes by clever management.",
+    "why": "原文指出乌菲兹美术馆通过'clever management'将排队时间缩短到七分钟。此例出现在讨论'大拥挤有时是管理不善的产物'(the largest crowds are partly the products of bad management)之后，是为了正面论证好的管理能有效解决大量游客带来的问题。C选项'良好管理是应对大量游客的关键'准确概括了这一论证意图。",
+    "traps": "A项'更好保护艺术品'偏离原文讨论的管理游客流量问题，属于偷换话题；B项'总是游客如织'虽然提到了'cultural pilgrimage'，但该例的重点是管理成效而非人多本身，属于抓错重点；D项'游客造成管理问题'因果倒置，原文强调的是管理可以解决人多问题，而非人多制造管理问题。",
+    "tip": "例证题关键在于找出例子要证明的论点，而非例子本身的细节。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "But it's more than that: where Eliasson is at his most entertaining, he is at his most serious too, and his disorienting installations bring home the reality of the destructive effects we are having on the planet",
+    "why": "原文先说埃利亚松的展览看起来像纯粹的娱乐(nothing more than an entertainment)，然后用But转折指出'不止于此'：在最具娱乐性的同时也最严肃，通过装置艺术让人认识到人类对地球的破坏。这说明娱乐性与严肃艺术可以兼得，B选项完全对应这一逻辑。",
+    "traps": "A项'孩子边玩边学欣赏艺术最有效'原文提到孩子只是描写场景，并非论点，属于过度推断；C项'环保主题艺术最吸引儿童'原文未做此比较，属于无中生有；D项'某些艺术形式能容纳大量人群'虽然第三段末尾有类似表述，但这是上一段的论点，不是从埃利亚松展览中得出的核心信息，且该题问的是从这个展览中学到什么。",
+    "tip": "But转折后的内容往往是作者真正要表达的观点，是出题的高频考点。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "It is only through art that we can escape from ourselves and know how another person sees the universe, whose landscapes would otherwise have remained as unknown as any on the moon.",
+    "why": "普鲁斯特的原话明确指出：只有通过艺术我们才能'逃离自身'(escape from ourselves)并'了解另一个人如何看待这个宇宙'(know how another person sees the universe)。核心含义是艺术让我们能够从他人的视角看世界。C选项'帮助我们从不同视角看世界'(see the world from a different perspective)是对'know how another person sees the universe'的精确同义改写。",
+    "traps": "A项'过更充实的生活'原文未涉及，属于无中生有；B项'逃离残酷现实'把'escape from ourselves'(逃离自身局限)曲解为'escape the harsh reality'(逃离残酷现实)，偷换了逃离的对象，属于偷梁换柱；D项'探索宇宙未知领域'将universe理解为字面上的宇宙太空，而原文是比喻他人所见的世界，属于曲解原意。",
+    "tip": "注意escape from ourselves（逃离自我局限）与escape the harsh reality（逃避现实）的本质区别。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inattention",
+    "cn": "n. 注意力缺失，漫不经心"
+   },
+   {
+    "w": "democratise",
+    "cn": "v. 使民主化，使大众化"
+   },
+   {
+    "w": "oversubscribed",
+    "cn": "adj. 供不应求的，过度拥挤的"
+   },
+   {
+    "w": "commodity",
+    "cn": "n. 商品，日用品"
+   },
+   {
+    "w": "ordeal",
+    "cn": "n. 折磨，严峻考验"
+   },
+   {
+    "w": "misperception",
+    "cn": "n. 错误感知，误解"
+   },
+   {
+    "w": "contemplation",
+    "cn": "n. 沉思，凝神细赏"
+   },
+   {
+    "w": "pilgrimage",
+    "cn": "n. 朝圣，朝圣之旅"
+   },
+   {
+    "w": "spectacle",
+    "cn": "n. 壮观场面，奇观"
+   },
+   {
+    "w": "disorienting",
+    "cn": "adj. 令人迷失方向的，使人困惑的"
+   },
+   {
+    "w": "installation",
+    "cn": "n.（艺术）装置作品"
+   },
+   {
+    "w": "romp",
+    "cn": "v. 喧闹地玩耍，嬉戏"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "One view is that we have democratised tourism and gallery-going so much that we have made it effectively impossible to appreciate what we've travelled to see.",
+    "cn": "一种观点认为，我们将旅游和参观画廊民主化到了如此程度，以至于实际上已不可能欣赏我们远道而来想看的东西。",
+    "note": "主干为One view is that...引导表语从句；so...that...构成结果状语从句；what引导宾语从句作appreciate的宾语；we've travelled为定语从句省略关系副词。"
+   },
+   {
+    "en": "It is only through art that we can escape from ourselves and know how another person sees the universe, whose landscapes would otherwise have remained as unknown as any on the moon.",
+    "cn": "只有通过艺术，我们才能逃离自身，了解另一个人如何看待这个宇宙，否则那些风景对我们来说就会像月球上的风景一样陌生。",
+    "note": "It is only...that...为强调句型；how引导宾语从句；whose引导非限制性定语从句修饰universe；would otherwise have remained为虚拟语气，表示与事实相反的假设。"
+   },
+   {
+    "en": "And there are some forms of art, those designed to be spectacles as well as objects of contemplation, which can work perfectly well in the face of huge crowds.",
+    "cn": "而且有些艺术形式，那些既是壮观场景又是沉思对象的艺术，在面对庞大人群时依然能完美运作。",
+    "note": "主干为there are some forms of art...which can work...；those designed to be...为同位语插入成分补充说明some forms of art；which引导非限制性定语从句；as well as连接并列成分。"
+   }
+  ]
+ }
+}

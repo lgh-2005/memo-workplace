@@ -1,0 +1,148 @@
+{
+ "schemaVersion": 1,
+ "id": "ee319925678d__writing__all",
+ "examId": "ee319925678d",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2019 年 6 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:27:27.295Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 40549,
+ "usage": {
+  "prompt_tokens": 691,
+  "completion_tokens": 2725,
+  "total_tokens": 3416,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 691,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2725,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 691,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"学习中动力与方法的重要性\"展开论述，要求150-200词，需观点明确、论证充分、结构完整。",
+    "outline": [
+     "开篇引出话题：学习成功离不开动力（motivation）与方法（methods），二者缺一不可。",
+     "分论点展开：先论述动力的作用（内在驱动、坚持不懈），再论述方法的作用（提高效率、事半功倍），并说明二者的相互关系。",
+     "总结升华：动力与方法如鸟之双翼，唯有兼备才能在学业上真正取得卓越成就。"
+    ],
+    "sample": "When it comes to achieving academic success, both motivation and methods play indispensable roles in the learning process. Without either of them, learners are unlikely to reach their full potential.\n\nMotivation serves as the driving force behind all learning endeavors. It determines whether a student can persist through challenges and maintain enthusiasm over the long term. A highly motivated learner tends to set clear goals, embrace difficulties, and view setbacks as opportunities for growth rather than reasons to quit. However, motivation alone is not sufficient. Equally important are effective learning methods, which function as the vehicle that transforms effort into tangible results. Strategies such as spaced repetition, active recall, and critical thinking enable students to absorb knowledge more efficiently and retain it longer. Without proper methods, even the most passionate learner may find their efforts yielding diminishing returns.\n\nIn conclusion, motivation and methods are like two wings of a bird—neither can be dispensed with. Only by combining a strong inner drive with scientifically sound strategies can learners truly excel in their academic pursuits.",
+    "phrases": [
+     {
+      "en": "play an indispensable role in",
+      "cn": "在……中起不可或缺的作用；常用于议论文首段引出核心观点"
+     },
+     {
+      "en": "serve as the driving force behind",
+      "cn": "充当……背后的驱动力；形象表达动力的功能"
+     },
+     {
+      "en": "persist through challenges",
+      "cn": "坚持克服挑战；比 overcome difficulties 更强调过程"
+     },
+     {
+      "en": "view setbacks as opportunities for growth",
+      "cn": "将挫折视为成长的机会；展现积极心态的高分表达"
+     },
+     {
+      "en": "transforms effort into tangible results",
+      "cn": "将努力转化为切实的成果；强调方法的实效性"
+     },
+     {
+      "en": "spaced repetition / active recall",
+      "cn": "间隔重复/主动回忆；具体的学习策略术语，体现知识储备"
+     },
+     {
+      "en": "yielding diminishing returns",
+      "cn": "产出递减的回报；经济学术语活用，展现词汇深度"
+     },
+     {
+      "en": "neither can be dispensed with",
+      "cn": "二者都不可被省去/缺少；正式书面表达，替代 both are important"
+     },
+     {
+      "en": "Only by combining ... can learners truly excel",
+      "cn": "只有将……结合起来，学习者才能真正出类拔萃；倒装句式，语法加分"
+     }
+    ],
+    "pitfalls": [
+     "全文只泛泛说 motivation 和 methods 很重要，缺少具体例证或细节展开，论证空洞",
+     "动力与方法各说各话，未体现二者的关联性或互补关系，结构松散",
+     "词汇重复率高，反复使用 important/very/good，缺乏同义替换",
+     "段落之间缺少过渡词（however, equally, in conclusion），逻辑衔接不畅",
+     "字数不足150词或远超200词，不符合题目硬性要求直接扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Motivation is very important in learning.",
+      "better": "Motivation serves as the driving force behind all learning endeavors.",
+      "note": "用 serve as + 具体比喻替换空泛的 very important，表达更生动有力"
+     },
+     {
+      "plain": "Good methods can help us learn better.",
+      "better": "Effective learning methods function as the vehicle that transforms effort into tangible results.",
+      "note": "以隐喻 vehicle 替代笼统的 help，并用 tangible results 增强画面感"
+     },
+     {
+      "plain": "We should have both motivation and methods.",
+      "better": "Only by combining a strong inner drive with scientifically sound strategies can learners truly excel.",
+      "note": "使用 Only by ... can ... 倒装句，句式高级且语气更有说服力"
+     },
+     {
+      "plain": "Without methods, we will waste time.",
+      "better": "Without proper methods, even the most passionate learner may find their efforts yielding diminishing returns.",
+      "note": "用让步语气 even the most ... 加经济学隐喻 diminishing returns，层次更丰富"
+     },
+     {
+      "plain": "Motivation and methods are both important.",
+      "better": "Motivation and methods are like two wings of a bird—neither can be dispensed with.",
+      "note": "比喻+破折号补充说明，替代千篇一律的 both important，令人印象深刻"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Motivation serves as the driving force behind all learning endeavors. — 动力是一切学习努力背后的驱动力。（serve as + 比喻，精准且正式）",
+   "Equally important are effective learning methods, which function as the vehicle that transforms effort into tangible results. — 同样重要的是有效的学习方法，它如同将努力转化为切实成果的载体。（倒装+定语从句+隐喻三合一）",
+   "A highly motivated learner tends to set clear goals, embrace difficulties, and view setbacks as opportunities for growth rather than reasons to quit. — 高度自驱的学习者倾向于设定清晰目标、拥抱困难，并将挫折视为成长的机会而非放弃的理由。（三项并列+rather than对比）",
+   "Only by combining a strong inner drive with scientifically sound strategies can learners truly excel in their academic pursuits. — 唯有将强大的内在驱动力与科学合理的策略相结合，学习者才能真正在学业上出类拔萃。（Only by ... can ... 倒装，适用于结尾升华）",
+   "Without proper methods, even the most passionate learner may find their efforts yielding diminishing returns. — 没有恰当的方法，即使最富热情的学习者也会发现自己的付出回报递减。（让步+隐喻，论证有深度）"
+  ]
+ }
+}

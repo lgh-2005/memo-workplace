@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "a1fd36502b35__reading__2",
+ "examId": "a1fd36502b35",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 12 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:51:29.580Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57356,
+ "usage": {
+  "prompt_tokens": 1849,
+  "completion_tokens": 3711,
+  "total_tokens": 5560,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1849,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3711,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1849,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "竞争是天性还是文化产物",
+  "gist": "文章围绕\"竞争究竟是人类的先天本能还是后天文化习得\"展开讨论。先介绍弗洛伊德的心理学观点（竞争源于本能驱动），再引述霍布斯和达尔文的观点并指出其被误读，最后通过人类学家玛格丽特·米德的跨文化研究得出结论：竞争是文化塑造的行为，其普遍程度取决于该社会对竞争的重视程度。",
+  "structure": [
+   "第一段：引出争议——竞争是先天还是后天，并点明竞争影响广泛",
+   "第二段：心理学视角——弗洛伊德认为竞争源于人类本能驱动",
+   "第三段：人类学质疑——达尔文自然选择并不等于竞争至上",
+   "第四段：米德的跨文化研究证明竞争是文化产物而非天性"
+  ],
+  "difficulty": "中等",
+  "translation": "心理学家长期以来一直在争论竞争究竟是人类行为中习得的还是遗传的成分。不管它是什么，你都不得不承认竞争在学术界和当代生活的许多其他领域中所产生的影响。\n\n从心理学角度来说，竞争被视为人类内驱力的必然结果。根据西格蒙德·弗洛伊德的观点，人类生来就为争夺注意力而尖叫，并且充满了在各个领域寻求满足的本能驱力。最初，我们为了争夺父母的关注而竞争。此后，我们便受制于追求自我满足的基本冲动与禁止纯粹放纵的社会文化规范之间的斗争。\n\n然而，当前人类学领域的研究表明，这种关于竞争在人类行为中所扮演角色的看法可能是不正确的。托马斯·霍布斯是十七世纪伟大的哲学家之一，他最为人所铭记的或许是他对\"自然世界\"的描述——即人类意志施加之前的世界——\"肮脏、野蛮且短暂\"。这种对前理性世界的描绘至今仍被广泛持有，并被查尔斯·达尔文极具影响力的著作《物种起源》所强化。该著作确立了自然选择学说。这一学说认为，那些最能适应和主宰其所生存的自然环境的物种将存活下来，这暗示着生存斗争是决定一个人成功与否的固有人类特征。达尔文的理论甚至被概括为\"适者生存\"——一个达尔文本人从未使用过的短语——进一步突显了竞争在成功中的作用。然而正如人们常常指出的那样，自然选择的概念中并没有任何内容表明竞争是\"适者生存\"最成功的策略。达尔文在《物种起源》中声称，他所描述的斗争应被视为隐喻，并且可以很容易地包含依赖与合作。\n\n许多研究已经对各种文化中竞争相对于其他价值（如合作）的重要性进行了测试，结果普遍得出结论：美国人独特地赞扬竞争是自然的、不可避免的和可取的。1937年，世界著名人类学家玛格丽特·米德出版了《原始民族中的合作与竞争》一书，该书基于她对几个不重视竞争的社会的研究，实际上这些社会有时似乎对竞争持负面评价。其中一个这样的社会是亚利桑那州的祖尼印第安人，米德发现他们对合作的重视远超竞争。在研究了数十个这样的文化之后，米德的最终结论是：竞争性是人类行为中由文化创造的方面，其在某一特定社会中的普遍程度取决于该社会对它的重视程度。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "you cannot but recognize the effect competition is exerting in academics and many other areas of contemporary life.",
+    "why": "原文第一段末句明确指出\"你不得不承认竞争在学术界和当代生活许多其他领域所产生的影响\"。选项D\"竞争的影响\"是对\"the effect competition is exerting\"的直接同义改写，完全吻合原文。",
+    "traps": "A选项\"关于竞争不可避免性的分歧\"偷换概念，原文说的是竞争的影响而非分歧本身容易被看到；B选项\"心理学研究的后果\"无中生有，原文未提及心理学研究的后果在当代生活中可见；C选项\"人类驱力的影响\"范围过大且张冠李戴，原文强调的是竞争的影响而非驱力本身的影响。",
+    "tip": "注意区分文中真正的主语——是competition的影响，而非其他概念。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "we are at the mercy of a battle between our base impulses for self-fulfillment and social and cultural norms which prohibit pure indulgence.",
+    "why": "原文第二段末句指出，在最初阶段之后，人们受制于\"追求自我满足的基本冲动\"与\"禁止纯粹放纵的社会文化规范\"之间的斗争。D选项\"满足自身欲望的同时遵守社会规范\"准确概括了这一矛盾关系：既要satisfy desires（对应base impulses for self-fulfillment），又要observe social conventions（对应social and cultural norms）。",
+    "traps": "A选项\"在不招致驱力负面影响的情况下满足个人需求\"曲解原文，原文并未说drives有adverse effects需要避免；B选项\"沉迷文化追求同时压制基本冲动\"颠倒了原文关系，cultural norms是约束而非追求对象；C选项\"获得广泛认可同时不暴露放纵\"无中生有，原文未提及extensive recognition。",
+    "tip": "把握原文两个对立面的关系：冲动 vs. 规范，找到最匹配的选项。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "his characterization of the \"natural world,\" that is, the world before the imposition of the will of humanity",
+    "why": "原文用同位语解释\"natural world\"即\"the world before the imposition of the will of humanity\"（人类意志施加之前的世界）。C选项\"免受人类理性干预\"是对此的准确改写：free from rational intervention = before the imposition of the will of humanity。原文中\"pre-rational world\"也呼应了\"理性干预之前\"的含义。",
+    "traps": "A选项\"被哲学家和人类学家误解\"无中生有，原文并未说霍布斯的描述被误解，而是说其观点至今仍广泛被持有；B选项\"在达尔文《物种起源》中被扭曲\"过度推断，原文说达尔文的作品强化了这一形象，而非扭曲它；D选项\"是当今很少被欣赏的前理性世界\"与原文矛盾，原文说这一形象至今仍被\"广泛持有\"(still widely held)。",
+    "tip": "注意同位语结构对核心概念的解释功能，它往往是考点所在。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Darwin asserted in The Origin of Species that the struggles he was describing should be viewed as metaphors and could easily include dependence and cooperation.",
+    "why": "原文末段达尔文声称他描述的斗争应被视为隐喻，并且可以轻松包含依赖与合作。B选项\"生存斗争并不排斥相互支持\"是对\"could easily include dependence and cooperation\"的合理推断——既然斗争可以包含合作与依赖，那就说明生存斗争不排斥mutual support。",
+    "traps": "A选项\"所有物种天生依赖他者生存\"过度推断，all和inherently用词过于绝对，原文只是说斗争\"可以包含\"依赖；C选项\"竞争与合作作为生存策略同等重要\"无中生有，原文未做两者的权重比较；D选项\"最强物种在自然选择中最适合\"曲解原文，原文强调的是适应能力而非最强。",
+    "tip": "注意区分\"可以包含\"与\"必然等于\"之间的逻辑差异，避免选择过于绝对的表述。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "competitiveness is a culturally created aspect of human behavior, and that its prevalence in a particular society is relative to how that society values it.",
+    "why": "原文最后一句是米德的最终结论：竞争性是人类行为中\"文化创造的方面\"，其在某个社会的普遍程度取决于\"该社会对它的重视程度\"。D选项\"人们对竞争的态度实际上受文化制约\"准确对应了culturally created和relative to how that society values it，即竞争态度是culture-bound的。",
+    "traps": "A选项\"竞争是人类的特征\"与米德结论恰恰相反，米德认为竞争是文化产物而非人类本性特征；B选项\"美国人独特地反对合作\"过度推断且歪曲原文，原文只说美国人独特地赞扬竞争，并未说他们反对合作；C选项\"竞争在西方社会相对更普遍\"缩小范围且原文未做此比较，米德的结论是普遍性的文化理论而非仅针对西方。",
+    "tip": "最终结论题要精准定位作者/研究者的总结句，避免被前文细节干扰。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "genetic",
+    "cn": "adj. 基因的，遗传的"
+   },
+   {
+    "w": "exert",
+    "cn": "v. 施加（影响、压力等）"
+   },
+   {
+    "w": "inevitable",
+    "cn": "adj. 不可避免的"
+   },
+   {
+    "w": "impulse",
+    "cn": "n. 冲动，驱动力"
+   },
+   {
+    "w": "indulgence",
+    "cn": "n. 放纵，沉溺"
+   },
+   {
+    "w": "imposition",
+    "cn": "n. 强加，施加"
+   },
+   {
+    "w": "brutish",
+    "cn": "adj. 野蛮的，残忍的"
+   },
+   {
+    "w": "inherent",
+    "cn": "adj. 固有的，内在的"
+   },
+   {
+    "w": "prevalence",
+    "cn": "n. 普遍，盛行"
+   },
+   {
+    "w": "metaphor",
+    "cn": "n. 隐喻，比喻"
+   },
+   {
+    "w": "anthropologist",
+    "cn": "n. 人类学家"
+   },
+   {
+    "w": "doctrine",
+    "cn": "n. 学说，信条"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "This doctrine, which takes for granted that those species best able to adapt to and master the natural environment in which they live will survive, has suggested that the struggle for survival is an inherent human trait which determines a person's success.",
+    "cn": "这一学说理所当然地认为那些最能适应并主宰其所生存的自然环境的物种将会存活下来，并由此暗示生存斗争是决定一个人成功与否的固有人类特征。",
+    "note": "主干为This doctrine has suggested that...；which takes for granted that...为非限定性定语从句修饰doctrine；其中those species后接best able to...作后置定语；in which they live为定语从句修饰environment。"
+   },
+   {
+    "en": "As it has often been pointed out, however, there is nothing in the concept of natural selection that suggests that competition is the most successful strategy for \"survival of the fittest.\"",
+    "cn": "然而正如人们常常指出的那样，自然选择的概念中并没有任何内容表明竞争是\"适者生存\"最成功的策略。",
+    "note": "As引导方式状语从句；主句为there is nothing...that suggests...，其中that suggests为定语从句修饰nothing；that competition is...为suggests的宾语从句。"
+   },
+   {
+    "en": "After studying dozens of such cultures, Mead's final conclusion was that competitiveness is a culturally created aspect of human behavior, and that its prevalence in a particular society is relative to how that society values it.",
+    "cn": "在研究了数十个这样的文化之后，米德的最终结论是：竞争性是人类行为中由文化创造的方面，其在某一特定社会中的普遍程度取决于该社会对它的重视程度。",
+    "note": "After studying...为时间状语；主句为Mead's conclusion was that...and that...，两个that从句并列作表语从句；how that society values it为relative to的宾语从句。"
+   }
+  ]
+ }
+}

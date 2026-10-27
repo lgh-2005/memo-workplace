@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "fb33dacfb808__reading__2",
+ "examId": "fb33dacfb808",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 12 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:24:07.365Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 80619,
+ "usage": {
+  "prompt_tokens": 1812,
+  "completion_tokens": 5854,
+  "total_tokens": 7666,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1812,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5854,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1812,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "太平洋西北地区备战大地震",
+  "gist": "文章介绍了太平洋西北地区卡斯卡迪亚断层的巨大地震风险。该断层属于大型逆冲断层，上次大地震发生在1700年，专家担心随时可能再次发生。为此，该地区组织了约两万人参加的大规模地震海啸演习，旨在通过跨区域协调合作减少未来可能的伤亡。",
+  "structure": [
+   "第1段：引出话题，太平洋西北地区备战'大灾难'",
+   "第2-3段：介绍卡斯卡迪亚演习概况及该地震带基本信息",
+   "第4段：解释大型逆冲断层的科学原理并举例说明",
+   "第5-6段：阐述演习目的、演练内容及预期减灾效果",
+   "第7段：总结——大灾难不可避免，应尽早准备"
+  ],
+  "difficulty": "中等",
+  "translation": "以下是太平洋西北地区为\"大灾难\"所做的准备。这是针对美国历史上可能发生的最严重灾难而进行的最大规模灾难演习。多年来，加利福尼亚州一直在为\"大灾难\"做准备——那场不可避免的地震无疑将沿着著名的圣安德烈亚斯断层造成各种破坏。但如果太平洋西北地区的断层也发生一场巨大的地震呢？如果卡斯卡迪亚地区的居民能有所作为，他们就不会措手不及。\n\n该地区正在进行一场为期多天的地震和海啸演习，约有两万人参与。\"卡斯卡迪亚崛起\"演习为该地区居民和应急救援人员提供了一次练习机会，以应对该国最危险且被低估的断层之一可能发生的9.0级地震和海啸。\n\n卡斯卡迪亚地震带的规模足以与圣安德烈亚斯断层相匹敌（它被称为美国最危险的断层），但其知名度远不及加州的那位\"表亲\"。该地震带绵延近700英里，位于太平洋不列颠哥伦比亚省、华盛顿州、俄勒冈州和北加利福尼亚沿海的北美板块附近。\n\n卡斯卡迪亚属于所谓的\"大型逆冲\"断层。大型逆冲断层产生于地震带——即两个板块交汇的陆地板块边界。在一个板块位于另一个板块之下的区域，应力会随着时间不断积累。在大型逆冲事件中，所有应力都会释放出来，世界上最强烈的地震随之发生。还记得2004年苏门答腊附近印度洋发生的9.1级地震和海啸吗？那就是印度板块向缅甸微板块下方移动时引发的大型逆冲事件所致。\n\n卡斯卡迪亚断层上一次发生大地震是在1700年，因此官员们担心下一次事件可能随时发生。为了防止该事件演变为大灾难，急救人员将与公众一起进行演练，内容涉及通信、疏散、搜救及其他场景。\n\n如果发生9.0级地震，预计将造成数千人伤亡。首先，地震将撼动包括西雅图和波特兰在内的都市区。这可能引发海啸，在沿海地区造成巨大破坏。并非所有伤亡都可以避免——但通过跨地方、跨州甚至跨国界的协调合作，官员们希望能够避免最坏情况的发生。在演习网站上，官员们解释说，他们在本次演练中编写的报告将为未来多年的灾害管理提供参考。\n\n对于数十万卡斯卡迪亚居民来说，\"大灾难\"不是会不会发生的问题，而只是何时发生的问题。为不可避免的灾难做准备，永远都不嫌早。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "California has spent years preparing for 'The Big One'—the inevitable earthquake that will undoubtedly unleash all kinds of havoc along the famous San Andreas fault.",
+    "why": "原文用破折号对'The Big One'进行了解释说明，即'the inevitable earthquake that will undoubtedly unleash all kinds of havoc'（那场不可避免的、无疑会造成各种破坏的地震）。这显然指的是一场大规模自然灾难，与C选项'A massive natural catastrophe'完全吻合。文章通篇都围绕这场巨大地震展开讨论，进一步佐证了C。",
+    "traps": "A（张冠李戴）：San Andreas fault是断层名称，'The Big One'指的是地震灾难而非断层本身；B（偷换概念）：大规模演习（drill）是为了应对'The Big One'，演习本身不是'The Big One'；D（拼凑细节）：海啸只是地震可能引发的后果之一，且文中地名为Cascadia而非Caledonia，属于地名干扰。",
+    "tip": "遇到引号术语题，优先找破折号、同位语等原文解释。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The Cascadia Rising drill gives area residents and emergency responders a chance to practice what to do in case of a 9.0 magnitude earthquake and tsunami along one of the nation's dangerous—and underestimated—faults.",
+    "why": "原文明确指出，该演习的目的是让居民和应急人员'practice what to do in case of a 9.0 magnitude earthquake and tsunami'（练习在9.0级地震和海啸发生时该怎么做）。这与A选项'To prepare people for a major earthquake and tsunami'完全对应，practice即prepare，9.0 magnitude即major。",
+    "traps": "B（偷换概念）：演习目的是实际练习应对措施，而非仅仅提高意识（awareness），且原文无'imminent'（迫在眉睫）之说；C（无中生有）：原文未提及灾后生活适应问题；D（偷换概念）：演习重点是事前准备（practice what to do），而非灾后处理（aftermath）。",
+    "tip": "目的类题关注动词practice/prepare等提示词的精确含义。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "During a megathrust event, all of that stress releases and some of the world's most powerful earthquakes occur.",
+    "why": "原文对大型逆冲地震的描述十分清晰：在板块交界处，应力随时间不断积累；当大型逆冲事件发生时，'all of that stress releases'（所有应力释放）。D选项'Enormous stress is released'是对原文的同义改写，all of that stress对应enormous stress，releases对应is released。",
+    "traps": "A（曲解原文）：原文说两个板块converge（汇聚），并非merge into one（合并为一），两个概念有本质区别；B（偷换概念）：原文说的是plates converge（板块汇聚），不是a variety of forces converge（各种力量汇聚）；C（无中生有）：原文未提及板块之间的边界变模糊，boundaries只是作为地理位置的说明。",
+    "tip": "科学原理题需精确匹配因果链，注意converge≠merge。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Not all casualties can necessarily be prevented—but by coordinating across local, state, and even national borders, officials hope that the worst-case scenario can be averted.",
+    "why": "原文逻辑链为：9.0级地震预计造成数千人伤亡→不是所有伤亡都能避免→但通过协调合作，官员希望避免最坏情况。'avert the worst-case scenario'本质上就是尽可能减少伤亡。B选项'Reducing casualties in the event of a disaster'准确概括了这一目标。协调是手段，减少伤亡是目的。",
+    "traps": "A（手段与目的混淆）：coordinating是实现目标的手段，而非演习希望达成的最终目标；C（无中生有）：原文始终围绕人员伤亡讨论，未提及财产损失（property loss）；D（过度推断）：原文说演练报告将为未来灾害管理提供参考，但建立灾害管理体系并非演习的直接目标。",
+    "tip": "区分手段与目的：coordinating是方法，减少伤亡才是最终目标。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "For hundreds of thousands of Cascadia residents, 'The Big One' isn't a question of if, only when. And it's never too early to get ready for the inevitable.",
+    "why": "文章末段明确指出'The Big One'不是会不会（if）的问题，而只是何时（when）的问题，并用inevitable（不可避免的）再次强调其必然性。C选项'Its occurrence is just a matter of time'（它的发生只是时间问题）与'isn't a question of if, only when'完全同义。",
+    "traps": "A（与原文相反）：原文明确否定了'if'的不确定性，说的恰恰不是'remains to be seen'；B（张冠李戴）：原文说'never too early to get ready'是指准备得越早越好，而非'too early to predict'（太早而无法预测）；D（过度推断）：原文说居民在积极准备，而非被其'haunting'（困扰、萦绕），且原文语气积极。",
+    "tip": "末段总结题注意'isn't...if, only when'这类强调句型的逻辑。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "unleash",
+    "cn": "v. 释放，引发（破坏性力量）"
+   },
+   {
+    "w": "havoc",
+    "cn": "n. 浩劫，大破坏"
+   },
+   {
+    "w": "unawares",
+    "cn": "adv. 猝不及防地，毫无准备地"
+   },
+   {
+    "w": "magnitude",
+    "cn": "n. 震级；量级；重要性"
+   },
+   {
+    "w": "megathrust",
+    "cn": "n. 大型逆冲（断层），巨型逆冲"
+   },
+   {
+    "w": "converge",
+    "cn": "v. 汇聚，交汇，聚集"
+   },
+   {
+    "w": "catastrophe",
+    "cn": "n. 大灾难，浩劫"
+   },
+   {
+    "w": "rehearsal",
+    "cn": "n. 演练，排练，预演"
+   },
+   {
+    "w": "evacuation",
+    "cn": "n. 疏散，撤离"
+   },
+   {
+    "w": "avert",
+    "cn": "v. 避免，防止（危险或不快之事）"
+   },
+   {
+    "w": "casualty",
+    "cn": "n. 伤亡人员；受害者"
+   },
+   {
+    "w": "underestimated",
+    "cn": "adj. 被低估的（此处为过去分词作定语）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The Cascadia Rising drill gives area residents and emergency responders a chance to practice what to do in case of a 9.0 magnitude earthquake and tsunami along one of the nation's dangerous—and underestimated—faults.",
+    "cn": "'卡斯卡迪亚崛起'演习为该地区居民和应急救援人员提供了一次练习机会，以应对该国最危险且被低估的断层之一可能发生的9.0级地震和海啸。",
+    "note": "主干为drill gives...a chance to practice what to do；in case of引导假设条件；破折号插入and underestimated作为对dangerous的补充修饰。"
+   },
+   {
+    "en": "Not all casualties can necessarily be prevented—but by coordinating across local, state, and even national borders, officials hope that the worst-case scenario can be averted.",
+    "cn": "并非所有伤亡都可以避免——但通过跨地方、跨州甚至跨国界的协调合作，官员们希望能够避免最坏情况的发生。",
+    "note": "Not all...necessarily为部分否定结构；by coordinating为方式状语；that引导hope的宾语从句；across后接三个并列成分构成递进。"
+   },
+   {
+    "en": "In the areas where one plate is beneath another, stress builds up over time.",
+    "cn": "在一个板块位于另一个板块之下的区域，应力会随着时间不断积累。",
+    "note": "where引导定语从句修饰areas；beneath表空间位置关系；builds up over time为时间状语说明渐进过程，是下文stress releases的因果铺垫。"
+   }
+  ]
+ }
+}

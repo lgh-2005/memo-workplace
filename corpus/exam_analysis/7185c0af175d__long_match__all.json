@@ -1,0 +1,246 @@
+{
+ "schemaVersion": 1,
+ "id": "7185c0af175d__long_match__all",
+ "examId": "7185c0af175d",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2024 年 12 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:53:42.891Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 38096,
+ "usage": {
+  "prompt_tokens": 998,
+  "completion_tokens": 2048,
+  "total_tokens": 3046,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 998,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2048,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 998,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "被忽视的本土作物与全球粮食安全",
+  "strategy": [
+   "先通读10条陈述句，提炼高频主题词如native crops、staple crops、alternative crops，建立全局印象",
+   "用专有名词、数字、人物身份（senior researcher、professor）等作为优先定位线索",
+   "注意同义替换：如rid ourselves of ignorance≈overcome lack of knowledge，marketable≈able to sell",
+   "区分相似陈述：多条涉及'作物失败后的对策'，需细辨动作主体与具体措施",
+   "按段落字母顺序速扫文章，在段首段尾重点搜索与关键词匹配的信息"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "一位资深研究员表示，如果我们消除对本土作物的无知，就能拥有安全的粮食供给。",
+    "keywords": [
+     "senior researcher",
+     "secure food supply",
+     "ignorance",
+     "native crops"
+    ],
+    "paraphrase": "陈述句中rid ourselves of ignorance可能对应原文overcome/eliminate lack of knowledge或dispel ignorance；secure food supply可能对应ensure food security，属于典型的动宾同义替换。",
+    "tip": "定位人物身份senior researcher及ignorance/native crops的搭配即可锁定F段。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "世界上大部分粮食供给来自于数千种已种植了数百年的作物中极少的一部分。",
+    "keywords": [
+     "tiny number",
+     "thousands of crops",
+     "food supply"
+    ],
+    "paraphrase": "tiny number可能对应原文a handful of/very few；thousands of crops grown for centuries可能被改写为countless species cultivated over hundreds of years，属于数量词与时间表达的同义替换。",
+    "tip": "定位tiny number与thousands形成的强对比关系，在C段寻找类似数量反差的表述。"
+   },
+   {
+    "number": 38,
+    "answer": "G",
+    "cn": "当主粮作物歉收时，一些非洲女性农民在自家后院种植本地作物以养家糊口。",
+    "keywords": [
+     "African women farmers",
+     "staple crops failed",
+     "backyards",
+     "local crops"
+    ],
+    "paraphrase": "backyards可能对应原文home gardens/small plots near their homes；staple crops failed可能被表述为main crops did not produce enough或harvest failure，属于场景细节的近义改写。",
+    "tip": "African women farmers和backyards是非常具体的细节词，直接扫读G段即可命中。"
+   },
+   {
+    "number": 39,
+    "answer": "J",
+    "cn": "自上世纪绿色革命以来，高产作物在现代农业中一直占据主导地位。",
+    "keywords": [
+     "high-yielding crops",
+     "dominant position",
+     "green revolution"
+    ],
+    "paraphrase": "dominant position可能对应原文have dominated/taken over；green revolution in the last century可能原文表述为the green revolution of the 20th century/1960s，属于时间表达的近义替换。",
+    "tip": "green revolution是专有名词，配合high-yielding即可快速锁定J段。"
+   },
+   {
+    "number": 40,
+    "answer": "H",
+    "cn": "种植替代作物在多种环境中被证明是可行的，但关键问题是它们是否具有市场销路。",
+    "keywords": [
+     "alternative crops",
+     "feasible",
+     "variety of environments",
+     "marketable"
+    ],
+    "paraphrase": "feasible可能对应原文workable/viable；marketable可能对应原文able to sell/find a market/commercially viable，体现从种植可行性到市场可行性的逻辑转折。",
+    "tip": "抓住转折词but及marketable这一经济角度关键词，在H段寻找种植与销售的对比讨论。"
+   },
+   {
+    "number": 41,
+    "answer": "O",
+    "cn": "一位教授表示，当主粮作物产量下降时，我们将不得不适应食用替代作物生产的食物。",
+    "keywords": [
+     "professor",
+     "yields fall",
+     "adapt",
+     "alternative crops"
+    ],
+    "paraphrase": "adapt to eating foods from alternative crops可能对应原文adjust our diets to include/shift to consuming other crop species；yields of staple crops fall可能对应declining harvests of major crops。",
+    "tip": "定位引用来源professor及adapt一词，结合yields fall的条件句式快速匹配O段。"
+   },
+   {
+    "number": 42,
+    "answer": "D",
+    "cn": "必须采取紧急措施，在不加剧气候问题的前提下，为预计的世界人口提供粮食。",
+    "keywords": [
+     "urgent measures",
+     "projected world population",
+     "aggravating the climate"
+    ],
+    "paraphrase": "without aggravating the climate可能对应原文without worsening climate change/further harming the environment；projected world population可能对应expected/estimated global population growth。",
+    "tip": "聚焦urgent及aggravating the climate这一双重约束条件，在D段找到人口与气候并提的语句。"
+   },
+   {
+    "number": 43,
+    "answer": "I",
+    "cn": "殖民统治通过惩罚种植本土作物的非洲人，使本地作物被边缘化。",
+    "keywords": [
+     "colonial rule",
+     "marginalised",
+     "punishing",
+     "local crops"
+    ],
+    "paraphrase": "marginalised local crops可能对应原文sidelined/pushed aside indigenous crops；punishing Africans who grew them可能对应penalizing/imposing fines on those who cultivated native species，属于历史背景的细节对应。",
+    "tip": "colonial rule和punishing是极具辨识度的历史细节词，直接定位I段。"
+   },
+   {
+    "number": 44,
+    "answer": "E",
+    "cn": "由于现有作物受到全球变暖的威胁，我们可以通过恢复许多被遗忘的粮食作物来提高粮食安全。",
+    "keywords": [
+     "global warming",
+     "food security",
+     "forgotten food crops",
+     "bringing back"
+    ],
+    "paraphrase": "bringing back forgotten food crops可能对应原文reviving/rediscovering neglected crops；endangered by global warming可能对应threatened by rising temperatures/climate change，属于因果链条的同义改写。",
+    "tip": "抓住bringing back与forgotten food crops的搭配，在E段寻找'恢复被忽视作物'的核心论点。"
+   },
+   {
+    "number": 45,
+    "answer": "K",
+    "cn": "研究人员正试图弄清更高的温度和二氧化碳水平如何影响替代作物的营养成分。",
+    "keywords": [
+     "higher temperatures",
+     "CO₂ levels",
+     "nutritional composition",
+     "alternative crops"
+    ],
+    "paraphrase": "nutritional composition可能对应原文nutrient content/nutritional value/makeup；how higher temperatures and CO₂ levels affect可能对应the impact/effect of elevated temperature and carbon dioxide on，属于科研内容的术语替换。",
+    "tip": "CO₂ levels和nutritional composition是科研细节词，高度具体，直接扫读K段即可定位。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "rid ourselves of",
+    "cn": "摆脱，消除（动词短语）"
+   },
+   {
+    "w": "ignorance",
+    "cn": "无知，愚昧（n.）"
+   },
+   {
+    "w": "staple crops",
+    "cn": "主粮作物，主要农作物（n.）"
+   },
+   {
+    "w": "feasible",
+    "cn": "可行的，行得通的（adj.）"
+   },
+   {
+    "w": "marketable",
+    "cn": "有销路的，适销的（adj.）"
+   },
+   {
+    "w": "aggravating",
+    "cn": "加剧，使恶化（v. -ing形式）"
+   },
+   {
+    "w": "marginalised",
+    "cn": "使边缘化（v. 过去分词，也作marginalized）"
+   },
+   {
+    "w": "high-yielding",
+    "cn": "高产的（adj.）"
+   },
+   {
+    "w": "nutritional composition",
+    "cn": "营养成分（n.）"
+   },
+   {
+    "w": "projected",
+    "cn": "预计的，预测的（adj.）"
+   }
+  ]
+ }
+}

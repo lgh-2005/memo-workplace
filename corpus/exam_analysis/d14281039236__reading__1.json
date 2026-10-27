@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "d14281039236__reading__1",
+ "examId": "d14281039236",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 12 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:27:38.833Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68749,
+ "usage": {
+  "prompt_tokens": 1842,
+  "completion_tokens": 4425,
+  "total_tokens": 6267,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1842,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4425,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1842,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "学校游学旅行加剧教育不平等",
+  "gist": "文章围绕学校组织的高昂海外游学旅行展开讨论，指出这类活动虽有教育意义，但高昂费用使贫困家庭学生被排斥在外，加剧了特权学生与弱势学生之间的差距。作者认为学校不应助长分裂，至少不应制造新的不平等。",
+  "structure": [
+   "第一段：提出学校的理想使命——庇护学生并拓宽视野",
+   "第二段：揭示昂贵游学与学生贫困之间的巨大反差",
+   "第三段：肯定教育出行的积极作用，赞扬全校筹款做法",
+   "第四段：批评高价旅行关闭了许多学生的机会之门",
+   "第五段：指出政策漏洞，提出学校不应助长分裂的底线期望"
+  ],
+  "difficulty": "中等",
+  "translation": "学校不仅是社会的缩影，还在其中起着调解作用。最好的学校致力于减轻外界对学生的压力，同时让学生更有能力去理解和应对外部世界——既庇护他们，又拓宽他们的视野。这在任何情况下都是雄心勃勃的目标，而在一个分裂且不平等的社会中，这两个理想可能会发生直接冲突。\n\n许多成年人都会视为毕生难忘的冒险旅行——在婆罗洲徒步、去巴巴多斯体育之旅——在一些公立学校似乎已经变得司空见惯。家长们被要求支付数千英镑。尽管学校不能从这些旅行中盈利，但安排旅行的公司却从中获利。与此同时，学生们却因家里负担不起早餐而饿着肚子来上学。儿童贫困行动组织表示，每间教室30人中就有9人处于贫困线以下。这种差距令人触目惊心。让学生完成筹款任务并无帮助，因为家境较好的孩子可以向更富有的姑姑和邻居求助。\n\n在当地海滩探索潮汐池或通过语言交换项目练习法语，都能激发孩子们的热情，提升他们的技能，让他们看到生活的各种可能性。教育出行有助于聪明但处境不利的学生在A-level考试中取得更好成绩。在这个全球化时代，国际旅行有充分的理由，一些家长表示比起家庭度假，他们更容易负担学校海外旅行的费用。即使面临巨大且不断增长的经济压力，一些学校在确保所有学生能够获得可能真正改变人生的机会方面，表现出了非凡的决心和创造力。他们应当受到赞扬。诸如全校筹款、收益汇集等方法，有助于扩大机会并培养社区精神。\n\n但是，当有孩子家庭的平均收入仅为三万多英镑时，三千英镑的旅行是无法被合理化的。这类举措为许多学生关上了大门。一些家长因昂贵的实地考察旅行而让孩子退学。即使那些看得出某次旅行不过是一场聚会或庆祝活动的家长，也很可能会因自己的孩子被落下而感到愧疚。\n\n教育部的指导意见称，如果旅行是课程的一部分，学校只能收取食宿费用，而且接受政府资助的学生可以免除这些费用。然而，许多学校似乎无视这些建议；而且它也不涵盖那些日益普遍的豪华异国旅行。我们不能指望学校单枪匹马地将社区凝聚在一起。但我们至少应该期望的是，它们不会助长分裂，不会排斥那些本已处于不利地位的学生。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The best seek to alleviate the external pressures on their pupils while equipping them better to understand and handle the world outside—at once sheltering them and broadening their horizons.",
+    "why": "原文明确指出最好的学校一方面\"减轻外界压力\"（alleviate the external pressures），对应B选项中的\"保护学生免受社会压力\"（protect students from social pressures）；另一方面\"让学生更好地理解和应对外面的世界\"（equipping them better to understand and handle the world outside），对应B选项中的\"使他们能够面对世界\"（enable them to face the world）。两层含义完全吻合。",
+    "traps": "A项\"挑战和改变不平等社会\"属于过度推断，原文只说应对世界而非改变社会；C项\"体能和智力\"在原文无任何依据，属于无中生有；D项\"帮助实现目标\"偷换了原文\"拓宽视野\"的含义，且\"ambitious\"在原文修饰的是学校目标而非学生。",
+    "tip": "注意同义替换：alleviate pressures=protect from pressures, handle the world=face the world。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Introducing a fundraising requirement for students does not help, as better-off children can tap up richer aunts and neighbours.",
+    "why": "第二段通过对比揭示：一边是昂贵旅行已成为常态，一边是学生因贫困饿着肚子上学，并且筹款要求反而有利于家境好的学生。第四段进一步指出\"Such initiatives close doors for many pupils\"。综合来看，作者认为这些旅行拉大了特权学生与弱势学生之间的差距，对应B选项\"widen the gap between privileged and disadvantaged students\"。",
+    "traps": "A项\"不同背景学生相互交流\"原文未提及，属于无中生有；C项\"给弱势学生看世界的机会\"与原文相反，文章指出弱势学生被排除在外；D项\"只有\"（only）过于绝对，且原文是说筹款时家境好的学生有优势，并非说旅行只惠及他们。",
+    "tip": "注意全文论证的核心矛盾：费用高昂→贫困生被排斥→差距扩大。"
+   },
+   {
+    "number": 48,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Methods such as whole-school fundraising, with the proceeds pooled, can help to extend opportunities and fuel community spirit.",
+    "why": "原文提到\"whole-school fundraising\"（全校筹款）的方法可以培养社区精神。\"whole-school\"意味着全校学生参与，对应D选项\"Activities involving all students on campus\"（涉及校园所有学生的活动）。关键在于理解\"whole-school\"=involving all students，\"fuel community spirit\"=help build community spirit。",
+    "traps": "A项\"改善社区服务\"原文未提及，属于偷换概念；B项\"激发学生创造力\"将原文的\"fuel community spirit\"偷换为\"fuel students' ingenuity\"，张冠李戴；C项\"需要相互理解的活动\"虽然有一定道理但原文无此表述，属于过度推断。",
+    "tip": "whole-school是解题关键词，精确对应all students on campus。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Even parents who can see that a trip is little more than a party or celebration may well feel guilt that their child is left behind.",
+    "why": "原文说即使那些能看出旅行\"不过是一场聚会或庆祝活动\"的家长（即认为没什么实际教育价值），也会因孩子被落下而感到愧疚。\"感到愧疚\"说明他们仍希望孩子参加，而\"看出不过是聚会\"说明他们认为没什么好处。这完全对应A选项\"希望孩子参加，尽管看不到太多好处\"。",
+    "traps": "B项\"不想让孩子参加但难以阻止\"与原文矛盾，原文是家长想让孩子参加而非阻止；C项\"不想让孩子错过拓宽视野的机会\"与原文矛盾，家长明明看到旅行没什么实际意义；D项\"想让孩子体验冒险但不想冒险\"纯属无中生有，原文未涉及安全风险问题。",
+    "tip": "抓住even...may well feel guilt的让步逻辑：明知无益→仍感愧疚→说明想参加。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But the least we should expect is that they do not foster divisions and exclude those who are already disadvantaged.",
+    "why": "末段最后一句是作者的核心期望：\"至少应期望学校不助长分裂、不排斥弱势群体。\"\"do not foster divisions\"（不助长分裂）精确对应C选项\"Avoiding creating new gaps among students\"（避免在学生之间制造新的差距）。foster divisions = creating new gaps，这是同义替换。",
+    "traps": "A项\"以创造力凝聚社区\"原文虽提到ingenuity但出现在第三段夸奖个别学校的语境中，而非作者对所有学校的期望；B项\"解决社会已有差异\"要求过高，原文明确说\"Schools cannot be expected to bring together communities single-handed\"，即不指望学校单独解决社会问题；D项\"给贫困生优待\"原文未提及，属于无中生有。",
+    "tip": "文章末句常为作者核心态度/期望所在，注意\"the least we should expect\"这一底线表达。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "microcosm",
+    "cn": "n. 缩影，微观世界"
+   },
+   {
+    "w": "mediate",
+    "cn": "v. 调解，斡旋；起媒介作用"
+   },
+   {
+    "w": "alleviate",
+    "cn": "v. 减轻，缓解（痛苦、压力等）"
+   },
+   {
+    "w": "discrepancy",
+    "cn": "n. 差异，不一致，矛盾"
+   },
+   {
+    "w": "ingenuity",
+    "cn": "n. 独创力，足智多谋"
+   },
+   {
+    "w": "immense",
+    "cn": "adj. 巨大的，极大的"
+   },
+   {
+    "w": "syllabus",
+    "cn": "n. 教学大纲，课程提纲"
+   },
+   {
+    "w": "exempt",
+    "cn": "adj. 被免除的，豁免的"
+   },
+   {
+    "w": "glamorous",
+    "cn": "adj. 富有魅力的，迷人的"
+   },
+   {
+    "w": "foster",
+    "cn": "v. 助长，培养，促进"
+   },
+   {
+    "w": "outright",
+    "cn": "adv./adj. 完全地，彻底的"
+   },
+   {
+    "w": "pooled",
+    "cn": "adj. 汇集的，共用的（pool v. 汇集资源）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The best seek to alleviate the external pressures on their pupils while equipping them better to understand and handle the world outside—at once sheltering them and broadening their horizons.",
+    "cn": "最好的学校致力于减轻外界对学生的压力，同时让学生更有能力去理解和应对外部世界——既庇护他们，又拓宽他们的视野。",
+    "note": "主干为The best seek to do A while doing B；破折号后at once...and...是对前文双重目标的概括性总结，形成并列。"
+   },
+   {
+    "en": "Even in the face of immense and mounting financial pressures, some schools have shown remarkable determination and ingenuity in ensuring that all their pupils are able to take up opportunities that may be truly life-changing.",
+    "cn": "即使面临巨大且不断增长的经济压力，一些学校在确保所有学生能够获得可能真正改变人生的机会方面，表现出了非凡的决心和创造力。",
+    "note": "Even in the face of...为让步状语；主干是some schools have shown...in ensuring that...；that引导宾语从句，内含定语从句that may be truly life-changing修饰opportunities。"
+   },
+   {
+    "en": "Even parents who can see that a trip is little more than a party or celebration may well feel guilt that their child is left behind.",
+    "cn": "即使那些能看出某次旅行不过是一场聚会或庆祝活动的家长，也很可能会因自己的孩子被落下而感到愧疚。",
+    "note": "主干为parents may well feel guilt；who引导定语从句修饰parents，其中含that宾语从句；末尾that their child is left behind为guilt的同位语从句。"
+   }
+  ]
+ }
+}

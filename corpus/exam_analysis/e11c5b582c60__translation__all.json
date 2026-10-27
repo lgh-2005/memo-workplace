@@ -1,0 +1,196 @@
+{
+ "schemaVersion": 1,
+ "id": "e11c5b582c60__translation__all",
+ "examId": "e11c5b582c60",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2015 年 6 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T04:42:04.237Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 82504,
+ "usage": {
+  "prompt_tokens": 606,
+  "completion_tokens": 8113,
+  "total_tokens": 8719,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6571
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 606
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "汉朝主要成就与灭亡",
+  "reference": "The Han Dynasty was one of the most important dynasties in Chinese history. During its reign, there were many remarkable achievements. It was the first to open its doors to other cultures, and foreign trade flourished. The Silk Road opened up by the Han Dynasty extended to Central and West Asia and even Rome. Various forms of art flourished, and many great works of literature, history, and philosophy emerged. In 100 AD, China's first dictionary was compiled, which included 9,000 characters, provided definitions, and listed different ways of writing them. Meanwhile, great progress was made in science and technology; paper, water clocks, sundials, and instruments for measuring earthquakes were invented. The Han Dynasty lasted 400 years, but the corruption of its rulers eventually led to its downfall.",
+  "sentences": [
+   {
+    "cn": "汉朝是中国历史上最重要的朝代之一。",
+    "en": "The Han Dynasty was one of the most important dynasties in Chinese history.",
+    "structure": "主语 + 系动词 + 表语，使用 one of the + 最高级 + 复数名词 + in 短语作后置定语。",
+    "keys": [
+     "汉朝 the Han Dynasty",
+     "最重要的朝代之一 one of the most important dynasties"
+    ]
+   },
+   {
+    "cn": "汉朝统治期间有很多显著的成就。",
+    "en": "During its reign, there were many remarkable achievements.",
+    "structure": "时间状语 during its reign + there be 句型，many remarkable achievements 作主语。",
+    "keys": [
+     "统治期间 during its reign",
+     "显著成就 remarkable achievements"
+    ]
+   },
+   {
+    "cn": "它最先向其他文化敞开大门,对外贸易兴旺。",
+    "en": "It was the first to open its doors to other cultures, and foreign trade flourished.",
+    "structure": "并列句：主语 + 系动词 + the first to do 作表语；后一分句主谓结构。",
+    "keys": [
+     "敞开大门 open its doors to",
+     "对外贸易 foreign trade",
+     "兴旺 flourish"
+    ]
+   },
+   {
+    "cn": "汉朝开拓的丝绸之路通向了中西亚乃至罗马。",
+    "en": "The Silk Road opened up by the Han Dynasty extended to Central and West Asia and even Rome.",
+    "structure": "过去分词短语 opened up by the Han Dynasty 作后置定语修饰 the Silk Road；谓语 extended to。",
+    "keys": [
+     "丝绸之路 the Silk Road",
+     "中西亚 Central and West Asia",
+     "罗马 Rome"
+    ]
+   },
+   {
+    "cn": "各类艺术一派繁荣,涌现了很多文学、历史、哲学巨著。",
+    "en": "Various forms of art flourished, and many great works of literature, history, and philosophy emerged.",
+    "structure": "并列句：第一分句主谓结构；第二分句 many great works 作主语，of 短语作后置定语，emerged 作谓语。",
+    "keys": [
+     "艺术 art",
+     "文学 literature",
+     "历史 history",
+     "哲学 philosophy",
+     "巨著 great works/masterpieces"
+    ]
+   },
+   {
+    "cn": "公元100年中国第一部字典编纂完成,收入9000个字,提供释义并列举不同的写法。",
+    "en": "In 100 AD, China's first dictionary was compiled, which included 9,000 characters, provided definitions, and listed different ways of writing them.",
+    "structure": "主句 + which 引导的非限制性定语从句，从句中三个并列谓语 included, provided, listed。",
+    "keys": [
+     "公元100年 in 100 AD",
+     "中国第一部字典 China's first dictionary",
+     "编纂 compile",
+     "汉字 characters",
+     "释义 definitions",
+     "不同的写法 different ways of writing"
+    ]
+   },
+   {
+    "cn": "其间,科技方面也取得了很大进步,发明了纸张、水钟、日暑(sundials )以及测量地震的仪器。",
+    "en": "Meanwhile, great progress was made in science and technology; paper, water clocks, sundials, and instruments for measuring earthquakes were invented.",
+    "structure": "时间状语 Meanwhile + 并列句，第二分句列举四个名词作主语，were invented 作谓语。",
+    "keys": [
+     "科技 science and technology",
+     "纸张 paper",
+     "水钟 water clocks",
+     "日晷 sundials",
+     "测量地震的仪器 instruments for measuring earthquakes"
+    ]
+   },
+   {
+    "cn": "汉朝历经400年,但统治者的腐败最终导致了它的灭亡。",
+    "en": "The Han Dynasty lasted 400 years, but the corruption of its rulers eventually led to its downfall.",
+    "structure": "并列句，but 连接，后一分句主语 the corruption of its rulers，谓语 led to，宾语 its downfall。",
+    "keys": [
+     "历经 last",
+     "统治者 rulers",
+     "腐败 corruption",
+     "灭亡 downfall"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "汉朝",
+    "en": "the Han Dynasty"
+   },
+   {
+    "cn": "丝绸之路",
+    "en": "the Silk Road"
+   },
+   {
+    "cn": "中西亚",
+    "en": "Central and West Asia"
+   },
+   {
+    "cn": "罗马",
+    "en": "Rome"
+   },
+   {
+    "cn": "字典",
+    "en": "dictionary"
+   },
+   {
+    "cn": "水钟",
+    "en": "water clock"
+   },
+   {
+    "cn": "日晷",
+    "en": "sundial"
+   },
+   {
+    "cn": "地震仪",
+    "en": "seismograph"
+   },
+   {
+    "cn": "统治者",
+    "en": "ruler"
+   },
+   {
+    "cn": "腐败",
+    "en": "corruption"
+   }
+  ],
+  "pitfalls": [
+   "原文“日暑”括号内为 sundials，中文正确写法应为“日晷”，翻译时须拼写为 sundials，注意单复数。",
+   "“汉字”不可译作 words，必须用 characters；“收入9000个字”应译为 included 9,000 characters。",
+   "“最先向其他文化敞开大门”易直译成 opened the door to other cultures first，应使用 was the first to open its doors to other cultures。",
+   "“对外贸易兴旺”不可译作 foreign trade was prosperous，flourished 更简洁地道。",
+   "“测量地震的仪器”要处理为 instruments for measuring earthquakes，不能逐字死译为 measure earthquake's instrument。"
+  ],
+  "upgrades": [
+   {
+    "plain": "foreign trade was very prosperous",
+    "better": "foreign trade flourished",
+    "note": "flourish 表示“繁荣兴旺”，更简洁地道，符合英文表达习惯。"
+   },
+   {
+    "plain": "various arts were very prosperous",
+    "better": "various forms of art flourished",
+    "note": "forms of art 涵盖各类艺术，flourished 形象表达繁荣，避免生硬。"
+   },
+   {
+    "plain": "many great works appeared",
+    "better": "many masterpieces emerged",
+    "note": "masterpiece 指巨著，emerged 强调涌现，表达更具书面色彩和力度。"
+   },
+   {
+    "plain": "led to its destruction",
+    "better": "led to its downfall",
+    "note": "downfall 专指政权或王朝的衰亡，更贴合原文“灭亡”。"
+   }
+  ]
+ }
+}

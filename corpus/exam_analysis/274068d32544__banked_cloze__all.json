@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "274068d32544__banked_cloze__all",
+ "examId": "274068d32544",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2016 年 6 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:04:56.257Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64266,
+ "usage": {
+  "prompt_tokens": 1359,
+  "completion_tokens": 3752,
+  "total_tokens": 5111,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1359,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3752,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1359,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "青少年职业发展与心理成熟",
+  "gist": "文章以皮亚杰的认知发展理论为基础，阐述了职业对青少年成长的重要性。皮亚杰认为青少年进入工作世界后，现实会调和其过度理想化的观点，从而促进心理成熟。经济衰退时期职业机会减少会严重影响青少年的自我认知，因此政府和社区的就业项目具有经济和心理双重意义。",
+  "difficulty": "中等",
+  "translation": "追求职业是青少年发展的重要组成部分。\"当青少年承担一份真正的工作时，他就成为了成年人。\"对于像皮亚杰这样的认知研究者来说，成年意味着一份职业的开始。\n\n皮亚杰认为，一旦青少年进入工作世界，他们新获得的形成假设的能力使他们能够创造出过于理想化的表征。这种理想的存在，如果没有工作或职业的现实加以调和，会迅速导致青少年变得无法容忍非理想化的世界，并以一种典型的青少年方式推动改革。皮亚杰说：\"当青少年改革者试图将自己的想法付诸实践时，对社会的真正适应就会自然而然地到来。\"\n\n当然，青春的理想主义往往是勇敢的，没有人愿意放弃梦想。也许，稍微脱离语境来看，皮亚杰的说法显得有些严苛。然而，他所强调的是现实可以改变理想主义观点的方式。有些人将这种改变称为成熟。皮亚杰认为，获得并接受一份职业是修正理想化观点、走向成熟的最佳途径之一。\n\n在经济衰退时期，随着职业和工作机会的减少，青少年可能受到的打击尤为严重。这样艰难的经济时期可能会让许多青少年对自己在社会中的角色感到困惑。因此，提供暑期和假期工作的社区干预和政府就业项目不仅在经济上是有益的，而且有助于激发青少年的自我价值感。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "O",
+    "correct": "undertakes",
+    "why": "此处主语为 he（指青少年），谓语需要一个第三人称单数动词。语义上\"承担一份真正的工作\"与上下文\"成为成年人\"的逻辑吻合，undertake a job 为常见搭配。",
+    "traps": "capturing 虽是动词形式，但语义为\"捕捉\"，与 a real job 不搭配；其余备选词词性不符（名词或形容词），无法充当谓语动词。",
+    "tip": "关注主谓一致与动宾搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "K",
+    "correct": "occupation",
+    "why": "空格前有冠词 an，需填入以元音开头的可数名词单数。occupation 意为\"职业\"，与前文 career、job 形成语义链，且 an occupation 搭配正确。",
+    "traps": "existence 虽也以元音开头，但\"成年意味着一种存在的开始\"语义不通顺，且 existence 更适合用于第28题的语境。",
+    "tip": "冠词 an 提示首字母为元音的名词。"
+   },
+   {
+    "number": 28,
+    "answer": "H",
+    "correct": "existence",
+    "why": "空格处需要一个名词作主语，与 of such ideals 构成\"这种理想的存在\"。The existence of... 是常见结构，表示\"……的存在/持有\"，完美衔接后文\"没有现实调和\"的论述。",
+    "traps": "occupation 虽是名词，但\"这种理想的职业\"与下文 without the tempering of reality 语义不衔接；recession 语义与此处无关。",
+    "tip": "名词 + of 结构，注意语义搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "J",
+    "correct": "intolerant",
+    "why": "become 后接形容词作表语，intolerant of 意为\"对……不容忍\"，与后文 press for reform（推动改革）形成因果逻辑：因为无法容忍非理想世界，所以要推动改革。",
+    "traps": "confused 虽也可接在 become 后，但其常用搭配为 confused about，且此处语境强调\"不容忍\"而非\"困惑\"，逻辑更紧密。",
+    "tip": "become + adj. + of 固定搭配是关键线索。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "correct": "automatically",
+    "why": "空格修饰动词 comes，需要副词。automatically 意为\"自然而然地\"，表达皮亚杰的观点：当理想付诸实践时，适应社会便会自动实现，与理论逻辑一致。",
+    "traps": "slightly 虽也是副词，但\"适应社会稍微到来\"语义不通；其余候选词词性不符。",
+    "tip": "修饰动词需用副词，结合语境选择语义。"
+   },
+   {
+    "number": 31,
+    "answer": "N",
+    "correct": "slightly",
+    "why": "taken slightly out of context 意为\"稍微脱离语境\"，slightly 修饰介词短语 out of context，程度副词使语气更委婉，符合作者对皮亚杰观点的谨慎评价态度（用了 perhaps）。",
+    "traps": "automatically 虽也是副词，但\"自动地脱离语境\"语义荒谬，不符合此处需要缓和语气的表达需求。",
+    "tip": "程度副词与语气委婉表达的匹配。"
+   },
+   {
+    "number": 32,
+    "answer": "E",
+    "correct": "emphasizing",
+    "why": "was emphasizing 构成过去进行时，表示\"他当时所强调的是……\"。What he was emphasizing 是主语从句，与后文 is the way reality can modify idealistic views 构成完整句意。",
+    "traps": "capturing 虽能构成 was capturing 的进行时，但\"他所捕捉的\"与学术论述语境不符；emphasize 更契合学术讨论中\"强调观点\"的语义。",
+    "tip": "was + doing 进行时态，注意语义与学术语境。"
+   },
+   {
+    "number": 33,
+    "answer": "M",
+    "correct": "recession",
+    "why": "times of recession 意为\"经济衰退时期\"，与后文 difficult economic times 形成呼应，且 careers and vocations become less available（职业机会减少）正是经济衰退的典型表现。",
+    "traps": "其他名词如 existence、occupation 都无法与 times of 搭配构成合理的经济背景描述。",
+    "tip": "上下文复现线索：difficult economic times 是同义复现。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "correct": "confused",
+    "why": "leave sb. confused about 意为\"使某人对……感到困惑\"。经济衰退使青少年对自己的社会角色产生迷茫，confused about their roles 语义通顺，且 leave + 宾语 + 形容词补语结构正确。",
+    "traps": "intolerant 虽也是形容词，但 intolerant about 搭配不常见（通常用 intolerant of），且此处语境是\"迷茫\"而非\"不容忍\"。",
+    "tip": "leave + 宾语 + adj. 结构，注意介词搭配。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "correct": "beneficial",
+    "why": "空格前有副词 economically 修饰，需填入形容词。economically beneficial 意为\"在经济上有益的\"，与后文 but also help to stimulate... 构成 not only... but also 的并列结构，语义完整。",
+    "traps": "confused 虽是形容词，但\"经济上困惑的\"与项目（programs）作主语语义不搭配；此处需要正面评价词。",
+    "tip": "not only... but also 并列结构提示正面语义。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "undertake",
+    "cn": "v. 承担，从事（任务、工作等）"
+   },
+   {
+    "w": "occupation",
+    "cn": "n. 职业；占据；消遣"
+   },
+   {
+    "w": "existence",
+    "cn": "n. 存在；生存；生活方式"
+   },
+   {
+    "w": "intolerant",
+    "cn": "adj. 不容忍的，偏狭的（常与 of 搭配）"
+   },
+   {
+    "w": "recession",
+    "cn": "n. 经济衰退，萧条"
+   },
+   {
+    "w": "beneficial",
+    "cn": "adj. 有益的，有利的（常与 to 搭配）"
+   },
+   {
+    "w": "tempering",
+    "cn": "n./v. 调和，缓和；使……回火"
+   },
+   {
+    "w": "hypotheses",
+    "cn": "n. 假设，假说（hypothesis 的复数）"
+   },
+   {
+    "w": "idealism",
+    "cn": "n. 理想主义；唯心主义"
+   },
+   {
+    "w": "vocation",
+    "cn": "n. 职业；使命感；天职"
+   },
+   {
+    "w": "intervention",
+    "cn": "n. 干预，介入（常指政策或社会层面）"
+   },
+   {
+    "w": "modification",
+    "cn": "n. 修改，调整；缓和"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主题（职业与青少年成熟）和行文逻辑。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、be 动词、助动词等）确定所需词性。",
+   "第四步：结合上下文语义和固定搭配（如 intolerant of、times of recession）锁定唯一答案。",
+   "第五步：填完后回读全文，检查语法一致性和语义连贯性，确保无重复使用。"
+  ]
+ }
+}

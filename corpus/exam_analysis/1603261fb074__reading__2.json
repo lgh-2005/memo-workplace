@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "1603261fb074__reading__2",
+ "examId": "1603261fb074",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 6 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:14:25.171Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62903,
+ "usage": {
+  "prompt_tokens": 1853,
+  "completion_tokens": 4236,
+  "total_tokens": 6089,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1853,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4236,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1853,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "垃圾场改变鸟类迁徙习性",
+  "gist": "文章讨论了人类大量垃圾堆放和填埋场对野生动物尤其是白鹳迁徙行为的影响。研究发现，部分白鹳放弃了传统迁徙路线，转而在垃圾场过冬觅食。短期看似获益，但存在误食塑料或有毒物质的风险，且传统迁徙路线被打乱可能对生态系统造成不可预估的副作用。",
+  "structure": [
+   "第1段：总起，垃圾场导致部分鸟类放弃迁徙",
+   "第2-3段：研究细节——GPS追踪结果及短期收益分析",
+   "第4段：垃圾场觅食的健康风险与长期隐患",
+   "第5-6段：不同地区白鹳的迁徙路线对比",
+   "第7段：对生态系统的更广泛担忧"
+  ],
+  "difficulty": "中等",
+  "translation": "大量垃圾堆和不断扩大的垃圾填埋场，构成了人类对野生动物较为令人不安的影响之一。它们导致一些鸟类放弃了迁徙。这些鸟不再飞行数千英里寻找食物，而是将垃圾场作为冬季觅食地。\n\n德国的研究人员使用微型GPS追踪器，追踪了来自欧洲和亚洲不同地点的70只白鹳在出生后前五个月的迁徙情况。虽然许多鸟类沿着众所周知的路线飞往温暖的地区，但另一些则中途停下，在垃圾填埋场上过冬，以食物残渣和在垃圾堆上大量繁殖的昆虫为食。\n\n短期来看，这些鸟似乎从在垃圾场过冬中获益。马克斯·普朗克研究所的安德烈亚·弗拉克发现，沿传统迁徙路线飞行的鸟类比那些只飞到摩洛哥北部并在那里的垃圾场过冬的德国白鹳更容易死亡。弗拉克说：\"对鸟类来说，这是一种非常便捷的获取食物的方式。有大量的有机废物供它们食用。\"然而，这些食物既不特别可口，也不安全。大部分废物是丢弃的腐烂肉类，混杂着塑料袋和旧玩具等其他人类垃圾。\n\n弗拉克说：\"这非常危险。鸟类很容易吃下塑料碎片或橡皮筋，可能因此死亡。而且我们不清楚长期后果。它们可能吃下有毒的东西，损害健康。我们目前还无法评估。\"\n\n科学家们追踪了来自欧洲和非洲不同种群的白鹳。俄罗斯、希腊和波兰的白鹳飞到了南非，而来自西班牙、突尼斯和德国的白鹳只飞到了萨赫勒地区。\n\n伊比利亚半岛上的垃圾填埋场长期以来一直吸引着当地的白鹳，但本研究中所有被标记的西班牙白鹳都飞越了撒哈拉沙漠到达了西萨赫勒地区。科学家们在期刊上描述了来自德国的白鹳明显受到垃圾场的影响：在至少存活了五个月的六只鸟中，有四只选择在摩洛哥北部的垃圾场过冬，而非迁徙到萨赫勒地区。\n\n弗拉克表示，现在判断丰富食物的好处是否超过在垃圾场觅食的风险还为时尚早。但这并非唯一的不确定性。迁徙鸟类对其栖息地和冬季目的地的生态系统都有影响，打乱传统迁徙路线可能产生意想不到的副作用。白鹳以蝗虫和其他昆虫为食，如果这些昆虫数量失控，就会成为害虫。弗拉克说：\"它们（白鹳）提供了有益的服务。\"",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "They have led some birds to give up on migration. Instead of flying thousands of miles in search of food, they make the waste sites their winter feeding grounds.",
+    "why": "原文第一段明确指出垃圾场\"导致一些鸟类放弃了迁徙\"，它们不再飞行数千英里寻找食物，而是将垃圾场作为冬季觅食地。D选项\"改变了某些鸟类以往的迁徙习性\"是对\"give up on migration\"的准确同义改写，完全契合原文因果逻辑。",
+    "traps": "A\"迫使白鹳寻找更安全的冬季栖息所\"属于无中生有，原文未提及安全问题驱动选择；B\"严重污染了鸟类过冬的地方\"偷换概念，原文说的是鸟选择在垃圾场过冬，而非垃圾场污染了原有过冬地；C\"加速了某些害虫的繁殖\"虽然提到昆虫在垃圾堆上繁殖，但这不是对wildlife的主要影响，且题目问的是对野生动物的影响。",
+    "tip": "注意第一段总起句往往直接回答\"影响是什么\"类问题。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Andrea Flack of the Max Planck Institute found that birds following traditional migration routes were more likely to die than German storks that flew only as far as northern Morocco.",
+    "why": "原文第三段明确指出\"沿传统迁徙路线飞行的鸟比只飞到摩洛哥北部的德国白鹳更容易死亡\"。D选项\"它们更可能面临死亡风险\"是对\"were more likely to die\"的直接对应，属于原文信息的忠实转述。",
+    "traps": "A\"以加速的速度繁殖\"原文无任何关于繁殖率的信息，属于无中生有；B\"能更好地度过冬天\"与原文结论完全相反，原文说它们更容易死亡；C\"帮助人类消灭害虫\"虽末段提到白鹳吃蝗虫，但这不是关于\"沿传统路线迁徙的鸟\"的特定信息，且本题定位在第三段。",
+    "tip": "比较句型是出题热点，注意谁比谁更怎样。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "They might eat something toxic and damage their health. We cannot estimate that yet.",
+    "why": "第四段Flack指出在垃圾场过冬的鸟\"可能吃下有毒的东西，损害健康\"，而且\"长期后果未知\"。B选项\"它们可能吃到有害的东西\"是对\"eat something toxic\"的同义转述，与原文完全吻合。此外第三段末尾也提到食物\"not particularly appetising, or even safe\"作为铺垫。",
+    "traps": "A\"它们可能最终永久留在那里\"属于过度推断，原文仅讨论过冬，未提及永久定居；C\"它们可能进化出新的觅食习性\"原文未涉及进化层面的讨论；D\"它们可能难以获得充足食物\"与原文矛盾，原文明确说\"huge clusters of organic waste\"即食物丰富。",
+    "tip": "注意区分\"短期收益\"与\"长期风险\"，题目问的是Flack的担忧。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Landfill sites on the Iberian peninsula have long attracted local white storks, but all of the Spanish birds tagged in the study flew across the Sahara desert to the western Sahel.",
+    "why": "原文第六段指出伊比利亚半岛（即西班牙所在地）的垃圾填埋场长期吸引当地白鹳，但本研究中被标记的所有西班牙白鹳都飞越撒哈拉到达萨赫勒。一个\"but\"构成转折：虽然路线上有垃圾场，被标记的西班牙鸟却对其视而不见，继续远距离迁徙。C选项\"它们不被迁徙路线上的垃圾场所吸引\"是对这一转折关系的准确推断。",
+    "traps": "A\"它们逐渐失去冬季迁徙的习惯\"与原文矛盾，西班牙鸟全部完成了远距离迁徙；B\"它们更喜欢远方的垃圾场而非家附近的\"无证据支持，原文说它们飞到萨赫勒，并未说那里有垃圾场供它们使用；D\"它们与德国白鹳一起在摩洛哥垃圾场过冬\"与事实不符，西班牙鸟飞到了萨赫勒而非摩洛哥。",
+    "tip": "but转折后的信息往往是推断题的关键考点。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Migrating birds affect ecosystems both at home and at their winter destinations, and disrupting the traditional routes could have unexpected side effects.",
+    "why": "文章最后一段提出\"另一个不确定性\"：迁徙鸟类影响栖息地和冬季目的地的生态系统，打乱传统路线可能产生意外副作用，并举例白鹳捕食蝗虫等害虫。A选项\"对生态系统的潜在危害\"精确概括了这一担忧。题目中的\"other concern\"对应原文\"that's not the only uncertainty\"。",
+    "traps": "B\"鹳物种的基因变化\"原文从未涉及遗传学话题，属于无中生有；C\"向家乡传播流行病\"原文未提及任何疫病传播的内容；D\"对生物多样性的破坏性影响\"虽看似相关，但原文具体讨论的是生态服务功能（控制害虫），而非生物多样性，属于偷换概念。",
+    "tip": "末段常出\"延伸担忧\"类题目，注意\"not the only\"等信号词引出的新论点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sprawling",
+    "cn": "adj. 无序扩展的，蔓延的"
+   },
+   {
+    "w": "landfill",
+    "cn": "n. 垃圾填埋场"
+   },
+   {
+    "w": "constitute",
+    "cn": "v. 构成，组成"
+   },
+   {
+    "w": "miniature",
+    "cn": "adj. 微型的，小型的"
+   },
+   {
+    "w": "multitude",
+    "cn": "n. 大量，众多"
+   },
+   {
+    "w": "thrive",
+    "cn": "v. 繁荣，大量繁殖"
+   },
+   {
+    "w": "appetising",
+    "cn": "adj. 开胃的，诱人的（=appetizing）"
+   },
+   {
+    "w": "debris",
+    "cn": "n. 碎片，残骸，垃圾"
+   },
+   {
+    "w": "toxic",
+    "cn": "adj. 有毒的"
+   },
+   {
+    "w": "disrupt",
+    "cn": "v. 扰乱，打乱"
+   },
+   {
+    "w": "locust",
+    "cn": "n. 蝗虫"
+   },
+   {
+    "w": "outweigh",
+    "cn": "v. 超过，胜过（在价值或重要性上）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Researchers in Germany used miniature GPS tags to track the migrations of 70 white storks from different sites across Europe and Asia during the first five months of their lives.",
+    "cn": "德国的研究人员使用微型GPS追踪器，追踪了来自欧洲和亚洲不同地点的70只白鹳在出生后前五个月的迁徙情况。",
+    "note": "主干：Researchers used tags to track migrations；两个介词短语from different sites和during the first five months作状语修饰追踪的范围和时间。"
+   },
+   {
+    "en": "Writing in the journal, the scientists describe how the storks from Germany were clearly affected by the presence of waste sites, with four out of six birds that survived for at least five months overwintering on rubbish dumps in northern Morocco, instead of migrating to the Sahel.",
+    "cn": "科学家们在期刊中描述了来自德国的白鹳如何明显受到垃圾场存在的影响：在至少存活了五个月的六只鸟中，有四只选择在摩洛哥北部的垃圾场过冬，而非迁徙到萨赫勒地区。",
+    "note": "现在分词Writing作伴随状语；主句describe后接how引导的宾语从句；with引导独立主格结构补充说明具体数据；that survived为定语从句修饰birds；instead of构成对比。"
+   },
+   {
+    "en": "Migrating birds affect ecosystems both at home and at their winter destinations, and disrupting the traditional routes could have unexpected side effects.",
+    "cn": "迁徙鸟类对其栖息地和冬季目的地的生态系统都有影响，而打乱传统迁徙路线可能产生意想不到的副作用。",
+    "note": "并列句由and连接；前半句both...and构成并列地点状语；后半句disrupting动名词短语作主语，could have表推测。"
+   }
+  ]
+ }
+}

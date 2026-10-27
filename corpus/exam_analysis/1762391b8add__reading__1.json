@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "1762391b8add__reading__1",
+ "examId": "1762391b8add",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 12 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:01:30.921Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64485,
+ "usage": {
+  "prompt_tokens": 1804,
+  "completion_tokens": 3904,
+  "total_tokens": 5708,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1804,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3904,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1804,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 4,
+ "warnings": [],
+ "analysis": {
+  "topic": "追求个人成功不应牺牲友谊",
+  "gist": "文章批判了当代社会中极端个人主义文化导致人们在追求成功的过程中忽视甚至丧失友谊的现象。作者指出，社会将失去朋友视为成功路上的常态是错误的，呼吁人们重新审视极端个人自由的危害，认识到友谊是人生的锚点，在追求成功的同时应努力维系健康的人际关系。",
+  "structure": [
+   "第1-2段：提出问题——追求成功导致友谊流失已成常态",
+   "第3-5段：剖析根源——极端个人主义文化崇尚个人成就",
+   "第6-7段：举例论证——成功学话语不断强化'失友正常'的观念",
+   "第8-9段：提出主张——友谊是锚点，不应为成功牺牲人际关系"
+  ],
+  "difficulty": "中等",
+  "translation": "许多人将友谊视为一条安慰毯：一个可以倾诉哭泣的肩膀，一个可以吐露心声的可靠灵魂。然而，往往在我们急于追求个人成功的过程中，我们在途中失去了朋友，而这已经成为了这一过程的一部分。\n\n伴随日常生活的混乱与永无休止的动荡，是追求稳定友谊路上一个猛烈的障碍。作为学生，我们用这个借口来对失去那些曾被视为挚爱之人的事实不以为意。\n\n与其将生活视为一场赛跑——每个人都在各自的道路上奔向某种形式的成功——我们必须重新学会珍视在跑道上建立的联系。我们必须重新审视极端个人自由的危害。\n\n极端个人主义将个人自由凌驾于集体之上。例如，它认为全民医保——一种集体主义的体现——威胁了许多美国人的梦想。\n\n我们中的许多人已经沦为个人主义文化的受害者。社会倾向于赞美个人成就并加以褒扬，其基本假设是：成功或胜出是比其他人更加努力的结果。\n\n作为一个社会，我们崇拜\"在通往成功的路上失去朋友\"这一理念。我记得高中时听到过这样的话：\"不要担心失去友谊，只要专注于学习和考上大学就好。长远来看，那才是唯一重要的事。\"这种观点并非我独有的经历。它在许多成功故事中被反复宣扬，也深深嵌入我们看待成长的方式中。励志演说家会推动听众安于失去朋友这一不可避免的结局。花太多时间和朋友在一起？你在浪费本该用于追求成就的时间。把时间投入人际关系？不如把时间投入工作。\n\n这种持续不断的成功需求蒙蔽了我们的双眼，使我们无法看透伴随日常生活的变化旋风。我们被期望取得实实在在的成功：获得奖项、升到更高的职位、拿到更好的成绩。为了成功，我们失去了朋友，而这可悲地已变得习以为常。\n\n我们不能对失去友谊而无动于衷，因为友谊是我们的锚。是的，去追求成功吧。挑战自己。突破极限。但是，与所有自封的成功专家所说的相反，独自完成并不会让你比那些借助他人帮助而成功的人更了不起。\n\n努力培养健康的人际关系，并在看似无暇顾及任何人的繁忙日程中维系它们。尽管我们可能生活在一个崇尚独立追求成就的社会中，但在路上有人支持和爱你，远比任何最终结果都重要得多。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "more often than not, in our eagerness to seek individual success, we lose friends along the way and that has become part of the process.",
+    "why": "原文第一段明确指出，人们在急于追求个人成功时（in our eagerness to seek individual success），往往在途中失去了朋友（we lose friends along the way）。\"lose friends\"即忽视与朋友的联系，D选项\"ignore their ties with friends\"是对原文的同义改写，完全吻合文意。",
+    "traps": "A\"缺少可以哭泣的肩膀\"和B\"没有可以倾诉的灵魂\"都是第一句对友谊定义的描述，并非追求成功时发生的事，属于张冠李戴；C\"找不到可靠的朋友\"原文未提及，且原文强调的是\"失去\"而非\"找不到\"，属于无中生有。",
+    "tip": "区分文章中\"定义描述\"与\"因果论述\"，答案往往在因果链上。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "We must reevaluate the harm of radical, individual freedom.",
+    "why": "原文第三段末句明确提出建议：\"We must reevaluate the harm of radical, individual freedom\"（我们必须重新评估极端个人自由的危害）。A选项\"Reexamine its detrimental effects\"中reexamine对应reevaluate，detrimental effects对应harm，是精准的同义替换。",
+    "traps": "B\"对失去至亲不以为意\"是第二段描述的错误做法（shrug off），并非作者建议，属于正反混淆；C\"避免其中的混乱和动荡\"是第二段提到的客观障碍，非建议内容；D\"移除路上的猛烈障碍\"也是对第二段描述的曲解，作者并未建议移除这些障碍。",
+    "tip": "注意区分作者的\"建议\"和\"现象描述\"，题干问advise时应定位祈使句或must等表建议的句式。"
+   },
+   {
+    "number": 48,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Society tends to celebrate personal achievement and commend it based on the assumption that winning or succeeding is a consequence of working harder than the next person.",
+    "why": "原文第五段指出，社会赞美个人成就，其基本假设（assumption）是：成功是比他人更加努力（working harder than the next person）的结果。D选项\"It reflects a person's exceptional endeavor\"中exceptional endeavor（超常的努力）对应working harder than the next person，准确概括了这一假设。",
+    "traps": "A\"应当被适当庆祝和高度赞扬\"描述的是社会的做法（celebrate and commend），而非assumption的内容，偷换了问题对象；B\"是实现个人梦想的可靠途径\"原文未提及，属于无中生有；C\"围绕个人主义文化展开\"过于宽泛且未回答assumption是什么，属于答非所问。",
+    "tip": "注意题干关键词assumption，要找的是假设的具体内容而非社会的行为表现。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "It's preached in many success stories, and it's embedded in the way we see growth. Motivational speakers will push their audience to be complacent to the inevitable end of losing friends. Spend too much time with friends? You're losing time better utilized on your achievements. Invest time in your relationships? Invest time in your work instead.",
+    "why": "原文第六段指出，许多成功故事宣扬的核心信息是：不要把时间花在朋友身上，而要投入工作（Invest time in your work instead）。B选项\"把时间投入工作而非与朋友交往\"准确概括了这一宣扬内容，是原文多句话的高度归纳。",
+    "traps": "A\"重视通往成功路上的学业收获\"虽提到学习，但原文中学习只是引出话题的例子，并非success stories宣扬的核心内容；C\"在追求个人成功中加强友谊\"与文章观点完全相反，属于正反混淆；D\"在学业上出类拔萃以进入名校\"是某个具体例子中的说法，非成功故事普遍宣扬的主题。",
+    "tip": "当原文用多个排比句强化同一观点时，正确答案往往是对这些排比内容的概括总结。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "We cannot be complacent with losing friendships because they are our anchors. ... having people to support and love you on the way is far more important than any end result.",
+    "why": "文章最后两段是作者核心主张：友谊是锚点，不能安于失去友谊；路上有人支持和爱你远比任何最终结果重要。由此可推断，在追求成功的过程中，没有人能承受忽视亲密朋友的代价。B选项\"No one can afford to neglect close friends\"精准传达了这一核心推断。",
+    "traps": "A\"没有人能不突破极限就成功\"原文虽提到push limits，但这只是作者附带认可的行为，并非文章的核心推断；C\"集体主义优于个人主义\"过度推断，作者批判的是极端个人主义，并未对两者做优劣比较；D\"成功专家常把人引向毁灭\"过度引申，原文只说self-proclaimed success experts的观点是错误的，并未说他们导致人们毁灭。",
+    "tip": "推断题要基于文章核心论点进行合理推导，避免过度引申或以偏概全。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "confide",
+    "cn": "v. 倾诉，吐露（秘密）"
+   },
+   {
+    "w": "turmoil",
+    "cn": "n. 混乱，动荡"
+   },
+   {
+    "w": "shrug off",
+    "cn": "phr. 对……不以为意，满不在乎地对待"
+   },
+   {
+    "w": "reevaluate",
+    "cn": "v. 重新评估，重新审视"
+   },
+   {
+    "w": "collectivism",
+    "cn": "n. 集体主义"
+   },
+   {
+    "w": "idolize",
+    "cn": "v. 崇拜，极度崇拜"
+   },
+   {
+    "w": "complacent",
+    "cn": "adj. 自满的，安于现状的"
+   },
+   {
+    "w": "whirlwind",
+    "cn": "n. 旋风；一连串纷乱的事"
+   },
+   {
+    "w": "tangibly",
+    "cn": "adv. 切实地，有形地"
+   },
+   {
+    "w": "anchor",
+    "cn": "n. 锚；精神支柱，依靠"
+   },
+   {
+    "w": "foster",
+    "cn": "v. 培养，促进"
+   },
+   {
+    "w": "self-proclaimed",
+    "cn": "adj. 自封的，自称的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Society tends to celebrate personal achievement and commend it based on the assumption that winning or succeeding is a consequence of working harder than the next person.",
+    "cn": "社会倾向于赞美个人成就并加以褒扬，其基本假设是：成功或胜出是比他人更加努力的结果。",
+    "note": "主干为Society tends to celebrate and commend it；based on引导原因状语；that引导同位语从句解释assumption的内容；next person指\"其他人\"。"
+   },
+   {
+    "en": "But contrary to all the self-proclaimed success experts, doing it alone does not make you more successful or any better than someone who achieved it with the help of others.",
+    "cn": "但是，与所有自封的成功专家所说的相反，独自完成并不会让你比那些借助他人帮助而成功的人更了不起。",
+    "note": "contrary to引导让步状语；doing it alone为动名词短语作主语；more successful or any better构成比较级并列；who引导定语从句修饰someone。"
+   },
+   {
+    "en": "Although we may be living in a society that treasures the independent pursuit of achievement, having people to support and love you on the way is far more important than any end result.",
+    "cn": "尽管我们可能生活在一个崇尚独立追求成就的社会中，但在路上有人支持和爱你，远比任何最终结果都重要得多。",
+    "note": "Although引导让步状语从句；that引导定语从句修饰society；主句主语为having people动名词短语；far修饰比较级more important加强语气。"
+   }
+  ]
+ }
+}

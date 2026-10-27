@@ -1,0 +1,163 @@
+{
+ "schemaVersion": 1,
+ "id": "581f3683b95d__reading__2",
+ "examId": "581f3683b95d",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 12 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T04:41:07.859Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 81079,
+ "usage": {
+  "prompt_tokens": 1548,
+  "completion_tokens": 8579,
+  "total_tokens": 10127,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5938
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1548
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社区因素比贫富差距更影响流动",
+  "gist": "文章先引述奥巴马等人观点，认为经济不平等破坏向上流动性；但新数据显示不平等本身并非经济流动性的强预测因素。真正预测贫困儿童能否向上流动的社区因素包括家庭结构、人均收入增长和地方政府支出等。作者建议从社区层面着手帮助贫困儿童实现阶层跨越。",
+  "structure": [
+   "第1-2段：提出传统观点，认为不平等是向上流动的最大威胁。",
+   "第3段：用新数据反驳，指出不平等本身预测力不强。",
+   "第4-5段：对比盐湖城与亚特兰大，引出社区层面因素。",
+   "第6-7段：总结三个关键社区因素，提出从社区入手。"
+  ],
+  "difficulty": "中等",
+  "translation": "经济不平等是“我们这个时代的决定性挑战”，巴拉克·奥巴马总统上个月在向美国进步中心发表的演讲中宣称。他认为，不平等是危险的，不仅仅是因为贫富差距过大不好看，而是因为不平等本身摧毁了向上流动性，使穷人更难摆脱贫困。他说：“日益加剧的不平等和日益减少的流动性对美国梦构成了根本威胁。”\n\n奥巴马只是宣称不平等是头号公敌和美国减贫最大威胁的最著名公众人物。许多著名经济学家也认为，今天穷人在经济阶梯上攀登更加困难，因为阶梯上的横档间距变得更大了。\n\n尽管人们对最富有的1%给予了新的关注，但哈佛大学和伯克利分校“机会平等项目”的一组新数据表明，如果我们整体上关心向上流动性，我们极大地夸大了贫富差距的危险。正如社会学家斯科特·温希普在最近一篇基于对这些数据的分析的文章中所指出的，不平等本身并不是经济流动性的特别强的预测因素。\n\n那么，在社区层面，哪些因素确实能预测贫困儿童成年后会在经济阶梯上向上移动呢？例如，如何解释盐湖城都会区是100个最大都会区中最有可能提升穷人命运的地区之一，而亚特兰大都会区则是最不可能的地区之一？\n\n哈佛大学经济学家拉吉·切蒂指出了经济和种族隔离、社区密度、社区中产阶级规模、学校质量、社区宗教虔诚度以及家庭结构等因素，他称家庭结构为“向上流动性最强的单一相关因素”。切蒂发现，像盐湖城这样双亲家庭和宗教虔诚度高的社区，贫困儿童取得成功的可能性远大于像亚特兰大这样种族和经济隔离程度高的社区。\n\n切蒂尚未对这些因素中每个因素的相对预测力进行全面分析。根据我对数据的分析，在切蒂强调的因素中，以下三个似乎最能预测特定社区的向上流动性：1. 人均收入增长 2. 单身母亲的普遍程度（相关性很强，但是负相关） 3. 人均地方政府支出\n\n换句话说，人均收入增长水平高、双亲家庭比例高、地方政府支出高（这可能代表学校好）的社区，最有可能帮助贫困儿童重温霍雷肖·阿尔杰式的白手起家故事。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Inequality is dangerous, he argued, not merely because it doesn't look good to have a large gap between the rich and the poor, but because inequality itself destroys upward mobility, making it harder for the poor to escape from poverty.",
+    "why": "奥巴马明确指出，不平等之所以危险，关键在于它破坏向上流动性，使穷人更难脱贫，即构成社会流动的最大障碍，因此选项A符合原文推理。选项B中的社会稳定性、C中的收入增长、D中的社会邪恶均未在原文出现或以不同表述出现，属于无中生有或偷换概念。选项D的“most malicious social evil”与原文“defining challenge”和“Public Enemy No.1”含义不完全等同，且过于负面绝对。",
+    "traps": "A 正确；B 将原文的“美国梦威胁”曲解为“社会稳定威胁”；C 将“不平等”与“收入增长”错误关联，原文说的是不平等破坏流动性，而非阻碍收入增长；D 用“most malicious social evil”夸大原文“defining challenge”的含义，且“social evil”原文未提及，属于过度推断。",
+    "tip": "注意同义替换，选项与原文关键词对应：“obstacle to social mobility”对应“destroys upward mobility”。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Inequality itself is not a particularly strong predictor of economic mobility, as sociologist Scott Winship noted in a recent article based on his analysis of this data.",
+    "why": "斯科特·温希普的数据分析表明，不平等本身并非经济流动性的强预测因素，即不可靠的指标，因此B正确。选项A“快速扩大”原文未提及；C“未被正确解读”属于无中生有；D“被压倒性忽视”与原文“受到大量新关注”相矛盾。",
+    "traps": "A 文中没有说贫富差距正在快速扩大；C 原文没有讨论数据解读的对错，而是说预测力不强；D 与第三段开头“For all the new attention devoted to the 1 percent”相悖，不平等并未被忽视。",
+    "tip": "重视“not a particularly strong predictor”与“not a reliable indicator”的同义替换。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Chetty finds that communities like Salt Lake City, with high levels of two-parent families and religiosity, are much more likely to see poor children get ahead than communities like Atlanta, with high levels of racial and economic segregation.",
+    "why": "原文对比盐湖城与亚特兰大，指出盐湖城有高比例双亲家庭和宗教虔诚度，贫困儿童更可能取得成功，即获得更多攀爬社会阶梯的机会，因此C正确。选项A“宗教置于政党政治之上”原文未提及；B“弥合贫富差距”偷换概念，原文是帮助贫困儿童向上流动；D“种族和经济隔离程度更高”是亚特兰大的特征，与盐湖城相反。",
+    "traps": "A 无中生有，原文提到宗教虔诚度，但未涉及政党政治；B 将“帮助贫困儿童向上流动”曲解为“弥合贫富差距”；D 张冠李戴，高隔离程度属于亚特兰大而非盐湖城。",
+    "tip": "对比类细节题需准确对应双方特征，避免混淆。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "family structure, which he calls the 'single strongest correlate of upward mobility.'",
+    "why": "原文明确指出拉吉·切蒂将家庭结构称为“向上流动性最强的单一相关因素”，因此与流动性强相关的是家庭结构，故A正确。选项B“种族平等”与原文相反，原文强调种族隔离是负向因素；C“学校教育”是因素之一但并非最强；D“社区密度”也是因素之一，但最强的是家庭结构。",
+    "traps": "B 把原文的种族隔离（负相关）替换为种族平等，且并非最强相关；C 和 D 虽然原文提及为影响因素，但题目问的是“strongly correlated”，最强相关是家庭结构，C、D均不是最强。",
+    "tip": "抓住题干中“strongly correlated”与原文“single strongest correlate”的对应关系。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "In other words, communities with high levels of per-capita income growth, high percentages of two-parent families, and high local government spending—which may stand for good schools—are the most likely to help poor children relive the Horatio Alger's rags-to-riches story.",
+    "why": "作者在末段总结，具备高人均收入增长、高双亲家庭比例和高地方政府支出的社区，最可能帮助贫困儿童实现阶层跨越，暗示应从社区层面入手推动向上流动，因此D正确。A“扩大中产阶级规模”只是切蒂提到的因素之一，并非作者最终建议；B“扩大都市区”原文未提；C“消除收入不平等”与作者观点相悖，作者认为不平等本身并非强预测因素。",
+    "traps": "A 以偏概全，中产阶级规模只是众多因素中的一个，且不是作者结论重点；B 无中生有；C 与作者核心观点矛盾，作者并不主张将重点放在消除不平等上。",
+    "tip": "推断题需基于全文主旨和尾段总结，避免选择局部细节或与主旨相反的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inequality",
+    "cn": "n. 不平等"
+   },
+   {
+    "w": "upward mobility",
+    "cn": "n. 向上流动性"
+   },
+   {
+    "w": "rung",
+    "cn": "n. 梯级，横档"
+   },
+   {
+    "w": "predictor",
+    "cn": "n. 预测因素"
+   },
+   {
+    "w": "segregation",
+    "cn": "n. 隔离"
+   },
+   {
+    "w": "density",
+    "cn": "n. 密度"
+   },
+   {
+    "w": "religiosity",
+    "cn": "n. 宗教虔诚"
+   },
+   {
+    "w": "correlate",
+    "cn": "n. 相关因素"
+   },
+   {
+    "w": "prevalence",
+    "cn": "n. 普遍，流行"
+   },
+   {
+    "w": "per-capita",
+    "cn": "adj. 人均的"
+   },
+   {
+    "w": "rags-to-riches",
+    "cn": "adj. 白手起家的，从贫穷到富有的"
+   },
+   {
+    "w": "defining",
+    "cn": "adj. 决定性的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Inequality is dangerous, he argued, not merely because it doesn't look good to have a large gap between the rich and the poor, but because inequality itself destroys upward mobility, making it harder for the poor to escape from poverty.",
+    "cn": "他认为，不平等是危险的，不仅仅是因为贫富差距过大不好看，而是因为不平等本身摧毁了向上流动性，使穷人更难摆脱贫困。",
+    "note": "主干为Inequality is dangerous；he argued为插入语；not merely because... but because...构成并列原因状语从句；making...为现在分词短语作结果状语。"
+   },
+   {
+    "en": "For all the new attention devoted to the 1 percent, a new dataset from the Equality of Opportunity Project at Harvard and Berkeley suggests that, if we care about upward mobility overall, we're vastly exaggerating the dangers of the rich-poor gap.",
+    "cn": "尽管人们对最富有的1%给予了新的关注，但哈佛大学和伯克利分校“机会平等项目”的一组新数据表明，如果我们整体上关心向上流动性，我们极大地夸大了贫富差距的危险。",
+    "note": "For all...为让步状语；主干为a new dataset suggests that...；that引导宾语从句，其中包含if条件状语从句；from...介词短语作后置定语修饰dataset。"
+   },
+   {
+    "en": "In other words, communities with high levels of per-capita income growth, high percentages of two-parent families, and high local government spending—which may stand for good schools—are the most likely to help poor children relive the Horatio Alger's rags-to-riches story.",
+    "cn": "换句话说，人均收入增长水平高、双亲家庭比例高、地方政府支出高（这可能代表学校好）的社区，最有可能帮助贫困儿童重温霍雷肖·阿尔杰式的白手起家故事。",
+    "note": "主干为communities... are the most likely to help...；with引导的介词短语作后置定语，包含三个并列成分；破折号后which引导非限制性定语从句修饰spending。"
+   }
+  ]
+ }
+}

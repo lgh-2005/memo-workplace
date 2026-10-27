@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "d3f423600f71__writing__all",
+ "examId": "d3f423600f71",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年 9 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:46:07.579Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35844,
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 1910,
+  "total_tokens": 2656,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 746,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1910,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 746,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕\"互信与坦诚是促进合作的关键\"展开议论，可评论、举例或结合个人经历，150-200词。",
+    "outline": [
+     "第一段：以题目给定首句开头，引出话题，阐明互信与坦诚在当今社会合作中的核心地位。",
+     "第二段：分层论证——先论述互信的作用（如降低合作成本、促进资源共享），再论述坦诚的作用（如减少误解、提高效率），辅以商业合作或日常生活实例。",
+     "第三段：总结全文，重申互信与坦诚对合作不可或缺，发出倡议或展望。"
+    ],
+    "sample": "It is now widely accepted that mutual trust and openness is the key to promoting cooperation. In an era characterized by globalization and growing interdependence, the capacity to collaborate effectively hinges largely on whether individuals or organizations can build a solid foundation of trust and maintain transparent communication.\n\nTo begin with, mutual trust serves as the bedrock of any successful partnership. When people trust each other, they are more willing to share resources, exchange ideas, and take calculated risks together. For instance, in multinational business ventures, companies that cultivate trust among partners consistently achieve greater synergy and innovation than those plagued by suspicion. Furthermore, openness complements trust by ensuring that all parties have access to relevant information. A transparent working environment encourages honest dialogue, which helps resolve conflicts promptly and prevents minor misunderstandings from escalating into serious disputes. The remarkable success of open-source software communities, where developers worldwide collaborate with full transparency, serves as a compelling testament to this principle.\n\nIn conclusion, mutual trust and openness are not merely desirable qualities but indispensable prerequisites for fruitful cooperation. Only by genuinely embracing these values can we forge lasting and productive partnerships in both personal and professional spheres.",
+    "phrases": [
+     {
+      "en": "serve as the bedrock of",
+      "cn": "充当……的基石；用于强调某事物的根本性地位，比basis更高级"
+     },
+     {
+      "en": "hinge on / upon",
+      "cn": "取决于……；常用于议论文中表达因果关系"
+     },
+     {
+      "en": "cultivate trust among partners",
+      "cn": "在合作伙伴之间培养信任；cultivate比build更书面"
+     },
+     {
+      "en": "take calculated risks",
+      "cn": "承担经过深思熟虑的风险；体现合作中的理性决策"
+     },
+     {
+      "en": "a compelling testament to",
+      "cn": "……的有力证明；用于举例后的总结升华"
+     },
+     {
+      "en": "plagued by suspicion",
+      "cn": "被猜疑所困扰；形象描述缺乏信任的负面后果"
+     },
+     {
+      "en": "indispensable prerequisites for",
+      "cn": "……不可或缺的前提条件；用于结尾段强调重要性"
+     },
+     {
+      "en": "forge lasting partnerships",
+      "cn": "缔造持久的合作关系；forge比build更正式有力"
+     },
+     {
+      "en": "prevent...from escalating into",
+      "cn": "防止……升级为……；用于论证坦诚沟通的作用"
+     },
+     {
+      "en": "with full transparency",
+      "cn": "以完全透明的方式；简洁表达openness的核心含义"
+     }
+    ],
+    "pitfalls": [
+     "未使用题目给定首句开头或擅自修改首句，直接扣分。",
+     "全文空谈道理而无具体事例支撑，论证单薄，难以超过及格线。",
+     "trust和openness只论其一，未能同时兼顾两个关键词，偏题。",
+     "词汇重复率高，反复使用important/cooperation而无同义替换。",
+     "字数不足150词或严重超过200词，均影响得分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Trust is very important for cooperation.",
+      "better": "Mutual trust serves as the bedrock of any successful partnership.",
+      "note": "用serve as the bedrock of替代is important，表达更具体生动，避免空泛。"
+     },
+     {
+      "plain": "People who trust each other can work together better.",
+      "better": "When people trust each other, they are more willing to share resources, exchange ideas, and take calculated risks together.",
+      "note": "用排比三项具体行为替代模糊的work together better，内容更充实。"
+     },
+     {
+      "plain": "For example, open-source software shows this is true.",
+      "better": "The remarkable success of open-source software communities serves as a compelling testament to this principle.",
+      "note": "用高级名词短语a compelling testament替代简单陈述，学术感更强。"
+     },
+     {
+      "plain": "In conclusion, trust and openness are needed for cooperation.",
+      "better": "In conclusion, mutual trust and openness are not merely desirable qualities but indispensable prerequisites for fruitful cooperation.",
+      "note": "用not merely...but结构增加句式层次，indispensable替代needed更精准。"
+     },
+     {
+      "plain": "We should trust each other and be open.",
+      "better": "Only by genuinely embracing these values can we forge lasting and productive partnerships.",
+      "note": "倒装句式Only by...can we...增强语气，forge比have更有力度。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Mutual trust serves as the bedrock of any successful partnership. ——互信是一切成功合作的基石。bedrock一词精准有力，适用于多种议论话题。",
+   "A transparent working environment encourages honest dialogue, which helps resolve conflicts promptly. ——透明的工作环境鼓励坦诚对话，从而有助于迅速化解矛盾。which引导非限制性定语从句，逻辑衔接自然。",
+   "The remarkable success of open-source software communities serves as a compelling testament to this principle. ——开源软件社区的巨大成功有力地证明了这一原则。a compelling testament to是高分论证收束表达。",
+   "Only by genuinely embracing these values can we forge lasting and productive partnerships. ——唯有真正践行这些价值观，我们才能缔造持久而富有成效的合作关系。Only by...can we...倒装句是写作结尾提升档次的经典句式。"
+  ]
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "3a1d5271950e__translation__all",
+ "examId": "3a1d5271950e",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2000 年考研英语真题（旧）",
+ "year": 2000,
+ "sub": "all",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:09:58.939Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 49093,
+ "usage": {
+  "prompt_tokens": 1327,
+  "completion_tokens": 2954,
+  "total_tokens": 4281,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1327,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2954,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1327,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "政府依赖科学家推动经济与社会发展",
+  "translation": "世界各国政府都基于这样一个假设行事：人民的福祉在很大程度上取决于整个社会的经济实力和财富。在现代条件下，这就需要采取不同程度的集中管控措施，因而也就需要经济学家和运筹学专家等专业科学家的帮助。再者，一个国家的经济实力与其工农业效率直接相关，而工农业效率又反过来依赖于各类科学家和技术人员的努力，这一点是显而易见的。这也意味着各国政府日益被迫干预这些领域，以提高产量并确保其得到最佳利用。例如，政府可以通过多种途径鼓励研究，包括建立自己的研究中心；可以改革教育结构，或者进行干预以减少自然资源的浪费或开发迄今尚未利用的资源；也可以直接参与越来越多的与科学、经济和工业有关的国际项目。无论如何，所有这些干预都在很大程度上依赖科学咨询以及各种类型的科学技术人才。\n\n由于大众传播媒介的显著发展，各地人们都不断产生新的需求，不断接触新的风俗习惯和思想观念，而政府出于上述原因也常常被迫进行更多的变革。与此同时，全世界正常的社会变革速度与过去相比也在大大加快。例如，在欧洲早期工业化国家，工业化进程——连同随之而来的各种深远的社会结构变化——历经近一个世纪才得以完成，而如今一个发展中国家可能在大约十年内就经历同样的过程。所有这一切造成了社会内部异乎寻常的压力和紧张关系，从而给有关政府带来了严峻的问题。由于人口爆炸或大规模移民运动所引起的种种问题——大规模移民运动本身由于现代交通工具而变得相对容易——还可能产生额外的社会压力。由于所有这些因素，各国政府越来越依赖生物学家和社会科学家来规划并实施相应的计划。",
+  "questions": [
+   {
+    "number": 31,
+    "en": "Under modern conditions, this requires varying measures of centralized control and hence the help of specialized scientists such as economists and operational research experts.",
+    "cn": "在现代条件下，这就需要采取不同程度的集中管控措施，因而也就需要经济学家和运筹学专家等专业科学家的帮助。",
+    "structure": "主干为 this requires A and hence B，其中 A 为 varying measures of centralized control，B 为 the help of specialized scientists；such as 引出举例说明；Under modern conditions 为状语前置。",
+    "points": [
+     "varying measures 译为\"不同程度的措施\"，体现 varying 的\"各种各样的/不同的\"含义",
+     "hence 表因果递进，需译出\"因而/从而\"的逻辑关系",
+     "operational research experts 译为\"运筹学专家\"，需准确理解专业术语"
+    ],
+    "pitfall": "varying 容易误译为\"变化的\"，此处应理解为\"各种各样的/不同程度的\"；hence 容易漏译，导致两个宾语之间的因果递进关系丢失。"
+   },
+   {
+    "number": 32,
+    "en": "Furthermore, it is obvious that the strength of a country's economy is directly bound up with the efficiency of its agriculture and industry, and that this in turn rests upon the efforts of scientists and technologists of all kinds.",
+    "cn": "再者，一个国家的经济实力与其工农业效率直接相关，而这反过来又依赖于各类科学家和技术人员的努力，这一点是显而易见的。",
+    "structure": "主干为 it is obvious that … and that …，it 为形式主语，两个 that 从句为并列的真正主语从句。第一个从句核心为 strength is bound up with efficiency；第二个从句核心为 this rests upon efforts。",
+    "points": [
+     "be bound up with 译为\"与……密切相关/直接相关\"",
+     "in turn 译为\"反过来/继而\"，体现层层递进的逻辑",
+     "it 为形式主语、两个并列 that 从句为真正主语，需正确识别并处理句式"
+    ],
+    "pitfall": "两个 that 引导的从句容易只识别出第一个而漏译第二个；bound up with 若不熟悉则可能误译。in turn 的递进逻辑关系不能遗漏。"
+   },
+   {
+    "number": 33,
+    "en": "Owing to the remarkable development in mass-communications, people everywhere are feeling new wants and are being exposed to new customs and ideas, while governments are often forced to introduce still further innovations for the reasons given above.",
+    "cn": "由于大众传播媒介的显著发展，各地人们都不断感受到新的需求，不断接触到新的风俗习惯和思想观念，而政府出于上述原因也常常被迫进行更多的变革。",
+    "structure": "主干为并列结构：people are feeling … and are being exposed to …, while governments are forced to introduce …。Owing to 引导原因状语；while 引导表对比/并列的状语从句；given above 为后置定语修饰 reasons。",
+    "points": [
+     "owing to 译为\"由于\"，引出原因状语",
+     "are being exposed to 被动进行时译为\"不断接触到\"，需译出被动含义和进行状态",
+     "while 在此处表并列或补充（同时），非转折，需准确传达"
+    ],
+    "pitfall": "still further 容易漏译或弱化，应译为\"更进一步的/更多的\"以体现程度递进。are being exposed to 的被动进行时态易译错为一般被动。"
+   },
+   {
+    "number": 34,
+    "en": "in the early industrialized countries of Europe the process of industrialization—with all the far-reaching changes in social patterns that followed—was spread over nearly a century, whereas nowadays a developing nation may undergo the same process in a decade or so.",
+    "cn": "在欧洲早期工业化国家，工业化进程——连同随之而来的各种深远的社会结构变化——历经近一个世纪才得以完成，而如今一个发展中国家可能在大约十年内就经历同样的过程。",
+    "structure": "主干为 the process was spread over nearly a century, whereas a developing nation may undergo the same process in a decade or so。破折号之间为插入语，with 引导伴随结构，that followed 为定语从句修饰 changes；whereas 连接前后对比。",
+    "points": [
+     "far-reaching changes 译为\"深远的变化\"，准确理解复合形容词",
+     "whereas 表前后对比，译为\"而/然而\"，需体现对比关系",
+     "was spread over nearly a century 译为\"历经近一个世纪\"，体现时间跨度"
+    ],
+    "pitfall": "破折号中的插入成分包含 with 伴随结构和 that 定语从句，翻译时容易打乱句子主干，需先提取主干再处理插入成分。a decade or so 中 or so 意为\"大约\"，不可遗漏。"
+   },
+   {
+    "number": 35,
+    "en": "Additional social stresses may also occur because of the population explosion or problems arising from mass migration movements—themselves made relatively easy nowadays by modern means of transport.",
+    "cn": "由于人口爆炸或大规模移民运动所引起的种种问题——大规模移民运动本身由于现代交通工具而变得相对容易——还可能产生额外的社会压力。",
+    "structure": "主干为 Additional social stresses may also occur because of A or B。A 为 the population explosion；B 为 problems arising from mass migration movements；破折号后为独立主格结构 themselves made … by …，补充说明 mass migration movements。",
+    "points": [
+     "able to identify arising from 为现在分词短语作后置定语修饰 problems",
+     "破折号后 themselves made … by … 为独立主格结构，需正确识别并译出补充说明含义",
+     "additional 译为\"额外的/另外的\"，体现在前文基础上的补充"
+    ],
+    "pitfall": "破折号后的独立主格结构 themselves made relatively easy 修饰的是 mass migration movements 而非 problems，极易产生指代错误。arising from 的逻辑主语是 problems，不是 explosion。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "welfare",
+    "cn": "n. 福利，福祉"
+   },
+   {
+    "w": "centralized control",
+    "cn": "n. 集中管控"
+   },
+   {
+    "w": "operational research",
+    "cn": "n. 运筹学"
+   },
+   {
+    "w": "bound up with",
+    "cn": "与……密切相关（固定搭配）"
+   },
+   {
+    "w": "in turn",
+    "cn": "adv. 反过来，继而"
+   },
+   {
+    "w": "step up",
+    "cn": "v. 提高，加快"
+   },
+   {
+    "w": "hitherto",
+    "cn": "adv. 迄今为止"
+   },
+   {
+    "w": "mass-communications",
+    "cn": "n. 大众传播媒介"
+   },
+   {
+    "w": "far-reaching",
+    "cn": "adj. 深远的，影响广泛的"
+   },
+   {
+    "w": "whereas",
+    "cn": "conj. 然而，却（表对比）"
+   },
+   {
+    "w": "undergo",
+    "cn": "v. 经历，经受"
+   },
+   {
+    "w": "mass migration",
+    "cn": "n. 大规模移民"
+   },
+   {
+    "w": "arising from",
+    "cn": "由……引起的（现在分词短语）"
+   },
+   {
+    "w": "manpower",
+    "cn": "n. 人力，劳动力"
+   },
+   {
+    "w": "tap",
+    "cn": "v. 开发，利用（资源）"
+   }
+  ],
+  "skills": [
+   "注意识别形式主语 it 与真正主语从句的对应关系，翻译时可调整语序使中文更通顺",
+   "破折号插入成分（插入语、独立主格）先提取主干再回补，避免句子结构混乱",
+   "被动语态（如 are being exposed to、are forced to）在中文中可灵活转为主动或用\"被/受到\"处理",
+   "因果逻辑词（hence, owing to, because of）和对比连接词（whereas, while）需精确译出逻辑关系",
+   "专业术语（operational research, mass-communications）需积累固定译法，避免望文生义"
+  ]
+ }
+}

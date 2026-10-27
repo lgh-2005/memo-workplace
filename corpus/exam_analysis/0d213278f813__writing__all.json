@@ -1,0 +1,250 @@
+{
+ "schemaVersion": 1,
+ "id": "0d213278f813__writing__all",
+ "examId": "0d213278f813",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2019 年考研英语真题",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  51,
+  52
+ ],
+ "generatedAt": "2026-10-27T08:45:59.162Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 101872,
+ "usage": {
+  "prompt_tokens": 732,
+  "completion_tokens": 2465,
+  "total_tokens": 3197,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 732,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2465,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 732,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "以大学\"援助乡村小学\"项目工作人员身份，回复一位国际留学生志愿者的咨询邮件，说明项目具体细节。属于应用文（电子邮件）写作，约100词。",
+    "outline": [
+     "开头：表明写信目的，感谢对方对项目的关注与咨询，引出下文项目详情。",
+     "主体：具体介绍项目的目标（改善乡村小学教育资源）、志愿者职责（如教授英语、组织课外活动）、时间安排、食宿交通等后勤保障信息，以及出发前培训安排。",
+     "结尾：表达欢迎与期待，提供进一步联系方式，礼貌收束全文。"
+    ],
+    "sample": "Dear friend,\n\nThank you for your inquiry about our \"Aiding Rural Primary School\" project. I am more than happy to provide you with the specific details.\n\nThe project is designed to improve educational resources in underprivileged rural areas. As a volunteer, your primary responsibilities will include teaching English, organizing extracurricular activities, and assisting local teachers with daily instruction. The program is scheduled from July 10th to August 10th. Our university will arrange accommodation, meals, and round-trip transportation for all participants. Additionally, a pre-departure training session will be held on July 7th to familiarize you with teaching materials and local customs.\n\nShould you have any further questions, please do not hesitate to contact me.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "I am more than happy to...",
+      "cn": "我非常乐意……；比glad/happy语气更真诚热情，适用于回复咨询类书信开头。"
+     },
+     {
+      "en": "underprivileged rural areas",
+      "cn": "欠发达的农村地区；比poor更正式委婉，考研写作高频表达。"
+     },
+     {
+      "en": "primary responsibilities include...",
+      "cn": "主要职责包括……；用于清晰罗列工作内容，体现条理性。"
+     },
+     {
+      "en": "extracurricular activities",
+      "cn": "课外活动；教育话题核心词汇，拼写需注意。"
+     },
+     {
+      "en": "round-trip transportation",
+      "cn": "往返交通；体现后勤保障细节，比简单说transport更具体。"
+     },
+     {
+      "en": "a pre-departure training session",
+      "cn": "出发前的培训课程；体现项目的专业性与组织性。"
+     },
+     {
+      "en": "familiarize sb. with sth.",
+      "cn": "使某人熟悉某事；常用搭配，比let sb. know更书面。"
+     },
+     {
+      "en": "should you have any further questions",
+      "cn": "如果您还有任何问题（虚拟语气倒装）；比if you have更正式高级。"
+     },
+     {
+      "en": "do not hesitate to contact me",
+      "cn": "请随时联系我；书信结尾固定礼貌用语，展示语域意识。"
+     },
+     {
+      "en": "assist local teachers with daily instruction",
+      "cn": "协助当地教师的日常教学；比help更正式，搭配with说明具体内容。"
+     }
+    ],
+    "pitfalls": [
+     "格式不完整：缺少称呼语Dear...或结束语Yours sincerely等，直接扣分。",
+     "身份错误：题目要求以项目工作人员身份写信，不可写成申请信或感谢信。",
+     "内容空泛：只写欢迎参加却不提供任何项目细节（时间、职责、后勤），未完成交际任务。",
+     "语域不当：使用过于口语化的表达如wanna、gonna，不符合半正式邮件要求。",
+     "词数严重不足或超标：低于80词或超过130词均可能影响得分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "I am glad to tell you about the project.",
+      "better": "I am more than happy to provide you with the specific details of our project.",
+      "note": "用more than happy加强语气，provide sb. with sth.比tell更正式书面。"
+     },
+     {
+      "plain": "You will teach English and do some activities.",
+      "better": "Your primary responsibilities will include teaching English, organizing extracurricular activities, and assisting local teachers with daily instruction.",
+      "note": "使用并列动名词短语罗列职责，信息更丰富、句式更高级。"
+     },
+     {
+      "plain": "If you have questions, you can ask me.",
+      "better": "Should you have any further questions, please do not hesitate to contact me.",
+      "note": "虚拟语气倒装句替代if从句，配合固定礼貌用语，提升语域层次。"
+     },
+     {
+      "plain": "We will give you a place to live and food.",
+      "better": "Our university will arrange accommodation, meals, and round-trip transportation for all participants.",
+      "note": "用arrange搭配具体名词，表达更精准专业，避免口语化碎片表述。"
+     },
+     {
+      "plain": "We will train you before you go.",
+      "better": "A pre-departure training session will be held on July 7th to familiarize you with teaching materials and local customs.",
+      "note": "被动语态使语气更客观正式，familiarize sb. with sth.展示词汇深度。"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "大作文看图写作，要求160-200词，需描述图片、阐释寓意并发表评论，属于议论文与说明文结合体裁。",
+    "outline": [
+     "第一段：客观描述图片内容，点明画面主体、人物动作及文字信息，末句用一句话引出主题。",
+     "第二段：深入阐释图片的象征意义，结合现实生活举例论证，分析该现象或品质的重要性与深远影响。",
+     "第三段：总结全文，给出个人评论与建议，呼吁人们在实际生活中践行该品质或应对该问题。"
+    ],
+    "sample": "As is vividly depicted in the picture, several individuals are working hand in hand to accomplish a shared task. Their faces beam with determination and confidence, and a caption beneath the image reads: Together, we can make it. Simple as the image appears, it conveys a thought-provoking message about the significance of cooperation.\n\nThe implied meaning behind this illustration is both profound and far-reaching. In an era characterized by fierce competition and rapid globalization, no single person can thrive in isolation. Cooperation enables people to pool their wisdom, compensate for each other's weaknesses, and ultimately achieve goals that would otherwise be unattainable. A compelling example is the collaborative research among scientists from different nations during the development of COVID-19 vaccines, which saved millions of lives worldwide. Without teamwork, such remarkable breakthroughs would have been impossible.\n\nIn conclusion, cooperation is not merely a desirable quality but an indispensable ingredient for success in modern society. We should cultivate a cooperative spirit from an early age, embrace diverse perspectives, and bear in mind that unity is strength. Only through joint efforts can we build a brighter future for all.",
+    "phrases": [
+     {
+      "en": "work hand in hand",
+      "cn": "携手合作；常用于描述团队协作场景，搭配to do sth."
+     },
+     {
+      "en": "beam with determination",
+      "cn": "洋溢着坚定神情；beam with + 情感名词，是描写人物表情的高分搭配"
+     },
+     {
+      "en": "thought-provoking",
+      "cn": "发人深省的；用于引出深层含义，替代meaningful等普通词"
+     },
+     {
+      "en": "profound and far-reaching",
+      "cn": "深刻而深远的；成对形容词结构，增强表达气势"
+     },
+     {
+      "en": "pool their wisdom",
+      "cn": "汇集智慧；pool作动词表示\"集中、汇聚\"，属于高级用法"
+     },
+     {
+      "en": "compensate for each other's weaknesses",
+      "cn": "弥补彼此的不足；compensate for替代make up for，更加学术"
+     },
+     {
+      "en": "otherwise be unattainable",
+      "cn": "否则将无法实现的；otherwise + 虚拟语气结构，体现语法功底"
+     },
+     {
+      "en": "an indispensable ingredient for",
+      "cn": "……不可或缺的要素；替代an important part of，更具表现力"
+     },
+     {
+      "en": "cultivate a cooperative spirit",
+      "cn": "培养合作精神；cultivate替代develop，用词更正式高级"
+     },
+     {
+      "en": "bear in mind that",
+      "cn": "牢记……；替代remember，书面语色彩更浓"
+     }
+    ],
+    "pitfalls": [
+     "未描述图片直接议论，第一段缺少画面细节会被扣结构分",
+     "字数不足160词或超出200词过多，均会影响评分档次",
+     "全文只有一个段落，未按三段式组织，逻辑层次不清",
+     "拼写与语法低级错误频出，如cooperation拼成coperation",
+     "套用万能模板痕迹过重，与图片内容脱节，阅卷老师会压分"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows some people working together.",
+      "better": "As is vividly depicted in the picture, several individuals are working hand in hand to accomplish a shared task.",
+      "note": "使用as引导的非限制性定语从句开篇，增加细节与画面感，更符合高分作文标准"
+     },
+     {
+      "plain": "Cooperation is very important in our life.",
+      "better": "Cooperation is not merely a desirable quality but an indispensable ingredient for success in modern society.",
+      "note": "not merely...but结构替代简单陈述，用词从important升级为indispensable，层次更丰富"
+     },
+     {
+      "plain": "We should learn to cooperate with others.",
+      "better": "We should cultivate a cooperative spirit from an early age, embrace diverse perspectives, and bear in mind that unity is strength.",
+      "note": "三个并列动作形成排比，信息量更大，句式更有气势，体现语言驾驭能力"
+     },
+     {
+      "plain": "For example, scientists worked together to develop vaccines.",
+      "better": "A compelling example is the collaborative research among scientists from different nations during the development of COVID-19 vaccines, which saved millions of lives worldwide.",
+      "note": "用主语补语结构整合信息，which引导非限制性定语从句补充结果，句式更紧凑高级"
+     },
+     {
+      "plain": "If there is no teamwork, we cannot succeed.",
+      "better": "Without teamwork, such remarkable breakthroughs would have been impossible.",
+      "note": "without替代if条件句实现隐性虚拟语气，更简洁凝练，同时展示语法深度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "I am more than happy to provide you with the specific details. —— 我非常乐意为您提供具体细节。（回复咨询的经典开头，语气热忱得体）",
+   "The project is designed to improve educational resources in underprivileged rural areas. —— 该项目旨在改善欠发达农村地区的教育资源。（一句话精准概括项目宗旨，designed to结构简洁有力）",
+   "A pre-departure training session will be held on July 7th to familiarize you with teaching materials and local customs. —— 7月7日将举办行前培训，帮助您熟悉教学材料与当地风俗。（细节充实，familiarize搭配展示高级词汇）",
+   "Should you have any further questions, please do not hesitate to contact me. —— 如有任何进一步的问题，请随时与我联系。（虚拟语气倒装+固定礼貌表达，书信结尾万能金句）",
+   "Your primary responsibilities will include teaching English, organizing extracurricular activities, and assisting local teachers with daily instruction. —— 您的主要职责包括教授英语、组织课外活动以及协助当地教师日常教学。（三项并列动名词短语，节奏感强，信息密度高）",
+   "As is vividly depicted in the picture, several individuals are working hand in hand to accomplish a shared task. —— 经典图片描述开头句，as引导方式状语从句，适用于所有看图作文。",
+   "Cooperation enables people to pool their wisdom, compensate for each other's weaknesses, and ultimately achieve goals that would otherwise be unattainable. —— 三重并列动词结构＋otherwise虚拟语气，一句话浓缩合作的三大好处，逻辑严密。",
+   "Without teamwork, such remarkable breakthroughs would have been impossible. —— without引导的含蓄虚拟条件句，简洁有力，可灵活替换主语用于多种话题。",
+   "Only through joint efforts can we build a brighter future for all. —— only + 介词短语置于句首引发部分倒装，适合用作全文结尾升华，气势磅礴。"
+  ]
+ },
+ "mergedFrom": [
+  "0d213278f813__writing__51",
+  "0d213278f813__writing__52"
+ ]
+}

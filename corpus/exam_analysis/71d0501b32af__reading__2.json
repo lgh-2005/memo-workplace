@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "71d0501b32af__reading__2",
+ "examId": "71d0501b32af",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 12 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T09:18:51.367Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60995,
+ "usage": {
+  "prompt_tokens": 1726,
+  "completion_tokens": 3650,
+  "total_tokens": 5376,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1726,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3650,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1726,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国18小时城市的兴起与发展",
+  "gist": "文章介绍了美国城市从传统的9-5小城市与24小时大都市的二元格局，逐渐演变出兼具两者优势的18小时城市。这类中等规模城市通过改造市中心住房、改善基础设施和步行便利性，吸引了更富裕的人群、知识型企业和投资资本，推动了房产价值上升和经济繁荣。",
+  "structure": [
+   "第1段：引出20年前美国大小城市的二元划分背景",
+   "第2段：提出18小时城市概念，引发读者思考其吸引力",
+   "第3段：解释18小时城市如何推动市中心复兴",
+   "第4段：详述市中心改造特征及其对多元人群的吸引力",
+   "第5段：总结18小时城市带来的投资机遇和就业稳定"
+  ],
+  "difficulty": "中等",
+  "translation": "二十年前，城市土地研究所定义了主导美国版图的两类城市：围绕朝九晚五标准工作时间运转的小城市，以及全天24小时运转的大都市区。通过这一基本划分的视角来分析和比较城市，为了解投资资本流向和房价变化提供了有趣的背景。\n\n近年来，许多中等规模城市开始采取一种折中的方式，将大城市的活力与机遇同小城市午夜之后的宁静结合在一起。这些\"18小时城市\"开始在房地产排名中崭露头角，吸引了更多的房地产投资。这一房地产新趋势背后的推动力是什么？为什么这些城市有如此大的吸引力？\n\n18小时城市结合了24小时城市和朝九晚五城市各自的优点，这有助于推动市中心的复兴。几十年来，许多中小城市的市中心在下班后就被住在郊区的上班族所抛弃。人们纷纷迁出市中心，市中心的租户主要由城市贫困工薪阶层构成。这导致市中心商家在晚间几乎没有什么商业收入，使得经营和为市政维护创收变得困难。然而，随着城市规划新理念的兴起——旨在让生活更轻松便捷——城市地区日益受到欢迎，这种趋势曾在旧金山、纽约等大城市引发房地产热潮，如今也激发了较小城市的前瞻性城市化思维和政策。\n\n改造市中心区域，使其融入现代住宅并提升到本地餐饮、零售和娱乐场所的步行便利性——尤其是当这与改善的自行车和公共交通基础设施相结合时——使得这些区域对更富裕的人群产生了吸引力。这些调整鼓励知识和人才产业的雇主将办公室留在市中心。人流量和靠近交通枢纽的优势使得酒吧、餐厅等以娱乐为导向的企业能够延长营业时间，这既吸引了年轻的创意工作者，也吸引了即将退休的婴儿潮一代。由于规模较小，大多数城市的营业时间既能让人们尽情享受，又能在午夜后归于宁静，而不像纽约这样的大城市那样喧嚣不断。\n\n这些18小时城市正在迅速崛起，为购房投资提供了绝佳机会。在丹佛等许多此类城市中，被城市核心吸引的多元且充满活力的经济体为居民提供了稳定的就业。恰当的城市功能组合支撑了住房入住率，提升了房产价值，并吸引了大量投资资本。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Twenty years ago, the Urban Land Institute defined the two types of cities that dominated the US landscape: smaller cities that operated around standard 9-5 business hours and large metropolitan areas that ran all 24 hours of the day.",
+    "why": "原文第一段明确指出，二十年前城市土地研究所将美国城市分为两类：围绕朝九晚五运转的小城市和全天24小时运转的大都市。这说明大小城市之间存在明确的分界，C选项\"大城市与小城市之间有明显分界\"直接对应原文信息。",
+    "traps": "A\"分为住宅区和商业区\"属于无中生有，原文讨论的是城市类型而非城市内部分区；B\"房价与繁荣程度挂钩\"虽原文提及了房价变化，但并未将其与城市繁荣直接挂钩作为二十年前的特征；D\"大量投资资本流入\"是对原文investment capital flows的曲解，原文只是说这种划分为理解资本流向提供了背景，并非描述当时的特征。",
+    "tip": "注意题干的时间限定词，精准回到对应时间段定位。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "These 18-hour cities are beginning to make waves in real estate rankings and attract more real estate investment.",
+    "why": "原文第二段指出18小时城市在房地产排名中崭露头角并吸引了更多房地产投资；第五段进一步说明这些城市\"increased property values\"（提升了房产价值）。综合两处信息可以推断这些城市的房产价格出现了上涨，与B选项完全吻合。",
+    "traps": "A\"特别吸引小企业\"属于无中生有，原文提到的是吸引房地产投资和知识型企业；C\"用喧闹取代了安静\"与原文矛盾，原文强调这些城市兼具活力与午夜后的宁静；D\"改变了美国的版图\"过度夸大，原文landscape指的是城市格局背景，且这些城市只是开始崛起。",
+    "tip": "推断题需综合多段信息，关键词在不同段落可能有呼应。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "For decades, many downtown cores in small to mid-sized cities were abandoned after work hours by workers who lived in the suburbs.",
+    "why": "原文第三段明确表述：几十年来，许多中小城市的市中心在下班后被住在郊区的工人所\"abandoned\"（抛弃）。abandoned一词说明下班后市中心人去楼空，呈现荒凉景象，对应D选项\"晚间看起来很荒凉\"。",
+    "traps": "A\"几乎没有商业活动\"表述过于绝对，原文说的是晚间商业活动少（little commerce in the evenings），并非完全没有且不限于晚间；B\"工作时间很拥挤\"属于无中生有，原文未提及工作时间的拥挤状况；C\"没有任何繁荣迹象\"过于绝对，原文只描述了下班后的情形，未否定白天的经济活动。",
+    "tip": "注意选项中的程度词，\"hardly any\"和\"no signs\"往往过于绝对。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Transforming downtown areas so that they incorporate modern housing and improved walkability to local restaurants, retail, and entertainment—especially when combined with improved infrastructure for cyclists and public transit—makes them appeal to a more affluent demographic.",
+    "why": "原文第四段开头详细描述了18小时城市市中心的改造特征：融入现代住宅（modern housing）、改善步行便利性，尤其结合改善的自行车和公共交通基础设施（improved infrastructure）。C选项\"现代化住房和改善的基础设施\"精确概括了这些核心特征。",
+    "traps": "A\"知识产业突然出现\"中\"sudden emergence\"属于曲解，原文说的是鼓励知识产业雇主将办公室留在市中心，并非突然出现；B\"大量涌入外来务工人员\"纯属无中生有，原文未提及migrant workers；D\"更舒适的生活和更大的向上流动性\"中upward mobility（社会阶层向上流动）在原文中没有涉及。",
+    "tip": "区分原文的客观描述和选项的主观推演，优先选与原文措辞最接近的。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "In many of these cities such as Denver, a diverse and vigorous economy attracted to the urban core has offered stable employment for residents.",
+    "why": "原文最后一段指出，在丹佛等许多18小时城市中，被城市核心吸引的多元且充满活力的经济体\"has offered stable employment for residents\"（为居民提供了稳定的就业）。stable employment即better job opportunities的同义替换，对应D选项。",
+    "traps": "A\"更多晋升机会\"属于无中生有，原文提到的是稳定就业而非晋升机会；B\"更健康的生活环境\"在文中没有依据，原文未涉及健康或环境质量；C\"更大的文化多样性\"虽然原文提到diverse economy，但diverse指的是经济多元化而非文化多样性。",
+    "tip": "注意同义替换：stable employment≈better job opportunities。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "metropolitan",
+    "cn": "adj. 大都市的；大城市的"
+   },
+   {
+    "w": "revitalization",
+    "cn": "n. 复兴；振兴"
+   },
+   {
+    "w": "predominantly",
+    "cn": "adv. 主要地；占主导地位地"
+   },
+   {
+    "w": "municipal",
+    "cn": "adj. 市政的；地方政府的"
+   },
+   {
+    "w": "walkability",
+    "cn": "n. 步行便利性；可步行性"
+   },
+   {
+    "w": "affluent",
+    "cn": "adj. 富裕的；富足的"
+   },
+   {
+    "w": "demographic",
+    "cn": "n. 人口群体；人口统计特征"
+   },
+   {
+    "w": "proximity",
+    "cn": "n. 邻近；接近"
+   },
+   {
+    "w": "vigorous",
+    "cn": "adj. 充满活力的；强健的"
+   },
+   {
+    "w": "prop up",
+    "cn": "phr. 支撑；扶持"
+   },
+   {
+    "w": "incorporat(e/ing)",
+    "cn": "v. 融入；包含；合并"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "With the rise of a new concept in urban planning that aims to make life easier and more convenient, however, increasing popularity for urban areas that caused the real estate pushes, in major cities like San Francisco or New York, has inspired a type of forward thinking urbanity and policy in smaller cities.",
+    "cn": "然而，随着一种旨在让生活更轻松便捷的城市规划新理念的兴起，城市地区日益受到欢迎——这种趋势曾在旧金山、纽约等大城市引发房地产热潮——如今也激发了较小城市的前瞻性城市化思维和政策。",
+    "note": "主干为increasing popularity has inspired a type of urbanity and policy。With the rise of...为伴随状语，that aims to...为定语从句修饰concept，that caused...为定语从句修饰popularity，in major cities...为插入语。"
+   },
+   {
+    "en": "Transforming downtown areas so that they incorporate modern housing and improved walkability to local restaurants, retail, and entertainment—especially when combined with improved infrastructure for cyclists and public transit—makes them appeal to a more affluent demographic.",
+    "cn": "改造市中心区域，使其融入现代住宅并提升到本地餐饮、零售和娱乐场所的步行便利性——尤其当这与改善的自行车和公共交通基础设施相结合时——使得这些区域对更富裕的人群产生了吸引力。",
+    "note": "主语为动名词短语Transforming downtown areas，谓语为makes，so that引导目的状语从句；破折号之间为插入的条件状语从句。"
+   },
+   {
+    "en": "Access to foot traffic and proximity to transit allow the type of entertainment-oriented businesses such as bars and restaurants to stay open later, which attracts both younger, creative workers and baby boomers nearing retirement alike.",
+    "cn": "人流量和靠近交通枢纽的优势使得酒吧、餐厅等以娱乐为导向的企业能够延长营业时间，这既吸引了年轻的创意工作者，也吸引了即将退休的婴儿潮一代。",
+    "note": "并列主语为Access to foot traffic and proximity to transit，allow sb to do为谓语结构；which引导非限制性定语从句，both...and...alike构成并列结构。"
+   }
+  ]
+ }
+}

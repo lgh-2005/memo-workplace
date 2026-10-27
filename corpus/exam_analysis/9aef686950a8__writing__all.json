@@ -1,0 +1,120 @@
+{
+ "schemaVersion": 1,
+ "id": "9aef686950a8__writing__all",
+ "examId": "9aef686950a8",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2015 年 6 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T04:36:56.342Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 55426,
+ "usage": {
+  "prompt_tokens": 602,
+  "completion_tokens": 6425,
+  "total_tokens": 7027,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5191
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 602
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "本题要求针对谚语“知识是宝库，实践是钥匙”写一篇评论性短文，可举例说明观点，词数150-200。",
+    "outline": [
+     "第一段：引出谚语并解释其含义，表明自己赞同的观点，强调实践对知识的重要性。",
+     "第二段：举一至两个具体例子（如学外语、学游泳）论证仅有知识不够，必须通过实践才能掌握与运用。",
+     "第三段：总结重申实践的关键作用，号召将所学付诸实践，呼应开头。"
+    ],
+    "sample": "The saying \"Knowledge is a treasure, but practice is the key to it\" vividly captures the essential relationship between learning and doing. Knowledge, like a hidden treasure, holds immense value, yet it remains locked away unless we unlock it through practice. I fully agree with this view.\n\nA compelling example is learning a foreign language. Many students memorize thousands of words and grammar rules, but they still cannot communicate fluently. Only by constantly speaking, writing, and using the language in real situations can they truly master it. Another example is learning to swim. You may read many books about swimming techniques, but without jumping into the water and practicing, you will never learn to swim. In both cases, knowledge alone is insufficient; practice transforms theoretical understanding into real ability.\n\nTherefore, we should not be content with merely acquiring knowledge. Instead, we must apply what we have learned and practice diligently. Only through practice can we unlock the treasure of knowledge and make it truly useful in our lives.",
+    "phrases": [
+     {
+      "en": "Knowledge is a treasure, but practice is the key to it",
+      "cn": "知识是宝库，实践是钥匙（题目谚语，用于引出主题）"
+     },
+     {
+      "en": "vividly captures",
+      "cn": "生动地体现（用于引出谚语含义）"
+     },
+     {
+      "en": "holds immense value",
+      "cn": "具有巨大价值（描述知识的重要性）"
+     },
+     {
+      "en": "remains locked away",
+      "cn": "仍被锁存，未被利用（形容知识不实践则无用）"
+     },
+     {
+      "en": "unlock it through practice",
+      "cn": "通过实践开启（强调实践的作用）"
+     },
+     {
+      "en": "a compelling example",
+      "cn": "一个有说服力的例子（用于引出例证）"
+     },
+     {
+      "en": "memorize thousands of words and grammar rules",
+      "cn": "记住大量单词和语法规则（描述只学不用的现象）"
+     },
+     {
+      "en": "communicate fluently",
+      "cn": "流利交流（说明实践不足的结果）"
+     },
+     {
+      "en": "transform theoretical understanding into real ability",
+      "cn": "将理论理解转化为实际能力（总结实践的意义）"
+     }
+    ],
+    "pitfalls": [
+     "只谈知识重要性或只谈实践作用，未紧扣二者关系，导致偏题。",
+     "空谈道理而无具体例子，论证缺乏说服力，不符合题目要求。",
+     "举例过于笼统，与论点脱节，不能体现实践是运用知识的关键。",
+     "语言模板化严重，开头结尾套话，未围绕谚语展开个人评论。",
+     "词数控制不当，少于150词或超过200词，影响得分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Knowledge is important, but practice is also important.",
+      "better": "Knowledge, like a hidden treasure, holds immense value, yet it remains locked away unless we unlock it through practice.",
+      "note": "运用比喻和对比，更生动地阐释二者关系，避免平淡陈述。"
+     },
+     {
+      "plain": "For example, learning English needs practice.",
+      "better": "Many students memorize thousands of words and grammar rules, but they still cannot communicate fluently. Only by constantly speaking, writing, and using the language in real situations can they truly master it.",
+      "note": "具体场景加结果对比，增强说服力，满足举例要求。"
+     },
+     {
+      "plain": "So we should practice more.",
+      "better": "Therefore, we should not be content with merely acquiring knowledge. Instead, we must apply what we have learned and practice diligently.",
+      "note": "使用衔接词和高级表达，逻辑更清晰，语气更强。"
+     },
+     {
+      "plain": "Practice can help us use knowledge.",
+      "better": "Only through practice can we unlock the treasure of knowledge and make it truly useful in our lives.",
+      "note": "倒装句和比喻呼应开头，结尾有力，提升文采。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Knowledge, like a hidden treasure, holds immense value, yet it remains locked away unless we unlock it through practice. 知识如同隐藏的宝藏，价值巨大，但若不通过实践开启，它仍被锁存。",
+   "Only by constantly speaking, writing, and using the language in real situations can they truly master it. 只有不断在真实情境中说、写和使用这门语言，他们才能真正掌握它。",
+   "In both cases, knowledge alone is insufficient; practice transforms theoretical understanding into real ability. 在这两个例子中，仅有知识是不够的；实践将理论理解转化为实际能力。",
+   "Therefore, we should not be content with merely acquiring knowledge. Instead, we must apply what we have learned and practice diligently. 因此，我们不应满足于仅仅获取知识，而必须应用所学并勤奋实践。",
+   "Only through practice can we unlock the treasure of knowledge and make it truly useful in our lives. 只有通过实践，我们才能开启知识的宝库，并让其在生活中真正发挥作用。"
+  ]
+ }
+}

@@ -1,0 +1,220 @@
+{
+ "schemaVersion": 1,
+ "id": "e11c5b582c60__long_match__all",
+ "examId": "e11c5b582c60",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2015 年 6 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T04:41:03.608Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 52750,
+ "usage": {
+  "prompt_tokens": 780,
+  "completion_tokens": 5263,
+  "total_tokens": 6043,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3634
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 780
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国资本主义的弊端与不平等",
+  "strategy": [
+   "先浏览10个题干，划出名词、数字、观点词等关键词，再读段落时快速匹配。",
+   "扫读段落首尾句、转折句和举例处，这些位置常包含与题干对应的同义改写。",
+   "注意同义替换，不要过度依赖原词，要从语义层面判断对应关系。",
+   "遇到多个段落可能相关时，用题干中更具体的细节词排除干扰项。"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "cn": "理论上，自由竞争应把利润空间压缩到最低。",
+    "keywords": [
+     "free competition",
+     "margin of profits",
+     "minimum"
+    ],
+    "paraphrase": "原文可能用“theoretically”替换“in theory”，用“drive profit margins down to the lowest level”替换“reduce the margin of profits to the minimum”，并保留“free competition”这一核心概念。",
+    "tip": "优先扫读出现“free competition”或“profit margins”的段落，注意理论性与最低程度表述。"
+   },
+   {
+    "number": 37,
+    "answer": "A",
+    "cn": "美国现在的特点是贫富之间存在巨大分化。",
+    "keywords": [
+     "United States",
+     "division",
+     "rich and poor"
+    ],
+    "paraphrase": "原文可能用“income gap between the rich and the poor”“polarization of wealth”等替换“a great division between the rich and the poor”，国家名“America”可能对应“the United States”。",
+    "tip": "扫读开头段落中提及美国贫富差距或收入不平等的首尾句，重点找对比贫富的表述。"
+   },
+   {
+    "number": 38,
+    "answer": "E",
+    "cn": "由于经济模式没有对手，美国缺乏关心多数公民的动力。",
+    "keywords": [
+     "incentive",
+     "care for majority",
+     "no rival",
+     "economic model"
+    ],
+    "paraphrase": "原文可能用“motivation”替换“incentive”，用“look after the majority”替换“care for the majority”，用“without a competitor to its economic system”替换“no rival for its economic model”。",
+    "tip": "关注段落中讨论美国经济模式唯一性或缺乏外部竞争导致国内政策忽视民众的内容。"
+   },
+   {
+    "number": 39,
+    "answer": "I",
+    "cn": "富人阶层已经把特权视为理所当然。",
+    "keywords": [
+     "wealthy top",
+     "privileges",
+     "take for granted"
+    ],
+    "paraphrase": "原文可能用“the rich”“the privileged class”替换“the wealthy top”，用“consider their privileges as natural”或“assume entitlements”替换“take privileges for granted”。",
+    "tip": "扫读涉及富人阶层、特权心态的段落，注意“理所当然”义的表达。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "cn": "许多例子表明，帝国主义资本主义的基本规律在当今美国已不再适用。",
+    "keywords": [
+     "examples",
+     "basic laws",
+     "imperial capitalism",
+     "no longer apply"
+    ],
+    "paraphrase": "原文可能用“numerous cases show”替换“many examples show”，用“fundamental rules of imperial capitalism no longer hold”替换“basic laws … no longer apply”。",
+    "tip": "寻找段落中出现列举证据或例证的信号词，如 for example、case 等，同时关注“imperial capitalism”这一特殊术语。"
+   },
+   {
+    "number": 41,
+    "answer": "P",
+    "cn": "作者建议回归市场的真正精神。",
+    "keywords": [
+     "author",
+     "suggests",
+     "return",
+     "true spirit of the market"
+    ],
+    "paraphrase": "原文可能用“advocates”“calls for”替换“suggests”，用“restore the genuine market principles”替换“return to the true spirit of the market”。",
+    "tip": "定位作者观点句，注意“should”“need to”“return to”等表示建议的表达。"
+   },
+   {
+    "number": 42,
+    "answer": "M",
+    "cn": "全世界四分之一的囚犯在美国。",
+    "keywords": [
+     "quarter",
+     "world's prisoner population",
+     "America"
+    ],
+    "paraphrase": "原文可能用“one-fourth of the world's inmates”“25 percent of global prison population”替换“a quarter of the world's prisoner population”，地点“America”可能对应“the US”。",
+    "tip": "重点扫读出现数字“quarter/25%”和囚犯、监狱相关词汇的段落。"
+   },
+   {
+    "number": 43,
+    "answer": "F",
+    "cn": "过去二十年，美国的政府监管从一个极端走向另一个极端。",
+    "keywords": [
+     "Government regulation",
+     "America",
+     "one extreme to the other",
+     "past two decades"
+    ],
+    "paraphrase": "原文可能用“swung from one extreme to the other”“went from over-regulation to under-regulation”替换“went from one extreme to the other”，时间“past two decades”可能替换为“the last twenty years”。",
+    "tip": "扫读段落中涉及政府监管变化、时间跨度为二十年左右的论述，注意对比极端的表述。"
+   },
+   {
+    "number": 44,
+    "answer": "N",
+    "cn": "司法变得如此昂贵，只有公司高管等少数人能负担得起。",
+    "keywords": [
+     "Justice",
+     "expensive",
+     "corporate executives",
+     "afford"
+    ],
+    "paraphrase": "原文可能用“legal system”或“access to justice”替换“justice”，用“costly”替换“expensive”，用“only a small elite such as corporate executives can afford it”替换原句。",
+    "tip": "关注段落中讨论司法成本、法律费用高昂，以及只有富人才能获得司法资源的句子。"
+   },
+   {
+    "number": 45,
+    "answer": "K",
+    "cn": "迄今为止，世界上还没有哪个国家能够为所有人提供完全平等的机会。",
+    "keywords": [
+     "No country",
+     "so far",
+     "completely equal opportunities"
+    ],
+    "paraphrase": "原文可能用“no nation has yet managed to provide fully equal opportunities for all”替换“No country … has been able to provide completely equal opportunities for all”。",
+    "tip": "扫读段落中涉及机会平等、全球范围内比较的否定句，注意“so far”“yet”等时间限定词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "free competition",
+    "cn": "自由竞争"
+   },
+   {
+    "w": "margin",
+    "cn": "n. 利润空间；差额"
+   },
+   {
+    "w": "incentive",
+    "cn": "n. 动机；刺激"
+   },
+   {
+    "w": "privileges",
+    "cn": "n. 特权"
+   },
+   {
+    "w": "imperial capitalism",
+    "cn": "帝国主义资本主义"
+   },
+   {
+    "w": "regulation",
+    "cn": "n. 监管；规章"
+   },
+   {
+    "w": "corporate executives",
+    "cn": "公司高管"
+   },
+   {
+    "w": "afford",
+    "cn": "v. 负担得起"
+   },
+   {
+    "w": "equal opportunities",
+    "cn": "平等机会"
+   },
+   {
+    "w": "so far",
+    "cn": "迄今为止"
+   }
+  ]
+ }
+}

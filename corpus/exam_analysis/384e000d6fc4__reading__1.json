@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "384e000d6fc4__reading__1",
+ "examId": "384e000d6fc4",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 6 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:08:29.861Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66618,
+ "usage": {
+  "prompt_tokens": 1862,
+  "completion_tokens": 3901,
+  "total_tokens": 5763,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1862,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3901,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1862,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "绿色标签广告监管趋严",
+  "gist": "美国联邦贸易委员会修订\"绿色指南\"，要求企业在宣传环保产品时不得使用笼统标签，须标明具体的环保优势。近年来绿色营销兴起，生态标签泛滥，消费者难辨真伪，SC Johnson等公司因误导性标签遭集体诉讼，企业间也相互质疑绿色声明，行业缺乏统一标准，如同\"狂野西部\"。",
+  "structure": [
+   "第1-3段：引出FTC修订\"绿色指南\"及其核心要求",
+   "第4-6段：绿色营销与生态标签的兴起及乱象",
+   "第7-8段：SC Johnson集体诉讼案例及公司回应",
+   "第9-11段：企业间相互质疑绿色声明，行业标准混乱"
+  ],
+  "difficulty": "中等",
+  "translation": "声称产品环保的制造商，在联邦贸易委员会提出的修改方案下，将面临更严格的广告宣传规定。\n\n委员会修订后的\"绿色指南\"警告营销人员不要使用带有笼统声明的标签，如\"生态友好\"。营销人员必须在产品包装上限定其声明，并将声明限制在某一具体优势上，例如产品的可回收比例。\n\n\"这实际上是为了消除消费者在购买产品时以及企业在销售产品时产生的困惑，\"委员会主席乔恩·莱博维茨说。\n\n这些修订正值绿色营销日益兴起之时。一项新研究显示，自1987年以来，主流杂志中含有绿色信息的广告数量持续增长，并在2008年达到10.4%的峰值。2009年，这一数字下降至9%。\n\n但尽管广告数量可能有所下降，生态标签却迅速蔓延。在生态标签领域，既有守规矩的参与者，也有不守规矩的。\n\n在过去五年左右的时间里，绿色声明和环保声明出现了爆发式增长。很明显，消费者并不总是了解他们得到的是什么。\n\n近年来，已有少数诉讼案件针对被指控使用误导性环保标签的公司提起。2008年和2009年，SC Johnson公司因在其清洁产品上使用\"绿色清单\"标签而遭到集体诉讼。诉讼称该标签具有误导性，因为它给人的印象是产品已获得第三方认证，而实际上认证是该公司自己做的。\n\n\"我们对在'绿色清单'体系下取得的成就感到非常自豪，我们相信我们会在这些案件中胜诉，\"SC Johnson公共事务总监克里斯托弗·比尔德说，同时他承认\"这是一个很难把握的领域\"。\n\n企业之间也主动对彼此的绿色声明提出质疑。\n\n商业改进局理事会副主任大卫·马伦表示，在过去两年中，该组织看到越来越多的企业因虚假或误导性的环保产品声明而相互投诉。\n\n\"大约每周一次，我的客户会提出一项我从未听说过的新认证，而我就是这个行业的人，\"可持续商业咨询公司首席执行官凯文·威廉说。\"这有点像狂野的西部，任何人都可以声称自己是绿色的。\"威廉先生说，过多的标签使得企业和消费者很难知道应该关注哪些标签。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Marketers must qualify their claims on the product packaging and limit them to a specific benefit, such as how much of the product is recycled.",
+    "why": "原文明确指出，营销人员必须\"在产品包装上限定其声明，并将声明限制在某一具体优势上\"（limit them to a specific benefit）。C选项\"说明产品在哪方面是绿色的\"（Specify in what way their products are green）正是对\"限定在某一具体优势上\"的同义转述，逻辑完全对应。",
+    "traps": "A\"尽可能多地生产绿色产品\"原文未提及产量要求，属于无中生有；B\"说明产品是否可回收\"过于狭隘，原文\"how much of the product is recycled\"只是举例（such as），并非唯一要求；D\"给所有产品贴绿色标签\"与指南的限制性要求完全相反，属于反向干扰。",
+    "tip": "注意原文中such as引出的内容只是举例，不代表全部。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Marketers must qualify their claims on the product packaging and limit them to a specific benefit, such as how much of the product is recycled.",
+    "why": "本题与第46题题干及选项完全一致。原文第二段明确要求营销人员须将绿色声明限定于某一具体环保优势，C选项\"说明产品在哪方面是绿色的\"为该信息的准确转述，强调specific benefit即具体说明绿色之处。",
+    "traps": "A属于无中生有，文中未涉及产量问题；B将举例（such as how much…is recycled）等同于全部要求，以偏概全；D\"给所有产品贴绿色标签\"与原文限制性规定相悖，是反向干扰。",
+    "tip": "qualify和limit是该段关键动词，表示\"限定、限制\"。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The lawsuits said that the label was misleading because it gave the impression that the products had been certified by a third party when the certification was the company's own.",
+    "why": "原文明确指出，诉讼称该标签具有误导性，因为它让人产生产品已获第三方认证的印象，而实际上认证是SC Johnson公司自己的。C选项\"误导消费者相信产品已通过第三方认证\"与原文信息完全一致，属于原文的忠实复述。",
+    "traps": "A\"让消费者认为所有产品都是真正绿色的\"过度概括，诉讼指控的是假冒第三方认证而非笼统的绿色声明；B\"将标签授权交给第三方\"与事实相反，SC Johnson恰恰是自己做的认证；D\"清洁产品未列入官方绿色清单\"属于无中生有，原文无此信息。",
+    "tip": "when在此表转折/对比，指出实际情况与表面印象不同。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "while acknowledging that 'this has been an area that is difficult to navigate.'",
+    "why": "比尔德在为公司辩护时承认\"这是一个很难把握的领域\"（difficult to navigate），暗示在绿色标签方面缺乏清晰的行业指导方针，企业难以确定如何正确操作。A选项\"没有关于绿色标签的明确指导方针\"正是对\"难以把握\"的合理推断——正因为没有清晰标准，企业才感到困惑。",
+    "traps": "B\"产品深受公众欢迎\"与标签认证辩护无关，属于偷换论题；C\"符合市场上的惯常做法\"原文未提及行业惯例对比，属于无中生有；D\"法律未要求第三方参与认证\"虽有一定关联，但原文并未以法律层面进行辩护，而是从行业规则模糊角度辩解。",
+    "tip": "difficult to navigate隐含信息：规则不清晰，需要推断弦外之音。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "It's kind of a Wild West, anybody can claim themselves to be green.",
+    "why": "威廉将绿色标签行业比作\"狂野西部\"，紧接着用\"anybody can claim themselves to be green\"（任何人都可以自称绿色）进行解释，意味着该领域缺乏统一的规则和监管，各企业各行其是。B选项\"每家企业在绿色标签方面自行其是\"准确抓住了\"Wild West\"的比喻义——无法无天、各自为政。",
+    "traps": "A\"企业竞相生产绿色产品\"偷换概念，将标签乱象等同于产品竞争；C\"消费者对绿色标签产品感到疯狂\"曲解wild一词，将比喻义误读为字面义；D\"西部生产的任何东西都可贴绿色标签\"对West做了字面理解，属于望文生义。",
+    "tip": "比喻句意题需结合上下文解释语来推断隐含义，不可望文生义。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "qualify",
+    "cn": "v. 限定，限制（声明的范围）"
+   },
+   {
+    "w": "certification",
+    "cn": "n. 认证，证明"
+   },
+   {
+    "w": "misleading",
+    "cn": "adj. 误导性的，引人误解的"
+   },
+   {
+    "w": "navigate",
+    "cn": "v. 应对，处理（复杂局面）"
+   },
+   {
+    "w": "prevail",
+    "cn": "v. 胜诉，占上风"
+   },
+   {
+    "w": "contest",
+    "cn": "v. 质疑，对……提出异议"
+   },
+   {
+    "w": "dip",
+    "cn": "v. 小幅下降，微降"
+   },
+   {
+    "w": "explosion",
+    "cn": "n. 爆发式增长，激增"
+   },
+   {
+    "w": "class-action",
+    "cn": "n./adj. 集体诉讼（的）"
+   },
+   {
+    "w": "eco-labeling",
+    "cn": "n. 生态标签制度"
+   },
+   {
+    "w": "mainstream",
+    "cn": "adj. 主流的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The lawsuits said that the label was misleading because it gave the impression that the products had been certified by a third party when the certification was the company's own.",
+    "cn": "诉讼称该标签具有误导性，因为它给人的印象是产品已获得第三方认证，而实际上认证是该公司自己做的。",
+    "note": "主句the lawsuits said后接that宾语从句；because引导原因状语从句；when在此表转折对比，说明\"认证实际上是公司自己的\"，与\"给人第三方认证的印象\"形成反差。"
+   },
+   {
+    "en": "Manufacturers of products that claim to be environmentally friendly will face tighter rules on how they are advertised to consumers under changes proposed by the Federal Trade Commission.",
+    "cn": "声称产品环保的制造商，在联邦贸易委员会提出的修改方案下，将面临更严格的广告宣传规定。",
+    "note": "主干为Manufacturers will face tighter rules；that claim to be environmentally friendly是定语从句修饰products；on how引导介词宾语从句；under changes proposed by…是条件状语。"
+   },
+   {
+    "en": "We are very proud of our accomplishments under the Greenlist system and we believe that we will prevail in these cases, Christopher Beard, director of public affairs for SC Johnson, said, while acknowledging that this has been an area that is difficult to navigate.",
+    "cn": "SC Johnson公共事务总监克里斯托弗·比尔德说，我们对在\"绿色清单\"体系下取得的成就感到非常自豪，我们相信会在这些案件中胜诉，同时他承认这是一个很难把握的领域。",
+    "note": "主句为引语+said；while acknowledging引出让步状语，形成\"自豪辩护\"与\"承认困难\"的语义对比；that is difficult to navigate是定语从句修饰area。"
+   }
+  ]
+ }
+}

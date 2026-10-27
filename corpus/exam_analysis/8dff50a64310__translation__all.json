@@ -1,0 +1,201 @@
+{
+ "schemaVersion": 1,
+ "id": "8dff50a64310__translation__all",
+ "examId": "8dff50a64310",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2018 年 6 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:21:25.838Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 26402,
+ "usage": {
+  "prompt_tokens": 800,
+  "completion_tokens": 1823,
+  "total_tokens": 2623,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 800,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1823,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 800,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国自行车文化与共享单车发展",
+  "reference": "Bicycles used to be the most common means of transportation in both urban and rural areas of China, and China was once known as the \"Kingdom of Bicycles.\" Nowadays, as urban traffic congestion and air pollution are becoming increasingly severe, cycling has gained popularity again. Recently, Chinese entrepreneurs have combined mobile Internet technology with traditional bicycles and invented a business model called shared bikes. The emergence of shared bikes has made it more convenient to travel by bike, and people can use shared bikes anytime with just a smartphone. To encourage people to travel by bike, many cities have built bicycle lanes. Now, an increasing number of Chinese people also enjoy keeping fit by cycling.",
+  "sentences": [
+   {
+    "cn": "自行车曾经是中国城乡最主要的交通工具，中国一度被称为\"自行车王国\"。",
+    "en": "Bicycles used to be the most common means of transportation in both urban and rural areas of China, and China was once known as the \"Kingdom of Bicycles.\"",
+    "structure": "并列句，前半句 used to be 表过去常态，后半句 was once known as 被动语态表历史称谓",
+    "keys": [
+     "城乡 urban and rural areas",
+     "交通工具 means of transportation",
+     "一度 once",
+     "自行车王国 the Kingdom of Bicycles"
+    ]
+   },
+   {
+    "cn": "如今，随着城市交通拥堵和空气污染日益严重，骑自行车又开始流行起来。",
+    "en": "Nowadays, as urban traffic congestion and air pollution are becoming increasingly severe, cycling has gained popularity again.",
+    "structure": "as 引导时间/原因状语从句 + 主句，从句用现在进行时表渐进趋势",
+    "keys": [
+     "交通拥堵 traffic congestion",
+     "空气污染 air pollution",
+     "日益严重 increasingly severe",
+     "流行 gain popularity"
+    ]
+   },
+   {
+    "cn": "近来，中国企业家将移动互联网技术与传统自行车结合在一起，发明了一种称为共享单车(shared bikes)的商业模式。",
+    "en": "Recently, Chinese entrepreneurs have combined mobile Internet technology with traditional bicycles and invented a business model called shared bikes.",
+    "structure": "现在完成时并列谓语 have combined...and invented，过去分词 called 作后置定语修饰 business model",
+    "keys": [
+     "企业家 entrepreneurs",
+     "移动互联网技术 mobile Internet technology",
+     "商业模式 business model",
+     "共享单车 shared bikes"
+    ]
+   },
+   {
+    "cn": "共享单车的出现使骑车出行更加方便，人们仅需一部手机就可以随时使用共享单车。",
+    "en": "The emergence of shared bikes has made it more convenient to travel by bike, and people can use shared bikes anytime with just a smartphone.",
+    "structure": "make it + adj. + to do 形式宾语结构，后接并列句补充说明使用方式",
+    "keys": [
+     "出现 emergence",
+     "骑车出行 travel by bike",
+     "仅需 with just",
+     "随时 anytime"
+    ]
+   },
+   {
+    "cn": "为了鼓励人们骑车出行，很多城市修建了自行车道。",
+    "en": "To encourage people to travel by bike, many cities have built bicycle lanes.",
+    "structure": "To do 不定式作目的状语置于句首，主句用现在完成时表示已完成动作",
+    "keys": [
+     "鼓励 encourage",
+     "自行车道 bicycle lanes"
+    ]
+   },
+   {
+    "cn": "现在，越来越多的中国人也喜欢通过骑车健身。",
+    "en": "Now, an increasing number of Chinese people also enjoy keeping fit by cycling.",
+    "structure": "enjoy doing 动名词作宾语，by cycling 介词短语作方式状语",
+    "keys": [
+     "越来越多的 an increasing number of",
+     "健身 keep fit",
+     "通过骑车 by cycling"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "自行车王国",
+    "en": "the Kingdom of Bicycles"
+   },
+   {
+    "cn": "交通工具",
+    "en": "means of transportation"
+   },
+   {
+    "cn": "交通拥堵",
+    "en": "traffic congestion"
+   },
+   {
+    "cn": "空气污染",
+    "en": "air pollution"
+   },
+   {
+    "cn": "移动互联网技术",
+    "en": "mobile Internet technology"
+   },
+   {
+    "cn": "共享单车",
+    "en": "shared bikes"
+   },
+   {
+    "cn": "商业模式",
+    "en": "business model"
+   },
+   {
+    "cn": "企业家",
+    "en": "entrepreneurs"
+   },
+   {
+    "cn": "自行车道",
+    "en": "bicycle lanes"
+   },
+   {
+    "cn": "健身",
+    "en": "keep fit / work out"
+   }
+  ],
+  "pitfalls": [
+   "means of transportation 中 means 单复数同形，不可写成 mean",
+   "曾经/一度区分：used to be 表过去习惯状态，once 表一度，不可混用",
+   "enjoy 后须接动名词 doing，不可写成 enjoy to do",
+   "日益严重 increasingly severe 中 increasingly 为副词修饰形容词，不可误用 increasing",
+   "combine...with... 固定搭配，不可写成 combine...and..."
+  ],
+  "upgrades": [
+   {
+    "plain": "more and more Chinese people",
+    "better": "an increasing number of Chinese people",
+    "note": "避免口语化重复比较级，学术语体更正式"
+   },
+   {
+    "plain": "became popular again",
+    "better": "has gained popularity again",
+    "note": "gain popularity 为固定搭配，名词化表达更地道高级"
+   },
+   {
+    "plain": "because traffic congestion and air pollution are more serious",
+    "better": "as urban traffic congestion and air pollution are becoming increasingly severe",
+    "note": "as 引导原因状语比 because 语气更自然，increasingly severe 比 more serious 更书面"
+   },
+   {
+    "plain": "people only need a phone to use shared bikes at any time",
+    "better": "people can use shared bikes anytime with just a smartphone",
+    "note": "将条件状语后置，句式更紧凑流畅，符合英文信息焦点后置原则"
+   },
+   {
+    "plain": "invented a kind of business model which is called shared bikes",
+    "better": "invented a business model called shared bikes",
+    "note": "过去分词后置定语比 which 定语从句更简洁，避免冗余"
+   }
+  ]
+ }
+}

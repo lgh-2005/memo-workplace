@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "0e8abb45f7c0__translation__all",
+ "examId": "0e8abb45f7c0",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年 12 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:40:41.528Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34226,
+ "usage": {
+  "prompt_tokens": 832,
+  "completion_tokens": 2266,
+  "total_tokens": 3098,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 832,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2266,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 832,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "青藏高原的地理、生态与保护",
+  "reference": "The Qinghai-Tibet Plateau, located in southwestern China, covers an area of about 2.3 million square kilometers. With an average altitude of over 4,000 meters, it is known as the \"Roof of the World.\" The plateau is rich in natural resources and boasts spectacular scenery, as well as a wide variety of rare wildlife. Due to its extremely low temperatures, vast expanses of alpine glaciers have formed on the plateau. It is the source of many famous rivers in Asia and serves as a major freshwater supply for China and Southeast Asia. The Qinghai-Tibet Plateau is of vital importance to the global ecosystem. As a result of climate change, the glaciers on the plateau are melting at an accelerating rate. China has been making continuous efforts to protect the ecosystem of the Qinghai-Tibet Plateau. The grassland coverage has been steadily increasing, and many endangered species are now receiving more effective protection.",
+  "sentences": [
+   {
+    "cn": "青藏高原位于中国西南部，面积约230万平方公里，平均海拔4000米以上，被称为\"世界屋脊\"。",
+    "en": "The Qinghai-Tibet Plateau, located in southwestern China, covers an area of about 2.3 million square kilometers. With an average altitude of over 4,000 meters, it is known as the \"Roof of the World.\"",
+    "structure": "过去分词短语 located in... 作后置定语修饰主语；with 介词短语表伴随状况；被动语态 is known as 表达\"被称为\"",
+    "keys": [
+     "青藏高原 the Qinghai-Tibet Plateau",
+     "位于 located in / situated in",
+     "面积约230万平方公里 covers an area of about 2.3 million square kilometers",
+     "平均海拔 average altitude",
+     "世界屋脊 the Roof of the World"
+    ]
+   },
+   {
+    "cn": "青藏高原自然资源丰富，风景秀丽，拥有多种珍稀野生动物。",
+    "en": "The plateau is rich in natural resources and boasts spectacular scenery, as well as a wide variety of rare wildlife.",
+    "structure": "主语 + be rich in... 表\"……丰富\"；boast 作动词表\"拥有（引以为傲的事物）\"；as well as 连接并列成分",
+    "keys": [
+     "自然资源丰富 rich in natural resources",
+     "风景秀丽 spectacular/magnificent scenery",
+     "珍稀野生动物 rare wildlife"
+    ]
+   },
+   {
+    "cn": "青藏高原气温很低，形成了大面积高山冰川。",
+    "en": "Due to its extremely low temperatures, vast expanses of alpine glaciers have formed on the plateau.",
+    "structure": "Due to... 原因状语前置；现在完成时 have formed 强调形成的持续结果；介词短语 on the plateau 作地点状语",
+    "keys": [
+     "气温很低 extremely low temperatures",
+     "大面积 vast expanses of",
+     "高山冰川 alpine glaciers"
+    ]
+   },
+   {
+    "cn": "这里是亚洲许多著名河流的源头，是中国和东南亚的主要淡水供应源。",
+    "en": "It is the source of many famous rivers in Asia and serves as a major freshwater supply for China and Southeast Asia.",
+    "structure": "It 指代前文 plateau；两个并列谓语 is... and serves as... 共享同一主语，结构紧凑",
+    "keys": [
+     "源头 source / headwater",
+     "淡水供应源 freshwater supply",
+     "东南亚 Southeast Asia"
+    ]
+   },
+   {
+    "cn": "青藏高原对全球生态系统至关重要。",
+    "en": "The Qinghai-Tibet Plateau is of vital importance to the global ecosystem.",
+    "structure": "be of + 抽象名词结构（be of vital importance = be vitally important），比直接用形容词更正式",
+    "keys": [
+     "至关重要 of vital importance / vitally important",
+     "全球生态系统 global ecosystem"
+    ]
+   },
+   {
+    "cn": "由于气候变化的影响，青藏高原的冰川正在加速融化。",
+    "en": "As a result of climate change, the glaciers on the plateau are melting at an accelerating rate.",
+    "structure": "As a result of... 原因状语从句前置；现在进行时 are melting 强调正在发生的趋势；at an accelerating rate 表\"加速地\"",
+    "keys": [
+     "气候变化 climate change",
+     "加速融化 melting at an accelerating rate",
+     "冰川 glaciers"
+    ]
+   },
+   {
+    "cn": "中国一直在努力保护青藏高原的生态系统，草地覆盖率不断增加，许多濒危物种得到更为有效的保护。",
+    "en": "China has been making continuous efforts to protect the ecosystem of the Qinghai-Tibet Plateau. The grassland coverage has been steadily increasing, and many endangered species are now receiving more effective protection.",
+    "structure": "现在完成进行时 has been making 强调持续进行的努力；现在完成进行时 has been increasing 表持续增长趋势；被动含义用 receiving protection 表达",
+    "keys": [
+     "一直在努力 has been making continuous efforts",
+     "草地覆盖率 grassland coverage",
+     "濒危物种 endangered species",
+     "更为有效的保护 more effective protection"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "青藏高原",
+    "en": "the Qinghai-Tibet Plateau"
+   },
+   {
+    "cn": "世界屋脊",
+    "en": "the Roof of the World"
+   },
+   {
+    "cn": "平均海拔",
+    "en": "average altitude / average elevation"
+   },
+   {
+    "cn": "高山冰川",
+    "en": "alpine glaciers"
+   },
+   {
+    "cn": "淡水供应源",
+    "en": "freshwater supply"
+   },
+   {
+    "cn": "全球生态系统",
+    "en": "global ecosystem"
+   },
+   {
+    "cn": "气候变化",
+    "en": "climate change"
+   },
+   {
+    "cn": "濒危物种",
+    "en": "endangered species"
+   },
+   {
+    "cn": "草地覆盖率",
+    "en": "grassland coverage"
+   },
+   {
+    "cn": "珍稀野生动物",
+    "en": "rare wildlife"
+   }
+  ],
+  "pitfalls": [
+   "\"230万\"应写为 2.3 million，不可写成 230 million（单位换算错误）",
+   "\"世界屋脊\"需加引号并大写首字母：the \"Roof of the World\"",
+   "\"加速融化\"不可译为 faster melting，应为 melting at an accelerating rate",
+   "\"一直在努力\"需用现在完成进行时 has been making efforts，而非一般现在时",
+   "\"草地覆盖率\"中\"率\"译为 coverage 即可，不必逐字译为 coverage rate"
+  ],
+  "upgrades": [
+   {
+    "plain": "has many natural resources",
+    "better": "is rich in natural resources",
+    "note": "be rich in 是描述资源丰富的地道搭配，更为正式简洁"
+   },
+   {
+    "plain": "is very important to",
+    "better": "is of vital importance to",
+    "note": "be of + 抽象名词结构更具书面语色彩，适合六级考试"
+   },
+   {
+    "plain": "has beautiful scenery",
+    "better": "boasts spectacular scenery",
+    "note": "boast 一词含\"引以为傲地拥有\"之意，更生动地道"
+   },
+   {
+    "plain": "because of climate change",
+    "better": "as a result of climate change",
+    "note": "as a result of 更正式，适用于学术与考试写作语境"
+   },
+   {
+    "plain": "China has been trying to protect",
+    "better": "China has been making continuous efforts to protect",
+    "note": "make continuous efforts 比 try 更体现持续性与决心，表达更正式"
+   }
+  ]
+ }
+}

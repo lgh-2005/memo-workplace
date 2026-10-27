@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "0effd4255078__writing__all",
+ "examId": "0effd4255078",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2017 年 12 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:12:04.022Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43595,
+ "usage": {
+  "prompt_tokens": 709,
+  "completion_tokens": 2397,
+  "total_tokens": 3106,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 709,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2397,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 709,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "针对名言\"Seek to understand others, and you will be understood\"发表评论，可举例说明观点，字数150-200词。",
+    "outline": [
+     "引出名言并点明主旨：理解他人是被他人理解的前提，强调沟通的双向性与互惠性。",
+     "分层论证：通过职场、日常生活等具体事例阐释主动理解他人如何赢得他人的理解，并从反面说明拒绝理解他人的后果。",
+     "总结升华：重申互相理解不是单行道，呼吁读者在实践中率先迈出理解他人的一步。"
+    ],
+    "sample": "\"Seek to understand others, and you will be understood.\" This profound saying highlights the reciprocal nature of human communication and mutual respect.\n\nUnderstanding others serves as the cornerstone of harmonious relationships. When we make a genuine effort to listen to others' perspectives and empathize with their feelings, we create an atmosphere of trust and openness. For instance, in the workplace, a manager who takes time to understand employees' concerns and aspirations is more likely to earn their loyalty and cooperation. Similarly, in daily life, those who show sincere interest in others' thoughts often find that people are equally willing to understand them in return.\n\nThe underlying logic is simple yet powerful: empathy breeds empathy. By putting ourselves in others' shoes, we demonstrate respect and goodwill, which naturally encourages others to reciprocate. Conversely, those who insist on being understood first without extending the same courtesy often find themselves isolated and misunderstood.\n\nIn conclusion, mutual understanding is not a one-way street. Only by proactively seeking to understand others can we build bridges of communication and ultimately be understood ourselves.",
+    "phrases": [
+     {
+      "en": "the reciprocal nature of...",
+      "cn": "……的互惠本质；用于概括双向关系，体现学术语感"
+     },
+     {
+      "en": "serve as the cornerstone of...",
+      "cn": "充当……的基石；比喻某事物的根本重要性，替代 is very important"
+     },
+     {
+      "en": "make a genuine effort to do...",
+      "cn": "真心实意地去做……；比 try 更正式、更有诚意的表达"
+     },
+     {
+      "en": "empathize with their feelings",
+      "cn": "对他们的感受产生共情；体现心理学视角，增加论证深度"
+     },
+     {
+      "en": "earn one's loyalty and cooperation",
+      "cn": "赢得某人的忠诚与合作；常用于职场语境论述"
+     },
+     {
+      "en": "empathy breeds empathy",
+      "cn": "共情催生共情；简洁有力的警句式表达，适合用作段落主题句"
+     },
+     {
+      "en": "put ourselves in others' shoes",
+      "cn": "设身处地为他人着想；经典习语，阅卷老师认可度高"
+     },
+     {
+      "en": "extend the same courtesy",
+      "cn": "给予同等的礼遇/善意；替代 do the same thing，更书面"
+     },
+     {
+      "en": "a one-way street",
+      "cn": "单行道（比喻非单方面的事）；形象比喻，适合结尾总结"
+     },
+     {
+      "en": "build bridges of communication",
+      "cn": "搭建沟通的桥梁；比喻型表达，适合升华段落"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只泛泛谈理解的重要性，忽略名言核心的'互惠因果'逻辑关系",
+     "举例空洞：仅说'比如在生活中'却无具体场景，缺乏说服力",
+     "结构混乱：缺少明确的分段或过渡词，导致阅卷老师难以快速把握行文逻辑",
+     "词汇重复：反复使用 understand/understanding，未用 empathize/comprehend/appreciate 等同义替换",
+     "字数不足或超标：写到120词便草草收尾，或超过200词导致时间不够检查语法错误"
+    ],
+    "upgrades": [
+     {
+      "plain": "Understanding others is very important.",
+      "better": "Understanding others serves as the cornerstone of harmonious relationships.",
+      "note": "用比喻替代空泛形容词，表达更具体、更有画面感"
+     },
+     {
+      "plain": "We should try to understand how others feel.",
+      "better": "We should make a genuine effort to empathize with others' feelings.",
+      "note": "genuine effort 比 try 更正式；empathize 比 understand 更精准"
+     },
+     {
+      "plain": "If we don't understand others, we will be lonely.",
+      "better": "Those who insist on being understood first without extending the same courtesy often find themselves isolated and misunderstood.",
+      "note": "长句容纳更多信息，without doing 结构增强对比与逻辑性"
+     },
+     {
+      "plain": "In a word, we should understand each other.",
+      "better": "Only by proactively seeking to understand others can we build bridges of communication and ultimately be understood ourselves.",
+      "note": "Only by... can we... 倒装句式拉升句式分，proactively 体现主动性"
+     },
+     {
+      "plain": "For example, a good boss understands workers.",
+      "better": "A manager who takes time to understand employees' concerns and aspirations is more likely to earn their loyalty and cooperation.",
+      "note": "定语从句+具体名词使例证更充实可信，避免泛泛而谈"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Understanding others serves as the cornerstone of harmonious relationships. —— 理解他人是和谐关系的基石。cornerstone 一词精准有力，适用于多种议论文开篇。",
+   "Empathy breeds empathy. —— 共情催生共情。四词警句式主题句，简洁深刻，阅卷高分亮点。",
+   "By putting ourselves in others' shoes, we demonstrate respect and goodwill, which naturally encourages others to reciprocate. —— 设身处地为他人着想，我们展现出尊重与善意，这自然会激励他人以同样方式回馈。介词短语开头+非限定语从句，句式丰富。",
+   "Only by proactively seeking to understand others can we build bridges of communication and ultimately be understood ourselves. —— 唯有主动寻求理解他人，我们才能架起沟通的桥梁，并最终被他人所理解。Only by... can we... 倒装结构是六级高分标配。",
+   "Those who insist on being understood first without extending the same courtesy often find themselves isolated and misunderstood. —— 那些坚持先被理解却不愿给予他人同等善意的人，往往发现自己孤立无援且被误解。反面论证经典长句，逻辑紧密。"
+  ]
+ }
+}

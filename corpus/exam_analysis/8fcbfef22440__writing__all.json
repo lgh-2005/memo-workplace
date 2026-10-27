@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "8fcbfef22440__writing__all",
+ "examId": "8fcbfef22440",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年 12 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:47:26.104Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 50525,
+ "usage": {
+  "prompt_tokens": 735,
+  "completion_tokens": 3540,
+  "total_tokens": 4275,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 735,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3540,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 735,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题式作文，以给定首句开头，围绕\"掌握基础知识对学科学习的重要性\"展开论述，可举例、评论或结合个人经历，150-200词（不含首句）。",
+    "outline": [
+     "第一段：承接首句，指出基础知识是学科大厦的地基，缺乏基础则难以理解高阶内容，辅以具体学科实例说明。",
+     "第二段：进一步论证扎实的基础能培养学习自信和探索精神，结合个人学习经历展开，增强说服力。",
+     "第三段：总结全文，重申基础知识绝非无足轻重，呼吁学生重视基础，为学术追求奠定坚实根基。"
+    ],
+    "sample": "As is known to all, gaining a sound knowledge of the basics is of vital importance for students to master an academic subject. The reasons behind this claim are both intuitive and well-supported by evidence. To begin with, the basics of any discipline serve as the foundation upon which more complex concepts are built. Without a firm grasp of fundamental principles, students will inevitably struggle when confronted with advanced topics. For instance, a physics student who fails to understand Newton's laws of motion will find it nearly impossible to comprehend quantum mechanics or thermodynamics later on. Furthermore, a solid command of the basics fosters confidence and intellectual curiosity. When students thoroughly understand the core concepts, they are more likely to engage actively in class discussions, raise thought-provoking questions, and explore the subject in greater depth. My own experience in learning mathematics perfectly illustrates this point. It was only after I devoted considerable time to mastering basic algebra and calculus that I began to appreciate the elegance of higher-level mathematical theories. In conclusion, the basics are by no means trivial; rather, they constitute the cornerstone of academic excellence. Students who invest time and effort in building a strong foundation will undoubtedly reap the rewards in their future academic pursuits.",
+    "phrases": [
+     {
+      "en": "a sound knowledge of the basics",
+      "cn": "对基础知识的扎实掌握；sound 此处表示\"全面的、牢固的\"，常用于正式写作"
+     },
+     {
+      "en": "serve as the foundation upon which...",
+      "cn": "充当……的根基；upon which 引导定语从句，使表达更为正式典雅"
+     },
+     {
+      "en": "a firm grasp of fundamental principles",
+      "cn": "对基本原理的牢固掌握；firm grasp 比 good understanding 更地道"
+     },
+     {
+      "en": "be confronted with",
+      "cn": "面临、遭遇；比 face 更正式，适合议论文语境"
+     },
+     {
+      "en": "foster confidence and intellectual curiosity",
+      "cn": "培养自信与求知欲；foster 比 develop/build 更学术化"
+     },
+     {
+      "en": "engage actively in class discussions",
+      "cn": "积极参与课堂讨论；engage in 搭配正式，体现主动性"
+     },
+     {
+      "en": "perfectly illustrates this point",
+      "cn": "完美地说明了这一观点；用于引出个人经历或具体事例"
+     },
+     {
+      "en": "It was only after...that...",
+      "cn": "强调句型\"只有在……之后才……\"，突出时间先后与因果关系"
+     },
+     {
+      "en": "constitute the cornerstone of",
+      "cn": "构成……的基石；constitute 比 be 更精确，cornerstone 比 basis 更形象"
+     },
+     {
+      "en": "reap the rewards",
+      "cn": "收获回报；固定搭配，常用于结尾升华"
+     }
+    ],
+    "pitfalls": [
+     "首句为题目给定，许多考生遗漏或改写首句导致扣分",
+     "全文只谈空泛道理不举例，缺乏说服力，论证单薄",
+     "词汇重复严重，如反复使用important/basic而不替换同义表达",
+     "段落之间缺乏逻辑连接词，行文跳跃，影响连贯性",
+     "超出200词上限或不足150词下限，未审清题目字数要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "The basics are very important for learning.",
+      "better": "The basics of any discipline serve as the foundation upon which more complex concepts are built.",
+      "note": "用介词定语从句替代简单形容词，句式更复杂，信息量更大"
+     },
+     {
+      "plain": "For example, if you don't learn basic physics, you can't learn hard physics.",
+      "better": "A physics student who fails to understand Newton's laws of motion will find it nearly impossible to comprehend quantum mechanics later on.",
+      "note": "用具体学科术语替代模糊表述，例证更有说服力和画面感"
+     },
+     {
+      "plain": "After I studied basic math well, I could understand advanced math.",
+      "better": "It was only after I devoted considerable time to mastering basic algebra and calculus that I began to appreciate the elegance of higher-level mathematical theories.",
+      "note": "使用强调句型与高级词汇，展现语言功底，同时逻辑更鲜明"
+     },
+     {
+      "plain": "In a word, basics are not unimportant.",
+      "better": "The basics are by no means trivial; rather, they constitute the cornerstone of academic excellence.",
+      "note": "by no means + 分号 + rather 转折，结构紧凑有力，避免双重否定歧义"
+     },
+     {
+      "plain": "Students should study the basics and they will do well.",
+      "better": "Students who invest time and effort in building a strong foundation will undoubtedly reap the rewards in their future academic pursuits.",
+      "note": "定语从句嵌套动宾搭配，结尾收束有力且用词正式"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The basics of any discipline serve as the foundation upon which more complex concepts are built. ——任何学科的基础知识都是更复杂概念赖以建立的根基。upon which 定语从句为高分句式。",
+   "It was only after I devoted considerable time to mastering basic algebra and calculus that I began to appreciate the elegance of higher-level mathematical theories. ——只有在我花费大量时间掌握基础代数和微积分之后，我才开始领略高等数学理论的优美。强调句型 + 个人经历，论证有力。",
+   "The basics are by no means trivial; rather, they constitute the cornerstone of academic excellence. ——基础知识绝非无足轻重；相反，它们构成了学术卓越的基石。by no means + rather 转折，语言凝练。",
+   "Without a firm grasp of fundamental principles, students will inevitably struggle when confronted with advanced topics. ——如果没有对基本原理的牢固掌握，学生在面对高阶课题时必然会举步维艰。Without 引导的含蓄条件句，比 if not 更高级。",
+   "Students who invest time and effort in building a strong foundation will undoubtedly reap the rewards in their future academic pursuits. ——投入时间和精力夯实基础的学生，在未来的学术追求中定会收获丰厚回报。定语从句 + reap the rewards 搭配，适合结尾背诵。"
+  ]
+ }
+}

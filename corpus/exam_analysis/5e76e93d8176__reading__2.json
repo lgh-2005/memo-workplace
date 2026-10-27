@@ -1,0 +1,167 @@
+{
+ "schemaVersion": 1,
+ "id": "5e76e93d8176__reading__2",
+ "examId": "5e76e93d8176",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 12 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T04:36:00.949Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 76651,
+ "usage": {
+  "prompt_tokens": 1557,
+  "completion_tokens": 7603,
+  "total_tokens": 9160,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5121
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1557
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国高校教育质量堪忧",
+  "gist": "文章指出美国大学未能有效培养学生批判性思维等高阶技能，课程缩水、标准下降、学生投入不足；大学过度关注社交与体育活动，迎合富裕学生，加剧不平等；最后警示这样的“派对”难以持续，大学生和高校若不改变将面临严重后果。",
+  "structure": [
+   "第一段：通过 Arum 和 Roksa 研究引出美国大学教育失败现象。",
+   "第二段：分析原因——课程注水、学习投入少，学生重心偏移。",
+   "第三段：Laura Hamilton 观点——大学过度重视社交体育，迎合富人。",
+   "第四段：警示学生应提升能力，现状不可持续。"
+  ],
+  "difficulty": "中等",
+  "translation": "总体而言，美国高校在为学生的职场生活或毕业后的生活做准备方面做得并不好。两位社会学家理查德·阿鲁姆和乔西帕·罗克萨的研究清楚地表明了这一点。2011年，他们发布了一项题为《学术漂泊》的里程碑式研究，记录了众多大学生在智力成长方面的缺失。特别是，阿鲁姆和罗克萨发现，大学生没有发展出批判性思维、分析推理等高阶技能，而这些技能对于在当今知识经济中蓬勃发展以及在复杂挑战和动态变革的时代领导国家至关重要。\n\n阿鲁姆和罗克萨将学生缺乏学习归咎于掺水的大学课程和降低的本科学习标准。尽管上大学本应像一份全职工作，但学生平均每周仅学习12至14小时，许多人整个学期都在滑水，没有进行大量的阅读和写作。选修更具挑战性课程并投入更多时间学习的学生确实学到更多。然而，许多本科生的优先事项是课外活动、体育运动以及聚会和社交。\n\n劳拉·汉密尔顿是一项关于负担大学费用的家长研究的研究者，她将在即将出版的一本书中提出，大学管理层过于关注学生的社交和体育活动。在《为派对买单》中，汉密尔顿描述了她所称的“派对路径”，这一路径使许多学生轻松度过大学，各种俱乐部将学生带入派对场景，还有众多较容易的专业推波助澜。通过认可这种掺水的大学版本，大学正在“迎合富裕学生的社交和教育需求，而牺牲他人利益”，这些他人毕业后无法享受富裕学生的经济支持或社会关系。\n\n这些学生若想将学位用作迈向中产阶级流动的垫脚石，就需要在大学期间培养技能和知识。但更有特权的学生也不应浪费这个机会。正如近年的毕业生可以证明的那样，就业市场对那些无法展现真正能力以及良好培养的勤奋意愿的求职者并不友好。全球经济也不会对美国劳动力日益薄弱的读写、数学和科学能力手下留情。当然，大学毕业生仍会比只有高中学历的人境况更好。但是，没有知识或技能增长的大学学位终究是空洞的成就。对于一直在大学里混日子的学生，以及对于一直要求较少功课、提供更多娱乐并收取更高学费的美国大学来说，派对可能很快就要结束了。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "In particular, Arum and Roksa found, college students were not developing the critical thinking, analytic reasoning and other higher-level skills that are necessary to thrive in today's knowledge-based economy and to lead our nation in a time of complex challenges and dynamic change.",
+    "why": "Arum 和 Roksa 发现大学生没有发展出批判性思维、分析推理等高阶技能，而这些技能恰恰是当今知识经济中蓬勃发展以及应对复杂挑战和动态变革所必需的；也就是说高等教育未能使学生具备应对现代挑战的能力，对应 B。",
+    "traps": "A 将目标说成激发求知欲，原文并未提及且与发现相悖；C 说高等教育经历巨变，原文未谈变化；D 说努力满足学生各种需求，不是研究发现，且文章批评大学迎合社交需求而非学术。",
+    "tip": "细节题需找准研究结论，排除无中生有或正反颠倒选项。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Arum and Roksa placed the blame for students' lack of learning on a watered-down college curriculum and lowered undergraduate work standards. Although going to college is supposed to be a full-time job, students spent, on average, only 12 to 14 hours a week studying and many were skating through their semesters without doing a significant amount of reading and writing.",
+    "why": "原文第二段首句明确将学生缺乏学习归咎于掺水的大学课程和降低的本科学习标准，即 diluted/watered-down curriculum 是关键原因，对应 A。",
+    "traps": "B 课堂活动无聊，原文未提；C 缺乏严格纪律，是宽泛推断，不如 A 直接对应原文；D 教育方法过时，原文未提及。",
+    "tip": "原因类细节题优先选原文明确出现的因果表述。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Laura Hamilton, the author of a study on parents who pay for college, will argue in a forthcoming book that college administrations are overly concerned with the social and athletic activities of their students.",
+    "why": "原文第三段 Laura Hamilton 认为大学管理层过度关注学生的社交和体育活动（overly concerned with social and athletic activities），即优先非学术活动，对应 D。",
+    "traps": "A 说未能帮助贫困学生，与原文“牺牲他人利益”相关，但不是 Hamilton 对管理层的核心批评；B 提供太多挑战性低的课程，是课程问题，非管理层的首要关注点；C 与社会脱节，原文未提。",
+    "tip": "观点细节题应紧扣人物原话或转述，避免扩大或偷换对象。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "In Paying for the Party, Hamilton describes what she calls the \"party pathway,\" which eases many students through college, helped along by various clubs that send students into the party scene and a host of easier majors.",
+    "why": "文章第三段描述富裕学生沿着“派对路径”轻松度过大学，有各种俱乐部和较容易的专业提供便利；大学迎合富裕学生的需求，说明他们有条件选择容易的专业来享受，对应 B。",
+    "traps": "A 优越感原文未提；C 与商界建立联系，原文只说社交关系，未提商业联系；D 没有学位也能爬上社会阶梯，与原文“把学位当垫脚石”和“大学学位仍是优势”不符。",
+    "tip": "推断题需结合上下文合理推断，排除原文未提及或绝对化表述。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "For students who have been coasting through college, and for American universities that have been demanding less work, offering more attractions and charging higher tuition, the party may soon be over.",
+    "why": "最后一段末尾“the party may soon be over”这一比喻表明，对于混日子的大学生和降低要求、涨学费的大学，这种轻松局面不会持续太久，暗示当前美国高等教育的状况可能很快改变，对应 C。",
+    "traps": "A 说美国高等教育已失去全球竞争力，原文说全球经济对美国劳动力不满，但未直接说失去竞争力，且不是最后一段主要暗示；B 说人们不应期望太多，作者并非降低期待，而是督促改进；D 说要很长时间才能改变，与“很快结束”相反。",
+    "tip": "末段暗示题要结合文末比喻和作者态度，排除过度推断或反向干扰。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "adrift",
+    "cn": "adj. 漂浮的；漫无目的的；（学业）未达标的"
+   },
+   {
+    "w": "landmark",
+    "cn": "n. 里程碑；adj. 有重大意义的"
+   },
+   {
+    "w": "analytical reasoning",
+    "cn": "n. 分析推理"
+   },
+   {
+    "w": "thrive",
+    "cn": "v. 兴旺发达；茁壮成长"
+   },
+   {
+    "w": "watered-down",
+    "cn": "adj. 淡化的；打了折扣的"
+   },
+   {
+    "w": "skate through",
+    "cn": "v. 轻易通过；蒙混过关"
+   },
+   {
+    "w": "extracurricular",
+    "cn": "adj. 课外的"
+   },
+   {
+    "w": "forthcoming",
+    "cn": "adj. 即将出版的；即将发生的"
+   },
+   {
+    "w": "sanction",
+    "cn": "v. 批准；认可 / n. 制裁；约束力"
+   },
+   {
+    "w": "cater to",
+    "cn": "v. 迎合；满足需要"
+   },
+   {
+    "w": "privileged",
+    "cn": "adj. 享有特权的；优越的"
+   },
+   {
+    "w": "stepping-stone",
+    "cn": "n. 垫脚石；进身之阶"
+   },
+   {
+    "w": "coast through",
+    "cn": "v. 轻松度过；毫不费力地通过"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "In particular, Arum and Roksa found, college students were not developing the critical thinking, analytic reasoning and other higher-level skills that are necessary to thrive in today's knowledge-based economy and to lead our nation in a time of complex challenges and dynamic change.",
+    "cn": "特别是，阿鲁姆和罗克萨发现，大学生没有发展出批判性思维、分析推理等高阶技能，而这些技能对于在当今知识经济中蓬勃发展以及在复杂挑战和动态变革的时代领导国家至关重要。",
+    "note": "本句主干为 college students were not developing...；that 引导定语从句修饰 skills，其中 to thrive... and to lead... 并列不定式作后置定语，说明这些技能的目的。"
+   },
+   {
+    "en": "By sanctioning this watered-down version of college, universities are \"catering to the social and educational needs of wealthy students at the expense of others\" who won't enjoy the financial backing or social connections of richer students once they graduate.",
+    "cn": "通过认可这种掺水的大学版本，大学正在“迎合富裕学生的社交和教育需求，而牺牲他人利益”，这些他人毕业后无法享受富裕学生的经济支持或社会关系。",
+    "note": "本句开头为介词短语 By sanctioning... 作方式状语；主句为 universities are \"catering to...\"；who 引导定语从句修饰 others，其中 once they graduate 为时间状语从句。"
+   },
+   {
+    "en": "For students who have been coasting through college, and for American universities that have been demanding less work, offering more attractions and charging higher tuition, the party may soon be over.",
+    "cn": "对于一直在大学里混日子的学生，以及对于一直要求较少功课、提供更多娱乐并收取更高学费的美国大学来说，派对可能很快就要结束了。",
+    "note": "本句为主从复合句，句首两个 for 介词短语并列作状语，分别由 who 和 that 引导定语从句修饰 students 和 universities；主句为 the party may soon be over。"
+   }
+  ]
+ }
+}

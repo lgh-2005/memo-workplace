@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "b8c6d06f8a82__reading__2",
+ "examId": "b8c6d06f8a82",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 6 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:04:50.557Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58609,
+ "usage": {
+  "prompt_tokens": 1777,
+  "completion_tokens": 3801,
+  "total_tokens": 5578,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1777,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3801,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1777,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英国大学科研成果商业化表现",
+  "gist": "文章讨论英国大学在科研成果商业化方面的表现。作者认为总体数据显示英国大学已处于领先地位，但国家数据掩盖了个体差异——少数研究型大学集中了绝大部分科研资源和商业化成果。作者建议研究型大学应最大化研究影响力，惠及社会各领域，并通过加强技术转化协调和研究生教育来推动英国经济增长。",
+  "structure": [
+   "第1-3段：驳斥批评，指出英国大学商业化表现已跻身世界前列",
+   "第4-5段：国家数据掩盖了大学间巨大差异，资源高度集中于少数大学",
+   "第6段：研究型大学应最大化研究影响、回馈社会",
+   "第7-8段：展望未来，提出通过技术转化和研究生教育推动经济增长"
+  ],
+  "difficulty": "中等",
+  "translation": "对英国大学部门一个反复出现的批评是，人们认为它在将新知识转化为新产品和服务方面存在不足。\n\n最近，英国国家干细胞网络警告说，除非能确保充足的资金和立法保障，否则英国可能会失去其在干细胞研究领域的世界领先地位。我们应该认真对待这一担忧，因为大学是国家创新体系中的关键环节。\n\n然而，我们确实有必要质疑那种不假思索的抱怨——即该部门在将创意推向市场方面做得不够。关于澳大利亚、加拿大、美国和英国大学及研究机构表现的最新比较数据表明，从一个相对较弱的起点出发，英国现在在许多商业化活动指标上处于领先地位。\n\n从国家层面来看，过去十年的政策干预帮助改变了英国大学的表现。证据表明，英国的地位比近些年强得多，而且仍在持续改善。但国家数据掩盖了各大学之间表现的巨大差异。证据显示，大量大学已经掉队，少数表现突出，其余则在追赶领先者。\n\n这种不均匀分布并非英国所特有，在其他经济体中也同样存在。在英国，科研是集中的：不到25%的大学获得了75%的科研资金。这些大学同时也是培养最多博士毕业生、产出最多科学引用、专利和许可收入的机构。产生长期资源集中效应的政策也造就了一批独特的、以研究为导向且商业化活跃的大学。很明显，科研和商业化工作的集中造成了大学之间的差异。\n\n以研究为导向的大学，其核心目标必须是最大化其科研努力的影响力。这些大学应该产生最广泛的社会、经济和环境效益。作为对大规模投资的回报，它们应该分享自身专长，以增强该部门的整体信心。\n\n英国经济复苏的一部分将由从大学中涌现的下一代研究商业化成果所驱动。英国有三十多所大学正积极参与高级研究培训和商业化工作。\n\n如果能在区域内加强技术转化办公室的协调，同时对研究生院的规模和功能进行投资，大学就能够、也应该在为英国下一轮经济增长周期做好准备方面发挥关键作用。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The most recent comparative data on the performance of universities and research institutions in Australia, Canada, USA and UK shows that, from a relatively weak starting position, the UK now leads on many indicators of commercialisation activity.",
+    "why": "原文第三段明确指出，最新比较数据显示英国在许多商业化活动指标上处于领先。A选项\"仍居世界领先行列\"与此一致。作者虽承认过去起点较弱，但强调现在已取得领先地位，故A正确。",
+    "traps": "B\"在许多方面失去了领先地位\"与原文\"now leads on many indicators\"直接矛盾，属反义干扰；C\"不认为是自身责任\"原文未提及，属无中生有；D\"未能将知识转化为金钱\"是文章开头引述的批评观点，而非作者本人看法，属张冠李戴——作者恰恰在反驳这一观点。",
+    "tip": "注意区分作者观点与他人批评，反驳类文章中作者立场常与开头批评相反。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "But national data masks the very large variation in the performance of individual universities.",
+    "why": "原文第四段用转折词\"But\"指出国家数据掩盖（masks）了各大学之间表现的巨大差异，随后举例说明大量大学掉队、少数表现出色。B选项\"没有反映大学之间的差异\"准确对应了\"masks the very large variation\"。",
+    "traps": "A\"掩盖了政府政策的致命弱点\"中\"fatal weaknesses\"属于过度推断，原文masks的是大学间差异而非政策弱点；C\"未以科学方式对大学排名\"属无中生有，原文未涉及排名方式问题；D\"表明大学对政府资源的低效使用\"属曲解原意，原文讨论的是数据掩盖差异而非使用效率。",
+    "tip": "转折词But后常是作者真正观点所在，也是出题重点。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "In the UK, research is concentrated: less than 25% of universities receive 75% of the research funding. The effect of policies generating long-term resource concentration has also created a distinctive set of universities which are research-led and commercially active.",
+    "why": "第五段详细解释了政策干预的具体内涵：不到25%的大学获得75%的科研资金，产生长期资源集中效应的政策造就了一批研究型且商业化活跃的大学。这说明\"政策干预\"就是指将资源集中在少数大学，A选项\"将资源集中于有限数量的大学\"完全吻合。",
+    "traps": "B\"大学与产业强制合作\"原文未提及任何强制合作机制，属无中生有；C\"政府资助非研究型大学\"与原文所述资源集中于研究型大学恰恰相反；D\"公平分配资金\"与原文75%资金流向25%大学的事实直接矛盾，属反义干扰。",
+    "tip": "推断题需在下文找具体解释，第五段是对第四段\"policy interventions\"的展开说明。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The core objective for universities which are research-led must be to maximise the impact of their research efforts. These universities should be generating the widest range of social, economic and environmental benefits.",
+    "why": "第六段指出研究型大学的核心目标是最大化科研影响力，应产生最广泛的社会、经济和环境效益。A选项\"充分利用其研究惠及社会各领域\"是对\"the widest range of social, economic and environmental benefits\"的准确概括。",
+    "traps": "B\"慷慨地与资金不足者共享设施\"过度引申了原文\"share their expertise\"，原文说的是分享专业知识而非设施，且未提及\"资金不足者\"；C\"宣传研究以赢得国际认可\"属无中生有，原文未提及国际认可；D\"在顶尖研究机构间传播影响力\"范围缩小，原文强调的是惠及全社会而非仅限于研究机构。",
+    "tip": "benefit all sectors of society是对social, economic and environmental benefits的高度概括，注意同义替换。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "If there was a greater coordination of technology transfer offices within regions and a simultaneous investment in the scale and functions of our graduate schools, universities could, and should, play a key role in positioning the U.K. for the next growth cycle.",
+    "why": "末段明确提出两个条件：一是加强区域内技术转化办公室的协调，二是同时投资于研究生院的规模和功能。C选项\"通过促进技术转化和研究生院教育\"准确涵盖了这两个并列条件，是原文的同义概括。",
+    "traps": "A\"建立更多区域技术转化办公室\"将原文\"greater coordination\"（更好的协调）曲解为\"建立更多\"，偷换概念；B\"要求政府投资技术转化研究\"原文未提及要求政府投资，也未限定于技术转化研究；D\"提高技术转化机构效率\"原文侧重的是协调与投入，而非效率提升，属偷换概念。",
+    "tip": "并列结构and连接的两个条件都要涵盖，选项只提一个或曲解其中之一往往是干扰项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "recurring",
+    "cn": "adj. 反复出现的，经常发生的"
+   },
+   {
+    "w": "perceived",
+    "cn": "adj. 被感知的，被认为的（未必属实）"
+   },
+   {
+    "w": "legislation",
+    "cn": "n. 立法，法规"
+   },
+   {
+    "w": "commercialisation",
+    "cn": "n. 商业化，产业化"
+   },
+   {
+    "w": "intervention",
+    "cn": "n. 干预，介入"
+   },
+   {
+    "w": "mask",
+    "cn": "v. 掩盖，遮蔽"
+   },
+   {
+    "w": "peculiar",
+    "cn": "adj. 特有的，独特的（peculiar to 为……所特有）"
+   },
+   {
+    "w": "concentration",
+    "cn": "n. 集中，聚集"
+   },
+   {
+    "w": "distinctive",
+    "cn": "adj. 独特的，有特色的"
+   },
+   {
+    "w": "maximise",
+    "cn": "v. 使最大化"
+   },
+   {
+    "w": "simultaneous",
+    "cn": "adj. 同时的，同步的"
+   },
+   {
+    "w": "spilling out of",
+    "cn": "短语 从……涌出，溢出"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The most recent comparative data on the performance of universities and research institutions in Australia, Canada, USA and UK shows that, from a relatively weak starting position, the UK now leads on many indicators of commercialisation activity.",
+    "cn": "关于澳大利亚、加拿大、美国和英国大学及研究机构表现的最新比较数据表明，从一个相对较弱的起点出发，英国现在在许多商业化活动指标上处于领先地位。",
+    "note": "主语为The most recent comparative data，谓语shows，that引导宾语从句；from a relatively weak starting position为插入状语，说明起点背景。"
+   },
+   {
+    "en": "The effect of policies generating long-term resource concentration has also created a distinctive set of universities which are research-led and commercially active.",
+    "cn": "产生长期资源集中效应的政策也造就了一批独特的、以研究为导向且商业化活跃的大学。",
+    "note": "主语为The effect of policies，generating long-term resource concentration为现在分词短语修饰policies；which引导定语从句修饰universities。"
+   },
+   {
+    "en": "If there was a greater coordination of technology transfer offices within regions and a simultaneous investment in the scale and functions of our graduate schools, universities could, and should, play a key role in positioning the U.K. for the next growth cycle.",
+    "cn": "如果能在区域内加强技术转化办公室的协调，同时对研究生院的规模和功能进行投资，大学就能够、也应该在为英国下一轮经济增长周期做好准备方面发挥关键作用。",
+    "note": "If引导虚拟条件句，条件句中有and连接的两个并列名词短语（coordination和investment）；主句中could, and should为插入式并列情态动词，play a key role为主句谓语。"
+   }
+  ]
+ }
+}

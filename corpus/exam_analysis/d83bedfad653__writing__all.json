@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "d83bedfad653__writing__all",
+ "examId": "d83bedfad653",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年 12 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:52:20.888Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 36751,
+ "usage": {
+  "prompt_tokens": 722,
+  "completion_tokens": 1954,
+  "total_tokens": 2676,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 722,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1954,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 722,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "以指定首句开头，围绕\"老年人凭借宝贵技能与经验可继续为社会做出重大贡献\"展开议论文，可评论、举例或结合个人经历，150-200词。",
+    "outline": [
+     "开头段：引用题目首句，点明老龄化背景下重视老年人贡献的重要性，提出论点。",
+     "主体段：从职业经验传承、文化遗产保护等角度分论点展开，辅以具体例子说明老年人如何发挥余热。",
+     "结尾段：总结全文，呼吁社会为老年人搭建更多参与平台，实现包容与和谐。"
+    ],
+    "sample": "With their valuable skills and experience, elderly people can continue to make significant contributions to society. In an era of rapid population aging, it is imperative that we recognize and harness the potential of our senior citizens rather than marginalize them.\n\nTo begin with, elderly people possess a wealth of professional expertise accumulated over decades of practice. For instance, retired doctors can volunteer in community clinics, offering medical guidance to underserved populations. Similarly, former engineers and professors can serve as mentors, passing down invaluable knowledge to younger generations. Their wisdom, tempered by years of hands-on experience, is an irreplaceable asset that no textbook can replicate.\n\nFurthermore, the elderly play a pivotal role in preserving cultural heritage. Grandparents often serve as living repositories of traditions, customs, and historical narratives that might otherwise fade into oblivion. By sharing their stories, they strengthen the social fabric and foster a sense of cultural identity among the youth.\n\nIn conclusion, society should create more platforms and opportunities for elderly individuals to remain active and engaged. Only by genuinely valuing their contributions can we build a more inclusive and harmonious community.",
+    "phrases": [
+     {
+      "en": "harness the potential of",
+      "cn": "发掘/利用……的潜力；常与人或资源搭配，体现主动利用的意识"
+     },
+     {
+      "en": "a wealth of professional expertise",
+      "cn": "丰富的专业知识；a wealth of 比 a lot of 更书面、更高级"
+     },
+     {
+      "en": "pass down invaluable knowledge",
+      "cn": "传承宝贵知识；pass down 强调代际传递，写文化类话题极好用"
+     },
+     {
+      "en": "tempered by years of hands-on experience",
+      "cn": "经多年实践磨砺的；tempered 一词体现'淬炼'，用词精准"
+     },
+     {
+      "en": "play a pivotal role in",
+      "cn": "在……中扮演关键角色；比 play an important role 更高级"
+     },
+     {
+      "en": "living repositories of traditions",
+      "cn": "活的传统宝库；repository 常指'存放处'，用于人则生动形象"
+     },
+     {
+      "en": "fade into oblivion",
+      "cn": "逐渐被遗忘；文学感强的固定表达，适用于文化遗产消逝话题"
+     },
+     {
+      "en": "strengthen the social fabric",
+      "cn": "加固社会结构；social fabric 是社科类高频搭配"
+     },
+     {
+      "en": "foster a sense of cultural identity",
+      "cn": "培养文化认同感；foster 比 develop 更正式，六级常用"
+     },
+     {
+      "en": "an irreplaceable asset",
+      "cn": "不可替代的财富；asset 兼具'资产'与'宝贵之物'双重含义"
+     }
+    ],
+    "pitfalls": [
+     "忘记以题目指定首句开头或擅自改动原句，直接扣分",
+     "全篇空谈道理而缺乏具体事例，论证缺乏说服力",
+     "词汇重复严重，如反复使用 old people 而不替换为 senior citizens / the elderly",
+     "段落之间缺少过渡词，导致行文逻辑松散",
+     "字数不足150词或大幅超过200词，均影响得分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Old people have a lot of experience.",
+      "better": "Elderly people possess a wealth of professional expertise accumulated over decades of practice.",
+      "note": "用 possess 替换 have，accumulated 后置定语增加信息密度，更具学术感"
+     },
+     {
+      "plain": "They can teach young people many things.",
+      "better": "They can serve as mentors, passing down invaluable knowledge to younger generations.",
+      "note": "现在分词短语作伴随状语，句式多变；mentor 一词更精准"
+     },
+     {
+      "plain": "Their experience is very useful and cannot be replaced.",
+      "better": "Their wisdom, tempered by years of hands-on experience, is an irreplaceable asset that no textbook can replicate.",
+      "note": "插入过去分词短语作插入语，that 从句补充对比，层次丰富"
+     },
+     {
+      "plain": "Old people help keep culture alive.",
+      "better": "The elderly play a pivotal role in preserving cultural heritage as living repositories of traditions.",
+      "note": "pivotal role 加 living repositories 双重亮点，表达力大幅提升"
+     },
+     {
+      "plain": "We should give old people more chances.",
+      "better": "Society should create more platforms and opportunities for elderly individuals to remain active and engaged.",
+      "note": "platforms and opportunities 并列具体化，remain active 比 have chances 更有画面感"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Harness the potential of our senior citizens rather than marginalize them. 发掘老年人的潜力而非将其边缘化——rather than 形成鲜明对比，论点有力。",
+   "Their wisdom, tempered by years of hands-on experience, is an irreplaceable asset that no textbook can replicate. 他们经多年实践淬炼的智慧是教科书无法复制的宝贵财富——插入语+定语从句，句式高级且内容深刻。",
+   "Grandparents often serve as living repositories of traditions, customs, and historical narratives that might otherwise fade into oblivion. 祖辈往往是传统、习俗与历史记忆的活宝库，否则这些可能逐渐被遗忘——repository 与 fade into oblivion 均为亮眼表达。",
+   "Only by genuinely valuing their contributions can we build a more inclusive and harmonious community. 唯有真正重视他们的贡献，我们才能建设更具包容性与和谐的社会——Only by... can we... 倒装句，结尾有力升华主题。"
+  ]
+ }
+}

@@ -1,0 +1,158 @@
+{
+ "schemaVersion": 1,
+ "id": "10ae747abbd8__part_b__all",
+ "examId": "10ae747abbd8",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2009 年考研英语真题（旧）",
+ "year": 2009,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:22:36.237Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 47710,
+ "usage": {
+  "prompt_tokens": 1361,
+  "completion_tokens": 2551,
+  "total_tokens": 3912,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1361,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2551,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1361,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "西方文化演化理论的发展历程",
+  "type": "七选五",
+  "strategy": [
+   "通读全文，把握各段核心人物及其理论主张的时间线",
+   "关注空格前后的代词（he/his/they）、逻辑连接词（thus/for example/also）寻找衔接线索",
+   "利用关键词复现（如diffusionism、Boas、culture等）将选项与上下文匹配",
+   "排除法：确定高确定度的题目后，缩小剩余选项范围",
+   "检验：将选项代入后通读该段，确认语义和逻辑连贯"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "C",
+    "why": "空格前介绍Spencer提出万物随时间变化、趋向完美的理论。选项C以\"He argued\"承接，主语he指代Spencer，继续阐述其'survival of the fittest'理论，且'weaker/stronger races and societies'与前文'human societies, changed over time, advancing toward perfection'形成语义衔接与具体化。",
+    "traps": "E中'Thus, in his view'虽有承接感，但所列文化要素（家庭结构、婚姻形式等）与Spencer的社会进化论不匹配，更适合Morgan；F讨论的是功能主义，与Spencer的进步论无关。",
+    "tip": "定位线索：Spencer + 'advancing toward perfection' → C中'survival of the fittest'"
+   },
+   {
+    "number": 42,
+    "answer": "E",
+    "why": "空格前Morgan试图展示'all aspects of culture changed together in the evolution of societies'。选项E以'Thus, in his view'总结，his指Morgan，并具体列举了diverse aspects of culture（家庭结构、婚姻形式、亲属类别、财产所有、政府形式、技术、食物生产），是对前文'all aspects'的展开说明，末尾'all changed as societies evolved'与前文完美呼应。",
+    "traps": "A提到cultural innovations有single origin，属于传播论，与Morgan强调的文化整体演进不一致；C中'survival of the fittest'属于Spencer的观点，非Morgan。",
+    "tip": "定位线索：'all aspects of culture' → E中逐一列举diverse aspects"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "why": "空格前介绍Boas的历史特殊论强调'uniqueness of all cultures'并为人类学提供了新方向。选项A引入'Other anthropologists'的不同观点——文化创新源于单一起源并在社会间传播（diffusionism），形成与Boas理论的对比。同时，A中引出的diffusionism概念为第五段'rejected the particularist theory in favor of diffusionism'做了铺垫，保证术语首次出现有定义。",
+    "traps": "B讲Boas学习语言学和体质人类学的方法，放在此处会割裂第三段对historical particularism理念的介绍与第四段对Boas具体观点的深入阐释之间的逻辑；G是具体例证，此处尚未充分展开diffusionism，放入过早。",
+    "tip": "定位线索：'uniqueness' vs. 'single origin' 构成对比；为第五段diffusionism铺垫"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "why": "空格前阐述Boas认为每个社会的文化须被理解为独特历史的产物。选项B紧接其方法论：'In order to study particular cultures as completely as possible'呼应前文'unique history'，he指Boas，说明他为了全面研究特定文化而精通linguistics和physical anthropology，是理论立场到研究方法的自然过渡。",
+    "traps": "D中'They also focused on important rituals'的主语为复数they，与此处单数主语Boas不匹配；F讨论功能主义视角，与Boas的历史特殊论无关。",
+    "tip": "定位线索：'unique history' → B中'particular cultures as completely as possible'"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "why": "空格前提到一些人类学家将几乎所有重要文化成就归功于少数天才民族的发明，然后传播到其他文化。选项G以'For example'开头，举出Smith和Perry错误地认为农业、制陶、冶金都起源于古埃及并传播至全球的具体例子，完美印证前文论断，末尾'all of these cultural developments occurred separately'进行事实纠正，逻辑完整。",
+    "traps": "A虽涉及diffusionism但属概念定义，此处需要的是具体例证；D谈仪式与社会结构保存，与传播论的具体论证无关。",
+    "tip": "定位线索：'Some attributed…to a few gifted peoples' → G中'For example'提供具体实例"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "coinciding",
+    "cn": "v. 同时发生，与…一致"
+   },
+   {
+    "w": "groundbreaking",
+    "cn": "adj. 开创性的，突破性的"
+   },
+   {
+    "w": "anthropology",
+    "cn": "n. 人类学"
+   },
+   {
+    "w": "particularism",
+    "cn": "n. 特殊主义，特殊论"
+   },
+   {
+    "w": "diffusionism",
+    "cn": "n. 传播论，扩散主义"
+   },
+   {
+    "w": "kinship",
+    "cn": "n. 亲属关系"
+   },
+   {
+    "w": "linguistics",
+    "cn": "n. 语言学"
+   },
+   {
+    "w": "metallurgy",
+    "cn": "n. 冶金学，冶金术"
+   },
+   {
+    "w": "solidarity",
+    "cn": "n. 团结，一致"
+   },
+   {
+    "w": "initiation",
+    "cn": "n. 启蒙；入会仪式，成人礼"
+   },
+   {
+    "w": "pottery",
+    "cn": "n. 陶器；制陶术"
+   },
+   {
+    "w": "anatomy",
+    "cn": "n. 解剖学；（身体的）结构"
+   }
+  ]
+ }
+}

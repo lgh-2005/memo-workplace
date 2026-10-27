@@ -1,0 +1,254 @@
+{
+ "schemaVersion": 1,
+ "id": "ff8641a6bc65__long_match__all",
+ "examId": "ff8641a6bc65",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2019 年 6 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:24:12.011Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 36394,
+ "usage": {
+  "prompt_tokens": 976,
+  "completion_tokens": 1984,
+  "total_tokens": 2960,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 976,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1984,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 976,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "线上零售对传统实体零售业的冲击与变革",
+  "strategy": [
+   "先通读10条陈述句，标记高区分度专有名词、数据和核心概念",
+   "利用数字、百分比、调查报告等细节词快速定位段落",
+   "注意同义替换：如brick and mortar↔physical retail，lion's share↔绝大多数",
+   "关注转折词（despite, although）和因果逻辑，它们常是命题核心",
+   "按关键词唯一性排序，先做含独特线索的题，再做概括性强的题"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "M",
+    "cn": "尽管网络零售已存在约二十年，但根据最近一项调查，仍有近半数的网络零售商未能获得消费者的满意反馈。",
+    "keywords": [
+     "twenty years",
+     "internet retailers",
+     "satisfactory feedback",
+     "survey"
+    ],
+    "paraphrase": "陈述句用 nearly half 和 fail to receive satisfactory feedback 概括调查数据，原文可能使用具体百分比或 poor ratings、low customer satisfaction 等近义表达。",
+    "tip": "抓住 twenty years、survey、satisfactory feedback 三重限定词快速定位M段。"
+   },
+   {
+    "number": 37,
+    "answer": "G",
+    "cn": "创新型零售商将互联网技术与传统零售相结合，创造出新的零售模式。",
+    "keywords": [
+     "innovative retailers",
+     "internet technologies",
+     "conventional retailing",
+     "new retail models"
+    ],
+    "paraphrase": "陈述句中 integrate...with 对应原文可能出现的 combine、merge、blend 等词；conventional retailing 可替换为 traditional retailing 或 brick and mortar。",
+    "tip": "关注 integrate 与 new retail models 的搭配，定位描述零售创新融合的段落。"
+   },
+   {
+    "number": 38,
+    "answer": "D",
+    "cn": "尽管人口普查局的数据所暗示的情况如此，实体零售的股票价值一直在下跌。",
+    "keywords": [
+     "Census data",
+     "physical retail",
+     "stocks",
+     "dropping"
+    ],
+    "paraphrase": "陈述句用 despite 构成让步关系，Census data 为官方统计数据，stocks dropping 原文可能表述为 share prices declining 或 market value falling。",
+    "tip": "Census data 是高辨识度专有名词，直接扫读全文定位D段。"
+   },
+   {
+    "number": 39,
+    "answer": "I",
+    "cn": "创新驱动的零售业变革并没有像人们普遍预期的那样迅速发生。",
+    "keywords": [
+     "innovation-driven changes",
+     "retail industry",
+     "as quickly as",
+     "anticipated"
+    ],
+    "paraphrase": "陈述句强调变革速度慢于预期，原文可能用 slower than expected、did not happen overnight 等表达进行同义替换。",
+    "tip": "聚焦\"预期落差\"逻辑——变革慢于预期，这是I段的核心论点。"
+   },
+   {
+    "number": 40,
+    "answer": "C",
+    "cn": "统计数据表明，实体店销售额仍占零售业务的绝大部分份额。",
+    "keywords": [
+     "statistics",
+     "brick and mortar",
+     "lion's share",
+     "retail business"
+    ],
+    "paraphrase": "lion's share（最大份额）在原文中可能被替换为 the vast majority、dominant proportion 或具体百分比数据。",
+    "tip": "lion's share 是高频考点短语，对应原文中具体销售额占比数据，定位C段。"
+   },
+   {
+    "number": 41,
+    "answer": "H",
+    "cn": "成功将线上与线下商业模式相结合的公司可能会成为传统零售商的一大威胁。",
+    "keywords": [
+     "combine online and offline",
+     "big concern",
+     "traditional retailers"
+    ],
+    "paraphrase": "big concern 可被原文中 threat、challenge、formidable competitor 等词替换；combine online and offline 可对应 omni-channel 全渠道模式。",
+    "tip": "关注\"线上线下结合\"对传统零售构成威胁这一因果关系，定位H段。"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "cn": "当互联网泡沫破裂时，实体零售商对自身业务的信心得到了加强。",
+    "keywords": [
+     "brick and mortar retailers",
+     "faith",
+     "dot com bubble burst"
+    ],
+    "paraphrase": "dot com bubble burst 是2000年前后的互联网泡沫事件；faith strengthened 原文可能表述为 confidence boosted、felt vindicated 等。",
+    "tip": "dot com bubble burst 是极强的时间事件标记，直接定位F段。"
+   },
+   {
+    "number": 43,
+    "answer": "O",
+    "cn": "尽管来自网络零售的挑战巨大，传统零售业在相当长一段时间内仍将继续存在。",
+    "keywords": [
+     "tremendous challenges",
+     "traditional retailing",
+     "here to stay"
+    ],
+    "paraphrase": "here to stay 表示\"不会消失\"，原文可能用 survive、endure、remain relevant、not disappear 等进行替换。",
+    "tip": "此句为总结性论断，通常出现在文章末段，O段为末段完全吻合。"
+   },
+   {
+    "number": 44,
+    "answer": "A",
+    "cn": "随着网络商务的兴起，实体零售店很可能遭受与黄页电话簿相同的命运。",
+    "keywords": [
+     "online commerce",
+     "physical retail stores",
+     "yellow pages",
+     "same fate"
+    ],
+    "paraphrase": "yellow pages 曾因互联网搜索而消亡，陈述句以此类比实体零售；原文可能直接提及 yellow pages 作为类比对象。",
+    "tip": "yellow pages 是极具辨识度的类比意象，通常出现在文章开头引出话题，定位A段。"
+   },
+   {
+    "number": 45,
+    "answer": "K",
+    "cn": "智能手机的广泛使用使传统零售商重塑业务变得更加复杂。",
+    "keywords": [
+     "smartphones",
+     "more complex",
+     "traditional retailers",
+     "reinvent"
+    ],
+    "paraphrase": "reinvent their business 在原文中可能被表述为 transform、reshape、overhaul their business model；more complex 可替换为 more difficult、more challenging。",
+    "tip": "smartphones 是技术类具体名词，作为唯一性关键词快速扫读定位K段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "brick and mortar",
+    "cn": "实体的，有实际店面的（形容词短语，直译为\"砖与灰浆\"）"
+   },
+   {
+    "w": "the lion's share",
+    "cn": "最大的份额，大部分（名词短语）"
+   },
+   {
+    "w": "dot com bubble",
+    "cn": "互联网泡沫（名词短语，指2000年前后的网络经济泡沫）"
+   },
+   {
+    "w": "retailing",
+    "cn": "零售业（名词）"
+   },
+   {
+    "w": "reinvent",
+    "cn": "重塑，彻底改造（动词）"
+   },
+   {
+    "w": "innovative",
+    "cn": "创新的（形容词）"
+   },
+   {
+    "w": "integrate",
+    "cn": "整合，融合（动词）"
+   },
+   {
+    "w": "conventional",
+    "cn": "传统的，常规的（形容词）"
+   },
+   {
+    "w": "Census",
+    "cn": "人口普查（名词，常指美国人口普查局的数据）"
+   },
+   {
+    "w": "satisfactory",
+    "cn": "令人满意的（形容词）"
+   },
+   {
+    "w": "anticipated",
+    "cn": "预期的，预料的（形容词/动词过去分词）"
+   },
+   {
+    "w": "tremendous",
+    "cn": "巨大的，极大的（形容词）"
+   }
+  ]
+ }
+}

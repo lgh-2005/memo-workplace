@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "27831d1d141a__translation__all",
+ "examId": "27831d1d141a",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年考研英语真题",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:50:16.323Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72959,
+ "usage": {
+  "prompt_tokens": 1434,
+  "completion_tokens": 5173,
+  "total_tokens": 6607,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1434,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5173,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1434,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "拿破仑战争时期英军密码破译与斯科维尔",
+  "translation": "1807年至1814年间，伊比利亚半岛（包括西班牙和葡萄牙）是一场惨烈而残酷的斗争的舞台。这场斗争在多个层面上展开：拿破仑的法国军队与愤怒的当地居民之间；一心想加剧拿破仑困境的英国人与从巴黎被派来压制他们的元帅之间；科学与精英体制的新兴力量与保守主义及世袭出身的旧势力之间。这场战争同时也是一场编制密码的人与破译密码的人之间的较量，而这一点即使是许多博览该时期历史著作的人也并不了解。\n\n几年前，我在阅读查尔斯·奥曼爵士的鸿篇巨著《半岛战争史》时，首次发现了拿破仑时代的密码之战。在第五卷中，他附了一个附录——《斯科维尔密码》。其中列出了许多从驻西班牙的法国军队手中缴获的密码文件，而这些文件的秘密已被英军司令部的一名军官乔治·斯科维尔破解。奥曼高度评价了斯科维尔的重要性，但同时，他所著史书的综合性质决定了他无法仔细分析这位默默无闻的军官对那场国家间的伟大斗争可能做出过或未曾做出过什么贡献，也确实无法告诉我们关于此人本身的更多信息。我渴望了解更多，但惊讶地发现，奥曼1914年发表的那个附录是关于这场秘密战争唯一经过深思熟虑的著述。\n\n我逐渐确信，这个故事与二战中\"英格玛\"密码及德军密码破译的故事一样激动人心、意义重大。问题是，这个故事能讲述出来吗？\n\n在伦敦公共档案馆研究斯科维尔的文件时，我发现他留下了一本详尽的日志和大量关于他在半岛工作的笔记。更重要的是，这批收藏中保存了许多法军急件原件，我意识到这是无价之宝。拿破仑战争期间可能有过许多间谍和情报官员，但通常要找到他们实际提供的或研究过的材料极为困难。\n\n在研究斯科维尔的故事时，我发现除了他的情报工作之外还有更多有趣的内容。他在威灵顿勋爵司令部中的地位以及他的工作所获得的认可，都与当时军队中的阶级政治密切相关。他自我提升和辛勤工作的故事本身就可以写成一部引人入胜的传记，但它所代表的意义远不止于此。正如密码破译在争夺西班牙的斗争中具有更广泛的意义一样，他努力在晋升阶梯上攀升的尝试也充分说明了英国社会的状况。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "It was also, and this is unknown even to many people well read about the period, a battle between those who made codes and those who broke them.",
+    "cn": "这场战争同时也是一场编制密码的人与破译密码的人之间的较量，而这一点即使是许多博览该时期历史著作的人也并不了解。",
+    "structure": "主干为 It was also a battle between those who made codes and those who broke them。中间 and this is unknown even to many people well read about the period 是插入语，对主句内容进行补充说明。well read about the period 是后置形容词短语修饰 people。",
+    "points": [
+     "插入语的正确识别与翻译处理，需将补充信息自然嵌入或独立译出",
+     "those who made codes and those who broke them 中两个 those who 定语从句的对比翻译",
+     "well read about the period 作后置定语修饰 people，译为\"博览/熟知该时期历史的人\""
+    ],
+    "pitfall": "插入语割裂了主句 It was also...a battle，容易误判句子结构，将 a battle 遗漏或与插入语混淆；well read 易误译为\"读得好\"，实际指\"博学的、博览的\"。"
+   },
+   {
+    "number": 47,
+    "en": "It listed many documents in code that had been captured from the French army of Spain, and whose secrets had been revealed by the work of one George Scovell, an officer in British headquarters.",
+    "cn": "其中列出了许多从驻西班牙的法国军队手中缴获的密码文件，而这些文件的秘密已被英军司令部的一名军官乔治·斯科维尔破解。",
+    "structure": "主干为 It listed many documents in code。后接两个并列定语从句修饰 documents：that had been captured from the French army of Spain 和 whose secrets had been revealed by the work of one George Scovell。an officer in British headquarters 是 George Scovell 的同位语。",
+    "points": [
+     "两个并列定语从句（that...和 whose...）的正确识别与翻译",
+     "in code 作后置定语修饰 documents，译为\"密码文件/用密码书写的文件\"",
+     "one George Scovell 中 one 表示\"一个叫……的人\"，需准确译出"
+    ],
+    "pitfall": "whose secrets 的先行词是 documents 而非 French army，容易张冠李戴；one 在此不是数词\"一\"而是泛指某人，类似于\"a certain\"。"
+   },
+   {
+    "number": 48,
+    "en": "he could not analyze carefully what this obscure officer may or may not have contributed to that great struggle between nations or indeed tell us anything much about the man himself.",
+    "cn": "他无法仔细分析这位默默无闻的军官对那场国家间的伟大斗争可能做出过或未曾做出过什么贡献，也确实无法告诉我们关于此人本身的更多信息。",
+    "structure": "主干为 he could not analyze...or indeed tell us anything much。analyze 的宾语为 what 引导的宾语从句；or 连接 analyze 与 tell 两个并列谓语，共享 could not。may or may not have contributed 表示不确定性。about the man himself 作后置定语修饰 anything。",
+    "points": [
+     "may or may not have contributed 的翻译，需体现\"可能做出也可能未做出贡献\"的双向不确定性",
+     "or indeed tell us anything much 与前面 analyze 并列否定的译法",
+     "obscure 在语境中译为\"默默无闻的/鲜为人知的\""
+    ],
+    "pitfall": "or indeed tell 容易被误认为新起一句，实际上与 analyze 共享 could not 构成并列否定；anything much 中 much 修饰 anything，不可忽略。"
+   },
+   {
+    "number": 49,
+    "en": "There may have been many spies and intelligence officers during the Napoleonic Wars, but it is usually extremely difficult to find the material they actually provided or worked on.",
+    "cn": "拿破仑战争期间可能有过许多间谍和情报官员，但通常要找到他们实际提供的或研究过的材料极为困难。",
+    "structure": "由 but 连接的两个并列分句。前半句 There may have been...为 there be 句型加情态动词表推测；后半句 it is...difficult to find...为 it 作形式主语、不定式为真正主语。they actually provided or worked on 是定语从句修饰 material。",
+    "points": [
+     "may have been 表示对过去情况的推测，需译为\"可能有过\"",
+     "it is...difficult to find 的形式主语结构完整译出",
+     "they actually provided or worked on 定语从句中 actually 强调\"实际上\"需体现"
+    ],
+    "pitfall": "worked on 容易误译为\"工作\"，在此语境中指\"研究、处理（材料）\"；may have been 的时态语气不可译成确定语气。"
+   },
+   {
+    "number": 50,
+    "en": "Just as the code breaking has its wider relevance in the struggle for Spain, so his attempts to make his way up the promotion ladder speak volumes about British society.",
+    "cn": "正如密码破译在争夺西班牙的斗争中具有更广泛的意义一样，他努力在晋升阶梯上攀升的尝试也充分说明了英国社会的状况。",
+    "structure": "Just as...so...构成比较类比结构，前半句为类比参照，后半句为论述重点。主干为 his attempts speak volumes about British society。to make his way up the promotion ladder 是不定式短语作 attempts 的后置定语。",
+    "points": [
+     "Just as...so...结构译为\"正如……一样，……也……\"",
+     "speak volumes 为固定短语，译为\"充分说明/很能说明问题\"",
+     "make his way up the promotion ladder 译为\"在晋升阶梯上攀升/一步步争取晋升\""
+    ],
+    "pitfall": "speak volumes 是习语，不能直译为\"说了很多话/说了许多卷\"；promotion ladder 是比喻说法，应体现\"晋升阶梯\"的意象而非直译为\"推广梯子\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "titanic",
+    "cn": "adj. 巨大的，极其猛烈的"
+   },
+   {
+    "w": "merciless",
+    "cn": "adj. 残酷的，无情的"
+   },
+   {
+    "w": "exacerbate",
+    "cn": "v. 使加剧，使恶化"
+   },
+   {
+    "w": "meritocracy",
+    "cn": "n. 精英统治，能力至上体制"
+   },
+   {
+    "w": "cryptographic",
+    "cn": "adj. 密码（学）的"
+   },
+   {
+    "w": "cipher",
+    "cn": "n. 密码，暗号"
+   },
+   {
+    "w": "appendix",
+    "cn": "n. 附录"
+   },
+   {
+    "w": "obscure",
+    "cn": "adj. 默默无闻的，鲜为人知的"
+   },
+   {
+    "w": "copious",
+    "cn": "adj. 大量的，丰富的"
+   },
+   {
+    "w": "dispatch",
+    "cn": "n. 急件，公文"
+   },
+   {
+    "w": "priceless",
+    "cn": "adj. 无价的，极其珍贵的"
+   },
+   {
+    "w": "speak volumes",
+    "cn": "短语 充分说明，很能说明问题"
+   },
+   {
+    "w": "well read",
+    "cn": "adj. 博学的，博览群书的"
+   },
+   {
+    "w": "in check",
+    "cn": "短语 受到控制，被遏制"
+   }
+  ],
+  "skills": [
+   "插入语翻译：识别并灵活处理句中插入成分，可单独成句或用破折号标出",
+   "并列定语从句：多个定语从句修饰同一先行词时，可拆译为独立短句以保证流畅",
+   "固定搭配与习语：如 speak volumes、in check、well read 需按习语义翻译，不可直译",
+   "形式主语句：it is...to do 结构应先译出真正主语（不定式部分）再译谓语",
+   "情态动词表推测：may have been、may or may not have contributed 需准确传达不确定语气"
+  ]
+ }
+}

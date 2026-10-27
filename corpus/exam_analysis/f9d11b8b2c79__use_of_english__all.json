@@ -1,0 +1,319 @@
+{
+ "schemaVersion": 1,
+ "id": "f9d11b8b2c79__use_of_english__all",
+ "examId": "f9d11b8b2c79",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2025 年考研英语真题",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:56:27.506Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 110153,
+ "usage": {
+  "prompt_tokens": 1837,
+  "completion_tokens": 6700,
+  "total_tokens": 8537,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1837,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 6700,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1837,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "古希腊水下城市帕夫洛佩特里的发现与发掘",
+  "gist": "文章介绍了位于伯罗奔尼撒半岛南部的帕夫洛佩特里古城，因地震、海啸和海平面上升而沉入海底。1967年英国海洋学家偶然发现该遗址，但此后数十年无人问津。2009年考古学家利用先进水下考古技术重启发掘，揭示出这座拥有街道、建筑和纺织工业的繁荣古代贸易中心。",
+  "difficulty": "中等",
+  "translation": "帕夫洛佩特里（该遗址的现代名称）位于伯罗奔尼撒半岛南部，约公元前3500年作为新石器时代聚落出现，后来成为迈锡尼希腊（公元前1650–1180年）的重要贸易中心。爱琴海的这一区域容易发生地震和海啸，这导致城市逐渐下沉。地中海缓慢上升的海平面在3000多年前淹没了这座城市。\n\n数千年来，这座城市的遗迹隐藏在约13英尺深的水下，不为人知。它们被一层厚厚的沙子覆盖，位于拉科尼亚岛附近的海域。近几十年来，不断变化的洋流和气候变化侵蚀了曾经保护帕夫洛佩特里的天然屏障。1967年，一项针对伯罗奔尼撒海岸的科学调查正在收集数据以分析海平面变化，就在这时，英国海洋学家尼古拉斯·弗莱明首次发现了沉没的建筑遗迹。一年后，他带着几名学生返回，对该地点进行考察并绘制地图。团队辨认出大约15座建筑、庭院、一个街道网络和两座墓室。尽管最初的发现令人兴奋，但在考古学家再次回来之前，该遗址在此后数十年里一直未受扰动。\n\n2009年，考古学家克里桑西·加卢和乔恩·亨德森与希腊文化部合作，重新启动了帕夫洛佩特里的发掘工作。自20世纪60年代以来，水下考古技术和工具已经取得了巨大进步。团队运用了机器人技术、声呐测绘和最先进的图形技术来勘测遗址。从2009年到2013年，他们成功让这座水下城镇重见天日。帕夫洛佩特里占地约两英亩半，其三条主要道路连接着大约50座长方形建筑，所有建筑都有开放式庭院。发掘出土了大量米诺斯风格的织布机坠石，表明帕夫洛佩特里曾是一个繁荣的贸易中心，拥有强盛的纺织业。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "B",
+    "correct": "prone",
+    "why": "固定搭配 be prone to 表示\"易于遭受/倾向于\"，与后面的 earthquakes and tsunamis 搭配，说明该海域地震和海啸多发，语义通顺、搭配地道。",
+    "traps": "A) relevant to 意为\"与……相关\"，语义不合，地区不是与地震\"相关\"而是\"易发\"。C) available to 意为\"对……可用\"，语义完全不搭。D) alien to 意为\"与……格格不入\"，表示陌生或不相容，语义相反。",
+    "tip": "考查固定搭配 be prone to（易于……）。"
+   },
+   {
+    "number": 2,
+    "answer": "C",
+    "correct": "gradually",
+    "why": "上下文中 slow sea level rise 提示下沉是一个缓慢的过程，gradually（逐渐地）与之形成语义呼应，说明城市是慢慢沉入海底的。",
+    "traps": "A) accidentally（偶然地）强调意外性，不符合自然过程描述。B) frequently（频繁地）强调频率，与 sink 搭配不合逻辑。D) temporarily（暂时地）与事实矛盾，城市沉没是永久性的。",
+    "tip": "考查副词与上下文语义一致性，关键线索词为 slow。"
+   },
+   {
+    "number": 3,
+    "answer": "B",
+    "correct": "submerged",
+    "why": "submerge 意为\"淹没、使沉没\"，主语为 sea level rise，宾语为 the city，完整表达\"海平面上升淹没了城市\"，与前文城市下沉的语境完全吻合。",
+    "traps": "A) disguised（伪装）语义不通，海平面上升不会\"伪装\"城市。C) relocated（搬迁）不符合自然灾害的语境。D) isolated（隔离）虽有一定关联，但不能准确表达\"被水淹没\"这一核心含义。",
+    "tip": "考查动词语义辨析，核心语境为海水淹没城市。"
+   },
+   {
+    "number": 4,
+    "answer": "C",
+    "correct": "remains",
+    "why": "remains 意为\"遗迹、遗址\"，与考古语境高度匹配，且与下文 covered by sand、lay unseen 等描述逻辑连贯，指城市的建筑遗迹沉在水下。",
+    "traps": "A) legends（传说）是抽象名词，不能被沙子覆盖或位于水下。B) programs（项目、计划）与考古遗址语境无关。D) surroundings（周围环境）指城市的周边而非城市本身的遗迹。",
+    "tip": "考查名词语义，考古语境下 remains 是高频核心词。"
+   },
+   {
+    "number": 5,
+    "answer": "B",
+    "correct": "off",
+    "why": "off 作介词用于地理语境时，表示\"在……海岸附近的海域\"，如 off the coast。此处表示遗迹位于拉科尼亚岛附近的海域中，被沙子覆盖。",
+    "traps": "A) across（横穿）表示穿越整个岛屿，地理逻辑不合。C) under（在……下方）表示在岛屿下方，地理位置不对，遗迹在海中而非岛下。D) via（经由）表示途径方式，此处无路径含义。",
+    "tip": "考查介词 off 表示\"在……近海\"的地理用法。"
+   },
+   {
+    "number": 6,
+    "answer": "A",
+    "correct": "currents",
+    "why": "shifting currents（变化的洋流）与 climate change 并列，共同作为侵蚀天然屏障的原因。洋流变化是海洋环境变迁的核心因素，语境贴合。",
+    "traps": "B) rivers（河流）属于陆地水系概念，与海底遗址语境不符。C) seasons（季节）通常不说 shifting seasons，且季节变化不会直接侵蚀海底屏障。D) winds（风）虽可与 shifting 搭配，但对水下屏障的直接侵蚀作用远不如洋流。",
+    "tip": "考查与海洋环境相关的名词搭配，shifting currents 为常见表达。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "protected",
+    "why": "a natural barrier that protected Pavlopetri 意为\"保护帕夫洛佩特里的天然屏障\"。屏障被侵蚀（eroded），说明之前它起到了保护作用，逻辑链完整。",
+    "traps": "A) elevated（抬高）天然屏障不会\"抬高\"一座沉没的城市，语义不合。B) separated（分开）缺少\"把什么和什么分开\"的宾语结构。C) comprised（包含）天然屏障不可能\"包含\"一座城市，语义错误。",
+    "tip": "考查动词与 barrier 的语义搭配，保护功能是屏障的核心作用。"
+   },
+   {
+    "number": 8,
+    "answer": "A",
+    "correct": "gathering",
+    "why": "was gathering data 构成过去进行时态，表示\"正在收集数据\"，与第9题 when 构成\"was doing...when...\"句式，表示正在进行某事时突然发生另一件事。",
+    "traps": "B) restoring（恢复）数据不需要\"恢复\"，语义不通。C) updating（更新）暗示数据已存在，与首次调查不符。D) supplying（提供）主语是 survey（调查），调查是收集数据而非提供数据。",
+    "tip": "考查 was doing...when... 句型及 gather data 的固定搭配。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "when",
+    "why": "与前面的 was gathering 构成经典句式\"was doing...when...\"，表示\"正在……的时候，突然……\"。弗莱明在调查过程中偶然发现了沉没的遗迹，when 引出意外事件。",
+    "traps": "B) until（直到）改变了语义，暗示发现后调查停止，不符原意。C) after（在……之后）时间逻辑错误，发现不是在收集数据之后。D) once（一旦）强调条件关系，不如 when 能表达偶然性和同时性。",
+    "tip": "考查 was doing...when... 句型，when 表示\"就在那时\"。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "structures",
+    "why": "structures（建筑物、构造物）指沉没的建筑遗迹，与下文 identified some 15 buildings, courtyards, streets, tombs 形成呼应，是对水下遗址的准确概括。",
+    "traps": "A) belongings（个人物品）规模太小，不符合海洋学家从水面上\"spotted（发现）\"的对象。B) resources（资源）过于笼统抽象，不适合描述考古遗址。C) products（产品）与水下遗址语境完全不搭。",
+    "tip": "考查名词辨析，structures 可泛指建筑构造物，适合考古语境。"
+   },
+   {
+    "number": 11,
+    "answer": "D",
+    "correct": "examine",
+    "why": "examine（考察、检验）表示对遗址进行科学考察研究，与后面的 map the site（绘制地图）并列，共同说明返回的目的是做初步科学调查。",
+    "traps": "A) preserve（保护）不是初次返回的首要目的，且保护工作通常在充分了解之后进行。B) select（选择）选择地点不合逻辑，地点已经被发现了。C) display（展示）水下遗址不便\"展示\"，且此时尚在考察阶段。",
+    "tip": "考查动词辨析，examine 强调科学考察，符合考古调查语境。"
+   },
+   {
+    "number": 12,
+    "answer": "A",
+    "correct": "Despite",
+    "why": "Despite（尽管）引出让步关系：尽管最初的发现令人兴奋，但该遗址在之后数十年未受扰动。前后形成转折对比，语义合理。",
+    "traps": "B) Unlike（不像）后需接名词进行对比，此处无比较对象。C) Besides（除了）表示递进补充，但后文说的是遗址被搁置，与\"令人兴奋的发现\"构成对比而非递进。D) Among（在……之中）表示范围，语法和语义均不搭配。",
+    "tip": "考查让步逻辑词，前后语义转折是关键判断依据。"
+   },
+   {
+    "number": 13,
+    "answer": "D",
+    "correct": "undisturbed",
+    "why": "undisturbed（未受扰动的）表示遗址在几十年内没有人去发掘或研究，lie undisturbed 是固定搭配，表示\"静静地躺在那里无人打扰\"，与后文 before archaeologists would return 呼应。",
+    "traps": "A) unchallenged（未受质疑的）用于观点或权威，不适用于遗址。B) unknown（未知的）不准确，遗址已在1967年被发现并记录，并非\"未知\"。C) unorganized（无组织的）描述人或活动的状态，不适用于遗址。",
+    "tip": "考查形容词辨析，lie undisturbed 意为\"静置不动、无人问津\"。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "resumed",
+    "why": "resumed（重新开始、恢复）表示2009年考古学家重启了对帕夫洛佩特里的发掘。前文提到1968年后遗址被搁置数十年，因此2009年是\"恢复\"发掘而非首次。",
+    "traps": "A) suspended（暂停）语义完全相反，2009年是重启而非暂停。B) transferred（转移）发掘不存在\"转移\"的语义。D) canceled（取消）与恢复发掘的语境矛盾。",
+    "tip": "考查动词辨析，上下文时间线是关键：中断数十年后重启。"
+   },
+   {
+    "number": 15,
+    "answer": "D",
+    "correct": "techniques",
+    "why": "techniques（技术）与 tools（工具）并列，共同说明自20世纪60年代以来水下考古的方法和设备都取得了巨大进步，为下文使用机器人、声呐等先进手段做铺垫。",
+    "traps": "A) policies（政策）与 tools 并列不自然，且政策不会\"取得巨大进步\"。B) theories（理论）虽可与考古相关，但下文具体介绍的是技术手段而非理论。C) documents（文件）与考古实践和工具的语境不符。",
+    "tip": "考查名词搭配，techniques and tools 是常见并列组合。"
+   },
+   {
+    "number": 16,
+    "answer": "C",
+    "correct": "employed",
+    "why": "employed（采用、运用）表示团队使用了机器人技术、声呐测绘和先进图形技术来勘测遗址。employ 在此为\"使用、利用\"之意，是正式用法。",
+    "traps": "A) ordered（订购/命令）语义不合，不能说\"订购\"技术来勘测。B) provided（提供）主语是 team，团队是使用者而非提供者。D) adjusted（调整）暗示技术已有但需修改，不符合\"运用新技术\"的语境。",
+    "tip": "考查 employ 作\"使用、采用\"义的正式用法。"
+   },
+   {
+    "number": 17,
+    "answer": "B",
+    "correct": "light",
+    "why": "bring to light 是固定搭配，意为\"揭示、使……公之于众、重见天日\"。用在此处表示考古团队让水下城镇的面貌得以呈现，语义完美契合。",
+    "traps": "A) bring to effect（使生效）用于政策或计划，不适用于考古发现。C) bring to reality（变为现实）用于梦想或计划的实现，遗址本已存在。D) bring to mind（使想起）表示回忆联想，与考古发掘语境不符。",
+    "tip": "考查固定短语 bring to light（使重见天日、揭示）。"
+   },
+   {
+    "number": 18,
+    "answer": "B",
+    "correct": "connected",
+    "why": "connected（连接）表示三条主要道路连接着约50座长方形建筑，描述道路与建筑之间的空间关系，符合城市布局描述的语境。",
+    "traps": "A) crossed（穿过）道路穿过建筑在物理上不合逻辑。C) blocked（阻塞）道路不会\"阻塞\"建筑，语义矛盾。D) altered（改变）道路不会\"改变\"建筑，搭配不当。",
+    "tip": "考查动词与城市空间布局的语义搭配，roads connected buildings。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "suggesting",
+    "why": "suggesting（表明、暗示）用作现在分词引导结果状语，表示大量米诺斯风格织布机坠石的出土暗示/表明帕夫洛佩特里是繁荣的贸易中心。考古发现→推断结论，逻辑严密。",
+    "traps": "A) expecting（期望）语法上主语不明，且\"期望\"不是考古发现能做的动作。C) predicting（预测）考古证据是对过去的推断而非对未来的预测。D) recalling（回忆）遗物不能\"回忆\"，主语不当。",
+    "tip": "考查现在分词作状语表示推论，suggesting 为学术语篇高频用词。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "correct": "robust",
+    "why": "robust（强健的、蓬勃的）修饰 textile industry，表示纺织业强盛发达，与前文 thriving trade center（繁荣的贸易中心）语义呼应，共同强调城市的经济繁荣。",
+    "traps": "B) diverse（多样的）强调多样性，但文章重点是纺织业的规模和繁荣程度而非种类多样。C) marginal（边缘的）表示不重要、微不足道，与 thriving 形成矛盾。D) dependent（依赖的）需要介词 on 搭配，且语义方向不对。",
+    "tip": "考查形容词辨析，robust 强调\"蓬勃、强盛\"，与 thriving 呼应。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "Neolithic",
+    "cn": "adj. 新石器时代的"
+   },
+   {
+    "w": "Mycenaean",
+    "cn": "adj. 迈锡尼的（古希腊文明）"
+   },
+   {
+    "w": "tsunami",
+    "cn": "n. 海啸"
+   },
+   {
+    "w": "millennia",
+    "cn": "n. 数千年（millennium 的复数）"
+   },
+   {
+    "w": "oceanographer",
+    "cn": "n. 海洋学家"
+   },
+   {
+    "w": "chamber tomb",
+    "cn": "n. 墓室，室墓"
+   },
+   {
+    "w": "excavation",
+    "cn": "n. 发掘，挖掘"
+   },
+   {
+    "w": "sonar",
+    "cn": "n. 声呐"
+   },
+   {
+    "w": "state-of-the-art",
+    "cn": "adj. 最先进的，顶尖的"
+   },
+   {
+    "w": "loom weight",
+    "cn": "n. 织布机坠石（考古文物）"
+   },
+   {
+    "w": "thriving",
+    "cn": "adj. 繁荣的，兴旺的"
+   },
+   {
+    "w": "rectangular",
+    "cn": "adj. 长方形的，矩形的"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "which",
+    "role": "引导非限制性定语从句，补充说明地震和海啸导致城市下沉的因果关系"
+   },
+   {
+    "w": "when",
+    "role": "构成 was doing...when... 句型，引出弗莱明偶然发现遗址的意外事件"
+   },
+   {
+    "w": "Despite",
+    "role": "引出让步逻辑，转折说明尽管发现令人兴奋但遗址仍被搁置数十年"
+   },
+   {
+    "w": "Since",
+    "role": "引出时间起点，说明自20世纪60年代以来技术的巨大进步"
+   },
+   {
+    "w": "suggesting",
+    "role": "现在分词引导推论性结果状语，由考古证据推出贸易中心的结论"
+   },
+   {
+    "w": "before",
+    "role": "连接时间先后关系，强调遗址在考古学家返回之前长期无人问津"
+   }
+  ]
+ }
+}

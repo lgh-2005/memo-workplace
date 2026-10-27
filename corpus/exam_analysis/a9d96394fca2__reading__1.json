@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "a9d96394fca2__reading__1",
+ "examId": "a9d96394fca2",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 12 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:16:05.490Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56804,
+ "usage": {
+  "prompt_tokens": 1830,
+  "completion_tokens": 3777,
+  "total_tokens": 5607,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1830,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3777,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1830,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "坦桑尼亚纳特龙湖的独特生态系统",
+  "gist": "坦桑尼亚纳特龙湖水质极具腐蚀性，几乎致命于所有动物，却是全球约75%火烈鸟的繁殖地。火烈鸟利用特定水位筑巢繁殖，部分罗非鱼也能在湖边较淡的泻湖中短暂生存。然而，坦桑尼亚政府的苏打灰开采计划可能威胁这一独特生态系统。",
+  "structure": [
+   "第一段：引出纳特龙湖的奇异致命环境及火烈鸟繁殖地身份",
+   "第二段：详述火烈鸟在特定水位下的筑巢繁殖机制",
+   "第三段：专家解释火烈鸟适应盐水的生理特征",
+   "第四段：部分罗非鱼在湖边泻湖中的有限生存",
+   "第五段：政府采矿计划对湖泊生态系统的潜在威胁"
+  ],
+  "difficulty": "中等",
+  "translation": "在坦桑尼亚格雷戈里裂谷的一座山脚下，纳特龙湖呈现出鲜艳的红色，湖边散落着不幸落入咸水中的动物遗骸。蝙蝠、燕子等动物以死亡时的姿态被化学保存下来，被封裹在水中的碳酸钠沉积物里。这片湖泊的景观既怪异又致命——而更不可思议的是，这里竟是全世界近75%火烈鸟的出生地。\n\n湖水的腐蚀性强到能灼伤未适应动物的皮肤和眼睛。然而，火烈鸟是唯一能在这片死亡之地中繁衍生息的物种。每隔三到四年，当条件合适时，湖面上便布满了这些粉色鸟类，它们停下飞行来繁殖后代。全世界四分之三的火烈鸟从裂谷中其他盐湖飞来，在水位达到特定高度时出现的盐晶岛上筑巢——水位太高，鸟儿无法筑巢；水位太低，捕食者就能迅速穿越湖床发动攻击。当水位恰到好处时，幼鸟就被一条腐蚀性的壕沟保护起来，远离捕食者。\n\n莱斯特大学教授大卫·哈珀说：\"火烈鸟的腿部已进化出非常坚韧的皮肤，因此能够耐受盐水。人类则不行，如果双腿暴露在盐水中任何一段时间都会死亡。\"今年到目前为止，水位对火烈鸟来说太高了，无法筑巢。\n\n一些鱼类也在这个湖泊有过有限的成功经历，因为湖泊外缘的温泉流入纳特龙湖时形成了含盐量较低的泻湖。三种罗非鱼在那里兼职般地生存着。哈珀说：\"鱼类在溪流中有避难所，当湖水低、泻湖相互分离时，它们可以扩展到泻湖中。当湖水上涨、所有泻湖连为一体时，鱼类必须退回溪流避难所，否则就会死亡。\"除此之外，没有任何鱼类能在这个天然有毒的湖中存活。\n\n这个独特的生态系统可能很快面临压力。坦桑尼亚政府再次开始开采湖中的苏打灰，用于制造化学品、玻璃和洗涤剂。虽然计划中的作业点距湖40多英里远，通过管道抽取苏打灰，但环保人士担心这仍可能破坏自然的水循环和繁殖地。不过，就目前而言，生命仍在延续——即使是在一个几乎杀死所有接触它的东西的湖泊中。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The lake's landscape is bizarre and deadly... The water is so corrosive that it can burn the skin and eyes of unadapted animals.",
+    "why": "文章第一段指出湖水将动物化学保存，并明确说景观\"bizarre and deadly\"；第二段开头进一步说明水的腐蚀性可灼伤未适应动物的皮肤和眼睛。综合可知，对于大多数动物而言，该湖根本无法居住，A选项\"simply uninhabitable for most animals\"是对原文信息的合理概括和推断。",
+    "traps": "B项\"外界所知甚少\"文中未提及，属无中生有；C项\"多种鸟类的繁殖地\"以偏概全，原文仅提到火烈鸟在此繁殖，而非各种鸟类；D项\"捕食者的理想栖息地\"与原文相反，腐蚀性水质恰恰阻挡了捕食者。",
+    "tip": "注意区分\"唯一物种\"与\"多种物种\"的描述差异。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "too low and predators can move briskly across the lake bed and attack. When the water hits the right level, the baby birds are kept safe from predators by a corrosive ditch.",
+    "why": "原文明确指出，当水位太低时捕食者能迅速穿越湖床攻击幼鸟；而当水位恰到好处时，腐蚀性壕沟能保护幼鸟远离捕食者。因此火烈鸟选择特定水位筑巢的目的是让幼鸟远离捕食者，C项\"stay away from predators\"完全吻合。",
+    "traps": "A项\"更容易找到安全庇护所\"表述含糊，未抓住核心原因是防御捕食者；B项\"脚上长出厚羽毛\"文中未提及，纯属无中生有；D项\"适应盐水\"是火烈鸟已有的进化特征，不是选择特定水位筑巢的目的。",
+    "tip": "注意区分\"目的/结果\"关系，定位因果逻辑关键词。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Flamingos have evolved very leathery skin on their legs so they can tolerate the salt water... Flamingos, however, are the only species that actually makes life in the midst of all that death.",
+    "why": "原文第二段指出火烈鸟是唯一能在这片死亡环境中生存繁衍的物种，第三段哈珀教授解释其腿部进化出坚韧皮肤以耐受盐水，而人类则无法做到。B项\"survive well in salty water\"准确概括了火烈鸟的独特之处。",
+    "traps": "A项\"能在泻湖间迅速移动\"张冠李戴，原文说的是捕食者能迅速穿越湖床；C项\"在腐蚀性壕沟中自然繁殖\"曲解原文，壕沟是保护屏障而非繁殖场所；D项\"知道何时何地筑巢\"虽有一定依据但不是其\"unique\"的核心所在，核心在于生理适应能力。",
+    "tip": "抓住\"unique\"的核心含义，优先选择生理层面的独特性。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Some fish, too, have had limited success vacationing at the lake as less salty lagoons form on the outer edges from hot springs flowing into Lake Natron.",
+    "why": "原文第四段明确说明，温泉流入纳特龙湖时在湖泊外缘形成含盐量较低的泻湖，三种罗非鱼能在那里生存。鱼类在溪流中有避难所，可在泻湖与湖分离时扩展到泻湖。A项\"take refuge in the less salty waters\"准确对应原文信息。",
+    "traps": "B项\"快速逃离捕食者\"文中未提及鱼类面对捕食者的情况，属无中生有；C项\"在泻湖间自由移动\"与原文不符，原文强调泻湖连通时鱼类必须撤退否则会死；D项\"耐受温泉水的高温\"文中未涉及鱼类对温度的耐受问题。",
+    "tip": "关注less salty这一关键修饰语，它是鱼类存活的核心条件。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "conservationists worry it could still upset the natural water cycle and breeding grounds.",
+    "why": "文章最后一段指出坦桑尼亚政府开采苏打灰，环保人士担心此举可能破坏自然水循环和繁殖地。结合全文对纳特龙湖独特生态系统的描述，可推断其后果是对整个湖泊生态系统的破坏，D项\"The disruption of Lake Natron's ecosystem\"是对原文担忧的合理概括。",
+    "traps": "A项\"火烈鸟加速灭绝\"表述过于极端，原文仅说可能影响繁殖地，未提及灭绝；B项\"改变火烈鸟迁徙路线\"文中未提及，属无中生有；C项\"过度开采苏打灰\"偏离了原文重点，原文关注的是生态影响而非资源枯竭。",
+    "tip": "最后一段常出观点态度题或后果推断题，注意区分程度差异。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "corrosive",
+    "cn": "adj. 腐蚀性的，侵蚀性的"
+   },
+   {
+    "w": "perish",
+    "cn": "v. 死亡，毁灭"
+   },
+   {
+    "w": "sodium carbonate",
+    "cn": "n. 碳酸钠（苏打）"
+   },
+   {
+    "w": "predator",
+    "cn": "n. 捕食者，食肉动物"
+   },
+   {
+    "w": "briskly",
+    "cn": "adv. 轻快地，迅速地"
+   },
+   {
+    "w": "leathery",
+    "cn": "adj. 似皮革的，粗糙而坚韧的"
+   },
+   {
+    "w": "lagoon",
+    "cn": "n. 泻湖，环礁湖"
+   },
+   {
+    "w": "refuge",
+    "cn": "n. 避难所，庇护处"
+   },
+   {
+    "w": "thrive",
+    "cn": "v. 繁荣，茁壮成长"
+   },
+   {
+    "w": "soda ash",
+    "cn": "n. 苏打灰，碳酸钠"
+   },
+   {
+    "w": "conservationist",
+    "cn": "n. 环境保护主义者"
+   },
+   {
+    "w": "prevail",
+    "cn": "v. 盛行，占优势；存续"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Three-quarters of the world's flamingos fly over from other salt lakes in the Rift Valley and nest on salt-crystal islands that appear when the water is at a specific level—too high and the birds can't build their nests, too low and predators can move briskly across the lake bed and attack.",
+    "cn": "全世界四分之三的火烈鸟从裂谷中其他盐湖飞来，在水位达到特定高度时出现的盐晶岛上筑巢——水位太高，鸟儿无法筑巢；水位太低，捕食者就能迅速穿越湖床发动攻击。",
+    "note": "主句为\"flamingos fly over and nest on islands\"并列谓语结构；that引导定语从句修饰islands；破折号后用\"too high and...too low and...\"两个省略式条件句补充说明specific level的含义。"
+   },
+   {
+    "en": "Some fish, too, have had limited success vacationing at the lake as less salty lagoons form on the outer edges from hot springs flowing into Lake Natron.",
+    "cn": "一些鱼类也在这个湖泊有过有限的成功经历，因为温泉流入纳特龙湖时在湖泊外缘形成了含盐量较低的泻湖。",
+    "note": "主句为\"Some fish have had limited success\"；vacationing为现在分词作状语表伴随；as引导原因状语从句；flowing into为现在分词作后置定语修饰hot springs。"
+   },
+   {
+    "en": "Although the planned operation will be located more than 40 miles away, drawing the soda ash in through pipelines, conservationists worry it could still upset the natural water cycle and breeding grounds.",
+    "cn": "虽然计划中的作业点距湖40多英里远，通过管道抽取苏打灰，但环保人士担心这仍可能破坏自然的水循环和繁殖地。",
+    "note": "Although引导让步状语从句；drawing为现在分词短语作伴随状语；主句中worry后接省略that的宾语从句；it指代前文的mining operation。"
+   }
+  ]
+ }
+}

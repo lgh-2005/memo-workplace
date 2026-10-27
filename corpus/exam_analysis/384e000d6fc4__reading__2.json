@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "384e000d6fc4__reading__2",
+ "examId": "384e000d6fc4",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 6 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:08:18.051Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52982,
+ "usage": {
+  "prompt_tokens": 1802,
+  "completion_tokens": 3443,
+  "total_tokens": 5245,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1802,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3443,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1802,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国教育体制与教师工会改革争议",
+  "gist": "文章指出美国教育体制已沦为传递不平等的工具而非机会阶梯。作者认为贫困是内城学校表现差的主因，但芝加哥教师工会不应以此为借口抵制改革。研究证明教师质量对学生影响巨大，工会不应保护不称职教师，而应着眼于提高教师薪酬以吸引优秀人才，真正维护35万学生的利益。",
+  "structure": [
+   "第1-2段：提出问题——美国教育传递不平等，改革迫在眉睫",
+   "第3-4段：分析原因——贫困是主因，但工会不应抵制改革而应争取高薪",
+   "第5-6段：引用研究——教师质量对学生成绩和人生有深远影响",
+   "第7-10段：批评工会——保护不称职教师是对学生的侮辱，呼吁改革"
+  ],
+  "difficulty": "中等",
+  "translation": "美国的教育体制与其说是一架通向机会的阶梯，不如说已成为将不平等从一代传递到下一代的结构。\n\n这就是学校改革如此关键的原因。这是一个关乎平等、机会和国家良知的问题。它不仅仅关乎教育，还关乎贫困和公正。\n\n诚然，内城学校表现不佳的主要原因不是教师工会，而是贫困。没有强大教师工会的南方各州，其学校至少和有工会的州一样糟糕。芝加哥的一些教师似乎认为，在贫困问题解决之前，他们不应该被追究责任。我们可以采取一些措施来改变现状，市长拉姆·伊曼纽尔正在尝试其中一些——然而工会却在抵制。\n\n如果工会只专注于提高薪酬，我会表示同情。教师需要获得更高的薪酬，才能吸引最优秀的大学毕业生到全国最差的学校任教。但是，芝加哥工会似乎主要是在利用其政治资本来保护表现不佳者。\n\n有确凿的证据表明，教师的教学效果存在巨大差异。哈佛大学和哥伦比亚大学学者进行的黄金标准研究发现，即使在高贫困率学校，教师也始终对学生产生巨大的正面或负面影响。\n\n遇到排名最后1%的教师，其效果就如同孩子缺了40%的课。遇到排名前20%的教师，就如同孩子多上了一两个月的学。研究发现，四到八年级的优秀教师能以持续数十年的方式提升学生的能力。仅仅在小学阶段拥有一年的优秀教师，就能使学生在青少年时期怀孕的可能性略微降低，上大学的可能性略微提高，并在28岁时赚更多的钱。\n\n如何识别不称职的教师？是的，这是一个挑战。但研究人员正在改进全年评估教师表现的体系，有了三年的数据，通常就能判断哪些教师不合格。\n\n不幸的是，芝加哥工会坚持要求被解雇的教师——往往是因为不称职而被解雇——在新的招聘中应享有优先权。这是对学生的侮辱。\n\n教学是如此重要，它应该像其他职业一样，拥有高薪和良好的工作条件，但对表现最差者几乎没有工作保障。\n\n这不是制衣工人与贪婪老板之间的斗争。芝加哥学校罢工的核心人物既不是罢工者也不是管理层，而是35万名儿童。保护工会的诉求牺牲了那些学生，实际上就是对教育体制中的不公正视而不见。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "America's education system has become less a ladder of opportunity than a structure to transmit inequality from one generation to the next.",
+    "why": "原文第一句明确指出美国教育体制\"与其说是机会阶梯，不如说是传递不平等的结构\"，即教育体制对消除不平等贡献甚微，反而在传递不平等。B选项\"对消除不平等贡献甚少\"是对原文的准确概括和同义改写。",
+    "traps": "A项\"为富人提供机会阶梯\"属于偷换概念，原文说的是教育体制不再是机会阶梯，并非说它只为富人服务；C项\"几代人以来基本未变\"原文无此信息，属于无中生有；D项\"培养了一代代负责任的公民\"原文完全没有提及，属于无中生有。",
+    "tip": "首段首句常为全文论点，注意\"less...than...\"的否定比较结构。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "It's true that the main reason inner-city schools do poorly isn't teachers' unions, but poverty.",
+    "why": "原文第三段明确指出内城学校表现不佳的主要原因不是教师工会，而是贫困(poverty)。B选项\"缺乏经济资源\"(Lack of financial resources)是对poverty的同义改写，贫困本质上就是经济资源匮乏。",
+    "traps": "A项\"不合格的教师\"虽然文章后文讨论了教师质量问题，但原文明确说主要原因是贫困而非教师；C项\"不利的学习环境\"原文未提及学习环境问题，属于无中生有；D项\"潜意识的种族歧视\"全文未涉及种族问题，属于无中生有。",
+    "tip": "注意定位关键词\"main reason\"，poverty与financial resources为同义替换。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "I'd be sympathetic if the union focused solely on higher compensation. Teachers need to be much better paid to attract the best college graduates to the nation's worst schools.",
+    "why": "作者在第四段表示，如果工会只专注于争取更高薪酬，他会表示同情（sympathetic）。言下之意，作者认为争取更高薪酬是合理的、能赢得公众支持的做法。C选项\"要求为教师提高薪酬\"正是作者认为工会应该做的事情。sympathetic暗示作者认可这一诉求。",
+    "traps": "A项\"协助市政府改革学校\"原文未提出此建议，且工会的角色并非协助政府；B项\"为内城学校提供建设性建议\"原文无此说法，属于无中生有；D项\"帮助教师提高教学水平\"虽然合理，但原文作者明确提到的是higher compensation。",
+    "tip": "\"I'd be sympathetic if...\"虚拟语气暗示作者的真实态度和期望。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The gold standard study by Harvard and Columbia University scholars found that even in high-poverty schools, teachers consistently had a huge positive or negative impact.",
+    "why": "该研究发现即使在高贫困率学校，教师也始终对学生产生巨大的正面或负面影响。后文进一步用具体数据说明差教师和好教师对学生的不同影响。D选项\"学生的表现与教师有很大关系\"准确概括了这一研究发现。",
+    "traps": "A项\"许多内城学校教师不能胜任工作\"是对原文的过度推断，研究强调的是教师影响力的差异而非不胜任；B项\"大量内城儿童经常缺课\"中的缺课只是用来类比差教师影响的比喻，并非研究发现；C项\"许多学生对教师不满\"原文完全没有提及学生满意度问题。",
+    "tip": "区分研究发现本身与用来说明发现的类比/例证，不可将比喻当事实。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Unfortunately, the union in Chicago is insisting that teachers who are laid off—often for being ineffective—should get priority in new hiring. That's an insult to students.",
+    "why": "原文指出芝加哥工会坚持让被解雇的教师（往往因为不称职）在新招聘中享有优先权，作者称之为\"对学生的侮辱\"。这意味着工会在保护不称职教师，而这种做法以牺牲学生利益为代价。A选项\"以牺牲学生利益为代价保护不称职教师\"准确概括了作者的批评。",
+    "traps": "B项\"低估了学生辨别好坏教师的能力\"原文未提及学生的辨别能力，属于无中生有；C项\"让学生感到在多方面受到歧视\"原文未提及歧视学生，属于曲解原意；D项\"完全忽视学生在学习过程中的主动性\"原文未讨论学生主动性问题，属于无中生有。",
+    "tip": "破折号内的补充信息\"often for being ineffective\"是理解作者态度的关键线索。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "transmit",
+    "cn": "v. 传递，传送"
+   },
+   {
+    "w": "conscience",
+    "cn": "n. 良知，道德心"
+   },
+   {
+    "w": "accountable",
+    "cn": "adj. 应负责任的，可追究的"
+   },
+   {
+    "w": "compensation",
+    "cn": "n. 报酬，补偿"
+   },
+   {
+    "w": "solely",
+    "cn": "adv. 仅仅，唯一地"
+   },
+   {
+    "w": "political capital",
+    "cn": "n. 政治资本"
+   },
+   {
+    "w": "gold standard",
+    "cn": "n. 黄金标准，权威标准"
+   },
+   {
+    "w": "consistently",
+    "cn": "adv. 一贯地，始终如一地"
+   },
+   {
+    "w": "laid off",
+    "cn": "v. 被解雇，被裁员"
+   },
+   {
+    "w": "insult",
+    "cn": "n./v. 侮辱，冒犯"
+   },
+   {
+    "w": "garment",
+    "cn": "n. 服装，衣服"
+   },
+   {
+    "w": "turning a blind eye",
+    "cn": "视而不见，故意忽视"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "America's education system has become less a ladder of opportunity than a structure to transmit inequality from one generation to the next.",
+    "cn": "美国的教育体制与其说是一架通向机会的阶梯，不如说已成为将不平等从一代人传递到下一代人的结构。",
+    "note": "less A than B结构表示\"与其说A不如说B\"，重心在B；a ladder of opportunity与a structure to transmit inequality形成对比。"
+   },
+   {
+    "en": "Just having a strong teacher for one elementary year left pupils a bit less likely to become mothers as teenagers, a bit more likely to go to college and earning more money at age 28.",
+    "cn": "仅仅在小学阶段拥有一年的优秀教师，就能使学生在青少年时期成为母亲的可能性略微降低，上大学的可能性略微提高，并在28岁时赚更多的钱。",
+    "note": "主语为动名词短语Just having...；left后接复合宾语，pupils为宾语，后跟三个并列的宾补：a bit less likely...、a bit more likely...、earning...。"
+   },
+   {
+    "en": "Protecting the union demand sacrifices those students, in effect turning a blind eye to the injustice in the education system.",
+    "cn": "保护工会的诉求牺牲了那些学生，实际上就是对教育体制中的不公正视而不见。",
+    "note": "Protecting...demand为动名词短语作主语；in effect turning...为现在分词短语作伴随状语，补充说明sacrifices的结果。"
+   }
+  ]
+ }
+}

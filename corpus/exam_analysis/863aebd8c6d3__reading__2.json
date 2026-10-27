@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "863aebd8c6d3__reading__2",
+ "examId": "863aebd8c6d3",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2004 年考研英语真题（旧）",
+ "year": 2004,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:14:50.668Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 73085,
+ "usage": {
+  "prompt_tokens": 1810,
+  "completion_tokens": 4119,
+  "total_tokens": 5929,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1810,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4119,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1810,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "字母表歧视：一种隐性的不公平现象",
+  "gist": "文章提出\"字母表歧视\"（alphabetism）这一概念，指出姓氏首字母排在字母表后半部分的人在生活中遭受隐性不公。作者以出租车公司命名、各国政要和富豪姓氏为例，说明字母表靠前者占优势；进而从学校座位安排、毕业典礼、求职面试等方面论证这种歧视从幼年延续至成年，虽非有意为之，却造成了实际偏见。",
+  "structure": [
+   "第1段：引出alphabetism概念，定义字母表歧视",
+   "第2-3段：大量举例论证姓氏靠前者在商业和政界中占据优势",
+   "第4段：追溯根源，从学校座位安排分析歧视如何从幼年形成",
+   "第5段：延伸至大学毕业、求职等场景，说明歧视贯穿一生"
+  ],
+  "difficulty": "中等",
+  "translation": "在过去一个世纪里，各种不公正和歧视行为已经受到谴责或被认定为非法。但有一种隐蔽的歧视形式却持续盛行：字母表歧视。对于那些尚未意识到这种劣势的人来说，它指的是对那些姓氏首字母处于字母表后半部分的人的歧视。\n\n众所周知，一家名为AAAA的出租车公司在顾客翻阅电话簿时比Zodiac出租车公司拥有巨大优势。不太为人所知的是，亚当·阿博特在人生中比佐伊·齐斯曼拥有的优势。英语姓名在字母表前后两半的分布相当均匀，然而名列前茅的成功人士中，姓氏首字母在A到K之间的人多得令人生疑。\n\n因此，美国总统和副总统的姓氏分别以B和C开头；乔治·布什的前任总统中，有26位姓氏首字母在字母表前半部分，而后半部分仅有16位。更引人注目的是，七国集团七位政府首脑中有六位在字母排序上占有优势（贝卢斯科尼、布莱尔、布什、希拉克、克雷蒂安和小泉）。世界三大央行行长（格林斯潘、杜伊森伯格和速水）的姓氏都靠近字母表前端，尽管其中一位实际使用的是日文字符。世界五大首富（盖茨、巴菲特、艾伦、埃利森和阿尔布雷希特）也是如此。\n\n这仅仅是巧合吗？一种理论——由那些字母排序不利者在大把空闲时间中构想出来的——认为问题从很早就开始了。在幼儿园第一学年开始时，老师从前排开始按字母顺序安排学生座位，以便更容易记住他们的名字。于是近视的小齐斯曼被安排在后排，很少被那些不敏感的老师提问。当时，字母排序不利的学生可能觉得自己侥幸逃脱了。然而结果可能是更差的成绩，因为他们得到的个人关注更少，公开发言的自信心也更弱。\n\n屈辱还在继续。在大学毕业典礼上，姓氏以ABC开头的学生自豪地率先领取奖项；等轮到齐斯曼们时，大多数人已经在打瞌睡了。求职面试的候选名单、选举选票、会议发言人和出席者名单：所有这些往往都按字母顺序排列，人们在逐一浏览时越往后越失去兴趣。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "It has long been known that a taxi firm called AAAA cars has a big advantage over Zodiac cars when customers thumb through their phone directories.",
+    "why": "AAAA cars与Zodiac cars的例子出现在第二段首句，用来具体说明第一段提出的alphabetism现象。第一段指出这种歧视是\"insidious\"（隐蔽的）且\"continues to thrive\"（持续盛行），说明它长期被忽视。A选项\"被忽视的不平等\"（overlooked inequality）精确对应原文\"insidious\"一词的含义——不易察觉、被人忽略。例证题要回到例子所服务的论点，论点即alphabetism是一种隐蔽的、尚未被认定为非法的歧视。",
+    "traps": "B选项\"conspicuous bias\"意为\"显而易见的偏见\"，与原文\"insidious\"（隐蔽的）含义相反，属于反义干扰。C选项\"personal prejudice\"指个人层面的偏见，而alphabetism是一种社会性、系统性的不公，并非针对个人的偏见，属于偷换概念。D选项\"brand discrimination\"将问题局限于品牌层面，而出租车公司只是例子，作者要论证的是更广泛的字母表歧视现象，属于以偏概全。",
+    "tip": "例证题应定位例子所论证的观点，答案往往在例子之前或之后的论点句中。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "But one insidious form continues to thrive: alphabetism. This, for those as yet unaware of such a disadvantage, refers to discrimination against those whose surnames begin with a letter in the lower half of the alphabet.",
+    "why": "前三段的核心论点是alphabetism作为一种歧视形式仍在盛行，且大多数人尚未察觉。第一段用\"insidious\"形容其隐蔽性，用\"for those as yet unaware\"表明多数人未意识到，第二、三段用大量政商界实例佐证这种歧视确实存在但不易被识别。D选项\"某些形式的歧视过于微妙以至于难以辨识\"（too subtle to recognize）正是对\"insidious\"和\"unaware\"的同义推断。",
+    "traps": "A选项\"东西方姓名对成功至关重要\"过度推断，文中提到日本人物仅为补充例证，未将东西方并列比较，也未说名字是成功的关键因素。B选项将失败归咎于字母表本身，文中Zoë Zysman只是举例说明劣势，并未谈及其具体失败，属于无中生有。C选项\"顾客很关注公司名称\"仅是第二段一个细节，不能概括前三段主旨，属于以偏概全。",
+    "tip": "推断题需综合多段信息，找出贯穿的核心观点，避免被个别细节干扰。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "So short-sighted Zysman junior gets stuck in the back row, and is rarely asked the improving questions posed by those insensitive teachers. Yet the result may be worse qualifications, because they get less individual attention, as well as less confidence in speaking publicly.",
+    "why": "第四段描述了按字母顺序排座位导致后排学生得不到关注（less individual attention），被\"不敏感的老师\"（insensitive teachers）忽略，结果是更差的成绩和更弱的自信。作者通过反面描写暗示：老师应当关注所有学生，而非仅关注前排。C选项\"老师应关注所有学生\"是对这段反面论述的正面推断。",
+    "traps": "A选项\"问题常被提给更聪明的学生\"与原文不符，文中说前排学生被提问更多是因为座位靠前而非更聪明，属于偷换原因。B选项\"字母排序不利的学生常逃课\"曲解了原文\"think they have had a lucky escape\"，原文指他们庆幸没被提问，而非逃课，属于望文生义。D选项\"应按视力安排座位\"过度引申了\"short-sighted\"这一细节，原文重点是字母排序问题而非视力问题，属于以偏概全。",
+    "tip": "反面描述常暗含正面建议，推断时需将批评转化为作者真正想传达的主张。"
+   },
+   {
+    "number": 29,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "At university graduation ceremonies, the ABCs proudly get their awards first; by the time they reach the Zysmans most people are literally having a ZZZ.",
+    "why": "\"ZZZ\"在英语中是拟声词，模拟打鼾声，常见于漫画中表示睡觉。句中\"literally\"意为\"确实地、真正地\"，强调人们不是比喻性地困倦，而是真的在打瞌睡。毕业典礼冗长，等到字母表末尾的姓氏时，观众已经昏昏欲睡。B选项\"noisily dozing off\"（吵闹地打盹）准确对应了ZZZ表示打鼾入睡的含义。",
+    "traps": "A选项\"不耐烦\"虽有一定关联，但ZZZ专指打瞌睡/打鼾，而非单纯的不耐烦，且\"literally\"强调了真实的睡觉状态。C选项\"感到屈辱\"是alphabetically disadvantaged者的感受，而非\"most people\"的状态，属于张冠李戴。D选项\"忙于字谜游戏\"纯属无中生有，将ZZZ曲解为文字游戏，与语境不符。",
+    "tip": "遇到俚语或拟声词，需结合文化常识与上下文语境判断含义。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Shortlists for job interviews, election ballot papers, lists of conference speakers and attendees: all tend to be drawn up alphabetically, and their recipients lose interest as they plough through them.",
+    "why": "全文论述的核心是按字母顺序排列事物这一惯常做法无意中造成了对姓氏靠后者的不利。文中多处表明这种歧视并非刻意为之——老师按字母排座位是\"to make it easier to remember their names\"，各种名单按字母排列也是惯例——但客观上产生了偏见效果。D选项\"按字母排列可能导致无意的偏见\"（unintentional bias）精准概括了这一主旨。",
+    "traps": "A选项\"N到Z开头姓氏的人经常受到虐待\"过于极端，原文说的是处于不利地位（disadvantaged），而非受到虐待（ill-treated），属于程度夸大。B选项\"西方世界的VIP从字母表歧视中获益良多\"因果倒置，文中说成功人士碰巧姓氏靠前，并非他们主动利用alphabetism获益，且\"gain a great deal\"言过其实。C选项\"消除字母表歧视的运动还有很长的路要走\"在原文中找不到依据，文章未提及任何消除该歧视的运动或行动，属于无中生有。",
+    "tip": "做细节判断题时注意原文用词的程度，避免选择过度推断或绝对化的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "insidious",
+    "cn": "adj. 隐蔽的，暗中为害的"
+   },
+   {
+    "w": "alphabetism",
+    "cn": "n. 字母表歧视（文中自创词）"
+   },
+   {
+    "w": "thrive",
+    "cn": "v. 盛行，蓬勃发展"
+   },
+   {
+    "w": "condemned",
+    "cn": "v. 谴责，判刑（condemn的过去分词）"
+   },
+   {
+    "w": "thumb through",
+    "cn": "v. 快速翻阅"
+   },
+   {
+    "w": "suspiciously",
+    "cn": "adv. 令人起疑地，可疑地"
+   },
+   {
+    "w": "predecessors",
+    "cn": "n. 前任，前辈（predecessor的复数）"
+   },
+   {
+    "w": "infant school",
+    "cn": "n. 幼儿园，幼儿学校"
+   },
+   {
+    "w": "qualifications",
+    "cn": "n. 资格，学历，资质"
+   },
+   {
+    "w": "humiliation",
+    "cn": "n. 屈辱，丢脸"
+   },
+   {
+    "w": "ballot papers",
+    "cn": "n. 选票"
+   },
+   {
+    "w": "plough through",
+    "cn": "v. 费力地读完，艰难地处理"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "One theory, dreamt up in all the spare time enjoyed by the alphabetically disadvantaged, is that the rot sets in early.",
+    "cn": "一种理论——由那些字母排序不利者在充裕的闲暇时间里构想出来的——认为问题从很早就开始了。",
+    "note": "主干为One theory is that the rot sets in early。中间dreamt up...disadvantaged为过去分词短语作后置定语修饰theory，其中enjoyed by...为过去分词修饰spare time，构成双重嵌套。"
+   },
+   {
+    "en": "So short-sighted Zysman junior gets stuck in the back row, and is rarely asked the improving questions posed by those insensitive teachers.",
+    "cn": "于是近视的小齐斯曼被安排在后排，很少被那些不敏感的老师提那些有启发性的问题。",
+    "note": "并列谓语gets stuck和is rarely asked共享主语Zysman junior；posed by those insensitive teachers为过去分词短语作后置定语修饰questions；improving意为\"有教育意义的\"。"
+   },
+   {
+    "en": "At the start of the first year in infant school, teachers seat pupils alphabetically from the front, to make it easier to remember their names.",
+    "cn": "在幼儿园第一学年开始时，老师从前排开始按字母顺序安排学生座位，以便更容易记住他们的名字。",
+    "note": "主干为teachers seat pupils；At the start...为时间状语；alphabetically from the front为方式状语；to make it easier...为目的状语，其中it为形式宾语，to remember their names为真正宾语。"
+   }
+  ]
+ }
+}

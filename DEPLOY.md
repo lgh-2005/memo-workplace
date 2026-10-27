@@ -71,8 +71,12 @@ ECS 控制台 → 安全组 → 添加入方向规则：TCP 5178（源建议先�
 > - 用 nginx 反向代理 80/443 并加 Basic Auth 或只放行自己 IP；
 > - 安全组源地址只填你常用网络的出口 IP。
 
+## 二、以后更新（v3.8.0 发布门禁、备份恢复与回滚）
+
 ## 二、以后更新（v3.7.1 发布门禁、备份恢复与回滚）
 
+
+v3.8.0 真题参考解析：解析数据是**仓库内只读内容**（`corpus/exam_analysis/*.json`，700 个单元，随 git 一起分发），与 `corpus/exams.jsonl` 同等对待——**不进 `data/`、不参与数据备份、无需 rsync 排除**。发布时随产品文件一起同步即可；服务端按目录 mtime 热索引，新增/替换解析文件后**无需重启**。若某套真题暂无解析，接口返回 `ready:false`，前端显示「暂无解析」，不影响做题。可用 `node scripts/exam-analysis-build.mjs --dry-run` 核对覆盖情况、`--only=<unitId>` 补跑单个单元。
 v3.7.0 划词助手接入离线英汉词典（ECDICT，MIT），词库落在部署产物目录 `runtime/ecdict/ecdict.db`（+ 可选 `lemma.db` 变形表）。它**不进 git、不参与 `data/` 备份**，发布/回滚 rsync 已显式排除 `runtime/`，因此升级代码不会覆盖或删除词库；首次部署需在服务器手工放置词库：
 
 ```bash

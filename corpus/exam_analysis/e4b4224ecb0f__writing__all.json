@@ -1,0 +1,148 @@
+{
+ "schemaVersion": 1,
+ "id": "e4b4224ecb0f__writing__all",
+ "examId": "e4b4224ecb0f",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2026 年 6 月英语六级真题（第 1 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:05:57.059Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44427,
+ "usage": {
+  "prompt_tokens": 743,
+  "completion_tokens": 2922,
+  "total_tokens": 3665,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 743,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2922,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 743,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕\"城市化趋势下城市居民应培养对自然的热爱\"展开议论，字数150-200词。",
+    "outline": [
+     "引出话题：以题目指定首句开头，描述城市化背景下人与自然日益疏离的现状，点明培养热爱自然之情的紧迫性。",
+     "分层论证：从身心健康和生态保护两个角度阐释热爱自然的必要性，辅以事实论据或个人经历。",
+     "提出建议与总结：从个人和政府两个层面给出可行措施，重申亲近自然对城市生活的重要意义。"
+    ],
+    "sample": "With the trend of Urbanization, it is vitally important for city residents to develop a stronger love for Nature. As skyscrapers replace green fields and concrete jungles expand relentlessly, urban dwellers find themselves increasingly disconnected from the natural world.\n\nThere are compelling reasons why fostering this bond matters. First and foremost, exposure to nature has been scientifically proven to alleviate stress and enhance mental well-being. City residents who regularly visit parks or engage in outdoor activities tend to exhibit lower levels of anxiety and depression. Furthermore, a genuine appreciation for nature motivates individuals to adopt eco-friendly habits, such as reducing waste and conserving energy, which are indispensable for sustainable urban development. Taking my own experience as an example, since I began weekend hikes in the suburban hills, I have not only felt more refreshed but also become far more conscious of environmental protection in daily life.\n\nTo cultivate this love for nature, both individuals and governments should take concrete steps. Citizens can incorporate nature into their daily routines by growing plants at home or joining community gardening projects. Meanwhile, municipal authorities ought to invest in urban green spaces, establishing more parks and ecological corridors that bring nature closer to residents.\n\nIn conclusion, reconnecting with nature is not a luxury but a necessity for city dwellers striving for a healthier and more harmonious life.",
+    "phrases": [
+     {
+      "en": "concrete jungle",
+      "cn": "钢筋水泥丛林；形容高度城市化的环境，写作中常用来对比自然景观。"
+     },
+     {
+      "en": "be disconnected from",
+      "cn": "与……脱节/疏离；用于描述人与自然关系的疏远，比 separated from 更正式。"
+     },
+     {
+      "en": "alleviate stress and enhance mental well-being",
+      "cn": "缓解压力并提升心理健康；健康话题高频搭配，well-being 比 health 更学术。"
+     },
+     {
+      "en": "a genuine appreciation for",
+      "cn": "对……由衷的欣赏/热爱；genuine 比 real 更高级，appreciation 比 love 更书面。"
+     },
+     {
+      "en": "indispensable for sustainable development",
+      "cn": "对可持续发展不可或缺；indispensable 替换 necessary，提升词汇档次。"
+     },
+     {
+      "en": "incorporate ... into one's daily routine",
+      "cn": "将……融入日常生活；强调行动的可操作性，适用于建议段。"
+     },
+     {
+      "en": "ecological corridor",
+      "cn": "生态走廊；城市规划术语，展现话题知识储备，阅卷加分词。"
+     },
+     {
+      "en": "not a luxury but a necessity",
+      "cn": "不是奢侈而是必需；经典对比句型，适合用于总结升华。"
+     },
+     {
+      "en": "take concrete steps",
+      "cn": "采取切实步骤；concrete 比 practical 更有力度，常用于建议段。"
+     }
+    ],
+    "pitfalls": [
+     "忘记在文章开头抄写题目指定首句，直接扣分。",
+     "全文只喊口号不举例、不展开，内容空洞导致档次偏低。",
+     "词数不足150词或超过200词，阅卷老师会酌情扣分。",
+     "通篇使用 important / good / bad 等初级词汇，缺乏词汇亮点。",
+     "段落之间缺少逻辑连接词，行文跳跃，影响连贯性得分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Nature is good for our health.",
+      "better": "Exposure to nature has been scientifically proven to alleviate stress and enhance mental well-being.",
+      "note": "用被动语态+学术副词增加说服力，避免口语化。"
+     },
+     {
+      "plain": "The government should build more parks.",
+      "better": "Municipal authorities ought to invest in urban green spaces, establishing more parks and ecological corridors.",
+      "note": "主语升级为 municipal authorities，动词搭配更精准，现在分词补充细节。"
+     },
+     {
+      "plain": "We should love nature more.",
+      "better": "Reconnecting with nature is not a luxury but a necessity for city dwellers striving for a harmonious life.",
+      "note": "not...but 对比句式配合现在分词短语做后置定语，句式更丰富。"
+     },
+     {
+      "plain": "Many people feel stressed in cities.",
+      "better": "As concrete jungles expand relentlessly, urban dwellers find themselves increasingly disconnected from the natural world.",
+      "note": "As 引导时间/原因状语从句，find+反身代词+形容词结构更高级。"
+     },
+     {
+      "plain": "I started hiking and I feel better now.",
+      "better": "Since I began weekend hikes in the suburban hills, I have not only felt more refreshed but also become far more conscious of environmental protection.",
+      "note": "Since 引导时间状语从句搭配 not only...but also 并列结构，逻辑更紧凑。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As skyscrapers replace green fields and concrete jungles expand relentlessly, urban dwellers find themselves increasingly disconnected from the natural world. —— 城市化生动描写：用 replace 和 expand 两个动词平行推进，disconnected 精准表达人与自然的疏离。",
+   "Exposure to nature has been scientifically proven to alleviate stress and enhance mental well-being. —— 学术论证句：被动语态+副词 scientifically 增强权威感，alleviate 和 enhance 构成动词对仗。",
+   "A genuine appreciation for nature motivates individuals to adopt eco-friendly habits, which are indispensable for sustainable urban development. —— 因果链条句：appreciation → motivates → adopt → indispensable，逻辑层层递进，非限制性定语从句补充论证。",
+   "Municipal authorities ought to invest in urban green spaces, establishing more parks and ecological corridors that bring nature closer to residents. —— 建议段亮点句：现在分词短语做伴随状语，that 引导定语从句，信息密度高。",
+   "Reconnecting with nature is not a luxury but a necessity for city dwellers striving for a healthier and more harmonious life. —— 总结升华句：not...but 构成鲜明对比，striving 现在分词做后置定语，结尾有力。"
+  ]
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "116719f515cc__banked_cloze__all",
+ "examId": "116719f515cc",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2022 年 6 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:43:44.360Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 71713,
+ "usage": {
+  "prompt_tokens": 1404,
+  "completion_tokens": 4324,
+  "total_tokens": 5728,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1404,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4324,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1404,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "善意思维对心理健康的积极影响",
+  "gist": "实证研究表明，对自己和他人抱有善意想法有益于整体健康。实验将参与者分组，分别接受鼓励善意思考或自我批评的音频指导，结果发现善意思考者身体更放松、心率下降，而自我批评者心率和出汗反应上升。研究进一步指出，关闭身体的威胁反应可增强免疫系统，对反复抑郁患者尤其有益，以自我觉察为基础的认知疗法可帮助他们学会以同情心面对消极想法。",
+  "difficulty": "中等",
+  "translation": "实证证据表明，对自己和亲人抱有善意的想法对整体健康有益。研究人员开展了一项调查，以探索拥有善意想法与个人心理状态之间的关联。\n\n在这项研究中，五组参与者分别接受了不同的音频指导，其中一些鼓励参与者友善地看待自己，另一些则引导他们以自我批评的方式思考。在听完音频指导后，参与者被要求回答一系列问题，包括他们是否感到焦虑、他们对自己表现善意的可能性有多大，以及他们感觉自己与他人的联系有多紧密。\n\n被指导善意看待自己的参与者更有可能表现出与放松和安全感相关的身体反应。他们的心率也有所下降，这是心脏能够灵活应对各种情境的健康标志。然而，相反地，那些听了批评性音频片段的参与者则被发现随后心率更高、出汗反应更强，这两者都表示威胁感和痛苦情绪。\n\n能够关闭身体自然威胁反应的能力可以增强一个人的免疫系统。这反过来又让他们更有可能从疾病中快速康复。这些发现帮助我们进一步理解一些临床试验的研究结果，即患有反复性抑郁症的个体尤其受益于基于自我觉察的认知疗法。他们本质上学会了对自己更加同情。\n\n其意义在于，对于容易患抑郁症的人来说，以同情心面对他们的消极想法和感受是一种截然不同的方式——这些想法并非事实。这引入了一种不同的存在和认知方式，对许多人来说具有很大的变革性。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "G",
+    "correct": "correlation",
+    "why": "空格位于定冠词 the 之后、介词 between 之前，需要填入一个名词。the correlation between...and... 意为\"……与……之间的关联\"，是固定学术搭配，语义上表示研究善意想法与心理状态之间的\"相关性\"，完全符合上下文。",
+    "traps": "名词候选还有 compassion（同情心），但 compassion between...and... 在语义上不成立，无法表达两个变量之间的关系；其他名词不在备选或词性不符。",
+    "tip": "考查名词搭配：the correlation between A and B。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "amiably",
+    "why": "空格出现在 think 之后，需要副词修饰动词。上文说 kind thoughts，此处音频鼓励参与者\"友善地\"看待自己，amiably（友好地）与 kind 呼应，且与后半句 self-critical manner 形成对比。",
+    "traps": "adversely 也是副词，但意为\"不利地\"，与 encouraged（鼓励）的积极语境矛盾；语境要求正面含义的副词，只有 amiably 符合。",
+    "tip": "考查副词语义辨析及上下文褒贬色彩对应。"
+   },
+   {
+    "number": 28,
+    "answer": "F",
+    "correct": "connected",
+    "why": "空格位于 how 之后、they felt 之前，构成 how + adj. + 主语 + 系动词结构。connected to other individuals 意为\"与他人有联系\"，是常见搭配，语义上与前两个问题（焦虑感、善意程度）并列，衡量社会连接感。",
+    "traps": "其他形容词如 recurrent 和 prone 虽为形容词，但 recurrent 修饰反复发生的事物、prone 需搭配 to 表示\"易于\"，均不能与 felt...to other individuals 构成合理语义。",
+    "tip": "考查 feel connected to 的固定搭配及感官系动词后接形容词。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "correct": "adversely",
+    "why": "空格位于 Yet 之后、逗号之间，作插入语状语。前文说善意思考者身体放松、心率下降，此处用 Yet, adversely 转折，引出听批评性音频者的负面反应，adversely 意为\"相反地、不利地\"，加强转折语气。",
+    "traps": "其他副词 amiably 已在第27题使用，且语义为\"友好地\"，与此处描述负面结果的语境不符。选词填空每词只用一次，排除已用选项。",
+    "tip": "考查转折语境下的副词选择及一词一用原则。"
+   },
+   {
+    "number": 30,
+    "answer": "N",
+    "correct": "signify",
+    "why": "空格前为 both of which（关系代词作主语），后接宾语 feelings of threat and distress，需要一个及物动词。signify 意为\"表示、意味着\"，说明高心率和出汗反应\"代表\"威胁和痛苦感，逻辑通顺。",
+    "traps": "boost 也是动词，但意为\"增强\"，说心率和出汗\"增强\"威胁感在因果逻辑上不恰当；此处需要表示\"标志、象征\"含义的动词，只有 signify 合适。",
+    "tip": "考查动词语义辨析：signify 表\"意味着\"，用于指标与含义的对应。"
+   },
+   {
+    "number": 31,
+    "answer": "C",
+    "correct": "boost",
+    "why": "空格前为情态动词 can，后接宾语 a person's immune system，需要动词原形。boost 意为\"增强、提升\"，boost one's immune system 是常见健康类搭配，表示关闭威胁反应能增强免疫系统。",
+    "traps": "signify 也是动词但已用于第30题；且\"signify 免疫系统\"语义不通。其余候选词词性不符（名词或形容词），无法填入 can 之后。",
+    "tip": "考查动词搭配：boost + immune system 为高频健康话题表达。"
+   },
+   {
+    "number": 32,
+    "answer": "M",
+    "correct": "recurrent",
+    "why": "空格位于 with 之后、名词 depression 之前，需要形容词修饰名词。recurrent 意为\"反复发作的\"，recurrent depression（反复性抑郁症）是心理学标准术语，语义上强调这类患者尤其受益于认知疗法。",
+    "traps": "cognitive 也是形容词，但 cognitive depression 不是标准术语，且 cognitive 用于第33题修饰 therapy 更为恰当。prone 作形容词常作表语（be prone to），很少作前置定语修饰 depression。",
+    "tip": "考查医学/心理学术语：recurrent depression（复发性抑郁症）。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "correct": "cognitive",
+    "why": "空格位于 self-awareness-based 之后、名词 therapy 之前，需要形容词。cognitive therapy（认知疗法）是心理治疗领域的核心术语，与上下文讨论的自我觉察和思维方式改变高度吻合。",
+    "traps": "recurrent 虽也是形容词但已用于第32题，且 recurrent therapy 语义不通，疗法不存在\"反复的\"说法。其余候选词词性不符。",
+    "tip": "考查专业术语：cognitive therapy（认知疗法），心理学高频词汇。"
+   },
+   {
+    "number": 34,
+    "answer": "L",
+    "correct": "prone",
+    "why": "空格位于 people 之后、to depression 之前，构成后置定语。prone to 意为\"易于……的\"，people prone to depression 即\"容易患抑郁症的人\"，是固定搭配，语义上承接前文对抑郁症患者的讨论。",
+    "traps": "connected to 虽然也能接 to，但 people connected to depression 意为\"与抑郁症有关联的人\"，语义模糊且不符合医学语境；况且 connected 已用于第28题。",
+    "tip": "考查固定搭配：be prone to（易于……），常用于描述疾病易感性。"
+   },
+   {
+    "number": 35,
+    "answer": "E",
+    "correct": "compassion",
+    "why": "空格位于介词 with 之后，需要名词。meeting negative thoughts with compassion 意为\"以同情心面对消极想法\"，与全文\"善意思维有益健康\"的主题首尾呼应，且与后文 a radically different way 强调方式的转变一致。",
+    "traps": "correlation 也是名词，但 with correlation 在此语境下毫无意义，不能表示面对消极情绪的方式。其余未用候选词词性不符。",
+    "tip": "考查主题词复现：compassion 与文章核心概念 kind/kindness 语义呼应。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "correlation",
+    "cn": "n. 相关性，关联"
+   },
+   {
+    "w": "amiably",
+    "cn": "adv. 友好地，和蔼地"
+   },
+   {
+    "w": "adversely",
+    "cn": "adv. 不利地，相反地"
+   },
+   {
+    "w": "signify",
+    "cn": "v. 表示，意味着"
+   },
+   {
+    "w": "recurrent",
+    "cn": "adj. 反复发作的，周期性的"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的（心理学术语）"
+   },
+   {
+    "w": "prone",
+    "cn": "adj. 易于……的（常接 to）"
+   },
+   {
+    "w": "compassion",
+    "cn": "n. 同情心，怜悯"
+   },
+   {
+    "w": "empirical",
+    "cn": "adj. 以实证为基础的，经验的"
+   },
+   {
+    "w": "agitated",
+    "cn": "adj. 焦虑不安的，激动的"
+   },
+   {
+    "w": "distress",
+    "cn": "n. 痛苦，忧虑；危难"
+   },
+   {
+    "w": "transformative",
+    "cn": "adj. 具有变革性的，改造性的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主题（善意思维与心理健康），标注各空所在句的语法结构。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空的候选范围。",
+   "第三步：优先做有固定搭配的题（如 correlation between、prone to、cognitive therapy），快速锁定确定答案。",
+   "第四步：利用上下文褒贬色彩和对比逻辑排除干扰项（如 amiably vs. adversely 的正反对应）。",
+   "第五步：每词只用一次，已填入的词立即划去，最后检查剩余空格是否语义通顺、语法正确。"
+  ]
+ }
+}

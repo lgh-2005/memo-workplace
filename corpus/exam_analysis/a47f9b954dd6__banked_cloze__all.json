@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "a47f9b954dd6__banked_cloze__all",
+ "examId": "a47f9b954dd6",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2023 年 3 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:48:58.152Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66246,
+ "usage": {
+  "prompt_tokens": 1375,
+  "completion_tokens": 4225,
+  "total_tokens": 5600,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1375,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4225,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1375,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人类存亡风险与技术进步",
+  "gist": "文章围绕牛津大学哲学教授尼克·博斯特罗姆的研究展开，指出人类灭绝风险被严重低估，尤其是源自人类自身技术的风险。尽管如此，博斯特罗姆并非科技反对者，而是超人类主义的倡导者，他认为技术是一座必须谨慎跨越的桥梁，以帮助人类达到更好的存在模式。",
+  "difficulty": "中等",
+  "translation": "尽管这可能令人难以想象，但人类——每一个人——终有一天可能会从地球表面被彻底消灭。我们已经学会了担心小行星和超级火山，但据牛津大学哲学教授尼克·博斯特罗姆所说，更可能的情景是我们人类将自我毁灭。\n\n博斯特罗姆教授是牛津大学人类未来研究所的主任，他在多篇论文中论证了人类灭绝风险被人们严重误解，更糟糕的是，被社会严重低估。这些生存风险中有一些是相当为人所知的，尤其是自然风险。但其他风险则鲜为人知甚至闻所未闻。最令博斯特罗姆担忧的是那些源自人类技术的生存风险子集，他预计这一子集在下个世纪数量和效力都将增长。\n\n尽管他对技术进步给人类带来的风险感到担忧，但博斯特罗姆并非科技进步的反对者。事实上，他是超人类主义的长期倡导者——即通过技术手段改善人类状况甚至人类本性的努力。从长远来看，他将技术视为一座桥梁，一座我们人类必须小心翼翼跨越的桥梁，以达到新的、更好的存在模式。在他的工作中，博斯特罗姆运用哲学和数学工具，尤其是概率论，来试图确定我们作为一个物种如何才能实现这种安全通过。以下是我与博斯特罗姆关于一些最有趣且最令人担忧的生存风险的对话——这些风险是人类在未来几十年和几个世纪中可能遭遇的——以及关于我们能做些什么来确保我们比这些风险存活更久。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "K",
+    "correct": "scenario",
+    "why": "空格前有冠词the和形容词more likely，需要填入名词。scenario意为\"情景、场景\"，与上下文\"人类将自我毁灭\"这一预测情形完全吻合，the more likely scenario构成完整名词短语。",
+    "traps": "extinction虽是名词但语义不通，此处并非指\"更可能的灭绝\"，而是指\"更可能的情景是……\"；species放在此处语法和语义均不搭配。",
+    "tip": "冠词+形容词+___，判断需填名词，再由语义确定。"
+   },
+   {
+    "number": 27,
+    "answer": "G",
+    "correct": "extinction",
+    "why": "空格位于human和risks之间，需填名词构成复合修饰结构。human extinction risks意为\"人类灭绝风险\"，与文章首段提到的人类被消灭的主题高度一致，且与后文existential risks同义呼应。",
+    "traps": "obscure为形容词，放在此处语法虽可但与human搭配不当，语义也无法解释；scenario不能修饰risks。",
+    "tip": "名词+___+名词结构，中间词修饰后者。"
+   },
+   {
+    "number": 28,
+    "answer": "L",
+    "correct": "severely",
+    "why": "空格后为过去分词underestimated，需要副词修饰。severely underestimated意为\"被严重低估\"，与前半句poorly understood形成并列递进关系，且worse still暗示程度更深。",
+    "traps": "emphasized虽为动词过去分词形式，但此处需要副词而非动词；obscure为形容词，不能修饰过去分词。",
+    "tip": "___+过去分词结构，空格处必须是副词。"
+   },
+   {
+    "number": 29,
+    "answer": "H",
+    "correct": "obscure",
+    "why": "空格前为系动词are，需填形容词作表语。obscure意为\"鲜为人知的\"，与后面的even exotic形成递进关系，同时与前文fairly well known形成对比：有些风险广为人知，但其他的则鲜为人知甚至匪夷所思。",
+    "traps": "severely为副词不能作表语；posed为过去分词虽可作表语但语义（被摆出的）与上下文不匹配。",
+    "tip": "系动词后填形容词，注意与or even exotic构成递进。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "correct": "arise",
+    "why": "空格前为that引导的定语从句，主语为risks，需要不及物动词。arise from意为\"源自、产生于\"，表示这些风险来源于人类技术，与下文a subset that he expects to grow语义衔接。",
+    "traps": "encounter为及物动词且语义不对（风险不能\"遇到\"技术）；posed需要与by搭配而此处后接from。",
+    "tip": "arise from为固定搭配，意为\"源自\"。"
+   },
+   {
+    "number": 31,
+    "answer": "J",
+    "correct": "posed",
+    "why": "空格处需要过去分词作后置定语修饰risks。risks posed to humans by technological progress意为\"技术进步给人类带来的风险\"，pose risks to sb是固定搭配的被动形式，此处结构完整。",
+    "traps": "arise虽已在30题使用且不能接to构成被动定语结构；emphasized语义不合（风险不是被\"强调给\"人类的）。",
+    "tip": "pose risks to sb的被动转化为risks posed to sb。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "correct": "advocate",
+    "why": "空格前为冠词a和形容词longtime，需填可数名词。advocate意为\"倡导者、拥护者\"，a longtime advocate of trans-humanism表示\"超人类主义的长期倡导者\"，与后文对超人类主义的解释以及Bostrom的正面态度吻合。",
+    "traps": "scenario虽为名词但语义不合，不能说\"超人类主义的情景\"；extinction语义荒谬。",
+    "tip": "a longtime ___of sth，需填表人的名词。"
+   },
+   {
+    "number": 33,
+    "answer": "I",
+    "correct": "particular",
+    "why": "in particular为固定搭配，意为\"尤其是、特别是\"，用于进一步说明前述的mathematics工具中具体指概率论(probability theory)。上下文从泛指到特指的逻辑十分清晰。",
+    "traps": "其他词均无法与in搭配构成有意义的介词短语；in severely、in obscure等均不成立。",
+    "tip": "in particular为高频固定搭配，意为\"尤其\"。"
+   },
+   {
+    "number": 34,
+    "answer": "N",
+    "correct": "species",
+    "why": "空格前为冠词a，需填可数名词单数。we as a species意为\"我们作为一个物种\"，将人类整体视为一个物种来讨论如何安全度过风险，呼应全文关于人类存亡的宏观主题。",
+    "traps": "advocate虽为可数名词但语义不通（我们作为一个倡导者？）；scenario放在此处也不合逻辑。",
+    "tip": "as a ___表示身份归类，需填表整体类别的名词。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "correct": "encounter",
+    "why": "空格前为情态动词might，需填动词原形。encounter意为\"遭遇、面临\"，humanity might encounter表示\"人类可能遭遇的\"，与后面in the decades and centuries to come（在未来几十年和几个世纪中）搭配，指未来将面对的生存风险。",
+    "traps": "arise为不及物动词，不能直接接宾语existential risks；posed为过去分词形式不能跟在might后面。",
+    "tip": "might+___+宾语，需填及物动词原形。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "scenario",
+    "cn": "n. 情景，场景；方案"
+   },
+   {
+    "w": "extinction",
+    "cn": "n. 灭绝，消亡"
+   },
+   {
+    "w": "severely",
+    "cn": "adv. 严重地，严厉地"
+   },
+   {
+    "w": "obscure",
+    "cn": "adj. 鲜为人知的，晦涩的；v. 使模糊"
+   },
+   {
+    "w": "advocate",
+    "cn": "n. 倡导者，拥护者；v. 提倡，主张"
+   },
+   {
+    "w": "posed",
+    "cn": "v. 造成，带来（pose的过去分词）"
+   },
+   {
+    "w": "encounter",
+    "cn": "v. 遭遇，遇到；n. 邂逅，遭遇"
+   },
+   {
+    "w": "potency",
+    "cn": "n. 效力，威力"
+   },
+   {
+    "w": "existential",
+    "cn": "adj. 存在的，有关存在的"
+   },
+   {
+    "w": "trans-humanism",
+    "cn": "n. 超人类主义"
+   },
+   {
+    "w": "luddite",
+    "cn": "n. 科技进步反对者"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性（名词/动词/形容词/副词）分组。",
+   "第二步：根据空格前后的语法标志（冠词、介词、系动词、情态动词等）判断所需词性，缩小候选范围。",
+   "第三步：结合上下文语义和逻辑关系（并列、递进、转折、对比）从同词性候选中选出最佳项。",
+   "第四步：注意固定搭配（如arise from、in particular、pose risks to），优先锁定搭配明确的题目。",
+   "第五步：填完后回读全文，检查每个词是否只用一次，语法和语义是否通顺。"
+  ]
+ }
+}

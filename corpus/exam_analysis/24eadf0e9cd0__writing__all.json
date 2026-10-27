@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "24eadf0e9cd0__writing__all",
+ "examId": "24eadf0e9cd0",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2016 年 12 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:06:18.013Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 39481,
+ "usage": {
+  "prompt_tokens": 704,
+  "completion_tokens": 2048,
+  "total_tokens": 2752,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 704,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2048,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 704,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "短文写作，围绕\"创新\"展开，需涵盖创新的重要性以及鼓励创新的措施，字数150-200词。",
+    "outline": [
+     "第一段：引出话题，点明创新在当今时代的核心地位，总述其重要性。",
+     "第二段：分两层展开——先阐述创新的重要性（经济发展、社会问题解决等），再提出鼓励创新的具体措施（政府政策、教育改革、企业机制）。",
+     "第三段：总结全文，呼吁各方共同努力，营造创新氛围，实现可持续发展。"
+    ],
+    "sample": "Innovation: The Driving Force of Progress\n\nIn an era of fierce global competition, innovation has emerged as the cornerstone of social advancement and economic prosperity. Its significance, therefore, can hardly be overstated.\n\nTo begin with, innovation serves as the primary engine of economic growth. Groundbreaking technologies and novel business models have revolutionized countless industries, creating unprecedented job opportunities and boosting productivity. Moreover, innovation plays a pivotal role in addressing pressing social challenges, ranging from environmental degradation to public health crises. For instance, the rapid development of renewable energy technologies offers a promising solution to climate change. To foster a culture of innovation, concerted efforts must be made at multiple levels. First, the government should increase funding for scientific research and provide tax incentives for innovative enterprises. Second, educational institutions ought to reform their curricula to cultivate students' critical thinking and creativity rather than emphasizing rote memorization. Last but not least, corporations should establish mechanisms that reward employees for proposing original ideas and tolerate reasonable failures.\n\nIn conclusion, innovation is indispensable for sustainable development, and only through collaborative efforts can we build a truly innovative society.",
+    "phrases": [
+     {
+      "en": "serve as the primary engine of",
+      "cn": "充当……的主要引擎；用于强调某事物的驱动作用，比 is important for 更形象"
+     },
+     {
+      "en": "play a pivotal role in",
+      "cn": "在……中起关键作用；比 play an important role 更高级，pivotal 意为'关键的'"
+     },
+     {
+      "en": "concerted efforts must be made",
+      "cn": "必须做出协同努力；concerted 强调多方协作，常用于措施段开头"
+     },
+     {
+      "en": "provide tax incentives for",
+      "cn": "为……提供税收优惠；写政策建议时的高分搭配"
+     },
+     {
+      "en": "foster a culture of innovation",
+      "cn": "营造创新文化；foster 比 build 更正式，常与 culture/environment 搭配"
+     },
+     {
+      "en": "ranging from ... to ...",
+      "cn": "从……到……；用于列举范围，使论据覆盖面更广"
+     },
+     {
+      "en": "can hardly be overstated",
+      "cn": "怎么强调都不为过；用于强调重要性的经典句型，替代 is very important"
+     },
+     {
+      "en": "tolerate reasonable failures",
+      "cn": "容忍合理的失败；体现对创新本质的深刻理解，增加论述深度"
+     },
+     {
+      "en": "rote memorization",
+      "cn": "死记硬背；教育类话题高频表达，与 critical thinking 形成对比"
+     },
+     {
+      "en": "indispensable for sustainable development",
+      "cn": "对可持续发展不可或缺；总结段高分表达，indispensable 替代 necessary"
+     }
+    ],
+    "pitfalls": [
+     "只泛谈重要性而忽略题目明确要求的 measures 部分，导致跑题扣分。",
+     "全文使用 important/very important 等低级词汇，缺乏词汇多样性。",
+     "措施部分空喊口号（如 we should try our best），缺少具体可操作的建议。",
+     "段落之间缺乏过渡词衔接，逻辑链断裂，影响连贯性得分。",
+     "字数不足150词或严重超过200词，不符合题目硬性要求。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Innovation is very important for economic development.",
+      "better": "Innovation serves as the primary engine of economic growth, fueling industrial transformation and job creation.",
+      "note": "用比喻（engine）和具体化（fueling...）替代空洞的 very important，更生动且有说服力。"
+     },
+     {
+      "plain": "The government should support innovation.",
+      "better": "The government should increase funding for scientific research and provide tax incentives for innovative enterprises.",
+      "note": "将笼统建议细化为具体政策手段，体现论证深度，符合高分标准。"
+     },
+     {
+      "plain": "Innovation is important, so we should encourage it.",
+      "better": "Only through collaborative efforts at multiple levels can we build a truly innovative society.",
+      "note": "使用倒装句式（Only through...can we...）收束全文，句式高级且有号召力。"
+     },
+     {
+      "plain": "Innovation can solve many problems.",
+      "better": "Innovation plays a pivotal role in addressing pressing social challenges, ranging from environmental degradation to public health crises.",
+      "note": "用 pivotal role + ranging from...to... 增加具体性和学术感，避免空泛。"
+     },
+     {
+      "plain": "Schools should teach students to be creative.",
+      "better": "Educational institutions ought to reform their curricula to cultivate students' critical thinking and creativity rather than emphasizing rote memorization.",
+      "note": "用 rather than 构成对比，reform curricula 比 teach 更具体，体现教育视角深度。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Innovation serves as the primary engine of economic growth, fueling industrial transformation and job creation. — 创新是经济增长的主要引擎，推动产业变革和就业创造。（比喻+并列结构，适用于重要性论述）",
+   "Concerted efforts must be made at multiple levels to foster a culture of innovation. — 必须在多个层面做出协同努力以营造创新文化。（被动+目的状语，适用于措施段总起句）",
+   "Educational institutions ought to reform their curricula to cultivate critical thinking and creativity rather than emphasizing rote memorization. — 教育机构应改革课程以培养批判性思维和创造力，而非强调死记硬背。（rather than 对比句式，教育类话题万能句）",
+   "Only through collaborative efforts can we build a truly innovative society. — 只有通过协同努力，我们才能建设一个真正的创新型社会。（Only 引导的倒装句，适合用作结尾金句）",
+   "The significance of innovation can hardly be overstated in an era of fierce global competition. — 在激烈的全球竞争时代，创新的重要性怎么强调都不为过。（经典强调句型，替代 is very important）"
+  ]
+ }
+}

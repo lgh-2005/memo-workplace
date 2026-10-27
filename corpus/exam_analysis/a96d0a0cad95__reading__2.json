@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "a96d0a0cad95__reading__2",
+ "examId": "a96d0a0cad95",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 12 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:38:24.430Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55327,
+ "usage": {
+  "prompt_tokens": 1788,
+  "completion_tokens": 3479,
+  "total_tokens": 5267,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1788,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3479,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1788,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "道德领导力缓解员工权利意识膨胀",
+  "gist": "研究发现，越来越多员工存在\"应得感\"膨胀问题，认为自己理应获得特殊待遇，导致工作懈怠。研究表明，道德型领导者通过明确传达期望、公平一致地对待员工，能有效缓解这种消极影响，使员工更信任领导并恢复工作积极性。",
+  "structure": [
+   "第1段：引出问题——部分员工存在权利意识膨胀现象",
+   "第2段：分析成因（童年溺爱）及管理者需保持员工动力",
+   "第3段：介绍研究方法与核心发现——道德领导力可缓解负面影响",
+   "第4段：阐释道德领导者应对膨胀员工的具体方式与效果",
+   "第5段：总结——道德领导力虽非万能但至关重要"
+  ],
+  "difficulty": "中等",
+  "translation": "根据一项最新研究，劳动力中有一小部分但正在增长的比例在不同程度上受到权利意识膨胀的影响。工作对他们来说不是能贡献什么，而是能获取什么。这可能导致工作场所功能失调，并削弱他们自身的工作满意度。我不是指那些因被拒绝公平薪酬或弹性工作制度等原因而对雇佣条件合理不满的员工。我说的是那些持续认为自己应该获得特殊待遇和丰厚奖励的人。这种期望与他们的能力或绩效水平无关。\n\n由于他们认为自己应得的特权与他们膨胀的自我价值感之间存在差距，他们不会为雇主那么努力工作，而更倾向于偷懒。许多学者认为，这种倾向源于童年时期父母对孩子的过度溺爱，从而导致他们在成年后也期望获得同样被宠溺的对待。然而，尽管这些员工有这样的心态，管理者仍然必须找到方法来保持他们的工作积极性。并且，借助这种被提升的积极性，使他们表现出色。\n\n来自数所美国大学的研究团队调查了240多人，样本包括管理者和团队成员。员工权利意识通过\"我真心觉得我就是比别人更值得\"这样的陈述来测量。受访者需要对自己的认同程度进行评分。与此同时，员工敬业度则通过\"我真的全身心投入工作\"这样的陈述来评估。研究结果表明，道德领导力恰恰能够缓解员工权利意识膨胀带来的负面影响。这是因为道德领导者既不会纵容员工，也不会忽视他们，而是传达非常直接和明确的期望。他们还会让员工对自己的行为负责，并真正致力于做正确的事情。此外，这些领导者在标准上是一致的，他们在对待员工的方式上也不太可能偏差。\n\n这意味着，当面对一个有权利意识膨胀的团队成员时，道德领导者非常不倾向于迁就他们的要求。他或她会以建设性和策略性的方式明确指出，他们那种膨胀的应得感在某种程度上是扭曲的。然后他们会进一步解释员工要获得其期望奖励所必须达到的具体、客观的标准。这种从不切实际的期望中转移出来的做法之所以成功，是因为有权利意识的员工更有信心道德领导者会兑现承诺。这是因为他们被认为是公平且值得信赖的。\n\n然而，研究人员也谨慎地警告，没有任何单一的应对方式是完美的解决方案。但不可否认的是，道德领导力至少是朝正确方向迈出的关键一步。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Work is less about what they can contribute but more about what they can take. ... those who consistently believe they deserve special treatment and generous rewards.",
+    "why": "原文第一段指出，这些员工认为工作不是看能贡献什么，而是看能获取什么，并且他们持续认为自己应该获得特殊待遇和丰厚奖励。B选项\"他们觉得自己应得的比实际得到的更多\"准确概括了这种权利意识膨胀的本质——期望超过实际所得。",
+    "traps": "A\"他们试图做出更多贡献\"与原文\"less about what they can contribute\"矛盾，属反向干扰；C\"他们重视工作满意度\"偷换概念，原文说这种心态会diminish job satisfaction，而非他们主动关注满意度；D\"他们试图减少工作场所功能失调\"同为反向干扰，原文说他们的行为导致dysfunction。",
+    "tip": "注意区分员工的心态与其行为带来的后果，不可混淆。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "It's a tendency which many scholars believe begins in childhood due to parents who overindulge their kids. This thereby leads them to expect the same kind of spoilt treatment throughout their adult lives.",
+    "why": "原文第二段明确指出，许多学者认为这种倾向始于童年时期父母对孩子的过度溺爱（overindulge their kids），导致他们成年后也期望获得被宠溺的待遇。B选项\"他们成长过程中被溺爱\"与原文完全吻合。",
+    "traps": "A\"缺乏强烈的自我价值感\"与原文\"inflated sense of self-worth\"相反，属反向干扰；C\"受到了不公平对待\"是第一段排除的情形（legitimately dissatisfied），非学者归因；D\"被老板过度纵容\"偷换对象，原文说的是被父母（parents）溺爱，而非boss。",
+    "tip": "注意主语和施动者的准确对应，parents≠boss是常见偷换手法。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "it's obviously important for their manager to nonetheless find out how to keep them motivated. And, by virtue of that heightened motivation, to perform well.",
+    "why": "原文第二段末尾指出，尽管有这些问题，管理者仍然需要找到方法保持员工的积极性（keep them motivated），并借此提升工作表现。D选项\"寻找方法维持他们的积极性\"是对原文的准确同义改写。",
+    "traps": "A\"了解他们的情绪\"虽有关联但过于宽泛，原文核心是motivation而非emotions；B\"给予及时晋升\"属无中生有，原文未提及promotion；C\"记录他们的表现\"也属无中生有，原文未提及keep a record。",
+    "tip": "keep them motivated → sustain their motivation，注意同义替换的识别。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "ethical leaders communicate very direct and clear expectations. They also hold employees accountable for their behaviors and are genuinely committed to doing the right thing.",
+    "why": "原文第三段明确描述道德领导者的特征：传达非常直接和明确的期望（communicate very direct and clear expectations）。C选项\"他们以直截了当的方式传达要求\"是对此的精准改写：direct and clear → straightforward，expectations → requirements。",
+    "traps": "A\"他们被员工问责\"偷换主被动关系，原文是领导者hold employees accountable，而非员工对领导问责；B\"他们对好恶总是透明\"属无中生有，原文说的是标准一致而非公开好恶；D\"他们注重与员工搞好关系\"也属无中生有，原文强调的是公平一致而非讨好员工。",
+    "tip": "注意主被动关系的转换陷阱，hold sb accountable的施动者不可混淆。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "entitled employees feel more confident that ethical leaders will deliver on their promises. This occurs because they're perceived to be fair and trustworthy.",
+    "why": "原文第四段末尾指出，有权利意识的员工之所以信任道德领导者，是因为他们更有信心这些领导者会兑现承诺（deliver on their promises），且被认为公平、值得信赖。A选项\"那些可以指望兑现承诺的人\"是对deliver on their promises的精准同义改写：counted on=trusted，fulfill commitments=deliver on promises。",
+    "traps": "B\"那些能做超出正常期望之事的人\"属无中生有，原文反而强调的是从不切实际的期望中转移；C\"那些在重大决策中保持谨慎的人\"是对末段exercise caution的错误嫁接，该描述针对的是研究人员而非领导者；D\"那些知道如何满足员工需求的人\"与原文矛盾，道德领导者恰恰不迁就（disinclined to accommodate）员工的要求。",
+    "tip": "deliver on promises与fulfill commitments是高频同义替换，需重点积累。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "entitlement",
+    "cn": "n. 应得权利感，资格感"
+   },
+   {
+    "w": "dysfunction",
+    "cn": "n. 功能失调，运作不良"
+   },
+   {
+    "w": "legitimately",
+    "cn": "adv. 合理地，合法地"
+   },
+   {
+    "w": "irrespective of",
+    "cn": "prep. 不论，不管"
+   },
+   {
+    "w": "discrepancy",
+    "cn": "n. 差异，不一致"
+   },
+   {
+    "w": "inflated",
+    "cn": "adj. 膨胀的，夸大的"
+   },
+   {
+    "w": "overindulge",
+    "cn": "v. 过度溺爱，过分纵容"
+   },
+   {
+    "w": "by virtue of",
+    "cn": "prep. 凭借，由于"
+   },
+   {
+    "w": "alleviate",
+    "cn": "v. 减轻，缓解"
+   },
+   {
+    "w": "accountable",
+    "cn": "adj. 负有责任的，应作解释的"
+   },
+   {
+    "w": "deviate",
+    "cn": "v. 偏离，背离"
+   },
+   {
+    "w": "tactfully",
+    "cn": "adv. 机智地，圆通地"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As a result of that discrepancy between the privileges they feel they're owed and their inflated sense of self-worth, they don't work as hard for their employer.",
+    "cn": "由于他们认为自己应得的特权与他们膨胀的自我价值感之间存在差距，他们不会为雇主那么努力地工作。",
+    "note": "主干为they don't work as hard；句首As a result of引导原因状语，其中嵌套between...and...的介词短语和they feel定语从句修饰privileges。"
+   },
+   {
+    "en": "The findings revealed ethical leadership is precisely what alleviates the negative effects of employee entitlement.",
+    "cn": "研究结果表明，道德领导力恰恰能够缓解员工权利意识膨胀带来的负面影响。",
+    "note": "主干The findings revealed...；宾语从句中what引导表语从句，precisely作强调副词修饰what从句。"
+   },
+   {
+    "en": "This shift away from unrealistic expectations is successful because entitled employees feel more confident that ethical leaders will deliver on their promises.",
+    "cn": "这种从不切实际的期望中转移出来的做法之所以成功，是因为有权利意识的员工更有信心道德领导者会兑现承诺。",
+    "note": "主干为This shift is successful；because引导原因状语从句；that引导confident的同位语从句，说明信心的具体内容。"
+   }
+  ]
+ }
+}

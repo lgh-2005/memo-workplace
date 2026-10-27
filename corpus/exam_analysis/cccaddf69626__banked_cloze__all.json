@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "cccaddf69626__banked_cloze__all",
+ "examId": "cccaddf69626",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2017 年 6 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:11:41.709Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 76037,
+ "usage": {
+  "prompt_tokens": 1401,
+  "completion_tokens": 4827,
+  "total_tokens": 6228,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1401,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4827,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1401,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国大学批判性思维教育评估",
+  "gist": "文章围绕美国高校能否有效培养学生批判性思维展开。普渡大学校长推动学习成果评估，实验证明可用标准化指标衡量学生能力，但结果显示批判性思维达标率偏低。文章呼吁准确衡量大学学位的智识价值，以吸引更多人接受高等教育。",
+  "difficulty": "中等",
+  "translation": "2013年成为普渡大学校长后，米奇·丹尼尔斯要求教师们证明，他们的学生确实实现了高等教育最重要的目标之一：批判性思维能力。两年前，一项全国性的大学毕业生调查显示，超过三分之一的人在校期间在这些心智能力方面没有取得显著的（significant）进步。丹尼尔斯先生需要向学生及其家庭证明（justify）就读普渡大学的高昂费用是合理的。毕竟，认为大学学位\"非常重要\"的美国人比例在过去五六年间急剧地（drastically）下降了。\n\n普渡大学现在有一项试点测试来评估学生的批判性思维能力。然而，与美国许多大学教师一样，该校教师对于其教育工作能否用\"学习成果（outcome）\"——例如毕业生的调查与推理能力——来衡量仍持怀疑（doubtful）态度。不过，教授们不必如此担忧。最近一项实验的结果表明，教授们可以使用标准化的（standardized）指标来衡量学生在三个关键领域的表现：批判性思维、书面沟通和定量素养。\n\n尽管实验取得了成功，但实际结果令人担忧，且基本印证了（confirm）早期的研究。实验组织者得出结论：在批判性思维方面达到高水平的学生远少于在书面沟通或定量素养方面达标的学生。而这一结论仅基于即将毕业的学生。\n\n美国大学尽管在全球享有卓越的教学声誉（reputation），但才刚刚开始展示它们在现实学习中能产出什么成果。以知识为基础的学位仍然重要，但雇主们正在要求（demanding）大学毕业生具备高级思维能力。如果大学学位的智识价值能够被准确地（accurately）衡量，将会有更多人寻求高等教育——并成为更好的思考者。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "L",
+    "correct": "significant",
+    "why": "空格位于no与gains之间，需要形容词修饰名词gains。\"no significant gains\"意为\"没有显著的进步\"，语义上呼应后文\"超过三分之一的学生心智能力没有提升\"的调查结论，搭配完全成立。",
+    "traps": "doubtful虽为形容词，但用于修饰gains语义不通（\"可疑的进步\"不合文意）；standardized修饰gains也不搭配。需要表示程度大小的形容词。",
+    "tip": "形容词修饰名词，注意语义搭配是否自然。"
+   },
+   {
+    "number": 27,
+    "answer": "F",
+    "correct": "justify",
+    "why": "空格前为needed to，需要动词原形。\"justify the high cost to sb\"意为\"向某人证明高费用的合理性\"，与后文\"大学学位重要性认可度下降\"形成因果呼应，逻辑通顺。",
+    "traps": "confirm虽也是动词原形，但confirm the high cost意为\"确认高费用\"，语义偏差，不含\"为之辩护、证明合理\"的意思，与上下文逻辑不符。",
+    "tip": "justify强调\"证明合理性\"，与cost搭配是高频考点。"
+   },
+   {
+    "number": 28,
+    "answer": "E",
+    "correct": "drastically",
+    "why": "空格修饰动词fallen，需要副词。\"fallen drastically\"意为\"急剧下降\"，与前文\"大学学位重要性认可度\"下降的语境吻合，表示程度之大，为后文论证提供有力铺垫。",
+    "traps": "accurately也是副词，但\"准确地下降\"语义荒谬，不符合语境逻辑。此处需要表示变化幅度的副词，只有drastically符合。",
+    "tip": "修饰动词用副词；drastically常与fall/decline/drop搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "correct": "doubtful",
+    "why": "空格前为remain，需要形容词作表语。\"remain doubtful\"意为\"仍然持怀疑态度\"，后文that从句解释怀疑的内容——教育工作能否被学习成果衡量，逻辑连贯。",
+    "traps": "significant作表语虽语法可行，但\"教师仍然显著\"语义不通。此处上下文明确表达教师对量化评估的抵触情绪，只有doubtful传达\"怀疑\"之义。",
+    "tip": "remain + adj. 表状态；doubtful后常接that从句说明怀疑内容。"
+   },
+   {
+    "number": 30,
+    "answer": "H",
+    "correct": "outcome",
+    "why": "空格前为learning，构成复合名词\"learning outcome\"（学习成果），是教育评估领域的核心术语。后文such as进一步举例解释其含义（毕业生的调查与推理能力），印证此搭配。",
+    "traps": "reputation作名词虽可填入，但\"learning reputation\"不是固定搭配且语义不合。outcome与learning构成教育领域高频术语，辨识度高。",
+    "tip": "learning outcome是教育评估固定术语，需积累学科专用搭配。"
+   },
+   {
+    "number": 31,
+    "answer": "O",
+    "correct": "standardized",
+    "why": "空格修饰名词metrics，需要形容词。\"standardized metrics\"意为\"标准化的指标\"，呼应前文实验证明教授可以用统一标准来衡量学生能力，逻辑自洽。",
+    "traps": "significant修饰metrics虽语法可行，但\"显著的指标\"语义模糊，且significant已用于第26题。此处强调指标的\"标准化\"特征，与实验设计语境一致。",
+    "tip": "standardized常修饰test/metrics/assessment等评估类名词。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "correct": "confirm",
+    "why": "空格作谓语动词，主语为results，与earlier studies搭配。\"confirm earlier studies\"意为\"印证了早期的研究\"，表明新实验结果与以往研究结论一致，语义准确。",
+    "traps": "justify虽为动词但已用于第27题；且\"证明早期研究合理\"不如\"印证早期研究\"来得自然。confirm强调\"证实、与……吻合\"。",
+    "tip": "confirm表示\"证实、印证\"，常用于研究结论互相验证的语境。"
+   },
+   {
+    "number": 33,
+    "answer": "K",
+    "correct": "reputation",
+    "why": "空格前为global，后接for excellence，需要名词。\"global reputation for excellence\"意为\"全球卓越声誉\"，reputation与for构成固定搭配，形容美国大学的国际地位。",
+    "traps": "outcome虽为名词但已用于第30题；且\"global outcome for excellence\"搭配不当。reputation for是固定短语，表示\"在……方面的声誉\"。",
+    "tip": "reputation for...是固定搭配，表示\"在某方面的声誉\"。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "correct": "demanding",
+    "why": "空格前为are，构成现在进行时are demanding，后接advanced thinking skills和from。\"demand sth from sb\"意为\"向某人要求某物\"，表达雇主对毕业生能力的期望，语义完整。",
+    "traps": "confirming虽语法上可构成进行时，但\"确认高级思维能力\"与from搭配不当，也不合雇主提出要求的语境。demanding强调主动索取。",
+    "tip": "demand sth from sb为固定搭配；注意进行时表趋势。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "correct": "accurately",
+    "why": "空格修饰过去分词measured，需要副词。\"accurately measured\"意为\"准确地衡量\"，与全文主旨呼应——若能精确量化大学学位的价值，将促进高等教育发展，形成总结升华。",
+    "traps": "drastically虽也是副词但已用于第28题；且\"大幅地衡量\"语义不通。accurately强调测量的精确性，与文章倡导的科学评估主题一致。",
+    "tip": "accurately修饰measured强调精确评估，是全文论点的落脚点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "significant",
+    "cn": "adj. 显著的，重大的"
+   },
+   {
+    "w": "justify",
+    "cn": "v. 证明……合理，为……辩护"
+   },
+   {
+    "w": "drastically",
+    "cn": "adv. 急剧地，大幅度地"
+   },
+   {
+    "w": "doubtful",
+    "cn": "adj. 怀疑的，不确定的"
+   },
+   {
+    "w": "outcome",
+    "cn": "n. 结果，成果"
+   },
+   {
+    "w": "standardized",
+    "cn": "adj. 标准化的"
+   },
+   {
+    "w": "confirm",
+    "cn": "v. 证实，确认，印证"
+   },
+   {
+    "w": "reputation",
+    "cn": "n. 名誉，声誉"
+   },
+   {
+    "w": "demanding",
+    "cn": "adj. 要求高的；v. 要求（demand的现在分词）"
+   },
+   {
+    "w": "accurately",
+    "cn": "adv. 准确地，精确地"
+   },
+   {
+    "w": "quantitative",
+    "cn": "adj. 定量的，数量的"
+   },
+   {
+    "w": "metrics",
+    "cn": "n. 度量标准，衡量指标"
+   }
+  ],
+  "skills": [
+   "先将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空选择范围。",
+   "根据空格前后语法结构判断所需词性：冠词/形容词后常跟名词，be/remain后常跟形容词，修饰动词/形容词用副词。",
+   "结合上下文语义与常见固定搭配（如reputation for、learning outcome）锁定答案。",
+   "已选用的词及时划去，避免重复使用，同时可反向验证剩余空格。",
+   "最后将所有答案代入通读全文，检查语法与语义是否通顺连贯。"
+  ]
+ }
+}

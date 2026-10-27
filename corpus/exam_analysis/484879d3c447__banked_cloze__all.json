@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "484879d3c447__banked_cloze__all",
+ "examId": "484879d3c447",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2022 年 9 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:41:44.783Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 69696,
+ "usage": {
+  "prompt_tokens": 1389,
+  "completion_tokens": 4436,
+  "total_tokens": 5825,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1389,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4436,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1389,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "旅鸽灭绝的历史与启示",
+  "gist": "文章回顾了北美旅鸽从数十亿只的庞大种群到彻底灭绝的历史过程。由于旅鸽对人类活动高度敏感，加之商业捕猎和栖息地被大规模清除，其种群急剧减少，最后一只名为\"玛莎\"的旅鸽于1914年死于辛辛那提动物园，成为人类首次精确记录一个物种灭绝时间的案例。",
+  "difficulty": "中等",
+  "translation": "如今已灭绝的旅鸽有着一项令人唏嘘的\"殊荣\"：它是最后一个谁也没想到会消失的物种。在鼎盛时期，旅鸽的数量超过了任何其他鸟类。对其种群数量的粗略估计高达五十亿只，在19世纪初，它们约占北美本土鸟类总数的40%。\n\n尽管数量庞大，旅鸽对人类侵入其筑巢领地的行为却十分脆弱。它们的巢穴简陋不堪，蛋孵化两周后，亲鸽就会抛弃幼鸟，让它们自己照顾自己。人们发现这些幼鸽味道非常鲜美，而成年鸟也相当可食用。先是美洲原住民，后是移居而来的欧洲人，都把旅鸽视为一道极好的美味佳肴。\n\n到了19世纪50年代，对旅鸽的商业捕猎正以前所未有的速度进行。每天有数十万只旅鸽被捕获，做成广受欢迎的鸽肉馅饼。此外，大片旅鸽的筑巢领地被开垦用于种植庄稼和开辟牧场。旅鸽虽然数量众多，但它们并非取之不尽的资源。到了19世纪80年代，人们注意到旅鸽的数量已经严重减少。最后一批在野外被猎杀的旅鸽于1899年被射杀。\n\n最终，那数十亿只旅鸽缩减为仅存的一只个体——一只名叫\"玛莎\"的旅鸽，她于1914年9月1日在辛辛那提动物园的囚禁中死去。这不仅是一个时代的终结，也是人类首次能够精确记录一个物种灭绝时间的事件。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "L",
+    "correct": "estimates",
+    "why": "此处需要一个名词作主语，与前面的形容词 Rough 搭配。Rough estimates 是固定搭配，意为\"粗略估计\"，且后面谓语 went as high as five billion 描述数字之大，语义完全吻合。",
+    "traps": "其他名词如 tracts（大片土地）、specimen（标本/个体）、delicacy（美味）均不能与 Rough 搭配，也无法用 went as high as 来修饰，语义不通。",
+    "tip": "注意 rough estimates 这一高频固定搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "correct": "vulnerable",
+    "why": "空格后紧跟 to human intrusion，be vulnerable to 是固定搭配，意为\"容易受到……的伤害/影响\"。文意指旅鸽对人类入侵其巢穴领地十分敏感和脆弱，逻辑通顺。",
+    "traps": "其他形容词如 unprecedented（前所未有的）、infinite（无限的）不能与 to 构成类似搭配，且语义与\"对入侵敏感\"不符。edible（可食用的）语义偏离。",
+    "tip": "be vulnerable to 是六级高频搭配，表示\"易受……伤害\"。"
+   },
+   {
+    "number": 28,
+    "answer": "I",
+    "correct": "hatched",
+    "why": "此处需要动词过去式，作 after 引导的时间状语从句的谓语。主语是 eggs，eggs hatched 意为\"蛋孵化后\"，描述幼鸟出壳的过程，与下文 parent pigeons would abandon their offspring 因果衔接紧密。",
+    "traps": "depleted 虽也是过去分词/过去式形式，但 eggs depleted（蛋被耗尽）语义不通，不符合鸟类繁殖的上下文。其他选项词性不符。",
+    "tip": "hatch 既可作及物也可作不及物动词，此处为不及物用法。"
+   },
+   {
+    "number": 29,
+    "answer": "M",
+    "correct": "edible",
+    "why": "空格前有 were also quite，需要形容词。前句说幼鸟 really tasty，此处用 also 过渡，说明成鸟同样 quite edible（相当可食用），与上下文关于食用旅鸽的主题一致。",
+    "traps": "vulnerable（脆弱的）虽词性可行，但前面已用于第27题，且语义上此处强调的是\"可食用性\"而非\"脆弱性\"。其他候选形容词语义不匹配。",
+    "tip": "注意 also 的衔接作用，暗示与前句 tasty 语义并行。"
+   },
+   {
+    "number": 30,
+    "answer": "O",
+    "correct": "delicacy",
+    "why": "空格前有 a great，需要可数名词单数。consider the birds a great delicacy 意为\"把这些鸟视为一道美味佳肴\"，承接上文人们发现旅鸽味美可食的内容，逻辑通顺。",
+    "traps": "specimen（标本/样本）虽为可数名词，但 a great specimen 意为\"一个优秀个体\"，与\"食用\"语境不符。estimates 为复数形式，不能接 a great。",
+    "tip": "delicacy 表\"佳肴\"时为可数名词，注意与 delicate 的词根关联。"
+   },
+   {
+    "number": 31,
+    "answer": "B",
+    "correct": "unprecedented",
+    "why": "空格在 an 和 pace 之间，需要以元音开头的形容词。at an unprecedented pace 意为\"以前所未有的速度\"，形容商业捕猎规模空前，与后文 hundreds of thousands 的数据互相印证。",
+    "traps": "infinite（无限的）虽也以元音开头且词性符合，但 an infinite pace（无限的速度）搭配不自然；unprecedented pace 是更地道的表达。",
+    "tip": "an 提示后接元音开头的词，可快速缩小范围。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "correct": "tracts",
+    "why": "空格前有 large，后有 of the pigeons' nesting territory，需要复数名词。large tracts of 是固定搭配，意为\"大片的（土地/区域）\"，与 nesting territory（筑巢领地）搭配完美。",
+    "traps": "estimates（估计）与 of...nesting territory 搭配语义不通。其他复数名词选项在语义上无法衔接\"被清除用于种植\"的下文逻辑。",
+    "tip": "large tracts of land/territory 是描述大面积区域的固定表达。"
+   },
+   {
+    "number": 33,
+    "answer": "H",
+    "correct": "infinite",
+    "why": "空格在 an 和 resource 之间，需要元音开头的形容词。an infinite resource 意为\"无穷无尽的资源\"，与前文 As numerous as 形成转折——虽然数量多，但并非取之不尽，逻辑衔接紧密。",
+    "traps": "unprecedented（前所未有的）虽以元音开头，但 an unprecedented resource（前所未有的资源）语义与\"是否耗竭\"的主题不相关。edible 语义偏离。",
+    "tip": "not an infinite resource 是经典的环保/生态类话题表达。"
+   },
+   {
+    "number": 34,
+    "answer": "N",
+    "correct": "depleted",
+    "why": "空格前有 had become seriously，需要形容词或过去分词。seriously depleted 意为\"严重耗竭/锐减\"，描述旅鸽数量急剧下降，与前文\"并非无限资源\"及后文\"1899年最后猎杀\"的时间线吻合。",
+    "traps": "hatched（孵化的）词性虽可行，但 seriously hatched 搭配不通且语义不合。其他候选词不能与 seriously 搭配表示数量减少。",
+    "tip": "depleted 常与 seriously/severely 搭配，表资源耗竭。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "correct": "specimen",
+    "why": "空格前有 a single remaining，需要可数名词单数。specimen 意为\"个体/样本\"，a single remaining specimen 指\"仅存的一只个体\"，后接同位语 a passenger pigeon named Martha 进一步解释，语义完整。",
+    "traps": "delicacy（美味）虽为可数名词，但\"缩减到仅剩一道美味\"语义荒谬，不符合灭绝主题。estimates 为复数，不能与 a single 搭配。",
+    "tip": "specimen 在生物学语境中常指\"（物种的）个体/标本\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dubious",
+    "cn": "adj. 可疑的；令人怀疑的；不确定的"
+   },
+   {
+    "w": "estimates",
+    "cn": "n. 估计，估算（常用复数）"
+   },
+   {
+    "w": "vulnerable",
+    "cn": "adj. 脆弱的，易受伤害的"
+   },
+   {
+    "w": "hatched",
+    "cn": "v. 孵化（hatch 的过去式）"
+   },
+   {
+    "w": "edible",
+    "cn": "adj. 可食用的"
+   },
+   {
+    "w": "delicacy",
+    "cn": "n. 美味佳肴；精致；微妙"
+   },
+   {
+    "w": "unprecedented",
+    "cn": "adj. 前所未有的，空前的"
+   },
+   {
+    "w": "tracts",
+    "cn": "n. 大片土地/区域（tract 的复数）"
+   },
+   {
+    "w": "infinite",
+    "cn": "adj. 无穷的，无限的"
+   },
+   {
+    "w": "depleted",
+    "cn": "adj./v. 耗尽的，大量减少的（deplete 的过去分词）"
+   },
+   {
+    "w": "specimen",
+    "cn": "n. 标本；样本；个体"
+   },
+   {
+    "w": "indigenous",
+    "cn": "adj. 本土的，土生土长的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，标注每个空格所在句子的语法结构和语义方向。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），快速缩小每空的候选范围。",
+   "第三步：利用冠词（a/an/the）、介词（to/of）和副词（quite/seriously）等语法标志词判断所需词性和首字母发音。",
+   "第四步：结合上下文逻辑（因果、转折、并列、递进）确认唯一答案，优先锁定固定搭配如 vulnerable to、large tracts of。",
+   "第五步：填完后回读全文，检查每个答案是否语法正确、语义连贯，且无重复使用同一选项。"
+  ]
+ }
+}

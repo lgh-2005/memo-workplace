@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "41935877cd0a__translation__all",
+ "examId": "41935877cd0a",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2016 年考研英语真题",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:33:58.191Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66120,
+ "usage": {
+  "prompt_tokens": 1371,
+  "completion_tokens": 4781,
+  "total_tokens": 6152,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1371,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4781,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1371,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "心理健康是与生俱来的本能",
+  "translation": "心理健康是我们与生俱来的权利。我们不必学习如何保持心理健康；它天生就存在于我们体内，就如同我们的身体知道如何愈合伤口或接合断骨一样。心理健康无法通过学习获得，只能被重新唤醒。它就像身体的免疫系统，在压力之下或因缺乏营养和锻炼而被削弱，但它永远不会离开我们。当我们不理解心理健康的价值，也不知道如何获取它时，心理健康便会隐藏起来。我们的心理健康其实并未远离我们；如同云层后面的太阳一样，它可能暂时被遮蔽，但它完全能够在瞬间得到恢复。\n\n心理健康是孕育自尊的种子——即对自己的信心和对常识的信赖。它使我们能够以正确的眼光看待生活——不过分看重自己，能够自我调侃，能够看到更宏观的全景，并且相信一切终会好转。它是一种天生的、无需后天学习的乐观精神。心理健康使我们能够在他人遇到困难时以同情的态度看待他们，在他人痛苦时以善意的态度对待他们，无论他们是谁，都以无条件的爱来关怀他们。心理健康是解决问题、化解冲突、美化环境、管理家庭生活或想出创造性商业点子和发明以便利生活的创造力之源。它赋予我们对自己和他人的耐心，也赋予我们开车、钓鱼、修车或抚养孩子时的耐心。它使我们能够看到每时每刻围绕在我们身边的美——自然之美、文化之美以及日常生活流转中的美。\n\n尽管心理健康是我们生活的万能良药，但它其实极其平常，因为你会发现，它一直在那里引导你度过所有艰难的抉择。即便在最平凡的生活情境中，它也能帮助你分辨对错、善恶、敌友。心理健康通常被称为良知、本能、智慧、常识或内心的声音。我们只是简单地将其视为一种健康而有益的理性思维。正如你将会看到的那样，知道心理健康始终可及并且知道去信赖它，能使我们放慢脚步、活在当下，从而快乐地生活。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "We don't have to learn how to be mentally healthy; it is built into us in the same way that our bodies know how to heal a cut or mend a broken bone.",
+    "cn": "我们不必学习如何保持心理健康；它天生就存在于我们体内，就如同我们的身体知道如何愈合伤口或接合断骨一样。",
+    "structure": "分号连接两个并列分句。第一分句主干为 We don't have to learn，how to be mentally healthy 为宾语。第二分句主干为 it is built into us，in the same way that... 为方式状语从句，其中 that 引导同位语从句修饰 the same way。",
+    "points": [
+     "is built into us 译出\"天生内置于/与生俱来\"的含义，不能译为\"被建造\"",
+     "in the same way that 表方式类比，需译出\"正如……一样\"",
+     "heal a cut or mend a broken bone 两个动宾搭配需分别准确译出：愈合伤口、接合断骨"
+    ],
+    "pitfall": "built into 容易按字面义译为\"建造在我们体内\"，应意译为\"天生存在于我们体内\"或\"与生俱来地植根于我们体内\"，体现先天性。"
+   },
+   {
+    "number": 47,
+    "en": "Our mental health doesn't really go anywhere; like the sun behind a cloud, it can be temporarily hidden from view, but it is fully capable of being restored in an instant.",
+    "cn": "我们的心理健康其实并未远离我们；如同云层背后的太阳一样，它可能暂时被遮蔽而不被看见，但它完全能够在瞬间得到恢复。",
+    "structure": "分号连接两个并列分句。第二分句以 like the sun behind a cloud 作比喻状语，主体由 but 连接两个转折分句：it can be temporarily hidden from view 与 it is fully capable of being restored in an instant。",
+    "points": [
+     "doesn't really go anywhere 需意译为\"并未真正离开/远离\"，不宜直译\"不去任何地方\"",
+     "like the sun behind a cloud 比喻需完整译出，体现\"暂时被遮蔽\"的意象",
+     "is fully capable of being restored in an instant 须译出\"完全能够\"和\"在瞬间\"两个程度/时间限定"
+    ],
+    "pitfall": "go anywhere 不能直译为\"去任何地方\"，应根据语境理解为\"离我们而去、消失\"。hidden from view 也不宜译为\"从视线中隐藏\"，应译为\"被遮蔽/看不见\"。"
+   },
+   {
+    "number": 48,
+    "en": "Mental health allows us to view others with sympathy if they are having troubles, with kindness if they are in pain, and with unconditional love no matter who they are.",
+    "cn": "心理健康使我们能够在他人遇到困难时以同情的态度看待他们，在他人痛苦时以善意的态度对待他们，并且无论他们是谁，都以无条件的爱来关怀他们。",
+    "structure": "主干为 Mental health allows us to view others，后接三个平行的 with + 名词 短语（with sympathy / with kindness / with unconditional love），每个后面分别跟条件状语从句（if they are having troubles / if they are in pain / no matter who they are）。",
+    "points": [
+     "三组 with... if/no matter... 的平行结构须完整对应译出，保持排比",
+     "unconditional love 译为\"无条件的爱\"，no matter who they are 译为\"无论他们是谁\"",
+     "allows us to view others 译为\"使我们能够看待他人\"，view 在此为\"看待、对待\""
+    ],
+    "pitfall": "三个并列结构容易漏译或合并，阅卷时会逐一检查是否将三组 with... 条件状语都完整译出；特别注意第三组 no matter who they are 不是 if 引导，不可遗漏。"
+   },
+   {
+    "number": 49,
+    "en": "Although mental health is the cure-all for living our lives, it is perfectly ordinary as you will see that it has been there to direct you through all your difficult decisions.",
+    "cn": "尽管心理健康是我们生活的万能良药，但它其实极其平常，因为你会发现，它一直在那里引导你度过所有艰难的抉择。",
+    "structure": "Although 引导让步状语从句，主句为 it is perfectly ordinary。as you will see 引导原因/说明状语从句，其中 that it has been there to direct you through all your difficult decisions 为 see 的宾语从句。",
+    "points": [
+     "cure-all 须译出\"万能药/灵丹妙药\"之意，不能简单译为\"治疗\"",
+     "as you will see that... 中 as 表原因或正如，that 从句为 see 的宾语，层次须清晰",
+     "direct you through all your difficult decisions 译为\"引导你度过所有艰难的抉择\"，through 表贯穿过程"
+    ],
+    "pitfall": "cure-all 是关键名词，意为\"万能药/万灵药\"，若不认识该词会影响整句理解。as 在此既可理解为\"因为\"也可理解为\"正如\"，需结合上下文选择恰当译法。"
+   },
+   {
+    "number": 50,
+    "en": "As you will come to see, knowing that mental health is always available and knowing to trust it allows us to slow down to the moment and live life happily.",
+    "cn": "正如你将会看到的那样，知道心理健康始终可及并且知道去信赖它，能使我们放慢脚步、活在当下，从而快乐地生活。",
+    "structure": "As you will come to see 为方式/时间状语从句。主句主语为两个并列的动名词短语 knowing that... and knowing to trust it，谓语为 allows，宾语为 us，后接不定式 to slow down to the moment and live life happily。",
+    "points": [
+     "两个并列动名词短语 knowing that... and knowing to trust it 作主语，谓语用单数 allows，翻译时须体现并列关系",
+     "slow down to the moment 意为\"放慢脚步、活在当下\"，to the moment 不可漏译",
+     "available 在此译为\"可获得的/可及的\"，体现心理健康随时可以被唤醒"
+    ],
+    "pitfall": "slow down to the moment 容易误译为\"慢下来到那个时刻\"，实际含义为\"放慢节奏回归当下/活在当下\"，to the moment 表示回归此刻的状态，需意译。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "birthright",
+    "cn": "与生俱来的权利（n.）"
+   },
+   {
+    "w": "built into",
+    "cn": "天生具有的，内置于（短语）"
+   },
+   {
+    "w": "mend",
+    "cn": "修复，接合（v.）"
+   },
+   {
+    "w": "reawakened",
+    "cn": "重新唤醒（v.）"
+   },
+   {
+    "w": "immune system",
+    "cn": "免疫系统（n.）"
+   },
+   {
+    "w": "gain access to",
+    "cn": "获得，接触到（短语）"
+   },
+   {
+    "w": "in an instant",
+    "cn": "在瞬间，立刻（短语）"
+   },
+   {
+    "w": "self-esteem",
+    "cn": "自尊，自我价值感（n.）"
+   },
+   {
+    "w": "perspective",
+    "cn": "视角，眼光，洞察力（n.）"
+   },
+   {
+    "w": "innate",
+    "cn": "天生的，先天的（adj.）"
+   },
+   {
+    "w": "unconditional",
+    "cn": "无条件的（adj.）"
+   },
+   {
+    "w": "cure-all",
+    "cn": "万能药，万灵丹（n.）"
+   },
+   {
+    "w": "mundane",
+    "cn": "平凡的，世俗的（adj.）"
+   },
+   {
+    "w": "conscience",
+    "cn": "良知，良心（n.）"
+   },
+   {
+    "w": "foe",
+    "cn": "敌人，仇敌（n.）"
+   }
+  ],
+  "skills": [
+   "比喻类表达（如 built into, cure-all）需根据语境意译，避免死板直译",
+   "平行结构（如第48题三组 with...if...）须逐一对应译出，保持排比工整",
+   "分号连接的并列句应体现前后语义的递进或补充关系",
+   "抽象短语（如 slow down to the moment）需结合上下文进行归化翻译",
+   "让步状语从句（Although）与原因状语从句（as）的逻辑关系须在译文中清晰呈现"
+  ]
+ }
+}

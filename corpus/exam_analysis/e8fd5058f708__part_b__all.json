@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "e8fd5058f708__part_b__all",
+ "examId": "e8fd5058f708",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2006 年考研英语真题（旧）",
+ "year": 2006,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:18:01.257Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44824,
+ "usage": {
+  "prompt_tokens": 1637,
+  "completion_tokens": 2267,
+  "total_tokens": 3904,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1637,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2267,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1637,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "赌博成瘾者起诉赌场引发的社会反思",
+  "type": "七选五",
+  "strategy": [
+   "通读全文，理清时间线与论证逻辑，把握文章从叙事到议论的结构转换",
+   "精读空格前后句，关注代词指代、关键词复现、逻辑连接词等衔接线索",
+   "将候选项逐一代入空格，验证语义连贯性与上下文逻辑一致性",
+   "优先确定把握最大的题，缩小剩余选项范围，最后交叉验证"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "C",
+    "why": "空格前写Williams的赌博活动成了\"电子海洛因\"，空格后写\"In 1997 he lost $21,000\"。C项描述他输掉$5,000后自我许诺回本就停手，赢了$5,500却没有停止，正好承上启下，按时间顺序过渡到1997年的巨额亏损。关键词\"lost\"\"quit\"与上下文赌瘾加深的叙事吻合。",
+    "traps": "E项为总结性语句，不适合放在叙事中段；其他选项涉及诉讼或社会议论，与此处按时间推进的叙事语境不符。",
+    "tip": "空格前后为时间递进叙事，需找一个衔接早期赌博与巨额亏损的过渡段。"
+   },
+   {
+    "number": 42,
+    "answer": "A",
+    "why": "空格前写赌场写了\"cease admissions\"信，要求Williams提供医学/心理学证明才能重新入场。A项用\"Although no such evidence was presented\"（尽管没有出具这样的证据）紧密衔接该要求，并指出赌场营销部门继续向他发送邮件，他也用Fun Card再次进入赌场未被发现，揭示赌场言行不一。",
+    "traps": "B项讨论\"luring\"和\"will\"，与此处赌场信件内容无关；D项涉及政府政策，话题跳跃过大。",
+    "tip": "关键线索：\"no such evidence\"回指上文要求提供的medical/psychological information。"
+   },
+   {
+    "number": 43,
+    "answer": "B",
+    "why": "空格前引用Williams的诉讼称赌场\"lure\"他\"engage in conduct against his will\"，末尾以\"Well.\"表达作者质疑态度。B项直接回应：given his compulsive behavior, 不清楚需要什么\"luring\"；又质疑\"in what sense was his will operative\"，与前文\"against his will\"形成精准对应，延续作者的质疑语气。",
+    "traps": "F项讨论社会\"医学化\"行为问题，虽主题相关但与此处具体的\"lure\"\"will\"措辞无直接衔接；G项讨论网络赌博，话题不对。",
+    "tip": "关键词复现：\"luring\"对应前文\"lure\"，\"will\"对应\"against his will\"。"
+   },
+   {
+    "number": 44,
+    "answer": "F",
+    "why": "空格前引用DSM-IV对\"病态赌博\"的定义，空格后写\"society is reclassifying what once were considered character flaws or moral failings as personality disorders\"。F项指出社会将越来越多行为问题医学化，将先前被视为意志薄弱的行为定义为成瘾，恰好在医学定义与社会再分类之间搭建逻辑桥梁。关键词\"medicalizing\"\"addictions\"\"weakness of will\"与上下文高度吻合。",
+    "traps": "D项讲政府推动赌博政策，与此处医学化讨论语境不符；E项为全文总结句，不宜放在论证中间。",
+    "tip": "关键线索：\"medicalizing\"承接DSM定义，\"weakness of will\"引出下文\"character flaws\"。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "why": "空格后大段论述44个州有彩票、29个州有赌场、各州依赖博彩收入、网络赌博激增等内容。D项指出赌博已从社会疾病变为社会政策，政府是美国最积极的赌博推动者，完美引出下文政府依赖赌博收入的具体论据。关键词\"social policy\"\"government\"\"promoter of gambling\"与下文州政府运营博彩的事实形成总-分关系。",
+    "traps": "G项虽提到网络赌博和政府，但重点在质疑政府监管依据，与下文政府推广赌博的方向相反；E项虽为总结性语句，但放在此处则后文的大量论据缺少引导。",
+    "tip": "D项是总起句，\"social policy\"\"government\"直接引出下文各州彩票与赌场数据。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "auditor",
+    "cn": "审计员（n.）"
+   },
+   {
+    "w": "slot machine",
+    "cn": "老虎机（n.）"
+   },
+   {
+    "w": "patronage",
+    "cn": "光顾；惠顾（n.）"
+   },
+   {
+    "w": "involuntarily",
+    "cn": "非自愿地（adv.）"
+   },
+   {
+    "w": "cease",
+    "cn": "停止；终止（v.）"
+   },
+   {
+    "w": "readmitted",
+    "cn": "重新接纳（v. 过去分词）"
+   },
+   {
+    "w": "well-being",
+    "cn": "健康；幸福（n.）"
+   },
+   {
+    "w": "toll-free",
+    "cn": "免费拨打的（adj.）"
+   },
+   {
+    "w": "lure",
+    "cn": "引诱；诱惑（v.）"
+   },
+   {
+    "w": "pathological",
+    "cn": "病态的（adj.）"
+   },
+   {
+    "w": "windfall",
+    "cn": "意外之财（n.）"
+   },
+   {
+    "w": "akin to",
+    "cn": "类似于（prep. 短语）"
+   },
+   {
+    "w": "medicalize",
+    "cn": "使医学化（v.）"
+   },
+   {
+    "w": "compulsive",
+    "cn": "强迫性的；无法自控的（adj.）"
+   },
+   {
+    "w": "operative",
+    "cn": "起作用的；有效的（adj.）"
+   },
+   {
+    "w": "pepper",
+    "cn": "连续发送；不断投送（v.）"
+   },
+   {
+    "w": "conducive",
+    "cn": "有助于…的（adj.）"
+   },
+   {
+    "w": "wagering",
+    "cn": "赌博；下注（n.）"
+   },
+   {
+    "w": "pornography",
+    "cn": "色情作品（n.）"
+   },
+   {
+    "w": "sterner",
+    "cn": "更严厉的（adj. 比较级）"
+   }
+  ]
+ }
+}

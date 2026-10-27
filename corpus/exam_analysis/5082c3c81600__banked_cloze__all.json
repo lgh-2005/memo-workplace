@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "5082c3c81600__banked_cloze__all",
+ "examId": "5082c3c81600",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2025 年 6 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:04:45.278Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60035,
+ "usage": {
+  "prompt_tokens": 1372,
+  "completion_tokens": 3330,
+  "total_tokens": 4702,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1372,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3330,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1372,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国女性政治参与不足的原因与对策",
+  "gist": "文章指出女性在美国国会中的代表性严重不足，这不是因为选民抵制或筹资困难，而是因为两党女性候选人数量严重失衡。要实现性别平等，需要更多女性参选，尤其是共和党方面需将招募女性候选人作为长期优先事项。",
+  "difficulty": "中等",
+  "translation": "女性在民选职位上的缓慢进展令一些政治观察人士和专家（包括我自己）感到沮丧。在国会中实现性别平等是一个重要目标。这是因为参与立法决策的女性人数对政府所制定的所有政策都有重大影响。与男性相比，女性立法者更有可能提出、讨论并推动通过那些对女性和女孩影响尤为突出的政策，如带薪家庭假、薪酬公平和基于性别的暴力问题。\n\n国会中有更多女性还能增强女性选民与政府之间的联系感。此外，它还增强了女性对政府关心她们诉求的感受，并激励年轻女性更积极地参与政治。\n\n虽然女性在全球各国政府中的代表性普遍不足，但在美国这一问题尤为严峻。目前，在女性政府代表比例方面，美国在全球排名第73位。\n\n但女性在美国政府中代表性如此严重不足的原因，并非她们面临选民的抵制或难以筹集资金。恰恰相反，数十年的研究表明，女性候选人筹集的资金与拥有相似资历的男性政治家一样多，胜选率也不相上下。\n\n事实上，女性在政治领域进展缓慢是两个政党的故事。\n\n在下届国会中，参众两院合计将有107名民主党女性议员和42名共和党女性议员。\n\n为了让女性获得国会半数席位，需要更多女性参选，尤其是以共和党候选人身份参选。这将要求共和党整体上优先招募女性候选人——而且不仅仅是针对一个选举周期，而是以一种持续性的方式进行。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "correct": "consequences",
+    "why": "空格前为形容词significant，后接介词for，需要一个名词。\"has significant consequences for\"意为\"对……有重大影响\"，是固定搭配，语义上指女性参与立法的人数会对政策产生重要后果，逻辑通顺。",
+    "traps": "credentials意为资历/资格，搭配for语义不通，不能说对政策有资历；其他名词如equity也不符合has...for的搭配要求。",
+    "tip": "名词搭配题：significant + consequences + for 是高频搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "E",
+    "correct": "enact",
+    "why": "空格位于定语从句\"that governments ___\"中，主语governments需要一个动词，enact意为\"制定/颁布（法律、政策）\"，governments enact policies是标准搭配，语义为\"政府所制定的政策\"。",
+    "traps": "bolsters意为增强，虽是动词但语义不当，政府不是\"增强\"政策而是\"制定\"政策；prioritize虽也是动词但语义偏离此处上下文。",
+    "tip": "动词搭配题：enact policies/laws 为政治类常用搭配。"
+   },
+   {
+    "number": 28,
+    "answer": "F",
+    "correct": "equity",
+    "why": "空格前为pay，与paid family leave和gender-based violence并列，pay equity意为\"薪酬公平\"，是社会政策领域的常见术语，完美契合讨论女性权益政策的语境。",
+    "traps": "consequences为名词但pay consequences不构成合理的政策领域术语；credentials搭配pay也不成立。",
+    "tip": "专业术语识别：pay equity（薪酬公平）是性别平等议题核心词汇。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "correct": "bolsters",
+    "why": "空格处主语为it（指代having more women in Congress），宾语为women's sense，需要一个第三人称单数动词。bolsters意为\"增强/支持\"，\"增强女性对政府关心其诉求的感受\"语义完全合理，且与前文fosters语义衔接。",
+    "traps": "enact意为制定法律，与sense不搭配；prioritize意为优先考虑，此处主语为it而非人，搭配不当。",
+    "tip": "动词辨析：bolster常与sense、confidence、support等抽象名词搭配。"
+   },
+   {
+    "number": 30,
+    "answer": "I",
+    "correct": "formidable",
+    "why": "空格前有particularly，后接名词problem，需要一个形容词。formidable意为\"严峻的、令人畏惧的\"，a particularly formidable problem表示\"一个尤为严峻的问题\"，强调美国女性代表性不足问题的严重程度。",
+    "traps": "dramatically是副词不能修饰名词；sustained意为持续的，修饰problem语义偏弱，不能与particularly搭配突出严重性。",
+    "tip": "形容词辨析：formidable problem 强调问题的严峻与棘手程度。"
+   },
+   {
+    "number": 31,
+    "answer": "D",
+    "correct": "dramatically",
+    "why": "空格前为so，后接形容词underrepresented，需要一个副词来修饰该形容词。dramatically意为\"显著地、极大地\"，so dramatically underrepresented表示\"代表性如此严重不足\"，程度副词用法准确。",
+    "traps": "especially虽也是副词，但so especially underrepresented搭配不自然，especially通常用于列举强调而非程度修饰。",
+    "tip": "副词用法：dramatically修饰形容词/过去分词表\"程度大\"。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "correct": "credentials",
+    "why": "空格前为similar，需要一个名词。credentials意为\"资历、资格证明\"，\"拥有相似资历的男性政治家\"符合上下文在比较男女候选人实力时的逻辑，即在资历相当时女性表现不逊色。",
+    "traps": "consequences意为后果，similar consequences与比较候选人能力的语境不符；equity是不可数名词，similar equity搭配生硬。",
+    "tip": "名词语境题：credentials指从政经验、学历等综合资质。"
+   },
+   {
+    "number": 33,
+    "answer": "G",
+    "correct": "especially",
+    "why": "空格后为on Republican tickets，前面是more women need to run。especially意为\"尤其是\"，在此起补充强调作用，指出尤其需要以共和党身份参选，呼应后文共和党女性议员远少于民主党的数据。",
+    "traps": "dramatically虽也是副词但语义不合，此处需要的是\"特别是\"的递进限定功能而非程度强调。",
+    "tip": "逻辑连接：especially用于在一般陈述后聚焦特定对象。"
+   },
+   {
+    "number": 34,
+    "answer": "L",
+    "correct": "prioritize",
+    "why": "空格前为to，后接动名词recruiting women，需要一个动词原形。prioritize意为\"优先考虑\"，to prioritize recruiting women意为\"将招募女性作为优先事项\"，语义上强调共和党需要主动重视，与后文not just for one election cycle的紧迫感呼应。",
+    "traps": "bolsters虽是动词但此处需原形且后接动名词recruiting不如prioritize自然；enact后通常接法律政策而非recruiting。",
+    "tip": "动词搭配：prioritize + doing sth. 表\"将……列为优先\"。"
+   },
+   {
+    "number": 35,
+    "answer": "N",
+    "correct": "sustained",
+    "why": "空格位于冠词a与名词way之间，需要一个形容词。sustained意为\"持续的、持久的\"，in a sustained way表示\"以一种持续性的方式\"，与前文not just for one election cycle形成语义对比，强调长期坚持。",
+    "traps": "formidable意为严峻的，a formidable way搭配不当且语义不合逻辑；dramatically是副词不能放在此位置。",
+    "tip": "语义对照：sustained与not just for one election cycle构成转折呼应。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "bolsters",
+    "cn": "v. 增强，支持，鼓励"
+   },
+   {
+    "w": "consequences",
+    "cn": "n. 结果，后果，影响"
+   },
+   {
+    "w": "credentials",
+    "cn": "n. 资历，资格证明，证书"
+   },
+   {
+    "w": "enact",
+    "cn": "v. 制定（法律），颁布，通过"
+   },
+   {
+    "w": "equity",
+    "cn": "n. 公平，公正；（财务）净值"
+   },
+   {
+    "w": "formidable",
+    "cn": "adj. 严峻的，令人敬畏的，难以对付的"
+   },
+   {
+    "w": "sustained",
+    "cn": "adj. 持续的，持久的，不减弱的"
+   },
+   {
+    "w": "prioritize",
+    "cn": "v. 优先处理，确定优先次序"
+   },
+   {
+    "w": "disproportionately",
+    "cn": "adv. 不成比例地，不相称地"
+   },
+   {
+    "w": "underrepresented",
+    "cn": "adj. 代表性不足的"
+   },
+   {
+    "w": "legislative",
+    "cn": "adj. 立法的，与立法有关的"
+   },
+   {
+    "w": "elective",
+    "cn": "adj. 选举的，可选择的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——女性政治参与不足的原因与两党差异。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空选择范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、副词等）判定所需词性，排除不匹配选项。",
+   "第四步：结合上下文语义逻辑和常见搭配（如enact policies, pay equity）确定最佳答案。",
+   "第五步：将选定词回填通读，确认语义连贯且无重复使用，查漏补缺。"
+  ]
+ }
+}

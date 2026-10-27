@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "fc33c1cb1401__translation__all",
+ "examId": "fc33c1cb1401",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2025 年 12 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T06:03:53.222Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32827,
+ "usage": {
+  "prompt_tokens": 805,
+  "completion_tokens": 2140,
+  "total_tokens": 2945,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 805,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2140,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 805,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中华民族自强自立精神与科技成就",
+  "reference": "The Chinese nation has long cherished the spirit of self-reliance and self-improvement. Deeply rooted in Chinese culture, this spirit serves as a vital pillar for the nation's survival and development. Since the reform and opening up, China has continuously increased its investment in scientific research on the journey toward self-reliance, making constant breakthroughs in fields such as information technology, artificial intelligence, and aerospace engineering. 5G networks now cover the entire country, telemedicine has developed rapidly, the adoption of electronic payment leads the world, and the Chang'e lunar exploration program has demonstrated remarkable progress in the aerospace sector. The spirit of self-reliance and independence has become a powerful driving force behind the nation's modernization, inspiring the Chinese people to keep striving toward the Chinese Dream of national rejuvenation.",
+  "sentences": [
+   {
+    "cn": "中华民族崇尚自强自立的精神，这一精神深植于中国文化之中，是民族生存与发展的重要支撑。",
+    "en": "The Chinese nation has long cherished the spirit of self-reliance and self-improvement. Deeply rooted in Chinese culture, this spirit serves as a vital pillar for the nation's survival and development.",
+    "structure": "原句较长，可拆为两句；第二句用过去分词短语 Deeply rooted in... 作状语前置，主句用 serve as 表'作为……支撑'",
+    "keys": [
+     "崇尚 cherish/value",
+     "自强自立 self-reliance and self-improvement",
+     "深植于 deeply rooted in",
+     "重要支撑 a vital pillar"
+    ]
+   },
+   {
+    "cn": "改革开放以来，中国在自强自立的征程上，持续加大科研投入，在信息技术、人工智能、航天工程等领域不断取得新突破。",
+    "en": "Since the reform and opening up, China has continuously increased its investment in scientific research on the journey toward self-reliance, making constant breakthroughs in fields such as information technology, artificial intelligence, and aerospace engineering.",
+    "structure": "Since... 时间状语引导现在完成时主句；后半句用现在分词短语 making... 作伴随状语表结果",
+    "keys": [
+     "改革开放 the reform and opening up",
+     "持续加大科研投入 continuously increased its investment in scientific research",
+     "航天工程 aerospace engineering",
+     "取得新突破 make breakthroughs"
+    ]
+   },
+   {
+    "cn": "5G 网络覆盖全国，远程医疗发展迅速，电子支付的使用全球领先，嫦娥探月工程展现了航天领域引人注目的发展。",
+    "en": "5G networks now cover the entire country, telemedicine has developed rapidly, the adoption of electronic payment leads the world, and the Chang'e lunar exploration program has demonstrated remarkable progress in the aerospace sector.",
+    "structure": "四个并列分句用逗号和 and 连接，形成排比结构；各分句主谓完整，时态以现在时和现在完成时交替体现已完成与持续状态",
+    "keys": [
+     "5G 网络覆盖全国 5G networks cover the entire country",
+     "远程医疗 telemedicine",
+     "电子支付 electronic payment",
+     "嫦娥探月工程 the Chang'e lunar exploration program",
+     "引人注目的 remarkable"
+    ]
+   },
+   {
+    "cn": "自强自主精神成为推动国家现代化进程的强大动力，激励着中国人民为实现民族复兴的中国梦不断奋进。",
+    "en": "The spirit of self-reliance and independence has become a powerful driving force behind the nation's modernization, inspiring the Chinese people to keep striving toward the Chinese Dream of national rejuvenation.",
+    "structure": "主句用现在完成时 has become 表达延续至今的状态；现在分词短语 inspiring... 作伴随结果状语；of national rejuvenation 作后置定语修饰 the Chinese Dream",
+    "keys": [
+     "现代化进程 modernization",
+     "强大动力 a powerful driving force",
+     "民族复兴 national rejuvenation",
+     "不断奋进 keep striving"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "自强自立",
+    "en": "self-reliance and self-improvement"
+   },
+   {
+    "cn": "改革开放",
+    "en": "the reform and opening up"
+   },
+   {
+    "cn": "科研投入",
+    "en": "investment in scientific research"
+   },
+   {
+    "cn": "信息技术",
+    "en": "information technology"
+   },
+   {
+    "cn": "人工智能",
+    "en": "artificial intelligence"
+   },
+   {
+    "cn": "航天工程",
+    "en": "aerospace engineering"
+   },
+   {
+    "cn": "远程医疗",
+    "en": "telemedicine"
+   },
+   {
+    "cn": "电子支付",
+    "en": "electronic payment"
+   },
+   {
+    "cn": "嫦娥探月工程",
+    "en": "the Chang'e lunar exploration program"
+   },
+   {
+    "cn": "民族复兴",
+    "en": "national rejuvenation"
+   }
+  ],
+  "pitfalls": [
+   "'改革开放'漏掉定冠词 the 或拼写错误，应为 the reform and opening up",
+   "'嫦娥'音译写错，正确为 Chang'e，注意撇号位置",
+   "'自强自立'与'自强自主'原文交替出现，翻译时应注意措辞一致性或合理变化",
+   "'远程医疗'误译为 remote medical 等不地道表达，标准用词为 telemedicine",
+   "时态混乱：'改革开放以来'应使用现在完成时，不可全篇用一般过去时"
+  ],
+  "upgrades": [
+   {
+    "plain": "China has put more money into science",
+    "better": "China has continuously increased its investment in scientific research",
+    "note": "用 investment in scientific research 更正式学术，符合政经语域"
+   },
+   {
+    "plain": "is deeply in Chinese culture",
+    "better": "is deeply rooted in Chinese culture",
+    "note": "rooted in 为固定搭配，比 in 更形象地表达'根植于'"
+   },
+   {
+    "plain": "a strong power for modernization",
+    "better": "a powerful driving force behind the nation's modernization",
+    "note": "driving force behind 为地道搭配，更准确表达'推动……的动力'"
+   },
+   {
+    "plain": "China's 5G is used everywhere",
+    "better": "5G networks now cover the entire country",
+    "note": "cover the entire country 表达更正式精准，避免口语化"
+   },
+   {
+    "plain": "encouraging Chinese people to work hard for the Chinese Dream",
+    "better": "inspiring the Chinese people to keep striving toward the Chinese Dream of national rejuvenation",
+    "note": "inspire 比 encourage 语气更强，strive toward 更能体现奋进的力度与方向感"
+   }
+  ]
+ }
+}

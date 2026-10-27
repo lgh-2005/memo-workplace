@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "330ff228d4a2__writing__all",
+ "examId": "330ff228d4a2",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年 3 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:49:26.769Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44331,
+ "usage": {
+  "prompt_tokens": 724,
+  "completion_tokens": 2855,
+  "total_tokens": 3579,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 724,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2855,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 724,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "给定首句式议论文，围绕\"选择过多带来决策困难\"展开论述，可发表评论、举例或结合个人经历，字数150-200词。",
+    "outline": [
+     "引出话题：以题目给定首句开篇，点明\"选择悖论\"已成为现代生活的显著特征。",
+     "分析原因与影响：从决策疲劳、选后后悔等角度阐释选择过多带来的具体挑战，辅以网购等实例。",
+     "提出应对策略并总结：给出明确优先级、接受\"足够好\"等实用建议，收束全文。"
+    ],
+    "sample": "People are now increasingly aware of the challenges in making a decision when faced with too many choices. This phenomenon, often referred to as the \"paradox of choice,\" has become a defining feature of modern life.\n\nTo begin with, an overabundance of options can lead to decision fatigue. When consumers browse online shopping platforms, for instance, they are bombarded with hundreds of similar products, making it extremely difficult to settle on one. Rather than feeling empowered, they often feel overwhelmed and anxious. Furthermore, having too many choices frequently results in regret after a decision is made. People tend to second-guess themselves, wondering whether an alternative option would have been superior.\n\nHowever, there are practical strategies to cope with this dilemma. Setting clear priorities and limiting the range of options under consideration can significantly ease the decision-making process. Additionally, learning to embrace \"good enough\" rather than relentlessly pursuing the perfect choice helps reduce unnecessary stress.\n\nIn conclusion, while abundant choices are an inevitable aspect of contemporary society, cultivating rational decision-making habits enables us to navigate this challenge with greater confidence and peace of mind.",
+    "phrases": [
+     {
+      "en": "the paradox of choice",
+      "cn": "选择悖论；指选项越多反而越难做决定的现象，学术感强，适合点题。"
+     },
+     {
+      "en": "decision fatigue",
+      "cn": "决策疲劳；心理学术语，指反复做选择后判断力下降，体现专业素养。"
+     },
+     {
+      "en": "be bombarded with",
+      "cn": "被……狂轰滥炸；常用于描述信息或选项过多的情境，形象生动。"
+     },
+     {
+      "en": "settle on",
+      "cn": "最终选定；比choose更地道，常与option/plan搭配。"
+     },
+     {
+      "en": "second-guess oneself",
+      "cn": "事后质疑自己的决定；高频地道表达，适用于讨论后悔心理。"
+     },
+     {
+      "en": "under consideration",
+      "cn": "在考虑之中；正式书面用语，用于替代being considered。"
+     },
+     {
+      "en": "cope with this dilemma",
+      "cn": "应对这一困境；cope with比deal with更正式，dilemma比problem更精确。"
+     },
+     {
+      "en": "relentlessly pursuing",
+      "cn": "不懈地追求；副词relentlessly增强语气，展现词汇深度。"
+     },
+     {
+      "en": "an inevitable aspect of",
+      "cn": "……不可避免的一面；替代常见的an unavoidable part of，更高级。"
+     },
+     {
+      "en": "navigate this challenge",
+      "cn": "驾驭/应对这一挑战；navigate用作比喻义，比face/meet更有表现力。"
+     }
+    ],
+    "pitfalls": [
+     "忘记以题目给定首句开头，直接另起句子导致扣分。",
+     "全篇只罗列现象不分析原因，缺少逻辑深度。",
+     "举例空泛（如some people），未给出具体场景（如网购、择校）。",
+     "用词重复严重，choice/choose反复出现却不会用option/alternative替换。",
+     "字数不足150词或超过200词，均可能被扣卷面分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "There are too many choices, so people feel stressed.",
+      "better": "An overabundance of options can lead to decision fatigue, leaving people overwhelmed and anxious.",
+      "note": "用学术名词decision fatigue替代口语化表述，并以现在分词短语补充结果，句式更丰富。"
+     },
+     {
+      "plain": "People always think other choices may be better.",
+      "better": "People tend to second-guess themselves, wondering whether an alternative option would have been superior.",
+      "note": "second-guess和虚拟语气would have been体现高级词汇与语法。"
+     },
+     {
+      "plain": "We should learn to accept good choices instead of perfect ones.",
+      "better": "Learning to embrace 'good enough' rather than relentlessly pursuing the perfect choice helps reduce unnecessary stress.",
+      "note": "动名词作主语+rather than对比结构，句式更紧凑且书面感更强。"
+     },
+     {
+      "plain": "We can solve this problem by setting priorities.",
+      "better": "Setting clear priorities and limiting the range of options under consideration can significantly ease the decision-making process.",
+      "note": "并列动名词短语作主语，搭配ease替代solve，用词更精准地道。"
+     },
+     {
+      "plain": "In a word, too many choices are a problem in today's world.",
+      "better": "While abundant choices are an inevitable aspect of contemporary society, cultivating rational decision-making habits enables us to navigate this challenge with greater confidence.",
+      "note": "让步状语从句+enable sb. to do结构，结尾既客观又积极，避免简单重复观点。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "An overabundance of options can lead to decision fatigue. —— 选项过剩会导致决策疲劳。（学术化表达，一句话点明核心论点）",
+   "Rather than feeling empowered, they often feel overwhelmed and anxious. —— 他们非但没有感到被赋权，反而常感到不知所措和焦虑。（rather than形成鲜明反差，论证有力）",
+   "People tend to second-guess themselves, wondering whether an alternative option would have been superior. —— 人们往往事后质疑自己，想着另一个选项是否会更好。（second-guess地道用词+虚拟语气，展示语法深度）",
+   "Learning to embrace 'good enough' rather than relentlessly pursuing the perfect choice helps reduce unnecessary stress. —— 学会接受\"足够好\"而非一味追求完美选择，有助于减少不必要的压力。（动名词主语+rather than对比，实用且高级）",
+   "Cultivating rational decision-making habits enables us to navigate this challenge with greater confidence and peace of mind. —— 培养理性的决策习惯使我们能更自信、更从容地应对这一挑战。（enable sb. to do + navigate比喻用法，结尾铿锵有力）"
+  ]
+ }
+}

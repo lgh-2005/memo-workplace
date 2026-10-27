@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "7636b03c9370__writing__all",
+ "examId": "7636b03c9370",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年 12 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:44:16.540Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43163,
+ "usage": {
+  "prompt_tokens": 729,
+  "completion_tokens": 2732,
+  "total_tokens": 3461,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 729,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2732,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 729,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文：以指定首句开头，围绕\"信息爆炸时代培养批判性思维与理性选择能力的重要性\"展开论述，150-200词。",
+    "outline": [
+     "开篇引出话题：引用题目首句，阐明信息爆炸背景下批判性思维的紧迫性，点明大量虚假、误导性信息泛滥的现实。",
+     "主体论证：从两个层面说明批判性思维和理性选择的价值——一是辨别真伪、评估信息可信度；二是抵御情绪操控、避免冲动决策。辅以具体例证。",
+     "总结建议：从教育与个人两个维度提出培养批判性思维的路径，以倒装句收尾，强化号召力。"
+    ],
+    "sample": "In an era of information explosion, it is vitally important to develop the ability to think critically and make rational choices. With the rapid proliferation of social media and online platforms, we are constantly bombarded with an overwhelming amount of information, much of which is misleading or even fabricated. Without critical thinking, individuals are prone to falling prey to rumors, biased opinions, and manipulative advertisements.\n\nTo begin with, critical thinking enables us to distinguish facts from opinions and evaluate the credibility of various sources. For instance, when encountering sensational headlines on social media, a critical thinker would verify the information through multiple reliable channels before accepting it as truth. Moreover, rational decision-making helps us resist impulsive behaviors driven by emotional manipulation. Many consumers, for example, make unnecessary purchases simply because they are swayed by cleverly designed marketing strategies.\n\nTo cultivate these essential skills, educational institutions should incorporate critical thinking training into their curricula, and individuals should consciously practice questioning assumptions and analyzing evidence in daily life. Only by doing so can we navigate the sea of information with wisdom and confidence.",
+    "phrases": [
+     {
+      "en": "the rapid proliferation of...",
+      "cn": "……的迅速扩散/激增，用于描述事物快速蔓延，比spread更正式"
+     },
+     {
+      "en": "be bombarded with",
+      "cn": "被……轰炸/包围，形象表达信息过载，常用于写作高分表达"
+     },
+     {
+      "en": "fall prey to",
+      "cn": "成为……的牺牲品/受害者，比become victim of更地道"
+     },
+     {
+      "en": "distinguish A from B",
+      "cn": "区分A与B，学术写作常用搭配，体现逻辑分析能力"
+     },
+     {
+      "en": "evaluate the credibility of",
+      "cn": "评估……的可信度，批判性思维话题核心短语"
+     },
+     {
+      "en": "impulsive behaviors driven by",
+      "cn": "由……驱动的冲动行为，过去分词作后置定语的典型用法"
+     },
+     {
+      "en": "be swayed by",
+      "cn": "被……左右/动摇，表示被影响而改变立场或决定"
+     },
+     {
+      "en": "incorporate...into...",
+      "cn": "将……纳入/融入……，常用于建议措施类表达"
+     },
+     {
+      "en": "Only by doing so can we...",
+      "cn": "只有这样做我们才能……，only+介词短语置于句首引起部分倒装，增强语势"
+     },
+     {
+      "en": "navigate the sea of information",
+      "cn": "在信息的海洋中航行，比喻性表达，形象且有文采"
+     }
+    ],
+    "pitfalls": [
+     "未以题目指定首句开头，直接扣分，这是本题最基本的格式要求",
+     "全文空谈重要性却无具体例证支撑，论证单薄，难以拿到中档以上分数",
+     "词汇重复率高，反复使用important、good等基础词，缺乏同义替换意识",
+     "段落之间缺乏逻辑连接词（如moreover、furthermore），结构松散",
+     "字数不足150词或超过200词，均会影响评分"
+    ],
+    "upgrades": [
+     {
+      "plain": "There is a lot of information around us.",
+      "better": "We are constantly bombarded with an overwhelming amount of information.",
+      "note": "被动语态+形象动词bombarded，表达力更强，画面感更足"
+     },
+     {
+      "plain": "People easily believe rumors.",
+      "better": "Individuals are prone to falling prey to rumors and biased opinions.",
+      "note": "prone to + fall prey to双重搭配，用词更学术，表意更精准"
+     },
+     {
+      "plain": "We should learn to tell right from wrong information.",
+      "better": "Critical thinking enables us to distinguish facts from opinions and evaluate the credibility of various sources.",
+      "note": "主语用抽象名词，搭配enables，句式更正式；distinguish与evaluate并列更具层次"
+     },
+     {
+      "plain": "Schools should teach students critical thinking.",
+      "better": "Educational institutions should incorporate critical thinking training into their curricula.",
+      "note": "incorporate...into结构更正式，curricula比classes更专业"
+     },
+     {
+      "plain": "If we do this, we can deal with information well.",
+      "better": "Only by doing so can we navigate the sea of information with wisdom and confidence.",
+      "note": "倒装句+比喻修辞，句式高级且结尾有力，给阅卷老师留下深刻印象"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "We are constantly bombarded with an overwhelming amount of information, much of which is misleading or even fabricated. —— 我们不断被海量信息轰炸，其中很多是误导性的甚至是捏造的。（much of which引导非限定性定语从句，信息叠加自然流畅）",
+   "Without critical thinking, individuals are prone to falling prey to rumors, biased opinions, and manipulative advertisements. —— 缺乏批判性思维，个人容易沦为谣言、偏见和操纵性广告的牺牲品。（be prone to + fall prey to搭配地道，三项并列节奏感强）",
+   "A critical thinker would verify the information through multiple reliable channels before accepting it as truth. —— 批判性思考者会在接受信息为事实之前，通过多个可靠渠道加以核实。（would表习惯性动作，before分句体现逻辑先后）",
+   "Only by doing so can we navigate the sea of information with wisdom and confidence. —— 唯有如此，我们才能以智慧和自信在信息的海洋中自如航行。（Only引起的倒装句+比喻，适合用作结尾金句）"
+  ]
+ }
+}

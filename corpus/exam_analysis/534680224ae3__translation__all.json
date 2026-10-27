@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "534680224ae3__translation__all",
+ "examId": "534680224ae3",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年 6 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:52:06.416Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29068,
+ "usage": {
+  "prompt_tokens": 786,
+  "completion_tokens": 2004,
+  "total_tokens": 2790,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 786,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2004,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 786,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国城市高质量发展与人居环境改善",
+  "reference": "In recent years, urban development in China has been accelerating, and the living environment in cities has been significantly improved. Many cities have been actively exploring a path of high-quality urban development with Chinese characteristics, steadily improving urban functions and notably elevating governance capabilities. China has continued to carry out urban ecological restoration and functional repair, comprehensively implemented the renovation of old residential communities in urban areas, and vigorously promoted urban landscaping and greening to eliminate pollution. Meanwhile, great efforts have been made to advance the systematic development of urban infrastructure, conduct general surveys of buildings and municipal facilities, and investigate and address potential safety hazards, all in an endeavor to create a high-quality living environment for urban residents and make cities more beautiful, safer, and more livable.",
+  "sentences": [
+   {
+    "cn": "近年来,中国城市加快发展,城市人居环境得到显著改善。",
+    "en": "In recent years, urban development in China has been accelerating, and the living environment in cities has been significantly improved.",
+    "structure": "并列句，两个简单句由 and 连接，第二句用被动语态突出受事主语",
+    "keys": [
+     "城市人居环境 the living environment in cities",
+     "显著改善 be significantly improved"
+    ]
+   },
+   {
+    "cn": "许多城市努力探索中国特色的城市高质量发展之路,城市功能不断完善,治理水平明显提高。",
+    "en": "Many cities have been actively exploring a path of high-quality urban development with Chinese characteristics, steadily improving urban functions and notably elevating governance capabilities.",
+    "structure": "主句 + 现在分词短语作伴随状语，三个并列动作通过分词结构整合为一句",
+    "keys": [
+     "中国特色 with Chinese characteristics",
+     "高质量发展之路 a path of high-quality development",
+     "治理水平 governance capabilities"
+    ]
+   },
+   {
+    "cn": "中国持续开展城市生态修复和功能修补,全面实施城镇老旧小区改造,大力推进城市园林绿化,消除污染;",
+    "en": "China has continued to carry out urban ecological restoration and functional repair, comprehensively implemented the renovation of old residential communities in urban areas, and vigorously promoted urban landscaping and greening to eliminate pollution.",
+    "structure": "主语 + 三个并列谓语动词结构（carried out / implemented / promoted），末尾接不定式表目的",
+    "keys": [
+     "城市生态修复 urban ecological restoration",
+     "城镇老旧小区改造 renovation of old residential communities",
+     "城市园林绿化 urban landscaping and greening"
+    ]
+   },
+   {
+    "cn": "同时大力推进城市基础设施体系化建设,开展房屋建筑和市政设施普查以及安全隐患排查整治,努力为市民创造高品质的生活环境,让城市更美丽、更安全、更宜居。",
+    "en": "Meanwhile, great efforts have been made to advance the systematic development of urban infrastructure, conduct general surveys of buildings and municipal facilities, and investigate and address potential safety hazards, all in an endeavor to create a high-quality living environment for urban residents and make cities more beautiful, safer, and more livable.",
+    "structure": "被动语态主句 + 三个并列不定式（to advance / conduct / investigate）+ all in an endeavor to 引导目的状语，末尾 make 后接宾语 + 三个并列形容词比较级作宾补",
+    "keys": [
+     "城市基础设施体系化建设 systematic development of urban infrastructure",
+     "安全隐患排查整治 investigate and address potential safety hazards",
+     "高品质的生活环境 a high-quality living environment",
+     "更宜居 more livable"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "城市人居环境",
+    "en": "urban living environment / the living environment in cities"
+   },
+   {
+    "cn": "中国特色",
+    "en": "Chinese characteristics"
+   },
+   {
+    "cn": "城市高质量发展",
+    "en": "high-quality urban development"
+   },
+   {
+    "cn": "城市生态修复",
+    "en": "urban ecological restoration"
+   },
+   {
+    "cn": "功能修补",
+    "en": "functional repair / functional improvement"
+   },
+   {
+    "cn": "城镇老旧小区改造",
+    "en": "renovation of old residential communities in urban areas"
+   },
+   {
+    "cn": "城市园林绿化",
+    "en": "urban landscaping and greening"
+   },
+   {
+    "cn": "城市基础设施体系化建设",
+    "en": "systematic development of urban infrastructure"
+   },
+   {
+    "cn": "安全隐患排查整治",
+    "en": "investigation and remediation of potential safety hazards"
+   },
+   {
+    "cn": "宜居",
+    "en": "livable / habitable"
+   }
+  ],
+  "pitfalls": [
+   "「城镇老旧小区」易误译为 old towns，应译为 old residential communities in urban areas",
+   "「功能修补」易与「生态修复」混淆，需分别对应 functional repair 和 ecological restoration",
+   "「体系化建设」不能仅译 construction，应体现 systematic 含义",
+   "「安全隐患排查整治」包含排查和整治两个动作，需译出 investigate and address/remediate",
+   "「治理水平」易误译为 management level，governance capabilities 更贴合政府语境"
+  ],
+  "upgrades": [
+   {
+    "plain": "China has improved the city environment.",
+    "better": "The living environment in cities has been significantly improved.",
+    "note": "使用被动语态更符合英文正式文体，significantly 体现「显著」程度"
+   },
+   {
+    "plain": "try to explore a road of development",
+    "better": "actively exploring a path of high-quality urban development",
+    "note": "path 比 road 更适合抽象概念，actively 比 try to 更积极主动"
+   },
+   {
+    "plain": "do surveys and fix safety problems",
+    "better": "conduct general surveys and investigate and address potential safety hazards",
+    "note": "conduct / investigate / address 为正式用词，potential safety hazards 准确对应「安全隐患」"
+   },
+   {
+    "plain": "to make a good living environment for people",
+    "better": "all in an endeavor to create a high-quality living environment for urban residents",
+    "note": "in an endeavor to 比 in order to 更正式高级，urban residents 比 people 更精准"
+   },
+   {
+    "plain": "make the city more beautiful and safe and good to live in",
+    "better": "make cities more beautiful, safer, and more livable",
+    "note": "三个并列比较级结构工整，livable 一词精准对应「宜居」"
+   }
+  ]
+ }
+}

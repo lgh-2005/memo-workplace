@@ -1,0 +1,176 @@
+{
+ "schemaVersion": 1,
+ "id": "2c00eddfd70a__reading__2",
+ "examId": "2c00eddfd70a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "1999 年考研英语真题（旧）",
+ "year": 1999,
+ "sub": "2",
+ "questionNumbers": [
+  15,
+  16,
+  17,
+  18
+ ],
+ "generatedAt": "2026-10-27T05:02:45.459Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61247,
+ "usage": {
+  "prompt_tokens": 1636,
+  "completion_tokens": 3597,
+  "total_tokens": 5233,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1636,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3597,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1636,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "互联网商务的市场拓展与营销策略变革",
+  "gist": "文章围绕早期互联网商务展开，先介绍网络商务从消费者市场向B2B市场的扩展，再讨论企业对网络可靠性的疑虑，接着重点分析营销技术从\"拉\"策略到\"推\"策略的重大转变及其引发的争议，最后指出只要具备合适的产品和用户体验，网络商务前景光明。",
+  "structure": [
+   "第一段：网络商务从消费者市场向B2B市场扩展",
+   "第二段：企业对网络交易可靠性存疑及应对措施",
+   "第三段：营销技术从拉策略到推策略的转变及争议",
+   "第四段：展望网络商务前景，强调用户体验的重要性"
+  ],
+  "difficulty": "中等",
+  "translation": "在网络商务兴起的头一年左右，大部分活动都围绕着开拓消费者市场展开。近来，随着网络被证明不仅仅是一时的潮流，企业之间也开始通过网络买卖产品和服务。这种企业对企业（B2B）的销售模式是合理的，因为商务人士通常清楚自己需要什么产品。\n\n然而，许多公司仍然因为对网络可靠性存有疑虑而不愿使用网络。弗雷斯特研究公司的高级分析师布莱恩·欧文说：\"企业需要确信自己与供应商之间的通道是可信赖的。\"一些公司通过仅与获准进入公司内部网的既有商业伙伴进行在线交易来降低风险。\n\n互联网商务模式的另一重大转变与可用于营销的技术有关。直到最近，互联网营销活动还集中在\"拉\"策略上，即将客户吸引到网站上来。然而在过去一年中，软件公司开发出了一些工具，使企业能够将信息直接\"推\"送给消费者，把营销信息直接传送给目标客户。最值得注意的是，Pointcast网络利用屏幕保护程序向订阅者的电脑屏幕持续推送不断更新的新闻和广告流。订阅者可以自定义想要接收的信息，并直接进入某家公司的网站。像Virtual Vineyards这样的公司已经开始使用类似技术向客户推送有关特卖、产品推介或其他活动的信息。但推送技术招来了许多网络用户的不屑。网络文化非常推崇这样一种理念：出现在屏幕上的信息是用户主动请求的。一旦商业推广未经邀请便充满屏幕，网络和电视之间的区别就消失了。这种前景让网络纯粹主义者感到恐惧。\n\n但网络上的公司并非必然要诉诸推送策略来赚钱。Virtual Vineyards、亚马逊等先驱的例子表明，一个销售合适产品、恰当融合了互动性、亲和力和安全性的网站能够吸引在线客户。而且计算能力的成本持续大幅下降，这对于任何在网络上开设店铺的企业来说都是好兆头。五到十年后回顾今天的人们可能会奇怪，为什么当初只有那么少的公司投身于网络大潮。",
+  "questions": [
+   {
+    "number": 15,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "In the first year or so of Web business, most of the action has revolved around efforts to tap the consumer market. More recently, as the Web proved to be more than a fashion, companies have started to buy and sell products and services with one another.",
+    "why": "第一段指出网络商务起初围绕开拓消费者市场展开，随后企业又开始了B2B交易。由消费者市场到企业间市场，体现了网络商务一直在努力扩展自身市场，与A选项\"一直在努力扩展市场\"完全吻合。tap the consumer market（开拓消费者市场）对应striving to expand its market。",
+    "traps": "B项\"打算追随一种奇特的潮流\"曲解原文，原文说Web被证明不仅仅是a fashion（一时的潮流），说明它超越了潮流而非追随潮流；C项\"试图控制市场但徒劳无功\"无中生有，原文未提及控制市场或失败之意；D项\"仅繁荣了一年左右\"偷换概念，one year or so是网络商务关注消费者市场的时间段，不代表只繁荣了一年。",
+    "tip": "注意区分时间状语修饰的具体内容，避免以偏概全。"
+   },
+   {
+    "number": 16,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Another major shift in the model for Internet commerce concerns the technology available for marketing. Until recently, Internet marketing activities have focused on strategies to 'pull' customers into sites. In the past year, however, software companies have developed tools that allow companies to 'push' information directly out to consumers.",
+    "why": "第三段开头明确指出\"互联网商务模式的另一重大转变涉及可用于营销的技术\"，随后详述了从\"拉\"策略到\"推\"策略的变化。major shift（重大转变）与C选项radical change in strategy（策略的根本性变化）语义一致，属于同义改写。",
+    "traps": "A项\"该技术受到许多网络用户欢迎\"与原文相反，原文说push technology has earned the contempt of many Web users（招来不屑）；B项\"企业对在线交易的可靠性有信心\"与第二段的doubts about its reliability矛盾；D项\"仅对既有合作伙伴有限开放\"是第二段个别公司的风险控制措施，并非针对营销技术的描述，属于张冠李戴。",
+    "tip": "题干中的implies提示推断题，需把握段落核心观点而非局部细节。"
+   },
+   {
+    "number": 17,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Online culture thinks highly of the notion that the information flowing onto the screen comes there by specific request. Once commercial promotion begins to fill the screen uninvited, the distinction between the Web and television fades. That's a prospect that horrifies Net purists.",
+    "why": "原文指出网络文化推崇的理念是\"屏幕上的信息来自用户的特定请求\"，而\"未经邀请的商业推广充满屏幕\"让网络纯粹主义者恐惧。由此可知，网络纯粹主义者认为不应有未经请求的在线商业信息，即D选项\"不应有未经请求的在线商业信息\"。",
+    "traps": "A项\"在线文化中不应有任何营销信息\"过于绝对，原文反对的是uninvited（未经邀请的）信息，并非所有营销信息；B项\"在网络上应优先赚钱\"与网络纯粹主义者的立场完全相反；C项\"网络应能像电视一样运作\"歪曲原文，原文说网络与电视间区别消失是令人恐惧的前景，纯粹主义者恰恰反对这种趋同。",
+    "tip": "注意关键限定词uninvited和by specific request，它们界定了反对的范围。"
+   },
+   {
+    "number": 18,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The examples of Virtual Vineyards, Amazon.com, and other pioneers show that a Web site selling the right kind of products with the right mix of interactivity, hospitality, and security will attract online customers.",
+    "why": "最后一段通过先驱企业的例子说明，一个在互动性、亲和力和安全性方面搭配得当的网站能吸引在线客户。这直接表明这三个要素对在线客户很重要，与B选项完全对应。",
+    "traps": "A项\"在网络上推送信息对互联网商务至关重要\"与原文观点相反，末段首句明确指出企业并非必然要依赖推送策略来赚钱；C项\"领先企业几十年前就已投身网络\"无中生有，原文是预测5到10年后人们会回顾，而非说几十年前已开始；D项\"在网络开店与计算能力成本无关\"与原文矛盾，原文说计算能力成本持续下降对网络企业是好兆头，说明二者密切相关。",
+    "tip": "对于末段概括题，要紧扣原文明确表述，排除反义和无中生有选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "revolved around",
+    "cn": "围绕……展开（动词短语）"
+   },
+   {
+    "w": "tap",
+    "cn": "开拓、开发（动词，此处指开拓市场）"
+   },
+   {
+    "w": "reliability",
+    "cn": "可靠性（名词）"
+   },
+   {
+    "w": "intranet",
+    "cn": "内部网、局域网（名词）"
+   },
+   {
+    "w": "transmitting",
+    "cn": "传送、传输（动词现在分词）"
+   },
+   {
+    "w": "contempt",
+    "cn": "蔑视、不屑（名词）"
+   },
+   {
+    "w": "prospect",
+    "cn": "前景、可能性（名词）"
+   },
+   {
+    "w": "inevitable",
+    "cn": "不可避免的（形容词）"
+   },
+   {
+    "w": "resort to",
+    "cn": "诉诸、求助于（动词短语）"
+   },
+   {
+    "w": "interactivity",
+    "cn": "互动性（名词）"
+   },
+   {
+    "w": "hospitality",
+    "cn": "亲和力、好客（名词）"
+   },
+   {
+    "w": "plunge",
+    "cn": "投入、跳入（名词/动词，take the plunge 意为冒险一试）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Online culture thinks highly of the notion that the information flowing onto the screen comes there by specific request.",
+    "cn": "网络文化非常推崇这样一种理念：出现在屏幕上的信息是用户主动请求而来的。",
+    "note": "主干为Online culture thinks highly of the notion；that引导同位语从句解释notion的内容；flowing onto the screen为现在分词短语作后置定语修饰information。"
+   },
+   {
+    "en": "The examples of Virtual Vineyards, Amazon.com, and other pioneers show that a Web site selling the right kind of products with the right mix of interactivity, hospitality, and security will attract online customers.",
+    "cn": "Virtual Vineyards、亚马逊等先驱的例子表明，一个销售合适产品、恰当融合了互动性、亲和力和安全性的网站能够吸引在线客户。",
+    "note": "主干为The examples show that...；that引导宾语从句；selling...为现在分词短语作后置定语修饰Web site；with the right mix of...为介词短语作伴随状语。"
+   },
+   {
+    "en": "Once commercial promotion begins to fill the screen uninvited, the distinction between the Web and television fades.",
+    "cn": "一旦商业推广未经邀请便充满屏幕，网络和电视之间的区别就消失了。",
+    "note": "Once引导条件/时间状语从句；uninvited为过去分词作方式状语，修饰fill the screen；主句主干为the distinction fades。"
+   }
+  ]
+ }
+}

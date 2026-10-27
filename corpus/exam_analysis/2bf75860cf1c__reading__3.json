@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "2bf75860cf1c__reading__3",
+ "examId": "2bf75860cf1c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2011 年考研英语真题",
+ "year": 2011,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:25:14.967Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54442,
+ "usage": {
+  "prompt_tokens": 1734,
+  "completion_tokens": 3587,
+  "total_tokens": 5321,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1734,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3587,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1734,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "营销媒体形式的多元化与新变革",
+  "gist": "文章围绕营销媒体的多种形式展开，依次介绍了传统付费媒体、自有媒体、赢得媒体、售出媒体和被劫持媒体的概念与特征，指出企业在利用多元媒体形式获取营销优势的同时，也面临消费者劫持媒体带来的风险，并以丰田公司为例说明应对策略。",
+  "structure": [
+   "第一段：引出话题，介绍付费、赢得、自有三种媒体形式",
+   "第二段：解释售出媒体概念及其优势，以BabyCenter为例",
+   "第三段：引入被劫持媒体概念，强调其负面影响",
+   "第四段：以丰田为例说明企业如何有效应对被劫持媒体危机"
+  ],
+  "difficulty": "中等",
+  "translation": "营销成功的粗略指南过去是\"一分钱一分货\"。但现在不再如此。虽然传统的\"付费\"媒体——如电视广告和印刷广告——仍然扮演着重要角色，但如今企业可以利用多种替代性媒体形式。对某一产品充满热情的消费者可能会主动向朋友推荐该产品，从而创造\"赢得\"媒体；企业也可以通过向其网站注册用户发送有关产品和促销活动的电子邮件提醒来利用\"自有\"媒体。消费者现在做出购买决策的方式意味着，营销的影响力源自传统付费媒体之外的广泛因素。\n\n付费媒体和自有媒体由推广自身产品的营销者控制。对于赢得媒体，营销者充当用户回应的发起者。但在某些情况下，一个营销者的自有媒体会成为另一个营销者的付费媒体——例如，当一家电子商务零售商在其网站上出售广告位时。我们将这种\"售出\"媒体定义为：其流量非常大，以至于其他组织将其内容或电子商务引擎置于该环境中的自有媒体。我们认为这一趋势仍处于萌芽阶段，它实际上始于零售商和航空公司、酒店等旅游服务商，无疑还会走得更远。例如，强生公司创建了BabyCenter，这是一个独立的媒体资产，推广互补甚至竞争产品。除了创造收入外，其他营销者的存在使该网站显得客观，为企业提供了了解其他公司营销吸引力等有价值信息的机会，并可能有助于扩大所有相关公司的用户流量。\n\n那些为营销者提供了更多（且更多样化的）传播选择的重大技术变革，同样也增加了热情消费者以更迅速、更显眼和更具破坏性的方式表达意见的风险。这种\"被劫持\"媒体是赢得媒体的对立面：一项资产或营销活动沦为消费者、其他利益相关者或活动人士的人质，他们对品牌或产品提出负面指控。例如，社交网络成员正在意识到他们可以劫持媒体，对最初创建这些媒体的企业施加压力。\n\n如果发生这种情况，充满热情的消费者会试图说服其他人抵制产品，从而使目标公司的声誉面临风险。在这种情况下，公司的反应可能不够迅速或周全，而学习曲线一直很陡峭。例如，丰田汽车公司通过相对迅速且精心策划的社交媒体应对活动，减轻了今年早些时候召回危机造成的部分损害，该活动包括在Twitter和社交新闻网站Digg等平台上直接与消费者互动的努力。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Consumers passionate about a product may create \"earned\" media by willingly promoting it to friends",
+    "why": "原文指出\"对某一产品充满热情的消费者可能会主动向朋友推荐该产品，从而创造赢得媒体\"。D选项\"enthusiastic about recommending their favorite products\"中的enthusiastic对应passionate，recommending their favorite products对应willingly promoting it to friends，语义完全吻合。",
+    "traps": "A选项\"痴迷于网上购物\"属于无中生有，原文未提及网上购物行为；B选项\"受到产品推广邮件的启发\"混淆了owned media的概念，发送邮件属于自有媒体而非赢得媒体；C选项\"渴望帮助朋友推广优质产品\"偷换主语和对象，原文是向朋友推荐而非帮朋友推广。",
+    "tip": "注意同义替换：passionate对应enthusiastic，promoting对应recommending。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "We define such sold media as owned media whose traffic is so strong that other organizations place their content or e-commerce engines within that environment.",
+    "why": "原文对售出媒体的定义是\"其流量如此之大，以至于其他组织将其内容或电子商务引擎置于该环境中的自有媒体\"。定义的核心特征就是traffic is so strong（流量非常大），C选项strong user traffic与之完全对应。",
+    "traps": "A选项\"安全的商业环境\"原文未提及安全性，属于无中生有；B选项\"随机竞争\"原文未涉及，competitive products出现在后文例证中但并非随机竞争；D选项\"组织形式的灵活性\"在原文中没有任何依据，属于凭空编造。",
+    "tip": "定义类细节题应紧扣定义句中的关键限定词。"
+   },
+   {
+    "number": 33,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Such hijacked media are the opposite of earned media: an asset or campaign becomes hostage to consumers, other stakeholders, or activists who make negative allegations about a brand or product.",
+    "why": "第三段指出被劫持媒体是赢得媒体的对立面，赢得媒体原本是消费者正面推广产品，而技术变革使消费者也可能以更具破坏性的方式表达负面意见。这说明赢得媒体（消费者自发传播）这一机制本身既可产生正面效果也可被反向利用产生负面效果，因此B选项\"可被用来在营销中产生负面影响\"是正确推断。",
+    "traps": "A选项\"招致与热情消费者的持续冲突\"过度推断，原文未说赢得媒体必然引发冲突；C选项\"可能导致更激烈的竞争\"属于无中生有；D选项\"值得所有对它们的负面评论\"曲解原文态度，原文并未做价值判断。",
+    "tip": "注意反义对照关系：hijacked media是earned media的opposite，两者共享传播机制但方向相反。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "Toyota Motor, for example, alleviated some of the damage from its recall crisis earlier this year with a relatively quick and well-orchestrated social-media response campaign",
+    "why": "丰田汽车的例子出现在第四段讨论企业应对被劫持媒体的语境中。前文指出公司面临消费者劫持媒体、号召抵制产品的风险，丰田通过迅速且精心策划的社交媒体回应活动减轻了召回危机的损害，这正是有效应对被劫持媒体的典型案例，对应A选项。",
+    "traps": "B选项\"说服消费者抵制产品\"是被劫持媒体造成的问题，而非丰田例子要说明的内容，属于张冠李戴；C选项\"与支持性消费者合作\"原文未提及丰田获得了消费者的合作支持；D选项\"利用被劫持媒体\"与原文意思相反，丰田是应对而非利用被劫持媒体。",
+    "tip": "例证题应回到例子所服务的论点，丰田例子论证的是企业应对劫持媒体的策略。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "companies today can exploit many alternative forms of media",
+    "why": "文章首段即提出核心论点：企业如今可以利用传统付费媒体之外的多种替代性媒体形式。后续各段分别介绍了赢得媒体、自有媒体、售出媒体和被劫持媒体等不同形式，都是围绕\"传统付费媒体的替代形式\"这一主线展开的，A选项\"传统付费媒体的替代方式\"准确概括了全文主旨。",
+    "traps": "B选项\"被劫持媒体与赢得媒体之间的冲突\"仅涉及第三段部分内容，以偏概全；C选项\"被劫持媒体的主导地位\"原文未说被劫持媒体占主导，属于过度推断；D选项\"自有媒体的流行\"同样只是文章的一个分论点，不能概括全文。",
+    "tip": "主旨题需找贯穿全文的核心线索，避免被某一段落的局部信息干扰。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "leverage",
+    "cn": "v. 利用，发挥（杠杆作用）"
+   },
+   {
+    "w": "exploit",
+    "cn": "v. 开发利用，充分利用"
+   },
+   {
+    "w": "complementary",
+    "cn": "adj. 互补的，补充的"
+   },
+   {
+    "w": "infancy",
+    "cn": "n. 初期，萌芽阶段"
+   },
+   {
+    "w": "stand-alone",
+    "cn": "adj. 独立的，单独运行的"
+   },
+   {
+    "w": "hijack",
+    "cn": "v. 劫持，挟持"
+   },
+   {
+    "w": "allegation",
+    "cn": "n. 指控，声称"
+   },
+   {
+    "w": "stakeholder",
+    "cn": "n. 利益相关者"
+   },
+   {
+    "w": "boycott",
+    "cn": "v./n. 抵制，联合抵制"
+   },
+   {
+    "w": "orchestrated",
+    "cn": "adj. 精心策划的，协调组织的"
+   },
+   {
+    "w": "alleviate",
+    "cn": "v. 减轻，缓解"
+   },
+   {
+    "w": "stem from",
+    "cn": "v. 源自，起因于"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "We define such sold media as owned media whose traffic is so strong that other organizations place their content or e-commerce engines within that environment.",
+    "cn": "我们将这种售出媒体定义为：其流量非常大，以至于其他组织将其内容或电子商务引擎置于该环境中的自有媒体。",
+    "note": "主干为We define...as...（把…定义为…）；as后接owned media，后跟whose引导的定语从句修饰owned media；从句中含so...that...结果状语从句。"
+   },
+   {
+    "en": "The same dramatic technological changes that have provided marketers with more (and more diverse) communications choices have also increased the risk that passionate consumers will voice their opinions in quicker, more visible, and much more damaging ways.",
+    "cn": "那些为营销者提供了更多（且更多样化的）传播选择的重大技术变革，同样也增加了热情消费者以更迅速、更显眼和更具破坏性的方式表达意见的风险。",
+    "note": "主语为The same dramatic technological changes，that引导定语从句修饰changes；谓语have also increased；the risk后接that引导的同位语从句解释risk的内容。"
+   },
+   {
+    "en": "Besides generating income, the presence of other marketers makes the site seem objective, gives companies opportunities to learn valuable information about the appeal of other companies' marketing, and may help expand user traffic for all companies concerned.",
+    "cn": "除了创造收入外，其他营销者的存在使该网站显得客观，为企业提供了了解其他公司营销吸引力等有价值信息的机会，并可能有助于扩大所有相关公司的用户流量。",
+    "note": "Besides引导介词短语表附加说明；主语the presence of other marketers后接三个并列谓语：makes...、gives...、may help...，构成排比结构。"
+   }
+  ]
+ }
+}

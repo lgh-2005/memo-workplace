@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "5eefe122de30__reading__1",
+ "examId": "5eefe122de30",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2012 年考研英语真题",
+ "year": 2012,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:26:31.038Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62506,
+ "usage": {
+  "prompt_tokens": 1734,
+  "completion_tokens": 3846,
+  "total_tokens": 5580,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1734,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3846,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1734,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "同伴压力的社会治愈作用及其局限",
+  "gist": "文章围绕Tina Rosenberg新书《Join the Club》展开，介绍了她提出的\"社会治愈\"概念——利用同伴压力的积极面改善个人生活。作者肯定了同伴压力的巨大影响力及Rosenberg对公共健康宣传的批评，但质疑该书论证不够深入，且认为由外部力量主导的社会治愈在现实中难以持久奏效，因为人们坚持自主选择朋友。",
+  "structure": [
+   "第1段：引出同伴压力的双面性及Rosenberg的社会治愈概念",
+   "第2-3段：举例论证社会治愈实践并肯定其对公共健康宣传的批评",
+   "第4段：指出该书论证不足及社会治愈效果不持久的缺陷",
+   "第5段：承认同伴压力通过社交网络产生无意识影响",
+   "第6段：质疑外部力量能否有效操控同伴压力，点明核心问题"
+  ],
+  "difficulty": "中等",
+  "translation": "来吧——大家都在这么做。这句半是邀请半是胁迫的悄悄话，就是我们大多数人听到\"同伴压力\"一词时脑海中浮现的画面。它通常不会带来什么好结果——酗酒、吸毒和随意的性行为。但在她的新书《加入俱乐部》中，Tina Rosenberg认为，同伴压力也可以成为一种积极的力量，她将这种力量称为\"社会治愈\"——在这种模式下，组织和官员利用群体动力的力量来帮助个人改善生活，甚至可能改善世界。\n\nRosenberg是普利策奖得主，她列举了大量社会治愈付诸实践的例子：在南卡罗来纳州，一个由州政府资助的反吸烟项目\"向烟雾宣战\"致力于让香烟变得不再酷炫。在南非，一个名为loveLife的艾滋病预防项目招募年轻人在同龄人中推广安全性行为。\n\n这个想法看起来很有前景，而且Rosenberg是一位敏锐的观察者。她对许多公共健康宣传活动软弱无力的批评一针见血：这些活动未能调动同伴压力来促进健康习惯，而且表现出对心理学严重错误的理解。\"敢于与众不同，请不要吸烟！\"一个旨在减少青少年吸烟的广告牌宣传活动如此恳求——可它面对的是青少年，他们最渴望的莫过于融入群体。Rosenberg令人信服地论证了公共健康倡导者应该向广告商学习，后者在施加同伴压力方面极为擅长。\n\n但在社会治愈的整体有效性方面，Rosenberg就没那么有说服力了。《加入俱乐部》一书充斥着太多无关的细节，却缺乏对使同伴压力如此强大的社会和生物因素的深入探讨。此处所呈现的社会治愈最明显的缺陷在于，它的效果无法长久维持。\"向烟雾宣战\"项目在州政府资金削减后便失败了。证明loveLife项目能产生持久改变的证据也有限且参差不齐。\n\n毫无疑问，我们的同伴群体对我们的行为施加着巨大的影响。越来越多的研究表明，积极的健康习惯——以及消极的健康习惯——通过社交传播在朋友网络中扩散。这是一种微妙的同伴压力形式：我们会无意识地模仿每天所见到的行为。\n\n然而，远不那么确定的是，专家和官僚们能在多大程度上成功地为我们选择同伴群体，并将群体活动引导到良好的方向。这就像老师把后排的捣蛋鬼拆散，让他们和表现较好的同学坐在一起。这种策略从来没有真正奏效过。这就是从外部设计的社会治愈的问题所在：在现实世界中，就像在学校里一样，我们坚持自己选择自己的朋友。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "It usually leads to no good—drinking, drugs and casual sex.",
+    "why": "原文第一段明确指出，同伴压力\"通常不会带来什么好结果——酗酒、吸毒和随意的性行为\"。这些（酗酒、吸毒、随意性行为）都是不良行为，D选项\"不良行为的成因\"是对原文的准确概括。题目问的是同伴压力\"often emerges as\"（通常表现为），与原文\"usually leads to\"语义对应。",
+    "traps": "A\"社会治愈的补充\"——张冠李戴，社会治愈是Rosenberg后来提出的概念，第一段说同伴压力通常导致坏结果，而非补充社会治愈。B\"群体动力的刺激物\"——偷换概念，group dynamics是社会治愈所利用的工具，不是同伴压力常见表现。C\"社会进步的障碍\"——过度推断，原文只提到具体不良行为，未涉及社会进步这一宏观概念。",
+    "tip": "细节题需紧扣原文具体表述，避免过度引申或张冠李戴。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Rosenberg argues convincingly that public-health advocates ought to take a page from advertisers, so skilled at applying peer pressure.",
+    "why": "原文使用了\"take a page from advertisers\"这一短语，意为\"向广告商借鉴经验\"。B选项\"learn from advertisers' experience\"（从广告商的经验中学习）是对该短语的同义改写。Rosenberg认为广告商擅长施加同伴压力，公共健康倡导者应当借鉴其策略。",
+    "traps": "A\"招募专业广告商\"——曲解原文，Rosenberg说的是\"借鉴\"广告商的做法，不是直接雇用他们。C\"远离商业广告商\"——与原文意思完全相反。D\"认识到广告的局限性\"——无中生有，原文没有提及广告的局限性，反而肯定了广告商施加同伴压力的技巧。",
+    "tip": "注意\"take a page from\"是固定搭配，意为\"借鉴、效仿\"。"
+   },
+   {
+    "number": 23,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Join the Club is filled with too much irrelevant detail and not enough exploration of the social and biological factors that make peer pressure so powerful.",
+    "why": "原文明确批评该书\"充斥太多无关细节，缺乏对使同伴压力如此强大的社会和生物因素的深入探讨\"。A选项\"未能充分探究社会和生物因素\"是对原文\"not enough exploration of the social and biological factors\"的精准对应和同义转述。",
+    "traps": "B\"有效避开社会治愈的缺陷\"——偷换主体，作者指出的是该书论证的不足，而非该书能否回避社会治愈本身的缺陷；且原文恰恰展示了缺陷而非回避。C\"阐明州政府资助的功能\"——以偏概全，州资金削减只是一个具体案例的细节，并非该书的核心缺陷。D\"产生持久的社会效果\"——偷换对象，效果不持久是社会治愈项目的缺陷，而非这本书的缺陷。",
+    "tip": "注意区分\"书的不足\"与\"书中所写项目的不足\"，避免偷换批评对象。"
+   },
+   {
+    "number": 24,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "This is a subtle form of peer pressure: we unconsciously imitate the behavior we see every day.",
+    "why": "原文第五段末句明确指出\"我们无意识地模仿每天所见到的行为\"，其中\"unconsciously\"意为\"无意识地、不知不觉地\"。C选项\"occurs without our realizing it\"（在我们未意识到的情况下发生）是对\"unconsciously\"的准确同义替换。",
+    "traps": "A\"对我们的朋友网络有害\"——无中生有，原文只说行为通过朋友网络传播，并未说模仿行为对朋友网络本身有害。B\"会误导行为研究\"——无中生有，原文提到了新兴研究，但没有说模仿行为会误导研究。D\"能产生消极健康习惯\"——以偏概全且偏离题意，虽然原文提到消极习惯也会传播，但本题问的是\"模仿行为\"的特征，而非其后果，且该选项忽略了第五段的核心信息——无意识性。",
+    "tip": "关键词\"unconsciously\"直接对应C选项，做题时抓住核心修饰语。"
+   },
+   {
+    "number": 25,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Far less certain, however, is how successfully experts and bureaucrats can select our peer groups and steer their activities in virtuous directions.",
+    "why": "最后一段作者表达了对外部操控同伴压力效果的质疑。\"Far less certain\"表示\"远不确定\"，随后用教师拆散捣蛋鬼的类比说明这种策略\"从未真正奏效\"，最后指出人们坚持自己选择朋友。这些都表明作者认为同伴压力（被外部力量利用时）的效果是值得怀疑的。D选项\"questionable\"（值得怀疑的）恰当概括了这种质疑态度。",
+    "traps": "A\"有害的\"——态度过于绝对，作者并未说同伴压力的效果是有害的，只是质疑外部引导的可行性。B\"令人满意的\"——与原文态度相反，作者对社会治愈效果持保留甚至否定态度。C\"深远的\"——虽然第五段承认同伴压力影响巨大，但最后一段核心论点是质疑外部操控的效果，C偏离了末段重心。",
+    "tip": "末段态度题需把握全段基调，\"far less certain\"\"never really works\"均指向质疑。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "contend",
+    "cn": "v. 主张，声称；竞争"
+   },
+   {
+    "w": "dynamics",
+    "cn": "n. 动力学；（群体）动态关系"
+   },
+   {
+    "w": "recipient",
+    "cn": "n. 接受者，获得者"
+   },
+   {
+    "w": "perceptive",
+    "cn": "adj. 洞察力强的，敏锐的"
+   },
+   {
+    "w": "lameness",
+    "cn": "n. 无说服力，软弱无力"
+   },
+   {
+    "w": "spot-on",
+    "cn": "adj. 完全正确的，一针见血的"
+   },
+   {
+    "w": "mobilize",
+    "cn": "v. 动员，调动"
+   },
+   {
+    "w": "flawed",
+    "cn": "adj. 有缺陷的，有错误的"
+   },
+   {
+    "w": "glaring",
+    "cn": "adj. 明显的，突出的（常含贬义）"
+   },
+   {
+    "w": "bureaucrat",
+    "cn": "n. 官僚，政府官员"
+   },
+   {
+    "w": "steer",
+    "cn": "v. 引导，操纵"
+   },
+   {
+    "w": "virtuous",
+    "cn": "adj. 有道德的，良好的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Her critique of the lameness of many public-health campaigns is spot-on: they fail to mobilize peer pressure for healthy habits, and they demonstrate a seriously flawed understanding of psychology.",
+    "cn": "她对许多公共健康宣传活动软弱无力的批评一针见血：这些活动未能调动同伴压力来促进健康习惯，而且表现出对心理学严重错误的理解。",
+    "note": "主干为Her critique is spot-on，冒号后为解释说明，包含两个并列分句（they fail to... and they demonstrate...），其中flawed understanding构成偏正结构修饰psychology。"
+   },
+   {
+    "en": "Rosenberg argues convincingly that public-health advocates ought to take a page from advertisers, so skilled at applying peer pressure.",
+    "cn": "Rosenberg令人信服地论证了公共健康倡导者应该向广告商学习，后者在施加同伴压力方面极为擅长。",
+    "note": "主干为Rosenberg argues that...，that引导宾语从句；so skilled at...为形容词短语作后置定语修饰advertisers，补充说明其擅长之处。"
+   },
+   {
+    "en": "Far less certain, however, is how successfully experts and bureaucrats can select our peer groups and steer their activities in virtuous directions.",
+    "cn": "然而，远不那么确定的是，专家和官僚们能在多大程度上成功地为我们选择同伴群体，并将群体活动引导到良好的方向。",
+    "note": "倒装句，正常语序为how...is far less certain。how引导主语从句，其中包含两个并列谓语select和steer；far less certain置于句首起强调作用。"
+   }
+  ]
+ }
+}

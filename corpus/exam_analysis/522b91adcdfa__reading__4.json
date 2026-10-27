@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "522b91adcdfa__reading__4",
+ "examId": "522b91adcdfa",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2007 年考研英语真题（旧）",
+ "year": 2007,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:19:49.153Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66489,
+ "usage": {
+  "prompt_tokens": 1773,
+  "completion_tokens": 3884,
+  "total_tokens": 5657,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1773,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3884,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1773,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "企业数据安全问题日益严峻",
+  "gist": "文章指出，在企业刚解决完会计合规和公司治理问题后，数据安全又成为新威胁。多起大规模数据泄露事件使管理层开始重视信息保护，学者提出应建立通用安全准则。作者批评部分高管未能认识到数据保护与信任之间的关系，并指出美国正在通过立法和监管手段加强对数据安全的管控。",
+  "structure": [
+   "第1段：引出新问题——数据安全威胁企业高管",
+   "第2段：列举大规模数据泄露事件，企业开始排查漏洞",
+   "第3段：学者观点——数据是资产，应建立安全准则",
+   "第4段：作者质疑高管为何忽视信任与数据保护的关系",
+   "第5段：分析法律缺位原因，指出立法与监管趋势"
+  ],
+  "difficulty": "中等",
+  "translation": "祸不单行。就在老板和董事会终于理清了最棘手的会计与合规问题、改善了薄弱的公司治理之际，一个新问题又威胁着他们——尤其是在美国——那种不可避免地导致高管层人头落地的恶性头条新闻：数据安全隐患。信息保护此前一直被交给零散的低层IT员工去处理，并且仅被视为银行、电信和航空等数据密集型行业的专属问题，如今却已成为各行各业老板议程上的头等大事。\n\n今年发生了多起大规模的客户和员工数据泄露事件——涉及的机构形形色色，从时代华纳、美国国防承包商科学应用国际公司，甚至到加州大学伯克利分校——这些事件迫使管理者们匆忙审视其复杂的IT系统和业务流程，以寻找潜在的安全漏洞。\n\n斯坦福大学商学院的海姆·门德尔松说：\"数据正在成为一种需要像其他任何资产一样加以保护的资产。保护客户数据的能力是市场价值的关键，而董事会代表股东对此负有责任。\"的确，正如存在\"公认会计准则\"（GAAP）的概念一样，纽约哥伦比亚大学商学院的伊莱·诺姆建议，也许是时候建立\"公认安全准则\"（GASP）了。他说：\"为安全、冗余和恢复设定适当的投资水平，是一个管理问题，而非技术问题。\"\n\n令人费解的是，这对任何老板来说居然还是新鲜事。即使是最迟钝的高管也应该明白：信任——这一最宝贵的经济资产——很容易被摧毁，恢复起来代价极高；而且几乎没有什么比公司让敏感的个人数据落入不法之手更能摧毁信任的了。\n\n目前的状况可能是由于美国（而非欧洲）对数据泄露缺乏法律惩罚而助长的——尽管这并不能成为正当理由。在加利福尼亚州最近通过一项法律之前，美国企业在数据丢失时甚至不必告知任何人，包括受害者本人。这种情况可能很快会改变：大量有关数据安全的立法提案目前正在华盛顿流转。与此同时，涉及美国约四千万信用卡账户信息被盗的事件于6月17日被披露，这掩盖了前一天美国联邦贸易委员会（FTC）作出的一项极为重要的决定——该决定警告美国企业界：如果企业未能提供足够的数据安全保障，监管机构将采取行动。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "type": "词义句意题",
+    "locate": "It never rains but it pours. Just as bosses and boards have finally sorted out their worst accounting and compliance troubles, and improved their feeble corporation governance, a new problem threatens to earn them – especially in America – the sort of nasty headlines that inevitably lead to heads rolling in the executive suite: data insecurity.",
+    "why": "该谚语意为\"祸不单行\"，用来引出文章主题：企业刚解决完会计和合规问题，数据安全又成为新威胁。冒号后直接点明核心问题是\"data insecurity\"，随后全文围绕数据泄露的严重性展开论述，因此D项\"数据泄露的严重性\"最准确。",
+    "traps": "A项\"激烈的商业竞争\"文中未涉及，属无中生有；B项\"脆弱的老板与董事会关系\"曲解了原文feeble corporation governance的含义，原文说的是公司治理薄弱而非老板与董事会的关系；C项\"来自新闻报道的威胁\"是对nasty headlines的片面理解，新闻只是后果而非文章要引出的主题。",
+    "tip": "谚语引言题需看其后具体展开的内容来判断引出的话题。"
+   },
+   {
+    "number": 37,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "have left managers hurriedly peering into their intricate IT systems and business processes in search of potential vulnerabilities.",
+    "why": "原文明确指出，多起数据泄露事件促使管理者匆忙审视复杂的IT系统和业务流程，目的是\"in search of potential vulnerabilities\"（寻找潜在漏洞）。vulnerabilities即weak point（薄弱环节），A项是原文的同义替换。",
+    "traps": "B项\"什么类型的数据被盗\"原文未提及排查数据种类；C项\"谁该为泄露负责\"属于无中生有，原文未涉及追责；D项\"如何定位潜在间谍\"纯属臆造，文中无任何关于间谍的信息。",
+    "tip": "注意原文目的状语中的关键词，同义替换是考研常见考法。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "perhaps it is time for GASP, Generally Accepted Security Practices, suggested Eli Noam of New York's Columbia Business School. \"Setting the proper investment level for security, redundancy, and recovery is a management issue, not a technical one,\" he says.",
+    "why": "作者引用Eli Noam的观点提出GASP概念，是类比GAAP（公认会计准则）来说明信息安全也应像会计规范一样被重视，需要建立通用的安全准则。GASP的全称即\"公认安全准则\"，其核心诉求就是信息保护应受到应有的重视，与B项完全吻合。",
+    "traps": "A项\"股东利益应得到妥善关注\"虽在前文提及，但不是引出GASP概念要表达的核心观点；C项\"企业应提升会计安全水平\"混淆了GAAP（会计准则）和GASP（安全准则），张冠李戴；D项\"强调客户数据的市场价值\"是门德尔松的观点，非引出GASP的论点。",
+    "tip": "例证题要看论据所服务的论点，不要被类比对象本身带偏。"
+   },
+   {
+    "number": 39,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The mystery is that this should come as a surprise to any boss. Surely it should be obvious to the dimmest executive that trust, that most valuable of economic assets, is easily destroyed and hugely expensive to restore – and that few things are more likely to destroy trust than a company letting sensitive personal data get into the wrong hands.",
+    "why": "作者用\"The mystery\"表达困惑，随后指出：信任容易被摧毁、恢复代价高昂，而让敏感个人数据落入坏人之手是最能摧毁信任的行为之一。这一逻辑链条清楚表明，作者困惑的是高管未能看到信任与数据保护之间的关联，即A项所述。",
+    "traps": "B项\"感知个人数据的敏感性\"只涉及数据层面，忽略了作者强调的信任与数据保护的因果关系；C项\"意识到数据恢复的高成本\"将\"trust...hugely expensive to restore\"错误理解为数据恢复成本，原文说的是信任恢复代价高；D项\"认识到信任的经济价值\"只涉及论述的前半部分，未覆盖数据保护这一关键环节。",
+    "tip": "题干问\"puzzles the author\"，对应原文\"mystery\"，需完整把握句意逻辑链。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The current state of affairs may have been encouraged – though not justified – by the lack of legal penalty (in America, but not Europe) for data leakage.",
+    "why": "第五段开头即指出当前数据安全困境的一个重要成因是美国缺乏对数据泄露的法律惩罚，随后提到加州立法、华盛顿大量立法提案以及FTC的监管行动，都指向通过法律手段解决数据泄露问题。由\"缺乏法律惩罚导致问题加剧\"可反推\"法律惩罚是解决数据泄露的重要途径\"，因此D项正确。",
+    "traps": "A项\"欧洲数据泄露更严重\"属于反向推理错误，原文括号说明欧洲有法律惩罚，并不意味着泄露更严重；B项\"FTC的决定对数据安全至关重要\"虽在文中有所涉及，但该决定被描述为被信用卡泄露事件\"overshadowed\"，且非段落核心推论；C项\"加州在安全立法方面领先\"虽有事实基础，但只是论证过程中的一个细节，并非段落可推出的核心结论。",
+    "tip": "推断题需把握段落论证主线，因果倒推是常见推理方式。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "compliance",
+    "cn": "n. 合规，遵从"
+   },
+   {
+    "w": "feeble",
+    "cn": "adj. 薄弱的，无力的"
+   },
+   {
+    "w": "intricate",
+    "cn": "adj. 复杂的，错综的"
+   },
+   {
+    "w": "vulnerability",
+    "cn": "n. 漏洞，脆弱性"
+   },
+   {
+    "w": "redundancy",
+    "cn": "n. 冗余（备份），多余"
+   },
+   {
+    "w": "astray",
+    "cn": "adv. 偏离正轨地，丢失地"
+   },
+   {
+    "w": "overshadow",
+    "cn": "v. 使…相形见绌，掩盖"
+   },
+   {
+    "w": "disclose",
+    "cn": "v. 披露，公开"
+   },
+   {
+    "w": "penalty",
+    "cn": "n. 处罚，惩罚"
+   },
+   {
+    "w": "legislation",
+    "cn": "n. 立法，法规"
+   },
+   {
+    "w": "regulator",
+    "cn": "n. 监管机构，监管者"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Left, until now, to odd, low-level IT staff to put right, and seen as a concern only of data-rich industries such as banking, telecoms and air travel, information protection is now high on the boss's agenda in businesses of every variety.",
+    "cn": "信息保护此前一直被交给零散的低层IT员工去处理，并且仅被视为银行、电信和航空等数据密集型行业的专属问题，如今却已成为各行各业老板议程上的头等大事。",
+    "note": "主语information protection被两个过去分词短语Left...和seen as...前置修饰，构成\"分词短语+主语+谓语\"的倒装结构，需先找到真正主语再理解句意。"
+   },
+   {
+    "en": "Surely it should be obvious to the dimmest executive that trust, that most valuable of economic assets, is easily destroyed and hugely expensive to restore – and that few things are more likely to destroy trust than a company letting sensitive personal data get into the wrong hands.",
+    "cn": "即使是最迟钝的高管也应该明白：信任——这一最宝贵的经济资产——很容易被摧毁，恢复起来代价极高；而且几乎没有什么比公司让敏感的个人数据落入不法之手更能摧毁信任的了。",
+    "note": "it为形式主语，真正主语是两个并列that从句；trust后接同位语插入语；第二个that从句中含有比较结构few things...more likely...than...。"
+   },
+   {
+    "en": "Meanwhile, the theft of information about some 40 million credit-card accounts in America, disclosed on June 17th, overshadowed a hugely important decision a day earlier by America's Federal Trade Commission (FTC) that puts corporate America on notice that regulators will act if firms fail to provide adequate data security.",
+    "cn": "与此同时，涉及美国约四千万信用卡账户信息被盗的事件于6月17日被披露，这掩盖了前一天美国联邦贸易委员会作出的一项极为重要的决定——该决定警告美国企业界：如果企业未能提供足够的数据安全保障，监管机构将采取行动。",
+    "note": "主干为the theft...overshadowed a decision；disclosed为插入分词短语修饰theft；decision后接that定语从句，其中又嵌套that宾语从句和if条件状语从句，构成三层嵌套。"
+   }
+  ]
+ }
+}

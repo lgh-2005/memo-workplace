@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "5eefe122de30__translation__all",
+ "examId": "5eefe122de30",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2012 年考研英语真题",
+ "year": 2012,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:27:46.497Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 75457,
+ "usage": {
+  "prompt_tokens": 1418,
+  "completion_tokens": 5619,
+  "total_tokens": 7037,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1418,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5619,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1418,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "语言普遍性理论的实证检验",
+  "translation": "自亚里士多德时代以来，对普遍规律的探索一直是科学事业的特征。从某种程度上说，这种对共性的追寻界定了科学。牛顿的运动定律和达尔文的进化论都将大量不同的现象纳入了一个统一的解释框架。\n\n在物理学中，有一种方法将这种追求统一的冲动发挥到极致，试图寻求一种万物理论——一个能解释我们所见一切的单一生成方程。然而，考虑到这一理论可能涉及的维度和宇宙，它是否真的是一种简化正变得越来越不明朗。尽管如此，某种形式的统一仍然是一个主要目标。\n\n这种自然科学中的倾向在社会科学中也长期显而易见。在这方面，达尔文主义似乎提供了正当理由，因为如果所有人类拥有共同的起源，那么有理由认为文化多样性也可以追溯到更为有限的源头。正如令人眼花缭乱的人类求偶仪式都可以被视为性选择的形式一样，也许世界上的语言、音乐、社会和宗教习俗乃至历史都受到普遍特征的支配。从共性中筛选出独特之处，这或许能使我们理解复杂的文化行为是如何产生的，以及从进化或认知的角度来看，是什么在引导着它。\n\n至少，这是人们所抱有的希望。但今天在线发表的一项语言特征比较研究提供了一次现实检验。奥克兰大学的拉塞尔·格雷及其同事根据此前两次寻找语言普遍性的尝试来考察语法的演变。\n\n这些努力中最著名的一次由诺姆·乔姆斯基发起，他认为人类天生具有一种内在的语言习得能力，该能力决定了一套普遍语法。一些生成规则就足以展开一种语言的全部基本结构，这就是儿童能如此迅速地学会语言的原因。\n\n第二种方法由约书亚·格林伯格提出，它对语言的普遍性采取了一种更为实证的研究方法，识别出许多语言所共有的特征（尤其在语序方面），这些特征被认为代表了由认知限制所导致的偏向。\n\n格雷及其同事通过考察四个语系谱系树（合计代表了两千多种语言）来检验这两种理论。乔姆斯基的语法理论应当显示出与语系谱系树或通过其追踪的路径无关的语言变化模式，而格林伯格的语言普遍性理论则预测特定类型的语序关系之间存在强烈的相互依存关系。分析结果表明，这两种模式都未得到证实，这说明语言结构是特定于语系的，而非受普遍规律支配。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "In physics, one approach takes this impulse for unification to its extreme, and seeks a theory of everything – a single generative equation for all we see.",
+    "cn": "在物理学中，有一种方法将这种追求统一的冲动发挥到极致，试图寻求一种万物理论——一个能解释我们所见一切的单一生成方程。",
+    "structure": "主语 one approach，两个并列谓语 takes…and seeks…；破折号后 a single generative equation 是 a theory of everything 的同位语，for all we see 是介词短语作定语修饰 equation，其中 all 后省略 that。",
+    "points": [
+     "impulse for unification 译为'追求统一的冲动'，需译出 for 表目的的含义",
+     "a theory of everything 为物理学专有概念，应译为'万物理论'",
+     "破折号后同位语需用'即、也就是'或破折号衔接，体现解释说明关系"
+    ],
+    "pitfall": "generative equation 易误译为'产生的方程'，此处 generative 指'生成性的'，即一个能生成/解释一切现象的方程；for all we see 中 all 后省略关系代词 that，需补译为'我们所看到的一切'。"
+   },
+   {
+    "number": 47,
+    "en": "Here, Darwinism seems to offer justification, for if all humans share common origins, it seems reasonable to suppose that cultural diversity could also be traced to more constrained beginnings.",
+    "cn": "在这方面，达尔文主义似乎提供了正当理由，因为如果所有人类拥有共同的起源，那么有理由认为文化多样性也可以追溯到更为有限的源头。",
+    "structure": "主句 Darwinism seems to offer justification；for 引导原因状语从句，从句内部嵌套 if 条件从句和 it seems reasonable to suppose that… 结构（it 为形式主语，真正主语为 to suppose 以下内容）。",
+    "points": [
+     "for 在此为连词表原因，须译为'因为'，不可漏译",
+     "be traced to 译为'追溯到'，体现追根溯源之意",
+     "constrained beginnings 译为'更为有限的/受限的源头'，体现多样性源于共性的逻辑"
+    ],
+    "pitfall": "constrained beginnings 易误译为'受约束的开端'，此处 constrained 强调范围有限、受限制，与前文 common origins 呼应，应译为'更为有限的源头/起源'。"
+   },
+   {
+    "number": 48,
+    "en": "To filter out what is unique from what is shared might enable us to understand how complex cultural behavior arose and what guides it in evolutionary or cognitive terms.",
+    "cn": "从共性中筛选出独特之处，这或许能使我们理解复杂的文化行为是如何产生的，以及从进化或认知的角度来看，是什么在引导着它。",
+    "structure": "To filter out…from… 不定式短语作主语；might enable 为谓语；us 宾语；to understand 后接两个并列宾语从句：how complex cultural behavior arose 和 what guides it；in evolutionary or cognitive terms 为方式状语修饰第二个从句。",
+    "points": [
+     "To filter out what is unique from what is shared 须准确译出'从共有的东西中筛选出独特的东西'，what 引导的两个名词性从句不可混淆",
+     "how 和 what 引导的两个并列宾语从句须完整译出，不可遗漏",
+     "in evolutionary or cognitive terms 译为'从进化或认知的角度来看'，terms 取'角度、方面'之意"
+    ],
+    "pitfall": "filter out…from… 结构易搞混方向：filter out A from B 意为'从B中筛选出A'，即从共性（what is shared）中筛选出独特性（what is unique），翻译时须调整语序使中文通顺。"
+   },
+   {
+    "number": 49,
+    "en": "The second, by Joshua Greenberg, takes a more empirical approach to universality, identifying traits (particularly in word order) shared by many languages, which are considered to represent biases that result from cognitive constraints.",
+    "cn": "第二种方法由约书亚·格林伯格提出，它对语言的普遍性采取了一种更为实证的研究方法，识别出许多语言所共有的特征（尤其在语序方面），这些特征被认为代表了由认知限制所导致的偏向。",
+    "structure": "主语 The second（省略 approach），插入语 by Joshua Greenberg 说明提出者；谓语 takes；identifying… 现在分词短语作伴随状语；shared by many languages 为过去分词短语作 traits 的后置定语；which 引导非限制性定语从句修饰 traits。",
+    "points": [
+     "empirical approach 译为'实证的方法'，体现与乔姆斯基先验理论方法的对比",
+     "shared by many languages 作后置定语须前置译为'许多语言所共有的'",
+     "which 引导的非限制性定语从句宜拆译为独立分句：'这些特征被认为……'"
+    ],
+    "pitfall": "biases that result from cognitive constraints 易误译；biases 此处非'偏见'，而是'偏向/倾向'，指语言中受认知限制影响而呈现出的规律性倾向，须结合语境选择恰当词义。"
+   },
+   {
+    "number": 50,
+    "en": "Chomsky's grammar should show patterns of language change that are independent of the family tree or the pathway tracked through it, whereas Greenbergian universality predicts strong co-dependencies between particular types of word-order relations.",
+    "cn": "乔姆斯基的语法理论应当显示出与语系谱系树或通过谱系追踪的路径无关的语言变化模式，而格林伯格的语言普遍性理论则预测特定类型的语序关系之间存在强烈的相互依存关系。",
+    "structure": "whereas 连接两个对比分句。前半句：主语 Chomsky's grammar，谓语 should show，宾语 patterns，that 引导定语从句修饰 patterns，其中 tracked through it 为过去分词短语作 pathway 的后置定语。后半句：主语 Greenbergian universality，谓语 predicts，宾语 strong co-dependencies。",
+    "points": [
+     "able that are independent of… 定语从句须译为前置定语'与……无关的模式'，或拆译为'这些模式与……无关'",
+     "whereas 表对比转折，须译为'而/然而'以体现两种理论的对照",
+     "co-dependencies 译为'相互依存关系'，准确传达语序特征之间相互关联的含义"
+    ],
+    "pitfall": "the pathway tracked through it 中 it 指代 family tree，tracked 为过去分词作后置定语修饰 pathway，意为'通过语系谱系树所追踪的（演变）路径'；若不理清 it 的指代和 tracked 的修饰关系，极易误译。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "explicatory",
+    "cn": "adj. 解释的，说明的"
+   },
+   {
+    "w": "generative",
+    "cn": "adj. 生成的，生成性的"
+   },
+   {
+    "w": "entail",
+    "cn": "v. 牵涉，需要，使成为必要"
+   },
+   {
+    "w": "Darwinism",
+    "cn": "n. 达尔文主义"
+   },
+   {
+    "w": "constrained",
+    "cn": "adj. 受限制的，有限的"
+   },
+   {
+    "w": "courtship",
+    "cn": "n. 求偶，求爱"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的"
+   },
+   {
+    "w": "innate",
+    "cn": "adj. 天生的，固有的"
+   },
+   {
+    "w": "empirical",
+    "cn": "adj. 实证的，以经验为依据的"
+   },
+   {
+    "w": "co-dependency",
+    "cn": "n. 相互依存（关系）"
+   },
+   {
+    "w": "lineage-specific",
+    "cn": "adj. 特定于谱系的"
+   },
+   {
+    "w": "borne out",
+    "cn": "v. 证实，证明（bear out 的过去分词）"
+   },
+   {
+    "w": "impulse",
+    "cn": "n. 冲动，推动力"
+   },
+   {
+    "w": "bias",
+    "cn": "n. 偏向，倾向（本文非'偏见'义）"
+   }
+  ],
+  "skills": [
+   "破折号同位语翻译：用'即''也就是'或保留破折号，将抽象概念具体化",
+   "for 作连词引导原因从句时须明确译为'因为'，使因果逻辑显化",
+   "不定式作主语的长句应先拆出主干，再依次处理嵌套的名词性从句",
+   "非限制性定语从句宜拆译为独立句子，用'这些……'等指示词衔接",
+   "whereas 对比句需用'而''然而'等词体现两个分句的对照关系"
+  ]
+ }
+}

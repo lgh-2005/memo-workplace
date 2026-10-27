@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "6dbe08bed285__reading__2",
+ "examId": "6dbe08bed285",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2001 年考研英语真题（旧）",
+ "year": 2001,
+ "sub": "2",
+ "questionNumbers": [
+  25,
+  26,
+  27,
+  28
+ ],
+ "generatedAt": "2026-10-27T06:10:50.306Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 53619,
+ "usage": {
+  "prompt_tokens": 1593,
+  "completion_tokens": 3298,
+  "total_tokens": 4891,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1593,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3298,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1593,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "数字鸿沟有望缩小，外资助力电子基础设施建设",
+  "gist": "文章围绕数字鸿沟展开，指出互联网商业化和各国政府推动将缩小信息贫富差距。作者以美国利用外资建设基础设施为例，论证发展中国家应克服反殖民偏见、接纳外国投资，以建设电子基础设施，充分利用互联网这一消除贫困的有力工具。",
+  "structure": [
+   "第一段：提出数字鸿沟话题，指出存在乐观理由",
+   "第二段：阐述互联网商业化与政府推动将缩小鸿沟",
+   "第三段：过渡，承认互联网非唯一手段但潜力巨大",
+   "第四段：以美国为例论证发展中国家应接受外资建设电子基础设施"
+  ],
+  "difficulty": "中等",
+  "translation": "如今，人们非常关注所谓的数字鸿沟——即世界分化为信息富有者和信息贫困者。这种鸿沟在今天确实存在。二十年前，我和妻子就曾就这一迫在眉睫的危险做过演讲。然而，当时不太明显的是那些对抗数字鸿沟的新的、积极的力量。我们有理由保持乐观。\n\n从技术层面来看，我们有理由期待数字鸿沟会缩小。随着互联网越来越商业化，普及网络接入符合商业利益——毕竟，上网的人越多，潜在的客户就越多。越来越多的政府担心自己的国家会落后，希望推广互联网接入。在未来一二十年内，地球上将有一二十亿人被网络连接在一起。因此，我现在相信数字鸿沟在未来几年将会缩小而非扩大。这是个好消息，因为互联网很可能是我们拥有的对抗世界贫困最强有力的工具。\n\n当然，使用互联网并非消除贫困的唯一途径。互联网也不是我们拥有的唯一工具。但它蕴含着巨大的潜力。\n\n要利用好这一工具，一些贫困国家将不得不克服其过时的、关于外国投资的反殖民偏见。那些仍然认为外国投资是对其主权入侵的国家，不妨研究一下美国的基础设施建设史。当美国建设其工业基础设施时，它并没有足够的资本。这就是为什么美国的第二波基础设施——包括公路、港口、高速公路、码头等——是用外国投资建造的。英国人、德国人、荷兰人和法国人在英国的前殖民地投资。他们提供了资金，移民美国人建造了这些设施。猜猜现在谁拥有它们？美国人。我相信在巴西或其他任何地方也会如此。帮助你建设第三波基础设施（即今天的电子基础设施）的外国资本越多，你的境况就越好。这并不意味着俯首听命、任人愚弄，或让外国公司不受控制地经营。但这确实意味着要认识到外资在建设能源和电信基础设施方面的重要性，从而充分利用互联网。",
+  "questions": [
+   {
+    "number": 25,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "My wife and I lectured about this looming danger twenty years ago.",
+    "why": "原文将数字鸿沟称为'looming danger'（迫在眉睫的危险），说明作者认为这是世界需要警惕和防范的事物。'looming danger'与'guard against'（防范）语义对应，C项是对原文的同义改写。",
+    "traps": "A项'因互联网而恶化'与原文第二段'数字鸿沟将缩小'矛盾，属于反向干扰；B项'富国应负责'原文未提及责任归属，属于无中生有；D项'被认为是积极的'张冠李戴，原文说的是对抗数字鸿沟的力量是positive，而非数字鸿沟本身是积极的。",
+    "tip": "注意区分修饰对象，positive修饰的是对抗鸿沟的力量而非鸿沟本身。"
+   },
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "As the Internet becomes more and more commercialized, it is in the interest of business to universalize access—after all, the more people online, the more potential customers there are. More and more governments, afraid their countries will be left behind, want to spread Internet access.",
+    "why": "原文指出互联网商业化使普及接入符合商业利益（更多上网者意味着更多潜在客户），政府担心'被落下'而推广网络。政府重视互联网的根本原因是其蕴含的经济潜力——更多客户、更大市场，A项准确概括了这一经济动因。",
+    "traps": "B项'带来外资'是第四段内容，非政府重视互联网的直接原因，属于张冠李戴；C项'很快消除贫困'中'soon'和'wipe out'过于绝对，原文仅说互联网是combating poverty的工具；D项'连接全世界人'是互联网功能的表象，而非政府重视的核心原因。",
+    "tip": "注意区分'直接原因'和'间接结果'，政府行为背后的驱动力是经济利益。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "To take advantage of this tool, some impoverished countries will have to get over their outdated anti-colonial prejudices with respect to foreign investment.",
+    "why": "第四段先提出论点：贫困国家应克服对外资的反殖民偏见。随后以美国为例说明：美国当年缺乏资本，依靠英、德、荷、法等国外资建设基础设施，最终美国人拥有了这些设施。此例证明接受外资不会丧失主权，反而有利于发展，故用来论证'接受外国投资'的政策。",
+    "traps": "A项'向海外提供资金'是英法等国的行为，并非作者要论证的政策方向，属于偷换主体；B项'防止外资控制'虽然文末提及不应让外企失控，但非举例的主要目的；C项'建设工业基础设施'只是美国案例的表层事实，非论证核心观点。",
+    "tip": "例证题要回到例子前后找论点，例子是为论点服务的。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The more foreign capital you have helping you build your Third Wave infrastructure, which today is an electronic infrastructure, the better off you're going to be.",
+    "why": "原文用'the more...the better off'句型强调：帮助建设第三波基础设施（即电子基础设施）的外资越多，国家就越富裕。这里将电子基础设施的发达程度与国家经济前景直接挂钩，可推断一国经济很大程度取决于其电子化发展水平，A项是对此推断的准确概括。",
+    "traps": "B项'对移民是否有偏见'偷换概念，原文说的是对外国投资的偏见，非对移民的偏见；C项'是否采纳美国工业模式'过度引申，美国案例是为论证接受外资，而非推荐其工业模式；D项'对外企控制程度'虽文中提及不能让外企失控，但非经济发展的决定性因素。",
+    "tip": "'the more...the better'结构常暗示因果关系，是命题推断的高频考点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "looming",
+    "cn": "adj. 迫在眉睫的，隐约逼近的"
+   },
+   {
+    "w": "commercialized",
+    "cn": "adj. 商业化的（v. commercialize 的过去分词）"
+   },
+   {
+    "w": "universalize",
+    "cn": "v. 使普及，使普遍化"
+   },
+   {
+    "w": "combating",
+    "cn": "v. 对抗，打击（combat 的现在分词）"
+   },
+   {
+    "w": "impoverished",
+    "cn": "adj. 贫困的，赤贫的"
+   },
+   {
+    "w": "prejudice",
+    "cn": "n. 偏见，成见"
+   },
+   {
+    "w": "sovereignty",
+    "cn": "n. 主权，国家主权"
+   },
+   {
+    "w": "infrastructure",
+    "cn": "n. 基础设施，基础建设"
+   },
+   {
+    "w": "colony",
+    "cn": "n. 殖民地"
+   },
+   {
+    "w": "telecom",
+    "cn": "n. 电信，电信业（telecommunications 的缩写）"
+   },
+   {
+    "w": "uncontrolled",
+    "cn": "adj. 不受控制的，不受约束的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "And that is very good news because the Internet may well be the most powerful tool for combating world poverty that we've ever had.",
+    "cn": "这是个非常好的消息，因为互联网很可能是我们所拥有的对抗世界贫困的最强有力的工具。",
+    "note": "主句为that is good news，because引导原因状语从句；从句中that we've ever had为定语从句修饰tool，may well表示'很可能'。"
+   },
+   {
+    "en": "The more foreign capital you have helping you build your Third Wave infrastructure, which today is an electronic infrastructure, the better off you're going to be.",
+    "cn": "帮助你建设第三波基础设施（即今天的电子基础设施）的外国资本越多，你的境况就越好。",
+    "note": "the more...the better off为比较级并列结构；helping为现在分词作宾补修饰capital；which引导非限制性定语从句解释Third Wave infrastructure。"
+   },
+   {
+    "en": "Countries that still think foreign investment is an invasion of their sovereignty might well study the history of infrastructure in the United States.",
+    "cn": "那些仍然认为外国投资是对其主权入侵的国家，不妨研究一下美国的基础设施建设历史。",
+    "note": "主语为Countries，that引导定语从句修饰Countries；从句中foreign investment is an invasion为宾语从句；might well表示委婉建议'不妨'。"
+   }
+  ]
+ }
+}

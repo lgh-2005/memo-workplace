@@ -1,0 +1,235 @@
+{
+ "schemaVersion": 1,
+ "id": "d83bedfad653__long_match__all",
+ "examId": "d83bedfad653",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2023 年 12 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:52:38.655Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32237,
+ "usage": {
+  "prompt_tokens": 987,
+  "completion_tokens": 1757,
+  "total_tokens": 2744,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 987,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1757,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 987,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "双语能力与认知健康/痴呆预防",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如bilingual、cognitive、dementia等",
+   "利用专有名词、数据、因果关系等独特信号词快速定位段落",
+   "注意同义替换：如boost≈enhance，dementia≈Alzheimer's，monolingual≈speak one language",
+   "区分观点归属词：research indicates、it is claimed、it was suggested等提示信息来源",
+   "先做含有明显定位线索的题目，再处理较抽象的概括性陈述"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "研究表明，大脑训练可能提升人在特定任务上的能力，但无法提升其他认知能力。",
+    "keywords": [
+     "brain training",
+     "specific tasks",
+     "cognitive abilities"
+    ],
+    "paraphrase": "原文可能用improve/enhance替换boost，用particular/certain替换specific，用general intelligence或transfer等概念表达\"无法迁移到其他认知能力\"。",
+    "tip": "定位brain training和specific tasks的共现段落，注意转折词but/however。"
+   },
+   {
+    "number": 37,
+    "answer": "F",
+    "cn": "据估计，说两种或两种以上语言的人数多于只说一种语言的人。",
+    "keywords": [
+     "estimates",
+     "two languages or more",
+     "greater than"
+    ],
+    "paraphrase": "原文可能用数据或比例说明多语者人数超过单语者，用outnumber/exceed替换greater than，用bilinguals替换people who speak two languages。",
+    "tip": "定位与全球语言使用人口统计相关的数据或估算描述。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "cn": "目前，我们不知道是什么导致人们失去认知能力，也不知道能做什么来预防。",
+    "keywords": [
+     "for the time being",
+     "cognitive abilities",
+     "cause",
+     "prevent"
+    ],
+    "paraphrase": "原文可能以问题引入方式表达未知性，用unclear/unknown替换do not know，用cognitive decline替换lose cognitive abilities。",
+    "tip": "通常位于文章开头，以提出问题或研究背景的形式出现。"
+   },
+   {
+    "number": 39,
+    "answer": "K",
+    "cn": "很难判定是不患痴呆的人倾向于有更多社交活动，还是更多的社交活动使人远离痴呆。",
+    "keywords": [
+     "dementia",
+     "social activities",
+     "hard to determine"
+    ],
+    "paraphrase": "原文可能用difficult to establish/tell替换hard to determine，核心是因果方向不确定（即相关性与因果性的区分问题）。",
+    "tip": "定位social activities与dementia共现处，关注因果倒置或相关性讨论的措辞。"
+   },
+   {
+    "number": 40,
+    "answer": "E",
+    "cn": "有证据表明，学习外语可能有助于提升一个人的认知能力。",
+    "keywords": [
+     "learning foreign languages",
+     "beneficial",
+     "cognitive abilities"
+    ],
+    "paraphrase": "原文可能用acquiring/studying a new language替换learning foreign languages，用improve/strengthen替换boost，用evidence suggests替换there is evidence。",
+    "tip": "定位learning与foreign languages共现段落，与第36题brain training区分开。"
+   },
+   {
+    "number": 41,
+    "answer": "I",
+    "cn": "有人认为只有那些一直说两种语言的人才能从双语能力中获益。",
+    "keywords": [
+     "always spoke two languages",
+     "benefit",
+     "bilingualism"
+    ],
+    "paraphrase": "原文可能用lifelong bilinguals或consistent use等表达\"一直说两种语言\"，用advantage/gain替换benefit，强调持续使用的条件限制。",
+    "tip": "定位对双语获益条件的限定性表述，注意only等限定词。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "cn": "大脑不同于肌肉之处在于，即使身体处于休息状态，大脑仍在工作。",
+    "keywords": [
+     "brain",
+     "muscles",
+     "at rest",
+     "keeps working"
+    ],
+    "paraphrase": "原文可能用unlike/different from引出大脑与肌肉的类比，用active/functioning替换keeps working，用idle/resting替换at rest。",
+    "tip": "定位brain与muscles的对比段落，这是非常鲜明的类比信号。"
+   },
+   {
+    "number": 43,
+    "answer": "G",
+    "cn": "说两种语言的人在多项认知任务上比只说一种语言的人表现更好。",
+    "keywords": [
+     "two languages",
+     "cognitive tasks",
+     "better",
+     "one language"
+    ],
+    "paraphrase": "原文可能用bilinguals和monolinguals替换说两种/一种语言的人，用outperform/perform better替换do better，用a range of/several替换a number of。",
+    "tip": "定位bilinguals与monolinguals在cognitive tasks上的直接比较。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "cn": "痴呆不同于单纯的健忘，它涉及更严重的问题。",
+    "keywords": [
+     "dementia",
+     "forgetful",
+     "more serious"
+    ],
+    "paraphrase": "原文可能用mere forgetfulness/memory lapses替换being merely forgetful，用severe/grave替换serious，对dementia进行定义或区分说明。",
+    "tip": "定位对dementia概念的界定或与普通健忘的区分，通常出现在文章前部。"
+   },
+   {
+    "number": 45,
+    "answer": "H",
+    "cn": "有人声称，患阿尔茨海默病的单语者比双语者更多。",
+    "keywords": [
+     "monolinguals",
+     "Alzheimer's disease",
+     "bilinguals",
+     "claimed"
+    ],
+    "paraphrase": "原文可能用研究数据或发现表明单语者罹患阿尔茨海默病的比例或时间早于双语者，用develop/be diagnosed with替换suffer from。",
+    "tip": "定位Alzheimer's disease这一专有名词，结合monolinguals和bilinguals的对比数据。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的"
+   },
+   {
+    "w": "dementia",
+    "cn": "n. 痴呆症"
+   },
+   {
+    "w": "bilingualism",
+    "cn": "n. 双语能力；使用双语的状态"
+   },
+   {
+    "w": "monolingual",
+    "cn": "n./adj. 单语者；只使用一种语言的"
+   },
+   {
+    "w": "boost",
+    "cn": "v. 提升，增强"
+   },
+   {
+    "w": "Alzheimer's disease",
+    "cn": "n. 阿尔茨海默病（老年痴呆症）"
+   },
+   {
+    "w": "entail",
+    "cn": "v. 涉及，需要，使必然发生"
+   },
+   {
+    "w": "forgetful",
+    "cn": "adj. 健忘的"
+   }
+  ]
+ }
+}

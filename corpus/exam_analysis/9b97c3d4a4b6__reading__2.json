@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "9b97c3d4a4b6__reading__2",
+ "examId": "9b97c3d4a4b6",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 12 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T06:06:01.371Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64000,
+ "usage": {
+  "prompt_tokens": 1913,
+  "completion_tokens": 4076,
+  "total_tokens": 5989,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1913,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4076,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1913,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "数字技术正悄然操控人类",
+  "gist": "文章以作者亲历Captcha验证码测试为切入点，揭示人类在不知不觉中为数字技术做无偿劳动的现实。通过图灵测试的反讽和温水煮蛙的隐喻，作者指出大量数字技术已将人类当作实现其自身目的的工具，而人类可能尚未意识到这一潜在危险。",
+  "structure": [
+   "第1-2段：以Captcha验证个人经历引出话题",
+   "第3段：揭示验证码背后的无偿劳动本质",
+   "第4段：借图灵测试指出角色反转的讽刺",
+   "第5-6段：以温水煮蛙隐喻警示人类对数字技术危险的无知",
+   "第7段：总结数字技术利用人类、呼吁警醒"
+  ],
+  "difficulty": "中等",
+  "translation": "前几天我需要登录一项之前从未使用过的服务。由于我是新用户，网站决定需要验证我不是机器人，于是给我设置了一个Captcha测试，以判断用户是人还是机器。\n\n我面前出现了一张路边场景的图片，上面覆盖着一个网格。我的\"挑战\"是点击网格中每一个包含交通标志的单元格。我照做了，有些恼火。接着又出现了另一张图片和另一个网格——同样要求识别路牌标志。我像一只温顺的羔羊一样照办了，之后网站才接受了我的输入。\n\n然后我意识到，我刚才所做的事情其实是在为训练引导自动驾驶汽车的机器学习软件增加数据集。也就是说，为了获得一项将从我的输入中获取经济利益的自动化服务，我首先得做一些无偿劳动来帮助提升自动驾驶车辆的性能。\n\n够巧妙的，对吧？但还请注意一个额外的绝妙讽刺：Captcha被描述为一种\"自动化图灵测试\"。你可能记得，图灵测试的构想初衷是让人类来判断机器的回应是否逼真到无法区分它究竟是人还是机器人。所以我们竟然走入了一个由机器让我们耍把戏来证明自己是人类的世界！\n\n这一史无前例的转变中最奇怪的方面在于，它竟然很少被讨论。温水煮蛙的隐喻浮上脑海。我们是否已经被数字技术如此巧妙地驯化，以至于看不到发生在自己身上的事情？我们是否已经被驯化到接受一个由\"智能\"技术主宰的世界，用便利做交换，直到我们自己也变得有点像机器？\n\n在最近一本令人震惊又发人深省的书中，两位学者——法学教授布雷特·弗里施曼和哲学家埃文·塞林格——认为上述问题的答案是\"是\"。\n\n他们说得对。这与技术恐惧无关。我们塑造了工具，然后工具又塑造了我们。技术本应提供服务于人类目的的工具。但是，正如机器学习Captcha所证明的那样，如今相当大一部分数字技术将人类视为（并利用人类作为）实现并非属于我们的目的的手段。在这个过程中，它们把我们降低为在踏车上欢快奔跑的老鼠，而踏车的设计者根本不把我们的利益放在心上。所以回到青蛙的隐喻——我们是否足够聪明，能在为时已晚之前跳出来？你甚至不用去谷歌搜索就知道答案。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Like a lamb, I complied, after which the website accepted my input.",
+    "why": "原文用\"Like a lamb, I complied\"描述作者的反应。\"like a lamb\"意为\"像羔羊一样温顺地\"，complied意为\"服从、照办\"，这与D选项\"submissively（顺从地）\"完全对应。此外，第二段首句\"I did so, a bit irritated\"也表明作者虽有不满但仍照做，进一步印证了顺从的态度。",
+    "traps": "A\"随机点击单元格\"无中生有，原文作者是按要求识别交通标志后点击的；B\"欣然接受挑战\"与原文\"a bit irritated\"矛盾，作者并非乐意；C\"自信地完成\"在原文中无任何依据，作者的态度是无奈顺从而非自信。",
+    "tip": "注意比喻性表达\"like a lamb\"暗示顺从、被动。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "The Turing test was conceived, you may recall, as a way of enabling humans to determine whether a machine could respond in such a way that one couldn't tell whether it was a human or a robot. So we have wandered into a world in which machines make us do tricks to prove that we are humans!",
+    "why": "原文指出图灵测试原本是人类用来检验机器的，而现在Captcha（被称为\"自动化图灵测试\"）却是机器用来检验人类的。这种角色的完全反转正是讽刺所在，与C选项\"原本设计来测试机器的测试现在被机器用来测试人类\"完全吻合。",
+    "traps": "A\"机器能像人类一样回应测试\"偏离了讽刺的核心——角色反转；B\"机器在物体识别上优于人类\"属于无中生有，原文未涉及此比较；D\"测试能做人类不能做的把戏\"曲解原文，原文说的是机器让人类做把戏来证明身份。",
+    "tip": "理解irony需抓住原文中前后对比的逻辑反转。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "Have we become so subtly conditioned by digital technology that we don't see what's been happening to us?",
+    "why": "作者引入\"温水煮蛙\"隐喻后，紧接着提出反问：我们是否已被数字技术悄然驯化而不自知？温水煮蛙的核心含义是环境渐变中意识不到危险，对应B选项\"人类没有意识到智能技术带来的潜在危险\"。整个第五段都在强调这种转变\"under-discussed\"（讨论不足），说明人们对危险缺乏警觉。",
+    "traps": "A\"不愿意用便利换取控制\"与原文相反，原文说人们在不知不觉中已经做了这种交换；C\"质疑人类是否被驯化接受数字技术\"虽有原文依据，但这是隐喻引出的具体问题，而非使用隐喻的目的，隐喻的目的是揭示人们对危险的无知；D\"质疑人类是否像煮蛙一样脆弱\"过于字面化，未抓住隐喻深层含义。",
+    "tip": "例证题需抓住比喻服务的论点，而非比喻本身的字面含义。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "a significant proportion of digital tech now sees (and uses) humans as means to ends that are not ours.",
+    "why": "作者在第七段先说\"And they're right\"认同两位学者的观点，随后用\"But\"转折说明原因：相当大一部分数字技术将人类视为并利用为实现\"并非我们的目的\"的手段。这与A选项\"大量数字技术正在利用人类来满足其自身目的\"精确对应。\"a significant proportion\"对应\"a large part\"，\"uses humans as means to ends that are not ours\"对应\"making use of humans to meet its own ends\"。",
+    "traps": "B\"人类与数字技术竞赛争夺世界控制权\"属于无中生有，原文未提及竞赛；C\"数字技术以前所未有的方式服务人类需求\"与原文论点相反，原文强调技术反过来利用人类；D\"数字技术思考而人类做重复劳动\"过度推断，原文重点是利用关系而非思考与劳动的分工。",
+    "tip": "因果关系题需紧扣作者给出的论据，同义替换是解题关键。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "So back to the frog metaphor. Are we smart enough to jump out before it's too late? You don't even have to Google it to know the answer.",
+    "why": "作者最后用反问句\"我们是否足够聪明能及时跳出\"，紧接着说\"你甚至不需要谷歌就知道答案\"，暗示答案显而易见是\"不\"——即我们可能不够聪明、无法及时醒悟。结合全文温水煮蛙的隐喻，作者悲观地认为人类可能无法及时意识到数字技术对我们构成的危险，与D选项吻合。",
+    "traps": "A\"不明智地期望数字技术考虑人类利益\"虽与文意有关联，但并非这句话的隐含意思，而是前文已明确表述的内容；B\"难以判断技术还是人类占上风\"无中生有，作者的态度是明确悲观的；C\"我们可能需要搜索网络来寻找答案\"恰好与原文\"You don't even have to Google it\"相矛盾，属于反向干扰。",
+    "tip": "反问句+显而易见的答案暗示，通常表达作者的悲观态度。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "Captcha",
+    "cn": "n. 验证码（全自动区分计算机和人类的图灵测试）"
+   },
+   {
+    "w": "grid",
+    "cn": "n. 网格，格栅"
+   },
+   {
+    "w": "comply",
+    "cn": "v. 服从，遵从，照办"
+   },
+   {
+    "w": "autonomous",
+    "cn": "adj. 自主的，自动驾驶的"
+   },
+   {
+    "w": "irony",
+    "cn": "n. 讽刺，反讽"
+   },
+   {
+    "w": "conceive",
+    "cn": "v. 构想，设想，怀孕"
+   },
+   {
+    "w": "unparalleled",
+    "cn": "adj. 空前的，无与伦比的"
+   },
+   {
+    "w": "conditioned",
+    "cn": "adj. 被驯化的，习惯于某种条件的"
+   },
+   {
+    "w": "technophobic",
+    "cn": "adj. 技术恐惧的"
+   },
+   {
+    "w": "treadmill",
+    "cn": "n. 踏车，跑步机；单调乏味的工作"
+   },
+   {
+    "w": "proportion",
+    "cn": "n. 部分，比例，比重"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "So, to gain access to an automated service that will benefit financially from my input, I first have to do some unpaid labor to help improve the performance of autonomous vehicles.",
+    "cn": "也就是说，为了获得一项将从我的输入中获取经济利益的自动化服务，我首先得做一些无偿劳动来帮助提升自动驾驶车辆的性能。",
+    "note": "主干为 I have to do unpaid labor；to gain access为目的状语；that引导定语从句修饰service；to help improve为不定式作目的补充。"
+   },
+   {
+    "en": "The Turing test was conceived, you may recall, as a way of enabling humans to determine whether a machine could respond in such a way that one couldn't tell whether it was a human or a robot.",
+    "cn": "你可能记得，图灵测试的构想初衷是让人类来判断一台机器的回应是否逼真到无法分辨它究竟是人还是机器人。",
+    "note": "主干为The Turing test was conceived as a way；you may recall为插入语；enabling humans to determine为动名词短语作of宾语；whether引导宾语从句；in such a way that引导结果状语从句。"
+   },
+   {
+    "en": "But, as the machine-learning Captcha demonstrates, a significant proportion of digital tech now sees (and uses) humans as means to ends that are not ours.",
+    "cn": "但是，正如机器学习验证码所证明的那样，如今相当大一部分数字技术将人类视为（并利用人类作为）实现并非属于我们的目的的手段。",
+    "note": "主干为a significant proportion of digital tech sees humans as means to ends；as引导非限制性定语从句作插入；that are not ours为定语从句修饰ends。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,193 @@
+{
+ "schemaVersion": 1,
+ "id": "24eadf0e9cd0__translation__all",
+ "examId": "24eadf0e9cd0",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2016 年 12 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:06:59.719Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31631,
+ "usage": {
+  "prompt_tokens": 793,
+  "completion_tokens": 2010,
+  "total_tokens": 2803,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 793,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2010,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 793,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国教育国际影响力的崛起",
+  "reference": "With the booming of China's economy, the number of people learning Chinese has been increasing rapidly, making Chinese one of the most popular languages to learn in the world. In recent years, the ranking of Chinese universities has also improved significantly on the international stage. Given the tremendous progress in China's education, it is no surprise that China has become one of the most popular study-abroad destinations for overseas students. In 2015, nearly 400,000 international students flocked to China for study. The subjects they study are no longer confined to Chinese language and culture, but include science and engineering. In the global education market, the United States and the United Kingdom still dominate, but China is catching up rapidly.",
+  "sentences": [
+   {
+    "cn": "随着中国经济的蓬勃发展，学汉语的人数迅速增加，使汉语成了世界上人们最爱学的语言之一。",
+    "en": "With the booming of China's economy, the number of people learning Chinese has been increasing rapidly, making Chinese one of the most popular languages to learn in the world.",
+    "structure": "With + 名词 + 介词短语作状语引导背景，主句后接现在分词 making 作结果状语，含 one of the + 最高级 + 名词复数结构",
+    "keys": [
+     "蓬勃发展 the booming of / the rapid growth of",
+     "学汉语的人数 the number of people learning Chinese",
+     "最爱学的语言之一 one of the most popular languages to learn"
+    ]
+   },
+   {
+    "cn": "近年来，中国大学在国际上的排名也有了明显的提高。",
+    "en": "In recent years, the ranking of Chinese universities has also improved significantly on the international stage.",
+    "structure": "时间状语 In recent years 前置，主语为 the ranking of Chinese universities，谓语用现在完成时 has improved，体现\"变化延续至今\"",
+    "keys": [
+     "国际上的排名 the ranking on the international stage",
+     "明显的提高 improved significantly"
+    ]
+   },
+   {
+    "cn": "由于中国教育的巨大进步，中国成为最受海外学生欢迎的留学目的地之一就不足为奇了。",
+    "en": "Given the tremendous progress in China's education, it is no surprise that China has become one of the most popular study-abroad destinations for overseas students.",
+    "structure": "Given... 分词短语作原因状语，主句用 it is no surprise that... 形式主语结构，that 从句为真正主语",
+    "keys": [
+     "巨大进步 tremendous progress",
+     "不足为奇 it is no surprise that",
+     "留学目的地 study-abroad destination",
+     "海外学生 overseas students"
+    ]
+   },
+   {
+    "cn": "2015年，近四十万国际学生蜂拥来到中国学习。",
+    "en": "In 2015, nearly 400,000 international students flocked to China for study.",
+    "structure": "简单句，时间状语前置，谓语 flocked to 形象表达\"蜂拥\"，for study 作目的状语",
+    "keys": [
+     "近四十万 nearly 400,000",
+     "蜂拥 flocked to",
+     "国际学生 international students"
+    ]
+   },
+   {
+    "cn": "他们学习的科目已不再限于中国语言和文化，而包括科学与工程。",
+    "en": "The subjects they study are no longer confined to Chinese language and culture, but include science and engineering.",
+    "structure": "主语 the subjects 后接省略关系代词 that 的定语从句 they study，谓语用 no longer confined to... but include... 并列对比结构",
+    "keys": [
+     "不再限于 no longer confined/limited to",
+     "科学与工程 science and engineering"
+    ]
+   },
+   {
+    "cn": "在全球教育市场上，美国和英国仍占主导地位，但中国正在迅速赶上。",
+    "en": "In the global education market, the United States and the United Kingdom still dominate, but China is catching up rapidly.",
+    "structure": "介词短语作地点状语前置，but 连接两个并列分句形成转折，后句用现在进行时表示正在发生的趋势",
+    "keys": [
+     "全球教育市场 the global education market",
+     "占主导地位 dominate",
+     "迅速赶上 catching up rapidly"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "蓬勃发展",
+    "en": "booming / rapid growth / flourishing"
+   },
+   {
+    "cn": "留学目的地",
+    "en": "study-abroad destination"
+   },
+   {
+    "cn": "海外学生",
+    "en": "overseas students / international students"
+   },
+   {
+    "cn": "不足为奇",
+    "en": "it is no surprise that / it is not surprising that"
+   },
+   {
+    "cn": "全球教育市场",
+    "en": "the global education market"
+   },
+   {
+    "cn": "占主导地位",
+    "en": "dominate / take a dominant position"
+   },
+   {
+    "cn": "科学与工程",
+    "en": "science and engineering"
+   },
+   {
+    "cn": "蜂拥",
+    "en": "flock to / swarm to"
+   },
+   {
+    "cn": "国际排名",
+    "en": "international ranking"
+   }
+  ],
+  "pitfalls": [
+   "「随着」误用 as 引导完整从句但缺谓语，with 复合结构更稳妥不易出错",
+   "「不足为奇」漏用形式主语 it，写成 is no surprise that China... 缺主语",
+   "「不再限于…而包括…」遗漏 no longer 或将 but 误写为 and，逻辑转折丢失",
+   "「蜂拥」直译为 bee-like 或 rush，未用地道动词 flock to",
+   "数字「近四十万」误写为 four hundred thousands，正确为 400,000 或 four hundred thousand"
+  ],
+  "upgrades": [
+   {
+    "plain": "Because of the great progress in China's education",
+    "better": "Given the tremendous progress in China's education",
+    "note": "Given 作介词更简洁正式，tremendous 比 great 更具书面语色彩"
+   },
+   {
+    "plain": "China became one of the most welcome destinations",
+    "better": "China has become one of the most popular study-abroad destinations",
+    "note": "现在完成时体现持续影响，popular 搭配 destination 更地道"
+   },
+   {
+    "plain": "many international students came to China",
+    "better": "nearly 400,000 international students flocked to China",
+    "note": "flock to 形象传达\"蜂拥\"之意，数据精确体现忠实原文"
+   },
+   {
+    "plain": "the US and the UK are still in the leading position",
+    "better": "the United States and the United Kingdom still dominate",
+    "note": "dominate 一词替代 be in the leading position，表达更精炼有力"
+   },
+   {
+    "plain": "subjects are not only about Chinese language and culture",
+    "better": "subjects are no longer confined to Chinese language and culture",
+    "note": "no longer confined to 精准对应\"不再限于\"，语义更严谨"
+   }
+  ]
+ }
+}

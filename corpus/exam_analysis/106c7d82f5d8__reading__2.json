@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "106c7d82f5d8__reading__2",
+ "examId": "106c7d82f5d8",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年 12 月英语六级真题（第 3 套）",
+ "year": 2020,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:34:13.939Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61135,
+ "usage": {
+  "prompt_tokens": 1876,
+  "completion_tokens": 3802,
+  "total_tokens": 5678,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1876,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3802,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1876,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人类活动正在摧毁黑猩猩文化",
+  "gist": "文章指出人类的存在正侵蚀黑猩猩的行为多样性，摧毁其独特文化。1999年Whiten团队发现不同黑猩猩群体拥有各自的文化传统，但Kalan等人的田野研究表明人类活动使这些文化日益消亡。作者呼吁保护动物不仅要保护物种基因，还应保护其文化传统。",
+  "structure": [
+   "第1-2段：以外星人类比引出黑猩猩拥有独特文化的研究发现",
+   "第3-5段：转折指出人类活动正在侵蚀黑猩猩行为多样性",
+   "第6-7段：专家呼吁关注个体群落文化保护，现有监测不足",
+   "第8段：总结提出保护动物文化传统的新思路"
+  ],
+  "difficulty": "中等",
+  "translation": "想象一下，一个外星物种降落在地球上，仅仅凭借它们的存在，就导致我们的艺术消亡、音乐趋同、技术知识消失。这实际上就是人类一直在对我们最亲近的近亲——黑猩猩——所做的事情。\n\n早在1999年，安德鲁·惠滕领导的一个科学家团队就表明，非洲不同地区的黑猩猩彼此之间的行为方式差异很大。有些群体会用指关节敲击树枝来引起同伴的注意，而另一些则通过用牙齿大声撕扯树叶来做到这一点。该团队识别出了39种这样的传统习惯，它们在某些群落中存在而在其他群落中则没有——这种模式在当时除人类外还未在任何动物身上被观察到。该团队表示，这是黑猩猩拥有自己文化的证据。\n\n说服持怀疑态度的人相信这种文化的存在花了很长时间，但现在我们有了大量动物从彼此那里学习地方传统的例子。\n\n然而，正当许多科学家开始接受动物文化的存在时，其中许多文化可能正在消失。阿米·卡兰和她的同事们通过多年密集的田野调查表明，人类的存在本身就已经侵蚀了黑猩猩行为的多样性。我们繁荣之处，它们的文化就凋零。在惠滕经典研究20周年之际得知这一事实，真是一种极其讽刺的事。\n\n\"想到仅仅60年前，我们对我们姐妹物种在野外的行为几乎一无所知，真令人惊叹，\"惠滕说。\"但现在，正当我们真正开始了解我们的灵长类近亲时，人类的行为正在关闭我们发现的这一切的窗户。\"\n\n\"有时在急于保护物种的过程中，我认为我们忘记了个体，\"圣安德鲁斯大学教授凯特·霍贝特说。\"每一个种群、每一个群落、甚至每一代黑猩猩都是独一无二的。一个事件可能只对黑猩猩的总体数量产生微小影响，但它可能彻底消灭一个完整的群落——一种完整的文化。无论我们做什么来恢复栖息地或支持种群增长，我们可能永远无法恢复那种文化。\"\n\n没有人知道黑猩猩文化的破坏是否正在加剧。很少有地方长期追踪过黑猩猩的行为，而那些做到了的地方，也更有可能已经保护了它们的动物免受人类影响。\n\n显然，保护主义者需要以一种全新的方式来考虑拯救物种——不仅保护动物的身体和基因，还要保护它们的传统。\"我们现在不应只关注对基于基因的实体（如物种）的保护，还需要考虑基于文化的实体，\"安德鲁·惠滕说。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "That is effectively what humans have been doing to our closest relatives—chimps.",
+    "why": "题目问人类对黑猩猩做了什么。第一段用外星人类比，指出外星人的存在导致\"art vanish, music homogenize, technological know-how disappear\"，即文化被摧毁，然后明确说\"这实际上就是人类对黑猩猩所做的事\"。结合全文主题——人类活动侵蚀黑猩猩的行为多样性和文化传统，A选项\"毁掉它们的文化\"是最准确的概括。",
+    "traps": "B\"加速它们的灭绝\"文章未提及物种灭绝问题，属于无中生有；C\"把它们当作外星物种\"曲解了类比关系，外星人是比喻人类而非黑猩猩；D\"使它们的生活习惯同质化\"只对应了类比中music homogenize一个方面，以偏概全，且原文说的是人类的音乐而非黑猩猩的习惯。",
+    "tip": "类比修辞题需看清比喻的对应关系，抓住类比的整体含义。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "a team of scientists led by Andrew Whiten showed that chimps from different parts of Africa behave very differently from one another.",
+    "why": "第二段明确说Whiten团队发现非洲不同地区的黑猩猩\"彼此行为方式差异很大\"，并举例说明不同群体用不同方式吸引同伴注意（敲树枝vs撕树叶），共识别出39种不同传统。D选项\"不同的黑猩猩群体在交流方式上存在差异\"准确概括了这一发现。",
+    "traps": "A\"展示高度发达的沟通技能\"偷换概念，原文强调差异性而非技能的发达程度；B\"严重依赖肢体语言沟通\"属于无中生有，原文仅举例说明行为差异；C\"行为方式与人类非常相似\"曲解了原文，原文只说这种文化模式此前仅在人类中被发现，并非说行为方式相似。",
+    "tip": "注意区分\"存在文化差异\"和\"能力高低\"，不要被举例细节带偏主旨。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Ammie Kalan and her colleagues have shown, through years of intensive fieldwork, that the very presence of humans has eroded the diversity of chimp behavior.",
+    "why": "第四段明确指出Kalan团队通过多年密集田野调查发现\"人类的存在本身已经侵蚀了黑猩猩行为的多样性\"，紧接着用\"Where we flourish, their cultures wither\"加以强调。B选项\"随着人类活动增加，黑猩猩行为变得不那么多样\"精确对应了这一发现。",
+    "traps": "A\"Whiten的经典研究对黑猩猩行为多样性影响甚小\"张冠李戴，原文说的是人类活动的影响而非Whiten的研究；C\"黑猩猩改变文化以适应变化的环境\"无中生有，原文说的是文化消亡而非适应性变化；D\"可能已经太晚\"过度推断，原文未给出这种时间判断。",
+    "tip": "田野研究类题目要紧扣研究结论原句，避免过度推断。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Sometimes in the rush to conserve the species, I think we forget about the individuals. Each population, each community, even each generation of chimps is unique.",
+    "why": "Hobaiter指出人们急于保护物种时常忘记个体，强调每个种群、群落、每一代黑猩猩都是独一无二的；一个事件虽对总体数量影响小，但可能消灭整个群落和文化，且文化一旦消失无法恢复。她的核心观点是保护工作不应只关注物种总量，而应努力保护每一个独立的黑猩猩群落，B选项准确概括了这一主张。",
+    "traps": "A\"理解姐妹物种的野外行为\"是Whiten的感慨，非Hobaiter的主张；C\"研究每一代黑猩猩的独特特征\"偷换概念，原文提到每代独特是为论证保护群落的必要性，而非提倡研究特征；D\"恢复栖息地以扩大总体种群\"恰恰是Hobaiter批评的做法，她认为仅恢复栖息地和支持种群增长不足以恢复文化。",
+    "tip": "抓住专家论述的核心立场，区分论据与论点。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "conservationists need to think about saving species in a completely new way—by preserving animal traditions as well as bodies and genes.",
+    "why": "最后一段作者明确提出保护主义者需要以\"全新方式\"保护物种，即不仅保护身体和基因，还要保护动物传统；Whiten补充说不能只关注基于基因的实体，还需考虑基于文化的实体。C选项\"以新颖且全面的方式保护动物物种\"准确概括了\"新方式\"和\"既保基因又保文化\"的双重内涵。",
+    "traps": "A\"完全关注文化实体而非基因实体\"使用了\"entirely\"和\"rather than\"，原文用的是\"as well as\"和\"also consider\"，是兼顾而非替代；B\"更重视动物传统而非身体保护\"同样歪曲了原文的并列关系为主次关系；D\"在物种文化消失前加以探索\"无中生有，原文呼吁的是保护而非探索。",
+    "tip": "注意\"as well as\"表示并列兼顾，选项若改为偏重关系则为曲解。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "homogenize",
+    "cn": "v. 使同质化，使均匀"
+   },
+   {
+    "w": "mere",
+    "cn": "adj. 仅仅的，只不过的"
+   },
+   {
+    "w": "skeptic",
+    "cn": "n. 怀疑论者，持怀疑态度的人"
+   },
+   {
+    "w": "erode",
+    "cn": "v. 侵蚀，逐渐削弱"
+   },
+   {
+    "w": "wither",
+    "cn": "v. 枯萎，凋零，衰退"
+   },
+   {
+    "w": "bitterly",
+    "cn": "adv. 痛苦地，极其（强调负面情感）"
+   },
+   {
+    "w": "ironic",
+    "cn": "adj. 讽刺的，具有讽刺意味的"
+   },
+   {
+    "w": "primate",
+    "cn": "n. 灵长类动物"
+   },
+   {
+    "w": "conservationist",
+    "cn": "n. 自然保护主义者"
+   },
+   {
+    "w": "entity",
+    "cn": "n. 实体，存在"
+   },
+   {
+    "w": "rap",
+    "cn": "v. 敲击，叩击"
+   },
+   {
+    "w": "knuckle",
+    "cn": "n. 指关节"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Imagine that an alien species landed on Earth and, through their mere presence, those aliens caused our art to vanish, our music to homogenize, and our technological know-how to disappear.",
+    "cn": "想象一下，一个外星物种降落在地球上，仅仅凭借它们的存在，这些外星人就导致我们的艺术消亡、音乐趋同、技术知识消失。",
+    "note": "主句为祈使句imagine + that宾语从句；从句中caused后接三个并列的宾语+不定式补语结构（art to vanish, music to homogenize, know-how to disappear），through their mere presence为插入状语。"
+   },
+   {
+    "en": "An event might only have a small impact on the total population of chimps, but it may wipe out an entire community—an entire culture.",
+    "cn": "一个事件可能只对黑猩猩的总体数量产生微小影响，但它可能彻底消灭一个完整的群落——一种完整的文化。",
+    "note": "but连接的转折复合句，前半句用might表推测语气弱化影响，后半句用may wipe out强调严重后果；破折号后an entire culture是同位语，将community上升到文化层面。"
+   },
+   {
+    "en": "Instead of focusing only on the conservation of genetically based entities like species, we now need to also consider culturally based entities.",
+    "cn": "我们现在不应只关注对基于基因的实体（如物种）的保护，还需要考虑基于文化的实体。",
+    "note": "Instead of + 动名词短语作状语表转变方向；genetically based与culturally based形成对比；like species为举例说明；also呼应instead of，强调兼顾而非替代。"
+   }
+  ]
+ }
+}

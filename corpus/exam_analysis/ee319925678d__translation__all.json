@@ -1,0 +1,197 @@
+{
+ "schemaVersion": 1,
+ "id": "ee319925678d__translation__all",
+ "examId": "ee319925678d",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2019 年 6 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:28:05.123Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 27337,
+ "usage": {
+  "prompt_tokens": 791,
+  "completion_tokens": 1665,
+  "total_tokens": 2456,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 791,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1665,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 791,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "汉语的特点、历史作用与全球影响",
+  "reference": "Chinese is now the language with the largest number of native speakers in the world. One significant difference between Chinese and Western languages is that it is composed of characters rather than letters. Among all the writing systems still in use today, Chinese is the oldest. In China, people from different regions may not understand each other's dialects, but since Chinese characters have a unified written form, they have little difficulty communicating with one another. Historically, the Chinese language has played an important role in uniting the Chinese nation. Today, with the rapid growth of China's economy and the enhancement of its global influence, more and more people from other countries are beginning to learn Chinese.",
+  "sentences": [
+   {
+    "cn": "汉语现在是世界上用作本族语人数最多的语言。",
+    "en": "Chinese is now the language with the largest number of native speakers in the world.",
+    "structure": "主系表结构，with 介词短语作后置定语修饰 the language",
+    "keys": [
+     "本族语 native speakers",
+     "用作本族语人数最多 with the largest number of native speakers"
+    ]
+   },
+   {
+    "cn": "汉语与西方语言的一个重要区别在于它是以方块字(character)而不是以字母构成的。",
+    "en": "One significant difference between Chinese and Western languages is that it is composed of characters rather than letters.",
+    "structure": "主系表结构，that 引导表语从句；rather than 连接对比成分",
+    "keys": [
+     "方块字 characters",
+     "字母 letters",
+     "区别在于 the difference is that...",
+     "以…构成 be composed of"
+    ]
+   },
+   {
+    "cn": "目前仍在使用的书写系统中，汉语是最古老的。",
+    "en": "Among all the writing systems still in use today, Chinese is the oldest.",
+    "structure": "Among... 介词短语作状语前置，still in use 作后置定语修饰 writing systems",
+    "keys": [
+     "书写系统 writing system",
+     "仍在使用的 still in use"
+    ]
+   },
+   {
+    "cn": "在中国，来自不同地区的人可能听不懂对方的方言，但由于汉字有统一的书写形式，他们交流起来几乎没有任何困难。",
+    "en": "In China, people from different regions may not understand each other's dialects, but since Chinese characters have a unified written form, they have little difficulty communicating with one another.",
+    "structure": "but 连接转折的并列句；since 引导原因状语从句；have difficulty (in) doing sth. 固定句型",
+    "keys": [
+     "方言 dialects",
+     "统一的书写形式 a unified written form",
+     "交流起来几乎没有任何困难 have little difficulty communicating"
+    ]
+   },
+   {
+    "cn": "汉语历史上对团结中华民族发挥了重要作用。",
+    "en": "Historically, the Chinese language has played an important role in uniting the Chinese nation.",
+    "structure": "主谓宾结构，play a role in doing sth. 固定搭配；现在完成时表示延续至今的影响",
+    "keys": [
+     "发挥了重要作用 play an important role in",
+     "团结中华民族 uniting the Chinese nation"
+    ]
+   },
+   {
+    "cn": "今天，随着中国经济的快速增长和全球影响力的增强，越来越多其他国家的人也开始学习汉语。",
+    "en": "Today, with the rapid growth of China's economy and the enhancement of its global influence, more and more people from other countries are beginning to learn Chinese.",
+    "structure": "with 复合结构作伴随/原因状语，and 连接两个并列名词短语；more and more 作定语",
+    "keys": [
+     "随着…… with...",
+     "全球影响力 global influence",
+     "快速增长 rapid growth",
+     "越来越多 more and more"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "本族语",
+    "en": "native language / mother tongue"
+   },
+   {
+    "cn": "方块字",
+    "en": "character(s)"
+   },
+   {
+    "cn": "字母",
+    "en": "letter(s)"
+   },
+   {
+    "cn": "书写系统",
+    "en": "writing system"
+   },
+   {
+    "cn": "方言",
+    "en": "dialect(s)"
+   },
+   {
+    "cn": "统一的书写形式",
+    "en": "a unified written form"
+   },
+   {
+    "cn": "中华民族",
+    "en": "the Chinese nation"
+   },
+   {
+    "cn": "全球影响力",
+    "en": "global influence"
+   },
+   {
+    "cn": "西方语言",
+    "en": "Western languages"
+   },
+   {
+    "cn": "快速增长",
+    "en": "rapid growth"
+   }
+  ],
+  "pitfalls": [
+   "\"用作本族语人数最多\"易漏译 native speakers，误译为 most people use",
+   "\"方块字\"不可译为 square words，应译为 characters",
+   "\"交流起来几乎没有任何困难\"要用 have little/no difficulty (in) doing 句型，易误写为 have not any difficulty",
+   "\"由于汉字有统一的书写形式\"中的\"统一\"易误用 same，应用 unified",
+   "\"发挥了重要作用\"应使用现在完成时 has played，体现对现在的影响，易误用一般过去时"
+  ],
+  "upgrades": [
+   {
+    "plain": "Chinese is the oldest language that is still used now",
+    "better": "Among all the writing systems still in use today, Chinese is the oldest",
+    "note": "用 Among... 前置状语使句式更紧凑地道，避免冗长定语从句"
+   },
+   {
+    "plain": "because Chinese characters have the same written form",
+    "better": "since Chinese characters have a unified written form",
+    "note": "since 语气比 because 更书面自然；unified 比 same 更精准表达\"统一\""
+   },
+   {
+    "plain": "they almost have no difficulty to communicate",
+    "better": "they have little difficulty communicating with one another",
+    "note": "have difficulty doing 为固定搭配，little 比 almost no 更地道简洁"
+   },
+   {
+    "plain": "as China's economy grows fast and its global influence becomes stronger",
+    "better": "with the rapid growth of China's economy and the enhancement of its global influence",
+    "note": "with + 名词短语 比 as + 从句更简练高级，名词化表达更正式"
+   },
+   {
+    "plain": "played an important role to unite",
+    "better": "played an important role in uniting",
+    "note": "play a role in doing 是固定搭配，不能用不定式 to do"
+   }
+  ]
+ }
+}

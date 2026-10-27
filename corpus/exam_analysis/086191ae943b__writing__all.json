@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "086191ae943b__writing__all",
+ "examId": "086191ae943b",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2024 年 6 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:57:21.079Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43109,
+ "usage": {
+  "prompt_tokens": 739,
+  "completion_tokens": 2811,
+  "total_tokens": 3550,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 739,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2811,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 739,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "以给定首句开头，围绕\"数字素养与技能在当今世界的重要性\"展开议论，可评论、举例或结合个人经历，150-200词。",
+    "outline": [
+     "第一段：引用首句，引出数字素养日益重要的背景，点明其地位堪比传统读写能力。",
+     "第二段：从职场、教育、日常生活三个维度举例论证数字素养的重要性；同时指出数字鸿沟问题并提出对策建议。",
+     "第三段：总结全文，强调培养数字素养势在必行，呼吁社会共同努力构建数字包容型社会。"
+    ],
+    "sample": "There is a growing awareness of the importance of digital literacy and skills in today's world. As technology continues to reshape every aspect of our lives, the ability to navigate digital tools has become as essential as traditional reading and writing.\n\nThe significance of digital literacy is evident in multiple domains. In the workplace, employees proficient in data analysis, online collaboration, and cybersecurity are highly sought after. In education, students who master digital research methods gain a competitive edge. Moreover, in daily life, digital skills empower individuals to identify misinformation, protect personal privacy, and access vital services such as telemedicine and e-government platforms. However, a considerable digital divide still persists. Many elderly citizens and residents of rural areas lack adequate access to digital training, which further deepens social inequality. To bridge this gap, governments should integrate digital education into public school curricula from an early age, while communities ought to offer free workshops for underserved populations.\n\nIn conclusion, cultivating digital literacy is no longer optional but imperative. Only through collective efforts can we build a more inclusive and digitally competent society.",
+    "phrases": [
+     {
+      "en": "digital literacy",
+      "cn": "数字素养；指有效使用数字技术获取、评估、创造信息的能力，是本题核心词汇。"
+     },
+     {
+      "en": "navigate digital tools",
+      "cn": "驾驭/使用数字工具；navigate 比 use 更高级，暗含熟练掌握之意。"
+     },
+     {
+      "en": "a competitive edge",
+      "cn": "竞争优势；常用搭配 gain/have a competitive edge over sb."
+     },
+     {
+      "en": "empower individuals to do sth.",
+      "cn": "赋能个人去做某事；体现数字技能对人的积极影响，比 help 更有力。"
+     },
+     {
+      "en": "the digital divide",
+      "cn": "数字鸿沟；指不同群体在获取和使用数字技术上的差距，属热点话题词汇。"
+     },
+     {
+      "en": "bridge the gap",
+      "cn": "弥合差距；搭配介词 between 或 this gap 使用，是议论文高频表达。"
+     },
+     {
+      "en": "integrate A into B",
+      "cn": "将 A 融入 B；用于建议段，表达政策层面的措施非常地道。"
+     },
+     {
+      "en": "underserved populations",
+      "cn": "服务不足的群体/弱势群体；比 poor people 更学术、更得体。"
+     },
+     {
+      "en": "no longer optional but imperative",
+      "cn": "不再是可选的而是必须的；对比结构增强语气，适合总结段。"
+     },
+     {
+      "en": "Only through collective efforts can we...",
+      "cn": "只有通过集体努力我们才能……；Only + 介词短语前置引起部分倒装，是加分句型。"
+     }
+    ],
+    "pitfalls": [
+     "忘记在文章开头抄写题目给定首句，直接扣印象分。",
+     "通篇空谈重要性而无具体举例，导致论证单薄、说服力不足。",
+     "词数不足150或超过200，未按题目要求控制篇幅。",
+     "只写好处不谈问题或建议，文章结构单一，缺乏思辨深度。",
+     "反复使用 important/very 等低级词汇，未体现词汇多样性。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Digital skills are very important in our work.",
+      "better": "Employees proficient in data analysis, online collaboration, and cybersecurity are highly sought after.",
+      "note": "用具体技能举例替代空洞形容词，内容更充实、更有说服力。"
+     },
+     {
+      "plain": "We should help old people learn to use computers.",
+      "better": "Communities ought to offer free workshops for underserved populations.",
+      "note": "用正式表达替代口语化说法，且涵盖范围更广，更具学术语体。"
+     },
+     {
+      "plain": "In a word, digital literacy is important and we should pay attention to it.",
+      "better": "Cultivating digital literacy is no longer optional but imperative.",
+      "note": "对比句式 no longer...but 加强语气，imperative 比 important 层次更高。"
+     },
+     {
+      "plain": "If we all work together, we can solve this problem.",
+      "better": "Only through collective efforts can we build a more inclusive and digitally competent society.",
+      "note": "倒装句式展现语法功底，inclusive/competent 体现高级词汇储备。"
+     },
+     {
+      "plain": "Technology changes our life a lot.",
+      "better": "Technology continues to reshape every aspect of our lives.",
+      "note": "reshape 比 change 更生动，every aspect of 使表达更具体全面。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only through collective efforts can we build a more inclusive and digitally competent society. —— Only 引导的倒装句，是六级写作高分必备句型，表达'只有通过共同努力，我们才能建设更具包容性和数字竞争力的社会'。",
+   "The ability to navigate digital tools has become as essential as traditional reading and writing. —— as...as 同级比较结构将数字能力与传统读写并列，立意高远，表达'驾驭数字工具的能力已变得与传统读写同等重要'。",
+   "Digital skills empower individuals to identify misinformation, protect personal privacy, and access vital services. —— 三项并列结构节奏感强，empower 一词体现赋能视角，表达'数字技能赋能个人识别虚假信息、保护隐私并获取关键服务'。",
+   "Cultivating digital literacy is no longer optional but imperative. —— no longer...but 对比结构掷地有声，imperative 一词将重要性提升至'势在必行'的高度，适合用在结尾总结。",
+   "A considerable digital divide still persists, which further deepens social inequality. —— 非限制性定语从句补充说明因果关系，persist/deepen 两个动词精准有力，表达'巨大的数字鸿沟依然存在，进一步加剧了社会不平等'。"
+  ]
+ }
+}

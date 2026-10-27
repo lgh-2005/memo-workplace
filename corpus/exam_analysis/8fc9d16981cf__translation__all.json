@@ -1,0 +1,211 @@
+{
+ "schemaVersion": 1,
+ "id": "8fc9d16981cf__translation__all",
+ "examId": "8fc9d16981cf",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2017 年 6 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:14:55.562Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 30389,
+ "usage": {
+  "prompt_tokens": 803,
+  "completion_tokens": 2097,
+  "total_tokens": 2900,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 803,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2097,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 803,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "唐朝的繁荣与诗歌文化",
+  "reference": "The Tang Dynasty, which started in 618 and ended in 907, was the most glorious period in Chinese history. After nearly three hundred years of development, China in the Tang Dynasty became the most prosperous and powerful country in the world, and its capital, Chang'an, was the largest metropolis in the world at that time. During this period, the economy was well developed, commerce flourished, social order remained stable, and even the borders were open to the outside world. With the growth of urbanization and wealth, art and literature also thrived. Li Bai and Du Fu were poets renowned for the simplicity and naturalness of their works. Their poems touched the hearts of both scholars and ordinary people. Even today, many of their poems are still widely read and recited by both children and adults.",
+  "sentences": [
+   {
+    "cn": "唐朝始于618年，终于907年，是中国历史上最灿烂的时期。",
+    "en": "The Tang Dynasty, which started in 618 and ended in 907, was the most glorious period in Chinese history.",
+    "structure": "非限制性定语从句 which 插入主句，修饰 The Tang Dynasty，主句为 S+be+表语结构",
+    "keys": [
+     "唐朝 the Tang Dynasty",
+     "始于618年 started in 618",
+     "最灿烂的时期 the most glorious period"
+    ]
+   },
+   {
+    "cn": "经过近三百年的发展，唐代中国成为世界上最繁荣的强国，其首都长安是当时世界上最大的都市。",
+    "en": "After nearly three hundred years of development, China in the Tang Dynasty became the most prosperous and powerful country in the world, and its capital, Chang'an, was the largest metropolis in the world at that time.",
+    "structure": "After 介词短语作时间状语置于句首，后接并列句（and 连接两个分句），其中 Chang'an 作 its capital 的同位语",
+    "keys": [
+     "近三百年 nearly three hundred years",
+     "繁荣的强国 prosperous and powerful country",
+     "首都长安 its capital, Chang'an",
+     "都市 metropolis"
+    ]
+   },
+   {
+    "cn": "这一时期，经济发达、商业繁荣、社会秩序稳定，甚至边境也对外开放。",
+    "en": "During this period, the economy was well developed, commerce flourished, social order remained stable, and even the borders were open to the outside world.",
+    "structure": "时间状语 During this period 置于句首，后接四个并列分句，用逗号和 and 连接，形成排比结构",
+    "keys": [
+     "经济发达 the economy was well developed",
+     "商业繁荣 commerce flourished",
+     "社会秩序稳定 social order remained stable",
+     "边境对外开放 the borders were open to the outside world"
+    ]
+   },
+   {
+    "cn": "随着城市化和财富的增加，艺术和文学也繁荣起来。",
+    "en": "With the growth of urbanization and wealth, art and literature also thrived.",
+    "structure": "With + 名词短语作伴随/原因状语置于句首，主句为简单句",
+    "keys": [
+     "城市化 urbanization",
+     "财富的增加 the growth of wealth",
+     "繁荣起来 thrived"
+    ]
+   },
+   {
+    "cn": "李白和杜甫是以作品简洁自然而著称的诗人。",
+    "en": "Li Bai and Du Fu were poets renowned for the simplicity and naturalness of their works.",
+    "structure": "主系表结构，renowned for... 过去分词短语作后置定语修饰 poets",
+    "keys": [
+     "李白 Li Bai",
+     "杜甫 Du Fu",
+     "简洁自然 simplicity and naturalness",
+     "著称 renowned for"
+    ]
+   },
+   {
+    "cn": "他们的诗歌打动了学者和普通人的心。",
+    "en": "Their poems touched the hearts of both scholars and ordinary people.",
+    "structure": "简单句，S+V+O 结构，both...and... 并列结构修饰宾语",
+    "keys": [
+     "打动了…的心 touched the hearts of",
+     "学者 scholars",
+     "普通人 ordinary people"
+    ]
+   },
+   {
+    "cn": "即使在今天，他们的许多诗歌仍广为儿童及成人阅读背诵。",
+    "en": "Even today, many of their poems are still widely read and recited by both children and adults.",
+    "structure": "被动语态 are read and recited，副词 widely 修饰动词，by 引出施动者，Even today 作让步状语",
+    "keys": [
+     "即使在今天 even today",
+     "广为…阅读背诵 widely read and recited",
+     "儿童及成人 children and adults"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "唐朝",
+    "en": "the Tang Dynasty"
+   },
+   {
+    "cn": "长安",
+    "en": "Chang'an"
+   },
+   {
+    "cn": "都市",
+    "en": "metropolis"
+   },
+   {
+    "cn": "城市化",
+    "en": "urbanization"
+   },
+   {
+    "cn": "社会秩序",
+    "en": "social order"
+   },
+   {
+    "cn": "李白",
+    "en": "Li Bai"
+   },
+   {
+    "cn": "杜甫",
+    "en": "Du Fu"
+   },
+   {
+    "cn": "边境",
+    "en": "borders"
+   },
+   {
+    "cn": "商业繁荣",
+    "en": "commerce flourished"
+   },
+   {
+    "cn": "简洁自然",
+    "en": "simplicity and naturalness"
+   }
+  ],
+  "pitfalls": [
+   "'终于907年'易误译为 finally，应译为 ended in 907",
+   "'最灿烂的'易遗漏最高级 the most，或误用 brilliant 代替 glorious",
+   "'其首都长安'需用同位语结构，易写成两个独立短句导致句式松散",
+   "'广为…阅读背诵'需用被动语态 are widely read and recited，易遗漏 widely 或被动",
+   "'简洁自然'为形容词转名词翻译，应译为 simplicity and naturalness，易误用形容词 simple and natural 导致句法错误"
+  ],
+  "upgrades": [
+   {
+    "plain": "China became a strong country",
+    "better": "China became the most prosperous and powerful country",
+    "note": "用最高级和双形容词并列更精准传达'最繁荣的强国'的语义层次"
+   },
+   {
+    "plain": "Li Bai and Du Fu were famous poets",
+    "better": "Li Bai and Du Fu were poets renowned for the simplicity and naturalness of their works",
+    "note": "renowned for 比 famous 更正式书面，且将著称原因后置定语化更紧凑"
+   },
+   {
+    "plain": "many poems are read by children and adults",
+    "better": "many poems are still widely read and recited by both children and adults",
+    "note": "still widely 强调延续性和广泛性，both...and 增加对称感和正式度"
+   },
+   {
+    "plain": "the economy developed and commerce was good",
+    "better": "the economy was well developed, commerce flourished",
+    "note": "flourished 一词替代 was good 更生动精练，体现高分词汇运用"
+   },
+   {
+    "plain": "With more urbanization and more wealth",
+    "better": "With the growth of urbanization and wealth",
+    "note": "the growth of 名词化表达更简洁正式，避免重复使用 more"
+   }
+  ]
+ }
+}

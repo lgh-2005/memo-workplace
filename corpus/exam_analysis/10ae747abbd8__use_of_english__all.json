@@ -1,0 +1,311 @@
+{
+ "schemaVersion": 1,
+ "id": "10ae747abbd8__use_of_english__all",
+ "examId": "10ae747abbd8",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2009 年考研英语真题（旧）",
+ "year": 2009,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:22:18.814Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 98911,
+ "usage": {
+  "prompt_tokens": 1753,
+  "completion_tokens": 6155,
+  "total_tokens": 7908,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1753,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 6155,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1753,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "动物智力研究对人类智慧的反思",
+  "gist": "文章以果蝇实验为切入点，指出高智力伴随高代价——维护成本高、起步慢、寿命短，进而探讨有限智力的适应性价值。作者还以幽默笔调假设动物若能对人类做实验，会测试人类耐心、忠诚与记忆的极限，并追问人类是否真正意识到自己所处的世界，目前结论尚无定论。",
+  "difficulty": "中等",
+  "translation": "关于动物智力的研究总是让我们好奇：人类到底有多聪明。想想卡尔·齐默在《科学时报》上所描述的果蝇实验吧。那些被训练得比普通果蝇更聪明的果蝇往往寿命更短。这表明，较暗的灯泡燃烧得更久，也就是说，不太聪明其实是一种优势。\n\n事实证明，智力是一个代价高昂的选项。它需要更多的维护，消耗更多的燃料，而且在起跑线上就慢人一步，因为它依赖于学习——一个渐进的过程——而非本能。很多其他物种也能够学习，而它们显然已经学到的一件事就是：何时该适可而止。\n\n有限的智力是否具有适应性价值？这就是这项新研究背后的问题。它没有怀旧地回头看那些在智商方面被我们远远甩在身后的物种，而是含蓄地追问：我们自身的智力真正的代价可能是什么。这个问题萦绕在我们曾遇到过的每一种动物的心头。\n\n关于动物智力的研究还让我们不禁想象：如果动物有机会，它们会对人类做什么实验。例如，每一只有主人的猫都在进行一项关于操作性条件反射的小型研究。我们相信，如果动物来管理实验室，它们会对我们进行测试，以确定我们耐心、忠诚和位置记忆的极限。它们会试图判断人类的智力究竟是用来做什么的，而不仅仅是智力有多少。最重要的是，它们会希望研究一个根本性的问题：人类是否真正意识到自己所生活的世界？到目前为止，结果尚无定论。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "B",
+    "correct": "Consider",
+    "why": "此处为祈使句，意为\"想想……\"，用来引出果蝇实验这一论据。Consider 可以直接接名词作宾语，表示\"细想、考虑\"，符合议论文中引出例证的行文习惯。",
+    "traps": "A) Suppose 意为\"假设\"，后面通常接从句而非名词短语；C) Observe 意为\"观察\"，语义过于具体，文中并非让读者亲自观察；D) Imagine 意为\"想象\"，强调虚构，而文中实验是真实存在的。",
+    "tip": "祈使句引出论据常用 Consider + 名词。"
+   },
+   {
+    "number": 2,
+    "answer": "A",
+    "correct": "tended",
+    "why": "tend to do sth. 意为\"倾向于做某事\"，表示一种统计趋势，与科学实验结论的表述方式高度吻合。果蝇实验表明聪明果蝇\"倾向于\"寿命更短。",
+    "traps": "B) feared 意为\"害怕\"，与语境不符；C) happened to 意为\"碰巧\"，表偶然性，与实验规律矛盾；D) threatened to 意为\"威胁要\"，拟人化过度且语义不通。",
+    "tip": "表实验结论的统计趋势用 tend to。"
+   },
+   {
+    "number": 3,
+    "answer": "D",
+    "correct": "dimmer",
+    "why": "dimmer bulbs 是一个双关比喻：dim 既指灯泡\"暗淡\"，也俚语指人\"不聪明\"。此处与前文\"not being too bright\"呼应（bright 同样兼指\"明亮\"和\"聪明\"），暗淡的灯泡烧得更久，即不太聪明的生物活得更长。",
+    "traps": "A) thinner 指\"更薄\"，与灯泡亮度和智力隐喻无关；B) stabler 指\"更稳定\"，不构成双关比喻；C) lighter 指\"更轻/更浅\"，无法与 bright 形成对应隐喻。",
+    "tip": "dim 和 bright 构成\"灯泡-智力\"双关隐喻。"
+   },
+   {
+    "number": 4,
+    "answer": "B",
+    "correct": "advantage",
+    "why": "上下文指出暗淡灯泡燃烧更久，即不太聪明反而有好处。advantage in (not) doing sth. 意为\"在……方面有优势\"，搭配正确且语义完美。",
+    "traps": "A) tendency 意为\"倾向\"，与 in not being too bright 搭配不当，语义不完整；C) inclination 意为\"爱好/倾斜\"，不表示客观好处；D) priority 意为\"优先级\"，与语境不符。",
+    "tip": "advantage in doing sth. 是常见搭配，表\"做某事的好处\"。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "turns out",
+    "why": "it turns out 是插入语，意为\"事实证明、结果是\"，用于揭示一个出人意料但合乎逻辑的事实，与后文\"智力是高价选项\"的论断衔接自然。",
+    "traps": "A) insists on 意为\"坚持\"，需要人作主语；B) sums up 意为\"总结\"，此处并非总结而是引出新信息；D) puts forward 意为\"提出\"，主语应为人而非 it 指代智力。",
+    "tip": "it turns out 作插入语表\"结果证明\"。"
+   },
+   {
+    "number": 6,
+    "answer": "A",
+    "correct": "off",
+    "why": "slow off the starting line 意为\"起跑线上起步慢\"，off 表示\"离开起跑线时\"速度慢。这是一个赛跑隐喻，说明智力因依赖学习而起步缓慢。",
+    "traps": "B) behind 意为\"在……后面\"，slow behind the starting line 不构成习惯搭配；C) over 意为\"越过\"，语义不当；D) along 意为\"沿着\"，与 starting line 搭配不通。",
+    "tip": "slow off the starting line 为固定赛跑隐喻表达。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "gradual",
+    "why": "learning 与 instinct 对比：本能是即时的，而学习是一个循序渐进的过程。gradual（渐进的）恰好体现学习缓慢、逐步积累的特征，与前文 slow 呼应。",
+    "traps": "A) incredible 意为\"难以置信的\"，感情色彩过强且不切题；B) spontaneous 意为\"自发的\"，这恰恰是对本能而非学习的描述；C) inevitable 意为\"不可避免的\"，与学习的特征无关。",
+    "tip": "gradual 与 slow 语义呼应，突出学习过程的渐进性。"
+   },
+   {
+    "number": 8,
+    "answer": "C",
+    "correct": "stop",
+    "why": "前文论证高智力代价高昂，此处说其他物种\"学会了何时停止\"（即不再追求更高智力），与第三段\"有限智力的适应性价值\"相呼应，形成逻辑过渡。",
+    "traps": "A) fight 意为\"战斗\"，与上下文智力代价的讨论无关；B) doubt 意为\"怀疑\"，when to doubt 语义模糊；D) think 意为\"思考\"，when to think 不构成对高智力代价的回应。",
+    "tip": "when to stop 承上启下，引出\"有限智力\"话题。"
+   },
+   {
+    "number": 9,
+    "answer": "B",
+    "correct": "limited",
+    "why": "第二段论证智力代价高昂且某些物种学会适可而止，此处自然追问\"有限的智力是否有适应性价值\"，limited 与前文 stop、dimmer 一脉相承。",
+    "traps": "A) invisible 意为\"看不见的\"，不合逻辑；C) indefinite 意为\"不确定的\"，与论证方向不符；D) different 意为\"不同的\"，过于笼统，缺乏针对性。",
+    "tip": "limited intelligence 是全文核心概念的正式表述。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "backward",
+    "why": "cast a glance backward 意为\"回头看\"。文意是：研究不是回头留恋地看被我们甩在身后的物种，而是反思自身智力的代价。backward 与 left in the dust（甩在身后）在空间方向上一致。",
+    "traps": "A) upward 意为\"向上看\"，方向不合语境；B) forward 意为\"向前看\"，与 left in the dust（已落后的物种）方向矛盾；C) afterward 意为\"之后\"，是时间副词，不表空间方向。",
+    "tip": "backward 与 left in the dust 构成空间方向呼应。"
+   },
+   {
+    "number": 11,
+    "answer": "D",
+    "correct": "costs",
+    "why": "全文论证智力是\"high-priced option\"，需要更多维护和燃料。此处追问\"我们自身智力真正的代价\"，costs 与前文 high-priced、more upkeep、more fuel 构成完整的\"代价\"语义链。",
+    "traps": "A) features 意为\"特征\"，偏离代价主题；B) influences 意为\"影响\"，范围过宽；C) results 意为\"结果\"，与前文论证的经济隐喻不匹配。",
+    "tip": "costs 呼应 high-priced option，贯穿全文代价主题。"
+   },
+   {
+    "number": 12,
+    "answer": "B",
+    "correct": "on",
+    "why": "on the mind of sb. 是固定搭配，意为\"萦绕在某人心头/被某人惦记着\"。此处幽默地说我们智力的代价问题也是动物们在想的。",
+    "traps": "A) outside the mind 不是固定搭配，且语义相反；C) by the mind 无此搭配；D) across the mind 意为\"掠过脑海\"，指一闪而过，与持续关注不符。",
+    "tip": "on one's mind 表\"挂在心上\"，是固定介词搭配。"
+   },
+   {
+    "number": 13,
+    "answer": "C",
+    "correct": "perform",
+    "why": "perform experiments on sb. 是标准学术搭配，意为\"对某人做实验\"。此处假设动物会对人类做实验，perform 最为正式地道。",
+    "traps": "A) deliver experiments 搭配不存在；B) carry experiments 需加 out 才可（carry out experiments）；D) apply experiments 搭配不当，apply 常接 method/theory。",
+    "tip": "perform experiments 是实验类语境的标准搭配。"
+   },
+   {
+    "number": 14,
+    "answer": "D",
+    "correct": "for instance",
+    "why": "前句说\"动物会对人类做实验\"，紧接着以猫为例说明，for instance（例如）起举例说明的作用，逻辑通顺。",
+    "traps": "A) by chance 意为\"偶然地\"，语义不符；B) in contrast 意为\"相比之下\"，前后无对比关系；C) as usual 意为\"照例\"，不具引出例子的功能。",
+    "tip": "for instance 在句中作插入语引出具体例证。"
+   },
+   {
+    "number": 15,
+    "answer": "A",
+    "correct": "if",
+    "why": "此处是虚拟条件句，假设动物管理实验室的情景，if 引导条件从句，与后面的 would 构成与现在事实相反的虚拟语气。",
+    "traps": "B) unless 意为\"除非\"，逻辑方向相反；C) as 意为\"当/因为\"，不能与 would 构成虚拟语气；D) lest 意为\"唯恐\"，表目的，语义不通。",
+    "tip": "if + 过去式 … would + 动词原形，构成虚拟条件句。"
+   },
+   {
+    "number": 16,
+    "answer": "C",
+    "correct": "determine",
+    "why": "determine the limits 意为\"确定/测定极限\"，科学实验的目的是精确测定人类耐心、忠诚和记忆的边界，determine 语义精准。",
+    "traps": "A) moderate 意为\"缓和/调节\"，实验目的是测量而非调控；B) overcome 意为\"克服\"，与测试目的不符；D) reach 意为\"达到\"，与 limits 搭配后指\"达到极限\"，非实验测量之意。",
+    "tip": "determine the limits 表\"测定极限\"，符合实验语境。"
+   },
+   {
+    "number": 17,
+    "answer": "B",
+    "correct": "for",
+    "why": "what … is for 意为\"……是用来做什么的/目的是什么\"。此处与后半句 not merely how much of it there is（不仅是有多少）对比，追问智力的真正用途/目的。",
+    "traps": "A) what … is at 不构成有意义的搭配；C) what … is after 意为\"追求什么\"，语义偏离；D) what … is with 搭配不当，无法表达目的之意。",
+    "tip": "what sth. is for 表\"某物的用途/目的是什么\"。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "Above all",
+    "why": "Above all 意为\"最重要的是\"，用于引出最核心的问题。前文列举了测试耐心、忠诚、记忆等方面，此处递进到最根本的问题，层次分明。",
+    "traps": "B) After all 意为\"毕竟\"，表让步解释而非递进；C) However 意为\"然而\"，表转折，前后无转折关系；D) Otherwise 意为\"否则\"，表条件推理，逻辑不符。",
+    "tip": "Above all 表最高级递进，引出最重要的论点。"
+   },
+   {
+    "number": 19,
+    "answer": "A",
+    "correct": "fundamental",
+    "why": "a fundamental question 意为\"一个根本性的问题\"。后面的问题\"人类是否真正意识到自己所处的世界\"触及存在意识的本质，属于最根本的哲学追问，与 Above all 的递进语气匹配。",
+    "traps": "B) comprehensive 意为\"综合的/全面的\"，形容问题的覆盖面而非深度；C) equivalent 意为\"等价的/相当的\"，不用于修饰问题的重要性；D) hostile 意为\"敌意的\"，与学术研究的语境不符。",
+    "tip": "fundamental question 指触及本质的根本问题。"
+   },
+   {
+    "number": 20,
+    "answer": "C",
+    "correct": "So far",
+    "why": "So far 意为\"到目前为止\"，暗示研究仍在进行，结果尚无定论。这既是幽默的收尾——动物对人类的研究尚无结论，也呼应开头的研究话题，首尾衔接。",
+    "traps": "A) By accident 意为\"偶然地\"，不表时间；B) In time 意为\"及时/终究\"，暗示最终会有结论，与 inconclusive 的不确定性矛盾；D) Better still 意为\"更好的是\"，表递进而非时间限定。",
+    "tip": "So far + 现在时表\"迄今为止\"，呼应研究进行中的状态。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "upkeep",
+    "cn": "维护，保养（n.）"
+   },
+   {
+    "w": "instinct",
+    "cn": "本能，直觉（n.）"
+   },
+   {
+    "w": "adaptive",
+    "cn": "适应性的，有适应能力的（adj.）"
+   },
+   {
+    "w": "wistful",
+    "cn": "惆怅的，留恋的（adj.）"
+   },
+   {
+    "w": "implicitly",
+    "cn": "含蓄地，暗示地（adv.）"
+   },
+   {
+    "w": "operant conditioning",
+    "cn": "操作性条件反射（n.）心理学术语"
+   },
+   {
+    "w": "inconclusive",
+    "cn": "不确定的，无定论的（adj.）"
+   },
+   {
+    "w": "cast a glance",
+    "cn": "投以一瞥（动词短语）"
+   },
+   {
+    "w": "leave in the dust",
+    "cn": "远远甩在身后（动词短语）"
+   },
+   {
+    "w": "small-scale",
+    "cn": "小规模的（adj.）"
+   },
+   {
+    "w": "faithfulness",
+    "cn": "忠诚，忠实（n.）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "instead of",
+    "role": "表替代/对比，引出研究真正追问的方向而非表面做法"
+   },
+   {
+    "w": "because",
+    "role": "表因果，解释智力起步慢的原因在于依赖学习"
+   },
+   {
+    "w": "if",
+    "role": "表虚拟假设，构建动物主导实验的假想情境"
+   },
+   {
+    "w": "Above all",
+    "role": "表最高级递进，引出动物最想研究的根本问题"
+   },
+   {
+    "w": "So far",
+    "role": "表时间限定，暗示研究仍在进行、结论未定"
+   }
+  ]
+ }
+}

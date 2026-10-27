@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "8fcbfef22440__banked_cloze__all",
+ "examId": "8fcbfef22440",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2023 年 12 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:48:18.978Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 81928,
+ "usage": {
+  "prompt_tokens": 1424,
+  "completion_tokens": 4811,
+  "total_tokens": 6235,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1424,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4811,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1424,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "莫哈韦沙漠的隐秘生机与独特魅力",
+  "gist": "文章围绕莫哈韦沙漠展开，指出沙漠表面看似荒凉干旱，实则充满生命、神秘与魔力。文中介绍了沙漠极端的气候条件、莫哈韦国家保护区丰富的历史文化与生物多样性，以及摄影师在此拍摄所需的充足准备，最终揭示古老火山和地质力量赋予该地区独一无二的景观魅力。",
+  "difficulty": "中等",
+  "translation": "沙漠是具有欺骗性的。乍一看，它显得毫无生气、荒芜贫瘠、干燥至极。对于大多数驱车穿越莫哈韦沙漠、前往拉斯维加斯碰运气或奔向大峡谷的过路人来说，这里不过是一片平坦的地带，远处有一些山脉，而且更像是一部以火星为背景的电影场景。然而，沙漠实际上充溢着生命、神秘和魔力。\n\n莫哈韦沙漠年降水量不足两英寸，与大多数沙漠一样，是一片极端之地。温度波动从冰冻到灼热不等，不仅体现在不同季节之间，甚至在同一天内也会如此。\n\n在这片广袤的两万五千平方英里沙漠的核心地带，坐落着莫哈韦国家保护区。在那里管理和工作的人们戴着宽边帽，这种帽子已成为约塞米蒂等地的代名词。保护区拥有丰富的历史、文化、生物多样性以及无数能激发你兴趣的机会，尤其对于热爱户外活动的人而言。对摄影师来说，在未铺设路面的\"道路\"网络中穿行需要耐心，可能还需要几个备用轮胎，但回报是丰厚的。\n\n在这里拍摄需要一双结实耐穿的好鞋和大量的准备工作。要探索这个全国第三大的国家公园系统单元，你需要充足的水、备用轮胎和满箱的油。\n\n不过，与所有沙漠一样，如果你有耐心，就会得到回报，因为它们往往缓慢地揭示自己的秘密。在我上一次外出时，我惊讶地发现这片区域有多少是由古老的火山和地质力量塑造的，其中大部分至今仍然保留着，赋予该地区一种独特的感觉，并为精彩的摄影作品描绘出多彩的背景。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "correct": "flat",
+    "why": "空格处需要形容词修饰 stretch of land（一片土地）。文中描述过路人对沙漠的第一印象：看起来荒芜、干燥，搭配远处的山脉，flat（平坦的）完美描绘了沙漠地貌的视觉感受，与 lifeless、barren、bone-dry 构成一致的表层印象。",
+    "traps": "burning 虽是形容词，但此处描述的是初次视觉印象而非温度感受；sturdy 用于描述物品坚固，不搭配 stretch of land；unique 语义上与'看似无聊'的第一印象矛盾。",
+    "tip": "关注空格处词性（形容词）及上下文'第一印象'的逻辑线。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "correct": "apt",
+    "why": "空格位于 more ___ to be a setting 结构中，需要形容词。be apt to do sth 是固定搭配，意为'易于、倾向于'。句意为这片土地更像是火星电影的背景，apt 表示'恰当的、容易……的'，语义和语法均契合。",
+    "traps": "burning 和 flat 词性虽可作形容词，但不与 to be 构成合理搭配；synonymous 需搭配 with 而非 to be；其他副词或名词词性不符。",
+    "tip": "识别 be apt to do sth 固定搭配是解题关键。"
+   },
+   {
+    "number": 28,
+    "answer": "F",
+    "correct": "overflowing",
+    "why": "空格位于 is ___ with life, mystery, and magic 结构中。overflowing with 意为'充溢着'，是常见搭配，且与前文'看似毫无生气'形成 however 引导的强烈转折，强调沙漠实际上生机勃勃。",
+    "traps": "synonymous with 虽搭配 with，但语义为'与……同义'，放入此处不合逻辑；其他词如 flat、burning 不与 with 构成合理搭配。",
+    "tip": "抓住 however 转折信号词，以及 ___ with 的动词/形容词搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "correct": "extremes",
+    "why": "空格位于 a land of ___ 结构中，of 后需名词。extremes（极端）完美契合后文对温度剧烈波动的描述：从冰冻到灼热。a land of extremes 是地理描述中的常见表达，意为'极端之地'。",
+    "traps": "此处唯一需要名词的候选词，burning、flat 等均为形容词，apt 虽可作形容词但不作名词用于此结构；stimulate 是动词，词性不符。",
+    "tip": "of 后接名词，锁定词性后结合下文温度波动验证语义。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "correct": "burning",
+    "why": "空格位于 from freezing to ___ hot 结构中，需要副词或形容词修饰 hot。burning hot 是常见搭配，意为'灼热的'，且与 freezing 构成极端温差对比，呼应上文 extremes。",
+    "traps": "flat 无法修饰 hot；probably 虽为副词但语义（'可能热'）与强调极端的语境矛盾；其他形容词如 sturdy 无法修饰 hot。",
+    "tip": "from freezing to ___ hot 的对比结构提示需要表示高温极端的修饰语。"
+   },
+   {
+    "number": 31,
+    "answer": "N",
+    "correct": "synonymous",
+    "why": "空格位于 have become ___ with places like Yosemite 结构中。become synonymous with 是固定搭配，意为'成为……的代名词/标志'，指宽边帽已成为约塞米蒂等国家公园的标志性形象，语义完全契合。",
+    "traps": "overflowing with 已在第28题使用（每词只用一次）；apt 不搭配 with 构成此义；其他词如 flat、burning 与 become ___ with 不构成合理搭配。",
+    "tip": "become synonymous with 为高频固定搭配，需牢记。"
+   },
+   {
+    "number": 32,
+    "answer": "L",
+    "correct": "stimulate",
+    "why": "空格位于 opportunities to ___ your interest 结构中，to 后需动词原形。stimulate your interest 意为'激发你的兴趣'，是常见搭配，与前文 rich with history, culture, biodiversity 的丰富内涵呼应。",
+    "traps": "其他动词原形候选较少；burning 词性不符（此处需动词原形）；apt 和 flat 均为形容词，不能用于 to 后接宾语的结构。",
+    "tip": "to 后接动词原形，结合 your interest 锁定 stimulate 这一常见搭配。"
+   },
+   {
+    "number": 33,
+    "answer": "H",
+    "correct": "probably",
+    "why": "空格位于 patience and ___ a few spare tires 结构中，位于名词与名词短语之间，需要副词修饰整个后半句。probably 表推测语气，意为'可能还需要几个备用轮胎'，语气自然，带有幽默感，符合作者轻松的叙述风格。",
+    "traps": "此处需要副词，而 burning、flat、sturdy 等均为形容词，词性不符；extremes 为名词，放入后句意不通。",
+    "tip": "识别并列结构中插入副词的用法，副词可修饰整个短语。"
+   },
+   {
+    "number": 34,
+    "answer": "M",
+    "correct": "sturdy",
+    "why": "空格位于 a good, ___ pair of shoes 结构中，与 good 并列修饰 shoes，需要形容词。sturdy 意为'结实的、耐用的'，描述在沙漠未铺道路上行走所需的坚固鞋子，与后文 a lot of preparation 的语境一致。",
+    "traps": "flat 虽是形容词，但'平底鞋'与需要在崎岖地形行走的语境不符；burning 语义（灼热的鞋子）不合逻辑；unique 虽可做形容词但描述鞋子不合语境。",
+    "tip": "a good, ___ pair of shoes 并列形容词结构，语境强调实用耐穿。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "unique",
+    "why": "空格位于 giving the area a ___ feel 结构中，需要形容词修饰 feel。unique（独特的）完美描述古老火山和地质力量塑造的独特地貌感受，与后文 painting a colorful background 的壮观描写相呼应。",
+    "traps": "flat feel（平坦的感觉）虽语法可行但语义平淡，与古老火山和地质力量的壮观语境不符；burning 不适合修饰 feel；此时其他合理形容词已被前面的空格使用。",
+    "tip": "结合 ancient volcanoes and geological forces 的语境，选择能体现独特性的形容词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deceiving",
+    "cn": "adj./v. 具有欺骗性的；欺骗"
+   },
+   {
+    "w": "barren",
+    "cn": "adj. 荒芜的，贫瘠的"
+   },
+   {
+    "w": "passersby",
+    "cn": "n. 过路人（复数）"
+   },
+   {
+    "w": "apt",
+    "cn": "adj. 恰当的；易于……的（be apt to do）"
+   },
+   {
+    "w": "overflowing",
+    "cn": "adj./v. 充溢的；溢出（overflow with 充满）"
+   },
+   {
+    "w": "extremes",
+    "cn": "n. 极端（常用复数）"
+   },
+   {
+    "w": "fluctuations",
+    "cn": "n. 波动，起伏"
+   },
+   {
+    "w": "synonymous",
+    "cn": "adj. 同义的；等同的（be synonymous with）"
+   },
+   {
+    "w": "stimulate",
+    "cn": "v. 刺激，激发"
+   },
+   {
+    "w": "sturdy",
+    "cn": "adj. 结实的，坚固耐用的"
+   },
+   {
+    "w": "maneuver",
+    "cn": "v./n. 操纵，驾驶；策略"
+   },
+   {
+    "w": "outing",
+    "cn": "n. 外出，短途旅行"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——沙漠表面荒凉实则生机勃勃。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法结构（如 of+名词、be+adj.+with、to+动词原形）锁定词性。",
+   "第四步：利用固定搭配（如 be apt to、synonymous with、overflowing with）快速定位答案。",
+   "第五步：代入验证，确保每词只用一次，且全文语义连贯、逻辑通顺。"
+  ]
+ }
+}

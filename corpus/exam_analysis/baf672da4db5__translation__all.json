@@ -1,0 +1,204 @@
+{
+ "schemaVersion": 1,
+ "id": "baf672da4db5__translation__all",
+ "examId": "baf672da4db5",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2019 年 12 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:25:27.962Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33238,
+ "usage": {
+  "prompt_tokens": 823,
+  "completion_tokens": 2310,
+  "total_tokens": 3133,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 823,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2310,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 823,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "梅花的文化象征与历史地位",
+  "reference": "The plum blossom ranks first among China's top ten famous flowers. Originating in southern China, it has a cultivation and planting history of more than 3,000 years. In the depths of winter, colorful plum blossoms brave the bitter cold and bloom proudly against wind and snow. In traditional Chinese culture, the plum blossom symbolizes strength, purity, and elegance, inspiring people to forge ahead in the face of adversity. Since ancient times, numerous poets and painters have drawn inspiration from plum blossoms and created countless immortal works. The general public is also fond of plum blossoms, which are often used as home decorations during the Spring Festival. The city of Nanjing has designated the plum blossom as its city flower and holds a Plum Blossom Festival every year, during which tens of thousands of people brave the severe cold to visit Plum Blossom Hill to admire the blossoms amid the snow.",
+  "sentences": [
+   {
+    "cn": "梅花位居中国十大名花之首，源于中国南方，已有三千多年的栽培历史和种植历史。",
+    "en": "The plum blossom ranks first among China's top ten famous flowers. Originating in southern China, it has a cultivation and planting history of more than 3,000 years.",
+    "structure": "主谓结构 + 现在分词短语作状语（Originating in...）+ 主谓宾结构，将长句拆分为两句以增强可读性",
+    "keys": [
+     "位居…之首 rank first among",
+     "中国十大名花 China's top ten famous flowers",
+     "栽培历史 cultivation history",
+     "三千多年 more than 3,000 years"
+    ]
+   },
+   {
+    "cn": "隆冬时节，五颜六色的梅花不畏严寒，迎着风雪傲然绽放。",
+    "en": "In the depths of winter, colorful plum blossoms brave the bitter cold and bloom proudly against wind and snow.",
+    "structure": "介词短语作时间状语 + 主语 + 并列谓语（brave... and bloom...），用 against 表达\"迎着\"",
+    "keys": [
+     "隆冬时节 in the depths of winter",
+     "不畏严寒 brave the bitter cold",
+     "傲然绽放 bloom proudly",
+     "迎着风雪 against wind and snow"
+    ]
+   },
+   {
+    "cn": "在中国传统文化中，梅花象征着坚强、纯洁、高雅，激励人们不畏艰难、砥砺前行。",
+    "en": "In traditional Chinese culture, the plum blossom symbolizes strength, purity, and elegance, inspiring people to forge ahead in the face of adversity.",
+    "structure": "介词短语作状语 + 主谓宾 + 现在分词短语作伴随状语（inspiring...），其中 to forge ahead 作宾补",
+    "keys": [
+     "象征 symbolize",
+     "坚强、纯洁、高雅 strength, purity, and elegance",
+     "砥砺前行 forge ahead",
+     "不畏艰难 in the face of adversity"
+    ]
+   },
+   {
+    "cn": "自古以来，许多诗人和画家从梅花中获取灵感，创作了无数不朽的作品。",
+    "en": "Since ancient times, numerous poets and painters have drawn inspiration from plum blossoms and created countless immortal works.",
+    "structure": "时间状语 + 主语 + 现在完成时并列谓语（have drawn... and created...），since ancient times 要求现在完成时",
+    "keys": [
+     "自古以来 since ancient times",
+     "获取灵感 draw inspiration from",
+     "不朽的作品 immortal works"
+    ]
+   },
+   {
+    "cn": "普通大众也都喜爱梅花，春节期间常用于家庭装饰。",
+    "en": "The general public is also fond of plum blossoms, which are often used as home decorations during the Spring Festival.",
+    "structure": "主系表结构（be fond of）+ 非限制性定语从句（which are often used as...）补充说明梅花的用途",
+    "keys": [
+     "普通大众 the general public",
+     "喜爱 be fond of",
+     "家庭装饰 home decorations",
+     "春节 the Spring Festival"
+    ]
+   },
+   {
+    "cn": "南京市已将梅花定为市花，每年举办梅花节，成千上万的人冒着严寒到梅花山踏雪赏梅。",
+    "en": "The city of Nanjing has designated the plum blossom as its city flower and holds a Plum Blossom Festival every year, during which tens of thousands of people brave the severe cold to visit Plum Blossom Hill to admire the blossoms amid the snow.",
+    "structure": "主语 + 现在完成时与一般现在时并列谓语 + 介词 + 关系代词引导的非限制性定语从句（during which...），句末用不定式表目的",
+    "keys": [
+     "定为市花 designate... as its city flower",
+     "梅花节 Plum Blossom Festival",
+     "成千上万 tens of thousands of",
+     "梅花山 Plum Blossom Hill",
+     "踏雪赏梅 admire the blossoms amid the snow"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "梅花",
+    "en": "plum blossom"
+   },
+   {
+    "cn": "中国十大名花",
+    "en": "China's top ten famous flowers"
+   },
+   {
+    "cn": "栽培历史",
+    "en": "cultivation history"
+   },
+   {
+    "cn": "隆冬时节",
+    "en": "in the depths of winter"
+   },
+   {
+    "cn": "砥砺前行",
+    "en": "forge ahead"
+   },
+   {
+    "cn": "春节",
+    "en": "the Spring Festival"
+   },
+   {
+    "cn": "市花",
+    "en": "city flower"
+   },
+   {
+    "cn": "梅花节",
+    "en": "Plum Blossom Festival"
+   },
+   {
+    "cn": "梅花山",
+    "en": "Plum Blossom Hill"
+   },
+   {
+    "cn": "踏雪赏梅",
+    "en": "admire the blossoms amid the snow"
+   }
+  ],
+  "pitfalls": [
+   "plum blossom 为固定译法，不可译为 plum flower 或 mei flower",
+   "since ancient times 须搭配现在完成时，不可用一般过去时",
+   "位居…之首 应译为 rank first among，不可漏掉介词 among",
+   "砥砺前行 为四字成语意译，不可逐字硬译，推荐 forge ahead",
+   "designate...as... 为固定搭配，as 不可遗漏或换成 to"
+  ],
+  "upgrades": [
+   {
+    "plain": "bloom in the cold winter",
+    "better": "bloom proudly against wind and snow in the depths of winter",
+    "note": "depths of winter 和 against 更生动地渲染了隆冬恶劣环境与梅花的傲骨"
+   },
+   {
+    "plain": "encourage people to move forward despite difficulties",
+    "better": "inspire people to forge ahead in the face of adversity",
+    "note": "forge ahead 和 in the face of adversity 更凝练地道，符合书面语风格"
+   },
+   {
+    "plain": "many poets and painters got inspiration from plum blossoms",
+    "better": "numerous poets and painters have drawn inspiration from plum blossoms",
+    "note": "draw inspiration from 是固定搭配，numerous 比 many 更正式，完成时更准确"
+   },
+   {
+    "plain": "thousands of people go to Plum Blossom Hill in cold weather to see plum blossoms",
+    "better": "tens of thousands of people brave the severe cold to visit Plum Blossom Hill to admire the blossoms amid the snow",
+    "note": "brave 作动词更有力，amid the snow 呼应踏雪意境，admire 比 see 更雅致"
+   },
+   {
+    "plain": "The common people also like plum blossoms",
+    "better": "The general public is also fond of plum blossoms",
+    "note": "the general public 更正式规范，be fond of 比 like 更书面高级"
+   }
+  ]
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "fb33dacfb808__writing__all",
+ "examId": "fb33dacfb808",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2019 年 12 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:22:46.743Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 46380,
+ "usage": {
+  "prompt_tokens": 692,
+  "completion_tokens": 2868,
+  "total_tokens": 3560,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 692,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2868,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 692,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"拥有社会责任感的重要性\"展开论述，字数要求150-200词，需观点明确、论据充分、结构清晰。",
+    "outline": [
+     "开篇引出话题：在社会快速变革的时代背景下，点明培养社会责任感对个人和社会至关重要。",
+     "主体论证：从两到三个角度阐述社会责任感的重要性，如促进个人道德行为、增强社会凝聚力、助力个人成长与职业发展等，辅以具体事例。",
+     "总结全文：重申社会责任感不可或缺，发出号召，呼吁每个人以实际行动履行社会责任。"
+    ],
+    "sample": "In an era characterized by rapid social transformation, cultivating a sense of social responsibility has become increasingly vital for both individuals and communities.\n\nTo begin with, a strong sense of social responsibility motivates individuals to contribute positively to society. When people recognize that their actions carry broader consequences, they are more inclined to engage in ethical behavior, such as protecting the environment, supporting charitable causes, and respecting public norms. Furthermore, social responsibility fosters a spirit of solidarity and mutual trust among community members. A society in which citizens actively look out for one another is far more resilient in the face of crises, as evidenced by the collective efforts witnessed during natural disasters and public health emergencies.\n\nMoreover, possessing social responsibility enhances one's personal growth and sense of fulfillment. Those who devote time and energy to serving others often develop stronger empathy, broader perspectives, and deeper self-awareness. In the professional realm, companies that embrace corporate social responsibility tend to earn greater public trust and long-term profitability.\n\nIn conclusion, a sense of social responsibility is indispensable to building a harmonious society. Each of us should take concrete actions to fulfill our obligations toward the community we belong to.",
+    "phrases": [
+     {
+      "en": "cultivate a sense of social responsibility",
+      "cn": "培养社会责任感；cultivate 比 develop 更正式，常用于品质、意识的养成"
+     },
+     {
+      "en": "carry broader consequences",
+      "cn": "带来更广泛的后果；carry consequences 为高级搭配，替代 have results"
+     },
+     {
+      "en": "be inclined to do sth.",
+      "cn": "倾向于做某事；比 tend to 更书面，体现主观意愿"
+     },
+     {
+      "en": "foster a spirit of solidarity",
+      "cn": "培育团结精神；foster 强调逐步培养，solidarity 为六级高频词"
+     },
+     {
+      "en": "in the face of crises",
+      "cn": "面对危机；介词短语作状语，常见于议论文中表示挑战场景"
+     },
+     {
+      "en": "as evidenced by…",
+      "cn": "正如……所证明的；过去分词短语作插入语，增强论据说服力"
+     },
+     {
+      "en": "embrace corporate social responsibility",
+      "cn": "践行企业社会责任；embrace 比 accept 更主动积极"
+     },
+     {
+      "en": "indispensable to…",
+      "cn": "对……不可或缺；形容词 + to 结构，比 important 更高级"
+     },
+     {
+      "en": "fulfill one's obligations toward…",
+      "cn": "履行对……的义务；fulfill obligations 是正式表达，toward 引出对象"
+     },
+     {
+      "en": "devote time and energy to doing sth.",
+      "cn": "将时间和精力投入做某事；devote…to 后接动名词，注意介词 to 的用法"
+     }
+    ],
+    "pitfalls": [
+     "通篇只喊口号而无具体论据或事例支撑，内容空洞导致扣分",
+     "段落之间缺少过渡词衔接（如 furthermore、moreover），逻辑断裂",
+     "主语单一，频繁使用 we should…句式，缺乏句型变化显得低幼",
+     "将 responsibility 拼写为 responsiblity 或 responsibilty，基础拼写失误",
+     "字数不足150词或严重超过200词，不符合题目硬性要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "Social responsibility is very important for people.",
+      "better": "A profound sense of social responsibility is of paramount importance to individuals and communities alike.",
+      "note": "用 of paramount importance 替代 very important，增加 alike 使表达更精炼地道"
+     },
+     {
+      "plain": "People who have social responsibility can help society.",
+      "better": "Individuals equipped with a strong sense of social responsibility are better positioned to contribute meaningfully to society.",
+      "note": "过去分词 equipped with 作定语更紧凑，be positioned to 比 can 更学术"
+     },
+     {
+      "plain": "We can see this in the disaster.",
+      "better": "This is well illustrated by the collective efforts witnessed during natural disasters.",
+      "note": "被动语态 + 过去分词后置定语替代口语化表达，增强书面色彩"
+     },
+     {
+      "plain": "We should do something to be responsible.",
+      "better": "Each of us should take concrete actions to fulfill our obligations toward the community.",
+      "note": "concrete actions 比 something 具体，fulfill obligations 比 be responsible 更正式"
+     },
+     {
+      "plain": "Companies that care about society will be more successful.",
+      "better": "Companies that embrace corporate social responsibility tend to earn greater public trust and long-term profitability.",
+      "note": "embrace 更主动，tend to 表客观趋势，profitability 比 success 更精确"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "In an era characterized by rapid social transformation, cultivating a sense of social responsibility has become increasingly vital. — 用过去分词短语 characterized by 修饰时代背景，开篇大气且切题。",
+   "A society in which citizens actively look out for one another is far more resilient in the face of crises. — 定语从句 + far more + 形容词构成高分句型，论述社会韧性。",
+   "This is well illustrated by the collective efforts witnessed during natural disasters and public health emergencies. — as evidenced by / well illustrated by 引出例证，论证严密且书面感强。",
+   "Those who devote time and energy to serving others often develop stronger empathy, broader perspectives, and deeper self-awareness. — 三组\"形容词比较级 + 名词\"构成排比，节奏感好，展示词汇多样性。",
+   "A sense of social responsibility is indispensable to building a harmonious society. — indispensable to + 动名词结构精炼有力，适合用作总结升华句。"
+  ]
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "schemaVersion": 1,
+ "id": "d14281039236__writing__all",
+ "examId": "d14281039236",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2019 年 12 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:26:42.266Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41573,
+ "usage": {
+  "prompt_tokens": 692,
+  "completion_tokens": 2765,
+  "total_tokens": 3457,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 692,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2765,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 692,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"拥有社区责任感的重要性\"展开论述，要求不少于150词、不超过200词，需观点明确、论证充分。",
+    "outline": [
+     "第一段：引出话题，点明在当今社会背景下，社区责任感的重要性日益凸显，给出总论点。",
+     "第二段：从两到三个角度论证社区责任感的重要性，如促进互信合作、培养公民意识、增强社会韧性，并辅以具体事例。",
+     "第三段：总结全文，重申社区责任感对个人成长与社会进步不可或缺，呼吁教育机构和家庭共同培养这一品质。"
+    ],
+    "sample": "In an era characterized by rapid urbanization and increasing social complexity, having a sense of community responsibility has become more important than ever before. It serves as the moral foundation upon which harmonious societies are built.\n\nTo begin with, a sense of community responsibility fosters mutual trust and cooperation among individuals. When people actively participate in community affairs, such as volunteering for neighborhood cleanups or assisting elderly residents, they strengthen social bonds that benefit everyone. Furthermore, this sense of responsibility cultivates civic awareness, encouraging individuals to look beyond their personal interests and contribute to the collective well-being. A society composed of responsible citizens is far more resilient in the face of challenges, as evidenced by the remarkable solidarity displayed during natural disasters.\n\nIn conclusion, a sense of community responsibility is indispensable for both personal growth and social progress. Only when each individual embraces this responsibility can we build a truly cohesive and thriving society. Therefore, educational institutions and families should make concerted efforts to nurture this vital quality in younger generations.",
+    "phrases": [
+     {
+      "en": "a sense of community responsibility",
+      "cn": "社区责任感；写作核心词组，贯穿全文，避免反复使用同一表达时可替换为 civic duty 等"
+     },
+     {
+      "en": "serve as the moral foundation upon which...",
+      "cn": "充当……的道德基石；upon which 引导定语从句，结构高级，适合用于引出核心论点"
+     },
+     {
+      "en": "foster mutual trust and cooperation",
+      "cn": "促进相互信任与合作；foster 比 promote 更正式，常见于议论文高分表达"
+     },
+     {
+      "en": "look beyond one's personal interests",
+      "cn": "超越个人利益；beyond 体现格局，适合论述公共责任类话题"
+     },
+     {
+      "en": "contribute to the collective well-being",
+      "cn": "为集体福祉做贡献；collective well-being 是社会话题高频搭配"
+     },
+     {
+      "en": "as evidenced by...",
+      "cn": "正如……所证明的；用于引出事实论据，比 for example 更学术化"
+     },
+     {
+      "en": "resilient in the face of challenges",
+      "cn": "面对挑战时具有韧性；in the face of 表示'面对'，高分替代 when facing"
+     },
+     {
+      "en": "make concerted efforts to do sth.",
+      "cn": "齐心协力做某事；concerted 强调协同一致，适用于结尾呼吁段"
+     },
+     {
+      "en": "indispensable for both A and B",
+      "cn": "对A和B都不可或缺；both...and 平行结构加 indispensable 体现用词精准"
+     },
+     {
+      "en": "cohesive and thriving society",
+      "cn": "团结且繁荣的社会；两个形容词并列修饰，用词地道，适合结尾升华"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：写成'社会责任'泛泛而谈，未聚焦'社区'层面的责任感",
+     "词数不达标或严重超标：低于150词扣分明显，超过200词也违反要求",
+     "论证空洞：仅有观点无具体例证，如志愿服务、邻里互助等细节缺失",
+     "用词重复：反复使用 important/very，未用 indispensable/vital/crucial 等替换",
+     "逻辑混乱：段落之间缺少过渡词，如 furthermore/in conclusion，导致行文松散"
+    ],
+    "upgrades": [
+     {
+      "plain": "Community responsibility is very important in modern society.",
+      "better": "Having a sense of community responsibility has become more important than ever in an era characterized by rapid urbanization.",
+      "note": "加入时代背景状语，避免 very important 的低级表达，句式更丰满"
+     },
+     {
+      "plain": "For example, people can help each other in the community.",
+      "better": "When people actively participate in community affairs, such as volunteering for neighborhood cleanups, they strengthen social bonds that benefit everyone.",
+      "note": "用具体场景替代笼统叙述，增加细节感和画面感，说服力更强"
+     },
+     {
+      "plain": "We should all be responsible for our community.",
+      "better": "Only when each individual embraces this responsibility can we build a truly cohesive and thriving society.",
+      "note": "使用 Only when 引导的倒装句，语法高级且具号召力，适合结尾"
+     },
+     {
+      "plain": "Schools should teach students to be responsible.",
+      "better": "Educational institutions and families should make concerted efforts to nurture this vital quality in younger generations.",
+      "note": "主语扩展为双主体，动词搭配更精准，nurture 比 teach 更贴切"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "It serves as the moral foundation upon which harmonious societies are built. —— 它是和谐社会赖以建立的道德基石。upon which 定语从句结构高级，适用于各类'基础/根基'论述。",
+   "A society composed of responsible citizens is far more resilient in the face of challenges. —— 一个由负责任公民组成的社会在面对挑战时更具韧性。composed of 后置定语 + resilient 用词精准。",
+   "Only when each individual embraces this responsibility can we build a truly cohesive and thriving society. —— 只有当每个人都承担起这份责任，我们才能建设一个真正团结繁荣的社会。Only when 倒装句是六级写作高分句型。",
+   "This sense of responsibility cultivates civic awareness, encouraging individuals to look beyond their personal interests and contribute to the collective well-being. —— 这种责任感培养了公民意识，鼓励个人超越私利、为集体福祉做贡献。现在分词作结果状语，信息密度高。"
+  ]
+ }
+}

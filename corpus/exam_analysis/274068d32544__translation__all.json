@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "274068d32544__translation__all",
+ "examId": "274068d32544",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2016 年 6 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:05:03.016Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 27794,
+ "usage": {
+  "prompt_tokens": 791,
+  "completion_tokens": 1950,
+  "total_tokens": 2741,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 791,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1950,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 791,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国创新蓬勃发展与商业化",
+  "reference": "Innovation in China is booming at an unprecedented pace. In order to catch up with and surpass the world's developed countries in science and technology as quickly as possible, China has substantially increased its funding for research and development in recent years. Chinese universities and research institutes are actively carrying out innovative research, which covers a wide range of high-tech fields, from big data to biochemistry, and from new energy to robotics. They are also collaborating with science and technology parks around the country to commercialize the fruits of innovation. Meanwhile, whether in products or business models, Chinese entrepreneurs are also striving to be pioneers in innovation to adapt to the ever-changing and growing demands of consumer markets both at home and abroad.",
+  "sentences": [
+   {
+    "cn": "中国的创新正以前所未有的速度蓬勃发展。",
+    "en": "Innovation in China is booming at an unprecedented pace.",
+    "structure": "主谓结构，主语 Innovation 搭配现在进行时 is booming，介词短语 at an unprecedented pace 作方式状语",
+    "keys": [
+     "以前所未有的速度 at an unprecedented pace",
+     "蓬勃发展 is booming / is flourishing"
+    ]
+   },
+   {
+    "cn": "为了在科学技术上尽快赶超世界发达国家，中国近年来大幅度增加了研究开发资金。",
+    "en": "In order to catch up with and surpass the world's developed countries in science and technology as quickly as possible, China has substantially increased its funding for research and development in recent years.",
+    "structure": "目的状语（In order to ...）前置 + 主句用现在完成时 has increased，体现\"近年来\"的持续影响",
+    "keys": [
+     "赶超 catch up with and surpass",
+     "大幅度增加 substantially increase",
+     "研究开发资金 funding for research and development",
+     "世界发达国家 the world's developed countries"
+    ]
+   },
+   {
+    "cn": "中国的大学和研究所正在积极开展创新研究，这些研究覆盖了从大数据到生物化学、从新能源到机器人等各类高科技领域。",
+    "en": "Chinese universities and research institutes are actively carrying out innovative research, which covers a wide range of high-tech fields, from big data to biochemistry, and from new energy to robotics.",
+    "structure": "主句（进行时）+ which 引导非限制性定语从句修饰 research，from...to... 并列结构列举领域",
+    "keys": [
+     "研究所 research institutes",
+     "积极开展 actively carry out",
+     "大数据 big data",
+     "生物化学 biochemistry",
+     "新能源 new energy",
+     "机器人 robotics",
+     "高科技领域 high-tech fields"
+    ]
+   },
+   {
+    "cn": "它们还与各地的科技园合作，使创新成果商业化。",
+    "en": "They are also collaborating with science and technology parks around the country to commercialize the fruits of innovation.",
+    "structure": "主句 + 不定式 to commercialize 表目的，around the country 作后置定语修饰 parks",
+    "keys": [
+     "科技园 science and technology parks",
+     "创新成果 the fruits of innovation / innovative achievements",
+     "商业化 commercialize"
+    ]
+   },
+   {
+    "cn": "与此同时，无论在产品还是商业模式上，中国企业家也在努力争做创新的先锋，以适应国内外消费市场不断变化和增长的需求。",
+    "en": "Meanwhile, whether in products or business models, Chinese entrepreneurs are also striving to be pioneers in innovation to adapt to the ever-changing and growing demands of consumer markets both at home and abroad.",
+    "structure": "插入让步状语 whether...or... + 主句进行时 + 不定式 to adapt to 表目的，both at home and abroad 作后置定语",
+    "keys": [
+     "商业模式 business models",
+     "企业家 entrepreneurs",
+     "先锋 pioneers",
+     "国内外 both at home and abroad",
+     "消费市场 consumer markets",
+     "不断变化和增长的需求 ever-changing and growing demands"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "以前所未有的速度",
+    "en": "at an unprecedented pace"
+   },
+   {
+    "cn": "赶超",
+    "en": "catch up with and surpass"
+   },
+   {
+    "cn": "研究开发资金",
+    "en": "funding for research and development (R&D funding)"
+   },
+   {
+    "cn": "研究所",
+    "en": "research institutes"
+   },
+   {
+    "cn": "大数据",
+    "en": "big data"
+   },
+   {
+    "cn": "生物化学",
+    "en": "biochemistry"
+   },
+   {
+    "cn": "科技园",
+    "en": "science and technology parks"
+   },
+   {
+    "cn": "商业化",
+    "en": "commercialize"
+   },
+   {
+    "cn": "商业模式",
+    "en": "business models"
+   },
+   {
+    "cn": "企业家",
+    "en": "entrepreneurs"
+   }
+  ],
+  "pitfalls": [
+   "'赶超'需译出两层含义 catch up with AND surpass，仅译一个会扣分",
+   "'研究开发资金'不可译为 money，应使用 funding 或 expenditure 等正式词汇",
+   "'商业化'应译为动词 commercialize，而非 make it commercial 等冗余表达",
+   "'以前所未有的速度'中 unprecedented 拼写易错，常误写为 unprecedent",
+   "'国内外'应译为 both at home and abroad 或 domestic and international，避免只译一半"
+  ],
+  "upgrades": [
+   {
+    "plain": "is developing quickly",
+    "better": "is booming at an unprecedented pace",
+    "note": "boom 更生动地体现'蓬勃'，unprecedented 提升用词档次"
+   },
+   {
+    "plain": "greatly increased",
+    "better": "substantially / significantly increased",
+    "note": "副词更正式学术，符合经济科技语域"
+   },
+   {
+    "plain": "doing innovative research",
+    "better": "carrying out / conducting innovative research",
+    "note": "carry out / conduct 是学术语境中'开展研究'的地道搭配"
+   },
+   {
+    "plain": "results of innovation",
+    "better": "the fruits of innovation",
+    "note": "fruits 比 results 更具修辞色彩，属高分表达"
+   },
+   {
+    "plain": "trying to be leaders in innovation",
+    "better": "striving to be pioneers in innovation",
+    "note": "strive 比 try 语气更强，pioneer 精确对应'先锋'"
+   }
+  ]
+ }
+}

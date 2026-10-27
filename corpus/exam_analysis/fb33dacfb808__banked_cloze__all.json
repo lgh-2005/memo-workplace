@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "fb33dacfb808__banked_cloze__all",
+ "examId": "fb33dacfb808",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2019 年 12 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:23:40.117Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 75891,
+ "usage": {
+  "prompt_tokens": 1375,
+  "completion_tokens": 4708,
+  "total_tokens": 6083,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1375,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4708,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1375,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "不良饮食与运动不足对大脑的危害",
+  "gist": "文章指出不良饮食和缺乏运动不仅增加心脏病和癌症的风险，还会损害大脑的学习与记忆功能。研究表明，高脂高糖饮食在数天内即可导致认知损伤，且即使体重未明显变化，不良饮食的负面后果仍然存在，因此体重并非健康的唯一指标，保持良好饮食和规律锻炼至关重要。",
+  "difficulty": "中等",
+  "translation": "在考虑与严重慢性疾病相关的风险因素时，我们常常会想到胆固醇、血压和体重等健康指标。但不良饮食和缺乏身体活动各自都会增加患心脏病的风险，并在某些癌症的发展中发挥作用。或许更糟糕的是，不健康饮食和运动不足的有害影响并不仅限于身体。最近的研究还表明，沉迷于高脂肪和高糖饮食可能会对大脑产生负面影响，导致学习和记忆缺陷。\n\n研究发现，肥胖与认知功能障碍有关，这一点通过一系列学习和记忆测试得到了评估，例如回忆数分钟或数小时前呈现的一组单词的能力。也有越来越多的证据表明，饮食引起的认知损伤可以迅速出现——在几周甚至几天之内。例如，一项研究发现，被分配到高脂肪饮食组的健康成人在五天后，与低脂饮食对照组相比，注意力、记忆力和情绪均出现了损伤。另一项研究还发现，每天吃高脂高糖早餐仅仅四天，就导致了与在超重和肥胖个体中观察到的类似的学习和记忆问题。\n\n食用健康饮食的组与食用高脂高糖饮食的组之间的体重差异并不大。因此，这表明即使体重没有显著变化，不良饮食摄入的负面后果也可能出现。所以，体重并非总是健康的最佳指标，瘦的人仍然需要合理饮食并定期锻炼。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "G",
+    "correct": "detrimental",
+    "why": "空格处位于定冠词 the 与名词 effects 之间，需要一个形容词来修饰 effects。上下文说不健康饮食和运动不足的影响\"不仅限于身体\"，语义为\"有害的影响\"，detrimental（有害的）完美契合语义和语法。",
+    "traps": "similar 虽也是形容词，但\"相似的影响\"与后文\"not limited to your body\"的递进语义不符。consequences 是名词，不能放在 the 与 effects 之间修饰名词。",
+    "tip": "the ___ effects 结构需填形容词，结合\"有害\"语义选 detrimental。"
+   },
+   {
+    "number": 27,
+    "answer": "J",
+    "correct": "indulging",
+    "why": "空格后紧跟介词 in，构成 indulging in（沉迷于）这一固定搭配。整个动名词短语 indulging in a high-fat and high-sugar diet 充当主语，语义为\"沉迷于高脂高糖饮食\"，与后文\"负面影响\"衔接通顺。",
+    "traps": "assessed 和 assigned 虽然是动词形式，但 assessed in 和 assigned in 均不构成合理搭配，语义上也无法充当主语成分来衔接后文。",
+    "tip": "动名词作主语 + in 搭配锁定 indulging in。"
+   },
+   {
+    "number": 28,
+    "answer": "E",
+    "correct": "deficits",
+    "why": "空格前是 learning and memory，需要一个名词与之搭配。deficits（缺陷、不足）是心理学和医学中常见的术语搭配 memory deficits（记忆缺陷），与前文\"负面影响\"语义一致。",
+    "traps": "consequences 虽也是名词，但 learning and memory consequences 不是常见学术搭配，且 consequences 通常指\"后果\"，语义偏离\"功能缺损\"。",
+    "tip": "learning and memory ___ 为专业术语搭配，deficits 为固定用法。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "correct": "assessed",
+    "why": "空格处在 as ___ by a range of tests 结构中，需要一个过去分词构成被动含义，意为\"通过一系列测试来评估\"。assessed by 是\"由……评估\"的常见搭配，语义和语法均成立。",
+    "traps": "assigned by 意为\"由……分配\"，与\"测试\"搭配不合逻辑。此处不可能是主动语态动词，因为 as 引导的是省略形式的被动结构。",
+    "tip": "as ___ by tests 为被动省略结构，填过去分词 assessed。"
+   },
+   {
+    "number": 30,
+    "answer": "L",
+    "correct": "rapidly",
+    "why": "空格修饰动词 emerge，需填副词。后文破折号解释为\"在几周甚至几天之内\"，说明出现得很快，rapidly（迅速地）完美呼应这一时间线索。",
+    "traps": "conspicuously（显著地）虽也是副词，但侧重\"引人注目\"而非\"速度快\"，与后文\"within weeks or even days\"的时间提示不匹配。regularly 语义为\"定期地\"，也不符。",
+    "tip": "破折号后的时间提示\"几周甚至几天\"是关键线索，指向 rapidly。"
+   },
+   {
+    "number": 31,
+    "answer": "B",
+    "correct": "assigned",
+    "why": "空格处为过去分词作后置定语修饰 healthy adults，assigned to 意为\"被分配到……\"，指实验中受试者被分配到高脂肪饮食组，这是实验研究中描述分组的标准表述。",
+    "traps": "assessed to 不构成合理搭配（assess 不与 to 搭配表示\"评估到某组\"）。此处需要体现实验分组的概念，只有 assigned to 满足。",
+    "tip": "实验分组用 assigned to，是科研语境的常见搭配。"
+   },
+   {
+    "number": 32,
+    "answer": "O",
+    "correct": "similar",
+    "why": "空格后为 to those observed in…，similar to 是固定搭配，意为\"与……相似的\"。句意为高脂高糖饮食导致的学习记忆问题与肥胖人群中观察到的问题相似，逻辑通顺。",
+    "traps": "其他剩余形容词如 detrimental 已在第26题使用，且 detrimental to 语义为\"对……有害\"，不符合此处比较的语境。",
+    "tip": "___ to those observed 结构锁定 similar to 固定搭配。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "correct": "consequences",
+    "why": "空格前有形容词 negative，空格后有介词 of，需要一个名词。negative consequences of（……的负面后果）语义完整，指不良饮食摄入带来的负面后果，与全文主旨一致。",
+    "traps": "deficits 已在第28题使用且 negative deficits of poor dietary intake 搭配不自然。consequences 侧重因果关系中的\"后果\"，更符合此处总结性语境。",
+    "tip": "negative ___ of 结构需填名词，consequences 表\"后果\"切合因果语境。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "correct": "conspicuously",
+    "why": "空格修饰动词 changed，需填副词。句意为\"即使体重没有显著变化\"，conspicuously（显著地、明显地）表示体重变化不够明显，与前文\"两组体重差异不大\"的信息呼应。",
+    "traps": "rapidly（迅速地）已在第30题使用，且\"没有迅速变化\"不如\"没有明显变化\"与上下文逻辑吻合。regularly 意为\"定期地\"，语义不通。",
+    "tip": "has not changed ___ 需副词修饰程度，conspicuously 表\"显著地\"。"
+   },
+   {
+    "number": 35,
+    "answer": "N",
+    "correct": "regularly",
+    "why": "空格修饰动词 exercise，需填副词。文末总结建议瘦人也需要合理饮食并\"定期锻炼\"，regularly（定期地、有规律地）是健康建议的常见搭配，语义合理。",
+    "traps": "able 和 rapidly 等词要么词性不符，要么语义不当。此处强调锻炼的规律性而非速度或显著性，因此排除其他副词。",
+    "tip": "exercise ___ 强调锻炼的规律习惯，regularly 为最佳选择。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的，不利的"
+   },
+   {
+    "w": "indulging",
+    "cn": "v. 沉迷，放纵（indulge in 沉迷于）"
+   },
+   {
+    "w": "deficits",
+    "cn": "n. 缺陷，不足，赤字"
+   },
+   {
+    "w": "assessed",
+    "cn": "v. 评估，评定（assess 的过去分词）"
+   },
+   {
+    "w": "assigned",
+    "cn": "v. 分配，指派（assign 的过去分词）"
+   },
+   {
+    "w": "conspicuously",
+    "cn": "adv. 显著地，引人注目地"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的，认识的"
+   },
+   {
+    "w": "impairments",
+    "cn": "n. 损伤，障碍"
+   },
+   {
+    "w": "insufficient",
+    "cn": "adj. 不充分的，不足的"
+   },
+   {
+    "w": "obesity",
+    "cn": "n. 肥胖，肥胖症"
+   },
+   {
+    "w": "chronic",
+    "cn": "adj. 慢性的，长期的"
+   },
+   {
+    "w": "indicator",
+    "cn": "n. 指标，指示物"
+   }
+  ],
+  "skills": [
+   "先将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的选词范围。",
+   "根据空格前后的语法标志判断词性：冠词+___+名词填形容词，动词+___填副词等。",
+   "优先利用固定搭配快速锁定答案，如 indulge in、similar to、assigned to。",
+   "结合上下文语义线索验证选项，如破折号解释、前后句逻辑呼应等。",
+   "每确定一词立即划去，逐步缩小候选范围，最后通读全文复查语义是否通顺。"
+  ]
+ }
+}

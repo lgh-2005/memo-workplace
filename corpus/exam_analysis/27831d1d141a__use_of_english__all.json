@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "27831d1d141a__use_of_english__all",
+ "examId": "27831d1d141a",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2022 年考研英语真题",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:47:51.616Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 87053,
+ "usage": {
+  "prompt_tokens": 1757,
+  "completion_tokens": 5197,
+  "total_tokens": 6954,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1757,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5197,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1757,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "植物是否具有意识的科学争论",
+  "gist": "文章围绕\"植物是否具有意识\"这一科学争论展开。早期有研究者提出\"植物神经生物学\"概念，认为植物的电信号反应暗示其具有意识。但新观点文章反驳称，植物生物学与动物差异巨大，所谓植物具有智能的证据并不充分；意识的进化需要足够复杂的大脑，而植物没有神经系统，且从进化策略看，植物发展意识也毫无意义。",
+  "difficulty": "中等",
+  "translation": "植物具有某种程度意识的观点最早在21世纪初扎根；\"植物神经生物学\"这一术语就是围绕这样一个概念而创造的——植物行为的某些方面可以与动物的智能相比较。尽管植物没有大脑，但其茎叶中电信号的传递仍然触发了暗示意识存在的反应，研究人员此前曾报道。\n\n然而，根据一篇新的评论文章，这种观点是不正确的。植物生物学复杂而迷人，但它与动物的生物学差异如此之大，以至于所谓的植物智能的证据是不具说服力的，作者们写道。\n\n从2006年开始，一些科学家主张植物拥有类似神经元的细胞，这些细胞与激素和神经递质相互作用，形成了\"一个与动物类似的植物神经系统\"，首席研究作者林肯·泰兹说道。\"他们甚至声称植物在其根尖拥有'类似大脑的指挥中心'。\"\n\n如果你将复杂大脑的运作简化，将其缩减为一系列电脉冲，这种观点就说得通了；植物中的细胞也通过电信号进行通讯。然而，植物中的信号传导与复杂动物大脑中的放电只是表面上相似，后者远不止\"一团通过电信号进行通讯的细胞\"，泰兹说。\n\n\"意识要进化出来，需要一个具有阈值水平的复杂性和容量的大脑，\"他补充道。\"既然植物没有神经系统，它们拥有意识的可能性实际上为零。\"\n\n况且，意识有什么了不起的呢？植物无法逃离危险，因此将能量投入到一个能识别威胁并能感受疼痛的身体系统中，将是一种非常糟糕的进化策略，文章如是说。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "A",
+    "correct": "coined",
+    "why": "coin一词有\"创造（新词/新说法）\"之义，与term（术语）形成固定搭配，表示围绕某概念\"创造\"了一个新术语。上下文语境是在描述\"植物神经生物学\"这一新术语的诞生过程，coin完美契合。",
+    "traps": "B) discovered指发现已存在之物，术语是人为创造的，不是被发现的；C) collected意为收集，与术语的产生无关；D) issued意为发布/发行，通常搭配命令、声明等，不与term搭配。",
+    "tip": "coin a term/word 是\"创造新术语\"的固定搭配。"
+   },
+   {
+    "number": 2,
+    "answer": "C",
+    "correct": "compared",
+    "why": "compare to意为\"与……相比较\"，此处表达植物行为的某些方面\"可以与\"动物的智能\"相比较\"，用被动语态be compared to，语义通顺，逻辑合理。",
+    "traps": "A) attributed to意为归因于，语义不合，不是说植物行为归因于动物智能；B) directed to意为指向/引导至，语义不通；D) confined to意为局限于，语义也不符合上下文。",
+    "tip": "be compared to表示\"被拿来与……做比较\"。"
+   },
+   {
+    "number": 3,
+    "answer": "D",
+    "correct": "Though",
+    "why": "后文用nonetheless（尽管如此）呼应，说明前后是让步转折关系：虽然植物没有大脑，但电信号仍然触发了暗示意识的反应。Though引导让步状语从句，逻辑完全吻合。",
+    "traps": "A) Unless表条件（除非），语义不合；B) When表时间，无法解释nonetheless的转折；C) Once表一旦，也无法与nonetheless形成让步逻辑。",
+    "tip": "Though…nonetheless构成让步—转折的固定搭配逻辑。"
+   },
+   {
+    "number": 4,
+    "answer": "C",
+    "correct": "hinted at",
+    "why": "hint at意为\"暗示\"，此处说电信号触发的反应\"暗示了\"意识的存在。这里是谨慎表述，研究者认为这些反应仅是\"暗示\"而非证明，与全文质疑态度一致。",
+    "traps": "A) coped with意为应对/处理，语义不合；B) consisted of意为由……组成，responses不由consciousness组成；D) extended to意为延伸到，语义不符。",
+    "tip": "hint at表示\"暗示/间接表明\"，常用于科学语境的谨慎表述。"
+   },
+   {
+    "number": 5,
+    "answer": "D",
+    "correct": "differs",
+    "why": "differ from意为\"与……不同\"，此处说植物生物学与动物生物学差异极大，与后文so-called evidence is inconclusive（证据不具说服力）构成因果逻辑，语义流畅。",
+    "traps": "A) suffers from意为遭受，主语是植物生物学，说它\"遭受\"动物生物学不合逻辑；B) benefits from意为受益于，语义相反；C) develops from意为从……发展而来，偏离文意。",
+    "tip": "differ from是\"与……不同\"的核心搭配，后接比较对象。"
+   },
+   {
+    "number": 6,
+    "answer": "B",
+    "correct": "evidence",
+    "why": "evidence of意为\"……的证据\"，此处说所谓的植物智能的\"证据\"是不具说服力的（inconclusive），与上下文反驳植物意识论的立场一致。",
+    "traps": "A) acceptance意为接受/认可，说认可inconclusive语义不太自然；C) cultivation意为培育/栽培，与intelligence不搭配；D) creation意为创造，说植物智能的创造不合语境。",
+    "tip": "evidence of…is inconclusive是学术论证中的常见表述。"
+   },
+   {
+    "number": 7,
+    "answer": "C",
+    "correct": "argued",
+    "why": "argue that意为\"主张/论证\"，表示科学家提出并论证某一观点。后文用that引导宾语从句陈述他们的具体主张，argue that为学术英语高频搭配。",
+    "traps": "A) doubted that意为怀疑，但后文内容是正面阐述植物有神经细胞的观点，不是怀疑；B) denied that意为否认，语义相反；D) requested that意为请求，不用于陈述科学观点。",
+    "tip": "argue that是学术英语中表\"主张/论证\"的核心表达。"
+   },
+   {
+    "number": 8,
+    "answer": "B",
+    "correct": "forming",
+    "why": "forming在此作现在分词，表示结果状语，即这些类似神经元的细胞与激素和神经递质相互作用，从而\"形成\"了一个植物神经系统。语义与逻辑均通顺。",
+    "traps": "A) adapting意为适应，语义不合，不是在说适应一个神经系统；C) repairing意为修复，语义不符；D) testing意为测试，科学家的论述内容是细胞形成系统，而非测试系统。",
+    "tip": "现在分词forming作结果状语，表示前面动作的自然结果。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "analogous",
+    "why": "analogous to意为\"与……类似的/类比的\"，这里说植物神经系统\"类似于\"动物的神经系统，是科学家所持的观点。analogous to是学术语境中表类比的标准搭配。",
+    "traps": "B) essential to意为对……必不可少，语义不合；C) suitable to/for意为适合……，不符文意；D) sensitive to意为对……敏感，与此处类比语义无关。",
+    "tip": "analogous to是学术英语中表示\"类比/类似\"的重要搭配。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "even",
+    "why": "even表示\"甚至\"，引出递进关系：那些科学家不仅主张植物有类似神经系统，甚至声称植物根尖有\"类似大脑的指挥中心\"，语气层层递进。",
+    "traps": "A) just意为仅仅，与claimed搭配无递进之义；B) ever意为曾经，语义太弱，不能体现递进；C) still意为仍然，表持续而非递进。",
+    "tip": "even用于递进，强调后文观点比前文更进一步、更极端。"
+   },
+   {
+    "number": 11,
+    "answer": "C",
+    "correct": "perspective",
+    "why": "perspective意为\"观点/看法\"，this perspective指代上文科学家所持的植物拥有神经系统等观点。下文解释这种观点在何种条件下\"说得通\"，perspective完美承接。",
+    "traps": "A) restriction意为限制，与makes sense不搭配；B) experiment意为实验，上文谈的是观点而非实验；D) demand意为需求，语义不合。",
+    "tip": "this perspective指代前文提出的观点，起承上启下作用。"
+   },
+   {
+    "number": 12,
+    "answer": "B",
+    "correct": "reducing",
+    "why": "reduce…to意为\"把……简化/缩减为\"，此处说如果把复杂大脑的运作\"简化为\"一系列电脉冲，那么植物似乎也有类似功能。与前文simplify形成语义呼应和补充说明。",
+    "traps": "A) attaching…to意为把……附着于，语义不合；C) returning…to意为回到/归还，不符语境；D) exposing…to意为使暴露于，语义不通。",
+    "tip": "reduce…to…意为\"简化为/缩减为\"，与simplify语义呼应。"
+   },
+   {
+    "number": 13,
+    "answer": "A",
+    "correct": "However",
+    "why": "前文说这种观点在简化条件下说得通，后文however转折指出植物信号传导与动物大脑只是\"表面相似\"，前后构成明显转折关系。",
+    "traps": "B) Moreover意为此外，表递进，与后文反驳语义矛盾；C) Therefore意为因此，表因果，逻辑不通；D) Otherwise意为否则，表假设条件，不合语境。",
+    "tip": "However引出转折，是完形填空中最高频的逻辑连接词之一。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "superficially",
+    "why": "superficially意为\"表面上地\"，此处说植物中的信号传导与动物大脑的放电\"只是表面上\"相似，暗示本质上有巨大差异，与全文反驳植物意识论的立场一致。",
+    "traps": "A) temporarily意为暂时地，强调时间维度，不符语境；B) literally意为字面上/确实地，反而加强相似程度，与only矛盾；D) imaginarily意为想象地，过于极端且不常用。",
+    "tip": "superficially similar表示\"仅表面相似\"，暗含本质不同。"
+   },
+   {
+    "number": 15,
+    "answer": "B",
+    "correct": "level",
+    "why": "a threshold level of意为\"阈值水平的\"，此处说意识要进化需要大脑达到一定阈值\"水平\"的复杂性和容量，level与threshold及complexity搭配自然。",
+    "traps": "A) list意为清单/列表，与threshold不构成有意义搭配；C) label意为标签，语义不通；D) load意为负荷/载量，与complexity and capacity搭配不当。",
+    "tip": "threshold level表示\"阈值水平/门槛水平\"，是科学语境常见搭配。"
+   },
+   {
+    "number": 16,
+    "answer": "D",
+    "correct": "added",
+    "why": "added意为\"补充说道\"，he added表示在前述引用之后继续补充观点。前文已有Taiz的引语，此处是他进一步补充说明，added体现话语的延续和递进。",
+    "traps": "A) recalled意为回忆，语境是在阐述观点而非回忆；B) agreed意为同意，需要有另一方观点供其同意，此处缺乏此语境；C) questioned意为质疑，但引号内容是肯定性陈述而非疑问。",
+    "tip": "he added是新闻/学术报道中\"他补充道\"的标准表达。"
+   },
+   {
+    "number": 17,
+    "answer": "A",
+    "correct": "chances",
+    "why": "the chances that…are effectively zero意为\"……的可能性实际上为零\"，表达植物拥有意识的概率几乎不存在，chances与zero搭配自然。",
+    "traps": "B) risks意为风险，说\"风险为零\"与此处否定植物意识的逻辑不匹配；C) excuses意为借口，语义完全不合；D) assumptions意为假设，假设不能说\"为零\"。",
+    "tip": "the chances are zero是表达\"可能性为零\"的地道说法。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "danger",
+    "why": "run away from danger意为\"逃离危险\"，此处说植物无法逃离危险，因此发展意识毫无意义。danger与后文threat（威胁）和feel pain（感受疼痛）形成语义链。",
+    "traps": "B) failure意为失败，植物逃离失败语义不通；C) warning意为警告，run away from warning搭配不自然；D) control意为控制，语义偏离。",
+    "tip": "run away from danger是\"逃离危险\"的常见搭配，与后文threat呼应。"
+   },
+   {
+    "number": 19,
+    "answer": "D",
+    "correct": "recognizes",
+    "why": "recognize a threat意为\"识别威胁\"，此处说一个能\"识别\"威胁并感受疼痛的身体系统，recognize表示感知和辨认能力，与consciousness主题紧密关联。",
+    "traps": "A) represents意为代表，说身体系统\"代表\"威胁不合逻辑；B) includes意为包含，语义不通；C) reveals意为揭示，说身体系统\"揭示\"威胁也不符合语境。",
+    "tip": "recognize a threat表示\"识别威胁\"，体现意识的感知功能。"
+   },
+   {
+    "number": 20,
+    "answer": "B",
+    "correct": "poor",
+    "why": "a poor strategy意为\"糟糕的策略\"，此处说既然植物无法逃跑，发展意识就是一种很\"糟糕的\"进化策略。poor在此表示质量差、效果不佳。",
+    "traps": "A) humble意为谦逊的/卑微的，修饰strategy不自然；C) practical意为实用的，语义相反，与文中否定意义矛盾；D) easy意为容易的，与进化策略的评价无关。",
+    "tip": "a poor strategy是\"糟糕的/拙劣的策略\"，poor表示质量低劣。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "neurobiology",
+    "cn": "n. 神经生物学"
+   },
+   {
+    "w": "consciousness",
+    "cn": "n. 意识；知觉"
+   },
+   {
+    "w": "inconclusive",
+    "cn": "adj. 不确定的；无定论的"
+   },
+   {
+    "w": "neurotransmitter",
+    "cn": "n. 神经递质"
+   },
+   {
+    "w": "analogous",
+    "cn": "adj. 类似的；可类比的"
+   },
+   {
+    "w": "threshold",
+    "cn": "n./adj. 阈值（的）；门槛（的）"
+   },
+   {
+    "w": "superficially",
+    "cn": "adv. 表面上地；肤浅地"
+   },
+   {
+    "w": "an array of",
+    "cn": "一系列；大量的"
+   },
+   {
+    "w": "root tip",
+    "cn": "n. 根尖"
+   },
+   {
+    "w": "evolutionary",
+    "cn": "adj. 进化的；演化的"
+   },
+   {
+    "w": "nonetheless",
+    "cn": "adv. 尽管如此；然而"
+   },
+   {
+    "w": "fascinate",
+    "cn": "v. 使着迷；深深吸引"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Though…nonetheless",
+    "role": "构成让步—转折关系，强调虽无大脑但仍有类似意识的反应"
+   },
+   {
+    "w": "But",
+    "role": "第二段开头转折，引出反驳植物意识论的新观点"
+   },
+   {
+    "w": "However",
+    "role": "第四段内转折，指出植物信号与动物大脑仅表面相似"
+   },
+   {
+    "w": "Since",
+    "role": "引出原因状语从句，因无神经系统所以无意识"
+   },
+   {
+    "w": "so",
+    "role": "末段表因果，连接植物无法逃跑与发展意识无意义的结论"
+   }
+  ]
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "02317b30b42e__writing__all",
+ "examId": "02317b30b42e",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2026 年 6 月英语六级真题（第 2 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:06:50.590Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42776,
+ "usage": {
+  "prompt_tokens": 741,
+  "completion_tokens": 2768,
+  "total_tokens": 3509,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 741,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2768,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 741,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕\"增强年轻人责任感的重要性\"展开议论，可举例、评论或结合个人经历，字数150-200词。",
+    "outline": [
+     "第一段：以题目给定首句开头，引出话题——在社会快速发展的时代，增强年轻人责任感至关重要，并简要说明年轻人对国家未来的意义。",
+     "第二段：从两个层面论证责任感的重要性：一是责任感驱动年轻人尽职尽责（可举抗疫志愿者等实例）；二是责任感促进社会和谐与合作。",
+     "第三段：提出培养责任感的具体途径（家庭、学校、社会协同），并以总结句收束全文，强调其对社会可持续发展不可或缺。"
+    ],
+    "sample": "In an era of rapid social development, it is vitally important to enhance young people's sense of responsibility. As the backbone of a nation's future, young individuals equipped with a strong sense of responsibility are far more likely to contribute positively to society and drive meaningful progress.\n\nTo begin with, a heightened sense of responsibility motivates young people to fulfill their duties diligently, whether in academic pursuits or professional careers. For instance, during the COVID-19 pandemic, numerous young medical workers voluntarily rushed to the front line, demonstrating their profound commitment to public welfare. Furthermore, responsible youth tend to be more empathetic and cooperative, which fosters social harmony and cohesion. They are inclined to consider the consequences of their actions, thereby making more ethical and well-informed decisions in daily life.\n\nTo cultivate this essential quality, joint efforts from families, schools, and the broader society are indispensable. Parents should lead by example, educators ought to incorporate moral education into curricula, and communities can provide volunteer opportunities for young people to practice responsibility firsthand. In conclusion, nurturing a sense of responsibility among the younger generation is not merely desirable but imperative for sustainable social progress.",
+    "phrases": [
+     {
+      "en": "the backbone of a nation's future",
+      "cn": "一个国家未来的中坚力量；用比喻强调年轻人的核心地位"
+     },
+     {
+      "en": "a heightened sense of responsibility",
+      "cn": "更强的责任感；heightened比strong更书面，体现程度加深"
+     },
+     {
+      "en": "fulfill one's duties diligently",
+      "cn": "勤勉地履行职责；fulfill搭配duties为高频正式搭配"
+     },
+     {
+      "en": "demonstrate one's profound commitment to",
+      "cn": "展现对……的深切投入；demonstrate比show更正式"
+     },
+     {
+      "en": "foster social harmony and cohesion",
+      "cn": "促进社会和谐与凝聚力；foster意为培育/促进，为高分动词"
+     },
+     {
+      "en": "be inclined to do sth.",
+      "cn": "倾向于做某事；比tend to更正式，适合议论文"
+     },
+     {
+      "en": "joint efforts from … are indispensable",
+      "cn": "来自……的共同努力不可或缺；indispensable为高级替换词"
+     },
+     {
+      "en": "lead by example",
+      "cn": "以身作则；简洁地道的固定表达"
+     },
+     {
+      "en": "not merely … but imperative",
+      "cn": "不仅仅是……而且是必要的；加强语气的并列结构"
+     },
+     {
+      "en": "practice responsibility firsthand",
+      "cn": "亲身实践责任；firsthand强调第一手体验"
+     }
+    ],
+    "pitfalls": [
+     "忘记抄写题目给定首句，或擅自修改首句用词，直接扣分",
+     "全文只喊口号不举例，缺乏具体论据支撑，内容空洞得分低",
+     "字数不足150词或超过200词，均可能被扣分",
+     "段落缺乏逻辑连接词，三段之间跳跃感强，衔接分丢失",
+     "用词重复严重，如通篇使用important/very，缺少同义替换"
+    ],
+    "upgrades": [
+     {
+      "plain": "Young people are very important for the country.",
+      "better": "As the backbone of a nation's future, young individuals are far more likely to contribute positively to society.",
+      "note": "用比喻加具体动作替换空泛形容词，信息量更大更生动"
+     },
+     {
+      "plain": "Responsibility can make young people do things well.",
+      "better": "A heightened sense of responsibility motivates young people to fulfill their duties diligently.",
+      "note": "heightened、motivate、fulfill duties 三处升级，用词更精准正式"
+     },
+     {
+      "plain": "Families, schools, and society should work together.",
+      "better": "Joint efforts from families, schools, and the broader society are indispensable.",
+      "note": "joint efforts 和 indispensable 替换口语化表达，提升学术语感"
+     },
+     {
+      "plain": "They think about what they do before doing it.",
+      "better": "They are inclined to consider the consequences of their actions, thereby making more ethical and well-informed decisions.",
+      "note": "thereby引导结果状语使因果关系更紧凑，用词层次更高"
+     },
+     {
+      "plain": "In a word, responsibility is important.",
+      "better": "Nurturing a sense of responsibility among the younger generation is not merely desirable but imperative for sustainable social progress.",
+      "note": "not merely…but结构加imperative收尾有力，避免烂尾式总结"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As the backbone of a nation's future, young individuals equipped with a strong sense of responsibility are far more likely to contribute positively to society. —— 用backbone比喻+equipped with过去分词短语做后置定语，一句话点明主题与论点。",
+   "During the COVID-19 pandemic, numerous young medical workers voluntarily rushed to the front line, demonstrating their profound commitment to public welfare. —— 现在分词做结果状语，将事例与评论融为一句，逻辑紧凑。",
+   "Responsible youth tend to be more empathetic and cooperative, which fosters social harmony and cohesion. —— which引导非限制性定语从句，对前半句进行深层点评，体现因果推进。",
+   "Joint efforts from families, schools, and the broader society are indispensable. —— 一句话串起三方主体，indispensable用词精准，适合议论文建议段。",
+   "Nurturing a sense of responsibility among the younger generation is not merely desirable but imperative for sustainable social progress. —— not merely…but对比升华，imperative一词为全文收束提供力度。"
+  ]
+ }
+}

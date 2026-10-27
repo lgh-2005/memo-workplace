@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "a1fd36502b35__listening__all",
+ "examId": "a1fd36502b35",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2023 年 12 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:50:54.179Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54320,
+ "usage": {
+  "prompt_tokens": 2325,
+  "completion_tokens": 2752,
+  "total_tokens": 5077,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2325,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2752,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2325,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场六级听力的录音音频与原文文稿，以下解析仅基于题目选项的语言特征与正确答案进行推理分析，不涉及任何录音内容的编造。",
+  "overview": "本场听力共 7 段，25 题。第 1-2 段为长对话（各 4 题），第 3-4 段为短文听力（各 3-4 题），第 5-7 段为讲座/讲话（各 3-4 题）。由选项措辞推测：第 1 段围绕假日出行方式与旅居自由；第 2 段涉及职场工作表现与个人困难；第 3 段关于婚姻/配偶受教育程度与健康；第 4 段讨论洪水预测建模与传感器技术；第 5 段涉及大学学历价值与男性就业；第 6 段关于动物福利与时尚行业变革；第 7 段讨论世界是否在变好、心理偏见与负面信息关注。",
+  "strategy": [
+   "预读选项时圈出各选项间的差异关键词，听音时重点捕捉这些词的同义替换",
+   "长对话注意对话双方的态度词和转折词（but, however, actually），答案常在转折之后",
+   "短文和讲座类题目答案通常按出题顺序依次出现，跟住文章节奏逐题作答",
+   "遇到含有绝对词（all, never, always）的选项要格外警惕，它们往往是干扰项",
+   "利用选项中的主语差异（He/She/They/The woman/The man）预判问题对象，避免张冠李戴",
+   "最后一题常考文章结尾的总结观点或建议，注意收听末尾部分的核心信息"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "假日出行方式选择与旅居自由生活",
+    "optionSignals": "第 1 题四项均为动名词短语，提示在问\"打算做什么\"；第 2 题选项以 He 开头描述男方经历/偏好；第 3 题四项均为动词原形，可能问某种交通工具的功能；第 4 题为动名词短语，描述某种生活方式的核心吸引力。",
+    "tips": [
+     "第 1 题 A/B 属于常规操作、C/D 更具新意，'novel way' 作为正确项暗示话题本身在讨论一种非传统度假方式",
+     "第 3 题关注 generate their own electricity 这一技术特征，与 van/旅居车高度相关，可与第 1 题话题联动排除不相关项",
+     "第 4 题 B 强调 freedom，与旅居主题的核心卖点（自由选择地点与工作）高度一致"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "员工近期工作表现下滑与上司沟通",
+    "optionSignals": "第 5 题四项均以 She/Her 开头描述女方近况，为典型的'问题是什么'题型；第 6 题为名词短语列举原因；第 7 题以 The woman's/His 交替出现，问某件事的依据；第 8 题含具体时间线索 two weeks/Mondays，问后续安排。",
+    "tips": [
+     "第 5 题 B 说 job performance worsened，最为笼统概括，往往是正确的上位概念选项",
+     "第 6 题注意区分 health issues 与 problems at home，两者极易混淆，关键词 home 指向家庭而非身体",
+     "第 8 题要注意主语（The woman vs. The man）及具体时间安排，听清谁做什么"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "婚姻与配偶受教育程度对健康的影响",
+    "optionSignals": "第 9 题四项均以 It can 开头说明某事物的好处，问核心结论；第 10/11 题涉及 spouse、education、health 等高频词，话题聚焦于配偶特征与个体健康的关系。",
+    "tips": [
+     "第 9 题四项好处各不相同（情绪/寿命/财务/工作），注意听主旨句判断最终落脚点是 healthier and longer life",
+     "第 10 题 D 项 spouse's level of education 与第 11 题 more education 形成呼应，说明'配偶教育水平'是贯穿话题的核心变量",
+     "第 11 题注意比较对象：they vs. their spouses，听清谁的教育程度更高"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "城市洪水风险预测模型与数据采集技术",
+    "optionSignals": "第 12 题为动名词短语问目标/方法；第 13/14 题均以 To 不定式开头，问做某事的目的；第 15 题描述具体操作手段。整组选项含 flood、tides、model、sensors 等技术词汇，话题为自然灾害预测。",
+    "tips": [
+     "第 12 题 B 项 forecasting flood risks accurately 属于研究的核心目标，比 A 项 eliminating root cause 更务实可行",
+     "第 15 题四个选项描述不同数据采集方式，A 项 Internet-connected water-level sensors 最具现代技术感，与 real-time 预测需求匹配",
+     "注意区分 improve model（完善模型）与 forecast in real time（实时预报）的不同研究阶段"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "大学学历的价值及其对男性就业与婚姻的影响",
+    "optionSignals": "第 16 题以 To 不定式开头，问文章/讲座目的；第 17 题为名词短语列举关键因素；第 18 题为较长的陈述句，问具体结论。选项中反复出现 college degree、wages、men，指向学历与劳动力市场话题。",
+    "tips": [
+     "第 16 题 A 项 argue about the value of a college degree 最具概括性，适合作为全文目的",
+     "第 17 题问的是某一个具体因素，C 项 wages 最简短直接，符合'被忽视的关键因素'的出题套路",
+     "第 18 题 D 项将学历与婚姻下降关联，属于跨领域结论，往往是讲座末尾的延伸观点"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "时尚行业中的动物福利趋势与可持续伦理争议",
+    "optionSignals": "第 19 题四项均以 More and more / An increasing number of 开头，问趋势；第 20 题为过去式动词描述品牌已采取的行动；第 21 题均以 Whether 开头，问人们对这些举措的质疑方向。",
+    "tips": [
+     "第 19 题 B 项 prioritize animal welfare when buying things to wear 同时涵盖'动物福利'和'穿着/时尚'两个关键词，最贴合话题",
+     "第 20 题注意 leather and fur 与 vegan label 的区别：A 是具体禁用材料，B 是全面标签化，前者更具可操作性",
+     "第 21 题需区分 sustainable（环保可持续）与 ethical（伦理道德），正确答案 D 指向伦理层面的质疑"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "世界是否在变好的认知偏差与负面信息倾向",
+    "optionSignals": "第 22 题为陈述句描述某种观点/事实；第 23 题以 They 开头描述人们的反应；第 24/25 题分别问原因与具体心理机制。选项含 peaceful、violence、psychological biases、negative information 等认知心理学词汇。",
+    "tips": [
+     "第 22 题 A 项 the most peaceful in history 与常见的'乐观主义学派'论点吻合，属于反直觉结论",
+     "第 24 题在 media（外因）与 psychological biases（内因）之间选择，C 项心理偏见作为深层原因更具学术性",
+     "第 25 题 D 项 paying attention to negative information 是对 negativity bias（消极偏见）的直白表述，与第 24 题心理偏见形成因果链"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "deteriorate",
+    "cn": "恶化，变糟"
+   },
+   {
+    "w": "proficiency",
+    "cn": "熟练，精通"
+   },
+   {
+    "w": "curtailed",
+    "cn": "缩减的，削减的"
+   },
+   {
+    "w": "sustainable",
+    "cn": "可持续的"
+   },
+   {
+    "w": "spouse",
+    "cn": "配偶"
+   },
+   {
+    "w": "geological",
+    "cn": "地质的"
+   },
+   {
+    "w": "feasibility",
+    "cn": "可行性"
+   },
+   {
+    "w": "sensor",
+    "cn": "传感器"
+   },
+   {
+    "w": "inflation",
+    "cn": "通货膨胀"
+   },
+   {
+    "w": "vegan",
+    "cn": "纯素的，不使用动物产品的"
+   },
+   {
+    "w": "prevalence",
+    "cn": "流行，普遍"
+   },
+   {
+    "w": "bias",
+    "cn": "偏见，偏差"
+   },
+   {
+    "w": "hectic",
+    "cn": "忙碌的，繁忙的"
+   },
+   {
+    "w": "ethical",
+    "cn": "伦理的，道德的"
+   }
+  ]
+ }
+}

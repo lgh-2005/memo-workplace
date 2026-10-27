@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "274068d32544__writing__all",
+ "examId": "274068d32544",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2016 年 6 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:04:35.219Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43230,
+ "usage": {
+  "prompt_tokens": 717,
+  "completion_tokens": 2441,
+  "total_tokens": 3158,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 717,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2441,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 717,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "短文写作，围绕\"生活在虚拟世界\"展开想象，论述当人们越来越多地沉浸于虚拟世界、减少现实互动时可能产生的影响，字数150-200词。",
+    "outline": [
+     "第一段：引出话题——科技发展使人们越来越多地沉浸于虚拟世界，提出这一趋势值得深思。",
+     "第二段：分析影响——从人际关系弱化、现实与虚幻界限模糊等角度，论述过度依赖虚拟世界的负面后果。",
+     "第三段：辩证总结——承认虚拟技术的益处，强调应在虚拟与现实之间保持平衡，不可丧失真实人际纽带。"
+    ],
+    "sample": "In recent years, the rapid advancement of technology has made it increasingly possible for people to immerse themselves in virtual worlds. While this digital revolution offers numerous conveniences, spending excessive time in virtual environments may profoundly reshape human society.\n\nTo begin with, prolonged engagement in the virtual world is likely to weaken interpersonal relationships. When people substitute online interactions for face-to-face communication, they may gradually lose the ability to interpret body language and emotional cues, leading to a growing sense of isolation and emotional detachment. Furthermore, the boundary between reality and illusion could become dangerously blurred. Individuals who invest most of their time in virtual spaces might struggle to cope with real-world challenges, as the virtual world often presents an idealized version of life that reality simply cannot match.\n\nNevertheless, we cannot deny that virtual technology brings remarkable benefits, such as remote collaboration and immersive education. The key lies in striking a proper balance between the virtual and the real. Only by maintaining meaningful real-world connections can we harness the power of technology without sacrificing our humanity.",
+    "phrases": [
+     {
+      "en": "immerse oneself in",
+      "cn": "沉浸于……；常用于描述人深度投入某一活动或环境"
+     },
+     {
+      "en": "substitute A for B",
+      "cn": "用A替代B；注意介词for后接被替代的对象"
+     },
+     {
+      "en": "emotional detachment",
+      "cn": "情感疏离；学术化表达，比loneliness更正式、层次更高"
+     },
+     {
+      "en": "the boundary between reality and illusion",
+      "cn": "现实与幻象之间的界限；点题且具画面感的名词短语"
+     },
+     {
+      "en": "cope with real-world challenges",
+      "cn": "应对现实挑战；cope with比deal with更书面"
+     },
+     {
+      "en": "an idealized version of life",
+      "cn": "生活的理想化版本；精准描述虚拟世界的美化特征"
+     },
+     {
+      "en": "strike a proper balance between",
+      "cn": "在……之间取得恰当平衡；议论文万能高分搭配"
+     },
+     {
+      "en": "harness the power of technology",
+      "cn": "驾驭科技的力量；harness比use更高级，体现掌控感"
+     },
+     {
+      "en": "at the expense of / without sacrificing",
+      "cn": "以……为代价 / 而不牺牲……；用于权衡利弊的经典句式"
+     },
+     {
+      "en": "remote collaboration and immersive education",
+      "cn": "远程协作与沉浸式教育；体现虚拟技术积极面的具体例证"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只谈虚拟世界的好处或坏处，缺乏辩证思维，未体现imagination要求。",
+     "段落失衡：三段篇幅悬殊，第二段论证不充分或第三段过于简短敷衍。",
+     "词汇重复：反复使用virtual world而不用同义替换如digital realm、cyberspace等。",
+     "逻辑断裂：观点之间缺少过渡词如furthermore、nevertheless，导致行文生硬。",
+     "字数违规：低于150词或远超200词，六级写作字数不达标会被直接扣分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "People will not talk to each other in real life.",
+      "better": "People may gradually lose the ability to interpret body language and emotional cues, leading to a growing sense of isolation.",
+      "note": "用具体能力丧失+结果链替代笼统断言，逻辑更严密、词汇更高级。"
+     },
+     {
+      "plain": "The virtual world is not real, so it is bad.",
+      "better": "The boundary between reality and illusion could become dangerously blurred, making individuals struggle to cope with real-world challenges.",
+      "note": "将简单因果升级为抽象概念+分词结构，展现学术写作风格。"
+     },
+     {
+      "plain": "We should use technology in a good way.",
+      "better": "Only by maintaining meaningful real-world connections can we harness the power of technology without sacrificing our humanity.",
+      "note": "使用only by倒装句+harness高级词汇，句式多样性加分显著。"
+     },
+     {
+      "plain": "Virtual world has some good things like online learning.",
+      "better": "Virtual technology brings remarkable benefits, such as remote collaboration and immersive education.",
+      "note": "用正式主语+具体并列宾语替换口语化表达，语域更得体。"
+     },
+     {
+      "plain": "People spend too much time online and this is a problem.",
+      "better": "Prolonged engagement in the virtual world is likely to weaken interpersonal relationships.",
+      "note": "名词化主语+be likely to预测句型，更符合议论文客观语气。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only by maintaining meaningful real-world connections can we harness the power of technology without sacrificing our humanity. —— 用only by引导的倒装句收束全文，既有力度又有深度，是高分作文的标志性结尾。",
+   "When people substitute online interactions for face-to-face communication, they may gradually lose the ability to interpret body language and emotional cues. —— 用substitute...for结构精准表达替代关系，搭配interpret body language具体化论证。",
+   "The virtual world often presents an idealized version of life that reality simply cannot match. —— 用an idealized version of life巧妙概括虚拟世界的本质特征，that从句形成现实与虚拟的鲜明对比。",
+   "The boundary between reality and illusion could become dangerously blurred. —— 短句有力，boundary/illusion/blurred三个词构成完整意象，适合背诵迁移到科技类话题。",
+   "The key lies in striking a proper balance between the virtual and the real. —— 经典辩证句式the key lies in...，strike a balance万能搭配，适用于任何需要权衡利弊的写作题。"
+  ]
+ }
+}

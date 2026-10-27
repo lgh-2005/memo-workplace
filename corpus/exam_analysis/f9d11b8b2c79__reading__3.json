@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "f9d11b8b2c79__reading__3",
+ "examId": "f9d11b8b2c79",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年考研英语真题",
+ "year": 2025,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:57:39.031Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 71523,
+ "usage": {
+  "prompt_tokens": 1750,
+  "completion_tokens": 4658,
+  "total_tokens": 6408,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1750,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4658,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1750,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "非法流媒体盗版对影视产业的经济冲击",
+  "gist": "文章围绕流媒体时代的数字盗版问题展开，指出合法流媒体平台持续亏损之际，非法盗版网站却凭借极低成本牟取暴利，每年给美国及全球经济造成数百亿美元损失。美国电影协会（MPA）联合执法力量打击盗版取得一定成效，但分析师认为盗版短期内不太可能出现下降趋势。",
+  "structure": [
+   "第1段：引出盗版问题——合法平台亏损，非法平台暴利",
+   "第2-3段：数据佐证盗版的高利润与巨大经济损失",
+   "第4-5段：MPA及ACE的反盗版行动与成效",
+   "第6段：专家预测盗版损失仍将持续扩大"
+  ],
+  "difficulty": "中等",
+  "translation": "自从在流媒体领域与奈飞公司展开正面较量以来，老牌好莱坞一直难以在流媒体业务中实现盈利。Disney+、Peacock和Paramount+等平台每年亏损数十亿美元，引发了人们对流媒体服务永远无法像有线电视那样盈利的担忧。但流媒体时代却意外造就了一批赢家：盗版者利用软件在数秒内从合法在线视频平台翻录电影或电视节目，并将这些内容托管在自己的非法平台上，每年通过广告和订阅获取约20亿美元的收入。\n\n由于没有视频制作成本，非法流媒体网站的利润率接近90%。这一数据来自美国电影协会（MPA），该行业组织代表好莱坞各大制片厂，正致力于打击近年来涌现的数以千计的非法平台。\n\n起初，Netflix等合法在线企业的兴起实际上帮助遏制了主要基于文件上传的数字盗版行为。但如今，涉及非法流媒体服务和文件共享的盗版行为每年给美国经济造成约300亿美元的收入损失和约25万个就业岗位的流失，这是美国商会全球创新政策中心的估算。全球影响约为每年710亿美元。\n\n\"那些窃取我们电影和电视节目、运营盗版网站的人，并不是什么家庭小作坊，\"MPA首席执行官查理·里夫金说，\"这是有组织犯罪。\"里夫金于2017年加入MPA，此前该组织在五年前未能在好莱坞和硅谷之间达成共识，以推动国会通过旨在遏止网络盗版的立法。2017年，该协会成立了创意与娱乐联盟（ACE），这是一个由约100名侦探组成的执法特别工作组，在全球各地协助当地执法部门逮捕流媒体盗版者。\n\nACE表示，在其努力下，北美非法流媒体服务的数量已从2018年的1400多个减少到126个，部分得益于MPA支持推动的2020年联邦法律，该法律将大规模传播受版权保护内容的行为定为严重犯罪。\n\n咨询公司Parks Associates预测，自2022年以来，美国合法流媒体服务因盗版造成的累计损失将在未来两年内达到1130亿美元。\"尽管人们对新兴的反制措施和最佳实践抱有一定乐观态度，认为盗版到2027年可能趋于平稳，但利益相关方对盗版何时可能开始下降尚未达成共识，\"分析师史蒂夫·霍利说。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But the age of streaming has been a boon for some unintended winners: pirates that use software to rip a film or television show in seconds from legitimate online video platforms and host the titles on their own, illegitimate services, which rake in about $2 billion annually from ads and subscriptions.",
+    "why": "第一段先指出合法流媒体平台每年亏损数十亿美元，随后笔锋一转，指出盗版者利用软件从合法平台翻录内容，在自己的非法网站上每年获取约20亿美元收入。盗版行为既造成了直接经济损失，又加剧了合法平台的盈利困境，这说明合法流媒体正面临着真实的威胁（a real threat），D项是对原文信息的准确概括。",
+    "traps": "A项\"从好莱坞汲取教训\"无中生有，原文说的是好莱坞在流媒体领域难以盈利，并非合法平台从好莱坞学到了什么；B项\"收入超过有线电视\"与原文相反，原文明确说这些服务可能永远不会像有线电视那样盈利（never be as profitable as cable once was）；C项\"不受广告商欢迎\"文中未提及，广告收入是盗版网站的收入来源，并非关于合法平台的广告商态度。",
+    "tip": "注意段落转折词 but 之后的核心信息，往往是出题重点。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Initially the rise of legitimate online businesses such as Netflix actually helped curb digital piracy, which had largely been based on file uploads.",
+    "why": "原文第三段明确指出，Netflix等合法在线企业的兴起起初\"确实帮助遏制了数字盗版（helped curb digital piracy）\"，而当时的盗版主要基于文件上传（file uploads）。curb意为\"抑制、遏制\"，即Netflix客观上在打击非法文件共享方面发挥了作用，A项\"在打击非法文件共享的斗争中发挥了作用\"是对原文的准确推断。",
+    "traps": "B项\"从与盗版的战争中获益\"属于曲解原文，原文说的是Netflix帮助遏制了盗版，而非从中获益；C项\"承诺成为美国的大型就业创造者\"无中生有，原文提到的25万个就业岗位是因盗版而流失的；D项\"曾与文件上传平台合作\"属于偷换概念，原文说盗版基于文件上传，并非Netflix与这类平台合作。",
+    "tip": "注意区分动作的主语和受益者，避免将因果关系混淆。"
+   },
+   {
+    "number": 33,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Rivkin joined the MPA in 2017 after the organization failed five years earlier to build consensus between Hollywood and Silicon Valley to win passage of legislation in Congress aimed at stopping online piracy.",
+    "why": "原文说MPA在五年前未能在好莱坞与硅谷之间\"达成共识（build consensus）\"以推动反盗版立法。build consensus between A and B 意为在A和B之间建立共识，未能达成共识意味着硅谷一方不配合、不合作。因此A项\"被硅谷拒绝合作\"是对这一失败的合理推断——MPA试图争取硅谷的支持但未能成功。",
+    "traps": "B项\"领导了一场全国性的反盗版抗议\"无中生有，原文提到的是国会立法和执法行动，并非抗议活动；C项\"被敦促组建执法特别工作组\"偷换因果，原文是MPA主动成立了ACE，并非被外部力量敦促；D项\"未能赢得地方当局的支持\"与原文矛盾，第五段ACE协助地方当局逮捕盗版者，说明获得了地方配合。",
+    "tip": "推断题需抓住原文隐含的因果关系，\"未能达成共识\"暗示对方未予配合。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "While there is some optimism that emerging countermeasures and best practices may see piracy begin to plateau by 2027, there is no consensus among stakeholders as to when it may begin to decline",
+    "why": "Hawley的原话指出，虽然有人乐观认为盗版到2027年可能\"趋于平稳（plateau）\"，但利益相关方对盗版\"何时可能开始下降（begin to decline）\"尚无共识。plateau仅意味着停止增长，而非减少；且对何时下降没有共识，说明短期内盗版不太可能减少。C项\"在近期内不太可能减少\"准确反映了Hawley的判断。",
+    "traps": "A项\"尽管有新立法也无法遏制\"过于绝对，原文承认反制措施可能使盗版趋于平稳，并非完全无法遏制；B项\"可能将压垮合法流媒体\"属于过度推断，原文只是预测损失数额，并未说合法平台会被压垮；D项\"被部分分析师低估\"在Hawley的话中没有依据，原文讨论的是盗版趋势而非是否被低估。",
+    "tip": "注意区分 plateau（趋于平稳）和 decline（下降）的语义差异，精准理解程度词。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "piracy involving illegal streaming services as well as file-sharing costs the US economy about $30 billion in lost revenue a year and some 250,000 jobs",
+    "why": "全文反复用具体数字强调非法流媒体的经济危害：盗版网站年入约20亿美元、利润率近90%；美国每年损失约300亿美元和25万个岗位；全球年损失约710亿美元；预计累计损失将达1130亿美元。从第一段到最后一段，经济损失数据贯穿始终，构成文章的核心论证线索。D项\"非法流媒体造成的经济危害\"是全文反复强调的主题。",
+    "traps": "A项\"协调反盗版行动的必要性\"只是文中部分段落的内容（如ACE的成立），并非全文主旨；B项\"侵犯版权的犯罪性质\"虽在第四段有所涉及（Rivkin称之为有组织犯罪），但只是局部信息；C项\"消除网络盗版的前景\"与文末Hawley的悲观判断矛盾，文章并未展望消除盗版的前景。",
+    "tip": "主旨题关注贯穿全文的高频信息和反复出现的数据论证方向。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "rip",
+    "cn": "v. 翻录，非法复制（数字内容）"
+   },
+   {
+    "w": "illegitimate",
+    "cn": "adj. 非法的，不正当的"
+   },
+   {
+    "w": "rake in",
+    "cn": "v. 大量赚取（钱财）"
+   },
+   {
+    "w": "curb",
+    "cn": "v. 抑制，遏制"
+   },
+   {
+    "w": "crack down",
+    "cn": "v. 严厉打击，取缔"
+   },
+   {
+    "w": "crop up",
+    "cn": "v. 突然出现，涌现"
+   },
+   {
+    "w": "consensus",
+    "cn": "n. 共识，一致意见"
+   },
+   {
+    "w": "boon",
+    "cn": "n. 福音，恩惠"
+   },
+   {
+    "w": "cumulative",
+    "cn": "adj. 累积的，渐增的"
+   },
+   {
+    "w": "countermeasure",
+    "cn": "n. 对策，反制措施"
+   },
+   {
+    "w": "plateau",
+    "cn": "v./n. 趋于平稳，进入停滞期"
+   },
+   {
+    "w": "enforcement",
+    "cn": "n. 执法，强制执行"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Ever since taking on Netflix Inc. at its own game, old Hollywood has struggled to turn a profit in streaming, with the likes of Disney+, Peacock and Paramount+ losing billions of dollars each year, sparking concerns that the services will never be as profitable as cable once was.",
+    "cn": "自从在流媒体领域与奈飞公司展开正面较量以来，老牌好莱坞一直难以在流媒体业务中实现盈利。Disney+、Peacock和Paramount+等平台每年亏损数十亿美元，引发了人们对这些服务永远无法像有线电视那样盈利的担忧。",
+    "note": "主句为 old Hollywood has struggled to turn a profit；with 引导伴随状语表结果；sparking 为现在分词引导结果状语；that 引导同位语从句修饰 concerns。"
+   },
+   {
+    "en": "Rivkin joined the MPA in 2017 after the organization failed five years earlier to build consensus between Hollywood and Silicon Valley to win passage of legislation in Congress aimed at stopping online piracy.",
+    "cn": "里夫金于2017年加入MPA，此前该组织在五年前未能在好莱坞和硅谷之间达成共识，以推动国会通过旨在遏止网络盗版的立法。",
+    "note": "after 引导时间状语从句；failed to build consensus 是核心动作；to win passage 为目的状语；aimed at 为后置定语修饰 legislation。"
+   },
+   {
+    "en": "While there is some optimism that emerging countermeasures and best practices may see piracy begin to plateau by 2027, there is no consensus among stakeholders as to when it may begin to decline",
+    "cn": "尽管人们对新兴的反制措施和最佳实践抱有一定乐观态度，认为盗版到2027年可能趋于平稳，但利益相关方对盗版何时可能开始下降尚未达成共识。",
+    "note": "While 引导让步状语从句；that 引导同位语从句修饰 optimism；as to when 引导介词宾语从句；前后形成让步与转折的逻辑关系。"
+   }
+  ]
+ }
+}

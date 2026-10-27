@@ -1,0 +1,169 @@
+{
+ "schemaVersion": 1,
+ "id": "2bf75860cf1c__part_b__all",
+ "examId": "2bf75860cf1c",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2011 年考研英语真题",
+ "year": 2011,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:25:29.452Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41516,
+ "usage": {
+  "prompt_tokens": 1423,
+  "completion_tokens": 2145,
+  "total_tokens": 3568,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1423,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2145,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1423,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国大学人文学科专业化改革困境",
+  "type": "段落排序题",
+  "strategy": [
+   "先通读各段，识别首段（引出话题）与尾段（总结/展望）",
+   "关注段首衔接词、指代词（this/such/these）及重复关键词",
+   "利用已知锚点段落E的前后语义，缩小待排段落范围",
+   "检验排好顺序后全文逻辑链是否通顺、指代是否成立"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "B",
+    "why": "G段末尾引出Menand教授及美国大学的\"奇怪现象\"，B段开头\"His concern is mainly with the humanities\"中His指代G段的Menand，具体交代其研究关注点——人文学科式微、通识教育争议，紧接引出话题。",
+    "traps": "A段虽涉及人文学科，但以professionalism开头，需先有E段铺垫；D段提到such courses须先有B段的general education作为指代对象。",
+    "tip": "His指代Menand，紧跟G段人物介绍。"
+   },
+   {
+    "number": 42,
+    "answer": "D",
+    "why": "B段末尾讨论大学难以就通识教育（general education）达成共识，D段开头\"One reason why it is hard to design and teach such courses\"中such courses回指B段的general education课程，承接其困难原因，并引出文理教育与职业教育分离的话题。",
+    "traps": "E段首句含\"this separation\"须紧跟D段的separation论述，故E在D之后而非此处插入；F为总结段，不宜出现在此。",
+    "tip": "such courses回指B段的general education。"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "why": "E段论述专业化使博士学位成为学术生涯的前提，末句谈学科对\"知识生产者的生产\"的垄断。A段首句\"No disciplines have seized on professionalism with as much enthusiasm as the humanities\"承接E段professionalism主题，将焦点收回人文学科，并以博士学制长达九年和高辍学率佐证。",
+    "traps": "C段以Equally unsurprisingly开头，须紧跟A段末句Not surprisingly构成语义衔接，不可直接置于E后；F为终结段，不合此位置。",
+    "tip": "A段professionalism衔接E段专业化论述。"
+   },
+   {
+    "number": 44,
+    "answer": "C",
+    "why": "A段末句\"Not surprisingly, up to half of all doctoral students in English drop out\"，C段开头\"Equally unsurprisingly, only about half end up with professorships\"以equally unsurprisingly形成语气平行，从辍学现象延伸到毕业后就业困境，论述职位不足与学科萎缩的恶性循环。",
+    "traps": "F段虽也涉及问题，但属总结性质；B、D已用，不在备选范围。",
+    "tip": "Equally unsurprisingly与A段Not surprisingly形成显性衔接。"
+   },
+   {
+    "number": 45,
+    "answer": "F",
+    "why": "C段末尾描述人文学科学生离开本专业的困境，F段以\"The key to reforming higher education, concludes Mr. Menand\"总结全文，呼应G段对该书的介绍，提出改革方向——改变知识生产者的培养方式，并以开放式结尾收束。producers of knowledge回扣E段同一表达。",
+    "traps": "其余选项（A/B/C/D）均已使用，且F段concludes一词明确标志其为终结段，逻辑上只能置于末尾。",
+    "tip": "concludes标志总结段，呼应G段开篇引出的全书主题。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "seized on",
+    "cn": "抓住，热衷于（动词短语）"
+   },
+   {
+    "w": "professionalism",
+    "cn": "专业化，职业主义（n.）"
+   },
+   {
+    "w": "canon",
+    "cn": "经典作品；准则（n.）"
+   },
+   {
+    "w": "grounding",
+    "cn": "基础训练，基本知识（n.）"
+   },
+   {
+    "w": "liberal-arts",
+    "cn": "博雅教育的，文理教育的（adj.）"
+   },
+   {
+    "w": "embarking on",
+    "cn": "着手，开始从事（动词短语）"
+   },
+   {
+    "w": "prerequisite",
+    "cn": "先决条件，前提（n.）"
+   },
+   {
+    "w": "transmissible",
+    "cn": "可传授的，可传递的（adj.）"
+   },
+   {
+    "w": "transferable",
+    "cn": "可转移的，可转用的（adj.）"
+   },
+   {
+    "w": "monopoly",
+    "cn": "垄断，独占（n.）"
+   },
+   {
+    "w": "exclusionary",
+    "cn": "排他的，排斥性的（adj.）"
+   },
+   {
+    "w": "holistic",
+    "cn": "整体的，全面的（adj.）"
+   },
+   {
+    "w": "fourfold",
+    "cn": "四倍地（adv.）/ 四倍的（adj.）"
+   },
+   {
+    "w": "took its toll",
+    "cn": "产生了负面影响（固定短语）"
+   },
+   {
+    "w": "detached",
+    "cn": "脱离的，超然的（adj.）"
+   }
+  ]
+ }
+}

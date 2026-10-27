@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "c0d61a2aca89__writing__all",
+ "examId": "c0d61a2aca89",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2021 年 12 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:39:14.920Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41449,
+ "usage": {
+  "prompt_tokens": 758,
+  "completion_tokens": 2896,
+  "total_tokens": 3654,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 758,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2896,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 758,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "针对中国父母过度保护子女的现象进行评论，分析其危害并提出应对措施。要求150-200词。",
+    "outline": [
+     "第一段：引出现象——中国部分家长过度保护子女，包办一切、不允许孩子自主探索，并简要点明该现象值得关注。",
+     "第二段：分析危害——过度保护导致孩子缺乏独立生活能力、抗挫能力差、自信心与创造力受损，形成过度依赖。",
+     "第三段：提出建议——家长应在保护与自由之间找到平衡；学校可开展家庭教育讲座；社会媒体应倡导理性的育儿观念。"
+    ],
+    "sample": "In contemporary China, an increasing number of parents tend to be excessively protective of their children. They arrange every aspect of their children's lives, from academic schedules to social activities, leaving little room for independent exploration. While such behavior stems from genuine love and concern, it may inadvertently hinder children's personal growth and development.\n\nThe consequences of overprotective parenting are far-reaching. Children raised in such environments often lack essential life skills, such as problem-solving and decision-making abilities. Moreover, they may struggle to cope with setbacks and challenges in adulthood, as they have never been given the opportunity to learn from their own mistakes. This excessive sheltering can also undermine children's self-confidence and creativity, ultimately making them overly dependent on their parents.\n\nTo address this issue, several measures should be taken. First, parents should consciously strike a balance between protection and freedom, allowing children to make age-appropriate decisions on their own. Second, schools could organize workshops and seminars to educate parents about the importance of fostering independence. Finally, the media should advocate a more rational parenting philosophy that encourages children to explore, experiment, and even fail, as these experiences are indispensable for their holistic development.",
+    "phrases": [
+     {
+      "en": "overprotective parenting",
+      "cn": "过度保护式教养；用作主题核心词，贯穿全文"
+     },
+     {
+      "en": "stem from genuine love and concern",
+      "cn": "源于真切的爱与关心；用于让步分析，体现辩证思维"
+     },
+     {
+      "en": "inadvertently hinder",
+      "cn": "无意中阻碍；体现'好心办坏事'的语义层次"
+     },
+     {
+      "en": "strike a balance between A and B",
+      "cn": "在A与B之间取得平衡；建议段高频句型"
+     },
+     {
+      "en": "cope with setbacks and challenges",
+      "cn": "应对挫折与挑战；搭配抗挫力话题"
+     },
+     {
+      "en": "undermine self-confidence and creativity",
+      "cn": "削弱自信心与创造力；动宾搭配精准"
+     },
+     {
+      "en": "age-appropriate decisions",
+      "cn": "与年龄相符的决定；体现教育学术语的专业性"
+     },
+     {
+      "en": "foster independence",
+      "cn": "培养独立性；教育类话题核心表达"
+     },
+     {
+      "en": "indispensable for holistic development",
+      "cn": "对全面发展不可或缺；适合用于结尾升华"
+     },
+     {
+      "en": "leave little room for",
+      "cn": "几乎不留余地给……；描述过度控制的经典表达"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只谈家庭教育泛泛而论，未紧扣'过度保护'这一核心现象",
+     "结构失衡：建议部分一笔带过，题目明确要求suggest measures，需充分展开",
+     "词汇重复：反复使用parents、children却不做同义替换（如offspring、youngsters）",
+     "逻辑断裂：危害与建议之间缺乏过渡，显得突兀",
+     "语法硬伤：主谓不一致（如children lacks）或时态混用，直接扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Many parents protect their children too much.",
+      "better": "An increasing number of parents tend to be excessively protective of their children.",
+      "note": "用tend to be + 形容词结构更正式，increasing number比many更具学术感"
+     },
+     {
+      "plain": "Children cannot solve problems by themselves.",
+      "better": "Children raised in such environments often lack essential problem-solving abilities.",
+      "note": "过去分词作后置定语+lack+复合名词，句式更紧凑高级"
+     },
+     {
+      "plain": "Parents should give children more freedom.",
+      "better": "Parents should consciously strike a balance between protection and freedom.",
+      "note": "strike a balance结构比简单give更体现辩证思维与用词深度"
+     },
+     {
+      "plain": "These experiences are important for children's growth.",
+      "better": "These experiences are indispensable for their holistic development.",
+      "note": "indispensable比important更精准有力，holistic体现全面发展理念"
+     },
+     {
+      "plain": "This will make children depend on their parents.",
+      "better": "This excessive sheltering can ultimately make them overly dependent on their parents.",
+      "note": "sheltering替代保护，加副词ultimately和overly增强表达力度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "While such behavior stems from genuine love and concern, it may inadvertently hinder children's personal growth and development. — 虽然这种行为源于真切的爱与关心，却可能无意中阻碍孩子的个人成长与发展。（让步+转折，展现辩证思维）",
+   "Children raised in such environments often lack essential life skills, such as problem-solving and decision-making abilities. — 在这样环境中长大的孩子往往缺乏基本的生活技能，如解决问题和做决定的能力。（过去分词后置定语+举例，结构紧凑）",
+   "Parents should consciously strike a balance between protection and freedom, allowing children to make age-appropriate decisions on their own. — 父母应有意识地在保护与自由之间取得平衡，允许孩子自主做出与年龄相符的决定。（strike a balance经典搭配+现在分词作状语）",
+   "The media should advocate a more rational parenting philosophy that encourages children to explore, experiment, and even fail. — 媒体应倡导更理性的育儿理念，鼓励孩子去探索、尝试、甚至失败。（三词并列递进，even fail点睛之笔）",
+   "These experiences are indispensable for their holistic development. — 这些经历对他们的全面发展不可或缺。（indispensable + holistic，结尾一句话升华全文主旨）"
+  ]
+ }
+}

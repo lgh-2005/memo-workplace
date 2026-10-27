@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "0d213278f813__reading__2",
+ "examId": "0d213278f813",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年考研英语真题",
+ "year": 2019,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:40:04.669Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61488,
+ "usage": {
+  "prompt_tokens": 1694,
+  "completion_tokens": 3722,
+  "total_tokens": 5416,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1694,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3722,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1694,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 26 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "高校\"成绩宽恕\"政策的成因分析",
+  "gist": "文章围绕高校GPA膨胀现象，重点剖析了\"成绩宽恕\"这一鲜为人知的政策。该政策允许学生重修低分课程并只计入最高成绩，最初旨在帮助大一新生适应大学学习，如今已扩展至几乎所有学生。作者从学生需求、学校财政、毕业率指标和消费者文化期望等多角度分析了该政策盛行的深层原因。",
+  "structure": [
+   "第1-2段：引出GPA膨胀现象，介绍\"成绩宽恕\"政策定义",
+   "第3段：追溯政策起源与发展，从仅限新生到普遍适用",
+   "第4段：校方解释政策目标——鼓励重修关键课程",
+   "第5段：揭示政策满足学校自身利益——财政与招生",
+   "第6段：总结政策本质——回应消费者期望，学校与学生利益一致"
+  ],
+  "difficulty": "中等",
+  "translation": "成绩膨胀——过去几十年中平均GPA（绩点）的逐渐上升——通常被视为高等教育消费化时代的产物，在这一时代中，学生被当作需要取悦的顾客。但另一个相关的力量——一项常常深藏在课程目录中的政策，叫作\"成绩宽恕\"——正在帮助推高GPA。\n\n成绩宽恕允许学生重修一门获得低分的课程，而在计算学生总GPA时，只计入最近一次或最高一次的成绩。\n\n近年来，随着各高校继续竭尽全力留住学生（并让他们继续缴纳学费）以及提高毕业率，这一鲜为人知的做法正在加速推广。几十年前这一做法刚开始时，通常仅限于大一新生，目的是给那些在过渡到大学课程时遇到困难的学生一个在第一年重修课程的机会。但如今，除了许多精英校园外，大多数高校都允许所有本科生甚至研究生获得低分宽恕。\n\n校方往往强调，成绩宽恕的目标与其说是关乎成绩本身，不如说是鼓励学生重修对其学位项目和毕业至关重要的课程，而不必承受巨大的处罚。俄亥俄州立大学教务长杰克·迈纳说：\"最终，我们看到学生取得了更大的成功，因为他们重修了课程，在后续课程中表现更好，或者掌握了使他们能够按时毕业的内容。\"\n\n话虽如此，成绩宽恕在某种程度上也满足了高校自身的需求。对于公立院校来说，州政府拨款有时在一定程度上与其在毕业率和学生留校率等指标上的表现挂钩——因此更好的成绩可以通过提升这些数字来意味着更多的资金。而任何提高GPA的举措都可能让学生——毕竟是他们在支付账单——觉得他们的学费花得更值，这也是高校关注的另一大问题。\n\n的确，成绩宽恕只不过是大学回应消费者对高等教育期望的又一种方式。既然学生和家长期望大学学位能带来一份工作，那么培养出尽可能合格——或至少看起来合格——的毕业生，就符合学校的最大利益。在这一点上，学生和学校的动机似乎是一致的。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Grade inflation – the gradual increase in average GPAs over the past few decades – is often considered a product of a consumer era in higher education, in which students are treated like customers to be pleased.",
+    "why": "原文第一句明确指出，成绩膨胀\"通常被认为是高等教育消费化时代的产物\"（a product of a consumer era），题干问的是\"commonly regarded as the cause\"，对应\"is often considered\"。D选项\"The influence of consumer culture\"（消费文化的影响）是对\"a consumer era in higher education\"的同义改写，完全吻合。",
+    "traps": "A项\"课程目录的变化\"——原文提到课程目录只是说成绩宽恕政策\"buried deep in course catalogs\"，与成绩膨胀的原因无关，属于张冠李戴。B项\"学生对GPA的漠不关心\"——原文未提及学生漠视GPA，属于无中生有。C项\"高校对GPA的忽视\"——原文恰恰说明高校非常关注GPA相关政策，与文意相反。",
+    "tip": "注意题干中\"commonly regarded\"对应原文\"is often considered\"，精准定位。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "When this practice first started decades ago, it was usually limited to freshmen, to give them a second chance to take a class in their first year if they struggled in their transition to college-level courses.",
+    "why": "原文第三段明确说该政策最初\"仅限于大一新生\"，目的是给那些\"在过渡到大学课程时遇到困难的学生第二次机会\"。A选项\"帮助大一新生适应大学学习\"精确概括了\"struggled in their transition to college-level courses\"的含义，是原文的同义转述。",
+    "traps": "B项\"维持毕业率\"——虽然第三段提到高校想提高毕业率，但这是政策扩展后的目的，不是\"original purpose\"，属于偷换时间。C项\"为毕业生迎接挑战性未来做准备\"——原文未涉及此意，属于无中生有。D项\"增加学费收入\"——学费收入虽在第三段括号中提及，但只是附带说明现状动机，并非最初目的，属于以偏概全。",
+    "tip": "注意\"original purpose\"限定时间范围，需定位到政策起源阶段的描述。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "For public institutions, state funds are sometimes tied partly to their success on metrics such as graduation rates and student retention – so better grades can, by boosting figures like those, mean more money.",
+    "why": "第五段指出，对公立院校而言，州政府拨款在一定程度上与毕业率和留校率挂钩，更好的成绩可以通过提升这些数字从而带来更多资金。A选项\"obtain more financial support\"（获得更多财政支持）是对\"mean more money\"和\"state funds\"的同义概括，逻辑链完整。",
+    "traps": "B项\"提高招生人数\"——第五段讨论的是留住已有学生（retention）和财政拨款，而非招收新生（enrollment），概念混淆。C项\"提升教学质量\"——段中完全未涉及教学质量问题，属于无中生有。D项\"满足地方政府需求\"——虽提到州政府拨款机制，但文章强调的是学校利用政策获取资金，而非以满足政府需求为目的，因果关系倒置。",
+    "tip": "区分\"留住学生\"（retention）与\"招收学生\"（enrollment）的概念差异。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "Since students and parents expect a college degree to lead to a job, it is in the best interest of a school to turn out graduates who are as qualified as possible – or at least appear to be. On this, students' and colleges' incentives seem to be aligned.",
+    "why": "上文说学生和家长期望学位带来工作，学校也想培养（至少看起来）合格的毕业生。\"On this\"指在这一点上，双方的\"incentives\"（动机）是一致的——学生想要高GPA以获得好工作，学校想要毕业生看起来合格。C选项\"to be identical with each other\"（彼此一致）准确表达了\"aligned\"在此语境中\"方向一致、目标趋同\"的含义。",
+    "traps": "A项\"相互抵消\"——counterbalance表示力量对冲，与上下文双方利益趋同的语境完全相反。B项\"相互补充\"——complement强调互补关系，即各自提供对方缺少的部分，而原文强调的是目标相同而非互补，语义偏差。D项\"相互矛盾\"——contradictory与aligned意思完全相反，属于反义干扰。",
+    "tip": "词义题需结合上下文语境推断，aligned本义为\"排列成一线\"，引申为\"一致\"。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "Grade forgiveness allows students to retake a course in which they received a low grade, and the most recent grade or the highest grade is the only one that counts in calculating a student's overall GPA.",
+    "why": "纵观全文，作者介绍成绩宽恕后，第三段分析其加速推广的原因（留住学生、提高毕业率），第四段引用校方解释（鼓励重修关键课程），第五段揭示深层原因（获取更多拨款、满足学生消费心理），第六段总结根本原因（回应消费者期望）。全文以分析该政策盛行背后的多重原因为主线，B选项\"analyzing the causes behind it\"最为准确。",
+    "traps": "A项\"评估可行性\"——文章并未讨论该政策是否可行，而是分析其为何存在并扩展，角度错误。C项\"比较不同观点\"——虽引用了校方观点，但文章整体并非以对比不同立场为结构，而是层层递进分析原因。D项\"列举长期影响\"——文章侧重原因分析，并未系统讨论该政策的长远影响。",
+    "tip": "主旨题需把握全文论证结构，辨别文章是在分析原因、评价效果还是比较观点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "grade forgiveness",
+    "cn": "成绩宽恕（名词短语），允许重修低分课程并只计最优成绩的政策"
+   },
+   {
+    "w": "inflation",
+    "cn": "膨胀；通货膨胀（n.）"
+   },
+   {
+    "w": "retention",
+    "cn": "保留；留校率（n.）"
+   },
+   {
+    "w": "incur",
+    "cn": "招致，引发（v.），常搭配penalty/cost"
+   },
+   {
+    "w": "registrar",
+    "cn": "教务长，注册主任（n.）"
+   },
+   {
+    "w": "metrics",
+    "cn": "衡量指标，度量标准（n.，复数）"
+   },
+   {
+    "w": "tuition",
+    "cn": "学费（n.）"
+   },
+   {
+    "w": "subsequent",
+    "cn": "随后的，后来的（adj.）"
+   },
+   {
+    "w": "utmost",
+    "cn": "最大限度的，极度的（adj./n.）"
+   },
+   {
+    "w": "incentive",
+    "cn": "动机，激励（n.）"
+   },
+   {
+    "w": "aligned",
+    "cn": "一致的，对齐的（adj.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The use of this little-known practice has accelerated in recent years, as colleges continue to do their utmost to keep students in school (and paying tuition) and improve their graduation rates.",
+    "cn": "近年来，随着各高校继续竭尽全力留住学生（并让他们继续缴纳学费）以及提高毕业率，这一鲜为人知的做法的使用正在加速推广。",
+    "note": "主句为\"The use...has accelerated\"，as引导原因状语从句，括号内\"and paying tuition\"是补充说明keep students in school的附带目的。"
+   },
+   {
+    "en": "For public institutions, state funds are sometimes tied partly to their success on metrics such as graduation rates and student retention – so better grades can, by boosting figures like those, mean more money.",
+    "cn": "对于公立院校来说，州政府拨款有时在一定程度上与其在毕业率和学生留校率等指标上的表现挂钩——因此更好的成绩可以通过提升这些数字从而意味着更多的资金。",
+    "note": "前半句为被动结构tied to，后半句用插入语by boosting figures like those隔开主语can和谓语mean，需跳读还原主干。"
+   },
+   {
+    "en": "Since students and parents expect a college degree to lead to a job, it is in the best interest of a school to turn out graduates who are as qualified as possible – or at least appear to be.",
+    "cn": "既然学生和家长期望大学学位能带来一份工作，那么培养出尽可能合格——或至少看起来合格——的毕业生，就符合学校的最大利益。",
+    "note": "Since引导原因状语从句，主句用it is in the best interest of...to do结构，破折号内容对qualified作让步补充，appear to be后省略qualified。"
+   }
+  ]
+ }
+}

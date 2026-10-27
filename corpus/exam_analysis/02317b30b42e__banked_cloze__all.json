@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "02317b30b42e__banked_cloze__all",
+ "examId": "02317b30b42e",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2026 年 6 月英语六级真题（第 2 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:07:29.243Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61442,
+ "usage": {
+  "prompt_tokens": 1376,
+  "completion_tokens": 3901,
+  "total_tokens": 5277,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1376,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3901,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1376,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "银行业投机博弈与金融危机成因",
+  "gist": "文章指出2008年全球金融危机除了常见的过度借贷与资产泡沫外，还有一个深层原因：银行业人士利用系统漏洞谋取私利。他们利用金融产品的故意复杂化、行为偏差、过度自信等特征进行博弈，且因相信政府会兜底而无视风险。文章最后指出，这种博弈几乎无法消除，因为没有政府能单独立法让银行家个人承担损失。",
+  "difficulty": "中等",
+  "translation": "大多数金融危机有很多共同之处：它们往往始于银行业，涉及过度借贷以及资产泡沫。2008年的全球性危机也不例外，其资产泡沫集中在美国房地产市场。但我的研究表明，这场危机还有另一个深层原因——银行业中的一些人在为自身经济利益操纵或\"博弈\"这个系统。\n\n这场博弈具有几个重要特征。首先是其核心金融产品的刻意复杂化。其次是渗透于银行业各个层级决策过程中的行为偏差。银行业往往吸引具有某些性格特征的人，包括那些过度自信和承担过度风险的人。\n\n这类人往往为了复杂而喜欢复杂，但他们通常并不完全理解这种复杂性对整个金融体系稳定性的影响。他们往往也不在乎——他们主要感兴趣的是通过博弈系统来最大化自己的奖金。\n\n下一个要素是风险。银行业中总有一些领域容易面临风险，但许多银行家已经开始觉得自己对其潜在影响免疫，因为他们想当然地认为，无论银行的行为多么鲁莽，政府总会出手纾困。\n\n银行业中的博弈行为似乎几乎不可能消除。唯一有效的终结措施是让银行家个人为损失承担责任，但从没有政府通过过这样的法律，而且任何单一政府也无法独自这样做，因为这会立即导致其整个国内银行业整体转移到另一个司法管辖区。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "correct": "global",
+    "why": "空格位于\"The ___ crisis of 2008\"中，需要一个形容词修饰crisis。2008年金融危机是全球性事件，global（全球的）在语义和搭配上完全吻合，\"the global crisis of 2008\"是常见表达。",
+    "traps": "fragile（脆弱的）语义不当，不用于修饰crisis表示\"某某危机\"；behavioural（行为的）搭配不合理，不能说\"行为危机\"。",
+    "tip": "利用常识判断：2008年危机的最大特征是全球性。"
+   },
+   {
+    "number": 27,
+    "answer": "O",
+    "correct": "underlying",
+    "why": "空格在\"had another ___ cause\"中，需要形容词修饰cause。上文已提到常见原因（过度借贷、资产泡沫），此处用another暗示还有更深层原因，underlying（深层的、根本的）完美契合\"underlying cause\"这一固定搭配。",
+    "traps": "global不能再用（已用于第26题），且\"全球原因\"语义不当；fragile修饰cause不合逻辑。",
+    "tip": "underlying cause是高频搭配，意为\"深层原因\"。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "behavioural",
+    "why": "空格在\"the ___ biases\"中，需要形容词修饰biases。behavioural biases（行为偏差）是行为经济学/行为金融学的专业术语，指人们在决策中系统性的非理性倾向，与后文描述的过度自信、过度冒险完全一致。",
+    "traps": "其他形容词如global、fragile均无法与biases构成合理的专业搭配；underlying biases虽语法可行但已用于27题且不如behavioural精准。",
+    "tip": "behavioural biases是行为金融学核心术语，需积累。"
+   },
+   {
+    "number": 29,
+    "answer": "N",
+    "correct": "traits",
+    "why": "空格在\"personality ___\"中，需要名词。personality traits（性格特征）是固定搭配，后文用including引出具体特征（过度自信、过度冒险），逻辑通顺。",
+    "traps": "implications（影响）与personality搭配不当；其他名词选项语义不符。",
+    "tip": "personality traits是心理学高频搭配，意为\"性格特征\"。"
+   },
+   {
+    "number": 30,
+    "answer": "E",
+    "correct": "implications",
+    "why": "空格在\"the ___ of that complexity for the stability\"中，需要名词。implications意为\"影响、含义\"，句意为他们不理解复杂性对金融体系稳定性的影响，上下文逻辑完整。介词for常与implications搭配表示\"对……的影响\"。",
+    "traps": "traits（特征）语义不合，不说\"复杂性的特征对稳定性\"；其余名词选项或已使用或不匹配。",
+    "tip": "implications for...是常见搭配，意为\"对……的影响/意义\"。"
+   },
+   {
+    "number": 31,
+    "answer": "F",
+    "correct": "maximise",
+    "why": "空格在\"to ___ their bonuses\"中，需要动词原形。上文说他们对博弈系统感兴趣，目的是让奖金最大化，maximise（最大化）语义完全吻合，且与前文\"financial gain\"呼应。",
+    "traps": "eliminate their bonuses（消除奖金）与语境相悖；presume无法接their bonuses作宾语。",
+    "tip": "maximise + 名词表示\"使……最大化\"，常见于经济类文章。"
+   },
+   {
+    "number": 32,
+    "answer": "J",
+    "correct": "prone",
+    "why": "空格在\"be ___ to risk\"中，需要形容词。be prone to是固定搭配，意为\"易于、倾向于\"，表示银行业某些部分总是容易面临风险，与后文\"but many bankers feel immune\"形成转折对比。",
+    "traps": "fragile to不是标准搭配（fragile不与to连用）；其余形容词选项无法与to risk构成合理搭配。",
+    "tip": "be prone to是固定搭配，意为\"易于……\"，常考。"
+   },
+   {
+    "number": 33,
+    "answer": "I",
+    "correct": "presume",
+    "why": "空格在\"they ___ that\"中，需要动词，后接that从句。presume意为\"推定、想当然地认为\"，表示银行家们自以为政府会兜底，带有\"没有充分根据却自信\"的语气，与recklessly形成讽刺对比。",
+    "traps": "eliminate不接that从句；maximise已用于31题且语义不符。",
+    "tip": "presume that表\"想当然地认为\"，语气比assume更强。"
+   },
+   {
+    "number": 34,
+    "answer": "B",
+    "correct": "eliminate",
+    "why": "空格在\"impossible to ___\"中，需要动词原形。eliminate意为\"消除、根除\"，表示银行业博弈几乎不可能被消除，与后文\"The only effective measure to end it\"逻辑衔接。",
+    "traps": "maximise已用于31题；presume已用于33题且语义不通（不可能去推定？不合逻辑）。",
+    "tip": "impossible to eliminate表示\"几乎无法根除\"，为常见表达。"
+   },
+   {
+    "number": 35,
+    "answer": "H",
+    "correct": "personally",
+    "why": "空格在\"make bankers ___ liable\"中，位于副词位置修饰形容词liable。personally liable意为\"个人承担法律责任\"，是法律/金融领域固定表达，强调让银行家以个人身份为损失负责。",
+    "traps": "此处需要副词而非形容词，排除所有剩余形容词选项；其他副词选项在候选词中不存在或已被使用。",
+    "tip": "personally liable是法律术语，意为\"个人承担责任\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "underlying",
+    "cn": "adj. 深层的，根本的，潜在的"
+   },
+   {
+    "w": "behavioural",
+    "cn": "adj. 行为的，行为方面的"
+   },
+   {
+    "w": "traits",
+    "cn": "n. 特征，特点，特性"
+   },
+   {
+    "w": "implications",
+    "cn": "n. 影响，含义，可能的后果（常用复数）"
+   },
+   {
+    "w": "maximise",
+    "cn": "v. 使最大化，充分利用"
+   },
+   {
+    "w": "prone",
+    "cn": "adj. 易于……的，有……倾向的（常与to搭配）"
+   },
+   {
+    "w": "presume",
+    "cn": "v. 推定，假定，想当然地认为"
+   },
+   {
+    "w": "eliminate",
+    "cn": "v. 消除，根除，淘汰"
+   },
+   {
+    "w": "permeate",
+    "cn": "v. 渗透，弥漫，遍布"
+   },
+   {
+    "w": "bail out",
+    "cn": "v. 紧急救助，纾困（尤指政府对金融机构）"
+   },
+   {
+    "w": "jurisdiction",
+    "cn": "n. 司法管辖区，管辖权"
+   },
+   {
+    "w": "recklessly",
+    "cn": "adv. 鲁莽地，不计后果地"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性（名词/动词/形容词/副词）分类。",
+   "第二步：根据空格前后的语法标志（冠词、介词、be动词等）判断所需词性，缩小选项范围。",
+   "第三步：利用固定搭配优先锁定答案，如be prone to、personality traits、behavioural biases等。",
+   "第四步：结合上下文逻辑（因果、转折、并列）验证语义是否通顺，排除语义不当的干扰项。",
+   "第五步：已选词不复用，最后通读检查所有答案是否在词性和语义上均无矛盾。"
+  ]
+ }
+}

@@ -1,0 +1,239 @@
+{
+ "schemaVersion": 1,
+ "id": "5aeb1eafddf2__long_match__all",
+ "examId": "5aeb1eafddf2",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2020 年 9 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:32:34.998Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31228,
+ "usage": {
+  "prompt_tokens": 963,
+  "completion_tokens": 1805,
+  "total_tokens": 2768,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 963,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1805,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 963,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "远程医疗的发展、监管与争议",
+  "strategy": [
+   "先通读10条陈述句，提炼各句独有的关键名词、数据或特征词",
+   "按关键词（如telemedicine、employers、insurers、states、licenses）在原文各段快速扫读定位",
+   "注意同义替换：如overwhelming majority↔绝大多数、duly paid↔获得适当报酬、reluctant↔不愿意等",
+   "优先匹配含具体数据、专有名词或极端表述的陈述句，再处理主题相近的难题",
+   "若两段主题接近，通过细节差异（如主语不同、态度词不同）二次甄别"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "绝大多数家庭医生愿意使用远程医疗，前提是他们能获得合理报酬。",
+    "keywords": [
+     "overwhelming majority",
+     "family physicians",
+     "telemedicine",
+     "duly paid"
+    ],
+    "paraphrase": "原文很可能用vast majority或极高百分比替换overwhelming majority，用appropriately compensated或properly reimbursed替换duly paid，核心逻辑为\"报酬到位则愿意采用\"。",
+    "tip": "定位family physicians与paid/reimbursed共现段落即可锁定D段。"
+   },
+   {
+    "number": 37,
+    "answer": "H",
+    "cn": "许多雇主渴望将远程医疗服务作为一项福利提供给员工，因为它十分便捷。",
+    "keywords": [
+     "employers",
+     "benefit",
+     "employees",
+     "convenience"
+    ],
+    "paraphrase": "原文可能用companies/businesses替换employers，用perk/offering替换benefit，用ease of access替换convenience，强调雇主看重其便利性。",
+    "tip": "扫读employers/companies与employee benefit的搭配即可定位H段。"
+   },
+   {
+    "number": 38,
+    "answer": "E",
+    "cn": "不同州对远程医疗有着明显不同的监管规定。",
+    "keywords": [
+     "different states",
+     "markedly different",
+     "regulations"
+    ],
+    "paraphrase": "原文可能用vary significantly/widely替换markedly different，用rules/laws/policies替换regulations，描述各州法规差异大。",
+    "tip": "聚焦states与regulations/rules的差异性表述定位E段。"
+   },
+   {
+    "number": 39,
+    "answer": "B",
+    "cn": "借助远程医疗，缺乏专业医疗服务的地区的患者能够获得更好的医疗照护。",
+    "keywords": [
+     "patients",
+     "regions short of",
+     "professional medical service",
+     "better medical care"
+    ],
+    "paraphrase": "原文可能用underserved/rural areas替换regions short of professional medical service，用improved access to care替换able to receive better medical care。",
+    "tip": "定位underserved areas或rural等表示医疗资源匮乏地区的词汇即可锁定B段。"
+   },
+   {
+    "number": 40,
+    "answer": "K",
+    "cn": "与雇主和健康计划不同，保险公司一直对支付某些远程医疗服务的费用相当不情愿。",
+    "keywords": [
+     "insurers",
+     "reluctant",
+     "pay",
+     "unlike employers"
+    ],
+    "paraphrase": "原文可能用insurance companies替换insurers，用hesitant/unwilling替换reluctant，并通过对比employers和health plans来突出保险公司态度消极。",
+    "tip": "抓住insurers与reluctant/hesitant等否定态度词的共现即可定位K段。"
+   },
+   {
+    "number": 41,
+    "answer": "O",
+    "cn": "一些远程医疗的支持者希望各州能互相承认对方的行医执照为有效。",
+    "keywords": [
+     "supporters",
+     "states",
+     "medical practice licenses",
+     "valid"
+    ],
+    "paraphrase": "原文可能用accept/recognize each other's licensure替换accept each other's licenses as valid，用advocates/proponents替换supporters，涉及跨州执照互认议题。",
+    "tip": "关注license/licensure与reciprocity/mutual recognition等词定位O段。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "cn": "远程医疗服务增长最快的领域是针对较轻微的健康问题。",
+    "keywords": [
+     "fastest growing",
+     "telemedicine",
+     "lesser health problems"
+    ],
+    "paraphrase": "原文可能用minor ailments/non-urgent conditions替换lesser health problems，用most rapidly expanding替换fastest growing，描述轻症问诊增速领先。",
+    "tip": "定位fastest growing/most rapid growth与minor/less serious conditions的搭配锁定G段。"
+   },
+   {
+    "number": 43,
+    "answer": "F",
+    "cn": "随着远程医疗的迅速普及，一些反对者质疑其服务质量能否得到保障。",
+    "keywords": [
+     "spreads quickly",
+     "opponents",
+     "service quality",
+     "guaranteed"
+    ],
+    "paraphrase": "原文可能用critics/skeptics替换opponents，用quality of care/standards替换service quality，用ensured/maintained替换guaranteed，表达对质量的担忧。",
+    "tip": "聚焦critics/skeptics与quality concerns共现即可定位F段。"
+   },
+   {
+    "number": 44,
+    "answer": "I",
+    "cn": "研究人员假扮成寻求远程医疗帮助的患者，所获得的结果令人不安。",
+    "keywords": [
+     "researchers",
+     "pretended to be patients",
+     "telemedicine providers",
+     "disturbing"
+    ],
+    "paraphrase": "原文可能用posed as patients/secret shoppers替换pretended to be patients，用troubling/alarming替换disturbing，描述暗访调查结果不佳。",
+    "tip": "抓住researchers posed as patients或undercover/secret shopper等实验类描述即可锁定I段。"
+   },
+   {
+    "number": 45,
+    "answer": "N",
+    "cn": "一些人认为各州医疗服务法规不一致这一事实阻碍了远程医疗的发展。",
+    "keywords": [
+     "different regulations",
+     "hinders",
+     "development",
+     "telemedicine"
+    ],
+    "paraphrase": "原文可能用impedes/hampers/obstacles替换hinders，用patchwork of state regulations替换different states have different regulations，强调法规碎片化阻碍发展。",
+    "tip": "注意区分E段（描述差异事实）与N段（论证差异阻碍发展），通过hinder/impede等负面影响词锁定N段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "overwhelming majority",
+    "cn": "压倒性多数（名词短语）"
+   },
+   {
+    "w": "duly",
+    "cn": "适当地，正当地（副词）"
+   },
+   {
+    "w": "telemedicine",
+    "cn": "远程医疗（名词）"
+   },
+   {
+    "w": "markedly",
+    "cn": "显著地，明显地（副词）"
+   },
+   {
+    "w": "reluctant",
+    "cn": "不情愿的，勉强的（形容词）"
+   },
+   {
+    "w": "hinder",
+    "cn": "阻碍，妨碍（动词）"
+   },
+   {
+    "w": "disturbing",
+    "cn": "令人不安的，令人担忧的（形容词）"
+   },
+   {
+    "w": "reciprocity",
+    "cn": "互惠，相互性（名词；常见于跨州执照互认语境）"
+   }
+  ]
+ }
+}

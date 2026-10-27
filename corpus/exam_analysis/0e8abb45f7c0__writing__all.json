@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "0e8abb45f7c0__writing__all",
+ "examId": "0e8abb45f7c0",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年 12 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:40:00.253Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44539,
+ "usage": {
+  "prompt_tokens": 728,
+  "completion_tokens": 2833,
+  "total_tokens": 3561,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 728,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2833,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 728,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，以指定首句开头，围绕信息技术在教育中的应用展开论述，需陈述观点、给出理由或举例，字数150-200词。",
+    "outline": [
+     "以题目给定首句引入话题，指出信息技术深刻变革了高等教育的面貌，带来前所未有的学习机遇。",
+     "从两到三个角度展开论证：在线平台打破时空限制、人工智能实现个性化学习、丰富多媒体资源提升效率等；同时可辩证提及过度依赖技术的隐患，强调应合理利用。",
+     "总结全文，重申信息技术为大学生学习赋能，呼吁学生善用科技、释放学术潜能。"
+    ],
+    "sample": "With the application of information technology in education, college students can now learn in more diverse and efficient ways. This technological revolution has fundamentally transformed the landscape of higher education, bringing unprecedented opportunities for learners.\n\nTo begin with, online learning platforms such as MOOCs and virtual classrooms have broken the barriers of time and space, enabling students to access world-class courses from prestigious universities around the globe. Furthermore, artificial intelligence-powered tools can tailor personalized learning paths based on individual progress, thereby significantly enhancing study efficiency. For instance, intelligent tutoring systems are able to identify a student's weak areas and recommend targeted exercises accordingly.\n\nHowever, it is worth noting that technology is a double-edged sword. Excessive reliance on digital devices may lead to diminished attention spans and reduced face-to-face interaction among peers. Therefore, students should strike a balance between online and offline learning to maximize the benefits of information technology.\n\nIn conclusion, technology has undeniably enriched the educational experience of college students. Only by leveraging these tools wisely can they truly unlock their full academic potential.",
+    "phrases": [
+     {
+      "en": "transform the landscape of ...",
+      "cn": "改变……的面貌/格局；常用于描述深刻变革，搭配higher education等宏观话题。"
+     },
+     {
+      "en": "break the barriers of time and space",
+      "cn": "打破时空限制；用于论证在线学习的优势，表达简洁有力。"
+     },
+     {
+      "en": "tailor personalized learning paths",
+      "cn": "量身定制个性化学习路径；体现AI赋能教育的核心概念。"
+     },
+     {
+      "en": "thereby significantly enhancing ...",
+      "cn": "从而显著提升……；thereby引导结果状语，使因果关系更紧凑。"
+     },
+     {
+      "en": "a double-edged sword",
+      "cn": "一把双刃剑；辩证论述经典表达，适合引出让步段。"
+     },
+     {
+      "en": "strike a balance between A and B",
+      "cn": "在A与B之间取得平衡；议论文中提出折中建议的高频搭配。"
+     },
+     {
+      "en": "excessive reliance on ...",
+      "cn": "对……的过度依赖；用于论述弊端，比depend on too much更正式。"
+     },
+     {
+      "en": "Only by doing ... can sb. ...",
+      "cn": "只有通过……才能……；倒装句型，适合放在结尾段提升句式分数。"
+     },
+     {
+      "en": "unprecedented opportunities",
+      "cn": "前所未有的机遇；形容词unprecedented体现词汇高级感。"
+     },
+     {
+      "en": "unlock one's full academic potential",
+      "cn": "释放某人全部学术潜能；结尾升华常用表达，比improve grades更地道。"
+     }
+    ],
+    "pitfalls": [
+     "遗漏题目指定首句或擅自修改首句措辞，直接扣分。",
+     "全篇只谈好处不辩证分析，论证单薄，难获高分。",
+     "中式英语频出，如learn knowledge应改为acquire knowledge。",
+     "段落无主题句，观点散乱，阅卷时逻辑分大幅降低。",
+     "词数不足150或超过200，均可能被扣分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Students can study at any time and any place.",
+      "better": "Online platforms have broken the barriers of time and space, enabling students to access courses at their convenience.",
+      "note": "用具体主语加分词状语替代口语化表述，信息量更大且句式更丰富。"
+     },
+     {
+      "plain": "AI can help students learn better.",
+      "better": "AI-powered tools can tailor personalized learning paths based on individual progress, thereby significantly enhancing study efficiency.",
+      "note": "用具体动词tailor和结果状语thereby替代模糊的help … better，论证更有说服力。"
+     },
+     {
+      "plain": "So students should use technology in a good way.",
+      "better": "Only by leveraging these tools wisely can students truly unlock their full academic potential.",
+      "note": "倒装句式+高级动词leveraging/unlock，结尾更有力且展示语法功底。"
+     },
+     {
+      "plain": "Technology has good and bad sides.",
+      "better": "It is worth noting that technology is a double-edged sword.",
+      "note": "it is worth noting引出让步，double-edged sword形象生动，比good and bad高级。"
+     },
+     {
+      "plain": "Many students use the Internet to take online courses.",
+      "better": "MOOCs and virtual classrooms have enabled students to access world-class courses from prestigious universities around the globe.",
+      "note": "用具体名词MOOCs和prestigious universities充实细节，避免空泛论述。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "This technological revolution has fundamentally transformed the landscape of higher education, bringing unprecedented opportunities for learners. —— 信息技术从根本上改变了高等教育的面貌，为学习者带来前所未有的机遇。（transform the landscape of高度概括变革，分词状语使长句流畅。）",
+   "Online learning platforms have broken the barriers of time and space, enabling students to access world-class courses from prestigious universities around the globe. —— 在线学习平台打破了时空壁垒，使学生得以接触全球名校的顶级课程。（enabling引导结果状语，逻辑衔接紧密。）",
+   "AI-powered tools can tailor personalized learning paths based on individual progress, thereby significantly enhancing study efficiency. —— 人工智能工具能根据个人进度量身定制学习路径，从而显著提升学习效率。（tailor一词精准体现个性化。）",
+   "Students should strike a balance between online and offline learning to maximize the benefits of information technology. —— 学生应在线上与线下学习之间取得平衡，以最大化信息技术的效益。（strike a balance为六级高频亮点搭配。）",
+   "Only by leveraging these tools wisely can students truly unlock their full academic potential. —— 唯有善用这些工具，学生才能真正释放全部学术潜能。（Only by...can...倒装句收尾有力，是阅卷加分项。）"
+  ]
+ }
+}

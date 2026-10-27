@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "384e000d6fc4__banked_cloze__all",
+ "examId": "384e000d6fc4",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2016 年 6 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:08:07.610Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 69977,
+ "usage": {
+  "prompt_tokens": 1340,
+  "completion_tokens": 4264,
+  "total_tokens": 5604,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1340,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4264,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1340,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "态度的三要素及其相互作用",
+  "gist": "文章以轮滑和吃披萨为例，介绍了态度的三个组成部分——情感成分、认知成分和行为成分，并指出三者并非总是协调一致，当它们发生冲突时，行为取决于哪个成分在当时更占优势。",
+  "difficulty": "中等",
+  "translation": "假设你热爱轮滑。光是想到穿上（strapping）轮滑鞋就能让你面带微笑。你也知道轮滑是极好的运动方式。你对它持有一种积极的（positive）态度。\n\n这段关于轮滑的描述说明了（illustrates）态度的三个组成部分：情感、认知和行为。你热爱这项活动，它充满乐趣。这些感受突显了（highlight）情感或情绪成分；它们是态度中的重要因素。我们对事物所拥有的知识构成了态度的认知成分。你了解这项活动能带来的健康益处（benefits）。最后，态度还有行为成分。我们的态度促使（prompt）我们走出家门去享受轮滑。\n\n现在，我们不想给你留下这样的印象（impression），认为这三个成分总是完美地（perfectly）协同工作。事实并非如此；有时它们会发生冲突。例如，假设你喜欢披萨（情感成分）；然而你胆固醇偏高，并且知道（认知成分）吃披萨可能对健康不利。你的态度会导致怎样的行为——是吃披萨还是避开（avoiding）它？答案取决于哪个成分恰好更强。如果你在午餐时间走过一家披萨店，你的情绪和感受可能会强过你对\"披萨可能不是最健康食物\"的认知。在那种情况下，你午餐就吃了披萨。然而，如果你在家中试图决定去哪里吃晚饭，认知成分可能会占上风（prevail），于是你决定去一个能吃到更健康餐食的地方。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "N",
+    "correct": "strapping",
+    "why": "此处需要动名词（介词 of 后接 -ing 形式）。语境是\"想到穿上轮滑鞋\"，strap on 意为\"绑上、穿上\"，strapping on your roller-skates 完美契合语境和语法。",
+    "traps": "avoiding（意为\"避开\"，语义与下文\"带来微笑\"矛盾）等其他 -ing 词形不构成与 on 的搭配，也不符合\"穿戴\"的语境。",
+    "tip": "注意介词 of 后接动名词，且 strap on 为固定搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "I",
+    "correct": "positive",
+    "why": "空格位于冠词 a 与名词 attitude 之间，需要形容词。上文提到\"你喜欢轮滑、它是极好的锻炼\"，态度显然是积极的，positive attitude 是常见搭配。",
+    "traps": "选项池中其他形容词或词性不匹配该位置；且只有 positive 能表达上文所述的喜爱、肯定之意。",
+    "tip": "冠词+___+名词结构锁定形容词，再由语义选 positive。"
+   },
+   {
+    "number": 28,
+    "answer": "D",
+    "correct": "illustrates",
+    "why": "主语 This description 是单数第三人称，谓语需用第三人称单数动词。illustrate 意为\"说明、阐释\"，描述用来说明态度的三个成分，逻辑通顺。",
+    "traps": "highlight 虽也是动词原形，但此处主语为单数需加 -s；highlights 不在选项中，且 illustrate 比 highlight 更侧重\"举例说明\"，更贴合语境。",
+    "tip": "主谓一致锁定带 -s 的动词，illustrates 表\"阐释\"。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "correct": "highlight",
+    "why": "主语 These feelings 为复数，需动词原形。highlight 意为\"突出、凸显\"，\"这些感受凸显了情感成分\"在逻辑上合理。此处不需要第三人称单数 -s。",
+    "traps": "illustrates 已用于第 28 题且为单数形式，此处主语为复数不可复用；benefits 作动词时语义不符。",
+    "tip": "复数主语匹配动词原形 highlight，意为\"突出\"。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "correct": "benefits",
+    "why": "空格位于 health 之后、定语从句之前，需要名词。health benefits 是常见搭配，意为\"健康益处\"，契合\"你了解这项活动带来的健康好处\"。",
+    "traps": "impression 虽为名词但搭配 health 不自然；其他选项词性不符合名词要求。",
+    "tip": "health + 名词搭配，benefits（益处）为高频考点。"
+   },
+   {
+    "number": 31,
+    "answer": "L",
+    "correct": "prompt",
+    "why": "Our attitudes 为主语，空格处需谓语动词原形（复数主语）。prompt sb. to do sth. 意为\"促使某人做某事\"，\"态度促使我们出门轮滑\"逻辑通顺。",
+    "traps": "highlight、prevail 虽也可做动词但不接 sb. to do sth. 结构；avoid 语义与上下文矛盾。",
+    "tip": "prompt sb. to do sth.（促使某人做某事）为固定搭配。"
+   },
+   {
+    "number": 32,
+    "answer": "E",
+    "correct": "impression",
+    "why": "空格位于定冠词 the 之后，需名词。leave sb. with the impression that... 是固定表达，意为\"给某人留下……的印象\"。",
+    "traps": "benefits 虽为名词但不能和 leave...with the... that 搭配形成固定表达；其他选项词性不合。",
+    "tip": "leave sb. with the impression that... 是固定句型。"
+   },
+   {
+    "number": 33,
+    "answer": "H",
+    "correct": "perfectly",
+    "why": "空格修饰动词短语 work together，需副词。perfectly 意为\"完美地\"，\"完美地协同工作\"逻辑通顺，且下文 They don't 做出否定照应。",
+    "traps": "选项池中无其他副词能修饰 work together 且语义恰当；形容词或名词不能修饰动词短语。",
+    "tip": "修饰动词短语需副词，perfectly 符合语义。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "correct": "avoiding",
+    "why": "空格与前面 eating pizza 构成 or 并列结构，需要动名词形式。avoiding 意为\"避开\"，与 eating 形成对比选择，语义完美对应。",
+    "traps": "其他 -ing 形式的词（如 strapping）语义不通；非 -ing 形式的词不能与 eating 并列。",
+    "tip": "or 并列结构要求词性一致，eating 对应 avoiding。"
+   },
+   {
+    "number": 35,
+    "answer": "J",
+    "correct": "prevail",
+    "why": "空格位于情态动词 may 之后，需动词原形。prevail 意为\"占上风、胜出\"，表示认知成分在此情境下占据主导地位，与上下文\"决定吃更健康的饭\"逻辑一致。",
+    "traps": "prompt 虽为动词原形但已用于第 31 题，且此处无宾语不适合 prompt sb.；highlight 语义偏\"强调\"而非\"占优\"。",
+    "tip": "may + 动词原形，prevail 表\"占上风\"是核心考点词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "strapping",
+    "cn": "v. 用带子绑紧；穿戴（strap on 穿上）"
+   },
+   {
+    "w": "illustrate",
+    "cn": "v. 说明，阐释，举例证明"
+   },
+   {
+    "w": "highlight",
+    "cn": "v. 突出，强调，使醒目"
+   },
+   {
+    "w": "prompt",
+    "cn": "v. 促使，推动（prompt sb. to do sth.）"
+   },
+   {
+    "w": "prevail",
+    "cn": "v. 占上风，盛行，流行"
+   },
+   {
+    "w": "impression",
+    "cn": "n. 印象，感觉（leave an impression 留下印象）"
+   },
+   {
+    "w": "affective",
+    "cn": "adj. 情感的，表达感情的"
+   },
+   {
+    "w": "cognition",
+    "cn": "n. 认知，认识"
+   },
+   {
+    "w": "cholesterol",
+    "cn": "n. 胆固醇"
+   },
+   {
+    "w": "constitute",
+    "cn": "v. 构成，组成"
+   },
+   {
+    "w": "ingredient",
+    "cn": "n. 因素，成分；（烹饪）原料"
+   },
+   {
+    "w": "component",
+    "cn": "n. 成分，组成部分；adj. 组成的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，掌握主旨——态度三要素（情感、认知、行为）及其冲突。",
+   "第二步：将 15 个候选词按词性分组（名词/动词/形容词/副词），大幅缩小每空候选范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、主谓一致、并列结构）锁定所需词性与形态。",
+   "第四步：代入候选词检验语义是否与上下文逻辑一致，优先使用固定搭配（如 leave...with the impression, prompt sb. to do）。",
+   "第五步：已选词不可重复使用，每选定一词即从候选池中划去，降低后续干扰。"
+  ]
+ }
+}

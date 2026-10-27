@@ -1,0 +1,158 @@
+{
+ "schemaVersion": 1,
+ "id": "0d213278f813__part_b__all",
+ "examId": "0d213278f813",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2019 年考研英语真题",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:40:48.187Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43516,
+ "usage": {
+  "prompt_tokens": 1390,
+  "completion_tokens": 2001,
+  "total_tokens": 3391,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1390,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2001,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1390,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "重新认识争论的意义与正确方式",
+  "type": "段落排序题",
+  "strategy": [
+   "先通读各段，识别首段（引出话题）和尾段（总结升华）标志词",
+   "关注段首衔接词与指示代词（these views, this, a better way等）确定前后逻辑",
+   "追踪核心概念链：fights/competitions → undermine reason → a better way → evaluation/humility → practical steps → redefine winning",
+   "利用题目给定的固定位置段落F和C作为锚点，向前后推导邻接段",
+   "验证全文论证递进是否通顺：提出错误观点→分析危害→正确做法→注意事项→实践建议→总结意义"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "E",
+    "why": "E段引用Carnegie名言引出\"回避争论\"这一普遍观点，并指出该观点是错误的(mistaken view)，为全文讨论设置话题起点，具备典型首段特征（引述权威+提出问题）。后续D段以Carnegie would be right if…直接承接该人物与观点。",
+    "traps": "D段以Carnegie开头看似可作首段，但其首句Carnegie would be right if…是对E段观点的条件性回应，属承接而非独立开篇；G段a better way属转折段，不适合放在篇首。",
+    "tip": "Carnegie名言+mistaken view是典型的引入话题首段标志。"
+   },
+   {
+    "number": 42,
+    "answer": "D",
+    "why": "D段首句Carnegie would be right if arguments were fights直接回应E段中Carnegie的观点，用fights和tennis games两个比喻具体阐释人们对争论的错误认知。段末提到avoid arguments呼应E段的avoid it，逻辑紧密衔接。且D段末尾的fights/competition概念为固定段F段首句These views of arguments提供了明确指代对象。",
+    "traps": "F段These views需要前文已出现具体views作指代对象，不能直接跟在E后面，因为E只笼统说mistaken view，而D才具体展开fights和competitions两种view。",
+    "tip": "These views of arguments(F段)精确回指D段的fights和competitions两种观点。"
+   },
+   {
+    "number": 43,
+    "answer": "G",
+    "why": "F段末尾指出错误做法can help you win – in one way，暗示还有另一种赢法。G段首句There is a better way to win arguments以a better way形成鲜明转折，承接F段的in one way，开启正面论述。G段用最低工资辩论的正反例展示理性争论的好处。",
+    "traps": "B段虽也涉及正面建议，但其首句many discussions are not so successful是对前文成功案例的让步转折，须在G段之后；A段These tools指代前文具体方法，放此处过早。",
+    "tip": "F段in one way与G段a better way构成一组对比衔接。"
+   },
+   {
+    "number": 44,
+    "answer": "B",
+    "why": "G段以最低工资为例展示了成功的理性讨论，B段首句Of course, many discussions are not so successful以让步转折承接G段的成功案例，随后强调评估论证的标准和谦逊态度(humility)，为后续C段的具体实践步骤做铺垫。B段末尾accept reasons on the opposite side与C段listen carefully to their replies形成语义衔接。",
+    "traps": "A段讨论重新定义winning，是全文总结升华段，不适合放在C段（实践建议）之前；将A放此处会导致论证高潮提前出现，后文无法再递进。",
+    "tip": "Of course让步转折标志词承接G段的理想化讨论场景。"
+   },
+   {
+    "number": 45,
+    "answer": "A",
+    "why": "C段给出具体行动建议后，A段以These tools回指C段所列方法，对全文进行总结升华：重新定义win an argument的含义——从击败对手转向相互理解与尊重。段末change the very nature of what it means to win收束全文主旨，具备典型尾段特征。",
+    "traps": "其余选项均已使用。从内容看，B段的humility和评估标准属于过程性建议，不适合做结尾；G段的具体案例也不具备总结功能。A段的readjust our view呼应E段的mistaken view，首尾照应。",
+    "tip": "These tools回指前文方法，readjust our view首尾呼应E段mistaken view。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "aversion",
+    "cn": "n. 厌恶，反感"
+   },
+   {
+    "w": "profound",
+    "cn": "adj. 深远的，深刻的"
+   },
+   {
+    "w": "dismal",
+    "cn": "adj. 令人沮丧的，惨淡的"
+   },
+   {
+    "w": "undermine",
+    "cn": "v. 破坏，削弱"
+   },
+   {
+    "w": "charitably",
+    "cn": "adv. 宽容地，善意地"
+   },
+   {
+    "w": "impartially",
+    "cn": "adv. 公正地，不偏不倚地"
+   },
+   {
+    "w": "humility",
+    "cn": "n. 谦逊，谦卑"
+   },
+   {
+    "w": "formulate",
+    "cn": "v. 制定，明确表述"
+   },
+   {
+    "w": "prospects",
+    "cn": "n. 前景，可能性"
+   },
+   {
+    "w": "compromise",
+    "cn": "n./v. 妥协，折中"
+   },
+   {
+    "w": "calling out",
+    "cn": "phr. 指出，揭露（不良行为）"
+   },
+   {
+    "w": "mutual",
+    "cn": "adj. 相互的，共同的"
+   }
+  ]
+ }
+}

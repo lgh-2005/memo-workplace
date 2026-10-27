@@ -1,0 +1,198 @@
+{
+ "schemaVersion": 1,
+ "id": "e36b16edc748__translation__all",
+ "examId": "e36b16edc748",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2026 年 6 月英语六级真题（第 3 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T06:08:20.760Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29703,
+ "usage": {
+  "prompt_tokens": 815,
+  "completion_tokens": 2026,
+  "total_tokens": 2841,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 815,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2026,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 815,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国无人机产业发展与应用前景",
+  "reference": "In recent years, China's drone industry has been booming, with its export volume soaring to the top in the world. Featuring outstanding stability, high-definition shooting capabilities, and user-friendly operation, Chinese drones have won the favor of consumers worldwide and have been widely applied in the civilian sector. Drones have been incorporated into the nation's strategic emerging industries, gradually becoming intelligent assistants capable of meeting the demands of diverse scenarios. In rural areas, drones can accurately identify crop diseases and pest infestations and efficiently spray pesticides. In urban areas, drones can rapidly deliver fresh food. In the near future, drones will be able to realize their unique value in even more fields, injecting new momentum into economic and social development.",
+  "sentences": [
+   {
+    "cn": "近年来，中国无人机(drone) 产业蓬勃发展，出口量跃升为全球第一。",
+    "en": "In recent years, China's drone industry has been booming, with its export volume soaring to the top in the world.",
+    "structure": "with 复合结构作伴随状语，主句用现在完成进行时表示持续趋势，with 短语补充说明出口成就",
+    "keys": [
+     "蓬勃发展 has been booming",
+     "出口量 export volume",
+     "跃升为全球第一 soaring to the top in the world"
+    ]
+   },
+   {
+    "cn": "中国的无人机以出色的稳定性、高清拍摄能力和便捷的操作，受到全球消费者的喜爱，在民用领域得到广泛应用。",
+    "en": "Featuring outstanding stability, high-definition shooting capabilities, and user-friendly operation, Chinese drones have won the favor of consumers worldwide and have been widely applied in the civilian sector.",
+    "structure": "现在分词短语 Featuring... 作原因状语前置，主句含两个并列谓语 have won... and have been applied...",
+    "keys": [
+     "出色的稳定性 outstanding stability",
+     "高清拍摄能力 high-definition shooting capabilities",
+     "便捷的操作 user-friendly operation",
+     "民用领域 civilian sector"
+    ]
+   },
+   {
+    "cn": "无人机已被国家纳入战略性新兴产业，逐步成为能满足多种场景需求的智能助手。",
+    "en": "Drones have been incorporated into the nation's strategic emerging industries, gradually becoming intelligent assistants capable of meeting the demands of diverse scenarios.",
+    "structure": "现在完成时被动语态作主句，现在分词短语 gradually becoming... 作结果状语，其中含 capable of 后接动名词作后置定语",
+    "keys": [
+     "纳入 incorporated into",
+     "战略性新兴产业 strategic emerging industries",
+     "智能助手 intelligent assistants"
+    ]
+   },
+   {
+    "cn": "在农村，无人机可精准识别农作物病虫害，高效喷洒农药。",
+    "en": "In rural areas, drones can accurately identify crop diseases and pest infestations and efficiently spray pesticides.",
+    "structure": "简单句，地点状语前置，两个并列谓语 identify... and spray... 由 and 连接，副词 accurately 和 efficiently 分别修饰两个动作",
+    "keys": [
+     "精准识别 accurately identify",
+     "农作物病虫害 crop diseases and pest infestations",
+     "喷洒农药 spray pesticides"
+    ]
+   },
+   {
+    "cn": "在城市，无人机可快速运送生鲜食品。",
+    "en": "In urban areas, drones can rapidly deliver fresh food.",
+    "structure": "简单句，地点状语前置，与上句形成农村-城市的对比平行结构",
+    "keys": [
+     "快速运送 rapidly deliver",
+     "生鲜食品 fresh food"
+    ]
+   },
+   {
+    "cn": "在不久的将来，无人机能够在更多领域实现其独特价值，为经济社会发展注入新动能。",
+    "en": "In the near future, drones will be able to realize their unique value in even more fields, injecting new momentum into economic and social development.",
+    "structure": "主句用 will be able to 表将来能力，现在分词短语 injecting... 作结果状语，介词短语 into... 表方向",
+    "keys": [
+     "在不久的将来 in the near future",
+     "独特价值 unique value",
+     "注入新动能 injecting new momentum"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "无人机",
+    "en": "drone"
+   },
+   {
+    "cn": "蓬勃发展",
+    "en": "boom / flourish / thrive"
+   },
+   {
+    "cn": "高清拍摄能力",
+    "en": "high-definition shooting capabilities"
+   },
+   {
+    "cn": "民用领域",
+    "en": "civilian sector / civil field"
+   },
+   {
+    "cn": "战略性新兴产业",
+    "en": "strategic emerging industries"
+   },
+   {
+    "cn": "农作物病虫害",
+    "en": "crop diseases and pest infestations"
+   },
+   {
+    "cn": "喷洒农药",
+    "en": "spray pesticides"
+   },
+   {
+    "cn": "生鲜食品",
+    "en": "fresh food / fresh produce"
+   },
+   {
+    "cn": "注入新动能",
+    "en": "inject new momentum / impetus"
+   },
+   {
+    "cn": "智能助手",
+    "en": "intelligent assistant"
+   }
+  ],
+  "pitfalls": [
+   "「出口量跃升为全球第一」不可直译为 become the first，应体现「跃升」的动态感，用 soar/leap to the top",
+   "「纳入战略性新兴产业」易漏译被动关系，应使用 be incorporated into 而非 include",
+   "「病虫害」是并列概念，需拆分为 diseases and pest infestations，不可只译为 diseases",
+   "「注入新动能」中「动能」属比喻义，应译为 momentum/impetus，不可误译为物理学的 kinetic energy",
+   "「便捷的操作」强调用户友好，译为 user-friendly operation 比 convenient operation 更地道"
+  ],
+  "upgrades": [
+   {
+    "plain": "China's drones develop rapidly",
+    "better": "China's drone industry has been booming",
+    "note": "boom 一词精准体现「蓬勃」的爆发感，且现在完成进行时强调持续态势"
+   },
+   {
+    "plain": "because of good stability and convenient operation",
+    "better": "featuring outstanding stability and user-friendly operation",
+    "note": "分词短语 featuring 比 because of 更简洁高级，避免从句堆砌"
+   },
+   {
+    "plain": "become a smart tool that can meet various needs",
+    "better": "becoming intelligent assistants capable of meeting the demands of diverse scenarios",
+    "note": "capable of 后置定语比定语从句更紧凑，able to meet 进行了加长且更正式"
+   },
+   {
+    "plain": "put drones into new industries",
+    "better": "incorporated drones into strategic emerging industries",
+    "note": "incorporate into 是政策语境下「纳入」的标准搭配，更正式准确"
+   },
+   {
+    "plain": "bring new energy to development",
+    "better": "inject new momentum into economic and social development",
+    "note": "inject momentum 为固定搭配，比 bring energy 更具力度感和书面色彩"
+   }
+  ]
+ }
+}

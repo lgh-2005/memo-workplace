@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "8dff50a64310__reading__1",
+ "examId": "8dff50a64310",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 6 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:21:47.750Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60266,
+ "usage": {
+  "prompt_tokens": 1936,
+  "completion_tokens": 3877,
+  "total_tokens": 5813,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1936,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3877,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1936,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "衡量经济福祉的更全面方法",
+  "gist": "文章指出美国人口普查局仅以家庭平均收入衡量经济状况存在缺陷，介绍了Jones-Klenow提出的更全面的经济福祉衡量方法，该方法综合考虑消费、工作时长、预期寿命和不平等等因素，既可进行跨国比较，也可进行纵向时间对比，并以美法对比为例加以说明。",
+  "structure": [
+   "第1-2段：提出问题，指出人口普查局报告的统计缺陷",
+   "第3段：引入Jones-Klenow方法，强调其更全面",
+   "第4-6段：以美法对比为例说明该方法的应用",
+   "第7段：展示该方法的纵向时间比较功能",
+   "第8段：总结该方法的灵活性和可扩展性"
+  ],
+  "difficulty": "中等",
+  "translation": "从经济角度来说，我们比十年前、二十年前过得更好吗？\n\n评论人士急切地寻找有关这一问题的证据，他们抓住了人口普查局最近发布的一份报告。该报告发现，2015年美国家庭平均收入增长了5.2%。不幸的是，这一结论过于依赖一个有用但存在缺陷且不完整的统计数据。人口普查局的衡量标准存在一些较为突出的问题：1）它排除了税收、转移支付以及雇主提供的医疗保险等补偿；2）它基于调查问卷而非实际数据。即使收入数据被精确衡量，它也忽略了影响经济福祉的重要决定因素，例如为赚取该收入所需要付出的工作时长。\n\n在思考这个问题时，我们读到了Charles Jones和Peter Klenow最近发表的一篇文章，其中提出了一种有趣的经济福祉新衡量方法。该方法虽远非完美，但比平均收入要全面得多，它不仅考虑了人均消费的增长，还考虑了工作时长、预期寿命和不平等程度的变化。此外，它既可用于跨国比较，也可用于纵向的时间对比来评估经济表现。\n\nJones-Klenow方法可以通过一个跨国例子来说明。假设我们想比较2005年美国和法国公民的经济福祉。\n\n正如作者所观察到的，2005年法国的实际人均消费仅为美国的60%，这使得美国人在经济上看起来平均比法国人好得多。然而，这种比较忽略了其他相关因素：休闲时间、预期寿命和经济不平等。法国人享有更长的假期且退休更早，因此通常工作时间更少；他们享有更高的预期寿命，这大概反映了他们在医疗保健、饮食、生活方式等方面的优势；而且收入和消费的分配在法国比在美国更为均等。由于这些差异，将法国的消费与美国相比较会夸大经济福祉方面的差距。\n\n类似的计算方法可以用来比较美国与其他国家。例如，这种计算方法得出英国的经济福祉为美国水平的97%，而墨西哥的福祉估计为22%。\n\nJones-Klenow的衡量方法也可以评估一个经济体随时间推移的表现。根据这一衡量标准，截至21世纪初至中期，美国在所有大国中拥有最高的经济福祉。自2007年以来，美国的经济福祉持续改善。然而，改善的步伐已明显放缓。\n\n在方法论层面上，Jones-Klenow研究给出的启示是，经济福祉是多维度的。他们的方法足够灵活，原则上可以纳入其他重要的生活质量变化——例如，污染物总排放量的减少和犯罪率的下降。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "Unfortunately, that conclusion puts too much weight on a useful, but flawed and incomplete, statistic.",
+    "why": "作者明确指出人口普查局报告的结论过于依赖一个'有用但有缺陷且不完整的统计数据'（flawed and incomplete statistic），并具体列举了两大问题：排除了税收、转移支付和雇主补偿，且基于调查而非实际数据。A选项'基于有问题的统计数据'是对原文flawed and incomplete statistic的准确同义改写。",
+    "traps": "B'反映经济变化'——文中明确批评该报告不够全面，并未肯定其能反映经济变化；C'证明福祉改善'——作者态度是质疑而非认可该报告的结论；D'提供许多思考素材'——属于正面评价，与原文unfortunately所表达的否定态度相悖。",
+    "tip": "注意unfortunately等态度词，它直接表明作者对报告持批评态度。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "it is considerably more comprehensive than average income, taking into account not only growth in consumption per person but also changes in working time, life expectancy, and inequality.",
+    "why": "原文明确说Jones-Klenow方法比平均收入'全面得多'（considerably more comprehensive），综合考虑人均消费增长、工作时长变化、预期寿命和不平等程度等多个维度。D选项'对人们经济福祉更全面的衡量'是对原文的精准概括。",
+    "traps": "A'广泛用于跨国经济增长比较'——原文说'可以用于'（can be used），并未说'广泛使用'，且衡量的是welfare而非growth；B'革新了衡量普通人生计的方式'——revolutionizes过度夸大，原文称其by no means perfect；C'关注消费而非平均收入'——以偏概全，消费只是该方法考量的维度之一。",
+    "tip": "注意区分'可以做某事'与'广泛地做某事'之间的程度差异。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "However, that comparison omits other relevant factors: leisure time, life expectancy, and economic inequality.",
+    "why": "原文先指出法国实际人均消费仅为美国的60%，随后用However转折，明确指出这一比较'忽略了其他相关因素'（omits other relevant factors），包括休闲时间、预期寿命和经济不平等。B选项'忽视了许多重要的福祉指标'与omits other relevant factors完全对应。",
+    "traps": "A'反映了两国经济间的巨大差距'——作者认为仅看消费数据会夸大差距（overstates the gap），而非认可这一差距；C'掩盖了个体公民之间的差异'——文章讨论的是国家层面的福祉比较维度不足，不是个体差异；D'未计入自然资源差异'——原文未提及自然资源，属于无中生有。",
+    "tip": "转折词However后面往往是作者的真实观点和命题重点。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Moreover, it can be used to assess economic performance both across countries and over time.",
+    "why": "原文第三段末尾指出该方法可以'跨国和跨时间段评估经济表现'（both across countries and over time），第七段又具体展示了该方法对美国经济福祉随时间变化的评估。D选项'可以比较一个国家不同时期的经济状况'正是对over time这一功能的准确表述。",
+    "traps": "A'准确定位当前经济问题'——该方法是衡量工具，并未声称能精确诊断具体经济问题；B'提升人们对经济福祉的意识'——原文未涉及提升公众意识的功能；C'诊断经济改善放缓的原因'——该方法能呈现放缓现象，但原文未说能诊断原因。",
+    "tip": "区分'呈现现象'和'诊断原因'，方法能测量结果不代表能解释成因。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Since 2007, economic welfare in the U.S. has continued to improve. However, the pace of improvement has slowed markedly.",
+    "why": "文章开篇质疑人口普查局报告所呈现的5.2%家庭收入增长过于乐观，指出其衡量标准存在重大缺陷。而更全面的Jones-Klenow方法显示，美国经济福祉虽在持续改善，但改善步伐'明显放缓'（slowed markedly）。两相对照可推断，美国人的经济福祉并没有像人口普查局所报告的那样改善显著，C选项正确。",
+    "traps": "A'远好于欧洲同行'——文中英国福祉达美国97%，说明差距并不大，much better过度夸大；B'自世纪之交以来一直在下降'——原文说continued to improve，只是速度放缓而非下降；D'自2000年代中期以来未被准确评估和报告'——文章批评的是人口普查局的衡量方法，而非说自某时起就没有准确评估。",
+    "tip": "推断题需综合全文论证逻辑，将作者对旧方法的批评与新方法的发现结合推理。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "seized on",
+    "cn": "抓住，利用（动词短语）"
+   },
+   {
+    "w": "flawed",
+    "cn": "有缺陷的（adj.）"
+   },
+   {
+    "w": "transfers",
+    "cn": "转移支付（n.）"
+   },
+   {
+    "w": "determinants",
+    "cn": "决定因素（n.）"
+   },
+   {
+    "w": "comprehensive",
+    "cn": "全面的，综合的（adj.）"
+   },
+   {
+    "w": "consumption",
+    "cn": "消费（n.）"
+   },
+   {
+    "w": "inequality",
+    "cn": "不平等（n.）"
+   },
+   {
+    "w": "omits",
+    "cn": "忽略，遗漏（v.）"
+   },
+   {
+    "w": "overstates",
+    "cn": "夸大（v.）"
+   },
+   {
+    "w": "markedly",
+    "cn": "显著地，明显地（adv.）"
+   },
+   {
+    "w": "incorporated",
+    "cn": "纳入，包含（v.）"
+   },
+   {
+    "w": "pollutants",
+    "cn": "污染物（n.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Among the more significant problems with the Census's measure are that: 1) it excludes taxes, transfers, and compensation like employer-provided health insurance; and 2) it is based on surveys rather than data.",
+    "cn": "人口普查局衡量标准存在的较为突出的问题包括：1）它排除了税收、转移支付以及雇主提供的医疗保险等补偿；2）它基于调查问卷而非实际数据。",
+    "note": "倒装句，主语为that引导的两个并列表语从句，Among...are提前作状语，正常语序为The more significant problems are that..."
+   },
+   {
+    "en": "While by no means perfect, it is considerably more comprehensive than average income, taking into account not only growth in consumption per person but also changes in working time, life expectancy, and inequality.",
+    "cn": "该方法虽远非完美，但比平均收入要全面得多，它不仅考虑了人均消费的增长，还考虑了工作时长、预期寿命和不平等程度的变化。",
+    "note": "While引导让步状语从句（省略主语和系动词），主句后接taking...现在分词短语作伴随状语，内含not only...but also并列结构。"
+   },
+   {
+    "en": "Their approach is flexible enough that in principle other important quality-of-life changes could be incorporated-for example, decreases in total emissions of pollutants and declines in crime rates.",
+    "cn": "他们的方法足够灵活，原则上可以纳入其他重要的生活质量变化——例如，污染物总排放量的减少和犯罪率的下降。",
+    "note": "enough that引导结果状语从句，破折号后for example举例补充说明，其中decreases和declines为并列主语。"
+   }
+  ]
+ }
+}

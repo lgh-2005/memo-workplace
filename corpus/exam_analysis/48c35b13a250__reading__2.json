@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "48c35b13a250__reading__2",
+ "examId": "48c35b13a250",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 6 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:43:01.965Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66765,
+ "usage": {
+  "prompt_tokens": 1820,
+  "completion_tokens": 3943,
+  "total_tokens": 5763,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1820,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3943,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1820,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "常识≠科学：集体探究优于个人直觉",
+  "gist": "文章以澳大利亚人否认气候变化的调查为引子，指出人们常将基于已有信念的直觉判断误认为\"常识\"，实际上这种判断具有主观性且易受认知偏差影响。作者论证了科学作为社会化共享认知的典范，通过系统协作的方法验证知识，能有效克服个体思维的局限性，强调集体探究远胜于个人直觉判断。",
+  "structure": [
+   "第1-2段：引出话题，揭示'常识'本质是主观感受而非理性",
+   "第3-4段：借Kahneman理论说明用已有信念检验新观点的误区及认知偏差",
+   "第5段：提出社会化知识验证（科学方法）可纠正偏差",
+   "第6-7段：总结强调协作探究优于个人思考"
+  ],
+  "difficulty": "中等",
+  "translation": "据去年澳大利亚联邦科学与工业研究组织发布的一份报告，当一群澳大利亚人被问及为何认为气候变化并未发生时，约36%的人表示这是\"常识\"。这是他们持该观点最常见的理由，仅有11%的人表示他们认为气候变化未发生的信念基于科学研究。\n\n但我们所说的\"诉诸常识\"究竟是什么意思呢？想必它是某种理性的诉求，构成更复杂推理的基础。然而，诉诸常识通常不过是诉诸一种\"感觉对\"的思维方式，但一个人觉得对的，另一个人未必觉得对。是否\"感觉对\"通常反映的是我们已内化的世界观和意识形态，它们框定了我们与新观点互动的方式。当新观点与我们已有的信念一致时，就更容易被接受；不一致时，这些观点及其论证就更容易被拒绝。\n\n我们常常将这种用已有信念自动检验新观点的兼容性测试误认为是常识的运用，但实际上，这更像是判断而非思考。正如诺贝尔奖得主丹尼尔·卡尼曼在《思考，快与慢》中指出的，当我们以这种方式得出结论时，其结果也会让人感觉是正确的，不管它们实际上是否正确。我们在心理上并不善于评判自己的思维。\n\n我们也极容易受到一系列认知偏差的影响，例如在做决策或权衡证据时，偏好首先浮现在脑海中的事物。\n\n我们检验内在偏差和不一致性的一种方法是通过知识的社会化验证，即以严格和系统的方式测试我们的想法，看看它们是否不仅对我们自己有道理，对其他人也同样如此。这种社会共享认知的杰出范例就是科学。\n\n这并不意味着个人不具备优秀的思维能力，也不意味着没有个体是理性的。但个人独立做到这一点的程度，取决于他们最初与系统化探究群体的融合程度。你无法仅靠自己学会良好的思考。\n\n至少在科学事务上，那些将常识置于方法论式协作探究之上的人自认为思维更自由，不受群体的束缚，但实际上他们被自身的能力和视角紧紧束缚。我们在一起比单独一人更聪明，而这或许本身就是常识。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "about 36% said it was \"common sense\"... This was the most popular reason for their opinion, with only 11% saying their belief that climate change was not happening was based on scientific research.",
+    "why": "报告数据显示36%的人依赖\"常识\"（作者后文论证其并非真正的理性），仅11%基于科学研究。作者引用该数据旨在说明人们在思考中很少真正诉诸理性，而是依赖主观直觉。A选项\"人们很少在思维中诉诸理性\"准确概括了作者引用数据的意图——揭示人们用\"感觉对\"替代理性思维的现象。",
+    "traps": "B\"真理往往掌握在少数人手中\"属无中生有，文章未涉及真理归属问题。C\"常识和科学是一枚硬币的两面\"与文意相反，作者强调两者对立而非统一。D\"很少有人知道气候变化是否真正发生\"偏离论证目的，气候变化本身不是文章论点，仅是引子。",
+    "tip": "例证题要看例子服务的论点，而非例子本身的细节。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The appeal to common sense, however, is usually nothing more than an appeal to thinking that just feels right, but what feels right to one person may not feel right to another.",
+    "why": "原文明确指出，诉诸常识不过是诉诸\"感觉对\"的思维，而不同人的感觉不同，这说明常识本质上是主观的，基于个人认为正确的东西。D选项\"基于个人认为正确的主观之物\"精准对应原文'thinking that just feels right'和'what feels right to one person may not feel right to another'。",
+    "traps": "A\"个人意识形态内化的基础\"颠倒因果，原文说已内化的世界观影响常识判断，而非常识是内化的基础。B\"由复杂推理形成的一系列概念\"与原文矛盾，作者指出常识恰恰不是复杂推理的产物。C\"帮助人们与新观点互动的集体智慧\"错在\"集体智慧\"，常识是个人主观判断而非集体智慧。",
+    "tip": "注意原文中'nothing more than'这类限定词揭示作者对概念的本质界定。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "when we arrive at conclusions in this way, the outcomes also feel true, regardless of whether they are. We are not psychologically well equipped to judge our own thinking.",
+    "why": "Kahneman指出用已有信念检验新观点时，结论\"感觉正确\"但未必真正正确（regardless of whether they are），且我们在心理上不善于评判自己的思维。这说明该方法可能导致错误的判断，A选项\"可能导致不正确的判断\"直接对应此逻辑。",
+    "traps": "B\"没有使用常识\"与题干无关，文中讨论的恰恰是这种方式被误认为常识。C\"未能通过严肃推理纠正错误\"虽有合理之处，但原文强调的是结果感觉正确却未必正确的问题，而非纠错机制的缺失。D\"产生心理上不可接受的结果\"与原文相反，结果恰恰是心理上\"感觉正确\"的。",
+    "tip": "注意'regardless of whether they are'这类转折表达，往往揭示核心问题所在。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "One way we can check our internal biases and inconsistencies is through the social verification of knowledge, in which we test our ideas in a rigorous and systematic way... The outstanding example of this socially shared cognition is science.",
+    "why": "原文提出通过\"知识的社会化验证\"来检验内在偏差，以严格和系统的方式测试想法，并明确指出科学是这种社会共享认知的杰出范例。C选项\"通过科学方法建立社会共享认知\"精准对应'social verification of knowledge'和'science'这两个关键概念。",
+    "traps": "A\"给冲突双方证据同等权重\"属于无中生有，原文未提及这一做法。B\"在论证中提供有说服力的例子\"与消除认知偏差无关，属偷换概念。D\"在处理争议问题时避免不一致\"虽提到了inconsistencies，但原文的解决方案是社会化验证而非简单\"避免不一致\"，且遗漏了核心手段。",
+    "tip": "解题时关注原文中'one way'等提示解决方案的信号词。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "We are smarter together than we are individually, and perhaps that's just common sense.",
+    "why": "文章最后两段强调：个人思维能力受限于其与系统化探究群体的融合程度，自认为不受群体约束的人实则受自身能力和视角束缚，最终以'We are smarter together than we are individually'收束。D选项\"协作努力能克服个人在科学探究中的局限性\"完整概括了结尾的核心信息。",
+    "traps": "A\"多元视角激发人们探索未知的兴趣\"偏离主旨，文章讨论的是克服个体局限而非激发兴趣。B\"个人可通过与他人互动提升综合能力\"虽涉及合作，但原文强调的是克服个体局限性做出更好判断，而非\"提升综合能力\"，范围过宽。C\"个人应自由思考以打破常识的限制\"与文意完全相反，作者批判的正是脱离群体的所谓自由思考。",
+    "tip": "末段主旨题需抓住作者的最终立场，通常在最后一两句中体现。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "appeal",
+    "cn": "n./v. 诉诸；呼吁；吸引力"
+   },
+   {
+    "w": "presumably",
+    "cn": "adv. 想必，大概"
+   },
+   {
+    "w": "internalise",
+    "cn": "v. 使内化，使成为自身的一部分"
+   },
+   {
+    "w": "in accord with",
+    "cn": "prep. 与……一致"
+   },
+   {
+    "w": "susceptible",
+    "cn": "adj. 易受影响的，敏感的（to）"
+   },
+   {
+    "w": "cognitive bias",
+    "cn": "n. 认知偏差"
+   },
+   {
+    "w": "rigorous",
+    "cn": "adj. 严格的，严谨的"
+   },
+   {
+    "w": "verification",
+    "cn": "n. 验证，核实"
+   },
+   {
+    "w": "methodological",
+    "cn": "adj. 方法论的，系统性的"
+   },
+   {
+    "w": "collaborative",
+    "cn": "adj. 协作的，合作的"
+   },
+   {
+    "w": "unbound",
+    "cn": "adj. 不受束缚的，不受限制的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Whether it feels right is usually a reflection of the world view and ideologies we have internalised, and that frames how we interact with new ideas.",
+    "cn": "它是否\"感觉对\"通常反映的是我们已内化的世界观和意识形态，而正是这些世界观和意识形态框定了我们与新观点互动的方式。",
+    "note": "主句为'Whether...is a reflection of...'，Whether引导主语从句；'we have internalised'为省略关系代词的定语从句修饰world view and ideologies；and后that指代前面的world view and ideologies，frames为谓语。"
+   },
+   {
+    "en": "But the extent to which individuals can do this on their own is a function of how well integrated they are with communities of systematic inquiry in the first place.",
+    "cn": "但个人独立做到这一点的程度，取决于他们最初与系统化探究群体的融合程度。",
+    "note": "主干为'the extent...is a function of...'；'to which individuals can do this'为定语从句修饰extent；'how well integrated they are...'为介词of的宾语从句；in the first place意为'首先，最初'。"
+   },
+   {
+    "en": "In matters of science at least, those who value their common sense over methodological, collaborative investigation imagine themselves to be more free in their thinking, unbound by involvement with the group, but in reality they are tightly bound by their capabilities and perspectives.",
+    "cn": "至少在科学事务上，那些将常识置于方法论式协作探究之上的人自认为思维更自由，不受群体参与的束缚，但实际上他们被自身的能力和视角紧紧束缚。",
+    "note": "主语为'those who value...investigation'，含who引导的定语从句；imagine...to be为主句谓语；unbound为过去分词作伴随状语；but转折引出与想象相反的现实，形成'自认为自由/实则受缚'的对比。"
+   }
+  ]
+ }
+}

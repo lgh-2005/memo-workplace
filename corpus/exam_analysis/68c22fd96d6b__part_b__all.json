@@ -1,0 +1,173 @@
+{
+ "schemaVersion": 1,
+ "id": "68c22fd96d6b__part_b__all",
+ "examId": "68c22fd96d6b",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2008 年考研英语真题（旧）",
+ "year": 2008,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:21:01.750Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42174,
+ "usage": {
+  "prompt_tokens": 1512,
+  "completion_tokens": 2408,
+  "total_tokens": 3920,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1512,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2408,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1512,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "写作初稿的撰写与修改方法",
+  "type": "七选五",
+  "strategy": [
+   "通读全文，把握写作过程的行文逻辑：落笔→灵活写作→排版→技术工具→内容删改→反复修改",
+   "关注空格前后的指代词（that way, these printouts, the other side）和关键词复现",
+   "利用选项中的逻辑连接词（however, although）判断其与上下文的语义衔接",
+   "排除法：先确定衔接线索最明确的空格，再处理剩余选项"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "D",
+    "why": "前文说无论坐着、站着还是躺着都要开始写，D选项开头\"It makes no difference how you write, just so you do\"直接承接这一话题；D结尾提到\"flesh out whatever outline you have made\"，与下一段\"Your outline should smoothly conduct you\"中的outline形成关键词复现，衔接顺畅。",
+    "traps": "G虽提到first draft，但其核心内容是\"不要追求完美初稿\"，放在此处无法与下段outline衔接；B讨论引言和结论段，与首段\"开始动笔\"的语境不符。",
+    "tip": "关键词outline在D结尾与下段段首复现，形成衔接桥梁。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "why": "前文说\"如果有好想法就写进草稿\"，G承接道\"你很可能发现比笔记更多的内容\"，拓展灵活写作的好处。G末句\"Do not attempt to compose a perfectly correct draft the first time around\"与紧接其后的\"Grammar, punctuation, and spelling can wait until you revise\"构成因果衔接：不必追求完美→语法拼写稍后再改。",
+    "traps": "A讨论页面排版（留白、单面书写），与\"灵活写作、不必追求完美\"的语境无关；C关于打印机和数据存储，话题偏离。",
+    "tip": "G末句\"不要追求完美初稿\"与后文\"语法拼写可以等到修改时\"逻辑紧密。"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "why": "后文说\"Your pages will be easier to keep track of that way\"，that way指代A中提到的具体做法（留宽边距、行间距、只在纸的一面书写）；后文\"you will not lose any writing on the other side\"中的the other side直接呼应A末句\"Write on only one side of the paper\"，指代关系非常明确。",
+    "traps": "其他选项均不涉及纸张书写方式，无法被that way和the other side所指代。",
+    "tip": "the other side与Write on only one side of the paper构成精确指代。"
+   },
+   {
+    "number": 44,
+    "answer": "C",
+    "why": "前文讲到文字处理软件的拼写检查等功能，C以however转折：打印出来的干净稿件看着好，但质量取决于思考和写作本身。C末尾提到\"print their pages each time they finish a draft\"，与后文\"These printouts are also easier to read than the screen\"中的These printouts形成直接指代衔接。",
+    "traps": "F提到具体论文内容（Sammy辞职的原因），与讨论写作工具的段落语境不符；B讨论引言结论段，话题错位。",
+    "tip": "C中的print their pages被后文These printouts精准指代。"
+   },
+   {
+    "number": 45,
+    "answer": "E",
+    "why": "前文提到学生明智地删掉了关于Sammy是否对女性持沙文主义态度的段落，E开头\"Although this is an interesting issue\"中的this指代该被删段落的议题，并解释原因——它与论文主旨（环境如何影响Sammy辞职的决定）无关。E还补充说明学生添加了描述Lengel对女孩们刻板反应的段落，与前文\"delete…and add\"的修改逻辑一致。",
+    "traps": "F虽然也提到Sammy辞职和A&P的环境，但它描述的是最后一段的内容概括，无法衔接前文\"删除无关段落\"的具体语境，且缺乏对删除原因的解释。",
+    "tip": "E中this is an interesting issue指代前文questioned whether Sammy displays chauvinistic attitudes。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inevitable",
+    "cn": "不可避免的（adj.）"
+   },
+   {
+    "w": "railroad",
+    "cn": "（此处）强迫，迫使（v.）"
+   },
+   {
+    "w": "punctuation",
+    "cn": "标点符号（n.）"
+   },
+   {
+    "w": "in hot pursuit of",
+    "cn": "紧追不舍地追求"
+   },
+   {
+    "w": "flesh out",
+    "cn": "充实，使丰满（v.）"
+   },
+   {
+    "w": "tentative",
+    "cn": "暂定的，试探性的（adj.）"
+   },
+   {
+    "w": "deletion",
+    "cn": "删除（n.）"
+   },
+   {
+    "w": "thesis",
+    "cn": "论点，主题；毕业论文（n.）"
+   },
+   {
+    "w": "chauvinistic",
+    "cn": "沙文主义的，大男子主义的（adj.）"
+   },
+   {
+    "w": "crabbed",
+    "cn": "暴躁的，乖戾的（adj.）"
+   },
+   {
+    "w": "substantiate",
+    "cn": "证实，证明…有根据（v.）"
+   },
+   {
+    "w": "transitions",
+    "cn": "过渡，衔接（n.）"
+   },
+   {
+    "w": "abrupt",
+    "cn": "突然的，唐突的（adj.）"
+   },
+   {
+    "w": "mercilessly",
+    "cn": "无情地，毫不留情地（adv.）"
+   },
+   {
+    "w": "prudently",
+    "cn": "谨慎地，审慎地（adv.）"
+   },
+   {
+    "w": "poke and prod",
+    "cn": "反复推敲打磨（v.短语）"
+   }
+  ]
+ }
+}

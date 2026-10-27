@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "ff8641a6bc65__banked_cloze__all",
+ "examId": "ff8641a6bc65",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2019 年 6 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:24:11.690Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54345,
+ "usage": {
+  "prompt_tokens": 1395,
+  "completion_tokens": 3548,
+  "total_tokens": 4943,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1395,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3548,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1395,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "意面与健康饮食的关系",
+  "gist": "加拿大研究者对30项研究进行系统性回顾与分析后发现，意面并不会导致体重增加，每周食用三次甚至有助于减重。意面此前被不公正地妖魔化，是因为它被与其他更易致胖的碳水化合物混为一谈。研究表明，作为健康饮食的一部分，意面对体重并无不良影响。",
+  "difficulty": "中等",
+  "translation": "意面不再被排除在食谱之外，因为一项新的研究回顾表明，这种碳水化合物可以成为健康饮食的一部分，甚至能帮助人们减轻体重。多年来，营养学家一直建议将意面的摄入量保持在最低限度，以减少热量摄入、防止脂肪堆积和阻止血糖飙升。\n\n低碳水化合物饮食运动催生了阿特金斯、旧石器和生酮等饮食法，这些饮食法建议用蔬菜、鱼和肉来替代面包、意面和土豆等食物。最近，用蔬菜代替意面的趋势更是受到了清洁饮食专家的大力倡导。\n\n但如今，加拿大研究人员对30项研究进行的一项系统性回顾和分析发现，意面不仅不会导致体重增加，而且每周食用三餐还能帮助人们在四个月内减掉超过半公斤的体重。评审者发现，意面之所以被不公正地妖魔化，是因为它被与其他更容易促进脂肪堆积的碳水化合物混为一谈。\n\n\"研究发现，意面不会导致体重增加或体脂增加，\"第一作者约翰·西文派珀博士说。\"在权衡证据之后，我们现在可以有一定信心地说，当意面作为健康饮食模式的一部分被食用时，它对体重结果不会产生不良影响。\"事实上，分析实际上显示出与人们的担忧相反，体重出现了小幅下降。也许意面可以成为健康饮食的一部分。\n\n参与临床试验的人平均每周食用3.3份意面来代替其他碳水化合物，每份大约等于半杯。他们在平均12周的随访期内减掉了约半公斤。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "I",
+    "correct": "minimum",
+    "why": "固定搭配 keep to a minimum（保持在最低限度），此处空格前有冠词 a，后接逗号，需要一个名词；minimum 完美契合搭配和语义，表示营养学家建议少吃意面。",
+    "traps": "其他名词类候选词在语义和搭配上均不适用。此处是高频固定搭配，考生需熟悉 keep sth. to a minimum 这一表达才能快速判断。",
+    "tip": "考查固定搭配 keep to a minimum。"
+   },
+   {
+    "number": 27,
+    "answer": "L",
+    "correct": "shooting",
+    "why": "空格位于 stop blood sugar _____ up 中，stop 后接动名词，shooting up 意为\"飙升\"，与血糖急剧上升的语境完美匹配。shoot up 是常用短语，表示迅速上升。",
+    "traps": "其他动名词形式的候选词如 weighing 语义不合；此处需要与 up 搭配且表示\"快速上升\"含义的词，只有 shooting 符合。",
+    "tip": "考查短语 shoot up（飙升）的动名词形式。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "correct": "championed",
+    "why": "空格在 has been _____ by 结构中，需要过去分词构成被动语态。championed 意为\"倡导、支持\"，表示蔬菜替代意面的趋势被清洁饮食专家大力推崇，语义通顺。",
+    "traps": "lumped 虽也是过去分词，但搭配和语义不对（lump in with 表混为一谈，此处无 in with）。champion 作动词表\"支持\"是高频考点。",
+    "tip": "考查 champion 作动词\"倡导、拥护\"的被动用法。"
+   },
+   {
+    "number": 29,
+    "answer": "N",
+    "correct": "systematic",
+    "why": "空格修饰 review，systematic review（系统性综述）是学术研究中的专业术语，指对多项研究进行系统整理和分析。形容词 systematic 与后文 analysis of 30 studies 的语境高度吻合。",
+    "traps": "clinical 虽也是形容词，但 clinical review 不是标准学术用语，且 clinical 在第35题更合适；adverse 语义不搭配。",
+    "tip": "考查学术用语 systematic review（系统性综述）。"
+   },
+   {
+    "number": 30,
+    "answer": "G",
+    "correct": "lumped",
+    "why": "空格在 had been _____ in with other 中，需过去分词构成被动。lump in with 意为\"把……与……混为一谈\"，表示意面被错误地与其他更易致胖的碳水化合物归为一类，解释了它被妖魔化的原因。",
+    "traps": "championed 已在28题使用；其他过去分词候选词语义不符。lump in with 是固定搭配，整句解释了意面被妖魔化的原因。",
+    "tip": "考查短语 lump in with（混为一谈）的被动形式。"
+   },
+   {
+    "number": 31,
+    "answer": "E",
+    "correct": "contribute",
+    "why": "空格在 didn't _____ to weight gain 中，contribute to 是常用搭配，意为\"导致、促成\"。didn't 后接动词原形，表示意面不会导致体重增加，与前文研究结论一致。",
+    "traps": "其他动词原形候选词无法与 to 搭配形成\"导致\"的含义。contribute to 表示\"有助于/导致\"是六级高频搭配。",
+    "tip": "考查固定搭配 contribute to（导致）。"
+   },
+   {
+    "number": 32,
+    "answer": "O",
+    "correct": "weighing",
+    "why": "空格在 In _____ the evidence 中，In + 动名词构成介词短语。weighing the evidence 意为\"权衡证据\"，表示在综合考量证据后得出结论，语义逻辑完美。",
+    "traps": "shooting 已在27题使用且语义不搭；此处需要表示\"衡量、评估\"含义的动名词，只有 weighing 合适。weigh 有\"权衡\"义。",
+    "tip": "考查 weigh the evidence（权衡证据）的动名词用法。"
+   },
+   {
+    "number": 33,
+    "answer": "A",
+    "correct": "adverse",
+    "why": "空格在 an _____ effect 中，需要形容词修饰 effect。adverse effect 意为\"不良影响\"，是极为常见的学术搭配，表示意面对体重无负面影响，与整段论证方向一致。",
+    "traps": "systematic 和 clinical 虽是形容词但不与 effect 搭配表达此义；contrary 不与 effect 直接搭配。adverse effect 是固定学术用语。",
+    "tip": "考查固定搭配 adverse effect（不良影响）。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "correct": "contrary",
+    "why": "空格在 weight loss _____ to concerns 中，contrary to 是固定搭配，意为\"与……相反\"。句意为：分析实际上显示体重小幅下降，这与人们的担忧恰恰相反，形成语义转折。",
+    "traps": "adverse to 不是标准搭配；其他形容词无法与 to 搭配表达\"与……相反\"的含义。contrary to 是六级高频短语。",
+    "tip": "考查固定搭配 contrary to（与……相反）。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "correct": "clinical",
+    "why": "空格修饰 trials，clinical trials（临床试验）是标准医学/科研术语。文章讲述参与试验的受试者的具体饮食情况和减重结果，clinical 精确描述了试验的性质。",
+    "traps": "systematic 已用于29题；adverse 与 trials 搭配语义不通。clinical trials 是科研领域的固定表达，考生需积累。",
+    "tip": "考查专业术语 clinical trials（临床试验）。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "adverse",
+    "cn": "adj. 不利的，有害的"
+   },
+   {
+    "w": "championed",
+    "cn": "v. 倡导，拥护（champion 的过去分词）"
+   },
+   {
+    "w": "clinical",
+    "cn": "adj. 临床的，诊所的"
+   },
+   {
+    "w": "contrary",
+    "cn": "adj. 相反的；n. 相反（contrary to 与……相反）"
+   },
+   {
+    "w": "contribute",
+    "cn": "v. 贡献，促成（contribute to 导致）"
+   },
+   {
+    "w": "lumped",
+    "cn": "v. 把……归并在一起（lump in with 混为一谈）"
+   },
+   {
+    "w": "systematic",
+    "cn": "adj. 系统的，有条理的"
+   },
+   {
+    "w": "demonized",
+    "cn": "v. 妖魔化，将……描绘成邪恶的"
+   },
+   {
+    "w": "nutritionist",
+    "cn": "n. 营养学家"
+   },
+   {
+    "w": "carbohydrate",
+    "cn": "n. 碳水化合物"
+   },
+   {
+    "w": "dietary",
+    "cn": "adj. 饮食的，膳食的"
+   },
+   {
+    "w": "serving",
+    "cn": "n. 一份（食物的量）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——意面与健康饮食的关系及研究结论。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、助动词等）判断所需词性。",
+   "第四步：利用固定搭配优先锁定答案，如 keep to a minimum、contrary to、adverse effect、clinical trials 等。",
+   "第五步：将选定词回填通读，检查语义连贯性和语法一致性，确保无重复使用。"
+  ]
+ }
+}

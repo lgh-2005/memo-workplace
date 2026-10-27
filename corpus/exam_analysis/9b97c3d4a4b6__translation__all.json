@@ -1,0 +1,192 @@
+{
+ "schemaVersion": 1,
+ "id": "9b97c3d4a4b6__translation__all",
+ "examId": "9b97c3d4a4b6",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2025 年 12 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T06:05:38.088Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35482,
+ "usage": {
+  "prompt_tokens": 798,
+  "completion_tokens": 2156,
+  "total_tokens": 2954,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 798,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2156,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 798,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "节俭美德与节约型社会建设",
+  "reference": "Frugality is a traditional virtue of the Chinese nation. In ancient China, when productivity was low, our ancestors were keenly aware that the fruits of labor did not come easily, and therefore upheld the concept of frugality. Today, in an era of great material abundance, the Chinese people still adhere to a frugal lifestyle, which reflects a philosophy of rational consumption and respect for labor. In recent years, the Chinese government has continued to strengthen the building of a conservation-oriented society by advocating the \"Clean Plate Campaign\" to reduce food waste, promoting a simple and low-carbon lifestyle, advancing the recycling of resources, and opposing excessive consumption. The construction of a conservation-oriented society has effectively driven the high-quality development of China's economy.",
+  "sentences": [
+   {
+    "cn": "节俭 (frugality) 是中华民族的传统美德。",
+    "en": "Frugality is a traditional virtue of the Chinese nation.",
+    "structure": "简单主系表结构：主语 + is + 表语（名词短语），简洁明了",
+    "keys": [
+     "节俭 frugality",
+     "中华民族 the Chinese nation",
+     "传统美德 traditional virtue"
+    ]
+   },
+   {
+    "cn": "在中国古代，生产力低下，先人们深知劳动成果来之不易，因而秉持节俭的理念。",
+    "en": "In ancient China, when productivity was low, our ancestors were keenly aware that the fruits of labor did not come easily, and therefore upheld the concept of frugality.",
+    "structure": "时间状语 + when 引导时间状语从句 + 主句含 that 宾语从句 + and 并列谓语，体现因果逻辑",
+    "keys": [
+     "生产力低下 productivity was low",
+     "先人们 our ancestors",
+     "劳动成果来之不易 the fruits of labor did not come easily",
+     "秉持节俭的理念 upheld the concept of frugality"
+    ]
+   },
+   {
+    "cn": "到了物质极大丰富的今天，中国人民依然坚持节俭的生活方式，体现了理性消费的生活理念和对劳动的尊重。",
+    "en": "Today, in an era of great material abundance, the Chinese people still adhere to a frugal lifestyle, which reflects a philosophy of rational consumption and respect for labor.",
+    "structure": "时间状语（介词短语做同位语补充说明）+ 主句 + which 引导非限制性定语从句，补充说明前文",
+    "keys": [
+     "物质极大丰富 great material abundance",
+     "节俭的生活方式 a frugal lifestyle",
+     "理性消费 rational consumption",
+     "对劳动的尊重 respect for labor"
+    ]
+   },
+   {
+    "cn": "近年来，中国政府持续加强节约型社会的建设，倡导\"光盘行动\"，减少食物浪费，提倡简约低碳的生活方式，推进资源循环利用，反对过度消费。",
+    "en": "In recent years, the Chinese government has continued to strengthen the building of a conservation-oriented society by advocating the \"Clean Plate Campaign\" to reduce food waste, promoting a simple and low-carbon lifestyle, advancing the recycling of resources, and opposing excessive consumption.",
+    "structure": "时间状语 + 主语 + 现在完成时谓语 + by + 四个并列动名词短语做方式状语，展开具体措施",
+    "keys": [
+     "节约型社会 a conservation-oriented society",
+     "光盘行动 the Clean Plate Campaign",
+     "食物浪费 food waste",
+     "简约低碳的生活方式 a simple and low-carbon lifestyle",
+     "资源循环利用 the recycling of resources",
+     "过度消费 excessive consumption"
+    ]
+   },
+   {
+    "cn": "节约型社会的建设有力地推动了中国经济的高质量发展。",
+    "en": "The construction of a conservation-oriented society has effectively driven the high-quality development of China's economy.",
+    "structure": "主语（of 介词短语做后置定语）+ 现在完成时谓语 + 宾语（of 介词短语做后置定语），结构工整",
+    "keys": [
+     "有力地推动 effectively driven",
+     "高质量发展 high-quality development"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "节俭",
+    "en": "frugality"
+   },
+   {
+    "cn": "中华民族的传统美德",
+    "en": "a traditional virtue of the Chinese nation"
+   },
+   {
+    "cn": "生产力",
+    "en": "productivity"
+   },
+   {
+    "cn": "节约型社会",
+    "en": "conservation-oriented society"
+   },
+   {
+    "cn": "光盘行动",
+    "en": "the Clean Plate Campaign"
+   },
+   {
+    "cn": "理性消费",
+    "en": "rational consumption"
+   },
+   {
+    "cn": "资源循环利用",
+    "en": "the recycling of resources"
+   },
+   {
+    "cn": "简约低碳的生活方式",
+    "en": "a simple and low-carbon lifestyle"
+   },
+   {
+    "cn": "高质量发展",
+    "en": "high-quality development"
+   },
+   {
+    "cn": "过度消费",
+    "en": "excessive consumption"
+   }
+  ],
+  "pitfalls": [
+   "「来之不易」易误译为 not easy to get，应译为 did not come easily，强调过程艰辛",
+   "「光盘行动」是专有名称，不可直译为 CD action，应译为 Clean Plate Campaign",
+   "「节约型社会」中「型」表示导向，应译为 conservation-oriented society，不可遗漏 oriented",
+   "「秉持」易用 hold 等口语化表达，建议用 uphold 体现正式语体",
+   "第四句含六个并列动作，翻译时需注意用 by + doing 结构统一衔接，避免句式松散碎片化"
+  ],
+  "upgrades": [
+   {
+    "plain": "know that labor results are hard to get",
+    "better": "be keenly aware that the fruits of labor did not come easily",
+    "note": "keenly aware 比 know 更正式，fruits of labor 是英语固定搭配，更地道"
+   },
+   {
+    "plain": "keep the saving lifestyle",
+    "better": "adhere to a frugal lifestyle",
+    "note": "adhere to 比 keep 更书面，frugal 比 saving 用作形容词修饰 lifestyle 更准确"
+   },
+   {
+    "plain": "shows the idea of spending money wisely",
+    "better": "reflects a philosophy of rational consumption",
+    "note": "reflects 搭配 philosophy 更学术正式，rational consumption 为经济学标准术语"
+   },
+   {
+    "plain": "strongly pushed the development of China's economy",
+    "better": "effectively driven the high-quality development of China's economy",
+    "note": "able to effectively drive 搭配更精准，high-quality development 为政经领域固定译法"
+   },
+   {
+    "plain": "support recycling things",
+    "better": "advance the recycling of resources",
+    "note": "advance 比 support 更具推动力，recycling of resources 为环保领域标准术语"
+   }
+  ]
+ }
+}

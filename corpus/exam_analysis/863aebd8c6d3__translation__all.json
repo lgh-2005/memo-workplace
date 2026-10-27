@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "863aebd8c6d3__translation__all",
+ "examId": "863aebd8c6d3",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2004 年考研英语真题（旧）",
+ "year": 2004,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:15:32.576Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62436,
+ "usage": {
+  "prompt_tokens": 1316,
+  "completion_tokens": 4611,
+  "total_tokens": 5927,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1316,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4611,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1316,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "语言结构与思维关系的学术探讨",
+  "translation": "语言与思维的关系几个世纪以来一直为哲学家们所关注。希腊人认为语言的结构与思维过程之间存在某种联系，这一观点早在人们意识到语言的多样性之前就已在欧洲根深蒂固。\n\n直到最近，语言学家才开始认真研究那些与自己的语言截然不同的语言。两位人类学家兼语言学家——弗朗茨·博厄斯和爱德华·萨丕尔——是二十世纪上半叶描述南北美洲许多土著语言的先驱。我们应当感激他们，因为其中一些语言后来已经消亡，使用这些语言的民族或已灭绝，或被同化而失去了自己的母语。然而，本世纪早期的其他一些语言学家不太愿意处理来自\"奇异\"语言的怪诞数据，因此并不总是那么心存感激。那些新被描述的语言与欧洲和东南亚经过充分研究的语言之间的差异往往如此之大，以至于一些学者甚至指责博厄斯和萨丕尔捏造了数据。美洲土著语言确实与众不同，事实上差异之大，以至于在第二次世界大战期间，美军可以使用纳瓦霍语作为密码来传递秘密信息。\n\n萨丕尔的学生本杰明·李·沃尔夫继续研究美洲印第安语言。由于对语言与思维的关系感兴趣，沃尔夫提出了这样一种观点，即语言的结构决定一个社会中习惯思维的结构。他推断，由于在一种特定语言中表述某些概念比表述其他概念更容易，该语言的使用者就会沿着一条思路而非另一条思路进行思考。沃尔夫逐渐相信一种语言决定论，该理论在其最强的表述形式下认为，语言禁锢思想，而且一种语言中的语法模式能够对一个社会的文化产生深远的影响。后来，这一观点被称为\"萨丕尔-沃尔夫假说\"，但这一术语在某种程度上并不恰当。尽管萨丕尔和沃尔夫都强调了语言的多样性，但萨丕尔本人从未明确支持过语言决定论的观点。",
+  "questions": [
+   {
+    "number": 41,
+    "en": "The Greeks assumed that the structure of language had some connection with the process of thought, which took root in Europe long before people realized how diverse languages could be.",
+    "cn": "希腊人认为语言的结构与思维过程之间存在某种联系，这一观点早在人们意识到语言的多样性之前就已在欧洲根深蒂固。",
+    "structure": "主干为 The Greeks assumed + that 宾语从句；which 引导非限制性定语从句，先行词为前面整个观点（即希腊人的假设），而非 thought；从句中 long before 引导时间状语从句，内含 how diverse 感叹/疑问结构作 realized 的宾语。",
+    "points": [
+     "which 指代前面整句所述观点，需译为\"这一观点/看法\"而非指代\"思维\"",
+     "took root 译为\"扎根/根深蒂固\"，体现观念的传播与延续",
+     "long before 译为\"早在……之前\"，how diverse languages could be 译出语言多样性之意"
+    ],
+    "pitfall": "which 的指代最易判断错误。若将其理解为修饰 thought 或 language，则整句逻辑混乱。which 指代的是前面 Greeks assumed 的整个观点，即\"语言结构与思维过程相关联\"这一假设在欧洲根深蒂固。"
+   },
+   {
+    "number": 42,
+    "en": "We are obliged to them because some of these languages have since vanished, as the peoples who spoke them died out or became assimilated and lost their native languages.",
+    "cn": "我们应当感激他们，因为其中一些语言后来已经消亡，使用这些语言的民族或已灭绝，或被同化而失去了自己的母语。",
+    "structure": "主干为 We are obliged to them；because 引导原因状语从句说明感激的原因；as 引导进一步补充原因的从句，其中 who spoke them 为定语从句修饰 the peoples，died out / became assimilated and lost 为三个并列谓语。",
+    "points": [
+     "are obliged to them 需译为\"感激他们\"而非\"有义务\"",
+     "have since vanished 中 since 为副词\"从那以后\"，需体现时间推移",
+     "as 引导的从句表原因，died out 译为\"灭绝\"，became assimilated 译为\"被同化\""
+    ],
+    "pitfall": "obliged 最常见义为\"有义务的\"，但 be obliged to sb 是固定搭配，意为\"感激某人\"。若误译为\"我们对他们有义务\"则意思完全偏离。"
+   },
+   {
+    "number": 43,
+    "en": "The newly described languages were often so strikingly different from the well studied languages of Europe and Southeast Asia that some scholars even accused Boas and Sapir of fabricating their data.",
+    "cn": "那些新被描述的语言与欧洲和东南亚经过充分研究的语言之间的差异往往如此之大，以至于一些学者甚至指责博厄斯和萨丕尔捏造了数据。",
+    "structure": "主干为 so...that... 结果状语从句结构：主语 The newly described languages，谓语 were different from...，so strikingly 修饰 different 表程度；that 从句中 accused sb of doing 为核心结构。",
+    "points": [
+     "so...that... 结构需完整译出\"如此……以至于……\"",
+     "strikingly different 译为\"截然不同/差异惊人\"",
+     "accuse sb of fabricating 译为\"指责/指控某人捏造\""
+    ],
+    "pitfall": "strikingly 为程度副词，不可遗漏，需体现\"惊人地、显著地\"之意。fabricating 意为\"捏造、伪造\"，不可误译为\"制作、编织\"。"
+   },
+   {
+    "number": 44,
+    "en": "Being interested in the relationship of language and thought, Whorf developed the idea that the structure of language determines the structure of habitual thought in a society.",
+    "cn": "由于对语言与思维的关系感兴趣，沃尔夫提出了这样一种观点，即语言的结构决定一个社会中习惯思维的结构。",
+    "structure": "句首 Being interested in... 为现在分词短语作原因状语，逻辑主语为 Whorf；主干为 Whorf developed the idea；that 引导同位语从句解释说明 idea 的具体内容，从句主干为 the structure of language determines the structure of habitual thought。",
+    "points": [
+     "Being interested in 分词短语需译出原因含义，如\"由于……\"",
+     "that 从句为同位语从句（非定语从句），解释 idea 的内容",
+     "habitual thought 译为\"习惯思维/习惯性思维\""
+    ],
+    "pitfall": "developed the idea 不宜直译为\"发展了观点\"，应根据语境译为\"提出了/形成了……观点\"。that 从句为同位语从句，翻译时可加\"即\"字引出内容。"
+   },
+   {
+    "number": 45,
+    "en": "Whorf came to believe in a sort of linguistic determinism which, in its strongest form, states that language imprisons the mind, and that the grammatical patterns in a language can produce far-reaching consequences for the culture of a society.",
+    "cn": "沃尔夫逐渐相信一种语言决定论，该理论在其最强的表述形式下认为，语言禁锢思想，而且一种语言中的语法模式能够对一个社会的文化产生深远的影响。",
+    "structure": "主干为 Whorf came to believe in a sort of linguistic determinism；which 引导非限制性定语从句修饰 linguistic determinism，从句谓语为 states，in its strongest form 为插入语；states 后接两个并列的 that 宾语从句：第一个 that language imprisons the mind，第二个 that the grammatical patterns... can produce far-reaching consequences。",
+    "points": [
+     "came to believe 译为\"逐渐相信\"，体现渐进过程",
+     "linguistic determinism 译为\"语言决定论\"",
+     "两个并列 that 从句均为 states 的宾语，需完整译出；far-reaching consequences 译为\"深远的影响/后果\""
+    ],
+    "pitfall": "两个 that 从句容易误判层级：第二个 that 并非修饰 mind，而是与第一个 that 并列，同为 states 的宾语从句。in its strongest form 为插入语，翻译时需恰当安置，不可遗漏。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "take root",
+    "cn": "扎根，根深蒂固（动词短语）"
+   },
+   {
+    "w": "diverse",
+    "cn": "多样的，各种各样的（adj.）"
+   },
+   {
+    "w": "obliged",
+    "cn": "感激的（be obliged to sb 感激某人）（adj.）"
+   },
+   {
+    "w": "vanish",
+    "cn": "消失，消亡（v.）"
+   },
+   {
+    "w": "assimilated",
+    "cn": "被同化的（adj./v.过去分词）"
+   },
+   {
+    "w": "strikingly",
+    "cn": "显著地，惊人地（adv.）"
+   },
+   {
+    "w": "fabricate",
+    "cn": "捏造，编造（v.）"
+   },
+   {
+    "w": "habitual",
+    "cn": "习惯性的，惯常的（adj.）"
+   },
+   {
+    "w": "linguistic determinism",
+    "cn": "语言决定论（n.）"
+   },
+   {
+    "w": "imprison",
+    "cn": "禁锢，囚禁（v.）"
+   },
+   {
+    "w": "far-reaching",
+    "cn": "深远的，影响广泛的（adj.）"
+   },
+   {
+    "w": "hypothesis",
+    "cn": "假说，假设（n.）"
+   },
+   {
+    "w": "bizarre",
+    "cn": "奇异的，古怪的（adj.）"
+   },
+   {
+    "w": "explicitly",
+    "cn": "明确地，明白地（adv.）"
+   }
+  ],
+  "skills": [
+   "注意非限制性定语从句 which 的指代对象，需根据上下文逻辑判断而非就近指代",
+   "熟词僻义需警惕：如 obliged 在此为\"感激\"而非\"有义务\"",
+   "so...that... 结果状语结构需完整对译为\"如此……以至于……\"",
+   "分词短语作状语时须根据语境判断其逻辑关系（原因、时间等），灵活增译连词",
+   "并列 that 从句需准确判断其共同的主句谓语动词，避免层级误判"
+  ]
+ }
+}

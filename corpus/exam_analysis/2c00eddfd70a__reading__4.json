@@ -1,0 +1,177 @@
+{
+ "schemaVersion": 1,
+ "id": "2c00eddfd70a__reading__4",
+ "examId": "2c00eddfd70a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "1999 年考研英语真题（旧）",
+ "year": 1999,
+ "sub": "4",
+ "questionNumbers": [
+  23,
+  24,
+  25,
+  26
+ ],
+ "generatedAt": "2026-10-27T05:03:38.763Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56984,
+ "usage": {
+  "prompt_tokens": 1732,
+  "completion_tokens": 3597,
+  "total_tokens": 5329,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1732,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3597,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1732,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国NBAC对人类克隆政策的讨论",
+  "gist": "苏格兰科学家克隆成年羊后，美国总统克林顿迅速下令禁止联邦资金用于克隆人实验，并委托国家生物伦理咨询委员会（NBAC）提出政策建议。NBAC计划建议延长联邦资金禁令，但在是否立法全面禁止私人资金克隆人的问题上存在分歧，该议题尚未达成一致。",
+  "structure": [
+   "第一段：交代背景，克林顿迅速回应克隆羊事件并成立NBAC",
+   "第二段：NBAC建议延长禁令但措辞谨慎，私人资金问题未达成共识",
+   "第三段：NBAC发现道德共识，克隆人在伦理上不可接受",
+   "第四段：NBAC计划继续禁止联邦资金克隆人，但不涉及胚胎研究",
+   "第五段：NBAC呼吁私人研究者不要克隆人，但对是否立法全面禁止存在分歧"
+  ],
+  "difficulty": "中等",
+  "translation": "三个月前，苏格兰一个研究小组宣布成功克隆了一只成年羊，令世界震惊，克林顿总统迅速采取了行动。他宣布反对将这种不寻常的畜牧技术用于克隆人，下令禁止将联邦资金用于此类实验——尽管并没有人提议这样做——并请求一个由普林斯顿大学校长哈罗德·夏皮罗担任主席的独立专家小组在90天内向白宫提交有关国家人类克隆政策的建议。该小组——国家生物伦理咨询委员会（NBAC）——一直在紧张地将其意见整理成文，并在5月17日的会议上，委员们就建议的近终稿达成了一致。\n\nNBAC将要求克林顿对联邦资金用于人类克隆的90天禁令无限期延长，并可能将其写入法律。但NBAC成员计划将建议的措辞限定在较窄的范围内，以避免对涉及克隆人类DNA或细胞的研究——分子生物学中的常规操作——施加新的限制。然而，该委员会在一个关键问题上尚未达成一致：是否建议立法，将私人资金用于克隆人定为犯罪。\n\n在5月17日会议上讨论的建议序言草案中，夏皮罗表示，委员会已发现一项广泛共识，即\"试图通过成人体细胞核克隆技术创造一个人类婴儿在道德上是不可接受的\"。夏皮罗在会上解释说，道德疑虑主要源于对儿童健康风险的担忧。委员会随后非正式地接受了几项一般性结论，尽管一些细节尚未敲定。\n\nNBAC计划呼吁继续禁止联邦政府资助任何试图通过克隆体细胞核来制造儿童的行为。由于现行联邦法律已经禁止使用联邦资金为研究目的创造胚胎（人类后代出生前的最早阶段）或故意危害胚胎生命，NBAC将不会就胚胎研究问题发表意见。\n\nNBAC成员还表示，他们将呼吁接受私人资助的研究者和诊所不要尝试通过体细胞核移植来克隆人。但他们在是否应进一步呼吁制定一部全面禁止克隆人的联邦法律方面意见不一。夏皮罗和大多数成员赞成呼吁制定此类立法，但在一次电话采访中，他表示这个问题仍\"悬而未决\"。",
+  "questions": [
+   {
+    "number": 23,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "President Clinton moved swiftly. Declaring that he was opposed to using this unusual animal husbandry technique to clone humans, he ordered that federal funds not be used for such an experiment...and asked an independent panel of experts...to report back to the White House in 90 days with recommendations for a national policy on human cloning.",
+    "why": "原文用\"moved swiftly\"描述克林顿的反应，随后具体展开了三项迅速行动：声明反对、下禁令、组建专家组。这些都表明白宫对克隆消息反应强烈（responded strongly），B项是对原文多处细节的准确概括。",
+    "traps": "A项张冠李戴：原文明确说\"although no one had proposed to do so\"，联邦资金从未被用于克隆人项目；C项偷换概念：NBAC是被委托提出政策建议（recommendations），并非被授权\"控制\"克隆技术的滥用；D项时态错误：文末说建议仍为\"near final draft\"，白宫尚未收到最终建议。",
+    "tip": "注意区分\"已经发生\"和\"尚未发生\"的信息，关注时态线索。"
+   },
+   {
+    "number": 24,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The panel has not yet reached agreement on a crucial question, however, whether to recommend legislation that would make it a crime for private funding to be used for human cloning.",
+    "why": "C项说\"用私人资金克隆人是犯罪行为\"，但原文明确指出委员会在这个关键问题上\"has not yet reached agreement\"（尚未达成一致）。题目问的是\"除了以下哪项外委员会都同意\"，C项恰好是委员会没有达成共识的内容，故为正确答案。",
+    "traps": "A项有据可依：第二段说NBAC将要求禁令\"be extended indefinitely, and possibly that it be made law\"；B项有据可依：第二段说建议措辞窄化以\"avoid new restrictions on research that involves the cloning of human DNA or cells\"；D项有据可依：第三段提到广泛共识认为克隆人\"morally unacceptable\"。",
+    "tip": "except题要逐项回文验证，找到唯一没有得到文中支持的选项。"
+   },
+   {
+    "number": 25,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Because current federal law already forbids the use of federal funds to create embryos for research or to knowingly endanger an embryo's life, NBAC will remain silent on embryo research.",
+    "why": "原文用because引出原因：现行联邦法律已经禁止使用联邦资金创造胚胎或危害胚胎生命，因此NBAC无需再讨论胚胎研究。D项\"the issue is explicitly stated and settled in the law\"（该问题在法律中已明确规定并解决）准确对应了原文因果逻辑。",
+    "traps": "A项无中生有：原文未说胚胎研究只是克隆的\"当前发展\"；B项曲解原文：原文说道德疑虑源于\"对儿童健康的担忧\"，但这不是NBAC不讨论胚胎研究的原因；C项与原文矛盾：法律禁止\"endanger an embryo's life\"，说明胚胎生命可能受到威胁。",
+    "tip": "因果关系题要紧扣原文because/since等连接词后的内容。"
+   },
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "But they were divided on whether to go further by calling for a federal law that would impose a complete ban on human cloning. Shapiro and most members favored an appeal for such legislation, but in a phone interview, he said this issue was still 'up in the air'.",
+    "why": "原文说委员们在是否呼吁制定全面禁止克隆人的联邦法律上\"were divided\"（意见分歧），且\"most members\"赞成意味着有部分成员不赞成，加上\"up in the air\"（悬而未决），可推断出A项：部分NBAC成员对全面禁止克隆人持犹豫态度。",
+    "traps": "B项过度推断：\"up in the air\"恰恰说明法律不会很快通过，与\"in no time\"矛盾；C项无据推断：文中未提及私人研究者的反应态度；D项过于乐观：全文多处表明分歧尚存、问题悬而未决，与\"soon be settled\"矛盾。",
+    "tip": "注意\"divided\"和\"up in the air\"等表示不确定性的表达，可推出犹豫/分歧。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "startled",
+    "cn": "v. 使震惊，使大吃一惊"
+   },
+   {
+    "w": "swiftly",
+    "cn": "adv. 迅速地，敏捷地"
+   },
+   {
+    "w": "husbandry",
+    "cn": "n. 畜牧业；（资源的）管理"
+   },
+   {
+    "w": "feverishly",
+    "cn": "adv. 狂热地，紧张忙碌地"
+   },
+   {
+    "w": "indefinitely",
+    "cn": "adv. 无限期地"
+   },
+   {
+    "w": "consensus",
+    "cn": "n. 共识，一致意见"
+   },
+   {
+    "w": "morally",
+    "cn": "adv. 道德上地"
+   },
+   {
+    "w": "embryo",
+    "cn": "n. 胚胎"
+   },
+   {
+    "w": "endanger",
+    "cn": "v. 使处于危险中，危害"
+   },
+   {
+    "w": "impose",
+    "cn": "v. 强制推行，施加"
+   },
+   {
+    "w": "legislation",
+    "cn": "n. 立法，法律"
+   },
+   {
+    "w": "stem from",
+    "cn": "v. 源于，起因于"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Declaring that he was opposed to using this unusual animal husbandry technique to clone humans, he ordered that federal funds not be used for such an experiment—although no one had proposed to do so—and asked an independent panel of experts chaired by Princeton President Harold Shapiro to report back to the White House in 90 days with recommendations for a national policy on human cloning.",
+    "cn": "他宣布反对将这种不寻常的畜牧技术用于克隆人，下令禁止将联邦资金用于此类实验——尽管并没有人提议这样做——并请求一个由普林斯顿大学校长哈罗德·夏皮罗担任主席的独立专家小组在90天内向白宫提交有关国家人类克隆政策的建议。",
+    "note": "主句主语he，谓语并列ordered和asked；Declaring为伴随状语；破折号插入让步补充；chaired by为过去分词短语作后置定语修饰panel。"
+   },
+   {
+    "en": "But NBAC members are planning to word the recommendation narrowly to avoid new restrictions on research that involves the cloning of human DNA or cells—routine in molecular biology.",
+    "cn": "但NBAC成员计划将建议的措辞限定在较窄的范围内，以避免对涉及克隆人类DNA或细胞的研究——分子生物学中的常规操作——施加新的限制。",
+    "note": "主干为members are planning to word...narrowly；to avoid为目的状语；that引导定语从句修饰research；破折号插入同位语解释说明前面的cloning操作。"
+   },
+   {
+    "en": "Because current federal law already forbids the use of federal funds to create embryos for research or to knowingly endanger an embryo's life, NBAC will remain silent on embryo research.",
+    "cn": "由于现行联邦法律已经禁止使用联邦资金为研究目的创造胚胎或故意危害胚胎生命，NBAC将不会就胚胎研究问题发表意见。",
+    "note": "Because引导原因状语从句在前，主句在后；forbids后接两个并列的不定式短语to create和to endanger；remain silent为系表结构表\"保持沉默\"。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "3cd42931854a__reading__1",
+ "examId": "3cd42931854a",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 6 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:17:18.447Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60765,
+ "usage": {
+  "prompt_tokens": 1876,
+  "completion_tokens": 3710,
+  "total_tokens": 5586,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1876,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3710,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1876,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "西班牙稻农应对苹果螺与海平面上升",
+  "gist": "西班牙埃布罗三角洲的稻农面临巨型苹果螺入侵和海平面上升导致盐分增加的双重威胁。欧盟资助的\"Neurice项目\"通过培育耐盐水稻品种，利用海水杀灭苹果螺，以一敌克一敌的策略同时应对两大挑战，最终目标是培育出既耐盐又保留欧洲稻米优良特性的商业化品种。",
+  "structure": [
+   "第1-2段：引出埃布罗三角洲稻农面临的两大威胁及以敌制敌策略",
+   "第3-5段：介绍Neurice项目目标、苹果螺来源与扩散风险",
+   "第6-7段：描述耐盐水稻试验进程与欧盟跨国合作育种方案"
+  ],
+  "difficulty": "中等",
+  "translation": "西班牙的埃布罗三角洲曾是西班牙内战中著名的战场，如今这里正上演着一场不同的较量——稻农正同时对抗两个敌人：啃食水稻的巨型苹果螺，以及不断上升的海平面。这里发生的一切将影响欧洲水稻生产的未来以及南欧湿地的整体健康。\n\n埃布罗三角洲位于地中海沿岸，在巴塞罗那以南两小时车程处，每年产出1.2亿公斤大米，是欧洲大陆最重要的水稻产区之一。然而，随着海水侵入这些淡水沼泽，盐分上升正在阻碍水稻生产。与此同时，海水也会杀死贪婪的巨型苹果螺——一种以幼嫩水稻为食的外来害虫。最有前景的策略已变成利用一个敌人来对抗另一个。\n\n这场战斗目前正在陆地上展开，地点是巴塞罗那大学的温室。在\"Neurice项目\"旗帜下工作的科学家们正在寻找能够承受日益增加的盐分、同时又不失去吸水性的水稻品种——正是这种吸水性使欧洲大米成为西班牙和意大利传统菜肴的理想选择。\n\n\"这个项目有两个方面，\"Neurice项目经理、巴塞罗那大学研究员泽维尔·塞拉特说，\"短期是对抗苹果螺，中长期是对抗气候变化。但苹果螺使这个项目变得更加紧迫。\"\n\n这种螺原产于南美洲，由全球水生技术公司意外引入埃布罗三角洲。该公司饲养这种螺用于淡水水族箱，但未能防止它们逃逸。目前，巨型苹果螺在欧洲的分布仅限于埃布罗三角洲。但塞拉特说，这种螺正在向新领地进军。\"问题不在于它是否会到达欧洲其他水稻产区，而在于何时到达。\"\n\n在接下来的一年半中，研究人员将测试他们培育的各种耐盐水稻品系。2018年，农民将把最有前景的品种种植在埃布罗三角洲以及欧洲另外两个主要稻米产区——意大利波河沿岸和法国罗纳河流域。经过一个季节的田间种植，将有助于确定这些品种中哪些（如果有的话）已经可以进行商业化推广。\n\n作为一项由欧盟资助的工作，耐盐水稻品种的研究正在三个国家同时进行。每个团队都在将当地欧洲短粒稻与一种携带耐盐基因的亚洲长粒稻进行杂交。科学家们正在培育连续几代后代，以获得既具备耐盐性又保留约97%欧洲水稻基因组的品种。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "The Ebro Delta, in Spain, famous as a battleground during the Spanish Civil War, is now the setting for a different contest, one that is pitting rice farmers against two enemies",
+    "why": "作者提到西班牙内战是为了类比说明埃布罗三角洲如今正发生另一场同样重要的\"战役\"。原文用\"famous as a battleground\"和\"a different contest\"形成对比，暗示当前稻农与苹果螺及海平面上升的斗争具有类似的重要性和激烈程度。接下来又说此事将影响欧洲水稻未来和南欧湿地健康，进一步强调其重要性。C项准确概括了这一类比意图。",
+    "traps": "A项\"对稻农生活有巨大影响\"属于无中生有，文中未提及内战对稻农生活的影响；B项\"在西班牙历史中意义重大\"虽然可能是事实，但并非作者此处提及内战的写作目的，属于偏离主旨；D项\"稻农经历同样艰难的时期\"过度引申，文章类比的是\"战场/较量\"的重要性，而非艰难程度。",
+    "tip": "开篇引用历史事件多为类比铺垫，需关注其与后文的逻辑关联。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The most promising strategy has become to harness one foe against the other.",
+    "why": "原文明确指出\"最有前景的策略已变为利用一个敌人来对抗另一个\"。具体逻辑是：海水入侵导致盐分升高，虽不利于传统水稻，但海水可以杀死苹果螺。因此\"harness one foe against the other\"即以海水（一害）制螺（另一害），D选项\"Using one evil to combat the other\"是对原文的精准改写。",
+    "traps": "A项\"先打较弱的敌人\"文中无此策略描述；B项\"一箭双雕\"表面看似合理，但原文强调的是以敌制敌而非一个行动同时消灭两者；C项\"逐个消灭敌人\"同样不符合原文\"以一敌制另一敌\"的核心策略。",
+    "tip": "遇到策略类题目，要精确理解原文表述的策略内涵，避免被近义表达混淆。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "the short-term fight against the snail—and a mid- to long-term fight against climate change. But the snail has given the project greater urgency.",
+    "why": "塞拉特指出项目有两方面：短期对抗苹果螺、中长期对抗气候变化，且苹果螺的存在使项目更加紧迫。\"short-term fight\"和\"greater urgency\"说明项目的当务之急（immediate priority）是控制苹果螺害虫。C项\"其当务之急是控制害虫\"与原文完全吻合。",
+    "traps": "A项\"目标实现需要付出代价\"属于无中生有，原文未提及成本或代价问题；B项\"旨在提高西班牙水稻产量\"偷换概念，项目目标是培育耐盐品种而非单纯增产；D项\"利用气候变化杀螺\"因果关系错乱，海水入侵能杀螺是客观现象，并非项目主动利用气候变化的手段。",
+    "tip": "注意区分项目的短期优先目标和长期目标，关键词short-term和urgency是定位线索。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The question is not whether it will reach other rice-growing areas of Europe, but when.",
+    "why": "Neurice项目经理塞拉特明确表示\"问题不在于苹果螺是否会到达欧洲其他水稻产区，而在于何时到达\"，这清楚表明苹果螺入侵其他欧洲稻区只是时间问题。B项\"它将入侵欧洲其他水稻产区\"是对原文的准确概括。",
+    "traps": "A项\"只能在南欧湿地存活\"与原文矛盾，原文明确暗示它将扩散到其他地区；C项\"繁殖速度超乎想象\"文中未提及其繁殖速度；D项\"被故意引入稻田\"与事实相反，原文说是\"accidentally introduced\"即意外引入。",
+    "tip": "注意\"not whether...but when\"这一经典句式，表达的是确定性而非可能性。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "Each team is crossbreeding a local European short-grain rice with a long-grain Asian variety that carries the salt-resistant gene.",
+    "why": "最后两段描述了欧盟资助项目的整体目标与实施方案：在三个国家同时进行耐盐水稻品种的培育，将欧洲短粒稻与携带耐盐基因的亚洲长粒稻杂交，最终获得既耐盐又保留约97%欧洲稻基因组的品种，并推向商业化。A项\"培育理想的耐盐水稻品种\"准确概括了这一终极目标。",
+    "traps": "B项\"提高西班牙大米吸水性\"是张冠李戴，吸水性是需要保留的已有特性而非培育目标；C项\"将西班牙大米推广到欧洲其他地区\"偷换概念，项目是在三国同时进行育种而非推广西班牙大米；D项\"普及水稻杂交技术\"缩小了项目目标，杂交只是手段而非最终目的。",
+    "tip": "关注末段总结性信息，区分\"手段\"与\"目标\"是解题关键。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "pitting...against",
+    "cn": "使……对抗（动词短语）"
+   },
+   {
+    "w": "have a bearing on",
+    "cn": "对……有影响（固定搭配）"
+   },
+   {
+    "w": "salinity",
+    "cn": "盐度，含盐量（n.）"
+   },
+   {
+    "w": "hamper",
+    "cn": "阻碍，妨碍（v.）"
+   },
+   {
+    "w": "harness",
+    "cn": "利用，驾驭（v.）"
+   },
+   {
+    "w": "foe",
+    "cn": "敌人，对手（n.）"
+   },
+   {
+    "w": "withstand",
+    "cn": "经受住，承受（v.）"
+   },
+   {
+    "w": "absorbency",
+    "cn": "吸收性，吸水性（n.）"
+   },
+   {
+    "w": "strain",
+    "cn": "品系，品种（n.）"
+   },
+   {
+    "w": "commercialization",
+    "cn": "商业化（n.）"
+   },
+   {
+    "w": "crossbreed",
+    "cn": "杂交繁殖（v.）"
+   },
+   {
+    "w": "genome",
+    "cn": "基因组（n.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Scientists working under the banner \"Project Neurice\" are seeking varieties of rice that can withstand the increasing salinity without losing the absorbency that makes European rice ideal for traditional Spanish and Italian dishes.",
+    "cn": "在\"Neurice项目\"旗帜下工作的科学家们正在寻找能够承受日益增加的盐分、同时又不失去吸水性的水稻品种——正是这种吸水性使欧洲大米成为西班牙和意大利传统菜肴的理想选择。",
+    "note": "主干为Scientists are seeking varieties of rice；that引导定语从句修饰varieties；without losing引出让步条件；第二个that引导定语从句修饰absorbency，形成多层嵌套。"
+   },
+   {
+    "en": "Each team is crossbreeding a local European short-grain rice with a long-grain Asian variety that carries the salt-resistant gene.",
+    "cn": "每个团队都在将当地的欧洲短粒稻与一种携带耐盐基因的亚洲长粒稻进行杂交。",
+    "note": "主干为Each team is crossbreeding A with B；that引导定语从句修饰variety；注意crossbreed...with的搭配结构。"
+   },
+   {
+    "en": "The scientists are breeding successive generations to arrive at varieties that incorporate salt tolerance but retain about 97 percent of the European rice genome.",
+    "cn": "科学家们正在培育连续几代后代，以获得既具备耐盐性又保留约97%欧洲水稻基因组的品种。",
+    "note": "主干为scientists are breeding generations；to arrive at引出目的状语；that引导定语从句修饰varieties，从句内incorporate和retain构成并列谓语，体现双重目标。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "fc33c1cb1401__banked_cloze__all",
+ "examId": "fc33c1cb1401",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2025 年 12 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:04:12.180Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 75669,
+ "usage": {
+  "prompt_tokens": 1384,
+  "completion_tokens": 4353,
+  "total_tokens": 5737,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1384,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4353,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1384,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "AI时代人类智能与创造力的价值",
+  "gist": "文章探讨了科技不断打破人类自认独特的信念这一趋势。随着AI在认知任务和创意领域超越人类，未来不同领域对人类技能的需求将呈现光谱式分布：有些领域仍重视人类参与，有些领域人类技能将变得冗余，更多领域将呈人机混合态。AI进步最终将导致大量工作消失，贫富分化加剧。",
+  "difficulty": "中等",
+  "translation": "我们人类总爱相信自己是特殊的，但科学和技术一再证明这种信念是错误的。人们曾经认为人类是唯一会使用工具、组建团队或传播文化的动物，但科学已表明其他动物也能做到这些。\n\n与此同时，技术逐一否定了那些声称认知任务需要人类大脑才能完成的说法。第一台加法机器发明于1623年。过去一年里，一件由计算机生成的作品赢得了一场艺术比赛。我相信计算机追上并超越人类智能的时刻已近在眼前。\n\n当机器变得比最聪明的人还要聪明、更有创造力时，人类的智能和创造力将如何被评价？可能会出现一个连续的光谱。在某些领域，人们仍然看重由人类来做事，即使计算机能做得更好。计算机击败世界冠军加里·卡斯帕罗夫已有四分之一个世纪了，但人类的国际象棋运动并没有消亡。\n\n在其他领域，人类的技能将显得昂贵且多余。以插画为例：大多数读者并不在意杂志文章所配的图画是由人还是由计算机绘制的——他们只希望图画相关、新颖，也许还能令人愉悦。\n\n当然，这个问题并非非黑即白。许多领域将是一种混合体，少数人找到幸运的位置，但大部分工作由计算机完成，就像今天的制造业一样，大部分工作由机器人完成，但仍需一些人来监管机器。\n\n如果历史可以作为参考，几乎可以肯定的是：人工智能的进步将导致更多工作岗位消失，拥有人类独有技能的创意工作者将变得更富有但人数更少，而拥有创意技术的人将成为新的超级富豪。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "I",
+    "correct": "once",
+    "why": "此处需要一个副词修饰谓语动词 thought。语境为\"人们曾经认为……但科学已经证明……\"，表示过去的错误认知，once（曾经）完美契合过去与现在的对比转折逻辑。",
+    "traps": "其他副词类候选词在语义上无法与 thought 搭配形成'过去认为'的含义，且上下文明确需要一个表'曾经'时间概念的词来呼应后文 but science has shown 的转折。",
+    "tip": "转折句中寻找时间副词，表过去认知。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "cognitive",
+    "why": "空格处需要形容词修饰名词 tasks。上下文讲的是技术逐一否定了'某类任务需要人类大脑'的说法，cognitive（认知的）与 brain、intelligence 语义场一致，指需要思维参与的认知类任务。",
+    "traps": "entertaining 虽也是形容词，但'娱乐性任务'与'需要人类大脑'的论证逻辑不符；accompanying 作形容词义为'伴随的'，修饰 tasks 语义不通。",
+    "tip": "形容词修饰 tasks，需与 brain/intelligence 同语义场。"
+   },
+   {
+    "number": 28,
+    "answer": "M",
+    "correct": "surpass",
+    "why": "空格与 meet 由 and 并列，需要同为动词原形，宾语为 human intelligence。meet and surpass 构成递进关系，意为'追上并超越人类智能'，符合本段论述AI能力不断提升的主旨。",
+    "traps": "oversee（监管）虽也是动词原形，但语义为'监督'，与 meet 并列后接 human intelligence 不合逻辑；vanish 为不及物动词，不能接宾语。",
+    "tip": "and 并列结构要求词性一致，注意递进语义。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "correct": "domains",
+    "why": "空格前有 In some，后文讨论不同领域对人类技能的态度差异，需要一个表'领域'的可数名词复数形式。domains（领域）完美适配，且与下段 In other fields 形成对应。",
+    "traps": "其他名词类选项如 hybrid 为单数且语义不合；此处 some 后需可数名词复数，domains 是唯一语义和语法都匹配的选项。",
+    "tip": "In some ___ 需可数名词复数，注意与下文 fields 的同义呼应。"
+   },
+   {
+    "number": 30,
+    "answer": "K",
+    "correct": "redundant",
+    "why": "空格与 costly 由 and 并列，需要形容词。语境说在某些领域人类技能显得昂贵且……redundant（多余的、冗余的）与 costly 并列，表达人力既贵又不必要，逻辑通顺。",
+    "traps": "cognitive 虽为形容词但意为'认知的'，与 costly 并列修饰 human skill 语义不当；entertaining（有趣的）与 costly 并列描述技能缺陷不合语境。",
+    "tip": "and 并列形容词，需与 costly 构成负面评价语义。"
+   },
+   {
+    "number": 31,
+    "answer": "A",
+    "correct": "accompanying",
+    "why": "空格处需要修饰 graphic 的词（现在分词作后置定语），the graphic accompanying a magazine article 意为'配合杂志文章的图画'。accompanying 表'伴随、附带'，是固定搭配用法。",
+    "traps": "entertaining 语法上可作定语但语义不当，因为下文 perhaps entertaining 才用此词描述图画特征；此处强调的是图画与文章的关系而非图画的性质。",
+    "tip": "现在分词作后置定语，注意 graphic 与 article 的伴随关系。"
+   },
+   {
+    "number": 32,
+    "answer": "D",
+    "correct": "entertaining",
+    "why": "空格与 relevant、new 由 and/perhaps 并列，需要形容词。读者希望图画相关、新颖且令人愉悦，entertaining（令人愉悦的、有娱乐性的）符合对图画品质期望的语境。",
+    "traps": "cognitive（认知的）不适合描述读者对插画的审美期望；redundant（多余的）为负面含义，与读者'期望'的正面语境矛盾。",
+    "tip": "并列形容词需正面含义，表读者对插画的期待。"
+   },
+   {
+    "number": 33,
+    "answer": "F",
+    "correct": "hybrid",
+    "why": "空格前有不定冠词 a，需要可数名词单数。下文解释'一些人找到位置，但大部分工作由计算机完成'，描述的正是人机混合状态。hybrid（混合体）完美概括这种人机协作模式。",
+    "traps": "domain 虽可作单数名词但前文已用且此处语义为混合概念而非领域概念；此处 a ___ 后紧跟 where 从句描述混合特征，hybrid 是唯一契合的选项。",
+    "tip": "a + 单数名词，后接 where 从句描述人机共存状态。"
+   },
+   {
+    "number": 34,
+    "answer": "J",
+    "correct": "oversee",
+    "why": "空格前为 to，需要动词原形；宾语为 the machines。语境说制造业中大部分工作由机器人完成，但仍需人类来监管机器。oversee（监督、监管）语义精确，体现人对机器的管理角色。",
+    "traps": "surpass（超越）虽为动词原形但语义不符，人类留在工厂不是为了'超越'机器；accompany 语义为'陪伴'，不能准确表达人类对机器的管理职能。",
+    "tip": "to + 动词原形，语境强调人类对机器的监管职能。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "vanish",
+    "why": "空格前为 cause more jobs to，需要动词原形构成 cause sth to do 结构。文章总结AI将导致更多工作岗位消失，vanish（消失）准确表达岗位消亡，与全文AI取代人类工作的主题呼应。",
+    "traps": "surpass 已在28题使用且语义不符（工作岗位不能被'超越'）；oversee 已在34题使用且'工作岗位监管'语义不通。选词填空中每词只用一次。",
+    "tip": "cause sth to do 结构需动词原形，语义为工作消亡。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的，与认知过程有关的"
+   },
+   {
+    "w": "surpass",
+    "cn": "v. 超越，胜过"
+   },
+   {
+    "w": "domains",
+    "cn": "n. 领域，范围（复数）"
+   },
+   {
+    "w": "redundant",
+    "cn": "adj. 多余的，冗余的；被裁减的"
+   },
+   {
+    "w": "accompanying",
+    "cn": "v./adj. 伴随的，附带的（accompany 的现在分词）"
+   },
+   {
+    "w": "hybrid",
+    "cn": "n. 混合体，混合物；adj. 混合的"
+   },
+   {
+    "w": "oversee",
+    "cn": "v. 监督，监管（oversee-oversaw-overseen）"
+   },
+   {
+    "w": "vanish",
+    "cn": "v. 消失，消亡"
+   },
+   {
+    "w": "propagate",
+    "cn": "v. 传播，繁殖"
+   },
+   {
+    "w": "quash",
+    "cn": "v. 使无效，撤销，镇压"
+   },
+   {
+    "w": "on the horizon",
+    "cn": "即将来临，在地平线上（习语）"
+   },
+   {
+    "w": "ultra-rich",
+    "cn": "n./adj. 超级富豪（的）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性分类（名词/动词/形容词/副词）。",
+   "第二步：根据空格前后语法结构判断所需词性（如冠词后接名词、and并列同词性等）。",
+   "第三步：将同词性候选词代入空格，结合上下文语义和搭配选出最佳答案。",
+   "第四步：注意每词只用一次的规则，已选词及时排除，降低后续干扰。",
+   "第五步：全部填完后通读检查，确认语法正确、语义连贯、无重复使用。"
+  ]
+ }
+}

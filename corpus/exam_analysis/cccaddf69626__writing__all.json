@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "cccaddf69626__writing__all",
+ "examId": "cccaddf69626",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2017 年 6 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:11:06.084Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 51872,
+ "usage": {
+  "prompt_tokens": 695,
+  "completion_tokens": 3470,
+  "total_tokens": 4165,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 695,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3470,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 695,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作：就大学选择理科还是文科给出建议，要求表明立场并充分论证，字数150-200词。",
+    "outline": [
+     "引出话题，表明个人立场：建议依据个人兴趣选择，但整体略倾向理科。",
+     "分两层论证：第一层阐述理科的就业优势与可迁移技能；第二层肯定文科在批判思维、沟通能力等方面的独特价值，体现辩证性。",
+     "总结观点，强调最终选择应结合个人热情与天赋，首尾呼应、升华主题。"
+    ],
+    "sample": "When it comes to choosing between science and humanities at college, I would recommend that students follow their genuine interests rather than blindly chase popular trends. However, if pressed to give a general recommendation, I would slightly lean toward science for most students.\n\nTo begin with, science majors tend to enjoy broader career prospects in today's technology-driven economy. Fields such as artificial intelligence, biotechnology, and data science are generating an unprecedented demand for skilled professionals, which translates into competitive salaries and job stability. Furthermore, the rigorous training in logical reasoning and quantitative analysis that science programs offer equips students with transferable skills applicable across industries.\n\nThat said, humanities should never be undervalued. Disciplines like philosophy, literature, and history cultivate critical thinking, effective communication, and cultural awareness—qualities that are indispensable in leadership roles and creative professions. In fact, many successful entrepreneurs attribute their achievements to a solid humanities foundation.\n\nIn conclusion, while science may provide a more straightforward path to employment, the ideal choice ultimately depends on one's passion and aptitude. Only by aligning academic pursuits with personal strengths can students truly thrive in their future careers.",
+    "phrases": [
+     {
+      "en": "technology-driven economy",
+      "cn": "技术驱动型经济；用于描述当下就业环境，体现用词的时代感"
+     },
+     {
+      "en": "unprecedented demand for",
+      "cn": "对……前所未有的需求；强调程度，适用于论述趋势类话题"
+     },
+     {
+      "en": "transferable skills applicable across industries",
+      "cn": "可跨行业应用的可迁移技能；后置形容词短语作定语，结构紧凑高级"
+     },
+     {
+      "en": "cultivate critical thinking",
+      "cn": "培养批判性思维；cultivate比develop更正式，常用于教育类话题"
+     },
+     {
+      "en": "attribute their achievements to",
+      "cn": "将成就归因于……；attribute...to为高频考研/六级写作搭配"
+     },
+     {
+      "en": "align academic pursuits with personal strengths",
+      "cn": "使学业追求与个人优势相匹配；align...with为高分动词搭配"
+     },
+     {
+      "en": "lean toward",
+      "cn": "倾向于；比tend to更地道，适合表达个人偏好"
+     },
+     {
+      "en": "competitive salaries and job stability",
+      "cn": "有竞争力的薪资和工作稳定性；就业话题常用名词搭配组合"
+     },
+     {
+      "en": "indispensable in leadership roles",
+      "cn": "在领导岗位中不可或缺；indispensable替代important，提升词汇档次"
+     },
+     {
+      "en": "That said",
+      "cn": "话虽如此；用于转折过渡，比However更简洁自然"
+     }
+    ],
+    "pitfalls": [
+     "全篇只谈一方优势而不辩证分析，论证片面易被扣内容分",
+     "开头直接写I think过于口语化，缺乏正式学术写作的引入方式",
+     "论据空洞仅有观点无实例支撑，说服力不足影响逻辑分",
+     "段落间缺少过渡词或过渡句，导致行文逻辑链断裂扣衔接分",
+     "核心词汇反复使用good/important等，缺乏同义替换显词汇贫乏"
+    ],
+    "upgrades": [
+     {
+      "plain": "Science is good for finding jobs.",
+      "better": "Science majors tend to enjoy broader career prospects in today's technology-driven economy.",
+      "note": "用具体搭配替代笼统形容词，信息量更大且语域更正式"
+     },
+     {
+      "plain": "Humanities can help people think better.",
+      "better": "Humanities cultivate critical thinking, effective communication, and cultural awareness.",
+      "note": "三项并列将抽象概念具体化，展示词汇广度与句式变化"
+     },
+     {
+      "plain": "Students should choose what they like.",
+      "better": "Only by aligning academic pursuits with personal strengths can students truly thrive.",
+      "note": "Only by倒装句提升句式复杂度，thrive替代简单动词更有力"
+     },
+     {
+      "plain": "Many successful people studied humanities.",
+      "better": "Many successful entrepreneurs attribute their achievements to a solid humanities foundation.",
+      "note": "attribute...to结构更地道，foundation比background更具深度"
+     },
+     {
+      "plain": "Science can give students useful skills.",
+      "better": "The rigorous training in logical reasoning and quantitative analysis equips students with transferable skills.",
+      "note": "用rigorous和quantitative等学术词汇替代模糊表达，精准度大幅提升"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The rigorous training in logical reasoning and quantitative analysis that science programs offer equips students with transferable skills applicable across industries. ——定语从句嵌套+后置形容词短语，展示复杂句驾驭能力，意为'理科课程提供的逻辑推理与定量分析的严格训练使学生具备可跨行业应用的可迁移技能'。",
+   "Only by aligning academic pursuits with personal strengths can students truly thrive in their future careers. ——Only by引导的倒装句，句式高级且观点有力，意为'唯有将学业追求与个人优势相匹配，学生才能在未来职业中真正大放异彩'。",
+   "Disciplines like philosophy, literature, and history cultivate critical thinking, effective communication, and cultural awareness—qualities that are indispensable in leadership roles and creative professions. ——破折号引出同位语+定语从句补充说明，层次丰富，意为'哲学、文学和历史等学科培养批判性思维、有效沟通和文化意识——这些品质在领导岗位和创意行业中不可或缺'。",
+   "While science may provide a more straightforward path to employment, the ideal choice ultimately depends on one's passion and aptitude. ——While让步状语从句开头体现辩证思维，意为'尽管理科可能提供更直接的就业路径，但理想的选择最终取决于个人的热情与天赋'。"
+  ]
+ }
+}

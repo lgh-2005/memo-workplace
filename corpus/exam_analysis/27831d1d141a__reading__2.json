@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "27831d1d141a__reading__2",
+ "examId": "27831d1d141a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年考研英语真题",
+ "year": 2022,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:48:49.326Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57707,
+ "usage": {
+  "prompt_tokens": 1721,
+  "completion_tokens": 3611,
+  "total_tokens": 5332,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1721,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3611,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1721,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "Z世代应重新审视大学学位的价值",
+  "gist": "文章指出千禧一代曾被许诺学位能保障前途，但随着学位普及其价值已缩水。作者建议Z世代不应把上大学视为唯一出路，雇主也在淡化学位要求。对于选择读学位的人，应考虑继续深造获取专业技能，终身学习将贯穿Z世代整个职业生涯。",
+  "structure": [
+   "第1段：引出话题——Z世代需重新审视学位的意义",
+   "第2-3段：指出学位贬值现象，强调大学并非唯一出路",
+   "第4段：雇主态度转变，Z世代已在反思学位必要性",
+   "第5段：建议有学位者继续深造以获取竞争力",
+   "第6-7段：Z世代需终身学习，学位不再定义个人身份"
+  ],
+  "difficulty": "中等",
+  "translation": "当最新一届学生填写本科申请表并权衡各种选择时，也许值得思考一下学位的意义、目的和价值发生了怎样的变化，以及Z世代在开启教育旅程第三阶段时需要考虑些什么。\n\n千禧一代被告知，只要在学校表现优秀、拿到一个体面的学位，就能一生无忧。但这一承诺已被证明是靠不住的。随着学位变得普遍，它们也随之贬值。教育不再是社会阶层流动的可靠途径。如今，英国有28%的毕业生从事着不需要学位的工作，这一比例是经合组织国家平均水平的两倍。\n\n这并不是说拿学位毫无意义，而是强调学位并非适合每个人，从教室走向大学讲堂并非必然之路，还有其他选择可供考虑。\n\n值得庆幸的是，已有迹象表明这种转变正在发生——Z世代正在从千禧一代前辈身上汲取教训，尽管家长和老师往往仍固守学位至上的观念。雇主们早已看到雇用中学毕业生的优势，这些人往往比大学毕业生表现得更有责任心、更忠诚。许多雇主也正在认识到取消某些岗位学位要求的好处。\n\n对于那些认为读学位是理想路径的人来说，请考虑到这很可能是众多学位中的第一个。在这个通才的时代，拥有特定的知识或技能是有回报的。如今，研究生的收入比本科毕业生高出40%。当越来越多的人拥有一个学位时，拥有两个学位就变得合情合理了。\n\nZ世代不太可能在18岁或21岁时就结束学业；他们需要在整个职业生涯中不断提升技能以保持就业竞争力。据估计，由于技术压力、对个人成就感的追求以及对多元化的渴望，这一代人在其职业生涯中将为17个不同的雇主工作，经历5种不同的职业。教育——不仅仅是在校园里获得的知识——将成为Z世代职业发展轨迹的核心组成部分。\n\n年长的几代人常常用现在时和第一人称来谈论自己的学位：\"我是地理学家\"或\"我是古典学者\"。他们的儿女绝不会这样说；似乎他们已经知道，学位不会像过去那样定义自己。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "it may be worth considering just how the point, purpose and value of a degree has changed and what Generation Z need to consider as they start the third stage of their educational journey.",
+    "why": "第1段指出Z世代应思考学位的意义、目的和价值如何变化；第2-3段进一步说明学位贬值、并非人人都需要学位、还有其他选择。综合来看，作者建议Z世代重新评估大学教育的必要性，C选项中\"reassess the necessity of college education\"是对原文信息的准确概括。",
+    "traps": "A\"选择大学要谨慎\"偷换概念，文章讨论的是是否需要上大学，而非如何选大学；B\"在每个教育阶段勤奋\"属于无中生有，文中未涉及勤奋话题；D\"推迟本科申请\"曲解原文，文章是让学生思考学位价值，而非建议推迟申请。",
+    "tip": "首段总领全文时注意区分\"是否上大学\"和\"如何上大学\"。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "As degrees became universal, they became devalued. Education was no longer a secure route of social mobility. Today, 28 per cent of graduates in the UK are in non-graduate roles.",
+    "why": "第2段的论证逻辑为：学位普及→学位贬值→教育不再是社会流动的可靠途径→28%的英国毕业生从事非学位岗位。该数据是用来论证\"学位贬值\"这一核心观点的，B选项\"the shrinking value of a degree\"（学位价值缩水）与此完全对应。",
+    "traps": "A\"千禧一代对工作的看法\"张冠李戴，数据反映的是客观现实而非观点；C\"公众对教育的不满\"属于过度推断，原文未涉及公众情绪；D\"理想的社会流动途径\"与原意相反，原文说教育已不再是可靠的社会流动途径。",
+    "tip": "数据论据题要向前追溯其所支撑的论点。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Thankfully, there are signs that this is already happening... Employers have long seen the advantages of hiring school leavers... Many too are seeing the advantages of scrapping a degree requirement for certain roles.",
+    "why": "第4段以\"Thankfully\"引出积极信号，随后具体展开：雇主早已看到雇用中学毕业生的优势，许多雇主也在考虑取消某些职位的学位要求。C选项\"employers are taking a realistic attitude to degree\"（雇主对学位采取务实态度）准确概括了这些雇主行为的实质。",
+    "traps": "A\"Z世代正努力获得体面学位\"与原文相反，原文说Z世代在反思学位必要性；B\"中学毕业生愿意成为技术工人\"属于无中生有，原文说的是雇主看到雇用他们的好处；D\"家长正在改变教育观念\"与原文矛盾，原文明确说家长和老师仍固守学位观念（still set in the degree mindset）。",
+    "tip": "注意\"good sign\"对应原文\"Thankfully\"后的具体内容。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "For those for whom a degree is the desired route, consider that this may well be the first of many. In this age of generalists, it pays to have specific knowledge or skills. Postgraduates now earn 40 per cent more than graduates.",
+    "why": "第5段建议已有学位的人考虑继续深造：在通才时代拥有专业知识或技能是有回报的，研究生比本科生收入高40%，拥有两个学位才有竞争力。D选项\"further their studies in a specific field\"（在某一专业领域继续深造）准确匹配了\"specific knowledge or skills\"和继续读学位的建议。",
+    "traps": "A\"尽早做职业决定\"无中生有，第5段未涉及职业决策时机；B\"参加在职培训项目\"偷换概念，文中说的是继续攻读学位而非职业培训；C\"与高薪研究生合作\"曲解原文，研究生薪资数据用于论证继续深造的价值，而非建议合作。",
+    "tip": "建议类题目要准确把握建议的具体内容和对象。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "It is unlikely that Generation Z will be done with education at 18 or 21; they will need to be constantly upskilling throughout their career to stay employable.",
+    "why": "第6段指出Z世代不会在18或21岁结束学业，需要在整个职业生涯中不断提升技能，教育将是其职业轨迹的核心。第7段补充说Z世代知道学位不会像过去那样定义自己。综合来看，终身学习（而非某个学位）将定义Z世代，A选项\"Lifelong learning will define them\"是对这两段核心信息的准确概括。",
+    "traps": "B\"他们将成为合格的教育者\"属于曲解原文，文章说的是Z世代需要接受教育而非成为教育者；C\"学位将不再吸引他们\"过度推断，原文说学位不会定义他们，并非说学位毫无吸引力；D\"工作选择有限\"与原文相反，原文提到他们将有5种不同职业和17个不同雇主。",
+    "tip": "末段总结题需综合最后两段的共同主旨进行推断。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "pen",
+    "cn": "v. 书写，填写"
+   },
+   {
+    "w": "set up for life",
+    "cn": "短语 一生无忧，衣食无忧"
+   },
+   {
+    "w": "found wanting",
+    "cn": "短语 被证明不足的，令人失望的"
+   },
+   {
+    "w": "devalued",
+    "cn": "adj./v. 贬值的，降低价值"
+   },
+   {
+    "w": "social mobility",
+    "cn": "n. 社会流动性，阶层流动"
+   },
+   {
+    "w": "predecessors",
+    "cn": "n. 前辈，前任（predecessor的复数）"
+   },
+   {
+    "w": "scrapping",
+    "cn": "v. 废弃，取消（scrap的现在分词）"
+   },
+   {
+    "w": "generalists",
+    "cn": "n. 通才，多面手（generalist的复数）"
+   },
+   {
+    "w": "upskilling",
+    "cn": "v. 提升技能（upskill的现在分词）"
+   },
+   {
+    "w": "trajectory",
+    "cn": "n. 轨迹，发展路径"
+   },
+   {
+    "w": "fulfilment",
+    "cn": "n. 满足感，成就感"
+   },
+   {
+    "w": "classicist",
+    "cn": "n. 古典学者，古典主义者"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As the latest crop of students pen their undergraduate application form and weigh up their options, it may be worth considering just how the point, purpose and value of a degree has changed and what Generation Z need to consider as they start the third stage of their educational journey.",
+    "cn": "当最新一届学生填写本科申请表并权衡各种选择时，也许值得思考一下学位的意义、目的和价值发生了怎样的变化，以及Z世代在开启教育旅程第三阶段时需要考虑些什么。",
+    "note": "As引导时间状语从句；主句为it形式主语结构，真正主语是considering后的两个宾语从句（how引导和what引导），构成并列。"
+   },
+   {
+    "en": "It has been estimated that this generation, due to the pressures of technology, the wish for personal fulfilment and desire for diversity, will work for 17 different employers over the course of their working life and have five different careers.",
+    "cn": "据估计，由于技术压力、对个人成就感的追求以及对多元化的渴望，这一代人在其职业生涯中将为17个不同的雇主工作，经历5种不同的职业。",
+    "note": "It为形式主语，that从句为真正主语；due to引导原因状语（含三个并列名词短语）插在主语与谓语之间；will work和have构成并列谓语。"
+   },
+   {
+    "en": "This is not to say that there is no point in getting a degree, but rather stress that a degree is not for everyone, that the switch from classroom to lecture hall is not an inevitable one and that other options are available.",
+    "cn": "这并不是说拿学位毫无意义，而是强调学位并非适合每个人，从教室走向大学讲堂并非必然之路，还有其他选择可供考虑。",
+    "note": "not...but rather构成转折；stress后跟三个并列的that宾语从句，层层递进说明学位非唯一选择。"
+   }
+  ]
+ }
+}

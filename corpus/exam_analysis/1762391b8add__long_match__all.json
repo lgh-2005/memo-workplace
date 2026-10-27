@@ -1,0 +1,246 @@
+{
+ "schemaVersion": 1,
+ "id": "1762391b8add__long_match__all",
+ "examId": "1762391b8add",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2025 年 12 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:01:00.969Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31504,
+ "usage": {
+  "prompt_tokens": 961,
+  "completion_tokens": 1708,
+  "total_tokens": 2669,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 961,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1708,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 961,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 5,
+ "warnings": [],
+ "analysis": {
+  "topic": "餐饮行业机器人与自动化趋势",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如robot、automate、restaurant等",
+   "圈出每题中的专有名词、数字、特殊表达（如Flippy、AI）作为定位锚点",
+   "利用同义替换思维，将陈述句关键词转化为可能的近义表达再回文扫读",
+   "注意感情色彩与逻辑关系词，如certainty、acute shortage等判断段落语气",
+   "先做含专有名词的题（如40题Flippy、37题robot-powered US company），再攻一般性描述题"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "cn": "现在已经可以在几乎无需人工监管的情况下实现汉堡餐厅的全面自动化。",
+    "keywords": [
+     "fully automate",
+     "burger restaurant",
+     "little human supervision"
+    ],
+    "paraphrase": "陈述句中fully automate对应原文可能的completely run by machines等表达；little human supervision可能被替换为minimal human involvement或without much human oversight等。",
+    "tip": "定位burger/hamburger及automate相关词，快速锁定C段。"
+   },
+   {
+    "number": 37,
+    "answer": "H",
+    "cn": "在一家由机器人驱动的美国公司中，复杂的任务仍然需要由人类来完成。",
+    "keywords": [
+     "robot-powered",
+     "US company",
+     "complicated tasks",
+     "humans"
+    ],
+    "paraphrase": "complicated tasks可能被替换为complex operations或intricate work；still have to be performed by humans可能对应require human workers或need people to handle。",
+    "tip": "关注robot-powered与US company的组合定位，留意转折词still。"
+   },
+   {
+    "number": 38,
+    "answer": "D",
+    "cn": "在渴望削减劳动成本和提高利润的行业中，更多自动化似乎是一种必然趋势。",
+    "keywords": [
+     "more automation",
+     "certainty",
+     "cut labor costs",
+     "raise profits"
+    ],
+    "paraphrase": "certainty可能被替换为inevitable或unavoidable；cut labor costs对应reduce workforce expenses；raise profits对应increase earnings或boost revenue。",
+    "tip": "定位labor costs与profits的共现段落，留意表示\"确定性\"的措辞。"
+   },
+   {
+    "number": 39,
+    "answer": "L",
+    "cn": "关于餐饮行业技术创新失败的报道经常出现在头版。",
+    "keywords": [
+     "front-page reports",
+     "failures",
+     "technological innovation",
+     "restaurant industry"
+    ],
+    "paraphrase": "front-page reports可能对应headline news或make the news；failures in technological innovation可能被替换为tech setbacks或innovation gone wrong。",
+    "tip": "抓住front-page和failures这两个独特表达，快速定位L段。"
+   },
+   {
+    "number": 40,
+    "answer": "A",
+    "cn": "机器人厨师Flippy不怕繁重的工作，也不会发出任何抱怨。",
+    "keywords": [
+     "Flippy",
+     "laborious work",
+     "complaints"
+    ],
+    "paraphrase": "laborious work可能被替换为tedious/repetitive tasks或hard labor；not make any complaints可能对应never complain或work without grumbling。",
+    "tip": "Flippy为专有名词，直接在文中搜索即可锁定A段。"
+   },
+   {
+    "number": 41,
+    "answer": "F",
+    "cn": "数字技术使企业能够创新餐厅经营模式。",
+    "keywords": [
+     "digital technology",
+     "innovate",
+     "restaurant models"
+    ],
+    "paraphrase": "digital technology可能被替换为tech tools或digital platforms；innovate restaurant models可能对应reinvent dining concepts或create new restaurant formats。",
+    "tip": "关注digital technology与restaurant model/concept的组合出现。"
+   },
+   {
+    "number": 42,
+    "answer": "M",
+    "cn": "在餐饮服务中对人情温暖的喜爱将给那些害怕被机器人夺走工作的员工带来希望。",
+    "keywords": [
+     "human warmth",
+     "catering",
+     "hope",
+     "losing jobs to robots"
+    ],
+    "paraphrase": "fondness for human warmth可能对应preference for personal touch或desire for human interaction；give hope可能被替换为reassure或offer comfort。",
+    "tip": "定位human warmth/personal touch与fear of job loss的同段共现。"
+   },
+   {
+    "number": 43,
+    "answer": "J",
+    "cn": "餐饮业严重缺乏有经验的厨师，自动化烹饪有望填补这一缺口。",
+    "keywords": [
+     "acute shortage",
+     "experienced chefs",
+     "automated cooking",
+     "fill the gap"
+    ],
+    "paraphrase": "acute shortage可能被替换为severe lack或critical deficit；fill the gap可能对应bridge the gap或address the shortfall；experienced chefs对应skilled/seasoned cooks。",
+    "tip": "抓住acute shortage与experienced chefs的搭配，快速扫读J段。"
+   },
+   {
+    "number": 44,
+    "answer": "O",
+    "cn": "在未来十年内，由于机器人配送，传统餐厅中的许多工作岗位将会消失。",
+    "keywords": [
+     "coming decade",
+     "traditional restaurants",
+     "disappear",
+     "robot delivery"
+    ],
+    "paraphrase": "over the coming decade可能被替换为in the next ten years；disappear可能对应be eliminated或cease to exist；robot delivery对应automated delivery service。",
+    "tip": "decade/ten years与robot delivery为强定位词，锁定O段末尾段落。"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "cn": "据一位人工智能和机器人领域的专家称，出现一位机器人大厨可能还需要相当长的时间。",
+    "keywords": [
+     "expert",
+     "AI and robotics",
+     "quite some time",
+     "master robot-chef"
+    ],
+    "paraphrase": "quite some time可能被替换为a long way off或not anytime soon；master robot-chef可能对应highly skilled robotic cook或top-tier robot chef。",
+    "tip": "定位expert in AI及master robot-chef，注意时间较远的语气判断。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "automate",
+    "cn": "v. 使自动化"
+   },
+   {
+    "w": "supervision",
+    "cn": "n. 监管，监督"
+   },
+   {
+    "w": "laborious",
+    "cn": "adj. 费力的，繁重的"
+   },
+   {
+    "w": "certainty",
+    "cn": "n. 确定性，必然的事"
+   },
+   {
+    "w": "acute",
+    "cn": "adj. 严重的，急性的"
+   },
+   {
+    "w": "catering",
+    "cn": "n. 餐饮服务；v. 提供饮食服务（cater的现在分词）"
+   },
+   {
+    "w": "fondness",
+    "cn": "n. 喜爱，喜好"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 释义，改述"
+   },
+   {
+    "w": "front-page",
+    "cn": "adj. 头版的，重大的"
+   },
+   {
+    "w": "innovation",
+    "cn": "n. 创新，革新"
+   }
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "d83bedfad653__reading__1",
+ "examId": "d83bedfad653",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 12 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:53:04.792Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58227,
+ "usage": {
+  "prompt_tokens": 1789,
+  "completion_tokens": 4001,
+  "total_tokens": 5790,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1789,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4001,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1789,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "研究成果应向公众有效传播",
+  "gist": "文章指出科研成果不应局限于学术期刊和实验室，应向公众有效传播以服务社会。作者分析了研究者不愿对外传播的原因（追求终身教职、缺乏写作技能、担心被误解等），并提出了开放获取出版、伦理委员会强制要求、聘请专业写作人员等解决方案，强调成果共享对研究者和社会均有益。",
+  "structure": [
+   "第1-2段：提出核心观点——研究成果需走出学术圈才能充分发挥作用",
+   "第3-5段：分析研究者不愿向公众传播成果的多重原因",
+   "第6-7段：论述向外传播研究成果对社会和研究者的双向益处",
+   "第8-12段：提出多种促进成果公开传播的具体建议与措施"
+  ],
+  "difficulty": "中等",
+  "translation": "研究旨在通过提升公众意识、创造促进发展的产品和创新来造福社会。要使研究充分发挥其作用，研究成果必须走出实验室和学术期刊的局限。\n\n有效传播的研究发现能够在很大程度上服务于公众利益。它们可以帮助解决社会不公正问题，或改善提供给患者的治疗方案。\n\n许多研究者似乎满足于在学术期刊或学术会议上分享他们的研究成果。但很少有期刊允许所有人阅读研究结果。即使是免费获取的文章，通常也是用普通读者无法理解的学术语言撰写的。\n\n对于处于终身教职晋升体系中的研究者来说，他们的主要目标是获得终身教职，而这在一定程度上可以通过在知名期刊上发表一定数量的论文来实现。这样的压力意味着社区层面的推广不会被列为优先事项。\n\n许多研究者缺乏向普通受众描述其研究结果的写作技能。他们可能还担心公众能否理解其发现，或者担心研究结果被用于影响有争议的政策。这些顾虑导致一些研究者回避在学术圈之外传播其发现。\n\n将研究成果传播到学术出版物之外，对于解决某些社会差异问题尤为关键。它可以帮助家庭、社区、医疗服务提供者、政策制定者、政府机构和其他利益相关者理解和应对困扰社会的危机。\n\n分享研究成果的好处是双向的。与其他研究者和公众的互动可以带来意想不到的新联系和新想法，从而为研究指出富有成效的新方向。\n\n为了使研究者和社区双方受益，寻找创新的、可及的方式来分享研究工作的必要性怎么强调都不为过。\n\n机构和资助组织应支持更多研究者在开放获取期刊上发表成果，使公众无需付费即可阅读。机构和研究者应投资建立伙伴关系，以扩大更广泛地分享成果的能力。\n\n此外，伦理委员会应强制要求研究者向公众分享其研究结果。作为知情同意过程的一部分，每位研究参与者都应可以选择接收或不接收研究结果。\n\n由于技术术语的存在，公众可能会对研究者展示的发现产生误解。但这可以通过研究者聘请专业写作人员或传播官员来解决，帮助将他们的研究转化为更通俗易懂的语言，并通过媒体渠道和公众广泛传播。\n\n与受影响最大的人分享研究结果能使我们成为更好的研究者，并确保我们的工作能被用于改善人们的生活。机构和合作者必须认识到这样做的价值。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "For research to serve its full purpose, the results must leave the confines of research laboratories and academic journals.",
+    "why": "原文第一段明确指出，研究要\"充分发挥其作用\"（serve its full purpose），其成果就必须\"走出实验室和学术期刊的局限\"（leave the confines of research laboratories and academic journals）。D选项\"研究发现被适当传播到学术圈之外\"准确概括了原文含义，是对原文的同义改写。",
+    "traps": "A项\"研究者意识到公众利益\"原文未提及此为充分发挥作用的条件，属无中生有。B项\"发表在知名期刊上\"恰恰与原文相反，原文说要走出期刊局限，属反向干扰。C项\"创造促进社会发展的产品\"虽出现在首句，但这是研究的目的之一，并非\"充分发挥作用\"的条件，属偷换概念。",
+    "tip": "抓住题干关键短语在原文中的精确定位，注意同义替换。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Even articles freely available are usually written in academic language incomprehensible to the average reader.",
+    "why": "原文第三段末句指出，即使是免费获取的文章，也通常\"用普通读者无法理解的学术语言撰写\"（written in academic language incomprehensible to the average reader）。A选项\"他们无法理解用于报告这些结果的学术语言\"是对原文的准确转述。",
+    "traps": "B项\"被研究者使用的术语吓倒\"虽涉及术语问题，但原文并未提到读者因术语而\"感到intimidated\"（害怕退缩），属过度推断。C项\"他们不参加会议\"原文未将此作为主要原因，且原文强调的是语言障碍而非渠道障碍。D项\"定位期刊的机会少\"原文未提及，属无中生有。",
+    "tip": "区分\"看不懂\"与\"找不到\"：原文强调的是语言障碍，非获取渠道。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "For researchers in the tenure-track system, their main goal is winning tenure, which in part can be achieved by getting a number of papers published in prominent journals. Pressures like this mean community-level outreach is not prioritised.",
+    "why": "原文第四段明确说，终身教职晋升体系中的研究者\"主要目标是获得终身教职\"（main goal is winning tenure），这种压力意味着\"社区层面的推广不会被列为优先事项\"。B选项\"他们的首要考虑是获得终身教职\"与原文一致，winning tenure是导致他们不优先考虑对外传播的直接原因。",
+    "traps": "A项\"依靠发表的论文蓬勃发展\"表述模糊，发表论文只是获得终身教职的手段之一，不是\"不优先传播\"的直接原因，属因果链偷换。C项\"主要目标是获得领域认可\"原文未提及gaining recognition，属偷换概念。D项\"必须努力接触社区\"与原文相反，原文说的是他们不会优先做社区推广。",
+    "tip": "注意因果关系链条：终身教职压力→发表论文→忽视社区传播。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Engaging with other researchers and the public can lead to unexpected new connections and new ideas that could suggest fruitful new directions for research.",
+    "why": "原文第七段指出，与其他研究者和公众互动可以产生\"意想不到的新联系和新想法\"，这些可能\"为研究指出富有成效的新方向\"（suggest fruitful new directions for research）。A选项\"帮助他们识别新的研究方向\"是对原文的准确概括。",
+    "traps": "B项\"使他们理解困扰社会的危机\"出现在第六段，是对社会层面益处的描述，不是对研究者自身的益处，属张冠李戴。C项\"有效解决社会差异\"同样是社会层面益处而非研究者自身益处。D项\"与政府机构建立联系\"虽然第六段提到了government agencies，但这不是对研究者自身的益处，属偷换对象。",
+    "tip": "题目问\"benefit researchers themselves\"，需锁定第七段\"双向益处\"中关于研究者的部分。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But this can be resolved by researchers engaging the services of professional writers or communication officers to help with translating their study into more accessible language and share it widely with media outlets and the public.",
+    "why": "原文第十一段先指出公众可能因技术术语而对研究发现产生误解（misunderstanding），然后说这可以通过聘请专业写作人员\"将研究转化为更通俗易懂的语言\"来解决。C选项\"使其出版物被公众正确理解\"准确对应了解决\"误解\"这一问题的目的。",
+    "traps": "A项\"满足伦理委员会的强制要求\"出现在第十段，与聘请专业写作人员无关，属段落错位。B项\"翻译成海外读者可理解的语言\"曲解了translating一词，原文指的是将学术语言转化为通俗语言，而非翻译成外语，属词义曲解。D项\"使成果被知名期刊接受\"原文未提及，且与向公众传播的主旨相违背，属无中生有。",
+    "tip": "注意translate在此语境中是\"转化、转述\"之意，非\"翻译成外语\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "confines",
+    "cn": "n. 范围；局限；界限"
+   },
+   {
+    "w": "incomprehensible",
+    "cn": "adj. 无法理解的；难以理解的"
+   },
+   {
+    "w": "tenure",
+    "cn": "n. 终身教职；任期"
+   },
+   {
+    "w": "prioritise",
+    "cn": "v. 优先考虑；排列优先次序"
+   },
+   {
+    "w": "propagating",
+    "cn": "v. 传播；推广；宣传"
+   },
+   {
+    "w": "discrepancies",
+    "cn": "n. 差异；差距；不一致"
+   },
+   {
+    "w": "stakeholders",
+    "cn": "n. 利益相关者；利害关系方"
+   },
+   {
+    "w": "plague",
+    "cn": "v. 困扰；折磨（此处作动词）"
+   },
+   {
+    "w": "mandatory",
+    "cn": "adj. 强制性的；义务的"
+   },
+   {
+    "w": "opt in",
+    "cn": "v. 选择参加；选择加入"
+   },
+   {
+    "w": "outlets",
+    "cn": "n. 渠道；出口（此处指媒体渠道）"
+   },
+   {
+    "w": "overstated",
+    "cn": "v. 过分强调（cannot be overstated意为怎么强调都不为过）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "For researchers in the tenure-track system, their main goal is winning tenure, which in part can be achieved by getting a number of papers published in prominent journals.",
+    "cn": "对于处于终身教职晋升体系中的研究者来说，他们的主要目标是获得终身教职，而这在一定程度上可以通过在知名期刊上发表一定数量的论文来实现。",
+    "note": "主干为their main goal is winning tenure；which引导非限定性定语从句修饰winning tenure；by getting...为方式状语，其中published为过去分词作宾补。"
+   },
+   {
+    "en": "But this can be resolved by researchers engaging the services of professional writers or communication officers to help with translating their study into more accessible language and share it widely with media outlets and the public.",
+    "cn": "但这可以通过研究者聘请专业写作人员或传播官员来解决，帮助将他们的研究转化为更通俗易懂的语言，并通过媒体渠道向公众广泛传播。",
+    "note": "主干为this can be resolved；by researchers engaging...为方式状语；to help with为目的状语；translating...and share...为并列结构，说明帮助的具体内容。"
+   },
+   {
+    "en": "Engaging with other researchers and the public can lead to unexpected new connections and new ideas that could suggest fruitful new directions for research.",
+    "cn": "与其他研究者和公众的互动可以带来意想不到的新联系和新想法，这些新联系和新想法可能为研究指出富有成效的新方向。",
+    "note": "动名词短语Engaging with...作主语；that引导定语从句修饰connections and new ideas；suggest在此意为\"指出、暗示\"。"
+   }
+  ]
+ }
+}

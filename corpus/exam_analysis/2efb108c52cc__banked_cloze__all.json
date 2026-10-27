@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "2efb108c52cc__banked_cloze__all",
+ "examId": "2efb108c52cc",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2024 年 6 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:56:12.745Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 77176,
+ "usage": {
+  "prompt_tokens": 1430,
+  "completion_tokens": 4463,
+  "total_tokens": 5893,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1430,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4463,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1430,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "《太阳也是星星》书评与爱情命运",
+  "gist": "本文是一篇关于小说《太阳也是星星》的书评。作者讲述了非法居留美国的牙买加移民Natasha与韩裔美国人Daniel在纽约街头偶遇并在一天内相爱的故事。书评者对角色产生强烈共鸣，被故事深深吸引，认为这本书让自己重新认识了浪漫故事的价值，并感受到了两人之间特殊化学反应般的魔力。",
+  "difficulty": "中等",
+  "translation": "《太阳也是星星》是一个关于爱情、浪漫、命运与宿命的真正美好的故事。\n\nNatasha是一位出生于牙买加的移民，非法居住在美国，并非完全出于自愿。是她的父母把她带了过来，造成了她一直努力想要摆脱的处境。\n\nDaniel是一位韩国移民的后代，生于美国。他相信真爱、命运，以及所有那些Natasha用科学推理加以否定的\"无稽之谈\"。\n\nDaniel和Natasha在纽约街头偶然相遇，而那天正是她即将被驱逐出境的日子。她没有告诉他这件事，但允许他陪伴自己，而他则在一整天的时间里努力让她爱上自己。\n\nNatasha就是我。我发现她和我非常相似。她有科学头脑、务实、有些愤世嫉俗，而且总是持怀疑态度。她透过科学镜头对宇宙的痴迷极具感染力，我也很喜欢Daniel同样看到了这一点。\n\nDaniel迷人而热情，他的言辞甚至能打破Natasha坚硬的外壳。读到全书结尾时，我已经爱上了他们两个人。\n\n我过去总觉得浪漫故事廉价或可笑。我想现在我能看到沉浸于一个纯粹乐观主义故事中的价值了。我完全沉浸在《太阳也是星星》中，一个周末就从头到尾读完了。我迫不及待地想读到我所期待的幸福结局。\n\n偶尔向魔法屈服也是一件美好的事。它不一定非得是一部有真实咒语的硬核奇幻小说，它可以是两个拥有某种特别东西的人之间发现的魔力。那种化学反应使他们在靠近彼此时产生反应和火花。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "I",
+    "correct": "illegally",
+    "why": "此处需要一个副词修饰\"living\"。上下文提到\"not by choice exactly\"（并非完全出于自愿），且后文第30空提到她即将被\"驱逐出境\"（deported），说明她的居留身份不合法。illegally（非法地）完美契合语境，表明她是非法居留在美国。",
+    "traps": "其他副词类选项极少；形容词如skeptical虽可修饰人但不能修饰living构成合理搭配；名词、动词词性不符合此处需要副词的语法要求。",
+    "tip": "根据后文deported线索反推居留身份为非法。"
+   },
+   {
+    "number": 27,
+    "answer": "O",
+    "correct": "strives",
+    "why": "此处需要动词第三人称单数形式，主语为she。\"the situation she strives to be out of\"意为\"她努力想要摆脱的处境\"。strive to do sth.是常见搭配，表示\"努力做某事\"，与前文提到父母造成了这一处境的语境吻合。",
+    "traps": "dismisses虽也是动词三单，但\"dismiss to be out of\"搭配不成立；cracks语义不通；adore为原形且语义不符。",
+    "tip": "注意strive to do sth.固定搭配及语义逻辑。"
+   },
+   {
+    "number": 28,
+    "answer": "H",
+    "correct": "dismisses",
+    "why": "此处需要动词三单形式。Daniel相信真爱和命运，而Natasha通过科学推理\"否定/驳斥\"（dismisses）这些东西。dismiss through scientific reasoning表示\"通过科学推理加以否定\"，与后文她科学思维、怀疑一切的性格特征一致。",
+    "traps": "appraise（评估）语义方向不对，不含\"否定\"之意；assaults（攻击）语气过重且搭配不当；cracks搭配对象应为shell等具体事物。",
+    "tip": "dismiss表示\"不予理会、否定\"，常用于观点分歧语境。"
+   },
+   {
+    "number": 29,
+    "answer": "E",
+    "correct": "coincidence",
+    "why": "by coincidence是固定搭配，意为\"偶然地、碰巧\"。两人在纽约街头相遇，结合全文\"fate（命运）\"主题，这次相遇显然是偶然的。名词coincidence与介词by搭配完整，语法正确。",
+    "traps": "chemistry虽为名词但\"meet by chemistry\"不是英语搭配；其他动词、形容词词性不符合\"by + 名词\"的结构要求。",
+    "tip": "by coincidence为固定搭配，意为\"偶然地\"。"
+   },
+   {
+    "number": 30,
+    "answer": "G",
+    "correct": "deported",
+    "why": "此处为被动语态\"to be deported\"，意为\"被驱逐出境\"。与第26空illegally呼应——她非法居留，因此面临被驱逐。后文\"She doesn't tell him that\"也暗示这是一件她不愿提及的严重事情。",
+    "traps": "lost可构成\"to be lost\"但语义为\"迷路\"，与上下文不符；其余选项词性或语义均不适合被动语态结构。",
+    "tip": "deport与illegally形成前后照应，是移民话题核心词。"
+   },
+   {
+    "number": 31,
+    "answer": "N",
+    "correct": "skeptical",
+    "why": "此处需要形容词，与前面的scientifically-minded、practical、somewhat cynical并列。always skeptical意为\"总是持怀疑态度\"，与她用科学推理否定一切的性格完全吻合，形成语义递进。",
+    "traps": "lost可作形容词但\"always lost\"与前面特质并列不协调；其余选项为动词或名词，不能与always搭配作表语。",
+    "tip": "注意并列结构中词性一致，形容词与形容词对齐。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "correct": "adore",
+    "why": "此处需要动词原形（主语为I）。\"I adore Daniel seeing that too\"意为\"我也很喜欢Daniel看到了这一点\"。adore后接动名词结构（Daniel seeing），表示喜爱某种情形，语义积极，符合书评者对角色的欣赏。",
+    "traps": "appraise（评估）语义过于客观正式，不符合书评中表达个人喜爱的感情色彩；dismiss语义相反。",
+    "tip": "adore doing/sb. doing表示\"非常喜欢……\"。"
+   },
+   {
+    "number": 33,
+    "answer": "F",
+    "correct": "cracks",
+    "why": "此处需要动词三单。\"cracks Natasha's tough outer shell\"意为\"打破了Natasha坚硬的外壳\"。crack one's shell是形象化表达，指突破某人的心理防线。even强调程度——连她的防线都能打破，凸显Daniel的魅力。",
+    "traps": "assaults（攻击）虽可接shell但语义过于暴力，不符合浪漫语境；dismisses搭配shell语义不通。",
+    "tip": "crack sb.'s shell为习语，意为\"打破某人的心理防线\"。"
+   },
+   {
+    "number": 34,
+    "answer": "J",
+    "correct": "lost",
+    "why": "get lost in是固定搭配，意为\"沉浸于、沉迷于\"。\"I got lost in The Sun Is Also a Star\"表示作者完全沉浸在这本书中，与后文\"finished it cover to cover in a weekend\"（一个周末从头读到尾）相呼应，表达阅读的投入程度。",
+    "traps": "其他选项无法与get...in构成合理搭配；如caught虽可用于get caught in但该词不在选项中。",
+    "tip": "get lost in sth.为固定搭配，表示\"沉浸其中\"。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "correct": "chemistry",
+    "why": "此处需要名词作主语。\"That chemistry that causes them to react and spark\"意为\"那种使他们产生反应和火花的化学反应\"。chemistry在此比喻两人之间的特殊吸引力，与react和spark形成巧妙的科学隐喻，也呼应了全文Natasha的科学视角。",
+    "traps": "coincidence虽也是名词，但\"causes them to react and spark\"描述的是持续的吸引力而非偶然事件，语义不符。",
+    "tip": "chemistry喻指人际间的\"来电、默契\"，是高频熟词僻义。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "illegally",
+    "cn": "adv. 非法地，违法地"
+   },
+   {
+    "w": "strives",
+    "cn": "v. 努力，奋斗（strive的第三人称单数）"
+   },
+   {
+    "w": "dismisses",
+    "cn": "v. 否定，不予理会；解雇（dismiss的第三人称单数）"
+   },
+   {
+    "w": "coincidence",
+    "cn": "n. 巧合，偶然"
+   },
+   {
+    "w": "deported",
+    "cn": "v. 驱逐出境（deport的过去分词）"
+   },
+   {
+    "w": "skeptical",
+    "cn": "adj. 怀疑的，持怀疑态度的"
+   },
+   {
+    "w": "adore",
+    "cn": "v. 热爱，崇拜，非常喜欢"
+   },
+   {
+    "w": "cracks",
+    "cn": "v. 打破，使破裂（crack的第三人称单数）"
+   },
+   {
+    "w": "chemistry",
+    "cn": "n. 化学；（人之间的）吸引力，默契"
+   },
+   {
+    "w": "appraise",
+    "cn": "v. 评估，鉴定"
+   },
+   {
+    "w": "cynical",
+    "cn": "adj. 愤世嫉俗的，怀疑的"
+   },
+   {
+    "w": "infectious",
+    "cn": "adj. 有感染力的；传染的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握文章主题（书评、爱情、移民），建立整体语境感。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法结构（如be + adj.、by + n.、get + p.p.）判断所需词性。",
+   "第四步：结合上下文语义逻辑选词，注意前后文线索的照应（如illegally与deported呼应）。",
+   "第五步：填完所有空后回读全文，检查语义连贯性，确认每词仅使用一次。"
+  ]
+ }
+}

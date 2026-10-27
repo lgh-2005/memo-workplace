@@ -1,0 +1,256 @@
+{
+ "schemaVersion": 1,
+ "id": "581f3683b95d__long_match__all",
+ "examId": "581f3683b95d",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2015 年 12 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T04:39:47.147Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 54320,
+ "usage": {
+  "prompt_tokens": 794,
+  "completion_tokens": 5708,
+  "total_tokens": 6502,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3867
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 794
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "第一代大学生的困境与精英大学支持",
+  "strategy": [
+   "先浏览 10 个陈述句，圈出专有名词、数字、比较级、态度词，预判考点。",
+   "扫读段落时重点匹配同义替换，不只看原词复现，警惕抽象概括与具体例子互换。",
+   "对含人名、机构名（Nijay Williams、I'm First、Yale）的题快速定位对应段落。",
+   "注意比较结构、数据描述（毕业率、经济负担）和评价词（incredibly low）的段落对应。",
+   "答案段可能分散且一段不多题，用排除法减少干扰，定位后回读验证。"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "H",
+    "cn": "许多第一代大学生对自己能否获得大学学位心存疑虑。",
+    "keywords": [
+     "first-generation college-goers",
+     "doubts",
+     "abilities",
+     "college degree"
+    ],
+    "paraphrase": "原文可能用 question/uncertainty about their capacity to earn a degree 等表述替换陈述句中的 doubts about abilities to get a degree，或将“获得学位”改写为 graduate/complete college。",
+    "tip": "定位 H 段中描述第一代大学生心态的句子，重点抓“怀疑自身能力”的同义表达。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "第一代大学生往往比同龄人承受更沉重的经济负担。",
+    "keywords": [
+     "financial burdens",
+     "peers",
+     "heavier"
+    ],
+    "paraphrase": "原文可能将 heavier financial burdens 替换为 greater financial pressure/strain、more likely to struggle financially，并用 than their peers 与 non-first-generation students 对应。",
+    "tip": "定位 C 段中比较第一代学生与同龄人经济状况的句子，注意比较级和“经济负担”同义词。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "cn": "尼杰所在大学第一代学生的毕业率低得惊人。",
+    "keywords": [
+     "graduation rate",
+     "Nijay's university",
+     "low"
+    ],
+    "paraphrase": "原文可能用 shockingly/dismally low 或 extremely low 替换 incredibly low，graduation rate 为直接定位词。",
+    "tip": "在 B 段找 Nijay 所在大学和毕业率数据，特别关注“低得惊人”的评价词。"
+   },
+   {
+    "number": 39,
+    "answer": "N",
+    "cn": "耶鲁等一些顶尖院校似乎为第一代学生提供了超出其实际所需的支持。",
+    "keywords": [
+     "Yale",
+     "top institutions",
+     "more support than they actually need"
+    ],
+    "paraphrase": "原文可能将 more support than they actually need 替换为 over-support、excessive support 或 beyond what is necessary。",
+    "tip": "定位 N 段中提及 Yale 等名校对第一代学生支持程度的内容，重点关注“过多、超出需要”的评价。"
+   },
+   {
+    "number": 40,
+    "answer": "A",
+    "cn": "刚进入大学时，尼杰·威廉姆斯完全不知道大学教育有多具挑战性。",
+    "keywords": [
+     "Nijay Williams",
+     "entering college",
+     "no idea",
+     "challenging"
+    ],
+    "paraphrase": "原文可能将 had no idea 替换为 didn't realize/know 或 was unaware，将 how challenging 替换为 how difficult/tough。",
+    "tip": "定位 A 段介绍 Nijay Williams 入学时认知的文字，重点找“不知道/未意识到困难”的表达。"
+   },
+   {
+    "number": 41,
+    "answer": "I",
+    "cn": "许多大学干脆拒绝公布其第一代学生的确切毕业率。",
+    "keywords": [
+     "universities",
+     "refuse to release",
+     "exact graduation rates"
+    ],
+    "paraphrase": "原文可能将 refuse to release 替换为 decline to make public、won't disclose，将 exact 替换为 precise/specific。",
+    "tip": "定位 I 段关于高校不公开第一代学生毕业率数据的内容，注意“拒绝发布”这一动作。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "cn": "一位营销主管表示，许多低收入家庭的学生不知道自己有机会进入精英大学。",
+    "keywords": [
+     "marketing executive",
+     "low-income families",
+     "elite university",
+     "don't know"
+    ],
+    "paraphrase": "原文可能将 don't know 替换为 are unaware、have no idea，将 have a chance of going to 替换为 could attend/get into。",
+    "tip": "定位 G 段引用营销主管观点的部分，抓住“低收入家庭学生缺乏认知”的表述。"
+   },
+   {
+    "number": 43,
+    "answer": "O",
+    "cn": "一些精英大学非常重视培养第一代学生的自信心。",
+    "keywords": [
+     "elite universities",
+     "attach great importance",
+     "self-confidence"
+    ],
+    "paraphrase": "原文可能将 attach great importance to 替换为 place a high value on、prioritize，将 building up 替换为 boosting/developing。",
+    "tip": "定位 O 段精英大学为第一代学生建立自信的做法，关注“重视”和“自信心”的同义表达。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "I'm First 发布信息，帮助第一代大学生找到最适合自己的学校。",
+    "keywords": [
+     "I'm First",
+     "distributes information",
+     "find schools",
+     "suitable"
+    ],
+    "paraphrase": "原文可能将 distributes information 替换为 provides resources/data，将 find schools 替换为 identify/select colleges，将 suitable 替换为 right/fit。",
+    "tip": "定位 D 段关于 I'm First 项目功能的描述，抓住“发布信息”和“选校”关键词。"
+   },
+   {
+    "number": 45,
+    "answer": "M",
+    "cn": "精英大学往往以更高的比例让第一代学生毕业。",
+    "keywords": [
+     "elite universities",
+     "graduate",
+     "higher rate"
+    ],
+    "paraphrase": "原文可能将 tend to graduate at a higher rate 替换为 have higher graduation rates，或 be more likely to graduate first-generation students。",
+    "tip": "定位 M 段精英大学第一代学生毕业率与总体或其他院校的对比，关注数字比较。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "first-generation",
+    "cn": "adj. 第一代的（指家庭中第一个上大学的人）"
+   },
+   {
+    "w": "college-goer",
+    "cn": "n. 大学生；上大学的人"
+   },
+   {
+    "w": "doubt",
+    "cn": "n./v. 怀疑，疑虑"
+   },
+   {
+    "w": "financial burden",
+    "cn": "n. 经济负担"
+   },
+   {
+    "w": "peer",
+    "cn": "n. 同龄人；同辈"
+   },
+   {
+    "w": "graduation rate",
+    "cn": "n. 毕业率"
+   },
+   {
+    "w": "incredibly",
+    "cn": "adv. 难以置信地；极其"
+   },
+   {
+    "w": "institution",
+    "cn": "n. 院校；机构"
+   },
+   {
+    "w": "challenging",
+    "cn": "adj. 具有挑战性的；困难的"
+   },
+   {
+    "w": "refuse",
+    "cn": "v. 拒绝"
+   },
+   {
+    "w": "release",
+    "cn": "v. 公布；发布"
+   },
+   {
+    "w": "marketing executive",
+    "cn": "n. 营销主管"
+   },
+   {
+    "w": "low-income",
+    "cn": "adj. 低收入的"
+   },
+   {
+    "w": "elite university",
+    "cn": "n. 精英大学"
+   },
+   {
+    "w": "attach importance to",
+    "cn": "v. 重视"
+   },
+   {
+    "w": "self-confidence",
+    "cn": "n. 自信心"
+   },
+   {
+    "w": "distribute",
+    "cn": "v. 分发；公布"
+   },
+   {
+    "w": "suitable",
+    "cn": "adj. 适合的"
+   },
+   {
+    "w": "tend to",
+    "cn": "v. 倾向于；往往"
+   }
+  ]
+ }
+}

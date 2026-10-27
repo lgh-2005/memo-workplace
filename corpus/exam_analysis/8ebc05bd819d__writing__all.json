@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "8ebc05bd819d__writing__all",
+ "examId": "8ebc05bd819d",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2024 年 12 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:56:21.839Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 39092,
+ "usage": {
+  "prompt_tokens": 739,
+  "completion_tokens": 2616,
+  "total_tokens": 3355,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 739,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2616,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 739,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，以给定首句开头，围绕\"自律在个人成长中的重要性\"展开论述，可评论、举例或结合个人经历，字数150-200词。",
+    "outline": [
+     "第一段：抄写给定首句，引出自律的定义及其作为个人成长基石的核心地位",
+     "第二段：从时间管理和抗挫折能力两个维度论证自律的重要性，辅以具体事例",
+     "第三段：总结全文，强调自律不可或缺，呼吁大学生在日常生活中有意识地培养自律品质"
+    ],
+    "sample": "Nowadays, more and more students have realized the importance of self-discipline in their personal growth. Self-discipline, defined as the ability to control one's impulses and stay focused on long-term goals, serves as a cornerstone of academic and personal success.\n\nTo begin with, self-discipline empowers students to manage their time efficiently. Rather than succumbing to the temptation of social media or video games, disciplined students allocate specific hours for study, exercise, and rest, thereby maximizing their productivity. For instance, a classmate of mine consistently adhered to a strict study schedule throughout college, which ultimately earned him admission to a prestigious graduate program. Moreover, self-discipline cultivates resilience in the face of adversity. Students who practice self-control are better equipped to persevere through challenges, whether preparing for demanding examinations or navigating complex interpersonal relationships.\n\nIn conclusion, self-discipline is not merely a desirable trait but an indispensable one for students striving toward excellence. By consciously nurturing this quality in daily life, young people can unlock their full potential and lay a solid foundation for their future endeavors.",
+    "phrases": [
+     {
+      "en": "serve as a cornerstone of",
+      "cn": "充当……的基石；用于引出某事物的核心地位，比foundation更高级"
+     },
+     {
+      "en": "succumb to the temptation of",
+      "cn": "屈服于……的诱惑；形象描述缺乏自制力的状态"
+     },
+     {
+      "en": "allocate specific hours for",
+      "cn": "为……分配专门的时间；体现时间管理的主动性"
+     },
+     {
+      "en": "adhere to a strict schedule",
+      "cn": "坚持严格的日程安排；强调自律的执行力"
+     },
+     {
+      "en": "cultivate resilience in the face of adversity",
+      "cn": "在逆境中培养韧性；高分表达抗挫能力"
+     },
+     {
+      "en": "be better equipped to persevere through",
+      "cn": "更有能力坚持度过……；equipped比able更书面"
+     },
+     {
+      "en": "not merely ... but an indispensable one",
+      "cn": "不仅仅是……而是不可或缺的；升级版not only...but also"
+     },
+     {
+      "en": "unlock one's full potential",
+      "cn": "释放/激发全部潜能；常用于结尾段升华"
+     },
+     {
+      "en": "lay a solid foundation for",
+      "cn": "为……奠定坚实基础；经典收束表达"
+     },
+     {
+      "en": "consciously nurture this quality",
+      "cn": "有意识地培养这种品质；强调主观能动性"
+     }
+    ],
+    "pitfalls": [
+     "忘记抄写题目给定的首句，直接导致扣分",
+     "全篇只空谈道理，缺少具体事例或个人经历支撑",
+     "self-discipline反复出现却不用代词或同义替换，显得词汇贫乏",
+     "字数不足150词或严重超过200词，均影响评分",
+     "段落之间缺少过渡词（To begin with, Moreover, In conclusion），逻辑松散"
+    ],
+    "upgrades": [
+     {
+      "plain": "Self-discipline is very important for students.",
+      "better": "Self-discipline serves as a cornerstone of academic and personal success.",
+      "note": "用serves as a cornerstone替代is important，表达更具体、更有画面感"
+     },
+     {
+      "plain": "Students should use their time well.",
+      "better": "Disciplined students allocate specific hours for study, exercise, and rest, thereby maximizing their productivity.",
+      "note": "具体化时间管理行为并用thereby引出结果，逻辑更紧密"
+     },
+     {
+      "plain": "Self-discipline helps students deal with difficulties.",
+      "better": "Self-discipline cultivates resilience in the face of adversity.",
+      "note": "cultivate resilience比help deal with更学术，in the face of比when meeting更地道"
+     },
+     {
+      "plain": "Students should try to be self-disciplined.",
+      "better": "By consciously nurturing this quality in daily life, young people can unlock their full potential.",
+      "note": "用by doing引导方式状语+unlock potential，句式更成熟，立意更高"
+     },
+     {
+      "plain": "Self-discipline is not only good but also necessary.",
+      "better": "Self-discipline is not merely a desirable trait but an indispensable one for students striving toward excellence.",
+      "note": "merely/indispensable/striving toward excellence三处升级，词汇档次显著提升"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Self-discipline, defined as the ability to control one's impulses and stay focused on long-term goals, serves as a cornerstone of academic and personal success. —— 用同位语插入下定义，再用serves as引出核心论点，一句完成破题。",
+   "Rather than succumbing to the temptation of social media or video games, disciplined students allocate specific hours for study, exercise, and rest, thereby maximizing their productivity. —— rather than对比+thereby因果，一句话涵盖反面与正面论证。",
+   "Self-discipline is not merely a desirable trait but an indispensable one for students striving toward excellence. —— not merely...but结构升华主题，striving toward excellence比wanting to succeed更有力。",
+   "By consciously nurturing this quality in daily life, young people can unlock their full potential and lay a solid foundation for their future endeavors. —— 结尾句用by doing开头变换句式，unlock和lay双动词并列收束全文，余味悠长。"
+  ]
+ }
+}

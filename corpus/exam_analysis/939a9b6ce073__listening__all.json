@@ -1,0 +1,254 @@
+{
+ "schemaVersion": 1,
+ "id": "939a9b6ce073__listening__all",
+ "examId": "939a9b6ce073",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2020 年 9 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:29:44.076Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 49943,
+ "usage": {
+  "prompt_tokens": 2251,
+  "completion_tokens": 2475,
+  "total_tokens": 4726,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2251,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2475,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2251,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下全部解析仅基于题目选项文本的语言特征进行推断分析，不涉及任何对录音内容的引用或编造。",
+  "overview": "本场听力共 7 段，25 题。第 1 段（Q1-4）选项涉及女性科学家、Oxford、科研与科普教育；第 2 段（Q5-8）围绕梦境含义与情感；第 3 段（Q9-11）涉及冰川探测与外太空生命；第 4 段（Q12-15）关于语言学者研究印第安部落；第 5 段（Q16-18）涉及社会变革与革命者角色；第 6 段（Q19-21）讨论外界影响与心理健康；第 7 段（Q22-25）围绕纸币特征与金本位制度。",
+  "strategy": [
+   "预读选项时用关键名词和动词快速锁定话题方向，带着问题听更高效",
+   "选项中出现绝对词如 never、all、always 时需格外警惕，通常为干扰项",
+   "同义替换是六级听力核心考点，注意选项用词与录音表述的近义转换",
+   "听到某选项被原词复现时不要急于选择，需确认上下文语境是否吻合",
+   "数字、人名、地名首次出现时集中注意力，往往与题目直接相关",
+   "对话题中出现转折词 but、however、actually 后的信息要重点关注"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "女性科学家的职业、科研成就与研究方法",
+    "optionSignals": "Q1 四项均以 She/Her 开头，问的是女性主人公的优势或特质；Q2 四项为名词短语描述工作内容；Q3 四项均为 A+比较级+名词 结构，问某事带来的收获；Q4 四项均以 By doing 开头，考查方式方法。",
+    "tips": [
+     "Q1 各项都在说'她的优势'，passion vs. expertise vs. TV show vs. acclaimed，注意听对话中她自己最强调的一点",
+     "Q4 四个 By 结构提示在问具体方法，注意区分 existing data 与 previous discoveries 的细微差别，前者强调数据利用，后者强调继承发现"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "梦境的含义、影响力及其与情感的关系",
+    "optionSignals": "Q5 考查对梦的总体看法，B 项'no special meanings'与其他三项形成对立；Q6 四项叙述具体事件经过；Q7-8 均以 They 开头并用情态动词描述梦的作用，区分 rational thinking、emotions、irrational feelings 等心理学用词。",
+    "tips": [
+     "Q5 答案 B 与其余三项（都暗示梦有意义）形成明显对立，听力中若先否定梦的特殊含义再展开讨论，即可锁定",
+     "Q8 中 complicated emotions 与 irrational feelings 高度近似，需注意录音中对情感类型的精确描述来区分"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "冰川下液态水探测及其对外太空生命研究的意义",
+    "optionSignals": "Q9 四项为简短名词，考查探测工具或手段；Q10 四项均以 It may 开头描述水体特征；Q11 四项描述研究意义，注意 freezing conditions vs. outer space 的区别。",
+    "tips": [
+     "Q9 四个选项极为简短，听力中一旦出现相关技术名词即可迅速匹配",
+     "Q11 中 A 项'freezing conditions'与 D 项'outer space'均涉及极端环境，需听清最终结论落脚点是地球还是太空"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "语言学者 Copeland 研究 Tarahumaras 部落的经历与发现",
+    "optionSignals": "Q12 四项解释研究动机，均以 He 开头；Q13 四项描述 Gonzalez 的具体帮助；Q14 为四个形容词考查对工作的评价；Q15 描述部落特质。",
+    "tips": [
+     "Q14 四个形容词中 Unpredictable 和 Unjustifiable 偏负面评价，Laborious 和 Tedious 都含'辛苦'之意但侧重不同：laborious 强调费力，tedious 强调无聊，注意听感情色彩",
+     "Q12 注意区分'little research on language'与'preserve languages'，前者是学术空白驱动，后者是保护动机"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "社会变革中的先驱角色及革命者对进步的推动作用",
+    "optionSignals": "Q16 以 They 开头描述某群体遭遇或感受；Q17 四项均以 One who 开头给出人物定义；Q18 四项描述历史评价。",
+    "tips": [
+     "Q17 四项定义差异大：advocates violence / craves transformations / interests of oppressed / rebels against social order，听清定义中的核心动词",
+     "Q18 答案 C 'driving force for progress' 为正面评价，与 A、D 的负面评价形成对立，注意听说话人的总结性判断"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "外界环境对个人心理与行为的影响",
+    "optionSignals": "Q19 四项都在说人与环境的关系，Few of us / It is impossible 等表达程度的短语是关键；Q20 四项为建议性动作；Q21 以 They 描述某职业群体特征。",
+    "tips": [
+     "Q19 中 A 项'ignore changes'与 B 项'be immune from influence'含义接近但范围不同，B 更宽泛；注意听录音是讨论'变化'还是'影响'",
+     "Q21 答案 A 'susceptible to suicide' 信息量极强且敏感，若录音涉及心理健康从业者的风险，可快速锁定"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "纸币的物理特征、防伪技术与美国金本位制度历史",
+    "optionSignals": "Q22 考查对某事物的认知程度；Q23 四项描述某特征的现状；Q24 解释原因；Q25 四项涉及经济政策。",
+    "tips": [
+     "Q23 答案 C 提到'color'与纸币防伪高度相关，听到关于纸币颜色的讨论可锁定",
+     "Q25 中 gold standard 是经济史核心概念，若出现在录音结尾的总结句中，很可能是正确答案"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "accumulated expertise",
+    "cn": "积累的专业知识"
+   },
+   {
+    "w": "connotation",
+    "cn": "内涵意义，隐含意思"
+   },
+   {
+    "w": "micro-organism",
+    "cn": "微生物"
+   },
+   {
+    "w": "intermediary",
+    "cn": "中间人，调解人"
+   },
+   {
+    "w": "laborious",
+    "cn": "费力的，艰辛的"
+   },
+   {
+    "w": "submission",
+    "cn": "屈服，服从"
+   },
+   {
+    "w": "susceptible",
+    "cn": "易受影响的，易感的"
+   },
+   {
+    "w": "counterfeit",
+    "cn": "伪造，仿造"
+   },
+   {
+    "w": "immune",
+    "cn": "免疫的，不受影响的"
+   },
+   {
+    "w": "glacier",
+    "cn": "冰川"
+   },
+   {
+    "w": "gold standard",
+    "cn": "金本位制"
+   },
+   {
+    "w": "oppressed",
+    "cn": "被压迫的"
+   },
+   {
+    "w": "irrational",
+    "cn": "非理性的，不合理的"
+   },
+   {
+    "w": "appreciation",
+    "cn": "增值；感激；鉴赏"
+   }
+  ]
+ }
+}

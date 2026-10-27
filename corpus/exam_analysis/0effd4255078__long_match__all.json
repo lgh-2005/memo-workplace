@@ -1,0 +1,235 @@
+{
+ "schemaVersion": 1,
+ "id": "0effd4255078__long_match__all",
+ "examId": "0effd4255078",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2017 年 12 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:12:27.653Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35841,
+ "usage": {
+  "prompt_tokens": 947,
+  "completion_tokens": 1820,
+  "total_tokens": 2767,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 947,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1820,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 947,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科研数据共享的利弊与争议",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如data sharing、researchers、publish等",
+   "抓取每题中的专有名词（如David Hogg）、数字、特殊概念作为定位锚点",
+   "注意同义替换：如hesitant≈reluctant，incentives≈rewards，scooping≈being preempted",
+   "按段落顺序扫读原文，将每段核心意思与10条陈述句逐一比对",
+   "对含有观点态度词（如doesn't think, hesitant, different opinions）的题目，重点关注原文中的情感与立场表达"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "M",
+    "cn": "天文学家David Hogg认为\"抢发\"问题并不像人们普遍认为的那样严重。",
+    "keywords": [
+     "David Hogg",
+     "scooping",
+     "not as serious"
+    ],
+    "paraphrase": "陈述句用doesn't think scooping is as serious表达观点，原文M段可能用overestimate/exaggerate the risk等表达来传达同样含义，属于态度类同义替换。",
+    "tip": "专有名词David Hogg是强定位信号，直接在原文中搜索人名即可锁定段落。"
+   },
+   {
+    "number": 37,
+    "answer": "G",
+    "cn": "一些研究人员因担心他人可能先于自己发表类似成果而不愿公开数据。",
+    "keywords": [
+     "hesitant",
+     "data public",
+     "publish",
+     "before them"
+    ],
+    "paraphrase": "陈述句中hesitant to make data public对应原文可能的reluctant to share/release data；publish something similar before them即scooping（抢先发表）的同义改写。",
+    "tip": "定位fear和publish关键词，关注研究者对被抢发的顾虑描述。"
+   },
+   {
+    "number": 38,
+    "answer": "D",
+    "cn": "一些心理学期刊提供了激励措施以鼓励作者共享数据。",
+    "keywords": [
+     "psychology journals",
+     "incentives",
+     "share data"
+    ],
+    "paraphrase": "陈述句中incentives可能在原文中被表述为badges、rewards或recognition等具体形式；psychology journals为学科限定词，便于精确定位。",
+    "tip": "psychology journals和incentives两个具体名词是双重定位锚点，同时出现即可确认。"
+   },
+   {
+    "number": 39,
+    "answer": "A",
+    "cn": "科学界对研究数据向公众开放的需求日益增长。",
+    "keywords": [
+     "growing demand",
+     "science community",
+     "data",
+     "open to the public"
+    ],
+    "paraphrase": "陈述句用growing demand表示趋势，原文A段可能用increasing call/mounting pressure/movement toward等同义表达来描述数据公开的呼声。",
+    "tip": "A段通常为全文引入段，growing demand暗示背景信息，优先在开头段落定位。"
+   },
+   {
+    "number": 40,
+    "answer": "P",
+    "cn": "共享数据为处于职业生涯早期的研究人员提供了建立一定声誉的机会。",
+    "keywords": [
+     "early-career researchers",
+     "reputation",
+     "sharing data"
+    ],
+    "paraphrase": "陈述句中build a certain level of reputation可能在原文中被替换为gain visibility/establish credibility/get recognized等表达；early-career对应junior/young等词。",
+    "tip": "关注early-career researchers与reputation的组合，P段位于文末，常为总结或补充论点。"
+   },
+   {
+    "number": 41,
+    "answer": "L",
+    "cn": "数据共享使科学家能够发表研究工作的每个步骤，从而获得更多引用。",
+    "keywords": [
+     "publish each step",
+     "more citations",
+     "data sharing"
+    ],
+    "paraphrase": "陈述句中publish each step暗示分阶段发表，原文可能用incremental publication/publish interim results表达；more citations对应increase citation count/higher impact等。",
+    "tip": "citations是学术评价的专有概念，在原文中容易快速定位。"
+   },
+   {
+    "number": 42,
+    "answer": "B",
+    "cn": "科学家对数据共享的范围和时机持有不同意见。",
+    "keywords": [
+     "different opinions",
+     "extent",
+     "timing",
+     "data sharing"
+    ],
+    "paraphrase": "陈述句中different opinions对应原文可能的disagree/debate/divergent views；extent and timing为核心限定信息，原文可能用how much/when to share等表达。",
+    "tip": "B段紧随引入段，常承接总论点并展开争议，关注extent和timing两个维度。"
+   },
+   {
+    "number": 43,
+    "answer": "O",
+    "cn": "与数据共享相关的潜在问题应在合作研究项目开始时让所有参与者知晓并进行讨论。",
+    "keywords": [
+     "potential problems",
+     "beginning",
+     "joint research project",
+     "all participants"
+    ],
+    "paraphrase": "陈述句强调事前沟通，原文O段可能用at the outset/from the start替换beginning；joint research project可能对应collaborative work/team project等表达。",
+    "tip": "beginning和joint research project是复合定位点，关注关于合作规范的建议性语句。"
+   },
+   {
+    "number": 44,
+    "answer": "I",
+    "cn": "共享数据和处理数据相关问题可能很耗时。",
+    "keywords": [
+     "time-consuming",
+     "sharing data",
+     "handling data-related issues"
+    ],
+    "paraphrase": "陈述句用time-consuming概括负担，原文I段可能用labor-intensive/take considerable time/require significant effort等同义表达来描述数据处理的成本。",
+    "tip": "time-consuming是核心形容词，在原文中寻找关于时间成本或工作量的描述。"
+   },
+   {
+    "number": 45,
+    "answer": "F",
+    "cn": "初级研究人员在数据共享问题上可能没有发言权。",
+    "keywords": [
+     "junior researchers",
+     "no say",
+     "sharing data"
+    ],
+    "paraphrase": "陈述句中no say意为无决定权，原文F段可能用lack of control/little influence/not in a position to decide等表达；junior researchers对应early-career/young scientists/graduate students等。",
+    "tip": "no say表示权力不对等，定位junior/early-career与决策权相关的描述即可。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "scooping",
+    "cn": "n. 抢先发表（指他人先于自己发表类似研究成果）"
+   },
+   {
+    "w": "hesitant",
+    "cn": "adj. 犹豫的，不情愿的"
+   },
+   {
+    "w": "incentives",
+    "cn": "n. 激励措施，奖励（复数）"
+   },
+   {
+    "w": "early-career",
+    "cn": "adj. 职业生涯早期的"
+   },
+   {
+    "w": "citations",
+    "cn": "n. 引用，引用次数（学术论文中的被引用量）"
+   },
+   {
+    "w": "time-consuming",
+    "cn": "adj. 耗时的，费时的"
+   },
+   {
+    "w": "joint",
+    "cn": "adj. 联合的，共同的"
+   },
+   {
+    "w": "participants",
+    "cn": "n. 参与者（复数）"
+   }
+  ]
+ }
+}

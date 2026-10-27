@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "524855593c06__writing__all",
+ "examId": "524855593c06",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2021 年 6 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:34:27.921Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 38397,
+ "usage": {
+  "prompt_tokens": 709,
+  "completion_tokens": 1812,
+  "total_tokens": 2521,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 709,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1812,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 709,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "图表描述+评论型议论文。要求先简要描述图表中中国城镇化率的变化趋势，再对中国城镇化成就加以评论，字数150-200词。",
+    "outline": [
+     "第一段：描述图表——指出图表主题（中国城镇化率），概括总体趋势（持续上升），并给出关键数据节点（如起始年份与最新年份的数据对比）。",
+     "第二段：分析原因与评论成就——从经济发展、政府政策、基础设施建设等角度阐述中国城镇化取得巨大成就的原因，并指出其对民生改善、产业升级的积极影响。",
+     "第三段：总结展望——肯定城镇化成就的同时，提及未来仍需关注的问题（如环境保护、城乡均衡发展），展望可持续城镇化的前景。"
+    ],
+    "sample": "As is clearly illustrated in the graph, China's urbanization rate has experienced a remarkable and steady increase over the past several decades. Specifically, the proportion of the urban population rose from roughly 20 percent in 1980 to over 65 percent in recent years, indicating a historic transformation in the country's demographic landscape.\n\nSeveral factors have contributed to China's extraordinary achievements in urbanization. To begin with, the sustained and rapid economic growth since the reform and opening-up policy has created a massive number of job opportunities in cities, attracting rural residents to migrate. Furthermore, the government has invested heavily in infrastructure construction, including high-speed railways, highways, and public utilities, which has significantly facilitated urban expansion. Equally important, well-designed urban planning policies have ensured that the process of urbanization proceeds in a relatively orderly manner.\n\nIn conclusion, China's urbanization represents one of the most impressive accomplishments in modern history. Looking ahead, it is essential that the nation continue to pursue sustainable and balanced urbanization, addressing challenges such as environmental protection and equitable access to public services, so as to ensure long-term prosperity for all citizens.",
+    "phrases": [
+     {
+      "en": "experience a remarkable increase",
+      "cn": "经历显著增长；用于描述图表中数据的大幅上升趋势，搭配副词修饰更显地道"
+     },
+     {
+      "en": "demographic landscape",
+      "cn": "人口格局；学术化表达，用于概括人口结构或分布的宏观变化"
+     },
+     {
+      "en": "reform and opening-up policy",
+      "cn": "改革开放政策；中国特色固定表达，写中国经济相关话题必备"
+     },
+     {
+      "en": "invest heavily in",
+      "cn": "大力投资于……；强调投入力度大，常与基础设施、教育等搭配"
+     },
+     {
+      "en": "facilitate urban expansion",
+      "cn": "促进城市扩张；facilitate比promote更正式，适合六级写作"
+     },
+     {
+      "en": "proceed in an orderly manner",
+      "cn": "有序推进；用于描述政策实施或进程的规范性，体现逻辑严谨"
+     },
+     {
+      "en": "equitable access to public services",
+      "cn": "公平享有公共服务；社会公平话题的高频学术表达"
+     },
+     {
+      "en": "pursue sustainable and balanced urbanization",
+      "cn": "追求可持续、均衡的城镇化；展望段常用搭配，体现深度思考"
+     },
+     {
+      "en": "one of the most impressive accomplishments",
+      "cn": "最令人瞩目的成就之一；高级评价表达，比great achievement更出彩"
+     },
+     {
+      "en": "so as to ensure long-term prosperity",
+      "cn": "以确保长期繁荣；目的状语结构，用于文末升华，增加句式多样性"
+     }
+    ],
+    "pitfalls": [
+     "未描述图表即直接议论，不符合题目要求的'start with a brief description of the graph'",
+     "缺少具体数据或趋势描述，图表作文沦为纯议论文，说服力不足",
+     "全文只罗列现象，未对urbanization achievements进行实质性评论和分析",
+     "用词重复，如反复使用develop/development，缺乏同义替换意识",
+     "字数不足150词或严重超过200词，均会被扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "The urbanization rate has increased a lot.",
+      "better": "The urbanization rate has witnessed a dramatic surge over the past few decades.",
+      "note": "用witness作主语转换+dramatic surge替代increase a lot，句式更高级、用词更精准"
+     },
+     {
+      "plain": "The government built many roads and railways.",
+      "better": "The government has invested heavily in infrastructure construction, including high-speed railways and highways.",
+      "note": "抽象概括+具体举例的写法更学术，invest heavily in比built many更有深度"
+     },
+     {
+      "plain": "Urbanization is good for China.",
+      "better": "Urbanization has profoundly transformed China's economic structure and significantly improved citizens' living standards.",
+      "note": "用具体影响替代笼统评价，profoundly和significantly增强表达力度"
+     },
+     {
+      "plain": "We should solve problems in the future.",
+      "better": "It is essential that the nation address challenges such as environmental degradation and urban-rural disparity.",
+      "note": "虚拟语气it is essential that+具体问题列举，体现语法功底与思辨深度"
+     },
+     {
+      "plain": "China's urbanization rate went from 20% to 65%.",
+      "better": "The proportion of the urban population rose from roughly 20 percent to over 65 percent, indicating a historic transformation.",
+      "note": "用现在分词indicating补充说明意义，使数据描述与分析自然衔接"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is clearly illustrated in the graph, China's urbanization rate has experienced a remarkable and steady increase over the past several decades. —— 图表描述万能首句，as引导非限制性定语从句，开篇即展现句式水平。",
+   "The sustained and rapid economic growth since the reform and opening-up policy has created a massive number of job opportunities in cities. —— 因果分析长句，since引导时间状语，逻辑链完整，适合背诵迁移至经济类话题。",
+   "Equally important, well-designed urban planning policies have ensured that the process of urbanization proceeds in a relatively orderly manner. —— 过渡词+that宾语从句，equally important比what's more更高级，orderly manner为亮点搭配。",
+   "It is essential that the nation continue to pursue sustainable and balanced urbanization, addressing challenges such as environmental protection and equitable access to public services. —— 虚拟语气+现在分词状语+such as列举，一句融合三个语法亮点，展望段的满分模板句。"
+  ]
+ }
+}

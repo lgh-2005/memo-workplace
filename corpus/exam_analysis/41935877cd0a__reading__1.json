@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "41935877cd0a__reading__1",
+ "examId": "41935877cd0a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年考研英语真题",
+ "year": 2016,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:32:38.989Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60526,
+ "usage": {
+  "prompt_tokens": 1731,
+  "completion_tokens": 3606,
+  "total_tokens": 5337,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1731,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3606,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1731,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "法国立法挑战时尚业身体审美标准",
+  "gist": "法国通过立法禁止过瘦模特登台及宣传极端节食的网站，旨在重新定义美的标准、保护女性健康。但文章指出法国过度依赖严厉惩罚，不如丹麦以行业自律和道德劝诫的方式更为可取，最终呼吁将美的标准提升到超越物质外表的层面。",
+  "structure": [
+   "第1-2段：介绍法国立法禁止过瘦模特，分析其积极意义",
+   "第3段：阐述禁令对女性自我审美意识的深层启示",
+   "第4-5段：批评法国措施过于严厉，引出行业自律方案",
+   "第6段：以丹麦行业自律章程为对比案例",
+   "第7段：总结观点——道德劝诫优于法律强制"
+  ],
+  "difficulty": "中等",
+  "translation": "以全球时尚创新者自居的法国，已认定其时尚产业不再拥有为女性定义身体美的绝对权利。上周，法国立法者初步批准了一项法律，将雇佣过瘦模特登台走秀定为违法行为。议会还同意禁止通过宣传极端节食来\"煽动过度消瘦\"的网站。\n\n这些措施有几个令人振奋的动机。它们表明，美不应由那些最终损害健康的外表来定义。这是一个好的开端。而禁止过瘦模特似乎不仅仅是为了保护模特免于饿死——有些人确实已经因此丧命。它告诉时尚产业，必须为其向女性、尤其是青春期女孩传递的信号负责——那种她们必须用来衡量自身价值的社会标尺。\n\n这些禁令如果得到全面执行，将暗示女性（以及许多男性）不应让他人成为自己美丑的仲裁者。而且，或许还隐约暗示，人们应当关注性格和才智等无形品质，而不是通过节食来追求零号身材或蜂腰体型。\n\n然而，法国的这些措施过于依赖严厉惩罚来改变一种仍将美视为肤浅外表——乃至骨瘦嶙峋——的文化。根据该法律，使用不符合政府规定的身体质量指数的时装模特，可能面临85000美元的罚款和六个月的监禁。\n\n时尚产业知道自己在注重物质装饰和理想化体型方面存在固有问题。在丹麦、美国和其他几个国家，该行业正在尝试为模特和时尚形象设定自愿标准，更多依靠同行压力来执行。\n\n与法国的做法形成对比的是，丹麦时尚产业上月就模特的年龄、健康和其他特征方面的规则和制裁达成了一致。新修订的《丹麦时尚伦理宪章》明确指出：\"我们意识到并承担时尚产业对身体理想、尤其是对年轻人的影响所带来的责任。\"该宪章的主要执行工具是拒绝设计师和模特经纪公司进入由丹麦时尚协会运营的哥本哈根时装周（CFW）。但总体上，它依靠的是一种点名羞辱的合规方式。\n\n依靠道德劝诫而非法律来解决身体理想被滥用的问题，可能是最好的一步。更好的做法是帮助将美的观念提升到超越某一特定行业的物质标准之上。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "France, which prides itself as the global innovator of fashion, has decided its fashion industry has lost an absolute right to define physical beauty for women.",
+    "why": "原文明确指出法国认定时尚产业失去了为女性定义\"身体美\"的绝对权利，并通过立法禁止过瘦模特和极端节食网站。这意味着法国将重新定义\"身体美\"（physical beauty）的标准，不再由时尚产业单方面决定，A项\"Physical beauty would be redefined\"是对这一系列举措的合理推断。",
+    "traps": "B项\"建造新的走秀台\"是对runways的曲解，runways指T台走秀，非建筑工程；C项\"节食网站会繁荣\"与原文相反，原文说要禁止此类网站；D项\"时尚产业会衰落\"属于过度推断，立法只是规范行业行为，并非要使其衰落。",
+    "tip": "注意区分\"重新定义标准\"和\"行业衰落\"的区别，避免过度推断。"
+   },
+   {
+    "number": 22,
+    "answer": "D",
+    "type": "词义句意题",
+    "locate": "They suggest beauty should not be defined by looks that end up impinging on health.",
+    "why": "原文语境是\"美不应该由那些最终'impinging on'健康的外表来定义\"。结合上下文讨论的过瘦模特饿死、极端节食等负面健康影响，impinging on在此处意为\"损害、危害\"。整句逻辑是：以损害健康为代价的外貌不应成为美的定义，D项doing harm to（对……造成伤害）完全吻合。",
+    "traps": "A项\"表明……的状态\"语义不通，外表不会\"表明健康的状态\"在此无法构成合理语义；B项\"提高……的价值\"与原文负面语境完全相反；C项\"对……失去信心\"语法搭配不当且语义不符，外表无法\"对健康失去信心\"。",
+    "tip": "词义题需结合上下文感情色彩和逻辑关系判断，此处负面语境是关键线索。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "In Denmark, the United States, and a few other countries, it is trying to set voluntary standards for models and fashion images that rely more on peer pressure for enforcement.",
+    "why": "原文第五段明确指出丹麦、美国等国的时尚产业正在尝试为模特和时尚形象设定自愿标准，第六段进一步详述了丹麦新修订的时尚伦理宪章。D项\"丹麦正在制定新标准\"与原文完全吻合，是对这两段事实的准确概括。",
+    "traps": "A项\"法国措施已经失败\"属于无中生有，原文只说法国措施过于依赖严厉惩罚，并未说已经失败；B项\"固有问题正在恶化\"原文未提及恶化趋势，只说行业知道自身存在固有问题；C项\"模特不再受到同行压力\"与原文相反，原文说这些标准依靠同行压力来执行。",
+    "tip": "注意区分\"原文提到的事实\"和\"选项中的夸大或歪曲表述\"。"
+   },
+   {
+    "number": 24,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "The charter's main tool of enforcement is to deny access for designers and modeling agencies to Copenhagen Fashion Week (CFW)",
+    "why": "根据第六段，丹麦时尚伦理宪章关注模特的年龄、健康等特征，其主要执行手段是拒绝违规设计师和经纪公司参加哥本哈根时装周。设计师若对模特的健康因素漠不关心，即违反了宪章关于健康标准的规定，因此最可能被CFW拒之门外。C项\"对健康因素关注太少\"是最合理的推断。",
+    "traps": "A项\"追求完美的身体条件\"表述模糊且与宪章宗旨不直接矛盾，宪章反对的是不健康的极端体型而非追求良好体质；B项\"过于关注模特品格\"与宪章规定方向相反，关注品格不是违规行为；D项\"为模特设定高年龄门槛\"原文未涉及此内容，宪章涉及年龄问题但并非设定高门槛。",
+    "tip": "推断题需紧扣原文逻辑，抓住宪章核心关切点——健康问题。"
+   },
+   {
+    "number": 25,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "Relying on ethical persuasion rather than law to address the misuse of body ideals may be the best step.",
+    "why": "全文围绕法国和丹麦对时尚产业身体审美标准提出挑战这一主线展开：先介绍法国立法举措，再对比丹麦行业自律方案，最后总结应如何应对时尚产业身体理想被滥用的问题。D项\"A Challenge to the Fashion Industry's Body Ideals\"精准概括了文章核心——对时尚产业身体审美理想发起的挑战。",
+    "traps": "A项\"对时尚产业的重大威胁\"过于宽泛且偏离主题，文章并非讨论威胁而是讨论审美标准的改革；B项\"又一轮关于美的斗争\"过于笼统，未体现时尚产业和身体审美标准这一核心；C项\"法国饥饿模特的困境\"以偏概全，仅涉及文章部分内容，且视角偏窄。",
+    "tip": "主旨题应选择涵盖全文核心论点且角度最精准的选项，避免以偏概全或过于笼统。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "preliminary",
+    "cn": "adj. 初步的，预备的"
+   },
+   {
+    "w": "ultra-thin",
+    "cn": "adj. 极瘦的，超薄的"
+   },
+   {
+    "w": "incite",
+    "cn": "v. 煽动，激起"
+   },
+   {
+    "w": "impinging on",
+    "cn": "v. 损害，侵犯，影响"
+   },
+   {
+    "w": "arbiter",
+    "cn": "n. 仲裁者，裁决人"
+   },
+   {
+    "w": "intangible",
+    "cn": "adj. 无形的，难以捉摸的"
+   },
+   {
+    "w": "physique",
+    "cn": "n. 体格，体型"
+   },
+   {
+    "w": "adornment",
+    "cn": "n. 装饰，装饰品"
+   },
+   {
+    "w": "sanctions",
+    "cn": "n. 制裁，处罚"
+   },
+   {
+    "w": "compliance",
+    "cn": "n. 遵从，合规"
+   },
+   {
+    "w": "charter",
+    "cn": "n. 宪章，章程"
+   },
+   {
+    "w": "elevate",
+    "cn": "v. 提升，提高"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It tells the fashion industry that it must take responsibility for the signal it sends women, especially teenage girls, about the social tape-measure they must use to determine their individual worth.",
+    "cn": "它告诉时尚产业，必须为其向女性、尤其是青春期女孩传递的信号负责——即她们必须用来衡量自身价值的那把社会标尺。",
+    "note": "主句为It tells...that...；that从句中the signal后接省略了that的定语从句it sends women；about引出介词短语修饰signal；they must use为定语从句修饰tape-measure。"
+   },
+   {
+    "en": "And perhaps faintly, they hint that people should look to intangible qualities like character and intellect rather than dieting their way to size zero or wasp-waist physiques.",
+    "cn": "而且，或许还隐约暗示，人们应当关注性格和才智等无形品质，而不是通过节食来追求零号身材或蜂腰体型。",
+    "note": "主句they hint that...；that从句中should look to...rather than...构成对比；dieting their way to为动名词短语作rather than的宾语，意为'以节食的方式达到'。"
+   },
+   {
+    "en": "Under the law, using a fashion model that does not meet a government-defined index of body mass could result in a $85,000 fine and six months in prison.",
+    "cn": "根据该法律，使用不符合政府规定的身体质量指数的时装模特，可能面临85000美元的罚款和六个月的监禁。",
+    "note": "主语为动名词短语using a fashion model；that引导定语从句修饰model；government-defined为复合形容词修饰index；could result in引出处罚结果。"
+   }
+  ]
+ }
+}

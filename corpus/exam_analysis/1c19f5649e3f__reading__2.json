@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "1c19f5649e3f__reading__2",
+ "examId": "1c19f5649e3f",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年考研英语真题",
+ "year": 2021,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:45:20.183Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57581,
+ "usage": {
+  "prompt_tokens": 1754,
+  "completion_tokens": 3620,
+  "total_tokens": 5374,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1754,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3620,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1754,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "印尼反贫困项目对森林砍伐的影响",
+  "gist": "文章围绕印尼有条件现金转移支付（CCT）项目展开，指出该反贫困项目不仅帮助穷人改善生活，还意外地使森林砍伐率降低了30%。研究者Ferraro通过卫星数据分析发现，穷人将补贴资金作为应对恶劣天气的保险，减少了为种植更多稻米而开垦林地的行为，表明扶贫与环保可以兼得。",
+  "structure": [
+   "第1-2段：引出印尼CCT项目的背景与目标",
+   "第3-4段：传统观点认为扶贫与环保相冲突，墨西哥案例佐证",
+   "第5-6段：Ferraro研究发现印尼CCT项目减少了森林砍伐",
+   "第7-8段：解释原因并讨论研究的推广价值与环保意义"
+  ],
+  "difficulty": "中等",
+  "translation": "去年是印尼严峻的森林砍伐速度连续第三年放缓。这一转变的原因之一可能是该国的反贫困项目。\n\n2007年，印尼开始逐步推行一项在特定条件下向最贫困居民发放现金的项目，这些条件包括要求人们让孩子留在学校或定期接受医疗保健。这类社会救助项目被称为有条件现金转移支付（CCTs），旨在减少不平等并打破贫困的恶性循环。全球已有数十个国家在使用这类项目。在印尼，该项目提供了充足的食物和药品，大幅减少了儿童严重的发育问题。\n\n但CCT项目通常不考虑对环境的影响。约翰斯·霍普金斯大学的经济学家Paul Ferraro说，事实上，减贫和环境保护常常被视为相互冲突的目标。\n\n这是因为经济增长可能与环境退化相关联，而保护环境有时与更严重的贫困相关联。然而，这些相关性并不能证明因果关系。此前唯一一项分析因果关系的研究基于墨西哥一个实施了CCT的地区，支持了传统观点。Ferraro说，在那里，当人们获得更多资金后，其中一些人可能清理了更多土地来养牛以获取肉食。\n\n不过，这类项目并非必然对环境产生负面影响。Ferraro想看看印尼的减贫项目是否在影响森林砍伐。印尼拥有世界第三大热带森林面积，也是森林砍伐率最高的国家之一。\n\nFerraro分析了2008年至2012年的卫星数据——包括印尼反贫困项目逐步推行期间——涵盖15个省份的7468个森林村庄的年度森林损失情况。Ferraro说：\"我们发现该项目与森林砍伐减少30%存在关联。\"\n\nFerraro说，这很可能是因为农村贫困人口将这笔钱用作应对恶劣天气的临时保险。通常情况下，如果降雨延迟，人们可能会清理土地种植更多稻米以补充收成。\n\n这项研究是否适用于其他地方还不得而知。Ferraro认为，由于水稻种植的重要性和市场准入等共同特点，研究结果可能适用于亚洲其他地区。而且不论可推广性如何，这项研究表明，对人有益的事情也可能对环境有益。Ferraro说，即使该项目没有减少贫困，\"仅就避免的森林砍伐所减少的二氧化碳排放而言，其价值就已经超过了项目成本。\"",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Called conditional cash transfers or CCTs, these social assistance programs are designed to reduce inequality and break the cycle of poverty.",
+    "why": "原文明确指出CCT项目是\"社会救助项目\"，其设计目的是\"减少不平等并打破贫困的恶性循环\"（reduce inequality and break the cycle of poverty）。B选项\"帮助贫困家庭过上更好的生活\"是对\"打破贫困循环、减少不平等\"的合理概括，属于同义改写。",
+    "traps": "A项\"促进医疗改革\"：文中提到\"get regular medical care\"只是领取补贴的附加条件之一，并非项目目标，属于偷换概念。C项\"改善当地教育系统\"：文中\"requiring people to keep kids in school\"同样只是领取条件，不是目标，属于以偏概全。D项\"降低森林砍伐率\"：这是该项目的附带效果而非设计目标，属于张冠李戴。",
+    "tip": "注意区分项目的\"条件/手段\"与\"目标\"，不要被细节条件迷惑。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "That's because economic growth can be correlated with environmental degradation, while protecting the environment is sometimes correlated with greater poverty.",
+    "why": "墨西哥案例出现在第四段，用于佐证第三段末尾提出的传统观点：减贫与环保常被视为相互冲突。该段先说\"经济增长可能与环境退化相关\"，再引用墨西哥研究——人们拿到钱后开垦林地养牛——来支持\"经济增长往往导致环境退化\"这一传统看法。D选项精准概括了这一论证逻辑。",
+    "traps": "A项\"养牛是穷人主要生计\"：养牛只是墨西哥案例中的一个具体细节，并非该例证要说明的观点，属于就事论事、未抓住论点。B项\"CCT帮助保留传统生活方式\"：文中未提及传统生活方式，属于无中生有。C项\"扶贫需要当地农民参与\"：文中未涉及此内容，属于无中生有。",
+    "tip": "例证题要找例子所服务的论点，通常在例子前一两句。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Ferraro wanted to see if Indonesia's poverty-alleviation program was affecting deforestation.",
+    "why": "原文第五段明确指出Ferraro的研究目的：想看看印尼的减贫项目（即CCT）是否在影响森林砍伐（deforestation）。C选项\"CCTs与印尼森林损失之间的关系\"是对这一研究意图的准确概括，\"forest loss\"对应\"deforestation\"，\"relation\"对应\"affecting\"。",
+    "traps": "A项\"CCTs的接受程度\"：文中未涉及项目接受度问题，属于无中生有。B项\"年度减贫率\"：Ferraro研究的是森林砍伐而非减贫速率，属于偷换研究对象。D项\"森林在气候变化中的作用\"：文末虽提及碳排放，但那是附带结论，非研究初衷，属于张冠李戴。",
+    "tip": "研究目的题定位\"wanted to\"\"intend to\"等表目的的关键词。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Even if this program didn't reduce poverty, Ferraro says, \"the value of the avoided deforestation just for carbon dioxide emissions alone is more than the program costs.\"",
+    "why": "文章最后一段中Ferraro指出，即使该项目没有减少贫困，仅\"避免森林砍伐所减少的碳排放\"的价值就超过了项目成本。这说明在Ferraro看来，该项目最突出的价值在于环境保护方面——即使扶贫效果为零，环保价值也足以证明项目值得实施。C选项\"它能保护环境\"准确概括了这层意思。",
+    "traps": "A项\"惠及其他亚洲国家\"：Ferraro只是提出可能（may transfer），且\"is anybody's guess\"表示不确定，非最大价值，属于过度推断。B项\"减少地区不平等\"：这是CCT的一般目标，不是Ferraro强调的最大价值所在，属于答非所问。D项\"有益于粮食生产\"：文中提到种稻是为了解释机制，并非项目的核心价值，属于偷换概念。",
+    "tip": "注意\"most valuable\"这类最高级限定，需找作者最强调的价值点。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "Last year marked the third year in a row that Indonesia's bleak rate of deforestation has slowed in pace. One reason for the turnaround may be the country's antipoverty program.",
+    "why": "全文从印尼森林砍伐率放缓引出CCT反贫困项目，随后分析该项目在减贫、环保两方面的效果，引用墨西哥对比案例和Ferraro的卫星数据研究，最终得出CCT项目兼具扶贫与环保双重效果的结论。文章始终围绕CCT项目产生的多重影响展开，A选项\"一个项目的效果\"最为全面。",
+    "traps": "B项\"围绕一个项目的争论\"：文中虽提及传统观点与新发现的对比，但并非聚焦于争论本身，属于以偏概全。C项\"一项研究的过程\"：Ferraro的研究只是文章的一部分内容，不是全文核心，属于以偏概全。D项\"一项研究的可推广性\"：可推广性仅在最后一段提及，属于以偏概全。",
+    "tip": "主旨题需通盘考量全文各段内容，选择涵盖面最广的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deforestation",
+    "cn": "n. 森林砍伐，毁林"
+   },
+   {
+    "w": "phase in",
+    "cn": "v. 逐步引入，分阶段实施"
+   },
+   {
+    "w": "alleviation",
+    "cn": "n. 减轻，缓解"
+   },
+   {
+    "w": "degradation",
+    "cn": "n. 退化，恶化"
+   },
+   {
+    "w": "causality",
+    "cn": "n. 因果关系"
+   },
+   {
+    "w": "makeshift",
+    "cn": "adj. 临时的，权宜的"
+   },
+   {
+    "w": "inclement",
+    "cn": "adj.（天气）恶劣的，严酷的"
+   },
+   {
+    "w": "supplement",
+    "cn": "v. 补充，增补"
+   },
+   {
+    "w": "transferability",
+    "cn": "n. 可推广性，可转移性"
+   },
+   {
+    "w": "correlate",
+    "cn": "v. 相关联，相互关联"
+   },
+   {
+    "w": "conflicting",
+    "cn": "adj. 相互矛盾的，冲突的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "That's because economic growth can be correlated with environmental degradation, while protecting the environment is sometimes correlated with greater poverty.",
+    "cn": "这是因为经济增长可能与环境退化相关联，而保护环境有时与更严重的贫困相关联。",
+    "note": "That's because引导原因状语从句，内含while连接的两个并列对比分句，前半句讲经济增长与环境退化正相关，后半句讲环保与贫困正相关，形成两难困境的对比论证。"
+   },
+   {
+    "en": "The only previous study analyzing causality, based on an area in Mexico that had instituted CCTs, supported the traditional view.",
+    "cn": "此前唯一一项分析因果关系的研究基于墨西哥一个实施了CCT的地区，支持了传统观点。",
+    "note": "主干为The only previous study supported the traditional view；analyzing causality为现在分词后置定语修饰study；based on...为过去分词短语作插入状语；that引导定语从句修饰area。"
+   },
+   {
+    "en": "Even if this program didn't reduce poverty, Ferraro says, \"the value of the avoided deforestation just for carbon dioxide emissions alone is more than the program costs.\"",
+    "cn": "Ferraro说，即使该项目没有减少贫困，\"仅就避免的森林砍伐所减少的二氧化碳排放而言，其价值就已经超过了项目成本。\"",
+    "note": "Even if引导让步状语从句，Ferraro says为插入语；主句中the value为主语，of the avoided deforestation为后置定语，just for...alone为限定范围的介词短语，is more than为谓语比较结构。"
+   }
+  ]
+ }
+}

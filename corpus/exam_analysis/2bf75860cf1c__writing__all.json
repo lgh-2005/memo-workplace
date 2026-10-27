@@ -1,0 +1,226 @@
+{
+ "schemaVersion": 1,
+ "id": "2bf75860cf1c__writing__all",
+ "examId": "2bf75860cf1c",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2011 年考研英语真题",
+ "year": 2011,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:26:45.181Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 90212,
+ "usage": {
+  "prompt_tokens": 834,
+  "completion_tokens": 5946,
+  "total_tokens": 6780,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 834,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5946,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 834,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：给朋友写一封推荐信，推荐自己喜爱的一部电影，并说明推荐理由。要求约100词，署名Li Ming，不写地址。",
+    "outline": [
+     "称呼+开门见山说明写信目的：向朋友推荐一部自己喜爱的电影，点出电影名称",
+     "简要介绍影片内容及亮点，阐述推荐该电影的具体理由（如主题深刻、演技精湛、情节引人入胜等）",
+     "表达期待对方观看的愿望，礼貌收尾并署名"
+    ],
+    "sample": "Dear friend,\n\nI am writing to recommend one of my all-time favorite movies to you — The Shawshank Redemption. I am confident that you will find it both inspiring and thought-provoking.\n\nThe movie tells the story of Andy Dufresne, a banker who is wrongfully sentenced to life in prison. Despite the harsh circumstances, he never loses hope and ultimately achieves freedom through years of perseverance and intelligence. What makes this film truly remarkable is its profound exploration of hope, friendship, and the indomitable human spirit.\n\nI strongly urge you to watch it, because it reminds us that hope can carry us through even the darkest times. I am sure you will enjoy it as much as I did.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "all-time favorite",
+      "cn": "一直以来最喜爱的；用于强调长期偏好，比simply saying 'favorite' 更具情感厚度"
+     },
+     {
+      "en": "inspiring and thought-provoking",
+      "cn": "鼓舞人心且发人深省的；常用于评价电影、书籍等文艺作品"
+     },
+     {
+      "en": "wrongfully sentenced to",
+      "cn": "被错误判处……；法律话题高频搭配"
+     },
+     {
+      "en": "the indomitable human spirit",
+      "cn": "不屈不挠的人类精神；用于升华主题，展现深层思考"
+     },
+     {
+      "en": "profound exploration of",
+      "cn": "对……的深刻探索；学术化表达，适合对作品主题进行评价"
+     },
+     {
+      "en": "carry us through",
+      "cn": "帮助我们度过（困难时期）；比help us更生动地道"
+     },
+     {
+      "en": "perseverance and intelligence",
+      "cn": "毅力与智慧；概括人物品质的经典并列搭配"
+     },
+     {
+      "en": "I am confident that...",
+      "cn": "我确信……；比I think语气更正式、更有说服力"
+     }
+    ],
+    "pitfalls": [
+     "忘写称呼Dear friend或结尾署名Li Ming，格式扣分严重",
+     "推荐理由空泛笼统，只说'好看'而缺乏具体细节支撑",
+     "将推荐信写成影评，偏离书信语体，缺少交际功能语句",
+     "词数不足80或超过130，偏离about 100 words的要求",
+     "语域不当：对朋友使用过于生硬的公文用语，或过于随意的口语"
+    ],
+    "upgrades": [
+     {
+      "plain": "I want to recommend a movie to you.",
+      "better": "I am writing to recommend one of my all-time favorite movies to you.",
+      "note": "书信体标准开头句式，all-time favorite增添个人情感色彩，更地道正式"
+     },
+     {
+      "plain": "The movie is about a man in prison who wants to be free.",
+      "better": "The movie tells the story of Andy Dufresne, a banker who is wrongfully sentenced to life in prison.",
+      "note": "同位语补充身份信息，wrongfully一词点出戏剧冲突，细节更丰富"
+     },
+     {
+      "plain": "This movie is very good because it talks about hope.",
+      "better": "What makes this film truly remarkable is its profound exploration of hope, friendship, and the indomitable human spirit.",
+      "note": "主语从句开头+高级词汇叠加，表达更具学术深度与说服力"
+     },
+     {
+      "plain": "I hope you can watch it.",
+      "better": "I strongly urge you to watch it, because it reminds us that hope can carry us through even the darkest times.",
+      "note": "urge语气更强，后接原因从句增强推荐说服力，呼应影片主题"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "大作文：根据图画写一篇160-200词的短文。要求简要描述图画内容，解释其寓意，并发表评论。本题图画描绘游客在游船上随手将垃圾扔入湖中，标题为'旅途之余'（谐音'鱼'），讽刺旅游中的环境污染问题。",
+    "outline": [
+     "第一段：客观描述图画内容——游客坐在船上向湖中丢弃垃圾，湖面漂满废物，点出标题的谐音讽刺",
+     "第二段：揭示图画寓意——旅游业蓬勃发展的同时，游客环保意识薄弱导致景区环境恶化，反映经济发展与生态保护的脱节",
+     "第三段：发表评论并提出建议——政府应加强监管与处罚力度，社会应开展环保教育，每个人都应承担保护自然的责任"
+    ],
+    "sample": "As is vividly depicted in the drawing, several tourists are sitting in a boat, casually tossing garbage into the lake. The water, which should be crystal clear, is littered with trash and waste. The caption cleverly reads a pun suggesting the \"leftovers\" of tourism rather than the expected \"fish.\"\n\nThe drawing is intended to raise public awareness about environmental degradation caused by irresponsible tourists. In recent years, as tourism has boomed across China, scenic spots have suffered from increasing pollution. Many visitors, driven by convenience and a lack of environmental consciousness, dispose of their waste carelessly, turning once-beautiful landscapes into dumping grounds. This phenomenon reflects a deeper issue: the growing disconnect between economic development and ecological responsibility.\n\nTo address this problem, a multi-faceted approach is necessary. First, the government should enforce stricter regulations and impose heavier fines on littering in scenic areas. Second, educational campaigns should be launched to cultivate a stronger sense of environmental responsibility among the general public. Only when every individual takes responsibility for protecting our natural heritage can we truly achieve sustainable tourism development.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the drawing",
+      "cn": "正如图画中生动描绘的那样；大作文首段经典开头句式，被动语态+副词增色"
+     },
+     {
+      "en": "raise public awareness about",
+      "cn": "提高公众对……的意识；环保、社会话题万能高频搭配"
+     },
+     {
+      "en": "environmental degradation",
+      "cn": "环境恶化/退化；比environmental damage更学术正式"
+     },
+     {
+      "en": "dispose of their waste carelessly",
+      "cn": "随意丢弃垃圾；dispose of比throw away更正式书面"
+     },
+     {
+      "en": "turning once-beautiful landscapes into dumping grounds",
+      "cn": "将曾经美丽的景观变成垃圾场；现在分词作结果状语，画面感强"
+     },
+     {
+      "en": "the disconnect between A and B",
+      "cn": "A与B之间的脱节；用于揭示深层矛盾，展现批判性思维"
+     },
+     {
+      "en": "enforce stricter regulations",
+      "cn": "实施更严格的法规；政策建议类表达的核心搭配"
+     },
+     {
+      "en": "impose heavier fines on",
+      "cn": "对……处以更重的罚款；与enforce并列使用丰富建议层次"
+     },
+     {
+      "en": "cultivate a stronger sense of",
+      "cn": "培养更强烈的……意识；比improve awareness更高级"
+     },
+     {
+      "en": "sustainable tourism development",
+      "cn": "可持续旅游发展；点题收束，体现前瞻视野"
+     }
+    ],
+    "pitfalls": [
+     "第一段描述图画时加入过多个人评论，未做到客观描述与分析分层",
+     "寓意分析浮于表面，仅说'环境很重要'而未深入剖析原因与社会背景",
+     "建议部分只从单一角度出发，缺乏多层次（政府、社会、个人）的论证",
+     "词数不足160或超过200，阅卷中会被视为不符合要求而扣分",
+     "段落之间缺少过渡衔接，三段各自为政，逻辑链条断裂"
+    ],
+    "upgrades": [
+     {
+      "plain": "The drawing shows people throwing trash into the water.",
+      "better": "As is vividly depicted in the drawing, several tourists are sitting in a boat, casually tossing garbage into the lake.",
+      "note": "被动语态标准开头+副词casually刻画人物态度，细节丰满生动"
+     },
+     {
+      "plain": "Many people don't care about the environment when they travel.",
+      "better": "Many visitors, driven by convenience and a lack of environmental consciousness, dispose of their waste carelessly, turning once-beautiful landscapes into dumping grounds.",
+      "note": "插入分词短语说明动因，现在分词作结果状语，一句话信息密度极高"
+     },
+     {
+      "plain": "Everyone should protect the environment.",
+      "better": "Only when every individual takes responsibility for protecting our natural heritage can we truly achieve sustainable tourism development.",
+      "note": "Only when引导的部分倒装句，结尾铿锵有力，展现高级语法功底"
+     },
+     {
+      "plain": "The government should make rules about this.",
+      "better": "The government should enforce stricter regulations and impose heavier fines on littering in scenic areas.",
+      "note": "enforce和impose两个高级动词并列，建议具体可操作，避免空泛"
+     },
+     {
+      "plain": "This picture means we should not pollute the environment.",
+      "better": "This phenomenon reflects a deeper issue: the growing disconnect between economic development and ecological responsibility.",
+      "note": "冒号引出深层分析，disconnect一词精准概括矛盾，体现思辨深度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the drawing, several tourists are sitting in a boat, casually tossing garbage into the lake. —— 大作文首段黄金句式：As is vividly depicted引出图画描述，casually一词精妙刻画漫不经心的态度，值得直接背诵套用。",
+   "What makes this film truly remarkable is its profound exploration of hope, friendship, and the indomitable human spirit. —— 主语从句+三项并列结构，适用于任何需要评价事物核心价值的场景，exploration搭配抽象名词极为地道。",
+   "Only when every individual takes responsibility for protecting our natural heritage can we truly achieve sustainable tourism development. —— Only when引导的部分倒装句，语法高级且掷地有声，是大作文结尾段的王牌句型。",
+   "Many visitors, driven by convenience and a lack of environmental consciousness, dispose of their waste carelessly, turning once-beautiful landscapes into dumping grounds. —— 一句话内嵌分词短语说明原因+分词短语表示结果，信息密度极高，是阅卷老师青睐的复杂句典范。",
+   "This phenomenon reflects a deeper issue: the growing disconnect between economic development and ecological responsibility. —— 冒号后接名词短语揭示深层矛盾，disconnect一词用法精准，展现强大的批判性思维能力。"
+  ]
+ }
+}

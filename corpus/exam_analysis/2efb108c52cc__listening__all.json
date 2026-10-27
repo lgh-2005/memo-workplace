@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "2efb108c52cc__listening__all",
+ "examId": "2efb108c52cc",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2024 年 6 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:55:42.745Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56269,
+ "usage": {
+  "prompt_tokens": 2489,
+  "completion_tokens": 2794,
+  "total_tokens": 5283,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2489,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2794,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2489,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于选项文本的语言特征与正确答案进行推理分析，不涉及对录音内容的任何编造。",
+  "overview": "本场听力共7段材料、25道题。第1段（Q1-4）围绕搅拌机选购与果汁饮品健康话题；第2段（Q5-8）涉及Berkton村庄的变革与发展；第3段（Q9-11）为微型遥控机器人的科技新闻；第4段（Q12-15）讨论睡眠时长与基因关系；第5段（Q16-18）涉及说服性文章对信念改变的心理学研究；第6段（Q19-21）关于美国母亲身份与生育率变化；第7段（Q22-25）讨论室内植物净化空气的科学争议。",
+  "strategy": [
+   "预读选项时用关键名词和动词快速锁定话题方向，带着预判听更高效",
+   "选项中出现绝对词如all、totally、never时需格外警惕，往往是干扰项",
+   "当四个选项结构平行（如都以They开头），重点区分各选项的核心谓语动词差异",
+   "数字、比例（如one-tenth、13 percent）出现时要特别留意，听到即标记",
+   "因果关系题注意听because、so、as a result等信号词，区分原因与结果",
+   "转折词but、however、actually后面的内容往往是出题点，注意力要在此集中"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "搅拌机选购、自制果汁与饮品含糖量",
+    "optionSignals": "Q1四项均为过去时动词短语，问的是某人做过的事；Q2四项均为动名词短语，问的是对某事的态度或倾向；Q3同为动名词，问日常习惯；Q4描述某种饮品的特征，涉及sugar、nutrients等健康关键词。",
+    "tips": [
+     "Q1中B项'不用机器搅拌所有食物'逻辑极端，可优先排除；A项'阅读用户评论'符合购物前调研的常见场景",
+     "Q4注意区分'看起来健康'(B)与'实际含糖量高'(A)的对立关系，听力中常以转折揭示真相",
+     "Q2中buying a blender与整段话题高度吻合，干扰项D过于具体限定soups and juices"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "Berkton村庄的发展变革与影响",
+    "optionSignals": "Q5四项均以How开头，问方式或过程；Q6四项均以It was开头描述过去状态，问村庄从前的情况；Q7涉及all与majority的范围对比；Q8四项均以They have开头用现在完成时，问某事物带来的影响。",
+    "tips": [
+     "Q6中B项totally isolated用词绝对，C项relatively unknown更温和更像正确措辞，听力偏好有限定词的表达",
+     "Q7中含all的A项往往过于绝对，D项'aesthetically similar'更精确；注意all与majority的区分是常见陷阱",
+     "Q8需区分economy、popularity、pride等不同层面的影响，听音时注意与经济相关的词汇"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "微型遥控行走机器人的研发成果",
+    "optionSignals": "Q9四项描述研究团队的成就，注意最高级smallest和first等标志词；Q10四项均以It开头解释机器人工作原理；Q11四项均为动词原形短语，问机器人的潜在用途。",
+    "tips": [
+     "Q9中A项含最高级smallest，属于具体且可验证的事实陈述，作为正确答案可信度高；C项中the first同样是极端表述但未被选中，说明听力中的关键区分在于具体成就描述",
+     "Q10需区分动力来源：hardware、motor、memory、elastic property四种机制完全不同，听到弹性相关词汇即可定位D",
+     "Q11中B项'tightly confined spaces'与微型机器人的尺寸特征高度对应，逻辑自洽"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "睡眠模式、短睡眠者基因与睡眠训练",
+    "optionSignals": "Q12四项描述某人的具体行为，过去时态问发生了什么；Q13四项描述某类人群特征，含genetically等科学用语；Q14四项均以Whether开头，问讨论的核心问题；Q15四项陈述不同观点，涉及sleep与early bird的对比。",
+    "tips": [
+     "Q12中B项slept during the entire ride与后文讨论短睡眠者形成呼应，选项间存在话题衔接线索",
+     "Q13中C项genetically determined是核心科学论断，与短睡眠者(short sleepers)话题直接相关；A项immune to cognitive impairment用词过强",
+     "Q15中C项区分了'被迫早起'与'天生早起'，这种细微区分是听力常考的逻辑辨析点"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "说服性文章对个人信念与记忆的影响",
+    "optionSignals": "Q16四项涉及认知偏差与自我认知，含underestimate、convincing等心理学词汇；Q17描述实验结果中信念的变化；Q18用否定或限定句式讨论研究结论的适用范围。",
+    "tips": [
+     "Q16中D项underestimate构成认知偏差的经典表述，心理学话题中低估/高估类选项常为正确答案",
+     "Q17区分belief changed(A)与memory pushed toward belief(B)，前者是事实描述，后者是机制解释，注意题目问的是what happened还是why",
+     "Q18中C项用may not apply to...表示研究局限性，学术类听力常在结尾讨论limitations"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "美国母亲群体变化与母亲节消费趋势",
+    "optionSignals": "Q19四项描述美国人口或生育趋势，含on the decline、falling sharply等趋势词；Q20涉及经济能力与育儿态度；Q21解释某一现象增长的原因。",
+    "tips": [
+     "Q19中C项motherhood on the decline与D项fertility rates falling sharply都表示下降，但C项更宏观温和，D项中sharply过于极端",
+     "Q20中B项economically able是具体可量化的条件，比A项greater care、D项enjoy更客观，听力倾向选事实性描述",
+     "Q21中C项more mothers have adult children是人口结构性解释，逻辑链完整：成年子女多→庆祝母亲节的消费者多"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "室内植物净化空气的科学争议与NASA实验",
+    "optionSignals": "Q22四项描述植物的功能，涉及toxic、poisonous、moisture等环境词汇；Q23讨论NASA实验的方法论问题；Q24对比自然通风与植物净化效果；Q25问文章结论或启示。",
+    "tips": [
+     "Q22中A项add to pollutants与B项absorb chemicals完全相反，属于典型对立选项，正确答案大概率在这两者之间",
+     "Q23中B项指出实验条件与真实环境不同，属于方法论批评，学术类文章常质疑实验的外部效度(external validity)",
+     "Q25中D项necessity of reexamining and challenging findings是学术类文章最常见的结尾立意，强调科学精神"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "state-of-the-art",
+    "cn": "最先进的，最新技术的"
+   },
+   {
+    "w": "aesthetically",
+    "cn": "审美地，从美学角度"
+   },
+   {
+    "w": "confined",
+    "cn": "狭窄的，受限的"
+   },
+   {
+    "w": "cognitive impairment",
+    "cn": "认知障碍"
+   },
+   {
+    "w": "genetically determined",
+    "cn": "由基因决定的"
+   },
+   {
+    "w": "underestimate",
+    "cn": "低估"
+   },
+   {
+    "w": "fertility rate",
+    "cn": "生育率"
+   },
+   {
+    "w": "motherhood",
+    "cn": "母亲身份，为人母的状态"
+   },
+   {
+    "w": "ventilation",
+    "cn": "通风，换气"
+   },
+   {
+    "w": "sealed container",
+    "cn": "密封容器"
+   },
+   {
+    "w": "disperse",
+    "cn": "散布，扩散"
+   },
+   {
+    "w": "swayed",
+    "cn": "被动摇，被说服"
+   },
+   {
+    "w": "elastic property",
+    "cn": "弹性特性"
+   },
+   {
+    "w": "assortment",
+    "cn": "各种各样，混合"
+   }
+  ]
+ }
+}

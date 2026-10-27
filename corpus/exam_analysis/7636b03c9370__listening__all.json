@@ -1,0 +1,254 @@
+{
+ "schemaVersion": 1,
+ "id": "7636b03c9370__listening__all",
+ "examId": "7636b03c9370",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2022 年 12 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:44:33.107Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 48745,
+ "usage": {
+  "prompt_tokens": 2194,
+  "completion_tokens": 2513,
+  "total_tokens": 4707,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2194,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2513,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2194,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场六级听力的录音音频与原文文稿，以下所有解析仅基于题目选项的语言特征与正确答案进行推断分析，不涉及任何对录音内容的编造。",
+  "overview": "本场听力共7段材料、25道题。第1段（Q1-4）围绕幸福与金钱的关系、个人财务与生活选择；第2段（Q5-8）涉及一幅画作及其艺术家；第3段（Q9-11）讨论宽恕（forgiveness）与心理健康；第4段（Q12-15）关于某城市地铁/轨道交通系统的变迁与现代化；第5段（Q16-18）涉及人与熊的相处及安全注意事项；第6段（Q19-21）探讨偏见（prejudice）的定义、危害与产生条件；第7段（Q22-25）涉及一位教师或人物的成长经历及对学生的帮助。",
+  "strategy": [
+   "预读选项时快速标记各题关键名词与动词，判断问的是人物、原因还是行为",
+   "选项中出现绝对词如only、always、strictly时要格外留意，听力中常用这些设置干扰或考点",
+   "同一段落各题答案之间往往有逻辑链条，前题答案可辅助推断后题语境",
+   "注意选项中的同义替换现象，正确选项经常是对录音原句的改写而非原词复现",
+   "对含有比较级或因果关系的选项保持敏感，这类表述常作为考点出现",
+   "长对话中关注转折词but、however、actually后面的信息，常为出题点"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "幸福与金钱的关系及个人生活财务选择",
+    "optionSignals": "Q1四个选项均为动名词短语，问的是主题或建议的行为；Q2选项描述某女性的状态，问人物背景；Q3选项均为It开头描述某事物特征；Q4选项均为It would结构，问某假设情境的结果或评价。",
+    "tips": [
+     "Q1中A与C都涉及money，但A强调happiness优先，C强调wise管理，区分侧重点即可",
+     "Q4四个选项语气差异大：A/B偏正面，C/D偏负面，正确答案C为负面评价，注意说话者语气"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "一幅画作的来源、特点及其艺术家评价",
+    "optionSignals": "Q5/Q6均以It开头描述画作的来历或归属，问事实细节；Q7四个选项描述画作风格特征；Q8四个选项描述艺术家个人特质，均以She is开头。",
+    "tips": [
+     "Q6中anonymous collector（匿名收藏家）是听力中常见的细节考点，注意区分购买者与捐赠者",
+     "Q7选项涉及emotions、details、symmetrical、desolation等艺术评价词汇，预读时建立画面感有助捕捉关键词"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "宽恕的意义、适用条件与实施步骤",
+    "optionSignals": "Q9选项均为It引导的判断句，问forgiveness的重要性；Q10四个选项均为When引导的时间/条件状语，问某种情境；Q11选项均为动词原形开头的祈使式，问应采取的行动。",
+    "tips": [
+     "Q10四个选项都含offender一词，需重点听区分性动词如apologize、penalize、insult",
+     "Q11中C选项find out why与D选项determine how serious形成对比，前者问原因后者问程度，注意录音中的疑问词线索"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "某城市地铁系统的历史变化与现代功能",
+    "optionSignals": "Q12选项描述地铁系统过去的变化，含数字与比较；Q13选项均为To引导的目的状语，问做某事的原因；Q14/Q15描述地铁的当前特征或功能。",
+    "tips": [
+     "Q12中出现数字50和比较概念longest，听力数字题需高度集中注意力",
+     "Q15中smartcards only含绝对限定词only，此类选项往往是干扰项，果然非正确答案"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "人与熊的共处及相关安全规定",
+    "optionSignals": "Q16四个选项均为They are/They do结构描述熊的特征；Q17四个选项描述某行为的性质或规定；Q18选项均为动词原形短语，问人应采取的行动。",
+    "tips": [
+     "Q16中friendly与unafraid语义相近但程度不同，C强调不怕人而非主动友好，注意区分",
+     "Q17正确答案A含strictly forbidden，属于强烈表述，说明录音中确实有明确禁令的语气词"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "偏见的定义、危害与产生时机",
+    "optionSignals": "Q19四个选项均为It refers to或It means句型，典型的定义类考题；Q20选项描述偏见的负面影响，均为They引导；Q21四个选项均为When引导，问偏见产生的条件。",
+    "tips": [
+     "Q19为定义题，B选项without adequate knowledge是偏见的经典定义特征词，可作为预判依据",
+     "Q21中feel superior（感到优越）是偏见心理学中的核心概念，选项A具有较强的学术对应性"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "一位人物的成长经历及其教学理念",
+    "optionSignals": "Q22四个选项均为单个形容词描述情绪状态，问人物感受；Q23/Q24描述某事物或人物的状态变化；Q25选项均为动词原形短语，问人物的目标或做法。",
+    "tips": [
+     "Q22为情绪判断题，四个词感情色彩差异大，听时注意语气与情境关键词",
+     "Q25中C选项growing pains呼应整段关于成长的话题，选项间的主题一致性可辅助判断"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "prioritize",
+    "cn": "优先考虑，把……放在首位"
+   },
+   {
+    "w": "financial adviser",
+    "cn": "财务顾问"
+   },
+   {
+    "w": "anonymous",
+    "cn": "匿名的"
+   },
+   {
+    "w": "symmetrical",
+    "cn": "对称的"
+   },
+   {
+    "w": "desolation",
+    "cn": "荒凉，荒芜"
+   },
+   {
+    "w": "reconciliation",
+    "cn": "和解，调和"
+   },
+   {
+    "w": "offender",
+    "cn": "冒犯者，违法者"
+   },
+   {
+    "w": "penalize",
+    "cn": "处罚，惩罚"
+   },
+   {
+    "w": "commuter",
+    "cn": "通勤者"
+   },
+   {
+    "w": "smartcard",
+    "cn": "智能卡"
+   },
+   {
+    "w": "prejudice",
+    "cn": "偏见，成见"
+   },
+   {
+    "w": "eccentric",
+    "cn": "古怪的，反常的"
+   },
+   {
+    "w": "deprive",
+    "cn": "剥夺，使丧失"
+   },
+   {
+    "w": "traumatic",
+    "cn": "创伤的，痛苦的"
+   }
+  ]
+ }
+}

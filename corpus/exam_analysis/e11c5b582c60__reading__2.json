@@ -1,0 +1,161 @@
+{
+ "schemaVersion": 1,
+ "id": "e11c5b582c60__reading__2",
+ "examId": "e11c5b582c60",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 6 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T04:42:12.720Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 91163,
+ "usage": {
+  "prompt_tokens": 1504,
+  "completion_tokens": 8650,
+  "total_tokens": 10154,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5877
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1504
+ },
+ "attempts": 1,
+ "warnings": [
+  "longSentences 有原句与原文不符"
+ ],
+ "analysis": {
+  "topic": "提前决定录取的利与弊",
+  "gist": "文章指出提前决定（ED）看似能提高录取几率、尽早结束申请煎熬，但学校提供ED有其隐藏动机：约束性录取可确保招到合格学生并提高报到率。问题在于ED压缩了学生访校、调研和咨询的时间，使其难以做出充分知情的选校决定；过早专注某校也可能导致失望或错配。此外，ED的录取优势主要流向具备资源优势的学生，对低收入家庭不利。作者建议：已充分调研且确定梦校者可申请ED，否则不应过早缩小选择范围。",
+  "structure": [
+   "第1—2段：先以表面好处引出ED，再揭示校方锁定生源、提高报到率等隐藏动机",
+   "第3—4段：分析ED压缩学生选校时间，可能导致决策不充分或过早绑定不合适的学校",
+   "第5段：指出ED优势偏向家境优越、升学指导资源丰富的学生，低收入家庭学生明显吃亏",
+   "第6段：提出作者建议——只有准备充分且确定梦校者才应选择ED，否则应保留更多选择"
+  ],
+  "difficulty": "中等",
+  "translation": "提前决定——你只申请一所学校，且录取具有约束力——对紧张的申请者来说似乎是个很好的选择。学校录取提前决定申请者的比例更高，这或许意味着你被录取的机会更大。而且如果你被录取了，到12月你就能结束这整个痛苦的过程。但大多数学生和家长没有意识到的是，学校提供提前决定有其隐藏动机。\n\n提前决定因其具有约束力，使学校得以让合格的学生填满班级；也让招生委员会能够挑选出其学校特别需要的学生，并知道这些学生一定会来。它还使学校获得更高的报到率（yield rate），这常常被用作衡量大学选拔性和受欢迎程度的方式之一。\n\n问题在于，这一过程实际上缩短了学生做出一生中迄今为止最重要决定之一的时间窗口。在常规录取中，高中毕业班学生可到5月1日才选择就读学校；而提前决定实际上偷走了他们六个月，这几个月本可以用来参观更多学校、做更多研究、与在校生和校友交流，从而有可能做出更明智的决定。\n\n坦率地说，美国有数量惊人的优秀大学，对任何一名学生来说，都有很多非常适合他的学校。当学生在招生过程早期过于专注某一所学校时，如果未被录取，这种专注会导致极大的失望；而如果被录取，则可能出现这样的情况：他们现在被约束要去的那所学校，若再经过一段时间深入思考，可能实际上并不适合他们。\n\n就提前决定确实提供真实录取优势而言，这种优势主要流向那些已经拥有众多优势的学生。使用提前决定的学生往往接受过较高质量的大学升学指导，这通常来自于较为优越的家庭背景。在这方面，存在反对提前决定的理由，因为来自低收入家庭的学生远不那么可能拥有应对常常令人困惑的提前录取截止日期所需的入学诀窍。\n\n在目前制度下，已经做过研究并且确信有一所自己非常想进的学校的学生，或许应该申请提前决定。但对于尚未做足够研究、或对梦校仍不断改变主意的学生来说，提前决定制度在学生本应打开自己去面对一系列激动人心选择的时刻，却不必要且过早地缩小了可能性的范围。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Early decision—you apply to one school? and admission is binding—seems like a great choice for nervous applicants. And if you do, you're done with the whole agonizing process by December.",
+    "why": "题干中的“obliged to do”对应原文“binding”所表达的约束力。提前决定的录取具有约束性，即一旦被录取就必须入学，不能选择其他学校。因此，学生有义务在被录取后就读该校，选项B“Attend the school once they are admitted”准确概括了这一含义。",
+    "traps": "A与提前决定只申请一所学校的规则矛盾，原文并未要求申请前考察多所学校；C中的“三思后接受”与约束性录取的强制入学性质不符；D提到的咨询在校生和校友是常规录取阶段可能安排的访校活动，并非提前决定要求学生必须履行的义务。",
+    "tip": "看见题干中的obliged等约束性表达时，优先回原文寻找binding、bound to等近义线索。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Early decision, since it's binding, allows schools to fill their classes with qualified students; it allows admissions committees to select the students that are in particular demand for their college and know those students will come.",
+    "why": "原文明确说明ED的约束性使学校能够“fill their classes with qualified students”，即用合格学生填满班级，且招生委员会能确定被选中的学生一定会入学。选项A“To make sure they get qualified students”是对该信息的同义概括。",
+    "traps": "B“避免与其他大学竞争”在原文未提及，ED是提前锁定生源而非避免竞争；C“给申请者提供更多机会”是从学生角度的表面理解，但学校设立ED的动机是自身招生利益；D“免除学生选校痛苦”虽有提及，但这是学生的感受，并非学校提供ED的隐藏动机。",
+    "tip": "题目问学校提供ED的原因，应定位到学校视角的信息，不要被申请者角度的好处干扰。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The problem is that this process effectively shortens the window of time students have to make one of the most important decisions of their lives up to that point.",
+    "why": "第三段首句直接点明问题：ED缩短了学生做人生重要决定的时间窗口。后文进一步说ED偷走了六个月，这期间本可用于访校、调研、咨询，从而做出更明智决定。选项C“It allows them little time to make informed decisions”与原文“make a more informed decision”对应。",
+    "traps": "A“申请过程更复杂”原文未提及，且ED反而可能减少后续步骤；B把问题曲解为研究能力要求过高，但原文强调的核心是时间被压缩；D“心理压力更大”虽与文中焦虑、失望情感相关，但本段讨论的问题落脚点是决策时间不足，而非心理压力。",
+    "tip": "定位到原文“The problem is...”后，捕捉核心名词如window/time，再匹配选项中的同义替换。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The students who use early decision tend to be those who have received higher-quality college guidance, usually a result of coming from a more privileged background. In this regard, there's an argument against early decision, as students from lower-income families are far less likely to have the admissions know-how to navigate the often confusing early deadlines.",
+    "why": "第五段先指出使用ED的学生多来自有优势背景、接受过高质量升学指导，接着说明反对理由：低收入家庭学生很难掌握应对复杂提前录取截止日期所需的技巧。因此ED对低收入家庭学生明显不利，选项D准确对应原文观点。",
+    "traps": "A“干扰高中学习”在原文完全没有根据；B把“低收入家庭学生”偷换为“普通高中学生”，扩大了范围；C虽提到“confusing early deadlines”，但反对的核心不是普遍困惑，而是不同家庭背景学生应对能力差异大。",
+    "tip": "题干问“some people opposed”对应原文“there's an argument against”，定位后重点关注as引导的原因从句。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "But for students who haven't yet done enough research, or who are still constantly changing their minds on favorite schools, the early-decision system needlessly and prematurely narrows the field of possibility just at a time when students should be opening themselves to a whole range of thrilling options.",
+    "why": "末段作者给出条件性建议：已做好充分研究并确定梦校者可以申请ED；但尚未做足够研究、仍在犹豫的学生不适合ED，因为ED会过早缩小选择范围。选项B“除非充分准备，否则避免选择ED”准确概括了这一建议。",
+    "traps": "A“不与特权家庭学生竞争”原文未提及，作者强调的是自身准备而非回避竞争；C“查找梦校足够信息”只是建议的一部分，题干问的是对提前决定的态度，C偏离核心；D“不要局限于少数选项”虽与原文opens a range of options相关，但作者建议的核心是准备不足不要选ED，而非单纯鼓励拓宽选择。",
+    "tip": "关注末段“should”和“But”转折后的建议，条件句常常是态度题的答案来源。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "binding",
+    "cn": "adj. 有约束力的，必须履行的"
+   },
+   {
+    "w": "agonizing",
+    "cn": "adj. 折磨人的，令人痛苦的"
+   },
+   {
+    "w": "yield rate",
+    "cn": "n. 报到率，录取后实际入学的比例"
+   },
+   {
+    "w": "selectivity",
+    "cn": "n. 选择性，挑剔程度"
+   },
+   {
+    "w": "informed",
+    "cn": "adj. 有充分了解的，明智的"
+   },
+   {
+    "w": "fixated",
+    "cn": "adj. 专注的，迷恋的"
+   },
+   {
+    "w": "privileged",
+    "cn": "adj. 享有特权的，有优势背景的"
+   },
+   {
+    "w": "know-how",
+    "cn": "n. 诀窍，实际知识或技能"
+   },
+   {
+    "w": "navigate",
+    "cn": "v. 应对，驾驭；航行"
+   },
+   {
+    "w": "prematurely",
+    "cn": "adv. 过早地，不成熟地"
+   },
+   {
+    "w": "thrilling",
+    "cn": "adj. 令人兴奋的，令人激动的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Under regular admissions, seniors have until May 1 to choose which school to attend; early decision effectively steals six months from them, months that could be used to visit more schools, do more research, speak to current students and alumni and arguably make a more informed decision.",
+    "cn": "在常规录取中，高中毕业班学生可到5月1日才选择就读学校；而提前决定实际上偷走了他们六个月，这几个月本可以用来参观更多学校、做更多研究、与在校生和校友交流，从而有可能做出更明智的决定。",
+    "note": "分号连接两个并列分句；后一分句中的months是six months的同位语，后接that引导的定语从句，从句中有四个并列动词短语，arguably修饰make。"
+   },
+   {
+    "en": "When students become too fixated on a particular school early in the admissions process, that fixation can lead to severe disappointment if they don't get in or, if they do, the possibility that they are now bound to go to a school that, given time for further reflection, may not actually be right for them.",
+    "cn": "当学生在申请过程早期过度专注于某一所学校时，如果未被录取，这种专注会导致极大的失望；而如果被录取，则可能出现这样的情况：他们现在被约束要去的那所学校，若再经过一段时间深入思考，可能实际上并不适合他们。",
+    "note": "主句为that fixation can lead to severe disappointment or the possibility；if they don't get in为条件状语，if they do为省略式条件；possibility后接that同位语从句，其中a school后又接that定语从句，given time for further reflection为插入条件状语。"
+   },
+   {
+    "en": "But for students who haven't yet done enough research, or who are still constantly changing their minds on favorite schools, the early-decision system needlessly and prematurely narrows the field of possibility just at a time when students should be opening themselves to a whole range of thrilling options.",
+    "cn": "但对于尚未做充分研究，或在梦校选择上仍不断改变主意的学生来说，提前决定制度在学生们本应打开自己去面对一系列激动人心选择的时刻，却不必要且过早地缩小了可能性的范围。",
+    "note": "句首But表转折；for students后接两个并列的who定语从句；主句主语为the early-decision system，needlessly and prematurely并列修饰narrows；just at a time后接when引导的定语从句修饰time。"
+   }
+  ]
+ }
+}

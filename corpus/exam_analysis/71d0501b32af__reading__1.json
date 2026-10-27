@@ -1,0 +1,211 @@
+{
+ "schemaVersion": 1,
+ "id": "71d0501b32af__reading__1",
+ "examId": "71d0501b32af",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 12 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T09:21:48.452Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 151336,
+ "usage": {
+  "prompt_tokens": 1733,
+  "completion_tokens": 7335,
+  "total_tokens": 9068,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1733,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 7335,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1733,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 46 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "可口可乐的成分演变与发展史",
+  "gist": "文章以可口可乐为线索，讲述了其创始人彭伯顿用古柯叶提取物和可乐果制作饮料的背景，追溯了可乐果在西非的悠久历史及其传入欧洲的过程。19世纪末可乐果被大量运往欧洲和美国用于制药，当可卡因作为饮料成分失宠后，可乐果提取物可乐兴起。文章最后介绍了可口可乐的商业成功及其配方演变。",
+  "structure": [
+   "第1段：引出可口可乐两大成分——古柯叶和可乐果",
+   "第2-4段：可乐果在西非的历史及欧洲人对其的认知过程",
+   "第5段：19世纪末可乐果运往欧美用于制药，可卡因失宠后可乐果可乐兴起",
+   "第6段：可口可乐的商业发展与'新可乐'事件",
+   "第7段：如今配方保密，已不含真正的可乐果提取物",
+   "第1段：引出可口可乐最初配方——古柯叶和可乐果两大成分",
+   "第2-4段：回溯可乐果在西非的悠久历史及其传入欧洲的过程",
+   "第5段：可乐果传入欧美后成为药饮原料，可口可乐顺势而生",
+   "第6段：可口可乐的商业成功与1985年改味失败事件",
+   "第7段：现代配方已用人工仿味替代天然可乐果提取物"
+  ],
+  "difficulty": "中等",
+  "translation": "你或许听说过，可口可乐曾含有一种能够在消费者中激起特殊忠诚的成分——可卡因。名称中的\"Coca\"指的是古柯叶提取物，这种饮品的创始人——药剂师约翰·彭伯顿——将其混入自己的甜味糖浆中。当时，古柯叶提取物与葡萄酒混合而成的饮品是一种常见的滋补品，而彭伯顿的甜味调饮则是规避当地禁酒法令的一种方式。但名称的另一半引出了另一种成分，知名度或许不及前者，却同样具有奇特的功效：可乐果。\n\n在西非，人们长期以来一直咀嚼可乐果作为兴奋剂，因为它含有咖啡因，这种物质也天然存在于茶、咖啡和巧克力中。可乐果还具有心脏刺激作用。\n\n历史学家保罗·洛夫乔伊记述，可乐果在西非的种植已有数百年历史。这种枝叶茂密的树木被种植在墓地上，并作为传统仪式的一部分。尽管可乐果需要保持湿润，运输起来相当精细，商人们仍将它们跨越数百英里，运往各处森林和草地。\n\n欧洲人直到16世纪才知道可乐果的存在，当时葡萄牙船只抵达了如今塞拉利昂的海岸。虽然葡萄牙人参与了贸易，将可乐果与其他货物一起沿海岸运输，但到1620年英国探险家理查德·乔布森沿冈比亚河逆流而上时，可乐果在他眼中仍然是稀奇之物。\n\n到19世纪末，可乐果已经以数吨的规模被运往欧洲和美国。许多可乐果被加入药品中，用作某种能量补充剂。其中一种流行的药用饮品是\"马里亚尼之酒\"，这是一种由古柯提取物与红酒混合而成的法国产品，由法国化学家安杰洛·马里亚尼于1863年创制。因此，彭伯顿发明自己的饮品时，他代表的是一个持续的趋势。当可卡因最终不再被视为合适的饮料成分后，以可乐果提取物为基础的可乐饮品便开始流行起来。\n\n可口可乐问世的第一年，在亚特兰大所有出售该饮品的苏打水柜台中，平均每天仅售出九杯。随着人气的增长，公司出售了瓶装苏打水的权利，使其能够方便运输。如今，全球每天约有19亿瓶可口可乐被购买。它已经变得如此标志性，以至于1985年试图改变其口味——使其更甜以期促进销量——被证明是灾难性的，遭到了消费者的广泛愤怒。\"经典可口可乐\"在\"新可乐\"发布仅三个月后便重新回到货架上。\n\n如今，可口可乐的配方是一个被严密守护的秘密。但据说它已不再含有可乐果提取物，而是依靠人工仿制品来实现其风味。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "But the other half of the name presents another ingredient, less infamous, perhaps, but also strangely potent: the kola nut.",
+    "why": "原文明确用\"strangely potent\"形容可乐果这一成分，而彭伯顿将其加入了他的饮品。同段指出，当时古柯叶提取物与酒混合是常见的\"tonic\"（滋补品），tonic即食品补充剂（food supplement）。因此A选项\"他在一种食品补充剂中使用了一种出奇有效的成分\"准确对应原文信息，strangely potent原词复现。",
+    "traps": "B项说\"制作了含酒精的饮料且未违法\"，属张冠李戴，原文说他的饮品恰恰是为了规避禁酒令，即不含酒精；C项说\"因研发古柯饮料而声名狼藉\"，属无中生有，infamous用于描述可乐果成分，并非指彭伯顿本人；D项说\"冒着违法风险用古柯叶制饮料\"，曲解原意，原文说他的饮品是\"a way to get around\"（规避）法律，而非冒险违法。",
+    "tip": "注意原文修饰词的精确指向，strangely potent修饰的是kola nut而非cocaine。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "By the late 19th century, kola nuts were being shipped by the tonne to Europe and the US. Many made their way into medicines, intended as a kind of energy boost.",
+    "why": "原文明确指出到19世纪末可乐果被成吨运往欧洲和美国，其中许多被用于制药，作为一种提神补品。C选项\"许多在19世纪末被运往欧洲用于药用\"是对这两句话的准确概括，时间、数量、目的均能对应。",
+    "traps": "A项说\"商业价值最早由葡萄牙定居者发现\"，属偷换概念，原文说葡萄牙人只是参与贸易，西非人早已种植交易可乐果数百年；B项说\"含有其他食物中没有的某种提神成分\"，与原文矛盾，原文明确说其咖啡因也天然存在于茶、咖啡和巧克力中；D项说\"首次进口到欧洲时对欧洲人来说很陌生\"，偷换语境，原文说的是1620年英国探险家在非洲当地觉得稀奇，而非进口到欧洲后的反应。",
+    "tip": "多选项涉及时间和地点时，务必核对原文细节是否完全匹配。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "When cocaine eventually fell from grace as a beverage ingredient, kola-extract colas became popular.",
+    "why": "原文用\"fell from grace\"（失宠、名声扫地）描述可卡因作为饮料成分的命运，紧接着说可乐果提取物可乐因此流行起来。A选项\"可卡因已变得臭名昭著\"正是对\"fell from grace\"的同义转述，即可卡因声名狼藉导致人们转向可乐果可乐。",
+    "traps": "B项\"酒精饮料被禁止\"是第一段的背景信息，解释的是彭伯顿为何创造非酒精饮品，与可乐果可乐流行无直接因果关系；C项\"设立了汽水售卖点来销售\"和D项\"出售了装瓶权\"均出自第六段描述可口可乐商业扩张的细节，与可乐果可乐为何流行的问题无关，属答非所问。",
+    "tip": "因果关系题要精准定位原因和结果，不要被其他段落的背景信息干扰。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "It's become so iconic that attempts to change its taste in 1985—sweetening it in a move projected to boost sales—proved disastrous, with widespread anger from consumers. \"Coca-Cola Classic\" returned to store shelves just three months after the \"New Coke\" was released.",
+    "why": "原文指出1985年可口可乐试图改变口味使其更甜，结果遭到消费者广泛愤怒，\"经典可口可乐\"在\"新可乐\"发布仅三个月后被迫回归。这说明消费者不接受口味改变，公司只能恢复原味，由此可推断可口可乐的口味自诞生以来几乎没有发生过实质性变化。D选项中的\"virtually unchanged\"正好对应这一事实。",
+    "traps": "A项\"刻意设计成让消费者上瘾\"属于无中生有，文中提到可卡因和咖啡因有刺激性，但并未说口味被设计为制造成瘾；B项\"仍然依靠传统可乐果提取物\"与末段明确陈述矛盾，原文说已用人工仿制品替代；C项\"在老年人中更受欢迎\"全文从未提及年龄群体偏好，属于无中生有。",
+    "tip": "注意从事件结果反推事实——改味失败说明口味一直未变。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "",
+    "why": "全文从可口可乐最初的古柯叶和可乐果配方起笔，追溯可乐果在西非的种植与贸易历史，再到19世纪末进入欧美药饮市场的过程，接着叙述可口可乐从每天九杯到日销19亿瓶的商业发展，最后点明现代配方已用人工仿味替代天然成分。整篇按时间线索展现了可口可乐从诞生到现代的演变过程，A选项\"The evolution of Coca-Cola\"准确概括了这一主旨。",
+    "traps": "B项\"成功故事\"只涵盖第六段的商业扩张内容，不足以概括全文对配方成分与历史渊源的大量叙述；C项\"药用价值\"仅为第五段提及的一个阶段性细节，不是全文核心；D项\"商业策略\"在文中只涉及瓶装授权和改味事件，同样是局部内容，以偏概全。",
+    "tip": "主旨题须纵览全文主线，排除只覆盖部分段落的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "potent",
+    "cn": "adj. 有效力的，强有力的"
+   },
+   {
+    "w": "infamous",
+    "cn": "adj. 声名狼藉的，名声不好的"
+   },
+   {
+    "w": "stimulant",
+    "cn": "n. 兴奋剂，刺激物"
+   },
+   {
+    "w": "cultivation",
+    "cn": "n. 种植，栽培"
+   },
+   {
+    "w": "moist",
+    "cn": "adj. 潮湿的，湿润的"
+   },
+   {
+    "w": "peculiar",
+    "cn": "adj. 奇特的，不寻常的"
+   },
+   {
+    "w": "ferrying",
+    "cn": "v. 运送，摆渡（ferry的现在分词）"
+   },
+   {
+    "w": "disastrous",
+    "cn": "adj. 灾难性的，极其糟糕的"
+   },
+   {
+    "w": "iconic",
+    "cn": "adj. 标志性的，经典的"
+   },
+   {
+    "w": "fell from grace",
+    "cn": "短语 失宠，不再受青睐"
+   },
+   {
+    "w": "devotion",
+    "cn": "n. 忠诚，热爱"
+   },
+   {
+    "w": "originator",
+    "cn": "n. 创始人，发明者"
+   },
+   {
+    "w": "prohibiting",
+    "cn": "v. 禁止（prohibit的现在分词）"
+   },
+   {
+    "w": "stimulants",
+    "cn": "n. 兴奋剂，刺激物（复数）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The \"Coca\" in the name referred to the extracts of coca leaf that the drink's originator, chemist John Pemberton, mixed with his sugary syrup.",
+    "cn": "名称中的\"Coca\"指的是古柯叶提取物，该饮料的创始人、化学家约翰·彭伯顿将其与他的含糖浆汁混合在一起。",
+    "note": "主干：The \"Coca\" referred to the extracts；that引导定语从句修饰extracts；chemist John Pemberton是the drink's originator的同位语，作为插入成分。"
+   },
+   {
+    "en": "Even though the nuts, which need to stay moist, can be somewhat delicate to transport, traders carried them hundreds of miles throughout the forests and grasslands.",
+    "cn": "尽管可乐果需要保持湿润、运输起来相当精细，商人们仍将它们跨越数百英里，运往各处森林和草地。",
+    "note": "Even though引导让步状语从句；which need to stay moist为非限制性定语从句修饰nuts；主句traders carried...表示转折结果。"
+   },
+   {
+    "en": "It's become so iconic that attempts to change its taste in 1985—sweetening it in a move projected to boost sales—proved disastrous, with widespread anger from consumers.",
+    "cn": "它已变得如此标志性，以至于1985年试图改变其口味——在一项预计能促进销量的举措中使其变甜——被证明是灾难性的，引发了消费者的广泛愤怒。",
+    "note": "so...that...结果状语从句为主干；破折号之间为插入语，补充说明改味的具体做法与预期目标；with短语作伴随状语表示附带结果。"
+   },
+   {
+    "en": "At the time, coca leaf extract mixed with wine was a common tonic, and Pemberton's sweet brew was a way to get around local laws prohibiting the sale of alcohol.",
+    "cn": "当时，古柯叶提取物与葡萄酒混合而成的饮品是一种常见的滋补品，而彭伯顿的甜味调饮则是规避当地禁酒法令的一种方式。",
+    "note": "and连接两个并列分句；mixed with wine为过去分词短语作后置定语修饰extract；prohibiting...为现在分词短语作后置定语修饰laws。"
+   }
+  ]
+ },
+ "mergedFrom": [
+  "71d0501b32af__reading__1c1",
+  "71d0501b32af__reading__1c2"
+ ]
+}

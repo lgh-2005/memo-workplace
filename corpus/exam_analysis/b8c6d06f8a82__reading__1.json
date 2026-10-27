@@ -1,0 +1,164 @@
+{
+ "schemaVersion": 1,
+ "id": "b8c6d06f8a82__reading__1",
+ "examId": "b8c6d06f8a82",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 6 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T04:46:36.601Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 78079,
+ "usage": {
+  "prompt_tokens": 1550,
+  "completion_tokens": 8251,
+  "total_tokens": 9801,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5929
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1550
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "贸易增长是经济扩张信号",
+  "gist": "文章反驳将美国六月贸易逆差视为衰退前兆的悲观论调，指出过去两年进出口数据反映的是经济扩张而非二次衰退。贸易量增长惠及物流、大宗商品等行业，但美国经济面临国内消费疲软的挑战，企业和个人应通过出口和参与全球市场获取增长机会。",
+  "structure": [
+   "首段以建议引出贸易话题，吸引读者注意。",
+   "第二段陈述悲观者对六月贸易逆差的解读。",
+   "第三段转折，提出贸易数据表明经济扩张。",
+   "第四五段说明贸易增长的具体受益行业与企业。",
+   "第六七段指出国内消费疲软挑战并给出参与全球贸易建议。"
+  ],
+  "difficulty": "中等",
+  "translation": "一位好心的专业人士会给刚毕业的大学生什么建议？中国？印度？巴西？贸易怎么样？\n\n当商务部上周报告六月贸易逆差接近500亿美元时，这引发了一轮新的经济末日论。当月进口飙升至2003亿美元，在计算国内生产总值时被扣除。贸易逆差越大，GDP就越小。悲观者称，如果这种失衡持续下去，可能会导致经济增长放缓。\n\n但看待贸易数据还有另一种方式。过去两年，进出口数据似乎并不是在发出二次衰退的信号——即美国经济活动总体水平再次下降——而是经济扩张。\n\n贸易量的增长——更多商品和服务进出美国——对许多行业来说都是好消息。从事航运、卡车运输、铁路货运、快递和物流的公司均报告业绩好于预期。增长的数字意味着国外市场活力增强——当我们进口更多商品时，世界各地的民众手中就有了更多现金，而美国出口在增加，因为更多外国人有能力购买我们生产和销售的东西。贸易的涨潮对从事贸易敏感行业的人也是好消息，尤其是那些生产价格由全球需求决定的大宗商品的人——农产品、矿产、金属、石油。\n\n虽然出口似乎总是滞后，但美国公司正日益融入全球经济。通用汽车每月在中国的汽车销量与在美国相当。虽然这对进口可能没有多大作用，但确实有助于通用汽车的资产负债表——从而使美国本土高管的工作更加稳定。\n\n美国经济面临的一大挑战是国内消费需求疲软。美国人正在偿还债务、增加储蓄、更加谨慎地消费。考虑到我们所经历的一切，这在意料之中。但还有更大的挑战。美国本土企业，无论大小，能否找到办法从不断增长的全球需求中分得一杯羹？除非你想搬到印度、巴西或中国，否则最好的办法就是通过贸易。这看似显而易见，但仅仅与国内的朋友和邻居做生意已经不够了。\n\n那些没有制定扩大出口、更深入参与国外市场或在全球贸易中发挥作用战略的公司和个人，正在将自己排除在世界经济机会的最大份额之外。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The larger the trade deficit, the smaller the GDP. Should such imbalances continue, pessimists say, they could contribute to slower growth.",
+    "why": "根据原文，悲观者认为贸易逆差扩大导致GDP变小，若这种失衡持续，可能拖累经济增长。题干问悲观者如何解读六月贸易逆差，定位句直接对应“可能导致国家经济增长放缓”，故C正确。",
+    "traps": "A项“美国人偏爱进口商品”原文未提及，属无中生有；B项“经济结构改变”未涉及，属偷换概念；D项“美国日益关注国内市场”与原文相反，文章后文强调应走向国际市场。",
+    "tip": "定位题干关键词pessimists和trade deficit，直接找原文对应观点句。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Over the past two years, the figures on imports and exports seem not to signal a double-dip recession—a renewed decline in the broad level of economic activity in the United States—but an economic expansion.",
+    "why": "作者指出过去两年进出口数据并非预示二次衰退，而是经济扩张，即美国经济活动水平上升而非下降。题干问作者如何看待过去两年贸易数据，定位句明确表达经济活动增加，故A正确。",
+    "traps": "B项“国内需求下降”原文未提及，且与第六段国内需求疲软混淆；C项“国际市场波动”无中生有；D项“经济进一步衰退”与原文“not...recession...but expansion”相反。",
+    "tip": "关注转折词but后的内容，作者观点常在转折后。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The rising tide of trade is also good news for people who work in trade-sensitive businesses, especially those that produce commodities for which global demand sets the price—agricultural goods, mining, metals, oil.",
+    "why": "定位句指出贸易量增长对贸易敏感行业从业者是好消息，尤其是生产农产品、矿产、金属、石油等大宗商品的生产者，因为这些商品价格由全球需求决定。题干问谁特别受益，对应C项“农产品和原材料生产者”。",
+    "traps": "A项“国际贸易专家”原文未提及，属无中生有；B项“青睐进口商品的消费者”非本文强调受益者，属偷换主体；D项“经营外国商品的零售商”与原文物流和大宗商品生产者不符。",
+    "tip": "注意原文中的especially、破折号等强调信息，常为考点。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "One great challenge for the U.S. economy is slack domestic consumer demand. Americans are paying down debt, saving more, and spending more carefully.",
+    "why": "定位句明确美国经济一大挑战是国内消费需求疲软，美国人正在还债、多储蓄、谨慎消费，即不愿消费。题干问美国经济面临的挑战之一，C项“人们不愿消费”是对原文的同义转述。",
+    "traps": "A项“生产率下降”原文未提及；B项“海外竞争”文中未作为挑战提出，属无中生有；D项“贸易活动疲软”与原文贸易量增长相反。",
+    "tip": "正确选项常为原文关键词的同义替换，如slack domestic consumer demand对应reluctance to spend。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Companies and individuals who don't have a strategy to export more, or to get more involved in foreign markets, or to play a role in global trade, are shutting themselves out of the lion's share of economic opportunity in our world.",
+    "why": "作者最后建议公司和个人应有扩大出口、深入参与国外市场、在全球贸易中发挥作用的战略，否则会错失世界经济机会。题干问作者的建议，B项“增加海外市场份额”是原文export more和get involved in foreign markets的同义概括。",
+    "traps": "A项“从发展中国家进口更多廉价商品”与原文鼓励出口相反；C项“警惕国外市场波动”原文未强调，属无中生有；D项“将公司迁往劳动力廉价之地”原文虽提及印度巴西中国，但作者反对搬迁而主张贸易。",
+    "tip": "作者建议常出现在末段，注意总结性、建议性表达。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "trade deficit",
+    "cn": "贸易逆差（名词短语）"
+   },
+   {
+    "w": "doomsaying",
+    "cn": "末日论，唱衰（名词）"
+   },
+   {
+    "w": "double-dip recession",
+    "cn": "二次衰退（名词短语）"
+   },
+   {
+    "w": "logistics",
+    "cn": "物流（名词）"
+   },
+   {
+    "w": "vitality",
+    "cn": "活力，生命力（名词）"
+   },
+   {
+    "w": "trade-sensitive",
+    "cn": "对贸易敏感的（形容词）"
+   },
+   {
+    "w": "commodities",
+    "cn": "大宗商品（名词复数）"
+   },
+   {
+    "w": "slack",
+    "cn": "疲软的，萧条的（形容词）"
+   },
+   {
+    "w": "paying down debt",
+    "cn": "偿还债务（动词短语）"
+   },
+   {
+    "w": "figure out",
+    "cn": "想出，弄明白（动词短语）"
+   },
+   {
+    "w": "lion's share",
+    "cn": "最大份额（名词短语）"
+   },
+   {
+    "w": "shuttle",
+    "cn": "穿梭，频繁往来（动词）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The rising numbers signify growing vitality in foreign markets—when we import more stuff, it puts more cash in the hands of people around the world, and U.S. exports are rising because more foreigners have the ability to buy the things we produce and market.",
+    "cn": "增长的数字意味着国外市场活力增强——当我们进口更多商品时，世界各地的民众手中就有了更多现金，而美国出口在增加，因为更多外国人有能力购买我们生产和销售的东西。",
+    "note": "主句为The rising numbers signify growing vitality，破折号后when引导时间状语从句，其中包含and连接的并列分句，后一分句because引导原因状语从句。"
+   },
+   {
+    "en": "The rising tide of trade is also good news for people who work in trade-sensitive businesses, especially those that produce commodities for which global demand sets the price—agricultural goods, mining, metals, oil.",
+    "cn": "贸易的涨潮对从事贸易敏感行业的人也是好消息，尤其是那些生产价格由全球需求决定的大宗商品的人——农产品、矿产、金属、石油。",
+    "note": "主句为The rising tide of trade is also good news for people，who引导定语从句修饰people，those后接that定语从句，其中for which引导定语从句修饰commodities。多层定语嵌套，需找准先行词。"
+   },
+   {
+    "en": "Companies and individuals who don't have a strategy to export more, or to get more involved in foreign markets, or to play a role in global trade, are shutting themselves out of the lion's share of economic opportunity in our world.",
+    "cn": "那些没有制定扩大出口、更深入参与国外市场或在全球贸易中发挥作用战略的公司和个人，正在将自己排除在世界经济机会的最大份额之外。",
+    "note": "主语Companies and individuals后接who引导的定语从句，从句中三个并列的不定式短语作后置定语修饰strategy，谓语是are shutting。需识别主谓分离，抓住主干。"
+   }
+  ]
+ }
+}

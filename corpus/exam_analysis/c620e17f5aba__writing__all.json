@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "c620e17f5aba__writing__all",
+ "examId": "c620e17f5aba",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2019 年 6 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:25:56.307Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56656,
+ "usage": {
+  "prompt_tokens": 695,
+  "completion_tokens": 4652,
+  "total_tokens": 5347,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 695,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4652,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 695,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"相互理解与尊重在人际关系中的重要性\"展开论述，字数150-200词，限时30分钟。",
+    "outline": [
+     "第一段：引出话题，点明相互理解与尊重是和谐人际关系的基石，给出总论点。",
+     "第二段：分两个层面展开论证——①相互理解有助于换位思考、减少冲突；②相互尊重让人感到被重视，促进深层信任。",
+     "第三段：总结全文，发出倡议，呼吁在日常交往中践行共情与尊重，营造和谐社会氛围。"
+    ],
+    "sample": "In an era characterized by increasingly diverse social interactions, mutual understanding and respect have become the cornerstone of harmonious interpersonal relationships. Without these two essential qualities, even the closest bonds can deteriorate rapidly and irreversibly.\n\nTo begin with, mutual understanding enables individuals to perceive issues from others' perspectives, thereby effectively reducing unnecessary conflicts and misunderstandings. When people make a genuine effort to comprehend each other's feelings and viewpoints, they are far more likely to resolve disagreements through constructive dialogue rather than hostile confrontation. Furthermore, mutual respect ensures that every individual feels valued and appreciated within a relationship. People who consistently treat others with dignity and courtesy tend to cultivate deeper and more enduring connections built on trust, sincerity, and goodwill.\n\nIn conclusion, mutual understanding and respect are truly indispensable to maintaining healthy and lasting interpersonal relationships. We should consciously practice empathy and show sincere respect for those around us in daily interactions, for only in this way can we foster a more harmonious social environment and ultimately lead a fulfilling life.",
+    "phrases": [
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "充当……的基石；用于引出核心要素，比foundation更书面高级"
+     },
+     {
+      "en": "perceive issues from others' perspectives",
+      "cn": "从他人角度看待问题；体现换位思考，比see things from...更学术"
+     },
+     {
+      "en": "make a genuine effort to",
+      "cn": "真心努力去做……；genuine比real更正式，展现诚意"
+     },
+     {
+      "en": "constructive dialogue rather than hostile confrontation",
+      "cn": "建设性对话而非敌对冲突；rather than形成鲜明对比，论证有力"
+     },
+     {
+      "en": "feel valued and appreciated",
+      "cn": "感到被重视和认可；被动语态体现他人的感受，贴合主题"
+     },
+     {
+      "en": "cultivate deeper and more enduring connections",
+      "cn": "培养更深厚持久的联系；cultivate比build更高级，enduring比lasting更书面"
+     },
+     {
+      "en": "are indispensable to",
+      "cn": "对……不可或缺；比important/necessary更高分，注意to是介词"
+     },
+     {
+      "en": "consciously practice empathy",
+      "cn": "有意识地践行共情；empathy是心理学高频词，提升词汇档次"
+     },
+     {
+      "en": "only in this way can we",
+      "cn": "只有这样我们才能……；倒装句型，展现句式多样性，适合用于结尾段"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只谈\"尊重\"而忽略\"理解\"，两者须并重论述，缺一扣分",
+     "词汇单一：全篇反复使用important/good，应替换为indispensable/vital/essential等",
+     "逻辑断层：第二段只罗列观点不加论证或举例，导致说服力不足",
+     "字数失控：写作低于150词或超过200词均可能被扣分，务必控制篇幅",
+     "衔接生硬：段落之间缺少过渡词，如furthermore/in conclusion等，影响连贯性"
+    ],
+    "upgrades": [
+     {
+      "plain": "Mutual understanding is very important in relationships.",
+      "better": "Mutual understanding serves as the cornerstone of harmonious interpersonal relationships.",
+      "note": "用serve as the cornerstone of替代is very important，表达更具体且更具学术感"
+     },
+     {
+      "plain": "People should try to understand each other.",
+      "better": "People should make a genuine effort to comprehend each other's feelings and viewpoints.",
+      "note": "用make a genuine effort to comprehend替代try to understand，语义更精准、层次更丰富"
+     },
+     {
+      "plain": "We can build a better society by doing this.",
+      "better": "Only in this way can we foster a more harmonious social environment.",
+      "note": "使用only倒装句型加foster替代build，句式高级且动词更书面"
+     },
+     {
+      "plain": "Respect makes people feel good.",
+      "better": "Mutual respect ensures that every individual feels valued and appreciated.",
+      "note": "ensure that引导的宾语从句搭配valued/appreciated，比feel good具体且高级"
+     },
+     {
+      "plain": "Without understanding, people will fight.",
+      "better": "Without mutual understanding, even the closest bonds can deteriorate rapidly and irreversibly.",
+      "note": "deteriorate替代fight，rapidly and irreversibly双副词修饰增强表达力度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Mutual understanding and respect serve as the cornerstone of harmonious interpersonal relationships. — 相互理解与尊重是和谐人际关系的基石。（serve as the cornerstone of 为高分搭配，适用于各类\"重要性\"话题开头）",
+   "When people make a genuine effort to comprehend each other's feelings and viewpoints, they are far more likely to resolve disagreements through constructive dialogue rather than hostile confrontation. — 当人们真心努力去理解彼此的感受与观点时，他们更有可能通过建设性对话而非敌对冲突来解决分歧。（长句展示条件-结果逻辑，rather than形成对比）",
+   "People who consistently treat others with dignity and courtesy tend to cultivate deeper and more enduring connections built on trust, sincerity, and goodwill. — 始终以尊严和礼貌待人者往往能培养出建立在信任、真诚和善意之上的更深厚持久的联系。（定语从句+过去分词后置定语，结构丰富）",
+   "Only in this way can we foster a more harmonious social environment and ultimately lead a fulfilling life. — 只有这样我们才能营造更和谐的社会环境，并最终过上充实的生活。（only倒装句型用于结尾，铿锵有力，是六级写作加分利器）"
+  ]
+ }
+}

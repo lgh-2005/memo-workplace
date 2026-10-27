@@ -1,0 +1,241 @@
+{
+ "schemaVersion": 1,
+ "id": "106c7d82f5d8__long_match__all",
+ "examId": "106c7d82f5d8",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2020 年 12 月英语六级真题（第 3 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:33:32.522Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31477,
+ "usage": {
+  "prompt_tokens": 973,
+  "completion_tokens": 1824,
+  "total_tokens": 2797,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 973,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1824,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 973,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "大学教育模式变革与终身学习",
+  "strategy": [
+   "先通读10条陈述句，圈出专有名词、数字、大写词等高辨识度定位词",
+   "利用同义替换思维，将陈述句中的核心动词和形容词转换为近义表达后再扫读段落",
+   "按照段落顺序逐段精读，边读边与10条陈述句比对，匹配后划掉以缩小范围",
+   "关注信号词如however、moreover、in fact等，它们常引出与陈述句匹配的核心观点"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "H",
+    "cn": "学生在开始一个项目之前，应当先培养关键技能。",
+    "keywords": [
+     "key skills",
+     "before",
+     "start a project"
+    ],
+    "paraphrase": "陈述句中的 develop the key skills 可能对应原文中 acquire/build essential competencies 等表达；before they start a project 可能被改写为 prior to undertaking/embarking on a project 等时间状语形式。",
+    "tip": "定位 project 和 key skills 两个实词，关注段落中表示时间先后顺序的词。"
+   },
+   {
+    "number": 37,
+    "answer": "E",
+    "cn": "通过在大学头几年掌握推理技能，学生可以为终身学习奠定基础。",
+    "keywords": [
+     "reasoning skills",
+     "first few years",
+     "lifelong learning",
+     "foundation"
+    ],
+    "paraphrase": "陈述句中 reasoning skills 可能对应原文 analytical/critical thinking abilities；lay a foundation for lifelong learning 可能被改写为 build the groundwork for continuous education。",
+    "tip": "定位 reasoning skills 与 lifelong learning 的搭配，关注 foundation 的同义替换。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "cn": "便捷的学习途径和快速的技术变革使传统教育模式面临挑战。",
+    "keywords": [
+     "easy access",
+     "technological changes",
+     "traditional model",
+     "challenge"
+    ],
+    "paraphrase": "陈述句中 easy access to learning 可能对应原文 readily available educational resources；brought under challenge 可能被替换为 called into question 或 posed a threat to。",
+    "tip": "定位 traditional model of education 与 technological changes 的因果关系句。"
+   },
+   {
+    "number": 39,
+    "answer": "K",
+    "cn": "尽管看起来难以置信，在世界上许多大学中，非全日制学生占据了学生群体中相当大的比例。",
+    "keywords": [
+     "part-time students",
+     "considerable portion",
+     "universities across the world"
+    ],
+    "paraphrase": "陈述句中 considerable portion 可能对应原文 significant/large share/percentage；part-time students 在原文中可能直接出现或被改写为 students studying part-time。",
+    "tip": "定位 part-time students 及 比例/数量 相关表达，并注意让步语气词。"
+   },
+   {
+    "number": 40,
+    "answer": "I",
+    "cn": "一些不容易被自动化取代的社交和管理技能，将对学生未来的职业生涯至关重要。",
+    "keywords": [
+     "social and managerial skills",
+     "automated",
+     "future careers"
+    ],
+    "paraphrase": "陈述句中 not easily automated 可能对应原文 resistant to automation 或 hard to replicate by machines；of great importance 可能被改写为 crucial/vital/essential。",
+    "tip": "定位 automated 与 social/managerial skills 的搭配，这是本句的独特信息组合。"
+   },
+   {
+    "number": 41,
+    "answer": "C",
+    "cn": "新的大学教育模式应该为学生提供使他们更具创造力并能够终身学习的知识和技能。",
+    "keywords": [
+     "new model",
+     "knowledge and skills",
+     "inventive",
+     "lifelong learning"
+    ],
+    "paraphrase": "陈述句中 more inventive 可能对应原文 more creative/innovative；new model of college education 可能被替换为 reformed/reimagined approach to higher education。",
+    "tip": "定位 new model 与 inventive、lifelong learning 三个概念共现的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "J",
+    "cn": "多元化的学生群体可能会改变课堂互动方式并有利于学习。",
+    "keywords": [
+     "mixed student body",
+     "classroom dynamics",
+     "benefit learning"
+    ],
+    "paraphrase": "陈述句中 mixed student body 可能对应原文 diverse/heterogeneous group of students；classroom dynamics 可能被替换为 the way classes function/interact。",
+    "tip": "定位 mixed/diverse student body 与 classroom dynamics 的因果关系。"
+   },
+   {
+    "number": 43,
+    "answer": "N",
+    "cn": "谁来承担终身学习的费用，是一个持续争论的话题。",
+    "keywords": [
+     "bear the cost",
+     "lifelong learning",
+     "constant debate"
+    ],
+    "paraphrase": "陈述句中 bear the cost 可能对应原文 fund/finance/pay for；constant debate 可能被替换为 ongoing discussion/controversy 等表达。",
+    "tip": "定位 cost/expense 与 lifelong learning 的组合，以及 debate 等争议性词汇。"
+   },
+   {
+    "number": 44,
+    "answer": "F",
+    "cn": "除了传统的数学和物理学科外，还应增加一门将计算机科学与统计学及其他学科结合起来的新学科。",
+    "keywords": [
+     "math and physics",
+     "new discipline",
+     "computer science",
+     "statistics"
+    ],
+    "paraphrase": "陈述句中 combines computer science with statistics and other components 可能对应原文中对 data science 等交叉学科的描述；should be added 可能被替换为 needs to be incorporated/included。",
+    "tip": "定位 computer science、statistics 以及 math、physics 等具体学科名称共现段落。"
+   },
+   {
+    "number": 45,
+    "answer": "M",
+    "cn": "承担家庭责任的学生可能会选择上在线课程。",
+    "keywords": [
+     "family duties",
+     "online courses"
+    ],
+    "paraphrase": "陈述句中 burdened with family duties 可能对应原文 juggling family responsibilities/obligations；online courses 可能被替换为 distance learning/e-learning/virtual classes。",
+    "tip": "定位 family duties/responsibilities 与 online courses 的因果或选择关系。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "constitute",
+    "cn": "v. 构成，组成"
+   },
+   {
+    "w": "considerable",
+    "cn": "adj. 相当大的，可观的"
+   },
+   {
+    "w": "automated",
+    "cn": "adj. 自动化的"
+   },
+   {
+    "w": "inventive",
+    "cn": "adj. 有创造力的，善于发明的"
+   },
+   {
+    "w": "dynamics",
+    "cn": "n. 动态，互动关系"
+   },
+   {
+    "w": "discipline",
+    "cn": "n. 学科；纪律"
+   },
+   {
+    "w": "reasoning",
+    "cn": "n. 推理，推理能力"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 同义改写，释义"
+   },
+   {
+    "w": "bear the cost",
+    "cn": "v. 承担费用"
+   },
+   {
+    "w": "lay a foundation",
+    "cn": "v. 奠定基础"
+   }
+  ]
+ }
+}

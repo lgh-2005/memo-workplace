@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "9c1324fe939d__reading__3",
+ "examId": "9c1324fe939d",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年考研英语真题",
+ "year": 2017,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:34:58.325Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60130,
+ "usage": {
+  "prompt_tokens": 1734,
+  "completion_tokens": 3682,
+  "total_tokens": 5416,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1734,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3682,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1734,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "GDP不足以衡量国家真正的成功",
+  "gist": "文章以肯尼迪对GDP的批评为引，借英国脱欧事件指出：尽管英国GDP表现亮眼，民众幸福感却未同步提升。一项跨国年度研究表明，英国在将经济增长转化为国民福祉方面表现极差。作者呼吁决策者将目光从GDP扩展到教育、健康、环境等更广泛的福祉指标上。",
+  "structure": [
+   "第1-2段：引用肯尼迪名言，以脱欧为切入点质疑GDP的衡量价值",
+   "第3-4段：援引跨国年度研究，揭示英国GDP与福祉脱节的现实",
+   "第5-6段：阐释肯尼迪原意，指出GDP遗漏了环境与教育等关键因素",
+   "第7段：展望未来，呼吁决策者聚焦福祉而非GDP数字"
+  ],
+  "difficulty": "中等",
+  "translation": "罗伯特·F·肯尼迪曾说，一个国家的GDP衡量了\"一切，唯独没有衡量使生活有价值的东西\"。随着英国投票决定脱离欧盟，且GDP已被预测将因此放缓，现在正是评估他所指之意的合适时机。\n\nGDP及其有用性的问题已困扰决策者半个多世纪。许多人认为它是一个有缺陷的概念：它衡量了不重要的东西，却遗漏了重要的东西。从最近的多数指标来看，英国的GDP一直令西方世界羡慕，失业率创历史新低，增长数据强劲。如果一切都如此顺利，那为何超过1700万人不顾脱欧可能对国家经济前景造成的影响而投票支持脱欧呢？\n\n最近一项关于各国及其将经济增长转化为福祉能力的年度研究为这个问题提供了一些启示。在被评估的163个国家中，英国在确保经济增长转化为对其公民有意义的改善方面是表现最差的国家之一。该研究不只关注GDP，而是从健康、教育和公民社会参与等方面衡量了40多套不同的标准，以获得对各国表现更全面的评估。\n\n尽管所有这些国家都面临着各自的挑战，但存在一些共同的主题。是的，自2008年全球金融危机以来，经济复苏已见萌芽，但在健康和教育等关键指标上，主要经济体持续下滑。然而并非所有国家都是如此。一些相对贫穷的欧洲国家在包括公民社会、收入平等和环境等指标上取得了巨大进步。\n\n这是富裕国家可以汲取的一个教训：当GDP不再被视为衡量一个国家成功的唯一标准时，世界看起来会大不相同。\n\n因此，肯尼迪所指的是：虽然GDP一直是衡量各国经济活动最常用的方法，但作为一种衡量标准，它已经不够了。它没有包含诸如环境质量或教育成果等重要因素——所有这些都对一个人的幸福感有所贡献。\n\n全球及英国被预测的增长大幅下滑可能导致我们赖以实现福祉和增长的日常服务出现衰退。但那些将精力重新聚焦于改善福祉而非仅仅担忧GDP数字的决策者，可能会避免被预言的厄运，甚至可能看到进步。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "Robert F. Kennedy once said that a country's GDP measures \"everything except that which makes life worthwhile.\"",
+    "why": "肯尼迪的原话指出GDP衡量了一切却唯独遗漏了使生活有价值的东西，这明显是对GDP的批评和贬低，表明他对GDP评价不高。后文进一步解释GDP是'a flawed concept'，与此观点一致。D选项'had a low opinion of GDP'（对GDP评价不高）准确概括了引用肯尼迪的目的。",
+    "traps": "A项'praised the UK for its GDP'（赞扬英国的GDP）无中生有，肯尼迪未提及英国。B项'identified GDP with happiness'（将GDP等同于幸福）与原文相反，肯尼迪恰恰认为GDP无法衡量幸福。C项'misinterpreted the role of GDP'（误解GDP的作用）与全文立场矛盾，作者显然认同肯尼迪的观点，并非认为他误解了。",
+    "tip": "例证题需判断引言观点的方向，注意正话反话的逻辑。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Many argue that it is a flawed concept. It measures things that do not matter and misses things that do.",
+    "why": "第二段指出GDP困扰决策者半个世纪，许多人认为它是有缺陷的概念，衡量了不重要的东西而遗漏了重要的东西。紧接着以英国为例，尽管GDP表现优异，1700万人仍投票脱欧，暗示民众并不认同GDP是成功的标志。B选项'GDP as the measure of success is widely defied in the UK'（GDP作为成功衡量标准在英国遭到广泛质疑）与此推断吻合。",
+    "traps": "A项'reluctant to remold its economic pattern'（不愿重塑经济模式）原文未涉及经济模式改革的意愿。C项'contribute less to the world economy'（对世界经济贡献更少）虽提及GDP可能放缓，但这并非第二段的推断重点。D项'paying less attention to GDP'（对GDP关注减少）原文未说决策者关注减少，而是说GDP本身有缺陷。",
+    "tip": "推断题需从段落论证逻辑中归纳隐含结论，而非拘泥于个别字眼。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "A recent annual study of countries and their ability to convert growth into well-being sheds some light on that question.",
+    "why": "原文用'sheds some light on that question'表明该研究为前文提出的问题提供了启示和解答。D选项'Its results are enlightening'（其结果富有启发性）与'sheds some light'语义高度吻合，shed light意为'阐明、启发'，enlightening意为'有启发性的'，两者为同义替换。",
+    "traps": "A项'sponsored by 163 countries'（由163个国家赞助），原文说measured 163 countries（评估了163个国家），而非由其赞助，属于偷换概念。B项'excludes GDP as an indicator'（将GDP排除在指标之外），原文说'Rather than just focusing on GDP'（不仅仅关注GDP），并非排除GDP。C项'Its criteria are questionable'（标准值得质疑），原文未提出任何质疑，且作者对研究持肯定态度。",
+    "tip": "注意shed light on与enlightening的同义替换，是考研常见考点。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "It does not include important factors such as environmental quality or education outcomes – all things that contribute to a person's sense of well-being.",
+    "why": "倒数第二段明确指出GDP不包含环境质量和教育成果等重要因素，这些都关乎人的幸福感。最后一段进而建议决策者将精力聚焦于改善福祉而非仅担忧GDP数字。两段合在一起，核心主张是衡量国家发展应考虑GDP之外的因素，C选项'it is essential to consider factors beyond GDP'准确概括了这一建议。",
+    "traps": "A项'preparing for an economic boom'（准备迎接经济繁荣），原文预测的是经济下滑而非繁荣，属于反向干扰。B项'high GDP foreshadows an economic decline'（高GDP预示经济下滑），文章并未建立GDP高与经济衰退的因果关系。D项'requires caution to handle economic issues'（处理经济问题需谨慎）过于笼统，未触及核心论点。",
+    "tip": "最后几段常承载作者结论，注意把握核心建议。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "This is a lesson that rich countries can learn: When GDP is no longer regarded as the sole measure of a country's success, the world looks very different.",
+    "why": "全文以英国为例，论证GDP虽高但国民福祉不足的问题：英国GDP令人羡慕，但民众仍投票脱欧，年度研究也显示英国在将增长转化为福祉方面表现差。A选项'High GDP But Inadequate Well-being, a UK Lesson'（高GDP但福祉不足——英国的教训）精准涵盖了文章的核心论点、论据和论证对象。",
+    "traps": "B项'GDP Figures, a Window on Global Economic Health'（GDP数字——全球经济健康的窗口）与文章批评GDP的立场相悖。C项'Robert F. Kennedy, a Terminator of GDP'（肯尼迪——GDP的终结者）夸大了肯尼迪的作用，他只是引子而非文章主角。D项'Brexit, the UK's Gateway to Well-being'（脱欧——英国通往福祉之门）曲解了文章对脱欧的论述，脱欧只是引出问题的背景。",
+    "tip": "主旨题标题需涵盖核心论点与论证对象，排除以偏概全或偏离主旨的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "worthwhile",
+    "cn": "adj. 值得的，有价值的"
+   },
+   {
+    "w": "flawed",
+    "cn": "adj. 有缺陷的，有瑕疵的"
+   },
+   {
+    "w": "envy",
+    "cn": "n. 羡慕，嫉妒的对象"
+   },
+   {
+    "w": "shed light on",
+    "cn": "phr. 阐明，使……更清楚"
+   },
+   {
+    "w": "well-being",
+    "cn": "n. 幸福，福祉，安康"
+   },
+   {
+    "w": "rounded",
+    "cn": "adj. 全面的，完善的"
+   },
+   {
+    "w": "budding",
+    "cn": "adj. 萌芽的，初露头角的"
+   },
+   {
+    "w": "civil society engagement",
+    "cn": "phr. 公民社会参与"
+   },
+   {
+    "w": "refocus",
+    "cn": "v. 重新聚焦，重新调整重点"
+   },
+   {
+    "w": "forecasted doom",
+    "cn": "phr. 被预言的厄运"
+   },
+   {
+    "w": "prospects",
+    "cn": "n. 前景，前途（常用复数）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "If everything was going so well, then why did over 17 million people vote for Brexit, despite the warnings about what it could do to their country's economic prospects?",
+    "cn": "如果一切都进展得如此顺利，那为什么超过1700万人不顾脱欧可能对国家经济前景造成影响的警告，仍然投票支持脱欧呢？",
+    "note": "主干为反问句why did...vote for Brexit；despite引导让步状语，其中what引导宾语从句作about的宾语；全句以反问强化论证GDP高≠民众满意。"
+   },
+   {
+    "en": "Rather than just focusing on GDP, over 40 different sets of criteria from health, education and civil society engagement have been measured to get a more rounded assessment of how countries are performing.",
+    "cn": "该研究不仅仅关注GDP，而是衡量了来自健康、教育和公民社会参与等方面的40多套不同标准，以获得对各国表现更全面的评估。",
+    "note": "Rather than引导对比状语前置；主干为over 40 sets...have been measured（被动语态）；to get...为目的状语；how引导宾语从句。"
+   },
+   {
+    "en": "But policymakers who refocus efforts on improving well-being rather than simply worrying about GDP figures could avoid the forecasted doom and may even see progress.",
+    "cn": "但那些将精力重新聚焦于改善福祉而非仅仅担忧GDP数字的决策者，可能会避免被预言的厄运，甚至可能看到进步。",
+    "note": "主干为policymakers could avoid...and may see...；who引导定语从句修饰policymakers；rather than连接对比成分；两个并列谓语could avoid和may see构成递进。"
+   }
+  ]
+ }
+}

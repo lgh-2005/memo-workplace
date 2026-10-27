@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "6dbe08bed285__translation__all",
+ "examId": "6dbe08bed285",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2001 年考研英语真题（旧）",
+ "year": 2001,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:11:37.158Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 69262,
+ "usage": {
+  "prompt_tokens": 1400,
+  "completion_tokens": 4793,
+  "total_tokens": 6193,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1400,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4793,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1400,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "新千年科技发展预测与人机融合前景",
+  "translation": "不到30年后，《星际迷航》中的全息甲板将成为现实。大脑神经系统与计算机之间的直接连接还将创造出全感官虚拟环境，使人们能够像电影《全面回忆》中那样进行虚拟度假。\n\n届时将出现由机器人主持的电视访谈节目，届时汽车将装有污染监控器，一旦汽车排放超标，监控器就会使其熄火。儿童将与装有个性芯片的玩偶一起玩耍，具有内置个性的计算机将被视为同事而非工具，人们将坐在气味电视机前休闲放松，届时数字时代将已经到来。\n\n英国电信公司的未来学家伊恩·皮尔森认为，这些都是新千年头几十年里预期会出现的发展成果，届时超级计算机将大大加速生活各领域的进步。\n\n皮尔森汇集了全球数百位研究人员的成果，编制了一份独特的千年技术日历，该日历列出了数百项重大突破和发现有望出现的最晚日期。其中一些最重大的进展将出现在医学领域，包括延长预期寿命以及从现在到2040年间将投入使用的数十种人造器官。\n\n皮尔森还预测计算机与人类的连接将出现突破。\"通过与我们的神经系统直接连接，计算机可以感知我们的感受，而且有望也能模拟感觉，这样我们就可以开始开发全感官环境，就像《全面回忆》中的假期或《星际迷航》中的全息甲板一样，\"他说。但皮尔森指出，这仅仅是人机融合的开端：\"这将是漫长融合过程的起点，这一过程最终将在下个世纪末之前造就完全电子化的人类。\"\n\n通过研究，皮尔森能够为大多数可以预测的突破标注日期。然而，关于超光速旅行何时可行、人类克隆何时完善、时间旅行何时成为可能，目前仍没有预测。但他确实预期技术进步会带来社会问题。例如，社区监控摄像头的激增将在2010年引发问题，而逼真的仿生机器人的出现将意味着人们可能无法分辨他们的人类朋友和机器人。\n\n此外，家用电器也将变得如此智能，以至于对它们的控制和操作将引发一种新的心理疾病——厨房狂躁症。",
+  "questions": [
+   {
+    "number": 41,
+    "en": "There will be television chat shows hosted by robots, and cars with pollution monitors that will disable them when they offend.",
+    "cn": "届时将出现由机器人主持的电视访谈节目，届时汽车将装有污染监控器，一旦汽车排放超标，监控器就会使其熄火。",
+    "structure": "主句由and连接两个并列的there be结构：①television chat shows hosted by robots（hosted为后置定语修饰shows）；②cars with pollution monitors（介词短语作后置定语），其后that引导定语从句修饰monitors，从句中又含when引导的时间状语从句。",
+    "points": [
+     "hosted by robots 为过去分词短语后置定语，需译为'由机器人主持的'",
+     "that will disable them 中 them 指代 cars，disable 译为'使……熄火/停驶'",
+     "offend 在此语境中不是'冒犯'，而是'违规排放/超标'"
+    ],
+    "pitfall": "offend 常见义为'冒犯'，此处指汽车尾气排放超标违规，若按常见义翻译则语义不通；them 的指代对象是 cars 而非 monitors，也易混淆。"
+   },
+   {
+    "number": 42,
+    "en": "Children will play with dolls equipped with personality chips, computers with in-built personalities will be regarded as workmates rather than tools, relaxation will be in front of smell television, and the digital age will have arrived.",
+    "cn": "儿童将与装有个性芯片的玩偶一起玩耍，具有内置个性的计算机将被视为同事而非工具，人们将坐在气味电视机前休闲放松，届时数字时代将已经到来。",
+    "structure": "四个并列分句以逗号和and连接：①Children will play with dolls（equipped为后置定语）；②computers...will be regarded as...（被动语态，rather than连接对比）；③relaxation will be in front of smell television；④the digital age will have arrived（将来完成时）。",
+    "points": [
+     "equipped with personality chips 过去分词后置定语，译为'装有个性芯片的'",
+     "smell television 为合成名词，译为'气味电视'",
+     "will have arrived 为将来完成时，需体现'将已经到来'的完成语义"
+    ],
+    "pitfall": "smell television 容易误译为'有味道的电视'或漏译，应理解为一种能传递气味的新型电视技术；relaxation 作主语较抽象，需补充'人们'使译文通顺。"
+   },
+   {
+    "number": 43,
+    "en": "Pearson has pieced together the work of hundreds of researchers around the world to produce a unique millennium technology calendar that gives the latest dates when we can expect hundreds of key breakthroughs and discoveries to take place.",
+    "cn": "皮尔森汇集了全球数百位研究人员的成果，编制了一份独特的千年技术日历，该日历列出了我们有望看到数百项重大突破和发现出现的最晚日期。",
+    "structure": "主干为 Pearson has pieced together the work... to produce a calendar；to produce 为目的状语；that gives the latest dates 为定语从句修饰 calendar；when we can expect...to take place 为定语从句修饰 dates，其中 expect...to take place 为不定式作宾补。",
+    "points": [
+     "pieced together 译为'汇集/拼合'，体现整合各方成果之义",
+     "that 引导的定语从句修饰 calendar，需译出'该日历列出了……'",
+     "the latest dates 在此不是'最新日期'而是'最晚日期'，即预期的最迟期限"
+    ],
+    "pitfall": "the latest dates 极易误译为'最新日期'，实际语境指各项技术突破可期望出现的最晚时间节点，应译为'最晚日期/最迟日期'。"
+   },
+   {
+    "number": 44,
+    "en": "But that, Pearson points out, is only the start of man-machine integration: \"It will be the beginning of the long process of integration that will ultimately lead to a fully electronic human before the end of the next century.\"",
+    "cn": "但皮尔森指出，那仅仅是人机融合的开端：\"这将是漫长的融合过程的起点，这一过程最终将在下个世纪末之前造就完全电子化的人类。\"",
+    "structure": "主句为 But that is only the start of man-machine integration，其中 Pearson points out 为插入语；冒号后为引语，引语主干为 It will be the beginning of the long process of integration，that 引导定语从句修饰 process，从句中含 lead to 结构及 before 时间状语。",
+    "points": [
+     "Pearson points out 为插入语，翻译时应提前至主语后，译为'皮尔森指出'",
+     "that will ultimately lead to a fully electronic human 为定语从句，修饰 process",
+     "man-machine integration 译为'人机融合/人机整合'"
+    ],
+    "pitfall": "插入语 Pearson points out 打断了 that...is 的主谓结构，若不识别会造成断句错误；a fully electronic human 需译为'完全电子化的人类'而非'电子人'。"
+   },
+   {
+    "number": 45,
+    "en": "And home appliances will also become so smart that controlling and operating them will result in the breakout of a new psychological disorder—kitchen rage.",
+    "cn": "此外，家用电器也将变得如此智能，以至于对它们的控制和操作将引发一种新的心理疾病——厨房狂躁症。",
+    "structure": "主句为 home appliances will become so smart，that 引导结果状语从句（so...that...结构）；从句主语为动名词短语 controlling and operating them，谓语为 will result in；破折号后 kitchen rage 为 disorder 的同位语。",
+    "points": [
+     "so smart that... 为 so...that... 结果状语从句，需译出'如此……以至于……'",
+     "controlling and operating them 动名词短语作主语，需译为名词化表达'对它们的控制和操作'",
+     "able to identify kitchen rage as an appositive for disorder，破折号后为同位解释，译为'——厨房狂躁症'"
+    ],
+    "pitfall": "breakout 易与 outbreak 混淆，此处意为'爆发/出现'；kitchen rage 为生造的新概念词汇，需直译为'厨房狂躁症'，不可意译丢失原文色彩。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "holodeck",
+    "cn": "全息甲板（名词）"
+   },
+   {
+    "w": "sensory",
+    "cn": "感官的（形容词）"
+   },
+   {
+    "w": "futurologist",
+    "cn": "未来学家（名词）"
+   },
+   {
+    "w": "millennium",
+    "cn": "千年，千禧年（名词）"
+   },
+   {
+    "w": "piece together",
+    "cn": "汇集，拼凑，综合（动词短语）"
+   },
+   {
+    "w": "breakthrough",
+    "cn": "突破（名词）"
+   },
+   {
+    "w": "integration",
+    "cn": "融合，整合（名词）"
+   },
+   {
+    "w": "surveillance",
+    "cn": "监控，监视（名词）"
+   },
+   {
+    "w": "synthetic",
+    "cn": "合成的，人造的（形容词）"
+   },
+   {
+    "w": "droid",
+    "cn": "机器人（名词，由android缩略而来）"
+   },
+   {
+    "w": "appliance",
+    "cn": "家用电器，器具（名词）"
+   },
+   {
+    "w": "disorder",
+    "cn": "失调，疾病，紊乱（名词）"
+   },
+   {
+    "w": "disable",
+    "cn": "使失灵，使丧失能力（动词）"
+   },
+   {
+    "w": "offend",
+    "cn": "违规，违反；冒犯（动词）"
+   }
+  ],
+  "skills": [
+   "注意代词指代：如 them/that 在上下文中的具体所指，需回溯确认后再翻译",
+   "熟词僻义需警惕：如 offend（违规排放）、latest（最晚的）等，不可套用常见义",
+   "插入语处理：如 Pearson points out，翻译时宜前置或另起，保证主干完整",
+   "被动语态与动名词主语需转化为中文主动句式或名词化表达，使译文自然流畅",
+   "并列结构要理清层次：如第42题四个并列分句、第41题两个并列成分，翻译时逐一对应不遗漏"
+  ]
+ }
+}

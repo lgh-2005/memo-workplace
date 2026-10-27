@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "d14281039236__reading__2",
+ "examId": "d14281039236",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 12 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:27:37.784Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61548,
+ "usage": {
+  "prompt_tokens": 1934,
+  "completion_tokens": 4153,
+  "total_tokens": 6087,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1934,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4153,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1934,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 51 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "气候变化威胁南极王企鹅生存",
+  "gist": "研究表明，全球变暖和过度捕捞正将南极王企鹅推向灭绝边缘，到2100年约70%的王企鹅将被迫迁移繁殖地或面临消亡。南极磷虾种群也因工业捕捞和气候变化而受到威胁，王企鹅觅食距离增大导致幼崽挨饿，而适合迁移的新栖息地又极为稀缺，南极海洋生态系统前景堪忧。",
+  "structure": [
+   "第一段：引出研究结论——气候变暖和过度捕捞威胁王企鹅生存",
+   "第二段：补充独立研究发现——磷虾受威胁，强调警告之严峻",
+   "第三段：具体阐述机制——南极极锋南移导致觅食距离加大",
+   "第四段：总结意义——王企鹅是生态指示物种，适宜新栖息地稀缺"
+  ],
+  "difficulty": "中等",
+  "translation": "一项新研究指出，南极周边未受污染水域中不断上升的温度和过度捕捞可能会在本世纪末将王企鹅种群推向灭绝边缘。该研究报告指出，随着全球变暖改变这片世界最后荒野的环境，70%的王企鹅可能会消失或被迫寻找新的繁殖地。\n\n来自法国斯特拉斯堡大学的合著者塞琳·勒博埃克警告说：\"如果没有旨在遏制或控制全球变暖的行动，而且当前人为引发的变化（如气候变化和过度捕捞）的速度保持不变，该物种可能很快就会消失。\"这一发现发布之际，人们对南极未来的担忧日益加剧。本月早些时候，另一项独立研究发现，气候变化和工业捕捞的共同作用正在威胁南极水域的磷虾种群，并可能对鲸鱼、海豹和企鹅产生灾难性影响。但今天的报告是迄今为止关于气候变化和人类开发对南极脆弱生态系统潜在毁灭性影响的最严厉警告。\n\n勒博埃克说：\"除非当前的温室气体排放量下降，否则70%的王企鹅——即110万对繁殖对——将被迫迁移繁殖地，或在2100年前面临灭绝。\"王企鹅是体型第二大的企鹅种类，仅在南大洋特定的偏远岛屿上繁殖，那些地方没有冰层覆盖且便于进入海洋。随着海洋变暖，一个被称为\"南极极锋\"的水体——一股富含营养物质的上升海流，养育了大量海洋生物——正被进一步推向南方。这意味着以这片水域中的鱼类和磷虾为食的王企鹅不得不走更远的路到觅食地，使饥饿的幼崽等待更长时间。随着繁殖地和食物之间距离的增大，整个种群都可能被消灭。\n\n勒博埃克说：\"王企鹅的困境应该为整个南极海洋环境的未来敲响警钟。企鹅和其他海鸟、海洋哺乳动物一样，占据食物链的较高层级，它们是我们所说的生态系统的'生物指示物种'。\"企鹅是海洋生态系统变化的敏感指示物种。因此，它们是理解和预测全球变化对南极和亚南极海洋生态系统影响的关键物种。报告发现，尽管一些王企鹅可能能够迁移到更靠近其退缩食物来源的新繁殖地，但合适的新栖息地将非常稀缺。南大洋中只有少数几个岛屿适合维持大型繁殖群落。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Rising temperatures and overfishing in the pristine waters around the Antarctic could see king penguin populations pushed to the brink of extinction by the end of the century, according to a new study.",
+    "why": "原文首句明确指出，根据一项新研究，气温上升和过度捕捞可能会在本世纪末（即2100年前）将王企鹅种群推向灭绝边缘（pushed to the brink of extinction）。选项A中的\"on the verge of dying out\"是对原文\"pushed to the brink of extinction\"的同义改写，完全吻合。",
+    "traps": "B项\"海平面大幅上升\"原文未提及海平面上升，属于无中生有；C项\"融化的冰层将摧毁南极荒野\"原文未涉及冰层摧毁荒野，属于偷换概念；D项\"未受污染的水域将永远消失\"原文仅提到水域受到威胁，并未说会消失，属于过度推断。",
+    "tip": "注意同义替换：brink of extinction = on the verge of dying out。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "a combination of climate change and industrial fishing is threatening the krill population in Antarctic waters, with a potentially disastrous impact on whales, seals and penguins.",
+    "why": "原文第二段明确提到另一项独立研究发现，气候变化和工业捕捞的结合正在威胁南极水域的磷虾种群，并对鲸鱼、海豹和企鹅产生潜在的灾难性影响。选项C中\"could be fatal to certain Antarctic species\"是对\"potentially disastrous impact on whales, seals and penguins\"的概括性同义改写。",
+    "traps": "A项将磷虾减少与鲸鱼迁移相关联，但原文说的是对鲸鱼等产生灾难性影响，并未具体提到迫使鲸鱼迁移，属于推断过度；B项\"近年来人类活动加速了南极气候变化\"原文未直接如此表述，属于偷换范围；D项\"磷虾捕捞恶化了水域污染\"原文完全未提及水域污染加重，属于无中生有。",
+    "tip": "注意区分\"disastrous impact\"与具体影响方式，不可过度推断。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Unless current greenhouse gas emissions drop, 70 percent of king penguins—1.1 million breeding pairs—will be forced to relocate their breeding grounds, or face extinction by 2100.",
+    "why": "原文第三段开头明确指出，除非温室气体排放下降，否则70%的王企鹅将被迫迁移繁殖地。70%即\"大多数\"（the majority），\"be forced to relocate their breeding grounds\"对应选项D中的\"have to find new breeding grounds\"，时间限定为2100年前即\"in the future\"。",
+    "traps": "A项将\"second-largest type of penguin\"曲解为\"第二大灭绝鸟类\"，偷换了原意，原文说的是体型第二大的企鹅种类；B项说迁移到南大洋偏远岛屿，但原文说它们本就在那里繁殖，且适宜新岛屿稀缺，属于曲解；C项说它们主要以少数几种磷虾为食，但原文说它们吃鱼和磷虾，\"only a few kinds\"无依据，属于无中生有。",
+    "tip": "70 percent = the majority，注意数字与概括表达的转换。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "king penguins, which feed on fish and krill in this body of water, have to travel further to their feeding grounds, leaving their hungry chicks for longer.",
+    "why": "原文第三段解释了随着海洋变暖，南极极锋南移，王企鹅不得不走更远的路去觅食，导致饥饿的幼崽等待更长时间（leaving their hungry chicks for longer）。选项A\"Many baby king penguins can't have food in time\"是对这一信息的合理推断——父母觅食时间延长，幼崽无法及时获得食物。",
+    "traps": "B项说王企鹅不再能以磷虾为生，原文未说食物来源改变，只是觅食距离增大，属于曲解；C项说鲸鱼会入侵繁殖地，原文完全没有提及，属于无中生有；D项说鲸鱼需长途觅食，本题问的是对王企鹅的影响，且原文此处并未讨论鲸鱼，属于偷换对象。",
+    "tip": "推断题须紧扣原文因果链，不可跳跃推理。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Only a handful of islands in the Southern Ocean are suitable for sustaining large breeding colonies.",
+    "why": "原文最后一句明确指出，南大洋中只有少数几个岛屿适合维持大型繁殖群落。选项D中\"Only a few of its islands can serve as huge breeding grounds\"是对\"Only a handful of islands...suitable for sustaining large breeding colonies\"的精确同义转述，a handful of = a few。",
+    "traps": "A项说王企鹅不愿离开繁殖地，原文说的是被迫迁移而非不愿意，属于曲解态度；B项说其保护是南极物种可持续繁衍的关键，原文虽提到企鹅是生态指示物种，但并未直接论述南大洋保护对其他物种的关键作用，属于过度引申；C项说南大洋最可能成为王企鹅的最终避难所，但原文强调适宜栖息地稀缺，语义恰好相反，属于反向干扰。",
+    "tip": "a handful of = a few = only several，注意数量词的同义替换。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "brink",
+    "cn": "n. 边缘，濒临"
+   },
+   {
+    "w": "pristine",
+    "cn": "adj. 未受污染的，原始的"
+   },
+   {
+    "w": "breeding grounds",
+    "cn": "n. 繁殖地"
+   },
+   {
+    "w": "halting",
+    "cn": "v. 阻止，遏制（halt的现在分词）"
+   },
+   {
+    "w": "starkest",
+    "cn": "adj. 最严峻的，最鲜明的（stark的最高级）"
+   },
+   {
+    "w": "devastating",
+    "cn": "adj. 毁灭性的，极具破坏力的"
+   },
+   {
+    "w": "nutrient-rich",
+    "cn": "adj. 营养丰富的"
+   },
+   {
+    "w": "abundance",
+    "cn": "n. 大量，丰富"
+   },
+   {
+    "w": "plight",
+    "cn": "n. 困境，苦难"
+   },
+   {
+    "w": "bio-indicators",
+    "cn": "n. 生物指示物种"
+   },
+   {
+    "w": "retreating",
+    "cn": "adj. 后退的，退缩的（retreat的现在分词）"
+   },
+   {
+    "w": "scarce",
+    "cn": "adj. 稀缺的，不足的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As the ocean warms, a body of water called the Antarctic Polar Front—an upward movement of nutrient-rich sea that supports a huge abundance of marine life—is being pushed further south.",
+    "cn": "随着海洋变暖，一个被称为\"南极极锋\"的水体——一股富含营养物质的上升海流，养育了大量海洋生物——正被进一步推向南方。",
+    "note": "主句为\"a body of water...is being pushed further south\"，中间两个破折号之间为同位语解释\"Antarctic Polar Front\"的含义，其中含that引导的定语从句修饰\"sea\"。"
+   },
+   {
+    "en": "This means that king penguins, which feed on fish and krill in this body of water, have to travel further to their feeding grounds, leaving their hungry chicks for longer.",
+    "cn": "这意味着以这片水域中的鱼类和磷虾为食的王企鹅不得不走更远的路到觅食地，使饥饿的幼崽等待更长时间。",
+    "note": "主句为\"This means that...\"，that引导宾语从句；which引导非限制性定语从句修饰king penguins；leaving为现在分词作结果状语。"
+   },
+   {
+    "en": "The report found that although some king penguins may be able to relocate to new breeding grounds closer to their retreating food source, suitable new habitats would be scarce.",
+    "cn": "报告发现，尽管一些王企鹅可能能够迁移到更靠近其退缩食物来源的新繁殖地，但合适的新栖息地将非常稀缺。",
+    "note": "主句为\"The report found that...\"，that引导宾语从句；从句内部含although引导的让步状语从句，closer to...为后置定语修饰breeding grounds。"
+   }
+  ]
+ }
+}

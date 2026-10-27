@@ -1,0 +1,164 @@
+{
+ "schemaVersion": 1,
+ "id": "11d0bb69466f__part_b__all",
+ "examId": "11d0bb69466f",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2013 年考研英语真题",
+ "year": 2013,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:28:32.026Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 38103,
+ "usage": {
+  "prompt_tokens": 1460,
+  "completion_tokens": 1897,
+  "total_tokens": 3357,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1460,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1897,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1460,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社会科学应更多关注全球性挑战",
+  "type": "七选五",
+  "strategy": [
+   "通读全文把握主旨：社会科学繁荣但对全球挑战贡献不足，需改变方向",
+   "关注空格前后的指示代词(this/these/that)、逻辑连接词(however/but)和复现关键词",
+   "利用排除法将选项与上下文语义、逻辑衔接逐一比对，确定唯一匹配"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "E",
+    "why": "空格前列举了climate change、security、sustainable development、health等全球挑战，E选项以\"These issues all have root causes in human behavior\"承接，指代前文挑战，并以气候变化为例强调行为改变与社会创新的重要性；空格后以hunger为例继续论证问题根源在社会层面，与E形成递进衔接。",
+    "traps": "B虽提到global challenges，但其\"solution\"口吻与此处论述问题根源的语境不符；C讨论两类社科学者群体，与上下文主题不衔接。",
+    "tip": "关键线索：\"These issues\"回指前文四大挑战，\"social innovations\"与后文\"problems are social\"呼应。"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "why": "空格后\"This is a shame\"表示遗憾，需要前文提供令人遗憾的事实。F指出许多社会科学家不愿解决此类问题（reluctant to tackle such problems），正好构成\"shame\"的指代对象；F还提到欧洲关于取消专项资助类别的提议，为文章后半部分关于Horizon 2020的讨论埋下伏笔。",
+    "traps": "B提出解决方案，但后文\"This is a shame\"显然在评价一个消极现象，不能紧接方案之后；D讨论论文数量，与此处语境无关。",
+    "tip": "关键线索：\"This is a shame\"须回指一件令人遗憾之事，F中\"reluctant\"恰好提供该语义。"
+   },
+   {
+    "number": 43,
+    "answer": "D",
+    "why": "空格前说含\"environmental change\"或\"climate change\"关键词的论文数量自2004年快速增长，D以\"However\"转折，指出这些数字仍然很小（still small），并给出具体数据（2010年约1,600篇/100,000篇），与前文论文增长话题直接衔接，形成\"增长但仍不足\"的对比逻辑。",
+    "traps": "C提到两类社科学者和发表渠道，虽涉及论文但未回应关键词数量这一具体话题；其余选项与论文统计无关。",
+    "tip": "关键线索：\"However, the numbers are still small\"中numbers直接回指前句的论文数量。"
+   },
+   {
+    "number": 44,
+    "answer": "G",
+    "why": "空格前说问题不一定在于资金总量（the amount of available funding），G紧接给出各国社会科学经费占研发总资金的具体比例（4%-25%，欧洲约15%），用数据说明资金并非不足；空格后\"This is an adequate amount so long as it is aimed in the right direction\"中\"This\"指代G所列数据，逻辑通顺。",
+    "traps": "A讨论整合资助类别的具体方案，与\"资金总量是否充足\"的讨论不匹配；其余选项均不涉及经费数据。",
+    "tip": "关键线索：\"This is an adequate amount\"中This需回指一个具体的资金数据，唯有G提供。"
+   },
+   {
+    "number": 45,
+    "answer": "A",
+    "why": "空格前说Horizon 2020的意图并非忽视社会科学，而是\"the complete opposite\"（恰恰相反）。A解释该计划的真实意图：迫使社科学者将研究与健康、粮食安全、清洁能源等跨领域议题整合（integrate）；空格后\"That should create more collaborative endeavors\"中That指代A所述整合方案，语义完全贯通。",
+    "traps": "B虽提到改变思维方式，但未具体说明Horizon 2020的整合机制，与前文\"the complete opposite\"缺乏具体对应；F已在42处使用。",
+    "tip": "关键线索：\"the complete opposite\"暗示下文应阐述积极整合意图，A中\"integrate\"精准对应。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "swollen",
+    "cn": "膨胀，增长（v. swell的过去分词）"
+   },
+   {
+    "w": "eradicate",
+    "cn": "根除，消灭（v.）"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "转述，意译（v.）"
+   },
+   {
+    "w": "tackle",
+    "cn": "处理，应对（v.）"
+   },
+   {
+    "w": "accumulation",
+    "cn": "积累（n.）"
+   },
+   {
+    "w": "collaborative",
+    "cn": "合作的，协作的（adj.）"
+   },
+   {
+    "w": "endeavor",
+    "cn": "努力，尝试（n.）"
+   },
+   {
+    "w": "stemming",
+    "cn": "遏制，阻止（v. stem的现在分词）"
+   },
+   {
+    "w": "up in arms",
+    "cn": "强烈反对，义愤填膺（短语）"
+   },
+   {
+    "w": "cross-cutting",
+    "cn": "交叉的，跨领域的（adj.）"
+   },
+   {
+    "w": "demographic",
+    "cn": "人口统计学的（adj.）"
+   },
+   {
+    "w": "bio-economy",
+    "cn": "生物经济（n.）"
+   },
+   {
+    "w": "mindset",
+    "cn": "思维方式，心态（n.）"
+   },
+   {
+    "w": "agro-technological",
+    "cn": "农业技术的（adj.）"
+   }
+  ]
+ }
+}

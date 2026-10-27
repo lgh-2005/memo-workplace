@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "e36b16edc748__reading__2",
+ "examId": "e36b16edc748",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年 6 月英语六级真题（第 3 套）",
+ "year": 2026,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T06:08:39.876Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57081,
+ "usage": {
+  "prompt_tokens": 1836,
+  "completion_tokens": 3543,
+  "total_tokens": 5379,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1836,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3543,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1836,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "非洲电力供应困境与私营部门解决方案",
+  "gist": "文章以南苏丹教师Agok的经历引入，指出撒哈拉以南非洲电力供应不足严重制约经济发展。历史上政府主导的电气化努力未能提供可靠电力，导致人们依赖昂贵且有害的柴油发电机。文章主张大规模快速部署现代电网，强调私营部门是弥合能源缺口的关键，并以Agok后来的成功经历佐证私营电力公司的积极作用。",
+  "structure": [
+   "第1-2段：以个案引出非洲电力不足制约经济发展的核心问题",
+   "第3-4段：指出政府电气化不力，临时方案代价高昂",
+   "第5-7段：论证私营部门是大规模快速解决电力缺口的关键",
+   "第8段：回到Agok案例，展示私营供电的积极成效"
+  ],
+  "difficulty": "中等",
+  "translation": "十月一个温暖的早晨，丹尼尔·阿戈克在南苏丹万约克的学校里醒来，又迎来令人失望的一天。他原计划为有志向的年轻人开设的计算机技能课程被取消了，原因是柴油发电机不稳定，而且他所在地区没有市政电网。现在，他将失去心灰意冷的客户和收入。阿戈克只是撒哈拉以南非洲数以亿计的人之一，其中许多是企业主，他们至今仍没有可靠的电力供应。这种不公平的能源获取途径持续威胁着他们的生计和未来。\n\n当前的体制压制了像阿戈克及其学生这样的人的经济才能。我们必须释放他们的能力，让非洲达到其真正的经济潜力。这意味着要用清洁、可靠的能源为非洲通电。\n\n从历史上看，非洲大陆各国政府主导了电气化工作，但在受调查人群中，只有不到一半的人表示国家电网提供了可靠的电力供应。\n\n这导致了昂贵且有害的临时\"解决方案\"。仅在尼日利亚，专家估计人们每年花费130亿美元购买有毒、污染性发电机的燃料。随着非洲大陆人口到2050年达到25亿，这一数字只会增长。快速、大规模地部署现代电网基础设施，对于用可靠且经济的替代方案取代这些临时方案至关重要。\n\n非洲快速增长的私营电力部门掌握着以必要的速度和规模弥合非洲大陆能源获取差距的关键。如今，私营企业正在建设世界一流的基础设施，并以可持续的商业模式推动经济增长。事实上，许多政府对此表示认同，并已开始将私营部门作为大规模提供可靠电力的合作伙伴。在南非，总统西里尔·拉马福萨简化了许可要求，并引入私营部门发挥关键作用。\n\n南非只是一个例子。在整个非洲大陆，私营部门更快、更可靠地提供了电力，各国政府也越来越多地求助于私营合作伙伴。\n\n只要有合适的资金和架构到位，私营部门就会联合起来提供这项基本服务。毕竟，为撒哈拉以南非洲通电是一个3500亿美元的商机。\n\n如今，丹尼尔·阿戈克在南苏丹的业务稳步增长。他所在的万约克镇由一家私营公司通了电，为他的企业和邻居提供清洁、可靠且经济的电力。阿戈克现在顺利运营着他不断壮大的计算机技能培训业务。他的课堂不再受柴油发电机的气味和持续噪音的影响，而且他通过更实惠的电力节省了开支。他的学生们正在发展硬件和软件技能。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The current system keeps a lid on the economic talents of people like Agok and his students.",
+    "why": "原文第二段明确指出\"当前体制压制了像阿戈克及其学生这样的人的经济才能\"，紧接着说\"必须释放他们的能力，让非洲达到其真正的经济潜力\"。A选项\"它遏制了非洲大陆的经济发展\"是对\"keeps a lid on the economic talents\"的准确同义改写，与原文逻辑完全吻合。",
+    "traps": "B项说主要依赖柴油发电机，原文虽提到柴油发电机，但这是临时方案而非对\"当前电力供应体制\"的概括，属于以偏概全；C项说是财富不平等分配的主要原因，原文提到的是\"inequitable access to energy\"而非财富分配不均，属于偷换概念；D项说剥夺了许多非洲人使用电脑的机会，这只是Agok个案的表现，不是对整个体制的评价，属于以偏概全。",
+    "tip": "注意将原文习语（keeps a lid on）转化为选项中的普通表达。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Historically, national governments on the continent have led electrification efforts, but fewer than half of the people surveyed say that the national grid is providing a reliable supply of electricity.",
+    "why": "原文第三段指出历史上各国政府主导了电气化工作，但受调查者中不到一半认为国家电网提供了可靠电力。这说明过去的电气化努力未能满足大多数非洲人对可靠电力供应的需求，A选项是对这一事实的准确概括。",
+    "traps": "B项说未能建立国家电网，原文说的是电网不可靠而非不存在，属于曲解原文；C项说释放了非洲的经济潜力，与原文第二段\"must unleash\"的建议语气相反，属于正反混淆；D项说目标是用清洁可靠能源为非洲通电，这是作者的主张而非对过去努力的描述，属于张冠李戴。",
+    "tip": "注意but转折后的信息往往是命题重点。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Deploying modern grid infrastructure with speed and at scale is essential to replacing these temporary solutions with reliable and affordable alternatives.",
+    "why": "原文第四段末句明确表示\"快速、大规模地部署现代电网基础设施对于取代临时方案至关重要\"。D选项\"快速建立大规模的现代电网\"是对原文\"deploying modern grid infrastructure with speed and at scale\"的精准改写，完全对应。",
+    "traps": "A项说用长期策略替代临时方案，虽部分相关但过于笼统，未抓住核心——\"现代电网基础设施\"这一具体措施；B项说以可持续政策加速经济增长，原文虽提及可持续商业模式，但不是回答\"解决电力短缺的关键\"这一问题；C项说重组国家发电公司，原文未提及此内容，属于无中生有。",
+    "tip": "题目问essential时，回原文找含essential的句子可快速定位。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "many governments agree and have begun to embrace the private sector as partners in providing reliable power at scale.",
+    "why": "原文第五段明确指出\"许多政府认同并已开始将私营部门作为合作伙伴来大规模提供可靠电力\"，并以南非总统简化许可要求、引入私营部门为例。D选项\"与私营企业合作\"精准对应原文\"embrace the private sector as partners\"。",
+    "traps": "A项说专注于建设世界一流基础设施，原文说的是私营企业在建设基础设施，而非政府，属于主语偷换；B项说依赖私营部门实现规模经济，\"scale economy\"（规模经济）与原文\"at scale\"（大规模地）含义不同，属于偷换概念；C项说推出可持续商业模式，这是对私营企业的描述而非政府行为，属于主语偷换。",
+    "tip": "注意区分行为主体：政府做了什么vs私营企业做了什么。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "With the right funding and structure in place, the private sector will come together to provide this essential service. After all, electrifying sub-Saharan Africa is a $350 billion opportunity.",
+    "why": "原文第七段用\"After all\"引出原因——为撒哈拉以南非洲通电是一个3500亿美元的商机。这里\"opportunity\"明确指向巨大的商业利润空间，直接回答了私营企业为何有动力参与的问题。A选项\"有大钱可赚\"是对\"$350 billion opportunity\"的准确概括。",
+    "traps": "B项说它们有足够的资金，原文说的是\"with the right funding\"（有了合适的资金），这是条件而非已有事实，属于偷换时态/语态；C项说南非树立了成功榜样，南非是例证但不是激励私营企业参与的动因，属于因果混淆；D项说政府正向它们求助，这是事实但不是motivate私营企业的原因，问的是动机而非外部行为。",
+    "tip": "After all引导的句子常揭示深层原因，是推断题的高频考点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "aspiring",
+    "cn": "adj. 有抱负的，有志向的"
+   },
+   {
+    "w": "municipal",
+    "cn": "adj. 市政的，地方政府的"
+   },
+   {
+    "w": "inequitable",
+    "cn": "adj. 不公平的，不公正的"
+   },
+   {
+    "w": "livelihood",
+    "cn": "n. 生计，谋生手段"
+   },
+   {
+    "w": "unleash",
+    "cn": "v. 释放，发挥（潜力）"
+   },
+   {
+    "w": "electrification",
+    "cn": "n. 电气化"
+   },
+   {
+    "w": "deploying",
+    "cn": "v. 部署，调配"
+   },
+   {
+    "w": "streamlined",
+    "cn": "v. 精简，使效率更高"
+   },
+   {
+    "w": "enlisted",
+    "cn": "v. 争取（帮助），招募"
+   },
+   {
+    "w": "keeps a lid on",
+    "cn": "习语 压制，限制"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Agok is just one of the hundreds of millions of people in sub-Saharan Africa, many of whom are business owners, who still do not have dependable electricity.",
+    "cn": "阿戈克只是撒哈拉以南非洲数以亿计的人中的一个，其中许多是企业主，他们至今仍没有可靠的电力供应。",
+    "note": "主干为Agok is one of people；many of whom引导非限定性定语从句补充说明people身份；who引导第二个定语从句修饰people，形成双重定语从句嵌套。"
+   },
+   {
+    "en": "Deploying modern grid infrastructure with speed and at scale is essential to replacing these temporary solutions with reliable and affordable alternatives.",
+    "cn": "快速、大规模地部署现代电网基础设施，对于用可靠且经济的替代方案取代这些临时方案至关重要。",
+    "note": "动名词短语Deploying...作主语；with speed and at scale作方式状语修饰deploying；be essential to中的to为介词，后接动名词replacing。"
+   },
+   {
+    "en": "The rapidly growing private power sector in Africa holds the key to achieving the speed and scale necessary to close the continent's energy access gap.",
+    "cn": "非洲快速增长的私营电力部门掌握着以必要的速度和规模弥合非洲大陆能源获取差距的关键。",
+    "note": "主干为sector holds the key；to achieving为介词短语修饰key；necessary为后置定语修饰speed and scale；to close为不定式作necessary的补语。"
+   }
+  ]
+ }
+}

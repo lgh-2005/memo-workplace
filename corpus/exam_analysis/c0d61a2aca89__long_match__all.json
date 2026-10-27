@@ -1,0 +1,240 @@
+{
+ "schemaVersion": 1,
+ "id": "c0d61a2aca89__long_match__all",
+ "examId": "c0d61a2aca89",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2021 年 12 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:39:15.712Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34250,
+ "usage": {
+  "prompt_tokens": 925,
+  "completion_tokens": 1764,
+  "total_tokens": 2689,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 925,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1764,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 925,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社会关系如何影响人类信念与认知",
+  "strategy": [
+   "先通读10条陈述句，归纳主题关键词如beliefs、social bonds、community等",
+   "在陈述句中圈出专有概念和逻辑关系词，如compared with、in order to、cannot survive等，用于精准定位",
+   "注意同义替换：如social bonds≈social connection、close to them≈dear to them等细微差异",
+   "优先匹配含数据、绝对表述或因果逻辑的陈述句，再处理泛论型句子",
+   "每匹配一段后做标记，避免重复选段干扰判断"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "作者认为，人类如果脱离自己的社群就几乎无法生存。",
+    "keywords": [
+     "humans",
+     "survive",
+     "separated",
+     "community"
+    ],
+    "paraphrase": "陈述句用 separated from their community 表达与群体隔离，原文D段可能用 cut off from the group、isolation from society 等同义短语表达同一含义，强调人对社群的依赖。",
+    "tip": "定位 community/survive 组合，关注作者观点标记词如 according to。"
+   },
+   {
+    "number": 37,
+    "answer": "G",
+    "cn": "人们常常接受错误的信念，因为他们优先看重社会纽带而非事实。",
+    "keywords": [
+     "false beliefs",
+     "prioritize",
+     "social bonds",
+     "facts"
+    ],
+    "paraphrase": "陈述句的 prioritize social bonds rather than facts 是典型的对比替换，原文G段可能表述为 value relationships over truth 或 choose belonging over accuracy。",
+    "tip": "定位 false beliefs 与 social bonds 的因果关系句。"
+   },
+   {
+    "number": 38,
+    "answer": "M",
+    "cn": "大多数时候，人们从身边亲近的人那里学习。",
+    "keywords": [
+     "most often",
+     "learn",
+     "close to them"
+    ],
+    "paraphrase": "close to them 可能在原文M段被替换为 people around them、family and friends、immediate circle 等表达，强调学习来源的亲近性。",
+    "tip": "扫读含 learn/acquire knowledge 且提到亲近人群的段落。"
+   },
+   {
+    "number": 39,
+    "answer": "F",
+    "cn": "有时人们采纳某些信念是为了在自己珍视的人面前留下好印象。",
+    "keywords": [
+     "adopt beliefs",
+     "favorable impression",
+     "dear to them"
+    ],
+    "paraphrase": "陈述句 leave a favorable impression 属目的型表达，原文F段可能用 impress、look good in the eyes of、gain approval from loved ones 等方式改写。",
+    "tip": "定位 impression 或 adopt beliefs + 目的状语结构。"
+   },
+   {
+    "number": 40,
+    "answer": "N",
+    "cn": "与面对面交流相比，书籍往往能为改变人们的信念提供更好的媒介。",
+    "keywords": [
+     "face-to-face",
+     "books",
+     "medium",
+     "changing beliefs"
+    ],
+    "paraphrase": "陈述句用 compared with 引出对比，原文N段可能将 face-to-face communication 替换为 in-person interaction，将 books 替换为 written text/reading material。",
+    "tip": "定位 books 与 face-to-face 的对比段落，注意比较级结构。"
+   },
+   {
+    "number": 41,
+    "answer": "E",
+    "cn": "在日常生活的许多场合中，人们从社会纽带中获益比从了解真相中获益更多。",
+    "keywords": [
+     "daily life",
+     "benefit",
+     "social bonds",
+     "truth"
+    ],
+    "paraphrase": "benefit more from social bonds than from knowing the truth 为比较结构，原文E段可能用 social connections serve us better than factual accuracy 等方式改写。",
+    "tip": "寻找将社会关系收益与事实认知收益做对比的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "I",
+    "cn": "如果你想改变某人的信念，你应该首先与他们建立社会联系。",
+    "keywords": [
+     "change beliefs",
+     "establish",
+     "social connection"
+    ],
+    "paraphrase": "陈述句 establish social connection 可能在原文I段被表述为 build rapport/trust、form a bond、connect with them first，强调先建关系再改信念的顺序。",
+    "tip": "定位 change beliefs + first/before 等表示先后顺序的逻辑词。"
+   },
+   {
+    "number": 43,
+    "answer": "C",
+    "cn": "没有对真实世界的一定了解，人类就无法生存。",
+    "keywords": [
+     "cannot survive",
+     "fair knowledge",
+     "actual world"
+    ],
+    "paraphrase": "a fair knowledge of the actual world 可能在原文C段被替换为 reasonable understanding of reality、basic grasp of how the world works 等，强调认知对生存的必要性。",
+    "tip": "注意与第36题区分：此题强调知识/认知，36题强调社群。"
+   },
+   {
+    "number": 44,
+    "answer": "O",
+    "cn": "坏想法的反复传播会增加其被接受的可能性。",
+    "keywords": [
+     "repetition",
+     "bad ideas",
+     "chances",
+     "accepted"
+    ],
+    "paraphrase": "repetition 可能在原文O段被替换为 repeated exposure、hearing again and again，increases their chances of being accepted 可能被改写为 makes people more likely to believe them。",
+    "tip": "定位 repetition/repeat 与 bad ideas/misinformation 的搭配。"
+   },
+   {
+    "number": 45,
+    "answer": "H",
+    "cn": "没有人愿意冒着被孤立的风险放弃自己的信念。",
+    "keywords": [
+     "give up beliefs",
+     "risk",
+     "isolated"
+    ],
+    "paraphrase": "at the risk of getting isolated 可能在原文H段表述为 fear of exclusion、threat of social rejection，give up beliefs 可替换为 abandon/discard their views。",
+    "tip": "定位 isolated/exclusion 与 beliefs 的因果或条件关系。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "prioritize",
+    "cn": "v. 优先考虑，给予优先权"
+   },
+   {
+    "w": "social bonds",
+    "cn": "n. 社会纽带，社会关系"
+   },
+   {
+    "w": "adopt",
+    "cn": "v. 采纳，接受（信念、方法等）"
+   },
+   {
+    "w": "favorable",
+    "cn": "adj. 有利的，赞许的，给人好印象的"
+   },
+   {
+    "w": "medium",
+    "cn": "n. 媒介，手段，途径"
+   },
+   {
+    "w": "establish",
+    "cn": "v. 建立，确立"
+   },
+   {
+    "w": "a fair knowledge",
+    "cn": "n. 相当程度的了解（fair此处意为\"相当的\"）"
+   },
+   {
+    "w": "repetition",
+    "cn": "n. 重复，反复"
+   },
+   {
+    "w": "separated from",
+    "cn": "prep. phr. 与……分离，脱离"
+   }
+  ]
+ }
+}

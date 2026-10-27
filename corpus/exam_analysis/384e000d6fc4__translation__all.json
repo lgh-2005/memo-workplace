@@ -1,0 +1,227 @@
+{
+ "schemaVersion": 1,
+ "id": "384e000d6fc4__translation__all",
+ "examId": "384e000d6fc4",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2016 年 6 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:08:05.789Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 28883,
+ "usage": {
+  "prompt_tokens": 819,
+  "completion_tokens": 2212,
+  "total_tokens": 3031,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 819,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2212,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 819,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "旗袍的历史演变与当代地位",
+  "reference": "Qipao is an elegant Chinese dress that originated from the Manchu Nationality in China. In the Qing Dynasty, qipao was a loose robe worn by royal women. In the 1920s, influenced by Western clothing, qipao underwent some changes. The cuffs were narrowed and the length of the dress was shortened. These changes enabled the beauty of women to be fully displayed. Nowadays, qipao frequently appears in world-class fashion shows. When Chinese women attend important social gatherings, qipao is often their first choice. Many Chinese brides also choose qipao as their wedding dress. Some influential figures have even suggested that qipao be made the national costume for Chinese women.",
+  "sentences": [
+   {
+    "cn": "旗袍(qipao) 是一种雅致的中国服装，源于中国的满族(Manchu Nationality)。",
+    "en": "Qipao is an elegant Chinese dress that originated from the Manchu Nationality in China.",
+    "structure": "主系表结构 + that 引导的定语从句修饰 dress",
+    "keys": [
+     "雅致的 elegant",
+     "源于 originate from",
+     "满族 the Manchu Nationality"
+    ]
+   },
+   {
+    "cn": "在清代，旗袍是王室女性穿着的宽松长袍。",
+    "en": "In the Qing Dynasty, qipao was a loose robe worn by royal women.",
+    "structure": "主系表结构 + 过去分词短语 worn by 作后置定语",
+    "keys": [
+     "清代 the Qing Dynasty",
+     "王室女性 royal women",
+     "宽松长袍 loose robe"
+    ]
+   },
+   {
+    "cn": "上世纪20年代，受西方服饰影响，旗袍发生了一些变化。",
+    "en": "In the 1920s, influenced by Western clothing, qipao underwent some changes.",
+    "structure": "时间状语 + 过去分词短语作原因状语 + 主谓宾",
+    "keys": [
+     "上世纪20年代 in the 1920s",
+     "受……影响 influenced by",
+     "西方服饰 Western clothing",
+     "发生变化 undergo changes"
+    ]
+   },
+   {
+    "cn": "袖口(cuffs) 变窄，袍身变短。",
+    "en": "The cuffs were narrowed and the length of the dress was shortened.",
+    "structure": "被动语态并列句，用 and 连接两个被动结构",
+    "keys": [
+     "袖口 cuffs",
+     "变窄 be narrowed",
+     "袍身变短 the length of the dress was shortened"
+    ]
+   },
+   {
+    "cn": "这些变化使女性美得以充分展现。",
+    "en": "These changes enabled the beauty of women to be fully displayed.",
+    "structure": "enable sb./sth. to do 结构 + 不定式被动态",
+    "keys": [
+     "使……得以 enable ... to",
+     "女性美 the beauty of women",
+     "充分展现 be fully displayed"
+    ]
+   },
+   {
+    "cn": "如今，旗袍经常出现在世界级的时装秀上。",
+    "en": "Nowadays, qipao frequently appears in world-class fashion shows.",
+    "structure": "时间副词 + 主谓结构 + 介词短语作地点状语",
+    "keys": [
+     "世界级的 world-class",
+     "时装秀 fashion show"
+    ]
+   },
+   {
+    "cn": "中国女性出席重要社交聚会时，旗袍往往是她们的首选。",
+    "en": "When Chinese women attend important social gatherings, qipao is often their first choice.",
+    "structure": "When 引导时间状语从句 + 主句为主系表结构",
+    "keys": [
+     "出席 attend",
+     "社交聚会 social gathering",
+     "首选 first choice"
+    ]
+   },
+   {
+    "cn": "很多中国新娘也会选择旗袍作为结婚礼服。",
+    "en": "Many Chinese brides also choose qipao as their wedding dress.",
+    "structure": "主谓宾结构 + as 引导的介词短语作宾补",
+    "keys": [
+     "新娘 bride",
+     "结婚礼服 wedding dress"
+    ]
+   },
+   {
+    "cn": "一些有影响的人士甚至建议将旗袍作为中国女性的民族服饰。",
+    "en": "Some influential figures have even suggested that qipao be made the national costume for Chinese women.",
+    "structure": "主谓宾结构 + suggest 后接虚拟语气 that 从句（should be 省略 should）",
+    "keys": [
+     "有影响的人士 influential figures",
+     "建议 suggest + 虚拟语气",
+     "民族服饰 national costume"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "旗袍",
+    "en": "qipao"
+   },
+   {
+    "cn": "满族",
+    "en": "the Manchu Nationality"
+   },
+   {
+    "cn": "清代",
+    "en": "the Qing Dynasty"
+   },
+   {
+    "cn": "宽松长袍",
+    "en": "loose robe"
+   },
+   {
+    "cn": "袖口",
+    "en": "cuffs"
+   },
+   {
+    "cn": "西方服饰",
+    "en": "Western clothing"
+   },
+   {
+    "cn": "时装秀",
+    "en": "fashion show"
+   },
+   {
+    "cn": "社交聚会",
+    "en": "social gathering"
+   },
+   {
+    "cn": "结婚礼服",
+    "en": "wedding dress"
+   },
+   {
+    "cn": "民族服饰",
+    "en": "national costume"
+   }
+  ],
+  "pitfalls": [
+   "「源于」误用 come from，应使用 originate from 更正式准确",
+   "「受……影响」漏用分词结构，写成完整从句导致句式冗杂",
+   "suggest 后的宾语从句须用虚拟语气(should)+动词原形，很多考生误用陈述语气",
+   "「上世纪20年代」误译为 the 20s of last century，应写 in the 1920s",
+   "「女性美」直译为 female beautiful，应译为 the beauty of women"
+  ],
+  "upgrades": [
+   {
+    "plain": "qipao changed a lot",
+    "better": "qipao underwent some changes",
+    "note": "undergo changes 为书面正式搭配，比 change 层次更高"
+   },
+   {
+    "plain": "These changes showed the beauty of women.",
+    "better": "These changes enabled the beauty of women to be fully displayed.",
+    "note": "enable ... to be displayed 体现使动+被动结构，更准确地表达'使……得以展现'"
+   },
+   {
+    "plain": "Some famous people suggested qipao to be ...",
+    "better": "Some influential figures have even suggested that qipao be made ...",
+    "note": "suggest + 虚拟语气从句为高分句型，influential figures 比 famous people 更贴合语境"
+   },
+   {
+    "plain": "qipao is usually what they choose first",
+    "better": "qipao is often their first choice",
+    "note": "first choice 简洁地道，避免冗余从句"
+   },
+   {
+    "plain": "qipao appeared on fashion shows of the world",
+    "better": "qipao frequently appears in world-class fashion shows",
+    "note": "world-class 为地道复合形容词，比 of the world 更简练专业"
+   }
+  ]
+ }
+}

@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "cccaddf69626__listening__all",
+ "examId": "cccaddf69626",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2017 年 6 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:11:20.424Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57543,
+ "usage": {
+  "prompt_tokens": 2251,
+  "completion_tokens": 2857,
+  "total_tokens": 5108,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2251,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2857,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2251,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于题目选项文本的语言特征推断与通用应试策略，不涉及对录音内容的任何编造。",
+  "overview": "本场听力共7段材料、25道题。第1段（Q1-4）涉及职场满意度与公司规模；第2段（Q5-8）围绕一本摄影集与欧洲海岸线议题；第3段（Q9-12）讨论心理意象与成功表现；第4段（Q13-15）关注膳食纤维与健康研究；第5段（Q16-18）涉及消费者行为与年轻人社交；第6段（Q19-22）探讨无现金社会与消费习惯；第7段（Q23-25）涉及全球饥饿与人口议题。整体涵盖社会科学、健康研究和生活话题。",
+  "strategy": [
+   "预读选项时迅速标注各题问的是 what/why/how，锁定题目类型",
+   "选项中出现数字（百分比、年份）时，听音时重点捕捉数字前后的限定词",
+   "同义替换是六级听力核心考法，注意选项用词与录音表达的 paraphrase",
+   "若四个选项结构平行（如都以 They 开头），优先关注谓语动词和宾语差异",
+   "短文听力首尾句常出主旨信息，对应第一题和最后一题",
+   "遇到因果关系信号词 because/since/due to/as a result 时高度警觉，常设考点"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "职场满意度因素与不同规模公司的工作体验",
+    "optionSignals": "Q1四项均为动名词短语，问的是某种职场偏好或重要因素；Q2四项均为百分比数字，需精准听取数据及其对应描述；Q3四项均以 Those 开头修饰公司类型；Q4均以 They can 起始，问的是某类员工能获得的好处。",
+    "tips": [
+     "Q2出现多个百分比，听音时务必将每个数字与其修饰的对象一一对应，避免张冠李戴",
+     "Q3四个选项描述公司特征，注意small size与well managed等形容词的对比，听清限定语",
+     "Q4选项都涉及工作优势，重点区分 balance work and life 与 hop from job to job 等短语的语境"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "一本关于欧洲海岸的摄影集及海平面上升议题",
+    "optionSignals": "Q5四项描述一本书的性质（历史/音乐/城市/照片），典型的'这是什么'题；Q6四项均以 When 引导时间状语，问的是某事发生的场合；Q7/Q8选项描述后果或城市特征，含 submerged、polluted、disappear 等负面词汇。",
+    "tips": [
+     "Q5四个选项互斥性强，抓住录音开头对该作品的首次定性即可锁定答案",
+     "Q7选项都涉及欧洲环境问题，注意 coastline submerged 与 scenic spots disappear 的区别，前者更极端",
+     "Q8描述城市细节，wooden paths 等具象信息通常在录音中有直接对应，注意捕捉"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11,
+     12
+    ],
+    "sharedTopic": "心理意象（mental imagery）对表现与成功的影响",
+    "optionSignals": "Q9四项描述人们的行为习惯（准备/顾虑太多/预想失败/避免错误），问的是常见误区；Q10涉及神经系统、心理意象与运动表现的关系；Q11四项为祈使句式建议（Anticipate/Make/Picture/Try），问应该怎么做；Q12描述一位女性的具体经历。",
+    "tips": [
+     "Q9正确答案C含 anticipating defeat 负面词，与Q11正确答案C picture succeeding 正面词形成对比，体现'错误做法 vs 正确做法'的出题逻辑",
+     "Q10关注 Thinking has the same effect as doing 这一核心观点，属于科学结论类考点",
+     "Q12四项差异大，worn designer dress 与 won jury trial 等细节需要精准捕捉动词"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "膳食纤维摄入与降低乳腺癌风险的长期研究",
+    "optionSignals": "Q13四项涉及某研究的结论（长期效果/高估/预防癌症/糖尿病），典型的研究结论题；Q14描述研究方法（追踪饮食习惯/关注年轻期），含 tracked、focused 等研究用词；Q15四项均以 Fiber may 开头，问的是纤维的可能机制。",
+    "tips": [
+     "Q13注意 breast cancer 和 diabetes 的区分，录音中疾病名称通常只重点提及一种",
+     "Q14区分 adolescence 与 young adulthood，前者指青春期后者指成年早期，听清时间范围",
+     "Q15四项都是推测性表述（may），关注 reduce hormones 与 improve heart/blood circulation 的差异"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "关于年轻人消费行为与社交饮酒的研究",
+    "optionSignals": "Q16四项描述研究主题（营销变化/消费者行为/饮酒危害/媒体影响），是典型的主旨题；Q17对某现象的定性（骚乱原因/家长关注/逐年恶化/社交行为）；Q18描述研究参与者做了什么，含 purchasing behavior、advertising 等词。",
+    "tips": [
+     "Q16为段落主旨题，通常在开头1-2句就会点明研究方向，集中注意力",
+     "Q17正确答案D将饮酒定义为 socialising，属于观点重新定性，录音中可能出现 social/socialise 等词",
+     "Q18注意 a week 这个时间限定词，与选项中 over the years 形成对比"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "无现金社会趋势及其对消费行为的影响",
+    "optionSignals": "Q19描述一个国家的特征（银行效率/取消脏钱/信用卡首创/放弃纸币），问的是该国现状；Q20四项均以 Whether 引导，问的是研究或实验的核心问题；Q21描述旅途中遇到的具体困难；Q22描述控制支出的方法。",
+    "tips": [
+     "Q19四项描述差异极大，听到 paper money/cash/physical currency 等关键词时集中注意",
+     "Q20正确答案C关注 absence of physical currency 与 spend more 的因果关系，是全段核心论点",
+     "Q22选项 envelopes 是非常具象的细节，这类具体名词在录音中往往原词复现，容易捕捉"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "全球饥饿问题、人口增长与跨学科研究的重要性",
+    "optionSignals": "Q23四项为宏观社会问题名词（人口爆炸/长期饥饿/物种灭绝/环境恶化），问的是核心话题；Q24描述关于怀孕或生育的统计事实，含 unintended、brought under control 等；Q25四项描述某研究领域的重要性或现状。",
+    "tips": [
+     "Q23正确答案B为 chronic hunger，chronic 表示长期的，注意与 population explosion 区分，两者可能都被提及但主题不同",
+     "Q24含 About half 这一数据，听音时注意 half/50% 与其修饰对象的搭配",
+     "Q25正确答案A强调 essential to wellbeing of all species，属于总结性陈述，通常出现在段落结尾"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "competitive salary",
+    "cn": "有竞争力的薪资"
+   },
+   {
+    "w": "submerged",
+    "cn": "被淹没的"
+   },
+   {
+    "w": "coastal",
+    "cn": "沿海的，海岸的"
+   },
+   {
+    "w": "anticipate",
+    "cn": "预期，预料"
+   },
+   {
+    "w": "nervous system",
+    "cn": "神经系统"
+   },
+   {
+    "w": "jury trial",
+    "cn": "陪审团审判"
+   },
+   {
+    "w": "fiber intake",
+    "cn": "膳食纤维摄入量"
+   },
+   {
+    "w": "adolescence",
+    "cn": "青春期"
+   },
+   {
+    "w": "hormones",
+    "cn": "荷尔蒙，激素"
+   },
+   {
+    "w": "consumer behavior",
+    "cn": "消费者行为"
+   },
+   {
+    "w": "socialising",
+    "cn": "社交活动"
+   },
+   {
+    "w": "physical currency",
+    "cn": "实体货币，现金"
+   },
+   {
+    "w": "chronic hunger",
+    "cn": "长期饥饿"
+   },
+   {
+    "w": "unintended",
+    "cn": "非计划的，意外的"
+   }
+  ]
+ }
+}

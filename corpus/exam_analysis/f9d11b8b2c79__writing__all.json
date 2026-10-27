@@ -1,0 +1,245 @@
+{
+ "schemaVersion": 1,
+ "id": "f9d11b8b2c79__writing__all",
+ "examId": "f9d11b8b2c79",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2025 年考研英语真题",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  51,
+  52
+ ],
+ "generatedAt": "2026-10-27T08:45:59.189Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 133376,
+ "usage": {
+  "prompt_tokens": 777,
+  "completion_tokens": 1744,
+  "total_tokens": 2521,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 777,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1744,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 777,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 5,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "回复同学Paul的邮件，介绍校园手工艺展示活动的具体内容，并安排他可以协助的准备工作。属于私人书信回复，需涵盖信息告知与任务分配两大要点。",
+    "outline": [
+     "第一段：表达感谢Paul的关注与热情，引出下文对活动细节的介绍。",
+     "第二段：具体介绍年轻手工艺人将展示的创新手工艺内容（如剪纸、陶艺、编织等），并说明Paul可以承担的筹备任务（如布置场地、制作海报、接待来宾等）。",
+     "第三段：表达期待合作，礼貌收尾，欢迎进一步沟通。"
+    ],
+    "sample": "Dear Paul,\n\nThank you so much for your enthusiasm about the upcoming craft demonstration event. I'm delighted to share the details with you.\n\nWe have invited five young craftsmen who will showcase a diverse range of innovative crafts, including modern paper-cutting designs, hand-painted porcelain, and creative bamboo weaving. Each artisan will also offer a hands-on session where students can try these techniques themselves. As for the preparation work, it would be incredibly helpful if you could assist with designing promotional posters and setting up the exhibition booths in the lecture hall. Additionally, we need someone to greet the craftsmen upon their arrival and guide them to the venue.\n\nI truly appreciate your willingness to help. Let's meet this Thursday afternoon to discuss further details. I look forward to working with you on this event!\n\nYours,\nLi Ming",
+    "phrases": [
+     {
+      "en": "showcase a diverse range of...",
+      "cn": "展示多种多样的……；用于介绍活动内容，比show更正式、更高级。"
+     },
+     {
+      "en": "hands-on session",
+      "cn": "动手实践环节；常用于描述互动体验类活动，体现活动的参与感。"
+     },
+     {
+      "en": "promotional posters",
+      "cn": "宣传海报；校园活动筹备中的常见搭配，比advertising posters更贴切。"
+     },
+     {
+      "en": "exhibition booths",
+      "cn": "展览展位；用于描述展示场地布置，属于活动类高频词汇。"
+     },
+     {
+      "en": "upon their arrival",
+      "cn": "在他们到达时；比when they arrive更书面、更简洁，适合正式书信。"
+     },
+     {
+      "en": "I truly appreciate your willingness to...",
+      "cn": "我非常感激你愿意……；表达感谢的高级句型，比Thank you for更有层次感。"
+     },
+     {
+      "en": "it would be incredibly helpful if you could...",
+      "cn": "如果你能……那将非常有帮助；委婉分配任务的经典句型，礼貌且得体。"
+     },
+     {
+      "en": "guide them to the venue",
+      "cn": "引导他们前往场地；venue指活动场所，比place更正式专业。"
+     },
+     {
+      "en": "I look forward to working with you on...",
+      "cn": "期待与你一起合作……；书信结尾的经典表达，体现合作意愿。"
+     }
+    ],
+    "pitfalls": [
+     "未回应邮件中两个问题（展示内容+如何帮忙），导致要点遗漏扣分严重。",
+     "语气过于生硬或过于随意，未体现同学之间友好但得体的交际语域。",
+     "通篇泛泛而谈，未给出具体的手工艺种类或具体的筹备任务，内容空洞。",
+     "格式不完整，缺少称呼Dear Paul或署名Li Ming，书信格式分会被扣除。",
+     "用词重复单调，多次使用show、help等基础词，未展现词汇丰富度。"
+    ],
+    "upgrades": [
+     {
+      "plain": "They will show some crafts.",
+      "better": "They will showcase a diverse range of innovative crafts, including modern paper-cutting designs and creative bamboo weaving.",
+      "note": "用showcase替代show，补充具体种类，使内容充实、用词高级。"
+     },
+     {
+      "plain": "Can you help me make posters?",
+      "better": "It would be incredibly helpful if you could assist with designing promotional posters.",
+      "note": "虚拟语气更委婉礼貌，assist with比help更正式，符合书信语体。"
+     },
+     {
+      "plain": "I hope we can talk about it later.",
+      "better": "Let's meet this Thursday afternoon to discuss further details.",
+      "note": "给出具体时间和行动方案，体现务实沟通能力，更具说服力。"
+     },
+     {
+      "plain": "Thank you for your help.",
+      "better": "I truly appreciate your willingness to help and look forward to working with you on this event.",
+      "note": "将感谢与期待合并，句式更丰富，结尾更有力度和温度。"
+     },
+     {
+      "plain": "Students can try to make crafts.",
+      "better": "Each artisan will offer a hands-on session where students can try these techniques themselves.",
+      "note": "使用定语从句增加句式复杂度，hands-on session更专业地道。"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "根据表格数据写一篇160-200词的短文，要求简要描述表格、解读数据趋势、并给出个人评论。",
+    "outline": [
+     "第一段：客观描述表格内容，点明关键数据及其变化趋势（上升/下降/持平），突出最显著的变化。",
+     "第二段：分析表格数据背后的深层原因，从社会、经济、政策等多角度逐层解读趋势，注意逻辑衔接。",
+     "第三段：给出个人评论与建议，可包含对未来趋势的展望或对相关群体的针对性建议，收束全文。"
+    ],
+    "sample": "The table above clearly illustrates the changes in college graduates' choices after graduation between 2015 and 2020. According to the data, the proportion of graduates choosing direct employment decreased noticeably from 68.1% to 60.7%, while those opting for further education rose significantly from 20.3% to 28.5%. Meanwhile, the percentages of starting a business and other choices remained relatively stable.\n\nSeveral factors may account for these trends. First, with the increasingly fierce competition in the job market, a growing number of graduates have realized that a higher degree can substantially enhance their competitiveness. Second, the expansion of postgraduate enrollment policies has provided more opportunities for those seeking advanced education. Additionally, rising expectations of employers regarding academic qualifications have prompted students to pursue further studies.\n\nFrom my perspective, it is a positive sign that more graduates are investing in self-improvement through higher education. However, students should make rational decisions based on their personal circumstances rather than blindly following the crowd. Ultimately, whether one chooses employment or further education, the key lies in continuous learning and the development of practical skills.",
+    "phrases": [
+     {
+      "en": "as is clearly illustrated/revealed in the table",
+      "cn": "如表格清晰显示的那样；图表作文开头引出数据的万能句型"
+     },
+     {
+      "en": "the proportion/percentage of ... decreased/increased from X to Y",
+      "cn": "……的比例从X下降/上升到Y；描述数据变化的核心句型"
+     },
+     {
+      "en": "several factors may account for these trends",
+      "cn": "有几个因素可以解释这些趋势；原因分析段经典过渡句"
+     },
+     {
+      "en": "a growing/increasing number of ...",
+      "cn": "越来越多的……；替代more and more的高分表达"
+     },
+     {
+      "en": "enhance/boost one's competitiveness",
+      "cn": "增强某人的竞争力；常用于就业、教育类话题"
+     },
+     {
+      "en": "from my perspective / as far as I am concerned",
+      "cn": "在我看来；评论段引出个人观点的正式表达"
+     },
+     {
+      "en": "make rational decisions based on one's personal circumstances",
+      "cn": "根据个人情况做出理性决定；体现思辨性的加分表达"
+     },
+     {
+      "en": "rather than blindly following the crowd",
+      "cn": "而非盲目从众；展示批判性思维的高级短语"
+     },
+     {
+      "en": "the key lies in ...",
+      "cn": "关键在于……；结尾总结段的精炼收束句型"
+     },
+     {
+      "en": "remained relatively stable",
+      "cn": "保持相对稳定；描述数据无显著变化时的规范用语"
+     }
+    ],
+    "pitfalls": [
+     "只机械罗列数字而不点明上升或下降趋势，缺乏对数据的概括性比较",
+     "原因分析段逻辑松散，各论点之间缺少First/Second等过渡词衔接",
+     "评论段空喊口号或生搬万能模板，未紧扣表格主题给出针对性建议",
+     "数据引用格式混乱，如percent与%混用，或小数点精度前后不一致",
+     "词数不达标或严重超标，未在160-200词区间内合理控制篇幅"
+    ],
+    "upgrades": [
+     {
+      "plain": "More and more students choose to continue their studies.",
+      "better": "A growing number of students have opted to pursue further education.",
+      "note": "用a growing number of替代more and more，opt to pursue替代choose，词汇更高级"
+     },
+     {
+      "plain": "The number went up from 20% to 28%.",
+      "better": "The proportion witnessed a notable increase from 20.3% to 28.5%.",
+      "note": "以proportion为主语搭配witness，拟人化表达更学术，数据也更精确"
+     },
+     {
+      "plain": "I think this is a good thing.",
+      "better": "From my perspective, it is a positive and encouraging sign.",
+      "note": "避免I think口语化开头，用from my perspective引出观点更正式得体"
+     },
+     {
+      "plain": "Because the job market is very competitive, students want higher degrees.",
+      "better": "Given the increasingly fierce competition in the job market, students are motivated to pursue higher academic qualifications.",
+      "note": "用Given引导原因状语，increasingly fierce更具表现力，整体更紧凑学术"
+     },
+     {
+      "plain": "Students should think carefully before making a decision.",
+      "better": "Students should make rational decisions based on their personal circumstances rather than blindly following the crowd.",
+      "note": "补充rather than对比结构，信息更丰富，展示辩证思维和语言功底"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "We have invited five young craftsmen who will showcase a diverse range of innovative crafts, including modern paper-cutting designs and creative bamboo weaving. 我们邀请了五位年轻手工艺人，他们将展示多种创新手工艺，包括现代剪纸设计和创意竹编。（who引导定语从句+including列举，信息密度高且结构清晰。）",
+   "It would be incredibly helpful if you could assist with designing promotional posters and setting up the exhibition booths. 如果你能协助设计宣传海报和布置展位，那将非常有帮助。（虚拟语气委婉提出请求，assist with+动名词并列结构展现语法功底。）",
+   "Each artisan will also offer a hands-on session where students can try these techniques themselves. 每位手工艺人还将提供动手实践环节，让学生亲自体验这些技艺。（where引导定语从句修饰session，hands-on为加分亮点词。）",
+   "I truly appreciate your willingness to help and look forward to working with you on this event. 我非常感激你愿意帮忙，期待在这次活动中与你合作。（appreciate+名词短语比thank you更高级，look forward to收束全文，语气温暖得体。）",
+   "Several factors may account for these trends. 有几个因素可以解释这些趋势。——原因分析段经典过渡句，简洁有力，适用于所有图表作文。",
+   "A growing number of graduates have realized that a higher degree can substantially enhance their competitiveness. 越来越多的毕业生意识到更高的学历能大幅提升竞争力。——复合句+高级副词substantially，展现语言功底。",
+   "Students should make rational decisions based on their personal circumstances rather than blindly following the crowd. 学生应基于个人情况做出理性决策，而非盲目从众。——rather than对比结构+批判性思维，评论段万能高分句。",
+   "Whether one chooses employment or further education, the key lies in continuous learning and the development of practical skills. 无论选择就业还是深造，关键在于持续学习和实践技能的培养。——whether...or让步结构收束全文，立意高远且普适性强。"
+  ]
+ },
+ "mergedFrom": [
+  "f9d11b8b2c79__writing__51",
+  "f9d11b8b2c79__writing__52"
+ ]
+}

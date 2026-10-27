@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "23639759d84c__reading__2",
+ "examId": "23639759d84c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年考研英语真题",
+ "year": 2024,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:53:43.624Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59224,
+ "usage": {
+  "prompt_tokens": 1816,
+  "completion_tokens": 3685,
+  "total_tokens": 5501,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1816,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3685,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1816,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "借鉴狩猎采集社会的共同育儿模式",
+  "gist": "研究者建议，西方社会可借鉴非洲狩猎采集社会的\"异亲抚育\"模式——由多位成年人共同照料儿童，以缓解母亲独自育儿带来的焦虑与抑郁，提升儿童幸福感。文章从概念介绍、西方实践尝试、核心家庭弊端、狩猎社会数据对比及教育方式差异等多角度展开论述。",
+  "structure": [
+   "第1-2段：引出异亲抚育概念及其益处",
+   "第3段：德国案例说明异亲抚育融入西方的可能",
+   "第4段：批评西方核心家庭与密集母职叙事",
+   "第5-6段：用狩猎采集社会数据与英国托儿所对比",
+   "第7段：讨论教育方式差异及兄长协助育儿的潜在价值"
+  ],
+  "difficulty": "中等",
+  "translation": "研究人员指出，从非洲狩猎采集者那里获得的育儿建议，或许是养育更快乐儿童的关键。这一观点基于对博茨瓦纳昆族等社区的研究，在那里每个孩子由许多成年人共同照料。昆族儿童早在四岁时就会帮忙照看更小的孩子，而\"婴儿佩戴\"——即用背带携带婴儿——被视为常态。\n\n剑桥大学进化人类学家尼基尔·乔杜里博士认为，这些被称为\"异亲抚育\"的做法可以减轻儿童和父母的焦虑。\n\n儿童精神科医生安妮·斯旺普尔博士认为，有办法将这些做法融入西方生活。在德国，有一个项目将养老院与托儿所结合在一起，由老人帮忙照看孩子——这种安排类似于异亲抚育。另一项措施是鼓励不同年级的儿童建立友谊，以模拟狩猎采集社会中无成人监督的混龄游戏小组。\n\n在发表于《儿童心理学与精神病学杂志》上的一篇论文中，研究者指出，西方核心家庭是近代的发明，它打破了进化史的传统。这种向\"密集母职叙事\"的突然转变——即暗示母亲应独自承担育儿责任——很可能已经造成了伤害。他们写道：\"这样的叙事可能导致母亲精疲力竭，并带来危险的后果。\"\n\n相比之下，在狩猎采集社会中，父母以外的成年人可以提供近一半的儿童照料。此前一项研究考察了刚果民主共和国的埃菲人，发现婴儿在18周大时平均每天有14位异亲照料者，每小时在照料者之间被传递8次。\n\n乔杜里指出，如今父母从家庭和社交网络获得的育儿支持，远不及人类进化史上的大部分时期，但引入更多照料者可以减轻压力和产后抑郁，进而对儿童的幸福感产生\"连锁\"效益。在狩猎采集社会中出生的婴儿可能拥有超过十位照料者——这与英国托儿所的情况形成鲜明对比，英国的规定要求两到三岁儿童的照料者与儿童比例为一比四。\n\n狩猎采集社会的儿童在混龄游戏小组中通过观察和模仿来学习，而研究者指出，西方的\"指导式教学\"——要求学生静坐——可能助长注意力缺陷多动障碍等问题。乔杜里表示，英国应该探索一种可能性，即年长的兄弟姐妹帮助父母\"也可能促进他们自身的社会性发展\"。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "type": "词义句意题",
+    "locate": "where each child is cared for by many adults. Kung children as young as four will help to look after younger ones and 'baby-wearing', in which infants are carried in slings, is considered the norm.",
+    "why": "前两段解释了alloparenting的含义：在昆族社会中，每个孩子由许多成年人照料，四岁儿童也帮忙照看更小的孩子。第二段总结这些做法被称为alloparenting。核心特征是社区成员共同分担育儿责任，A选项\"sharing childcare among community members\"精准概括了这一含义。",
+    "traps": "B\"指定特定成人照料者\"与原文\"多人共同照料\"相悖，属于曲解原文；C\"教年长儿童育儿技能\"偷换概念，原文说儿童帮忙照看幼儿，而非被教授技能；D\"父母用背带携带婴儿\"仅是baby-wearing的细节，且未指明是父母，以偏概全。",
+    "tip": "词义句意题需回归上下文，抓住核心特征而非个别细节。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "Dr. Annie Swanepoel, a child psychiatrist, believes that there are ways to incorporate them into western life. In Germany, one scheme has paired an old people's home with a nursery.",
+    "why": "第三段首句明确提出观点：有办法将异亲抚育融入西方生活（incorporate them into western life）。德国方案是紧随其后的具体实例，用以证明该观点的可行性。B选项\"integrating alloparenting into western society\"是对incorporate...into western life的同义改写，完全吻合。",
+    "traps": "A\"促进代际交流\"虽与老人和幼儿互动相关，但并非该例子的论证目的，属于偷换论点；C\"西方传统育儿方式\"与原文相悖，原文认为这是新尝试而非传统；D\"西方与非洲生活方式差异\"并非本段论述重点，属于无中生有。",
+    "tip": "例证题要找例子所服务的观点句，通常在例子之前。"
+   },
+   {
+    "number": 28,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "the western nuclear family was a recent invention which broke with evolutionary history. This abrupt shift to an 'intensive mothering narrative'...was likely to have been harmful.",
+    "why": "第四段指出西方核心家庭是\"打破进化史的近代发明\"，向\"密集母职叙事\"的转变是\"突然的\"（abrupt shift），与进化历程相背离。D选项\"departs from the course of evolution\"是对\"broke with evolutionary history\"和\"abrupt shift\"的准确概括。",
+    "traps": "A\"减轻育儿压力\"与原文完全相反，原文说这一叙事导致母亲精疲力竭和危险后果；B\"巩固家庭关系\"原文未提及，属于无中生有；C\"导致以儿童为中心的家庭\"文中未涉及此概念，属于过度推断。",
+    "tip": "注意broke with、abrupt shift等措辞暗示的\"偏离\"\"背离\"含义。"
+   },
+   {
+    "number": 29,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "An infant born to a hunter-gatherer society could have more than ten caregivers—this contrasts starkly to nursery settings in the UK where regulations call for a ratio of one carer to four children aged two to three.",
+    "why": "原文将狩猎采集社会婴儿拥有十多位照料者与英国托儿所一比四的比例进行\"鲜明对比\"（contrasts starkly），结合上文论述多照料者可减轻压力、提升儿童幸福感，可推断作者认为英国托儿所的照料者与儿童比例不够理想，应当提高（即增加照料者相对人数），C选项\"应改善照料者与儿童比例\"正确。",
+    "traps": "A\"往往达不到官方要求\"原文未提及托儿所违规问题，属于无中生有；B\"难以找到足够照料者\"属于过度推断，原文讨论的是比例标准本身的不足而非招聘困难；D\"应防止父母抑郁\"虽文中提及maternal depression，但这不是对托儿所的推断，属于张冠李戴。",
+    "tip": "推断题要结合对比语境和作者倾向，把握言外之意。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "Parenting tips obtained from hunter-gatherers in Africa may be the key to bringing up more contented children, researchers have suggested.",
+    "why": "全文围绕一个核心论点展开：借鉴狩猎采集社会的育儿方式（异亲抚育、混龄玩耍等）可以让西方家庭更幸福。文章从概念引入、实践案例、核心家庭弊端、数据对比到教育方式差异，始终服务于这一主旨。B选项\"For a happier family, learn from the hunter-gatherers\"精准概括了全文的中心思想和建议。",
+    "traps": "A\"指导式教学：焦虑父母的困境\"仅涉及最后一段的部分内容，以偏概全；C\"混龄游戏小组，孤独儿童更好的选择\"是文中一个细节，不能涵盖全文；D\"追溯育儿史：从非洲到欧洲\"偏向历史叙述，与文章建议性、对比性的论述主旨不符。",
+    "tip": "主旨题需选覆盖全文、体现核心论点的选项，排除以偏概全项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "alloparenting",
+    "cn": "异亲抚育（n.）指父母以外的人参与育儿"
+   },
+   {
+    "w": "sling",
+    "cn": "吊带，背带（n.）"
+   },
+   {
+    "w": "akin to",
+    "cn": "类似于（adj. + prep.）"
+   },
+   {
+    "w": "abrupt",
+    "cn": "突然的，意外的（adj.）"
+   },
+   {
+    "w": "narrative",
+    "cn": "叙事，说法（n.）"
+   },
+   {
+    "w": "exhaustion",
+    "cn": "精疲力竭，耗尽（n.）"
+   },
+   {
+    "w": "starkly",
+    "cn": "鲜明地，截然地（adv.）"
+   },
+   {
+    "w": "knock-on",
+    "cn": "连锁的，间接的（adj.）"
+   },
+   {
+    "w": "imitation",
+    "cn": "模仿（n.）"
+   },
+   {
+    "w": "deficit",
+    "cn": "缺陷，不足（n.）"
+   },
+   {
+    "w": "mirror",
+    "cn": "模仿，反映（v.）"
+   },
+   {
+    "w": "incorporate",
+    "cn": "纳入，融合（v.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "This abrupt shift to an 'intensive mothering narrative', which suggests that mothers should manage childcare alone, was likely to have been harmful.",
+    "cn": "这种向\"密集母职叙事\"的突然转变——即暗示母亲应独自承担育儿责任——很可能已经造成了伤害。",
+    "note": "主干为This abrupt shift...was likely to have been harmful；which引导非限定性定语从句修饰intensive mothering narrative；be likely to have been为推测性完成时。"
+   },
+   {
+    "en": "An infant born to a hunter-gatherer society could have more than ten caregivers—this contrasts starkly to nursery settings in the UK where regulations call for a ratio of one carer to four children aged two to three.",
+    "cn": "在狩猎采集社会中出生的婴儿可能拥有超过十位照料者——这与英国托儿所的情况形成鲜明对比，英国规定两到三岁儿童的照料者与儿童比例为一比四。",
+    "note": "破折号前为主句，born to...为后置定语修饰infant；破折号后this指代前半句，where引导定语从句修饰nursery settings；aged two to three为后置定语修饰children。"
+   },
+   {
+    "en": "While hunter-gatherer children learnt from observation and imitation in mixed-age playgroups, researchers said that western 'instructive teaching', where pupils are asked to sit still, may contribute to conditions such as attention deficit hyperactivity disorder.",
+    "cn": "狩猎采集社会的儿童在混龄游戏小组中通过观察和模仿来学习，而研究者指出，西方的\"指导式教学\"——要求学生静坐——可能助长注意力缺陷多动障碍等问题。",
+    "note": "While引导让步/对比状语从句；主句为researchers said that...；where引导非限定性定语从句修饰instructive teaching；contribute to意为\"导致/助长\"。"
+   }
+  ]
+ }
+}

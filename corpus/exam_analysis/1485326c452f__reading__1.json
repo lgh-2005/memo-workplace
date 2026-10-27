@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "1485326c452f__reading__1",
+ "examId": "1485326c452f",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 6 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:37:10.172Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54050,
+ "usage": {
+  "prompt_tokens": 1815,
+  "completion_tokens": 3559,
+  "total_tokens": 5374,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1815,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3559,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1815,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "绘画应被视为学习工具而非天赋艺术",
+  "gist": "文章指出人们常将绘画误归为需要天赋的艺术形式，实际上绘画是人类与生俱来的能力和认知工具。文章援引学者观点和实验证据，说明绘画能提升注意力、记忆力和视觉感知力，呼吁人们重新认识绘画的价值，支持学校艺术教育。",
+  "structure": [
+   "第1-2段：提出问题，绘画被误归类为艺术而非学习工具",
+   "第3-5段：引用学者论述，绘画是人类本能而非专业技能",
+   "第6段：研究表明涂画能激活大脑、提升注意力和记忆",
+   "第7段：绘画天赋与视觉感知准确性相关",
+   "第8段：总结呼吁，应将绘画视为理解世界的工具"
+  ],
+  "difficulty": "中等",
+  "translation": "我们常常认为绘画需要天赋，但这种想法源于我们对绘画的错误归类——主要将其视为一种艺术形式，而非一种学习工具。\n\n研究人员、教师和艺术家正在开始认识到绘画如何对各种技能和学科产生积极影响。\n\n我们大多数人以前都花过一些时间画画，但到了某个阶段，大多数人就不再画了。当然，有些人没有停下来，感谢上帝：一个没有设计师和艺术家的世界确实会是一个非常糟糕的世界。\n\n有人认为，许多成年人放弃绘画是因为我们对它进行了错误分类，并给了它一个非常狭隘的定义。D. B. 道德教授在其著作《简笔画：作为人类实践的绘画》中指出，我们错误地归档了绘画的意义，因为我们将其视为一种专业技能，而非一种个人能力。我们错误地认为\"好的\"绘画是那些能再现现实世界的作品，是逼真的幻觉。相反，绘画应被重新归类为一种符号工具。\n\n人类已经画了七万三千年。绘画是人之为人的一部分。我们没有大猩猩的力量，因为我们放弃了动物的蛮力，转而操控精细的工具，如锤子、矛——后来还有钢笔和铅笔。人类的手是一个极其密集的神经末梢网络。从很多方面来说，人类天生就是为了绘画而造的。\n\n一些研究人员认为，涂画会激活大脑的所谓默认回路——本质上就是在没有其他刺激时负责维持基本活动水平的大脑区域。因此，有人认为在无聊的讲座中涂画可以帮助学生集中注意力。在一项研究中，参与者被要求在涂画或静坐时听一串名字。涂画的人比没有涂画的人多记住了29%的名字。\n\n也有证据表明，绘画天赋取决于一个人感知世界的准确程度。人类的视觉系统往往会对大小、形状、颜色和角度做出错误判断，但艺术家比非艺术家更准确地感知这些特质。培养绘画天赋可以成为改善人们在视觉重要领域中观察技能的关键工具。\n\n与其将绘画视为某些有创意的人所拥有的天赋，不如将它视为一种更好地观察和理解世界的工具——它恰好同时也是一种艺术形式。无论是心不在焉的涂画还是写生临摹，都已被证明对记忆和视觉感知有积极影响，所以下次你的学校董事会削减艺术部门预算时，请大声抗议。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "We often think of drawing as something that takes inborn talent, but this kind of thinking stems from our misclassification of drawing as, primarily, an art form rather than a tool for learning.",
+    "why": "原文首句明确指出\"我们常常认为绘画需要天赋（inborn talent）\"，A选项\"It is a gift creative people are endowed with\"是对\"inborn talent\"的同义改写，gift对应talent，endowed with对应inborn，完全吻合原文对人们普遍看法的描述。",
+    "traps": "B\"通过练习获得的技能\"与原文inborn（天生的）矛盾，属于反义干扰；C\"被所有人欣赏的艺术形式\"中all过于绝对，且原文说的是人们的误解而非欣赏；D\"每个人都应培养的能力\"是作者的主张而非人们的普遍看法，属于张冠李戴。",
+    "tip": "注意区分\"人们普遍认为\"和\"作者认为\"的不同立场。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "There are people who don't, obviously, and thank God for that: a world without designers and artists would be a very shabby one indeed.",
+    "why": "原文说\"一个没有设计师和艺术家的世界确实会是一个非常糟糕的（shabby）世界\"，言下之意是正因为有设计师和艺术家，世界才不会shabby，即他们为世界增添了美感和魅力。C选项\"They add beauty and charm to the world\"是对这层反面推理的正确归纳。",
+    "traps": "A\"数量在逐渐减少\"原文未提及，属于无中生有；B\"他们热衷于改变破旧环境\"曲解了shabby的含义，原文是假设世界，而非描述他们的行为；D\"他们一生大部分时间都在画画\"属于过度推断，原文仅说他们没有停止画画。",
+    "tip": "反向假设句（a world without…would be…）常考推断题，需把反面转为正面理解。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Professor D. B. Dowd argues that we have misfiled the significance of drawing because we see it as a professional skill instead of a personal capacity.",
+    "why": "Dowd教授的核心观点是：绘画被错误归档了，因为人们将其视为专业技能（professional skill）而非个人能力（personal capacity）。personal capacity意味着每个人都天生具备这种能力，A选项\"Everybody is born with the capacity to draw\"准确概括了这一论点，且后文第五段提到人类画了73000年、人类天生就是为绘画而造的，进一步佐证。",
+    "traps": "B\"需要专门训练的技能\"恰恰是Dowd教授所反对的观点（professional skill），属于正反颠倒；C\"绘画的价值往往被高估\"与原文相悖，原文认为绘画被低估和误解；D\"绘画应被重新定义为逼真幻觉\"曲解原文，realistic illusion是Dowd批评的错误认知而非他的主张。",
+    "tip": "注意辨析作者/学者\"支持的观点\"和\"批评的观点\"，避免选到被反驳的内容。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "some believe that doodling during a boring lecture can help students pay attention. In one study, participants were asked to listen to a list of names while either doodling or sitting still. Those who doodled remembered 29 percent more of the names than those who did not.",
+    "why": "原文先说涂画能帮助学生集中注意力（pay attention即concentration），随后通过实验证明涂画者比不涂画者多记住29%的名字（即改善记忆memory）。D选项\"It helps improve concentration and memory\"完整涵盖了注意力和记忆两个方面，与原文高度吻合。",
+    "traps": "A\"维持大脑基本活动水平的必要条件\"中a must过于绝对，原文只说涂画能激活默认回路，并非说它是必要条件；B\"最可靠的大脑激活刺激物\"中most reliable属于无中生有的最高级表述；C\"把无聊的事变得有趣\"原文未涉及，涂画的作用是帮助注意力和记忆而非增加趣味。",
+    "tip": "实验数据常用于支撑前文论点，定位时要把论点和实验结论结合起来看。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "There's also evidence that drawing talent is based on how accurately someone perceives the world. The human visual system tends to misjudge size, shape, color, and angles but artists perceive these qualities more accurately than non-artists.",
+    "why": "原文明确指出绘画天赋取决于一个人感知世界的准确程度（how accurately someone perceives the world），且艺术家比非艺术家更准确地感知视觉特质。D选项\"Precision in visual perception\"（视觉感知的精准性）是对accurately perceives的同义概括，完全对应。",
+    "traps": "A\"对认知刺激的敏感度\"原文未提及，属于无中生有；B\"表现的精微性\"偷换概念，原文强调的是感知而非表现/表达；C\"分类的准确性\"与原文无关，categorization是另一段的内容，属于张冠李戴。",
+    "tip": "同义替换是六级常见出题手段，accurately对应precision，perceives对应visual perception。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inborn",
+    "cn": "adj. 天生的，先天的"
+   },
+   {
+    "w": "stem from",
+    "cn": "v. 源于，起因于"
+   },
+   {
+    "w": "misclassification",
+    "cn": "n. 错误分类"
+   },
+   {
+    "w": "shabby",
+    "cn": "adj. 破旧的，简陋的；糟糕的"
+   },
+   {
+    "w": "miscategorize",
+    "cn": "v. 错误归类"
+   },
+   {
+    "w": "manipulate",
+    "cn": "v. 操控，熟练使用"
+   },
+   {
+    "w": "nerve endings",
+    "cn": "n. 神经末梢"
+   },
+   {
+    "w": "default circuit",
+    "cn": "n. 默认回路"
+   },
+   {
+    "w": "baseline",
+    "cn": "n. 基线，基准水平"
+   },
+   {
+    "w": "stimuli",
+    "cn": "n. 刺激（stimulus的复数）"
+   },
+   {
+    "w": "cultivate",
+    "cn": "v. 培养，培育"
+   },
+   {
+    "w": "slash",
+    "cn": "v. 大幅削减，砍"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "We don't have the strength of chimpanzees because we've given up animal strength to manipulate subtle instruments, like hammers, spears, and—later—pens and pencils.",
+    "cn": "我们没有大猩猩那样的力量，因为我们放弃了动物的蛮力，转而去操控精细的工具，如锤子、矛——后来还有钢笔和铅笔。",
+    "note": "主句为否定句，because引导原因状语从句；to manipulate为目的状语；like引出举例，破折号插入补充时间线。"
+   },
+   {
+    "en": "Rather than think of drawing as a talent that some creative people are gifted in, we should consider it as a tool for seeing and understanding the world better—one that just so happens to double as an art form.",
+    "cn": "与其将绘画视为某些有创意的人所拥有的天赋，不如将它视为一种更好地观察和理解世界的工具——它恰好同时也是一种艺术形式。",
+    "note": "Rather than…we should…构成对比框架；that引导定语从句修饰talent；破折号后one指代tool，that引导第二个定语从句；double as意为\"兼作\"。"
+   },
+   {
+    "en": "Some researchers argue that doodling activates the brain's so-called default circuit—essentially, the areas of the brain responsible for maintaining a baseline level of activity in the absence of other stimuli.",
+    "cn": "一些研究人员认为，涂画会激活大脑的所谓默认回路——本质上就是在没有其他刺激时负责维持基本活动水平的大脑区域。",
+    "note": "argue后that引导宾语从句；破折号后为同位语解释default circuit；responsible for…为后置定语修饰areas；in the absence of为介词短语作条件状语。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "c14782c14563__banked_cloze__all",
+ "examId": "c14782c14563",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2016 年 6 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:09:42.898Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64837,
+ "usage": {
+  "prompt_tokens": 1349,
+  "completion_tokens": 4056,
+  "total_tokens": 5405,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1349,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4056,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1349,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "机器人革命中的责任与监管问题",
+  "gist": "文章围绕机器人技术革命展开，指出机器人在带来诸多便利的同时也会引发事故和法律纠纷，探讨了当机器人造成损害时的责任归属问题，并建议政府在保护公众安全与保留创新空间之间寻求平衡，由制造商承担安全责任并通过保险机制管控风险。",
+  "difficulty": "中等",
+  "translation": "机器人革命即将让人类直面一个古老的恐惧——与我们一样聪明能干、却没有道德指南针的人造物。随着机器人承担越来越复杂的角色，一个问题自然而然地产生了：当它们做错事时，谁来负责？制造商？用户？软件编写者？答案取决于机器人本身。\n\n机器人已经为我们节省了时间、金钱和精力。未来，它们将改善我们的医疗保健、社会福利和生活水平。计算能力与工程技术进步的结合最终将使残疾人获得低成本的居家护理成为可能，使无人驾驶汽车得到广泛使用——这可能减少酒后驾车和分心驾驶造成的事故——以及从街道清扫到食品加工等无数家庭和服务业中的机器人应用。\n\n但问题必然会出现。机器人汽车会发生碰撞。遥控飞行器操作员会侵犯某人的隐私。机器人割草机会碾过邻居的猫。对机器受害者心怀同情的陪审团会以足以摧毁公司的罚款和赔偿来惩罚企业家。政府应当怎样做才能在为创新保留空间的同时保护民众？\n\n涉及大量公共安全的大型复杂系统，如无人驾驶汽车，应当由承担确保安全责任并对事故负有法律责任的制造商来建造、编程和销售。政府应设定安全要求，然后让保险公司根据制造商的驾驶记录而非乘客的驾驶记录来为机器人的风险定价。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "A",
+    "correct": "arises",
+    "why": "此处主语为 the question，需要一个不及物动词表示\"产生、出现\"。arises 意为\"出现、产生\"，与 question 构成经典搭配 the question arises，且与副词 naturally 连用语义通顺，表示问题自然而然地产生了。",
+    "traps": "ascends 意为\"上升、攀登\"，语义不符，question 不能\"上升\"；其他词词性不匹配或语义不搭配，如 bound 作形容词需与 be 连用，此处缺系动词。",
+    "tip": "question arises 为高频固定搭配，意为\"问题产生\"。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "correct": "combination",
+    "why": "空格前有定冠词 The，后有介词 of，需要一个名词。combination of... and... 意为\"……与……的结合\"，指计算能力与工程技术进步的结合，语义完整、结构正确。",
+    "traps": "其余候选名词如 victims、penalties 语义上不能与 of computational power and engineering advances 搭配，逻辑不通。",
+    "tip": "the combination of A and B 为常见名词短语结构。"
+   },
+   {
+    "number": 28,
+    "answer": "F",
+    "correct": "eventually",
+    "why": "空格位于 will 与 enable 之间，需要一个副词修饰动词 enable。eventually 意为\"最终、终将\"，表示这些技术进步的结合终将使低成本居家护理成为可能，时间逻辑合理。",
+    "traps": "此处需要副词，arises、ascends 等动词和 bound、widespread 等形容词均不能填入 will 与 enable 之间修饰动词。",
+    "tip": "will + 副词 + 动词原形是常见结构，快速锁定副词。"
+   },
+   {
+    "number": 29,
+    "answer": "O",
+    "correct": "widespread",
+    "why": "空格后为名词短语 use of driverless cars，需要一个形容词作定语修饰 use。widespread 意为\"广泛的\"，widespread use 表示\"广泛使用\"，与无人驾驶汽车的语境高度吻合。",
+    "traps": "bound 虽为形容词，但 bound use 不构成合理搭配；其他候选词词性不符或语义不当，无法修饰 use 这一名词。",
+    "tip": "widespread use 为高频搭配，意为\"广泛使用\"。"
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "correct": "bound",
+    "why": "there are ___ to be problems 需要一个形容词构成 be bound to do 结构，意为\"一定会、必然会\"。bound 在此表示\"必定的\"，指机器人发展中必然会出现问题。",
+    "traps": "若填其他词如 arises 则动词形式与 there are... to be 结构不兼容；eventually 为副词也无法填入。be bound to 是固定搭配需整体识别。",
+    "tip": "be bound to do sth. 意为\"必定做某事\"，六级高频考点。"
+   },
+   {
+    "number": 31,
+    "answer": "H",
+    "correct": "invade",
+    "why": "空格前为 will，后为 someone's privacy，需要一个动词原形。invade someone's privacy 意为\"侵犯某人的隐私\"，是固定搭配，描述无人机操作员侵犯隐私的场景完全吻合。",
+    "traps": "arises 和 ascends 均为不及物动词，不能直接接 someone's privacy 作宾语；preserving 为现在分词形式，不能接在 will 后面。",
+    "tip": "invade one's privacy 为固定搭配，意为\"侵犯隐私\"。"
+   },
+   {
+    "number": 32,
+    "answer": "N",
+    "correct": "victims",
+    "why": "空格前有定冠词 the，后有介词 of machines，需要一个名词。victims of machines 意为\"机器的受害者\"，指因机器而受到伤害的人，陪审团对受害者表示同情，逻辑通顺。",
+    "traps": "combination of machines 意为\"机器的组合\"，语义上与 sympathetic（同情的）矛盾，陪审团不会对\"机器组合\"产生同情；penalties of machines 搭配也不合理。",
+    "tip": "victims of 表示\"……的受害者\"，与 sympathetic 构成因果逻辑。"
+   },
+   {
+    "number": 33,
+    "answer": "J",
+    "correct": "penalties",
+    "why": "空格前为 company-crushing（足以摧毁公司的），后与 and damages 并列，需要一个名词。penalties 意为\"罚款、处罚\"，与 damages（赔偿金）并列，描述陪审团对企业家施加严厉的经济惩罚。",
+    "traps": "victims 已用于第32题且语义不搭；combination 与 damages 并列不合逻辑。penalties and damages 是法律语境中的常见并列表达。",
+    "tip": "penalties and damages 为法律领域常见并列结构，意为\"罚款与赔偿\"。"
+   },
+   {
+    "number": 34,
+    "answer": "K",
+    "correct": "preserving",
+    "why": "while 后接现在分词构成伴随状语，preserving space for innovation 意为\"为创新保留空间\"。语义上政府既要保护人民，又要为创新留出空间，形成平衡关系，逻辑完美。",
+    "traps": "programmed 为过去分词，填入后 while programmed space 语法和语义均不通；其他动词形式不符合 while + doing 的结构要求。",
+    "tip": "while + doing 表示\"在……的同时\"，preserve space 意为\"保留空间\"。"
+   },
+   {
+    "number": 35,
+    "answer": "L",
+    "correct": "programmed",
+    "why": "空格处于 should be built, ___ and sold 的并列结构中，三个过去分词与 should be 构成被动语态。programmed 意为\"被编程\"，机器人系统应当被建造、编程和销售，逻辑链条完整。",
+    "traps": "preserving 为现在分词，无法与 built、sold 并列构成被动语态；arises 为动词第三人称单数形式也不能嵌入 be + done 的被动结构中。",
+    "tip": "并列结构中各成分词性和形式须一致，此处三个过去分词并列。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "arises",
+    "cn": "v. 出现，产生，发生"
+   },
+   {
+    "w": "ascends",
+    "cn": "v. 上升，攀登，登上"
+   },
+   {
+    "w": "bound",
+    "cn": "adj. 一定的，必然的（be bound to do）"
+   },
+   {
+    "w": "combination",
+    "cn": "n. 结合，组合，联合"
+   },
+   {
+    "w": "eventually",
+    "cn": "adv. 最终，终于"
+   },
+   {
+    "w": "invade",
+    "cn": "v. 侵入，侵犯（隐私等）"
+   },
+   {
+    "w": "penalties",
+    "cn": "n. 罚款，处罚，惩罚（penalty 的复数）"
+   },
+   {
+    "w": "preserving",
+    "cn": "v. 保护，保留，维持（preserve 的现在分词）"
+   },
+   {
+    "w": "programmed",
+    "cn": "v. 编程，设定程序（program 的过去分词）"
+   },
+   {
+    "w": "widespread",
+    "cn": "adj. 广泛的，普遍的"
+   },
+   {
+    "w": "victims",
+    "cn": "n. 受害者，牺牲品（victim 的复数）"
+   },
+   {
+    "w": "liable",
+    "cn": "adj. 有法律责任的，有义务的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨大意，理解文章讲述机器人责任与监管的话题。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、助动词、并列连词等）判定所需词性，快速排除不符选项。",
+   "第四步：利用固定搭配（如 invade privacy、be bound to、the question arises）和并列结构一致性直接锁定答案。",
+   "第五步：将选定词回填通读全文，检查语义连贯性和语法正确性，确保无重复使用。"
+  ]
+ }
+}

@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "3cd42931854a__reading__2",
+ "examId": "3cd42931854a",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 6 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:17:22.816Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60508,
+ "usage": {
+  "prompt_tokens": 1851,
+  "completion_tokens": 3405,
+  "total_tokens": 5256,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1851,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3405,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1851,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 54 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "拍照能增强人们对体验的享受",
+  "gist": "文章围绕\"拍照是否会影响人们对当下体验的享受\"这一问题展开，介绍了南加州大学Kristin Diehl团队的系列实验。实验结果表明，拍照不但不会打断体验，反而因为引导注意力、提高参与度而增强了人们的愉悦感，甚至仅仅是\"打算拍照\"这一念头就能产生同样的积极效果。",
+  "structure": [
+   "第1-2段：引出话题，拍照是否有隐性代价",
+   "第3-4段：实验总结论——拍照让人更投入、更享受",
+   "第5-7段：分实验佐证（观光、博物馆、用餐）",
+   "第8段：深层发现——仅计划拍照也有同效"
+  ],
+  "difficulty": "中等",
+  "translation": "摄影曾经是一件昂贵而费力的苦差事，只留给人生最重大的里程碑时刻。如今，对着一顿饭这样平常的事物拍无数张照片，唯一明显的代价似乎只是硬盘空间和饭友的耐心。\n\n但记录一段生活经历而非单纯享受它，是否还有另一种代价——一种更深层的代价？\"你会听到有人说不应该拍那么多照片、这会打断体验、对你不好、我们没有活在当下，\"南加州大学马歇尔商学院营销学副教授Kristin Diehl说。\n\nDiehl和她的研究同事想弄清这种说法是否属实，于是他们在实验室和实地开展了一系列九项实验，测试人们在有相机和没有相机时的享受程度。发表在《人格与社会心理学杂志》上的结果让他们大吃一惊：拍照实际上让人们更享受正在做的事情，而非更不享受。\n\n\"我们发现，你看世界的方式其实略有不同，因为你在寻找想要捕捉的、想要留住的东西，\"Diehl解释道。\"这让人们更投入到体验中，他们往往也更加享受。\"\n\n以观光为例。在一项实验中，近200名参与者登上双层巴士游览费城。两辆巴士都禁止使用手机，但其中一辆提供了数码相机并鼓励人们拍照。拍照的人明显更享受这次体验，并表示自己更加投入，相比之下没有拍照的人则逊色不少。\n\nDiehl说，按下快门会引导注意力，从而增强你从所看事物中获得的愉悦感。这一效果甚至适用于像考古博物馆这样无聊的地方——人们被分配了眼动追踪眼镜，并被指示要么拍照要么不拍。\"人们会更长时间地注视他们想要拍摄的东西，\"Diehl说。他们也表示更喜欢那些展品。\n\n令各地Instagram用户宽慰的是，拍照甚至能让用餐变得更愉快。当人们被鼓励在午餐时至少拍三张照片时，他们比那些未被要求拍照的人更加沉浸在用餐中。\n\n是因为相机令人满足的咔嚓声吗？还是按快门这个身体动作？都不是，他们发现：仅仅是计划拍一张照片——而非真正拍下来——就有同样的快乐提升效果。\"如果你想在脑中拍照，效果是一样的，\"Diehl说。\"想想你会想拍什么，这同样会让你更加投入。\"",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Photography was once an expensive, laborious ordeal reserved for life's greatest milestones.",
+    "why": "原文首句明确指出，摄影曾经是一项\"expensive, laborious ordeal\"（昂贵、费力的苦差事），且只用于\"life's greatest milestones\"（人生最重大的里程碑时刻）。A选项\"painstaking effort\"对应\"laborious ordeal\"，\"recording life's major events\"对应\"life's greatest milestones\"，为精准同义改写。",
+    "traps": "B项\"只有少数富人能享受\"属于过度推断，原文说expensive但未说只有wealthy people能享受；C项\"保存珍贵影像\"在首段并未涉及；D项\"需要大量练习才能掌握的技能\"纯属无中生有，原文说的是laborious（费力的）而非需要技能。",
+    "tip": "注意同义替换：laborious ordeal ≈ painstaking effort。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Diehl and her fellow researchers wanted to find out if that was true, so they embarked on a series of nine experiments in the lab and in the field testing people's enjoyment in the presence or absence of a camera.",
+    "why": "上文第二段引述的观点是\"拍照会打断体验、对你不好、没有活在当下\"，第三段说Diehl想验证\"if that was true\"，即想验证拍照是否阻碍了人们对当下的享受。D选项\"whether it prevented people enjoying what they were doing\"精确对应了这一研究目的。",
+    "traps": "A项\"带来什么样的快乐\"不是实验的初始出发问题，而是实验结果；B项\"观光时是否喜欢拍照\"过于具体且偷换了研究问题；C项\"如何丰富生活体验\"与实验目的方向不符，实验是验证负面说法是否成立。",
+    "tip": "\"find out if that was true\"中的that指代上文观点，需回溯上下文。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "That gets people more engaged in the experience, and they tend to enjoy it more.",
+    "why": "Diehl解释实验结果时说拍照让人\"look for things you want to capture\"，使人\"more engaged in the experience\"。C项\"more absorbed in what catches their eye\"中absorbed对应engaged，catches their eye对应\"looking for things you want to capture\"，是准确的同义改写。",
+    "traps": "A项\"分心\"与实验结论完全相反，实验证明拍照让人更专注而非分心；B项\"更好地记住\"文中未提及记忆效果；D项\"更好地理解世界\"过度引申，原文说\"look at the world slightly differently\"并非指理解更深刻。",
+    "tip": "engaged = absorbed = immersed，这组近义词是六级高频考点。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "People look longer at things they want to photograph. They report liking the exhibits more, too.",
+    "why": "眼动追踪实验发现，人们会更长时间注视想拍摄的东西（look longer at things they want to photograph），并更喜欢展品。B项\"focus more on the exhibits when taking pictures\"是对\"look longer\"的同义转换，focus more对应look longer，精准概括了实验发现。",
+    "traps": "A项\"拍出更好的照片\"文中完全未涉及照片质量；C项\"更好地观赏展品\"看似接近但偷换概念，原文强调的是注视时间更长而非视角更好（better view）；D项\"更容易跟上历史事件\"属于无中生有。",
+    "tip": "eye-tracking glasses的实验目的是量化注意力分配，锁定look longer即可。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "just the act of planning to take a photo—and not actually taking it—had the same joy-boosting effect.",
+    "why": "最后一段揭示更深层的发现：仅仅是计划拍照（planning to take a photo）而非真正拍照，就具有同样的提升快乐的效果（joy-boosting effect）。D项\"Even the very thought of taking a photo can have a positive effect\"中\"the very thought\"对应\"planning\"和\"thinking about\"，\"positive effect\"对应\"joy-boosting effect\"，逻辑完全吻合。",
+    "traps": "A项\"拍照前先做计划更好\"曲解原意，原文并非在建议做计划，而是说明心理机制；B项\"心理照片和快照一样美\"偷换概念，原文说效果相同而非美感相同；C项\"摄影师从快门声中获得乐趣\"恰恰是原文否定的假设（Was it the satisfying click? No）。",
+    "tip": "末段常出终极结论，注意否定假设后的转折才是核心发现。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "laborious",
+    "cn": "adj. 费力的，辛苦的"
+   },
+   {
+    "w": "ordeal",
+    "cn": "n. 苦难经历，严峻考验"
+   },
+   {
+    "w": "milestone",
+    "cn": "n. 里程碑，重大事件"
+   },
+   {
+    "w": "embark on",
+    "cn": "v. 着手，开始从事"
+   },
+   {
+    "w": "engaged",
+    "cn": "adj. 投入的，全神贯注的"
+   },
+   {
+    "w": "heighten",
+    "cn": "v. 增强，加剧"
+   },
+   {
+    "w": "immersed",
+    "cn": "adj. 沉浸的，全神贯注的"
+   },
+   {
+    "w": "archaeological",
+    "cn": "adj. 考古的，考古学的"
+   },
+   {
+    "w": "snap",
+    "cn": "v./n. 拍照；快照"
+   },
+   {
+    "w": "eye-tracking",
+    "cn": "adj. 眼动追踪的"
+   },
+   {
+    "w": "double-decker",
+    "cn": "n./adj. 双层巴士（的）"
+   },
+   {
+    "w": "joy-boosting",
+    "cn": "adj. 提升快乐的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Diehl and her fellow researchers wanted to find out if that was true, so they embarked on a series of nine experiments in the lab and in the field testing people's enjoyment in the presence or absence of a camera.",
+    "cn": "Diehl和她的研究同事们想弄清楚这种说法是否属实，于是他们在实验室和实地开展了一系列共九项实验，测试人们在有相机和没有相机的情况下的享受程度。",
+    "note": "主干：Diehl and researchers wanted to find out... so they embarked on...；that指代上段负面观点；testing为现在分词作后置定语修饰experiments；in the presence or absence of为介词短语作状语。"
+   },
+   {
+    "en": "What we find is you actually look at the world slightly differently, because you're looking for things you want to capture, that you may want to hang onto.",
+    "cn": "我们发现，你看世界的方式实际上略有不同，因为你在寻找想要捕捉的、想要留住的东西。",
+    "note": "What引导主语从句；is后为表语从句（省略了that）；because引导原因状语从句；that you may want to hang onto为定语从句修饰things，与前面you want to capture并列。"
+   },
+   {
+    "en": "No, they found; just the act of planning to take a photo—and not actually taking it—had the same joy-boosting effect.",
+    "cn": "都不是，他们发现：仅仅是计划拍一张照片——而非真正拍下来——这个行为就有同样的提升快乐的效果。",
+    "note": "主干：the act had the same effect；of planning to take a photo为介词短语修饰act；破折号间\"and not actually taking it\"为插入成分，形成对比强调；joy-boosting为复合形容词修饰effect。"
+   }
+  ]
+ }
+}

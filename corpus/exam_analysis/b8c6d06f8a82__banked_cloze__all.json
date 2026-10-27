@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "b8c6d06f8a82__banked_cloze__all",
+ "examId": "b8c6d06f8a82",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2015 年 6 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T04:46:06.921Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 53413,
+ "usage": {
+  "prompt_tokens": 1166,
+  "completion_tokens": 4745,
+  "total_tokens": 5911,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2609
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1166
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "在线评论改变旅游服务业",
+  "gist": "文章讲述了在线评分平台如何通过顾客评论改变旅游和服务行业。信息透明化使价格下降，服务质量成为竞争焦点。顾客反馈让企业更加负责，激励其改进服务。在线评论的影响巨大，好评可促进企业快速增长，许多公司甚至聘请数字声誉经理维护形象。",
+  "difficulty": "中等",
+  "translation": "旅游网站自20世纪90年代就已存在，当时Expedia、Travelocity等度假预订网站推出，让旅行者只需点击鼠标就能比较机票和酒店价格。信息不再被旅行代理商控制或隐藏在商业网络中，旅游业发生了革命性变化，因为更高的透明度帮助大幅削减了价格。\n\n如今，该行业正经历一场新革命——这次是变革服务质量。专门从事酒店、餐馆、公寓和出租车的在线评分平台，使旅行者能够交换评论和体验，供所有人查看。\n\n酒店餐饮企业现在被排名、分析和比较，不是由行业专业人士来做，而是由服务对象——顾客——来做。这打造了一种买家和卖家之间的新型关系。顾客一直用脚投票；现在他们可以向任何感兴趣的人解释自己的决定。因此，企业变得更加负责，往往在非常具体的方面，这产生了改进服务的强大动力。\n\n尽管一些读者可能不喜欢关于柏林不友好行李员或休斯顿酒店吹风机故障的八卦报道，但在线评论的真正力量不仅在于个人故事，还在于网站汇总大量评分的能力。\n\n其影响怎么强调都不为过。吸引最高评级的企业可以享受快速增长，因为新客户被好评吸引，随后提供更多的积极反馈。在线评级的影响力如此之大，以至于许多公司现在聘请数字声誉经理来确保良好的在线身份。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "correct": "controlled",
+    "why": "空格前是 no longer，空格后是 by travel agents，需填入过去分词构成被动语态。controlled 意为“被控制”，与 information 搭配，表示信息不再由旅行代理商控制，符合上下文。",
+    "traps": "accountable 是形容词，无法直接作谓语；capacity 是名词，语法不符；entail 是及物动词，但“信息被需要”语义不通，且与 by 不搭配。",
+    "tip": "注意被动语态和固定搭配信息被控制。"
+   },
+   {
+    "number": 27,
+    "answer": "L",
+    "correct": "slash",
+    "why": "空格前是 helped，空格后是 prices，需填入动词原形构成 help do sth.。slash 意为“大幅削减”，与 prices 搭配表示帮助大幅降价，符合上文的 transparency。",
+    "traps": "accountable 是形容词，不能作动词；capacity 是名词；controlled 是过去式或过去分词，不能用于 help 后接原形；entail 语义不通。",
+    "tip": "掌握 help do sth. 结构，注意动宾搭配 slash prices。"
+   },
+   {
+    "number": 28,
+    "answer": "M",
+    "correct": "specializing",
+    "why": "空格位于 Online rating platforms 之后，破折号内作后置定语，且后接 in hotels...，需现在分词。specializing in 表示专门从事某领域，与 hotels 等搭配。",
+    "traps": "accountable 是形容词，不能带 in 短语；capacity 是名词，无法作定语；controlled 是过去分词，但语义“被控制”与平台性质不符；entail 是动词原形，不能作定语。",
+    "tip": "现在分词作定语，固定搭配 specialize in。"
+   },
+   {
+    "number": 29,
+    "answer": "K",
+    "correct": "professionals",
+    "why": "空格前是 not by industry，空格后无宾语，需填入名词复数作 by 的宾语。professionals 意为“专业人士”，与 customers 形成对比，表示不是由行业专业人士排名。",
+    "traps": "accountable 是形容词，不能作宾语；capacity 是单数名词，但与前文不符且不搭配 industry；controlled 是动词过去式或过去分词，语法不通；entail 是动词原形，不能作介词宾语。",
+    "tip": "介词 by 后接名词，注意单复数及对比逻辑。"
+   },
+   {
+    "number": 30,
+    "answer": "E",
+    "correct": "forged",
+    "why": "空格前是 has，空格后是 a new relationship，需填入过去分词构成现在完成时。forged 意为“打造、建立”，与 relationship 固定搭配，表示建立新型关系。",
+    "traps": "accountable 是形容词，不能作谓语；capacity 是名词；controlled 是过去分词，但“被控制的关系”不通；entail 是动词原形，不能用于 has 后。",
+    "tip": "识别现在完成时 has + 过去分词，固定搭配 forge a relationship。"
+   },
+   {
+    "number": 31,
+    "answer": "A",
+    "correct": "accountable",
+    "why": "空格前是 are much more，空格后无宾语，需填入形容词作表语。accountable 意为“负有责任的”，表示企业变得更加对顾客负责，符合上下文逻辑。",
+    "traps": "capacity 是名词，不能作表语；controlled 是过去分词，虽可作形容词，但意为“受控制的”，此处强调责任而非控制；entail 是动词原形，无法用于 more 后。",
+    "tip": "系动词后接形容词，关注 accountability 与顾客反馈的主题关联。"
+   },
+   {
+    "number": 32,
+    "answer": "F",
+    "correct": "incentives",
+    "why": "空格前是 creates powerful，空格后是 to improve service，需填入名词复数作宾语。incentives 意为“激励、动力”，与 powerful 搭配，表示产生改进服务的强大动力。",
+    "traps": "accountable 是形容词，不能作宾语；capacity 是名词，但单数且语义强调能力而非动力；controlled 是过去分词，不能作名词；entail 是动词原形，语法不符。",
+    "tip": "形容词 powerful 修饰名词，注意复数形式及搭配 to do。"
+   },
+   {
+    "number": 33,
+    "answer": "B",
+    "correct": "capacity",
+    "why": "空格前是 websites'，空格后是 to aggregate，需填入名词。capacity 意为“能力”，常接不定式 to do，表示网站汇总大量评分的能力。",
+    "traps": "accountable 是形容词，不能作所有格后名词；controlled 是动词过去分词，不能作名词；specializing 是现在分词，不能作名词；entail 是动词原形，不能接 to。",
+    "tip": "名词所有格后接名词，注意 capacity to do 的固定用法。"
+   },
+   {
+    "number": 34,
+    "answer": "H",
+    "correct": "overstated",
+    "why": "空格前是 cannot be，空格后无其他成分，需填入过去分词构成被动语态。overstated 意为“夸大”，cannot be overstated 是固定表达，表示“怎么强调都不为过”。",
+    "traps": "accountable 是形容词，不能用于 be 后被动；capacity 是名词，不符合；controlled 是过去分词，但“不能被控制”语义不通；entail 是动词原形，不能用于 be 后。",
+    "tip": "固定表达 cannot be overstated，表示重要性极高。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "subsequently",
+    "why": "空格前是 and，空格后是 provide，需填入副词修饰动词。subsequently 意为“随后”，表示新客户被好评吸引，随后也提供积极反馈，逻辑通顺。",
+    "traps": "accountable 是形容词，不能修饰动词；capacity 是名词；controlled 是过去分词；entail 是动词原形，均不能作副词。",
+    "tip": "连接 and 连接并列谓语，注意副词修饰动词的位置。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "controlled",
+    "cn": "v. 控制；a. 受控制的"
+   },
+   {
+    "w": "slash",
+    "cn": "v. 大幅削减"
+   },
+   {
+    "w": "specializing",
+    "cn": "v. 专门从事，专攻"
+   },
+   {
+    "w": "professionals",
+    "cn": "n. 专业人士"
+   },
+   {
+    "w": "forged",
+    "cn": "v. 锻造；建立（关系）"
+   },
+   {
+    "w": "accountable",
+    "cn": "a. 负有责任的"
+   },
+   {
+    "w": "incentives",
+    "cn": "n. 激励，刺激"
+   },
+   {
+    "w": "capacity",
+    "cn": "n. 能力；容量"
+   },
+   {
+    "w": "overstated",
+    "cn": "v. 夸大，夸张"
+   },
+   {
+    "w": "subsequently",
+    "cn": "ad. 随后，后来"
+   },
+   {
+    "w": "transparency",
+    "cn": "n. 透明度"
+   },
+   {
+    "w": "aggregate",
+    "cn": "v. 汇总，合计"
+   }
+  ],
+  "skills": [
+   "先快速浏览选项，标注每个词的词性和常见用法。",
+   "通读全文，把握主题和空格所在句的语法结构。",
+   "根据空格前后词和固定搭配确定所需词性和词义。",
+   "代入选项，结合上下文逻辑排除干扰项，最后复读验证。"
+  ]
+ }
+}

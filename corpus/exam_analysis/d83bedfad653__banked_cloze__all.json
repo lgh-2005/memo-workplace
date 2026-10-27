@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "d83bedfad653__banked_cloze__all",
+ "examId": "d83bedfad653",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2023 年 12 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:52:53.280Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62097,
+ "usage": {
+  "prompt_tokens": 1351,
+  "completion_tokens": 3554,
+  "total_tokens": 4905,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1351,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3554,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1351,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "城市规划与居民健康生活方式",
+  "gist": "文章指出现代美国城市设计使运动变得不必要，城市蔓延与体重增加相关。城市规划者应在设计中促进健康生活方式，如增设步行空间、自行车道和休闲场所，并利用公共空间推动运动公平性，避免体育活动仅限于昂贵的私人健身房。",
+  "difficulty": "中等",
+  "translation": "现代美国城市的设计使运动变得不必要。汽车和电梯曾象征着城市地区是更高效生活的机器。如今，人们已清楚地认识到，这些改进带来了巨大的好处，但同时也施加了健康代价。近期研究表明，城市蔓延助长了更多驾车出行，并与体重增加有关。这种关联性表明，城市的布局与设计能够阻碍或促进更健康的生活方式选择，城市规划者必须牢记这一点。\n\n不幸的是，城市规划在很大程度上仍集中于解决过去的问题。当然，城市仍需推动标准的公共卫生实践，例如将有毒设施与住宅分开，以及限制重型卡车通过人口密集的居民区。但创建更健康的城市同样重要——相关讨论已经展开。越来越多的城市规划者正更加关注通过使人们更方便、更安全地参加休闲活动、步行、骑车和乘坐公共交通来鼓励体育锻炼。许多关于长寿的研究表明，人们在体育活动融入日常生活的环境中寿命最长。\n\n提供更多适于步行的空间、保护更好的自行车道和更多休闲空间是重要的举措。但即使是更小的改变也能奏效。\n\n城市可以在周末封闭街道，鼓励社区居民外出步行。城市还可以在公共场所提供更多座椅，以便体能较差的居民在出行途中休息。利用城市公共空间作为人们锻炼的场所，能够促进公平性，而不是让体育活动仅限于收费昂贵的私人健身房，这些费用往往会阻止较不富裕的人参与其中。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "G",
+    "correct": "impose",
+    "why": "空格处需要动词，与后面的 health costs 搭配。impose costs 是常见固定搭配，意为'施加代价'。句意为这些改进带来好处但也'施加'了健康代价，与前面 but also 形成转折，逻辑通顺。",
+    "traps": "foster 虽然也是动词，但意为'促进'，与 health costs 搭配语义不合理，不符合转折逻辑。deter 意为'阻止'，无法与 costs 直接搭配。",
+    "tip": "注意 impose + costs/burden 的固定搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "M",
+    "correct": "sprawl",
+    "why": "空格处需要名词，作 urban 的中心词并充当主语。urban sprawl（城市蔓延）是城市规划领域的核心术语，指城市向外无序扩展，导致更多驾车出行和体重增加，语义完全吻合。",
+    "traps": "correlation 虽是名词，但 urban correlation 不是合理术语搭配，且语义上无法'鼓励更多驾车'。longevity 语义不符。",
+    "tip": "识别城市规划专业术语 urban sprawl。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "correlation",
+    "why": "空格处需要名词，作主语，且由 this 修饰，指代前文城市蔓延与体重增加之间的关系。correlation 意为'相关性'，后接 suggests 表示'这种相关性表明……'，逻辑链完整。",
+    "traps": "equity 虽是名词，但意为'公平'，无法指代前文两个变量之间的关系。sprawl 已用于第27题且语义不符。",
+    "tip": "this + 抽象名词 常用于承上启下的总结。"
+   },
+   {
+    "number": 29,
+    "answer": "F",
+    "correct": "imperative",
+    "why": "空格处位于 it is ___ that 结构中，需要形容词作表语。imperative 意为'至关重要的、必要的'，it is imperative that... 是虚拟语气经典句型，表达'城市规划者必须牢记这一点'的强烈建议。",
+    "traps": "dense 虽是形容词，但意为'密集的'，放在 it is ___ that 结构中语义不通。",
+    "tip": "识别 it is imperative that... (should) do 虚拟语气句型。"
+   },
+   {
+    "number": 30,
+    "answer": "E",
+    "correct": "foster",
+    "why": "空格处需要动词原形（need to + 动词原形），与 standard public health practices 搭配。foster 意为'促进、推动'，表示城市需要继续推动标准公共卫生实践，语义恰当。",
+    "traps": "impose 虽是动词，但 impose practices 搭配不当，impose 后通常接 restrictions/costs/sanctions 等。deter 意为'阻止'，与语义方向相反。",
+    "tip": "foster 常与 practices/growth/development 搭配，表'培育、促进'。"
+   },
+   {
+    "number": 31,
+    "answer": "B",
+    "correct": "dense",
+    "why": "空格处需要形容词修饰 residential areas。dense 意为'密集的'，dense residential areas 指'人口密集的居民区'，限制重型卡车通过此类区域是标准的公共卫生措施，语义合理。",
+    "traps": "recreational 虽是形容词，但 recreational residential areas（休闲居民区）搭配不合常理，且 recreational 用于第33题更合适。",
+    "tip": "dense 修饰居民区，强调人口密度高，更需限制卡车通行。"
+   },
+   {
+    "number": 32,
+    "answer": "I",
+    "correct": "longevity",
+    "why": "空格处需要名词，作 of 的宾语。studies of longevity 意为'关于长寿的研究'，后文提到'人们在体育活动融入日常生活的环境中寿命最长'，与 longevity 完美呼应。",
+    "traps": "correlation 虽是名词，但 studies of correlation 过于笼统，且 correlation 已用于第28题。equity 意为'公平'，与后文'寿命最长'无直接关联。",
+    "tip": "根据后文 live the longest 回推，空格应填与寿命相关的词。"
+   },
+   {
+    "number": 33,
+    "answer": "K",
+    "correct": "recreational",
+    "why": "空格处需要形容词，与 spaces 搭配，且与前文 walkable spaces、bike lanes 并列。recreational spaces 意为'休闲空间'，三者构成鼓励体育活动的完整措施体系，逻辑连贯。",
+    "traps": "dense 虽是形容词，但 dense spaces 与'鼓励体育活动'的语境矛盾。其余形容词 imperative 语义不符。",
+    "tip": "并列结构中三个名词短语主题一致，都指向促进运动的城市空间。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "correct": "equity",
+    "why": "空格处需要名词，作 promotes 的宾语。equity 意为'公平'，后面 rather than 引出对比：利用公共空间锻炼促进公平，而非让运动局限于昂贵的私人健身房。公共 vs 私人、免费 vs 收费形成鲜明对比，equity 完美契合。",
+    "traps": "longevity 虽是名词，但此处重点不在长寿，而在公平获取运动机会。correlation 语义不符。",
+    "tip": "rather than 后的对比内容揭示了'公平'这一核心概念。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "correct": "deter",
+    "why": "空格处需要动词，位于 that 引导的定语从句中，主语为 fees。deter sb. from doing sth. 意为'阻止某人做某事'，表示昂贵的月费阻止较不富裕的人加入健身房，与前文 equity 的讨论形成因果链。",
+    "traps": "impose 虽是动词，但 impose sb. from doing sth. 不是合法搭配。foster 意为'促进'，语义方向相反。",
+    "tip": "识别 deter sb. from doing sth. 固定搭配是解题关键。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sprawl",
+    "cn": "n. 蔓延，无序扩展（尤指城市）"
+   },
+   {
+    "w": "correlation",
+    "cn": "n. 相关性，关联"
+   },
+   {
+    "w": "imperative",
+    "cn": "adj. 至关重要的，必要的；n. 紧迫的事"
+   },
+   {
+    "w": "foster",
+    "cn": "v. 促进，培养，推动"
+   },
+   {
+    "w": "impose",
+    "cn": "v. 施加，强加（impose costs/restrictions）"
+   },
+   {
+    "w": "deter",
+    "cn": "v. 阻止，威慑（deter sb. from doing sth.）"
+   },
+   {
+    "w": "equity",
+    "cn": "n. 公平，公正；（金融）股权"
+   },
+   {
+    "w": "longevity",
+    "cn": "n. 长寿，持久"
+   },
+   {
+    "w": "recreational",
+    "cn": "adj. 休闲的，娱乐的"
+   },
+   {
+    "w": "dense",
+    "cn": "adj. 密集的，浓密的；（人）迟钝的"
+   },
+   {
+    "w": "walkable",
+    "cn": "adj. 适于步行的，可步行到达的"
+   },
+   {
+    "w": "underway",
+    "cn": "adj./adv. 进行中的，在进行中"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性分类（名词/动词/形容词/副词）。",
+   "第二步：根据空格前后语法结构判断所需词性，缩小候选范围至2-3个词。",
+   "第三步：结合上下文语义和逻辑关系（因果、转折、并列）确定最佳答案。",
+   "第四步：注意固定搭配（如 impose costs、deter sb. from、it is imperative that），搭配优先于孤立词义。",
+   "第五步：填完后回读全文检查语法与语义一致性，确保每词只用一次。"
+  ]
+ }
+}

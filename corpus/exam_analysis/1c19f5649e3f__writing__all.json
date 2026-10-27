@@ -1,0 +1,251 @@
+{
+ "schemaVersion": 1,
+ "id": "1c19f5649e3f__writing__all",
+ "examId": "1c19f5649e3f",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2021 年考研英语真题",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  51,
+  52
+ ],
+ "generatedAt": "2026-10-27T08:45:59.166Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 96961,
+ "usage": {
+  "prompt_tokens": 731,
+  "completion_tokens": 1466,
+  "total_tokens": 2197,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 731,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1466,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 731,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：给一位刚毕业、打算来中国找工作的外国朋友写一封建议信，约100词，署名Li Ming。",
+    "outline": [
+     "第一段：寒暄祝贺毕业，表明写信目的——得知对方打算来华求职，愿提供建议。",
+     "第二段：给出2-3条具体建议，如学习中文、利用招聘平台、了解中国职场文化等，并简要说明理由。",
+     "第三段：表达祝愿和期待，礼貌收尾。"
+    ],
+    "sample": "Dear friend,\n\nCongratulations on your graduation! I am delighted to hear that you intend to pursue a career in China, and I would like to offer you some practical suggestions.\n\nFirst and foremost, I strongly recommend that you start learning basic Chinese, as language proficiency will significantly enhance your competitiveness in the job market. Additionally, you may register on mainstream Chinese recruitment platforms such as Zhaopin and Boss Zhipin, where numerous positions for international talents are available. Last but not least, it would be advisable to familiarize yourself with Chinese workplace culture and business etiquette beforehand, which will help you adapt more quickly.\n\nI sincerely hope these suggestions prove helpful. Please do not hesitate to contact me if you need further assistance. I look forward to seeing you in China soon!\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "pursue a career in",
+      "cn": "在……谋求职业发展；比find a job更正式地道"
+     },
+     {
+      "en": "I strongly recommend that you (should)...",
+      "cn": "我强烈建议你……；虚拟语气建议句型，阅卷加分"
+     },
+     {
+      "en": "language proficiency",
+      "cn": "语言能力/熟练程度；替代language ability更学术"
+     },
+     {
+      "en": "enhance your competitiveness",
+      "cn": "提升你的竞争力；常用于建议信、求职类话题"
+     },
+     {
+      "en": "mainstream recruitment platforms",
+      "cn": "主流招聘平台；体现对中国就业市场的了解"
+     },
+     {
+      "en": "familiarize yourself with",
+      "cn": "使自己熟悉……；替代get to know更正式"
+     },
+     {
+      "en": "business etiquette",
+      "cn": "商务礼仪；职场文化类话题高频词"
+     },
+     {
+      "en": "it would be advisable to",
+      "cn": "做……是明智的；委婉建议句型，语气得体"
+     },
+     {
+      "en": "please do not hesitate to contact me",
+      "cn": "请随时联系我；书信常用礼貌收尾语"
+     },
+     {
+      "en": "I look forward to seeing you",
+      "cn": "期待见到你；信件结尾常用表达，注意look forward to后接动名词"
+     }
+    ],
+    "pitfalls": [
+     "格式缺失：忘写Dear friend开头或Yours sincerely结尾，扣格式分",
+     "建议空泛：只说\"努力学习\"而无具体措施，内容分偏低",
+     "语气不当：对朋友使用过于生硬的命令句，应多用委婉建议句型",
+     "词数不足或严重超标：低于80词或超过130词均影响得分",
+     "署名错误：用了自己真名而非题目要求的Li Ming，违规扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "You should learn Chinese.",
+      "better": "I strongly recommend that you start learning basic Chinese.",
+      "note": "使用虚拟语气recommend that...展示语法功底，start learning比learn更具体"
+     },
+     {
+      "plain": "You can use Chinese job websites.",
+      "better": "You may register on mainstream Chinese recruitment platforms where numerous positions are available.",
+      "note": "用where引导定语从句增加句式复杂度，用词更专业"
+     },
+     {
+      "plain": "You need to know Chinese culture.",
+      "better": "It would be advisable to familiarize yourself with Chinese workplace culture and business etiquette beforehand.",
+      "note": "委婉句型+高级词汇familiarize/etiquette，语气更得体"
+     },
+     {
+      "plain": "I hope my advice is useful.",
+      "better": "I sincerely hope these suggestions prove helpful.",
+      "note": "prove用作系动词更地道，sincerely增强情感色彩"
+     },
+     {
+      "plain": "If you have questions, you can ask me.",
+      "better": "Please do not hesitate to contact me if you need further assistance.",
+      "note": "书信惯用礼貌表达，体现语域意识，阅卷印象分更高"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "看图作文：根据图片写一篇160-200词的短文，要求简要描述图片内容、阐释其深层寓意、并给出个人评论。",
+    "outline": [
+     "第一段：描述图片——一家人围坐在餐桌旁，每个人都低头沉浸于自己的手机，彼此之间毫无交流，画面形成鲜明反讽。",
+     "第二段：阐释寓意——科技在拉近人与远方的距离时，却在至亲之间筑起了无形的隔阂；虚拟社交正逐渐取代真实的情感纽带。",
+     "第三段：个人评论——呼吁在数字世界与现实沟通之间取得平衡，放下电子设备、珍惜与家人相处的时光，守护人际温情。"
+    ],
+    "sample": "As is vividly depicted in the picture, several family members are sitting around a dinner table, yet each of them is absorbed in their own mobile phone, completely ignoring one another. The scene, though seemingly ordinary, conveys a thought-provoking message about modern interpersonal relationships.\n\nThe picture is intended to reveal a prevalent social phenomenon: while technology has connected us to the wider world, it has simultaneously created invisible barriers between those closest to us. In an era dominated by smartphones and social media, many people find themselves communicating with distant acquaintances online while neglecting face-to-face interaction with family members sitting right beside them. This paradox reflects a fundamental shift in how we perceive and maintain relationships, where virtual connections increasingly replace genuine emotional bonds.\n\nFrom my perspective, we should strike a proper balance between the digital world and real-life communication. It is imperative that we consciously set aside our electronic devices during family gatherings and cherish the precious moments spent with our loved ones. Only by doing so can we preserve the warmth and intimacy that no technology could ever replicate.",
+    "phrases": [
+     {
+      "en": "be absorbed in",
+      "cn": "全神贯注于……；用于描述人沉迷某事的状态，比lost in更正式"
+     },
+     {
+      "en": "convey a thought-provoking message",
+      "cn": "传递一个发人深省的信息；图画作文第一段收尾的经典表达"
+     },
+     {
+      "en": "a prevalent social phenomenon",
+      "cn": "一种普遍的社会现象；用于第二段开头引出深层分析"
+     },
+     {
+      "en": "create invisible barriers",
+      "cn": "筑起无形的隔阂；形象化表达人际疏离，比cause problems更具画面感"
+     },
+     {
+      "en": "face-to-face interaction",
+      "cn": "面对面的交流互动；与虚拟社交形成对比的核心概念"
+     },
+     {
+      "en": "strike a proper balance between A and B",
+      "cn": "在A与B之间取得恰当的平衡；议论段提出建议时的高频句式"
+     },
+     {
+      "en": "It is imperative that...",
+      "cn": "……是至关重要的；虚拟语气句型，用于强调建议的紧迫性"
+     },
+     {
+      "en": "Only by doing so can we...",
+      "cn": "只有这样做我们才能……；倒装句式，适合放在结尾段加强语气"
+     },
+     {
+      "en": "genuine emotional bonds",
+      "cn": "真挚的情感纽带；比real feelings更书面、更有深度"
+     },
+     {
+      "en": "no technology could ever replicate",
+      "cn": "任何技术都无法复制的；结尾处升华主题的有力表达"
+     }
+    ],
+    "pitfalls": [
+     "第一段只描述不收束，缺少点题句导致段落散乱，应以一句话点出图片主题",
+     "第二段浮于表面，仅重复'手机不好'而不分析原因和本质，论证缺乏深度",
+     "字数不足160词或超过200词，阅卷时会被酌情扣分",
+     "通篇使用简单句，缺少定语从句、倒装、虚拟语气等高级句式，难以拿到高分",
+     "书写潦草或涂改过多，影响卷面整洁度，考研作文卷面印象分占比不可忽视"
+    ],
+    "upgrades": [
+     {
+      "plain": "People all play with their phones at the table.",
+      "better": "Each of them is absorbed in their own mobile phone, completely ignoring one another.",
+      "note": "用be absorbed in和现在分词短语作伴随状语，画面感和句式层次均大幅提升"
+     },
+     {
+      "plain": "Technology makes people far from each other.",
+      "better": "Technology has simultaneously created invisible barriers between those closest to us.",
+      "note": "用invisible barriers隐喻替代far from，closest形成反差，表达更深刻"
+     },
+     {
+      "plain": "We should put down our phones and talk to our family.",
+      "better": "It is imperative that we consciously set aside our electronic devices during family gatherings.",
+      "note": "虚拟语气+正式用词set aside替换put down，体现书面语水平和语法功底"
+     },
+     {
+      "plain": "If we do this, we can keep family love.",
+      "better": "Only by doing so can we preserve the warmth and intimacy that no technology could ever replicate.",
+      "note": "倒装句+定语从句双重加分，replicate一词精准且高级，结尾掷地有声"
+     },
+     {
+      "plain": "This is a common problem in society.",
+      "better": "This paradox reflects a fundamental shift in how we perceive and maintain relationships.",
+      "note": "paradox点出矛盾本质，fundamental shift深挖变化根源，分析力度远超泛泛而谈"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "I strongly recommend that you start learning basic Chinese, as language proficiency will significantly enhance your competitiveness in the job market. ——虚拟语气建议+as原因从句，一句展示两个语法亮点。",
+   "It would be advisable to familiarize yourself with Chinese workplace culture and business etiquette beforehand. ——委婉建议句型+高级词汇，语气得体且用词精准。",
+   "Please do not hesitate to contact me if you need further assistance. ——书信万能收尾金句，适用于各类建议信与推荐信。",
+   "Numerous positions for international talents are available on mainstream recruitment platforms. ——被动/倒装变体皆可，体现对中国就业市场的具体认知。",
+   "I look forward to seeing you in China soon! ——结尾期待句，简洁热情，注意look forward to后必须接动名词。",
+   "As is vividly depicted in the picture, several family members are sitting around a dinner table, yet each of them is absorbed in their own mobile phone. —— 经典看图作文开头句式，as引导非限制性定语从句+yet转折，一句话完成'描述+反差'双重功能。",
+   "While technology has connected us to the wider world, it has simultaneously created invisible barriers between those closest to us. —— while引导让步状语从句，connected与created对仗工整，wider world与closest to us形成精妙反差，堪称全文最佳论证句。",
+   "This paradox reflects a fundamental shift in how we perceive and maintain relationships, where virtual connections increasingly replace genuine emotional bonds. —— paradox一词精准概括矛盾现象，how引导宾语从句+where引导定语从句，长难句结构完整且逻辑清晰。",
+   "It is imperative that we consciously set aside our electronic devices during family gatherings and cherish the precious moments spent with our loved ones. —— 虚拟语气(imperative that)+过去分词短语作后置定语(moments spent with...)，兼顾语法难度与情感温度。",
+   "Only by doing so can we preserve the warmth and intimacy that no technology could ever replicate. —— Only引导的倒装句收束全文，replicate用词精准，that引导定语从句加强语气，适合作为压轴金句背诵。"
+  ]
+ },
+ "mergedFrom": [
+  "1c19f5649e3f__writing__51",
+  "1c19f5649e3f__writing__52"
+ ]
+}

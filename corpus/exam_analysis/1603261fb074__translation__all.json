@@ -1,0 +1,216 @@
+{
+ "schemaVersion": 1,
+ "id": "1603261fb074__translation__all",
+ "examId": "1603261fb074",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2017 年 6 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:14:03.407Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 28474,
+ "usage": {
+  "prompt_tokens": 806,
+  "completion_tokens": 2067,
+  "total_tokens": 2873,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 806,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2067,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 806,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "宋朝经济、科技与社会发展概述",
+  "reference": "The Song Dynasty, which started in 960, lasted until 1279. During this period, China's economy grew substantially, making it the most advanced economy in the world, with science, technology, philosophy, and mathematics all flourishing. China in the Song Dynasty was the first country in world history to issue paper money. The Song Dynasty was also the first to use gunpowder and invented movable-type printing. The population grew rapidly, and more and more people moved into cities, where there were bustling entertainment venues. Social life was rich and varied. People gathered together to view and trade precious works of art. The government system of the Song Dynasty was also advanced for its time. Government officials were all selected and appointed through competitive examinations.",
+  "sentences": [
+   {
+    "cn": "宋朝始于960年，一直延续到1279年。",
+    "en": "The Song Dynasty started in 960 and lasted until 1279.",
+    "structure": "简单句，两个并列谓语 started…and lasted… 共用主语",
+    "keys": [
+     "宋朝 the Song Dynasty",
+     "始于 started in / began in",
+     "延续到 lasted until / continued until"
+    ]
+   },
+   {
+    "cn": "这一时期，中国经济大幅增长，成为世界上最先进的经济体，科学、技术、哲学和数学蓬勃发展。",
+    "en": "During this period, China's economy grew substantially, making it the most advanced economy in the world, with science, technology, philosophy, and mathematics all flourishing.",
+    "structure": "时间状语 + 主句 + 现在分词短语作结果状语 + with 复合结构表伴随",
+    "keys": [
+     "大幅增长 grew substantially / increased significantly",
+     "最先进的经济体 the most advanced economy",
+     "蓬勃发展 flourishing / thriving"
+    ]
+   },
+   {
+    "cn": "宋代中国是世界历史上首先发行纸币的国家。",
+    "en": "China in the Song Dynasty was the first country in world history to issue paper money.",
+    "structure": "主系表结构，the first … to do 不定式作后置定语",
+    "keys": [
+     "发行纸币 issue paper money",
+     "世界历史上 in world history"
+    ]
+   },
+   {
+    "cn": "宋朝还最早使用火药并发明了活字印刷。",
+    "en": "The Song Dynasty was also the first to use gunpowder and invented movable-type printing.",
+    "structure": "并列谓语结构，was the first to do … and invented …",
+    "keys": [
+     "火药 gunpowder",
+     "活字印刷 movable-type printing"
+    ]
+   },
+   {
+    "cn": "人口增长迅速，越来越多的人住进城市，那里有热闹的娱乐场所。",
+    "en": "The population grew rapidly, and more and more people moved into cities, where there were bustling entertainment venues.",
+    "structure": "并列句 + where 引导非限制性定语从句修饰 cities",
+    "keys": [
+     "人口增长迅速 the population grew rapidly",
+     "热闹的娱乐场所 bustling entertainment venues"
+    ]
+   },
+   {
+    "cn": "社会生活多种多样。",
+    "en": "Social life was rich and varied.",
+    "structure": "主系表结构，形容词并列作表语",
+    "keys": [
+     "多种多样 rich and varied / diverse and colorful"
+    ]
+   },
+   {
+    "cn": "人们聚集在一起观看和交易珍贵艺术品。",
+    "en": "People gathered together to view and trade precious works of art.",
+    "structure": "主谓结构 + 不定式短语作目的状语",
+    "keys": [
+     "珍贵艺术品 precious works of art",
+     "交易 trade"
+    ]
+   },
+   {
+    "cn": "宋朝的政府体制在当时也是先进的。",
+    "en": "The government system of the Song Dynasty was also advanced for its time.",
+    "structure": "主系表结构，for its time 作状语表时间参照",
+    "keys": [
+     "政府体制 government system",
+     "在当时 for its time / at that time"
+    ]
+   },
+   {
+    "cn": "政府官员均通过竞争性考试选拔任用。",
+    "en": "Government officials were all selected and appointed through competitive examinations.",
+    "structure": "被动语态，through 引导方式状语",
+    "keys": [
+     "竞争性考试 competitive examinations",
+     "选拔任用 selected and appointed"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "宋朝",
+    "en": "the Song Dynasty"
+   },
+   {
+    "cn": "纸币",
+    "en": "paper money / paper currency"
+   },
+   {
+    "cn": "火药",
+    "en": "gunpowder"
+   },
+   {
+    "cn": "活字印刷",
+    "en": "movable-type printing"
+   },
+   {
+    "cn": "娱乐场所",
+    "en": "entertainment venues / places of entertainment"
+   },
+   {
+    "cn": "政府体制",
+    "en": "government system / governmental system"
+   },
+   {
+    "cn": "竞争性考试",
+    "en": "competitive examinations"
+   },
+   {
+    "cn": "珍贵艺术品",
+    "en": "precious works of art / valuable artworks"
+   },
+   {
+    "cn": "经济体",
+    "en": "economy"
+   }
+  ],
+  "pitfalls": [
+   "the Song Dynasty 中 Dynasty 首字母须大写，且第一次出现常加 the",
+   "issue paper money 中 issue 易误写为 release 或 publish，语境不当",
+   "movable-type 中间须加连字符，漏写连字符会扣分",
+   "was the first to use 结构中 to 不可省略，否则语法错误",
+   "selected and appointed 须用被动语态，主语是官员而非政府"
+  ],
+  "upgrades": [
+   {
+    "plain": "China's economy grew a lot",
+    "better": "China's economy grew substantially / expanded dramatically",
+    "note": "substantially 和 dramatically 更书面、更精确地传达'大幅'之意"
+   },
+   {
+    "plain": "science and technology developed quickly",
+    "better": "science, technology, philosophy, and mathematics all flourished",
+    "note": "flourish 一词传达'蓬勃发展'的生机感，比 develop quickly 更地道"
+   },
+   {
+    "plain": "there were lively entertainment places",
+    "better": "there were bustling entertainment venues",
+    "note": "bustling 比 lively 更生动，venues 比 places 更正式精准"
+   },
+   {
+    "plain": "Social life had many kinds",
+    "better": "Social life was rich and varied",
+    "note": "rich and varied 是固定搭配，比 many kinds 更符合英文表达习惯"
+   },
+   {
+    "plain": "was also advanced at that time",
+    "better": "was also advanced for its time",
+    "note": "for its time 是地道英文惯用表达，含'以当时标准衡量'之意"
+   }
+  ]
+ }
+}

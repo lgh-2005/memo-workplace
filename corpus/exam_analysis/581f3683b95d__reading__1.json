@@ -1,0 +1,164 @@
+{
+ "schemaVersion": 1,
+ "id": "581f3683b95d__reading__1",
+ "examId": "581f3683b95d",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 12 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T04:41:52.009Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 129352,
+ "usage": {
+  "prompt_tokens": 1530,
+  "completion_tokens": 11746,
+  "total_tokens": 13276,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9279
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1530
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "医生应权衡医疗成本",
+  "gist": "美国有影响力的医疗组织建议医生在决定治疗方案时不仅考虑疗效，还要考虑费用，这标志着医生角色从只关心个体患者转向参与医疗支出调控。新指南可能改变用药选择并引发争议，部分医生担心失去患者信任，也有分析者认为这反映社会未能解决成本问题。",
+  "structure": [
+   "第1-2段：提出医学界建议并点明医生角色开始转变",
+   "第3-4段：说明新指南可能带来的具体影响及争议",
+   "第5段：揭示医生双重角色可能导致患者信任丧失",
+   "第6-7段：以眼病药物为例展示成本与安全的权衡",
+   "第8-9段：呈现医生伦理立场与专家不同解读"
+  ],
+  "difficulty": "中等",
+  "translation": "美国一些最具影响力的医疗组织表示，他们再也无法忽视医疗费用的不断上涨，因此建议医生在决定患者治疗方案时，不仅要考虑疗效，还要权衡成本。\n\n这一转变在医学界内部已引发争议，但在外界很少被注意到，它表明医生开始重新定义自身角色：从只关注单个患者，转为对医疗资金的使用施加影响。\n\n从实际层面看，正在制定的新指南可能导致医生出于成本原因选择一种药物而非另一种，甚至认定某种治疗（例如临终治疗）过于昂贵。在极端情况下，一些批评者表示，基于成本作出治疗决定是一种配给形式。\n\n传统上，指南对医疗实践有着重要影响；最新的指南预计会让医生更加意识到自身决策的经济后果，尽管医生并无义务遵守这些指南。医学学会的指南也会被保险公司用来帮助确定报销政策。\n\n一些医生认为，同时充当患者护理者和财务监督者可能存在冲突。波士顿一家医院的马丁·塞缪尔斯医生说：“社会上应当有力量去关心预算，但它们不应同时以医生的身份运作。”他说，如果医生告诉患者“我不打算做我认为对你最有利的事，因为我认为这对马萨诸塞州的医疗预算不利”，医生就可能失去患者的信任。\n\n医生可能面临一些严峻的权衡。例如，研究表明，两种药物治疗黄斑变性这种眼病的效果大致相当。但一种每剂50美元，另一种接近2000美元。如果所有人都使用较便宜的阿瓦斯汀而非较贵的雷珠单抗，美国联邦医疗保险每年可节省数亿美元。\n\n但美国食品和药物管理局尚未批准阿瓦斯汀用于眼部，用它替代雷珠单抗可能会带来额外的、虽然轻微的安全风险。医生在决定使用哪种药物时，是否应考虑联邦医疗保险的预算？\n\n“我认为从道德层面讲，我们只担心面前的患者，而不是试图为保险业或整个社会省钱。”唐纳德·詹森医生说。\n\n尽管如此，一些分析人士表示，医生在成本分析中能够发挥作用，因为没有多少其他人在这么做。丹尼尔·萨尔马西医生说：“从某些方面来说，这代表着更广泛的社会未能承担起这个问题。”",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Saying they can no longer ignore the rising price of health care, some of the most influential medical groups in the nation are recommending that doctors weigh the costs, not just the effectiveness of treatments, as they make decisions about patient care.",
+    "why": "文章首段明确指出，美国最具影响力的一些医疗团体建议医生在制定患者护理决策时，不仅要考虑疗效，还要权衡成本。选项C“在制定治疗方案时考虑费用”是对原文 weigh the costs 和 make decisions about patient care 的同义转写，属于直接对应。",
+    "traps": "A项把“考虑成本”泛化为“反思应承担的责任”，属于过度概括；B项与原文相反，原文说 not just the effectiveness，并非要更关注疗效；D项中 health care cuts 无中生有，原文只提到医疗费用上升，未提及预算削减。",
+    "tip": "细节题要抓准首段核心建议动词及其宾语，警惕近义替换与无中生有。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "The shift, little noticed outside the medical establishment but already controversial inside it, suggests that doctors are starting to redefine their roles, from being concerned exclusively about individual patients to exerting influence on how healthcare dollars are spent.",
+    "why": "第一段新建议说医生不应只看疗效，暗示过去主要关注治疗的有效性；第二段也指出医生过去“只关心单个患者”，即从个体治疗效果出发制定方案，而非费用。选项B“医疗处置的效果”准确概括了过去关注点。",
+    "traps": "A项“具体用哪种药”过于狭窄，原文未限定具体药名；C项“职业发展”原文未提及，属无中生有；D项“患者信任”是医生担心新做法可能失去的东西，并非过去的关注点，属于张冠李戴。",
+    "tip": "推断过去情况时，要借助新旧对比或 not just 等否定结构提取隐含信息。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The shift, little noticed outside the medical establishment but already controversial inside it, suggests that doctors are starting to redefine their roles, from being concerned exclusively about individual patients to exerting influence on how healthcare dollars are spent.",
+    "why": "第二段明确指出这一转变表明医生开始重新定义自身角色，从只关注个体患者转向对医疗花费施加影响；新指南是这一转变的具体体现，因而会推动角色重新定位。虽然第三段提到具体换药，但题干问的是宏观走向，故A最贴合。",
+    "traps": "B项“过度使用更无效的药物”无中生有，原文只谈及因成本换药，且例子中药效相当；C项“医生与患者冲突”原文未提，争议主要在医学界内部；D项“延长病人痛苦”无从推出。",
+    "tip": "选项涉及具体事例时，应回归段落核心观点，选择概括性更强的答案。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "He said doctors risked losing the trust of patients if they told patients, \"I'm not going to do what I think is best for you because I think it's bad for the healthcare budget in Massachusetts.\"",
+    "why": "第五段指出医生兼具患者护理者和财务监督者两种角色会产生潜在冲突，塞缪尔斯医生进一步说明，如果医生因预算原因不为患者提供最好治疗，就会冒失去患者信任的风险。选项D中的 lose the respect 与原文 losing the trust 近义替换。",
+    "traps": "A项“利益冲突”有干扰，但题干问的是具体风险，而原文风险是失去患者信任，不是笼统的冲突；B项“分散注意力”未提；C项“使用疗效较差的药物”与原文相反，原文提到便宜药同样有效。",
+    "tip": "遇到宽泛的同义干扰时，应优先选择更具体、与原文结果直接对应的选项。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Still, some analysts say that there's a role for doctors to play in cost analysis because not many others are doing so. \"In some ways,\" said Dr. Daniel Sulmasy, \"it represents a failure of wider society to take up the issue.\"",
+    "why": "末段分析人士认为医生在成本分析中有角色，因为其他社会力量没有处理；萨尔马西医生进一步指出，这代表更广泛社会未能承担起这一问题。选项C“它源于社会未能解决该问题”直接对应 failure of wider society to take up the issue。",
+    "traps": "A项“增加工作负担”原文未提；B项“为全社会省钱”是詹森医生反对的立场，且不是这些专家解释的原因；D项“提高医生社会责任意识”偷换概念，原文谈的是成本分析角色，并非责任意识。",
+    "tip": "抓引语中表原因的 failure to do 等结构，可快速锁定因果类答案。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "influential",
+    "cn": "adj. 有影响力的"
+   },
+   {
+    "w": "weigh",
+    "cn": "v. 权衡，认真考虑"
+   },
+   {
+    "w": "exclusively",
+    "cn": "adv. 仅仅，专门地"
+   },
+   {
+    "w": "exert",
+    "cn": "v. 施加，运用"
+   },
+   {
+    "w": "rationing",
+    "cn": "n. 配给，定量供应"
+   },
+   {
+    "w": "reimbursement",
+    "cn": "n. 报销，偿付"
+   },
+   {
+    "w": "overseer",
+    "cn": "n. 监督者"
+   },
+   {
+    "w": "grim",
+    "cn": "adj. 严峻的，严酷的"
+   },
+   {
+    "w": "macular degeneration",
+    "cn": "n. 黄斑变性"
+   },
+   {
+    "w": "ethically",
+    "cn": "adv. 在道德上"
+   },
+   {
+    "w": "controversial",
+    "cn": "adj. 有争议的"
+   },
+   {
+    "w": "take up",
+    "cn": "v. 承担；着手处理"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Saying they can no longer ignore the rising price of health care, some of the most influential medical groups in the nation are recommending that doctors weigh the costs, not just the effectiveness of treatments, as they make decisions about patient care.",
+    "cn": "美国一些最具影响力的医疗组织表示，他们再也无法忽视医疗费用的不断上涨，因此建议医生在决定患者治疗方案时，不仅要考虑疗效，还要权衡成本。",
+    "note": "现在分词短语 Saying... 作状语，主句为 some... are recommending that...，that 从句中 as 引导时间状语从句。"
+   },
+   {
+    "en": "The shift, little noticed outside the medical establishment but already controversial inside it, suggests that doctors are starting to redefine their roles, from being concerned exclusively about individual patients to exerting influence on how healthcare dollars are spent.",
+    "cn": "这一转变在医学界内部已引发争议，但在外界很少被注意到，它表明医生开始重新定义自身角色：从只关注单个患者，转为对医疗资金的使用施加影响。",
+    "note": "主语 The shift 后插入 little noticed... 作定语，主句 suggests that...，from... to... 说明角色转变的具体方向。"
+   },
+   {
+    "en": "In practical terms, the new guidelines being developed could result in doctors choosing one drug over another for cost reasons or even deciding that a particular treatment—at the end of life, for example—is too expensive.",
+    "cn": "从实际层面看，正在制定的新指南可能导致医生出于成本原因选择一种药物而非另一种，甚至认定某种治疗（例如临终治疗）过于昂贵。",
+    "note": "being developed 作后置定语修饰 guidelines；result in 后接两个并列的动名词复合结构 doctors choosing... or even deciding that...。"
+   }
+  ]
+ }
+}

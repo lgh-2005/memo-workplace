@@ -1,0 +1,255 @@
+{
+ "schemaVersion": 1,
+ "id": "470a63948e02__listening__all",
+ "examId": "470a63948e02",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2023 年 6 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:46:48.993Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52314,
+ "usage": {
+  "prompt_tokens": 2276,
+  "completion_tokens": 2523,
+  "total_tokens": 4799,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2276,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2523,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2276,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于选项文本的语言特征与正确答案进行推断分析，不涉及对录音内容的还原或编造。",
+  "overview": "本场听力共7段，前2段（Q1-4、Q5-8）为长对话，各含4题；后5段（Q9-11、Q12-15、Q16-18、Q19-21、Q22-25）为短文或讲座，各含3-4题。由选项措辞推测：话题涵盖居住体验与室友情感、教育改革与学科经费、创造力与放松思维、美国西部邮政历史、焦虑与记忆关系、消费者行为与营销策略、友谊对职场的影响等。",
+  "strategy": [
+   "预读选项圈出关键名词与形容词，快速锁定每题话题方向",
+   "当四个选项结构平行（如都以It开头），重点区分修饰语或宾语差异",
+   "对话题优先关注转折词 but/however/actually 后的内容，答案常在转折后",
+   "短文题注意首尾句与并列举例处，结论性语句常对应正确选项",
+   "选项中含绝对词 never/always/all 的通常为干扰项，需格外警惕",
+   "边听边用缩写做笔记，尤其记录数字、人名、因果关系词"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "搬入新公寓后的居住感受与对旧宿舍室友的怀念",
+    "optionSignals": "Q1四个选项均为 It was + 形容词对，描述空间特征，问的是对某处的印象；Q2四个选项均以 She 开头，描述态度/情感变化；Q3选项描述男方感受；Q4选项均为动词原形短语，典型的'建议/打算做什么'问法。",
+    "tips": [
+     "Q1中 spacious/warm/shabby/tiny 是两两对立的形容词对，听到情感色彩即可快速定位",
+     "Q2的 no longer hates 与 misses 语义方向相反，注意区分怀念与释然",
+     "Q4选项都是祈使/将来动作，听末尾处的建议或邀请句型如 Let's / Why don't we"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "教育体制改革、学科经费分配与大学培养目标",
+    "optionSignals": "Q5选项描述男方身份（literary critic/hosts program/published book），问'此人是谁或做了什么'；Q6-7涉及教育制度的不足与经费优先级；Q8四个选项均为动词原形+宾语，问教育的终极目的。",
+    "tips": [
+     "Q5中 published a book 是最具新闻性的事件选项，常在开头介绍嘉宾时出现",
+     "Q7四个选项各提一个学科，听清具体学科名与 funding/budget 搭配即可判断",
+     "Q8选项语义层层递进，cultivate better citizens 属价值观层面，常作总结性答案"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "创造力与日常走神、冥想放松之间的关系",
+    "optionSignals": "Q9选项用 common/rarely/seldom/alone 描述某现象的频率或场景；Q10-11都涉及思维方式，如 contemplation/creativity/relaxation/fantasizing，问创造性人群的特征或最佳思维时机。",
+    "tips": [
+     "Q9中 common 与 rarely/seldom 直接对立，二选一时注意说话者语气是肯定还是否定",
+     "Q11中 fantasizing 与 reflecting 容易混淆，但 reflecting during relaxation 兼具'放松+思考'双要素，更符合主题"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "美国西部邮政服务的历史作用与研究方法",
+    "optionSignals": "Q12四选项描述某地历史特征（post offices/gold/crops/campuses），问背景事实；Q13问邮政系统的意义；Q14问运营方式（private wagons/postmasters）；Q15问研究者的方法（data science/maps/books）。",
+    "tips": [
+     "Q12-13涉及历史细节，选项中 Native Americans、federal government、gold seekers 是典型美国西部史关键词，注意听与 postal service 搭配的对象",
+     "Q15的 data science 与 interactive maps 都是现代研究手段，听到方法论相关表述时快速对应"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "焦虑水平与记忆能力之间的关联实验",
+    "optionSignals": "Q16四选项都描述记忆规律的一般性结论，含 anxiety/memory/impression 等关键词；Q17描述实验步骤（classified/showed photos/measured/tested）；Q18为实验结论或启示，含 extreme levels/adversely affect 等学术措辞。",
+    "tips": [
+     "Q16正确项含 higher levels of anxiety + improve memory，注意'适度焦虑有益'这一反直觉结论在听力中常作考点",
+     "Q17四个选项描述不同实验操作，听动词搭配如 measured/classified 即可快速匹配",
+     "Q18中 extreme 表极端情况，结合 adversely affect 构成转折，常出现在文末总结处"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "现代消费者行为特征与企业营销应对策略",
+    "optionSignals": "Q19选项描述消费者习惯（compare/postings/patience/instantaneous responses）；Q20选项为动名词短语，典型的策略/方法题；Q21选项均为动词原形，问企业应采取的行动。",
+    "tips": [
+     "Q19中 instantaneous responses 含时间紧迫感，与当代数字消费场景高度吻合",
+     "Q20中 speaking to emotions 是营销领域常见理念，注意区分情感诉求与理性诉求",
+     "Q21中 keep up with 表'跟上'，在科技话题中属高频搭配，听到 technology 相关句时注意"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "友谊对职场表现、自尊及工作满意度的积极影响",
+    "optionSignals": "Q22选项描述友谊与工作的关系，friendship/work 反复出现；Q23问研究主题（self-esteem/supportive friends/mental well-being）；Q24描述朋友的具体作用；Q25选项均为动词原形，问企业或管理者的建议措施。",
+    "tips": [
+     "Q22中 benefit 一词直接点明因果方向，friendships benefit work 即'友谊有益于工作'",
+     "Q24中 job satisfaction 是组织行为学核心概念，若听到 satisfied/fulfillment 等近义词可快速匹配",
+     "Q25中 flexible work schedule 与 organize activities 都涉及管理措施，听清主语是 employer 还是 employee"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "tranquil",
+    "cn": "安静的，宁谧的"
+   },
+   {
+    "w": "shabby",
+    "cn": "破旧的，简陋的"
+   },
+   {
+    "w": "contemplation",
+    "cn": "沉思，冥想"
+   },
+   {
+    "w": "ingenious",
+    "cn": "精巧的，有独创性的"
+   },
+   {
+    "w": "subsidize",
+    "cn": "资助，补贴"
+   },
+   {
+    "w": "instantaneous",
+    "cn": "即时的，瞬间的"
+   },
+   {
+    "w": "adversely",
+    "cn": "不利地，有害地"
+   },
+   {
+    "w": "cognitive",
+    "cn": "认知的"
+   },
+   {
+    "w": "self-esteem",
+    "cn": "自尊，自我价值感"
+   },
+   {
+    "w": "prioritize",
+    "cn": "优先处理，给予优先权"
+   },
+   {
+    "w": "commission",
+    "cn": "委托，委派"
+   },
+   {
+    "w": "irritating",
+    "cn": "令人恼怒的，烦人的"
+   },
+   {
+    "w": "correlation",
+    "cn": "相关性，关联"
+   }
+  ]
+ }
+}

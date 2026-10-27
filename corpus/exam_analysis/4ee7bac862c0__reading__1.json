@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "4ee7bac862c0__reading__1",
+ "examId": "4ee7bac862c0",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 12 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:06:23.170Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61349,
+ "usage": {
+  "prompt_tokens": 1834,
+  "completion_tokens": 3918,
+  "total_tokens": 5752,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1834,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3918,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1834,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "巴黎气候协定的公平性问题",
+  "gist": "文章围绕巴黎气候协定展开批评性分析，指出发达国家是气候\"搭便车者\"，排放温室气体最多却承受代价最小；而气候脆弱国家是\"被迫搭车者\"，排放极少却深受其害。作者认为该协定在气候公正方面细节模糊，资金来源不明，呼吁尽快落实协定中的政策以帮助脆弱国家。",
+  "structure": [
+   "第1-2段：引出巴黎协定背景，揭示排放与受害的不公正现象",
+   "第3-4段：以\"搭便车者\"与\"被迫搭车者\"类比阐释气候不公",
+   "第5-7段：指出协定在气候公正、资金来源方面的不足",
+   "第8-9段：呼吁紧急落实政策，敦促高排放国领导人承担责任"
+  ],
+  "difficulty": "中等",
+  "translation": "去年12月最终达成的巴黎气候协定开启了气候行动的新时代。世界各国首次一致同意将全球升温幅度控制在2℃以内。\n\n这对气候脆弱国家至关重要。不到4%的国家制造了全球一半以上的温室气体排放。在发表于《自然·科学报告》上的一项研究中，我们揭示了这种不公正的深层程度。\n\n澳大利亚、美国、加拿大和欧洲国家等发达国家本质上是气候\"搭便车者\"：通过大量排放温室气体制造了大部分问题，却几乎不承担气候变化对粮食和水资源等方面造成影响的代价。换言之，少数国家从化石燃料消费中获益巨大，同时却不成比例地加重了全球气候变化的负担。\n\n另一方面，许多\"被迫搭车者\"尽管几乎没有造成这一问题，却正在承受气候变化的影响。世界上最脆弱的气候国家——其中大多数是非洲国家或小岛屿国家——排放量极少。这就好比一个不吸烟的人因二手烟而患上癌症，而大量吸烟者却幸运地拥有健康的身体。\n\n巴黎协定被广泛誉为应对气候变化的积极一步，尽管其在\"气候公正\"方面的细节只能说是粗略的。\n\n将全球升温幅度控制在\"远低于\"2℃的目标值得称赞，但各国在巴黎谈判前提交的减排承诺很难实现这一目标。\n\n已有超过1000亿美元的资金被摆上台面，用于支持发展中国家减少排放。然而，该协定规定发达国家和发展中国家在减排责任上不作正式区分，实际上忽视了历史排放问题。关于谁将提供这些资金，或者更重要的是谁负责筹措资金，协定也几乎没有细节说明。确保这些资金到位，并明确筹资责任方，对气候脆弱国家的未来也至关重要。\n\n世界上最脆弱的气候国家对造成这一全球性疾病几乎没有贡献，却承受着最大的痛苦。如果我们要在实现国家减排目标的同时帮助最脆弱的国家适应气候变化，就必须紧急地、切实地推动落实协定中列出的各项政策。\n\n而高排放国家的当代领导人显然要自己决定，他们是想被后人铭记为气候变化的暴君，还是先驱者。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "the details on addressing \"climate justice\" can be best described as sketchy.",
+    "why": "作者全文论述的核心是气候不公正：少数发达国家大量排放却不承担后果，而气候脆弱国家排放极少却深受其害。作者批评巴黎协定在\"气候公正\"方面细节粗略（sketchy），且协定不区分发达与发展中国家的减排责任、资金来源不明，这些都说明协定对气候脆弱国家不公平。A项准确概括了作者的批评立场。",
+    "traps": "B项\"仅以控温2℃为目标\"属于缩小范围，作者批评的不是目标本身而是整体公平性；C项\"仅有利于不到4%的国家\"张冠李戴，原文是说不到4%的国家造成一半以上排放，并非说协定只惠及它们；D项\"让发达国家独自承担责任\"与原文相反，作者批评的恰恰是协定没有让发达国家承担应有的责任。",
+    "tip": "态度题需通盘把握全文论点，不要被局部信息误导。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "causing the majority of the problems through high greenhouse gas emissions, while incurring few of the costs such as climate change's impact on food and water.",
+    "why": "原文明确指出发达国家是气候\"搭便车者\"，因为它们通过高排放制造了大部分问题，却几乎不承受代价（incurring few of the costs）。C项\"它们几乎不为自己造成的问题付出代价\"是对原文的精准改写，'hardly pay anything'对应'incurring few of the costs'，'problems they have caused'对应'causing the majority of the problems'。",
+    "traps": "A项\"不用担心消耗的食物和水\"曲解原文，原文是说它们较少受到气候变化对粮食和水的影响，而非不担心消耗；B项\"更有能力应对气候变化\"属于无中生有，原文未提及应对能力；D项\"免受温室效应影响\"过于绝对，原文只说承受代价较少，并非完全免受影响。",
+    "tip": "注意原文中'free-rider'后冒号引出的解释即为答案线索。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "This is much like a non-smoker getting cancer from second-hand smoke, while the heavy smoker is fortunate enough to smoke in good health.",
+    "why": "该类比紧跟在对\"被迫搭车者\"的描述之后：这些国家几乎没有造成排放问题，却饱受气候变化之苦。二手烟类比的核心在于\"承受非自己造成的后果\"——不吸烟者因他人吸烟而得癌症。C项\"必须承担他们不负责任的后果\"完美对应这一逻辑。",
+    "traps": "A项\"对公共健康问题责任小\"偏离重点，类比强调的是承受后果而非责任大小；B项\"容易受不健康环境条件影响\"只说了脆弱性，未体现\"为他人过错买单\"的核心含义；D项\"未意识到潜在风险\"属于无中生有，原文未涉及是否意识到风险。",
+    "tip": "例证题需回归论点，理解类比的核心逻辑而非表面信息。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "There is also very little detail on who will provide the funds or, importantly, who is responsible for their provision.",
+    "why": "原文明确指出关于谁来提供这笔资金、谁负责筹措资金，协定几乎没有给出细节（very little detail）。B项\"资金来源尚无最终协议\"是对原文'who will provide the funds'缺乏细节这一信息的准确概括，'no final agreement on where it will come from'对应'very little detail on who will provide the funds'。",
+    "traps": "A项\"将激励所有国家减排\"属于无中生有，原文未提及激励效果；C项\"未说明资金如何使用\"偷换概念，原文强调的是资金来源不明而非用途不明；D项\"将有效减少全球温室气体排放\"过度推断，原文并未对减排效果作出肯定判断。",
+    "tip": "对比选项时注意区分\"钱从哪来\"和\"钱怎么花\"的区别。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "There must urgently be a meaningful mobilisation of the policies outlined in the agreement if we are to achieve national emissions reductions while helping the most vulnerable countries adapt to climate change.",
+    "why": "原文倒数第二段明确呼吁\"必须紧急地、切实地推动落实协定中列出的政策\"（a meaningful mobilisation of the policies outlined in the agreement）。D项\"立即将协定中的政策付诸实施\"是对原文的准确概括，'putting in effect'对应'mobilisation'，'the policies in the agreement'对应'the policies outlined in the agreement'，'at once'对应'urgently'。",
+    "traps": "A项\"鼓励高排放国家带头\"虽然最后一段提到高排放国领导人，但那是呼吁而非具体紧急行动；B项\"呼吁相关国家共同努力\"过于笼统，原文具体指向落实政策；C项\"推动现任世界领导人达成共识\"偷换概念，协定已达成，问题在于落实而非再达成共识。",
+    "tip": "关注题干中的'urgent action'，在原文找对应的'urgently'即可快速定位。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "heralded",
+    "cn": "v. 预示，宣告（某事的来临）"
+   },
+   {
+    "w": "vulnerable",
+    "cn": "adj. 脆弱的，易受伤害的"
+   },
+   {
+    "w": "incurring",
+    "cn": "v. 招致，引发（不好的后果）"
+   },
+   {
+    "w": "disproportionately",
+    "cn": "adv. 不成比例地，不相称地"
+   },
+   {
+    "w": "scarcely",
+    "cn": "adv. 几乎不，勉强"
+   },
+   {
+    "w": "sketchy",
+    "cn": "adj. 粗略的，不完整的"
+   },
+   {
+    "w": "commendable",
+    "cn": "adj. 值得赞扬的，令人称许的"
+   },
+   {
+    "w": "pledges",
+    "cn": "n. 承诺，保证"
+   },
+   {
+    "w": "mobilisation",
+    "cn": "n. 动员，调动"
+   },
+   {
+    "w": "provision",
+    "cn": "n. 提供，供给；条款"
+   },
+   {
+    "w": "tyrants",
+    "cn": "n. 暴君，专制者"
+   },
+   {
+    "w": "pioneers",
+    "cn": "n. 先驱者，开拓者"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Developed nations such as Australia, the United States, Canada, and European countries are essentially climate \"free-riders\": causing the majority of the problems through high greenhouse gas emissions, while incurring few of the costs such as climate change's impact on food and water.",
+    "cn": "澳大利亚、美国、加拿大和欧洲国家等发达国家本质上是气候\"搭便车者\"：通过大量排放温室气体制造了大部分问题，却几乎不承担气候变化对粮食和水资源等方面造成影响的代价。",
+    "note": "冒号后用现在分词短语causing...和while incurring...并列，解释free-riders的含义；while表转折对比。"
+   },
+   {
+    "en": "However, the agreement specifies that there is no formal distinction between developed and developing nations in their responsibility to cut emissions, effectively ignoring historical emissions.",
+    "cn": "然而，该协定规定发达国家和发展中国家在减排责任上不作正式区分，实际上忽视了历史排放问题。",
+    "note": "that引导宾语从句；in their responsibility为介词短语修饰distinction；effectively ignoring为现在分词短语作结果状语。"
+   },
+   {
+    "en": "There must urgently be a meaningful mobilisation of the policies outlined in the agreement if we are to achieve national emissions reductions while helping the most vulnerable countries adapt to climate change.",
+    "cn": "如果我们要在实现国家减排目标的同时帮助最脆弱的国家适应气候变化，就必须紧急地、切实地推动落实协定中列出的各项政策。",
+    "note": "主句为there be结构；outlined in the agreement为过去分词短语后置修饰policies；if引导条件状语从句，be to do表目的/意图；while helping为伴随状语。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "schemaVersion": 1,
+ "id": "e11c5b582c60__listening__all",
+ "examId": "e11c5b582c60",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2015 年 6 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T04:41:05.726Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 70085,
+ "usage": {
+  "prompt_tokens": 2040,
+  "completion_tokens": 6788,
+  "total_tokens": 8828,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5118
+  },
+  "prompt_cache_hit_tokens": 256,
+  "prompt_cache_miss_tokens": 1784
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力音频及原文，以下解析仅基于题目选项的语言特征与正确答案进行分析，不涉及具体录音内容。",
+  "overview": "本场听力共25题，分为7段材料：前两段为对话（第1段1-4题谈左手用品商店，第2段5-8题谈促销活动与商务磋商），后五段为短文/讲座（第3段9-12题谈实验动物与矛盾态度，第4段13-15题谈城市居民与吸引力因素，第5段16-18题谈营养学与维生素历史，第6段19-22题谈婴儿语言发展，第7段23-25题谈电影工业历史）。话题由选项措辞推测，具体录音内容未知。",
+  "strategy": [
+   "预读选项，圈出关键词，预测问题类型和话题，听时锁定相关信息。",
+   "注意转折词（but, however, actually）后的内容，常为考点。",
+   "听到与选项同义替换的表达要高度警觉，答案往往在这里。",
+   "对于数字、时间、地点等信息做简要笔记，便于排除干扰项。",
+   "主旨题注意开头和结尾，细节题注意因果、目的、比较关系。",
+   "掌握常见态度词，如neutral, critical, positive等，以便快速判断。"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "左手用品商店经营与市场",
+    "optionSignals": "第1题选项均为动名词短语，可能问职业或行为；第2题含数量比例和产地细节；第3题含时间对比和比较级；第4题涉及销售渠道，选项中“only”“throughout”等限定词需注意。",
+    "tips": [
+     "听对话时记录关于产品来源、市场变化和销售方式的细节，注意比较级与限定词。",
+     "第3题答案含比较级more left-handed products，注意对比时间点前后信息。",
+     "第4题选项都是销售方式，听清是只在网上、实体店还是邮购，排除过于绝对的表述如All of them。"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "公司促销活动与商务磋商",
+    "optionSignals": "第5题四个选项均描述公司业务，注意动词短语差异；第6题可能的问题原因，含名词化短语；第7题均为建议/要求类动词原形开头；第8题为行动建议，注意时态和情态。",
+    "tips": [
+     "注意听清是谁的公司、做了什么，区分业务类型。",
+     "第6题答案C涉及last-minute changes，注意听时态和顺序词，排除其他原因。",
+     "第7题针对费用和周期，注意数字和幅度，如10 percent discount vs cut by half。"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11,
+     12
+    ],
+    "sharedTopic": "实验动物及人类对待动物的矛盾态度",
+    "optionSignals": "第9题主语They，描述动物身份/状态；第10题情态动词may+动词短语表示可能后果；第11题四个when从句问时间；第12题while结构对比矛盾行为。",
+    "tips": [
+     "注意动物相关词汇，区分宠物与实验动物。",
+     "第10题选项中的affect the results of experiments为关键词，听时注意后果表述。",
+     "第12题while前后矛盾行为，抓住对比信息，排除单方面描述。"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "城市居民或移民的态度与城市吸引力因素",
+    "optionSignals": "第13题代词it指代某种事物，四个选项为态度/行为；第14题均为名词短语，可能问因素；第15题They开头描述某类人特点，注意定语从句。",
+    "tips": [
+     "抓住代词it的指代对象，避免张冠李戴。",
+     "第14题答案tidal restlessness较抽象，注意听与潮汐、不安等相关的同义表达。",
+     "第15题注意限定词adventurers, lack knowledge等，排除与原文不符的描述。"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "营养学发展史与维生素研究",
+    "optionSignals": "第16题均为过去时态陈述历史事实；第17题均为In order to表目的；第18题选项可能为原因或结果，含否定和形容词。",
+    "tips": [
+     "听录音时注意时间词和被动语态，区分不同历史阶段的事实。",
+     "第17题答案B中的apply concepts of nutrition in treatment为关键，注意目的与手段的表述。",
+     "第18题答案D含exaggerated，注意听与夸大、失效相关的负面表述。"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "婴儿对声音与语言的早期感知",
+    "optionSignals": "第19题为主旨题，选项以How/Differences开头；第20题均为不定式表目的；第21题含比较级和研究结论；第22题They指代婴儿，注意上下文。",
+    "tips": [
+     "主旨题关注文章开头和结尾的总结句，排除细节干扰。",
+     "第20题答案A为对比目的，注意听非人类声音与人类声音的对比论述。",
+     "第21题比较不同文化母亲的行为，注意similar way与different的区分。"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "电影工业历史与好莱坞地位",
+    "optionSignals": "第23题四个国家名词，可能问地点或来源；第24题含World War I时间状语和事实陈述；第25题为态度词，要求判断作者态度。",
+    "tips": [
+     "听到国家名要快速反应，记录相关事实。",
+     "第24题注意转折词和比较级，答案A中的leading position为关键。",
+     "态度题从全文措辞和举例判断，答案D neutral表示客观中立。"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "left-handers",
+    "cn": "左撇子"
+   },
+   {
+    "w": "disabled",
+    "cn": "残疾的"
+   },
+   {
+    "w": "campaign",
+    "cn": "活动/运动"
+   },
+   {
+    "w": "promotion",
+    "cn": "促销/晋升"
+   },
+   {
+    "w": "negotiation",
+    "cn": "谈判"
+   },
+   {
+    "w": "experiments",
+    "cn": "实验"
+   },
+   {
+    "w": "protein",
+    "cn": "蛋白质"
+   },
+   {
+    "w": "vitamins",
+    "cn": "维生素"
+   },
+   {
+    "w": "nutrition",
+    "cn": "营养"
+   },
+   {
+    "w": "babies",
+    "cn": "婴儿"
+   },
+   {
+    "w": "language",
+    "cn": "语言"
+   },
+   {
+    "w": "film industry",
+    "cn": "电影工业"
+   },
+   {
+    "w": "Hollywood",
+    "cn": "好莱坞"
+   },
+   {
+    "w": "neutral",
+    "cn": "中立的"
+   }
+  ]
+ }
+}

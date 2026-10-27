@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "d14281039236__banked_cloze__all",
+ "examId": "d14281039236",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2019 年 12 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:27:08.132Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58968,
+ "usage": {
+  "prompt_tokens": 1393,
+  "completion_tokens": 3642,
+  "total_tokens": 5035,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1393,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3642,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1393,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人们为何将日常物品拟人化",
+  "gist": "文章探讨人们在特定情境下将人类特征赋予日常物品的现象。孤独感会促使人们赋予物品意识，与物品的亲近感反过来也能缓解孤独。此外，人们还会依据物品外观（如宽脸、微笑状护栅）来为其分配人格特质，尤其在竞争性情境中更偏好具有支配感外观的产品。",
+  "difficulty": "中等",
+  "translation": "你能与之对话的设备数量正在增加——先是手机，然后是汽车，现在你还可以命令厨房电器执行操作。但即使没有能理解我们语音指令的小工具，研究表明，虽然听起来很奇怪，但在某些特定情境下，人们经常会将人类特征赋予日常物品。\n\n有时我们将事物视为人类，是因为我们感到孤独。在一项实验中，自述感到孤立的人比其他人更倾向于将意识归因于各种设备。反过来，与物品感到亲近可以缓解孤独感。当大学生被提醒他们曾在社交场合中被排斥时，他们会通过夸大自己的朋友数量来补偿——除非他们先被安排了使其像与人类互动一样与手机互动的任务。手机显然取代了真正的朋友。\n\n在其他时候，我们将产品拟人化是为了试图理解它们。一项研究发现，四分之三的受访者曾对着电脑大喊大叫。而且，电脑给他们带来的问题越多，受访者就越可能说它有自己的\"信念和欲望\"。\n\n那么人们是如何将特征赋予物品的呢？在一定程度上，我们依靠外观。在人类中，宽脸与支配力相关联。类似地，人们将拥有宽表盘的汽车、时钟和手表评价为看起来更具支配力，并且更喜欢它们——尤其是在竞争性情境中。一项对德国汽车销量的分析发现，拥有像微笑一样上翘护栅的汽车卖得最好。购买者认为这一特征增强了汽车的友好感。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "E",
+    "correct": "circumstances",
+    "why": "空格前为 \"under certain\"，后接名词复数。\"under certain circumstances\" 是固定搭配，意为\"在某些情境下\"，语义上承接后文\"人们将人类特征赋予物品\"这一看似奇怪但确实存在的现象，逻辑通顺。",
+    "traps": "其他名词如 consciousness、desires、feature 虽为名词但语义不搭配 under certain 的搭配框架，且各自在其他空格中有更合适的位置。",
+    "tip": "识别 under certain ___ 固定搭配，锁定 circumstances。"
+   },
+   {
+    "number": 27,
+    "answer": "L",
+    "correct": "lonely",
+    "why": "空格前为 \"we are\"，需要形容词作表语。上下文讲 \"feeling isolated\"（感到孤立），因此此处应填入 lonely（孤独的），与 isolated 形成同义呼应，解释人们拟人化物品的原因之一。",
+    "traps": "arrogant（傲慢的）虽然也是形容词，但语义与上下文\"孤立导致拟人化\"的逻辑不符，无法与后文 isolated 构成语义关联。",
+    "tip": "利用后文 feeling isolated 的同义复现，锁定 lonely。"
+   },
+   {
+    "number": 28,
+    "answer": "H",
+    "correct": "consciousness",
+    "why": "空格前为 \"attribute\"，后接 \"to various gadgets\"，需要名词作 attribute 的宾语。将\"意识（consciousness）\"归因于小工具，即赋予物品拟人化特征，完美契合段落主旨。",
+    "traps": "desires 虽也是名词，但 attribute consciousness 更能概括\"赋予物品人类特征\"的核心含义；desires 在第32题与 beliefs 并列更为合适。",
+    "tip": "attribute sth. to sth. 结构，宾语需为可赋予物品的人类特质名词。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "correct": "alleviate",
+    "why": "空格前为情态动词 can，需要动词原形。\"feeling close to objects can alleviate loneliness\" 意为\"与物品感到亲近可以缓解孤独感\"，alleviate（减轻、缓解）与 loneliness 搭配合理，且与上文孤独导致拟人化形成因果呼应。",
+    "traps": "其他动词原形选项在语义上与 loneliness 不搭配。alleviate loneliness 是常见学术搭配，语境中\"拟人化带来的好处\"指向缓解孤独。",
+    "tip": "can + 动词原形，搭配 loneliness 需要\"缓解\"语义的动词。"
+   },
+   {
+    "number": 30,
+    "answer": "J",
+    "correct": "excluded",
+    "why": "空格前为 \"had been\"，构成过去完成时被动语态，需要过去分词。\"excluded in a social setting\" 意为\"在社交场合中被排斥\"，与后文 \"compensated by exaggerating their number of friends\" 形成因果逻辑：被排斥后通过夸大朋友数量来补偿。",
+    "traps": "associated 虽也是过去分词，但 \"been associated in a social setting\" 语义不通；excluded 与 social setting 以及 compensated 的补偿行为逻辑链完美契合。",
+    "tip": "had been + 过去分词构成被动，结合社交场景语义选 excluded。"
+   },
+   {
+    "number": 31,
+    "answer": "B",
+    "correct": "apparently",
+    "why": "空格位于主语 \"The phone\" 和谓语 \"stood in for\" 之间，需要副词修饰动词。apparently（显然地）表达一种推断语气，意为\"手机显然代替了真正的朋友\"，符合实验结论的表述方式。",
+    "traps": "此处只有 apparently 是副词且语义合适，其他候选副词已不在选项中。apparently 传递研究者的推断语气，与学术文体吻合。",
+    "tip": "主语与谓语之间的修饰成分，需填副词。"
+   },
+   {
+    "number": 32,
+    "answer": "I",
+    "correct": "desires",
+    "why": "空格前为 \"beliefs and\"，需要名词与 beliefs 并列。\"beliefs and desires\"（信念与欲望）是心理学和哲学中描述心智状态的经典搭配，此处表达人们将电脑拟人化，认为它拥有自己的信念和欲望。",
+    "traps": "consciousness 虽也是名词，但已用于第28题；且 beliefs and desires 是学术固定搭配，远比 beliefs and consciousness 自然。",
+    "tip": "and 并列结构，需找与 beliefs 语义对等的名词，beliefs and desires 为固定搭配。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "correct": "associated",
+    "why": "空格前为 \"are\"，后接 \"with dominance\"，构成 \"be associated with\"（与……相关联）固定搭配。句意为\"在人类中，宽脸与支配力相关联\"，为后文类比汽车宽脸提供铺垫。",
+    "traps": "其他过去分词形式的词不能与 with dominance 构成合理搭配。be associated with 是六级高频固定搭配，需优先识别。",
+    "tip": "识别 be ___ with 搭配框架，锁定 associated with。"
+   },
+   {
+    "number": 34,
+    "answer": "F",
+    "correct": "competitive",
+    "why": "空格后为 \"situations\"，需要形容词修饰名词。\"competitive situations\"（竞争性情境）与前文 dominant（支配性的）形成语义关联：在竞争场景中人们更偏好具有支配感外观的物品，逻辑合理。",
+    "traps": "arrogant situations（傲慢的情境）搭配不当，arrogant 通常修饰人而非情境；competitive 修饰 situations 是常见搭配，且与 dominance 主题一致。",
+    "tip": "形容词修饰 situations，需选能描述情境类型且与 dominance 语义关联的词。"
+   },
+   {
+    "number": 35,
+    "answer": "K",
+    "correct": "feature",
+    "why": "空格前为 \"this\"，后接 \"as increasing a car's friendliness\"，需要名词作 saw 的宾语。\"this feature\"（这个特征）指代前文 grilles upturned like smiles（像微笑一样上翘的护栅），see this feature as 意为\"将这一特征视为\"，语义完整。",
+    "traps": "其他剩余名词如 circumstances 已用于第26题。feature 作为\"特征\"完美指代上文描述的护栅外形细节，且 see sth. as 结构要求名词宾语。",
+    "tip": "this + 名词指代上文具体事物，feature 指代护栅外观特征。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "ascribe",
+    "cn": "v. 把……归因于；赋予"
+   },
+   {
+    "w": "bizarre",
+    "cn": "adj. 奇异的，古怪的"
+   },
+   {
+    "w": "alleviate",
+    "cn": "v. 减轻，缓解"
+   },
+   {
+    "w": "consciousness",
+    "cn": "n. 意识，知觉"
+   },
+   {
+    "w": "compensate",
+    "cn": "v. 补偿，弥补"
+   },
+   {
+    "w": "exaggerate",
+    "cn": "v. 夸大，夸张"
+   },
+   {
+    "w": "personify",
+    "cn": "v. 将……拟人化；是……的化身"
+   },
+   {
+    "w": "dominance",
+    "cn": "n. 支配，统治地位"
+   },
+   {
+    "w": "respondent",
+    "cn": "n. 受访者，调查对象"
+   },
+   {
+    "w": "gadget",
+    "cn": "n. 小工具，小装置"
+   },
+   {
+    "w": "grille",
+    "cn": "n. 护栅，格栅"
+   },
+   {
+    "w": "attribute",
+    "cn": "v. 把……归因于；n. 属性"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，掌握主旨——人们为何以及如何将物品拟人化。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的候选范围。",
+   "第三步：根据空格前后语法结构（如 be + adj.、can + v.、had been + pp.）确定所需词性。",
+   "第四步：利用固定搭配（如 under certain circumstances、be associated with、beliefs and desires）快速锁定答案。",
+   "第五步：结合上下文逻辑（同义复现、因果关系、指代关系）验证所选答案，确保篇章连贯。"
+  ]
+ }
+}

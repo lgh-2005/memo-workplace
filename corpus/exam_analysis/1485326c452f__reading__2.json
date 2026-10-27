@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "1485326c452f__reading__2",
+ "examId": "1485326c452f",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 6 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:37:25.357Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62065,
+ "usage": {
+  "prompt_tokens": 1809,
+  "completion_tokens": 3720,
+  "total_tokens": 5529,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1809,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3720,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1809,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "技术进步需要合理监管",
+  "gist": "文章以汽车广告的虚假承诺为切入点，指出导航应用虽能为个体避堵，但当所有人都使用时反而把拥堵转移到其他道路。由此引申出两个教训：技术承诺永远不会完全兑现，自组织无法实现最优结果。最后以自动驾驶致死事故为例，强调鲁莽、不受控的技术变革可能带来伤害，呼吁进行审慎监管。",
+  "structure": [
+   "第1-2段：汽车广告虚假承诺与导航应用的实际用途",
+   "第3段：导航应用的普及反而导致拥堵转移",
+   "第4段：总结两条教训——技术有限，自组织失效",
+   "第5-6段：自动驾驶事故佐证，呼吁审慎监管"
+  ],
+  "difficulty": "中等",
+  "translation": "汽车重塑了我们的城市，似乎为每个人提供了自主权。量产汽车被包装为个性与自由的象征来进行营销，而它们一生中的大部分时间都将花在拥堵道路上的短途出行中——广告与现实之间的这种脱节几乎令人觉得好笑。\n\n尽管人们对最高速度、弯道性能和加速能力大惊小怪，但现代汽车上最实用的小装置恰恰是在你开得很慢时才发挥作用的那些：泊车雷达、音响系统，以及能显示绕开前方堵车路线的导航应用。这似乎是为数不多的分享个人信息能直接回馈分享者的领域之一：因为这些应用几乎随时知道绝大多数用户在哪里、移动速度多快，所以能迅速发现交通拥堵并建议绕行路线。\n\n问题出现在每个人都使用导航应用来避开同样在使用该工具的其他人时。交通拥堵往往出现在没人拥有足够信息去避免的地方。当少数幸运者掌握这些信息时，他们会大受裨益。但当所有人都拥有完美信息时，拥堵只是蔓延到了那些看似能绕行的小路上。\n\n这种新的拥堵教给我们两件事。第一，技术的承诺永远不会像我们期望的那样充分实现；它们会被那些未曾预见和无意造成的后果所限制。坐在更舒适的车里堵在另一条路上固然惬意，但远非曾经许诺的那种解放。第二，自组织不能把我们带到想去的地方。数百万司机争相抢先的努力并不会奇迹般地创造出人人都比以前更好的局面，而是几乎人人都变得更糟。中央控制和集体组织能产生更顺畅、更公平的结果，尽管即便如此也从无保证。\n\n对于自动驾驶汽车所许诺的更大进步，类似的局限也是可以预见的。上周，由网约车公司优步运营的一辆自动驾驶汽车在亚利桑那州一条宽阔的马路上撞死了一名推着自行车过马路的女子。这是首例涉及本应完全自主驾驶的汽车的死亡记录。专家表示，这表明技术出现了\"灾难性故障\"。\n\n越来越多时候，连硅谷也不得不承认其文化中那种令人陶醉的匆忙所带来的代价。交通教给我们的是：鲁莽且不受控的变革伤害我们的可能性和造福我们的可能性一样大，而深思熟虑的监管对于更好的未来是必要的。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "There is something almost delightful in the detachment from reality of advertisements showing mass-produced cars marketed as symbols of individuality and of freedom when most of their lives will be spent making short journeys on choked roads.",
+    "why": "原文指出汽车广告将量产车包装为\"个性与自由的象征\"，但实际上它们大部分时间都在拥堵道路上跑短途，广告与现实严重脱节。B选项\"呈现了汽车所提供自主性的虚假画面\"准确概括了这种脱节：广告许诺autonomy（自主/自由），现实却是choked roads（拥堵道路），即广告给出了虚假图景。",
+    "traps": "A\"享受速度的驾驶者\"——原文广告宣传的是individuality和freedom，并未聚焦于speed；C\"追求个性和原创的设计理念\"——individuality是广告营销的卖点而非设计理念，且原文语气是讽刺而非赞赏；D\"高估自动驾驶汽车的潜在市场\"——此处autonomy指自主/自由而非自动驾驶，属偷换概念。",
+    "tip": "注意区分autonomy的\"自主权\"义与\"自动驾驶\"义，结合语境判断。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "For all the fuss made about top speeds, cornering ability and acceleration, the most useful gadgets on a modern car are those which work when you're going very slowly: parking sensors, sound systems, and navigation apps",
+    "why": "原文说尽管人们大肆渲染最高速度、弯道性能和加速能力，但最实用的装置是在开得很慢时才起作用的。这暗示与速度、加速相关的功能在当前拥堵的交通条件下用处有限，真正能派上用场的只是低速时使用的那些。C选项\"在当前交通条件下只有部分能被真正使用\"准确反映了这一推断。",
+    "traps": "A\"帮助缓解交通拥堵\"——第三段明确指出导航普及后拥堵只是转移，并未真正缓解；B\"大多数和广告宣传的一样有效\"——原文语气恰恰是反讽，高速性能在拥堵中无用；D\"不断升级使驾驶更轻松安全\"——原文未提及装置升级的信息，属无中生有。",
+    "tip": "For all...（尽管）引导让步，重点在转折后的内容。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "But when everyone has perfect information, traffic jams simply spread onto the side roads that seem to offer a way round them.",
+    "why": "原文第三段指出当所有人都使用导航应用拥有完美信息时，拥堵并没有消失，而是\"simply spread onto the side roads\"——扩散到小路上。A选项\"很可能在其他地方制造拥堵\"与此完全对应：导航为个体避堵的同时，把拥堵转移到了别处。",
+    "traps": "B\"极大帮助缓解交通拥堵\"——与原文结论相反，普及后拥堵只是转移而非缓解；C\"大幅减少交通事故发生率\"——文中从未谈及导航应用与事故率的关系；D\"有利于正在学车的人\"——纯属无中生有，原文未涉及学车者。",
+    "tip": "注意\"少数人使用有效\"与\"所有人使用后失效\"的对比逻辑。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The first is that the promises of technology will never be realised as fully as we hope; they will be limited by their unforeseen and unintended consequences.",
+    "why": "原文第四段明确指出\"技术的承诺永远不会像我们期望的那样充分实现\"，后面还以\"坐在更舒适的车里堵在另一条路上\"为例说明技术成果打了折扣。B选项\"技术很少完全兑现其承诺的所有好处\"是对这句话的准确转述。",
+    "traps": "A\"后果通常难以评估\"——原文说后果是unforeseen的，但重点是承诺不能完全兑现，而非难以评估；C\"依赖于应用所需的知识\"——无中生有，原文未讨论知识依赖问题；D\"集体智慧保证其好处\"——原文明确说\"though even that much is never guaranteed\"，恰恰相反。",
+    "tip": "抓住never be realised as fully as we hope这一核心表述，对应seldom delivers all the benefits。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "What traffic teaches us is that reckless and uncontrolled change is as likely to harm us as it is to benefit us, and that thoughtful regulation is necessary for a better future.",
+    "why": "文章末段点题：鲁莽且不受控的变革可能带来伤害，深思熟虑的监管对更好的未来是必要的。全文从汽车广告→导航应用局限→自动驾驶事故层层递进，最终落脚于呼吁对技术创新进行合理监管。C选项\"技术创新应当被适当监管\"精准概括了文章的核心信息。",
+    "traps": "A\"技术创新的后果不必被夸大\"——原文恰恰在强调后果严重性，而非淡化；B\"发展技术总要付出代价\"——虽部分涉及，但文章核心不在于代价而在于监管的必要性；D\"硅谷文化不应被效仿\"——硅谷只是末尾一个例子，非全文主旨。",
+    "tip": "主旨题优先关注末段总结句，全文论证均服务于最终结论。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "autonomy",
+    "cn": "n. 自主权；自治"
+   },
+   {
+    "w": "detachment",
+    "cn": "n. 脱离，超然"
+   },
+   {
+    "w": "choked",
+    "cn": "adj. 堵塞的，拥挤的"
+   },
+   {
+    "w": "cornering",
+    "cn": "n. 弯道行驶（能力）"
+   },
+   {
+    "w": "gadget",
+    "cn": "n. 小装置，小器具"
+   },
+   {
+    "w": "congestion",
+    "cn": "n. 拥堵，堵塞"
+   },
+   {
+    "w": "unforeseen",
+    "cn": "adj. 未曾预见的，意料之外的"
+   },
+   {
+    "w": "miraculously",
+    "cn": "adv. 奇迹般地"
+   },
+   {
+    "w": "catastrophic",
+    "cn": "adj. 灾难性的"
+   },
+   {
+    "w": "intoxicating",
+    "cn": "adj. 令人陶醉的，使人兴奋的"
+   },
+   {
+    "w": "reckless",
+    "cn": "adj. 鲁莽的，不顾后果的"
+   },
+   {
+    "w": "liberation",
+    "cn": "n. 解放，释放"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "There is something almost delightful in the detachment from reality of advertisements showing mass-produced cars marketed as symbols of individuality and of freedom when most of their lives will be spent making short journeys on choked roads.",
+    "cn": "量产汽车被包装为个性与自由的象征来进行营销，而它们一生中的大部分时间都将花在拥堵道路上的短途出行中——广告与现实之间的这种脱节几乎令人觉得好笑。",
+    "note": "主干：There is something delightful in the detachment；of advertisements为detachment的后置定语；showing...为现在分词修饰advertisements；when引导时间状语从句构成反讽对比。"
+   },
+   {
+    "en": "The efforts of millions of drivers to get ahead do not miraculously produce a situation in which everyone does better than before, but one in which almost everyone does rather worse.",
+    "cn": "数百万司机争相抢先的努力并不会奇迹般地创造出人人都比以前更好的局面，而是创造出几乎人人都变得更糟的局面。",
+    "note": "主干：efforts do not produce A but B；A和B都是situation/one + in which定语从句的并列结构；not...but...构成否定与肯定的对比。"
+   },
+   {
+    "en": "What traffic teaches us is that reckless and uncontrolled change is as likely to harm us as it is to benefit us, and that thoughtful regulation is necessary for a better future.",
+    "cn": "交通教给我们的是：鲁莽且不受控的变革伤害我们的可能性和造福我们的可能性一样大，而深思熟虑的监管对于更好的未来是必要的。",
+    "note": "主语从句What traffic teaches us + 系动词is + 两个并列that表语从句；第一个that从句含as likely to...as...同级比较结构。"
+   }
+  ]
+ }
+}

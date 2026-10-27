@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "64198448ea7f__reading__1",
+ "examId": "64198448ea7f",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 12 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:46:02.430Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60351,
+ "usage": {
+  "prompt_tokens": 1779,
+  "completion_tokens": 4297,
+  "total_tokens": 6076,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1779,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4297,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1779,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "端粒与人类衰老速度的关系",
+  "gist": "文章介绍了科学家对人类衰老速度差异的最新研究。文章指出衰老速度取决于基因、社会关系、环境和生活方式之间的复杂互动；端粒作为细胞衰老的关键因素，其缩短过程可被逆转；愤世嫉俗的敌意等消极思维模式会损害端粒；饮食、运动等因素可在细胞层面延缓衰老。",
+  "structure": [
+   "第一段：提出问题，引出衰老速度差异的多因素解释",
+   "第二段：介绍端粒的结构与功能，揭示端粒可延长的发现",
+   "第三段：以愤世嫉俗的敌意为例，说明思维模式对端粒的负面影响",
+   "第四段：总结衰老是动态过程，可通过生活方式在细胞层面延缓"
+  ],
+  "difficulty": "中等",
+  "translation": "一个人为何能享有良好的健康，而另一个人却未老先衰？人类已经问了这个问题数千年，而最近，科学家们越来越清楚地认识到，人们衰老速度之间的差异在于基因、社会关系、环境和生活方式之间的复杂互动。即使你生来拥有一组特定的基因，你的生活方式也能影响这些基因的表达方式。一些生活方式因素甚至可以开启或关闭基因。\n\n在我们所有细胞的遗传核心深处，存在着端粒，即位于染色体末端的非编码DNA重复片段。它们在染色体末端形成保护帽，使遗传物质保持完整。端粒随着每次细胞分裂而缩短，帮助决定细胞衰老的速度。当端粒变得过短时，细胞就会完全停止分裂。这不是细胞衰老的唯一原因——还有一些我们尚未完全了解的其他细胞压力——但端粒缩短是人类细胞衰老的主要原因之一。我们的大部分职业生涯都在研究端粒，而我们实验室的一个非凡发现是，端粒实际上可以变长。\n\n科学家们已经了解到，有几种思维模式似乎对端粒有害，其中之一就是愤世嫉俗的敌意。愤世嫉俗的敌意的定义是高度愤怒以及频繁地认为他人不可信赖。怀有敌意的人不仅仅会想\"我讨厌排长队\"；他们会想\"别人故意加快速度，抢走了我应有的队伍位置！\"——然后变得极度激动。在愤世嫉俗的敌意量表上得分较高的人往往更容易患心脏病、代谢疾病，且常常在较年轻时死亡。他们的端粒也更短。在一项针对英国公务员的研究中，愤世嫉俗敌意得分高的男性比得分低的男性端粒更短。最具敌意的男性端粒偏短的可能性高出30%。\n\n这意味着：衰老是一个动态过程，可能被加速或减缓——在某些方面，甚至可以被逆转。在一定程度上，端粒并非简单地执行你的遗传密码所发出的指令，这一点让我们以及科学界的其他同仁都感到惊讶。你的端粒正在倾听你的声音。你吃的食物、你对挑战的反应、你的运动量以及许多其他因素似乎都会影响你的端粒，并能在细胞层面防止过早衰老。享有良好健康的关键之一，就是尽自己的一份力来促进健康的细胞更新。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "it's becoming clearer and clearer to scientists that the differences between people's rates of aging lie in the complex interactions among genes, social relationships, environments and lifestyles.",
+    "why": "原文第一段明确指出，科学家越来越清楚地认识到\"人们衰老速度的差异在于基因、社会关系、环境和生活方式之间的复杂互动\"。A选项\"为什么人们以不同的速度衰老\"是对\"differences between people's rates of aging\"的同义改写，与原文直接对应。",
+    "traps": "B项\"基因如何影响衰老过程\"过于片面，原文强调的是多因素的复杂互动而非仅基因。C项\"各种基因如何在衰老中表达\"偷换概念，原文说的是生活方式影响基因表达，而非基因在衰老中的表达方式。D项\"为什么人们长期关注衰老\"属于无中生有，文中提到人们问了数千年只是引子，并非科学家新近了解的内容。",
+    "tip": "抓住题干中的today，对应原文recently，锁定关键信息句。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Some lifestyle factors may even turn genes on or shut them off.",
+    "why": "原文第一段末句指出\"一些生活方式因素甚至可以开启或关闭基因\"，turn genes on or shut them off（开启或关闭基因）即是决定基因如何发挥功能。B选项\"它们可能决定基因如何运作\"是对原文的准确同义改写。",
+    "traps": "A项\"缩短细胞分裂过程\"在文中未提及与生活方式因素的直接关联，属于张冠李戴。C项\"影响端粒的寿命\"虽然后文有提及相关内容，但题目问的是第一段中生活方式因素被认为极其重要的原因，原文定位句强调的是对基因的影响。D项\"解释细胞上的压力\"原文说的是其他压力尚未被充分了解，与生活方式因素无关。",
+    "tip": "注意题目问的是原因（why），需回到原文找因果逻辑，定位准确是关键。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "one extraordinary discovery from our labs is that telomeres can actually lengthen.",
+    "why": "原文第二段先说端粒随每次细胞分裂而缩短（shortening with each cell division），再指出作者实验室的非凡发现是端粒实际上可以变长（can actually lengthen）。端粒本来是缩短的，现在发现可以变长，即其缩短过程可以被逆转。C选项\"它们的缩短过程可以被逆转\"准确概括了这一发现。",
+    "traps": "A项\"它们的数量影响细胞生长\"属于无中生有，原文讨论的是端粒长度而非数量。B项\"它们的长度决定生活质量\"过度推断，原文说端粒长度影响细胞衰老速度，并未直接与生活质量挂钩。D项\"它们的健康影响细胞分裂\"虽部分相关，但并非作者实验室的核心发现，且表述模糊偏离原文重点。",
+    "tip": "题目问的是\"作者及同事发现了什么\"，紧扣our labs限定，锁定extraordinary discovery。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Scientists have learned that several thought patterns appear to be unhealthy for telomeres, and one of them is cynical hostility.",
+    "why": "原文第三段首句明确指出\"科学家已了解到某些思维模式对端粒有害，其中之一就是愤世嫉俗的敌意\"。后文进一步用研究数据证明高敌意者端粒更短。B选项\"它可能对端粒产生不利影响\"中的adverse effect对应原文的unhealthy for telomeres，是精确的同义替换。",
+    "traps": "A项\"可能导致对抗性思维模式\"因果倒置，愤世嫉俗的敌意本身就是一种思维模式，而非导致思维模式的原因。C项\"可能使人频繁发脾气\"虽然原文有相关描述，但这是对敌意的定义和举例，而非科学家关于其影响的发现。D项\"可能在排队者中引发焦虑\"将原文的举例情境错当成科学结论，属于以偏概全。",
+    "tip": "区分定义描述与科学发现，题干问learned about，应找研究结论而非现象描述。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "aging is a dynamic process that could possibly be accelerated or slowed—and, in some aspects, even reversed.",
+    "why": "原文最后一段指出衰老是一个动态过程，可以被加速或减缓，甚至在某些方面被逆转。后文进一步说食物、运动等因素能影响端粒、防止细胞层面的过早衰老。这说明衰老过程在一定程度上是可以被控制的。D选项\"它可能在一定程度上被控制\"准确概括了这一核心信息。",
+    "traps": "A项\"可能因人而异\"虽然是事实，但这是第一段的内容，不是最后一段的要点。B项\"挑战科学家做进一步探索\"在末段没有相关表述，属于无中生有。C项\"取决于一个人的遗传密码\"与原文相反，原文特别强调端粒不是简单地执行遗传密码的指令，生活方式同样重要。",
+    "tip": "最后一段题常考段落主旨，注意首句的核心观点往往就是答案线索。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "telomere",
+    "cn": "n. 端粒（染色体末端的DNA重复序列）"
+   },
+   {
+    "w": "cynical",
+    "cn": "adj. 愤世嫉俗的；怀疑他人动机的"
+   },
+   {
+    "w": "hostility",
+    "cn": "n. 敌意；敌对；对抗"
+   },
+   {
+    "w": "metabolic",
+    "cn": "adj. 新陈代谢的"
+   },
+   {
+    "w": "noncoding",
+    "cn": "adj. 非编码的（不编码蛋白质的）"
+   },
+   {
+    "w": "agitated",
+    "cn": "adj. 激动的；焦虑不安的"
+   },
+   {
+    "w": "premature",
+    "cn": "adj. 过早的；未成熟的"
+   },
+   {
+    "w": "chromosome",
+    "cn": "n. 染色体"
+   },
+   {
+    "w": "segment",
+    "cn": "n. 片段；部分"
+   },
+   {
+    "w": "accelerate",
+    "cn": "v. 加速；促进"
+   },
+   {
+    "w": "foster",
+    "cn": "v. 促进；培养；助长"
+   },
+   {
+    "w": "civil servant",
+    "cn": "n. 公务员"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Humans have been asking this question for thousands of years, and recently, it's becoming clearer and clearer to scientists that the differences between people's rates of aging lie in the complex interactions among genes, social relationships, environments and lifestyles.",
+    "cn": "人类已经问了这个问题数千年，而最近，科学家们越来越清楚地认识到，人们衰老速度之间的差异在于基因、社会关系、环境和生活方式之间的复杂互动。",
+    "note": "and连接两个并列分句；第二个分句中it为形式主语，真正主语是that引导的主语从句；lie in表示\"在于\"，among后接四个并列名词短语。"
+   },
+   {
+    "en": "Deep within the genetic heart of all our cells are telomeres, or repeating segments of noncoding DNA that live at the ends of the chromosomes.",
+    "cn": "在我们所有细胞的遗传核心深处，存在着端粒，即位于染色体末端的非编码DNA重复片段。",
+    "note": "倒装句，正常语序为telomeres are deep within...；or引出同位语解释telomeres；that引导定语从句修饰segments。"
+   },
+   {
+    "en": "The foods you eat, your response to challenges, the amount of exercise you get, and many other factors appear to influence your telomeres and can prevent premature aging at the cellular level.",
+    "cn": "你吃的食物、你对挑战的反应、你的运动量以及许多其他因素似乎都会影响你的端粒，并能在细胞层面防止过早衰老。",
+    "note": "四个并列名词短语作主语（the foods, your response, the amount, many other factors）；you eat和you get为省略关系代词的定语从句；两个并列谓语appear to influence和can prevent。"
+   }
+  ]
+ }
+}

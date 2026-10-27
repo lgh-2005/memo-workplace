@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "878f8acfa4a3__listening__all",
+ "examId": "878f8acfa4a3",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2020 年 7 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:28:47.882Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54408,
+ "usage": {
+  "prompt_tokens": 2214,
+  "completion_tokens": 2784,
+  "total_tokens": 4998,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2214,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2784,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2214,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 2,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下解析仅基于题目选项的语言特征与正确答案进行推理分析，不涉及任何编造的录音内容。",
+  "overview": "本场听力共7段材料、25道题。第1段（Q1-4）涉及女性运动员与科技对体育的影响；第2段（Q5-8）涉及商业物流与进口成本；第3段（Q9-11）涉及职场幽默与减压；第4段（Q12-15）涉及肥胖基因研究；第5段（Q16-18）涉及友谊的维系与破裂；第6段（Q19-21）涉及恐龙化石发现；第7段（Q22-25）涉及老年人赡养与家庭观念变迁。话题覆盖科技、商业、心理、生物、社会学等常见六级听力领域。",
+  "strategy": [
+   "预读选项时快速标记每题问的是人物身份、原因、方式还是观点，带着问题框架去听",
+   "同一段中选项出现的高频名词往往是核心话题词，提前熟悉可降低听辨压力",
+   "当四个选项结构平行（如都是It may…）时，重点区分差异词，听到差异词即可锁定答案",
+   "注意转折词but、however、yet后的信息，命题点常落在转折之后",
+   "选项中出现绝对词（all、never、must）时需格外警惕，往往是干扰项",
+   "数字、比较级、因果连词（because、due to、result in）出现时集中注意力，常为出题点"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "女性运动员与科技在体育竞赛中的作用",
+    "optionSignals": "Q1四个选项均为She is a + 形容词 + 名词，典型的身份判断题；Q2四个选项均以How开头，问方式或途径；Q3四个选项均为Our + 名词短语，问某种限制或因素的归属；Q4均为It may + 动词短语，问某事物的潜在影响。",
+    "tips": [
+     "Q1身份题通常在开头出现关键词，athlete、speaker、scientist、inventor中注意最先被提及的身份标签",
+     "Q4四个选项都谈负面影响，需细辨区别：expenses（花费）、over-reliance（过度依赖）、unfair advantage（不公平优势）、nature of sports（运动本质），正确答案C聚焦公平性，属体育科技争议常见论点",
+     "Q2与Q3可联合推断：话题围绕technology如何帮助运动员，但Q3答案是scientific knowledge，说明材料区分了'技术装备'与'科学认知'两个层面"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "国际贸易中物流与成本控制策略",
+    "optionSignals": "Q5四个选项为单词或短语，问关键成功因素；Q6四个选项为动名词短语，问具体做法；Q7为单个名词，问角色或场所；Q8问商品的竞争优势，选项涉及style、design、duties、shipping costs。",
+    "tips": [
+     "Q6四个选项描述不同商业操作，正确答案D（重复使用同一集装箱）属于成本节约细节，听时关注container、reuse等词",
+     "Q8区分lower import duties与lower shipping costs，两者都涉及成本，需听清是关税还是运费",
+     "Q5答案flexibility在商业语境中指灵活应变能力，常与adapt、adjust搭配出现"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "职场幽默对员工心理与工作表现的影响",
+    "optionSignals": "Q9四个选项均为It + 动词短语，问humor的功能；Q10为陈述性观点句，问研究结论；Q11描述具体行为动作，问允许员工做什么。",
+    "tips": [
+     "Q9正确答案A（减压）与Q10答案D（帮助完成常规任务）分别指向humor的不同功效，注意材料中可能按层次展开",
+     "Q11选项画面感强（smash toys、take apart boss doll），此类细节题需在听时捕捉关键限制条件，如as long as they reassemble it中的条件从句",
+     "干扰项A中smash和D中as hard as they like都暗示无限制的暴力释放，通常过于极端而被排除"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "肥胖基因的科学发现及其对人类体重的影响",
+    "optionSignals": "Q12四个选项描述科学发现的性质，问主旨；Q13问某基因变异的具体作用，四个选项均以It开头；Q14为关于人类肥胖遗传的陈述；Q15问肥胖流行的原因。",
+    "tips": [
+     "Q12正确答案A强调changed gene与obese mice，是对研究发现的准确概括，区别于B的gene modification（基因改造）和D的self-repairing（自我修复）",
+     "Q13答案D指出基因变异使小鼠无法感知何时停止进食，涉及satiety（饱腹感）信号，是肥胖研究经典考点",
+     "Q15答案B（丰富食物的大量供应）属于环境因素，需注意区分遗传因素与环境因素的讨论转换点"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "友谊建立、维系与破裂的关键因素",
+    "optionSignals": "Q16问友谊形成的因素，四个选项均为名词短语；Q17同样问维系因素；Q18问导致友谊破裂的原因。三题构成'建立—维持—破裂'的逻辑链。",
+    "tips": [
+     "Q16答案A（兴趣相似）是友谊研究中最常见的起始因素，与B（智力刺激）、C（开放性）形成对比",
+     "Q18答案C（betrayal背叛感）比A（失约）和B（不坦率）更具破坏性，选项按严重程度排列时，听力材料往往选择情感冲击最强的",
+     "三道题形成递进关系，预读时可建立框架：什么促成友谊→什么维持友谊→什么破坏友谊"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "恐龙化石的发现地点、成因推断与搬运过程",
+    "optionSignals": "Q19问地点，四个选项为具体地名或场所；Q20为推断性陈述，问科学家的结论；Q21问骨骼来源或搬运方式，四个选项描述不同情景。",
+    "tips": [
+     "Q19答案D（大城市自然历史博物馆）提示化石展出地点，注意区分发现地与展出地",
+     "Q20答案B中whole herd暗示群体死亡事件，natural disaster是关键触发词",
+     "Q21答案A提到eastward flowing river，属于地质搬运机制细节，需关注方位词和河流相关表述"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "现代社会中老年人赡养观念与家庭结构变化",
+    "optionSignals": "Q22问年轻人被批评的原因，四个选项均为动名词短语；Q23问老年人的真实状态或感受；Q24为跨文化的家庭结构陈述；Q25问老年人应采取的态度或行为。",
+    "tips": [
+     "Q22答案C（未能以传统方式照顾父母）比D（让父母挨饿）更温和客观，极端选项D通常为干扰",
+     "Q23答案D（独立感与自主感）反映积极心态，与选项A（独居困难）形成正反对比，注意听力中的转折",
+     "Q25答案B（避免成为子女负担）体现老年人的主动选择，与整段讨论的independent living主题一致"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "athlete",
+    "cn": "运动员"
+   },
+   {
+    "w": "flexibility",
+    "cn": "灵活性，适应性"
+   },
+   {
+    "w": "shipping costs",
+    "cn": "运输成本"
+   },
+   {
+    "w": "import duties",
+    "cn": "进口关税"
+   },
+   {
+    "w": "interpersonal",
+    "cn": "人际的"
+   },
+   {
+    "w": "obesity / obese",
+    "cn": "肥胖（症）/ 肥胖的"
+   },
+   {
+    "w": "gene modification",
+    "cn": "基因改造"
+   },
+   {
+    "w": "betrayal",
+    "cn": "背叛"
+   },
+   {
+    "w": "compassion",
+    "cn": "同情心，怜悯"
+   },
+   {
+    "w": "autonomy",
+    "cn": "自主权，自治"
+   },
+   {
+    "w": "volcanic explosion",
+    "cn": "火山爆发"
+   },
+   {
+    "w": "biochemistry",
+    "cn": "生物化学"
+   },
+   {
+    "w": "warehouse",
+    "cn": "仓库"
+   },
+   {
+    "w": "extended family",
+    "cn": "大家庭（含三代及以上）"
+   }
+  ]
+ }
+}

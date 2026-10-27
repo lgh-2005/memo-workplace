@@ -1,0 +1,190 @@
+{
+ "schemaVersion": 1,
+ "id": "d3f423600f71__translation__all",
+ "examId": "d3f423600f71",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年 9 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:46:08.776Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 28050,
+ "usage": {
+  "prompt_tokens": 795,
+  "completion_tokens": 2000,
+  "total_tokens": 2795,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 795,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2000,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 795,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中央电视台总部大楼介绍",
+  "reference": "The CCTV Headquarters, located in Chaoyang District, Beijing, covers a total construction area of approximately 550,000 square meters. The main building, consisting of two towers, has become a popular attraction in the city due to its unique design, drawing numerous tourists every day. The innovative structure of the building is the result of long-term collaboration between Chinese and foreign architects, which not only reflects environmental awareness but also significantly saves construction materials. The CCTV Headquarters features a dedicated passage running through the building, showcasing various studios and the history of CCTV to the public. There, visitors can also enjoy spectacular views of the Forbidden City and other parts of Beijing.",
+  "sentences": [
+   {
+    "cn": "中央电视台总部大楼位于北京市朝阳区，总建筑面积约55万平方米。",
+    "en": "The CCTV Headquarters, located in Chaoyang District, Beijing, covers a total construction area of approximately 550,000 square meters.",
+    "structure": "过去分词短语 located in... 作插入语修饰主语，主句用 covers 作谓语，整体为简单句",
+    "keys": [
+     "中央电视台总部大楼 the CCTV Headquarters",
+     "朝阳区 Chaoyang District",
+     "总建筑面积 total construction area",
+     "约55万平方米 approximately 550,000 square meters"
+    ]
+   },
+   {
+    "cn": "主楼由两座塔楼组成，因其独特的造型，成为这座城市的一个热门景点，每天都吸引众多游客前来参观。",
+    "en": "The main building, consisting of two towers, has become a popular attraction in the city due to its unique design, drawing numerous tourists every day.",
+    "structure": "现在分词短语 consisting of... 作插入语，due to 引出原因状语，drawing... 作伴随状语，多层修饰的复合长句",
+    "keys": [
+     "主楼 the main building",
+     "塔楼 towers",
+     "独特的造型 unique design",
+     "热门景点 popular attraction",
+     "众多游客 numerous tourists"
+    ]
+   },
+   {
+    "cn": "大楼的创新结构是中外建筑师长期合作的成果，不仅体现了环保意识，而且大大节约了建筑材料。",
+    "en": "The innovative structure of the building is the result of long-term collaboration between Chinese and foreign architects, which not only reflects environmental awareness but also significantly saves construction materials.",
+    "structure": "主系表结构 + which 引导非限制性定语从句，从句内用 not only...but also... 并列结构",
+    "keys": [
+     "创新结构 innovative structure",
+     "中外建筑师 Chinese and foreign architects",
+     "长期合作 long-term collaboration",
+     "环保意识 environmental awareness",
+     "建筑材料 construction materials"
+    ]
+   },
+   {
+    "cn": "中央电视台总部设有一条穿过大楼的专用通道，向公众展示各个工作室以及中央电视台的历史。",
+    "en": "The CCTV Headquarters features a dedicated passage running through the building, showcasing various studios and the history of CCTV to the public.",
+    "structure": "主句用 features 作谓语，running through... 作后置定语修饰 passage，showcasing... 作现在分词伴随状语表目的或结果",
+    "keys": [
+     "专用通道 dedicated passage",
+     "穿过大楼 running through the building",
+     "向公众展示 showcasing...to the public",
+     "工作室 studios"
+    ]
+   },
+   {
+    "cn": "在那里，参观者还可以看到故宫和北京其他地方的壮观景色。",
+    "en": "There, visitors can also enjoy spectacular views of the Forbidden City and other parts of Beijing.",
+    "structure": "简单句，地点状语 There 前置，enjoy 替代 see 更地道，of 短语作后置定语",
+    "keys": [
+     "故宫 the Forbidden City",
+     "壮观景色 spectacular views",
+     "参观者 visitors"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "中央电视台总部大楼",
+    "en": "the CCTV Headquarters"
+   },
+   {
+    "cn": "朝阳区",
+    "en": "Chaoyang District"
+   },
+   {
+    "cn": "总建筑面积",
+    "en": "total construction area"
+   },
+   {
+    "cn": "故宫",
+    "en": "the Forbidden City"
+   },
+   {
+    "cn": "环保意识",
+    "en": "environmental awareness"
+   },
+   {
+    "cn": "建筑材料",
+    "en": "construction materials"
+   },
+   {
+    "cn": "专用通道",
+    "en": "dedicated passage"
+   },
+   {
+    "cn": "创新结构",
+    "en": "innovative structure"
+   },
+   {
+    "cn": "中外建筑师",
+    "en": "Chinese and foreign architects"
+   }
+  ],
+  "pitfalls": [
+   "55万应写成 550,000 而非 550 thousand 或 55 万，数字换算易出错",
+   "故宫应译为 the Forbidden City，不可写成 the Palace Museum（此处指景色非博物馆）",
+   "中外建筑师易漏译为仅 architects，须体现 Chinese and foreign 的对比",
+   "not only...but also 并列结构前后时态和词性须保持一致",
+   "专用通道 dedicated passage 不宜译为 special road 或 private channel，用词需准确"
+  ],
+  "upgrades": [
+   {
+    "plain": "is located in",
+    "better": "is situated in / nestled in",
+    "note": "situated 更正式书面，nestled 暗含被环绕之意，更生动"
+   },
+   {
+    "plain": "attracts many tourists",
+    "better": "draws numerous tourists",
+    "note": "draw 搭配游客更地道，numerous 比 many 更书面高级"
+   },
+   {
+    "plain": "has a dedicated passage",
+    "better": "features a dedicated passage",
+    "note": "features 作动词表'以…为特色'，比 has 更能突出亮点"
+   },
+   {
+    "plain": "can see spectacular views",
+    "better": "can enjoy / take in spectacular views",
+    "note": "enjoy/take in 与 views 搭配更自然，体现欣赏而非单纯看到"
+   },
+   {
+    "plain": "is the result of cooperation",
+    "better": "is the fruit / culmination of collaboration",
+    "note": "able fruit/culmination 比 result 更具文学色彩，collaboration 比 cooperation 更强调协同创作"
+   }
+  ]
+ }
+}

@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "524855593c06__listening__all",
+ "examId": "524855593c06",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2021 年 6 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:34:51.298Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57313,
+ "usage": {
+  "prompt_tokens": 2200,
+  "completion_tokens": 3000,
+  "total_tokens": 5200,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2200,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3000,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2200,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下解析仅基于题目选项的语言特征与正确答案进行推理分析，不涉及任何对录音内容的编造。",
+  "overview": "本场听力共7段材料、25题。第1段（Q1-4）涉及离职与exit interview话题；第2段（Q5-8）围绕一次探险纪录片经历；第3段（Q9-11）讨论科学术语（jargon）对公众理解科学的影响；第4段（Q12-15）涉及石油勘探与钻井工业的诞生；第5段（Q16-18）聚焦职场管理问题；第6段（Q19-21）讨论采矿业自动化变革；第7段（Q22-25）关注道路交通安全与死亡率统计。",
+  "strategy": [
+   "预读选项时迅速圈出各选项的差异关键词，如人名、数字、态度词，建立预判框架",
+   "选项中出现绝对化表述（all、only、never）时需格外警惕，往往是干扰项",
+   "注意选项动词时态和语态差异，常暗示题目考查的是过去事件还是未来计划",
+   "态度题优先排除极端选项（如strongly opposed），正确答案多为折中或有限定的表述",
+   "因果关系题关注选项中because、result in、give birth to等逻辑词，听时重点捕捉转折与因果信号词",
+   "若四个选项结构高度平行（如都是It + 动词），说明在问同一主语的某个特征，集中听该主语相关描述"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "离职面谈（exit interview）的注意事项与建议",
+    "optionSignals": "Q1四个选项均以He will/is going to开头，问男士即将采取的行动；Q2-Q3选项以It may/should开头，考查对某事物的评价或后果；Q4选项均为动词原形短语，问建议性行动。",
+    "tips": [
+     "Q1中leave his present job与attend a job interview语义接近但指向不同阶段，注意区分'离职'与'求职面试'",
+     "Q3四个选项均以It may开头表负面后果，需听清是对'谁'产生影响——interviewer、career、superiors还是fellow employees",
+     "Q4中pour out frustrations与prepare a report形成极端对比，注意听说话人语气是建议还是警告"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "一次探险旅程及其纪录片拍摄经历",
+    "optionSignals": "Q5四个选项分别指journey、expedition、documentary、career，在问谈话的主题对象；Q6-Q7涉及具体困难和原因；Q8用四个形容词（memorable/unbearable/uneventful/fruitful）评价整体体验，属态度评价题。",
+    "tips": [
+     "Q5选项涵盖不同话题名词，预读时标记核心词，听开头几句即可锁定主题",
+     "Q8四个形容词感情色彩差异大：unbearable极端负面、uneventful偏平淡、fruitful积极且具体，正确答案D为正面但务实的评价",
+     "Q7的hurricane与flood均为自然灾害，需精确捕捉具体灾害类型词"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "科学术语（jargon）对公众理解科学的负面影响",
+    "optionSignals": "Q9和Q10选项主语分别为It和They，问jargon对外行人的影响；Q11四个选项均为动词原形短语，问应对建议。选项中laymen、scientists、jargon反复出现，话题明确。",
+    "tips": [
+     "Q9中diminishes interest与hurts dignity均为负面效果，需区分影响的'对象维度'：兴趣vs尊严",
+     "Q11中explain all the jargon与do away with jargon是截然不同的策略（解释vs消除），all一词过于绝对，常为干扰项",
+     "注意Q10的disbelieve the actual science与see the complexity含义差异：前者是不信任，后者是认识复杂性"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "某地石油发现与钻井工业的起源及经济影响",
+    "optionSignals": "Q12四个选项描述不同的发现/事件，在问最初发现了什么；Q13问障碍原因（lack of skill/tools vs sand）；Q14-Q15用It做主语评价某事件的历史意义，选项涵盖'诞生产业''改变经济'等宏大叙事。",
+    "tips": [
+     "Q12中oil leakage（泄漏）与oil deposits（矿藏）语义截然不同，注意听是'灾害'还是'资源发现'",
+     "Q14中gave birth to表'催生'，是积极历史评价；not as effective和not popularized则是负面或限定，注意听叙述语气",
+     "Q15四个选项都以It开头描述对州经济的影响，radically transformed为正面，而ruined/destroyed为毁灭性，方向相反，易排除"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "员工离职原因调查：管理者问题与企业文化",
+    "optionSignals": "Q16四个选项为简短名词短语（unsuitable jobs/bad managers等），问主要原因；Q17同样为名词短语，问深层因素；Q18四个选项以It开头描述调查方法论特征，考查研究局限性。",
+    "tips": [
+     "Q16选项高度概括，bad managers与insufficient motivation为高频考点，需听清核心归因词",
+     "Q18中only on the perspective of employees含限定词only，此处反而是正确答案，说明该研究的局限性——注意only有时用于指出不足而非绝对化错误",
+     "Q17中toxic company culture是近年职场话题高频表达，注意与ineffective training的区分"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "采矿业自动化趋势及其就业与社会影响",
+    "optionSignals": "Q19四个选项均以It is开头描述行业现状；Q20描述自动化的具体影响（创造/消灭就业等）；Q21描述人们对自动化的态度，四个选项从热烈欢迎到强烈反对形成梯度。",
+    "tips": [
+     "Q21态度梯度题：welcome with open arms（全面拥抱）→ wait to see（观望）→ strongly opposed（强烈反对）→ accept with reservations（有保留接受），正确答案D为折中态度，符合听力常见出题规律",
+     "Q20中creates new jobs与exhausts resources方向相反，注意听自动化被赋予的正面还是负面评价",
+     "Q19的automation revolution是核心主题词，预读时即可锁定话题方向"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "全球道路交通安全：死亡率数据与改善措施",
+    "optionSignals": "Q22-Q23涉及统计数据特征（death rate、global average、rich and poor nations），为细节辨析题；Q24以Many of them开头描述各国趋势；Q25为动词原形短语，问改善建议。",
+    "tips": [
+     "Q22中twice that of the global average与kill more than any infectious disease都是数据比较，需听清具体比较对象和倍数",
+     "Q23四个选项评价统计数据的局限性，B选项'不反映个别国家变化'是典型的'总体数据掩盖个体差异'论点，常见于学术讨论",
+     "Q25中foster better driving behavior较温和，impose heavier penalties较强硬，abolish all含绝对词all可优先排除"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "exit interview",
+    "cn": "离职面谈"
+   },
+   {
+    "w": "adversely",
+    "cn": "不利地，有害地"
+   },
+   {
+    "w": "expedition",
+    "cn": "远征，探险"
+   },
+   {
+    "w": "jargon",
+    "cn": "行话，术语"
+   },
+   {
+    "w": "laymen",
+    "cn": "外行人，门外汉"
+   },
+   {
+    "w": "oil deposits",
+    "cn": "石油矿藏"
+   },
+   {
+    "w": "give birth to",
+    "cn": "催生，产生"
+   },
+   {
+    "w": "toxic",
+    "cn": "有毒的；（引申）有害的"
+   },
+   {
+    "w": "automation",
+    "cn": "自动化"
+   },
+   {
+    "w": "with reservations",
+    "cn": "有保留地"
+   },
+   {
+    "w": "infrastructure",
+    "cn": "基础设施"
+   },
+   {
+    "w": "foster",
+    "cn": "促进，培养"
+   },
+   {
+    "w": "unprecedented",
+    "cn": "史无前例的"
+   },
+   {
+    "w": "diminish",
+    "cn": "减少，削弱"
+   }
+  ]
+ }
+}

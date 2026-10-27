@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "534680224ae3__reading__2",
+ "examId": "534680224ae3",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 6 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:52:32.181Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62597,
+ "usage": {
+  "prompt_tokens": 1937,
+  "completion_tokens": 4057,
+  "total_tokens": 5994,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1937,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4057,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1937,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人类模仿行为是进化成功的关键",
+  "gist": "文章通过对比人类与黑猩猩的行为差异，指出人类进化成功的关键并非依赖大脑的创新能力，而在于善于精确模仿他人。实验证明，人类儿童和成人比黑猩猩更倾向于\"过度模仿\"，这种看似非理性的行为实际上帮助人类学习复杂技术、适应各种环境，是人类繁衍壮大的核心优势。",
+  "structure": [
+   "第1-2段：引出问题——人类为何在进化中如此成功",
+   "第3-4段：提出两种解释——大脑智力说vs.模仿学习说",
+   "第5-8段：以实验为证——人类比黑猩猩更倾向过度模仿",
+   "第9-11段：解释原因并总结——模仿是人类学习复杂技术的必要方式"
+  ],
+  "difficulty": "中等",
+  "translation": "黑猩猩是人类最近的动物亲属，与我们共享高达98%的基因。然而人类和黑猩猩过着截然不同的生活。如今，不到30万只野生黑猩猩生活在非洲少数几个有森林的角落，而人类已经殖民到地球的每一个角落。人类人口超过70亿，使几乎所有其他哺乳动物相形见绌——尽管我们在体格上并不强壮。\n\n是什么造就了我们这个物种令人难以置信的进化成功？\n\n一个显而易见的答案是我们的大脑。可能是我们的原始智力赋予了我们前所未有的创造性思维能力，在人类迁徙全球的过程中，不断创新解决棘手问题的方案。\n\n但越来越多的认知科学家和人类学家正在否定这一解释。他们认为，我们之所以能够生存和繁荣，恰恰不是因为我们作为创新者谋生，而是因为我们不独立思考。相反，人们通过仔细模仿他人来应对具有挑战性的气候和生态环境。\n\n在一项著名的研究中，心理学家维多利亚·霍纳和安德鲁·怀滕向两组实验对象——儿童和黑猩猩——展示了一个内部有奖品的机械盒子。在一种条件下，盒子是不透明的；在另一种条件下，盒子是透明的。实验者演示了如何打开盒子取出奖品，但他们还加入了一个无关步骤——用棍子敲击盒子。\n\n奇怪的是，孩子们仔细地模仿了打开盒子的所有步骤，即使他们能看到棍子没有任何实际效果。也就是说，他们进行了非理性的模仿：孩子们没有只做获得奖品所必需的事情，而是盲目地模仿了他们目睹的每一个动作。\n\n当然，那项研究只包括了三四岁的儿童。但额外的研究表明，年龄较大的儿童和成人甚至更有可能不假思索地模仿他人的行为，而婴儿则较少进行过度模仿——即精确模仿那些不切实际的动作。\n\n相比之下，研究中的黑猩猩只在不透明条件下进行了过度模仿。在透明条件下——它们看到棍子在机械上毫无用处——它们完全跳过了那个步骤。此后的其他研究也支持了这些发现。\n\n在模仿方面，黑猩猩比人类儿童或成人更加理性。\n\n人类看似非理性的过度模仿偏好从何而来？人类学家约瑟夫·亨里奇指出，世界各地的人们依赖的技术往往非常复杂，没有人能够通过理性方式学会它们。相反，人们必须一步一步地学习，信赖更有经验的长辈和同伴的智慧。\n\n所以，下次当你听到有人激情四射地主张每个人都应该拥抱不从众、避免模仿他人时，你也许会笑一笑。毕竟，我们不是黑猩猩。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "One obvious answer is our big brains. It could be that our raw intelligence gave us an unprecedented ability to think outside the box, innovating solutions to thorny problems as people migrated across the globe.",
+    "why": "题目问什么可能解释人类拥有几乎所有哺乳动物中最大的种群数量。文章第2段提出问题\"什么造就了人类物种的进化成功\"，第3段给出一个显而易见的答案：我们的大脑。原文说\"our raw intelligence gave us an unprecedented ability to think outside the box\"，即原始智力赋予了我们前所未有的创新思维能力。C选项\"They possess the most outstanding ability to think\"（他们拥有最卓越的思维能力）是对该段内容的合理概括。注意题目用的是might explain，对应的是原文\"One obvious answer\"这一可能性解释。",
+    "traps": "A选项\"raw strength\"偷换概念，原文是\"raw intelligence\"（原始智力）而非\"raw strength\"（蛮力），属于偷换关键词陷阱。B选项\"cope with the outside world more effectively\"过于笼统，原文此处讨论的是大脑智力，而非泛泛地说应对外部世界更有效。D选项\"know how to survive everywhere\"虽然原文提到人类colonized every corner，但这是现象描述而非原因解释，因果倒置。",
+    "tip": "注意区分\"原因\"和\"结果\"，题目问的是解释（原因），不要选择现象（结果）。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "people cope with challenging climates and ecological contexts by carefully copying others.",
+    "why": "题目问越来越多的认知科学家和人类学家认为人类进化成功的原因是什么。原文第4段明确说\"a growing number of cognitive scientists and anthropologists\"认为人类生存和繁荣并非因为创新，而是\"people cope with challenging climates and ecological contexts by carefully copying others\"（人们通过仔细模仿他人来应对挑战）。D选项\"They meet challenges by imitating others carefully\"是对原文的精准同义转述，cope with=meet, copying=imitating。",
+    "traps": "A选项\"better at innovating solutions\"恰恰是这些科学家否定的观点，属于正反混淆陷阱。B选项\"thrive through creative strategies\"中的creative与原文强调的copying相矛盾，属于曲解原文。C选项\"naturally adaptive to ecological contexts\"虽提到生态环境，但原文说的是通过模仿来适应，而非天生适应，遗漏了核心机制。",
+    "tip": "注意题目限定的观点持有者，区分文章中不同立场的观点。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Oddly, the children carefully copied all the steps to open the box, even when they could see that the stick had no practical effect. That is, they copied irrationally: Instead of doing only what was necessary to get their reward, children slavishly imitated every action they'd witnessed.",
+    "why": "题目问作者认为Horner和Whiten的研究发现有什么奇怪之处。原文用\"Oddly\"一词引出发现：孩子们仔细模仿了打开盒子的所有步骤，即使能看到棍子没有实际作用，他们仍然\"slavishly imitated every action\"。随后用\"they copied irrationally\"进行总结。A选项\"Children irrationally imitated every action of the experimenters\"完全对应原文表述。",
+    "traps": "B选项\"Chimpanzees could tell the transparent box from the opaque one\"虽是实验事实但并非作者认为奇怪的内容，作者用Oddly标记的是儿童的行为。C选项\"Chimpanzees could retrieve the treat more quickly\"属于无中生有，原文未比较速度。D选项\"Children omitted the step of tapping\"与原文相反，原文说儿童模仿了包括敲击在内的所有步骤，属于反向干扰。",
+    "tip": "关注作者态度词（如Oddly），它直接标记了作者认为异常的核心发现。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Anthropologist Joseph Henrich points out that people around the world rely on technologies that are often so complex that no one can learn them rationally. Instead, people must learn them step by step, trusting in the wisdom of more experienced elders and peers.",
+    "why": "题目问Henrich如何解释人类的模仿偏好。原文说Henrich指出人们依赖的技术往往过于复杂，无法通过理性方式学会，必须一步步地学习并信赖长辈和同伴的智慧。这说明过度模仿偏好源于人类学习复杂技术的方式——即必须通过逐步模仿来掌握复杂技术。B选项\"It stems from the way people learn complex technologies\"准确概括了这一因果关系。",
+    "traps": "A选项\"originates in the rationality\"与原文矛盾，Henrich恰恰指出这些技术无法通过理性学习（no one can learn them rationally），属于正反混淆。C选项\"distrusting their own wisdom\"属于曲解，原文说的是信赖他人智慧，不等于不信任自己的智慧。D选项\"desire to acquire knowledge step by step\"偷换因果，step by step是学习方式而非源自某种\"渴望\"，且遗漏了核心要素\"复杂技术\"。",
+    "tip": "注意区分\"原因\"和\"表现\"，step by step是学习的表现形式，根本原因是技术过于复杂。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "So the next time you hear someone arguing passionately that everyone should embrace nonconformity and avoid imitating others, you might laugh a little bit. We're not chimpanzees, after all.",
+    "why": "题目问作者说\"We're not chimpanzees\"想强调什么。结合全文论证：黑猩猩理性地只模仿有用步骤，而人类倾向于全面模仿。作者用\"We're not chimpanzees\"暗示人类天生就是模仿者，这是人类区别于黑猩猩的本质特征，也是人类进化成功的关键。因此强调的是模仿是人类的固有特征，对应B选项\"It is characteristic of human beings to copy others\"。",
+    "traps": "A选项\"arguable whether everyone should avoid imitation\"虽涉及模仿话题，但作者的态度是明确的（会笑一笑，即认为主张不模仿是可笑的），而非说\"有争议\"，语气不够坚定。C选项\"desirable to trust in more knowledgeable peers\"虽是文中提及的细节，但不是\"We're not chimpanzees\"这句话要强调的核心要点。D选项\"naive to laugh at someone embracing nonconformity\"与原文逻辑相反，作者是在笑主张不从众的人，而非说笑他们是天真的行为。",
+    "tip": "理解结尾总结句需回归全文主旨，作者最终要强调的核心论点才是答案。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dwarf",
+    "cn": "v. 使相形见绌，使显得矮小"
+   },
+   {
+    "w": "unprecedented",
+    "cn": "adj. 前所未有的，史无前例的"
+   },
+   {
+    "w": "thorny",
+    "cn": "adj. 棘手的，困难的"
+   },
+   {
+    "w": "thrive",
+    "cn": "v. 繁荣，兴旺，茁壮成长"
+   },
+   {
+    "w": "opaque",
+    "cn": "adj. 不透明的"
+   },
+   {
+    "w": "transparent",
+    "cn": "adj. 透明的"
+   },
+   {
+    "w": "retrieve",
+    "cn": "v. 取回，检索"
+   },
+   {
+    "w": "slavishly",
+    "cn": "adv. 盲从地，奴隶般地"
+   },
+   {
+    "w": "over-imitate",
+    "cn": "v. 过度模仿"
+   },
+   {
+    "w": "nonconformity",
+    "cn": "n. 不从众，不墨守成规"
+   },
+   {
+    "w": "colonize",
+    "cn": "v. 殖民，移居"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "They think that, rather than making our living as innovators, we survive and thrive precisely because we don't think for ourselves.",
+    "cn": "他们认为，我们之所以能够生存和繁荣，恰恰不是因为我们作为创新者谋生，而是因为我们不独立思考。",
+    "note": "主干为They think that we survive and thrive because...；rather than引导让步对比，说明不是作为创新者；precisely强调\"恰恰是\"。"
+   },
+   {
+    "en": "Anthropologist Joseph Henrich points out that people around the world rely on technologies that are often so complex that no one can learn them rationally.",
+    "cn": "人类学家约瑟夫·亨里奇指出，世界各地的人们依赖的技术往往非常复杂，以至于没有人能够通过理性方式学会它们。",
+    "note": "主干为Henrich points out that...；that引导宾语从句；technologies后接that定语从句；so...that...构成结果状语从句。"
+   },
+   {
+    "en": "Instead of doing only what was necessary to get their reward, children slavishly imitated every action they'd witnessed.",
+    "cn": "孩子们没有只做获得奖品所必需的事情，而是盲目地模仿了他们目睹的每一个动作。",
+    "note": "Instead of引导介词短语表对比；what引导名词性从句作doing的宾语；they'd witnessed为省略that的定语从句修饰every action。"
+   }
+  ]
+ }
+}

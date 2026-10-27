@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "534680224ae3__reading__1",
+ "examId": "534680224ae3",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 6 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:52:07.679Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 53143,
+ "usage": {
+  "prompt_tokens": 1823,
+  "completion_tokens": 3514,
+  "total_tokens": 5337,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1823,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3514,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1823,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 47 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "加工食品如何让消费者上瘾",
+  "gist": "调查记者Michael Moss指出，加工食品如同烟酒一样令人上瘾。食品公司利用消费者的记忆、渴望和大脑化学机制，通过低价、美味和便捷策略让人持续消费。随着健康饮食需求增长，食品公司因自身对生产便捷食品的依赖而难以转型。",
+  "structure": [
+   "第1段：引出话题，Moss揭示加工食品的成瘾性设计",
+   "第2段：记忆与怀旧在食品渴望中的关键作用",
+   "第3段：过渡句，点明公司利用记忆和渴望的策略",
+   "第4段：详述食品比毒品更强的成瘾机制及行业对速度的追求",
+   "第5段：总结行业困境，公司自身对便捷食品的依赖阻碍转型"
+  ],
+  "difficulty": "中等",
+  "translation": "如果你是在大流行病期间越来越多地以垃圾食品作为零食的人，你并不孤单。调查记者迈克尔·莫斯说，加工食品经过精心设计让你上瘾，这与酒精、香烟或其他有害物质并无二致。他2013年出版的《盐糖脂》一书探讨了食品公司对这些产品的激进营销及其对我们健康的影响。在他的新书《上瘾》中，莫斯更新了食品巨头们为让我们持续食用其产品所做的努力，以及他们如何回应消费者和健康倡导者的投诉。\n\n加工食品价格低廉、合法且无处不在。公司的广告在提示我们记住这些产品，我们也不断地想要这些产品。因此，食品环境是使食品对许多人来说更加成问题的关键因素之一。记忆，尤其是怀旧情绪，在我们渴望的食物中扮演着重要角色。汽水公司发现，如果在孩子和父母一起看球赛时把一罐汽水放到孩子手中，那罐汽水将永远与那个快乐的时刻联系在一起。日后，当那个孩子想要体验快乐时刻时，他们就会想到汽水。许多人在童年时记住的零食中寻找安慰。\n\n莫斯研究了公司如何利用我们的记忆、渴望和大脑化学机制来让我们持续吃零食。\n\n我之所以认为这些食品中的某些甚至比毒品更强大、更令人担忧，其中一个原因就是记忆。我们吃什么完全与记忆有关。我们在很小的时候就开始形成对食物的记忆，并将这些记忆保持一生。食品行业深知这一点，因此花费大量时间试图塑造我们对其产品的记忆。20世纪90年代，研究药物成瘾的科学家发现了成瘾的一个特征：一种物质到达大脑的速度越快，我们就越容易冲动行事。没有什么比食物到达大脑的速度更快了。对莫斯来说，这让\"快餐\"的概念有了全新的含义，因为这不仅限于快餐连锁店——杂货店里近90%的食品都是加工食品。这个行业的一切都与速度有关，从生产到包装。\n\n总体而言，莫斯概述了该行业对使其产品廉价、超级美味和对消费者极其便捷的依赖。如今越来越多的人关心他们吃进身体的东西并想要更健康的饮食，这些公司发现很难满足这一新需求，因为它们自身对生产这些便捷食品也已经上瘾了。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Investigative reporter Michael Moss says processed food is engineered to hook you, not unlike alcohol, cigarettes, or other harmful substances.",
+    "why": "原文明确指出加工食品被设计来\"hook you\"（让你上瘾），与酒精、香烟等有害物质\"not unlike\"（并无不同）。hook意为使上瘾，A选项\"addictive\"（令人上瘾的）是对hook的同义替换，完全对应原文逻辑。",
+    "traps": "B\"必要之恶\"：原文未提及加工食品是\"必要的\"，属于无中生有。C\"被设计来享受\"：原文重点是\"hook\"（上瘾）而非\"enjoy\"（享受），偷换了核心概念。D\"需求日益增长\"：原文未比较需求量的变化趋势，属于无中生有。",
+    "tip": "注意hook一词的隐喻含义，即\"使上瘾\"，是本题关键词。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Memory, nostalgia in particular, plays a big role in the foods we crave.",
+    "why": "原文第二段明确指出\"Memory, nostalgia in particular, plays a big role in the foods we crave\"，即记忆（尤其是怀旧）在我们渴望的食物中发挥重要作用。D选项\"Memory\"与原文完全对应。题干中的\"key role\"对应原文的\"big role\"。",
+    "traps": "A\"食品环境\"：虽然原文提到food environment是关键因素之一，但题目问的是\"plays a key role in the foods we crave\"，原文对应此表述的主语明确是Memory。B\"激进营销\"：出现在第一段，与craving无直接关联。C\"便利性\"：出现在最后一段，与craving无直接对应。",
+    "tip": "审题时注意精确匹配题干关键词\"foods we crave\"在原文中的位置。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Knowing this, the food industry spends lots of time trying to shape the memories that we have for their products.",
+    "why": "原文第四段指出\"the food industry spends lots of time trying to shape the memories that we have for their products\"，即食品行业花大量时间试图塑造我们对其产品的记忆。A选项\"strive to influence how consumers remember their products\"是对shape the memories的同义改写，shape对应influence，memories对应remember。",
+    "traps": "B\"利用长期记忆促进成瘾\"：原文虽提到终身记忆和成瘾，但公司的行为是\"塑造记忆\"而非直接\"利用长期记忆促进成瘾\"，属于过度推断。C\"尽早利用消费者的记忆\"：原文提到人们很早就形成食物记忆，但未说公司专门\"尽早\"利用，混淆了事实陈述和公司行为。D\"努力了解消费者记住了什么\"：原文是\"塑造\"记忆而非\"了解\"记忆，偷换了动作。",
+    "tip": "注意区分\"塑造记忆\"和\"利用记忆\"的细微语义差别。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Everything in the industry is about speed, from manufacturing to packaging.",
+    "why": "原文第四段末尾明确指出\"Everything in the industry is about speed, from manufacturing to packaging\"，即从生产到包装，行业中的一切都与速度有关。C选项\"Focusing on how quickly the work is done\"是对about speed的同义改写，完全对应原文信息。",
+    "traps": "A\"赋予快餐全新含义\"：这是Moss的分析视角，不是行业的运营方式，张冠李戴。B\"不限制快餐连锁店数量\"：原文\"this isn't limited to fast food chains\"是说加工食品不限于快餐连锁店，而非不限制其数量，曲解原文。D\"优先考虑产品质量\"：原文强调的是速度而非质量，属于无中生有。",
+    "tip": "从manufacturing到packaging的限定词与题干完全对应，定位精准即可快速解题。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "these companies are finding it really difficult to meet that new demand because of their own addiction to making these convenience foods.",
+    "why": "原文最后一句明确给出原因：\"because of their own addiction to making these convenience foods\"，即因为公司自身对生产便捷食品的\"上瘾\"。D选项\"They are hooked on manufacturing convenience foods\"中hooked on是addiction的同义替换，manufacturing对应making，完全对应原文因果逻辑。",
+    "traps": "A\"认为生产速度比消费者健康更重要\"：原文未提及公司做此类价值判断，属于无中生有。B\"认为没有快餐行业就会灭亡\"：原文未提及行业存亡问题，过度推断。C\"必须在口味和营养之间取得平衡\"：原文未讨论口味与营养的平衡问题，属于无中生有。",
+    "tip": "because of引导的原因从句是命题高频考点，注意精确理解因果关系。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "hook",
+    "cn": "v. 使上瘾；用钩钩住"
+   },
+   {
+    "w": "investigative",
+    "cn": "adj. 调查性的（常修饰reporter/journalism）"
+   },
+   {
+    "w": "capitalize on",
+    "cn": "v. 利用，从……中获利"
+   },
+   {
+    "w": "crave",
+    "cn": "v. 渴望，极想要"
+   },
+   {
+    "w": "cue",
+    "cn": "v. 提示，暗示；n. 线索"
+   },
+   {
+    "w": "nostalgia",
+    "cn": "n. 怀旧，思乡之情"
+   },
+   {
+    "w": "impulsively",
+    "cn": "adv. 冲动地，凭一时冲动"
+   },
+   {
+    "w": "apt",
+    "cn": "adj. 易于……的，有……倾向的"
+   },
+   {
+    "w": "problematic",
+    "cn": "adj. 成问题的，有困难的"
+   },
+   {
+    "w": "advocate",
+    "cn": "n. 倡导者，拥护者；v. 提倡"
+   },
+   {
+    "w": "perish",
+    "cn": "v. 消亡，毁灭（选项词汇）"
+   },
+   {
+    "w": "endeavor",
+    "cn": "v./n. 努力，尽力（选项词汇）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "One of the features of addiction that scientists studying drug addiction discovered back in the 1990s was that the faster a substance hits the brain, the more apt we are as a result to act impulsively.",
+    "cn": "20世纪90年代，研究药物成瘾的科学家发现的成瘾特征之一是：一种物质到达大脑的速度越快，我们就越容易因此而冲动行事。",
+    "note": "主干为One of the features...was that...；that scientists studying drug addiction discovered back in the 1990s为定语从句修饰features；was后的表语从句中用the faster...the more...比较级结构。"
+   },
+   {
+    "en": "For Moss, this puts the notion of \"fast food\" in an entirely new light as this isn't limited to fast food chains-almost 90% of food products in grocery stores are processed foods.",
+    "cn": "对莫斯来说，这让\"快餐\"的概念有了全新的含义，因为这不仅限于快餐连锁店——杂货店里近90%的食品都是加工食品。",
+    "note": "主干为this puts the notion...in a new light；as引导原因状语从句解释原因；破折号后补充说明加工食品的普遍性。"
+   },
+   {
+    "en": "Now that more and more people care about what they put in their bodies and are wanting to eat healthier, these companies are finding it really difficult to meet that new demand because of their own addiction to making these convenience foods.",
+    "cn": "如今越来越多的人关心他们吃进身体的东西并想要吃得更健康，这些公司发现很难满足这一新需求，因为它们自身对生产这些便捷食品也已经上瘾了。",
+    "note": "Now that引导原因状语从句（既然/由于）；主句为these companies are finding it difficult to...；because of引导第二层原因，揭示公司自身的困境。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "612ae9c327ae__reading__1",
+ "examId": "612ae9c327ae",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 12 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:36:16.116Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55870,
+ "usage": {
+  "prompt_tokens": 1772,
+  "completion_tokens": 3589,
+  "total_tokens": 5361,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1772,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3589,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1772,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社交媒体筛选求职者的利弊与合规性",
+  "gist": "文章围绕\"是否应该用社交媒体筛选求职者\"展开讨论。首先指出社交媒体筛选已十分普遍，但存在道德和法律风险；接着分析其可能导致对候选人隐私的侵犯和不公平对待；随后承认合法使用也有价值；最后建议企业在筛选前咨询管理层和法律团队，做到专业、合规。",
+  "structure": [
+   "第1-2段：引出社交媒体无处不在，提出核心问题——雇主是否应利用社交媒体筛选候选人",
+   "第3-4段：分析社交媒体筛选的普遍性及其潜在的道德、法律风险和不公平后果",
+   "第5段：承认社交媒体筛选也有合法价值，需在利弊间找到微妙平衡",
+   "第6段：给出建议——筛选须专业负责，事先咨询管理层和法律团队以确保合规"
+  ],
+  "difficulty": "中等",
+  "translation": "社交媒体无处不在。数十亿人每天使用社交媒体来创建、分享和交流想法、信息和资讯。个人和企业都会定期发帖，以便与来自世界各地的人互动交流。社交媒体是一种强大的传播媒介，能够在全球范围内同时提供即时、频繁、持久且广泛传播的信息。\n\n人们将自己的生活展示在社交媒体上，供全世界观看。脸书、推特、领英以及无数其他社交平台提供了一种快速简便的方式，让人得以窥探求职者的个人生活——包括积极和消极的一面。将社交媒体筛选作为招聘流程的一部分很有诱惑力，但雇主在调查潜在候选人的背景时是否应该使用它呢？\n\n将社交媒体纳入求职者筛选并非罕见的做法。2018年的一项调查发现，近70%的雇主在录用候选人之前会使用社交媒体对其进行筛查。但这也涉及后果和潜在的法律风险。如果操作不当，社交媒体筛选可能被视为不道德甚至违法的行为。\n\n社交媒体筛选实质上是对求职者私人生活的审查。它可能揭示有关受保护特征的信息，如年龄、种族、国籍、残疾、性别、宗教等，而这些可能会使招聘决策产生偏见。私人页面上被断章取义的图片或评论可能会毁掉一位完全合格的候选人的录用机会。这一过程可能使某个候选人相对于另一个候选人获得不公平的优势。它制造了一个不平等的竞争环境，并可能为招聘经理提供对其招聘决策产生负面影响的信息。\n\n很难忽视社交媒体作为筛选工具的作用。虽然有些信息你不应该看到，但也有一些信息是可以合法考量的——这使其也成为一种有价值的相关信息来源。恰当使用社交媒体筛选有助于确保你不会雇用一个会让你损失金钱或玷污公司声誉的有害员工。考虑这一流程中合法的方面，你或许能雇到有史以来最好的员工。这中间存在一种微妙的平衡。\n\n对求职者的社交媒体筛选必须以专业和负责任的方式进行。公司应明确规定：永远不要求密码、保持标准一致、记录决策过程、考虑所使用的信息来源，并意识到其他法律可能适用。鉴于此，最好在招聘流程的后期阶段再进行筛查，并请求人力资源部门协助处理。社交媒体已成为我们生活中不可或缺的一部分。但在使用社交媒体筛选求职者之前，事先咨询管理层和法律团队是必不可少的，以确保遵守所有法律。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "Social media screening is tempting to use as part of the hiring process, but should employers make use of it when researching a potential candidate's background?",
+    "why": "文章第二段末尾以设问句提出核心论题——雇主是否应使用社交媒体筛选候选人。之后第3-6段分别从普遍性、风险、价值和建议四个角度展开讨论，始终围绕\"是否应该使用\"这一问题。D选项完美概括了全文的讨论主题。",
+    "traps": "A项\"优势\"以偏概全，文章讨论的不仅是优势，更多笔墨在风险上；B项\"社交媒体在日常生活中的侵入性\"偏离主题，文章聚焦于招聘筛选场景，而非日常生活；C项\"社交媒体的利弊权衡\"范围过大，文章专门讨论的是筛选求职者这一具体应用。",
+    "tip": "主旨题应关注文章反复出现的核心论点和设问句。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "When done inappropriately, social media screening can be considered unethical or even illegal.",
+    "why": "第三段最后一句明确指出，社交媒体筛选若操作不当，可能被认为是不道德的(unethical)甚至违法的(illegal)。A选项中的\"moral or legal issues\"正是对\"unethical or even illegal\"的同义改写，精准对应原文信息。",
+    "traps": "B项\"公司声誉受损\"出现在第五段，是社交媒体筛选的合法使用理由（避免雇用有害员工），而非筛选本身的后果，属于张冠李戴；C项\"耸人听闻的信息浮出水面\"原文未提及，属于无中生有；D项\"招聘决策变复杂\"虽有一定关联但未被原文直接表述，且不如A项精准对应。",
+    "tip": "细节题要精确匹配原文表述，注意同义替换。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Pictures or comments on a private page that are taken out of context could ruin a perfectly good candidate's chances of getting hired.",
+    "why": "第四段指出，私人页面上的图片或评论若被\"断章取义\"(taken out of context)，可能毁掉一位完全合格的候选人的录用机会。A选项\"separated from context\"正是对\"taken out of context\"的同义改写，表明信息脱离语境时会对候选人造成伤害。",
+    "traps": "B项\"被雇主仔细审查\"虽然是筛选过程的一部分，但原文强调的致害因素是\"脱离语境\"而非\"审查\"本身；C项\"被放大到毁灭性程度\"属于过度推断，原文说的是断章取义而非放大；D项\"被透露给人力资源部门\"无原文依据，文章建议咨询人力资源部门是另一语境。",
+    "tip": "注意原文短语的同义替换，taken out of context = separated from context。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Consider the lawful side of this process and you may be able to hire the best employee ever. There is a delicate balance.",
+    "why": "第五段论述了社交媒体筛选在合法范围内的价值，指出\"考虑这一流程中合法的方面\"就能兼顾利弊。同段还提到\"there are some things that can be lawfully considered\"，强调合法使用是关键。B选项\"in a legitimate way\"(以合法方式)正是对\"lawful/lawfully\"的同义改写。",
+    "traps": "A项\"打破微妙平衡\"与原文相反，原文强调的是维持平衡；C项\"将个人信息存档\"虽然第六段提到document decisions，但那是记录决策过程而非保留个人信息，属于偷换概念；D项\"区分相关与无关数据\"原文未明确论述，属于过度推断。",
+    "tip": "合法(lawful/legitimate)是本段核心词，抓住关键词同义替换即可定位正确答案。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But before using social media to screen job candidates, consulting with management and legal teams beforehand is essential in order to comply with all laws.",
+    "why": "文章最后一句直接给出建议：在使用社交媒体筛选求职者之前，事先咨询管理层和法律团队是必不可少的。C选项\"seeking advice from management and legal experts\"是对\"consulting with management and legal teams\"的精确同义改写。",
+    "traps": "A项\"雇用专业人士引导整个流程\"过度引申，原文仅建议咨询(consulting)而非雇用(hiring)专业人士，且原文的navigate指的是人力资源部门协助处理，而非外聘人员；B项\"预测流程中的潜在风险\"虽然合理但并非文章最后的明确建议；D项\"制定一套提问规则\"曲解了原文stipulate的含义，原文是列出筛选的注意事项，而非制定提问规则。",
+    "tip": "建议类细节题通常在文章结尾，注意抓取suggest/advise/essential等信号词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "screening",
+    "cn": "n. 筛查，审查"
+   },
+   {
+    "w": "scrutinising",
+    "cn": "v. 仔细审查，细查（scrutinise的现在分词）"
+   },
+   {
+    "w": "bias",
+    "cn": "v./n. 使产生偏见；偏见"
+   },
+   {
+    "w": "stipulate",
+    "cn": "v. 明确规定，约定"
+   },
+   {
+    "w": "incorporate",
+    "cn": "v. 纳入，包含"
+   },
+   {
+    "w": "toxic",
+    "cn": "adj. 有害的，有毒的"
+   },
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的，不利的"
+   },
+   {
+    "w": "comply with",
+    "cn": "v. 遵守，遵从"
+   },
+   {
+    "w": "navigate",
+    "cn": "v. 引导，处理（复杂局面）"
+   },
+   {
+    "w": "glimpse",
+    "cn": "v./n. 窥探，一瞥"
+   },
+   {
+    "w": "unequal playing field",
+    "cn": "n. 不平等的竞争环境"
+   },
+   {
+    "w": "stain",
+    "cn": "v. 玷污，损害"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It can reveal information about protected characteristics like age, race, nationality, disability, gender, religion, etc., and that could bias a hiring decision.",
+    "cn": "它可能揭示有关受保护特征的信息，如年龄、种族、国籍、残疾、性别、宗教等，而这些可能会使招聘决策产生偏见。",
+    "note": "主句为It can reveal information，about引出介词短语修饰information，like列举具体特征，and连接并列分句，that指代前述信息，could bias为谓语。"
+   },
+   {
+    "en": "Companies should stipulate that they will never ask for passwords, be consistent, document decisions, consider the source used and be aware that other laws may apply.",
+    "cn": "公司应明确规定：永远不要求密码、保持标准一致、记录决策过程、考虑所使用的信息来源，并意识到其他法律可能适用。",
+    "note": "主干为Companies should stipulate that...，that从句内含五个并列动词短语：never ask / be consistent / document / consider / be aware，其中最后一个be aware后接that宾语从句。"
+   },
+   {
+    "en": "But before using social media to screen job candidates, consulting with management and legal teams beforehand is essential in order to comply with all laws.",
+    "cn": "但在使用社交媒体筛选求职者之前，事先咨询管理层和法律团队是必不可少的，以确保遵守所有法律。",
+    "note": "before引导时间状语前置，主语为动名词短语consulting with...teams，is essential为系表结构，in order to引出目的状语。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "8fcbfef22440__reading__2",
+ "examId": "8fcbfef22440",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 12 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:48:10.561Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55744,
+ "usage": {
+  "prompt_tokens": 1880,
+  "completion_tokens": 3688,
+  "total_tokens": 5568,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1880,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3688,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1880,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "学术期刊编辑委员会的性别不平等",
+  "gist": "一项发表在《自然·神经科学》上的研究发现，心理学和神经科学顶级期刊的编辑委员会以男性为主导，女性编辑比例远低于女性研究者比例。作者指出，这不仅仅是传统问题，更是结构性障碍造成的，呼吁主动打破这些障碍，而非坐等时间解决问题。",
+  "structure": [
+   "第1-2段：引出话题——期刊编辑多样性缺失的现状",
+   "第3-4段：数据支撑——心理学和神经科学期刊编辑的性别比例失衡",
+   "第5-6段：深入分析——性别不平等的根源不在于女性学者数量不足",
+   "第7-8段：提出建议——应主动消除结构性障碍，并指出缺乏多样性的后果"
+  ],
+  "difficulty": "中等",
+  "translation": "期刊编辑决定了什么能发表、什么不能发表，这影响着其他学者的职业生涯，也左右着一个领域的发展方向。因此，你会期望期刊尽其所能建立一个多元化的编辑委员会，以反映各种声音、经验和身份。\n\n不幸的是，发表在《自然·神经科学》上的一项新研究令人沮丧。研究团队发现，心理学和神经科学顶级期刊的大多数编辑是男性，且来自美国：这种状况可能正在加剧该领域已有的性别不平等，并影响着所发表研究的类型。\n\n研究发现，男性占心理学期刊编辑的60%。在各个资历层级中，男性编辑的数量都显著多于女性，并且男性在超过四分之三的期刊中占编辑的多数。关键是，女性编辑的比例显著低于女性心理学研究者的总体比例。\n\n在神经科学期刊中，这种差异更为明显：70%的编辑是男性，在88%的期刊中，男性占据了大多数编辑职位。在这种情况下，女性编辑的比例与从事神经科学研究的女性研究者比例相比并没有显著偏低——这一发现揭示了该领域在更广泛层面上持久存在的性别差距。\n\n基于研究结果，该团队得出结论：\"在心理学和神经科学最知名的学术期刊中，男性的理念、价值观和决策偏见在编辑职位中被过度代表。\"\n\n科学领域的性别不平等常被归因于这样一个事实：资深学者更可能是男性，因为从历史上看科学是男性主导的。有人认为，随着时间推移，越来越多的女性晋升到高级职位，该领域将变得更加平等。然而，这项研究表明，即使是心理学期刊中的初级职位，也倾向于不成比例地由男性担任，尽管事实上初级心理学教职中女性多于男性。\n\n这意味着缺少女性学者并非问题所在。相反，是结构性原因导致女性在科学领域处于不利地位。例如，女性获得的薪酬更低，面临更大的育儿压力，这可能导致发表论文和获得资助更少——而这些正是期刊在决定任命谁时所看重的。与其简单地将编辑委员会的不平等归咎于传统，我们应该积极消除这些既有障碍。\n\n期刊编辑中缺乏多样性也可能加剧心理学的\"WEIRD问题\"。如果期刊编辑大多是来自美国的男性，那么无论是否有意识，他们可能会更看重与西方男性群体相关的论文。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "You'd hope, then, that journals would do everything they can to establish a diverse editorial board, reflecting a variety of voices, experiences, and identities.",
+    "why": "第一段明确指出，鉴于期刊编辑的重要职责（决定发表什么、影响他人职业和领域方向），人们期望期刊建立\"a diverse editorial board\"（多元化的编辑委员会）。题目问\"期望编辑委员会展现什么\"，答案直接对应diversity。",
+    "traps": "A选项Insight（洞察力）原文未提及，属无中生有。B选项Expertise（专业性）虽合理但非原文所强调的内容。C选项Integrity（正直）同样是合理品质但原文未涉及。三个干扰项利用了对编辑委员会的常识性联想来设置陷阱。",
+    "tip": "注意题干关键词与原文核心论点的对应关系。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The team finds that the majority of editors in top psychology and neuroscience journals are male and based in the United States.",
+    "why": "第二段明确指出该研究发现：顶级心理学和神经科学期刊的大多数编辑是男性且来自美国。C选项\"male-dominated\"（男性主导）精准概括了这一发现。",
+    "traps": "A选项将第一段的期望（反映多样声音）错误地表述为研究发现，与事实相反。B选项\"编辑委员会确实影响领域方向\"虽在第一段有所提及，但这不是该研究的发现，属偷换概念。D选项\"相关背景\"原文未提及，属无中生有。",
+    "tip": "区分作者的期望、既有共识与研究的具体发现。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Crucially, the proportion of female editors was significantly lower than the overall proportion of women psychology researchers.",
+    "why": "第三段末尾用\"Crucially\"强调了关键事实：女性编辑的比例显著低于女性心理学研究者的总体比例。B选项\"disproportionate\"（不成比例）准确对应\"significantly lower than the overall proportion\"，即女性编辑人数与从事心理学研究的女性人数不成比例。",
+    "traps": "A选项\"女性编辑同时也是杰出研究者\"原文未提及，属无中生有。C选项\"高层级中比例越来越低\"曲解了原文\"各层级男性均多于女性\"的表述，原文并未说比例呈递减趋势。D选项\"女性编辑难以晋升\"同样原文未提及，属过度推断。",
+    "tip": "关注Crucially等信号词标记的核心信息。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "the ideas, values and decision-making biases of men are overrepresented in the editorial positions of the most recognized academic journals in psychology and neuroscience.",
+    "why": "研究团队结论是\"男性的理念、价值观和决策偏见在编辑职位中被过度代表\"（overrepresented），这从反面意味着女性的观点被低度代表（underrepresented）。A选项正是从这一逻辑关系推出的合理推断。",
+    "traps": "B选项\"男性编辑对女性同事有偏见\"过度引申，原文说的是决策偏见被过度代表，而非对女性个人的偏见。C选项\"男性有足够代表以确保发表\"扭曲了原文含义，原文批评的是过度代表而非肯定它。D选项\"女性编辑需要挣扎才能发表女性研究\"属于无中生有，原文未涉及。",
+    "tip": "overrepresented的逻辑反面就是underrepresented。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Instead, there are structural reasons that women are disadvantaged in science... Rather than simply blaming the inequality of editorial boards on tradition, we should be actively breaking down these existing barriers.",
+    "why": "第七段先指出女性在科学界处于不利地位有\"structural reasons\"（结构性原因），包括薪酬低、育儿压力大等。末句提出应\"积极消除这些既有障碍\"。D选项\"实施全面的结构性改革\"最准确地概括了作者的建议——针对结构性问题进行系统性变革。",
+    "traps": "A选项\"平衡男女编辑比例\"只涉及表面结果，而非作者所强调的根本性结构改革。B选项\"增加女性高级职位就业\"仅是改革的一个方面，不够全面。C选项\"扩大女性学者群体\"恰好与第七段首句\"缺少女性学者并非问题所在\"相矛盾。",
+    "tip": "把握作者论证的核心逻辑：问题在于结构性障碍，解决方案自然是结构性改革。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "disheartening",
+    "cn": "adj. 令人沮丧的，使人气馁的"
+   },
+   {
+    "w": "amplifying",
+    "cn": "v. 放大，加剧（amplify的现在分词）"
+   },
+   {
+    "w": "seniority",
+    "cn": "n. 资历，级别高低"
+   },
+   {
+    "w": "starker",
+    "cn": "adj. 更鲜明的，更明显的（stark的比较级）"
+   },
+   {
+    "w": "enduring",
+    "cn": "adj. 持久的，长期存在的"
+   },
+   {
+    "w": "disparities",
+    "cn": "n. 差距，不平等（disparity的复数）"
+   },
+   {
+    "w": "attributed",
+    "cn": "v. 归因于（attribute的过去式）"
+   },
+   {
+    "w": "disproportionately",
+    "cn": "adv. 不成比例地"
+   },
+   {
+    "w": "structural",
+    "cn": "adj. 结构性的，体制上的"
+   },
+   {
+    "w": "consciously",
+    "cn": "adv. 有意识地，自觉地"
+   },
+   {
+    "w": "overrepresented",
+    "cn": "adj. 被过度代表的，代表性过高的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Gender inequality in science is often attributed to the fact that senior academics are more likely to be male, because historically science was male-dominated: it's argued that as time goes on and more women rise to senior roles, the field will become more equal.",
+    "cn": "科学领域的性别不平等常被归因于这样一个事实：资深学者更可能是男性，因为从历史上看科学是男性主导的——有人认为，随着时间推移，越来越多的女性晋升到高级职位，该领域将变得更加平等。",
+    "note": "主干为被动句\"inequality is attributed to the fact\"，that引导同位语从句解释fact，冒号后为补充说明，含as引导的时间状语从句。"
+   },
+   {
+    "en": "Women receive lower salaries and face greater childcare demands, for instance, which can result in fewer publications and grants—the kinds of things that journals look for when deciding who to appoint.",
+    "cn": "例如，女性获得的薪酬更低，面临更大的育儿压力，这可能导致发表论文和获得资助更少——而这些正是期刊在决定任命谁时所看重的。",
+    "note": "主干为Women receive...and face...，which引导非限制性定语从句指代前面整个情况，破折号后是同位语，内含that引导的定语从句。"
+   },
+   {
+    "en": "Yet this study showed that even the junior roles in psychology journals tended to be held disproportionately by men, despite the fact that there are actually more female than male junior psychology faculty.",
+    "cn": "然而，这项研究表明，即使是心理学期刊中的初级职位，也倾向于不成比例地由男性担任，尽管事实上初级心理学教职中女性多于男性。",
+    "note": "主干为this study showed that...，that引导宾语从句，despite the fact that引导让步状语从句，形成转折对比关系。"
+   }
+  ]
+ }
+}

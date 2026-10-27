@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "146a7d28aee4__banked_cloze__all",
+ "examId": "146a7d28aee4",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2024 年 12 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:58:32.823Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66651,
+ "usage": {
+  "prompt_tokens": 1388,
+  "completion_tokens": 3998,
+  "total_tokens": 5386,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1388,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3998,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1388,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "慈善行为的道德义务探讨",
+  "gist": "文章围绕全球贫富差距展开，指出发展中国家面临高婴儿死亡率、低预期寿命等困境，而另一些人过着极其富裕的生活。文章探讨了慈善行为究竟是值得赞扬的超义务行为，还是一种道德义务，并讨论了不同收入群体在慈善捐赠上应承担的不同责任。",
+  "difficulty": "中等",
+  "translation": "全球约23%的人口生活在绝对贫困中。在发展中国家，人均预期寿命低，婴儿死亡率高，失业率和文盲率居高不下，营养水平低于可接受标准，疾病广泛传播且医疗救助极少或质量低下。而另一些人过着极其富裕奢华的生活，因此财富的分配方式极不平等。这些是有关慈善问题的核心所在，尽管慈善还涵盖许多其他领域，如帮助老年人。\n\n当非常富有的人承诺捐出大部分身家时，我们都会为之鼓掌，但他们通常仍留有数百万可以传承，这仍然远超大多数人一生中期望挣到的钱。即便是西方相对中等的薪资，在全球范围内比较时也是非常高的。一个年收入两万英镑的人完全可以每年捐出两千英镑，仍有充足的生活费用外加一些奢侈享受。\n\n大多数人认同向慈善事业捐赠在道德上是值得赞扬的，但慈善行为往往被视为超越了义务的范畴。然而，也有人主张慈善行为在道德上是必需的。这意味着不去做慈善就是错误的。这类论点大多涉及向较贫穷的国家提供援助，但也可能涉及在自己身边的社区中奉献时间。这些论点倾向于对不同收入阶层的人提出不同的要求，并完全排除那些仅能勉强维持生计的人。有人认为每个人都应捐出收入的一定比例。我将把所有认为人们在道德上有义务向慈善事业捐赠的论点归为一类，尽管对于这种道德义务的程度存在广泛的分歧。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "J",
+    "correct": "mortality",
+    "why": "此处需要名词修饰 rate，构成\"infant mortality rate\"（婴儿死亡率），这是人口学、公共卫生领域的固定搭配。上下文列举发展中国家的困境：低预期寿命、高失业率、疾病等，婴儿死亡率完全符合语境。",
+    "traps": "B) casualty（伤亡人员）虽与死亡相关，但 casualty rate 多用于战争/事故语境，不与 infant 搭配；其他名词如 extent 语义不合。",
+    "tip": "识别固定搭配 infant mortality rate。"
+   },
+   {
+    "number": 27,
+    "answer": "H",
+    "correct": "incredibly",
+    "why": "空格后为形容词 wealthy and luxurious，需要副词来修饰。incredibly 表示\"极其地、难以置信地\"，加强程度，与前文发展中国家的贫困形成鲜明对比，突出贫富差距。",
+    "traps": "此处语法上只能填副词，候选词池中副词极少，incredibly 是唯一合适的副词选项，其他词词性不符。",
+    "tip": "判断词性：修饰形容词必须用副词。"
+   },
+   {
+    "number": 28,
+    "answer": "O",
+    "correct": "unequal",
+    "why": "空格位于\"in a very ___ manner\"结构中，需要形容词。前文描述一些人极度贫困、另一些人极度富裕，因此财富分配方式是\"不平等的\"，unequal 完美契合。",
+    "traps": "moderate（中等的）语义不符，此处强调的是差异悬殊而非适中；immediate 语义也与分配方式无关。",
+    "tip": "根据上下文贫富对比判断\"不平等\"语义。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "correct": "applaud",
+    "why": "空格在\"We all ___\"后，需要动词原形（主语为 we）。当富人承诺捐出大部分财产时，人们的自然反应是\"鼓掌赞赏\"。applaud 表示公开赞赏，语义通顺。",
+    "traps": "exclude（排除）和 group（归类）虽为动词，但语义上\"我们都排除/归类\"与 when 引导的时间状语从句内容不搭配，逻辑不通。",
+    "tip": "动词语义需与后文\"富人捐赠\"情景匹配。"
+   },
+   {
+    "number": 30,
+    "answer": "I",
+    "correct": "moderate",
+    "why": "空格在\"comparatively ___ salaries\"中，需要形容词修饰 salaries。comparatively 表示\"相对地\"，moderate 表示\"中等的、适度的\"，指即便是中等薪资在全球范围来看也很高，逻辑合理。",
+    "traps": "immediate（紧邻的）和 unequal（不平等的）修饰 salaries 语义不当；praiseworthy（值得称赞的）也不适合修饰工资水平。",
+    "tip": "从语义搭配判断：中等薪资 + 全球对比仍很高。"
+   },
+   {
+    "number": 31,
+    "answer": "L",
+    "correct": "praiseworthy",
+    "why": "空格在\"morally ___\"中，作表语，需要形容词。后文用 but 转折说慈善被视为超越义务的行为，说明前半句肯定其道德价值。praiseworthy（值得赞扬的）恰好表达这一正面评价。",
+    "traps": "moderate 虽是形容词，但\"道德上中等的\"语义奇怪；unequal（不平等的）与道德评价不搭配。",
+    "tip": "but 转折暗示前句为正面道德评价。"
+   },
+   {
+    "number": 32,
+    "answer": "G",
+    "correct": "immediate",
+    "why": "空格在\"one's ___ community\"中，需要形容词修饰 community。前文说论点不仅涉及援助贫穷国家，也涉及在自己身边的社区奉献时间。immediate community 指\"身边的/直接所在的社区\"，是常见搭配。",
+    "traps": "moderate community（中等社区）语义不明；unequal community（不平等的社区）偏离文意，此处强调的是地理上的就近。",
+    "tip": "掌握 immediate 的熟词僻义：直接的、紧邻的。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "correct": "exclude",
+    "why": "空格在\"and ___ entirely people who are merely making ends meet\"中，需要动词，与前文 place 并列。对仅能勉强维持生计的人\"完全排除\"在捐赠要求之外，逻辑合理：不同收入设不同要求，最低收入者则被豁免。",
+    "traps": "applaud（鼓掌赞赏）虽是动词，但\"赞赏勉强糊口的人\"与论点讨论捐赠义务的语境不符；group 语义也不合适。",
+    "tip": "and 并列结构暗示动词形式一致，语义需与 making ends meet 呼应。"
+   },
+   {
+    "number": 34,
+    "answer": "E",
+    "correct": "group",
+    "why": "空格在\"I will ___ together\"中，需要动词原形。group together 是固定搭配，意为\"归为一组/归类\"，作者要将所有关于慈善道德义务的论点归纳到一起讨论，语义完美契合。",
+    "traps": "applaud together（一起鼓掌）语义与学术论证语境不符；exclude together 不是常见搭配且逻辑不通。",
+    "tip": "识别固定搭配 group together（归类）。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "correct": "extent",
+    "why": "空格在\"the ___ of that moral requirement\"中，需要名词。extent 表示\"程度、范围\"，指人们对道德义务的\"程度\"存在分歧——应该捐多少、义务有多大，语义精准。",
+    "traps": "casualty（伤亡）语义完全无关；mortality（死亡率）也与道德义务的讨论不搭配。",
+    "tip": "the extent of... 表示\"……的程度/范围\"，常见搭配。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "mortality",
+    "cn": "n. 死亡率；必死性"
+   },
+   {
+    "w": "praiseworthy",
+    "cn": "adj. 值得赞扬的，值得称赞的"
+   },
+   {
+    "w": "applaud",
+    "cn": "v. 鼓掌；赞赏，称赞"
+   },
+   {
+    "w": "moderate",
+    "cn": "adj. 中等的，适度的；温和的"
+   },
+   {
+    "w": "incredibly",
+    "cn": "adv. 极其地，难以置信地"
+   },
+   {
+    "w": "unequal",
+    "cn": "adj. 不平等的，不均等的"
+   },
+   {
+    "w": "immediate",
+    "cn": "adj. 立即的；直接的；紧邻的"
+   },
+   {
+    "w": "exclude",
+    "cn": "v. 排除，排斥；不包括"
+   },
+   {
+    "w": "illiteracy",
+    "cn": "n. 文盲；无知"
+   },
+   {
+    "w": "life expectancy",
+    "cn": "n. 预期寿命"
+   },
+   {
+    "w": "making ends meet",
+    "cn": "短语 勉强维持生计"
+   },
+   {
+    "w": "pledge",
+    "cn": "v./n. 承诺，保证；誓言"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——本文讨论慈善的道德性质与贫富差距。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空的选择范围。",
+   "第三步：根据空格前后的语法结构（如冠词+___+名词→需形容词；主语+___→需动词）锁定词性。",
+   "第四步：结合上下文语义和逻辑关系（因果、转折、并列）确定具体词汇。",
+   "第五步：优先填入固定搭配（如 infant mortality rate, group together），再用排除法处理剩余空格。"
+  ]
+ }
+}

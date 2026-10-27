@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "07a3443e0b67__reading__4",
+ "examId": "07a3443e0b67",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年考研英语真题",
+ "year": 2018,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:38:01.781Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 74732,
+ "usage": {
+  "prompt_tokens": 1764,
+  "completion_tokens": 4707,
+  "total_tokens": 6471,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1764,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4707,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1764,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国邮政改革仅是权宜之计",
+  "gist": "美国邮政服务（USPS）深陷财务危机，技术变革与僵化监管令其难以适应新形势，利益集团的干预使改革立法屡屡受挫。虽然各方终于就一项法案达成一致，但该方案仅是维持运转的最低限度措施，远非全面改革，邮政系统仍需更深层次的转型。",
+  "structure": [
+   "第1段：交代USPS财务困境及根本原因——技术冲击与僵化监管",
+   "第2段：利益集团干预导致改革立法失败，现代化被搁置",
+   "第3段：各方达成共识的立法方案及其具体内容",
+   "第4段：作者批评该法案远未达到全面改革标准"
+  ],
+  "difficulty": "中等",
+  "translation": "美国邮政服务（USPS）继续严重亏损。据报告，2016财年净亏损达56亿美元，这是其支出连续第十年超过收入。与此同时，其无资金准备的负债超过1200亿美元，主要用于员工医疗和退休成本。这个曾经稳定的联邦机构走到破产边缘，原因是多方面的。从根本上说，USPS正处于一个历史性的两难困境之中：一方面，技术变革已经永久性地减少了对其核心产品——一类邮件的需求；另一方面，监管结构使管理层缺乏灵活性，无法根据新现实调整运营方式。\n\n从邮政工会到贺卡制造商等各类利益集团向USPS的最终监管者——国会——施加出于自身利益的压力，坚持要求无论邮政服务发生什么变化，他们所依赖的现状必须得到保护。这就是近年来改革立法屡屡失败的原因，使邮政服务只能靠推迟关键的现代化来勉强支付账单。\n\n现在传来消息，所有相关方——民主党人、共和党人、邮政服务部门、工会以及该系统的最大用户——终于就一项修复方案达成了一致。一项法案正在众议院推进，预计将在五年内为USPS节省约286亿美元，这笔资金可用于购买新车辆等生存举措。大部分资金将来自每封信永久性加价一美分，以及将邮政退休人员转入联邦医疗保险（Medicare）。后一步措施将在很大程度上抵消每年预先拨付退休人员医疗保健费用的财务负担，从而解决USPS及其工会长期以来的不满。\n\n即便该法案通过众议院，仍需经过参议院的审议——在那里必定有人会指出，这不过是维持邮政服务勉强运转所需的最低限度措施，而非全面改革。法案未涉及USPS的集体谈判制度改革，考虑到人事成本占该机构总成本的80%，这是一个重大遗漏。同样缺失的还有关于取消周六信件投递的讨论。这一合理的变革得到了公众的广泛支持，每年可为USPS节省20亿美元。但邮政特殊利益集团似乎已经扼杀了这一提案，至少在众议院是如此。围绕该法案形成的共识表明，立法者开始担心USPS可能在短期内发生令人政治尴尬的崩溃。然而，这并不意味着他们在认真考虑为21世纪转型邮政系统。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "a regulatory structure that denies management the flexibility to adjust its operations to the new reality.",
+    "why": "原文第一段末尾指出USPS面临的根本困境之一是\"监管结构剥夺了管理层调整运营以适应新现实的灵活性\"。B选项\"其僵化的管理\"正是对\"denies management the flexibility\"（管理层缺乏灵活性）的同义改写，即监管框架导致管理体制僵化，是财务问题的部分原因。",
+    "traps": "A选项\"不平衡的预算\"虽然文中提到亏损，但预算不平衡是问题的表现而非原因，因果倒置；C选项\"技术升级成本\"无中生有，原文说的是技术变革减少了邮件需求，而非技术升级花费太多；D选项\"银行撤资\"在原文中毫无依据，属于凭空捏造。",
+    "tip": "区分\"问题的表现\"与\"问题的原因\"，因果关系不可混淆。"
+   },
+   {
+    "number": 37,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "And interest groups ranging from postal unions to greeting-card makers exert self-interested pressure on the USPS's ultimate overseer – Congress – insisting that whatever else happens to the Postal Service, aspects of the status quo they depend on get protected.",
+    "why": "第二段逻辑链清晰：利益集团向国会施压→要求保护现状→改革立法反复失败→邮政服务只能推迟现代化。因此USPS未能实现现代化的原因是利益集团的干预，A选项与原文完全对应。",
+    "traps": "B选项\"国会拨款不足\"偷换概念，原文说的是利益集团向国会施压导致改革立法失败，并非国会拨款不够；C选项\"邮政服务需求萎缩\"出现在第一段而非第二段，且它是财务困难的原因，不是现代化失败的直接原因；D选项\"邮政工会的无能\"张冠李戴，工会是利益集团的一部分，其问题在于自私施压而非无能。",
+    "tip": "注意题目限定\"According to Paragraph 2\"，答案须在指定段落中寻找。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The latter step would largely offset the financial burden of annually pre-funding retiree health care, thus addressing a long-standing complaint by the USPS and its unions.",
+    "why": "原文明确指出\"后一步措施\"（将邮政退休人员转入Medicare）能\"在很大程度上抵消每年预先拨付退休人员医疗保健费用的财务负担\"，从而解决长期不满。A选项\"消除其退休人员医疗保健负担\"是对\"offset the financial burden of annually pre-funding retiree health care\"的合理概括，即通过转入Medicare来减除这一负担。",
+    "traps": "B选项\"加大新车辆投资\"是资金节省后的用途之一，与解决长期不满无关；C选项\"采用新的加价机制\"对应的是\"每封信加价一美分\"，这是资金来源，不是解决退休人员医疗负担的方式；D选项\"吸引更多一类邮件用户\"在法案内容中完全未提及，属于无中生有。",
+    "tip": "精准理解\"the latter step\"的指代内容是解题关键。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "It is not, however, a sign that they're getting serious about transforming the postal system for the 21st century.",
+    "why": "末段中作者称该法案仅是维持运转的\"最低限度措施\"（bare, bare minimum），并指出法案遗漏了集体谈判改革和取消周六投递等关键内容，最后以转折句\"然而，这并不意味着他们在认真考虑转型\"作结。连用\"bare, bare\"\"major omission\"\"common-sense change\"被利益集团扼杀等表述，明确流露出对立法者不够彻底、不够认真的不满态度，即discontent。",
+    "traps": "A选项\"尊敬\"与原文批评语气完全相反；B选项\"容忍\"过于中性，无法涵盖作者明显的批判立场；D选项\"感激\"与文章末尾的否定语气背道而驰。",
+    "tip": "态度题需关注转折词（however）和评价性形容词，它们往往直接揭示作者立场。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "it amounts to the bare, bare minimum necessary to keep the Postal Service afloat, not comprehensive reform.",
+    "why": "全文先指出USPS深陷困境，再揭示改革受阻的根本原因，接着介绍各方达成的立法方案，最后批评该方案仅是最低限度的维持措施而非全面改革。D选项\"邮政服务需要的不仅仅是一块创可贴\"用比喻精准概括了文章核心观点：USPS的痼疾需要深层改革，而非目前这种治标不治本的权宜之计。Band-Aid对应bare minimum，More Than对应not comprehensive reform。",
+    "traps": "A选项\"USPS开始怀念过去\"文中未涉及怀旧情感，偏离主旨；B选项\"别动我的奶酪\"侧重利益保护，仅涵盖第二段部分内容，以偏概全；C选项\"慢性病需要快速治疗\"中\"快速治疗\"（quick cure）与文意相悖，作者强调的是需要全面深层改革而非快速应急。",
+    "tip": "主旨题选项需覆盖全文核心论点，警惕以偏概全和偷换关键词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "bleed red ink",
+    "cn": "严重亏损（动词短语）"
+   },
+   {
+    "w": "unfunded liabilities",
+    "cn": "无资金准备的负债（名词短语）"
+   },
+   {
+    "w": "brink",
+    "cn": "边缘，濒临（名词）"
+   },
+   {
+    "w": "bread-and-butter",
+    "cn": "基本的，核心的（形容词）"
+   },
+   {
+    "w": "exert",
+    "cn": "施加（动词）"
+   },
+   {
+    "w": "deferring",
+    "cn": "推迟，延缓（动词）"
+   },
+   {
+    "w": "offset",
+    "cn": "抵消，弥补（动词）"
+   },
+   {
+    "w": "pre-funding",
+    "cn": "预先拨款（动名词）"
+   },
+   {
+    "w": "collective bargaining",
+    "cn": "集体谈判（名词短语）"
+   },
+   {
+    "w": "omission",
+    "cn": "遗漏，疏忽（名词）"
+   },
+   {
+    "w": "afloat",
+    "cn": "维持运转的，不倒闭的（形容词）"
+   },
+   {
+    "w": "consensus",
+    "cn": "共识，一致意见（名词）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Fundamentally, the USPS is in a historic squeeze between technological change that has permanently decreased demand for its bread-and-butter product, first-class mail, and a regulatory structure that denies management the flexibility to adjust its operations to the new reality.",
+    "cn": "从根本上说，USPS正处于一个历史性的两难困境之中：一方面，技术变革已经永久性地减少了对其核心产品——一类邮件的需求；另一方面，监管结构使管理层缺乏灵活性，无法根据新现实调整运营方式。",
+    "note": "主干为 the USPS is in a squeeze between A and B，A为technological change（后接that定语从句），B为a regulatory structure（后接that定语从句），first-class mail为bread-and-butter product的同位语。"
+   },
+   {
+    "en": "And interest groups ranging from postal unions to greeting-card makers exert self-interested pressure on the USPS's ultimate overseer – Congress – insisting that whatever else happens to the Postal Service, aspects of the status quo they depend on get protected.",
+    "cn": "从邮政工会到贺卡制造商等各类利益集团向USPS的最终监管者——国会——施加出于自身利益的压力，坚持要求无论邮政服务发生什么变化，他们所依赖的现状必须得到保护。",
+    "note": "主干为interest groups exert pressure on Congress；ranging from...to...为后置定语修饰interest groups；insisting引导伴随状语，其中whatever引导让步状语从句，they depend on为aspects的定语从句（省略了关系代词that）。"
+   },
+   {
+    "en": "The emerging consensus around the bill is a sign that legislators are getting frightened about a politically embarrassing short-term collapse at the USPS. It is not, however, a sign that they're getting serious about transforming the postal system for the 21st century.",
+    "cn": "围绕该法案形成的共识表明，立法者开始担心USPS可能在短期内发生令人政治尴尬的崩溃。然而，这并不意味着他们在认真考虑为21世纪转型邮政系统。",
+    "note": "两句构成对比转折：第一句主干为consensus is a sign that...（同位语从句）；第二句以however转折，用not否定另一个sign that...从句，形成\"是A但不是B\"的对照结构，凸显作者批评立场。"
+   }
+  ]
+ }
+}

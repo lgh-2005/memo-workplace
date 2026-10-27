@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "7636b03c9370__reading__1",
+ "examId": "7636b03c9370",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 12 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:44:52.389Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63023,
+ "usage": {
+  "prompt_tokens": 1874,
+  "completion_tokens": 3829,
+  "total_tokens": 5703,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1874,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3829,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1874,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国学生贷款减免政策之争",
+  "gist": "文章围绕美国免除学生贷款债务的提议展开讨论，指出该政策实际上更有利于高收入家庭和高学历群体，同时会刺激大学继续涨学费、鼓励学生选择不切实际的专业，且在疫情期间大学教育质量严重缩水的情况下尤其不合理，最终让未上大学的工薪阶层为专业人士买单。",
+  "structure": [
+   "第1段：引出话题，提出免除学生贷款债务以刺激经济的主张及质疑",
+   "第2段：用美联储数据论证该政策实际惠及富裕群体",
+   "第3-4段：分析替代方案的根本缺陷——刺激学费上涨和不理性专业选择",
+   "第5段：疫情背景下大学教育质量与收费严重不匹配",
+   "第6-7段：总结——工薪阶层将为专业阶层的教育买单，质疑政策是否真正帮助穷人"
+  ],
+  "difficulty": "中等",
+  "translation": "美国一些人主张，免除学生贷款债务是刺激经济和帮助困难群体的一种方式。一项政府提案是为\"经济困难\"的学生免除一万美元的债务。美国国会中一些人甚至提议为每位学生借款人免除高达五万美元的债务，但免除学生债务是否真的与帮助经济弱势群体相关联？\n\n答案是否定的。这项政策不过是在把钱白白送给大学和最富裕的在校学生。美联储的数据显示，收入最高的40%家庭大约欠有60%的未偿学生贷款，而收入最低的40%家庭仅欠不到20%。这可能是多种因素共同作用的结果：来自高收入家庭的学生更可能上昂贵的大学，获得经济援助的可能性更小，毕业后获得高收入的可能性也更大。此外，大部分学生贷款由研究生学位持有者承担，他们的收入比本科同龄人大约高出25%。显然，让银行随意免除学生债务是一个错误方向的举措。\n\n其他针对更广泛的长期学生贷款计划的提案也存在一些根本性问题。一个想法是仅对本科学位且收入低于12.5万美元的学生免除债务。\n\n这一方案试图解决国会此前提到的学生贷款减免计划主要惠及富人的问题，但它会产生不良激励，促使大学继续提高学费，并鼓励学生选择低收入的专业方向。如果大学认为学生只会借更多的钱，它们就没有理由让自己的项目更加经济实惠。而且，如果学生知道贷款将被免除，他们会更心安理得地做出不负责任的决定——背负数万美元的债务去学习不切实际或过于理想化的科目。\n\n考虑到疫情已经使大学教育几乎变得毫无价值，这一点尤其令人担忧。学生们每年花费数万美元，却只能待在家中通过网络听课。我们真的想要告诉大学，它们可以以高得离谱的费用提供低于平均水平的服务而不受惩罚吗？\n\n在任何一种学生债务计划的情况下，选择不上大学或负担不起大学费用的工薪阶层美国人，将要补贴专业阶层的教育。水管工和零售工人将为医生和律师的学位买单。\n\n美国政府帮助负债者的努力值得赞扬，但这真的是帮助穷人实现经济复苏的解决方案吗？",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Some people in the US have asserted that forgiving student loan debt is one way to stimulate the economy and give assistance to those in need.",
+    "why": "原文第一句明确指出，一些人主张免除学生贷款债务是\"刺激经济\"（stimulate the economy）和\"帮助有需要的人\"（give assistance to those in need）的一种方式。B选项中的\"benefit both the economy\"对应\"stimulate the economy\"，\"the underprivileged\"（弱势群体）对应\"those in need\"，是对原文的同义改写，逻辑完全吻合。",
+    "traps": "A选项\"缩小贫富差距\"属于无中生有，原文未提及缩小差距；C选项\"消除大学生的经济困境\"过度概括，原文提的是帮助\"经济困难的\"学生免除一万美元债务，而非消除所有经济困境；D选项\"教育费用是政府的责任\"原文完全没有涉及，属于无中生有。",
+    "tip": "注意区分原文明确陈述与选项的过度推断或无中生有。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Federal Reserve data reveals that the highest-income 40 percent of households owe approximately 60 percent of outstanding student debt, while the lowest 40 percent owe just under 20 percent.",
+    "why": "美联储数据表明，收入最高的40%家庭欠有约60%的未偿学生贷款，而收入最低的40%仅欠不到20%。这意味着免除学生债务时，绝大部分好处流向了富裕家庭。B选项\"取消学生债务最有利于富裕家庭\"是对该数据含义的准确推断，与作者在同段得出的结论一致。",
+    "traps": "A选项\"大约60%的学生债务未偿还\"是对60%这一数字的张冠李戴，原文指的是最高收入群体所欠比例；C选项\"对大学几乎没有好处\"与原文相反，作者说这是在给大学送钱；D选项\"低收入家庭欠最多学生债务\"与数据直接矛盾，低收入家庭仅欠不到20%。",
+    "tip": "面对数据题，要看清数据描述的对象和比例关系，防止张冠李戴。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "students will feel more comfortable making the irresponsible decision to go tens of thousands of dollars in debt to major in impractical or idealistic subjects if they know their loans will be forgiven.",
+    "why": "原文明确指出，如果学生知道贷款将被免除，他们会更加心安理得地背负巨额债务去学习\"不切实际或理想化的科目\"（impractical or idealistic subjects）。A选项说学生会在不考虑就业前景的情况下选择专业，是对\"major in impractical or idealistic subjects\"的合理同义转述——不切实际的科目往往就是就业前景不好的科目。",
+    "traps": "B选项\"自由追求目标且无经济负担\"属于正面表述，而原文用的是\"irresponsible decision\"（不负责任的决定），语义方向相反；C选项\"过度借贷、入不敷出\"过度引申，原文强调的是专业选择问题而非生活消费问题；D选项\"能上昂贵大学\"在本段未被提及，属于偷换论述重点。",
+    "tip": "关注原文的感情色彩词（如irresponsible），有助于排除语义方向不同的选项。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Students are paying tens of thousands of dollars per year to live at home and be lectured on the Internet. Do we really want to tell colleges that they can get away with providing below-average service for an outrageous cost?",
+    "why": "作者指出学生花费数万美元却只能在家上网课，并用反问句质疑：我们真的要让大学以\"离谱的费用\"（outrageous cost）提供\"低于平均水平的服务\"（below-average service）而逃脱惩罚吗？C选项\"其收取的学费与服务质量不匹配\"准确概括了作者的隐含意思：费用高昂但服务低劣，性价比极低。",
+    "traps": "A选项\"无法逃脱严重后果\"与原文反问语气相反，原文暗示大学正在逃脱后果；B选项\"大学深受疫情之苦\"无中生有，文中没有说大学本身受损，而是学生受损；D选项\"学费在疫情期间暴涨\"原文未提及学费上涨，只说费用本身就很离谱。",
+    "tip": "反问句往往暗含作者的真实观点，要把握其逆向含义。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "working-class Americans who chose not to or could not afford to go to college will be subsidizing the education of the professional class. Plumbers and retail workers will be paying for the degrees of doctors and lawyers.",
+    "why": "原文明确表示，在任何一种学生债务计划下，选择不上大学或上不起大学的工薪阶层美国人将为专业阶层的教育买单，水管工和零售工人将为医生和律师的学位付费。C选项\"蓝领工人将不得不承担培养未来高收入者的费用\"是对这两句话的精确概括：plumbers和retail workers是蓝领，doctors和lawyers是高收入者。",
+    "traps": "A选项\"水管工和零售工人将有机会成为专业人士\"完全曲解原文，原文说的是他们为专业人士买单而非自己变成专业人士；B选项\"工薪阶层学生将获得更多受补贴教育的机会\"与原文相反，受补贴的是专业阶层而非工薪阶层；D选项\"越来越多的学生能获得医学和法律学位\"属于无中生有，原文没有讨论学位获取数量的增加。",
+    "tip": "原文用具体例子（水管工、医生）表达的观点，选项常用上位概念（蓝领、高收入者）来改写。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "correlate",
+    "cn": "v. 相关联，关联"
+   },
+   {
+    "w": "affluent",
+    "cn": "adj. 富裕的，富足的"
+   },
+   {
+    "w": "outstanding",
+    "cn": "adj. 未偿还的，未解决的"
+   },
+   {
+    "w": "counterpart",
+    "cn": "n. 对应的人或物，同行"
+   },
+   {
+    "w": "adverse",
+    "cn": "adj. 不利的，有害的"
+   },
+   {
+    "w": "incentive",
+    "cn": "n. 激励，刺激因素"
+   },
+   {
+    "w": "impractical",
+    "cn": "adj. 不切实际的，不实用的"
+   },
+   {
+    "w": "render",
+    "cn": "v. 使成为，使变得"
+   },
+   {
+    "w": "outrageous",
+    "cn": "adj. 离谱的，令人震惊的"
+   },
+   {
+    "w": "subsidize",
+    "cn": "v. 补贴，资助"
+   },
+   {
+    "w": "commendable",
+    "cn": "adj. 值得称赞的，可嘉的"
+   },
+   {
+    "w": "proposition",
+    "cn": "n. 提议，建议"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "This attempts to address the fact that Congress' previously mentioned student loan forgiveness plan largely helps out the wealthy, but is an adverse incentive for universities to keep raising tuition and for students to choose to major in low-earning degree programs.",
+    "cn": "这一方案试图解决国会此前提到的学生贷款减免计划主要惠及富人这一事实，但它对大学继续提高学费以及学生选择低收入专业方向形成了不良激励。",
+    "note": "主语This指代前文的替代方案；but连接两个并列层面：attempts to address...与is an adverse incentive...；for universities...和for students...是incentive的两个并列对象。"
+   },
+   {
+    "en": "And, students will feel more comfortable making the irresponsible decision to go tens of thousands of dollars in debt to major in impractical or idealistic subjects if they know their loans will be forgiven.",
+    "cn": "而且，如果学生知道贷款将被免除，他们会更加心安理得地做出不负责任的决定——背负数万美元的债务去学习不切实际或过于理想化的科目。",
+    "note": "主干为students will feel more comfortable making...；to go...in debt是decision的不定式补语；to major in...是目的状语；if引导条件状语从句置于句末。"
+   },
+   {
+    "en": "In the case of any of these student debt plans, working-class Americans who chose not to or could not afford to go to college will be subsidizing the education of the professional class.",
+    "cn": "在任何一种学生债务计划的情况下，选择不上大学或负担不起大学费用的工薪阶层美国人，将要补贴专业阶层的教育。",
+    "note": "In the case of为介词短语作状语；主语为working-class Americans，后接who引导的定语从句（含chose not to和could not afford to两个并列谓语）；主句谓语为will be subsidizing。"
+   }
+  ]
+ }
+}

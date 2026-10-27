@@ -1,0 +1,238 @@
+{
+ "schemaVersion": 1,
+ "id": "b8c6d06f8a82__listening__all",
+ "examId": "b8c6d06f8a82",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2015 年 6 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T04:45:41.512Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 71995,
+ "usage": {
+  "prompt_tokens": 2017,
+  "completion_tokens": 8342,
+  "total_tokens": 10359,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6368
+  },
+  "prompt_cache_hit_tokens": 256,
+  "prompt_cache_miss_tokens": 1761
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力录音音频及原文，以下内容仅为基于选项文本的语言特征分析与通用应试技巧，不涉及对录音具体内容的还原。",
+  "overview": "本场听力共7段材料，第1至4段为对话，第5至7段为短文/独白。第1段题号1-4围绕工作性质与求职选择；第2段题号5-8涉及银行利率与存款咨询；第3段题号9-12涉及咖啡行业与广告；第4段题号13-15涉及旅行延误与计划；第5段题号16-19涉及海洋动物特点与保护；第6段题号20-22涉及癌症病毒疗法；第7段题号23-25涉及电子书借阅。以上话题均为根据选项措辞推测，不涉及具体录音内容。",
+  "strategy": [
+   "预读选项时划出实词，预判问题：名词/动词短语常问行动，含数字/比较级常问细节。",
+   "注意同义替换：正确答案常把原文词汇换成近义表达，不要只盯原词复现。",
+   "听到转折、强调、因果等逻辑词后重点记录，如 but、because、so、actually。",
+   "利用选项差异排除：两个选项互斥时答案常在两者之中；过于绝对或原文未提的信息慎选。",
+   "长对话抓问答结构：第二人提问、建议或评价处常出题，注意语气词。",
+   "短文听好开头结尾：主旨和结论常在首尾出现，数字、列举、举例需做笔记。"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "工作特点、待遇与求职中的顾虑",
+    "optionSignals": "第1题为描述工作性质的形容词短语，第2、3题为名词短语/句子表述待遇与困难，第4题涉及男子求职阶段；可推测为对话讨论工作选择。",
+    "tips": [
+     "关注与工作条件相关的形容词，如 demanding 与 lighter workload 构成反差，注意语气。",
+     "第2题可能问“什么条件最吸引人/男子想要什么”，听清请求或选择信号。",
+     "第3题选项均含“he has to/has difficulty”，可能问男子面临的困难；注意 sign contract、travel、weather、communication 等实词同义替换。"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "银行利率、存款与贷款咨询",
+    "optionSignals": "第5、6、7题均含金融术语，如 interest rates、deposit、yield、loan，且第5题为不定式短语表目的；第8题为女士给予男士的优惠形式，可能涉及对话结尾的感谢或补偿。",
+    "tips": [
+     "预判问题：第5题可能问男士去银行的目的，注意开头第一句话。",
+     "第6题比较 rate 与 yield 的定义，听清解释和对比词 difference、percentage、influenced。",
+     "第7题选项均名词短语，可能问推荐哪种产品；听到具体存款期限如 three-month 要速记。第8题注意“女士提供什么”与就餐相关的 coupon。"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11,
+     12
+    ],
+    "sharedTopic": "咖啡行业组织及咖啡价格影响因素",
+    "optionSignals": "第9题四个选项均描述“它”的身份与职能，考查机构作用；第10题为事件/原因类名词短语，可能问咖啡价格变动的原因；第11、12题涉及人物特征与讨论话题。",
+    "tips": [
+     "第9题抓组织名称与代表对象，注意 represents、role、regulate 等动词。",
+     "第10题问原因时注意 because、due to 等信号，选项中的 freezing weather 与 global warming 易混，听清地点与具体天气。",
+     "第11题形容词单复数对应人物特征，答案 B 中 young, handsome, single 与第12题“advertising campaign”形成语义关联，注意上下文。"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "旅行中的延误、取消与未来出行计划",
+    "optionSignals": "第13、14题均为过去事件及原因描述，选项含被动语态和过去时，可能问发生了什么事或原因；第15题为动词短语，问将来的计划或选择。",
+    "tips": [
+     "第13题注意交通方式：train、bus、coach、traffic jam，答案 D 与 train 相关，听清是哪一种。",
+     "第14题问旅行结果时，抓 canceled、spoiled、postponed 等动词和原因。",
+     "第15题问未来计划，听结尾建议与决定，Stay at home 可能与前面不如意旅行形成对比。"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18,
+     19
+    ],
+    "sharedTopic": "某种海洋动物的特点、人类喜爱方式及保护现状",
+    "optionSignals": "第16题以“The way they...”结构考查动物行为特征；第17、18题主语 They 可指人或动物，涉及对待方式；第19题为关于该动物现状的陈述，出现被动与因果表达。",
+    "tips": [
+     "第16题问动物特殊之处，注意比较级、特殊结构，如 the way they communicate/get water。",
+     "第17题选项含 love but cannot live with them，可能问人们对这种动物的情感与饲养限制；第18题注意图像绘制与猎杀行为区分。",
+     "第19题涉及保护原因，答案 D 涉及 habitat 和 clean sea，听清威胁类型，不要选“except Japan”等绝对说法。"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "病毒疗法治疗癌症的研究、难题与应用前景",
+    "optionSignals": "第20题描述某种疗法的功效，含情态动词 can；第21题均以 How to 开头，考查研究中的问题或方法；第22题为不定式短语表目的，涉及应用范围。",
+    "tips": [
+     "第20题注意疗效描述，如 kill drug-resistant tumours 与 cancer cells spreading 的差异，抓住核心动词。",
+     "第21题速记实验流程或难题：deliver viruses 与 inject directly，答案 A 强调“有效递送”。",
+     "第22题问目标时，注意 all kinds of cancers 与 75% patients 的范围大小，避免以偏概全。"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "电子书借阅、图书馆权益与出版商策略",
+    "optionSignals": "第23题四个选项均以 It 开头，描述某一服务或项目的影响与功能；第24题均含 can，考查图书馆对数字产品的权利；第25题均为 By doing 结构，问某一方采取的方式。",
+    "tips": [
+     "第23题抓住 Kindle devices、local libraries、e-book lending 等关键词，区分“允许借阅”“惠及数量”“引发辩论”。",
+     "第24题注意 lend books repeatedly 与 limit the time 等对比，答案中 repeatedly 是高频替换，表示图书馆可反复出借。",
+     "第25题问方式，注意 by 后面的举措：purchase more、in perpetuity、DRM 等，听清谁采取何种策略。"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "stimulating",
+    "cn": "激励人的；有趣的"
+   },
+   {
+    "w": "promotion",
+    "cn": "晋升；推广"
+   },
+   {
+    "w": "accommodation",
+    "cn": "住宿；膳宿"
+   },
+   {
+    "w": "interest rate",
+    "cn": "利率"
+   },
+   {
+    "w": "yield",
+    "cn": "收益；产量"
+   },
+   {
+    "w": "deposit",
+    "cn": "存款；押金"
+   },
+   {
+    "w": "fluctuation",
+    "cn": "波动；起伏"
+   },
+   {
+    "w": "advertising campaign",
+    "cn": "广告宣传活动"
+   },
+   {
+    "w": "habitat",
+    "cn": "栖息地"
+   },
+   {
+    "w": "drug-resistant",
+    "cn": "抗药的"
+   },
+   {
+    "w": "tumour",
+    "cn": "肿瘤"
+   },
+   {
+    "w": "virus",
+    "cn": "病毒"
+   },
+   {
+    "w": "chemotherapy",
+    "cn": "化疗"
+   },
+   {
+    "w": "e-book lending",
+    "cn": "电子书借阅"
+   }
+  ]
+ }
+}

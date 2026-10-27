@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "11d0bb69466f__translation__all",
+ "examId": "11d0bb69466f",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2013 年考研英语真题",
+ "year": 2013,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:29:17.966Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72910,
+ "usage": {
+  "prompt_tokens": 1436,
+  "completion_tokens": 5657,
+  "total_tokens": 7093,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1436,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5657,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1436,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "无家可归者的花园与人类基本需求",
+  "translation": "人们猜测，花园源于创建者的一种基本人类需求：创造性表达的需求。毫无疑问，花园体现了一种不可遏制的创造、表达、塑造和美化的冲动，而自我表达是人类的一种基本冲动；然而，当人们观看那些由无家可归者创建的花园的照片时，会突然意识到，尽管这些花园风格各异，但它们诉说着除装饰和创造性表达之外的其他各种基本需求。\n\n这些需求之一与在动荡之中创造一种安宁状态有关，借用T·S·艾略特的话来说，就是\"旋转世界的静止点\"。一个神圣的安宁之所，无论它多么简陋，都是一种明显属于人类的需求，与此相对的是栖身之所，那是一种明显属于动物的需求。这种区分如此明显，以至于当后者缺失时——正如这些不寻常的园丁们所面临的情况——前者就变得更加迫切。沉着镇定是一种通过构建个人与环境之间关系而实现的心境。无家可归者的花园，实际上也是无家可归的花园，将形式引入城市环境之中——在那里，形式要么不曾存在，要么无法被辨识。通过这样做，它们赋予了其所处的那片难以表达的环境中的一部分以沉静与安宁。\n\n这些花园似乎回应或源于的另一种冲动或需求，是如此内在，以至于我们几乎从未意识到它对我们的持续影响。当我们被剥夺了绿色、植物和树木时，我们中的大多数人会屈服于精神上的颓废消沉，并通常将其归咎于某些心理问题，直到有一天我们发现自己置身于花园之中，才感到那种压抑仿佛被魔法般地一扫而光。在纽约市大多数无家可归者的花园中，实际种植植物是不可行的，但即便如此，这些构造往往似乎代表着对植物和动物生命精神的一种召唤——即使只是象征性的——通过丛状排列的材料、色彩的引入、小小的水池，以及花瓣或树叶乃至填充动物玩具的频繁出现。这里展示的是各种幻想元素，在某种基本层面上，它们所指涉的似乎是自然世界。正是这种对自然的隐性或显性的指涉，充分证明了使用\"花园\"一词——尽管是在一种\"解放了的\"意义上——来描述这些人工构造物是合理的。从中我们可以看到亲生命性——一种与非人类生命接触的渴望——以不可思议的表现形式呈现出来。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "yet when one looks at the photographs of the gardens created by the homeless, it strikes one that, for all their diversity of styles, these gardens speak of various other fundamental urges, beyond that of decoration and creative expression.",
+    "cn": "然而，当人们观看那些由无家可归者创建的花园的照片时，会突然意识到，尽管这些花园风格各异，但它们诉说着除装饰和创造性表达之外的其他各种基本需求。",
+    "structure": "主句为形式主语结构\"it strikes one that...\"，that从句为真正主语；when引导时间状语从句；\"for all their diversity of styles\"为让步状语，意为\"尽管\"；\"beyond that of...\"为介词短语作后置补充说明，其中that指代前文urge。",
+    "points": [
+     "\"it strikes one that\"形式主语结构需译为\"使人意识到/让人感到\"",
+     "\"for all their diversity of styles\"中for all意为\"尽管\"，表让步",
+     "\"speak of\"意为\"表明、诉说\"，\"beyond that of\"中that回指urge需准确还原"
+    ],
+    "pitfall": "\"for all\"极易误译为\"因为所有的\"，实际是让步含义，意为\"尽管\"；\"that of\"中的that为代词回指前文urges，需补译出来，否则指代不明。"
+   },
+   {
+    "number": 47,
+    "en": "A sacred place of peace, however crude it may be, is a distinctly human need, as opposed to shelter, which is a distinctly animal need.",
+    "cn": "一个神圣的安宁之所，无论它多么简陋，都是一种明显属于人类的需求，与此相对的是栖身之所，那是一种明显属于动物的需求。",
+    "structure": "主语为\"A sacred place of peace\"，谓语为\"is\"，表语为\"a distinctly human need\"；\"however crude it may be\"为让步状语从句作插入语；\"as opposed to shelter\"为对比状语；\"which is...\"为非限制性定语从句修饰shelter。",
+    "points": [
+     "\"however crude it may be\"让步从句需译为\"无论多么简陋\"",
+     "\"as opposed to\"表对比，需译为\"与……相对/相反\"",
+     "\"distinctly human need\"与\"distinctly animal need\"的对比关系需清晰呈现"
+    ],
+    "pitfall": "\"distinctly\"易误译为\"独特地\"，此处意为\"明显地、显然地\"，强调\"明确属于人类/动物的\"；让步从句的插入位置需在译文中合理安排，避免句意断裂。"
+   },
+   {
+    "number": 48,
+    "en": "The gardens of the homeless, which are in effect homeless gardens, introduce form into an urban environment where it either didn't exist or was not discernible as such.",
+    "cn": "无家可归者的花园，实际上也是无家可归的花园，将形式引入城市环境之中——在那里，形式要么不曾存在，要么无法被辨识。",
+    "structure": "主语为\"The gardens of the homeless\"，谓语为\"introduce\"，宾语为\"form\"；\"which are in effect homeless gardens\"为非限制性定语从句起解释说明作用；\"where it either didn't exist or was not discernible as such\"为定语从句修饰environment，it指代form。",
+    "points": [
+     "\"in effect\"意为\"实际上\"，需体现双关含义：花园本身也是\"无家可归的\"",
+     "\"introduce form into\"需译为\"将形式引入\"，form为抽象概念",
+     "\"as such\"意为\"作为那样的形式/就其本身而言\"，it指代form需还原"
+    ],
+    "pitfall": "\"homeless gardens\"构成双关语，既指无家可归者的花园，也暗指花园本身无家可归，翻译时需体现这一修辞巧妙；\"as such\"容易漏译或误译，此处指\"作为形式本身\"。"
+   },
+   {
+    "number": 49,
+    "en": "most of us give in to a demoralization of spirit which we usually blame on some psychological conditions, until one day we find ourselves in a garden and feel the oppression vanish as if by magic.",
+    "cn": "我们中的大多数人会屈服于精神上的颓废消沉，并通常将其归咎于某些心理问题，直到有一天我们发现自己置身于花园之中，才感到那种压抑仿佛被魔法般地一扫而光。",
+    "structure": "主句为\"most of us give in to a demoralization of spirit\"；\"which we usually blame on some psychological conditions\"为定语从句修饰demoralization；\"until one day...\"为时间状语从句；\"feel the oppression vanish\"为感官动词+宾语+宾补结构；\"as if by magic\"为方式状语。",
+    "points": [
+     "\"give in to a demoralization of spirit\"需译为\"屈服于精神上的颓废消沉\"",
+     "\"blame on\"意为\"归咎于\"，定语从句需顺译",
+     "\"feel the oppression vanish as if by magic\"感官动词结构需译为\"感到压抑……消失\""
+    ],
+    "pitfall": "\"demoralization of spirit\"易笼统译为\"精神不好\"，需准确译为\"精神上的颓废/消沉\"；\"until\"引导的时间从句与主句构成转折，译文中宜用\"直到……才\"突出语义转折。"
+   },
+   {
+    "number": 50,
+    "en": "It is this implicit or explicit reference to nature that fully justifies the use of the word garden, though in a \"liberated\" sense, to describe these synthetic constructions.",
+    "cn": "正是这种对自然的隐性或显性的指涉，充分证明了使用\"花园\"一词来描述这些人工构造物是合理的——尽管是在一种\"解放了的\"意义上。",
+    "structure": "强调句型\"It is...that...\"，被强调部分为\"this implicit or explicit reference to nature\"；谓语为\"justifies\"；宾语为\"the use of the word garden\"；\"though in a 'liberated' sense\"为让步插入语；\"to describe these synthetic constructions\"为目的状语修饰use。",
+    "points": [
+     "强调句型\"It is...that\"需用\"正是……\"来体现强调语气",
+     "\"implicit or explicit reference to nature\"需译为\"对自然的隐性或显性的指涉\"",
+     "\"synthetic constructions\"需译为\"人工构造物\"，\"liberated\"加引号表特殊含义需保留"
+    ],
+    "pitfall": "强调句型容易误判为普通主语从句，需识别出It is...that为强调结构；\"liberated\"加引号表示非字面义，是对garden一词的\"解放式\"使用，需保留引号以体现特殊语义；\"justify\"不可译为\"证明是正义的\"，应为\"证明……是合理的\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "speculate",
+    "cn": "v. 推测，猜测"
+   },
+   {
+    "w": "irrepressible",
+    "cn": "adj. 不可遏制的，压抑不住的"
+   },
+   {
+    "w": "turbulence",
+    "cn": "n. 动荡，骚乱"
+   },
+   {
+    "w": "crude",
+    "cn": "adj. 简陋的，粗糙的"
+   },
+   {
+    "w": "composure",
+    "cn": "n. 沉着，镇定，安宁"
+   },
+   {
+    "w": "discernible",
+    "cn": "adj. 可辨识的，可察觉的"
+   },
+   {
+    "w": "inarticulate",
+    "cn": "adj. 难以表达的，无以言表的"
+   },
+   {
+    "w": "intrinsic",
+    "cn": "adj. 内在的，固有的"
+   },
+   {
+    "w": "demoralization",
+    "cn": "n. 士气低落，颓废消沉"
+   },
+   {
+    "w": "oppression",
+    "cn": "n. 压抑，压迫感"
+   },
+   {
+    "w": "unfeasible",
+    "cn": "adj. 不可行的"
+   },
+   {
+    "w": "clumplike",
+    "cn": "adj. 丛状的，簇状的"
+   },
+   {
+    "w": "biophilia",
+    "cn": "n. 亲生命性（对生命和自然的热爱）"
+   },
+   {
+    "w": "uncanny",
+    "cn": "adj. 不可思议的，神秘的"
+   },
+   {
+    "w": "synthetic",
+    "cn": "adj. 人造的，合成的；综合的"
+   }
+  ],
+  "skills": [
+   "形式主语\"it strikes one that\"需转换为自然的中文主动句式",
+   "\"however+adj.\"让步状语从句统一译为\"无论多么……\"",
+   "强调句型\"It is...that\"用\"正是……\"明确标记强调语气",
+   "非限制性定语从句可灵活处理为破折号插入、独立分句或前置修饰",
+   "\"for all\"\"as such\"\"as opposed to\"等固定搭配需牢记其语境义，避免望文生义"
+  ]
+ }
+}

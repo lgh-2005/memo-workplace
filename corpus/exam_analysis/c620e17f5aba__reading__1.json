@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "c620e17f5aba__reading__1",
+ "examId": "c620e17f5aba",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 6 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:26:36.233Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 53060,
+ "usage": {
+  "prompt_tokens": 1854,
+  "completion_tokens": 3389,
+  "total_tokens": 5243,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1854,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3389,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1854,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "配音演员工会罢工争取权益",
+  "gist": "美国演员工会因与11家电子游戏发行商长达19个月的合同谈判破裂而宣布罢工，核心诉求包括根据游戏销量获得追加酬金、提高招聘透明度及保障片场安全。游戏公司律师则认为，改变薪酬体系将给行业带来更多问题。",
+  "structure": [
+   "第1-2段：交代罢工背景——谈判破裂与核心诉求",
+   "第3-5段：行业暴利与演员低薪形成反差，阐述追加酬金方案",
+   "第6-7段：演员控诉行业保密问题，以具体案例佐证",
+   "第8段：游戏公司律师反驳，认为差异化薪酬将引发更多问题"
+  ],
+  "difficulty": "中等",
+  "translation": "自周五起，美国演员工会-美国电视和广播艺人联合会（SAG-AFTRA）宣布对11家电子游戏发行商发起罢工，涉及2015年2月17日之后投入制作的游戏。这些公司包括一些行业巨头，如美国艺电、失眠游戏公司、动视暴雪和迪士尼。\n\n此次罢工源于名为《互动媒体协议》的现有劳动合同于2014年底到期后，长达19个月的谈判未能取得成果。总体而言，罢工旨在争取更多的追加薪酬，以及解决其他方面的关切，如招聘演员时的透明度和片场安全预防措施。\n\n电子游戏行业近年来急剧膨胀。《洛杉矶时报》报道称，该行业正处于现金流急剧增长之中。2015年，游戏产业创造了235亿美元的国内收入。\n\n但SAG-AFTRA表示，配音演员在游戏工作中得不到追加酬金。相反，他们获得的是固定费率，通常为标准四小时配音录制约825美元。因此，配音演员正在争取追加薪酬的理念——每当一款游戏销量或下载量达到200万份，或订阅用户达到200万人时，获得一笔绩效奖金，上限为800万。\n\n\"触发这种追加薪酬机制的游戏数量非常少，\"配音演员克里斯平·弗里曼说，他是工会谈判委员会的成员。\"这是作为自由职业表演者的重要方面，他们并非每天都有固定工作从事项目。\"\n\n演员们的另一个主要不满是这个行业的保密性。\"我无法想象世界上还有什么其他表演工作，是你被雇用时都不知道自己参演的是什么节目，\"配音演员基思·法利说，他担任SAG-AFTRA谈判委员会主席。\n\n\"但这在电子游戏界每天都在发生，\"法利在周五的新闻发布会上对记者说。\"我是《辐射4》中的一个主要角色，一个名叫凯洛格的角色，但在整整一年半的配音录制过程中，我从来不知道自己是在为那款游戏录音。\"\n\n代表电子游戏公司的律师斯科特·威特林表示，配音演员\"所做的工作不到制作一款电子游戏所需工作总量的千分之一。\"因此，\"尽管他们是各自领域的顶尖匠人，\"威特林说，\"如果我们用一套与完成99.9%工作的人截然不同的薪酬体系来支付他们的报酬，那将给电子游戏公司带来多得多的问题。\"",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The strike comes in light of an unsuccessful 19 months of negotiations after the existing labor contract known as the Interactive Media Agreement expired in late 2014.",
+    "why": "原文明确指出，罢工发生在现有劳动合同到期后长达19个月的谈判\"未能成功\"（unsuccessful）之后。\"unsuccessful negotiations\"即谈判破裂，对应D选项\"The negotiations between them had broken down\"。关键词unsuccessful与broken down构成同义替换。",
+    "traps": "A选项\"合同被违反\"属于无中生有，原文说的是合同到期（expired），而非被违反；B选项\"重新谈判的请求被拒绝\"，原文说的是谈判进行了19个月但未成功，并非请求被拒；C选项\"被反复欺骗\"完全没有原文依据，属于凭空捏造。",
+    "tip": "注意区分合同\"到期\"与\"被违反\"，expired≠violated。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The video gaming industry has ballooned in recent years. The Los Angeles Times reports that the industry is in the midst of an intense increase in cash flow. In 2015, gaming produced $23.5 billion in domestic revenue.",
+    "why": "原文用ballooned（急剧膨胀）形容游戏行业近年发展，又以\"intense increase in cash flow\"和235亿美元国内收入作支撑，说明该行业获得了巨额利润。A选项\"reaped huge profits in recent years\"是对以上信息的准确概括。",
+    "traps": "B选项\"更开放透明\"与原文相反，第6段恰恰强调行业的secrecy（保密性）；C选项\"吸引了许多著名配音演员\"原文未提及；D选项\"在国内市场投入了大量资金\"是对domestic revenue的曲解，revenue是收入而非投入。",
+    "tip": "revenue（收入）≠investment（投入），注意区分方向。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "So the voice actors are pushing for the idea of secondary compensation—a performance bonus every time a game sells 2 million copies or downloads, or reaches 2 million subscribers, with a cap at 8 million.",
+    "why": "原文说配音演员争取的是secondary compensation，即每当游戏销量达到200万份时获得绩效奖金。C选项\"Extra pay based on sales revenues\"精准概括了这一诉求：extra pay对应secondary compensation/performance bonus，based on sales revenues对应每达到200万销量触发。",
+    "traps": "A选项\"更固定的雇佣\"虽然弗里曼提到自由职业者不是每天都有工作，但这是解释原因而非诉求本身；B选项\"无歧视合同\"原文未涉及；D选项\"限制最长工作时间\"无原文依据，cap指的是奖金上限而非工时上限。",
+    "tip": "注意区分\"诉求本身\"和\"解释诉求的背景原因\"。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "I can't imagine if there's any other acting job in the world where you don't know what show you're in, when you're hired.",
+    "why": "法利指出，配音演员被雇用时甚至不知道自己参演的是什么作品，并以自己在《辐射4》中配音却全程不知情为例加以佐证。A选项\"kept in the dark about many details of their job\"是对此现象的准确概括，kept in the dark（被蒙在鼓里）与secrecy、don't know what show you're in形成同义对应。",
+    "traps": "B选项\"受到歧视\"原文未提及，保密不等于歧视；C选项\"报酬不定期支付\"偷换概念，原文说的是不知情而非薪酬不规律；D选项\"非全职雇佣\"是弗里曼提到的自由职业特点，不是法利所说的内容。",
+    "tip": "kept in the dark是secrecy的同义转换，注意人物观点的归属。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "if we pay them under a vastly different system than the people who do the 99.9 percent of the work, that's going to create far more problems for the video game companies.",
+    "why": "威特林律师的核心论点是：配音演员只占工作量的不到千分之一，如果用一套与其余99.9%工作者截然不同的薪酬体系来支付他们，将给游戏公司带来更多问题。B选项\"Changing the pay system would cause the industry more problems\"精准复述了这一逻辑。",
+    "traps": "A选项\"如果证明是顶尖匠人就应加薪\"，原文中top craftsmen是让步条件（even though），并非主张；C选项\"只是匠人，不是专业表演者\"曲解原文，威特林承认他们是顶尖匠人，并非贬低；D选项\"按小时付费合法\"原文完全未涉及法律问题。",
+    "tip": "even though引导让步状语从句，表示对方虽承认事实但重点在后半句。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "ballooned",
+    "cn": "v. 急剧膨胀，迅速增长"
+   },
+   {
+    "w": "residuals",
+    "cn": "n. 追加酬金，版税（演艺行业用语）"
+   },
+   {
+    "w": "transparency",
+    "cn": "n. 透明度，公开性"
+   },
+   {
+    "w": "precautions",
+    "cn": "n. 预防措施，防范措施"
+   },
+   {
+    "w": "trigger",
+    "cn": "v. 触发，引发"
+   },
+   {
+    "w": "subscribers",
+    "cn": "n. 订阅者，用户"
+   },
+   {
+    "w": "secrecy",
+    "cn": "n. 保密，秘密状态"
+   },
+   {
+    "w": "cap",
+    "cn": "n. 上限，限额"
+   },
+   {
+    "w": "heavyweights",
+    "cn": "n. 重量级人物/公司，巨头"
+   },
+   {
+    "w": "freelance",
+    "cn": "adj./v. 自由职业的；从事自由职业"
+   },
+   {
+    "w": "craftsmen",
+    "cn": "n. 工匠，手艺人（此处指技艺精湛的从业者）"
+   },
+   {
+    "w": "vastly",
+    "cn": "adv. 极大地，非常"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The strike comes in light of an unsuccessful 19 months of negotiations after the existing labor contract known as the Interactive Media Agreement expired in late 2014.",
+    "cn": "此次罢工源于名为《互动媒体协议》的现有劳动合同于2014年底到期后，长达19个月的谈判未能取得成果。",
+    "note": "主干为The strike comes in light of negotiations；after引导时间状语从句；known as...为过去分词短语作后置定语修饰contract。"
+   },
+   {
+    "en": "So the voice actors are pushing for the idea of secondary compensation—a performance bonus every time a game sells 2 million copies or downloads, or reaches 2 million subscribers, with a cap at 8 million.",
+    "cn": "因此，配音演员正在争取追加薪酬的理念——每当一款游戏销量或下载量达到200万份，或订阅用户达到200万人时获得一笔绩效奖金，上限为800万。",
+    "note": "破折号后为同位语解释secondary compensation的具体内容；every time引导时间状语从句；with a cap at 8 million为介词短语作补充说明。"
+   },
+   {
+    "en": "if we pay them under a vastly different system than the people who do the 99.9 percent of the work, that's going to create far more problems for the video game companies.",
+    "cn": "如果我们用一套与完成99.9%工作的人截然不同的薪酬体系来支付他们的报酬，那将给电子游戏公司带来多得多的问题。",
+    "note": "if引导条件状语从句；than the people为比较结构；who引导定语从句修饰people；that's going to...为主句。"
+   }
+  ]
+ }
+}

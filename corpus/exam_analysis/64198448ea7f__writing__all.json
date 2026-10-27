@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "64198448ea7f__writing__all",
+ "examId": "64198448ea7f",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2022 年 12 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:45:31.732Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 39340,
+ "usage": {
+  "prompt_tokens": 739,
+  "completion_tokens": 1942,
+  "total_tokens": 2681,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 739,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1942,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 739,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，以指定首句开篇，围绕\"培养大学生团队精神的重要性\"展开论述，可陈述观点、给出理由或举例，字数150-200词。",
+    "outline": [
+     "引出话题：以题目给定首句开头，指出当今社会越来越重视培养大学生团队精神这一趋势，并简要过渡到原因分析。",
+     "分析原因：从职场需求、解决复杂问题的需要、以及促进个人综合素质发展等两到三个角度，阐述培养团队精神的重要性。",
+     "提出建议或总结：从学校和学生个人两个层面给出培养团队精神的具体建议，并以展望式语句收尾。"
+    ],
+    "sample": "Today increasing importance is being attached to cultivating college students' team spirit. This growing trend is not only reflected in university curricula but also in a wide range of extracurricular activities designed to foster collaboration among students.\n\nSeveral compelling reasons account for this phenomenon. First and foremost, modern workplaces increasingly demand employees who can function effectively within teams. Employers consistently rank teamwork as one of the most sought-after qualities in job candidates. Furthermore, complex challenges in today's society rarely yield to individual efforts alone; they require collective wisdom and coordinated action. Additionally, cultivating team spirit helps students develop essential interpersonal skills such as communication, compromise, and mutual respect, all of which are indispensable for personal growth.\n\nTo better nurture team spirit among college students, universities should take concrete measures. For instance, group projects and collaborative research assignments can be incorporated into academic programs. Meanwhile, students themselves ought to actively participate in team-based activities, including sports competitions and volunteer services. Only through the joint efforts of institutions and individuals can we truly prepare young people for an increasingly cooperative and interconnected world.",
+    "phrases": [
+     {
+      "en": "attach importance to",
+      "cn": "重视……；常用被动语态 importance is attached to，正式书面表达。"
+     },
+     {
+      "en": "account for",
+      "cn": "解释，说明（原因）；用于引出原因分析段落，衔接自然。"
+     },
+     {
+      "en": "first and foremost",
+      "cn": "首先，最重要的是；比单独用 firstly 更具强调效果。"
+     },
+     {
+      "en": "sought-after",
+      "cn": "受追捧的，抢手的；形容团队精神是雇主看重的品质时很贴切。"
+     },
+     {
+      "en": "yield to",
+      "cn": "屈服于，被……解决；此处表示'难以仅靠个人努力来解决'。"
+     },
+     {
+      "en": "collective wisdom",
+      "cn": "集体智慧；与 team spirit 主题高度契合的高频搭配。"
+     },
+     {
+      "en": "indispensable for",
+      "cn": "对……不可或缺的；比 important 更高级的替换表达。"
+     },
+     {
+      "en": "take concrete measures",
+      "cn": "采取切实措施；建议段常用表达，体现务实态度。"
+     },
+     {
+      "en": "incorporate...into...",
+      "cn": "将……纳入/融入……；表示把合作项目融入课程，用词精准。"
+     },
+     {
+      "en": "Only through... can we...",
+      "cn": "只有通过……我们才能……；倒装句式，适合用于结尾升华。"
+     }
+    ],
+    "pitfalls": [
+     "首句必须原样抄写题目给定句子，擅自修改或遗漏会被扣分。",
+     "通篇只谈'团队精神好'却不给出具体原因或例证，论述空泛，难以拿高分。",
+     "词数不足150词或超过200词均可能被扣分，写完务必快速数词。",
+     "逻辑连接词（firstly, furthermore, additionally）缺失导致段落松散，缺乏衔接。",
+     "拼写和主谓一致错误频发，如 team spirit 作主语时谓语应用单数形式。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Team spirit is very important for students.",
+      "better": "Team spirit is of paramount importance for students striving to thrive in a competitive society.",
+      "note": "用 of paramount importance 替换 very important，增加后置分词短语，表达更高级且信息更丰富。"
+     },
+     {
+      "plain": "Many companies want employees who can work in teams.",
+      "better": "Employers consistently rank teamwork as one of the most sought-after qualities in job candidates.",
+      "note": "将口语化的 want 替换为 rank...as，用 sought-after 提升词汇档次，更具说服力。"
+     },
+     {
+      "plain": "We should work together to solve problems.",
+      "better": "Complex challenges rarely yield to individual efforts alone; they require collective wisdom and coordinated action.",
+      "note": "使用分号连接的并列句取代简单句，yield to 和 collective wisdom 展现词汇深度。"
+     },
+     {
+      "plain": "Schools should let students do more group work.",
+      "better": "Group projects and collaborative research assignments can be incorporated into academic programs.",
+      "note": "被动语态使语句更客观正式，incorporate into 搭配比 let...do 更学术。"
+     },
+     {
+      "plain": "If everyone works hard, we can succeed.",
+      "better": "Only through the joint efforts of institutions and individuals can we truly prepare young people for a cooperative world.",
+      "note": "Only through 引导的倒装句式是高分亮点，joint efforts 替代 work hard 更精准。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Today increasing importance is being attached to cultivating college students' team spirit. —— 被动进行时态开篇，正式且切题，'attach importance to'为高频考点搭配。",
+   "Complex challenges in today's society rarely yield to individual efforts alone; they require collective wisdom and coordinated action. —— 分号并列句，yield to 一词多义（此处意为'被解决'），展现词汇广度。",
+   "Cultivating team spirit helps students develop essential interpersonal skills such as communication, compromise, and mutual respect, all of which are indispensable for personal growth. —— 非限制性定语从句 all of which 对前文列举进行总结升华，句式高级。",
+   "Only through the joint efforts of institutions and individuals can we truly prepare young people for an increasingly cooperative and interconnected world. —— Only + 介词短语前置引发部分倒装，结尾铿锵有力，适合背诵用于总结段。"
+  ]
+ }
+}

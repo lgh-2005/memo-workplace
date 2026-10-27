@@ -1,0 +1,118 @@
+{
+ "schemaVersion": 1,
+ "id": "581f3683b95d__writing__all",
+ "examId": "581f3683b95d",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2015 年 12 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T04:40:03.160Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 70335,
+ "usage": {
+  "prompt_tokens": 592,
+  "completion_tokens": 7290,
+  "total_tokens": 7882,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6296
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 592
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "根据图画写一篇150-200词短文，聚焦社交网站对阅读的影响。",
+    "outline": [
+     "第一段：描述图画内容，对比沉迷社交网站与忽略书本，点明主题。",
+     "第二段：从时间碎片化、信息茧房、成瘾性等方面分析社交网站对深度阅读的消极影响。",
+     "第三段：提出建议，呼吁减少社交网站使用，留出时间进行深度阅读。"
+    ],
+    "sample": "The picture vividly portrays a striking contrast: a young man is engrossed in his smartphone, browsing social networking websites, while a pile of books lies untouched beside him. This scene mirrors a prevailing phenomenon in the digital age, and social networking websites are exerting a profound impact on people's reading habits.\n\nUndoubtedly, the rise of social networking platforms has diverted considerable attention away from traditional reading. First, the constant stream of updates, likes, and short videos fragments our time, making it difficult to engage in sustained, deep reading. Instead of immersing ourselves in a novel or an academic article, we tend to skim through bite-sized posts and headlines. Second, the algorithm-driven feeds create an \"echo chamber\" that reinforces our existing preferences, thereby narrowing our reading scope and undermining critical thinking. Furthermore, the addictive nature of these platforms reduces the time that could otherwise be devoted to books.\n\nTo address this issue, individuals should consciously limit their use of social networking websites and set aside dedicated time for reading. By cultivating the habit of deep reading, we can reclaim the intellectual benefits that books offer and resist the superficiality fostered by excessive social media consumption.",
+    "phrases": [
+     {
+      "en": "exert a profound impact on",
+      "cn": "对……产生深远影响"
+     },
+     {
+      "en": "be engrossed in",
+      "cn": "全神贯注于……"
+     },
+     {
+      "en": "divert attention away from",
+      "cn": "将注意力从……转移开"
+     },
+     {
+      "en": "a constant stream of",
+      "cn": "源源不断的……"
+     },
+     {
+      "en": "fragment our time",
+      "cn": "使我们的时间碎片化"
+     },
+     {
+      "en": "engage in sustained, deep reading",
+      "cn": "进行持续的深度阅读"
+     },
+     {
+      "en": "skim through bite-sized posts",
+      "cn": "浏览碎片化的帖子"
+     },
+     {
+      "en": "algorithm-driven feeds",
+      "cn": "算法驱动的信息流"
+     },
+     {
+      "en": "undermine critical thinking",
+      "cn": "削弱批判性思维"
+     },
+     {
+      "en": "set aside dedicated time for",
+      "cn": "为……留出专门时间"
+     }
+    ],
+    "pitfalls": [
+     "未紧扣图画内容，只是泛泛而谈社交网站与阅读，可能偏题。",
+     "只讨论负面影响，没有结合图画中的对比或细节，缺乏针对性。",
+     "词数控制不当，少于150词或超过200词会被扣分。",
+     "使用万能模板句，如“随着社会的发展”，导致内容空洞。",
+     "出现主谓不一致、句子结构不完整等基础语法错误。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Social networking websites have a big impact on reading.",
+      "better": "Social networking websites are exerting a profound impact on people's reading habits.",
+      "note": "用现在进行时和“profound”等高级词汇替换“big”，表达更精确有力。"
+     },
+     {
+      "plain": "Many people spend too much time on social media, so they don't read books.",
+      "better": "The addictive nature of these platforms reduces the time that could otherwise be devoted to books.",
+      "note": "用名词性结构和定语从句替代简单因果句，句式更复杂、更正式。"
+     },
+     {
+      "plain": "We should spend less time on social media and read more books.",
+      "better": "By consciously limiting their use of social networking websites and setting aside dedicated time for reading, individuals can reclaim the intellectual benefits that books offer.",
+      "note": "以动名词短语作方式状语并配以并列谓语，论证更充实且逻辑连贯。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The constant stream of updates, likes, and short videos fragments our time, making it difficult to engage in sustained, deep reading.（源源不断的更新、点赞和短视频使我们的时间碎片化，难以进行持续的深度阅读。）",
+   "The algorithm-driven feeds create an \"echo chamber\" that reinforces our existing preferences, thereby narrowing our reading scope and undermining critical thinking.（算法驱动的信息流制造了“信息茧房”，强化既有偏好，从而窄化阅读范围并削弱批判性思维。）",
+   "By cultivating the habit of deep reading, we can reclaim the intellectual benefits that books offer and resist the superficiality fostered by excessive social media consumption.（通过培养深度阅读的习惯，我们能重拾书籍带来的智识益处，并抵御过度社交媒体消费所助长的浅薄。）",
+   "This scene mirrors a prevailing phenomenon in the digital age, and social networking websites are exerting a profound impact on people's reading habits.（这一场景反映了数字时代的一个普遍现象，社交网站正在对人们的阅读习惯产生深远影响。）"
+  ]
+ }
+}

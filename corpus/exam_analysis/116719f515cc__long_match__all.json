@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "116719f515cc__long_match__all",
+ "examId": "116719f515cc",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2022 年 6 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:43:20.511Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35399,
+ "usage": {
+  "prompt_tokens": 938,
+  "completion_tokens": 1867,
+  "total_tokens": 2805,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 938,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1867,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 938,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "生态环境危机与人类应对措施",
+  "strategy": [
+   "先通读10条陈述句，提炼高频主题词如climate change、forests、ecological等，建立全局语境",
+   "圈出每句中的专有名词、数字、极端表达等显眼定位词，优先在原文中扫读匹配",
+   "注意同义替换：陈述句用概括性表述，原文常用具体细节或近义词展开",
+   "将陈述句按主题分组（如森林认知变化、污染治理、国际外交），缩小匹配范围",
+   "匹配后回读确认逻辑一致性，防止段落被重复选择或遗漏"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "气候变化已经对数万人的生活造成了严重破坏。",
+    "keywords": [
+     "climate change",
+     "havoc",
+     "tens of thousands",
+     "lives"
+    ],
+    "paraphrase": "陈述句用wrought havoc概括气候变化的破坏性影响，原文F段可能使用devastated、destroyed、disrupted等近义词描述大规模人群受灾的具体情形。",
+    "tip": "定位havoc和tens of thousands等表示严重程度和数量的词。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "cn": "科学家花了很长时间才认识到森林的功能远不止为人类提供木材。",
+    "keywords": [
+     "scientists",
+     "long time",
+     "forests",
+     "beyond timber"
+    ],
+    "paraphrase": "陈述句中goes far beyond providing timber为核心信息，B段原文可能用more than just lumber/wood或类似表述说明科学家对森林生态功能认识的迟缓。",
+    "tip": "锁定scientists与timber/wood相关词，关注表示\"超越\"的同义表达。"
+   },
+   {
+    "number": 38,
+    "answer": "H",
+    "cn": "有大量证据表明我们正面临一场可能的生态灾难。",
+    "keywords": [
+     "abundant evidence",
+     "ecological disaster",
+     "facing"
+    ],
+    "paraphrase": "陈述句的abundant evidence对应原文H段可能出现的overwhelming/mounting evidence等表述；ecological disaster可能被替换为environmental catastrophe或类似表达。",
+    "tip": "扫读evidence和ecological disaster的同义词群进行定位。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "环境科学大约在六十年前才成为学术学科。",
+    "keywords": [
+     "environmental science",
+     "academic disciplines",
+     "sixty years ago"
+    ],
+    "paraphrase": "陈述句中sixty years ago是精确数字线索，D段原文可能提及具体年代（如20世纪60年代前后）来说明环境科学作为独立学科的历史较短。",
+    "tip": "数字sixty/60是最强定位词，直接在段落中扫读即可。"
+   },
+   {
+    "number": 40,
+    "answer": "K",
+    "cn": "事情不可能一夜之间改变，但减少自然资源的消耗将有助于解决生态危机。",
+    "keywords": [
+     "overnight",
+     "reducing consumption",
+     "natural resources",
+     "ecological crisis"
+    ],
+    "paraphrase": "陈述句用cannot change overnight表达渐进性，K段原文可能用gradual process或not immediate等同义表达；reducing consumption可能对应cutting down on resource use。",
+    "tip": "关注overnight这一口语化表达及reduce/consumption的近义替换。"
+   },
+   {
+    "number": 41,
+    "answer": "C",
+    "cn": "在过去几年中，人类对森林的认知经历了巨大的变化。",
+    "keywords": [
+     "perception",
+     "forests",
+     "tremendous change",
+     "past years"
+    ],
+    "paraphrase": "陈述句核心为perception of forests与tremendous change，C段原文可能用view/understanding of forests has shifted dramatically等表述来体现认知转变。",
+    "tip": "perception与forests共同出现是双重定位线索，注意changed/shifted等替换词。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "cn": "近代历史表明，减少污染这件曾看似不可能的事情实际上是可以做到的。",
+    "keywords": [
+     "recent history",
+     "reduction of pollution",
+     "seemingly impossible",
+     "accomplished"
+    ],
+    "paraphrase": "陈述句用seemingly impossible与actually accomplished形成转折，G段原文可能举出具体的治污成功案例（如酸雨或臭氧层治理）来证明此观点。",
+    "tip": "抓seemingly impossible与accomplished的转折逻辑，在原文中找历史治污成功实例。"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "cn": "当人们担心未来将无资源可用时，才开始考虑保护自然资源。",
+    "keywords": [
+     "preserving natural resources",
+     "feared",
+     "nothing to use",
+     "future"
+    ],
+    "paraphrase": "陈述句描述保护意识的起源动机——对资源耗尽的恐惧，A段作为文章开头段可能回顾历史上资源保护思想的萌芽背景，用ran out或depletion等替换。",
+    "tip": "A段为首段，常引出主题背景；feared与nothing to use是情感和逻辑双重定位词。"
+   },
+   {
+    "number": 44,
+    "answer": "J",
+    "cn": "如果我们怀疑自己扭转生态恶化的能力，就等于丢掉了采取行动的机会。",
+    "keywords": [
+     "doubt",
+     "ability",
+     "reverse",
+     "ecological deterioration",
+     "throwing away"
+    ],
+    "paraphrase": "陈述句使用reverse ecological deterioration表达核心观点，J段原文可能用if we question/lose faith等替换doubt，用squander/waste替换throwing away。",
+    "tip": "定位doubt与reverse的搭配，以及throwing away chance这一隐喻性表达。"
+   },
+   {
+    "number": 45,
+    "answer": "E",
+    "cn": "如何有效应对气候变化已成为国际外交的焦点。",
+    "keywords": [
+     "respond effectively",
+     "climate change",
+     "focus",
+     "international diplomacy"
+    ],
+    "paraphrase": "陈述句中international diplomacy是高辨识度关键词，E段原文可能涉及global negotiations、diplomatic efforts、international summits等具体外交场景来对应。",
+    "tip": "international diplomacy是低频专业表达，极易在原文中快速锁定。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "wrought havoc",
+    "cn": "造成严重破坏（动词短语，wrought为wreak的过去式）"
+   },
+   {
+    "w": "timber",
+    "cn": "木材；木料（n.）"
+   },
+   {
+    "w": "ecological",
+    "cn": "生态的；生态学的（adj.）"
+   },
+   {
+    "w": "academic disciplines",
+    "cn": "学术学科（名词短语）"
+   },
+   {
+    "w": "perception",
+    "cn": "认知；看法；感知（n.）"
+   },
+   {
+    "w": "diplomacy",
+    "cn": "外交；外交手段（n.）"
+   },
+   {
+    "w": "deterioration",
+    "cn": "恶化；退化（n.）"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "释义；改述（n./v.）"
+   },
+   {
+    "w": "overnight",
+    "cn": "一夜之间；突然地（adv.）"
+   },
+   {
+    "w": "accomplished",
+    "cn": "完成的；实现的（adj./v.过去分词）"
+   }
+  ]
+ }
+}

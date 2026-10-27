@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "457ceba875be__translation__all",
+ "examId": "457ceba875be",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2025 年 6 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T06:02:56.509Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 27747,
+ "usage": {
+  "prompt_tokens": 814,
+  "completion_tokens": 2001,
+  "total_tokens": 2815,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 814,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2001,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 814,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "粤港澳大湾区发展战略与前景",
+  "reference": "The Guangdong-Hong Kong-Macao Greater Bay Area boasts a unique geographical location, well-established transportation infrastructure, and abundant industrial resources. As one of the most open and economically dynamic regions in China, the Greater Bay Area holds a significant strategic position in the nation's economic development. The Greater Bay Area will not only be developed into a vibrant world-class city cluster and an international science and technology innovation center with global influence, but also be built into a quality living circle ideal for working, shopping, and tourism. With the continuous deepening of reform and opening-up, the construction of the Greater Bay Area will further promote regional economic development. By 2035, the Greater Bay Area is expected to achieve the goal of becoming a world-class bay area.",
+  "sentences": [
+   {
+    "cn": "粤港澳大湾区(Guangdong-Hong Kong-Macao Greater Bay Area)具有得天独厚的地理位置,拥有完善的交通基础设施和丰富的产业资源。",
+    "en": "The Guangdong-Hong Kong-Macao Greater Bay Area boasts a unique geographical location, well-established transportation infrastructure, and abundant industrial resources.",
+    "structure": "简单句，三个并列宾语共享动词 boasts，将原文两个谓语\"具有\"和\"拥有\"合并为一个动词统领三个名词短语",
+    "keys": [
+     "得天独厚的地理位置 a unique geographical location",
+     "完善的交通基础设施 well-established transportation infrastructure",
+     "丰富的产业资源 abundant industrial resources"
+    ]
+   },
+   {
+    "cn": "大湾区是中国开放程度最高、经济活力最强的区域之一,在国家经济发展中具有重要的战略地位。",
+    "en": "As one of the most open and economically dynamic regions in China, the Greater Bay Area holds a significant strategic position in the nation's economic development.",
+    "structure": "As 介词短语作状语前置 + 主句，将原文两个分句整合为一个主从关系句，逻辑更紧凑",
+    "keys": [
+     "开放程度最高 the most open",
+     "经济活力最强 the most economically dynamic",
+     "战略地位 strategic position"
+    ]
+   },
+   {
+    "cn": "大湾区不仅将建成充满活力的世界级城市群和具有全球影响力的国际科技创新中心,还将打造成适合工作、购物、旅游的优质生活圈。",
+    "en": "The Greater Bay Area will not only be developed into a vibrant world-class city cluster and an international science and technology innovation center with global influence, but also be built into a quality living circle ideal for working, shopping, and tourism.",
+    "structure": "not only...but also... 并列结构，两个被动语态 be developed into / be built into 对称呈现，后接形容词短语 ideal for 作后置定语",
+    "keys": [
+     "世界级城市群 world-class city cluster",
+     "国际科技创新中心 international science and technology innovation center",
+     "全球影响力 global influence",
+     "优质生活圈 quality living circle"
+    ]
+   },
+   {
+    "cn": "随着改革开放的不断深入,大湾区的建设将进一步推动区域经济发展。",
+    "en": "With the continuous deepening of reform and opening-up, the construction of the Greater Bay Area will further promote regional economic development.",
+    "structure": "With + 名词短语作伴随/条件状语前置 + 主句，结构简洁清晰",
+    "keys": [
+     "改革开放 reform and opening-up",
+     "不断深入 continuous deepening",
+     "区域经济发展 regional economic development"
+    ]
+   },
+   {
+    "cn": "到2035年,大湾区将实现成为国际一流湾区的目标。",
+    "en": "By 2035, the Greater Bay Area is expected to achieve the goal of becoming a world-class bay area.",
+    "structure": "By + 时间状语前置 + 主句，achieve the goal of doing 固定搭配，is expected to 体现预期语气",
+    "keys": [
+     "国际一流湾区 world-class bay area",
+     "实现……的目标 achieve the goal of"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "粤港澳大湾区",
+    "en": "Guangdong-Hong Kong-Macao Greater Bay Area"
+   },
+   {
+    "cn": "得天独厚的地理位置",
+    "en": "unique/advantageous geographical location"
+   },
+   {
+    "cn": "交通基础设施",
+    "en": "transportation infrastructure"
+   },
+   {
+    "cn": "战略地位",
+    "en": "strategic position"
+   },
+   {
+    "cn": "世界级城市群",
+    "en": "world-class city cluster"
+   },
+   {
+    "cn": "国际科技创新中心",
+    "en": "international science and technology innovation center"
+   },
+   {
+    "cn": "优质生活圈",
+    "en": "quality living circle"
+   },
+   {
+    "cn": "改革开放",
+    "en": "reform and opening-up"
+   },
+   {
+    "cn": "区域经济发展",
+    "en": "regional economic development"
+   },
+   {
+    "cn": "国际一流湾区",
+    "en": "world-class bay area"
+   }
+  ],
+  "pitfalls": [
+   "\"得天独厚\"易直译为 god-given，应译为 unique/unparalleled 等地道表达",
+   "\"城市群\"误译为 city group，标准译法为 city cluster 或 urban agglomeration",
+   "\"不仅……还……\"结构中 not only...but also 后动词形式需对称一致，易出现平行结构错误",
+   "\"改革开放\"为专有表述，须译为 reform and opening-up，冠词和连字符不可遗漏",
+   "\"优质生活圈\"中\"圈\"易误译为 circle of life，应为 living circle 或 living sphere"
+  ],
+  "upgrades": [
+   {
+    "plain": "has a unique geographical location",
+    "better": "boasts a unique geographical location",
+    "note": "boast 比 have 更生动，强调引以为傲的优势，语体更正式"
+   },
+   {
+    "plain": "is one of the most open regions",
+    "better": "as one of the most open and economically dynamic regions",
+    "note": "用 as 短语前置作状语，使句子层次分明，避免两个 is 叠用"
+   },
+   {
+    "plain": "will be built into a good living area",
+    "better": "will be built into a quality living circle ideal for working, shopping, and tourism",
+    "note": "quality 比 good 更书面，ideal for 后置定语比定语从句更简洁"
+   },
+   {
+    "plain": "the reform and opening-up goes deeper",
+    "better": "with the continuous deepening of reform and opening-up",
+    "note": "名词化表达 deepening 比动词 goes deeper 更符合书面语体"
+   },
+   {
+    "plain": "will achieve the goal of becoming a first-class bay area",
+    "better": "is expected to achieve the goal of becoming a world-class bay area",
+    "note": "is expected to 语气更审慎得体，world-class 比 first-class 更地道"
+   }
+  ]
+ }
+}

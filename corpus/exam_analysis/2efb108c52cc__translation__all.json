@@ -1,0 +1,211 @@
+{
+ "schemaVersion": 1,
+ "id": "2efb108c52cc__translation__all",
+ "examId": "2efb108c52cc",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2024 年 6 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:56:00.752Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32450,
+ "usage": {
+  "prompt_tokens": 820,
+  "completion_tokens": 2306,
+  "total_tokens": 3126,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 820,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2306,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 820,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "竹子与中华民族品格象征",
+  "reference": "China is rich in bamboo and was the first country to develop and utilize bamboo resources. Bamboo is widely distributed across China and boasts a rich variety of species. Highly practical, bamboo is used in many aspects of production and daily life, such as the making of chopsticks, tables and chairs, and the construction of bridges and houses. The Chinese people have a deep love for bamboo. Since ancient times, countless scholars and artists have created splendid literary and painting works on the theme of bamboo. The stem of bamboo grows straight, symbolizing the virtue of integrity. Bamboo possesses remarkable vitality and adaptability, and can survive tenaciously no matter how harsh the environment may be, thus representing the spirit of perseverance and resilience. For thousands of years, bamboo has been regarded as a symbol of the character of the Chinese nation.",
+  "sentences": [
+   {
+    "cn": "中国盛产竹子，是最早开发利用竹资源的国家。",
+    "en": "China is rich in bamboo and was the first country to develop and utilize bamboo resources.",
+    "structure": "并列句，前半句用 be rich in 表示盛产，后半句用 the first country to do 不定式作后置定语",
+    "keys": [
+     "盛产 be rich in / be abundant in",
+     "开发利用 develop and utilize",
+     "竹资源 bamboo resources"
+    ]
+   },
+   {
+    "cn": "竹子在中国分布广泛，品种丰富。",
+    "en": "Bamboo is widely distributed across China and boasts a rich variety of species.",
+    "structure": "并列谓语结构，两个短句合为一个主语加两个谓语的并列句",
+    "keys": [
+     "分布广泛 be widely distributed",
+     "品种丰富 boast a rich variety of species"
+    ]
+   },
+   {
+    "cn": "竹子实用性强，用于生产和生活的许多方面，如筷子、桌椅的制作和桥梁、房屋的建造。",
+    "en": "Highly practical, bamboo is used in many aspects of production and daily life, such as the making of chopsticks, tables and chairs, and the construction of bridges and houses.",
+    "structure": "形容词短语作状语前置（Highly practical）+ 被动语态主句 + such as 引导举例",
+    "keys": [
+     "实用性强 highly practical",
+     "生产和生活 production and daily life",
+     "筷子 chopsticks",
+     "桥梁 bridges"
+    ]
+   },
+   {
+    "cn": "中国人爱竹，自古以来就有无数文人以竹为主题，创作了绚丽多彩的文学和绘画作品。",
+    "en": "The Chinese people have a deep love for bamboo. Since ancient times, countless scholars and artists have created splendid literary and painting works on the theme of bamboo.",
+    "structure": "分为两句处理，第二句用现在完成时表示从古至今的延续；on the theme of 介词短语作状语",
+    "keys": [
+     "自古以来 since ancient times",
+     "文人 scholars and artists",
+     "绚丽多彩的 splendid / brilliant and colorful",
+     "以竹为主题 on the theme of bamboo"
+    ]
+   },
+   {
+    "cn": "竹子主干(stem) 笔直，象征正直的品格。",
+    "en": "The stem of bamboo grows straight, symbolizing the virtue of integrity.",
+    "structure": "简单句 + 现在分词短语 symbolizing 作伴随状语，表示象征意义",
+    "keys": [
+     "主干 stem",
+     "笔直 straight",
+     "正直的品格 the virtue of integrity"
+    ]
+   },
+   {
+    "cn": "竹子具有强大的生命力和适应能力，无论环境多么恶劣，都能够顽强生存，因而寓意坚韧不拔的精神。",
+    "en": "Bamboo possesses remarkable vitality and adaptability, and can survive tenaciously no matter how harsh the environment may be, thus representing the spirit of perseverance and resilience.",
+    "structure": "并列谓语（possesses... and can survive）+ no matter how 引导让步状语从句 + thus doing 分词短语表结果",
+    "keys": [
+     "生命力 vitality",
+     "适应能力 adaptability",
+     "顽强生存 survive tenaciously",
+     "坚韧不拔 perseverance and resilience",
+     "寓意 represent / signify"
+    ]
+   },
+   {
+    "cn": "几千年来，竹子一直被视为中华民族品格的象征。",
+    "en": "For thousands of years, bamboo has been regarded as a symbol of the character of the Chinese nation.",
+    "structure": "时间状语前置 + 现在完成时被动语态（has been regarded as），体现从过去延续至今",
+    "keys": [
+     "几千年来 for thousands of years",
+     "被视为 be regarded as",
+     "中华民族品格 the character of the Chinese nation"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "盛产",
+    "en": "be rich in / be abundant in"
+   },
+   {
+    "cn": "竹资源",
+    "en": "bamboo resources"
+   },
+   {
+    "cn": "分布广泛",
+    "en": "be widely distributed"
+   },
+   {
+    "cn": "自古以来",
+    "en": "since ancient times"
+   },
+   {
+    "cn": "文人",
+    "en": "scholars and artists / men of letters"
+   },
+   {
+    "cn": "正直的品格",
+    "en": "the virtue of integrity"
+   },
+   {
+    "cn": "坚韧不拔的精神",
+    "en": "the spirit of perseverance and resilience"
+   },
+   {
+    "cn": "中华民族",
+    "en": "the Chinese nation"
+   },
+   {
+    "cn": "生命力",
+    "en": "vitality"
+   },
+   {
+    "cn": "绚丽多彩的",
+    "en": "splendid / brilliant and colorful"
+   }
+  ],
+  "pitfalls": [
+   "「盛产」误译为 produce much，应使用 be rich in 或 be abundant in",
+   "「自古以来」需搭配现在完成时，不可用一般过去时",
+   "「坚韧不拔」是四字成语，需意译为 perseverance and resilience，切勿逐字直译",
+   "「寓意」不等于 means，应译为 represent / signify / symbolize",
+   "「无论环境多么恶劣」让步状语从句须用 no matter how + adj. + S + V 语序，避免语序错误"
+  ],
+  "upgrades": [
+   {
+    "plain": "China has a lot of bamboo",
+    "better": "China is rich in bamboo",
+    "note": "be rich in 更书面正式，是翻译中表示'盛产'的常用搭配"
+   },
+   {
+    "plain": "bamboo is very useful",
+    "better": "Highly practical, bamboo is used in...",
+    "note": "形容词短语前置作状语，句式更紧凑高级"
+   },
+   {
+    "plain": "many writers wrote works about bamboo",
+    "better": "countless scholars and artists have created splendid literary and painting works on the theme of bamboo",
+    "note": "用词更精准丰富，体现文化内涵与学术语域"
+   },
+   {
+    "plain": "bamboo can mean the spirit of never giving up",
+    "better": "bamboo thus represents the spirit of perseverance and resilience",
+    "note": "thus + 动词更符合英文因果逻辑衔接，用词更地道"
+   },
+   {
+    "plain": "bamboo has strong life force and can adapt",
+    "better": "bamboo possesses remarkable vitality and adaptability",
+    "note": "possess 比 have 更正式，vitality/adaptability 名词化表达更书面"
+   }
+  ]
+ }
+}

@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "8fcbfef22440__translation__all",
+ "examId": "8fcbfef22440",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年 12 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:47:51.903Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 25796,
+ "usage": {
+  "prompt_tokens": 788,
+  "completion_tokens": 1989,
+  "total_tokens": 2777,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 788,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1989,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 788,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国老龄化社会与多元养老模式",
+  "reference": "In China, with the advent of an aging society, elderly care has attracted widespread attention. What people discuss most is what kind of elderly care model should be adopted. Most people believe that elderly care models need to be diversified. Through government guidance and social participation, more and better elderly care service institutions can be established, community service centers can be improved, home-based self-care for the elderly can be encouraged, and a model that integrates family care with social care can also be promoted. With the continuous increase in investment from the government and society in elderly care services, elderly care facilities will be constantly upgraded, service quality will be gradually improved, and the life of the elderly will become more convenient, comfortable, healthy, and happy.",
+  "sentences": [
+   {
+    "cn": "在中国，随着老龄化社会的到来，养老受到普遍关注。",
+    "en": "In China, with the advent of an aging society, elderly care has attracted widespread attention.",
+    "structure": "with + 名词短语作伴随状语，主句为主谓宾结构",
+    "keys": [
+     "老龄化社会 an aging society",
+     "养老 elderly care",
+     "受到普遍关注 attract widespread attention"
+    ]
+   },
+   {
+    "cn": "人们谈论最多的是应当采取什么样的养老模式。",
+    "en": "What people discuss most is what kind of elderly care model should be adopted.",
+    "structure": "What 引导的主语从句 + what kind of 引导的表语从句，构成双从句主系表结构",
+    "keys": [
+     "养老模式 elderly care model",
+     "采取 adopt"
+    ]
+   },
+   {
+    "cn": "多数人认为，养老模式需要多元化。",
+    "en": "Most people believe that elderly care models need to be diversified.",
+    "structure": "主语 + believe + that 宾语从句，简洁的主谓宾结构",
+    "keys": [
+     "多元化 diversified"
+    ]
+   },
+   {
+    "cn": "可以通过政府引导和社会参与，建立更多更好的养老服务机构，改进社区服务中心，鼓励居家自助养老，还可以推行家庭养老与社会养老相结合的模式。",
+    "en": "Through government guidance and social participation, more and better elderly care service institutions can be established, community service centers can be improved, home-based self-care for the elderly can be encouraged, and a model that integrates family care with social care can also be promoted.",
+    "structure": "through 介词短语作方式状语前置，后接四个并列被动语态分句，最后一个用 that 定语从句修饰 model",
+    "keys": [
+     "政府引导 government guidance",
+     "社会参与 social participation",
+     "养老服务机构 elderly care service institutions",
+     "社区服务中心 community service centers",
+     "居家自助养老 home-based self-care for the elderly",
+     "家庭养老与社会养老相结合 integrate family care with social care"
+    ]
+   },
+   {
+    "cn": "随着政府和社会对养老服务事业投入的持续增加，养老设施将不断升级，服务质量逐步改进，老年人的生活将会更加方便舒适、健康快乐。",
+    "en": "With the continuous increase in investment from the government and society in elderly care services, elderly care facilities will be constantly upgraded, service quality will be gradually improved, and the life of the elderly will become more convenient, comfortable, healthy, and happy.",
+    "structure": "with + 名词短语作条件/伴随状语，主句含三个并列将来时分句，末句用 become + 多个并列形容词",
+    "keys": [
+     "养老服务事业 elderly care services",
+     "投入 investment",
+     "养老设施 elderly care facilities",
+     "方便舒适 convenient and comfortable"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "老龄化社会",
+    "en": "an aging society"
+   },
+   {
+    "cn": "养老",
+    "en": "elderly care / care for the aged"
+   },
+   {
+    "cn": "养老模式",
+    "en": "elderly care model"
+   },
+   {
+    "cn": "多元化",
+    "en": "diversified / diversification"
+   },
+   {
+    "cn": "养老服务机构",
+    "en": "elderly care service institutions"
+   },
+   {
+    "cn": "社区服务中心",
+    "en": "community service centers"
+   },
+   {
+    "cn": "居家自助养老",
+    "en": "home-based self-care for the elderly"
+   },
+   {
+    "cn": "家庭养老",
+    "en": "family care / family-based elderly care"
+   },
+   {
+    "cn": "社会养老",
+    "en": "social care / society-based elderly care"
+   },
+   {
+    "cn": "养老设施",
+    "en": "elderly care facilities"
+   }
+  ],
+  "pitfalls": [
+   "「老龄化社会的到来」误译为 old society comes，应使用 the advent of an aging society",
+   "「养老模式需要多元化」漏译被动含义，应译为 need to be diversified",
+   "「居家自助养老」为专有概念，不可逐字硬译，应译为 home-based self-care for the elderly",
+   "「家庭养老与社会养老相结合」中「结合」常误用 combine，推荐 integrate ... with ...，搭配更正式",
+   "末句多个并列形容词「方便舒适、健康快乐」容易漏译或语序混乱，需用 and 连接最后一个形容词"
+  ],
+  "upgrades": [
+   {
+    "plain": "old people care is noticed by many people",
+    "better": "elderly care has attracted widespread attention",
+    "note": "attract widespread attention 为六级高频搭配，比 be noticed 更正式地道"
+   },
+   {
+    "plain": "the coming of an aging society",
+    "better": "the advent of an aging society",
+    "note": "advent 比 coming 更书面正式，适用于社会现象描述"
+   },
+   {
+    "plain": "combine family care and social care",
+    "better": "integrate family care with social care",
+    "note": "integrate ... with ... 强调有机融合，比 combine 层次更高"
+   },
+   {
+    "plain": "the money put into elderly care keeps increasing",
+    "better": "the continuous increase in investment in elderly care services",
+    "note": "用名词化结构替代口语化动词短语，译文更紧凑学术化"
+   },
+   {
+    "plain": "old people's life will be better",
+    "better": "the life of the elderly will become more convenient, comfortable, healthy, and happy",
+    "note": "具体形容词并列铺开，信息完整且语言更丰富有力"
+   }
+  ]
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "a47f9b954dd6__translation__all",
+ "examId": "a47f9b954dd6",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年 3 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:48:52.515Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 27435,
+ "usage": {
+  "prompt_tokens": 806,
+  "completion_tokens": 1861,
+  "total_tokens": 2667,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 806,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1861,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 806,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "张骞出使西域与丝绸之路的开拓",
+  "reference": "Zhang Qian was the first great explorer in China. Undaunted by dangers and hardships, he overcame numerous difficulties and embarked on two diplomatic missions to the Western Regions, establishing trade relations between China and Western Asia as well as Europe. By transporting Chinese silk and silk products to Western Asia and Europe, he opened up the historically renowned \"Silk Road.\" Meanwhile, he introduced to the Central Plains the local customs, geographical features, cultures, and endemic species of the Western Regions, greatly broadening people's horizons. As historians have pointed out, without Zhang Qian's missions to the Western Regions, there would have been no opening of the Silk Road, nor would there have been any cultural exchanges between the Han Dynasty and the Western Regions or Europe.",
+  "sentences": [
+   {
+    "cn": "张骞(Zhang Qian)是中国第一个伟大的探险家。",
+    "en": "Zhang Qian was the first great explorer in China.",
+    "structure": "主系表结构，the first great explorer 作表语，简洁明了",
+    "keys": [
+     "探险家 explorer",
+     "中国第一个 the first ... in China"
+    ]
+   },
+   {
+    "cn": "他不畏艰险,克服重重困难,两次出使西域,开通了中国同西亚和欧洲的通商关系,将中国的丝和丝织品运往西亚和欧洲,开拓了历史上著名的\"丝绸之路\"。",
+    "en": "Undaunted by dangers and hardships, he overcame numerous difficulties and embarked on two diplomatic missions to the Western Regions, establishing trade relations between China and Western Asia as well as Europe. By transporting Chinese silk and silk products to Western Asia and Europe, he opened up the historically renowned \"Silk Road.\"",
+    "structure": "分词短语 Undaunted by... 作状语 + 并列谓语 overcame / embarked on + 现在分词 establishing 表结果 + By doing... 介词短语作方式状语，长句拆分为两句以保持清晰",
+    "keys": [
+     "不畏艰险 undaunted by dangers and hardships",
+     "克服重重困难 overcame numerous difficulties",
+     "出使西域 diplomatic missions to the Western Regions",
+     "通商关系 trade relations",
+     "丝织品 silk products",
+     "丝绸之路 the Silk Road"
+    ]
+   },
+   {
+    "cn": "同时,他又将西域的风土人情、地理文化以及特有物种等介绍到中原,极大地开阔了人们的视野。",
+    "en": "Meanwhile, he introduced to the Central Plains the local customs, geographical features, cultures, and endemic species of the Western Regions, greatly broadening people's horizons.",
+    "structure": "Meanwhile 衔接副词 + introduce A to B 双宾语结构（宾语后置避免头重脚轻）+ 现在分词 broadening 作结果状语",
+    "keys": [
+     "风土人情 local customs",
+     "特有物种 endemic species",
+     "中原 the Central Plains",
+     "开阔视野 broaden people's horizons"
+    ]
+   },
+   {
+    "cn": "正如历史学家所指出的那样,如果没有张骞出使西域,就不可能有丝绸之路的开辟,也就不会有汉朝同西域或欧洲的文化交流。",
+    "en": "As historians have pointed out, without Zhang Qian's missions to the Western Regions, there would have been no opening of the Silk Road, nor would there have been any cultural exchanges between the Han Dynasty and the Western Regions or Europe.",
+    "structure": "As 引导非限制性定语从句 + without 引导含蓄虚拟条件 + there would have been 虚拟语气主句 + nor would there have been 倒装句表否定递进",
+    "keys": [
+     "正如…所指出的 as ... have pointed out",
+     "丝绸之路的开辟 the opening of the Silk Road",
+     "文化交流 cultural exchanges",
+     "汉朝 the Han Dynasty"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "张骞",
+    "en": "Zhang Qian"
+   },
+   {
+    "cn": "西域",
+    "en": "the Western Regions"
+   },
+   {
+    "cn": "丝绸之路",
+    "en": "the Silk Road"
+   },
+   {
+    "cn": "西亚",
+    "en": "Western Asia"
+   },
+   {
+    "cn": "汉朝",
+    "en": "the Han Dynasty"
+   },
+   {
+    "cn": "中原",
+    "en": "the Central Plains"
+   },
+   {
+    "cn": "丝织品",
+    "en": "silk products / silk fabrics"
+   },
+   {
+    "cn": "风土人情",
+    "en": "local customs (and practices)"
+   },
+   {
+    "cn": "特有物种",
+    "en": "endemic species"
+   },
+   {
+    "cn": "通商关系",
+    "en": "trade relations"
+   }
+  ],
+  "pitfalls": [
+   "「不畏艰险」易直译为 was not afraid of，应使用 undaunted by 更为地道",
+   "「出使西域」不能译为 travel to，需体现外交使命性质，应译为 diplomatic missions",
+   "「风土人情」是四字格，切勿逐字直译，应整合为 local customs",
+   "虚拟语气是本段最大语法难点，without 引导的含蓄条件须搭配 would have been",
+   "「开阔视野」中「视野」不宜译为 vision，应用 horizons（broadened people's horizons）"
+  ],
+  "upgrades": [
+   {
+    "plain": "was not afraid of dangers",
+    "better": "undaunted by dangers and hardships",
+    "note": "分词形容词作状语，更简洁高级，避免口语化表达"
+   },
+   {
+    "plain": "went to the Western Regions twice",
+    "better": "embarked on two diplomatic missions to the Western Regions",
+    "note": "embark on missions 体现出使的外交属性，用词更精准"
+   },
+   {
+    "plain": "opened the Silk Road",
+    "better": "opened up the historically renowned \"Silk Road\"",
+    "note": "added historically renowned 补充修饰语，信息更丰满"
+   },
+   {
+    "plain": "which greatly broadened people's horizons",
+    "better": "greatly broadening people's horizons",
+    "note": "现在分词作结果状语比定语从句更紧凑，句式更多样"
+   },
+   {
+    "plain": "If Zhang Qian had not gone to the Western Regions",
+    "better": "Without Zhang Qian's missions to the Western Regions",
+    "note": "without 引导含蓄虚拟更凝练，避免冗长的 if 从句"
+   }
+  ]
+ }
+}

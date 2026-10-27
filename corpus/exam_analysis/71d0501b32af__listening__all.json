@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "71d0501b32af__listening__all",
+ "examId": "71d0501b32af",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2017 年 12 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:10:25.669Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59155,
+ "usage": {
+  "prompt_tokens": 2253,
+  "completion_tokens": 2982,
+  "total_tokens": 5235,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2253,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2982,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2253,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析仅基于题目选项的语言特征与正确答案进行推理分析，不涉及任何对录音内容的编造。",
+  "overview": "本场听力共7段，25题。第1段（1-4题）围绕各国食物浪费立法与标签问题；第2段（5-8题）涉及商场促销政策与售后服务；第3段（9-11题）讨论芭比娃娃的外形设计与销售渠道；第4段（12-15题）涉及印刷术历史及其社会影响；第5段（16-18题）关于求职择业建议；第6段（19-22题）涉及非裔美国人文化节日Kwanzaa；第7段（23-25题）围绕地中海饮食与健康研究。",
+  "strategy": [
+   "预读选项时按主题归类，快速锁定段落话题方向，进入听音状态时心中有框架",
+   "关注选项间的对立信息（如prohibit vs. facilitate），听到关键动词时即可排除干扰项",
+   "含有绝对词（all, never, only）的选项往往是干扰项，听音时注意是否有限定语",
+   "数字、国名、专有名词出现时高度警觉，它们常对应设题点",
+   "长选项往往信息密度更高，优先标记其中的核心名词和动词短语",
+   "若两个选项意思极为接近，正确答案通常不在这两个中，可快速排除"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "各国针对食物浪费的法律法规与原因分析",
+    "optionSignals": "四题选项均以 they/it 开头，后接描述政策的动词（reward, prohibit, facilitate, ban, impose penalties），属于典型的\"某主体做了什么\"提问模式。第4题选项转为名词短语，提示在问原因或现象。",
+    "tips": [
+     "区分各国措施的不同侧重：donate（捐赠）、overproduction（过量生产）、dump（倾倒）、expiration labels（保质期标签），听到国家名时立即对应措施",
+     "选项中 prohibit 与 forbid 近义重复出现在不同题中，注意听辨修饰对象的不同",
+     "第4题四个选项各指一个不同原因，听到 confusion、label、expiration 等词即可锁定答案"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "商场促销活动、价格政策及售后服务",
+    "optionSignals": "选项涉及 promotion、anniversary sales、coupons、free delivery、price adjustments、gift card、credit、tailoring 等商业消费词汇，属于日常消费场景对话，提问围绕\"商店提供什么服务/政策\"。",
+    "tips": [
+     "第5题四个选项描述不同商业活动类型，关键在于区分 weekly promotion 与 annual anniversary，注意时间限定词",
+     "第7题问的是处理方式（mail/credit/coupon），属于动作辨别题，听到 account、refund 等词时果断选择",
+     "第8题 complimentary tailoring（免费裁剪）是高频干扰考点，注意 complimentary 在听力中意为\"免费赠送的\""
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "芭比娃娃的外形设计争议与改版情况",
+    "optionSignals": "第9题选项描述外貌特征（thin, tall, hair textures, body shapes），第10题用否定结构（do not / not sold / do not appeal / have not changed），第11题为地点短语。整组围绕产品特征与消费者反馈展开。",
+    "tips": [
+     "第9题和第10题都涉及 body shapes，但提问角度不同：一个问传统设计，一个问改版效果，注意时态区分",
+     "第11题四个选项都是销售渠道，地点题通常在对话末尾出现，注意尾句信息",
+     "flat feet 是芭比改版的标志性特征，若选项中出现此细节但答案不选，说明它是典型干扰"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "活字印刷术的历史发展及对社会文化的影响",
+    "optionSignals": "选项含大量历史与文化词汇（moveable metal type, printing presses, handwritten books, circulation, Latin language, national languages），属于学术讲座类短文。四题从时间、规模、影响逐步深入。",
+    "tips": [
+     "第12题四选项都涉及印刷技术的起源或引进，核心区分在于 began to be used vs. first introduced vs. imported，听清动词搭配",
+     "第14-15题问的是印刷术的社会影响，boosted circulation 与 promoted growth 都是正面效果词，注意与 pushed out、extinction 等负面词的对比排除",
+     "数字20 million、100等为听音锚点，一旦出现立刻关联对应选项"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "毕业生求职择业的常见问题与建议",
+    "optionSignals": "第16题描述求职者的典型问题（spend a year, stuck, without thinking），第17-18题转为建议（see if, find out, watch, decide; qualifications, pay, culture, environment），从\"问题→方案→关注点\"层层递进。",
+    "tips": [
+     "第16题 without thinking it through 表示草率决定，是典型的听力因果链终点，注意听 because、reason 等信号词",
+     "第17题四个选项都是祈使含义的动作建议，区分 see/find out/watch/decide 的语义差异",
+     "第18题四个选项涵盖求职的不同维度，qualifications（资质）是自身条件，其余三项是外部条件，注意听主语是 you 还是 company"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "非裔美国人文化节日 Kwanzaa 的起源与庆祝方式",
+    "optionSignals": "选项中反复出现 African-Americans，且涉及 cultural/ancient/religious festival、self-determination、first fruits、unity cup、principle 等文化术语，属于文化知识类短文。",
+    "tips": [
+     "第19题关键在于区分 cultural vs. religious vs. ancient，三个限定词性质截然不同，听到 founded 即可确认是人为创立的文化节",
+     "第21题 first fruits of the harvest 是 Kwanzaa 一词的本义（源自斯瓦希里语），若对背景知识有了解可快速锁定",
+     "第22题问每日仪式，recite a principle 对应 Kwanzaa 七天七原则的传统，注意 each day 等频率词"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "地中海饮食的健康价值与相关研究",
+    "optionSignals": "第23题为总论定性（healthy, dairy, seafood），第24题描述研究规模与评价（13000 researchers, seven countries, greatest research），第25题描述人群特征（health, fat, oil, mortality rates），从定义→研究→结论递进。",
+    "tips": [
+     "第23题 most healthy diets 是总括性结论，通常出现在段落开头，注意开篇定调句",
+     "第24题含具体数字和地理范围，听到 study/research 后紧跟的修饰语是关键",
+     "第25题 lower mortality rates 是医学研究的核心结论指标，比 care about health 等主观描述更具学术色彩，符合研究结论的表述风格"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "facilitate",
+    "cn": "促进，使便利"
+   },
+   {
+    "w": "expiration label",
+    "cn": "保质期标签"
+   },
+   {
+    "w": "overproduction",
+    "cn": "过量生产"
+   },
+   {
+    "w": "complimentary",
+    "cn": "免费赠送的，赠阅的"
+   },
+   {
+    "w": "price adjustment",
+    "cn": "价格调整（差价补偿）"
+   },
+   {
+    "w": "moveable metal type",
+    "cn": "活字金属印刷"
+   },
+   {
+    "w": "circulation",
+    "cn": "（书刊的）发行量；流通"
+   },
+   {
+    "w": "mortality rate",
+    "cn": "死亡率"
+   },
+   {
+    "w": "self-determination",
+    "cn": "自决，自主决定"
+   },
+   {
+    "w": "qualifications",
+    "cn": "资质，资格；学历"
+   },
+   {
+    "w": "cooperative economics",
+    "cn": "合作经济学"
+   },
+   {
+    "w": "bulk purchase",
+    "cn": "大宗购买，批量采购"
+   },
+   {
+    "w": "edible",
+    "cn": "可食用的"
+   },
+   {
+    "w": "tailoring",
+    "cn": "裁剪，缝制"
+   }
+  ]
+ }
+}

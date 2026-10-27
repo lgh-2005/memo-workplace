@@ -772,6 +772,22 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.8.0', date: '2026-10-27', title: '真题参考解析：每套卷每道题都有做完后的解析',
+    items: [
+      '104 套真题（考研英语一 28 + 六级 76）全部题型离线预生成参考解析：做完题切到「答案对照 · 解析」即可逐题看讲解',
+      '客观题（完形/阅读/新题型/选词填空/长篇匹配）逐题给：原文定位句、为什么该选项正确（推理链）、每个干扰项错在哪、一句话做题启示',
+      '翻译：考研英译汉给全文译文 + 逐句结构拆解 + 采分点 + 最易译错处；六级汉译英给参考译文 + 逐句对照 + 术语标准译法 + 表达升级',
+      '写作：给题目要求拆解、分段提纲、参考范文（词数符合题干）、高分表达、表达升级与常见失分点',
+      '听力：题库无音频也无原文，本页改为「选项语言特征分析 + 通用应试技巧 + 分段提示」，明确标注不涉及录音内容，绝不编造对话',
+      '解析按单元（阅读按篇、其余按板块、听力按场）落 corpus/exam_analysis/，随仓库入库、可版本化、可离线复现',
+      '新增离线批处理 scripts/exam-analysis-build.mjs：断点续跑、答案一致性硬校验、原文忠实度校验、限流自适应退避、畸形 JSON 自动修复',
+      '后端新增 /api/exam/analysis/<examId>、/api/exam/analysis/unit/<id>、/api/exam/analysis/status；目录 mtime 热索引 + LRU 缓存，解析缺失时优雅降级为「暂无解析」',
+      '前端「全真演练」模式完全隐藏解析（防泄题），「答案对照 · 解析」模式逐题注入讲解并在板块末尾展开解析面板（译文/词汇/长难句/范文/技巧）',
+      '修复 v3.3.4 遗留的 CSP 硬缺陷：真题页 17 处内联 on* 事件处理器在 script-src self 下被浏览器全部拦截，导致点选项无反应、作答进度不动、提交/清空按钮失效；改为 data-* 标记 + 事件委托，安全策略不放宽（仍无 unsafe-inline）',
+      '新增 scripts/exam-analysis-smoke.mjs 隔离回归（51 断言：接口/降级/损坏跳过/缓存失效/内容完整性/前端契约/JSON 修复器）',
+    ],
+  },
+  {
     version: '3.7.1', date: '2026-10-25', title: '语音运行时跨平台解析（Piper 在 Windows 可用）',
     items: [
       '修复服务端神经语音（Piper）解释器路径硬编码 POSIX 的问题：改为候选列表探测，依次尝试 venv/bin/python、venv/bin/python3、venv/Scripts/python.exe',
@@ -4970,6 +4986,113 @@ function loadExams() {
   const mtime = fileMtime(file);
   if (examCache.mtime !== mtime) examCache = { mtime, records: readJsonlRaw(file) };
   return examCache.records;
+}
+
+/* ---------- v3.8.0：真题解析（做完后参考解析） ----------
+   解析由离线批处理 scripts/exam-analysis-build.mjs 预生成，落 corpus/exam_analysis/<单元ID>.json。
+   单元 ID = <examId>__<section>__<sub>（阅读按 passage_id 分篇，其余题型整板块，听力整场）。
+   零第三方依赖、只读；文件缺失时接口优雅返回「暂无解析」而不是报错。
+   服务端按目录 mtime 做索引缓存（新增/删除解析文件后自动重建；单文件内容用 LRU 缓存）。 */
+const EXAM_ANALYSIS_DIR = path.join(ROOT, 'corpus', 'exam_analysis');
+const EXAM_ANALYSIS_SECTION_LABEL = {
+  reading: '阅读理解', use_of_english: '完形填空', banked_cloze: '选词填空',
+  part_b: '新题型', long_match: '长篇阅读', translation: '翻译',
+  writing: '写作', listening: '听力理解',
+};
+
+let examAnalysisIndex = { dirMtime: -1, files: new Map() };   // 文件名 -> { size, mtimeMs }
+const examAnalysisCache = new Map();                          // 文件名 -> 解析记录（LRU）
+const EXAM_ANALYSIS_CACHE_MAX = 120;
+
+function examAnalysisDirMtime() {
+  try { return fs.statSync(EXAM_ANALYSIS_DIR).mtimeMs; } catch { return 0; }
+}
+
+function loadExamAnalysisIndex() {
+  const dm = examAnalysisDirMtime();
+  if (dm === examAnalysisIndex.dirMtime && examAnalysisIndex.files.size) return examAnalysisIndex.files;
+  const files = new Map();
+  try {
+    for (const name of fs.readdirSync(EXAM_ANALYSIS_DIR)) {
+      if (!name.endsWith('.json') || name.startsWith('_')) continue;
+      try {
+        const st = fs.statSync(path.join(EXAM_ANALYSIS_DIR, name));
+        files.set(name.slice(0, -5), { size: st.size, mtimeMs: st.mtimeMs });
+      } catch { /* 单文件不可读则跳过 */ }
+    }
+  } catch { /* 目录不存在：返回空索引 */ }
+  examAnalysisIndex = { dirMtime: dm, files };
+  if (examAnalysisCache.size > EXAM_ANALYSIS_CACHE_MAX) examAnalysisCache.clear();
+  return files;
+}
+
+function readExamAnalysis(unitId) {
+  const files = loadExamAnalysisIndex();
+  const meta = files.get(String(unitId));
+  if (!meta) return null;
+  const cached = examAnalysisCache.get(unitId);
+  if (cached && cached.mtimeMs === meta.mtimeMs) {
+    // LRU 命中：移到队尾
+    examAnalysisCache.delete(unitId);
+    examAnalysisCache.set(unitId, cached);
+    return cached.record;
+  }
+  let record;
+  try {
+    record = JSON.parse(fs.readFileSync(path.join(EXAM_ANALYSIS_DIR, unitId + '.json'), 'utf8'));
+  } catch { return null; }
+  if (!record || record.schemaVersion !== 1 || !record.analysis) return null;
+  examAnalysisCache.set(unitId, { mtimeMs: meta.mtimeMs, record });
+  if (examAnalysisCache.size > EXAM_ANALYSIS_CACHE_MAX) {
+    const oldest = examAnalysisCache.keys().next().value;
+    examAnalysisCache.delete(oldest);
+  }
+  return record;
+}
+
+/** 某套真题的解析覆盖概览（列表页与状态接口共用） */
+function examAnalysisCoverage(examId) {
+  const files = loadExamAnalysisIndex();
+  const prefix = String(examId) + '__';
+  const out = { examId, units: 0, sections: {}, missingSections: [] };
+  for (const unitId of files.keys()) {
+    if (!unitId.startsWith(prefix)) continue;
+    out.units++;
+    const sec = unitId.slice(prefix.length).split('__')[0];
+    out.sections[sec] = (out.sections[sec] || 0) + 1;
+  }
+  return out;
+}
+
+/** v3.8.0：解析目录统计（管理/排障用，不暴露文件系统路径） */
+function examAnalysisStatus() {
+  const files = loadExamAnalysisIndex();
+  const bySection = {};
+  const byTrack = {};
+  let bytes = 0;
+  let newest = 0;
+  for (const [unitId, meta] of files) {
+    bytes += meta.size;
+    if (meta.mtimeMs > newest) newest = meta.mtimeMs;
+    const parts = unitId.split('__');
+    const sec = parts[1] || 'unknown';
+    bySection[sec] = (bySection[sec] || 0) + 1;
+    // 单元 ID 以 examId 开头，track 需回查题库（题库已在内存里，成本可接受）
+    const rec = loadExams().find(x => x.id === parts[0]);
+    const tk = rec ? trackOf(rec) : 'unknown';
+    byTrack[tk] = (byTrack[tk] || 0) + 1;
+  }
+  return {
+    ready: files.size > 0,
+    dir: 'corpus/exam_analysis',
+    units: files.size,
+    exams: loadExams().length,
+    bytes,
+    newestAt: newest ? new Date(newest).toISOString() : null,
+    bySection,
+    byTrack,
+    sectionLabels: EXAM_ANALYSIS_SECTION_LABEL,
+  };
 }
 
 /** v1.1.2 迁移：records.jsonl 里残留的 qa_set 全部移到 exams.jsonl（幂等，可重复调用） */
@@ -9599,8 +9722,70 @@ CRITICAL TRANSCRIPTION RULES:
               rtypeLabel: RTYPE_LABEL[r.rtype] || r.rtype,
               items: u.searchParams.get('raw') === '1' ? (r.items || []) : kbOrderedItems(r),
               sections: examSummary(r).sections,
+              // v3.8.0：带上解析覆盖信息，前端据此决定是否显示「参考解析」入口
+              analysis: examAnalysisCoverage(r.id),
             },
           });
+        }
+      }
+
+      /* ---------- v3.8.0：真题参考解析 ---------- */
+
+      // 解析库状态（解析覆盖、分题型/分轨计数；只读）
+      // 注意：必须放在 /^\/api\/exam\/analysis\/<id>$/ 之前，否则 'status' 会被当成 examId。
+      if (p === '/api/exam/analysis/status' && req.method === 'GET') {
+        return sendJSON(res, 200, { ok: true, ...examAnalysisStatus() });
+      }
+
+      // 单套真题的全部解析（一次性取回，前端切到「答案对照」时按板块注入）
+      {
+        const m = p.match(/^\/api\/exam\/analysis\/([A-Za-z0-9_-]+)$/);
+        if (m && req.method === 'GET') {
+          const rec = loadExams().find(x => x.id === m[1]);
+          if (!rec) return sendJSON(res, 404, { error: '记录不存在' });
+          const files = loadExamAnalysisIndex();
+          const prefix = m[1] + '__';
+          const units = [];
+          let skipped = 0;
+          for (const unitId of files.keys()) {
+            if (!unitId.startsWith(prefix)) continue;
+            const rec2 = readExamAnalysis(unitId);
+            if (!rec2) { skipped++; continue; }
+            units.push({
+              id: rec2.id,
+              section: rec2.section,
+              sectionLabel: rec2.sectionLabel || EXAM_ANALYSIS_SECTION_LABEL[rec2.section] || rec2.section,
+              sub: rec2.sub,
+              questionNumbers: rec2.questionNumbers || [],
+              generatedAt: rec2.generatedAt || null,
+              model: rec2.model || null,
+              analysis: rec2.analysis,
+            });
+          }
+          units.sort((a, b) => String(a.section).localeCompare(String(b.section))
+            || Number(a.sub) - Number(b.sub) || String(a.sub).localeCompare(String(b.sub)));
+          return sendJSON(res, 200, {
+            ok: true,
+            examId: m[1],
+            track: trackOf(rec),
+            trackLabel: examTrackMeta(trackOf(rec)).label,
+            title: rec.title || '',
+            count: units.length,
+            skipped,
+            ready: units.length > 0,
+            units,
+            sectionLabels: EXAM_ANALYSIS_SECTION_LABEL,
+          });
+        }
+      }
+
+      // 单个解析单元（排障与定向复核用）
+      {
+        const m = p.match(/^\/api\/exam\/analysis\/unit\/([A-Za-z0-9_-]+)$/);
+        if (m && req.method === 'GET') {
+          const rec = readExamAnalysis(m[1]);
+          if (!rec) return sendJSON(res, 404, { error: '该单元暂无参考解析', code: 'NO_ANALYSIS' });
+          return sendJSON(res, 200, { ok: true, unit: rec });
         }
       }
 

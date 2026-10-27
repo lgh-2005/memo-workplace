@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "11d0bb69466f__reading__4",
+ "examId": "11d0bb69466f",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2013 年考研英语真题",
+ "year": 2013,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:28:44.649Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58150,
+ "usage": {
+  "prompt_tokens": 1737,
+  "completion_tokens": 3567,
+  "total_tokens": 5304,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1737,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3567,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1737,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "最高法院裁定亚利桑那州移民法案",
+  "gist": "美国最高法院以五比三推翻了亚利桑那州移民法四项争议条款中的三项，认为其侵入了联邦专属权力领域。但在宪法层面，全部八位大法官一致否定了奥巴马政府试图以行政执法优先权凌驾于州法之上的主张，捍卫了联邦与州之间的权力平衡。",
+  "structure": [
+   "第1-2段：引出事件，最高法院推翻亚利桑那州移民法三项条款",
+   "第3-5段：阐述多数派与异议派大法官的不同立场与理由",
+   "第6-7段：揭示核心争议——白宫行政权力扩张遭全体大法官否决"
+  ],
+  "difficulty": "较难",
+  "translation": "周一，最高法院以五比三的投票否决了亚利桑那州移民法的大部分内容——这对奥巴马政府而言是一次温和的政策胜利。但在更重要的宪法问题上，该裁决却是政府试图打破联邦与各州权力平衡之努力的一次八比零的失败。\n\n在\"亚利桑那州诉美国\"案中，多数派推翻了亚利桑那州那项备受争议的、让州和地方警察执行联邦移民法计划中四项争议条款里的三项。华盛顿独享\"制定统一归化规则\"的权力以及联邦法律优先于州法律这两项宪法原则是没有争议的。亚利桑那州曾试图制定与现行联邦法律平行的州政策。\n\n安东尼·肯尼迪大法官在首席大法官约翰·罗伯茨及自由派大法官的支持下裁定，该州飞得离联邦的太阳太近了。在被推翻的条款上，多数派认为国会已经有意地\"占据了该领域\"，因此亚利桑那州侵入了联邦的专属权力。\n\n然而，大法官们表示，将允许亚利桑那州警察核查与执法部门接触之人的合法身份。这是因为国会一直设想由联邦和州联合执行移民法，并明确鼓励州官员与联邦同事分享信息、开展合作。\n\n三位持异议的大法官中，塞缪尔·阿利托和克拉伦斯·托马斯同意这一宪法逻辑，但对亚利桑那州的哪些规定与联邦法律相冲突持不同意见。唯一的重大异议来自安东宁·斯卡利亚大法官，他追溯至《外国人与煽动叛乱法》，为州权提供了更为有力的辩护。\n\n全体大法官以八比零反对奥巴马总统，其依据正如塞缪尔·阿利托大法官在异议中所描述的——\"联邦行政权力的一次惊人主张\"。白宫辩称，即使州法在字面上完全符合联邦法律，亚利桑那州的法律也与其执法优先事项相冲突。实际上，白宫声称它可以使任何它不同意的、本来合法的州法无效。\n\n某些权力确实专属于联邦政府，对公民身份和边境的管控便是其中之一。但如果国会想阻止各州使用自身资源来核查移民身份，它本可以这样做，却从未这样做过。政府实质上是在声称，因为它不想执行国会的移民意愿，所以任何州也不应被允许这样做。每一位大法官都正确地拒绝了这一非凡的主张。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "the majority overturned three of the four contested provisions of Arizona's controversial plan to have state and local police enforce federal immigration law.",
+    "why": "原文第二段指出多数派推翻了亚利桑那州让州和地方警察执行联邦移民法计划中的三项条款，第三段进一步解释原因是国会已'占据了该领域'，亚利桑那州'侵入了联邦的专属权力'。B选项'超越了联邦移民法的权限'准确概括了这一推理逻辑——州法越权进入联邦专属领域。",
+    "traps": "A选项'扰乱了不同州之间的权力平衡'偷换概念，原文是联邦与州之间而非州与州之间；C选项'剥夺了联邦警察的宪法权力'无中生有，原文未提及剥夺联邦警察权力；D选项'与联邦和州政策都矛盾'过度推断，原文仅说侵入联邦权力领域，未提及与州政策矛盾。",
+    "tip": "注意区分权力冲突的双方主体，是联邦与州而非州与州。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "the Justices said that Arizona police would be allowed to verify the legal status of people who come in contact with law enforcement. That's because Congress has always envisioned joint federal-state immigration enforcement and explicitly encourages state officers to share information and cooperate with federal colleagues.",
+    "why": "第四段明确指出大法官们同意允许亚利桑那州警察核查人员合法身份，原因是国会一直设想联邦与州联合执法，并鼓励州官员与联邦同事合作。这表明大法官们认可各州在移民执法中扮演合法角色，C选项'各州在移民执法中的合法角色'准确对应此意。",
+    "traps": "A选项'国会对移民执法的干预'概念偏离，原文强调的是联合执法而非国会干预；B选项'联邦官员有义务隐瞒移民信息'与原文相反，原文说鼓励分享信息；D选项'各州独立于联邦移民法'曲解原文，原文强调的是合作而非独立。",
+    "tip": "注意抓住段落的论证逻辑：结论是允许州警核查，原因是联合执法传统。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The only major objection came from Justice Antonin Scalia, who offered an even more robust defense of state privileges going back to the Alien and Sedition Acts.",
+    "why": "原文说斯卡利亚大法官追溯至《外国人与煽动叛乱法》，为州权提供了'更为有力的辩护'（an even more robust defense of state privileges）。他引用该法是为了支持州权立场，因此可推断该法案是有利于各州权利的，A选项'支持各州的立场'正确。",
+    "traps": "B选项'支持联邦法律'与语境相反，斯卡利亚引用该法是为捍卫州权而非联邦权力；C选项'损害了各州利益'与原文逻辑完全相反；D选项'违反了宪法'属无中生有，原文未涉及该法违宪问题。",
+    "tip": "推断题需紧扣引用目的：引用者立场决定被引用内容的倾向。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "In effect, the White House claimed that it could invalidate any otherwise legitimate state law that it disagrees with.",
+    "why": "第六段指出白宫辩称即使州法在字面上完全符合联邦法律，只要与其执法优先事项冲突便可使其无效。这实际上意味着白宫认为其执法权力可以凌驾于各州之上，可以否定任何它不赞同的合法州法。C选项'超过各州所拥有的权力'准确概括了白宫这一主张的实质。",
+    "traps": "A选项'依赖于各州的支持'与原文相反，白宫主张单方面否定州法；B选项'由联邦法律确立'偷换概念，白宫主张的是行政执法优先权而非法律条文本身；D选项'很少与州法冲突'与原文矛盾，白宫正是在制造与州法的冲突。",
+    "tip": "注意识别'in effect'后的实质含义，这是命题人常设考点。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The Administration was in essence asserting that because it didn't want to carry out Congress's immigration wishes, no state should be allowed to do so either. Every Justice rightly rejected this remarkable claim.",
+    "why": "末段指出政府实质上主张因其不愿执行国会移民意愿，各州也不应被允许这样做；并强调'每位大法官都正确地拒绝了这一非凡主张'。结合上文国会从未禁止州使用自身资源核查移民身份的论述，可知大法官们的意图是制约（check）政府行政权力的过度扩张，D选项正确。",
+    "traps": "A选项'移民问题通常由国会决定'以偏概全，文中仅说国会有权立法但未说'通常'由其决定所有移民问题；B选项'政府在移民问题上占主导'恰恰是被大法官否定的主张；C选项'大法官想加强与国会的协调'无中生有，文中未提及大法官与国会的协调关系。",
+    "tip": "末段常总结全文立场，注意'Every Justice rightly rejected'的态度表达。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "provision",
+    "cn": "n. 条款；规定"
+   },
+   {
+    "w": "contested",
+    "cn": "adj. 有争议的；受到质疑的"
+   },
+   {
+    "w": "precede",
+    "cn": "v. 优先于；在…之前"
+   },
+   {
+    "w": "overturn",
+    "cn": "v. 推翻；撤销（判决）"
+   },
+   {
+    "w": "intrude",
+    "cn": "v. 侵入；干涉"
+   },
+   {
+    "w": "envisioned",
+    "cn": "v. 设想；预见"
+   },
+   {
+    "w": "robust",
+    "cn": "adj. 强有力的；坚定的"
+   },
+   {
+    "w": "assertion",
+    "cn": "n. 主张；声称"
+   },
+   {
+    "w": "invalidate",
+    "cn": "v. 使无效；使作废"
+   },
+   {
+    "w": "legitimate",
+    "cn": "adj. 合法的；正当的"
+   },
+   {
+    "w": "comply with",
+    "cn": "v. 遵守；符合"
+   },
+   {
+    "w": "in essence",
+    "cn": "adv. 本质上；实质上"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But on the more important matter of the Constitution, the decision was an 8-0 defeat for the Administration's effort to upset the balance of power between the federal government and the states.",
+    "cn": "但在更重要的宪法问题上，该裁决却是政府试图打破联邦与各州之间权力平衡之努力的一次八比零的失败。",
+    "note": "主干为'the decision was an 8-0 defeat'；for引导介词短语修饰defeat，说明失败的对象；不定式to upset作effort的后置定语，between短语修饰balance。"
+   },
+   {
+    "en": "The White House argued that Arizona's laws conflicted with its enforcement priorities, even if state laws complied with federal statutes to the letter.",
+    "cn": "白宫辩称，即使州法在字面上完全符合联邦法律，亚利桑那州的法律也与其执法优先事项相冲突。",
+    "note": "主干为The White House argued that...；that引导宾语从句；even if引导让步状语从句表退让；to the letter意为'严格地、逐字地'。"
+   },
+   {
+    "en": "The Administration was in essence asserting that because it didn't want to carry out Congress's immigration wishes, no state should be allowed to do so either.",
+    "cn": "政府实质上是在声称，因为它不想执行国会的移民意愿，所以任何州也不应被允许这样做。",
+    "note": "主干为The Administration was asserting that...；in essence作插入语意为'本质上'；that引导宾语从句，其中because引导原因状语从句；do so指代carry out Congress's immigration wishes。"
+   }
+  ]
+ }
+}

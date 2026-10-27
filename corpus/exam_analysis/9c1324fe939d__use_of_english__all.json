@@ -1,0 +1,319 @@
+{
+ "schemaVersion": 1,
+ "id": "9c1324fe939d__use_of_english__all",
+ "examId": "9c1324fe939d",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2017 年考研英语真题",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:34:31.379Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 81551,
+ "usage": {
+  "prompt_tokens": 1743,
+  "completion_tokens": 4811,
+  "total_tokens": 6554,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1743,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4811,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1743,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "拥抱对健康的积极影响",
+  "gist": "文章围绕\"拥抱是否有益健康\"展开，引用卡内基梅隆大学的研究表明，拥抱能通过减轻压力降低感冒风险、缓解感冒症状。专家将拥抱的健康益处归因于催产素的释放，该激素在大脑中影响情绪、行为和生理机能。",
+  "difficulty": "中等",
+  "translation": "每天一个拥抱能让你远离医生吗？答案可能是响亮的\"能！\"除了帮助你感到与你关心的人亲密和有联系之外，事实证明，拥抱还能给你的身心带来许多健康益处。信不信由你，一个温暖的拥抱甚至可能帮助你在这个冬天避免生病。\n\n在一项涉及400多名健康成年人的近期研究中，宾夕法尼亚州卡内基梅隆大学的研究人员考察了人们感知到的社会支持和接受拥抱对参与者在接触感冒病毒后患普通感冒的易感性的影响。感知到更多社会支持的人不太可能患上感冒，研究人员计算出拥抱的减压效果大约解释了那种有益效果的32%。即使在那些确实患上感冒的人中，感受到更多社会支持并更频繁接受拥抱的人的症状也更轻。\n\n\"拥抱保护处于压力下的人免受通常与压力相关的、增加的感冒风险，\"卡内基梅隆大学心理学教授谢尔登·科恩指出。拥抱\"是亲密关系的标志，有助于产生他人会在面对困难时提供帮助的感觉。\"\n\n一些专家将拥抱的减压和健康相关益处归因于催产素的释放，催产素常被称为\"结合激素\"，因为它促进关系中的依恋，包括母亲与新生儿之间的依恋。催产素主要在大脑中下部产生，其中一部分被释放到血液中。但其中一部分留存在大脑中，在那里它影响情绪、行为和生理机能。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "B",
+    "correct": "Besides",
+    "why": "上下文逻辑：前半句说拥抱帮你感到亲密，后半句说拥抱还能带来健康益处，两者是递进/并列关系，Besides（除了……之外还）表示在已知好处之上追加新信息，完美衔接。",
+    "traps": "A) Unlike表对比，文中两层含义并非对立关系；C) Despite表让步转折，与上下文语义方向不符；D) Throughout意为\"自始至终\"，不能引导动名词短语作让步或递进。",
+    "tip": "Besides + doing表\"除……之外还\"，用于递进补充信息。"
+   },
+   {
+    "number": 2,
+    "answer": "A",
+    "correct": "connected",
+    "why": "搭配与语义：connected to people意为\"与人有联系/联结\"，与前面的close（亲近）并列，共同描述拥抱带来的情感纽带，语义贴合且搭配介词to正确。",
+    "traps": "B) restricted to意为\"被限制于\"，语义不合；C) equal to意为\"等同于\"，不表达情感联结；D) inferior to意为\"低于/不如\"，含贬义，语境不符。",
+    "tip": "connected to表示情感上与人有联系，常与close并列使用。"
+   },
+   {
+    "number": 3,
+    "answer": "D",
+    "correct": "host",
+    "why": "固定搭配：a host of意为\"大量的、许多的\"，修饰health benefits，表示拥抱带来众多健康好处，语义通顺、搭配地道。",
+    "traps": "A) a choice of意为\"可供选择的\"，强调选择而非数量；B) a view of意为\"对……的看法/视野\"，搭配不当；C) a lesson of搭配不自然，且含义与语境无关。",
+    "tip": "a host of = a large number of，完形填空高频固定搭配。"
+   },
+   {
+    "number": 4,
+    "answer": "C",
+    "correct": "avoid",
+    "why": "语义逻辑：上文说拥抱有健康益处，此处说拥抱可能帮你avoid getting sick（避免生病），语义顺畅，avoid后接动名词为正确用法。",
+    "traps": "A) recall getting sick意为\"回忆生病\"，逻辑不通；B) forget getting sick意为\"忘记生病\"，文意不合；D) keep getting sick意为\"持续生病\"，与文章正面立场矛盾。",
+    "tip": "avoid doing sth.是常见搭配，意为\"避免做某事\"。"
+   },
+   {
+    "number": 5,
+    "answer": "B",
+    "correct": "involving",
+    "why": "语义搭配：a study involving over 400 adults意为\"一项涉及400多名成年人的研究\"，involving作后置定语修饰study，表示研究的参与者范围。",
+    "traps": "A) collecting意为\"收集\"，不能直接接人作宾语来表示研究对象；C) guiding意为\"指导\"，语义不符；D) affecting意为\"影响\"，不用于描述研究的参与人数。",
+    "tip": "involving常作后置定语，表\"涉及……\"，是学术语境高频词。"
+   },
+   {
+    "number": 6,
+    "answer": "D",
+    "correct": "on",
+    "why": "固定搭配：effects on意为\"对……的影响\"，此处表示拥抱和社会支持对参与者感冒易感性的影响，介词on与effects构成固定搭配。",
+    "traps": "A) effects of表\"……的影响（来源）\"，此处需要表影响的对象而非来源；B) effects in搭配不当；C) effects at不构成合理搭配。",
+    "tip": "the effect(s) on sb./sth.是固定搭配，表示\"对……的影响\"。"
+   },
+   {
+    "number": 7,
+    "answer": "B",
+    "correct": "exposed",
+    "why": "固定搭配：be exposed to the virus意为\"暴露于/接触病毒\"，是医学和日常英语中描述感染途径的标准表达，与上下文研究感冒的语境完全吻合。",
+    "traps": "A) devoted to意为\"致力于\"，语义不符；C) lost to意为\"输给/迷失于\"，与病毒搭配不当；D) attracted to意为\"被吸引\"，不用于描述接触病毒。",
+    "tip": "be exposed to是完形高频搭配，意为\"暴露于/接触到\"。"
+   },
+   {
+    "number": 8,
+    "answer": "C",
+    "correct": "down",
+    "why": "固定搭配：come down with意为\"患上（疾病）\"，是英语中描述得病的固定短语，此处指患上感冒，与a cold搭配地道。",
+    "traps": "A) come across意为\"偶然遇到\"，不用于疾病；B) come along意为\"一起来/进展\"，语义不符；D) come out意为\"出来/出版\"，不表示患病。",
+    "tip": "come down with a cold/flu是固定表达，意为\"患上感冒/流感\"。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "calculated",
+    "why": "语义逻辑：后文给出了精确数据\"32 percent\"，这说明研究人员是通过计算（calculated）得出该结论的，calculated表示\"计算出\"，与具体百分比数据的呈现方式吻合。",
+    "traps": "B) denied意为\"否认\"，与后文给出肯定数据矛盾；C) doubted意为\"怀疑\"，语义方向不符；D) imagined意为\"想象\"，不符合科学研究的严谨表述。",
+    "tip": "calculated与精确数据搭配，体现科研结论的客观严谨。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "explained",
+    "why": "语义逻辑：explained about 32 percent of that beneficial effect意为\"解释了大约32%的有益效果\"，即拥抱的减压效果是社会支持减少感冒这一有益效果的部分解释/原因，用explained表示因果归因。",
+    "traps": "A) served意为\"服务/充当\"，搭配不当；B) required意为\"要求\"，语义不合；C) restored意为\"恢复\"，不能接百分比表达因果归因。",
+    "tip": "explain在科研语境中常表\"解释/占（某效果的比例）\"。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "Even",
+    "why": "语义逻辑：Even among those who got a cold表示\"即使在那些得了感冒的人中\"，引出让步递进关系——不仅拥抱能预防感冒，即便感冒了也能减轻症状，强调拥抱效果之广。",
+    "traps": "B) Still表\"仍然\"，置于句首语法虽可但缺少让步递进的强调力度；C) Rather表\"更确切地说/相当\"，不符合此处让步语义；D) Thus表因果\"因此\"，但此句非前句的推论结果。",
+    "tip": "Even用于句首引导让步递进，强调\"即便在……情况下也……\"。"
+   },
+   {
+    "number": 12,
+    "answer": "B",
+    "correct": "symptoms",
+    "why": "语义逻辑：感冒后的表现用symptoms（症状）描述最准确，less severe symptoms意为\"症状更轻\"，与前文讨论拥抱减轻感冒影响的主题一致。",
+    "traps": "A) defeats意为\"失败/挫败\"，不用于描述疾病表现；C) tests意为\"测试\"，与感冒严重程度无关；D) errors意为\"错误\"，语义完全不符。",
+    "tip": "symptoms是医学及健康话题核心词，意为\"症状\"。"
+   },
+   {
+    "number": 13,
+    "answer": "D",
+    "correct": "increased",
+    "why": "语义逻辑：压力会增加（increased）感冒风险，而拥抱保护人们免受这种增加的风险。increased risk for colds意为\"增加的感冒风险\"，与下文\"与压力相关\"构成因果逻辑。",
+    "traps": "A) minimized意为\"最小化的\"，若风险已最小化则无需保护；B) highlighted意为\"突出的\"，不用于修饰风险的程度变化；C) controlled意为\"被控制的\"，若风险已受控则无需额外保护。",
+    "tip": "increased risk是健康类文章高频搭配，表\"升高的风险\"。"
+   },
+   {
+    "number": 14,
+    "answer": "B",
+    "correct": "associated",
+    "why": "固定搭配：be associated with意为\"与……相关联\"，此处指感冒风险的增加通常与压力有关，是学术论文中表示相关性的标准用语。",
+    "traps": "A) equipped with意为\"装备有\"，语义不符；C) presented with意为\"呈现出\"，不表达关联含义；D) compared with意为\"与……相比\"，是比较而非关联。",
+    "tip": "be associated with表\"与……相关\"，是学术英语核心搭配。"
+   },
+   {
+    "number": 15,
+    "answer": "C",
+    "correct": "generate",
+    "why": "语义逻辑：拥抱有助于产生（generate）一种他人会来帮忙的感觉，generate the feeling意为\"产生/激发这种感觉\"，指拥抱创造了一种安全感和被支持感。",
+    "traps": "A) assess意为\"评估\"，不能与feeling搭配表示产生感受；B) moderate意为\"调节/缓和\"，强调已有感觉的调整而非生成；D) record意为\"记录\"，语义不符。",
+    "tip": "generate常与feeling/idea搭配，表示\"产生/激发\"。"
+   },
+   {
+    "number": 16,
+    "answer": "A",
+    "correct": "in the face of",
+    "why": "固定搭配：in the face of difficulty意为\"面对困难时\"，表示他人在你遭遇困难时会给予帮助，语义通顺完整。",
+    "traps": "B) in the form of意为\"以……的形式\"，搭配difficulty不合理；C) in the way of意为\"妨碍/在……方面\"，语义不通；D) in the name of意为\"以……的名义\"，语义不符。",
+    "tip": "in the face of表\"面对/面临\"，常与difficulty/challenge搭配。"
+   },
+   {
+    "number": 17,
+    "answer": "C",
+    "correct": "attribute",
+    "why": "固定搭配：attribute A to B意为\"将A归因于B\"，此处指专家将拥抱的减压健康益处归因于催产素的释放，因果归因逻辑清晰。",
+    "traps": "A) transfer to意为\"转移到\"，不表达因果归因；B) commit to意为\"致力于/承诺\"，搭配不当；D) return to意为\"返回到\"，语义完全不符。",
+    "tip": "attribute...to...意为\"将……归因于……\"，是考研完形高频考点。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "because",
+    "why": "语义逻辑：催产素被称为\"结合激素\"的原因是（because）它促进关系中的依恋，此处是对称号的解释说明，因果关系明确。",
+    "traps": "B) unless意为\"除非\"，引导条件句，逻辑不通；C) though意为\"虽然\"，表让步转折，与解释原因的语境矛盾；D) until意为\"直到\"，表时间，不符语境。",
+    "tip": "because引导原因状语从句，解释前文称号的由来。"
+   },
+   {
+    "number": 19,
+    "answer": "C",
+    "correct": "remains",
+    "why": "语义逻辑：前文说催产素一部分释放到血液中，用But转折说另一部分remains in the brain（留存在大脑中），形成\"释放vs留存\"的对比。",
+    "traps": "A) emerges意为\"出现/浮现\"，强调从无到有，但催产素本就产生于大脑，不存在再\"出现\"的逻辑；B) vanishes意为\"消失\"，与后文描述其在大脑中发挥功能矛盾；D) decreases意为\"减少\"，无法与in the brain搭配表示存留。",
+    "tip": "remains表\"留存/留下\"，与前文released构成转折对比。"
+   },
+   {
+    "number": 20,
+    "answer": "D",
+    "correct": "influences",
+    "why": "语义逻辑：留存在大脑中的催产素影响（influences）情绪、行为和生理机能，influences后接三个并列宾语，表示催产素在大脑中的广泛作用。",
+    "traps": "A) experiences意为\"经历/体验\"，主语为催产素，不能\"体验\"情绪；B) combines意为\"结合\"，不能表达影响含义；C) justifies意为\"证明……正当\"，语义不符。",
+    "tip": "influence表\"影响\"，后接mood/behavior/physiology是典型学术搭配。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "resounding",
+    "cn": "adj. 响亮的；彻底的"
+   },
+   {
+    "w": "embrace",
+    "cn": "n./v. 拥抱；接受"
+   },
+   {
+    "w": "susceptibility",
+    "cn": "n. 易感性；敏感性"
+   },
+   {
+    "w": "perceive",
+    "cn": "v. 感知；察觉"
+   },
+   {
+    "w": "intimacy",
+    "cn": "n. 亲密；亲密关系"
+   },
+   {
+    "w": "oxytocin",
+    "cn": "n. 催产素"
+   },
+   {
+    "w": "attachment",
+    "cn": "n. 依恋；依附；附件"
+   },
+   {
+    "w": "physiology",
+    "cn": "n. 生理机能；生理学"
+   },
+   {
+    "w": "marker",
+    "cn": "n. 标志；标记"
+   },
+   {
+    "w": "beneficial",
+    "cn": "adj. 有益的；有利的"
+   },
+   {
+    "w": "newborn",
+    "cn": "adj./n. 新生的；新生儿"
+   },
+   {
+    "w": "bloodstream",
+    "cn": "n. 血流；血液循环"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Besides",
+    "role": "递进连接，在已有好处基础上追加新信息"
+   },
+   {
+    "w": "Even",
+    "role": "让步递进，强调即使在不利情况下仍有积极效果"
+   },
+   {
+    "w": "But",
+    "role": "转折对比，催产素一部分进入血液、一部分留在大脑"
+   },
+   {
+    "w": "Believe it or not",
+    "role": "插入语，引起读者兴趣，引出意外信息"
+   },
+   {
+    "w": "because",
+    "role": "因果解释，说明催产素被称为\"结合激素\"的原因"
+   },
+   {
+    "w": "where",
+    "role": "定语从句引导词，补充说明催产素在大脑中的功能"
+   }
+  ]
+ }
+}

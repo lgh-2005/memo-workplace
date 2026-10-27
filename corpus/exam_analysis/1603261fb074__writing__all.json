@@ -1,0 +1,148 @@
+{
+ "schemaVersion": 1,
+ "id": "1603261fb074__writing__all",
+ "examId": "1603261fb074",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2017 年 6 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:13:22.265Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42538,
+ "usage": {
+  "prompt_tokens": 700,
+  "completion_tokens": 2704,
+  "total_tokens": 3404,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 700,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2704,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 700,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作：就\"选择上职业院校还是大学\"给出建议，阐述个人观点，字数150-200词。",
+    "outline": [
+     "引出话题并表明观点：选择应基于个人实际情况，而非盲目跟风。",
+     "分两方面论述：一方面说明大学适合有学术追求的学生，另一方面说明职业院校适合注重实践、希望尽快就业的学生，各给出理由和细节。",
+     "总结全文，重申观点：两者各有优势，学生应结合自身兴趣、能力与职业目标做出理性选择。"
+    ],
+    "sample": "When it comes to choosing between a vocational college and a university, I would recommend that students make their decision based on individual circumstances rather than blindly following the crowd.\n\nFor students who possess a strong academic foundation and aspire to pursue careers in research, medicine, or law, attending a university is undoubtedly the better option. Universities provide comprehensive theoretical knowledge, broader academic perspectives, and abundant opportunities for advanced studies, which are essential for those aiming at professional or scholarly careers.\n\nHowever, for students who prefer hands-on learning and wish to enter the workforce promptly, vocational colleges offer distinct advantages. These institutions focus on cultivating practical skills that are directly applicable to specific industries, such as automotive engineering, culinary arts, and nursing. Graduates from vocational colleges often enjoy high employment rates because their training aligns closely with market demands.\n\nIn conclusion, neither option is inherently superior to the other. Students should carefully evaluate their personal interests, academic strengths, and career goals before making this pivotal decision. Only by doing so can they embark on a path that truly suits them.",
+    "phrases": [
+     {
+      "en": "make one's decision based on individual circumstances",
+      "cn": "根据个人实际情况做决定；用于引出理性选择的论点"
+     },
+     {
+      "en": "blindly follow the crowd",
+      "cn": "盲目跟风；用于批评不经思考的从众行为"
+     },
+     {
+      "en": "possess a strong academic foundation",
+      "cn": "拥有扎实的学术基础；用于描述学生的学业条件"
+     },
+     {
+      "en": "aspire to pursue careers in...",
+      "cn": "立志从事……领域的职业；表达职业志向"
+     },
+     {
+      "en": "hands-on learning",
+      "cn": "动手实践式学习；强调职业教育的实操特色"
+     },
+     {
+      "en": "directly applicable to specific industries",
+      "cn": "直接适用于特定行业；说明技能的实用性"
+     },
+     {
+      "en": "align closely with market demands",
+      "cn": "与市场需求紧密契合；论证就业优势的核心表达"
+     },
+     {
+      "en": "neither option is inherently superior to the other",
+      "cn": "两种选择本质上没有优劣之分；用于总结段表达客观立场"
+     },
+     {
+      "en": "embark on a path that truly suits them",
+      "cn": "踏上真正适合自己的道路；用于结尾升华"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只谈一方好处而完全否定另一方，缺乏辩证分析，容易被扣内容分。",
+     "逻辑混乱：段落之间缺乏过渡词衔接（如However、In conclusion），导致行文不连贯。",
+     "词汇重复：反复使用good、important等基础词，未展示词汇多样性，影响语言分。",
+     "语法硬伤：主谓不一致（如students wants）、时态混用等低级错误直接拉低档次。",
+     "字数不达标：低于150词将被直接扣分，务必写完后快速数一遍词数。"
+    ],
+    "upgrades": [
+     {
+      "plain": "I think students should choose based on their own situation.",
+      "better": "I would recommend that students make their decision based on individual circumstances rather than blindly following the crowd.",
+      "note": "使用虚拟语气recommend that...显得更正式，rather than结构增加对比层次感。"
+     },
+     {
+      "plain": "Vocational colleges teach useful skills.",
+      "better": "Vocational colleges focus on cultivating practical skills that are directly applicable to specific industries.",
+      "note": "定语从句补充细节，applicable替换useful更学术，信息量更大。"
+     },
+     {
+      "plain": "In a word, both choices are good.",
+      "better": "In conclusion, neither option is inherently superior to the other.",
+      "note": "neither...superior to结构更地道，inherently体现深层思辨，避免口语化。"
+     },
+     {
+      "plain": "Students should think about what they like before choosing.",
+      "better": "Students should carefully evaluate their personal interests, academic strengths, and career goals before making this pivotal decision.",
+      "note": "三项并列增强气势，pivotal替换important更高级，evaluate比think about更正式。"
+     },
+     {
+      "plain": "Then they can find a good way for themselves.",
+      "better": "Only by doing so can they embark on a path that truly suits them.",
+      "note": "Only by doing so引导倒装句，是高分亮点句式，embark on比find更生动。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "When it comes to choosing between a vocational college and a university, I would recommend that students make their decision based on individual circumstances rather than blindly following the crowd. —— 开篇用recommend+虚拟语气引出观点，rather than构成对比，一句话完成话题引入与立场表达。",
+   "Universities provide comprehensive theoretical knowledge, broader academic perspectives, and abundant opportunities for advanced studies, which are essential for those aiming at professional or scholarly careers. —— 三项并列+非限制性定语从句，信息密度高且结构优美，适合论述大学优势时使用。",
+   "Graduates from vocational colleges often enjoy high employment rates because their training aligns closely with market demands. —— align closely with market demands是论证就业优势的黄金搭配，因果逻辑清晰有力。",
+   "Neither option is inherently superior to the other. —— 简洁有力的辩证总结句，inherently一词体现深度思考，适用于任何二选一类议论文的收束。",
+   "Only by doing so can they embark on a path that truly suits them. —— Only引导的倒装句是六级写作高分标配，embark on a path意象生动，适合用作全文点睛结尾。"
+  ]
+ }
+}

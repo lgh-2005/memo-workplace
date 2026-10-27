@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "1c19f5649e3f__reading__1",
+ "examId": "1c19f5649e3f",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年考研英语真题",
+ "year": 2021,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:45:23.647Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62721,
+ "usage": {
+  "prompt_tokens": 1661,
+  "completion_tokens": 3531,
+  "total_tokens": 5192,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1661,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3531,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1661,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英国铁路票价持续上涨引发争议",
+  "gist": "文章围绕英国火车票价又一次上涨展开批判性论述。作者指出涨幅超通胀不合理，分析了政府允许涨价的理由，揭示了铁路服务质量低下与罢工频发的现实，最终警告若不解决乘客的合理愤怒，铁路国有化的威胁将卷土重来，持续涨价不可持续。",
+  "structure": [
+   "第一段：引出话题，批评票价涨幅超通胀，不合理",
+   "第二段：呈现政府允许涨价的两个理由（用者付费、地区平衡）",
+   "第三段：转折指出服务质量差、罢工频发，乘客理应获赔",
+   "第四段：提出解决措施并警告：若不解决问题，国有化威胁将重返"
+  ],
+  "difficulty": "中等",
+  "translation": "火车运营商究竟如何能为再次上涨的铁路客运票价正名？这已成为一个令人沮丧却可靠的年度惯例：每年一月，乘火车出行的费用都会上涨，给那些别无选择只能依赖铁路网通勤或出行的人们带来沉重的额外负担。今年平均2.7%的涨幅虽然可能比去年略低，但仍远高于官方消费者价格指数（CPI）所衡量的通胀水平。\n\n历届政府之所以允许此类涨价，理由是铁路网络的投资和运营成本应由使用者承担，而非由普通纳税人买单。这种论调是：为什么一位来自林肯郡、自己开车的退休老人要去补贴一位来自萨里郡的股票经纪人的每日通勤？同样，也有一种观点认为，东南部通勤者的苦难——其中许多人将面临最大幅度的涨价——比起那些不得不忍受中部和北部相对落后基础设施的人，得到了过多的关注。\n\n然而，在过去12个月里，这些通勤者也经历了近年来最严重的铁路罢工。火车运营商大肆宣扬他们对铁路网络所做的改善固然没错，但乘客们有权期待，他们现在支付的高昂费用能换来基本的服务水平。最近一波罢工的责任在工会。然而，有充分理由认为，那些受罢工影响最严重的人应当因所遭受的服务中断获得赔偿。\n\n政府已承诺修改法律，引入最低服务要求，以便即使发生罢工，列车服务也能继续运营。这应该成为解决英国铁路长期问题的更广泛一揽子措施的一部分。是的，需要更多投资，但如果乘客还必须忍受拥挤、不可靠的服务——时刻表更改时的定期混乱，或维护计划管理不善的困扰——他们不会愿意无限期地多掏钱。国有化的威胁眼下也许已被挡回，但如果乘客正当的愤怒不能在短期内得到回应，它将以更猛烈的势头卷土重来。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "态度题",
+    "locate": "This year's rise, an average of 2.7 per cent, may be a fraction lower than last year's, but it is still well above the official Consumer Price Index (CPI) measure of inflation.",
+    "why": "文章开篇以反问句\"How can the train operators possibly justify yet another increase\"表明作者认为涨价无法被正当化，接着指出今年涨幅虽略低于去年但仍\"远高于\"CPI通胀水平，语气明确批判。C选项\"remains an unreasonable measure\"（仍是不合理的举措）准确概括了作者对涨价的否定态度。",
+    "traps": "A\"与通胀保持同步\"与原文\"well above the CPI\"直接矛盾，属于反义干扰；B\"令通勤者大为惊讶\"无原文依据，文中用\"grimly reliable annual ritual\"说明涨价已成惯例，不存在惊讶；D\"将减轻运营商负担\"原文未提及运营商的负担问题，属于无中生有。",
+    "tip": "注意作者在首段用反问句和转折词but表达鲜明的批判态度。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "Why, the argument goes, should a car-driving pensioner from Lincolnshire have to subsidise the daily commute of a stockbroker from Surrey?",
+    "why": "该反问句的论证目的是支持\"铁路投资和运营成本应由使用者而非普通纳税人承担\"的观点。句中\"car-driving pensioner\"代表不使用铁路的普通纳税人，而\"stockbroker from Surrey\"代表使用铁路通勤的人（rail travelers）。stockbroker被用来举例说明铁路使用者，故选B。",
+    "traps": "A\"car drivers\"是句中pensioner的特征，与stockbroker相对立，张冠李戴；C\"local investors\"是对stockbroker的字面联想，混淆了\"股票经纪人\"与\"投资者\"，且原文讨论的是交通使用者而非投资行为；D\"ordinary taxpayers\"是pensioner所代表的群体，选项错位。",
+    "tip": "例证题要回到论点看例子服务于什么观点，弄清对比双方各自代表谁。"
+   },
+   {
+    "number": 23,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "It is all very well train operators trumpeting the improvements they are making to the network, but passengers should be able to expect a basic level of service for the substantial sums they are now paying to travel.",
+    "why": "第三段先说通勤者经历了近年来最严重的罢工，接着用转折结构\"It is all very well...but...\"指出运营商虽宣传改善，但乘客付了高额费用却连基本服务都无法保证。这直接说明运营商未能提供充分的服务（have failed to provide an adequate service），故C正确。",
+    "traps": "A\"正在向通勤者提供赔偿\"原文只说受影响者\"应当获得赔偿\"（should receive compensation），是建议而非事实，偷换了语气；B\"试图修复与工会的关系\"原文未涉及运营商与工会的关系修复；D\"因罢工遭受巨大损失\"原文讨论的是乘客受损，而非运营商的经济损失，主体偷换。",
+    "tip": "\"It is all very well...but...\"是英语中典型的让步转折结构，重心在but之后。"
+   },
+   {
+    "number": 24,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The threat of nationalisation may have been seen off for now, but it will return with a vengeance if the justified anger of passengers is not addressed in short order.",
+    "why": "原文末句警告：如果乘客的合理愤怒不能尽快得到解决，国有化（nationalisation）的威胁将卷土重来。国有化意味着铁路从私营转为国有，即所有权的改变（a change of ownership）。D选项准确对应nationalisation的实质含义，故正确。",
+    "traps": "A\"失去投资\"文中虽提到需要更多投资，但并未以此作为不安抚乘客的后果；B\"运营崩溃\"原文未提及运营体系会全面崩溃；C\"收入减少\"虽然逻辑上可能，但原文最终的威胁明确指向国有化而非收入下降，不是原文论述的重点。",
+    "tip": "nationalisation（国有化）是本题关键词，需理解其本质是所有权由私转公。"
+   },
+   {
+    "number": 25,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "How can the train operators possibly justify yet another increase to rail passenger fares?",
+    "why": "全文以票价上涨为核心展开：第一段批评涨幅不合理，第二段分析政府允许涨价的理由，第三段指出服务质量与票价不匹配，第四段警告若不改善服务、持续涨价将导致国有化威胁。D选项\"Ever-rising Fares Aren't Sustainable\"（持续上涨的票价不可持续）完整概括了文章从批评涨价到警告后果的主线。",
+    "traps": "A\"谁该为罢工负责\"仅涉及第三段部分内容，以偏概全；B\"不断抱怨无济于事\"与文章立场相悖，作者恰恰认为乘客的愤怒是正当的；C\"国有化能带来希望吗\"国有化只是末尾的警告手段，非文章主旨，且文中未正面讨论国有化的利弊。",
+    "tip": "主旨题标题要能统摄全文各段，警惕只覆盖局部段落的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "grimly",
+    "cn": "adv. 令人沮丧地，严酷地"
+   },
+   {
+    "w": "ritual",
+    "cn": "n. 惯例，例行公事；仪式"
+   },
+   {
+    "w": "borne",
+    "cn": "v. 承担（bear的过去分词）"
+   },
+   {
+    "w": "subsidise",
+    "cn": "v. 补贴，资助"
+   },
+   {
+    "w": "travails",
+    "cn": "n. 艰辛，痛苦（常用复数）"
+   },
+   {
+    "w": "trumpeting",
+    "cn": "v. 大肆宣扬，吹嘘"
+   },
+   {
+    "w": "industrial action",
+    "cn": "n. 劳工行动，罢工"
+   },
+   {
+    "w": "cramped",
+    "cn": "adj. 拥挤的，狭窄的"
+   },
+   {
+    "w": "punctuated",
+    "cn": "v. 不时打断，穿插"
+   },
+   {
+    "w": "incompetently",
+    "cn": "adv. 无能地，不称职地"
+   },
+   {
+    "w": "with a vengeance",
+    "cn": "adv. 猛烈地，变本加厉地"
+   },
+   {
+    "w": "in short order",
+    "cn": "adv. 迅速地，立即"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Successive governments have permitted such increases on the grounds that the cost of investing in and running the rail network should be borne by those who use it, rather than the general taxpayer.",
+    "cn": "历届政府之所以允许此类涨价，理由是铁路网络的投资和运营成本应由使用者承担，而非由普通纳税人买单。",
+    "note": "主句为Successive governments have permitted...；on the grounds that引导原因状语从句；从句内the cost of A and B为并列主语，should be borne为谓语被动态，rather than连接对比对象。"
+   },
+   {
+    "en": "Yes, more investment is needed, but passengers will not be willing to pay more indefinitely if they must also endure cramped, unreliable services, punctuated by regular chaos when timetables are changed, or planned maintenance is managed incompetently.",
+    "cn": "是的，需要更多投资，但如果乘客还必须忍受拥挤、不可靠的服务——时刻表更改时的定期混乱，或维护计划管理不善的困扰——他们不会愿意无限期地多掏钱。",
+    "note": "主干为but passengers will not be willing to pay more indefinitely；if引导条件状语从句；punctuated by...为过去分词短语做后置定语修饰services；when引导时间从句，其中含or连接的两个并列情况。"
+   },
+   {
+    "en": "The threat of nationalisation may have been seen off for now, but it will return with a vengeance if the justified anger of passengers is not addressed in short order.",
+    "cn": "国有化的威胁眼下也许已被挡回，但如果乘客正当的愤怒不能在短期内得到回应，它将以更猛烈的势头卷土重来。",
+    "note": "主句由but连接两个并列分句，前半句用may have been seen off表示推测性完成被动；后半句if引导条件状语从句，with a vengeance为方式状语，in short order为时间状语。"
+   }
+  ]
+ }
+}

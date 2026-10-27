@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "457ceba875be__reading__2",
+ "examId": "457ceba875be",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 6 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T06:03:20.392Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59122,
+ "usage": {
+  "prompt_tokens": 1839,
+  "completion_tokens": 3847,
+  "total_tokens": 5686,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1839,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3847,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1839,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国性别薪酬差距停滞的原因分析",
+  "gist": "文章指出美国在1980年代性别薪酬差距迅速缩小，但随着1990年代家庭休假政策的引入，主要是女性使用该政策，导致薪酬趋同速度骤降。母职惩罚、无偿家务劳动和晋升歧视是女性薪资落后的重要原因，而生育和早期育儿等生物因素则是最终难以逾越的障碍。",
+  "structure": [
+   "第1-2段：引出话题，1980年代薪酬差距快速缩小但随后停滞",
+   "第3-5段：核心论点，家庭休假政策反而拖慢了薪酬趋同",
+   "第6-8段：深入分析母职惩罚、无偿劳动和晋升歧视",
+   "第9-10段：反事实假设与生物因素的根本制约"
+  ],
+  "difficulty": "中等",
+  "translation": "历史上，女性的薪酬一直低于男性。但在20世纪80年代的美国，她们开始迅速追赶。在那十年间，性别薪酬差距以每年约一个百分点的速度缩小。如果这一趋势持续下去，性别薪酬差距本应在2017年消除。\n\n但这一趋势并未持续，差距依然巨大。\n\n根据哈佛大学学者的一项新研究，这种停滞——也许出乎直觉——可以归因于州和联邦家庭休假政策的引入。\n\n学者们认为，在20世纪90年代，当政府开始引入休假政策时，主要是女性在利用这些政策。虽然休假政策可能帮助那些女性留在了职场——而不是为了生育家庭而退出——但那些返回工作岗位的女性发现，她们的工资增长速度低于男性。\n\n事实上，在美国引入家庭休假之后，性别薪酬趋同的速度降至每年仅0.03个百分点，并且此后一直维持在这一水平。\n\n那些关注职场薪酬公平进程的人，长期以来一直目睹许多国家的进展放缓。事实上，这一进展在大流行期间开始出现倒退。\n\n性别薪酬差距是缺乏平等的最突出例子之一，几乎在所有地方都存在。\"母职惩罚\"已成为描述其原因的简称：在许多地方，尤其是富裕国家，女性在达到生育年龄之前与男性收入相当。有了孩子的女性开始发现自己的薪水落后于男性同行。\n\n部分原因是女性承担了更多家庭中的无偿劳动，这会挤占可用于工作的时间和职业发展的精力。但同样因为母亲在加薪和晋升时被忽略，而且离开职场的时间会使女性落后，即使这段时间是自愿选择的，并且得到了公司或政府政策的支持。\n\n如果没有引入休假政策会怎样？这项研究没有深入探讨这个问题，只是说如果80年代的趋势持续下去，我们现在应该已经实现了薪酬平等。\n\n然而，通往薪酬平等的道路可能无论如何都会停滞。如果女性在80年代的进步是通过消除偏见等因素实现的，那么一旦这些较易控制的问题得到解决，仍然会存在一个问题——女性是生育孩子的一方，并且由于母乳喂养等生物因素，她们需要在最初几周照顾孩子，这迫使她们不得不暂停工作，无论这种暂停是否受到政策强制。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "But in the US in the 1980s, they began to catch up—fast. During that decade, the gender pay gap closed by about one percentage point a year.",
+    "why": "原文明确指出1980年代女性\"began to catch up—fast\"，且该十年间性别薪酬差距以每年约一个百分点的速度缩小。\"rapidly\"（迅速地）对应原文中的\"fast\"，\"shrinking\"对应\"closed\"（缩小），B选项是对原文信息的准确同义转述。",
+    "traps": "A选项\"slowly closed\"与原文\"fast\"矛盾，属于偷换程度词；C选项\"started to yawn\"意为差距开始扩大，与原文缩小趋势完全相反；D选项\"remained substantial\"意为差距依然巨大，忽略了1980年代差距快速缩小的事实，属于无中生有。",
+    "tip": "注意关键修饰词fast/slowly的区别，程度词替换是常见命题陷阱。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "After family leave was introduced in the US, in fact, the rate of gender wage convergence fell to just 0.03 percentage points per year, and has remained there ever since.",
+    "why": "原文明确指出家庭休假政策引入后，性别薪酬趋同速度从每年约1个百分点骤降至仅0.03个百分点。B选项\"the rate of gender wage convergence started to fall noticeably\"准确概括了这一变化——趋同速度\"显著下降\"与从1降至0.03完全吻合。",
+    "traps": "A选项\"开始倒退\"对应的是第6段大流行期间的情况，属于张冠李戴，且原文说的是进展放缓而非引入政策后立即倒退；C选项\"女性产后返回工作的趋势开始出现\"过度推断，原文只是说休假帮助女性留在职场；D选项\"吸引更多关注\"在原文中没有依据。",
+    "tip": "区分\"放缓\"与\"倒退\"的不同表述，注意时间节点与事件的精确对应。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Part of this is because women take on more of the unpaid labor at home, which can eat into time available for work and energy for career advancement.",
+    "why": "题目问\"什么部分地导致了女性薪资下滑\"，原文用\"Part of this is because\"引出原因：女性承担了更多家庭无偿劳动，这会挤占工作时间和职业发展精力。C选项\"大量时间和精力花在照顾家庭上\"是对\"unpaid labor at home\"及\"eat into time...and energy\"的准确概括。",
+    "traps": "A选项\"动力不足\"属于无中生有，原文没有说女性缺乏职业发展动力；B选项\"放弃加薪和晋升机会\"偷换了原文含义，原文说的是母亲\"被忽略\"（passed over），而非主动放弃；D选项\"缺乏政策支持\"与原文相反，原文明确说即使有政策支持，女性仍然落后。",
+    "tip": "注意主动放弃与被动忽略的区别，passed over意为\"被跳过、被忽视\"。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The study doesn't go into that question, other than to say that if the 1980s trend continued, we would have been at parity by now.",
+    "why": "原文明确提到该研究指出，如果1980年代的趋势延续下去，我们现在应该已经实现了薪酬平等。D选项\"如果1980年代的趋势继续，薪酬平等本可实现\"与原文虚拟语气表达完全一致。这与文章第一段的假设也相互呼应。",
+    "traps": "A选项将\"controllable problems\"与原文\"less uncontrollable problems\"混淆，且研究本身并未做出这种假设性论断；B选项\"公司和政府合作\"在原文中没有相关论述；C选项\"完全消除性别偏见\"过于绝对，原文最后一段指出即使偏见被消除，生物因素仍会构成障碍。",
+    "tip": "注意虚拟语气的题目通常定位于含有would have的句子。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "there would still have been an issue with women—who are the ones to bear children and take care of them in the early weeks because of biological factors like the ability to breastfeed, forcing them to take breaks, whether or not those breaks were mandated.",
+    "why": "题目问\"归根结底是什么阻碍了女性实现与男性的平等\"。文章最后一段指出，即使偏见等可控问题全部解决，女性因为生物因素（如哺乳能力）需要生育和照顾孩子，被迫暂停工作，这是根本性障碍。B选项\"生育和照顾孩子\"精准对应\"bear children and take care of them\"。",
+    "traps": "A选项\"忽视职场偏见\"只是部分原因，且原文假设偏见已被消除后仍有障碍，说明这不是根本原因；C选项\"未能强制规定产假\"与原文逻辑相反，原文说\"whether or not those breaks were mandated\"，即无论是否强制都会有影响；D选项\"缺乏资源解决生物问题\"属于无中生有，原文未涉及资源问题。",
+    "tip": "\"in the final analysis\"指向文章末段的终极归因，注意区分表层原因与根本原因。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "counterintuitively",
+    "cn": "adv. 违反直觉地"
+   },
+   {
+    "w": "stagnation",
+    "cn": "n. 停滞，不发展"
+   },
+   {
+    "w": "convergence",
+    "cn": "n. 趋同，汇聚"
+   },
+   {
+    "w": "parity",
+    "cn": "n. 平等，同等"
+   },
+   {
+    "w": "shorthand",
+    "cn": "n. 简称，速记"
+   },
+   {
+    "w": "childbearing",
+    "cn": "adj. 生育的，育龄的"
+   },
+   {
+    "w": "counterparts",
+    "cn": "n. 对应的人或物，同行"
+   },
+   {
+    "w": "passed over",
+    "cn": "v. 被忽略，被跳过（在晋升等方面）"
+   },
+   {
+    "w": "erasure",
+    "cn": "n. 消除，抹去"
+   },
+   {
+    "w": "mandated",
+    "cn": "adj./v. 强制规定的，授权的"
+   },
+   {
+    "w": "breastfeed",
+    "cn": "v. 母乳喂养"
+   },
+   {
+    "w": "stalled",
+    "cn": "v. 停滞，陷入僵局"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Though the leave policies might have helped those women to stay in the workplace—instead of dropping out to have families—those who returned saw their wages had increased at lower rates than the men.",
+    "cn": "虽然休假政策可能帮助了那些女性留在了职场——而不是为了组建家庭而退出——但那些返回工作岗位的女性发现，她们的工资增长速度低于男性。",
+    "note": "though引导让步状语从句，破折号插入补充说明；主句中those who returned为主语，saw后接宾语从句，其中含比较结构at lower rates than the men。"
+   },
+   {
+    "en": "It's possible, however, that the journey towards wage parity would have stalled either way. If women's gains in the 1980s were made through the erasure of things like bias, once those less uncontrollable problems had been addressed, there would still have been an issue with women—who are the ones to bear children and take care of them in the early weeks because of biological factors like the ability to breastfeed, forcing them to take breaks, whether or not those breaks were mandated.",
+    "cn": "然而，通往薪酬平等的道路可能无论如何都会停滞。如果女性在80年代的进步是通过消除偏见等因素实现的，那么一旦这些较易控制的问题得到解决，仍然会存在一个与女性相关的问题——她们是生育孩子的一方，并且由于母乳喂养等生物因素，需要在最初几周照顾孩子，这迫使她们不得不暂停工作，无论这种暂停是否受到政策强制。",
+    "note": "首句为形式主语结构it...that；第二句含if条件从句+once时间状语从句+主句虚拟语气；破折号后who引导非限制性定语从句，forcing为现在分词作结果状语，whether or not引导让步状语从句。less uncontrollable为双重否定，意为\"较易控制的\"。"
+   },
+   {
+    "en": "But it's also because mothers are passed over for raises and promotion, and because time out of the workplace sets women back, even if that time is taken voluntarily, and supported by company or government policy.",
+    "cn": "但同样因为母亲在加薪和晋升时被忽略，而且离开职场的时间会使女性落后，即使这段时间是自愿选择的，并且得到了公司或政府政策的支持。",
+    "note": "两个because并列引出两个原因从句；第二个because从句中，even if引导让步状语从句，从句内含and连接的两个被动结构（is taken和is supported），共享同一主语that time。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,211 @@
+{
+ "schemaVersion": 1,
+ "id": "0effd4255078__translation__all",
+ "examId": "0effd4255078",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2017 年 12 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:12:59.329Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31673,
+ "usage": {
+  "prompt_tokens": 806,
+  "completion_tokens": 2341,
+  "total_tokens": 3147,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 806,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2341,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 806,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "青海湖的地理概况与生态旅游",
+  "reference": "Qinghai Lake is situated about 100 kilometers west of Xining, the capital of Qinghai Province, at an elevation of 3,205 meters. It is the largest saltwater lake in China, covering an area of 4,317 square kilometers with a maximum depth of 25.5 meters. Twenty-three rivers feed into the lake, most of which are seasonal. Eighty percent of the lake's water comes from five major rivers. Qinghai Lake lies at the crossroads of several migratory bird routes across Asia. Many birds use Qinghai Lake as a stopover during their migration. On the western side of the lake is the renowned \"Bird Island,\" which attracts birdwatchers from around the world. Every summer, tourists also flock here to watch the international cycling race.",
+  "sentences": [
+   {
+    "cn": "青海湖位于海拔3,205米、青海省省会西宁以西约100公里处，是中国最大的咸水湖，面积4,317平方公里，最深处25.5米。",
+    "en": "Qinghai Lake is situated about 100 kilometers west of Xining, the capital of Qinghai Province, at an elevation of 3,205 meters. It is the largest saltwater lake in China, covering an area of 4,317 square kilometers with a maximum depth of 25.5 meters.",
+    "structure": "主系表结构 + 同位语（the capital of...）+ 现在分词短语作状语（covering...）+ with 复合结构表附加信息",
+    "keys": [
+     "海拔3,205米 at an elevation of 3,205 meters",
+     "青海省省会西宁 Xining, the capital of Qinghai Province",
+     "咸水湖 saltwater lake",
+     "面积4,317平方公里 covering an area of 4,317 square kilometers",
+     "最深处25.5米 with a maximum depth of 25.5 meters"
+    ]
+   },
+   {
+    "cn": "有23条河注入湖中，其中大部分是季节性的。",
+    "en": "Twenty-three rivers feed into the lake, most of which are seasonal.",
+    "structure": "主谓结构 + most of which 引导的非限制性定语从句",
+    "keys": [
+     "注入 feed into",
+     "季节性的 seasonal",
+     "其中大部分 most of which"
+    ]
+   },
+   {
+    "cn": "百分之八十的湖水源于五条主要河流。",
+    "en": "Eighty percent of the lake's water comes from five major rivers.",
+    "structure": "简单主谓结构，百分数作主语",
+    "keys": [
+     "百分之八十 eighty percent",
+     "源于 comes from",
+     "主要河流 major rivers"
+    ]
+   },
+   {
+    "cn": "青海湖位于跨越亚洲的几条候鸟迁徙路线的交叉处。",
+    "en": "Qinghai Lake lies at the crossroads of several migratory bird routes across Asia.",
+    "structure": "主谓结构 + 介词短语作地点状语，across Asia 作后置定语修饰 routes",
+    "keys": [
+     "候鸟迁徙路线 migratory bird routes",
+     "交叉处 crossroads / intersection",
+     "跨越亚洲 across Asia"
+    ]
+   },
+   {
+    "cn": "许多鸟类把青海湖作为迁徙过程中的暂息地。",
+    "en": "Many birds use Qinghai Lake as a stopover during their migration.",
+    "structure": "主 + 谓（use...as...）+ 介词短语作时间状语",
+    "keys": [
+     "暂息地 stopover / staging post",
+     "迁徙过程中 during their migration",
+     "把…作为 use...as..."
+    ]
+   },
+   {
+    "cn": "湖的西侧是著名的\"鸟岛\"，吸引着来自世界各地的观鸟者。",
+    "en": "On the western side of the lake is the renowned \"Bird Island,\" which attracts birdwatchers from around the world.",
+    "structure": "介词短语前置引起完全倒装结构 + which 引导的非限制性定语从句",
+    "keys": [
+     "湖的西侧 on the western side of the lake",
+     "鸟岛 Bird Island",
+     "观鸟者 birdwatchers",
+     "来自世界各地 from around the world"
+    ]
+   },
+   {
+    "cn": "每年夏天，游客们也来这里观看国际自行车比赛。",
+    "en": "Every summer, tourists also flock here to watch the international cycling race.",
+    "structure": "时间状语前置 + 主谓结构 + 不定式短语作目的状语",
+    "keys": [
+     "每年夏天 every summer",
+     "国际自行车比赛 international cycling race",
+     "观看 watch"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "青海湖",
+    "en": "Qinghai Lake"
+   },
+   {
+    "cn": "咸水湖",
+    "en": "saltwater lake"
+   },
+   {
+    "cn": "海拔",
+    "en": "elevation / altitude"
+   },
+   {
+    "cn": "季节性的",
+    "en": "seasonal"
+   },
+   {
+    "cn": "候鸟迁徙路线",
+    "en": "migratory bird routes"
+   },
+   {
+    "cn": "暂息地",
+    "en": "stopover / staging post"
+   },
+   {
+    "cn": "鸟岛",
+    "en": "Bird Island"
+   },
+   {
+    "cn": "观鸟者",
+    "en": "birdwatchers / birders"
+   },
+   {
+    "cn": "交叉处",
+    "en": "crossroads / intersection / junction"
+   },
+   {
+    "cn": "国际自行车比赛",
+    "en": "international cycling race"
+   }
+  ],
+  "pitfalls": [
+   "「海拔」误译为 height 或 level，应使用 elevation 或 altitude",
+   "「咸水湖」遗漏 saltwater，仅译为 lake，丢失关键采分点",
+   "「其中大部分是季节性的」误用 which most are，应为 most of which are",
+   "「暂息地」直译为 resting place，不如 stopover 地道且符合鸟类学术语",
+   "「湖的西侧是著名的鸟岛」未使用倒装或 there be 句型，写成 The western side of the lake is Bird Island 造成主表语义不对等"
+  ],
+  "upgrades": [
+   {
+    "plain": "is located about 100 kilometers west of",
+    "better": "is situated approximately 100 kilometers west of",
+    "note": "situated 比 located 更书面正式，approximately 比 about 更学术"
+   },
+   {
+    "plain": "There are 23 rivers flowing into the lake",
+    "better": "Twenty-three rivers feed into the lake",
+    "note": "feed into 是河流汇入的地道搭配，避免 there be 句式的单调"
+   },
+   {
+    "plain": "Many birds treat Qinghai Lake as a rest place",
+    "better": "Many birds use Qinghai Lake as a stopover during their migration",
+    "note": "stopover 是鸟类迁徙专业术语，比 rest place 更精准地道"
+   },
+   {
+    "plain": "Tourists come here to see the cycling race",
+    "better": "Tourists flock here to watch the international cycling race",
+    "note": "flock 兼有\"蜂拥而至\"和\"鸟群\"双关意味，与全文鸟类主题呼应"
+   },
+   {
+    "plain": "The famous Bird Island is on the west side of the lake",
+    "better": "On the western side of the lake is the renowned Bird Island",
+    "note": "使用介词短语前置的完全倒装句，句式更高级，突出地理方位信息"
+   }
+  ]
+ }
+}

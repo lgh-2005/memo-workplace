@@ -1,0 +1,260 @@
+{
+ "schemaVersion": 1,
+ "id": "ff8641a6bc65__listening__all",
+ "examId": "ff8641a6bc65",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2019 年 6 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:23:53.581Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 53929,
+ "usage": {
+  "prompt_tokens": 2107,
+  "completion_tokens": 2660,
+  "total_tokens": 4767,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2107,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2660,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2107,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下解析仅基于题目选项的语言特征与正确答案进行推理分析，不涉及任何录音内容的编造。",
+  "overview": "本场听力共 7 段，含 25 题。第 1-2 段各 4 题，推测为长对话；第 3-7 段各 3-4 题，推测为短文/讲座。话题涉及：职场与个人规划（第1段）、大学生活与责任（第2段）、运动创新与滑雪（第3段）、情绪与健康的关系（第4段）、音乐演奏与专注力研究（第5段）、瘦身产品与审美观（第6段）、人类肤色与进化适应（第7段）。选项措辞整体偏学术与社科，符合六级听力难度。",
+  "strategy": [
+   "预读选项时快速圈出各题选项间的差异关键词，如动词、形容词，建立预判框架",
+   "长对话注意首轮交互和转折词（but, actually, however）后的核心信息",
+   "短文听力关注段首主题句和段末总结句，答案常出现在这两处",
+   "遇到态度/感受题（如 hesitant, nervous, flattered），留意说话者语气和情态动词",
+   "选项中出现绝对词（all, every, instantly）时需格外警惕，但若录音确有强调则可选",
+   "相似选项往往互为干扰，真正答案通常在语义上与其他三项有明显区分度"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "职场项目、婚礼筹备与个人烘焙事业规划",
+    "optionSignals": "Q1 四项均为名词短语，问事件内容；Q2 为动词短语问未来行动；Q3 为形容词问情感态度；Q4 为动词短语问未来计划。选项中 wedding、bakery、baking 等词形成女性职业转型的叙事线索。",
+    "tips": [
+     "Q1 中 negotiation 与 project 对立，注意听开头语境是商务还是社交",
+     "Q3 四个情感词差异明显，Nervous 强调紧张不安，注意说话者语气中是否有犹豫或担忧的信号",
+     "Q4 中 start her own bakery 与 improve her baking skill 为程度差异，注意是'开始创业'还是'提升技能'"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "大学生面临的责任、社交选择与课外活动",
+    "optionSignals": "Q5-Q6 为 They have to / behave 结构，问大学生应做之事；Q7-Q8 为 Those who... / Those conducive to... 定语从句结构，问人或活动的筛选标准。整组选项围绕 academic、responsible、commitment 等校园核心词展开。",
+    "tips": [
+     "Q5 四项均以 They have to 开头，差异在宾语，responsible 比其他选项更抽象概括，常为正确项特征",
+     "Q7 与 Q8 均用 Those 开头选人/选活动，注意区分是对朋友的要求还是对课外活动的要求",
+     "academic 一词在 Q7 和 Q8 均出现，注意听语境中该词修饰的对象是 interests 还是 studies"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "体育领域的创新思维与滑雪运动突破",
+    "optionSignals": "Q9 考查创新者特质，四项均为 They + 动词结构；Q10 考查某事件的结果/影响；Q11 考查个人成就。skiing、gold medals、world records 等词指向冬季运动话题。",
+    "tips": [
+     "Q9 中 break away from traditional ways 与 refining old formulas 形成对立，一个是打破传统一个是改良旧法，听清是 innovation 还是 refinement",
+     "Q11 中 three gold medals in one Olympics 与 three world records in three years 数字易混淆，注意时间限定词 one / three years"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "情绪对身体健康的即时与长期影响",
+    "optionSignals": "Q12 问表现/症状，四个选项程度递进（restless→lose consciousness→upset→die）；Q13 含 instant effect、long lasting 等时间标记；Q14 用 while/without 构成条件矛盾；Q15 考查两者关系。整组围绕 mood-health 关联展开。",
+    "tips": [
+     "Q12 选项程度差异极大，die almost instantly 为最极端项，若正确说明录音有非常明确的强表述",
+     "Q14 四项均为 To + 动词结构，问的是某种困难或不可能的事，注意否定或反问语气",
+     "Q15 两个 D 选项文字完全相同，为印刷重复，实际选择时可排除 D 集中比较 A-C"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "演奏者/运动员的专注方式与行为研究",
+    "optionSignals": "Q16 四项均为 They + 动词，用 different 一词反复出现，问差异所在；Q17 涉及 teammates、competitors、spectators、performance 等竞技语境词；Q18 考查研究的性质（breakthrough / conventional / controversy）。",
+    "tips": [
+     "Q16 中 focus attention 与 finger the piano keys 分别指向认知层面和操作层面，注意区分研究变量",
+     "Q18 中 supports conventional wisdom 意为'验证了常识'，与 breakthrough 相反，听清研究结论是颠覆性的还是印证性的",
+     "Q17 中 high performance 最为概括抽象，符合正确答案往往偏宏观的命题规律"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "瘦身产品泛滥与审美观的文化根源",
+    "optionSignals": "Q19 四项为名词短语问原因/现象；Q20 为 They appear/look + 形容词，问外貌评价；Q21 为简短名词短语问影响因素。slimming products、slim models、culture and upbringing 构成社会文化议题线索。",
+    "tips": [
+     "Q19 中 great variety / increasing range 都含'多'的语义，但 slimming products 比 fancy products 更具体，定位关键词 slim/diet",
+     "Q20 中 strange 与 unhealthy 均为负面评价，需听清具体形容词",
+     "Q21 四项均为影响因素，Culture and upbringing 最为根本性，media influence 和 peer pressure 较表层"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "人类肤色的演化起源与环境适应机制",
+    "optionSignals": "Q22 问文章主题，四项均为名词短语；Q23 问原因，含 adaptation、climate changes 等进化关键词；Q24 问保护方式；Q25 问后续变化，genetic makeup 指向基因层面。整组为典型科普类讲座选项。",
+    "tips": [
+     "Q22 中 The color of human skin 最为直接具体，作为主题选项概括性恰当",
+     "Q23 中 adaptation to hot environment 与 dramatic climate changes 都涉及环境，但前者强调适应后者强调变化，听清因果方向",
+     "Q25 中 genetic makeup 为生物学术语，若出现则录音大概率涉及基因/DNA 等词汇信号"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "negotiation",
+    "cn": "谈判，协商"
+   },
+   {
+    "w": "troublesome",
+    "cn": "麻烦的，棘手的"
+   },
+   {
+    "w": "commitment",
+    "cn": "承诺，投入；责任"
+   },
+   {
+    "w": "conducive",
+    "cn": "有助于…的，有益的"
+   },
+   {
+    "w": "conventional",
+    "cn": "传统的，常规的"
+   },
+   {
+    "w": "consciousness",
+    "cn": "意识，知觉"
+   },
+   {
+    "w": "irritated",
+    "cn": "恼怒的，烦躁的"
+   },
+   {
+    "w": "frustration",
+    "cn": "挫败感，沮丧"
+   },
+   {
+    "w": "spectator",
+    "cn": "观众，旁观者"
+   },
+   {
+    "w": "breakthrough",
+    "cn": "突破，重大进展"
+   },
+   {
+    "w": "upbringing",
+    "cn": "教养，抚养方式"
+   },
+   {
+    "w": "adaptation",
+    "cn": "适应，改编"
+   },
+   {
+    "w": "genetic makeup",
+    "cn": "基因构成，遗传组成"
+   },
+   {
+    "w": "cultivating",
+    "cn": "培养，培育"
+   }
+  ]
+ }
+}

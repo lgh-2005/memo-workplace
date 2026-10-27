@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "a96d0a0cad95__long_match__all",
+ "examId": "a96d0a0cad95",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2021 年 12 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:37:45.761Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35322,
+ "usage": {
+  "prompt_tokens": 999,
+  "completion_tokens": 2331,
+  "total_tokens": 3330,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 999,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2331,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 999,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "音乐训练与智力关系的争议研究",
+  "strategy": [
+   "先圈出各题中反复出现的核心人名 Glenn Schellenberg，以此为主线快速锁定段落",
+   "关注每题独有的区分性关键词，如 causal relationship、IQ、brain、long-term 等，再到原文中扫读定位",
+   "注意陈述句中的态度词（doubtful、wrongly、admits）与原文态度表达的同义替换",
+   "按段落顺序与题号交叉排列的常见规律，先做有把握的题，缩小剩余段落范围"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "Glenn Schellenberg 的最新研究表明，许多心理学家和神经科学家错误地相信了音乐与智商之间的因果关系。",
+    "keywords": [
+     "latest research",
+     "psychologists",
+     "neuroscientists",
+     "causal relationship",
+     "music and IQ"
+    ],
+    "paraphrase": "陈述句中 wrongly believe 可能对应原文中 mistakenly assume 或 erroneously accept 等表达；causal relationship 可能被替换为 cause-and-effect link 等同义形式。",
+    "tip": "定位 causal relationship 和 IQ 两个核心词，配合 psychologists/neuroscientists 锁定 E 段。"
+   },
+   {
+    "number": 37,
+    "answer": "N",
+    "cn": "音乐训练具有积极效果这一信念对许多本身就是音乐家的研究者很有吸引力。",
+    "keywords": [
+     "positive effects",
+     "music training",
+     "researchers",
+     "musicians themselves"
+    ],
+    "paraphrase": "appeals to 可能对应原文中 is attractive to 或 resonates with；researchers who are musicians themselves 可能被表述为 scientist-musicians 或 researchers who also play instruments。",
+    "tip": "抓住 researchers 兼 musicians 这一双重身份的特殊描述快速定位 N 段。"
+   },
+   {
+    "number": 38,
+    "answer": "C",
+    "cn": "Glenn Schellenberg 对音乐教育有助于提升儿童智力这一说法持怀疑态度。",
+    "keywords": [
+     "doubtful",
+     "music education",
+     "enhance",
+     "children's intelligence"
+    ],
+    "paraphrase": "doubtful 可能对应原文中 skeptical 或 questioned；enhance children's intelligence 可能被改写为 boost kids' cognitive abilities 等。",
+    "tip": "定位 doubtful/skeptical 与 children's intelligence 的组合，锁定 C 段。"
+   },
+   {
+    "number": 39,
+    "answer": "G",
+    "cn": "Glenn Schellenberg 得出结论：被评估的论文中大多数对音乐影响智力的论断是错误的。",
+    "keywords": [
+     "conclusion",
+     "papers assessed",
+     "wrong claim",
+     "music's effect on intelligence"
+    ],
+    "paraphrase": "papers assessed 可能对应原文 studies reviewed 或 articles evaluated；made the wrong claim 可能被替换为 drew incorrect conclusions 或 overstated the evidence。",
+    "tip": "关注 papers/studies + assessed/reviewed 以及 wrong claim 等评价性词汇定位 G 段。"
+   },
+   {
+    "number": 40,
+    "answer": "O",
+    "cn": "在成为科学家之前，你必须放弃那些未经验证的信念。",
+    "keywords": [
+     "abandon",
+     "unverified beliefs",
+     "become a scientist"
+    ],
+    "paraphrase": "abandon 可能对应原文 let go of 或 give up；unverified beliefs 可能被表述为 assumptions not backed by evidence 或 untested convictions。",
+    "tip": "此句无 Schellenberg 人名，改抓 abandon + unverified beliefs 这一独特搭配定位 O 段。"
+   },
+   {
+    "number": 41,
+    "answer": "H",
+    "cn": "大量实验已经表明，接受过音乐训练的人能更好地分辨某些声音。",
+    "keywords": [
+     "experiments",
+     "music training",
+     "differentiate",
+     "certain sounds"
+    ],
+    "paraphrase": "differentiate certain sounds 可能对应原文 distinguish between specific auditory stimuli 或 tell apart particular sounds；lots of experiments 可能被替换为 numerous studies 或 a body of research。",
+    "tip": "聚焦 differentiate/distinguish + sounds 这组听觉辨别类关键词定位 H 段。"
+   },
+   {
+    "number": 42,
+    "answer": "D",
+    "cn": "Glenn Schellenberg 在本世纪初的研究发现未能得到大约十年后一项更大规模研究的支持。",
+    "keywords": [
+     "beginning of this century",
+     "not supported",
+     "larger study",
+     "ten years later"
+    ],
+    "paraphrase": "findings were not supported 可能对应原文 results were not replicated 或 conclusions were contradicted；a larger study 可能被替换为 a bigger sample study 或 a broader investigation。",
+    "tip": "关注时间线索 beginning of this century 和 ten years later，以及 not supported/replicated 定位 D 段。"
+   },
+   {
+    "number": 43,
+    "answer": "J",
+    "cn": "有一位研究者赞同 Glenn Schellenberg 的观点，认为有必要开展长期发展性研究来了解音乐训练的效果。",
+    "keywords": [
+     "shares view",
+     "long-term developmental studies",
+     "effects of music training"
+    ],
+    "paraphrase": "shares Schellenberg's view 可能对应原文 agrees with Schellenberg 或 echoes his opinion；long-term developmental studies 可能被表述为 longitudinal research 等。",
+    "tip": "锁定 long-term developmental studies 这一核心学术概念，再确认存在另一位研究者表示赞同，定位 J 段。"
+   },
+   {
+    "number": 44,
+    "answer": "F",
+    "cn": "Glenn Schellenberg 的研究助手们并不知道他在新研究中试图证明什么。",
+    "keywords": [
+     "research assistants",
+     "had no idea",
+     "trying to prove",
+     "new study"
+    ],
+    "paraphrase": "had no idea 可能对应原文 were unaware of 或 were kept blind to；trying to prove 可能被替换为 hypothesis 或 what the study aimed to demonstrate，涉及双盲实验设计的表述。",
+    "tip": "抓住 research assistants + had no idea 这一实验设计细节（双盲法），快速定位 F 段。"
+   },
+   {
+    "number": 45,
+    "answer": "I",
+    "cn": "Glenn Schellenberg 承认练习可以改变大脑的某些区域，但他怀疑这种改变能否影响其他区域。",
+    "keywords": [
+     "admits",
+     "practice",
+     "change certain areas of brain",
+     "doubts",
+     "affect other areas"
+    ],
+    "paraphrase": "admits 可能对应原文 acknowledges 或 concedes；doubts that the change can affect other areas 可能被表述为 questions whether such changes transfer to other brain regions。",
+    "tip": "聚焦 brain + certain areas vs. other areas 的对比以及 admits…but doubts 的让步转折结构定位 I 段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "causal relationship",
+    "cn": "因果关系（名词短语）"
+   },
+   {
+    "w": "IQ",
+    "cn": "智商（名词，Intelligence Quotient 的缩写）"
+   },
+   {
+    "w": "differentiate",
+    "cn": "区分，辨别（动词）"
+   },
+   {
+    "w": "unverified",
+    "cn": "未经验证的（形容词）"
+   },
+   {
+    "w": "neuroscientists",
+    "cn": "神经科学家（名词）"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "同义改写，释义（名词/动词）"
+   },
+   {
+    "w": "longitudinal",
+    "cn": "纵向的，长期跟踪的（形容词，常用于学术研究语境）"
+   },
+   {
+    "w": "assessed",
+    "cn": "被评估的，被审查的（动词过去分词）"
+   },
+   {
+    "w": "enhance",
+    "cn": "提升，增强（动词）"
+   },
+   {
+    "w": "appeals to",
+    "cn": "对……有吸引力（动词短语）"
+   }
+  ]
+ }
+}

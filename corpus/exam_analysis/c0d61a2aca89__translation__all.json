@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "c0d61a2aca89__translation__all",
+ "examId": "c0d61a2aca89",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2021 年 12 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:40:07.299Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52376,
+ "usage": {
+  "prompt_tokens": 829,
+  "completion_tokens": 3870,
+  "total_tokens": 4699,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 829,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3870,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 829,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "井冈山革命历史与红色文化",
+  "reference": "Located at the junction of Hunan and Jiangxi provinces, Jinggangshan is hailed as the \"Red Cradle of the Chinese Revolution\" for its glorious revolutionary history. In October 1927, Mao Zedong, Zhu De and other revolutionaries of the older generation led the Chinese Workers' and Peasants' Red Army here, where they carried out arduous and extraordinary struggles, established the first rural revolutionary base, kindled the spark of the Chinese revolution, and blazed a revolutionary road with Chinese characteristics — \"using the countryside to besiege the cities and seizing political power by armed force.\" It was from here that the Chinese revolution marched toward victory. Today, Jinggangshan boasts over 100 revolutionary historical sites, making it a \"revolutionary history museum without walls\" and serving as an important base for patriotic and revolutionary tradition education.",
+  "sentences": [
+   {
+    "cn": "井冈山地处湖南、江西两省交界处，因其辉煌的革命历史被誉为\"中国革命红色摇篮\"。",
+    "en": "Located at the junction of Hunan and Jiangxi provinces, Jinggangshan is hailed as the \"Red Cradle of the Chinese Revolution\" for its glorious revolutionary history.",
+    "structure": "过去分词短语 Located at... 作状语 + 主句 is hailed as... + for 引导原因状语",
+    "keys": [
+     "地处……交界处 located at the junction of",
+     "被誉为 is hailed as",
+     "中国革命红色摇篮 Red Cradle of the Chinese Revolution"
+    ]
+   },
+   {
+    "cn": "1927年10月，毛泽东、朱德等老一辈革命家率领中国工农红军来到这里，开展了艰苦卓绝的斗争,创建了第一个农村革命根据地，点燃了中国革命的星星之火，开辟了\"农村包围城市,武装夺取政权\"这一具有中国特色的革命道路，中国革命从这里迈向胜利。",
+    "en": "In October 1927, Mao Zedong, Zhu De and other revolutionaries of the older generation led the Chinese Workers' and Peasants' Red Army here, where they carried out arduous and extraordinary struggles, established the first rural revolutionary base, kindled the spark of the Chinese revolution, and blazed a revolutionary road with Chinese characteristics — \"using the countryside to besiege the cities and seizing political power by armed force.\" It was from here that the Chinese revolution marched toward victory.",
+    "structure": "时间状语 + 主句（并列四个谓语动词 carried out / established / kindled / blazed）+ where 引导非限制性定语从句 + 破折号引出同位语解释革命道路内容 + It was...that 强调句收尾",
+    "keys": [
+     "老一辈革命家 revolutionaries of the older generation",
+     "中国工农红军 Chinese Workers' and Peasants' Red Army",
+     "艰苦卓绝的斗争 arduous and extraordinary struggles",
+     "农村革命根据地 rural revolutionary base",
+     "星星之火 spark",
+     "农村包围城市，武装夺取政权 using the countryside to besiege the cities and seizing political power by armed force",
+     "具有中国特色的革命道路 revolutionary road with Chinese characteristics"
+    ]
+   },
+   {
+    "cn": "井冈山现有100多处革命旧址，成为一个\"没有围墙的革命历史博物馆\"，是爱国主义和革命传统教育的重要基地。",
+    "en": "Today, Jinggangshan boasts over 100 revolutionary historical sites, making it a \"revolutionary history museum without walls\" and serving as an important base for patriotic and revolutionary tradition education.",
+    "structure": "主句 boasts over 100... + 现在分词短语 making it... and serving as... 作结果状语",
+    "keys": [
+     "革命旧址 revolutionary historical sites",
+     "没有围墙的博物馆 museum without walls",
+     "爱国主义和革命传统教育 patriotic and revolutionary tradition education"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "井冈山",
+    "en": "Jinggangshan"
+   },
+   {
+    "cn": "中国革命红色摇篮",
+    "en": "Red Cradle of the Chinese Revolution"
+   },
+   {
+    "cn": "中国工农红军",
+    "en": "Chinese Workers' and Peasants' Red Army"
+   },
+   {
+    "cn": "农村革命根据地",
+    "en": "rural revolutionary base"
+   },
+   {
+    "cn": "老一辈革命家",
+    "en": "revolutionaries of the older generation"
+   },
+   {
+    "cn": "农村包围城市，武装夺取政权",
+    "en": "using the countryside to besiege the cities and seizing political power by armed force"
+   },
+   {
+    "cn": "革命旧址",
+    "en": "revolutionary historical sites"
+   },
+   {
+    "cn": "爱国主义教育",
+    "en": "patriotic education"
+   },
+   {
+    "cn": "星星之火",
+    "en": "spark (of the revolution)"
+   },
+   {
+    "cn": "具有中国特色的革命道路",
+    "en": "revolutionary road with Chinese characteristics"
+   }
+  ],
+  "pitfalls": [
+   "「艰苦卓绝」易误译为 hard and difficult，应体现\"卓绝\"之义，用 arduous and extraordinary 更准确",
+   "「星星之火」是比喻用法，不可直译为 little stars of fire，应译为 the spark of the revolution",
+   "「农村包围城市」题目已提示用 besiege，忘用此词会失分",
+   "「没有围墙的博物馆」中\"围墙\"应译为 walls，误用 fence（栅栏）不够准确",
+   "长句中多个并列谓语（开展/创建/点燃/开辟）时态需一致，均用一般过去时，且注意 and 连接最后一项"
+  ],
+  "upgrades": [
+   {
+    "plain": "is located at the border of",
+    "better": "is situated at the junction of / nestles at the junction of",
+    "note": "junction 比 border 更精确表达两省\"交界处\"的含义"
+   },
+   {
+    "plain": "has more than 100 old revolutionary places",
+    "better": "boasts over 100 revolutionary historical sites",
+    "note": "boasts 暗含自豪感，sites 比 places 更正式学术"
+   },
+   {
+    "plain": "The Chinese revolution went to victory from here.",
+    "better": "It was from here that the Chinese revolution marched toward victory.",
+    "note": "It was...that 强调句型突出\"从这里\"，march toward 比 go to 更有力量感"
+   },
+   {
+    "plain": "is called the Red Cradle",
+    "better": "is hailed as the Red Cradle",
+    "note": "hailed as 对应\"被誉为\"，比 called 更体现尊崇与赞誉语气"
+   },
+   {
+    "plain": "started very hard struggles",
+    "better": "carried out arduous and extraordinary struggles",
+    "note": "carry out 搭配 struggles 更地道，arduous and extraordinary 精确对应\"艰苦卓绝\""
+   }
+  ]
+ }
+}

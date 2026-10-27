@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "f9d11b8b2c79__reading__4",
+ "examId": "f9d11b8b2c79",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年考研英语真题",
+ "year": 2025,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:57:44.811Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65638,
+ "usage": {
+  "prompt_tokens": 1766,
+  "completion_tokens": 3940,
+  "total_tokens": 5706,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1766,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3940,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1766,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "数字信息的保存面临严峻挑战",
+  "gist": "文章从实体文物的持久保存切入，对比指出数字信息因格式过时、缺乏有意识的维护而面临丢失风险。图书馆员致力于数字信息的发现、整理与保存，但目前尚无全面的解决方案，数字历史记录的保存仍是一大挑战。",
+  "structure": [
+   "第1段：以实体文物引出'可触性'使其留存的话题",
+   "第2段：对比数字与实体信息，引出数字保存问题",
+   "第3段：图书馆员的工作反被用于低估图书馆的价值",
+   "第4段：以ZIP磁盘为例说明数字格式过时致信息丢失",
+   "第5段：总结——数字保存虽无完美方案但仍有努力方向"
+  ],
+  "difficulty": "中等",
+  "translation": "走进任何一家古董店，你都会遇到来自过去的文物：照片、信件、一本详细介绍1964—65年世博会辛克莱恐龙展览的小册子，这些都是历史的短暂痕迹。然而，这些物品并非真正短暂，因为它们至今仍然存在，历经数十年甚至数百年。为什么？因为它们是有形的。\n\n你是否思考过无形格式——数字信息——的生命周期？要知道，那些产出这些数字产物的人很少为其长期保存做出安排。几千年来，我们之所以知道我们所知道的，是因为那些幸存下来的文物，而这往往是在其原创者的忽视之下实现的。物品本身就是传递信息的媒介。在创作之时，人们并未进行有意的保存，然而模拟材料仍有机会存留下来，充当传记作者、历史学家和小说家所依赖的历史记录。图书馆和档案馆历来承担着信息的组织、保存和提供访问的责任。图书馆员将有形材料数字化，使全世界的研究者能够快速检索和访问其馆藏。其结果是令人应接不暇的丰富历史资源，这也带来了大海捞针式的问题。\n\n图书馆员的无私奉献反而可能对我们不利——当用户举起手机说\"一切都在这里面\"，以此作为图书馆对今天的研究者不再那么重要的证据时。然而，这种普遍的信息获取是如何实现的？或许更重要的是，它是如何维持的？是谁在筛选和保管被保存的内容？当涉及原生数字信息时，令人恐惧的答案可能是：如果不是图书馆员和档案管理员，那就没有人。数字信息需要的维护远比模拟信息多得多。\n\n即使一个数字对象被保存下来，被保存的也可能只是载体，而非信息本身。随着技术进步，一种格式变得过时，该对象就变得无用。你是否曾无助地盯着一张ZIP磁盘，心想：我怎么才能把文件从这上面取出来？如果不持续迁移数字资产，一个关于可预见未来的噩梦将让历史学家夜不能寐：一份在数字取代模拟时戛然而止的历史记录。\n\n作为一名日常工作围绕特藏和数字资产的图书馆员，我和历史学家一样深感恐惧，如果说目前已有全面的保存解决方案，那我就是在说谎。然而，研究者可以稍感安慰的是，有大量图书馆员致力于为当前和未来的研究者发现、整理和保存数字信息。虽然未来的研究者可能会发现数字领域是一个充满挑战的工作场所，但他们不会发现那是一个不可能的领域。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "Yet these objects aren't truly ephemeral, because they're still here, decades, even centuries later. Why? Because they're tangible.",
+    "why": "第一段以古董店里的实体文物为例，说明有形物品能跨越时间留存，紧接着第二段转向追问无形的数字信息的生命周期和保存问题。作者提及过去的文物，目的并非讨论古董收藏或其历史价值本身，而是以此为引子，通过有形与无形的对比，引出全文核心议题——信息保存（preservation）问题。选C。",
+    "traps": "A\"引出古董收藏\"：文章并非讨论收藏行为，古董只是引子，属于偷换论证目的。B\"与日常物品对比\"：原文对比的是有形与数字信息，并非与everyday items对比，属于无中生有。D\"评价历史价值\"：文章重点不在文物的历史价值，而在其\"可留存性\"引出保存话题，属于以偏概全。",
+    "tip": "例证题需找出例子服务的论点，通常在例子之后或下一段出现。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The thing itself is the medium that delivers the information. At the time of creation, no attempts were made at intentional preservation, yet analog materials have a chance of surviving",
+    "why": "原文明确指出\"物品本身就是传递信息的媒介\"，即有形文物直接承载并传递信息，无需额外的技术手段即可读取。而数字信息则需要特定设备和格式支持才能获取。因此有形文物以更直接的方式传递信息（convey information in a more direct way），选B。",
+    "traps": "A\"更少受到创作者忽视\"：原文说实体文物也\"often despite their original creators' neglect\"，即同样被忽视，属于曲解原文。C\"需要更多有意保存\"：原文恰好相反，说的是数字信息需要\"a great deal more care\"，属于反向干扰。D\"更不容易遭受严重损害\"：原文未直接比较损害程度，且该说法过于绝对，属于无中生有。",
+    "tip": "对比题需准确找到原文对比维度，避免主观推导。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Librarians' selfless devotion can act against us when users point to universality of access by holding up a cell phone and saying, 'it's all in here' as evidence that libraries are less vital for researchers today.",
+    "why": "第三段指出，图书馆员的无私奉献（将资料数字化使其可在手机上获取）反而被用户当作\"图书馆不再那么重要\"的论据。即图书馆员的工作成果让人们低估了图书馆本身的价值（undervaluation of libraries），选B。",
+    "traps": "A\"材料过多\"：虽然第二段提到\"embarrassment of riches\"，但第三段的重点是图书馆被低估，而非材料过剩。C\"研究者表现不佳\"：原文未涉及研究者的表现问题，属于无中生有。D\"用户过度依赖技术\"：虽然用户举手机说\"都在这里\"，但段落论点是图书馆被低估，而非批评技术依赖，属于偷换重心。",
+    "tip": "注意段落论点句，\"act against us\"直接点明负面后果的方向。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "As technology advances and a format becomes obsolete, the object is useless. Have you ever stared helplessly at a ZIP disk, thinking: how do I get the files off this?",
+    "why": "ZIP磁盘出现在\"格式过时则对象无用\"的论述之后，作为具体例证说明：当技术进步导致旧格式被淘汰时，储存在其上的信息就可能无法读取，即信息面临在过时格式中丢失的可能性（losing information in obsolete formats），选C。",
+    "traps": "A\"通过异常手段检索文件的危害\"：原文强调的是格式过时导致无法获取信息，而非检索手段本身的危害，属于偷换概念。B\"持续迁移数字资产不可行\"：原文是说如果不迁移就会出问题，并未说迁移本身不可行，属于曲解原文。D\"在模拟设备上存储信息的不便\"：ZIP磁盘是数字存储设备而非模拟设备，属于张冠李戴。",
+    "tip": "例证题要回到例子前后找论点，ZIP磁盘例证的是\"格式过时→信息丢失\"。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "I share the night terrors of historians, and I'd be lying if I said a comprehensive preservation solution currently exists.",
+    "why": "全文从实体文物的留存切入，核心论述数字信息因格式过时、缺乏维护而面临丢失风险，图书馆员虽在努力但尚无全面解决方案。文章始终围绕\"保存数字历史记录的挑战\"这一主线展开，选D最准确概括全文主旨。",
+    "traps": "A\"应努力保存文物\"：文章讨论的核心是数字信息而非传统文物，且\"应努力\"过于笼统，属于以偏概全。B\"应认可图书馆员的贡献\"：图书馆员的角色只是文章的一个方面，并非全文主旨，属于以偏概全。C\"访问数据库对研究者至关重要\"：文章重点不在数据库访问，而在数字信息的保存难题，属于偏离主题。",
+    "tip": "主旨题需覆盖全文核心论点，避免选仅涉及部分段落的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "ephemera",
+    "cn": "n. 短暂之物；历史零碎物品"
+   },
+   {
+    "w": "tangible",
+    "cn": "adj. 有形的，可触摸的"
+   },
+   {
+    "w": "provision",
+    "cn": "n. 准备，预备；供给"
+   },
+   {
+    "w": "analog",
+    "cn": "adj. 模拟的（与数字相对）"
+   },
+   {
+    "w": "curate",
+    "cn": "v. 筛选保管，策展"
+   },
+   {
+    "w": "obsolete",
+    "cn": "adj. 过时的，被淘汰的"
+   },
+   {
+    "w": "migration",
+    "cn": "n. 迁移（数据从旧格式转移到新格式）"
+   },
+   {
+    "w": "abruptly",
+    "cn": "adv. 突然地，骤然地"
+   },
+   {
+    "w": "comprehensive",
+    "cn": "adj. 全面的，综合的"
+   },
+   {
+    "w": "ply",
+    "cn": "v. 从事（某行业或工作）"
+   },
+   {
+    "w": "multitude",
+    "cn": "n. 大量，众多"
+   },
+   {
+    "w": "embarrassment",
+    "cn": "n.（此处）过多，令人为难的丰富"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Have you pondered the life cycle of intangible formats, digital information, given that those who produce these artifacts seldom make provision for their long-term preservation?",
+    "cn": "你是否思考过无形格式——数字信息——的生命周期？要知道，那些产出这些数字产物的人很少为其长期保存做出安排。",
+    "note": "主句为疑问句\"Have you pondered...\"；\"digital information\"是\"intangible formats\"的同位语；\"given that\"引导原因状语从句，说明数字产物的创造者忽视保存。"
+   },
+   {
+    "en": "At the time of creation, no attempts were made at intentional preservation, yet analog materials have a chance of surviving and serving as the historical record that biographers, historians, and novelists rely on.",
+    "cn": "在创作之时，人们并未进行有意的保存，然而模拟材料仍有机会存留下来，充当传记作者、历史学家和小说家所依赖的历史记录。",
+    "note": "\"yet\"连接转折；\"surviving and serving\"并列作\"of\"的宾语；\"that biographers...rely on\"为定语从句修饰\"the historical record\"。"
+   },
+   {
+    "en": "Without constant migration of digital assets, a nightmare about the foreseeable future is what keeps historians up at night: a historical record that abruptly stops when digital replaces analog.",
+    "cn": "如果不持续迁移数字资产，一个关于可预见未来的噩梦将让历史学家夜不能寐：一份在数字取代模拟时戛然而止的历史记录。",
+    "note": "\"Without...\"为条件状语；\"what keeps historians up at night\"为表语从句；冒号后为同位语解释\"nightmare\"的具体内容；\"when\"引导时间状语从句。"
+   }
+  ]
+ }
+}

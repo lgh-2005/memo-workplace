@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "b07d0f41f501__use_of_english__all",
+ "examId": "b07d0f41f501",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2026 年考研英语真题",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:59:05.587Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 86554,
+ "usage": {
+  "prompt_tokens": 1798,
+  "completion_tokens": 4909,
+  "total_tokens": 6707,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1798,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4909,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1798,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "AI对人类审美体验的双重影响",
+  "gist": "文章探讨了人工智能在美的领域带来的机遇与挑战。一方面，AI可与人类创意结合产生独特艺术成果，提供虚拟试妆和个性化美容建议，成为自我发现的有趣工具；另一方面，AI也可能加剧社会审美压力、扭曲自我认知并导致身体不满。文章呼吁AI不应取代人类对美的真实体验与情感联结。",
+  "difficulty": "中等",
+  "translation": "人工智能（AI）的进步正在迅速改变人类生活的方方面面。AI世界充满了改善和丰富我们生活的令人兴奋的潜力。然而，AI也存在以我们可能难以控制的方式主导我们体验的潜在危险。其中一个这样的领域就是我们如何理解和体验美。\n\nAI可以成为广泛创意活动中的协作工具。将人类创造力与AI算法相结合，可以产生在人眼看来非常美丽的独特艺术成果。这种合作可能会变得越来越普遍。例如，作为一种既便捷又具有启发性的方式，AI可以实现虚拟试用体验，你可以在做出任何实际改变之前虚拟地试用妆容、发型、服装甚至整容手术效果。现在个人可以尝试不同的造型并探索自己的偏好，从而有可能扩大审美理想的范围。\n\nAI算法可以分析面部特征和皮肤状况，以提供个性化的美容建议。这种定制化的方法旨在迎合个人偏好，并增强根据每个人独特特征量身定制的美的概念。通过这种方式，AI可以成为自我发现的有趣工具。\n\n虽然AI提供了令人兴奋的可能性，但它也引发了伦理方面的担忧。存在加深社会审美压力和延续无法实现的美丽标准的风险。此外，由AI驱动的美颜滤镜和编辑工具可能导致扭曲的自我认知，并助长对身体的不满。正如最近一篇关于\"在线美颜滤镜的隐藏危害\"的帖子所总结的那样，依赖这项技术进行社交展示可能会造成伤害，例如身体形象问题、自尊心下降和社交焦虑。\n\n需要注意的是，虽然AI可以增强我们对美的欣赏，但它不应取代真实的人类体验以及我们从欣赏彼此之美中获得的情感联结。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "A",
+    "correct": "Still",
+    "why": "前文说AI有改善生活的潜力，后文说AI也有主导体验的潜在危险，构成转折关系。Still在此表示\"然而、尽管如此\"，起让步转折作用，符合上下文从正面转向负面的逻辑。",
+    "traps": "B) Therefore表因果，前后并非因果关系；C) Afterward表时间先后，此处无时间顺序关系；D) Instead表替代或相反，语气过强，且不符合\"补充另一面\"的语境。",
+    "tip": "识别句间逻辑：正面→负面用转折词。"
+   },
+   {
+    "number": 2,
+    "answer": "D",
+    "correct": "dominating",
+    "why": "空格后为our experiences in ways we might find difficult to control，强调AI以难以控制的方式影响体验，dominating（主导、支配）与difficult to control形成语义呼应，表达AI可能过度控制人类体验的隐患。",
+    "traps": "A) reviewing（审视）语义不合，AI不是在\"审查\"体验；B) narrating（叙述）与体验搭配不当；C) ignoring（忽视）与后文difficult to control逻辑不符，忽视不涉及控制问题。",
+    "tip": "利用后文difficult to control反推空格词义。"
+   },
+   {
+    "number": 3,
+    "answer": "B",
+    "correct": "area",
+    "why": "此处one such area指前文提到的AI可能主导体验的众多领域之一，后面具体说明是\"美\"这个领域。area（领域）与how we understand and experience beauty搭配自然。",
+    "traps": "A) reason（原因）逻辑不通，后文解释的不是原因；C) clue（线索）语义不匹配；D) belief（信念）与后文how引导的内容不搭，信念不能用how从句修饰。",
+    "tip": "one such + 名词，需与前文语境及后文内容匹配。"
+   },
+   {
+    "number": 4,
+    "answer": "C",
+    "correct": "Combining",
+    "why": "后文说human creativity and AI algorithms can lead to unique artistic outcomes，两者结合才能产生成果。Combining（结合）在句首作状语，表示将人类创造力与AI算法相结合。",
+    "traps": "A) Balancing（平衡）强调权衡取舍，不符合协作语境；B) Distinguishing（区分）意为分辨差异，与合作产出矛盾；D) Introducing（介绍、引入）语义不够精确，不能表达两者融合。",
+    "tip": "注意动名词作状语与主句lead to的因果关系。"
+   },
+   {
+    "number": 5,
+    "answer": "B",
+    "correct": "outcomes",
+    "why": "artistic outcomes（艺术成果）指人类创意与AI结合后产生的创作结果，与前文lead to搭配自然，且后文that are beautiful进一步描述这些成果。",
+    "traps": "A) prospects（前景）指未来展望，不是具体产出；C) ambitions（抱负）指主观愿望，不能被lead to产生；D) sentiments（情感）与artistic搭配后不合语境，此处讨论的是创作产物。",
+    "tip": "lead to + 结果类名词，outcomes最贴切。"
+   },
+   {
+    "number": 6,
+    "answer": "C",
+    "correct": "For instance",
+    "why": "前文说AI在创意活动中是协作工具且合作会越来越普遍，此处举虚拟试妆为具体例子来说明，For instance（例如）引出举例。",
+    "traps": "A) At first（起初）表时间顺序，此处无先后之分；B) By comparison（相比之下）表对比，前后无比较关系；D) In general（总的来说）表概括，而此处是具体化。",
+    "tip": "上文泛论→下文具体事例，用举例连接词。"
+   },
+   {
+    "number": 7,
+    "answer": "A",
+    "correct": "test",
+    "why": "虚拟试用体验中，用户可以虚拟地test（试用）妆容、发型等，test与try-on语义一致，表示在虚拟环境中试验效果。",
+    "traps": "B) copy（复制）不符合\"试用\"的语境；C) link（连接）语义不相关；D) save（保存）与try-on体验的核心含义不符。",
+    "tip": "与前文virtual try-on构成语义复现。"
+   },
+   {
+    "number": 8,
+    "answer": "D",
+    "correct": "before",
+    "why": "虚拟试妆的意义在于在做出实际改变之前就能看到效果，before making any physical changes表示\"在做出任何实际改变之前\"，符合虚拟试用的逻辑。",
+    "traps": "A) upon（一……就）表示同时发生，不符合虚拟先于实际的逻辑；B) beyond（超越）语义不通；C) through（通过）表手段方式，逻辑不合。",
+    "tip": "虚拟试用的价值在于\"先于\"实际行动。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "explore",
+    "why": "explore their preferences（探索自己的偏好）与前文experiment with different looks并列，都强调尝试和发现的过程，explore表示深入了解和发掘。",
+    "traps": "B) recall（回忆）指回想过去，不符合探索新可能的语境；C) simplify（简化）与偏好搭配不当；D) cherish（珍惜）强调珍视已有事物，不是发现新偏好。",
+    "tip": "experiment和explore构成语义并列，均强调尝试探索。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "analyze",
+    "why": "AI算法分析面部特征和皮肤状况以提供个性化建议，analyze（分析）是AI处理数据的典型功能，与facial features and skin conditions搭配合理。",
+    "traps": "A) recover（恢复）语义不相关；B) arrange（安排）不能用于面部特征；C) reserve（预留、保留）与分析面部数据的语境不符。",
+    "tip": "AI的核心功能词：analyze data/features。"
+   },
+   {
+    "number": 11,
+    "answer": "D",
+    "correct": "customized",
+    "why": "前文提到personalized beauty recommendations（个性化美容建议），此处customized approach（定制化方法）与personalized形成同义复现，强调根据个人特征量身定制。",
+    "traps": "A) localized（本地化的）指地域性适应，非个人定制；B) normalized（标准化的）意思相反，指统一标准；C) randomized（随机化的）与个性化推荐逻辑完全矛盾。",
+    "tip": "personalized与customized同义复现是解题关键。"
+   },
+   {
+    "number": 12,
+    "answer": "D",
+    "correct": "In this way",
+    "why": "前文分别介绍了AI在创意合作、虚拟试妆、个性化推荐方面的功能，此处In this way（通过这种方式）对前述内容进行总结归纳，引出结论：AI可以成为自我发现的有趣工具。",
+    "traps": "A) At best（充其量）含贬义语气，与fun vehicle语境不符；B) To the contrary（相反）表转折，前后无对立关系；C) By definition（从定义上来说）过于学术，不符合总结归纳的语境。",
+    "tip": "总结前文多个论据得出小结论，用归纳性连接词。"
+   },
+   {
+    "number": 13,
+    "answer": "C",
+    "correct": "concerns",
+    "why": "raises ethical concerns（引发伦理担忧）是固定搭配，且后文具体阐述了风险和负面影响，concerns与raises搭配最为自然。",
+    "traps": "A) divisions（分歧）与raises搭配不常见，且后文未讨论意见分歧；B) expectations（期望）语义方向为正面，与后文风险不符；D) values（价值观）与raises搭配不当，通常不说raises values。",
+    "tip": "raise concerns是高频固定搭配，表\"引发担忧\"。"
+   },
+   {
+    "number": 14,
+    "answer": "A",
+    "correct": "pressures",
+    "why": "beauty pressures（审美压力）指社会对外貌的压力，与后文perpetuating unattainable beauty standards（延续无法实现的美丽标准）并列，共同说明AI加剧的社会问题。",
+    "traps": "B) mysteries（神秘）与deepening搭配后语义不合逻辑；C) understandings（理解）为正面词，不符合风险语境；D) suspicions（怀疑）与beauty搭配不当。",
+    "tip": "deepening pressures（加深压力）为常见搭配。"
+   },
+   {
+    "number": 15,
+    "answer": "B",
+    "correct": "Additionally",
+    "why": "前文说AI有加深审美压力的风险，此处进一步补充另一个负面影响——美颜滤镜导致自我认知扭曲。Additionally（此外）表递进添加。",
+    "traps": "A) Approximately（大约）为程度副词，不是逻辑连接词；C) Alternatively（或者）表替代选择，前后非选择关系；D) Accidentally（偶然地）表方式，不起连接作用。",
+    "tip": "同一方向叠加论据用递进连接词。"
+   },
+   {
+    "number": 16,
+    "answer": "C",
+    "correct": "contribute to",
+    "why": "美颜滤镜导致扭曲的自我认知并助长身体不满，contribute to（导致、助长）表示负面因果关系，与前文lead to distorted self-perception并列。",
+    "traps": "A) deal with（处理）意为解决问题，与此处制造问题的语境相反；B) result from（源于）因果方向相反，表示body dissatisfaction是原因；D) focus on（聚焦于）语义不合。",
+    "tip": "lead to与contribute to并列，均表负面因果。"
+   },
+   {
+    "number": 17,
+    "answer": "C",
+    "correct": "relying",
+    "why": "relying on this technology（依赖这项技术）表示过度依赖AI美颜技术进行社交展示会造成伤害，rely on为固定搭配，且relying作动名词短语充当主语。",
+    "traps": "A) starting on不是常用搭配；B) checking on（查看）语义太弱，不能表达依赖；D) working on（从事）强调操作，不涉及依赖。",
+    "tip": "rely on sth. for sth.（依赖某物做某事）固定搭配。"
+   },
+   {
+    "number": 18,
+    "answer": "B",
+    "correct": "such as",
+    "why": "后文body image issues, lower self-esteem, and social anxiety是对前文harm的具体举例说明，such as（例如）引出具体实例。",
+    "traps": "A) apart from（除了）表排除，逻辑不合；C) regardless of（不管）表让步，与举例无关；D) prior to（在……之前）表时间先后，不合语境。",
+    "tip": "抽象概念harm→具体实例，用举例标志词。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "appreciation",
+    "why": "enhance our appreciation of beauty（增强我们对美的欣赏）表示AI帮助人们更好地理解和欣赏美，appreciation与beauty搭配自然，呼应全文主题。",
+    "traps": "A) imitation（模仿）含贬义，暗示虚假；C) preservation（保存）语义偏窄，不是文章讨论重点；D) consumption（消费）将美商品化，不符合文章正面收束的基调。",
+    "tip": "appreciation of beauty是文章核心正面表述。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "correct": "replace",
+    "why": "should not replace the genuine human experience（不应取代真实的人类体验）表达文章最终立场：AI是辅助工具，不能替代人与人之间真实的情感联结。replace与enhance形成对比。",
+    "traps": "B) seize（抓住）语义不合，人类体验不是被抓取的对象；C) share（分享）逻辑不通；D) reflect（反映）过于中性，不能表达文章的告诫语气。",
+    "tip": "enhance（增强）与replace（取代）形成文末对比。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "buzzing",
+    "cn": "adj. 充满活力的，嗡嗡作响的"
+   },
+   {
+    "w": "provocative",
+    "cn": "adj. 有启发性的，引人深思的"
+   },
+   {
+    "w": "collaborative",
+    "cn": "adj. 合作的，协作的"
+   },
+   {
+    "w": "endeavor",
+    "cn": "n. 努力，尝试，事业"
+   },
+   {
+    "w": "perpetuating",
+    "cn": "v. 使永久化，延续（perpetuate的现在分词）"
+   },
+   {
+    "w": "unattainable",
+    "cn": "adj. 无法达到的，不可实现的"
+   },
+   {
+    "w": "distorted",
+    "cn": "adj. 扭曲的，变形的"
+   },
+   {
+    "w": "self-perception",
+    "cn": "n. 自我认知，自我感知"
+   },
+   {
+    "w": "dissatisfaction",
+    "cn": "n. 不满，不满意"
+   },
+   {
+    "w": "cater to",
+    "cn": "v. 迎合，满足（需求）"
+   },
+   {
+    "w": "tailor",
+    "cn": "v. 量身定制，使适合"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Still",
+    "role": "连接AI的积极面与潜在危险，构成让步转折"
+   },
+   {
+    "w": "For instance",
+    "role": "引出虚拟试妆的具体实例来支撑上文论点"
+   },
+   {
+    "w": "In this way",
+    "role": "总结前文AI的多种功能，引出阶段性结论"
+   },
+   {
+    "w": "While",
+    "role": "引导让步状语从句，由正面过渡到伦理担忧"
+   },
+   {
+    "w": "Additionally",
+    "role": "递进补充美颜滤镜带来的另一负面影响"
+   },
+   {
+    "w": "such as",
+    "role": "引出body image issues等具体实例解释harm"
+   }
+  ]
+ }
+}

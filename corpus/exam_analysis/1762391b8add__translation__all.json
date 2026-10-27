@@ -1,0 +1,204 @@
+{
+ "schemaVersion": 1,
+ "id": "1762391b8add__translation__all",
+ "examId": "1762391b8add",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2025 年 12 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T06:00:56.482Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 30047,
+ "usage": {
+  "prompt_tokens": 791,
+  "completion_tokens": 1981,
+  "total_tokens": 2772,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 791,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1981,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 791,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 4,
+ "warnings": [],
+ "analysis": {
+  "topic": "尊老美德的传承与社会意义",
+  "reference": "Respecting the elderly is a traditional virtue of the Chinese nation, deeply rooted in the thoughts and behaviors of the Chinese people, and serves as a widely observed code of conduct and social norm. In today's China, this virtue has been extensively passed down. All sectors of society actively foster a social atmosphere of respecting and assisting the elderly. Providing convenient services for senior citizens has become a social consensus. For example, communities have set up canteens specifically for the elderly, and priority seats have been installed in public places. The government has also introduced a series of policies to provide strong safeguards for the rights and interests of the elderly. Respecting the elderly is an important cornerstone of social harmony and development, which helps cultivate a positive social atmosphere and promote the civilized progress of society as a whole.",
+  "sentences": [
+   {
+    "cn": "尊老是中华民族的传统美德，深深植根于中国人的思想和行为中，是人们普遍遵守的行为规范和社会准则。",
+    "en": "Respecting the elderly is a traditional virtue of the Chinese nation, deeply rooted in the thoughts and behaviors of the Chinese people, and serves as a widely observed code of conduct and social norm.",
+    "structure": "并列谓语结构（is... rooted... and serves as），主语 Respecting the elderly 后跟三个并列成分，过去分词短语 deeply rooted 作补充说明",
+    "keys": [
+     "传统美德 a traditional virtue",
+     "深深植根于 deeply rooted in",
+     "行为规范 code of conduct",
+     "社会准则 social norm",
+     "普遍遵守 widely observed"
+    ]
+   },
+   {
+    "cn": "在当今的中国，这种美德得到广泛传承。",
+    "en": "In today's China, this virtue has been extensively passed down.",
+    "structure": "简单句，介词短语 In today's China 作状语前置，主语 this virtue 搭配被动语态 has been passed down",
+    "keys": [
+     "当今的中国 today's China",
+     "广泛传承 extensively passed down"
+    ]
+   },
+   {
+    "cn": "社会各界积极营造敬老助老的社会氛围。",
+    "en": "All sectors of society actively foster a social atmosphere of respecting and assisting the elderly.",
+    "structure": "简单句，主语 All sectors of society 搭配动词 foster，of 介词短语作后置定语修饰 atmosphere",
+    "keys": [
+     "社会各界 all sectors of society",
+     "营造…氛围 foster an atmosphere",
+     "敬老助老 respecting and assisting the elderly"
+    ]
+   },
+   {
+    "cn": "为老年人提供便利服务已成为社会共识，例如社区专门开设长者食堂，公共场所配置优先座位。",
+    "en": "Providing convenient services for senior citizens has become a social consensus. For example, communities have set up canteens specifically for the elderly, and priority seats have been installed in public places.",
+    "structure": "动名词短语 Providing... 作主语，for example 引出两个并列举例分句，第二个分句用被动语态",
+    "keys": [
+     "社会共识 social consensus",
+     "便利服务 convenient services",
+     "长者食堂 canteens for the elderly",
+     "优先座位 priority seats",
+     "公共场所 public places"
+    ]
+   },
+   {
+    "cn": "政府还出台了一系列政策，为老年人的权益提供有力保障。",
+    "en": "The government has also introduced a series of policies to provide strong safeguards for the rights and interests of the elderly.",
+    "structure": "简单句，不定式短语 to provide... 作目的状语，介词短语 for the rights and interests 作宾语补足成分",
+    "keys": [
+     "出台政策 introduce policies",
+     "一系列 a series of",
+     "权益 rights and interests",
+     "有力保障 strong safeguards"
+    ]
+   },
+   {
+    "cn": "尊老是社会和谐与发展的重要基石，有助于培育良好的社会氛围，推动整个社会文明进步。",
+    "en": "Respecting the elderly is an important cornerstone of social harmony and development, which helps cultivate a positive social atmosphere and promote the civilized progress of society as a whole.",
+    "structure": "主句 + which 引导非限制性定语从句，从句内 helps 后接两个并列不定式 cultivate... and promote...",
+    "keys": [
+     "重要基石 an important cornerstone",
+     "社会和谐与发展 social harmony and development",
+     "培育良好的社会氛围 cultivate a positive social atmosphere",
+     "文明进步 civilized progress",
+     "整个社会 society as a whole"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "尊老",
+    "en": "respecting the elderly"
+   },
+   {
+    "cn": "中华民族的传统美德",
+    "en": "a traditional virtue of the Chinese nation"
+   },
+   {
+    "cn": "行为规范",
+    "en": "code of conduct"
+   },
+   {
+    "cn": "社会共识",
+    "en": "social consensus"
+   },
+   {
+    "cn": "长者食堂",
+    "en": "canteens for the elderly"
+   },
+   {
+    "cn": "优先座位",
+    "en": "priority seats"
+   },
+   {
+    "cn": "权益",
+    "en": "rights and interests"
+   },
+   {
+    "cn": "出台政策",
+    "en": "introduce / roll out policies"
+   },
+   {
+    "cn": "基石",
+    "en": "cornerstone"
+   },
+   {
+    "cn": "文明进步",
+    "en": "civilized progress"
+   }
+  ],
+  "pitfalls": [
+   "「深深植根于」误用 planted 代替 rooted，plant 强调动作而 root 强调状态",
+   "「社会各界」漏译或误译为 society people，应译为 all sectors of society",
+   "「长者食堂」直译为 old people restaurant，应译为 canteens for the elderly 更得体",
+   "「出台政策」误用 put out policies，应使用 introduce / implement / roll out policies",
+   "「基石」误译为 base/foundation 丢失语体层次，cornerstone 更正式贴切"
+  ],
+  "upgrades": [
+   {
+    "plain": "deeply planted in",
+    "better": "deeply rooted in",
+    "note": "rooted in 是固定搭配，表示根深蒂固，比 planted 更地道自然"
+   },
+   {
+    "plain": "people all follow",
+    "better": "a widely observed code of conduct",
+    "note": "用 observed 搭配 code of conduct 更书面正式，符合社会规范语境"
+   },
+   {
+    "plain": "made some policies",
+    "better": "introduced a series of policies",
+    "note": "introduce policies 是政策语境中的标准搭配，比 make 更精准"
+   },
+   {
+    "plain": "is good for social harmony",
+    "better": "is an important cornerstone of social harmony",
+    "note": "cornerstone 隐喻更有力，比 good for 表达层次更高"
+   },
+   {
+    "plain": "help make a good social environment",
+    "better": "help cultivate a positive social atmosphere",
+    "note": "cultivate 搭配 atmosphere 更书面高级，避免口语化的 make + good"
+   }
+  ]
+ }
+}

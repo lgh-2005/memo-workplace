@@ -31,7 +31,9 @@ async function contractChecks() {
   pass('horizontal subnav contract', /\.quiz-submode[^{]*\{[^}]*overflow-x:\s*auto/s.test(css) || /\.quiz-submode/.test(css));
   pass('touch selection guard', /SEL_TOUCH_DEVICE|user-select:\s*none/.test(css + js));
   pass('responsive max-width constraints', /max-width:\s*1280px/.test(css) && /@media\s*\(max-width:\s*700px\)/.test(css));
-  pass('version marker', /v3\.7\.0/.test(html));
+  // 版本标识从 package.json 读取，避免每次发版都要改测试脚本
+  const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
+  pass('version marker', new RegExp('v' + String(pkg.version).replace(/\./g, '\\.')).test(html));
 }
 
 async function emulatedChecks() {

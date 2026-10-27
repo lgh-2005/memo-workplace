@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "c3be10eaeb66__reading__2",
+ "examId": "c3be10eaeb66",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 6 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:55:13.372Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61948,
+ "usage": {
+  "prompt_tokens": 1918,
+  "completion_tokens": 3856,
+  "total_tokens": 5774,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1918,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3856,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1918,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "核能与可再生能源之争",
+  "gist": "文章围绕科学界在核能问题上的分歧展开，一方主张完全依赖可再生能源，另一方认为核能是必要补充。以伯灵顿等城市说明100%可再生能源的争议性，并以德国为案例，指出大型工业国推进绿色能源面临电网基础设施滞后、能源不稳定及民众抗议等挑战，减排效果低于欧盟平均水平。",
+  "structure": [
+   "第1-2段：引出环保主义两种含义及科学界对核能的分歧",
+   "第3-5段：呈现纯粹派与对立派关于核能的具体观点",
+   "第6段：以小城市为例说明100%可再生能源目标的争议性",
+   "第7-9段：以德国为案例展示绿色能源转型的进展与困境"
+  ],
+  "difficulty": "中等",
+  "translation": "\"环保主义者\"这个词可以有不同的含义。它曾经指的是那些试图保护野生动物和自然生态系统的人。进入21世纪后，这个词已经演变为涵盖应对人为气候变化的需要。\n\n环保主义这两种理念之间的区别，正是导致科学界在核能问题上产生分裂的原因。\n\n一方是纯粹主义者，他们认为核能不值得冒险，解决气候危机的唯一方案是可再生能源。对立的一方同意可再生能源至关重要，但表示社会需要一定量的电力，在阳光不充足、风力不够时也能满足消费者的基本需求。核能远比石油、天然气和煤炭清洁，是一个天然的选择，尤其是在水力发电能力有限的地方。\n\n莱昂·克拉克曾参与撰写联合国政府间气候变化专门委员会的报告，他并非核能的无条件支持者，但他说，如果我们认真对待实现碳中和的目标，核能是一个有价值的选择。\n\n\"所有这一切的核心在于，你在多大程度上认为我们能够仅凭100%的可再生能源实现气候目标，\"他说。\"如果你不相信我们能做到，而你又关心气候问题，那你就不得不考虑像核能这样的方案。\"\n\n全球范围内实现100%可再生能源的可行性同样存在争议。伯灵顿和佛蒙特州等城市已经\"100%使用可再生能源\"多年。但这些城市人口往往较少，偶尔仍依赖化石燃料能源，并且在其周边拥有丰富的可再生资源。与此同时，那些能够靠可再生能源运转的国家，通常是凭借非凡的水力发电能力做到的。\n\n德国是大型工业化国家推进绿色能源的最佳案例。安格拉·默克尔总理在2011年宣布了\"能源转型\"计划，将逐步淘汰核能和煤炭，同时逐步引入可再生能源。自2010年以来，风能和太阳能发电量增长了400%以上，2019年可再生能源提供了该国46%的电力。\n\n但近年来进展已经停滞。可再生能源的不稳定性不仅意味着夜间通常无法发电，还意味着太阳能和风能可能在白天对电网造成过度负荷，迫使电力公司付费让客户用电。滞后的电网基础设施难以将这些过剩的绿色能源从德国北部输送到工业化的南部，这意味着许多工厂仍然依赖煤炭和天然气运行。在一些地方，政治层面的容忍度也已达到极限，市民以大声抗议来回应新风力涡轮机的建设。\n\n结果是，德国的温室气体排放自2010年以来下降了约11.5%——低于欧盟13.5%的平均水平。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The distinction between these two strands of environmentalism is the cause of a split within the scientific community about nuclear energy.",
+    "why": "原文第2段明确指出，环保主义这\"两种理念之间的区别\"是导致科学界在核能问题上产生分裂的原因。第1段交代了\"environmentalist\"的两种不同含义（保护野生动物/生态系统 vs. 应对人为气候变化），D选项\"坚持对环保主义的不同解读\"精准概括了这一因果关系。",
+    "traps": "A（关注应对人为气候变化）仅是环保主义的一种解读，属于以偏概全；B（强调保护野生动物和自然生态系统）同样只是其中一种解读，也属于以偏概全；C（上个世纪\"绿色能源\"一词的演变）偷换概念，原文讨论的是\"environmentalist\"一词的演变，而非\"green energy\"，且时间表述也不准确。",
+    "tip": "注意因果关系的完整性，不要选只涉及一方面的选项。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The opposing side agrees that renewables are crucial, but says society needs an amount of power available to meet consumers' basic demands when the sun isn't shining and the wind isn't blowing. Nuclear energy, being far cleaner than oil, gas and coal, is a natural option",
+    "why": "原文第3段描述了purists的对立方的观点：他们认可可再生能源至关重要，但指出在没有阳光和风力时，社会需要其他电力满足基本需求。紧接着指出核能远比化石燃料清洁，是一个天然的选择。C选项\"在必要时选择核能\"准确概括了这一主张。",
+    "traps": "A（完全且唯一地依赖可再生能源）是purists自身的立场，而非其对手的观点，属于张冠李戴；B（交替使用化石燃料和绿色能源）原文未提及交替使用，属于无中生有；D（限制人们的非基本消费）原文只说满足basic demands，并未主张限制非基本消费，属于曲解原文。",
+    "tip": "注意题目问的是\"opponents\"而非purists本身的观点。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "The achievability of universal 100% renewability is similarly contentious. Cities such as Burlington, Vermont, have been \"100% renewable\" for years. But these cities often have small populations, occasionally still rely on fossil fuel energy",
+    "why": "原文第6段首句提出论点：全球实现100%可再生能源的可行性同样存在争议。随后以Burlington等城市为例进行论证，指出这些城市人口少、偶尔仍依赖化石燃料、本身拥有丰富可再生资源，说明它们的成功不具有普遍代表性。A选项准确概括了\"全世界完全依赖可再生能源这一目标是否可实现是有争议的\"这一核心论点。",
+    "traps": "B（大城市是否拥有可立即利用的可再生资源存在争议）偷换了论证对象，原文讨论的是小城市的例子能否推广至全球，而非大城市本身的资源问题；C（依靠可再生能源运转的城市是否具有可持续水力发电能力）混淆了城市与国家层面的论述；D（传统化石燃料能否在全球彻底取消存在争议）虽有一定关联，但偏离了段落核心论点——100%可再生能源的可行性。",
+    "tip": "例证题要回到例子所服务的论点句去找答案。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Germany stands as the best case study for a large, industrialized country pushing into green energy.",
+    "why": "原文第7段首句明确指出：德国是大型工业化国家推进绿色能源的\"最佳案例研究\"。B选项\"它代表了一个主要工业化国家推广绿色能源的好范例\"几乎是该句的同义转述，best case study对应good example，large industrialized country对应major industrialized country。",
+    "traps": "A（在过去二十年间将风能和太阳能发电量提高了四倍）时间和倍数均有误，原文说的是自2010年以来增长了400%（即增加到原来的五倍多），且时间段约为十年而非二十年；C（依靠可再生能源产生其一半以上的电力）原文说2019年是46%，不到一半，属于数字篡改；D（成功实现了默克尔制定的能源转型目标）原文后文明确指出进展已停滞，减排低于欧盟平均水平，并未成功。",
+    "tip": "有数字的选项要仔细核实原文中的具体数据和时间。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Lagging grid infrastructure struggles to transport this overabundance of green energy from Germany's north to its industrial south, meaning many factories still run on coal and gas.",
+    "why": "原文第8段指出\"滞后的电网基础设施难以将过剩的绿色能源从北部输送到工业化的南部\"。A选项\"其电网基础设施的容量落后于绿色能源的发展\"准确概括了这一信息，lagging对应fallen behind，grid infrastructure直接对应。",
+    "traps": "B（白天绿色能源过剩迫使发电厂暂停运营）原文说的是迫使电力公司付费让客户用电，而非发电厂停运，属于偷换对象；C（工业化的南部习惯于用传统能源运营工厂）原文说南部工厂仍用煤气是因为电网基础设施跟不上，而非因为\"习惯\"，因果关系被篡改；D（可再生能源供应在夜间和白天都不稳定）原文说夜间无法生产、白天过载电网，两种情况不同，D将其简单归为\"不稳定\"过于笼统，且并非进展停滞的直接原因表述。",
+    "tip": "注意区分原因与结果，选项中偷换因果关系是常见陷阱。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "combat",
+    "cn": "v. 对抗，与……作斗争"
+   },
+   {
+    "w": "strand",
+    "cn": "n. （思想、计划等的）方面，部分"
+   },
+   {
+    "w": "purist",
+    "cn": "n. 纯粹主义者"
+   },
+   {
+    "w": "contentious",
+    "cn": "adj. 有争议的，引起争论的"
+   },
+   {
+    "w": "at one's disposal",
+    "cn": "phr. 供某人使用，由某人支配"
+   },
+   {
+    "w": "hydroelectric",
+    "cn": "adj. 水力发电的"
+   },
+   {
+    "w": "phase out",
+    "cn": "phr. 逐步淘汰，逐步停止"
+   },
+   {
+    "w": "phase in",
+    "cn": "phr. 逐步引入，逐步采用"
+   },
+   {
+    "w": "overwhelm",
+    "cn": "v. 使不堪重负，压倒"
+   },
+   {
+    "w": "overabundance",
+    "cn": "n. 过多，过剩"
+   },
+   {
+    "w": "carbon neutrality",
+    "cn": "n. 碳中和"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The opposing side agrees that renewables are crucial, but says society needs an amount of power available to meet consumers' basic demands when the sun isn't shining and the wind isn't blowing.",
+    "cn": "对立的一方同意可再生能源至关重要，但表示社会需要一定量的可用电力，以便在阳光不充足、风力不够时满足消费者的基本需求。",
+    "note": "主句为并列结构agrees...but says...；says后接宾语从句；从句中含when引导的时间状语从句；available为后置定语修饰power。"
+   },
+   {
+    "en": "Lagging grid infrastructure struggles to transport this overabundance of green energy from Germany's north to its industrial south, meaning many factories still run on coal and gas.",
+    "cn": "滞后的电网基础设施难以将这些过剩的绿色能源从德国北部输送到工业化的南部，这意味着许多工厂仍然依赖煤炭和天然气运行。",
+    "note": "主语为Lagging grid infrastructure，struggles to为谓语；meaning引导现在分词短语作结果状语；from...to...表示方向。"
+   },
+   {
+    "en": "The instability of renewables doesn't just mean energy is often not produced at night, but also that solar and wind can overwhelm the grid during the day, forcing utilities to pay customers to use their electricity.",
+    "cn": "可再生能源的不稳定性不仅意味着夜间通常无法发电，还意味着太阳能和风能可能在白天对电网造成过度负荷，迫使电力公司付费让客户用电。",
+    "note": "not just...but also...构成并列结构；mean后接两个that宾语从句（第一个that省略）；forcing引导现在分词短语作结果状语。"
+   }
+  ]
+ }
+}

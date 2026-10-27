@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "086191ae943b__reading__2",
+ "examId": "086191ae943b",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 6 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:58:09.817Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61192,
+ "usage": {
+  "prompt_tokens": 1937,
+  "completion_tokens": 4009,
+  "total_tokens": 5946,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1937,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4009,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1937,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "变异性对学习与泛化的关键作用",
+  "gist": "文章围绕\"变异性\"（variability）对学习新技能的重要性展开，指出在多变条件下练习虽然初期较慢但更有利于泛化。研究者Raviv团队综述了150多项跨领域研究，梳理出至少四种变异性类型但尚未确定哪种最有效，并探讨了变异性促进学习的三种理论解释，最后呼吁更多研究关注该课题。",
+  "structure": [
+   "第1-2段：以网球发球和婴儿学范畴为例引出变异性促进泛化的核心观点",
+   "第3-5段：介绍Raviv团队的综述研究及四种变异性类型",
+   "第6-9段：讨论变异性影响学习的条件与三种理论解释",
+   "第10-11段：阐述变异性对日常生活的广泛影响并展望未来研究"
+  ],
+  "difficulty": "中等",
+  "translation": "变异性对学习新技能至关重要。以学习网球发球为例，你是否应该始终在球场上同一位置练习，并瞄准同一点？虽然在更多变的条件下练习起初会更慢，但最终很可能会使你成为更好的网球运动员。这是因为变异性能更好地促进所学内容的泛化。\n\n这一原则在许多领域中都有体现，包括言语知觉和范畴学习。例如，如果婴儿只接触吉娃娃而不是许多不同种类的狗，他们将难以学会\"狗\"这个范畴。\n\n\"这个基本原则有十多个不同的名称，\"最近一项研究的资深研究者利莫尔·拉维夫说。\"从变异性较低的输入中学习通常速度较快，但可能无法泛化到新的刺激。\"\n\n为了识别关键模式并理解变异性效应的内在原理，拉维夫和她的同事综述了150多项关于不同领域变异性与泛化的研究，涵盖计算机科学、语言学、分类、视觉感知和正规教育。\n\n研究人员发现，在各项研究中，\"变异性\"一词至少可以指四种不同类型的变异性，例如集合大小和安排方式。\"这四种变异性从未被直接比较过——这意味着我们目前不知道哪种对学习最有效，\"拉维夫说。\n\n变异性的影响取决于它是否与任务相关。但根据'宫城先生原则'，练习看似不相关的技能实际上可能有益于其他技能的学习。\n\n但为什么变异性会影响学习和泛化呢？一种理论认为，更多变的输入可以突显任务的哪些方面是相关的，哪些是不相关的。\n\n另一种理论认为，更大的变异性会带来更广泛的泛化。这是因为变异性能更好地代表现实世界，包括非典型的例子。\n\n第三个原因与记忆运作的方式有关：当训练具有变异性时，学习者被迫主动重建他们的记忆。\n\n\"理解变异性的影响对我们日常生活的方方面面都很重要。除了影响我们学习语言、运动技能和范畴的方式之外，它甚至对我们的社交生活也有影响，\"拉维夫解释说。\"例如，面孔识别受到人们是在小社区还是在大社区中长大的影响。童年时期接触的面孔越少，与面孔记忆能力下降有关。\"\n\n\"我们希望这项工作能激发人们的好奇心，并促进该课题的更多研究，\"拉维夫总结道。\"我们的论文提出了许多悬而未决的问题。我们能否在大脑之外发现变异性的类似效应，例如在免疫系统中？\"",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "For instance, infants will struggle to learn the category \"dog\" if they are only exposed to Chihuahuas, instead of many different kinds of dogs.",
+    "why": "原文明确使用了\"struggle to learn\"（难以学会），说明婴儿如果只接触吉娃娃，就会在学习\"狗\"这个范畴时遇到困难。A选项\"encounter some degree of difficulty\"（遇到一定程度的困难）是对\"struggle\"的同义改写，逻辑完全吻合。",
+    "traps": "B选项\"先尝试给其他物体分类\"在原文中毫无依据，属于无中生有。C选项\"偏好吉娃娃胜过其他狗种\"偷换了原文的逻辑，原文讨论的是学习范畴的困难而非偏好。D选项\"在各种条件下想象吉娃娃\"将前文的variable conditions错误嫁接到婴儿学习语境中，属于张冠李戴。",
+    "tip": "注意同义替换：struggle = encounter difficulty，是六级常考改写手法。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "These four kinds of variability have never been directly compared—which means that we currently don't know which is most effective for learning",
+    "why": "原文Raviv说四种变异性\"从未被直接比较\"，因此\"我们目前不知道哪种对学习最有效\"。D选项\"which of them is most conducive to learning is yet to be identified\"（哪种最有利于学习尚待确定）是对\"don't know which is most effective for learning\"的精准同义改写：conducive to = effective for，yet to be identified = currently don't know。",
+    "traps": "A选项将\"most effective for learning\"偷换为\"most relevant to the task at hand\"，原文讨论的是对学习的有效性而非与具体任务的关联性。B选项\"影响学习的原因远未被理解\"混淆了后文三种理论解释的内容，且程度夸大。C选项\"为何从未被直接比较仍是谜\"曲解原文，原文只是陈述事实并指出其后果，并未追问未比较的原因。",
+    "tip": "注意区分\"哪种最有效\"与\"哪种最相关\"，六级常用近义词偷换制造干扰。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "A third reason has to do with the way memory works: when training is variable, learners are forced to actively reconstruct their memories.",
+    "why": "文中第三种理论指出，当训练具有变异性时，学习者\"被迫主动重建记忆\"（forced to actively reconstruct their memories）。B选项\"compelled to reorganise their memories\"是精准的同义替换：compelled = forced，reorganise = reconstruct。两者都表达了变异性训练迫使学习者重新组织记忆的含义。",
+    "traps": "A选项\"学习者将多变训练视为真实世界的典型\"混淆了第二种理论（更好地代表真实世界），且\"regard as typical\"偏离原文含义。C选项对应的是第一种理论（突出相关方面），并非题干所问的\"one of the theories\"中与B对应的第三种理论，但C本身也是合理的表述，只是题目问的答案是B对应的第三种理论。D选项\"专注相关技能而非浪费时间在不相关技能上\"无中生有，与Mr. Miyagi原则所述恰好相反。",
+    "tip": "文中列举多种理论时，注意每种理论的对应关系，防止张冠李戴。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "face recognition is affected by whether people grew up in a small community or in a larger community. Exposure to fewer faces during childhood is associated with diminished face memory.",
+    "why": "原文明确指出面孔识别\"受到人们是在小社区还是大社区中长大的影响\"，即社区的大小影响面孔识别能力。D选项\"The size of the community people grow up in impacts their face recognition ability\"是对原文的忠实概括，size of community对应small/larger community，impacts对应is affected by。",
+    "traps": "A选项\"小社区长大的人容易记住熟悉面孔\"是合理推测但原文并未如此表述，原文说的是小社区接触面孔少导致面孔记忆减弱，属于曲解原文。B选项将\"对社交生活有影响\"偷换为\"对社交生活方方面面有显著影响\"，且将面孔识别等同于整体影响，以偏概全。C选项\"大社区长大的人能轻松识别任何个体面孔\"过度推断，原文只说大社区接触面孔多有利于面孔记忆，并非能识别\"任何\"面孔，any过于绝对。",
+    "tip": "注意选项中的绝对词如any、every，往往是过度推断的标志。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "We hope this work will spark people's curiosity and generate more work on the topic",
+    "why": "原文Raviv总结说\"我们希望这项工作能激发人们的好奇心，并促进该课题的更多研究\"。C选项\"Arouse people's interest in variability and stimulate more research on the topic\"是精准的同义改写：arouse interest = spark curiosity，stimulate more research = generate more work，完全对应原文表述。",
+    "traps": "A选项\"突出任务的相关和不相关方面\"是前文第一种理论的内容，并非Raviv对未来研究的期望。B选项\"在教育中运用变异性原则教授不相关技能\"虽与Mr. Miyagi原则有关，但原文结尾未表达此意愿。D选项\"将变异性原则应用于免疫系统等领域\"虽然原文提到了免疫系统，但那是以疑问句形式提出的开放性问题，并非Raviv明确的希望或计划。",
+    "tip": "结尾段的展望题要区分\"明确期望\"和\"提出的开放性问题\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "variability",
+    "cn": "n. 变异性，可变性"
+   },
+   {
+    "w": "generalisation",
+    "cn": "n. 泛化，概括"
+   },
+   {
+    "w": "perception",
+    "cn": "n. 感知，知觉"
+   },
+   {
+    "w": "stimuli",
+    "cn": "n. 刺激物（stimulus的复数）"
+   },
+   {
+    "w": "categorisation",
+    "cn": "n. 分类，归类"
+   },
+   {
+    "w": "scheduling",
+    "cn": "n. 安排方式，时间规划"
+   },
+   {
+    "w": "reconstruct",
+    "cn": "v. 重建，重构"
+   },
+   {
+    "w": "diminished",
+    "cn": "adj. 减少的，削弱的"
+   },
+   {
+    "w": "conducive",
+    "cn": "adj. 有利于的，有助于的"
+   },
+   {
+    "w": "atypical",
+    "cn": "adj. 非典型的，不典型的"
+   },
+   {
+    "w": "underlying",
+    "cn": "adj. 潜在的，根本的"
+   },
+   {
+    "w": "spark",
+    "cn": "v. 激发，引发"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Although practising in more variable conditions will be slower at first, it will likely make you a better tennis player in the end.",
+    "cn": "虽然在更多变的条件下练习起初会更慢，但最终它很可能会使你成为更好的网球运动员。",
+    "note": "although引导让步状语从句，主句用will likely表推测；at first与in the end形成时间转折对比，突出变异性训练的长期优势。"
+   },
+   {
+    "en": "For example, face recognition is affected by whether people grew up in a small community or in a larger community.",
+    "cn": "例如，面孔识别受到人们是在小社区还是在较大社区中长大的影响。",
+    "note": "主句为被动语态，by后接whether...or...引导的名词性从句作介词宾语，表示两种成长环境的对比。"
+   },
+   {
+    "en": "To identify key patterns and understand the underlying principles of variability effects, Raviv and her colleagues reviewed over 150 studies on variability and generalisation across fields, including computer science, linguistics, categorisation, visual perception and formal education.",
+    "cn": "为了识别关键模式并理解变异性效应的内在原理，拉维夫和她的同事综述了150多项关于不同领域变异性与泛化的研究，涵盖计算机科学、语言学、分类、视觉感知和正规教育。",
+    "note": "不定式To identify...and understand...作目的状语前置；主句主干为Raviv and her colleagues reviewed studies；including后接五个并列名词短语作同位补充说明。"
+   }
+  ]
+ }
+}

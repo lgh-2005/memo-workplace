@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "b130a5541fb7__writing__all",
+ "examId": "b130a5541fb7",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2020 年 12 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:30:27.666Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43587,
+ "usage": {
+  "prompt_tokens": 691,
+  "completion_tokens": 2785,
+  "total_tokens": 3476,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 691,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2785,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 691,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作：围绕\"为什么应鼓励学生培养创造力\"展开论述，要求150至200词，需包含明确观点与充分论证。",
+    "outline": [
+     "开篇引出话题，明确提出观点：鼓励学生培养创造力至关重要。",
+     "从个人成长和社会进步两个层面分别阐述培养创造力的意义，辅以具体例证或道理论证。",
+     "总结全文，重申观点，并提出对教育机构或学生自身的建议。"
+    ],
+    "sample": "In an era characterized by rapid technological advancement and fierce global competition, it is of paramount importance that students be encouraged to develop creativity.\n\nFirst and foremost, creativity serves as a driving force behind personal growth. Students who cultivate creative thinking are better equipped to approach problems from multiple perspectives, which not only enhances their academic performance but also prepares them for the complexities of real-world challenges. Moreover, creative individuals tend to demonstrate greater adaptability and resilience when confronted with unfamiliar situations, giving them a competitive edge in the job market.\n\nFurthermore, fostering creativity among students is essential for societal progress. History has repeatedly shown that groundbreaking innovations—from the invention of the printing press to the development of artificial intelligence—originated from creative minds. By nurturing students' creative potential, we are essentially investing in the future prosperity and competitiveness of our society as a whole.\n\nIn conclusion, encouraging students to develop creativity yields remarkable benefits on both individual and collective levels. Educational institutions should therefore integrate more creativity-oriented activities into their curricula, thereby empowering students to become innovative thinkers and capable problem-solvers.",
+    "phrases": [
+     {
+      "en": "be of paramount importance",
+      "cn": "至关重要；比 very important 更正式，适用于议论文开篇强调意义"
+     },
+     {
+      "en": "serve as a driving force behind",
+      "cn": "充当……的驱动力；用于论述某事物对另一事物的推动作用"
+     },
+     {
+      "en": "be better equipped to do sth.",
+      "cn": "更有能力做某事；比 can better do 更地道，体现充分准备"
+     },
+     {
+      "en": "from multiple perspectives",
+      "cn": "从多角度；常用于论证创造性思维的优势"
+     },
+     {
+      "en": "demonstrate greater adaptability and resilience",
+      "cn": "展现出更强的适应力和韧性；高分名词搭配，适用于能力描写"
+     },
+     {
+      "en": "when confronted with",
+      "cn": "当面对……时；比 when facing 更书面，过去分词作状语"
+     },
+     {
+      "en": "groundbreaking innovations",
+      "cn": "开创性的创新；形容具有划时代意义的成果"
+     },
+     {
+      "en": "nurture one's creative potential",
+      "cn": "培育某人的创造潜能；nurture 比 develop 更具文学色彩"
+     },
+     {
+      "en": "on both individual and collective levels",
+      "cn": "在个人和集体两个层面；用于总结段概括双重意义"
+     },
+     {
+      "en": "integrate...into their curricula",
+      "cn": "将……融入课程体系；curricula 为 curriculum 的复数，学术用词"
+     }
+    ],
+    "pitfalls": [
+     "全篇只喊口号而无具体论证或举例，内容空洞导致扣分",
+     "段落之间缺少逻辑连接词（如 moreover, furthermore），结构松散",
+     "主谓一致错误，如 creativity are 或 students develops",
+     "用词重复严重，反复使用 important / very good，缺乏词汇多样性",
+     "字数不足150词或超过200词，均可能被扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Creativity is very important for students.",
+      "better": "It is of paramount importance that students be encouraged to develop creativity.",
+      "note": "虚拟语气 + 高级形容词，语气更正式，句式更多样"
+     },
+     {
+      "plain": "Students can solve problems better.",
+      "better": "Students are better equipped to approach problems from multiple perspectives.",
+      "note": "be equipped to 搭配 from multiple perspectives，表达更精准地道"
+     },
+     {
+      "plain": "Creative students can find jobs more easily.",
+      "better": "Creative individuals tend to demonstrate greater adaptability, giving them a competitive edge in the job market.",
+      "note": "动名词短语作伴随状语，增加句式复杂度与信息密度"
+     },
+     {
+      "plain": "History shows that many inventions come from creative people.",
+      "better": "History has repeatedly shown that groundbreaking innovations originated from creative minds.",
+      "note": "现在完成时 + 高级形容词 groundbreaking，更具学术说服力"
+     },
+     {
+      "plain": "Schools should add more creative activities.",
+      "better": "Educational institutions should integrate more creativity-oriented activities into their curricula.",
+      "note": "integrate into + curricula 替代 add，用词更正式、更具学术色彩"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "It is of paramount importance that students be encouraged to develop creativity. — 用 be of paramount importance + 虚拟语气 that 从句开篇立论，气势强且语法高级。",
+   "Students who cultivate creative thinking are better equipped to approach problems from multiple perspectives. — 定语从句 + be equipped to do 结构，展示因果推理能力。",
+   "Creative individuals tend to demonstrate greater adaptability and resilience when confronted with unfamiliar situations. — 过去分词短语作时间状语，名词并列 adaptability and resilience 体现词汇深度。",
+   "By nurturing students' creative potential, we are essentially investing in the future prosperity of our society. — 介词短语 By doing 引导方式状语，invest in 暗喻手法升华主题。",
+   "Educational institutions should therefore integrate more creativity-oriented activities into their curricula, thereby empowering students to become innovative thinkers. — thereby + 现在分词表结果，句尾名词短语收束有力。"
+  ]
+ }
+}

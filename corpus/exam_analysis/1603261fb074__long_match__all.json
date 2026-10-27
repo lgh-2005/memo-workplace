@@ -1,0 +1,246 @@
+{
+ "schemaVersion": 1,
+ "id": "1603261fb074__long_match__all",
+ "examId": "1603261fb074",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2017 年 6 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:13:34.931Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33855,
+ "usage": {
+  "prompt_tokens": 923,
+  "completion_tokens": 1897,
+  "total_tokens": 2820,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 923,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1897,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 923,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国数学竞赛与高等数学教育资源",
+  "strategy": [
+   "先通读10条陈述句，标记高区分度名词与数字，如middle school、nonprofit、scholarships等",
+   "按专有名词、机构类型、人群特征等建立关键词索引，快速扫读各段首尾句定位",
+   "注意同义替换：如well-off families↔affluent households，crucial period↔critical stage",
+   "优先匹配含具体细节（费用、种族、免费等）的陈述句，再处理概括性强的题目",
+   "关注逻辑信号词如but、most、primarily等，它们往往对应原文中的转折或限定"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "中学阶段是一个关键时期，学生可能会对高等数学产生强烈兴趣。",
+    "keywords": [
+     "middle school",
+     "crucial period",
+     "keenly interested",
+     "advanced mathematics"
+    ],
+    "paraphrase": "陈述句中crucial period可能对应原文中的critical time/key stage；keenly interested可能被替换为deeply engaged/passionate about；advanced mathematics可替换为higher-level math。",
+    "tip": "定位Middle school和crucial/critical等关键词，锁定讨论中学阶段重要性的段落。"
+   },
+   {
+    "number": 37,
+    "answer": "A",
+    "cn": "精英高中数学竞赛正在美国各地吸引越来越多的关注。",
+    "keywords": [
+     "elite",
+     "high school math competitions",
+     "attracting more interest",
+     "United States"
+    ],
+    "paraphrase": "陈述句中attracting more interest可能对应原文growing popularity/gaining momentum；elite可能替换为top-tier/prestigious；throughout the United States可替换为across the nation/nationwide。",
+    "tip": "A段通常为引入话题段，定位elite math competitions和全国范围的增长趋势即可。"
+   },
+   {
+    "number": 38,
+    "answer": "I",
+    "cn": "数学圈为学生提供了接受大学教授高等数学训练的机会。",
+    "keywords": [
+     "math circles",
+     "access",
+     "advanced-math training",
+     "university professors"
+    ],
+    "paraphrase": "陈述句中math circles为专有概念，原文应直接出现；access to…training可能被改写为opportunity to receive instruction；university professors可替换为college faculty/academics。",
+    "tip": "直接扫读math circles这一专有名词，配合university professors快速定位I段。"
+   },
+   {
+    "number": 39,
+    "answer": "G",
+    "cn": "学生可以利用在线资源来学习解决数学问题。",
+    "keywords": [
+     "online resources",
+     "learn",
+     "solve math problems"
+    ],
+    "paraphrase": "陈述句中online resources可能对应原文中的digital platforms/internet-based tools/web resources；solve math problems可替换为work through mathematical challenges。",
+    "tip": "定位online/digital/internet等与网络学习相关的词汇，锁定G段。"
+   },
+   {
+    "number": 40,
+    "answer": "L",
+    "cn": "一个非营利组织运营的暑期项目已经帮助了许多资源不足的学生学习高等数学。",
+    "keywords": [
+     "summer program",
+     "nonprofit organization",
+     "underserved students",
+     "advanced math"
+    ],
+    "paraphrase": "陈述句中nonprofit organization为关键定位词；underserved students可能对应原文中的disadvantaged/underprivileged/low-income students；helped many可替换为benefited a large number of。",
+    "tip": "同时扫读nonprofit和underserved/disadvantaged，双重定位锁定L段。"
+   },
+   {
+    "number": 41,
+    "answer": "E",
+    "cn": "地方竞赛的获胜者将免费参加全国数学竞赛。",
+    "keywords": [
+     "winners",
+     "local contests",
+     "national math competition",
+     "for free"
+    ],
+    "paraphrase": "陈述句中for free可能对应原文中的at no cost/free of charge/without fees；local contests可替换为regional competitions；participate in可替换为advance to/compete in。",
+    "tip": "关注for free/free of charge以及local到national的晋级机制，快速定位E段。"
+   },
+   {
+    "number": 42,
+    "answer": "J",
+    "cn": "许多学校并没有将学术竞赛放在其优先事项列表的首位。",
+    "keywords": [
+     "schools",
+     "academic competitions",
+     "top",
+     "priority list"
+    ],
+    "paraphrase": "陈述句中don't place…at the top of their priority list可能对应原文中的not a priority/low on the agenda/lack emphasis on；academic competitions可替换为scholastic contests。",
+    "tip": "定位schools与priority/prioritize相关的否定表达，锁定J段中对学校态度的描述。"
+   },
+   {
+    "number": 43,
+    "answer": "B",
+    "cn": "精英高中数学竞赛的参赛者大多是来自富裕家庭的亚裔和白人学生。",
+    "keywords": [
+     "contestants",
+     "Asian and white",
+     "well-off families"
+    ],
+    "paraphrase": "陈述句中well-off families可能对应原文affluent/wealthy/privileged households；mostly Asian and white可替换为predominantly Asian and Caucasian；contestants可替换为participants/competitors。",
+    "tip": "种族构成与家庭经济背景是高区分度细节，直接扫读Asian、white和well-off/affluent定位B段。"
+   },
+   {
+    "number": 44,
+    "answer": "M",
+    "cn": "一些数学培训项目主要侧重于提高学生的数学成绩。",
+    "keywords": [
+     "math training programs",
+     "primarily focus",
+     "raising",
+     "math scores"
+    ],
+    "paraphrase": "陈述句中primarily focus on可能对应原文中的mainly aim at/are geared toward；raising math scores可替换为boosting test performance/improving grades；some为限定词，暗示并非所有项目都如此。",
+    "tip": "定位scores/grades/test performance等与成绩相关的词汇，配合training programs锁定M段。"
+   },
+   {
+    "number": 45,
+    "answer": "H",
+    "cn": "一些密集型暑期项目非常昂贵，但其中大多数提供奖学金。",
+    "keywords": [
+     "intensive summer programs",
+     "expensive",
+     "scholarships"
+    ],
+    "paraphrase": "陈述句中very expensive可能对应原文high cost/costly/pricey；scholarships可替换为financial aid/tuition assistance；but构成转折，原文也应有类似对比结构。",
+    "tip": "同时定位expensive/costly与scholarships/financial aid的转折关系，快速锁定H段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "keenly",
+    "cn": "adv. 强烈地，敏锐地"
+   },
+   {
+    "w": "elite",
+    "cn": "adj. 精英的，顶尖的"
+   },
+   {
+    "w": "contestants",
+    "cn": "n. 参赛者，竞争者"
+   },
+   {
+    "w": "well-off",
+    "cn": "adj. 富裕的，经济宽裕的"
+   },
+   {
+    "w": "underserved",
+    "cn": "adj. 资源不足的，服务匮乏的（常指弱势群体）"
+   },
+   {
+    "w": "nonprofit",
+    "cn": "adj./n. 非营利的；非营利组织"
+   },
+   {
+    "w": "intensive",
+    "cn": "adj. 密集的，集中的"
+   },
+   {
+    "w": "priority",
+    "cn": "n. 优先事项，重点"
+   },
+   {
+    "w": "scholarships",
+    "cn": "n. 奖学金（复数）"
+   },
+   {
+    "w": "primarily",
+    "cn": "adv. 主要地，首要地"
+   }
+  ]
+ }
+}

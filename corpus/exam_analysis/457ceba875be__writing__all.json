@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "457ceba875be__writing__all",
+ "examId": "457ceba875be",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2025 年 6 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:02:13.586Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 42662,
+ "usage": {
+  "prompt_tokens": 745,
+  "completion_tokens": 2975,
+  "total_tokens": 3720,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 745,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2975,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 745,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作：以给定首句开头，围绕\"正确且负责任地使用社交媒体\"展开论述，可评论、举例或结合个人经历，词数150-200词。",
+    "outline": [
+     "第一段：抄写题目给定首句，引出话题——社交媒体广泛使用的背景下，滥用可能带来严重后果，点明正确使用的必要性。",
+     "第二段：分两方面论证——一方面列举不当使用的危害（如虚假信息传播、网络霸凌）；另一方面说明负责任使用的积极作用（如公益活动、信息共享），形成对比论证。",
+     "第三段：总结呼吁——每位用户都有责任核实信息、尊重他人，只有培养数字素养和自律意识，才能真正发挥社交媒体的正面价值。"
+    ],
+    "sample": "As social media is used more and more extensively, there is a growing awareness of the importance of using it properly and responsibly. While these platforms offer unprecedented convenience for communication and information sharing, their misuse can lead to serious consequences that affect both individuals and society at large.\n\nTo begin with, irresponsible use of social media often results in the spread of misinformation. Unverified news and rumors can go viral within minutes, causing public panic and eroding trust in credible sources. Furthermore, cyberbullying has become a prevalent issue, with anonymous users posting hurtful comments that can inflict lasting psychological damage on victims, particularly teenagers. On the other hand, when used responsibly, social media serves as a powerful tool for positive change. For instance, charitable campaigns launched on platforms like WeChat and Weibo have successfully raised millions for disaster relief, demonstrating the immense potential of collective online action.\n\nIn conclusion, every user bears the responsibility to verify information before sharing it and to treat others with respect online. Only by cultivating digital literacy and self-discipline can we truly harness the benefits of social media while minimizing its harms.",
+    "phrases": [
+     {
+      "en": "a growing awareness of",
+      "cn": "对……日益增长的意识；常用于引出社会趋势类话题"
+     },
+     {
+      "en": "lead to serious consequences",
+      "cn": "导致严重后果；因果论证中的高频搭配"
+     },
+     {
+      "en": "go viral",
+      "cn": "（信息）病毒式传播；描述网络现象的地道表达"
+     },
+     {
+      "en": "erode trust in",
+      "cn": "侵蚀对……的信任；学术语体，体现用词深度"
+     },
+     {
+      "en": "inflict lasting psychological damage on",
+      "cn": "对……造成持久的心理伤害；适用于论述网络暴力话题"
+     },
+     {
+      "en": "serve as a powerful tool for",
+      "cn": "充当……的有力工具；正面论证常用句式"
+     },
+     {
+      "en": "demonstrate the immense potential of",
+      "cn": "展现……的巨大潜力；用于举例后的总结提升"
+     },
+     {
+      "en": "bear the responsibility to do",
+      "cn": "承担做某事的责任；呼吁类结尾的核心表达"
+     },
+     {
+      "en": "Only by ... can we ...",
+      "cn": "只有通过……我们才能……；倒装句式，适合结尾升华"
+     },
+     {
+      "en": "harness the benefits while minimizing the harms",
+      "cn": "在将危害降至最低的同时发挥优势；辩证总结的高分表达"
+     }
+    ],
+    "pitfalls": [
+     "忘记抄写题目给定首句或擅自修改首句措辞，直接扣分",
+     "全文只谈危害不谈正确使用，论证片面，影响内容分",
+     "词数不足150或超过200，均可能被扣分",
+     "通篇使用简单句（SVO），缺乏从句和高级句式，语言分低",
+     "拼写错误频发，如 responsible 拼成 responsable，影响印象分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Social media has many problems.",
+      "better": "The misuse of social media can lead to serious consequences that affect both individuals and society at large.",
+      "note": "用具体主语misuse替代笼统说法，并用定语从句扩展，信息量更大更精准"
+     },
+     {
+      "plain": "People share fake news on the Internet.",
+      "better": "Unverified news and rumors can go viral within minutes, causing public panic and eroding trust in credible sources.",
+      "note": "使用go viral等地道词汇加现在分词短语做结果状语，表达更生动学术"
+     },
+     {
+      "plain": "We should use social media in a good way.",
+      "better": "Only by cultivating digital literacy and self-discipline can we truly harness the benefits of social media while minimizing its harms.",
+      "note": "使用Only by引导的倒装句加while对比结构，句式高级且逻辑严密"
+     },
+     {
+      "plain": "Social media can help people do good things.",
+      "better": "Social media serves as a powerful tool for positive change when used responsibly.",
+      "note": "serve as替代help do，加条件状语从句省略形式，语体更正式"
+     },
+     {
+      "plain": "Everyone should check the news before sharing.",
+      "better": "Every user bears the responsibility to verify information before sharing it and to treat others with respect online.",
+      "note": "bear the responsibility比should更正式，并列不定式结构使内容更充实"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only by cultivating digital literacy and self-discipline can we truly harness the benefits of social media while minimizing its harms. —— 只有培养数字素养与自律意识，我们才能在降低危害的同时真正发挥社交媒体的优势。（倒装+while对比，结尾升华首选）",
+   "Unverified news and rumors can go viral within minutes, causing public panic and eroding trust in credible sources. —— 未经核实的新闻和谣言可在数分钟内病毒式传播，引发公众恐慌并侵蚀人们对权威信源的信任。（现在分词结果状语+并列动名词，一句话浓缩两层危害）",
+   "Cyberbullying has become a prevalent issue, with anonymous users posting hurtful comments that can inflict lasting psychological damage on victims. —— 网络霸凌已成为普遍问题，匿名用户发布的恶意评论会对受害者造成持久的心理伤害。（with复合结构+定语从句，描写具体且层次清晰）",
+   "Every user bears the responsibility to verify information before sharing it and to treat others with respect online. —— 每位用户都有责任在分享信息前加以核实，并在网上尊重他人。（并列不定式+before动名词，呼吁有力且结构工整）",
+   "Charitable campaigns launched on social platforms have successfully raised millions for disaster relief, demonstrating the immense potential of collective online action. —— 在社交平台上发起的公益活动已成功为赈灾筹集数百万善款，展现了集体网络行动的巨大潜力。（过去分词前置定语+现在分词结果状语，举例论证的范本句）"
+  ]
+ }
+}

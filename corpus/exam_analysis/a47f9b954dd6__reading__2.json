@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "a47f9b954dd6__reading__2",
+ "examId": "a47f9b954dd6",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 3 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:49:09.141Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 50160,
+ "usage": {
+  "prompt_tokens": 1789,
+  "completion_tokens": 3524,
+  "total_tokens": 5313,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1789,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3524,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1789,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "饮食多样性建议可能导致肥胖",
+  "gist": "文章指出，长期以来公共健康建议人们追求饮食多样性，但美国心脏协会的新研究发现，饮食多样性与摄入更多热量及肥胖正相关。原因之一是\"饮食多样性\"缺乏统一定义。研究者建议食用有限种类的健康食物，同时限制甜食和红肉的摄入。",
+  "structure": [
+   "第一段：引出传统饮食建议与新研究的矛盾发现",
+   "第二段：解释矛盾原因——饮食多样性定义不清",
+   "第三段：Dr. Rao的经验佐证及研究具体结论",
+   "第四段：研究者提出新的饮食建议"
+  ],
+  "difficulty": "中等",
+  "translation": "数十年来，在美国及其他地方，建议人们通过尝试吃各种食物来追求饮食多样性，一直是一项基本的公共健康建议。然而，现在专家们警告说，追求饮食多样性实际上可能导致人们摄入更多热量，从而导致肥胖。一个问题是，人们对\"多样性\"的理解可能与营养学家的本意不同。美国心脏协会开展的新研究突出了这一问题。研究人员审查了所有已发表的与饮食多样性相关的证据，发现饮食多样性与健康食物和不健康食物摄入量增加之间存在相关性。这对肥胖问题有影响，因为研究人员发现，饮食多样性越高的人群中，肥胖的患病率越高。\n\n这项新研究的一位作者解释说，他们的发现与标准的饮食建议相矛盾，因为全世界大多数膳食指南都包含了要吃多种食物的建议。但这一建议似乎并没有得到科学的支持，可能因为人们对\"饮食多样性\"的含义几乎没有共识，它没有被清晰一致地定义。一些专家通过计算所吃食物组别的数量来衡量饮食多样性，另一些人则关注热量在各种食物中的分布，还有一些人衡量所吃食物之间的差异程度。\n\n尽管这项新研究的发现与标准的饮食建议相矛盾，但对于参与研究的所有研究者来说，这些发现并不令人意外。该研究作者之一Rao博士指出，在肥胖领域工作20年后，他观察到生活方式和饮食规律固定的人往往比饮食种类繁多的人更瘦更健康。这些经验性证据与研究结论相吻合：研究没有发现饮食多样性能促进健康体重或最佳饮食模式的证据，且有有限的证据表明，吃各种食物实际上与摄入更多热量、不良饮食模式和体重增加有关。此外，有一些证据表明，单餐中更多的食物选择可能会延迟人们的饱腹感，并实际上增加他们的进食量。\n\n基于研究发现，研究人员建议饮食由有限种类的健康食物组成，如蔬菜、水果、谷物和家禽。他们还建议人们同时努力限制甜食、糖和红肉的摄入。然而，研究人员强调，他们的饮食建议并不意味着饮食多样性永远不好，在过去，以天然、未加工食物为主的多样化饮食可能实际上是非常有益的。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The suggestion that people should aim for dietary diversity by trying to eat a variety of foods has been a basic public health recommendation for decades in the United States and elsewhere.",
+    "why": "文章开篇第一句明确指出，数十年来建议人们追求饮食多样性（dietary diversity），即通过尝试吃各种食物（a variety of foods），这一直是基本的公共健康建议。C选项\"People should diversify what they eat\"（人们应使饮食多样化）是对原文的准确同义改写。",
+    "traps": "A\"培养健康饮食习惯\"过于笼统，原文具体指的是饮食多样性，属于偷换概念；B\"均衡饮食\"与\"多样化饮食\"不同，原文未提及balanced diet，属于无中生有；D\"限制热量摄入以避免肥胖\"是新研究的发现而非传统建议，属于张冠李戴。",
+    "tip": "注意区分传统建议与新研究结论，定位到首句即可。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Researchers reviewed all the evidence published related to dietary diversity and saw a correlation between dietary diversity and a greater intake of both healthy and unhealthy foods.",
+    "why": "原文明确指出研究人员发现饮食多样性与健康食物和不健康食物的更大摄入量之间存在相关性，即追求饮食多样性的人总体上倾向于吃得更多。A选项\"People seeking dietary diversity tend to eat more\"准确概括了这一发现。",
+    "traps": "B\"大食量者更容易超重\"虽然有道理但并非研究发现的重点，研究关注的是饮食多样性与摄入量的关系，属于因果偷换；C\"饮食多样性与健康正相关\"与研究结论相反，属于反向干扰；D\"不健康食物更容易导致体重增加\"原文未做此比较，属于无中生有。",
+    "tip": "注意题目问的是研究发现，需找到研究结论的核心表述。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "this advice does not seem to be supported by science, possibly because there is little agreement about the meaning of \"dietary diversity,\" which is not clearly and consistently defined.",
+    "why": "第二段明确解释了矛盾的原因：该建议似乎没有得到科学支持，可能因为人们对\"饮食多样性\"的含义几乎没有共识（little agreement），该概念没有被清晰一致地定义。D选项\"There is little consensus on the definition of dietary diversity\"是对原文的精确同义改写，consensus对应agreement。",
+    "traps": "A\"全世界的膳食指南相互矛盾\"原文未提及指南之间的矛盾，原文说大多数指南都包含类似建议，属于曲解原文；B\"传统饮食智慧很少得到科学支持\"过度泛化，原文仅针对饮食多样性这一条建议，属于以偏概全；C\"研究者衡量营养的方法差异很大\"虽然原文提到了衡量方法不同，但这是定义不清的具体表现，非矛盾的根本解释。",
+    "tip": "题干问\"could help to explain\"，需找到因果解释关系。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "after 20 years of experience in the field of obesity, he has observed that people who have a regimented lifestyle and diet tend to be thinner and healthier than people with a wide variety of consumption.",
+    "why": "Rao博士观察到，生活方式和饮食规律固定的人往往比饮食种类繁多的人更瘦更健康。这意味着饮食多样化可能并不有利于健康。C选项\"Diversified food intake may not contribute to health\"（多样化的食物摄入可能无益于健康）是对该观察的准确推断。",
+    "traps": "A\"饮食多样性促进健康体重\"与Rao的观察完全相反，原文明确说研究找不到此类证据，属于反向干扰；B\"饮食模式与体重增加相伴而行\"过于模糊，未准确反映Rao的具体发现；D\"没有对最佳饮食模式的清晰定义\"并非Rao 20年研究的发现，属于无中生有。",
+    "tip": "注意从Rao的对比观察中提炼隐含结论。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "there is some evidence that a greater variety of food options in a single meal may delay people's feeling of fullness and actually increase how much they eat.",
+    "why": "原文第三段末尾指出，有证据表明单餐中更多的食物选择可能会延迟人们的饱腹感（delay people's feeling of fullness），并实际上增加他们的进食量。B选项\"They don't feel they have had enough until they overeat\"（他们直到吃过量才觉得够了）准确对应了延迟饱腹感导致过度进食这一结论。",
+    "traps": "A\"他们倾向于摄入更多甜食、糖和红肉\"原文建议限制这些食物，但未说饮食多样者特别倾向于吃这些，属于拼凑信息；C\"他们获取足够营养没有问题\"原文未讨论营养充足性问题，属于无中生有；D\"他们更可能吃对健康有益的食物\"原文说饮食多样性与健康和不健康食物摄入量均增加有关，并非只增加健康食物，属于片面理解。",
+    "tip": "注意文末的补充论据，常是出题点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dietary diversity",
+    "cn": "饮食多样性（名词短语）"
+   },
+   {
+    "w": "prevalence",
+    "cn": "流行率，患病率（n.）"
+   },
+   {
+    "w": "contradict",
+    "cn": "与……矛盾，反驳（v.）"
+   },
+   {
+    "w": "regimented",
+    "cn": "严格规律的，有组织的（adj.）"
+   },
+   {
+    "w": "anecdotal",
+    "cn": "基于个人经验的，轶事性的（adj.）"
+   },
+   {
+    "w": "optimal",
+    "cn": "最佳的，最优的（adj.）"
+   },
+   {
+    "w": "endorse",
+    "cn": "支持，赞同，认可（v.）"
+   },
+   {
+    "w": "endeavor",
+    "cn": "努力，尝试（v./n.）"
+   },
+   {
+    "w": "implication",
+    "cn": "影响，暗示，含义（n.）"
+   },
+   {
+    "w": "correlation",
+    "cn": "相关性，关联（n.）"
+   },
+   {
+    "w": "unprocessed",
+    "cn": "未加工的（adj.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Researchers reviewed all the evidence published related to dietary diversity and saw a correlation between dietary diversity and a greater intake of both healthy and unhealthy foods.",
+    "cn": "研究人员审查了所有已发表的与饮食多样性相关的证据，发现饮食多样性与健康食物和不健康食物摄入量的增加之间存在相关性。",
+    "note": "主语Researchers后接两个并列谓语reviewed和saw；published related to dietary diversity是后置定语修饰evidence；both...and...连接两个并列成分。"
+   },
+   {
+    "en": "This anecdotal evidence matches the conclusions of the study, which found no evidence that dietary diversity promotes healthy body weight or optimal eating patterns, and limited evidence that eating a variety of foods is actually associated with consuming more calories, poor eating patterns and weight gain.",
+    "cn": "这些经验性证据与研究结论相吻合：研究没有发现饮食多样性能促进健康体重或最佳饮食模式的证据，且仅有有限的证据表明吃各种食物实际上与摄入更多热量、不良饮食模式和体重增加有关。",
+    "note": "which引导非限制性定语从句修饰conclusions；found后接两个并列宾语no evidence和limited evidence；两个that分别引导同位语从句说明evidence的内容。"
+   },
+   {
+    "en": "Further, there is some evidence that a greater variety of food options in a single meal may delay people's feeling of fullness and actually increase how much they eat.",
+    "cn": "此外，有一些证据表明，单餐中更多的食物选择可能会延迟人们的饱腹感，并实际上增加他们的进食量。",
+    "note": "that引导同位语从句说明evidence内容；may后接两个并列动词delay和increase；how much they eat是宾语从句作increase的宾语。"
+   }
+  ]
+ }
+}

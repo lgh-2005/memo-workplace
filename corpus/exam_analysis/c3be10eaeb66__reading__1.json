@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "c3be10eaeb66__reading__1",
+ "examId": "c3be10eaeb66",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 6 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:55:01.627Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54290,
+ "usage": {
+  "prompt_tokens": 1827,
+  "completion_tokens": 3400,
+  "total_tokens": 5227,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1827,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3400,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1827,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "职场安全干预缺失的原因与对策",
+  "gist": "文章探讨了员工在目睹工作场所危险行为时不进行干预的原因，包括企业文化、旁观者效应、责任分散、恐惧心理及过往干预失败经历等因素，并指出胜任工人、主管及全体员工在保障职场安全方面各自应承担的干预责任。",
+  "structure": [
+   "第1-2段：提出问题，列举影响干预的三个因素",
+   "第3-4段：引入旁观者效应与责任分散心理机制",
+   "第5-6段：领导层不干预的恶果及恐惧等深层原因",
+   "第7-9段：提出解决方案，强调各层级的干预职责"
+  ],
+  "difficulty": "中等",
+  "translation": "员工能分辨是非，这一点是无可辩驳的。那么，为什么当看到有人在工作场所表现出冒险行为时，更多员工没有选择干预呢？\n\n影响人们是否干预的因素有很多。首先，他们需要能够察觉到一个危险情境正在发生。其次，公司文化需要让他们感到可以安心地表达意见。第三，他们需要具备有效沟通的技能来说出有意义的话。\n\n这不仅仅是一个职场问题，它在工作之外也是一个日益严重的问题。每天人们在街上目睹各种事件，却选择袖手旁观。这就是所谓的旁观者效应——目睹一个事件的人越多，该群体中任何人出手帮助受害者的可能性就越低。这背后的心理学机制被称为责任分散。基本上，人群越大，人们就越倾向于认为别人会处理这件事——这意味着在需要的时刻，没有人真正进行干预或采取行动。\n\n这种从众心理强大到足以让人们逃避已知的责任。但不仅仅是一线工人不在工作场所进行安全干预，也有主管同样不进行干预的情况。\n\n当一群员工看到不安全行为在领导层面没有得到处理时，这就创造了一个先例，即这类情况就应该这样处理，从而为所有人定义了安全文化。\n\n尽管工人们被鼓励在观察到不安全操作时进行干预，但实际干预的次数不到一半。恐惧是不干预的最终因素。人们害怕受到惩罚，害怕干预后必须承担更多工作。过去不成功的干预尝试是人们不进行干预的另一个重要因素——他们倾向于在未来所有类似情况中将干预行动推给其他人。\n\n在许多工作场所，必须任命有能力的工人。他们工作的一部分就是在工人执行任务时缺乏适当设备或条件不安全时进行干预。有能力的工人还必须在存在危险时叫停工作。\n\n主管也发挥着关键作用。即使不需要任命有能力的专人，主管也需要一套广泛的技能，不仅要识别和消除工作场所的危险，还要在团队内部建立一种支持干预和开放沟通的安全氛围。\n\n除了有能力的工人和主管之外，还有一点很重要，那就是教育组织中的每个人，无论你是指定的胜任专人、主管还是一线工人，当目睹可能的不安全行为时都有义务进行干预。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Second, the company's culture needs to make them feel safe to speak up.",
+    "why": "题目问工作场所中面对危险行为干预失败的因素之一是什么。原文第二段明确列出三个因素，其中第二点指出\"公司文化需要让员工感到可以安心地表达意见\"，言下之意是如果公司文化不利（unfavorable），员工就不会站出来干预。B选项\"Unfavorable workplace culture\"（不利的职场文化）正是对此的同义改写。",
+    "traps": "A项\"松散的监督方式\"，原文并未在影响干预的三个因素中提及监督方式；C项\"不可预见的风险\"是对原文\"see a risky situation beginning to unfold\"的曲解，原文说的是需要\"能看到\"风险，而非风险\"不可预见\"；D项\"受阻的沟通\"偷换概念，原文说的是员工需要具备沟通技能，而非沟通渠道被阻断。",
+    "tip": "注意区分\"缺乏某能力\"与\"某渠道被阻断\"的表述差异。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "词义句意题",
+    "locate": "Basically, the larger the crowd, the more people assume that someone else will take care of it—meaning no one effectively intervenes or acts in a moment of need.",
+    "why": "题目问\"责任分散\"的含义。原文紧接该术语后用Basically引出解释：人群越大，越多人以为别人会处理，结果没人真正干预。D选项\"人越多，就越少有人站出来干预\"精确概括了这一含义，是对原文解释句的高度浓缩。",
+    "traps": "A项\"人越多越需要担心个人安全\"无中生有，原文未提及个人安全担忧；B项\"越少有人冒险\"表述不完整且选项本身句意残缺（venture to后缺宾语），不构成完整释义；C项\"闲逛的人越多越需要被照顾\"完全偏离原文含义，属于张冠李戴。",
+    "tip": "词义句意题优先在术语出现的上下文中找作者的直接解释句。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "When a group of employees sees unsafe behavior not being addressed at a leadership level it creates the precedent that this is how these situations should be addressed, thus defining the safety culture for everyone.",
+    "why": "原文第五段指出，当员工看到领导层对不安全行为不予处理时，这就树立了一个先例，表明此类情况就该这样处理，从而为所有人定义了安全文化。言下之意，这种先例会导致以后再出现类似行为时也无人干预。A选项\"没人会在看到类似行为时进行干预\"准确反映了这一因果链。",
+    "traps": "B项\"每个人都将其视为处理危机的最简单方式\"，原文说的是树立先例定义文化，而非\"最简单方式\"，属于偷换概念；C项\"工人执行职责时须格外小心\"和D项\"工人只能自行处理紧急情况\"均为无中生有，原文未涉及这两点。",
+    "tip": "因果推理题需紧扣原文的逻辑链条，避免过度推断。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Fear is the ultimate factor in not intervening. There is a fear of penalty, a fear that they'll have to do more work if they intervene.",
+    "why": "题目问工人在看到不安全操作时不采取行动的最终原因。原文第六段明确指出\"恐惧是不干预的最终因素\"，随后列举了害怕受罚、害怕干预后要做更多工作。D选项\"Fear of having to do more work\"直接对应原文中\"a fear that they'll have to do more work if they intervene\"。",
+    "traps": "A项\"倾向于将行动推给他人\"是过去失败经历导致的后果，原文将其列为\"another strong contributing factor\"，而非\"ultimate factor\"；B项\"期待领导干预\"在该段未被提及；C项\"害怕被同事孤立\"属于无中生有，原文未涉及同事孤立。",
+    "tip": "注意题干中\"ultimate\"一词与原文的精确对应。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "supervisors need a broad set of skills to not only identify and alleviate workplace hazards but also build a safety climate within their team that supports intervening and open communication among them.",
+    "why": "题目问确保工作场所安全的关键是什么。原文第八段指出主管发挥关键作用，需要具备广泛的技能来识别和消除危险，更要在团队内建立支持干预和开放沟通的安全氛围。C选项\"主管创建一个有利于及时干预的安全环境\"正是对\"build a safety climate within their team that supports intervening\"的同义改写。",
+    "traps": "A项\"培训工人正确操作设备\"在原文中未提及，属于无中生有；B项\"严格处分表现出冒险行为的工人\"原文也未涉及纪律处分；D项\"主管与一线工人进行有效沟通\"只涉及沟通一个方面，不如C选项全面，且原文强调的是在团队内建立安全氛围而非单向沟通。",
+    "tip": "涉及\"critical\"等关键词时，回原文找对应的核心论述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "irrefutable",
+    "cn": "adj. 无可辩驳的，不可反驳的"
+   },
+   {
+    "w": "intervene",
+    "cn": "v. 干预，介入"
+   },
+   {
+    "w": "unfold",
+    "cn": "v. 展开，逐渐呈现"
+   },
+   {
+    "w": "bystander",
+    "cn": "n. 旁观者，局外人"
+   },
+   {
+    "w": "diffusion",
+    "cn": "n. 扩散，分散"
+   },
+   {
+    "w": "evade",
+    "cn": "v. 逃避，回避"
+   },
+   {
+    "w": "precedent",
+    "cn": "n. 先例，惯例"
+   },
+   {
+    "w": "defer",
+    "cn": "v. 推迟，推给（他人）"
+   },
+   {
+    "w": "alleviate",
+    "cn": "v. 减轻，缓解"
+   },
+   {
+    "w": "competent",
+    "cn": "adj. 有能力的，胜任的"
+   },
+   {
+    "w": "designate",
+    "cn": "v. 指定，指派"
+   },
+   {
+    "w": "obliged",
+    "cn": "adj. 有义务的，被迫的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "This is known as the bystander effect—the more people who witness an event, the less likely anyone in that group is to help the victim.",
+    "cn": "这就是所谓的旁观者效应——目睹一个事件的人越多，该群体中任何人出手帮助受害者的可能性就越低。",
+    "note": "破折号后为同位解释结构；the more...the less...为比较级对称结构，who引导定语从句修饰people。"
+   },
+   {
+    "en": "supervisors need a broad set of skills to not only identify and alleviate workplace hazards but also build a safety climate within their team that supports intervening and open communication among them.",
+    "cn": "主管需要一套广泛的技能，不仅要识别和消除工作场所的危险，还要在团队内部建立一种支持干预和开放沟通的安全氛围。",
+    "note": "not only...but also...连接两个并列不定式短语；that引导定语从句修饰safety climate。"
+   },
+   {
+    "en": "When a group of employees sees unsafe behavior not being addressed at a leadership level it creates the precedent that this is how these situations should be addressed, thus defining the safety culture for everyone.",
+    "cn": "当一群员工看到不安全行为在领导层面没有得到处理时，这就创造了一个先例，即这类情况就应该这样处理，从而为所有人定义了安全文化。",
+    "note": "When引导时间状语从句；that引导同位语从句解释precedent内容；thus defining为现在分词短语表结果。"
+   }
+  ]
+ }
+}

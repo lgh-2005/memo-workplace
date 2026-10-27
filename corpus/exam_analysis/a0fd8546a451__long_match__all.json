@@ -1,0 +1,259 @@
+{
+ "schemaVersion": 1,
+ "id": "a0fd8546a451__long_match__all",
+ "examId": "a0fd8546a451",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2016 年 12 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:08:38.059Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32267,
+ "usage": {
+  "prompt_tokens": 953,
+  "completion_tokens": 1812,
+  "total_tokens": 2765,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 953,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1812,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 953,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "各国在南极洲的竞争与资源争夺",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如Antarctica、resources、research等",
+   "圈出每句中的专有名词、数字、国家名（如Russia、China、America）作为优先定位线索",
+   "关注因果、转折等逻辑关系词，与段落中对应逻辑进行匹配",
+   "利用同义替换思维，将陈述句中的核心表达转化为可能的近义说法再扫读原文",
+   "先做含有明确定位词（国家名、数据）的题目，再处理概括性较强的题目"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "J",
+    "cn": "据中国官员称，他们在南极洲的活动更加重视科学研究。",
+    "keywords": [
+     "Chinese officials",
+     "Antarctica",
+     "scientific research",
+     "emphasis"
+    ],
+    "paraphrase": "陈述句使用lay greater emphasis on scientific research，原文J段中可能用focus more on / prioritize / stress science or research等表达进行同义替换，围绕中国官方对其南极活动的定位展开。",
+    "tip": "定位国家名China/Chinese officials，再匹配scientific research相关表述。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "由于俄罗斯的阻挠，创建世界上最大海洋保护区之一的努力失败了。",
+    "keywords": [
+     "ocean sanctuaries",
+     "Russia",
+     "obstruction",
+     "failed"
+    ],
+    "paraphrase": "陈述句用obstruction表示阻挠，原文C段可能用block、veto、oppose、prevent等词替换；ocean sanctuaries可能对应marine protected areas或marine reserves。",
+    "tip": "定位ocean sanctuaries/marine protected areas与Russia阻挠这一组合信息。"
+   },
+   {
+    "number": 38,
+    "answer": "E",
+    "cn": "俄罗斯在南极洲运营着数个监测站，正努力对抗美国在全球导航设施领域的主导地位。",
+    "keywords": [
+     "Russia",
+     "monitoring stations",
+     "America",
+     "navigational facilities"
+    ],
+    "paraphrase": "陈述句用counter America's dominance和worldwide navigational facilities，原文E段可能涉及GPS系统对抗、GLONASS等导航系统竞争，dominance可能被替换为superiority或leading position。",
+    "tip": "定位Russia+monitoring stations+navigational/GPS等导航相关词汇。"
+   },
+   {
+    "number": 39,
+    "answer": "G",
+    "cn": "据地质学家估计，南极洲拥有巨大的石油和天然气储量。",
+    "keywords": [
+     "geologists",
+     "Antarctica",
+     "oil",
+     "natural gas",
+     "reserves"
+    ],
+    "paraphrase": "陈述句用enormous reserves of oil and natural gas，原文G段可能用vast/huge deposits、fossil fuels、petroleum、hydrocarbon resources等进行同义替换。",
+    "tip": "定位geologists与oil and natural gas等能源类词汇即可快速锁定G段。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "cn": "据估计，南极洲拥有地球上最丰富的淡水储量。",
+    "keywords": [
+     "Antarctica",
+     "richest reserves",
+     "fresh water",
+     "earth"
+    ],
+    "paraphrase": "陈述句用boasts of the richest reserves of fresh water，原文D段可能用largest/greatest store of freshwater、holds most of the world's fresh water等表达进行替换。",
+    "tip": "定位fresh water这一核心关键词，该信息在全文中具有唯一性。"
+   },
+   {
+    "number": 41,
+    "answer": "I",
+    "cn": "对能源资源的需求可能迫使各方在南极条约到期之前重新谈判。",
+    "keywords": [
+     "energy resources",
+     "renegotiation",
+     "treaties",
+     "expiration"
+    ],
+    "paraphrase": "陈述句用compel renegotiation与before their expiration，原文I段可能用force/push revisiting the agreements、ahead of schedule、prior to expiry等表达进行替换。",
+    "tip": "定位renegotiation/treaties/expiration等条约相关词汇组合。"
+   },
+   {
+    "number": 42,
+    "answer": "B",
+    "cn": "许多国家正在相互竞争，以增加自己在南极洲的商业和战略影响力。",
+    "keywords": [
+     "racing",
+     "business",
+     "strategic influence",
+     "Antarctica"
+    ],
+    "paraphrase": "陈述句用racing against each other和business and strategic influence，原文B段可能用compete/vie for、commercial and geopolitical interests等表达替换，描述各国在南极的角力。",
+    "tip": "定位racing/compete与business and strategic influence的综合描述。"
+   },
+   {
+    "number": 43,
+    "answer": "H",
+    "cn": "南极洲恶劣的自然条件构成了资源开发的巨大障碍。",
+    "keywords": [
+     "harsh natural conditions",
+     "obstacles",
+     "exploitation",
+     "resources"
+    ],
+    "paraphrase": "陈述句用harsh natural conditions和huge obstacles to exploitation，原文H段可能用extreme/severe climate、barriers/challenges to extraction或development等表达替换。",
+    "tip": "定位harsh conditions与exploitation/obstacles的因果搭配。"
+   },
+   {
+    "number": 44,
+    "answer": "Q",
+    "cn": "由于来自许多国家的竞争，南极洲不再由传统的白人国家主导。",
+    "keywords": [
+     "competition",
+     "traditional white nations",
+     "dominated",
+     "no longer"
+    ],
+    "paraphrase": "陈述句用no longer dominated by traditional white nations，原文Q段可能用emerging nations replacing Western powers、shift from historically Caucasian/European dominance等替换表述。",
+    "tip": "定位white nations或传统西方国家不再主导这一转折性表述。"
+   },
+   {
+    "number": 45,
+    "answer": "L",
+    "cn": "美国科学家抱怨在南极洲的扩展缺乏足够的资金和设备。",
+    "keywords": [
+     "American scientists",
+     "complain",
+     "money",
+     "equipment",
+     "expansion"
+    ],
+    "paraphrase": "陈述句用complain about lack of sufficient money and equipment，原文L段可能用protest/lament insufficient funding/budget、inadequate resources/facilities等替换表达。",
+    "tip": "定位American scientists与complain/lack of money and equipment等抱怨类表述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sanctuaries",
+    "cn": "n. 保护区；庇护所"
+   },
+   {
+    "w": "obstruction",
+    "cn": "n. 阻挠；障碍"
+   },
+   {
+    "w": "dominance",
+    "cn": "n. 主导地位；支配"
+   },
+   {
+    "w": "navigational",
+    "cn": "adj. 导航的"
+   },
+   {
+    "w": "reserves",
+    "cn": "n. 储量；储备"
+   },
+   {
+    "w": "boasts of",
+    "cn": "v. 拥有（值得骄傲的事物）"
+   },
+   {
+    "w": "compel",
+    "cn": "v. 迫使；强迫"
+   },
+   {
+    "w": "renegotiation",
+    "cn": "n. 重新谈判"
+   },
+   {
+    "w": "expiration",
+    "cn": "n. 到期；届满"
+   },
+   {
+    "w": "exploitation",
+    "cn": "n. 开发；开采"
+   },
+   {
+    "w": "constitute",
+    "cn": "v. 构成；组成"
+   },
+   {
+    "w": "harsh",
+    "cn": "adj. 恶劣的；严酷的"
+   }
+  ]
+ }
+}

@@ -1,0 +1,255 @@
+{
+ "schemaVersion": 1,
+ "id": "fc33c1cb1401__long_match__all",
+ "examId": "fc33c1cb1401",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2025 年 12 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:03:45.240Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 36525,
+ "usage": {
+  "prompt_tokens": 1008,
+  "completion_tokens": 2283,
+  "total_tokens": 3291,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1008,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2283,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1008,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "何时该放弃、何时该坚持的决策智慧",
+  "strategy": [
+   "先通读10条陈述句，标记高辨识度专有名词、数字与核心概念词",
+   "利用题目中的信号词（如client、identity、data、control）快速扫读各段首尾句定位",
+   "注意同义替换：陈述句常用近义词改写原文，关注语义而非逐词匹配",
+   "按题号顺序与段落顺序大致正相关的规律缩小扫读范围",
+   "对于抽象概念题，关注段落中的总结句或观点句进行匹配"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "人们觉得自己对某事或某人的掌控力比实际更强，于是在本该放弃时反而更执着地追求下去。",
+    "keywords": [
+     "more control",
+     "committed",
+     "give up",
+     "pursuit"
+    ],
+    "paraphrase": "原文可能用 illusion of control（控制幻觉）或 overestimate their influence 等表达替换 feeling like they have more control；用 escalate commitment 替换 get more committed。",
+    "tip": "定位\"控制感\"与\"过度投入\"两个概念并存的段落。"
+   },
+   {
+    "number": 37,
+    "answer": "K",
+    "cn": "如果你把自己视为一个从不放弃的人，你最终可能会陷入自己的行动路线中无法脱身。",
+    "keywords": [
+     "never quits",
+     "identity",
+     "trapped",
+     "course of action"
+    ],
+    "paraphrase": "原文可能用 see yourself as a person who perseveres 替换 regard yourself as one who never quits；用 locked into / stuck in 替换 trapped。",
+    "tip": "聚焦\"永不放弃\"这一自我标签导致困境的段落。"
+   },
+   {
+    "number": 38,
+    "answer": "J",
+    "cn": "作者的一位客户发现很难放弃一个设计项目，她在该项目中已投入了大量时间和精力。",
+    "keywords": [
+     "client",
+     "design project",
+     "time and effort",
+     "hard to give up"
+    ],
+    "paraphrase": "原文应含具体案例，可能用 invested significant time and energy 替换 put in a lot of time and effort；用 struggled to walk away from 替换 found it hard to give up。",
+    "tip": "锁定含\"客户+设计项目\"具体实例的段落，专有名词最易定位。"
+   },
+   {
+    "number": 39,
+    "answer": "E",
+    "cn": "作者建议人们应该把注意力转向及时放弃所能带来的收益，以便继续前行。",
+    "keywords": [
+     "direct thoughts",
+     "gains of quitting",
+     "move on"
+    ],
+    "paraphrase": "原文可能用 focus on the benefits of letting go 替换 direct their thoughts to the gains of quitting；用 reframe quitting positively 来传达同一思想。",
+    "tip": "定位含\"放弃的好处/收益\"这一正面视角的建议性段落。"
+   },
+   {
+    "number": 40,
+    "answer": "M",
+    "cn": "做决定时，你最好征求那些在你的决定中利益牵涉较少的人的意见。",
+    "keywords": [
+     "ask for opinions",
+     "less stake",
+     "decision"
+    ],
+    "paraphrase": "原文可能用 seek advice from / consult 替换 ask for opinions；用 less invested / less personally involved 替换 have less stake。",
+    "tip": "定位涉及\"向旁观者或局外人征求建议\"的段落。"
+   },
+   {
+    "number": 41,
+    "answer": "I",
+    "cn": "对于将自身身份认同与所承担的事务联系在一起的人来说，放弃会让他们觉得自己的身份认同受到了威胁。",
+    "keywords": [
+     "identity",
+     "commitments",
+     "threatened",
+     "quitting"
+    ],
+    "paraphrase": "原文可能用 tie their sense of self to / define themselves by 替换 associating their identity with；用 feel like a personal attack / existential threat 替换 identity is threatened。",
+    "tip": "聚焦\"身份认同\"与\"放弃带来的威胁感\"共现的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "O",
+    "cn": "那些高度看重做出明智决定这一品质的人，在自己做了一个糟糕的决定时会感觉不好。",
+    "keywords": [
+     "wise decisions",
+     "quality",
+     "bad one",
+     "feel good"
+    ],
+    "paraphrase": "原文可能用 value sound judgment / prize good decision-making 替换 regard highly the quality of making wise decisions；用 uncomfortable / distressed 替换 do not feel good。",
+    "tip": "定位讨论\"决策质量\"与\"自我评价\"关系的段落，通常在文章末尾。"
+   },
+   {
+    "number": 43,
+    "answer": "C",
+    "cn": "最明智的领导者学会区分过早放弃和不理性地坚持。",
+    "keywords": [
+     "wisest leaders",
+     "distinguish",
+     "giving up too soon",
+     "sticking irrationally"
+    ],
+    "paraphrase": "原文可能用 know the difference between / tell apart 替换 distinguish；用 premature quitting 替换 giving up too soon；用 irrational persistence 替换 sticking with something irrationally。",
+    "tip": "定位含\"领导者\"及\"放弃与坚持之间平衡\"的段落，常出现在文章前部总论处。"
+   },
+   {
+    "number": 44,
+    "answer": "N",
+    "cn": "当人们考虑一项事业时，应该挖掘出可靠的数据，告诉他们成功的可能性有多大。",
+    "keywords": [
+     "endeavor",
+     "reliable data",
+     "how likely",
+     "succeed"
+    ],
+    "paraphrase": "原文可能用 base rate / objective statistics 替换 reliable data；用 probability of success / odds of achieving 替换 how likely they are to succeed；用 venture / undertaking 替换 endeavor。",
+    "tip": "定位强调\"用数据评估成功概率\"的段落。"
+   },
+   {
+    "number": 45,
+    "answer": "H",
+    "cn": "清楚地认识到什么在你的掌控之内、什么不在，对于做出该放弃还是该坚持的正确决定至关重要。",
+    "keywords": [
+     "clear view",
+     "in your control",
+     "vital",
+     "give up or stick it out"
+    ],
+    "paraphrase": "原文可能用 understand what you can and cannot influence 替换 clear view of what's in your control and what's not；用 critical / essential 替换 vital。",
+    "tip": "定位讨论\"可控与不可控因素\"及其对放弃决策重要性的段落。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "committed",
+    "cn": "adj. 投入的，坚定的"
+   },
+   {
+    "w": "pursuit",
+    "cn": "n. 追求，努力"
+   },
+   {
+    "w": "trapped",
+    "cn": "adj. 被困住的，陷入的"
+   },
+   {
+    "w": "course of action",
+    "cn": "n. 行动方针，行动路线"
+   },
+   {
+    "w": "stake",
+    "cn": "n. 利害关系，利益"
+   },
+   {
+    "w": "endeavor",
+    "cn": "n. 努力，事业（正式用语）"
+   },
+   {
+    "w": "irrationally",
+    "cn": "adv. 不理性地，非理性地"
+   },
+   {
+    "w": "distinguish",
+    "cn": "v. 区分，辨别"
+   },
+   {
+    "w": "stick it out",
+    "cn": "v. 坚持到底，熬过去"
+   },
+   {
+    "w": "dig out",
+    "cn": "v. 挖掘出，找出"
+   },
+   {
+    "w": "regard highly",
+    "cn": "v. 高度看重，重视"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 释义，改述"
+   }
+  ]
+ }
+}

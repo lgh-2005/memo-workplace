@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "54b6791812b2__reading__2",
+ "examId": "54b6791812b2",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2005 年考研英语真题（旧）",
+ "year": 2005,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:16:05.310Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59507,
+ "usage": {
+  "prompt_tokens": 1725,
+  "completion_tokens": 3533,
+  "total_tokens": 5258,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1725,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3533,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1725,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "以吸烟类比呼吁重视全球变暖",
+  "gist": "文章以吸烟危害争论为类比，指出当前全球变暖问题面临同样的拖延与质疑。作者批评白宫以\"需要更多研究\"为借口不采取行动，呼吁政府尽快通过立法推动环保措施，避免重蹈吸烟问题的覆辙。",
+  "structure": [
+   "第一段：回顾吸烟争论历史，引出类比话题",
+   "第二段：引述国家科学院报告，强调科学是最佳指南",
+   "第三段：指出全球变暖质疑者与吸烟质疑者如出一辙",
+   "第四段：批评白宫以研究代替行动的'分析瘫痪'",
+   "第五段：提出建议——推进立法与环保发电厂建设"
+  ],
+  "difficulty": "中等",
+  "translation": "你还记得那些年吗？科学家们一直主张吸烟会致命，但质疑者坚持认为我们并不确定。他们说证据不充分，科学不确定；反吸烟游说团体企图摧毁我们的生活方式，政府不应该插手干预。许多美国人相信了这些胡话，在三十多年间，大约一千万烟民过早地进入了坟墓。\n\n如今存在着令人不安的相似之处，科学家们一波又一波地试图唤醒我们关注日益严重的全球变暖威胁。最近一次是由白宫召集的国家科学院专家小组，告诉我们地球大气层确实在变暖，而且这个问题主要是人为造成的。其明确的信息是，我们应该行动起来保护自己。国家科学院院长布鲁斯·阿尔伯茨在该小组报告的序言中补充了这一关键观点：\"科学永远不会拥有所有答案。但科学确实为我们提供了关于未来的最佳可用指南，至关重要的是，我们的国家和整个世界应基于科学所能提供的、关于当前行为未来后果的最佳判断来制定重要政策。\"\n\n正如在吸烟问题上一样，现在来自各方的声音坚持认为关于全球变暖的科学研究尚不完整，在我们确定之前继续向空气中排放废气是没问题的。这是一个危险的游戏：等到百分之百的证据到位时，可能为时已晚。在风险显而易见且不断增大的情况下，谨慎的人们现在就应该购买一份保险。\n\n幸运的是，白宫开始关注这个问题了。但显而易见的是，总统的大多数顾问仍然没有认真对待全球变暖。他们没有提出行动计划，而是继续施压要求进行更多研究——这是一个典型的\"因分析而瘫痪\"的案例。\n\n为了做地球负责任的管理者，我们必须推进更深入的大气和海洋研究。但仅靠研究是不够的。如果政府不采取立法主动权，国会应该帮助开始制定保护措施。西弗吉尼亚州民主党参议员罗伯特·伯德提出的一项法案——为私营企业提供财政激励——是一个有前景的开端。许多人看到这个国家正准备建造大量新的发电厂来满足我们的能源需求。如果我们要保护大气层，至关重要的是这些新电厂必须是环保的。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "That the antismoking lobby was out to destroy our way of life and the government should stay out of the way?",
+    "why": "原文第一段列举吸烟支持者的论据，其中包括\"反吸烟游说团体企图摧毁我们的生活方式，政府不应干预\"。这意味着吸烟支持者认为吸烟是个人生活方式的自由选择，政府无权干预。C选项\"人们有选择自己生活方式的自由\"是对此论点的合理概括。",
+    "traps": "A项\"没有科学证据\"属于过度引申，原文说的是证据不充分（inconclusive），而非完全没有证据；B项\"早逝人数微不足道\"原文未提及，且一千万的数字是作者反驳吸烟支持者的论据，并非支持者的论点；D项\"反吸烟人士通常在说废话\"张冠李戴，原文说的是美国人相信了吸烟支持者的nonsense，而非反吸烟者在说废话。",
+    "tip": "注意区分\"谁的观点\"和\"作者的观点\"，避免张冠李戴。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But science does provide us with the best available guide to the future, and it is critical that our nation and the world base important policies on the best judgments that science can provide concerning the future consequences of present actions.",
+    "why": "Bruce Alberts在报告序言中明确指出：\"科学确实为我们提供了关于未来的最佳可用指南（the best available guide to the future）。\"D选项\"a guide\"与原文\"guide\"完全对应，属于原词复现。",
+    "traps": "A项\"protector（保护者）\"虽然文中提到protect ourselves，但这不是Alberts对科学角色的定位；B项\"judge（法官）\"原文虽出现judgments一词，但指的是科学提供的\"判断\"，而非科学充当\"审判者\"；C项\"critic（批评者）\"在Alberts的话中毫无依据，属于无中生有。",
+    "tip": "人物观点题紧扣引文原词，警惕用原文近义词偷换概念。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "type": "词义句意题",
+    "locate": "Instead of a plan of action, they continue to press for more research – a classic case of 'paralysis by analysis'.",
+    "why": "原文语境是：总统的顾问们不提出行动计划，而是继续要求更多研究。破折号后的\"paralysis by analysis\"是对前文的总结概括。paralysis意为\"瘫痪\"，即无法行动；by analysis意为\"因分析/研究\"。因此该短语意为\"过度分析导致行动瘫痪\"，与A项\"无休止的研究扼杀了行动\"完全吻合。",
+    "traps": "B项\"仔细调查揭示真相\"与原文批判态度相反，属于正话反说；C项\"审慎规划妨碍进步\"中\"审慎规划\"不等于\"过度研究\"，且语气偏中性，未体现作者的批评态度；D项\"广泛研究有助于决策\"与作者批判意图完全相反，属于反向干扰。",
+    "tip": "理解短语含义需结合上下文语境和作者态度，尤其注意破折号前的解释功能。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "If the Administration won't take the legislative initiative, Congress should help to begin fashioning conservation measures.",
+    "why": "作者在第五段明确指出\"仅靠研究是不够的\"，并提出如果政府不采取\"立法主动权（legislative initiative）\"，国会应帮助制定环保措施。随后举出Byrd参议员的法案为例。因此作者认为政府应采取立法措施，D项正确。",
+    "traps": "A项\"提供援助建造更清洁的发电厂\"是参议员Byrd法案的具体内容之一，属于以偏概全；B项\"提高公众环保意识\"文中未提及，属于无中生有；C项\"推动进一步科学研究\"恰恰是作者批评的白宫顾问的做法，与作者主张相反。",
+    "tip": "区分\"作者主张\"与\"作者批评的做法\"，选项可能将批评对象包装为正确答案。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "There are upsetting parallels today, as scientists in one wave after another try to awaken us to the growing threat of global warming.",
+    "why": "文章开篇回顾吸烟争论导致一千万人早逝的教训，第二段用\"upsetting parallels（令人不安的相似之处）\"将全球变暖与吸烟类比，第三段再次强调\"Just as on smoking\"。作者的写作意图是：吸烟问题因拖延而造成惨重代价，全球变暖不应重蹈覆辙。因此B项\"后者的教训适用于前者\"最准确。",
+    "traps": "A项\"两者都因政府疏忽而受害\"只是部分信息，且作者并未将吸烟问题归咎于政府疏忽，属于过度推断；C项\"后者的后果加剧了前者\"因果关系无中生有，吸烟与全球变暖之间没有因果关系；D项\"两者都每况愈下\"原文未对两者都做恶化趋势的对比，且吸烟问题是作为历史教训出现的。",
+    "tip": "类比论证的目的通常是\"以旧鉴新\"，重在教训的可借鉴性。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inconclusive",
+    "cn": "adj. 不确定的，不具决定性的"
+   },
+   {
+    "w": "lobby",
+    "cn": "n. 游说团体；v. 游说"
+   },
+   {
+    "w": "parallel",
+    "cn": "n. 相似之处，类比；adj. 平行的"
+   },
+   {
+    "w": "prudent",
+    "cn": "adj. 谨慎的，审慎的"
+   },
+   {
+    "w": "paralysis",
+    "cn": "n. 瘫痪，麻痹"
+   },
+   {
+    "w": "steward",
+    "cn": "n. 管理者，管家"
+   },
+   {
+    "w": "inadequate",
+    "cn": "adj. 不充分的，不够的"
+   },
+   {
+    "w": "legislative",
+    "cn": "adj. 立法的"
+   },
+   {
+    "w": "fashioning",
+    "cn": "v. 制定，塑造（fashion 的现在分词）"
+   },
+   {
+    "w": "incentive",
+    "cn": "n. 激励，奖励措施"
+   },
+   {
+    "w": "enlisted",
+    "cn": "v. 征召，争取（enlist 的过去分词）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But science does provide us with the best available guide to the future, and it is critical that our nation and the world base important policies on the best judgments that science can provide concerning the future consequences of present actions.",
+    "cn": "但科学确实为我们提供了关于未来的最佳可用指南，至关重要的是，我们的国家和整个世界应基于科学所能提供的、关于当前行为未来后果的最佳判断来制定重要政策。",
+    "note": "主干为and连接的两个并列分句：第一分句science provides us with guide；第二分句it is critical that...为形式主语结构，that从句中base...on...为核心动词短语，其中that science can provide为定语从句修饰judgments，concerning引导的短语修饰consequences。"
+   },
+   {
+    "en": "There are upsetting parallels today, as scientists in one wave after another try to awaken us to the growing threat of global warming.",
+    "cn": "如今存在着令人不安的相似之处，科学家们一波又一波地试图唤醒我们关注日益严重的全球变暖威胁。",
+    "note": "主句为There are parallels；as引导时间/原因状语从句；in one wave after another为插入状语修饰scientists；awaken us to...为固定搭配\"唤醒某人关注某事\"。"
+   },
+   {
+    "en": "If the Administration won't take the legislative initiative, Congress should help to begin fashioning conservation measures.",
+    "cn": "如果政府不采取立法主动权，国会应该帮助开始制定环保措施。",
+    "note": "If引导条件状语从句；主句Congress should help to begin fashioning...为三层动词嵌套结构：help→begin→fashioning；legislative initiative和conservation measures为核心术语。"
+   }
+  ]
+ }
+}

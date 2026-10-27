@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "2bf75860cf1c__translation__all",
+ "examId": "2bf75860cf1c",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2011 年考研英语真题",
+ "year": 2011,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:26:05.722Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72466,
+ "usage": {
+  "prompt_tokens": 1371,
+  "completion_tokens": 4894,
+  "total_tokens": 6265,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1371,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4894,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1371,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "思想决定命运：艾伦自助哲学",
+  "translation": "该书以\"心灵是编织大师\"为主题，认为心灵创造了我们的内在品格和外部环境。詹姆斯·艾伦所著的《人如其思》一书是对自助类写作核心理念的深入探索。\n\n艾伦的贡献在于，他拿出了一个我们都认同的假设——因为我们不是机器人，所以我们能够控制自己的思想——并揭示了这一假设的错误本质。因为我们大多数人认为精神与物质是分离的，所以我们觉得思想可以被隐藏、可以变得无力；这使我们得以想一套做一套。然而，艾伦认为无意识心理产生的行为与有意识心理产生的一样多，而且尽管我们或许能够仅凭意识心理来维持控制的幻觉，但实际上我们不断面临一个问题：\"为什么我不能让自己做到这件事或实现那个目标？\"\n\n由于欲望和意志会被与欲望不一致的思想所削弱，艾伦总结道：\"我们吸引的不是我们想要的东西，而是我们本身的样子。\"成就的实现是因为你作为一个人体现了外在的成就；你不是\"获得\"了成功，而是\"成为\"了成功。精神与物质之间没有差距。\n\n艾伦这本书的著名之处部分在于其论点：\"环境不能造就一个人，只能揭示他。\"这似乎是在为忽视那些需要帮助的人找正当理由，是在为剥削行为、为上层人士的优越感和底层人士的卑微进行合理化辩护。\n\n然而，这不过是对一个精妙论点的条件反射式回应。每一种境遇，无论多么糟糕，都提供了独特的成长机会。如果环境总是决定人们的生活和前途，那么人类就不会进步。事实上，环境似乎就是为了激发我们最好的一面而设计的，如果我们觉得自己受到了\"不公正的待遇\"，那么我们就不太可能去有意识地努力摆脱自身的困境。然而，正如任何传记作家所知，一个人早年的生活及其条件往往是给予个人的最大财富。\n\n艾伦这本书发人深省之处在于，除了我们自己，没有其他人该为我们目前的状况承担责任。好的一面在于，认识到一切取决于我们自己，这其中蕴含着无限的可能性；以前我们是各种局限的行家，而现在我们成了各种可能性的主宰。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "Allen's contribution was to take an assumption we all share – that because we are not robots we therefore control our thoughts – and reveal its erroneous nature.",
+    "cn": "艾伦的贡献在于，他拿出了一个我们都认同的假设——因为我们不是机器人，所以我们能够控制自己的思想——并揭示了这一假设的错误本质。",
+    "structure": "主语 Allen's contribution + 系动词 was + 不定式表语 to take ... and reveal ...（并列动词）。we all share 为省略关系代词 that 的定语从句修饰 assumption；两个破折号之间的 that 从句是 assumption 的同位语从句，其内部含 because 原因状语从句。its 指代 assumption。",
+    "points": [
+     "take ... and reveal 并列不定式结构需译出两个动作：'拿出……并揭示……'",
+     "破折号中 that 同位语从句需准确译为对 assumption 的解释说明",
+     "erroneous nature 译为'错误的本质'，its 回指 assumption"
+    ],
+    "pitfall": "最易错处在于 take an assumption ... and reveal 的并列结构被割裂，误将 reveal 另起主语；同时 its 的指代对象如果误认为指 robots 或 thoughts，则整句逻辑崩塌。"
+   },
+   {
+    "number": 47,
+    "en": "while we may be able to sustain the illusion of control through the conscious mind alone, in reality we are continually faced with a question: \"Why cannot I make myself do this or achieve that?\"",
+    "cn": "尽管我们或许能够仅凭意识心理来维持控制的幻觉，但实际上我们不断面临一个问题：\"为什么我不能让自己做到这件事或实现那个目标？\"",
+    "structure": "while 引导让步状语从句（we may be able to sustain ...），主句为 in reality we are continually faced with a question。冒号后的引语是 question 的同位语。alone 作后置修饰语修饰 the conscious mind。",
+    "points": [
+     "while 译为'尽管'表让步，而非'当……的时候'",
+     "sustain the illusion of control 译为'维持控制的幻觉'，体现'自以为能控制'的含义",
+     "able to ... make myself do this or achieve that 中 make 的使役用法需准确传达"
+    ],
+    "pitfall": "while 在此处为让步含义而非时间含义，若译为'当……的时候'则语义偏差严重；alone 修饰 the conscious mind，不可误译为'独自'。"
+   },
+   {
+    "number": 48,
+    "en": "This seems a justification for neglect of those in need, and a rationalization of exploitation, of the superiority of those at the top and the inferiority of those at the bottom.",
+    "cn": "这似乎是在为忽视那些需要帮助的人找正当理由，是在为剥削行为、为上层人士的优越感和底层人士的卑微进行合理化辩护。",
+    "structure": "主语 This + 系动词 seems + 并列表语 a justification ... and a rationalization ...。a rationalization 后接三个并列的 of 短语：of exploitation、of the superiority of those at the top、of the inferiority of those at the bottom，说明被合理化的对象。",
+    "points": [
+     "justification 与 rationalization 两个近义词需分别译出差异：'正当理由'与'合理化辩护'",
+     "of exploitation, of the superiority ..., of the inferiority ... 三个 of 短语的并列关系需理清",
+     "those in need / those at the top / those at the bottom 三组人群的对比须译到位"
+    ],
+    "pitfall": "最易错处在于 of the superiority ... and the inferiority ... 的归属问题，这两个 of 短语是与 of exploitation 并列、共同修饰 rationalization，而非修饰 exploitation；误挂修饰对象会导致逻辑错误。"
+   },
+   {
+    "number": 49,
+    "en": "circumstances seem to be designed to bring out the best in us, and if we feel that we have been \"wronged\" then we are unlikely to begin a conscious effort to escape from our situation.",
+    "cn": "环境似乎就是为了激发我们最好的一面而设计的，如果我们觉得自己受到了\"不公正的待遇\"，那么我们就不太可能去有意识地努力摆脱自身的困境。",
+    "structure": "and 连接两个并列分句。第一分句：circumstances seem to be designed to bring out the best in us。第二分句：if 条件状语从句（we feel that we have been wronged）+ then 主句（we are unlikely to begin ...）。",
+    "points": [
+     "bring out the best in us 为固定表达，译为'激发我们最好的一面/潜能'",
+     "wronged 加引号表示特殊含义，需译出'受到不公正对待'并保留引号",
+     "a conscious effort to escape from 译为'有意识地努力摆脱'，体现主动性"
+    ],
+    "pitfall": "seem to be designed 容易被译为简单的被动句'被设计'，需译出'似乎是特意设计的'这层推测语气；wronged 的引号暗含作者对此观点的保留态度，翻译时应保留引号。"
+   },
+   {
+    "number": 50,
+    "en": "The upside is the possibilities contained in knowing that everything is up to us; where before we were experts in the array of limitations, now we become authorities of what is possible.",
+    "cn": "好的一面在于，认识到一切取决于我们自己，这其中蕴含着无限的可能性；以前我们是各种局限的行家，而现在我们成了各种可能性的主宰。",
+    "structure": "分号连接两个分句。第一分句：The upside is the possibilities（主系表），contained in knowing that ... 为后置定语修饰 possibilities，其中 that 引导宾语从句。第二分句：where before ... now ... 构成时间对比结构，where 在此处相当于 whereas 表对比转折。",
+    "points": [
+     "able to 区分 upside 的译法以及 contained in knowing that ... 定语的处理，需译出'蕴含在认识到……之中'",
+     "where before ... now ... 对比结构需译出前后的转折对比关系",
+     "the array of limitations 与 what is possible 的对应须体现出来"
+    ],
+    "pitfall": "where 在此处并非表地点，而是相当于 whereas 表对比转折，若译为'在……地方'则全句不通；the array of limitations 中 array 意为'一系列'而非'排列'，需注意词义选择。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "erroneous",
+    "cn": "错误的，谬误的 (adj.)"
+   },
+   {
+    "w": "sustain",
+    "cn": "维持，保持 (v.)"
+   },
+   {
+    "w": "illusion",
+    "cn": "幻觉，错觉 (n.)"
+   },
+   {
+    "w": "justification",
+    "cn": "正当理由，辩护 (n.)"
+   },
+   {
+    "w": "rationalization",
+    "cn": "合理化（辩护）(n.)"
+   },
+   {
+    "w": "exploitation",
+    "cn": "剥削，利用 (n.)"
+   },
+   {
+    "w": "inferiority",
+    "cn": "低劣，自卑，下等 (n.)"
+   },
+   {
+    "w": "knee-jerk",
+    "cn": "条件反射式的，未经思考的 (adj.)"
+   },
+   {
+    "w": "contention",
+    "cn": "论点，观点；争论 (n.)"
+   },
+   {
+    "w": "sobering",
+    "cn": "发人深省的，令人警醒的 (adj.)"
+   },
+   {
+    "w": "upside",
+    "cn": "好的一面，积极面 (n.)"
+   },
+   {
+    "w": "array",
+    "cn": "一系列，大量 (n.)"
+   },
+   {
+    "w": "embody",
+    "cn": "体现，具体表现 (v.)"
+   },
+   {
+    "w": "accord with",
+    "cn": "与……一致，符合 (v. 短语)"
+   },
+   {
+    "w": "bring out",
+    "cn": "激发，使显现 (v. 短语)"
+   }
+  ],
+  "skills": [
+   "注意并列结构的完整性：如 take ... and reveal、justification ... and rationalization，翻译时需保持两个成分的对称",
+   "准确判断连接词的语义功能：while 表让步而非时间，where 表对比而非地点",
+   "后置定语与同位语从句的前置化处理：英语中较长的后置修饰成分在汉语中宜提前或拆分翻译",
+   "引号词的特殊语气需保留：如 wronged 加引号暗示作者态度，翻译时应保留引号并适当加注",
+   "抽象名词的具体化翻译：如 erroneous nature 译为'错误本质'，the best in us 译为'我们最好的一面'"
+  ]
+ }
+}

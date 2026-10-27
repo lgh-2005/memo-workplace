@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "1762391b8add__reading__2",
+ "examId": "1762391b8add",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 12 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T06:01:33.855Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67420,
+ "usage": {
+  "prompt_tokens": 1828,
+  "completion_tokens": 4024,
+  "total_tokens": 5852,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1828,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4024,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1828,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 4,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国种族平等任重道远",
+  "gist": "文章以马丁·路德·金的和平奖演讲为引，指出美国社会在种族平等方面仍面临巨大挑战。通过黑人学生高等教育不公的数据佐证不平等的严重后果，呼吁人们继承金博士遗志、正视偏见与分裂，携手合作打破现状，共建更加包容公正的社会。",
+  "structure": [
+   "第1-2段：引用金博士名言，引出美国社会仍在追求真相与平等的主题",
+   "第3-4段：以黑人学生收入数据为例，揭示不平等的严重后果并指明出路",
+   "第5-6段：强调历史教育与多元师资对弥合分歧的重要性",
+   "第7-8段：直面社会分裂与种族不平等的现实，呼吁正视问题",
+   "第9段：号召携手合作，打破现状，共建包容社会"
+  ],
+  "difficulty": "中等",
+  "translation": "在诺贝尔和平奖的获奖感言中，马丁·路德·金说：\"我相信，手无寸铁的真理和无条件的爱，将在现实中拥有最终的话语权。\"\n\n五十多年后的今天，我们的社会仍在艰难地区分真相与幻想、事实与虚构。从关于气候变化的争论到关于奴隶制如何被教授的辩论，美国正处于十字路口。而争取平等的斗争正是这些至关重要的对话的核心。\n\n一项又一项研究表明，不平等已经造成了骇人的后果。花旗银行2020年的一份报告指出，如果过去二十年与高等教育相关的平等问题得到充分解决，\"黑人学生本可以将其一生收入增加900亿至1130亿美元\"。\n\n这一数据代表了我们作为一个国家未能正视的大量问题，也揭示了一个真相：我们正在错失弥合分歧的宝贵机会。然而，通过继承金博士的遗志，我们可以让国家重回通往真正平等的道路。\n\n学生们——实际上成年人也一样——如果不了解当今冲突的根源，就根本无法理解这些冲突。这意味着我们有责任帮助他们建立美国历史与当前事件之间的联系，也意味着要给予他们在自己生活中应对不平等和偏见所需的工具。遵循这些原则，加上对真实对话的承诺，可以帮助每个学生更好地认识到我们已经走了多远，并更清楚地看到我们尚未走过的路。\n\n通过更加真实地分析对更多合格的、多元化教育工作者的需求，我们可以改善全国学校的招聘、培训和留任策略。\n\n不幸的是，我们根深蒂固的分裂正在延缓这些进步。最近的一项调查发现，77%的美国人认为国家\"比以往任何时候都更加分裂\"。但不断加剧的两极分化的报道不应让我们把目光从彼此身上移开，相反，它们应该促使我们正面解决共同的问题。\n\n我们并非像某些人所说的那样，生活在一个\"后种族社会\"中。在种族不平等问题上，我们根本不能继续把头埋在沙子里。除非我们坦诚面对偏狭、偏见以及这些社会病症如何影响我们彼此对待的方式，否则不公正将继续困扰我们。但我们的孩子和孙辈理应拥有更好的未来。\n\n在这个马丁·路德·金纪念日以及今后的日子里，让我们承诺携手合作，打破现状。让我们继续建设一个更美好、更具包容性的国家；用马丁·路德·金的话说，\"一个与自身和平共处的社会，一个能够与自身良知共存的社会。\"",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "America is at a crossroads. And the battle for equity is at the heart of these vital conversations.",
+    "why": "原文第二段指出美国\"正处于十字路口\"，平等之战是核心议题；第四段说\"by honoring King's legacy, we can get our country back on the path toward true equity\"，暗示目前尚未实现真正的平等；第五段\"more clearly see the roads we have yet to travel\"更明确表示前路漫漫。综合可知美国在实现真正平等方面仍任重道远，对应C选项。",
+    "traps": "A项\"把虚构变为现实\"曲解了原文separating truth from fantasy的含义，原文讲的是区分真假，非转化；B项\"成为许多重要对话的焦点\"偷换主语，原文说的是equity之战是对话核心，不是美国本身；D项\"几乎在每个问题上都有分歧\"过度泛化，原文只提到气候变化和奴隶制教育等具体争议，未说nearly every issue。",
+    "tip": "注意区分\"社会面临的问题\"与\"社会本身的定性\"，避免偷换概念。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Black students could have increased their lifetime incomes $90 – $113 billion if equity issues related to higher education had been adequately addressed over the past two decades.",
+    "why": "原文使用了虚拟语气\"could have increased...if equity issues related to higher education had been adequately addressed\"，说明过去二十年高等教育方面的平等问题并未得到充分解决，即黑人学生在高等教育方面遭受了不公平对待，直接对应A选项。",
+    "traps": "B项\"一直在努力解决平等问题\"无原文依据，原文只说问题未被解决，未提及学生自身的抗争；C项\"收入增加了数十亿美元\"与原文虚拟语气相反，那只是假设情境而非已发生事实；D项\"认识到种族歧视的后果\"属无中生有，原文未提及黑人学生的认知变化。",
+    "tip": "虚拟语气是命题常用考点，务必区分已然事实与假设情境。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "However, by honoring King's legacy, we can get our country back on the path toward true equity.",
+    "why": "原文第四段先指出我们正在错失弥合分歧的宝贵机会，紧接着用however转折，明确指出\"通过继承金博士的遗志\"可以让国家重回通往真正平等的道路。C选项\"继续追求马丁·路德·金的事业\"是对honoring King's legacy的同义改写，逻辑完全吻合。",
+    "traps": "A项\"处理棘手问题\"过于笼统，原文强调的是继承金博士遗志这一具体路径；B项\"抓住每一个增进种族和谐的机会\"中的every chance属于过度推断，原文未如此表述；D项\"努力识别极其有价值的机会\"曲解了原文missing out on valuable opportunities的含义，原文说的是错失机会，而非需要去识别。",
+    "tip": "转折词however后常为答案要点所在，需重点关注。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "A recent survey found that 77 percent of Americans believe the nation is 'more divided than ever before'.",
+    "why": "原文第七段明确引用调查数据：77%的美国人认为国家\"比以往任何时候都更加分裂\"。D选项\"It has become increasingly split\"是对more divided than ever before的同义转述，split对应divided，increasingly对应more...than ever before。",
+    "traps": "A项\"被迫解决历史社会问题\"虽然文中有提及，但并非调查所反映的内容，属于答非所问；B项\"正在延缓迈向种族平等的进步\"是作者的判断而非调查结果，且偷换了主语；C项\"使自己远离了两极分化\"与原文完全相反，原文说的是分裂加剧。",
+    "tip": "注意区分调查结果与作者评论，看清题目问的是哪个信息来源。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "let's commit to working together to disrupt the status quo. Let's continue to build a better, more inclusive nation",
+    "why": "文章最后一段是全文的号召和建议，作者呼吁\"让我们承诺携手合作打破现状\"，并\"继续建设一个更美好、更具包容性的国家\"。B选项\"make joint efforts to tackle the nation's equity issues\"中joint efforts对应working together，tackle equity issues是对disrupt the status quo和build a more inclusive nation的概括总结。",
+    "traps": "A项\"确保子孙后代的福祉\"虽然文中提到children and grandchildren deserve better，但这是论据而非建议本身，属于以偏概全；C项\"克制偏狭与歧视\"是解决问题的一个方面，但不是作者最终建议的核心，且原文用的是get honest about而非restrain；D项\"恢复社会秩序\"属于无中生有，原文说的是disrupt the status quo（打破现状），恰好与恢复秩序相反。",
+    "tip": "结尾段的祈使句和号召性语句通常是作者建议题的答案定位区。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "unconditional",
+    "cn": "adj. 无条件的，无保留的"
+   },
+   {
+    "w": "crossroads",
+    "cn": "n. 十字路口；关键时刻，转折点"
+   },
+   {
+    "w": "equity",
+    "cn": "n. 公平，公正；（尤指种族、性别等方面的）平等"
+   },
+   {
+    "w": "appalling",
+    "cn": "adj. 骇人的，令人震惊的"
+   },
+   {
+    "w": "adherence",
+    "cn": "n. 遵守，坚持（adherence to 对……的坚守）"
+   },
+   {
+    "w": "retention",
+    "cn": "n. 保留；留任；维持"
+   },
+   {
+    "w": "polarization",
+    "cn": "n. 两极分化，对立"
+   },
+   {
+    "w": "compel",
+    "cn": "v. 迫使，驱使"
+   },
+   {
+    "w": "intolerance",
+    "cn": "n. 偏狭，不容忍"
+   },
+   {
+    "w": "haunt",
+    "cn": "v. 困扰，萦绕；（鬼魂）出没"
+   },
+   {
+    "w": "disrupt",
+    "cn": "v. 打破，颠覆；扰乱"
+   },
+   {
+    "w": "inclusive",
+    "cn": "adj. 包容的，兼收并蓄的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "A 2020 report by Citi indicated that \"Black students could have increased their lifetime incomes $90 – $113 billion\" if equity issues related to higher education had been adequately addressed over the past two decades.",
+    "cn": "花旗银行2020年的一份报告指出，如果过去二十年与高等教育相关的平等问题得到了充分解决，\"黑人学生本可以将其一生收入增加900亿至1130亿美元\"。",
+    "note": "主句为A report indicated that...引导宾语从句；从句内含虚拟语气could have increased...if...had been addressed，表示与过去事实相反的假设；related to higher education为后置定语修饰equity issues。"
+   },
+   {
+    "en": "Students — and adults for that matter — simply cannot understand the conflicts we have today without understanding what caused them in the first place.",
+    "cn": "学生们——实际上成年人也一样——如果不了解当今冲突的根源，就根本无法理解这些冲突。",
+    "note": "破折号插入语and adults for that matter补充说明主语；cannot...without构成双重否定表肯定；what caused them为宾语从句；in the first place意为\"最初，从一开始\"。"
+   },
+   {
+    "en": "Unless we get honest about intolerance, bias, and how these social diseases impact the ways we treat one another, injustice will continue to haunt us.",
+    "cn": "除非我们坦诚面对偏狭、偏见以及这些社会病症如何影响我们彼此对待的方式，否则不公正将继续困扰我们。",
+    "note": "Unless引导条件状语从句；get honest about后接三个并列宾语：intolerance, bias, 以及how引导的宾语从句；the ways后省略了关系词that/in which，we treat one another为定语从句修饰ways。"
+   }
+  ]
+ }
+}

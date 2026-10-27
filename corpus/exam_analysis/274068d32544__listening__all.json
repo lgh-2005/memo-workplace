@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "274068d32544__listening__all",
+ "examId": "274068d32544",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2016 年 6 月英语六级真题（第 1 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:04:48.400Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56409,
+ "usage": {
+  "prompt_tokens": 2244,
+  "completion_tokens": 2902,
+  "total_tokens": 5146,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2244,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2902,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2244,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析仅基于题目选项文本的语言特征与正确答案进行推断分析，不涉及任何对录音内容的编造。",
+  "overview": "本场听力共 7 段材料、25 道题。第 1 段（Q1-4）涉及市场调研类职业与工作内容；第 2 段（Q5-8）围绕加拿大与美国高等教育体制比较；第 3 段（Q9-11）关于经济危机下实际工资与就业状况；第 4 段（Q12-15）讨论记忆力保健品是否有效；第 5 段（Q16-18）聚焦自然灾害的预防与减灾；第 6 段（Q19-22）涉及银行贷款与美国经济复苏；第 7 段（Q23-25）关于衰老与认知能力下降的应对。整体涵盖职场、教育、经济、健康与社会话题，符合六级听力常见选材。",
+  "strategy": [
+   "预读选项时快速划出各选项差异关键词，如职位名称、动词短语，预判提问方向。",
+   "当四个选项结构高度平行时（如都是名词短语或都以 They 开头），重点听录音中对应的定义或描述句。",
+   "含绝对词（always, never, all）的选项往往是干扰项，优先关注含限定词（some, often, might）的选项。",
+   "对话类材料注意说话者态度词（complain, suggest, prefer），短文类注意首尾句和转折词（however, but, actually）。",
+   "遇到比较类选项（A vs B, superior, better），提前预判录音会涉及两个事物的对比。",
+   "数字、时间或程度副词（more, less, shorter）出现时，标记并留意录音中的对应细节。"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "市场调研相关职业、工作内容与优缺点",
+    "optionSignals": "Q1 四个选项均为职位名词短语，问的是身份/职业；Q2 均为专业术语性名词短语，问具体工作领域；Q3 四个 They 开头的陈述句，问某类研究的特点；Q4 混合了抽象名词和动名词短语，问工作中令人不满或具挑战性的方面。",
+    "tips": [
+     "Q1 四个职位差异明显，听到关键动作描述即可锁定：consultant 对应'为他人提供建议/分析'。",
+     "Q3 选项 D 含 over a long period，属于带有时间标志的细节项，与 A 的 intensive 形成对比，注意听时间跨度线索。",
+     "Q4 注意区分抽象感受类（A/D）与具体工作类（B/C），答案 B 表明问的是具体日常工作中的不满。"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "加拿大与美国高等教育体制对比与评价",
+    "optionSignals": "Q5 选项均为 His + 名词短语，问说话者表达的观点主题；Q6 四个 It is/has 结构，描述某一体制的特征；Q7 四个完整观点句，涉及 public vs private 和 equal access，问说话者的核心立场；Q8 同样为观点句，问总结性判断。",
+    "tips": [
+     "Q6 答案 B（rather inflexible）含贬义形容词，听时注意否定评价或转折后的判断。",
+     "Q7 涉及 public vs private 对比，四个选项观点鲜明，C 是普遍价值观（equal access），常为正确观点。",
+     "Q8 答案 C 为折中表述（hard to say），六级听力中'不能一概而论'的中庸态度常为正确答案。"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "经济危机对工资水平和就业方式的影响",
+    "optionSignals": "Q9 四个选项均为话题概括性名词短语，问短文主旨；Q10 四个 They will feel 结构高度平行，问雇主的反应；Q11 四个主谓宾完整句，问应对措施或趋势。",
+    "tips": [
+     "Q9 主旨题注意首尾句；答案 B 含 worsening real wage，带有负面倾向，经济危机话题常选负面表述。",
+     "Q10 四个平行结构只需听准动词宾语区别：raise wages / choose employees / expand / compete。",
+     "Q11 答案 C（work shorter hours to avoid layoffs）是具体可操作的措施，比 A/B 的笼统表述更像细节答案。"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "记忆力保健品（supplements）的有效性与安全性",
+    "optionSignals": "Q12 四个 Whether 引导的从句，问短文讨论的核心问题；Q13-15 都以 They 开头描述保健品特点，问具体结论或风险。",
+    "tips": [
+     "Q12 为主旨题，memory supplements 是最直接的话题词；听到开头即可锁定。",
+     "Q13 答案 D（not based on real science）是否定判断，六级中质疑类科普话题常选'缺乏科学依据'。",
+     "Q15 答案 B 含 might entail unnecessary risks，注意 might 这种留有余地的表述，在科学类话题中常为正确选项。"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "减少自然灾害负面影响的策略与实例",
+    "optionSignals": "Q16 四个 How 引导的名词性从句，问文章主旨方向；Q17 四个 By + 动名词结构，问具体方法手段；Q18 又是四个 How 从句，问举例或分论点。",
+    "tips": [
+     "Q16 答案 D（reduced）为正面/建设性方向，与 A/C 的消极描述形成对比；主旨多选有'解决方案'倾向的选项。",
+     "Q17 全部为 By + doing 结构，听时抓紧跟 by 之后的动作关键词；答案 B 中 prepare 是防灾核心词。",
+     "Q18 答案 A（preventive action reduce loss of life）与 Q16 主旨呼应，例证段通常服务于主旨。"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "银行贷款政策与美国经济复苏前景",
+    "optionSignals": "Q19 四个动词原形开头的祈使/目的型选项，问银行应做什么；Q20 四个描述性预测句，问可能后果；Q21 四个 It will 结构，问某机构的具体行动；Q22 四个 It will/won't 判断句，问对某措施的评价。",
+    "tips": [
+     "Q19 答案 C 含 wider recovery，属宏观积极目标，在政策讨论中常是被提倡的方向。",
+     "Q20 答案 B（smaller regional banks fail）是具体预测，注意区分 smaller 与 major banks。",
+     "Q22 答案 D 含条件句式（if the economy starts to shrink again），条件限定型选项在评价类题目中常为正确答案。"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "衰老导致的认知问题及应对方式",
+    "optionSignals": "Q23 四个 Being/Losing + 名词/动名词结构，问衰老的主要表现；Q24 四个简短名词短语，问有益因素；Q25 四个动名词短语，问建议的做法。",
+    "tips": [
+     "Q23 答案 A（unable to learn new things）聚焦认知/学习能力，与话题'衰老与认知'最契合。",
+     "Q24 答案 A（Cognitive stimulation）是专业术语，短文类听力偏好学术性表述作为正确答案。",
+     "Q25 答案 C（give up unhealthy lifestyles）是主动行为建议，比 B 的笼统态度和 D 的被动就医更具可执行性。"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "consultant",
+    "cn": "顾问，咨询师"
+   },
+   {
+    "w": "quantitative",
+    "cn": "定量的，数量上的"
+   },
+   {
+    "w": "methodology",
+    "cn": "方法论，方法学"
+   },
+   {
+    "w": "bureaucracy",
+    "cn": "官僚体制，官僚主义"
+   },
+   {
+    "w": "inflexible",
+    "cn": "不灵活的，僵化的"
+   },
+   {
+    "w": "supplement",
+    "cn": "补充剂，保健品"
+   },
+   {
+    "w": "practitioner",
+    "cn": "从业者，（尤指）医师"
+   },
+   {
+    "w": "catastrophic",
+    "cn": "灾难性的，极其严重的"
+   },
+   {
+    "w": "meteorological",
+    "cn": "气象的，气象学的"
+   },
+   {
+    "w": "preventive",
+    "cn": "预防性的，防止的"
+   },
+   {
+    "w": "entail",
+    "cn": "牵涉，需要，带来（后果）"
+   },
+   {
+    "w": "cognitive",
+    "cn": "认知的，与认知过程有关的"
+   },
+   {
+    "w": "layoff",
+    "cn": "裁员，解雇"
+   },
+   {
+    "w": "dosage",
+    "cn": "剂量，用药量"
+   }
+  ]
+ }
+}

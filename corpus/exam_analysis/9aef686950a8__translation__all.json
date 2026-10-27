@@ -1,0 +1,177 @@
+{
+ "schemaVersion": 1,
+ "id": "9aef686950a8__translation__all",
+ "examId": "9aef686950a8",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2015 年 6 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T04:39:42.651Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 49827,
+ "usage": {
+  "prompt_tokens": 601,
+  "completion_tokens": 5413,
+  "total_tokens": 6014,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3981
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 601
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国城市化与城市交通发展",
+  "reference": "2011 marked a historic moment in China's urbanization process, as its urban population exceeded the rural population for the first time. In the next 20 years, an estimated 350 million rural residents are expected to move to cities. Urban development on such a scale is both a challenge and an opportunity for urban transportation. The Chinese government has always advocated the 'people-oriented' development philosophy, emphasizing that people should travel by public transportation rather than private cars. It also calls for building a 'resource-conserving and environment-friendly' society. With this clear goal in mind, Chinese cities can better plan their development and shift large amounts of investment to the development of safe, clean and economical transportation systems.",
+  "sentences": [
+   {
+    "cn": "2011年是中国城市化(urbanization)进程中的历史性时刻,其城市人口首次超过农村人口。",
+    "en": "2011 marked a historic moment in China's urbanization process, as its urban population exceeded the rural population for the first time.",
+    "structure": "主句 + as 引导时间状语从句，说明历史性时刻的原因。",
+    "keys": [
+     "城市化 urbanization",
+     "历史性时刻 historic moment",
+     "城市人口 urban population",
+     "农村人口 rural population",
+     "超过 exceed"
+    ]
+   },
+   {
+    "cn": "在未来20年里,预计约有3.5亿农村人口将移居到城市。",
+    "en": "In the next 20 years, an estimated 350 million rural residents are expected to move to cities.",
+    "structure": "简单句，an estimated 350 million rural residents 作主语，用被动语态表示预计。",
+    "keys": [
+     "未来20年 the next 20 years",
+     "3.5亿 350 million",
+     "农村人口 rural residents",
+     "移居 move to"
+    ]
+   },
+   {
+    "cn": "如此规模的城市发展对城市交通来说既是挑战，也是机遇。",
+    "en": "Urban development on such a scale is both a challenge and an opportunity for urban transportation.",
+    "structure": "主系表结构，主语带后置定语 on such a scale，表语用 both...and... 连接。",
+    "keys": [
+     "如此规模 on such a scale",
+     "城市发展 urban development",
+     "城市交通 urban transportation",
+     "既是...也是... both...and..."
+    ]
+   },
+   {
+    "cn": "中国政府一直提倡\"以人为本\"的发展理念,强调人们以公交而不是私家车出行。",
+    "en": "The Chinese government has always advocated the 'people-oriented' development philosophy, emphasizing that people should travel by public transportation rather than private cars.",
+    "structure": "主句 + 现在分词短语作伴随状语，其中 that 引导宾语从句说明强调内容。",
+    "keys": [
+     "中国政府 the Chinese government",
+     "以人为本 people-oriented",
+     "发展理念 development philosophy",
+     "公交 public transportation",
+     "私家车 private cars"
+    ]
+   },
+   {
+    "cn": "它还号召建设\"资源节约和环境友好型\"社会。",
+    "en": "It also calls for building a 'resource-conserving and environment-friendly' society.",
+    "structure": "简单句，谓语 calls for 后接动名词 building 作宾语。",
+    "keys": [
+     "号召 calls for",
+     "资源节约型 resource-conserving",
+     "环境友好型 environment-friendly"
+    ]
+   },
+   {
+    "cn": "有了这个明确的目标,中国城市就可以更好地规划其发展，并把大量投资转向安全、清洁和经济型交通系统的发展上。",
+    "en": "With this clear goal in mind, Chinese cities can better plan their development and shift large amounts of investment to the development of safe, clean and economical transportation systems.",
+    "structure": "with 复合结构作状语，主句含并列谓语 can plan 和 shift，其中 to 后接名词短语表转向对象。",
+    "keys": [
+     "明确的目标 clear goal",
+     "更好地规划 better plan",
+     "大量投资 large amounts of investment",
+     "转向 shift...to",
+     "安全 safe",
+     "清洁 clean",
+     "经济型 economical",
+     "交通系统 transportation systems"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "城市化",
+    "en": "urbanization"
+   },
+   {
+    "cn": "城市人口",
+    "en": "urban population"
+   },
+   {
+    "cn": "农村人口",
+    "en": "rural population"
+   },
+   {
+    "cn": "以人为本",
+    "en": "people-oriented"
+   },
+   {
+    "cn": "公交",
+    "en": "public transportation"
+   },
+   {
+    "cn": "私家车",
+    "en": "private cars"
+   },
+   {
+    "cn": "资源节约型",
+    "en": "resource-conserving"
+   },
+   {
+    "cn": "环境友好型",
+    "en": "environment-friendly"
+   },
+   {
+    "cn": "经济型",
+    "en": "economical"
+   }
+  ],
+  "pitfalls": [
+   "historic 与 historical 混淆：historic 指“有历史意义的”，historical 指“历史的”，本处应用 historic。",
+   "“3.5亿”误译为 3.5 billion，正确为 350 million，需注意基数词与数量单位。",
+   "“以人为本”直译为 people as basis 不地道，标准译法为 people-oriented。",
+   "“经济型交通系统”误用 economic transportation，经济型应用 economical/affordable，economic 指经济相关的。",
+   "漏译或错译“资源节约和环境友好型”为 resource saving and environment friendly，应使用连字符形式 resource-conserving and environment-friendly。"
+  ],
+  "upgrades": [
+   {
+    "plain": "It is expected that about 350 million rural people will move to cities.",
+    "better": "An estimated 350 million rural residents are expected to move to cities.",
+    "note": "用 an estimated 结构更简洁，避免冗余的 it is expected that 从句。"
+   },
+   {
+    "plain": "big city development",
+    "better": "urban development on such a scale",
+    "note": "更正式，符合六级翻译语域，强调规模。"
+   },
+   {
+    "plain": "use buses",
+    "better": "travel by public transportation",
+    "note": "表达更全面，涵盖所有公交方式，不限于公交车。"
+   },
+   {
+    "plain": "economic transportation systems",
+    "better": "economical transportation systems",
+    "note": "economical 表示“经济实惠的”，economic 是“经济（学）的”，避免歧义。"
+   }
+  ]
+ }
+}

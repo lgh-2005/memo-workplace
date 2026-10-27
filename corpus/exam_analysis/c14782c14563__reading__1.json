@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "c14782c14563__reading__1",
+ "examId": "c14782c14563",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 6 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:10:02.362Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59524,
+ "usage": {
+  "prompt_tokens": 1862,
+  "completion_tokens": 3485,
+  "total_tokens": 5347,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1862,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3485,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1862,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "发展中国家用污水灌溉农田的利弊",
+  "gist": "文章讨论了发展中国家农民用未经处理的污水灌溉和施肥近4900万英亩农田的现象。虽然这种做法存在严重健康风险，如传播腹泻等水传播疾病，但多位专家认为其带来的社会经济效益（廉价水源、替代昂贵化肥、帮助城市贫困农民脱贫）超过了健康危害，并建议通过教育农民和消费者来降低风险。",
+  "structure": [
+   "第1-3段：引出话题——污水灌溉现象及利弊并存的总论点",
+   "第4-6段：分析健康风险及专家对利大于弊的论证",
+   "第7-11段：补充水资源紧缺背景，介绍污水用作肥料的情况",
+   "第12段：WHO专家总结——应务实接受污水农业"
+  ],
+  "difficulty": "中等",
+  "translation": "面对水资源短缺和化肥成本不断攀升的问题，发展中国家的农民正在使用未经处理的污水来灌溉和施肥近4900万英亩的农田——根据一份新报告，这未必是件坏事。\n\n虽然这种做法对许多人带来了严重的健康风险，但这些危险与贫困城市农民和需要廉价食物的消费者所获得的社会和经济收益相比，还是值得的。\n\n\"废水农业在帮助和损害大量城市消费者方面都有巨大的潜力，\"领导这项研究的利卡·拉希德-萨利说。\n\n该报告聚焦于贫困城市地区，那里城市内部或附近的农场提供相对便宜的食物。这些农业活动大多从当地河流或湖泊取水灌溉。然而，与发达城市不同的是，这些地区缺乏先进的水处理设施，河流实际上变成了下水道。\n\n当这些水被用于农业灌溉时，农民面临吸收致病细菌的风险，生吃未清洗农产品的消费者也是如此。根据世界卫生组织的统计，每年有近220万人死于与腹泻相关的疾病。超过80%的病例可归因于接触受污染的水和缺乏适当的卫生设施。但环境科学家佩·德雷谢尔认为，使用未经处理的人类排泄物种植食物所带来的社会和经济效益超过了健康风险。\n\n他说，这些危险可以通过对农民和消费者的教育来解决，而来自人类排泄物的免费水和营养物质可以帮助发展中国家的城市农民摆脱贫困。\n\n农业是一项耗水量大的产业，占全球淡水消耗量的近70%。\n\n在贫穷干旱的地区，未经处理的废水是维持农民生计的唯一可行灌溉水源。在某些情况下，水资源如此稀缺，以至于农民会撬开将废物输送到当地河流的污水管道。\n\n在发展中国家，灌溉是人类排泄物的主要农业用途。但从厕所收集的未经处理的人类排泄物也经常被运到农场用作肥料。\n\n在大多数情况下，人类排泄物被用于谷物作物，这些谷物最终会被烹煮，从而将传播水传播疾病的风险降到最低。在一些地方，化肥价格在过去一年里每公吨上涨了近50%，人类排泄物是一种有吸引力的、而且往往是必要的替代品。\n\n在使用污泥的情况下，可以避免使用昂贵的化学肥料。污泥含有相同的关键营养成分。\n\n\"过于严格的标准往往会失败，\"世界卫生组织水与健康专家詹姆斯·巴特拉姆说。\"我们需要接受这样一个事实：在地球的大部分地区，很少或未经处理的废物将出于合理的理由被用于农业。\"",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "While the practice carries serious health risks for many, those dangers are outweighed by the social and economic gains for poor urban farmers and consumers who need affordable food.",
+    "why": "原文第二段明确指出，虽然这种做法带来严重健康风险，但这些危险被贫困城市农民和消费者所获得的社会和经济收益所超过（outweighed）。C选项\"Its benefits outweigh the hazards involved\"是对原文的精准同义改写，benefits对应social and economic gains，hazards对应dangers/health risks。",
+    "traps": "A\"风险不可高估\"属于无中生有，原文从未说风险被高估；B\"应完全禁止\"与原文观点相反，原文认为利大于弊；D\"正在污染数百万英亩农田\"是对首段数据的曲解，原文说的是用污水灌溉4900万英亩，并未说在\"污染\"农田。",
+    "tip": "注意outweigh一词在原文和选项中的对应关系。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "When this water is used for agricultural irrigation, farmers risk absorbing disease-causing bacteria, as do consumers who eat the produce raw and unwashed.",
+    "why": "原文第五段明确说明，当污水用于灌溉时，农民面临吸收致病细菌的风险，生吃未清洗农产品的消费者同样如此。C选项\"Farmers and consumers may be affected by harmful bacteria\"是对该句的准确概括，harmful bacteria对应disease-causing bacteria，affected对应risk absorbing。",
+    "traps": "A\"附近河湖会逐渐被污染\"属于因果倒置，河流是先变成下水道才被用于灌溉，而非灌溉导致河流污染；B\"化肥生产商会被挤出市场\"原文未提及；D\"农产品竞争力下降\"属于无中生有，原文未涉及市场竞争力问题。",
+    "tip": "题目问的是\"main problem\"，要抓住文中直接阐述的主要危害。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "But Pay Drechsel, an environmental scientist, argues that the social and economic benefits of using untreated human waste to grow food outweigh the health risks.",
+    "why": "原文用\"But\"转折引出Drechsel的观点，他明确主张使用未处理人类排泄物种粮的社会经济效益超过健康风险，且在下一段进一步指出危险可通过教育解决、免费水和营养可帮助农民脱贫。整体态度是支持的、赞成的（Favorable）。",
+    "traps": "B\"Skeptical\"（怀疑的）与原文相反，Drechsel是支持而非质疑；C\"Indifferent\"（漠不关心）明显不符，他积极发表了明确观点；D\"Responsible\"（负责任的）是描述品质而非态度立场，不适合作为态度题选项。",
+    "tip": "态度题关注转折词but后的核心立场，以及argues/benefits等正面词汇。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Those dangers can be addressed with farmer and consumer education, he said, while the free water and nutrients from human waste can help urban farmers in developing countries to escape poverty.",
+    "why": "原文第六段直接引述Drechsel的观点：那些危险可以通过对农民和消费者的教育来解决（addressed with farmer and consumer education）。B选项\"They can be dealt with through education\"是该句的同义转述，dealt with对应addressed，through education对应with education。",
+    "traps": "A\"风险被有些夸大\"原文未提及，属于无中生有；C\"新技术将降低风险\"原文未涉及任何新技术方案；D\"改善卫生条件可以解决\"虽然逻辑上有关联，但Drechsel原话明确说的是education而非improved sanitation，属于偷换概念。",
+    "tip": "人物观点题要精确定位到引述或转述内容，避免自行推测。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "We need to accept that fact across much of the planet, so waste with little or no treatment will be used in agriculture for good reason.",
+    "why": "Bartram认为过于严格的标准往往会失败，应接受未处理废物用于农业的事实，这与Drechsel认为利大于弊、应通过教育解决风险的立场本质一致——两人都支持在发展中国家使用未处理废物进行农业生产。因此A选项\"He echoes Pay Drechsel's opinion\"正确，echo意为\"附和、呼应\"。",
+    "traps": "B\"挑战Raschid-Sally的结论\"不正确，Raschid-Sally只是客观陈述了利弊两面性，Bartram并未反驳她；C\"认为这是应对粮食危机的唯一出路\"属于过度推断，原文未提及food crisis也未说only way；D\"认为这对消除全球贫困不可或缺\"过度引申，Bartram只说了应接受这一现实，并未上升到消除全球贫困的高度。",
+    "tip": "两位专家立场对比题，需分别提炼核心观点再判断是否一致。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "escalating",
+    "cn": "不断上涨的，逐步升级的（adj./v.）"
+   },
+   {
+    "w": "sewage",
+    "cn": "污水，下水道污物（n.）"
+   },
+   {
+    "w": "irrigate",
+    "cn": "灌溉（v.）"
+   },
+   {
+    "w": "outweigh",
+    "cn": "超过，重于（v.）"
+   },
+   {
+    "w": "sanitation",
+    "cn": "卫生设施，公共卫生（n.）"
+   },
+   {
+    "w": "viable",
+    "cn": "可行的，切实可行的（adj.）"
+   },
+   {
+    "w": "scarce",
+    "cn": "稀缺的，不足的（adj.）"
+   },
+   {
+    "w": "lavatory",
+    "cn": "厕所，盥洗室（n.）"
+   },
+   {
+    "w": "transmit",
+    "cn": "传播，传送（v.）"
+   },
+   {
+    "w": "metric ton",
+    "cn": "公吨（n.）"
+   },
+   {
+    "w": "water-borne",
+    "cn": "水传播的（adj.）"
+   },
+   {
+    "w": "attributed to",
+    "cn": "归因于（短语）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "While the practice carries serious health risks for many, those dangers are outweighed by the social and economic gains for poor urban farmers and consumers who need affordable food.",
+    "cn": "虽然这种做法给许多人带来了严重的健康风险，但这些危险被贫困城市农民和需要廉价食物的消费者所获得的社会和经济收益所超过。",
+    "note": "While引导让步状语从句，主句用被动语态are outweighed by强调收益大于风险；who引导定语从句修饰consumers。"
+   },
+   {
+    "en": "More than 80% of those cases can be attributed to contact with contaminated water and a lack of proper sanitation.",
+    "cn": "超过80%的病例可归因于接触受污染的水和缺乏适当的卫生设施。",
+    "note": "be attributed to为固定搭配意为\"归因于\"；to后接两个并列宾语contact with...和a lack of...。"
+   },
+   {
+    "en": "We need to accept that fact across much of the planet, so waste with little or no treatment will be used in agriculture for good reason.",
+    "cn": "我们需要接受这个在地球大部分地区存在的事实，即几乎未经处理或完全未经处理的废物将出于合理的理由被用于农业。",
+    "note": "that fact指代前句\"过于严格的标准往往失败\"；with little or no treatment作后置定语修饰waste；for good reason意为\"有充分理由\"。"
+   }
+  ]
+ }
+}

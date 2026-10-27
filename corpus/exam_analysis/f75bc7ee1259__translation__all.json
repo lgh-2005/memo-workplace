@@ -1,0 +1,208 @@
+{
+ "schemaVersion": 1,
+ "id": "f75bc7ee1259__translation__all",
+ "examId": "f75bc7ee1259",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年 3 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:53:12.475Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 33817,
+ "usage": {
+  "prompt_tokens": 810,
+  "completion_tokens": 2401,
+  "total_tokens": 3211,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 810,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2401,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 810,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "徐霞客与《徐霞客游记》",
+  "reference": "Xu Xiake was a renowned geographer in the Ming Dynasty of China. He spent over thirty years traveling across most of China. Mainly on foot, he visited many remote and inaccessible areas. He made detailed records of what he saw and heard as well as his survey findings, leaving behind invaluable research materials for later generations. Through on-site investigations of numerous rivers, he corrected errors regarding water sources in historical documents. He also provided detailed descriptions of the influence of such factors as topography and climate on plants, and vividly depicted the scenic spots, historical sites, and local customs and practices of various places. His exploration records were later compiled by subsequent generations into The Travel Notes of Xu Xiake, which has had a widespread influence both at home and abroad.",
+  "sentences": [
+   {
+    "cn": "徐霞客是中国明代的著名地理学家。",
+    "en": "Xu Xiake was a renowned geographer in the Ming Dynasty of China.",
+    "structure": "主系表结构，注意专有名词首字母大写及朝代前加定冠词 the",
+    "keys": [
+     "徐霞客 Xu Xiake",
+     "明代 the Ming Dynasty",
+     "地理学家 geographer"
+    ]
+   },
+   {
+    "cn": "他花费了三十多年的时间游遍了大半个中国。",
+    "en": "He spent over thirty years traveling across most of China.",
+    "structure": "spend + 时间 + doing sth. 句型，表花费时间做某事",
+    "keys": [
+     "三十多年 over thirty years",
+     "游遍 travel across",
+     "大半个中国 most of China"
+    ]
+   },
+   {
+    "cn": "他主要靠徒步跋涉, 寻访了许多荒远偏僻的地区。",
+    "en": "Mainly on foot, he visited many remote and inaccessible areas.",
+    "structure": "副词短语前置作方式状语，主句为简单的主谓宾结构",
+    "keys": [
+     "徒步跋涉 on foot",
+     "荒远偏僻的 remote and inaccessible"
+    ]
+   },
+   {
+    "cn": "他把自己的见闻和考察结果详细记录下来, 为后人留下了珍贵的考察资料。",
+    "en": "He made detailed records of what he saw and heard as well as his survey findings, leaving behind invaluable research materials for later generations.",
+    "structure": "主句 + 现在分词短语作结果状语；what 引导名词性从句表示见闻",
+    "keys": [
+     "见闻 what he saw and heard",
+     "考察结果 survey findings",
+     "考察资料 research materials",
+     "后人 later generations"
+    ]
+   },
+   {
+    "cn": "他通过对许多河流的实地调查,纠正了文献中关于水源的错误。",
+    "en": "Through on-site investigations of numerous rivers, he corrected errors regarding water sources in historical documents.",
+    "structure": "through + 名词短语作方式状语前置，主句为主谓宾结构",
+    "keys": [
+     "实地调查 on-site investigation",
+     "文献 historical documents",
+     "水源 water sources"
+    ]
+   },
+   {
+    "cn": "他还详细地描述了地形、气候等因素对植物的影响, 生动地描绘了各地的名胜古迹和风土人情。",
+    "en": "He also provided detailed descriptions of the influence of such factors as topography and climate on plants, and vividly depicted the scenic spots, historical sites, and local customs and practices of various places.",
+    "structure": "并列谓语结构（provided … and depicted …），such … as … 列举句式",
+    "keys": [
+     "地形 topography",
+     "名胜古迹 scenic spots and historical sites",
+     "风土人情 local customs and practices"
+    ]
+   },
+   {
+    "cn": "他的考察记录由后人整理成了《徐霞客游记》, 在国内外产生了广泛的影响。",
+    "en": "His exploration records were later compiled by subsequent generations into The Travel Notes of Xu Xiake, which has had a widespread influence both at home and abroad.",
+    "structure": "被动语态 + which 引导非限制性定语从句补充说明影响",
+    "keys": [
+     "整理 compile",
+     "《徐霞客游记》 The Travel Notes of Xu Xiake",
+     "国内外 both at home and abroad"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "徐霞客",
+    "en": "Xu Xiake"
+   },
+   {
+    "cn": "明代",
+    "en": "the Ming Dynasty"
+   },
+   {
+    "cn": "地理学家",
+    "en": "geographer"
+   },
+   {
+    "cn": "徒步跋涉",
+    "en": "on foot / trek on foot"
+   },
+   {
+    "cn": "实地调查",
+    "en": "on-site investigation / field survey"
+   },
+   {
+    "cn": "名胜古迹",
+    "en": "scenic spots and historical sites"
+   },
+   {
+    "cn": "风土人情",
+    "en": "local customs and practices"
+   },
+   {
+    "cn": "《徐霞客游记》",
+    "en": "The Travel Notes of Xu Xiake"
+   },
+   {
+    "cn": "考察资料",
+    "en": "research materials / survey data"
+   },
+   {
+    "cn": "水源",
+    "en": "water sources"
+   }
+  ],
+  "pitfalls": [
+   "明代误写为 Ming Period 或漏掉定冠词 the，应为 the Ming Dynasty",
+   "徒步跋涉直译为 walk by foot，应为 on foot 或 trek on foot",
+   "名胜古迹漏译其一，应完整译为 scenic spots and historical sites",
+   "风土人情误译为 local feelings，应为 local customs and practices",
+   "由后人整理用主动语态导致主语混乱，宜用被动 were compiled by"
+  ],
+  "upgrades": [
+   {
+    "plain": "He walked to many places.",
+    "better": "Mainly on foot, he visited many remote and inaccessible areas.",
+    "note": "前置副词短语使句式更紧凑，避免逐字硬译更地道"
+   },
+   {
+    "plain": "He wrote down what he saw.",
+    "better": "He made detailed records of what he saw and heard as well as his survey findings.",
+    "note": "make detailed records of 比 write down 更正式，符合学术语境"
+   },
+   {
+    "plain": "He corrected the mistakes about water in old books.",
+    "better": "He corrected errors regarding water sources in historical documents.",
+    "note": "regarding 替代 about 更正式，historical documents 比 old books 更准确"
+   },
+   {
+    "plain": "topography, climate and other factors' influence on plants",
+    "better": "the influence of such factors as topography and climate on plants",
+    "note": "such … as … 结构更规范地道，避免名词所有格叠加"
+   },
+   {
+    "plain": "His records were made into a book and became famous.",
+    "better": "His exploration records were compiled by subsequent generations into The Travel Notes of Xu Xiake, which has had a widespread influence both at home and abroad.",
+    "note": "compile 更精确，非限制性定语从句使信息衔接更流畅"
+   }
+  ]
+ }
+}

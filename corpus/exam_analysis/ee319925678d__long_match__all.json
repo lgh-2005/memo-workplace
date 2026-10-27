@@ -1,0 +1,255 @@
+{
+ "schemaVersion": 1,
+ "id": "ee319925678d__long_match__all",
+ "examId": "ee319925678d",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2019 年 6 月英语六级真题（第 3 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:27:51.494Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43359,
+ "usage": {
+  "prompt_tokens": 966,
+  "completion_tokens": 2395,
+  "total_tokens": 3361,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 966,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2395,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 966,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "微型卫星的应用、普及与安全风险",
+  "strategy": [
+   "先通读10条陈述句，标注高频实体词如CubeSat、AMSAT、NASA、LEO等专有名词，快速锁定对应段落",
+   "关注每句的核心谓语动词和逻辑关系词（如prevent、increase、enable），与原文进行同义替换匹配",
+   "将涉及'风险/滥用'的题（36/38/42/43）归为一组，与涉及'优势/功能'的题（37/44）分组扫读，提高效率",
+   "优先定位含专有名词的题（如AMSAT→J/K段，NASA→F段），再处理泛化描述的题"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "I",
+    "cn": "鉴于进入太空变得更加容易，现在是时候思考如何防止卫星被滥用了。",
+    "keywords": [
+     "accessibility to space",
+     "prevent",
+     "misuse of satellites"
+    ],
+    "paraphrase": "题目用easier accessibility to space表达进入太空门槛降低，原文可能用lowered barriers to space entry或space becoming more accessible等近义表达；misuse可能对应abuse、malicious use等词。",
+    "tip": "定位'misuse/滥用'与'prevent/防止'的组合出现位置，注意与38题区分。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "一组微型卫星可以协同工作来完成更复杂的任务。",
+    "keywords": [
+     "group",
+     "mini-satellites",
+     "work together",
+     "complex tasks"
+    ],
+    "paraphrase": "题目用work together表达协同，原文可能用collaborate、coordinate或constellation（星座编队）等概念；accomplish more complex tasks可能被改写为perform sophisticated missions。",
+    "tip": "扫读含有'多颗卫星协作/编队'概念的段落即可快速定位。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "cn": "微型卫星更高的可获取性增加了其被不负责任使用的风险。",
+    "keywords": [
+     "greater accessibility",
+     "mini-satellites",
+     "risks",
+     "irresponsible use"
+    ],
+    "paraphrase": "题目greater accessibility可能对应原文wider availability或easier access；irresponsible use可能对应reckless operation或unregulated use；increase the risks可能用raise concerns或heighten dangers替换。",
+    "tip": "关注'可获取性'与'风险'因果关系的表述，与36题的'防止滥用'视角不同。"
+   },
+   {
+    "number": 39,
+    "answer": "E",
+    "cn": "由于发射成本降低，甚至学校的学生也能将他们的立方体卫星送入轨道。",
+    "keywords": [
+     "school pupils",
+     "CubeSats",
+     "orbit",
+     "lowered launching cost"
+    ],
+    "paraphrase": "题目school pupils强调使用者低龄化，原文可能用students、schoolchildren等；put in orbit可能对应deploy into orbit或send into space；lowered launching cost可能用reduced launch expenses替换。",
+    "tip": "定位'学生/学校'与'发射成本低'共同出现的段落。"
+   },
+   {
+    "number": 40,
+    "answer": "K",
+    "cn": "AMSAT在与外部人员共享信息方面非常谨慎，以防止其卫星被劫持。",
+    "keywords": [
+     "AMSAT",
+     "sharing information",
+     "outsiders",
+     "hijacking"
+    ],
+    "paraphrase": "题目careful about sharing information可能对应原文restrict access to data或limit information disclosure；outsiders可能用non-members或external parties替换；hijacking可能对应unauthorized control或commandeering。",
+    "tip": "定位AMSAT相关段落中涉及'信息保密/对外限制'内容的部分，注意与45题J段区分。"
+   },
+   {
+    "number": 41,
+    "answer": "F",
+    "cn": "NASA为教育和研究目的免费提供立方体卫星的发射服务。",
+    "keywords": [
+     "NASA",
+     "launch CubeSats",
+     "free of charge",
+     "educational and research"
+    ],
+    "paraphrase": "题目free of charge可能对应原文at no cost或without fees；offers to launch可能用provides launch opportunities替换；educational and research purposes可能对应academic and scientific missions。",
+    "tip": "NASA为专有名词，直接定位含NASA的段落，再确认'免费发射'信息。"
+   },
+   {
+    "number": 42,
+    "answer": "L",
+    "cn": "即使存在限制条件，一些有创造力的开发者仍有可能将立方体卫星技术引向导致有害后果的方向。",
+    "keywords": [
+     "constraints",
+     "creative developers",
+     "CubeSat technology",
+     "harmful outcomes"
+    ],
+    "paraphrase": "题目constraints可能对应原文limitations或restrictions；creative developers可能用innovative engineers或resourceful actors替换；harmful outcomes可能对应dangerous results或destructive consequences。",
+    "tip": "关注'尽管有限制但仍可能造成危害'这一转折逻辑的段落。"
+   },
+   {
+    "number": 43,
+    "answer": "G",
+    "cn": "立方体卫星在为空间科学做出重大贡献的同时，也可能对其他航天器构成威胁。",
+    "keywords": [
+     "contributions to space science",
+     "CubeSats",
+     "hazards",
+     "space vehicles"
+    ],
+    "paraphrase": "题目while引导让步逻辑，强调贡献与风险并存；significant contributions可能对应原文valuable advances；pose hazards可能用present threats或create dangers替换；other space vehicles可能对应other spacecraft或orbiting objects。",
+    "tip": "定位'CubeSat对其他航天器的威胁/碎片风险'的内容，注意while的让步结构。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "微型卫星使运营者能够从近地轨道研究地球及其周围的空间。",
+    "keywords": [
+     "mini-satellites",
+     "operators",
+     "study Earth",
+     "LEO"
+    ],
+    "paraphrase": "题目LEO即Low Earth Orbit（近地轨道）；enable operators to study可能对应原文allow users to observe或give operators the ability to monitor；space around it可能用surrounding space environment替换。",
+    "tip": "LEO为关键缩写，直接扫读含LEO或Low Earth Orbit的段落。"
+   },
+   {
+    "number": 45,
+    "answer": "J",
+    "cn": "AMSAT遵循向所有成员公开全部技术数据的原则，从而防止业余卫星被滥用。",
+    "keywords": [
+     "AMSAT",
+     "technical data",
+     "accessible to members",
+     "preventing abuse"
+    ],
+    "paraphrase": "题目operates on the principle of表示'以……为原则运作'，原文可能用follows the policy of或is guided by the philosophy of替换；accessible to its members可能对应open to all members或transparent within the organization；preventing the abuse可能用deterring misuse替换。",
+    "tip": "定位AMSAT段落中关于'数据开放/透明原则'的论述，与40题K段的'对外保密'形成对比。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "accessibility",
+    "cn": "n. 可获取性；可进入性"
+   },
+   {
+    "w": "misuse",
+    "cn": "n./v. 滥用；误用"
+   },
+   {
+    "w": "irresponsible",
+    "cn": "adj. 不负责任的"
+   },
+   {
+    "w": "CubeSat",
+    "cn": "n. 立方体卫星（一种标准化微型卫星）"
+   },
+   {
+    "w": "orbit",
+    "cn": "n. 轨道；v. 绕轨道运行"
+   },
+   {
+    "w": "hijacking",
+    "cn": "n. 劫持（此处指对卫星的非法控制）"
+   },
+   {
+    "w": "free of charge",
+    "cn": "免费地（介词短语）"
+   },
+   {
+    "w": "constraints",
+    "cn": "n. 限制；约束（复数）"
+   },
+   {
+    "w": "LEO",
+    "cn": "n. 近地轨道（Low Earth Orbit 的缩写）"
+   },
+   {
+    "w": "pose hazards",
+    "cn": "构成威胁/危害（动宾搭配）"
+   },
+   {
+    "w": "AMSAT",
+    "cn": "n. 业余无线电卫星组织（专有名词）"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 释义；改述"
+   }
+  ]
+ }
+}

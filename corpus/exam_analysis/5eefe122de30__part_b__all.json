@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "5eefe122de30__part_b__all",
+ "examId": "5eefe122de30",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2012 年考研英语真题",
+ "year": 2012,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:27:10.324Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 39480,
+ "usage": {
+  "prompt_tokens": 1453,
+  "completion_tokens": 2039,
+  "total_tokens": 3492,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1453,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2039,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1453,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "网络计算机时代下载与上传之争",
+  "type": "七选五",
+  "strategy": [
+   "通读全文，把握'下载（被动消费）vs 上传（主动创造）'的核心论点",
+   "关注空格前后的代词指代（they/this/such a device）和重复关键词",
+   "利用因果连接词（This is because）、转折词及逻辑链条判断衔接",
+   "检查选项中的信号短语是否与上下文形成照应，如 pyramid of production、reverse the flow",
+   "代入后通读段落，确认语义连贯且无逻辑断裂"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "C",
+    "why": "前文提到一批天才（geniuses, warriors, entrepreneurs and visionaries）致力于创造一台 fabulous machine。C 选项中 they 指代这些天才，such a device 回指该机器，并用 Not only...but also 递进说明他们还将其嵌入全球网络系统，与下段 'The networked computer is an amazing device' 形成自然过渡。",
+    "traps": "D 含 This is because 需前文有待解释的观点，此处前文是描述而非观点；G 提到 reverse the flow，但 flow 概念尚未引出，放在此处突兀。",
+    "tip": "关键线索：they 指代前文 geniuses，such a device 指代 fabulous machine。"
+   },
+   {
+    "number": 42,
+    "answer": "D",
+    "why": "前文说 we must also act with caution，D 以 This is because 开头，直接解释谨慎的原因：网络计算机引发了下载与上传之间的'隐秘战争'。其后文紧接 'I call it a secret war for two reasons'，与 D 中 a secret war 完美衔接，形成'提出概念—解释原因'的逻辑链。",
+    "traps": "F 讨论 pyramid of production 的原因，与前文 caution 无关；E 涉及电视与电脑对比，此处电视话题尚未出现。",
+    "tip": "关键线索：This is because 承接 caution，secret war 被下文两次 reason 展开。"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "why": "前文列举人类创造的 superfluous material goods 和 superfluous experiences。A 选项以 these superfluous things 精准回指，点明它们定义了人类文化，并将论点升华到 downloading 与 uploading 的主题：仅停留在下载就剥夺了人之为人的核心要素，为下段'多数人仍停留在下载模式'做铺垫。",
+    "traps": "B 讨论 tumblr 等具体应用，与本段抽象的人类文化论述层次不匹配；C 讨论设备开发，与 superfluous 话题无关。",
+    "tip": "关键线索：these superfluous things 直接照应前文两处 superfluous。"
+   },
+   {
+    "number": 44,
+    "answer": "F",
+    "why": "前文描述了上传金字塔现象（a pyramid of production）。F 以 One reason for the persistence of this pyramid of production 原词复现，解释该现象持续存在的原因——过去半个世纪媒体文化被电视主导，而电视的本质就是下载。这也为下段展开讨论电视（Television is a one-way tap）做了直接铺垫。",
+    "traps": "G 提到 reverse the flow，但前文尚在分析原因阶段，解决方案放此处逻辑跳跃；E 虽涉及电视但讨论的是格式替换，与 pyramid 话题脱节。",
+    "tip": "关键线索：this pyramid of production 原词回指，television 引出下段。"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "why": "前文将电视比喻为单向水龙头（one-way tap flowing），指出电视最大的挑战不过是关机。G 提出网络计算机提供了50年来第一次'逆转水流'（reverse the flow）的机会，flow 与 tap flowing 形成精确呼应；同时提出 meaningful uploading 的概念，与下段 'What counts as meaningful uploading?' 构成设问—回答的衔接。",
+    "traps": "E 讨论电脑对电视的挑战不同于唱片机被CD替代，虽涉及电视但未提及 flow 和 uploading，无法与下段 meaningful uploading 衔接；B 讨论具体应用 stickiness，跳过了对电视问题的总结性回应。",
+    "tip": "关键线索：reverse the flow 照应 one-way tap flowing，meaningful uploading 引出下段设问。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "fleeting",
+    "cn": "adj. 短暂的，转瞬即逝的"
+   },
+   {
+    "w": "inheritor",
+    "cn": "n. 继承者"
+   },
+   {
+    "w": "visionary",
+    "cn": "n. 有远见的人；空想家"
+   },
+   {
+    "w": "fabulous",
+    "cn": "adj. 极好的，惊人的"
+   },
+   {
+    "w": "the mode of production",
+    "cn": "n. 生产方式"
+   },
+   {
+    "w": "caution",
+    "cn": "n. 谨慎，警惕"
+   },
+   {
+    "w": "agenda",
+    "cn": "n. 议程；目的，企图"
+   },
+   {
+    "w": "superfluous",
+    "cn": "adj. 多余的，过剩的（此处指超越实用目的的）"
+   },
+   {
+    "w": "advent",
+    "cn": "n. 出现，到来"
+   },
+   {
+    "w": "pyramid",
+    "cn": "n. 金字塔（此处喻指层级结构）"
+   },
+   {
+    "w": "constituent",
+    "cn": "n. 组成部分，要素"
+   },
+   {
+    "w": "stickiness",
+    "cn": "n. 粘性（此处喻指内容的吸引力与持久影响力）"
+   },
+   {
+    "w": "adhere",
+    "cn": "v. 粘附；坚持（此处指被吸引、认同）"
+   },
+   {
+    "w": "embed",
+    "cn": "v. 嵌入，植入"
+   },
+   {
+    "w": "strip oneself of",
+    "cn": "v. 剥夺自己的……"
+   },
+   {
+    "w": "mount",
+    "cn": "v. 发起（挑战）；增长"
+   },
+   {
+    "w": "enlightening",
+    "cn": "adj. 有启发性的"
+   }
+  ]
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "41fe6975b225__writing__all",
+ "examId": "41fe6975b225",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2018 年 12 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:17:49.325Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 51712,
+ "usage": {
+  "prompt_tokens": 690,
+  "completion_tokens": 3744,
+  "total_tokens": 4434,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 690,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3744,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 690,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"如何平衡工作与休闲\"展开论述，要求不少于150词、不超过200词，需给出具体策略与个人见解。",
+    "outline": [
+     "第一段：引出话题——在快节奏、高竞争的时代，平衡工作与休闲日益重要，提出问题。",
+     "第二段：主体论述——给出三到四条具体可行的策略（如时间管理、培养爱好、学会拒绝、正确认识休闲的意义），并用因果或对比进行论证。",
+     "第三段：总结全文——重申平衡工作与休闲是可持续发展的必要条件，呼吁读者付诸行动。"
+    ],
+    "sample": "In an era of fierce competition, striking a balance between work and leisure has become an increasingly pressing concern for modern professionals. How, then, can we achieve this equilibrium?\n\nThere are several practical strategies worth considering. First, effective time management is the cornerstone. By setting clear boundaries between office hours and personal time, individuals can ensure that neither domain encroaches upon the other. Second, it is essential to cultivate meaningful hobbies that serve as a mental reset, such as exercising, reading, or spending quality time with family. These activities not only rejuvenate the mind but also enhance productivity when one returns to work. Third, learning to say \"no\" to excessive workloads and unnecessary social obligations can free up valuable time for genuine relaxation. More importantly, we should recognize that leisure is not the opposite of productivity but rather its vital complement.\n\nIn conclusion, balancing work and leisure is not a luxury but a necessity for sustainable success and well-being. Only by consciously allocating time for both can we lead a truly fulfilling and healthy life.",
+    "phrases": [
+     {
+      "en": "strike a balance between A and B",
+      "cn": "在A与B之间取得平衡；高频搭配，比find a balance更正式"
+     },
+     {
+      "en": "an increasingly pressing concern",
+      "cn": "一个日益紧迫的问题；pressing比important更具紧迫感，适合引出话题"
+     },
+     {
+      "en": "set clear boundaries",
+      "cn": "设定清晰的界限；用于讨论工作与生活分界时非常地道"
+     },
+     {
+      "en": "encroach upon",
+      "cn": "侵占、侵蚀；正式用词，用来描述工作对私人时间的蚕食"
+     },
+     {
+      "en": "serve as a mental reset",
+      "cn": "充当一种精神重启/心理调节；形象生动地表达休闲的功能"
+     },
+     {
+      "en": "rejuvenate the mind",
+      "cn": "使头脑恢复活力；比relax更高级，适合六级作文提分"
+     },
+     {
+      "en": "free up valuable time",
+      "cn": "腾出宝贵时间；free up比save time更生动具体"
+     },
+     {
+      "en": "not A but rather B",
+      "cn": "不是A而是B；加rather语气更强，增加句式多样性"
+     },
+     {
+      "en": "a necessity for sustainable success",
+      "cn": "可持续成功的必要条件；将平衡上升到长远发展高度，立意深刻"
+     },
+     {
+      "en": "Only by doing ... can we ...",
+      "cn": "只有通过……我们才能……；倒装句型，结尾有力，彰显语法功底"
+     }
+    ],
+    "pitfalls": [
+     "通篇只写工作重要或休闲重要，未真正围绕\"如何平衡\"提出具体方法，偏题严重。",
+     "段落之间缺乏过渡词（如First, Moreover, In conclusion），导致行文逻辑松散被扣分。",
+     "反复使用 very important / very good 等初级表达，词汇单一，无法达到六级评分标准。",
+     "忽视字数要求，写了不到120词或超过220词，均会被酌情扣分。",
+     "主语单一，全篇都是 we should ... we should ...，缺少被动句、倒装句等句式变化。"
+    ],
+    "upgrades": [
+     {
+      "plain": "We should manage our time well.",
+      "better": "Effective time management is the cornerstone of achieving work-leisure balance.",
+      "note": "将抽象建议转化为主语提前的判断句，信息密度更高，表达更正式。"
+     },
+     {
+      "plain": "Hobbies can help us relax.",
+      "better": "Meaningful hobbies serve as a mental reset, rejuvenating the mind and boosting productivity.",
+      "note": "用serve as隐喻加分词短语做状语，句式更丰富，逻辑更紧凑。"
+     },
+     {
+      "plain": "We can have a good life if we balance work and leisure.",
+      "better": "Only by consciously allocating time for both can we lead a truly fulfilling and healthy life.",
+      "note": "使用Only by引导的倒装句收尾，语法亮点突出，增强结论力度。"
+     },
+     {
+      "plain": "Leisure is not bad for work.",
+      "better": "Leisure is not the opposite of productivity but rather its vital complement.",
+      "note": "not ... but rather 对比结构更精确，complement一词体现辩证思维。"
+     },
+     {
+      "plain": "We should learn to refuse extra work.",
+      "better": "Learning to say 'no' to excessive workloads can free up valuable time for genuine relaxation.",
+      "note": "动名词作主语更书面，excessive和genuine用词更精准，避免口语化。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Striking a balance between work and leisure has become an increasingly pressing concern for modern professionals. — 在工作与休闲间取得平衡已成为当代职场人日益紧迫的议题。（pressing concern引出话题，简洁有力）",
+   "By setting clear boundaries between office hours and personal time, individuals can ensure that neither domain encroaches upon the other. — 通过在办公时间与私人时间之间设定清晰界限，个体可以确保两个领域互不侵占。（By doing引导方式状语 + encroach upon高级词汇）",
+   "These activities not only rejuvenate the mind but also enhance productivity when one returns to work. — 这些活动不仅能使头脑恢复活力，还能在重返工作时提升效率。（not only ... but also经典并列 + rejuvenate提分词汇）",
+   "Leisure is not the opposite of productivity but rather its vital complement. — 休闲不是生产力的对立面，而恰恰是其至关重要的补充。（辩证视角 + not ... but rather高级对比）",
+   "Only by consciously allocating time for both can we lead a truly fulfilling and healthy life. — 唯有有意识地为二者分配时间，我们才能过上真正充实而健康的生活。（Only by引导倒装句，结尾掷地有声）"
+  ]
+ }
+}

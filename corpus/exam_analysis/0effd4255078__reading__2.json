@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "0effd4255078__reading__2",
+ "examId": "0effd4255078",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 12 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:13:01.074Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57048,
+ "usage": {
+  "prompt_tokens": 1769,
+  "completion_tokens": 3798,
+  "total_tokens": 5567,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1769,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3798,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1769,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "物联网与智能技术推动生活变革",
+  "gist": "文章以iPhone 6s为例引出技术飞速发展的话题，指出到2020年将有约250亿设备联网，智能家居将普及。随后阐述物联网在智能建筑和城市中的应用前景，强调如何利用海量数据创造实际效益是最大挑战，最后呼吁人们认识到智能技术将显著提升生活质量。",
+  "structure": [
+   "第1-2段：以iPhone 6s为例引出技术飞速发展与物联网应用",
+   "第3-5段：展望2020年智能家居普及及智能建筑节约成本的趋势",
+   "第6-7段：强调数据利用是最大挑战",
+   "第8-9段：技术已具备，呼吁拥抱智能未来"
+  ],
+  "difficulty": "中等",
+  "translation": "我们的世界发展如此之快，以至于我们很少停下来看看仅仅几年间我们已经走了多远。例如，最新的iPhone 6s拥有双核处理器，却能轻巧地放入口袋。相比之下，你在世界上任何一间办公室里的标准笔记本电脑上才能看到这样的技术规格。\n\n难怪物联网的新应用发展如此迅速，因为我们购买的几乎每一个新设备末端都有插头或与互联网的无线连接。很快，我们当前的智能手机生活方式将扩展，创造出属于我们自己的智能家居生活方式。\n\n所有研究人员都认同，到2020年将有近250亿台设备、物品和传感器实现联网，而恰好在那个时间点，千禧一代预计将占到劳动力总数的75%，全面互联的家庭将成为全球大量人口的现实。\n\n然而，这只是冰山一角，因为随着领导者和企业主开始意识到技术通过联网传感器、新型自动化以及智能能源和设施管理所能带来的巨大节约，智能建筑甚至智能城市正日益成为常态。\n\n在线安防摄像头、智能照明以及大量控制温度和空气质量的传感器，正在提供前所未有的控制水平、效率以及改进——这些曾经在经营企业或管理大型建筑时被视为必要成本。\n\n我们可以预期，不断增长的设备、系统和环境清单将保持连接，始终在线并相互通信。巨大的好处不仅在于存储这些庞大且快速增长的数据，还在于能够运行实时数据分析，以提取可操作的、持续性的知识。\n\n这项技术最大也最令人兴奋的挑战是如何创造性地利用这些不断增长的海量数据，为企业和智能城市的市民带来成本节约、改进和切实的效益。\n\n好消息是，这些技术大部分已经被发明出来了。说实话，不久之前，随时随地工作的想法还是某种遥远的乌托邦式梦想，然而现在，只要我们能连接互联网，就可以在世界上任何地点完成几乎任何基于办公室的工作。\n\n是时候认识到这样一个事实：建设智能建筑、智能城市和智能家居将在未来几年内显著改善我们的生活质量。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "Our world now moves so fast that we seldom stop to see just how far we have come in just a few years. The latest iPhone 6s, for example, has a dual-core processor and fits nicely into your pocket.",
+    "why": "文章首句即点明\"世界发展如此之快，我们很少停下来看看仅仅几年间已走了多远\"，紧接着以iPhone 6s为例，说明原本只有笔记本电脑才有的双核处理器如今已能装进口袋大小的手机。这个例子直接印证了短时间内技术的飞速进步，对应D选项\"在很短时间内技术快速进步\"。",
+    "traps": "A\"智能手机的巨大容量\"属于无中生有，原文强调的是处理器性能而非存储容量；B\"智能手机在全球的广泛使用\"文中未提及普及率问题；C\"新技术对日常生活的巨大影响\"过度引申，例子聚焦于技术进步的速度，而非对日常生活的影响。",
+    "tip": "例证题应关注例子所服务的论点，而非例子本身的细节。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "All researchers agree that close to 25 billion devices, things and sensors will be connected by 2020 which incidentally is also the moment that Millennials are expected to make up 75 percent of our overall workforce, and the fully connected home will become a reality for large numbers of people worldwide.",
+    "why": "原文明确指出到2020年\"全面互联的家庭将成为全球大量人口的现实\"（the fully connected home will become a reality for large numbers of people worldwide），这正是智能家居普及化的含义，与B选项\"智能家居的普及\"完全对应。",
+    "traps": "A\"物联网应用\"出现在第二段，但并非针对2020年的预测；C\"千禧一代的出现\"是偷换概念，原文说的是千禧一代将占劳动力75%，而非刚刚出现；D\"世界的完全全球化\"属于无中生有，原文从未提及全球化概念。",
+    "tip": "细节题需精确对应原文关键表述，注意区分时间限定。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "smart buildings and even cities increasingly become the norm as leaders and business owners begin to wake up to the massive savings that technology can deliver through connected sensors and new forms of automation",
+    "why": "原文指出当领导者和企业主意识到技术带来的巨大节约后，智能建筑甚至智能城市正日益成为常态（become the norm）。这说明企业主认识到物联网的好处后，会投资建设更多智能建筑和城市，对应C选项。",
+    "traps": "A\"雇用更少的工人\"是过度推断，原文提到自动化但未直接说减少员工；B\"自动控制企业\"曲解原文，原文提到automation是作为节约手段之一，而非完全自动控制；D\"拥抱任何新技术\"过于绝对，原文聚焦于智能建筑和城市的具体应用，非泛指所有新技术。",
+    "tip": "注意因果关系：企业主觉醒→投资智能建筑和城市成为常态。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The biggest and most exciting challenge of this technology is how to creatively leverage this ever-growing amount of data to deliver cost savings, improvements and tangible benefits to both businesses and citizens of these smart cities.",
+    "why": "原文明确指出最大且最激动人心的挑战是\"如何创造性地利用不断增长的数据来实现成本节约、改进和切实的效益\"。deliver cost savings, improvements and tangible benefits即\"转化为有利可图的用途\"，与A选项\"如何将其转化为盈利用途\"高度吻合。",
+    "traps": "B\"如何做实时数据分析\"出现在上一段，是好处之一而非最大挑战；C\"如何连接可操作系统\"属于偷换概念，原文说的是actionable knowledge而非actionable systems；D\"如何设计新的存储方式\"虽然涉及数据存储，但原文明确说好处不仅在存储，真正的挑战在利用数据。",
+    "tip": "抓住题目中most exciting challenge的关键限定词，精确定位原文对应句。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "it wasn't too long ago that the idea of working from anywhere and at anytime was some form of a distant Utopian dream, and yet now we can perform almost any office-based task from any location in the world as long as we have access to the internet.",
+    "why": "原文用转折yet表明：随时随地工作曾是遥远的梦想，但如今只要能上网就可以在世界任何地方完成几乎任何办公任务。作者认为这已成为现实，条件是有互联网连接，与A选项\"只要连接互联网就可行\"完全一致。",
+    "traps": "B\"将在智能建筑、城市和家庭中蓬勃发展\"将两个不同话题混为一谈；C\"对普通工人来说仍是遥远的乌托邦梦想\"与原文转折语意相反，文中明确说曾经是梦想但现在已实现；D\"给老板和工人都带来切实好处\"属于张冠李戴，tangible benefits是上文谈论数据利用时的表述，非此处观点。",
+    "tip": "注意转折词yet前后的语意变化，把握作者的真实观点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dual-core",
+    "cn": "双核的（adj.）"
+   },
+   {
+    "w": "specification",
+    "cn": "规格，技术参数（n.）"
+   },
+   {
+    "w": "proverbial",
+    "cn": "众所周知的，谚语中的（adj.）"
+   },
+   {
+    "w": "automation",
+    "cn": "自动化（n.）"
+   },
+   {
+    "w": "unprecedented",
+    "cn": "前所未有的，史无前例的（adj.）"
+   },
+   {
+    "w": "analytics",
+    "cn": "数据分析（n.）"
+   },
+   {
+    "w": "actionable",
+    "cn": "可操作的，可执行的（adj.）"
+   },
+   {
+    "w": "leverage",
+    "cn": "利用，发挥…的作用（v.）"
+   },
+   {
+    "w": "tangible",
+    "cn": "切实的，有形的（adj.）"
+   },
+   {
+    "w": "Utopian",
+    "cn": "乌托邦式的，空想的（adj.）"
+   },
+   {
+    "w": "incidentally",
+    "cn": "顺便提一下，恰好（adv.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "All researchers agree that close to 25 billion devices, things and sensors will be connected by 2020 which incidentally is also the moment that Millennials are expected to make up 75 percent of our overall workforce, and the fully connected home will become a reality for large numbers of people worldwide.",
+    "cn": "所有研究人员都认同，到2020年将有近250亿台设备、物品和传感器实现联网，而恰好在那个时间点，千禧一代预计将占劳动力总数的75%，全面互联的家庭将成为全球大量人口的现实。",
+    "note": "主干为All researchers agree that...三个并列内容：①25 billion devices will be connected；②which引导非限制性定语从句修饰2020；③and连接第三个并列分句the fully connected home will become a reality。"
+   },
+   {
+    "en": "However, this is just the tip of the proverbial iceberg as smart buildings and even cities increasingly become the norm as leaders and business owners begin to wake up to the massive savings that technology can deliver through connected sensors and new forms of automation coupled with intelligent energy and facilities management.",
+    "cn": "然而，这只是冰山一角，因为随着领导者和企业主开始意识到技术通过联网传感器、新型自动化以及智能能源和设施管理所能带来的巨大节约，智能建筑甚至智能城市正日益成为常态。",
+    "note": "主句this is just the tip of the iceberg；第一个as引导原因状语从句；第二个as引导时间状语从句；that引导定语从句修饰savings；coupled with为过去分词短语作伴随。"
+   },
+   {
+    "en": "The biggest and most exciting challenge of this technology is how to creatively leverage this ever-growing amount of data to deliver cost savings, improvements and tangible benefits to both businesses and citizens of these smart cities.",
+    "cn": "这项技术最大也最令人兴奋的挑战是如何创造性地利用不断增长的海量数据，为企业和智能城市的市民带来成本节约、改进和切实的效益。",
+    "note": "主干为The challenge is how to...；how引导表语从句；to deliver为目的状语，其中cost savings, improvements and tangible benefits三项并列；to both businesses and citizens为介词短语表对象。"
+   }
+  ]
+ }
+}

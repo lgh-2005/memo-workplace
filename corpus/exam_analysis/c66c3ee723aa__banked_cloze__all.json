@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "c66c3ee723aa__banked_cloze__all",
+ "examId": "c66c3ee723aa",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2025 年 6 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:01:56.756Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60271,
+ "usage": {
+  "prompt_tokens": 1443,
+  "completion_tokens": 3459,
+  "total_tokens": 4902,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1443,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3459,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1443,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "大学校园无毒除草运动",
+  "gist": "文章讲述了大学生Charlene Duong发现校园使用有毒合成农药后，加入\"无除草剂校园\"(HFC)运动的故事。文章揭示了大学为追求美观而使用化学除草剂所带来的健康、环境和气候危害，并倡导以人工除草等替代方式维护校园。",
+  "difficulty": "中等",
+  "translation": "大二那年，Charlene Duong得知她所在的大学校园使用了有毒的合成农药。她感到震惊但并不意外，她知道自己必须做点什么。Charlene和几位同学在网上快速搜索后，发现了一个由\"无除草剂校园\"(HFC)组织领导的、规模虽小但不断壮大的运动，旨在让大学校园摆脱人工除草剂。他们对此很感兴趣。\n\n和许多人一样，Charlene经历着气候焦虑——一种对气候灾难的长期恐惧——当时她正在寻找一个释放途径。当她发现HFC运动时，她说她觉得自己\"找到了一个可以专注的具体领域，同时它仍然契合为所有人争取更健康、更安全、更清洁的环境这一更大的图景。\"\n\n在大学土地养护中使用有毒除草剂并非个例。大多数高等教育机构依赖合成农药和化肥来实现美观目标。拥有一个\"美丽\"的校园意味着绿色且维护完美的草坪，以及花坛和铺设好的人行道。但这些按传统方式管理的校园可能付出代价：癌症风险增加、水道受到污染、野生动物中毒以及土壤失去生机。\n\n大学校园使用农药也加剧了全球气候危机。使用化学品消灭昆虫或不需要的植物会增加间接排放，因为这些化学品可能含有石油基成分。农药的使用还会减少土壤中的生命，削弱土壤吸收碳或保持水分的能力，从而降低校园从干旱和洪水等与气候相关的极端天气事件中快速恢复的能力。\n\n学生们与HFC合作，不使用有毒化学品，而是帮助进行校园场地的除草工作。\n\n\"这项工作提醒我活在当下，在减少除草剂使用、保持校园安全和健康的过程中发挥自己的作用，\"Charlene说。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "J",
+    "correct": "intrigued",
+    "why": "此处需要一个形容词/过去分词作表语，描述Charlene等人发现HFC运动后的心理状态。上文提到她们\"做了一番网络搜索并发现了这个运动\"，intrigued（被吸引的、感兴趣的）完美贴合发现新事物后产生兴趣的语境。",
+    "traps": "其他情感类词汇如shocked等已在上文出现，不会重复使用；其余候选词均为非情感类词汇，无法用作描述人物心理状态的表语。",
+    "tip": "be + 过去分词作表语，表示人的心理状态。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "chronic",
+    "why": "空格处需要形容词修饰fear。chronic意为\"长期的、慢性的\"，与climate anxiety的定义高度吻合——气候焦虑是一种持续存在的、挥之不去的对气候灾难的恐惧，而非短暂的一次性恐惧。破折号结构为解释说明。",
+    "traps": "aesthetic（美学的）语义不符，无法修饰fear；其余形容词在语义上均与\"恐惧\"无法合理搭配。",
+    "tip": "chronic fear 是固定搭配，表\"长期的恐惧\"。"
+   },
+   {
+    "number": 28,
+    "answer": "L",
+    "correct": "outlet",
+    "why": "空格前有冠词an，需要一个元音开头的可数名词。outlet意为\"发泄途径、出口\"，上下文说Charlene因气候焦虑而寻找一个行动出口，发现HFC运动恰好提供了这样的途径，逻辑通顺。",
+    "traps": "environment虽是名词但语义不当（寻找一个环境不合逻辑）；aesthetic是形容词，不能单独作an的宾语。",
+    "tip": "an + 元音开头名词，outlet常指\"情感/精力的释放途径\"。"
+   },
+   {
+    "number": 29,
+    "answer": "F",
+    "correct": "environment",
+    "why": "空格处需要名词，与前面的healthier, safer, cleaner构成并列修饰关系。environment（环境）完美契合\"为所有人争取更清洁的环境\"这一语境，也与全文环保主题一致。",
+    "traps": "emissions（排放）语义不符，不能说'更清洁的排放'；其余名词不符合for all的宏观语境。",
+    "tip": "cleaner environment for all 是环保语境的高频表达。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "correct": "aesthetic",
+    "why": "空格修饰goals，需要形容词。下文紧接着用beautiful加引号解释说明，说明这些目标是关于美观的。aesthetic意为\"审美的、美学的\"，aesthetic goals即\"美观目标\"，与下文描述的绿色草坪、花坛完全对应。",
+    "traps": "chronic（长期的）修饰goals语义不当；conventionally是副词，不能直接修饰名词。",
+    "tip": "aesthetic goals 被下文 beautiful campus 直接印证。"
+   },
+   {
+    "number": 31,
+    "answer": "D",
+    "correct": "conventionally",
+    "why": "空格位于managed之前，需要副词修饰过去分词。conventionally意为\"按传统方式地\"，指使用化学农药这种传统管理方式。上文提到most institutions依赖合成农药，这正是conventional做法，与文章倡导的替代方式形成对比。",
+    "traps": "aesthetic是形容词不能修饰分词managed；contaminated是过去分词，不能修饰另一个过去分词。",
+    "tip": "副词 + 过去分词结构：conventionally managed。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "correct": "contaminated",
+    "why": "空格修饰waterways，需要形容词/过去分词。contaminated意为\"被污染的\"，与前面的increased cancer risk、后面的poisoned wildlife构成并列的危害清单，描述化学除草剂对水道的污染。",
+    "traps": "aesthetic（美学的）修饰waterways语义荒谬；chronic（长期的）虽可修饰名词但不符合此处列举危害的语境。",
+    "tip": "contaminated waterways 是环境污染语境的常见搭配。"
+   },
+   {
+    "number": 33,
+    "answer": "E",
+    "correct": "emissions",
+    "why": "空格处需要名词作increase的宾语。indirect emissions意为\"间接排放\"，因为农药含有石油基成分，其生产和使用会产生碳排放。这与本段讨论农药加剧气候危机的主题一致。",
+    "traps": "environment已用于第29题；outlet语义不符（增加间接出口不合逻辑）。",
+    "tip": "indirect emissions 是气候变化话题的核心术语。"
+   },
+   {
+    "number": 34,
+    "answer": "G",
+    "correct": "hampering",
+    "why": "空格处在逗号后，与后面的reducing并列，构成现在分词短语作伴随状语。hampering意为\"阻碍、削弱\"，指农药使用削弱了土壤吸碳保水的能力，逻辑上承接前句\"decreases the life in soil\"。",
+    "traps": "weeding（除草）语义不符；contaminated为过去分词形式，无法与reducing构成并列的现在分词结构。",
+    "tip": "hampering与reducing并列作伴随状语，注意-ing形式的平行结构。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "weeding",
+    "why": "空格在with之后，需要动名词。weeding意为\"除草\"，指学生用人工除草代替化学除草剂。这与全文主旨\"无除草剂校园\"完美呼应——Instead of using toxic chemicals，学生们亲自动手拔草。",
+    "traps": "hampering（阻碍）语义不符，学生不会帮忙\"阻碍\"校园场地；其余词汇均无法与help out with搭配表达积极的校园维护行动。",
+    "tip": "help out with + 动名词，weeding 与 herbicide-free 主题呼应。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "aesthetic",
+    "cn": "adj. 审美的，美学的"
+   },
+   {
+    "w": "chronic",
+    "cn": "adj. 长期的，慢性的"
+   },
+   {
+    "w": "contaminated",
+    "cn": "adj. 被污染的（contaminate v. 污染）"
+   },
+   {
+    "w": "conventionally",
+    "cn": "adv. 按照惯例地，传统地"
+   },
+   {
+    "w": "emissions",
+    "cn": "n. 排放物，排放量（常用复数）"
+   },
+   {
+    "w": "hampering",
+    "cn": "v. 阻碍，妨碍（hamper的现在分词）"
+   },
+   {
+    "w": "intrigued",
+    "cn": "adj. 被吸引的，很感兴趣的（intrigue v. 引起好奇）"
+   },
+   {
+    "w": "outlet",
+    "cn": "n. 出路，发泄途径；销售点"
+   },
+   {
+    "w": "herbicide",
+    "cn": "n. 除草剂，灭草剂"
+   },
+   {
+    "w": "pesticide",
+    "cn": "n. 农药，杀虫剂"
+   },
+   {
+    "w": "petroleum-based",
+    "cn": "adj. 以石油为基础的"
+   },
+   {
+    "w": "synthetic",
+    "cn": "adj. 合成的，人造的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文掌握主旨，将15个候选词按词性分类（名词、动词、形容词、副词）。",
+   "第二步：根据空格前后的语法标志（冠词、介词、be动词等）判断所需词性，缩小选择范围。",
+   "第三步：利用上下文语义线索（同义复现、因果逻辑、并列结构）确定最佳选项。",
+   "第四步：注意平行结构提示，如并列的-ing形式或并列形容词，帮助锁定词性和词义。",
+   "第五步：填完后回读全文，检查语法一致性和语义连贯性，确保每词只用一次。"
+  ]
+ }
+}

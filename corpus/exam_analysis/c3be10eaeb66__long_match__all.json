@@ -1,0 +1,251 @@
+{
+ "schemaVersion": 1,
+ "id": "c3be10eaeb66__long_match__all",
+ "examId": "c3be10eaeb66",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2024 年 6 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:54:45.207Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 37977,
+ "usage": {
+  "prompt_tokens": 974,
+  "completion_tokens": 2048,
+  "total_tokens": 3022,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 974,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2048,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 974,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "杰克逊橡树——自我拥有的树",
+  "strategy": [
+   "先通读10条陈述句，提取高区分度专有名词与数字（如Jackson、Ward、property taxes、windstorm）作为扫读锚点",
+   "将陈述句按逻辑线索分组：故事起源(B/C)、树的命运(D/E)、土地交易与产权考证(H/I/J/K)、故事真伪(N/O)，带着分组意识快速定位",
+   "注意同义替换：题目用transfer ownership，原文可能用deed/convey；题目用destroyed，原文可能用cut down/removed",
+   "关注否定与无证据类表述（No proof / No evidence），这类题往往对应原文中带no record / nothing to suggest等措辞的段落"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "cn": "据说杰克逊将这棵橡树的所有权转让给了橡树本身，以保护它不被砍伐毁坏。",
+    "keywords": [
+     "Jackson",
+     "transferred ownership",
+     "oak tree",
+     "protect",
+     "destroyed"
+    ],
+    "paraphrase": "题目说transfer ownership to itself（将所有权转让给树本身），原文段落很可能使用deed the tree to itself或convey ownership等近义表达；protect it from being destroyed可能被改写为save/preserve it from being cut down。",
+    "tip": "定位\"转让所有权给树自身\"这一核心动作，结合protect/preserve等词锁定C段。"
+   },
+   {
+    "number": 37,
+    "answer": "H",
+    "cn": "经过广泛搜索，没有找到任何证据表明杰克逊曾拥有过这棵橡树所在的那块土地。",
+    "keywords": [
+     "no proof",
+     "extensive search",
+     "Jackson",
+     "owned the land"
+    ],
+    "paraphrase": "题目用No proof has been found from an extensive search，原文段落可能使用no record exists / thorough investigation revealed nothing等表达来传递'查无实据'的含义。",
+    "tip": "定位'无证据+杰克逊+拥有土地'三要素组合，迅速扫读H段。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "cn": "下大雨时，杰克逊常常在一棵据说拥有自身所有权的大树下躲雨。",
+    "keywords": [
+     "raining heavily",
+     "took shelter",
+     "big tree",
+     "own itself"
+    ],
+    "paraphrase": "题目took shelter under a big tree可能在原文中被表达为sought refuge beneath / hid under the oak等；raining heavily可对应downpour / heavy rain / rainstorm。",
+    "tip": "抓住'大雨+躲在树下'这一生动场景细节定位B段。"
+   },
+   {
+    "number": 39,
+    "answer": "K",
+    "cn": "没有证据表明杰克逊曾为这棵橡树所在土地安排缴纳过财产税。",
+    "keywords": [
+     "no evidence",
+     "property taxes",
+     "Jackson",
+     "arrangements"
+    ],
+    "paraphrase": "题目用no evidence和made arrangements to pay property taxes，原文可能用no record of tax payments / nothing suggests taxes were ever paid等表述进行同义替换。",
+    "tip": "关键词property taxes极具辨识度，扫读时锁定税务相关内容即指向K段。"
+   },
+   {
+    "number": 40,
+    "answer": "I",
+    "cn": "沃德教授从杰克逊手中购买一块土地时，向他支付了一千多美元。",
+    "keywords": [
+     "Professor Ward",
+     "one thousand dollars",
+     "purchasing",
+     "land"
+    ],
+    "paraphrase": "题目paid Jackson over one thousand dollars在原文中可能出现具体金额如$1,200或用more than $1,000表达；purchasing a piece of land可能改写为bought a tract/parcel of land。",
+    "tip": "人名Professor Ward和具体金额是强定位信号，直接扫读数字与人名定位I段。"
+   },
+   {
+    "number": 41,
+    "answer": "D",
+    "cn": "据说那棵拥有自身所有权的树在一场猛烈的暴风中倒塌了。",
+    "keywords": [
+     "tree owned itself",
+     "fell",
+     "heavy windstorm"
+    ],
+    "paraphrase": "题目fell in a heavy windstorm，原文可能使用toppled/was brought down/collapsed in a severe storm或gale等表达替换。",
+    "tip": "'树倒塌+暴风'是关键事件节点，快速定位D段。"
+   },
+   {
+    "number": 42,
+    "answer": "N",
+    "cn": "有人怀疑这棵橡树的故事是作为一种思维实验而被编造出来的。",
+    "keywords": [
+     "suspected",
+     "invented",
+     "thought exercise"
+    ],
+    "paraphrase": "题目用invented as a thought exercise（作为思维实验被编造），原文可能使用fabricated / made up as a mental exercise / intellectual exercise等近义表达。",
+    "tip": "thought exercise是高辨识度的抽象概念词，扫读时一旦见到类似表述即锁定N段。"
+   },
+   {
+    "number": 43,
+    "answer": "J",
+    "cn": "19世纪中叶，杰克逊的小种植园被拍卖以偿还他的债务。",
+    "keywords": [
+     "plantation",
+     "auctioned off",
+     "settle debt",
+     "mid-19th century"
+    ],
+    "paraphrase": "题目auctioned off to settle his debt可能在原文中表达为sold at auction to pay off debts / satisfy creditors；mid-19th century可能给出具体年份如1840s或1850s。",
+    "tip": "auction（拍卖）与plantation（种植园）组合极具辨识度，迅速定位J段。"
+   },
+   {
+    "number": 44,
+    "answer": "E",
+    "cn": "人们举行了一场正式仪式，以庆祝将一棵小树移栽到其\"祖先\"曾经屹立的地方。",
+    "keywords": [
+     "official ceremony",
+     "transplanting",
+     "small tree",
+     "ancestor"
+    ],
+    "paraphrase": "题目a small tree与ancestor暗示原树后代（即Son/Child of the Tree That Owns Itself）；official ceremony可能在原文中用formal dedication / public celebration等表达。",
+    "tip": "ceremony + transplanting + ancestor构成独特场景，对应'子树'移栽事件，定位E段。"
+   },
+   {
+    "number": 45,
+    "answer": "O",
+    "cn": "《自我拥有的树》的故事曾多次出现在当地报纸上，措辞略有不同。",
+    "keywords": [
+     "local paper",
+     "several times",
+     "slight alterations",
+     "wording"
+    ],
+    "paraphrase": "题目slight alterations in wording在原文中可能用minor changes in phrasing / small variations in the text等替换；appeared several times可能改写为was reprinted / published repeatedly。",
+    "tip": "'多次见报+措辞变化'是关于故事流传版本的考证信息，定位O段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "transferred",
+    "cn": "v. 转让，转移（所有权等）"
+   },
+   {
+    "w": "ownership",
+    "cn": "n. 所有权，产权"
+   },
+   {
+    "w": "extensive",
+    "cn": "adj. 广泛的，大规模的"
+   },
+   {
+    "w": "took shelter",
+    "cn": "v. 短语，躲避，寻求庇护"
+   },
+   {
+    "w": "property taxes",
+    "cn": "n. 财产税，房产税"
+   },
+   {
+    "w": "auctioned off",
+    "cn": "v. 短语，拍卖掉"
+   },
+   {
+    "w": "plantation",
+    "cn": "n. 种植园，庄园"
+   },
+   {
+    "w": "transplanting",
+    "cn": "n./v. 移植，移栽"
+   },
+   {
+    "w": "ancestor",
+    "cn": "n. 祖先；此处比喻原来的老树"
+   },
+   {
+    "w": "alterations",
+    "cn": "n. 改动，变更（复数）"
+   },
+   {
+    "w": "thought exercise",
+    "cn": "n. 思维实验，思想练习"
+   }
+  ]
+ }
+}

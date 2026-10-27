@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "d8e3f65d0ba3__writing__all",
+ "examId": "d8e3f65d0ba3",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2003 年考研英语真题（旧）",
+ "year": 2003,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:14:30.138Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68717,
+ "usage": {
+  "prompt_tokens": 718,
+  "completion_tokens": 3975,
+  "total_tokens": 4693,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 718,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3975,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 718,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 46,
+    "part": "A",
+    "task": "看图写作（大作文），要求描述一组图画，阐释寓意，并指出对现实生活的启示，约200词。",
+    "outline": [
+     "第一段：客观描述图画内容——从1900年到2000年，海洋中鱼类逐渐减少而渔船急剧增多，最终鱼类消失殆尽。",
+     "第二段：揭示图画寓意——人类对自然资源的掠夺式开发终将导致资源枯竭，短视逐利带来严重生态后果。",
+     "第三段：联系现实，提出建议——认识资源有限性、加强法律监管、提高公众环保意识，实现可持续发展。"
+    ],
+    "sample": "The set of drawings vividly illustrates the alarming history of world commercial fishing. In the first picture, dated around 1900, the ocean teems with fish while only a small boat floats on the surface. By 1950, the number of fish has noticeably decreased as more boats appear. In the third picture, set in 1995, fish have become scarce while fishing vessels have multiplied dramatically. The last picture presents a shocking scene: in 2000, the vast ocean is completely devoid of fish, yet it is crowded with countless fishing boats.\n\nThe message conveyed by these drawings is both clear and thought-provoking: the reckless exploitation of natural resources will inevitably lead to their exhaustion. Driven by short-term profits, humans have relentlessly plundered marine resources without considering the ecological consequences. This unsustainable practice has pushed numerous fish species to the brink of extinction.\n\nThe implications for our life are profound. First, we must recognize that natural resources are finite and should be utilized responsibly. Second, governments ought to enforce stricter regulations on commercial fishing and other resource-extracting industries. Finally, raising public awareness about environmental conservation is essential. Only by striking a balance between economic development and ecological preservation can we ensure a sustainable future for generations to come.",
+    "phrases": [
+     {
+      "en": "teem with",
+      "cn": "充满、大量拥有，常用于描述丰富的场景，如 The river teems with wildlife."
+     },
+     {
+      "en": "be devoid of",
+      "cn": "完全缺乏、毫无，比 have no 更正式高级，如 The area is devoid of vegetation."
+     },
+     {
+      "en": "reckless exploitation",
+      "cn": "掠夺式开发，exploitation 指开发利用，加 reckless 强调不计后果。"
+     },
+     {
+      "en": "push ... to the brink of extinction",
+      "cn": "将……推向灭绝边缘，brink 意为边缘，常与 of 搭配表示濒临某状态。"
+     },
+     {
+      "en": "short-term profits",
+      "cn": "短期利润，与 long-term sustainability 构成对比，议论文常用。"
+     },
+     {
+      "en": "striking a balance between A and B",
+      "cn": "在A与B之间取得平衡，写作中提出折中建议时的高分表达。"
+     },
+     {
+      "en": "thought-provoking",
+      "cn": "发人深省的，用于评价图画或现象的深层含义，替代 meaningful。"
+     },
+     {
+      "en": "for generations to come",
+      "cn": "为子孙后代，置于句末增强号召力，比 for the future 更具文采。"
+     },
+     {
+      "en": "enforce stricter regulations on",
+      "cn": "对……实施更严格的法规，提建议段落常用搭配。"
+     },
+     {
+      "en": "ecological preservation",
+      "cn": "生态保护，preservation 比 protection 更强调维持原始状态。"
+     }
+    ],
+    "pitfalls": [
+     "未按题目要求分层作答：描述、寓意、启示三部分缺一不可，否则扣结构分。",
+     "图画描述过于简略或脱离画面，导致阅卷人认为未看懂图。",
+     "第二段仅复述图画表面内容，未能提炼出深层寓意（过度捕捞→资源枯竭），立意浅薄。",
+     "第三段建议空泛笼统，缺乏层次（个人/社会/政府），未能体现逻辑递进。",
+     "语言低幼化，全篇使用 very good / very bad 等词，缺少 exploitation、sustainable 等学术词汇。"
+    ],
+    "upgrades": [
+     {
+      "plain": "There are no fish in the ocean in the last picture.",
+      "better": "The vast ocean is completely devoid of fish in the last picture.",
+      "note": "be devoid of 替代 have no，用词更高级，表达更精准有力。"
+     },
+     {
+      "plain": "We should protect the environment.",
+      "better": "Only by striking a balance between economic development and ecological preservation can we ensure a sustainable future.",
+      "note": "倒装句+具体概念替代笼统呼吁，展示句式多样性与思辨深度。"
+     },
+     {
+      "plain": "The pictures tell us that people catch too many fish.",
+      "better": "The message conveyed by these drawings is both clear and thought-provoking: the reckless exploitation of natural resources will inevitably lead to their exhaustion.",
+      "note": "被动语态+冒号引出核心论点，从具体现象升华到普遍道理，体现议论高度。"
+     },
+     {
+      "plain": "People only think about money and don't care about nature.",
+      "better": "Driven by short-term profits, humans have relentlessly plundered marine resources without considering the ecological consequences.",
+      "note": "过去分词作状语开头，句式紧凑且因果关系清晰，学术感更强。"
+     },
+     {
+      "plain": "The government should make laws to stop overfishing.",
+      "better": "Governments ought to enforce stricter regulations on commercial fishing and other resource-extracting industries.",
+      "note": "ought to 替代 should 增加正式度，regulations on 搭配更地道，扩展至同类行业体现思维广度。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only by striking a balance between economic development and ecological preservation can we ensure a sustainable future for generations to come. —— only by 引导的倒装句，既是高分句式又是有力结尾，适用于所有环保/发展类话题。",
+   "Driven by short-term profits, humans have relentlessly plundered marine resources without considering the ecological consequences. —— 过去分词状语+现在完成时+without doing结构，一句话浓缩因果，信息密度极高。",
+   "The vast ocean is completely devoid of fish, yet it is crowded with countless fishing boats. —— devoid of 与 crowded with 形成鲜明对比，一空一满，画面感强烈，适合图画描述段。",
+   "The message conveyed by these drawings is both clear and thought-provoking: the reckless exploitation of natural resources will inevitably lead to their exhaustion. —— 过渡句模板，从描述自然过渡到议论，conveyed 被动结构+冒号引出论点，结构紧凑。"
+  ]
+ }
+}

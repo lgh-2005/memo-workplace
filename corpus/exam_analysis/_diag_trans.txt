@@ -1,0 +1,90 @@
+```json
+{
+  "topic": "中国航天事业的发展与成就",
+  "reference": "Exploring outer space has always been a dream of the Chinese nation. In 2003, the Shenzhou-5 spacecraft was successfully launched, and Yang Liwei became the first Chinese astronaut to fly into space. In 2008, the Shenzhou-7 spacecraft was sent into orbit, and Zhai Zhigang became the first astronaut in China's history to perform a spacewalk. In recent years, China's space industry has entered the \"fast track\" of innovative development. The construction of space infrastructure has been steadily advanced, and the China Space Station was fully completed in 2022. The rapid development of China's space program has written a glorious page in the history of the Chinese nation and made tremendous contributions to the progress of human civilization. In the future, China will take steadier and farther steps in its exploration of outer space.",
+  "sentences": [
+    {
+      "cn": "遨游太空历来是中华民族的梦想。",
+      "en": "Exploring outer space has always been a dream of the Chinese nation.",
+      "structure": "动名词短语作主语 + 现在完成时",
+      "keys": ["\"遨游太空\"译为 exploring outer space（动名词作主语）", "\"历来\"译为 has always been（现在完成时体现延续性）", "\"中华民族\"译为 the Chinese nation"]
+    },
+    {
+      "cn": "2003年,神舟五号飞船发射成功,杨利伟成为第一个飞入太空的中国宇航员。",
+      "en": "In 2003, the Shenzhou-5 spacecraft was successfully launched, and Yang Liwei became the first Chinese astronaut to fly into space.",
+      "structure": "时间状语 + 被动语态并列主动语态，the first ... to do 结构",
+      "keys": ["\"发射成功\"用被动语态 was successfully launched", "\"第一个飞入太空的中国宇航员\"用 the first Chinese astronaut to fly into space（不定式作后置定语）"]
+    },
+    {
+      "cn": "2008年,神舟七号升空,翟志刚成为中国历史上首位进行太空行走的宇航员。",
+      "en": "In 2008, the Shenzhou-7 spacecraft was sent into orbit, and Zhai Zhigang became the first astronaut in China's history to perform a spacewalk.",
+      "structure": "时间状语 + 被动语态 + and 连接并列句，the first ... to do 结构",
+      "keys": ["\"升空\"译为 was sent into orbit", "\"太空行走\"译为 spacewalk", "\"首位进行……的宇航员\"译为 the first astronaut to perform ..."]
+    },
+    {
+      "cn": "近年来,中国航天进入创新发展"快车道",太空基础设施建设稳步推进,中国空间站于2022年全面建成。",
+      "en": "In recent years, China's space industry has entered the \"fast track\" of innovative development. The construction of space infrastructure has been steadily advanced, and the China Space Station was fully completed in 2022.",
+      "structure": "现在完成时 + 被动语态，三个分句可拆为两句处理",
+      "keys": ["\"快车道\"译为 fast track", "\"太空基础设施建设\"译为 the construction of space infrastructure", "\"稳步推进\"译为 has been steadily advanced（现在完成时被动语态）", "\"全面建成\"译为 was fully completed"]
+    },
+    {
+      "cn": "中国航天事业的迅速发展在中华民族的历史上写下了辉煌一页,也为人类文明进步做出了巨大贡献。",
+      "en": "The rapid development of China's space program has written a glorious page in the history of the Chinese nation and made tremendous contributions to the progress of human civilization.",
+      "structure": "主语（名词短语）+ 并列谓语（has written ... and made ...）",
+      "keys": ["\"写下辉煌一页\"译为 has written a glorious page", "\"为……做出巨大贡献\"译为 made tremendous contributions to ...", "\"人类文明进步\"译为 the progress of human civilization"]
+    },
+    {
+      "cn": "未来,中国探索太空的脚步将迈得更稳、更远。",
+      "en": "In the future, China will take steadier and farther steps in its exploration of outer space.",
+      "structure": "时间状语 + 主语 + will + 动词短语（比较级并列）",
+      "keys": ["\"探索太空的脚步\"化译为 take steps in its exploration of outer space", "\"更稳、更远\"译为 steadier and farther（比较级并列）"]
+    }
+  ],
+  "keys": [
+    {"cn": "遨游太空", "en": "explore outer space"},
+    {"cn": "中华民族", "en": "the Chinese nation"},
+    {"cn": "飞船发射成功", "en": "the spacecraft was successfully launched"},
+    {"cn": "太空行走", "en": "spacewalk / extravehicular activity (EVA)"},
+    {"cn": "创新发展"快车道"", "en": "the \"fast track\" of innovative development"},
+    {"cn": "太空基础设施建设", "en": "the construction of space infrastructure"},
+    {"cn": "中国空间站", "en": "the China Space Station"},
+    {"cn": "写下辉煌一页", "en": "write a glorious page / chapter"},
+    {"cn": "为人类文明进步做出巨大贡献", "en": "make tremendous contributions to the progress of human civilization"},
+    {"cn": "中国航天事业", "en": "China's space program / aerospace industry"}
+  ],
+  "pitfalls": [
+    "\"发射成功\"误用主动语态 *launched successfully 而缺少主语逻辑，应使用被动 was successfully launched；或误拼 launch。",
+    "\"太空行走\"误译为 *space walk（应为一个词 spacewalk 或加连字符 space-walk），或错译为 walk in space 导致表达不地道。",
+    "\"快车道\"若直译为 *fast road / express way 则不准确，应使用固定搭配 fast track；同时注意保留引号表示比喻用法。",
+    "\"写下辉煌一页\"若逐字硬译为 *wrote a bright page 则搭配不当，glorious / brilliant 更地道；且时态应为现在完成时 has written，不应用一般过去时。",
+    "\"脚步将迈得更稳、更远\"若直译为 *feet will step more stable and more far，则比较级形式错误（应为 steadier and farther）且句式生硬，需意译为 take steadier and farther steps。"
+  ],
+  "upgrades": [
+    {
+      "plain": "Yang Liwei became the first Chinese astronaut who flew into space.",
+      "better": "Yang Liwei became the first Chinese astronaut to fly into space.",
+      "note": "用不定式 to fly 替代定语从句作后置定语，更简洁地道，且 the first/last/only 等序数词后习惯接不定式。"
+    },
+    {
+      "plain": "China's space industry developed quickly and it wrote a great page in history.",
+      "better": "The rapid development of China's space program has written a glorious page in the history of the Chinese nation.",
+      "note": "将动词 developed quickly 转化为名词短语 the rapid development 作主语，使句式更正式、更符合书面语体；glorious 比 great 更贴合"辉煌"的语义层次。"
+    },
+    {
+      "plain": "In the future, China will explore space with more stable and farther steps.",
+      "better": "In the future, China will take steadier and farther steps in its exploration of outer space.",
+      "note": "使用 take steps in ... 的固定搭配，避免 with 引导的介词短语造成逻辑松散；steadier 比 more stable 搭配 steps 更自然。"
+    },
+    {
+      "plain": "The space infrastructure construction has been pushed forward steadily.",
+      "better": "The construction of space infrastructure has been steadily advanced.",
+      "note": "advance 比 push forward 更正式学术；将副词 steadily 置于助动词与过去分词之间更符合英语副词位置规范。"
+    },
+    {
+      "plain": "It also made big contributions to the development of human civilization.",
+      "better": "It has also made tremendous contributions to the progress of human civilization.",
+      "note": "tremendous 比 big 更正式且语义更丰富，对应"巨大"；progress 比 development 更准确地对应"进步"；现在完成时体现影响延续至今。"
+    }
+  ]
+}
+```

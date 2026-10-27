@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "6dd82042fcd8__reading__1",
+ "examId": "6dd82042fcd8",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年考研英语真题",
+ "year": 2023,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:51:22.281Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65955,
+ "usage": {
+  "prompt_tokens": 1687,
+  "completion_tokens": 4092,
+  "total_tokens": 5779,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1687,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4092,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1687,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国学校气候变化教育争议",
+  "gist": "文章围绕美国（尤其是得克萨斯州）学校如何教授气候变化展开讨论。部分教育委员受能源行业影响，抵制科学共识的纳入；研究显示多数州气候教育不达标；即使州级标准制定得当，落实到课堂仍面临地方分权、课程覆盖不均及能源行业资助的非官方教材干扰等多重挑战。",
+  "structure": [
+   "第1-3段：引入德州教育委员会气候教育之争及各方观点",
+   "第4-5段：全美范围研究揭示气候教育普遍不足",
+   "第6-8段：分析标准落实受限、课程覆盖不均和外部材料干扰等深层问题"
+  ],
+  "difficulty": "中等",
+  "translation": "德克萨斯州的天气在近期极端高温之后或许已经转凉，但本月在奥斯汀举行的州教育委员会会议上，气温将会很高——官员们正在就气候变化在德州学校中的教学方式展开辩论。\n\n帕特·哈迪同情能源行业的立场，她正在抵制针对青少年学生的科学标准修订方案。\"反对全球气候变化恐慌论的科学家和推动气候变化研究的科学家一样多，\"她声称，\"德克萨斯是一个能源州，我们必须认识到这一点。你得记住谁给你饭吃。\"\n\n大多数科学家和专家强烈反驳哈迪的观点。得克萨斯自由网络（一个监督公共教育的非营利组织）的高级传播策略师丹·奎因表示，像她这样的委员会成员\"随意地将学者和科学家毕生的研究成果贬斥为又一个被误导的观点\"。\n\n此类辩论反映了全美各地的激烈讨论——研究人员、政策制定者、教师和学生纷纷加大力度，要求学校更多地关注气候变化事实的教学。\n\n去年，由科学家和教师组成的非营利组织\"国家科学教育中心\"开展的一项研究考察了全国各州公立学校如何在科学课堂上教授气候变化，结果显示仅勉强半数的州获得了B+或更高的评分。在表现最差的十个州中，包括一些人口最多的州，其中德克萨斯获得了最低等级（F），而且由于其教科书被广泛销往其他地区，它具有不成比例的影响力。\n\n该中心副主任格伦·布兰奇提醒说，在一个将决策权下放至地方学区教育委员会的国家，制定州级科学标准只是一个有限的衡量基准。即便一个州在科学标准方面被认为表现优秀，\"这也并不意味着相关内容会被实际教授，\"他说。\n\n另一个问题是，虽然气候变化在某些学科和某些年龄段——比如高中的地球与空间科学——得到了较好的整合，但在面向低龄儿童的课程以及生物和化学等更广泛教授的学科中，其代表性不足。在许多社会研究课程中，气候变化的内容同样不够突出。\n\n布兰奇指出，即便越来越多的官方指导方针和教科书反映了科学界关于气候变化的共识，传达更具偏向性观点的非官方教学材料仍在被分发给教师。其中包括由能源行业协会赞助的材料。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "The weather in Texas may have cooled since the recent extreme heat, but the temperature will be high at the State Board of Education meeting in Austin this month as officials debate how climate change is taught in Texas schools.",
+    "why": "第一段用天气作比喻：德州天气虽然转凉了，但教育委员会会议上的\"温度\"将会很高。\"temperature will be high\"隐喻会议气氛的激烈，weather（天气）与temperature（温度/气氛）形成对比，用自然天气引出会议的紧张氛围。C选项\"indicate the atmosphere at the board meeting\"（暗示会议的氛围）准确概括了这一修辞手法的目的。",
+    "traps": "A\"预测德州学校的政策转变\"——文章只是描述辩论，并未暗示政策一定会改变，属于无中生有；B\"强调气候变化的后果\"——提到天气是为了比喻会议气氛，而非讨论气候变化的具体后果，偷换论述对象；D\"吸引公众对能源短缺的关注\"——文中未涉及能源短缺的话题，属于无中生有。",
+    "tip": "修辞手法题需把握比喻的本体和喻体，找到作者真正想表达的对象。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "Board members like her \"casually dismiss the career work of scholars and scientists as just another misguided opinion,\" says Dan Quinn, senior communications strategist at the Texas Freedom Network.",
+    "why": "Quinn说像Hardy这样的委员会成员\"随意地将学者和科学家毕生的研究成果贬斥为又一个被误导的观点\"。\"casually dismiss the career work\"即轻率否定科学工作的价值，与B选项\"She denies the value of scientific work\"（她否认科学工作的价值）完全吻合。dismiss等于deny the value of，career work等于scientific work。",
+    "traps": "A\"她夸大了现有的恐慌\"——是Hardy声称存在恐慌，但Quinn批评的不是她夸大恐慌，而是她否定科学家的成果，张冠李戴；C\"她对青少年毫不关心\"——Quinn并未从关爱青少年角度评论Hardy，属于无中生有；D\"她表达了自相矛盾的观点\"——Quinn的批评焦点是Hardy轻视科学，并非指其逻辑矛盾，偷换批评角度。",
+    "tip": "态度题要精准定位评价者的原话，抓住核心动词（如dismiss）来判断态度。"
+   },
+   {
+    "number": 23,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "A study last year by the National Center for Science Education...gave barely half of US states a grade B+ or higher. Among the 10 worst performers were some of the most populous states, including Texas, which was given the lowest grade (F).",
+    "why": "研究显示\"仅勉强半数\"的州获得B+或以上评分，意味着近半数州表现不佳；表现最差的十个州中还包括人口大州德州（获最低的F等级）。这些数据充分说明全美州立公立学校的气候教育不足（insufficient），与A选项一致。barely half = insufficient。",
+    "traps": "B\"政策制定者对科学教育缺乏动力\"——研究评估的是学校教学表现，并非专门考察政策制定者的积极性，偷换主体；C\"德州不愿重写科学教科书\"——研究是评估各州教学情况，并非聚焦于德州是否重写教科书，过度推断；D\"某些州的环境教学缺乏监督\"——文中未涉及监督问题，属于无中生有。",
+    "tip": "涉及研究结论的题目，紧扣研究的核心数据和评价词（如barely half）来判断。"
+   },
+   {
+    "number": 24,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Glenn Branch, the centre's deputy director, cautions that setting state-level science standards is only one limited benchmark in a country that decentralises decisions to local school boards. Even if a state is considered a high performer in its science standards, \"that does not mean it will be taught\", he says.",
+    "why": "Branch指出州级科学标准\"只是一个有限的衡量基准\"（only one limited benchmark），因为美国将决策权下放到地方学区。即使一个州标准评级很高，也不意味着内容会被实际教授。\"only one limited benchmark\"和\"does not mean it will be taught\"共同说明州级标准的影响力有限，与C选项\"have limited influence\"完全对应。",
+    "traps": "A\"需要定期修订\"——Branch讨论的是标准效力有限而非需要修订，属于无中生有；B\"需要紧急应用\"——Branch恰恰说明标准即使制定了也未必被执行，B与原文逻辑相反；D\"迎合地方需求\"——文中提到决策权下放是为了说明州标准效力有限，并非说标准是为了满足地方需求，偷换因果关系。",
+    "tip": "注意原文中的限定修饰词（only, limited），它们往往是命题和解题的关键。"
+   },
+   {
+    "number": 25,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "even if a growing number of official guidelines and textbooks reflect scientific consensus on climate change, unofficial educational materials that convey more slanted perspectives are being distributed to teachers. They include materials sponsored by energy industry associations.",
+    "why": "最后一段指出，即便官方教材越来越反映科学共识，但传达\"更具偏向性观点\"的非官方材料正被分发给教师，其中包括能源行业协会赞助的材料。这意味着外部力量（能源行业等）通过非官方渠道影响教师的教学内容，暗示气候变化教学可能受到外部力量的左右，与D选项\"can be swayed by external forces\"吻合。",
+    "traps": "A\"符合主要公众诉求\"——最后一段讨论的是非官方材料对教学的干扰，并未涉及公众诉求，属于无中生有；B\"反映教师的个人偏见\"——偏向性来自外部分发的材料，而非教师个人偏见，偷换偏见来源；C\"可能歪曲能源行业形象\"——非官方材料由能源行业赞助，目的是为行业利益服务，而非歪曲其形象，逻辑反向。",
+    "tip": "推断题须顺着原文信息链做合理延伸，注意区分因果方向和行为主体。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sympathise",
+    "cn": "v. 同情，支持"
+   },
+   {
+    "w": "disproportionate",
+    "cn": "adj. 不成比例的，不相称的"
+   },
+   {
+    "w": "benchmark",
+    "cn": "n. 基准，标杆"
+   },
+   {
+    "w": "decentralise",
+    "cn": "v. 使分散，下放（权力）"
+   },
+   {
+    "w": "curricula",
+    "cn": "n. 课程体系（curriculum的复数）"
+   },
+   {
+    "w": "consensus",
+    "cn": "n. 共识，一致意见"
+   },
+   {
+    "w": "slanted",
+    "cn": "adj. 有偏向的，有倾向性的"
+   },
+   {
+    "w": "casually",
+    "cn": "adv. 随意地，漫不经心地"
+   },
+   {
+    "w": "populous",
+    "cn": "adj. 人口众多的"
+   },
+   {
+    "w": "prominent",
+    "cn": "adj. 突出的，显著的"
+   },
+   {
+    "w": "convey",
+    "cn": "v. 传达，表达"
+   },
+   {
+    "w": "strategist",
+    "cn": "n. 策略师，战略家"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Among the 10 worst performers were some of the most populous states, including Texas, which was given the lowest grade (F) and has a disproportionate influence because its textbooks are widely sold elsewhere.",
+    "cn": "在表现最差的十个州中，包括一些人口最多的州，其中德克萨斯获得了最低等级（F），而且由于其教科书被广泛销往其他地区，它具有不成比例的影响力。",
+    "note": "倒装句：Among...were...为地点状语前置引起的全部倒装；which引导非限制性定语从句修饰Texas，内含because原因状语从句说明影响力大的原因。"
+   },
+   {
+    "en": "Glenn Branch, the centre's deputy director, cautions that setting state-level science standards is only one limited benchmark in a country that decentralises decisions to local school boards.",
+    "cn": "该中心副主任格伦·布兰奇提醒说，在一个将决策权下放至地方学区教育委员会的国家，制定州级科学标准只是一个有限的衡量基准。",
+    "note": "主句为Branch cautions that...；that从句中主语为动名词短语setting...standards；in a country后接that引导的定语从句修饰country，说明美国分权特征。"
+   },
+   {
+    "en": "Branch points out that, even if a growing number of official guidelines and textbooks reflect scientific consensus on climate change, unofficial educational materials that convey more slanted perspectives are being distributed to teachers.",
+    "cn": "布兰奇指出，即便越来越多的官方指导方针和教科书反映了科学界关于气候变化的共识，传达更具偏向性观点的非官方教学材料仍在被分发给教师。",
+    "note": "主句为Branch points out that...；that从句中even if引导让步状语从句，主句主语为unofficial educational materials，其中that convey...为定语从句修饰materials，谓语为被动语态are being distributed。"
+   }
+  ]
+ }
+}

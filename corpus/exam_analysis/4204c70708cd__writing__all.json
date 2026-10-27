@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "4204c70708cd__writing__all",
+ "examId": "4204c70708cd",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2018 年 6 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:18:48.072Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41119,
+ "usage": {
+  "prompt_tokens": 703,
+  "completion_tokens": 2635,
+  "total_tokens": 3338,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 703,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2635,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 703,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"师生之间建立信任的重要性\"展开论述，可举例说明观点，字数150-200词。",
+    "outline": [
+     "开篇引出话题：指出信任是师生关系的基石，点明其在教育中的重要地位。",
+     "主体段落分层论证：从学习效果、情感发展等角度阐述师生信任的重要性，并结合具体事例加以说明。",
+     "总结全文，重申师生信任不可或缺，呼吁双方共同努力建立和维护信任。"
+    ],
+    "sample": "Trust serves as the cornerstone of any meaningful relationship, and the bond between teachers and students is no exception. Building mutual trust in educational settings is of paramount importance for fostering academic excellence and personal growth.\n\nTo begin with, trust creates a supportive learning environment where students feel comfortable expressing their ideas and asking questions. For instance, when students trust their teachers, they are more willing to seek guidance on difficult subjects rather than concealing their confusion. This open communication significantly enhances learning outcomes. Moreover, trust empowers teachers to better understand their students' individual needs and tailor their instruction accordingly.\n\nFurthermore, a trust-based teacher-student relationship cultivates students' emotional well-being and self-confidence. Students who trust their mentors tend to develop stronger motivation and a more positive attitude toward learning. A notable example is that many successful individuals attribute their achievements to inspiring teachers who believed in them and earned their trust during formative years.\n\nIn conclusion, building trust between teachers and students is indispensable for effective education. Both parties should make concerted efforts to establish and maintain this precious bond through honesty, respect, and consistent communication.",
+    "phrases": [
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "充当……的基石；用于强调某事物的根本性地位"
+     },
+     {
+      "en": "of paramount importance",
+      "cn": "至关重要的；比 very important 更正式高级"
+     },
+     {
+      "en": "foster academic excellence",
+      "cn": "促进学术卓越；foster 常与正面名词搭配表示'培育'"
+     },
+     {
+      "en": "tailor their instruction accordingly",
+      "cn": "相应地调整教学方式；tailor 作动词表'量身定制'"
+     },
+     {
+      "en": "cultivate emotional well-being",
+      "cn": "培养情感健康；cultivate 比 develop 更书面"
+     },
+     {
+      "en": "attribute their achievements to",
+      "cn": "将成就归功于……；经典归因句型"
+     },
+     {
+      "en": "make concerted efforts",
+      "cn": "齐心协力；concerted 强调协同合作"
+     },
+     {
+      "en": "a trust-based relationship",
+      "cn": "以信任为基础的关系；复合形容词结构，简洁地道"
+     },
+     {
+      "en": "feel comfortable expressing",
+      "cn": "自在地表达；feel comfortable doing 为高频搭配"
+     },
+     {
+      "en": "during formative years",
+      "cn": "在成长关键期；formative years 为教育话题高分词汇"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只谈'信任'而忽略限定语'师生之间'，导致跑题",
+     "缺乏具体例证：通篇空谈重要性，未按题目要求 cite examples 举例",
+     "段落结构混乱：没有分段或分段不合理，逻辑层次不清晰",
+     "词汇重复严重：反复使用 important/very important，缺少同义替换",
+     "字数不达标或严重超标：低于150词扣分，超过200词也可能被扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Trust is very important for teachers and students.",
+      "better": "Trust serves as the cornerstone of the teacher-student relationship.",
+      "note": "用比喻句替代平淡表述，语言更形象，展现词汇深度"
+     },
+     {
+      "plain": "Students can learn better if they trust teachers.",
+      "better": "Trust creates a supportive learning environment where students feel comfortable expressing their ideas.",
+      "note": "用 where 引导定语从句，句式更复杂，信息更丰富"
+     },
+     {
+      "plain": "Many people think their success comes from good teachers.",
+      "better": "Many successful individuals attribute their achievements to inspiring teachers who earned their trust.",
+      "note": "attribute...to 结构更学术，who 从句增加句子层次感"
+     },
+     {
+      "plain": "Teachers and students should try to build trust.",
+      "better": "Both parties should make concerted efforts to establish and maintain this precious bond.",
+      "note": "concerted efforts 替代 try，both parties 避免重复主语，更简练"
+     },
+     {
+      "plain": "Trust can help students feel good about themselves.",
+      "better": "A trust-based relationship cultivates students' emotional well-being and self-confidence.",
+      "note": "复合形容词+学术动词+并列宾语，信息密度与表达档次均提升"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Trust serves as the cornerstone of any meaningful relationship, and the bond between teachers and students is no exception. — 信任是一切有意义关系的基石，师生之间的纽带也不例外。（经典'…is no exception'引出话题）",
+   "When students trust their teachers, they are more willing to seek guidance on difficult subjects rather than concealing their confusion. — 当学生信任老师时，他们更愿意就难题寻求指导，而非掩饰困惑。（rather than 对比结构突出信任的作用）",
+   "Many successful individuals attribute their achievements to inspiring teachers who believed in them and earned their trust during formative years. — 许多成功人士将成就归功于那些在成长关键期信任并激励他们的老师。（attribute...to + 定语从句，举例论证的高分句）",
+   "Both parties should make concerted efforts to establish and maintain this precious bond through honesty, respect, and consistent communication. — 双方应齐心协力，通过诚实、尊重和持续沟通来建立和维系这份珍贵的纽带。（三词并列收束全文，节奏感强）"
+  ]
+ }
+}

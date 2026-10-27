@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "e8fd5058f708__use_of_english__all",
+ "examId": "e8fd5058f708",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2006 年考研英语真题（旧）",
+ "year": 2006,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:17:30.703Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 85391,
+ "usage": {
+  "prompt_tokens": 1699,
+  "completion_tokens": 5138,
+  "total_tokens": 6837,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1699,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5138,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1699,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国无家可归者问题与联邦救助",
+  "gist": "文章指出美国无家可归者人数持续增长，地方政府无力应对。联邦政府应通过就业培训、提高最低工资和增建廉价住房来帮助他们走向独立。许多无家可归者受困于酒精、毒品、精神疾病或缺乏基本生存技能，因此需要综合性、多方协调的救助项目。",
+  "difficulty": "较易",
+  "translation": "无家可归者在美国人口中所占比例日益增长。事实上(Indeed)，无家可归现象已达到如此严重的程度，以至于地方政府根本无法应对(cope)。为帮助无家可归者走向(toward)独立，联邦政府必须支持就业培训项目、提高(raise)最低工资标准，并资助更多低价住房建设。\n\n并非(Not)所有人都认同美国无家可归者的确切人数。估计数字从60万到300万不等(range)。尽管(Although)数字可能有出入，分析人士在另一个问题上确实达成了共识：无家可归者的数量在不断增加(increasing)。联邦政府的一项研究预测(predicts)，到本世纪末，无家可归者的人数将接近1900万。\n\n寻找帮助(assist)这一不断增长的无家可归群体的方法变得愈加困难。即使(Even)无家可归者设法找到一个能提供一日三餐和夜间住所的收容所(shelter)，仍有相当多的人每天大部分时间都在街上游荡(wandering)。问题的部分原因在于，许多无家可归的成年人对酒精或毒品上瘾。而且相当数量的无家可归者患有严重的精神疾病。还有许多人，虽然(while)没有上瘾或精神疾病，却缺乏扭转(turn around)人生所需的日常生存(survival)技能。《波士顿环球报》记者克里斯·雷迪指出，只有出台能满足无家可归者多方面需求的综合性(comprehensive)项目，情况才会好转。正如(As)马萨诸塞州本特利学院社区服务主任爱德华·兹洛特科夫斯基所说(puts it)：\"各类项目之间必须有协调(coordination)。需要的是一揽子方案。\"",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "A",
+    "correct": "Indeed",
+    "why": "前句说无家可归者比例在增长，本句用 Indeed 强调这一事实的严重程度——'确实，已经严重到地方政府无法应对的地步'。属于递进强调的逻辑关系。",
+    "traps": "B) Likewise 表示'同样地'，用于类比并列，前文没有可类比对象；C) Therefore 表因果，但本句是对前句的补充强调而非推理结论；D) Furthermore 表'此外'，引入新信息，而本句是对同一观点的深化。",
+    "tip": "Indeed 用于对前文同一话题的深层强调。"
+   },
+   {
+    "number": 2,
+    "answer": "B",
+    "correct": "cope",
+    "why": "cope 意为'应对、处理'，可单独用作不及物动词，表示地方政府无力应付无家可归问题。语义完美契合上下文'问题太大、政府应付不了'的逻辑。",
+    "traps": "A) stand 常用于 can't stand（无法忍受），语义不当；C) approve 意为'批准'，与句意无关；D) retain 意为'保留'，语义不符。",
+    "tip": "cope 可不及物使用，表'勉强应对'。"
+   },
+   {
+    "number": 3,
+    "answer": "D",
+    "correct": "toward",
+    "why": "toward independence 表示'朝着独立的方向'，体现帮助无家可归者走向自立的目标方向。介词 toward 表趋向目标。",
+    "traps": "A) in independence 搭配不当；B) for independence 虽可表目的但与 help sb 的搭配不自然；C) with independence 表'拥有独立'，逻辑不合，他们尚未独立。",
+    "tip": "help sb toward sth 表示帮助某人朝某方向发展。"
+   },
+   {
+    "number": 4,
+    "answer": "A",
+    "correct": "raise",
+    "why": "raise the minimum wage 是固定表达，意为'提高最低工资标准'。与前后 support 和 fund 并列，三项均为联邦政府应采取的具体措施。",
+    "traps": "B) add 意为'增加、添加'，不与 wage 搭配；C) take 无法构成提高工资的含义；D) keep 意为'保持'，与提高工资的逻辑不符。",
+    "tip": "raise 与 wage/salary/price 搭配表'提高'。"
+   },
+   {
+    "number": 5,
+    "answer": "D",
+    "correct": "Not",
+    "why": "Not everyone agrees 意为'并非所有人都同意'，是部分否定。下文紧接'估计从60万到300万不等'，正是说明人们对人数看法不一致。",
+    "traps": "A) Generally 意为'通常'，与后文数据分歧矛盾；B) Almost everyone agrees 则表示几乎都同意，与后文估计差异悬殊的事实矛盾；C) Hardly 意为'几乎不'，全面否定过于绝对。",
+    "tip": "Not everyone 是部分否定，非全部否定。"
+   },
+   {
+    "number": 6,
+    "answer": "C",
+    "correct": "range",
+    "why": "range from...to... 是固定搭配，意为'范围从……到……'，完美描述估计数字从60万到300万的跨度。",
+    "traps": "A) cover 虽有'覆盖'义但不与 from...to 构成此用法；B) change 意为'变化'，不构成 from...to 的固定搭配语义；D) differ 意为'不同'，不与 anywhere from...to 搭配。",
+    "tip": "range from A to B 表示范围跨度的固定搭配。"
+   },
+   {
+    "number": 7,
+    "answer": "B",
+    "correct": "Although",
+    "why": "前半句说'数字可能有变化'，后半句说'分析人士确实在另一点上达成共识'，这是典型的让步转折关系，Although 引导让步状语从句。",
+    "traps": "A) Now that 表'既然'，引导原因状语从句，逻辑不符；C) Provided 表'假如'，引导条件从句，与事实陈述不符；D) Except that 表'除了'，语义不当。",
+    "tip": "Although 引导让步从句，后句常用 do 加强肯定语气。"
+   },
+   {
+    "number": 8,
+    "answer": "C",
+    "correct": "increasing",
+    "why": "increasing 意为'正在增加'，修饰 the number of the homeless，表示无家可归者人数在持续上升，与全文主旨一致，也与下文的预测数据呼应。",
+    "traps": "A) inflating 指物价膨胀，不用于修饰人口数量；B) expanding 常指面积或规模的扩大，不修饰抽象数字；D) extending 指时间或空间的延伸，不搭配 number。",
+    "tip": "number 增长用 increase，注意与 expand/extend 的区别。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "predicts",
+    "why": "后文 will reach nearly 19 million 是对未来的预估，predicts（预测）恰好对应将来的推测性数据。",
+    "traps": "B) displays 意为'展示'，不含预测含义；C) proves 意为'证明'，对未来数据不可证明；D) discovers 意为'发现'，用于已有事实，不用于未来预估。",
+    "tip": "对未来趋势的研判用 predict，注意与 prove 的区别。"
+   },
+   {
+    "number": 10,
+    "answer": "A",
+    "correct": "assist",
+    "why": "assist 意为'帮助、援助'，与前文帮助无家可归者走向独立的主题一致。Finding ways to assist this population 语义通顺。",
+    "traps": "B) track 意为'追踪'，不是文章讨论的重点；C) sustain 意为'维持'，语义偏差，不是简单维持而是要帮助改善；D) dismiss 意为'解散、不理'，与文章救助主题完全相反。",
+    "tip": "assist 比 help 更正式，常用于社会救助语境。"
+   },
+   {
+    "number": 11,
+    "answer": "C",
+    "correct": "Even",
+    "why": "Even when 意为'即使在……的时候'，强调让步：即使找到了收容所，很多人仍然在街上游荡。突出问题的严重性。",
+    "traps": "A) Hence 表因果，逻辑不通；B) But 是连词不能直接修饰 when；D) Only when 表'只有当……才'，语义方向相反。",
+    "tip": "Even when 加强让步语气，强调困境之深。"
+   },
+   {
+    "number": 12,
+    "answer": "B",
+    "correct": "shelter",
+    "why": "shelter 在此指为无家可归者提供食宿的'收容所'，是专门术语。后文 three meals a day and a place to sleep 正是 shelter 的功能描述。",
+    "traps": "A) lodging 指旅店式住宿，不含提供三餐的含义；C) dwelling 指一般性住所，过于正式且不指救助机构；D) house 指普通房屋，与无家可归者救助语境不符。",
+    "tip": "shelter 在社会救助语境中特指无家可归者收容所。"
+   },
+   {
+    "number": 13,
+    "answer": "D",
+    "correct": "wandering",
+    "why": "wandering the street 意为'在街上游荡'，表示无目的地徘徊，符合无家可归者白天无处可去的状态描述。",
+    "traps": "A) searching 意为'搜寻'，需加 for 且语义不完整；B) strolling 意为'闲逛'，带有悠闲自得的语感，不合困境描写；C) crowding 意为'拥挤'，语义不当。",
+    "tip": "wander 强调无目的漫游，符合流浪者的生活状态。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "while",
+    "why": "while 在此表让步，意为'虽然（没有上瘾或精神疾病）'，引出另一类无家可归者——虽无以上问题但缺乏生存技能的人。",
+    "traps": "A) when 强调时间，不表让步；B) once 表'一旦'，逻辑不符；D) whereas 表对比但通常连接两个完整句子，此处为省略结构，while 更合适。",
+    "tip": "while 可引导省略式让步状语从句。"
+   },
+   {
+    "number": 15,
+    "answer": "C",
+    "correct": "survival",
+    "why": "survival skills 意为'生存技能'，指维持基本生活所需的技能，如找工作、管理财务等。与无家可归者缺乏自立能力的语境吻合。",
+    "traps": "A) life skills 虽存在但偏泛化，不如 survival skills 精确强调困境中的基本生存能力；B) existence skills 不是常见搭配；D) maintenance skills 指维护保养技能，语义不符。",
+    "tip": "survival skills 是固定搭配，强调困境中的基本生存能力。"
+   },
+   {
+    "number": 16,
+    "answer": "A",
+    "correct": "around",
+    "why": "turn their lives around 意为'扭转他们的生活'，是固定短语搭配，指彻底改变处境、使生活好转。",
+    "traps": "B) turn over 意为'翻转、移交'，不用于描述生活改善；C) turn on 意为'打开、攻击'，语义不合；D) turn up 意为'出现、调大'，与改变生活无关。",
+    "tip": "turn around 表'扭转局面'，是常考固定搭配。"
+   },
+   {
+    "number": 17,
+    "answer": "B",
+    "correct": "comprehensive",
+    "why": "comprehensive programs 意为'综合性项目'，后文 address the many needs 说明需要覆盖无家可归者的多方面需求，comprehensive 恰好表示'全面的、综合的'。",
+    "traps": "A) complex 意为'复杂的'，侧重难度而非全面性；C) complementary 意为'互补的'，强调配合关系而非全面覆盖；D) compensating 意为'补偿性的'，语义偏离。",
+    "tip": "comprehensive 强调全面覆盖，区别于 complex 的'复杂'义。"
+   },
+   {
+    "number": 18,
+    "answer": "C",
+    "correct": "As",
+    "why": "As sb puts it 是固定句式，意为'正如某人所说'，用于引用他人原话。此处引用 Zlotkowski 的话来支撑前文观点。",
+    "traps": "A) So 表结果，不引导引语；B) Since 表原因或时间，不用于引述；D) Thus 表'因此'，不用于引述他人话语。",
+    "tip": "As sb puts it 是引用他人原话的固定句式。"
+   },
+   {
+    "number": 19,
+    "answer": "A",
+    "correct": "puts",
+    "why": "puts it 是 as sb puts it 结构中的核心动词，意为'（以某种方式）表达、说'。是英语中引用他人原话的惯用表达。",
+    "traps": "B) interprets it 意为'解释它'，语义不合引述语境；C) assumes it 意为'假定它'，不表引述；D) makes it 意为'成功做到'，语义完全不同。",
+    "tip": "put 可表'表述、措辞'，as sb puts it 为固定用法。"
+   },
+   {
+    "number": 20,
+    "answer": "D",
+    "correct": "coordination",
+    "why": "coordination of programs 意为'项目之间的协调'，后文 package deal（一揽子方案）进一步解释需要各项目协调配合，而非各自为政。",
+    "traps": "A) supervision 意为'监督'，强调管控而非协作；B) manipulation 意为'操纵'，含贬义；C) regulation 意为'管制、法规'，不表协调配合之义。",
+    "tip": "coordination 强调多方协调配合，与 package deal 呼应。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "proportions",
+    "cn": "n. 规模；程度；比例"
+   },
+   {
+    "w": "estimates",
+    "cn": "n. 估计数字；估算（复数）"
+   },
+   {
+    "w": "analysts",
+    "cn": "n. 分析人士；分析师"
+   },
+   {
+    "w": "bulk",
+    "cn": "n. 大部分；主体"
+   },
+   {
+    "w": "addicted",
+    "cn": "adj. 上瘾的；沉溺的（常与 to 搭配）"
+   },
+   {
+    "w": "significant",
+    "cn": "adj. 相当数量的；重要的"
+   },
+   {
+    "w": "mental disorders",
+    "cn": "n. 精神疾病；心理障碍"
+   },
+   {
+    "w": "address",
+    "cn": "v. 处理；解决（问题）"
+   },
+   {
+    "w": "comprehensive",
+    "cn": "adj. 综合性的；全面的"
+   },
+   {
+    "w": "coordination",
+    "cn": "n. 协调；配合"
+   },
+   {
+    "w": "package deal",
+    "cn": "n. 一揽子交易/方案"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Indeed",
+    "role": "对前文论点进行强调递进，加深严重程度"
+   },
+   {
+    "w": "Although",
+    "role": "引导让步从句，承认数字分歧后转向共识"
+   },
+   {
+    "w": "Even when",
+    "role": "加强让步语气，突出即使有收容所问题仍然严重"
+   },
+   {
+    "w": "while",
+    "role": "引导让步状语从句，引出第三类无家可归者"
+   },
+   {
+    "w": "As",
+    "role": "引出引语，借权威人士之言佐证全文论点"
+   },
+   {
+    "w": "Not",
+    "role": "部分否定，引出关于人数估计的分歧讨论"
+   }
+  ]
+ }
+}

@@ -1,0 +1,175 @@
+{
+ "schemaVersion": 1,
+ "id": "3a1d5271950e__reading__5",
+ "examId": "3a1d5271950e",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2000 年考研英语真题（旧）",
+ "year": 2000,
+ "sub": "5",
+ "questionNumbers": [
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:10:08.836Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59363,
+ "usage": {
+  "prompt_tokens": 1699,
+  "completion_tokens": 3375,
+  "total_tokens": 5074,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1699,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3375,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1699,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社会对雄心壮志的虚伪态度",
+  "gist": "文章探讨了当代美国社会对\"雄心\"（ambition）的矛盾态度：受过教育的人从雄心中获益最多，却口头上最先放弃雄心；人们依然追求成功，但不敢公开承认自己的野心，以免被视为贪婪庸俗。作者批评了这种虚伪现象，认为雄心作为健康动力正遭到不公正的攻击，应当被公开推崇。",
+  "structure": [
+   "第一段：提出雄心被认可的条件，揭露受教育者口头弃雄心的虚伪",
+   "第二段：列举虚伪实例，说明人们追求成功却不敢公开承认",
+   "第三段：总结雄心遭受攻击、缺乏捍卫的现状，暗示应公开维护雄心"
+  ],
+  "difficulty": "中等",
+  "translation": "如果要使雄心受到推崇，那么雄心的回报——财富、声望、对自身命运的掌控——就必须被认为值得为之所做的牺牲。如果雄心的传统要保持生命力，它就必须被广泛认同；尤其必须受到那些本身令人敬佩的人——其中尤以受过教育者为甚——的高度重视。然而，奇怪的是，恰恰是受过教育的人声称已经放弃了把雄心当作一种理想。更奇怪的是，他们或许正是从雄心中获益最多的人——即便不是他们自己的雄心，也是他们父辈和祖辈的雄心。这其中有浓重的虚伪成分，这好比马已经跑掉之后才去关马厩的门——而受过教育的人自己正骑在那些马上。\n\n当然，如今人们对成功及其标志的兴趣似乎丝毫不亚于以前。避暑别墅、欧洲旅行、宝马汽车——地点、地名和品牌名可能会变，但这些东西的需求似乎并不比一二十年前少。所发生的变化是，人们无法像从前那样轻松坦然地完全表露自己的梦想，以免被认为功利、贪婪和粗俗。相反，我们看到的是精致的虚伪奇观，这样的奇观如今似乎比以往任何时候都更加充裕：批评美国物质主义的人在南安普敦拥有避暑别墅；出版激进书籍的出版商在三星级餐厅就餐；鼓吹在生活各方面实行参与式民主的记者，自己的孩子却就读于私立学校。对于这样的人以及更多或许并不那么特殊的人来说，恰当的表述是：\"不惜一切代价获得成功，但要避免显得有野心。\"\n\n对雄心的攻击来自四面八方，为之公开辩护的人却寥寥无几且毫无说服力，即便有也极不讨人喜欢。因此，把雄心视为一种健康冲动、一种值得钦佩并植入年轻人心中的品质而加以支持，在美国恐怕已降至有史以来的最低水平。这并不意味着雄心已经终结，人们不再感受到它的激荡和驱策，而只是意味着雄心不再被公开崇尚，因而也不再被公开表白。由此自然会产生后果，其中之一便是雄心被迫转入地下，或变得偷偷摸摸。那么，现状就是这样：左边是愤怒的批评者，右边是愚蠢的支持者，中间则照例是大多数想要在生活中有所作为的认真的人们。",
+  "questions": [
+   {
+    "number": 27,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "If ambition is to be well regarded, the rewards of ambition—wealth, distinction, control over one's destiny—must be deemed worthy of the sacrifices made on ambition's behalf.",
+    "why": "文章首句明确给出条件：雄心若要受到推崇，其回报必须被认为值得（deemed worthy of）为之所做的牺牲。A选项\"回报能够充分补偿所做的牺牲\"是对该句的精确同义改写，'well compensate for'对应'deemed worthy of'，'returns'对应'rewards'，'sacrifices'原词复现。",
+    "traps": "B项\"以金钱、名望和权力为回报\"只列举了回报内容，忽略了核心条件即回报须与牺牲相称；C项\"目标是精神层面而非物质层面\"原文未提及此区分，属无中生有；D项\"被富人和名人所共享\"混淆了原文第二句中'widely shared'的含义，偷换主语。",
+    "tip": "注意首句条件句的逻辑核心，区分\"回报内容\"和\"回报与牺牲的对等关系\"。"
+   },
+   {
+    "number": 28,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "There is a heavy note of hypocrisy in this, a case of closing the barn door after the horses have escaped—with the educated themselves riding on them.",
+    "why": "该句用谚语\"马跑了才关门\"比喻受教育者已经通过雄心获得了成功（骑在马上），却在事后声称放弃雄心。关键补充'with the educated themselves riding on them'说明他们已享受了雄心的成果，此时再否认雄心是不诚实的（dishonest）。C选项\"在实现目标后否认雄心是不诚实的\"精确概括了这层含义。",
+    "traps": "A项\"受教育者习惯性地口头丢弃雄心\"虽有部分道理，但未触及该句核心含义——虚伪与不诚实，且'customary'过度延伸；B项\"雄心一旦释放就来不及遏制\"误解了谚语含义，重点不在'来不及'而在虚伪；D项\"享受雄心的好处不切实际\"与原文意思相反，他们确实享受到了好处。",
+    "tip": "理解比喻/谚语时，需结合上下文还原其在具体语境中的含义，而非照搬字面意义。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "people cannot confess fully to their dreams, as easily and openly as once they could, lest they be thought pushing, acquisitive and vulgar.",
+    "why": "原文用lest引导目的状语从句，说明人们不敢坦白梦想的原因是\"以免被认为功利（pushing）、贪婪（acquisitive）和粗俗（vulgar）\"。D选项中'greedy'对应acquisitive，'contemptible'概括pushing和vulgar的贬义色彩，是准确的同义替换。",
+    "traps": "A项\"认为雄心不道德\"过度上纲上线，原文说的是怕被视为贪婪庸俗，而非涉及道德判断（immoral）；B项\"追求的不是名利\"与原文矛盾，第二段开头明确说人们对成功标志的兴趣不减；C项\"雄心与物质利益无密切关系\"同样与原文事实相悖，属反向干扰。",
+    "tip": "lest/for fear that引导的从句常揭示行为的真正原因，是命题热点。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "no longer openly honored, it is less openly professed. Consequences follow from this, of course, some of which are that ambition is driven underground, or made sly.",
+    "why": "作者指出雄心不再被公开崇尚导致它被迫转入地下、变得偷偷摸摸，并用'angry critics''stupid supporters'等贬义词暗示两个极端都不可取。作者全篇批判的是虚伪和不公开，因此合理推断是：雄心应该被公开地、热情地维护。B选项'openly and enthusiastically'与作者批评'不公开'的立场形成正向对应。",
+    "traps": "A项\"秘密而大力地\"中'secretly'恰恰是作者所批判的'driven underground'现象，与作者立场相反；C项\"轻松而短暂地\"无文本依据，属凭空编造；D项\"口头上和精神上\"中'verbally'暗示只是口头说说，与作者批判的口头虚伪一致，不合作者本意。",
+    "tip": "从作者批判的对象反推其主张：批判不公开，则主张公开；批判虚伪，则主张真诚。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deemed",
+    "cn": "v. 认为，视为"
+   },
+   {
+    "w": "vitality",
+    "cn": "n. 活力，生命力"
+   },
+   {
+    "w": "hypocrisy",
+    "cn": "n. 虚伪，伪善"
+   },
+   {
+    "w": "acquisitive",
+    "cn": "adj. 贪婪的，渴求获取的"
+   },
+   {
+    "w": "spectacle",
+    "cn": "n. 奇观，景象；（令人瞩目的）场面"
+   },
+   {
+    "w": "ample",
+    "cn": "adj. 充足的，丰富的"
+   },
+   {
+    "w": "formulation",
+    "cn": "n. 表述，阐述；配方"
+   },
+   {
+    "w": "impulse",
+    "cn": "n. 冲动；推动力"
+   },
+   {
+    "w": "professed",
+    "cn": "v. 公开表白，声称（profess的过去式）"
+   },
+   {
+    "w": "sly",
+    "cn": "adj. 狡猾的，偷偷摸摸的"
+   },
+   {
+    "w": "participatory",
+    "cn": "adj. 参与式的"
+   },
+   {
+    "w": "stirrings",
+    "cn": "n. 激动，骚动（常用复数）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "There is a heavy note of hypocrisy in this, a case of closing the barn door after the horses have escaped—with the educated themselves riding on them.",
+    "cn": "这其中有浓重的虚伪成分，这好比马已经跑掉之后才去关马厩的门——而受过教育的人自己正骑在那些马上。",
+    "note": "主干为There is a heavy note of hypocrisy；a case of…为同位语补充说明；破折号后with复合结构补充细节，点明受教育者自身就是受益者。"
+   },
+   {
+    "en": "What has happened is that people cannot confess fully to their dreams, as easily and openly as once they could, lest they be thought pushing, acquisitive and vulgar.",
+    "cn": "所发生的变化是，人们无法像从前那样轻松坦然地完全表露自己的梦想，以免被认为功利、贪婪和粗俗。",
+    "note": "What引导主语从句，that引导表语从句；as...as结构做比较状语；lest引导目的状语从句，用虚拟语气（be thought）。"
+   },
+   {
+    "en": "This does not mean that ambition is at an end, that people no longer feel its stirrings and promptings, but only that, no longer openly honored, it is less openly professed.",
+    "cn": "这并不意味着雄心已经终结，人们不再感受到它的激荡和驱策，而只是意味着雄心不再被公开崇尚，因而也不再被公开表白。",
+    "note": "主干为This does not mean...but only (means) that...；三个that从句并列做mean的宾语；no longer openly honored为插入的过去分词短语作让步状语。"
+   }
+  ]
+ }
+}

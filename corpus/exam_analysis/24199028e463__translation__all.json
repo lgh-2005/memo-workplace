@@ -1,0 +1,212 @@
+{
+ "schemaVersion": 1,
+ "id": "24199028e463__translation__all",
+ "examId": "24199028e463",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年 6 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:45:04.236Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31127,
+ "usage": {
+  "prompt_tokens": 835,
+  "completion_tokens": 2230,
+  "total_tokens": 3065,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 835,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2230,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 835,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "赵州桥的历史与建筑成就",
+  "reference": "Zhaozhou Bridge was built during the Sui Dynasty, around 605 AD. It is 50.82 meters long, 9.6 meters wide, with a span of 37.37 meters. Li Chun, a genius architect, designed and supervised the construction of the bridge. Zhaozhou Bridge is innovative in structure and elegant in design. The bridge features a major arch, with two smaller arches on each end of the major one, which help discharge floodwater, reduce the weight of the bridge, and save stone materials. Since its completion, the bridge has withstood numerous floods and earthquakes, yet its main structure remains intact and is still in use today. Zhaozhou Bridge is a pioneering achievement in the history of world bridge architecture and an outstanding accomplishment in the history of ancient Chinese civilization. Bridges of similar design did not appear in Europe until the 14th century, more than 700 years later than Zhaozhou Bridge.",
+  "sentences": [
+   {
+    "cn": "赵州桥建于隋朝，公元605年左右，长50.82米，宽9.6米，跨度37.37米。",
+    "en": "Zhaozhou Bridge was built during the Sui Dynasty, around 605 AD. It is 50.82 meters long, 9.6 meters wide, with a span of 37.37 meters.",
+    "structure": "被动语态 was built + 介词短语表时间 + 形容词 + 数字表尺寸，with 短语补充跨度信息",
+    "keys": [
+     "赵州桥 Zhaozhou Bridge",
+     "隋朝 the Sui Dynasty",
+     "公元605年左右 around 605 AD",
+     "跨度 span"
+    ]
+   },
+   {
+    "cn": "天才建筑师李春设计并监督了桥的建设。",
+    "en": "Li Chun, a genius architect, designed and supervised the construction of the bridge.",
+    "structure": "同位语结构 Li Chun, a genius architect，并列谓语 designed and supervised",
+    "keys": [
+     "天才建筑师 a genius architect",
+     "监督 supervise",
+     "桥的建设 the construction of the bridge"
+    ]
+   },
+   {
+    "cn": "赵州桥结构新颖、造型优美。",
+    "en": "Zhaozhou Bridge is innovative in structure and elegant in design.",
+    "structure": "主系表结构，两组 adj. + in + n. 并列，形成对称句式",
+    "keys": [
+     "结构新颖 innovative in structure",
+     "造型优美 elegant in design"
+    ]
+   },
+   {
+    "cn": "桥有一个大拱，在大拱的两端有两个小拱，帮助排泄洪水、减轻桥梁重量并节省石材。",
+    "en": "The bridge features a major arch, with two smaller arches on each end of the major one, which help discharge floodwater, reduce the weight of the bridge, and save stone materials.",
+    "structure": "主句 + with 复合结构 + which 引导非限制性定语从句，从句内三个并列动词短语",
+    "keys": [
+     "大拱 a major arch",
+     "小拱 smaller arches",
+     "排泄洪水 discharge floodwater",
+     "减轻桥梁重量 reduce the weight of the bridge",
+     "节省石材 save stone materials"
+    ]
+   },
+   {
+    "cn": "建成以来，该桥经受了多次洪水和地震,但其主体结构仍然完好无损，至今仍在使用。",
+    "en": "Since its completion, the bridge has withstood numerous floods and earthquakes, yet its main structure remains intact and is still in use today.",
+    "structure": "Since + 名词短语作时间状语 + 现在完成时 has withstood + but/yet 转折 + remains + 并列谓语",
+    "keys": [
+     "建成以来 since its completion",
+     "经受 withstand",
+     "完好无损 remain intact",
+     "至今仍在使用 still in use today"
+    ]
+   },
+   {
+    "cn": "赵州桥是世界桥梁建筑史上的一次创举，是中国古代文明史上的一项杰出成就。",
+    "en": "Zhaozhou Bridge is a pioneering achievement in the history of world bridge architecture and an outstanding accomplishment in the history of ancient Chinese civilization.",
+    "structure": "主系表结构，两个并列表语 a pioneering achievement... and an outstanding accomplishment...，结构对称",
+    "keys": [
+     "创举 a pioneering achievement",
+     "桥梁建筑史 the history of bridge architecture",
+     "杰出成就 an outstanding accomplishment",
+     "中国古代文明史 the history of ancient Chinese civilization"
+    ]
+   },
+   {
+    "cn": "类似设计的桥梁直到14世纪才在欧洲出现，比赵州桥晚了700多年。",
+    "en": "Bridges of similar design did not appear in Europe until the 14th century, more than 700 years later than Zhaozhou Bridge.",
+    "structure": "not...until... 句型表达「直到……才」+ 比较结构补充说明时间差",
+    "keys": [
+     "类似设计的桥梁 bridges of similar design",
+     "直到14世纪才 not...until the 14th century",
+     "比……晚了700多年 more than 700 years later than..."
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "赵州桥",
+    "en": "Zhaozhou Bridge"
+   },
+   {
+    "cn": "隋朝",
+    "en": "the Sui Dynasty"
+   },
+   {
+    "cn": "建筑师",
+    "en": "architect"
+   },
+   {
+    "cn": "拱/拱形结构",
+    "en": "arch"
+   },
+   {
+    "cn": "排泄洪水",
+    "en": "discharge floodwater"
+   },
+   {
+    "cn": "完好无损",
+    "en": "remain intact"
+   },
+   {
+    "cn": "创举",
+    "en": "pioneering achievement"
+   },
+   {
+    "cn": "桥梁建筑史",
+    "en": "the history of bridge architecture"
+   },
+   {
+    "cn": "中国古代文明",
+    "en": "ancient Chinese civilization"
+   },
+   {
+    "cn": "跨度",
+    "en": "span"
+   }
+  ],
+  "pitfalls": [
+   "「隋朝」漏加冠词 the，应为 the Sui Dynasty",
+   "「建成以来」误用一般过去时，应使用现在完成时 has withstood",
+   "「直到14世纪才」遗漏 not，写成 appeared...until 导致语义相反",
+   "「完好无损」误译为 complete and undamaged，不如 intact 简洁地道",
+   "「排泄洪水」中 discharge 拼写或用词错误，误用 release 或 drain 搭配不当"
+  ],
+  "upgrades": [
+   {
+    "plain": "The bridge has a major arch",
+    "better": "The bridge features a major arch",
+    "note": "features 比 has 更正式，突出桥梁的特征与设计亮点"
+   },
+   {
+    "plain": "help to let floodwater go away",
+    "better": "help discharge floodwater",
+    "note": "discharge 为专业术语，比口语化的 let...go away 更准确精炼"
+   },
+   {
+    "plain": "the bridge has experienced many floods",
+    "better": "the bridge has withstood numerous floods",
+    "note": "withstood 强调「经受住考验」，比 experienced 更有力度和韵味"
+   },
+   {
+    "plain": "is a great creation in bridge history",
+    "better": "is a pioneering achievement in the history of bridge architecture",
+    "note": "pioneering achievement 更正式且符合学术语体，architecture 限定更精确"
+   },
+   {
+    "plain": "was 700 years earlier than European ones",
+    "better": "more than 700 years later than Zhaozhou Bridge",
+    "note": "从欧洲桥梁角度用 later than 表述，逻辑与原文一致，避免主语混乱"
+   }
+  ]
+ }
+}

@@ -1,0 +1,257 @@
+{
+ "schemaVersion": 1,
+ "id": "1485326c452f__listening__all",
+ "examId": "1485326c452f",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2021 年 6 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:36:48.820Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 53341,
+ "usage": {
+  "prompt_tokens": 2225,
+  "completion_tokens": 2711,
+  "total_tokens": 4936,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2225,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2711,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2225,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于题目选项的语言特征进行推断分析，不涉及任何录音具体内容的还原或编造。",
+  "overview": "本场听力共7段录音、25道题。第1段（1-4题）选项涉及职场文化与工作氛围类形容词；第2段（5-8题）围绕决策方式与选择优化；第3段（9-11题）聚焦家庭作业与教育公平；第4段（12-15题）涉及一位火箭科学先驱的生平事迹；第5段（16-18题）讨论创业风险与团队合作；第6段（19-21题）关于衰老、寿命与疾病；第7段（22-25题）探讨职场管理与员工沟通。整体涵盖社会、科技、教育与商业话题。",
+  "strategy": [
+   "预读选项时快速圈出各选项间的差异词，听音时重点捕捉这些区分点",
+   "形容词/态度类选项需关注说话者语气和评价性关键词",
+   "因果关系题注意 because、so、due to、as a result 等信号词",
+   "选项中出现绝对词如 always、never 时需格外警惕，往往是干扰项",
+   "人物传记类题目注意时间线和地点转换的标志词",
+   "当两个选项语义相近时，优先排除措辞过于极端的一个"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "职场文化氛围与员工表现特征",
+    "optionSignals": "第1题为单个形容词（问对某事物的定性判断）；第2-3题用 They can/are 句式（问某类人的特征或权利）；第4题用 It can/enables/is conducive to 句式（问某事物的作用或好处）。",
+    "tips": [
+     "第1题四个形容词感情色彩差异大，toxic 为强烈负面词，听时注意说话者是肯定还是否定的语气",
+     "第3题 air their views（表达观点）与 think big（有远大抱负）容易混淆，注意听是否涉及'发言权'还是'格局'",
+     "第4题选项均为正面效果，需区分 learn and grow 与 critical thinking 等具体表述"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "决策行为与最优选择的利弊",
+    "optionSignals": "第5题为过去时叙述（问某人经历了什么）；第6题为动词短语（问某类人的行为模式）；第7-8题分别问原因/建议。optimal、gut instinct、deliberate 等词暗示话题与决策心理学相关。",
+    "tips": [
+     "第6题 stretch out the process 与 take all relevant factors 都涉及'花更多精力'，但前者强调'拉长过程追求最优'，需听清是否有负面评价",
+     "第8题 gut instinct（直觉）是常考听力词汇，注意是否被推荐还是被否定",
+     "kept looking 与 managed to visit 对比鲜明，前者暗示反复犹豫，后者暗示高效完成"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "家庭作业对不同群体学生的影响",
+    "optionSignals": "三道题选项均以 It/They 开头，描述家庭作业或在线教育的效果与局限。选项中出现 poor/rich、rural areas、remote areas 等对比词，暗示话题涉及教育公平与资源差异。",
+    "tips": [
+     "第9题注意 not of much help 这类否定表达是否与录音中的限定条件吻合",
+     "第10题 at a disadvantage 与 bridge the gap 语义对立，听时注意结论方向",
+     "第11题 positive effect on personality development 是正确答案，注意区分'学科成绩'与'人格发展'两个层面"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "火箭科学先驱的生平与成就",
+    "optionSignals": "选项多次出现 rocket science、New Mexico、New York Times、patents 等专有名词，明确指向一位火箭科学家的传记。第12题问某事的评价，第13题问某事件的意义，第14-15题问原因与成就。",
+    "tips": [
+     "第12题 ridiculed（嘲笑）与 visionary（有远见的）态度完全相反，听时抓住媒体评价的褒贬",
+     "第14题四个选项各给出不同的去某地理由，注意 climate 与 laboratory 等具体细节词",
+     "第15题 over 200 patents 是非常具体的数字信息，数字在听力中通常是强信号"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "创业的风险、团队协作与现实挑战",
+    "optionSignals": "第16题为对创业的总体评价（risky/rewarding/frustrating），第17题为某因素的具体作用（reduces conflict/inspires willingness），第18题以 They 开头描述创业者面临的困境。",
+    "tips": [
+     "第16题 risky 与 frustrating 语义接近但程度不同，需注意录音是否提及'不确定性'还是'挫败感'",
+     "第17题 reduces conflict 是正确答案，注意听是否有 team、harmony、disagreement 等关联词",
+     "第18题 work without any pay 是较极端的说法，作为正确答案说明录音可能直接提及无薪工作"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "人体衰老机制、细胞与寿命研究",
+    "optionSignals": "选项涉及 dietary habits、reproductive ability、dividing、ageing、life expectancy 等生物学与健康词汇。第19题问某群体的优势特征，第20题问细胞特性，第21题为总结性观点。",
+    "tips": [
+     "第19题 survive or handle disease 与 dietary habits 分别指向'抗病能力'和'饮食习惯'，需听清因果关系",
+     "第20题 limited reproductive ability 与 keep dividing 是对立描述，抓住关键限定词",
+     "第21题注意 age-related diseases 与 mystery of ageing 的逻辑关系，选项暗示'解决疾病≠解决衰老之谜'"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "职场中员工不服从指令与管理沟通方式",
+    "optionSignals": "选项围绕 instructions、emails、managers、supervisors、employee behavior 展开，涉及管理者与员工的互动模式。第22题问员工的问题表现，第23-24题问原因与条件，第25题评价某沟通工具的效用。",
+    "tips": [
+     "第22题 reluctant to follow instructions 与 cannot understand directives 都涉及'不执行'，但原因不同，前者是主观意愿、后者是能力问题",
+     "第24题 supervisors helpful 是正确答案，听时注意是否出现 support、guidance 等正面管理词汇",
+     "第25题 useless tool 措辞极端，作为正确答案暗示录音对 email 指令持明确否定态度"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "toxic",
+    "cn": "有毒的；有害的（常形容不良的工作环境）"
+   },
+   {
+    "w": "accommodating",
+    "cn": "乐于助人的；随和的"
+   },
+   {
+    "w": "optimal",
+    "cn": "最优的；最理想的"
+   },
+   {
+    "w": "gut instinct",
+    "cn": "直觉；本能的感觉"
+   },
+   {
+    "w": "conducive",
+    "cn": "有助于……的；促进的"
+   },
+   {
+    "w": "ridiculed",
+    "cn": "被嘲笑的；被讥讽的"
+   },
+   {
+    "w": "visionary",
+    "cn": "有远见的；富有想象力的"
+   },
+   {
+    "w": "entrepreneurial",
+    "cn": "创业的；企业家精神的"
+   },
+   {
+    "w": "reproductive",
+    "cn": "生殖的；繁殖的"
+   },
+   {
+    "w": "longevity",
+    "cn": "长寿；寿命"
+   },
+   {
+    "w": "directive",
+    "cn": "指令；指示"
+   },
+   {
+    "w": "unheeded",
+    "cn": "未被注意的；被忽视的"
+   },
+   {
+    "w": "patent",
+    "cn": "专利；专利权"
+   }
+  ]
+ }
+}

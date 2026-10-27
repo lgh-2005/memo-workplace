@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "baf672da4db5__reading__1",
+ "examId": "baf672da4db5",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 12 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:25:43.170Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66685,
+ "usage": {
+  "prompt_tokens": 1770,
+  "completion_tokens": 4523,
+  "total_tokens": 6293,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1770,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4523,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1770,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "态度的形成、作用与改变",
+  "gist": "文章以一位母亲将照顾先天心脏外露婴儿视为\"荣幸\"的故事引入，阐述态度是后天习得的心理工具，受童年经历、榜样行为、人际关系和信息接收等因素影响。文章进一步指出态度的内在一致性并非必然，感受和想法不一定能预测行为，并建议通过先行动来改变态度。",
+  "structure": [
+   "第1段：以真实案例引出态度的力量",
+   "第2段：定义态度并指出态度是后天习得的",
+   "第3段：详述影响态度形成与精炼的各种因素",
+   "第4段：讨论态度内在一致性的局限与行为脱节现象",
+   "第5段：提出改变态度的有效策略——先行动"
+  ],
+  "difficulty": "中等",
+  "translation": "去年，英国一家医院诞生了一个心脏长在体外的婴儿。很少有婴儿能在这种罕见的情况下存活，而存活下来的婴儿必须经受多次手术，并且很可能有复杂的护理需求。女儿出生三周后，她的母亲接受了采访，被问到是否准备好承担照顾女儿这一可能令人生畏的任务。她毫不犹豫地回答说，就她而言，这将是一种\"荣幸\"。\n\n很少有比这更好的例子能说明态度的力量了，态度是我们最强大的心理工具之一。我们的态度使我们能够把错误变成机会，把损失变成重新开始的契机。态度是一种稳定的思维方式、感受方式和/或对特定事物、人物、事件或意识形态的行为方式。我们利用态度来过滤、解读和回应周围的世界。你并非生来就有态度，它们都是后天习得的，而且习得的途径有很多种。\n\n最强有力的影响发生在幼儿时期，既包括你亲身经历的事情，也包括你周围的人在你面前的言行举止。当你获得一种独特的身份认同时，你的态度会进一步受到你所认同之人的行为的影响——你的家人、与你同性别和同文化背景的人，以及你所仰慕的人，尽管你可能并不认识他们。友谊和其他重要的人际关系变得越来越重要，尤其是在青春期。大约在同一时期以及整个成年阶段，你所接收到的信息——特别是当某些观念与你认为有吸引力的目标和成就反复关联出现时——也会进一步完善你的态度。\n\n许多人认为我们的态度是内在一致的，也就是说，你对某人或某事的想法和感受能够预测你对他们的行为。然而，许多研究发现，感受和想法并不一定能预测行为。一般来说，只有当行为本身很容易执行，并且周围的人持有相似信念时，你的态度才会是内在一致的。这就是为什么，例如，许多人声称他们相信回收利用或锻炼的好处，但却没有按照自己的观点行事，因为要超越仅仅口头上说某件事是个好主意，需要意识、努力和勇气。\n\n改变态度最有效的方法之一，就是开始表现得好像你已经拥有了你所期望的感受和想法。花一些时间反思你的态度，想想你相信什么以及为什么相信。有没有什么事情你认为是负担而非荣幸？如果有的话，从现在开始就表现得好像后者才是事实。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "We use our attitudes to filter, interpret and react to the world around us.",
+    "why": "原文明确指出我们利用态度来\"过滤、解读和回应周围的世界\"。C选项中\"determines how we respond\"对应\"filter, interpret and react\"，\"immediate environment\"对应\"the world around us\"，属于原文的同义改写，逻辑完全吻合。",
+    "traps": "A\"塑造信念和意识形态\"——原文说态度是针对意识形态的一种方式，而非态度塑造意识形态，因果倒置。B\"改善心理健康\"——文中虽提到态度是心理工具，但未说能改善心理健康，属于无中生有。D\"改变思维、感受和互动方式\"——原文说态度本身就是一种思维和感受方式，而非态度去改变这些方式，偷换概念。",
+    "tip": "注意同义替换，\"react to the world around us\"即\"respond to immediate environment\"。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "your attitudes are further refined by the behavior of those with whom you identify—your family, those of your gender and culture, and the people you admire, even though you may not know them personally.",
+    "why": "原文指出态度会被\"你所认同之人的行为\"进一步完善，其中特别提到\"the people you admire, even though you may not know them personally\"（你仰慕的人，即便你并不亲自认识他们）。A选项\"Their idols' behaviors\"中\"idols\"对应\"the people you admire\"，\"behaviors\"对应\"the behavior\"，是精准的同义改写。",
+    "traps": "B\"教育水平\"——原文从未提及教育程度对态度的影响，属于无中生有。C\"与异性的接触\"——原文说\"those of your gender\"指的是同性别群体，而非异性，属于曲解原文。D\"与不同文化的互动\"——原文说\"those of your culture\"是指同一文化背景的人，而非不同文化，属于偷换概念。",
+    "tip": "注意\"admire\"与\"idol\"的对应关系，以及破折号后的解释说明功能。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "However, many studies have found that feelings and thoughts don't necessarily predict behavior.",
+    "why": "原文直接说\"许多研究发现感受和想法并不一定能预测行为\"。A选项\"They may not suggest how a person is going to behave\"是对原文的同义改写：\"may not suggest\"对应\"don't necessarily predict\"，\"how a person is going to behave\"对应\"behavior\"。",
+    "traps": "B\"在某种程度上与心态一致\"——原文恰好说的是不一定一致，B选项与原文矛盾。C\"可能在人际关系中无法得到表达\"——原文讨论的是感受想法与行为之间的关系，未涉及人际关系中的表达，偏离原文。D\"无论如何都与行为一致\"——用\"no matter what\"表示绝对一致，与原文\"don't necessarily\"完全相反，属于过度绝对化。",
+    "tip": "\"don't necessarily\"表示\"不一定\"，对应\"may not\"，注意否定程度的同义替换。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "because it takes awareness, effort and courage to go beyond merely stating that you believe something is a good idea.",
+    "why": "原文指出人们不按信念行事，是因为\"超越口头声明需要意识、努力和勇气\"。反过来说，人们之所以做不到，是因为缺乏这些品质。\"awareness, effort and courage\"三者综合起来即为意志力（willpower）的体现。D选项\"They lack willpower\"是对这些要素缺失的高度概括。",
+    "traps": "A\"没时间\"——原文未提及时间因素，属于无中生有。B\"不知道怎么做\"——原文说的是缺乏意识、努力和勇气，而非不知道方法，偷换概念。C\"他们很虚伪\"——虽然表面看\"说一套做一套\"像虚伪，但原文明确给出了客观原因（缺乏意识、努力和勇气），并非指道德品质问题，属于过度推断。",
+    "tip": "注意\"it takes...\"句型暗示的是行动的必要条件，反面理解即为人们缺乏的东西。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "One of the most effective ways to change an attitude is to start behaving as if you already feel and think the way you'd prefer to.",
+    "why": "原文提出改变态度最有效的方法之一是\"开始表现得好像你已经拥有了你所期望的感受和想法\"。B选项\"Starting to act in a way that embodies one's aspirations\"中\"act\"对应\"behaving\"，\"embodies one's aspirations\"对应\"as if you already feel and think the way you'd prefer to\"，即用行动体现自己的期望，是精准的语义转述。",
+    "traps": "A\"改变需要立即关注的事情\"——原文虽提到\"right now\"，但策略的核心是改变行为方式而非改变事物本身，偷换了行动的对象。C\"逐步调整行为\"——原文强调的是\"start...right now\"立刻开始，而非\"gradually over a period of time\"逐步调整，与原文的即时性矛盾。D\"考虑减轻心理负担的方法\"——原文提到将\"burden\"视为\"privilege\"，但策略是改变行为而非仅仅考虑方法，且\"reducing burdens\"并非原文建议的核心。",
+    "tip": "抓住策略的核心动词\"start behaving\"，改变态度的方法是先改变行动。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "endure",
+    "cn": "v. 忍受，忍耐；持续"
+   },
+   {
+    "w": "daunting",
+    "cn": "adj. 令人生畏的，令人气馁的"
+   },
+   {
+    "w": "privilege",
+    "cn": "n. 特权，荣幸；v. 给予特权"
+   },
+   {
+    "w": "ideology",
+    "cn": "n. 意识形态，思想体系"
+   },
+   {
+    "w": "refine",
+    "cn": "v. 精炼，改进，使完善"
+   },
+   {
+    "w": "distinctive",
+    "cn": "adj. 独特的，有特色的，与众不同的"
+   },
+   {
+    "w": "adolescence",
+    "cn": "n. 青春期"
+   },
+   {
+    "w": "internally consistent",
+    "cn": "adj. 内在一致的"
+   },
+   {
+    "w": "in association with",
+    "cn": "prep. 与……相关联"
+   },
+   {
+    "w": "go beyond",
+    "cn": "v. 超越，超出……的范围"
+   },
+   {
+    "w": "settled",
+    "cn": "adj. 固定的，稳定的，不变的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As you acquire a distinctive identity your attitudes are further refined by the behavior of those with whom you identify—your family, those of your gender and culture, and the people you admire, even though you may not know them personally.",
+    "cn": "当你获得一种独特的身份认同时，你的态度会进一步受到你所认同之人的行为的影响——你的家人、与你同性别和同文化背景的人，以及你所仰慕的人，尽管你可能并不亲自认识他们。",
+    "note": "主干为\"your attitudes are further refined by the behavior of those\"，\"with whom you identify\"为定语从句修饰those，破折号后为同位语列举说明，\"even though\"引导让步状语从句。"
+   },
+   {
+    "en": "About that same time and throughout adulthood, the information you receive, especially when ideas are repeated in association with goals and achievements you find attractive, also refines your attitudes.",
+    "cn": "大约在同一时期以及整个成年阶段，你所接收到的信息——特别是当某些观念与你认为有吸引力的目标和成就反复关联出现时——也会进一步完善你的态度。",
+    "note": "主干为\"the information also refines your attitudes\"，\"you receive\"为省略关系代词的定语从句修饰information，\"especially when...\"为插入的时间状语从句，\"you find attractive\"为省略关系代词的定语从句修饰goals and achievements。"
+   },
+   {
+    "en": "That's why, for example, many say they believe in the benefits of recycling or exercise, but don't behave in line with their views, because it takes awareness, effort and courage to go beyond merely stating that you believe something is a good idea.",
+    "cn": "这就是为什么，例如，许多人声称他们相信回收利用或锻炼的好处，但却没有按照自己的观点行事，因为要超越仅仅口头上说某件事是个好主意，需要意识、努力和勇气。",
+    "note": "主干为\"That's why many say...but don't behave...\"，why引导表语从句，\"because\"引导原因状语从句，其中\"it takes...to go beyond\"为形式主语结构，\"merely stating that...\"中that引导宾语从句。"
+   }
+  ]
+ }
+}

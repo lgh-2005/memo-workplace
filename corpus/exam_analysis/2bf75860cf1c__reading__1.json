@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "2bf75860cf1c__reading__1",
+ "examId": "2bf75860cf1c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2011 年考研英语真题",
+ "year": 2011,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:24:47.934Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64153,
+ "usage": {
+  "prompt_tokens": 1693,
+  "completion_tokens": 3880,
+  "total_tokens": 5573,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1693,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3880,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1693,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "古典音乐会面临录音冲击的困境",
+  "gist": "文章以纽约爱乐乐团任命吉尔伯特为新音乐总监为切入点，指出古典音乐现场演出正面临来自廉价且高质量录音制品的巨大竞争压力，传统古典音乐会制度陷入危机。作者对吉尔伯特能否带领乐团成功转型持审慎怀疑态度，认为仅拓展曲目远远不够，还需变革乐团与新观众之间的关系。",
+  "structure": [
+   "第1段：引出吉尔伯特获任命一事，总体评价积极",
+   "第2-3段：指出吉尔伯特知名度不高，作者对其能力持保留态度",
+   "第4段：核心论证——录音制品对现场音乐会构成严峻挑战",
+   "第5段：展望出路，认为仅扩展曲目不够，需变革乐团与观众关系"
+  ],
+  "difficulty": "中等",
+  "translation": "纽约爱乐乐团聘请艾伦·吉尔伯特担任下一任音乐总监的决定，自2009年突然宣布以来，一直是古典音乐界的热议话题。总的来说，外界的反应至少可以说是积极的。\"太好了！终于等到了！\"一向严肃的古典音乐评论家安东尼·托马西尼写道。\n\n然而，这一任命之所以令人如此意外，原因之一是吉尔伯特相对而言并不太知名。就连在《纽约时报》上力挺吉尔伯特的托马西尼也称他是\"一位谦逊低调的音乐家，身上毫无令人望而生畏的指挥家气场\"。作为对一个此前由古斯塔夫·马勒和皮埃尔·布列兹等大师执棒的乐团的下任音乐总监的评价，这番描述在至少部分《纽约时报》读者看来可能不过是有所保留的赞美。\n\n就我个人而言，我不知道吉尔伯特是不是一位伟大的指挥家，甚至不知道他算不算一位优秀的指挥家。诚然，他演出的曲目种类丰富且颇具趣味，但我没有必要亲赴艾弗里·费舍尔音乐厅或其他任何地方去聆听有趣的管弦乐。我只需走到自己的CD架旁，或者打开电脑从iTunes上下载更多录制好的音乐就行了。\n\n那些坚持认为录音无法替代现场演出的忠实音乐会常客们忽略了问题的关键。在争夺热爱艺术的公众的时间、注意力和金钱方面，古典乐器演奏家不仅要与歌剧院、舞蹈团、剧团和博物馆竞争，还要与20世纪古典音乐大师们的录音作品竞争。这些录音价格低廉、随处可得，而且在艺术水准上往往远高于当今的现场演出；此外，听众可以在自己选择的时间和地点\"消费\"这些录音。此类录音的广泛普及因此给传统古典音乐会这一制度带来了危机。\n\n一种可能的应对之策是，古典乐演奏者演出尚未被录制的、有吸引力的新音乐。吉尔伯特本人对新音乐的兴趣已广为人知：古典音乐评论家亚历克斯·罗斯将他描述为一个有能力将爱乐乐团转变为\"一个明显不同、更加充满活力的机构\"的人。但这种不同的实质将是什么呢？仅仅扩展乐团的曲目还远远不够。如果吉尔伯特和爱乐乐团要取得成功，他们必须首先改变美国历史最悠久的乐团与其希望吸引的新观众之间的关系。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "For the most part, the response has been favorable, to say the least. \"Hooray! At last!\" wrote Anthony Tommasini, a sober-sided classical-music critic.",
+    "why": "原文明确指出外界反应\"至少可以说是积极的\"（favorable, to say the least），并引用权威评论家托马西尼\"太好了！终于等到了！\"的热烈赞语进一步佐证。favorable 与选项 C 的 acclaim（赞誉）语义对应，且 to say the least（至少可以说）暗示好评程度甚至更高。",
+    "traps": "A（incurred criticism，招致批评）与原文 favorable 完全相反，属反义干扰；B（raised suspicion，引发怀疑）文中未提及任何怀疑，属无中生有；D（aroused curiosity，引起好奇）虽与\"talk of the classical-music world\"有一定关联，但第1段重点强调的是正面评价而非好奇心，属偷换概念。",
+    "tip": "抓住段落情感基调关键词 favorable 即可快速锁定答案。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Even Tommasini, who had advocated Gilbert's appointment in the Times, calls him \"an unpretentious musician with no air of the formidable conductor about him.\"",
+    "why": "unpretentious 意为\"不矫饰的、谦逊的\"，no air of the formidable conductor 意为\"没有令人生畏的指挥家派头\"，两处描述共同指向吉尔伯特为人低调谦逊。选项 B 的 modest（谦逊的）正是 unpretentious 的同义替换。",
+    "traps": "A（influential，有影响力的）原文恰恰说吉尔伯特\"comparatively little known\"，与有影响力相悖；C（respectable，值得尊敬的）文中 faint praise 表明评价算不上高度敬重，属过度推断；D（talented，有才华的）原文未直接评价其才华，作者甚至说不知道他是否优秀，属无中生有。",
+    "tip": "关注引语中的形容词 unpretentious，找到同义替换即为答案。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Devoted concertgoers who reply that recordings are no substitute for live performance are missing the point.",
+    "why": "作者说忠实音乐会听众\"忽略了问题的关键\"，随后用大量篇幅论证录音制品\"价格低廉、随处可得、艺术质量往往远高于当今现场演出\"。这说明作者认为这些听众高估了现场演出的价值——现场未必比录音更好，选项 D（overestimate the value of live performances）准确概括了作者的观点。",
+    "traps": "A（ignore the expenses，忽视费用）虽然第4段提到 money，但文章核心论点是艺术质量对比而非费用问题，属以偏概全；B（reject most kinds of recorded performances，拒绝大多数录音）原文只说他们认为录音不能替代现场，并非拒绝录音，属曲解原意；C（exaggerate the variety，夸大多样性）文中未讨论现场演出的多样性问题，属无中生有。",
+    "tip": "missing the point 后面的论证内容就是作者真正想表达的观点。"
+   },
+   {
+    "number": 24,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "These recordings are cheap, available everywhere, and very often much higher in artistic quality than today's live performances; moreover, they can be \"consumed\" at a time and place of the listener's choosing.",
+    "why": "原文明确说录音 cheap（廉价）、available everywhere（随处可得），选项 B 的 easily accessible to the general public（公众容易获得）是对 available everywhere 和 cheap 的同义概括，完全吻合。",
+    "traps": "A（often inferior to live concerts in quality，质量常不如现场）与原文\"very often much higher in artistic quality\"直接矛盾，属反义干扰；C（help improve the quality of music，有助于提高音乐质量）文中未提及录音对音乐质量的提升作用，属无中生有；D（have only covered masterpieces，只收录名作）文中未限定录音仅限名作，属过度推断。",
+    "tip": "available everywhere 与 easily accessible 是典型的考研同义替换。"
+   },
+   {
+    "number": 25,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "But what will be the nature of that difference? Merely expanding the orchestra's repertoire will not be enough. If Gilbert and the Philharmonic are to succeed, they must first change the relationship between America's oldest orchestra and the new audience it hopes to attract.",
+    "why": "作者从第3段起即表示不确定吉尔伯特是否优秀，第5段用转折词 But 和反问句质疑变革的实质，又用 merely...will not be enough 否定单纯扩展曲目的做法，If...are to succeed 使用虚拟条件暗示成功并非确定。这些语言特征综合表明作者对吉尔伯特能否振兴乐团持怀疑态度，对应选项 A（doubtful）。",
+    "traps": "B（enthusiastic，热情的）与作者全文审慎保留的语气完全不符；C（confident，自信的）作者从未表达过对吉尔伯特的信心，反而多次使用怀疑性表述；D（puzzled，困惑的）虽然作者提出疑问，但这些疑问服务于质疑论证，而非表示自身困惑不解，属混淆语气。",
+    "tip": "注意反问句、条件句和 merely...not enough 等否定限定结构所传递的怀疑态度。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sober-sided",
+    "cn": "adj. 严肃的，一本正经的"
+   },
+   {
+    "w": "unpretentious",
+    "cn": "adj. 不矫饰的，谦逊低调的"
+   },
+   {
+    "w": "formidable",
+    "cn": "adj. 令人敬畏的，难以对付的"
+   },
+   {
+    "w": "hitherto",
+    "cn": "adv. 迄今为止，到目前为止"
+   },
+   {
+    "w": "faint praise",
+    "cn": "n. 有所保留的赞美，不冷不热的夸奖"
+   },
+   {
+    "w": "concertgoer",
+    "cn": "n. 经常去听音乐会的人"
+   },
+   {
+    "w": "troupe",
+    "cn": "n. （演员、歌手等的）剧团，表演团"
+   },
+   {
+    "w": "repertoire",
+    "cn": "n. 全部曲目，保留剧目"
+   },
+   {
+    "w": "vibrant",
+    "cn": "adj. 充满活力的，生气勃勃的"
+   },
+   {
+    "w": "advocate",
+    "cn": "v. 提倡，拥护，支持"
+   },
+   {
+    "w": "markedly",
+    "cn": "adv. 明显地，显著地"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "As a description of the next music director of an orchestra that has hitherto been led by musicians like Gustav Mahler and Pierre Boulez, that seems likely to have struck at least some Times readers as faint praise.",
+    "cn": "作为对一个迄今为止一直由古斯塔夫·马勒和皮埃尔·布列兹等音乐家执棒的乐团的下任音乐总监的描述，这番话在至少部分《纽约时报》读者看来可能不过是有所保留的赞美。",
+    "note": "主干为 that seems likely to have struck...readers as faint praise；As a description of... 为介词短语作状语；orchestra 后跟 that 引导的定语从句；strike sb as 意为\"给某人留下……印象\"。"
+   },
+   {
+    "en": "For the time, attention, and money of the art-loving public, classical instrumentalists must compete not only with opera houses, dance troupes, theater companies, and museums, but also with the recorded performances of the great classical musicians of the 20th century.",
+    "cn": "在争夺热爱艺术的公众的时间、注意力和金钱方面，古典乐器演奏家不仅要与歌剧院、舞蹈团、剧团和博物馆竞争，还要与20世纪古典音乐大师们的录音作品竞争。",
+    "note": "主干为 instrumentalists must compete not only with...but also with...（not only...but also 并列结构）；For the time, attention, and money 是介词短语作目的状语，三个名词并列强调竞争的多维度。"
+   },
+   {
+    "en": "If Gilbert and the Philharmonic are to succeed, they must first change the relationship between America's oldest orchestra and the new audience it hopes to attract.",
+    "cn": "如果吉尔伯特和爱乐乐团要取得成功，他们必须首先改变美国历史最悠久的乐团与其希望吸引的新观众之间的关系。",
+    "note": "主干为 they must first change the relationship；If...are to succeed 为条件状语从句，be to do 表示\"想要/要想\"；audience 后省略了关系代词 that/which，it hopes to attract 为定语从句修饰 audience。"
+   }
+  ]
+ }
+}

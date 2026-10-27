@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "a1fd36502b35__writing__all",
+ "examId": "a1fd36502b35",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年 12 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:50:45.088Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57301,
+ "usage": {
+  "prompt_tokens": 737,
+  "completion_tokens": 4231,
+  "total_tokens": 4968,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 737,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4231,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 737,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作。以题目所给首句为开头，围绕\"给予孩子更多自由有助于培养独立性和自信心\"展开论述，可评论、举例或结合个人经历，正文150-200词。",
+    "outline": [
+     "第一段：承接首句，点明现代家长教育理念的转变——从过度保护转向适度放手，并指出过度保护对孩子成长的危害。",
+     "第二段：分论点+举例论证——孩子获得自主权后能培养批判性思维和情绪韧性；以同伴冲突解决和课外活动选择为例说明。",
+     "第三段：辩证补充——自由不等于放任，家长应在支持与放手之间取得平衡，设定合理边界。第四段：总结升华——给予合理自由是对孩子未来的明智投资。"
+    ],
+    "sample": "Nowadays parents are increasingly aware that allowing kids more freedom to explore and learn on their own helps foster their independence and boost their confidence. This growing awareness reflects a significant shift in modern parenting philosophy. In the past, many parents adopted a helicopter approach, constantly supervising every aspect of their children's lives. However, research and real-life experiences have demonstrated that such overprotection can hinder a child's personal growth.\n\nWhen children are given the autonomy to make decisions and solve problems independently, they develop critical thinking skills and emotional resilience. For instance, a child who is encouraged to resolve conflicts with peers on their own learns negotiation and empathy far more effectively than one who always relies on parental intervention. Similarly, allowing young learners to choose their extracurricular activities cultivates intrinsic motivation and a genuine passion for learning.\n\nOf course, granting freedom does not mean abandoning guidance altogether. Parents should strike a delicate balance between offering support and stepping back. Setting appropriate boundaries while creating a safe environment for exploration ensures that children can take risks without facing serious consequences.\n\nIn conclusion, granting children reasonable freedom is not negligent parenting but a wise investment in their future. By trusting our children and resisting the urge to micromanage, we equip them with the skills and confidence needed to thrive in an ever-changing world.",
+    "phrases": [
+     {
+      "en": "adopt a helicopter approach",
+      "cn": "采用\"直升机式\"（过度干预的）教育方式；形象描述家长过度保护行为"
+     },
+     {
+      "en": "foster independence / boost confidence",
+      "cn": "培养独立性／增强自信心；题目核心词组，需在文中有所呼应"
+     },
+     {
+      "en": "emotional resilience",
+      "cn": "情绪韧性；指面对挫折时的心理恢复力，为高分心理学词汇"
+     },
+     {
+      "en": "intrinsic motivation",
+      "cn": "内在动机；与 extrinsic motivation（外在动机）对应，体现学术用语素养"
+     },
+     {
+      "en": "strike a delicate balance between A and B",
+      "cn": "在A与B之间取得微妙的平衡；高分搭配，适用于辩证段落"
+     },
+     {
+      "en": "parental intervention",
+      "cn": "父母干预；正式用语，替代口语化的 parents' help"
+     },
+     {
+      "en": "resist the urge to do sth.",
+      "cn": "抑制做某事的冲动；高级替换 stop oneself from doing sth."
+     },
+     {
+      "en": "equip sb. with sth.",
+      "cn": "使某人具备某种能力/素质；结尾段常用升华表达"
+     },
+     {
+      "en": "thrive in an ever-changing world",
+      "cn": "在不断变化的世界中茁壮成长；适用于结尾展望未来的万能句式"
+     },
+     {
+      "en": "cultivate a genuine passion for",
+      "cn": "培养对……的真正热情；替代简单的 like 或 love"
+     }
+    ],
+    "pitfalls": [
+     "遗漏题目要求的首句或擅自改写首句，直接扣分",
+     "通篇空谈道理却无具体例证支撑，论证单薄易失分",
+     "将 independence 误拼为 independance，高频拼写错误",
+     "自由与放任混为一谈，缺少辩证段落，逻辑不够严密",
+     "词数不足150词或超过200词（不含首句），违反题目硬性要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "Parents should not control their children too much.",
+      "better": "Parents should resist the urge to micromanage every detail of their children's lives.",
+      "note": "用 resist the urge to micromanage 替代 not control too much，措辞更精确、更具画面感"
+     },
+     {
+      "plain": "Children can learn many things by themselves.",
+      "better": "When granted autonomy, children develop critical thinking skills and emotional resilience through firsthand experience.",
+      "note": "主语提升为抽象名词结构，补充具体能力名称，信息密度更高"
+     },
+     {
+      "plain": "Parents should give children freedom but also guide them.",
+      "better": "Parents should strike a delicate balance between offering support and stepping back.",
+      "note": "strike a balance 句式更正式，between A and B 结构让对比关系更清晰"
+     },
+     {
+      "plain": "This is good for their future.",
+      "better": "This is a wise investment in their future, equipping them with skills needed to thrive.",
+      "note": "用 investment 隐喻和现在分词短语做补充说明，语言层次明显提升"
+     },
+     {
+      "plain": "For example, kids who solve problems alone become stronger.",
+      "better": "For instance, a child encouraged to resolve conflicts with peers independently learns negotiation and empathy far more effectively.",
+      "note": "具体化场景（同伴冲突），补充所学技能名称，论据更有说服力"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "This growing awareness reflects a significant shift in modern parenting philosophy. 这种日益增长的意识反映了现代家庭教育理念的重大转变。（shift 一词简洁有力地表达'转变'）",
+   "Research and real-life experiences have demonstrated that such overprotection can hinder a child's personal growth. 研究和现实经验表明，这种过度保护会阻碍孩子的个人成长。（demonstrate 比 show 更正式学术）",
+   "Parents should strike a delicate balance between offering support and stepping back. 父母应在给予支持和适时放手之间取得微妙的平衡。（辩证段经典句式，展现思维深度）",
+   "By trusting our children and resisting the urge to micromanage, we equip them with the skills and confidence needed to thrive in an ever-changing world. 通过信任孩子、克制事无巨细的管控冲动，我们使他们具备在瞬息万变的世界中茁壮成长所需的技能与信心。（结尾升华句，by doing 引导方式状语+equip sb. with 结构一气呵成）",
+   "Allowing young learners to choose their extracurricular activities cultivates intrinsic motivation and a genuine passion for learning. 让年轻学习者自主选择课外活动能培养内在动机和对学习的真正热情。（动名词作主语使句子更紧凑正式）"
+  ]
+ }
+}

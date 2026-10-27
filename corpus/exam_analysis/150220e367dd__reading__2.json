@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "150220e367dd__reading__2",
+ "examId": "150220e367dd",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 6 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:39:25.181Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61124,
+ "usage": {
+  "prompt_tokens": 1825,
+  "completion_tokens": 3988,
+  "total_tokens": 5813,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1825,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3988,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1825,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "模仿行为的利弊与抄袭边界",
+  "gist": "文章从心理学中的\"镜像效应\"切入，阐述人们在交流中无意识模仿他人手势的现象，进而讨论流行文化助长模仿风气、名人代笔与版权纠纷等问题，指出模仿具有矛盾性——它既是学习成长的必要环节，也可能侵犯知识产权，最终建议人们以正确方式借鉴他人，避免抄袭。",
+  "structure": [
+   "第1-2段：引出镜像行为概念，说明其心理学含义",
+   "第3-5段：从模仿延伸到流行文化和名人代笔现象",
+   "第6段：介绍鉴定著作权的新技术手段",
+   "第7段：给出避免抄袭、形成自身风格的写作建议",
+   "第8-9段：总结模仿的矛盾性，呼吁正确借鉴"
+  ],
+  "difficulty": "中等",
+  "translation": "模仿谈话对象的行为是一种常见的人类行为，被归类为\"镜像效应\"，心理学家对此已有多年研究。我们都倾向于无意识地模仿自己喜欢的人的手势。但我们为什么会这样做呢？\n\n一般而言，镜像效应意味着交谈者享受彼此的沟通，且双方之间存在一定程度的共识。讨论的话题对双方同样有趣，他们知道彼此志趣相投。\n\n重复他人的行为是优秀沟通者的典型特征，这并不总是因为对方令人同情，而是因为有目标需要达成。正是通过这种方式，新的偶像被推上了舞台：政客、名人和其他大人物。流行文化使人们想要看起来受欢迎，想要像受欢迎的人那样行事和说话。\n\n如今，名人之间互相剽窃歌词，面临版权侵权的指控，或者干脆直接声称自己是作者，即使所有工作都是别人完成的。\n\n在名人中，如今流行像政客一样使用自己的演讲撰稿人。这种所谓的\"代笔\"可以采取多种形式：书籍、文章、自传，甚至社交媒体帖子。\n\n谁是真正的抄袭者，谁被抄袭了？有时，没有专家的帮助很难弄清楚。但基于识别个人写作模式的新型著作权鉴定方法已经出现。其目的是保护知识产权。利用科学方法，其中一些可以以85%的准确率鉴定著作权。\n\n写作不是一门容易掌握的技艺。如果你想像专业人士一样写作而不抄袭，有几堂课需要学习，第一堂就是：\"抄一个人，是抄袭；抄两个人，是研究。\"这句话的正确解读并非关于抄袭，而是关于创造你自己的风格。当你学习某位作者的写作风格时，不要只停留在一位，而要探索众多风格。研究他们使用的句型，关注他们的隐喻，聚焦于那些你觉得自己可以写出精彩续篇的故事。\n\n模仿相当矛盾。作为学习不可或缺的一部分，它带来积极的变化，促使人们发展和成长。然而，它也可能造成很大伤害。抄袭他人的思想、创意或发明是完全不可接受的，这侵犯了他人的知识产权。\n\n不过，我们做的许多事情都以某种方式在模仿他人。因此，如果你想赞赏某人的作品并加以模仿，请确保以正确的方式进行，以避免构成抄袭。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "We all tend to subconsciously copy gestures of people we like.",
+    "why": "原文第一段明确指出\"我们都倾向于无意识地（subconsciously）模仿我们喜欢的人的手势（copy gestures）\"。C选项中\"imitate their partners' gestures\"对应\"copy gestures\"，\"without their knowing it\"对应\"subconsciously\"（无意识地），属于同义替换，完全吻合原文表述。",
+    "traps": "A项\"Repeat what their partners say\"偷换概念，原文说的是模仿手势而非重复对方说的话；B项\"Focus as much as possible on topics of mutual interest\"出自第二段对镜像效应含义的解释，并非人们在对话中\"倾向于做\"的行为；D项\"Observe carefully\"无中生有，原文强调的是\"无意识地模仿\"，而非\"仔细观察\"。",
+    "tip": "注意subconsciously与without their knowing it的同义替换。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "mirroring means that conversationalists enjoy their communication and that there's a certain level of agreement between them. The topic of discussion is equally interesting for both and they know their interests meet.",
+    "why": "原文第二段说镜像效应意味着交谈者之间\"存在一定程度的共识（a certain level of agreement）\"，且\"他们知道彼此志趣相投（their interests meet）\"。这些表述均指向双方有很多共同点，B选项\"have a lot of things in common\"是对这些信息的概括归纳，语义高度吻合。",
+    "traps": "A项\"sympathetic with each other\"来自第三段，原文明确说\"not always because the person is sympathetic\"，属于曲解原文；C项\"make interesting contributions\"过度推断，原文说话题同样有趣，不等于双方都做出有趣贡献；D项\"seek common ground\"意为\"寻求共同点\"，而原文描述的是已经存在的共识状态，并非正在寻求。",
+    "tip": "区分\"已有共识\"与\"寻求共识\"的语义差别。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Popular culture makes people want to look popular, and act and speak like popular people.",
+    "why": "原文第三段末句指出\"流行文化使人们想要看起来受欢迎，想要像受欢迎的人那样行事和说话\"。\"act and speak like popular people\"本质就是模仿（imitate）受欢迎的人，因此流行文化起到的作用是鼓励人们去模仿，A选项\"It encourages people to imitate\"准确概括了这层含义。",
+    "traps": "B项\"appeals mostly to big names\"颠倒对象，流行文化影响的是普通大众而非大人物；C项\"acquaints young people with their idols\"无中生有，原文未提及\"年轻人\"或\"让人们认识偶像\"；D项\"change people's mode of cognition\"（改变认知模式）过度引申，原文仅涉及行为模仿，未涉及认知模式的改变。",
+    "tip": "act and speak like是imitate的具体化表达，注意归纳概括。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The correct interpretation of this statement is not about copying, but rather about creating your own style. When you study an author's writing style, don't stop on a single one, but explore numerous styles instead.",
+    "why": "原文第七段先引用\"抄一个是抄袭，抄两个是研究\"这句话，随后明确解释其正确理解\"并非关于抄袭，而是关于创造你自己的风格\"。接着建议读者不要只研究一位作者，而要探索多种风格。可见这句话的教训在于帮助人们形成自己的写作风格，A选项\"facilitates the creation of one's own writing style\"完全对应。",
+    "traps": "B项\"protect intellectual property rights\"是第六段新技术的目的，与该格言的教训无关；C项\"fosters correct interpretation of professional writing\"偷换概念，原文是对该格言本身的正确解读，而非对专业写作的解读；D项\"write intriguing sequels\"是段末提到的一个具体建议细节，并非该格言要传达的核心教训。",
+    "tip": "直接定位该格言后面的解释句即可找到答案。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "As an integral part of learning, it brings about positive changes, making people develop and grow. However, it may do a lot of harm. Copying someone's thoughts, ideas or inventions is completely unacceptable.",
+    "why": "原文第八段用\"rather paradoxical\"形容模仿，紧接着从两方面展开：一方面，模仿作为学习的组成部分能带来积极变化，促进人们发展和成长（正面）；另一方面，它可能造成很大伤害，抄袭他人思想和发明不可接受（负面）。D选项\"It may do harm as well as good\"精确概括了这种既有利又有害的矛盾性。",
+    "traps": "A项\"liable to different interpretations\"（容易被不同解读）原文未提及，属于无中生有；B项\"a necessary evil\"（必要之恶）暗示模仿整体是负面的，而原文强调的是正反两面，不能简单归为\"恶\"；C项\"give rise to endless disputes\"（引发无尽争论）过度推断，原文虽提到版权纠纷但并未将其作为矛盾性的解释。",
+    "tip": "看到paradoxical，立即寻找正反两方面的对比论述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "emulating",
+    "cn": "v. 模仿，效仿"
+   },
+   {
+    "w": "subconsciously",
+    "cn": "adv. 无意识地，下意识地"
+   },
+   {
+    "w": "sympathetic",
+    "cn": "adj. 同情的，有好感的"
+   },
+   {
+    "w": "copyright violation",
+    "cn": "n. 版权侵权"
+   },
+   {
+    "w": "straightforwardly",
+    "cn": "adv. 直截了当地"
+   },
+   {
+    "w": "ghostwriting",
+    "cn": "n. 代笔，捉刀代写"
+   },
+   {
+    "w": "a hard nut to crack",
+    "cn": "习语. 难以解决的问题，棘手的事"
+   },
+   {
+    "w": "plagiarism",
+    "cn": "n. 抄袭，剽窃"
+   },
+   {
+    "w": "paradoxical",
+    "cn": "adj. 矛盾的，自相矛盾的"
+   },
+   {
+    "w": "integral",
+    "cn": "adj. 不可或缺的，必要的"
+   },
+   {
+    "w": "infringes",
+    "cn": "v. 侵犯，违反（权利或法律）"
+   },
+   {
+    "w": "sequel",
+    "cn": "n. 续篇，续集"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Repeating someone's behavior is typical of talented communicators, not always because the person is sympathetic, but because there is a goal to be achieved.",
+    "cn": "重复他人的行为是优秀沟通者的典型特征，这并不总是因为对方令人同情，而是因为有目标需要达成。",
+    "note": "主干为\"Repeating someone's behavior is typical of...\"，动名词短语作主语；not always...but because...构成让步与原因的对比，强调目的性。"
+   },
+   {
+    "en": "The correct interpretation of this statement is not about copying, but rather about creating your own style.",
+    "cn": "这句话的正确解读并非关于抄袭，而是关于创造你自己的风格。",
+    "note": "主干为\"The correct interpretation is not about...but rather about...\"，not...but rather...构成否定前者、肯定后者的转折结构，是解题关键句。"
+   },
+   {
+    "en": "As an integral part of learning, it brings about positive changes, making people develop and grow. However, it may do a lot of harm. Copying someone's thoughts, ideas or inventions is completely unacceptable. It infringes on intellectual property rights of others.",
+    "cn": "作为学习不可或缺的一部分，它带来积极的变化，促使人们发展和成长。然而，它也可能造成很大伤害。抄袭他人的思想、创意或发明是完全不可接受的，这侵犯了他人的知识产权。",
+    "note": "As an integral part of learning为介词短语作状语；making people develop and grow为现在分词作结果状语；However引出转折，形成正反对比，体现paradoxical的含义。"
+   }
+  ]
+ }
+}

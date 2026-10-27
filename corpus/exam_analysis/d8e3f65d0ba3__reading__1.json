@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "d8e3f65d0ba3__reading__1",
+ "examId": "d8e3f65d0ba3",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2003 年考研英语真题（旧）",
+ "year": 2003,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:13:21.419Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62930,
+ "usage": {
+  "prompt_tokens": 1738,
+  "completion_tokens": 3753,
+  "total_tokens": 5491,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1738,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3753,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1738,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "互联网重塑情报行业",
+  "gist": "文章以二战间谍大师多诺万引入话题，指出互联网正在重塑情报行业。以Straitford公司为例，阐述了\"开源情报\"的兴起——通过网络收集和分发信息，为企业客户提供较为可靠的情报分析。文章还指出开源情报的风险在于信息真伪难辨，而Straitford凭借精干团队和独立立场在业内取得成功。",
+  "structure": [
+   "第1段：以多诺万引出互联网正在重塑情报业",
+   "第2段：介绍'开源情报'概念及其影响力增长",
+   "第3段：以Straitford公司为典型案例展开",
+   "第4段：Straitford的运作模式及信息可靠性",
+   "第5段：Straitford的团队特征与独立风格"
+  ],
+  "difficulty": "中等",
+  "translation": "\"野比尔\"多诺万一定会热爱互联网。这位在二战期间创建了战略情报局、后来又为中央情报局奠定了基础的美国间谍大师，对信息有着极大的热情。多诺万相信在间谍这一\"伟大博弈\"中应利用一切可用的工具——他视间谍活动为一种\"职业\"。如今，互联网已经改变了购书和寄信等日常消遣方式，也正在重塑多诺万所从事的这一行业。\n\n最新的这场变革不仅仅是绅士们偷看其他绅士电子邮件那么简单。这种电子窃听已经持续了几十年。在过去三四年中，万维网催生了一整个\"点击式\"间谍产业。情报人员称之为\"开源情报\"，随着网络的发展，它的影响力日益增大。1995年，中央情报局举办了一场竞赛，看谁能搜集到最多关于布隆迪的数据。以大幅领先优势胜出的是弗吉尼亚州一家名为\"开源解决方案\"的小公司，其明显优势在于对电子世界的精通。\n\n在这个新领域中最为引人注目的公司之一是总部位于得克萨斯州奥斯汀的私人情报分析公司Straitford。Straitford通过向麦克德莫特国际等能源服务公司出售涵盖从智利到俄罗斯等国家的情报分析结果来盈利。其许多预测可在www.straitford.com网站上获取。\n\nStraitford总裁乔治·弗里德曼表示，他将网络世界视为信息收集和分发相互促进的工具，堪称间谍大师的梦想。上周，他的公司正忙于从世界各个角落搜集数据碎片，并预测乌克兰将爆发一场危机。\"报告一发布，我们就会突然新增500个来自乌克兰的网络注册用户，\"曾任政治学教授的弗里德曼说，\"而且我们会收到其中一些人的反馈。\"当然，开源情报也有风险，因为很难区分有效信息和虚假信息。而这正是Straitford赖以生存的价值所在。\n\n弗里德曼在奥斯汀依靠一支仅有20人的精干团队。其中几位员工拥有军事情报背景。他认为公司的局外人身份是其成功的关键。Straitford的简报听起来不像华盛顿那种惯常的推诿扯皮——各机构为避免万一出错而回避发表果断声明。弗里德曼说，Straitford以其独立的声音为傲。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "These days the Net, which has already re-made such everyday pastimes as buying books and sending mail, is reshaping Donovan's vocation as well.",
+    "why": "原文明确指出互联网正在\"reshaping Donovan's vocation\"，即重塑多诺万所从事的情报行业。B选项\"remolded the intelligence services\"（重塑了情报服务）是对原文reshaping...vocation的同义改写，二者含义一致，因此B正确。",
+    "traps": "A项\"received support from fans like Donovan\"张冠李戴，原文说多诺万\"会喜欢\"互联网，是虚拟语气的假设，且多诺万已不在世，不可能支持互联网的出现；C项\"restored\"意为恢复，而原文用的是\"re-made\"（重塑），偷换概念；D项\"revived spying as a profession\"意为复兴间谍职业，原文说的是重塑（reshaping），而非复兴，且spying本就存在，不需要复兴。",
+    "tip": "注意区分reshape（重塑）与restore（恢复）、revive（复兴）的语义差异。"
+   },
+   {
+    "number": 22,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "Wild Bill Donovan would have loved the Internet. The American spymaster who built the Office of Strategic Services in the World War Ⅱ and later laid the roots for the CIA was fascinated with information.",
+    "why": "文章首段以多诺万的故事开篇，目的是引出全文主题——互联网对情报行业的影响。多诺万作为历史上著名的间谍大师，他对信息的痴迷与当今网络情报的兴起形成呼应，从而自然过渡到\"在线间谍\"这一核心话题。这是典型的以人物故事引出话题的写作手法，因此A正确。",
+    "traps": "B项\"show how he fought for the US\"无中生有，文章并未描述他如何为美国作战；C项\"give an episode of the information war\"偷换概念，文章并未讲述信息战的某个具体事件；D项\"honor his unique services to the CIA\"过度推断，提及多诺万不是为了表彰他的贡献，而是作为话题引入的铺垫。",
+    "tip": "首段举例通常服务于引出主题，需把握例子与全文论点的关系。"
+   },
+   {
+    "number": 23,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "Among the firms making the biggest splash in the new world is Straitford, Inc., a private intelligence-analysis firm based in Austin, Texas.",
+    "why": "\"making the biggest splash\"的字面义是\"溅起最大水花\"，引申义为\"引起最大关注/取得最大成就\"。结合上下文，该段随即介绍Straitford靠出售情报分析赚钱、客户包括大型企业，说明它在新兴开源情报领域取得了最大的成功。C项\"achieving the greatest success\"最为贴切。",
+    "traps": "A项\"causing the biggest trouble\"（制造最大麻烦）感情色彩偏负面，与文章对Straitford的正面描述不符；B项\"exerting the greatest effort\"（付出最大努力）侧重过程而非结果，与splash强调引人注目的结果义不符；D项\"enjoying the widest popularity\"（享有最广泛的知名度）看似接近，但popularity偏重大众知名度，而Straitford是面向企业客户的专业公司，success更准确。",
+    "tip": "词义题需结合上下文感情色彩和语境，排除似是而非的选项。"
+   },
+   {
+    "number": 24,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Open-source spying does have its risks, of course, since it can be difficult to tell good information from bad. That's where Straitford earns its keep.",
+    "why": "第四段末尾指出开源情报的风险在于难以辨别信息好坏，紧接着说\"That's where Straitford earns its keep\"（这正是Straitford赖以生存之处），暗示Straitford的核心价值在于能够鉴别信息真伪、提供较为可靠的情报。此外，前文提到它能预测乌克兰危机并吸引当地用户反馈，形成信息的良性循环，进一步说明其信息具有一定的可靠性。因此D正确。",
+    "traps": "A项\"prediction about Ukraine has proved true\"过度推断，文章只说Straitford在预测乌克兰危机，并未说已被证实；B项\"guarantees the truthfulness\"过于绝对，原文说的是\"earns its keep\"（靠此谋生），并未给出百分之百保证；C项\"characterized by unpredictability\"曲解原文，文章说的是开源情报有风险，而非Straitford的业务以不可预测性为特征。",
+    "tip": "注意区分\"能提供较可靠的信息\"与\"保证信息真实\"之间的程度差异。"
+   },
+   {
+    "number": 25,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Straitford's briefs don't sound like the usual Washington back-and-forthing, whereby agencies avoid dramatic declarations on the chance they might be wrong. Straitford, says Friedman, takes pride in its independent voice.",
+    "why": "末段指出Straitford的简报不同于华盛顿官方机构那种推诿含糊的风格，它敢于做出果断声明，并以\"independent voice\"（独立声音）为傲。B项\"nonconformist image\"（不循规蹈矩的形象）正是对这种特立独行、不随大流风格的概括，与原文的\"独立声音\"和\"outsider status\"相吻合。",
+    "traps": "A项\"official status\"与原文相反，文章明确说Straitford以\"outsider status\"（局外人身份）为成功关键，它恰恰不是官方机构；C项\"efficient staff\"虽然文中提到精干的20人团队，但这不是Straitford最引以为傲的，末段强调的是独立立场；D项\"military background\"虽然文中提及部分员工有军事情报背景，但这只是团队构成的一个细节，并非公司引以为傲的核心特质。",
+    "tip": "题目问\"most proud of\"，需定位到表达自豪感的关键句\"takes pride in\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "spymaster",
+    "cn": "n. 间谍头子，情报机构负责人"
+   },
+   {
+    "w": "espionage",
+    "cn": "n. 间谍活动，谍报工作"
+   },
+   {
+    "w": "vocation",
+    "cn": "n. 职业，行业（尤指需要特殊技能的）"
+   },
+   {
+    "w": "compile",
+    "cn": "v. 收集，汇编，编纂"
+   },
+   {
+    "w": "vacuuming up",
+    "cn": "v. 大量吸收/搜集（像吸尘器一样）"
+   },
+   {
+    "w": "mutually reinforcing",
+    "cn": "adj. 相互促进的，相辅相成的"
+   },
+   {
+    "w": "back-and-forthing",
+    "cn": "n. 来回推诿，反复扯皮"
+   },
+   {
+    "w": "outsider status",
+    "cn": "n. 局外人身份"
+   },
+   {
+    "w": "briefs",
+    "cn": "n. 简报，摘要"
+   },
+   {
+    "w": "by a large margin",
+    "cn": "以大幅优势"
+   },
+   {
+    "w": "earns its keep",
+    "cn": "证明自身存在的价值，赖以为生"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The American spymaster who built the Office of Strategic Services in the World War Ⅱ and later laid the roots for the CIA was fascinated with information.",
+    "cn": "这位在二战期间创建了战略情报局、后来又为中央情报局奠定了基础的美国间谍大师，对信息有着极大的热情。",
+    "note": "主干为The American spymaster was fascinated with information；who引导定语从句修饰spymaster，从句内含并列谓语built...and laid...。"
+   },
+   {
+    "en": "Straitford's briefs don't sound like the usual Washington back-and-forthing, whereby agencies avoid dramatic declarations on the chance they might be wrong.",
+    "cn": "Straitford的简报听起来不像华盛顿那种惯常的推诿扯皮——各机构为避免万一出错而回避发表果断声明。",
+    "note": "主干为briefs don't sound like back-and-forthing；whereby引导非限定性定语从句，补充说明华盛顿的做派；on the chance后接省略that的同位语从句。"
+   },
+   {
+    "en": "Last week his firm was busy vacuuming up data bits from the far corners of the world and predicting a crisis in Ukraine.",
+    "cn": "上周，他的公司正忙于从世界各个角落搜集数据碎片，并预测乌克兰将爆发一场危机。",
+    "note": "主干为his firm was busy doing sth；vacuuming up和predicting为并列的动名词短语，作busy的补语；from the far corners of the world为地点状语。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "878f8acfa4a3__reading__2",
+ "examId": "878f8acfa4a3",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年 7 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:29:34.382Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68615,
+ "usage": {
+  "prompt_tokens": 1844,
+  "completion_tokens": 4810,
+  "total_tokens": 6654,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1844,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4810,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1844,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "狩猎对环境的利弊之争",
+  "gist": "文章围绕\"狩猎对环境是好是坏\"展开多方观点的讨论：支持者认为狩猎是控制猎物种群过度繁殖的自然方式；反对者认为狩猎残忍且破坏生态平衡，且多数被猎物种并不需要种群控制；学者Varner提出仅\"治疗性狩猎\"在道德上可辩护；尽管猎人比例下降，公众对狩猎的支持率却在上升，环保领袖也在倡导猎人与环保团体合作。",
+  "structure": [
+   "第1段：引出争议，正方认为狩猎是自然的种群调控手段",
+   "第2-3段：反方认为狩猎残忍、破坏生态且无实际必要",
+   "第4段：学者Varner区分治疗性狩猎与其他狩猎的道德性",
+   "第5-7段：数据显示猎人减少但公众支持上升，环保领袖倡导合作"
+  ],
+  "difficulty": "中等",
+  "translation": "狩猎对环境究竟是好是坏？像许多热点议题一样，这个问题的答案取决于你问谁。一方面，有人说没有什么比狩猎更自然的了，事实上几乎每个动物物种——包括人类——在其进化过程中某个阶段都曾是捕食者或猎物。而且，听起来很讽刺的是，由于人类已经消灭了许多动物界的捕食者，一些人将狩猎视为一种自然的方式，来减少那些繁殖量已超出环境承载能力的猎物种群数量。\n\n另一方面，许多环保和动物权益倡导者认为狩猎是野蛮的，主张杀死动物在道德上是错误的，不管出于什么实际考虑。加利福尼亚州\"动物之声\"组织的格伦·柯克认为，狩猎\"给个体野生动物造成了巨大的痛苦……\"而且\"是非理性的残忍行为，因为与自然界的捕食不同，猎人是为了乐趣而杀戮……\"他补充说，尽管猎人们声称狩猎能维持野生动物种群的平衡，但猎人的许可证费用被用来\"以牺牲数量多得多的非猎物种为代价，操纵少数猎物种使其过度繁殖，导致生物多样性、遗传完整性和生态平衡的丧失。\"\n\n除了道德问题之外，另一些人主张狩猎并不实际。根据美国人道协会的说法，绝大多数被猎杀的物种——如水禽、兔子、高地鸟类和哀鸽——\"提供的营养极少，也不需要种群控制。\"\n\n作者加里·E·瓦尔纳在其著作《为了自然的利益》中指出，某些类型的狩猎在道德上或许是正当的，而其他类型则不然。旨在\"保障目标物种的整体福利、其生态系统的完整性或两者兼顾\"的狩猎——瓦尔纳称之为\"治疗性狩猎\"——是可以辩护的；而仅使人类受益的生存性狩猎和运动性狩猎则不可以。\n\n无论个人立场如何，如今美国猎人数量比近年来有所减少。美国鱼类与野生动物管理局2006年收集的数据显示，目前只有5%的美国人——约1250万人——自认为是猎人，低于2001年的9%和1996年的15%。\n\n然而，公众对狩猎的支持率却在上升。\"回应式管理\"公司2007年的一项调查发现，80%的受访者同意\"狩猎在现代社会中有其合理地位\"，而表示反对狩猎的美国人比例从1995年的22%下降到2007年的16%。\n\n也许与公众趋势相呼应，环保领袖们正越来越多地倡导猎人与环保团体之间的合作：毕竟，双方都反对城市无序扩张和栖息地破坏。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "And, ironic as it sounds, since humans have wiped out many animal predators, some see hunting as a natural way to reduce the herds of prey animals that now reproduce beyond the environment's carrying capacity.",
+    "why": "原文说\"听起来很讽刺\"的是：人类通过狩猎消灭了许多捕食者，导致猎物种群过度繁殖；于是有人又把狩猎当作减少猎物种群的手段。即狩猎造成了问题（消灭捕食者），狩猎又被当作解决该问题的方案——这正是B选项所述\"狩猎也可能是解决狩猎所造成问题的办法\"。",
+    "traps": "A\"捕食者可能成为其他捕食者的猎物\"原文未涉及此层意思，属于无中生有；C\"猎物物种持续变化\"偷换概念，原文说的是数量增长而非种类变化；D\"猎物数量因环境变化而增加\"因果关系错误，原文说的是因捕食者被消灭才导致数量增长，不是因为\"环境变化\"。",
+    "tip": "看到ironic等标志词时，回原文精确定位其指代的具体内容。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "hunters' license fees are used to 'manipulate a few game species into overpopulation at the expense of a much larger number of non-game species, resulting in the loss of biological diversity, genetic integrity and ecological balance.'",
+    "why": "Glenn Kirk认为猎人的许可证费用被用于操纵少数猎物种过度繁殖，牺牲了大量非猎物种，最终导致\"生物多样性、遗传完整性和生态平衡的丧失\"。C选项\"导致生态失衡\"准确概括了这一观点。",
+    "traps": "A\"控制猎物种群数量\"是猎人的说法（hunters' claims），而非Kirk的观点，属于张冠李戴；B\"使狩猎成为富人运动\"原文未提及，属无中生有；D\"帮助阻止为乐趣而杀戮\"与原文相反，Kirk认为收费并未起到积极作用。",
+    "tip": "注意区分不同人物持有的不同观点，避免张冠李戴。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "the vast majority of hunted species—such as waterfowl, rabbits, upland birds and mourning doves—'provide minimal nutrition and do not require population control.'",
+    "why": "美国人道协会的论点是：绝大多数被猎杀的物种\"营养价值极低，也不需要种群控制\"。这说明对大多数被猎物种而言，过度繁殖根本不是问题，狩猎既无营养价值也无种群控制的必要。A选项\"对大多数被猎动物而言，种群过剩不是问题\"是对原文的准确概括。",
+    "traps": "B\"狩猎剥夺了动物种群的食物来源\"原文无此说法，属无中生有；C\"许多鸟类和小动物正被非理性地猎杀\"混淆了Glenn Kirk的说法，非人道协会观点；D\"狩猎被普遍认为是野蛮行为\"过于绝对，原文只是部分人的观点。",
+    "tip": "注意把论点归属到正确的论述主体，不同段落代表不同立场。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Hunting 'designed to secure the aggregate welfare of the target species, the integrity of its ecosystem, or both'—what Varner terms 'therapeutic hunting'—is defensible, while subsistence and sport hunting—both of which only benefit human beings—are not.",
+    "why": "Varner认为只有旨在保障\"目标物种的整体福利\"和\"生态系统完整性\"的狩猎（即\"治疗性狩猎\"）才是道德上可辩护的。A选项\"当它有利于动物及其生态系统时\"准确对应了原文中aggregate welfare of the target species和integrity of its ecosystem。",
+    "traps": "B\"同时服务于人类和动物利益\"不对，Varner明确说仅使人类受益的狩猎不可辩护；C\"当它对人类生存不可或缺时\"即subsistence hunting，被Varner明确排除在可辩护之外；D\"当它稳定动物种群数量时\"过于笼统，原文强调的是物种福利和生态系统完整性，并非简单的数量稳定。",
+    "tip": "对比原文中并列/对比结构，明确作者肯定的与否定的分别是什么。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "green leaders are increasingly advocating cooperation between hunters and environmental groups: After all, both deplore urban sprawl and habitat destruction.",
+    "why": "原文末段明确指出环保领袖正越来越多地倡导\"猎人与环保团体之间的合作\"，因为双方都反对城市扩张和栖息地破坏。C选项\"猎人与环保人士的协调努力\"完全对应cooperation between hunters and environmental groups。",
+    "traps": "A\"有效保护动物栖息地\"只涉及合作的一个原因（habitat destruction），不是他们推动的核心概念；B\"严格控制城市发展\"是双方的共同关切之一，但不是文中绿色领袖倡导的概念本身；D\"发展与动物保护之间的妥协\"原文未涉及此层含义，属于过度推断。",
+    "tip": "末段常出结论题，注意抓取段落核心动作词如advocating。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "predator",
+    "cn": "捕食者，食肉动物 (n.)"
+   },
+   {
+    "w": "prey",
+    "cn": "猎物，被捕食的动物 (n.)"
+   },
+   {
+    "w": "carrying capacity",
+    "cn": "（环境的）承载能力 (n.)"
+   },
+   {
+    "w": "savage",
+    "cn": "野蛮的，残忍的 (adj.)"
+   },
+   {
+    "w": "immense",
+    "cn": "巨大的，极大的 (adj.)"
+   },
+   {
+    "w": "manipulate",
+    "cn": "操纵，控制 (v.)"
+   },
+   {
+    "w": "contend",
+    "cn": "主张，声称；争辩 (v.)"
+   },
+   {
+    "w": "therapeutic",
+    "cn": "治疗性的，有益于健康的 (adj.)"
+   },
+   {
+    "w": "subsistence",
+    "cn": "生存，维持生计 (n.)"
+   },
+   {
+    "w": "deplore",
+    "cn": "强烈反对，谴责 (v.)"
+   },
+   {
+    "w": "sprawl",
+    "cn": "（城市的）无序扩展，蔓延 (n.)"
+   },
+   {
+    "w": "morally justifiable",
+    "cn": "在道德上站得住脚的 (adj.)"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "And, ironic as it sounds, since humans have wiped out many animal predators, some see hunting as a natural way to reduce the herds of prey animals that now reproduce beyond the environment's carrying capacity.",
+    "cn": "而且，听起来很讽刺的是，由于人类已经消灭了许多动物捕食者，一些人将狩猎视为一种自然的方式，来减少那些繁殖量已超出环境承载能力的猎物种群。",
+    "note": "ironic as it sounds为让步状语从句（倒装）；since引导原因状语从句；to reduce...为目的状语；that引导定语从句修饰prey animals。"
+   },
+   {
+    "en": "He adds that, despite hunters' claims that hunting keeps wildlife populations in balance, hunters' license fees are used to 'manipulate a few game species into overpopulation at the expense of a much larger number of non-game species, resulting in the loss of biological diversity, genetic integrity and ecological balance.'",
+    "cn": "他补充说，尽管猎人们声称狩猎能维持野生动物种群的平衡，但猎人的许可证费用被用来以牺牲数量多得多的非猎物种为代价，操纵少数猎物种使其过度繁殖，导致生物多样性、遗传完整性和生态平衡的丧失。",
+    "note": "that引导宾语从句；despite引导让步状语，内含that同位语从句修饰claims；at the expense of为固定搭配表\"以……为代价\"；resulting in...为现在分词短语作结果状语。"
+   },
+   {
+    "en": "Hunting 'designed to secure the aggregate welfare of the target species, the integrity of its ecosystem, or both'—what Varner terms 'therapeutic hunting'—is defensible, while subsistence and sport hunting—both of which only benefit human beings—are not.",
+    "cn": "旨在保障目标物种整体福利、其生态系统完整性或两者兼顾的狩猎——瓦尔纳称之为\"治疗性狩猎\"——是可辩护的；而仅使人类受益的生存性狩猎和运动性狩猎则不可辩护。",
+    "note": "designed to...为过去分词短语作后置定语修饰Hunting；两个破折号之间为插入语解释说明；while引导对比转折；both of which引导非限制性定语从句修饰subsistence and sport hunting。"
+   }
+  ]
+ }
+}

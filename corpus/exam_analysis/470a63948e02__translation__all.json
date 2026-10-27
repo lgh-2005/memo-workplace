@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "470a63948e02__translation__all",
+ "examId": "470a63948e02",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年 6 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:46:57.047Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 27549,
+ "usage": {
+  "prompt_tokens": 797,
+  "completion_tokens": 1974,
+  "total_tokens": 2771,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 797,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1974,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 797,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国文化产品走向全球市场",
+  "reference": "In recent years, an increasing number of Chinese cultural products have entered the global market, gaining growing popularity among overseas consumers. With the rapid development of China's foreign cultural trade, the export value of Chinese cultural products has ranked among the world's top for many consecutive years, giving rise to a host of cultural enterprises, products, and brands with international influence. Statistics indicate that the overseas sales of Chinese publications, films and television productions, online literature, and animation works have been climbing steadily year after year. The Chinese government has introduced a series of policies to encourage and support more outstanding cultural products with Chinese elements in going global, expanding their overseas market share, and further enhancing the worldwide influence of Chinese culture.",
+  "sentences": [
+   {
+    "cn": "近年来,越来越多的中国文化产品走向全球市场,日益受到海外消费者的青睐。",
+    "en": "In recent years, an increasing number of Chinese cultural products have entered the global market, gaining growing popularity among overseas consumers.",
+    "structure": "现在分词作伴随状语（gaining...）衔接两个并列语义，主句用现在完成时表示持续趋势",
+    "keys": [
+     "越来越多的 an increasing number of",
+     "走向全球市场 enter the global market",
+     "受到青睐 gain popularity among",
+     "海外消费者 overseas consumers"
+    ]
+   },
+   {
+    "cn": "随着中国对外文化贸易的快速发展,中国文化产品出口额已持续多年位居世界前列,形成了一批具有国际影响力的文化企业、产品和品牌。",
+    "en": "With the rapid development of China's foreign cultural trade, the export value of Chinese cultural products has ranked among the world's top for many consecutive years, giving rise to a host of cultural enterprises, products, and brands with international influence.",
+    "structure": "With + 名词短语作原因/背景状语，主句用现在完成时，末尾用现在分词短语 giving rise to 作结果状语",
+    "keys": [
+     "对外文化贸易 foreign cultural trade",
+     "出口额 export value",
+     "位居世界前列 rank among the world's top",
+     "持续多年 for many consecutive years",
+     "具有国际影响力的 with international influence",
+     "一批 a host of"
+    ]
+   },
+   {
+    "cn": "数据显示,中国的出版物、影视作品、网络文学与动漫作品等在海外的销售量连年攀升。",
+    "en": "Statistics indicate that the overseas sales of Chinese publications, films and television productions, online literature, and animation works have been climbing steadily year after year.",
+    "structure": "主句 + that 宾语从句结构；宾语从句用现在完成进行时 have been climbing 强调持续上升趋势",
+    "keys": [
+     "数据显示 statistics indicate that",
+     "出版物 publications",
+     "影视作品 films and television productions",
+     "网络文学 online literature",
+     "动漫作品 animation works",
+     "连年攀升 climb steadily year after year"
+    ]
+   },
+   {
+    "cn": "中国政府出台了一系列政策鼓励和支持更多具有中国元素的优秀文化产品走出国门,扩大海外市场份额,进一步提升中国文化的世界影响力。",
+    "en": "The Chinese government has introduced a series of policies to encourage and support more outstanding cultural products with Chinese elements in going global, expanding their overseas market share, and further enhancing the worldwide influence of Chinese culture.",
+    "structure": "主句 + 不定式短语 to encourage and support 作目的状语；三个并列动名词短语 going/expanding/enhancing 作介词 in 的宾语，体现三重目标",
+    "keys": [
+     "出台政策 introduce policies",
+     "中国元素 Chinese elements",
+     "走出国门 go global",
+     "海外市场份额 overseas market share",
+     "世界影响力 worldwide influence"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "中国文化产品",
+    "en": "Chinese cultural products"
+   },
+   {
+    "cn": "对外文化贸易",
+    "en": "foreign cultural trade"
+   },
+   {
+    "cn": "出口额",
+    "en": "export value"
+   },
+   {
+    "cn": "国际影响力",
+    "en": "international influence"
+   },
+   {
+    "cn": "出版物",
+    "en": "publications"
+   },
+   {
+    "cn": "影视作品",
+    "en": "films and television productions"
+   },
+   {
+    "cn": "网络文学",
+    "en": "online literature"
+   },
+   {
+    "cn": "动漫作品",
+    "en": "animation works"
+   },
+   {
+    "cn": "中国元素",
+    "en": "Chinese elements"
+   },
+   {
+    "cn": "海外市场份额",
+    "en": "overseas market share"
+   }
+  ],
+  "pitfalls": [
+   "\"出口额\"误译为 export amount，正确应为 export value",
+   "\"位居世界前列\"直译为 be in front of the world，应为 rank among the world's top",
+   "\"走出国门\"逐字译为 walk out of the national gate，应意译为 go global / go abroad",
+   "\"连年攀升\"用 rise every year 语感偏弱，宜用 climb steadily year after year",
+   "\"出台政策\"误用 put out policies，应为 introduce / issue / roll out policies"
+  ],
+  "upgrades": [
+   {
+    "plain": "more and more Chinese cultural products",
+    "better": "an increasing number of Chinese cultural products",
+    "note": "避免口语化的 more and more，书面语更正式"
+   },
+   {
+    "plain": "become popular with overseas consumers",
+    "better": "gain growing popularity among overseas consumers",
+    "note": "gain popularity 搭配更地道，growing 体现递增趋势"
+   },
+   {
+    "plain": "has been number one in the world for many years",
+    "better": "has ranked among the world's top for many consecutive years",
+    "note": "rank among the top 表达更精准，consecutive 体现连续性"
+   },
+   {
+    "plain": "China's sales of books, movies and cartoons have increased",
+    "better": "the overseas sales of Chinese publications, films and television productions, online literature, and animation works have been climbing steadily",
+    "note": "用现在完成进行时和 climb steadily 更能体现持续攀升的动态感"
+   },
+   {
+    "plain": "The government has made some policies to help cultural products go abroad",
+    "better": "The Chinese government has introduced a series of policies to encourage and support more outstanding cultural products with Chinese elements in going global",
+    "note": "introduce policies 更正式，补全修饰成分体现原文信息完整性"
+   }
+  ]
+ }
+}

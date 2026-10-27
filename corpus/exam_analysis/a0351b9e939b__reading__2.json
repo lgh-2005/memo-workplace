@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "a0351b9e939b__reading__2",
+ "examId": "a0351b9e939b",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2002 年考研英语真题（旧）",
+ "year": 2002,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:12:06.688Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61118,
+ "usage": {
+  "prompt_tokens": 1714,
+  "completion_tokens": 3725,
+  "total_tokens": 5439,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1714,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3725,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1714,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "机器人技术的发展现状与局限",
+  "gist": "文章从人类发明工具的历史讲起，介绍了机器人在工厂、银行、地铁及外科手术等领域的广泛应用，但指出机器人要迈向更高阶段，需具备自主决策与应对动态环境的能力。目前人工智能研究进展缓慢，人脑在信息筛选与聚焦方面的能力远超最先进的计算机系统。",
+  "structure": [
+   "第1段：引出话题——人类发明工具的动力催生了机器人科学",
+   "第2段：列举机器人在现代生活中的广泛应用",
+   "第3段：转折指出机器人下一步发展面临的挑战——自主决策",
+   "第4段：人工智能研究结果不佳，预期不断推迟",
+   "第5段：对比人脑与机器人，强调人脑感知能力远超机器"
+  ],
+  "difficulty": "中等",
+  "translation": "自人类智慧初现以来，人们就不断发明越来越巧妙的工具，来应对危险、枯燥、繁重或纯粹令人厌恶的工作。这种内在驱动催生了机器人学——一门赋予机器各种人类能力的科学。如果说科学家们尚未创造出科幻小说中的机械形象，那么他们已经开始接近这一目标了。\n\n因此，现代世界中越来越多地充斥着智能小装置，我们几乎注意不到它们的存在，但它们的普遍存在已经取代了大量人类劳动。我们的工厂在机器人装配臂的节奏中嗡嗡运转。我们的银行业务在自动柜员机上完成，它们以机械的礼貌感谢我们的交易。我们的地铁列车由不知疲倦的机器人司机控制。而且，由于电子和微机械技术的不断小型化，已经有机器人系统能够以亚毫米级的精度完成某些脑部和骨科手术——这远比技术最高超的医生仅凭双手所能达到的精度要高得多。\n\n但是，如果机器人要迈入节省劳动力的下一阶段，它们就必须在更少的人工监督下运作，并且能够至少自己做出一些决策——这些目标构成了真正的挑战。NASA机器人项目经理戴夫·拉弗里说：\"虽然我们知道如何告诉机器人处理特定的错误，但我们还无法赋予机器人足够的'常识'来可靠地与动态世界进行互动。\"\n\n的确，对真正人工智能的追求产生了非常参差不齐的结果。尽管在20世纪60年代和70年代曾出现过一阵最初的乐观情绪——当时人们认为晶体管电路和微处理器或许能在2010年前复制人脑的功能——但研究人员最近已开始将这一预期推迟数十年甚至数百年。\n\n他们在试图模拟思维的过程中发现，人脑大约一千亿个神经细胞比此前想象的要有才能得多——人类的感知也比此前想象的要复杂得多。他们已经制造出能在受控的工厂环境中以毫米的几分之一识别机器面板误差的机器人。但人类的大脑能瞥一眼迅速变化的场景，立即忽略其中98%的无关信息，瞬间聚焦于蜿蜒山路旁的猴子或人群中某张可疑的面孔。地球上最先进的计算机系统也无法接近这种能力，而神经科学家仍然不太清楚我们是如何做到这一点的。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Since the dawn of human ingenuity, people have devised ever more cunning tools to cope with work that is dangerous, boring, burdensome, or just plain nasty.",
+    "why": "原文第一句明确指出\"自人类智慧初现以来，人们就发明了越来越巧妙的工具来应对危险、枯燥、繁重或令人厌恶的工作\"。C选项\"为困难和危险的工作发明工具\"是对原文的准确同义改写，\"initially\"对应\"since the dawn\"，\"difficult and dangerous work\"是对原文多种工作类型的概括归纳。",
+    "traps": "A项\"用机器生产科幻小说\"属于曲解原文，原文说的是尚未创造出科幻中的机械形象，而非用机器生产科幻；B项\"机器在制造业的广泛使用\"是第二段的内容，不是\"最初\"的体现；D项\"精英阶层巧妙应对\"无中生有，原文未提及\"elite\"，且cunning修饰的是tools而非人。",
+    "tip": "注意题干中initially一词，需回到文章起始处定位。"
+   },
+   {
+    "number": 27,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "the modern world is increasingly populated by intelligent gizmos whose presence we barely notice but whose universal existence has removed much human labor.",
+    "why": "从上下文语境推断：gizmos被intelligent修饰，说明是某种智能的事物；后文紧跟机器人装配臂、自动柜员机、机器人司机等具体例子，全部为机器/装置类事物。因此gizmos最可能指\"devices（装置、设备）\"，与全段列举的各类智能机械完全吻合。",
+    "traps": "A项\"programs（程序）\"虽与技术相关，但无法涵盖后文提到的有形实体机器人；B项\"experts（专家）\"指人，与intelligent搭配后语义不通；D项\"creatures（生物）\"指有生命的生物体，与机器人的本质矛盾。",
+    "tip": "词义题需结合前后文具体举例进行推断，尤其注意同位解释和举例说明。"
+   },
+   {
+    "number": 28,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "we can't yet give a robot enough 'common sense' to reliably interact with a dynamic world.",
+    "why": "第三段NASA专家明确指出：我们还无法赋予机器人足够的常识来可靠地与动态世界互动。D选项\"独立应对变化的世界\"是对原文\"reliably interact with a dynamic world\"和\"operate with less human supervision\"的综合概括，准确反映了当前人类能力所不及之处。",
+    "traps": "A项\"完成精细的脑部手术\"是机器人已经能做到的事情，第二段末句明确提到；B项\"与人类进行口头交流\"原文未涉及，属于无中生有；C项\"拥有一点常识\"有干扰性，但原文说的是无法赋予\"足够的\"常识来可靠互动，重点在于应对动态世界，而非仅仅\"有一点常识\"。",
+    "tip": "注意区分\"目前已能实现\"与\"目前仍无法实现\"的信息。"
+   },
+   {
+    "number": 29,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "While we know how to tell a robot to handle a specific error",
+    "why": "题干问\"除了减少人类劳动，机器人还能做什么\"。第三段引语中提到\"我们知道如何告诉机器人处理特定的错误\"，这说明在人类指示（human intervention）下，机器人可以处理一些错误。B选项\"在人工干预下处理一些错误\"准确概括了这一已实现的能力。注意此题考查的是机器人\"现在能做的事\"。",
+    "traps": "A项\"自主做出一些决策\"是机器人未来需要达到但尚未实现的目标，第三段用will have to表示这是未来需求；C项\"改善工厂环境\"原文未提及，属于无中生有；D项\"培养人类创造力\"文中完全没有涉及，纯属捏造。",
+    "tip": "区分\"已实现的能力\"和\"未来的目标\"，注意动词时态和情态动词的暗示。"
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "But the human mind can glimpse a rapidly changing scene and immediately disregard the 98 percent that is irrelevant, instantaneously focusing on the monkey at the side of a winding forest road or the single suspicious face in a big crowd.",
+    "why": "作者用\"蜿蜒山路旁的猴子\"这一例子，是为了说明人脑能在瞬间从快速变化的场景中筛除98%的无关信息、聚焦关键目标，而紧随其后作者指出\"地球上最先进的计算机也无法接近这种能力\"。因此该例证的论点是：在聚焦相关信息方面，机器人远不如人脑，C选项准确概括了这一论证目的。",
+    "traps": "A项\"在内部结构上模仿人脑\"是第四段提到的早期预期，与猴子的例子无关；B项\"能立即感知异常\"说反了主体，能做到这一点的是人脑而非机器人；D项\"最适合在受控环境中使用\"虽然第五段有所涉及，但并非猴子这个例子要论证的核心观点。",
+    "tip": "例证题需找到例子所服务的论点，通常在例子前后的总结句中。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "ingenuity",
+    "cn": "n. 独创性，心灵手巧"
+   },
+   {
+    "w": "cunning",
+    "cn": "adj. 巧妙的，精巧的"
+   },
+   {
+    "w": "compulsion",
+    "cn": "n. 强迫，驱动力"
+   },
+   {
+    "w": "confer",
+    "cn": "v. 赋予，授予"
+   },
+   {
+    "w": "miniaturization",
+    "cn": "n. 小型化，微型化"
+   },
+   {
+    "w": "submillimeter",
+    "cn": "adj. 亚毫米级的"
+   },
+   {
+    "w": "reliably",
+    "cn": "adv. 可靠地，稳定地"
+   },
+   {
+    "w": "transistor",
+    "cn": "n. 晶体管"
+   },
+   {
+    "w": "perception",
+    "cn": "n. 感知，知觉"
+   },
+   {
+    "w": "disregard",
+    "cn": "v. 忽视，不理会"
+   },
+   {
+    "w": "instantaneously",
+    "cn": "adv. 瞬间地，即刻地"
+   },
+   {
+    "w": "neuroscientist",
+    "cn": "n. 神经科学家"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "And thanks to the continual miniaturization of electronics and micro-mechanics, there are already robot systems that can perform some kinds of brain and bone surgery with submillimeter accuracy—far greater precision than highly skilled physicians can achieve with their hands alone.",
+    "cn": "而且，由于电子和微机械技术的不断小型化，已经有机器人系统能够以亚毫米级的精度完成某些脑部和骨科手术——这远比技术最高超的医生仅凭双手所能达到的精度要高得多。",
+    "note": "主干为there are robot systems that can perform surgery；thanks to引导原因状语；破折号后为补充说明，用比较结构far greater...than强调精度优势。"
+   },
+   {
+    "en": "Despite a spell of initial optimism in the 1960s and 1970s when it appeared that transistor circuits and microprocessors might be able to copy the action of the human brain by the year 2010, researchers lately have begun to extend that forecast by decades if not centuries.",
+    "cn": "尽管在20世纪60年代和70年代曾出现过一阵最初的乐观情绪——当时人们认为晶体管电路和微处理器或许能在2010年前复制人脑的功能——但研究人员最近已开始将这一预期推迟数十年甚至数百年。",
+    "note": "主干为researchers have begun to extend that forecast；Despite引导让步状语，其中when引导定语从句修饰the 1960s and 1970s；if not centuries为省略结构，意为\"即使不是数百年\"。"
+   },
+   {
+    "en": "But the human mind can glimpse a rapidly changing scene and immediately disregard the 98 percent that is irrelevant, instantaneously focusing on the monkey at the side of a winding forest road or the single suspicious face in a big crowd.",
+    "cn": "但人类的大脑能瞥一眼迅速变化的场景，立即忽略其中98%的无关信息，瞬间聚焦于蜿蜒山路旁的猴子或人群中某张可疑的面孔。",
+    "note": "主干为the human mind can glimpse...and disregard...；现在分词focusing作伴随状语；or连接两个并列的聚焦对象，形成生动对比。"
+   }
+  ]
+ }
+}

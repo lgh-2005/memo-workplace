@@ -1,0 +1,244 @@
+{
+ "schemaVersion": 1,
+ "id": "baf672da4db5__long_match__all",
+ "examId": "baf672da4db5",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2019 年 12 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:24:54.722Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29463,
+ "usage": {
+  "prompt_tokens": 913,
+  "completion_tokens": 1654,
+  "total_tokens": 2567,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 913,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1654,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 913,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "蛋白质摄入与蛋白质补充剂",
+  "strategy": [
+   "先通读10条陈述句，标注高频关键词如protein、supplement、Pipitone等专有名词",
+   "利用人名、数据、特殊表述等独特信号词快速锁定段落",
+   "注意同义替换：如recommended amount↔daily requirement、overburden↔put strain on",
+   "先做含专有名词的题（如37、44提到Pipitone），再处理泛化描述题",
+   "匹配后回读确认语义方向一致，避免因相近话题段落而张冠李戴"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "cn": "一个人要摄入推荐量的蛋白质是相当容易的。",
+    "keywords": [
+     "recommended amount",
+     "protein",
+     "easy"
+    ],
+    "paraphrase": "陈述句中quite easy可能对应原文中not difficult或simple、effortless等表达；recommended amount可能被替换为daily requirement或suggested intake。",
+    "tip": "定位recommended amount/daily requirement与easy/not hard等搭配。"
+   },
+   {
+    "number": 37,
+    "answer": "E",
+    "cn": "Pipitone声称健康的成年人无需在蛋白质补充剂上花钱。",
+    "keywords": [
+     "Pipitone",
+     "healthy adults",
+     "protein supplements",
+     "spend money"
+    ],
+    "paraphrase": "need not spend money on可能对应原文中waste money on、no need to buy、unnecessary expense等表述；healthy adults可能对应those in good health。",
+    "tip": "直接搜索人名Pipitone，再确认段落涉及花钱购买补充剂。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "cn": "蛋白质补充剂行业被发现正在蓬勃发展。",
+    "keywords": [
+     "protein supplement",
+     "business",
+     "thriving"
+    ],
+    "paraphrase": "thriving可能对应原文中booming、growing rapidly、lucrative market等表达；business可能被替换为industry或market。",
+    "tip": "首段（A段）通常引出话题背景，关注市场规模、增长等数据。"
+   },
+   {
+    "number": 39,
+    "answer": "F",
+    "cn": "蛋白质能够加速受损肌肉的修复。",
+    "keywords": [
+     "protein",
+     "speed",
+     "repairing",
+     "damaged muscles"
+    ],
+    "paraphrase": "speed the repairing可能对应原文accelerate recovery、promote muscle repair；damaged muscles可能替换为injured/torn muscle tissue。",
+    "tip": "定位repair/recovery与muscle damage等运动恢复类表述。"
+   },
+   {
+    "number": 40,
+    "answer": "M",
+    "cn": "蛋白质补充剂可能会加重某些内脏器官的负担，从而导致其功能失调。",
+    "keywords": [
+     "overburden",
+     "internal organs",
+     "malfunctioning",
+     "protein supplements"
+    ],
+    "paraphrase": "overburden可能对应原文put extra strain on或overload；malfunctioning可能对应impaired function、not work properly；internal organs常指肾脏或肝脏。",
+    "tip": "定位器官负担相关词如kidney、liver与strain、damage搭配。"
+   },
+   {
+    "number": 41,
+    "answer": "G",
+    "cn": "老年人需要摄入更多蛋白质以保持肌肉强壮。",
+    "keywords": [
+     "older adults",
+     "more protein",
+     "muscles strong"
+    ],
+    "paraphrase": "older adults可能对应原文the elderly、aging population、seniors；keep muscles strong可能替换为maintain muscle mass/strength、prevent muscle loss。",
+    "tip": "定位older/aging与increased protein需求的搭配。"
+   },
+   {
+    "number": 42,
+    "answer": "B",
+    "cn": "蛋白质存在于比人们可能意识到的更多的食物中。",
+    "keywords": [
+     "protein",
+     "more foods",
+     "realize"
+    ],
+    "paraphrase": "more foods than people might realize可能对应原文中wider range of foods than expected或many people are unaware等表述，强调蛋白质来源的多样性。",
+    "tip": "定位表示\"超出认知\"的措辞与食物种类多样性描述。"
+   },
+   {
+    "number": 43,
+    "answer": "H",
+    "cn": "额外的蛋白质被发现有助于增强寻求减重的超重老年人的肌肉力量。",
+    "keywords": [
+     "additional protein",
+     "overweight seniors",
+     "weight loss",
+     "strengthen muscles"
+    ],
+    "paraphrase": "additional protein可能对应原文extra/supplemental protein；overweight seniors seeking weight loss可能对应obese elderly on a diet/calorie-restricted older adults。",
+    "tip": "定位overweight/obese与seniors以及muscle strength同时出现的段落。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "Pipitone认为天然完整食物提供了最佳的蛋白质来源。",
+    "keywords": [
+     "Pipitone",
+     "whole foods",
+     "best source",
+     "protein"
+    ],
+    "paraphrase": "whole foods可能对应原文real food、natural food、unprocessed food；best source可能替换为ideal/optimal way to get protein。",
+    "tip": "搜索人名Pipitone，再确认该段讨论天然食物优于补充剂。"
+   },
+   {
+    "number": 45,
+    "answer": "L",
+    "cn": "人们被建议在摄入更多蛋白质时饮用更多液体。",
+    "keywords": [
+     "drink more liquid",
+     "more protein",
+     "advised"
+    ],
+    "paraphrase": "drink more liquid可能对应原文increase fluid/water intake、stay hydrated；advised可能替换为recommended、suggested、encouraged。",
+    "tip": "定位hydration/fluid/water与高蛋白饮食的搭配建议。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "recommended",
+    "cn": "推荐的（adj.）"
+   },
+   {
+    "w": "protein supplements",
+    "cn": "蛋白质补充剂（n.）"
+   },
+   {
+    "w": "thriving",
+    "cn": "蓬勃发展的、兴旺的（adj.）"
+   },
+   {
+    "w": "overburden",
+    "cn": "使负担过重（v.）"
+   },
+   {
+    "w": "malfunctioning",
+    "cn": "功能失调、故障（n./v.）"
+   },
+   {
+    "w": "overweight",
+    "cn": "超重的（adj.）"
+   },
+   {
+    "w": "whole foods",
+    "cn": "天然完整食物（n.）"
+   },
+   {
+    "w": "liquid",
+    "cn": "液体（n.）"
+   },
+   {
+    "w": "speed",
+    "cn": "加速（v.）此处作动词用"
+   },
+   {
+    "w": "internal organs",
+    "cn": "内脏器官（n.）"
+   }
+  ]
+ }
+}

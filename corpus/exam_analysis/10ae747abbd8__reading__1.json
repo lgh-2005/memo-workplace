@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "10ae747abbd8__reading__1",
+ "examId": "10ae747abbd8",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2009 年考研英语真题（旧）",
+ "year": 2009,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:22:02.132Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 74097,
+ "usage": {
+  "prompt_tokens": 1697,
+  "completion_tokens": 4777,
+  "total_tokens": 6474,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1697,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4777,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1697,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "培养新习惯可激发创新思维",
+  "gist": "文章指出习惯通常被认为是无意识和机械的，但脑科学研究发现，有意识地培养新习惯可以在大脑中创建新的神经通路，从而激发创造力。文章引用多位专家观点，说明好奇心和探索精神对创新至关重要，而当前标准化测试的导向压制了创新与协作思维模式，应通过培养新习惯来突破这种局限。",
+  "structure": [
+   "第1-2段：引出话题——习惯虽被视为负面，但新习惯能促进创新",
+   "第3-4段：阐释机制——走出舒适区培养新习惯，新路径可绕过旧习惯",
+   "第5段：专家观点——创新需要好奇心，而非简单决断",
+   "第6-7段：深入论证——大脑思维模式在青春期被削减，标准化测试加剧了思维固化"
+  ],
+  "difficulty": "中等",
+  "translation": "习惯是一种有趣的东西。我们无意识地依赖它们，让大脑进入自动驾驶模式，放松地沉浸在熟悉常规所带来的无意识舒适中。\"不是选择，而是习惯支配着不加思考的芸芸众生，\"威廉·华兹华斯在19世纪如是说。在瞬息万变的21世纪，\"习惯\"这个词本身就带有消极的含义。\n\n因此，在创造力和创新的语境中谈论习惯似乎是自相矛盾的。但大脑研究人员发现，当我们有意识地培养新习惯时，我们会创建平行的路径，甚至产生全新的脑细胞，这些能够将我们的思维列车切换到新的、创新性的轨道上。\n\n我们不应将自己视为一成不变的习惯动物而轻易否定自己，而是可以通过有意识地培养新习惯来主导自身的改变。事实上，我们尝试的新事物越多——越是走出舒适区——我们在工作和个人生活中就会变得越有内在的创造力。\n\n但不必费力去消灭旧习惯；一旦那些程序化的车辙印刻在大脑中，它们就会永远留在那里。相反，我们刻意培养的新习惯会创建平行的通路，可以绕过那些旧路径。\n\n\"创新所需的第一件事是对奇妙事物的着迷，\"《开放的心灵》一书的作者道娜·马尔科娃说。\"但我们被教导的却是'做决定'，就像我们的总统自称为'决策者'一样。\"不过她补充道，\"做决定意味着扼杀所有其他可能性，只留下一个。一个优秀的创新思考者总是在探索其他众多可能性。\"\n\n她说，我们所有人都在以自己未意识到的方式解决问题。20世纪60年代末的研究人员发现，人类天生具备以四种主要方式应对挑战的能力：分析式、程序式、关联式（或协作式）和创新式。然而，在青春期结束时，大脑会关闭这些能力的一半，只保留那些在生命最初十年左右看来最有价值的思维模式。\n\n当前对标准化测试的重视突出了分析和程序能力，这意味着我们中很少有人能内在地运用创新和协作的思维模式。\"这打破了美国信仰体系中的一条主要准则——任何人都能做任何事，\"M.J.瑞安解释道，她是2006年出版的《今年我将……》一书的作者，也是马尔科娃女士的商业伙伴。\"那是一个我们一直在延续的谎言，它助长了平庸。了解自己擅长什么并做得更多，才能创造卓越。\"这正是培养新习惯的用武之地。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Not choice, but habit rules the unreflecting herd",
+    "why": "华兹华斯这句话的关键词是\"unreflecting\"（不加思考的），说明习惯的特征是无需思考、自动运行的，即\"机械的\"（mechanical）。结合第一段前文\"mindlessly\"\"auto-pilot\"等描述，均指向习惯的无意识、机械化特征，C选项mechanical与\"unreflecting\"语义完全对应。",
+    "traps": "A选项casual（随意的）：文中说的是无意识而非随意，属于偷换概念；B选项familiar（熟悉的）：虽然第一段提到\"familiar routine\"，但这是描述习惯带来的舒适感，并非华兹华斯引言所强调的特征，属于张冠李戴；D选项changeable（可变的）：与全文强调习惯根深蒂固的论点相悖，属于正反混淆。",
+    "tip": "引用名言考查时，应紧扣引文中的关键词进行同义替换判断。"
+   },
+   {
+    "number": 22,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But brain researchers have discovered that when we consciously develop new habits, we create parallel paths, and even entirely new brain cells, that can jump our trains of thought onto new, innovative tracks.",
+    "why": "原文说\"when we consciously develop new habits\"，即有意识地培养新习惯时可以创建新路径。\"consciously develop\"意味着新习惯的形成是可以被人为\"引导\"的（guided），即人可以主动控制和引导新习惯的形成过程。第三段\"we can instead direct our own change by consciously developing new habits\"中的\"direct\"进一步印证了guided的含义。",
+    "traps": "A选项predicted（预测的）：文中未提及对新习惯形成过程的预测，属于无中生有；B选项regulated（调控的）：regulate侧重于规范和管控，语义比guide更强，原文强调的是主动引导而非严格调控，属于程度失当；C选项traced（追踪的）：文中未涉及追溯新习惯形成路径的内容，属于无中生有。",
+    "tip": "注意原文中\"consciously develop\"\"direct\"等核心词的同义替换。"
+   },
+   {
+    "number": 23,
+    "answer": "A",
+    "type": "词义句意题",
+    "locate": "once those ruts of procedure are worn into the brain, they're there to stay",
+    "why": "ruts原义是车辙、凹槽，指车轮反复碾压形成的痕迹。文中\"ruts of procedure are worn into the brain\"指程序化的轨迹已经被磨刻进大脑，与第二段中\"parallel paths\"\"tracks\"形成呼应。tracks（轨道、轨迹）与ruts在\"路径被反复使用而形成固定痕迹\"这一语义上最为接近，均指固化的行为路径。",
+    "traps": "B选项series（系列）：与ruts的\"凹痕、轨迹\"含义无关，属于语义偏离；C选项characteristics（特征）：虽然习惯有特征属性，但ruts描述的是路径形态而非抽象特征，属于偷换概念；D选项connections（联系）：虽然脑科学常涉及神经连接，但ruts强调的是反复磨出的固定路径，而非连接关系，属于过度引申。",
+    "tip": "词义题需结合上下文语境和词汇本义综合判断，注意前后段落的语义呼应。"
+   },
+   {
+    "number": 24,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "The first thing needed for innovation is a fascination with wonder",
+    "why": "马尔科娃明确指出\"创新所需的第一件事是对奇妙事物的着迷\"（a fascination with wonder）。\"fascination with wonder\"即对未知事物的好奇心（curiosity），\"innovation\"即创造性思维（creative minds），因此D选项\"好奇心激活创造性思维\"（curiosity activates creative minds）是对原文的精准同义改写，逻辑链完整。",
+    "traps": "A选项ideas are born of a relaxing mind（创意源于放松的心态）：文中提到的\"relaxing\"出现在第一段描述旧习惯的语境中，与马尔科娃的创新观点无关，属于移花接木；B选项innovativeness could be taught（创新能力可以被教授）：马尔科娃批评的是我们\"被教导去做决定\"而非被教创新，且文中未提出创新可教的观点，属于曲解原文；C选项decisiveness derives from fantastic ideas（果断源于奇妙的想法）：马尔科娃对\"decide\"持批评态度，认为决断会扼杀可能性，该选项颠倒了原文逻辑，属于正反混淆。",
+    "tip": "推断题需找到原文对应表述，进行关键词的同义替换匹配。"
+   },
+   {
+    "number": 25,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The current emphasis on standardized testing highlights analysis and procedure, meaning that few of us inherently use our innovative and collaborative modes of thought.",
+    "why": "原文指出标准化测试强调分析和程序能力，导致很少有人能运用创新和协作思维。瑞安进一步评论这\"助长了平庸\"，并指出\"了解自己擅长什么并做得更多才能创造卓越\"，末句\"这正是培养新习惯的用武之地\"暗示标准化测试的导向阻碍了人们培养新习惯。因此A选项\"阻止新习惯的形成\"是对整段论证逻辑的正确推断。",
+    "traps": "B选项no longer emphasizes commonness（不再强调平庸）：瑞安明确说标准化测试\"fosters commonness\"（助长平庸），B选项与原文完全相反，属于正反混淆；C选项maintains the inherent American thinking mode（维持固有的美国思维模式）：原文说的是标准化测试\"breaks the major rule in the American belief system\"（打破了美国信仰体系的主要准则），而非维持，属于正反混淆；D选项complies with the American belief system（符合美国信仰体系）：同上，原文明确说\"breaks\"（打破），D选项与原文矛盾。",
+    "tip": "推断题要通读相关段落，把握整段论证逻辑，而非只看单句。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "paradoxical",
+    "cn": "adj. 自相矛盾的，看似矛盾的"
+   },
+   {
+    "w": "inherently",
+    "cn": "adv. 内在地，固有地，本质上"
+   },
+   {
+    "w": "bypass",
+    "cn": "v. 绕过，避开；n. 旁路"
+   },
+   {
+    "w": "fascination",
+    "cn": "n. 着迷，入迷，强烈的吸引力"
+   },
+   {
+    "w": "adolescence",
+    "cn": "n. 青春期"
+   },
+   {
+    "w": "perpetuate",
+    "cn": "v. 使持续，使永久化"
+   },
+   {
+    "w": "foster",
+    "cn": "v. 促进，培养，助长"
+   },
+   {
+    "w": "collaborative",
+    "cn": "adj. 合作的，协作的"
+   },
+   {
+    "w": "dismiss",
+    "cn": "v. 摒弃，不予理会，解散"
+   },
+   {
+    "w": "implication",
+    "cn": "n. 含义，暗示，可能的影响"
+   },
+   {
+    "w": "analytically",
+    "cn": "adv. 用分析方法地"
+   },
+   {
+    "w": "procedurally",
+    "cn": "adv. 按程序地，在程序上"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But brain researchers have discovered that when we consciously develop new habits, we create parallel paths, and even entirely new brain cells, that can jump our trains of thought onto new, innovative tracks.",
+    "cn": "但大脑研究人员发现，当我们有意识地培养新习惯时，我们会创建平行的路径，甚至产生全新的脑细胞，这些能够将我们的思维列车切换到新的、创新性的轨道上。",
+    "note": "主句为researchers have discovered that...；that引导宾语从句，从句中when引导时间状语从句；and even entirely new brain cells为插入补充成分；末尾that引导定语从句修饰paths和brain cells。"
+   },
+   {
+    "en": "At the end of adolescence, however, the brain shuts down half of that capacity, preserving only those modes of thought that have seemed most valuable during the first decade or so of life.",
+    "cn": "然而，在青春期结束时，大脑会关闭这些能力的一半，只保留那些在生命最初十年左右看来最有价值的思维模式。",
+    "note": "主句为the brain shuts down half of that capacity；preserving...为现在分词作伴随状语；that引导定语从句修饰modes of thought；however为插入语表转折。"
+   },
+   {
+    "en": "The current emphasis on standardized testing highlights analysis and procedure, meaning that few of us inherently use our innovative and collaborative modes of thought.",
+    "cn": "当前对标准化测试的重视突出了分析和程序能力，这意味着我们中很少有人能内在地运用创新和协作的思维模式。",
+    "note": "主句为The current emphasis...highlights...；meaning that...为现在分词短语作结果状语；that引导从句说明具体结果内容。"
+   }
+  ]
+ }
+}

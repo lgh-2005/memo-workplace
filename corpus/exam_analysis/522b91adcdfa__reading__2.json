@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "522b91adcdfa__reading__2",
+ "examId": "522b91adcdfa",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2007 年考研英语真题（旧）",
+ "year": 2007,
+ "sub": "2",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T06:19:12.035Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 70776,
+ "usage": {
+  "prompt_tokens": 1831,
+  "completion_tokens": 4245,
+  "total_tokens": 6076,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1831,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4245,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1831,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "IQ测试的局限性与智力本质的探讨",
+  "gist": "文章以Marilyn vos Savant的超高IQ为引子，指出智力远不止测试分数所能衡量。文章介绍了IQ测试的主要形式与评分方式的演变，并援引Sternberg的观点，论证标准化测试无法全面评估创造力、实践能力等关键要素，且测试结果在不同情境下的预测力有限，表达了对IQ测试的质疑态度。",
+  "structure": [
+   "第一段：以vos Savant为例引出IQ测试的局限性疑问",
+   "第二段：过渡段，提出核心问题——智力到底意味着什么",
+   "第三段：介绍IQ测试的主要形式及评分方式的变化",
+   "第四段：引用Sternberg观点论证标准化测试的不足"
+  ],
+  "difficulty": "中等",
+  "translation": "过去几年来，《星期日报》的增刊《Parade》一直设有一个名为\"问玛丽莲\"的专栏。人们被邀请向玛丽莲·沃斯·莎凡特提问，她在10岁时智力水平已达到约23岁的程度，这使她的智商达到228分——有史以来的最高纪录。智商测试要求你完成语言和视觉类比题，想象纸张被折叠和剪切后的样子，推断数字序列，以及完成其他类似任务。因此，当沃斯·莎凡特回答普通人（智商为100）提出的诸如\"爱与喜欢有什么区别？\"或者\"运气和巧合的本质是什么？\"之类的问题时，这就有点令人困惑了。那种将物体形象化和推算数字规律的能力，如何使一个人有资格回答一些最优秀的诗人和哲学家都未能解答的问题，这一点并不显而易见。\n\n显然，智力所涵盖的内容远不止一个测试分数。聪明究竟意味着什么？智力中有多少可以被明确界定，我们又能从神经学、遗传学、计算机科学和其他领域了解到多少关于智力的知识？\n\n在人类智力的界定指标中，IQ分数似乎仍然是主要标准，尽管IQ测试已不像过去那样频繁进行。这种测试主要有两种形式：斯坦福-比奈智力量表和韦克斯勒智力量表（两者都有成人版和儿童版）。这些测试通常花费数百美元，一般只由心理学家施测，不过它们的各种变体在书店和互联网上随处可见。像沃斯·莎凡特那样的超高分已不再可能出现，因为现在的评分是基于同龄人群的统计分布，而不再是简单地将心理年龄除以实际年龄再乘以100。其他标准化考试，如学术能力评估测试（SAT）和研究生入学考试（GRE），也体现了IQ测试的主要方面。\n\n罗伯特·J·斯特恩伯格认为，这类标准化测试可能无法评估在学业和生活中取得成功所需的所有重要要素。在其论文《智力测试有多智能？》中，斯特恩伯格指出，传统测试最擅长评估分析能力和语言技能，但未能衡量创造力和实践知识，而这些也是解决问题和取得人生成功的关键因素。此外，一旦测试对象或情境发生变化，IQ测试的预测效果不一定好。研究发现，在低压力条件下进行测试时，IQ能预测领导技能，但在高压力条件下，IQ与领导力呈负相关——也就是说，它预测出了相反的结果。任何经历过SAT考试煎熬的人都会证明，应试技巧也很重要，无论是知道何时该猜答案还是该跳过哪些题目。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "IQ tests ask you to complete verbal and visual analogies, to envision paper after it has been folded and cut, and to deduce numerical sequences, among other similar tasks.",
+    "why": "原文说IQ测试要求\"complete verbal and visual analogies\"（完成语言和视觉类比），即根据给定的词语或图形找出与之相似、有类比关系的选项。D选项\"Choosing words or graphs similar to the given ones\"（选择与给定词语或图形相似的词语或图形）是对\"complete verbal and visual analogies\"的准确同义改写。",
+    "traps": "A项\"回答哲学问题\"：原文提到哲学问题是vos Savant被读者提问的内容，并非IQ测试所考察的内容，属于张冠李戴。B项\"折叠或剪切纸张\"：原文说的是\"envision paper after it has been folded and cut\"（想象纸张被折剪后的样子），考察的是空间想象力，而非实际动手折剪，属于偷换概念。C项\"分辨概念间的区别\"：原文中\"爱与喜欢的区别\"是读者提问的内容，并非测试内容，属于移花接木。",
+    "tip": "注意区分\"测试内容\"与\"专栏提问内容\"，防止张冠李戴。"
+   },
+   {
+    "number": 27,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "The test comes primarily in two forms: the Stanford-Binet Intelligence Scale and the Wechsler Intelligence Scales (both come in adult and children's version).",
+    "why": "原文明确指出两种主要IQ测试都有成人版和儿童版（both come in adult and children's version）。既然存在不同版本，合理推断其内容和形式对成人和儿童而言是不同的，否则没必要区分版本。C选项\"成人和儿童的测试内容与形式可能不同\"是对此信息的合理推断。",
+    "traps": "A项\"人们不再用IQ分数作为智力指标\"：原文说\"The defining term of intelligence in humans still seems to be the IQ score\"，IQ分数仍然是主要指标，A项与原文矛盾。B项\"更多版本的IQ测试现已在网上提供\"：原文说\"variations of them populate bookstores and the World Wide Web\"，指的是变体版本，并非正式版本更多地出现在网上，属于曲解原意。D项\"科学家已经界定了人类智力的重要要素\"：第三段并未提及此内容，属于无中生有。",
+    "tip": "推断题要抓住原文的隐含逻辑，\"有不同版本\"即暗示\"内容有差异\"。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Superhigh scores like vos Savant's are no longer possible, because scoring is now based on a statistical population distribution among age peers, rather than simply dividing the mental age by the chronological age and multiplying by 100.",
+    "why": "原文明确指出超高分不再可能的原因是评分方式改变了：现在基于同龄人群统计分布，而非过去\"心理年龄÷实际年龄×100\"的简单计算。A选项\"分数通过不同的计算程序获得\"准确概括了这一评分方法的变化，是正确答案。",
+    "traps": "B项\"现在强调创造力而非分析能力\"：创造力的讨论出现在第四段Sternberg的观点中，与第三段关于评分方式变化的内容无关，属于张冠李戴。C项\"vos Savant的案例是极端个例不会重现\"：原文给出的原因是评分方法的改变，而非概率上的极端事件，属于主观臆断。D项\"IQ测试的界定特征已改变\"：原文说的是评分计算方式的改变，而非IQ测试的界定特征改变，且\"defining characteristic\"表意模糊，偷换了概念。",
+    "tip": "因果关系题须精确定位because后的原因，切勿被似是而非的表述干扰。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Such standardized tests may not assess all the important elements necessary to succeed in school and in life, argues Robert J. Sternberg.",
+    "why": "末段从多角度论证标准化测试的不足：Sternberg指出传统测试不能衡量创造力和实践知识；研究发现IQ在高压情境下与领导力负相关；SAT还受应试技巧影响。综合这些论据可得出结论：测试分数未必是衡量个人能力的可靠指标。A选项是对全段论证的准确概括。",
+    "traps": "B项\"IQ分数与SAT成绩高度相关\"：原文说SAT\"capture the main aspects of IQ tests\"，这是第三段内容，且并非末段讨论的重点，属于段落错位与过度推断。C项\"测试涉及大量猜测\"：原文只提到\"knowing when to guess\"是应试技巧之一，并非说测试本身就是猜测，属于以偏概全。D项\"传统测试已过时\"：原文质疑测试的全面性和可靠性，但并未说其\"过时\"，属于过度推断。",
+    "tip": "末段结论题需综合全段论据归纳核心观点，避免抓住细节以偏概全。"
+   },
+   {
+    "number": 30,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "It's not obvious how the capacity to visualize objects and to figure out numerical patterns suits one to answer questions that have eluded some of the best poets and philosophers.",
+    "why": "作者在全文中多次对IQ测试表达质疑：第一段用反问暗示IQ测试能力与回答深层问题之间缺乏联系；第二段明确指出智力不止一个测试分数；第三段指出超高分不再可能；第四段引用Sternberg的批评观点并举出IQ预测失效的研究证据。这些都表明作者对IQ测试持怀疑（skeptical）态度。",
+    "traps": "A项\"支持\"：与全文质疑基调完全相反。C项\"公正客观\"：作者虽然引用了研究和专家观点，但整体倾向明显偏向质疑，并非中立立场。D项\"有偏见的\"：作者的质疑有论据支撑，是理性的怀疑，不能定性为\"偏见\"，且biased带有明显贬义，不符合学术语境。",
+    "tip": "态度题需通观全文情感倾向，区分skeptical（合理质疑）和biased（无理偏见）。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "supplement",
+    "cn": "n. 增刊，副刊；补充物"
+   },
+   {
+    "w": "query",
+    "cn": "v./n. 质疑，询问"
+   },
+   {
+    "w": "analogy",
+    "cn": "n. 类比，类推"
+   },
+   {
+    "w": "envision",
+    "cn": "v. 想象，设想"
+   },
+   {
+    "w": "deduce",
+    "cn": "v. 推断，演绎"
+   },
+   {
+    "w": "elude",
+    "cn": "v. 使困惑；难倒；逃避"
+   },
+   {
+    "w": "encompass",
+    "cn": "v. 包含，涵盖"
+   },
+   {
+    "w": "chronological",
+    "cn": "adj. 按时间顺序的（此处指实际年龄的）"
+   },
+   {
+    "w": "populate",
+    "cn": "v. 充斥，遍布"
+   },
+   {
+    "w": "correlated",
+    "cn": "adj./v. 相关的；使相关联"
+   },
+   {
+    "w": "toil",
+    "cn": "v. 辛苦劳作，费力完成"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "So it is a bit confusing when vos Savant fields such queries from the average Joe (whose IQ is 100) as, What's the difference between love and fondness? Or what is the nature of luck and coincidence?",
+    "cn": "因此，当沃斯·莎凡特回答普通人（智商为100）提出的诸如\"爱与喜欢有什么区别？\"或者\"运气和巧合的本质是什么？\"之类的问题时，这就有点令人困惑了。",
+    "note": "主句为it is confusing when...，其中it为形式主语；fields意为\"回答/处理\"；such...as...引出举例；average Joe为习语，指普通人。"
+   },
+   {
+    "en": "It's not obvious how the capacity to visualize objects and to figure out numerical patterns suits one to answer questions that have eluded some of the best poets and philosophers.",
+    "cn": "那种将物体形象化和推算数字规律的能力，如何使一个人有资格回答一些最优秀的诗人和哲学家都未能解答的问题，这一点并不显而易见。",
+    "note": "主句为It's not obvious + how引导的主语从句；suits one to do意为\"使某人有资格做\"；that引导定语从句修饰questions；eluded意为\"难住\"。"
+   },
+   {
+    "en": "Superhigh scores like vos Savant's are no longer possible, because scoring is now based on a statistical population distribution among age peers, rather than simply dividing the mental age by the chronological age and multiplying by 100.",
+    "cn": "像沃斯·莎凡特那样的超高分已不再可能出现，因为现在的评分是基于同龄人群的统计分布，而不再是简单地将心理年龄除以实际年龄再乘以100。",
+    "note": "主句+because原因状语从句；rather than连接对比结构，将新旧两种计分方式对比；dividing和multiplying为并列动名词作than的宾语。"
+   }
+  ]
+ }
+}

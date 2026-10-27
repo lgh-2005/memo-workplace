@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "fc33c1cb1401__writing__all",
+ "examId": "fc33c1cb1401",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2025 年 12 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:03:16.748Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 47578,
+ "usage": {
+  "prompt_tokens": 740,
+  "completion_tokens": 3283,
+  "total_tokens": 4023,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 740,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3283,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 740,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "命题作文，以指定首句开头，围绕\"教师对学生学业追求与个人发展的深远影响\"展开论述，词数150-200。",
+    "outline": [
+     "第一段：引用指定首句，总论教师的影响力，指出教师的角色远超知识传授者。",
+     "第二段：分两个层面展开——学业引导（举例说明）与品格塑造（阐述教师如何培养学生价值观和自信心）。",
+     "第三段：总结全文，重申教师的重要性，呼吁社会给予教育工作者更多认可与支持。"
+    ],
+    "sample": "It is believed that teachers can exert a profound influence on their students' academic pursuit and personal development. Indeed, the role of teachers extends far beyond the mere transmission of knowledge; they serve as mentors, role models, and sources of inspiration that shape students' lifelong trajectories.\n\nTo begin with, teachers play an indispensable role in academic guidance. A competent teacher not only imparts subject knowledge but also cultivates critical thinking skills and intellectual curiosity. For instance, my high school physics teacher ignited my passion for science by conducting fascinating experiments, which ultimately steered me toward a career in engineering. Moreover, teachers profoundly impact students' character formation. Through daily interactions, they instill values such as perseverance, integrity, and empathy. A teacher who demonstrates genuine care and respect can boost students' self-confidence and foster a positive attitude toward challenges.\n\nIn conclusion, teachers are far more than knowledge providers; they are architects of young minds. Society should therefore accord greater recognition and support to the teaching profession, ensuring that educators can continue to inspire future generations.",
+    "phrases": [
+     {
+      "en": "exert a profound influence on",
+      "cn": "对……产生深远影响；常用于议论文首段提出观点"
+     },
+     {
+      "en": "extend far beyond",
+      "cn": "远远超出……；用于扩展论点，强调范围之广"
+     },
+     {
+      "en": "the mere transmission of knowledge",
+      "cn": "单纯的知识传授；mere 起限定与弱化作用，形成对比"
+     },
+     {
+      "en": "cultivate critical thinking skills",
+      "cn": "培养批判性思维能力；教育类话题高频搭配"
+     },
+     {
+      "en": "ignite one's passion for",
+      "cn": "点燃某人对……的热情；比 arouse interest 更生动"
+     },
+     {
+      "en": "steer sb. toward",
+      "cn": "引导某人走向……；常用于描述人生方向的改变"
+     },
+     {
+      "en": "instill values such as",
+      "cn": "灌输诸如……的价值观；instill 比 teach 更具深层含义"
+     },
+     {
+      "en": "foster a positive attitude toward",
+      "cn": "培养对……的积极态度；foster 与 attitude 为高分搭配"
+     },
+     {
+      "en": "accord greater recognition and support to",
+      "cn": "给予……更多认可与支持；accord 比 give 更正式书面"
+     },
+     {
+      "en": "architects of young minds",
+      "cn": "年轻心灵的建筑师；比喻手法，提升文采"
+     }
+    ],
+    "pitfalls": [
+     "忘记在文章开头抄写指定首句，直接扣分",
+     "全文仅泛泛而谈，缺乏具体事例支撑论点，论证空洞",
+     "词数不足150或超过200，均可能被扣分",
+     "段落之间缺乏过渡词衔接，逻辑显得跳跃",
+     "反复使用 important/very 等低级词汇，未展示词汇多样性"
+    ],
+    "upgrades": [
+     {
+      "plain": "Teachers are very important to students.",
+      "better": "Teachers play an indispensable role in shaping students' academic and personal growth.",
+      "note": "用 play an indispensable role in 替代 be important，搭配动名词使表达更具体"
+     },
+     {
+      "plain": "My teacher made me like science.",
+      "better": "My teacher ignited my passion for science by conducting fascinating experiments.",
+      "note": "用 ignite one's passion 加 by doing 结构，既生动又交代了方式"
+     },
+     {
+      "plain": "Teachers teach students to be good people.",
+      "better": "Teachers instill values such as perseverance, integrity, and empathy through daily interactions.",
+      "note": "具体列举价值观并补充途径，避免空泛笼统，增加说服力"
+     },
+     {
+      "plain": "We should respect teachers more.",
+      "better": "Society should accord greater recognition and support to the teaching profession.",
+      "note": "主语从 we 升级为 society，动词用 accord，使语域更正式学术"
+     },
+     {
+      "plain": "Teachers are not just people who teach knowledge.",
+      "better": "Teachers are far more than knowledge providers; they are architects of young minds.",
+      "note": "用分号衔接两个并列分句，metaphor 比喻提升文采与深度"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The role of teachers extends far beyond the mere transmission of knowledge; they serve as mentors, role models, and sources of inspiration. 教师的角色远不止于知识传授，他们还是导师、榜样和灵感来源。（分号连接对比，层层递进）",
+   "A competent teacher not only imparts subject knowledge but also cultivates critical thinking skills and intellectual curiosity. 一位称职的教师不仅传授学科知识，还培养批判性思维和求知欲。（not only...but also 经典并列结构）",
+   "Through daily interactions, they instill values such as perseverance, integrity, and empathy. 通过日常互动，他们向学生灌输毅力、正直与共情等价值观。（介词短语前置作状语，三项列举节奏感强）",
+   "Teachers are far more than knowledge providers; they are architects of young minds. 教师远不只是知识的传递者，他们是年轻心灵的建筑师。（比喻收束全文，令人印象深刻）"
+  ]
+ }
+}

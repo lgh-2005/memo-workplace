@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "9b97c3d4a4b6__reading__1",
+ "examId": "9b97c3d4a4b6",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 12 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:05:36.483Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 51203,
+ "usage": {
+  "prompt_tokens": 1833,
+  "completion_tokens": 3410,
+  "total_tokens": 5243,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1833,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3410,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1833,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "正念练习的益处与当代挑战",
+  "gist": "文章阐述了正念练习源自古代佛教思想，能帮助人们专注当下、不做评判。在当今\"注意力经济\"时代，手机和社交媒体不断分散人们的注意力，正念可以帮助我们抵御这种干扰。学者还指出正念不仅有益于个人，还能改善人际关系——通过全神贯注、不加评判地倾听他人，我们能在这个充满干扰的世界中赠予他人一份珍贵的礼物。",
+  "structure": [
+   "第1-3段：介绍正念的起源、原理及其让人专注当下的核心作用",
+   "第4-5段：阐述'注意力经济'对人类注意力的侵蚀及正念的对抗作用",
+   "第6-9段：正念有益人际关系，倡导以全心倾听作为珍贵的礼物"
+  ],
+  "difficulty": "中等",
+  "translation": "正念已被证明具有许多重要的健康益处——它可以帮助减轻焦虑，并促进慢性病患者的康复。\n\n这种练习基于古代佛教经典中首次描述的一个洞见，即人类有能力观察自身的体验而不被其裹挟。这意味着，我们可以观察自己正在经历一种渴望、一个快乐的念头、甚至一种可怕的情绪，而不在当下做出放大这种感受的反应，也不让心智陷入回忆旧事或预想未来的漩涡之中。\n\n正念练习可以帮助我们在学习不以喜恶或好坏的评判来回应体验的过程中，平静心灵和身体。它不会让我们变得冷漠或无动于衷，而是让我们更加全然地活在当下。\n\n在当代世界践行正念的挑战之一在于，人类的注意力已经发生了深刻的变革。艺术家珍妮·奥德尔认为，在我们的\"注意力经济\"中，人类的注意力已被转化为一种由大公司买卖的商品。这种经济依赖于手机和社交媒体的技术革命，使企业能够在每时每刻用其内容瞄准我们的注意力。\n\n大多数人使用的设备是对当下时刻的持续干扰。其结果是，我们会觉得自己专注和全然在场的能力仿佛被偷走了。但正念可以帮助我们抵御注意力经济，享受那些让生活变得特别的事物，比如与我们所爱的人在一起。\n\n大多数正念研究关注的是这种练习对个人的益处，但一些学者认为，我们不仅可以为自己练习正念，还可以为他人而练习。它可以帮助我们建立更牢固、更健康的人际关系。\n\n令人遗憾的事实是，生活在注意力经济中，我们大多数人已经变成了糟糕的倾听者。然而，正如我们可以观察自己经历体验而不做反应一样，我们也可以观察另一个人经历体验，而不陷入反应性和评判之中。\n\n正念的馈赠是一种以慈悲之心倾听他人描述其经历的练习。赠予这份礼物意味着放下手机、关闭社交媒体、排除其他常见的干扰。它意味着练习在另一个人面前全然在场，全神贯注地倾听他们而不加评判，同时抵制那种让互动围绕自己的冲动。\n\n如果我们根据价格来衡量礼物的价值，这份礼物可能看似一文不值，但在一个充满干扰的世界里，它是一份珍贵的礼物。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "This practice of mindfulness can help calm the mind and the body as we learn not to react to experience with likes and dislikes or judgments of good and bad. It does not make us cold or indifferent but more fully present.",
+    "why": "原文第三段明确指出正念帮助我们学会不以喜恶或好坏的评判回应体验，让我们更加\"全然在场\"（fully present）。B选项\"focuses our attention on the present moment without making judgments\"完美对应了\"fully present\"和\"not react…with judgments\"两个关键信息，属于同义改写。",
+    "traps": "A项属于反向干扰，原文第二段说正念让我们不被旧回忆和未来预期裹挟，而非触发这种思维；C项偷换概念，原文说我们可以\"观察\"这些感受而不被卷入，并非让我们\"专注于\"个人感受；D项无中生有，原文说的是我们自己不做评判，而非面对他人的评判保持冷静。",
+    "tip": "注意区分\"观察而不卷入\"和\"专注于\"的语义差异。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The artist Jenny Odell argues that in our 'attention economy' human attention has been transformed into a commodity that big corporations buy and sell.",
+    "why": "原文第四段直接引述Jenny Odell的观点：在注意力经济中，人类的注意力已被转化为大公司买卖的商品（a commodity that big corporations buy and sell）。B选项\"People's attention is turned into something that can be bought and sold\"是该句的精确同义改写。",
+    "traps": "A项偷换主语，原文未提到企业关注技术进步来不断更新产品和服务；C项曲解原文，原文说注意力经济\"依赖于\"手机和社交媒体的技术革命，并非说企业通过卖手机盈利；D项属于过度推断，原文并未提及人们不加思考地购物。",
+    "tip": "定位人名出处，忠实转述其核心观点即可。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The devices most people use are a perpetual diversion from the present moment. The result is that it can feel as though our ability to focus, and be fully present, has been stolen.",
+    "why": "原文第五段开头明确指出，大多数人使用的设备是\"对当下时刻的持续干扰\"（a perpetual diversion from the present moment）。A选项\"keep distracting users from the here and now\"是对\"perpetual diversion from the present moment\"的同义替换，here and now即the present moment。",
+    "traps": "B项\"incapable of resisting temptation\"无原文依据，属于无中生有；C项偷换概念，原文说被偷走的是\"focus and be fully present\"的能力，而非\"observe experience\"的能力；D项\"endorse the attention economy\"原文未涉及，人们是被动受影响而非主动支持。",
+    "tip": "perpetual diversion对应keep distracting，present moment对应here and now。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "but some scholars assert that we can not only practice mindfulness for ourselves but also practice it for others. It can help us build stronger, healthier relationships.",
+    "why": "原文第六段引述一些学者的观点，指出正念不仅可以为自己练习，还可以为他人而练习，并且\"能帮助我们建立更牢固、更健康的人际关系\"。C选项\"conducive to our forging better interpersonal relationships\"是对\"build stronger, healthier relationships\"的同义改写。",
+    "traps": "A项虽然原文提到不做评判，但这不是学者们特别强调的益处，且\"arbitrary judgments\"程度过重；B项\"从物质转向精神追求\"属于无中生有，原文并无此意；D项\"regaining our ability to enjoy what we have\"虽与第五段部分内容相关，但并非\"some scholars\"所断言的益处，且题目限定了来源。",
+    "tip": "注意题干中\"according to some scholars\"的限定，定位到第六段。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "It means practicing being fully present in another person's presence and listening to them with complete attention without judgment, while resisting the urge to make the interaction about you.",
+    "why": "原文倒数第二段明确建议：在他人面前全然在场，全神贯注地倾听而不加评判（listening to them with complete attention without judgment）。C选项\"Be attentive listeners while refraining from making judgments\"精准对应了\"complete attention\"和\"without judgment\"两个核心要素。",
+    "traps": "A项\"share each other's experience\"暗示双向分享，但原文强调的是单向倾听；B项\"establishing close relationships\"过度推断，原文重点是倾听的具体行为方式，而非建立关系的目的；D项\"remind them\"原文并无此意，放下手机是对自己的要求，而非提醒他人。",
+    "tip": "作者的具体建议需在原文中逐一对应核心关键词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "mindfulness",
+    "cn": "正念（n.）"
+   },
+   {
+    "w": "amplify",
+    "cn": "放大，增强（v.）"
+   },
+   {
+    "w": "spiraling",
+    "cn": "螺旋式上升/下降的，急剧变化的（adj./v.）"
+   },
+   {
+    "w": "indifferent",
+    "cn": "冷漠的，无动于衷的（adj.）"
+   },
+   {
+    "w": "commodity",
+    "cn": "商品，货物（n.）"
+   },
+   {
+    "w": "perpetual",
+    "cn": "永久的，持续不断的（adj.）"
+   },
+   {
+    "w": "diversion",
+    "cn": "转移，分散注意力（n.）"
+   },
+   {
+    "w": "relish",
+    "cn": "享受，欣赏（v.）"
+   },
+   {
+    "w": "reactivity",
+    "cn": "反应性，应激反应（n.）"
+   },
+   {
+    "w": "compassion",
+    "cn": "同情，怜悯（n.）"
+   },
+   {
+    "w": "conducive",
+    "cn": "有助于的，促进的（adj.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "This means simply that it is possible to observe ourselves having a craving, or a happy thought, or even a scary emotion, without reacting in the moment in a way that amplifies the feeling or sends the mind spiraling off into thinking about old memories or anticipating events.",
+    "cn": "这意味着，我们可以观察自己正在经历一种渴望、一个快乐的念头、甚至一种可怕的情绪，而不在当下做出放大这种感受的反应，也不让心智陷入回忆旧事或预想未来的漩涡之中。",
+    "note": "主干为it is possible to observe…without reacting…；without后接两个并列结构：in a way that amplifies…和sends the mind spiraling off into…，其中that引导定语从句修饰a way。"
+   },
+   {
+    "en": "It means practicing being fully present in another person's presence and listening to them with complete attention without judgment, while resisting the urge to make the interaction about you.",
+    "cn": "它意味着练习在另一个人面前全然在场，全神贯注地倾听他们而不加评判，同时抵制那种让互动围绕自己的冲动。",
+    "note": "主干为It means practicing…and listening…；while引导伴随状语，resisting the urge后接不定式to make…about you作urge的同位语补充说明。"
+   },
+   {
+    "en": "This economy rests on a technological revolution of mobile phones and social media that makes it possible for corporations to target our attention with their content at every moment.",
+    "cn": "这种经济依赖于手机和社交媒体的技术革命，使企业能够在每时每刻用其内容瞄准我们的注意力。",
+    "note": "主干为This economy rests on a technological revolution；that引导定语从句修饰revolution，从句中makes it possible for…to…为固定句型，it为形式宾语。"
+   }
+  ]
+ }
+}

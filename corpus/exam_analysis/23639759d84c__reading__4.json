@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "23639759d84c__reading__4",
+ "examId": "23639759d84c",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年考研英语真题",
+ "year": 2024,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:54:37.350Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64128,
+ "usage": {
+  "prompt_tokens": 1754,
+  "completion_tokens": 3894,
+  "total_tokens": 5648,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1754,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3894,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1754,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "最高法裁决削弱湿地保护引发担忧",
+  "gist": "文章围绕美国最高法院在爱达荷案中的裁决展开，指出该裁决大幅削弱了EPA对湿地和水道的监管权，进而威胁到切萨皮克湾这一珍贵自然生态系统的保护。作者呼吁各州立法者重新审视并加强本州的湿地保护措施，以弥补联邦监管权缩减带来的风险。",
+  "structure": [
+   "第1段：描绘切萨皮克湾的自然生态价值",
+   "第2段：介绍最高法院裁决及其对EPA监管权的削弱",
+   "第3段：指出州际水污染治理面临的现实困境",
+   "第4段：论证EPA跨州协调保护的重要性",
+   "第5段：呼吁各州立法者加强湿地保护"
+  ],
+  "difficulty": "中等",
+  "translation": "切萨皮克湾的奇迹不在于它的深度，而在于其自然构造的复杂性、淡水与咸水的交互作用，以及陆地与水域的交融。浅水区为数百种物种提供了栖息地，同时蓄存洪水、过滤水中的污染物，并保护周边社区免受潜在的破坏性风暴潮袭击。\n\n上个月末，所有这一切都面临巨大风险——美国最高法院就一起爱达荷州案件作出了裁决，该裁决大幅削弱了美国环保署（EPA）对湿地和水道的监管权限。具体而言，以5比4的多数裁定，EPA依据《清洁水法》所保护的湿地必须与水体之间存在\"连续的地表连接\"。监管范围的缩小对建筑商、采矿企业及其他常与环保法规对立的商业利益方而言是一次胜利。而正如大法官布雷特·卡瓦诺所指出的，这\"对全美的水质保护和防洪工作具有重大影响\"。\n\n在马里兰州，好消息是已有许多州法律为湿地提供了保护。但这种看法是非常短视的，尤其涉及到切萨皮克湾时更是如此。现实是，水以及随之而来的污染物并不遵守州界。切萨皮克湾的流域面积达64,000平方英里，延伸至弗吉尼亚州、宾夕法尼亚州、纽约州、西弗吉尼亚州、哥伦比亚特区和特拉华州。这些辖区是否会延续萨克特诉EPA案中被否定的同等保护措施？也许部分会，但全部？这似乎不太可能。\n\n仅仅将此类法院裁决视为维护土地所有者权利，这种理解过于简单且具有误导性，因为其后果对邻州居民可能是灾难性的。这也提醒我们，EPA参与切萨皮克湾计划一直至关重要，因为它是超越邻州财力雄厚的特殊利益集团影响力的手段。以宾夕法尼亚州的农民为例——这是一个很有说服力的例子——当他们决定是否在田地里施用动物粪便时，并不会考虑马里兰州明年的蓝蟹收成，然而流入附近溪流的径流会对下游产生巨大影响。\n\n因此，我们呼吁从里士满到奥尔巴尼的各州立法者审视本州的湿地保护措施，亲自了解其中涉及的巨大利害关系。我们可以邀请他们参观多切斯特县的黑水国家野生动物保护区，在那里白头鹰翱翔于潮汐湿地之上，那些浅滩浅到无法划船穿越，却充满了丰富的水生生物。这段风景优美的车程非常值得。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The miracle of the Chesapeake Bay lies not in its depths, but in the complexity of its natural construction, the interaction of fresh and saline waters, and the mix of land and water. The shallows provide homes for hundreds of species while storing floodwaters, filtering pollutants from water, and protecting nearby communities from potentially destructive storm surges.",
+    "why": "第一段用\"miracle\"一词高度评价切萨皮克湾，随后从自然构造复杂性、淡咸水交互、物种栖息地、蓄洪过滤功能等多维度描述其生态价值。这些描述充分说明它是一个\"有价值的自然环境\"（a valuable natural environment），A选项精准对应原文语义。",
+    "traps": "B\"有争议的保护区\"——第一段未提及任何争议，争议出现在第二段的法院裁决中，属于张冠李戴；C\"有商业潜力的地方\"——文中未涉及商业开发价值，商业利益出现在第二段但指的是裁决的受益方，属于无中生有；D\"周边社区的难题\"——原文说浅水区\"protecting nearby communities\"，即保护社区而非给社区带来麻烦，属于反向干扰。",
+    "tip": "注意段落核心褒义词如miracle，快速判断情感倾向。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "the U.S. Supreme Court issued a ruling in an Idaho case that provides the U.S. Environmental Protection Agency (EPA) far less authority to regulate wetlands and waterways.",
+    "why": "原文明确指出该裁决使EPA在监管湿地和水道方面的权限\"far less\"（大幅减少），随后又说该裁决是\"narrowing of the regulatory scope\"（缩小监管范围），两处信息均直接对应B选项\"weakens the EPA's regulatory power\"（削弱EPA的监管权力），属于同义改写。",
+    "traps": "A\"加强水污染控制\"——与原文完全相反，裁决是削弱而非加强EPA的监管，属于反向干扰；C\"将终结当地居民之间的冲突\"——原文未提及居民间的冲突，属于无中生有；D\"可能遭到采矿企业的反对\"——原文说该裁决是\"a victory for builders, mining operators\"，采矿企业是受益方而非反对方，属于偷换立场。",
+    "tip": "看到far less、narrowing等程度副词和动词，即可锁定削弱方向。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "Will those jurisdictions extend the same protections now denied under Sackett v. EPA? Perhaps some, but all? That seems unlikely.",
+    "why": "作者在第三段指出马里兰州有保护措施但\"shortsighted\"，质疑其他州是否会同等保护并认为\"unlikely\"；第四段用\"dire\"形容后果，整体语气表达对切萨皮克湾未来的深切担忧。作者始终在强调跨州保护的困难和裁决带来的风险，因此态度是worried（担忧的）。",
+    "traps": "B\"困惑的\"——作者立场清晰明确，并不困惑，而是担忧；C\"释然的\"——虽然提到马里兰有州法保护，但作者紧接着说这是\"shortsighted view\"，否定了乐观态度；D\"受鼓舞的\"——文章通篇基调是警示和忧虑，并无积极乐观的信号。",
+    "tip": "态度题关注评价性形容词如shortsighted、dire、unlikely等词。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "the EPA's involvement in the Chesapeake Bay Program has long been crucial as the means to transcend the influence of deep-pocketed special interests in neighboring states.",
+    "why": "原文指出EPA参与切萨皮克湾计划的关键作用在于\"transcend the influence of deep-pocketed special interests in neighboring states\"，即超越各邻州特殊利益集团的影响。结合上下文——水和污染物不尊重州界、宾州农民不考虑马里兰蟹产——可推断EPA的角色是协调各州的保护工作，D选项\"ensured the coordination of protection efforts\"精准概括了这一功能。",
+    "traps": "A\"恢复了邻州辖区间的平衡\"——原文强调的是超越利益集团影响力而非恢复平衡，且restore一词暗示此前有平衡后被打破，文中无此信息；B\"引发了商业渔业的激进改革\"——文中未提及渔业改革，蓝蟹只是作为例证说明跨州影响；C\"树立了尊重州权的好榜样\"——EPA的角色恰恰是跨越州界进行联邦层面监管，与尊重州权相悖。",
+    "tip": "推断题要从原文功能描述中提炼概括义，注意transcend一词的深层含义。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "And so we would call on state lawmakers from Richmond to Albany to consider reviewing their own wetlands protections and see for themselves the enormous stakes involved.",
+    "why": "最后一段作者明确呼吁各州立法者\"reviewing their own wetlands protections\"并了解\"enormous stakes involved\"，即审视自身的湿地保护措施并认识到其中涉及的巨大利害关系。B选项\"attach due importance to wetlands protections\"（给予湿地保护应有的重视）是对原文呼吁的准确概括。",
+    "traps": "A\"对土地所有者的影响保持警惕\"——虽然第四段提到土地所有者，但最后一段的呼吁核心是加强湿地保护而非警惕土地所有者的影响，属于偏离重心；C\"认识到扩大野生动物保护区的必要性\"——黑水保护区只是作者邀请参观的例子，并非呼吁扩大保护区，属于以偏概全；D\"改善濒危物种的生存状况\"——文中提到白头鹰和水生生物是为了展示湿地价值，而非呼吁改善濒危物种状况，属于偷换论点。",
+    "tip": "末段呼吁类信息常为主旨题或细节题考点，紧扣call on后的具体内容。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "saline",
+    "cn": "adj. 含盐的，咸的"
+   },
+   {
+    "w": "shallows",
+    "cn": "n. 浅水区，浅滩"
+   },
+   {
+    "w": "storm surges",
+    "cn": "n. 风暴潮"
+   },
+   {
+    "w": "wetlands",
+    "cn": "n. 湿地"
+   },
+   {
+    "w": "regulatory",
+    "cn": "adj. 监管的，管理的"
+   },
+   {
+    "w": "repercussions",
+    "cn": "n. 反响，不良后果"
+   },
+   {
+    "w": "watershed",
+    "cn": "n. 流域；分水岭"
+   },
+   {
+    "w": "jurisdictions",
+    "cn": "n. 司法管辖区；管辖权"
+   },
+   {
+    "w": "transcend",
+    "cn": "v. 超越，超出……的范围"
+   },
+   {
+    "w": "deep-pocketed",
+    "cn": "adj. 财力雄厚的"
+   },
+   {
+    "w": "runoff",
+    "cn": "n. 径流，地表水流"
+   },
+   {
+    "w": "teeming",
+    "cn": "adj. 充满的，大量的（teem with 充满）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Specifically, a 5-4 majority decided that wetlands protected by the EPA under its Clean Water Act authority must have a \"continuous surface connection\" to bodies of water.",
+    "cn": "具体而言，以5比4的多数裁定，EPA依据《清洁水法》所保护的湿地必须与水体之间存在\"连续的地表连接\"。",
+    "note": "主干为a majority decided that...，that引导宾语从句；protected by the EPA under its Clean Water Act authority为后置定语修饰wetlands。"
+   },
+   {
+    "en": "And it's a reminder that the EPA's involvement in the Chesapeake Bay Program has long been crucial as the means to transcend the influence of deep-pocketed special interests in neighboring states.",
+    "cn": "这也提醒我们，EPA参与切萨皮克湾计划一直至关重要，因为它是超越邻州财力雄厚的特殊利益集团影响力的手段。",
+    "note": "主干为it's a reminder that...，that引导同位语从句；as the means为介词短语作补语；to transcend...为不定式作后置定语修饰means。"
+   },
+   {
+    "en": "Pennsylvania farmers, to use one telling example, aren't thinking about next year's blue crab harvest in Maryland when they decide whether to spread animal waste on their fields, yet the runoff into nearby creeks can have enormous impact downstream.",
+    "cn": "以宾夕法尼亚州的农民为例——这是一个很有说服力的例子——当他们决定是否在田地里施用动物粪便时，并不会考虑马里兰州明年的蓝蟹收成，然而流入附近溪流的径流会对下游产生巨大影响。",
+    "note": "插入语to use one telling example做补充说明；when引导时间状语从句；yet连接转折分句，形成前后因果对比。"
+   }
+  ]
+ }
+}

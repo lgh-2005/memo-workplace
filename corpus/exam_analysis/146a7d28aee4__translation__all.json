@@ -1,0 +1,200 @@
+{
+ "schemaVersion": 1,
+ "id": "146a7d28aee4__translation__all",
+ "examId": "146a7d28aee4",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2024 年 12 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T09:11:31.663Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32837,
+ "usage": {
+  "prompt_tokens": 805,
+  "completion_tokens": 2102,
+  "total_tokens": 2907,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 805,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2102,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 805,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国航天事业发展成就",
+  "reference": "Exploring outer space has always been a dream of the Chinese nation. In 2003, the Shenzhou-5 spacecraft was successfully launched, and Yang Liwei became the first Chinese astronaut to fly into space. In 2008, Shenzhou-7 was sent into orbit, and Zhai Zhigang became the first astronaut in Chinese history to perform a spacewalk. In recent years, China's space industry has entered the fast track of innovative development. The construction of space infrastructure has been advancing steadily, and the China Space Station was fully completed in 2022. The rapid development of China's space program has written a glorious chapter in the history of the Chinese nation, and has also made tremendous contributions to the progress of human civilization. In the future, China will take firmer and farther steps in its exploration of outer space.",
+  "sentences": [
+   {
+    "cn": "遨游太空历来是中华民族的梦想。",
+    "en": "Exploring outer space has always been a dream of the Chinese nation.",
+    "structure": "动名词短语作主语 + has always been + 表语结构，现在完成时强调'历来'的持续性",
+    "keys": [
+     "遨游太空 exploring outer space",
+     "历来 has always been",
+     "中华民族 the Chinese nation"
+    ]
+   },
+   {
+    "cn": "2003年,神舟五号飞船发射成功,杨利伟成为第一个飞入太空的中国宇航员。",
+    "en": "In 2003, the Shenzhou-5 spacecraft was successfully launched, and Yang Liwei became the first Chinese astronaut to fly into space.",
+    "structure": "时间状语前置 + 被动语态并列句 + 不定式作后置定语修饰 astronaut",
+    "keys": [
+     "神舟五号飞船 the Shenzhou-5 spacecraft",
+     "发射成功 was successfully launched",
+     "宇航员 astronaut"
+    ]
+   },
+   {
+    "cn": "2008年,神舟七号升空,翟志刚成为中国历史上首位进行太空行走的宇航员。",
+    "en": "In 2008, Shenzhou-7 was sent into orbit, and Zhai Zhigang became the first astronaut in Chinese history to perform a spacewalk.",
+    "structure": "时间状语前置 + 被动语态 + and 并列句，不定式短语作后置定语",
+    "keys": [
+     "升空 was sent into orbit",
+     "太空行走 spacewalk",
+     "首位 the first ... to do"
+    ]
+   },
+   {
+    "cn": "近年来,中国航天进入创新发展\"快车道\",太空基础设施建设稳步推进,中国空间站于2022年全面建成。",
+    "en": "In recent years, China's space industry has entered the fast track of innovative development. The construction of space infrastructure has been advancing steadily, and the China Space Station was fully completed in 2022.",
+    "structure": "三个并列分句，前两个用现在完成时/现在完成进行时，第三个用一般过去时被动语态表示已完成事件",
+    "keys": [
+     "快车道 fast track",
+     "太空基础设施 space infrastructure",
+     "稳步推进 has been advancing steadily",
+     "中国空间站 the China Space Station",
+     "全面建成 was fully completed"
+    ]
+   },
+   {
+    "cn": "中国航天事业的迅速发展在中华民族的历史上写下了辉煌一页,也为人类文明进步做出了巨大贡献。",
+    "en": "The rapid development of China's space program has written a glorious chapter in the history of the Chinese nation, and has also made tremendous contributions to the progress of human civilization.",
+    "structure": "主语（名词短语）+ 并列谓语（has written ... and has also made ...），两个介词短语作状语",
+    "keys": [
+     "航天事业 space program",
+     "辉煌一页 a glorious chapter",
+     "人类文明进步 the progress of human civilization",
+     "做出巨大贡献 made tremendous contributions"
+    ]
+   },
+   {
+    "cn": "未来,中国探索太空的脚步将迈得更稳、更远。",
+    "en": "In the future, China will take firmer and farther steps in its exploration of outer space.",
+    "structure": "时间状语前置 + 主语 + will + 动宾结构，比较级并列修饰名词 steps，隐喻表达",
+    "keys": [
+     "探索太空的脚步 steps in its exploration of outer space",
+     "更稳、更远 firmer and farther"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "遨游太空",
+    "en": "exploring outer space"
+   },
+   {
+    "cn": "神舟五号飞船",
+    "en": "the Shenzhou-5 spacecraft"
+   },
+   {
+    "cn": "宇航员",
+    "en": "astronaut / taikonaut"
+   },
+   {
+    "cn": "太空行走",
+    "en": "spacewalk / extravehicular activity (EVA)"
+   },
+   {
+    "cn": "中国航天事业",
+    "en": "China's space program / China's aerospace industry"
+   },
+   {
+    "cn": "快车道",
+    "en": "fast track"
+   },
+   {
+    "cn": "太空基础设施",
+    "en": "space infrastructure"
+   },
+   {
+    "cn": "中国空间站",
+    "en": "the China Space Station (CSS)"
+   },
+   {
+    "cn": "人类文明",
+    "en": "human civilization"
+   },
+   {
+    "cn": "辉煌一页",
+    "en": "a glorious chapter / a brilliant page"
+   }
+  ],
+  "pitfalls": [
+   "'历来'应译为 has always been，不可用 always is，须体现完成时态",
+   "'太空行走'专有表达为 spacewalk，不可译为 walk in space 或 space walking",
+   "'快车道'应译为 fast track，属固定搭配，避免译为 fast road 或 express way",
+   "'全面建成'应译为 was fully completed，注意被动语态和过去时，不可用现在时",
+   "'写下辉煌一页'为比喻用法，应译为 written a glorious chapter，page 也可但 chapter 更地道"
+  ],
+  "upgrades": [
+   {
+    "plain": "Yang Liwei was the first Chinese astronaut that flew into space",
+    "better": "Yang Liwei became the first Chinese astronaut to fly into space",
+    "note": "不定式作后置定语比定语从句更简洁，且 became 比 was 更体现成就达成"
+   },
+   {
+    "plain": "China's space development is very fast",
+    "better": "The rapid development of China's space program",
+    "note": "名词化表达更正式书面，符合翻译语体要求"
+   },
+   {
+    "plain": "made big contributions to human progress",
+    "better": "made tremendous contributions to the progress of human civilization",
+    "note": "tremendous 比 big 更正式，of human civilization 更完整准确"
+   },
+   {
+    "plain": "Shenzhou-7 flew into space",
+    "better": "Shenzhou-7 was sent into orbit",
+    "note": "sent into orbit 更专业准确地表达飞船升空入轨的含义"
+   },
+   {
+    "plain": "China will explore space more steadily and go further",
+    "better": "China will take firmer and farther steps in its exploration of outer space",
+    "note": "保留原文'脚步'隐喻，take steps 搭配比较级更具修辞美感"
+   }
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "48775dd71dd3__reading__2",
+ "examId": "48775dd71dd3",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 6 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:50:31.594Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64823,
+ "usage": {
+  "prompt_tokens": 1844,
+  "completion_tokens": 4108,
+  "total_tokens": 5952,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1844,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4108,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1844,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "职场监控的利弊与争议",
+  "gist": "文章围绕职场监控展开讨论。首先指出尽管许多人因其去人性化和施加压力而反对监控，但企业为提高效率仍在加大使用力度。接着介绍了数据分析和芯片植入等监控技术的发展，阐述了监控的潜在益处与弊端，最终强调沟通透明是关键，若实施不当则适得其反。",
+  "structure": [
+   "第1段：引出争议——职场监控遭反对但持续增长",
+   "第2-3段：监控的运作方式及支持者论据，附意外发现的例证",
+   "第4段：进一步介绍芯片植入等前沿监控技术",
+   "第5-6段：讨论监控效果取决于沟通方式与自愿原则",
+   "第7段：总结——监控可赋能员工也可能适得其反"
+  ],
+  "difficulty": "中等",
+  "translation": "许多人反对职场监控，因为它具有固有的去人性化效应，并带来无休止的压力。但随着企业试图从员工身上榨取更多生产力以提高效率，职场监控在全球范围内正在增加。去年，年收入超过7.5亿美元的公司中有一半以上对员工使用了\"非传统\"监控技术。\n\n监控员工绩效使企业能够评估员工的工作表现和互动情况，这对企业和员工本身都可能有益。越来越多的分析公司提供此类服务。它们收集员工电子邮件和即时通讯应用留下的\"数据废气\"，并使用配备射频识别装置和麦克风的工牌。这些设备可以检查你花了多少时间交谈、你的音量和语调，甚至你是否主导了对话。虽然这听起来可能具有侵入性，但支持者认为它也能保护员工免受霸凌和性骚扰。\n\n其中一些数据分析可以产生意想不到的结果。例如，研究发现，坐在12人午餐桌旁的人往往比经常坐在4人桌旁的人互动更多、分享更多想法且表现更出色，而如果没有这样的数据分析，这一事实可能不会被发现。\n\n在过去几年中，斯德哥尔摩一个名为Epicenter的联合办公空间走得更远，举办了广受欢迎的\"芯片植入派对\"，人们可以在手中植入微芯片。他们可以使用植入物进入电子控制的门禁，或监测打字速度与心率之间的关联。植入芯片可能看起来极端，但从身份证和生物识别技术到此类设备，实际上只是相对较小的一步。\n\n只要这类方案是自愿的，追求便利的用途可能会越来越多，以至于相当数量的员工会选择植入芯片。但如果植入芯片被用来减少空闲时间或休息时间，那可能会产生不利影响。而如果监控工具剥夺了自主权，那就是它们最不受欢迎的时候。很大程度上取决于此类监控举措的沟通方式，而良好的沟通可以防止可能发生的反抗。\n\n如果老板不能有效沟通，员工就会做出最坏的假设。但如果他们对所收集的信息及其用途持开放态度，研究表明46%的员工通常是可以接受的。尽管许多此类监控方案使用匿名数据且参与是自愿的，但许多员工仍然持怀疑态度，担心自己的公民自由被侵蚀。\n\n因此，职场监控可以赋能员工，并有助于企业提高效率和盈利能力。但如果实施方式不当，它也可能成为一种不受欢迎的压迫工具，最终适得其反。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Many oppose workplace surveillance, because of the inherent dehumanizing effect it has and the relentless pressure it brings.",
+    "why": "原文明确指出反对职场监控的两个原因：固有的去人性化效应和无休止的压力。选项A中的\"constant pressure\"（持续不断的压力）是对原文\"relentless pressure\"（无休止的压力）的同义替换，精准对应原因之一，因此A正确。",
+    "traps": "B项\"universally deemed\"（被普遍认为）属于程度夸大，原文说的是\"many oppose\"（许多人反对），而非所有人都认为；C项\"does both mental and physical harm\"（身心伤害）在原文中没有任何依据，属于无中生有；D项是企业使用监控的原因，不是人们反对监控的原因，属于张冠李戴。",
+    "tip": "注意区分\"反对原因\"与\"使用原因\"，关键词定位后精确匹配。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "While this may sound intrusive, exponents argue that it can also protect employees against bullying and sexual harassment.",
+    "why": "原文中\"exponents\"（支持者）明确提出的论据是：监控可以保护员工免受\"bullying and sexual harassment\"（霸凌和性骚扰）。选项D中的\"aggressive behavior\"（攻击性行为）是对霸凌和性骚扰的上位概括，语义完全对应，因此D正确。",
+    "traps": "A项\"refrain from dominating conversations\"曲解原文，原文说监控能检查你是否主导对话，并非帮助你克制，且这不是支持者的论据；B项\"identification with firms\"（对企业的认同感）原文未提及，属于无中生有；C项将\"intrusive\"（侵入性）偷换为\"alert employees to intrusion\"（提醒员工隐私被侵犯），属于偷换概念。",
+    "tip": "支持者论据题要精准定位\"argue/claim/contend\"等信号词后的内容。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "Some of this data analysis can produce unexpected results. For example, it was found that people who sat at 12-person lunch tables tended to interact, share ideas more and outperform those who regularly sat at four-person tables",
+    "why": "例证题的解题关键在于找例子要证明的观点，而非例子本身的内容。该例子出现在第三段，段首总论点句为\"Some of this data analysis can produce unexpected results\"（一些数据分析可以产生意想不到的结果），选项B\"Analyzing data gathered from workers can yield something unexpected\"是对该论点句的精确同义改写，因此B正确。",
+    "traps": "A项\"key to successful implementation\"（成功实施的关键）过度推断，原文只说能产生意外结果，未说是成功关键；C项只是转述了例子本身的具体内容（多人桌促进互动），而非作者想要论证的观点，属于混淆例证与论点；D项\"hard to decide on how many people to sit at a lunch table\"属于无中生有，原文从未讨论如何安排座位人数。",
+    "tip": "例证题永远选例子所服务的观点，而非例子本身的描述。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "A lot depends on how such monitoring initiatives are communicated and this could prevent possible revolts being staged. If bosses don't communicate effectively, employees assume the worst. But if they're open about the information they're collecting and what they're doing with it, research suggests 46% of employees are generally okay with it.",
+    "why": "原文第五段末\"A lot depends on how such monitoring initiatives are communicated\"明确指出监控效果很大程度上取决于沟通方式。第六段进一步阐释：如果老板能公开透明地说明收集的信息和用途，46%的员工可以接受。选项D\"How well bosses make known their purpose of monitoring\"（老板多好地让监控目的为人所知）是对\"communicate effectively\"\"open about what they're doing with it\"的精确概括。",
+    "traps": "A项\"How frequently employees are to be monitored\"（监控频率）原文未提及，属于无中生有；B项\"What specific personal information is being excluded\"（排除哪些个人信息）原文未涉及，属于无中生有；C项\"minimize their detrimental impact\"（最小化不利影响）虽然原文提到了detrimental，但题目问的是\"积极效果取决于什么\"，而非如何减少负面影响，属于偷换论述角度。",
+    "tip": "题目问\"depend on\"时，直接定位原文\"depends on\"后面的内容即可。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "many staffers remain sceptical and fear an erosion of their civil liberties.",
+    "why": "原文最后一段明确指出，许多员工仍持怀疑态度，\"fear an erosion of their civil liberties\"（担心自己的公民自由被侵蚀）。选项C中的\"infringe upon staffers' entitled freedom\"（侵犯员工应有的自由）是对\"erosion of civil liberties\"的同义替换——\"infringe upon\"对应\"erosion\"（侵蚀），\"entitled freedom\"对应\"civil liberties\"（公民自由），因此C正确。",
+    "traps": "A项\"empower employers excessively\"（过度赋权雇主）原文未提及，且原文的\"empowering\"是对员工而非雇主，属于偷换对象；B项\"erode the workplace environment\"（侵蚀工作环境）偷换了\"erosion\"的对象，原文被侵蚀的是\"civil liberties\"而非工作环境；D项\"become counterproductive\"（适得其反）是作者对监控实施不当的评价，并非员工的担忧内容，属于张冠李戴。",
+    "tip": "注意同义替换中宾语的精确对应，\"erosion of X\"中X是什么不可偷换。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "surveillance",
+    "cn": "n. 监控，监视"
+   },
+   {
+    "w": "inherent",
+    "cn": "adj. 固有的，内在的"
+   },
+   {
+    "w": "dehumanizing",
+    "cn": "adj. 去人性化的，非人道的"
+   },
+   {
+    "w": "relentless",
+    "cn": "adj. 无情的，不间断的"
+   },
+   {
+    "w": "intrusive",
+    "cn": "adj. 侵入性的，打扰的"
+   },
+   {
+    "w": "exponent",
+    "cn": "n. 支持者，倡导者"
+   },
+   {
+    "w": "correlate",
+    "cn": "v. 相关联，相互对应"
+   },
+   {
+    "w": "autonomy",
+    "cn": "n. 自主权，自治"
+   },
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的，不利的"
+   },
+   {
+    "w": "anonymised",
+    "cn": "adj. 匿名化的"
+   },
+   {
+    "w": "sceptical",
+    "cn": "adj. 持怀疑态度的"
+   },
+   {
+    "w": "counterproductive",
+    "cn": "adj. 适得其反的，事与愿违的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "They gather \"data exhaust\" left by employees' email and instant messaging apps, and use name badges equipped with radio-frequency identification devices and microphones.",
+    "cn": "它们收集员工电子邮件和即时通讯应用留下的\"数据废气\"，并使用配备射频识别装置和麦克风的工牌。",
+    "note": "主语They后并列两个谓语gather和use；\"data exhaust\"为比喻说法指数据痕迹；equipped引导的过去分词短语作后置定语修饰name badges。"
+   },
+   {
+    "en": "A lot depends on how such monitoring initiatives are communicated and this could prevent possible revolts being staged.",
+    "cn": "很大程度上取决于此类监控举措的沟通方式，而良好的沟通可以防止可能发生的反抗。",
+    "note": "and连接两个并列分句；第一个分句中how引导宾语从句作depends on的宾语；第二个分句中prevent...being staged为prevent+宾语+being done结构。"
+   },
+   {
+    "en": "But if implanted chips are used to reduce slack time or rest breaks, that could prove to be detrimental.",
+    "cn": "但如果植入芯片被用来减少空闲时间或休息时间，那可能会被证明是有害的。",
+    "note": "if引导条件状语从句；主句中that指代前文所述情况；prove to be为系表结构，意为\"被证明是……\"。"
+   }
+  ]
+ }
+}

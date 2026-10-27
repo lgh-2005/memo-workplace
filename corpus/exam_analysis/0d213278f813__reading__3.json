@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "0d213278f813__reading__3",
+ "examId": "0d213278f813",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年考研英语真题",
+ "year": 2019,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:40:41.785Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63267,
+ "usage": {
+  "prompt_tokens": 1753,
+  "completion_tokens": 3589,
+  "total_tokens": 5342,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1753,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3589,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1753,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人工智能的伦理问题亟待关注",
+  "gist": "文章以《弗兰肯斯坦》出版两百年为引，指出当今人工智能飞速发展引发了关于意识、身份等根本问题。通过自动驾驶伦理困境、各国政府及企业制定AI伦理准则等例子，论证AI伦理建设的紧迫性和复杂性，呼吁让智能机器反映人类最高价值观。",
+  "structure": [
+   "第1-2段：以《弗兰肯斯坦》引出AI伦理核心议题",
+   "第3-5段：阐述人类对AI意识的认知局限及自动驾驶伦理难题",
+   "第6-8段：各国政府与谷歌开始建立AI伦理准则",
+   "第9段：总结呼吁——AI应反映人类最高价值观"
+  ],
+  "difficulty": "中等",
+  "translation": "今年恰好是玛丽·雪莱的《弗兰肯斯坦；或现代的普罗米修斯》出版两百周年。早在电灯泡发明之前，这位作者就创作了一部杰出的科幻小说，预见了未来科技将引发的许多伦理问题。\n\n如今，人工智能（AI）的飞速发展提出了一些根本性问题：\"什么是智能、身份或意识？是什么使人之为人？\"\n\n所谓的通用人工智能——即模仿人类思维方式的机器——仍然令科学家们束手无策。然而，人类依旧对那种外形、动作和反应都类似人类的机器人充满着迷，就像最近在《西部世界》和《真实的人类》等热门科幻电视剧中所描绘的那样。\n\n斯坦福大学神经科学家大卫·伊格尔曼表示，人类的思维方式仍然过于复杂，远未被理解，更不用说被复制了。\"我们目前的处境是：没有好的理论来解释意识究竟是什么，也不知道如何制造出一台能达到那种程度的机器。\"\n\n但这并不意味着涉及AI的关键伦理问题不是迫在眉睫。例如，即将投入使用的自动驾驶汽车就提出了棘手的伦理问题。人类驾驶员有时必须在瞬间做出决定。他们的反应可能是瞬间反射、过往驾驶经验的输入以及当时眼耳所获信息的复杂结合。如今AI的\"视觉\"远不如人类的那般精密。而且，预见每一种可以想象的驾驶情形本身就是一个困难的编程问题。\n\n新加坡一家协助政府制定AI伦理使用自愿准则的机构的首席执行官陈杰豪指出：\"每当决策基于海量数据时，你很快就会遇到大量伦理问题。\"与新加坡一样，其他国家政府和大型企业也开始制定各自的准则。英国正在建立一个数据伦理中心。印度今年春天发布了其AI伦理战略。\n\n6月7日，谷歌承诺不\"设计或部署\"会造成\"整体伤害\"的AI，也不开发AI导向的武器，或将AI用于违反国际规范的监控。谷歌还承诺不部署使用方式违反国际法或人权的AI。\n\n尽管该声明措辞含糊，但它代表了一个起点。同样，AI系统做出的决策应该是可解释的、透明的和公平的，这一理念也是一个起点。\n\n换言之：我们如何确保智能机器的思维反映人类的最高价值观？唯有如此，它们才会成为有用的仆人，而非弗兰肯斯坦那失控的怪物。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "Even before the invention of the electric light bulb, the author produced a remarkable work of speculative fiction that would foreshadow many ethical questions to be raised by technologies yet to come.",
+    "why": "原文指出《弗兰肯斯坦》\"预见了未来科技将引发的许多伦理问题\"，紧接着第二段点明\"如今AI的飞速发展提出了根本性问题\"。两段形成因果衔接：提及该小说是为了说明它所涉及的伦理关切与当今AI引发的议题相呼应。C选项\"involves some concerns raised by AI today\"精准对应这一逻辑。",
+    "traps": "A\"令全世界AI科学家着迷\"无中生有，原文未提及AI科学家对该小说的态度；B\"流行了200年\"偷换概念，原文仅说出版已两百年，并非说明提及它的原因；D\"引发严重伦理争议\"张冠李戴，伦理争议是由AI技术引发的，而非由小说本身引发的。",
+    "tip": "例证题需回归论点，弄清举例目的而非例子本身的细节。"
+   },
+   {
+    "number": 32,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Just how people think is still far too complex to be understood, let alone reproduced, says David Eagleman, a Stanford University neuroscientist.",
+    "why": "Eagleman明确表示人类思维方式\"仍然过于复杂，远未被理解，更不用说被复制\"，且\"没有好的理论来解释意识究竟是什么\"。D选项\"is too limited for us to reproduce it\"是对\"far too complex to be understood, let alone reproduced\"以及\"no good theories\"的同义改写：我们对意识的认知太有限，无法复制它。",
+    "traps": "A\"有助于解释人工智能\"与原文相反，原文说的是我们对意识的理解远远不够；B\"可能对机器人制造产生误导\"无中生有，原文未提及误导；C\"启发了科幻电视剧\"张冠李戴，科幻剧在前一段提及，与Eagleman观点无关。",
+    "tip": "注意\"let alone\"表递进否定，前者都做不到，后者更不可能。"
+   },
+   {
+    "number": 33,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "AI 'vision' today is not nearly as sophisticated as that of humans. And to anticipate every imaginable driving situation is a difficult programming problem.",
+    "why": "第五段指出人类驾驶反应极为复杂，AI视觉远不如人类精密，且预见所有驾驶情形是一个困难的编程问题。这些信息综合表明：以当前技术水平，解决自动驾驶的伦理问题仍超出我们的能力范围。B选项\"is still beyond our capacity\"准确概括了这一推断。",
+    "traps": "A\"几乎永远找不到\"过于绝对，原文用\"difficult\"而非\"impossible\"，只是说目前难以解决，并未否定未来可能性；C\"几乎不引起公众关注\"与原文相反，各国政府和企业都在积极应对；D\"引起了很多好奇心\"偏离重点，文章讨论的是伦理挑战的困难程度，而非好奇心。",
+    "tip": "注意区分\"目前做不到\"与\"永远做不到\"的程度差异，排除绝对化选项。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "While the statement is vague, it represents one starting point. So does the idea that decisions made by AI systems should be explainable, transparent, and fair.",
+    "why": "作者虽用\"vague\"指出谷歌声明的模糊性，但随即用转折连词\"while\"引出正面评价——\"it represents one starting point\"（代表了一个起点），表明作者对此持肯定态度。A选项affirmation（肯定）准确匹配这种\"虽有不足但予以认可\"的立场。",
+    "traps": "B\"skepticism（怀疑）\"以偏概全，只抓住了\"vague\"一词而忽略了转折后的正面评价；C\"contempt（蔑视）\"过于极端，原文无任何蔑视语气；D\"respect（尊敬）\"程度过重，作者只是肯定其起步意义，并未表达尊敬之情。",
+    "tip": "态度题要注意转折词后的核心判断，while前让步不代表整体态度。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "How can we make sure that the thinking of intelligent machines reflects humanity's highest values?",
+    "why": "全文围绕AI伦理问题展开：从意识本质的认知局限到自动驾驶伦理困境，再到各国和企业制定AI伦理准则，最后总结为确保AI反映人类最高价值观。C选项\"The Conscience of AI: Complex But Inevitable\"既点明了主题（AI的良知/伦理），又概括了核心观点（复杂但不可回避），是对全文最佳的标题概括。",
+    "traps": "A\"AI的未来：在科技巨头手中\"以偏概全，谷歌只是一个例子，文章并非聚焦科技巨头；B\"弗兰肯斯坦：预言AI时代的小说\"以偏概全，小说只是引子，非文章主体内容；D\"AI一旦失控就会成为杀手\"过于极端，曲解原文末段的警示，且不符合全文讨论伦理建设的基调。",
+    "tip": "主旨题标题需涵盖全文核心论点，避免选只覆盖部分段落的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "speculative",
+    "cn": "adj. 推测性的；思辨的"
+   },
+   {
+    "w": "foreshadow",
+    "cn": "v. 预示，预兆"
+   },
+   {
+    "w": "evade",
+    "cn": "v. 逃避；难住（此处指难以被攻克）"
+   },
+   {
+    "w": "depicted",
+    "cn": "v. 描绘，描述（depict的过去分词）"
+   },
+   {
+    "w": "reproduced",
+    "cn": "v. 复制，再现（reproduce的过去分词）"
+   },
+   {
+    "w": "autonomous",
+    "cn": "adj. 自主的，自动的"
+   },
+   {
+    "w": "thorny",
+    "cn": "adj. 棘手的，困难的"
+   },
+   {
+    "w": "split-second",
+    "cn": "adj. 瞬间的，极短时间的"
+   },
+   {
+    "w": "reflexes",
+    "cn": "n. 反射动作，本能反应（reflex的复数）"
+   },
+   {
+    "w": "surveillance",
+    "cn": "n. 监视，监控"
+   },
+   {
+    "w": "deploy",
+    "cn": "v. 部署，运用"
+   },
+   {
+    "w": "transparent",
+    "cn": "adj. 透明的，公开的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Even before the invention of the electric light bulb, the author produced a remarkable work of speculative fiction that would foreshadow many ethical questions to be raised by technologies yet to come.",
+    "cn": "甚至在电灯泡发明之前，这位作者就创作了一部杰出的推想性小说，预见了未来科技将引发的许多伦理问题。",
+    "note": "主干为the author produced a work；that引导定语从句修饰work；to be raised为不定式被动作后置定语修饰questions；yet to come为形容词短语修饰technologies，意为'尚未到来的'。"
+   },
+   {
+    "en": "Their reactions may be a complex combination of instant reflexes, input from past driving experiences, and what their eyes and ears tell them in that moment.",
+    "cn": "他们的反应可能是瞬间反射、过往驾驶经验的输入以及当时眼耳所获信息的复杂结合。",
+    "note": "主干为reactions may be a combination of A, B, and C三个并列成分；第三个成分what引导名词性从句作of的宾语，what充当tell的直接宾语。"
+   },
+   {
+    "en": "We are just in a situation where there are no good theories explaining what consciousness actually is and how you could ever build a machine to get there.",
+    "cn": "我们目前的处境是：没有好的理论来解释意识究竟是什么，也不知道如何制造一台能达到那种程度的机器。",
+    "note": "where引导定语从句修饰situation；explaining为现在分词作后置定语修饰theories；what和how引导两个并列的宾语从句，共同作explaining的宾语。"
+   }
+  ]
+ }
+}

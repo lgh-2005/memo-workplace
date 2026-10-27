@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "d83bedfad653__reading__2",
+ "examId": "d83bedfad653",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 12 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:53:04.537Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56855,
+ "usage": {
+  "prompt_tokens": 1809,
+  "completion_tokens": 3863,
+  "total_tokens": 5672,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1809,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3863,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1809,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英国蜘蛛的生存困境与保护",
+  "gist": "文章围绕英国蜘蛛展开，指出蜘蛛虽对农业有益却长期被人类误解和恐惧，自中世纪以来与邪恶联系在一起。由于缺乏研究数据、飞行昆虫大幅减少导致食物供应下降、栖息地丧失与碎片化，蜘蛛的生存状况令人担忧。作者呼吁更多人认识并欣赏蜘蛛的精彩之处。",
+  "structure": [
+   "第1段：引出蜘蛛话题，描述其秋季活跃表现",
+   "第2段：蜘蛛与人类的复杂关系，虽无害却被恐惧和误解",
+   "第3段：蜘蛛研究数据严重匮乏",
+   "第4段：昆虫数量骤降威胁蜘蛛食物，栖息地丧失加剧危机",
+   "第5-6段：保护措施与作者呼吁更多人欣赏蜘蛛"
+  ],
+  "difficulty": "中等",
+  "translation": "蜘蛛在八月下旬至初秋期间变得格外活跃。这是一些最常见品种的交配季节，雄性家蛛从隐蔽的角落出来寻找雌性，而花园蜘蛛则长到成年大小，织出最炫目的蛛网。\n\n然而，尽管蜘蛛是童谣、儿歌和万圣节装饰中的常见元素，它与人类的关系却颇为复杂。对蜘蛛的恐惧很普遍，并对患者的生活产生了严重影响。这种恐惧的普遍程度似乎与任何理性的风险评估无关。英国的蜘蛛几乎都是无害的。农田物种通过捕食与我们争夺庄稼的昆虫，提供了宝贵的生态系统服务。但它们一直是人类焦虑的来源——与女巫和邪恶的文化关联可以追溯到中世纪。\n\n这是否在一定程度上解释了，在我们这个生态危机时代，关于蜘蛛生存状况的数据为何如此匮乏？英国蝴蝶是世界上研究最充分的昆虫类群，这得益于收集和观察它们的悠久传统。但蜘蛛保护人士指出，直到20世纪80年代，家蛛的分类才被妥善理清。而尽管昆虫种群信息是通过测量撞上挡风玻璃或落入陷阱的数量来收集的，但几乎没有人尝试去统计蜘蛛的数量。\n\n飞行昆虫数量的大幅减少，只能意味着蜘蛛食物供应的减少。最近一项里程碑式的研究发现，1989年至2016年间昆虫种群下降了75%，农药使用和为开发而破坏野生地区被认为是罪魁祸首。这意味着蜘蛛的整体前景令人担忧，正如大多数生物一样。但保护人士最担心的是那些因栖息地丧失和碎片化而受到威胁的品种，这使得它们无法迁徙。\n\n在英国定期记录的约650种蜘蛛中，大多数栖息在沼泽和荒地中。保护工作通常由坚定的个人领导，通过将一些物种重新引入新的区域，帮助它们恢复。随着\"再野化\"如今已牢牢纳入环境政策议程，人们希望未来蜘蛛能够自行迁徙，沿着野生动物走廊移动以适应气候变化。\n\n蜘蛛似乎不太可能像蜜蜂、鸟类或蝴蝶那样吸引同等程度的人类热情，尽管它们作为自然界的纺织者有着独特的地位。但当蜘蛛在这个秋天展现出它们全部的华丽时，如果更多的动物爱好者能认识到蜘蛛是多么了不起，那将是一件好事。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Spiders in the UK are almost all harmless. Farmland species perform valuable ecosystem services, by preying on insects that are our competitors for crops. But they are a constant source of human anxieties—with a cultural association with witches and wickedness dating back to the middle ages.",
+    "why": "原文指出英国蜘蛛几乎都无害，且为农业提供了宝贵的生态系统服务（捕食害虫），但人们却持续恐惧蜘蛛，并自中世纪以来将蜘蛛与女巫和邪恶联系在一起。这说明自中世纪以来蜘蛛一直被普遍误解（misconceived），人们对蜘蛛的认知与事实不符。A项\"generally misconceived\"准确概括了这一矛盾。",
+    "traps": "B项\"adversely impacted crop growth\"与原文相反，蜘蛛通过捕食害虫保护庄稼；C项\"constant reminder of bad luck\"属于无中生有，原文说的是与witches和wickedness的联系，而非bad luck；D项\"made their presence felt when spinning webs\"是第一段描述秋季行为的内容，与中世纪以来的时间范围不符，且未触及核心矛盾。",
+    "tip": "注意\"since the middle ages\"的时间限定，需要找与中世纪关联的信息进行推断。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "But they are a constant source of human anxieties—with a cultural association with witches and wickedness dating back to the middle ages.",
+    "why": "原文明确指出蜘蛛与\"witches and wickedness\"（女巫和邪恶）的文化关联可追溯到中世纪。\"wickedness\"意为邪恶，与B项\"Evil\"（邪恶）完全对应。题目问的是\"for centuries\"（几个世纪），与\"dating back to the middle ages\"时间吻合。",
+    "traps": "A项\"Harm\"（伤害），原文说蜘蛛几乎无害，且文化关联指向wickedness而非harm；C项\"Suffering\"（痛苦），原文虽提到恐惧对患者的影响，但这不是蜘蛛被文化关联的内容；D项\"Aggression\"（攻击性），文中未提及蜘蛛具有攻击性的文化联想。",
+    "tip": "精准匹配原文关键词wickedness与选项Evil的同义替换关系。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "A recent landmark study identified a 75% fall in insect populations between 1989 and 2016, with pesticide use thought to be to blame along with the destruction of wild areas for development.",
+    "why": "原文指出飞行昆虫数量大幅减少意味着蜘蛛食物供应减少，而一项里程碑式研究发现昆虫种群下降了75%，\"pesticide use\"（杀虫剂使用）被认为是罪魁祸首之一。C项\"Chemicals used for killing insects\"（用于杀虫的化学品）是对pesticide的同义改写，且题目问的是\"partly accounts for\"，对应原文\"along with\"表示部分原因。",
+    "traps": "A项\"long tradition of collecting insects\"来自第三段关于蝴蝶的描述，属于张冠李戴；B项\"Fast reproduction of their competitors\"无中生有，原文未提及竞争者快速繁殖；D项\"extinction of a lot of wildlife\"过度推断，原文说的是wild areas被破坏，而非wildlife灭绝。",
+    "tip": "注意pesticide与chemicals used for killing insects的同义替换。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "But conservationists are most concerned about those varieties that are threatened due to habitat loss and fragmentation, which makes it impossible for them to migrate.",
+    "why": "原文用\"most concerned\"明确标示了保护人士最大的担忧：某些蜘蛛品种因\"habitat loss and fragmentation\"（栖息地丧失和碎片化）而受到威胁。B项\"Certain species of spiders are endangered due to loss of their natural homes\"将habitat loss同义替换为loss of their natural homes，准确对应原文。",
+    "traps": "A项\"pollution of marshes and wasteland\"属于无中生有，原文提到蜘蛛栖息在沼泽和荒地但未说这些地方被污染；C项\"killed by deadly pesticides\"过度推断，原文说杀虫剂减少了昆虫（蜘蛛食物），未说直接杀死蜘蛛；D项\"losing their ability to migrate\"偷换概念，原文说栖息地碎片化使迁徙不可能，并非蜘蛛失去迁徙能力。",
+    "tip": "注意most concerned/biggest worry等最高级表述的精确定位。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But as they reveal themselves in all their splendour this autumn, it would be a good thing if more animal lovers recognised the ways in which spiders are simply terrific.",
+    "why": "文章末尾作者表达愿望：\"it would be a good thing if more animal lovers recognised the ways in which spiders are simply terrific\"，即希望更多动物爱好者认识到蜘蛛是多么了不起。D项\"There would be more people appreciating spiders' splendour\"用appreciate概括了recognise...terrific和reveal...splendour的含义，准确传达了作者的期望。",
+    "traps": "A项\"unique status in the ecosystem\"虽然文中提到unique status as nature's spinners，但这不是作者最终表达的愿望核心；B项\"greater enthusiasm for spiders than for butterflies\"歪曲原文，原文说蜘蛛不太可能吸引与蜜蜂、蝴蝶同等的热情，并非希望超越蝴蝶；C项\"sufficient corridors for spiders to move along\"是第五段的保护措施，非文末的核心愿望。",
+    "tip": "文末作者的wish/hope类表达通常是主旨题或态度题的出题点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dazzling",
+    "cn": "adj. 耀眼的，令人眼花缭乱的"
+   },
+   {
+    "w": "prevalence",
+    "cn": "n. 流行，普遍"
+   },
+   {
+    "w": "wickedness",
+    "cn": "n. 邪恶，罪恶"
+   },
+   {
+    "w": "conservationist",
+    "cn": "n. 自然保护主义者"
+   },
+   {
+    "w": "fragmentation",
+    "cn": "n. 碎片化，破碎"
+   },
+   {
+    "w": "landmark",
+    "cn": "adj. 里程碑式的，划时代的"
+   },
+   {
+    "w": "pesticide",
+    "cn": "n. 杀虫剂，农药"
+   },
+   {
+    "w": "rewilding",
+    "cn": "n. 再野化（恢复自然生态的保护措施）"
+   },
+   {
+    "w": "corridor",
+    "cn": "n. 走廊，通道（此处指野生动物走廊）"
+   },
+   {
+    "w": "splendour",
+    "cn": "n. 壮丽，华丽，辉煌"
+   },
+   {
+    "w": "terrific",
+    "cn": "adj. 极好的，了不起的"
+   },
+   {
+    "w": "fixture",
+    "cn": "n. 固定之物，常见事物"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "A recent landmark study identified a 75% fall in insect populations between 1989 and 2016, with pesticide use thought to be to blame along with the destruction of wild areas for development.",
+    "cn": "最近一项里程碑式的研究发现，1989年至2016年间昆虫种群下降了75%，杀虫剂的使用以及为开发而破坏野生地区被认为是罪魁祸首。",
+    "note": "主句为study identified a fall；with引导独立主格结构作伴随说明，其中thought to be to blame为过去分词短语作补语，along with并列两个原因。"
+   },
+   {
+    "en": "But conservationists are most concerned about those varieties that are threatened due to habitat loss and fragmentation, which makes it impossible for them to migrate.",
+    "cn": "但保护人士最担心的是那些因栖息地丧失和碎片化而受到威胁的品种，这使得它们无法迁徙。",
+    "note": "主句为conservationists are most concerned about those varieties；that引导定语从句修饰varieties；which引导非限制性定语从句，先行词为前面整个情况；makes it impossible for them to migrate为make+it+adj.+for sb.+to do结构。"
+   },
+   {
+    "en": "It seems unlikely that spiders will ever attract the same level of human enthusiasm as bees, birds or butterflies, in spite of their unique status as nature's spinners.",
+    "cn": "蜘蛛似乎不太可能像蜜蜂、鸟类或蝴蝶那样吸引同等程度的人类热情，尽管它们作为自然界的纺织者有着独特的地位。",
+    "note": "It为形式主语，真正主语是that引导的从句；the same...as构成同级比较；in spite of引导让步状语，补充转折语义。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "939a9b6ce073__banked_cloze__all",
+ "examId": "939a9b6ce073",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2020 年 9 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:30:05.586Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58511,
+ "usage": {
+  "prompt_tokens": 1351,
+  "completion_tokens": 3434,
+  "total_tokens": 4785,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1351,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3434,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1351,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "自我设障与借口心理分析",
+  "gist": "文章探讨了人们（尤其男性）为维护自身形象而制造借口的现象。成功往往使人害怕失败，从而发展出酗酒、疲劳、抑郁等\"障碍\"来为可能的失败开脱。然而，长期的自我设障最终会导致毁灭，使人无法发挥真正潜力，丧失其苦心维护的地位。",
+  "difficulty": "中等",
+  "translation": "总体而言，男性比女性更倾向于找借口。多项研究表明，男性觉得自己需要在所有领域（realms）表现出能力，而女性只担心自己投入大量精力（heavily）的那些技能。让一个男人和一个女人第一次去潜水，女人可能会直接跳进水里，而男人则可能会说自己身体不太舒服。\n\n具有讽刺意味的是，往往是成功引导人们与失败调情。因掌握（mastering）一项技能而赢得的赞誉，突然使人处于可能失去一切的境地。许多成功人士不愿再冒声誉受损的风险，而是发展出一种障碍——酗酒、疲劳（fatigue）、抑郁——使他们无论未来如何都能保住自己的地位。一位在获奖后不久因抑郁症住院（hospitalized）的广告高管这样说道：\"没有抑郁症，我现在就是一个失败者；有了它，我是一个'暂时搁置'的成功者。\"\n\n事实上，最容易成为长期借口制造者的人，是那些对成功着迷（obsessed）的人。这类人非常害怕在任何事情上被贴上（labeled）失败者的标签，以至于他们不断发展出这样或那样的障碍来为失败开脱。\n\n尽管自我设障偶尔可以成为应对表现焦虑的有效方式，但研究人员指出，最终它将导致毁灭（ruin）。从长远来看，借口制造者无法充分发挥自己真正的潜力（potential），并失去他们如此在意的地位。尽管他们口头上声称相反（able to the contrary），但他们只能怪自己。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "L",
+    "correct": "realms",
+    "why": "空格前为\"in all\"，空格后无其他修饰，需要一个复数名词与all搭配，表示\"所有领域\"。realms（领域）完美契合语义：男性觉得需要在所有领域表现出色。其他名词如ruin、potential不符合\"in all ___\"的搭配语境。",
+    "traps": "potential虽为名词，但\"in all potential\"语义不通；fatigue为不可数名词，不能加all修饰；contrary通常用于固定搭配to the contrary，不适合此处。",
+    "tip": "注意\"in all + 复数名词\"的固定搭配结构。"
+   },
+   {
+    "number": 27,
+    "answer": "C",
+    "correct": "heavily",
+    "why": "空格位于动词invested之后，需要副词修饰动词。invest heavily为常见搭配，意为\"大量投入\"。语义上与前半句形成对比：女性只关心自己大量投入精力的技能。",
+    "traps": "heaving是形容词/动名词，不能修饰动词invested；其余候选词均非副词，语法上无法放入此位置。",
+    "tip": "动词后修饰成分多为副词，invest heavily是高频搭配。"
+   },
+   {
+    "number": 28,
+    "answer": "H",
+    "correct": "mastering",
+    "why": "空格前为介词for，空格后为名词a skill，需要动名词形式。mastering a skill（掌握一项技能）语义完美：因掌握技能而赢得的赞誉。for + doing是常见介词搭配。",
+    "traps": "heaving虽也是-ing形式，但heaving a skill语义不通；labeling虽语法可行，但\"因给一项技能贴标签而赢得赞誉\"不合逻辑。",
+    "tip": "介词for后接动名词，需结合宾语a skill判断语义。"
+   },
+   {
+    "number": 29,
+    "answer": "B",
+    "correct": "fatigue",
+    "why": "空格处于并列结构\"drinking, ___, depression\"中，前后均为名词，需要一个表示负面状态的名词与酗酒、抑郁并列，作为\"障碍\"的具体表现。fatigue（疲劳）完全符合。",
+    "traps": "contrary虽为名词，但\"酗酒、相反、抑郁\"语义不连贯；ruin程度过重，不属于可发展出的日常\"障碍\"症状。",
+    "tip": "并列结构要求词性一致、语义同类。"
+   },
+   {
+    "number": 30,
+    "answer": "E",
+    "correct": "hospitalized",
+    "why": "空格处为过去分词作后置定语，修饰executive。hospitalized for depression（因抑郁症住院）与后文shortly after winning an award语义衔接紧密，表示获奖后不久因抑郁住院。",
+    "traps": "obsessed for depression搭配错误，obsessed需与with连用；labeled for depression语法勉强但语义不如hospitalized贴切。",
+    "tip": "过去分词作后置定语，注意与介词for的固定搭配。"
+   },
+   {
+    "number": 31,
+    "answer": "J",
+    "correct": "obsessed",
+    "why": "空格前为those，空格后为with success，需要过去分词构成\"those + 过去分词 + with\"结构。obsessed with（对……着迷/执着于）是固定搭配，表示这些人对成功过度执着。",
+    "traps": "labeled with success语义不当，\"被贴上成功标签的人\"与后文\"害怕失败\"的逻辑不吻合；hospitalized with success搭配不通。",
+    "tip": "those + 过去分词作后置定语，obsessed with为固定搭配。"
+   },
+   {
+    "number": 32,
+    "answer": "F",
+    "correct": "labeled",
+    "why": "空格前为being，空格后为a failure，需要过去分词构成被动语态。be labeled a failure（被贴上失败者的标签）是常见表达，语义为：害怕被认定为失败者。",
+    "traps": "此处已无其他合适的过去分词可选；若用obsessed，则be obsessed a failure语法不通，obsessed后需接with。",
+    "tip": "be labeled + 名词表示\"被贴上……标签\"，是固定用法。"
+   },
+   {
+    "number": 33,
+    "answer": "N",
+    "correct": "ruin",
+    "why": "空格前为lead to，需要名词。lead to ruin（导致毁灭）是常见搭配，且与全文论证自我设障最终后果严重的主旨一致。",
+    "traps": "potential语义不合——\"导致潜力\"不通；fatigue已用于第29题；contrary不符合lead to的语义搭配。",
+    "tip": "lead to + 名词，需根据语境判断结果的消极性。"
+   },
+   {
+    "number": 34,
+    "answer": "K",
+    "correct": "potential",
+    "why": "空格前为true，空格后无其他成分，需要名词。live up to one's true potential（发挥真正的潜力）是固定表达，与前文\"最终导致毁灭\"的论述形成因果关系。",
+    "traps": "ruin已用于第33题；realms已用于第26题；且live up to true realms语义不当。",
+    "tip": "live up to one's potential是高频固定搭配，意为\"发挥潜力\"。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "correct": "contrary",
+    "why": "空格前为to the，构成固定短语to the contrary（相反地）。despite their protests to the contrary意为\"尽管他们声称并非如此\"，表示借口制造者嘴上不承认，但事实上只能怪自己。",
+    "traps": "其余候选词均无法与to the构成有意义的固定搭配；to the ruin、to the potential均非英语惯用表达。",
+    "tip": "to the contrary是固定搭配，意为\"相反地\"，常与protests连用。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "realms",
+    "cn": "n. 领域；范围；王国"
+   },
+   {
+    "w": "heavily",
+    "cn": "adv. 大量地；沉重地"
+   },
+   {
+    "w": "mastering",
+    "cn": "v. 掌握；精通（master的现在分词）"
+   },
+   {
+    "w": "fatigue",
+    "cn": "n. 疲劳；疲乏"
+   },
+   {
+    "w": "hospitalized",
+    "cn": "v. 使住院治疗（hospitalize的过去分词）"
+   },
+   {
+    "w": "obsessed",
+    "cn": "adj. 着迷的；困扰的（与with搭配）"
+   },
+   {
+    "w": "labeled",
+    "cn": "v. 贴标签；归类（label的过去分词）"
+   },
+   {
+    "w": "ruin",
+    "cn": "n. 毁灭；废墟；v. 毁坏"
+   },
+   {
+    "w": "potential",
+    "cn": "n. 潜力；潜能；adj. 潜在的"
+   },
+   {
+    "w": "contrary",
+    "cn": "n./adj. 相反（的）；对立（的）"
+   },
+   {
+    "w": "handicap",
+    "cn": "n. 障碍；不利条件"
+   },
+   {
+    "w": "chronic",
+    "cn": "adj. 长期的；慢性的"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——文章讲自我设障与找借口的心理现象。",
+   "第二步：将15个候选词按词性分类（名词、动词/过去分词、副词、形容词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法标志（介词、冠词、be动词等）判断所需词性，快速排除不符选项。",
+   "第四步：结合上下文语义和常见搭配（如invest heavily、to the contrary、live up to potential）确定唯一答案。",
+   "第五步：填完后回读全文，确认每个选项只用一次，且语义通顺、逻辑连贯。"
+  ]
+ }
+}

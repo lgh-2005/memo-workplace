@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "8fcbfef22440__reading__1",
+ "examId": "8fcbfef22440",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 12 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:48:08.349Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60770,
+ "usage": {
+  "prompt_tokens": 1857,
+  "completion_tokens": 3685,
+  "total_tokens": 5542,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1857,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3685,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1857,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "longSentences 有原句与原文不符"
+ ],
+ "analysis": {
+  "topic": "提高工资才是驱动美国经济增长的关键",
+  "gist": "文章指出共和党长期鼓吹的减税促增长公式并不奏效，但因缺乏替代方案而持续流行。作者提出，提高工人工资才是更有效的经济增长驱动力，其逻辑是消费驱动经济、高工资促进消费。传统观点认为只有生产率增长才能带来工资增长，但现实中生产率翻倍而工资远远落后，证明雇主在劳资博弈中占据优势。关注工资增长可矫正对减税魔力的盲信。",
+  "structure": [
+   "第1-3段：引出问题——减税公式无效却流行，民主党缺乏替代方案",
+   "第4-6段：提出论点——提高工资应成为经济政策优先事项",
+   "第7-8段：举例论证——福特案例说明高工资促消费促增长",
+   "第9-11段：反驳传统观点——主流经济学家认为工资由市场决定、生产率是唯一途径",
+   "第12-13段：以现实证据收束——生产率与工资脱钩，呼吁关注工资增长"
+  ],
+  "difficulty": "中等",
+  "translation": "近几十年来，共和党的一大成功之处在于不遗余力地宣传一个简单的经济增长公式：减税。\n\n这个公式并不奏效，但这并未影响其受欢迎程度。尽管减税崇拜吸引了许多批评者，但它显然缺乏竞争对手。\n\n民主党政治人物往往以帮助被经济增长抛下的人为竞选口号。当民主党人确实谈到鼓励经济增长时，他们听起来往往像共和党人一样。\n\n这不仅是民主党的政治问题，也是美国的经济问题。国家需要一个关于经济增长驱动力的更好叙事。近几十年的惨痛教训指向一个有希望的候选方案：提高工资。\n\n提高美国工人的工资应当成为经济决策者的优先事项。我们都应该少关注国内生产总值（GDP）的季度增长数据，而更多地关注工人工资的增长。\n\n暂且搁置支持提高工资的那个众所周知的理由——公平。这里的论点是，更高的工资可以为经济增长的引擎提供动力。\n\n也许最著名的例证是亨利·福特1914年决定向其T型车装配线工人支付每天5美元工资的故事。他这样做是为了提高产量——他支付溢价以维持一支可靠的劳动力队伍。意想不到的好处是，福特的工厂工人也变成了福特的顾客。\n\n同样的逻辑至今仍然成立：消费驱动美国经济，而工资更高的工人能够消费更多。\n\n主流经济学家坚持认为，不可能命令式地实现工资的可持续增长，因为薪酬水平反映的是市场力量的精准判断。\n\n传统观点认为，生产率增长是通往更高工资的唯一途径。通过这一视角来看，争取更高工资的努力适得其反。最低工资法会提高失业率，因为工资池里的钱就那么多，如果一些人拿得更多，其他人就什么也拿不到。\n\n正是在这种世界观的背景下，减税能带来繁荣的论点变得流行起来。富人会投资，生产率会提高，工资会上涨。\n\n在现实世界中，事情更加复杂。工资受到雇主与工人之间拉锯战的影响，而雇主一直在获胜。一个明确的证据是，大约从1970年以来，生产率增长与工资增长之间的差距不断扩大。生产率已经翻了一番多，而工资远远落在后面。\n\n关注工资增长将为人们对减税魔力的迷信这一颇具吸引力的简单论调提供一剂矫正良方。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "And while the cult of tax cuts has attracted many critics, it lacks for obvious rivals.",
+    "why": "原文明确指出，尽管减税崇拜吸引了许多批评者，但它\"缺乏明显的竞争对手\"（lacks for obvious rivals）。B选项\"似乎没有其他可用的替代选项\"是对此句的同义改写：rivals（竞争对手）对应options available to replace it（可替代的选项），lacks对应no other...available。推理链完整、语义对等。",
+    "traps": "A项\"批评者的声音未在全国被听到\"属于无中生有，原文说有批评者但未说其声音被忽视；C项\"所有政策制定者\"范围扩大，原文只提到共和党宣传减税；D项\"公众对该公式存在误解\"原文未提及，属于无中生有。",
+    "tip": "注意原文因果关系中的核心转折词while和关键短语lacks for rivals。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The painful lessons of recent decades point to a promising candidate: higher wages. Raising the wages of American workers ought to be the priority of economic policymakers.",
+    "why": "作者在第四段明确提出\"提高工资\"是更有前途的经济增长驱动力候选方案，第五段进一步指出提高美国工人工资应成为经济决策者的优先事项。C选项\"增加对劳动的报酬\"（increasing the compensation for labor）是对higher wages/raising the wages的同义替换，compensation对应wages，完全吻合。",
+    "traps": "A项\"帮助被经济增长抛下的人\"是民主党的竞选策略而非作者主张的增长措施；B项\"优先考虑GDP增长\"与原文相反，作者建议少关注GDP、多关注工资；D项\"引入更大规模减税\"是作者所批评的共和党主张，属于反向干扰。",
+    "tip": "注意区分作者观点与文中他人（民主党/共和党/主流经济学家）的观点。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Consumption drives the American economy, and workers who are paid more can spend more.",
+    "why": "作者的核心逻辑链条为：提高工资→工人消费能力增强→消费驱动经济增长→国家经济受益。A选项\"工人工资的增长最终促进国民经济\"准确概括了这一逻辑链。第八段是该逻辑的最精炼表述：消费驱动美国经济，工资更高的工人能消费更多。福特案例也是对此逻辑的例证。",
+    "traps": "B项\"支付溢价维持可靠劳动力以吸引更多顾客\"混淆了福特例子中的因果关系，福特付高薪是为了维持劳动力，变成顾客是\"意想不到的好处\"而非其逻辑本身；C项\"消费刺激对更高工资的渴望\"因果关系颠倒；D项\"支持更高工资的传统论点已过时\"原文未表达此意。",
+    "tip": "注意把握作者论证的核心逻辑链，区分例证细节与底层逻辑。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The conventional wisdom held that productivity growth was the only route to higher wages.",
+    "why": "原文明确指出\"传统观点认为生产率增长是通往更高工资的唯一途径\"。题目问的是\"按照传统观点，更高工资的基础是什么\"，B选项\"生产率的提高\"（increase in productivity）与原文productivity growth完全对应。the only route to higher wages意味着生产率增长是高工资的前提和基础。",
+    "traps": "A项\"分配公平\"是作者暂且搁置的另一个论据（Set aside...fairness），并非传统观点的内容；C项\"经济决策者的优先事项\"是作者自己的主张，而非传统观点；D项\"市场力量的精准判断\"是主流经济学家对薪酬水平现状的解释，而非传统观点中关于工资增长路径的论述，二者有区别。",
+    "tip": "注意conventional wisdom的定位词，区分\"传统观点\"与\"作者观点\"。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "One clear piece of evidence is the widening gap between productivity growth and wage growth since roughly 1970. Productivity has more than doubled; wages have lagged far behind.",
+    "why": "原文指出自1970年左右以来（距今约50年），生产率翻了一番多而工资远远落后，即生产率增长与工资增长之间的差距不断扩大。A选项\"人们未能看到工资和生产率的相应增长\"准确表达了这一事实——生产率大幅增长但工资未能同步跟上，二者之间缺乏corresponding（对应的）增长。",
+    "traps": "B项\"贫富差距扩大令人沮丧\"虽然与现实相关，但原文讨论的是生产率与工资的差距，而非贫富差距，属于偷换概念；C项\"共和党与民主党之间就减税展开拉锯战\"曲解原文的tug of war，原文说的是雇主与工人之间的博弈；D项\"生产率与工人福祉之间的联系消失\"说法过于绝对，原文说的是差距扩大（gap widening），并未说联系完全消失。",
+    "tip": "注意区分程度词——widening gap≠link disappearing，差距扩大不等于联系消失。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "relentless",
+    "cn": "adj. 不懈的，持续的，不停歇的"
+   },
+   {
+    "w": "propagation",
+    "cn": "n. 传播，宣传，推广"
+   },
+   {
+    "w": "cult",
+    "cn": "n. 崇拜，狂热信仰"
+   },
+   {
+    "w": "compensation",
+    "cn": "n. 报酬，薪酬，补偿"
+   },
+   {
+    "w": "unerring",
+    "cn": "adj. 准确无误的，从不出错的"
+   },
+   {
+    "w": "counterproductive",
+    "cn": "adj. 适得其反的，产生反效果的"
+   },
+   {
+    "w": "premium",
+    "cn": "n. 额外费用，溢价；adj. 优质的"
+   },
+   {
+    "w": "antidote",
+    "cn": "n. 矫正方法，对策；解毒药"
+   },
+   {
+    "w": "tug of war",
+    "cn": "n. 拉锯战，拔河（比喻激烈争夺）"
+   },
+   {
+    "w": "lag",
+    "cn": "v. 落后，滞后"
+   },
+   {
+    "w": "quarterly",
+    "cn": "adj./adv. 每季度的（地）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Mainstream economists insist that it is impossible to order up a sustainable increase in wages because compensation levels reflect the unerring judgment of market forces.",
+    "cn": "主流经济学家坚持认为，不可能命令式地实现工资的可持续增长，因为薪酬水平反映的是市场力量的精准判断。",
+    "note": "主句为economists insist that...，that引导宾语从句，其中it为形式主语，to order up...为真正主语；because引导原因状语从句解释原因。"
+   },
+   {
+    "en": "Through that lens, efforts to negotiate higher wages were counterproductive. Minimum-wage laws would raise unemployment because there was only so much money in the wage pool, and if some people got more, others would get none.",
+    "cn": "通过这一视角来看，争取更高工资的努力适得其反。最低工资法会提高失业率，因为工资池里的钱就那么多，如果一些人拿得更多，其他人就什么也拿不到。",
+    "note": "第一句through that lens为视角状语，efforts to negotiate为主语；第二句because引导原因从句，内含and连接的并列结构及if条件从句。"
+   },
+   {
+    "en": "A focus on wage growth would provide an antidote to the attractive simplicity of the belief in the magical power of tax cuts.",
+    "cn": "关注工资增长将为人们对减税魔力的迷信这一颇具吸引力的简单论调提供一剂矫正良方。",
+    "note": "主干为A focus would provide an antidote to...；介词短语层层嵌套：the simplicity of the belief in the power of tax cuts，四层of/in结构逐级修饰。"
+   }
+  ]
+ }
+}

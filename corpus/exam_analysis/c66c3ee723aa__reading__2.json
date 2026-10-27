@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "c66c3ee723aa__reading__2",
+ "examId": "c66c3ee723aa",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 6 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T06:02:21.268Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60773,
+ "usage": {
+  "prompt_tokens": 1801,
+  "completion_tokens": 3773,
+  "total_tokens": 5574,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1801,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3773,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1801,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "\"追随激情\"职业建议的弊端",
+  "gist": "作者以自身经历引入，通过社会学研究发现\"追随激情\"这一广受推崇的职业建议不仅不必然带来满足感，反而助长过度工作，并因经济资源不平等而加剧社会阶层分化，雇主也借此剥削员工的热情以获取利益。",
+  "structure": [
+   "第1-3段：作者个人经历引入，引出对\"追随激情\"建议的反思",
+   "第4-6段：研究发现激情原则广受推崇但实际后果严重",
+   "第7-8段：论证激情原则加剧社会经济不平等的具体机制",
+   "第9-10段：指出大学和雇主如何从激情原则中获益并加剧不平等"
+  ],
+  "difficulty": "中等",
+  "translation": "在获得学士学位后，我决心做自己热爱的事情。我直接进入了研究生院，去研究那些令我着迷的社会问题。\n\n在将近十年的时间里，我告诉遇到的每一个人，他们也应该这样做。\"追随你的热情，\"我建议道，\"工作的事以后再想办法。\"\n\n直到我开始研究这条被广泛接受的职业建议时，我才意识到它的问题有多大。\n\n作为一名社会学家，我采访了大学生和职场人士，以了解追逐梦想——我在这里称之为\"激情原则\"——到底意味着什么。在为新书做研究的过程中，我对所发现的关于这一原则的情况感到震惊。\n\n调查显示，美国公众长期以来一直将激情原则视为职业决策的重要优先事项。在面临工作不稳定的人群中，它的受欢迎程度甚至更高。\n\n激情原则的倡导者认为它很有说服力，因为他们相信追随自己的热情既能为工作者提供努力工作所需的动力，又能为他们找到成就感。\n\n然而，我发现追随自己的热情并不一定带来满足感，反而是助长过度工作的最强大文化力量之一。我还发现，倡导追求热情有助于延续社会不平等，因为并非每个人都拥有同等的经济资源来让他们轻松地追求自己的热情。\n\n虽然激情原则广受欢迎，但并不是每个人都拥有将热情转化为稳定、高薪工作所需的资源。来自富裕家庭的激情追求者能更从容地等待一份他们热爱的工作出现，而不用在此期间为学生贷款发愁。他们也更容易接受无薪实习来获得入行机会，同时由父母支付房租。而且他们通常可以利用父母的社交网络来帮助他们找到工作。调查显示，无论职业领域如何，工薪阶层和第一代大学毕业生在追求热情时，比他们更富裕的同龄人更有可能最终从事低薪的非技术性工作。\n\n那些向所有人推广\"追随你的热情\"路径却不创造公平竞争环境的大学、用人单位和职业顾问，正在帮助延续职业追求者之间的社会经济不平等。\n\n从激情原则中获益的不仅仅是富裕的激情追求者，热情员工的雇主也从中获益。潜在雇主对充满热情的求职者表现出更大的兴趣，部分原因是他们相信这些求职者会在工作中努力工作而不指望加薪。他们甚至会为了从事自己热爱的工作而牺牲高薪、工作稳定性和休闲时间。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "For almost a decade, I told everyone I encountered that they should do the same. \"Follow your passion,\" I counseled. \"You can figure out the employment stuff later.\"",
+    "why": "原文明确说作者近十年来建议每个人\"追随你的热情\"（Follow your passion），即做自己热爱的事。选项D\"Do whatever they are zealous for\"中zealous（热心的、热忱的）是passion的同义替换，表示\"做他们热衷的任何事\"，与原文含义完全吻合。",
+    "traps": "A项\"弄清最吸引人的工作是什么\"属于无中生有，原文没有提到帮别人找\"最吸引人的工作\"。B项\"遵循被广泛接受的职业建议\"是偷换概念，原文说的是作者自己给出了这样的建议，而非让别人遵循某种已有的建议。C项\"充满热情地追求事业\"将passion理解为副词修饰\"追求事业\"，而原文强调的是追随自己的passion（热情所在领域），即做热爱的事情本身。",
+    "tip": "注意区分\"追随热情（做热爱之事）\"与\"充满激情地工作\"的语义差别。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "I was stunned by what I found out about this principle in the research for my new book.",
+    "why": "原文用stunned（震惊的）描述作者对研究发现的感受，随后第7段揭示了激情原则助长过度工作、加剧社会不平等等负面后果。选项A中astonished是stunned的同义词，consequences（后果）准确概括了研究揭示的负面结果，因此A正确。",
+    "traps": "B项\"进一步相信其合理性\"与原文完全相反，作者的研究恰恰否定了激情原则的正面效果。C项\"他坚持遵循它是对的\"也与原文矛盾，作者发现自己之前的建议是有问题的。D项\"被其广泛流行所震撼\"虽然原文提到了激情原则的流行，但作者的震惊主要源于其负面后果，而非流行程度本身，属于偷换对象。",
+    "tip": "情感态度题需精准定位情感词并结合上下文判断其指向对象。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Passion-seekers from wealthy families are better able to wait until a job they are passionate about comes along without worrying about student loans in the meantime. They are also better situated to take unpaid internships to get their foot in the door while their parents pay their rent. And they often have access to parents' social networks to help them find jobs.",
+    "why": "原文第8段详细阐述了富裕家庭的激情追求者的三大优势：不用担心学生贷款（经济支持）、父母支付房租（财务保障）、利用父母的社交网络找工作（社会关系）。选项D\"Financial backing and social connections\"精确概括了这两方面资源，是正确答案。",
+    "traps": "A项\"愿意接受无薪实习和低薪工作\"是成功者的行为表现而非关键资源条件，且低薪工作是贫困者的不利结果，属于曲解原文。B项\"充分的学术准备和合理的职业咨询\"在原文中并未作为将热情转化为好工作的关键因素提及。C项\"努力工作和牺牲休闲时间\"出现在最后一段，是描述被雇主利用的现象，而非成功转化热情的条件。",
+    "tip": "多因素并列论证时，需提炼核心归纳词而非停留在个别细节。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Colleges, workplaces and career counselors who promote the \"follow your passion\" path for everyone, without leveling the playing field, help perpetuate socioeconomic inequalities among career aspirants.",
+    "why": "原文第9段明确指出，在不创造公平竞争环境的前提下向所有人推广\"追随激情\"，会帮助延续（perpetuate）职业追求者之间的社会经济不平等。选项C\"Socioeconomic inequality is likely to persist\"中persist（持续）是perpetuate（使延续）的同义替换，准确表达了原文含义。",
+    "traps": "A项\"更多职业追求者最终失业\"属于过度推断，原文说的是最终从事低薪非技术工作，而非失业。B项\"人们更不关心社会经济不平等\"无中生有，原文讨论的是不平等被加剧，而非人们对其的关注度。D项\"职业顾问将失去公信力\"属于无中生有，原文没有讨论职业顾问的公信力问题。",
+    "tip": "perpetuate（使延续）= persist（持续），注意同义替换的识别。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Potential employers showed greater interest in passionate applicants in part because they believed the applicants would work hard at their jobs without expecting an increase in pay. They even sacrifice a good salary, job stability and leisure time to work in a job they love.",
+    "why": "原文最后一段指出雇主偏爱充满热情的求职者，因为他们认为这些人会努力工作却不期望加薪，甚至会牺牲高薪、工作稳定性和休闲时间。这说明雇主是在利用（exploit）员工的热情来为自己谋利——以更低的成本获得更多的劳动投入。选项B准确概括了这层含义。",
+    "traps": "A项\"他们为这些员工提供工作稳定性和高薪\"与原文相反，原文说的是员工牺牲了这些。C项\"他们为员工创造公平竞争环境以实现目标\"无中生有，leveling the playing field出现在第9段且是说大学和雇主没有这样做。D项\"他们鼓励员工实现抱负\"属于曲解原文，雇主的动机是利用员工热情获取更多劳动，而非帮助员工实现理想。",
+    "tip": "当文章揭示某方\"受益\"机制时，需辨别其本质是互利还是单方面利用。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "perpetuate",
+    "cn": "v. 使延续，使持久化"
+   },
+   {
+    "w": "compelling",
+    "cn": "adj. 令人信服的，引人注目的"
+   },
+   {
+    "w": "fulfillment",
+    "cn": "n. 满足感，成就感"
+   },
+   {
+    "w": "internship",
+    "cn": "n. 实习（期）"
+   },
+   {
+    "w": "zealous",
+    "cn": "adj. 热心的，热忱的"
+   },
+   {
+    "w": "aspirant",
+    "cn": "n. 有抱负的人，追求者"
+   },
+   {
+    "w": "counselor",
+    "cn": "n. 顾问，咨询师"
+   },
+   {
+    "w": "stunned",
+    "cn": "adj. 震惊的，目瞪口呆的"
+   },
+   {
+    "w": "socioeconomic",
+    "cn": "adj. 社会经济的"
+   },
+   {
+    "w": "instability",
+    "cn": "n. 不稳定性"
+   },
+   {
+    "w": "get one's foot in the door",
+    "cn": "短语. 获得入门机会，迈出第一步"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "I also found that promoting the pursuit of one's passion helps perpetuate social inequalities due to the fact that not everyone has the same economic resources to allow them to pursue their passion with ease.",
+    "cn": "我还发现，倡导追求个人热情有助于延续社会不平等，因为并非每个人都拥有同等的经济资源来让他们轻松地追求自己的热情。",
+    "note": "主句为 I found that...，that引导宾语从句；due to the fact that... 引出原因状语，其中嵌套同位语从句解释fact的内容；to allow them to... 为不定式作目的/结果状语修饰resources。"
+   },
+   {
+    "en": "Surveys revealed that working-class and first-generation college graduates, regardless of their career field, are more likely than their wealthier peers to end up in low-paying unskilled jobs when they pursue their passion.",
+    "cn": "调查显示，无论职业领域如何，工薪阶层和第一代大学毕业生在追求热情时，比他们更富裕的同龄人更有可能最终从事低薪的非技术性工作。",
+    "note": "主句为Surveys revealed that...；regardless of... 为插入让步状语；more likely than... to end up in... 为比较结构；when引导时间状语从句。"
+   },
+   {
+    "en": "Potential employers showed greater interest in passionate applicants in part because they believed the applicants would work hard at their jobs without expecting an increase in pay.",
+    "cn": "潜在雇主对充满热情的求职者表现出更大的兴趣，部分原因是他们相信这些求职者会在工作中努力工作而不指望加薪。",
+    "note": "主句为employers showed greater interest；in part because引导原因状语从句；they believed后接省略that的宾语从句；without expecting... 为否定介词短语作伴随状语。"
+   }
+  ]
+ }
+}

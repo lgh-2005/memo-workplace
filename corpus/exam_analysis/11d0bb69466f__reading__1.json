@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "11d0bb69466f__reading__1",
+ "examId": "11d0bb69466f",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2013 年考研英语真题",
+ "year": 2013,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:28:11.818Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67506,
+ "usage": {
+  "prompt_tokens": 1817,
+  "completion_tokens": 3963,
+  "total_tokens": 5780,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1817,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3963,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1817,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "快时尚产业的批判与反思",
+  "gist": "文章以电影《穿普拉达的女王》引出时尚自上而下的传统观念，随后介绍Elizabeth Cline的著作《Overdressed》，批判以Zara、H&M为代表的快时尚品牌通过低价快速更新劫持了时尚周期，导致劳工剥削、资源浪费与环境污染，最后指出持续性改变须依赖消费者的购买行为转变。",
+  "structure": [
+   "第1段：电影引子，引出时尚自上而下的传统观念",
+   "第2段：快时尚品牌颠覆传统，Cline著作核心批判",
+   "第3段：快时尚对劳工与环境的危害",
+   "第4-5段：类比快餐文化，提出理想化个人案例",
+   "第6段：真正持久改变取决于消费者与价格因素"
+  ],
+  "difficulty": "中等",
+  "translation": "在2006年的电影版《穿普拉达的女王》中，梅丽尔·斯特里普饰演的米兰达·普里斯特利斥责她那不谙时尚的助理，因为助理以为高端时尚与自己毫无关系。普里斯特利解释了助理毛衣上那种深蓝色多年来如何从时装秀流传到百货商场，最终流入折扣区——那个可怜的女孩无疑是从那里淘到这件衣服的。\n\n这种自上而下的时尚产业观念与Elizabeth Cline历时三年对\"快时尚\"的控诉之作《Overdressed》中所描述的狂热世界相比，已经过时到了极点。在过去十年左右的时间里，技术进步使得Zara、H&M和优衣库等大众市场品牌能够更快地响应潮流，更精确地预测需求。更快的周转意味着更少的库存浪费、更频繁的新品发布和更多的利润。这些品牌鼓励注重时尚的消费者将衣服视为一次性用品——只穿一两次就扔掉，尽管它们不会这样宣传——并且每隔几周就更新一次衣橱。Cline认为，通过以极低的价格提供紧跟潮流的商品，这些品牌劫持了时尚周期，动摇了一个长期习惯于按季节运转的行业。\n\n当然，这场革命的受害者不仅限于设计师。H&M要在全球2300多家门店中提供售价5.95美元的针织迷你裙，就必须依赖海外廉价劳动力，以消耗自然资源的规模下订单，并使用大量有害化学物质。\n\nCline认为，《Overdressed》是时尚界对Michael Pollan的《杂食者的困境》等消费者维权类畅销书的回应。\"大规模生产的服装就像快餐一样，填补了人们的欲望和需求，但却不耐用且浪费，\"Cline如此论述。她发现，美国人每年购买大约200亿件衣服——人均约64件——无论捐出多少，这种过度消费都会导致浪费。\n\n在《Overdressed》接近尾声时，Cline介绍了她的理想范例：一位名叫Sarah Kate Beaumont的布鲁克林女性，自2008年以来一直自己制作所有衣服——而且做得很漂亮。但正如Cline率先指出的那样，Beaumont花了数十年才完善她的手艺；她的例子是无法被复制的。\n\n尽管包括H&M在内的几家快时尚公司已经努力遏制其对劳工和环境的影响——H&M推出了绿色的Conscious Collection系列——但Cline认为，持久的改变只能由消费者来推动。她展现了许多可持续发展倡导者（无论是在食品还是能源领域）共有的理想主义。虚荣是永恒的；人们只有在承担不起不这样做的代价时，才会开始更可持续地购物。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Miranda Priestly, played by Meryl Streep, scolds her unattractive assistant for imagining that high fashion doesn't affect her.",
+    "why": "原文明确指出普里斯特利斥责助理\"以为高端时尚与她无关（imagining that high fashion doesn't affect her）\"，即助理对时尚的影响毫无感知、漠然无觉，这正对应A选项\"对时尚不敏感（insensitivity to fashion）\"。scolds for imagining...doesn't affect = criticizes for insensitivity，语义完全吻合。",
+    "traps": "B\"痴迷于高端时尚\"与原文相反，助理是忽视时尚而非痴迷；C\"议价能力差\"曲解了bargain bin（折扣区）一词，属于偷换概念；D\"缺乏想象力\"曲解了imagining一词，原文说的是助理\"以为/想象\"时尚与她无关，而非说她缺乏想象力。",
+    "tip": "注意区分\"对时尚无感\"和\"缺乏想象力\"，避免被个别词汇的表面含义误导。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "These labels encourage style-conscious consumers to see clothes as disposable – meant to last only a wash or two, although they don't advertise that – and to renew their wardrobe every few weeks.",
+    "why": "原文指出这些大众品牌鼓励消费者\"将衣服视为一次性用品\"并\"每隔几周更新衣橱（renew their wardrobe every few weeks）\"，即鼓励消费者更频繁地购买衣服，与B选项\"更频繁地购买衣物\"完全对应。renew wardrobe every few weeks = shop more frequently。",
+    "traps": "A\"抵制不必要的浪费\"与原文相反，快时尚鼓励的恰恰是消费和浪费；C\"抵制广告影响\"无中生有，原文提到品牌不宣传衣服不耐穿，但未鼓励消费者抵制广告；D\"隔绝狂热的时尚世界\"与原文相悖，品牌恰恰把消费者拉进了快时尚的漩涡。",
+    "tip": "定位到encourage后的宾语补足语即可锁定答案，注意同义替换。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "词义句意题",
+    "locate": "Elizabeth Cline's three-year indictment of \"fast fashion\"",
+    "why": "上下文描述了快时尚的种种弊端——浪费、劳工剥削、环境破坏，Cline的著作《Overdressed》显然是对快时尚的批判和控诉。indictment本义为法律上的\"起诉、控告\"，在此引申为\"严厉谴责、控诉\"，与D选项accusation（指控、谴责）含义最为接近。全文批判基调也印证了这一选择。",
+    "traps": "A\"容忍\"与批判语境完全相反；B\"冷漠、无所谓\"与作者花三年写书的态度矛盾；C\"热情、热忱\"属于正面情感词，与文章批判的负面基调不符。三个干扰项均在情感色彩上与语境相悖。",
+    "tip": "词义题需结合上下文语境和全文基调判断，尤其注意情感色彩的一致性。"
+   },
+   {
+    "number": 24,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Vanity is a constant; people will only start shopping more sustainably when they can't afford not to.",
+    "why": "最后一段末句指出\"人们只有在承担不起不这样做的代价时，才会开始可持续购物\"，即价格因素（affordability）是驱动消费者转向环保购物的关键。can't afford not to = 经济上不得不如此，直接说明\"定价对环保购物至关重要\"，与C选项\"价格对环保购买至关重要（Pricing is vital to environment-friendly purchasing）\"逻辑一致。",
+    "traps": "A\"虚荣更常见于理想主义者\"无中生有，原文说虚荣是人之常情（a constant），并非特指理想主义者；B\"快时尚产业忽视可持续性\"过于绝对，文中提到H&M已做出努力（green Conscious Collection）；D\"人们对买不起的衣服更感兴趣\"曲解原文afford的含义，原文讨论的是可持续购物的经济动因。",
+    "tip": "推断题注意抓住关键句中的逻辑关系，can't afford not to暗示价格是决定因素。"
+   },
+   {
+    "number": 25,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "Elizabeth Cline's three-year indictment of \"fast fashion\"",
+    "why": "全文围绕Cline的著作《Overdressed》展开，第2段揭示快时尚品牌如何劫持时尚周期，第3段揭露其对劳工和环境的危害，第4段类比快餐批判其浪费本质，第6段讨论如何改变现状。文章核心始终是对快时尚产业的批判（criticism of the fast-fashion industry），与C选项完全吻合。",
+    "traps": "A\"讽刺奢侈生活方式\"偏离主题，文章批判的是廉价快时尚而非奢侈消费；B\"挑战高端时尚神话\"只涉及第1段的引子部分，并非全文主旨；D\"揭露大众市场秘密\"过于狭隘，文章不仅揭露问题，更着重批判和反思。",
+    "tip": "主旨题须纵观全文，区分引子/铺垫与核心论点，避免以偏概全。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "scold",
+    "cn": "v. 斥责，责骂"
+   },
+   {
+    "w": "at odds with",
+    "cn": "与……相矛盾，与……不一致"
+   },
+   {
+    "w": "indictment",
+    "cn": "n. 控诉，谴责；（法律）起诉书"
+   },
+   {
+    "w": "turnaround",
+    "cn": "n. 周转期，转变"
+   },
+   {
+    "w": "disposable",
+    "cn": "adj. 一次性的，用后即弃的"
+   },
+   {
+    "w": "hijack",
+    "cn": "v. 劫持，强行控制"
+   },
+   {
+    "w": "strain",
+    "cn": "v. 使紧张，消耗（资源）"
+   },
+   {
+    "w": "curb",
+    "cn": "v. 遏制，抑制"
+   },
+   {
+    "w": "sustainability",
+    "cn": "n. 可持续性"
+   },
+   {
+    "w": "knock off",
+    "cn": "v. 仿制，复制；（此处）轻易模仿"
+   },
+   {
+    "w": "dirt-cheap",
+    "cn": "adj. 极其便宜的，低廉到极点的"
+   },
+   {
+    "w": "vanity",
+    "cn": "n. 虚荣（心）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "This top-down conception of the fashion business couldn't be more out of date or at odds with the feverish world described in Overdressed, Elizabeth Cline's three-year indictment of \"fast fashion\".",
+    "cn": "这种自上而下的时尚产业观念与Elizabeth Cline历时三年对\"快时尚\"进行控诉的著作《Overdressed》中所描述的狂热世界相比，已经过时到了极点，也与之格格不入。",
+    "note": "couldn't be more...为否定词+比较级表最高级结构；or连接out of date和at odds with两个并列表语；described in Overdressed为后置定语修饰world；同位语从句解释Overdressed。"
+   },
+   {
+    "en": "By offering on-trend items at dirt-cheap prices, Cline argues, these brands have hijacked fashion cycles, shaking an industry long accustomed to a seasonal pace.",
+    "cn": "Cline认为，通过以极低的价格提供紧跟潮流的商品，这些品牌劫持了时尚周期，动摇了一个长期习惯于按季节运转的行业。",
+    "note": "By offering...为方式状语；Cline argues为插入语；shaking...为现在分词作伴随结果状语；long accustomed to...为过去分词短语后置修饰industry。"
+   },
+   {
+    "en": "She exhibits the idealism common to many advocates of sustainability, be it in food or in energy.",
+    "cn": "她展现了许多可持续发展倡导者所共有的理想主义，无论是在食品领域还是在能源领域。",
+    "note": "common to many advocates为形容词短语后置修饰idealism；be it in food or in energy为虚拟语气让步结构，相当于whether it be in food or in energy。"
+   }
+  ]
+ }
+}

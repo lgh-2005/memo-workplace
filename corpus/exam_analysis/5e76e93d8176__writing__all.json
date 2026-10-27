@@ -1,0 +1,122 @@
+{
+ "schemaVersion": 1,
+ "id": "5e76e93d8176__writing__all",
+ "examId": "5e76e93d8176",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2015 年 12 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T04:34:51.213Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 66896,
+ "usage": {
+  "prompt_tokens": 590,
+  "completion_tokens": 6917,
+  "total_tokens": 7507,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5863
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 590
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "本题为六级写作图画作文，要求根据图画内容，围绕网络误导信息的危害展开论述，字数150-200词，时间30分钟。",
+    "outline": [
+     "第一段：描述图画——一个人被大量网络信息包围，其中包含误导性内容，使其困惑焦虑，引出网络误导信息危害的主题。",
+     "第二段：分析危害——从误导公众认知、侵蚀社会信任、助长网络诈骗等方面展开，结合具体例子论证。",
+     "第三段：提出对策——个人提高媒介素养、平台加强审核、政府完善法律，呼吁共同努力营造健康网络环境。"
+    ],
+    "sample": "The picture vividly depicts a man overwhelmed by a deluge of online messages, such as sensational headlines and dubious health advice. Among them, several false claims stand out, and the man appears confused, anxious, and unable to distinguish truth from fiction. This scene reflects a growing problem: misleading information online can cause serious harm to individuals and society.\n\nFirst, such misinformation misleads public perception. For instance, health rumors may prompt patients to abandon effective medical treatments and resort to unproven remedies, thereby worsening their conditions or even endangering their lives. Second, it erodes social trust. Once people are repeatedly deceived by fake news, they may become cynical and distrust even reliable sources, which undermines the foundation of public communication. Third, misleading information often facilitates fraud. Scammers spread fake investment tips or phishing links to steal money and personal data, leaving victims financially ruined and emotionally distressed.\n\nTo counter these dangers, individuals should verify information before sharing it and improve their media literacy. Online platforms must strengthen content review and fact-checking mechanisms, while governments ought to enforce laws against rumor-mongering. Only by joint efforts can we create a trustworthy and healthy digital environment.",
+    "phrases": [
+     {
+      "en": "a deluge of online messages",
+      "cn": "大量网络信息（形容信息泛滥）"
+     },
+     {
+      "en": "sensational headlines",
+      "cn": "耸人听闻的标题"
+     },
+     {
+      "en": "dubious health advice",
+      "cn": "可疑的健康建议"
+     },
+     {
+      "en": "distinguish truth from fiction",
+      "cn": "辨别真伪"
+     },
+     {
+      "en": "misleads public perception",
+      "cn": "误导公众认知"
+     },
+     {
+      "en": "resort to unproven remedies",
+      "cn": "求助于未经证实的疗法"
+     },
+     {
+      "en": "erodes social trust",
+      "cn": "侵蚀社会信任"
+     },
+     {
+      "en": "facilitates fraud",
+      "cn": "助长欺诈"
+     },
+     {
+      "en": "phishing links",
+      "cn": "钓鱼链接"
+     },
+     {
+      "en": "media literacy",
+      "cn": "媒介素养"
+     }
+    ],
+    "pitfalls": [
+     "忽视图画描述，开头直接空谈危害，不符合图画作文要求。",
+     "危害分析缺乏具体例子，论证空洞，仅重复'有害'等空话。",
+     "词汇单调，反复使用simple words如bad, harmful，缺少高级表达。",
+     "字数不达标或超过200词，影响整体得分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "a lot of online messages",
+      "better": "a deluge of online messages",
+      "note": "deluge 意为洪水，形象表达信息泛滥，比 a lot of 更生动有力。"
+     },
+     {
+      "plain": "false information",
+      "better": "misleading information",
+      "note": "misleading 强调误导性，更符合网络虚假信息的特征，且更学术化。"
+     },
+     {
+      "plain": "people don't trust news",
+      "better": "erodes social trust",
+      "note": "erode 为高分动词，搭配 social trust 使表达更书面化、更精准。"
+     },
+     {
+      "plain": "check facts",
+      "better": "fact-checking mechanisms",
+      "note": "fact-checking 为专业术语，mechanisms 表示机制，比简单动词短语更正式。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The picture vividly depicts a man overwhelmed by a deluge of online messages, such as sensational headlines and dubious health advice.\n中文注释：生动描述图画内容，用词高级，适合图画作文开头。",
+   "Once people are repeatedly deceived by fake news, they may become cynical and distrust even reliable sources, which undermines the foundation of public communication.\n中文注释：长难句展示因果链，逻辑严密，提升论证深度。",
+   "Scammers spread fake investment tips or phishing links to steal money and personal data, leaving victims financially ruined and emotionally distressed.\n中文注释：分词短语作结果状语，具体说明危害，增强说服力。",
+   "Only by joint efforts can we create a trustworthy and healthy digital environment.\n中文注释：倒装句强调共同行动，适合结尾呼吁，简洁有力。"
+  ]
+ }
+}

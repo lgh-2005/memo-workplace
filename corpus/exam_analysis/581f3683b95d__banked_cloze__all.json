@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "581f3683b95d__banked_cloze__all",
+ "examId": "581f3683b95d",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2015 年 12 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T04:39:46.777Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 53951,
+ "usage": {
+  "prompt_tokens": 1199,
+  "completion_tokens": 5378,
+  "total_tokens": 6577,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3483
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1199
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "诺基亚衰败原因",
+  "gist": "本文分析了诺基亚从行业巨头到手机业务被出售的原因：CEO埃洛普决策失误、董事会抵制变革、管理层沉迷以往成功，以及激进成本削减导致企业文化恶化，最终使公司失去竞争力。",
+  "difficulty": "中等",
+  "translation": "科技行业似乎有一条定律：领先公司最终会失去其地位，而且往往是迅速而残酷地失去。手机冠军诺基亚，欧洲最成功的科技公司之一，也不例外，在短短几年内失去了市场份额。\n\n2007年，诺基亚占全球手机销量的40%以上。但消费者的偏好已经转向触屏智能手机。随着当年年中苹果iPhone的推出，诺基亚的市场份额迅速萎缩，收入暴跌。到2013年底，诺基亚已将其手机业务出售给微软。\n\n决定诺基亚命运的是斯蒂芬·埃洛普在2010年10月就任首席执行官后做出的一系列决策。埃洛普执掌诺基亚的每一天，公司市值都下降2300万美元，从数据上看，这使他成为历史上最糟糕的首席执行官之一。\n\n但埃洛普并不是唯一有过错的人。诺基亚董事会抵制变革，使公司无法适应行业的快速变化。最值得注意的是，曾带领诺基亚从一家工业公司转型为科技巨头的约尔马·奥利拉，过于沉迷于公司以往的成功，以至于没有认识到保持竞争力所需的变革。\n\n公司还开始了一项孤注一掷的成本削减计划，其中包括裁减数千个工作岗位。这导致了公司曾经充满活力的文化恶化，而这种文化曾激励员工去冒险和创造奇迹。优秀的领导者离开了公司，带走了诺基亚的愿景感和方向感。毫不奇怪，诺基亚许多最有价值的设计和编程人才也离开了。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "E",
+    "correct": "exception",
+    "why": "空格前为no，后为逗号，构成固定搭配no exception，意为“也不例外”。此处需要名词作表语，exception符合语义。",
+    "traps": "其他名词如fault、deterioration虽可作名词，但语义不通；形容词previous、desperate不能作no的宾语；动词或副词形式也不符合语法要求。",
+    "tip": "考查固定搭配no exception"
+   },
+   {
+    "number": 27,
+    "answer": "O",
+    "correct": "worldwide",
+    "why": "空格在mobile phone sales之后，需要副词或形容词作后置定语/状语，表示“全球范围内”。worldwide符合上下文。",
+    "traps": "assumed、shrank是动词，不能修饰名词；shifting是形容词但语义“变化的”不符；notably是副词但一般修饰动词或形容词，不表示范围。",
+    "tip": "考查worldwide作副词/形容词表示全球"
+   },
+   {
+    "number": 28,
+    "answer": "K",
+    "correct": "shifting",
+    "why": "空格在were already之后，需要现在分词构成进行时或表语，shifting toward表示“转向”，符合消费者偏好变化的语境。",
+    "traps": "assumed是过去分词，被动含义不对；shrank是过去式，不能与were连用；desperate、previous是形容词但语义不符。",
+    "tip": "考查shift的现在分词作表语/进行时"
+   },
+   {
+    "number": 29,
+    "answer": "L",
+    "correct": "shrank",
+    "why": "空格在Nokia's market share之后，需要谓语动词，时态为过去时。shrank（shrink的过去式）表示“萎缩”，与后文revenue plunged并列。",
+    "traps": "assumed是过去式但语义不对；shifting是现在分词不能单独作谓语；deterioration是名词不能作谓语。",
+    "tip": "考查不规则动词shrink的过去式shrank"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "correct": "assumed",
+    "why": "空格在which he之后，需要动词过去式作谓语，且与position as CEO搭配。assumed表示“就任，承担”，符合句意。",
+    "traps": "shrank是过去式但语义不符；desperate、previous是形容词不能作谓语；notably是副词不能作谓语。",
+    "tip": "考查assume表示“承担（职务）”的用法"
+   },
+   {
+    "number": 31,
+    "answer": "F",
+    "correct": "fault",
+    "why": "固定搭配at fault表示“有过错”，空格在at之后，需要名词。fault符合搭配和语义。",
+    "traps": "exception是名词但at exception无意义；deterioration是名词但at deterioration不搭配；其他形容词、副词等均不可。",
+    "tip": "考查固定搭配at fault"
+   },
+   {
+    "number": 32,
+    "answer": "H",
+    "correct": "notably",
+    "why": "空格在句首作状语，修饰整个句子，需要副词。notably表示“尤其，显著地”，引出最突出的例子，符合逻辑。",
+    "traps": "worldwide虽可作副词但语义不符；previous、desperate是形容词不能作状语；其他名词或动词形式不合适。",
+    "tip": "考查副词notably作句子状语"
+   },
+   {
+    "number": 33,
+    "answer": "I",
+    "correct": "previous",
+    "why": "空格在company's和success之间，需要形容词修饰success。previous表示“以前的”，与上下文“公司以前的成功”吻合。",
+    "traps": "desperate是形容词但“绝望的成功”语义不通；notably是副词不能修饰名词；exception是名词不能作定语；其他动词形式不合适。",
+    "tip": "考查形容词previous修饰名词"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "correct": "desperate",
+    "why": "空格在cost-cutting program前，需要形容词修饰。desperate表示“孤注一掷的，不顾一切的”，符合激进削减成本的语境。",
+    "traps": "previous是形容词但语义不符；worldwide是形容词但“全球的成本削减计划”与上下文不一致；其他词性不合适。",
+    "tip": "考查形容词desperate的引申义“孤注一掷的”"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "correct": "deterioration",
+    "why": "空格在the和of之间，需要名词。deterioration表示“恶化”，与“culture的恶化”搭配合理。",
+    "traps": "exception是名词但语义不通；fault是名词但“文化的过错”不搭配；其他形容词、副词、动词均不合适。",
+    "tip": "考查名词deterioration与of搭配"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "exception",
+    "cn": "n. 例外"
+   },
+   {
+    "w": "worldwide",
+    "cn": "adj./adv. 全球的/地"
+   },
+   {
+    "w": "shifting",
+    "cn": "v. 转移，改变（shift的现在分词）"
+   },
+   {
+    "w": "shrank",
+    "cn": "v. 收缩，萎缩（shrink的过去式）"
+   },
+   {
+    "w": "assumed",
+    "cn": "v. 承担；假定（assume的过去式）"
+   },
+   {
+    "w": "fault",
+    "cn": "n. 过错，故障"
+   },
+   {
+    "w": "notably",
+    "cn": "adv. 显著地，尤其"
+   },
+   {
+    "w": "previous",
+    "cn": "adj. 先前的，以前的"
+   },
+   {
+    "w": "desperate",
+    "cn": "adj. 绝望的；孤注一掷的"
+   },
+   {
+    "w": "deterioration",
+    "cn": "n. 恶化，退化"
+   },
+   {
+    "w": "revenue",
+    "cn": "n. 收入，收益"
+   },
+   {
+    "w": "plunged",
+    "cn": "v. 暴跌，骤降（plunge的过去式）"
+   }
+  ],
+  "skills": [
+   "快速通读全文，把握文章主题和空格前后逻辑。",
+   "判断每个空格所需词性（名词、动词、形容词、副词等）。",
+   "利用固定搭配和上下文语义缩小候选词范围。",
+   "注意动词时态、主谓一致以及名词单复数形式。",
+   "复读全文，核查填入后的语法和逻辑是否连贯。"
+  ]
+ }
+}

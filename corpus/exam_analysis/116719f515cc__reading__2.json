@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "116719f515cc__reading__2",
+ "examId": "116719f515cc",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 6 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:44:25.544Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 86214,
+ "usage": {
+  "prompt_tokens": 1803,
+  "completion_tokens": 6248,
+  "total_tokens": 8051,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1803,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 6248,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1803,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学家如何有效地向公众传播科学",
+  "gist": "文章围绕科学传播展开论述：首先肯定向公众传播科学的必要性，然后指出科学家应认识自身知识局限、跨学科话题需咨询专家；接着反驳\"公众无法理解科学\"的偏见；随后以生物学家复杂类比为反例，说明专家未必是合格传播者；最后强调科学传播本身是一门学问，科学家需接受专业传播训练。",
+  "structure": [
+   "以教授推文出错事件引出话题，指出科学传播的必要性（第1-2段）",
+   "建议科学家认识知识局限，跨学科话题应咨询专家（第3段）",
+   "反驳\"公众无力理解科学\"的偏见，以社交媒体为证（第4段）",
+   "专家未必是合格传播者，以复杂类比为反例说明（第5段）",
+   "科学传播需专业训练，科学家应提升传播能力（第6段）"
+  ],
+  "difficulty": "中等",
+  "translation": "几周前，一位好心的教授试图在一条推文中解释病毒与人体背后的生理过程，但立即因其信息中的错误而受到批评。随后他发表了道歉声明，并删除了那条错误的推文。\n\n将科学传播到学术圈之外，对于增进公众对健康和环境问题的理解、帮助个人做出明智的决定而言是必要的。\n\n然而，从事科学传播的科学家必须承认，即使在自己的领域内，他们的专业知识也是精深而狭窄的。他们需要认识到自身知识的局限性。这并不是说他们只能撰写或展示自己的研究内容，而是说，如果话题超出了他们的学科范围，就应该咨询相关专家。与该专业领域的科学家进行事实核查，可以防止无意中传播错误信息，而且这样做的过程中可能会获得一些有趣的新信息片段，可以被纳入其中。\n\n有些人认为公众的受教育程度不足以理解科学信息，尤其是复杂的现象，但这种说法是荒谬的。在各级公共教育中都能找到科学课程，大多数中学都开设了生物、物理和化学课程。如果说有什么的话，社交媒体表明公众渴望基于坚实科学基础的知识。即使是大多数科学文章后面的公众讨论也表明，在线读者甚至能理解最令人困惑的科学原理。\n\n同样重要的是要强调，在某一话题上是专家并不意味着学者就自动有资格将其传达给非科学受众。最近，许多科学家一直在提供面向公众的科学现象解释。尽管他们拥有适当的资质，但他们在解释方面往往做得很少。一位生物学家分享了一个涉及图书馆、书籍、纸张、食谱、食材和蛋糕的复杂类比来解释疫苗背后的过程。任何需要书面对照表来追踪每个事物所代表含义的解释，都不是适合公众理解的清晰范例。\n\n科学传播本身就是一门科学。它需要严格的培训和指导。科学家应该参加传播课程，学习如何识别和消除术语，以及如何开发有效的类比来解释复杂概念。一个人不能想当然地认为自己具备传播专业能力——试想一下，如果某人只是自行决定自己是物理学家，然后在没有必要背景的情况下就开始试图为该领域做贡献。拙劣的科学传播只会制造混乱，加大科学与社会之间的鸿沟，而这正是科学家们试图弥合的鸿沟。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Communicating science beyond the academic bubble is necessary to augmenting public understanding of health and environmental issues and helping individuals make well-informed personal decisions.",
+    "why": "原文第二段明确指出，将科学传播到学术圈之外，对于\"增进公众对健康和环境问题的理解\"以及\"帮助个人做出明智决定\"是必要的。B选项\"这是提升公众对科学问题理解的必要手段\"是对原文 necessary to augmenting public understanding 的精确同义改写，理解→understanding，科学问题→health and environmental issues，逻辑完全吻合。",
+    "traps": "A选项\"了解最新科学进展\"属于无中生有，原文未提及 latest scientific developments；C选项\"让公众更多参与学术辩论\"曲解原文，原文说的是增进理解而非参与辩论；D选项\"增强科学家在学术圈外的影响力\"偷换主语和对象，原文受益者是公众（public understanding），而非科学家的影响力。",
+    "tip": "注意区分\"谁受益\"：原文强调的是公众理解的提升，而非科学家地位的增强。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "That is not to suggest that they only write or present on their own research, but rather, that they consult with an expert if the topic is outside of their discipline.",
+    "why": "原文第三段用 but rather 转折明确建议：如果话题超出了自己的学科范围，就应该\"consult with an expert\"（咨询专家）。C选项\"Turn to a specialist for professional help\"（向专家寻求专业帮助）是对 consult with an expert 的同义替换，specialist 对应 expert，professional help 对应 consult，完全匹配原文建议。",
+    "traps": "A选项\"从新角度撰写或展示\"属于无中生有，原文并未建议换角度写作；B选项\"利用多种来源的信息\"原文未提及；D选项\"与本领域同事核查事实\"是偷换对象的陷阱——原文说的是与该专业领域（the specialty，即所讨论话题的领域）的科学家核查，而非与自己领域的同事。",
+    "tip": "注意 D 选项中 in their field 与原文 in the specialty 的区别，前者指自己的领域，后者指话题所属的专业领域。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "If anything, social media has shown that the public craves knowledge based on a solid scientific foundation. Even the public discourse that follows most scientific articles shows that online readers can understand even the most baffling of scientific principles.",
+    "why": "第四段先引出反方观点\"公众不够有文化来理解科学信息\"，作者驳斥其为\"荒谬\"，再以社交媒体为证据指出公众渴望科学知识，且在线讨论表明读者能理解最复杂的科学原理。D选项\"公众对科学的理解比某些人声称的要好得多\"精准概括了这一反驳逻辑：some have claimed 对应段首反方观点，much better 对应社交媒体所提供的正面证据。",
+    "traps": "A选项\"扎实的学术基础对理解科学原理必不可少\"曲解原文，原文说公众渴望基于坚实科学基础的知识，而非说需要学术基础才能理解；B选项\"现代技术促进了科学家与公众的沟通\"属于过度推断，原文未提及技术促进沟通；C选项\"科学文章越来越受欢迎\"在原文中无依据，原文强调的是公众能够理解而非文章受欢迎程度。",
+    "tip": "作者引用社交媒体证据的目的是反驳\"公众理解力不足\"的偏见，抓住论证目的即可锁定答案。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "It is equally imperative to emphasize that being an expert on a topic does not automatically make a scholar qualified to communicate it to a nonscientific audience.",
+    "why": "第五段的论点句开宗明义：在某一话题上是专家，并不自动意味着有资格向非科学受众传播。随后以生物学家过于复杂的类比为反面例证加以说明。C选项\"学识渊博的学者未必是合格的科学传播者\"直接对应该论点句中 does not automatically make a scholar qualified to communicate 的含义。例证题应回到论点句找答案。",
+    "traps": "A选项\"用图示来解释科学现象很有帮助\"反向理解了例子——该例子恰恰表明复杂类比无助于解释；B选项\"拥有适当头衔对解释科学问题至关重要\"曲解了 credentials 的作用，原文说有资质但解释做得差；D选项\"非科学受众无法理解科学原理\"把问题归咎于受众，而原文归因于传播者能力不足。",
+    "tip": "例证题的核心原则：例子服务于论点，答案应在例子前后的观点句中寻找，而非就例子本身作答。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "A scientist should take communication courses that can teach a person how to identify and eliminate jargon and how to develop effective analogies to explain complex concepts.",
+    "why": "最后一段指出科学传播本身是一门科学，需要严格训练，科学家应参加传播课程学习消除术语和开发有效类比。D选项\"Develop communication skills\"（提升传播技能）是对\"take communication courses\"\"identify and eliminate jargon\"\"develop effective analogies\"等一系列建议的高度概括，全面涵盖了作者的建议。",
+    "traps": "A选项\"科学地解释复杂概念\"偷换方式——作者强调的是用公众能理解的方式而非科学的方式来解释；B选项\"恰当使用科学术语\"与原文相反，原文建议的是 eliminate jargon（消除术语）；C选项\"参加公共演讲课程\"偷换概念，原文说的是 communication courses（传播课程）而非 public speaking（公共演讲），两者范畴不同。",
+    "tip": "B 选项是典型的反义陷阱，原文明确说要消除术语，而非恰当使用术语。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "physiological",
+    "cn": "adj. 生理的，生理学的"
+   },
+   {
+    "w": "erroneous",
+    "cn": "adj. 错误的，不正确的"
+   },
+   {
+    "w": "augmenting",
+    "cn": "v. 增加，增强（augment 的现在分词）"
+   },
+   {
+    "w": "constraints",
+    "cn": "n. 限制，约束（常用复数）"
+   },
+   {
+    "w": "misinformation",
+    "cn": "n. 错误信息，虚假信息"
+   },
+   {
+    "w": "craves",
+    "cn": "v. 渴望，迫切需要（crave 的第三人称单数）"
+   },
+   {
+    "w": "baffling",
+    "cn": "adj. 令人困惑的，难以理解的"
+   },
+   {
+    "w": "imperative",
+    "cn": "adj. 极其重要的，必要的；n. 紧迫的事"
+   },
+   {
+    "w": "intricate",
+    "cn": "adj. 复杂的，错综精细的"
+   },
+   {
+    "w": "credentials",
+    "cn": "n. 资质，资格证书；证明书"
+   },
+   {
+    "w": "jargon",
+    "cn": "n. 行话，术语，专业用语"
+   },
+   {
+    "w": "rigorous",
+    "cn": "adj. 严格的，严密的，缜密的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Communicating science beyond the academic bubble is necessary to augmenting public understanding of health and environmental issues and helping individuals make well-informed personal decisions.",
+    "cn": "将科学传播到学术圈之外，对于增进公众对健康和环境问题的理解以及帮助个人做出明智的决定而言是必要的。",
+    "note": "主语为动名词短语 Communicating science beyond the academic bubble；be necessary to 后接两个并列的动名词短语 augmenting... 和 helping...，构成双重目的。"
+   },
+   {
+    "en": "Fact-checking with a scientist who works in the specialty will prevent the unintentional spread of misinformation, and the process of doing so may yield tiny pieces of interesting new information that can be incorporated.",
+    "cn": "与该专业领域的科学家进行事实核查可以防止无意中传播错误信息，而且这一过程可能会产生一些可被纳入其中的有趣新信息片段。",
+    "note": "由 and 连接的并列句；前半句主语为动名词短语 Fact-checking with...，含 who 定语从句修饰 scientist；后半句中 that can be incorporated 为定语从句修饰 information。"
+   },
+   {
+    "en": "One cannot assume communication expertise—imagine if someone just decided that they were a physicist and started trying to contribute to the field without the necessary background.",
+    "cn": "一个人不能想当然地认为自己具备传播专业能力——试想一下，如果某人只是自行决定自己是物理学家，然后在没有必要背景的情况下就开始试图为该领域做贡献。",
+    "note": "破折号后用 imagine if 引出类比假设，if 从句中 decided 和 started 为并列谓语；trying to contribute 为 started 的宾语，without... 为条件状语。"
+   }
+  ]
+ }
+}

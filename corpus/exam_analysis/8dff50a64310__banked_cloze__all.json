@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "8dff50a64310__banked_cloze__all",
+ "examId": "8dff50a64310",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2018 年 6 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:21:44.056Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68015,
+ "usage": {
+  "prompt_tokens": 1360,
+  "completion_tokens": 4051,
+  "total_tokens": 5411,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1360,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4051,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1360,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "马斯克研发家用机器人引发的AI讨论",
+  "gist": "文章围绕埃隆·马斯克宣布用人工智能制造家用机器人展开，先介绍其过往商业成就以证明其可信度，再回应公众对AI的恐惧并指出这些担忧多属夸大，最后畅想家用机器人带来的种种便利，表达对这一新事业的欢迎与祝愿。",
+  "difficulty": "中等",
+  "translation": "当埃隆·马斯克说他新的首要任务是利用人工智能制造家用机器人时，我们应当满怀敬佩地期待那一天的到来。\n\n马斯克是一个能把事情办成的人。作为特斯拉汽车和SpaceX两家科技公司的创始人，他正在将电动汽车推向大众市场，并使人类能够在其他星球上生活。这听起来像是一番大话，但这位企业家积累的近130亿美元的财富来自于实实在在的成就，而非假设性的成果。\n\n许多聪明人对人工智能感到恐惧，担心机器人有一天会变得如此聪明以至于把我们全部杀掉。这些恐惧大多是被夸大的：正如对基因改造的歇斯底里一样，我们人类通常足够明智，能够迅速而谨慎地处理这些问题。\n\n试想一下，如果你有一个住家机器人，那将是多么美妙。它最终可能像一个保姆加护士的二合一——或者，如果这需要超出马斯克所设想的机器能力之外的情感智慧的话，至少可以有人来切胡萝卜、洗车和修剪草坪。一旦购买并训练完毕，这将使普通用户节省金钱和时间，在我们忙碌的生活中腾出宝贵的空间来读一本好书。\n\n这就是为什么我们欢迎马斯克最新的事业，并祝他一切顺利。只要机器人能增加人类幸福的总量、减少痛苦、并创造时间来阅读世界一流的新闻报道，我们就应该做它们的拥趸。尤其是，新闻报道是机器人永远无法胜任的工作。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "D",
+    "correct": "enabling",
+    "why": "此处与前面的bringing并列，需要动词-ing形式。enable sb to do sth意为\"使某人能够做某事\"，语义上表示马斯克使人类能在其他星球生活，与前文bringing electric vehicles to mass market构成并列递进关系。",
+    "traps": "其他动词形式如amassed为过去分词，不能与bringing并列；exaggerated和terrified虽也是-ed分词但词义不合语境。",
+    "tip": "注意与and前动词形式保持并列一致。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "correct": "amassed",
+    "why": "此处位于has后面，需要过去分词构成现在完成时。amass意为\"积累\"，amass a fortune是常见搭配，表示这位企业家积累了近130亿美元的财富，语义完全吻合。",
+    "traps": "exaggerated虽也是过去分词但与fortune不搭配；enabling是现在分词形式，不能构成完成时。",
+    "tip": "has+过去分词锁定完成时态，再看名词搭配。"
+   },
+   {
+    "number": 28,
+    "answer": "N",
+    "correct": "terrified",
+    "why": "be terrified about是固定搭配，意为\"对……感到恐惧\"。后文fearing that robots will murder all of us进一步解释了这种恐惧情绪，上下文语义高度一致。",
+    "traps": "emotional虽可作表语形容词，但表示\"情绪化的\"，不能准确表达对AI的恐惧；casual语义不符。",
+    "tip": "根据后文fearing和murder判断情绪色彩为\"恐惧\"。"
+   },
+   {
+    "number": 29,
+    "answer": "L",
+    "correct": "smart",
+    "why": "become后需接形容词作表语，so…that…结构表示\"如此……以至于\"。smart意为\"聪明的\"，表示机器人变得极其聪明以至于会杀掉人类，与上下文对AI智能的担忧完美契合。",
+    "traps": "able类含义的词虽合语法但选项中无更佳选择；emotional语义方向不对，此处强调的是智能程度而非情感。",
+    "tip": "become+adj.+so…that…结构定位形容词。"
+   },
+   {
+    "number": 30,
+    "answer": "F",
+    "correct": "exaggerated",
+    "why": "fears are exaggerated意为\"恐惧被夸大了\"，作表语。后文用as with hysteria类比说明这些恐惧是过度反应，且强调人类有智慧管理问题，逻辑上支持\"夸大\"一词。",
+    "traps": "amassed是\"积累的\"，与fears搭配不当；terrified是形容人的感受而非修饰fears本身。",
+    "tip": "冒号后的解释句是判断该空语义的关键依据。"
+   },
+   {
+    "number": 31,
+    "answer": "E",
+    "correct": "eventually",
+    "why": "该空位于两个逗号之间，为插入语位置，需要副词。eventually意为\"最终，终有一天\"，表达对未来机器人功能的展望，语气恰当且符合句法要求。",
+    "traps": "其他副词类选项在候选池中不如eventually语义贴切；形容词和名词在此位置语法不通。",
+    "tip": "两逗号间插入语位置优先考虑副词。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "correct": "emotional",
+    "why": "emotional intelligence意为\"情感智能/情商\"，是固定搭配。文章说如果保姆加护士的功能需要超出机器能力的情感智能，那至少可以做简单家务，逻辑通顺。",
+    "traps": "casual intelligence或precious intelligence均非固定搭配，语义也不通；smart是形容词但不与intelligence构成惯用搭配。",
+    "tip": "emotional intelligence是高频固定搭配，直接锁定。"
+   },
+   {
+    "number": 33,
+    "answer": "B",
+    "correct": "casual",
+    "why": "casual user意为\"普通用户/一般用户\"，指并非专业人士的日常使用者。文章讨论的是家用机器人对普通家庭用户的好处，casual恰好表达这层含义。",
+    "traps": "emotional user语义不当；precious user搭配不自然。形容词位置虽多词可填，但需兼顾与user的搭配习惯。",
+    "tip": "casual user是常见搭配，表示\"普通/日常用户\"。"
+   },
+   {
+    "number": 34,
+    "answer": "J",
+    "correct": "precious",
+    "why": "precious space意为\"宝贵的空间/时间\"，形容词修饰名词。在忙碌生活中腾出\"宝贵的\"空间来读书，precious准确传达了时间稀缺的含义，与busy lives形成呼应。",
+    "traps": "emotional space虽语法可行但语义偏向\"情感空间\"，偏离原意；其余形容词已用于其他空格。",
+    "tip": "结合busy lives判断space的修饰词应强调\"珍贵稀缺\"。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "venture",
+    "why": "latest venture意为\"最新的事业/创业项目\"，名词作welcome的宾语。venture指带有冒险性质的商业尝试，与马斯克进军家用机器人领域的新举措完全吻合。",
+    "traps": "其他名词类选项在候选池中无更合适的与latest搭配的词；动词和形容词在此处语法不通，因为需要名词作宾语。",
+    "tip": "latest+名词结构，venture指\"新的商业冒险/项目\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "amass",
+    "cn": "v. 积累，积聚（财富、信息等）"
+   },
+   {
+    "w": "venture",
+    "cn": "n. 冒险事业，风险项目；v. 冒险"
+   },
+   {
+    "w": "exaggerated",
+    "cn": "adj. 夸大的，言过其实的"
+   },
+   {
+    "w": "terrified",
+    "cn": "adj. 极度恐惧的，吓坏了的"
+   },
+   {
+    "w": "hysteria",
+    "cn": "n. 歇斯底里，大众恐慌"
+   },
+   {
+    "w": "hypothetical",
+    "cn": "adj. 假设的，假定的"
+   },
+   {
+    "w": "entrepreneur",
+    "cn": "n. 企业家，创业者"
+   },
+   {
+    "w": "genetic modification",
+    "cn": "n. 基因改造"
+   },
+   {
+    "w": "babysitter",
+    "cn": "n. 临时保姆，代看小孩的人"
+   },
+   {
+    "w": "mow the lawn",
+    "cn": "短语 修剪草坪"
+   },
+   {
+    "w": "rolled into one",
+    "cn": "短语 合为一体，兼于一身"
+   },
+   {
+    "w": "emotional intelligence",
+    "cn": "n. 情感智能，情商"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性（名词/动词/形容词/副词）分类。",
+   "第二步：根据每个空格的语法位置（主语/谓语/表语/定语/状语）锁定所需词性，缩小候选范围。",
+   "第三步：结合上下文语义和固定搭配（如emotional intelligence、amass fortune）精准选词。",
+   "第四步：注意并列结构的一致性（如enabling与bringing并列）和时态标志词（如has+过去分词）。",
+   "第五步：完成后回读全文，检查语法通顺性和语义连贯性，确保每词只用一次。"
+  ]
+ }
+}

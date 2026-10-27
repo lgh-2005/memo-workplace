@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "a0351b9e939b__reading__4",
+ "examId": "a0351b9e939b",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2002 年考研英语真题（旧）",
+ "year": 2002,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:13:16.800Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 99638,
+ "usage": {
+  "prompt_tokens": 1802,
+  "completion_tokens": 6054,
+  "total_tokens": 7856,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1802,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 6054,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1802,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "医助自杀裁决与临终疼痛管理",
+  "gist": "文章围绕美国最高法院对医助自杀的裁决展开，阐述了法院虽否定医助自杀的宪法权利，但支持\"双重效果\"原则，允许医生使用大剂量止痛药缓解临终痛苦。文章还引述多位专家观点，讨论了临终关怀中止痛不足与过度医疗两大问题，呼吁改善临终医疗标准并追究不当管理疼痛的医生责任。",
+  "structure": [
+   "第1-3段：介绍最高法院裁决及'双重效果'原则的含义与应用",
+   "第4-5段：引述专家观点，论证医生合法止痛行为的法律依据",
+   "第6-7段：指出现代医学延长临终痛苦的现实及NAS报告揭示的两大问题",
+   "第8-9段：阐述医疗界改进措施及对失职医生的问责呼吁"
+  ],
+  "difficulty": "中等",
+  "translation": "最高法院关于医助自杀的裁决对医学界如何为临终患者缓解疼痛和痛苦具有重要影响。\n\n尽管法院裁定医助自杀不是一项宪法权利，但法院实际上支持了\"双重效果\"这一医学原则。这是一项有数百年历史的道德原则，它认为：一项行为若产生两种效果——一种是有意为之的好效果，另一种是可预见的有害效果——只要行为者只追求好的效果，该行为就是被允许的。\n\n近年来，医生们利用这一原则来为使用大剂量吗啡控制绝症患者疼痛的做法辩护，尽管不断增加的剂量最终会导致患者死亡。\n\n蒙特菲奥里医疗中心主任南希·杜布勒认为，该原则将保护那些\"直到现在还非常、非常坚决地坚持认为，如果可能加速死亡，他们就不能给予患者足够的药物来控制疼痛\"的医生。\n\n波士顿大学卫生法系主任乔治·安纳斯认为，只要医生出于合法医疗目的开具药物处方，即使患者用该药物加速了死亡，医生也没有做任何违法的事。\"这就像外科手术一样，\"他说，\"我们不会把那些死亡称为凶杀，因为医生们并无意杀死他们的病人，尽管他们冒了患者死亡的风险。如果你是一名医生，只要你不是有意促成病人自杀，你就可以承受病人自杀的风险。\"\n\n在另一个层面上，医学界的许多人承认，医助自杀的争论在一定程度上是由那些被现代医学延长了临终肉体痛苦的患者的绝望所推动的。\n\n就在法院对医助自杀做出裁决的三周前，美国国家科学院发布了一份两卷本的报告《走近死亡：改善临终关怀》。报告指出，对疼痛的治疗不足以及大胆使用\"可能延长甚至亵渎临终阶段的无效和强制性医疗程序\"是临终关怀的两大问题。\n\n该行业正在采取措施，要求年轻医生在临终关怀机构进行培训，测试其对积极止痛疗法的知识掌握情况，制定基于医院护理的医保报销编码，以及制定评估和治疗临终疼痛的新标准。\n\n安纳斯说，律师可以在确保这些善意的医疗举措转化为更好的护理方面发挥关键作用。\"大量医生似乎对其患者正在不必要地、可预见地遭受的疼痛漠不关心\"，其程度已构成\"系统性的患者虐待\"。他说，医疗执照管理委员会\"必须明确……痛苦的死亡在推定上属于管理不当，应导致执照被吊销\"。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Although it ruled that there is no constitutional right to physician-assisted suicide, the Court in effect supported the medical principle of \"double effect\"",
+    "why": "前三段的核心信息是：法院裁定医助自杀不是宪法权利（即仍属非法），但通过支持\"双重效果\"原则，允许医生在止痛过程中出现加速死亡的副作用。这说明医生直接帮助患者结束生命仍然是非法的，只是为合法医疗目的下的止痛行为提供了保护。B选项准确概括了这一推断。",
+    "traps": "A项\"used to\"暗示过去做现在不做了，而原文说\"in recent years\"，表明目前仍在使用大剂量止痛药，属于时态偷换。C项\"strongly opposes\"过度推断，法院只是否定了宪法权利，并未\"强烈反对\"，且还支持了双重效果原则。D项偷换概念，法院裁定的是不存在\"医助自杀\"的宪法权利，而非患者自行自杀的权利。",
+    "tip": "注意区分'否定宪法权利'与'强烈反对'的语义差别。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "the Court in effect supported the medical principle of \"double effect\"... Doctors have used that principle in recent years to justify using high doses of morphine to control terminally ill patients' pain",
+    "why": "法院支持了\"双重效果\"原则，该原则使医生有权使用大剂量吗啡来控制绝症患者的疼痛。这意味着法院实质上认可了开具大剂量止痛药处方的合法性。C选项\"法院裁定可以开具大剂量止痛药物\"是对这一推理链的准确概括。",
+    "traps": "A项与原文相反，Annas明确说只要出于合法医疗目的，医生冒患者死亡风险不算违法。B项\"painless recovery（无痛康复）\"严重歪曲原文，第六段明确说现代医学延长了临终的肉体痛苦。D项与原文相反，Annas强调医生的意图（legitimate medical purpose）正是其行为合法的依据。",
+    "tip": "选'true'的题型要逐项验证，特别注意与原文意思相反的选项。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "It identifies the undertreatment of pain and the aggressive use of \"ineffectual and forced medical procedures that may prolong and even dishonor the period of dying\" as the twin problems of end-of-life care.",
+    "why": "NAS报告明确指出临终关怀的两大问题是：一是对疼痛的治疗不足（undertreatment of pain），二是大胆使用无效的强制性医疗程序。B选项\"inadequate treatment of pain\"（对疼痛的治疗不足）是对\"undertreatment of pain\"的同义改写，完全吻合。",
+    "traps": "A项\"prolonged medical procedures\"偷换了原文语义，原文说的是医疗程序延长了临终阶段（prolong the period of dying），而非程序本身被延长。C项\"systematic drug abuse\"是第九段Annas所说的\"systematic patient abuse\"的偷换，且不属于NAS报告内容。D项\"insufficient hospital care\"在原文中无对应依据。",
+    "tip": "同义替换是细节题的核心考点，注意原词与选项的对应关系。"
+   },
+   {
+    "number": 39,
+    "answer": "A",
+    "type": "词义句意题",
+    "locate": "the aggressive use of \"ineffectual and forced medical procedures that may prolong and even dishonor the period of dying\"",
+    "why": "原文中\"aggressive\"修饰的是对无效医疗程序的使用方式，结合上下文，这里指的是医疗手段的使用态度积极大胆、力度强硬，即不惜一切代价地强力推行这些医疗程序。Bold意为\"大胆的、强有力的\"，最贴近此处\"aggressive\"的语义——积极主动、不顾后果地大量使用。",
+    "traps": "B项Harmful（有害的）虽然这些程序的结果可能有害，但aggressive本身不表示\"有害\"，属于混淆词义与结果。C项Careless（粗心的）与aggressive的语义方向无关。D项Desperate（绝望的）是对情境的过度联想，aggressive不含\"绝望\"之义。",
+    "tip": "词义题需代入原句语境验证，区分词的本义与上下文含义。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Large numbers of physicians seem unconcerned with the pain their patients are needlessly and predictably suffering... painful deaths are presumptively ones that are incompetently managed and should result in license suspension",
+    "why": "Annas批评大量医生对患者不必要的、可预见的痛苦漠不关心，并认为这构成\"系统性的患者虐待\"，要求吊销让患者痛苦死去的医生的执照。其核心关切是医生任由患者承受不必要的痛苦，D选项\"延长患者不必要的痛苦\"精确概括了Annas认为应受惩罚的行为。",
+    "traps": "A项\"manage their patients incompetently\"过于宽泛，Annas特指的是疼痛管理不当导致患者不必要地受苦，而非泛泛的诊疗失误。B项\"给患者过多药物\"与原文相反，Annas批评的恰恰是止痛不足。C项\"减少药物剂量\"虽可能导致止痛不足，但原文并未直接提到减少剂量的问题，属于过度推理。",
+    "tip": "推断题要聚焦人物论点的核心关切，避免选择过于宽泛或偏离重点的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "physician-assisted suicide",
+    "cn": "医助自杀（n.短语）"
+   },
+   {
+    "w": "constitutional",
+    "cn": "宪法的，合宪的（adj.）"
+   },
+   {
+    "w": "permissible",
+    "cn": "可允许的，被许可的（adj.）"
+   },
+   {
+    "w": "morphine",
+    "cn": "吗啡（n.）"
+   },
+   {
+    "w": "terminally ill",
+    "cn": "患绝症的，病入膏肓的（adj.短语）"
+   },
+   {
+    "w": "hasten",
+    "cn": "加速，催促（v.）"
+   },
+   {
+    "w": "homicide",
+    "cn": "杀人罪，凶杀（n.）"
+   },
+   {
+    "w": "agony",
+    "cn": "极度痛苦，剧痛（n.）"
+   },
+   {
+    "w": "hospice",
+    "cn": "临终关怀机构（n.）"
+   },
+   {
+    "w": "presumptively",
+    "cn": "据推定地，假定地（adv.）"
+   },
+   {
+    "w": "contend",
+    "cn": "主张，声称；争辩（v.）"
+   },
+   {
+    "w": "ineffectual",
+    "cn": "无效的，徒劳的（adj.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Although it ruled that there is no constitutional right to physician-assisted suicide, the Court in effect supported the medical principle of \"double effect\", a centuries-old moral principle holding that an action having two effects—a good one that is intended and a harmful one that is foreseen—is permissible if the actor intends only the good effect.",
+    "cn": "尽管法院裁定医助自杀不是一项宪法权利，但法院实际上支持了\"双重效果\"这一医学原则——这是一项有数百年历史的道德原则，它认为：一项行为若产生两种效果——一种是有意为之的好效果，另一种是可预见的有害效果——只要行为者只追求好的效果，该行为就是被允许的。",
+    "note": "主句为Although引导的让步状语从句+主句；逗号后为同位语解释double effect；holding引导现在分词作定语；破折号内为插入成分补充说明两种效果。"
+   },
+   {
+    "en": "It identifies the undertreatment of pain and the aggressive use of \"ineffectual and forced medical procedures that may prolong and even dishonor the period of dying\" as the twin problems of end-of-life care.",
+    "cn": "报告指出，对疼痛的治疗不足以及大胆使用\"可能延长甚至亵渎临终阶段的无效和强制性医疗程序\"是临终关怀的两大问题。",
+    "note": "identify...as...结构为主干；and连接两个并列宾语（undertreatment和aggressive use）；that引导定语从句修饰procedures。"
+   },
+   {
+    "en": "He says medical licensing boards \"must make it clear…that painful deaths are presumptively ones that are incompetently managed and should result in license suspension\".",
+    "cn": "他说，医疗执照管理委员会\"必须明确……痛苦的死亡在推定上属于管理不当，应导致执照被吊销\"。",
+    "note": "make it clear that...为形式宾语结构；that从句中ones指代deaths；that are incompetently managed为定语从句修饰ones；should result与are并列。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "e36b16edc748__reading__1",
+ "examId": "e36b16edc748",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年 6 月英语六级真题（第 3 套）",
+ "year": 2026,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:08:25.096Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55850,
+ "usage": {
+  "prompt_tokens": 1883,
+  "completion_tokens": 3834,
+  "total_tokens": 5717,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1883,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3834,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1883,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "艺术家起诉AI公司侵犯版权",
+  "gist": "三位艺术家对Stability AI等公司提起诉讼，指控其文本转图像AI工具未经许可使用大量受版权保护的艺术作品进行训练，侵犯了艺术家的知识产权。文章围绕诉讼理由、AI对艺术行业的威胁、艺术家的愤怒以及AI支持者援引\"合理使用\"条款进行辩护展开讨论。",
+  "structure": [
+   "第1-3段：交代诉讼背景，三位艺术家起诉AI公司侵权",
+   "第4段：律所声明，指出AI工具将淘汰艺术家职业",
+   "第5-6段：艺术家反对AI工具的原因及行动",
+   "第7段：过渡段，点明艺术家与立法者试图遏制AI发展",
+   "第8-9段：AI支持者以'合理使用'条款辩护及其局限性"
+  ],
+  "difficulty": "中等",
+  "translation": "三位艺术家对Stability AI、DeviantArt和Midjourney提起了诉讼，指控这些文本转图像AI工具侵犯了数千名艺术家的权利。\n\n该诉讼称，Stability AI、DeviantArt和Midjourney所使用的Stable Diffusion工具是在从互联网下载的数十亿张受版权保护的图像上进行训练的，这些公司\"未经艺术家的同意，也未给予任何补偿\"就使用了这些图像。\n\n这些艺术家由约瑟夫·萨维里律师事务所和马修·巴特里克代理。\n\n\"如果Stable Diffusion和类似产品被允许像现在这样继续运营，可以预见的结果是，它们将取代那些被盗作品为这些AI产品提供动力的艺术家，而这些AI产品正在与艺术家竞争，\"该律师事务所在一份新闻稿中写道。\"AI图像产品不仅仅是对艺术家权利的侵犯；它们还将使'艺术家'不再是一条可行的职业道路。除了就不当行为寻求赔偿外，本诉讼还旨在防止这种结果的出现，并确保这些产品遵守与任何其他涉及大量使用知识产权的新技术相同的规则。如果流媒体音乐可以在法律框架内运营，AI产品也可以。\"\n\n自从文本转图像生成器在过去一年中越来越受欢迎以来，许多艺术家在看到自己扭曲的签名出现在AI艺术中，并发现自己的作品被未经许可用于训练这些工具后，纷纷表达了对AI艺术的反对。\n\n许多艺术家不仅对AI艺术可能存在的版权侵犯感到愤怒，而且还对AI工具能够绕过他们必须经历的劳动和艺术创作过程感到沮丧。因此，许多艺术家一直在试图将AI艺术从艺术分享平台上禁止。\n\n随着AI创新以飞快的速度持续推进，艺术家和立法者似乎正试图在为时已晚之前给进一步的发展踩刹车。\n\n许多技术爱好者仍在为AI工具能够以低成本和快速度创建精细图像的前景而欢呼——匿名的技术支持者已经在一个网站上发布了对巴特里克和约瑟夫·萨维里诉讼的回应，以\"合理使用\"条款作为版权图像可被该工具使用的依据。\n\n合理使用是一项法律原则，允许在未经原创作者许可的情况下，出于教学和新闻分享等目的，有限度地使用受版权保护的材料。许多生成式模型创建者声称其训练数据受该条款的保护。然而，由于合理使用对每个案例的适用情况不同，很难对数据集中的所有作品一概而论地认为其均适用。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "alleging that the text-to-image AI tools have infringed the rights of thousands of artists.",
+    "why": "原文第一段明确指出三位艺术家提起诉讼的原因是这些文本转图像AI工具侵犯了数千名艺术家的权利；第二段进一步说明其训练数据使用了数十亿张受版权保护的图像，未经艺术家同意也未给予补偿。B选项中的'intellectual property rights'（知识产权）正是对原文'infringed the rights'和'copyrighted images'的准确概括。",
+    "traps": "A项\"违反法律\"说法过于笼统，原文强调的是侵犯艺术家的权利而非笼统的违法；C项\"阻止所有AI工具在艺术创作中的使用\"属于过度引申，原文并未提出禁止所有AI工具；D项\"防止艺术家被迫依赖AI工具\"在原文中完全没有提及，属于无中生有。",
+    "tip": "注意题干关键词'why'，回到原文首段找直接原因。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "the foreseeable result is they will replace the very artists whose stolen works power these AI products with whom they are competing",
+    "why": "律师事务所在新闻稿中明确指出，如果这些产品继续像现在这样运营，可预见的结果是它们将取代那些艺术家，并且使'艺术家'不再是一条可行的职业道路（eliminate 'artist' as a viable career path）。这意味着艺术家将失去谋生手段，C选项'Artists will lose their means of subsistence'是对此的准确概括。",
+    "traps": "A项\"知识产权法难以执行\"原文未提及，属于无中生有；B项\"更少艺术家投入才华\"是对原文的曲解，原文说的是职业本身被消灭，而非艺术家主动减少投入；D项\"复制品充斥市场\"原文没有相关表述，属于过度推断。",
+    "tip": "注意定位到law firm的直接引语，'viable career path'对应'means of subsistence'。"
+   },
+   {
+    "number": 48,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "they have also been frustrated by how AI tools are able to sidestep the labor and art processes they are required to go through",
+    "why": "原文第六段用'Not only...but also...'结构，前半句提到版权侵犯，后半句指出艺术家还因AI工具能够绕过（sidestep）他们必须经历的劳动和艺术创作过程而感到沮丧。D选项中'bypass the considerable labor involved in creating art works'与原文'sidestep the labor and art processes'完全对应，sidestep和bypass同义替换。",
+    "traps": "A项\"AI作品未被禁止出现在分享平台\"虽在原文有所提及，但这是艺术家采取的行动而非他们愤怒的原因；B项\"文本转图像生成器流行\"是背景信息，并非让艺术家愤怒的直接原因；C项\"扭曲签名越来越频繁出现\"出现在上一段，是他们反对AI艺术的原因之一，但题干问的是'aside from copyright infringement'之外的原因，签名问题属于版权侵犯范畴。",
+    "tip": "注意'aside from'提示需找版权侵犯之外的原因，定位'but also'后半句。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "anonymous tech supporters have already published a response to Butterick and Joseph Saveri's lawsuit on a website, using the \"fair use\" clause as the basis for why copyrighted images could be used by the tool.",
+    "why": "原文第八段指出匿名技术支持者以\"合理使用\"条款为依据，论证版权图像可以被AI工具使用。第九段进一步解释，合理使用允许在未经原创作者许可的情况下有限度地使用受版权保护的材料。C选项'They support AI's limited use of copyrighted images without permission'准确概括了他们的立场。",
+    "traps": "A项'期待AI工具创作高质量艺术品'虽然第八段提到创建详细图像，但这并非他们的核心论点，且'good-quality art works'偷换了概念；B项'艺术家可以像教师一样使用版权材料'张冠李戴，原文说的是AI工具而非艺术家使用；D项'希望合理使用条款适用于数据集中所有作品'恰恰是作者最后反驳的观点，而非AI爱好者的明确主张。",
+    "tip": "区分AI支持者的立场与作者对该立场的评论。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "However, since fair use applies differently to each case, it's hard to make a blanket statement about all works in a dataset as being applicable.",
+    "why": "文章最后一句是作者的评论，指出合理使用对每个案例的适用情况不同（applies differently to each case），很难做出一概而论的判断。这表明作者认为'合理使用'条款的适用存在不同的解读方式，取决于具体情况。D选项'It is subject to different interpretations'（它可能有不同的解读）准确概括了作者的态度。",
+    "traps": "A项\"它可能决定案件最终判决\"原文未提及；B项\"它可能不适用于本案\"过于绝对，作者只是说不能一概而论，并未否定其适用性；C项\"它不涵盖所有艺术家的作品\"虽与原文有一定关联，但曲解了作者本意，作者强调的是逐案适用的不确定性而非覆盖范围。",
+    "tip": "注意文章末段常表达作者态度，'applies differently to each case'是关键线索。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "allege",
+    "cn": "v. 指控，声称（尤指未经证实的）"
+   },
+   {
+    "w": "infringe",
+    "cn": "v. 侵犯，违反（权利、法律等）"
+   },
+   {
+    "w": "compensation",
+    "cn": "n. 赔偿，补偿"
+   },
+   {
+    "w": "viable",
+    "cn": "adj. 可行的，切实可行的"
+   },
+   {
+    "w": "vocalize",
+    "cn": "v. 公开表达，说出"
+   },
+   {
+    "w": "sidestep",
+    "cn": "v. 回避，绕过"
+   },
+   {
+    "w": "rally around",
+    "cn": "v. 团结支持，聚集声援"
+   },
+   {
+    "w": "doctrine",
+    "cn": "n. 原则，学说，信条"
+   },
+   {
+    "w": "generative",
+    "cn": "adj. 生成的，有生产力的"
+   },
+   {
+    "w": "blanket statement",
+    "cn": "n. 笼统的声明，一概而论的说法"
+   },
+   {
+    "w": "foreseeable",
+    "cn": "adj. 可预见的，可预料的"
+   },
+   {
+    "w": "dataset",
+    "cn": "n. 数据集"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "If Stable Diffusion and similar products are allowed to continue to operate as they do now, the foreseeable result is they will replace the very artists whose stolen works power these AI products with whom they are competing",
+    "cn": "如果Stable Diffusion和类似产品被允许像现在这样继续运营，可以预见的结果是，它们将取代那些被盗作品为这些AI产品提供动力的艺术家，而这些AI产品正在与艺术家竞争。",
+    "note": "主句为'the foreseeable result is they will replace the very artists'；'whose stolen works power these AI products'为定语从句修饰artists；'with whom they are competing'为介词前置的定语从句，说明AI产品与艺术家形成竞争关系。"
+   },
+   {
+    "en": "Fair use, a legal doctrine that allows for a limited usage of copyrighted materials without permission by the original creators for purposes such as teaching and news sharing, is what a lot of generative model creators claim that their training data is covered by.",
+    "cn": "合理使用是一项法律原则，允许在未经原创作者许可的情况下，出于教学和新闻分享等目的，有限度地使用受版权保护的材料。许多生成式模型创建者声称其训练数据受该条款的保护。",
+    "note": "主干为'Fair use is what...creators claim...is covered by'；中间'a legal doctrine that allows for...'为同位语从句解释fair use；末尾'what...claim that...is covered by'为表语从句嵌套宾语从句，by与covered搭配。"
+   },
+   {
+    "en": "However, since fair use applies differently to each case, it's hard to make a blanket statement about all works in a dataset as being applicable.",
+    "cn": "然而，由于合理使用对每个案例的适用情况不同，很难对数据集中的所有作品一概而论地认为其均适用。",
+    "note": "since引导原因状语从句；主句用it作形式主语，真正主语为不定式'to make a blanket statement'；'as being applicable'为介词短语作补语说明all works的性质。"
+   }
+  ]
+ }
+}

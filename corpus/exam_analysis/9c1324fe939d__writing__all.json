@@ -1,0 +1,249 @@
+{
+ "schemaVersion": 1,
+ "id": "9c1324fe939d__writing__all",
+ "examId": "9c1324fe939d",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2017 年考研英语真题",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  51,
+  52
+ ],
+ "generatedAt": "2026-10-27T08:45:59.185Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 99771,
+ "usage": {
+  "prompt_tokens": 738,
+  "completion_tokens": 1653,
+  "total_tokens": 2391,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 738,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1653,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 738,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作（推荐信/建议信）：以李明身份给新到任的澳大利亚教授James Cook写一封邮件，推荐所在城市的旅游景点并说明推荐理由。",
+    "outline": [
+     "第一段：自我介绍、表示欢迎，说明写信目的——推荐本市旅游景点",
+     "第二段：具体推荐两到三个景点，分别给出推荐理由（如历史文化价值、自然风光、美食体验等）",
+     "第三段：表达愿意陪同游览的意愿，礼貌收尾并期待回复"
+    ],
+    "sample": "Dear Professor Cook,\n\nWelcome to Beijing! I am Li Ming, a postgraduate student in the School of Foreign Languages. Learning that you have recently arrived, I am writing to recommend some tourist attractions that may enrich your experience here.\n\nFirst and foremost, I would strongly suggest a visit to the Palace Museum, where you can marvel at the magnificent imperial architecture and gain a profound understanding of Chinese history spanning over six centuries. Additionally, the Summer Palace is well worth exploring for its breathtaking landscape of classical gardens and tranquil lakes. Should you have a taste for local delicacies, Nanluoguxiang is an ideal destination, offering authentic Beijing snacks alongside charming traditional hutong culture.\n\nI would be more than delighted to serve as your guide if your schedule permits. Please do not hesitate to contact me for further information.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "enrich your experience",
+      "cn": "丰富您的体验；用于推荐语境，比enjoy yourself更高级"
+     },
+     {
+      "en": "marvel at",
+      "cn": "对……惊叹不已；表达赞叹之情，比look at更生动"
+     },
+     {
+      "en": "gain a profound understanding of",
+      "cn": "深入了解……；比learn about更正式、更有深度"
+     },
+     {
+      "en": "is well worth exploring",
+      "cn": "非常值得探索；worth + doing结构的高分表达"
+     },
+     {
+      "en": "breathtaking landscape",
+      "cn": "令人叹为观止的风景；形容词breathtaking比beautiful更出彩"
+     },
+     {
+      "en": "Should you have a taste for",
+      "cn": "倘若您喜好……；虚拟条件句倒装省略if，展示语法功底"
+     },
+     {
+      "en": "serve as your guide",
+      "cn": "担任您的向导；比show you around更正式得体"
+     },
+     {
+      "en": "do not hesitate to contact me",
+      "cn": "请随时联系我；书信结尾常用礼貌套语"
+     },
+     {
+      "en": "spanning over six centuries",
+      "cn": "跨越六个多世纪；现在分词作后置定语，简洁有力"
+     },
+     {
+      "en": "more than delighted",
+      "cn": "非常乐意；more than + adj. 表示'不仅仅是'，程度加深"
+     }
+    ],
+    "pitfalls": [
+     "格式错误：遗漏Dear Professor Cook称呼或结尾署名Li Ming，直接扣分",
+     "推荐理由缺失：只列景点名称不给理由，不符合题目give reasons要求",
+     "语域不当：给教授写信用过于口语化表达如wanna/gonna，有失礼貌",
+     "景点描述空泛：仅说very beautiful/very nice，缺乏具体细节支撑",
+     "字数不达标：Part A要求约100词，低于80词或超过150词均可能影响得分"
+    ],
+    "upgrades": [
+     {
+      "plain": "The Palace Museum is very beautiful and has a long history.",
+      "better": "The Palace Museum, where you can marvel at the magnificent imperial architecture, offers a profound glimpse into Chinese history spanning over six centuries.",
+      "note": "用where引导的非限制性定语从句替代简单句，信息密度更高，表达更学术"
+     },
+     {
+      "plain": "I suggest you go to the Summer Palace. It has nice gardens.",
+      "better": "The Summer Palace is well worth exploring for its breathtaking landscape of classical gardens and tranquil lakes.",
+      "note": "用be worth doing结构整合信息，避免短句堆砌，形容词更精准高级"
+     },
+     {
+      "plain": "If you like food, you can go to Nanluoguxiang.",
+      "better": "Should you have a taste for local delicacies, Nanluoguxiang is an ideal destination.",
+      "note": "虚拟语气倒装句替代普通if条件句，展现高级语法能力，提升语言档次"
+     },
+     {
+      "plain": "I am happy to go with you.",
+      "better": "I would be more than delighted to serve as your guide if your schedule permits.",
+      "note": "would be + more than delighted语气更委婉得体，if your schedule permits体现对教授的尊重"
+     },
+     {
+      "plain": "Please write back to me.",
+      "better": "Please do not hesitate to contact me for further information.",
+      "note": "书信惯用收束语，正式得体，比write back更符合学术通信规范"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "看图写作，要求160-200词，需简要描述图片内容、阐释其寓意并给出个人评论，共三段式结构。",
+    "outline": [
+     "第一段：客观描述图片内容。用生动语言再现画面细节（人物动作、场景变化、图片文字说明），引出主题。",
+     "第二段：深层阐释寓意。点明图片传达的核心道理（坚持与耐心的力量），结合社会现象和具体事例进行论证分析。",
+     "第三段：给出个人评论与建议。呼吁读者在日常生活中践行该品质，以倒装句等高级句式收尾，升华主题。"
+    ],
+    "sample": "As is vividly depicted in the pictures, a young man is shown planting a small sapling and watering it patiently in the first image. In the second picture, years later, the once-tiny sapling has grown into a towering tree with lush branches, under which the man sits contentedly enjoying the shade. The caption beneath reads: The Power of Persistence.\n\nThe pictures convey a profound message that persistence and patience are indispensable to achieving success. In our fast-paced society, many people tend to seek instant gratification and readily abandon their efforts when immediate results are not forthcoming. However, just as a tree requires years of nurturing before it can bear fruit, any worthwhile accomplishment demands sustained dedication and unwavering commitment. History abounds with examples of individuals whose perseverance eventually led to remarkable achievements — Thomas Edison conducting countless experiments before perfecting the light bulb being a compelling case in point.\n\nIn light of the above analysis, we should cultivate the virtue of persistence in our daily lives. Rather than being discouraged by temporary setbacks, we ought to maintain faith in our long-term goals and keep advancing steadily. Only through persistent efforts can we ultimately reap the rewards of our endeavors.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the picture(s)",
+      "cn": "正如图片中生动描绘的那样；图画作文经典开头句式，引出画面描述"
+     },
+     {
+      "en": "convey a profound message that...",
+      "cn": "传达一个深刻的信息……；用于从描述过渡到寓意阐释"
+     },
+     {
+      "en": "be indispensable to (doing) sth.",
+      "cn": "对……不可或缺；强调某品质的重要性，搭配动名词"
+     },
+     {
+      "en": "seek instant gratification",
+      "cn": "追求即时满足；描述浮躁心态的高频表达"
+     },
+     {
+      "en": "sustained dedication and unwavering commitment",
+      "cn": "持续的投入与坚定不移的承诺；同义并列增强气势"
+     },
+     {
+      "en": "History abounds with examples of...",
+      "cn": "历史上不乏……的例子；引出论据的高级句式，避免There are many examples"
+     },
+     {
+      "en": "a compelling case in point",
+      "cn": "一个有力的例证；独立主格结构收尾，简洁有力"
+     },
+     {
+      "en": "in light of the above analysis",
+      "cn": "鉴于以上分析；用于第三段开头，衔接评论段"
+     },
+     {
+      "en": "Only through... can we ultimately...",
+      "cn": "只有通过……我们才能最终……；部分倒装句式，适合结尾升华"
+     },
+     {
+      "en": "reap the rewards of one's endeavors",
+      "cn": "收获努力的回报；比喻用法，呼应图片中\"树木结果\"的意象"
+     }
+    ],
+    "pitfalls": [
+     "描述图片时堆砌细节却遗漏文字说明（caption），导致主题不明确",
+     "第二段只喊口号不举例，论证空洞，缺乏说服力",
+     "三段之间缺乏过渡词衔接（however, in light of等），结构松散",
+     "词汇重复严重，如全文反复使用important而不用indispensable/vital等替换",
+     "字数不足160词或超过200词，均会被扣分；需考前练习精确控词"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows a man planting a tree.",
+      "better": "As is vividly depicted in the picture, a young man is shown planting a small sapling and watering it patiently.",
+      "note": "增加被动句式和细节修饰语，语言更正式、画面感更强"
+     },
+     {
+      "plain": "Persistence is very important to success.",
+      "better": "Persistence and patience are indispensable to achieving success.",
+      "note": "用indispensable替换important，搭配动名词结构，表达更地道"
+     },
+     {
+      "plain": "There are many examples in history.",
+      "better": "History abounds with examples of individuals whose perseverance eventually led to remarkable achievements.",
+      "note": "主语直接用History，避免there be句型，加定语从句提升句式复杂度"
+     },
+     {
+      "plain": "We should be persistent in our life.",
+      "better": "Only through persistent efforts can we ultimately reap the rewards of our endeavors.",
+      "note": "部分倒装+比喻收尾，兼顾语法亮点与修辞效果，更具感染力"
+     },
+     {
+      "plain": "Edison is a good example.",
+      "better": "Thomas Edison conducting countless experiments before perfecting the light bulb is a compelling case in point.",
+      "note": "独立主格结构做主语，信息密度高且避免简单句堆砌"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The Palace Museum, where you can marvel at the magnificent imperial architecture, offers a profound glimpse into Chinese history spanning over six centuries. （非限制性定语从句+现在分词后置定语，一句话兼顾景点描写与历史底蕴）",
+   "Should you have a taste for local delicacies, Nanluoguxiang is an ideal destination, offering authentic Beijing snacks alongside charming traditional hutong culture. （倒装虚拟条件句+现在分词状语，句式高级且信息丰富）",
+   "I would be more than delighted to serve as your guide if your schedule permits. （more than + adj. 强化语气，if your schedule permits礼貌周到，适用于各类书信结尾）",
+   "The Summer Palace is well worth exploring for its breathtaking landscape of classical gardens and tranquil lakes. （be worth doing + for介词短语说明理由，结构紧凑，一句完成推荐+理由）",
+   "As is vividly depicted in the pictures, a young man is shown planting a small sapling and watering it patiently. 正如图片中生动描绘的那样，一个年轻人正在种下一棵小树苗并耐心浇灌。——经典图画描述首句，被动+现在分词并列。",
+   "Just as a tree requires years of nurturing before it can bear fruit, any worthwhile accomplishment demands sustained dedication and unwavering commitment. 正如树木需要多年培育才能结果，任何有价值的成就都需要持续的投入与坚定不移的承诺。——类比论证+并列名词短语，逻辑清晰且语言优美。",
+   "History abounds with examples of individuals whose perseverance eventually led to remarkable achievements. 历史上不乏凭借毅力最终取得卓越成就的人物。——abound with高级替换there are many，whose引导定语从句增加句式层次。",
+   "Only through persistent efforts can we ultimately reap the rewards of our endeavors. 只有通过坚持不懈的努力，我们才能最终收获奋斗的回报。——部分倒装+比喻，考研作文结尾金句。"
+  ]
+ },
+ "mergedFrom": [
+  "9c1324fe939d__writing__51",
+  "9c1324fe939d__writing__52"
+ ]
+}

@@ -1,0 +1,246 @@
+{
+ "schemaVersion": 1,
+ "id": "24eadf0e9cd0__long_match__all",
+ "examId": "24eadf0e9cd0",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2016 年 12 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:06:38.594Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32551,
+ "usage": {
+  "prompt_tokens": 961,
+  "completion_tokens": 1757,
+  "total_tokens": 2718,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 961,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1757,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 961,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "职场压力与工作生活平衡",
+  "strategy": [
+   "先通读10条陈述句，标记高频主题词如stress、flexibility、employees等",
+   "利用专有名词（如Moen）、数据表述（overwhelming majority）等唯一性线索快速锁定段落",
+   "注意同义替换：如overwork↔excessive workload、deterring↔discouraging、quit↔leave等",
+   "区分相似话题句：多条涉及stress，需通过细节差异（原因vs后果vs解决方案）精准匹配",
+   "先做含有人名、数字等独特标记的题目，再处理纯语义概括类题目"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "职场规范迫使员工过度工作，阻止他们休带薪假。",
+    "keywords": [
+     "workplace norms",
+     "overwork",
+     "paid time off",
+     "deterring"
+    ],
+    "paraphrase": "原文可能用workplace culture/expectations替换norms，用discourage/prevent替换deter，用vacation/leave替换paid time off，整体描述职场文化让人不敢休假。",
+    "tip": "定位'paid time off/vacation'与'norms/culture'共现段落。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "cn": "绝大多数员工将自身压力主要归因于低薪和过重的工作量。",
+    "keywords": [
+     "overwhelming majority",
+     "stress",
+     "low pay",
+     "excessive workload"
+    ],
+    "paraphrase": "原文可能使用most employees/vast majority替换overwhelming majority，用inadequate compensation替换low pay，用heavy workload/too much work替换excessive workload。",
+    "tip": "定位比例或百分比数据段落，关注stress原因的调查结果。"
+   },
+   {
+    "number": 38,
+    "answer": "M",
+    "cn": "据Moen所言，灵活性使员工能更好地掌控自己的工作和时间。",
+    "keywords": [
+     "Moen",
+     "flexibility",
+     "better control",
+     "work and time"
+    ],
+    "paraphrase": "原文可能引用Moen的话，用autonomy/agency替换control，用schedule替换time，强调弹性工作制赋予员工自主权。",
+    "tip": "直接搜索人名Moen即可快速锁定段落。"
+   },
+   {
+    "number": 39,
+    "answer": "H",
+    "cn": "使用数字设备带来的灵活性有利于雇主而非员工。",
+    "keywords": [
+     "flexibility",
+     "digital devices",
+     "benefits employers",
+     "instead of employees"
+    ],
+    "paraphrase": "原文可能用technology/mobile devices替换digital devices，用serves/advantages替换benefits，强调这种灵活性是单方面有利于公司的。",
+    "tip": "定位digital/technology与flexibility共现处，注意受益方的对比转折。"
+   },
+   {
+    "number": 40,
+    "answer": "E",
+    "cn": "研究发现，如果员工承受高压，他们会缺乏动力、效率降低且更可能辞职。",
+    "keywords": [
+     "high stress",
+     "less motivated",
+     "less productive",
+     "quit"
+    ],
+    "paraphrase": "原文可能用研究数据呈现，用disengaged替换less motivated，用decreased productivity替换less productive，用turnover/leave替换quit。",
+    "tip": "定位stress后果的三连并列结构：动力、生产力、离职。"
+   },
+   {
+    "number": 41,
+    "answer": "K",
+    "cn": "办公室内的健康项目可能有助于降低压力水平，但它们很难成为解决该问题的根本方案。",
+    "keywords": [
+     "wellness programs",
+     "reduce stress",
+     "ultimate solution"
+    ],
+    "paraphrase": "原文可能用yoga classes/meditation rooms等具体措施替换wellness programs，用band-aid/superficial fix等表达暗示非根本解决方案。",
+    "tip": "定位wellness programs或具体减压项目名称，注意转折词but/however。"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "cn": "职场压力导致的健康问题造成了巨大的公共卫生支出。",
+    "keywords": [
+     "health problems",
+     "stress",
+     "public health expenses"
+    ],
+    "paraphrase": "原文可能给出具体金额或统计数字来说明医疗费用，用healthcare costs/medical spending替换public health expenses，用workplace stress替换stress in the workplace。",
+    "tip": "定位涉及金额、花费的数字段落，关联stress与cost。"
+   },
+   {
+    "number": 43,
+    "answer": "J",
+    "cn": "如果员工迅速回应工作任务，雇主可能会对他们提出更多要求。",
+    "keywords": [
+     "respond quickly",
+     "job assignments",
+     "demand more"
+    ],
+    "paraphrase": "原文可能用reply promptly/react fast替换respond quickly，用expect more/raise expectations替换demand more，描述快速响应反而加重负担的恶性循环。",
+    "tip": "定位respond/reply与demand/expect的因果逻辑段落。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "科技无处不在的当下，大多数员工几乎不可能维持工作与生活的平衡。",
+    "keywords": [
+     "technology",
+     "virtually impossible",
+     "balance",
+     "work and life"
+    ],
+    "paraphrase": "原文可能用digital age/connected era替换technology everywhere，用work-life balance替换balance between work and life，用nearly/almost impossible替换virtually impossible。",
+    "tip": "定位technology与work-life balance共现段落。"
+   },
+   {
+    "number": 45,
+    "answer": "B",
+    "cn": "在当今美国，即便是青少年也承受着压力，且他们的问题比成年人更严重。",
+    "keywords": [
+     "teenagers",
+     "stress",
+     "more serious",
+     "grown-ups"
+    ],
+    "paraphrase": "原文可能用teens/adolescents替换teenagers，用adults替换grown-ups，用report higher stress levels替换problem is even more serious，可能引用调查数据。",
+    "tip": "此题与37题同在B段；定位teenagers/teens年龄对比即可。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deterring",
+    "cn": "阻止，威慑（v. deter的现在分词）"
+   },
+   {
+    "w": "overwhelming majority",
+    "cn": "绝大多数（名词短语）"
+   },
+   {
+    "w": "attribute...to",
+    "cn": "把……归因于（动词短语）"
+   },
+   {
+    "w": "excessive",
+    "cn": "过多的，过度的（adj.）"
+   },
+   {
+    "w": "flexibility",
+    "cn": "灵活性，弹性（n.）"
+   },
+   {
+    "w": "wellness programs",
+    "cn": "健康促进项目（名词短语）"
+   },
+   {
+    "w": "ultimate solution",
+    "cn": "根本解决方案（名词短语）"
+   },
+   {
+    "w": "virtually",
+    "cn": "几乎，事实上（adv.）"
+   },
+   {
+    "w": "workplace norms",
+    "cn": "职场规范/准则（名词短语）"
+   },
+   {
+    "w": "paid time off",
+    "cn": "带薪休假（名词短语）"
+   }
+  ]
+ }
+}

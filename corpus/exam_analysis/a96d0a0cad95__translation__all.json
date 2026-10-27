@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "a96d0a0cad95__translation__all",
+ "examId": "a96d0a0cad95",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2021 年 12 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:38:09.110Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 31246,
+ "usage": {
+  "prompt_tokens": 806,
+  "completion_tokens": 2345,
+  "total_tokens": 3151,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 806,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2345,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 806,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "延安：中国革命圣地与红色文化",
+  "reference": "Yan'an, located in the northern part of Shaanxi Province and situated along the middle reaches of the Yellow River, is the sacred land of the Chinese revolution. Mao Zedong and other revolutionaries of the older generation lived and fought here for thirteen years, leading the War of Resistance Against Japanese Aggression and the War of Liberation, fostering the Yan'an Spirit, and making tremendous contributions to the Chinese revolution. Yan'an boasts the largest number, the widest distribution, and the highest level of revolutionary heritage sites across the country. It serves as a national education base for patriotism, revolutionary traditions, and the Yan'an Spirit. Yan'an is home to nine revolutionary memorial halls, which house a great number of important items left behind by the Central Committee of the Communist Party of China and the older generation of revolutionaries during the Yan'an period, thus earning it the reputation of \"the City of Chinese Revolutionary Museums.\"",
+  "sentences": [
+   {
+    "cn": "延安位于陕西省北部，地处黄河中游，是中国革命的圣地。",
+    "en": "Yan'an, located in the northern part of Shaanxi Province and situated along the middle reaches of the Yellow River, is the sacred land of the Chinese revolution.",
+    "structure": "过去分词短语作插入语（located...and situated...）修饰主语，主句为简单的主系表结构",
+    "keys": [
+     "陕西省 Shaanxi Province",
+     "黄河中游 the middle reaches of the Yellow River",
+     "中国革命的圣地 the sacred land of the Chinese revolution"
+    ]
+   },
+   {
+    "cn": "毛泽东等老一辈革命家曾在这里生活战斗了十三个春秋，领导了抗日战争和解放战争，培育了延安精神，为中国革命做出了巨大贡献。",
+    "en": "Mao Zedong and other revolutionaries of the older generation lived and fought here for thirteen years, leading the War of Resistance Against Japanese Aggression and the War of Liberation, fostering the Yan'an Spirit, and making tremendous contributions to the Chinese revolution.",
+    "structure": "主句（lived and fought）+ 三个现在分词短语（leading...fostering...and making...）并列作伴随状语，逻辑清晰且紧凑",
+    "keys": [
+     "老一辈革命家 revolutionaries of the older generation",
+     "抗日战争 the War of Resistance Against Japanese Aggression",
+     "解放战争 the War of Liberation",
+     "延安精神 the Yan'an Spirit"
+    ]
+   },
+   {
+    "cn": "延安的革命旧址全国数量最大、分布最广，级别最高。",
+    "en": "Yan'an boasts the largest number, the widest distribution, and the highest level of revolutionary heritage sites across the country.",
+    "structure": "主语 + boasts + 三个并列最高级名词短语作宾语，结构整齐，用 boast 凸显自豪感",
+    "keys": [
+     "革命旧址 revolutionary heritage sites",
+     "数量最大 the largest number"
+    ]
+   },
+   {
+    "cn": "延安是全国爱国主义、革命传统和延安精神教育基地。",
+    "en": "It serves as a national education base for patriotism, revolutionary traditions, and the Yan'an Spirit.",
+    "structure": "主语 + serves as + 名词短语，for 引出教育内容的三个并列成分，简洁准确",
+    "keys": [
+     "爱国主义 patriotism",
+     "革命传统 revolutionary traditions",
+     "教育基地 education base"
+    ]
+   },
+   {
+    "cn": "延安有9个革命纪念馆，珍藏着中共中央和老一辈革命家在延安时期留存下来的大量重要物品，因此享有\"中国革命博物馆城\"的美誉。",
+    "en": "Yan'an is home to nine revolutionary memorial halls, which house a great number of important items left behind by the Central Committee of the Communist Party of China and the older generation of revolutionaries during the Yan'an period, thus earning it the reputation of \"the City of Chinese Revolutionary Museums.\"",
+    "structure": "be home to 引出主句 + which 引导非限制性定语从句（内含 left behind 过去分词后置定语）+ thus + 现在分词短语表结果",
+    "keys": [
+     "革命纪念馆 revolutionary memorial halls",
+     "中共中央 the Central Committee of the Communist Party of China",
+     "中国革命博物馆城 the City of Chinese Revolutionary Museums"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "延安",
+    "en": "Yan'an"
+   },
+   {
+    "cn": "陕西省",
+    "en": "Shaanxi Province"
+   },
+   {
+    "cn": "黄河中游",
+    "en": "the middle reaches of the Yellow River"
+   },
+   {
+    "cn": "抗日战争",
+    "en": "the War of Resistance Against Japanese Aggression"
+   },
+   {
+    "cn": "解放战争",
+    "en": "the War of Liberation"
+   },
+   {
+    "cn": "延安精神",
+    "en": "the Yan'an Spirit"
+   },
+   {
+    "cn": "革命旧址",
+    "en": "revolutionary heritage sites"
+   },
+   {
+    "cn": "中共中央",
+    "en": "the Central Committee of the Communist Party of China"
+   },
+   {
+    "cn": "革命纪念馆",
+    "en": "revolutionary memorial halls"
+   },
+   {
+    "cn": "爱国主义教育基地",
+    "en": "patriotism education base"
+   }
+  ],
+  "pitfalls": [
+   "陕西 Shaanxi 与 山西 Shanxi 拼写混淆，少写一个 a 即变成山西",
+   "黄河中游 误译为 the middle of the Yellow River，遗漏 reaches（河段）",
+   "抗日战争专有名词拼写错误或用词不当，如误写为 Anti-Japan War",
+   "十三个春秋 若直译为 thirteen springs and autumns 不符合英文习惯，应译为 thirteen years",
+   "中国革命博物馆城 漏加引号或未体现\"美誉\"含义，应搭配 reputation/accolade 等词"
+  ],
+  "upgrades": [
+   {
+    "plain": "Yan'an is in the north of Shaanxi Province",
+    "better": "Yan'an, located in the northern part of Shaanxi Province",
+    "note": "用过去分词短语作插入语，使句式更紧凑高级，避免多个短句"
+   },
+   {
+    "plain": "Yan'an has the most revolutionary sites",
+    "better": "Yan'an boasts the largest number of revolutionary heritage sites",
+    "note": "boast 比 have 更能体现自豪与突出地位，词汇层次更高"
+   },
+   {
+    "plain": "There are nine revolutionary memorial halls in Yan'an",
+    "better": "Yan'an is home to nine revolutionary memorial halls",
+    "note": "be home to 是地道表达，比 there be 句型更生动、更具书面色彩"
+   },
+   {
+    "plain": "so it is called the City of Chinese Revolutionary Museums",
+    "better": "thus earning it the reputation of \"the City of Chinese Revolutionary Museums\"",
+    "note": "现在分词短语作结果状语更紧凑，reputation 比 called 更好地传达\"美誉\""
+   },
+   {
+    "plain": "important things left by the CPC Central Committee",
+    "better": "important items left behind by the Central Committee of the Communist Party of China",
+    "note": "items 比 things 更正式，left behind 比 left 语义更完整，专有名词用全称更规范"
+   }
+  ]
+ }
+}

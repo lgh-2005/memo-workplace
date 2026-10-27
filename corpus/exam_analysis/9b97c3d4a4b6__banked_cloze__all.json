@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "9b97c3d4a4b6__banked_cloze__all",
+ "examId": "9b97c3d4a4b6",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2025 年 12 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:05:36.208Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68828,
+ "usage": {
+  "prompt_tokens": 1416,
+  "completion_tokens": 4052,
+  "total_tokens": 5468,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1416,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4052,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1416,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "口音与标准语音的语言学探讨",
+  "gist": "文章指出口音是一种独特的、系统的说话方式，并非方言的同义词。许多外行人认为存在一种标准口音且本质上是最好的语言形式，但语言学家指出标准口音更像是一种理想而非现实。历史上曾出现多种所谓的标准，标准口音的观念虽仍具影响力，但非标准口音的可接受程度因行业、阶层与文化差异而有所不同。",
+  "difficulty": "中等",
+  "translation": "最好将口音视为一种独特的、系统的、有规律的说话方式。口音并不是方言的同义词，但与方言有关。方言是一个涵盖性术语，指的是一个社区如何发音、造词和排列词序；口音仅指其中第一部分。\n\n许多外行人认为，每个国家都有一种单一的标准说话方式和唯一的标准口音，并且认为这种公认的标准本质上就是最好的语言形式，但语言学家常常指出，标准口音这一概念更应被理解为一种理想，而非现实。换句话说，没有人说\"标准英语\"；相反，它是一种仅存在于语法书和风格手册中的想象的语言使用方式。\n\n语言学家一致认为不存在唯一真正标准的一个原因是，多年来，随着时间和地点的不同，已经出现了多种所谓的标准。例如，20世纪50年代英国新闻片中的标准与当今美国全国新闻广播中的标准大相径庭。事实上，从未有过一个完全被认同的单一标准——而且各类广播机构也从未始终坚持过那些标准。\n\n即便如此，标准口音这一观念仍然很有影响力，许多工作场所和教育环境延续着这样一种看法：偏离当前标准的口音不太合适，甚至是不合适的。学者们发现，美国南方口音特征在政府、法律和服务导向型工作场所等领域更容易被接受，但在科技行业中较不被接受。非标准口音的可接受程度可能与阶层和文化差异相关，较新的或声望较高的行业期望在工作场所中使用更标准的语言。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "N",
+    "correct": "synonym",
+    "why": "空格处需要一个名词，充当is not a ____的表语。上下文意为\"口音不是方言的____\"，后句用but it's related加以转折，说明二者相关但不等同，synonym（同义词）完美契合语义逻辑。",
+    "traps": "affix（词缀）语义不通；correlate（相关物）虽有\"关联\"含义，但后文but it's related已承担此义，若此处也用correlate则逻辑重复且表意矛盾。",
+    "tip": "抓住转折词but和related的语义暗示。"
+   },
+   {
+    "number": 27,
+    "answer": "G",
+    "correct": "laymen",
+    "why": "空格处需要一个复数名词作主语。后文presume that there is a single standard形成与linguists的对比，说明这是非专业人士的观点，laymen（外行人）与后文linguists often point out形成对照。",
+    "traps": "该题关键在于识别\"非语言学家群体\"与\"语言学家\"之间的对比结构；domains（领域）语义不搭，无法充当人称主语。",
+    "tip": "利用后文linguists的对比找出非专业群体。"
+   },
+   {
+    "number": 28,
+    "answer": "F",
+    "correct": "inherently",
+    "why": "空格处需要一个副词修饰the best form of speech。inherently（本质上地）表示外行人认为标准口音\"天生/本质上\"就是最好的语言形式，与后文语言学家的反驳形成对照。",
+    "traps": "此处需副词，而选项池中能作副词的仅有inherently，其他如influential（形容词）、multiple（形容词）均无法修饰形容词短语the best。",
+    "tip": "判断词性——空格在系动词is与形容词best之间，需副词。"
+   },
+   {
+    "number": 29,
+    "answer": "J",
+    "correct": "reality",
+    "why": "空格处需要名词，与前面的an ideal构成rather than并列对比。ideal是\"理想\"，与之对立的概念是reality（现实），且后文用imagined进一步印证标准英语并非真实存在。",
+    "traps": "synonym虽为名词，但语义上与ideal无法构成对比；affix作为\"词缀\"在此毫无语义关联。",
+    "tip": "抓住rather than构成的对比结构，找ideal的反义词。"
+   },
+   {
+    "number": 30,
+    "answer": "H",
+    "correct": "multiple",
+    "why": "空格处需要形容词修饰名词standards。上下文强调标准并非唯一，depending on time and place说明标准随时间和地点变化，因此有多种（multiple）所谓的标准。",
+    "traps": "influential（有影响力的）虽为形容词，但与supposed standards搭配后语义指向影响力而非数量多样性，不符合上下文论证\"标准不唯一\"的逻辑。",
+    "tip": "上文no one true standard暗示标准不止一个，对应multiple。"
+   },
+   {
+    "number": 31,
+    "answer": "M",
+    "correct": "spectrum",
+    "why": "空格处需要名词，与across the构成固定搭配。across the spectrum意为\"在各个领域/各类机构中\"，指广播机构涵盖范围广泛但都未坚持标准，语义通顺。",
+    "traps": "domains虽为名词且有\"领域\"之意，但across the domains并非英语惯用搭配；spectrum与across the构成高频固定短语。",
+    "tip": "识别固定搭配across the spectrum（各个方面）。"
+   },
+   {
+    "number": 32,
+    "answer": "E",
+    "correct": "influential",
+    "why": "空格处在系动词is之后作表语，需要形容词。Even so表转折，意为\"即便如此（标准并不存在），这一观念仍然是有影响力的\"，influential完美承接下文关于工作和教育环境受此观念影响的论述。",
+    "traps": "此处已无其他适合的形容词备选。multiple已用于第30题，且语义不通；其余未用选项affix为名词，无法充当表语形容词。",
+    "tip": "Even so引出让步转折，提示需要正面评价性形容词。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "correct": "deviate",
+    "why": "空格处需要动词原形（that引导定语从句，先行词accents为复数，谓语用原形）。deviate from意为\"偏离\"，指偏离当前标准的口音被视为不合适，与上下文逻辑一致。",
+    "traps": "correlate虽也是动词，但correlate from不是正确搭配，correlate需与with连用；deviate from为固定搭配，语义精准。",
+    "tip": "动词+介词搭配：deviate from（偏离）是关键。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "correct": "domains",
+    "why": "空格处需要名词，in ____ such as government, law...中such as后列举了具体领域，因此空格应为\"领域\"的上位概念词，domains（领域）完美对应。",
+    "traps": "spectrum虽也可指范围领域，但已在第31题使用；且such as后接具体行业，domain作\"领域\"比spectrum更精准地充当上位概念。",
+    "tip": "such as后的举例是解题线索，找能概括它们的上位词。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "correct": "correlate",
+    "why": "空格处需要动词原形（may后接动词原形）。correlate with意为\"与……相关联\"，指非标准口音的可接受程度可能与阶层和文化差异相关，逻辑通顺。",
+    "traps": "deviate虽为动词但已用于第33题，且deviate with不是正确搭配；correlate with是固定搭配，与后文differences构成合理语义。",
+    "tip": "may ____with结构提示动词搭配，correlate with为固定短语。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "synonym",
+    "cn": "n. 同义词"
+   },
+   {
+    "w": "laymen",
+    "cn": "n. 外行人，非专业人士（layman的复数）"
+   },
+   {
+    "w": "inherently",
+    "cn": "adv. 本质上地，内在地"
+   },
+   {
+    "w": "deviate",
+    "cn": "v. 偏离，背离（常与from搭配）"
+   },
+   {
+    "w": "correlate",
+    "cn": "v. 相关联，相互关联（常与with搭配）"
+   },
+   {
+    "w": "spectrum",
+    "cn": "n. 范围，系列；光谱"
+   },
+   {
+    "w": "domains",
+    "cn": "n. 领域，范围（domain的复数）"
+   },
+   {
+    "w": "perpetuate",
+    "cn": "v. 使持续，使长久存在"
+   },
+   {
+    "w": "affix",
+    "cn": "n. 词缀（前缀或后缀）"
+   },
+   {
+    "w": "influential",
+    "cn": "adj. 有影响力的"
+   },
+   {
+    "w": "prestige",
+    "cn": "n. 声望，威望"
+   },
+   {
+    "w": "umbrella term",
+    "cn": "n. 涵盖性术语，总括性用语"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个选项按词性（名词/动词/形容词/副词）分类。",
+   "第二步：根据空格前后语法结构判断所需词性，缩小候选范围。",
+   "第三步：利用固定搭配（如across the spectrum、deviate from、correlate with）快速锁定答案。",
+   "第四步：借助上下文逻辑关系（对比、转折、因果、举例）验证语义是否通顺。",
+   "第五步：每词只用一次，已选词及时划掉，最后复查有无重复或遗漏。"
+  ]
+ }
+}

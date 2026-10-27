@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "a0fd8546a451__reading__2",
+ "examId": "a0fd8546a451",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 12 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:09:13.706Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58637,
+ "usage": {
+  "prompt_tokens": 1805,
+  "completion_tokens": 3407,
+  "total_tokens": 5212,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1805,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3407,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1805,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "上大学是否值得",
+  "gist": "文章围绕英国大学教育的价值展开讨论。尽管学费高昂、课时有限、就业形势不佳，作者认为上大学仍然值得：贷款偿还机制对低收入者友好，大学教育使人更健康、幸福，精英大学毕业生在就业市场占优，且大学人脉对未来发展至关重要。雇主对大学背景的看重短期不会改变，学生别无选择只能接受大学教育及随之而来的债务。",
+  "structure": [
+   "第1-2段：摆出问题——学费高、课时少、就业差，大学饱受批评",
+   "第3段：转折论证——上大学仍然划算，贷款机制友好，课外互学重要",
+   "第4段：进一步论证——名校文凭是求职敲门砖，大学人脉终身受益",
+   "第5段：总结——雇主看重学历背景短期不变，学生别无选择"
+  ],
+  "difficulty": "中等",
+  "translation": "真是浪费钱！在英国，学生背负平均4.4万英镑的债务，换来的却只是每周平均14小时的讲座和辅导时间。过去十年间，年学费从1000英镑涨到了9000英镑，但大学的师生接触时间却几乎没有增加。而且毕业也不能保证获得一份体面的工作：如今十个毕业生中有六个从事的是不需要大学学历的工作。\n\n难怪批评许多大学不过是精心设计的骗局已经成为一种时尚。学生有很多可以抱怨的事情：偿还贷款的收入起征点将被冻结五年，这意味着收入较低的毕业生也不得不开始偿还贷款；助学金已被贷款取代，这意味着来自贫困家庭的学生要比富裕家庭的学生背负更多债务。\n\n然而上大学仍然是值得的。如果上大学的结果不理想，学生只需偿还很少的学费——甚至不用偿还：只有当你年收入达到21000英镑时才开始还款。近一半的毕业生——那些后来收入较低的人——将有一部分债务被免除。重要的不仅仅是讲座和辅导课。教育是学生在讲座和研讨课之间互相教授、彼此学习的总和。学生不仅仅在大学期间受益；研究表明，他们在毕业后比非大学毕业生更健康、更快乐，也更有可能去投票。\n\n无论你有什么才能，在大多数领域，如果没有上过大学，要获得一份领先的工作是极其困难的。招聘人员像兀鹰一样盘旋在精英大学上空。许多顶级公司甚至不会看那些没有从精英大学获得二等一级学位的申请者的简历。大学里的学生还会结识那些将来可能身居要职的人，建立终身的人脉关系。这也许不公平，但那些不承认这一现实的高中毕业生可能会在是否上大学的问题上做出错误的决定。\n\n也许很多大学之所以给学生提供这么少，是因为它们知道，即使你什么都没学到，在顶尖大学就读仍然是一项绝佳的投资。只有当雇主不再关注求职者毕业于哪所大学时，大学教育才会变得不那么有吸引力——而这种情况短期内不会发生。高中毕业生可能会抱怨，但他们别无选择，只能接受大学教育以及随之而来的学生债务。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "Yet it still pays to go to university.",
+    "why": "文章第1-2段虽列举了大学教育的种种弊端（学费高、课时少、就业差），但第3段以\"Yet it still pays to go to university\"明确转折，后文从贷款机制友好、课外学习价值、毕业生更健康幸福等多角度论证上大学的好处，第4-5段进一步强调名校文凭和人脉的重要性。因此作者的整体态度是\"上大学终归还是值得的\"，对应A选项\"It is worthwhile after all\"。",
+    "traps": "B\"简直是浪费时间\"与作者观点相反，作者只是引用批评声音但自己持肯定态度；C\"很难说好坏\"属于无立场，而作者立场明确；D\"对大多数年轻人来说太贵\"仅涉及第1-2段的问题铺垫，不是作者最终观点。",
+    "tip": "抓住转折词Yet后的核心观点句，确定作者真实立场。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "six in ten graduates today are in non-graduate jobs.",
+    "why": "原文第1段末句明确指出\"如今十个毕业生中有六个从事的是不需要大学学历的工作\"，即60%的毕业生从事非毕业生岗位，\"six in ten\"即\"大多数\"，与D选项\"Most of them take jobs which don't require a college degree\"完全吻合。non-graduate jobs即不需要大学学历的工作。",
+    "traps": "A\"很少有人对工作满意\"原文未提及毕业生对工作的满意度；B\"通常需要很长时间才能找到体面工作\"属于无中生有；C\"精英大学毕业生通常能得到体面工作\"虽第4段提到精英大学优势，但并非回答就业状况的整体描述，且题目问的是英国大学毕业生的就业状况。",
+    "tip": "注意数据细节的同义转换，six in ten = most。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Education is the sum of what students teach each other in between lectures and seminars.",
+    "why": "原文第3段指出\"重要的不仅仅是讲座和辅导课\"，紧接着说\"教育是学生在讲座和研讨课之间互相教授、彼此学习的总和\"。这明确表明课堂教学之外，学生之间的互动交流同样重要，对应C选项\"课堂外学生之间的互动\"。in between lectures and seminars就是outside the classroom的同义表达。",
+    "traps": "A\"确保获得二等一级学位\"出现在第4段谈招聘要求的语境中，并非此处论述重点；B\"未来职业所需的实际技能\"原文未提及；D\"培养独立和创造性思维能力\"属于无中生有，原文未涉及。",
+    "tip": "定位关键句后注意同义替换：in between lectures = outside the classroom。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Students at university also meet those likely to be in leading jobs in the future, forming contacts for life.",
+    "why": "原文第4段明确指出大学生还能结识那些将来可能身居要职的人，建立终身人脉关系。B选项\"Meeting people who will be helpful to you in the future\"是对\"meet those likely to be in leading jobs in the future, forming contacts for life\"的同义概括，即认识将来对你有帮助的人。",
+    "traps": "A\"学习如何在不断变化的世界中冒险\"原文未提及risk-taking；C\"有机会在社会中扮演领导角色\"属于偷换概念，原文说的是结识将来身居要职的人，而非自己扮演领导角色；D\"获取科技前沿知识\"文中完全未涉及。",
+    "tip": "注意区分\"认识身居要职的人\"和\"自己扮演领导角色\"的逻辑差异。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Studying at university will only become less attractive if employers shift their focus away from where someone went to university—and there is no sign of that happening anytime soon.",
+    "why": "末段指出\"只有当雇主不再关注求职者毕业于哪所大学时，大学教育才会变得不那么有吸引力——而这种情况短期内不会发生\"。这句话的言下之意是：雇主目前非常看重求职者所就读大学的声誉，大学的名望影响着雇主的招聘决定，对应D选项。这是一个反向推理：既然雇主不会转移焦点，说明大学声誉确实影响招聘。",
+    "traps": "A\"学生抱怨大学教育是自然的\"虽末句提到moan，但这不是可推断出的核心观点；B\"很少有学生愿意承担大学债务\"与原文\"they have little choice but to embrace university and the student debt\"矛盾，学生是不得不接受；C\"大学教育对负担得起的学生越来越有吸引力\"原文说的是吸引力不会降低，且未限定为\"负担得起的学生\"。",
+    "tip": "反向推理题：注意从\"只有……才会……而这不会发生\"推出当前现实状况。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "denounce",
+    "cn": "v. 谴责，公开指责"
+   },
+   {
+    "w": "threshold",
+    "cn": "n. 门槛，起征点"
+   },
+   {
+    "w": "maintenance",
+    "cn": "n. 生活费，维持；维护"
+   },
+   {
+    "w": "tutorial",
+    "cn": "n. 辅导课；adj. 辅导的"
+   },
+   {
+    "w": "con-trick",
+    "cn": "n. 骗局，骗术"
+   },
+   {
+    "w": "elite",
+    "cn": "adj. 精英的；n. 精英，上层人士"
+   },
+   {
+    "w": "recruit",
+    "cn": "v. 招聘，招募；n. 新成员"
+   },
+   {
+    "w": "acknowledge",
+    "cn": "v. 承认，认可"
+   },
+   {
+    "w": "written off",
+    "cn": "v. 勾销，注销（债务等）"
+   },
+   {
+    "w": "moan",
+    "cn": "v./n. 抱怨，呻吟"
+   },
+   {
+    "w": "embrace",
+    "cn": "v. 欣然接受；拥抱"
+   },
+   {
+    "w": "fashionable",
+    "cn": "adj. 流行的，时尚的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Whatever your talents, it is extraordinarily difficult to get a leading job in most fields without having been to university.",
+    "cn": "无论你有什么才能，在大多数领域，如果没有上过大学，要获得一份领先的工作是极其困难的。",
+    "note": "Whatever your talents是让步状语从句（省略了are）；it是形式主语，真正主语是不定式to get...；without having been to是介词+完成时动名词表否定条件。"
+   },
+   {
+    "en": "Education is the sum of what students teach each other in between lectures and seminars.",
+    "cn": "教育是学生在讲座和研讨课之间互相教授、彼此学习的总和。",
+    "note": "主干为Education is the sum of...；what引导宾语从句作of的宾语；in between lectures and seminars为时间状语，表示课间之外的时段。"
+   },
+   {
+    "en": "Studying at university will only become less attractive if employers shift their focus away from where someone went to university—and there is no sign of that happening anytime soon.",
+    "cn": "只有当雇主不再关注求职者毕业于哪所大学时，大学教育才会变得不那么有吸引力——而这种情况短期内不会发生。",
+    "note": "主句为Studying...will only become less attractive；if引导条件状语从句；where引导宾语从句作from的宾语；破折号后补充说明该条件不会实现，构成反向推理。"
+   }
+  ]
+ }
+}

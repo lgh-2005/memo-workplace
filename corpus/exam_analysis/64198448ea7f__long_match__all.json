@@ -1,0 +1,249 @@
+{
+ "schemaVersion": 1,
+ "id": "64198448ea7f__long_match__all",
+ "examId": "64198448ea7f",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2022 年 12 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:45:40.724Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43802,
+ "usage": {
+  "prompt_tokens": 955,
+  "completion_tokens": 2107,
+  "total_tokens": 3062,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 955,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2107,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 955,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "古典音乐演出的观众行为与受众拓展",
+  "strategy": [
+   "先通读10条陈述句，归纳主题关键词（古典音乐、观众、剧院等），再带着关键词快速扫读各段",
+   "优先定位专有名词、数字、极端词（rare, first, many）等不易被同义替换的显眼标记",
+   "注意同义替换：题目常用上义词或近义词改写原文，如chaos↔pandemonium, intimidate↔scare",
+   "将已确认匹配的段落划去，缩小后续匹配的搜索范围，提高效率",
+   "对比相似陈述句（如36与42都涉及观众行为），区分细微语义差异后分别定位"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "在听古典音乐时，观众举止疯狂并非罕见之事。",
+    "keywords": [
+     "not rare",
+     "audiences",
+     "behaved wildly",
+     "classical music"
+    ],
+    "paraphrase": "题目用 not a rare occurrence 表达\"并不罕见\"，原文可能使用 common / frequent / happened often 等正面表述进行同义替换；behaved wildly 可能对应 unruly behavior 或 rowdy 等近义表达。",
+    "tip": "定位 rare / uncommon 等否定式频率词，对应原文中\"常见、屡见不鲜\"的正面说法。"
+   },
+   {
+    "number": 37,
+    "answer": "L",
+    "cn": "一些高雅艺术机构说希望吸引更多普通观众时，并非真心实意。",
+    "keywords": [
+     "high-art institutions",
+     "don't actually mean",
+     "general audiences"
+    ],
+    "paraphrase": "题目 don't actually mean it 暗示口是心非，原文可能用 lip service / not genuinely / reluctant 等表达机构态度的不真诚；general audiences 可能替换为 broader / wider public。",
+    "tip": "关注表达'言行不一、表面功夫'含义的段落，如 lip service。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "cn": "一部非传统芭蕾舞剧在法国首都首次上演时，剧场一片混乱。",
+    "keywords": [
+     "chaos",
+     "unconventional ballet",
+     "first",
+     "capital of France"
+    ],
+    "paraphrase": "capital of France 即 Paris；unconventional ballet 可能对应具体作品如《春之祭》(The Rite of Spring)；chaos 可能被替换为 riot / uproar / pandemonium。",
+    "tip": "定位 Paris / ballet / premiere 等专有标记词，此类历史事件通常出现在文章开头引入话题。"
+   },
+   {
+    "number": 39,
+    "answer": "M",
+    "cn": "一位评论家认为，观众的热烈回应会激励音乐家表现得更好。",
+    "keywords": [
+     "critic",
+     "warm response",
+     "encourage",
+     "musicians",
+     "better job"
+    ],
+    "paraphrase": "warm response 可能对应 enthusiastic reaction / applause；encourage … do a better job 可能替换为 motivate / inspire … perform better / raise their game。",
+    "tip": "定位 critic / reviewer 等人物身份词，然后查看其观点中是否涉及观众反馈对演奏者的正向影响。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "cn": "许多评论者主张观众应安静地欣赏古典音乐。",
+    "keywords": [
+     "commenters",
+     "argued for",
+     "enjoying",
+     "quietly"
+    ],
+    "paraphrase": "argued for … quietly 表示支持安静聆听，原文可能用 advocated silence / insisted on quiet / maintained that audiences should remain silent 等表达。",
+    "tip": "扫读含有 quiet / silence / still 等与安静相关词汇的段落，并确认主语为多数评论者。"
+   },
+   {
+    "number": 41,
+    "answer": "H",
+    "cn": "座椅靠背屏幕上显示的内容使观众不必事先研究作品。",
+    "keywords": [
+     "seatback screen",
+     "unnecessary",
+     "study",
+     "works beforehand"
+    ],
+    "paraphrase": "seatback screen 是具体的技术设施，原文应有近似描述；study … beforehand 可能替换为 do homework / prepare in advance / read up on；unnecessary 对应 no need / eliminate the need。",
+    "tip": "seatback screen 是高辨识度的具象名词，直接在原文中扫读该词或 screen on the back of the seat 即可快速定位。"
+   },
+   {
+    "number": 42,
+    "answer": "B",
+    "cn": "人们普遍认为，在古典音乐演出期间不应有来自观众的干扰。",
+    "keywords": [
+     "generally accepted",
+     "no disturbance",
+     "audience",
+     "performance"
+    ],
+    "paraphrase": "generally accepted 表示共识，原文可能用 widely held norm / convention / etiquette；no disturbance 可能对应 remain silent / refrain from noise / sit quietly。",
+    "tip": "区分本题（普遍共识）与第40题（评论者主张），注意 generally accepted 强调的是社会规范层面。"
+   },
+   {
+    "number": 43,
+    "answer": "O",
+    "cn": "如果高等艺术机构不得不借助电视媒介，它们会担心损害古典音乐的完整性。",
+    "keywords": [
+     "higher institutions",
+     "compromising",
+     "integrity",
+     "television medium"
+    ],
+    "paraphrase": "compromising the integrity 意为\"破坏纯粹性/完整性\"，原文可能用 dilute / undermine / water down；resort to television 暗示不情愿使用电视，原文可能涉及 TV broadcasts / televised concerts。",
+    "tip": "关注 television / TV / broadcast 与 integrity / purity 等词的共现段落，通常位于文章末尾讨论争议。"
+   },
+   {
+    "number": 44,
+    "answer": "K",
+    "cn": "大幅打折的临时优惠票帮助吸引了许多年轻学生前往古典音乐会。",
+    "keywords": [
+     "heavily discounted",
+     "rush tickets",
+     "young students",
+     "classical concerts"
+    ],
+    "paraphrase": "rush tickets 指演出当天发售的低价余票；heavily discounted 可能对应 cheap / affordable / sold at a fraction of the price；young students 是受惠群体。",
+    "tip": "rush tickets 为特色词汇，直接定位含有此词或 last-minute tickets / student discounts 的段落。"
+   },
+   {
+    "number": 45,
+    "answer": "N",
+    "cn": "高雅艺术剧院的各种礼仪规范可能会让一些前来观演的人感到畏惧。",
+    "keywords": [
+     "formalities",
+     "high-art theatres",
+     "intimidate",
+     "attending"
+    ],
+    "paraphrase": "formalities 指正式的礼节与规矩，原文可能用 dress code / rituals / protocols；intimidate 可能替换为 put off / scare / deter / feel unwelcome。",
+    "tip": "扫读涉及剧院着装要求、礼仪规范等描述的段落，关注 intimidate 的近义表达如 daunting / off-putting。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "unconventional",
+    "cn": "adj. 非传统的，不循常规的"
+   },
+   {
+    "w": "chaos",
+    "cn": "n. 混乱，骚乱"
+   },
+   {
+    "w": "formalities",
+    "cn": "n. 礼节，正式手续（复数）"
+   },
+   {
+    "w": "intimidate",
+    "cn": "v. 恐吓，使胆怯"
+   },
+   {
+    "w": "compromising",
+    "cn": "v. 损害，危及（此处为动名词形式）"
+   },
+   {
+    "w": "integrity",
+    "cn": "n. 完整性；正直"
+   },
+   {
+    "w": "resort to",
+    "cn": "v. 诉诸，求助于（含不得已之意）"
+   },
+   {
+    "w": "rush tickets",
+    "cn": "n. 临时折扣票，当日低价票"
+   },
+   {
+    "w": "seatback",
+    "cn": "n. 座椅靠背"
+   },
+   {
+    "w": "disturbance",
+    "cn": "n. 干扰，骚动"
+   }
+  ]
+ }
+}

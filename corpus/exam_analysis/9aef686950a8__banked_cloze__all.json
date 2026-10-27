@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "9aef686950a8__banked_cloze__all",
+ "examId": "9aef686950a8",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2015 年 6 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T04:40:18.905Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 86108,
+ "usage": {
+  "prompt_tokens": 1159,
+  "completion_tokens": 8509,
+  "total_tokens": 9668,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6592
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1159
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "技术创新对就业的双重影响",
+  "gist": "文章论述创新虽会淘汰旧岗位，但长远会创造新岗位并促进繁荣；然而技术对工人的冲击可能先于好处显现，短期内扩大收入差距并引发社会动荡，政府尚未做好准备。",
+  "difficulty": "中等",
+  "translation": "创新，这一进步的灵丹妙药，一直以牺牲人们的工作为代价。在工业革命中，手工织布工被机械织机扫除。过去30年，数字革命已经取代了许多支撑20世纪中产阶级生活的中等技能工作。打字员、票务代理、银行柜员和许多生产线岗位都被摒弃，正如织布工一样。\n\n对于那些相信技术进步让世界变得更美好的人来说，这种扰乱是日益繁荣的自然组成部分。尽管创新会消灭一些工作，但它会创造新的、更好的工作，因为一个生产力更高的社会变得更加富裕，其更富裕的居民需要更多的商品和服务。一百年前，三分之一的美国工人在农场工作。如今不到2%的工人生产出多得多的食物。从土地上解放出来的数百万人并未沦为失业者，而是随着经济变得更加复杂而找到了报酬更高的工作。如今秘书的数量已经缩减，但计算机程序员和网页设计师比以往更多。\n\n乐观仍然是正确的出发点，但对工人而言，技术的扰乱效应可能比它的好处显现得更快。即使新工作和好产品出现，短期内收入差距将扩大，导致巨大的社会错位，甚至可能改变政治。技术的影响将像旋风一样，首先冲击富裕国家，但最终也会席卷较贫穷国家。没有任何政府为此做好准备。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "N",
+    "correct": "swept",
+    "why": "空格前是were，构成被动语态，需要过去分词；swept aside是固定短语，意为“被扫到一边/淘汰”，符合工业革命手工织布工被机械织机取代的语境。",
+    "traps": "displaced也是过去分词且含被取代之意，但不与aside搭配；benefits是名词，eventually是副词，均无法填入被动结构。",
+    "tip": "注意被动语态和动词短语搭配。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "displaced",
+    "why": "has后需过去分词构成现在完成时，宾语是jobs；displaced意为“使失业，取代”，准确说明数字革命对中等技能工作的冲击。",
+    "traps": "swept虽为过去分词，但多与away/aside连用，且此处无方向副词；benefits是名词/动词原形，employed语义相反。",
+    "tip": "现在完成时 has + 过去分词；注意动宾搭配。"
+   },
+   {
+    "number": 28,
+    "answer": "I",
+    "correct": "prosperity",
+    "why": "空格位于rising之后，需要名词；prosperity意为“繁荣”，rising prosperity表示日益繁荣，与后文社会更富裕的逻辑呼应。",
+    "traps": "benefits为复数名词，但语境强调整体繁荣而非具体好处；impact虽为名词但意为冲击，productive为形容词，均不符。",
+    "tip": "形容词修饰名词，注意抽象名词搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "H",
+    "correct": "productive",
+    "why": "空格在more和society之间，需要形容词原级；productive意为“富有生产力的”，指生产力更高的社会变得更富裕。",
+    "traps": "jobless是形容词但语义相反；prosperity是名词不能修饰society；displaced/employed虽为形容词但不符合社会变得更富裕的逻辑。",
+    "tip": "more + 形容词原级 + 名词。"
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "correct": "employed",
+    "why": "空格在was后，可构成被动或系表结构，employed on a farm意为“受雇于农场/从事农业”，与一百年前美国农业就业比例吻合。",
+    "traps": "jobless作表语语义相反；displaced表示被取代，不是正常就业；productive不能与on a farm搭配。",
+    "tip": "be employed in/on 表示受雇于某处。"
+   },
+   {
+    "number": 31,
+    "answer": "F",
+    "correct": "jobless",
+    "why": "rendered后需形容词作宾语补足语，jobless意为“失业的”，rendered jobless表示沦为失业，与后文找到更好工作形成转折。",
+    "traps": "displaced作形容词虽可表流离失所，但不如jobless直接对应失业；employed语义相反；prosperity是名词。",
+    "tip": "render + 宾语 + 形容词（宾补）。"
+   },
+   {
+    "number": 32,
+    "answer": "M",
+    "correct": "shrunk",
+    "why": "has后需过去分词，主语the pool of secretaries；shrunk意为“萎缩，缩小”，指秘书群体数量减少，与后半句程序员增多形成对比。",
+    "traps": "displaced是及物动词，此处无宾语；swept多与副词搭配；benefits是名词/动词原形，不用于完成时。",
+    "tip": "现在完成时，注意不及物动词。"
+   },
+   {
+    "number": 33,
+    "answer": "A",
+    "correct": "benefits",
+    "why": "its后需名词，benefits意为“好处”，指技术带来的好处比破坏效应显现得更慢，与后文短期收入差距扩大呼应。",
+    "traps": "impact是名词但语义为冲击，与“破坏效应”重复；prosperity过于宽泛，且多为不可数；eventually是副词。",
+    "tip": "所有格its后接名词，注意语义对比。"
+   },
+   {
+    "number": 34,
+    "answer": "E",
+    "correct": "impact",
+    "why": "Technology's后需名词，impact意为“影响”，科技的影响如旋风，与后文先冲击富国再席卷穷国一致。",
+    "traps": "benefits语义相反，prosperity是繁荣，无法体现破坏性；jobless/productive是形容词，不能作中心名词。",
+    "tip": "名词所有格 + 核心名词。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "correct": "eventually",
+    "why": "空格位于现在分词sweeping前，需要副词修饰，eventually意为“最终”，表示最终也会席卷穷国，符合时间顺序。",
+    "traps": "benefits/impact为名词，displaced为过去分词，均不能修饰动词；swept是过去式/过去分词，不能作副词。",
+    "tip": "副词修饰动词，注意时间副词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "benefits",
+    "cn": "n. 好处，益处；v. 有益于"
+   },
+   {
+    "w": "displaced",
+    "cn": "v. 取代，使失业（displace的过去式/过去分词）"
+   },
+   {
+    "w": "employed",
+    "cn": "adj. 被雇用的；v. 雇用（employ的过去式/过去分词）"
+   },
+   {
+    "w": "eventually",
+    "cn": "adv. 最终，终于"
+   },
+   {
+    "w": "impact",
+    "cn": "n. 影响，冲击"
+   },
+   {
+    "w": "jobless",
+    "cn": "adj. 失业的"
+   },
+   {
+    "w": "productive",
+    "cn": "adj. 多产的，富有成效的"
+   },
+   {
+    "w": "prosperity",
+    "cn": "n. 繁荣，兴旺"
+   },
+   {
+    "w": "shrunk",
+    "cn": "v. 收缩，缩小（shrink的过去分词）"
+   },
+   {
+    "w": "swept",
+    "cn": "v. 扫除，席卷（sweep的过去式/过去分词）"
+   },
+   {
+    "w": "innovation",
+    "cn": "n. 创新"
+   },
+   {
+    "w": "disruption",
+    "cn": "n. 扰乱，中断"
+   }
+  ],
+  "skills": [
+   "快速通读全文，抓住主题：创新影响就业。",
+   "分析空格所在句语法结构，判断所需词性。",
+   "根据前后语义和固定搭配缩小范围。",
+   "先做有把握的空，用排除法解决剩余。",
+   "代入答案复读，检查时态、语态、修饰是否一致。"
+  ]
+ }
+}

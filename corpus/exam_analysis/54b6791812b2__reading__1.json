@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "54b6791812b2__reading__1",
+ "examId": "54b6791812b2",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2005 年考研英语真题（旧）",
+ "year": 2005,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:15:56.833Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66162,
+ "usage": {
+  "prompt_tokens": 1799,
+  "completion_tokens": 3829,
+  "total_tokens": 5628,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1799,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3829,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1799,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "猴子也有公平感",
+  "gist": "文章介绍了Brosnan和de Waal在《自然》杂志上发表的一项研究：通过让雌性卷尾猴用代币交换食物的实验，发现猴子在观察到同伴获得更好的奖励时会表现出不满甚至拒绝接受较差的奖励，说明对不公平的愤怒并非人类独有，猴子同样具备这种社会性情感。",
+  "structure": [
+   "第一段：以人类嫉妒心引出话题，类比猴子也有不公平感",
+   "第二段：介绍实验对象——雌性卷尾猴的特征",
+   "第三段：描述实验设计——用代币换食物的训练过程",
+   "第四段：呈现实验结果——猴子对不公平待遇的愤怒反应",
+   "第五段：总结研究意义，讨论公平感的进化来源问题"
+  ],
+  "difficulty": "中等",
+  "translation": "人人都喜欢大幅加薪。然而，如果你得知一位同事的加薪幅度比你更大，你自己加薪的快乐可能就会荡然无存。的确，如果此人素来以偷懒闻名，你甚至可能会感到愤怒。这种行为被认为是\"太具有人性了\"，其潜在假设是其他动物不可能具备这种高度发达的不满情绪。但是，亚特兰大埃默里大学的Sarah Brosnan和Frans de Waal刚刚在《自然》杂志上发表的一项研究表明，这种行为同样也\"太具有猴性了\"。\n\n研究人员观察了雌性棕色卷尾猴的行为。它们看起来很可爱，性情温和、善于合作，并且乐于分享食物。最重要的是，与人类女性同类一样，它们往往比雄性更加关注\"商品和服务\"的价值。\n\n这些特征使它们成为Brosnan博士和de Waal博士研究的完美候选者。研究人员花了两年时间训练猴子用代币交换食物。通常情况下，猴子们很乐意用石块换取黄瓜片。然而，当两只猴子被放置在相邻但分隔的房间里，使每只猴子都能观察到对方用石块换到了什么时，它们的行为就发生了显著变化。\n\n在卷尾猴的世界里，葡萄是奢侈品（远比黄瓜受欢迎）。因此，当一只猴子用代币换到了一颗葡萄时，另一只猴子就不愿意仅用自己的代币换一片黄瓜。如果一只猴子甚至不用交出代币就得到了葡萄，另一只猴子要么把自己的代币扔向研究人员或扔出房间，要么拒绝接受那片黄瓜。事实上，仅仅是另一个房间里放着一颗葡萄（即使没有猴子在吃），就足以引起一只雌性卷尾猴的怨恨。\n\n研究人员认为，卷尾猴和人类一样，受到社会性情感的引导。在野外，它们是合作性的群居物种。这种合作关系只有在每只动物都觉得自己没有被欺骗的情况下才可能稳定。看来，正义的愤慨感并非人类独有。完全拒绝较差的奖励能够向群体中的其他成员清楚地表明这种感受。然而，这种公平感是在卷尾猴和人类中独立进化出来的，还是源自三千五百万年前两个物种的共同祖先，目前仍是一个未解之谜。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "Such behaviour is regarded as \"all too human\", with the underlying assumption that other animals would not be capable of this finely developed sense of grievance. But a study... suggests that it is all too monkey, as well.",
+    "why": "首段先描述人类对不公平待遇的愤怒反应（嫉妒同事加薪更多），然后将此与猴子的类似行为进行类比（all too human → all too monkey），即通过人类行为引出猴子行为的比较。making a comparison（作比较）准确概括了这种写作手法：先说人的反应，再引出猴子也有同样反应。",
+    "traps": "A项\"posing a contrast（提出对比）\"：对比强调差异，而本段强调人与猴子的相似性，属于类比非对比；B项\"justifying an assumption（证明一个假设）\"：文中的假设是\"其他动物不具备这种情感\"，作者恰恰在否定而非证明该假设；D项\"explaining a phenomenon（解释一个现象）\"：作者是引出话题，并非在解释现象的原因。",
+    "tip": "注意区分comparison（强调相似）和contrast（强调差异）的本质区别。"
+   },
+   {
+    "number": 22,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "Such behaviour is regarded as \"all too human\", with the underlying assumption that other animals would not be capable of this finely developed sense of grievance. But a study... suggests that it is all too monkey, as well.",
+    "why": "\"all too human\"意为\"这完全是人的天性\"，而\"all too monkey\"则对仗地表达\"这也完全是猴子的天性\"。前文语境是人们对不公平待遇感到不满（sense of grievance），因此该句意味着对不公平的愤恨同样也是猴子的本性，B项\"resenting unfairness is also monkeys' nature\"准确概括了此意。",
+    "traps": "A项\"outraged by slack rivals\"：偷懒只是首段举的人类场景的例子，猴子实验并不涉及\"偷懒的对手\"，属于偷换概念；C项\"tend to be jealous of each other\"：嫉妒（jealous）与对不公平的愤恨（resenting unfairness）含义不同，且文中强调的是公平感而非嫉妒；D项\"no animals other than monkeys\"：文中并未排除其他动物也有此情感，属于过度推断。",
+    "tip": "理解仿拟修辞（all too human → all too monkey），关键在于把握对仗结构传达的核心语义。"
+   },
+   {
+    "number": 23,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Above all, like their female human counterparts, they tend to pay much closer attention to the value of \"goods and services\" than males.",
+    "why": "第二段末尾用\"Above all（最重要的是）\"强调雌性卷尾猴比雄性更关注\"商品和服务\"的价值，第三段首句又说\"Such characteristics make them perfect candidates\"。A项\"more inclined to weigh what they get（更倾向于衡量所得）\"是对\"pay much closer attention to the value\"的同义改写，准确对应选择雌性猴子的最主要原因。",
+    "traps": "B项\"attentive to researchers' instructions\"：原文说的是关注物品价值，而非听从研究人员指令，属于无中生有；C项\"nice in both appearance and temperament\"：虽然文中提到cute和good-natured，但这不是用Above all强调的最主要原因；D项\"more generous than their male companions\"：原文说share food readily，但并未比较雌雄的慷慨程度，且这也不是Above all强调的核心原因。",
+    "tip": "多个特征并列时，注意\"above all\"等信号词标示的最重要因素。"
+   },
+   {
+    "number": 24,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Such co-operation is likely to be stable only when each animal feels it is not being cheated.",
+    "why": "第四段详细描述了实验结果：当猴子发现同伴获得更好的奖励时，会拒绝交出代币或拒绝接受黄瓜，即拒绝合作。第五段总结指出合作只有在不被欺骗时才稳定。综合来看，研究最终发现猴子在感到被欺骗/不公平时不愿合作，C项准确概括了这一核心发现。",
+    "traps": "A项\"prefer grapes to cucumbers\"：猴子偏爱葡萄是实验的前提条件和背景设定，并非研究的核心发现；B项\"can be taught to exchange things\"：用代币换食物的训练是实验手段而非研究结论；D项\"unhappy when separated from others\"：实验中猴子被放在相邻隔间，但分离本身不是导致不满的原因，不公平待遇才是。",
+    "tip": "区分实验的\"前提/手段\"和\"核心结论\"，研究发现一般在结果和总结段落中体现。"
+   },
+   {
+    "number": 25,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "However, whether such a sense of fairness evolved independently in capuchins and humans, or whether it stems from the common ancestor that the species had 35 million years ago, is, as yet, an unanswered question.",
+    "why": "末段最后一句指出公平感究竟是猴子和人类各自独立进化出来的，还是源自三千五百万年前的共同祖先，目前仍是未解之谜。这说明人类正义愤怒感的进化来源尚不确定，B项\"Human indignation evolved from an uncertain source\"是对此句的准确概括。",
+    "traps": "A项\"trained to develop social emotions\"：文中说猴子天然受社会情感引导，并非通过训练获得，属于曲解原文；C项\"show their feelings openly as humans do\"：文中仅说猴子会通过拒绝奖励来表达不满，并未泛化说动物像人类一样公开表达所有感情；D项\"remains stable only in the wild\"：原文说合作在不被欺骗时才稳定，\"only in the wild\"是对原文\"in the wild\"的偷换，将地点限定条件强加于合作稳定性。",
+    "tip": "末段结尾的未解问题常是推断题考点，注意\"unanswered/uncertain\"等措辞对应选项中的不确定表述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "vanish",
+    "cn": "v. 消失，消散"
+   },
+   {
+    "w": "outraged",
+    "cn": "adj. 愤怒的，义愤填膺的"
+   },
+   {
+    "w": "grievance",
+    "cn": "n. 不满，委屈，牢骚"
+   },
+   {
+    "w": "counterparts",
+    "cn": "n. 对应的人或物，同行（复数）"
+   },
+   {
+    "w": "markedly",
+    "cn": "adv. 显著地，明显地"
+   },
+   {
+    "w": "reluctant",
+    "cn": "adj. 不情愿的，勉强的"
+   },
+   {
+    "w": "induce",
+    "cn": "v. 引起，导致，诱发"
+   },
+   {
+    "w": "resentment",
+    "cn": "n. 愤恨，怨恨"
+   },
+   {
+    "w": "righteous",
+    "cn": "adj. 正当的，正义的"
+   },
+   {
+    "w": "indignation",
+    "cn": "n. 愤慨，义愤"
+   },
+   {
+    "w": "preserve",
+    "cn": "n. 专有领域，独占范围（此处为名词）"
+   },
+   {
+    "w": "abundantly",
+    "cn": "adv. 充分地，大量地"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Such behaviour is regarded as \"all too human\", with the underlying assumption that other animals would not be capable of this finely developed sense of grievance.",
+    "cn": "这种行为被认为是\"太具有人性了\"，其潜在假设是其他动物不可能具备这种高度发达的不满情绪。",
+    "note": "主干为Such behaviour is regarded as...，with引导伴随状语补充说明潜在假设，that引导同位语从句解释assumption的内容。"
+   },
+   {
+    "en": "And if one received a grape without having to provide her token in exchange at all, the other either tossed her own token at the researcher or out of the chamber, or refused to accept the slice of cucumber.",
+    "cn": "如果一只猴子根本不用交出代币就得到了一颗葡萄，另一只猴子要么把自己的代币扔向研究人员或扔出房间，要么拒绝接受那片黄瓜。",
+    "note": "if引导条件状语从句，主句用either...or...or...构成三重并列选择结构，without having to...作方式状语。"
+   },
+   {
+    "en": "However, whether such a sense of fairness evolved independently in capuchins and humans, or whether it stems from the common ancestor that the species had 35 million years ago, is, as yet, an unanswered question.",
+    "cn": "然而，这种公平感是在卷尾猴和人类中独立进化出来的，还是源自三千五百万年前两个物种的共同祖先，目前仍是一个未解之谜。",
+    "note": "whether...or whether...构成双重主语从句，is为主句谓语，as yet为插入语表示\"到目前为止\"，that引导定语从句修饰ancestor。"
+   }
+  ]
+ }
+}

@@ -4382,3 +4382,141 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   #wordFilters::-webkit-scrollbar { display: none; }
   #wordFilters .chip { flex: 0 0 auto; white-space: nowrap; }
 }
+
+/* ================= v3.8.0：真题参考解析（做完后对照） =================
+   契约：解析面板只在 body.exm-show-analysis（「答案对照」模式）可见；
+   演练模式完全隐藏，杜绝泄题。所有文本缩进遵循全站 2em 契约。 */
+
+.exm-an-mount { display: none; }
+body.exm-show-analysis .exm-an-mount { display: block; }
+
+.exm-an-panel {
+  margin: 14px 0 4px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg-soft, var(--bg)); overflow: hidden;
+}
+.exm-an-panel-head {
+  padding: 9px 14px; font-weight: 700; font-size: 13px; color: var(--primary);
+  background: var(--primary-soft); border-bottom: 1px solid var(--border);
+}
+.exm-an-panel > .exm-an-block,
+.exm-an-panel > .exm-an-details,
+.exm-an-panel > .exm-an-writing,
+.exm-an-panel > .exm-an-hero { margin: 10px 14px; }
+.exm-an-panel > *:last-child { margin-bottom: 12px; }
+
+.exm-an-hero {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: 8px; background: var(--primary-soft);
+}
+.exm-an-hero-k { font-size: 11px; font-weight: 700; color: var(--text-sub); }
+.exm-an-hero-v { font-weight: 700; font-size: 14px; }
+.exm-an-diff {
+  margin-left: auto; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 16%, transparent); color: var(--primary);
+}
+
+.exm-an-block { font-size: 13px; line-height: 1.85; text-indent: 2em; }
+.exm-an-block > b {
+  display: block; text-indent: 0; font-size: 12px; color: var(--primary);
+  margin-bottom: 3px; letter-spacing: .02em;
+}
+.exm-an-block.warn > b { color: var(--warn, #ef4444); }
+.exm-an-block.tip > b { color: var(--ok, #10b981); }
+.exm-an-block p { text-indent: 2em; margin: 4px 0; }
+.exm-an-en { font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+.exm-an-note { font-size: 12px; color: var(--text-sub); text-indent: 0; }
+
+.exm-an-list { margin: 2px 0 0; padding-left: 1.6em; text-indent: 0; }
+.exm-an-list li { margin: 3px 0; line-height: 1.8; }
+.exm-an-list.tight li { margin: 1px 0; font-size: 12px; }
+
+.exm-an-details { border: 1px solid var(--border); border-radius: 8px; background: var(--bg); }
+.exm-an-details > summary {
+  cursor: pointer; padding: 9px 14px; font-size: 12px; font-weight: 700; color: var(--primary);
+  list-style: none; min-height: 44px; display: flex; align-items: center;
+}
+.exm-an-details > summary::-webkit-details-marker { display: none; }
+.exm-an-details > summary::before { content: '▸ '; margin-right: 4px; }
+.exm-an-details[open] > summary::before { content: '▾ '; }
+.exm-an-body { padding: 0 14px 12px; font-size: 13px; line-height: 1.9; }
+.exm-an-body p { text-indent: 2em; margin: 6px 0; }
+
+.exm-an-pairs { display: flex; flex-wrap: wrap; gap: 6px; text-indent: 0; margin-top: 3px; }
+.exm-an-pair {
+  font-size: 12px; padding: 3px 10px; border-radius: 6px;
+  background: var(--bg); border: 1px solid var(--border);
+}
+.exm-an-kw {
+  display: inline-block; font-size: 11px; padding: 2px 9px; margin: 2px 4px 2px 0;
+  border-radius: 999px; background: var(--primary-soft); color: var(--primary); text-indent: 0;
+}
+.exm-an-vocab { display: flex; flex-wrap: wrap; gap: 6px; text-indent: 0; margin-top: 3px; }
+.exm-an-word {
+  display: inline-flex; flex-direction: column; gap: 1px; font-size: 12px;
+  padding: 5px 10px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border);
+}
+.exm-an-word > b { color: var(--primary); font-size: 12.5px; }
+.exm-an-word > span { color: var(--text-sub); font-size: 11.5px; }
+
+.exm-an-longsent, .exm-an-seg {
+  border: 1px dashed var(--border); border-radius: 8px; padding: 8px 12px; margin: 7px 0;
+  background: var(--bg); text-indent: 0; font-size: 12.5px; line-height: 1.8;
+}
+.exm-an-seg-head { font-weight: 700; font-size: 12px; color: var(--primary); margin-bottom: 3px; }
+
+.exm-an-writing {
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; margin: 10px 14px;
+  background: var(--bg);
+}
+.exm-an-writing-head {
+  font-weight: 700; font-size: 13px; color: var(--primary); margin-bottom: 6px;
+}
+.exm-an-writing .exm-an-block { text-indent: 2em; }
+.exm-an-writing .exm-an-details { margin: 8px 0; }
+
+/* 逐题解析（答案对照模式注入题卡） */
+.exm-an-head { font-size: 12.5px; margin-bottom: 6px; }
+.exm-verdict { font-weight: 700; font-size: 11px; padding: 1px 8px; border-radius: 999px; margin-left: 4px; }
+.exm-verdict.ok { background: color-mix(in srgb, var(--ok, #10b981) 18%, transparent); color: var(--ok, #10b981); }
+.exm-verdict.bad { background: color-mix(in srgb, var(--warn, #ef4444) 18%, transparent); color: var(--warn, #ef4444); }
+.exm-verdict.skip { background: var(--bg-soft, var(--bg)); color: var(--text-sub); }
+
+.exm-an-explain { margin-top: 8px; border-top: 1px dashed var(--border); padding-top: 8px; }
+.exm-an-explain .exm-an-block { font-size: 12.5px; line-height: 1.8; }
+.exm-an-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; }
+.exm-an-tag {
+  font-size: 11px; padding: 1px 9px; border-radius: 999px; font-weight: 700;
+  background: var(--bg-soft, var(--bg)); color: var(--text-sub); border: 1px solid var(--border);
+}
+.exm-an-tag.ok {
+  background: color-mix(in srgb, var(--ok, #10b981) 14%, transparent);
+  color: var(--ok, #10b981); border-color: transparent;
+}
+.exm-an-row { display: flex; gap: 8px; font-size: 12px; margin: 3px 0; }
+.exm-an-label { flex: 0 0 auto; font-weight: 700; color: var(--text-sub); }
+.exm-an-value { flex: 1 1 auto; }
+.exm-an-empty {
+  font-size: 12px; color: var(--text-sub); padding: 10px 14px; font-style: italic;
+}
+
+/* 解析状态徽章 */
+.exm-an-badge {
+  font-size: 11.5px; font-weight: 700; padding: 3px 11px; border-radius: 999px;
+  background: var(--bg-soft, var(--bg)); color: var(--text-sub); border: 1px solid var(--border);
+}
+.exm-an-badge.ready {
+  background: color-mix(in srgb, var(--primary) 14%, transparent);
+  color: var(--primary); border-color: transparent;
+}
+.exm-an-badge.empty { opacity: .75; }
+
+/* 移动端：解析面板整体收窄内边距，触控项 >=44px */
+@media (max-width: 700px) {
+  .exm-an-panel > .exm-an-block,
+  .exm-an-panel > .exm-an-details,
+  .exm-an-panel > .exm-an-hero { margin: 8px 10px; }
+  .exm-an-writing { margin: 8px 10px; padding: 8px 10px; }
+  .exm-an-block { font-size: 12.5px; line-height: 1.8; }
+  .exm-an-details > summary { min-height: 44px; padding: 10px 12px; }
+  .exm-an-word { flex: 1 1 46%; }
+}

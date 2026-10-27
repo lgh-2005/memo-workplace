@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "8dff50a64310__reading__2",
+ "examId": "8dff50a64310",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 6 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:21:56.379Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61568,
+ "usage": {
+  "prompt_tokens": 1796,
+  "completion_tokens": 3779,
+  "total_tokens": 5575,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1796,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3779,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1796,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "决策疲劳与为他人做决定的优势",
+  "gist": "文章围绕\"决策疲劳\"这一心理现象展开，指出人们在经历长时间决策后会出现疲劳，导致决策质量下降或不作为；而为他人做决定时则不会受此影响，反而更轻松且敢于冒险。适当的冒险对于达成积极结果至关重要，但人们即使能为他人做出好决策，也未必能为自己做到同样好。",
+  "structure": [
+   "第1-2段：引出核心概念——决策疲劳及其影响",
+   "第3段：以医生为例具体说明决策疲劳的表现",
+   "第4段：为他人做决定可消除决策疲劳",
+   "第5-6段：决策疲劳导致安于现状，适度冒险的重要性",
+   "第7段：补充警示——为他人做好决策不等于为自己也能如此"
+  ],
+  "difficulty": "中等",
+  "translation": "如果你曾经说过\"如果我是你的话……\"这样的开头，或者发现自己对同事在某个答案明摆着的决定上纠结不已而感到困惑，这背后是有科学原因的。我们自己的决策能力会在一天当中逐渐消耗殆尽，导致优柔寡断或做出糟糕的选择，但替别人做选择则是一项令人愉悦的任务，不会遭遇同样的陷阱。\n\n问题在于\"决策疲劳\"，这是一种心理现象，在经历了一整天的决策之后，它会损害你的决策质量，领先的心理学家埃文·波尔曼如此说道。\n\n例如，已经工作了好几个小时的医生更有可能在不明智的情况下给患者开抗生素处方。\"大概是因为开处方然后把病例视为结案更简单、更容易，而不用做进一步调查，\"波尔曼说。\n\n但是，当你在为别人做决定时，决策疲劳就消失了。当人们把自己想象成顾问，并把自己的选择想象成属于别人的选择时，他们感觉没那么疲倦，也不太依赖决策捷径来做出那些选择。\"通过承担顾问的角色而非决策者的角色，一个人就不会遭受决策疲劳的后果，\"他说。\"仿佛替别人做选择有某种乐趣和解放感。\"\n\n从他人那里获得意见不仅能提供新鲜的视角和思维过程，还往往包含更具冒险性的选择。虽然这听起来不太理想，但其实可能相当有益，波尔曼说。\"当人们经历决策疲劳——当他们厌倦了做选择——他们倾向于选择维持现状，\"他说。\"但现状可能是有问题的，因为改变行动方案有时是重要的，并且能带来积极的结果。\"\n\n为了取得成功的结果或回报，某种程度的冒险几乎总是必不可少的。\"容易受到决策疲劳影响的人可能会选择什么都不做而不是采取行动，\"他说。\"这并不是说冒险总是好的，但它与采取行动相关，而决策疲劳必然导致不作为，以及决策者可能产生的懊恼——他本来可能更倾向于一条新路线，但不幸被阻碍了。\"\n\n仅仅因为你能为别人做出好的选择，并不意味着你也能为自己做到同样的事情，波尔曼提醒道。\"研究发现，女性为别人谈薪资时比为自己谈时要价更高，\"他说，并补充道，人们会在不同的决策角色之间切换。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Our own decision-making abilities can become depleted over the course of the day causing indecision or poor choices, but choosing on behalf of someone else is an enjoyable task that doesn't suffer the same pitfalls.",
+    "why": "原文第一段明确指出：我们自己的决策能力会在一天中逐渐\"消耗殆尽\"（depleted），导致优柔寡断或糟糕的选择。A选项中的\"become exhausted by making too many decisions for themselves\"是对\"become depleted over the course of the day\"的同义改写，exhausted对应depleted，too many decisions对应over the course of the day的持续决策。",
+    "traps": "B选项\"为他人做决定更谨慎\"与原文相反，原文说为他人做决定更轻松愉快，甚至更敢冒险；C选项\"倾向于做对自己有利的决策\"原文未提及；D选项\"决策能力存在相当大的个体差异\"属于无中生有，文章讨论的是决策疲劳的普遍现象，而非个体差异。",
+    "tip": "注意depleted与exhausted的同义替换是六级常见考法。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "Physicians who have been on the job for several hours, for example, are more likely to prescribe antibiotics to patients when it's unwise to do so.",
+    "why": "医生的例子出现在第三段，承接第二段提出的\"决策疲劳\"概念。工作数小时后医生倾向于开不必要的抗生素处方，这正是决策疲劳导致不明智决策的具体表现。该例子服务于第二段的论点：决策疲劳会损害决策质量，故C选项正确。",
+    "traps": "A选项\"患者在一天快结束时很少受到应有的关注\"过度推断且偷换主语，原文讨论的是医生的决策质量而非对患者关注程度；B选项\"开抗生素处方可能对患者有害\"虽可能为真但不是该例子要说明的核心论点；D选项\"医生特别容易受决策疲劳影响\"属于过度概括，原文只是以医生为例，未说医生比其他人更易受影响。",
+    "tip": "例证题要回到例子所服务的论点，而非就事论事。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "But decision fatigue goes away when you are making the decision for someone else. When people imagine themselves as advisers and imagine their own choices as belonging to someone else, they feel less tired and rely less on decision shortcuts to make those choices.",
+    "why": "第四段开头明确指出：当你为他人做决定时，决策疲劳就消失了；随后解释当人们把自己想象成顾问时，会感觉没那么疲倦。B选项\"帮助他人做决定时\"直接对应原文\"making the decision for someone else\"和\"taking upon the role of adviser\"。",
+    "traps": "A选项\"走决策捷径时\"与原文相反，原文说为他人做决定时反而更少依赖捷径；C选项\"有重大决策要做时\"无原文依据；D选项\"有顾问可以求助时\"混淆了原文含义，原文说的是自己充当顾问角色，而非有顾问可供咨询。",
+    "tip": "注意区分\"充当顾问\"与\"向顾问求助\"的区别，这是典型偷换角色的干扰项。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "When people experience decision fatigue—when they are tired of making choices—they have a tendency to choose to go with the status quo. People who are susceptible to decision fatigue will likely choose to do nothing over something.",
+    "why": "第五段指出决策疲劳时人们倾向于维持现状（status quo），第六段进一步强调他们可能选择\"什么都不做\"（do nothing），且决策疲劳必然导致\"不作为\"（inaction）。D选项\"refrain from trying anything new\"（不去尝试新事物）正是对\"维持现状\"\"什么都不做\"的同义概括。",
+    "traps": "A选项\"向医生寻求建议\"无原文依据，医生只是举例对象；B选项\"倾向做冒险的决定\"与原文相反，原文说决策疲劳导致人们回避风险、安于现状；C选项\"采用全新视角\"与原文相反，决策疲劳恰恰使人拒绝改变。",
+    "tip": "status quo与do nothing都指向\"不行动\"，D选项是高度概括的同义表达。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "In order to achieve a successful outcome or reward, some level of risk is almost always essential.",
+    "why": "第六段首句直接点明：为了取得成功的结果或回报，某种程度的冒险几乎总是必不可少的。A选项\"It is vital for one to reach the goal desired\"是对该句的精确改写——vital对应essential，reach the goal desired对应achieve a successful outcome or reward。",
+    "traps": "B选项\"可能带来严重后果\"属于负面曲解，原文虽提到冒险并非总是好的，但核心论点强调冒险对成功结果的必要性；C选项\"使人更有创造力\"原文未提及创造力；D选项\"往往以遗憾收场\"与原文相反，原文说的是不冒险（不作为）才会带来懊恼（chagrin）。",
+    "tip": "注意essential与vital的同义替换，以及chagrin是不作为的后果而非冒险的后果。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "depleted",
+    "cn": "adj./v. 耗尽的，消耗殆尽的"
+   },
+   {
+    "w": "pitfall",
+    "cn": "n. 陷阱，隐患，易犯的错误"
+   },
+   {
+    "w": "take a toll on",
+    "cn": "短语 对……造成损害/产生负面影响"
+   },
+   {
+    "w": "prescribe",
+    "cn": "v. 开处方，开药"
+   },
+   {
+    "w": "presumably",
+    "cn": "adv. 大概，想必"
+   },
+   {
+    "w": "liberating",
+    "cn": "adj. 令人感到自由的，解放性的"
+   },
+   {
+    "w": "status quo",
+    "cn": "n. 现状"
+   },
+   {
+    "w": "susceptible",
+    "cn": "adj. 易受影响的，敏感的"
+   },
+   {
+    "w": "assuredly",
+    "cn": "adv. 确定无疑地，必然地"
+   },
+   {
+    "w": "chagrin",
+    "cn": "n. 懊恼，失望，窘迫"
+   },
+   {
+    "w": "hinder",
+    "cn": "v. 阻碍，妨碍"
+   },
+   {
+    "w": "negotiate",
+    "cn": "v. 谈判，协商"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "When people imagine themselves as advisers and imagine their own choices as belonging to someone else, they feel less tired and rely less on decision shortcuts to make those choices.",
+    "cn": "当人们把自己想象成顾问，并把自己的选择想象成属于别人的选择时，他们感觉没那么疲倦，也不太依赖决策捷径来做出那些选择。",
+    "note": "主句含两个并列谓语feel less tired和rely less on...；前置When引导时间状语从句，内含两个并列的imagine结构，第二个imagine后接宾语+as介词短语作宾补。"
+   },
+   {
+    "en": "That's not to say that risk is always good, but it is related to taking action whereas decision fatigue assuredly leads to inaction and the possible chagrin of a decision maker who might otherwise prefer a new course but is unfortunately hindered.",
+    "cn": "这并不是说冒险总是好的，但它与采取行动相关，而决策疲劳则必然导致不作为，以及决策者可能产生的懊恼——他本来可能更倾向于一条新路线，但不幸被阻碍了。",
+    "note": "主干为but连接的两个并列分句；whereas引出对比；chagrin后接of短语做定语，其中who引导定语从句修饰decision maker，从句内部又有but连接的两个并列谓语prefer和is hindered。"
+   },
+   {
+    "en": "Our own decision-making abilities can become depleted over the course of the day causing indecision or poor choices, but choosing on behalf of someone else is an enjoyable task that doesn't suffer the same pitfalls.",
+    "cn": "我们自己的决策能力会在一天当中逐渐消耗殆尽，导致优柔寡断或糟糕的选择，但替别人做选择则是一项令人愉悦的任务，不会遭遇同样的陷阱。",
+    "note": "but连接两个对比分句；前半句主干为abilities can become depleted，causing...为现在分词作结果状语；后半句中that引导定语从句修饰task。"
+   }
+  ]
+ }
+}

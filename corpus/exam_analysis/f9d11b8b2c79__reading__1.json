@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "f9d11b8b2c79__reading__1",
+ "examId": "f9d11b8b2c79",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年考研英语真题",
+ "year": 2025,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:56:39.171Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 70114,
+ "usage": {
+  "prompt_tokens": 1743,
+  "completion_tokens": 4217,
+  "total_tokens": 5960,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1743,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4217,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1743,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "戏剧教学法提升儿童读写与情感能力",
+  "gist": "一项随机对照实验表明，采用\"排练室\"式戏剧表演方法教授莎士比亚作品，能显著拓展儿童词汇量、提升写作复杂度和情感表达能力。研究将小学生分为实验组与对照组，发现接受戏剧活动的学生在语言丰富性、角色代入感和情绪认知方面均优于对照组，且莎士比亚的超大词汇量可能使该方法效果最佳。",
+  "structure": [
+   "第1-2段：引出研究结论——排练室教学法对儿童语言和情感有益",
+   "第3段：介绍随机对照实验的设计——分组与任务",
+   "第4-5段：呈现实验结果——实验组在词汇、写作和描写上优于对照组",
+   "第6段：O'Hanlon解读情感素养提升的原因——戏剧角色代入",
+   "第7段：讨论该方法是否适用于其他剧作家，暗示莎士比亚最为适合"
+  ],
+  "difficulty": "中等",
+  "translation": "来自埃文河畔斯特拉特福的文法学校男孩给学术界带来了一记重拳——一项开创性研究表明，莎士比亚确实有助于提升儿童的读写能力和情感发展。但前提是，你得把他的作品表演出来。\n\n一项研究发现，以\"排练室\"方式教授莎士比亚的作品，不仅能拓宽儿童的词汇量和写作复杂度，还能提升他们的情感素养。委托开展这项研究的皇家莎士比亚剧团（RSC）的杰奎·奥汉隆说：\"研究表明，演员的工作方式对儿童的语言运用以及自我认知方式产生了显著影响。\"\n\n这项随机对照试验涉及45所公立小学中数百名九至十岁的五年级学生，这些学校此前均未接触过RSC的教学法。学生被分为实验组和对照组，要求他们完成写作任务，例如以《暴风雨》中费迪南德的身份写一封装在瓶中的信，讲述海难后的经历。实验组还额外获得了一段30分钟的基于戏剧的配套活动。\n\n经同行评审的结果显示，实验组学生使用了更广泛的词汇，所用词汇\"被归类为更高级或更罕见的词汇\"，且写作篇幅更长。他们还\"似乎更自如地以角色身份写作……对照组学生想象的是自己遭遇海难时会如何反应，而实验组学生则将自己代入文学角色，并表达该角色的情感\"。\n\n这项名为\"行动时刻\"的研究还发现，对照组学生依赖\"荒岛陈词滥调\"，如棕榈树等，而实验组学生\"描写更为开阔，呈现了天空、大海和大气状况的更广阔画面\"。\n\n奥汉隆说，最让她惊讶的是\"实验组学生写作中表现出的情感素养\"，他们在写作中\"更具韧性、更充满希望\"。她补充道：\"情感理解力非常明显，这很可能与排练室过程有关——在那里你习惯于尝试以想象的方式去体验。他们能自如地描述不同的情感状态，而这正是你在戏剧中所做的事情之一——将自己代入不同的角色。\"她说，这项研究表明了将艺术融入教育的重要性。\n\n但这些效果能否用于其他任何老剧作家的作品呢？奥汉隆说还需要更多研究，但她指出，莎士比亚使用了两万个词汇——相比日常使用的两千个词汇——这为儿童的生活带来了\"语言的巨大拓展\"，再加上儿童\"用整个身体将文字赋予生命\"，二者结合产生了独特效果。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But only if you act him out.",
+    "why": "文章开篇即指出莎士比亚教学有效的前提是\"act him out\"（把他的作品演出来），第二段将此教学法命名为\"rehearsal room\"（排练室）方式，第六段进一步解释\"put yourself in different shoes\"（代入不同角色）。因此该方法的核心要求是让学生扮演莎剧中的角色，C选项\"play the roles in Shakespeare\"精确对应。",
+    "traps": "A\"改写莎士比亚台词\"原文未提及，属于无中生有；B\"观看RSC演员表演\"混淆了RSC委托研究与实际教学方式，学生是自己演而非观看；D\"在RSC艺术家指导下学习戏剧\"原文未说由RSC艺术家授课，属于过度推断。",
+    "tip": "注意抓取关键限定条件'act him out'锁定核心含义。"
+   },
+   {
+    "number": 22,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The randomised control trial involved hundreds of year 5 pupils … They were split into target and control groups … The target group was given a 30-minute drama-based activity to accompany the passage.",
+    "why": "实验将学生分为实验组和对照组，两组完成相同写作任务，唯一区别是实验组额外接受了戏剧活动（即教学方式/instruction的改变）。通过对比两组在词汇、写作深度和情感表达上的差异来验证教学法的效果。A选项\"教学方式的改变是否提升学习成果\"准确概括了实验目的。",
+    "traps": "B\"扩大词汇量是否有助于阅读流利度\"张冠李戴，词汇拓展是结果而非实验变量，且未涉及阅读流利度；C\"情感是否影响对复杂作品的理解\"因果倒置，研究的是教学法对情感素养的影响；D\"课堂活动是否激发艺术兴趣\"偷换研究目标，研究关注的是读写与情感发展而非艺术兴趣。",
+    "tip": "随机对照实验的核心是找出自变量（教学方式）与因变量（学习成果）的关系。"
+   },
+   {
+    "number": 23,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "while control pupils relied on 'desert island clichés' such as palm trees, target pupils were 'more expansive [giving] a broader picture of the sky, the sea and the atmospheric conditions'",
+    "why": "原文用对比手法突出差异：对照组依赖\"荒岛陈词滥调\"如棕榈树，而实验组描写更开阔、更丰富。\"clichés\"（陈词滥调）本身即意味着描写单调、缺乏细节和想象力，与实验组的\"more expansive\"\"broader picture\"形成鲜明反差，说明对照组在描写能力上存在明显不足，A\"描写上的薄弱\"正确。",
+    "traps": "B\"忽略小细节\"不准确，问题不在于遗漏细节，而在于整体描写贫乏、依赖套路；C\"随意的写作风格\"无原文依据，clichés体现的是表达贫乏而非态度随意；D\"偏好大词\"与原文相反，使用更高级词汇的恰恰是实验组。",
+    "tip": "clichés一词是解题关键，意为陈词滥调，直接指向表达能力的不足。"
+   },
+   {
+    "number": 24,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "They were comfortable in describing different emotional states and part of what you do in drama is put yourself in different shoes.",
+    "why": "O'Hanlon在第六段解释情感素养提升的原因时指出，排练室过程让学生\"习惯于以想象方式去体验\"，能\"自如描述不同情感状态\"，其核心机制是\"put yourself in different shoes\"（代入不同角色）。第四段也明确说实验组学生\"put themselves in the shoes of a literary character and express that character's emotion\"。B选项\"认同/代入文学角色\"准确概括了这一机制。",
+    "traps": "A\"以富有想象力的方式写作\"是结果表现而非促进情感素养的原因，因果混淆；C\"从自然中汲取灵感\"无原文依据，天空大海的描写是实验结果而非情感素养的成因；D\"专注于现实生活情境\"与原文相反，对照组才是想象自己的真实反应。",
+    "tip": "区分\"原因\"与\"结果\"：题目问的是促进情感素养的方法，而非表现。"
+   },
+   {
+    "number": 25,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "O'Hanlon said more research would be needed but suggested that Shakespeare's use of 20,000 words, compared with the everyday 2,000 words, gave a 'massive expansion of language into children's lives'",
+    "why": "末段提出\"能否用其他剧作家复制同样效果\"的问题，O'Hanlon虽称需更多研究，但随即强调莎士比亚拥有两万词汇量（远超日常两千词），带来\"语言的巨大拓展\"，且结合了\"用整个身体赋予文字生命\"。这暗示莎士比亚的独特词汇优势使该教学法效果最大化，即A\"新教学法可能与莎士比亚配合效果最佳\"。",
+    "traps": "B\"莎士比亚的语言对学生可能令人生畏\"与原文语境相反，文章是在肯定莎士比亚词汇量带来的积极拓展效果；C\"其他老剧作家可能被纳入小学教育\"过度推断，原文仅说需要更多研究，并未提及纳入教育计划；D\"学生可能不愿意研读其他老剧作家\"纯属无中生有，原文未涉及学生意愿问题。",
+    "tip": "末段常含推断题，注意'but suggested'后的让步转折暗示作者/受访者的真实倾向。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "groundbreaking",
+    "cn": "adj. 开创性的，突破性的"
+   },
+   {
+    "w": "pedagogy",
+    "cn": "n. 教学法，教育学"
+   },
+   {
+    "w": "randomised control trial",
+    "cn": "n. 随机对照试验"
+   },
+   {
+    "w": "peer-reviewed",
+    "cn": "adj. 经同行评审的"
+   },
+   {
+    "w": "clichés",
+    "cn": "n. 陈词滥调，老套说法"
+   },
+   {
+    "w": "resilient",
+    "cn": "adj. 有韧性的，适应力强的"
+   },
+   {
+    "w": "expansive",
+    "cn": "adj. 广阔的，详尽的"
+   },
+   {
+    "w": "embedding",
+    "cn": "v. 嵌入，使融入（embed的现在分词）"
+   },
+   {
+    "w": "replicated",
+    "cn": "v. 复制，重现（replicate的过去分词）"
+   },
+   {
+    "w": "dramatist",
+    "cn": "n. 剧作家"
+   },
+   {
+    "w": "commissioned",
+    "cn": "v. 委托，委任（commission的过去分词）"
+   },
+   {
+    "w": "atmospheric",
+    "cn": "adj. 大气的，有氛围的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The research shows that the way actors work makes a big difference to the way children use language and also how they think about themselves",
+    "cn": "研究表明，演员的工作方式对儿童使用语言的方式以及他们如何看待自己产生了显著影响。",
+    "note": "主句为The research shows that...引导宾语从句；从句中the way actors work为主语，makes a big difference to后接两个并列宾语：the way children use language和how they think about themselves。"
+   },
+   {
+    "en": "while [control] pupils imagine how they themselves would react to being shipwrecked, [target] children put themselves in the shoes of a literary character and express that character's emotion",
+    "cn": "对照组学生想象的是自己遭遇海难时会如何反应，而实验组学生则将自己代入文学角色并表达该角色的情感。",
+    "note": "while引导对比状语从句，形成对照组与实验组的对比；react to being shipwrecked中being为动名词作介词宾语；put themselves in the shoes of为固定搭配，意为'设身处地'。"
+   },
+   {
+    "en": "O'Hanlon said more research would be needed but suggested that Shakespeare's use of 20,000 words, compared with the everyday 2,000 words, gave a 'massive expansion of language into children's lives', which was combined with children 'using their whole bodies to bring words to life'",
+    "cn": "奥汉隆说还需要更多研究，但她指出莎士比亚使用了两万个词汇——相比日常使用的两千个词汇——为儿童的生活带来了'语言的巨大拓展'，再加上儿童'用整个身体将文字赋予生命'，二者相结合产生了独特效果。",
+    "note": "主句含said和suggested两个并列谓语，but形成转折；compared with...为插入比较结构；which引导非限制性定语从句修饰前面整个事实；using their whole bodies为动名词短语作with的宾语补足语。"
+   }
+  ]
+ }
+}

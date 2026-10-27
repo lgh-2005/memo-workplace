@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "939a9b6ce073__reading__2",
+ "examId": "939a9b6ce073",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年 9 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:30:31.325Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 56940,
+ "usage": {
+  "prompt_tokens": 1828,
+  "completion_tokens": 3596,
+  "total_tokens": 5424,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1828,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3596,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1828,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "澳大利亚珊瑚海海洋保护区争议",
+  "gist": "澳大利亚政府提议将珊瑚海设立为全球最大海洋保护区，但科学家和环保组织批评该方案保护力度不够：禁捕区面积不足、未能充分覆盖珊瑚礁栖息地，且对商业活动威胁最小的远海区域保护力度最大，而真正需要保护的近岸区域反而保护不足。",
+  "structure": [
+   "第1-2段：介绍珊瑚海及澳政府建立保护区的提案",
+   "第3-5段：科学家与环保组织对方案保护不力的批评",
+   "第6段：支持者肯定方案在保护栖息地方面的努力",
+   "第7-8段：批评扩展至西南和西北沿海保护区，指出保护重点错位"
+  ],
+  "difficulty": "中等",
+  "translation": "珊瑚海拥有原始珊瑚礁、珍稀鲨鱼和大量珍奇鱼类，是澳大利亚东北海岸外一个独特的生物多样性避风港。如果澳大利亚政府的一项提案得以实施，该地区还将成为世界上最大的海洋保护区，届时将对捕鱼、采矿和海洋养殖实施限制或禁令。\n\n珊瑚海保护区将覆盖近99万平方公里，从海岸向外延伸多达1100公里。环境部长托尼·伯克最近公布了这一提案，该提案将是澳大利亚沿海一系列拟设海洋保护区中的最后一个。\n\n但这一方案正招致科学家和环保组织的批评，他们认为政府在保护珊瑚海以及沿海网络中其他海洋保护区方面做得还不够。\n\n昆士兰大学环境决策卓越中心主任休·波辛厄姆指出，珊瑚海保护区中仅略多于一半的面积被拟定为\"禁捕\"区域，即全面禁止捕鱼的区域。而目前世界上最大的现有海洋保护区——去年由英国政府在印度洋建立——面积达55.4万平方公里，且全域均为禁捕区。多个环保运动联盟组织认为，珊瑚海应有更多区域获得这一级别的保护。\n\n\"我希望能看到对珊瑚礁更多的保护，\"昆士兰詹姆斯库克大学珊瑚礁研究卓越中心主任特里·休斯说。\"超过20个珊瑚礁将位于禁捕区之外，容易受到捕后放生式捕鱼的影响。\"\n\n截至《自然》杂志付印时，澳大利亚政府尚未回应对该方案的具体批评。但詹姆斯库克大学海洋地质学家罗宾·比曼表示，该保护区确实\"大体上保护了海洋中各类栖息地\"。他说：\"我可以证明，政府机构和其他组织为理解这一广袤区域的生态价值付出了巨大的努力。\"\n\n今年早些时候，针对澳大利亚西南和西北沿海地区提出的保护区方案也因未能为栖息地提供充分保护而受到批评。8月份，173名海洋科学家联名致信政府，表示他们对西南地区的方案\"深感忧虑\"，因为这些方案并未基于保护区的\"核心科学原则\"——例如，受保护区域并不能代表该地区所有的栖息地类型。\n\n批评者指出，西南保护区对商业机会最少、环境威胁最小的远海区域提供了最大力度的保护，这一指控同样被用于珊瑚海方案。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Home to virgin reefs, rare sharks and vast numbers of exotic fish, the Coral Sea is a unique haven of biodiversity off the northeastern coast of Australia.",
+    "why": "原文第一句明确指出珊瑚海拥有原始珊瑚礁、珍稀鲨鱼和大量珍奇鱼类，是生物多样性的独特避风港。A选项\"海洋生物异常丰富\"是对这一信息的准确概括，biodiversity（生物多样性）对应rich in marine life。",
+    "traps": "B项\"最大的海洋保护区\"是提案中的计划而非已实现的事实，张冠李戴；C项\"基本未受人类干扰\"原文未提及，属于无中生有；D项将biodiversity（生物多样性）偷换为endangered species（濒危物种），原文说的是rare sharks而非所有物种都是濒危的，属于偷换概念。",
+    "tip": "注意区分\"已经是\"与\"计划成为\"的区别。"
+   },
+   {
+    "number": 52,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Unveiled recently by environment minister Tony Burke, the proposal would be the last in a series of proposed marine reserves around Australia's coast.",
+    "why": "原文指出伯克公布的珊瑚海保护区提案是澳大利亚沿海一系列拟设海洋保护区中的\"最后一个\"（the last in a series），D选项\"完成其沿海海洋保护区系列\"准确对应了这一信息，complete对应the last in a series。",
+    "traps": "A项\"提出新提案保护珊瑚海\"过于笼统，未体现\"系列中最后一个\"的关键信息；B项\"因批评而修订保护计划\"属于无中生有，批评出现在提案之后，且政府尚未回应；C项\"升级现有保护区\"原文并未提及，属于无中生有。",
+    "tip": "关注\"the last in a series\"这类序列表达，常考完成性含义。"
+   },
+   {
+    "number": 53,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "But the scheme is attracting criticism from scientists and conservation groups, who argue that the government hasn't gone far enough in protecting the Coral Sea, or in other marine reserves in the coastal network.",
+    "why": "原文第三段明确说科学家和环保组织认为政府在保护珊瑚海方面\"做得不够\"（hasn't gone far enough），A选项\"政府在海洋保护方面做得不够\"是对原文的直接转述，far enough对应enough。",
+    "traps": "B项\"不会改善沿海保护区\"过于绝对，科学家的意思是不够好而非没有改善；C项\"政府未咨询科学家\"原文未提及，反而第六段显示政府有与各组织合作；D项\"未基于充分的生态调查\"虽在第七段有类似表述，但那是针对西南地区保护区而非珊瑚海提案，属于张冠李戴。",
+    "tip": "注意区分不同保护区方案的批评对象，避免张冠李戴。"
+   },
+   {
+    "number": 54,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "I can testify to the huge effort that government agencies and other organisations have put into trying to understand the ecological values of this vast area",
+    "why": "Beaman表示该保护区\"大体上保护了各类栖息地\"，并证实\"政府机构和其他组织为理解这一广袤区域的生态价值付出了巨大努力\"。D选项\"这是保护海洋栖息地的巨大联合努力\"准确概括了his两句话的核心意思：tremendous对应huge effort，joint effort对应government agencies and other organisations。",
+    "traps": "A项\"可与英国在印度洋的努力相比\"是Possingham的论述而非Beaman的观点，且原文是批评性比较；B项\"将建成世界最大海洋保护区\"虽符合事实，但不是Beaman所强调的内容；C项\"确保渔业可持续性\"原文完全未提及，属于无中生有。",
+    "tip": "人物观点题需严格对应发言人，避免移花接木。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Critics say that the southwestern reserve offers the greatest protection to the offshore areas where commercial opportunities are fewest and where there is little threat to the environment, a contention also levelled at the Coral Sea plan.",
+    "why": "最后一段指出批评者认为西南保护区对商业机会最少、环境威胁最小的远海区域给予了最大保护，而这一指控\"同样被用于珊瑚海方案\"（also levelled at the Coral Sea plan）。C选项\"它将保护那些实际上几乎不需要保护的区域\"是对此批评的准确概括。",
+    "traps": "A项\"对环境弊大于利\"过于极端，批评者是说保护重点错位而非造成损害；B项\"将不利于澳大利亚渔业\"原文未直接提及对渔业的不利影响，且批评重点是保护力度不足而非过度；D项\"难以获得环保组织支持\"与原文矛盾，环保组织恰恰希望加大保护力度。",
+    "tip": "末段常为总结性批评，注意\"also levelled at\"这类引申表达。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "virgin",
+    "cn": "adj. 原始的，未开发的"
+   },
+   {
+    "w": "haven",
+    "cn": "n. 避风港，庇护所"
+   },
+   {
+    "w": "biodiversity",
+    "cn": "n. 生物多样性"
+   },
+   {
+    "w": "unveil",
+    "cn": "v. 公布，揭示"
+   },
+   {
+    "w": "no-take zone",
+    "cn": "n. 禁捕区"
+   },
+   {
+    "w": "span",
+    "cn": "v. 横跨，覆盖（范围）"
+   },
+   {
+    "w": "vulnerable",
+    "cn": "adj. 脆弱的，易受伤害的"
+   },
+   {
+    "w": "testify",
+    "cn": "v. 证实，证明"
+   },
+   {
+    "w": "contention",
+    "cn": "n. 论点，主张；争论"
+   },
+   {
+    "w": "levelled at",
+    "cn": "phr. 针对……提出（批评、指控）"
+   },
+   {
+    "w": "representative",
+    "cn": "adj. 有代表性的，典型的"
+   },
+   {
+    "w": "adequate",
+    "cn": "adj. 充分的，足够的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Hugh Possingham, director of the Centre of Excellence for Environmental Decisions at the University of Queensland, points out that little more than half of the Coral Sea reserve is proposed as \"no take\" area, in which all fishing would be banned.",
+    "cn": "昆士兰大学环境决策卓越中心主任休·波辛厄姆指出，珊瑚海保护区中仅略多于一半的面积被拟定为\"禁捕\"区域，在该区域内一切捕鱼活动都将被禁止。",
+    "note": "主干为Hugh Possingham points out that...；that引导宾语从句；in which引导非限制性定语从句修饰no take area；主语有长同位语插入。"
+   },
+   {
+    "en": "Critics say that the southwestern reserve offers the greatest protection to the offshore areas where commercial opportunities are fewest and where there is little threat to the environment, a contention also levelled at the Coral Sea plan.",
+    "cn": "批评者指出，西南保护区对商业机会最少、环境威胁最小的远海区域提供了最大力度的保护，这一指控同样被用于珊瑚海方案。",
+    "note": "主干为Critics say that...；两个where引导并列定语从句修饰offshore areas；a contention为同位语，概括前面整个that从句内容，过去分词levelled作后置定语。"
+   },
+   {
+    "en": "In August, 173 marine scientists signed an open letter to the government saying they were \"greatly concerned\" that the proposals for the southwestern region had not been based on the \"core science principles\" of reserves—the protected regions were not, for instance, representative of all the habitats in the region, they said.",
+    "cn": "8月份，173名海洋科学家联名致信政府，表示他们\"深感忧虑\"，因为西南地区的方案并未基于保护区的\"核心科学原则\"——例如，受保护区域并不能代表该地区所有的栖息地类型。",
+    "note": "主干为scientists signed a letter；saying引导现在分词短语作伴随状语；that引导宾语从句；破折号后用具体实例解释核心科学原则，they said为插入语。"
+   }
+  ]
+ }
+}

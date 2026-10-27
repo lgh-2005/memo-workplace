@@ -1,0 +1,228 @@
+{
+ "schemaVersion": 1,
+ "id": "cfbb29c57b29__long_match__all",
+ "examId": "cfbb29c57b29",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2018 年 12 月英语六级真题（第 3 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:22:01.188Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35347,
+ "usage": {
+  "prompt_tokens": 923,
+  "completion_tokens": 1685,
+  "total_tokens": 2608,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 923,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1685,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 923,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "恢复力与休息的误区及正确认知",
+  "strategy": [
+   "先通读10条陈述句，提炼高频主题词如recovery、resilience、rest，建立全局认知",
+   "圈出各题中的信号词（如数据、因果、转折、对比），带着信号词回文快速扫读",
+   "注意同义替换：陈述句用抽象概括，原文常用具体事例或近义表达",
+   "优先定位含专有名词、数字、极端表述（如always、contrary to）的题目",
+   "匹配后回读确认逻辑关系（因果、并列、转折）是否一致，排除干扰段"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "研究发现，恢复不足往往导致健康问题和事故。",
+    "keywords": [
+     "inadequate recovery",
+     "poor health",
+     "accidents"
+    ],
+    "paraphrase": "陈述句中inadequate recovery可能对应原文insufficient recovery或lack of recovery；poor health and accidents可能被改写为health problems, injuries或workplace incidents等近义表达。",
+    "tip": "定位\"recovery不足→负面后果\"的因果逻辑链，关注health和accidents两个结果词。"
+   },
+   {
+    "number": 37,
+    "answer": "J",
+    "cn": "精神上的放松非常必要，正如身体上的放松一样。",
+    "keywords": [
+     "mental relaxation",
+     "physical relaxation",
+     "much needed"
+    ],
+    "paraphrase": "陈述句使用just as结构做类比，原文可能用similarly、in the same way或directly对比mental与physical两个层面的放松需求。",
+    "tip": "定位mental与physical的并列对比结构，J段应同时提及两种放松。"
+   },
+   {
+    "number": 38,
+    "answer": "L",
+    "cn": "充分的休息不仅有助于恢复，还能提高工作效率。",
+    "keywords": [
+     "adequate rest",
+     "recover",
+     "work efficiency"
+    ],
+    "paraphrase": "not only...but also结构表示递进；原文中recover可能用recharge、restore替换，work efficiency可能表述为productivity或performance。",
+    "tip": "抓住递进逻辑：恢复+效率提升，在L段寻找双重好处的表述。"
+   },
+   {
+    "number": 39,
+    "answer": "A",
+    "cn": "作者在搭乘航班之前总是忙得不可开交。",
+    "keywords": [
+     "author",
+     "hectic time",
+     "taking a flight"
+    ],
+    "paraphrase": "hectic time可能在原文中以rush、busy、packed schedule等形式出现；taking a flight对应原文中关于出发前场景的具体描写。",
+    "tip": "A段通常为文章开头，常以个人经历引入话题，定位flight相关场景。"
+   },
+   {
+    "number": 40,
+    "answer": "E",
+    "cn": "即使一个人看似已经停止工作，恢复也可能并未真正发生。",
+    "keywords": [
+     "recovery",
+     "not take place",
+     "stopped working"
+    ],
+    "paraphrase": "seems to have stopped working暗示表面与实质的差异；原文可能用例子说明人虽离开办公桌但仍在思考工作，从而没有真正恢复。",
+    "tip": "关注E段中\"表面停工≠真正恢复\"的转折或让步逻辑。"
+   },
+   {
+    "number": 41,
+    "answer": "K",
+    "cn": "建议利用技术手段来防止人们过度工作。",
+    "keywords": [
+     "technology",
+     "prevent",
+     "overworking"
+    ],
+    "paraphrase": "it is advised表建议语气，原文可能用should、recommend或suggest引出；technology可能具体化为apps、software、tools等。",
+    "tip": "在K段搜索technology/tools与overworking/overwork的搭配建议。"
+   },
+   {
+    "number": 42,
+    "answer": "I",
+    "cn": "与普遍看法相反，休息并不等于恢复。",
+    "keywords": [
+     "contrary to popular belief",
+     "rest",
+     "not equal recovery"
+    ],
+    "paraphrase": "contrary to popular belief表示反常识观点，原文可能用many people think/assume...but或misconception等引出；rest≠recovery是核心论点。",
+    "tip": "定位I段中对rest与recovery进行区分的反常识论断。"
+   },
+   {
+    "number": 43,
+    "answer": "B",
+    "cn": "作者逐渐认识到，自己的问题源于对\"恢复力\"这一概念的误解。",
+    "keywords": [
+     "author",
+     "problem",
+     "misunderstanding",
+     "resilience"
+    ],
+    "paraphrase": "has come to see表示认知转变；misunderstanding of resilience在原文中可能用misinterpret、get wrong或misconception about resilience表达。",
+    "tip": "B段紧跟开头，常承接个人故事并引出核心论点，定位resilience的误解。"
+   },
+   {
+    "number": 44,
+    "answer": "G",
+    "cn": "人们对恢复力的扭曲看法可能源于他们的成长经历。",
+    "keywords": [
+     "distorted view",
+     "resilience",
+     "upbringing"
+    ],
+    "paraphrase": "distorted view可能对应原文中的wrong notion、skewed perception；upbringing可能被替换为childhood、how they were raised或early education。",
+    "tip": "在G段寻找resilience观念与成长背景/教育经历之间的因果关系。"
+   },
+   {
+    "number": 45,
+    "answer": "C",
+    "cn": "人们倾向于认为，越有毅力，就越能取得成功。",
+    "keywords": [
+     "determined",
+     "greater success",
+     "tend to think"
+    ],
+    "paraphrase": "the more...the more结构表示正相关；determined可能在原文中以persistent、gritty、push through等替换；greater success对应achieve more等。",
+    "tip": "在C段定位\"毅力与成功正相关\"这一大众信念的陈述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "inadequate",
+    "cn": "adj. 不充分的，不够的"
+   },
+   {
+    "w": "hectic",
+    "cn": "adj. 忙碌的，紧张繁忙的"
+   },
+   {
+    "w": "resilience",
+    "cn": "n. 恢复力，韧性，心理弹性"
+   },
+   {
+    "w": "distorted",
+    "cn": "adj. 扭曲的，歪曲的"
+   },
+   {
+    "w": "upbringing",
+    "cn": "n. 教养，养育，成长经历"
+   },
+   {
+    "w": "overworking",
+    "cn": "n./v. 过度工作"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 同义替换，释义"
+   }
+  ]
+ }
+}

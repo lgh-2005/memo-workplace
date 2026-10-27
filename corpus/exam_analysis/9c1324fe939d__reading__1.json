@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "9c1324fe939d__reading__1",
+ "examId": "9c1324fe939d",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年考研英语真题",
+ "year": 2017,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:34:19.632Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59437,
+ "usage": {
+  "prompt_tokens": 1744,
+  "completion_tokens": 3481,
+  "total_tokens": 5225,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1744,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3481,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1744,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国机场安检排队问题与PreCheck改革",
+  "gist": "文章围绕美国主要机场安检排队时间越来越长展开，分析了安检加强、旅客增多、随身行李超载等原因，提出扩大TSA PreCheck项目的解决方案，但指出该项目因收费过高而注册不足，呼吁国会介入降低费用，使项目真正发挥作用。",
+  "structure": [
+   "第1-2段：引出机场安检排长队现象，点明安全与效率的矛盾",
+   "第3-4段：分析排队时间长的多重原因（安检加强、旅客增多、空间有限等）",
+   "第5-6段：提出PreCheck方案及其核心障碍——费用过高",
+   "第7段：总结呼吁，敦促尽快让PreCheck项目真正运转"
+  ],
+  "difficulty": "中等",
+  "translation": "先是提前两小时，现在是提前三小时——这就是有关部门建议人们赶国内航班所需提前到达的时间，至少在美国一些安检队伍越来越长的大型机场是如此。\n\n美国人愿意忍受耗时的安检程序以换取更高的安全保障。埃及航空804航班的坠毁——恐怖分子可能在地中海上空将其击落——再次悲剧性地提醒了人们原因所在。但是，对航空旅客要求过多或提供的安全保障过少，都会削弱公众对这一程序的支持。而这种削弱是合理的：浪费的时间是对美国人经济生活和私人生活的拖累，更不用说令人恼怒了。\n\n去年，美国运输安全管理局（TSA）在一次秘密检查中发现，卧底调查人员几乎每次都能将武器——无论是假的还是真的——偷偷带过机场安检。此后加强的安检措施，加上经济好转和低油价带来的航空旅行增长，导致芝加哥奥黑尔国际机场等大型机场出现了长时间等待。目前尚不清楚航空安检的有效性提高了多少——但排队是显而易见的。\n\n问题的一部分在于政府没有预料到航空旅行的急剧增长，因此TSA现在正急忙增派新的安检人员上岗。问题的另一部分在于机场的安检通道空间有限。另一个因素可能是更多人为了避免托运行李费而把随身行李塞得过满，尽管航空公司强烈否认这一点。\n\n有一个步骤TSA可以采取，既不需要改造机场，也不需要急忙招人：让更多人加入PreCheck项目。PreCheck本应是旅客和TSA的双赢之举。通过背景审查的乘客有资格使用快速安检通道。这使TSA能够集中精力关注风险较高的旅客，为所有相关人员节省时间。TSA希望让2500万人加入PreCheck。\n\n但注册人数远未达到该目标，其中一个重要原因是价格令人咋舌：乘客每五年必须支付85美元来处理他们的背景审查。从一开始，这个价格标签就是PreCheck的致命缺陷。即将进行的改革可能会将价格降至更合理的水平。但国会应该考虑直接介入，通过资助PreCheck注册或以其他方式削减费用。\n\n TSA不能继续将资源转移到使用不足的PreCheck通道上，而让大部分出行公众在不必要的排队中受苦。是时候让这个项目真正发挥作用了，而且早就该这样做了。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "Americans are willing to tolerate time-consuming security procedures in return for increased safety. The crash of EgyptAir Flight 804, which terrorists may have downed over the Mediterranean Sea, provides another tragic reminder of why.",
+    "why": "文章第二段先提出观点\"美国人愿意忍受耗时安检以换取更高安全保障\"，紧接着用埃航804航班坠毁事件作为例证，说明\"这就是原因的又一个悲剧性提醒\"。也就是说，该事件被用来解释为什么美国人能容忍当前安检程序，与A选项\"解释美国人对当前安检的容忍\"完全吻合。",
+    "traps": "B项\"加强全球安全的紧迫性\"属于过度推断，文章讨论的是美国机场安检，并非全球安全；C项\"升级美国大型机场的必要性\"偷换论证对象，文章此处论证的是安检容忍度而非机场升级；D项\"隐私保护的重要性\"无中生有，文章未涉及隐私保护话题。",
+    "tip": "例证题关键在于找到例子所服务的观点句，答案通常在例子之前。"
+   },
+   {
+    "number": 22,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Enhanced security measures since then, combined with a rise in airline travel due to the improving economy and low oil prices, have resulted in long waits at major airports such as Chicago's O'Hare International.",
+    "why": "第三段明确指出\"加强的安检措施加上经济好转和低油价带来的航空旅行增长，导致了大型机场的长时间等待\"。第四段也进一步说明\"政府没有预料到航空旅行的急剧增长\"。C选项\"旅客数量的增加\"是原文明确提到的原因之一，直接对应\"a rise in airline travel\"。",
+    "traps": "A项\"对随身行李的新限制\"属于张冠李戴，原文提到的是旅客过度装填随身行李而非新限制；B项\"TSA效率下降\"无中生有，文中并未说TSA效率下降，而是安检加强且旅客增多；D项\"频繁的意外秘密检查\"曲解原文，秘密检查只提到去年的一次，且它不是排队原因。",
+    "tip": "细节题注意原文的因果关系，选项须与原文信息严格对应。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "词义句意题",
+    "locate": "Passengers who pass a background check are eligible to use expedited screening lanes. This allows the TSA to focus on travelers who are higher risk, saving time for everyone involved.",
+    "why": "从上下文推断，PreCheck项目让通过背景审查的乘客使用特殊安检通道，后文紧接着说\"为所有相关人员节省时间\"。整篇文章的核心问题就是安检排队耗时太长，PreCheck的目的是加快通过速度。因此expedited意为\"加快的\"，对应D选项faster。",
+    "traps": "A项quieter（更安静的）与安检速度无关；B项cheaper（更便宜的）与通道性质无关，虽然后文提到费用，但修饰的是screening lanes而非价格；C项wider（更宽的）属于对通道的物理属性的曲解，不符合语境逻辑。",
+    "tip": "词义题要紧扣上下文语境，尤其关注前后句的逻辑关系来推断词义。"
+   },
+   {
+    "number": 24,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "one big reason is sticker shock: Passengers must pay $85 every five years to process their background checks. Since the beginning, this price tag has been PreCheck's fatal flaw.",
+    "why": "第六段明确指出PreCheck注册人数远低于目标，\"一个重要原因是价格令人咋舌\"，并直接称\"这个价格标签从一开始就是PreCheck的致命缺陷\"。D选项\"注册费用不合理\"与原文\"sticker shock\"\"fatal flaw\"完全对应。",
+    "traps": "A项\"规模大幅缩减\"无中生有，文章说的是注册人数未达预期，而非项目规模被缩减；B项\"实施方向错误\"过度推断，文章肯定了PreCheck的设计理念（win-win），问题在于定价而非方向；C项\"政府不愿支持\"与原文不符，文章呼吁国会给予财政支持，但并未说政府不愿意。",
+    "tip": "注意原文中的评价性词汇（fatal flaw）往往直接指向题目答案。"
+   },
+   {
+    "number": 25,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "First two hours, now three hours – this is how far in advance authorities are recommending people show up to catch a domestic flight",
+    "why": "全文以安检排队时间越来越长为核心问题展开：第1-2段引出排长队现象，第3-4段分析排队原因，第5-7段提出PreCheck解决方案但指出其障碍。文章的主线始终围绕\"被困在安检队伍中\"这一困境，C选项\"Getting Stuck in Security Lines\"（困在安检队伍中）最能涵盖全文主题。",
+    "traps": "A项\"更少安检换来更多安全\"曲解文意，文章并未主张减少安检；B项\"PreCheck——一个迟来的方案\"只涉及文章后半部分，不够全面，且文中未强调\"迟来\"；D项\"未充分利用的PreCheck通道\"仅是末段提到的一个细节，远不足以概括全文。",
+    "tip": "主旨题选项须能涵盖全文各段内容，警惕只概括部分段落的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "undermine",
+    "cn": "v. 削弱，损害"
+   },
+   {
+    "w": "infuriating",
+    "cn": "adj. 令人极为恼怒的"
+   },
+   {
+    "w": "undercover",
+    "cn": "adj. 秘密的，卧底的"
+   },
+   {
+    "w": "sneak",
+    "cn": "v. 偷偷带入，潜入"
+   },
+   {
+    "w": "screener",
+    "cn": "n. 安检人员"
+   },
+   {
+    "w": "overpack",
+    "cn": "v. 过度装填"
+   },
+   {
+    "w": "expedited",
+    "cn": "adj. 加快的，迅速处理的"
+   },
+   {
+    "w": "eligible",
+    "cn": "adj. 有资格的，符合条件的"
+   },
+   {
+    "w": "sticker shock",
+    "cn": "n. 价格令人咋舌（对高价的惊讶）"
+   },
+   {
+    "w": "fatal flaw",
+    "cn": "n. 致命缺陷"
+   },
+   {
+    "w": "divert",
+    "cn": "v. 转移，调拨（资源等）"
+   },
+   {
+    "w": "anticipate",
+    "cn": "v. 预料，预期"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Enhanced security measures since then, combined with a rise in airline travel due to the improving economy and low oil prices, have resulted in long waits at major airports such as Chicago's O'Hare International.",
+    "cn": "此后加强的安检措施，加上经济好转和低油价带来的航空旅行增长，导致了芝加哥奥黑尔国际机场等大型机场的长时间等待。",
+    "note": "主语为Enhanced security measures，combined with引导伴随结构补充第二个原因，due to引导原因状语修饰a rise，主干为\"措施+增长→导致长时间等待\"。"
+   },
+   {
+    "en": "But demanding too much of air travelers or providing too little security in return undermines public support for the process.",
+    "cn": "但是，对航空旅客要求过多或提供的安全保障过少，都会削弱公众对这一程序的支持。",
+    "note": "主语是两个动名词短语demanding...or providing...并列，谓语为undermines，too much与too little形成对比，强调平衡的重要性。"
+   },
+   {
+    "en": "But Congress should look into doing so directly, by helping to finance PreCheck enrollment or to cut costs in other ways.",
+    "cn": "但国会应该考虑直接介入，通过资助PreCheck注册或以其他方式削减费用。",
+    "note": "look into doing so中so指代前文的降价，by引导方式状语，helping后接两个并列不定式to finance和to cut，提出两种具体途径。"
+   }
+  ]
+ }
+}

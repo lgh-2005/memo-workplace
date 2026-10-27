@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "b07d0f41f501__reading__3",
+ "examId": "b07d0f41f501",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年考研英语真题",
+ "year": 2026,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:59:49.690Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66165,
+ "usage": {
+  "prompt_tokens": 1834,
+  "completion_tokens": 3739,
+  "total_tokens": 5573,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1834,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3739,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1834,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "无线广播对社会生活的影响与反思",
+  "gist": "文章回顾了无线广播从诞生到数字时代的百年历程：早期广播打破阶层壁垒、构建国家意识、带来意外收获的\"偶遇之喜\"；如今智能手机和播客时代，无限选择反而让人缩入兴趣窄巷。作者呼吁人们以理性态度面对技术革新，在享受便利的同时关注其社会影响。",
+  "structure": [
+   "第1-2段：引出广播诞生的愿景及牛津展览背景",
+   "第3-4段：以史料和亲身经历展现广播的丰富馈赠",
+   "第5段：转折指出数字时代广播偶遇之喜正在消退",
+   "第6段：总结反思，倡导对技术革新持理性态度"
+  ],
+  "difficulty": "中等",
+  "translation": "无线广播的先驱们视其为赐予全民的礼物。约翰·里思爵士说它将终结\"精神上的孤立\"，并欣然道：\"无论有多少千人在收听，总还有足够留给他人……天才与愚者、富人与穷人同时聆听。\"\n\n在两次世界大战之间，这项技术创新塑造了一种新的国家意识。本周开幕的一个由比蒂·鲁本斯在牛津大学博德利图书馆策展的书展记录了1922年至1939年间广播如何改变了人们的日常生活。她援引了书信、日记和小说，以及温妮弗雷德·吉尔1939年逐字记录的受众调查田野笔记。\n\n人们享受这份全然新鲜事物的证言中充满趣味。一幅漫画讽刺了一群人因各自戴着耳机而无法交谈的场景。人们报告说，广播音乐让工人们吹起了新曲调。一位女士说，自从有了无线广播，街头打架少了，但邻里之间倚着扫帚把儿闲聊的情景也少了。\n\n总的来说，无线广播是受欢迎的。我喜欢那位三十年代受访者的话——他发现广播突然提供了\"丰富多彩的内容……我以为自己永远不会感兴趣的东西……比如冰球\"。确实如此：在数字时代之前长达八十多年里，线性语音广播带来了偶遇之喜的馈赠——在驾车途中或枯燥的体力劳动中随机注入活力。在我自己写的那本关于广播的书中，我记录了一次驾车经历：\"我了解了新闻，学到了一些十七世纪的历史，还被一个朴实无华的关于听诊器历史的节目深深启发了。\"\n\n但广播那种令人受益的偶遇之喜正在消退。面对众多电台网络和数不清的播客，智能手机用户自行选择听什么、何时听。虽然戴着耳机、听着任何内容去散步是件美好的事，但无限选择鼓励我们缩入狭隘的兴趣和自我认同的信念中。\n\n距马可尼和里思的时代已过百年，纯粹聆听的艺术是否正面临危机？有人会说有声书的繁荣重振了它，尽管我想随之而来你又会忧虑阅读的衰落。但发明塑造着我们每一个人，当技术与社会习惯确实发生变化时，值得我们留意，并思考是否应加以适度引导或保护年轻一代。无论我们做什么，创新终将发生。今天我们为智能手机沉迷和自拍虚荣所带来的孤立文化而焦虑，但早在1939年，那位女士就已经在惋惜——当她那条街上家家户户都有了无线广播后，邻里间倚着扫帚把儿闲聊的习惯便消失了。这足以让人放下手机，拿起院子里的扫帚走到门前去。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "It does not matter how many thousands may be listening, there is always enough for others…the genius and the fool, the wealthy and the poor listen simultaneously.",
+    "why": "里思爵士强调无论有多少人收听，总还有足够留给他人；天才与愚者、富人与穷人可以同时聆听。这说明广播不受人数和身份限制，人人都可以享用，即\"对每个人都是可获取的\"，与A项\"accessible to everyone\"完全吻合。",
+    "traps": "B项\"改善人际关系\"文中未提及，属无中生有；C项\"人类智慧的奇迹\"虽符合常识但原文未涉及此评价，属过度推断；D项\"导致孤立文化的新时代\"与原文相反，里思说广播能终结精神孤立，属反向干扰。",
+    "tip": "注意区分人物观点与作者观点，精准定位引语内容。"
+   },
+   {
+    "number": 32,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "a book and exhibition curated by Beatty Rubens at the Bodleian in Oxford records how radio changed everyday life from 1922 to 1939.",
+    "why": "原文明确指出该展览记录了1922至1939年间广播如何改变了日常生活。A项\"广播对其早期受众的影响\"准确概括了这一主题——展览聚焦的正是广播对早期听众生活的影响。",
+    "traps": "B项\"广播在公共音乐教育中的角色\"过于狭隘，音乐只是文中提及的一个细节而非展览主题；C项\"广播技术的创新过程\"偏离展览内容，展览关注的是社会影响而非技术发展；D项\"广播领域的杰出先驱\"也非展览主旨，先驱只在第一段提及。",
+    "tip": "展览/书籍的主题题需关注其核心描述语，如records how…changed…。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "linear speech broadcasting brought the gift of serendipity, random enlivening of a car journey or dull manual task.",
+    "why": "第四段核心词是serendipity（意外的惊喜发现）。作者引用三十年代受访者发现自己对冰球产生兴趣的例子，又以自己驾车途中意外学到历史和听诊器知识为例，反复说明广播带给听众的是\"意想不到的收获\"，与C项\"radio listeners could make unexpected gains\"完全对应。",
+    "traps": "A项\"广播研究曾经不充分\"在原文中无依据，文中提到的研究是受众调查而非对广播本身的研究不足；B项\"广播的魅力在数字时代依然存在\"与第五段的转折矛盾，作者明确说serendipity正在消退；D项\"广播节目多年来变化甚少\"属无中生有，原文未讨论节目变化问题。",
+    "tip": "段落中反复出现的关键词（如serendipity）往往是该段核心论点的线索。"
+   },
+   {
+    "number": 34,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "A woman says there have been fewer street fights since the arrival of the wireless but also less stopping and 'talking on the brush handle'.",
+    "why": "原文语境中，该女士将\"talking on the brush handle\"与\"street fights\"并列为广播出现前街区里常见的邻里活动。\"brush handle\"指扫帚把，倚着扫帚把儿说话即邻里间随意闲聊的画面。第六段再次出现时也与\"neighbourly habit\"（邻里习惯）对应，进一步确认其含义为\"随意闲聊\"，对应B项。",
+    "traps": "A项\"制造噪音\"与语境不符，原文是在描述邻里交流而非噪声；C项\"引发无聊争吵\"混淆了上文的street fights，闲聊与争吵含义截然不同；D项\"哼唱流行歌曲\"将音乐相关内容（workmen whistle new tunes）错误嫁接到此短语上。",
+    "tip": "词义句意题需结合上下文语境和复现线索综合判断，切忌望文生义。"
+   },
+   {
+    "number": 35,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "Whatever we do, innovation will happen. Today we fret about the isolating culture of smartphone-staring and selfie-vanity, but already in 1939 there was that lady regretting how, when all her street got wirelesses, it lost the neighbourly habit.",
+    "why": "最后一段作者的逻辑链为：创新必然发生→每代技术都有利弊→我们应注意变化并适度应对而非一味焦虑。作者以1939年的类似忧虑与今天的手机焦虑做类比，暗示技术焦虑古已有之，因此人们应对创新持理性、明智的态度，与D项\"adopt a sensible attitude to innovations\"完全契合。",
+    "traps": "A项\"技术应以造福人类为目的\"虽正确但非本段重点，作者探讨的是面对创新的态度而非技术目标；B项\"应采取行动复兴聆听艺术\"过于绝对，作者只是提出思考而非号召行动；C项\"青少年应养成健康社交媒体习惯\"过于具体狭隘，shield the youngest只是作者提到的一个可能措施而非核心观点。",
+    "tip": "末段主旨题要把握作者的总结性论点，而非某个具体细节。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "serendipity",
+    "cn": "n. 意外的美好发现，机缘巧合"
+   },
+   {
+    "w": "curated",
+    "cn": "v. 策划，策展（curate的过去分词）"
+   },
+   {
+    "w": "verbatim",
+    "cn": "adj./adv. 逐字逐句的（地）"
+   },
+   {
+    "w": "enlivening",
+    "cn": "v. 使生动，使活跃（enliven的现在分词）"
+   },
+   {
+    "w": "ebbing",
+    "cn": "v. 衰退，消退（ebb的现在分词）"
+   },
+   {
+    "w": "niche",
+    "cn": "adj./n. 小众的；利基，细分领域"
+   },
+   {
+    "w": "fret",
+    "cn": "v. 焦虑，烦恼"
+   },
+   {
+    "w": "unpretentious",
+    "cn": "adj. 朴实无华的，不矫饰的"
+   },
+   {
+    "w": "rejoiced",
+    "cn": "v. 欣喜，高兴（rejoice的过去式）"
+   },
+   {
+    "w": "testimonies",
+    "cn": "n. 证言，证词（testimony的复数）"
+   },
+   {
+    "w": "simultaneously",
+    "cn": "adv. 同时地"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Opening this week, a book and exhibition curated by Beatty Rubens at the Bodleian in Oxford records how radio changed everyday life from 1922 to 1939.",
+    "cn": "本周开幕的一个由比蒂·鲁本斯在牛津大学博德利图书馆策展的书展，记录了1922年至1939年间广播如何改变了人们的日常生活。",
+    "note": "Opening this week为现在分词作时间状语；curated by…为过去分词作后置定语修饰a book and exhibition；主干为a book and exhibition records how…。"
+   },
+   {
+    "en": "True: for more than 80 pre-digital years, linear speech broadcasting brought the gift of serendipity, random enlivening of a car journey or dull manual task.",
+    "cn": "确实如此：在数字时代之前长达八十多年里，线性语音广播带来了偶遇之喜的馈赠——在驾车途中或枯燥的体力劳动中随机注入活力。",
+    "note": "冒号后为解释说明；random enlivening of…是serendipity的同位语补充说明；pre-digital为复合形容词修饰years。"
+   },
+   {
+    "en": "And while it is wonderful to take a walk with anything in your headphones, infinite choice encourages us to shrink into niche interests and sympathetic beliefs.",
+    "cn": "虽然戴着耳机、听着任何内容去散步是件美好的事，但无限选择鼓励我们缩入狭隘的兴趣和自我认同的信念中。",
+    "note": "while引导让步状语从句；it为形式主语，真正主语是to take a walk…；主句主干为infinite choice encourages us to shrink into…，两个并列宾语niche interests和sympathetic beliefs。"
+   }
+  ]
+ }
+}

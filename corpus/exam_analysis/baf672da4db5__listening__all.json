@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "baf672da4db5__listening__all",
+ "examId": "baf672da4db5",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2019 年 12 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:25:13.961Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62268,
+ "usage": {
+  "prompt_tokens": 2163,
+  "completion_tokens": 3151,
+  "total_tokens": 5314,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2163,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3151,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2163,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下全部解析仅基于题目选项的语言特征与正确答案进行推断分析，不涉及任何编造的录音内容。",
+  "overview": "本场听力共7段，前4段为短对话/长对话（Q1-Q15），后3段为短文/讲座（Q16-Q25）。由选项措辞推测：第1段涉及爵士音乐相关话题；第2段涉及银行贷款与创业融资；第3段涉及小型非传统农场与农业设备；第4段涉及昆虫作为新食材的产业；第5段涉及学习风格的科学研究；第6段涉及工作时长与生活平衡的社会议题；第7段涉及德国柏林某机场的建设问题。",
+  "strategy": [
+   "预读选项：利用每段播放前的间隙快速浏览四个选项，划出各选项差异关键词，预判提问方向",
+   "听转折词：but/however/actually/in fact 后面的内容往往对应正确答案",
+   "注意否定与限定词：选项中出现 exclusively/only/all/most 等极端限定词时，需格外谨慎判断",
+   "同义替换意识：正确答案常以近义词或概括性表达替换录音原词，选项与录音完全一致的词反而可能是干扰",
+   "数字与比较级敏感：出现比较级、数量词的选项，听音时重点关注对比关系和程度描述",
+   "首尾句原则：段落/对话的开头和结尾句常包含主旨或建议类题目的答案信息"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "爵士音乐的定义、市场现状及欣赏方式",
+    "optionSignals": "Q1各选项以 It 开头描述某机构特征（focuses/sponsors/branches/displays），在问某场所或组织的性质；Q2涉及音乐类型的起源与市场（cowboys/shrunk/young people/hip hop），在问某种音乐的现状；Q3用 definition/experimentation/style 描述音乐特征；Q4都是祈使句（Learn/Take/Listen/Consult），在问建议或做法。",
+    "tips": [
+     "Q1选项A含 exclusively 这一极端词却为正确答案，说明有时录音会明确强调唯一性，不可机械排除",
+     "Q4四个选项均为建议性动作，听音时关注对话末尾的建议句式如 you should / I'd suggest / the best way is",
+     "Q2中 shrunk（萎缩）与 widespread（广泛）构成语义对立，可先建立对立框架，听到关键判据即可快速选择"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "女性申请银行贷款创业遭拒及后续对策",
+    "optionSignals": "Q5选项为过去式动作（paid/called/made/went），在问女性之前做了什么；Q6选项均为原因句式（debt hadn't been cleared/credit history was poor/asked for too much/didn't pay mortgage），在问被拒原因；Q7为不定式短语表目的；Q8为建议性动作（Seek advice/Ask for smaller loans/Build up/Revise），在问解决方案。",
+    "tips": [
+     "Q6四个干扰项都涉及财务负面信息，需精准区分 debt（欠款）、credit history（信用记录）、mortgage（房贷）等概念的差异",
+     "Q8正确答案B提出 smaller loans from different lenders 这一具体策略，听音时注意分散融资的相关表达",
+     "因果链条题：Q5（做了什么）→Q6（为什么被拒）→Q7（目的）→Q8（下一步），按逻辑链条预判有助于跟听"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "一座小型非传统农场及其创新农业设备",
+    "optionSignals": "Q9用形容词对描述农场特征（profitable/automated/unconventional/fertile），在问农场的基本特点；Q10用 Their + 名词（urge/desire/hope/wish）描述创办动机；Q11描述某设备的优点（saves electricity/little maintenance/no pollution/loosens soil while weeding），在问设备功能。",
+    "tips": [
+     "Q9正确答案C为 small and unconventional，相比其他选项用词更低调朴素，注意听音时对 unconventional 的同义替换如 unusual/different/not typical",
+     "Q11正确答案D具体到 loosens soil while weeding 这一双重功能，越具体的正确选项越可能在录音中有明确对应描述",
+     "Q10四个选项结构高度平行（Their + 抽象名词 + to do），区分关键在 to do 后的动词宾语"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "昆虫食品产业：营养价值、口感体验与环保前景",
+    "optionSignals": "Q12选项描述某公司的业务动态（new food source/expand business/imported exotic foods/sell pet insects），在问公司做了什么；Q13用感受形容词（unforgettable/pleasant surprise/hurt throat/feel strange），在问个人体验；Q14用比较级（more tasty/more nutritious/more protein），在问昆虫食品的营养优势；Q15描述该行业的宏观特点。",
+    "tips": [
+     "Q14三个选项都含比较级，正确答案C强调 more protein than conventional meats，听音时锁定蛋白质含量的比较描述",
+     "Q13正确答案B为 pleasant surprise，意味着体验好于预期，注意录音中 better than expected / didn't expect 等表达",
+     "Q12与Q15分别问微观（公司行为）和宏观（行业特点），注意区分细节题与总结题的听音策略"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "学习风格理论的科学研究与实验发现",
+    "optionSignals": "Q16选项以 To + 动词开头表目的（categorize/find out/understand/see if），在问研究目的；Q17用形容词评价研究（defective/misguided/original/thought-provoking），在问对某研究的评价；Q18为关于学习辅助工具的结论性陈述，在问研究发现。",
+    "tips": [
+     "Q16正确答案D中 inherent traits affecting learning 涉及先天特质是否影响学习，这是学习风格研究的核心争议，听音时注意 innate/born with/genetic 等近义表达",
+     "Q17正确答案A为 defective（有缺陷的），属于负面评价；若听到批评性语气或转折词后的否定表述，可快速锁定",
+     "Q18正确答案B指出 visual aids are helpful to all types of learners，注意 all types 这一关键限定——说明视觉辅助具有普适性"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "工作时间过长的社会问题与经济学家的预测",
+    "optionSignals": "Q19四个选项以 Not + 现在分词开头描述不满原因，结构高度平行；Q20涉及预测性内容（would be/would change/would create/could afford）；Q21为名词短语描述负面后果（loss of dignity/deprivation of creativity/deterioration of mental health/unequal distribution）。",
+    "tips": [
+     "Q19正确答案D关注家庭生活与休闲时间不足，与工作时长话题直接相关，选项中 workplace revolution 和 free-market capitalism 属于更宏大的概念，常为干扰",
+     "Q20正确答案A提到 fifteen hours a week 这一具体数字，听音时对数字保持高度敏感",
+     "Q21考查过度工作的后果，正确答案C为 mental health deterioration，听音时注意 stress/anxiety/depression/burnout 等心理健康相关词"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "德国柏林某机场建设项目的严重延期与后果",
+    "optionSignals": "Q22描述机场的公众形象（worst managed/biggest busiest/joke/symbol of efficiency），在问机场的现状评价；Q23用原因从句（outdated/reunified/boost economy/attract tourists）解释启动建设的背景；Q24描述延期原因；Q25描述延期带来的后果。",
+    "tips": [
+     "Q22正确答案C说机场成了笑话（a joke），与D选项 German efficiency 形成讽刺对比，录音中可能出现反讽语气",
+     "Q24正确答案D为概括性表述 problems of different kinds kept popping up，当其余选项过于具体而录音提到多种问题时，概括性选项更可能正确",
+     "Q25正确答案C关注 maintenance costs accumulate，机场建成但未启用仍需维护的逻辑是关键推理点"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "mortgage",
+    "cn": "抵押贷款；房贷"
+   },
+   {
+    "w": "credit history",
+    "cn": "信用记录；信用历史"
+   },
+   {
+    "w": "unconventional",
+    "cn": "非传统的；不寻常的"
+   },
+   {
+    "w": "revitalize",
+    "cn": "使复兴；使恢复活力"
+   },
+   {
+    "w": "protein",
+    "cn": "蛋白质"
+   },
+   {
+    "w": "nutritious",
+    "cn": "有营养的"
+   },
+   {
+    "w": "inherent",
+    "cn": "固有的；内在的；先天的"
+   },
+   {
+    "w": "defective",
+    "cn": "有缺陷的；有问题的"
+   },
+   {
+    "w": "deterioration",
+    "cn": "恶化；退化"
+   },
+   {
+    "w": "deprivation",
+    "cn": "剥夺；匮乏"
+   },
+   {
+    "w": "accumulate",
+    "cn": "积累；积聚"
+   },
+   {
+    "w": "municipality",
+    "cn": "市政当局；自治市"
+   },
+   {
+    "w": "fundraising",
+    "cn": "筹款；募集资金"
+   },
+   {
+    "w": "auditory",
+    "cn": "听觉的"
+   }
+  ]
+ }
+}

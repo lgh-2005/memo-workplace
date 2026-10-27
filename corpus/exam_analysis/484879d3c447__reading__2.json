@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "484879d3c447__reading__2",
+ "examId": "484879d3c447",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年 9 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:42:16.376Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 78695,
+ "usage": {
+  "prompt_tokens": 1798,
+  "completion_tokens": 4948,
+  "total_tokens": 6746,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1798,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4948,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1798,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "国际旅游的负面影响与负责任出行",
+  "gist": "文章指出国际旅游常被视为经济引擎，但不受控制的旅游发展导致社会和环境破坏，引发当地居民不满。旅游收益往往未能惠及当地社区，跨国企业攫取大部分利润。作者呼吁游客尊重当地风俗，主动选择当地企业消费，做负责任的旅行者，为目的地带来正向影响。",
+  "structure": [
+   "第1-2段：引出国际旅游繁荣及其过度发展的问题",
+   "第3-4段：揭示不受控旅游开发的社会负面影响",
+   "第5-7段：分析旅游收益分配不均及对当地社区的冲击",
+   "第8-12段：提出负责任旅行的建议与行动方向"
+  ],
+  "difficulty": "中等",
+  "translation": "现代国际旅游源于大众航空旅行的普及，在拥有沙滩、阳光和海洋等比较优势的地区，它以\"度假\"的形式广受欢迎。旅行常被描绘为个人成长的工具，旅游业则被视为目的地国家和城市的经济引擎。人们往往倾向于认为旅游对所有参与者都是有利的。\n\n如今，旅游业的大爆发每年驱动超过12亿游客跨越国际边界。许多热门景点正在被\"爱\"得奄奄一息。近期在威尼斯和巴塞罗那等停靠港发生的抗议游轮造成干扰的事件，展示了旅游业重量不重质的不幸后果。\n\n不受控制的旅游开发已成为社会和环境破坏的主要驱动因素。旅游研究提供了大量关于旅游带来的诸多负面社会影响的文献记录，以及当地居民因此对游客产生的怨恨情绪。\n\n对游客的敌意通常出现在成熟的、游客密集的旅游目的地。在这些目的地发生的抗议表明，传统旅游已经不再受欢迎了。\n\n当旅游业的好处未被当地感受到时，居民往往会感到沮丧。虽然旅游业能够产生外汇、收入和就业机会，但并不能保证跨国连锁酒店会将这些利益公平地分配给当地社区。\n\n恰恰相反，当游客住在大型度假村或邮轮上时，他们的大部分消费都在那里完成，留给当地社区从旅游消费中获益的机会很少。这些旅游形式加大了目的地当地富人和穷人之间的经济和政治差距。\n\n近几十年来，旅游目的地社区的当地居民还发现自己不得不应对新的文化边界、阶层变化、服务行业角色和生活方式的转变。例如，数据显示旅游活动与社会问题的增加相关联，因为当地居民会效仿游客的行为。\n\n这一切对普通旅行者意味着什么？\n\n首先，所有游客都应尽一切努力尊重东道主并尊重当地条件。这意味着要准备好适应当地的风俗和规范，而不是期望当地条件来迁就旅行者。\n\n其次，旅游业是一种以市场为基础的活动，当消费者奖励表现更好的从业者时，效果最佳。在信息时代，旅行者没有理由不了解自己的度假费用流向了哪里、使谁获益。\n\n见多识广的旅行者也更能区分跨国公司和当地企业家——后者的业务为当地居民提供直接的社会、环境和经济利益。这样的企业热爱目的地，因而值得市场回报。从长远来看，做一个负责任的旅行者意味着确保对当地人民和环境产生净正面影响。借助触手可及的信息，我们从未有过如此多的机会来做到这一点。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Travel is often portrayed as a tool for personal growth and tourism as an economic motor for destination countries and cities. There is a tendency to assume that tourism is good for everyone involved.",
+    "why": "原文明确指出旅游业常被描绘为目的地国家和城市的\"经济引擎\"（economic motor），并且人们倾向于认为旅游对所有相关方都有益。D选项\"它对目的地国家和地区的经济有贡献\"是对\"economic motor for destination countries and cities\"的同义改写，与原文信息完全吻合。",
+    "traps": "A项\"好处可以弥补不利的环境后果\"属于无中生有，原文此处未提及环境补偿问题；B项\"快速发展归因于人们生活水平的提高\"是合理推测但原文未提及此因果关系，属于偷换概念；C项\"吸引地理条件优越的地方的人\"混淆了原文含义，原文说的是旅游在具有沙滩、阳光等优势的地区被推广，而非吸引这些地方的人。",
+    "tip": "抓住题干关键词\"popular assumption\"定位原文中的\"tendency to assume\"。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Tourism studies provide much documentation of the many negative social impacts of tourism and resulting resentment that local populations direct toward visitors.",
+    "why": "原文指出旅游研究记录了旅游带来的许多负面社会影响以及当地居民因此对游客产生的\"怨恨\"（resentment）。紧接着第四段进一步说明\"对游客的敌意\"（antagonism toward tourists）通常出现在成熟的、游客密集的目的地。B选项\"引发当地居民对游客的敌意\"准确概括了\"resentment\"和\"antagonism\"的内容。",
+    "traps": "A项\"导致大规模冲突增加\"过度引申，原文提到了protests但并非mass confrontations，且A项程度过重；C项\"抑制当地经济稳定增长\"在原文此处无对应信息，属于无中生有；D项\"带来大量流动人口\"虽然涉及游客流动，但并非studies所揭示的核心负面影响，属于偷换论点。",
+    "tip": "注意题干限定\"studies\"，应定位到\"Tourism studies provide...\"这一句。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Residents often become frustrated when the benefits of tourism are not felt locally. Although it can generate foreign exchange, income and employment, there's no guarantee that multinational hotel chains will allocate these benefits equitably among local communities.",
+    "why": "原文明确说居民感到沮丧的原因是\"旅游业的好处未被当地感受到\"（benefits of tourism are not felt locally），接着解释跨国酒店无法保证公平分配利益，且游客消费多留在度假村和邮轮，当地社区获益机会很少。D选项\"他们觉得自己没有获得应得的利益\"准确概括了这一因果逻辑。",
+    "traps": "A项\"沦为社会冲突和环境干扰的受害者\"虽与文章主题相关，但并非居民感到frustrated的直接原因；B项\"他们几乎没有机会在邮轮上享乐\"曲解原文，原文说的是游客在邮轮消费而非居民无法享受邮轮；C项\"无法在跨国连锁酒店找到工作\"属于无中生有，原文未提及就业困难的问题。",
+    "tip": "因果关系题需紧扣\"frustrated\"后的原因从句\"when the benefits...are not felt locally\"。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "local residents in destination communities also have found themselves negotiating new cultural boundaries, class dynamics, service industry roles and lifestyle transformations.",
+    "why": "原文用\"found themselves negotiating\"表明当地居民发现自己不得不去应对、协调新的文化边界、阶层变化、服务行业角色和生活方式转变。\"negotiating\"在此意为努力适应和周旋，A选项\"他们努力去适应它\"（endeavor to adapt to it）是对这一表述的准确概括。",
+    "traps": "B项\"欣然接受新生活方式\"中的\"readily\"暗示主动和乐意，但原文\"found themselves negotiating\"强调的是被动面对，且\"adopt the behaviors of tourists\"被作为社会问题的例证而非积极转变；C项\"让游客沉浸在他们的文化中\"属于无中生有；D项\"试图升级商业模式\"在原文中无对应信息。",
+    "tip": "注意\"found themselves negotiating\"的含义，negotiate此处不是\"谈判\"，而是\"设法应对\"。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Informed travelers also are better able to distinguish between multinational companies and local entrepreneurs whose businesses provide direct social, environmental, and economic benefits for local residents. Such businesses are in love with the destination and are therefore deserving of market reward.",
+    "why": "原文建议有见识的旅行者应区分跨国公司和当地企业家，指出当地企业为居民提供直接的社会、环境和经济利益，并值得获得\"市场回报\"（market reward）。结合上文\"tourism is a market-based activity and works best when consumers reward better performers\"，可知游客应通过消费来支持当地企业。C选项\"使用当地企业提供的服务\"即为给予市场回报的具体方式。",
+    "traps": "A项\"对当地风俗和生活方式表示兴趣\"虽有道理，但文章强调的是通过消费行为产生正面影响，而非单纯表达兴趣；B项\"寻找投资当地公司的可能性\"属于过度引申，原文未提及投资；D项\"对其服务给予好评\"虽与市场行为相关，但原文强调的是用消费来奖励（reward），而非评价。",
+    "tip": "抓住\"market reward\"这一核心概念，旅游语境中消费者的市场奖励即选择消费。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "portray",
+    "cn": "v. 描绘，描述，将……描写成"
+   },
+   {
+    "w": "antagonism",
+    "cn": "n. 敌意，对抗，对立"
+   },
+   {
+    "w": "resentment",
+    "cn": "n. 怨恨，不满，愤懑"
+   },
+   {
+    "w": "disruption",
+    "cn": "n. 破坏，干扰，混乱"
+   },
+   {
+    "w": "equitably",
+    "cn": "adv. 公平地，公正地"
+   },
+   {
+    "w": "allocate",
+    "cn": "v. 分配，分拨，拨给"
+   },
+   {
+    "w": "entrepreneur",
+    "cn": "n. 企业家，创业者"
+   },
+   {
+    "w": "multinational",
+    "cn": "adj. 跨国的；n. 跨国公司"
+   },
+   {
+    "w": "cruise",
+    "cn": "n. 巡游，邮轮旅行；v. 乘船游览"
+   },
+   {
+    "w": "overstay",
+    "cn": "v. 逗留过久，逾期停留"
+   },
+   {
+    "w": "compensate",
+    "cn": "v. 补偿，弥补，赔偿"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Recent protests in ports of call like Venice and Barcelona against disturbances created by cruise ships show the unfortunate consequences of emphasizing quantity over quality in tourism.",
+    "cn": "近期在威尼斯和巴塞罗那等停靠港发生的反对邮轮造成干扰的抗议活动，展示了旅游业重量不重质的不幸后果。",
+    "note": "主干为protests show consequences；in ports of call为地点状语，like Venice and Barcelona为举例；against disturbances为介词短语修饰protests；created by cruise ships为过去分词短语修饰disturbances；of emphasizing...为介词短语修饰consequences。"
+   },
+   {
+    "en": "Although it can generate foreign exchange, income and employment, there's no guarantee that multinational hotel chains will allocate these benefits equitably among local communities.",
+    "cn": "虽然旅游业能够产生外汇、收入和就业机会，但并不能保证跨国连锁酒店会将这些利益公平地分配给当地社区。",
+    "note": "Although引导让步状语从句；主句为there's no guarantee + that同位语从句；allocate...equitably among...为核心谓语结构，强调分配的公平性问题。"
+   },
+   {
+    "en": "Informed travelers also are better able to distinguish between multinational companies and local entrepreneurs whose businesses provide direct social, environmental, and economic benefits for local residents.",
+    "cn": "见多识广的旅行者也更能区分跨国公司和当地企业家——后者的业务为当地居民提供直接的社会、环境和经济利益。",
+    "note": "主干为travelers are able to distinguish between A and B；whose引导定语从句修饰local entrepreneurs；provide...benefits for...为从句谓语，三个并列形容词social, environmental, economic修饰benefits。"
+   }
+  ]
+ }
+}

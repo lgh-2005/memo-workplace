@@ -1,0 +1,255 @@
+{
+ "schemaVersion": 1,
+ "id": "a2a200f80779__long_match__all",
+ "examId": "a2a200f80779",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2015 年 12 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T04:42:03.645Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 57916,
+ "usage": {
+  "prompt_tokens": 794,
+  "completion_tokens": 5456,
+  "total_tokens": 6250,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3487
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 794
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "气候变化中的心理与行为改变",
+  "strategy": [
+   "先读题干，划出每句核心名词与动词，如 powerless、framework、government、psychologists。",
+   "扫读段落首尾句及转折处，优先定位关键词及其同义替换，而非原词。",
+   "注意题干概括句与原文具体事例或研究结论的对应，防止只认原词。",
+   "匹配后需至少两处核心信息同义对应，避免仅凭一个词定位。",
+   "答案可能集中在某些段落，未出现关键词的段落可快速跳过。"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "cn": "当人们发现自己无力改变某种情况时，他们往往会接受它。",
+    "keywords": [
+     "powerless",
+     "change a situation",
+     "live with it"
+    ],
+    "paraphrase": "原文可能将 find they are powerless 替换为 feel unable/lack control，将 live with it 替换为 accept/tolerate/adapt to；陈述句是将行为概括化，原文常以具体情境或例子呈现无力感与接受现状。",
+    "tip": "扫读 C 段中表示“无法改变”与“接受/容忍”的近义表达，定位作者观点。"
+   },
+   {
+    "number": 37,
+    "answer": "L",
+    "cn": "环境信息若要有效，应精心设计（框架化）。",
+    "keywords": [
+     "environmental messages",
+     "carefully framed",
+     "effective"
+    ],
+    "paraphrase": "原文可能将 environmental messages 替换为 green appeals/climate communications，将 carefully framed 替换为 strategically worded/designed；题句强调信息设计对效果的作用，原文可能用具体策略或研究结果体现这一观点。",
+    "tip": "在 L 段找“环境信息”和“措辞、设计、框架”相关的建议或结论。"
+   },
+   {
+    "number": 38,
+    "answer": "G",
+    "cn": "说服人们做出环保决定是政府的责任。",
+    "keywords": [
+     "government's responsibility",
+     "persuade",
+     "environment-friendly decisions"
+    ],
+    "paraphrase": "原文可能将 government's responsibility 替换为 authorities have a duty/role，persuade 替换为 encourage/nudge/motivate，environment-friendly decisions 替换为 green choices；题句是用概括性责任句，原文可能以政策建议形式出现。",
+    "tip": "定位 G 段中政府/政策制定者、责任、说服、环保决策等词的同义替换。"
+   },
+   {
+    "number": 39,
+    "answer": "P",
+    "cn": "政客们开始意识到在应对气候变化中争取心理学家帮助的重要性。",
+    "keywords": [
+     "politicians",
+     "psychologists",
+     "climate change",
+     "realise importance"
+    ],
+    "paraphrase": "原文可能将 politicians 替换为 policymakers/government officials，beginning to realise 替换为 growing awareness，enlisting psychologists' help 替换为 seeking behavioural expertise；题句概括政界与心理学界合作趋势。",
+    "tip": "在 P 段关注政界人物与心理学家合作或呼吁行为科学介入的表达。"
+   },
+   {
+    "number": 40,
+    "answer": "H",
+    "cn": "要找到应对气候变化的有效方案，就必须理解是什么激励人们做出改变。",
+    "keywords": [
+     "effective solutions",
+     "motivates people",
+     "make change",
+     "understand"
+    ],
+    "paraphrase": "原文可能将 necessary 替换为 essential/key，understand what motivates 替换为 identify drivers of behaviour，make change 替换为 adopt new behaviours；题句是因果概括，原文可能以研究结论形式出现。",
+    "tip": "扫读 H 段中“动机、驱动因素、行为改变”等关键词，常出现在结论句。"
+   },
+   {
+    "number": 41,
+    "answer": "D",
+    "cn": "在进化过程中，人类学会了关注最紧迫的问题，而不是长期担忧。",
+    "keywords": [
+     "evolution",
+     "pay attention",
+     "urgent issues",
+     "long-term concerns"
+    ],
+    "paraphrase": "原文可能将 evolution 替换为 evolved/evolutionary past，pay attention to urgent issues 替换为 focus on immediate threats，long-term concerns 替换为 distant future risks；题句概括人类认知偏向，原文可能以解释性句子呈现。",
+    "tip": "定位 D 段中进化心理或人类认知偏向的讨论，注意即时与长期的对比。"
+   },
+   {
+    "number": 42,
+    "answer": "J",
+    "cn": "一项研究表明，邻居的行为在改变我们的行为方面有影响力。",
+    "keywords": [
+     "study",
+     "neighbours' actions",
+     "influential",
+     "changing behaviour"
+    ],
+    "paraphrase": "原文可能将 study 替换为 research/experiment，neighbours' actions 替换为 what neighbours do/peer behaviour，influential 替换为 powerful/impactful；题句概括研究结论，原文可能包含具体研究数据或场景。",
+    "tip": "在 J 段扫读“研究”以及邻居/周围人行为如何影响行为的句子。"
+   },
+   {
+    "number": 43,
+    "answer": "B",
+    "cn": "尽管全球变暖迹象明显，但大多数人仍难以相信气候变化会影响自己的生活。",
+    "keywords": [
+     "clear signs",
+     "global warming",
+     "believe",
+     "affect their own lives"
+    ],
+    "paraphrase": "原文可能将 clear signs 替换为 visible evidence/obvious indicators，believe 替换为 recognise/accept，affect their own lives 替换为 personal harm/impact on themselves；题句用转折结构，原文可能以心理距离或乐观偏误解释。",
+    "tip": "扫读 B 段中全球变暖迹象与个人影响感知的转折或对比表达。"
+   },
+   {
+    "number": 44,
+    "answer": "F",
+    "cn": "在为时已晚之前，我们在做出有关气候变化的决策时应考虑到自己的未来。",
+    "keywords": [
+     "future",
+     "decisions",
+     "climate change",
+     "before too late"
+    ],
+    "paraphrase": "原文可能将 take our future into consideration 替换为 consider long-term consequences/future generations，before it is too late 替换为 while there is still time；题句表达呼吁，原文可能以建议或警告形式出现。",
+    "tip": "定位 F 段中考虑未来、决策、气候行动紧迫性相关的建议或警告。"
+   },
+   {
+    "number": 45,
+    "answer": "O",
+    "cn": "现有的社交网络在改变人们行为方面可能更有效。",
+    "keywords": [
+     "social networks",
+     "effective",
+     "creating change",
+     "behaviour"
+    ],
+    "paraphrase": "原文可能将 existing social networks 替换为 current community ties/peer groups，more effective 替换为 more powerful/better at，creating change 替换为 driving behaviour change；题句概括比较结论，原文可能提供对比或案例。",
+    "tip": "在 O 段找社交网络、社区联系与行为改变有效性的比较表述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "powerless",
+    "cn": "adj. 无力的，无能为力的"
+   },
+   {
+    "w": "live with it",
+    "cn": "短语 忍受，接受"
+   },
+   {
+    "w": "framed",
+    "cn": "v. 设计，表达（frame 的过去分词）；carefully framed 精心设计的"
+   },
+   {
+    "w": "environment-friendly",
+    "cn": "adj. 环保的"
+   },
+   {
+    "w": "persuade",
+    "cn": "v. 说服，劝说"
+   },
+   {
+    "w": "enlisting",
+    "cn": "v. 争取，寻求（enlist 的现在分词）"
+   },
+   {
+    "w": "psychologists",
+    "cn": "n. 心理学家"
+   },
+   {
+    "w": "motivates",
+    "cn": "v. 激励，驱使（motivate 的第三人称单数）"
+   },
+   {
+    "w": "evolution",
+    "cn": "n. 进化，演变"
+   },
+   {
+    "w": "urgent",
+    "cn": "adj. 紧迫的，紧急的"
+   },
+   {
+    "w": "long-term",
+    "cn": "adj. 长期的"
+   },
+   {
+    "w": "neighbours",
+    "cn": "n. 邻居（英式拼写）"
+   },
+   {
+    "w": "influential",
+    "cn": "adj. 有影响力的"
+   },
+   {
+    "w": "global warming",
+    "cn": "n. 全球变暖"
+   },
+   {
+    "w": "take into consideration",
+    "cn": "短语 考虑到，顾及"
+   },
+   {
+    "w": "concerning",
+    "cn": "prep. 关于；涉及"
+   },
+   {
+    "w": "existing",
+    "cn": "adj. 现有的，现存的"
+   },
+   {
+    "w": "social networks",
+    "cn": "n. 社交网络"
+   }
+  ]
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "e8fd5058f708__reading__4",
+ "examId": "e8fd5058f708",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2006 年考研英语真题（旧）",
+ "year": 2006,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:18:07.610Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59939,
+ "usage": {
+  "prompt_tokens": 1802,
+  "completion_tokens": 3759,
+  "total_tokens": 5561,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1802,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3759,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1802,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "艺术为何转向表达不快乐",
+  "gist": "文章探讨了艺术家从表达快乐转向关注负面情感的原因。作者认为，现代广告文化将快乐变成了一种意识形态，使快乐显得虚假不可靠，因此艺术承担起了类似宗教曾扮演的角色——提醒人们直面死亡与终结，从而获得真正的幸福。",
+  "structure": [
+   "第1-2段：引出话题，艺术家从表达快乐转向关注痛苦",
+   "第3-4段：分析原因，广告文化使快乐成为意识形态",
+   "第5-6段：对比古今，宗教提醒苦难 vs 商业宣扬快乐",
+   "第7段：总结主旨，反快乐艺术令人直面真实，是清新之风"
+  ],
+  "difficulty": "中等",
+  "translation": "许多事情让人觉得艺术家很古怪。但最古怪的也许是：艺术家唯一的工作就是探索情感，然而他们却选择专注于那些令人感觉不好的情感。\n\n情况并非一直如此。最早的艺术形式，如绘画和音乐，是最适合表达快乐的。但从19世纪起，越来越多的艺术家开始将快乐视为无意义的、虚假的，或者最糟糕的——无聊的。我们从华兹华斯的水仙花走向了波德莱尔的恶之花。\n\n你可以说艺术对快乐变得更加怀疑，是因为现代经历了太多苦难。但早期时代也并非不知道连绵不断的战争、灾难和对无辜者的屠杀。事实上，原因可能恰恰相反：当今世界有太多该死的快乐了。\n\n毕竟，哪种现代表达形式几乎完全致力于描绘快乐？广告。反快乐艺术的兴起几乎完全与大众媒体的出现同步，随之而来的是一种商业文化，在其中快乐不仅是一种理想，更是一种意识形态。\n\n早期时代的人们被苦难的提醒所包围。他们工作到筋疲力尽，生活中几乎没有保障，英年早逝。在西方，在大众传播和识字普及之前，最强大的大众媒介是教会，它提醒信徒们他们的灵魂处于危险之中，总有一天他们会成为虫子的食物。鉴于这一切，他们确实不需要艺术也来令人沮丧。\n\n今天，普通西方人周围的信息不是宗教性的，而是商业性的，并且永远是快乐的。快餐食客、新闻主播、短信发送者，全都在微笑、微笑、微笑。我们的杂志展示着光芒四射的名人和完美家庭中的幸福生活。而由于这些信息有一个目的——引诱我们打开钱包——它们使快乐这个概念本身都变得不可信。\"庆祝吧！\"关节炎药物Celebrex的广告如此命令道，直到后来我们发现它可能增加心脏病发作的风险。\n\n但我们忘记的——我们的经济依赖于我们忘记的——是快乐不仅仅是没有痛苦的愉悦。带来最大快乐的事物也承载着最大的失去和失望的可能。今天，被轻松获得快乐的承诺所包围，我们需要艺术来告诉我们，就像宗教曾经做的那样——Memento mori：记住你会死，一切都会终结，快乐不在于否认这一点，而在于与之共存。这个信息甚至比丁香烟还苦涩，但不知怎的，却是一股清新的空气。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "But somewhere from the 19th century onward, more artists began seeing happiness as meaningless, phony or, worst of all, boring, as we went from Wordsworth's daffodils to Baudelaire's flowers of evil.",
+    "why": "华兹华斯以歌颂自然与快乐著称（水仙花），波德莱尔则以表现丑恶与痛苦著称（恶之花）。作者用这两位诗人做对比，说明艺术家的关注焦点从正面情感转向了负面情感，即D所说的\"艺术家改变了他们的兴趣焦点\"。这两个例子服务于所在段的观点句\"more artists began seeing happiness as meaningless\"。",
+    "traps": "A项\"诗歌不如绘画和音乐善于表达快乐\"属无中生有，文中并未比较诗歌与绘画音乐的表达力；B项\"艺术源于正面和负面情感\"过于宽泛且偏离论证目的，例证强调的是转变而非兼有；C项\"如今诗人对快乐不那么怀疑\"与原文方向相反，原文说的是更加怀疑。",
+    "tip": "例证题要回到例子所服务的观点句，而非就例子本身做推断。"
+   },
+   {
+    "number": 37,
+    "answer": "B",
+    "type": "词义句意题",
+    "locate": "Given all this, they did not exactly need their art to be a bummer too.",
+    "why": "上文描述早期人们生活在战争、疾病、劳累、早逝等苦难中，教会还不断提醒灵魂危险和死后化为蛆虫之食。\"Given all this\"总结这些令人沮丧的现实，\"they did not exactly need their art to be a bummer too\"中的\"too\"表明bummer与前述苦难性质相同，即令人不快的东西，故B（unpleasant）正确。",
+    "traps": "A项\"宗教的\"是上文提到的教会内容，属偷换概念；C项\"娱乐的\"与上下文语境完全相反；D项\"商业的\"是后文才出现的概念，与此处语境无关。",
+    "tip": "词义猜测题需紧扣上下文逻辑关系，尤其注意too、also等衔接词暗示的并列关系。"
+   },
+   {
+    "number": 38,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "And since these messages have an agenda – to lure us to open our wallets – they make the very idea of happiness seem unreliable.",
+    "why": "文章第四段指出广告几乎完全致力于描绘快乐，第六段进一步揭示广告中的快乐有其目的（引诱消费），使快乐本身显得不可靠。这说明广告创造的是快乐的假象而非真正的快乐，对应D\"创造快乐的幻象而非快乐本身\"。Celebrex药物广告的例子也佐证了广告宣传的快乐与现实之间的落差。",
+    "traps": "A项因果倒置，原文说反快乐艺术伴随大众媒体（广告）兴起，而非广告出现在反快乐艺术之后；B项\"令公众失望\"过度引申，原文说的是使快乐概念不可靠；C项\"取代教会成为主要信息来源\"虽有原文依据但不是作者对广告的核心评价，且题目问的是作者对广告的看法。",
+    "tip": "推断题注意区分\"文中提及的事实\"和\"作者的核心观点\"。"
+   },
+   {
+    "number": 39,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "It's a message even more bitter than a clove cigarette, yet, somehow, a breath of fresh air.",
+    "why": "最后一段指出反快乐艺术提醒人们直面死亡和终结，其信息\"比丁香烟还苦涩\"对应distasteful（令人不快），\"却是一股清新空气\"对应refreshing（令人耳目一新）。B项\"反快乐艺术令人不快但令人耳目一新\"精确概括了作者的态度。",
+    "traps": "A项\"快乐往往以悲伤告终\"是对原文的片面理解，原文强调的是直面终结而非快乐必然变为悲伤；C项\"苦难应被享受而非否认\"曲解原文，原文说的是与苦难共存而非享受苦难；D项\"反快乐艺术在经济繁荣时兴盛\"属无中生有，文中虽提到经济但未建立此因果关系。",
+    "tip": "末段总结题需抓住转折词yet前后的对比关系来理解作者态度。"
+   },
+   {
+    "number": 40,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "the most powerful mass medium was the church, which reminded worshippers that their souls were in danger and that they would someday be meat for worms.",
+    "why": "第五段明确指出在大众传播和识字普及之前，教会是最强大的大众媒介，它提醒信徒灵魂处于危险中、终将化为蛆虫之食。这说明宗教曾起到提醒苦难的作用，与A项\"宗教曾充当苦难的提醒者\"完全吻合。",
+    "traps": "B项\"艺术在期望与现实之间提供平衡\"是对文章的过度概括，原文未明确表达此意；C项\"人们对现代社会现实感到失望\"属无中生有，文中讨论的是广告制造虚假快乐而非人们对现实失望；D项\"大众媒体倾向报道灾难与死亡\"与原文相反，文中说现代大众媒体传递的是商业化的快乐信息。",
+    "tip": "选择\"正确的一项\"时，逐一与原文核查，警惕看似合理但原文无据的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "phony",
+    "cn": "adj. 虚假的，伪造的"
+   },
+   {
+    "w": "skeptical",
+    "cn": "adj. 怀疑的，持怀疑态度的"
+   },
+   {
+    "w": "perpetual",
+    "cn": "adj. 永久的，持续不断的"
+   },
+   {
+    "w": "massacre",
+    "cn": "n. 大屠杀，残杀"
+   },
+   {
+    "w": "ideology",
+    "cn": "n. 意识形态，思想体系"
+   },
+   {
+    "w": "worshipper",
+    "cn": "n. 礼拜者，崇拜者"
+   },
+   {
+    "w": "agenda",
+    "cn": "n. 目的，议程"
+   },
+   {
+    "w": "lure",
+    "cn": "v. 引诱，诱惑"
+   },
+   {
+    "w": "arthritis",
+    "cn": "n. 关节炎"
+   },
+   {
+    "w": "Memento mori",
+    "cn": "（拉丁语）勿忘你终有一死"
+   },
+   {
+    "w": "beaming",
+    "cn": "adj. 笑容满面的，容光焕发的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The rise of anti-happy art almost exactly tracks the emergence of mass media, and with it, a commercial culture in which happiness is not just an ideal but an ideology.",
+    "cn": "反快乐艺术的兴起几乎完全与大众媒体的出现同步，随之而来的是一种商业文化，在这种文化中，快乐不仅是一种理想，更是一种意识形态。",
+    "note": "主干为The rise tracks the emergence and a commercial culture；with it为插入语，指代mass media；in which引导定语从句修饰culture；not just...but...为递进结构。"
+   },
+   {
+    "en": "But what we forget – what our economy depends on us forgetting – is that happiness is more than pleasure without pain.",
+    "cn": "但我们忘记的——我们的经济依赖于我们忘记的——是快乐不仅仅是没有痛苦的愉悦。",
+    "note": "主语为what引导的名词性从句；两个破折号之间为插入语，补充说明遗忘的深层原因；is后为that引导的表语从句。"
+   },
+   {
+    "en": "Today, surrounded by promises of easy happiness, we need art to tell us, as religion once did, Memento mori: remember that you will die, that everything ends, and that happiness comes not in denying this but in living with it.",
+    "cn": "今天，被轻松获得快乐的承诺所包围，我们需要艺术来告诉我们，就像宗教曾经做的那样——勿忘你终有一死：记住你会死去，一切都会终结，快乐不在于否认这一点，而在于与之共存。",
+    "note": "surrounded by...为过去分词短语作状语；as religion once did为插入比较状语从句；冒号后三个that从句并列，作remember的宾语；not in...but in...为对比结构。"
+   }
+  ]
+ }
+}

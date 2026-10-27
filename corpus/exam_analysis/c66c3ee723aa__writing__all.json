@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "c66c3ee723aa__writing__all",
+ "examId": "c66c3ee723aa",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2025 年 6 月英语六级真题（第 1 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:01:14.930Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 48496,
+ "usage": {
+  "prompt_tokens": 741,
+  "completion_tokens": 2865,
+  "total_tokens": 3606,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 741,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2865,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 741,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 4,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "给定首句的议论文写作，围绕\"求职要求日益提高，大学生应为未来职业做更好准备\"展开论述，可评论、举例或结合个人经历，字数150–200词。",
+    "outline": [
+     "第一段：以题目给定首句开头，引出现象——当今就业市场竞争激烈，仅有学历已不足以获得理想职位，点明大学生需主动提升自我。",
+     "第二段：分两个层面展开论证。层面一：拓展专业之外的多元技能（外语、数据分析、沟通能力等），并举具体例子说明；层面二：通过实习与志愿活动积累实践经验，用亲身或身边案例佐证其重要性。",
+     "第三段：总结全文，重申大学生应主动拓宽能力、积累实践经验，以倒装句或强调句收束，呼应主题。"
+    ],
+    "sample": "As requirements for job applications are getting increasingly higher, college students ought to be better prepared for their future career. In today's fiercely competitive job market, merely possessing an academic degree no longer suffices to secure a desirable position.\n\nTo begin with, students should strive to cultivate a diverse skill set beyond their major. Proficiency in foreign languages, data analysis, and interpersonal communication can significantly enhance one's employability. For instance, a finance major who also masters Python programming will undoubtedly stand out among peers in job interviews. Moreover, gaining practical experience through internships and volunteer work is equally indispensable. Such hands-on exposure not only bridges the gap between theoretical knowledge and real-world demands but also enables students to build valuable professional networks. A friend of mine, who completed three internships before graduation, received multiple job offers effortlessly.\n\nIn conclusion, college students must take a proactive approach to career preparation by broadening their competencies and accumulating practical experience. Only by doing so can they navigate the increasingly demanding job market with confidence and competence.",
+    "phrases": [
+     {
+      "en": "fiercely competitive job market",
+      "cn": "竞争激烈的就业市场；形容词+形容词+名词的叠加修饰，增强表达力度"
+     },
+     {
+      "en": "no longer suffices to do sth.",
+      "cn": "不再足以做某事；suffice 比 be enough 更正式，适合书面语"
+     },
+     {
+      "en": "cultivate a diverse skill set",
+      "cn": "培养多元化的技能组合；cultivate 比 develop 更高级，skill set 为地道搭配"
+     },
+     {
+      "en": "enhance one's employability",
+      "cn": "提升某人的就业竞争力；employability 为六级高频词汇"
+     },
+     {
+      "en": "stand out among peers",
+      "cn": "在同龄人中脱颖而出；stand out 为高分短语动词"
+     },
+     {
+      "en": "bridge the gap between A and B",
+      "cn": "弥合A与B之间的差距；常用于论述理论与实践的衔接"
+     },
+     {
+      "en": "hands-on exposure",
+      "cn": "亲身实践的接触/体验；hands-on 表示\"动手的、实操的\""
+     },
+     {
+      "en": "take a proactive approach to",
+      "cn": "采取积极主动的方式来……；proactive 体现主动性，比 active 层次更高"
+     },
+     {
+      "en": "Only by doing so can they ...",
+      "cn": "只有这样他们才能……；only+介词短语置于句首引起部分倒装，为高分句式"
+     },
+     {
+      "en": "with confidence and competence",
+      "cn": "满怀信心与实力地；押头韵(alliteration)，增强文采与节奏感"
+     }
+    ],
+    "pitfalls": [
+     "未在文章开头抄写题目给定首句，直接扣分，务必原样复制",
+     "全文仅空谈道理缺少具体例子或个人经历，论证单薄，难以拿高分",
+     "词数不足150词或超过200词，均可能被酌情扣分",
+     "段落结构混乱，缺少明确的分论点与过渡词，逻辑不清晰",
+     "通篇使用简单句和初级词汇（如good/important），缺乏句式变化与高级用词"
+    ],
+    "upgrades": [
+     {
+      "plain": "Having a degree is not enough to find a good job.",
+      "better": "Merely possessing an academic degree no longer suffices to secure a desirable position.",
+      "note": "用 merely/suffice/secure/desirable 替换基础词汇，语言更正式地道"
+     },
+     {
+      "plain": "Students should learn more skills besides their major.",
+      "better": "Students should strive to cultivate a diverse skill set beyond their major.",
+      "note": "strive to 体现努力，cultivate 比 learn 更学术，diverse skill set 为地道搭配"
+     },
+     {
+      "plain": "This kind of experience can help students connect theory with practice.",
+      "better": "Such hands-on exposure not only bridges the gap between theoretical knowledge and real-world demands but also enables students to build valuable professional networks.",
+      "note": "not only...but also 双重论证，bridge the gap 为高级搭配，信息量更大"
+     },
+     {
+      "plain": "Students should prepare for their career actively.",
+      "better": "College students must take a proactive approach to career preparation by broadening their competencies and accumulating practical experience.",
+      "note": "proactive approach 比 actively 更正式，by 引出具体方式使论述更落地"
+     },
+     {
+      "plain": "If they do this, they can succeed in finding jobs.",
+      "better": "Only by doing so can they navigate the increasingly demanding job market with confidence and competence.",
+      "note": "倒装句+navigate 隐喻+头韵修辞，句式与文采同时升级"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Merely possessing an academic degree no longer suffices to secure a desirable position. — 仅仅拥有一个学历已不再足以获得理想职位。suffice/secure/desirable 三个高级词精准替代基础表达。",
+   "Such hands-on exposure not only bridges the gap between theoretical knowledge and real-world demands but also enables students to build valuable professional networks. — 这种实操经历不仅弥合了理论知识与现实需求之间的差距，还使学生能够建立宝贵的职业人脉。not only...but also 双层递进论证，bridge the gap 为经典搭配。",
+   "Only by doing so can they navigate the increasingly demanding job market with confidence and competence. — 只有这样他们才能满怀信心与实力地驾驭日益严苛的就业市场。Only 引导的倒装句收束全文，confidence 与 competence 押头韵，极具感染力。",
+   "A finance major who also masters Python programming will undoubtedly stand out among peers in job interviews. — 一个同时掌握Python编程的金融专业学生无疑会在求职面试中脱颖而出。具体举例使论证有说服力，stand out 为地道短语。"
+  ]
+ }
+}

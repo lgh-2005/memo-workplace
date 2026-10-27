@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "2c00eddfd70a__writing__all",
+ "examId": "2c00eddfd70a",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "1999 年考研英语真题（旧）",
+ "year": 1999,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:08:48.326Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43185,
+ "usage": {
+  "prompt_tokens": 731,
+  "completion_tokens": 2925,
+  "total_tokens": 3656,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 731,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2925,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 731,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 36,
+    "part": "A",
+    "task": "图表作文：根据人口增长与野生动物数量变化的图表，分析人口增长对野生动物的影响、原因及保护建议，不少于150词。",
+    "outline": [
+     "第一段：描述图表信息，指出人口持续增长与野生动物种类急剧减少之间的鲜明对比",
+     "第二段：分析造成野生动物减少的可能原因（栖息地破坏、环境污染、非法猎杀等）",
+     "第三段：提出保护野生动物的具体建议（建立保护区、完善法律、提升公众意识等）"
+    ],
+    "sample": "The graphs vividly illustrate a striking contrast between the steady growth of the country's human population and the dramatic decline in the number of wildlife species from 1980 to 2000. As the population surged from approximately 130 million to over 170 million, the number of wildlife species plummeted sharply.\n\nSeveral factors account for this alarming trend. First and foremost, the expanding population demands more living space, leading to the destruction of natural habitats such as forests and wetlands. Additionally, increased industrial activities have resulted in severe environmental pollution, which poses a direct threat to wildlife survival. Furthermore, illegal hunting and poaching driven by commercial interests have accelerated the extinction of numerous species.\n\nTo reverse this disturbing trend, immediate and comprehensive measures must be taken. The government should establish more nature reserves and enforce stricter laws against poaching. Meanwhile, public awareness campaigns about wildlife conservation should be launched to encourage citizen participation. Only through concerted efforts can we achieve harmonious coexistence between humans and wildlife.",
+    "phrases": [
+     {
+      "en": "a striking contrast between A and B",
+      "cn": "A与B之间的鲜明对比；用于图表对比描写，突出两组数据的反差"
+     },
+     {
+      "en": "account for",
+      "cn": "解释……的原因；常用于原因分析段的开头，替代explain"
+     },
+     {
+      "en": "the destruction of natural habitats",
+      "cn": "自然栖息地的破坏；环保类话题核心表达"
+     },
+     {
+      "en": "pose a direct threat to",
+      "cn": "对……构成直接威胁；比threaten更正式，适合议论文"
+     },
+     {
+      "en": "driven by commercial interests",
+      "cn": "受商业利益驱动；过去分词短语作后置定语，结构紧凑"
+     },
+     {
+      "en": "accelerate the extinction of",
+      "cn": "加速……的灭绝；搭配物种话题，体现词汇深度"
+     },
+     {
+      "en": "reverse this disturbing trend",
+      "cn": "扭转这一令人不安的趋势；建议段开头的高级表达"
+     },
+     {
+      "en": "concerted efforts",
+      "cn": "齐心协力；比joint efforts更书面，常用于结尾呼吁"
+     },
+     {
+      "en": "harmonious coexistence",
+      "cn": "和谐共存；点题升华，体现人与自然主题"
+     },
+     {
+      "en": "public awareness campaigns",
+      "cn": "公众意识宣传活动；建议段高频表达，适用于多种社会话题"
+     }
+    ],
+    "pitfalls": [
+     "图表描述段遗漏具体数据或时间，导致描写空泛缺乏说服力",
+     "三个要点（影响、原因、建议）缺一不可，遗漏任何一点均扣分严重",
+     "population与wildlife的因果关系未点明，仅罗列数据不构成分析",
+     "建议段空喊口号（如protect wildlife），缺少可操作的具体措施",
+     "词汇重复率高，如反复使用many、very，未展示同义替换能力"
+    ],
+    "upgrades": [
+     {
+      "plain": "The number of wildlife species decreased.",
+      "better": "The number of wildlife species plummeted sharply.",
+      "note": "plummeted 比 decreased 更生动，sharply 增强程度，体现图表急剧下降的趋势"
+     },
+     {
+      "plain": "Because the population grows, forests are destroyed.",
+      "better": "The expanding population demands more living space, leading to the destruction of natural habitats.",
+      "note": "现在分词 leading to 替代 because 从句，句式更紧凑流畅，层次更高"
+     },
+     {
+      "plain": "We should work together to protect wildlife.",
+      "better": "Only through concerted efforts can we achieve harmonious coexistence between humans and wildlife.",
+      "note": "Only + 介词短语引导倒装句，展示高级语法能力，同时以coexistence升华主题"
+     },
+     {
+      "plain": "Pollution is bad for animals.",
+      "better": "Severe environmental pollution poses a direct threat to wildlife survival.",
+      "note": "pose a threat to 替代 be bad for，措辞更学术、更具考研写作风格"
+     },
+     {
+      "plain": "Some people kill animals for money.",
+      "better": "Illegal hunting and poaching driven by commercial interests have accelerated the extinction of numerous species.",
+      "note": "过去分词短语作定语 + accelerate 替换 kill，信息密度和学术感显著提升"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The graphs vividly illustrate a striking contrast between the steady growth of the country's human population and the dramatic decline in the number of wildlife species. 该句用 striking contrast 将两组数据形成对比张力，illustrate 比 show 更正式。",
+   "The expanding population demands more living space, leading to the destruction of natural habitats such as forests and wetlands. 用现在分词结构表因果，such as 举例具体化，一句话涵盖原因与结果。",
+   "Illegal hunting and poaching driven by commercial interests have accelerated the extinction of numerous species. 过去分词短语作后置定语，信息浓缩，accelerated 精准刻画加速灭绝的严重性。",
+   "Only through concerted efforts can we achieve harmonious coexistence between humans and wildlife. 倒装句式 + harmonious coexistence 点睛收尾，兼顾语法亮点与主题升华。"
+  ]
+ }
+}

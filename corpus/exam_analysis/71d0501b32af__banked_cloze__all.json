@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "71d0501b32af__banked_cloze__all",
+ "examId": "71d0501b32af",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2017 年 12 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:10:52.294Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 69393,
+ "usage": {
+  "prompt_tokens": 1444,
+  "completion_tokens": 4286,
+  "total_tokens": 5730,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1444,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4286,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1444,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "尼日利亚番茄害虫危机引发粮食安全问题",
+  "gist": "尼日利亚遭遇经济困境之际，其最大番茄产区又受到\"番茄潜叶蛾\"侵袭，摧毁大量农田，导致番茄价格飙升、工厂停产。该害虫起源于南美洲，繁殖极快，传播基本未受遏制，可能威胁尼日利亚粮食安全。作为非洲第二大番茄生产国，尼日利亚本就依赖大量进口，本地供应进一步减少无疑雪上加霜。",
+  "difficulty": "中等",
+  "translation": "过去12个月中，尼日利亚经历了经济萎缩、货币贬值和长期燃料短缺。如今，非洲最大的经济体正面临一场粮食危机，因为主要番茄种植区已被一种害虫摧毁，导致全国性短缺和价格不断攀升。\n\n这种名为\"Tuta absoluta\"的害虫已经摧毁了卡杜纳州（尼日利亚最大的番茄产区）80%的农场，导致该州政府宣布进入紧急状态。这种也被称为\"番茄潜叶蛾\"的害虫通过啃食果实、钻入并穿行于茎秆中来毁坏作物。它繁殖速度极快，如果条件适宜，每年可繁殖多达12代。据信它起源于20世纪初的南美洲，后来传播到欧洲，之后又蔓延至撒哈拉以南非洲地区。\n\n在尼日利亚，番茄是当地饮食的主食，这种害虫的影响是毁灭性的。当地市场上一把番茄的零售价格已从0.50美元涨到2.50美元。农民们报告了严重的损失，一家耗资2000万美元的新番茄酱工厂也因短缺而停产。\n\n鉴于这种蛾类害虫还能够侵害辣椒和土豆等作物，尼日利亚农业部长奥杜·奥格贝警告说，该害虫可能会\"给该国的粮食安全带来严重问题\"。奥格贝表示，专家们正在研究如何控制害虫造成的损害并防止其蔓延——迄今为止，这种蔓延基本上未受到遏制。\n\n尽管尼日利亚是非洲大陆第二大番茄生产国，但每年仍依赖价值10亿美元的番茄酱进口，因为由于缺乏适当的储存设施，约75%的当地收成被浪费。当地供应的进一步减少是该行业又一个不受欢迎的挫折。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "correct": "emergency",
+    "why": "此处为固定搭配 declare a state of emergency（宣布紧急状态）。名词 emergency 与前面的 state of 构成完整短语，语义上害虫摧毁80%农场后政府宣布紧急状态完全吻合上下文逻辑。",
+    "traps": "security 虽也是名词，但 state of security 不是常见固定搭配，且语义不合此处\"灾害应对\"语境；reduction 语义更不相关。",
+    "tip": "recognize固定搭配 state of emergency"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "correct": "feeding",
+    "why": "空格前为介词 by，后接 on fruits，需要动名词。feed on 意为\"以……为食\"，描述害虫啃食果实的行为，与后文 digging into 并列，语法和语义均通顺。",
+    "traps": "embarking 虽为动名词形式，但 embark on 意为\"着手从事\"，不能用于描述害虫吃食行为，搭配语义不合。",
+    "tip": "by + 动名词表方式，feed on 为固定搭配"
+   },
+   {
+    "number": 28,
+    "answer": "K",
+    "correct": "reproduces",
+    "why": "主语 It 指代害虫，后文 breeding up to 12 generations 暗示繁殖之意。空格需要第三人称单数动词，reproduces（繁殖）语义精准匹配\"incredibly quickly\"和\"12 generations per year\"的语境。",
+    "traps": "halted 虽也是动词，但意为\"停止\"，与后文\"繁殖12代\"的语义完全矛盾；originated 时态与此处一般现在时不符。",
+    "tip": "根据后文 breeding 语义线索锁定\"繁殖\"含义"
+   },
+   {
+    "number": 29,
+    "answer": "I",
+    "correct": "originated",
+    "why": "is believed to have + 过去分词，需要完成时态。originated in South America 意为\"起源于南美洲\"，与后文 later spread to Europe 构成时间线叙述，逻辑连贯。",
+    "traps": "reproduced 虽可作过去分词，但\"被认为在南美繁殖过\"与全句讲述害虫来源的语境不符；halted 语义更不相关。",
+    "tip": "have + 过去分词结构，originate in 为固定搭配"
+   },
+   {
+    "number": 30,
+    "answer": "G",
+    "correct": "handful",
+    "why": "空格在冠词 a 和介词 of 之间，需要可数名词单数。a handful of tomatoes 意为\"一把/一小撮番茄\"，作为市场零售的计量单位符合语境，价格从$0.50涨到$2.50也合理。",
+    "traps": "reduction 虽为名词，但 a reduction of tomatoes 语义不通，不能作为零售价格的计量单位使用。",
+    "tip": "a handful of 为常见搭配，表\"一把/少量\""
+   },
+   {
+    "number": 31,
+    "answer": "F",
+    "correct": "halted",
+    "why": "has + 过去分词结构，需要完成时态动词。halted production 意为\"停止生产\"，原因是 due to the shortages，新建的番茄酱工厂因原料短缺而停产，逻辑通顺。",
+    "traps": "reproduced 虽为过去分词，但\"工厂已繁殖了生产\"语义荒谬；originated 意为\"起源\"，与工厂停产语境无关。",
+    "tip": "halt production 为常见搭配，表\"停止生产\""
+   },
+   {
+    "number": 32,
+    "answer": "L",
+    "correct": "security",
+    "why": "food security 是\"粮食安全\"的固定表达，属于高频时政术语。农业部长警告害虫可能对粮食安全造成严重问题，语境完全吻合。",
+    "traps": "emergency 虽也是名词，但 food emergency 不如 food security 常见，且此处强调的是长期粮食保障而非紧急事件。",
+    "tip": "food security（粮食安全）为高频固定搭配"
+   },
+   {
+    "number": 33,
+    "answer": "N",
+    "correct": "unchecked",
+    "why": "has gone + 形容词/副词，描述状态。unchecked 意为\"未受遏制的\"，指害虫的传播至今基本未被控制，与前文\"investigating how to control\"呼应，强调问题的严峻性。",
+    "traps": "dependent 虽也是形容词，但 gone dependent 搭配不自然，语义上\"传播变得依赖的\"毫无逻辑。",
+    "tip": "go unchecked 意为\"不受控制地蔓延\""
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "correct": "dependent",
+    "why": "is dependent on 意为\"依赖于\"，是固定搭配。尼日利亚虽然是番茄大国但仍依赖10亿美元进口，形成让步转折关系（Despite...），逻辑严密。",
+    "traps": "embarking 若用 is embarking on 意为\"着手进行\"，但与$1 billion worth of imports 不搭配，语义是\"花费\"而非\"开始某事业\"。",
+    "tip": "be dependent on 为固定搭配，表\"依赖于\""
+   },
+   {
+    "number": 35,
+    "answer": "J",
+    "correct": "reduction",
+    "why": "A further + 名词，空格需要可数名词单数。reduction in local supplies 意为\"当地供应的减少\"，与前文害虫破坏、储存不足的语境衔接，further 强调雪上加霜。",
+    "traps": "handful 虽为名词，但 a further handful in local supplies 语义不通；emergency 放此处\"供应中的又一紧急状态\"语法别扭。",
+    "tip": "reduction in 为常见搭配，表\"……的减少\""
+   }
+  ],
+  "vocab": [
+   {
+    "w": "shrinking",
+    "cn": "adj./v. 萎缩的，缩小的"
+   },
+   {
+    "w": "escalating",
+    "cn": "adj./v. 不断升级的，逐步上升的"
+   },
+   {
+    "w": "devastate",
+    "cn": "v. 毁坏，使荒废"
+   },
+   {
+    "w": "stalk",
+    "cn": "n. 茎，秆"
+   },
+   {
+    "w": "reproduce",
+    "cn": "v. 繁殖，再生"
+   },
+   {
+    "w": "originate",
+    "cn": "v. 起源于，发源于"
+   },
+   {
+    "w": "staple",
+    "cn": "n./adj. 主食；主要的"
+   },
+   {
+    "w": "halt",
+    "cn": "v. 停止，中止"
+   },
+   {
+    "w": "unchecked",
+    "cn": "adj. 未受遏制的，不受控制的"
+   },
+   {
+    "w": "setback",
+    "cn": "n. 挫折，倒退"
+   },
+   {
+    "w": "prolonged",
+    "cn": "adj. 长期的，持久的"
+   },
+   {
+    "w": "breeding",
+    "cn": "n./v. 繁殖，培育"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文了解主旨大意，将15个候选词按词性分类（名词/动词/形容词/副词）",
+   "第二步：根据空格前后的语法结构（冠词、介词、助动词等）判断所需词性，缩小选择范围",
+   "第三步：利用固定搭配（如 state of emergency, food security, be dependent on）直接锁定答案",
+   "第四步：结合上下文语义逻辑验证选项，注意转折、因果等逻辑关系的提示作用",
+   "第五步：填完后回读全文，确保每个词只用一次且语法语义均通顺"
+  ]
+ }
+}

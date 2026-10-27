@@ -1,0 +1,319 @@
+{
+ "schemaVersion": 1,
+ "id": "2bf75860cf1c__use_of_english__all",
+ "examId": "2bf75860cf1c",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2011 年考研英语真题",
+ "year": 2011,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:25:28.529Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 108552,
+ "usage": {
+  "prompt_tokens": 1792,
+  "completion_tokens": 6754,
+  "total_tokens": 8546,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1792,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 6754,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1792,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "笑与身心健康的关系",
+  "gist": "文章以亚里士多德的名言引入，讨论笑对身体健康的实际影响有限，指出笑能放松肌肉而非锻炼肌肉，并援引经典情绪理论与弗里茨·斯特拉克的实验，论证身体表情（包括笑）可以反向影响情绪状态，而非仅仅是情绪的外在表现。",
+  "difficulty": "中等",
+  "translation": "古希腊哲学家亚里士多德将笑视为\"一种对健康极为珍贵的身体锻炼\"。但尽管有一些相反的说法，笑可能对身体健康几乎没有影响。笑确实会产生心脏及其血管功能的短期变化，提升心率和氧气消耗量。但由于大笑难以持续，一次开怀大笑不太可能像散步或慢跑那样带来可测量的益处。\n\n事实上，锻炼是通过拉紧肌肉来增强肌肉，而笑显然达到了相反的效果。可追溯到20世纪30年代的研究表明，笑能放松肌肉，在笑声消退后，肌肉张力的降低可持续长达45分钟。\n\n这种身体反应或许可以帮助缓和心理压力的影响。无论如何，笑的行为可能确实会产生其他类型的身体反馈，从而改善个人的情绪状态。根据一种经典的情绪理论，我们的感受部分根植于身体反应之中。19世纪末有人提出，人类并非因为悲伤才哭泣，而是当眼泪开始流淌时才变得悲伤。\n\n尽管悲伤也先于眼泪出现，但证据表明情绪可以源自肌肉反应。在1988年发表的一项实验中，德国维尔茨堡大学的社会心理学家弗里茨·斯特拉克要求志愿者用牙齿咬住一支笔——从而制造出一个人为的微笑——或用嘴唇夹住笔，这会产生一种沮丧的表情。那些被迫锻炼微笑肌肉的人对有趣的漫画反应更为热烈，而那些嘴巴紧缩成皱眉状的人则不然，这表明表情可能影响情绪，而不仅仅是反过来。类似地，笑这一身体行为也能够改善情绪。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "C",
+    "correct": "despite",
+    "why": "上下文逻辑决定。前半句引用亚里士多德称笑有益健康，后半句说笑对健康几乎无影响，构成让步转折关系，despite（尽管）引出被否定的观点，与后文contrary形成语义搭配。",
+    "traps": "A) among表\"在……之中\"，无法连接让步语义；B) except表\"除了\"，语法上不接some claims短语构成让步；D) like表\"像\"，会使句意变为支持而非转折，与contrary矛盾。",
+    "tip": "让步转折结构：despite + 名词短语"
+   },
+   {
+    "number": 2,
+    "answer": "D",
+    "correct": "produce",
+    "why": "搭配与上下文逻辑决定。主语laughter作用于short-term changes，需要一个\"产生/引起\"义动词，produce changes是常用搭配，且与后文boosting心率等具体效果对应。",
+    "traps": "A) reflect意为\"反映\"，主客体关系倒置；B) demand意为\"要求\"，语义不通；C) indicate意为\"表明\"，笑不是指标而是原因。",
+    "tip": "produce changes为固定搭配，表示\"产生变化\""
+   },
+   {
+    "number": 3,
+    "answer": "B",
+    "correct": "boosting",
+    "why": "上下文逻辑决定。此处用现在分词短语补充说明changes的具体表现：笑会使心率和氧耗上升，boosting（提升）符合笑引起身体兴奋的事实。",
+    "traps": "A) stabilizing意为\"稳定\"，与\"变化\"含义矛盾；C) impairing意为\"损害\"，语义过于负面且不符事实；D) determining意为\"决定\"，逻辑关系不当。",
+    "tip": "分词短语作伴随状语，补充说明具体变化方向"
+   },
+   {
+    "number": 4,
+    "answer": "B",
+    "correct": "sustain",
+    "why": "上下文逻辑决定。此处说大笑难以\"维持\"较长时间，因此无法像走路、慢跑那样带来持续锻炼效果。sustain意为\"持续、维持\"，与后文的比较逻辑一致。",
+    "traps": "A) transmit意为\"传播\"，与laughter不构成合理搭配；C) evaluate意为\"评估\"，语义偏离；D) observe意为\"观察\"，语义不当。",
+    "tip": "sustain = maintain，强调行为在时间上的延续性"
+   },
+   {
+    "number": 5,
+    "answer": "A",
+    "correct": "measurable",
+    "why": "上下文逻辑决定。因为大笑难以持续，所以产生的益处不够大、不足以被测量到。measurable benefits（可测量的益处）与walking/jogging的长期效果形成对比。",
+    "traps": "B) manageable意为\"可管理的\"，修饰benefits语义不通；C) affordable意为\"负担得起的\"，与健康益处无关；D) renewable意为\"可再生的\"，语义偏离。",
+    "tip": "measurable强调效果是否达到可被检测的程度"
+   },
+   {
+    "number": 6,
+    "answer": "B",
+    "correct": "In fact",
+    "why": "上下文逻辑决定。第一段说笑对健康影响有限，第二段进一步揭示笑不但不锻炼肌肉反而放松肌肉，In fact（事实上）引出更深层的事实，加强前文论点。",
+    "traps": "A) In turn意为\"反过来\"，强调因果轮换，不符语境；C) In addition意为\"此外\"，暗示并列补充，但本段是深入而非简单并列；D) In brief意为\"简言之\"，用于总结而非展开。",
+    "tip": "In fact用于引出与表面认知不同的深层事实"
+   },
+   {
+    "number": 7,
+    "answer": "A",
+    "correct": "opposite",
+    "why": "上下文逻辑决定。exercise通过拉紧肌肉来增强肌肉，而笑则放松肌肉，两者效果完全相反，accomplish the opposite（达到相反效果）准确概括。",
+    "traps": "B) impossible意为\"不可能的\"，作为accomplish的宾语语义不当；C) average意为\"平均的\"，无法构成合理语义；D) expected意为\"预期的\"，缺乏上下文支撑。",
+    "tip": "opposite与前文straining muscles构成对比关系"
+   },
+   {
+    "number": 8,
+    "answer": "D",
+    "correct": "relaxes",
+    "why": "上下文逻辑决定。后文decreasing muscle tone（降低肌肉张力）是对该动词的解释说明，relaxes muscles与之语义一致，也呼应前文the opposite。",
+    "traps": "A) hardens意为\"使变硬\"，与decreasing muscle tone矛盾；B) weakens意为\"使虚弱\"，侧重力量减退，不精确；C) tightens意为\"使绷紧\"，与opposite和decreasing矛盾。",
+    "tip": "后文decreasing muscle tone是对relaxes的同义解释"
+   },
+   {
+    "number": 9,
+    "answer": "C",
+    "correct": "moderate",
+    "why": "上下文逻辑与搭配决定。放松肌肉的反应有助于\"缓和\"心理压力的影响，moderate the effects of stress是常用学术搭配，意为减轻、调节。",
+    "traps": "A) aggravate意为\"加剧\"，语义相反；B) generate意为\"产生\"，与effects of stress搭配不当，压力已存在；D) enhance意为\"增强\"，会使压力加大，与语境矛盾。",
+    "tip": "moderate作动词意为\"缓和、减轻\"，常用于学术语境"
+   },
+   {
+    "number": 10,
+    "answer": "A",
+    "correct": "physical",
+    "why": "上下文逻辑决定。本段讨论笑的身体行为如何影响情绪，后文引用的经典理论也强调feelings rooted in physical reactions，因此此处反馈类型为physical（身体的）。",
+    "traps": "B) mental意为\"精神的\"，与feedback搭配后无法体现\"身体→情绪\"的因果方向；C) subconscious意为\"潜意识的\"，文中无此讨论；D) internal意为\"内部的\"，过于笼统。",
+    "tip": "physical feedback呼应后文physical reactions，形成主题线索"
+   },
+   {
+    "number": 11,
+    "answer": "B",
+    "correct": "According to",
+    "why": "搭配与语法决定。后接one classical theory of emotion，需要\"根据\"义介词短语来引出理论依据，According to为标准搭配。",
+    "traps": "A) Except for意为\"除了\"，表排除，不合语境；C) Due to意为\"由于\"，引出原因而非引用来源；D) As for意为\"至于\"，用于转换话题，此处未转换话题。",
+    "tip": "According to + 来源，用于引述观点或理论"
+   },
+   {
+    "number": 12,
+    "answer": "C",
+    "correct": "in",
+    "why": "固定搭配决定。rooted in是固定短语，意为\"根植于、扎根于\"，表示感受以身体反应为根基。",
+    "traps": "A) rooted with无此搭配；B) rooted on不符合习惯用法；D) rooted at不是固定搭配。",
+    "tip": "be rooted in为固定搭配，意为\"根植于\""
+   },
+   {
+    "number": 13,
+    "answer": "D",
+    "correct": "because",
+    "why": "上下文逻辑决定。该理论的核心观点是\"人不是因为悲伤才哭，而是哭了才变悲伤\"，not...because构成否定因果，对传统因果链进行反转。",
+    "traps": "A) unless意为\"除非\"，引出条件而非因果；B) until意为\"直到\"，引出时间节点，不合逻辑；C) if意为\"如果\"，引出假设条件，偏离论证方向。",
+    "tip": "not...because否定传统因果关系，是本段核心论点"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "precedes",
+    "why": "上下文逻辑决定。Although引出让步，承认传统观点——悲伤确实也在眼泪之前出现（先悲伤后流泪），但主句转折说情绪也可以源自肌肉反应。precedes意为\"先于\"。",
+    "traps": "A) exhausts意为\"耗尽\"，语义不通；B) follows意为\"跟随\"，若悲伤跟随眼泪则与让步逻辑矛盾；D) suppresses意为\"压制\"，语义偏离。",
+    "tip": "precedes表时间先后，配合Although构成让步承认"
+   },
+   {
+    "number": 15,
+    "answer": "B",
+    "correct": "from",
+    "why": "固定搭配决定。flow from意为\"源自、来自\"，表示情绪可以从肌肉反应中产生，呼应前文身体反应影响情绪的论点。",
+    "traps": "A) flow into意为\"流入\"，方向相反；C) flow towards意为\"流向\"，表趋向而非来源；D) flow beyond意为\"流出……之外\"，语义不合。",
+    "tip": "flow from表示来源方向，意为\"源自\""
+   },
+   {
+    "number": 16,
+    "answer": "D",
+    "correct": "hold",
+    "why": "上下文与搭配决定。实验要求志愿者用牙齿或嘴唇\"夹住/握住\"一支笔，hold a pen是最自然的搭配，且hold可兼容with their teeth和with their lips两种方式。",
+    "traps": "A) fetch意为\"取来\"，描述取物动作而非持续状态；B) bite意为\"咬\"，仅适用于teeth，无法与lips搭配；C) pick意为\"拾起\"，为瞬时动作，不符实验持续要求。",
+    "tip": "hold强调持续握住的状态，兼容两种实验条件"
+   },
+   {
+    "number": 17,
+    "answer": "A",
+    "correct": "disappointed",
+    "why": "上下文逻辑决定。用嘴唇夹笔会使嘴巴嘟起收缩，产生与微笑相反的表情，后文frown也印证该表情为负面的。disappointed（沮丧的）与artificial smile形成对比。",
+    "traps": "B) excited意为\"兴奋的\"，为正面表情，无法与smile构成对比；C) joyful意为\"快乐的\"，同样为正面表情，与对比逻辑矛盾；D) indifferent意为\"漠不关心的\"，程度不足以与smile形成鲜明对照，且嘴唇夹笔更像皱眉。",
+    "tip": "与artificial smile对比，需要一个负面表情词"
+   },
+   {
+    "number": 18,
+    "answer": "D",
+    "correct": "reacted",
+    "why": "搭配决定。react to为固定搭配，意为\"对……作出反应\"。志愿者对有趣漫画的反应更为热烈，reacted to funny cartoons语义通顺。",
+    "traps": "A) adapted to意为\"适应\"，语义偏离实验观测；B) catered to意为\"迎合\"，用于服务场景；C) turned to意为\"转向/求助于\"，不符实验语境。",
+    "tip": "react to sth.为固定搭配，意为\"对……作出反应\""
+   },
+   {
+    "number": 19,
+    "answer": "A",
+    "correct": "suggesting",
+    "why": "语法与逻辑决定。现在分词suggesting引出实验结论的推论，作结果状语，表明实验结果暗示/说明了某一观点，语气适度、符合学术表达。",
+    "traps": "B) requiring意为\"要求\"，逻辑关系不当，实验结果不能\"要求\"；C) mentioning意为\"提到\"，过于随意，且实验结果本身不能\"提到\"；D) supposing意为\"假设\"，实验已提供证据，非假设。",
+    "tip": "suggesting作结果状语，用于引出实验结论"
+   },
+   {
+    "number": 20,
+    "answer": "C",
+    "correct": "Similarly",
+    "why": "上下文逻辑决定。前文实验证明面部表情可以影响情绪，此处将笑（也是身体行为）类比推理为同样能改善情绪。Similarly表类比关系，衔接实验结论与文章主旨。",
+    "traps": "A) Eventually意为\"最终\"，强调时间终点，不符总结类比逻辑；B) Consequently意为\"因此\"，表因果，但此处是类比而非直接因果；D) Conversely意为\"相反地\"，语义方向错误，笑改善情绪与实验结论方向一致。",
+    "tip": "Similarly引出类比推理，将实验结论推广到笑的行为"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "precious",
+    "cn": "adj. 珍贵的，宝贵的"
+   },
+   {
+    "w": "contrary",
+    "cn": "n. 相反的事物；adj. 相反的"
+   },
+   {
+    "w": "blood vessels",
+    "cn": "n. 血管"
+   },
+   {
+    "w": "oxygen consumption",
+    "cn": "n. 氧气消耗量"
+   },
+   {
+    "w": "muscle tone",
+    "cn": "n. 肌肉张力"
+   },
+   {
+    "w": "conceivably",
+    "cn": "adv. 可以想象地，可能地"
+   },
+   {
+    "w": "psychological",
+    "cn": "adj. 心理的，精神的"
+   },
+   {
+    "w": "partially",
+    "cn": "adv. 部分地"
+   },
+   {
+    "w": "artificial",
+    "cn": "adj. 人造的，人为的"
+   },
+   {
+    "w": "contracted",
+    "cn": "v. 收缩，缩紧（contract的过去式）"
+   },
+   {
+    "w": "frown",
+    "cn": "n./v. 皱眉，蹙额"
+   },
+   {
+    "w": "enthusiastically",
+    "cn": "adv. 热情地，热烈地"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "But",
+    "role": "转折连接，引出与亚里士多德观点相反的科学事实"
+   },
+   {
+    "w": "In fact",
+    "role": "递进深入，揭示笑放松肌肉这一更深层事实"
+   },
+   {
+    "w": "According to",
+    "role": "引述来源，引出经典情绪理论作为论据"
+   },
+   {
+    "w": "Although",
+    "role": "让步连接，承认传统观点后引出主句反转"
+   },
+   {
+    "w": "rather than",
+    "role": "对比排除，强调表情影响情绪而非仅反过来"
+   },
+   {
+    "w": "Similarly",
+    "role": "类比推理，将实验结论推广至笑的身体行为"
+   }
+  ]
+ }
+}

@@ -1,0 +1,190 @@
+{
+ "schemaVersion": 1,
+ "id": "1485326c452f__translation__all",
+ "examId": "1485326c452f",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2021 年 6 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:37:37.862Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34408,
+ "usage": {
+  "prompt_tokens": 812,
+  "completion_tokens": 2468,
+  "total_tokens": 3280,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 812,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2468,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 812,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 2,
+ "warnings": [],
+ "analysis": {
+  "topic": "青海省概况：地理、旅游与资源",
+  "reference": "Qinghai is a province in northwestern China with an average altitude of over 3,000 meters, where the majority of its land is covered by mountains and plateaus. The province is named after Qinghai Lake, the largest saltwater lake in China. Renowned as \"the most beautiful lake in China,\" Qinghai Lake is one of the most popular tourist attractions as well as a paradise for photographers and artists. Qinghai boasts magnificent mountains and rivers, a vast territory with abundant resources, and rich reserves of oil and natural gas. Driven by the oil and natural gas industry, the economy of many cities in the province has achieved remarkable development. Qinghai is particularly well-known for its abundant water resources, serving as the birthplace of China's three major rivers — the Yangtze River, the Yellow River, and the Lancang River — and playing a vital role in China's water ecosystem.",
+  "sentences": [
+   {
+    "cn": "青海是中国西北部的一个省份，平均海拔3000米以上，大部分地区为高山和高原。",
+    "en": "Qinghai is a province in northwestern China with an average altitude of over 3,000 meters, where the majority of its land is covered by mountains and plateaus.",
+    "structure": "主系表结构 + with 介词短语作后置定语表伴随 + where 引导非限制性定语从句补充说明地貌特征",
+    "keys": [
+     "平均海拔 average altitude",
+     "高山和高原 mountains and plateaus",
+     "中国西北部 northwestern China"
+    ]
+   },
+   {
+    "cn": "青海省得名于全国最大的咸水湖青海湖。",
+    "en": "The province is named after Qinghai Lake, the largest saltwater lake in China.",
+    "structure": "主语 + be named after 被动结构 + 同位语补充说明青海湖性质",
+    "keys": [
+     "得名于 be named after",
+     "咸水湖 saltwater lake",
+     "青海湖 Qinghai Lake"
+    ]
+   },
+   {
+    "cn": "青海湖被誉为\"中国最美的湖泊\"，是最受欢迎的旅游景点之一，也是摄影师和艺术家的天堂。",
+    "en": "Renowned as \"the most beautiful lake in China,\" Qinghai Lake is one of the most popular tourist attractions as well as a paradise for photographers and artists.",
+    "structure": "过去分词短语 renowned as 作状语前置 + one of + 最高级 + 名词复数 + as well as 并列结构",
+    "keys": [
+     "被誉为 be renowned as",
+     "旅游景点 tourist attraction",
+     "天堂 paradise"
+    ]
+   },
+   {
+    "cn": "青海山川壮丽，地大物博，石油和天然气储量丰富，省内许多城市的经济在石油和天然气工业带动下得到了长足发展。",
+    "en": "Qinghai boasts magnificent mountains and rivers, a vast territory with abundant resources, and rich reserves of oil and natural gas. Driven by the oil and natural gas industry, the economy of many cities in the province has achieved remarkable development.",
+    "structure": "前半句用 boast 统领三个并列宾语，后半句用过去分词短语 driven by 作原因状语前置 + 主语 + has achieved 现在完成时表结果",
+    "keys": [
+     "山川壮丽 magnificent mountains and rivers",
+     "地大物博 a vast territory with abundant resources",
+     "石油和天然气储量 reserves of oil and natural gas",
+     "长足发展 remarkable development"
+    ]
+   },
+   {
+    "cn": "青海尤以水资源丰富而闻名，是中国三大河流长江、黄河和澜沧江的发源地，在中国的水生态中发挥着重要作用。",
+    "en": "Qinghai is particularly well-known for its abundant water resources, serving as the birthplace of China's three major rivers — the Yangtze River, the Yellow River, and the Lancang River — and playing a vital role in China's water ecosystem.",
+    "structure": "主系表结构 be well-known for + 两个现在分词短语 serving as 和 playing 作伴随状语，用破折号插入河流名称",
+    "keys": [
+     "水资源 water resources",
+     "发源地 birthplace",
+     "水生态 water ecosystem",
+     "发挥重要作用 play a vital role in"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "青海湖",
+    "en": "Qinghai Lake"
+   },
+   {
+    "cn": "咸水湖",
+    "en": "saltwater lake"
+   },
+   {
+    "cn": "平均海拔",
+    "en": "average altitude"
+   },
+   {
+    "cn": "长江",
+    "en": "the Yangtze River"
+   },
+   {
+    "cn": "黄河",
+    "en": "the Yellow River"
+   },
+   {
+    "cn": "澜沧江",
+    "en": "the Lancang River"
+   },
+   {
+    "cn": "石油和天然气",
+    "en": "oil and natural gas"
+   },
+   {
+    "cn": "发源地",
+    "en": "birthplace / source"
+   },
+   {
+    "cn": "水生态",
+    "en": "water ecosystem"
+   },
+   {
+    "cn": "旅游景点",
+    "en": "tourist attraction"
+   }
+  ],
+  "pitfalls": [
+   "「得名于」误译为 get name from，应为 be named after",
+   "「地大物博」逐字硬译为 land is big and things are rich，应意译为 a vast territory with abundant resources",
+   "「长足发展」遗漏程度含义，仅译为 development，应加 remarkable/considerable 等修饰",
+   "「澜沧江」拼写错误，正确为 the Lancang River，不可写成 Langcang",
+   "「在……带动下」漏译因果关系，应使用 driven by 或 boosted by 等表达"
+  ],
+  "upgrades": [
+   {
+    "plain": "Qinghai has beautiful mountains and rivers",
+    "better": "Qinghai boasts magnificent mountains and rivers",
+    "note": "boast 兼含「拥有」与「引以为豪」双重语义，比 have 更生动地道"
+   },
+   {
+    "plain": "is called the most beautiful lake",
+    "better": "is renowned as the most beautiful lake",
+    "note": "renowned 比 called 更正式，更符合「被誉为」的赞誉色彩"
+   },
+   {
+    "plain": "because of the oil and natural gas industry",
+    "better": "driven by the oil and natural gas industry",
+    "note": "过去分词短语作状语更简洁紧凑，避免从句冗余，体现书面语水平"
+   },
+   {
+    "plain": "Qinghai is famous for having a lot of water",
+    "better": "Qinghai is particularly well-known for its abundant water resources",
+    "note": "particularly 对应「尤」，abundant water resources 比 a lot of water 更学术规范"
+   },
+   {
+    "plain": "is the place where three rivers start",
+    "better": "serves as the birthplace of China's three major rivers",
+    "note": "birthplace 一词精炼准确，serve as 比 is 更正式，体现功能角色"
+   }
+  ]
+ }
+}

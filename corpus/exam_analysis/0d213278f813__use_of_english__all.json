@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "0d213278f813__use_of_english__all",
+ "examId": "0d213278f813",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2019 年考研英语真题",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:39:38.516Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 96732,
+ "usage": {
+  "prompt_tokens": 1737,
+  "completion_tokens": 5698,
+  "total_tokens": 7435,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1737,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5698,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1737,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "野外迷路时的导航自救技巧",
+  "gist": "文章指出现代人虽依赖手机导航，但手机可能没电。当野外迷路且无法辨别方向时，可通过沿地势低处走并寻找水源、辨认熟悉地标、登高寻找人类活动痕迹以及追踪人类留下的标记等方法回归文明社会。",
+  "difficulty": "中等",
+  "translation": "如今我们生活在一个GPS系统、电子地图和其他导航应用都可以在智能手机上使用的世界里。我们当中很少有人会不带手机就径直走进树林。但手机依靠电池运行，而电池耗尽的速度可能比我们意识到的更快。如果你在没有手机或指南针的情况下迷了路，而且你确实找不到北方，我们有一些小技巧可以帮助你找到回归文明社会的路，其中之一就是顺着地势走。\n\n当你发现自己远离了小径、但并非身处一个完全陌生的区域时，你需要回答两个问题：在这一特定区域，哪个方向是下坡？最近的水源在哪里？人类绝大多数居住在山谷中，依赖淡水供给。因此，如果你朝下坡方向走，并沿着找到的任何水源前行，你最终应该能看到有人活动的迹象。\n\n如果你以前探索过这一区域，注意留心熟悉的景物——你可能会惊讶于辨认出一块独特的岩石或一棵树能多快地帮你恢复方向感。\n\n另一个选择是：爬到高处，寻找人类居住的迹象。例如，即使在茂密的森林中，你也应该能够发现树线中因道路、铁轨和其他人们在林中开辟的通道而形成的缺口。朝着这些缺口走，找到出路。夜晚时，沿地平线搜寻人造光源，比如篝火和路灯，然后朝着光污染的亮光方向走。\n\n最后，假设你迷失在一个人类常常出没的区域，寻找我们在地貌上留下的痕迹。路标标记、轮胎印痕和其他特征可以引导你回到文明社会。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "C",
+    "correct": "Few",
+    "why": "上文说手机导航随处可用，暗示几乎没人会不带手机进林子。Few表示\"很少有人\"，与下文\"But phones run on batteries\"构成转折：虽然很少有人不带手机，但手机也可能没电。",
+    "traps": "A) Some（一些人）语气太弱，不能凸显转折力度；B) Most（大多数人不带手机）与常识及上文GPS普及的语境矛盾；D) All（所有人）过于绝对，且与下文转折逻辑不符。",
+    "tip": "根据上下文语境和转折逻辑确定程度词。"
+   },
+   {
+    "number": 2,
+    "answer": "C",
+    "correct": "run",
+    "why": "run on为固定搭配，意为\"以……为能源运行\"。phones run on batteries表示手机靠电池运行，是引出电池会耗尽这一问题的关键表述。",
+    "traps": "A) put on（穿上/增加）不与batteries搭配；B) take on（承担/呈现）语义不通；D) come on（加油/出场）不能表达\"依赖电池运行\"之意。",
+    "tip": "考查固定短语搭配 run on（靠……运行）。"
+   },
+   {
+    "number": 3,
+    "answer": "B",
+    "correct": "If",
+    "why": "本句提出一种假设情景：如果你迷路了且没有手机和指南针，我们有方法帮助你。If引导条件状语从句，与主句\"we have a few tricks\"构成条件-结果关系。",
+    "traps": "A) Since（既然）表示已知原因，不合假设语境；C) Though（虽然）表让步，逻辑不通；D) Until（直到）表时间，语义不符。",
+    "tip": "条件假设语境选If引导条件从句。"
+   },
+   {
+    "number": 4,
+    "answer": "D",
+    "correct": "literally",
+    "why": "literally意为\"确实地、真正地\"，用来强调你是真的、实实在在地找不到北方，加强语气。与前面\"lost without a phone or a compass\"形成递进，突出困境之严峻。",
+    "traps": "A) formally（正式地）语义无关；B) relatively（相对地）削弱了语气，与强调意图矛盾；C) gradually（逐渐地）表时间推移，不合语境。",
+    "tip": "literally用于强调\"确确实实\"，加强程度。"
+   },
+   {
+    "number": 5,
+    "answer": "A",
+    "correct": "back",
+    "why": "navigate back to civilization意为\"找到路回到文明社会\"。迷路者的目标是返回，back表示\"回到原处/回归\"，完美契合语境。",
+    "traps": "B) next（接下来/旁边）无\"返回\"之意；C) around（周围/四处）表示漫无目的，不合回归之意；D) away（离开）方向相反，表示远离。",
+    "tip": "迷路语境下navigate back表示导航返回。"
+   },
+   {
+    "number": 6,
+    "answer": "B",
+    "correct": "off",
+    "why": "well off a trail意为\"远离小径\"，off表示\"偏离、离开\"。well作为副词加强off的程度，说明你已经走得离小径很远了。",
+    "traps": "A) onto（到……上面）表示到达而非偏离；C) across（穿过）表横穿，不合语义；D) alone（单独的/独自）为形容词或副词，不能接a trail构成介词短语。",
+    "tip": "off a trail表示偏离小径，well加强偏离程度。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "unfamiliar",
+    "why": "not in a completely unfamiliar area意为\"并非在一个完全陌生的地方\"，即你对该地区有一定了解。这与下文让你回忆方向、辨认地标的建议相呼应。",
+    "traps": "A) unattractive（没吸引力的）与导航无关；B) uncrowded（不拥挤的）无法为下文寻路建议提供逻辑前提；C) unchanged（未改变的）与迷路自救语境不相关。",
+    "tip": "双重否定not...unfamiliar暗示有一定熟悉度。"
+   },
+   {
+    "number": 8,
+    "answer": "C",
+    "correct": "way",
+    "why": "Which way is downhill意为\"哪个方向是下坡\"。way在此表示方向，是询问路线/方向的常见用法，与下文顺坡而下的建议直接对应。",
+    "traps": "A) site（地点/场所）不用于询问方向；B) point（点/观点）不合语境；D) place（地方）与downhill搭配不自然，不表示方向。",
+    "tip": "which way表示\"哪个方向\"，常见方向询问用法。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "So",
+    "why": "前文说人类大多住在山谷和淡水旁，本句得出结论：所以朝下坡走、沿水源走就能找到人。So表示因果推理关系，衔接前因后果。",
+    "traps": "B) Yet（然而）表转折，与因果逻辑矛盾；C) Instead（相反）表替代，语义不通；D) Besides（此外）表补充，不能体现因果关系。",
+    "tip": "因果逻辑关系用So衔接结论。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "eventually",
+    "why": "eventually意为\"最终\"，表示沿着下坡和水源走，虽然可能需要时间，但最终会看到人的迹象。语气合理，暗示过程需要耐心。",
+    "traps": "A) immediately（立即）过于绝对，迷路后不可能马上找到；B) intentionally（故意地）修饰see不合逻辑；C) unexpectedly（出乎意料地）与前文给出明确策略的语境矛盾。",
+    "tip": "eventually表\"最终会\"，符合渐进寻路过程。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "surprised",
+    "why": "be surprised表示\"感到惊讶\"，指你可能会惊讶于认出一块熟悉的岩石或树木竟能如此快速地帮你恢复方向感。语境积极，表达正面意外。",
+    "traps": "B) annoyed（恼怒的）负面情绪不合积极语境；C) frightened（害怕的）无合理触发因素；D) confused（困惑的）与\"restore your bearings（恢复方向感）\"的积极结果矛盾。",
+    "tip": "be surprised how quickly...表示惊讶于速度之快。"
+   },
+   {
+    "number": 12,
+    "answer": "B",
+    "correct": "option",
+    "why": "Another option意为\"另一个选择/方法\"。全文列举多种迷路自救方法，此处引出第二种方法——登高望远，option表示可选策略，与上文并列。",
+    "traps": "A) problem（问题）语义不符，文章在提供解决方案而非提出问题；C) view（观点/景色）不合逻辑衔接；D) result（结果）不能用来引出新方法。",
+    "tip": "Another option引出并列的又一个方法。"
+   },
+   {
+    "number": 13,
+    "answer": "D",
+    "correct": "For example",
+    "why": "前句说登高寻找人类居住迹象，本句举出具体例子：即使在茂密森林中也能发现因道路等造成的树线缺口。For example引出具体示例，逻辑通顺。",
+    "traps": "A) Above all（最重要的是）表强调，不引出例子；B) In contrast（相比之下）表对比，无对比对象；C) On average（平均而言）表统计概述，与具体举例不符。",
+    "tip": "For example用于对上文笼统建议的具体举例。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "spot",
+    "why": "spot作动词意为\"发现、注意到\"，spot gaps in the tree line指发现树线中的缺口。语义精准，表示在密林中用眼睛识别出间隙。",
+    "traps": "A) bridge（架桥/弥合）语义不合；B) avoid（避免）与寻找出路的目标相悖；D) separate（分开）逻辑不通，不是让你去分开树木。",
+    "tip": "spot意为发现/辨认，常用于视觉识别语境。"
+   },
+   {
+    "number": 15,
+    "answer": "B",
+    "correct": "through",
+    "why": "carve through the woods意为\"在树林中开辟（道路）\"。through表示穿过、贯穿，指人类开辟的道路从林中穿过，形成通道。",
+    "traps": "A) from（从）表起点，不能表达穿越之意；C) beyond（超越/在……之外）不合开辟道路的语义；D) under（在……下面）空间关系不符。",
+    "tip": "carve through表示贯穿开辟，through强调穿越。"
+   },
+   {
+    "number": 16,
+    "answer": "D",
+    "correct": "breaks",
+    "why": "breaks指\"缺口、中断处\"，呼应前文的gaps in the tree line。树线因道路等而产生的断裂处就是breaks，朝这些缺口走就能找到出路。",
+    "traps": "A) posts（柱子/岗位）无上文对应；B) links（连接/环节）语义相反，不指缺口；C) shades（阴影）与树线缺口无关。",
+    "tip": "breaks与前文gaps同义复现，指树线中的缺口。"
+   },
+   {
+    "number": 17,
+    "answer": "A",
+    "correct": "artificial",
+    "why": "artificial意为\"人造的\"，artificial light sources指人造光源，如篝火和路灯。夜晚寻找人造光源可以判断人类活动的位置，与寻找文明的主题一致。",
+    "traps": "B) mysterious（神秘的）与实用导航建议不符；C) hidden（隐藏的）矛盾，隐藏的光源无法帮助导航；D) limited（有限的）不能准确描述光源的人工属性。",
+    "tip": "artificial light对应fires和streetlights等人造光源。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "Finally",
+    "why": "Finally意为\"最后\"，用于引出系列建议中的最后一个方法：寻找人类在地貌上留下的痕迹。与前文的多种方法构成递进列举结构。",
+    "traps": "B) Consequently（因此）表因果，此处非因果关系；C) Incidentally（顺便说一下）语气太随意，不适合收尾；D) Generally（一般来说）表概括，不合列举末项语境。",
+    "tip": "Finally标志列举结构的最后一项。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "marks",
+    "why": "marks意为\"痕迹、标记\"，the marks we leave on the landscape指人类在地貌上留下的印记，如路标、轮胎印等。下文的trail blazes、tire tracks正是marks的具体体现。",
+    "traps": "A) memories（记忆）是抽象概念，不能留在landscape上；C) notes（笔记/便条）不合户外地貌语境；D) belongings（财物）不会系统性地留在地貌上作为导航线索。",
+    "tip": "marks对应下文的blazes和tracks等具体痕迹。"
+   },
+   {
+    "number": 20,
+    "answer": "C",
+    "correct": "lead",
+    "why": "lead you to civilization意为\"引导你到达文明社会\"。lead表示引领、带路，与全文帮助迷路者找到回去之路的主题完美呼应。",
+    "traps": "A) restrict（限制）语义负面，不合语境；B) adopt（采纳/收养）不与to civilization搭配；D) expose（暴露/使接触）不表示引导方向。",
+    "tip": "lead sb. to表示把某人引向某处。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "navigation",
+    "cn": "n. 导航，领航"
+   },
+   {
+    "w": "overwhelmingly",
+    "cn": "adv. 压倒性地，绝大多数地"
+   },
+   {
+    "w": "bearings",
+    "cn": "n. 方位感，方向感（常用复数）"
+   },
+   {
+    "w": "habitation",
+    "cn": "n. 居住，住所"
+   },
+   {
+    "w": "distinctive",
+    "cn": "adj. 独特的，有特色的"
+   },
+   {
+    "w": "dense",
+    "cn": "adj. 茂密的，稠密的"
+   },
+   {
+    "w": "carve",
+    "cn": "v. 开辟，雕刻"
+   },
+   {
+    "w": "horizon",
+    "cn": "n. 地平线，视野"
+   },
+   {
+    "w": "glow",
+    "cn": "n. 光亮，光辉；v. 发光"
+   },
+   {
+    "w": "trail blazes",
+    "cn": "n. 路标标记（树上刻的指路记号）"
+   },
+   {
+    "w": "frequent",
+    "cn": "v. 常去，常到（此处作动词）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "But",
+    "role": "转折，引出手机可能没电的问题，对比前文便利性"
+   },
+   {
+    "w": "If",
+    "role": "条件假设，引出迷路的假设情景"
+   },
+   {
+    "w": "So",
+    "role": "因果推理，由人类住山谷近水源推出下坡沿水走的结论"
+   },
+   {
+    "w": "Another",
+    "role": "并列递进，引出第二种导航方法"
+   },
+   {
+    "w": "For example",
+    "role": "举例说明，对登高观察给出具体实例"
+   },
+   {
+    "w": "Finally",
+    "role": "列举收尾，引出最后一种导航方法"
+   }
+  ]
+ }
+}

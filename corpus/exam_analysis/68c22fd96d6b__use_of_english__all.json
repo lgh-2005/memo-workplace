@@ -1,0 +1,319 @@
+{
+ "schemaVersion": 1,
+ "id": "68c22fd96d6b__use_of_english__all",
+ "examId": "68c22fd96d6b",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2008 年考研英语真题（旧）",
+ "year": 2008,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:20:36.009Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 83971,
+ "usage": {
+  "prompt_tokens": 1733,
+  "completion_tokens": 4958,
+  "total_tokens": 6691,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1733,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4958,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1733,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "特定族群智力与遗传病的自然选择假说",
+  "gist": "文章介绍了独立科学家Gregory Cochran提出的一个争议性假说：源自中欧的特定族群在智商测试中表现优异，同时高发某些遗传病。此前学界认为二者无关，但Cochran认为两者通过自然选择紧密关联——该族群独特的历史使其承受了独特的进化压力，最终导致了这一看似矛盾的状态。",
+  "difficulty": "中等",
+  "translation": "有些群体可能比其他群体更聪明，这一假说是那种不敢公开言说的假设之一。但格雷戈里·科克伦准备公开说出来。他是那种罕见的人——一位不隶属于任何机构而独立工作的科学家。他曾帮助推广一个观点，即某些先前不被认为具有细菌病因的疾病实际上是感染性疾病，这一观点在首次提出时引发了巨大争议。\n\n然而，即使是他，也可能在想到自己即将要做的事情时感到胆怯。他与另外两位科学家一起，正在发表一篇论文，该论文不仅提出人类中有一个群体比其他群体更聪明，而且解释了导致这一结果的过程。所讨论的这个群体是一个起源于中欧的特定民族。而这个过程就是自然选择。\n\n这个群体通常在智商测试中表现良好，得分比平均值100高出12到15分，并且对西方的智识和文化生活做出了不成比例的巨大贡献，他们精英阶层的职业生涯——包括数位举世闻名的科学家——便是明证。他们同时也比大多数人更容易罹患一些严重的遗传疾病，如乳腺癌。然而，这些事实此前一直被认为是互不相关的。前者被归因于社会效应，比如重视教育的深厚传统。后者则被视为基因隔离的后果。科克伦博士认为，智力与疾病之间有着密切的关联。他的论点是，这个民族不同寻常的历史使他们经受了独特的进化压力，最终导致了这种看似矛盾的状态。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "B",
+    "correct": "prepared",
+    "why": "be prepared to do sth. 表示\"准备好、愿意做某事\"，此处指科克伦愿意公开说出这个争议性假说，与前文\"dare not speak its name\"形成对比，语义通顺。",
+    "traps": "A) selected 意为\"被选中\"，语义不通；C) obliged 意为\"被迫\"，暗示非自愿，与上下文语境不符；D) pleased 意为\"高兴\"，过于情感化，且 be pleased to 常用于礼貌用语，不合语境。",
+    "tip": "be prepared to do 表示主动意愿，与 dare not 形成语义对比。"
+   },
+   {
+    "number": 2,
+    "answer": "D",
+    "correct": "rare",
+    "why": "rare bird 是英语固定搭配，意为\"稀有之人、不同寻常的人\"，强调科克伦作为独立于机构之外的科学家非常罕见。",
+    "traps": "A) unique bird 不是固定搭配；B) particular bird 无此表达；C) special bird 虽有\"特别\"之意，但不构成习语，且语体不符。",
+    "tip": "rare bird 为固定习语，意为\"凤毛麟角的人\"。"
+   },
+   {
+    "number": 3,
+    "answer": "A",
+    "correct": "of",
+    "why": "independently of 是固定搭配，意为\"独立于……之外、不依赖于……\"，此处指他不隶属于任何机构独立工作。",
+    "traps": "B) with 不与 independently 搭配；C) in 不与 independently 搭配；D) against 表\"对抗\"，语义不符。",
+    "tip": "independently of 为固定介词搭配，表示\"不依赖于\"。"
+   },
+   {
+    "number": 4,
+    "answer": "C",
+    "correct": "previously",
+    "why": "上下文指\"以前不被认为有细菌病因的疾病实际上是感染性的\"，previously 表\"先前\"，说明过去的认知已被新发现推翻。",
+    "traps": "A) subsequently 意为\"随后\"，时间逻辑反了；B) presently 意为\"目前\"，与叙述过去认知的语境矛盾；D) lately 意为\"最近\"，同样不合时间逻辑。",
+    "tip": "previously 表示过去的认知状态，与后文纠正形成时间对比。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "Even",
+    "why": "Even he 表\"即使是他\"，强调连科克伦这样大胆的人也会对即将发表的内容感到不安，构成让步递进语气。",
+    "traps": "A) Only he 意为\"只有他\"，逻辑方向不对；B) So 表因果，不合语境；D) Hence 表\"因此\"，属因果连词，不构成让步递进。",
+    "tip": "Even 表让步递进，强调\"连……都\"的语气。"
+   },
+   {
+    "number": 6,
+    "answer": "A",
+    "correct": "thought",
+    "why": "at the thought of 是固定搭配，意为\"一想到……就……\"，此处指一想到即将发表的内容就可能感到害怕。",
+    "traps": "B) at the sight of 意为\"一看到\"，此处论文尚未面世，不存在\"看到\"；C) at the cost of 意为\"以……为代价\"，语义不通；D) at the risk of 意为\"冒着……风险\"，虽似有理但不如 thought 贴合\"内心忐忑\"之意。",
+    "tip": "at the thought of 为固定搭配，表\"想到……时\"。"
+   },
+   {
+    "number": 7,
+    "answer": "B",
+    "correct": "suggests",
+    "why": "suggests that 表\"提出、认为\"，用于学术论文提出假说或论点，后接 that 从句，语法和语义均通顺。",
+    "traps": "A) advises 意为\"建议\"，常指给予实际行动的建议；C) protests 意为\"抗议\"，语义不符；D) objects 意为\"反对\"，且 object 后接 to 而非 that 从句。",
+    "tip": "suggest 在学术语境中表\"提出观点\"，后接 that 从句。"
+   },
+   {
+    "number": 8,
+    "answer": "D",
+    "correct": "question",
+    "why": "in question 是固定搭配，意为\"所讨论的、相关的\"，此处承接上句指代那个被提及的群体。",
+    "traps": "A) in progress 意为\"进行中\"，语义不通；B) in fact 意为\"事实上\"，是插入语而非修饰 group 的用法；C) in need 意为\"需要帮助的\"，语义不符。",
+    "tip": "in question 为固定搭配，意为\"所讨论的\"。"
+   },
+   {
+    "number": 9,
+    "answer": "B",
+    "correct": "scoring",
+    "why": "scoring 指在测试中\"得分\"，scoring 12-15 points above 表示得分高出某值，是考试/测试语境中的常见搭配。",
+    "traps": "A) attaining 意为\"达到/获得\"，通常接成就或目标，不直接接分数点差；C) reaching 意为\"到达\"，不用于表示考试高出平均分多少；D) calculating 意为\"计算\"，指运算过程而非得分行为。",
+    "tip": "score 用于测试得分，scoring ... points above 是标准搭配。"
+   },
+   {
+    "number": 10,
+    "answer": "C",
+    "correct": "mean",
+    "why": "mean value 是统计学术语，意为\"平均值\"，此处指智商测试的平均值100，是专业用语的精确表达。",
+    "traps": "A) normal value 指\"正常值\"，虽义近但非统计学标准术语；B) common value 无此固定搭配；D) total value 意为\"总值\"，语义完全不符。",
+    "tip": "mean value 是统计学术语，指\"均值/平均值\"。"
+   },
+   {
+    "number": 11,
+    "answer": "B",
+    "correct": "disproportionately",
+    "why": "disproportionately 意为\"不成比例地\"，指该群体人口占比虽小，但对西方智识文化生活的贡献远超其比例，强调贡献巨大。",
+    "traps": "A) unconsciously 意为\"无意识地\"，语义不合；C) indefinitely 意为\"无限期地\"，修饰贡献不合逻辑；D) unaccountably 意为\"无法解释地\"，虽似有理但偏离了作者要表达的\"贡献巨大\"之核心意思。",
+    "tip": "disproportionately 强调贡献与人口比例不成正比，暗示贡献极大。"
+   },
+   {
+    "number": 12,
+    "answer": "D",
+    "correct": "careers",
+    "why": "careers of their elites 意为\"他们精英阶层的职业生涯/事业\"，后接 including several world-renowned scientists 作为具体例证，语义通顺。",
+    "traps": "A) missions 意为\"使命/任务\"，不用于描述精英的成就；B) fortunes 意为\"财富/命运\"，与后文 world-renowned scientists 不匹配；C) interests 意为\"兴趣/利益\"，无法承载\"证明贡献\"的功能。",
+    "tip": "careers 指精英的事业成就，作为论据支撑\"贡献巨大\"。"
+   },
+   {
+    "number": 13,
+    "answer": "A",
+    "correct": "affirm",
+    "why": "affirm 意为\"证实、肯定\"，此处 as the careers ... affirm 构成非限制性说明，意为\"正如……所证实的那样\"，用精英成就佐证该群体的巨大贡献。",
+    "traps": "B) witness 作动词可表\"见证\"，但主语通常为人而非 careers；C) observe 意为\"观察/遵守\"，主语不宜为 careers；D) approve 意为\"批准/赞成\"，语义不合。",
+    "tip": "affirm 表\"证实\"，以事实为主语证明论点成立。"
+   },
+   {
+    "number": 14,
+    "answer": "C",
+    "correct": "however",
+    "why": "however 表转折，前文列举了高智商和高发遗传病两个事实，however 引出转折：这两个事实\"此前被认为互不相关\"，为后文提出新关联做铺垫。",
+    "traps": "A) moreover 表递进，无法引出\"以前认为无关\"这一转折信息；B) therefore 表因果，逻辑方向不对；D) meanwhile 表\"与此同时\"，是时间并列而非转折。",
+    "tip": "however 表转折，连接事实与此前\"无关\"的旧认知。"
+   },
+   {
+    "number": 15,
+    "answer": "D",
+    "correct": "put down",
+    "why": "be put down to 意为\"被归因于\"，此处指高智商此前被归因于社会因素如重视教育的传统，与 attributed to 同义。",
+    "traps": "A) given up 意为\"放弃\"，语义不通；B) got over 意为\"克服\"，语义不通；C) carried on 意为\"继续进行\"，语义不通。",
+    "tip": "put down to = attribute to，表示\"归因于\"。"
+   },
+   {
+    "number": 16,
+    "answer": "D",
+    "correct": "valuing",
+    "why": "valuing education 意为\"重视教育\"，value 作动词表示\"珍视、看重\"，此处指该群体有重视教育的深厚传统。",
+    "traps": "A) assessing 意为\"评估\"，侧重考核而非重视；B) supervising 意为\"监督\"，侧重管理行为；C) administering 意为\"管理/执行\"，侧重行政操作。",
+    "tip": "valuing 表\"重视\"，a tradition of valuing education 指尊崇教育的传统。"
+   },
+   {
+    "number": 17,
+    "answer": "C",
+    "correct": "consequence",
+    "why": "consequence of genetic isolation 意为\"基因隔离的后果\"，此处指遗传病此前被认为是基因隔离所导致的结果。",
+    "traps": "A) development 意为\"发展\"，不表因果关系；B) origin 意为\"起源\"，逻辑方向反了（遗传病不是隔离的起源）；D) instrument 意为\"工具/手段\"，语义不通。",
+    "tip": "consequence 表\"后果/结果\"，体现因果逻辑关系。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "linked",
+    "why": "be linked 意为\"相关联的\"，intimately linked 表\"密切关联\"，指智力和遗传病之间存在紧密联系，呼应全文核心论点。",
+    "traps": "B) integrated 意为\"整合\"，强调合为一体，程度过重；C) woven 意为\"编织\"，比喻义不合学术语体；D) combined 意为\"结合/合并\"，强调合二为一而非关联。",
+    "tip": "be intimately linked 为学术常见搭配，表示密切关联。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "subjected",
+    "why": "subject sb. to sth. 意为\"使某人经受/遭受\"，此处被动态 has subjected them to 指该族群的历史使他们经受了独特的进化压力。",
+    "traps": "A) limited ... to 意为\"限制于\"，语义不符；C) converted ... to 意为\"转变为\"，语义不通；D) directed ... to 意为\"引导至\"，搭配和语义均不恰当。",
+    "tip": "subject sb. to 表示\"使……经受/遭受\"，常见于学术语境。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "correct": "paradoxical",
+    "why": "paradoxical 意为\"看似矛盾的\"，此处指高智商与高发遗传病并存这一现象表面上相互矛盾，用一个词精确概括了全文核心问题。",
+    "traps": "B) incompatible 意为\"不兼容的\"，过于绝对，暗示二者不可能共存；C) inevitable 意为\"不可避免的\"，偏离\"矛盾并存\"的核心意思；D) continuous 意为\"持续的\"，语义完全不合。",
+    "tip": "paradoxical 点明全文主旨：高智商与遗传病看似矛盾却有内在关联。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "hypothesis",
+    "cn": "n. 假说，假设"
+   },
+   {
+    "w": "controversy",
+    "cn": "n. 争论，争议"
+   },
+   {
+    "w": "popularize",
+    "cn": "v. 推广，普及"
+   },
+   {
+    "w": "bacterial",
+    "cn": "adj. 细菌的"
+   },
+   {
+    "w": "natural selection",
+    "cn": "n. 自然选择"
+   },
+   {
+    "w": "disproportionately",
+    "cn": "adv. 不成比例地"
+   },
+   {
+    "w": "elite",
+    "cn": "n. 精英，杰出人物"
+   },
+   {
+    "w": "genetic isolation",
+    "cn": "n. 基因隔离"
+   },
+   {
+    "w": "intimately",
+    "cn": "adv. 密切地，紧密地"
+   },
+   {
+    "w": "evolutionary pressure",
+    "cn": "n. 进化压力"
+   },
+   {
+    "w": "paradoxical",
+    "cn": "adj. 看似矛盾的，自相矛盾的"
+   },
+   {
+    "w": "tremble",
+    "cn": "v. 颤抖，发抖"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "But",
+    "role": "转折，引出科克伦敢于挑战禁忌话题"
+   },
+   {
+    "w": "Even",
+    "role": "让步递进，强调连大胆的科克伦都可能胆怯"
+   },
+   {
+    "w": "not only ... but",
+    "role": "递进并列，论文既提出假说又解释机制"
+   },
+   {
+    "w": "however",
+    "role": "转折，引出此前学界认为两种现象无关的旧认知"
+   },
+   {
+    "w": "such as",
+    "role": "举例说明，列举具体的遗传病和社会因素"
+   },
+   {
+    "w": "intimately",
+    "role": "程度强调，突出智力与遗传病之间的紧密关联"
+   }
+  ]
+ }
+}

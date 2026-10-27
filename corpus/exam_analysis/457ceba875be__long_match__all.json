@@ -1,0 +1,247 @@
+{
+ "schemaVersion": 1,
+ "id": "457ceba875be__long_match__all",
+ "examId": "457ceba875be",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2025 年 6 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:02:34.151Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34656,
+ "usage": {
+  "prompt_tokens": 977,
+  "completion_tokens": 1893,
+  "total_tokens": 2870,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 977,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1893,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 977,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "畜牧业温室气体排放与肉类消费争议",
+  "strategy": [
+   "先通读10条陈述句，圈出专有名词（FAO）、数字、极端词（all、more than half）等高辨识度定位词",
+   "从含有人名、机构名、数据等最具唯一性的题目入手，优先定位再做排除",
+   "注意同义替换：如quit eating meat = give up meat；slight = small/marginal；suitable only for = can only be used for",
+   "关注逻辑关系词：如concluded、admitted、responsible for、even if 等帮助判断句间因果与让步关系",
+   "每匹配成功一题就划掉该段落字母，缩小后续扫读范围"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "联合国粮农组织（FAO）得出结论：农场动物产生的温室气体比所有交通运输方式加在一起还要多。",
+    "keywords": [
+     "FAO",
+     "concluded",
+     "greenhouse gases",
+     "transportation"
+    ],
+    "paraphrase": "陈述句中 producing more greenhouse gases than all modes of transportation combined 可能对应原文中类似 emit/generate a larger share of GHG than the entire transport sector 的表述，属于数量比较类同义改写。",
+    "tip": "定位FAO+transportation的比较关系，该结论是全文核心论据之一。"
+   },
+   {
+    "number": 37,
+    "answer": "K",
+    "cn": "发展中国家人均肉类消费量远低于美国等国家。",
+    "keywords": [
+     "consumption",
+     "per person",
+     "developing countries",
+     "U.S."
+    ],
+    "paraphrase": "陈述句中 much less than 与原文可能用 far below / a fraction of 等形式表达发展中国家与美国之间肉类消费量的悬殊对比。",
+    "tip": "定位developing countries与U.S.的人均消费对比数据。"
+   },
+   {
+    "number": 38,
+    "answer": "H",
+    "cn": "FAO值得称赞，因为它一经指出便承认了自己的错误。",
+    "keywords": [
+     "FAO",
+     "worthy of praise",
+     "admitted",
+     "mistake"
+    ],
+    "paraphrase": "陈述句中 worthy of praise 可能对应原文 deserves credit / commendable；admitted its mistake 可能对应 acknowledged the error / corrected the claim。",
+    "tip": "定位FAO承认错误的相关描述，注意正面评价词汇。"
+   },
+   {
+    "number": 39,
+    "answer": "A",
+    "cn": "环保主义者努力使人们少吃肉以应对气候变化。",
+    "keywords": [
+     "environmentalists",
+     "consume less meat",
+     "combat",
+     "climate change"
+    ],
+    "paraphrase": "陈述句中 try hard to make people consume less meat 可能对应原文 urge/push people to reduce meat consumption / eat less meat；combat climate change 可能对应 fight/address global warming。",
+    "tip": "该句为文章开篇引出话题，定位environmentalists与climate change即可。"
+   },
+   {
+    "number": 40,
+    "answer": "I",
+    "cn": "最新研究表明，即使美国人完全不吃肉，由此带来的美国温室气体减排幅度也微乎其微。",
+    "keywords": [
+     "recent research",
+     "quit eating meat",
+     "Americans",
+     "slight"
+    ],
+    "paraphrase": "陈述句中 quit eating meat altogether 可能对应原文 completely eliminate meat from diet；slight 可能对应 marginal / only a small percentage / merely 2-3%。",
+    "tip": "定位假设性条件 even if Americans quit eating meat 与具体减排百分比。"
+   },
+   {
+    "number": 41,
+    "answer": "M",
+    "cn": "世界上超过一半的农田只适合牛等动物在上面放牧。",
+    "keywords": [
+     "more than half",
+     "farmland",
+     "suitable only",
+     "graze"
+    ],
+    "paraphrase": "陈述句中 more than half of the world's farmland 可能对应原文 over 50% / the majority of global agricultural land；suitable only for … to graze on 可能对应 can only be used as grazing/pasture land。",
+    "tip": "定位farmland+比例数据（超过一半）和graze相关表述。"
+   },
+   {
+    "number": 42,
+    "answer": "D",
+    "cn": "农场动物排放了全球最大份额温室气体这一指控，是肉类名声不好的原因。",
+    "keywords": [
+     "allegation",
+     "largest portion",
+     "greenhouse gases",
+     "bad reputation"
+    ],
+    "paraphrase": "陈述句中 allegation 暗示该说法有争议，对应原文可能用 claim / assertion；responsible for meat's bad reputation 可能对应 the reason why meat has been demonized / vilified。",
+    "tip": "定位allegation或claim与meat负面形象之间的因果关系。"
+   },
+   {
+    "number": 43,
+    "answer": "L",
+    "cn": "饲养农场动物使满足人们的营养需求变得更加容易。",
+    "keywords": [
+     "raising farm animals",
+     "nutritional needs",
+     "easier"
+    ],
+    "paraphrase": "陈述句中 makes it easier to meet nutritional needs 可能对应原文 helps fulfill / contributes to meeting dietary/nutrition requirements，强调畜牧业的营养价值贡献。",
+    "tip": "定位nutritional needs与raising animals的正面关系。"
+   },
+   {
+    "number": 44,
+    "answer": "C",
+    "cn": "作者不认为放弃肉类和肉制品将是解决环境问题的万能良药。",
+    "keywords": [
+     "giving up meat",
+     "cure-all",
+     "environmental problem"
+    ],
+    "paraphrase": "陈述句中 cure-all 意为万灵药，原文可能用 silver bullet / panacea / simple solution 等同义词；giving up meat 可能对应 eliminating meat consumption。",
+    "tip": "定位cure-all或其同义词panacea/silver bullet，表达作者核心立场。"
+   },
+   {
+    "number": 45,
+    "answer": "J",
+    "cn": "过去几十年美国农业技术和管理方面的变革提高了效率，并减少了肉类生产中的温室气体排放。",
+    "keywords": [
+     "farming technology",
+     "management",
+     "efficiency",
+     "reduced greenhouse gas"
+    ],
+    "paraphrase": "陈述句中 changes in farming technology and management 可能对应原文 advances/improvements in agricultural practices and technology；increased efficiency 可能对应 higher productivity / more output per unit。",
+    "tip": "定位America's farming + past decades + efficiency提高与排放降低的双重结果。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "greenhouse gases",
+    "cn": "温室气体（名词短语）"
+   },
+   {
+    "w": "modes of transportation",
+    "cn": "交通运输方式（名词短语）"
+   },
+   {
+    "w": "allegation",
+    "cn": "指控，断言（n.）"
+   },
+   {
+    "w": "combat",
+    "cn": "对抗，与……作斗争（v.）"
+   },
+   {
+    "w": "cure-all",
+    "cn": "万能药，万灵丹（n.）"
+   },
+   {
+    "w": "graze",
+    "cn": "（牲畜）吃草，放牧（v.）"
+   },
+   {
+    "w": "nutritional",
+    "cn": "营养的（adj.）"
+   },
+   {
+    "w": "consumption",
+    "cn": "消费，消耗（n.）"
+   },
+   {
+    "w": "FAO",
+    "cn": "联合国粮食及农业组织（缩写，Food and Agriculture Organization）"
+   },
+   {
+    "w": "slight",
+    "cn": "轻微的，微小的（adj.）"
+   }
+  ]
+ }
+}

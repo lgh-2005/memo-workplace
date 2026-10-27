@@ -1,0 +1,319 @@
+{
+ "schemaVersion": 1,
+ "id": "e301e2b6677c__use_of_english__all",
+ "examId": "e301e2b6677c",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2014 年考研英语真题",
+ "year": 2014,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:29:29.532Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 77711,
+ "usage": {
+  "prompt_tokens": 1741,
+  "completion_tokens": 4456,
+  "total_tokens": 6197,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1741,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4456,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1741,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "大脑衰退与脑力训练",
+  "gist": "文章指出人到中年后记忆力和思维清晰度会下降，这种\"老年时刻\"可能对职业、社交和个人健康产生损害。神经科学家发现大脑如同肌肉一样需要锻炼，智力可随脑力训练而提升。一家网络公司据此开发了首个\"大脑训练项目\"，帮助人们系统提升记忆力和注意力。",
+  "difficulty": "中等",
+  "translation": "许多人步入中年后，常常开始注意到自己的记忆力和思维清晰度已不如从前。我们突然想不起刚才把钥匙放在了哪里（where），或者一个老熟人的名字，或者我们曾经喜爱的一支老乐队的名字。随着大脑逐渐衰退（fades），我们把这些情况称为\"老年时刻\"。虽然（While）看似无害，这种精神注意力的丧失可能对我们的职业、社交和个人幸福（wellbeing）产生有害的（damaging）影响。\n\n神经科学家——研究神经系统的专家——越来越多地表明，其实有很多事情可以做。结果发现（turns out），大脑需要锻炼，就像我们的肌肉一样，而正确的脑力训练（workouts）可以显著改善我们基本的认知功能（functions）。思考本质上是一个在大脑中建立连接的过程（process）。在一定程度上，我们擅长（excel）建立驱动智力的连接的能力是天生的。然而（However），由于这些连接是通过努力和练习建立的，科学家们相信智力可以根据（according to）脑力付出的多少而扩展和波动。\n\n如今，一家新的网络公司更进一步（further），开发了第一个\"大脑训练项目\"，旨在切实帮助人们提升和恢复他们的思维敏锐度（sharpness）。\n\n这个基于网络的项目允许（allows）你系统地提高你的记忆力和注意力技能。该项目跟踪记录（keeps track of）你的进展，并就（on）你的表现和改进提供详细反馈。最重要的是，它不断地（constantly）调整和增强你所玩的游戏，以便在你正在发展的优势之上继续提升（build on）——就像一个有效的（effective）锻炼计划要求你增加阻力并变换肌肉使用方式一样。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "D",
+    "correct": "where",
+    "why": "此处表示\"想不起把钥匙放在了哪里\"，put the keys需要一个表示地点的连接词，where引导宾语从句，充当put的地点状语，语法与语义双重吻合。",
+    "traps": "A) that引导的宾语从句中成分已完整，此处put缺地点状语不合适；B) when表时间，与put the keys搭配语义不通；C) why表原因，\"为什么放钥匙\"不合逻辑。",
+    "tip": "动词put需地点补语，选where引导宾语从句。"
+   },
+   {
+    "number": 2,
+    "answer": "A",
+    "correct": "fades",
+    "why": "上文描述记忆力下降、出现\"老年时刻\"，说明大脑功能在逐渐衰退。fade意为\"逐渐减弱\"，与记忆力减退的语境完全吻合，且与senior moments呼应。",
+    "traps": "B) improves表改善，与上文描述衰退矛盾；C) collapses表崩溃，程度过重，不符合渐进衰退；D) recovers表恢复，与语境方向相反。",
+    "tip": "语境为中年记忆衰退，fade表渐弱最贴切。"
+   },
+   {
+    "number": 3,
+    "answer": "B",
+    "correct": "While",
+    "why": "此处为让步状语从句，意为\"虽然看似无害，但这种丧失可能有害\"。While引导让步从句，表示前后语义的转折对比。",
+    "traps": "A) Unless表\"除非\"，条件关系不合文意；C) Once表\"一旦\"，时间/条件关系不符；D) If表假设条件，逻辑不对。",
+    "tip": "前后形成\"看似无害——实则有害\"的让步关系，选While。"
+   },
+   {
+    "number": 4,
+    "answer": "A",
+    "correct": "damaging",
+    "why": "上文虽说seemingly innocent，但转折后应表达负面影响。damaging意为\"有害的、破坏性的\"，与前文的让步转折形成逻辑呼应。",
+    "traps": "B) limited表有限的，语义偏中性，程度不够；C) uneven表不均衡的，与impact搭配语义不当；D) obscure表模糊的，与impact搭配不合常理。",
+    "tip": "让步转折后需强负面义形容词，damaging impact为常见搭配。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "wellbeing",
+    "why": "与professional和social并列，personal后需要一个涵盖个人生活状态的名词。wellbeing（幸福/健康状况）涵盖身心整体状态，与professional、social构成三个生活维度。",
+    "traps": "A) relationship偏指人际关系，与前面social重复；B) environment指环境，与personal搭配不当；D) outlook指前景/态度，范围过窄。",
+    "tip": "三个并列维度：职业、社交、个人健康，wellbeing最全面。"
+   },
+   {
+    "number": 6,
+    "answer": "D",
+    "correct": "turns",
+    "why": "it turns out是固定短语，意为\"结果证明/发现\"，用于引出科学研究的发现，语法和语义均完美契合。",
+    "traps": "A) able to figure out但主语不能用it做形式主语如此搭配；B) able to find out但不构成it finds out这样的固定表达；C) points out需要人做主语，it points out不合此处语境结构。",
+    "tip": "固定搭配it turns out意为\"事实证明\"。"
+   },
+   {
+    "number": 7,
+    "answer": "C",
+    "correct": "workouts",
+    "why": "上文提到大脑需要像肌肉一样锻炼，此处mental workouts意为\"脑力锻炼\"，与exercise形成类比呼应，语义连贯。",
+    "traps": "A) responses意为反应，与improve cognitive functions不搭；B) associations意为联想/协会，语义偏离；D) roundabouts意为环形交叉路口/迂回，完全不符。",
+    "tip": "延续大脑如肌肉需锻炼的类比，workout指训练。"
+   },
+   {
+    "number": 8,
+    "answer": "D",
+    "correct": "functions",
+    "why": "cognitive functions（认知功能）是神经科学领域的标准术语，指记忆、注意力、推理等基本认知能力，与文章主题高度契合。",
+    "traps": "A) genre指类型/体裁，属文学术语；B) criterion指标准，不与cognitive搭配；C) circumstances指情况/环境，与cognitive搭配不当。",
+    "tip": "cognitive functions是固定学术搭配，意为\"认知功能\"。"
+   },
+   {
+    "number": 9,
+    "answer": "B",
+    "correct": "process",
+    "why": "思考被定义为大脑中建立连接的\"过程\"，process表示一系列持续的活动或步骤，与making connections的动态含义一致。",
+    "traps": "A) channel指渠道/频道，不能说思考是一个渠道；C) condition指条件/状况，逻辑不通；D) sequence指序列/顺序，强调先后而非整体过程。",
+    "tip": "a process of doing sth.表\"……的过程\"，与思考定义契合。"
+   },
+   {
+    "number": 10,
+    "answer": "C",
+    "correct": "excel",
+    "why": "excel in意为\"擅长于\"，此处指我们擅长建立驱动智力的连接的能力部分是遗传的，与inherited搭配表达天赋含义。",
+    "traps": "A) persist in意为坚持，强调持续而非能力高低；B) feature in意为在……中出现/起重要作用，语义偏离；D) believe in意为相信，与ability搭配不合逻辑。",
+    "tip": "excel in表\"擅长\"，与ability和inherited形成语义链。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "However",
+    "why": "前句说能力部分是遗传的，后句说智力可通过努力改变，构成转折关系。However置于句首，完美标示这一语义逆转。",
+    "traps": "B) Moreover表递进，与前后语义转向不符；C) Otherwise表否则，条件假设关系不符；D) Therefore表因此，因果关系与转折矛盾。",
+    "tip": "遗传决定vs.后天可变，构成转折，用However。"
+   },
+   {
+    "number": 12,
+    "answer": "A",
+    "correct": "according to",
+    "why": "intelligence can expand and fluctuate according to mental effort，意为智力可根据脑力投入而扩展和波动，表示正相关关系，逻辑通顺。",
+    "traps": "B) regardless of意为不管，与文章强调努力有用矛盾；C) apart from意为除了，语义不搭；D) instead of意为代替，逻辑不通。",
+    "tip": "according to表\"根据\"，强调智力随脑力投入变化。"
+   },
+   {
+    "number": 13,
+    "answer": "B",
+    "correct": "further",
+    "why": "take it a step further是固定短语，意为\"更进一步\"，表示这家公司在已有研究基础上做出进一步实践开发。",
+    "traps": "A) a step back意为退一步，方向相反；C) aside意为在旁边，与step搭配不构成递进含义；D) around意为周围，无递进语义。",
+    "tip": "固定搭配take it a step further意为\"更进一步\"。"
+   },
+   {
+    "number": 14,
+    "answer": "D",
+    "correct": "sharpness",
+    "why": "文章开头提到记忆力和思维清晰度下降，此处mental sharpness（思维敏锐度）与开头memory and mental clarity形成首尾呼应。",
+    "traps": "A) framework意为框架，与mental搭配不表达恢复的对象；B) stability意为稳定性，非文章讨论的核心问题；C) flexibility意为灵活性，不如sharpness精准对应clarity。",
+    "tip": "mental sharpness呼应首段mental clarity，首尾照应。"
+   },
+   {
+    "number": 15,
+    "answer": "C",
+    "correct": "allows",
+    "why": "allow sb. to do sth.意为\"使某人能够\"，语气中性，表示程序为用户提供了系统提升能力的途径，符合产品介绍的客观语气。",
+    "traps": "A) hurries催促，语气不当且不合逻辑；B) reminds提醒，与systematically improve搭配不当；D) forces强迫，语气过重，不符合产品推介语境。",
+    "tip": "allow sb. to do表\"使能够\"，语气客观适合介绍产品。"
+   },
+   {
+    "number": 16,
+    "answer": "B",
+    "correct": "track",
+    "why": "keep track of是固定短语，意为\"跟踪记录\"，此处指程序追踪用户的学习进度，与provides detailed feedback前后呼应。",
+    "traps": "A) keep order of不是标准搭配；C) keep pace of不是标准搭配，应为keep pace with；D) keep hold of意为抓住，语义不符。",
+    "tip": "固定搭配keep track of意为\"跟踪/追踪\"。"
+   },
+   {
+    "number": 17,
+    "answer": "A",
+    "correct": "on",
+    "why": "feedback on是固定搭配，意为\"关于……的反馈\"，此处指就用户表现和进步提供反馈信息。",
+    "traps": "B) feedback to中to引出反馈对象（人），非反馈内容；C) feedback for搭配不常见，不表\"关于\"；D) feedback with非标准搭配。",
+    "tip": "固定搭配feedback on sth.意为\"关于……的反馈\"。"
+   },
+   {
+    "number": 18,
+    "answer": "B",
+    "correct": "constantly",
+    "why": "constantly意为\"不断地\"，表示程序持续动态调整游戏内容以适应用户进步，体现智能适应性，与下文much like...exercise routine类比一致。",
+    "traps": "A) habitually意为习惯性地，暗示机械重复而非智能调整；C) irregularly意为不规律地，与系统化训练的理念矛盾；D) unusually意为不寻常地，语义不搭。",
+    "tip": "constantly强调\"持续不断\"，体现程序动态调整特性。"
+   },
+   {
+    "number": 19,
+    "answer": "C",
+    "correct": "build",
+    "why": "build on是固定短语，意为\"在……基础上发展/增强\"，此处指游戏在用户已有优势上继续提升，与developing形成语义递进。",
+    "traps": "A) carry on意为继续，缺少\"在基础上提升\"的含义；B) put on意为穿上/上演，语义不符；D) take on意为承担/呈现，与strengths搭配不当。",
+    "tip": "build on表\"在……基础上提升\"，与strengths搭配精准。"
+   },
+   {
+    "number": 20,
+    "answer": "D",
+    "correct": "effective",
+    "why": "此处将脑力训练类比为体能训练，一个\"有效的\"锻炼计划才会要求增加阻力和变换训练方式，effective与前文constantly modifies形成逻辑平行。",
+    "traps": "A) idle意为闲置的，与require增加阻力矛盾；B) risky意为有风险的，负面含义不合语境；C) familiar意为熟悉的，与锻炼计划搭配无递进逻辑。",
+    "tip": "有效的锻炼计划才需不断增加强度，effective最合逻辑。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "acquaintance",
+    "cn": "n. 熟人，相识的人"
+   },
+   {
+    "w": "occurrences",
+    "cn": "n. 发生的事情，事件（复数）"
+   },
+   {
+    "w": "neuroscientists",
+    "cn": "n. 神经科学家（复数）"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的，认识的"
+   },
+   {
+    "w": "inherited",
+    "cn": "adj./v. 遗传的；继承"
+   },
+   {
+    "w": "fluctuate",
+    "cn": "v. 波动，起伏不定"
+   },
+   {
+    "w": "systematically",
+    "cn": "adv. 系统地，有条理地"
+   },
+   {
+    "w": "enhance",
+    "cn": "v. 增强，提高"
+   },
+   {
+    "w": "resistance",
+    "cn": "n. 阻力，抵抗力"
+   },
+   {
+    "w": "regain",
+    "cn": "v. 恢复，重新获得"
+   },
+   {
+    "w": "clarity",
+    "cn": "n. 清晰度，清楚"
+   },
+   {
+    "w": "modify",
+    "cn": "v. 修改，调整"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "While",
+    "role": "引导让步状语从句，标示\"看似无害\"与\"实则有害\"的转折"
+   },
+   {
+    "w": "However",
+    "role": "连接遗传论与后天可塑论，标示两段论述的语义逆转"
+   },
+   {
+    "w": "because",
+    "role": "引出原因状语从句，解释智力可变的依据"
+   },
+   {
+    "w": "Most importantly",
+    "role": "递进强调，引出程序最关键的功能特点"
+   },
+   {
+    "w": "much like",
+    "role": "引出类比，将脑力训练与体能训练进行对照说明"
+   },
+   {
+    "w": "Now",
+    "role": "时间过渡词，从理论研究转向实际应用的新进展"
+   }
+  ]
+ }
+}

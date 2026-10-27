@@ -1,0 +1,226 @@
+{
+ "schemaVersion": 1,
+ "id": "522b91adcdfa__writing__all",
+ "examId": "522b91adcdfa",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2007 年考研英语真题（旧）",
+ "year": 2007,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:20:39.901Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 91554,
+ "usage": {
+  "prompt_tokens": 831,
+  "completion_tokens": 5444,
+  "total_tokens": 6275,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 831,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5444,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 831,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作：以考生身份给大学图书馆写一封建议信，对图书馆服务提出改进建议，约100词，署名Li Ming，不写地址。",
+    "outline": [
+     "第一段：自我介绍并说明写信目的——就图书馆服务提出改进建议",
+     "第二段：分条列出具体建议（如延长开放时间、更新电子资源、优化借还书系统等）",
+     "第三段：表达期望与感谢，礼貌收尾"
+    ],
+    "sample": "Dear Sir or Madam,\n\nI am a regular reader at our university library, and I am writing to offer several suggestions for improving its service.\n\nFirst, I would recommend extending the opening hours, particularly during examination periods, as many students need a quiet place to study late into the evening. Second, it would be highly beneficial to update the electronic databases, since some current subscriptions appear to have expired. Third, introducing an online book-renewal system would save students considerable time and ease the burden on front-desk staff.\n\nI sincerely hope that these suggestions will be taken into consideration. Thank you for your time and dedication.\n\nYours sincerely,\nLi Ming",
+    "phrases": [
+     {
+      "en": "I am writing to offer several suggestions for…",
+      "cn": "我写信是为了就……提出几点建议。书信开头常用目的状语句型。"
+     },
+     {
+      "en": "I would recommend doing sth.",
+      "cn": "我建议做某事。would + recommend 比 suggest 更正式、语气更委婉。"
+     },
+     {
+      "en": "it would be highly beneficial to…",
+      "cn": "做……将大有裨益。用虚拟语气增加委婉度和书面感。"
+     },
+     {
+      "en": "particularly during examination periods",
+      "cn": "尤其是在考试期间。用 particularly 替换 especially 体现词汇多样性。"
+     },
+     {
+      "en": "ease the burden on…",
+      "cn": "减轻……的负担。实用搭配，适用于各类建议信。"
+     },
+     {
+      "en": "I sincerely hope that…will be taken into consideration",
+      "cn": "我衷心希望……能被纳入考虑。书信结尾客套用语，体现礼貌。"
+     },
+     {
+      "en": "save sb. considerable time",
+      "cn": "为某人节省大量时间。considerable 比 a lot of 更书面。"
+     },
+     {
+      "en": "Thank you for your time and dedication",
+      "cn": "感谢您的时间与付出。比 Thank you very much 更正式且有温度。"
+     }
+    ],
+    "pitfalls": [
+     "格式缺失：遗漏称呼语 Dear Sir or Madam 或结尾敬语 Yours sincerely",
+     "语气不当：用祈使句或命令口吻提建议，缺乏委婉语气词 would/could",
+     "内容空泛：只说'希望服务更好'而无具体可操作的建议措施",
+     "字数不足或严重超标：低于80词或超过120词均会扣分",
+     "拼写语法低级错误：如 libary（正确 library）、advices（不可数名词）"
+    ],
+    "upgrades": [
+     {
+      "plain": "I want to give you some advice about the library.",
+      "better": "I am writing to offer several constructive suggestions for improving the library's service.",
+      "note": "用目的状语从句替换口语化表达，句式更正式、信息更丰富"
+     },
+     {
+      "plain": "You should make the library open longer.",
+      "better": "I would recommend extending the opening hours, particularly during examination periods.",
+      "note": "用 would recommend + 动名词替代 should 祈使句，语气委婉得体"
+     },
+     {
+      "plain": "I hope you can think about my suggestions.",
+      "better": "I sincerely hope that these suggestions will be taken into consideration.",
+      "note": "被动语态 + sincerely 提升正式感和礼貌程度"
+     },
+     {
+      "plain": "It can help students save time.",
+      "better": "This measure would save students considerable time and ease the burden on front-desk staff.",
+      "note": "添加受益对象与具体好处，论证更充实；considerable 替换 a lot of"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "图画作文：根据图画写160-200词短文，要求简要描述图画、阐释寓意、并用实例支撑观点。本题图画为足球罚点球场景，射手眼中守门员巨大、球门极小，而守门员眼中球门巨大、自己极小，寓意自信心对成败的关键影响。",
+    "outline": [
+     "第一段：描述图画内容——罚点球场景中射手与守门员对同一场景的截然不同感知",
+     "第二段：揭示图画寓意——自信心决定我们对困难与机遇的感知，心态影响结果",
+     "第三段：用具体事例论证观点，并总结呼吁培养自信、积极面对挑战"
+    ],
+    "sample": "As is vividly depicted in the drawing, a fascinating contrast emerges during a penalty kick in a soccer match. From the striker's perspective, the goalkeeper appears enormous, almost completely blocking the goal, which looks impossibly small. Conversely, from the goalkeeper's point of view, the goal stretches out like an ocean while he himself seems tiny and helpless. Both players, facing the same situation, perceive it in dramatically different ways.\n\nThe drawing is intended to convey a thought-provoking message: confidence profoundly shapes our perception of challenges and opportunities. When individuals lack self-confidence, obstacles appear insurmountable and chances of success seem slim. However, when armed with a positive mindset, people are more likely to see possibilities rather than barriers.\n\nA compelling example is Thomas Edison, who endured thousands of failed experiments before successfully inventing the electric light bulb. Had he viewed each setback as evidence of inevitable defeat, the world might still be in darkness. Instead, his unwavering self-belief empowered him to interpret every failure as a step closer to success. Therefore, we should consciously cultivate confidence, for it is often our attitude, rather than the difficulty itself, that ultimately determines the outcome.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the drawing",
+      "cn": "正如图画中生动所示。图画作文经典开头，引出描述。"
+     },
+     {
+      "en": "a fascinating contrast emerges",
+      "cn": "一个引人注目的对比浮现。用于描写图画中两个对立场景。"
+     },
+     {
+      "en": "from sb.'s perspective / point of view",
+      "cn": "从某人的视角来看。切换视角的高频过渡短语。"
+     },
+     {
+      "en": "profoundly shapes our perception of…",
+      "cn": "深刻地塑造我们对……的认知。perception 搭配 shape 为高分组合。"
+     },
+     {
+      "en": "appear insurmountable",
+      "cn": "看起来不可逾越。形容困难之大，语言正式。"
+     },
+     {
+      "en": "armed with a positive mindset",
+      "cn": "以积极心态武装自己。过去分词短语作状语，结构精炼。"
+     },
+     {
+      "en": "had he viewed… the world might still…",
+      "cn": "虚拟条件句倒装结构，省略 if，体现高级语法能力。"
+     },
+     {
+      "en": "unwavering self-belief empowered him to…",
+      "cn": "坚定不移的自信使他能够……。empower sb. to do sth. 为高分搭配。"
+     },
+     {
+      "en": "interpret every failure as a step closer to success",
+      "cn": "将每次失败视为通往成功的一步。乐观视角的经典表达。"
+     },
+     {
+      "en": "it is often our attitude, rather than…, that ultimately determines…",
+      "cn": "强调句 + rather than 对比结构，突出态度的决定性作用。"
+     }
+    ],
+    "pitfalls": [
+     "跑题风险：仅描述足球场景而未提炼出'自信/心态'的深层寓意",
+     "描述不清：未能体现图画核心对比——同一场景下两人感知相反",
+     "举例空洞：例子缺乏细节，仅一句话带过，论证力不足",
+     "结构混乱：三个任务要求（描述、阐释、举例）未分段或顺序颠倒",
+     "词数不达标：低于160词会被扣分，超过200词则时间分配不合理"
+    ],
+    "upgrades": [
+     {
+      "plain": "The picture shows a man playing soccer.",
+      "better": "As is vividly depicted in the drawing, a fascinating contrast emerges during a penalty kick in a soccer match.",
+      "note": "用 as 引导的非限制性定语从句开头更正式，且点明核心对比"
+     },
+     {
+      "plain": "This picture means we should be confident.",
+      "better": "The drawing is intended to convey a thought-provoking message: confidence profoundly shapes our perception of challenges.",
+      "note": "用冒号引出主旨句，convey a message 替代 means，学术感更强"
+     },
+     {
+      "plain": "If Edison was not confident, he would fail.",
+      "better": "Had he viewed each setback as evidence of inevitable defeat, the world might still be in darkness.",
+      "note": "虚拟语气倒装 + 具象化结果描写，语法与修辞双重加分"
+     },
+     {
+      "plain": "So we need to be confident in our life.",
+      "better": "We should consciously cultivate confidence, for it is often our attitude, rather than the difficulty itself, that ultimately determines the outcome.",
+      "note": "强调句式 + rather than 形成对比，结尾有力且富有思辨性"
+     },
+     {
+      "plain": "Edison tried many times and finally succeeded.",
+      "better": "His unwavering self-belief empowered him to interpret every failure as a step closer to success.",
+      "note": "将笼统叙事转化为对心态的深层分析，紧扣主题，逻辑更紧密"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the drawing, a fascinating contrast emerges during a penalty kick. —— 图画描述经典首句，as 引导非限制性定语从句 + 点明对比，开篇即抓住阅卷人眼球。",
+   "Had he viewed each setback as evidence of inevitable defeat, the world might still be in darkness. —— 虚拟语气倒装句，省略 if 使句式更紧凑，画面感强，展现高级语法驾驭力。",
+   "It is often our attitude, rather than the difficulty itself, that ultimately determines the outcome. —— 强调句 + rather than 插入对比，一句话精辟总结全文主旨，适合用作文章点睛结尾。",
+   "His unwavering self-belief empowered him to interpret every failure as a step closer to success. —— unwavering + empower + interpret 三个高级词汇自然串联，展示词汇深度与表达流畅度。",
+   "When armed with a positive mindset, people are more likely to see possibilities rather than barriers. —— 过去分词短语作条件状语，be more likely to 表示倾向，句式简洁而地道。"
+  ]
+ }
+}

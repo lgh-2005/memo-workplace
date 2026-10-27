@@ -1,0 +1,232 @@
+{
+ "schemaVersion": 1,
+ "id": "41fe6975b225__long_match__all",
+ "examId": "41fe6975b225",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2018 年 12 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:17:52.940Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34490,
+ "usage": {
+  "prompt_tokens": 951,
+  "completion_tokens": 1733,
+  "total_tokens": 2684,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 951,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1733,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 951,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "父母在网上分享子女信息的利弊与边界",
+  "strategy": [
+   "先通读10条陈述句，标记人名、专有名词等高区分度关键词，如Steinberg、Katlyn Burbidge",
+   "将含有数据、研究结论的陈述句优先定位，因为数字和study等词在原文中易辨认",
+   "注意同义替换：如beneficial↔positive/helpful、refrained from↔stopped/avoided、approval↔permission",
+   "利用逻辑关系词匹配：因果、转折、条件等句式往往是命题点",
+   "先做有人名或具体细节的题，再做概括性强的题，提高效率"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "H",
+    "cn": "Steinberg认为父母在网上分享信息可以是有益的。",
+    "keywords": [
+     "Steinberg",
+     "beneficial",
+     "parental sharing"
+    ],
+    "paraphrase": "陈述句中的beneficial可能在原文中被替换为positive、advantageous、有好处等表达；parental sharing online可能对应parents posting about their children on social media等。",
+    "tip": "直接定位专有人名Steinberg，再确认该段提到分享的好处。"
+   },
+   {
+    "number": 37,
+    "answer": "M",
+    "cn": "一位专家表示，当孩子到了学龄阶段，他们可以帮助父母了解哪些事情可以做、哪些不可以做。",
+    "keywords": [
+     "expert",
+     "school age",
+     "help parents learn"
+    ],
+    "paraphrase": "school age可能替换为around the age of starting school或old enough for school；help parents learn what can and cannot be done可能对应teach parents about boundaries或guide parents on dos and don'ts。",
+    "tip": "定位school age及孩子反过来教父母的因果逻辑。"
+   },
+   {
+    "number": 38,
+    "answer": "N",
+    "cn": "一位母亲从儿子的角度考虑这件事后，不再在网上发布儿子的照片。",
+    "keywords": [
+     "refrained from posting",
+     "son's perspective"
+    ],
+    "paraphrase": "refrained from posting可能对应stopped sharing或decided against uploading；from her son's perspective可能替换为through her son's eyes、putting herself in her son's shoes。",
+    "tip": "定位换位思考（perspective）这一细节，找描述母亲心理转变的段落。"
+   },
+   {
+    "number": 39,
+    "answer": "E",
+    "cn": "一项研究表明，认为父母分享应有规则的孩子比家长更多。",
+    "keywords": [
+     "study",
+     "more children than parents",
+     "rules",
+     "sharing"
+    ],
+    "paraphrase": "more children than parents可能在原文中以具体百分比或比较级呈现；rules on sharing可能替换为guidelines、regulations或boundaries。",
+    "tip": "定位study/research及children与parents之间的数量对比。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "cn": "Katlyn Burbidge从未意识到她需要征得儿子的同意才能把他的照片发到网上。",
+    "keywords": [
+     "Katlyn Burbidge",
+     "never realized",
+     "approval",
+     "photos"
+    ],
+    "paraphrase": "never realized可能对应it hadn't occurred to her或she was unaware；approval可能替换为permission或consent。",
+    "tip": "直接定位人名Katlyn Burbidge，再确认未曾意识到需许可的信息。"
+   },
+   {
+    "number": 41,
+    "answer": "A",
+    "cn": "一位母亲在儿子请求她不要发照片后，决定不在网上发布他的照片。",
+    "keywords": [
+     "decided not to post",
+     "son asked her not to"
+    ],
+    "paraphrase": "asked her not to可能对应son objected、son said no或son expressed reluctance；decided not to post可能替换为chose to withhold the photo。",
+    "tip": "定位孩子主动提出反对、母亲因此改变行为的叙事情节。"
+   },
+   {
+    "number": 42,
+    "answer": "J",
+    "cn": "一位女儿科医生试图通过分享自己的育儿经验来帮助其他家长。",
+    "keywords": [
+     "woman pediatrician",
+     "sharing parenting experience",
+     "help other parents"
+    ],
+    "paraphrase": "woman pediatrician可能在原文中以female doctor specializing in children或具体人名+职业呈现；sharing parenting experience可能对应documenting her own journey as a mother。",
+    "tip": "定位pediatrician（儿科医生）这一职业身份及帮助他人的目的。"
+   },
+   {
+    "number": 43,
+    "answer": "L",
+    "cn": "有些人决定干脆不在网上分享孩子的照片。",
+    "keywords": [
+     "decide",
+     "simply not to share",
+     "children's photos"
+    ],
+    "paraphrase": "simply not to share可能在原文中对应completely avoid posting、refuse to upload或keep their children entirely off social media。",
+    "tip": "定位完全不分享这一极端立场，找表述彻底回避网络晒娃的段落。"
+   },
+   {
+    "number": 44,
+    "answer": "G",
+    "cn": "家长和医生应当认识到，在网上分享有关孩子的信息可能涉及风险。",
+    "keywords": [
+     "parents",
+     "physicians",
+     "risks",
+     "sharing information"
+    ],
+    "paraphrase": "physicians可能替换为doctors或medical professionals；involve risks可能对应pose potential dangers、have unintended consequences或come with certain hazards。",
+    "tip": "同时定位physicians和risks两个关键词，两者同段出现即可锁定。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "cn": "分享育儿经验的家长可能会发现自己正在侵犯孩子的隐私。",
+    "keywords": [
+     "parenting experiences",
+     "intruding",
+     "children's privacy"
+    ],
+    "paraphrase": "intruding into children's privacy可能在原文中替换为violating kids' privacy、crossing a boundary或infringing on their children's right to privacy。",
+    "tip": "定位privacy一词及分享经验与侵犯隐私之间的矛盾关系。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "parental",
+    "cn": "adj. 父母的，亲代的"
+   },
+   {
+    "w": "beneficial",
+    "cn": "adj. 有益的，有利的"
+   },
+   {
+    "w": "refrained",
+    "cn": "v. 克制，避免（refrain from doing sth.）"
+   },
+   {
+    "w": "perspective",
+    "cn": "n. 视角，观点"
+   },
+   {
+    "w": "approval",
+    "cn": "n. 同意，批准，认可"
+   },
+   {
+    "w": "pediatrician",
+    "cn": "n. 儿科医生"
+   },
+   {
+    "w": "intruding",
+    "cn": "v. 侵入，侵犯（intrude into）"
+   },
+   {
+    "w": "physicians",
+    "cn": "n. 医生，内科医生（复数）"
+   }
+  ]
+ }
+}

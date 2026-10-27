@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "1c19f5649e3f__use_of_english__all",
+ "examId": "1c19f5649e3f",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2021 年考研英语真题",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:44:59.445Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 81845,
+ "usage": {
+  "prompt_tokens": 1716,
+  "completion_tokens": 4995,
+  "total_tokens": 6711,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1716,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4995,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1716,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "流体智力与腹部脂肪及肌肉流失的关系",
+  "gist": "文章介绍了流体智力随年龄变化的规律，指出研究发现腹部脂肪堆积与肌肉流失和流体智力下降相关，男女机制可能不同，并建议通过有氧运动和地中海饮食来维持身心健康。",
+  "difficulty": "中等",
+  "translation": "流体智力是一种与短期记忆以及快速、逻辑性、抽象性思考以解决新问题的能力相关的智力类型。它在成年早期达到峰值，在一段时间内保持平稳，然后通常随着年龄增长开始缓慢下降。但尽管衰老不可避免，科学家们正在发现大脑功能的某些变化或许并非如此。\n\n一项研究发现，肌肉流失和腹部脂肪的堆积与流体智力的下降有关。这暗示了一种可能性，即生活方式因素或许有助于预防或延缓这类下降。\n\n研究人员查看了包含来自4000多名中老年男女的瘦肌肉和腹部脂肪测量数据的资料，并将这些数据与六年期间所报告的流体智力变化进行了比较。他们发现，腹部脂肪指标较高的中年人随着时间推移在流体智力测试中得分更差。\n\n对于女性而言，这种关联可能归因于过量腹部脂肪导致的免疫系统变化；而在男性中，免疫系统似乎并未参与其中。研究者希望未来的研究能够解释这些差异，并可能为男性和女性提供不同的治疗方案。\n\n与此同时，你可以采取一些措施来帮助减少腹部脂肪并在衰老过程中维持瘦肌肉量，以保护你的身心健康。两种备受推荐的生活方式方法是保持或增加有氧运动的水平，以及遵循富含纤维且杜绝高度加工食品的地中海式饮食。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "C",
+    "correct": "peaks",
+    "why": "上下文逻辑：后文说\"levels out（趋于平稳）\"再\"decline（下降）\"，构成\"达到峰值→平稳→下降\"的完整生命曲线，只有peaks能与之衔接，表示流体智力在成年早期达到最高点。",
+    "traps": "A) pauses（暂停）语义不当，智力不会在年轻时\"暂停\"；B) returns（返回）无逻辑起点可返回；D) fades（消退）与后面的decline语义重复，且放在此处使曲线缺少高峰阶段。",
+    "tip": "识别\"峰值→平稳→下降\"的典型变化曲线描述。"
+   },
+   {
+    "number": 2,
+    "answer": "D",
+    "correct": "generally",
+    "why": "上下文逻辑：文章在描述流体智力衰退的一般规律，generally（通常、一般而言）表示普遍趋势，语气恰当，表明下降并非绝对而是总体倾向。",
+    "traps": "A) alternatively（或者）表替代关系，不合语境；B) formally（正式地）语义无关；C) accidentally（偶然地）暗示下降是偶然事件，与客观规律描述矛盾。",
+    "tip": "描述普遍趋势时常用generally修饰。"
+   },
+   {
+    "number": 3,
+    "answer": "A",
+    "correct": "while",
+    "why": "上下文逻辑：前半句说\"衰老不可避免\"，后半句说\"某些脑功能变化或许并非不可避免\"，形成让步转折关系，while（尽管）引导让步状语从句最为合适。",
+    "traps": "B) since（因为/自从）表因果或时间，不合逻辑；C) once（一旦）表条件，改变语义；D) until（直到）表时间终点，语义不通。",
+    "tip": "while引导让步从句，表示\"尽管……但是……\"。"
+   },
+   {
+    "number": 4,
+    "answer": "B",
+    "correct": "accumulation",
+    "why": "搭配与上下文逻辑：文章讨论腹部脂肪增多与智力下降的关系，accumulation（堆积）与body fat搭配，表示脂肪逐渐积累，与后文\"higher measures of abdominal fat\"呼应。",
+    "traps": "A) detection（检测）指发现过程，不是致病因素；C) consumption（消耗）意为消费/消耗，语义相反；D) separation（分离）与脂肪堆积语境不符。",
+    "tip": "accumulation of fat 是医学和健康领域的常见搭配。"
+   },
+   {
+    "number": 5,
+    "answer": "A",
+    "correct": "possibility",
+    "why": "上下文逻辑：研究发现脂肪堆积与智力下降相关，由此推测生活方式因素\"可能\"有助于预防，suggest the possibility that…表示提出一种可能性，语气谨慎合理。",
+    "traps": "B) decision（决定）不能被suggest引出作为研究推论；C) goal（目标）语义不当；D) requirement（要求）过于绝对，不符合科学表述的审慎态度。",
+    "tip": "科学论文常用suggest the possibility表示谨慎推测。"
+   },
+   {
+    "number": 6,
+    "answer": "A",
+    "correct": "delay",
+    "why": "上下文逻辑：与prevent并列，表示如果不能完全预防，至少可以\"延缓\"智力下降，prevent or delay是健康领域常见的固定并列搭配。",
+    "traps": "B) ensure（确保）语义与decline矛盾，无人想确保下降；C) seek（寻求）与decline搭配不当；D) utilize（利用）与decline搭配不合逻辑。",
+    "tip": "prevent or delay（预防或延缓）是医学语境的经典搭配。"
+   },
+   {
+    "number": 7,
+    "answer": "C",
+    "correct": "included",
+    "why": "上下文逻辑：data that included measurements…表示数据中\"包含了\"肌肉和脂肪的测量值，说明数据的内容构成，included作定语从句谓语最恰当。",
+    "traps": "A) modified（修改）暗示数据被改动，不合研究规范；B) supported（支持）主语是data，数据支持测量值语义别扭；D) predicted（预测）数据不能预测测量值。",
+    "tip": "included用于说明数据集所包含的具体内容。"
+   },
+   {
+    "number": 8,
+    "answer": "B",
+    "correct": "compared",
+    "why": "搭配与逻辑：compared that data to… 表示将身体测量数据与智力变化数据进行对比分析，compare…to/with…是标准搭配，符合研究方法描述。",
+    "traps": "A) devoted（奉献）devoted…to意为致力于，主语不当；C) converted（转换）converted…to意为转化，语义不合；D) applied（应用）applied…to语义为将…应用于，不符合研究方法描述。",
+    "tip": "compare A to B 表示将A与B进行比较，是研究方法的典型表达。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "with",
+    "why": "搭配与语法：people with higher measures of…是介词短语作后置定语，修饰people，表示\"具有较高腹部脂肪指标的人\"，with表伴随/具有。",
+    "traps": "B) above（在…之上）不能直接修饰people表示\"具有\"；C) by（通过）不表示\"拥有\"某种特征；D) against（反对/对照）语义不当。",
+    "tip": "with+名词短语作后置定语，表示\"具有某种特征的\"。"
+   },
+   {
+    "number": 10,
+    "answer": "C",
+    "correct": "scored",
+    "why": "搭配与逻辑：scored worse on measures of…表示在流体智力测量中\"得分更差\"，score on…是测试评分的标准搭配。",
+    "traps": "A) lived（生活）与measures of fluid intelligence不搭配；B) managed（管理/设法）语义不通；D) played（玩耍/表现）不与on measures of搭配。",
+    "tip": "score well/worse on…是考试或测试评分的固定搭配。"
+   },
+   {
+    "number": 11,
+    "answer": "D",
+    "correct": "went by",
+    "why": "上下文逻辑：as the years went by表示\"随着岁月流逝\"，描述时间推移中智力变化的趋势，与六年研究周期相呼应。",
+    "traps": "A) ran out（用完/耗尽）暗示时间用完，语义过于极端；B) set off（出发/引发）不与years搭配；C) drew in（收缩/天黑变早）语义不合。",
+    "tip": "as the years went by（随着岁月流逝）是常见时间推移表达。"
+   },
+   {
+    "number": 12,
+    "answer": "B",
+    "correct": "attributable",
+    "why": "搭配与逻辑：be attributable to表示\"可归因于\"，说明女性中该关联可能归因于过量腹部脂肪引起的免疫系统变化，符合因果解释语境。",
+    "traps": "A) superior（优于）be superior to意为优于，语义不合；C) parallel（平行的）be parallel to意为平行于，不表因果；D) resistant（抵抗的）be resistant to意为抵抗，语义矛盾。",
+    "tip": "be attributable to 表示\"可归因于\"，用于解释原因。"
+   },
+   {
+    "number": 13,
+    "answer": "C",
+    "correct": "involved",
+    "why": "上下文逻辑：前句说女性的关联可归因于免疫变化，但对男性而言免疫系统似乎\"并未参与其中\"，be involved表示在这一机制中发挥作用。",
+    "traps": "A) restored（恢复）语义为修复，不符合上下文对机制参与的讨论；B) isolated（隔离/孤立）语义不合；D) controlled（控制）无法表达\"参与/涉及\"之意。",
+    "tip": "be involved 表示\"参与其中/涉及\"，常用于机制讨论。"
+   },
+   {
+    "number": 14,
+    "answer": "D",
+    "correct": "explain",
+    "why": "上下文逻辑：前文指出男女机制不同，未来研究希望能\"解释\"这些差异，explain these differences是科学研究展望的常见表达。",
+    "traps": "A) alter（改变）研究目标是理解差异而非改变差异；B) spread（传播）与differences搭配不当；C) remove（消除）研究不能消除客观存在的差异。",
+    "tip": "科学研究常用explain来表示对现象差异的探究目标。"
+   },
+   {
+    "number": 15,
+    "answer": "D",
+    "correct": "treatments",
+    "why": "上下文逻辑：既然男女机制不同，那么研究可能带来不同的\"治疗方案\"，treatments与前文medical研究语境一致，且与lead to搭配合理。",
+    "traps": "A) compensations（补偿）语义偏向经济或心理补偿，不合医学语境；B) symptoms（症状）不同的症状并非研究所要\"导向\"的目标；C) demands（需求）不是研究要产出的结果。",
+    "tip": "lead to different treatments 指研究最终目标是制定差异化治疗方案。"
+   },
+   {
+    "number": 16,
+    "answer": "B",
+    "correct": "Meanwhile",
+    "why": "上下文逻辑：前段说未来研究有待开展，本段转而介绍当前可以采取的措施，Meanwhile（与此同时）起到时间并行过渡的作用，表示在等待未来研究的同时可先行动。",
+    "traps": "A) Likewise（同样地）表类比，前后段内容并非类比关系；C) Therefore（因此）前段是对未来的期望，本段是实操建议，非严格因果；D) Instead（相反）前后段不是替代关系。",
+    "tip": "Meanwhile用于衔接\"未来展望\"与\"当下行动\"两个时间层面。"
+   },
+   {
+    "number": 17,
+    "answer": "D",
+    "correct": "take",
+    "why": "固定搭配：take steps to do sth.意为\"采取措施做某事\"，是英语中的高频固定搭配。",
+    "traps": "A) change steps（改变步骤）不是固定搭配；B) watch steps（注意脚步）意为小心行走，语义偏离；C) count steps（数步数）语义不合。",
+    "tip": "take steps to do sth.（采取措施）是核心固定搭配。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "well-being",
+    "why": "上下文逻辑：文章最终目的是保护身心健康，physical and mental well-being（身心健康）是健康领域的标准表达，与全文主题呼应。",
+    "traps": "B) process（过程）过于笼统，不表示健康状态；C) formation（形成）语义不合；D) coordination（协调）仅涉及身体功能某方面，不够全面。",
+    "tip": "physical and mental well-being 是\"身心健康\"的标准表达。"
+   },
+   {
+    "number": 19,
+    "answer": "A",
+    "correct": "level",
+    "why": "搭配与逻辑：level of exercise表示\"运动水平/运动量\"，maintaining or increasing your level of aerobic exercise意为保持或提高有氧运动量，搭配自然合理。",
+    "traps": "B) love（热爱）love of exercise虽可理解但无法与increasing搭配表示实际运动量；C) knowledge（知识）知识增加不等于运动增加；D) space（空间）space of exercise语义不通。",
+    "tip": "level of exercise（运动水平/运动量）是常见搭配。"
+   },
+   {
+    "number": 20,
+    "answer": "C",
+    "correct": "diet",
+    "why": "上下文逻辑：后面提到high in fiber和eliminates highly processed foods，这些都是饮食特征的描述，Mediterranean-style diet（地中海式饮食）是营养学中的经典术语。",
+    "traps": "A) design（设计）不能描述饮食方式；B) routine（常规）虽可指日常习惯，但不与high in fiber等饮食特征直接搭配；D) prescription（处方）过于医疗化，且地中海饮食是生活建议而非药物处方。",
+    "tip": "Mediterranean-style diet（地中海饮食）是营养健康领域的固定术语。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "fluid intelligence",
+    "cn": "流体智力（n.），指处理新问题和抽象推理的能力"
+   },
+   {
+    "w": "abstractly",
+    "cn": "抽象地（adv.）"
+   },
+   {
+    "w": "inevitable",
+    "cn": "不可避免的（adj.）"
+   },
+   {
+    "w": "abdomen",
+    "cn": "腹部（n.）"
+   },
+   {
+    "w": "abdominal",
+    "cn": "腹部的（adj.）"
+   },
+   {
+    "w": "lean muscle",
+    "cn": "瘦肌肉/去脂肌肉（n.）"
+   },
+   {
+    "w": "immunity",
+    "cn": "免疫力（n.）"
+   },
+   {
+    "w": "attributable",
+    "cn": "可归因于的（adj.）"
+   },
+   {
+    "w": "aerobic",
+    "cn": "有氧的（adj.）"
+   },
+   {
+    "w": "Mediterranean",
+    "cn": "地中海的（adj.）"
+   },
+   {
+    "w": "fiber",
+    "cn": "纤维/膳食纤维（n.）"
+   },
+   {
+    "w": "eliminate",
+    "cn": "消除、去除（v.）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "But while",
+    "role": "引出让步转折：尽管衰老不可避免，但脑功能变化未必如此"
+   },
+   {
+    "w": "This suggests",
+    "role": "承上启下：由研究发现引出对生活方式的推测"
+   },
+   {
+    "w": "Meanwhile",
+    "role": "时间并行过渡：从未来研究展望转到当前可行建议"
+   },
+   {
+    "w": "as the years went by",
+    "role": "标记时间推移：说明智力下降是随时间渐进的过程"
+   },
+   {
+    "w": "in order to",
+    "role": "表目的：采取措施的最终目标是保护身心健康"
+   }
+  ]
+ }
+}

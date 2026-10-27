@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "1485326c452f__banked_cloze__all",
+ "examId": "1485326c452f",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2021 年 6 月英语六级真题（第 2 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:37:10.436Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64034,
+ "usage": {
+  "prompt_tokens": 1461,
+  "completion_tokens": 3592,
+  "total_tokens": 5053,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1461,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3592,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1461,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "以数学思维管理财务实现财富积累",
+  "gist": "文章以药房减肥产品引入，指出减重的核心在于\"摄入小于消耗\"的算术法则，并类比到理财领域：积累财富的关键同样是让收入大于支出。以 Nicole Haddow 的真实故事为例，讲述她如何在父亲的指导下，通过削减开支、改变生活方式，在两年内从负债累累走向购房置业，实现财务独立。",
+  "difficulty": "中等",
+  "translation": "每次走进药房，看到货架上琳琅满目的各种维生素、提取物和其他保健品，都声称能加速或促进减肥，我总是感到困惑。一排排充满营销天才的货架掩饰了这样一个事实：归根结底（ultimately），减重受算术法则支配。经济学家杰西卡·欧文写了一本书，讲述她如何利用数学帮助自己减掉超过18公斤。如果摄入的卡路里少于消耗（expended）的卡路里，体重就会减轻，金钱也是同理。\n\n尽管市面上有大量的（abundance）理财产品、服务和解决方案都以积累财富为目标，但一切都始于同一个等式（equation）：要在财务上领先，就必须减少开支，使收入大于支出。最近我在听一段对妮可·哈多的采访时再次想到了这一点。她是《碾碎的牛油果》一书的作者，讲述了自己如何在31岁时成功打入房产市场。考虑到两年前她的处境，这确实是一项壮举（feat）。\n\n妮可并没有像她曾经设想的（envisaged）那样庆祝自己的30岁生日。她在餐桌前啜泣，和刚搬回去同住的父母在一起。她没有稳定的收入，背负着12000美元的信用卡债务，也没有任何计划。但令她惊讶的是（astonishment），她的父亲——一名会计师——告诉她，她的财务困境（plight）并没有她想象的那么糟糕。他说，以她的收入，只要做出一些改变，她就能在两年内买下一套投资房，而她确实做到了。\n\n妮可承认自己是幸运的，因为她能和父母住在一起，并彻底改造（overhaul）自己的开支和生活，让自己在财务上走上正轨。在收入和支出之间创造差额需要一种观念上的转变，并且意味着（entailed）牺牲和承诺，但通过进入财务\"封锁\"状态，妮可获得了财务独立。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "O",
+    "correct": "ultimately",
+    "why": "此处需要一个副词修饰整个句子，表示\"归根结底、最终\"。上下文语境是尽管保健品花样繁多，但减重\"说到底\"取决于算术法则。ultimately 作插入语置于两个逗号之间，语法与语义均完美契合。",
+    "traps": "其他副词类候选项（如有）在语义上不符合\"归根到底\"的递进转折关系。名词或动词类选项在此处语法不通，因为逗号之间需要副词作插入成分。",
+    "tip": "逗号间的插入语位置常需副词，结合语境判断语义。"
+   },
+   {
+    "number": 27,
+    "answer": "F",
+    "correct": "expended",
+    "why": "与 calories taken in（摄入的卡路里）形成对比，需要一个表示\"消耗\"的过去分词作后置定语修饰 calories。expended 意为\"花费、消耗\"，语义和语法（过去分词形式与 taken in 对称）完全匹配。",
+    "traps": "entailed 虽也是过去分词，但意为\"需要、牵涉\"，与 calories 搭配不当，卡路里不能被\"牵涉\"。其他名词或形容词类选项词性不合。",
+    "tip": "注意对称结构：calories taken in 对应 calories expended。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "abundance",
+    "why": "Despite the _____ of financial products 需要一个名词，且与 of 搭配。abundance of 意为\"大量的\"，表示尽管理财产品种类繁多，核心法则仍然不变，与 despite 构成让步逻辑。",
+    "traps": "astonishment 虽也是名词，但意为\"惊讶\"，与 of financial products 搭配不合逻辑。plight（困境）语义方向错误，理财产品本身不是困境。",
+    "tip": "the abundance of 是常见搭配，意为\"大量的……\"。"
+   },
+   {
+    "number": 29,
+    "answer": "E",
+    "correct": "equation",
+    "why": "the same _____ 后接冒号解释内容（收入>支出），需要一个名词表示\"等式/公式\"。equation 既指数学等式，也隐喻核心法则，与前文用数学减重的类比一脉相承。",
+    "traps": "feat（壮举）语义不符，此处强调的是一个基本原理而非成就。abundance 语义方向也不对。equation 完美呼应全文\"算术法则\"的主线。",
+    "tip": "equation 可引申为\"等式、基本法则\"，注意隐喻用法。"
+   },
+   {
+    "number": 30,
+    "answer": "G",
+    "correct": "feat",
+    "why": "quite a _____ 需要一个可数名词，且后文 given where she had been two years earlier 暗示这是一件了不起的成就。feat 意为\"壮举、了不起的事\"，quite a feat 是常见搭配。",
+    "traps": "astonishment 不符合 quite a 的搭配习惯（常说 to one's astonishment），且语义上此处强调成就而非情绪。equation 在此语义不通。",
+    "tip": "quite a feat 为固定搭配，意为\"了不起的壮举\"。"
+   },
+   {
+    "number": 31,
+    "answer": "D",
+    "correct": "envisaged",
+    "why": "as she had _____ 需要一个动词过去分词构成过去完成时。envisaged 意为\"设想、预想\"，表示妮可没能像她曾经设想的那样庆祝生日，与后文悲惨现实形成对比。",
+    "traps": "entailed（需要、牵涉）语义不合：生日不是被\"牵涉\"的。expended（消耗）与 celebrate birthday 搭配不当。此处需要表示\"想象/设想\"的动词。",
+    "tip": "envisage 意为\"设想\"，常用于 as sb had envisaged 结构。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "correct": "astonishment",
+    "why": "to her _____ 是固定句式，需要表示情绪的名词。to her astonishment 意为\"令她惊讶的是\"，说明父亲的乐观判断出乎她意料，与她认为自己财务状况很糟的心理形成反差。",
+    "traps": "abundance 语义不符，to her abundance 不构成有意义的表达。plight（困境）也不符合 to her + 情绪名词的固定搭配模式。",
+    "tip": "to one's astonishment 为固定搭配，意为\"令某人惊讶的是\"。"
+   },
+   {
+    "number": 33,
+    "answer": "L",
+    "correct": "plight",
+    "why": "her financial _____ wasn't as bad as she thought 需要一个名词表示\"处境/困境\"。plight 意为\"困境、窘境\"，financial plight 指财务困境，与上文她负债12000美元的描述呼应。",
+    "traps": "abundance（丰富）和 equation（等式）语义不匹配此处的负面语境。feat（壮举）也不合理，因为后文说 wasn't as bad as she thought，暗示是负面情况。",
+    "tip": "plight 指困境，常与 financial、economic 等搭配。"
+   },
+   {
+    "number": 34,
+    "answer": "J",
+    "correct": "overhaul",
+    "why": "and 连接 live with her parents 与 _____ her spending，需要一个动词原形。overhaul 意为\"彻底检修、全面改造\"，表示妮可彻底改造了她的消费习惯和生活方式，to get herself on track。",
+    "traps": "entailed 语义上表示\"需要\"，但这里主语是 she，说的是她主动采取的行动而非某事\"需要\"什么。expended（消耗）与 spending 搭配冗余且不合逻辑。",
+    "tip": "overhaul 意为\"彻底改革/大修\"，可用于抽象事物。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "correct": "entailed",
+    "why": "required a paradigm shift and _____ sacrifice and commitment，and 连接两个并列谓语，entailed 意为\"需要、牵涉\"，与 required 语义并列，表示这一过程既需要观念转变，也意味着牺牲和承诺。",
+    "traps": "envisaged（设想）语义不符，此处不是在\"设想\"牺牲，而是实际\"需要\"牺牲。expended（消耗）与 sacrifice 搭配不自然。entailed 与 required 形成语义递进。",
+    "tip": "entail 意为\"需要、意味着\"，常与 sacrifice、effort 搭配。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "ultimately",
+    "cn": "adv. 最终地，归根结底"
+   },
+   {
+    "w": "expend",
+    "cn": "v. 花费，消耗（精力、金钱等）"
+   },
+   {
+    "w": "abundance",
+    "cn": "n. 丰富，大量；充裕"
+   },
+   {
+    "w": "equation",
+    "cn": "n. 等式；（多种因素的）平衡，综合体"
+   },
+   {
+    "w": "feat",
+    "cn": "n. 功绩，壮举；技艺"
+   },
+   {
+    "w": "envisage",
+    "cn": "v. 设想，展望；预想"
+   },
+   {
+    "w": "astonishment",
+    "cn": "n. 惊讶，惊愕"
+   },
+   {
+    "w": "plight",
+    "cn": "n. 困境，窘境"
+   },
+   {
+    "w": "overhaul",
+    "cn": "v./n. 彻底检修，全面改造"
+   },
+   {
+    "w": "entail",
+    "cn": "v. 需要，牵涉；使成为必要"
+   },
+   {
+    "w": "baffle",
+    "cn": "v. 使困惑，使迷惑"
+   },
+   {
+    "w": "belie",
+    "cn": "v. 掩饰；与……不符"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——理解文章讲\"减重与理财的算术法则类比\"的核心逻辑。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/副词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法标志（冠词、介词、助动词等）锁定所需词性，再结合语义筛选。",
+   "第四步：优先做有固定搭配线索的题（如 to one's astonishment、quite a feat），快速确定答案。",
+   "第五步：做完后回读全文，检查语义连贯性，确认每个词只使用一次且无重复。"
+  ]
+ }
+}

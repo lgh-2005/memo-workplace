@@ -1,0 +1,208 @@
+{
+ "schemaVersion": 1,
+ "id": "7636b03c9370__translation__all",
+ "examId": "7636b03c9370",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年 12 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:44:53.769Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32595,
+ "usage": {
+  "prompt_tokens": 836,
+  "completion_tokens": 2439,
+  "total_tokens": 3275,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 836,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2439,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 836,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "黄土高原的地理特征与历史文化",
+  "reference": "The Loess Plateau is the third largest plateau in China, covering an area of about 600,000 square kilometers, with an average altitude of 1,000 to 2,000 meters. The vast majority of the plateau is covered with loess 50 to 80 meters thick, making it the most concentrated region of loess distribution with the greatest coverage thickness in the world. It is a miracle created by nature and is unique across the globe. The Loess Plateau is one of the birthplaces of the Chinese nation. As early as 5,500 years ago, people had already started farming on the Loess Plateau. With the continuous development of agriculture, the population on the Loess Plateau kept increasing, and the region became the political and economic center of China during the Qin and Han Dynasties. Today, with the implementation of the Western Development Strategy, the economy of the Loess Plateau region has undergone rapid development.",
+  "sentences": [
+   {
+    "cn": "黄土高原是中国第三大高原，面积约60万平方公里，平均海拔1000-2000米，",
+    "en": "The Loess Plateau is the third largest plateau in China, covering an area of about 600,000 square kilometers, with an average altitude of 1,000 to 2,000 meters.",
+    "structure": "主系表结构 + 现在分词短语 covering 作伴随状语 + with 介词短语补充说明海拔",
+    "keys": [
+     "黄土高原 the Loess Plateau",
+     "第三大高原 the third largest plateau",
+     "面积约60万平方公里 covering an area of about 600,000 square kilometers",
+     "平均海拔 average altitude"
+    ]
+   },
+   {
+    "cn": "绝大部分覆盖着50-80米厚的黄土，是世界上黄土分布最集中、覆盖厚度最大的区域。",
+    "en": "The vast majority of the plateau is covered with loess 50 to 80 meters thick, making it the most concentrated region of loess distribution with the greatest coverage thickness in the world.",
+    "structure": "被动语态 is covered with + 后置定语 50 to 80 meters thick + 现在分词 making 作结果状语",
+    "keys": [
+     "绝大部分 the vast majority",
+     "覆盖着…厚的黄土 is covered with loess ... thick",
+     "黄土分布最集中 the most concentrated region of loess distribution",
+     "覆盖厚度最大 the greatest coverage thickness"
+    ]
+   },
+   {
+    "cn": "这是大自然创造的一个奇迹，在世界上也是绝无仅有的。",
+    "en": "It is a miracle created by nature and is unique across the globe.",
+    "structure": "主系表结构 + 过去分词 created by nature 作后置定语 + and 并列谓语",
+    "keys": [
+     "大自然创造的 created by nature",
+     "绝无仅有的 unique"
+    ]
+   },
+   {
+    "cn": "黄土高原是中华民族的发祥地之一。",
+    "en": "The Loess Plateau is one of the birthplaces of the Chinese nation.",
+    "structure": "主系表结构，one of + 复数名词 表示\"……之一\"",
+    "keys": [
+     "中华民族 the Chinese nation",
+     "发祥地 birthplace"
+    ]
+   },
+   {
+    "cn": "早在5500年前，人们就已经在黄土高原上开始农耕。",
+    "en": "As early as 5,500 years ago, people had already started farming on the Loess Plateau.",
+    "structure": "时间状语前置 + 过去完成时 had already started 表达\"早在……就已经\"",
+    "keys": [
+     "早在…前 as early as ... ago",
+     "农耕 farming"
+    ]
+   },
+   {
+    "cn": "随着农耕业的持续发展，黄土高原人口不断增加，在秦汉时期就成为中国的政治和经济中心。",
+    "en": "With the continuous development of agriculture, the population on the Loess Plateau kept increasing, and the region became the political and economic center of China during the Qin and Han Dynasties.",
+    "structure": "with 介词短语作原因/伴随状语 + 并列谓语 kept increasing 和 became",
+    "keys": [
+     "农耕业 agriculture",
+     "持续发展 continuous development",
+     "秦汉时期 the Qin and Han Dynasties",
+     "政治和经济中心 the political and economic center"
+    ]
+   },
+   {
+    "cn": "如今，随着西部大开发战略的实施，黄土高原地区的经济得到了迅速发展。",
+    "en": "Today, with the implementation of the Western Development Strategy, the economy of the Loess Plateau region has undergone rapid development.",
+    "structure": "时间副词 Today 前置 + with 介词短语表伴随/原因 + 现在完成时 has undergone 表示持续至今的结果",
+    "keys": [
+     "西部大开发战略 the Western Development Strategy",
+     "实施 implementation",
+     "得到了迅速发展 has undergone rapid development"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "黄土高原",
+    "en": "the Loess Plateau"
+   },
+   {
+    "cn": "平均海拔",
+    "en": "average altitude"
+   },
+   {
+    "cn": "黄土",
+    "en": "loess"
+   },
+   {
+    "cn": "中华民族",
+    "en": "the Chinese nation"
+   },
+   {
+    "cn": "发祥地",
+    "en": "birthplace / cradle"
+   },
+   {
+    "cn": "农耕",
+    "en": "farming / agricultural cultivation"
+   },
+   {
+    "cn": "秦汉时期",
+    "en": "the Qin and Han Dynasties"
+   },
+   {
+    "cn": "西部大开发战略",
+    "en": "the Western Development Strategy"
+   },
+   {
+    "cn": "政治和经济中心",
+    "en": "the political and economic center"
+   },
+   {
+    "cn": "绝无仅有",
+    "en": "unique / one of a kind"
+   }
+  ],
+  "pitfalls": [
+   "loess 为地质学专有名词，拼写易错写为 loss 或 loose",
+   "第三大高原应为 the third largest plateau，遗漏 the 或 largest 均扣分",
+   "秦汉时期为专有名词，Qin 和 Han 首字母须大写，且需加 Dynasties",
+   "早在5500年前就已经，需用过去完成时 had already started，很多考生误用一般过去时",
+   "西部大开发战略为固定译法 the Western Development Strategy，strategy 不可用 plan 替代"
+  ],
+  "upgrades": [
+   {
+    "plain": "about 600,000 square kilometers in area",
+    "better": "covering an area of approximately 600,000 square kilometers",
+    "note": "用现在分词短语作状语更紧凑地道，避免简单罗列"
+   },
+   {
+    "plain": "Most of it is covered by loess",
+    "better": "The vast majority of the plateau is covered with loess",
+    "note": "vast majority 比 most 更正式精准，符合说明文语体"
+   },
+   {
+    "plain": "has developed rapidly",
+    "better": "has undergone rapid development",
+    "note": "undergo development 为学术常用搭配，名词化表达更书面"
+   },
+   {
+    "plain": "is the only one in the world",
+    "better": "is unique across the globe",
+    "note": "unique across the globe 表达更简洁高级，避免中式英语"
+   },
+   {
+    "plain": "people began to do farming",
+    "better": "people had already started farming on the Loess Plateau",
+    "note": "过去完成时配合 already 准确体现\"早在……就已经\"的时间先后关系"
+   }
+  ]
+ }
+}

@@ -1,0 +1,197 @@
+{
+ "schemaVersion": 1,
+ "id": "a1fd36502b35__translation__all",
+ "examId": "a1fd36502b35",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年 12 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:51:13.980Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 28890,
+ "usage": {
+  "prompt_tokens": 797,
+  "completion_tokens": 1805,
+  "total_tokens": 2602,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 797,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1805,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 797,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国人口老龄化应对措施",
+  "reference": "With the development of economy and society, China's population structure has undergone significant changes, and the country is gradually entering an aging society. The elderly population in China will continue to grow, and the trend of population aging will become more pronounced. To cope with the various challenges brought about by population aging, the government is actively taking measures to strengthen support for elderly care. By reforming the social security system, the government has been continuously increasing social security funding and gradually expanding the coverage of social security, so that more elderly people can benefit from it. The government also encourages various social organizations to provide services for the elderly. With the joint efforts of the government and social organizations, the elderly will lead a happier life.",
+  "sentences": [
+   {
+    "cn": "随着经济与社会的发展，中国人口结构发生了显著变化，逐渐步入老龄化社会。",
+    "en": "With the development of economy and society, China's population structure has undergone significant changes, and the country is gradually entering an aging society.",
+    "structure": "with 介词短语作状语 + 主语 + 谓语（现在完成时）+ 并列分句",
+    "keys": [
+     "人口结构 population structure",
+     "显著变化 significant changes",
+     "步入老龄化社会 enter an aging society"
+    ]
+   },
+   {
+    "cn": "中国老年人口将持续增加，人口老龄化趋势将更加明显。",
+    "en": "The elderly population in China will continue to grow, and the trend of population aging will become more pronounced.",
+    "structure": "并列句，两个将来时分句用 and 连接",
+    "keys": [
+     "老年人口 the elderly population",
+     "人口老龄化趋势 the trend of population aging",
+     "更加明显 more pronounced"
+    ]
+   },
+   {
+    "cn": "为了应对人口老龄化带来的种种挑战，国家正积极采取措施，加大对养老的支持。",
+    "en": "To cope with the various challenges brought about by population aging, the government is actively taking measures to strengthen support for elderly care.",
+    "structure": "不定式短语作目的状语 + 主句（现在进行时）+ 不定式作补充说明",
+    "keys": [
+     "应对挑战 cope with challenges",
+     "积极采取措施 actively take measures",
+     "养老 elderly care"
+    ]
+   },
+   {
+    "cn": "通过改革社会保障制度，政府不断增加社会保障经费，逐步扩大社会保障覆盖范围，使更多老年人受益。",
+    "en": "By reforming the social security system, the government has been continuously increasing social security funding and gradually expanding the coverage of social security, so that more elderly people can benefit from it.",
+    "structure": "by + 动名词短语作方式状语 + 主句（现在完成进行时）+ so that 目的状语从句",
+    "keys": [
+     "社会保障制度 the social security system",
+     "社会保障经费 social security funding",
+     "覆盖范围 coverage",
+     "受益 benefit from"
+    ]
+   },
+   {
+    "cn": "政府还鼓励各种社会团体为老年人提供服务。",
+    "en": "The government also encourages various social organizations to provide services for the elderly.",
+    "structure": "主语 + 谓语 + 宾语 + 不定式作宾语补足语",
+    "keys": [
+     "社会团体 social organizations",
+     "鼓励…提供 encourage...to provide"
+    ]
+   },
+   {
+    "cn": "在政府和社会团体的共同努力下，老年人将生活得更加幸福。",
+    "en": "With the joint efforts of the government and social organizations, the elderly will lead a happier life.",
+    "structure": "with 介词短语作条件状语 + 主句（一般将来时）",
+    "keys": [
+     "共同努力 joint efforts",
+     "生活得更加幸福 lead a happier life"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "人口结构",
+    "en": "population structure"
+   },
+   {
+    "cn": "老龄化社会",
+    "en": "aging society"
+   },
+   {
+    "cn": "老年人口",
+    "en": "the elderly population"
+   },
+   {
+    "cn": "人口老龄化",
+    "en": "population aging"
+   },
+   {
+    "cn": "社会保障制度",
+    "en": "the social security system"
+   },
+   {
+    "cn": "社会保障经费",
+    "en": "social security funding"
+   },
+   {
+    "cn": "覆盖范围",
+    "en": "coverage"
+   },
+   {
+    "cn": "养老",
+    "en": "elderly care"
+   },
+   {
+    "cn": "社会团体",
+    "en": "social organizations"
+   },
+   {
+    "cn": "共同努力",
+    "en": "joint efforts"
+   }
+  ],
+  "pitfalls": [
+   "「步入老龄化社会」误译为 become old society，应为 enter an aging society",
+   "「加大对养老的支持」中「养老」漏译或误译，应译为 elderly care 或 senior care",
+   "「社会保障覆盖范围」中 coverage 一词遗漏，整个短语应为 the coverage of social security",
+   "「使更多老年人受益」的目的关系未译出，应使用 so that 或 enabling 等结构衔接",
+   "「逐步」与「不断」混淆，continuously 对应「不断」，gradually 对应「逐步」，需区分使用"
+  ],
+  "upgrades": [
+   {
+    "plain": "China is slowly becoming an aging society",
+    "better": "the country is gradually entering an aging society",
+    "note": "enter an aging society 是人口学常用搭配，比 become 更正式准确"
+   },
+   {
+    "plain": "the aging trend will be more obvious",
+    "better": "the trend of population aging will become more pronounced",
+    "note": "pronounced 比 obvious 更书面，更符合学术语境"
+   },
+   {
+    "plain": "spend more money on social security",
+    "better": "continuously increase social security funding",
+    "note": "funding 比 money 更正式，increase 比 spend 更精准对应「增加经费」"
+   },
+   {
+    "plain": "old people will live more happily",
+    "better": "the elderly will lead a happier life",
+    "note": "lead a happier life 是地道英文表达，避免 live happily 的中式直译"
+   },
+   {
+    "plain": "deal with the challenges",
+    "better": "cope with the various challenges brought about by population aging",
+    "note": "cope with 更正式，brought about by 使定语修饰更完整，忠实原文"
+   }
+  ]
+ }
+}

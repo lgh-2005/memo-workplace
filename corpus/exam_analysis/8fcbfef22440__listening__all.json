@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "8fcbfef22440__listening__all",
+ "examId": "8fcbfef22440",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2023 年 12 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:47:49.489Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60494,
+ "usage": {
+  "prompt_tokens": 2252,
+  "completion_tokens": 3294,
+  "total_tokens": 5546,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2252,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3294,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2252,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析仅基于题目选项的语言特征与正确答案进行推断分析，不涉及任何录音内容的引述或编造。",
+  "overview": "本场听力共 25 题，分 7 段。第 1 段（1-4 题）选项涉及健康、压力与职业；第 2 段（5-8 题）围绕体育明星职业转变与公共健康；第 3 段（9-11 题）涉及文学创作与人物评价；第 4 段（12-15 题）聚焦团队合作与职场软技能；第 5 段（16-18 题）讨论人类认知与创造力；第 6 段（19-21 题）关于犬类与人类健康的关系；第 7 段（22-25 题）涉及教育政策与经济价值。前两段各 4 题，疑为长对话；后五段各 3-4 题，疑为短文或讲座。",
+  "strategy": [
+   "预读选项时先圈出各选项中重复出现的关键名词（如 stress、health、dogs），快速锁定话题方向。",
+   "选项中含有绝对词（only、never、always）的通常是干扰项，优先标记并在听音时重点验证。",
+   "四个选项若结构一致（如都以 It is/They are 开头），说明题目问的是对某事物的评价或描述，注意听音时抓形容词和判断词。",
+   "遇到问原因或目的的题（选项含 To do…），注意听 because、so that、in order to 等信号词。",
+   "长对话中第一题答案常出现在开头两轮对话中，最后一题答案常出现在对话结尾，注意首尾信息。",
+   "短文听力中转折词 but、however、yet 后面的内容是高频出题点，务必集中注意力。"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "个人健康状况、工作压力与职业竞争",
+    "optionSignals": "第 1 题选项均为对'他'健康状态的描述，含 digestive system、blood circulation 等医学词汇，问的是检查结果。第 2 题选项均为动名词短语，描述人们对压力/疾病的反应方式，问行为特征。第 3 题选项均为动词原形开头，问建议或下一步行动。第 4 题选项均以 It 开头描述某事物特征，问对某行业/事业的评价。",
+    "tips": [
+     "第 1 题四项都在描述健康状况，正确答案 B 是唯一肯定表述（nothing wrong），其余三项或暗示问题或暗示无知，注意听否定与肯定的语气。",
+     "第 2 题 A 与 C 都涉及 stress，但 A 说'误把疾病当压力'、C 说'未意识到压力'，两者方向相反，听音时注意 aware/unaware 的区分。",
+     "第 4 题 A、B、C 偏正面评价，D 强调 competition，在涉及职业话题时注意听竞争、压力相关表达。"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "体育人物职业转型与公共健康事业",
+    "optionSignals": "第 5 题选项均以 To 开头，问目的/原因；limelight、injury、competitive career、hostile teammates 指向体育明星退出原因。第 6 题选项描述某段经历的性质（ups and downs、rewarding、not last long、not profitable），问评价。第 7 题选项描述人物后续状态。第 8 题选项均为动词原形开头，问目标或行动。",
+    "tips": [
+     "第 5 题 limelight（聚光灯）是关键词，正确答案 A 指'避开公众关注'，与体育明星隐退话题契合，注意听 privacy、public attention 等同义替换。",
+     "第 6 题正确答案 C'It does not last long'，注意听表示时间短暂的表达如 brief、short-lived、didn't last。",
+     "第 8 题 alleviate the obesity problem 中 alleviate（缓解）和 obesity（肥胖）都是六级高频词，注意听 fight/tackle/address obesity 等同义表达。"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "某位女性作家的文学生涯与作品特点",
+    "optionSignals": "第 9 题四个选项均为时间状语从句结构（When/While/After），问某事发生的时间节点，涉及大学教学、博士研究、出版小说、获奖等。第 10 题选项均为名词短语，问作品主题（love and loss、human behaviour、eccentrics、fashionable circles）。第 11 题选项均以 They 开头描述某类人物特征。",
+    "tips": [
+     "第 9 题注意四个时间节点各不相同，正确答案 D 指'赢得 1986 年短篇小说比赛之后'，听音时留意年份数字和比赛名称。",
+     "第 11 题正确答案 C'get rewarded instead of being punished'，instead of 形成鲜明对比，听音时注意转折或对比信号。",
+     "第 10 题 love and loss 是文学作品中常见主题表达，注意听 themes、recurring motifs 等词。"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "职场软技能、团队协作与适应能力",
+    "optionSignals": "第 12 题选项均以 It is 开头描述某种能力的价值，问定义或重要性。第 13 题选项为动词短语，问某种能力带来的好处。第 14 题选项描述现代职场特征（emotional intelligence、brains vs muscles、flexible hours、teams）。第 15 题选项为动词原形开头，问面对困境时的策略。",
+    "tips": [
+     "第 12 题正确答案 B 中 increasingly seeking after 暗示趋势，注意听 more and more、growing demand 等趋势类表达。",
+     "第 14 题正确答案 D'People often work in teams'，与整段团队协作话题一致，选项中偏离主话题的通常是干扰项。",
+     "第 15 题正确答案 C'Decide on new priorities speedily'强调快速调整优先级，注意听 adapt、adjust、reprioritize 等关键词。"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "人类创造力的本质与认知机制",
+    "optionSignals": "第 16 题选项分别涉及人与动物差异、哲学家与科学家分歧、认知能力起源、创造力的生物学意义，问讨论话题。第 17 题四个选项均以 It is 开头定义某一概念。第 18 题选项描述某一机制的运作方式。",
+    "tips": [
+     "第 16 题正确答案 A'differentiates people from animals'，人与动物对比是认知科学话题的经典切入点，注意听 distinguish、set apart、unique to humans 等表达。",
+     "第 18 题正确答案 C'uses existing ideas to create new ones'，核心是'旧知创新知'，注意听 build on、combine、recombine 等动词。",
+     "第 17 题正确答案 D 说'every human being can do'，与含 only geniuses 的 C 项形成对立，绝对限定词 only 通常为干扰标志。"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "犬类感知能力与对主人健康的益处",
+    "optionSignals": "第 19 题选项均以 Dogs 开头描述犬类能力（感知生病、分辨对错、互动技能、感知情绪），问犬类特质。第 20 题选项描述犬类嗅觉特点。第 21 题选项均以 It can 开头，问养犬的好处。",
+    "tips": [
+     "第 20 题正确答案 D'extremely powerful sense of smell'是最概括的表述，A 和 B 过于具体（detect ill smells of viruses / tell what bacteria），听力中具体化的选项若无原文支持则常为干扰。",
+     "第 21 题正确答案 B'benefit owners both physically and mentally'是 A、C、D 的上位概括，涵盖面最广的选项在总结性问题中常为正确答案。",
+     "第 19 题注意 not feeling well 与 illness、sickness 的同义替换关系。"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "英国教育政策改革与创意艺术课程的经济价值",
+    "optionSignals": "第 22 题选项描述政策行为（crack down、restrict、reform、ensure），问政策举措。第 23 题选项为形容词短语，问对某观点的评价态度。第 24 题选项描述学生经济状况的数据特征。第 25 题选项涉及评估语境（bank balance、economy、specific degree、educational system），问判断标准或角度。",
+    "tips": [
+     "第 22 题正确答案 B'Restrict the ability of creative arts courses to recruit new students'，restrict 与 crack down 程度不同，注意听 limit、cap、reduce intake 等近义表达。",
+     "第 23 题正确答案 A'Seemingly reasonable'中 seemingly 暗示'表面合理但实质存疑'，注意听 appear、on the surface、at first glance 等表达。",
+     "第 25 题正确答案 B'Britain's economy as a whole'强调宏观经济视角，注意听 broader/wider economic impact、national economy 等宏观表达。"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "digestive system",
+    "cn": "消化系统"
+   },
+   {
+    "w": "blood circulation",
+    "cn": "血液循环"
+   },
+   {
+    "w": "limelight",
+    "cn": "公众关注，聚光灯"
+   },
+   {
+    "w": "alleviate",
+    "cn": "缓解，减轻"
+   },
+   {
+    "w": "obesity",
+    "cn": "肥胖（症）"
+   },
+   {
+    "w": "eccentrics",
+    "cn": "行为古怪的人"
+   },
+   {
+    "w": "emotional intelligence",
+    "cn": "情商，情绪智力"
+   },
+   {
+    "w": "cognitive capacity",
+    "cn": "认知能力"
+   },
+   {
+    "w": "setbacks",
+    "cn": "挫折，困难"
+   },
+   {
+    "w": "aptitude",
+    "cn": "天资，天赋"
+   },
+   {
+    "w": "chronic diseases",
+    "cn": "慢性疾病"
+   },
+   {
+    "w": "vocational education",
+    "cn": "职业教育"
+   },
+   {
+    "w": "irrational",
+    "cn": "不合理的，非理性的"
+   },
+   {
+    "w": "conducive",
+    "cn": "有助于，有益于"
+   }
+  ]
+ }
+}

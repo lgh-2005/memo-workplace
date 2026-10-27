@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "e8fd5058f708__reading__1",
+ "examId": "e8fd5058f708",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2006 年考研英语真题（旧）",
+ "year": 2006,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:17:16.430Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59509,
+ "usage": {
+  "prompt_tokens": 1781,
+  "completion_tokens": 3619,
+  "total_tokens": 5400,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1781,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3619,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1781,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国社会对移民的同化力量",
+  "gist": "文章论述美国社会是一台强大的同化机器，通过大众文化、消费文化、大众媒体等途径将人们趋同化。作者以语言、住房拥有率和跨族通婚三个指标证明移民正成功融入美国主流文化，反驳了移民威胁社会的论调，认为美国的社会环境并未恶化。",
+  "structure": [
+   "第一段：提出核心论点——美国社会是同化机器，列举同化力量",
+   "第二段：引数据说明移民水平不高且正在被同化，引出三个指标",
+   "第三、四段：用语言、住房拥有率、跨族通婚数据论证同化成功",
+   "第五段：举例反驳'移民不可同化'的恐惧心理",
+   "第六段：总结全文，社会环境并未恶化"
+  ],
+  "difficulty": "中等",
+  "translation": "尽管\"差异\"被无休止地讨论，美国社会实际上是一台令人惊叹的同化机器。大众文化的特征是\"穿着和话语的民主化统一，以及随意性和尊卑意识的缺失\"。人们被吸收到一种\"消费文化\"中，这种文化由19世纪的百货商店所开创，它们\"在优雅的氛围中提供种类繁多的商品。不同于那些迎合少数精英的亲密小店\"，这些百货商店是\"任何人都可以进入的，不论阶层或背景。这使得购物成为一种公共的、民主的行为。\"大众媒体、广告和体育运动是其他的同化力量。\n\n移民正在迅速融入这种共同文化——这种文化可能不完全令人振奋，但也绝非有害。为全国移民论坛撰稿的格雷戈里·罗德里格斯报告说，当今的移民水平既不是史无前例的，也不是抗拒同化的。1998年移民占人口的9.8%；而在1900年则为13.6%。在1990年前的十年间，每1000名居民有3.1名移民到来；而在1890年前的十年间，每1000名居民则有9.2名移民。现在，我们来看看三个同化指标——语言、住房拥有率和跨族通婚。\n\n1990年的人口普查揭示，\"来自十五个最主要来源国的移民中，大多数人在居住十年后英语说得'好'或'很好'。\"移民的子女往往是双语者，且英语熟练。\"到了第三代，大多数移民家庭已经丧失了原来的语言。\"因此美国被形容为语言的\"坟墓\"。到1996年，1970年之前抵达的外国出生移民的住房拥有率为75.6%，高于本土出生美国人的69.8%。\n\n外国出生的亚裔和西班牙裔\"比美国本土出生的白人和黑人有更高的跨族通婚率。\"到了第三代，三分之一的西班牙裔女性嫁给了非西班牙裔，41%的亚裔美国女性嫁给了非亚裔。\n\n罗德里格斯指出，世界各地偏远村庄的儿童都是阿诺德·施瓦辛格和加思·布鲁克斯等超级明星的粉丝，然而\"一些美国人担心住在美国的移民不知怎么仍然能抵抗该国的同化力量。\"\n\n美国是否存在引发分裂的议题和暗涌的愤怒？确实如此。这个国家足够大，可以容纳各种现象。但特别是对照美国动荡的过去，当今的社会指标几乎无法表明存在一个黑暗且不断恶化的社会环境。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "American society is an amazing machine for homogenizing people.",
+    "why": "该词出现在首句，结合全文主旨可知文章围绕\"同化\"展开。第二段末尾明确引出\"assimilation\"（同化），且全文用语言、住房、通婚三个指标论证移民正被同化。因此homogenizing与assimilating（同化）意义最接近，选C。",
+    "traps": "A项identifying意为\"辨认、识别\"，与文意无关，属于无中生有。B项associating意为\"联合、联想\"，虽有一定关联但不能表达趋同的含义，属于近义干扰。D项monopolizing意为\"垄断\"，与原文语境完全不符，属于无关选项。",
+    "tip": "词义题需结合上下文主旨推断，尤其关注下文是否有同义复现。"
+   },
+   {
+    "number": 22,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "People are absorbed into 'a culture of consumption' launched by the 19th-century department stores that offered 'vast arrays of goods in an elegant atmosphere.'",
+    "why": "原文指出19世纪百货商店开创了消费文化，使购物成为\"公共的、民主的行为\"，并在段末总结大众媒体、广告、体育等也是同化力量（forces for homogenization）。百货商店与这些力量并列，其功能正是传播大众文化、推动同化，因此A项\"在大众文化传播中扮演了角色\"正确。",
+    "traps": "B项\"变成了面向普通消费者的亲密小店\"与原文相反，原文说百货商店取代了亲密小店，属于反向干扰。C项\"满足了精英的需求\"也与原文矛盾，原文指出百货商店面向所有人而非精英。D项因果倒置，是百货商店开创了消费文化，而非消费文化催生了百货商店。",
+    "tip": "注意选项是否偷换因果关系或将原文信息张冠李戴。"
+   },
+   {
+    "number": 23,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Immigrants are quickly fitting into this common culture, which may not be altogether elevating but is hardly poisonous.",
+    "why": "原文明确指出移民正在迅速融入共同文化，并用语言、住房和通婚数据证明同化成功。作者指出当今移民水平低于历史水平且并不抗拒同化，言下之意是移民不会对共同文化构成威胁，C项\"几乎不是对共同文化的威胁\"与此吻合。",
+    "traps": "A项\"抗拒同化\"与原文\"neither…resistant to assimilation\"直接矛盾。B项\"对美国文化施加巨大影响\"文中未提及，属于无中生有。D项\"构成人口的大多数\"与数据矛盾，1998年移民仅占9.8%。",
+    "tip": "推断题需综合段落论证方向，注意与原文矛盾的选项优先排除。"
+   },
+   {
+    "number": 24,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "Rodriguez notes that children in remote villages around the world are fans of superstars like Arnold Schwarzenegger and Garth Brooks, yet 'some Americans fear that immigrants living within the United States remain somehow immune to the nation's assimilative power.'",
+    "why": "作者用\"连世界偏远村庄的儿童都是美国明星的粉丝\"来反衬\"有些美国人却担心国内移民能抵抗美国的同化力量\"的荒谬，其论证目的是说明美国文化的影响力极其强大，远至海外都无法抗拒，更何况国内移民。因此D项\"展示美国文化的强大影响力\"正确。",
+    "traps": "A项\"证明他们在全球的人气\"只是字面信息，非论证目的，属于就事论事的陷阱。B项\"揭示公众对移民的恐惧\"只是句中对比的一面，不是举例的根本目的。C项\"给出成功移民的例子\"无中生有，施瓦辛格等人并非作为移民被提及。",
+    "tip": "例证题要问\"为什么举这个例子\"，答案在例子所服务的论点中。"
+   },
+   {
+    "number": 25,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "But particularly when viewed against America's turbulent past, today's social indices hardly suggest a dark and deteriorating social environment.",
+    "why": "全文通篇用数据证明移民在语言、住房和通婚方面的同化非常顺利，末段总结今日社会指标并未显示恶化趋势。作者态度始终积极，认为移民融入是成功的，故B项successful正确。",
+    "traps": "A项rewarding（值得的、有回报的）侧重于\"回报\"，文中重点论证的是同化的\"成效\"而非\"收益\"，不够精准。C项fruitless（无成果的）与全文论证方向完全相反。D项harmful（有害的）与原文\"hardly poisonous\"直接矛盾。",
+    "tip": "态度题需纵览全文基调，尤其关注首尾段的总结性判断。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "homogenizing",
+    "cn": "使同质化，使趋于一致（v.）"
+   },
+   {
+    "w": "deference",
+    "cn": "尊敬，顺从（n.）"
+   },
+   {
+    "w": "catering to",
+    "cn": "迎合，满足…的需要（v. 短语）"
+   },
+   {
+    "w": "unprecedented",
+    "cn": "史无前例的，空前的（adj.）"
+   },
+   {
+    "w": "assimilation",
+    "cn": "同化，融合（n.）"
+   },
+   {
+    "w": "proficient",
+    "cn": "精通的，熟练的（adj.）"
+   },
+   {
+    "w": "intermarriage",
+    "cn": "跨族（跨种族/跨文化）通婚（n.）"
+   },
+   {
+    "w": "immune to",
+    "cn": "不受…影响的，对…免疫的（adj. 短语）"
+   },
+   {
+    "w": "divisive",
+    "cn": "引起分裂的，造成不和的（adj.）"
+   },
+   {
+    "w": "seething",
+    "cn": "暗涌的，强压怒火的（adj.）"
+   },
+   {
+    "w": "turbulent",
+    "cn": "动荡的，混乱的（adj.）"
+   },
+   {
+    "w": "deteriorating",
+    "cn": "恶化的，变坏的（adj.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "People are absorbed into 'a culture of consumption' launched by the 19th-century department stores that offered 'vast arrays of goods in an elegant atmosphere. Instead of intimate shops catering to a knowledgeable elite,' these were stores 'anyone could enter, regardless of class or background.'",
+    "cn": "人们被吸收到一种由19世纪百货商店所开创的\"消费文化\"中，这些百货商店\"在优雅的氛围中提供种类繁多的商品。不同于那些迎合少数精英的亲密小店\"，这些商店是\"任何人都可以进入的，不论阶层或背景。\"",
+    "note": "主干为People are absorbed into a culture；launched过去分词作后置定语修饰culture；that引导定语从句修饰department stores；Instead of引出对比。"
+   },
+   {
+    "en": "Rodriguez notes that children in remote villages around the world are fans of superstars like Arnold Schwarzenegger and Garth Brooks, yet 'some Americans fear that immigrants living within the United States remain somehow immune to the nation's assimilative power.'",
+    "cn": "罗德里格斯指出，世界各地偏远村庄的儿童都是阿诺德·施瓦辛格和加思·布鲁克斯等超级明星的粉丝，然而\"一些美国人担心住在美国的移民不知怎么仍然能抵抗该国的同化力量。\"",
+    "note": "主干为Rodriguez notes that…yet…构成转折；fear后接that宾语从句；living within为现在分词短语修饰immigrants；somehow语含讽刺。"
+   },
+   {
+    "en": "But particularly when viewed against America's turbulent past, today's social indices hardly suggest a dark and deteriorating social environment.",
+    "cn": "但特别是对照美国动荡的过去来看，当今的社会指标几乎无法表明存在一个黑暗且不断恶化的社会环境。",
+    "note": "when viewed against为省略主语的时间状语从句；hardly为否定副词，表达作者乐观态度；viewed against意为\"对照…来看\"。"
+   }
+  ]
+ }
+}

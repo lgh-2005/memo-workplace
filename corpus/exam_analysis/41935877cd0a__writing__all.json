@@ -1,0 +1,216 @@
+{
+ "schemaVersion": 1,
+ "id": "41935877cd0a__writing__all",
+ "examId": "41935877cd0a",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2016 年考研英语真题",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:39:03.178Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 101886,
+ "usage": {
+  "prompt_tokens": 839,
+  "completion_tokens": 5971,
+  "total_tokens": 6810,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 839,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5971,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 839,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 3,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "应用文写作——以大学图书馆员身份撰写一则通知（Notice），向新入学的留学生介绍图书馆相关信息，词数约100词，署名Li Ming。",
+    "outline": [
+     "标题 NOTICE + 称呼语，说明通知目的：欢迎留学生并告知图书馆基本信息",
+     "正文主体：介绍开放时间、借阅规则、电子资源及入馆须知等实用信息",
+     "结尾：提供咨询方式，署名Li Ming"
+    ],
+    "sample": "NOTICE\n\nDear international students,\n\nWelcome to our university! In order to help you make the best use of the library, I am writing to provide some essential information.\n\nThe library is open from 8:00 a.m. to 10:00 p.m. on weekdays and from 9:00 a.m. to 6:00 p.m. on weekends. Your student ID card is required to enter the building and borrow books. Each student may borrow up to five books at a time for a maximum of 30 days. Additionally, a wide range of electronic resources and databases can be accessed through the library website.\n\nShould you have any questions, please feel free to visit the Information Desk on the first floor or send an email to lib@uni.edu.cn.\n\nLi Ming",
+    "phrases": [
+     {
+      "en": "newly-enrolled international students",
+      "cn": "新入学的留学生；enrolled 强调已注册入学，比 new 更正式"
+     },
+     {
+      "en": "make the best use of",
+      "cn": "充分利用；比 use well 更地道，常用于正式语境"
+     },
+     {
+      "en": "student ID card is required to ...",
+      "cn": "需凭学生证……；被动语态体现通知文体的客观正式"
+     },
+     {
+      "en": "borrow up to five books at a time",
+      "cn": "每次最多借五本书；up to 表示上限，简洁准确"
+     },
+     {
+      "en": "for a maximum of 30 days",
+      "cn": "最长30天；maximum of + 数字，是说明规则的常用结构"
+     },
+     {
+      "en": "a wide range of electronic resources",
+      "cn": "丰富的电子资源；a wide range of 比 many 更书面"
+     },
+     {
+      "en": "can be accessed through the library website",
+      "cn": "可通过图书馆网站访问；access 作动词表示'获取/使用'"
+     },
+     {
+      "en": "Should you have any questions",
+      "cn": "如您有任何问题；虚拟条件句倒装，比 If you have 更正式高级"
+     }
+    ],
+    "pitfalls": [
+     "忘写标题 NOTICE 或格式不规范，通知必须有标题和落款",
+     "语域不当：通知属正式文体，不宜用 gonna、wanna 等口语化表达",
+     "信息空泛：只写欢迎语而缺乏具体实用信息（开放时间、借阅规则等）",
+     "超出身份：以图书馆员身份写作，不应涉及课程、住宿等无关内容",
+     "词数不足或严重超标：题目要求 about 100 词，80-120 词为安全区间"
+    ],
+    "upgrades": [
+     {
+      "plain": "If you have any questions, you can ask us.",
+      "better": "Should you have any questions, please feel free to visit the Information Desk or email us.",
+      "note": "虚拟语气倒装句更正式，补充具体咨询方式使信息更实用"
+     },
+     {
+      "plain": "The library has many books and resources.",
+      "better": "A wide range of electronic resources and databases can be accessed through the library website.",
+      "note": "被动语态更符合通知文体，信息更具体、更有参考价值"
+     },
+     {
+      "plain": "You need your student card to borrow books.",
+      "better": "Your student ID card is required to enter the building and borrow books.",
+      "note": "被动结构体现客观规定语气，enter 和 borrow 并列使信息更完整"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "看图作文——根据两幅图画写一篇160-200词短文，需简要描述图画内容、阐释寓意并给出评论。主题为面对困难时坚持与放弃的不同态度。",
+    "outline": [
+     "第一段：客观描述两幅图画内容——一人登山途中想放弃，另一人鼓励自己坚持到山顶",
+     "第二段：揭示图画深层寓意——坚持不懈是克服困难、走向成功的关键品质",
+     "第三段：发表个人评论——号召培养毅力，不因暂时挫折而半途而废"
+    ],
+    "sample": "As is vividly depicted in the two pictures, two young men are both climbing a steep mountain. In the first picture, one climber appears utterly exhausted and murmurs that he wants to give up. In contrast, the other climber in the second picture encourages himself to keep going, firmly believing that the summit is within reach.\n\nThe message conveyed by these drawings is both profound and thought-provoking: perseverance makes all the difference when we confront challenges. In reality, a considerable number of people tend to abandon their goals the moment they encounter obstacles halfway through. However, those who choose to hold on often discover that success is just around the corner. As an old saying goes, the last leg of a journey marks the halfway point, which means the final stretch demands the greatest determination.\n\nFrom my perspective, perseverance is an indispensable quality for anyone who aspires to achieve success. Rather than surrendering to temporary setbacks, we should cultivate the resilience to push forward. Only by persisting to the end can we reach the summit of our endeavors and embrace the breathtaking view that awaits us.",
+    "phrases": [
+     {
+      "en": "As is vividly depicted in the pictures",
+      "cn": "如图所生动描绘的；看图作文经典开头，被动+倒装结构"
+     },
+     {
+      "en": "in contrast",
+      "cn": "相比之下；用于引出第二幅图，形成鲜明对比"
+     },
+     {
+      "en": "firmly believing that ...",
+      "cn": "坚信……；现在分词作伴随状语，使句子层次更丰富"
+     },
+     {
+      "en": "the summit is within reach",
+      "cn": "山顶触手可及；within reach 表示'在可及范围内'，一语双关"
+     },
+     {
+      "en": "profound and thought-provoking",
+      "cn": "深刻且发人深省的；形容寓意的高频搭配"
+     },
+     {
+      "en": "a considerable number of",
+      "cn": "相当数量的；比 many 更书面，适合议论文体"
+     },
+     {
+      "en": "success is just around the corner",
+      "cn": "成功近在咫尺；地道习语，形象生动"
+     },
+     {
+      "en": "an indispensable quality",
+      "cn": "不可或缺的品质；indispensable 比 important 更高级"
+     },
+     {
+      "en": "cultivate the resilience to push forward",
+      "cn": "培养奋力前行的韧性；resilience 是高分词汇，意为'韧劲/抗挫力'"
+     },
+     {
+      "en": "Only by persisting ... can we ...",
+      "cn": "只有坚持到底我们才能……；only + 介词短语置于句首引起部分倒装"
+     }
+    ],
+    "pitfalls": [
+     "描述图画时脱离画面内容或过度发挥，应忠于图画信息",
+     "三段结构缺失：未分别完成描述、释义、评论三个指令要求",
+     "论证空洞：只喊口号而缺少具体例证或道理论述",
+     "用词重复：多次使用 important、very 等低级词汇，缺乏词汇多样性",
+     "字数不达标：低于160词会被扣分，超过200词则时间浪费且易出错"
+    ],
+    "upgrades": [
+     {
+      "plain": "The pictures show two people climbing a mountain. One wants to stop and the other wants to continue.",
+      "better": "As is vividly depicted in the two pictures, two young men are both climbing a steep mountain. One appears utterly exhausted and murmurs that he wants to give up, while the other encourages himself to keep going.",
+      "note": "被动倒装开头更规范，动词 murmur/encourage 使描述更生动细腻"
+     },
+     {
+      "plain": "We can see that persistence is very important.",
+      "better": "The message conveyed by these drawings is both profound and thought-provoking: perseverance makes all the difference when we confront challenges.",
+      "note": "过去分词短语作后置定语更高级，makes all the difference 替代 is important 更地道"
+     },
+     {
+      "plain": "So we should not give up and we should keep trying.",
+      "better": "Rather than surrendering to temporary setbacks, we should cultivate the resilience to push forward.",
+      "note": "rather than 结构避免简单并列，surrendering/resilience 等词提升词汇档次"
+     },
+     {
+      "plain": "If we keep working hard, we will succeed.",
+      "better": "Only by persisting to the end can we reach the summit of our endeavors and embrace the breathtaking view that awaits us.",
+      "note": "only 倒装句式为高分句型，summit 呼应图画形成首尾照应，修辞效果好"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "As is vividly depicted in the two pictures, two young men are both climbing a steep mountain — 看图作文黄金开头句式：As is vividly depicted + 介词短语倒装引出画面，适用于所有图画类大作文",
+   "The message conveyed by these drawings is both profound and thought-provoking. — 过渡到寓意分析的高分衔接句：conveyed 过去分词作定语 + both...and... 并列形容词，语言精练有力",
+   "Those who choose to hold on often discover that success is just around the corner. — 定语从句+宾语从句双重复合句，hold on 与 around the corner 形成语义呼应，表达坚持终将成功",
+   "Rather than surrendering to temporary setbacks, we should cultivate the resilience to push forward. — rather than + 动名词前置对比结构，resilience 为高级词汇，整句论证有力且用词精准",
+   "Only by persisting to the end can we reach the summit of our endeavors and embrace the breathtaking view that awaits us. — Only + 介词短语引导的倒装句式，summit 一词呼应登山画面实现首尾衔接，是全文升华的点睛之笔"
+  ]
+ }
+}

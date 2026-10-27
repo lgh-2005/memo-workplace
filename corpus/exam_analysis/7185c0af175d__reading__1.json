@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "7185c0af175d__reading__1",
+ "examId": "7185c0af175d",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 12 月英语六级真题（第 1 套）",
+ "year": 2024,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:54:01.546Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52214,
+ "usage": {
+  "prompt_tokens": 1786,
+  "completion_tokens": 3493,
+  "total_tokens": 5279,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1786,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3493,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1786,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人类为何喜欢恐怖娱乐",
+  "gist": "文章以外星人视角引入，探讨人类为何主动寻求恐怖娱乐这一悖论。作者认为答案在于人性：人类进化出在安全情境中体验负面情绪并获得快感的能力。恐怖娱乐让人们练习应对负面情绪、掌握恐惧管理策略，最终获得掌控感和适应性成长。",
+  "structure": [
+   "第1-5段：外星人视角引出悖论——人类为何自愿观看恐怖片",
+   "第6-10段：核心论点——人类进化出在安全情境中体验恐惧并获得快感的机制",
+   "第11-12段：恐怖片的运作机制及观看恐怖片的实际益处"
+  ],
+  "difficulty": "中等",
+  "translation": "想象你是一个被派到地球上记录哺乳动物行为的外星人。你偶然走进一家正在放映最新好莱坞恐怖片的电影院。\n\n几十个人聚集在一个黑暗、没有装饰的房间里。他们都盯着一个光影快速变化的矩形区域。\n\n他们显然处于高度兴奋的状态。他们心率加快，偶尔紧张地四处张望，有时会集体从座位上跳起来，并发出高亢的警告声。\n\n最终，灯亮了，那块矩形屏幕变黑了。人类站起来离开房间，一边聊天一边笑着，表现出愉悦的迹象。\n\n为什么这些人类会自愿让自己暴露在看似极其不愉快的体验中？他们又为何对屏幕上那些光影变化反应如此强烈？\n\n我对恐怖悖论深感着迷——许多人主动寻求恐怖娱乐，这是一个奇怪的事实。\n\n我认为这个谜题的答案在于人性。\n\n我的研究表明，人类进化出了在安全情境中体验负面情绪时获得快感的能力。你可以在儿童游戏中看到这些恐怖元素。以捉迷藏为例，它模拟了一种捕食者与猎物之间的互动。孩子躲起来，大人假装是捕食者，一边像危险野兽一样嚎叫一边寻找孩子。\n\n这种模拟给孩子提供了关于如何避免成为猎物的关键信息，孩子们往往觉得这类活动非常令人满足，大概是因为它让他们安全地体验了一种潜在的灾难性场景。\n\n他们觉得这很愉快，而快感是进化激励我们做出适应性行为的方式。\n\n恐怖之所以让许多人感到愉快，是因为它让我们玩味负面情绪并发展应对策略。我们学会了真正恐惧的感觉，也学会了如何处理负面情绪。\n\n那么，恐怖是如何起作用的呢？我的研究表明，恐怖通过利用一套古老的生物防御机制——一个与其他动物共有的进化恐惧系统——来发挥作用。但人类具有独特的想象力，我们利用进化而来的想象力进入充满危险的虚拟世界。\n\n观看恐怖片有充分的理由，即使你不是忠实的恐怖片爱好者。如果你能完整地看完整部电影，你很可能会体验到一种强烈的掌控感，一种你能够挺过一段可怕经历的感觉。而且，观看恐怖片能让你更好地处理自己的恐惧，谁知道这在什么时候会变得至关重要呢？",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "They are clearly in a state of high arousal. Their heart rate is elevated, they occasionally glance around nervously, and they sometimes jump collectively in their seats, and emit high-pitched warning calls.",
+    "why": "原文明确指出观众处于\"a state of high arousal\"（高度兴奋状态），随后用心率加快、紧张环顾、集体跳起、发出尖叫等细节加以佐证。B选项\"extreme excitement\"（极度兴奋）是对\"high arousal\"的同义改写，完全对应原文描述。",
+    "traps": "A选项\"total mindfulness\"（完全专注）原文未提及，属无中生有；C选项\"spiritual elevation\"（精神升华）利用了\"elevated\"一词进行偷换概念，原文说的是心率升高而非精神升华；D选项\"intense curiosity\"（强烈好奇）原文无此信息，观众表现出的是恐惧兴奋而非好奇。",
+    "tip": "注意同义替换：high arousal = extreme excitement。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "My research suggests that we humans evolved to find pleasure in situations that allow us to experience negative emotions in a safe context.",
+    "why": "作者的研究表明，人类进化出在安全情境中体验负面情绪并从中获得快感的能力。B选项\"find joy in going through simulated horrible experiences\"准确概括了这一核心观点——在模拟的恐怖体验中找到快乐，与原文\"find pleasure\"和\"safe context\"相对应。",
+    "traps": "A选项\"gain experience in overcoming horror in real life\"将\"safe context\"偷换为\"real life\"，曲解了原文意思；C选项将捉迷藏的例子当成了原因本身，属于以偏概全，例证不等于结论；D选项\"escaping life-threatening situations\"偷换了概念，原文说的是在安全情境中体验负面情绪，而非逃离真正的危险。",
+    "tip": "区分论点与论据，捉迷藏只是举例说明，不是根本原因。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "This simulation gives the child crucial information about how to avoid becoming prey, and children tend to find that kind of activity deeply satisfying",
+    "why": "原文明确说捉迷藏这种模拟给孩子提供了\"how to avoid becoming prey\"（如何避免成为猎物）的关键信息。A选项\"How to avoid falling prey to an attacker\"是对原文的准确同义改写，\"falling prey to an attacker\"对应\"becoming prey\"。",
+    "traps": "B选项\"simulate a predator-prey interaction\"是对捉迷藏游戏本身的描述，而非孩子从中学到的内容，属于张冠李戴；C选项\"catastrophic errors\"将原文\"catastrophic scenario\"偷换为\"catastrophic errors\"，改变了语义；D选项\"turn a dangerous scenario into a safe one\"原文未提及，属于过度推断。",
+    "tip": "审题关键在于\"learn from\"，要找孩子学到了什么，而非游戏是什么。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Horror is pleasurable to many people because it lets us play with negative emotions and develop coping strategies. We learn what it feels like to be truly afraid, and we learn how to handle negative emotion.",
+    "why": "原文指出恐怖之所以令人愉悦，是因为它让我们玩味负面情绪、发展应对策略，学会恐惧的感觉以及如何处理负面情绪。C选项\"learn what fear feels like and how to tackle it\"精准对应原文的\"learn what it feels like to be truly afraid\"和\"learn how to handle negative emotion\"。",
+    "traps": "A选项\"reminds them of an ancient set of biological defence mechanisms\"出自下一段关于恐怖如何运作的内容，而非解释为何令人愉悦，属于答非所问；B选项\"triggers their imagination to travel into dangerous virtual worlds\"同样出自下一段，混淆了恐怖的运作机制和令人愉悦的原因；D选项拼凑了不同段落的信息，且\"unique fantasy\"偷换了\"uniquely imaginative\"的含义。",
+    "tip": "题目问\"为何令人愉悦\"，需精确定位到对应因果关系句。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "If you make it through the film in one piece, you'll probably experience a strong sense of mastery, a sense that you were able to make it through an appalling experience.",
+    "why": "原文说如果完整看完恐怖片，你很可能会体验到\"a strong sense of mastery\"（强烈的掌控感），即一种能够挺过可怕经历的感觉。D选项\"A strong sense of being in control\"是对\"a strong sense of mastery\"的同义改写，mastery意味着掌控、驾驭的能力。",
+    "traps": "A选项\"clear relevance\"利用了末句中的\"critically relevant\"进行偷换，但原文讨论的是恐惧管理技能何时变得重要，而非观影后的感受；B选项\"good fortune\"（幸运感）原文完全没有提及，属无中生有；C选项\"intense relief\"（强烈的释然）虽有一定合理性，但原文明确说的是mastery而非relief，属偷换概念。",
+    "tip": "mastery = being in control，掌握核心同义替换是解题关键。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "stumble",
+    "cn": "v. 偶然发现；跌跌撞撞地走"
+   },
+   {
+    "w": "arousal",
+    "cn": "n. 唤起；兴奋状态"
+   },
+   {
+    "w": "emit",
+    "cn": "v. 发出（声音、光、气体等）"
+   },
+   {
+    "w": "paradox",
+    "cn": "n. 悖论；自相矛盾的事物"
+   },
+   {
+    "w": "simulation",
+    "cn": "n. 模拟；仿真"
+   },
+   {
+    "w": "predator",
+    "cn": "n. 捕食者；掠食动物"
+   },
+   {
+    "w": "prey",
+    "cn": "n. 猎物；受害者"
+   },
+   {
+    "w": "catastrophic",
+    "cn": "adj. 灾难性的；极其糟糕的"
+   },
+   {
+    "w": "adaptive",
+    "cn": "adj. 适应性的；有适应能力的"
+   },
+   {
+    "w": "coping",
+    "cn": "n./adj. 应对（的）；处理（的）"
+   },
+   {
+    "w": "appalling",
+    "cn": "adj. 令人震惊的；骇人的"
+   },
+   {
+    "w": "mastery",
+    "cn": "n. 掌控；精通；驾驭"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "My research suggests that we humans evolved to find pleasure in situations that allow us to experience negative emotions in a safe context.",
+    "cn": "我的研究表明，人类进化出了在安全情境中体验负面情绪时获得快感的能力。",
+    "note": "主干为My research suggests that...；that引导宾语从句；从句主干为we evolved to find pleasure in situations；that allow...为定语从句修饰situations。"
+   },
+   {
+    "en": "This simulation gives the child crucial information about how to avoid becoming prey, and children tend to find that kind of activity deeply satisfying, presumably because it gives them a safe experience of a potentially catastrophic scenario.",
+    "cn": "这种模拟给孩子提供了关于如何避免成为猎物的关键信息，孩子们往往觉得这类活动非常令人满足，大概是因为它让他们安全地体验了一种潜在的灾难性场景。",
+    "note": "and连接两个并列分句；第一分句含about how to...介词短语作后置定语；第二分句中find...satisfying为宾补结构，presumably because引导原因状语从句。"
+   },
+   {
+    "en": "My research suggests that horror works by exploiting an ancient set of biological defence mechanisms—an evolved fear system, which we share with other animals.",
+    "cn": "我的研究表明，恐怖通过利用一套古老的生物防御机制——一个与其他动物共有的进化恐惧系统——来发挥作用。",
+    "note": "主干为research suggests that...；by exploiting为方式状语；破折号后为同位语解释说明defence mechanisms；which引导非限制性定语从句修饰fear system。"
+   }
+  ]
+ }
+}

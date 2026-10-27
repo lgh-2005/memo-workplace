@@ -1,0 +1,242 @@
+{
+ "schemaVersion": 1,
+ "id": "fb33dacfb808__long_match__all",
+ "examId": "fb33dacfb808",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2019 年 12 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:22:59.650Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35052,
+ "usage": {
+  "prompt_tokens": 989,
+  "completion_tokens": 2006,
+  "total_tokens": 2995,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 989,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2006,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 989,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "屏幕时间与美国青少年幸福感",
+  "strategy": [
+   "先通读10条陈述句，提炼高频主题词如screen time、wellbeing、young Americans",
+   "圈出每句中的专有名词、数字、时间等独特标识词，优先用这些信息定位段落",
+   "注意同义替换：如smartphones↔digital devices、happiness↔wellbeing、go downward↔decline",
+   "按信息独特性排序做题：含人名(Twenge)、年代(20th century)等线索的句子优先匹配",
+   "对比相似陈述句的细微差异，如36侧重turning point，43侧重extended screen time"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "G",
+    "cn": "大多数美国人开始使用智能手机的那一年被认定为美国年轻人幸福感水平的转折点。",
+    "keywords": [
+     "smartphones",
+     "turning point",
+     "young Americans",
+     "happiness"
+    ],
+    "paraphrase": "原文可能用 'the year when smartphone adoption became widespread' 替换 'most Americans began using smartphones'，用 'marked a shift / inflection point' 替换 'turning point'。属于近义词替换型。",
+    "tip": "定位\"turning point\"和\"smartphones\"两个核心标识词即可锁定G段。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "近年来，美国年轻人在各项幸福感指标上的得分开始下降。",
+    "keywords": [
+     "scores",
+     "wellbeing measures",
+     "go downward",
+     "young Americans"
+    ],
+    "paraphrase": "原文可能用 'declined/decreased/dropped' 替换 'go downward'，用 'multiple indicators/metrics of wellbeing' 替换 'various wellbeing measures'。属于近义动词替换。",
+    "tip": "关注\"various wellbeing measures\"和\"go downward\"搭配定位C段。"
+   },
+   {
+    "number": 38,
+    "answer": "H",
+    "cn": "不幸的是，涉及与人直接接触的活动（这些活动有助于提升幸福感）被发现正在减少。",
+    "keywords": [
+     "direct contact",
+     "better wellbeing",
+     "on the decline"
+    ],
+    "paraphrase": "原文可能用 'face-to-face interaction/in-person socializing' 替换 'direct contact with people'，用 'decreasing/diminishing' 替换 'on the decline'。属于短语同义替换。",
+    "tip": "\"direct contact with people\"和\"on the decline\"是关键定位线索。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "cn": "为回应以往的批评，Twenge及其合作研究者强调他们并不是在试图证明使用电子设备会降低年轻人的幸福感。",
+    "keywords": [
+     "Twenge",
+     "critics",
+     "digital devices",
+     "not trying to prove"
+    ],
+    "paraphrase": "原文可能用 'respond to/address criticism' 替换 'in response to past critics'，用 'causation/causal link' 暗示 'prove that... reduces'。属于逻辑关系替换。",
+    "tip": "人名Twenge和\"past critics\"是高区分度定位词，快速锁定D段。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "cn": "在20世纪最后几十年间，美国的生活水平上升，经济萧条基本得以避免。",
+    "keywords": [
+     "last few decades",
+     "20th century",
+     "living standards",
+     "economic depressions"
+    ],
+    "paraphrase": "原文可能用 'the final decades of the 1900s' 替换 'last few decades of the 20th century'，用 'recessions were largely prevented/avoided' 替换 'economic depressions were largely averted'。属于时间表达和动词替换。",
+    "tip": "\"20th century\"和\"living standards\"等时间+经济类词汇可快速定位B段。"
+   },
+   {
+    "number": 41,
+    "answer": "E",
+    "cn": "与普遍看法相反，做家庭作业或许反而能提升学生的幸福感。",
+    "keywords": [
+     "contrary to popular belief",
+     "homework",
+     "wellbeing"
+    ],
+    "paraphrase": "原文可能用 'against common assumption/surprisingly' 替换 'contrary to popular belief'，用 'contribute to/enhance' 替换 'add to'。属于语气和动词短语替换。",
+    "tip": "\"homework\"与\"wellbeing\"的反常识搭配是E段的显著标志。"
+   },
+   {
+    "number": 42,
+    "answer": "J",
+    "cn": "作者认为研究者的新研究在屏幕时间对幸福感的影响这一议题上更进了一步。",
+    "keywords": [
+     "gone a step further",
+     "screen time",
+     "wellbeing",
+     "new study"
+    ],
+    "paraphrase": "原文可能用 'advanced the discussion/taken the research further/made progress' 替换 'gone a step further'，用 'impact/effect' 替换 'impact'。属于评价性语言替换。",
+    "tip": "\"a step further\"表示递进评价，结合\"the author believes\"定位作者观点所在的J段。"
+   },
+   {
+    "number": 43,
+    "answer": "F",
+    "cn": "研究者发现，过长的屏幕时间使年轻人不那么快乐。",
+    "keywords": [
+     "extended screen time",
+     "less happy",
+     "researchers found"
+    ],
+    "paraphrase": "原文可能用 'prolonged/excessive use of screens' 替换 'extended screen time'，用 'reduced happiness/lower levels of happiness' 替换 'less happy'。属于形容词与程度表达替换。",
+    "tip": "\"extended screen time\"与\"less happy\"的因果关系是F段核心信息。"
+   },
+   {
+    "number": 44,
+    "answer": "I",
+    "cn": "数据显示，经济不平等而非家庭收入可能会影响人们的幸福感。",
+    "keywords": [
+     "economic inequality",
+     "family income",
+     "wellbeing",
+     "data"
+    ],
+    "paraphrase": "原文可能用 'income disparity/wealth gap' 替换 'economic inequality'，用 'household earnings' 替换 'family income'，用 'rather than' 构成对比逻辑。属于对比逻辑替换。",
+    "tip": "\"economic inequality\"与\"family income\"的对比结构是I段的独特线索。"
+   },
+   {
+    "number": 45,
+    "answer": "A",
+    "cn": "过多的屏幕时间被普遍认为是当今年轻人不快乐的原因。",
+    "keywords": [
+     "screen time",
+     "widely believed",
+     "cause",
+     "unhappiness"
+    ],
+    "paraphrase": "原文可能用 'commonly/generally thought/assumed' 替换 'widely believed'，用 'blamed for' 替换 'believed to be the cause of'。属于被动归因表达替换。",
+    "tip": "\"widely believed\"暗示这是引出话题的背景观点，常出现在文章首段即A段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "turning point",
+    "cn": "转折点（名词短语）"
+   },
+   {
+    "w": "wellbeing",
+    "cn": "幸福感；身心健康（名词）"
+   },
+   {
+    "w": "on the decline",
+    "cn": "在下降中；呈下降趋势（介词短语）"
+   },
+   {
+    "w": "avert",
+    "cn": "避免；防止（动词）"
+   },
+   {
+    "w": "extended",
+    "cn": "延长的；长时间的（形容词）"
+   },
+   {
+    "w": "economic inequality",
+    "cn": "经济不平等（名词短语）"
+   },
+   {
+    "w": "go downward",
+    "cn": "下降；走低（动词短语）"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "同义转述（名词/动词）"
+   },
+   {
+    "w": "co-researchers",
+    "cn": "合作研究者（名词）"
+   }
+  ]
+ }
+}

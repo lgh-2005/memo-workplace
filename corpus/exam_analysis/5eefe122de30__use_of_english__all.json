@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "5eefe122de30__use_of_english__all",
+ "examId": "5eefe122de30",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2012 年考研英语真题",
+ "year": 2012,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:26:42.164Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 83447,
+ "usage": {
+  "prompt_tokens": 1734,
+  "completion_tokens": 5202,
+  "total_tokens": 6936,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1734,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5202,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1734,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "最高法院司法伦理与法律独立性",
+  "gist": "文章围绕美国最高法院大法官的伦理争议展开，指出法官参与政治活动削弱了法院的公正形象，强调法律与政治虽密切相连但制度设计旨在将两者分开，最终呼吁大法官应接受行为准则约束以维护法院的合法性与公信力。",
+  "difficulty": "中等",
+  "translation": "最高法院大法官的伦理判断近来已成为一个重要议题。当大法官们表现得像政客时，法院就无法维持其作为法治守护者的合法性。然而在若干事例中，大法官们的行为方式削弱了法院独立且公正的声誉。\n\n例如，大法官安东宁·斯卡利亚出席了政治活动。这类行为使法院的裁决不太可能被接受为公正的判决。问题的一部分在于，大法官们不受任何伦理准则的约束。至少，法院应当使自己受制于适用于联邦司法系统其余部分的行为准则。\n\n这一案例及其他类似案例提出了一个问题：法院与政治之间是否还存在一条界线。\n\n宪法的制定者将法律设想为拥有独立于政治的权威。他们赋予大法官终身职位，这样大法官们就可以自由地令当权者不快，而且无需培植政治支持。我们的法律制度旨在将法律与政治分开，恰恰因为两者联系如此紧密。\n\n宪法法律具有政治性，因为它源于根植于自由和财产等基本社会概念的选择。当法院处理社会政策决定时，它所塑造的法律不可避免地具有政治性——这就是为什么沿意识形态阵营分裂的裁决很容易被斥为不公正。\n\n大法官们必须通过让自己对行为准则负责来解决人们对法院合法性的质疑。这将使裁决更有可能被视为独立于政治，并因此作为法律更具说服力。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "B",
+    "correct": "maintain",
+    "why": "此处语境为\"法院无法___其合法性\"，maintain its legitimacy（维持合法性）是固定搭配，语义上与后文\"when justices behave like politicians\"构成逻辑因果：法官行为不当就会损害法院合法性。",
+    "traps": "A) emphasize 意为\"强调\"，合法性不是需要强调而是需要维持的；C) modify 意为\"修改\"，与 legitimacy 不搭配；D) recognize 意为\"承认\"，语义不通。",
+    "tip": "注意 maintain + legitimacy 的高频搭配。"
+   },
+   {
+    "number": 2,
+    "answer": "A",
+    "correct": "when",
+    "why": "上下文逻辑为：大法官表现得像政客时，法院就无法维持合法性。when 引导时间/条件状语从句，表达\"当……时\"的语境条件关系，符合语义。",
+    "traps": "B) lest 意为\"以免\"，语义方向不对；C) before 表\"在……之前\"，逻辑不通；D) unless 意为\"除非\"，表双重否定会使句意变成法官不像政客时也无法维持合法性，与文意相反。",
+    "tip": "辨析条件/时间连词在语境中的逻辑方向。"
+   },
+   {
+    "number": 3,
+    "answer": "B",
+    "correct": "weakened",
+    "why": "前文说法院无法维持合法性，此处说大法官的行为___法院的声誉，语义承接需要负面含义。weakened（削弱）完美衔接上下文的批评基调。",
+    "traps": "A) restored 意为\"恢复\"，为正面含义，与 yet 转折后的批评语境矛盾；C) established 意为\"建立\"，也是正面含义；D) eliminated 意为\"消除\"，程度过重且不合语境。",
+    "tip": "根据段落整体批评语气选择负面动词。"
+   },
+   {
+    "number": 4,
+    "answer": "D",
+    "correct": "accepted",
+    "why": "大法官参加政治活动使法院裁决不太可能被___为公正判决。accepted as 意为\"被接受为/被认可为\"，表达公众对裁决公正性的认可，语义通顺。",
+    "traps": "A) challenged 意为\"质疑\"，搭配 as impartial judgments 语义矛盾；B) compromised 意为\"妥协/损害\"，不与 as 搭配使用；C) suspected 意为\"怀疑\"，搭配 as impartial judgments 语义倒置。",
+    "tip": "be accepted as 为常见搭配，意为\"被认可为\"。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "bound",
+    "why": "此处讲大法官不受伦理准则___。bound by 是固定搭配，意为\"受……约束\"，下文也呼应了要让法院受制于行为准则。",
+    "traps": "A) advanced 意为\"推进\"，与 by an ethics code 不搭配；B) caught 意为\"抓住\"，语义不当；D) founded 意为\"建立\"，不与 by an ethics code 构成合理搭配。",
+    "tip": "bound by 意为\"受……约束\"，是法律语境高频搭配。"
+   },
+   {
+    "number": 6,
+    "answer": "B",
+    "correct": "subject",
+    "why": "make itself subject to 意为\"使自己受制于\"，与前文 bound by 呼应，表达法院应当主动接受行为准则约束。subject to 是核心固定搭配。",
+    "traps": "A) resistant to 意为\"抵抗\"，与文意呼吁接受约束完全相反；C) immune to 意为\"免疫于/不受影响\"，也与文意相反；D) prone to 意为\"易于/倾向于\"，搭配行为准则语义不当。",
+    "tip": "subject to 意为\"受……管辖/约束\"，区分 immune to 和 resistant to。"
+   },
+   {
+    "number": 7,
+    "answer": "D",
+    "correct": "applies",
+    "why": "the code of conduct that ___to the rest of the federal judiciary，意为\"适用于联邦司法系统其余部分的行为准则\"。apply to 意为\"适用于\"，语义和搭配均正确。",
+    "traps": "A) resort to 意为\"诉诸于\"，主语不能是 code；B) stick to 意为\"坚持\"，主语应为人；C) lead to 意为\"导致\"，语义不合。",
+    "tip": "apply to 表\"适用于\"，注意主语为规则/法律时的用法。"
+   },
+   {
+    "number": 8,
+    "answer": "B",
+    "correct": "raise",
+    "why": "raise the question 意为\"提出问题\"，是固定搭配。本段总结前文案例引出核心议题：法院与政治之间是否还有界限。",
+    "traps": "A) evade 意为\"回避\"，与提出问题的语义相反；C) deny 意为\"否认\"，不与 the question of whether 搭配；D) settle 意为\"解决\"，文章此处是提出而非解决问题。",
+    "tip": "raise the question 固定搭配，意为\"提出问题\"。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "line",
+    "why": "a line between A and B 意为\"A与B之间的界线\"，语义为法院与政治之间是否仍存在明确的分界。呼应全文法律独立性的主题。",
+    "traps": "B) barrier 意为\"屏障\"，过于强调阻隔，不符合法院与政治关系的讨论；C) similarity 意为\"相似性\"，语义方向完全不对；D) conflict 意为\"冲突\"，文章讨论的是界限而非冲突。",
+    "tip": "a line between 表\"界线/分界\"，注意与 barrier 的语义区别。"
+   },
+   {
+    "number": 10,
+    "answer": "B",
+    "correct": "as",
+    "why": "envision A as B 意为\"将A设想为B\"。宪法制定者将法律设想为拥有独立于政治的权威，as 引导补语成分。",
+    "traps": "A) by 不构成 envision 的合理搭配；C) through 表\"通过\"，不合句法结构；D) towards 表\"朝向\"，语义不通。",
+    "tip": "envision … as … 固定搭配，意为\"把……设想为……\"。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "so",
+    "why": "前句说赋予大法官终身职位，后句说他们就可以自由行事。so 引导目的/结果状语从句，表\"这样……就能\"，逻辑清晰。",
+    "traps": "B) since 表原因，因果方向反了：终身职位是原因而非结果；C) provided 意为\"假如\"，逻辑关系不对；D) though 表让步，与语境目的关系不符。",
+    "tip": "so (that) 在此表目的，连接手段与目的。"
+   },
+   {
+    "number": 12,
+    "answer": "C",
+    "correct": "upset",
+    "why": "终身职位使大法官自由地___当权者。upset those in power 意为\"使当权者不快/冒犯当权者\"，体现司法独立不受权力影响。",
+    "traps": "A) serve 意为\"服务\"，与司法独立精神相悖；B) satisfy 意为\"满足\"，同样与独立性矛盾；D) replace 意为\"取代\"，大法官不是要取代当权者。",
+    "tip": "upset 此处意为\"使不快/冒犯\"，体现司法独立。"
+   },
+   {
+    "number": 13,
+    "answer": "C",
+    "correct": "cultivate",
+    "why": "have no need to cultivate political support 意为\"无需培植政治支持\"。cultivate 含有长期经营、刻意培养之意，与 political support 搭配恰当。",
+    "traps": "A) confirm 意为\"确认\"，不与 political support 搭配；B) express 意为\"表达\"，语义不当；D) offer 意为\"提供\"，方向不对，应是大法官寻求支持而非提供支持。",
+    "tip": "cultivate support 意为\"培植/争取支持\"，是政治语境常见搭配。"
+   },
+   {
+    "number": 14,
+    "answer": "D",
+    "correct": "tied",
+    "why": "closely tied 意为\"紧密相连\"。句意：法律制度将法律与政治分开，恰恰因为两者联系如此紧密。构成逻辑上的精妙悖论。",
+    "traps": "A) guarded 意为\"被守卫\"，搭配 closely 语义不通；B) followed 意为\"被跟随\"，不合语境；C) studied 意为\"被研究\"，与上下文逻辑无关。",
+    "tip": "closely tied 固定搭配，意为\"紧密联系\"。"
+   },
+   {
+    "number": 15,
+    "answer": "A",
+    "correct": "concepts",
+    "why": "根植于基本社会___如自由和财产。liberty 和 property 属于抽象的社会概念，concepts 最为准确。",
+    "traps": "B) theories 意为\"理论\"，自由和财产是概念而非理论体系；C) divisions 意为\"分裂/分歧\"，语义完全不符；D) conventions 意为\"惯例/公约\"，自由和财产不属于惯例。",
+    "tip": "concepts 意为\"概念\"，注意与 theories 的语义区分。"
+   },
+   {
+    "number": 16,
+    "answer": "C",
+    "correct": "shapes",
+    "why": "the law it shapes 意为\"它所塑造的法律\"。法院在处理社会政策时会塑造法律的内容和走向，shapes 体现法院的主动作用。",
+    "traps": "A) excludes 意为\"排除\"，法院不排除法律；B) questions 意为\"质疑\"，法院是应用法律而非质疑法律；D) controls 意为\"控制\"，语义过于绝对且不准确。",
+    "tip": "shape the law 意为\"塑造法律\"，体现法院能动作用。"
+   },
+   {
+    "number": 17,
+    "answer": "A",
+    "correct": "dismissed",
+    "why": "dismissed as unjust 意为\"被斥为不公正\"。沿意识形态分裂的裁决容易被公众驳斥为不公正的，dismissed as 是固定搭配。",
+    "traps": "B) released 意为\"释放/发布\"，不与 as unjust 搭配；C) ranked 意为\"排名\"，不与 as unjust 搭配；D) distorted 意为\"扭曲\"，不用 distorted as 结构。",
+    "tip": "be dismissed as 意为\"被斥为/被驳斥为\"。"
+   },
+   {
+    "number": 18,
+    "answer": "C",
+    "correct": "address",
+    "why": "address doubts 意为\"解决/处理质疑\"。大法官必须通过接受准则约束来处理公众对法院合法性的疑虑，address 表\"着手处理\"。",
+    "traps": "A) suppress 意为\"压制\"，含强行压制之意，方式不当；B) exploit 意为\"利用\"，利用质疑语义矛盾；D) ignore 意为\"忽视\"，与文章呼吁积极应对的立场相反。",
+    "tip": "address 作动词意为\"处理/应对\"，区别于\"地址\"含义。"
+   },
+   {
+    "number": 19,
+    "answer": "D",
+    "correct": "accountable",
+    "why": "accountable to 意为\"对……负责/向……问责\"。与第6题 subject to 呼应但更进一步，强调问责制度。全文首尾呼应的关键词。",
+    "traps": "A) accessible to 意为\"可接近的\"，语义偏差；B) amiable 意为\"和蔼可亲的\"，不与 to the code 搭配；C) agreeable to 意为\"令人愉快的/同意\"，语义不准确。",
+    "tip": "accountable to 意为\"对……负责\"，首尾呼应是完形填空常见手法。"
+   },
+   {
+    "number": 20,
+    "answer": "D",
+    "correct": "as a result",
+    "why": "前句说裁决被视为独立于政治，后句说作为法律更具说服力。as a result 表因果递进关系：因为独立于政治，所以更具说服力。",
+    "traps": "A) by all means 意为\"无论如何/务必\"，不表因果；B) at all costs 意为\"不惜一切代价\"，语义过于极端；C) in a word 意为\"总之\"，为总结性连接词，此处需要因果关系。",
+    "tip": "as a result 表因果关系，注意与 in a word 等总结性词语区分。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "legitimacy",
+    "cn": "n. 合法性，正当性"
+   },
+   {
+    "w": "impartial",
+    "cn": "adj. 公正的，不偏不倚的"
+   },
+   {
+    "w": "judiciary",
+    "cn": "n. 司法部门，司法系统"
+   },
+   {
+    "w": "framers",
+    "cn": "n. 制定者，构建者"
+   },
+   {
+    "w": "envisioned",
+    "cn": "v. 设想，展望（envision的过去式）"
+   },
+   {
+    "w": "cultivate",
+    "cn": "v. 培养，培植"
+   },
+   {
+    "w": "inescapably",
+    "cn": "adv. 不可避免地"
+   },
+   {
+    "w": "ideological",
+    "cn": "adj. 意识形态的"
+   },
+   {
+    "w": "accountable",
+    "cn": "adj. 负有责任的，应作解释的"
+   },
+   {
+    "w": "rulings",
+    "cn": "n. 裁决，裁定（ruling的复数）"
+   },
+   {
+    "w": "rooted in",
+    "cn": "短语 根植于，源于"
+   },
+   {
+    "w": "code of conduct",
+    "cn": "短语 行为准则"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Yet",
+    "role": "转折连接，从法院应有地位转向大法官的实际不当行为"
+   },
+   {
+    "w": "precisely because",
+    "role": "强因果，解释法律与政治需分开恰恰因为二者紧密相连"
+   },
+   {
+    "w": "which is why",
+    "role": "因果衔接，说明政治性裁决容易被斥为不公正的原因"
+   },
+   {
+    "w": "so",
+    "role": "目的连接（第11题），说明终身制的目的是保障司法独立"
+   },
+   {
+    "w": "as a result",
+    "role": "因果递进（第20题），推出独立于政治后更具法律说服力"
+   }
+  ]
+ }
+}

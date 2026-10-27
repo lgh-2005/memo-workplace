@@ -1,0 +1,240 @@
+{
+ "schemaVersion": 1,
+ "id": "c620e17f5aba__long_match__all",
+ "examId": "c620e17f5aba",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2019 年 6 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:26:00.690Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32624,
+ "usage": {
+  "prompt_tokens": 934,
+  "completion_tokens": 1865,
+  "total_tokens": 2799,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 934,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1865,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 934,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "企业产品回收与环保责任",
+  "strategy": [
+   "先通读10条陈述句，归纳主题关键词（回收、环保、品牌、寿命等）",
+   "在每条陈述句中圈出专有名词、数据、独特概念作为定位线索",
+   "注意同义替换：prolonged lifespan↔延长使用寿命、customer loyalty↔品牌忠诚度等",
+   "优先匹配含具体细节（如折扣、燃料、金属）的题目，再处理概括性题目",
+   "一个段落通常只对应一题，已确认的段落可排除，缩小后续搜索范围"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "F",
+    "cn": "一些公司认为延长产品使用寿命对环境和消费者都有利。",
+    "keywords": [
+     "prolonged lifespan",
+     "benefits",
+     "environment",
+     "customers"
+    ],
+    "paraphrase": "陈述句中 prolonged lifespan 可能对应原文 extend product life / make products last longer；benefits both... 可能对应 good for... as well as / advantageous to both...",
+    "tip": "定位\"延长寿命+双重受益\"这一组合概念，F段应同时提及环境与顾客两个受益方。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "cn": "一项调查显示，如今的购物者在决定买什么时越来越关注节能和环保。",
+    "keywords": [
+     "survey",
+     "shoppers",
+     "energy conservation",
+     "environmental protection"
+    ],
+    "paraphrase": "survey 可能对应 study/research/poll；energy conservation 可能对应 saving energy；getting more concerned 可能对应 increasingly aware/care more about。",
+    "tip": "定位 survey/study 等调查类信号词，C段应包含消费者购买决策与环保意识的调查数据。"
+   },
+   {
+    "number": 38,
+    "answer": "M",
+    "cn": "公司可以通过营造积极的环保意识文化来建立客户忠诚度。",
+    "keywords": [
+     "customer loyalty",
+     "positive culture",
+     "environmental awareness"
+    ],
+    "paraphrase": "customer loyalty 可能对应 loyal customers / brand allegiance；positive culture of environmental awareness 可能对应 fostering eco-conscious values / green corporate culture。",
+    "tip": "定位 loyalty 与 culture 两个核心词，M段应将环保文化与客户忠诚度建立因果关系。"
+   },
+   {
+    "number": 39,
+    "answer": "E",
+    "cn": "当公司推出环保项目时，其品牌声誉会得到提升。",
+    "keywords": [
+     "environmental programs",
+     "brand reputation",
+     "enhanced"
+    ],
+    "paraphrase": "launch environmental programs 可能对应 introduce/initiate green initiatives；brand reputation enhanced 可能对应 improve/boost brand image。",
+    "tip": "聚焦 brand reputation 与环保项目的因果逻辑，E段应阐述环保举措对品牌形象的正面影响。"
+   },
+   {
+    "number": 40,
+    "answer": "G",
+    "cn": "一家跨国公司为带回旧鞋以用作燃料的顾客提供折扣。",
+    "keywords": [
+     "multinational company",
+     "discounts",
+     "old footwear",
+     "fuel"
+    ],
+    "paraphrase": "multinational company 可能对应具体公司名（如Nike等）；old footwear 可能对应 used/worn-out shoes；used as fuel 可能对应 burned for energy / converted into fuel。",
+    "tip": "footwear 和 fuel 是极强的定位词，G段应有具体企业回收旧鞋用作燃料并给予折扣的描述。"
+   },
+   {
+    "number": 41,
+    "answer": "N",
+    "cn": "回收废旧产品可以帮助制造商降低生产成本。",
+    "keywords": [
+     "recycling",
+     "manufacturers",
+     "reduce production costs"
+    ],
+    "paraphrase": "recycling used products 可能对应 reusing/reprocessing old products；reduce production costs 可能对应 lower manufacturing expenses / cut costs。",
+    "tip": "锁定 production costs 与 recycling 的因果关系，N段应说明回收如何带来成本节约。"
+   },
+   {
+    "number": 42,
+    "answer": "H",
+    "cn": "电子产品含有可以回收的贵重金属。",
+    "keywords": [
+     "electronic products",
+     "valuable metals",
+     "recovered"
+    ],
+    "paraphrase": "electronic products 可能对应 e-waste / electronic devices；valuable metals 可能对应 precious metals / rare metals；recovered 可能对应 extracted / reclaimed。",
+    "tip": "valuable metals 和 electronic products 是强定位词，H段应提及电子废弃物中贵金属的回收价值。"
+   },
+   {
+    "number": 43,
+    "answer": "B",
+    "cn": "人们似乎普遍认为公司没有动力去延长产品的使用寿命。",
+    "keywords": [
+     "commonly believed",
+     "not motivated",
+     "prolong",
+     "lifespan"
+    ],
+    "paraphrase": "commonly believed 可能对应 widely assumed / conventional wisdom；not motivated 可能对应 have no incentive / lack motivation；prolong lifespan 可能对应 extend durability。",
+    "tip": "关注 B段中表达\"普遍看法/偏见\"的语气词，以及企业缺乏延长产品寿命动机的论述。"
+   },
+   {
+    "number": 44,
+    "answer": "J",
+    "cn": "建议公司在产品回收方面相互合作。",
+    "keywords": [
+     "partner",
+     "each other",
+     "product recycling"
+    ],
+    "paraphrase": "partner with each other 可能对应 collaborate / form partnerships / work together；advisable 可能对应 recommended / should / it makes sense to。",
+    "tip": "定位 partner/collaborate 等合作类词汇，J段应论述企业间在回收领域结成伙伴关系的好处或建议。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "cn": "一些企业已经开始意识到让消费者承担全部回收责任可能并不有效。",
+    "keywords": [
+     "begun to realize",
+     "consumers",
+     "full responsibility",
+     "recycling"
+    ],
+    "paraphrase": "let consumers take full responsibility 可能对应 leave recycling entirely to consumers / place the burden on customers；not effective 可能对应 inefficient / does not work well。",
+    "tip": "聚焦 full responsibility 和 consumers 的搭配，D段应讨论企业对消费者自主回收效果的反思。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "prolonged",
+    "cn": "adj. 延长的，持久的"
+   },
+   {
+    "w": "lifespan",
+    "cn": "n. 使用寿命，生命周期"
+   },
+   {
+    "w": "conservation",
+    "cn": "n. 节约，保护（尤指自然资源）"
+   },
+   {
+    "w": "loyalty",
+    "cn": "n. 忠诚，忠实"
+   },
+   {
+    "w": "multinational",
+    "cn": "adj. 跨国的；n. 跨国公司"
+   },
+   {
+    "w": "footwear",
+    "cn": "n. 鞋类（总称）"
+   },
+   {
+    "w": "recovered",
+    "cn": "v. 回收，收回（recover的过去分词）"
+   },
+   {
+    "w": "advisable",
+    "cn": "adj. 明智的，可取的"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 释义，改述"
+   }
+  ]
+ }
+}

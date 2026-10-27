@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "b26add36f5e1__reading__2",
+ "examId": "b26add36f5e1",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 12 月英语六级真题（第 2 套）",
+ "year": 2018,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:20:54.808Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60952,
+ "usage": {
+  "prompt_tokens": 1826,
+  "completion_tokens": 3565,
+  "total_tokens": 5391,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1826,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3565,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1826,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "机器人护士应对美国护理人员短缺",
+  "gist": "文章指出美国注册护士长期短缺，提出用机器人来缓解这一问题。以日本为先例，介绍了多种医疗机器人：运送药物的Terapio、远程陪伴的Telepresence机器人、外形似熊的RIBA以及高度仿真的Actroid F，最后强调机器人护士是协助而非取代人类护士。",
+  "structure": [
+   "第1-2段：提出问题（护士短缺）并给出解决方案（机器人）",
+   "第3-4段：介绍辅助类和远程陪伴类机器人及功能",
+   "第5-6段：介绍外形各异的护理机器人（Robear与Actroid F）",
+   "第7段：总结——机器人护士是协作而非替代"
+  ],
+  "difficulty": "中等",
+  "translation": "多年来，美国一直面临注册护士短缺的问题。美国劳工统计局预测，到2022年护士数量将增长19%，但需求增速将超过供给，届时将有超过一百万个护理岗位空缺。\n\n那解决方案是什么呢？机器人。\n\n在这一趋势方面，日本走在了前列。丰桥技术科学大学研发了Terapio——一种机器人医疗推车，能够进行医院巡房、递送药物及其他物品，并调取病历记录。它跟随特定的个人（如医生或护士），后者可以用它来记录和访问患者数据。这类机器人很可能是最早在医院中投入使用的机器人之一，因为它与患者的直接接触相当少。\n\n具备社交互动能力的机器人有助于缓解孤独感以及改善认知功能，但机器人本身不必直接参与互动——它可以充当人与人之间沟通的中介。远程临场机器人如MantaroBot、Vgo和Giraff可以通过电脑、智能手机或平板电脑进行控制，使家人或医生能够远程监护患者或与他们进行视频通话，通常通过机器人\"面部\"位置的屏幕实现。如果你无法亲自去养老院看望祖母，你可以使用远程临场机器人来陪伴她。2016年的一项研究发现，用户对Giraff机器人增强沟通、减少孤独感的能力持有\"一贯积极的态度\"。\n\n机器人的外观影响着它与人类成功互动的能力，这也是理化学研究所与TRI合作的人机交互机器人研究中心决定开发一款外形酷似巨型泰迪熊的机器人护士的原因。RIBA（交互式身体辅助机器人），又被称为\"Robear\"，可以用它强壮的手臂帮助患者上下轮椅和床铺。\n\n在不那么可爱、更令人惊异的一面，还有Actroid F，它如此逼真，以至于一些患者可能分不清真假。这款对话型机器人伙伴的眼中装有摄像头，可以追踪患者并在互动中运用恰当的面部表情和肢体语言。在一个月的医院试用期间，研究人员询问了70名患者与机器人相处的感受，\"只有三四个人表示不喜欢它在身边\"。\n\n需要指出的是，机器人护士不会决定治疗方案或进行诊断（尽管机器人医生和外科医生可能为时不远）。相反，它们执行常规的、繁重的任务，让护士腾出时间去照顾有紧急需求的患者。在这个行业中，机器人的融入似乎会带来协作，而非替代。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Japan is ahead of the curve when it comes to this trend.",
+    "why": "原文第三段首句明确指出\"Japan is ahead of the curve when it comes to this trend\"，即日本在机器人护理这一趋势上走在前列。B选项\"It takes the lead in providing robotic care\"是对原文的准确同义改写，ahead of the curve（走在前列）对应takes the lead（领先），this trend（机器人护理趋势）对应robotic care。",
+    "traps": "A项\"提供最好的老年药物\"属于无中生有，文章未提及日本在药物方面的优势；C项\"为注册护士提供再培训\"原文完全没有涉及；D项\"引领未来机器人技术的潮流\"过度推断，原文说的是日本在机器人护理应用方面领先，而非在整个机器人技术领域设定趋势。",
+    "tip": "注意区分\"某领域领先\"和\"整体技术领先\"的范围差异。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "This type of robot will likely be one of the first to be implemented in hospitals because it has fairly minimal patient contact.",
+    "why": "原文第三段末句指出Terapio\"has fairly minimal patient contact\"（与患者的直接接触相当少），C选项\"It does not have much direct contact with patients\"是对该句的准确同义转述，fairly minimal对应not much，完全吻合。",
+    "traps": "A项\"已在许多日本医院投入使用\"与原文矛盾，原文用的是\"will likely be one of the first to be implemented\"，说明尚未大规模使用；B项\"为患者提供个性化护理\"是对\"follows a specific individual\"的曲解，原文说的是跟随特定医护人员而非为患者提供个性化服务；D项\"没有革新日本的医疗服务\"属于无中生有，文章未对此作出评价。",
+    "tip": "注意时态和情态动词，will likely表示尚未实现。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Telepresence robots such as MantaroBot, Vgo, and Giraff can be controlled through a computer, smartphone, or tablet, allowing family members or doctors to remotely monitor patients or Skype them",
+    "why": "原文第四段明确说明远程临场机器人可通过电子设备控制，让家人或医生远程监护患者或与之视频通话，同时机器人\"can serve as an intermediary for human communication\"（充当人际沟通的中介）。D选项\"促进患者与医生或家人之间的沟通\"正是对这一功能的概括。",
+    "traps": "A项\"直接与患者互动以防止孤独\"与原文矛盾，原文明确说\"the robot itself doesn't have to engage directly—it can serve as an intermediary\"，机器人不必直接互动；B项\"满足患者恢复认知能力的需求\"虽然原文提到认知功能，但这不是远程临场机器人的设计目的；C项\"全天候密切监控患者的活动和状况\"中around the clock属于无中生有，原文无此表述。",
+    "tip": "注意区分机器人\"直接互动\"与\"充当中介\"的区别。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "This conversational robot companion has cameras in its eyes, which allow it to track patients and use appropriate facial expressions and body language in its interactions.",
+    "why": "原文第六段描述Actroid F\"so human-like that some patients may not know the difference\"（像人到患者可能分不清），且能追踪患者、使用恰当的面部表情和肢体语言进行互动。A选项\"像人类伙伴一样与患者互动\"准确概括了其高度仿真、像真人一样互动的特点。",
+    "traps": "B项\"在患者不知情的情况下安静运作\"曲解了原文，原文说的是患者可能分不清它是不是真人，并非说它悄无声息地工作；C项\"喜欢与患者进行日常对话\"中的\"喜欢\"属于拟人化的过度推断，机器人不具有主观喜好；D项\"使用肢体语言比用语言更有效\"属于无中生有，原文只说它会使用肢体语言，并未将其与语言效果做比较。",
+    "tip": "高度仿真的核心特征是\"像人一样\"，抓住human-like这个关键词。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Instead, they perform routine and laborious tasks, freeing nurses up to attend to patients with immediate needs. This is one industry where it seems the integration of robots will lead to collaboration, not replacement.",
+    "why": "末段最后两句明确指出机器人护士执行常规繁重任务，让护士腾出精力照顾急需患者，并总结说\"机器人的融入将带来协作而非替代\"。由此可推断机器人不会使护士变得多余，C选项\"Robots will not make nurses redundant\"与此完全吻合。",
+    "traps": "A项\"医生和外科医生很快将被裁员\"过度推断，原文只是用括号提到robot doctors and surgeons may not be far off，并未说人类医生会被取代；B项\"机器人产业即将腾飞\"偏离末段重点，末段讨论的是人机协作关系而非产业发展前景；D项\"协作不会取代竞争\"与原文表意相反，原文说的是协作取代替代（collaboration, not replacement），而非讨论协作与竞争的关系。",
+    "tip": "末段常为总结段，抓住关键对比词collaboration vs. replacement。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "ahead of the curve",
+    "cn": "走在前列，领先于潮流（短语）"
+   },
+   {
+    "w": "retrieve",
+    "cn": "v. 检索，取回"
+   },
+   {
+    "w": "intermediary",
+    "cn": "n. 中介，媒介"
+   },
+   {
+    "w": "telepresence",
+    "cn": "n. 远程临场，远程呈现"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的"
+   },
+   {
+    "w": "redundant",
+    "cn": "adj. 多余的，被裁减的"
+   },
+   {
+    "w": "laborious",
+    "cn": "adj. 费力的，繁重的"
+   },
+   {
+    "w": "diagnoses",
+    "cn": "n. 诊断（diagnosis的复数）"
+   },
+   {
+    "w": "integration",
+    "cn": "n. 整合，融合"
+   },
+   {
+    "w": "implement",
+    "cn": "v. 实施，执行，投入使用"
+   },
+   {
+    "w": "facilitate",
+    "cn": "v. 促进，使便利"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Telepresence robots such as MantaroBot, Vgo, and Giraff can be controlled through a computer, smartphone, or tablet, allowing family members or doctors to remotely monitor patients or Skype them, often via a screen where the robot's 'face' would be.",
+    "cn": "远程临场机器人如MantaroBot、Vgo和Giraff可以通过电脑、智能手机或平板电脑进行控制，使家人或医生能够远程监护患者或与他们进行视频通话，通常通过机器人\"面部\"位置的屏幕来实现。",
+    "note": "主句为robots can be controlled，现在分词allowing引导结果状语从句，via a screen引导方式状语，where引导定语从句修饰screen。"
+   },
+   {
+    "en": "This conversational robot companion has cameras in its eyes, which allow it to track patients and use appropriate facial expressions and body language in its interactions.",
+    "cn": "这款对话型机器人伙伴的眼中装有摄像头，使其能够追踪患者并在互动中运用恰当的面部表情和肢体语言。",
+    "note": "主句为robot has cameras，which引导非限制性定语从句修饰cameras，从句中track和use为并列谓语。"
+   },
+   {
+    "en": "The Bureau of Labor Statistics projects that while the number of nurses will increase by 19 percent by 2022, demand will grow faster than supply, and that there will be over one million unfilled nursing jobs by then.",
+    "cn": "美国劳工统计局预测，尽管到2022年护士数量将增长19%，但需求增速将超过供给，届时将有超过一百万个护理岗位空缺。",
+    "note": "projects后接两个并列that宾语从句；第一个that从句中while引导让步状语从句，主句为demand will grow；第二个that从句为there be结构。"
+   }
+  ]
+ }
+}

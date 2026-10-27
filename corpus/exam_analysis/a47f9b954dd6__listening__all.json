@@ -1,0 +1,259 @@
+{
+ "schemaVersion": 1,
+ "id": "a47f9b954dd6__listening__all",
+ "examId": "a47f9b954dd6",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2023 年 3 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:48:42.436Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52945,
+ "usage": {
+  "prompt_tokens": 2166,
+  "completion_tokens": 2691,
+  "total_tokens": 4857,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2166,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2691,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2166,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有解析均基于选项文本的语言特征推断与通用应试技巧，不涉及对录音内容的任何编造。",
+  "overview": "本场听力共 25 题，分 7 段：第1段（1-4题）选项涉及饮食习惯与健康；第2段（5-8题）围绕职场态度与管理决策；第3段（9-11题）讨论运动员形象与社会责任；第4段（12-15题）话题为婚礼花费与预算；第5段（16-18题）涉及气候/温度与人格特质的关系；第6段（19-21题）关注老年人孤独与健康；第7段（22-25题）涉及职业转型与旅行创业。整体涵盖生活、职场、社会科学等常见六级听力话题。",
+  "strategy": [
+   "预读选项时圈出各题关键名词与形容词，快速判断该段话题方向",
+   "场景题注意选项中的地点名词（restaurant/kitchen/store），听到相关环境音或服务用语即可锁定",
+   "态度/观点题关注选项中的褒贬形容词（positive/negative/weak/arrogant），听语气与转折词",
+   "因果题和建议题重点听 because、so、should、suggest、recommend 等信号词",
+   "当两个选项语义相近或互为矛盾时，正确答案往往就在这对选项中",
+   "长对话中注意首尾处和转折处，这些位置最容易设置考点"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "饮食习惯、素食主义与健康状况",
+    "optionSignals": "Q1 四个选项均为地点短语 In a …，典型的场景判断题；Q2 选项描述女性饮食偏好，partial vegetarian 为核心概念；Q3 为动名词短语，问最困难/最具挑战之事；Q4 描述两人共同特征，涉及健康与饮食。",
+    "tips": [
+     "Q1 听对话中出现的服务用语（如 order/menu/waiter）区分 restaurant 与其他场所",
+     "Q2 注意 partial vegetarian（半素食者）与选项 A occasionally 的区分：前者强调身份，后者强调频率",
+     "Q4 两人共同点题需听双方各自的陈述后综合判断，不要只听一方就选"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "职场中的态度问题与管理者决策方式",
+    "optionSignals": "Q5 四选项均描述男性的负面评价，attitude problem 是关键词；Q6 涉及管理者行为，manipulative language 为强干扰信号；Q7 对某种品质进行价值判断（virtue/sin），形成对立；Q8 关注管理者真实目的（power/prestige vs. rational decisions）。",
+    "tips": [
+     "Q5 四个选项都是负面表述，需听细节区分具体指控类型",
+     "Q7 选项形成正反对立（virtue vs. sin），听到对该品质的否定评价即可定位",
+     "Q8 preserving power and prestige 属于揭示深层动机的选项，六级常设此类'隐含目的'考点"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "运动员的社会角色与公众形象管理",
+    "optionSignals": "Q9 描述运动员的成就特征，accomplish feats 为核心表达；Q10 涉及运动员对儿童的影响方式，positive role models 为关键短语；Q11 为动名词短语，讨论如何处理运动员的公私生活边界。",
+    "tips": [
+     "Q10 四选项动作差异大（participate/work/try to be/serve as），听动词即可快速排除",
+     "Q11 separating professional life from personal life 是长选项且信息量大，六级中此类具体且完整的选项常为正确答案"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "婚礼花费、预算控制与态度分歧",
+    "optionSignals": "Q12 讨论婚礼的总体特征，cost more than expected 体现超支主题；Q13 描述某场婚礼的具体情况（取消/花费/人数/地点）；Q14 为动词原形短语，问建议或决定；Q15 描述某人对建议的态度反应，从 romantic 到 rejected flatly 跨度大。",
+    "tips": [
+     "Q13 四选项涉及完全不同的事实细节，属于'听到什么选什么'的直接信息题，注意不要被数字干扰",
+     "Q15 态度题注意说话者的语气词和否定表达，rejected flatly 的 flatly 表示'断然地'",
+     "Q14 keep to her budget 中 keep to 意为'遵守/不超出'，是核心考查短语"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "气温/气候对人格特质的影响及研究局限",
+    "optionSignals": "Q16 四选项结构平行（It can/does + 影响类动词），考查气候的具体影响对象（mood/wellbeing/emotion/personality）；Q17 涉及宜人气温的积极效果；Q18 为研究结论或局限，fairly weak 表示关联度不高。",
+    "tips": [
+     "Q16 mood/emotion/personality/wellbeing 四个近义但不同的概念需仔细辨别，personality 指长期人格特质",
+     "Q18 选项 A 含 fairly weak 这类表示'有限、不强'的限定词，符合学术文章常见的谨慎结论风格，六级偏爱此类中庸选项"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "老年人孤独感与健康风险及应对方式",
+    "optionSignals": "Q19 四选项均为陈述句，涉及孤独与健康的关联、老年群体风险；Q20 讨论孤独的可治疗性或可逆性，reversible 为关键词；Q21 为名词短语，问解决孤独的关键因素，meaningful social contact 是核心。",
+    "tips": [
+     "Q19 注意 in particular 这一限定语，说明答案强调孤独对老年人'尤其'有害",
+     "Q20 reversible（可逆的）是六级高频学术词汇，暗示孤独可以被干预和改善",
+     "Q21 meaningful 一词强调社交的'质量'而非'数量'，区别于简单的 living with 或 meeting expectations"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "女性职业转型：从金融到旅行创业",
+    "optionSignals": "Q22 描述女性过去的职业背景（finance/writing/travel/investment）；Q23 为动词原形短语，问她决定做什么；Q24 涉及进入行业的策略，create something unique 为核心；Q25 讨论创业早期的注意事项，avoiding too much advertising 为关键。",
+    "tips": [
+     "Q22 选项涵盖不同职业领域，属于事实识别题，注意听过去时态的描述",
+     "Q24 create something unique 表达差异化竞争策略，这在六级商业话题中极为常见",
+     "Q25 avoiding 和 refraining 都表示'避免'，需听清具体避免的是什么内容来区分"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "partial vegetarian",
+    "cn": "半素食者，不完全素食者"
+   },
+   {
+    "w": "manipulative",
+    "cn": "操纵性的，善于控制他人的"
+   },
+   {
+    "w": "prestige",
+    "cn": "声望，威信"
+   },
+   {
+    "w": "arrogant",
+    "cn": "傲慢的，自大的"
+   },
+   {
+    "w": "accomplish feats",
+    "cn": "完成壮举/非凡成就"
+   },
+   {
+    "w": "role model",
+    "cn": "榜样，行为楷模"
+   },
+   {
+    "w": "keep to one's budget",
+    "cn": "遵守预算，不超支"
+   },
+   {
+    "w": "reversible",
+    "cn": "可逆的，可恢复的"
+   },
+   {
+    "w": "life expectancy",
+    "cn": "预期寿命"
+   },
+   {
+    "w": "chronic loneliness",
+    "cn": "长期/慢性孤独感"
+   },
+   {
+    "w": "reproductive",
+    "cn": "生殖的，繁殖的"
+   },
+   {
+    "w": "trivial",
+    "cn": "琐碎的，不重要的"
+   },
+   {
+    "w": "flatly",
+    "cn": "断然地，直截了当地"
+   },
+   {
+    "w": "exotic",
+    "cn": "异域的，奇异的"
+   }
+  ]
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "2efb108c52cc__reading__1",
+ "examId": "2efb108c52cc",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 6 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:55:56.587Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54956,
+ "usage": {
+  "prompt_tokens": 1876,
+  "completion_tokens": 3555,
+  "total_tokens": 5431,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1876,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3555,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1876,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "真人秀节目强化美国梦信念",
+  "gist": "文章指出当代美国年轻人向上流动困难，但美国梦信念依然盛行。Vanderbilt大学Kim的研究发现，真人秀节目中大量的\"白手起家\"叙事是重要推手，实验和调查均证实常看此类节目的人更坚信美国梦，这可能导致民众不支持对抗不平等的政策。",
+  "structure": [
+   "第1-2段：提出问题——美国梦为何仍深入人心，引出真人秀因素",
+   "第3-4段：介绍真人秀现状及Kim团队的实验设计",
+   "第5-7段：呈现实验与调查结果，证实真人秀强化美国梦信念",
+   "第8-9段：总结危害——错误信念可能阻碍反不平等政策"
+  ],
+  "difficulty": "中等",
+  "translation": "\"美国梦\"承诺，在这片充满机遇的土地上，任何人都能仅凭努力工作和雄心壮志攀登经济阶梯、实现繁荣。然而，如今的美国年轻人正挣扎于超越父母在同龄时的收入水平，而且美国的向上流动性与其他工业化国家相比实际上并不占优。\n\n那么，为什么美国梦的理念依然长存？发表在《美国政治科学杂志》上的一项新研究找出了一个被忽视的因素：真人秀节目的影响。\n\n范德堡大学的Eunji Kim指出，在过去20年里，真人秀已主导了美国电视节目。其中绝大多数都有一个\"白手起家\"的故事线：展示普通美国人通过努力工作取得巨大经济成功。虽然这些节目经常跻身收视率最高的节目之列，但新闻节目——它们更真实地反映了数百万美国人面临的经济困境——获得的收视份额却小得多。\n\n白手起家的故事在电视上无处不在——但观看这些节目真的会让人们相信经济流动是容易实现的吗？为了找到答案，Kim的团队让参与者观看了一段5分钟的、具有白手起家故事线的真人秀片段。对照组参与者则观看了一段不含白手起家故事的真人秀片段。观看结束后，参与者对四项与美国梦相关的陈述进行了同意程度的评分。\n\n结果显示，观看了白手起家片段的人确实对美国梦有明显更强的信念。有趣的是，当按党派归属将参与者分组时，这一效应在共和党人中显著，但在民主党人中不显著，这表明这类电视节目中隐含的信息可能与人们已有的社会经济信念相吻合。\n\nKim还对3000名美国居民进行了调查。他们也对自己在多大程度上相信人生成功与各种内部因素（如雄心）和外部因素（如家庭财富）有关进行了评分。最后，他们阅读了一份电视节目清单，并标出自己经常观看的节目。\n\n经常收看白手起家类节目的重度观众比从不观看此类节目的人对美国梦有更强的信念。\n\nKim总结道：\"白手起家类娱乐媒体是一种重要的文化力量，它推动并延续了人们对向上流动的信念。\"而问题在于：如果人们错误地认为只需努力工作就能让个人过上更好的生活，他们可能就不那么支持那些真正能对抗不平等的政策。\n\n\"在这个选择的时代，娱乐媒体才是真正俘获人心的力量，\"Kim写道，\"其政治后果绝非微不足道。\"",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "young Americans today are struggling to earn more than their parents did at the same age, and upward mobility in the US actually compares unfavourably to that of other industrialised nations.",
+    "why": "原文明确指出当今美国年轻人难以超越父母同龄时的收入，且美国向上流动性不如其他工业化国家。\"struggling to earn more\"和\"compares unfavourably\"直接对应B选项\"难以实现向上流动\"，属于同义改写。",
+    "traps": "A项\"比父母更有抱负\"原文未提及，属于无中生有；C项\"在收入上超越了父母\"与原文\"struggling to earn more\"相反，属于反向干扰；D项\"羡慕其他工业化国家的机会\"原文只说美国流动性不如他国，并未提及羡慕，属于过度推断。",
+    "tip": "注意struggling to等否定含义的词，不要被表面肯定结构误导。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The results showed that those who'd watched a rags-to-riches clip did indeed have a significantly greater belief in the American Dream.",
+    "why": "Kim团队通过实验发现，观看了白手起家真人秀片段的参与者对美国梦的信念明显更强。C选项\"帮助强化人们对美国梦的信念\"是对实验结论的准确概括，属于同义转述。",
+    "traps": "A项\"重新诠释白手起家文化的本质\"原文未涉及，属于无中生有；B项\"敦促人们通过努力工作实现经济成功\"是节目内容的描述而非研究发现的效果，偷换了问题重点；D项\"展示追求社会认可的普通美国人\"中\"社会认可\"与原文\"经济成功\"不符，属于偷换概念。",
+    "tip": "注意题目问的是Kim团队的\"发现\"，应定位研究结论而非节目内容描述。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "news broadcasts—which paint a more realistic view of the economic hardship faced by millions of Americans—get a much smaller proportion of the viewership.",
+    "why": "原文用破折号补充说明新闻节目获得的收视份额\"小得多\"（a much smaller proportion of the viewership），A选项\"吸引的观众远少于真人秀\"是对此的准确转述。",
+    "traps": "B项\"执意报道生活的阴暗面\"属于曲解原文，原文说的是\"更真实地反映经济困境\"而非刻意渲染；C项\"与真人秀形成鲜明对比\"虽有一定道理，但原文侧重的是收视差距，非笼统对比，且不够精确；D项\"聚焦于美国人的经济困难\"只是破折号中的附带描述，非作者对新闻节目的主要论述。",
+    "tip": "题目问\"作者说了什么\"，应聚焦作者的主句论点，而非修饰性从句内容。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "when participants were separated by party affiliation, this effect was significant among Republicans but not Democrats, suggesting that the kind of messages implicit in these TV shows may play into people's existing socioeconomic beliefs.",
+    "why": "实验结果显示，真人秀对共和党人强化美国梦信念的效果显著，但对民主党人不显著。这暗示共和党人本身就持有与美国梦一致的社会经济信念，即他们本来就更坚信美国梦，因此更容易被节目影响。A项\"坚信美国梦\"可由此合理推断。",
+    "traps": "B项\"努力攀登社会经济阶梯\"原文并未提及共和党人的个人行为，属于无中生有；C项\"与其政党有很强的归属感\"虽提到party affiliation但这只是分组依据，非研究发现；D项\"倾向于看更多白手起家节目\"原文未涉及共和党人的收视偏好，属于无据推断。",
+    "tip": "推断题需把握\"暗示\"（suggesting）后的逻辑：效果显著说明与原有信念契合。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "if people mistakenly believe that hard work is all that is needed for individuals to make a better life for themselves, they may be less supportive of policies that could actually combat inequality.",
+    "why": "原文明确指出，如果人们错误地相信只要努力就能改善生活（即相信向上流动），他们就不太可能支持对抗不平等的政策。D选项\"不太可能赞同对抗不平等的政策\"是对\"less supportive of policies that could actually combat inequality\"的同义改写。",
+    "traps": "A项\"可能会责怪政府导致自身困境\"原文未提及怪罪政府，属于无中生有；B项\"认为政治后果绝非微不足道\"虽是原文最后一句话，但说的是Kim的观点而非相信向上流动的人的看法，属于张冠李戴；C项\"尊重努力攀登社会阶梯的个人\"原文未涉及此态度，属于无中生有。",
+    "tip": "注意条件句结构：if...they may be less...，精准匹配原文因果逻辑。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "upward mobility",
+    "cn": "向上流动性（n.短语，指社会经济地位提升）"
+   },
+   {
+    "w": "persist",
+    "cn": "持续存在，坚持（v.）"
+   },
+   {
+    "w": "rags-to-riches",
+    "cn": "白手起家的，从贫穷到富裕的（adj.）"
+   },
+   {
+    "w": "ubiquitous",
+    "cn": "无处不在的，普遍存在的（adj.）"
+   },
+   {
+    "w": "attainable",
+    "cn": "可实现的，可达到的（adj.）"
+   },
+   {
+    "w": "affiliation",
+    "cn": "归属，隶属关系（n.）"
+   },
+   {
+    "w": "implicit",
+    "cn": "隐含的，暗示的（adj.）"
+   },
+   {
+    "w": "perpetuates",
+    "cn": "使永久化，延续（v.）"
+   },
+   {
+    "w": "combat",
+    "cn": "对抗，打击（v.）"
+   },
+   {
+    "w": "trivial",
+    "cn": "微不足道的，琐碎的（adj.）"
+   },
+   {
+    "w": "overwhelmingly",
+    "cn": "压倒性地（adv.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "And while these programmes are regularly among the most-watched shows, news broadcasts—which paint a more realistic view of the economic hardship faced by millions of Americans—get a much smaller proportion of the viewership.",
+    "cn": "虽然这些节目经常跻身收视率最高的节目之列，但新闻节目——它们更真实地反映了数百万美国人面临的经济困境——所获得的收视份额却小得多。",
+    "note": "while引导让步状语从句，主句主语news broadcasts被破折号中的非限制性定语从句隔开，形成插入结构，需跳过插入部分抓住主句谓语get。"
+   },
+   {
+    "en": "Interestingly, when participants were separated by party affiliation, this effect was significant among Republicans but not Democrats, suggesting that the kind of messages implicit in these TV shows may play into people's existing socioeconomic beliefs.",
+    "cn": "有趣的是，当按党派归属将参与者分组时，这一效应在共和党人中显著，但在民主党人中不显著，这表明这些电视节目中隐含的信息可能迎合了人们已有的社会经济信念。",
+    "note": "主句含when时间状语从句；suggesting引导现在分词作结果状语；implicit in these TV shows为后置定语修饰messages；play into意为'迎合、利用'。"
+   },
+   {
+    "en": "if people mistakenly believe that hard work is all that is needed for individuals to make a better life for themselves, they may be less supportive of policies that could actually combat inequality.",
+    "cn": "如果人们错误地认为个人只需努力工作就能过上更好的生活，他们可能就不太支持那些真正能对抗不平等的政策。",
+    "note": "if引导条件状语从句；believe后接that宾语从句；all that is needed为主语从句中的表语+定语从句结构；主句中that引导定语从句修饰policies。"
+   }
+  ]
+ }
+}

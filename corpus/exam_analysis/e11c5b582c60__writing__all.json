@@ -1,0 +1,124 @@
+{
+ "schemaVersion": 1,
+ "id": "e11c5b582c60__writing__all",
+ "examId": "e11c5b582c60",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2015 年 6 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T04:40:41.730Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 48912,
+ "usage": {
+  "prompt_tokens": 602,
+  "completion_tokens": 4715,
+  "total_tokens": 5317,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3524
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 602
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "根据爱因斯坦名言“我并无特殊天赋，只是充满好奇”写一篇评论性短文，需结合事例论证好奇心的重要性，词数150-200。",
+    "outline": [
+     "第一段：引出爱因斯坦名言并解读其深意，明确提出自己的观点——好奇心而非天赋推动成就。",
+     "第二段：用牛顿、居里夫人等具体事例论证好奇心如何驱动伟大发现，突出质疑与探索的力量。",
+     "第三段：总结好奇心是学习与创新的引擎，呼吁培养并保持好奇心以超越自我局限。"
+    ],
+    "sample": "Albert Einstein once remarked, \"I have no special talents. I am only passionately curious.\" This humble statement reveals a profound truth: persistent curiosity, rather than innate genius, often drives extraordinary achievement. I strongly agree with this view.\n\nConsider the example of Isaac Newton. He did not attribute his discovery of gravity to exceptional intelligence; instead, he wondered why an apple falls straight down. That simple yet passionate curiosity led him to formulate the laws of motion and universal gravitation. Similarly, Marie Curie's curiosity about mysterious rays from uranium ore drove her to endure years of tedious experiments, ultimately discovering radium and polonium. In both cases, what set these great minds apart was not some magical talent but an insatiable desire to question and explore.\n\nIn conclusion, curiosity is the true engine of learning and innovation. If we nurture our own passionate curiosity and keep asking \"why\", we can transcend our perceived limitations and make meaningful contributions in our chosen fields. Only then can we unlock our hidden potential.",
+    "phrases": [
+     {
+      "en": "humble statement reveals a profound truth",
+      "cn": "谦逊的话语揭示深刻真理；用于引出名言后点明核心观点"
+     },
+     {
+      "en": "passionate curiosity",
+      "cn": "强烈的好奇心；文章核心关键词，可反复使用"
+     },
+     {
+      "en": "rather than innate genius",
+      "cn": "而非天赋；用于对比强调后天品质"
+     },
+     {
+      "en": "drive extraordinary achievement",
+      "cn": "推动非凡成就；drive 作动词表示驱动，常用于因果分析"
+     },
+     {
+      "en": "consider the example of",
+      "cn": "以……为例；列举事例时的过渡表达"
+     },
+     {
+      "en": "attribute...to...",
+      "cn": "将……归因于……；用于否定常见误解，引出真实原因"
+     },
+     {
+      "en": "insatiable desire to question and explore",
+      "cn": "永无止境的质疑与探索欲；形容好奇心强烈的表达"
+     },
+     {
+      "en": "true engine of learning and innovation",
+      "cn": "学习与创新的真正引擎；用比喻强化重要性"
+     },
+     {
+      "en": "transcend our perceived limitations",
+      "cn": "超越我们自认为的局限；transcend 更正式，适合结尾升华"
+     },
+     {
+      "en": "nurture our own passionate curiosity",
+      "cn": "培养我们自身的强烈好奇心；nurture 强调主动培养"
+     }
+    ],
+    "pitfalls": [
+     "只翻译名言，未对其中观点进行评论，导致偏离写作指令要求。",
+     "举例与名言脱节，未说明事例如何体现好奇心而非天赋。",
+     "大量使用万能模板句，开头与爱因斯坦名言毫无关联，显得生硬。",
+     "词数不足150或超过200，直接影响分数档位。",
+     "段落之间缺乏过渡词，逻辑跳跃，论证不连贯。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Curiosity is important.",
+      "better": "Passionate curiosity, rather than innate genius, often drives extraordinary achievement.",
+      "note": "用具体名词和对比结构，观点更鲜明有力，避免空泛。"
+     },
+     {
+      "plain": "Newton discovered gravity because he was curious.",
+      "better": "That simple yet passionate curiosity led him to formulate the laws of motion and universal gravitation.",
+      "note": "加入简洁衔接和精确术语，论证更专业可信，因果逻辑清晰。"
+     },
+     {
+      "plain": "We should be curious.",
+      "better": "If we nurture our own passionate curiosity and keep asking \"why\", we can transcend our perceived limitations.",
+      "note": "使用条件句和具体行动，增强说服力和画面感。"
+     },
+     {
+      "plain": "Curiosity helps us learn.",
+      "better": "Curiosity is the true engine of learning and innovation.",
+      "note": "用比喻“引擎”替代平淡动词，表达更生动，语气更强。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Albert Einstein once remarked, \"I have no special talents. I am only passionately curious.\"（爱因斯坦的名言引入，直接点题，适合开头段）",
+   "This humble statement reveals a profound truth: persistent curiosity, rather than innate genius, often drives extraordinary achievement.（用冒号引出核心观点，对比结构突出好奇心的作用）",
+   "That simple yet passionate curiosity led him to formulate the laws of motion and universal gravitation.（具体例子中体现因果，简洁而有说服力，适合举例段）",
+   "In both cases, what set these great minds apart was not some magical talent but an insatiable desire to question and explore.（用what从句和not...but...结构总结例子，句式高级）",
+   "If we nurture our own passionate curiosity and keep asking \"why\", we can transcend our perceived limitations and make meaningful contributions in our chosen fields.（条件句呼应主题，适用于结尾升华）"
+  ]
+ }
+}

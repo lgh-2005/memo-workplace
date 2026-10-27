@@ -1,0 +1,119 @@
+{
+ "schemaVersion": 1,
+ "id": "b8c6d06f8a82__writing__all",
+ "examId": "b8c6d06f8a82",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2015 年 6 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T04:44:29.512Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 30664,
+ "usage": {
+  "prompt_tokens": 600,
+  "completion_tokens": 3266,
+  "total_tokens": 3866,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2035
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 600
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "本题为六级写作评论型作文，要求围绕“不能做大事，就把小事做好”这一格言发表看法，可举例论证，词数150-200。",
+    "outline": [
+     "第一段：引出格言并解释其含义，表明自己赞同的态度。",
+     "第二段：通过工匠精神、日常学习等具体例子论证做好小事的重要性。",
+     "第三段：总结升华，呼吁从身边小事做起，为未来伟大成就奠基。"
+    ],
+    "sample": "There is a famous saying, \"If you cannot do great things, do small things in a great way.\" This proverb reminds us that greatness often lies in the ordinary, and doing small things excellently may ultimately lead to great achievements. I fully agree with this view.\n\nNumerous examples can illustrate this point. Take the craftsmen who have devoted their whole lives to perfecting a single skill, such as making a perfect bowl of noodles or carving a delicate piece of wood. They may never become famous or wealthy, but their dedication to small details elevates their work to an art form. Similarly, in our daily study, if we cannot solve every complex problem, we can still do small tasks—like reviewing notes carefully, correcting each mistake, and memorizing several new words every day—in a great way. These small efforts accumulate and eventually pave the way for bigger successes.\n\nIn conclusion, we should not despise small things. Instead, we should treat every small task with seriousness and excellence. Only by doing small things in a great way can we build a solid foundation for future greatness and become the best version of ourselves.",
+    "phrases": [
+     {
+      "en": "do small things in a great way",
+      "cn": "以卓越的方式做小事；直接引用格言，提升语言地道性。"
+     },
+     {
+      "en": "lies in the ordinary",
+      "cn": "蕴含于平凡之中；表达伟大源于平凡。"
+     },
+     {
+      "en": "devoted their whole lives to perfecting a single skill",
+      "cn": "毕生致力于完善一项技艺；devote...to doing结构表示专注奉献。"
+     },
+     {
+      "en": "elevates their work to an art form",
+      "cn": "将工作提升到艺术的高度；elevate...to...意为提升至某境界。"
+     },
+     {
+      "en": "pave the way for",
+      "cn": "为...铺平道路；表示奠定基础、创造条件。"
+     },
+     {
+      "en": "treat every small task with seriousness and excellence",
+      "cn": "以认真和卓越的态度对待每项小任务；treat...with...为固定搭配。"
+     },
+     {
+      "en": "build a solid foundation for",
+      "cn": "为...打下坚实基础；常用于总结重要性的表达。"
+     },
+     {
+      "en": "become the best version of ourselves",
+      "cn": "成为最好的自己；励志结尾常用表达。"
+     }
+    ],
+    "pitfalls": [
+     "只空洞议论，未按要求举例说明，导致论证缺乏说服力。",
+     "开头套用万能模板，未直接回应格言内涵，扣题不紧。",
+     "词汇单一，反复使用good、thing等基础词，语言档次低。",
+     "未能将“小事”与“伟大”建立逻辑联系，内容离散。",
+     "字数控制不当，少于150词或多于200词均会扣分。"
+    ],
+    "upgrades": [
+     {
+      "plain": "do small things well",
+      "better": "do small things in a great way",
+      "note": "直接引用题目格言，语言更地道且紧扣主题，避免简单化表达。"
+     },
+     {
+      "plain": "Many examples show this.",
+      "better": "Numerous examples can illustrate this point.",
+      "note": "用illustrate替换show，表达更正式，符合书面语要求。"
+     },
+     {
+      "plain": "They spend their whole life making one skill perfect.",
+      "better": "They have devoted their whole lives to perfecting a single skill.",
+      "note": "devote...to doing结构更书面化，现在完成时强调持续至今。"
+     },
+     {
+      "plain": "Small efforts help us succeed.",
+      "better": "These small efforts accumulate and eventually pave the way for bigger successes.",
+      "note": "accumulate和pave the way for更形象，逻辑递进清晰，增强论证力度。"
+     },
+     {
+      "plain": "We should not look down on small things.",
+      "better": "We should not despise small things.",
+      "note": "despise比look down on更正式简洁，提升语言精准度。"
+     }
+    ],
+    "band9": [
+     "There is a famous saying, \"If you cannot do great things, do small things in a great way.\" This proverb reminds us that greatness often lies in the ordinary, and doing small things excellently may ultimately lead to great achievements. （引出格言并诠释内涵，可用于同类话题开头，逻辑清晰）",
+     "Take the craftsmen who have devoted their whole lives to perfecting a single skill, such as making a perfect bowl of noodles or carving a delicate piece of wood. （用具体例子支撑观点，细节生动，避免空泛）",
+     "Only by doing small things in a great way can we build a solid foundation for future greatness and become the best version of ourselves. （倒装句增强语气，总结升华有力，适合结尾）"
+    ]
+   }
+  ]
+ }
+}

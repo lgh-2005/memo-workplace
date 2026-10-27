@@ -1,0 +1,244 @@
+{
+ "schemaVersion": 1,
+ "id": "cccaddf69626__long_match__all",
+ "examId": "cccaddf69626",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2017 年 6 月英语六级真题（第 1 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:11:09.187Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34892,
+ "usage": {
+  "prompt_tokens": 957,
+  "completion_tokens": 1997,
+  "total_tokens": 2954,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 957,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1997,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 957,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "化石燃料价格与气候变化应对",
+  "strategy": [
+   "先通读10条陈述句，归纳主题关键词：油价、碳排放、化石燃料、可再生能源等",
+   "在陈述句中划出专有名词、数据、因果逻辑等独特信息作为定位线索",
+   "注意同义替换：如conducive to≈beneficial to, catastrophic≈disastrous, foreseeable≈predictable",
+   "优先匹配含具体细节（数字、地名、人群）的题目，再处理概括性强的题目",
+   "区分相似话题的不同侧重点：如低油价的原因vs低油价的后果分属不同段"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "cn": "一系列因素正在压低全球油价，不仅是当前，在可预见的未来也将如此。",
+    "keywords": [
+     "a number of factors",
+     "driving down",
+     "global oil prices",
+     "foreseeable future"
+    ],
+    "paraphrase": "原文可能用multiple/several factors替换a number of factors，用pushing down/depressing替换driving down，用years ahead/coming decades替换foreseeable future，强调油价下行的多重驱动因素及其持续性。",
+    "tip": "定位\"多种因素+油价下降+长期趋势\"三要素并存的段落。"
+   },
+   {
+    "number": 37,
+    "answer": "L",
+    "cn": "对碳进行定价被证明是减少温室气体排放最经济的方式。",
+    "keywords": [
+     "pricing carbon",
+     "most economical",
+     "greenhouse gas emissions"
+    ],
+    "paraphrase": "原文可能用cost-effective/cheapest替换most economical，用putting a price on carbon替换pricing carbon，用cut/curb替换reduce，表达碳定价机制在减排方面的经济优势。",
+    "tip": "定位\"碳定价+最划算/最有效+减排\"的核心搭配。"
+   },
+   {
+    "number": 38,
+    "answer": "J",
+    "cn": "据估计，极端天气条件已经危及了数百万非洲儿童的生命。",
+    "keywords": [
+     "extreme weather",
+     "endangered",
+     "millions",
+     "African children"
+    ],
+    "paraphrase": "原文可能用severe/harsh weather替换extreme weather conditions，用put at risk/threatened替换endangered，具体提及非洲儿童受灾人数的估算数据。",
+    "tip": "利用\"African children+millions\"这一具体细节快速锁定段落。"
+   },
+   {
+    "number": 39,
+    "answer": "E",
+    "cn": "煤炭价格低廉是供过于求和需求下降的结果。",
+    "keywords": [
+     "coal",
+     "over-supply",
+     "decreasing demand",
+     "prices low"
+    ],
+    "paraphrase": "原文可能用excess supply/surplus替换over-supply，用falling/declining demand替换decreasing demand，解释煤价低迷的供需两方面原因。",
+    "tip": "定位同时提及\"煤炭+供给过剩+需求下降\"的段落。"
+   },
+   {
+    "number": 40,
+    "answer": "H",
+    "cn": "较高的化石燃料价格被证明有利于更清洁技术的创新和应用。",
+    "keywords": [
+     "higher fossil fuel prices",
+     "conducive",
+     "innovation",
+     "cleaner technology"
+    ],
+    "paraphrase": "原文可能用beneficial to/promote替换conducive to，用development and deployment替换innovation and application，表达高化石能源价格对清洁技术的正向推动作用。",
+    "tip": "抓住\"高价格+促进+清洁技术\"的因果逻辑进行定位。"
+   },
+   {
+    "number": 41,
+    "answer": "A",
+    "cn": "如果化石燃料价格长期保持低位，可能会导致温室气体排放量升高。",
+    "keywords": [
+     "fossil fuel prices",
+     "remain low",
+     "long time",
+     "higher emissions"
+    ],
+    "paraphrase": "原文可能用stay low/persist at low levels替换remain low for a long time，用increase/rise in emissions替换higher emissions，阐述低价化石燃料对减排目标的不利影响。",
+    "tip": "关注文章开篇段落提出的核心问题：低油价→排放增加。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "cn": "在当今世界，化石燃料仍然是一次能源消费的主要来源。",
+    "keywords": [
+     "fossil fuels",
+     "major source",
+     "primary energy consumption"
+    ],
+    "paraphrase": "原文可能用dominant/principal替换major，用account for the largest share of替换remain the major source of，描述化石燃料在全球能源结构中的主导地位。",
+    "tip": "定位描述全球能源消费结构现状、化石燃料占比大的段落。"
+   },
+   {
+    "number": 43,
+    "answer": "F",
+    "cn": "即使是主要的化石燃料出口国，在发展可再生能源方面也有巨大的潜力。",
+    "keywords": [
+     "fossil fuel exporting countries",
+     "great potential",
+     "renewable energies"
+    ],
+    "paraphrase": "原文可能用oil/gas exporters替换fossil exporting countries，用vast/enormous potential替换great potential，用clean/alternative energy替换renewable energies，强调即便是产油国也可大力发展新能源。",
+    "tip": "抓住\"出口国+可再生能源+潜力\"这一看似矛盾的组合快速定位。"
+   },
+   {
+    "number": 44,
+    "answer": "O",
+    "cn": "温室气体排放如果不加以妥善处理，将给人类带来无穷的风险。",
+    "keywords": [
+     "greenhouse gas emissions",
+     "not properly dealt with",
+     "endless risks",
+     "mankind"
+    ],
+    "paraphrase": "原文可能用left unchecked/unaddressed替换not properly dealt with，用incalculable/boundless risks替换endless risks，用humanity/human civilization替换mankind，作为全文总结性警告。",
+    "tip": "定位文章尾段的总结性警示语句，常含if条件句式。"
+   },
+   {
+    "number": 45,
+    "answer": "B",
+    "cn": "各国政府迫切需要将使用化石燃料的成本提高到适当水平，以减轻气候变化带来的灾难性影响。",
+    "keywords": [
+     "urgent",
+     "governments",
+     "increase the cost",
+     "fossil fuels",
+     "catastrophic",
+     "climate change"
+    ],
+    "paraphrase": "原文可能用imperative/pressing替换urgent，用raise the price替换increase the cost，用devastating/disastrous effects替换catastrophic effects，呼吁政府通过提高化石燃料使用成本来应对气候危机。",
+    "tip": "定位含\"政府行动+紧迫性+提高化石能源成本+气候灾害\"的段落。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "foreseeable",
+    "cn": "adj. 可预见的，可预料的"
+   },
+   {
+    "w": "conducive",
+    "cn": "adj. 有助于…的，有利于…的（常与to搭配）"
+   },
+   {
+    "w": "greenhouse gas emissions",
+    "cn": "n. 温室气体排放"
+   },
+   {
+    "w": "over-supply",
+    "cn": "n. 供给过剩，供过于求"
+   },
+   {
+    "w": "catastrophic",
+    "cn": "adj. 灾难性的，极其严重的"
+   },
+   {
+    "w": "pricing carbon",
+    "cn": "n. 碳定价（对碳排放赋予价格的机制）"
+   },
+   {
+    "w": "primary energy consumption",
+    "cn": "n. 一次能源消费（指直接从自然界获取的能源的消费）"
+   },
+   {
+    "w": "renewable energies",
+    "cn": "n. 可再生能源（如风能、太阳能等）"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 释义，改述（同义转述）"
+   }
+  ]
+ }
+}

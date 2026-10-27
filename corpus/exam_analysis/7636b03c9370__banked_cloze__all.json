@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "7636b03c9370__banked_cloze__all",
+ "examId": "7636b03c9370",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2022 年 12 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:44:56.918Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 69835,
+ "usage": {
+  "prompt_tokens": 1393,
+  "completion_tokens": 4214,
+  "total_tokens": 5607,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1393,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4214,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1393,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "企业全球战略与核心能力构建",
+  "gist": "文章阐述企业全球战略家的任务是构建能力平台并将其移植到合适的地方，以苹果、宜家和Telefonica为例说明全球竞争优势的不同构建路径，同时指出创造持久全球优势需要战略和运营技巧，必须通过系统性地开发、更新和增强核心能力来实现。",
+  "difficulty": "中等",
+  "translation": "企业全球战略家的任务是：从在多个地区运营的各业务单元的资源、经验和创新中构建一个能力平台，将这些能力移植到任何合适的地方，然后系统性地升级和更新它们——走在竞争对手前面。\n\n苹果公司是一个杰出案例，其独特的能力赋予了它全球竞争优势，尤其体现在其构建集成了功能性与美学设计的产品平台的能力上。苹果公司已成功地在全球范围内利用和开发了其位于加州的设计与营销优势。宜家是另一个这样的案例。这家自助组装家具和家居用品公司首先在瑞典开发了一整套引人注目的能力，用以低成本地设计、制造和运送家具，并以一种新颖的方式进行销售。后来，宜家在许多其他国家成功复制了这一模式。\n\n相比之下，西班牙电信公司Telefonica——按营收计算现为全球第五大电信公司——最初是在海外发展其特殊优势的。1989年和1990年，Telefonica有机会进入智利和阿根廷，这两个国家与其母国有许多制度和文化上的共同特征，但正在经历更为迅速的市场改革。整个20世纪90年代，Telefonica将其在智利和阿根廷学到的关于重建前国有电信公司的经验带到了其他正在将国有电信私有化并放开电信市场管制的拉美国家。\n\n这些例子可能会让读者以为创造全球优势是一件轻而易举的事情。但是，许多其他代价高昂的失败实验案例表明，创造持久的全球优势实际上需要大量的战略和运营技巧。我们的研究表明，全球赢家通常通过系统性地开发、更新和增强其核心能力的过程来建立和维持其国际影响力。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "correct": "appropriate",
+    "why": "此处需要一个形容词修饰整个wherever引导的地点状语从句，wherever appropriate意为\"在任何合适的地方\"，是固定搭配，表示将能力移植到适合的地区，语义通顺、搭配地道。",
+    "traps": "competitive虽然也是形容词，但wherever competitive语义不通，不表达\"适合移植\"的意思；aesthetic（美学的）语义完全不符合语境。",
+    "tip": "wherever appropriate是常见固定搭配，意为'在合适之处'。"
+   },
+   {
+    "number": 27,
+    "answer": "D",
+    "correct": "competitive",
+    "why": "空格后紧接advantage，competitive advantage（竞争优势）是商业英语中的经典搭配，文章讲的是苹果公司凭借独特能力获得全球竞争优势，语义完全吻合。",
+    "traps": "appropriate advantage虽语法可行但不是惯用搭配；aesthetic advantage偏离商业语境，文中尚未提及美学方面。",
+    "tip": "competitive advantage是商业核心术语，出现频率极高。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "aesthetic",
+    "why": "空格与functional并列修饰design，functional design（功能性设计）与aesthetic design（美学设计）是苹果产品的两大特征，形成对照互补，这也是苹果产品的公认优势。",
+    "traps": "competitive design搭配生硬且与前文competitive advantage语义重复；strategic design偏离产品设计层面的描述。",
+    "tip": "functional与aesthetic构成产品设计的两个核心维度，常见并列出现。"
+   },
+   {
+    "number": 29,
+    "answer": "L",
+    "correct": "ship",
+    "why": "空格与design、manufacture并列，且后接furniture at low cost，三个动词构成宜家的完整业务链：设计、制造、运送。ship作动词意为\"运送、发货\"，语义完美衔接。",
+    "traps": "其他剩余动词如reproduced语义不合（不能说reproduced furniture at low cost）；exploiting也不符合并列动词的逻辑语义。",
+    "tip": "ship作动词表示\"运送/发货\"，是商业物流常用词。"
+   },
+   {
+    "number": 30,
+    "answer": "I",
+    "correct": "reproduced",
+    "why": "主语IKEA，宾语this formula（这一模式），reproduced意为\"复制、再现\"，表示宜家将其在瑞典成功的商业模式复制到其他国家，逻辑清晰。",
+    "traps": "ship虽也是动词但搭配formula不通；exploiting this formula语义上可行但语法时态不匹配（此处需过去式，exploited未在选项中出现）。",
+    "tip": "reproduce在商业语境中常表示\"复制成功模式\"。"
+   },
+   {
+    "number": 31,
+    "answer": "J",
+    "correct": "revenues",
+    "why": "by revenues表示\"按营收计算\"，是衡量企业规模的常见标准。句意为Telefonica按营收排名是全球第五大电信公司，是商业报道的标准表达。",
+    "traps": "clusters为名词但by clusters语义不通；其他名词如instances也无法与by搭配表示排名标准。",
+    "tip": "by revenues/sales/market cap是企业排名的常见衡量标准。"
+   },
+   {
+    "number": 32,
+    "answer": "O",
+    "correct": "undergoing",
+    "why": "were undergoing构成过去进行时，表示智利和阿根廷当时\"正在经历\"更为迅速的市场改革，与上文的1989/1990时间背景吻合，语态和语义均完美。",
+    "traps": "其他动词形式如exploiting虽也可接-ing但语义不当（exploit market reform不合逻辑）；reproduced是过去分词形式，无法与were构成进行时。",
+    "tip": "undergo reform是固定搭配，意为\"经历改革\"。"
+   },
+   {
+    "number": 33,
+    "answer": "G",
+    "correct": "instances",
+    "why": "many other instances of...意为\"许多其他……的案例\"，instances与上文的examples形成同义呼应，表示除成功案例外还有大量失败案例，语义连贯。",
+    "traps": "clusters of虽语法可行但语义偏差（clusters强调\"集群/聚集\"，不适合修饰failed experiments）；revenues等名词语义完全不搭。",
+    "tip": "instances与examples近义，表示\"事例/案例\"。"
+   },
+   {
+    "number": 34,
+    "answer": "M",
+    "correct": "strategic",
+    "why": "空格后接and operational finesse，strategic与operational构成并列形容词共同修饰finesse，表示创造全球优势需要\"战略性和运营性技巧\"，对仗工整、语义完整。",
+    "traps": "competitive finesse搭配不自然且语义模糊；aesthetic finesse偏离全文商业战略主题。",
+    "tip": "strategic与operational常成对出现，分别对应宏观战略与微观执行。"
+   },
+   {
+    "number": 35,
+    "answer": "E",
+    "correct": "exploiting",
+    "why": "exploiting与后文renewing、enhancing构成三个并列的动名词，表示\"开发、更新和增强\"核心能力的系统过程。exploit在商业语境中为褒义，意为\"充分利用/开发\"。",
+    "traps": "undergoing虽也是-ing形式但语义不合（undergo capabilities不搭配）；其他-ing形式在剩余选项中已无合适候选。",
+    "tip": "exploit在商业语境中为褒义，表示\"充分开发利用\"资源或能力。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "aesthetic",
+    "cn": "adj. 美学的，审美的"
+   },
+   {
+    "w": "competitive",
+    "cn": "adj. 竞争的，有竞争力的"
+   },
+   {
+    "w": "reproduced",
+    "cn": "v. 复制，再现（reproduce的过去式）"
+   },
+   {
+    "w": "revenues",
+    "cn": "n. 收入，营收（revenue的复数）"
+   },
+   {
+    "w": "undergoing",
+    "cn": "v. 经历，经受（undergo的现在分词）"
+   },
+   {
+    "w": "instances",
+    "cn": "n. 实例，案例（instance的复数）"
+   },
+   {
+    "w": "strategic",
+    "cn": "adj. 战略的，策略性的"
+   },
+   {
+    "w": "exploiting",
+    "cn": "v. 开发，充分利用（exploit的现在分词）"
+   },
+   {
+    "w": "compelling",
+    "cn": "adj. 引人注目的，令人信服的"
+   },
+   {
+    "w": "leverage",
+    "cn": "v. 利用，借助；n. 杠杆作用"
+   },
+   {
+    "w": "privatizing",
+    "cn": "v. 使私有化（privatize的现在分词）"
+   },
+   {
+    "w": "deregulating",
+    "cn": "v. 解除管制（deregulate的现在分词）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性分类（名词/动词/形容词/副词）。",
+   "第二步：根据空格前后语法结构判断所需词性，缩小候选范围。",
+   "第三步：利用固定搭配（如competitive advantage, undergo reform）快速锁定答案。",
+   "第四步：关注并列结构，空格词须与并列成分词性一致、语义互补（如functional与aesthetic）。",
+   "第五步：填完所有确定项后，用排除法处理剩余空格，最后通读检查语义是否连贯。"
+  ]
+ }
+}

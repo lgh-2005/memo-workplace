@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "939a9b6ce073__reading__1",
+ "examId": "939a9b6ce073",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年 9 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:30:18.856Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61065,
+ "usage": {
+  "prompt_tokens": 1808,
+  "completion_tokens": 3896,
+  "total_tokens": 5704,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1808,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3896,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1808,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英国肥胖危机与政府干预的必要性",
+  "gist": "文章围绕英国肥胖问题展开，指出意识形态之争和行业游说阻碍了问题的解决。以利兹市儿童肥胖率下降为正面案例，论证政府干预的有效性，强调健康不平等要求政府积极介入，最终提出政府行动与个人动力相结合才是解决肥胖危机的出路。",
+  "structure": [
+   "第一段：提出肥胖问题及解决的障碍——意识形态之争与行业游说",
+   "第二段：利兹市案例证明科学与政治可以取得成效",
+   "第三段：回应对禁令和税收的批评，指出反对者拿不出更好方案",
+   "第四段：以健康不平等论证政府大规模干预的正当性",
+   "第五段：总结——政府行动与个人积极性结合方能奏效"
+  ],
+  "difficulty": "中等",
+  "translation": "说不健康的饮食导致健康问题，这并无争议。健康饮食的基本要素也没有异议。肥胖会增加患癌风险，而英国是全球第六大肥胖国。这是一场公共健康危机。但指出问题只是容易的部分。没有人否认肥胖人口在生活质量和医疗预算方面的代价，但寻找解决方案的努力却被围绕责任和选择的意识形态争论所转移。同时，那些从诱发肥胖产品消费中获利的行业通过游说搅浑了水。\n\n历史先例表明，科学和政治能够克服来自那些制造污染和毒害的企业的阻力，但这需要时间，而且成功往往从小处起步。因此，令人振奋的是，利兹市的一个项目成功降低了儿童肥胖率，成为英国首个扭转肥胖趋势的城市。最好的成效出现在较年幼的儿童和较贫困的地区。当英格兰2至15岁儿童中有28%肥胖时，如果全国范围内能达到利兹市的成效，将延长数十万人的寿命。利兹经验中的一个重要因素似乎是一个名为HENRY的计划，它帮助家长奖励那些能预防儿童肥胖的行为。\n\n许多议员甚至对本届政府的反肥胖策略感到不安，因为该策略涉及\"糖税\"和禁止向16岁以下青少年出售能量饮料。禁令和税收可能是生硬的手段，但最严厉的批评者很少能提出更好的办法。这些批评者只是反对监管本身。\n\n健康状况不佳与不平等之间的关系太过显著，政府不能在大规模干预上无所作为。生活在最贫困地区的人死于可避免原因的概率是较富裕地区人群的四倍。随着公共健康问题的结构性本质越来越难以忽视，关于政府过度保护的抱怨也失去了说服力。\n\n事实上，围绕公共健康干预措施的极化辩论早就应该被抛弃了。当个人有动力做出回应时，政府行动才会奏效。个人需要政府扩大获得良好选择的途径。HENRY项目部分是通过儿童中心实施的。关闭这些中心、削减地方预算并不会神奇地增强个人的自立能力。一项设计良好的国家干预措施，其功能不是剥夺人们的自由，而是建设社会能力和基础设施，帮助人们为自身健康承担责任。肥胖危机不会有左翼或右翼意识形态设计出的解决方案——但经验表明，私营部门需要监管的激励才会开始认真对待公共健康危机。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "the quest for solutions gets diverted by ideological arguments around responsibility and choice. And the water is muddied by lobbying from the industries that profit from consumption of obesity-inducing products.",
+    "why": "原文明确指出，寻找解决方案的努力被\"围绕责任和选择的意识形态争论\"所转移，即人们在\"谁该负责、该怎么做\"上意见不一。B选项\"People disagree as to who should do what\"正是对\"ideological arguments around responsibility and choice\"的同义改写，责任（responsibility）对应\"who\"，选择（choice）对应\"what\"。",
+    "traps": "A项\"政府预算耗尽\"虽在原文提及depleted health budgets，但这是肥胖的后果而非问题难以解决的原因；C项\"个人未准备好承担责任\"属于片面归因，原文讨论的是各方对责任归属的争论，而非仅指个人；D项\"行业游说使人难以获得健康食品\"曲解了原文，原文说行业游说\"搅浑了水\"（使讨论复杂化），而非使健康食品难以获得。",
+    "tip": "注意区分\"问题的后果\"与\"问题难以解决的原因\"。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Historical precedent suggests that science and politics can overcome resistance from businesses that pollute and poison but it takes time, and success often starts small.",
+    "why": "原文用\"historical precedent\"（历史先例）引出观点：科学和政治（science and politics）能够克服企业阻力。politics在此语境下指政府行为。随后以利兹市的政府项目为例加以佐证。A选项\"Governments have a role to play\"（政府有角色要扮演）是对\"politics can overcome resistance\"的合理推断。",
+    "traps": "B项\"公共健康是科学问题\"过于片面，原文同时强调science和politics，不是仅科学问题；C项\"应优先关注贫困地区\"虽与利兹案例中贫困地区效果最好有关，但这是具体结果，并非从历史经验中得出的教训；D项\"应强调企业责任\"偷换概念，原文说的是克服企业阻力，而非强调其责任。",
+    "tip": "注意historical precedent限定了答题范围，要从历史经验而非具体案例中找答案。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Bans and taxes can be blunt instruments, but their harshest critics can rarely suggest better methods. These critics just oppose regulation itself.",
+    "why": "原文直接指出\"最严厉的批评者很少能提出更好的办法\"（can rarely suggest better methods），B选项\"They have not come up with anything more constructive\"是对此句的精确同义转述。rarely suggest better methods ≈ have not come up with anything more constructive。",
+    "traps": "A项\"不了解肥胖后果\"属于无中生有，原文未涉及批评者对肥胖后果的认知；C项\"对议会反肥胖辩论感到不安\"张冠李戴，uncomfortable的主语是members of parliament，不是这些批评者；D项\"有自己的动机反对政府监管\"虽可推测，但原文仅说他们\"只是反对监管本身\"，并未暗示有私人动机，属于过度推断。",
+    "tip": "imply题要紧扣原文表述做合理推断，避免过度引申。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "The relationship between poor health and inequality is too pronounced for governments to be passive about large-scale intervention.",
+    "why": "原文该句的逻辑为：健康不平等关系太过显著→政府不能在大规模干预上保持被动。即作者强调这一关系的目的是论证政府干预的正当性。D选项\"To justify government intervention\"（为政府干预正名）准确概括了这一论证目的。too...for...to结构表明\"不平等严重到政府不能不干预\"。",
+    "traps": "A项\"展示贫困地区人民的困境\"只是该段的论据细节，非作者的论证目的；B项\"揭示肥胖的根本原因\"偷换论点，原文讨论的是干预理由而非肥胖根因；C项\"突出最值得公众关注的领域\"属于无中生有，原文并未讨论哪个领域最值得关注。",
+    "tip": "问\"作者为何强调某观点\"时，要找该观点所服务的论证目标。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Government action works when individuals are motivated to respond.",
+    "why": "原文明确给出条件：当个人有动力做出回应时（when individuals are motivated to respond），政府行动才会奏效（works）。C选项\"When individuals have the incentive to act accordingly\"是对此句的同义改写：motivated ≈ have the incentive，respond ≈ act accordingly。",
+    "traps": "A项\"当极化辩论被抛弃\"虽然原文提到应抛弃极化辩论，但这不是政府行动有效的条件，而是作者的呼吁；B项\"当意识形态分歧被解决\"属于过度推断，原文说肥胖危机不会有左右翼意识形态的解决方案，但未将此作为政府行动有效的前提；D项\"当私营部门意识到危机严重性\"偷换了条件，原文说私营部门需要监管激励，而非自行意识到严重性。",
+    "tip": "when引导的条件句是常见命题点，注意精确匹配条件内容。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "susceptibility",
+    "cn": "n. 易感性，敏感性"
+   },
+   {
+    "w": "depleted",
+    "cn": "adj. 耗尽的，枯竭的"
+   },
+   {
+    "w": "divert",
+    "cn": "v. 转移，使偏离"
+   },
+   {
+    "w": "ideological",
+    "cn": "adj. 意识形态的"
+   },
+   {
+    "w": "lobbying",
+    "cn": "n. 游说（活动）"
+   },
+   {
+    "w": "heartening",
+    "cn": "adj. 令人振奋的，鼓舞人心的"
+   },
+   {
+    "w": "deprived",
+    "cn": "adj. 贫困的，匮乏的"
+   },
+   {
+    "w": "blunt",
+    "cn": "adj. 生硬的，不留情面的"
+   },
+   {
+    "w": "pronounced",
+    "cn": "adj. 显著的，明显的"
+   },
+   {
+    "w": "affluent",
+    "cn": "adj. 富裕的"
+   },
+   {
+    "w": "potency",
+    "cn": "n. 影响力，效力"
+   },
+   {
+    "w": "polarised",
+    "cn": "adj. 两极化的，极端对立的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "No one disputes the costs in quality of life and depleted health budgets of an obese population, but the quest for solutions gets diverted by ideological arguments around responsibility and choice.",
+    "cn": "没有人否认肥胖人口在生活质量和医疗预算方面付出的代价，但寻找解决方案的努力却被围绕责任和选择的意识形态争论所转移。",
+    "note": "but连接转折；前半句主干为No one disputes the costs，costs后接两个并列的介词短语修饰；后半句主干为the quest gets diverted，by引出被动施事。"
+   },
+   {
+    "en": "The function of a well-designed state intervention is not to deprive people of liberty but to build social capacity and infrastructure that helps people take responsibility for their wellbeing.",
+    "cn": "一项设计良好的国家干预措施，其功能不是剥夺人们的自由，而是建设社会能力和基础设施，帮助人们为自身健康承担责任。",
+    "note": "not...but...构成否定—肯定对比结构；that引导定语从句修饰capacity and infrastructure；take responsibility for为固定搭配。"
+   },
+   {
+    "en": "The obesity crisis will not have a solution devised by left or right ideology—but experience indicates that the private sector needs the incentive of regulation before it starts taking public health emergencies seriously.",
+    "cn": "肥胖危机不会有左翼或右翼意识形态设计出的解决方案——但经验表明，私营部门需要监管的激励才会开始认真对待公共健康危机。",
+    "note": "devised by...为过去分词短语后置修饰solution；破折号后but引出转折；before引导时间状语从句，暗含\"先有监管才有行动\"的因果逻辑。"
+   }
+  ]
+ }
+}

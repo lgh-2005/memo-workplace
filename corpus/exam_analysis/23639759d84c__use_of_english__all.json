@@ -1,0 +1,315 @@
+{
+ "schemaVersion": 1,
+ "id": "23639759d84c__use_of_english__all",
+ "examId": "23639759d84c",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2024 年考研英语真题",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:53:33.218Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 70829,
+ "usage": {
+  "prompt_tokens": 1738,
+  "completion_tokens": 4514,
+  "total_tokens": 6252,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1738,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4514,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1738,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "自动门的功能与工作原理",
+  "gist": "文章介绍了自动门的发展历史、主要功能与工作原理。自动门自1960年面世以来，在便利残障人士出入、节省建筑空间、辅助人群管理等方面发挥了重要作用。不同类型的传感器适配不同环境，但其核心工作原理相同。",
+  "difficulty": "中等",
+  "translation": "没有什么比一扇为你打开的门更令人感到受欢迎的了。无需用手触碰即可开关，自动门在改善残障人士进出建筑的通道以及为商业建筑提供总体便利方面至关重要。\n\n自滑动门在1960年开始作为商业产品出现，此前六年由美国人迪·霍顿和卢·休伊特发明。它们最初只是作为一种新奇特色出现，但随着使用的普及，它们的益处在我们这个技术先进的世界中得到了拓展。尤其在繁忙场所或紧急情况下特别有用，这些门通过减少挡在人们路上的障碍物来充当人群管理的角色。\n\n除了使人们进出建筑更加方便之外，这些门的开启方式的不同还有助于减少它们所占用的总面积。自动门通常向侧面打开，面板彼此滑过。取代了推拉门，这些自动门使较小的建筑能够最大化内部可用空间，而无需为一扇大的、突出的门清出通道。自动门有许多不同类型，每种都依靠特定的信号来判断何时打开。尽管这些方法各不相同，但主要原理保持一致。\n\n每个自动门系统都会分析其周围的光线、声音、重量或运动作为开启信号。传感器类型的选择旨在与其所需的不同环境相匹配。例如，繁忙的街道可能不适合使用运动感应门，因为它会不断地为路人打开。压敏垫会更合适，以限制监测区域。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "D",
+    "correct": "Without",
+    "why": "上下文逻辑：此句意为\"无需用手触碰即可开关\"，强调自动门不需要接触就能开关这一核心特征，Without the need to be touched 构成介词短语作状语，表示\"不需要……\"，与后文说自动门的便利性逻辑一致。",
+    "traps": "A) Through（通过）语义不通，不能说\"通过需要被触碰\"；B) Despite（尽管）暗示仍需触碰，与自动门特性矛盾；C) Besides（除了）引出附加信息，语义逻辑不符。",
+    "tip": "介词辨析：Without + 名词短语表示\"无需/没有\"。"
+   },
+   {
+    "number": 2,
+    "answer": "C",
+    "correct": "improving",
+    "why": "上下文逻辑：自动门的核心功能是\"改善\"残障人士进入建筑的通道，improving disabled access 表示\"改善残障人士的无障碍通行\"，语义通顺，与全文强调便利性的主旨一致。",
+    "traps": "A) revealing（揭示）与access搭配不当；B) demanding（要求）语义方向错误，门不是在\"要求\"通行；D) tracing（追踪）与语境完全无关。",
+    "tip": "动词与宾语搭配：improve access 是常见固定搭配。"
+   },
+   {
+    "number": 3,
+    "answer": "B",
+    "correct": "convenience",
+    "why": "上下文逻辑：与前半句\"改善残障通行\"并列，自动门还为商业建筑提供\"总体便利\"，convenience与全文主题——自动门带来的便利——高度契合。",
+    "traps": "A) experience（体验）过于宽泛，不够准确；C) guidance（引导）自动门不提供指引功能；D) reference（参考）语义不相关。",
+    "tip": "名词辨析：convenience（便利）切合自动门的核心功能。"
+   },
+   {
+    "number": 4,
+    "answer": "A",
+    "correct": "previously",
+    "why": "上下文逻辑：自动门1960年作为商品出现，是在此前六年（即1954年）被发明的，previously（之前）准确表达时间先后关系。",
+    "traps": "B) temporarily（暂时地）不能修饰具体时间\"六年\"；C) successively（连续地）强调连续发生，与语境不符；D) eventually（最终）表示\"终于\"，不合句意。",
+    "tip": "时间副词辨析：six years previously 意为\"六年前\"。"
+   },
+   {
+    "number": 5,
+    "answer": "B",
+    "correct": "started out",
+    "why": "上下文逻辑：句意为\"它们最初是作为一种新奇特色出现的\"，started out as 意为\"最初是/起初作为\"，与后文 but as their use has grown 形成转折，表明从新奇到实用的发展过程。",
+    "traps": "A) held on（坚持）不接 as 作\"起初作为\"的用法；C) settled down（安顿下来）语义不合；D) went by（经过/流逝）与 as a novelty feature 搭配不当。",
+    "tip": "短语辨析：start out as 表示\"起初是……\"。"
+   },
+   {
+    "number": 6,
+    "answer": "C",
+    "correct": "benefits",
+    "why": "上下文逻辑：前文用 but 转折，说明自动门不再仅是新奇事物，其\"益处/好处\"在技术进步的世界中得到了拓展，benefits 与后文提到的各项功能呼应。",
+    "traps": "A) relations（关系）语义不通；B) volumes（体积/量）无法与 extended 合理搭配；D) sources（来源）语义不相关。",
+    "tip": "名词辨析：benefits have extended 意为\"好处得到拓展\"。"
+   },
+   {
+    "number": 7,
+    "answer": "A",
+    "correct": "useful",
+    "why": "上下文逻辑：Particularly useful in busy locations or during times of emergency 是补充说明自动门在特定场景下\"特别有用\"，与后文解释其人群管理功能相匹配。",
+    "traps": "B) simple（简单的）不是本段要强调的特性；C) flexible（灵活的）虽有一定道理但文中未涉及灵活性；D) stable（稳定的）与语境不符。",
+    "tip": "形容词辨析：particularly useful 强调特定场景下的实用性。"
+   },
+   {
+    "number": 8,
+    "answer": "D",
+    "correct": "act as",
+    "why": "上下文逻辑：自动门通过减少障碍物来\"充当\"人群管理的角色，act as 意为\"起到……作用/充当\"，将门的功能比喻为人群管理手段，逻辑完整。",
+    "traps": "A) call for（呼吁/需要）语义方向相反；B) yield to（屈服于）语义不合；C) insist on（坚持）与 crowd management 搭配不当。",
+    "tip": "短语辨析：act as 意为\"充当/起……的作用\"。"
+   },
+   {
+    "number": 9,
+    "answer": "A",
+    "correct": "As well as",
+    "why": "上下文逻辑：本段在前段\"人群管理\"之外，补充另一优势\"减少占用面积\"，As well as 表示\"除了……之外还\"，起到递进并列作用。",
+    "traps": "B) In terms of（就……而言）引出角度而非递进；C) Thanks to（多亏了）表示因果关系，不合语境；D) Rather than（而不是）表示对比取舍，与句意矛盾。",
+    "tip": "逻辑连接词：As well as 表递进，引出额外优势。"
+   },
+   {
+    "number": 10,
+    "answer": "D",
+    "correct": "occupied",
+    "why": "上下文逻辑：自动门侧开方式有助于减少门所\"占用\"的总面积，occupied by them 意为\"被它们所占据的\"，area occupied by 是常见搭配。",
+    "traps": "A) connected（连接的）不与 area 搭配表\"占用\"；B) shared（共享的）语义不合理；C) represented（代表的）语义不通。",
+    "tip": "搭配辨析：area occupied by 意为\"被……占用的面积\"。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "allow",
+    "why": "上下文逻辑：自动门替代了推拉门，\"使得\"较小建筑能够最大化可用空间，allow sb/sth to do sth 意为\"允许/使得……能够做\"，语法和语义均匹配。",
+    "traps": "B) expect（期望）语义不合理，门不能\"期望\"建筑做什么；C) require（要求）方向相反，不是要求而是使得；D) direct（指导）语义不通。",
+    "tip": "动词辨析：allow...to do 表示\"使得……能够\"。"
+   },
+   {
+    "number": 12,
+    "answer": "C",
+    "correct": "clear",
+    "why": "上下文逻辑：不必为一扇突出的大门\"清理出\"通道，clear the way 是固定搭配，意为\"清出通道/让路\"，与前文\"最大化可用空间\"的好处呼应。",
+    "traps": "A) adopt the way（采纳方式）不是固定搭配，语义不通；B) lead the way（带路/引路）语义不符；D) change the way（改变方式）不合语境。",
+    "tip": "固定搭配：clear the way 意为\"清出通道\"。"
+   },
+   {
+    "number": 13,
+    "answer": "C",
+    "correct": "relying on",
+    "why": "上下文逻辑：每种自动门都\"依靠\"特定的信号来判断何时打开，relying on specific signals 表示\"依赖特定信号\"，准确描述了门与信号之间的依存关系。",
+    "traps": "A) adapting to（适应）强调调整自身，不合语境；B) deriving from（源自）语义方向不对；D) pointing at（指向）语义不通。",
+    "tip": "短语辨析：rely on signals 意为\"依靠信号\"。"
+   },
+   {
+    "number": 14,
+    "answer": "D",
+    "correct": "Although",
+    "why": "上下文逻辑：前半句说\"这些方法各不相同\"，后半句说\"主要原理保持一致\"，两者构成让步转折关系，Although（尽管）恰当连接。",
+    "traps": "A) Once（一旦）表条件/时间，逻辑不对；B) Since（因为/自从）表因果或时间，与转折语义矛盾；C) Unless（除非）表条件，不合语境。",
+    "tip": "逻辑连接词：Although 引导让步从句，表转折。"
+   },
+   {
+    "number": 15,
+    "answer": "C",
+    "correct": "principles",
+    "why": "上下文逻辑：尽管方法不同，但\"主要原理\"保持不变，principles 与后文详述的传感器工作原理呼应，main principles 为常见学术搭配。",
+    "traps": "A) records（记录）语义不相关；B) positions（位置）不合逻辑；D) reasons（原因）不能描述门的工作机制。",
+    "tip": "名词辨析：principles 指\"原理/原则\"，指自动门的工作原理。"
+   },
+   {
+    "number": 16,
+    "answer": "B",
+    "correct": "analyses",
+    "why": "上下文逻辑：自动门系统\"分析\"其周围的光线、声音、重量或运动来决定是否开门，analyses（分析）准确描述传感器对环境信号的处理过程。",
+    "traps": "A) controls（控制）方向相反，系统不是控制光线而是感知分析；C) produces（产生）语义不合，系统不产生光线和声音；D) mixes（混合）语义荒谬。",
+    "tip": "动词辨析：analyse 描述传感器处理环境信号的过程。"
+   },
+   {
+    "number": 17,
+    "answer": "D",
+    "correct": "complement",
+    "why": "上下文逻辑：传感器类型的选择旨在与其所需的不同环境\"相匹配/互补\"，complement 意为\"补充/匹配\"，强调传感器与环境之间的适配性。",
+    "traps": "A) decorate（装饰）语义不相关；B) compare（比较）语义不通；C) protect（保护）虽然有关联，但不是传感器类型选择的目的。",
+    "tip": "词汇辨析：complement 意为\"与……互补/匹配\"。"
+   },
+   {
+    "number": 18,
+    "answer": "C",
+    "correct": "For example",
+    "why": "上下文逻辑：前文说传感器需匹配不同环境，接下来用繁忙街道的例子来具体说明，For example 引出举例论证，逻辑清晰。",
+    "traps": "A) In conclusion（总之）用于总结而非举例；B) By contrast（相比之下）用于对比而非举例；D) Above all（最重要的是）用于强调而非举例。",
+    "tip": "逻辑连接词：For example 引出具体实例支撑论点。"
+   },
+   {
+    "number": 19,
+    "answer": "B",
+    "correct": "suit",
+    "why": "上下文逻辑：繁忙街道可能不\"适合\"运动感应门，因为它会不断地为路人打开，suit 意为\"适合\"，表达环境与门类型之间的匹配问题。",
+    "traps": "A) identify（识别）语义不通；C) secure（保护/固定）与语境不相关；D) include（包含）语义不合。",
+    "tip": "动词辨析：suit 意为\"适合\"，表示适配性。"
+   },
+   {
+    "number": 20,
+    "answer": "A",
+    "correct": "appropriate",
+    "why": "上下文逻辑：与上文运动感应门不适合相对比，压敏垫\"更合适\"来限制监测区域，appropriate 意为\"合适的/恰当的\"，与全段讨论的适配性主题一致。",
+    "traps": "B) obvious（明显的）语义不贴切；C) impressive（令人印象深刻的）不是本段要表达的意思；D) delicate（精致的/微妙的）与语境不匹配。",
+    "tip": "形容词辨析：appropriate 意为\"合适的\"，呼应全段主旨。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "vicinity",
+    "cn": "n. 附近，邻近地区"
+   },
+   {
+    "w": "novelty",
+    "cn": "n. 新奇事物，新鲜感"
+   },
+   {
+    "w": "panels",
+    "cn": "n. 面板，嵌板（panel 的复数）"
+   },
+   {
+    "w": "maximise",
+    "cn": "v. 使最大化"
+   },
+   {
+    "w": "pressure-sensitive",
+    "cn": "adj. 压力敏感的"
+   },
+   {
+    "w": "motion-sensored",
+    "cn": "adj. 运动感应的"
+   },
+   {
+    "w": "passers-by",
+    "cn": "n. 路人，过路人（passer-by 的复数）"
+   },
+   {
+    "w": "sticking-out",
+    "cn": "adj. 突出的，伸出的"
+   },
+   {
+    "w": "swing doors",
+    "cn": "n. 推拉门，旋转门"
+   },
+   {
+    "w": "surveyed",
+    "cn": "adj. 被监测的，被勘察的"
+   },
+   {
+    "w": "commercial",
+    "cn": "adj. 商业的，商用的"
+   },
+   {
+    "w": "obstacles",
+    "cn": "n. 障碍物（obstacle 的复数）"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "but",
+    "role": "转折连词，连接自动门从新奇事物到广泛应用的转变"
+   },
+   {
+    "w": "As well as",
+    "role": "递进连接词，引出自动门的另一优势——节省空间"
+   },
+   {
+    "w": "Although",
+    "role": "让步连词，承认方法不同但强调原理相同"
+   },
+   {
+    "w": "For example",
+    "role": "举例连接词，用繁忙街道实例说明传感器的适配性"
+   },
+   {
+    "w": "Particularly",
+    "role": "程度副词，强调自动门在特定场景下尤为有用"
+   }
+  ]
+ }
+}

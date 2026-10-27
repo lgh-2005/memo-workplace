@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "0d213278f813__reading__1",
+ "examId": "0d213278f813",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年考研英语真题",
+ "year": 2019,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:39:42.584Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60600,
+ "usage": {
+  "prompt_tokens": 1723,
+  "completion_tokens": 3697,
+  "total_tokens": 5420,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1723,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3697,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1723,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "金融监管推动企业长期主义思维",
+  "gist": "英国金融监管机构对银行高管实施奖金延迟发放规则，旨在遏制短期逐利行为。文章指出\"短期主义\"在上市公司中日益严重，表现为持股时间缩短、季度资本主义盛行、数字技术加速交易等。美国和法国已采取措施鼓励长期思维，文章呼吁企业应以耐心为美德，兼顾所有利益相关者的长期利益。",
+  "structure": [
+   "第1段：引出英国新规及其目的——追责与推动长期决策",
+   "第2-4段：论述\"短期主义\"的表现与危害",
+   "第5-6段：美法两国促进\"长期主义\"的具体举措",
+   "第7段：总结呼吁——企业薪酬设计应激励长期思维"
+  ],
+  "difficulty": "中等",
+  "translation": "英国金融监管机构对大型银行的高管施加了一项颇为不同寻常的规定。从明年起，如果银行正在因不当行为接受调查，高管获得的任何有保障的奖金都可能被延迟十年发放。这条\"追回\"条款的主要目的是让银行家对有害的冒险行为承担责任，并恢复公众对金融机构的信任。然而，官员们还期望获得一个更大的好处：促进更具长远眼光的决策，不仅针对银行，也针对所有企业，从而为子孙后代构建更强劲的经济。\n\n英格兰银行首席经济学家安德鲁·霍尔丹表示，\"短期主义\"，即对快速利润的渴望，在上市公司中愈发严重。他引用古典经济学巨匠阿尔弗雷德·马歇尔的话来描述这种金融上的急躁，说这就像\"孩子们把布丁里的李子挑出来马上吃掉\"，而不是把它们留到最后享用。\n\n他指出，近几十年来，美国和英国的平均持股时间已从七年降至七个月。那些要求公司提供高额季度利润的短期投资者，可能会阻碍公司在长期研发或建立客户忠诚度方面的努力。这种现象被称为\"季度资本主义\"。\n\n此外，新的数字技术使股票交易更加迅速，信息使用更加快捷，因此金融市场中的注意力持续时间也更短。\"短期思维似乎占据了主导地位，而这是以牺牲长期投资为代价的，\"美国证券交易委员会委员丹尼尔·加拉格尔在本周的一次演讲中表示。\n\n在美国，2002年的《萨班斯-奥克斯利法案》推动大多数上市公司将高管的绩效奖金延迟大约一年发放，在一定程度上帮助减少了\"短期主义\"。在最新的CEO薪酬调查中，《华尔街日报》发现高管薪酬中\"相当大的一部分\"现在与业绩挂钩。\n\n还可以采取更多措施来鼓励\"长期主义\"，比如修改税法和加快股票收购的信息披露。在法国，持有公司投资至少两年的股东有时可以获得更多的投票权。\n\n在公司内部，合理的薪酬设计可以激励高管超越自身任期进行思考，并代表所有利益相关者的利益行事。英国的新规提醒银行家们，社会关注的不仅是他们的短期表现，更是长期表现。",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The main purpose of this \"clawback\" rule is to hold bankers accountable for harmful risk-taking and to restore public trust in financial institutions.",
+    "why": "原文明确指出\"追回\"条款的主要目的是\"hold bankers accountable for harmful risk-taking\"（让银行家对有害的冒险行为承担责任）。A选项\"enhance bankers' sense of responsibility\"（增强银行家的责任感）是对\"hold bankers accountable\"的同义改写，accountable（负有责任的）对应responsibility（责任感），因此A正确。",
+    "traps": "B\"帮助企业获得更大利润\"——原文说的是更长远的决策以构建更强劲的经济，而非更大利润，属于偷换概念；C\"建立新的金融监管体系\"——原文只提到一条新规，并非建立整个新体系，属于过度引申；D\"保障高管奖金\"——原文说的是奖金可能被延迟十年，恰恰是限制而非保障奖金，属于反向曲解。",
+    "tip": "注意同义替换：accountable = sense of responsibility。"
+   },
+   {
+    "number": 22,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "He quotes a giant of classical economics, Alfred Marshall, in describing this financial impatience as acting like \"children who pick the plums out of their pudding to eat them at once\"",
+    "why": "引用马歇尔的话出现在第二段，该段首句即点明主题：\"Short-termism\" or the desire for quick profits, has worsened in publicly traded companies。马歇尔的比喻是用来形象说明这种\"financial impatience\"（金融急躁），即短期主义行为。因此引用马歇尔是为了说明经济活动中的短期主义现象，D正确。",
+    "traps": "A\"产生快速利润的条件\"——马歇尔的话是批判急于获取短期利润的行为，而非介绍条件，属于曲解论点；B\"政府决策的急躁\"——原文说的是公司和金融市场的短期行为，并非政府决策，属于偷换主体；C\"上市公司的稳固结构\"——原文恰恰是批评上市公司的短视行为，与\"稳固结构\"无关，属于无中生有。",
+    "tip": "例证题要回到论点句，找引用的目的而非引用本身的内容。"
+   },
+   {
+    "number": 23,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Transient investors, who demand high quarterly profits from companies, can hinder a firm's efforts to invest in long-term research or to build up customer loyalty.",
+    "why": "原文指出短期投资者要求高额季度利润，这会\"hinder\"（阻碍）公司在长期研发和客户忠诚度方面的投入。hinder是一个明确的负面词汇，表明短期投资对上市公司的影响是负面的、有害的。B选项adverse（不利的、有害的）与hinder语义一致，故B正确。",
+    "traps": "A\"间接的\"——原文描述的影响是直接的（直接阻碍公司长期投资），而非间接的；C\"极小的\"——原文用hinder表明影响是显著的，后文还专门命名为\"quarterly capitalism\"，可见影响之大，minimal与原文矛盾；D\"暂时的\"——原文并未暗示这种影响是短暂或临时的，且transient修饰的是投资者而非影响本身，属于偷换修饰对象。",
+    "tip": "关键动词hinder的感情色彩决定了答案方向，注意区分negative词汇。"
+   },
+   {
+    "number": 24,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "Much more could be done to encourage \"long-termism,\" such as changes in the tax code and quicker disclosure of stock acquisitions. In France, shareholders who hold onto a company investment for at least two years can sometimes earn more voting rights in a company.",
+    "why": "第5段介绍美国《萨班斯-奥克斯利法案》延迟高管奖金发放的做法，第6段开头说\"Much more could be done to encourage 'long-termism'\"，随后举法国给予长期持股者更多投票权的例子。两个例子共同说明的是各国促进\"长期主义\"的具体途径和方法，C选项\"the approaches to promoting 'long-termism'\"（促进长期主义的途径）最为准确。",
+    "traps": "A\"阻止短期主义的障碍\"——美法例子展示的是已有的积极措施而非障碍，属于反向理解；B\"长期思维的重要性\"——例子侧重的是具体做法而非论证重要性，属于以偏概全；D\"短期思维的盛行\"——第5-6段的重点已转向解决方案而非问题描述，属于答非所问。",
+    "tip": "例证题关注例子所服务的论点，美法例子均在\"鼓励长期主义\"这一论点下展开。"
+   },
+   {
+    "number": 25,
+    "answer": "B",
+    "type": "主旨题",
+    "locate": "Britain's new rule is a reminder to bankers that society has an interest in their performance, not just for the short term but for the long term.",
+    "why": "全文围绕\"短期主义\"的危害与\"长期主义\"的倡导展开。文章从英国新规引入，论述短期行为的各种表现和危害，随后介绍各国促进长期主义的措施，最后呼吁企业应着眼长远。B选项\"Patience as a Corporate Virtue\"（耐心是一种企业美德）精准概括了文章核心主旨——企业应当摒弃急功近利，以耐心和长远眼光经营，patience对应long-termism，virtue体现了作者的倡导态度。",
+    "traps": "A\"季度资本主义的失败\"——\"quarterly capitalism\"只是文中一个概念，并非全文主题，且文章并未论述其\"失败\"，属于以偏概全；C\"高管需要果断\"——文章主张的恰恰是耐心与长远思考，而非果断（decisiveness），属于反向理解；D\"冒险银行家的挫败\"——银行家只是文章引入话题的切入点，并非全文核心，且frustration无文本支撑，属于无中生有。",
+    "tip": "主旨题需贯穿全文，选择覆盖面最广且能体现作者态度的标题。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "clawback",
+    "cn": "n. 追回条款（指收回已发放款项的规定）"
+   },
+   {
+    "w": "accountable",
+    "cn": "adj. 应负责任的，有责任的"
+   },
+   {
+    "w": "short-termism",
+    "cn": "n. 短期主义（只注重短期利益的行为）"
+   },
+   {
+    "w": "transient",
+    "cn": "adj. 短暂的，临时的（此处指短期的投资者）"
+   },
+   {
+    "w": "hinder",
+    "cn": "v. 阻碍，妨碍"
+   },
+   {
+    "w": "dubbed",
+    "cn": "v. 被称为，被冠以（名称）"
+   },
+   {
+    "w": "equities",
+    "cn": "n. 股票，权益（equity的复数形式）"
+   },
+   {
+    "w": "predominance",
+    "cn": "n. 优势，主导地位"
+   },
+   {
+    "w": "defer",
+    "cn": "v. 推迟，延期"
+   },
+   {
+    "w": "disclosure",
+    "cn": "n. 披露，公开"
+   },
+   {
+    "w": "stakeholders",
+    "cn": "n. 利益相关者"
+   },
+   {
+    "w": "compensation",
+    "cn": "n. 薪酬，报酬；补偿"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Starting next year, any guaranteed bonus of top executives could be delayed 10 years if their banks are under investigation for wrongdoing.",
+    "cn": "从明年起，如果银行正在因不当行为接受调查，高管获得的任何有保障的奖金都可能被延迟十年发放。",
+    "note": "主句为\"any guaranteed bonus could be delayed 10 years\"，if引导条件状语从句，under investigation for wrongdoing为介词短语作表语。"
+   },
+   {
+    "en": "Transient investors, who demand high quarterly profits from companies, can hinder a firm's efforts to invest in long-term research or to build up customer loyalty.",
+    "cn": "那些要求公司提供高额季度利润的短期投资者，可能会阻碍公司在长期研发或建立客户忠诚度方面的努力。",
+    "note": "主句为Transient investors can hinder efforts，who引导非限制性定语从句修饰investors，to invest和to build up为并列不定式作efforts的后置定语。"
+   },
+   {
+    "en": "Within companies, the right compensation design can provide incentives for executives to think beyond their own time at the company and on behalf of all stakeholders.",
+    "cn": "在公司内部，合理的薪酬设计可以激励高管超越自身任期进行思考，并代表所有利益相关者的利益行事。",
+    "note": "主干为design can provide incentives，for executives to think为不定式作incentives的后置定语，beyond their own time与on behalf of all stakeholders为两个并列介词短语修饰think的方向。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,176 @@
+{
+ "schemaVersion": 1,
+ "id": "2c00eddfd70a__reading__5",
+ "examId": "2c00eddfd70a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "1999 年考研英语真题（旧）",
+ "year": 1999,
+ "sub": "5",
+ "questionNumbers": [
+  27,
+  28,
+  29,
+  30
+ ],
+ "generatedAt": "2026-10-27T05:03:43.321Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59033,
+ "usage": {
+  "prompt_tokens": 1701,
+  "completion_tokens": 3535,
+  "total_tokens": 5236,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1701,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3535,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1701,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学研究中思维准备比实验本身更重要",
+  "gist": "文章以牛顿发现万有引力为例，论证科学进步更依赖于研究者思维的准备和想象力，而非实验本身。作者批评部分科学家过度依赖\"科学方法\"而忽视想象力与推测的价值，并指出科学家在论文中营造的确定性假象误导了企业管理层，使其对科研产出的可预测性和经济回报抱有不切实际的期望。",
+  "structure": [
+   "第一段：以牛顿为例说明思维准备比实验更关键",
+   "第二段：强调不可预测性是科研的本质特征",
+   "第三段：批评年轻科学家以科学方法取代想象思维",
+   "第四段：科学家的论文写作误导了管理层对科研的期望"
+  ],
+  "difficulty": "中等",
+  "translation": "实际上，科学远不如它所准备的实验那样依赖于实验本身，而是更多地依赖于观察实验者的思维准备状态。据说艾萨克·牛顿爵士是通过一个苹果的坠落发现了万有引力。几个世纪以来，苹果在许多地方落下，成千上万的人目睹过苹果落地。但牛顿多年来一直对月球和行星的轨道运动成因充满好奇。是什么让它们保持在轨道上？为什么它们不会从天上掉下来？苹果向下落向地面而不是向上飞到树上，这一事实回答了他一直在思索的关于那些更大的\"天上果实\"——月球和行星——的问题。\n\n有多少人会去思考苹果向上飞入树中的可能性呢？牛顿考虑过，因为他并不是在试图预测什么。他只是在思索。他的头脑已经为不可预见之事做好了准备。不可预测性是研究本质特征的一部分。如果没有不可预测的事物，就没有研究可言。科学家们在为技术期刊撰写那些刻板的报告时往往会忘记这一点，但历史上充满了这样的例子。\n\n在与一些科学家交谈时，尤其是较年轻的科学家，你可能会得到这样一种印象：他们认为\"科学方法\"可以替代富有想象力的思维。我参加过一些研究会议，会上有人问一位科学家，他认为继续某项实验是否可取。那位科学家皱着眉头，看着图表说：\"数据仍然不够确定。\"\"这我们知道，\"预算部门的人说，\"但你怎么看？值得继续做下去吗？你认为我们可能会期待什么结果？\"那位科学家对被要求做出推测感到震惊。\n\n当然，这实际上意味着科学家已经成为自己文章的受害者。他一贯提出不容质疑的论断，以至于不仅他自己深信不疑，还使工商企业管理层也相信那些论断是正确的。如果实验的规划与执行都如科学期刊上的报告所显示的那样忠实于计划，那么管理层期望研究产出以美元和美分衡量的成果就完全合乎逻辑了。审计人员完全有理由认为，那些确切知道自己要去哪里、如何到达的科学家，不应该因为既要盯着收银机又要盯着显微镜而分心。而且，如果对标准模式的规律性和一致性对科学家来说真如其论文所反映的那样重要，那么管理层歧视研究人员中的\"怪人\"而偏爱那些\"善于团队合作\"的传统思维者，也就不能受到指责了。",
+  "questions": [
+   {
+    "number": 27,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "Science, in practice, depends far less on the experiments it prepares than on the preparedness of the minds of the men who watch the experiments.",
+    "why": "牛顿的例子服务于第一段首句的论点：科学在实践中远不如依赖实验本身，而更依赖于观察者的思维准备。苹果落地被无数人看到，但唯独牛顿因多年来对行星运动问题的好奇心（即心智的准备）才从中获得灵感。\"inquiring minds\"（探究性思维）对应\"preparedness of the minds\"，\"scientific experiments\"对应\"experiments\"，A项精准概括了例子所要证明的观点。",
+    "traps": "B项\"fruitful researches\"（富有成果的研究）文中未提及，且偏离论证重点，属无中生有；C项\"seldom forget\"与第二段\"Scientists tend to forget this\"相矛盾，属正反混淆；D项将不可预测性与预测的重要性进行比较，且说不可预测性\"weighs less\"（不那么重要），与原文观点完全相反，属反向干扰。",
+    "tip": "例证题应找例子所服务的论点句，通常在例子之前。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Unpredictability is part of the essential nature of research. If you don't have unpredictable things, you don't have research.",
+    "why": "作者在第二、三段反复强调不可预测性是科研的本质，并批评科学家在会议上被要求推测时感到震惊（shocked at having even been asked to speculate）。由此可知，作者主张科学家不应忽视对不可预测事物的推测。B项\"shouldn't neglect to speculate on unpredictable things\"准确反映了作者的主张。",
+    "traps": "A项\"shouldn't replace scientific method with imaginative thought\"把原文意思说反了，原文批评的是用科学方法取代想象思维；C项\"write more concise reports\"在原文中没有依据，文章批评的是报告内容刻板而非冗长；D项\"should be confident about their research findings\"原文未涉及对研究成果的信心问题，属无中生有。",
+    "tip": "作者态度题需关注批评的对象及其反面含义。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "In talking to some scientists, particularly younger ones, you might gather the impression that they find the \"scientific method\" a substitute for imaginative thought.",
+    "why": "定位句明确指出，与年轻科学家交谈时，你会得到这样的印象：他们把\"科学方法\"当作想象思维的替代品。这说明年轻科学家固守\"科学方法\"，D项\"stick to scientific method\"与此完全吻合。",
+    "traps": "A项\"keen interest in prediction\"虽然预测与科学方法有关联，但原文强调的是他们依赖科学方法而非特指预测兴趣，属偷换概念；B项\"often speculate on the future\"与原文科学家拒绝推测（shocked at having been asked to speculate）相矛盾；C项\"think highly of creative thinking\"与原文相反，他们恰恰用科学方法取代了想象思维。",
+    "tip": "题目问\"年轻科学家的特征\"时，需精确定位相关描述。"
+   },
+   {
+    "number": 30,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "If experiments are planned and carried out according to plan as faithfully as the reports in the science journals indicate, then it is perfectly logical for management to expect research to produce results measurable in dollars and cents.",
+    "why": "此句为条件句，用\"if\"引出一个作者认为并不成立的前提（实验执行并非如论文所写那样忠实于计划），从而暗示管理层期望科研产出可用金钱衡量的回报是不现实的。既然科研的本质是不可预测的，那么其结果可能不像预期那样有利可图。A项\"may not be as profitable as they are expected\"准确表达了这一含义。",
+    "traps": "B项\"can be measured in dollars and cents\"是管理层基于错误前提得出的结论，并非作者观点，属张冠李戴；C项\"rely on conformity to a standard pattern\"是作者所批评的错误认知，不是作者的主张；D项\"mostly underestimated by management\"原文未提及管理层低估科研成果，实际上是管理层对科研有过高或不当的期望。",
+    "tip": "推断题中条件句（if）的前提若不成立，则结论亦不成立。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "preparedness",
+    "cn": "n. 准备状态，有准备"
+   },
+   {
+    "w": "orbital",
+    "cn": "adj. 轨道的"
+   },
+   {
+    "w": "unpredictability",
+    "cn": "n. 不可预测性"
+   },
+   {
+    "w": "cut and dried",
+    "cn": "adj. 刻板的，老套的，预先安排好的"
+   },
+   {
+    "w": "advisability",
+    "cn": "n. 可取性，适当性"
+   },
+   {
+    "w": "inconclusive",
+    "cn": "adj. 不确定的，无定论的"
+   },
+   {
+    "w": "speculate",
+    "cn": "v. 推测，推断"
+   },
+   {
+    "w": "faithfully",
+    "cn": "adv. 忠实地，如实地"
+   },
+   {
+    "w": "auditor",
+    "cn": "n. 审计员，查账员"
+   },
+   {
+    "w": "conformity",
+    "cn": "n. 一致性，遵从"
+   },
+   {
+    "w": "discriminating against",
+    "cn": "v. 歧视，区别对待"
+   },
+   {
+    "w": "odd balls",
+    "cn": "n. 怪人，古怪的人"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Science, in practice, depends far less on the experiments it prepares than on the preparedness of the minds of the men who watch the experiments.",
+    "cn": "实际上，科学远不如依赖它所准备的实验本身，而是更多地依赖于观察实验者的思维准备状态。",
+    "note": "主干为 Science depends far less on A than on B 比较结构；A 为 the experiments it prepares（it 指 science）；B 为 the preparedness of the minds，后接 of the men who watch... 定语从句修饰 men。"
+   },
+   {
+    "en": "It is entirely reasonable for auditors to believe that scientists who know exactly where they are going and how they will get there should not be distracted by the necessity of keeping one eye on the cash register while the other eye is on the microscope.",
+    "cn": "审计人员完全有理由认为，那些确切知道自己要去哪里和如何到达的科学家，不应该因为既要盯着收银机又要盯着显微镜而分心。",
+    "note": "It is reasonable for sb to believe that... 形式主语结构；that 从句中 scientists 后跟 who 引导的定语从句含两个宾语从句（where... 和 how...）；be distracted by 后接 keeping... while... 并列动作。"
+   },
+   {
+    "en": "Nor, if regularity and conformity to a standard pattern are as desirable to the scientist as the writing of his papers would appear to reflect, is management to be blamed for discriminating against the \"odd balls\" among researchers in favor of more conventional thinkers who \"work well with the team\".",
+    "cn": "而且，如果对标准模式的规律性和一致性对科学家来说真如其论文写作所反映的那样重要，那么管理层歧视研究人员中的\"怪人\"而偏爱那些\"善于团队合作\"的传统思维者，也就不能受到指责了。",
+    "note": "Nor 置于句首引起倒装，主干为 is management to be blamed for...；中间插入 if 条件状语从句；as...as 比较结构中第二个 as 后接 the writing of his papers would appear to reflect；for 后接 discriminating against... in favor of... 对比结构。"
+   }
+  ]
+ }
+}

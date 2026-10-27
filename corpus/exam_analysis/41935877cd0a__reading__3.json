@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "41935877cd0a__reading__3",
+ "examId": "41935877cd0a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年考研英语真题",
+ "year": 2016,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:32:47.878Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 54511,
+ "usage": {
+  "prompt_tokens": 1723,
+  "completion_tokens": 3568,
+  "total_tokens": 5291,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1723,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3568,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1723,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "企业社会责任的潜在经济价值",
+  "gist": "文章围绕企业社会责任（CSR）展开讨论。先引述弗里德曼认为企业唯一责任是盈利的观点，随后指出新研究表明CSR可能为企业创造经济价值，尤其体现在企业因腐败被起诉时，拥有完善CSR项目的公司往往获得更宽大的处罚，证明了CSR带来的\"光环效应\"对检察官决策的影响。",
+  "structure": [
+   "第1段：引出弗里德曼观点并转折提出CSR可能创造价值",
+   "第2段：列举CSR为企业增值的三种途径",
+   "第3段：引入贿赂案研究以区分光环效应",
+   "第4-5段：研究发现CSR记录影响处罚轻重",
+   "第6段：承认研究局限，但肯定CSR的减罚效果"
+  ],
+  "difficulty": "中等",
+  "translation": "诺贝尔经济学奖得主米尔顿·弗里德曼曾写道：\"企业有且仅有一项社会责任，那就是利用其资源、从事旨在增加利润的活动。\"但即使你接受弗里德曼的前提，将企业社会责任（CSR）政策视为浪费股东资金，事情也未必如此黑白分明。新研究表明，CSR可能为企业创造金钱价值——至少在企业因腐败被起诉时是如此。\n\n据咨询公司EPG估计，美国和英国最大的企业每年在CSR上的支出合计超过150亿美元。这可能通过三种方式为其业务增值。第一，消费者可能将CSR支出视为该公司产品高质量的\"信号\"。第二，顾客可能愿意购买该公司的产品，将其作为向该公司所帮助的公益事业间接捐款的方式。第三，通过一种更为弥散的\"光环效应\"，即企业的善举为其赢得消费者和其他人更多的认可。\n\n此前关于CSR的研究一直难以区分这些效应，因为消费者可能同时受到三者的影响。最近一项研究试图通过考察依据美国《反海外腐败法》（FCPA）进行的贿赂起诉案来将它们区分开。该研究认为，由于检察官在调查过程中不会消费企业产品，他们只可能受到光环效应的影响。\n\n该研究发现，在被起诉的企业中，那些拥有最全面CSR项目的企业往往获得更宽大的处罚。他们的分析排除了以下可能性：是企业的政治影响力而非CSR立场导致了处罚从宽——那些对政治竞选捐款更多的公司并没有获得更低的罚款。\n\n总而言之，该研究得出结论：虽然检察官应当仅根据案件本身的是非曲直来评估案件，但他们确实似乎受到企业CSR记录的影响。一位研究人员表示：\"我们估计，消除一项重大的劳工权益问题（如童工问题），或者将企业捐赠增加约20%，通常会使罚款比行贿外国官员的典型处罚低40%。\"\n\n研究人员承认，他们的研究并未回答企业应在CSR上花费多少这一问题。该研究也未揭示企业在制定其行善政策时，在多大程度上依赖光环效应而非其他可能的好处。但至少他们已经证明，当企业触犯法律时，良好品行的证据可以为其赢得代价更小的惩罚。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "B",
+    "type": "态度题",
+    "locate": "But even if you accept Friedman's premise and regard corporate social responsibility (CSR) policies as a waste of shareholders' money, things may not be absolutely clear-cut.",
+    "why": "作者引用弗里德曼的观点后紧接用\"But even if…things may not be absolutely clear-cut\"进行转折，表明作者不完全认同弗里德曼\"CSR是浪费股东资金\"的立场，随后全文用研究证据说明CSR具有经济价值，因此作者对弗里德曼的观点持怀疑态度（skepticism）。",
+    "traps": "A（tolerance容忍）：文中并非\"虽不赞同但表示容忍\"，而是明确用转折和证据进行质疑；C（approval赞同）：与文章转折逻辑完全相反，作者恰恰在反驳该观点；D（uncertainty不确定）：作者态度并非模棱两可，而是通过后续论证明确表达了质疑。",
+    "tip": "关注引述后的转折词（But），往往暗示作者的真实态度。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "First, consumers may take CSR spending as a \"signal\" that a company's products are of high quality. Second, customers may be willing to buy a company's products as an indirect way to donate to the good causes it helps. And third, through a more diffuse \"halo effect,\" whereby its good deeds earn it greater consideration from consumers and others.",
+    "why": "第二段列举了CSR为企业增值的三种途径：消费者将CSR视为高质量信号、顾客愿意购买产品间接捐赠、以及光环效应赢得更多认可。三者的共同本质是赢得消费者的信任与青睐，C项\"winning trust from consumers\"是对三种途径的高度概括。",
+    "traps": "A（guarding it against malpractices防止不当行为）：文中未提及CSR防止企业不当行为，属无中生有；B（protecting it from being defamed保护其免遭诽谤）：文中未涉及诽谤问题，属无中生有；D（raising the quality of its products提升产品质量）：文中说消费者将CSR视为高质量的\"信号\"，并非说CSR真的提升了产品质量，属偷换概念。",
+    "tip": "注意区分\"被视为质量信号\"与\"真正提高质量\"的本质区别。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "type": "词义句意题",
+    "locate": "The study found that, among prosecuted firms, those with the most comprehensive CSR programmes tended to get more lenient penalties.",
+    "why": "该句语境是：在被起诉的企业中，拥有最全面CSR项目的企业\"tended to get more lenient penalties\"。结合下文\"leniency\"（宽大）以及\"did not receive lower fines\"（未获得更低罚款）的对比，可推断lenient意为宽大的、不严厉的。more lenient即\"更宽大的\"，与less severe（不那么严厉的）意思最为接近。",
+    "traps": "A（less controversial较少争议）：与处罚轻重无关，偏离语境；B（more effective更有效）：描述处罚效果而非程度，不符合语境逻辑；C（more lasting更持久）：描述处罚时间而非严厉程度，与上下文不符。",
+    "tip": "词义题要回归上下文语境，结合同段其他线索词（如leniency、lower fines）综合判断。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "In all, the study concludes that whereas prosecutors should only evaluate a case based on its merits, they do seem to be influenced by a company's record in CSR.",
+    "why": "第五段明确总结：虽然检察官应当仅根据案件本身的是非曲直评估案件，但他们确实似乎受到企业CSR记录的影响（they do seem to be influenced）。这直接对应A项\"has an impact on their decision\"，即CSR记录对检察官的决策有影响。",
+    "traps": "B（comes across as reliable evidence可靠证据）：文中强调CSR记录\"不应当\"成为评判依据但事实上产生了影响，并非说它构成可靠证据，属曲解原文；C（increases the chance of being penalized增加被处罚的可能）：与原文相反，CSR记录好的企业获得的是更宽大的处罚；D（constitutes part of the investigation构成调查的一部分）：第三段明确说检察官在调查中不消费企业产品，CSR并非调查的组成部分，属偷换概念。",
+    "tip": "注意让步关系中\"should…but do\"的转折，抓住作者的实际结论。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Researchers admit that their study does not answer the question of how much businesses ought to spend on CSR.",
+    "why": "最后一段明确指出研究未能回答\"企业应在CSR上花多少钱\"这一问题，这意味着企业在CSR上的必要支出金额仍是未知的。B项\"The necessary amount of companies' spending on it is unknown\"准确概括了这一信息。",
+    "traps": "A（负面效应被忽视）：文中未讨论CSR的负面效应，属无中生有；C（企业的财务能力被高估）：文中未提及企业财务能力问题，属无中生有；D（为银行业带来许多好处）：banking on为\"指望、依赖\"之意而非\"银行业\"，属利用词汇多义制造干扰，偷换概念。",
+    "tip": "末段常出总结或局限性说明，注意区分\"已证明\"与\"未回答\"的内容。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "premise",
+    "cn": "n. 前提，假设"
+   },
+   {
+    "w": "clear-cut",
+    "cn": "adj. 明确的，黑白分明的"
+   },
+   {
+    "w": "prosecute",
+    "cn": "v. 起诉，检控"
+   },
+   {
+    "w": "diffuse",
+    "cn": "adj. 弥散的，分散的"
+   },
+   {
+    "w": "halo effect",
+    "cn": "n. 光环效应"
+   },
+   {
+    "w": "differentiate",
+    "cn": "v. 区分，辨别"
+   },
+   {
+    "w": "lenient",
+    "cn": "adj. 宽大的，仁慈的"
+   },
+   {
+    "w": "leniency",
+    "cn": "n. 宽大，仁慈"
+   },
+   {
+    "w": "rule out",
+    "cn": "phr. 排除"
+   },
+   {
+    "w": "merits",
+    "cn": "n. 是非曲直，优劣（此处指案件本身的事实依据）"
+   },
+   {
+    "w": "banking on",
+    "cn": "phr. 指望，依赖"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But even if you accept Friedman's premise and regard corporate social responsibility (CSR) policies as a waste of shareholders' money, things may not be absolutely clear-cut.",
+    "cn": "但即使你接受弗里德曼的前提，将企业社会责任（CSR）政策视为浪费股东资金，事情也未必如此黑白分明。",
+    "note": "主干为things may not be clear-cut；even if引导让步状语从句，其中含and连接的两个并列谓语accept和regard。"
+   },
+   {
+    "en": "We estimate that either eliminating a substantial labour-rights concern, such as child labour, or increasing corporate giving by about 20% results in fines that generally are 40% lower than the typical punishment for bribing foreign officials.",
+    "cn": "我们估计，消除一项重大劳工权益问题（如童工问题），或者将企业捐赠增加约20%，通常会使罚款比行贿外国官员的典型处罚低40%。",
+    "note": "主干为We estimate that…；that从句中either…or…为并列主语，results in为谓语；fines后接that引导的定语从句修饰fines。"
+   },
+   {
+    "en": "Nor does it reveal how much companies are banking on the halo effect, rather than the other possible benefits, when they decide their do-gooding policies.",
+    "cn": "该研究也未揭示企业在制定其行善政策时，在多大程度上依赖光环效应而非其他可能的好处。",
+    "note": "Nor置于句首引起部分倒装（does it reveal）；how much引导宾语从句；rather than连接对比成分；when引导时间状语从句。"
+   }
+  ]
+ }
+}

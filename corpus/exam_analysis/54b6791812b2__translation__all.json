@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "54b6791812b2__translation__all",
+ "examId": "54b6791812b2",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2005 年考研英语真题（旧）",
+ "year": 2005,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:17:07.669Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67074,
+ "usage": {
+  "prompt_tokens": 1366,
+  "completion_tokens": 4442,
+  "total_tokens": 5808,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1366,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4442,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1366,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "欧洲电视业合作与一体化发展",
+  "translation": "谈论大众媒体在欧洲历史这一极其重要的阶段中所起的作用并非易事。历史与新闻彼此混淆，人们的印象往往是怀疑与乐观的混合体。电视是产生和传递这些感受的手段之一——在欧洲近来发生的事件中，电视在将不同的民族和国家联系在一起方面所起的作用之大，也许是前所未有的。正在形成中的欧洲只能是其人民的欧洲、其文化和民族特性的欧洲。考虑到这一点，我们可以开始分析欧洲的电视业状况。在欧洲，正如在其他地方一样，多媒体集团日益成功；这些集团将电视、广播、报纸、杂志和出版社联合在一起，使其相互关联地运作。意大利的一个例子是贝卢斯科尼集团，而在国外则令人想到麦克斯韦尔和默多克。\n\n显然，只有最大、最灵活的电视公司才能在如此丰厚且竞争激烈的市场中立足。仅这一点就表明，电视行业并非一个容易生存的领域，统计数字更加证实了这一事实：在八十个欧洲电视网中，1989年亏损的不少于百分之五十。\n\n此外，欧洲共同体的一体化将迫使电视公司在制作和发行方面进行更紧密的合作。\n\n创建一种尊重各种不同文化和传统的\"欧洲认同感\"——而这些文化和传统构成了欧洲大陆的联结纽带——并非易事，需要做出战略性选择，即在欧洲为欧洲制作节目。这意味着要减少我们对北美市场的依赖，因为北美的节目反映的是与我们不同的经验和文化传统。\n\n为了实现这些目标，我们必须更加注重联合制作、新闻交流、纪录片服务和人员培训。这还涉及欧洲各国之间达成协议，以欧洲投资银行为模式，创建一个欧洲电视制作银行，来处理制作所需的资金。在应对如此规模的挑战时，可以毫不夸张地说，\"合则立，分则败\"——如果我必须选一句口号，那就是\"多元中的统一\"。一种目标上的统一，但同时尊重每个国家各自的不同特点。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "Television is one of the means by which these feelings are created and conveyed – and perhaps never before has it served so much to connect different peoples and nations as in the recent events in Europe.",
+    "cn": "电视是产生和传递这些感受的手段之一——在欧洲近来发生的事件中，电视在将不同的民族和国家联系在一起方面所起的作用之大，也许是前所未有的。",
+    "structure": "主干为 Television is one of the means；by which 引导定语从句修饰 means；破折号后 never before 置于句首引起部分倒装（助动词 has 提前），还原语序为 it has perhaps never before served so much to connect...as in...，构成 never...so much...as... 比较结构。",
+    "points": [
+     "by which 定语从句需译为'通过这种手段……'或前置处理为'产生和传递……的手段'",
+     "never before has it served so much 倒装结构还原并正确翻译为'前所未有地发挥如此大的作用'",
+     "as in the recent events in Europe 比较状语需体现'如同在欧洲近来事件中那样'的比较含义"
+    ],
+    "pitfall": "最易误译处在于 never before 引起的倒装句；考生容易忽视 so much...as... 的比较结构，将其译为简单否定而丢失'如同……一样'的比较语义。"
+   },
+   {
+    "number": 47,
+    "en": "In Europe, as elsewhere, multi-media groups have been increasingly successful; groups which bring together television, radio, newspapers, magazines and publishing houses that work in relation to one another.",
+    "cn": "在欧洲，正如在其他地方一样，多媒体集团日益成功；这些集团将电视、广播、报纸、杂志和出版社联合在一起，使其相互关联地运作。",
+    "structure": "主干为 multi-media groups have been increasingly successful；as elsewhere 为插入语表类比；分号后 groups which bring together... 是对主句主语的同位语补充说明；that work in relation to one another 为定语从句修饰前面所列各种媒体形式。",
+    "points": [
+     "as elsewhere 插入语需译出'正如在其他地方一样'的类比含义",
+     "分号后 groups which... 同位语结构需处理为对前文'多媒体集团'的解释说明",
+     "that work in relation to one another 定语从句需译为'相互关联地运作'"
+    ],
+    "pitfall": "分号后的 groups which... 容易被误认为独立新句；that work in relation to one another 的修饰对象容易误判，它修饰的是前面所列各媒体机构整体，意为这些机构相互协作。"
+   },
+   {
+    "number": 48,
+    "en": "This alone demonstrates that the television business is not an easy world to survive in, a fact underlined by statistics that show that out of eighty European television networks, no less than 50% took a loss in 1989.",
+    "cn": "仅这一点就表明，电视行业并非一个容易生存的领域，统计数字进一步证实了这一事实：在八十个欧洲电视网中，1989年亏损的不少于百分之五十。",
+    "structure": "主干为 This alone demonstrates that...（宾语从句）；a fact 为前面整个宾语从句内容的同位语；underlined by statistics 过去分词短语作 a fact 的后置定语；that show that... 为 statistics 的定语从句，其中又嵌套 that 引导的宾语从句。",
+    "points": [
+     "a fact underlined by statistics 同位语结构需译出'统计数字所证实的事实'",
+     "no less than 50% 需准确译为'不少于百分之五十'，体现数量之多",
+     "took a loss 需译为'亏损'，准确把握商业术语"
+    ],
+    "pitfall": "句中出现三个 that（demonstrate that / statistics that show / show that），考生容易混淆其语法功能：第一个和第三个为宾语从句引导词，第二个为定语从句引导词。a fact 同位语也容易漏译。"
+   },
+   {
+    "number": 49,
+    "en": "Creating a \"European identity\" that respects the different cultures and traditions which go to make up the connecting fabric of the Old Continent is no easy task and demands a strategic choice",
+    "cn": "创建一种尊重各种不同文化和传统的\"欧洲认同感\"——而这些文化和传统构成了欧洲大陆的联结纽带——并非易事，需要做出战略性选择。",
+    "structure": "主干为 Creating... is no easy task and demands a strategic choice；动名词短语 Creating a \"European identity\" 作主语；that respects... 为定语从句修饰 identity；which go to make up... 为第二层定语从句修饰 cultures and traditions；谓语由 is 和 demands 并列。",
+    "points": [
+     "动名词 Creating 作主语需正确识别，全句主干为 Creating... is... and demands...",
+     "which go to make up the connecting fabric of the Old Continent 需译为'构成欧洲大陆联结纽带的'",
+     "the Old Continent 需知道是'欧洲大陆'的别称"
+    ],
+    "pitfall": "本句主语极长（从 Creating 到 Old Continent），考生容易找不到谓语动词 is；go to make up 中 go to 表示'有助于、起到……作用'，不可误译为'去做'。"
+   },
+   {
+    "number": 50,
+    "en": "In dealing with a challenge on such a scale, it is no exaggeration to say, \"United we stand, divided we fall\"",
+    "cn": "在应对如此规模的挑战时，可以毫不夸张地说，\"合则立，分则败\"。",
+    "structure": "主干为 it is no exaggeration to say（it 为形式主语，真正主语为 to say 及其后引语）；In dealing with... 为介词短语作状语；引号内为谚语，United 和 divided 分别是过去分词作条件状语。",
+    "points": [
+     "In dealing with a challenge on such a scale 状语需译为'在应对如此规模的挑战时'",
+     "it is no exaggeration to say 固定句型需译为'毫不夸张地说'",
+     "United we stand, divided we fall 英语谚语需用对仗工整的中文表达，如'合则立，分则败'"
+    ],
+    "pitfall": "引语 United we stand, divided we fall 中 united 和 divided 为省略了 if we are 的条件状语，考生容易将其误解为并列动词；翻译时宜用四字对仗格式体现谚语韵味，避免直译为'团结我们就站立'。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "overwhelmingly",
+    "cn": "adv. 压倒性地，极其"
+   },
+   {
+    "w": "skepticism",
+    "cn": "n. 怀疑态度，怀疑主义"
+   },
+   {
+    "w": "convey",
+    "cn": "v. 传达，传递"
+   },
+   {
+    "w": "multi-media",
+    "cn": "adj. 多媒体的"
+   },
+   {
+    "w": "hotly-contested",
+    "cn": "adj. 竞争激烈的"
+   },
+   {
+    "w": "underline",
+    "cn": "v. 强调，突出（此处为过去分词作定语）"
+   },
+   {
+    "w": "oblige",
+    "cn": "v. 迫使，要求"
+   },
+   {
+    "w": "entail",
+    "cn": "v. 意味着，需要"
+   },
+   {
+    "w": "fabric",
+    "cn": "n. 结构，构造；纽带"
+   },
+   {
+    "w": "the Old Continent",
+    "cn": "n. 欧洲大陆（欧洲的别称）"
+   },
+   {
+    "w": "no less than",
+    "cn": "不少于，多达"
+   },
+   {
+    "w": "took a loss",
+    "cn": "遭受亏损"
+   },
+   {
+    "w": "exaggeration",
+    "cn": "n. 夸张，夸大"
+   },
+   {
+    "w": "co-productions",
+    "cn": "n. 联合制作"
+   }
+  ],
+  "skills": [
+   "定语从句层层嵌套时，宜采用前置译法或拆分译法，避免'的的的'叠加",
+   "倒装句（如 never before has it...）需先还原正常语序再翻译，确保逻辑完整",
+   "同位语结构（如 a fact underlined by...）可译为独立分句，用破折号或冒号衔接",
+   "英语谚语和习语（如 United we stand）应尽量用对仗工整的中文成语或四字格对译",
+   "长主语句（如第49题动名词短语作主语）需先识别主谓边界，再分层处理修饰成分"
+  ]
+ }
+}

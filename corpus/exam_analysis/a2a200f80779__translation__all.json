@@ -1,0 +1,198 @@
+{
+ "schemaVersion": 1,
+ "id": "a2a200f80779__translation__all",
+ "examId": "a2a200f80779",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2015 年 12 月英语六级真题（第 3 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T04:45:18.519Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 79672,
+ "usage": {
+  "prompt_tokens": 610,
+  "completion_tokens": 8120,
+  "total_tokens": 8730,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6490
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 610
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国工业升级与中国制造受信赖",
+  "reference": "Recently, the Chinese government decided to upgrade its industry. China is now involved in building high-speed trains, ocean-going vessels, robots, and even airplanes. Not long ago, China won a contract to build a high-speed railway in Indonesia; it also signed a contract with Malaysia to provide high-speed trains. This proves that people trust Chinese-made products. Chinese-made products are becoming increasingly popular. China has paid a price for this, but it does help eliminate poverty and also provides employment opportunities for people around the world. This is a good thing and deserves praise. Next time you go to the store, you may want to look at the country of origin of the product you buy. It is very likely that this product is made in China.",
+  "sentences": [
+   {
+    "cn": "最近，中国政府决定将其工业升级。",
+    "en": "Recently, the Chinese government decided to upgrade its industry.",
+    "structure": "简单句。主谓宾结构：the Chinese government 作主语，decided 作谓语，不定式短语 to upgrade its industry 作宾语，说明决定内容。",
+    "keys": [
+     "升级 upgrade",
+     "工业 industry"
+    ]
+   },
+   {
+    "cn": "中国现在涉足建造高速列车、远洋船舶、机器人，甚至飞机。",
+    "en": "China is now involved in building high-speed trains, ocean-going vessels, robots, and even airplanes.",
+    "structure": "简单句。现在进行时 be involved in 后接动名词 building，其后并列四个名词短语作宾语，even 表示递进。",
+    "keys": [
+     "高速列车 high-speed trains",
+     "远洋船舶 ocean-going vessels",
+     "机器人 robots"
+    ]
+   },
+   {
+    "cn": "不久前，中国获得了在印度尼西亚(Indonesia)建造一条高铁的合同;中国还与马来西亚(Malaysia)签署了为其提供高速列车的合同。",
+    "en": "Not long ago, China won a contract to build a high-speed railway in Indonesia; it also signed a contract with Malaysia to provide high-speed trains.",
+    "structure": "并列句。分号连接两个分句；第一分句中不定式短语作后置定语修饰 contract，第二分句中不定式短语说明合同内容。",
+    "keys": [
+     "合同 contract",
+     "高铁 high-speed railway",
+     "印度尼西亚 Indonesia",
+     "马来西亚 Malaysia"
+    ]
+   },
+   {
+    "cn": "这证明人们信赖中国造产品。",
+    "en": "This proves that people trust Chinese-made products.",
+    "structure": "主从复合句。主句为 This proves，that 引导宾语从句；从句中 people 作主语，trust 作谓语，Chinese-made products 作宾语。",
+    "keys": [
+     "证明 prove",
+     "信赖 trust",
+     "中国造产品 Chinese-made products"
+    ]
+   },
+   {
+    "cn": "中国造产品越来越受欢迎。",
+    "en": "Chinese-made products are becoming increasingly popular.",
+    "structure": "简单句。主语 Chinese-made products，系动词 are becoming，形容词 popular 作表语，increasingly 作程度状语。",
+    "keys": [
+     "越来越受欢迎 becoming increasingly popular"
+    ]
+   },
+   {
+    "cn": "中国为此付出了代价,但这确实有助于消除贫困，同时还为世界各地的人们提供了就业机会。",
+    "en": "China has paid a price for this, but it does help eliminate poverty and also provides employment opportunities for people around the world.",
+    "structure": "并列复合句。but 连接转折分句，后一分句中 does help 表强调，and 连接并列谓语 help eliminate 与 provides。",
+    "keys": [
+     "付出代价 pay a price",
+     "消除贫困 eliminate poverty",
+     "就业机会 employment opportunities"
+    ]
+   },
+   {
+    "cn": "这是一件好事，值得称赞。",
+    "en": "This is a good thing and deserves praise.",
+    "structure": "简单句。指示代词 This 作主语，系表结构 a good thing 作表语，and 连接并列谓语 deserves praise。",
+    "keys": [
+     "值得称赞 deserve praise"
+    ]
+   },
+   {
+    "cn": "下次你去商店时,可能想看一看你所购商品的出产国名。",
+    "en": "Next time you go to the store, you may want to look at the country of origin of the product you buy.",
+    "structure": "复合句。Next time 引导时间状语从句，主句 you may want，不定式 to look at... 作宾语，其中 the product you buy 为定语从句。",
+    "keys": [
+     "出产国名 country of origin"
+    ]
+   },
+   {
+    "cn": "很有可能这件商品是中国造的。",
+    "en": "It is very likely that this product is made in China.",
+    "structure": "it 作形式主语的复合句。It is very likely that 引导主语从句，从句使用一般现在时被动语态 is made in China。",
+    "keys": [
+     "很有可能 It is very likely that",
+     "中国造 made in China"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "中国政府",
+    "en": "the Chinese government"
+   },
+   {
+    "cn": "工业升级",
+    "en": "upgrade industry"
+   },
+   {
+    "cn": "高速列车",
+    "en": "high-speed trains"
+   },
+   {
+    "cn": "远洋船舶",
+    "en": "ocean-going vessels"
+   },
+   {
+    "cn": "高铁",
+    "en": "high-speed railway"
+   },
+   {
+    "cn": "印度尼西亚",
+    "en": "Indonesia"
+   },
+   {
+    "cn": "马来西亚",
+    "en": "Malaysia"
+   },
+   {
+    "cn": "消除贫困",
+    "en": "eliminate poverty"
+   },
+   {
+    "cn": "就业机会",
+    "en": "employment opportunities"
+   },
+   {
+    "cn": "出产国名",
+    "en": "country of origin"
+   }
+  ],
+  "pitfalls": [
+   "“涉足”易直译为 step into，应译为 be involved in 或 engage in。",
+   "“远洋船舶”漏译 ocean-going，仅译 ships 会丢分，须体现远洋。",
+   "“为其提供高速列车”中“其”需明确，可用 provide it with 或 supply Malaysia with。",
+   "“付出代价”易误用一般现在时，此处用现在完成时 has paid a price 更合理。",
+   "“出产国名”不要写成 producing country name，标准表达为 country of origin。"
+  ],
+  "upgrades": [
+   {
+    "plain": "China decided to make its industry better",
+    "better": "China decided to upgrade its industry",
+    "note": "upgrade 一词更正式，符合工业升级的政策表述。"
+   },
+   {
+    "plain": "China now builds...",
+    "better": "China is now involved in building...",
+    "note": "be involved in 准确表达“涉足”，比直接 build 更地道。"
+   },
+   {
+    "plain": "Chinese products are more and more popular",
+    "better": "Chinese-made products are becoming increasingly popular",
+    "note": "increasingly 书面语体，Chinese-made 明确“中国造”。"
+   },
+   {
+    "plain": "creates job chances",
+    "better": "provides employment opportunities",
+    "note": "employment opportunities 更正式，符合六级翻译评分。"
+   },
+   {
+    "plain": "Maybe this product is made in China",
+    "better": "It is very likely that this product is made in China",
+    "note": "It is very likely that 准确表达“很有可能”，语气更强。"
+   }
+  ]
+ }
+}

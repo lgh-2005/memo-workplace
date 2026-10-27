@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "48775dd71dd3__translation__all",
+ "examId": "48775dd71dd3",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2023 年 6 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:49:59.856Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 25380,
+ "usage": {
+  "prompt_tokens": 785,
+  "completion_tokens": 1776,
+  "total_tokens": 2561,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 785,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1776,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 785,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "城市公共设施建设提升居民生活品质",
+  "reference": "With the rapid development of China's economy and the steady improvement of people's living standards, urban residents have placed increasingly higher demands on the environment and quality of life. Local governments in China have attached greater importance to the construction and improvement of public facilities so as to better meet people's needs. By building new squares, parks, and public green spaces, or replanning and renovating existing public areas, many cities have provided their residents with more places for leisure and social activities. Nowadays, fitness equipment purchased and fitness trails paved with government funding can be seen everywhere in many cities, which has not only significantly improved conditions for citizens' outdoor activities but also made the cities more beautiful.",
+  "sentences": [
+   {
+    "cn": "随着中国经济的快速发展和人们生活水平的稳步提高,城市居民对环境和生活品质的要求越来越高。",
+    "en": "With the rapid development of China's economy and the steady improvement of people's living standards, urban residents have placed increasingly higher demands on the environment and quality of life.",
+    "structure": "With + 名词 + of 短语 并列做状语，主句使用现在完成时表示持续趋势，increasingly higher 表递进",
+    "keys": [
+     "中国经济 China's economy",
+     "生活水平 living standards",
+     "生活品质 quality of life",
+     "城市居民 urban residents"
+    ]
+   },
+   {
+    "cn": "中国地方政府更加注重公共设施的建设和改进,以更好地满足人们的需求。",
+    "en": "Local governments in China have attached greater importance to the construction and improvement of public facilities so as to better meet people's needs.",
+    "structure": "主语 + have attached importance to + 名词短语，so as to 引导目的状语",
+    "keys": [
+     "地方政府 local governments",
+     "公共设施 public facilities",
+     "注重 attach importance to"
+    ]
+   },
+   {
+    "cn": "通过兴建新的广场、公园和公共绿地或对原有公共场地重新加以规划改造,许多城市为市民提供了更多休闲和社交的场所。",
+    "en": "By building new squares, parks, and public green spaces, or replanning and renovating existing public areas, many cities have provided their residents with more places for leisure and social activities.",
+    "structure": "By doing A or doing B 介词短语做方式状语前置，主句用 provide sb. with sth. 结构",
+    "keys": [
+     "公共绿地 public green spaces",
+     "规划改造 replan and renovate",
+     "休闲和社交 leisure and social activities"
+    ]
+   },
+   {
+    "cn": "如今,政府出资购置的健身器械和铺设的健身步道在不少城市随处可见,既明显改善了市民户外活动的条件,又使城市更加美丽。",
+    "en": "Nowadays, fitness equipment purchased and fitness trails paved with government funding can be seen everywhere in many cities, which has not only significantly improved conditions for citizens' outdoor activities but also made the cities more beautiful.",
+    "structure": "名词 + 过去分词短语做后置定语，主句用被动语态 can be seen，which 引导非限制性定语从句，内含 not only...but also 并列结构",
+    "keys": [
+     "健身器械 fitness equipment",
+     "健身步道 fitness trails",
+     "政府出资 government funding",
+     "随处可见 can be seen everywhere",
+     "户外活动 outdoor activities"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "中国经济",
+    "en": "China's economy"
+   },
+   {
+    "cn": "生活水平",
+    "en": "living standards"
+   },
+   {
+    "cn": "城市居民",
+    "en": "urban residents"
+   },
+   {
+    "cn": "地方政府",
+    "en": "local governments"
+   },
+   {
+    "cn": "公共设施",
+    "en": "public facilities"
+   },
+   {
+    "cn": "公共绿地",
+    "en": "public green spaces"
+   },
+   {
+    "cn": "健身器械",
+    "en": "fitness equipment"
+   },
+   {
+    "cn": "健身步道",
+    "en": "fitness trails"
+   },
+   {
+    "cn": "户外活动",
+    "en": "outdoor activities"
+   },
+   {
+    "cn": "生活品质",
+    "en": "quality of life"
+   }
+  ],
+  "pitfalls": [
+   "随着……用 with 引导伴随状语，不可误写为 As...developing",
+   "越来越高应译为 increasingly higher，避免写成 more and more high",
+   "注重译为 attach importance to 或 place emphasis on，不可仅用 pay attention to",
+   "规划改造为两个动作 replan and renovate，不可漏译其中之一",
+   "政府出资购置的应使用过去分词短语 purchased with government funding 做后置定语，避免写出冗长的定语从句"
+  ],
+  "upgrades": [
+   {
+    "plain": "With the development of economy",
+    "better": "With the rapid development of China's economy",
+    "note": "加入 rapid 和 China's 使语义更精确，信息更完整"
+   },
+   {
+    "plain": "pay attention to",
+    "better": "attach greater importance to",
+    "note": "attach importance to 更正式书面，且 greater 体现了更加的语义"
+   },
+   {
+    "plain": "make the public places better",
+    "better": "replan and renovate existing public areas",
+    "note": "replan and renovate 精准对应规划改造，体现专业用词"
+   },
+   {
+    "plain": "there are fitness equipment everywhere",
+    "better": "fitness equipment can be seen everywhere",
+    "note": "被动语态更地道，避免 there be 句型的口语化倾向"
+   },
+   {
+    "plain": "improved conditions and made cities beautiful",
+    "better": "not only significantly improved conditions...but also made the cities more beautiful",
+    "note": "not only...but also 并列结构准确还原既……又……的递进关系"
+   }
+  ]
+ }
+}

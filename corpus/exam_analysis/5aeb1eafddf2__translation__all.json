@@ -1,0 +1,205 @@
+{
+ "schemaVersion": 1,
+ "id": "5aeb1eafddf2__translation__all",
+ "examId": "5aeb1eafddf2",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2020 年 9 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:33:01.042Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 29008,
+ "usage": {
+  "prompt_tokens": 842,
+  "completion_tokens": 2232,
+  "total_tokens": 3074,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 842,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2232,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 842,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "《红楼梦》小说简介与文学地位",
+  "reference": "Dream of the Red Chamber is a novel written by Cao Xueqin in the 18th century. Based on his own painful personal experiences, Cao Xueqin tells the tragic love story between Jia Baoyu and Lin Daiyu. The book features about 30 main characters and more than 400 minor ones, each of whom is vividly portrayed with a distinctive personality. The novel provides a detailed description of the rise and fall of four aristocratic families, reflecting the hidden crises and intricate social conflicts in feudal society. Dream of the Red Chamber integrates realism and romanticism, possessing great artistic appeal. It is universally acknowledged as the greatest novel in China and one of the greatest literary works in the world.",
+  "sentences": [
+   {
+    "cn": "《红楼梦》(Dream of the Red Chamber)是18世纪曹雪芹创作的一部小说。",
+    "en": "Dream of the Red Chamber is a novel written by Cao Xueqin in the 18th century.",
+    "structure": "主系表结构 + 过去分词短语 written by... 作后置定语修饰 novel",
+    "keys": [
+     "Dream of the Red Chamber",
+     "曹雪芹 Cao Xueqin",
+     "18世纪 in the 18th century"
+    ]
+   },
+   {
+    "cn": "曹雪芹基于自己痛苦的个人经历,讲述了贾宝玉和林黛玉之间的悲剧性爱情故事。",
+    "en": "Based on his own painful personal experiences, Cao Xueqin tells the tragic love story between Jia Baoyu and Lin Daiyu.",
+    "structure": "过去分词短语 Based on... 作状语前置 + 主谓宾结构",
+    "keys": [
+     "基于 based on",
+     "痛苦的个人经历 painful personal experiences",
+     "悲剧性爱情故事 tragic love story",
+     "贾宝玉 Jia Baoyu",
+     "林黛玉 Lin Daiyu"
+    ]
+   },
+   {
+    "cn": "书中有大约30个主要人物和400多个次要人物,每个人物都刻画得栩栩如生,具有鲜明的个性。",
+    "en": "The book features about 30 main characters and more than 400 minor ones, each of whom is vividly portrayed with a distinctive personality.",
+    "structure": "主谓宾 + 非限制性定语从句 each of whom... 对前文补充说明",
+    "keys": [
+     "主要人物 main characters",
+     "次要人物 minor ones/characters",
+     "栩栩如生 vividly portrayed",
+     "鲜明的个性 distinctive personality",
+     "400多个 more than 400"
+    ]
+   },
+   {
+    "cn": "小说详尽地描述了四个贵族世家兴衰的历程,反映了封建社会隐藏的种种危机和错综复杂的社会冲突。",
+    "en": "The novel provides a detailed description of the rise and fall of four aristocratic families, reflecting the hidden crises and intricate social conflicts in feudal society.",
+    "structure": "主谓宾结构 + 现在分词短语 reflecting... 作伴随状语",
+    "keys": [
+     "贵族世家 aristocratic families",
+     "兴衰 the rise and fall",
+     "封建社会 feudal society",
+     "错综复杂的 intricate",
+     "种种危机 crises"
+    ]
+   },
+   {
+    "cn": "《红楼梦》融合了现实主义和浪漫主义,具有很强的艺术感染力。",
+    "en": "Dream of the Red Chamber integrates realism and romanticism, possessing great artistic appeal.",
+    "structure": "主谓宾结构 + 现在分词短语 possessing... 作伴随状语",
+    "keys": [
+     "现实主义 realism",
+     "浪漫主义 romanticism",
+     "艺术感染力 artistic appeal",
+     "融合 integrate"
+    ]
+   },
+   {
+    "cn": "它被普遍认为是中国最伟大的小说,也是世界上最伟大的文学创作之一。",
+    "en": "It is universally acknowledged as the greatest novel in China and one of the greatest literary works in the world.",
+    "structure": "被动语态 is universally acknowledged as... + 并列表语结构 and one of...",
+    "keys": [
+     "被普遍认为 is universally acknowledged as",
+     "文学创作 literary works",
+     "最伟大的...之一 one of the greatest..."
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "《红楼梦》",
+    "en": "Dream of the Red Chamber"
+   },
+   {
+    "cn": "曹雪芹",
+    "en": "Cao Xueqin"
+   },
+   {
+    "cn": "贾宝玉",
+    "en": "Jia Baoyu"
+   },
+   {
+    "cn": "林黛玉",
+    "en": "Lin Daiyu"
+   },
+   {
+    "cn": "封建社会",
+    "en": "feudal society"
+   },
+   {
+    "cn": "贵族世家",
+    "en": "aristocratic families"
+   },
+   {
+    "cn": "现实主义",
+    "en": "realism"
+   },
+   {
+    "cn": "浪漫主义",
+    "en": "romanticism"
+   },
+   {
+    "cn": "艺术感染力",
+    "en": "artistic appeal"
+   },
+   {
+    "cn": "悲剧性爱情故事",
+    "en": "tragic love story"
+   }
+  ],
+  "pitfalls": [
+   "「栩栩如生」不能直译为 like life，应译为 vividly portrayed 或 lifelike",
+   "「兴衰」易遗漏固定搭配 the rise and fall，写成 development and decline 不够地道",
+   "「400多个」应译为 more than 400，不能写成 400 more",
+   "「艺术感染力」中「感染力」非 infection，应译为 appeal 或 charm",
+   "「错综复杂的」易误写为 complex and complicated（语义重复），应用 intricate 更精炼"
+  ],
+  "upgrades": [
+   {
+    "plain": "There are about 30 main characters in the book",
+    "better": "The book features about 30 main characters",
+    "note": "用 feature 替代 there be 句型，表达更简洁高级"
+   },
+   {
+    "plain": "It is thought to be the greatest novel",
+    "better": "It is universally acknowledged as the greatest novel",
+    "note": "universally acknowledged 比 thought 更正式，更符合学术评价语境"
+   },
+   {
+    "plain": "describing the rise and fall in detail",
+    "better": "providing a detailed description of the rise and fall",
+    "note": "名词化表达 provide a description 比动词短语更书面化"
+   },
+   {
+    "plain": "which has strong artistic influence",
+    "better": "possessing great artistic appeal",
+    "note": "现在分词作伴随状语比定语从句更紧凑，appeal 比 influence 更贴切"
+   },
+   {
+    "plain": "combined realism with romanticism",
+    "better": "integrates realism and romanticism",
+    "note": "integrate 强调有机融合，比 combine 更能体现文学手法的统一性"
+   }
+  ]
+ }
+}

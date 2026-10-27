@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "27831d1d141a__reading__1",
+ "examId": "27831d1d141a",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2022 年考研英语真题",
+ "year": 2022,
+ "sub": "1",
+ "questionNumbers": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T06:48:03.470Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65669,
+ "usage": {
+  "prompt_tokens": 1778,
+  "completion_tokens": 4070,
+  "total_tokens": 5848,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1778,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4070,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1778,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "塑料文物的保存困境与历史意义",
+  "gist": "文章指出塑料虽被认为耐久，但部分塑料制品会随时间老化开裂，博物馆在保存塑料文物方面面临巨大挑战。文章以荷兰化学家范·奥斯滕修复意大利艺术家吉拉尔迪泡沫雕塑为例，说明保存工作的艰难，并指出随着可降解塑料的普及，保存难度将持续增大，而塑料文物的留存对后人认识当今时代意义深远。",
+  "structure": [
+   "第1段：引出塑料老化问题给博物馆保存带来困难",
+   "第2-4段：以吉拉尔迪雕塑为例说明塑料艺术品的脆弱性",
+   "第5段：介绍范·奥斯滕团队的修复成果",
+   "第6段：转折指出未来保存将更加困难",
+   "第7段：强调塑料文物保存的深远历史意义"
+  ],
+  "difficulty": "中等",
+  "translation": "人们常常抱怨塑料太过耐用。从珠穆朗玛峰到马里亚纳海沟，水瓶、购物袋和其他垃圾遍布地球各处，因为塑料无处不在且不易降解。但有些塑料材料会随时间发生变化：它们会开裂、变脆，会\"渗出\"添加剂，会融化成泥状物。所有这些都给试图保存具有文化重要性物品的机构（如博物馆）带来了巨大的困扰。面临风险的塑料物品种类之多令人眼花缭乱：早期收音机、前卫雕塑、迪士尼电影的赛璐珞动画定格画面、第一颗人造心脏。\n\n某些文物尤其脆弱，因为一些塑料艺术的先驱并不总是知道如何正确混合原料，荷兰文化遗产局（RCE）工作了数十年、几年前才退休的高分子化学家西娅·范·奥斯滕如是说。\"这就像烤蛋糕：如果用量不精确，就会出问题，\"她说，\"你制作出来的物品本身就已经是一颗定时炸弹。\"\n\n而有时候，问题并不是艺术家的过错。20世纪60年代，意大利艺术家皮耶罗·吉拉尔迪开始创作数百件色彩明亮的泡沫作品。这些作品包括小型玫瑰花坛及其他物品，还有几十块\"自然地毯\"——上面装饰着泡沫南瓜、卷心菜和西瓜的大型矩形作品。他希望观众能在地毯上走来走去——这意味着它们必须足够耐用。\n\n不幸的是，他所使用的聚氨酯泡沫本身就不稳定。它尤其容易受到光照损害，到20世纪90年代中期，吉拉尔迪的南瓜、玫瑰和其他造型已经开始开裂和碎裂。博物馆将其中一些锁进了黑暗的库房。\n\n于是，范·奥斯滕和同事们着手保存吉拉尔迪的雕塑。他们向部分作品注入了稳定和加固化学品。范·奥斯滕将这些化学品称为\"防晒霜\"，因为其目的是防止进一步的光照损害并修复磨损的聚合物纤维。她自豪地说，有几件雕塑甚至得以重新展出，尽管有时需要放在保护罩之下。\n\n尽管有范·奥斯滕这样的成功案例，塑料的保存未来可能会变得更加困难。旧物品在继续老化。更糟糕的是，设计初衷就是使其分解的可降解塑料正变得越来越普遍。\n\n而且，这里关乎的不仅仅是单个物品。新里斯本大学科学技术学院保护与修复学助理教授乔安娜·利亚·费雷拉指出，考古学家最初是在考察博物馆的文物之后，才界定了人类历史上伟大的材料时代——石器时代、铁器时代等等。她说，我们现在生活在一个塑料时代，\"而我们今天决定收藏什么、决定保存什么……将对未来人们如何看待我们产生深远影响。\"",
+  "questions": [
+   {
+    "number": 21,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "All of which creates huge headaches for institutions, such as museums, trying to preserve culturally important objects.",
+    "why": "原文明确指出塑料的开裂、渗出添加剂、融化等变化给博物馆等机构\"保存具有文化重要性的物品\"带来了巨大困扰（huge headaches）。A选项中的\"maintaining their plastic items\"（维护其塑料藏品）是对\"preserve culturally important objects\"的同义改写，与原文逻辑完全吻合。",
+    "traps": "B\"obtaining durable plastic artifacts\"（获取耐用的塑料文物）偷换概念，原文说的是保存而非获取；C\"handling outdated plastic exhibits\"（处理过时展品）中\"outdated\"（过时的）属于无中生有，原文强调的是老化而非过时；D\"classifying their plastic collections\"（分类塑料藏品）无原文依据，\"dizzying variety\"只是说种类繁多，并非分类困难。",
+    "tip": "注意区分\"保存/维护\"与\"获取/分类\"等不同动作的语义差异。"
+   },
+   {
+    "number": 22,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "It's like baking a cake: If you don't have exact amounts, it goes wrong. The object you make is already a time bomb.",
+    "why": "范·奥斯滕指出某些塑料艺术先驱不懂如何正确混合原料，就像烤蛋糕配比不对就会出问题，制作出的物品\"本身就是定时炸弹\"。这说明这些塑料物品从制造之初就存在内在缺陷。C选项\"inherently flawed\"（天生有缺陷）精准对应了\"already a time bomb\"的含义——缺陷是与生俱来的。",
+    "traps": "A\"immune to decay\"（不会腐坏）与原文完全相反，原文说这些物品是\"定时炸弹\"；B\"improperly shaped\"（形状不当）曲解原文，原文说的是配料不当而非造型不当；D\"complex in structure\"（结构复杂）无原文支撑，\"baking a cake\"的类比强调的是配比而非复杂度。",
+    "tip": "把握比喻句的深层含义，\"time bomb\"暗示从一开始就注定会出问题。"
+   },
+   {
+    "number": 23,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "It's especially vulnerable to light damage, and by the mid-1990s, Gilardi's pumpkins, roses, and other figures were splitting and crumbling. Museums locked some of them away in the dark.",
+    "why": "原文先说聚氨酯泡沫特别容易受光照损害，接着说到90年代中期雕塑已开始开裂碎裂，于是博物馆把部分作品锁进黑暗之中。第五段也证实修复的目的是\"prevent further light damage\"（防止进一步光照损害）。因此博物馆停止展出是为了防止进一步损坏，D选项正确。",
+    "traps": "A\"keep them from hurting visitors\"（防止伤害观众）无中生有，原文虽提到观众在地毯上行走，但锁起来的原因是防止光照损害而非安全问题；B\"duplicate them for future display\"（复制以备未来展出）纯属编造，原文毫无提及复制；C\"have their ingredients analyzed\"（分析其成分）也是无中生有，锁起来的目的是避光保护而非分析成分。",
+    "tip": "注意因果链条的完整性：光照导致损坏→锁进暗处→目的是防止进一步损坏。"
+   },
+   {
+    "number": 24,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "Despite success stories like van Oosten's, preservation of plastics will likely get harder. Old objects continue to deteriorate. Worse, biodegradable plastics, designed to disintegrate, are increasingly common.",
+    "why": "第六段作者先用\"despite\"转折，承认有成功案例但指出保存\"可能变得更难\"（get harder）；接着从两个方面论证：旧物品持续劣化，可降解塑料越来越普遍。整篇文章也反复强调保存的困难性。D选项\"challenging\"（富有挑战性的）是对\"get harder\"和全文基调的准确概括。",
+    "traps": "A\"costly\"（昂贵的）原文从未涉及成本问题；B\"unworthy\"（不值得的）与文章主旨相悖，最后一段强调保存的重大意义；C\"unpopular\"（不受欢迎的）无原文依据，文章讨论的是难度而非受欢迎程度。",
+    "tip": "全文基调是\"保存塑料文物困难但有意义\"，选项要同时符合局部段落和全文立场。"
+   },
+   {
+    "number": 25,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "and what we decide to collect today, what we decide to preserve…will have a strong impact on how in the future we'll be seen.",
+    "why": "费雷拉先以考古学家通过博物馆文物界定石器时代、铁器时代为类比，指出我们如今生活在\"塑料时代\"，而今天决定收藏和保存什么将深刻影响未来人如何看待我们。这说明保存塑料文物对于后人理解当今时代具有深远的历史意义。B选项\"has profound historical significance\"（具有深远的历史意义）准确概括了这一观点。",
+    "traps": "A\"will inspire future scientific research\"（将启发未来科学研究）偷换概念，费雷拉谈论的是历史认知而非科学研究；C\"will help us separate the material ages\"（帮助我们区分材料时代）张冠李戴，区分材料时代是考古学家对过去所做的事，费雷拉关注的是未来人对我们的看法；D\"has an impact on today's cultural life\"（对当今文化生活有影响）时间偷换，原文强调的影响指向未来而非当今。",
+    "tip": "注意类比论证的逻辑：过去的文物定义了过去的时代→今天的塑料文物将定义我们的时代。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "frizzle",
+    "cn": "v. 变脆；卷曲干枯"
+   },
+   {
+    "w": "sludge",
+    "cn": "n. 泥状物；淤泥"
+   },
+   {
+    "w": "avant-garde",
+    "cn": "adj. 前卫的；先锋派的（艺术术语）"
+   },
+   {
+    "w": "celluloid",
+    "cn": "n. 赛璐珞（早期塑料材料）；adj. 电影的"
+   },
+   {
+    "w": "polymer",
+    "cn": "n. 聚合物（化学术语）"
+   },
+   {
+    "w": "polyurethane",
+    "cn": "n. 聚氨酯（一种塑料材料）"
+   },
+   {
+    "w": "inherently",
+    "cn": "adv. 天生地；固有地"
+   },
+   {
+    "w": "infuse",
+    "cn": "v. 注入；灌注"
+   },
+   {
+    "w": "consolidating",
+    "cn": "adj. 加固的；巩固的（此处指使材料更坚固）"
+   },
+   {
+    "w": "albeit",
+    "cn": "conj. 尽管；虽然（正式用语）"
+   },
+   {
+    "w": "deteriorate",
+    "cn": "v. 恶化；变质"
+   },
+   {
+    "w": "biodegradable",
+    "cn": "adj. 可生物降解的"
+   },
+   {
+    "w": "disintegrate",
+    "cn": "v. 分解；瓦解"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "All of which creates huge headaches for institutions, such as museums, trying to preserve culturally important objects.",
+    "cn": "所有这些都给试图保存具有文化重要性物品的机构（如博物馆）带来了巨大的困扰。",
+    "note": "All of which指代前文塑料的各种老化现象；trying to preserve...是现在分词短语作后置定语修饰institutions。"
+   },
+   {
+    "en": "Joana Lia Ferreira, an assistant professor of conservation and restoration at the NOVA School of Science and Technology, notes that archaeologists first defined the great material ages of human history—Stone Age, Iron Age, and so on—after examining artifacts in museums.",
+    "cn": "新里斯本大学科学技术学院保护与修复学助理教授乔安娜·利亚·费雷拉指出，考古学家最初是在考察博物馆中的文物之后，才界定了人类历史上伟大的材料时代——石器时代、铁器时代等等。",
+    "note": "主句为Ferreira notes that...；that引导宾语从句；破折号之间为同位语补充说明material ages；after examining...为时间状语。"
+   },
+   {
+    "en": "We now live in an age of plastic, she says, \"and what we decide to collect today, what we decide to preserve…will have a strong impact on how in the future we'll be seen.\"",
+    "cn": "她说，我们现在生活在一个塑料时代，\"而我们今天决定收藏什么、决定保存什么……将对未来人们如何看待我们产生深远影响。\"",
+    "note": "两个what引导的名词性从句并列作主语；how引导宾语从句作impact on的宾语；she says为插入语。"
+   }
+  ]
+ }
+}

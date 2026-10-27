@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "3a1d5271950e__reading__1",
+ "examId": "3a1d5271950e",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2000 年考研英语真题（旧）",
+ "year": 2000,
+ "sub": "1",
+ "questionNumbers": [
+  11,
+  12,
+  13,
+  14
+ ],
+ "generatedAt": "2026-10-27T06:09:29.900Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 68955,
+ "usage": {
+  "prompt_tokens": 1725,
+  "completion_tokens": 4319,
+  "total_tokens": 6044,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1725,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4319,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1725,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国经济兴衰与信心变迁",
+  "gist": "文章回顾了二战后美国经济从一枝独秀到八十年代面临外国竞争时丧失优势、陷入自我怀疑，再到九十年代经济复苏后转向盲目自豪的历程。作者对美国人将复苏归功于自身管理改革持怀疑态度，暗示经济周期等客观因素才是主因。",
+  "structure": [
+   "第一段：二战后美国凭借竞争对手经济被摧毁而确立主导地位",
+   "第二段：八十年代外国竞争冲击下美国多个产业萎缩，优势不再",
+   "第三段：工业衰退引发信心危机，调查报告频出",
+   "第四段：九十年代经济复苏，美国人从自我怀疑转为盲目自豪，作者暗含讽刺"
+  ],
+  "difficulty": "中等",
+  "translation": "一段漫长而轻松的成功历史可能成为可怕的障碍，但如果处理得当，也可能转化为推动力。二战结束后，美国正是进入了这样一个辉煌时期——它拥有比任何竞争对手大八倍的市场，使其工业获得了无可比拟的规模经济优势。它的科学家是世界上最优秀的，工人是技术最精湛的。美国和美国人的富裕程度远超欧洲人和亚洲人的想象，而后者的经济已被战争摧毁。\n\n随着其他国家日益富裕，这种领先地位的缩小是不可避免的。同样不可避免的是，从主导地位上的退却带来了痛苦。到二十世纪八十年代中期，美国人已对工业竞争力的衰退感到不知所措。一些巨大的美国产业，如消费类电子产品，在外国竞争面前萎缩或消失了。到1987年，美国只剩下一家电视制造商——天顶公司。（现在一家也没有了：天顶公司于七月份被韩国的LG电子收购。）外国制造的汽车和纺织品正大举涌入国内市场。美国的机床工业也岌岌可危。一度看来，半导体制造业——这一由美国发明并处于新计算机时代核心的产业——将成为下一个牺牲品。\n\n所有这些引发了一场信心危机。美国人不再把繁荣视为理所当然。他们开始相信自己的经营方式正在失败，因而收入也将很快开始下降。八十年代中期，一个接一个的调查研究探寻美国工业衰退的原因。它们有时耸人听闻的调查结果充满了对来自海外日益激烈的竞争的警告。\n\n情况发生了多大的变化啊！1995年的美国可以回顾五年的稳健增长，而日本一直在苦苦挣扎。很少有美国人仅仅将此归因于美元贬值或商业周期转换等明显原因。自我怀疑已让位于盲目的自豪。哈佛大学肯尼迪政府学院执行院长理查德·卡瓦纳说：\"美国工业已经改变了结构，已经进行了瘦身，已经学会变得更加机敏。\"华盛顿特区智库卡托研究所的斯蒂芬·摩尔说：\"看到我们的企业如何提高生产率，作为美国人我感到自豪。\"哈佛商学院的威廉·萨尔曼则认为，人们将来回顾这一时期时会视之为\"美国商业管理的黄金时代\"。",
+  "questions": [
+   {
+    "number": 11,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "America and Americans were prosperous beyond the dreams of the Europeans and Asians whose economies the war had destroyed.",
+    "why": "原文明确指出美国的繁荣远超欧洲人和亚洲人的想象，而他们的经济已被战争摧毁。正是因为战争摧毁了大多数潜在竞争对手的经济，美国才得以凭借八倍于竞争对手的市场规模、最优秀的科学家和最熟练的工人确立主导地位。C项是对这一因果逻辑的准确概括。",
+    "traps": "A项偷换概念：首句说的是'effortless success'（轻松的成功），'painstaking efforts'（艰苦努力）与原文矛盾。B项篡改比较对象：原文说市场'比任何竞争对手大八倍'，而非'比战前大八倍'。D项张冠李戴：原文说的是'unparalleled economies of scale'（无与伦比的规模经济），而非'unparalleled size of its workforce'（无与伦比的劳动力规模）。",
+    "tip": "注意比较对象和修饰语的偷换，是考研细节题常见陷阱。"
+   },
+   {
+    "number": 12,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Foreign-made cars and textiles were sweeping into the domestic market.",
+    "why": "原文说外国制造的汽车和纺织品正大举涌入美国国内市场，这直接说明美国汽车产业在国内市场遭受了冲击，丧失了部分国内市场份额。D项'auto industry had lost part of its domestic market'是对该句的准确转述。",
+    "traps": "A项无中生有：原文说电视制造商几乎消失（只剩一家后被收购），并非'退回国内市场'，而是彻底衰败。B项过度推断：原文说半导体产业'看起来将成为下一个牺牲品'（was going to be the next casualty），用的是虚拟推测语气，并非已被外企收购的事实。C项曲解原文：'on the ropes'意为'岌岌可危'，并非'已经崩溃'；'suicidal actions'（自杀式行为）在原文中毫无依据。",
+    "tip": "注意区分已成事实与推测假设，以及程度词的差异。"
+   },
+   {
+    "number": 13,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "A history of long and effortless success can be a dreadful handicap, but, if properly handled, it may become a driving force.",
+    "why": "文章整体脉络显示：美国在八十年代遭遇激烈的外国竞争后经历了痛苦的工业衰退和信心危机，但正是这种竞争压力迫使美国工业进行结构调整，最终在九十年代实现经济复苏。首句也暗示逆境如果处理得当可以转化为动力。因此可以推断出'激烈竞争可能促进经济进步'。",
+    "traps": "A项以偏概全：文章描述了美国人从自我怀疑到盲目自豪的转变，但未将其上升为'人的本性'这一普遍结论。C项无中生有：文章全篇未涉及'国际合作'。D项与原文相悖：首句明确说'漫长的成功历史可能成为可怕的障碍'，而非'为进一步发展铺平道路'。",
+    "tip": "推断题需要从全文脉络归纳隐含观点，排除原文未支持的过度推理。"
+   },
+   {
+    "number": 14,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "Few Americans attribute this solely to such obvious causes as a devalued dollar or the turning of the business cycle. Self-doubt has yielded to blind pride.",
+    "why": "作者用'blind pride'（盲目自豪）来评价美国人将复苏归功于产业重组和管理改进的说法，明显带有讽刺和不认同。后文引用的三位人士的乐观评价都是作者批评'盲目自豪'的例证。作者暗示美国人不愿承认的'obvious causes'如商业周期转换才是真正原因，因此答案是A。",
+    "traps": "B项是被讽刺的观点：'restructuring of industry'是Richard Cavanagh的说法，作者将其归入'blind pride'加以否定。C项同理：'improved business management'是Sahlman的乐观判断，同样被作者暗示为盲目自豪的表现。D项无中生有：文中虽提到哈佛大学人士的言论，但并未将经济复苏归因于教育的成功。",
+    "tip": "区分'作者观点'与'文中人物观点'，注意作者用评价性词语暗示的真实立场。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "unparalleled",
+    "cn": "adj. 无与伦比的，空前的"
+   },
+   {
+    "w": "primacy",
+    "cn": "n. 首要地位，卓越"
+   },
+   {
+    "w": "predominance",
+    "cn": "n. 主导地位，优势"
+   },
+   {
+    "w": "casualty",
+    "cn": "n. 牺牲品，受害者；伤亡人员"
+   },
+   {
+    "w": "semiconductor",
+    "cn": "n. 半导体"
+   },
+   {
+    "w": "sensational",
+    "cn": "adj. 轰动的，耸人听闻的"
+   },
+   {
+    "w": "devalued",
+    "cn": "adj. 贬值的（devalue v. 使贬值）"
+   },
+   {
+    "w": "quick-witted",
+    "cn": "adj. 机敏的，反应敏捷的"
+   },
+   {
+    "w": "on the ropes",
+    "cn": "短语 岌岌可危，濒临失败"
+   },
+   {
+    "w": "attribute",
+    "cn": "v. 归因于，归咎于"
+   },
+   {
+    "w": "yield to",
+    "cn": "短语 让位于，屈从于"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "For a while it looked as though the making of semiconductors, which America had invented and which sat at the heart of the new computer age, was going to be the next casualty.",
+    "cn": "一度看来，半导体制造业——这一由美国发明并处于新计算机时代核心的产业——将成为下一个牺牲品。",
+    "note": "主干为it looked as though...was going to be the next casualty；which引导两个并列的非限制性定语从句修饰semiconductors；it为形式主语。"
+   },
+   {
+    "en": "When the United States entered just such a glowing period after the end of the Second World War, it had a market eight times larger than any competitor, giving its industries unparalleled economies of scale.",
+    "cn": "二战结束后，当美国正是进入了这样一个辉煌时期时，它拥有比任何竞争对手大八倍的市场，使其工业获得了无与伦比的规模经济优势。",
+    "note": "When引导时间状语从句；主句为it had a market...；eight times larger为倍数比较结构修饰market；giving...为现在分词短语作结果状语。"
+   },
+   {
+    "en": "They began to believe that their way of doing business was failing, and that their incomes would therefore shortly begin to fall as well.",
+    "cn": "他们开始相信自己的经营方式正在失败，因而收入也将很快开始下降。",
+    "note": "believe后接两个并列的that宾语从句，第二个that从句中therefore表因果承接，shortly与as well强调连锁效应。"
+   }
+  ]
+ }
+}

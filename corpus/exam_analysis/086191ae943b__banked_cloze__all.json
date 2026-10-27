@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "086191ae943b__banked_cloze__all",
+ "examId": "086191ae943b",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2024 年 6 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:57:46.200Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66956,
+ "usage": {
+  "prompt_tokens": 1425,
+  "completion_tokens": 4012,
+  "total_tokens": 5437,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1425,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4012,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1425,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "彩虹的形成原理与光学特性",
+  "gist": "文章介绍了彩虹的本质——一种由光的反射与色散产生的视觉幻象，其呈现取决于观察者与光线方向的相对位置。彩虹由红、橙、黄、绿、蓝、靛、紫七色组成，是白光穿过大气中悬浮水滴时发生折射和反射后分离出各色光波的结果。",
+  "difficulty": "中等",
+  "translation": "彩虹是一种可以出现在天空中的多彩弧形现象。彩虹的颜色是由光线穿过大气中存在的水滴时发生反射和色散而产生的。观察者可能感知到彩虹位于近处或远处，但这种现象实际上并不位于任何特定地点。相反，彩虹的出现完全取决于观察者相对于光线方向的位置。本质上，彩虹是一种光学幻象。\n\n彩虹呈现出一个由七种颜色按特定顺序组成的光谱。事实上，许多英语国家的学童被教导记住\"Roy G. Biv\"这个名字，以此作为记忆彩虹颜色及其顺序的辅助手段。\"Roy G. Biv\"代表：红、橙、黄、绿、蓝、靛和紫。彩虹弧的外边缘是红色的，而内边缘是紫色的。\n\n当光线（通常是阳光）穿过悬浮在大气中的水滴时，彩虹就形成了。光波在穿过水滴时会改变方向，由此产生两个过程：反射和折射。当光从水滴上反射时，它只是沿着与其发出方向相反的方向弹回。当光发生折射时，它会朝不同的方向前进。一些人将折射光称为\"弯曲的光波\"。彩虹之所以形成，是因为白光进入水滴后，会朝几个不同的方向弯折。当这些弯折的光波到达水滴的另一侧时，它们会从水滴中反射回来，而不是完全穿过水滴。由于白光在水中被分离，折射光在人眼中呈现为不同的颜色。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "C",
+    "correct": "dispersion",
+    "why": "此处与 reflection 并列，由 and 连接，需要一个名词。dispersion（色散）是光学术语，指光通过介质时分解为不同颜色的过程，与 reflection（反射）搭配，准确描述彩虹形成的两大物理机制。",
+    "traps": "其他名词如 spectrum（光谱）虽也是名词，但语义不合，spectrum 指颜色排列的结果，而非光通过水滴的物理过程；relation 语义完全无关。",
+    "tip": "并列结构找同词性，结合光学常识判断。"
+   },
+   {
+    "number": 27,
+    "answer": "H",
+    "correct": "perceive",
+    "why": "空格前有情态动词 may，后接动词原形；perceive sb/sth to be... 是固定用法，意为\"感知/认为……是\"，与后文 to be located 搭配通顺，描述观察者对彩虹位置的主观感知。",
+    "traps": "stands 和 bounces 虽然也是动词，但它们是第三人称单数形式（带-s），不能用在 may 之后；且语义上也不匹配\"观察者\"的动作。",
+    "tip": "情态动词后接动词原形，注意 perceive...to be 结构。"
+   },
+   {
+    "number": 28,
+    "answer": "M",
+    "correct": "relation",
+    "why": "in relation to 是固定搭配，意为\"相对于；关于\"，表达观察者位置与光线方向之间的关系，语义与上下文完全吻合。此处需要名词填入介词 in 和 to 之间。",
+    "traps": "其他名词如 dispersion、spectrum 无法与 in...to 构成固定搭配，语法和语义均不通。",
+    "tip": "识别固定搭配 in relation to 是解题关键。"
+   },
+   {
+    "number": 29,
+    "answer": "F",
+    "correct": "optical",
+    "why": "空格位于冠词 an 与名词 illusion 之间，需填入形容词。optical illusion（光学幻象/视错觉）是固定搭配，精确概括了彩虹\"并非实际存在于某一地点\"的本质特征。",
+    "traps": "eccentric（古怪的）虽然也是形容词，但 eccentric illusion 不是惯用表达，且语义不合——文章强调的是光学原理而非\"奇异\"。",
+    "tip": "形容词+名词的固定搭配：optical illusion（视错觉）。"
+   },
+   {
+    "number": 30,
+    "answer": "N",
+    "correct": "spectrum",
+    "why": "空格作 present 的宾语，需填名词；后接 made up of seven colors in a specific order 作后置定语，描述\"由七种颜色按特定顺序组成\"的事物。spectrum（光谱）完美契合，指按波长排列的颜色带。",
+    "traps": "dispersion（色散）虽是名词，但已用于第26题，且色散是过程而非颜色组合的结果；relation 语义不相关。",
+    "tip": "根据\"七种颜色按顺序排列\"的描述锁定 spectrum。"
+   },
+   {
+    "number": 31,
+    "answer": "O",
+    "correct": "stands",
+    "why": "主语 Roy G. Biv 是第三人称单数，需要动词三单形式。stands for 是固定短语，意为\"代表\"，后接冒号列出七种颜色，逻辑通顺。",
+    "traps": "bounces 虽也是三单形式，但 bounces for 无意义；originates for 也不构成合理搭配。",
+    "tip": "固定短语 stand for（代表）是高频考点。"
+   },
+   {
+    "number": 32,
+    "answer": "E",
+    "correct": "hanging",
+    "why": "此处为后置定语修饰 water droplets，描述水滴悬浮在大气中的状态。hanging in the atmosphere 表示\"悬浮于大气中\"，为现在分词作后置定语，语法和语义均合适。",
+    "traps": "completely 是副词，不能直接修饰名词作后置定语；bounces 是谓语动词形式，句中已有谓语 passes，不能再加。",
+    "tip": "现在分词短语作后置定语修饰名词。"
+   },
+   {
+    "number": 33,
+    "answer": "A",
+    "correct": "bounces",
+    "why": "主语 it（指代 light）是第三人称单数，需动词三单。bounces back 意为\"弹回\"，与后文 in the opposite direction 搭配，生动描述光线被水滴反射后朝反方向弹回的过程。",
+    "traps": "originates 语义不合，反射不是\"起源\"；stands 搭配 back 无意义。",
+    "tip": "bounce back（弹回）描述光线反射的物理过程。"
+   },
+   {
+    "number": 34,
+    "answer": "G",
+    "correct": "originates",
+    "why": "空格所在的从句 from where it _____ 描述光线最初的来源方向。originates 意为\"起源于/发出\"，主语 it 指代光线，第三人称单数形式正确，表示光线从其发出的地方弹回，逻辑自洽。",
+    "traps": "bounces 已用于第33题，且 from where it bounces 会造成语义循环（弹回到它弹回的地方）；stands 语义不通。",
+    "tip": "originate 表示\"起源/发出\"，注意三单形式。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "correct": "completely",
+    "why": "instead of 后接动名词 passing，此处需要副词修饰 passing。completely passing through the water 意为\"完全穿过水滴\"，与前半句\"反射回来\"形成对比：光波反射回来而非完全穿透水滴。",
+    "traps": "hanging 虽也是-ing 形式，但 instead of hanging passing 语法不通且语义荒谬；其他词词性不匹配副词位置。",
+    "tip": "副词修饰动名词，instead of completely passing 构成对比。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dispersion",
+    "cn": "n. 色散；分散；散布"
+   },
+   {
+    "w": "perceive",
+    "cn": "v. 感知；察觉；认为"
+   },
+   {
+    "w": "optical",
+    "cn": "adj. 光学的；视觉的"
+   },
+   {
+    "w": "spectrum",
+    "cn": "n. 光谱；频谱；范围"
+   },
+   {
+    "w": "originate",
+    "cn": "v. 起源于；发源；产生"
+   },
+   {
+    "w": "eccentric",
+    "cn": "adj. 古怪的；离心的 n. 古怪的人"
+   },
+   {
+    "w": "refraction",
+    "cn": "n. 折射"
+   },
+   {
+    "w": "arc-shaped",
+    "cn": "adj. 弧形的"
+   },
+   {
+    "w": "indigo",
+    "cn": "n./adj. 靛蓝（色的）"
+   },
+   {
+    "w": "bounce",
+    "cn": "v. 弹回；反弹 n. 弹跳"
+   },
+   {
+    "w": "illusion",
+    "cn": "n. 幻觉；幻象；错觉"
+   },
+   {
+    "w": "droplet",
+    "cn": "n. 小滴；微滴"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主题（彩虹的光学原理），标注每个空格所需词性。",
+   "第二步：将15个候选词按词性分类——名词、动词（原形/三单）、形容词、副词，缩小每题选择范围。",
+   "第三步：优先填入固定搭配（如 in relation to、stands for、optical illusion），确保高确定性题目先得分。",
+   "第四步：利用并列结构（and/or）、语法线索（情态动词+原形、冠词+形容词+名词）精确匹配剩余空格。",
+   "第五步：回读检查已填词是否重复使用，确认每词仅用一次，并通读句意是否流畅。"
+  ]
+ }
+}

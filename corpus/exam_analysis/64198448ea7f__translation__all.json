@@ -1,0 +1,199 @@
+{
+ "schemaVersion": 1,
+ "id": "64198448ea7f__translation__all",
+ "examId": "64198448ea7f",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年 12 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:45:47.359Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32259,
+ "usage": {
+  "prompt_tokens": 823,
+  "completion_tokens": 2337,
+  "total_tokens": 3160,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 823,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2337,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 823,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "云贵高原的地理与人文概况",
+  "reference": "The Yunnan-Guizhou Plateau is mostly located within the provinces of Yunnan and Guizhou, covering a total area of about 500,000 square kilometers with an average altitude of 2,000 to 4,000 meters. It is the fourth largest plateau in China. Higher in the west and lower in the east, the plateau features numerous rivers that have carved out many deep and steep canyons. In many parts of these canyons, the soil is fertile, making it highly favorable for the growth of a wide variety of crops. The unique natural environment of the Yunnan-Guizhou Plateau has given rise to remarkable biological and cultural diversity. It is a region boasting extremely rich forest and mineral resources in China, as well as an important region for the origin of ancient humans. The Yunnan-Guizhou Plateau is home to the largest number of ethnic minorities in China, and each ethnic group has preserved its own rich and colorful cultural traditions.",
+  "sentences": [
+   {
+    "cn": "云贵高原大部分位于云南、贵州省境内，总面积约50万平方公里，平均海拔2000-4000米，是中国第四大高原。",
+    "en": "The Yunnan-Guizhou Plateau is mostly located within the provinces of Yunnan and Guizhou, covering a total area of about 500,000 square kilometers with an average altitude of 2,000 to 4,000 meters. It is the fourth largest plateau in China.",
+    "structure": "主系表结构 + 现在分词短语作伴随状语 + with 介词短语表附加信息，末尾独立成句补充说明地位",
+    "keys": [
+     "云贵高原 the Yunnan-Guizhou Plateau",
+     "总面积 a total area of",
+     "平均海拔 an average altitude of",
+     "第四大高原 the fourth largest plateau"
+    ]
+   },
+   {
+    "cn": "云贵高原西高东低，河流众多，形成了许多又深又陡的峡谷。",
+    "en": "Higher in the west and lower in the east, the plateau features numerous rivers that have carved out many deep and steep canyons.",
+    "structure": "形容词短语前置作状语描述地势特征 + 主谓宾结构 + that 引导定语从句修饰 rivers",
+    "keys": [
+     "西高东低 higher in the west and lower in the east",
+     "峡谷 canyon",
+     "又深又陡 deep and steep"
+    ]
+   },
+   {
+    "cn": "峡谷中许多地方土壤肥沃，非常有利于多种农作物生长。",
+    "en": "In many parts of these canyons, the soil is fertile, making it highly favorable for the growth of a wide variety of crops.",
+    "structure": "介词短语前置作地点状语 + 主系表结构 + 现在分词短语 making 作结果状语",
+    "keys": [
+     "土壤肥沃 the soil is fertile",
+     "有利于 favorable for",
+     "农作物 crops"
+    ]
+   },
+   {
+    "cn": "云贵高原独特的自然环境造就了生物和文化的多样性。",
+    "en": "The unique natural environment of the Yunnan-Guizhou Plateau has given rise to remarkable biological and cultural diversity.",
+    "structure": "主谓宾结构，使用现在完成时 has given rise to 表示持续性影响",
+    "keys": [
+     "独特的自然环境 unique natural environment",
+     "造就了 has given rise to",
+     "生物和文化的多样性 biological and cultural diversity"
+    ]
+   },
+   {
+    "cn": "它是中国森林和矿产资源类型十分丰富的地区，也是古人类起源的重要地区。",
+    "en": "It is a region boasting extremely rich forest and mineral resources in China, as well as an important region for the origin of ancient humans.",
+    "structure": "主系表结构 + 现在分词 boasting 作后置定语修饰 region + as well as 连接并列表语",
+    "keys": [
+     "矿产资源 mineral resources",
+     "古人类起源 the origin of ancient humans",
+     "十分丰富 extremely rich"
+    ]
+   },
+   {
+    "cn": "云贵高原是中国少数民族数量最多的地区，各民族都保留了自己丰富多彩的文化传统。",
+    "en": "The Yunnan-Guizhou Plateau is home to the largest number of ethnic minorities in China, and each ethnic group has preserved its own rich and colorful cultural traditions.",
+    "structure": "主系表结构 is home to 表'拥有最多' + and 连接并列分句，第二分句为主谓宾结构",
+    "keys": [
+     "少数民族 ethnic minorities",
+     "丰富多彩的 rich and colorful",
+     "文化传统 cultural traditions"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "云贵高原",
+    "en": "the Yunnan-Guizhou Plateau"
+   },
+   {
+    "cn": "平均海拔",
+    "en": "average altitude"
+   },
+   {
+    "cn": "峡谷",
+    "en": "canyon"
+   },
+   {
+    "cn": "土壤肥沃",
+    "en": "the soil is fertile"
+   },
+   {
+    "cn": "生物多样性",
+    "en": "biological diversity / biodiversity"
+   },
+   {
+    "cn": "矿产资源",
+    "en": "mineral resources"
+   },
+   {
+    "cn": "古人类起源",
+    "en": "the origin of ancient humans"
+   },
+   {
+    "cn": "少数民族",
+    "en": "ethnic minorities"
+   },
+   {
+    "cn": "文化传统",
+    "en": "cultural traditions"
+   },
+   {
+    "cn": "农作物",
+    "en": "crops"
+   }
+  ],
+  "pitfalls": [
+   "'西高东低'若逐字直译为 west high east low 则语法错误，需用形容词短语 higher in the west and lower in the east",
+   "'50万平方公里'易误写为 500 able to thousand，正确为 500,000 square kilometers",
+   "'又深又陡'中'又…又…'结构易遗漏，应译为 deep and steep 两个形容词并列",
+   "'造就了'不宜译为 made，应选择 give rise to / contribute to 等更地道的搭配",
+   "'少数民族'易误译为 minority nationalities，六级推荐用 ethnic minorities"
+  ],
+  "upgrades": [
+   {
+    "plain": "has many rivers",
+    "better": "features numerous rivers",
+    "note": "feature 作动词表'以……为特色'，比 have 更正式书面"
+   },
+   {
+    "plain": "made biological and cultural diversity",
+    "better": "has given rise to biological and cultural diversity",
+    "note": "give rise to 是学术语境下表'造就、引发'的高级搭配"
+   },
+   {
+    "plain": "is the region with the most ethnic minorities",
+    "better": "is home to the largest number of ethnic minorities",
+    "note": "be home to 惯用表达，自然地道，体现人文地理语感"
+   },
+   {
+    "plain": "good for the growth of crops",
+    "better": "favorable for the growth of a wide variety of crops",
+    "note": "favorable 比 good 更正式，a wide variety of 体现'多种'的丰富含义"
+   },
+   {
+    "plain": "the soil is rich and good for crops",
+    "better": "the soil is fertile, making it highly favorable for the growth of crops",
+    "note": "使用分词结构表结果，句式更紧凑高级，避免简单句堆砌"
+   }
+  ]
+ }
+}

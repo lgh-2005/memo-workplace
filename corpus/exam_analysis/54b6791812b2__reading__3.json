@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "54b6791812b2__reading__3",
+ "examId": "54b6791812b2",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2005 年考研英语真题（旧）",
+ "year": 2005,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:16:16.919Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61677,
+ "usage": {
+  "prompt_tokens": 1812,
+  "completion_tokens": 3791,
+  "total_tokens": 5603,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1812,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3791,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1812,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 32 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "梦境与情绪调节及其可控性",
+  "gist": "文章围绕梦境的本质与功能展开论述。研究者认为梦是大脑离线时的情绪调节器，与情绪密切相关。消极情绪在夜间早期以噩梦形式出现，随后逐渐转向积极。Cartwright提出人们可以通过有意识的练习控制反复出现的噩梦，而偶尔的坏梦无需特别关注，大脑自有调节机制。",
+  "structure": [
+   "第一段：引出梦境研究演变，提出梦可被有意识控制的观点",
+   "第二段：脑成像证据支持梦与情绪的关联",
+   "第三段：临床案例说明梦处理白天消极情绪的过程",
+   "第四段：Cartwright提出有意识控制噩梦的具体方法",
+   "第五段：总结建议，偶尔噩梦无需担忧，持续噩梦应求助"
+  ],
+  "difficulty": "中等",
+  "translation": "在良好睡眠的所有组成部分中，梦似乎是我们最难以控制的。在梦中，一扇通向逻辑被悬置、死人能开口说话的世界的窗户打开了。一个世纪前，弗洛伊德提出了他的革命性理论，认为梦是我们无意识欲望和恐惧的伪装投影；到20世纪70年代末，神经学家转而将梦视为\"心理噪音\"——睡眠期间神经修复工作的随机副产品。如今，研究人员怀疑梦是大脑情绪恒温器的一部分，在大脑\"离线\"时调节情绪。一位权威专家表示，这些强烈的心理事件不仅可以被利用，还可以被有意识地控制，以帮助我们改善睡眠和情绪。\"这是你的梦，\"芝加哥医学中心心理学系主任罗莎琳德·卡特赖特说，\"如果你不喜欢它，就改变它。\"\n\n脑成像的证据支持了这一观点。匹兹堡大学的埃里克·诺夫辛格博士说，大脑在快速眼动（REM）睡眠期间——最生动的梦境通常发生在此时——与完全清醒时一样活跃。但并非大脑的所有部分都同等参与；边缘系统（\"情绪脑\"）尤其活跃，而前额叶皮层（智力和推理中心）则相对安静。\"我们从梦中醒来时感到快乐或沮丧，这些情绪可以伴随我们一整天，\"斯坦福大学睡眠研究员威廉·德门特博士说。\n\n梦与情绪之间的联系在卡特赖特诊所的患者中得到了体现。大多数人似乎在夜间早些时候做更多的噩梦，在醒来前逐渐转向更愉快的梦境，这表明他们正在处理白天产生的消极情绪。因为我们的意识被日常生活所占据，我们并不总是去思考每天发生事件的情感意义——直到，看起来，我们开始做梦。\n\n而且这一过程不必完全交给无意识。卡特赖特认为人们可以对反复出现的噩梦施加有意识的控制。一醒来就确认梦中令人不安的内容。想象你希望它如何结束；下次再出现时，尝试清醒到刚好足以控制梦的走向。经过大量练习，人们可以学会在睡眠中真正做到这一点。\n\n归根结底，除非梦影响了我们的睡眠或\"让我们在恐慌中醒来\"，否则可能没有什么理由去关注我们的梦，卡特赖特说。恐怖主义、经济不确定性和普遍的不安全感加剧了人们的焦虑。那些遭受持续噩梦困扰的人应该向治疗师寻求帮助。对于我们其他人来说，大脑自有其处理不良情绪的方式。带着问题入睡——或者说去做梦——早上醒来你会感觉好多了。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "And one leading authority says that these intensely powerful mental events can be not only harnessed but actually brought under conscious control, to help us sleep and feel better.",
+    "why": "文章第一段末尾指出，权威专家认为梦可以被有意识地控制，Cartwright更是说\"如果你不喜欢它，就改变它\"。第四段进一步阐述了控制梦境走向的具体方法——\"try to wake up just enough to control its course\"。A选项\"梦的进程可以被修改\"正是对此的准确概括。",
+    "traps": "B项\"易受情绪变化影响\"虽有一定关联，但并非研究者最终得出的核心结论，属于片面信息；C项\"反映最深层的欲望和恐惧\"是弗洛伊德一个世纪前的旧理论，非现今研究者的观点，属于张冠李戴；D项\"是神经修复的随机产物\"是70年代末神经学家的过时观点，也非当前立场，属于偷换时间。",
+    "tip": "注意区分不同时期的观点归属，抓住\"now\"等时间标志词。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "The brain is as active during REM sleep – when most vivid dreams occur – as it is when fully awake... the limbic system (the 'emotional brain') is especially active... 'We wake up from dreams happy or depressed, and those feelings can stay with us all day.'",
+    "why": "第二段首句明确说\"脑成像证据支持了这一观点\"（即梦是情绪调节器）。接着以边缘系统（情绪脑）在梦中尤其活跃为例，再引用Dement的话说明梦中的情绪会持续影响一整天。提及边缘系统的目的是论证梦与情绪的关联，C项准确对应。",
+    "traps": "A项\"边缘系统在梦中的功能\"仅是字面描述，未点明作者论证的真正意图，属于就事论事；B项\"REM睡眠的机制\"只是论述背景，非作者引用该例的目的；D项\"它与前额叶皮层的差异\"只是辅助对比，并非论证重点，属于以偏概全。",
+    "tip": "例证题需回归论点，问的是\"作者意图\"而非例子本身的内容。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Most people seem to have more bad dreams early in the night, progressing toward happier ones before awakening, suggesting that they are working through negative feelings generated during the day.",
+    "why": "原文明确指出大多数人在夜间早期做更多噩梦，然后逐渐过渡到更愉快的梦境，这说明白天产生的消极情绪倾向于在夜间早期的梦中显现出来。D项\"在夜间早期的梦中表现出来\"是对原文的准确复述。",
+    "traps": "A项\"在无意识中加剧\"属于无中生有，原文说的是消极情绪被逐步消化处理，而非加剧；B项\"发展为快乐的梦\"偷换主语，是噩梦逐渐过渡为快乐的梦，而非消极情绪本身变成快乐的梦；C项\"持续到入睡时\"曲解原文，文中说的是白天不去思考情感意义直到开始做梦，而非消极情绪持续到入睡。",
+    "tip": "注意选项对原文因果关系和主语的偷换。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "And this process need not be left to the unconscious. Cartwright believes one can exercise conscious control over recurring bad dreams.",
+    "why": "第四段开头Cartwright明确指出\"这一过程（梦中处理情绪）不必完全交给无意识\"，人们可以对反复出现的噩梦施加有意识的控制。这说明做梦并非完全属于无意识领域，可以有意识地介入。D项\"做梦可能并不完全属于无意识\"准确概括了这一观点。",
+    "traps": "A项\"及时醒来是消除噩梦的关键\"过度理解，原文说的是\"醒来到刚好足以控制梦的走向\"，目的不是醒来而是控制，且\"essential\"过于绝对；B项\"想象噩梦有助于控制它们\"偷换概念，原文是想象你希望梦如何结束，而非想象噩梦本身；C项\"梦应顺其自然发展\"与Cartwright主张有意识控制梦的立场完全相反。",
+    "tip": "推断题要忠于原文逻辑，注意\"not entirely\"等程度限定词。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "At the end of the day, there's probably little reason to pay attention to our dreams at all unless they keep us from sleeping or 'we wake up in a panic,' Cartwright says... For the rest of us, the brain has its ways of working through bad feelings.",
+    "why": "题目问的是\"偶尔做噩梦的人\"，对应最后一段中\"the rest of us\"（区别于遭受持续噩梦的人）。Cartwright的建议是：除非梦影响睡眠或引发恐慌，否则几乎无需特别关注，大脑自有处理方式。A项\"照常生活\"正是对\"无需特别关注\"的准确概括。",
+    "traps": "B项\"寻求专业帮助\"针对的是持续噩梦患者（persistent nightmares），不适用于偶尔做噩梦的人，属于对象错位；C项\"施加有意识控制\"是针对反复出现的噩梦的建议，不是针对偶尔噩梦；D项\"避免白天焦虑\"在文中没有作为建议提出，属于无中生有。",
+    "tip": "注意区分不同程度问题对应的不同建议对象。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "formulate",
+    "cn": "v. 系统地阐述，构想出"
+   },
+   {
+    "w": "disguised",
+    "cn": "adj. 伪装的，掩饰的"
+   },
+   {
+    "w": "byproduct",
+    "cn": "n. 副产品，附带产物"
+   },
+   {
+    "w": "thermostat",
+    "cn": "n. 恒温器，自动调温装置"
+   },
+   {
+    "w": "harness",
+    "cn": "v. 利用，驾驭"
+   },
+   {
+    "w": "limbic",
+    "cn": "adj. 边缘的（边缘系统相关）"
+   },
+   {
+    "w": "prefrontal cortex",
+    "cn": "n. 前额叶皮层"
+   },
+   {
+    "w": "recurring",
+    "cn": "adj. 反复出现的，周期性的"
+   },
+   {
+    "w": "visualize",
+    "cn": "v. 使形象化，想象"
+   },
+   {
+    "w": "persistent",
+    "cn": "adj. 持续的，顽固的"
+   },
+   {
+    "w": "susceptible",
+    "cn": "adj. 易受影响的，敏感的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Now researchers suspect that dreams are part of the mind's emotional thermostat, regulating moods while the brain is \"off-line.\"",
+    "cn": "如今，研究人员怀疑梦是大脑情绪恒温器的一部分，在大脑\"离线\"时调节情绪。",
+    "note": "主干为researchers suspect that...，that引导宾语从句；regulating moods为现在分词短语作状语，表伴随；emotional thermostat为核心比喻。"
+   },
+   {
+    "en": "Because our conscious mind is occupied with daily life we don't always think about the emotional significance of the day's events – until, it appears, we begin to dream.",
+    "cn": "因为我们的意识被日常生活所占据，我们并不总是去思考每天发生事件的情感意义——直到，看起来，我们开始做梦。",
+    "note": "Because引导原因状语从句；主句为we don't always think about...；until引导时间状语从句；it appears为插入语，表示推测语气。"
+   },
+   {
+    "en": "And one leading authority says that these intensely powerful mental events can be not only harnessed but actually brought under conscious control, to help us sleep and feel better.",
+    "cn": "一位权威专家表示，这些强烈的心理事件不仅可以被利用，还可以被有意识地控制，以帮助我们改善睡眠和情绪。",
+    "note": "主干为authority says that...；not only...but actually...为递进并列结构，强调程度加深；to help为目的状语。"
+   }
+  ]
+ }
+}

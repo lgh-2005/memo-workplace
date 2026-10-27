@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "0effd4255078__reading__1",
+ "examId": "0effd4255078",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年 12 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:13:02.311Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61443,
+ "usage": {
+  "prompt_tokens": 1864,
+  "completion_tokens": 4082,
+  "total_tokens": 5946,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1864,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4082,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1864,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "机器人道德决策的编程难题",
+  "gist": "文章以电影《我，机器人》中机器人的生死抉择为引子，探讨阿西莫夫机器人三定律在回避道德问题方面的局限性，指出'伤害'等抽象概念难以编码，并通过布里斯托实验室的实验表明，缺乏道德判断能力的机器人在复杂情境中难以做出决策。",
+  "structure": [
+   "第1段：以电影场景引出机器人应如何被编程的核心问题",
+   "第2段：介绍阿西莫夫三定律，指出其回避了道德问题",
+   "第3段：引入第零定律，允许机器人为更大利益行事",
+   "第4段：指出三定律中抽象概念难以编程的问题",
+   "第5段：以实验证明机器人在复杂情境中决策失败"
+  ],
+  "difficulty": "中等",
+  "translation": "在电影《我，机器人》的开头，一个机器人必须在两辆车坠入水中后决定救谁——德尔·斯普纳还是一个孩子。尽管斯普纳大喊\"救她！救她！\"，机器人还是救了他，因为它计算出他有45%的生存概率，而萨拉只有11%。机器人的决定及其基于计算的方式提出了一个重要问题：人类会做出同样的选择吗？而我们又希望机器人做出怎样的选择？\n\n艾萨克·阿西莫夫在制定其机器人三定律时回避了整个道德概念。三定律规定：1. 机器人不得伤害人类，也不得在人类将受到伤害时袖手旁观；2. 机器人必须服从人类的命令，除非该命令与第一定律冲突；3. 机器人必须保护自身存在，除非这样做与第一或第二定律冲突。这些定律被编程植入阿西莫夫的机器人中——它们无需思考、判断或评估价值。它们不必喜欢人类，也不必认为伤害人类是错误或不好的。它们只是不那样做而已。\n\n电影《我，机器人》中救了斯普纳性命的机器人遵循的是阿西莫夫的第零定律：机器人不得伤害人类整体（相对于个体人类），也不得在人类整体将受到伤害时袖手旁观——这是对第一定律的扩展，允许机器人判断什么符合更大的利益。根据第一定律，机器人不能伤害一个危险的持枪者，但根据第零定律，机器人可以杀死该持枪者以拯救其他人。\n\n能否像阿西莫夫的定律那样为机器人编写保护措施是有争议的。\"伤害\"这样的词语是模糊的（情感伤害算不算？取代人类员工算不算伤害？），而抽象概念带来了编码难题。阿西莫夫小说中的机器人暴露了三定律中的复杂性和漏洞，即使定律有效，机器人仍然需要评估情况。\n\n评估情况可能非常复杂。机器人必须识别参与者、条件以及各种情境下的可能结果。计算机程序能否做到这一点值得怀疑——至少，不会没有一些不良后果。布里斯托机器人实验室的一位机器人学家编程让一个机器人从危险中拯救被称为\"H-机器人\"的人类替身。当一个H-机器人走向危险时，该机器人成功地将其推开。但当两个H-机器人同时陷入危险时，该机器人42%的时间无法行动，无法决定该救谁，最终让它们双双\"死亡\"。这个实验凸显了道德的重要性：没有道德，机器人如何决定救谁或什么对人类最好，尤其是在它无法计算生存概率的情况下？",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The robot's decision and its calculated approach raise an important question: would humans make the same choice? And which choice would we want our robotic counterparts to make?",
+    "why": "原文提出的问题是\"我们希望机器人做出怎样的选择\"，即我们应该如何设定机器人的决策方式。这本质上是一个关于\"机器人应如何被编程\"的问题——我们期望机器人遵循什么逻辑来做选择。D选项\"How robots should be programmed\"准确概括了这一核心问题。",
+    "traps": "A项\"机器人能否做出更好的决策\"偏离原文，原文讨论的不是决策质量的优劣比较；B项\"机器人是否遵循第零定律\"属于后文第三段才讨论的内容，不是第一段电影场景所提出的问题；C项\"机器人如何做出错误判断\"属于无中生有，原文未暗示该决策是错误的。",
+    "tip": "注意区分\"原文提出的问题\"和后文延伸的讨论内容。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Isaac Asimov evaded the whole notion of morality in devising his three laws of robotics",
+    "why": "原文明确指出阿西莫夫在制定三定律时\"evaded the whole notion of morality\"（回避了整个道德概念），即三定律没有将道德问题纳入考虑。D选项\"They did not take moral issues into consideration\"是对\"evaded the whole notion of morality\"的同义转述，完全吻合。",
+    "traps": "A项\"明显脱离现实\"过度引申，原文只是说回避了道德，并非说脱离现实；B项\"没有遵循机器人编码系统\"属于无中生有，原文未提及编码系统的标准问题；C项\"为机器人技术奠定了坚实基础\"与原文批判性语气不符，原文强调的是三定律的局限性。",
+    "tip": "关注作者对关键概念的评价性用词，如evaded暗含负面态度。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "These laws are programmed into Asimov's robots—they don't have to think, judge, or value. They don't have to like humans or believe that hurting them is wrong or bad. They simply don't do it.",
+    "why": "原文说这些定律被\"编程植入\"机器人，它们不需要思考或判断，不需要认为伤害人类是不对的，它们只是不那样做。B选项\"它们被编程为不伤害人类\"准确概括了这一核心信息：机器人不伤害人类是因为编程，而非因为道德认知。",
+    "traps": "A项\"它们知道什么对人类好或坏\"与原文相反，原文明确说它们\"don't have to think, judge, or value\"；C项\"以主人最大利益行事\"属于偷换概念，三定律保护的是人类整体而非\"主人\"利益；D项\"遇到道德问题时停止工作\"属于无中生有，原文未提及此情况。",
+    "tip": "注意区分\"被编程不做某事\"与\"理解为什么不该做某事\"的本质区别。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "A word such as 'harm' is vague (what about emotional harm? Is replacing a human employee harm?), and abstract concepts present coding problems.",
+    "why": "作者举\"harm\"一词为例，意在说明该词含义模糊，可有多种理解，紧接着得出结论\"abstract concepts present coding problems\"（抽象概念带来编码难题）。A选项\"抽象概念难以编程\"是对这一结论的准确概括，\"harm\"只是用来支撑这一论点的具体例证。",
+    "traps": "B项\"机器人难以做出决策\"虽与文章整体主题相关，但不是该处提到\"harm\"的直接论证目的；C项\"机器人可能在某些情况下造成伤害\"是可能的推论，但非作者此处的论证重点；D项\"阿西莫夫定律使用了太多模糊术语\"将个别举例泛化为\"太多\"，且偏离了编码难题这个核心论点。",
+    "tip": "例证题要回归论点本身，关注例子后面紧跟的总结性语句。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But when two H-bots became imperiled, the robot choked 42 percent of the time, unable to decide which to save and letting them both 'die.'",
+    "why": "实验结果表明，面对单一目标时机器人能成功施救，但面对两个目标时，机器人42%的时间无法行动（choked），无法决定该救谁。这清楚地表明机器人在复杂场景中存在决策困难。C选项\"机器人在复杂场景中可能难以做出决策\"准确概括了这一实验发现。",
+    "traps": "A项\"机器人终有一天能像人类一样智能\"属于无中生有，实验结论恰恰暗示机器人决策能力有限；B项\"机器人可以将道德问题编入程序\"与实验结论相反，实验恰好凸显了缺乏道德编码带来的问题；D项\"机器人可以被编程感知潜在危险\"只涉及实验的部分前提（单个目标成功案例），而非实验的核心发现。",
+    "tip": "实验类题目重点关注实验结果和结论，而非实验设置或局部成功案例。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "plunge",
+    "cn": "v. 猛冲，骤降，坠入"
+   },
+   {
+    "w": "counterpart",
+    "cn": "n. 对应的人或物，对等物"
+   },
+   {
+    "w": "evade",
+    "cn": "v. 回避，逃避"
+   },
+   {
+    "w": "devise",
+    "cn": "v. 设计，发明，想出"
+   },
+   {
+    "w": "self-preservation",
+    "cn": "n. 自我保护，自我保存"
+   },
+   {
+    "w": "safeguard",
+    "cn": "n. 保护措施，防护手段"
+   },
+   {
+    "w": "loophole",
+    "cn": "n. 漏洞，法律空子"
+   },
+   {
+    "w": "imperiled",
+    "cn": "adj. 处于危险中的（imperil v. 使陷入危险）"
+   },
+   {
+    "w": "proxy",
+    "cn": "n. 代理人，替身"
+   },
+   {
+    "w": "zeroth",
+    "cn": "adj. 第零的（数学/物理术语）"
+   },
+   {
+    "w": "roboticist",
+    "cn": "n. 机器人学家"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Isaac Asimov evaded the whole notion of morality in devising his three laws of robotics, which hold that 1. Robots cannot harm humans or allow humans to come to harm; 2. Robots must obey humans, except where the order would conflict with law 1; and 3. Robots must act in self-preservation, unless doing so conflicts with laws 1 or 2.",
+    "cn": "艾萨克·阿西莫夫在制定其机器人三定律时回避了整个道德概念。三定律规定：1. 机器人不得伤害人类，也不得在人类将受到伤害时袖手旁观；2. 机器人必须服从人类的命令，除非该命令与第一定律冲突；3. 机器人必须保护自身存在，除非这样做与第一或第二定律冲突。",
+    "note": "主干为Asimov evaded the notion，in devising为方式状语，which引导非限制性定语从句解释三定律内容，三条定律内部各含except/unless引导的条件让步状语从句。"
+   },
+   {
+    "en": "When one H-bot headed for danger, the robot successfully pushed it out of the way. But when two H-bots became imperiled, the robot choked 42 percent of the time, unable to decide which to save and letting them both 'die.'",
+    "cn": "当一个H-机器人走向危险时，该机器人成功地将其推开。但当两个H-机器人同时陷入危险时，该机器人42%的时间无法行动，无法决定该救谁，最终让它们双双\"死亡\"。",
+    "note": "两个when引导的时间状语从句形成对比，unable to decide和letting为伴随状语，补充说明choked的具体表现和结果。"
+   },
+   {
+    "en": "The experiment highlights the importance of morality: without it, how can a robot decide whom to save or what's best for humanity, especially if it can't calculate survival odds?",
+    "cn": "这个实验凸显了道德的重要性：没有道德，机器人如何决定救谁或什么对人类最好，尤其是在它无法计算生存概率的情况下？",
+    "note": "冒号后为解释说明，how引导反问句强调道德的必要性，especially if引导条件从句进一步限定极端情境。"
+   }
+  ]
+ }
+}

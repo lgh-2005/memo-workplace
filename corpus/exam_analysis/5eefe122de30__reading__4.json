@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "5eefe122de30__reading__4",
+ "examId": "5eefe122de30",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2012 年考研英语真题",
+ "year": 2012,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:27:15.869Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67550,
+ "usage": {
+  "prompt_tokens": 1776,
+  "completion_tokens": 3959,
+  "total_tokens": 5735,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1776,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3959,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1776,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 2,
+ "warnings": [],
+ "analysis": {
+  "topic": "公共部门工会的扩张与问题",
+  "gist": "文章指出美英两国公共部门工会成员大幅增长，分析其壮大的三大原因——罢工代价低、成员素质高、主导左翼政治。公共部门工会通过福利和养老金间接增加收入，阻碍教育等领域改革，引发政治反弹。最后指出现行体制不利于高绩效者，可能成为更大问题。",
+  "structure": [
+   "第1段：数据呈现公共部门工会成员大幅增长的趋势",
+   "第2-3段：分析公共部门工会壮大的三大原因及其政治影响力",
+   "第4-5段：揭示工会在薪酬福利和教育改革中的负面作用",
+   "第6-7段：政治反击与现行体制对高绩效者的不利影响"
+  ],
+  "difficulty": "中等",
+  "translation": "如果工会领袖吉米·霍法今天还活着，他很可能会代表公务员群体。1960年霍法的卡车司机工会处于鼎盛时期时，美国政府雇员中只有十分之一属于工会；而如今这一比例达到了36%。2009年，美国公共部门的工会成员人数超过了私营部门的工会成员人数。在英国，超过一半的公共部门员工加入了工会，而私营部门这一比例仅为约15%。\n\n公共部门工会蓬勃发展有三个原因。首先，他们可以使政府停摆而自身几乎不必承受什么后果。其次，他们大多聪明且受过良好教育。美国四分之一的公共部门员工拥有大学学位。第三，他们现在主导着中左翼政治。他们的一些关系渊源已久。英国工党，顾名思义，长期以来与工会运动密切相关。其现任领导人埃德·米利班德的职位就得益于公共部门工会的投票支持。\n\n在州一级，他们的影响力甚至更加令人生畏。加州公共政策研究所的马克·鲍尔达萨雷指出，该州的大部分预算都受到工会的监控。教师工会盯着学校，加州惩教和平官员协会盯着监狱，还有各种劳工团体盯着医疗保健。\n\n在许多富裕国家，公共部门的平均工资高于私营部门。但真正的收益来自福利和工作待遇方面。政客们一再对公共部门的薪酬协议采取\"延后兑现\"的方式，将加薪幅度控制在较低水平，但增加假期，尤其是在本已丰厚的养老金上再做文章。\n\n改革遭到了强烈反对，也许最臭名昭著的是在教育领域，特许学校、学院制学校和绩效工资都面临着旷日持久的斗争。尽管有大量证据表明教师质量是最重要的变量，但教师工会一直反对淘汰差的教师和提拔好的教师。\n\n随着其他人承担的代价变得更加明晰，政客们已开始着手整治。在威斯康星州，工会召集了数千名支持者反对强硬的共和党州长斯科特·沃克。但许多公共部门内部的人也在现行制度下深受其害。\n\n哈佛大学肯尼迪学院的约翰·多纳休指出，西方公务员系统的文化规范适合那些安于现状的人，但对高绩效者不利。美国公共部门中年薪超过25万美元的只有大学体育教练和美国总统。银行家的高薪备受批评，但一个不奖励高绩效者的公共部门体制对美国而言可能是一个更大的问题。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "When Hoffa's Teamsters were in their prime in 1960, only one in ten American government workers belonged to a union; now 36% do. In 2009 the number of unionists in America's public sector passed that of their fellow members in the private sector.",
+    "why": "原文用数据对比说明：1960年仅十分之一的政府雇员属于工会，如今比例升至36%；2009年公共部门工会成员人数超过私营部门。英国也呈现类似趋势。这些数据一致指向公共部门工会成员规模大幅扩大，C选项\"unions have enlarged their public-sector membership\"是对这一趋势的准确概括。",
+    "traps": "A项\"Teamsters still have a large body of members\"——原文用虚拟语气\"if...were alive today\"暗示霍法已去世，Teamsters的鼎盛期是1960年，文中未提及其现在仍有大量成员，属于无中生有。B项\"Jimmy Hoffa used to work as a civil servant\"——原文说霍法是工会领袖（trade unionist），代表卡车司机，并非公务员，属于偷换概念。D项\"the government has improved its relationship with unionists\"——文中未涉及政府与工会关系改善，纯属无中生有。",
+    "tip": "数据对比题应抓住变化趋势，避免被具体人物误导。"
+   },
+   {
+    "number": 37,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "First, they can shut things down without suffering much in the way of consequences.",
+    "why": "第二段列举公共部门工会壮大的第一个原因时指出：他们可以让事情停摆而自身几乎不承受什么后果（without suffering much in the way of consequences）。D选项\"seldom get in trouble for their actions\"（很少因自身行为而惹上麻烦）是对该句的同义改写，\"seldom get in trouble\"对应\"without suffering much in the way of consequences\"。",
+    "traps": "A项\"prudent in taking actions\"（行事谨慎）——原文说他们行动后果小，并非说他们行事谨慎，属于曲解原意。B项\"Education is required for membership\"——原文说四分之一的公共部门员工有大学学位，这是描述事实，而非加入工会的入会条件，属于偷换概念。C项\"Labor Party has long been fighting against public-sector unions\"——原文说工党长期与工会运动\"associated\"（有关联），而非\"fighting against\"（对抗），属于正反混淆。",
+    "tip": "注意区分\"描述现状\"与\"提出要求\"的区别，避免过度推断。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "But the real gains come in benefits and work practices. Politicians have repeatedly \"backloaded\" public-sector pay deals, keeping the pay increases modest but adding to holidays and especially pensions that are already generous.",
+    "why": "第四段指出公共部门的真正收益来自福利和工作待遇，政客将加薪幅度控制在较低水平，但通过增加假期和养老金来补偿。这意味着收入不是通过直接涨工资，而是通过福利等间接方式增加的。B选项\"indirectly augmented\"（间接增加）精准概括了这种\"工资涨幅小但福利大增\"的间接增收方式。",
+    "traps": "A项\"illegally secured\"（非法获取）——文中描述的是政客主动给出的薪酬安排，并未涉及违法行为，属于无中生有。C项\"excessively increased\"（过度增长）——虽然养老金已经很丰厚，但文中强调的重点是增长方式（间接增加），而非增长幅度过大，且工资涨幅是modest的，属于以偏概全。D项\"fairly adjusted\"（公平调整）——全文对公共部门薪酬持批判态度，认为其挤占了他人利益，绝非\"公平\"，属于与原文立场相悖。",
+    "tip": "关注but转折后的重点信息，理解作者的隐含态度。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "As the cost to everyone else has become clearer, politicians have begun to clamp down. In Wisconsin the unions have rallied thousands of supporters against Scott Walker, the hardline Republican governor.",
+    "why": "第六段首先指出政客已开始整治工会（clamp down），紧接着以威斯康星州为例，说明工会召集大批支持者反对推行改革的州长。这个例子位于\"改革遭到强烈反对\"的论述之后，其论证目的是说明工会构成了公共部门改革的障碍。C选项\"may be a barrier to public-sector reforms\"准确概括了该例证所要说明的论点。",
+    "traps": "A项\"often run against the current political system\"（经常与现行政治制度对抗）——工会反对的是改革派州长，而非整个政治制度，属于过度推断、扩大范围。B项\"can change people's political attitudes\"（能改变人们的政治态度）——文中仅说工会组织支持者进行抗议，并未说改变了公众的政治态度，属于无中生有。D项\"are dominant in the government\"（在政府中占主导地位）——工会有影响力但并非主导政府，且该例重点在于阻碍改革，属于偷换重点。",
+    "tip": "例证题应回归例子所服务的论点，而非纠结于例子本身的细节。"
+   },
+   {
+    "number": 40,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "the norms of culture in Western civil services suit those who want to stay put but are bad for high achievers...a public-sector system that does not reward high achievers may be a much bigger problem for America.",
+    "why": "多纳休指出西方公务员体制的文化规范适合安于现状者但不利于高绩效者，并认为不奖励高绩效者的公共部门体制可能是美国更大的问题。\"bad for high achievers\"和\"a much bigger problem\"均为明显的负面评价词，表明他对现行公共部门体制持批评和不赞同的态度，对应A选项\"disapproval\"（不赞同）。",
+    "traps": "B项\"appreciation\"（赞赏）——多纳休认为该体制是\"bigger problem\"，态度明显是负面的，赞赏与原文完全相反。C项\"tolerance\"（容忍）——多纳休明确指出问题并提出批评，不是勉强容忍的态度，属于程度错误。D项\"indifference\"（漠不关心）——多纳休专门就此问题发表看法并认为这是\"much bigger problem\"，显然非常关切而非漠不关心。",
+    "tip": "态度题注意抓取评价性形容词和副词，如bad、bigger problem等。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "thriving",
+    "cn": "adj./v. 蓬勃发展的，兴旺的"
+   },
+   {
+    "w": "notoriously",
+    "cn": "adv. 臭名昭著地，众所周知地（贬义）"
+   },
+   {
+    "w": "backloaded",
+    "cn": "v. 延后兑现，将支付集中在后期"
+   },
+   {
+    "w": "clamp down",
+    "cn": "v. 严厉打击，强力整治"
+   },
+   {
+    "w": "drawn-out",
+    "cn": "adj. 旷日持久的，拖延很长时间的"
+   },
+   {
+    "w": "rallied",
+    "cn": "v. 召集，集结（支持者）"
+   },
+   {
+    "w": "fearsome",
+    "cn": "adj. 令人畏惧的，可怕的"
+   },
+   {
+    "w": "patrolled",
+    "cn": "v. 巡视，监控（此处为比喻义）"
+   },
+   {
+    "w": "merit pay",
+    "cn": "n. 绩效工资"
+   },
+   {
+    "w": "charter schools",
+    "cn": "n. 特许学校（由政府资助但独立运营的学校）"
+   },
+   {
+    "w": "norms",
+    "cn": "n. 规范，准则"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Politicians have repeatedly \"backloaded\" public-sector pay deals, keeping the pay increases modest but adding to holidays and especially pensions that are already generous.",
+    "cn": "政客们一再对公共部门的薪酬协议采取\"延后兑现\"的方式，将加薪幅度控制在较低水平，但增加假期，尤其是在本已丰厚的养老金上再做文章。",
+    "note": "主干为Politicians have backloaded pay deals；keeping...but adding...为伴随状语，构成对比；that are already generous为定语从句修饰pensions。"
+   },
+   {
+    "en": "Even though there is plenty of evidence that the quality of the teachers is the most important variable, teachers' unions have fought against getting rid of bad ones and promoting good ones.",
+    "cn": "尽管有大量证据表明教师质量是最重要的变量，但教师工会一直反对淘汰差的教师和提拔好的教师。",
+    "note": "Even though引导让步状语从句；that引导同位语从句解释evidence的内容；主句主语为teachers' unions；fought against后接两个并列动名词短语。"
+   },
+   {
+    "en": "Bankers' fat pay packets have attracted much criticism, but a public-sector system that does not reward high achievers may be a much bigger problem for America.",
+    "cn": "银行家的高薪备受批评，但一个不奖励高绩效者的公共部门体制对美国而言可能是一个更大的问题。",
+    "note": "but连接两个并列分句形成转折对比；that does not reward high achievers为定语从句修饰system；用比较级bigger暗示作者认为后者问题更严重。"
+   }
+  ]
+ }
+}

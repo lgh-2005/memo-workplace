@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "41fe6975b225__reading__1",
+ "examId": "41fe6975b225",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2018 年 12 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:18:15.538Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52718,
+ "usage": {
+  "prompt_tokens": 1770,
+  "completion_tokens": 3454,
+  "total_tokens": 5224,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1770,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3454,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1770,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "农业机器人在农场中的应用与前景",
+  "gist": "文章介绍了农业机器人在大规模农场中的多种应用，包括放牧、监测牲畜健康、检查作物、拔除杂草等。机器人配备高科技传感器和学习算法，能实时反馈农场状况。由于劳动力短缺，农民积极推动机器人技术发展，未来农场将更加自动化。",
+  "structure": [
+   "第1-3段：引出话题，大型农场因偏远难以管理，机器人应运而生",
+   "第4-7段：介绍农场机器人的试验内容、功能与目标",
+   "第8-9段：拓展机器人在作物管理等方面的功能及安全设计",
+   "第10-11段：讨论劳动力短缺推动机器人发展，展望未来自动化农场"
+  ],
+  "difficulty": "中等",
+  "translation": "也许现在是农民们翘脚休息的时候了，因为机器人已经被用来检查作物、挖除杂草，甚至还能充当牧羊人。商业种植田面积大得惊人，需要数千个工时来运营。一个典型的例子是澳大利亚最偏远的牧牛站之一——北领地的萨普尔杰克唐斯牧场，占地4000平方公里，从最近的大城镇爱丽丝泉开车需要13个多小时才能到达。\n\n这些大型农场极度偏远，常常无人看管，每年仅监测一两次，这意味着如果牲畜生病或需要帮助，农民可能要过很长时间才能发现。\n\n然而，机器人正赶来救援。\n\n目前在威尔士正在进行为期两年的机器人试验，将训练\"农场机器人\"进行放牧、监测牲畜健康状况，并确保有足够的牧草供牲畜食用。这些机器人配备了许多传感器来识别环境、牲畜和食物的状况，使用热感和视觉传感器来检测体温变化。\n\n\"你还可以看到颜色、纹理和形状传感器朝地面检测牧草质量，\"悉尼大学的萨拉·苏卡里赫说道，他将在新南威尔士州中部的几个农场进行试验。\n\n在试验期间，机器人的算法和机械装置将被微调，使其更适合照料生病的牲畜，并确保它安全地绕过包括树木、泥地、沼泽和山丘在内的潜在危险。\n\n\"我们希望提高动物健康质量，让农民更容易管理动物自由漫步的大片土地，\"苏卡里赫说。\n\n机器人不仅限于放牧和监测牲畜。它们还被开发用于清点单个水果、检查作物，甚至拔除杂草。\n\n许多机器人配备了高科技传感器和复杂的学习算法，以避免在与人并肩工作时伤害人类。机器人还能学习最高效、最安全的路径，并允许工程师和农民分析和更好地优化机器人的属性和任务，同时提供实时反馈的直播，让人们了解农场上正在发生的一切。\n\n当然，有些人担心农业工人会被取代。然而，正是农民们在推动技术进步，因为劳动力空缺不断增加，使得大规模经营难以维持。\n\n机器人以各种方式为农民提供了重大好处，从寻找和拔除杂草到监测每一个水果的状况。未来的农场很可能会体验到更大程度的自主化，因为机器人将越来越高效地承担更多的农场工作。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Perhaps it is time for farmers to put their feet up now that robots are used to inspect crops, dig up weeds, and even have become shepherds, too.",
+    "why": "原文首句说\"也许现在是农民们翘脚休息的时候了\"，\"put their feet up\"是英语习语，意为\"休息、放松\"。由于机器人承担了检查作物、除草甚至放牧等工作，农民可以拥有更多闲暇时间。B选项\"享受更多休闲时光\"是对\"put their feet up\"的同义转述，因此正确。",
+    "traps": "A\"升级农产品\"原文未提及机器人能提升产品品质；C\"改变作物基因\"文中完全没有涉及基因改造；D\"削减农业成本\"虽然机器人可能间接降低成本，但原文首句强调的是农民能够休息放松，而非降低成本。",
+    "tip": "注意习语的理解，put one's feet up意为放松休息。"
+   },
+   {
+    "number": 47,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Robots are currently under a two-year trial in Wales which will train \"farmbots\" to herd, monitor the health of livestock, and make sure there is enough pasture for them to graze on.",
+    "why": "原文指出农场机器人将被训练进行放牧（herd）、监测牲畜健康（monitor the health of livestock）、确保有足够牧草（make sure there is enough pasture）。这些都是农民的日常工作内容，A选项\"承担农民的许多日常工作\"是对这些具体任务的高度概括，因此正确。",
+    "traps": "B\"提供牲畜医疗\"属于过度推断，机器人只是监测健康状况，并非提供治疗；C\"引领全球农业潮流\"原文未提及；D\"提高牧草质量\"机器人只是检测牧草质量和确保牧草充足，并非改善牧草品质本身。",
+    "tip": "注意区分\"监测\"和\"治疗\"、\"检测质量\"和\"改善质量\"的区别。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "as well as provide a live stream giving real-time feedback on exactly what is happening on the farms.",
+    "why": "原文明确说机器人能\"提供实时反馈的直播，让人们了解农场上正在发生的一切\"。C选项\"允许农民即时了解农场正在发生的事情\"是对\"provide a live stream giving real-time feedback on exactly what is happening\"的准确同义转述，因此正确。",
+    "traps": "A\"帮农民选择最高效安全的路径\"偷换主语，原文是机器人自己学习路径，不是帮农民选路径；B\"帮农民简化任务和管理\"属于过度概括，原文说的是优化机器人的属性和任务；D\"允许农民实时指挥机器人\"方向反了，是机器人给农民反馈，不是农民给机器人指令。",
+    "tip": "注意信息传递方向：是机器人向农民反馈，还是农民向机器人发指令。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "However, it is farmers that are pushing for the advancements due to ever-increasing labor vacancies, making it difficult to maintain large-scale operations.",
+    "why": "原文使用强调句\"it is farmers that are pushing for the advancements\"，明确指出原因是\"ever-increasing labor vacancies\"（不断增加的劳动力空缺），使大规模经营难以维持。D选项\"劳动力短缺日益严重\"是对\"ever-increasing labor vacancies\"的准确转述，worsening对应ever-increasing。",
+    "traps": "A\"农业成本快速上升\"原文未提及成本问题；B\"机器人技术日趋成熟\"虽然可能是事实，但原文强调的推动原因是劳动力短缺；C\"机器人农业是趋势\"文中未将此作为农民推动技术发展的原因。",
+    "tip": "抓住因果关系词due to，准确定位原因。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "Future farms will likely experience a greater deal of autonomy as robots take up more and more farm work efficiently.",
+    "why": "原文末句指出\"未来农场很可能将体验到更大程度的自主化，因为机器人将越来越高效地承担更多农场工作\"。其中\"a greater deal of autonomy\"（更大的自主性）和\"robots take up more and more farm work\"直接指向自动化程度的提高。A选项\"越来越自动化\"是对autonomy的准确概括。",
+    "traps": "B\"越来越高产\"原文未涉及产量问题；C\"规模越来越大\"文中没有讨论未来农场面积扩大的趋势；D\"条件越来越好\"过于笼统，原文强调的是自主化和自动化。",
+    "tip": "末段通常包含作者对未来的展望，关注autonomy等关键词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "astronomically",
+    "cn": "adv. 极其地，天文数字般地"
+   },
+   {
+    "w": "isolated",
+    "cn": "adj. 偏远的，孤立的"
+   },
+   {
+    "w": "livestock",
+    "cn": "n. 牲畜，家畜"
+   },
+   {
+    "w": "pasture",
+    "cn": "n. 牧草，牧场"
+   },
+   {
+    "w": "thermal",
+    "cn": "adj. 热的，热量的"
+   },
+   {
+    "w": "fine-tune",
+    "cn": "v. 微调，精细调整"
+   },
+   {
+    "w": "ailing",
+    "cn": "adj. 生病的，体弱的"
+   },
+   {
+    "w": "navigate",
+    "cn": "v. 导航，行进"
+   },
+   {
+    "w": "hazards",
+    "cn": "n. 危险，危害（复数）"
+   },
+   {
+    "w": "autonomy",
+    "cn": "n. 自主性，自治"
+   },
+   {
+    "w": "vacancies",
+    "cn": "n. 空缺，空位（复数）"
+   },
+   {
+    "w": "optimize",
+    "cn": "v. 优化，使最优化"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "One prime example is one of Australia's most isolated cattle stations, Suplejack Downs in the Northern Territory, extending across 4,000 square kilometers, taking over 13 hours to reach by car from the nearest major town—Alice Springs.",
+    "cn": "一个典型的例子是澳大利亚最偏远的牧牛站之一——北领地的萨普尔杰克唐斯牧场，占地4000平方公里，从最近的大城镇爱丽丝泉开车需要13个多小时才能到达。",
+    "note": "主干为One prime example is one of...cattle stations；Suplejack Downs为同位语；extending和taking为两个现在分词短语作伴随状语，补充说明牧场的面积和偏远程度。"
+   },
+   {
+    "en": "The robots also learn the most efficient and safest passages, and allow engineers and farmers to analyze and better optimize the attributes and tasks of the robot, as well as provide a live stream giving real-time feedback on exactly what is happening on the farms.",
+    "cn": "机器人还能学习最高效、最安全的路径，并允许工程师和农民分析和更好地优化机器人的属性和任务，同时提供实时反馈的直播，让人们了解农场上正在发生的一切。",
+    "note": "主语The robots后接三个并列谓语：learn、allow和provide；allow后接不定式作宾补；as well as连接provide与前面并列；giving引导现在分词短语修饰live stream；what引导宾语从句。"
+   },
+   {
+    "en": "However, it is farmers that are pushing for the advancements due to ever-increasing labor vacancies, making it difficult to maintain large-scale operations.",
+    "cn": "然而，正是农民们在推动技术进步，因为劳动力空缺不断增加，使得大规模经营难以维持。",
+    "note": "it is...that为强调句型，强调主语farmers；due to引导原因状语；making引导结果状语，其中it为形式宾语，difficult为宾补，to maintain...为真正宾语。"
+   }
+  ]
+ }
+}

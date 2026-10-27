@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "26d64559a7b3__reading__1",
+ "examId": "26d64559a7b3",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年 12 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:32:26.767Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61701,
+ "usage": {
+  "prompt_tokens": 1928,
+  "completion_tokens": 3948,
+  "total_tokens": 5876,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1928,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3948,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1928,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 46 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "印度视角批判\"星球饮食\"方案",
+  "gist": "文章围绕EAT-Lancet委员会提出的全球植物性饮食方案展开批判，指出该方案以印度为样板，忽视了印度严重的饥饿和营养不良问题，可能进一步伤害发展中国家弱势群体，而印度政府却对此表示支持，为企业依赖型方案开路，危及本地食物体系和子孙后代。",
+  "structure": [
+   "第1-2段：引出EAT-Lancet报告及其对印度的潜在负面影响",
+   "第3-6段：揭示印度饮食现状——饮食选择受阶层、宗教等限制，并非自愿素食",
+   "第7-9段：以饥饿指数等数据论证印度素食模式不宜推广，动物食品对低收入国家儿童有益",
+   "第10-11段：批评报告忽略关键利益方，指出印度政府盲目接受方案的危害"
+  ],
+  "difficulty": "较难",
+  "translation": "素食者不愿被强迫吃肉。然而，在新的植物性\"星球饮食\"提案中，隐含着一种反向强迫。这一点在印度体现得最为明显。\n\n今年早些时候，EAT-Lancet委员会发布了其全球营养报告，呼吁全球转向更多植物性饮食，并\"大幅减少动物源性食品的消费\"。在印度这样的国家，这一呼吁可能成为加剧本已紧张的政治局势、给已经营养不良的民众施加更大压力的工具。\n\nEAT报告假定，在印度这样的国家，\"传统饮食\"中很少包含红肉，红肉可能只在特殊场合食用，或作为混合菜肴中的少量配料。\n\n然而在印度，人们希望吃什么和他们因阶层、宗教、文化、成本、地理等无数障碍而不得不吃什么之间存在巨大差异。印度的政策制定者历来向食肉人群推行以谷物为主的\"素食\"，以此提供最廉价的食物来源。\n\n目前，在一个激进的印度教民族主义政府治下，穆斯林、基督徒、弱势阶层和原住民社区正被迫放弃他们的传统食物。\n\nEAT-Lancet委员会代表布伦特·洛肯似乎没有意识到这些问题，他说\"印度在从植物中获取蛋白质方面树立了一个很好的榜样\"。\n\n但印度的素食主义在多大程度上可以作为世界的样板呢？在2019年全球饥饿指数中，印度在117个国家中排名第102位。来自全国家庭健康调查的数据显示，6至23个月大的婴儿中只有10%得到了充分喂养。\n\n这就是为什么以印度为模板的植物性饮食呼吁，有可能成为鞭笞发展中国家本已脆弱群体的又一条鞭子。\n\n一种针对富裕西方国家的饮食方案未能认识到：在低收入国家，营养不良的儿童已被证明可以从牛奶和其他动物源性食品的摄入中获益，改善认知功能，同时降低营养缺乏症的患病率以及死亡率。\n\nEAT-Lancet声称其目的是在所有印度利益相关者之间\"引发对话\"。然而，食品加工业和食品强化策略的直言不讳的批评者却被排除在辩论之外。但最明显的遗漏或许是印度农民的缺席。\n\n然而，印度政府似乎对该报告竖起了大拇指。政府没有通过改善人们获取健康且营养丰富食物的途径来解决长期饥饿和营养不良问题，反而为企业依赖型解决方案打开了大门，忽视了环境和经济成本，这将摧毁本地食物体系。这是一个对子孙后代充满危险的模式。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Yet the reverse compulsion is hidden in the proposals for a new plant-based \"planetary diet.\" Nowhere is this more visible than in India.",
+    "why": "文章第一段先说素食者不愿被迫吃肉，然后用\"the reverse compulsion\"指出\"星球饮食\"方案中隐含着反向强迫——即强迫人们吃植物性食物。紧接着说\"这在印度体现得最为明显\"。B选项\"People's reluctance to be compelled to eat plant-based food\"准确对应了\"reverse compulsion\"的含义，即人们不愿被强迫吃植物性食物这一现象在印度最为突出。",
+    "traps": "A项\"正面看法\"与原文批判态度相反，属于反向干扰；C项\"对食物种类的偏好\"过于宽泛，未涉及\"被强迫\"这一核心信息；D项\"不愿放弃饮食习惯\"偷换概念，原文强调的是被迫接受植物性饮食的强制性，而非单纯的习惯问题。",
+    "tip": "理解\"reverse compulsion\"是解题关键，需前后句对照推出其含义。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "In countries like India, that call could become a tool to aggravate an already tense political situation and stress already undernourished populations.",
+    "why": "原文明确指出，EAT-Lancet的呼吁在印度等国可能\"stress already undernourished populations\"（给已经营养不良的人群施加更大压力）。\"stress already undernourished\"意味着在原本就营养不良的基础上进一步恶化，C选项\"Make them even more undernourished\"是对此的准确同义改写，\"even more\"对应\"already\"所暗示的加剧程度。",
+    "traps": "A项\"从根本上改变饮食习惯\"原文未提及且过度推断；B项\"让他们远离政治\"与原文\"aggravate tense political situation\"矛盾；D项\"大幅减少食物选择\"虽有一定关联但并非原文直接表述的后果，属于无中生有。",
+    "tip": "注意\"already undernourished\"这一既定前提，选项需体现\"雪上加霜\"之意。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "In India, however, there is a vast difference between what people would wish to consume and what they have to consume because of innumerable barriers around class, religion, culture, cost, geography, etc.",
+    "why": "原文第四段指出，在印度，人们想吃的和不得不吃的之间存在巨大差异，原因是阶层、宗教、文化、成本、地理等无数障碍。这说明许多人无法获得他们想吃的食物，B选项\"Many people simply do not have access to foods they prefer\"是对\"vast difference\"及其原因的精准概括。",
+    "traps": "A项\"饮食不会因报告改变\"原文无此信息；C项\"谷物素食越来越受欢迎\"曲解原文，原文说的是政策制定者\"推行\"谷物素食，而非人们自愿选择，\"popularity\"一词有误；D项\"政策制定者帮助消除障碍\"与原文相反，政策制定者实际上是在推行廉价素食方案。",
+    "tip": "注意区分\"人们被迫接受\"和\"人们主动选择\"，原文强调的是被动无奈。"
+   },
+   {
+    "number": 49,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Which is why calls for a plant-based diet modeled on India risk offering another whip with which to beat already vulnerable communities in developing countries.",
+    "why": "原文用\"another whip\"比喻以印度为模板的植物性饮食将进一步伤害发展中国家的脆弱群体。结合第九段内容——低收入国家营养不良儿童需要动物性食品来改善认知、降低营养缺乏和死亡率——可推断该模式会加剧低收入国家的营养问题。D选项\"worsen the nourishment problem in low-income countries\"准确概括了这一推论。",
+    "traps": "A项\"可能有利于传统饮食为肉食的人群\"与原文论调相反；B项\"打击发展中国家经济\"虽然末段提到经济成本，但本题问的是以印度为模板的饮食本身，不是政府的做法；C项\"缩小贫富差距\"在原文中完全没有依据，属于无中生有。",
+    "tip": "比喻表达\"another whip\"暗示负面影响，结合上下文判断受害对象和影响内容。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The government, however, seems to have given the report a thumbs-up. Rather than addressing chronic hunger and malnutrition through an improved access to wholesome and nutrient-dense foods, the government is opening the door for company-dependent solutions, ignoring the environmental and economic cost, which will destroy local food systems. It's a model full of danger for future generations.",
+    "why": "末段指出政府对报告表示赞同（thumbs-up），但并未通过改善营养食品获取来解决饥饿问题，而是为企业依赖型方案开路，忽视环境和经济成本，将摧毁本地食物体系，是对子孙后代充满危险的模式。A选项\"以牺牲人民长远利益为代价接受方案\"准确概括了政府的做法：接受报告但损害了长远利益（destroy local food systems, danger for future generations）。",
+    "traps": "B项\"旨在引发对话\"是EAT-Lancet声称的目的而非政府回应；C项\"不顾营养专家反对\"原文说的是批评者被排除在辩论之外，且主语是EAT-Lancet而非政府；D项\"作为解决饥饿工具\"与原文\"rather than addressing chronic hunger\"形成对比，政府恰恰没有这样做。",
+    "tip": "末段\"thumbs-up\"确认态度，\"rather than\"后的对比揭示实质，\"future generations\"呼应\"长远利益\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "compulsion",
+    "cn": "n. 强迫，强制"
+   },
+   {
+    "w": "aggravate",
+    "cn": "v. 加剧，恶化"
+   },
+   {
+    "w": "undernourished",
+    "cn": "adj. 营养不良的"
+   },
+   {
+    "w": "innumerable",
+    "cn": "adj. 无数的，数不清的"
+   },
+   {
+    "w": "indigenous",
+    "cn": "adj. 本土的，原住民的"
+   },
+   {
+    "w": "affluent",
+    "cn": "adj. 富裕的"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的"
+   },
+   {
+    "w": "prevalence",
+    "cn": "n. 流行，盛行；患病率"
+   },
+   {
+    "w": "conspicuous",
+    "cn": "adj. 显眼的，引人注目的"
+   },
+   {
+    "w": "omission",
+    "cn": "n. 遗漏，疏忽"
+   },
+   {
+    "w": "malnutrition",
+    "cn": "n. 营养不良"
+   },
+   {
+    "w": "fortification",
+    "cn": "n. 强化（食品营养强化）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "In countries like India, that call could become a tool to aggravate an already tense political situation and stress already undernourished populations.",
+    "cn": "在印度这样的国家，这一呼吁可能成为加剧本已紧张的政治局势、并给已经营养不良的民众施加更大压力的工具。",
+    "note": "主干为that call could become a tool；to aggravate和stress为并列不定式作目的/结果状语；already反复出现强调\"雪上加霜\"。"
+   },
+   {
+    "en": "A diet directed at the affluent West fails to recognize that in low-income countries undernourished children are known to benefit from the consumption of milk and other animal source foods, improving cognitive functions, while reducing the prevalence of nutritional deficiencies as well as mortality.",
+    "cn": "一种针对富裕西方国家的饮食方案未能认识到：在低收入国家，营养不良的儿童已被证明可以从牛奶和其他动物源性食品的摄入中获益，改善认知功能，同时降低营养缺乏症的患病率以及死亡率。",
+    "note": "主干为A diet fails to recognize that...；directed at the affluent West为后置定语修饰diet；that引导宾语从句；improving和reducing为伴随状语。"
+   },
+   {
+    "en": "Rather than addressing chronic hunger and malnutrition through an improved access to wholesome and nutrient-dense foods, the government is opening the door for company-dependent solutions, ignoring the environmental and economic cost, which will destroy local food systems.",
+    "cn": "政府没有通过改善获取健康且营养丰富食物的途径来解决长期饥饿和营养不良问题，反而为企业依赖型解决方案打开了大门，忽视了环境和经济成本，这将摧毁本地食物体系。",
+    "note": "Rather than...引出对比，强调政府未做之事；主干为the government is opening the door；ignoring为伴随状语；which引导非限制性定语从句指代前文整体行为。"
+   }
+  ]
+ }
+}

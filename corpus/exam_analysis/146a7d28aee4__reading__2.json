@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "146a7d28aee4__reading__2",
+ "examId": "146a7d28aee4",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 12 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T07:13:24.399Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65142,
+ "usage": {
+  "prompt_tokens": 1842,
+  "completion_tokens": 3941,
+  "total_tokens": 5783,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1842,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3941,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1842,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国梅萨学区的团队教学创新模式",
+  "gist": "亚利桑那州梅萨学区韦斯特伍德高中面对教师流失和学生减少的困境，试行\"团队教学\"模式：多名教师共同负责大批学生，每天协商制定个性化教学计划。初步研究显示该模式提升了教师满意度与协作频率，也帮助教师相互改进教学，但在排课和教师评估等方面仍面临挑战。",
+  "structure": [
+   "第1-2段：引出韦斯特伍德高中团队教学模式的背景与由来",
+   "第3-4段：介绍团队教学的运作方式与初步成效",
+   "第5-6段：引用学区负责人观点，指出教师孤立工作的弊端及调查数据",
+   "第7-8段：以英语教师Jeff Hall为例，说明团队互助改进教学",
+   "第9段：指出该模式的局限与挑战"
+  ],
+  "difficulty": "中等",
+  "translation": "135名学生、4名教师、一间超大教室：这就是亚利桑那州最大学区梅萨市韦斯特伍德高中九年级的课堂景象。在那里，一种创新教学模式已经扎根，并正在向该学区和更远地方的其他学校推广。\n\n五年前，面对教师高流动率和学生入学人数下降的困境，韦斯特伍德高中的管理层决定尝试一些不同的做法。他们与亚利桑那州立大学教育学院的教授合作，试行了一种名为\"团队教学\"的课堂模式，该模式允许教师打破将不同班级按物理空间或年级分隔的壁垒。\n\n教师们共同负责大批学生——有时超过100人——轮流进行大组授课、一对一辅导、小组学习，或者教学团队当天一致认为优先处理的任何事项。有时看起来像是一片混乱，实际上却是一项精心策划的方案：每天早晨，韦斯特伍德的教学团队开会，为当天重点关注的每位学生敲定个性化学习计划。\n\n通过给予教师更多协作机会，梅萨的管理者希望填补师资缺口，提升教师士气和留任率。初步研究表明，这一尝试可能会取得成效。\n\n\"教师们做着了不起的工作，但一个教师走进另一间教室看看那里在发生什么，这种情况非常罕见，\"梅萨公立学校学区负责人安迪·福利斯说。\"我们的职业进步如此缓慢，正是因为我们一直在孤立地工作。\"\n\n当然，教学方式的全面改革无法解决教师面临的所有问题，比如低薪，但梅萨的早期结果表明，团队教学可能有助于扭转士气低落的局面。在一项对该学区数百名教师的调查中，研究人员发现，参加团队教学的教师报告了更高的工作满意度、更频繁的同事协作以及更积极的师生互动。\n\n教师们表示，团队的另一个好处是他们可以互相帮助改进教学。在一次教学计划会议上，英语教师杰夫·霍尔向一位理科教师分享了一份绩效评估意见：她最近关于所谓\"生物学中心法则\"的讲座让他和其他队友感到困惑。\n\n\"如果连我都觉得科学内容太难懂了，你能想象作为孩子的你们会有多沮丧吗？\"霍尔说。但他也说，如果不是团队合作，那位理科教师自己根本不会知道有这样的困惑。\n\n这种模式并非适合所有人。一些被征询是否愿意加入团队的教师表示他们更喜欢独立工作。团队教学在排课方面也可能是一场噩梦，尤其是在像韦斯特伍德这样只有部分教师参与团队的学校。还有一些棘手的问题，比如如何根据135名学生的表现来评估4名教师。但就目前而言，这种模式似乎是有效的。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "What looks at times like chaos is in fact a carefully orchestrated plan: Each morning, the Westwood teams meet to hammer out a personalized program for every student the team will focus on that day.",
+    "why": "原文明确指出\"看起来有时像混乱，实际上是一个精心策划的方案\"，每天早晨团队会碰面为每位学生敲定个性化计划。D选项\"尽管看似混乱，但实际紧密协调\"是对原文\"looks at times like chaos\"与\"carefully orchestrated plan\"的准确概括，推理链完整对应。",
+    "traps": "A项\"没有墙的教室\"曲解了原文\"dissolve the walls\"，原文是比喻打破班级界限，并非实际没有墙壁；B项\"学生可以选择喜欢的老师\"在原文中毫无依据，属于无中生有；C项\"同伴学习优先于课堂教学\"原文未表述此优先级关系，文中只是列举了多种教学形式并列进行。",
+    "tip": "注意原文中\"看似A实则B\"的转折结构，往往是命题点。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Initial research suggests the gamble could pay off.",
+    "why": "原文说\"初步研究表明这一赌注可能会获得回报\"。\"pay off\"意为\"取得成效、成功\"，B选项\"It could turn out to be a success\"（可能最终获得成功）是对\"the gamble could pay off\"的同义转述，语义完全对应。",
+    "traps": "A项\"提高教师工资\"原文第六段明确指出改革\"can't fix all the frustrations teachers have, such as low pay\"，直接排除；C项\"减少总体成本\"原文从未提及成本问题，属于无中生有；D项\"最终像一场赌博\"混淆了原文含义，原文是说这一\"gamble\"可能会成功，而非以赌博告终。",
+    "tip": "pay off 是六级高频短语，意为\"取得成效、获得回报\"，不要理解为\"付清\"。"
+   },
+   {
+    "number": 53,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Our profession is so slow to advance because we are working in isolation.",
+    "why": "Fourlis原话是\"我们的职业进步如此缓慢，因为我们一直在孤立地工作\"。\"working in isolation\"即缺乏教师之间的协作，\"slow to advance\"即进步缓慢。C选项精准对应了因果关系：因缺乏协作而导致进步缓慢。",
+    "traps": "A项\"必须先改革教学模式才能提升士气\"过于绝对，原文未表达此必要条件关系；B项\"教师太忙而无法去听其他同事的课\"曲解了原文，Fourlis说的是\"很少有教师走进别的教室\"，并未归因于\"太忙\"；D项\"教师做了好事却不被注意\"曲解了\"fantastic things\"的语境，原文意在说教师各自做得好但缺乏交流。",
+    "tip": "注意区分原文的因果关系与选项中偷换的因果逻辑。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "例证题",
+    "locate": "Another benefit of teams, teachers say, is that they can help each other improve their instruction.",
+    "why": "Jeff Hall的例子出现在第七、八段，其主题句是第七段首句：\"团队的另一个好处是教师可以互相帮助改进教学。\"Hall发现理科教师的讲座令人困惑并反馈给她，而她自己原本不知道这个问题。这说明团队教学能帮助教师了解自己的教学效果如何被接收，C选项\"新模式帮助教师了解其教学效果如何\"精确对应。",
+    "traps": "A项\"英语和科学教师互补\"偏离了例子的论证目的，例子意在说明反馈机制而非互补性；B项\"文科教师完全被理科内容困惑\"只是表面现象的描述，未抓住论证要点；D项\"理科教师不做绩效评估就不知道问题\"曲解了原文，原文强调的是团队协作中的反馈，而非绩效评估本身。",
+    "tip": "例证题要回到例子上方找主题句，答案通常与主题句对应而非例子细节。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "There are also thorny questions like how to evaluate four teachers on the performance of 135 students.",
+    "why": "原文用\"thorny questions\"（棘手问题）一词引出\"如何根据135名学生的表现来评估4名教师\"这一难题。\"thorny\"对应题目中的\"difficult problems\"，\"how to evaluate four teachers\"对应D选项\"如何评估每位教师的表现\"。定位精准、语义对应。",
+    "traps": "A项\"如何处理独立工作的教师\"虽然原文提及有教师偏好独立工作，但这只是个人选择，未被归为实施中的难题；B项\"教学日程中包含什么\"与原文不符，原文说的是排课是噩梦，而非日程内容问题；C项\"如何为团队招募志愿者\"原文未将其列为棘手问题，只是说有人被询问后选择不加入。",
+    "tip": "注意\"thorny\"等表示困难的形容词，往往是命题信号词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "turnover",
+    "cn": "n. 人员流动率；更替率"
+   },
+   {
+    "w": "piloted",
+    "cn": "v. 试行；试点推行"
+   },
+   {
+    "w": "orchestrated",
+    "cn": "adj./v. 精心策划的；精心安排"
+   },
+   {
+    "w": "hammer out",
+    "cn": "phr. 经反复讨论制定出；敲定"
+   },
+   {
+    "w": "morale",
+    "cn": "n. 士气；精神面貌"
+   },
+   {
+    "w": "retention",
+    "cn": "n. 保留；留任（率）"
+   },
+   {
+    "w": "superintendent",
+    "cn": "n. 学区负责人；监督人"
+   },
+   {
+    "w": "overhauling",
+    "cn": "v./n. 彻底改革；全面检修"
+   },
+   {
+    "w": "bewildered",
+    "cn": "v. 使困惑；使迷惑不解"
+   },
+   {
+    "w": "thorny",
+    "cn": "adj. 棘手的；难办的"
+   },
+   {
+    "w": "appraisal",
+    "cn": "n. 评估；评价"
+   },
+   {
+    "w": "dissolve",
+    "cn": "v. 打破；消除（界限等）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Working with professors at Arizona State University's teachers college, they piloted a classroom model known as team teaching, which allows teachers to dissolve the walls that separate their classes across physical or grade divides.",
+    "cn": "他们与亚利桑那州立大学教育学院的教授合作，试行了一种被称为\"团队教学\"的课堂模式，该模式允许教师打破按物理空间或年级将各班分隔开来的壁垒。",
+    "note": "主句为they piloted a model；现在分词短语Working with...作伴随状语；which引导非限制性定语从句修饰model；that引导限制性定语从句修饰walls。"
+   },
+   {
+    "en": "In a survey of hundreds of the district's teachers, researchers found those who worked on teams reported greater job satisfaction, more frequent collaborations with colleagues, and more positive interactions with students.",
+    "cn": "在一项对该学区数百名教师的调查中，研究人员发现，参加团队教学的教师报告了更高的工作满意度、更频繁的同事协作以及更积极的师生互动。",
+    "note": "主句为researchers found+宾语从句（省略that）；who引导定语从句修饰those；reported后接三个并列宾语，构成排比结构。"
+   },
+   {
+    "en": "What looks at times like chaos is in fact a carefully orchestrated plan: Each morning, the Westwood teams meet to hammer out a personalized program for every student the team will focus on that day.",
+    "cn": "有时看起来像是一片混乱，实际上却是一个精心策划的方案：每天早晨，韦斯特伍德的教学团队开会，为当天重点关注的每位学生敲定个性化学习计划。",
+    "note": "What引导主语从句作主句主语；冒号后为补充说明；every student后省略了关系代词whom/that，the team will focus on是定语从句修饰student。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,190 @@
+{
+ "schemaVersion": 1,
+ "id": "086191ae943b__translation__all",
+ "examId": "086191ae943b",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2024 年 6 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:57:51.158Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 34003,
+ "usage": {
+  "prompt_tokens": 815,
+  "completion_tokens": 2070,
+  "total_tokens": 2885,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 815,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2070,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 815,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "扇子在中国文化中的艺术价值与角色",
+  "reference": "Fans have been deeply cherished by the Chinese people since ancient times. However, they are no longer merely a tool for cooling off in summer heat, but are more often appreciated as works of art. Many fans feature elegant shapes and exquisite craftsmanship, and are adorned with beautiful patterns of landscapes, flowers and birds, and human figures, possessing great artistic value. Many renowned Chinese painters and calligraphers enjoy composing poems and creating paintings on fans to showcase their artistic taste. Fans are often presented as gifts to others, conveying good wishes and sincere feelings. Nowadays, the practical function of fans has greatly diminished, yet as a cultural symbol and art form, fans still play an important role in traditional Chinese culture.",
+  "sentences": [
+   {
+    "cn": "扇子自古以来就深受中国人喜爱，但现在已不只是消暑纳凉的工具，而更多地作为艺术品供人欣赏。",
+    "en": "Fans have been deeply cherished by the Chinese people since ancient times. However, they are no longer merely a tool for cooling off in summer heat, but are more often appreciated as works of art.",
+    "structure": "现在完成时（have been cherished）表达\"自古以来\"的延续；not...but... 并列结构表达\"不只是……而更多地……\"",
+    "keys": [
+     "自古以来 since ancient times",
+     "消暑纳凉 cool off in summer heat / beat the heat",
+     "艺术品 works of art"
+    ]
+   },
+   {
+    "cn": "许多扇子造型优美、做工精良，并绘有山水、花鸟、人物等精美图案，具有很高的艺术价值。",
+    "en": "Many fans feature elegant shapes and exquisite craftsmanship, and are adorned with beautiful patterns of landscapes, flowers and birds, and human figures, possessing great artistic value.",
+    "structure": "并列谓语 feature...and are adorned with... 连接两个动作；现在分词短语 possessing... 作伴随状语补充说明结果",
+    "keys": [
+     "造型优美 elegant shapes",
+     "做工精良 exquisite craftsmanship",
+     "山水 landscapes",
+     "花鸟 flowers and birds",
+     "艺术价值 artistic value"
+    ]
+   },
+   {
+    "cn": "中国许多著名画家和书法家喜欢在扇子上作诗绘画，展示其艺术品味。",
+    "en": "Many renowned Chinese painters and calligraphers enjoy composing poems and creating paintings on fans to showcase their artistic taste.",
+    "structure": "enjoy doing sth. 接动名词作宾语；不定式 to showcase 表示目的状语",
+    "keys": [
+     "书法家 calligraphers",
+     "作诗绘画 compose poems and create paintings",
+     "艺术品味 artistic taste"
+    ]
+   },
+   {
+    "cn": "扇子常作为礼物赠予他人，表达美好的祝福和真挚的情感。",
+    "en": "Fans are often presented as gifts to others, conveying good wishes and sincere feelings.",
+    "structure": "被动语态 are presented as... 处理无主语的泛指；现在分词 conveying 作伴随状语表达附带结果",
+    "keys": [
+     "赠予他人 present as gifts to others",
+     "美好的祝福 good wishes",
+     "真挚的情感 sincere feelings"
+    ]
+   },
+   {
+    "cn": "如今，扇子的实用功能已大为减弱，但作为一种文化符号和艺术形式，扇子仍然在中国传统文化中扮演着重要角色。",
+    "en": "Nowadays, the practical function of fans has greatly diminished, yet as a cultural symbol and art form, fans still play an important role in traditional Chinese culture.",
+    "structure": "转折复合句，yet 连接两个分句形成语义对比；介词短语 as a cultural symbol and art form 前置作让步性状语",
+    "keys": [
+     "实用功能 practical function",
+     "文化符号 cultural symbol",
+     "扮演着重要角色 play an important role in"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "扇子",
+    "en": "fan"
+   },
+   {
+    "cn": "消暑纳凉",
+    "en": "cool off in summer heat / beat the heat"
+   },
+   {
+    "cn": "艺术品",
+    "en": "works of art / artwork"
+   },
+   {
+    "cn": "做工精良",
+    "en": "exquisite craftsmanship / fine workmanship"
+   },
+   {
+    "cn": "山水",
+    "en": "landscapes"
+   },
+   {
+    "cn": "书法家",
+    "en": "calligrapher"
+   },
+   {
+    "cn": "艺术品味",
+    "en": "artistic taste"
+   },
+   {
+    "cn": "文化符号",
+    "en": "cultural symbol"
+   },
+   {
+    "cn": "中国传统文化",
+    "en": "traditional Chinese culture"
+   },
+   {
+    "cn": "花鸟",
+    "en": "flowers and birds"
+   }
+  ],
+  "pitfalls": [
+   "'自古以来'应使用现在完成时，误用一般过去时会丢分",
+   "'消暑纳凉'需意译为 cool off / beat the heat，逐字直译不通顺",
+   "'做工精良'是名词性表达，译为 exquisite craftsmanship，勿误译为动词短语",
+   "'书法家' calligrapher 拼写易错，常见错误如 caligapher",
+   "'不只是……而更多地……'需用 not merely...but... 对比结构完整呈现"
+  ],
+  "upgrades": [
+   {
+    "plain": "Chinese people have liked fans for a long time",
+    "better": "Fans have been deeply cherished by the Chinese people since ancient times",
+    "note": "被动语态 + since ancient times 更正式地道，体现书面语水准"
+   },
+   {
+    "plain": "fans have good shapes and are made well",
+    "better": "fans feature elegant shapes and exquisite craftsmanship",
+    "note": "feature 作谓语更简洁高级，elegant/exquisite 用词精准"
+   },
+   {
+    "plain": "fans are given to other people as presents",
+    "better": "fans are often presented as gifts to others",
+    "note": "present 比 give 更正式，符合礼物馈赠的书面语境"
+   },
+   {
+    "plain": "the use of fans has become less",
+    "better": "the practical function of fans has greatly diminished",
+    "note": "diminish 比 become less 更学术精准，practical function 对应'实用功能'更专业"
+   },
+   {
+    "plain": "fans are still important in Chinese traditional culture",
+    "better": "fans still play an important role in traditional Chinese culture",
+    "note": "play an important role in 为高频亮点搭配，traditional Chinese culture 语序更地道"
+   }
+  ]
+ }
+}

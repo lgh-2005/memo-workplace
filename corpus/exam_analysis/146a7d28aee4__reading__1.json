@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "146a7d28aee4__reading__1",
+ "examId": "146a7d28aee4",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 12 月英语六级真题（第 3 套）",
+ "year": 2024,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T07:12:19.251Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60354,
+ "usage": {
+  "prompt_tokens": 1899,
+  "completion_tokens": 3811,
+  "total_tokens": 5710,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1899,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3811,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1899,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "左右脑分工与性格无关",
+  "gist": "文章指出网上流行的左右脑性格测试缺乏科学依据。虽然大脑左右半球确实各有分工，但神经科学家从未支持过\"左脑型人偏逻辑、右脑型人偏创造力\"的说法。人们热衷于此类测试是因为对自我认知的天然好奇，但应对其结果持怀疑态度。",
+  "structure": [
+   "第1-3段：引出左右脑性格测试的流行说法并明确否定",
+   "第4-5段：介绍大脑分区功能的科学事实及科学家曾面临的认知障碍",
+   "第6段：神经科学研究的真正发现及公众对其的误读",
+   "第7段：承认左右脑差异但强调与性格无关，提醒对网络测试保持警惕"
+  ],
+  "difficulty": "中等",
+  "translation": "网上有数百种性格测试声称能够确定你的大脑是左半球还是右半球占主导地位。据说左脑型的人逻辑性强，擅长语言和数学，而右脑型的人更富想象力、情商更高，空间推理能力更强。但这里有一个问题：大脑并非如此运作。\n\n大众科学爱好者大致采纳了这一观念并加以发挥，如今它已融入流行文化，而且不会消失。\n\n尽管这种信念根深蒂固，但所谓的\"右脑型\"或\"左脑型\"根本不存在。无论你更倾向于创造力还是逻辑思维，都与大脑某一半球占主导地位无关。但关于大脑两个半球如何协同工作的真实科学，有时比虚构故事还要离奇。\n\n人脑分为左右两个半球。在所有脊椎动物中，右半球控制身体的左侧，反之亦然。而且科学家们早就通过观察脑损伤患者的行为，了解到大脑的不同区域负责不同的功能。\n\n但许多科学家难以接受这一观念，因为左右脑运作方式不同这一说法本身，就打破了自然趋向完美对称的观念。\n\n神经科学家的研究揭示了大脑不同半球对于不同活动的重要性。然而，他们的研究很快在公众中遭到了一些误解：有些人认为有创造力的人一定是右脑型，有逻辑的人一定是左脑型。事实证明，性格不仅与大脑的不同半球无关，而且人们从根本上就不存在所谓的右脑型或左脑型。认为存在左脑主导型和右脑主导型的人，并且这与性格相关的观念，是完全错误的。这一说法在神经科学界从未得到过支持。神经科学家不相信这一点，从来都不。\n\n科学家们了解到的是，左半球和右半球之间确实存在非常重要的差异。只不过这些差异与性格无关，也与认知策略是更偏逻辑、更自由奔放还是更有创造力无关。虽然研究人员已经展示了大脑半球对我们生活影响的局限性，但不难理解这类观念为何如此吸引人。人们对自己和朋友永远充满好奇，而人们思考世界方式上的微妙差异对他们来说确实意义重大。当你遇到一个能告诉我们一些关于自己的信息的在线测试时，我们会被吸引。这是难以抗拒的。但你必须对它持极大的保留态度。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "There are hundreds of personality quizzes online that assert they can ascertain whether the right or left half of your brain is dominant.",
+    "why": "原文第一句明确指出，网上大量性格测试声称能够\"确定你的大脑是右半球还是左半球占主导地位\"。B选项\"判断一个人是左脑型还是右脑型\"是对原文的准确同义转述，ascertain whether the right or left half is dominant 即 determine whether one is left-brained or right-brained。",
+    "traps": "A项\"区分大脑两个半球\"偷换概念，测试声称的是判断哪个半球占主导，而非区分半球本身；C项\"判断是语言学家还是数学家\"属于过度推断，原文只说左脑型擅长语言和数学，并非测试的声称目的；D项\"确定大脑如何执行不同任务\"范围过大，偏离原文\"判断哪个半球占主导\"的核心含义。",
+    "tip": "细节题需紧扣原文关键词，注意同义转述而非表面词汇匹配。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But the actual science of how the two halves of our brains work together is sometimes stranger than fiction.",
+    "why": "原文第三段末句明确说\"关于大脑两半球如何协同工作的真实科学有时比虚构更离奇\"。C选项\"大脑两个半球如何协作\"直接对应 work together 即 cooperate，是原文的精确改写。",
+    "traps": "A项\"一个半球如何影响创造力\"仅涉及单个半球，且原文强调的是两个半球的协作；B项\"交替工作\"（alternately）属于偷换概念，原文说的是 work together（协同），而非交替；D项\"一半大脑主导另一半\"恰恰是文章否定的错误观念，并非作者所说的stranger than fiction的内容。",
+    "tip": "注意区分 work together（协作）与 alternately（交替），一词之差意义截然不同。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "But many scientists struggled with this idea, because the very suggestion that the left and right halves of the brain operate differently disrupted the idea that nature tends toward perfect symmetry.",
+    "why": "原文明确指出，许多科学家难以接受这一观念，原因是左右脑运作方式不同的说法\"打破了自然趋向完美对称的观念\"。A选项\"它与大脑两半球对称的假设相矛盾\"准确对应了 disrupted the idea that nature tends toward perfect symmetry。",
+    "traps": "B项\"宇宙以一致方式进化\"属于无中生有，原文说的是自然趋向对称，而非宇宙进化方式；C项\"与左右脑协同工作的说法相冲突\"混淆了因果，原文说的是对称性假设而非协同工作；D项\"打破右脑控制左侧身体\"张冠李戴，右脑控制左侧身体是已知事实，不是科学家纠结的原因。",
+    "tip": "因果关系题要精准定位because/since等因果标志词后的内容。"
+   },
+   {
+    "number": 49,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "The idea that we have left-dominant people and right-dominant people, and that this is related to personality, is categorically false. That's never been supported in the neuroscience community. Neuroscientists don't believe that and never have.",
+    "why": "原文用 categorically false（完全错误）和 never been supported（从未被支持）以及 never have（从未相信过）三重否定，明确表明神经科学家一直否认的观点是\"存在左脑主导型和右脑主导型的人，且这与性格相关\"。A选项完全对应这一内容。",
+    "traps": "B项\"左右脑存在显著差异\"恰恰是神经科学家认可的事实，文末段明确说 there are really important differences；C项\"性格与大脑不同半球几乎无关\"是神经科学家支持的观点而非否定的；D项\"大脑不同区域负责不同活动\"也是科学家认可的事实，见第四段和第六段首句。",
+    "tip": "注意题目问的是\"否定/拒绝\"的观点，需找到原文中明确被否定的内容。"
+   },
+   {
+    "number": 50,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "But you have to take it with an enormous grain of salt.",
+    "why": "take it with an enormous grain of salt 是英语习语，意为\"对某事持极大的保留态度/怀疑态度\"。文章建议我们对网上性格测试的结果不要全盘接受，要质疑其可靠性。D选项 question its reliability（质疑其可靠性）准确传达了这一习语的含义。",
+    "traps": "A项\"挑战其权威性\"程度过重且偏离原意，原文建议持保留态度而非直接挑战权威；B项\"审查其原创性\"属于无中生有，文章从未讨论测试的原创性问题；C项\"评估其流行度\"偏离主旨，文章关注的是测试结果的可信度而非流行程度。",
+    "tip": "掌握常见英语习语，take...with a grain of salt 意为\"半信半疑\"，指向可靠性的质疑。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "ascertain",
+    "cn": "v. 查明，确定"
+   },
+   {
+    "w": "dominant",
+    "cn": "adj. 占主导地位的，支配的"
+   },
+   {
+    "w": "spatial reasoning",
+    "cn": "n. 空间推理"
+   },
+   {
+    "w": "hemisphere",
+    "cn": "n. （大脑的）半球"
+   },
+   {
+    "w": "vertebrate",
+    "cn": "adj. 脊椎的；n. 脊椎动物"
+   },
+   {
+    "w": "symmetry",
+    "cn": "n. 对称，对称性"
+   },
+   {
+    "w": "misinterpretation",
+    "cn": "n. 误解，曲解"
+   },
+   {
+    "w": "categorically",
+    "cn": "adv. 绝对地，明确无误地"
+   },
+   {
+    "w": "cognitive",
+    "cn": "adj. 认知的"
+   },
+   {
+    "w": "irresistible",
+    "cn": "adj. 不可抗拒的，极具吸引力的"
+   },
+   {
+    "w": "take...with a grain of salt",
+    "cn": "习语 对……持保留态度，半信半疑"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But many scientists struggled with this idea, because the very suggestion that the left and right halves of the brain operate differently disrupted the idea that nature tends toward perfect symmetry.",
+    "cn": "但许多科学家难以接受这一观念，因为左右脑运作方式不同这一说法本身，就打破了自然趋向完美对称的观念。",
+    "note": "主句为 scientists struggled with this idea，because引导原因状语从句；从句中 the very suggestion 是主语，that引导同位语从句修饰suggestion，disrupted是谓语，后接 the idea that... 宾语及其同位语从句。"
+   },
+   {
+    "en": "It is proven that not only is personality unrelated to the different halves of the brain, but people aren't really right- or left-brained to begin with.",
+    "cn": "事实证明，性格不仅与大脑的不同半球无关，而且人们从根本上就不存在所谓的右脑型或左脑型。",
+    "note": "It is proven that... 为形式主语结构；that从句内部用 not only...but... 并列两个分句，not only后倒装（is personality），to begin with 意为\"从一开始/根本上\"。"
+   },
+   {
+    "en": "While researchers have shown the limitations of how the hemispheres of our brains influence our lives, it's not difficult to understand the appeal of such ideas.",
+    "cn": "虽然研究人员已经展示了大脑半球对我们生活影响的局限性，但不难理解这类观念为何如此吸引人。",
+    "note": "While引导让步状语从句，从句中 how引导宾语从句做 limitations of 的补充说明；主句为 it's not difficult to understand...，it为形式主语，真正主语为 to understand the appeal。"
+   }
+  ]
+ }
+}

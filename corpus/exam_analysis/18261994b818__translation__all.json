@@ -1,0 +1,194 @@
+{
+ "schemaVersion": 1,
+ "id": "18261994b818__translation__all",
+ "examId": "18261994b818",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2022 年 9 月英语六级真题（第 2 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:43:48.527Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 28013,
+ "usage": {
+  "prompt_tokens": 793,
+  "completion_tokens": 2038,
+  "total_tokens": 2831,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 793,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2038,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 793,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国印章的文化意义与艺术价值",
+  "reference": "Since ancient times, seals have served as proof of identity and a symbol of authority in China. Seals are not only practical but also a form of art — an ancient art that integrates calligraphy and engraving, and is often regarded as an independent art form on a par with painting and calligraphy. From the selection of materials and the craftsmanship of production to the design of fonts, seals possess extremely rich aesthetic expressions. Artists in other countries usually sign their names on their paintings, whereas Chinese artists tend to stamp their seals on their calligraphy and painting works as a substitute for signatures. In this way, seals have become an integral part of the artwork, serving as a means of embodying the uniqueness of the work.",
+  "sentences": [
+   {
+    "cn": "自古以来，印章在中国就是身份的凭证和权力的象征。",
+    "en": "Since ancient times, seals have served as proof of identity and a symbol of authority in China.",
+    "structure": "时间状语前置 + 主语 + have served as（现在完成时表延续）+ 并列表语",
+    "keys": [
+     "自古以来 since ancient times",
+     "印章 seal",
+     "身份的凭证 proof of identity",
+     "权力的象征 a symbol of authority"
+    ]
+   },
+   {
+    "cn": "印章不仅具有实用性，而且也是一种艺术形式，是一门集书法与雕刻于一体的古老艺术，经常被看作与书画并列的独立艺术品。",
+    "en": "Seals are not only practical but also a form of art — an ancient art that integrates calligraphy and engraving, and is often regarded as an independent art form on a par with painting and calligraphy.",
+    "structure": "not only ... but also 并列结构 + 破折号引出同位语 + that 定语从句 + 被动语态",
+    "keys": [
+     "实用性 practical",
+     "集……于一体 integrate",
+     "书法与雕刻 calligraphy and engraving",
+     "与……并列 on a par with",
+     "独立艺术品 independent art form",
+     "书画 painting and calligraphy"
+    ]
+   },
+   {
+    "cn": "印章从材料的选择、制作的工艺到字体的设计，都具有极其丰富的美学表现。",
+    "en": "From the selection of materials and the craftsmanship of production to the design of fonts, seals possess extremely rich aesthetic expressions.",
+    "structure": "from A and B to C 介词短语前置作状语 + 主谓宾结构",
+    "keys": [
+     "材料的选择 the selection of materials",
+     "制作的工艺 the craftsmanship of production",
+     "字体的设计 the design of fonts",
+     "美学表现 aesthetic expressions"
+    ]
+   },
+   {
+    "cn": "其他国家的艺术家通常在其绘画作品上签名，而中国艺术家则往往在其书画作品上盖上印章代替签名。",
+    "en": "Artists in other countries usually sign their names on their paintings, whereas Chinese artists tend to stamp their seals on their calligraphy and painting works as a substitute for signatures.",
+    "structure": "对比复合句：前半句陈述 + whereas 引导转折对比从句",
+    "keys": [
+     "签名 sign their names",
+     "盖上印章 stamp their seals",
+     "代替签名 as a substitute for signatures",
+     "书画作品 calligraphy and painting works"
+    ]
+   },
+   {
+    "cn": "这样，印章也就成为作品的组成部分，是体现作品独特性的一种方式。",
+    "en": "In this way, seals have become an integral part of the artwork, serving as a means of embodying the uniqueness of the work.",
+    "structure": "过渡语 in this way + 主句 + 现在分词短语 serving as 作伴随状语",
+    "keys": [
+     "组成部分 an integral part",
+     "体现 embody",
+     "独特性 uniqueness"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "印章",
+    "en": "seal"
+   },
+   {
+    "cn": "身份的凭证",
+    "en": "proof of identity"
+   },
+   {
+    "cn": "权力的象征",
+    "en": "a symbol of authority"
+   },
+   {
+    "cn": "书法",
+    "en": "calligraphy"
+   },
+   {
+    "cn": "雕刻",
+    "en": "engraving"
+   },
+   {
+    "cn": "美学表现",
+    "en": "aesthetic expression"
+   },
+   {
+    "cn": "独立艺术品",
+    "en": "independent art form"
+   },
+   {
+    "cn": "书画",
+    "en": "painting and calligraphy"
+   },
+   {
+    "cn": "盖上印章",
+    "en": "stamp one's seal"
+   },
+   {
+    "cn": "独特性",
+    "en": "uniqueness"
+   }
+  ],
+  "pitfalls": [
+   "「集……于一体」易直译为 collect ... into one，应译为 integrate/combine",
+   "「与书画并列」中「并列」易遗漏，应译为 on a par with 表地位同等",
+   "「盖上印章」不可用 cover，应用 stamp/affix 表示盖章动作",
+   "「代替签名」易误译为 replace signature，用 as a substitute for 更地道",
+   "「美学表现」中「美学」易拼写错误，注意 aesthetic 的拼写（ae 开头）"
+  ],
+  "upgrades": [
+   {
+    "plain": "seals are used to prove identity",
+    "better": "seals have served as proof of identity",
+    "note": "serve as 比 be used to 更正式，且现在完成时体现历史延续感"
+   },
+   {
+    "plain": "an old art that has calligraphy and engraving together",
+    "better": "an ancient art that integrates calligraphy and engraving",
+    "note": "integrate 一词精准表达「集于一体」，ancient 比 old 更具文化厚重感"
+   },
+   {
+    "plain": "equal to painting and calligraphy",
+    "better": "on a par with painting and calligraphy",
+    "note": "on a par with 为固定搭配，表示地位等同，更为地道书面"
+   },
+   {
+    "plain": "seals also become a part of the work",
+    "better": "seals have become an integral part of the artwork",
+    "note": "integral part 强调「不可分割的组成部分」，语义更准确饱满"
+   },
+   {
+    "plain": "is a way to show the work's specialty",
+    "better": "serving as a means of embodying the uniqueness of the work",
+    "note": "分词短语作状语使句式更紧凑，embody 比 show 更具深度"
+   }
+  ]
+ }
+}

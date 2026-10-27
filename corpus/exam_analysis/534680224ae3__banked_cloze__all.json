@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "534680224ae3__banked_cloze__all",
+ "examId": "534680224ae3",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2023 年 6 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:52:06.561Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61794,
+ "usage": {
+  "prompt_tokens": 1366,
+  "completion_tokens": 3706,
+  "total_tokens": 5072,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1366,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3706,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1366,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "人们对自身行为的自我认知准确性研究",
+  "gist": "一项新研究探讨人们能否准确判断自己即时的行为表现。研究者让参与者佩戴自动录音设备，并通过问卷让其回忆自身行为，再由实验室助手对录音进行评估。结果发现，参与者对自身外向性和尽责性的评价与观察者较为一致，但在宜人性方面差异较大，这可能与人们倾向于否认自己的粗鲁行为有关。",
+  "difficulty": "中等",
+  "translation": "你可能并不像自己以为的那样了解自己。一项新研究表明，人们只是在某些行为方面是相对准确的评判者。以往大多数关于人们是否了解自己的研究都针对长期人格特质，而这项新研究探究的是人们对自己时时刻刻行为表现的了解程度。研究人员要求参与者佩戴录音设备，该设备在早上7点至凌晨2点之间每隔9.5分钟自动激活一次，录制30秒的音频。随后，参与者每天四次收到电子邮件问卷，要求他们回忆自己在一天中某个特定小时内有多外向、多随和或多尽责。该研究使用了248名参与者的数据，他们所有人都在连续两周内回答了有关自身行为的问题，并在其中一周佩戴了录音设备。\n\n六名实验室助手对每位参与者的音频片段进行了评分，以查看他们的观察结果与人们对自己的评估之间的对比情况。六名助手对被观察者行为表现的评判基本一致。此外，参与者对自身行为的评分在外向性和尽责性方面与观察者的评分一致。但在宜人性方面，参与者与外部观察者之间的一致程度要小得多。这种差异的部分原因可能是观察者只使用了音频片段，因此无法解读像肢体语言这样的线索，但可能还有其他解释，因为人们应该能够听出参与者是在表现友善还是粗鲁。参与者认为自己的表现与观察者所听到的之间存在较弱的一致性，原因可能是人们更倾向于否认自己的粗鲁行为。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "L",
+    "correct": "relatively",
+    "why": "此处需要一个副词修饰形容词 accurate。上下文语义为\"人们只是某些行为方面相对准确的评判者\"，relatively（相对地）既符合副词修饰形容词的语法要求，又与 only some of their behaviors 形成呼应，表达一种有限度的准确性。",
+    "traps": "probably 也是副词，但语义为\"可能地\"，放在此处修饰 accurate judges 不符合逻辑，且 probably 在第34题已使用。其余选项词性不匹配。",
+    "tip": "副词修饰形容词，注意语义限定与上下文呼应。"
+   },
+   {
+    "number": 27,
+    "answer": "I",
+    "correct": "probes",
+    "why": "主语是 this new study（第三人称单数），谓语需要动词三单形式。probes 意为\"探究、探讨\"，与宾语从句 how well people understand... 搭配得当，表达\"这项新研究探究了人们对即时行为的理解程度\"。",
+    "traps": "articulates（清晰表达）虽也是动词三单形式，但语义不合，研究不是在\"表达\"而是在\"探究\"。其余候选词词性或语义不匹配。",
+    "tip": "动词三单形式 + 宾语从句，注意动词语义与研究类语境匹配。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "activated",
+    "why": "此处需要动词过去式/过去分词，与前面的 that 引导的定语从句中的 automatically 搭配。activated 意为\"被激活\"，描述录音设备每隔9.5分钟自动启动一次，语义完全吻合录音设备的工作机制。",
+    "traps": "其他动词如 probes、recall、deny 等语义均与设备自动启动的场景不符。activated 是唯一能描述电子设备自动开启的词。",
+    "tip": "设备自动启动用 activate，注意与 automatically 的搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "K",
+    "correct": "recall",
+    "why": "asking them to 后接动词原形。参与者被要求回忆（recall）自己在某个特定小时的行为表现，与前文 during a particular hour of the day 形成逻辑搭配，表示对过去行为的回顾性报告。",
+    "traps": "deny（否认）语义不合，此处是让参与者回忆而非否认行为。articulates 为三单形式，语法不符。其余选项词性不匹配。",
+    "tip": "ask sb. to do sth. 结构要求动词原形，结合回忆过去行为的语境。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "correct": "consecutive",
+    "why": "此处需要形容词修饰 weeks。consecutive 意为\"连续的\"，表示参与者在连续两周内回答行为问题，并在其中一周佩戴设备，语义合理且与实验设计的时间安排一致。",
+    "traps": "其他形容词性选项如 relatively 是副词，不适合直接修饰名词 weeks。consecutive weeks 是常见学术搭配。",
+    "tip": "形容词修饰名词，consecutive weeks 为实验设计常见表达。"
+   },
+   {
+    "number": 31,
+    "answer": "C",
+    "correct": "assessment",
+    "why": "此处位于 people's 之后、of themselves 之前，需要一个名词。assessment 意为\"评估\"，people's assessment of themselves 表示\"人们对自身的评估\"，与前文 observations（观察结果）形成对比，逻辑通顺。",
+    "traps": "discrepancy（差异）虽也是名词，但 people's discrepancy of themselves 搭配不当且语义不通。cues 也是名词，但语义不符。",
+    "tip": "名词所有格 + 名词 + of 结构，注意 assessment of oneself 的固定搭配。"
+   },
+   {
+    "number": 32,
+    "answer": "G",
+    "correct": "discrepancy",
+    "why": "Some of this 后需要名词，指代前文提到的参与者自评与观察者评分之间\"一致性较小\"的现象。discrepancy 意为\"差异、不一致\"，完美概括前文描述的评分差距，且 some of this discrepancy 为常见学术表达。",
+    "traps": "assessment 已在第31题使用。cues（线索）语义不符，无法指代评分不一致的现象。",
+    "tip": "指示代词 this + 名词，需概括前文的不一致现象。"
+   },
+   {
+    "number": 33,
+    "answer": "E",
+    "correct": "cues",
+    "why": "read 后需要名词作宾语，like body language 是举例说明。cues 意为\"线索、暗示\"，read cues（解读线索）是常见搭配，且以肢体语言为例说明仅凭音频无法获取的非语言信息。",
+    "traps": "assessment（评估）放在此处语法虽可，但 read assessment like body language 语义不通。discrepancy 已用于第32题。",
+    "tip": "read cues 为固定搭配，意为\"解读线索\"，注意 like 后的举例。"
+   },
+   {
+    "number": 34,
+    "answer": "H",
+    "correct": "probably",
+    "why": "there are ___ other explanations 需要一个副词修饰整个 there are 结构或形容词 other。probably 意为\"可能\"，表示除了音频限制外可能还有其他解释，语气上与前文 could be 保持一致的推测语态。",
+    "traps": "relatively（相对地）语义不太合适，there are relatively other explanations 搭配不自然。probably 表推测，与全段论证语气一致。",
+    "tip": "副词表推测，与 could be 等推测语气保持一致。"
+   },
+   {
+    "number": 35,
+    "answer": "F",
+    "correct": "deny",
+    "why": "would rather 后接动词原形。deny 意为\"否认\"，people would rather deny rude behavior 表示人们更愿意否认（不承认）自己的粗鲁行为，解释了自评与他评不一致的深层原因——社会期望偏差。",
+    "traps": "recall（回忆）语法可行但语义不足以解释不一致现象；此处强调的是主动回避承认负面行为，deny 更贴切。activated 为过去分词，语法不符。",
+    "tip": "would rather + 动词原形，注意否认负面行为的心理动机解释。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "relatively",
+    "cn": "adv. 相对地，比较地"
+   },
+   {
+    "w": "probes",
+    "cn": "v. 探究，探讨（probe 的第三人称单数形式）"
+   },
+   {
+    "w": "activated",
+    "cn": "v. 激活，启动（activate 的过去式/过去分词）"
+   },
+   {
+    "w": "consecutive",
+    "cn": "adj. 连续的，不间断的"
+   },
+   {
+    "w": "assessment",
+    "cn": "n. 评估，评价"
+   },
+   {
+    "w": "discrepancy",
+    "cn": "n. 差异，不一致"
+   },
+   {
+    "w": "cues",
+    "cn": "n. 线索，暗示（cue 的复数形式）"
+   },
+   {
+    "w": "conscientious",
+    "cn": "adj. 尽责的，认真的"
+   },
+   {
+    "w": "agreeableness",
+    "cn": "n. 宜人性，随和（心理学人格特质术语）"
+   },
+   {
+    "w": "articulates",
+    "cn": "v. 清晰表达（articulate 的第三人称单数形式）"
+   },
+   {
+    "w": "deny",
+    "cn": "v. 否认，拒绝承认"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性（名词/动词/形容词/副词）分类。",
+   "第二步：根据空格前后的语法结构判断所需词性，缩小候选范围至2-3个词。",
+   "第三步：结合上下文语义和逻辑关系，从候选词中选出语义最贴切的选项。",
+   "第四步：注意动词的时态和单复数形式，名词的可数与不可数，副词的修饰对象。",
+   "第五步：填完所有空后回读全文，检查语法通顺性和语义连贯性，确保每词只用一次。"
+  ]
+ }
+}

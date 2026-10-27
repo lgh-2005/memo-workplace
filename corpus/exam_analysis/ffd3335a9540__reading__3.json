@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "ffd3335a9540__reading__3",
+ "examId": "ffd3335a9540",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2020 年考研英语真题",
+ "year": 2020,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:43:17.950Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61974,
+ "usage": {
+  "prompt_tokens": 1731,
+  "completion_tokens": 3508,
+  "total_tokens": 5239,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1731,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3508,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1731,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "性别配额政策的争议与批评",
+  "gist": "文章围绕马萨诸塞州议员提出的性别平等法案展开，指出此类多元化配额政策表面上追求性别平等，实则可能违宪、并无必要，且只惠及精英女性而非普通女性，是一种虚伪的道德作秀行为。",
+  "structure": [
+   "第1-3段：引出性别配额法案背景及具体内容",
+   "第4-5段：以加州法案为例，分析此类政策的违宪风险",
+   "第6-7段：用数据论证政府干预的不必要性",
+   "第8-10段：以挪威为例说明配额制弊端，总结批评立场"
+  ],
+  "difficulty": "中等",
+  "translation": "进步主义者常常支持多元化强制要求，将其视为实现平等和创造公平竞争环境的途径。但这类政策往往只是一种虚伪的道德作秀，只惠及最具特权的人，对普通人几乎毫无帮助。\n\n马萨诸塞州参议员杰森·刘易斯和众议院临时议长帕特里夏·哈达德联合发起了一对法案，旨在确保各委员会实现\"性别平等\"，为上述观点提供了一个典型案例。\n\n哈达德和刘易斯担忧的是，超过半数的州政府委员会中女性成员不足40%。为了确保精英女性获得更多这类机会，他们提议实施政府配额制。如果法案通过，各州委员会将被要求在2022年前为女性预留50%的席位。\n\n这些法案类似于加利福尼亚州最近通过的一项措施。加州去年成为首个要求私营企业实行性别配额的州。在签署该法案时，加州州长杰里·布朗承认，这项明确按性别对人进行分类的法律很可能违宪。\n\n美国最高法院对基于性别的分类持否定态度，除非这些分类旨在解决某项\"重要的\"政策利益问题。由于加州法律适用于所有董事会，即使在没有既往歧视历史的地方也不例外，法院很可能会裁定该法律违反了宪法中\"平等保护\"的保障条款。\n\n但这样的政府强制规定真的有必要吗？企业董事会中的女性比例目前可能并未反映女性在总人口中的占比，但那又怎样呢？\n\n在没有政府干预的情况下，企业董事会中的女性人数一直在稳步增长。根据Catalyst的一项研究，2010年至2015年间，全球企业董事会中的女性比例增长了54%。\n\n要求企业将性别作为董事会成员的首要资质条件，必然导致私营部门的董事会经验不足。挪威实行全国性企业性别配额制后，情况正是如此。\n\n爱丽丝·李在《新共和》杂志撰文指出，在增加董事会席位机会的同时却未扩大合格女性候选人的储备，导致了\"金裙子\"现象——即同一批精英女性在多个董事会中包揽了大量席位。\n\n下次当有人以促进性别平等为由推动企业配额制时，请记住：此类政策在很大程度上是自利之举，只是让发起者感觉良好，但对普通女性几乎毫无帮助。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "But all too often such policies are an insincere form of virtue-signaling that benefits only the most privileged and does little to help average people.",
+    "why": "文章第一段即点明此类多元化配额政策是\"虚伪的道德作秀\"，只惠及最具特权的人群，对普通人帮助甚微。第三段又特别指出法案是为了确保\"精英女性\"获得更多机会。可见作者认为该法案对减少性别偏见（帮助普通女性）作用很小，A选项\"help little to reduce gender bias\"与文意一致。",
+    "traps": "B项\"对州政府构成威胁\"属于无中生有，文中未提及法案威胁政府运行；C项\"提升女性政治地位\"是对文意的曲解，作者明确批评该法案只惠及精英女性而非整体女性地位；D项\"极大拓宽职业选择\"与作者批评立场相悖，文中强调此类政策对普通人帮助不大。",
+    "tip": "注意文章首段的态度定调，往往统领全文观点。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "California Governor Jerry Brown admitted that the law, which expressly classifies people on the basis of sex, is probably unconstitutional.",
+    "why": "原文第四段明确指出加州州长布朗本人承认该法律\"很可能违宪（probably unconstitutional）\"，第五段进一步分析最高法院对基于性别分类的否定态度以及该法可能违反\"平等保护\"条款。C选项\"It may go against the Constitution\"直接对应原文信息。",
+    "traps": "A项\"激怒了私营企业主\"属于无中生有，文中未提及企业主的反应；B项\"受到最高法院欢迎\"与原文相反，最高法院对性别分类\"frowns on（不赞成）\"；D项\"将解决先前的争议\"曲解原文，文中提到的是\"prior discrimination（先前的歧视）\"而非争议的解决。",
+    "tip": "注意原文中关键人物的直接表态，常作为细节题出题点。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "type": "例证题",
+    "locate": "But are such government mandates even necessary? Female participation on corporate boards may not currently mirror the percentage of women in the general population, but so what?",
+    "why": "作者在第六段以反问形式质疑政府配额的必要性，紧接着在第七段引用Catalyst研究数据——2010至2015年间全球企业女性董事比例增长54%——来证明\"在没有政府干预的情况下，女性比例也在稳步增长\"。因此该研究是为了说明政府干预的不必要性，D选项正确。",
+    "traps": "A项\"武断的董事会决策的危害\"属于无中生有；B项\"宪法保障的重要性\"是前文讨论内容，与Catalyst研究无关；C项\"全球企业中女性面临的压力\"曲解了研究数据的含义，研究显示的是积极增长趋势而非压力。",
+    "tip": "例证题要回到例子所服务的论点，而非例子本身的细节。"
+   },
+   {
+    "number": 34,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Requiring companies to make gender the primary qualification for board membership will inevitably lead to less experienced private sector boards. That is exactly what happened when Norway adopted a nationwide corporate gender quota.",
+    "why": "原文第八段指出，将性别作为董事会成员首要资质\"必然导致私营部门董事会经验不足\"，并明确说\"挪威实行全国性企业性别配额制后，情况正是如此\"。第九段进一步解释\"golden skirt\"现象，即同一批精英女性占据多个席位，意味着缺乏足够合格的候选人。C选项\"不合格候选人进入董事会\"准确对应。",
+    "traps": "A项\"低估精英女性作用\"与原文不符，文中说的是精英女性反而获益过多；B项\"对女性参与董事会的反对\"属于过度推断，文中未提及对女性参与本身的反对；D项\"劳资矛盾加剧\"完全无中生有，文中未涉及劳资关系。",
+    "tip": "注意\"That is exactly what happened\"这类指代句，常把前文论断与具体实例相连接。"
+   },
+   {
+    "number": 35,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Next time somebody pushes corporate quotas as a way to promote gender equity, remember that such policies are largely self-serving measures that make their sponsors feel good but do little to help average women.",
+    "why": "全文论证了性别配额政策存在三大问题：可能违宪（法律可行性）、没有必要（现实可行性）、只惠及精英（效果可行性）。文章批评的核心是这些政策在制定时未充分考虑可行性，包括合宪性、实际需求和真实效果。因此可推断作者认为政策制定应首先考虑可行性，B选项正确。",
+    "traps": "A项\"应考虑女性就业需求\"过于片面，文章重点不在女性就业需求本身，而在政策的合理性；C项\"人人应努力促进社会公正\"过于笼统，且与文章批评性别配额这一具体立场不匹配；D项\"重大社会问题应成为立法重点\"属于过度推断，文中未讨论立法应聚焦什么议题。",
+    "tip": "推断题需综合全文立场，选择最能反映作者核心观点的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "virtue-signaling",
+    "cn": "道德作秀，美德信号（n.）"
+   },
+   {
+    "w": "gender parity",
+    "cn": "性别平等（n.）"
+   },
+   {
+    "w": "quota",
+    "cn": "配额，定额（n.）"
+   },
+   {
+    "w": "unconstitutional",
+    "cn": "违宪的（adj.）"
+   },
+   {
+    "w": "frown on",
+    "cn": "不赞成，反对（v. 短语）"
+   },
+   {
+    "w": "equal protection",
+    "cn": "平等保护（n. 法律术语）"
+   },
+   {
+    "w": "mirror",
+    "cn": "反映，映照（v.）"
+   },
+   {
+    "w": "interference",
+    "cn": "干预，干涉（n.）"
+   },
+   {
+    "w": "qualification",
+    "cn": "资质，资格（n.）"
+   },
+   {
+    "w": "scoop up",
+    "cn": "抢占，收揽（v. 短语）"
+   },
+   {
+    "w": "self-serving",
+    "cn": "自利的，利己的（adj.）"
+   },
+   {
+    "w": "mandate",
+    "cn": "强制要求，授权令（n.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Because the California law applies to all boards, even where there is no history of prior discrimination, courts are likely to rule that the law violates the constitutional guarantee of \"equal protection\".",
+    "cn": "由于加州法律适用于所有董事会，即使在没有既往歧视历史的地方也不例外，法院很可能会裁定该法律违反了宪法中\"平等保护\"的保障条款。",
+    "note": "主干为courts are likely to rule that...；Because引导原因状语从句，其中even where引导让步状语从句；that引导宾语从句。"
+   },
+   {
+    "en": "Writing in The New Republic, Alice Lee notes that increasing the number of opportunities for board membership without increasing the pool of qualified women to serve on such boards has led to a \"golden skirt\" phenomenon, where the same elite women scoop up multiple seats on a variety of boards.",
+    "cn": "爱丽丝·李在《新共和》杂志撰文指出，在增加董事会席位机会的同时却未扩大合格女性候选人的储备，导致了\"金裙子\"现象——即同一批精英女性在多个董事会中包揽了大量席位。",
+    "note": "主干为Alice Lee notes that...；that引导宾语从句，其中动名词短语increasing...without increasing...作主语；where引导非限制性定语从句修饰phenomenon。"
+   },
+   {
+    "en": "The US Supreme Court frowns on sex-based classifications unless they are designed to address an \"important\" policy interest.",
+    "cn": "美国最高法院对基于性别的分类持否定态度，除非这些分类旨在解决某项\"重要的\"政策利益问题。",
+    "note": "主干为The US Supreme Court frowns on...；unless引导条件状语从句，其中they指代sex-based classifications。"
+   }
+  ]
+ }
+}

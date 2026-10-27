@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "1c19f5649e3f__translation__all",
+ "examId": "1c19f5649e3f",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2021 年考研英语真题",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:46:57.799Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55101,
+ "usage": {
+  "prompt_tokens": 1411,
+  "completion_tokens": 3228,
+  "total_tokens": 4639,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1411,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3228,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1411,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "二战后西方高等教育的扩张与问题",
+  "translation": "第二次世界大战是现代西方社会高等教育发展的分水岭。这些社会走出战争时，其入学率基本维持在战前几十年间相关年龄群体的3%至5%的水平上。但战后，反法西斯战争胜利所引发的巨大社会和政治变革，使得欧美经济体对拥有中等以上学历的毕业生的需求日益增长。而且，这些社会中对接受高等教育不断增长的需求，扩展到了那些在战前从未想过上大学的群体和社会阶层。这些需求导致了高等教育体系的迅速扩张，始于20世纪60年代，并在70年代和80年代非常迅速地（虽然不均衡地）发展。\n\n高等教育的增长至少以三种截然不同的方式表现出来，而这些方式又各自引发了不同的问题。首先是增长速度：在西欧许多国家，20世纪60年代高等教育的学生人数在五年内就翻了一番，到70年代中期又在七年、八年或十年内再次翻番。其次，增长显然影响了整个教育体系和各个院校的绝对规模。第三，增长体现在相关年龄群体中接受高等教育的比例的变化上。\n\n这些增长的每一种表现形式都带来了各自特有的问题。例如，高速增长给现有的管理结构、行政结构，尤其是社会化机制带来了巨大压力。当一个系或学部在三四年内从五名成员增长到二十名时，如果新员工主要是刚完成研究生学业的年轻男女，他们在很大程度上决定了该系学术生活的规范。如果研究生群体也迅速增长，而且教师与学生之间密切的师徒关系也不复存在，那么学生文化就成为新研究生的主要社会化力量，从而影响到该机构的学术和知识生活——这种现象不仅出现在美国，也出现在法国、意大利、西德和日本。高速增长增加了学术创新的机会，但也削弱了在稳定或缓慢增长时期教师和学生被纳入学术共同体的组织形式和程序。在20世纪60年代和70年代，欧洲大学在治理安排上经历了显著变化，年轻教师获得了更大的权力，学生在某种程度上也是如此。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "Those societies came out of the war with levels of enrollment that had been roughly constant at 3-5% of the relevant age groups during the decades before the war.",
+    "cn": "这些社会走出战争时，其入学率基本维持在战前几十年间相关年龄群体的3%至5%的水平上。",
+    "structure": "主干为 Those societies came out of the war with levels of enrollment（这些社会带着……的入学率走出了战争）。that 引导定语从句修饰 levels of enrollment，从句中 at 3-5% 作表语补语，of the relevant age groups 为百分比的参照对象，during the decades before the war 为时间状语。",
+    "points": [
+     "came out of the war with 译为\"走出战争时（带着……）\"，准确表达伴随状态",
+     "that had been roughly constant at 3-5% 定语从句需译出\"基本维持在……水平\"",
+     "of the relevant age groups 需译为\"相关年龄群体的\"，作百分比的参照基准"
+    ],
+    "pitfall": "容易将 with levels of enrollment 与主句割裂，应理解为伴随状态；relevant age groups 指适龄人群，不可笼统译为\"人口\"。"
+   },
+   {
+    "number": 47,
+    "en": "And the demand that rose in those societies for entry to higher education extended to groups and social classes that had not thought of attending a university before the war.",
+    "cn": "而且，这些社会中对接受高等教育不断增长的需求，扩展到了那些在战前从未想过上大学的群体和社会阶层。",
+    "structure": "主干为 the demand extended to groups and social classes（需求扩展到了……群体和社会阶层）。第一个 that 引导定语从句修饰 the demand，其中 for entry to higher education 是 demand 的后置定语（与 rose in those societies 交叉嵌套）。第二个 that 引导定语从句修饰 groups and social classes。",
+    "points": [
+     "that rose in those societies for entry to higher education 定语从句需前置翻译为\"在这些社会中兴起的对接受高等教育的需求\"",
+     "extended to 译为\"扩展到/延伸到\"",
+     "that had not thought of attending a university before the war 第二个定语从句译为\"战前从未想过上大学的\""
+    ],
+    "pitfall": "for entry to higher education 形式上跟在 those societies 后面，但实际修饰 demand，考生易将其错误归属，导致语义偏差。"
+   },
+   {
+    "number": 48,
+    "en": "in many countries of Western Europe, the numbers of students in higher education doubled within five-year periods during the 1960s and doubled again in seven, eight, or 10 years by the middle of the 1970s.",
+    "cn": "在西欧许多国家，20世纪60年代高等教育的学生人数在五年内就翻了一番，到70年代中期又在七年、八年或十年内再次翻番。",
+    "structure": "主干为 the numbers of students doubled … and doubled again …（学生人数翻了一番……又再次翻番）。in many countries of Western Europe 为地点状语前置，within five-year periods 和 in seven, eight, or 10 years 分别为两次翻番的时间跨度，during the 1960s 和 by the middle of the 1970s 为各自对应的时间背景。",
+    "points": [
+     "doubled within five-year periods 译为\"在五年内翻了一番\"，需准确体现倍增概念",
+     "doubled again in seven, eight, or 10 years 中并列数词需逐一译出",
+     "by the middle of the 1970s 译为\"到70年代中期\"，by 表\"截至\""
+    ],
+    "pitfall": "两个时间层次容易混淆：within/in 表翻番所用时间跨度，during/by 表所处年代背景，需分层翻译，不可混为一谈。"
+   },
+   {
+    "number": 49,
+    "en": "and when the new staff are predominantly young men and women fresh from postgraduate study, they largely define the norms of academic life in that faculty.",
+    "cn": "而且当新员工主要是刚完成研究生学业的年轻男女时，他们在很大程度上决定了该系学术生活的规范。",
+    "structure": "主干为 they largely define the norms of academic life in that faculty（他们在很大程度上决定了该系学术生活的规范）。when 引导时间状语从句，从句主干为 the new staff are young men and women，predominantly 为副词修饰表语，fresh from postgraduate study 为形容词短语作后置定语修饰 young men and women。",
+    "points": [
+     "fresh from postgraduate study 译为\"刚完成研究生学业的\"，fresh from 表\"刚从……出来\"",
+     "they largely define the norms 中 largely 译为\"在很大程度上\"，define 译为\"决定/界定\"",
+     "faculty 在此语境中译为\"系/学部\"而非\"全体教员\""
+    ],
+    "pitfall": "faculty 一词多义，此处根据上下文（前文提到 a faculty or department grows from five to 20 members）应译为\"系/学部\"，而非\"教师\"或\"能力\"。"
+   },
+   {
+    "number": 50,
+    "en": "High growth rates increased the chances for academic innovation; they also weakened the forms and processes by which teachers and students are admitted into a community of scholars during periods of stability or slow growth.",
+    "cn": "高速增长增加了学术创新的机会，但也削弱了在稳定或缓慢增长时期将教师和学生纳入学术共同体的那些组织形式和程序。",
+    "structure": "该句由分号连接两个并列分句。第一分句主干为 High growth rates increased the chances（高速增长增加了机会）。第二分句主干为 they weakened the forms and processes（它们削弱了形式和程序），by which 引导定语从句修饰 the forms and processes，从句中 are admitted into a community of scholars 为被动语态，during periods of stability or slow growth 为时间状语。",
+    "points": [
+     "分号前后构成转折关系，they also weakened 中暗含转折，宜加译\"但也\"",
+     "by which teachers and students are admitted into a community of scholars 定语从句需译为\"通过这些形式和程序将教师和学生纳入学术共同体\"",
+     "a community of scholars 译为\"学术共同体/学者共同体\""
+    ],
+    "pitfall": "by which 引导的定语从句较长且含被动结构，翻译时宜将从句内容前置为定语或拆分成独立小句，避免译文拖沓生硬；during periods of stability or slow growth 是修饰从句而非主句，不可错置。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "watershed",
+    "cn": "n. 分水岭，转折点"
+   },
+   {
+    "w": "enrollment",
+    "cn": "n. 入学（率），注册人数"
+   },
+   {
+    "w": "relevant age groups",
+    "cn": "相关年龄群体，适龄人群"
+   },
+   {
+    "w": "Fascism",
+    "cn": "n. 法西斯主义"
+   },
+   {
+    "w": "manifest",
+    "cn": "v. 表现，显现"
+   },
+   {
+    "w": "in its wake",
+    "cn": "随之而来，紧随其后"
+   },
+   {
+    "w": "governance",
+    "cn": "n. 治理，管理体制"
+   },
+   {
+    "w": "socialization",
+    "cn": "n. 社会化"
+   },
+   {
+    "w": "faculty",
+    "cn": "n. 系，学部；全体教员（一词多义）"
+   },
+   {
+    "w": "predominantly",
+    "cn": "adv. 主要地，占主导地位地"
+   },
+   {
+    "w": "postgraduate",
+    "cn": "adj./n. 研究生（的）"
+   },
+   {
+    "w": "apprenticeship",
+    "cn": "n. 学徒身份，师徒关系"
+   },
+   {
+    "w": "empowerment",
+    "cn": "n. 授权，赋权"
+   },
+   {
+    "w": "academic innovation",
+    "cn": "学术创新"
+   },
+   {
+    "w": "a community of scholars",
+    "cn": "学术共同体，学者共同体"
+   }
+  ],
+  "skills": [
+   "定语从句前置法：英语后置定语从句在汉译时常需提到中心词之前，使译文符合中文表达习惯",
+   "被动变主动：英文被动结构（如 are admitted into）译为中文时宜转为主动句式或无主语句",
+   "伴随状语的处理：with + 名词 + 定语从句结构需理解为伴随状态，译为\"带着……\"或拆译",
+   "分号连接句的逻辑判断：分号前后虽无连词，但需根据语义判断并列、转折等逻辑关系并加译",
+   "长句拆分与重组：多层修饰的复杂长句应先找主干，再逐层还原修饰成分，分步组合译文"
+  ]
+ }
+}

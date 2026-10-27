@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "384e000d6fc4__listening__all",
+ "examId": "384e000d6fc4",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2016 年 6 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:07:39.217Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52832,
+ "usage": {
+  "prompt_tokens": 2333,
+  "completion_tokens": 2693,
+  "total_tokens": 5026,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2333,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2693,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2333,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与听力原文文稿，以下所有解析均基于题目选项的语言特征与正确答案进行推断分析，不涉及任何对录音内容的编造。",
+  "overview": "本场听力共7段，前2段（Q1-Q4、Q5-Q8）各4题，疑为长对话；后5段（Q9-Q11、Q12-Q15、Q16-Q18、Q19-Q22、Q23-Q25）各3-4题，疑为短文/讲座。话题涵盖：科技公司项目管理与创新竞争、口译职业压力与资质、母婴同睡与婴儿安全、美国濒危土著语言保护、失业保险与就业帮扶、北极冰层消退、儿童自控力与未来发展。题型以细节推断和主旨判断为主。",
+  "strategy": [
+   "预读选项圈出各选项差异关键词（如人名、数字、动词），听时精准定位",
+   "长对话注意首尾两轮对话，首题答案常出现在对话开头，末题答案常在结尾",
+   "短文听力第一句和最后一句是命题高频区，务必集中注意力",
+   "选项中出现绝对词（all, never, only）时需格外警惕，往往是干扰项",
+   "四个选项中语义最温和、表述最有限定条件的往往更接近正确答案",
+   "遇到不确定的题先标记，不要纠结影响后面的题目"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "科技公司管理、创新战略与市场竞争",
+    "optionSignals": "Q1四项各描述不同事件（项目、技术更新、转行、重组），问的是对话讨论的具体议题；Q2四项为名词短语（人才/创新/产品/推广），问成功要素；Q3四项为动词原形短语，问建议/行动；Q4四项为名词短语描述风险，问担忧或威胁。",
+    "tips": [
+     "Q2四项均为抽象名词短语，听时注意与success或key相关的表述，strategic innovation是正确答案，注意innovation一词的同义替换",
+     "Q3选项均为祈使式动词短语，说明在问建议，需关注should/need to/had better等信号词",
+     "Q4选项描述负面结果，imitation by competitors表明话题涉及知识产权或创新被模仿的风险，注意copy/imitate/follow等词"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "口译员职业特征、资质要求与工作压力",
+    "optionSignals": "Q5四项为名词短语描述话题方向，答案为interpreter说明整段围绕口译展开；Q6为四个形容词，问对该职业的评价；Q7四项以They all开头描述共同特征；Q8四项描述某种口译形式的特点，含比较级结构，问对比差异。",
+    "tips": [
+     "Q6四个形容词语义接近但有差异：admirable侧重令人敬佩，rewarding侧重有回报，听时注意respect/admire等情感词",
+     "Q7四项均含all，属于全称判断，听时注意是否有例外情况的表述来排除干扰项",
+     "Q8出现simultaneous interpreting，说明在对比交替传译与同声传译，more stressful为正确答案关键比较点"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "母婴同睡的健康风险与睡眠建议",
+    "optionSignals": "Q9四项均以It might开头描述负面后果，问母婴同睡的风险；Q10为完整陈述句描述研究发现；Q11四项为动词原形开头的建议/做法。三题构成'风险—发现—建议'逻辑链。",
+    "tips": [
+     "Q9正确答案指向婴儿死亡风险（infants' death），属于最严重后果，听力中常用sudden infant death syndrome (SIDS)表述",
+     "Q11正确答案为sleep in the same room but not in the same bed，注意but转折结构在听力中的信号作用",
+     "Q10四个选项中D为负面影响表述（negative impact on mothers），听时注意研究结论的措辞方向"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "美国濒危土著语言的现状、保护政策与威胁",
+    "optionSignals": "Q12四项陈述美国语言现状的事实；Q13四项为To+动词不定式结构，问目的或措施；Q14四项描述原因；Q15四项描述technology的作用。形成'现状—对策—原因—新威胁'结构。",
+    "tips": [
+     "Q13正确答案revitalise为高频考词，意为'使复兴'，听时注意restore/bring back/revive等同义替换",
+     "Q14正确答案涉及Americanising Indian children政策，属于历史原因题，注意used to/in the past等时间信号",
+     "Q15正确答案指technology加速语言灭绝，属于反常识观点，听时注意转折词but/however/unfortunately"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "失业保险制度、就业帮扶与经济刺激措施",
+    "optionSignals": "Q16四项描述失业保险的具体待遇内容，涉及数字（half, 99 weeks）；Q17四项为动名词短语，问某机构/项目的职能；Q18四项为To+动词不定式，问具体措施目的。",
+    "tips": [
+     "Q16出现up to half of their previous wages为正确答案，注意听力中百分比和比例的表述",
+     "Q17正确答案为providing training and guidance，听时注意help/assist/support后接的具体内容",
+     "Q18涉及private investments和government subsidies等经济术语，注意区分不同经济刺激方案的对象"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "sharedTopic": "北极冰层科学考察、消退现状与应对困境",
+    "optionSignals": "Q19四项描述科研行为（measured/analyzed/explored/investigated）；Q20四项描述冰层状况的发现；Q21四项为关于Arctic ice的判断陈述；Q22四项为关于该问题解决方案的评价。形成'研究方法—发现—结论—展望'链。",
+    "tips": [
+     "Q19动词差异是关键：investigated the ice为正确答案，注意study/examine/investigate的同义替换",
+     "Q21正确答案含irreversible（不可逆），为强判断词但此处为正确选项，说明原文有明确论断",
+     "Q22正确答案为no easy technological solution，注意听力中出现难以解决/没有简单办法等表述"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "儿童自控力与其长期人生发展的关系",
+    "optionSignals": "Q23四项描述研究主题（New Zealand, self-control, single parent, academic），问主旨；Q24四项为研究发现的具体陈述；Q25四项以Self-control开头描述结论。",
+    "tips": [
+     "Q23正确答案为relation between self-control and future success，是典型的研究主旨题，听文章首句即可判断",
+     "Q24正确答案强调父母缺乏自控是孩子的disadvantage，注意因果关系信号词because/as a result",
+     "Q25正确答案为self-control can be improved through education，属于积极结论，往往出现在文末，注意文章收尾段"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "strategic innovation",
+    "cn": "战略创新"
+   },
+   {
+    "w": "simultaneous interpreting",
+    "cn": "同声传译"
+   },
+   {
+    "w": "admirable",
+    "cn": "令人敬佩的"
+   },
+   {
+    "w": "sudden infant death syndrome",
+    "cn": "婴儿猝死综合征"
+   },
+   {
+    "w": "revitalise",
+    "cn": "使复兴，使恢复生机"
+   },
+   {
+    "w": "endangered languages",
+    "cn": "濒危语言"
+   },
+   {
+    "w": "immersion schools",
+    "cn": "沉浸式学校"
+   },
+   {
+    "w": "unemployment benefits",
+    "cn": "失业救济金"
+   },
+   {
+    "w": "irreversible",
+    "cn": "不可逆转的"
+   },
+   {
+    "w": "bankruptcy",
+    "cn": "破产"
+   },
+   {
+    "w": "mortgage payments",
+    "cn": "按揭还款"
+   },
+   {
+    "w": "self-control",
+    "cn": "自控力"
+   },
+   {
+    "w": "proficiency",
+    "cn": "熟练程度，精通"
+   },
+   {
+    "w": "extinction",
+    "cn": "灭绝，消亡"
+   }
+  ]
+ }
+}

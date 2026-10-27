@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "fc33c1cb1401__reading__2",
+ "examId": "fc33c1cb1401",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2025 年 12 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T06:04:13.788Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 57037,
+ "usage": {
+  "prompt_tokens": 1787,
+  "completion_tokens": 3540,
+  "total_tokens": 5327,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1787,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3540,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1787,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "如何应对他人反复给出的不请自来的建议",
+  "gist": "文章探讨了人们反复给出不请自来的建议背后的心理动因（如追求权力感、自我价值感和情绪脆弱），分析了建议接受者可能的不当反应及其后果，并给出了如何在肯定对方的同时设立边界、避免不必要冲突的策略。",
+  "structure": [
+   "第1-3段：分析反复给建议者的心理动因（权力欲、自我价值感、情绪脆弱）",
+   "第4-5段：指出建议接受者的不当反应及直接拒绝可能导致的后果",
+   "第6-7段：给出正确应对策略——认可但不过度认同，以同理心回应",
+   "第8-9段：总结设立边界的合理性及注意事项"
+  ],
+  "difficulty": "中等",
+  "translation": "反复给出不请自来建议的人可能出于好意，真心想要帮忙。另一些人则可能出于一种围绕影响他人能力的自我价值感而这样做。一项研究发现，具有较高权力追求倾向的人比倾向相反的人更有可能给出建议。\n\n在无私的外表之下，人们可能因为给出不请自来的建议能让他们感到有权力或有掌控感而被驱动去这样做。然而，他们可能并没有完全意识到这种驱动力。\n\n这些人还可能表现出一定程度的情绪脆弱问题，他们很快就会情绪激动，并且需要很长时间才能平静下来。他们的情绪在童年时可能只有在表现最为强烈时才会得到认可，这促使他们在大多数情况下对不适采取过度的反应方式。\n\n当某人为了让自己感到更有权力而给出建议时，他们的行为背后存在潜在的焦虑，而建议的接受者往往会注意到这一点。在这种情况下，人们容易对给建议的人做出严厉的反应，指责他们具有操纵性，但这种方式可能会产生不想要的结果。\n\n如果给出建议这一行为正在积极地增进某人的自我价值感，那么直率的拒绝可能会被视为一种威胁，激活他们的战斗或逃跑反应，可能导致他们加倍寻求认可的行为，或引发更大的冲突。\n\n关键在于认可但不过度认同。你可以让对方知道你已经听到了他们的建议，也理解他们的出发点，但不要接受那种\"没有他们的帮助你就无法应对\"的潜在有害叙事。你最好说类似这样的话：\"谢谢你的想法。我有自己处理这件事的计划，但我非常感谢你的观点，我会考虑的。以后需要帮助的时候我再告诉你好吗？\"\n\n如果你在委婉地设立边界方面有困难，优先提升自己的自我调节能力。尽管不断接受这些建议可能令人不舒服，但如果你能以同理心回应，局面很可能会更快地缓和下来。\n\n虽然给出不请自来的建议通常并非出于这样的意图，但许多接受建议的人往往会因为这些不想要的建议而感到压力、被冒犯或只是觉得烦恼。在这方面设立一个边界——如果你觉得有必要的话——是完全合理的，并且可以为你带来更多的情绪安全感。\n\n最好以一种考虑到个体做出这些行为的深层原因的方式来设立边界，以避免不必要的冲突和更多的压力。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "One study found that people with a high tendency to seek power were more likely to give advice than those with an opposite tendency.",
+    "why": "原文明确指出一项研究发现，具有高度追求权力倾向的人更可能给出建议。D选项\"They are inclined to crave for power\"（他们倾向于渴望权力）是对原文\"a high tendency to seek power\"的同义改写，属于精确对应。",
+    "traps": "A\"出于好意\"和B\"真心善良\"是第一句对一般情况的描述，而非研究发现的内容，属于张冠李戴。C\"有能力影响他人\"是对原文\"the ability to influence others\"的偷换，原文说的是他们围绕影响他人的能力产生自我价值感，而非研究发现他们确实有此能力，属于曲解原文。",
+    "tip": "注意题干限定词\"one study found\"，精确定位研究结论。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "These people may also display a problematic degree of emotional vulnerability, becoming upset very quickly, and taking a long time to calm down.",
+    "why": "原文第三段明确指出这些人可能还表现出\"程度成问题的情绪脆弱\"（a problematic degree of emotional vulnerability），B选项\"emotionally vulnerable\"直接对应原文核心词\"emotional vulnerability\"，是原词复现。",
+    "traps": "A\"容易让他人不安\"偷换了主语，原文是他们自己容易变得不安（becoming upset very quickly），不是让别人不安。C\"想让自己的声音最大\"曲解了原文\"only validated...at their loudest\"，这是童年经历的描述而非他们当前的意愿。D\"对不适反应过度\"虽然原文有提及，但这是童年经历导致的行为表现，不是对这类人的核心问题描述，\"problematic\"修饰的是emotional vulnerability。",
+    "tip": "题干问\"problem\"，对应原文\"problematic\"，抓住核心定性词。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "It can be tempting in this situation to react harshly to the advice giver and to accuse them of being manipulative, but this approach might produce an undesired result.",
+    "why": "原文说在这种情况下，人们容易（tempting）对建议者做出严厉反应，并指责他们具有操纵性（accuse them of being manipulative）。D选项\"Accuse them of trying to control others\"是对\"accuse them of being manipulative\"的同义改写，manipulative（操纵性的）即意味着试图控制他人。",
+    "traps": "A\"揭示他们做法的不良后果\"是对but后面内容的曲解，原文说这种做法\"可能产生不想要的结果\"，不是说接受者想揭示这个结果。B\"以不加掩饰的方式拒绝建议\"对应的是第五段的outright rejection内容，不是第四段tempted to do的内容，属于跨段混淆。C\"揭露他们的真实动机\"虽有一定关联性，但原文具体说的是指责他们具有操纵性，而不是笼统地揭露动机。",
+    "tip": "tempted to do精确对应题干，答案在同一句中寻找。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "If the act of giving advice is contributing actively to someone's feelings of self-worth, an outright rejection may be perceived as a threat, activating their fight-or-flight response",
+    "why": "原文明确指出，如果给建议正在积极增进某人的自我价值感，直接拒绝可能会\"被视为一种威胁\"（be perceived as a threat）。A选项\"They may regard it as a threat\"是对原文的精确同义转述，perceive as = regard as。",
+    "traps": "B\"他们可能会调整自己的行为\"与原文相反，原文说他们可能加倍（double down on）寻求认可的行为，而非调整行为。C\"他们准备好迎接更大的冲突\"是对原文\"leading to a larger conflict\"的曲解，原文说可能导致更大冲突，不是说他们会主动准备好应对冲突。D\"他们开始怀疑自我价值\"属于无中生有，原文说给建议是在增进自我价值感，拒绝被视为威胁，并未说他们会怀疑自我价值。",
+    "tip": "注意被动语态转主动：be perceived as a threat → regard it as a threat。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "It is best to set boundaries in a way that takes into account the individual's underlying reasons for doing what they are doing to avoid unnecessary conflict and more stress.",
+    "why": "文章最后一句指出，最好以一种\"考虑到个体做出行为的深层原因\"的方式来设立边界，以避免不必要的冲突。C选项\"Understand why the advice giver offers the advice\"是对\"takes into account the individual's underlying reasons for doing what they are doing\"的同义改写，take into account = understand，underlying reasons = why。",
+    "traps": "A\"承认建议完全合理\"属于无中生有且过度让步，原文从未建议全盘接受。B\"给出不采纳建议的理由\"原文未提及，文中建议的是认可对方而非解释拒绝理由。D\"解释自己处理情况的方式\"虽然第六段提到\"I have my own plan\"，但那是具体话术示例，而非末段关于避免冲突的核心建议。",
+    "tip": "末段常出总结题，定位最后一句的核心逻辑。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "unsolicited",
+    "cn": "adj. 未经请求的，主动提供的"
+   },
+   {
+    "w": "guise",
+    "cn": "n. 外表，伪装"
+   },
+   {
+    "w": "vulnerability",
+    "cn": "n. 脆弱性，易受伤害"
+   },
+   {
+    "w": "validated",
+    "cn": "v. 被认可，被肯定（validate的过去分词）"
+   },
+   {
+    "w": "manipulative",
+    "cn": "adj. 操纵性的，善于操控的"
+   },
+   {
+    "w": "outright",
+    "cn": "adj./adv. 直率的；彻底的"
+   },
+   {
+    "w": "double down on",
+    "cn": "短语 加倍坚持（某种行为）"
+   },
+   {
+    "w": "over-identifying",
+    "cn": "v. 过度认同"
+   },
+   {
+    "w": "defuse",
+    "cn": "v. 缓和，化解（紧张局势）"
+   },
+   {
+    "w": "tactfully",
+    "cn": "adv. 委婉地，机智地"
+   },
+   {
+    "w": "self-regulate",
+    "cn": "v. 自我调节"
+   },
+   {
+    "w": "compassion",
+    "cn": "n. 同情心，同理心"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It is possible that their emotions were only validated in childhood when they were at their loudest, encouraging them to adopt responses to discomfort that are excessive in most situations.",
+    "cn": "他们的情绪在童年时可能只有在表现最为强烈时才会得到认可，这促使他们在大多数情况下对不适采取过度的反应方式。",
+    "note": "主句为It is possible that引导的主语从句；when引导时间状语从句修饰validated；现在分词encouraging作结果状语；that引导定语从句修饰responses。"
+   },
+   {
+    "en": "You can let them know that you have heard them and appreciate where they are coming from without taking on the potentially damaging narrative that you could not have gotten by without their help.",
+    "cn": "你可以让对方知道你已经听到了他们的建议，也理解他们的出发点，但不要接受那种'没有他们的帮助你就无法应对'的潜在有害叙事。",
+    "note": "主干为You can let them know that...without doing...；where引导宾语从句作appreciate的宾语；that引导同位语从句解释narrative的内容；could not have gotten by为虚拟语气。"
+   },
+   {
+    "en": "It is best to set boundaries in a way that takes into account the individual's underlying reasons for doing what they are doing to avoid unnecessary conflict and more stress.",
+    "cn": "最好以一种考虑到个体做出行为的深层原因的方式来设立边界，以避免不必要的冲突和更多的压力。",
+    "note": "主干为It is best to set boundaries in a way；that引导定语从句修饰a way；what引导宾语从句作doing的宾语；to avoid为目的状语。"
+   }
+  ]
+ }
+}

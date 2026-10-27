@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "8ebc05bd819d__reading__2",
+ "examId": "8ebc05bd819d",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2024 年 12 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:57:17.153Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64405,
+ "usage": {
+  "prompt_tokens": 1818,
+  "completion_tokens": 4142,
+  "total_tokens": 5960,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1818,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4142,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1818,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 51 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "审美偏好的客观性与主观性探讨",
+  "gist": "文章围绕\"情人眼里出西施\"这一常见说法展开讨论，引用一项发表在《认知》期刊上的研究，指出人们对自然事物的审美评价高度一致，而对人造物品（建筑、艺术）的审美分歧较大。原因在于自然景观的接触程度更普遍，而人造物品的风格多样、接触有限。作者由此推论：审美偏好可能存在客观的普遍原则，美并非完全主观。",
+  "structure": [
+   "第1-2段：引出话题，介绍审美研究的核心发现",
+   "第3-6段：分析自然与人造物品审美差异的原因",
+   "第7-8段：提出哲学结论——审美存在客观基础",
+   "第9-10段：阐释普遍美学原则的多元体现及启示"
+  ],
+  "difficulty": "中等",
+  "translation": "诸如\"情人眼里出西施\"这样的说法很少被质疑。它们已经深深植根于我们的意识中，以至于人们认为持不同看法是荒谬的。然而，至少对这一假设提出质疑可能是有益的，因为人们会从审美角度评价环境、情境和人。我们可能会发现我们仍然认为它是正确的，但我们也可能发现，情况远比你想象的要复杂得多。\n\n最近一项探讨审美品味的研究发表在《认知》期刊上。该研究的结果表明，人们在对自然事物的审美评价上高度一致，但在对人工制品或人造物品的评价上分歧更大。\n\n研究发现，共同品味在面孔和自然景观方面最为普遍，而在建筑和艺术作品方面最不普遍。假设是，比例或对称等普遍令人愉悦的特征在起作用。\n\n对自然场景的偏好可能是通过生活经验习得的。随着人的成长，宜居性、安全性和开阔性等因素可能会受到偏爱。景观的某些细节会变化，但基本要素更为普遍，例如水、开阔的空间和精心维护的迹象。\n\n艺术和建筑与自然空间不同，不具有同等水平的接触程度。因此，人们没有同等水平的共同品味。\n\n对人工制品共同品味的较低一致性，可能更多与风格元素有关，而非\"行为后果\"。\n\n所有这些结论似乎都是合理的（或至少是可能的），但我认为可能存在一个他们没有得出的有趣的哲学结论。看起来，我们的审美偏好或评价存在客观基础。我并不是说这意味着美完全是客观的，只是说可能存在一般性的客观原则在起作用，也就是说，美并非仅仅存在于观看者的眼中。\n\n自然界在世界各地以一种普遍的方式展现出某些普遍的审美特征，如光辉。它并非在每个地方都完全相同，但它是普遍的。例如，日落在不同地方足够相似，足以引起几乎普遍的吸引力。\n\n可能存在的普遍美学原则——如比例、适宜性、光辉等——是一般性的范畴，允许多种多样的具体体现。当人们参与制造建筑或艺术方面的人工制品时，他们以独特的方式运用这些非常笼统的概念。但他们运用原则的方式可能不具有普遍吸引力。\n\n这就是为什么体验多元文化及其人工制品很重要，因为它让我们接触到不同的构建或理解美的方式。而且质疑我们的假设总是好的。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Statements, like \"beauty is in the eye of the beholder\", are rarely questioned. They've become so embedded in our consciousness that people think it's absurd to think otherwise.",
+    "why": "原文第一句明确指出该说法\"are rarely questioned\"（很少被质疑），A选项\"It has hardly ever been disputed\"（它几乎从未被争议过）是对原文的同义改写。rarely questioned = hardly ever been disputed，语义完全对应，属于典型的同义替换考查。",
+    "traps": "B项\"可以从审美角度解读\"：原文说人们从审美角度评价事物，但并未说这句话本身可以被审美解读，属于偷换主语。C项\"许多人认为它荒谬\"：原文说人们认为\"持相反看法\"才荒谬，而非认为这句话荒谬，属于张冠李戴。D项\"人们长期被它误导\"：原文只是建议质疑此假设，并未断言它误导了人们，属于过度推断。",
+    "tip": "注意同义替换：rarely questioned = hardly ever been disputed。"
+   },
+   {
+    "number": 52,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The results from this study show that people agree very much in their aesthetic evaluation of natural objects, but they disagree more about artifacts, or human-made objects.",
+    "why": "原文用but转折明确指出人们对\"artifacts, or human-made objects\"（人工制品即人造物品）的审美分歧更大。C选项\"There is less consensus on objects shaped by human craft\"（对人工打造的物品共识更少）是对\"disagree more about artifacts\"的同义改写，artifacts = objects shaped by human craft，disagree more = less consensus。",
+    "traps": "A项\"审美品味因人而异\"：过于笼统，原文区分了自然物和人造物，对自然物的审美是高度一致的，并非所有品味都因人而异。B项\"自然美很少被人工美超越\"：原文未比较自然美与人工美的高下，属于无中生有。D项\"对什么赏心悦目有普遍共识\"：只对自然物品成立，对人造物品不成立，以偏概全。",
+    "tip": "注意but转折后的信息往往是出题重点。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Art and architecture, unlike natural spaces, do not have the same level of exposure. So, people do not have the same level of shared taste.",
+    "why": "原文第五段指出艺术和建筑与自然空间不同，\"do not have the same level of exposure\"（没有同等水平的接触程度），因此人们没有同等水平的共同品味。D选项\"They come into people's view less often than natural spaces\"（它们进入人们视野的频率低于自然空间）是对\"不具有同等接触程度\"的同义改写，exposure = come into people's view。",
+    "traps": "A项\"它们设计种类繁多\"：虽然第九段提到独特方式运用概念，但这不是第五段给出的原因，答非所问。B项\"它们导致不同的行为后果\"：第六段明确说分歧更多与风格元素有关\"rather than behavioral consequences\"，直接排除。C项\"它们占据的自然空间比景观少\"：原文说的是接触程度（exposure），不是占据的物理空间，属于曲解原文。",
+    "tip": "因果关系题需精准定位原因，注意So引导的因果逻辑。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "例证题",
+    "locate": "Nature exhibits some of the universal aesthetic features, such as radiance, in a common way throughout the world. It's not exactly the same everywhere, but it is common. For example, a sunset is similar enough in different places to warrant almost universal appeal.",
+    "why": "日落的例子用来支撑前文观点：自然界在世界各地以普遍方式展现共同的审美特征。原文说日落\"is similar enough in different places\"（在不同地方足够相似），B选项\"It displays aesthetic traits in a similar way the world over\"（它在世界各地以相似方式展现审美特征）精准概括了例证所支持的论点。",
+    "traps": "A项\"它通过灿烂的光辉创造强大吸引力\"：radiance只是所举审美特征之一，且强调的不是光辉的\"强大力量\"，而是其\"普遍性\"，偷换论证焦点。C项\"它以多种审美特征体现美\"：原文强调的是相似性和普遍性，而非\"多种特征\"，属于偷换重点。D项\"它以多种方式确立美的原则\"：日落是例证而非\"确立原则\"的手段，混淆了例证与论点的关系。",
+    "tip": "例证题要回到例子所服务的论点，答案通常在例子前面的观点句中。"
+   },
+   {
+    "number": 55,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "When people get involved in making artifacts in architecture or art, they apply these very general concepts in unique ways. But the way they applied the principle may not have universal appeal.",
+    "why": "原文第九段先说人们以独特方式运用普遍美学概念，接着用But转折指出\"the way they applied the principle may not have universal appeal\"（他们运用原则的方式可能不具有普遍吸引力）。C选项\"The way their creators apply the principle of beauty may not be pleasing to everybody\"是对此句的忠实改写，universal appeal = pleasing to everybody。",
+    "traps": "A项\"对其美的欣赏不受客观标准约束\"：原文第七段反而暗示存在客观原则，此项与原文论调相悖。B项\"普遍美学原则阻止了多种体现\"：原文明确说普遍原则\"allow for a wide array of embodiments\"（允许多种体现），此项与原文直接矛盾。D项\"创造者各自以偏好的方式解读原则\"：虽然提到unique ways，但这只是原因的一部分，关键在于结果——\"不具有普遍吸引力\"；此项未点明\"不具有普遍吸引力\"这一核心答案要素，且偏离题目问的\"why\"。",
+    "tip": "But转折后常为命题核心，注意转折句中may not have universal appeal的同义改写。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "embedded",
+    "cn": "adj. 根深蒂固的，嵌入的"
+   },
+   {
+    "w": "aesthetically",
+    "cn": "adv. 从审美角度地"
+   },
+   {
+    "w": "artifact",
+    "cn": "n. 人工制品，手工艺品"
+   },
+   {
+    "w": "symmetry",
+    "cn": "n. 对称，匀称"
+   },
+   {
+    "w": "habitability",
+    "cn": "n. 宜居性，适居性"
+   },
+   {
+    "w": "exposure",
+    "cn": "n. 接触，曝光；暴露"
+   },
+   {
+    "w": "radiance",
+    "cn": "n. 光辉，光彩"
+   },
+   {
+    "w": "fittingness",
+    "cn": "n. 适宜性，恰当性"
+   },
+   {
+    "w": "embodiment",
+    "cn": "n. 体现，具体化"
+   },
+   {
+    "w": "warrant",
+    "cn": "v. 使有正当理由，保证"
+   },
+   {
+    "w": "proportion",
+    "cn": "n. 比例，均衡"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "It might be useful, however, to at least push back on this assumption because people evaluate environment, situations, and people aesthetically.",
+    "cn": "然而，至少对这一假设进行质疑可能是有益的，因为人们确实会从审美角度评价环境、情境和人。",
+    "note": "主干为It might be useful to push back on this assumption（形式主语结构），however为插入语表转折，because引导原因状语从句。push back on意为'质疑、反驳'。"
+   },
+   {
+    "en": "Possible universal principles of beauty—such as proportion, fittingness, radiance, and others—are general categories, which allow for a wide array of embodiments.",
+    "cn": "可能存在的普遍美学原则——如比例、适宜性、光辉等——是一般性的范畴，允许多种多样的具体体现形式。",
+    "note": "主干为Possible universal principles are general categories；破折号之间为插入举例；which引导非限制性定语从句修饰categories。a wide array of意为'各种各样的'。"
+   },
+   {
+    "en": "I am not saying this would mean beauty is completely objective, just that there could possibly be general objective principles at work, i.e., beauty is not simply in the eye of the beholder.",
+    "cn": "我并不是说这意味着美完全是客观的，只是说可能存在起作用的一般性客观原则，也就是说，美并非仅仅存在于观看者的眼中。",
+    "note": "主干为I am not saying...just (saying) that...，not...just构成'不是……只是……'的让步递进关系；i.e.引出解释说明；at work作后置定语修饰principles，意为'在起作用的'。"
+   }
+  ]
+ }
+}

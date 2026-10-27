@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "524855593c06__banked_cloze__all",
+ "examId": "524855593c06",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2021 年 6 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:35:11.710Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 73454,
+ "usage": {
+  "prompt_tokens": 1387,
+  "completion_tokens": 5287,
+  "total_tokens": 6674,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1387,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5287,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1387,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "澳大利亚儿童文学的文化包容性不足",
+  "gist": "研究发现澳大利亚儿童书籍严重缺乏文化多样性：非白人形象占比极低，少数族裔文化常被刻板描绘，主要角色多为白人。这种现状可能导致儿童从小形成种族偏见，疏远少数族裔儿童，并给白人儿童带来不当的优越感。",
+  "difficulty": "中等",
+  "translation": "一项新研究描绘了澳大利亚现有儿童文学在文化包容性方面的惨淡图景。伊迪丝·科文大学教育学院的海伦·亚当博士调查了儿童书籍的文化多样性。她检查了西澳大利亚四所日托中心幼儿园教室中收藏的书籍。在总共2413本书中，仅有18%包含对非白人群体的任何呈现。少数族裔文化常常以刻板化或象征性的方式出现，例如，通过用筷子和传统服饰来描绘亚洲文化。确实代表少数族裔文化的角色通常在书中只扮演次要角色。主要角色大多是白种人。这令人担忧，因为它可能导致一种\"白人更有价值\"的印象。\n\n亚当博士表示，儿童从很小的年龄就开始形成关于\"差异\"和身份认同的印象。有证据表明，他们从三个月大时就开始形成本族偏见。我们与幼儿分享的书籍可以成为培养他们理解自我和他人的宝贵机会。书籍也能让儿童看到多样性。他们发现自己与他人之间的相似之处和不同之处。这有助于培养对多样性的理解、接纳和欣赏。\n\n人口普查数据显示，澳大利亚人来自200多个国家，在家中使用超过300种语言。此外，澳大利亚人属于100多个不同的宗教团体，从事1000多种不同的职业。\"澳大利亚是一个多元文化社会。当前对白人中产阶级思想和生活方式的压倒性推崇有可能疏远少数族裔群体的儿童。这会给白人中产阶级儿童一种优越感或特权感，\"亚当博士说。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "F",
+    "correct": "investigated",
+    "why": "该句主语为Dr. Helen Adam，缺少谓语动词，且全文为一般过去时叙述研究过程。investigated（调查）与宾语the cultural diversity of children's books搭配恰当，语义为'调查了儿童书籍的文化多样性'。",
+    "traps": "其他动词选项如housed、portrayed等虽也是过去式/过去分词，但语义上与'cultural diversity'不搭配；此处需要一个表示'研究、调查'含义的动词。",
+    "tip": "识别缺少谓语动词的句型，结合研究语境选investigate。"
+   },
+   {
+    "number": 27,
+    "answer": "E",
+    "correct": "housed",
+    "why": "空格处需要过去分词作后置定语修饰the books。housed意为'收藏、存放'，books housed in the kindergarten rooms表示'存放在幼儿园教室中的书籍'，语义通顺且搭配合理。",
+    "traps": "其他过去分词形式如investigated已在26题使用，不可重复；此处强调书籍被'存放'在某处，house作动词表'收容、存放'是常考义项。",
+    "tip": "house作动词意为'存放、收藏'，注意一词多义。"
+   },
+   {
+    "number": 28,
+    "answer": "I",
+    "correct": "representation",
+    "why": "any后接名词，空格后有of non-white people，需要一个名词。representation意为'呈现、代表'，any representation of non-white people指'对非白人群体的任何呈现'，符合讨论书中人物形象的语境。",
+    "traps": "其他名词如bias（偏见）、appreciation（欣赏）与'contained any __ of non-white people'搭配不当；fraud（欺诈）语义完全不符。",
+    "tip": "any + 名词 + of结构，根据语境选'呈现、代表'义名词。"
+   },
+   {
+    "number": 29,
+    "answer": "H",
+    "correct": "portraying",
+    "why": "by后接动名词表方式。portraying意为'描绘'，by portraying Asian culture with chopsticks and traditional dress表示'通过用筷子和传统服饰来描绘亚洲文化'，呼应前文stereotypical or tokenistic ways。",
+    "traps": "alienating（疏远）虽也是动名词形式，但与'Asian culture with chopsticks'搭配不当；此处需要一个表示'刻画、描绘'的动词。",
+    "tip": "by + doing结构表方式，portray常与culture搭配表描绘。"
+   },
+   {
+    "number": 30,
+    "answer": "K",
+    "correct": "secondary",
+    "why": "空格修饰名词roles，需要形容词。secondary roles意为'次要角色'，与后文The main characters were mostly Caucasian形成鲜明对比：少数族裔角色是次要的，主角多为白人。",
+    "traps": "overwhelming虽也是形容词，但'压倒性的角色'语义不合逻辑；secondary与main形成反义对照，是明确的上下文线索。",
+    "tip": "利用与main characters的对比关系锁定secondary。"
+   },
+   {
+    "number": 31,
+    "answer": "C",
+    "correct": "bias",
+    "why": "develop后接名词作宾语。own-race bias是心理学术语，意为'本族偏见'，指婴幼儿从三个月起就会对本族面孔产生偏好，与上下文讨论儿童早期印象形成的语境高度吻合。",
+    "traps": "appreciation（欣赏）语义上不合适——三个月婴儿发展的是'偏好/偏见'而非'欣赏'；fraud（欺诈）完全不符合语境。",
+    "tip": "own-race bias为固定心理学术语，意为'本族偏见'。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "correct": "appreciation",
+    "why": "与understanding、acceptance并列，需要名词，且语义递进。appreciation of diversity意为'对多样性的欣赏'，三者构成'理解→接纳→欣赏'的逻辑递进关系。",
+    "traps": "bias（偏见）与'理解、接纳'的正面语义方向相反；representation（呈现）不符合'develop __ of diversity'的搭配。",
+    "tip": "并列结构中词性一致，语义递进选正面含义名词。"
+   },
+   {
+    "number": 33,
+    "answer": "G",
+    "correct": "overwhelming",
+    "why": "空格位于名词promotion之前，需要形容词。overwhelming意为'压倒性的、铺天盖地的'，修饰promotion表示白人中产阶级思想被过度推广，呼应文章批判立场。",
+    "traps": "secondary（次要的）已用于30题；且'次要的推广'与后文批判语气不符。overwhelming强调程度之大，与risks alienating的严重后果相呼应。",
+    "tip": "形容词修饰名词，结合批判语气选表程度大的词。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "correct": "alienating",
+    "why": "risks后接动名词（risk doing sth.为固定搭配）。alienating意为'疏远'，risks alienating children from minority groups表示'有可能疏远少数族裔儿童'，是过度推崇白人文化的负面后果。",
+    "traps": "portraying（描绘）已用于29题且语义不当；alienate sb. from是固定搭配，表示'使某人与……疏远'，与from minority groups完美衔接。",
+    "tip": "risk doing sth.固定搭配，alienate from表疏远。"
+   },
+   {
+    "number": 35,
+    "answer": "L",
+    "correct": "superiority",
+    "why": "a sense of后接名词。superiority意为'优越感'，与or privilege并列，a sense of superiority or privilege表示'优越感或特权感'，点明白人中产阶级儿童可能产生的不当心理。",
+    "traps": "bias（偏见）虽为名词但a sense of bias搭配罕见；fraud（欺诈）语义完全不符。superiority与privilege语义相近并列，逻辑通畅。",
+    "tip": "a sense of + 抽象名词，与privilege并列选superiority。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "alienating",
+    "cn": "v. 疏远，使疏离（alienate的现在分词）"
+   },
+   {
+    "w": "appreciation",
+    "cn": "n. 欣赏，感激；理解；增值"
+   },
+   {
+    "w": "bias",
+    "cn": "n. 偏见，偏好；v. 使有偏见"
+   },
+   {
+    "w": "fraud",
+    "cn": "n. 欺诈，骗局；骗子"
+   },
+   {
+    "w": "housed",
+    "cn": "v. 收藏，存放，给……提供住所（house的过去式/过去分词）"
+   },
+   {
+    "w": "investigated",
+    "cn": "v. 调查，研究（investigate的过去式）"
+   },
+   {
+    "w": "overwhelming",
+    "cn": "adj. 压倒性的，势不可挡的；难以抗拒的"
+   },
+   {
+    "w": "portraying",
+    "cn": "v. 描绘，刻画；扮演（portray的现在分词）"
+   },
+   {
+    "w": "representation",
+    "cn": "n. 呈现，代表；描绘；陈述"
+   },
+   {
+    "w": "superiority",
+    "cn": "n. 优越性，优势；优越感"
+   },
+   {
+    "w": "stereotypical",
+    "cn": "adj. 刻板印象的，老套的"
+   },
+   {
+    "w": "tokenistic",
+    "cn": "adj. 象征性的，做表面文章的"
+   }
+  ],
+  "skills": [
+   "先将15个选项按词性分类（名词/动词/形容词/副词），缩小每空候选范围。",
+   "根据空格前后语法标志词（冠词、介词、助动词、并列连词等）判断所需词性。",
+   "利用上下文语义逻辑、感情色彩与搭配关系确定最终答案。",
+   "善用对比、并列、递进等修辞线索辅助判断，如secondary与main的对照。",
+   "已选词项及时划去避免重复，优先做有把握的题以降低后续干扰。"
+  ]
+ }
+}

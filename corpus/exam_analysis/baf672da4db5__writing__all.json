@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "baf672da4db5__writing__all",
+ "examId": "baf672da4db5",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2019 年 12 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:24:59.648Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 52281,
+ "usage": {
+  "prompt_tokens": 692,
+  "completion_tokens": 3747,
+  "total_tokens": 4439,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 692,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3747,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 692,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"拥有家庭责任感的重要性\"展开论述，要求不少于150词、不超过200词，限时30分钟。",
+    "outline": [
+     "开篇引出话题：在当今社会，家庭责任感对维系家庭和谐与社会稳定至关重要，值得每个人重视与培养。",
+     "主体段分两层论证：第一层从家庭内部角度阐述家庭责任感保障成员情感需求、营造温暖氛围；第二层从社会角度说明家庭是社会基本单元，家庭责任感是社会和谐的基石。",
+     "总结全文，升华主题：家庭责任感不仅是个人美德，更是社会良好运转的重要支柱，呼吁人们积极承担家庭角色，为后代树立榜样。"
+    ],
+    "sample": "In contemporary society, the sense of family responsibility plays an indispensable role in maintaining harmonious family relationships and promoting overall social stability. It is, therefore, of great significance for every individual to cultivate and uphold this fundamental virtue.\n\nTo begin with, a strong sense of family responsibility ensures the emotional well-being of all family members. When each person in the family willingly takes accountability for their obligations—whether it is caring for aging parents or nurturing young children—a warm and supportive domestic atmosphere is naturally fostered. Furthermore, family responsibility serves as the cornerstone of social harmony. The family, widely regarded as the most basic unit of society, profoundly shapes individuals' values and behavioral patterns. Those who dutifully fulfill their responsibilities at home are far more likely to become conscientious citizens who contribute positively to the broader community.\n\nIn conclusion, having a sense of family responsibility is not merely a personal virtue but an essential pillar of a well-functioning society. We should all actively embrace our family roles and endeavor to set a worthy example for future generations.",
+    "phrases": [
+     {
+      "en": "play an indispensable role in",
+      "cn": "在……中起不可或缺的作用；用于强调某事物的核心地位，比play an important role更高级"
+     },
+     {
+      "en": "cultivate and uphold",
+      "cn": "培养并坚守；动词并列结构，体现从养成到践行的递进关系"
+     },
+     {
+      "en": "emotional well-being",
+      "cn": "情感/心理健康；比happiness更学术，适合议论文使用"
+     },
+     {
+      "en": "take accountability for",
+      "cn": "为……承担责任；比be responsible for更正式，体现主动担当"
+     },
+     {
+      "en": "serve as the cornerstone of",
+      "cn": "作为……的基石；高级比喻表达，替代is the basis of"
+     },
+     {
+      "en": "profoundly shape one's values",
+      "cn": "深刻塑造某人的价值观；profoundly比deeply更书面"
+     },
+     {
+      "en": "conscientious citizens",
+      "cn": "有责任心的公民；形容词conscientious体现高级词汇储备"
+     },
+     {
+      "en": "contribute positively to",
+      "cn": "为……做出积极贡献；常用于社会话题的论证收束"
+     },
+     {
+      "en": "not merely ... but ...",
+      "cn": "不仅仅是……而且是……；比not only ... but also更正式的并列结构"
+     },
+     {
+      "en": "endeavor to set a worthy example",
+      "cn": "努力树立值得效仿的榜样；endeavor比try更正式，worthy example比good example更精准"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只写family love或family education，未扣住responsibility这一核心词",
+     "全文空喊口号缺乏具体论据，如未提及赡养父母、抚育子女等具体义务",
+     "中式英语频出，如\"family responsibility is very important to we\"等语法错误",
+     "段落缺乏逻辑连接词，三段之间无过渡，导致行文松散扣分",
+     "词汇重复率高，responsibility/important等词反复出现却无同义替换"
+    ],
+    "upgrades": [
+     {
+      "plain": "Family responsibility is very important.",
+      "better": "The sense of family responsibility plays an indispensable role in maintaining harmonious relationships.",
+      "note": "避免空洞的important，用具体搭配说明重要性体现在何处，更有说服力"
+     },
+     {
+      "plain": "If we are responsible, our family will be happy.",
+      "better": "When each person willingly takes accountability for their obligations, a warm and supportive atmosphere is naturally fostered.",
+      "note": "用被动语态与高级词汇替代口语化表达，句式更多样，层次更丰富"
+     },
+     {
+      "plain": "Family is important to society.",
+      "better": "The family, widely regarded as the most basic unit of society, profoundly shapes individuals' values and behavioral patterns.",
+      "note": "插入非限制性过去分词短语作同位说明，信息密度更高，句式更复杂"
+     },
+     {
+      "plain": "We should be responsible for our family.",
+      "better": "We should all actively embrace our family roles and endeavor to set a worthy example for future generations.",
+      "note": "用embrace、endeavor等高级动词替代简单词，呼吁更有感召力"
+     },
+     {
+      "plain": "People who do their duty at home are good people in society.",
+      "better": "Those who dutifully fulfill their responsibilities at home are far more likely to become conscientious citizens who contribute positively to the broader community.",
+      "note": "用双重定语从句与副词修饰提升句子学术感，论证更严谨"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The sense of family responsibility plays an indispensable role in maintaining harmonious family relationships and promoting overall social stability. — 家庭责任感在维系和谐家庭关系与促进社会整体稳定方面起着不可或缺的作用。（高分开篇句，一句话点明主题与两大意义维度）",
+   "When each person willingly takes accountability for their obligations, a warm and supportive domestic atmosphere is naturally fostered. — 当每个人主动为自己的义务承担责任时，温暖而互助的家庭氛围便自然形成。（条件-结果逻辑清晰，被动语态使用得当）",
+   "The family, widely regarded as the most basic unit of society, profoundly shapes individuals' values and behavioral patterns. — 家庭被广泛视为社会最基本的单元，深刻塑造着个体的价值观与行为模式。（插入语+高级动词，信息量大且结构紧凑）",
+   "Having a sense of family responsibility is not merely a personal virtue but an essential pillar of a well-functioning society. — 拥有家庭责任感不仅仅是个人美德，更是社会良好运转的重要支柱。（not merely ... but ... 升华主题，pillar比喻精当）"
+  ]
+ }
+}

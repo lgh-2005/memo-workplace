@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "8fc9d16981cf__writing__all",
+ "examId": "8fc9d16981cf",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2017 年 6 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:14:24.776Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 40376,
+ "usage": {
+  "prompt_tokens": 698,
+  "completion_tokens": 2619,
+  "total_tokens": 3317,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 698,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2619,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 698,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，就\"在国内上大学还是出国留学\"给出建议，表明个人观点并论证，字数150-200词。",
+    "outline": [
+     "引出话题并亮明观点：建议多数学生优先选择在国内上大学",
+     "让步论证出国留学的优势后，重点阐述国内求学的多重实际好处（费用、社会支持、国内高校发展等）",
+     "总结全文，重申观点：国内求学对大多数学生而言是更明智的选择"
+    ],
+    "sample": "When it comes to the choice between attending college at home or abroad, I would recommend that students pursue their higher education domestically, unless they have a compelling reason and adequate financial support to study overseas.\n\nAdmittedly, studying abroad offers unique advantages. Students can immerse themselves in a different cultural environment, broaden their global perspectives, and develop independence. Moreover, degrees from prestigious foreign universities may enhance one's competitiveness in the job market. However, these benefits come at a considerable cost, both financially and emotionally.\n\nOn the other hand, attending college at home presents several practical merits. First and foremost, domestic tuition fees are significantly lower than those charged by overseas institutions, which alleviates the financial burden on families. In addition, students can maintain close ties with their family and friends, thus enjoying a strong support network during this critical phase of personal growth. Furthermore, with the rapid development of China's higher education system, many domestic universities now offer world-class programs and research opportunities.\n\nIn conclusion, while studying abroad has its appeal, I believe attending college at home is a more sensible and rewarding option for the majority of students.",
+    "phrases": [
+     {
+      "en": "When it comes to...",
+      "cn": "当谈到……，用于自然引出话题，避免开头生硬"
+     },
+     {
+      "en": "pursue one's higher education",
+      "cn": "追求/接受高等教育，比简单说go to college更正式"
+     },
+     {
+      "en": "immerse oneself in a different cultural environment",
+      "cn": "沉浸在不同的文化环境中，体现主动融入的含义"
+     },
+     {
+      "en": "broaden one's global perspectives",
+      "cn": "拓宽全球视野，留学话题的高频搭配"
+     },
+     {
+      "en": "come at a considerable cost",
+      "cn": "付出相当大的代价，用come at a cost结构替代be very expensive"
+     },
+     {
+      "en": "alleviate the financial burden on families",
+      "cn": "减轻家庭的经济负担，alleviate比reduce更书面"
+     },
+     {
+      "en": "maintain close ties with",
+      "cn": "与……保持密切联系，ties比relationships更简洁地道"
+     },
+     {
+      "en": "a strong support network",
+      "cn": "强大的支持网络，用于描述人际关系对成长的帮助"
+     },
+     {
+      "en": "world-class programs and research opportunities",
+      "cn": "世界一流的课程和科研机会，展示国内高校实力时适用"
+     },
+     {
+      "en": "a more sensible and rewarding option",
+      "cn": "一个更明智且更有收获的选择，结尾总结用词精准"
+     }
+    ],
+    "pitfalls": [
+     "未亮明立场或模棱两可，导致观点不清晰而失分",
+     "通篇只谈一方优势而不做让步论证，论证逻辑单薄",
+     "使用too many Chinese-English直译表达，如the money is very expensive",
+     "段落之间缺乏过渡词衔接，如Moreover、On the other hand等",
+     "词数不足150或明显超过200，审题不严导致格式扣分"
+    ],
+    "upgrades": [
+     {
+      "plain": "Studying abroad costs a lot of money.",
+      "better": "These benefits come at a considerable cost, both financially and emotionally.",
+      "note": "用come at a cost句型替代简单主谓宾，并从两个维度展开，表达更立体"
+     },
+     {
+      "plain": "Students can keep in touch with their family.",
+      "better": "Students can maintain close ties with their family and friends, thus enjoying a strong support network.",
+      "note": "maintain close ties更正式，thus+现在分词补充结果，句式更高级"
+     },
+     {
+      "plain": "Chinese universities are getting better now.",
+      "better": "With the rapid development of China's higher education system, many domestic universities now offer world-class programs.",
+      "note": "用with介词短语作状语开头，信息密度更大，措辞更具说服力"
+     },
+     {
+      "plain": "I think studying at home is better for most students.",
+      "better": "I believe attending college at home is a more sensible and rewarding option for the majority of students.",
+      "note": "believe替代think，sensible and rewarding双形容词修饰，更具学术感"
+     },
+     {
+      "plain": "Studying abroad has some good points.",
+      "better": "Admittedly, studying abroad offers unique advantages.",
+      "note": "Admittedly让步副词开头，展示辩证思维；offers替代has更书面"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "When it comes to the choice between attending college at home or abroad, I would recommend that students pursue their higher education domestically. — 用when it comes to自然引题，recommend+that从句正式表达建议。",
+   "However, these benefits come at a considerable cost, both financially and emotionally. — 转折句点明代价，both...and并列两个维度，言简意丰。",
+   "Students can maintain close ties with their family and friends, thus enjoying a strong support network during this critical phase of personal growth. — thus+分词结构表结果，critical phase用词精准，适合背诵。",
+   "With the rapid development of China's higher education system, many domestic universities now offer world-class programs and research opportunities. — with短语作原因状语，world-class高频亮点词，论据有力。",
+   "I believe attending college at home is a more sensible and rewarding option for the majority of students. — 结尾一句话收束全文，sensible与rewarding形成理性与感性的双重肯定。"
+  ]
+ }
+}

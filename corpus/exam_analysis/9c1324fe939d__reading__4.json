@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "9c1324fe939d__reading__4",
+ "examId": "9c1324fe939d",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2017 年考研英语真题",
+ "year": 2017,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:35:23.670Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64034,
+ "usage": {
+  "prompt_tokens": 1701,
+  "completion_tokens": 3648,
+  "total_tokens": 5349,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1701,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3648,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1701,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 38 题 locate 定位句与原文不符",
+  "longSentences 有原句与原文不符"
+ ],
+ "analysis": {
+  "topic": "美最高法院就官员腐败定义的裁决",
+  "gist": "美国最高法院推翻了前弗吉尼亚州长麦克唐纳的腐败定罪，认为仅帮助送礼者接触官员并不构成腐败，需有实质性回报方可定罪。文章肯定该裁决在法律上的合理性，同时强调需通过透明度立法保障公众平等接触政府的权利，防止偏袒行为侵蚀民主平等原则。",
+  "structure": [
+   "第1-4段：介绍最高法院裁决内容及对'官方行为'的界定",
+   "第5段：肯定裁决的法律合理性，引用首席大法官论述",
+   "第6段：强调需通过政府透明立法保障公平准入",
+   "第7-8段：总结裁决意义，呼吁官员避免双重标准"
+  ],
+  "difficulty": "中等",
+  "translation": "在一项罕见的全票通过的裁决中，美国最高法院推翻了前弗吉尼亚州长罗伯特·麦克唐纳的腐败定罪。但法院在做出这一裁决时，对其行为的道德操守嗤之以鼻——他曾接受一家寻求政府渠道的公司赠送的劳力士手表和法拉利汽车等礼物。\n\n最高法院的裁决指出，麦克唐纳案中的法官未能告知陪审团，他们必须仅审视其\"官方行为\"，即这位前州长在与其职责相关的\"具体的\"和\"悬而未决的\"议题上所做的决定。\n\n大法官们认定，仅仅帮助送礼者获得接触其他官员的机会，除非有明确的施压意图，否则不构成腐败。\n\n法院确实暗示，以开门牵线来换取好处是\"令人不快的\"和\"卑劣的\"。但根据反贿赂法律，必须证明存在实质性利益，例如批准合同或法规。仅仅安排一次会议、打一个电话或主持一场活动并不属于\"官方行为\"。\n\n法院的裁决在界定一种不构成犯罪的偏袒行为方面具有法律上的合理性。必须允许民选官员帮助支持者处理官僚问题，而不必担心因贿赂罪被起诉。首席大法官约翰·罗伯茨代表法院写道：\"代议制政府的基本契约假定，公职人员会倾听选民的声音并就其关切采取行动。\"\n\n但该裁决也强化了这一需要：由公民及其民选代表，而非法院，来确保公众平等地接触政府。不能允许官员仅仅因为某个人或团体提供了竞选捐款或个人礼物，就在提供信息或安排会议方面给予特殊待遇。这种廉正需要在政府透明度方面有执行有力的法律，例如官方会议记录、游说规则以及每位民选官员的财富来源信息。\n\n官员在公务接触中的偏袒行为可能助长公众对腐败的认知。但这并不总是腐败。相反，官员必须避免双重标准，即对普通民众和富人采取不同的接触方式。如果关系可以被购买，那么民主社会的一个基本前提——所有人在政府面前享有平等待遇——就会被破坏。善治建立在对每个个体内在价值的认知之上。\n\n法院的裁决是在反腐败和反对官方偏袒的斗争中迈出的一步。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "C",
+    "type": "词义句意题",
+    "locate": "But it did so while holding its nose at the ethics of his conduct, which included accepting gifts such as a Rolex watch and a Ferrari automobile from a company seeking access to government.",
+    "why": "\"holding its nose\"是英文习语，意为\"捏着鼻子、表示鄙视/厌恶\"。法院虽然推翻了定罪，但对麦克唐纳的行为操守表示不屑和鄙视。C选项\"was contemptuous of McDonnell's conduct\"（对麦克唐纳的行为表示轻蔑）准确对应了这一含义。后文第四段\"distasteful\"和\"nasty\"也进一步印证了法院对其行为的鄙夷态度。",
+    "traps": "A（回避界定麦克唐纳的职责范围）：文中未涉及回避职责界定问题，属无中生有。B（在定罪上毫不妥协）：事实恰恰相反，法院推翻了定罪(overturned the conviction)，属反向干扰。D（拒绝评论其道德操守）：法院恰恰对其道德操守发表了负面评价（holding its nose），属与原文相悖。",
+    "tip": "掌握英文习语holding one's nose（表嫌恶）是解题关键。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "But under anti-bribery laws, proof must be made of concrete benefits, such as approval of a contract or regulation.",
+    "why": "第四段明确指出，根据反贿赂法律，必须证明存在\"concrete benefits（实质性利益）\"，如批准合同或法规，才能认定为腐败。C选项\"concrete returns for gift-givers\"（给送礼者带来实质性回报）精确对应\"concrete benefits\"，即送礼者必须获得具体的政策或审批方面的回报，行为才构成腐败。",
+    "traps": "A（故意泄露机密）：原文从未提及泄密问题，属无中生有。B（以礼物形式获得大量收益）：混淆了方向，原文讨论的是给送礼者的回报，而非官员收受礼物的大小。D（官方违约）：\"breaking contracts\"曲解了原文\"approval of a contract\"，属偷换概念。",
+    "tip": "注意区分腐败认定的方向——关键是官员给送礼者的实质回报，非收礼本身。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The basic compact underlying representative government assumes that public officials will hear from their constituents and act on their concerns.",
+    "why": "第五段首席大法官罗伯茨阐述了裁决的理论基础：代议制政府的基本契约假定公职人员会倾听选民并回应其关切。A选项\"justified in addressing the needs of their constituents\"（有理由回应选民需求）准确概括了这一假设——官员帮助选民处理问题是其合法职责，不应被视为贿赂。",
+    "traps": "B（有能力独立处理官僚问题）：原文说的是帮助支持者处理官僚问题，而非官员自己独立处理，属偷换主语。C（被允许只关注支持者的关切）：\"supporters\"缩小了范围，原文用的是\"constituents\"（全体选民），且\"focus on\"暗示排他性，属以偏概全。D（免于偏袒指控的定罪）：原文未提及官员可豁免偏袒指控，属过度推断。",
+    "tip": "注意constituents（选民）与supporters（支持者）的范围差异。"
+   },
+   {
+    "number": 39,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "But the ruling reinforces the need for citizens and their elected representatives, not the courts, to ensure equality of access to government.",
+    "why": "第六段指出裁决强化了公民和代表（而非法院）确保平等接触政府的必要性，接着说不能允许官员因捐款或礼物而给予偏袒，并提出需要执行有力的政府透明度法律。B选项\"guarantee fair play in official access\"（保障公务接触中的公平竞争）准确概括了透明度立法的目的——确保所有人平等地接触政府，防止偏袒。",
+    "traps": "A（唤醒官员的良知）：原文强调的是制度保障而非道德感化，属偷换手段。C（允许某些游说行为）：原文提到\"rules on lobbying\"是规范游说而非允许游说，属曲解原意。D（给普通人带来希望）：过于空泛，未触及透明度立法保障公平准入的核心目的，属以偏概全。",
+    "tip": "抓住段落核心论点\"equality of access\"是定位正确答案的关键。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "The court's ruling is a step forward in the struggle against both corruption and official favoritism.",
+    "why": "文章最后一句明确指出法院的裁决是反腐败和反官方偏袒斗争中向前迈出的一步（a step forward），属正面评价。第五段也称裁决\"legally sound\"（法律上合理）。综合来看，作者对裁决持支持态度，D选项\"supportive\"正确。",
+    "traps": "A（讽刺的）：文章整体语气客观正面，\"a step forward\"是真诚的肯定而非反讽，属误判语气。B（容忍的）：tolerant暗示勉强接受、带有保留，而作者是积极肯定，程度不符。C（怀疑的）：作者虽指出需要配套透明度法律，但这是补充建议而非对裁决本身的质疑，属混淆论证层次。",
+    "tip": "末段总结句往往直接体现作者态度，优先关注。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "unanimous",
+    "cn": "adj. 全体一致的，无异议的"
+   },
+   {
+    "w": "overturn",
+    "cn": "v. 推翻，撤销（判决）"
+   },
+   {
+    "w": "conviction",
+    "cn": "n. 定罪，判罪"
+   },
+   {
+    "w": "distasteful",
+    "cn": "adj. 令人不快的，令人厌恶的"
+   },
+   {
+    "w": "favoritism",
+    "cn": "n. 偏袒，偏爱"
+   },
+   {
+    "w": "bureaucratic",
+    "cn": "adj. 官僚的，官僚主义的"
+   },
+   {
+    "w": "prosecution",
+    "cn": "n. 起诉，检控"
+   },
+   {
+    "w": "compact",
+    "cn": "n. 契约，协议"
+   },
+   {
+    "w": "constituents",
+    "cn": "n. 选民，选区居民"
+   },
+   {
+    "w": "lobbying",
+    "cn": "n. 游说活动"
+   },
+   {
+    "w": "undermine",
+    "cn": "v. 逐渐削弱，暗中破坏"
+   },
+   {
+    "w": "inherent",
+    "cn": "adj. 固有的，内在的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "But it did so while holding its nose at the ethics of his conduct, which included accepting gifts such as a Rolex watch and a Ferrari automobile from a company seeking access to government.",
+    "cn": "但法院在做出这一裁决时，对其行为的道德操守嗤之以鼻——他的行为包括接受一家寻求政府渠道的公司赠送的劳力士手表和法拉利汽车等礼物。",
+    "note": "主句为it did so while holding its nose at...，while引导伴随状语；which引导非限定性定语从句修饰conduct；seeking access为现在分词作后置定语修饰company。"
+   },
+   {
+    "en": "The basic compact underlying representative government assumes that public officials will hear from their constituents and act on their concerns.",
+    "cn": "代议制政府的基本契约假定，公职人员会倾听选民的声音并就其关切采取行动。",
+    "note": "主语为the basic compact，underlying representative government为现在分词短语作后置定语；that引导宾语从句，从句中hear from和act on为并列谓语。"
+   },
+   {
+    "en": "If connections can be bought, a basic premise of democratic society – that all are equal in treatment by government – is undermined.",
+    "cn": "如果关系可以被购买，那么民主社会的一个基本前提——所有人在政府面前享有平等待遇——就会被破坏。",
+    "note": "If引导条件状语从句；主句主语为a basic premise，破折号之间的that从句为premise的同位语从句，对其内容进行解释说明。"
+   }
+  ]
+ }
+}

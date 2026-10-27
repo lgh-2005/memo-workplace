@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "470a63948e02__reading__2",
+ "examId": "470a63948e02",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 6 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:47:14.814Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 66034,
+ "usage": {
+  "prompt_tokens": 1863,
+  "completion_tokens": 4181,
+  "total_tokens": 6044,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1863,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4181,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1863,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 53 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "美国儿童阅读教学方法之争",
+  "gist": "文章围绕美国持续数十年的儿童阅读教学方法之争展开。研究反复证明自然拼读法（phonics）最有效，但多数课堂仍采用效果不佳的\"平衡识字法\"。密西西比州率先推行基于阅读科学的教学标准，取得显著进步。统计学与脑成像技术的发展已否定了\"整体语言法\"，但许多教师因自身经验偏差仍未转变教学方式。",
+  "structure": [
+   "第1-2段：引出phonics的尴尬处境及美国阅读素养现状",
+   "第3段：介绍持续数十年的两种教学法之争及混合法的低效",
+   "第4段：密西西比州实施新标准后取得显著阅读成绩提升",
+   "第5段：密西西比成功归因于基于阅读科学的教学方法",
+   "第6段：脑科学已否定整体语言法，但教师因认知偏差仍沿用旧法"
+  ],
+  "difficulty": "中等",
+  "translation": "自然拼读法——即逐音节拼读单词——是教孩子阅读的最佳方法。但在许多课堂上，它却是一个\"脏词\"。以至于一些教师不得不将拼读法教材偷偷带进课堂。大多数美国儿童所接受的阅读教学方式，已被一项又一项研究证明是错误的。\n\n其后果是触目惊心的。2017年，不到一半的美国成年人是熟练的阅读者。美国四年级学生在国际阅读素养进展研究（一项国际考试）中仅排名第15位。\n\n在关于如何教孩子阅读的问题上，美国已陷入长达数十年的争论。一些人主张教授符号-声音对应关系（例如/k/音可以拼写为c、k、ck或ch），即所谓的自然拼读法。另一些人支持沉浸式方法（例如用猫的图片来学习\"cat\"这个词），即所谓的\"整体语言法\"。如今大多数教师——根据《教育周刊》研究中心2019年的调查，近四分之三——使用一种被称为\"平衡识字法\"的混合方法。这种方法组合是无效的。密西西比州教育厅小学教育与阅读执行主任特内特·史密斯说：\"你不能只撒入一点点拼读法。它必须是系统的、明确教授的。\"\n\n密西西比州在社会政策方面往往落后于人，但在这一领域树立了榜样。该州曾因低阅读分数而声名狼藉，2013年密西西比州议会通过了新的识字标准。此后该州取得了显著进步。其四年级学生在全国教育进步评估（一项全国性考试）中从第49名（50个州中）上升到第29名。2019年，它是唯一一个提高分数的州。自测量开始以来，密西西比州的学生首次达到了全国平均阅读水平，对于这样一个贫穷的州而言，这是一项了不起的成就。\n\n密西西比州的成功归功于实施了一套被称为\"阅读科学\"的研究成果所支持的阅读教学方法。1997年，国会要求国家儿童健康与人类发展研究所和教育部召集一个全国阅读小组，以终结\"阅读战争\"并综合相关证据。该小组发现，自然拼读法连同音位意识、流利度和理解力的明确教学，效果最佳。\n\n然而二十多年过去了，\"平衡识字法\"仍在课堂上被使用。但统计学和脑成像技术的进步已经否定了整体语言法。对于本身已是熟练阅读者的教师来说，识字似乎是一个需要有根据猜测的自然过程，而不是拼读法所强调的刻意过程。教师们会想象自己小时候是通过潜移默化学会阅读的。没有适当的培训，他们就把这种认知带进了课堂。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "But in many classrooms, this can be a dirty word. So much so that some teachers have had to sneak phonics teaching materials into the classroom.",
+    "why": "原文明确说phonics在许多课堂上是一个\"dirty word\"（脏词/坏名声的词），教师甚至需要偷偷把拼读法教材带进教室。\"dirty word\"意味着名声不好、被人排斥忌讳，与A选项\"ill reputed\"（名声不好）完全吻合。从\"sneak\"（偷偷）一词可进一步印证phonics在课堂上不受欢迎、声誉不佳的处境。",
+    "traps": "B\"mostly misapplied\"（多被误用）：原文说的是phonics不受待见，而非被错误应用，属于偷换概念。C\"arbitrarily excluded\"（被武断地排斥）：虽有\"排斥\"的意味，但原文并未说排斥是\"武断的\"，且重点是\"名声差\"而非\"被排除\"，程度和侧重点均偏离。D\"misrepresented\"（被歪曲）：原文未提及phonics被曲解或错误描述，属于无中生有。",
+    "tip": "注意将原文形象化表达（dirty word）转化为同义概括。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "America is stuck in a debate about teaching children to read that has been going on for decades.",
+    "why": "原文第三段开头直接指出\"美国陷入了一场关于如何教孩子阅读的争论，这场争论已经持续了数十年\"。B选项\"An enduring debate over the approach to teaching children to read\"是对原文的精准同义改写：\"stuck in a debate...going on for decades\"对应\"enduring debate\"，\"about teaching children to read\"与选项表述一致。",
+    "traps": "A\"obsession with innovating teaching methodologies\"（痴迷于创新教学方法）：原文是争论而非痴迷创新，属于偷换概念。C\"increasing concern with children's inadequacy in literacy\"（对儿童识字能力不足的日益关注）：虽然文中提到阅读素养低的现状，但这不是持续数十年的争论焦点，属于偷换对象。D\"ever-forceful advocacy of a combined method\"（对混合法的持续有力倡导）：混合法只是争论中的一种立场，且原文态度偏负面，非\"有力倡导\"。",
+    "tip": "题目问\"for decades\"，直接定位含有相同时间标志的原句。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "You can't sprinkle in a little phonics. It has to be systematic and explicitly taught.",
+    "why": "Tenette Smith认为混合方法无效，理由是\"你不能只撒一点phonics进去，它必须是系统的、被明确教授的\"。言下之意：phonics要发挥效果，必须作为系统化、明确的教学主体来推行，仅仅将其少量混入其他方法（即平衡识字法）是行不通的。B选项准确概括了这一逻辑：phonics必须被系统应用和清楚教授才能达到预期效果。",
+    "traps": "A\"schoolchildren will be frustrated\"（学生会受挫）：原文未提及学生的情绪反应，属于无中生有。C\"deters the progress of adequately motivated children\"（阻碍有学习动力的孩子的进步）：原文未涉及\"动力充足的孩子\"这一群体，属于过度推断。D\"fails to sustain children's interest\"（无法维持孩子的兴趣）：原文讨论的是教学方法的系统性问题，未涉及兴趣维持，属于无中生有。",
+    "tip": "引用人物原话时，答案往往就在引语本身的逻辑中。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Mississippi's success is attributed to implementing reading methods supported by a body of research known as the science of reading.",
+    "why": "原文明确指出密西西比州的成功\"归功于实施了一套被称为'阅读科学'的研究体系所支持的阅读教学方法\"。C选项\"Adopting scientifically grounded approaches to teaching reading\"（采用有科学依据的阅读教学方法）是原文的精准同义改写：\"implementing\"对应\"adopting\"，\"supported by a body of research known as the science of reading\"对应\"scientifically grounded\"。",
+    "traps": "A\"Convening a National Reading Panel\"（召集全国阅读小组）：这是1997年国会的做法，是背景信息，并非密西西比州成功的直接归因，属于张冠李戴。B\"Placing sufficient emphasis upon fluency and comprehension\"（充分重视流利度和理解力）：这只是阅读小组发现的有效教学要素之一，不够全面，且不是原文对密西西比成功的直接归因表述。D\"Obtaining support from Congress\"（获得国会支持）：原文说的是密西西比州议会通过标准，而非从国会获得支持，属于偷换主体。",
+    "tip": "归因题直接寻找\"is attributed to\"后的宾语进行同义匹配。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But advances in statistics and brain imaging have disproved the whole-language method.",
+    "why": "原文明确说\"统计学和脑成像技术的进步已经否定了整体语言法（the whole-language method）\"。根据第三段的定义，整体语言法就是\"沉浸式方法\"（an immersive approach），即用图片等情境来学习单词。D选项\"The immersive approach\"正是whole-language method的同义表达，与原文完全对应。",
+    "traps": "A\"The teaching of symbol-sound relationships\"（符号-声音关系教学）：这是phonics的定义，恰恰是被研究证明有效的方法，与题目问的\"proved ineffective\"相反。B\"Explicit instruction in phonemic awareness\"（音位意识的明确教学）：这是阅读小组推荐的有效方法之一，属于反向干扰。C\"Efforts to end the reading wars\"（终结阅读战争的努力）：原文未说科学进步否定了这些努力，属于偷换对象。",
+    "tip": "注意文中不同段落对同一概念的不同表述（whole-language = immersive approach）。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "phonics",
+    "cn": "n. 自然拼读法（通过字母与发音对应关系教授阅读的方法）"
+   },
+   {
+    "w": "proficient",
+    "cn": "adj. 熟练的，精通的"
+   },
+   {
+    "w": "immersive",
+    "cn": "adj. 沉浸式的"
+   },
+   {
+    "w": "notorious",
+    "cn": "adj. 臭名昭著的，声名狼藉的"
+   },
+   {
+    "w": "synthesize",
+    "cn": "v. 综合，合成"
+   },
+   {
+    "w": "convene",
+    "cn": "v. 召集，召开（会议等）"
+   },
+   {
+    "w": "osmosis",
+    "cn": "n. 潜移默化；渗透（作用）"
+   },
+   {
+    "w": "deliberate",
+    "cn": "adj. 刻意的，深思熟虑的"
+   },
+   {
+    "w": "sneak",
+    "cn": "v. 偷偷地做，悄悄带入"
+   },
+   {
+    "w": "sprinkle",
+    "cn": "v. 撒入，少量加入"
+   },
+   {
+    "w": "phonemic",
+    "cn": "adj. 音位的，音素的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Most teachers today, almost three out of four according to a survey by the Ed Week Research Centre in 2019, use a mix called \"balanced literacy\".",
+    "cn": "如今大多数教师——根据《教育周刊》研究中心2019年的调查，近四分之三——使用一种被称为\"平衡识字法\"的混合方法。",
+    "note": "主干为Most teachers use a mix called \"balanced literacy\"；中间插入almost three out of four according to a survey...为插入语，补充说明比例和数据来源。"
+   },
+   {
+    "en": "To the teacher who is a proficient reader, literacy seems like a natural process that requires educated guessing, rather than the deliberate process emphasized by phonics.",
+    "cn": "对于本身已是熟练阅读者的教师来说，识字似乎是一个需要有根据猜测的自然过程，而不是拼读法所强调的刻意过程。",
+    "note": "主干为literacy seems like a natural process rather than the deliberate process；who引导定语从句修饰teacher；that引导定语从句修饰process；rather than构成对比结构。"
+   },
+   {
+    "en": "In 1997 Congress requested the National Institute of Child Health and Human Development and the Department of Education to convene a National Reading Panel to end the \"reading wars\" and synthesize the evidence.",
+    "cn": "1997年，国会要求国家儿童健康与人类发展研究所和教育部召集一个全国阅读小组，以终结\"阅读战争\"并综合相关证据。",
+    "note": "主干为Congress requested A and B to convene a panel；to end...and synthesize...为目的状语，说明召集小组的目的；两个并列机构名较长需注意识别。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "64198448ea7f__banked_cloze__all",
+ "examId": "64198448ea7f",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2022 年 12 月英语六级真题（第 3 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:45:56.676Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62905,
+ "usage": {
+  "prompt_tokens": 1425,
+  "completion_tokens": 3412,
+  "total_tokens": 4837,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1425,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3412,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1425,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国高校减少煤炭使用",
+  "gist": "美国能源信息署报告显示，过去十年美国高校煤炭使用量下降了64%，57所烧煤高校均已减量，其中20所完全弃煤。多数高校转向天然气替代，并签署气候承诺以大幅削减温室气体排放，部分高校还承诺在20年内实现碳中和。",
+  "difficulty": "中等",
+  "translation": "美国能源信息署（EIA）在昨天发布的一份报告中指出，美国高校的煤炭使用量比十年前减少了64%，去年仅燃烧了70万吨，而2008年为200万吨。\n\nEIA发现，2008年在烧煤的全部57所学校目前用量均已减少，其中20所已完全放弃了煤炭。\n\n大多数大学已转向天然气作为替代品，州政府资金支持了这一燃料转换。\n\n虽然学术机构使用的煤炭不到美国发电用煤总量的0.1%，但校园煤炭使用的历史可以追溯到19世纪——当时获取电力的途径十分稀缺。\n\n许多大学至今仍运营自己的发电厂。1978年的《公共事业监管政策法》鼓励更多发电，允许机构将多余的电力出售给公用事业公司。\n\n但EIA指出，许多燃煤大学已签署了2007年发起的\"美国大学校长气候承诺\"。\n\n约665所学校参与了该计划，旨在大幅削减温室气体排放。30%的参与者已承诺在20年内实现碳中和。\n\n塞拉俱乐部的\"超越煤炭\"运动也在推动各大学撤出其在煤炭和其他化石燃料方面的投资，列出了22所承诺\"超越煤炭\"的学校，包括克莱姆森大学、印第安纳大学、俄亥俄大学、宾州州立大学、路易斯维尔大学和田纳西大学诺克斯维尔分校。\n\n高校煤炭使用量降幅最大的州在密歇根、密苏里、田纳西和印第安纳。仅印第安纳的大学就在2008年至2015年间将煤炭消耗量削减了81%。\n\n同一时期，密歇根削减了80%，田纳西的州立院校削减了94%。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "K",
+    "correct": "released",
+    "why": "此处需要过去分词作后置定语修饰report，表示\"昨天发布的报告\"。released意为\"发布的\"，与report搭配最为常见（release a report），语义和语法均契合。",
+    "traps": "其他候选词中abandoned虽也是过去分词，但语义为\"被放弃的报告\"，与上下文矛盾；其余名词、动词原形等词性不符。",
+    "tip": "过去分词作后置定语修饰名词，注意常见搭配release a report。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "correct": "abandoned",
+    "why": "have + 过去分词构成现在完成时，abandoned coal completely表示\"完全放弃了煤炭\"。上文提到57所学校都在减少用煤，20所更进一步彻底弃煤，逻辑通顺。",
+    "traps": "released虽也是过去分词，但released coal表示\"释放煤炭\"，语义不通；slash为动词原形，不能直接用于have后。",
+    "tip": "have + 过去分词结构，需选合适的及物动词过去分词。"
+   },
+   {
+    "number": 28,
+    "answer": "L",
+    "correct": "replacement",
+    "why": "as a replacement是固定短语，意为\"作为替代品\"。前文说高校减少煤炭，此句说转向天然气作为替代，上下文因果逻辑清晰。冠词a后需接可数名词单数。",
+    "traps": "access虽为名词，但as an access语义不当；consumption作为\"消耗\"也不符合替代的语境。",
+    "tip": "冠词a后接可数名词单数，as a replacement为固定搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "B",
+    "correct": "access",
+    "why": "access to power意为\"获取电力的途径/渠道\"，是常见搭配。句意为19世纪时电力获取途径稀缺，与dating back to the 1800s的历史背景呼应。空格作主语，需填名词。",
+    "traps": "consumption to power搭配不当；replacement to power虽可构成名词短语但语义为\"电力的替代\"，与scarce（稀缺）的语境不合。",
+    "tip": "access to是核心固定搭配，表示\"获取……的途径/权利\"。"
+   },
+   {
+    "number": 30,
+    "answer": "N",
+    "correct": "surplus",
+    "why": "surplus在此作形容词修饰power，表示\"多余的电力\"。1978年法案允许机构将多余电力卖给公用事业公司，逻辑自洽。空格在sell和power之间，需要形容词。",
+    "traps": "neutral power（中性电力）语义不明；其他候选词多为名词或动词，不适合修饰power。",
+    "tip": "形容词修饰名词，surplus power意为\"剩余/多余电力\"。"
+   },
+   {
+    "number": 31,
+    "answer": "M",
+    "correct": "slash",
+    "why": "aims to后接动词原形，slash意为\"大幅削减\"，slash greenhouse gas emissions表示\"大幅削减温室气体排放\"，与气候承诺的目标一致。",
+    "traps": "abandoned不能用原形接在to后面表达此意；contrive意为\"设法做到\"，与emissions搭配语义不当。",
+    "tip": "aims to + 动词原形，slash有\"大幅削减\"之意。"
+   },
+   {
+    "number": 32,
+    "answer": "I",
+    "correct": "neutral",
+    "why": "carbon neutral为固定术语，意为\"碳中和\"。句中说30%的参与者承诺在20年内实现碳中和，属于环保领域常见表达，与上下文减排主题紧密相关。",
+    "traps": "其他候选词如surplus、abandoned等与carbon搭配不构成有意义的环保术语。",
+    "tip": "carbon neutral（碳中和）是环保热点固定术语，需识别记忆。"
+   },
+   {
+    "number": 33,
+    "answer": "F",
+    "correct": "investments",
+    "why": "withdraw their investments in表示\"撤回在……方面的投资\"，属于常见搭配。文中说塞拉俱乐部推动高校从煤炭和化石燃料中撤资，与环保运动背景一致。their后接名词复数。",
+    "traps": "reductions in coal虽语法通但与withdraw搭配不当（不会\"撤回减少量\"）；access后接in搭配不常见。",
+    "tip": "withdraw investments in是\"撤资\"的固定表达，注意名词复数形式。"
+   },
+   {
+    "number": 34,
+    "answer": "J",
+    "correct": "reductions",
+    "why": "coal use reductions意为\"煤炭使用量的减少/降幅\"，作主语。后文列举了各州高校的具体降幅数据，空格填reductions与at colleges和in Michigan等地点状语衔接自然。",
+    "traps": "consumption（消耗量）虽可做名词，但此处强调的是\"减少幅度最大\"，需用reductions才能与largest搭配表示最大降幅。",
+    "tip": "the largest + 名词复数结构，reductions与具体百分比降幅呼应。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "correct": "consumption",
+    "why": "cut coal consumption意为\"削减煤炭消耗量\"，consumption是不可数名词，在此作cut的宾语。句意为印第安纳的大学将煤炭消耗量削减了81%，表述自然。",
+    "traps": "reductions已用于34题；access作宾语时语义为\"削减煤炭通道\"，不合逻辑。",
+    "tip": "cut consumption为常见搭配，表示\"减少消耗量\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "abandoned",
+    "cn": "v. 放弃，抛弃（过去式/过去分词）"
+   },
+   {
+    "w": "surplus",
+    "cn": "adj./n. 多余的；剩余（物）"
+   },
+   {
+    "w": "slash",
+    "cn": "v. 大幅削减，猛砍"
+   },
+   {
+    "w": "neutral",
+    "cn": "adj. 中立的，中性的（carbon neutral 碳中和）"
+   },
+   {
+    "w": "consumption",
+    "cn": "n. 消耗量，消费"
+   },
+   {
+    "w": "replacement",
+    "cn": "n. 替代品，更换"
+   },
+   {
+    "w": "investments",
+    "cn": "n. 投资（常用复数）"
+   },
+   {
+    "w": "reductions",
+    "cn": "n. 减少，缩减（常用复数）"
+   },
+   {
+    "w": "scarce",
+    "cn": "adj. 稀缺的，不足的"
+   },
+   {
+    "w": "utilities",
+    "cn": "n. 公用事业公司（常用复数）"
+   },
+   {
+    "w": "pledge",
+    "cn": "v./n. 承诺，保证"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——美国高校减煤趋势及相关政策。",
+   "第二步：将15个候选词按词性分类（名词/动词/形容词/过去分词），缩小每空的候选范围。",
+   "第三步：根据空格前后的语法标志（冠词a、have+__、to+__等）锁定所需词性。",
+   "第四步：结合上下文语义和常见搭配（如carbon neutral、access to、release a report）确定最终答案。",
+   "第五步：填完后回读全文，检查每词是否只用一次，且语义与语法均无矛盾。"
+  ]
+ }
+}

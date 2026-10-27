@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "c0d61a2aca89__reading__2",
+ "examId": "c0d61a2aca89",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 12 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:39:57.237Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59286,
+ "usage": {
+  "prompt_tokens": 1834,
+  "completion_tokens": 3731,
+  "total_tokens": 5565,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1834,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3731,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1834,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "国籍不等于文化的研究发现",
+  "gist": "文章介绍了一项新研究，指出仅16%-21%的文化价值观差异可由国别差异解释。职业和社会经济地位比国籍更能预测一个人的文化价值观，因此以国籍概括文化特征是一种普遍而有害的错误，我们应更关注收入等社会经济因素来理解人的文化差异。",
+  "structure": [
+   "第1-3段：提出问题——以国籍概括文化是常见错误，研究证实国别差异只解释少部分文化差异",
+   "第4-5段：介绍研究方法与发现——人口和环境因素比国籍更关联文化价值观",
+   "第6-7段：引用研究者观点说明收入比国籍更能预测文化，并举例说明企业因此走入误区",
+   "第8-9段：总结建议——应以收入等实际因素而非国籍来认识人群"
+  ],
+  "difficulty": "中等",
+  "translation": "看看你周围的人。有些人是被动的，另一些人则更具攻击性。有些人独自工作效率最高，另一些人渴望陪伴。我们很容易发现，生活在我们附近的人之间存在着巨大差异。然而，当我们谈论来自其他地方的人时，似乎不可避免地会根据他们的国籍来给他们贴标签。\n\n统计学专家在谈及国家平均值时，也常常犯同样的错误。\n\n新发表的研究表明这种概括性观点是多么错误。三位研究者分析了数十年来基于价值观的调查，发现只有16%到21%的文化价值观差异可以由国家之间的差异来解释。换言之，使我们在文化上彼此不同的绝大部分因素与我们的祖国无关。\n\n为了确定哪些因素真正与文化相关，作者们整合了558项先前调查的数据，每项调查测量了霍夫斯泰德文化维度中的一个或多个方面。这些是描述与工作相关的文化价值观的特征，例如个人主义和男性化。（它们并非衡量食物或服饰等可见文化特征的标准。）尽管霍夫斯泰德维度的有效性受到过质疑，但它们拥有一个独特的优势：已经被使用了数十年，这使得历史和国际比较成为可能。\n\n研究者发现，人口因素（如年龄）和环境因素（如长期失业率）与文化价值观的相关性都高于国籍。职业和社会经济地位的相关性最强，这表明我们的价值观比我们通常认为的更受经济驱动。\n\n证据表明，拥有相似工作和收入的人在文化上更为相似，无论他们住在哪里。该研究的第一作者瓦斯·塔拉斯这样说道：\"告诉我你挣多少钱，我就能相当准确地预测你的文化价值观。告诉我你的国籍，我大概会做出错误的预测。\"\n\n塔拉斯表示，我们错误地认为国家等同于文化，这已导致企业向员工传授与国际同行互动时无用甚至有害的方式。中美两国的律师可能会基于这样一种假设接受互动培训——即中国人更不具有个人主义倾向，尽管他们相似的社会经济状况使得他们在这方面实际上很可能相当相似。\n\n国家作为权威单位，通常是一种概括某一群体的便捷方式。\n\n然而，我们对国家的关注可能会掩盖国家内部的巨大差异。在大多数情况下，用那些约束人们生活的因素（如收入）来辨识人们，会比用地图上围绕他们的国界线来辨识更为妥当。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Yet, when we speak of people from elsewhere, we seem to inevitably characterize them based on their country of origin. Statistics specialists, when they speak of national averages, often make the same mistake.",
+    "why": "文章第一段末句指出，当我们谈论来自其他地方的人时，似乎不可避免地根据其国籍来给他们定性。第二段明确说统计学专家在谈论国家平均值时\"犯了同样的错误\"。因此，专家犯的错误就是过度依赖国籍来描述人，A选项\"tend to overly rely on nationality\"准确概括了这一错误。",
+    "traps": "B项\"夸大差异\"文中未提及专家夸大差异，属于无中生有；C项\"误解文化\"过于笼统，文中具体指向的是以国籍定性，而非笼统地误解文化；D项\"纠结于国家平均值\"虽提到了national averages，但这只是犯错的表现形式之一，不是错误本身，属于偷换概念。",
+    "tip": "注意区分\"错误本身\"与\"错误的具体表现\"，优先选概括本质的选项。"
+   },
+   {
+    "number": 52,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "Though the validity of Hofstede's dimensions has been questioned, they have the singular benefit of having been in use for decades, which allows for historical and international comparisons.",
+    "why": "原文明确指出霍夫斯泰德文化维度的独特优势在于已使用数十年，这使得\"历史和国际比较\"（historical and international comparisons）成为可能。A选项\"comparing cultural values across time and space\"是对\"historical and international comparisons\"的同义改写，time对应historical，space对应international，完全吻合。",
+    "traps": "B项\"给不同文化的人带来非凡益处\"中的unusual benefits偷换了singular benefit的含义，singular此处意为\"独特的\"而非\"非凡的\"，且受益对象不是普通人而是研究者；C项\"广泛用于识别个人特征\"错误，文中说的是work-related cultural values而非individual traits；D项\"为研究者提供有价值的问题\"属于无中生有，文中未涉及。",
+    "tip": "singular benefit是关键考点，注意singular在此是\"独特的\"之意，不要望文生义。"
+   },
+   {
+    "number": 53,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "Occupation and social economic status were the most strongly correlated, suggesting that our values are more economically driven than we usually give them credit for.",
+    "why": "原文说\"我们的价值观比我们通常所认为的更受经济因素驱动\"（more economically driven than we usually give them credit for），\"give credit for\"意为\"认可/归功于\"，言外之意是人们以往低估了经济因素（即财务状况）对价值观的影响力。B选项\"个人的财务状况常被低估\"准确反映了这一推断。",
+    "traps": "A项\"环境因素被优先考虑\"文中未说环境因素被优先，只说它们比国籍更相关；C项\"过度强调职业\"与原文相反，原文认为职业的重要性被低估而非高估；D项\"社会进步对价值观的影响被忽略\"属于无中生有，文中未涉及社会进步（social progress）。",
+    "tip": "关键短语give them credit for表示\"给予认可\"，than we usually give them credit for暗示\"我们低估了\"。"
+   },
+   {
+    "number": 54,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Taras says our erroneous belief that countries are cultures has caused businesses to teach their employees useless or even harmful ways of interacting with their international peers.",
+    "why": "原文明确指出，\"国家等于文化\"这一错误观念导致企业向员工传授了与国际同行互动时\"无用甚至有害的方式\"。这意味着员工没有被正确教导如何与海外伙伴互动。C选项\"可能未被正确教导如何与海外伙伴互动\"是对原文\"teach...useless or even harmful ways of interacting\"的准确概括。",
+    "traps": "A项\"未能看到商业伙伴的文化偏见\"属于无中生有，原文未涉及文化偏见问题；B项\"未能对文化多样性给予足够重视\"偏离原文，问题不在于不重视多样性而在于错误地理解多样性；D项\"无法学习商业交易的法律程序\"虽然原文提到了律师的例子，但那只是举例说明互动方式的错误，与法律程序无关。",
+    "tip": "注意区分\"教了错误的方法\"和\"没教正确的方法\"，两者本质一致，都指向互动方式不当。"
+   },
+   {
+    "number": 55,
+    "answer": "D",
+    "type": "主旨题",
+    "locate": "In the majority of cases we would be better off identifying people by the factors that constrain their lives, like income, rather than by the lines surrounding them on a map.",
+    "why": "文章最后一段明确建议，在大多数情况下，用收入等约束人们生活的因素来辨识人们比用地图上的国界线更好。\"the lines surrounding them on a map\"指国籍，\"factors that constrain their lives, like income\"指社会经济状况。D选项\"国籍作为价值观指标不如社会经济地位有用\"精确概括了这一建议。",
+    "traps": "A项\"有充分理由对一国人口进行概括\"与文意相反，文中指出国家只是\"便捷方式\"但会掩盖内部差异；B项\"大多数人仍受国家身份约束\"中constrained被偷换概念，原文constrain指的是收入等因素约束生活，而非国家身份约束；C项\"国家应被视为权威单位是有争议的\"虽然原文提到unit of authority，但这只是让步表述，不是作者的核心建议。",
+    "tip": "最后一段常为作者核心建议，注意rather than结构表明作者的倾向性。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "characterize",
+    "cn": "v. 描述…的特征，给…定性"
+   },
+   {
+    "w": "erroneous",
+    "cn": "adj. 错误的，不正确的"
+   },
+   {
+    "w": "demographic",
+    "cn": "adj. 人口统计学的"
+   },
+   {
+    "w": "individualism",
+    "cn": "n. 个人主义"
+   },
+   {
+    "w": "masculinity",
+    "cn": "n. 男性气质，阳刚之气"
+   },
+   {
+    "w": "singular",
+    "cn": "adj. 独特的，非凡的（此处非\"单数的\"）"
+   },
+   {
+    "w": "validity",
+    "cn": "n. 有效性，合理性"
+   },
+   {
+    "w": "correlated",
+    "cn": "adj. 相关联的（be correlated with 与…相关）"
+   },
+   {
+    "w": "crave",
+    "cn": "v. 渴望，热望"
+   },
+   {
+    "w": "constrain",
+    "cn": "v. 限制，约束"
+   },
+   {
+    "w": "mask",
+    "cn": "v. 掩盖，遮蔽（此处用作动词）"
+   },
+   {
+    "w": "inevitably",
+    "cn": "adv. 不可避免地"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Three researchers analyzed decades of values-based surveys and found that only between 16% and 21% of the variation in cultural values could be explained by differences between countries.",
+    "cn": "三位研究者分析了数十年来基于价值观的调查，发现文化价值观的差异中只有16%到21%可以由国家之间的差异来解释。",
+    "note": "主干为Three researchers analyzed...and found that...；that引导宾语从句，从句中only between 16% and 21%作主语，could be explained为谓语被动态，by differences between countries为方式状语。"
+   },
+   {
+    "en": "Occupation and social economic status were the most strongly correlated, suggesting that our values are more economically driven than we usually give them credit for.",
+    "cn": "职业和社会经济地位的相关性最强，这表明我们的价值观比我们通常所认为的更受经济因素驱动。",
+    "note": "主句为Occupation and social economic status were the most strongly correlated；suggesting引导伴随状语/结果状语，其中that从句为suggesting的宾语从句；than we usually give them credit for是比较状语从句，give credit for意为'认可/归功于'。"
+   },
+   {
+    "en": "In the majority of cases we would be better off identifying people by the factors that constrain their lives, like income, rather than by the lines surrounding them on a map.",
+    "cn": "在大多数情况下，用那些约束人们生活的因素（如收入）来辨识人们，会比用地图上围绕他们的国界线来辨识更为妥当。",
+    "note": "主干为we would be better off identifying people by...rather than by...；be better off doing表示'做…更好'；that constrain their lives为定语从句修饰factors；surrounding them on a map为现在分词短语作后置定语修饰lines。"
+   }
+  ]
+ }
+}

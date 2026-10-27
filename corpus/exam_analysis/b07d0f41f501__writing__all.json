@@ -1,0 +1,221 @@
+{
+ "schemaVersion": 1,
+ "id": "b07d0f41f501__writing__all",
+ "examId": "b07d0f41f501",
+ "track": "kaoyan1",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2026 年考研英语真题",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T08:24:46.501Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 105962,
+ "usage": {
+  "prompt_tokens": 874,
+  "completion_tokens": 7053,
+  "total_tokens": 7927,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 874,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 7053,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 874,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 6,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 51,
+    "part": "A",
+    "task": "回复朋友Paul的邮件，介绍中国家庭手写书信的具体内容，并告知是否有公开展出信息，词数约100词。",
+    "outline": [
+     "第一段：回应Paul的感受，简要介绍手写书信的背景与内容（如跨越数十年、涵盖亲情关怀等主题）",
+     "第二段：回答是否公开展出，提供展览地点、时间等具体信息",
+     "第三段：表达愿意陪同参观的意愿，礼貌收尾"
+    ],
+    "sample": "Dear Paul,\n\nI'm glad to know that you were touched by those handwritten letters. They are a collection of letters exchanged among members of several Chinese families over the past decades, covering themes such as parental care, life guidance, and festive greetings. What makes them precious is the genuine emotions woven into every line.\n\nAs for your question, these letters are currently on display at the National Museum of China in Beijing as part of a special exhibition on family culture. The exhibition will run until the end of next month.\n\nIf you plan to visit, I would be happy to accompany you. Just let me know your schedule.\n\nYours,\nLi Ming",
+    "phrases": [
+     {
+      "en": "a collection of",
+      "cn": "一批；一组。用于介绍一系列同类物品，比a lot of更书面精准"
+     },
+     {
+      "en": "over the past decades",
+      "cn": "在过去几十年中。表时间跨度，增添历史厚重感"
+     },
+     {
+      "en": "covering themes such as",
+      "cn": "涵盖诸如……的主题。用现在分词短语作后置状语，简洁高效"
+     },
+     {
+      "en": "woven into every line",
+      "cn": "融入字里行间。过去分词作后置定语，文学色彩浓"
+     },
+     {
+      "en": "on display",
+      "cn": "展出中。固定搭配，比being shown更地道"
+     },
+     {
+      "en": "as part of a special exhibition",
+      "cn": "作为一次特别展览的一部分。补充说明展览性质"
+     },
+     {
+      "en": "be keen to do",
+      "cn": "渴望做某事。题干原词，回信中可呼应使用"
+     },
+     {
+      "en": "accompany you",
+      "cn": "陪同你。比go with you更正式得体"
+     }
+    ],
+    "pitfalls": [
+     "忘记回答邮件中全部问题（书信内容+是否展出），导致要点遗漏扣分",
+     "格式不规范：缺少称呼Dear Paul或结尾署名Li Ming",
+     "语域失当：对朋友用语过于生硬或过于口语化，应保持友好自然",
+     "内容空泛，未对书信的具体主题或文化价值做任何说明",
+     "字数严重不足或超出过多，偏离about 100 words的要求"
+    ],
+    "upgrades": [
+     {
+      "plain": "These letters are very valuable.",
+      "better": "What makes them precious is the genuine emotions woven into every line.",
+      "note": "主语从句+过去分词后置定语，兼具结构美感与内容深度"
+     },
+     {
+      "plain": "The letters are shown in a museum.",
+      "better": "These letters are currently on display at the National Museum of China as part of a special exhibition on family culture.",
+      "note": "on display更地道，补充展览性质使信息更具体"
+     },
+     {
+      "plain": "I can go with you if you want.",
+      "better": "If you plan to visit, I would be happy to accompany you.",
+      "note": "would be happy to更礼貌正式，accompany比go with更书面"
+     }
+    ]
+   },
+   {
+    "number": 52,
+    "part": "B",
+    "task": "根据两幅饼状图（城镇居民与农村居民的阅读目的调查）写一篇160-200词的短文，描述、解读图表并给出评论。",
+    "outline": [
+     "第一段：客观描述两幅饼图的主要数据——城乡居民阅读目的各占比例，点明异同",
+     "第二段：分析原因——知识需求为首的共性原因，以及城乡在休闲娱乐和工作需求上的差异原因",
+     "第三段：发表评论——肯定全民求知热情，建议完善农村阅读设施、倡导均衡阅读"
+    ],
+    "sample": "The two pie charts illustrate the reading purposes of urban and rural residents in China respectively. In both groups, acquiring knowledge and broadening horizons ranks first, accounting for 55.8% among urban residents and 51.9% among rural residents. Leisure and entertainment comes second, with 23.5% for urban dwellers and a notably higher 33.5% for their rural counterparts. Meanwhile, meeting work demands accounts for 15.2% in urban areas compared to 10.2% in rural areas.\n\nSeveral factors may account for the similarities and differences. First, the shared priority of knowledge acquisition reflects a nationwide emphasis on self-improvement through reading. Second, rural residents show a stronger preference for recreational reading, possibly because they have fewer entertainment options than urban residents. Third, the higher proportion of work-related reading among urban residents is likely linked to the more competitive professional environment in cities.\n\nIn my view, it is encouraging that the desire for knowledge drives reading across the country. To further promote reading habits, the government should improve library facilities in rural regions and encourage a balanced approach to reading that combines both intellectual enrichment and practical needs.",
+    "phrases": [
+     {
+      "en": "account for + 百分比",
+      "cn": "占……比例。图表作文核心动词短语，使用频率极高"
+     },
+     {
+      "en": "rank first",
+      "cn": "位居第一。描述数据排名的常用表达"
+     },
+     {
+      "en": "a notably higher proportion",
+      "cn": "明显更高的比例。用副词notably修饰比较级，体现数据敏感度"
+     },
+     {
+      "en": "one's rural/urban counterparts",
+      "cn": "其农村/城市对应群体。避免重复使用residents，增加词汇丰富度"
+     },
+     {
+      "en": "a nationwide emphasis on",
+      "cn": "全国范围内对……的重视。适合解释宏观趋势"
+     },
+     {
+      "en": "self-improvement through reading",
+      "cn": "通过阅读实现自我提升。介词短语后置修饰，简洁有力"
+     },
+     {
+      "en": "is likely linked to",
+      "cn": "可能与……有关。温和归因，避免绝对化表述"
+     },
+     {
+      "en": "a balanced approach to",
+      "cn": "对……的均衡方式。提建议时的高级名词短语"
+     },
+     {
+      "en": "intellectual enrichment",
+      "cn": "智识充实。抽象名词搭配，提升语言档次"
+     },
+     {
+      "en": "promote reading habits",
+      "cn": "推广阅读习惯。建议段常用动宾搭配"
+     }
+    ],
+    "pitfalls": [
+     "只堆砌数据不做原因分析，缺少第二段解读导致结构不完整",
+     "描述数据时动词单一，反复使用is/are而无rank/account for等变化",
+     "忽略城乡对比中的共同点，只写差异或只写相同，分析不全面",
+     "第三段评论泛泛而谈，未结合阅读目的这一具体话题提出针对性建议",
+     "总词数不足160或超过200，属于硬性违规扣分项"
+    ],
+    "upgrades": [
+     {
+      "plain": "Most people read to learn new things.",
+      "better": "The shared priority of knowledge acquisition reflects a nationwide emphasis on self-improvement through reading.",
+      "note": "抽象名词+反映动词，将数据上升为社会趋势分析，学术感更强"
+     },
+     {
+      "plain": "Rural people read more for fun than city people.",
+      "better": "Rural residents show a stronger preference for recreational reading, possibly because they have fewer entertainment options.",
+      "note": "show a preference for结构更正式，possibly because留有余地更严谨"
+     },
+     {
+      "plain": "City people read more for their jobs.",
+      "better": "The higher proportion of work-related reading among urban residents is likely linked to the competitive professional environment in cities.",
+      "note": "名词短语叠加+被动归因，体现深层逻辑分析能力"
+     },
+     {
+      "plain": "Reading is good for everyone.",
+      "better": "It is encouraging that the desire for knowledge drives reading across the country.",
+      "note": "形式主语it + that从句，评论句型高级且观点明确"
+     },
+     {
+      "plain": "The government should build more libraries.",
+      "better": "The government should improve library facilities in rural regions and encourage a balanced approach to reading that combines both intellectual enrichment and practical needs.",
+      "note": "并列建议+定语从句，信息密度高且表达精准"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "What makes them precious is the genuine emotions woven into every line. —— 主语从句+过去分词后置定语，适用于描述某事物的核心价值，结构紧凑、文采斐然。",
+   "The shared priority of knowledge acquisition reflects a nationwide emphasis on self-improvement through reading. —— 抽象名词叠加+动词reflect，将数据现象升华为社会趋势，是图表作文分析段的范本句式。",
+   "Rural residents show a stronger preference for recreational reading, possibly because they have fewer entertainment options than urban residents. —— show a preference for + possibly because构成「现象+谨慎归因」的完整逻辑链，避免武断又不失分析力度。",
+   "It is encouraging that the desire for knowledge drives reading across the country. —— It is + 情感形容词 + that从句，评论段万能开头，比I think更正式、更有说服力。",
+   "The government should encourage a balanced approach to reading that combines both intellectual enrichment and practical needs. —— 建议段高分句式：balanced approach + 定语从句，兼顾建议的具体性与语言的复杂度。"
+  ]
+ }
+}

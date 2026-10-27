@@ -1,0 +1,164 @@
+{
+ "schemaVersion": 1,
+ "id": "9aef686950a8__reading__1",
+ "examId": "9aef686950a8",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2015 年 6 月英语六级真题（第 1 套）",
+ "year": 2015,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T04:40:42.320Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 109496,
+ "usage": {
+  "prompt_tokens": 1473,
+  "completion_tokens": 10911,
+  "total_tokens": 12384,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 8447
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1473
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "耶伦接任美联储主席面临的挑战与优势",
+  "gist": "本文评述耶伦接任美联储主席的背景、能力与挑战。她在金融危机中主导大规模资产购买，关注失业问题，但未来需在逐步退出刺激、防范通缩与加强金融监管之间把握好平衡。文章认为她的专业能力与说服力有助于解决全球经济难题。",
+  "structure": [
+   "第1段：引出耶伦接任美联储主席，点明失业为重大经济社会问题。",
+   "第2段：回顾金融危机中美联储大规模资产购买，耶伦是主要设计者。",
+   "第3段：指出耶伦适合应对挑战，尤其关注劳动力市场与失业痛苦。",
+   "第4—5段：说明其将面临就业与通缩、退出刺激的平衡难题。",
+   "第6—7段：指出她将加强金融监管，并借布林德评价肯定其说服力。"
+  ],
+  "difficulty": "中等",
+  "translation": "当合适的人在合适的时机担任合适的职位时，其影响力会大大增强。珍妮特·耶伦目前就处在这样一个位置上。她预计将于一月份被确认担任美国联邦储备银行（美联储）下一任主席。如果像许多人一样，你认为失业是当今主要的经济和社会问题，那么认为耶伦是当下世界上最有权势的人就不算夸张。\n\n在2008年金融危机以及随后的衰退和复苏过程中，各国央行扮演了最后刺激者的角色，通过大规模的资产购买向全球经济注入巨额资金以支撑经济。耶伦曾任美联储副主席，是美联储3.8万亿美元注资计划的主要设计者之一。作为以劳动力市场开创性研究著称的经济学家，耶伦在危机初期就因对次级债危机的预警而像一位女先知。现在，她的任务将是让美联储和市场走出史上最大规模、最非常规的货币计划，同时又不使脆弱的复苏偏离轨道。\n\n好消息是，现年67岁的耶伦特别适合应对这些挑战。她对金融市场有敏锐的理解，深知市场的不完善之处，并坚信人类苦难与失业的关系比任何其他因素都更密切。\n\n一些专家担心耶伦会倾向追求低失业率而忽视通胀。但在工资仍相对低迷、经济在富人与长期失业者之间日益分化的背景下，更多人担心的是相反的情况——可能会加剧经济问题的通货紧缩。\n\n无论如何，这位即将上任的美联储主席必须在逐步结束刺激政策的道路上像走钢丝一样谨慎。步伐必须稳健，以挤出泡沫、使市场回归理性，但又不能快到引发另一场信贷危机。\n\n与许多前任美联储领导人不同，耶伦并不认同金融业所谓“应让其自行监管”的论调。她始终清楚美联储在金融监管方面过于松懈。\n\n耶伦可能会在将失业率降至6%以下、稳定市场并确保复苏更具包容性和稳健性之后，立即着手解决这一问题。正如普林斯顿大学教授艾伦·布林德所说：“她聪明绝顶，逻辑严密，乐于争论但也善于倾听。她能在不制造敌意的情况下说服别人。”在全球经济新的掌权者应对最棘手难题时，所有这些品质都会发挥作用。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "If you believe, as many do, that unemployment is the major economic and social concern of our day, then it is no stretch to think Yellen is the most powerful person in the world right now.",
+    "why": "题干问许多人认为耶伦面临的最大问题是什么。原文用“如果你像许多人一样认为失业是当今主要经济和社会问题”说明大众把失业视为最大问题；耶伦就任美联储主席，自然要面对这一最大经济社会挑战，故 C 正确。",
+    "traps": "A“缺少资金”原文未提，且美联储已大规模注资；B“次贷危机”只是耶伦早期预警过的问题，并非当前大众认为的最大问题；D“社会不稳定”是对“social concern”的过度引申，原文强调的是失业本身。",
+    "tip": "关注题干中 many people think 与原文 as many do 的同义复现。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Throughout the 2008 financial crisis and the recession and recovery that followed, central banks have taken on the role of stimulators of last resort, holding up the global economy with vast amounts of money in the form of asset buying. Yellen, previously a Fed vice chair, was one of the principal architects of the Fed's $3.8 trillion money dump.",
+    "why": "原文明确说耶伦是美联储3.8万亿美元注资计划的主要设计者之一，而前一句指出美联储通过资产购买向全球经济注入巨额资金。因此 D“通过资产购买向市场注资”直接对应耶伦帮助美联储做的事。",
+    "traps": "A“抑制通胀”曲解了她的关注点，她更重视失业而非通胀；B“去泡沫”是她未来需处理的问题，并非2008年所做的事；C“帮助金融机构”属于无中生有，原文说的是通过资产购买注入流动性。",
+    "tip": "题干问过去事件，回到危机应对处定位原词 asset buying 与 money dump。"
+   },
+   {
+    "number": 48,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "But with wages still relatively flat and the economy increasingly divided between the well-off and the long-term unemployed, more people worry about the opposite, deflation(通货紧缩) that would aggravate the economy's problems.",
+    "why": "题干中的 greater concern 对应原文的 more people worry about。前文说一些专家担心耶伦只顾失业而忽视通胀，而本句说大众更担忧“相反情况”，即通货紧缩；后文直接点出 deflation。因此 B 正确。",
+    "traps": "A“衰退”是2008年危机阶段，并非此处大众更担心的对立面；C“不平等”是背景现象，原文说的是 economic divided between...，但更担心的后果是通货紧缩；D“收入”过于宽泛，原文只提到工资 flat。",
+    "tip": "注意 the opposite 的指代：相对通胀担忧，反面是通缩。"
+   },
+   {
+    "number": 49,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Unlike many past Fed leaders, Yellen is not one to buy into the finance industry's argument that it should be left alone to regulate itself. She knows all along the Fed has been too slack on regulation of finance.",
+    "why": "原文指出耶伦不认同金融业应自我监管，且知道美联储一直以来金融监管过于松懈；后文紧接着说她会“address the issue”，该 issue 即指监管松懈问题，故可推断她可能加强金融监管，C 正确。",
+    "traps": "A“制定新货币计划”与原文意思相反，她是要退出非常规货币计划；B“恢复公众信心”原文未提及；D“改革信贷体系”将避免另一次信贷危机过度放大，原文并未说改革信贷体系。",
+    "tip": "推断要基于原文的因果链：slack on regulation → address the issue → tighten regulation。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "As Princeton Professor Alan Blinder says, \"She's smart as a whip, deeply logical, willing to argue but also a good listener. She can persuade without creating hostility.\"",
+    "why": "布林德评语中“she can persuade without creating hostility”直接表明耶伦具有很强的说服力，且不会引发敌意，这与 A“她拥有很强的说服力”高度吻合。",
+    "traps": "B“对自己的工作有信心”从评语中无法推出；C“世界上最伟大经济学家之一”虽有一定依据但并非布林德此处的描述；D“史上最具权势的美联储主席”是过度拔高，原文并未这样说。",
+    "tip": "直接引语处答案多为关键词 persuade 的同义转述。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "expand",
+    "cn": "v. 扩大，增强"
+   },
+   {
+    "w": "recession",
+    "cn": "n. 经济衰退"
+   },
+   {
+    "w": "asset buying",
+    "cn": "n. 资产购买"
+   },
+   {
+    "w": "money dump",
+    "cn": "n. 货币投放，注资"
+   },
+   {
+    "w": "prophetess",
+    "cn": "n. 女预言家"
+   },
+   {
+    "w": "subprime meltdown",
+    "cn": "n. 次级债务崩溃"
+   },
+   {
+    "w": "unconventional",
+    "cn": "adj. 非常规的"
+   },
+   {
+    "w": "derail",
+    "cn": "v. 使偏离轨道，使脱轨"
+   },
+   {
+    "w": "deflation",
+    "cn": "n. 通货紧缩"
+   },
+   {
+    "w": "aggravate",
+    "cn": "v. 加剧，使恶化"
+   },
+   {
+    "w": "slack",
+    "cn": "adj. 松懈的，不严的"
+   },
+   {
+    "w": "hostility",
+    "cn": "n. 敌意，敌对情绪"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "If you believe, as many do, that unemployment is the major economic and social concern of our day, then it is no stretch to think Yellen is the most powerful person in the world right now.",
+    "cn": "如果像许多人一样，你认为失业是当今主要的经济和社会问题，那么认为耶伦是当下世界上最有权势的人就不算夸张。",
+    "note": "as many do 为插入语，主句是 If you believe... then it is no stretch to think...；to think 后接宾语从句，说明‘认为耶伦最有权势’这一判断。"
+   },
+   {
+    "en": "Now it will be her job to get the Fed and the markets out of the biggest and most unconventional monetary program in history without derailing the fragile recovery.",
+    "cn": "现在，她的任务将是让美联储和市场走出史上规模最大、最非常规的货币计划，同时又不使脆弱的复苏偏离轨道。",
+    "note": "it 作形式主语，真正主语是 to get... without derailing...；out of 引出要退出的对象，without derailing 作伴随状语说明结果或方式。"
+   },
+   {
+    "en": "But with wages still relatively flat and the economy increasingly divided between the well-off and the long-term unemployed, more people worry about the opposite, deflation(通货紧缩) that would aggravate the economy's problems.",
+    "cn": "但在工资仍相对持平、经济在富人与长期失业者之间日益分化的背景下，更多人担心的是相反的情况——会加剧经济问题的通货紧缩。",
+    "note": "with 复合结构作原因或背景状语；主句为 more people worry about the opposite，deflation... 作 the opposite 的同位语，that 引导定语从句修饰 deflation。"
+   }
+  ]
+ }
+}

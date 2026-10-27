@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "b07d0f41f501__reading__4",
+ "examId": "b07d0f41f501",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年考研英语真题",
+ "year": 2026,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:59:47.999Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 58742,
+ "usage": {
+  "prompt_tokens": 1804,
+  "completion_tokens": 3732,
+  "total_tokens": 5536,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1804,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3732,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1804,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "森林火灾抑制与计划烧除的必要性",
+  "gist": "文章围绕美国森林火灾管理展开：树木年轮研究揭示殖民前低烈度火灾对生态系统有益；现代灭火虽有效但导致可燃物堆积，叠加气候变化使野火更难控制；科学家和官员呼吁推行计划烧除以恢复森林健康，但气候变化也使这一策略面临更大挑战。",
+  "structure": [
+   "第1段：Swetnam从灭火实践到年轮研究，引出殖民前频繁野火的发现",
+   "第2段：阐述低烈度频繁火灾对森林生态系统的多种益处",
+   "第3段：NAFSN数据库研究揭示灭火抑制下火灾频率大幅下降",
+   "第4段：专家肯定灭火成效，但指出抑制与气候变化的叠加后果",
+   "第5-6段：提出计划烧除的必要性与实际成效，同时指出气候变化带来的挑战"
+  ],
+  "difficulty": "中等",
+  "translation": "20世纪70年代，汤姆·斯韦特南加入美国林务局时，他的任务是\"扑灭一切火灾\"。但当他进入亚利桑那大学树木年轮研究实验室攻读研究生时，他惊讶地发现了一份可追溯至欧洲殖民者到达北美大陆之前数百年的反复火灾记录。他分析的一些树木年轮中留有超过20处火烧疤痕。\n\n火灾如此频繁这一事实意味着它们的烈度不足以杀死大多数树木。相反，越来越多的研究表明，频繁的低烈度火灾使许多生态系统更加健康。它们清除了森林中的枯死和病树，减少了竞争并遏制了疾病传播。由于可燃物无法在地表大量堆积，火灾往往缓慢移动，并在到达先前烧过的区域时自行熄灭。\n\n2022年，斯韦特南和其他科学家联合编制了一个涵盖整个北美大陆的火烧疤痕树木数据库。他们的北美树木年轮火烧疤痕网络（NAFSN）为上月发表的一项研究提供了基础。在这项研究中，研究人员将历史上的火灾节律与过去几十年记录的野火进行了对比，发现了一个惊人的缺口。NAFSN监测点所经历的火灾次数不到没有灭火抑制情况下预期次数的四分之一。\n\n这一缺口证明了现代消防的有效性，国际荒地火灾协会前会长凯利·马丁说道。\"然而，灭火抑制和气候变化的综合影响已经削弱了人类扑灭火灾的能力，尤其是在最危险天气条件下点燃的那些火灾。\"\n\n为防止整个生态系统化为灰烬，马丁说，人们必须将健康的火灾带回需要它的地方。在约塞米蒂国家公园，马丁监督了所谓的\"计划烧除\"的使用，以增强景观的韧性。这些火灾经过精心规划，在天气条件使火势易于控制的时段有意点燃，有助于清除公园重要设施周围堆积的部分燃料。研究表明，这些计划烧除能降低后续野火的烈度，即使后来的火灾发生在最危险的天气条件下也是如此。\n\n然而，专家表示，即使科学家和公职人员越来越认同我们的森林需要更多火灾，气候变化正使这一策略更具挑战性。\"这是一把双刃剑，因为在气候变化下野火变得更猛烈、规模更大，我们比以往更需要这项工作，但这项工作本身也变得更具挑战性，\"华盛顿大学火灾生态学家苏珊·普里查德说。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "he was surprised to find a record of repeated blazes dating back hundreds of years before European colonists arrived on the continent.",
+    "why": "原文明确指出斯韦特南在树木年轮研究中惊讶地发现了\"欧洲殖民者到来之前数百年反复发生火灾的记录\"，且一些树木有超过20处火烧疤痕。D选项\"殖民前时代野火的数量\"精准概括了他惊讶的内容——即殖民前野火之多。",
+    "traps": "A选项\"美国树木年轮研究的稀缺\"原文未提及，属于无中生有；B选项\"古代欧洲的消防措施\"偷换概念，原文提到的是欧洲殖民者到来前的北美火灾，而非欧洲的消防措施；C选项\"20世纪70年代的森林管理实践\"是他已知的背景（扑灭一切火灾），并非令他惊讶之事，属于张冠李戴。",
+    "tip": "抓住surprised的宾语从句，精准定位惊讶的具体内容。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "a growing body of research showed that frequent, low-severity fires made many ecosystems healthier.",
+    "why": "第二段围绕低烈度火灾的好处展开论述：首先指出频繁火灾不足以杀死大多数树木，接着用主题句说明低烈度火灾使生态系统更健康，随后列举具体益处——清除枯死病树、减少竞争、遏制疾病、防止可燃物堆积、使火灾自行熄灭。全段核心即低烈度火灾的益处，C选项完全吻合。",
+    "traps": "A选项\"先前火灾的原因\"仅在段末提及先前烧过的区域，并非段落主旨；B选项\"病树的处理\"只是低烈度火灾诸多好处中的一个细节，以偏概全；D选项\"森林生态系统的重要性\"过于宽泛，段落聚焦的是火灾对生态的积极作用，而非生态系统本身的重要性。",
+    "tip": "段落主旨题需找主题句，该段主题句在第二句。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The NAFSN sites experienced less than a quarter of the number of fires that would have been expected without fire suppression.",
+    "why": "原文明确指出NAFSN监测点过去几十年实际发生的火灾次数不到没有灭火抑制情况下预期次数的四分之一，即频率显著下降。研究将历史火灾节律与近几十年野火对比后发现了\"striking shortfall\"（惊人的缺口），B选项\"频率显著降低\"精准对应。",
+    "traps": "A选项\"强度大幅波动\"原文未提及强度波动，属于无中生有；C选项\"威胁被低估\"原文未涉及威胁评估问题；D选项\"记录被误读\"原文未提及记录被误读，研究结果恰恰是基于对记录的正确解读。",
+    "tip": "关注比较结构和数字表达，less than a quarter直接指向频率下降。"
+   },
+   {
+    "number": 39,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Yet the combined consequences of suppression and climate change have eroded humanity's ability to suppress fires, particularly those that ignite under the most dangerous weather conditions.",
+    "why": "第四段先肯定现代灭火的有效性（减少了火灾频率），但随后指出抑制带来的后果——可燃物大量堆积（结合第二段逻辑），叠加气候变化，削弱了人类扑灭火灾的能力，尤其是最危险天气条件下的火灾。即长期灭火抑制导致可燃物积累，一旦发生大火反而更难扑灭，D选项\"可能使严重火灾更难扑灭\"是对这一因果链的合理推断。",
+    "traps": "A选项\"劳动力需要更多培训\"原文未涉及人员培训问题，属于无中生有；B选项\"有效性受公众质疑\"与原文相反，原文肯定了灭火的有效性；C选项\"可能使传统策略无用\"过于绝对，原文提到的是灭火能力被削弱而非传统策略完全无用。",
+    "tip": "推断题需关注转折词yet后的核心论点，结合上下文因果链推理。"
+   },
+   {
+    "number": 40,
+    "answer": "C",
+    "type": "推断题",
+    "locate": "Martin said, people must bring healthy fire back to places that need it. At Yosemite National Park, Martin oversaw the use of what is known as prescribed burns",
+    "why": "Martin在第五段明确主张必须将\"健康的火\"带回需要它的地方，并亲自在约塞米蒂国家公园推行计划烧除；Prichard在第六段虽指出气候变化使工作更具挑战性，但她说\"we need this work even more\"（我们比以往更需要这项工作），这里的\"this work\"正是指计划烧除。两人都认为计划烧除是必要的，C选项正确。",
+    "traps": "A选项\"预测大型野火具有挑战性\"二人均未讨论野火预测问题；B选项\"评估计划火灾的使用很紧迫\"偷换概念，二人主张的是实施而非评估；D选项\"加倍火灾探测努力值得\"原文未提及火灾探测，属于无中生有。",
+    "tip": "两人观点交汇题需分别定位各自立场，找共同点。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "mandate",
+    "cn": "n. 任务；授权；命令"
+   },
+   {
+    "w": "blaze",
+    "cn": "n. 大火；烈火 v. 熊熊燃烧"
+   },
+   {
+    "w": "scar",
+    "cn": "n. 疤痕；伤痕"
+   },
+   {
+    "w": "curb",
+    "cn": "v. 遏制；抑制；控制"
+   },
+   {
+    "w": "flammable",
+    "cn": "adj. 易燃的"
+   },
+   {
+    "w": "peter out",
+    "cn": "v. 逐渐消失；逐渐减弱"
+   },
+   {
+    "w": "cadence",
+    "cn": "n. 节律；节奏"
+   },
+   {
+    "w": "deficit",
+    "cn": "n. 缺口；赤字；不足"
+   },
+   {
+    "w": "testament",
+    "cn": "n. 证明；证据；遗嘱"
+   },
+   {
+    "w": "resilient",
+    "cn": "adj. 有韧性的；恢复力强的"
+   },
+   {
+    "w": "prescribed burn",
+    "cn": "n. 计划烧除（有控制的人为点火）"
+   },
+   {
+    "w": "double-edged sword",
+    "cn": "n. 双刃剑"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Yet the combined consequences of suppression and climate change have eroded humanity's ability to suppress fires, particularly those that ignite under the most dangerous weather conditions.",
+    "cn": "然而，灭火抑制和气候变化的综合影响已经削弱了人类扑灭火灾的能力，尤其是在最危险天气条件下点燃的那些火灾。",
+    "note": "主干为consequences have eroded ability；particularly引出补充说明；those指代fires，后接that定语从句修饰。转折词Yet提示与上文灭火有效性形成对比。"
+   },
+   {
+    "en": "These fires were carefully planned and intentionally ignited during periods when weather kept the blazes easy to control, and helped eliminate some of the fuel that had built up around the important park's facilities.",
+    "cn": "这些火灾经过精心规划，在天气使火势易于控制的时段有意点燃，有助于清除公园重要设施周围堆积的部分燃料。",
+    "note": "并列谓语were planned/ignited和helped eliminate；when引导时间状语从句修饰periods；that引导定语从句修饰fuel；kept+宾语+宾补结构。"
+   },
+   {
+    "en": "It's a double-edged sword because wildfires are getting more severe and larger under climate change and we need this work even more, but then the work gets more challenging.",
+    "cn": "这是一把双刃剑，因为在气候变化下野火变得更猛烈、规模更大，我们比以往更需要这项工作，但这项工作本身也变得更具挑战性。",
+    "note": "主干It's a double-edged sword；because引导原因状语从句，内含and连接两个并列分句，but then转折揭示矛盾——需求增加与难度增加并存。"
+   }
+  ]
+ }
+}

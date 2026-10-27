@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "457ceba875be__banked_cloze__all",
+ "examId": "457ceba875be",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2025 年 6 月英语六级真题（第 2 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:03:08.713Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 71955,
+ "usage": {
+  "prompt_tokens": 1449,
+  "completion_tokens": 4977,
+  "total_tokens": 6426,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1449,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4977,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1449,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "缓步类动物的极端生存能力与太空应用",
+  "gist": "文章介绍了缓步类动物（水熊虫）能够在极端温度、真空和辐射等恶劣条件下存活的惊人能力，解释了其坚韧性源于对环境的适应以及细胞在干燥时产生的特殊蛋白质，并展望了将这些蛋白质应用于太空旅行中保护人类和农作物的前景。",
+  "difficulty": "中等",
+  "translation": "地球上没有任何生物比微小的缓步类动物更坚韧。它能够在零下272摄氏度的冰冻环境中存活，能够暴露在外太空的真空中，甚至能够承受相当于致死人类剂量500倍的X射线轰击。换句话说，这种生物能够忍受地球上根本不存在的条件。研究人员正在研究这些微型动物，以了解如何让人类和农作物应对太空旅行的严酷考验。\n\n缓步类动物的坚不可摧源于它对环境的适应——这可能令人惊讶，因为它生活在看似舒适的地方，比如点缀花园墙壁的凉爽、潮湿的青苔丛中。\n\n但事实证明，缓步类动物潮湿、长满青苔的栖息地每年可能会干涸许多次。干燥对大多数生物来说是相当具有灾难性的。它对细胞造成的损害与冰冻、真空和辐射的损害方式有些相同。然而，缓步类动物已经进化出应对这些损害的特殊策略。\n\n当缓步类动物变干时，它的细胞会产生几种奇特的蛋白质，这些蛋白质与在其他动物体内发现的任何蛋白质都截然不同。在水中，这些蛋白质是无固定形状的。但当水分消失时，蛋白质会自组装成长纤维，填满细胞内部。这些纤维支撑着细胞膜和蛋白质，防止它们断裂或展开变性。\n\n模仿缓步类动物有朝一日可能帮助人类殖民外太空。粮食作物可以被基因改造以产生缓步类动物的蛋白质，使这些生物能够在辐射水平高于地球的太空飞船上更高效地生长。\n\n因此，如果人类有朝一日成功到达星际，他们可能在一定程度上是站在你后院那些微小的八腿耐力专家的肩膀上，才完成了这一壮举。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "K",
+    "correct": "survive",
+    "why": "此处结构为\"can + 动词原形\"，语义为\"它能够在冰冻中存活\"。survive 是不及物/及物动词原形，后接动名词 being frozen 表示\"在被冰冻的情况下存活\"，语法与语义完全契合。",
+    "traps": "evolved 虽然也是动词，但语义为\"进化\"，放此处搭配 being frozen 不通；endure 词库中无此选项。其他名词、副词、形容词词性不合。",
+    "tip": "can + 动词原形结构，结合\"承受极端条件\"语境定位 survive。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "blasted",
+    "why": "此处结构为\"being + 过去分词\"构成被动语态，表示\"被X射线轰击\"。blasted with 为固定搭配，意为\"用……轰击\"，语义上描述高剂量辐射的攻击性完全吻合。",
+    "traps": "evolved 虽也可作过去分词，但\"being evolved with X-rays\"语义不通。其他候选词如 adaptations（名词）、catastrophic（形容词）词性不符。",
+    "tip": "being + p.p. 被动结构，blast with sth. 为常见搭配。"
+   },
+   {
+    "number": 28,
+    "answer": "I",
+    "correct": "rigors",
+    "why": "此处结构为\"the + 名词 + of space travel\"，需要名词。rigors 意为\"严酷、艰苦\"，the rigors of space travel（太空旅行的严酷考验）为地道表达，上下文讲的是如何帮人类应对太空挑战。",
+    "traps": "adaptations 虽也是名词，但\"the adaptations of space travel\"语义为\"太空旅行的适应\"，与 handle（应对）搭配不当。feat 意为\"壮举\"，放此处语义不符。",
+    "tip": "the rigors of 为高频搭配，表示\"……的严酷条件\"。"
+   },
+   {
+    "number": 29,
+    "answer": "A",
+    "correct": "adaptations",
+    "why": "此处结构为\"its + 名词 + to its environment\"，需要名词。adaptations to 意为\"对……的适应\"，说明坚韧性源于它对环境的适应能力，与后文介绍其适应干燥环境的策略逻辑一致。",
+    "traps": "rigors 虽也是名词，但\"rigors to its environment\"不是常见搭配且语义不通。interior（内部）放此处搭配 to its environment 无法成立。",
+    "tip": "adaptation to 为固定搭配，意为\"对……的适应\"。"
+   },
+   {
+    "number": 30,
+    "answer": "J",
+    "correct": "seemingly",
+    "why": "此处修饰形容词 comfortable，需要副词。seemingly 意为\"看似、表面上\"，seemingly comfortable places 表示\"看似舒适的地方\"，与后文转折（实际上栖息地经常干涸）形成对比。",
+    "traps": "其余候选词中无其他副词可用。catastrophic 是形容词，不能修饰另一个形容词。此处逻辑需要\"看似\"这一含义来铺垫转折。",
+    "tip": "副词修饰形容词，seemingly 与后文 but it turns out 形成转折呼应。"
+   },
+   {
+    "number": 31,
+    "answer": "C",
+    "correct": "catastrophic",
+    "why": "此处结构为\"is pretty + 形容词\"，需要形容词。catastrophic 意为\"灾难性的\"，说明\"干燥对大多数生物来说是相当致命的\"，与后文说明干燥造成的细胞损伤一致。",
+    "traps": "seemingly 是副词，不能用在 is pretty 后面作表语。其他候选词 blasted 是过去分词，虽可作形容词，但语义为\"被轰击的\"，不合语境。",
+    "tip": "is pretty + adj. 表语结构，catastrophic 强调干燥的破坏性。"
+   },
+   {
+    "number": 32,
+    "answer": "D",
+    "correct": "evolved",
+    "why": "此处结构为\"have + 过去分词 + special strategies\"，构成现在完成时。evolved 意为\"进化出\"，have evolved special strategies 表示\"已经进化出特殊策略\"，描述缓步动物通过长期演化获得应对能力。",
+    "traps": "survive 原形不能直接放在 have 后面构成完成时（需 survived）。blasted 虽是过去分词，但\"have blasted special strategies\"语义不通。",
+    "tip": "have + p.p. 现在完成时结构，evolved 表示长期进化的结果。"
+   },
+   {
+    "number": 33,
+    "answer": "F",
+    "correct": "interior",
+    "why": "此处结构为\"the cell's + 名词\"，需要名词。interior 意为\"内部\"，the cell's interior 表示\"细胞内部\"，纤维填满细胞内部以支撑结构，与后文描述纤维支撑细胞膜的功能一致。",
+    "traps": "adaptations 虽是名词，但\"fill the cell's adaptations\"语义不通。feat 意为\"壮举\"，放此处完全不合语境。rigors 已用于第28题。",
+    "tip": "the cell's interior 是科学语境下描述细胞内部的标准表达。"
+   },
+   {
+    "number": 34,
+    "answer": "O",
+    "correct": "unfolding",
+    "why": "此处结构为\"from breaking or + 动名词\"，与 breaking 并列，需要 -ing 形式。unfolding 意为\"展开\"，蛋白质展开即变性失活，与 breaking（断裂）并列描述蛋白质受损的两种方式。",
+    "traps": "其他候选词中无 -ing 形式可与 breaking 并列。evolved 和 blasted 都已使用，且词性不符。seemingly 是副词，不能并列。",
+    "tip": "or 并列结构需词性一致，unfolding 指蛋白质展开变性。"
+   },
+   {
+    "number": 35,
+    "answer": "E",
+    "correct": "feat",
+    "why": "此处结构为\"accomplish this + 名词\"，需要名词。feat 意为\"壮举、功绩\"，accomplish this feat 表示\"完成这一壮举\"，指人类到达星际这一伟大成就，与全文总结语气吻合。",
+    "traps": "adaptations 已用于第29题。interior 意为\"内部\"，\"accomplish this interior\"语义荒谬。rigors 意为\"严酷\"，与 accomplish 搭配不当。",
+    "tip": "accomplish a/this feat 为高频搭配，意为\"完成壮举\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "tardigrade",
+    "cn": "n. 缓步类动物（水熊虫）"
+   },
+   {
+    "w": "indestructibility",
+    "cn": "n. 坚不可摧，不可毁灭性"
+   },
+   {
+    "w": "catastrophic",
+    "cn": "adj. 灾难性的，毁灭性的"
+   },
+   {
+    "w": "rigors",
+    "cn": "n. 严酷，艰辛（常用复数）"
+   },
+   {
+    "w": "adaptations",
+    "cn": "n. 适应（性），改编（复数）"
+   },
+   {
+    "w": "evolved",
+    "cn": "v. 进化，逐步发展（evolve 的过去式/过去分词）"
+   },
+   {
+    "w": "feat",
+    "cn": "n. 壮举，功绩，技艺"
+   },
+   {
+    "w": "unfolding",
+    "cn": "v./n. 展开，打开（此处指蛋白质展开变性）"
+   },
+   {
+    "w": "seemingly",
+    "cn": "adv. 看似，表面上"
+   },
+   {
+    "w": "membrane",
+    "cn": "n. 细胞膜，薄膜"
+   },
+   {
+    "w": "emulating",
+    "cn": "v. 模仿，效仿（emulate 的现在分词）"
+   },
+   {
+    "w": "vacuum",
+    "cn": "n. 真空，空白"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性（名词/动词/形容词/副词）分类。",
+   "第二步：分析每个空格的句法结构（如 can + v.原形、have + p.p.、the + n. + of），确定所需词性。",
+   "第三步：在同词性候选词中，结合上下文语义和常见搭配（如 rigors of、adaptations to、accomplish a feat）选出最佳答案。",
+   "第四步：注意转折词（but、however）前后的逻辑关系，如 seemingly 与后文转折对应。",
+   "第五步：填完后回读全文，检查语法一致性和语义连贯性，确保每词只用一次。"
+  ]
+ }
+}

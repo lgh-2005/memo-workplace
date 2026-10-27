@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "3cd42931854a__translation__all",
+ "examId": "3cd42931854a",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2018 年 6 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:17:10.190Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 30902,
+ "usage": {
+  "prompt_tokens": 795,
+  "completion_tokens": 2049,
+  "total_tokens": 2844,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 795,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2049,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 795,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "中国私家车普及与新能源汽车发展",
+  "reference": "In the past, owning a private car was a luxury for most Chinese people. Nowadays, private cars can be seen everywhere in China. Cars have become an indispensable part of people's lives. People not only drive to and from work, but also frequently go on trips by car. In some cities, the number of cars has grown so fast that the problems of traffic congestion and insufficient parking spaces have become increasingly severe. The municipal governments of these cities have had to introduce new regulations to limit the number of cars on the road. Due to the worsening air pollution, more and more people are now choosing to purchase new energy vehicles, and the Chinese government has also adopted a series of measures to support the development of new energy vehicles.",
+  "sentences": [
+   {
+    "cn": "过去，拥有一辆私家车对大部分中国人而言是件奢侈的事。",
+    "en": "In the past, owning a private car was a luxury for most Chinese people.",
+    "structure": "动名词短语作主语 + be + 表语结构，'对……而言'用 for 引出对象",
+    "keys": [
+     "私家车 private car",
+     "奢侈的事 a luxury",
+     "大部分中国人 most Chinese people"
+    ]
+   },
+   {
+    "cn": "如今，私家车在中国随处可见。",
+    "en": "Nowadays, private cars can be seen everywhere in China.",
+    "structure": "时间状语 + 主语 + 被动语态，'随处可见'用 can be seen everywhere 表达",
+    "keys": [
+     "如今 nowadays",
+     "随处可见 can be seen everywhere"
+    ]
+   },
+   {
+    "cn": "汽车成了人们生活中不可或缺的一部分，他们不仅开车上下班，还经常驾车出游。",
+    "en": "Cars have become an indispensable part of people's lives. People not only drive to and from work, but also frequently go on trips by car.",
+    "structure": "现在完成时 + not only...but also... 并列结构，'上下班'用 to and from work",
+    "keys": [
+     "不可或缺的 indispensable",
+     "上下班 to and from work/commute",
+     "驾车出游 go on trips by car"
+    ]
+   },
+   {
+    "cn": "有些城市的汽车增长速度过快，以至于交通拥堵和停车位不足的问题日益严峻，这些城市的市政府不得不出台新规，限制上路汽车的数量。",
+    "en": "In some cities, the number of cars has grown so fast that the problems of traffic congestion and insufficient parking spaces have become increasingly severe, and the municipal governments of these cities have had to introduce new regulations to limit the number of cars on the road.",
+    "structure": "so...that... 结果状语从句 + have had to 表'不得不'+ 不定式短语表目的，为全段最长难句",
+    "keys": [
+     "交通拥堵 traffic congestion",
+     "停车位不足 insufficient parking spaces",
+     "日益严峻 increasingly severe",
+     "市政府 municipal government",
+     "出台新规 introduce new regulations",
+     "上路汽车 cars on the road"
+    ]
+   },
+   {
+    "cn": "由于空气污染日益严重，现在越来越多的人选择购买新能源汽车，中国政府也采取了一些措施，支持新能源汽车的发展。",
+    "en": "Due to the worsening air pollution, more and more people are now choosing to purchase new energy vehicles, and the Chinese government has also adopted a series of measures to support the development of new energy vehicles.",
+    "structure": "Due to 引导原因状语 + 并列句（and 连接两个分句），不定式 to support 作目的状语",
+    "keys": [
+     "空气污染 air pollution",
+     "日益严重 worsening/increasingly serious",
+     "新能源汽车 new energy vehicles",
+     "采取措施 adopt/take measures"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "私家车",
+    "en": "private car"
+   },
+   {
+    "cn": "奢侈",
+    "en": "luxury"
+   },
+   {
+    "cn": "不可或缺的",
+    "en": "indispensable"
+   },
+   {
+    "cn": "交通拥堵",
+    "en": "traffic congestion/traffic jam"
+   },
+   {
+    "cn": "停车位",
+    "en": "parking space"
+   },
+   {
+    "cn": "市政府",
+    "en": "municipal government"
+   },
+   {
+    "cn": "出台新规",
+    "en": "introduce new regulations"
+   },
+   {
+    "cn": "新能源汽车",
+    "en": "new energy vehicle (NEV)"
+   },
+   {
+    "cn": "空气污染",
+    "en": "air pollution"
+   },
+   {
+    "cn": "上下班",
+    "en": "commute / drive to and from work"
+   }
+  ],
+  "pitfalls": [
+   "'拥有一辆私家车'作主语时需用动名词 owning，不可写成 own a car is...",
+   "'以至于'应用 so...that... 结构，不能遗漏 that 或误用 such...that",
+   "'停车位不足'应译为 insufficient parking spaces，不可误写为 lack parking lot",
+   "'出台新规'应译为 introduce/issue new regulations，避免用 make rules 这种口语化表达",
+   "'新能源汽车'固定译法为 new energy vehicles，不可译为 new power car"
+  ],
+  "upgrades": [
+   {
+    "plain": "Cars can be seen everywhere.",
+    "better": "Private cars are ubiquitous in China.",
+    "note": "ubiquitous 比 everywhere 更书面、更高级"
+   },
+   {
+    "plain": "people drive to work and drive back home",
+    "better": "people commute by car",
+    "note": "commute 一词精准表达'上下班通勤'，更简洁地道"
+   },
+   {
+    "plain": "because air pollution is more and more serious",
+    "better": "due to the worsening air pollution",
+    "note": "due to + 名词短语比 because 从句更紧凑，worsening 比 more and more serious 更简练"
+   },
+   {
+    "plain": "the government has taken some measures",
+    "better": "the government has adopted a series of measures",
+    "note": "adopt measures 为正式搭配，a series of 比 some 更具体"
+   },
+   {
+    "plain": "there are not enough parking spaces",
+    "better": "insufficient parking spaces have become a pressing issue",
+    "note": "insufficient 和 pressing issue 更符合书面语体，展示高级词汇"
+   }
+  ]
+ }
+}

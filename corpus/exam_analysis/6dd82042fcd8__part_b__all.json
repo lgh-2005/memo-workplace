@@ -1,0 +1,157 @@
+{
+ "schemaVersion": 1,
+ "id": "6dd82042fcd8__part_b__all",
+ "examId": "6dd82042fcd8",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2023 年考研英语真题",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:52:11.379Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 40987,
+ "usage": {
+  "prompt_tokens": 1479,
+  "completion_tokens": 1922,
+  "total_tokens": 3401,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1479,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1922,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1479,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "杰克逊照片推动黄石成为首个国家公园",
+  "type": "段落排序题",
+  "strategy": [
+   "通读所有段落，确定总主题与时间线（背景→探险→拍照→游说→立法）",
+   "寻找段首指示词、时间标记和代词指代，建立前后衔接关系",
+   "利用已给定位置（A在41后、E在42后、H在43后）验证逻辑链是否通顺",
+   "关注专有名词（Jackson, Hayden, Moran）首次出现与后续复现规律"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "B",
+    "why": "B段以\"Two centuries ago\"引出背景：保护自然在当时是新理念，转折点来自\"vivid photographs\"。这是全文总起段，既交代时代背景又点明主题（照片推动国家公园保护），为后续A段介绍具体摄影师Jackson和探险细节做铺垫。",
+    "traps": "C/G/D均涉及探险中或探险后的具体事件，不适合放在最前面做引言；F提到Hayden's expedition，但缺少对该人物的首次引入，放在A之前不合逻辑。",
+    "tip": "B段末尾\"vivid photographs\"与A段介绍摄影师Jackson形成自然衔接。"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "why": "A段末尾介绍了Hayden领导的考察队成员构成（气象学家、动物学家等），F段以\"That's why Hayden's expedition aimed to…\"承接，进一步说明探险目的，并补充介绍画家Moran和摄影师Jackson的任务。F段为后续E段描述旅程正式出发提供了目的与人员准备的铺垫。",
+    "traps": "D段讲拍摄过程，但旅程尚未开始（E段才给出出发日期），此处放D时间线不通；C段讲向国会分发照片，属于探险结束后的事件，顺序过早。",
+    "tip": "F段\"In addition to the entourage of scientists\"呼应A段末尾列举的科学家阵容。"
+   },
+   {
+    "number": 43,
+    "answer": "D",
+    "why": "E段描述1871年6月出发、历时近四个月的行程路线。D段以\"Throughout the trip\"开头，紧接E段所述旅程，详细描写Jackson在途中的拍摄过程与困难，末句\"these vivid photographs were another thing entirely\"为下文H段讨论照片的政治影响埋下伏笔。",
+    "traps": "C段讲Hayden向国会分发照片，发生在探险结束之后，时间上不应紧跟旅途描述；G段讲国会通过法案，更属于故事尾声。",
+    "tip": "D段首句\"Throughout the trip\"直接回指E段描述的整段旅程。"
+   },
+   {
+    "number": 44,
+    "answer": "C",
+    "why": "H段末尾讲Hayden将考察成果整理成报告以说服参议员和众议员保护黄石。C段紧接其后，描述Hayden作为\"effective Washington operator\"的具体游说操作：让Jackson印制大幅照片并连同Moran的画作一起分发给每位国会议员，逻辑上是报告之后的政治行动。",
+    "traps": "G段讲法案通过和总统签署，应在游说成功之后，即C之后才出现；B段是总起段已用于41题。",
+    "tip": "C段\"distributed them…to each member of Congress\"承接H段\"convincing senators and representatives\"。"
+   },
+   {
+    "number": 45,
+    "answer": "G",
+    "why": "C段以公园历史学家的引语结尾，强调照片让人们认识到\"必须保护\"黄石。G段自然承接，讲述该法案在国会获得高票通过，1872年格兰特总统签署法律，黄石成为世界首个国家公园，并以记者引语再次强调Jackson照片的关键作用，为全文画上句号。",
+    "traps": "其余选项均已使用，且G段中\"The bill\"指代C段中游说国会的成果，放在末尾逻辑闭合，无其他段可替代。",
+    "tip": "G段首句\"The bill\"回指C段向国会游说推动的立法，构成因果收束。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "collodion",
+    "cn": "火棉胶（n.），一种早期摄影涂覆材料"
+   },
+   {
+    "w": "traverse",
+    "cn": "穿越，横越（v.）"
+   },
+   {
+    "w": "entourage",
+    "cn": "随行人员，随从（n.）"
+   },
+   {
+    "w": "mineralogist",
+    "cn": "矿物学家（n.）"
+   },
+   {
+    "w": "capitalize on",
+    "cn": "利用，从……中获益（v. 短语）"
+   },
+   {
+    "w": "designation",
+    "cn": "指定，命名（n.）"
+   },
+   {
+    "w": "flora and fauna",
+    "cn": "动植物（n. 短语）"
+   },
+   {
+    "w": "darkroom",
+    "cn": "暗房（n.），用于冲洗底片的房间"
+   },
+   {
+    "w": "astounding",
+    "cn": "令人震惊的，惊人的（adj.）"
+   },
+   {
+    "w": "sailed through",
+    "cn": "顺利通过（v. 短语）"
+   },
+   {
+    "w": "snap",
+    "cn": "抓拍，拍摄（v.）"
+   },
+   {
+    "w": "renowned",
+    "cn": "著名的，有声望的（adj.）"
+   }
+  ]
+ }
+}

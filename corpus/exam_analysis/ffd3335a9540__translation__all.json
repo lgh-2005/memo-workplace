@@ -1,0 +1,175 @@
+{
+ "schemaVersion": 1,
+ "id": "ffd3335a9540__translation__all",
+ "examId": "ffd3335a9540",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2020 年考研英语真题",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:44:22.599Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 64647,
+ "usage": {
+  "prompt_tokens": 1441,
+  "completion_tokens": 4022,
+  "total_tokens": 5463,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1441,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4022,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1441,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "文艺复兴到理性时代的思想变革",
+  "translation": "14世纪佛罗伦萨创造力的爆发被称为文艺复兴，此后，现代世界开始背离其曾经熟知的一切。它不再信奉上帝和罗马天主教会的权威，转而青睐一种更具人文主义色彩的生存方式。文艺复兴的思想在整个欧洲广泛传播，一直延续到17世纪，在那些更具逻辑思维倾向的人群中，艺术和科学蓬勃发展。随着教会的教义和思维方式被文艺复兴所取代，中世纪与现代之间的鸿沟得以弥合，由此通向崭新的、未曾探索过的知识领域。\n\n在文艺复兴时期，尼古拉·哥白尼、约翰内斯·开普勒和伽利略·伽利莱等伟大的思想家展示了科学研究和发现的力量。在他们各自的发现公之于世之前，当时许多思想家一直秉持着更为古老的思维方式，其中包括地心说，即认为地球处于宇宙中心的观点。哥白尼于1543年提出理论，认为我们所知的所有行星并非围绕地球运转，而是围绕太阳运转；这一学说后来得到了伽利略的支持，而伽利略本人也为此付出了沉重代价。在科学界与宗教界高度紧张对峙的时期提出这样的理论，会被定性为异端邪说，而那些继续传播这些\"谎言\"的异端分子将被处以监禁甚至死刑。\n\n尽管教会试图压制这一新生代的逻辑学家和理性主义者，但关于宇宙运行方式的更多解释不断涌现，其速度之快已令人们无法再视而不见。正是凭借这些伟大的发现，一种建立在理性基础上的新哲学应运而生。\n\n教会长期坚守的教条在这场争夺真理的伟大战役中败给了理性主义者和科学家。这一事实本身就体现了17世纪大部分时间席卷欧洲的新思维方式。随着许多人承担起将推理和科学哲学融入世界的使命，文艺复兴宣告结束，一个新时代——理性时代到来了。\n\n17世纪和18世纪是剧变和求知的时代。科学方法、还原论以及对教会理念的质疑受到鼓励，自由、宽容和进步的思想同样如此。这种追求知识、理解已有信息的行为，被拉丁语短语\"sapere aude\"即\"敢于求知\"所概括，这源于伊曼努尔·康德在其论文《回答这个问题：什么是启蒙？》中对该短语的引用。伟大思想家的使命和责任就是勇往直前，探寻真理，而他们相信真理奠基于知识之中。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "with the Church's teachings and ways of thinking eclipsed by the Renaissance, the gap between the Medieval and modern periods had been bridged leading to new and unexplored intellectual territories.",
+    "cn": "随着教会的教义和思维方式被文艺复兴所取代，中世纪与现代之间的鸿沟得以弥合，由此通向崭新的、未曾探索过的知识领域。",
+    "structure": "本句采用 with + 名词 + 过去分词 的独立主格结构作状语，表伴随/原因。主干为 the gap... had been bridged（过去完成时被动语态）。句末 leading to... 为现在分词短语作结果状语，修饰整个主句。",
+    "points": [
+     "with 独立主格结构的正确理解：'with the Church's teachings and ways of thinking eclipsed by the Renaissance' 译为'随着教会的教义和思维方式被文艺复兴所取代'",
+     "eclipsed 的准确翻译：此处意为'使黯然失色、取代'，非天文学中的'食'",
+     "leading to 结果状语的处理：译为'由此通向……'，体现因果逻辑"
+    ],
+    "pitfall": "容易将 with 独立主格结构误译为简单介词短语，忽略其表原因/伴随的功能；eclipsed 若生硬直译为'被遮蔽'则不符合语境，需活译为'取代'或'使黯然失色'。"
+   },
+   {
+    "number": 47,
+    "en": "Before each of their revelations, many thinkers at the time had sustained more ancient ways of thinking, including the geocentric view that the Earth was at the centre of our universe.",
+    "cn": "在他们各自的发现公之于世之前，当时许多思想家一直秉持着更为古老的思维方式，其中包括地心说，即认为地球处于宇宙中心的观点。",
+    "structure": "主干为 many thinkers... had sustained more ancient ways of thinking（过去完成时，强调在 revelations 之前的持续状态）。Before each of their revelations 为时间状语前置。句末 including... 为介词短语作补充说明，其中 that the Earth was... 为同位语从句，解释 geocentric view 的具体内容。",
+    "points": [
+     "sustained 的语境义：此处意为'维持、秉持'，而非常见的'承受、遭受'",
+     "revelations 的翻译：此处指'重大发现/揭示'，而非宗教意义的'启示'",
+     "that 同位语从句的处理：'the geocentric view that...' 译为'地心说，即……的观点'，需体现解释说明关系"
+    ],
+    "pitfall": "sustained 容易误译为'支撑'或'维持生计'，此处应理解为'坚持、秉持（某种观念）'。revelations 也易与宗教含义混淆，需结合上下文译为科学'发现'。"
+   },
+   {
+    "number": 48,
+    "en": "Despite attempts by the Church to suppress this new generation of logicians and rationalists, more explanations for how the universe functioned were being made at a rate that the people could no longer ignore.",
+    "cn": "尽管教会试图压制这一新生代的逻辑学家和理性主义者，但关于宇宙运行方式的更多解释不断涌现，其速度之快已令人们无法再视而不见。",
+    "structure": "Despite + 名词短语 引导让步状语。主干为 more explanations... were being made at a rate（过去进行时被动语态，强调持续发生）。for how the universe functioned 为介词 + 宾语从句，修饰 explanations。that the people could no longer ignore 为定语从句修饰 a rate。",
+    "points": [
+     "Despite 让步关系的准确传达：译为'尽管……但……'，需在主句前补出转折连词'但'",
+     "at a rate that... 定语从句的灵活翻译：不宜逐字硬译为'以一个……的速率'，应调整为'其速度之快……已令人无法忽视'",
+     "were being made 过去进行时被动语态：体现'正在不断被提出'的持续动态过程"
+    ],
+    "pitfall": "at a rate that the people could no longer ignore 若直译为'以人们无法忽视的速度'虽可接受，但更好的处理是拆分翻译，体现程度之深。how the universe functioned 宾语从句需译为'宇宙如何运行'而非漏译。"
+   },
+   {
+    "number": 49,
+    "en": "As many took on the duty of trying to integrate reasoning and scientific philosophies into the world, the Renaissance was over and it was time for a new era—the Age of Reason.",
+    "cn": "随着许多人承担起将推理和科学哲学融入世界的使命，文艺复兴宣告结束，一个新时代——理性时代到来了。",
+    "structure": "As 引导时间/伴随状语从句，从句主干为 many took on the duty of...。主句由 and 连接两个并列分句：the Renaissance was over 与 it was time for a new era。破折号后 the Age of Reason 为 a new era 的同位语。",
+    "points": [
+     "took on the duty of 的准确翻译：'承担起……的使命/职责'，took on 意为'承担'",
+     "integrate... into... 的译法：'将……融入……'，需体现方向性",
+     "the Age of Reason 专有名词的翻译：应译为'理性时代'，属于西方历史常识"
+    ],
+    "pitfall": "many 此处作代词用，指代'许多人'，容易漏译主语。integrate reasoning and scientific philosophies into the world 结构较长，需理清 reasoning 和 scientific philosophies 为并列宾语。"
+   },
+   {
+    "number": 50,
+    "en": "Such actions to seek knowledge and to understand what information we already knew were captured by the Latin phrase 'sapere aude' or 'dare to know',",
+    "cn": "这种追求知识、理解已有信息的行为，被拉丁语短语\"sapere aude\"即\"敢于求知\"所概括，",
+    "structure": "主语为 Such actions，后接两个并列不定式 to seek knowledge 和 to understand what information we already knew 作后置定语。谓语为 were captured by（被动语态）。what information we already knew 为 understand 的宾语从句。",
+    "points": [
+     "主语与谓语的正确切分：主语 Such actions 与谓语 were captured 之间隔有两个长不定式短语作后置定语，需识别真正主干",
+     "what information we already knew 宾语从句的翻译：what 修饰 information，译为'我们已经掌握的信息'",
+     "captured 的语境义：此处意为'概括、捕捉（精髓）'，非'捕获、俘虏'"
+    ],
+    "pitfall": "最大陷阱在于主谓切分：两个并列不定式 to seek... and to understand... 修饰 Such actions，而 were captured 才是谓语，很容易将 knew 误认为主句谓语而导致句意混乱。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "eclipsed",
+    "cn": "v. 使黯然失色；使相形见绌；取代"
+   },
+   {
+    "w": "sustained",
+    "cn": "v. 维持；秉持；支撑（此处为'坚持某种观念'）"
+   },
+   {
+    "w": "revelations",
+    "cn": "n. 揭示；重大发现（此处非宗教意义的'启示'）"
+   },
+   {
+    "w": "geocentric",
+    "cn": "adj. 以地球为中心的（geo- 地球 + centric 中心的）"
+   },
+   {
+    "w": "heresy",
+    "cn": "n. 异端邪说；异教"
+   },
+   {
+    "w": "logicians",
+    "cn": "n. 逻辑学家（logic 的派生词）"
+   },
+   {
+    "w": "rationalists",
+    "cn": "n. 理性主义者（rational 的派生词）"
+   },
+   {
+    "w": "dogma",
+    "cn": "n. 教条；教义；信条"
+   },
+   {
+    "w": "reductionism",
+    "cn": "n. 还原论；简化论"
+   },
+   {
+    "w": "sapere aude",
+    "cn": "拉丁语短语，意为'敢于求知'"
+   }
+  ],
+  "skills": [
+   "独立主格结构（with+n.+done）需判断其语法功能（原因/伴随/条件），灵活处理为状语从句",
+   "被动语态翻译时，中文常转换为主动句或无主语句，使译文更通顺自然",
+   "长主语（含后置定语或从句）需先找准主谓切分点，避免将修饰成分中的动词误认为谓语",
+   "同位语从句（that引导）与定语从句需区分：前者解释抽象名词内容，翻译时可用'即……'引出",
+   "专有名词如 the Age of Reason、geocentric view 需使用约定俗成的译法，体现历史文化常识"
+  ]
+ }
+}

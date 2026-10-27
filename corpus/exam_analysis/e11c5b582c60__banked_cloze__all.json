@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "e11c5b582c60__banked_cloze__all",
+ "examId": "e11c5b582c60",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2015 年 6 月英语六级真题（第 2 套）",
+ "year": 2015,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T04:41:11.124Z",
+ "model": "deepseek-v4-pro",
+ "provider": "deepseek",
+ "elapsedMs": 67961,
+ "usage": {
+  "prompt_tokens": 1147,
+  "completion_tokens": 6481,
+  "total_tokens": 7628,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4421
+  },
+  "prompt_cache_hit_tokens": 0,
+  "prompt_cache_miss_tokens": 1147
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "青少年上网引发的代际冲突",
+  "gist": "文章指出，在过度保护的时代，青少年因行动受限而转向社交媒体，其线上行为折射出他们在现实中无法进行的社交探索。父母将恐惧投射到网络，采取追踪、监控和屏蔽等手段，却未能帮助孩子发展社交、评估风险等关键能力，反而削弱了他们成长所需的学习。",
+  "difficulty": "中等",
+  "translation": "“那些杀不死我们的，会使我们更强大。”但父母无法接受青少年将这一哲理付诸实践。如今，在成年人与追求自由的孩子之间由来已久的斗争中，科技已成为新的战场。\n\n由于被关在室内，无法骑自行车和朋友外出，青少年转而使用社交媒体和手机与同龄人交往。他们在网上做的事情，往往反映出如果他们的行动在直升机式育儿的时代没有受到如此严格的限制，他们可能会做的事情。社交媒体和智能手机应用近年来之所以如此流行，是因为青少年需要一个属于自己的空间。他们想要自由地探索自己的身份和周围的世界。他们不是偷偷溜出去，而是跳进网络。\n\n随着青少年转移到网上，父母将他们的恐惧投射到互联网上，想象着年轻人可能面临的所有潜在危险——从暴力的陌生人到残忍的同龄人，再到可能在谷歌上困扰他们余生的照片或文字。\n\n忧心忡忡的父母没有帮助青少年制定应对公共生活和与他人互动风险的策略，而是专注于跟踪、监控和屏蔽。这些策略无助于青少年发展所需的技能——管理复杂社交情境、评估风险以及在遇到麻烦时寻求帮助。“保护”孩子可能感觉是正确之举，但这削弱了青少年在技术浸透的世界中成年时需要完成的学习。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "J",
+    "correct": "philosophy",
+    "why": "空格前有 this，后接 into practice，构成 put sth into practice 固定搭配，需要名词；this 指代前文尼采名言，philosophy（哲理）符合语境。",
+    "traps": "assess、explore 是动词，constrained 是形容词或过去分词，contains 是动词，均不能充当 this 指代的名词宾语；且含义与“将某物付诸实践”不搭。",
+    "tip": "抓住 this 指代上文引言，结合固定搭配 put...into practice 判断名词。"
+   },
+   {
+    "number": 27,
+    "answer": "I",
+    "correct": "mirrors",
+    "why": "空格位于主语从句 What they do online 之后，需要谓语动词，且主语为单数，要用第三人称单数；mirrors 意为“反映”，说明线上行为折射现实受限下的本来行为。",
+    "traps": "assess、explore 是动词原形，主谓不一致；contains（包含）虽可作谓语但语义不通，constrained 是过去分词或形容词不能独立作谓语。",
+    "tip": "分析句子主干，确定动词单数形式，并根据“反映”语义选 mirrors。"
+   },
+   {
+    "number": 28,
+    "answer": "B",
+    "correct": "constrained",
+    "why": "空格前有 weren't so heavily，需要过去分词或形容词作表语；constrained 意为“受限制的”，与 mobility 搭配，表示行动受到严格限制。",
+    "traps": "assess、contains、explore 均为动词原形，不能用于 be 动词后的表语；且语义与“行动受限”不符。",
+    "tip": "be heavily constrained 是被动语态，注意空格前的 heavily 修饰限制程度。"
+   },
+   {
+    "number": 29,
+    "answer": "D",
+    "correct": "explore",
+    "why": "空格在不定式 to 之后，需要动词原形；explore 意为“探索”，与 identity 和 the world 搭配，表达自由探索身份与世界。",
+    "traps": "assess（评估）语义不符，constrained 是过去分词或形容词，contains 是第三人称单数，均不能用于 to 后作不定式。",
+    "tip": "不定式 to 后跟动词原形，根据宾语 identity/world 选 explore。"
+   },
+   {
+    "number": 30,
+    "answer": "L",
+    "correct": "sneaking",
+    "why": "空格前有 Instead of，需要动名词；sneaking out 是固定短语，意为“偷偷溜出去”，与后文 jump online 形成对比。",
+    "traps": "assess、explore 为动词原形，不能直接用于 of 后；constrained 是过去分词或形容词；contains 是动词单数形式，均不符合搭配。",
+    "tip": "介词 of 后需动名词，且 sneaking out 与 jump online 对应。"
+   },
+   {
+    "number": 31,
+    "answer": "K",
+    "correct": "potential",
+    "why": "空格在 all the 与 dangers 之间，需要形容词；potential 意为“潜在的”，修饰 dangers，表示可能面临的危险。",
+    "traps": "assess、contains、explore 是动词，constrained 是形容词但语义为“受限制的”不修饰 dangers，且搭配不当。",
+    "tip": "形容词修饰名词 dangers，结合“可能面临”选 potential。"
+   },
+   {
+    "number": 32,
+    "answer": "O",
+    "correct": "violent",
+    "why": "空格在 from 与 strangers 之间，需要形容词；violent 意为“暴力的”，修饰 strangers，与 cruel peers 形成并列的危险类别。",
+    "traps": "potential（潜在的）虽为形容词但语义不贴切，constrained（受限制的）不修饰人；动词 assess、contains、explore 不能作定语。",
+    "tip": "注意并列结构 from...to...to...，选能修饰 strangers 的形容词。"
+   },
+   {
+    "number": 33,
+    "answer": "F",
+    "correct": "interacting",
+    "why": "空格前有 of，需要动名词；interacting with others 是固定搭配，意为“与他人互动”，与 risks 搭配表示互动风险。",
+    "traps": "assess、explore 为动词原形，sneaking 是动名词但语义为“溜出去”不与 with others 搭配；constrained 是形容词或过去分词。",
+    "tip": "介词 of 后需动名词，并且看清 interact with 搭配。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "correct": "assess",
+    "why": "空格与 manage、get 并列，在 to 后需要动词原形；assess 意为“评估”，与 risks 搭配，表示评估风险。",
+    "traps": "constrained 是过去分词或形容词，contains 是第三人称单数，sneaking、interacting 是动名词，均不能用于不定式并列。",
+    "tip": "识别并列结构 manage...assess...and get...，to 后跟动词原形。"
+   },
+   {
+    "number": 35,
+    "answer": "N",
+    "correct": "undermines",
+    "why": "空格在 it 之后，需要动词第三人称单数作谓语；undermines 意为“逐渐削弱”，主语 it 指代“保护”孩子，表示削弱学习过程。",
+    "traps": "assess、explore 是动词原形，主谓不一致；mirrors（反映）语义不通；constrained 是形容词或过去分词不能作谓语。",
+    "tip": "主语 it 是单数，谓语需加 -s，根据“削弱”语义选 undermines。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "philosophy",
+    "cn": "n. 哲理；哲学"
+   },
+   {
+    "w": "mirror",
+    "cn": "v. 反映；n. 镜子"
+   },
+   {
+    "w": "constrain",
+    "cn": "v. 限制；约束"
+   },
+   {
+    "w": "explore",
+    "cn": "v. 探索；探究"
+   },
+   {
+    "w": "sneak",
+    "cn": "v. 偷偷地走；溜"
+   },
+   {
+    "w": "potential",
+    "cn": "adj. 潜在的；n. 潜力"
+   },
+   {
+    "w": "violent",
+    "cn": "adj. 暴力的；强烈的"
+   },
+   {
+    "w": "interact",
+    "cn": "v. 互动；交流"
+   },
+   {
+    "w": "assess",
+    "cn": "v. 评估；评价"
+   },
+   {
+    "w": "undermine",
+    "cn": "v. 逐渐削弱；损害"
+   },
+   {
+    "w": "helicopter parenting",
+    "cn": "n. 直升机式育儿（过度保护）"
+   },
+   {
+    "w": "tactic",
+    "cn": "n. 策略；手段"
+   }
+  ],
+  "skills": [
+   "快速浏览全文把握主题，忽略空格初步理解语境。",
+   "分析空格所在句子成分，判断所缺词性（名词/动词/形容词/非谓语等）。",
+   "缩小候选词范围后，根据搭配、固定短语与上下文逻辑选词。",
+   "遇到动词注意时态、主谓一致与非谓语形式，选后带入验证。",
+   "全部填完后通读，检查语义是否连贯、语法是否匹配。"
+  ]
+ }
+}

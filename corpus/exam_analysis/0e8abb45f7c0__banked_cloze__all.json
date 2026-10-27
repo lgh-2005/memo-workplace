@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "0e8abb45f7c0__banked_cloze__all",
+ "examId": "0e8abb45f7c0",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2022 年 12 月英语六级真题（第 1 套）",
+ "year": 2022,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:40:32.447Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67264,
+ "usage": {
+  "prompt_tokens": 1405,
+  "completion_tokens": 4074,
+  "total_tokens": 5479,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1405,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4074,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1405,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国公共安全与精神疾病引发的恐惧",
+  "gist": "作者回忆了两次令人恐惧的经历：一次是在诗歌课上有精神分裂症患者持枪威胁闯入，另一次是一名精神失常的女人突然抱走了作者的女儿。两起事件都涉及未获得药物治疗的精神疾病患者，反映出在美国日常生活中面临的难以置信的风险和安全隐患。",
+  "difficulty": "中等",
+  "translation": "夏天，当我作为驻地访问诗人在外州的一个驻留项目中时，一个愤怒且神志混乱的女人走进了我的课堂说：\"我有三把枪，我想用它们。\"我们所有人都僵住了。当时不清楚她是否带着枪，但我们每个人都知道，在美国教书时，我们已经身处危险之中。\n\n我恐惧得头晕目眩。那个女人后来被确认是一名无法获取药物的精神分裂症患者，她被某种力量制服后被护送离开，然后被送进医院接受观察——这一步骤实际上比我们任何人提起诉讼都对所有人更安全。我的课继续进行，我们谈论了诗歌。但尽管我们在校园里的其余日子都平静地度过了，我仍然心神不宁。我无法摆脱那种感觉：在这个国家，我们始终生活在难以置信的风险之中。\n\n几个月后，危机再次袭来。当我丈夫锁好自行车，准备送我们三岁的女儿去学龄前日间夏令营时，另一个女人走了过来。迅速且毫无明显理由地，她弯下腰，抱起我们的女儿，开始沿街走去。这一切发生得太快太令人困惑，以至于我的女儿几乎没有哭出来。我丈夫猛地加速追上了那个女人，夺回了我们的女儿。那个女人显然精神混乱，退进了公共图书馆。一群通常认识该区域其他流浪者的无家可归者说他们不认识这个女人。这个女人精神状态明显很差，当她被拘留时语无伦次。令人心碎的是，她用别人孩子的名字叫我们的女儿。这一事件的每一个环节都既令人难以忘怀，又令人恐惧。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "F",
+    "correct": "froze",
+    "why": "此处需要一个动词过去式，作 We all 的谓语。听到有人说\"我有三把枪\"，全场的自然反应是\"僵住\"。froze 表示因恐惧而呆住，与上下文 angry, confused, guns 的紧张氛围完全吻合。",
+    "traps": "其他动词如 struck、escorted 语义方向不对：struck 常与 crisis 搭配而非人作主语表示\"僵住\"；escorted 需要宾语，此处为不及物用法不成立。",
+    "tip": "根据恐惧场景判断动词语义，froze 表因恐惧僵住。"
+   },
+   {
+    "number": 27,
+    "answer": "A",
+    "correct": "access",
+    "why": "without access to 是固定搭配，意为\"无法获取……\"。此处说精神分裂症患者未能获取她的药物，access 作名词与 to 搭配，语法与语义均通顺。",
+    "traps": "dedication 虽也是名词，但 without dedication to her medications 意为\"对药物不够投入\"，语义不合逻辑，精神疾病患者的核心问题是无法获得药物而非缺乏投入。",
+    "tip": "固定搭配 access to sth. 意为\"获取……的途径\"。"
+   },
+   {
+    "number": 28,
+    "answer": "E",
+    "correct": "escorted",
+    "why": "escorted away 意为\"被护送离开\"，与前面的 wrestled out 并列，描述该女子被制服后被人护送带走的过程。escorted 为动词过去分词，与 was 构成被动语态。",
+    "traps": "其他选项中无法与 away 搭配形成合理的被动结构；froze away、struck away 均不成立。",
+    "tip": "escort sb. away 为常见搭配，意为护送某人离开。"
+   },
+   {
+    "number": 29,
+    "answer": "K",
+    "correct": "peacefully",
+    "why": "passed peacefully 意为\"平静地度过\"，修饰动词 passed，需要副词。上下文用 despite 转折，说明虽然剩余日子平静度过，作者仍心有余悸，逻辑通顺。",
+    "traps": "barely 虽也是副词，但 passed barely 语序和语义均不自然；且 barely 在第33题更合适，选词填空每词只用一次。",
+    "tip": "副词修饰动词 passed，peacefully 表\"平静地\"。"
+   },
+   {
+    "number": 30,
+    "answer": "G",
+    "correct": "incredible",
+    "why": "at incredible risk 意为\"处于难以置信的风险之中\"。incredible 作形容词修饰名词 risk，强调作者感受到的风险程度之高，与前文的恐惧情绪一致。",
+    "traps": "apparent risk（明显的风险）语义偏弱，无法体现作者被深深震撼的情感；且 apparent 在第32题与 no apparent reason 搭配更为恰当。",
+    "tip": "形容词修饰 risk，incredible 强调风险之大令人难以置信。"
+   },
+   {
+    "number": 31,
+    "answer": "N",
+    "correct": "struck",
+    "why": "crisis struck again 意为\"危机再次来袭\"。struck 是 strike 的过去式，crisis struck 是常见搭配，表示灾难/危机突然降临，与 again 连用引出第二个事件。",
+    "traps": "froze 已用于第26题；且 crisis froze 语义不通，危机不能\"僵住\"。",
+    "tip": "strike 表示\"突然袭击\"，crisis struck 为高频搭配。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "correct": "apparent",
+    "why": "no apparent reason 是固定搭配，意为\"没有明显的理由\"。apparent 作形容词修饰 reason，描述女人毫无缘由地抱走孩子的突然性。",
+    "traps": "incredible reason（难以置信的理由）虽语法可行但语义别扭，\"没有难以置信的理由\"逻辑不清；no apparent reason 是地道英语表达。",
+    "tip": "for no apparent reason 为固定表达，意为\"无缘无故\"。"
+   },
+   {
+    "number": 33,
+    "answer": "C",
+    "correct": "barely",
+    "why": "barely cried 意为\"几乎没有哭\"。barely 是副词修饰动词 cried，前文说事情发生得太快太混乱（so fast and confusing），所以女儿几乎来不及哭，逻辑连贯。",
+    "traps": "peacefully 虽也是副词，但 peacefully cried（平静地哭）与上下文紧张恐惧的氛围不符，且已用于第29题。",
+    "tip": "barely 表\"几乎不\"，与 so fast and confusing 构成因果关系。"
+   },
+   {
+    "number": 34,
+    "answer": "I",
+    "correct": "network",
+    "why": "a network of homeless people 意为\"一群（彼此相识的）无家可归者\"。network 强调这些人之间的社会联系网络，后文说他们\"通常认识该地区其他流浪者\"，正好解释了 network 的含义。",
+    "traps": "其他名词 access、dedication 均无法与 of homeless people 搭配形成合理的集合名词结构。a dedication of homeless people 语义不通。",
+    "tip": "network 此处指人际关系网，a network of 表\"一群相互关联的\"。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "terrifying",
+    "why": "as haunting as it was terrifying 构成\"既……又……\"的平行结构，haunting 和 terrifying 都是形容词，语法对称。terrifying 意为\"令人恐惧的\"，与整个事件的惊悚性质吻合。",
+    "traps": "apparent 虽是形容词，但 as haunting as it was apparent（既令人难忘又明显）语义突兀，无法与 haunting 形成情感上的并列递进关系。",
+    "tip": "as...as...并列结构要求词性对称，terrifying 与 haunting 情感递进。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "froze",
+    "cn": "v. 僵住，呆住（freeze 的过去式）"
+   },
+   {
+    "w": "access",
+    "cn": "n. 获取的途径，使用权（常与 to 搭配）"
+   },
+   {
+    "w": "escorted",
+    "cn": "v. 护送，护卫（escort 的过去分词）"
+   },
+   {
+    "w": "schizophrenic",
+    "cn": "n. 精神分裂症患者；adj. 精神分裂的"
+   },
+   {
+    "w": "rattled",
+    "cn": "adj. 心神不宁的，惊慌失措的"
+   },
+   {
+    "w": "incoherent",
+    "cn": "adj. 语无伦次的，表达不清的"
+   },
+   {
+    "w": "reclaimed",
+    "cn": "v. 取回，夺回（reclaim 的过去式）"
+   },
+   {
+    "w": "haunting",
+    "cn": "adj. 萦绕心头的，令人难以忘怀的"
+   },
+   {
+    "w": "terrifying",
+    "cn": "adj. 极其恐怖的，令人恐惧的"
+   },
+   {
+    "w": "retreated",
+    "cn": "v. 退缩，撤退（retreat 的过去式）"
+   },
+   {
+    "w": "custody",
+    "cn": "n. 拘留，监护"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主题，将15个选项按词性分类（名词、动词、形容词、副词）。",
+   "第二步：判断每个空格所需词性——看空格前后的语法结构（如主语后缺谓语则填动词，名词前缺修饰则填形容词）。",
+   "第三步：在同词性候选词中，结合上下文语义和感情色彩选出最佳答案。",
+   "第四步：优先填入有固定搭配的空格（如 access to、no apparent reason、crisis struck），确保搭配地道。",
+   "第五步：填完后回读全文检查语法与逻辑，确认每个词只使用一次，无重复无遗漏。"
+  ]
+ }
+}

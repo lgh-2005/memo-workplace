@@ -1,0 +1,319 @@
+{
+ "schemaVersion": 1,
+ "id": "ffd3335a9540__use_of_english__all",
+ "examId": "ffd3335a9540",
+ "track": "kaoyan1",
+ "section": "use_of_english",
+ "sectionLabel": "完形填空",
+ "title": "2020 年考研英语真题",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "generatedAt": "2026-10-27T06:42:15.973Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 87783,
+ "usage": {
+  "prompt_tokens": 1762,
+  "completion_tokens": 4819,
+  "total_tokens": 6581,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1762,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4819,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1762,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "英国食品安全局对烤制食品的健康警告",
+  "gist": "文章围绕英国传统的周日烤肉展开，指出食品标准局（FSA）发布关于高温烹饪产生丙烯酰胺的健康警告，要求人们减少烤制食品摄入。作者对此持质疑态度，认为缺乏确凿科学证据，且此类持续的健康恐吓最终会无人理会。",
+  "difficulty": "中等",
+  "translation": "即使家人不像以前那样经常坐在一起吃饭，数百万英国人在这个周末仍然会享用该国伟大传统之一：周日烤肉。在一个寒冷的冬日，几乎没有什么烹饪上的乐趣能与之匹敌。然而，正如我们现在所报道的，食品警察们决心要把这种享受变成又一个有损健康的罪恶快感。\n\n食品标准局（FSA）发布了一项公共警告，提醒人们注意一种名为丙烯酰胺的化合物的风险，这种化合物在某些食物于高温下烹饪时会形成。这意味着人们应该避免把烤土豆烤脆，拒绝薄底披萨，并且只把面包烤到半焦。但支持这种危言耸听的建议的证据在哪里呢？虽然研究表明丙烯酰胺可以导致小鼠神经损伤，但没有确凿的证据表明它会导致人类患癌。\n\n科学家们说这种化合物可能致癌，但没有确凿的科学证据。基于预防原则，可以说听从FSA的建议是明智的。毕竟，在找到证据证明吸烟与癌症之间存在关联之前，吸烟致癌的说法已经流传了多年。\n\n毫无疑问，周日总可以端上一块水煮牛肉，配上一些蒸蔬菜，不要约克郡布丁，也不要红酒。但这样的生活还值得过吗？公平地说，FSA表示它并不是要求人们完全戒掉烤制食品，而是减少一生的摄入量。然而，他们的宣传活动有给人留下咄咄逼人和过度保护印象的风险。持续不断的健康恐吓最终只会落得无人倾听的下场。",
+  "questions": [
+   {
+    "number": 1,
+    "answer": "B",
+    "correct": "On",
+    "why": "英语中表示\"在某一天\"用介词on，\"on a cold winter's day\"是固定搭配，表示\"在一个寒冷的冬日\"。此处强调具体某一天的情景。",
+    "traps": "A) In 用于较长时间段（in winter）或一天中的时段（in the morning），不与a...day直接搭配；C) Till 表示\"直到\"，语义不通；D) Towards 表示\"朝向\"，不符合时间语境。",
+    "tip": "介词与时间名词的固定搭配：on + a...day。"
+   },
+   {
+    "number": 2,
+    "answer": "A",
+    "correct": "match",
+    "why": "match意为\"匹敌、比得上\"，句意为\"几乎没有烹饪乐趣能与之匹敌\"，与前文赞美周日烤肉的语境一致，突出其无可比拟。",
+    "traps": "B) express 意为\"表达\"，与culinary pleasures搭配不当；C) satisfy 意为\"满足\"，主语是pleasures而非人，逻辑不通；D) influence 意为\"影响\"，语义偏离。",
+    "tip": "match it = 与之匹敌，注意代词it指代the Sunday roast。"
+   },
+   {
+    "number": 3,
+    "answer": "D",
+    "correct": "enjoyment",
+    "why": "上文提到Sunday roast是一种culinary pleasure（烹饪乐趣），此处this enjoyment承接前文，指代这种饮食享受，与后文guilty pleasure形成呼应。",
+    "traps": "A) patience 意为\"耐心\"，与饮食话题无关；B) concern 意为\"担忧\"，与语境中的正面评价矛盾；C) surprise 意为\"惊喜\"，未在上文铺垫。",
+    "tip": "代词this指代上文内容，需选与pleasure/roast语义一致的词。"
+   },
+   {
+    "number": 4,
+    "answer": "B",
+    "correct": "guaranteed",
+    "why": "guaranteed to damage意为\"必定损害\"，修饰guilty pleasure，表达食品警察认定这种享受必定有损健康，语气确定而强硬，符合作者讽刺批评的语气。",
+    "traps": "A) intensified 意为\"加剧的\"，不与to do搭配；C) compelled 意为\"被迫的\"，语义不通，pleasure不能被迫损害健康；D) privileged 意为\"有特权的\"，语义不符。",
+    "tip": "guaranteed to do sth. 表示\"必定会做某事\"，常用搭配。"
+   },
+   {
+    "number": 5,
+    "answer": "C",
+    "correct": "issued",
+    "why": "issue a warning是固定搭配，意为\"发布警告\"。FSA作为官方机构发布公共健康警告，用issued最为准确。",
+    "traps": "A) ignored 意为\"忽视\"，与a public warning搭配后语义与上下文矛盾；B) received 意为\"收到\"，主语应为接收方而非发布方；D) cancelled 意为\"取消\"，与后文详述警告内容矛盾。",
+    "tip": "issue a warning/statement/order 是官方发布的常用搭配。"
+   },
+   {
+    "number": 6,
+    "answer": "D",
+    "correct": "at",
+    "why": "at high temperatures是固定搭配，表示\"在高温下\"。介词at用于表示具体的温度、速度等数值点。",
+    "traps": "A) under 虽可表\"在…条件下\"，但与temperatures搭配不如at地道；B) by 表方式手段，不用于温度；C) for 表目的或时间，不与temperatures搭配。",
+    "tip": "at + 温度/速度/价格等数值，是高频固定搭配。"
+   },
+   {
+    "number": 7,
+    "answer": "B",
+    "correct": "avoid",
+    "why": "avoid doing sth.意为\"避免做某事\"，此处指人们应避免把烤土豆烤脆，与FSA的健康建议语境一致。",
+    "traps": "A) forget 意为\"忘记\"，语义不当，不是忘记而是刻意回避；C) finish 意为\"完成\"，逻辑不通；D) regret 意为\"后悔\"，regret doing指后悔已做之事，时态语义均不符。",
+    "tip": "avoid doing sth. 表示\"避免做某事\"，符合建议/劝告语境。"
+   },
+   {
+    "number": 8,
+    "answer": "C",
+    "correct": "partially",
+    "why": "partially toast意为\"只把面包烤到半焦\"，即不完全烤透，与前文avoid crisping、reject thin-crust pizzas的减少高温烹饪建议一脉相承。",
+    "traps": "A) easily 意为\"容易地\"，修饰toast语义不明；B) regularly 意为\"定期地\"，与减少烤制的建议方向相反；D) initially 意为\"最初地\"，语义不通。",
+    "tip": "partially = 部分地，表示程度上的限制，与健康建议的\"适度\"主题吻合。"
+   },
+   {
+    "number": 9,
+    "answer": "C",
+    "correct": "While",
+    "why": "While引导让步状语从句，意为\"虽然……但是……\"，前半句承认丙烯酰胺对小鼠有害，后半句转折指出缺乏对人类致癌的确凿证据，形成对比让步关系。",
+    "traps": "A) If 表条件，语义过弱，不能体现已有研究结果的事实性；B) Since 表原因，逻辑方向相反（因果而非让步）；D) Unless 表\"除非\"，条件关系不符。",
+    "tip": "While表让步，连接两个对立事实，是完形填空高频考点。"
+   },
+   {
+    "number": 10,
+    "answer": "A",
+    "correct": "conclusive",
+    "why": "conclusive evidence意为\"确凿的/决定性的证据\"，与后文no hard scientific proof呼应，强调缺乏能定论的证据。",
+    "traps": "B) external 意为\"外部的\"，修饰evidence语义不当；C) secondary 意为\"次要的\"，与论证方向不符；D) negative 意为\"否定的\"，说\"没有否定证据\"逻辑混乱。",
+    "tip": "conclusive evidence = 确凿证据，学术/新闻语境高频搭配。"
+   },
+   {
+    "number": 11,
+    "answer": "A",
+    "correct": "likely",
+    "why": "be likely to do意为\"可能会……\"，表示科学家认为该化合物可能致癌但缺乏确证，likely表达的是一种可能性而非确定性，与后文but have no hard proof形成对比。",
+    "traps": "B) bound 意为\"一定会\"，语气过强，与but后的\"无确证\"矛盾；C) insufficient 意为\"不足的\"，不与to cause搭配；D) slow 意为\"缓慢的\"，slow to cause语义偏离。",
+    "tip": "likely to do表可能性，与bound to do（必然性）形成语气对比。"
+   },
+   {
+    "number": 12,
+    "answer": "C",
+    "correct": "On the basis of",
+    "why": "On the basis of意为\"基于、根据\"，引出论证依据——预防原则，为后文\"听从FSA建议是明智的\"提供逻辑前提。",
+    "traps": "A) In addition to 意为\"除……之外\"，表补充，不引出论据；B) At the cost of 意为\"以……为代价\"，语义不符；D) In contrast to 意为\"与……相反\"，逻辑方向错误。",
+    "tip": "On the basis of + 依据/原则，引出推理前提。"
+   },
+   {
+    "number": 13,
+    "answer": "D",
+    "correct": "advisable",
+    "why": "it is advisable to do意为\"做……是明智的/可取的\"，表达基于预防原则听从FSA建议是合理的，语气委婉客观。",
+    "traps": "A) interesting 意为\"有趣的\"，语义轻浮，不适合健康建议语境；B) fortunate 意为\"幸运的\"，逻辑不通；C) urgent 意为\"紧急的\"，程度过强，文中并未表达紧迫感。",
+    "tip": "it is advisable to do sth. 表示\"做某事是明智的\"，正式用语。"
+   },
+   {
+    "number": 14,
+    "answer": "B",
+    "correct": "After all",
+    "why": "After all意为\"毕竟\"，用于补充说明前文观点，此处为\"听从FSA建议是明智的\"这一论点提供佐证：毕竟吸烟致癌也是先有传言后有证据。",
+    "traps": "A) As usual 意为\"照常\"，不起论证补充作用；C) By definition 意为\"从定义上讲\"，语义过于学术化且不符语境；D) In particular 意为\"尤其\"，强调具体而非补充理由。",
+    "tip": "After all用于补充论据支持前文论点，表\"毕竟\"。"
+   },
+   {
+    "number": 15,
+    "answer": "A",
+    "correct": "connection",
+    "why": "prove a connection意为\"证明一种关联\"，指证明吸烟与癌症之间的因果联系，connection准确表达两个事物之间的关联性。",
+    "traps": "B) combination 意为\"组合\"，指事物合并而非因果关系；C) resemblance 意为\"相似性\"，语义偏离；D) pattern 意为\"模式\"，过于笼统，不精确表达因果关联。",
+    "tip": "prove a connection between A and B，证明关联，科学论证常用表达。"
+   },
+   {
+    "number": 16,
+    "answer": "D",
+    "correct": "served",
+    "why": "served up意为\"端上、供应（食物）\"，描述周日可以端上水煮牛肉配蒸蔬菜的场景，是餐饮语境的固定短语。",
+    "traps": "A) made up 意为\"编造/组成\"，不用于上菜语境；B) used up 意为\"用光\"，语义不符；C) saved up 意为\"攒钱/储存\"，与供应食物无关。",
+    "tip": "serve up = 端上（饭菜），餐饮场景核心短语。"
+   },
+   {
+    "number": 17,
+    "answer": "C",
+    "correct": "To be fair",
+    "why": "To be fair意为\"公平地说\"，作者在前文质疑FSA后，此处客观公正地补充FSA的立场——并非要求完全戒掉烤制食品，体现行文的平衡性。",
+    "traps": "A) To be brief 意为\"简言之\"，用于总结而非让步补充；B) For instance 意为\"例如\"，用于举例；D) In general 意为\"总体而言\"，用于概括，不表让步公允。",
+    "tip": "To be fair引出对对方观点的公允评价，常见于议论文让步段。"
+   },
+   {
+    "number": 18,
+    "answer": "A",
+    "correct": "entirely",
+    "why": "able entirely意为\"完全地\"，与后文but to reduce their lifetime intake构成\"不是完全戒掉……而是减少摄入\"的对比，entirely强调程度上的彻底。",
+    "traps": "B) gradually 意为\"逐渐地\"，与cut out搭配语义矛盾（cut out本身就是彻底停止）；C) reluctantly 意为\"不情愿地\"，修饰方式不当；D) carefully 意为\"小心地\"，语义偏离。",
+    "tip": "cut out entirely = 完全戒掉，与reduce形成程度对比。"
+   },
+   {
+    "number": 19,
+    "answer": "D",
+    "correct": "campaign",
+    "why": "campaign意为\"宣传运动/活动\"，指FSA发起的公共健康宣传活动，their campaign risks…表示他们的宣传活动有给人过度干预之嫌的风险。",
+    "traps": "A) promise 意为\"承诺\"，与risks coming across as搭配不当；B) competition 意为\"竞争\"，语义无关；C) experience 意为\"经验/经历\"，不符合FSA作为机构发起行动的语境。",
+    "tip": "campaign指有组织的宣传活动，常用于政府/机构的公共行动。"
+   },
+   {
+    "number": 20,
+    "answer": "B",
+    "correct": "end up",
+    "why": "end up意为\"最终落得\"，end up with no one listening表示\"最终无人理会\"，点明持续健康恐吓的反效果，呼应全文批判基调，作为文章结尾总结。",
+    "traps": "A) follow up 意为\"跟进\"，语义不符；C) open up 意为\"打开/开拓\"，逻辑不通；D) pick up 意为\"捡起/好转\"，语义偏离。",
+    "tip": "end up with = 最终以……告终，表示不理想的结果。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "culinary",
+    "cn": "adj. 烹饪的，与烹调有关的"
+   },
+   {
+    "w": "render",
+    "cn": "v. 使变成，使成为"
+   },
+   {
+    "w": "acrylamide",
+    "cn": "n. 丙烯酰胺（一种化学物质）"
+   },
+   {
+    "w": "alarmist",
+    "cn": "adj. 危言耸听的，制造恐慌的"
+   },
+   {
+    "w": "neurological",
+    "cn": "adj. 神经学的，神经系统的"
+   },
+   {
+    "w": "precautionary",
+    "cn": "adj. 预防性的，预防的"
+   },
+   {
+    "w": "intake",
+    "cn": "n. 摄入量，吸收量"
+   },
+   {
+    "w": "pushy",
+    "cn": "adj. 咄咄逼人的，强求的"
+   },
+   {
+    "w": "overprotective",
+    "cn": "adj. 过度保护的"
+   },
+   {
+    "w": "crisp",
+    "cn": "v. 使变脆，烤脆（此处用作动词）"
+   },
+   {
+    "w": "compound",
+    "cn": "n. 化合物，混合物"
+   },
+   {
+    "w": "doubtless",
+    "cn": "adv. 无疑地，肯定地"
+   }
+  ],
+  "logicWords": [
+   {
+    "w": "Yet",
+    "role": "转折连接，从赞美烤肉转向FSA的反对立场"
+   },
+   {
+    "w": "But",
+    "role": "反问转折，质疑FSA建议缺乏证据支持"
+   },
+   {
+    "w": "While",
+    "role": "让步连接，承认动物实验结果但否定对人类的适用性"
+   },
+   {
+    "w": "However",
+    "role": "转折连接，指出FSA宣传的负面效果"
+   },
+   {
+    "w": "After all",
+    "role": "补充论据，用吸烟致癌的先例支持预防原则的合理性"
+   },
+   {
+    "w": "To be fair",
+    "role": "让步公允，客观呈现FSA的完整立场以示平衡"
+   }
+  ]
+ }
+}

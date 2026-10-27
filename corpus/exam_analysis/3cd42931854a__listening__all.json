@@ -1,0 +1,261 @@
+{
+ "schemaVersion": 1,
+ "id": "3cd42931854a__listening__all",
+ "examId": "3cd42931854a",
+ "track": "cet6",
+ "section": "listening",
+ "sectionLabel": "听力理解",
+ "title": "2018 年 6 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "generatedAt": "2026-10-27T05:16:57.610Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59603,
+ "usage": {
+  "prompt_tokens": 2242,
+  "completion_tokens": 2920,
+  "total_tokens": 5162,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 2242,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2920,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 2242,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "notice": "本题库未收录本场听力的录音音频与原文文稿，以下所有分析仅基于题目选项的语言特征与正确答案进行推断，不涉及任何对录音内容的编造或转述。",
+  "overview": "本场听力共 7 段材料、25 题。第 1 段（Q1-4）选项涉及食物种类与制作，话题倾向为西班牙饮食文化；第 2 段（Q5-8）涉及礼品、价格与葡萄酒，话题倾向为选购酒类建议；第 3 段（Q9-11）涉及密码破译与纳瓦霍人，话题倾向为二战军事密码；第 4 段（Q12-15）涉及技术对就业的冲击；第 5 段（Q16-18）涉及古埃及道路与采石场；第 6 段（Q19-21）涉及针灸医疗；第 7 段（Q22-25）涉及家庭关系与性格特征。",
+  "strategy": [
+   "预读选项圈出名词与形容词关键词，快速锁定话题方向",
+   "数字、价格出现时立刻记录，注意干扰项常用相近数字混淆",
+   "含有 all/never/only 等绝对词的选项要格外警惕，常为干扰项",
+   "听到同义替换（paraphrase）时高度警觉，正确答案往往不原词复现",
+   "对话题中出现对比、转折（but/however/actually）后的内容重点关注，常为出题点",
+   "选项中有因果关系（because/so that/in order to）时，注意听录音中的逻辑连接词"
+  ],
+  "segments": [
+   {
+    "pid": 1,
+    "numbers": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sharedTopic": "西班牙饮食：汤品、蔬菜成分与特色猪肉",
+    "optionSignals": "Q1 四个选项均为\"It is a + 名词短语\"结构，问某食物的身份定义；Q2 均为 To + 动词不定式结构，问操作目的；Q3/Q4 均为 It + 谓语，描述食物特征。正确项分别指向西班牙汤、使其更浓稠、以蔬菜为主、特殊品种的猪肉。",
+    "tips": [
+     "Q1 四项并列定义，听到对食物的首次描述即可判断类别，salad/soup/vegetable/spicy food 差异明显",
+     "Q2 目的题关注 so that / in order to / to 等信号词",
+     "Q4 中 does not go stale for two years 含绝对时间，属极端表述，可优先排除"
+    ]
+   },
+   {
+    "pid": 2,
+    "numbers": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "sharedTopic": "葡萄酒选购：价格区间、搭配与意大利红酒",
+    "optionSignals": "Q5 选项都是 They + 动词短语，描述某类商品的总体特征；Q6 四项全是具体价格区间，典型的细节数字题；Q7/Q8 涉及食物搭配与产地描述。正确项分别指向不适合送礼、30-40 美元、百搭多种食物、意大利最著名红酒。",
+    "tips": [
+     "Q6 数字题注意区分录音中可能连续出现的多个价格，抓住与问题直接关联的那个",
+     "Q5 中 do not make decent gifts 含否定，听时留意否定语气或 not/hardly 等词",
+     "Q8 四个选项分别涉及 California/spicy/expensive/Italy，地名与形容词对比鲜明，预读时可快速标记"
+    ]
+   },
+   {
+    "pid": 3,
+    "numbers": [
+     9,
+     10,
+     11
+    ],
+    "sharedTopic": "二战军事密码与纳瓦霍密码员",
+    "optionSignals": "Q9 四个选项均为动名词短语，问的是某活动或主题的核心内容；Q10 涉及 U.S. army / World War II / codes，指向具体历史角色；Q11 为短文主旨题选项，每项概括一个可能的中心思想。",
+    "tips": [
+     "Q11 主旨题正确答案往往是最概括、涵盖面最广的选项；A military code that was never broken 用 never broken 点出核心卖点",
+     "Q10 注意 helped（协助）与 assigned to decode（被指派破译）的主被动差异，二者角色方向不同",
+     "预读时标注 Navajo / Pacific War / World War II 等专有名词，听到即定位"
+    ]
+   },
+   {
+    "pid": 4,
+    "numbers": [
+     12,
+     13,
+     14,
+     15
+    ],
+    "sharedTopic": "科技对就业市场的冲击与个人服务行业",
+    "optionSignals": "Q12 四项均描述未来趋势，含 will be / will revolutionize 等将来时态；Q13 问具体行业领域，四个选项为不同产业名称；Q14 描述某类服务的特点；Q15 为段落主旨题，四项均为名词短语概括核心议题。",
+    "tips": [
+     "Q12 含 All services 的 A 项使用绝对词，通常为干扰；正确答案 B 用 a lot of 表示程度，更符合听力常见表述习惯",
+     "Q15 主旨题关注选项中 disruption / tremendous changes / rising demand 等核心名词的区别，选最贴合全文反复出现话题的选项",
+     "Q13 四个行业名直接对比，听到具体行业名即可作答"
+    ]
+   },
+   {
+    "pid": 5,
+    "numbers": [
+     16,
+     17,
+     18
+    ],
+    "sharedTopic": "古埃及道路、采石场与水运通道",
+    "optionSignals": "Q16 四项都是 It + 过去式，描述某条道路的属性；Q17 四项为考古发现的具体物品；Q18 为 To + 动词不定式，问道路建造的目的。选项中出现 stone pit / waterways / monument sites / Nile 等地理考古词汇。",
+    "tips": [
+     "Q16 中 500 years ago 与 ancient Egypt 在时间上可能矛盾，若涉及古埃及则几千年更合理，可辅助排除 B",
+     "Q17 四项为具体名词短语，听到对应实物描述即可匹配",
+     "Q18 目的题再次出现，关注 for / to / in order to 等目的标志词"
+    ]
+   },
+   {
+    "pid": 6,
+    "numbers": [
+     19,
+     20,
+     21
+    ],
+    "sharedTopic": "针灸治疗：就诊经历与疗效认可",
+    "optionSignals": "Q19 四项均以 Dr. Gong 为主语，描述医生的具体行为，侧重就诊细节；Q20 问就诊动机，四项给出不同原因；Q21 涉及针灸日益流行的原因。正确项分别指向在无痛处扎针、之前治疗无效、越来越多患者寻求该疗法。",
+    "tips": [
+     "Q19 四项行为差异大（no tests / hand-painted sign / no questions / needles where no pain），预读时逐项标记关键动词",
+     "Q20 因果题注意 because / since / that's why 等连接词后的内容",
+     "Q21 中 negative side effects 为医学常见干扰表述，but 正确答案 A 更侧重趋势描述"
+    ]
+   },
+   {
+    "pid": 7,
+    "numbers": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "sharedTopic": "独生子女性格特征与家庭关系",
+    "optionSignals": "Q22 描述一对夫妻/伴侣的关系状态；Q23 以 Neither/They 开头描述共同背景；Q24/Q25 描述某类人群的性格倾向，含 tend to / usually / often 等频率副词。选项中 only children / brothers or sisters / self-assured / well adjusted 为性格心理学词汇。",
+    "tips": [
+     "Q24 与 Q25 均为性格描述题，注意区分问的是哪一类人群（独生子女 vs. 非独生子女）",
+     "Q22 中 on the verge of breaking up 与 compatible despite differences 语义完全对立，可通过排除法二选一",
+     "含 least likely / never / usually 等程度词的选项需听清限定语境"
+    ]
+   }
+  ],
+  "coreVocab": [
+   {
+    "w": "gazpacho",
+    "cn": "西班牙冷汤（一种蔬菜凉汤）"
+   },
+   {
+    "w": "delicacy",
+    "cn": "美食，佳肴"
+   },
+   {
+    "w": "longevity",
+    "cn": "长寿，长命"
+   },
+   {
+    "w": "decode",
+    "cn": "解码，破译"
+   },
+   {
+    "w": "Navajo",
+    "cn": "纳瓦霍（美国原住民族群）"
+   },
+   {
+    "w": "knowledge-intensive",
+    "cn": "知识密集型的"
+   },
+   {
+    "w": "disruption",
+    "cn": "颠覆，扰乱"
+   },
+   {
+    "w": "acupuncture",
+    "cn": "针灸（疗法）"
+   },
+   {
+    "w": "waterway",
+    "cn": "水道，航道"
+   },
+   {
+    "w": "self-assured",
+    "cn": "自信的，有自信心的"
+   },
+   {
+    "w": "compatible",
+    "cn": "兼容的，合得来的"
+   },
+   {
+    "w": "well adjusted",
+    "cn": "适应良好的，心理健康的"
+   },
+   {
+    "w": "conventional",
+    "cn": "传统的，常规的"
+   },
+   {
+    "w": "additive",
+    "cn": "添加剂"
+   }
+  ]
+ }
+}

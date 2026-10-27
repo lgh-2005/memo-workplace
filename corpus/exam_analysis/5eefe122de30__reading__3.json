@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "5eefe122de30__reading__3",
+ "examId": "5eefe122de30",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2012 年考研英语真题",
+ "year": 2012,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:27:04.310Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 65832,
+ "usage": {
+  "prompt_tokens": 1759,
+  "completion_tokens": 4318,
+  "total_tokens": 6077,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1759,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4318,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1759,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "科学发现的可信度演变过程",
+  "gist": "文章论述了科学发现从个人主张到被科学共同体认可的可信度演变过程。科学发现充满不确定性，发现主张需经集体审视和接受才能成为成熟发现。在此过程中存在两个悖论：科学追求新颖却始终面临质疑，而新颖本身又常遭到怀疑。最终，可信度是集体理性协商的产物。",
+  "structure": [
+   "第1段：指出科学发现过程充满模糊性与复杂性",
+   "第2段：提出核心概念——可信度过程需要集体审视",
+   "第3段：展开描述发现主张在科学共同体中的流转过程",
+   "第4段：揭示可信度过程中的两个悖论",
+   "第5段：总结可信度是集体理性协商的结果"
+  ],
+  "difficulty": "中等",
+  "translation": "在科学研究的理想化版本中，关于世界的事实等待着客观的研究者去观察和收集，这些研究者运用科学方法开展工作。但在科学的日常实践中，发现往往遵循一条模糊而复杂的路线。我们力求客观，但无法脱离自身独特人生经历的影响。先前的知识和兴趣会影响我们的体验、我们对体验意义的理解，以及我们随后采取的行动。误读、错误和自欺欺人的机会比比皆是。\n\n因此，发现主张应被视为\"原科学\"。就像新近标定的采矿权一样，它们充满潜力。但需要集体的审视和认可，才能将一项发现主张转化为成熟的发现。这就是可信度过程，通过该过程，个体研究者的\"我、此地、此刻\"变成了共同体的\"任何人、任何地方、任何时间\"。客观知识是目标，而非起点。\n\n一旦一项发现主张成为公开信息，发现者就获得了学术声誉。但与采矿权不同的是，科学共同体掌控着接下来发生的事情。在科学共同体复杂的社会结构中，研究者做出发现；编辑和审稿人通过控制发表过程充当守门人；其他科学家利用新发现为自己的目的服务；最终，公众（包括其他科学家）接收新发现及可能随之而来的技术。当一项发现主张在共同体中逐步传播时，围绕相关科学和技术的共识与竞争性观点之间的互动和碰撞，将个人的发现主张转化为共同体的可信发现。\n\n在整个可信度过程中存在两个悖论。首先，科学研究往往聚焦于现有知识中被认为不完整或不正确的某些方面。重复和证实已知已信之事几乎得不到奖赏。目标是新探索，而非重复研究。毫不意外，新发表的发现主张和看似重要且令人信服的可信发现，将始终面临未来研究者的质疑以及可能的修正或反驳。其次，新颖性本身常常引发怀疑。诺贝尔奖获得者、生理学家阿尔伯特·圣捷尔吉曾将发现描述为\"看到人人都看到的东西，却想到无人想到的东西\"。但是，想到别人未曾想到的东西，并告诉他人他们所遗漏之处，未必能改变他们的看法。有时候，真正新颖的发现主张需要数年才能被接受和赏识。\n\n最终，可信度\"降临\"于发现主张——这一过程与哲学家安妮特·拜尔所描述的\"心灵公地\"相对应。\"我们共同推理、挑战、修正并完善彼此的推理和彼此对理性的理解。\"",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "But in the everyday practice of science, discovery frequently follows an ambiguous and complicated route.",
+    "why": "文章第一段在对比理想化科学研究后，用\"But\"转折指出科学发现在日常实践中\"frequently follows an ambiguous and complicated route\"（常常遵循一条模糊而复杂的路线）。ambiguous对应uncertainty（不确定性），complicated对应complexity（复杂性），A选项是对原文的同义替换。",
+    "traps": "B选项misconception和deceptiveness虽然文中提到misinterpretation和self-deception，但这些是发现过程中可能出现的问题，而非发现过程本身的特征，属于偷换概念。C选项logicality和objectivity是理想化版本的特征，文章用But转折否定了这是实际特征。D选项systematicness和regularity与原文ambiguous和complicated相矛盾，属于反向干扰。",
+    "tip": "注意转折词But后的核心信息，往往是作者真正想表达的观点。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "type": "推断题",
+    "locate": "But it takes collective scrutiny and acceptance to transform a discovery claim into a mature discovery.",
+    "why": "第二段明确指出需要\"collective scrutiny and acceptance\"（集体审视和接受）才能将发现主张转化为成熟发现，且随后强调个体的\"我\"要变为共同体的\"任何人\"。collective（集体的）直接对应shared efforts（共同努力），强调可信度过程的集体属性。",
+    "traps": "A选项strict inspection（严格审查）虽然scrutiny有审查之意，但原文强调的重心是collective（集体性），而非strict（严格性），属于偏离重心。C选项individual wisdom与原文从individual到community的转变方向相悖。D选项persistent innovation在第二段中无任何对应信息，属于无中生有。",
+    "tip": "推断题需抓住段落核心关键词，collective是本段反复强调的核心概念。"
+   },
+   {
+    "number": 33,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "As a discovery claim works its way through the community, the interaction and confrontation between shared and competing beliefs about the science and the technology involved transforms an individual's discovery claim into the community's credible discovery.",
+    "why": "第三段末句总结了整个过程：发现主张在共同体中传播时，通过共识与竞争性观点的互动碰撞，个人的发现主张才转化为共同体的可信发现。这说明发现主张经过科学共同体的检验（examined by the scientific community）后才获得可信度。",
+    "traps": "A选项general public的关注并非使发现可信的关键，文中虽提到public接收发现，但并非可信度的决定因素，属于以偏概全。C选项editors and reviewers只是过程中的一个环节（gatekeepers），并非最终使发现可信的充分条件，属于以偏概全。D选项frequently quoted在原文中没有对应信息，\"suit their own purposes\"不等于引用，属于无中生有。",
+    "tip": "注意区分过程中的单一环节与整体结论，段末总结句往往是答题关键。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "Nobel Laureate and physiologist Albert Szent-Györgyi once described discovery as \"seeing what everybody has seen and thinking what nobody has thought.\"",
+    "why": "圣捷尔吉将发现定义为\"看到人人都看到的东西，却想到无人想到的东西\"。这强调的是面对同样的事物，要有独立的、不同于常人的思考方式，即需要批判性思维（critical mind）。\"thinking what nobody has thought\"正是对critical mind的诠释——不盲从已有认知，敢于独立思考。",
+    "traps": "A选项scientific claims will survive challenges过于绝对，原文说发现总是面临挑战和修正，并未说一定能经受住挑战。B选项discoveries today inspire future research并非圣捷尔吉引言所传达的核心意思，属于过度推断。C选项efforts to make discoveries are justified（做发现的努力是正当的）与引言内容无关，引言强调的是思维方式而非努力的正当性。",
+    "tip": "引言类推断题要紧扣引言本身的含义，不要过度延伸到上下文其他信息。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "type": "主旨题",
+    "locate": "This is the credibility process, through which the individual researcher's me, here, now becomes the community's anyone, anywhere, anytime.",
+    "why": "全文围绕\"可信度过程\"（credibility process）展开：第1段引出科学发现的主观性问题，第2段提出可信度过程的概念，第3段描述发现在共同体中的流转，第4段揭示该过程中的悖论，第5段总结可信度是集体协商的结果。C选项Evolution of Credibility in Doing Science（科学研究中可信度的演变）完整覆盖了这一主线。",
+    "traps": "A选项Novelty as an Engine仅涉及第4段部分内容，以偏概全。B选项Collective Scrutiny只是可信度过程的一个方面，不够全面，且未体现\"演变\"这一核心动态过程。D选项Challenge to Credibility侧重挑战，而文章重心是可信度的建立与演变过程，方向有偏差。",
+    "tip": "主旨题需选涵盖全文核心概念且体现文章发展脉络的选项，避免只涵盖部分段落的选项。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "ambiguous",
+    "cn": "adj. 模糊的，不明确的"
+   },
+   {
+    "w": "abound",
+    "cn": "v. 大量存在，充斥"
+   },
+   {
+    "w": "protoscience",
+    "cn": "n. 原科学（尚未被验证的科学主张）"
+   },
+   {
+    "w": "scrutiny",
+    "cn": "n. 仔细审查，细致检查"
+   },
+   {
+    "w": "credibility",
+    "cn": "n. 可信度，可靠性"
+   },
+   {
+    "w": "paradox",
+    "cn": "n. 悖论，自相矛盾的情况"
+   },
+   {
+    "w": "duplication",
+    "cn": "n. 重复，复制"
+   },
+   {
+    "w": "refutation",
+    "cn": "n. 反驳，驳斥"
+   },
+   {
+    "w": "provoke",
+    "cn": "v. 激起，引发"
+   },
+   {
+    "w": "confrontation",
+    "cn": "n. 对抗，碰撞，冲突"
+   },
+   {
+    "w": "stake",
+    "cn": "v. 标定（权利），主张拥有"
+   },
+   {
+    "w": "gatekeeper",
+    "cn": "n. 守门人，把关者"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Within the complex social structure of the scientific community, researchers make discoveries; editors and reviewers act as gatekeepers by controlling the publication process; other scientists use the new finding to suit their own purposes; and finally, the public (including other scientists) receives the new discovery and possibly accompanying technology.",
+    "cn": "在科学共同体复杂的社会结构中，研究者做出发现；编辑和审稿人通过控制发表过程充当守门人；其他科学家利用新发现为自己的目的服务；最终，公众（包括其他科学家）接收新发现及可能随之而来的技术。",
+    "note": "该句用分号连接四个并列分句，按时间顺序呈现发现主张在科学共同体中的四个流转阶段：发现→把关→利用→接收，构成完整链条。"
+   },
+   {
+    "en": "As a discovery claim works its way through the community, the interaction and confrontation between shared and competing beliefs about the science and the technology involved transforms an individual's discovery claim into the community's credible discovery.",
+    "cn": "当一项发现主张在共同体中逐步传播时，围绕相关科学和技术的共识与竞争性观点之间的互动和碰撞，将个人的发现主张转化为共同体的可信发现。",
+    "note": "As引导时间状语从句，主句主语是the interaction and confrontation（互动与碰撞），between引出两个修饰成分，谓语transforms后接宾语和介词补语，构成'A转化为B'结构。"
+   },
+   {
+    "en": "Not surprisingly, newly published discovery claims and credible discoveries that appear to be important and convincing will always be open to challenge and potential modification or refutation by future researchers.",
+    "cn": "毫不意外，新发表的发现主张和看似重要且令人信服的可信发现，将始终面临未来研究者的质疑以及可能的修正或反驳。",
+    "note": "主语是两个并列名词短语，that引导定语从句修饰discoveries；谓语be open to后接三个并列宾语challenge、modification和refutation，by引出动作执行者。"
+   }
+  ]
+ }
+}

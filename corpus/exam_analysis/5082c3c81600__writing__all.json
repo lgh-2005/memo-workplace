@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "5082c3c81600__writing__all",
+ "examId": "5082c3c81600",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2025 年 6 月英语六级真题（第 3 套）",
+ "year": 2025,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T06:04:10.270Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 41754,
+ "usage": {
+  "prompt_tokens": 741,
+  "completion_tokens": 2631,
+  "total_tokens": 3372,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 741,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2631,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 741,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕\"AI技术日益普及是否会对人类创造力产生负面影响\"展开论述，需以指定句子开头，150-200词。",
+    "outline": [
+     "以题目给定的首句引出话题，表明自己的立场：AI更多是助力而非威胁创造力",
+     "从正反两面展开论证：一方面承认过度依赖AI可能削弱独立思考能力，另一方面强调AI可解放人力、激发灵感，并辅以具体例子",
+     "总结全文，重申观点：关键在于如何合理使用AI，使其成为创造力的放大器"
+    ],
+    "sample": "With the increasing application of AI technology, there is a growing concern that it may negatively impact human creativity. While such worries are understandable, I firmly believe that AI serves more as a catalyst than a threat to human creative endeavors.\n\nAdmittedly, the convenience of AI-generated content might tempt some individuals to rely excessively on technology, thereby weakening their motivation to think independently. For instance, students who habitually use AI tools to complete assignments may gradually lose the ability to generate original ideas.\n\nHowever, AI can also be a powerful enabler of creativity. By automating repetitive and mundane tasks, it frees up valuable time for people to engage in higher-level creative thinking. Moreover, AI provides unprecedented access to vast resources and diverse perspectives, which can inspire novel ideas. Many artists, for example, have embraced AI as a collaborative partner, producing groundbreaking works that blend human imagination with technological precision.\n\nIn conclusion, rather than stifling creativity, AI has the potential to amplify it, provided that we use it wisely and maintain our commitment to original thinking.",
+    "phrases": [
+     {
+      "en": "serve as a catalyst for",
+      "cn": "充当……的催化剂；用于表达某事物促进另一事物发展"
+     },
+     {
+      "en": "rely excessively on",
+      "cn": "过度依赖……；比简单的depend on更具书面色彩"
+     },
+     {
+      "en": "a powerful enabler of",
+      "cn": "……的有力促成者；高级替换promote/help"
+     },
+     {
+      "en": "free up valuable time for",
+      "cn": "腾出宝贵时间用于……；强调释放资源的效果"
+     },
+     {
+      "en": "unprecedented access to",
+      "cn": "前所未有的获取途径；突出程度之深"
+     },
+     {
+      "en": "embrace ... as a collaborative partner",
+      "cn": "将……作为合作伙伴加以接纳；体现积极、开放的态度"
+     },
+     {
+      "en": "blend human imagination with technological precision",
+      "cn": "将人类想象力与技术精确性相融合；对仗工整，适合结尾升华"
+     },
+     {
+      "en": "provided that",
+      "cn": "倘若，只要；比if更正式的条件连接词"
+     },
+     {
+      "en": "stifle creativity",
+      "cn": "扼杀/压制创造力；比reduce creativity更生动有力"
+     },
+     {
+      "en": "maintain one's commitment to",
+      "cn": "坚守对……的投入；强调持续性与主动性"
+     }
+    ],
+    "pitfalls": [
+     "漏抄或改写题目指定的首句，直接被扣格式分",
+     "全文只谈一面（纯支持或纯反对），缺乏辩证性，论证深度不够",
+     "用词重复严重，如反复使用affect/influence，未做同义替换",
+     "字数不足150或超过200，阅卷时会被扣分",
+     "段落之间缺少逻辑衔接词（however/moreover/in conclusion），结构松散"
+    ],
+    "upgrades": [
+     {
+      "plain": "AI has a big influence on creativity.",
+      "better": "AI exerts a profound influence on human creative endeavors.",
+      "note": "用exert搭配profound，加上creative endeavors，措辞更正式、更具学术感"
+     },
+     {
+      "plain": "People can save time by using AI.",
+      "better": "By automating repetitive and mundane tasks, AI frees up valuable time for higher-level creative thinking.",
+      "note": "分词状语前置，信息更丰富，因果逻辑更清晰"
+     },
+     {
+      "plain": "Some artists use AI to make new art.",
+      "better": "Many artists have embraced AI as a collaborative partner, producing groundbreaking works that blend human imagination with technological precision.",
+      "note": "embrace替代use更积极，blend...with...形成对仗，表达更高级"
+     },
+     {
+      "plain": "We should use AI in a good way.",
+      "better": "We should harness AI judiciously to augment rather than replace our innate creative capacity.",
+      "note": "harness judiciously比use in a good way更地道；rather than结构突出对比"
+     },
+     {
+      "plain": "AI can help people think of new ideas.",
+      "better": "AI provides unprecedented access to vast resources and diverse perspectives, which can inspire novel ideas.",
+      "note": "用非限制性定语从句补充说明，层次更丰富、逻辑更严谨"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "AI serves more as a catalyst than a threat to human creative endeavors. （AI更多地充当人类创造性活动的催化剂而非威胁——as...than...对比结构简洁有力）",
+   "By automating repetitive and mundane tasks, it frees up valuable time for people to engage in higher-level creative thinking. （通过自动化重复琐碎的工作，AI为人们腾出时间从事更高层次的创造性思维——分词状语+free up搭配，因果表达高效）",
+   "Many artists have embraced AI as a collaborative partner, producing groundbreaking works that blend human imagination with technological precision. （许多艺术家将AI视为合作伙伴，创造出融合人类想象力与技术精确性的开创性作品——现在分词作结果状语+定语从句，句式丰满）",
+   "Rather than stifling creativity, AI has the potential to amplify it, provided that we use it wisely. （AI非但不会扼杀创造力，反而有潜力放大它，前提是我们明智地使用——rather than前置形成让步对比，provided that引导条件，句型高级）"
+  ]
+ }
+}

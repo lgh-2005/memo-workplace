@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "6dd82042fcd8__reading__4",
+ "examId": "6dd82042fcd8",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年考研英语真题",
+ "year": 2023,
+ "sub": "4",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "generatedAt": "2026-10-27T06:52:22.387Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 60061,
+ "usage": {
+  "prompt_tokens": 1732,
+  "completion_tokens": 4182,
+  "total_tokens": 5914,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1732,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4182,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1732,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "学术引用操纵的现象、手段与应对",
+  "gist": "文章揭示了学术界存在的引用操纵现象：引用卡特尔通过期刊、作者和机构合谋抬高引用数量；掠夺性期刊充当\"奶牛\"为特定论文刷引用；支持服务咨询公司诱导作者添加不当引用。文章还指出引用数据库Scopus具备识别此类不当行为的数据能力，并建议作者拒绝并举报此类操纵行为。",
+  "structure": [
+   "第1段：引出科学论文的评价标准——引用量决定科学家职业发展",
+   "第2段：揭示引用卡特尔与支持服务咨询公司的操纵手段",
+   "第3段：掠夺性期刊充当'奶牛'，为特定论文大量刷引用",
+   "第4-5段：以Scopus为例说明问题的严重性，并提出识别和应对建议"
+  ],
+  "difficulty": "中等",
+  "translation": "科学论文是记录研究进展的载体。每年研究人员在超过三万种期刊上发表数百万篇论文。科学界通过多种方式衡量这些论文的质量，包括期刊的感知质量（以期刊影响因子反映）以及特定论文所积累的引用次数。科学家的职业发展和其所在机构的声誉取决于他们发表论文的数量和声望，但更取决于这些论文所获得的引用量。\n\n引用卡特尔——即期刊、作者和机构合谋抬高引用数量的行为——已存在很长时间。2016年，研究人员开发了一种算法来识别可疑的引用模式，包括不成比例地相互引用的作者群体，以及频繁互引以提高其出版物影响因子的期刊群体。近来，这种掠夺性行为又出现了另一种表现形式：所谓的支持服务咨询公司为个人作者和期刊提供语言及其他编辑支持，有时会建议投稿者在文章中添加若干引用。\n\n电子出版的兴起以及作者寻找论文发表渠道的需求催生了数千种新期刊。掠夺性期刊的诞生紧随其后。这些期刊可以充当\"奶牛\"，一期中的每篇文章都可能引用某篇特定论文或一系列论文。在某些情况下，文章内容与所引用的文献之间完全没有关系。奇怪的是，编辑所服务的那本期刊本身并没有从中获利——它只是在为其他期刊提供引用。这种做法可以使一篇文章在发表当年就获得超过150次引用。\n\n这种引用操纵行为有多隐蔽？举一个例子，一个人——同时扮演作者、编辑和顾问的角色——能够利用至少15种期刊作为引用提供方，为三所大学的五位科学家发表的文章提供引用。这一问题在引用数据库Scopus中十分猖獗，该数据库收录了大量新兴的\"国际\"期刊。事实上，被Scopus收录似乎成了被这种引用操纵盯上的一个标准。\n\nScopus本身拥有检测这种不当行为所需的全部数据。危险信号包括一篇文章在发表第一年内获得大量引用。对于那些希望远离引用卡特尔行为的作者：当编辑、审稿人或支持服务机构要求你添加不适当的参考文献时，不要照办，并将该请求举报给期刊。",
+  "questions": [
+   {
+    "number": 36,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The careers of scientists and the reputation of their institutions depend on the number and prestige of the papers they produce, but even more so on the citations attracted by these papers.",
+    "why": "原文明确指出科学家的职业发展取决于论文数量与声望，但\"更取决于这些论文所吸引的引用量\"（citations attracted by these papers）。\"attracted by these papers\"表示这些论文被他人引用的次数，即B选项\"their papers are cited\"（他们的论文被引用的次数）。关键在于区分\"被引用\"与\"包含引用\"。",
+    "traps": "A项\"their works contain\"偷换概念，将\"被引用次数\"偷换为\"论文中包含的引用数量\"，方向相反；C项\"the prestige of the people they work with\"无中生有，原文说的是论文的声望和机构的声誉，未提及合作者的声望；D项\"the status they have in scientific circles\"属于过度推断，原文未将\"学术界地位\"作为决定因素提出。",
+    "tip": "注意区分\"被引用\"与\"引用了别人\"的方向差异。"
+   },
+   {
+    "number": 37,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "so-called support service consultancies that provide language and other editorial support to individual authors and to journals sometimes advise contributors to add a number of citations to their articles.",
+    "why": "原文直接说明这些支持服务咨询公司\"有时会建议投稿者在文章中添加若干引用\"（advise contributors to add a number of citations），C选项\"ask authors to include extra citations\"是对此的同义改写，add对应include，a number of对应extra。",
+    "traps": "A项\"recommend journals\"属于无中生有，原文未提及推荐期刊；B项\"list citation patterns\"张冠李戴，识别引用模式的是2016年开发的算法，而非咨询公司；D项\"advise contributors to cite each other\"是引用卡特尔中作者群体的行为，与咨询公司的做法混淆，属于偷换主体。",
+    "tip": "精准定位原文动作的发出者和接受者，防止主体混淆。"
+   },
+   {
+    "number": 38,
+    "answer": "A",
+    "type": "词义句意题",
+    "locate": "These journals can act as milk cows where every single article in an issue may cite a specific paper or a series of papers.",
+    "why": "原文将掠夺性期刊比喻为\"奶牛\"，意指该期刊中每篇文章都引用某篇特定论文或系列论文，目的是为这些论文刷引用量。后文补充说\"it is just providing citations to other journals\"，进一步印证其功能是为特定作者/论文提高引用计数。A选项\"boost citation counts for certain authors\"准确概括了这一功能。",
+    "traps": "B项\"help scholars publish articles at low cost\"无中生有，文中未提及发表成本；C项\"instruct first-time contributors in citation\"属于无中生有，文中未涉及指导新手引用；D项\"increase the readership of new journals\"偷换概念，这些期刊增加的是引用量而非读者数量。",
+    "tip": "比喻类题目需结合上下文理解比喻的本体和喻义。"
+   },
+   {
+    "number": 39,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Scopus itself has all the data necessary to detect this malpractice.",
+    "why": "原文第五段明确指出\"Scopus本身拥有检测这种不当行为所需的全部数据\"，这说明Scopus具备识别可疑引用的能力。B选项\"has the capability to identify suspicious citations\"是对原文的同义改写：has all the data necessary to detect对应has the capability to identify，malpractice对应suspicious citations。",
+    "traps": "A项\"fosters competition among citation providers\"属于无中生有，原文未提及Scopus促进竞争；C项\"hinders the growth of international journals\"与原文相悖，原文说Scopus收录了大量国际期刊，并未阻碍其发展；D项\"is established to prevent citation manipulation\"属于过度推断，Scopus是引用数据库，并非为防止操纵而建立。",
+    "tip": "区分\"具备某种能力\"和\"专门为某目的而设立\"的语义差别。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "when an editor, a reviewer, or a support service asks you to add inappropriate references, do not oblige and do report the request to the journal.",
+    "why": "原文最后一句明确建议作者：不要照办（do not oblige），并且要向期刊举报该请求（do report the request to the journal）。\"report the request\"即揭露其不当行为，D选项\"Reveal their misconduct\"是对\"report\"的同义改写。reveal对应report，misconduct对应inappropriate references的请求行为。",
+    "traps": "A项\"Take legal action\"属于无中生有，原文未提及法律手段；B项\"Demand an apology\"同样无中生有，文中未涉及要求道歉；C项\"Seek professional advice\"属于无中生有，原文建议的是直接举报而非寻求专业建议。",
+    "tip": "注意原文中do的强调用法，表示\"一定要\"，凸显举报行为的重要性。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "impact factor",
+    "cn": "影响因子（n. 衡量期刊学术影响力的指标）"
+   },
+   {
+    "w": "citation",
+    "cn": "引用，引证（n.）"
+   },
+   {
+    "w": "cartel",
+    "cn": "卡特尔，垄断联盟（n.）"
+   },
+   {
+    "w": "conspire",
+    "cn": "合谋，密谋（v.）"
+   },
+   {
+    "w": "disproportionately",
+    "cn": "不成比例地（adv.）"
+   },
+   {
+    "w": "predatory",
+    "cn": "掠夺性的，以牟利为目的的（adj.）"
+   },
+   {
+    "w": "insidious",
+    "cn": "隐蔽的，潜伏为害的（adj.）"
+   },
+   {
+    "w": "rampant",
+    "cn": "猖獗的，蔓延的（adj.）"
+   },
+   {
+    "w": "accrue",
+    "cn": "积累，增加（v.）"
+   },
+   {
+    "w": "malpractice",
+    "cn": "不当行为，渎职（n.）"
+   },
+   {
+    "w": "oblige",
+    "cn": "照办，顺从（v.）"
+   },
+   {
+    "w": "steer clear of",
+    "cn": "远离，避开（短语）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The careers of scientists and the reputation of their institutions depend on the number and prestige of the papers they produce, but even more so on the citations attracted by these papers.",
+    "cn": "科学家的职业发展和其所在机构的声誉取决于他们发表论文的数量和声望，但更取决于这些论文所吸引的引用量。",
+    "note": "主句为A and B depend on X, but even more so on Y结构；but even more so构成递进转折，强调引用量比论文本身更重要；attracted by these papers为过去分词短语作后置定语修饰citations。"
+   },
+   {
+    "en": "In 2016, researchers developed an algorithm to recognize suspicious citation patterns, including groups of authors that disproportionately cite one another and groups of journals that cite each other frequently to increase the impact factors of their publications.",
+    "cn": "2016年，研究人员开发了一种算法来识别可疑的引用模式，包括不成比例地相互引用的作者群体，以及频繁互引以提高出版物影响因子的期刊群体。",
+    "note": "主干为researchers developed an algorithm；to recognize为目的状语；including引出两个并列的名词短语作同位语，各自含that引导的定语从句；to increase为目的状语嵌套在第二个定语从句中。"
+   },
+   {
+    "en": "Recently, another expression of this predatory behavior has emerged: so-called support service consultancies that provide language and other editorial support to individual authors and to journals sometimes advise contributors to add a number of citations to their articles.",
+    "cn": "近来，这种掠夺性行为的另一种表现形式出现了：所谓的支持服务咨询公司为个人作者和期刊提供语言及其他编辑支持，有时会建议投稿者在文章中添加若干引用。",
+    "note": "冒号后为对another expression的解释说明；主干为consultancies advise contributors to add citations；that引导的定语从句修饰consultancies，中间插入较长修饰成分，导致主语与谓语距离较远。"
+   }
+  ]
+ }
+}

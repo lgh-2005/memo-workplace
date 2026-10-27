@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "02317b30b42e__reading__2",
+ "examId": "02317b30b42e",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2026 年 6 月英语六级真题（第 2 套）",
+ "year": 2026,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T06:07:51.054Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59296,
+ "usage": {
+  "prompt_tokens": 1837,
+  "completion_tokens": 3867,
+  "total_tokens": 5704,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1837,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3867,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1837,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "青少年智能手机使用引发家长担忧",
+  "gist": "文章围绕青少年使用智能手机和社交媒体带来的问题展开，指出约半数家长担心孩子接触不良内容，大量研究表明过度使用手机导致焦虑、抑郁和孤立感。作者以自身经历表达矛盾心理，并引用演员凯特·温斯莱特的观点佐证家长的恐惧，最后呼吁家长重视现实与虚拟世界的双重威胁。",
+  "structure": [
+   "第1-2段：引出话题，家长担忧青少年接触不良内容",
+   "第3-5段：过度使用手机的危害，焦虑、抑郁与孤立",
+   "第6段：作者亲身经历，表达矛盾复杂感受",
+   "第7段：引用凯特·温斯莱特观点，强化家长恐惧",
+   "第8段：总结呼吁，家长需关注现实与网络双重危险"
+  ],
+  "difficulty": "中等",
+  "translation": "智能手机一直给青少年家长带来挑战。从社交媒体应用到过度的屏幕时间，数字世界与现实世界一样充满威胁。\n\n一项新研究表明，大约一半的青少年家长担心孩子在网上接触到露骨内容。这当然是一个合理的担忧。但有一些方法可以缓解露骨内容的传播，从更改孩子手机的设置到使用Bark等应用程序来监控此类内容。\n\n同样令人担忧的是——如果不是更令人担忧的话——青少年花在社交媒体上的时间可能导致焦虑和抑郁。\n\n过度的屏幕时间有诸多有害影响，原因显而易见。持续的媒体消费抑制了与童年相关的健康活动，如在户外活动、锻炼身体、与朋友和家人交谈。如果它干扰了睡眠，那就更糟了。\n\n大量研究表明，过度使用智能手机会导致青少年产生显著的焦虑、抑郁和孤立感。青少年登录社交媒体或上网试图建立联系，但最终却感到比以往更加孤独和悲伤。没有面部表情的交流不仅产生孤立感和孤独感，还增加了网络欺凌和易受犯罪行为侵害的情况。\n\n虽然我已经禁止了大多数社交媒体，但我仍然在智能手机使用时间问题上与自己的孩子们斗争。很多时候我真想把孩子的智能手机扔进最近的湖里。通讯的便利——比如他们训练后需要人接他们放学回家——常常让我觉得不值得为降低屏幕时间、保持其高效性以及继续鼓励户外及与朋友家人的\"现实生活\"活动而斗争。我理解这种上瘾，也经常告诉他们，我不确定自己如果在青少年时期拥有智能手机会如何应对。作为一个成年人，我也在与过度使用作斗争。\n\n在最近一次为推广一部关于母女应对社交媒体使用的新电影而进行的电视采访中，女演员凯特·温斯莱特表达了她对青少年和社交媒体的看法——她的担忧与当前趋势相吻合。\"我确实觉得社交媒体的世界对家长来说很可怕，因为我们并不真正知道那里有什么，\"她说。\"我们不知道孩子们是如何使用它的。我们不知道它到底对他们产生了什么影响。\"\n\n我不认为美国政府应该监管社交媒体和青少年智能手机的使用，但这对于家长来说是一个需要理解并认真对待的重要话题。不幸的是，现在家长们不仅要担心现实世界的危险，还要担心所有悄悄潜入网络的危险以及它们对青少年及其心理健康的影响。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "A new study shows that about half of parents of teens are worried about their teens being exposed to explicit content online.",
+    "why": "原文明确指出\"约一半的青少年家长担心孩子在网上接触到露骨内容\"（exposed to explicit content online）。C选项中的\"indecent content\"（不雅内容）是对\"explicit content\"（露骨内容）的同义替换，\"feel concerned about\"对应\"are worried about\"，\"viewing\"对应\"being exposed to\"，完全忠实于原文表述。",
+    "traps": "A项\"设置手机过滤不良信息\"是后文提到的解决办法，而非研究发现的家长行为，属于偷换概念；B项\"缓解露骨内容传播\"也是后文建议的应对措施，并非家长的担忧本身，属于张冠李戴；D项\"努力防止孩子过度使用屏幕\"在第二段未被提及，是对后文信息的拼凑，属于无中生有。",
+    "tip": "注意区分\"研究结论\"和\"作者建议\"的不同主体。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Ample research shows too much smartphone use produces significant anxiety, depression, and feelings of isolation in teens. Teens log on to social media or spend time online trying to make connections, but end up feeling more alone and sad than ever.",
+    "why": "原文说大量研究表明过度使用手机导致青少年焦虑、抑郁和孤立感，他们上网试图建立联系，最终却\"感到比以往更加孤独和悲伤\"（feeling more alone and sad）。B选项\"more lonely and low-spirited\"（更孤独、更消沉）是对\"more alone and sad\"以及\"depression\"\"isolation\"的精准同义替换。",
+    "traps": "A项\"有意义活动时间减少\"虽在第四段有所涉及，但那是\"excessive screen time\"的影响，并非第五段\"大量研究\"直接表明的结论，且问题聚焦的是研究结果；C项\"社交互动时间减少\"属于对原文信息的推断而非研究直接结论；D项\"对网络欺凌更警觉\"与原文相反，原文说的是增加了遭受网络欺凌的可能性，而非更加警觉。",
+    "tip": "题干中的关键词\"a large amount of research\"精准定位到\"Ample research\"。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "态度题",
+    "locate": "A lot of the time I wish I could throw my kids' smartphones into the nearest lake. The convenience of communication—when they need a ride home from school after practice, for instance—often feels like it isn't worth the battle",
+    "why": "作者一方面表达了对手机的强烈反感（想把手机扔进湖里、禁止社交媒体），另一方面又承认手机通讯的便利性（接送孩子），同时也承认自己作为成人也面临过度使用的问题。这些矛盾的情感体现了复杂、纠结的心理，即\"mixed feelings\"（复杂的感受）。",
+    "traps": "A项\"deep-seated\"（根深蒂固的）虽然作者确实有强烈情感，但此词未能体现作者态度中的矛盾性和双面性；B项\"instinctive\"（本能的）缺乏原文支撑，作者的担忧是基于理性分析而非纯粹本能；C项\"unique\"（独特的）与原文矛盾，作者明确表示自己的经历与其他家长相似，还引用了他人观点佐证。",
+    "tip": "当文中同时出现正面与负面态度时，优先考虑\"mixed\"。"
+   },
+   {
+    "number": 54,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "I do definitely feel that the world of social media is frightening to parents because we don't really know what's there",
+    "why": "凯特·温斯莱特原话明确说社交媒体世界\"对家长来说很可怕，因为我们并不真正知道那里有什么\"。B选项\"scares parents because they don't really know what is on the screen\"是对原文的近乎逐字对应的同义改写，\"scares\"对应\"frightening\"，\"don't really know what is on the screen\"对应\"don't really know what's there\"。",
+    "traps": "A项\"对确保网络安全的家长构成越来越多挑战\"中的\"increasing\"和\"internet safety\"在原话中均未提及，属于过度推断；C项\"难以驾驭的领域\"混淆了文中\"navigating social media use\"的描述对象，那是对电影内容的描述而非温斯莱特的观点；D项\"充满不确定性，令家长和青少年恐惧\"中\"their teens\"是无中生有，温斯莱特只说了家长感到恐惧。",
+    "tip": "名人引言题需紧扣引号内的原话，不可扩大到引言外的信息。"
+   },
+   {
+    "number": 55,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "Unfortunately, now, parents don't just have to worry about real-world dangers, but all the ones sneaking online and the effects they have on teenagers and their mental health.",
+    "why": "最后一段末句是全段核心：家长\"不仅要担心现实世界的危险，还要担心悄悄潜入网络的危险\"。A选项\"家长必须关注现实与虚拟世界对青少年的双重威胁\"精准概括了\"real-world dangers\"和\"ones sneaking online\"这一对比关系，完整传达了作者的信息。",
+    "traps": "B项\"政府有责任监管社交媒体和青少年手机使用\"与原文相反，作者明确表示\"I don't think the U.S. government should regulate\"，属于反向干扰；C项\"家长应指导青少年使用社交媒体\"虽然合理，但并非该段传达的核心信息，属于过度引申；D项\"网络危险与青少年心理健康问题同样严重\"曲解了原文逻辑，原文说的是网络危险影响心理健康，二者是因果关系而非并列关系。",
+    "tip": "末段主旨题重点看首末句，尤其注意转折词后的核心信息。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "explicit",
+    "cn": "adj. 露骨的，色情的；明确的"
+   },
+   {
+    "w": "alleviate",
+    "cn": "v. 减轻，缓解"
+   },
+   {
+    "w": "detrimental",
+    "cn": "adj. 有害的，不利的"
+   },
+   {
+    "w": "inhibit",
+    "cn": "v. 抑制，阻碍"
+   },
+   {
+    "w": "ample",
+    "cn": "adj. 大量的，充足的"
+   },
+   {
+    "w": "susceptibility",
+    "cn": "n. 易感性，易受影响的特性"
+   },
+   {
+    "w": "navigate",
+    "cn": "v. 驾驭，应对（复杂局面）"
+   },
+   {
+    "w": "regulate",
+    "cn": "v. 监管，管理，调控"
+   },
+   {
+    "w": "sneaking",
+    "cn": "adj./v. 偷偷摸摸的；悄悄潜入"
+   },
+   {
+    "w": "faceless",
+    "cn": "adj. 没有面部表情的，匿名的"
+   },
+   {
+    "w": "vital",
+    "cn": "adj. 至关重要的，关键的"
+   },
+   {
+    "w": "isolation",
+    "cn": "n. 孤立，隔绝"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The convenience of communication—when they need a ride home from school after practice, for instance—often feels like it isn't worth the battle to keep their screen time low and productive, and continue to encourage \"real-life\" activities outside and with friends and family.",
+    "cn": "通讯的便利——比如他们训练后需要人接他们放学回家——常常让人觉得不值得为降低屏幕时间、保持其高效性以及继续鼓励户外及与朋友家人的\"现实生活\"活动而斗争。",
+    "note": "主干为The convenience often feels like it isn't worth the battle；破折号内为插入语举例；to keep...and continue to encourage...是battle的后置定语，说明斗争的内容。"
+   },
+   {
+    "en": "Faceless communication not only produces feelings of isolation and loneliness but increases instances of online bullying and susceptibility to criminal conducts.",
+    "cn": "没有面部表情的交流不仅产生孤立感和孤独感，还增加了网络欺凌和易受犯罪行为侵害的情况。",
+    "note": "not only...but (also)...并列结构连接两个谓语动词produces和increases；susceptibility to为固定搭配，意为\"对……的易感性\"。"
+   },
+   {
+    "en": "I don't think the U.S. government should regulate social media and teen smartphone use, but it is a vital topic for parents to understand and take seriously.",
+    "cn": "我不认为美国政府应该监管社交媒体和青少年智能手机的使用，但这对于家长来说是一个需要理解并认真对待的重要话题。",
+    "note": "but连接两个转折分句；前半句否定政府介入，后半句强调家长责任；for parents to understand and take seriously是不定式作后置定语修饰topic。"
+   }
+  ]
+ }
+}

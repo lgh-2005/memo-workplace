@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "a1fd36502b35__reading__1",
+ "examId": "a1fd36502b35",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2023 年 12 月英语六级真题（第 2 套）",
+ "year": 2023,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:51:44.135Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 72538,
+ "usage": {
+  "prompt_tokens": 1879,
+  "completion_tokens": 3984,
+  "total_tokens": 5863,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1879,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3984,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1879,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "社交媒体戒断与数字鸿沟问题",
+  "gist": "文章以歌手Selena Gomez远离社交媒体改善心理健康为切入点，指出主动放弃互联网在数字化社会中已成为一种特权；进而揭示英国数字鸿沟加剧的现实，强调既应允许人们因心理健康选择断网，也须让数字弱势群体获得上网机会，两端需求同样重要。",
+  "structure": [
+   "第1-2段：以Gomez为例引出社交媒体与心理健康的关系",
+   "第3-5段：论述断网是特权，普通人与名人处境不同",
+   "第6段：揭示英国数字鸿沟加剧及元宇宙推广的讽刺",
+   "第7-8段：总结社交平台利弊并呼吁兼顾断网自由与数字接入公平"
+  ],
+  "difficulty": "中等",
+  "translation": "你能在不使用互联网的情况下度过四年半吗？这正是歌手兼演员赛琳娜·戈麦斯为改善心理健康所做的事。\n\n她曾广泛谈论社交媒体使用与心理健康之间的关系，回忆起2016年成为Instagram粉丝最多的用户时，她觉得自己\"像个上瘾者\"。她说：\"远离社交媒体是我为自己心理健康所做的最好决定。当我放下手机后，那些无谓的仇恨和比较就消失了。\"\n\n然而，彻底抛弃整个互联网是一个更加微妙和复杂的问题。社会日益数字化意味着从缴纳燃气费到规划去朋友家的路线，甚至打一个电话，都依赖于你的网络连接。主动选择不使用互联网变成了一种特权。\n\n戈麦斯的千万富翁身份使她能够将社交媒体中的\"社交\"部分剥离出去，这样她可以继续利用自己巨大的名气，同时将恶意挑衅拒之门外。她仍是Instagram上粉丝第二多的女性，这一事实表明，完全可以通过一个专属团队来维护一个重要的网络形象以推广各种项目，而不必暴露于残酷的评论、仇恨邮件以及强奸或死亡威胁之中。\n\n不言而喻，这与我们这些没有美妆代言和电影要宣传的普通人使用Instagram、TikTok和Twitter的方式有着根本区别。但即便是\"数字戒断\"这个概念，也需要你先拥有一台设备和网络连接，然后才能选择与之断开。\n\n英国的数字鸿沟在过去两年中进一步恶化，导致贫困家庭家中没有宽带连接。数字排斥是对英国更广泛社会平等的重大威胁，因此，当学校里的孩子们还在为完成家庭作业而苦苦挣扎时，却目睹像Facebook这样的公司将元宇宙吹捧为下一个伟大前沿，这让人感到格外恼火。\n\n因此，值得牢记的是，虽然删除所有社交媒体账户无疑会让一些人感觉好得多，但许多其他人也从分享平台所培育的强烈社区归属感中受益。\n\n随着我们逐步迈向Web 3.0，互联网接入的重要性将持续增长，需要更多的资源和举措来为弱势群体提供他们迫切需要的网络连接，以便学习、工作和生活。至关重要的是，那些觉得社交媒体对其心理健康有害的人应被允许断开网络，而那些处于数字排斥中的人首先要能够接入网络。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "Could you get by without using the internet for four and a half years? That's exactly what singer and actress Selena Gomez has done in a bid to improve her mental health.",
+    "why": "原文首段明确指出Gomez在过去四年半不使用互联网，第二段她自述\"Taking a break from social media was the best decision\"，C选项\"refrained from using social media\"（克制自己不用社交媒体）是对原文的准确同义改写。refrain from与take a break from、get by without using均语义一致。",
+    "traps": "A\"心理问题恶化\"与原文相反，她是通过断网改善了心理健康；B\"赢得Instagram最多粉丝\"是2016年的旧事，不是过去四年半发生的事，属于时间偷换；D\"在互联网上竞标成功\"曲解了in a bid to（为了）中bid的含义，属于词义偷换。",
+    "tip": "注意题干时间限定\"过去四年半\"，排除时间不符的选项。"
+   },
+   {
+    "number": 47,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "The increasing digitisation of our society means that everything from paying a gas bill to plotting a route to a friend's house and even making a phone call is at the mercy of your internet connection. Actively opting out of using the internet becomes a matter of privilege.",
+    "why": "原文第三段指出社会日益数字化使得缴费、导航、打电话等日常事务都依赖网络连接，因此主动放弃互联网成为一种特权。C选项\"由于数字化程度不断提高，大多数人几乎无法脱离互联网生存\"准确概括了这一因果关系。",
+    "traps": "A\"微妙而复杂\"是对ditching the web的描述，但并非解释为何断网成为特权的原因，因果关系错位；B\"无法在避免仇恨和比较的同时抛弃网络\"混淆了第二段Gomez的个人体验与第三段的社会分析；D\"严重上瘾而不自知\"在原文中无依据，addict仅用于Gomez的自我描述。",
+    "tip": "because/means/so等因果信号词前后是命题重点，找准因果链。"
+   },
+   {
+    "number": 48,
+    "answer": "A",
+    "type": "推断题",
+    "locate": "The UK's digital divide has worsened over the past two years, leaving poorer families without broadband connections in their homes. Digital exclusion is a major threat to wider societal equality in the UK, so witnessing companies like Facebook championing the metaverse as the next great frontier when school children are struggling to complete their homework feels particularly irritating.",
+    "why": "第六段先指出英国数字鸿沟已加剧、贫困家庭无宽带，然后说Facebook等公司还在推广元宇宙这一更高端的技术前沿。言下之意，元宇宙的推进只会让基本数字接入都无法保障的弱势群体更加落后，数字鸿沟进一步加深，A选项准确捕捉了这一推断逻辑。",
+    "traps": "B\"元宇宙概念虚幻\"是主观引申，原文的irritating并非因为概念不现实，而是因为与贫困家庭现实形成反差；C\"孩子们被拉离现实世界\"偏离原文重点，原文强调的是无法完成作业的基本需求问题；D\"大多数家庭没有稳定宽带\"过度扩大范围，原文说的是poorer families，非大多数家庭。",
+    "tip": "推断题需紧扣上下文语境，理解作者情感态度背后的逻辑原因。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "it's worth bearing in mind that while deleting all social media accounts will undoubtedly make some feel infinitely better, many other people benefit from the strong sense of community that sharing platforms can breed.",
+    "why": "原文第七段用while转折，指出虽然删除社交账户会让一些人好受，但许多人从平台培育的强烈社区感中受益。B选项\"帮助许多人感到与他人有联系\"是对strong sense of community的准确同义转述，community即人与人之间的连接与归属。",
+    "traps": "A\"有助于促进社会平等\"在该段无此表述，社会平等在第六段讨论的是数字鸿沟问题；C\"提供数字戒断的必要设备\"曲解了第五段的内容，且与本题定位段无关；D\"在互联网上创建虚拟社区\"是字面化理解，原文强调的是sense of community（社区归属感），而非创建虚拟社区本身。",
+    "tip": "bearing in mind后的让步转折是考点，重点看转折后的信息。"
+   },
+   {
+    "number": 50,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "It's crucial that people who feel that social media is having a detrimental effect on their mental health are allowed to switch off and for those living in digital exclusion to be able to switch on in the first place.",
+    "why": "原文末句用and连接两个并列要求：一是让受害者能断网（switch off），二是让数字弱势群体首先能接入网络（switch on）。题干问的是\"对数字排斥中的人真正重要的是什么\"，对应后半句\"to be able to switch on\"，即获得互联网接入，A选项完全吻合。",
+    "traps": "B\"进一步迈向Web 3.0\"是对社会趋势的描述，并非对数字弱势群体的建议；C\"获取更多教育资源\"虽与homework困境相关，但原文末段强调的是connectivity（网络连接），不是教育资源本身；D\"开设更多社交媒体账户\"与原文意旨相悖，原文关注的是基本接入权而非账户数量。",
+    "tip": "switch on与switch off形成对比，审题时注意题干限定的是哪一类人群。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "in a bid to",
+    "cn": "为了……（介词短语，表目的）"
+   },
+   {
+    "w": "extensively",
+    "cn": "广泛地（adv.）"
+   },
+   {
+    "w": "ditching",
+    "cn": "抛弃，摆脱（v. ditch的现在分词）"
+   },
+   {
+    "w": "at the mercy of",
+    "cn": "受……支配，任凭……摆布（固定短语）"
+   },
+   {
+    "w": "privilege",
+    "cn": "特权，优待（n.）"
+   },
+   {
+    "w": "leverage",
+    "cn": "利用，发挥（v.）"
+   },
+   {
+    "w": "keeping...at bay",
+    "cn": "使……不能接近，阻止（固定短语）"
+   },
+   {
+    "w": "digital detox",
+    "cn": "数字戒断，数字排毒（n.）"
+   },
+   {
+    "w": "broadband",
+    "cn": "宽带（n.）"
+   },
+   {
+    "w": "championing",
+    "cn": "倡导，拥护（v. champion的现在分词）"
+   },
+   {
+    "w": "underprivileged",
+    "cn": "弱势的，贫困的（adj.）"
+   },
+   {
+    "w": "detrimental",
+    "cn": "有害的，不利的（adj.）"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The increasing digitisation of our society means that everything from paying a gas bill to plotting a route to a friend's house and even making a phone call is at the mercy of your internet connection.",
+    "cn": "社会日益数字化意味着从缴纳燃气费到规划去朋友家的路线，甚至打一个电话，都受制于你的网络连接。",
+    "note": "主干为The increasing digitisation means that...；that引导宾语从句，从句主语everything后接from...to...and even...三个并列短语作后置定语，谓语is at the mercy of。"
+   },
+   {
+    "en": "The fact that she's still the second most-followed woman on Instagram suggests it's entirely possible to maintain a significant web profile to promote various projects—by way of a dedicated team—without being exposed to the cruel comments, hate mail and rape or death threats.",
+    "cn": "她仍是Instagram上粉丝第二多的女性，这一事实表明，完全可以通过一个专属团队来维护一个重要的网络形象以推广各种项目，而不必暴露于残酷的评论、仇恨邮件以及强奸或死亡威胁之中。",
+    "note": "主干为The fact suggests it's possible to maintain...；that引导同位语从句修饰fact；it为形式主语，真正主语是to maintain...；by way of为插入语，without being exposed为伴随否定状语。"
+   },
+   {
+    "en": "It's crucial that people who feel that social media is having a detrimental effect on their mental health are allowed to switch off and for those living in digital exclusion to be able to switch on in the first place.",
+    "cn": "至关重要的是，那些觉得社交媒体对其心理健康有害的人应被允许断开网络，而那些处于数字排斥中的人首先要能够接入网络。",
+    "note": "It为形式主语；that引导主语从句，内含who定语从句修饰people；and连接两个并列结构：前半句people are allowed to switch off，后半句for those...to be able to switch on，形成switch off与switch on的对比。"
+   }
+  ]
+ }
+}

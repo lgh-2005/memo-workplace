@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "54b6791812b2__part_b__all",
+ "examId": "54b6791812b2",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2005 年考研英语真题（旧）",
+ "year": 2005,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:16:43.288Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 46452,
+ "usage": {
+  "prompt_tokens": 1579,
+  "completion_tokens": 2318,
+  "total_tokens": 3897,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1579,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2318,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1579,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "加拿大各省应联合建立全国药品机构以控制医疗成本",
+  "type": "七选五",
+  "strategy": [
+   "通读全文把握主旨：各省应合力建立国家药品机构降低药费",
+   "重点关注空格前后的关键词复现、指代词和逻辑衔接词",
+   "利用因果、转折、并列、递进等逻辑关系判断段落衔接",
+   "将选项代入空格，验证与上下文语义和衔接是否通顺",
+   "用排除法处理干扰项，确认剩余选项无法匹配当前空格"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "E",
+    "why": "前文提到医疗预算飙升，增长最快的部分是pharmaceutical costs。E选项紧接这一话题，用Canadian Institute for Health Information的数据具体说明处方药费用自1997年以来以两倍于整体医疗开支的速度增长，并从三方面解释原因（替代疗法、新药更贵、价格上涨），为下文'What to do?'的提问提供了充分的问题铺垫。",
+    "traps": "D虽也谈医疗成本增长，但内容过于笼统，缺乏对pharmaceutical costs的具体展开，与前文'药费是增长最快部分'的聚焦点不匹配，也无法为下文'What to do?'提供具体的药费问题背景。",
+    "tip": "关键词pharmaceutical costs与prescription drug costs形成复现衔接"
+   },
+   {
+    "number": 42,
+    "answer": "C",
+    "why": "前文提到Romanow commission和Kirby committee建议创建a national drug agency。C选项紧接提问'What does national mean?'并回答Romanow和Kirby推荐的是federal-provincial body。下文'But national doesn't have to mean that'中的that明确回指C中所述的federal-provincial body，形成完美的指代衔接。",
+    "traps": "G讨论的是制药公司的反应，与此处讨论'national'含义的语境不符；B引用Kirby报告，但与下文'But national doesn't have to mean that'的转折逻辑无法衔接。",
+    "tip": "下文But 'national' doesn't have to mean that中的that回指C中的federal-provincial body"
+   },
+   {
+    "number": 43,
+    "answer": "G",
+    "why": "前文论述了国家机构代表3100万人谈判可获得更好药价的经济学逻辑。G选项从制药公司角度进行回应：它们喜欢分散的买家，可以游说、威胁转移工作岗位、利用各省相互施压。这构成了'正方优势→反方反应'的自然逻辑推进。同时G中的divided buyers与前文各省分别谈判的情形形成对照。",
+    "traps": "A谈魁北克抵制的意识形态原因，但下文'A small step has been taken'转向讨论已采取的措施，与A的内容衔接不够紧密；F适合放在更靠后的总结位置。",
+    "tip": "G中divided buyers与前文各省分别谈判的场景形成关键词对照"
+   },
+   {
+    "number": 44,
+    "answer": "F",
+    "why": "前文指出部分省长对联邦-省级合作持怀疑态度，只想让Ottawa拨款且不附加条件，导致national list停滞不前，药费持续攀升。F选项以So引出结论：既然各省想掌管医疗事务，就应证明自己有能力管好，从建立interprovincial health list做起，消除重复、节省行政成本、避免被各个击破、争取更好药价。逻辑上是对前文问题的直接回应。",
+    "traps": "A虽涉及魁北克抵制问题，但前文已提及Alberta等省，A仅聚焦魁北克过于狭窄；B引用Kirby报告的内容应与Romanow报告引用并列出现，放在此处缺乏语境支撑。",
+    "tip": "F以So总结前文各省不合作的问题，提出interprovincial解决方案"
+   },
+   {
+    "number": 45,
+    "answer": "B",
+    "why": "前文引用了Romanow报告关于national drug agency可帮助政府约束药价的论述。B选项以Or they could read Mr. Kirby's report开头，与前文Perhaps they should read what he (Romanow) had to say构成并列结构，补充引用Kirby报告中关于大规模购买力可争取最低药价的观点，两份权威报告相互印证，增强论证力度。下文So when the premiers gather作为全文总结自然衔接。",
+    "traps": "A讨论魁北克具体情况，与前后文引用权威报告论证的语境不符；G讨论制药公司反应，与此处引用报告的并列结构无法匹配。",
+    "tip": "B中Or they could read Mr. Kirby's report与前文read what he (Romanow) had to say形成并列"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "premiers",
+    "cn": "省长，总理（n.）"
+   },
+   {
+    "w": "pharmaceutical",
+    "cn": "制药的，药物的（adj.）"
+   },
+   {
+    "w": "soaring",
+    "cn": "猛增的，飙升的（adj.）"
+   },
+   {
+    "w": "bureaucracy",
+    "cn": "官僚体制，繁文缛节（n.）"
+   },
+   {
+    "w": "interprovincial",
+    "cn": "省际的（adj.）"
+   },
+   {
+    "w": "pool resources",
+    "cn": "集中资源（动词短语）"
+   },
+   {
+    "w": "fork over",
+    "cn": "（不情愿地）交出，支付（动词短语）"
+   },
+   {
+    "w": "strings attached",
+    "cn": "附加条件（名词短语）"
+   },
+   {
+    "w": "constrain",
+    "cn": "限制，约束（v.）"
+   },
+   {
+    "w": "skyrocket",
+    "cn": "猛涨，飞涨（v.）"
+   },
+   {
+    "w": "duplication",
+    "cn": "重复，重叠（n.）"
+   },
+   {
+    "w": "played off against",
+    "cn": "被挑拨对立，被利用相互对抗（动词短语）"
+   },
+   {
+    "w": "get cracking",
+    "cn": "赶紧开始行动（动词短语）"
+   },
+   {
+    "w": "jurisdiction",
+    "cn": "管辖权，管辖范围（n.）"
+   },
+   {
+    "w": "provincialist",
+    "cn": "地方主义的（adj.）"
+   },
+   {
+    "w": "lobby",
+    "cn": "游说（v.）"
+   },
+   {
+    "w": "stark",
+    "cn": "严峻的，明显的（adj.）"
+   }
+  ]
+ }
+}

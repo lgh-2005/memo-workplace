@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "e8fd5058f708__translation__all",
+ "examId": "e8fd5058f708",
+ "track": "kaoyan1",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2006 年考研英语真题（旧）",
+ "year": 2006,
+ "sub": "all",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T06:18:42.662Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 74511,
+ "usage": {
+  "prompt_tokens": 1377,
+  "completion_tokens": 5454,
+  "total_tokens": 6831,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1377,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5454,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1377,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "美国知识分子的定义与角色",
+  "translation": "美国知识分子果真被其社会所排斥和忽视吗？我将提出，事实并非如此。布吕克贝热神父道出了部分真相，他注意到正是知识分子自己抛弃了美国。但他们所做的还不止于此。他们已经对知识分子的角色感到不满。变得反智的是他们，而不是美国。\n\n首先，我们的研究对象有待界定。什么是知识分子？我将把知识分子定义为这样一种人：他选择把以苏格拉底的方式思考道德问题的活动作为自己人生的首要职责和乐趣。他有意识地、清晰地、坦率地探讨这些问题，先是提出事实层面的问题，然后提出道德层面的问题，最后根据他所获得的事实和道德信息提出看似合适的行动建议。他的职能类似于法官的职能，法官必须承担这样的义务：用尽可能明了的方式来揭示使其做出裁决的推理过程。\n\n这一定义排除了许多通常被称为知识分子的人——例如普通的科学家。我之所以将他排除在外，是因为尽管他的成就可能有助于解决道德问题，但他被赋予的任务只是研究那些问题的事实层面。与其他人一样，他在日常工作中也会遇到道德问题——他不应该伪造实验、捏造证据或篡改报告。但他的首要任务并不是思考支配自己行为的道德准则，正如人们不会期望商人把精力投入到探索商业行为准则中去一样。在他醒着的大部分时间里，他会认为自己的行为准则是理所当然的，就像商人对待自己的伦理准则那样。\n\n这一定义也排除了大多数教师，尽管教学历来是许多知识分子谋生的手段。他们可能教得很好，而且薪酬绰绰有余，但他们中的大多数人很少或根本不对涉及道德判断的人类问题进行独立思考。这一描述甚至适用于大多数杰出学者。精通人类知识的某一分支是一回事；如爱默生所说，生活在\"公众的和卓越的思想\"中则完全是另一回事。",
+  "questions": [
+   {
+    "number": 46,
+    "en": "I shall define him as an individual who has elected as his primary duty and pleasure in life the activity of thinking in a Socratic(苏格拉底) way about moral problems.",
+    "cn": "我将把知识分子定义为这样一种人：他选择把以苏格拉底的方式思考道德问题的活动作为自己人生的首要职责和乐趣。",
+    "structure": "主干为 I shall define him as an individual；who 引导定语从句修饰 individual；从句中 elect A as B 结构因宾语 A（the activity of thinking...about moral problems）过长而后置，B（his primary duty and pleasure in life）作宾补前置于宾语之前。",
+    "points": [
+     "elect...as... 结构的识别与翻译：将……选作/当作……",
+     "宾语后置的还原：真正宾语 the activity of thinking...about moral problems 须准确归位",
+     "in a Socratic way about moral problems 介词短语修饰关系的正确处理"
+    ],
+    "pitfall": "最易误译之处在于 elected as his primary duty and pleasure in life the activity 的宾语后置结构，考生容易误把 as his primary duty and pleasure in life 当作状语而非宾补，导致句意混乱。"
+   },
+   {
+    "number": 47,
+    "en": "His function is analogous to that of a judge, who must accept the obligation of revealing in as obvious a manner as possible the course of reasoning which led him to his decision.",
+    "cn": "他的职能类似于法官的职能，法官必须承担这样的义务：用尽可能明了的方式来揭示使其做出裁决的推理过程。",
+    "structure": "主干为 His function is analogous to that of a judge；that 指代 function；who 引导非限制性定语从句修饰 judge；从句中 revealing 的宾语 the course of reasoning 因方式状语 in as obvious a manner as possible 的插入而后置；which 引导定语从句修饰 the course of reasoning。",
+    "points": [
+     "analogous to that of a judge 中 that 的指代还原（指代 function）",
+     "in as obvious a manner as possible 这一 as...as 结构的准确翻译：尽可能明了的方式",
+     "which led him to his decision 定语从句的翻译处理"
+    ],
+    "pitfall": "in as obvious a manner as possible 插在 revealing 与其宾语 the course of reasoning 之间，容易造成句子切分错误，考生可能将 the course of reasoning 误认为新的主语。"
+   },
+   {
+    "number": 48,
+    "en": "I have excluded him because, while his accomplishments may contribute to the solution of moral problems, he has not been charged with the task of approaching any but the factual aspects of those problems.",
+    "cn": "我之所以将他排除在外，是因为尽管他的成就可能有助于解决道德问题，但他被赋予的任务只是研究那些问题的事实层面。",
+    "structure": "主干为 I have excluded him；because 引导原因状语从句，其中 while 引导让步状语从句表转折；主句为 he has not been charged with the task of approaching any but the factual aspects；any but 表示\"除……之外的任何\"，与 not 连用意为\"只限于\"。",
+    "points": [
+     "while 引导让步从句的识别与翻译：尽管……",
+     "be charged with 的准确理解：被赋予/被委以",
+     "any but the factual aspects 双重限定的正确理解：not...any but = only，即\"只涉及事实层面\""
+    ],
+    "pitfall": "any but the factual aspects 是全句最大难点，not...any but... 构成双重否定表肯定，意为\"只涉及事实层面\"；考生极易将 but 误读为转折连词而非介词\"除了\"，导致语义完全偏离。"
+   },
+   {
+    "number": 49,
+    "en": "But his primary task is not to think about the moral code which governs his activity, any more than a businessman is expected to dedicate his energies to an exploration of rules of conduct in business.",
+    "cn": "但他的首要任务并不是思考支配自己行为的道德准则，正如人们不会期望商人把精力投入到探索商业行为准则中去一样。",
+    "structure": "主干为 his primary task is not to think about the moral code；which 引导定语从句修饰 moral code；not...any more than... 为否定类比结构，意为\"正如……不……，……也不……\"；than 后引出类比对象 a businessman is expected to dedicate...。",
+    "points": [
+     "not...any more than... 否定类比结构的准确翻译：正如……不会……，……也不会……",
+     "which governs his activity 定语从句的处理：支配他行为的",
+     "dedicate his energies to an exploration of 长介词短语的流畅翻译"
+    ],
+    "pitfall": "not...any more than... 是考研翻译经典考点，考生容易将 any more than 误译为\"比……更多\"，正确理解应为\"同样不\"，即前后两件事同样不成立。"
+   },
+   {
+    "number": 50,
+    "en": "They may teach very well, and more than earn their salaries, but most of them make little or no independent reflections on human problems which involve moral judgment.",
+    "cn": "他们可能教得很好，而且不仅仅是挣到了薪水（即薪酬绰绰有余），但他们中的大多数人很少或根本不对涉及道德判断的人类问题进行独立思考。",
+    "structure": "句子由 but 连接两个转折分句。前半句含并列结构 teach very well 和 more than earn their salaries；more than earn 意为\"不仅仅是挣到/绰绰有余地挣到\"；后半句主干为 most of them make little or no independent reflections on human problems；which 引导定语从句修饰 human problems。",
+    "points": [
+     "more than earn their salaries 的准确理解：不仅仅是挣到薪水，即所得报酬物有所值",
+     "little or no 的译法：很少或根本没有",
+     "which involve moral judgment 定语从句的处理：涉及道德判断的"
+    ],
+    "pitfall": "more than earn their salaries 容易被误译为\"挣的比工资多\"，实际意为\"他们的贡献远不止其薪酬所值\"，即教学贡献超出了薪酬回报，强调物有所值。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "intellectual",
+    "cn": "n. 知识分子；adj. 智力的，知识的"
+   },
+   {
+    "w": "dissatisfied",
+    "cn": "adj. 不满的，不满意的"
+   },
+   {
+    "w": "anti-intellectual",
+    "cn": "adj. 反智的，反知识分子的"
+   },
+   {
+    "w": "plead for",
+    "cn": "v. 恳求，请求；（此处）需要"
+   },
+   {
+    "w": "Socratic",
+    "cn": "adj. 苏格拉底式的（指通过提问引导思考的方式）"
+   },
+   {
+    "w": "articulately",
+    "cn": "adv. 清晰明了地，善于表达地"
+   },
+   {
+    "w": "analogous",
+    "cn": "adj. 类似的，可比拟的"
+   },
+   {
+    "w": "obligation",
+    "cn": "n. 义务，责任"
+   },
+   {
+    "w": "accomplishment",
+    "cn": "n. 成就，成绩"
+   },
+   {
+    "w": "be charged with",
+    "cn": "v. 被赋予，被委以（任务）"
+   },
+   {
+    "w": "moral code",
+    "cn": "n. 道德准则，道德规范"
+   },
+   {
+    "w": "dedicate",
+    "cn": "v. 奉献，投入（精力、时间等）"
+   },
+   {
+    "w": "reflection",
+    "cn": "n. 思考，反思，深思"
+   },
+   {
+    "w": "eminent",
+    "cn": "adj. 杰出的，著名的，卓越的"
+   },
+   {
+    "w": "illustrious",
+    "cn": "adj. 杰出的，辉煌的，著名的"
+   }
+  ],
+  "skills": [
+   "识别宾语后置（heavy NP shift）结构，将后移的宾语准确还原到谓语之后翻译",
+   "掌握 not...any more than... 否定类比句型，译为\"正如……不……，……也不……\"",
+   "理解 any but 双重限定结构，结合 not 形成双重否定表肯定，译为\"只有/只限于\"",
+   "非限制性定语从句宜拆译为独立分句，避免译文冗长嵌套",
+   "注意插入性状语（如 in as obvious a manner as possible）对主干的分隔，翻译时须先归位再组织语序"
+  ]
+ }
+}

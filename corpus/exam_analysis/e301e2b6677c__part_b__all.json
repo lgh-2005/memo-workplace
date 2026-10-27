@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "e301e2b6677c__part_b__all",
+ "examId": "e301e2b6677c",
+ "track": "kaoyan1",
+ "section": "part_b",
+ "sectionLabel": "新题型",
+ "title": "2014 年考研英语真题",
+ "year": 2014,
+ "sub": "all",
+ "questionNumbers": [
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:29:57.455Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 39487,
+ "usage": {
+  "prompt_tokens": 1464,
+  "completion_tokens": 2132,
+  "total_tokens": 3596,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1464,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2132,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1464,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "考古遗址的发现方法与勘测技术",
+  "type": "段落排序题",
+  "strategy": [
+   "先通读各段首尾句，识别总论段（提出问题/总述）作为起始段",
+   "利用逻辑连接词（however, in another case）和指代词确定前后衔接",
+   "注意并列/递进关系：空中勘测→地面勘测→具体案例→又一案例",
+   "关注关键词复现（survey, aerial, ground）判断段落归属",
+   "确定唯一开头段和唯一结尾段后，中间段按逻辑链排列"
+  ],
+  "questions": [
+   {
+    "number": 41,
+    "answer": "C",
+    "why": "C段以设问句\"How do archaeologists know where to find what they are looking for\"开篇，引出全文主题——考古遗址的发现方法，是典型的总论开头段。后接A段讨论部分遗址\"easily observable\"但多数需搜索或偶然发现，与C段提出的问题形成自然过渡。",
+    "traps": "D段和G段虽也涉及survey，但属于具体展开而非提问引入；E段侧重现代技术，不适合做全文首段。",
+    "tip": "设问句\"How do archaeologists know…\"标志全文主题引入"
+   },
+   {
+    "number": 42,
+    "answer": "F",
+    "why": "A段末尾举了偶然发现遗址的例子（Olduvai Gorge蝴蝶猎人、墨西哥城地铁），F段首句\"Most archaeological sites, however, are discovered by archaeologists who have set out to look for them\"中however构成转折，将话题从偶然发现转向主动搜寻，与A段形成对比衔接。",
+    "traps": "E段虽也讲搜索方法，但E段强调的是systematic survey和high-technology，与A段偶然发现之间缺少过渡；B段以\"In another case\"开头，需前文已有一个案例铺垫。",
+    "tip": "however转折词与A段\"discovered by accident\"形成对比"
+   },
+   {
+    "number": 43,
+    "answer": "G",
+    "why": "E段末句提到\"Aerial surveys locate general areas of interest or larger buried features\"，G段首句\"Ground surveys allow archaeologists to pinpoint the places where digs will be successful\"以地面勘测与空中勘测构成并列递进。aerial→ground的逻辑顺序自然流畅，且G段详述地面勘测的具体方式（walking、pottery fragments、ground radar等）。",
+    "traps": "D段虽以\"Surveys can cover…\"开头，但它举的是具体案例（Copán），应在G段一般性论述之后；B段\"In another case\"需紧跟某个案例段。",
+    "tip": "Ground surveys与E段Aerial surveys形成对应并列"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "why": "G段从一般层面论述了地面勘测的方法和工具，D段首句\"Surveys can cover a single large settlement or entire landscapes\"承接G段内容，进一步说明勘测的覆盖范围，并用Copán这一具体案例加以佐证。\"In one case\"表明这是系列案例中的第一个。",
+    "traps": "B段\"In another case\"必须排在一个已有案例之后，因此不能在D之前出现；F段已在42位置使用。",
+    "tip": "\"In one case\"标志第一个具体案例，紧接一般性论述"
+   },
+   {
+    "number": 45,
+    "answer": "B",
+    "why": "B段以\"In another case\"开头，明确表示这是与D段Copán案例并列的又一个案例（Teotihuacán），两段共同作为勘测方法的实例论证。D段讲玛雅城市Copán的调查结果，B段讲墨西哥Teotihuacán的系统测绘，逻辑连贯，形成并列收束全文。",
+    "traps": "其余选项（A/C/E/F/G）均已使用或不含\"in another case\"这类并列连接语，无法衔接D段。",
+    "tip": "\"In another case\"直接呼应D段\"In one case\"构成并列"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "megaliths",
+    "cn": "巨石建筑（n.）"
+   },
+   {
+    "w": "hominid",
+    "cn": "原始人类；人科动物（n.）"
+   },
+   {
+    "w": "artifacts",
+    "cn": "人工制品；文物（n.）"
+   },
+   {
+    "w": "excavation",
+    "cn": "挖掘；发掘（n.）"
+   },
+   {
+    "w": "terrain",
+    "cn": "地形；地带（n.）"
+   },
+   {
+    "w": "ornate",
+    "cn": "华丽的；装饰精美的（adj.）"
+   },
+   {
+    "w": "ceremonial",
+    "cn": "礼仪的；仪式的（adj.）"
+   },
+   {
+    "w": "rubble",
+    "cn": "碎石；瓦砾（n.）"
+   },
+   {
+    "w": "pharaoh",
+    "cn": "法老（n.）"
+   },
+   {
+    "w": "engraved",
+    "cn": "雕刻的（adj.）"
+   },
+   {
+    "w": "seals",
+    "cn": "印章；图章（n.）"
+   },
+   {
+    "w": "pinpoint",
+    "cn": "精确定位；准确指出（v.）"
+   },
+   {
+    "w": "magnetic-field",
+    "cn": "磁场的（adj.）"
+   },
+   {
+    "w": "dwelling",
+    "cn": "住所；住宅（n.）"
+   },
+   {
+    "w": "density",
+    "cn": "密度（n.）"
+   },
+   {
+    "w": "sifted",
+    "cn": "筛选；仔细搜查（v.过去式）"
+   },
+   {
+    "w": "airborne",
+    "cn": "空中传播的；机载的（adj.）"
+   },
+   {
+    "w": "combed",
+    "cn": "仔细搜寻（v.过去式）"
+   }
+  ]
+ }
+}

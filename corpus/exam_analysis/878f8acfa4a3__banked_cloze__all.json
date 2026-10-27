@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "878f8acfa4a3__banked_cloze__all",
+ "examId": "878f8acfa4a3",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2020 年 7 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:29:07.073Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61947,
+ "usage": {
+  "prompt_tokens": 1390,
+  "completion_tokens": 4287,
+  "total_tokens": 5677,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1390,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4287,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1390,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "联合国报告警告人类破坏自然危及地球生命",
+  "gist": "联合国生物多样性报告指出，人类正以前所未有的速度破坏自然，生态系统迅速恶化，威胁全球经济、粮食安全与生活质量。报告呼吁从地方到全球进行根本性变革，强调不能沉溺绝望，应以坚定行动和紧迫优先级思维拯救自然。",
+  "difficulty": "中等",
+  "translation": "联合国上周发布了一份报告，警告人类正以极快的速度破坏自然，以至于地球上的生命正面临威胁。报告发布时，自然登上了新闻头条。但显然，它并没有像重大恐怖袭击或宣战那样占据新闻议程。\n\n来自生物多样性和生态系统服务政府间科学政策平台（IPBES）的报告清楚地指出了什么正处于危险之中以及需要做出哪些改变。IPBES主席罗伯特·沃森表示，\"大量确凿的证据\"呈现出一幅\"不祥的图景\"。\"我们和所有其他物种赖以生存的生态系统的健康状况正以前所未有的速度恶化，\"罗伯特·沃森说。\"我们正在侵蚀全球经济、生计、粮食安全、健康和生活质量的根基。\"报告指出，如果我们进行\"变革性改变\"——从地方到全球各个层面进行根本性的、全系统的重组——现在还为时不晚，我们需要关注如何实现这一目标。\n\n首先，不要沉溺于绝望，因为绝望会导致惰性，而无所作为意味着必然的灾难。每一个拯救自然的行动都会改善我们的集体和个人未来，应对如此规模威胁的唯一方式是以植根于坚定乐观主义的坚决行动来回应。其次，我们需要持续的专注，就像救护人员到达现场时使用\"伤员鉴别分类\"的概念来确保最紧急的病例优先得到治疗一样。拯救自然世界需要这种思维方式。我们没有能力同时做所有事情。我们需要做出艰难的选择。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "G",
+    "correct": "grabbed",
+    "why": "此处需要过去式动词作谓语。grab headlines 是固定搭配，意为\"抢占头条、引起关注\"。主语 it 指代报告，上下文说报告发布后自然引起了关注，语义完全吻合。",
+    "traps": "其他动词如 eroding、deteriorating 语义不搭配 headlines；declaration、capacity 等名词无法充当此处谓语动词。",
+    "tip": "识别 grab headlines 固定搭配是关键。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "declaration",
+    "why": "此处需要名词，与 of war 搭配。declaration of war（宣战）是固定短语，与前文 terrorist attack 并列，均为重大新闻事件，逻辑通顺。",
+    "traps": "capacity of war 不是惯用搭配；disaster of war 虽语义勉强但非固定表达；其他词词性不合或语义不通。",
+    "tip": "识别 declaration of war 固定短语。"
+   },
+   {
+    "number": 28,
+    "answer": "M",
+    "correct": "stake",
+    "why": "此处需要名词，填入 at ____ 结构中。at stake 是固定搭配，意为\"处于危险之中、利害攸关\"，与上下文讨论生态危机的语境完全匹配。",
+    "traps": "at capacity 虽语法可行但意为\"满负荷\"，与上下文不符；at risk 虽语义相近但 risk 不在选项中。",
+    "tip": "掌握 at stake 固定搭配，意为\"利害攸关\"。"
+   },
+   {
+    "number": 29,
+    "answer": "K",
+    "correct": "overwhelming",
+    "why": "此处需要形容词修饰 evidence。overwhelming evidence 意为\"大量确凿的证据\"，是高频学术搭配，与后文 ominous picture 的严峻基调一致。",
+    "traps": "determined evidence 搭配不当，determined 通常修饰人或行动；urgent evidence 语义不合。",
+    "tip": "overwhelming evidence 为高频搭配，意为\"压倒性的证据\"。"
+   },
+   {
+    "number": 30,
+    "answer": "C",
+    "correct": "deteriorating",
+    "why": "此处需要现在分词与 is 构成进行时态。deteriorating 意为\"恶化\"，描述生态系统健康状况正在加速恶化，与 more rapidly than ever 搭配，语义逻辑完美。",
+    "traps": "eroding 虽也是现在分词但更强调\"侵蚀\"，与 health 搭配不如 deteriorating 自然；grabbed 时态不合。",
+    "tip": "is deteriorating 构成现在进行时，表示持续恶化。"
+   },
+   {
+    "number": 31,
+    "answer": "F",
+    "correct": "eroding",
+    "why": "此处需要现在分词与 are 构成进行时。erode the foundations 意为\"侵蚀根基\"，是经典搭配，形象描述人类正在动摇经济、生计等基础，语义精准。",
+    "traps": "deteriorating 虽词性合适但通常为不及物用法，后接 the foundations 不够自然；grabbed 语义不搭。",
+    "tip": "erode the foundations 为经典搭配，意为\"侵蚀根基\"。"
+   },
+   {
+    "number": 32,
+    "answer": "E",
+    "correct": "disaster",
+    "why": "此处需要名词作 means 的宾语。certain disaster 意为\"必然的灾难\"，前文说无所作为导致惰性，结果就是确定无疑的灾难，逻辑链条完整。",
+    "traps": "capacity 和 declaration 虽是名词但语义不通；certain declaration/capacity 均无法构成合理意义。",
+    "tip": "certain disaster 表示\"必然的灾难\"，与前文 inertia 因果呼应。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "correct": "determined",
+    "why": "此处需要形容词修饰 action。determined action 意为\"坚决的行动\"，与后文 rooted in headstrong optimism（根植于坚定乐观）呼应，表达积极应对的态度。",
+    "traps": "urgent action 虽搭配成立，但 urgent 在第34题更为精准（triage 语境）；overwhelming action 搭配不自然。",
+    "tip": "determined action 意为\"坚决的行动\"，与乐观主义语境呼应。"
+   },
+   {
+    "number": 34,
+    "answer": "O",
+    "correct": "urgent",
+    "why": "此处需要形容词修饰 cases，处于 the most ____ cases 的最高级结构中。triage（伤员分类）的核心就是按紧急程度排序，urgent cases 意为\"紧急病例\"，与医疗场景完美契合。",
+    "traps": "determined cases 搭配不当；其他形容词如 overwhelming cases 语义不符合分诊语境。",
+    "tip": "triage 语境下 urgent cases 指\"最紧急的病例\"。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "correct": "capacity",
+    "why": "此处需要名词，置于 have the ____ to do 结构中。capacity 意为\"能力、资源\"，have the capacity to do 是常见搭配，表示我们没有能力同时做所有事情，因此需要做出取舍。",
+    "traps": "declaration 语义不通；disaster 不能用于 have the ____ to do 结构；其余词已用或词性不合。",
+    "tip": "have the capacity to do 意为\"有能力做某事\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "deteriorating",
+    "cn": "v. 恶化，退化（deteriorate 的现在分词）"
+   },
+   {
+    "w": "eroding",
+    "cn": "v. 侵蚀，逐渐削弱（erode 的现在分词）"
+   },
+   {
+    "w": "overwhelming",
+    "cn": "adj. 压倒性的，势不可挡的"
+   },
+   {
+    "w": "capacity",
+    "cn": "n. 能力，容量，容纳力"
+   },
+   {
+    "w": "declaration",
+    "cn": "n. 宣言，宣告，声明"
+   },
+   {
+    "w": "stake",
+    "cn": "n. 利害关系，风险；桩，赌注"
+   },
+   {
+    "w": "hijack",
+    "cn": "v. 劫持；强行控制，霸占"
+   },
+   {
+    "w": "inertia",
+    "cn": "n. 惰性，不活动，迟钝"
+   },
+   {
+    "w": "relentless",
+    "cn": "adj. 不懈的，坚持不懈的，持续的"
+   },
+   {
+    "w": "headstrong",
+    "cn": "adj. 固执的，倔强的；此处引申为坚定的"
+   },
+   {
+    "w": "biodiversity",
+    "cn": "n. 生物多样性"
+   },
+   {
+    "w": "triage",
+    "cn": "n. 伤员鉴别分类，分诊"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨大意和行文逻辑。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的选择范围。",
+   "第三步：根据空格前后的语法结构（如冠词+___+名词需形容词，is/are+___需分词等）锁定词性。",
+   "第四步：结合上下文语义和固定搭配（如 at stake、grab headlines、declaration of war）确定唯一答案。",
+   "第五步：填完后回读全文，检查语义连贯性和每词是否仅使用一次。"
+  ]
+ }
+}

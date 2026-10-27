@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "c14782c14563__reading__2",
+ "examId": "c14782c14563",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2016 年 6 月英语六级真题（第 3 套）",
+ "year": 2016,
+ "sub": "2",
+ "questionNumbers": [
+  51,
+  52,
+  53,
+  54,
+  55
+ ],
+ "generatedAt": "2026-10-27T05:10:14.210Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 62117,
+ "usage": {
+  "prompt_tokens": 1857,
+  "completion_tokens": 3933,
+  "total_tokens": 5790,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1857,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3933,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1857,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "现代厨房地位的演变与发展",
+  "gist": "文章围绕厨房如何从仆人专属的偏僻房间演变为现代家庭核心空间展开论述。先指出当今厨房的核心地位及高昂花费，再回顾厨房地位的历史变迁，介绍比彻姐妹和弗雷德里克等人对厨房科学化设计的推动，最终说明20世纪20年代诞生的首个整体厨房的许多设计元素延续至今。",
+  "structure": [
+   "第1-3段：现代厨房地位崇高，花费惊人，甚至追求定制独一无二",
+   "第4段：转折回顾历史，厨房曾地位低下，属于仆人领地",
+   "第5-7段：厨房地位提升的推动者及科学化设计理念的传承"
+  ],
+  "difficulty": "中等",
+  "translation": "如今，没有人非得做饭。家庭靠高胆固醇的外卖和微波炉加热的即食餐凑合过活。做饭成了一种偶尔为之的爱好和明星大厨的表演工具。这就使得厨房成为现代住宅的核心显得颇为奇怪：中世纪城堡的大厅是什么地位，厨房在21世纪的家庭中就是什么地位。\n\n花在厨房上的钱随着其地位的提高而增长。在美国，厨房市场如今价值1700亿美元，是该国电影产业的五倍。截至2007年8月的一年里，瑞典家具连锁企业宜家在全球售出了超过一百万套厨房。据《改造》杂志计算，2006年一次\"大型\"厨房翻新的平均预算高达惊人的54000美元；即便是\"小型\"改善，平均也要花费18000美元。\n\n在高端时尚界更为常见的排他性，已经延伸到了厨房领域：英国定制厨房制造商Robinson & Cornish提供一款乔治亚风格厨房，售价145000至155000英镑——还不包括建筑、管道和电气工程费用。它最大的卖点是别人不会拥有同款：\"你在世界上任何其他地方都看不到这款厨房。\"\n\n这个曾经只属于仆人的房间提升为现代家庭设计展示空间，讲述了一个世纪社会变迁的故事。一直到20世纪初，厨房都是烟雾弥漫、嘈杂不堪的地方，通常位于地下室或房屋后部，尽可能远离生活空间。这本来就是理所应当的：厨房是给仆人用的，有抱负的中产阶级不愿与之有任何关联。\n\n但随着工人阶级日益富裕，仆人短缺的问题开始出现，家务管理变成了受过教育的阶层感兴趣的事情。厨房领域全新激进思维方式的先驱之一是凯瑟琳·埃丝特·比彻，她是哈丽雅特·比彻·斯托的姐姐。在1869年出版的《美国妇女之家》中，比彻姐妹推荐了一种科学的家务管理方法，旨在提高女性工作的效率并促进秩序。\n\n当代许多关于厨房设计的理念可以追溯到另一位美国人——克里斯汀·弗雷德里克，她着手提高家庭主妇的效率。她1919年的著作《家务工程：家庭中的科学管理》建立在对家庭主妇日常事务的详细观察基础上。她借用了工厂车间的效率原则，并将其应用于厨房的家务劳动。\n\n弗雷德里克的核心理念——\"炉灶、水槽和厨房桌子必须以一种完全避免多余步骤的方式摆放\"——启发了第一个完全整体式厨房的设计，该厨房由玛格丽特·舒特-利霍茨基在20世纪20年代设计完成。这是现代主义的一次胜利，其中许多元素至今仍是厨房的核心特征。",
+  "questions": [
+   {
+    "number": 51,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "Which makes it odd that the kitchen has become the heart of the modern house: what the great hall was to the medieval castle, the kitchen is to the 21st-century home.",
+    "why": "原文第一段末句明确指出厨房已成为现代住宅的\"heart\"（核心），并用中世纪城堡大厅做类比强调其核心地位。D选项\"the center of a modern home\"是对原文\"the heart of the modern house\"的同义改写，完全吻合原文表述。",
+    "traps": "A选项\"展示烹饪技巧\"无原文支撑，文中反而说没人需要做饭；B选项\"招待重要客人\"属于无中生有，原文未提及待客功能；C选项利用原文\"odd\"一词设置陷阱，原文说\"奇怪的是厨房变成了核心\"，而非厨房本身成了奇怪的东西，属于偷换概念。",
+    "tip": "注意区分原文\"odd\"修饰的是哪个现象，避免偷换主语。"
+   },
+   {
+    "number": 52,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Its big selling point is that nobody else will have it: 'You won't see this kitchen anywhere else in the world.'",
+    "why": "原文第三段最后两句明确指出该乔治亚风格厨房的最大卖点是\"别人不会拥有同款\"，并直接引用\"你在世界上任何其他地方都看不到这款厨房\"。B选项\"No duplicate is to be found in any other place\"（任何地方找不到复制品）是对原文的精确同义转述。",
+    "traps": "A选项\"巨大的艺术价值\"属于无中生有，原文未提及艺术价值；C选项\"著名英国公司制造\"虽部分事实正确，但不是其高价的原因，属于答非所问；D选项\"没有其他制造商能生产类似产品\"过度推断，原文强调的是定制的独一无二，而非技术壁垒。",
+    "tip": "题目问原因时，应精确定位原文给出的理由，而非自行推断。"
+   },
+   {
+    "number": 53,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "The elevation of the room that once belonged only to the servants to that of design showcase for the modern family tells the story of a century of social change.",
+    "why": "原文第四段首句直接点明，厨房从仆人专属空间提升为现代家庭设计展示空间，\"讲述了一个世纪社会变迁的故事\"（tells the story of a century of social change）。D选项\"Social change\"与原文完全对应。",
+    "traps": "A选项\"生活条件改善\"只是社会变迁的一个方面，过于片面；B选项\"女性地位提高\"虽然后文提到了女性效率的话题，但并非原文对厨房地位变化的直接概括；C选项\"技术进步\"原文未在此处提及，属于无中生有。",
+    "tip": "原文有明确概括性表述时，优先选择与之完全对应的选项。"
+   },
+   {
+    "number": 54,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "the Beecher sisters recommended a scientific approach to household management, designed to enhance the efficiency of a woman's work and promote order.",
+    "why": "原文第五段末句指出比彻姐妹推荐科学的家务管理方法，其目的是\"提高女性工作效率并促进秩序\"。A选项\"A place where women could work more efficiently\"准确概括了她们的核心理念——让厨房成为女性能更高效工作的场所。",
+    "traps": "B选项\"应用高科技的地方\"偷换概念，原文说的是\"scientific approach\"（科学方法），并非高科技；C选项利用原文\"a matter of interest to the educated classes\"设置干扰，但这描述的是家务管理引起关注的背景，而非比彻姐妹的厨房理念；D选项\"实验新想法的地方\"过于笼统，未抓住效率这一核心。",
+    "tip": "区分\"背景铺垫\"和\"核心观点\"，避免将上下文信息混淆为答案。"
+   },
+   {
+    "number": 55,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "It was a modernist triumph, and many elements remain central features of today's kitchen.",
+    "why": "原文最后一段末句指出20世纪20年代设计的首个整体厨房是现代主义的胜利，\"其中许多元素至今仍是厨房的核心特征\"。B选项\"Many of its central features are no different from those of the 1920s\"（其许多核心特征与20世纪20年代的并无不同）是对此句的准确同义转述。",
+    "traps": "A选项\"代表日常生活中快速的技术进步\"属于无中生有；C选项\"已被改造得面目全非\"与原文\"许多元素仍然保留\"直接矛盾；D选项\"许多功能发生了巨大变化\"同样与原文\"remain central features\"相悖。",
+    "tip": "末段末句常为出题点，注意remain等表示延续性的关键词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "graze",
+    "cn": "v. 随便吃，不规律地吃零食"
+   },
+   {
+    "w": "cholesterol",
+    "cn": "n. 胆固醇"
+   },
+   {
+    "w": "staggering",
+    "cn": "adj. 令人震惊的，惊人的"
+   },
+   {
+    "w": "exclusivity",
+    "cn": "n. 排他性，独特性，专属性"
+   },
+   {
+    "w": "custom-made",
+    "cn": "adj. 定制的，定做的"
+   },
+   {
+    "w": "plumbing",
+    "cn": "n. 管道工程，水暖设施"
+   },
+   {
+    "w": "elevation",
+    "cn": "n. 提升，提高（地位等）"
+   },
+   {
+    "w": "aspiring",
+    "cn": "adj. 有抱负的，渴望上进的"
+   },
+   {
+    "w": "prosper",
+    "cn": "v. 繁荣，兴旺，发达"
+   },
+   {
+    "w": "pioneer",
+    "cn": "n. 先驱，开拓者"
+   },
+   {
+    "w": "overhaul",
+    "cn": "n./v. 大修，彻底改造"
+   },
+   {
+    "w": "showcase",
+    "cn": "n. 展示平台，陈列柜"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The elevation of the room that once belonged only to the servants to that of design showcase for the modern family tells the story of a century of social change.",
+    "cn": "这个曾经只属于仆人的房间提升为现代家庭设计展示空间，讲述了一个世纪社会变迁的故事。",
+    "note": "主干为The elevation...tells the story；that指代前面的elevation/status，of design showcase作补充说明；that once belonged only to the servants为定语从句修饰room。"
+   },
+   {
+    "en": "Frederick's central idea, that 'stove, sink and kitchen table must be placed in such a relation that useless steps are avoided entirely', inspired the first fully fitted kitchen, designed in the 1920s by Margarete Schütte-Lihotsky.",
+    "cn": "弗雷德里克的核心理念——\"炉灶、水槽和厨房桌子必须以一种完全避免多余步骤的方式摆放\"——启发了第一个完全整体式厨房的设计，该厨房由玛格丽特·舒特-利霍茨基在20世纪20年代设计完成。",
+    "note": "主干为Frederick's central idea inspired the first fully fitted kitchen；that引导同位语从句解释idea的内容；such...that构成结果状语从句；designed...为过去分词短语作后置定语。"
+   },
+   {
+    "en": "One of the pioneers of a radical new way of thinking about the kitchen was Catharine Esther Beecher, sister of Harriet Beecher Stowe.",
+    "cn": "厨房领域全新激进思维方式的先驱之一是凯瑟琳·埃丝特·比彻，她是哈丽雅特·比彻·斯托的姐姐。",
+    "note": "倒装句，正常语序为Catharine Esther Beecher was one of the pioneers...；of a radical new way of thinking about the kitchen为多重介词短语作后置定语；sister of...为同位语补充说明。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "612ae9c327ae__banked_cloze__all",
+ "examId": "612ae9c327ae",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2021 年 12 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:36:15.580Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 63868,
+ "usage": {
+  "prompt_tokens": 1342,
+  "completion_tokens": 4040,
+  "total_tokens": 5382,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1342,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4040,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1342,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "乐观心态与长寿的关联研究",
+  "gist": "一项新研究发现，乐观程度最高的人更有可能活到85岁及以上。即使排除健康状况和抑郁等干扰因素后，结论依然成立。研究者承认，运动、睡眠和饮食等健康行为可能部分解释了乐观与长寿之间的关联，乐观或许能促进良好的健康习惯。但该研究仅发现相关性，尚未证明因果关系。",
+  "difficulty": "中等",
+  "translation": "如果你认为生活是美好的，并期望它保持这种状态，那么你可能有很大机会活到高龄——至少一项新研究的发现是这样表明的。该研究发现，报告了最高乐观水平的参与者更有可能活到85岁或以上（beyond）。这是与报告了最低乐观水平的参与者进行比较的结果。值得注意的是（noteworthy），即使在研究人员考虑了可能影响（affect）这一关联的因素之后，这些发现仍然成立，这些因素包括参与者是否患有心脏病或癌症等健康问题，或者是否经历过抑郁症。\n\n这些结果为越来越多的证据增添了新内容，即某些心理因素可能预示着更长的寿命（life span）。例如，此前的研究发现，更乐观的人患慢性疾病的风险更低，过早（premature）死亡的风险也更低。然而，这项新研究似乎是第一个专门（specifically）研究乐观与长寿之间关系的研究。研究人员承认（conceded），当他们将某些健康行为的影响纳入考量——包括运动水平、睡眠习惯和饮食——时，新研究中发现的关联并没有那么强。这表明，这些行为至少在一定程度上可以解释这种关联。换句话说，乐观可能促进（foster）有益健康的良好习惯。\n\n同样重要的是要注意，该研究仅发现了一种相关性（correlation），因为研究人员并未确切证明乐观能带来更长的寿命。然而，如果这些发现是正确的，它们表明乐观可以作为一种促进健康和长寿的心理特质（trait）。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "B",
+    "correct": "beyond",
+    "why": "空格前为 \"age 85 or\"，需要一个表示\"超过、以上\"的副词或介词。beyond 意为\"超过\"，\"85 or beyond\" 表示\"85岁或以上\"，与前文 \"live to a ripe old age\" 语义呼应，搭配自然。",
+    "traps": "其他候选词如 span（名词）、correlation（名词）等词性不符，无法放在 or 之后与 age 85 形成并列结构。此处需要副词/介词性质的词，只有 beyond 符合。",
+    "tip": "介词/副词 beyond 单独使用表\"更远、以上\"。"
+   },
+   {
+    "number": 27,
+    "answer": "H",
+    "correct": "noteworthy",
+    "why": "空格位于 \"It is ___ that\" 结构中，需要形容词作表语。noteworthy 意为\"值得注意的\"，用来强调\"即使排除干扰因素后结论仍成立\"这一重要发现，逻辑合理。",
+    "traps": "其他形容词如 premature（过早的）语义不通。affect 和 conceded 是动词，不能用在 It is ___ that 的形容词表语位置。",
+    "tip": "\"It is + adj. + that\" 句型，空格必填形容词。"
+   },
+   {
+    "number": 28,
+    "answer": "A",
+    "correct": "affect",
+    "why": "空格前为 could，需要动词原形。affect 意为\"影响\"，\"able to affect the link\" 即\"可能影响这种关联\"，指健康状况和抑郁症等因素可能影响乐观与长寿之间的关联性，语义通顺。",
+    "traps": "foster 也是动词原形，但 foster the link（培养关联）语义不通；conceded（承认）放在此处缺少主语逻辑，且不与 the link 搭配。",
+    "tip": "could + 动词原形，affect the link 为常见搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "L",
+    "correct": "span",
+    "why": "空格前为 \"a longer life\"，需要名词构成 \"life span\"（寿命）这一固定词组。全句意为\"心理因素可能预测更长的寿命\"，与文章主旨一致。",
+    "traps": "correlation 虽也是名词，但 \"life correlation\" 不是有意义的短语。trait 语义上也不搭配，\"life trait\" 不是常用表达。",
+    "tip": "life span 为固定搭配，意为\"寿命\"。"
+   },
+   {
+    "number": 30,
+    "answer": "J",
+    "correct": "premature",
+    "why": "空格后为名词 death，需要形容词修饰。premature death 意为\"过早死亡\"，是医学与健康研究中的常见搭配，表示乐观的人过早死亡的风险更低，逻辑合理。",
+    "traps": "noteworthy death（值得注意的死亡）虽语法可行但语义不当，且 noteworthy 已用于第27题。此处需要描述死亡性质的形容词，premature 最为贴切。",
+    "tip": "premature death（过早死亡）为固定搭配。"
+   },
+   {
+    "number": 31,
+    "answer": "M",
+    "correct": "specifically",
+    "why": "空格位于 to 与 look at 之间，需要副词修饰动词 look at。specifically 意为\"专门地\"，表示该研究是第一个\"专门\"考察乐观与长寿关系的研究，强调研究的聚焦性。",
+    "traps": "候选词中其他副词已不多，beyond 虽可作副词但不能修饰 look at。此处语义需要\"专门、具体地\"，只有 specifically 合适。",
+    "tip": "副词修饰动词，specifically 强调研究的针对性。"
+   },
+   {
+    "number": 32,
+    "answer": "C",
+    "correct": "conceded",
+    "why": "空格作谓语动词，主语为 the researchers，后接 that 从句。conceded 意为\"承认\"，研究人员承认当纳入健康行为因素后关联性减弱，体现了学术研究的客观态度。时态为一般过去时，与全文叙述一致。",
+    "traps": "affect 为动词但不接 that 从句；foster 也是动词但语义（培养）不通。conceded that 是常见的学术表达，表示\"承认某事\"。",
+    "tip": "concede + that 从句，表\"承认\"，体现研究者的审慎态度。"
+   },
+   {
+    "number": 33,
+    "answer": "E",
+    "correct": "foster",
+    "why": "空格前为 may，需动词原形。foster 意为\"培养、促进\"，\"optimism may foster good habits\" 表示\"乐观可能促进良好习惯\"，与上文\"健康行为可能解释关联\"的逻辑衔接。",
+    "traps": "affect（影响）语义上虽勉强可用，但已在第28题使用。且 foster 更强调\"培育、促成\"，比 affect 更精确地传达乐观对好习惯的积极推动作用。",
+    "tip": "foster good habits 意为\"培养良好习惯\"，搭配精准。"
+   },
+   {
+    "number": 34,
+    "answer": "D",
+    "correct": "correlation",
+    "why": "空格前为冠词 a，需要名词。correlation 意为\"相关性\"，\"found only a correlation\" 表示\"仅发现了一种相关性\"，与后文 \"did not prove...that optimism leads to\" 形成因果与相关的对比，是学术写作中的经典表述。",
+    "traps": "trait 虽也是名词，但 \"found only a trait\"（仅发现一种特质）语义不通。span 用在此处也不合逻辑。correlation 在科研语境中常与 causation 对比使用。",
+    "tip": "correlation vs. causation 是科研写作核心概念。"
+   },
+   {
+    "number": 35,
+    "answer": "O",
+    "correct": "trait",
+    "why": "空格前为 psychological，需要名词。trait 意为\"特质\"，\"psychological trait\" 即\"心理特质\"，指乐观可以作为一种促进健康和长寿的心理特质，为全文做总结升华，逻辑完整。",
+    "traps": "correlation 虽为名词，但 \"psychological correlation\"（心理相关性）语义不符；span 作 \"psychological span\" 也不成立。trait 是心理学领域常用术语，搭配最自然。",
+    "tip": "psychological trait（心理特质）为心理学常见术语。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "optimism",
+    "cn": "n. 乐观，乐观主义"
+   },
+   {
+    "w": "noteworthy",
+    "cn": "adj. 值得注意的，显著的"
+   },
+   {
+    "w": "premature",
+    "cn": "adj. 过早的，不成熟的"
+   },
+   {
+    "w": "concede",
+    "cn": "v. 承认，让步"
+   },
+   {
+    "w": "foster",
+    "cn": "v. 培养，促进，鼓励"
+   },
+   {
+    "w": "correlation",
+    "cn": "n. 相关性，关联"
+   },
+   {
+    "w": "trait",
+    "cn": "n. 特征，特质，特点"
+   },
+   {
+    "w": "longevity",
+    "cn": "n. 长寿，寿命"
+   },
+   {
+    "w": "bolster",
+    "cn": "v. 支持，增强，改善"
+   },
+   {
+    "w": "chronic",
+    "cn": "adj. 慢性的，长期的"
+   },
+   {
+    "w": "span",
+    "cn": "n. 跨度，范围；寿命（life span）"
+   },
+   {
+    "w": "factor in",
+    "cn": "phr. 将……纳入考虑"
+   }
+  ],
+  "skills": [
+   "先通读全文把握主旨，再按词性将15个候选词分为名词、动词、形容词、副词四组。",
+   "根据空格前后的语法标志（冠词、情态动词、be动词、介词等）判断所需词性，缩小选择范围。",
+   "利用固定搭配优先突破，如 life span、premature death、psychological trait 等。",
+   "结合上下文逻辑关系（因果、转折、递进）验证语义是否通顺，排除语法正确但语义不通的干扰项。",
+   "每词只用一次，已选定的词及时划掉，避免重复选择并为剩余空格减少干扰。"
+  ]
+ }
+}

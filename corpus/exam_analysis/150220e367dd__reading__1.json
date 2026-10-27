@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "150220e367dd__reading__1",
+ "examId": "150220e367dd",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2021 年 6 月英语六级真题（第 3 套）",
+ "year": 2021,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:39:22.103Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59905,
+ "usage": {
+  "prompt_tokens": 1797,
+  "completion_tokens": 3835,
+  "total_tokens": 5632,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1797,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3835,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1797,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "创造力应融入学校教育全过程",
+  "gist": "文章围绕Durham委员会关于创造力与教育的报告展开，指出创造力虽难以定义却可以培养，应贯穿学校所有课程而非仅限于艺术类学科。文章批评了应试教育对创造力的扼杀，揭示了英国公立与私立学校在艺术教育资源上的巨大差距，呼吁将创造力教育作为优先事项，让所有孩子平等享有艺术教育机会。",
+  "structure": [
+   "第1-2段：引出创造力话题，介绍报告核心结论",
+   "第3段：报告建议——批评应试教育，提出教师协作网络",
+   "第4段：对比公立与私立学校的艺术教育差距",
+   "第5段：呼吁将创造力教育公平化，上升至社会公正高度"
+  ],
+  "difficulty": "中等",
+  "translation": "你看不见它，闻不到它，也听不到它，人们对如何精确定义它或它究竟从何而来莫衷一是。它不是一门学校科目或学术学科，但它可以被习得。它是艺术家所必需的品质，但它同样存在于科学家和企业家的生活中。我们所有人都受益于它，当我们能够运用它时，我们的心智和精神都会蓬勃发展。它是一种脆弱的东西，很容易被扼杀；事实上，当人们充满游戏精神和童心时，它才能最充分地绽放。与此同时，它在与深厚知识和专业技能相结合时效果最佳。\n\n这种神秘却可以传授的品质就是创造力，它是Durham创造力与教育委员会最近发布的一份报告的主题。报告得出结论：创造力不应仅以与戏剧、音乐、美术和其他明显具有创造性的学科相关的方式存在于学校课程中，而创造性思维应当贯穿整个学校生活，充盈于人文学科和自然科学的学习方式之中。\n\n报告的作者们聚焦于英格兰的教育，提出了一系列合理的建议，其中一些旨在缓解近年来潜入政策中的那种缺乏启发性、以事实灌输为主的教育方式。当孩子被视为需要被灌满事实的容器时，创造力就无法繁荣；当教师的唯一目标是训练孩子应付考试时，情况也是如此。委员会的一项建议是建立由教师主导的\"创造力协作网络\"，类似于现有的数学中心，旨在通过学校课程支持创造力教学。\n\n然而，艺术类学科是最能明显培养创造力的途径。独立教育部门（私立学校）对它们的重视显而易见。只需看看英国顶尖私立学校令人瞩目的艺术设施就能理解这一点。但在公立教育领域，对英语、数学和科学的过度关注正威胁着挤压艺术学科的空间；与此同时，学校预算的削减意味着课外活动的减少。自2014年以来，选修创造性学科的高中生人数下降了28.1%，不过令人欣慰的是，艺术与设计近来有所增长。\n\n公立教育和私立教育之间的这种差距是一个社会公正问题。大多数孩子只能享受到合唱团、管弦乐队、艺术工作室和戏剧等资源的一小部分，而他们更具特权的同龄人却能充分享有这些资源，这是完全错误和不公平的。随着生活受到诸多迫在眉睫的挑战——气候危机、职场自动化——的影响，人类将比以往任何时候都更需要创造性思维。为了我们所有人的利益，教育中的创造力，而且是面向所有人的创造力，必须成为优先事项。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "All of us benefit from it and we thrive mentally and spiritually when we are able to wield it. It is a delicate thing, easily stamped out",
+    "why": "原文明确说\"All of us benefit from it and we thrive mentally and spiritually\"，即创造力有助于心智和精神的成长，对应D选项中的\"contributes to intellectual growth\"；紧接着\"It is a delicate thing, easily stamped out\"表明创造力脆弱、容易被扼杀，对应D选项中的\"can easily be killed\"。D选项完整概括了这两个要点。",
+    "traps": "A项\"spiritually prepared\"偷换概念，原文说运用创造力时精神上蓬勃发展，而非精神上做好准备时创造力最好；B项\"most often wielded by scientists and entrepreneurs\"属于过度推断，原文只说创造力也存在于科学家和企业家的生活中，并未说最常被他们运用；C项\"founded on scientific knowledge and analytical skills\"偷换概念，原文说创造力与deep knowledge and expertise结合效果最佳，并非以科学知识和分析能力为基础。",
+    "tip": "注意同义替换：stamped out=killed，thrive mentally=intellectual growth。"
+   },
+   {
+    "number": 47,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The report concludes that creativity should not inhabit the school curriculum only as it relates to drama, music, art and other obviously creative subjects, but that creative thinking ought to run through all of school life",
+    "why": "原文用\"not only...but...run through all of school life\"明确表示创造性思维应贯穿整个学校生活，infusing the way humanities and natural sciences are learned。B选项\"permeate the entire school curriculum\"是对\"run through all of school life\"的精确同义替换，permeate意为\"渗透、贯穿\"。",
+    "traps": "A项说自然科学应以人文课程的方式学习，曲解了原文\"infusing the way humanities and natural sciences are learned\"，原文是说创造性思维应融入两者，而非让自然科学模仿人文课程；C项\"compulsory for all students\"在原文中无依据，报告并未要求艺术课成为必修课；D项是对原文的片面理解，报告强调的是创造力贯穿所有学科，而非仅仅多学创造性学科。",
+    "tip": "抓住核心动词短语run through，找同义替换permeate。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "nor does it when teachers' sole objective is coaching children towards exams",
+    "why": "原文指出当教师的唯一目标是训练孩子应付考试时，创造力无法繁荣。C选项\"Test-oriented teaching\"（应试导向的教学）正是对\"coaching children towards exams\"的同义概括。此外，前文\"uninspiring and fact-based approach\"和\"children are regarded as vessels to be filled with facts\"也共同指向以灌输和考试为核心的教育方式对创造力的伤害。",
+    "traps": "A项\"Alleviation of pressure\"（减轻压力）属于反向干扰，原文说的是alleviate uninspiring approach（缓解乏味教育方式），减轻压力不会损害创造力；B项\"Teacher-led school activities\"偷换概念，原文提到teacher-led creativity collaboratives是委员会的建议措施，是促进而非损害创造力；D项\"Independent learning\"（自主学习）在原文中并未提及会损害创造力。",
+    "tip": "detrimental（有害的）是反义定位关键词，对应原文中否定表达。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "The value placed on them by the independent education sector is clear. One only has to look at the remarkable arts facilities at Britain's top private schools to comprehend this.",
+    "why": "原文说独立教育部门（即私立学校）对艺术学科的重视是显而易见的，并以顶尖私立学校令人瞩目的艺术设施为例加以佐证。B选项\"attach great importance to arts education\"是对\"The value placed on them...is clear\"的准确同义改写。",
+    "traps": "A项\"encourage extracurricular activities\"张冠李戴，原文提到课外活动减少是在公立学校语境下，并未说私立学校鼓励课外活动；C项\"prioritize arts subjects over maths and sciences\"过度推断，原文只说私立学校重视艺术，并未说将艺术置于数学和科学之上；D项\"cater to students from different family backgrounds\"无中生有，原文未提及私立学校的生源多元化。",
+    "tip": "independent education sector = private schools，注意英国教育体制术语。"
+   },
+   {
+    "number": 50,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "It is simply wrong and unfair that most children have a fraction of the access to choirs, orchestras, art studios and drama that their more privileged peers enjoy.",
+    "why": "最后一段指出公立与私立学校间的差距是社会公正问题，大多数孩子只能享有少量艺术教育资源，这是不公平的。面对未来挑战（气候危机、自动化），人类比以往更需要创造性思维，因此必须让所有人平等获得创造力教育。C选项\"Providing all children with equal access to arts education\"精确对应了\"for all\"和缩小艺术教育资源差距的核心诉求。",
+    "traps": "A项\"Increasing government investment\"属于无中生有，文中虽提到budgets减少但并未明确建议增加政府投资；B项\"Narrowing the gap between the rich and the poor\"范围过大，文章聚焦的是艺术教育资源的不平等，而非笼统的贫富差距；D项\"Focusing on under-privileged students\"以偏概全，原文强调的是\"for all\"——面向所有人，而非仅关注弱势学生。",
+    "tip": "末段常为主旨升华段，注意for all这一关键限定词。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "wield",
+    "cn": "v. 运用，施展（权力、影响力等）"
+   },
+   {
+    "w": "stamp out",
+    "cn": "phr.v. 扼杀，消灭，根除"
+   },
+   {
+    "w": "flourish",
+    "cn": "v. 繁荣，茂盛，蓬勃发展"
+   },
+   {
+    "w": "in conjunction with",
+    "cn": "prep.phr. 与……结合，连同"
+   },
+   {
+    "w": "infuse",
+    "cn": "v. 注入，充满，使渗透"
+   },
+   {
+    "w": "alleviate",
+    "cn": "v. 减轻，缓解（痛苦、问题等）"
+   },
+   {
+    "w": "prosper",
+    "cn": "v. 繁荣，兴旺，成功"
+   },
+   {
+    "w": "foster",
+    "cn": "v. 培养，促进，助长"
+   },
+   {
+    "w": "discrepancy",
+    "cn": "n. 差异，不一致，矛盾"
+   },
+   {
+    "w": "looming",
+    "cn": "adj. 逼近的，隐约可见的（常指威胁）"
+   },
+   {
+    "w": "extracurricular",
+    "cn": "adj. 课外的，课程以外的"
+   },
+   {
+    "w": "diminishing",
+    "cn": "adj. 减少的，递减的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "The report concludes that creativity should not inhabit the school curriculum only as it relates to drama, music, art and other obviously creative subjects, but that creative thinking ought to run through all of school life, infusing the way humanities and natural sciences are learned.",
+    "cn": "报告得出结论：创造力不应仅以与戏剧、音乐、美术和其他明显具有创造性的学科相关的方式存在于学校课程中，而创造性思维应当贯穿整个学校生活，充盈于人文学科和自然科学的学习方式之中。",
+    "note": "主干为The report concludes that...but that...，两个that引导并列宾语从句；not...only...but...构成转折强调；infusing引导现在分词短语作伴随状语，补充说明run through的具体方式。"
+   },
+   {
+    "en": "It is simply wrong and unfair that most children have a fraction of the access to choirs, orchestras, art studios and drama that their more privileged peers enjoy.",
+    "cn": "大多数孩子只能享受到合唱团、管弦乐队、艺术工作室和戏剧等资源的一小部分，而他们更具特权的同龄人却能充分享有这些资源，这是完全错误和不公平的。",
+    "note": "It为形式主语，真正主语是that引导的主语从句；从句内部a fraction of the access是核心名词短语；末尾that their more privileged peers enjoy是定语从句修饰access。"
+   },
+   {
+    "en": "When children are regarded as vessels to be filled with facts, creativity does not prosper; nor does it when teachers' sole objective is coaching children towards exams.",
+    "cn": "当孩子被视为需要被灌满事实的容器时，创造力就无法繁荣；当教师的唯一目标是训练孩子应付考试时，情况也是如此。",
+    "note": "前半句为when引导的时间状语从句+主句；分号后nor does it为倒装结构，承接否定含义；后接when引导的省略状语从句，it指代creativity。"
+   }
+  ]
+ }
+}

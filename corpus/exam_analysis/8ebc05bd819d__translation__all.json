@@ -1,0 +1,205 @@
+{
+ "schemaVersion": 1,
+ "id": "8ebc05bd819d__translation__all",
+ "examId": "8ebc05bd819d",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2024 年 12 月英语六级真题（第 2 套）",
+ "year": 2024,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:56:50.756Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 28915,
+ "usage": {
+  "prompt_tokens": 791,
+  "completion_tokens": 2072,
+  "total_tokens": 2863,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 791,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2072,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 791,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "洋山港的发展与自动化成就",
+  "reference": "Yangshan Port is a vital component of the Shanghai Shipping Center. It is China's first deep-water port and also one of the largest deep-water ports in the world. After nearly two decades of development, Yangshan Port has achieved a high degree of automation. The application of digital technology and artificial intelligence has significantly reduced labor costs and carbon emissions. The independently developed terminal management system enables remote control of large-scale equipment from over a hundred kilometers away. Though Yangshan Port appears to be bustling with activity, no manual operations can be seen on site, and it is capable of operating around the clock without interruption. Yangshan Port will continue to grow and make greater contributions to building Shanghai into a global shipping center.",
+  "sentences": [
+   {
+    "cn": "洋山港(Yangshan Port)是上海航运中心的重要组成部分,是中国第一个深水港,也是世界上规模最大的深水港之一。",
+    "en": "Yangshan Port is a vital component of the Shanghai Shipping Center. It is China's first deep-water port and also one of the largest deep-water ports in the world.",
+    "structure": "并列句，三个表语通过逗号和 also 连接，构成递进式描述；one of the + 最高级 + 复数名词为常见句型",
+    "keys": [
+     "航运中心 the Shanghai Shipping Center",
+     "深水港 deep-water port",
+     "重要组成部分 a vital component of",
+     "世界上规模最大的…之一 one of the largest ... in the world"
+    ]
+   },
+   {
+    "cn": "经过近20年的发展,洋山港已实现高度自动化。",
+    "en": "After nearly two decades of development, Yangshan Port has achieved a high degree of automation.",
+    "structure": "介词短语作时间状语置于句首，主句用现在完成时表示已达成的状态",
+    "keys": [
+     "近20年 nearly two decades / nearly 20 years",
+     "高度自动化 a high degree of automation",
+     "实现 achieve"
+    ]
+   },
+   {
+    "cn": "数字技术和人工智能的使用大大减少了用工成本和碳排放。",
+    "en": "The application of digital technology and artificial intelligence has significantly reduced labor costs and carbon emissions.",
+    "structure": "主语为名词短语 the application of ...，谓语用现在完成时 has reduced，宾语为并列名词",
+    "keys": [
+     "数字技术 digital technology",
+     "人工智能 artificial intelligence",
+     "用工成本 labor costs",
+     "碳排放 carbon emissions",
+     "大大减少 significantly reduced"
+    ]
+   },
+   {
+    "cn": "自主研发的码头管理系统可以在百公里之外对大型设备进行远程操控。",
+    "en": "The independently developed terminal management system enables remote control of large-scale equipment from over a hundred kilometers away.",
+    "structure": "主语含过去分词短语作前置定语；enable + 名词结构替代 can + 动词，更书面；介词短语 from over a hundred kilometers away 作状语",
+    "keys": [
+     "自主研发的 independently developed",
+     "码头管理系统 terminal management system",
+     "远程操控 remote control",
+     "大型设备 large-scale equipment",
+     "百公里之外 from over a hundred kilometers away"
+    ]
+   },
+   {
+    "cn": "洋山港看上去一片繁忙,现场却见不到人工操作,而且能够24小时不间断运作。",
+    "en": "Though Yangshan Port appears to be bustling with activity, no manual operations can be seen on site, and it is capable of operating around the clock without interruption.",
+    "structure": "though 引导让步状语从句表转折；主句由 and 连接两个并列分句；被动语态 can be seen 用于描述现场状态",
+    "keys": [
+     "看上去一片繁忙 appears to be bustling with activity",
+     "人工操作 manual operations",
+     "24小时不间断运作 operating around the clock without interruption",
+     "现场 on site"
+    ]
+   },
+   {
+    "cn": "洋山港将不断发展,为把上海建成一个全球航运中心做出更大贡献。",
+    "en": "Yangshan Port will continue to grow and make greater contributions to building Shanghai into a global shipping center.",
+    "structure": "will continue to 后接两个并列不定式 grow 和 make；make contributions to + 动名词为固定搭配；build ... into ... 表示'把……建设成……'",
+    "keys": [
+     "不断发展 continue to grow",
+     "做出更大贡献 make greater contributions to",
+     "全球航运中心 a global shipping center",
+     "把……建成…… build ... into ..."
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "洋山港",
+    "en": "Yangshan Port"
+   },
+   {
+    "cn": "航运中心",
+    "en": "shipping center"
+   },
+   {
+    "cn": "深水港",
+    "en": "deep-water port"
+   },
+   {
+    "cn": "人工智能",
+    "en": "artificial intelligence"
+   },
+   {
+    "cn": "碳排放",
+    "en": "carbon emissions"
+   },
+   {
+    "cn": "码头管理系统",
+    "en": "terminal management system"
+   },
+   {
+    "cn": "远程操控",
+    "en": "remote control"
+   },
+   {
+    "cn": "自主研发",
+    "en": "independently developed"
+   },
+   {
+    "cn": "用工成本",
+    "en": "labor costs"
+   },
+   {
+    "cn": "全球航运中心",
+    "en": "global shipping center"
+   }
+  ],
+  "pitfalls": [
+   "deep-water 作定语修饰 port 时须加连字符，写成 deep water port 扣分",
+   "近20年不可译为 near 20 years，应用 nearly 或 almost 修饰数词",
+   "碳排放 carbon emissions 中 emission 须用复数形式",
+   "自主研发不可译为 self-developed，应译为 independently developed",
+   "24小时不间断运作应译为 around the clock 或 24/7，直译 24 hours 不够地道"
+  ],
+  "upgrades": [
+   {
+    "plain": "is an important part of",
+    "better": "is a vital/integral component of",
+    "note": "vital/integral 比 important 更正式，component 比 part 更精准"
+   },
+   {
+    "plain": "greatly reduced",
+    "better": "significantly reduced",
+    "note": "significantly 更适用于学术与正式语体，搭配 reduce 更地道"
+   },
+   {
+    "plain": "can remotely control",
+    "better": "enables remote control of",
+    "note": "enable + 名词结构比 can + 动词更高级，体现书面语水平"
+   },
+   {
+    "plain": "looks very busy",
+    "better": "appears to be bustling with activity",
+    "note": "bustling with activity 形象生动，比 busy 更具画面感"
+   },
+   {
+    "plain": "make more contributions to building",
+    "better": "make greater contributions to building",
+    "note": "greater 比 more 与 contributions 搭配更标准、更正式"
+   }
+  ]
+ }
+}

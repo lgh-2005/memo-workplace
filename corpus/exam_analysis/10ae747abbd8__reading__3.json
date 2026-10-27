@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "10ae747abbd8__reading__3",
+ "examId": "10ae747abbd8",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2009 年考研英语真题（旧）",
+ "year": 2009,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:22:07.048Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 61560,
+ "usage": {
+  "prompt_tokens": 1742,
+  "completion_tokens": 4035,
+  "total_tokens": 5777,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1742,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4035,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1742,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "教育与穷国经济增长的真实关系",
+  "gist": "文章反驳了\"教育是穷国促进经济发展最高优先事项\"的传统观点，指出在职培训即可大幅提高劳动生产率，并以美日汽车工厂和墨西哥建筑工人为例加以论证。最后从人类发展史说明，是生产力进步推动了教育发展，而非相反。",
+  "structure": [
+   "第一段：提出论点——传统观点高估教育对穷国经济发展的作用",
+   "第二、三段：举例论证——美日车厂及墨西哥工人的在职培训成效",
+   "第四段：追溯历史——经济增长推动教育发展的因果关系",
+   "第五段：总结深化——教育是必要非充分条件，生产力制约教育发展"
+  ],
+  "difficulty": "中等",
+  "translation": "经济学家和政治家普遍误解了穷国正规教育与经济增长之间的关系。这两个领域的进步对于这些国家及所有其他社会的社会、政治和智力发展无疑都是必要的；然而，那种认为教育应当成为穷国促进经济快速发展的最高优先事项之一的传统观点是错误的。幸运的是事实确实如此，因为在那些国家建立新的教育体系并让足够多的人接受教育以改善经济表现，需要两到三代人的时间。一家研究机构的发现一贯表明，所有国家的工人都可以通过在职培训大幅提高生产率，从而大幅提高生活水平。\n\n具有讽刺意味的是，支持这一观点的第一批证据出现在美国。不久前，在美国陷入经济衰退、日本处于泡沫破裂前的巅峰时期之际，美国劳动力被嘲笑为受教育程度低下，是美国经济表现不佳的主要原因之一。日本曾经是、现在仍然是全球汽车组装生产率的领导者。然而研究表明，本田、日产和丰田在美国的工厂达到了其日本同类工厂大约95%的生产率——这是美国工人在工作中接受培训的结果。\n\n最近，在考察住房建设时，研究人员发现，在得克萨斯州休斯敦，不识字、不会说英语的墨西哥工人尽管建筑业工作十分复杂，却始终达到了最佳实践劳动生产率标准。\n\n教育与经济发展之间的真正关系是什么？我们有理由怀疑，即使政府不加以推动，持续的经济增长也会促进教育的发展。毕竟，教育就是这样起步的。一万年前我们的祖先还是狩猎采集者时，他们没有时间去多想除了寻找食物以外的任何事情。只有当人类开始以更高效的方式获取食物时，才有了从事其他事情的时间。\n\n随着教育的改善，人类的生产力潜能也随之提高。当竞争环境推动我们的祖先去实现这种潜能时，他们反过来又能负担得起更多的教育。这种不断提高的教育水平很可能是先进经济表现所需的复杂政治体制的一个必要条件，但不是充分条件。因此，如果没有政治变革，穷国可能无法摆脱贫困陷阱，而这种政治变革或许只有通过更广泛的正规教育才能实现。然而，缺乏正规教育并不会限制发展中国家劳动力在可预见的未来大幅提高生产率的能力。相反，是提高生产率方面的制约因素解释了为什么那里的教育发展没有更快。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "the conventional view that education should be one of the very highest priorities for promoting rapid economic development in poor countries is wrong.",
+    "why": "原文明确指出\"传统观点认为教育应是穷国促进经济快速发展的最高优先事项之一，这种看法是错误的\"。也就是说，传统观点把教育对穷国经济发展的重要性看得过高，即\"被高估了\"（overestimated），D选项是对原文的同义转述。",
+    "traps": "A\"受到毫无根据的怀疑\"——作者的质疑有事实和研究依据，并非groundless；B\"成了偏见的牺牲品\"——文中讨论的是教育重要性被夸大，而非教育本身遭受偏见伤害；C\"传统上被低估\"——与原文意思完全相反，原文说的是传统观点高估了教育的作用。",
+    "tip": "注意区分作者观点与传统观点的方向差异。"
+   },
+   {
+    "number": 32,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "building new educational systems there and putting enough people through them to improve economic performance would require two or three generations.",
+    "why": "原文直接说明在穷国建立新的教育体系并让足够多的人完成教育以改善经济表现\"需要两到三代人的时间\"。B选项\"takes efforts of generations\"（需要几代人的努力）是对\"require two or three generations\"的忠实概括。",
+    "traps": "A\"挑战经济学家和政治家\"——原文说他们误解了教育与经济增长的关系，并非说建设教育体系挑战他们；C\"要求政府优先考虑\"——这是传统观点，作者已明确否定；D\"需要充足的劳动力\"——文中未提及劳动力数量问题，属于无中生有。",
+    "tip": "看清题目问的是原文陈述的事实，不要把作者否定的观点当成正确信息。"
+   },
+   {
+    "number": 33,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Japan was, and remains, the global leader in automotive-assembly productivity. Yet the research revealed that the U.S. factories of Honda, Nissan, and Toyota achieved about 95 percent of the productivity of their Japanese counterparts",
+    "why": "原文指出日本是且仍然是全球汽车组装生产率的领导者，美国工厂只达到了日本同类工厂大约95%的生产率。这说明日美劳动力之间的主要差异在于日本劳动力生产率更高，B选项正确。虽然差距不大（95%），但确实存在差异。",
+    "traps": "A\"日本劳动力纪律性更强\"——原文未涉及纪律问题，属于无中生有；C\"美国劳动力受教育程度更好\"——原文恰恰说美国劳动力被嘲笑为受教育程度低，且全文论点是教育非决定因素；D\"美国劳动力组织性更强\"——原文未提及组织方面的差异。",
+    "tip": "选项之间进行比较时，要紧扣原文给出的具体数据和事实依据。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "type": "例证题",
+    "locate": "When our ancestors were hunters and gatherers 10,000 years ago, they didn't have time to wonder much about anything besides finding food. Only when humanity began to get its food in a more productive way was there time for other things.",
+    "why": "作者用祖先的例子说明：一万年前狩猎采集时期，人们没有时间考虑食物以外的事；只有当获取食物的方式变得更高效后，人们才有了时间去从事其他活动（包括教育）。因此教育是在人们有了足够时间后才出现的，A选项正确。",
+    "traps": "B\"先于更好的获取食物方式\"——原文逻辑恰恰相反，是更高效的食物获取方式在先，教育在后；C\"当人们不再挨饿时\"——原文强调的是\"有了时间\"（time for other things），而非不再饥饿，偷换了概念；D\"由于政府面临的压力\"——一万年前的狩猎采集社会不存在现代意义上的政府，属于无中生有。",
+    "tip": "例证题要抓住例子所要说明的核心观点，区分因果与时间先后关系。"
+   },
+   {
+    "number": 35,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "As education improved, humanity's productivity potential increased as well. When the competitive environment pushed our ancestors to achieve that potential, they could in turn afford more education.",
+    "why": "末段论述的逻辑链为：生产率提高→人们能负担更多教育→教育水平提升→生产力潜能进一步增加。即教育发展是跟随生产率提高之后的结果。C选项\"follows improved productivity\"（跟随生产率提高而来）准确概括了这一因果关系。",
+    "traps": "A\"直接源于竞争环境\"——竞争环境推动的是实现生产力潜能，而非直接导致教育发展，属于因果链简化错误；B\"不依赖于经济表现\"——末段明确指出经济增长促进教育发展，二者关系密切，B与原文矛盾；D\"负担不起政治变革\"——原文说的是穷国可能需要政治变革来摆脱贫困陷阱，并非教育负担不起政治变革，属于张冠李戴。",
+    "tip": "理清因果链条中各环节的先后和主次关系是解题关键。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "derided",
+    "cn": "v. 嘲笑，嘲弄"
+   },
+   {
+    "w": "counterparts",
+    "cn": "n. 对应的人/物，同类"
+   },
+   {
+    "w": "illiterate",
+    "cn": "adj. 不识字的，文盲的"
+   },
+   {
+    "w": "radically",
+    "cn": "adv. 根本地，大幅度地"
+   },
+   {
+    "w": "constrain",
+    "cn": "v. 限制，约束"
+   },
+   {
+    "w": "recession",
+    "cn": "n. 经济衰退"
+   },
+   {
+    "w": "undoubtedly",
+    "cn": "adv. 毫无疑问地"
+   },
+   {
+    "w": "sufficient",
+    "cn": "adj. 充分的，足够的"
+   },
+   {
+    "w": "foreseeable",
+    "cn": "adj. 可预见的"
+   },
+   {
+    "w": "substantially",
+    "cn": "adv. 大幅度地，实质上地"
+   },
+   {
+    "w": "complexity",
+    "cn": "n. 复杂性"
+   },
+   {
+    "w": "automotive-assembly",
+    "cn": "n. 汽车组装"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "We are fortunate that it is, because building new educational systems there and putting enough people through them to improve economic performance would require two or three generations.",
+    "cn": "幸运的是事实确实如此，因为在那些国家建立新的教育体系并让足够多的人完成教育以改善经济表现，需要两到三代人的时间。",
+    "note": "it is 指代前句的 wrong；because 引导原因状语从句；主语为 building... and putting... 两个动名词短语并列；to improve 为目的状语。"
+   },
+   {
+    "en": "This increasingly high level of education is probably a necessary, but not a sufficient, condition for the complex political systems required by advanced economic performance.",
+    "cn": "这种不断提高的教育水平很可能是先进经济表现所需的复杂政治体制的一个必要条件，但不是充分条件。",
+    "note": "主干为 This level is a condition；but not a sufficient 为插入成分与 necessary 对比；required by... 为过去分词短语作后置定语修饰 political systems。"
+   },
+   {
+    "en": "On the contrary, constraints on improving productivity explain why education isn't developing more quickly there than it is.",
+    "cn": "相反，提高生产率方面的制约因素解释了为什么那里的教育发展没有更快。",
+    "note": "主干为 constraints explain why...；on improving productivity 为介词短语修饰 constraints；why 引导宾语从句；there 指代发展中国家。"
+   }
+  ]
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "612ae9c327ae__writing__all",
+ "examId": "612ae9c327ae",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2021 年 12 月英语六级真题（第 1 套）",
+ "year": 2021,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:35:20.020Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 43199,
+ "usage": {
+  "prompt_tokens": 755,
+  "completion_tokens": 2832,
+  "total_tokens": 3587,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 755,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2832,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 755,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "针对年轻人长时间上网却无法辨别网络虚假信息的现象进行评论，并提出解决措施；议论文体，150-200词。",
+    "outline": [
+     "第一段：引出话题，描述年轻人沉浸于网络却缺乏辨别虚假信息能力的现象，点明问题的严重性。",
+     "第二段：分析造成该现象的原因，如信息过载、媒体素养教育缺失、平台算法推荐机制等。",
+     "第三段：从学校教育、平台责任、家庭引导等多角度提出切实可行的解决措施，并进行总结升华。"
+    ],
+    "sample": "In the digital era, young people are spending an unprecedented amount of time online. However, as the passage highlights, many of them lack the critical ability to distinguish false information from factual content, evaluate the credibility of sources, or differentiate authentic news from fabricated stories.\n\nSeveral factors contribute to this troubling phenomenon. First, the sheer volume of information flooding social media platforms makes it exceedingly difficult for young users to verify every piece of content they encounter. Second, many educational institutions have yet to incorporate media literacy into their curricula, leaving students ill-equipped to navigate the complex digital landscape. Third, algorithms designed to maximize engagement often prioritize sensational content over accurate reporting, further blurring the line between truth and falsehood.\n\nTo address this pressing issue, concerted efforts from multiple stakeholders are essential. Schools should integrate media literacy courses that teach students how to critically assess online information. Meanwhile, technology companies must take greater responsibility by developing more effective fact-checking mechanisms. Additionally, parents should actively guide their children in cultivating healthy and discerning online habits. Only through such collaborative measures can we empower the younger generation to become informed and responsible digital citizens.",
+    "phrases": [
+     {
+      "en": "an unprecedented amount of",
+      "cn": "前所未有的大量……；用于强调程度之深，比 a lot of 更具学术感"
+     },
+     {
+      "en": "distinguish A from B",
+      "cn": "区分A与B；比 tell...from 更正式，常用于议论文"
+     },
+     {
+      "en": "the sheer volume of",
+      "cn": "（信息等的）庞大数量；sheer 起强调作用，突出数量之巨"
+     },
+     {
+      "en": "have yet to do",
+      "cn": "尚未做某事；比 haven't done 更书面，暗示应该但还没做到"
+     },
+     {
+      "en": "ill-equipped to do",
+      "cn": "缺乏……的能力/准备；形象表达能力不足，比 unable to 更高级"
+     },
+     {
+      "en": "blur the line between A and B",
+      "cn": "模糊A与B之间的界限；形象描述界限消融的状态"
+     },
+     {
+      "en": "concerted efforts from multiple stakeholders",
+      "cn": "来自多方利益相关者的协同努力；体现多方合作的高级表达"
+     },
+     {
+      "en": "take greater responsibility",
+      "cn": "承担更大的责任；比 be responsible 更主动、更有号召力"
+     },
+     {
+      "en": "empower sb. to do",
+      "cn": "赋能某人做某事；正面积极的动词，适合总结段使用"
+     },
+     {
+      "en": "fact-checking mechanisms",
+      "cn": "事实核查机制；信息素养话题的核心术语"
+     }
+    ],
+    "pitfalls": [
+     "审题遗漏：题目要求既要 comment 又要 suggest measures，缺少任一部分都会严重扣分。",
+     "结构松散：未分段或段落功能不清晰，导致阅卷老师无法快速抓住文章逻辑。",
+     "用词重复：反复使用 young people、Internet、false information 而不做同义替换，显得词汇量不足。",
+     "措施空泛：只写 the government should do something 而无具体内容，缺乏说服力。",
+     "词数不达标：低于150词会被直接扣分，务必写完后快速数词数确认。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Young people cannot tell true information from false information.",
+      "better": "Many young users lack the critical ability to distinguish factual content from fabricated stories.",
+      "note": "用 lack the ability to 替换 cannot，用 factual/fabricated 同义替换避免重复，更具学术感。"
+     },
+     {
+      "plain": "There is too much information on the Internet.",
+      "better": "The sheer volume of information flooding social media platforms makes verification exceedingly difficult.",
+      "note": "用 sheer volume、flooding、verification 等词汇替代口语化表达，信息密度更高。"
+     },
+     {
+      "plain": "Schools should teach students to judge information.",
+      "better": "Schools should integrate media literacy courses that teach students how to critically assess online information.",
+      "note": "加入 media literacy、critically assess 等专业术语，措施更具体、更有深度。"
+     },
+     {
+      "plain": "We should work together to solve this problem.",
+      "better": "Only through such collaborative measures can we empower the younger generation to become responsible digital citizens.",
+      "note": "使用 only 倒装句式 + empower + digital citizens，句式高级且总结有力。"
+     },
+     {
+      "plain": "Companies should check information.",
+      "better": "Technology companies must take greater responsibility by developing more effective fact-checking mechanisms.",
+      "note": "用 take responsibility + by doing 结构指明责任主体和具体方式，逻辑更严密。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only through such collaborative measures can we empower the younger generation to become informed and responsible digital citizens. —— Only + 介词短语置于句首引发倒装，是议论文总结段的经典高分句式。",
+   "The sheer volume of information flooding social media platforms makes it exceedingly difficult for young users to verify every piece of content they encounter. —— sheer volume + 现在分词后置定语 + make it adj. + for sb. to do 构成信息密集的长难句，展现语言驾驭力。",
+   "Many educational institutions have yet to incorporate media literacy into their curricula, leaving students ill-equipped to navigate the complex digital landscape. —— have yet to do 表'尚未'，逗号后接现在分词 leaving 作结果状语，因果衔接流畅自然。",
+   "Algorithms designed to maximize engagement often prioritize sensational content over accurate reporting, further blurring the line between truth and falsehood. —— 过去分词 designed 后置定语 + prioritize A over B + 现在分词 blurring 作伴随结果，一句话涵盖三个高级语法点。"
+  ]
+ }
+}

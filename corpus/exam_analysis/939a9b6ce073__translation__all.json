@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "939a9b6ce073__translation__all",
+ "examId": "939a9b6ce073",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2020 年 9 月英语六级真题（第 1 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:30:03.984Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 28147,
+ "usage": {
+  "prompt_tokens": 798,
+  "completion_tokens": 1758,
+  "total_tokens": 2556,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 798,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1758,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 798,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "《西游记》的文学地位与影响",
+  "reference": "Journey to the West is perhaps the most influential of the four classic novels in Chinese literature, and certainly the most widely known abroad. The novel depicts the arduous journey of the renowned monk Xuanzang, who, accompanied by three followers, travels through western China to India in pursuit of Buddhist scriptures. Although the theme of the story is rooted in Buddhism, the novel draws extensively on Chinese folk tales and mythology, creating a variety of vivid characters and animal figures. The most famous of these is Sun Wukong, the Monkey King, whose stories of battling all manner of demons and monsters are familiar to almost every Chinese child.",
+  "sentences": [
+   {
+    "cn": "《西游记》(Journey to the West)也许是中国文学四大经典小说中最具影响力的一部，当然也是在国外最广为人知的一部小说。",
+    "en": "Journey to the West is perhaps the most influential of the four classic novels in Chinese literature, and certainly the most widely known abroad.",
+    "structure": "并列结构，用 and certainly 连接两个表语，其中含 the most + adj. + of... 最高级结构",
+    "keys": [
+     "四大经典小说 the four classic novels",
+     "最具影响力 the most influential",
+     "最广为人知 the most widely known"
+    ]
+   },
+   {
+    "cn": "这部小说描绘了著名僧侣玄装在三个随从的陪同下穿越中国西部地区前往印度取经(Buddhist scripture)的艰难历程。",
+    "en": "The novel depicts the arduous journey of the renowned monk Xuanzang, who, accompanied by three followers, travels through western China to India in pursuit of Buddhist scriptures.",
+    "structure": "主句 + who 引导的非限制性定语从句，从句内嵌入 accompanied by 过去分词作伴随状语，in pursuit of 表目的",
+    "keys": [
+     "著名僧侣 the renowned monk",
+     "随从 followers",
+     "陪同下 accompanied by",
+     "取经 in pursuit of Buddhist scriptures",
+     "艰难历程 arduous journey"
+    ]
+   },
+   {
+    "cn": "虽然故事的主题基于佛教，但这部小说采用了大量中国民间故事和神话的素材，创造了各种栩栩如生的人物和动物形象。",
+    "en": "Although the theme of the story is rooted in Buddhism, the novel draws extensively on Chinese folk tales and mythology, creating a variety of vivid characters and animal figures.",
+    "structure": "Although 引导让步状语从句 + 主句含两个并列谓语，第二个动作用 creating 现在分词作结果状语",
+    "keys": [
+     "基于佛教 is rooted in Buddhism",
+     "民间故事和神话 folk tales and mythology",
+     "栩栩如生的 vivid",
+     "素材/采用素材 draw on"
+    ]
+   },
+   {
+    "cn": "其中最著名的是孙悟空，他与各种各样妖魔作斗争的故事几乎为每个中国孩子所熟知。",
+    "en": "The most famous of these is Sun Wukong, the Monkey King, whose stories of battling all manner of demons and monsters are familiar to almost every Chinese child.",
+    "structure": "主系表结构 + whose 引导非限制性定语从句，be familiar to sb 表示\"为某人所熟知\"",
+    "keys": [
+     "妖魔 demons and monsters",
+     "为……所熟知 be familiar to",
+     "各种各样 all manner of"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "《西游记》",
+    "en": "Journey to the West"
+   },
+   {
+    "cn": "四大经典小说",
+    "en": "the four classic novels"
+   },
+   {
+    "cn": "僧侣",
+    "en": "monk"
+   },
+   {
+    "cn": "玄奘",
+    "en": "Xuanzang"
+   },
+   {
+    "cn": "随从",
+    "en": "followers / disciples"
+   },
+   {
+    "cn": "佛经/经书",
+    "en": "Buddhist scriptures"
+   },
+   {
+    "cn": "佛教",
+    "en": "Buddhism"
+   },
+   {
+    "cn": "民间故事",
+    "en": "folk tales"
+   },
+   {
+    "cn": "孙悟空",
+    "en": "Sun Wukong (the Monkey King)"
+   },
+   {
+    "cn": "妖魔",
+    "en": "demons and monsters"
+   }
+  ],
+  "pitfalls": [
+   "\"四大经典小说\"易误译为 four great inventions 等混淆表达，应为 four classic novels",
+   "\"取经\"不能直译为 take scriptures，应译为 in pursuit of / in quest of Buddhist scriptures",
+   "\"栩栩如生\"易遗漏或译为 lively，更准确的表达是 vivid / lifelike",
+   "\"为每个中国孩子所熟知\"是被动含义，需用 be familiar to 或 be known to 结构，勿混淆 familiar to 与 familiar with",
+   "\"在三个随从的陪同下\"应使用 accompanied by 伴随结构，避免写成 under the company of 等中式表达"
+  ],
+  "upgrades": [
+   {
+    "plain": "based on Buddhism",
+    "better": "rooted in Buddhism",
+    "note": "rooted in 比 based on 更生动，隐喻主题深植于佛教土壤"
+   },
+   {
+    "plain": "used a lot of materials from folk tales",
+    "better": "draws extensively on folk tales and mythology",
+    "note": "draw on 是地道的\"取材于\"搭配，extensively 比 a lot of 更正式"
+   },
+   {
+    "plain": "went to India to get Buddhist scriptures",
+    "better": "travels to India in pursuit of Buddhist scriptures",
+    "note": "in pursuit of 更书面、更典雅，体现求取经书的艰辛意味"
+   },
+   {
+    "plain": "very famous",
+    "better": "the most widely known",
+    "note": "最高级 + 副词 widely 更精确地对应\"最广为人知\"的程度"
+   },
+   {
+    "plain": "fighting with all kinds of demons",
+    "better": "battling all manner of demons and monsters",
+    "note": "battle 比 fight 更具史诗感，all manner of 比 all kinds of 更文学化"
+   }
+  ]
+ }
+}

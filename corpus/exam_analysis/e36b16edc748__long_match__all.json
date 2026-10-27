@@ -1,0 +1,247 @@
+{
+ "schemaVersion": 1,
+ "id": "e36b16edc748__long_match__all",
+ "examId": "e36b16edc748",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2026 年 6 月英语六级真题（第 3 套）",
+ "year": 2026,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T06:08:05.139Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 39464,
+ "usage": {
+  "prompt_tokens": 959,
+  "completion_tokens": 2353,
+  "total_tokens": 3312,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 959,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2353,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 959,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "儿童财商教育与家长角色",
+  "strategy": [
+   "先划出陈述句中数字、百分比、专有名词等硬性定位词，快速锁定段落",
+   "关注'most/majority/many'等程度词，与原文中对应的量化表达做匹配",
+   "留意同义替换：如handle money≈manage finance，draw lessons≈learn from mistakes",
+   "按题号顺序与段落顺序大致同向的规律，缩小扫读范围",
+   "对比多个候选段落时，确认陈述句的每一个语义要素都能在该段找到对应"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "大多数父母意识到教孩子理财的重要性，但实际上很多人在这方面并没有做太多。",
+    "keywords": [
+     "importance",
+     "handle money",
+     "don't do much",
+     "parents"
+    ],
+    "paraphrase": "陈述句用'realise the importance…but don't do much'表达认知与行动的落差，原文很可能用'acknowledge/recognize…yet fail to/rarely put into practice'等同义替换来呈现同一反差关系。",
+    "tip": "定位'重要性+却未付诸行动'这一转折逻辑，找含有but/however/yet的段落。"
+   },
+   {
+    "number": 37,
+    "answer": "A",
+    "cn": "人们在理财方式上存在很大差异。",
+    "keywords": [
+     "differ substantially",
+     "managing finance"
+    ],
+    "paraphrase": "'differ substantially'常被原文替换为'vary greatly/widely diverge'；'managing finance'可替换为'handling money/dealing with finances'。",
+    "tip": "A段通常为引入话题段，留意开篇对个体理财差异的概述性描写。"
+   },
+   {
+    "number": 38,
+    "answer": "G",
+    "cn": "父母可以通过帮助孩子从错误的消费决定中吸取教训，轻松地教会他们如何负责任地消费。",
+    "keywords": [
+     "easily teach",
+     "draw lessons",
+     "bad decisions",
+     "spend responsibly"
+    ],
+    "paraphrase": "'draw lessons from bad decisions'可能在原文中被改写为'learn from mistakes/reflect on poor spending choices'；'easily'可能对应'simple/straightforward way'。",
+    "tip": "聚焦'从错误中学习'这一教育方法，定位含mistake/poor choice等词的段落。"
+   },
+   {
+    "number": 39,
+    "answer": "C",
+    "cn": "许多英国年轻人严重缺乏理财技能，而且他们学习这些技能的时间不够早。",
+    "keywords": [
+     "young British people",
+     "lack",
+     "money management skills",
+     "early enough"
+    ],
+    "paraphrase": "'badly lack'可替换为'seriously short of/sorely deficient in'；'don't learn them early enough'可对应'fail to acquire…at a sufficiently young age'。",
+    "tip": "抓住国籍限定词'British'和程度副词'badly'，快速在C段找到对应调查或数据。"
+   },
+   {
+    "number": 40,
+    "answer": "P",
+    "cn": "大多数成年人认为，他们的消费习惯受父母的影响最大。",
+    "keywords": [
+     "majority of adults",
+     "spending habits",
+     "influenced",
+     "parents"
+    ],
+    "paraphrase": "'the majority of adults'常对应'most grown-ups/over half of adults surveyed'；'influenced the most by their parents'可改写为'shaped primarily by parental example'。",
+    "tip": "定位'多数成年人+父母影响'的调查结论，P段靠后，可从文章末尾反向扫读。"
+   },
+   {
+    "number": 41,
+    "answer": "I",
+    "cn": "有些应用程序专门为7岁以下儿童设计，帮助他们追踪零花钱的使用情况。",
+    "keywords": [
+     "apps",
+     "children under 7",
+     "track",
+     "pocket money"
+    ],
+    "paraphrase": "'apps designed specifically for children under 7'可能对应原文'applications/tools targeting kids aged six and below/pre-school children'；'track pocket money spending'可替换为'monitor allowance use'。",
+    "tip": "数字'7'和'apps'是强定位词，直接扫读含年龄数字和科技工具的段落。"
+   },
+   {
+    "number": 42,
+    "answer": "B",
+    "cn": "专家认为，一个人学习负责任地理财的年龄决定了他们此后处理金钱的方式。",
+    "keywords": [
+     "experts",
+     "age",
+     "manage finance responsibly",
+     "determines",
+     "thereafter"
+    ],
+    "paraphrase": "'the age a person learns…determines'可在原文中表述为'when someone first acquires…has a lasting impact on/shapes future'；'thereafter'对应'from that point on/in later life'。",
+    "tip": "关注B段中专家观点引述及'关键年龄'这一因果逻辑。"
+   },
+   {
+    "number": 43,
+    "answer": "N",
+    "cn": "大多数教师认为，如今的孩子需要在更小的年纪就开始做财务决策。",
+    "keywords": [
+     "most teachers",
+     "opinion",
+     "financial decisions",
+     "younger age"
+    ],
+    "paraphrase": "'most teachers are of the opinion'可被改写为'the majority of educators believe/a large proportion of teaching staff think'；'at a younger age'可对应'earlier than before/at an increasingly early stage'。",
+    "tip": "定位职业身份'teachers/educators'和比较概念'younger age'，快速匹配N段。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "父母在塑造孩子的理财习惯方面是有效的榜样。",
+    "keywords": [
+     "role models",
+     "shaping",
+     "money management habits"
+    ],
+    "paraphrase": "'serve as effective role models'可在原文中表述为'act as/function as positive examples'；'shaping…habits'可替换为'influencing/molding…behaviors'。",
+    "tip": "聚焦'role model/榜样'概念，与D段中关于父母示范作用的论述对应。"
+   },
+   {
+    "number": 45,
+    "answer": "O",
+    "cn": "根据一项研究，大约30%的父母允许孩子参与家庭财务问题的讨论。",
+    "keywords": [
+     "one study",
+     "30%",
+     "participate",
+     "family finances"
+    ],
+    "paraphrase": "'about 30%'可能对应原文'roughly a third/around three in ten'；'participate in discussions on family finances'可改写为'be involved in conversations about household budgets'。",
+    "tip": "数字'30%'是最强定位信号，直接搜索O段中的百分比或'a third'等表达。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "handle money",
+    "cn": "理财，管理金钱（动词短语）"
+   },
+   {
+    "w": "substantially",
+    "cn": "大幅地，相当大地（adv.）"
+   },
+   {
+    "w": "draw lessons from",
+    "cn": "从……中吸取教训（动词短语）"
+   },
+   {
+    "w": "thereafter",
+    "cn": "此后，从那以后（adv.）"
+   },
+   {
+    "w": "role models",
+    "cn": "榜样，行为楷模（n.）"
+   },
+   {
+    "w": "pocket money",
+    "cn": "零花钱（n.）"
+   },
+   {
+    "w": "in this respect",
+    "cn": "在这方面（介词短语）"
+   },
+   {
+    "w": "track",
+    "cn": "追踪，记录（v.）"
+   },
+   {
+    "w": "shaping",
+    "cn": "塑造，形成（v. 现在分词）"
+   },
+   {
+    "w": "financial decisions",
+    "cn": "财务决策（n.）"
+   }
+  ]
+ }
+}

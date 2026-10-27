@@ -1,0 +1,249 @@
+{
+ "schemaVersion": 1,
+ "id": "a9d96394fca2__long_match__all",
+ "examId": "a9d96394fca2",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2017 年 12 月英语六级真题（第 3 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:15:43.010Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 38616,
+ "usage": {
+  "prompt_tokens": 950,
+  "completion_tokens": 2062,
+  "total_tokens": 3012,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 950,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2062,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 950,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "苹果公司与FBI围绕数据隐私的博弈",
+  "strategy": [
+   "先通读10条陈述句，提炼高频主题词如Apple、FBI、privacy、encryption等",
+   "圈出每句中的专有名词（如Snowden、Timothy Cook）和数字，优先在原文中快速定位",
+   "关注同义替换：陈述句用概括性表述，原文常用具体细节描述同一事件",
+   "按逻辑顺序（时间线：Snowden事件→苹果加密→FBI要求→库克回应→后续争论）串联各段",
+   "遇到多段涉及同一话题时，对比陈述句中的限定词（如earlier iPhones、federal court）精确匹配"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "人们普遍认为科技公司致力于保护客户的私人数据。",
+    "keywords": [
+     "popular belief",
+     "tech companies",
+     "protecting",
+     "private data"
+    ],
+    "paraphrase": "陈述句用popular belief概括大众认知，原文E段可能使用common perception/widely held view等近义表达来描述公众对科技公司保护用户隐私的看法。",
+    "tip": "定位popular belief或tech companies与privacy的搭配，该句为背景铺垫性描述。"
+   },
+   {
+    "number": 37,
+    "answer": "M",
+    "cn": "美国政府认为，获取人们iPhone中的数据可以用来阻止恐怖袭击。",
+    "keywords": [
+     "US government",
+     "access",
+     "iPhones",
+     "terrorist attacks"
+    ],
+    "paraphrase": "陈述句中prevent terrorist attacks是核心目的表述，M段原文可能用stop/thwart terrorism或national security等表述体现政府立场的正当性论证。",
+    "tip": "定位terrorist attacks与government access并列出现的段落，注意政府视角的论述。"
+   },
+   {
+    "number": 38,
+    "answer": "C",
+    "cn": "一家联邦法院要求苹果公司协助FBI获取一名恐怖分子iPhone中的数据。",
+    "keywords": [
+     "federal court",
+     "Apple",
+     "FBI",
+     "terrorist's iPhone"
+    ],
+    "paraphrase": "陈述句是对事件的客观叙述，C段原文应包含court order/judge ordered等法律术语，描述法院正式命令苹果配合FBI解锁手机。",
+    "tip": "定位federal court与Apple、FBI三者同时出现的段落，这是案件起因的关键事实。"
+   },
+   {
+    "number": 39,
+    "answer": "H",
+    "cn": "隐私倡导者现在有了苹果公司作为盟友，共同对抗政府获取个人数据的行为。",
+    "keywords": [
+     "privacy advocates",
+     "Apple",
+     "fighting alongside",
+     "government access"
+    ],
+    "paraphrase": "陈述句用fighting alongside强调联盟关系，H段原文可能用ally/side by side/join forces等表达隐私倡导者与苹果立场一致。",
+    "tip": "定位privacy advocates与Apple的合作关系描述，注意alongside等表示并肩作战的措辞。"
+   },
+   {
+    "number": 40,
+    "answer": "B",
+    "cn": "斯诺登揭露了美国政府曾大规模地试图获取私人数据。",
+    "keywords": [
+     "Snowden",
+     "revealed",
+     "American government",
+     "massive scale"
+    ],
+    "paraphrase": "陈述句中on a massive scale强调规模，B段原文可能用large-scale surveillance/bulk data collection等表述来描述斯诺登所揭露的政府监控行为。",
+    "tip": "Snowden为高辨识度专有名词，直接扫读定位；注意massive scale的同义替换。"
+   },
+   {
+    "number": 41,
+    "answer": "J",
+    "cn": "FBI或许曾经能够在不需要苹果帮助的情况下获取早期iPhone中的私人数据。",
+    "keywords": [
+     "FBI",
+     "earlier iPhones",
+     "without Apple's help",
+     "private data"
+    ],
+    "paraphrase": "陈述句用might have been able to表示过去的可能性，J段原文可能讨论早期iPhone安全机制较弱、FBI可自行破解等技术背景。",
+    "tip": "定位earlier iPhones或older versions等时间限定词，该句强调新旧iPhone安全性差异。"
+   },
+   {
+    "number": 42,
+    "answer": "G",
+    "cn": "斯诺登事件之后，苹果公司明确表态要通过加密手段来对抗政府对个人数据的侵入。",
+    "keywords": [
+     "Snowden incident",
+     "Apple",
+     "encryption",
+     "government intrusion"
+    ],
+    "paraphrase": "陈述句用made clear its position表示立场声明，G段原文可能用announced/declared/took a stand等表述苹果在后斯诺登时代加强加密的策略转变。",
+    "tip": "同时包含Snowden与encryption的段落即为目标；注意与B段（仅讲Snowden揭露）的区分。"
+   },
+   {
+    "number": 43,
+    "answer": "P",
+    "cn": "据一位数字领域专家表示，没有任何iPhone能够完全免受黑客攻击。",
+    "keywords": [
+     "digital expert",
+     "no iPhone",
+     "entirely free",
+     "hacking"
+    ],
+    "paraphrase": "陈述句用entirely free from hacking表达绝对安全不可能，P段原文可能用vulnerable/not immune/can be breached等表述某专家对iPhone安全性的客观评价。",
+    "tip": "定位digital expert或类似专家引语标志词，该句通常出现在文章末尾作为总结性观点。"
+   },
+   {
+    "number": 44,
+    "answer": "I",
+    "cn": "蒂莫西·库克的长篇网络公开信有助于提升苹果的企业形象。",
+    "keywords": [
+     "Timothy Cook",
+     "long web post",
+     "enhance",
+     "Apple's image"
+    ],
+    "paraphrase": "陈述句用enhance Apple's image概括正面效果，I段原文可能用boost reputation/improve public perception/PR victory等描述库克公开信的品牌效应。",
+    "tip": "定位Timothy Cook与web post的搭配，注意与D段（上诉决定）的区分：此处侧重形象效果。"
+   },
+   {
+    "number": 45,
+    "answer": "D",
+    "cn": "苹果公司的首席执行官决定就联邦法院要求解锁用户iPhone的命令提起上诉。",
+    "keywords": [
+     "Apple's CEO",
+     "appeal",
+     "federal court's order",
+     "unlock"
+    ],
+    "paraphrase": "陈述句用appeal描述法律行动，D段原文可能用fight/challenge/contest the ruling等表述库克拒绝服从法院命令并寻求法律途径的决定。",
+    "tip": "定位appeal与court order的搭配，该句描述苹果的正式法律回应行动。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "committed to",
+    "cn": "致力于，承诺（adj. + prep. 短语）"
+   },
+   {
+    "w": "terrorist attacks",
+    "cn": "恐怖袭击（n. 名词短语）"
+   },
+   {
+    "w": "federal court",
+    "cn": "联邦法院（n. 名词短语）"
+   },
+   {
+    "w": "privacy advocates",
+    "cn": "隐私倡导者（n. 名词短语）"
+   },
+   {
+    "w": "on a massive scale",
+    "cn": "大规模地（adv. 介词短语作状语）"
+   },
+   {
+    "w": "encryption",
+    "cn": "加密，加密技术（n. 名词）"
+   },
+   {
+    "w": "intrusion",
+    "cn": "侵入，侵犯（n. 名词）"
+   },
+   {
+    "w": "hacking",
+    "cn": "黑客攻击，非法入侵（n. 名词/动名词）"
+   },
+   {
+    "w": "enhance",
+    "cn": "提升，增强（v. 动词）"
+   },
+   {
+    "w": "appeal",
+    "cn": "上诉，申诉（v./n. 动词/名词）"
+   }
+  ]
+ }
+}

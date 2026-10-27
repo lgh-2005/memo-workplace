@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "384e000d6fc4__writing__all",
+ "examId": "384e000d6fc4",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2016 年 6 月英语六级真题（第 2 套）",
+ "year": 2016,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:07:23.240Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 44644,
+ "usage": {
+  "prompt_tokens": 717,
+  "completion_tokens": 3104,
+  "total_tokens": 3821,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 717,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3104,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 717,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "围绕\"机器人的使用\"写一篇短文，设想当越来越多机器人在工业和日常生活中取代人类时会发生什么，字数150-200词。",
+    "outline": [
+     "第一段：引出话题——机器人日益融入工业生产和日常生活，引发对未来社会的深刻思考。",
+     "第二段：分两面论述——一方面，机器人在制造业、家庭生活和医疗领域带来显著好处；另一方面，大规模失业、技能退化和人际疏离等挑战不可忽视。",
+     "第三段：总结观点——应在技术进步和人类福祉之间寻求平衡，通过合理监管和教育调整确保机器人服务于人类。"
+    ],
+    "sample": "In recent years, the rapid advancement of artificial intelligence has ushered in an era where robots are increasingly integrated into both industrial production and everyday life. This trend, while promising remarkable efficiency, also raises profound questions about the future of human society.\n\nOn the one hand, the proliferation of robots brings undeniable benefits. In manufacturing, robots can perform repetitive and hazardous tasks with greater precision and endurance than human workers, thereby reducing workplace injuries and boosting productivity. In daily life, household robots can assist the elderly and disabled, offering them unprecedented independence. Moreover, robots employed in healthcare can conduct surgeries with astonishing accuracy, potentially saving countless lives.\n\nOn the other hand, the widespread adoption of robots poses significant challenges. The most pressing concern is massive unemployment, as machines gradually replace human labor across numerous sectors. Additionally, over-reliance on robots may erode essential human skills and weaken interpersonal connections, leading to a society that is technologically advanced yet emotionally impoverished.\n\nIn conclusion, while robots hold tremendous potential to improve our lives, we must strike a delicate balance between technological progress and human well-being. Only through thoughtful regulation and adaptive education can we ensure that robots serve humanity rather than supplant it.",
+    "phrases": [
+     {
+      "en": "usher in an era where...",
+      "cn": "开创一个……的时代；用于引出新趋势或新阶段，替代 bring about。"
+     },
+     {
+      "en": "the proliferation of...",
+      "cn": "……的大量涌现/扩散；比 the increase of 更正式，适用于描述技术蔓延。"
+     },
+     {
+      "en": "perform repetitive and hazardous tasks",
+      "cn": "执行重复性和危险性任务；工业场景高频搭配，展现对话题的熟悉。"
+     },
+     {
+      "en": "thereby reducing...and boosting...",
+      "cn": "从而减少……并提升……；thereby + 现在分词表结果，逻辑衔接紧密。"
+     },
+     {
+      "en": "unprecedented independence",
+      "cn": "前所未有的独立性；unprecedented 替代 never-seen-before，更正式高级。"
+     },
+     {
+      "en": "the most pressing concern",
+      "cn": "最紧迫的担忧；pressing 比 urgent 更书面，适用于议论文。"
+     },
+     {
+      "en": "erode essential human skills",
+      "cn": "侵蚀人类核心技能；erode 为隐喻用法，比 weaken 更生动。"
+     },
+     {
+      "en": "strike a delicate balance between A and B",
+      "cn": "在 A 与 B 之间取得微妙的平衡；经典议论文收尾句型。"
+     },
+     {
+      "en": "serve humanity rather than supplant it",
+      "cn": "服务人类而非取代人类；supplant 比 replace 更正式，有'篡夺'的意味。"
+     },
+     {
+      "en": "technologically advanced yet emotionally impoverished",
+      "cn": "技术先进却情感贫乏；对比结构突出矛盾，增强表现力。"
+     }
+    ],
+    "pitfalls": [
+     "审题偏差：只谈好处或只谈坏处，未按题目要求设想'取代人类后会怎样'的双面影响。",
+     "结构混乱：缺少明确分段，三段式论证不清晰，导致阅卷老师难以快速抓取主旨。",
+     "词汇单一：反复使用 replace、good、bad 等初级词汇，缺少同义替换和高级表达。",
+     "语法硬伤：主谓不一致（如 robots brings）、时态混用（一般现在时与将来时随意切换）。",
+     "字数违规：低于150词或超过200词，均会被扣分，写作时应提前预估篇幅。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Robots will bring many benefits to our life.",
+      "better": "The proliferation of robots is poised to yield a multitude of benefits for human society.",
+      "note": "用 proliferation、poised to、yield 和 multitude 替换基础词，语言更正式精确。"
+     },
+     {
+      "plain": "Many people will lose their jobs because of robots.",
+      "better": "The most pressing concern is massive unemployment, as machines gradually replace human labor across numerous sectors.",
+      "note": "用主语从句强调核心观点，补充 across numerous sectors 使论述更全面。"
+     },
+     {
+      "plain": "We should use robots in a good way.",
+      "better": "We must strike a delicate balance between technological progress and human well-being.",
+      "note": "strike a balance 是高分固定搭配，比模糊的 in a good way 更具体有力。"
+     },
+     {
+      "plain": "Robots are used more and more in our daily life.",
+      "better": "Robots are increasingly integrated into both industrial production and everyday life.",
+      "note": "increasingly integrated into 更正式，both...and 结构体现对题干工业+生活双场景的回应。"
+     },
+     {
+      "plain": "If we depend on robots too much, it will be bad.",
+      "better": "Over-reliance on robots may erode essential human skills and weaken interpersonal connections.",
+      "note": "over-reliance 名词化主语更学术，erode 和 weaken 动词更具象，避免空洞的 bad。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "The rapid advancement of artificial intelligence has ushered in an era where robots are increasingly integrated into both industrial production and everyday life. （人工智能的飞速发展开创了一个机器人日益融入工业生产和日常生活的时代。——开篇大气，从句嵌套自然。）",
+   "Over-reliance on robots may erode essential human skills and weaken interpersonal connections, leading to a society that is technologically advanced yet emotionally impoverished. （对机器人的过度依赖可能侵蚀人类核心技能、削弱人际联系，导致一个技术先进却情感贫乏的社会。——对比修辞+分词结构，逻辑层次清晰。）",
+   "Only through thoughtful regulation and adaptive education can we ensure that robots serve humanity rather than supplant it. （只有通过审慎的监管和适应性的教育，我们才能确保机器人服务人类而非取代人类。——Only 倒装句收尾，铿锵有力。）",
+   "We must strike a delicate balance between technological progress and human well-being. （我们必须在技术进步与人类福祉之间取得微妙的平衡。——strike a balance 为议论文万能收束句型。）"
+  ]
+ }
+}

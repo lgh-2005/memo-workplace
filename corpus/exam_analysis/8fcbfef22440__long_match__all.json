@@ -1,0 +1,241 @@
+{
+ "schemaVersion": 1,
+ "id": "8fcbfef22440__long_match__all",
+ "examId": "8fcbfef22440",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2023 年 12 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:47:31.878Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 32530,
+ "usage": {
+  "prompt_tokens": 991,
+  "completion_tokens": 1814,
+  "total_tokens": 2805,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 991,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1814,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 991,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "非洲农业生产力与气候变化挑战",
+  "strategy": [
+   "先通读10条陈述句，标注高频主题词如Africa、farming、productivity等",
+   "抓取每句中的专有名词、数据和独特表述作为定位锚点",
+   "注意同义替换：如susceptible↔vulnerable，crop yields↔farm output",
+   "按从易到难顺序匹配，含具体国名或数据的句子优先定位",
+   "未匹配段落做最后交叉验证，确保一一对应无遗漏"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "据说非洲许多国家的农业生产力在一个世纪以来一直处于低水平。",
+    "keywords": [
+     "agricultural productivity",
+     "African countries",
+     "remained low",
+     "a century"
+    ],
+    "paraphrase": "原文可能用stagnant/unchanged等词替换remained low，用decades/hundred years等表达替换a century，整体传达非洲农业长期停滞不前之意。",
+    "tip": "定位\"a century/百年\"与\"remained low\"，时间跨度是强定位线索。"
+   },
+   {
+    "number": 37,
+    "answer": "H",
+    "cn": "在农场与其农产品大买家之间建立联系，可以促进非洲农民采用先进的农业技术。",
+    "keywords": [
+     "connections",
+     "major purchasers",
+     "advanced farming techniques"
+    ],
+    "paraphrase": "原文可能用linkages/ties替换connections，用large-scale buyers替换major purchasers，用modern/sophisticated methods替换advanced farming techniques。",
+    "tip": "关注\"农场—买家联系\"这一独特商业逻辑表述来锁定段落。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "cn": "非洲部分地区变暖的速度远快于全球平均水平，过去半个世纪南部非洲的升温速度大约是全球变暖速率的两倍。",
+    "keywords": [
+     "southern Africa",
+     "twice",
+     "global warming rate",
+     "half century"
+    ],
+    "paraphrase": "原文可能用double替换roughly twice，用50 years替换last half century，用exceeding the average替换faster than the average。",
+    "tip": "抓住\"southern Africa\"和\"twice/两倍\"这一具体数据即可快速定位。"
+   },
+   {
+    "number": 39,
+    "answer": "G",
+    "cn": "改进的农业实践使肯尼亚农民的农产品产量显著提高。",
+    "keywords": [
+     "improved farming practices",
+     "Kenyan farmers",
+     "increase",
+     "remarkably"
+    ],
+    "paraphrase": "原文可能用better/enhanced agricultural methods替换improved farming practices，用significantly/dramatically替换remarkably，用boost替换increase。",
+    "tip": "专有名词\"Kenyan/Kenya\"是最强定位词，优先扫读。"
+   },
+   {
+    "number": 40,
+    "answer": "C",
+    "cn": "非洲尤其容易受到全球变暖影响，部分原因在于即使没有气候变化，非洲也难以养活其不断增长的人口。",
+    "keywords": [
+     "susceptible",
+     "global warming",
+     "feeding",
+     "increasing population"
+    ],
+    "paraphrase": "原文可能用vulnerable替换susceptible，用struggle to feed替换has difficulty feeding，用rising/growing替换increasing，表达非洲粮食安全的脆弱性。",
+    "tip": "关注\"susceptible/vulnerable\"及\"即便无气候变化也难养活人口\"的因果逻辑。"
+   },
+   {
+    "number": 41,
+    "answer": "F",
+    "cn": "使用化肥和改良种子可以帮助非洲小农户大幅提高作物产量。",
+    "keywords": [
+     "fertiliser",
+     "improved seeds",
+     "small farmers",
+     "crop yields"
+    ],
+    "paraphrase": "原文可能用better/enhanced varieties替换improved seeds，用dramatically/substantially替换impressively，用raise/boost替换increase。",
+    "tip": "锁定\"fertiliser + improved seeds\"这对具体农业投入品组合进行定位。"
+   },
+   {
+    "number": 42,
+    "answer": "I",
+    "cn": "事实证明，从传统农业转向建立能为非洲小农户带来技术和投资的企业，甚至更为重要。",
+    "keywords": [
+     "shift",
+     "traditional farming",
+     "businesses",
+     "technology and investment"
+    ],
+    "paraphrase": "原文可能用transition/move away from替换shift from，用enterprises/ventures替换businesses，用bring in capital替换bring investment。",
+    "tip": "关注\"从传统农业转向商业模式\"这一转折性观点来定位。"
+   },
+   {
+    "number": 43,
+    "answer": "A",
+    "cn": "世界上每个人都将不得不承受气候变化的后果，非洲人尤其如此。",
+    "keywords": [
+     "everyone",
+     "bear the consequences",
+     "climate change",
+     "Africans"
+    ],
+    "paraphrase": "原文可能用suffer/face the impacts替换bear the consequences，用particularly/most of all替换especially，作为全文开篇引出气候变化对非洲影响的主题。",
+    "tip": "该句为总领性表述，通常出现在文章首段，优先检查A段。"
+   },
+   {
+    "number": 44,
+    "answer": "D",
+    "cn": "非洲每个工人的农业产出改善远远落后于亚洲。",
+    "keywords": [
+     "farm output per worker",
+     "Africa",
+     "falls far short",
+     "Asia"
+    ],
+    "paraphrase": "原文可能用lags behind替换falls far short of，用labour productivity替换output per worker，通过非洲与亚洲的对比数据来体现差距。",
+    "tip": "抓住\"Africa vs. Asia\"的对比结构及\"per worker\"的效率指标来定位。"
+   },
+   {
+    "number": 45,
+    "answer": "J",
+    "cn": "从长远来看，非洲小型农场提高生产力的潜力相当有限，尤其是由于气候变暖和人口增长。",
+    "keywords": [
+     "long term",
+     "small farms",
+     "limited potential",
+     "warming climate",
+     "growing population"
+    ],
+    "paraphrase": "原文可能用in the future替换in the long term，用constrained/restricted替换limited，用demographic growth替换growing population，传达小农模式难以持续之意。",
+    "tip": "关注\"长期+有限潜力\"的悲观判断语气，结合warming和population双因素定位。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "susceptible",
+    "cn": "adj. 易受影响的，敏感的"
+   },
+   {
+    "w": "purchasers",
+    "cn": "n. 购买者，采购商"
+   },
+   {
+    "w": "fertiliser",
+    "cn": "n. 化肥，肥料"
+   },
+   {
+    "w": "impressively",
+    "cn": "adv. 令人印象深刻地，显著地"
+   },
+   {
+    "w": "paraphrase",
+    "cn": "n./v. 释义，改述"
+   },
+   {
+    "w": "remarkably",
+    "cn": "adv. 显著地，非常地"
+   },
+   {
+    "w": "stagnant",
+    "cn": "adj. 停滞的，不发展的（常见同义替换词）"
+   },
+   {
+    "w": "vulnerable",
+    "cn": "adj. 脆弱的，易受伤害的（susceptible的常见同义替换词）"
+   }
+  ]
+ }
+}

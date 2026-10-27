@@ -1,0 +1,212 @@
+{
+ "schemaVersion": 1,
+ "id": "26d64559a7b3__translation__all",
+ "examId": "26d64559a7b3",
+ "track": "cet6",
+ "section": "translation",
+ "sectionLabel": "翻译",
+ "title": "2020 年 12 月英语六级真题（第 2 套）",
+ "year": 2020,
+ "sub": "all",
+ "questionNumbers": [
+  56
+ ],
+ "generatedAt": "2026-10-27T05:32:06.345Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 35302,
+ "usage": {
+  "prompt_tokens": 830,
+  "completion_tokens": 2153,
+  "total_tokens": 2983,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 830,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2153,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 830,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "港珠澳大桥工程成就与大湾区发展",
+  "reference": "With a total length of 55 kilometers, the Hong Kong-Zhuhai-Macau Bridge is an extraordinary engineering feat of China. Connecting three cities, it is the world's longest cross-sea bridge and tunnel system. The bridge has reduced the travel time among the three cities from 3 hours to 30 minutes. This massive reinforced concrete bridge with an enormous span is a full testament to China's ability to build record-breaking mega-structures. It will help boost regional integration and promote economic growth. The bridge is key to China's master plan for developing its own Greater Bay Area. China hopes to build the Greater Bay Area into a region that can rival the bay areas of San Francisco, New York, and Tokyo in technological innovation and economic prosperity.",
+  "sentences": [
+   {
+    "cn": "港珠澳大桥全长55公里，是我国一项不同寻常的工程壮举。",
+    "en": "With a total length of 55 kilometers, the Hong Kong-Zhuhai-Macau Bridge is an extraordinary engineering feat of China.",
+    "structure": "with 介词短语作状语 + 主系表结构，将数据信息前置为伴随状语，主句突出核心评价。",
+    "keys": [
+     "港珠澳大桥 the Hong Kong-Zhuhai-Macau Bridge",
+     "全长 with a total length of",
+     "工程壮举 engineering feat",
+     "不同寻常的 extraordinary"
+    ]
+   },
+   {
+    "cn": "大桥将三个城市连接起来，是世界上最长的跨海桥梁和隧道系统。",
+    "en": "Connecting three cities, it is the world's longest cross-sea bridge and tunnel system.",
+    "structure": "现在分词短语作状语 + 主系表结构，用分词短语表达并列信息，避免两个简单句并列的松散结构。",
+    "keys": [
+     "跨海桥梁 cross-sea bridge",
+     "隧道系统 tunnel system",
+     "将……连接起来 connect / link"
+    ]
+   },
+   {
+    "cn": "大桥将三个城市之间的旅行时间从3小时缩短到30分钟。",
+    "en": "The bridge has reduced the travel time among the three cities from 3 hours to 30 minutes.",
+    "structure": "主谓宾结构 + from...to... 介词短语表示变化范围，使用现在完成时表示已经实现的成果。",
+    "keys": [
+     "旅行时间 travel time",
+     "缩短 reduce",
+     "从……到…… from...to..."
+    ]
+   },
+   {
+    "cn": "这座跨度巨大的钢筋混凝土大桥充分证明中国有能力建造创纪录的巨型建筑。",
+    "en": "This massive reinforced concrete bridge with an enormous span is a full testament to China's ability to build record-breaking mega-structures.",
+    "structure": "主系表结构 + be a testament to 短语 + 不定式作后置定语修饰 ability，多重修饰语叠加构成长句。",
+    "keys": [
+     "钢筋混凝土 reinforced concrete",
+     "跨度巨大的 with an enormous span",
+     "充分证明 is a full testament to",
+     "创纪录的 record-breaking",
+     "巨型建筑 mega-structures"
+    ]
+   },
+   {
+    "cn": "它将助推区域一体化，促进经济增长。",
+    "en": "It will help boost regional integration and promote economic growth.",
+    "structure": "主语 + will + 并列谓语结构（help boost... and promote...），简洁表达双重作用。",
+    "keys": [
+     "区域一体化 regional integration",
+     "促进经济增长 promote economic growth",
+     "助推 boost / facilitate"
+    ]
+   },
+   {
+    "cn": "大桥是中国发展自己的大湾区总体规划的关键。",
+    "en": "The bridge is key to China's master plan for developing its own Greater Bay Area.",
+    "structure": "主系表结构 + be key to 短语 + for doing 介词短语作后置定语，注意 key 在此为形容词用法。",
+    "keys": [
+     "大湾区 the Greater Bay Area",
+     "总体规划 master plan",
+     "关键 key to"
+    ]
+   },
+   {
+    "cn": "中国希望将大湾区建成在技术创新和经济繁荣上能与旧金山、纽约和东京的湾区相媲美的地区。",
+    "en": "China hopes to build the Greater Bay Area into a region that can rival the bay areas of San Francisco, New York, and Tokyo in technological innovation and economic prosperity.",
+    "structure": "主语 + hopes to + build...into + 定语从句（that can rival...in...），长定语从句修饰 region，是全文最复杂的句子。",
+    "keys": [
+     "建成 build...into",
+     "相媲美 rival / compete with",
+     "技术创新 technological innovation",
+     "经济繁荣 economic prosperity"
+    ]
+   }
+  ],
+  "keys": [
+   {
+    "cn": "港珠澳大桥",
+    "en": "the Hong Kong-Zhuhai-Macau Bridge"
+   },
+   {
+    "cn": "工程壮举",
+    "en": "engineering feat / engineering marvel"
+   },
+   {
+    "cn": "跨海桥梁",
+    "en": "cross-sea bridge"
+   },
+   {
+    "cn": "钢筋混凝土",
+    "en": "reinforced concrete"
+   },
+   {
+    "cn": "区域一体化",
+    "en": "regional integration"
+   },
+   {
+    "cn": "大湾区",
+    "en": "the Greater Bay Area"
+   },
+   {
+    "cn": "总体规划",
+    "en": "master plan"
+   },
+   {
+    "cn": "技术创新",
+    "en": "technological innovation"
+   },
+   {
+    "cn": "经济繁荣",
+    "en": "economic prosperity"
+   },
+   {
+    "cn": "巨型建筑",
+    "en": "mega-structure"
+   }
+  ],
+  "pitfalls": [
+   "「钢筋混凝土」误拼为 reinforced cement 或遗漏 reinforced",
+   "「相媲美」误用 compare 而非 rival / compete with，搭配不当",
+   "「总体规划」译为 general plan 不够专业，应用 master plan",
+   "「从3小时缩短到30分钟」介词搭配错误，必须用 from...to... 搭配 reduce",
+   "「创纪录的」遗漏翻译或误译为 breaking records，应用复合形容词 record-breaking"
+  ],
+  "upgrades": [
+   {
+    "plain": "The bridge is 55 kilometers long.",
+    "better": "With a total length of 55 kilometers, the bridge...",
+    "note": "用 with 短语前置作状语，句式更紧凑、信息层次更清晰"
+   },
+   {
+    "plain": "The bridge connects three cities and is the longest...",
+    "better": "Connecting three cities, it is the longest...",
+    "note": "用现在分词短语替代并列句，体现句式变化与高级写作能力"
+   },
+   {
+    "plain": "The bridge fully proves that China has the ability to...",
+    "better": "The bridge is a full testament to China's ability to...",
+    "note": "be a testament to 比 prove 更书面正式，适合工程类叙述语体"
+   },
+   {
+    "plain": "can be compared with the bay areas of...",
+    "better": "can rival the bay areas of...",
+    "note": "rival 一词兼具动词义，比 be compared with 更简洁有力"
+   },
+   {
+    "plain": "help push regional integration",
+    "better": "help boost regional integration",
+    "note": "boost 比 push 更符合经济语境的搭配习惯，语域更高"
+   }
+  ]
+ }
+}

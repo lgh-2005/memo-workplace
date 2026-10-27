@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "fb33dacfb808__reading__1",
+ "examId": "fb33dacfb808",
+ "track": "cet6",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2019 年 12 月英语六级真题（第 1 套）",
+ "year": 2019,
+ "sub": "1",
+ "questionNumbers": [
+  46,
+  47,
+  48,
+  49,
+  50
+ ],
+ "generatedAt": "2026-10-27T05:23:38.032Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55804,
+ "usage": {
+  "prompt_tokens": 1803,
+  "completion_tokens": 3575,
+  "total_tokens": 5378,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1803,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3575,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1803,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [
+  "第 48 题 locate 定位句与原文不符"
+ ],
+ "analysis": {
+  "topic": "谎言对人类心理与大脑的影响",
+  "gist": "文章围绕\"撒谎\"这一行为展开，指出撒谎被部分专家视为儿童发展里程碑，因为它需要复杂的心智能力。哈佛神经科学家研究表明撒谎涉及复杂思维活动，且与抵制诱惑的能力有关。外部环境也影响撒谎频率。研究还发现，撒谎会改变大脑杏仁核反应，使人越撒越大胆，不受惩罚则谎言会愈演愈烈。",
+  "structure": [
+   "第一段：撒谎是儿童发展里程碑，但道德感会抑制撒谎",
+   "第二段：神经科学实验证明撒谎需要复杂脑力活动",
+   "第三段：外部条件影响撒谎的频率与时机",
+   "第四段：撒谎会改变大脑结构，不受惩罚则谎言越来越大"
+  ],
+  "difficulty": "中等",
+  "translation": "杜克大学行为心理学家丹·艾瑞里说：\"撒谎的危险之处在于，人们不了解这种行为会如何改变我们。\"心理学家已经记录到儿童最早在两岁时就会撒谎。一些专家甚至将撒谎视为一种发展里程碑，就像爬行和走路一样，因为它需要复杂的规划、注意力，以及从他人角度看待情境从而操控他人的能力。但对于大多数人来说，随着我们发展出道德感和自我调节能力，撒谎行为会受到限制。\n\n哈佛大学认知神经科学家约书亚·格林说，对我们大多数人而言，撒谎需要付出努力。在研究中，他让受试者有机会为了金钱利益进行欺骗，同时用功能性磁共振成像机检测他们的大脑，该仪器可以将血流映射到大脑的活跃区域。一些人立即本能地说出了真话。但另一些人选择了撒谎，他们的额顶控制网络活动增强，该网络参与困难或复杂的思维过程。这表明他们在真话和谎言之间做出抉择——最终选择了后者。在后续分析中，他发现那些在赢得金钱时神经奖赏中枢更为活跃的人，也更可能属于撒谎者群体——这表明撒谎可能与无法抵制诱惑有关。\n\n外部条件在我们何时撒谎及撒谎频率方面也很重要。当我们能够为撒谎找到合理化理由时，当我们感到压力大、疲劳时，或者看到他人不诚实时，我们更可能撒谎。而当我们有道德提醒或认为他人在注视我们时，我们则不太可能撒谎。艾瑞里说：\"作为一个社会，我们需要明白，当我们不惩罚撒谎行为时，我们就增加了它再次发生的概率。\"\n\n在2016年发表在《自然·神经科学》杂志上的一项研究中，艾瑞里及其同事展示了不诚实行为如何改变人们的大脑，使他们将来更容易撒谎。当人们说出谎话时，科学家们注意到他们的杏仁核出现了一阵活动。杏仁核是大脑中产生恐惧、焦虑和情绪反应的关键部分，包括你撒谎时那种心虚、内疚的感觉。但当科学家们让受试者玩一个游戏——通过欺骗搭档来赢钱时，他们注意到杏仁核发出的负面信号开始减弱。不仅如此，当人们的不诚实行为没有受到任何后果时，他们的谎言往往会变得更加耸人听闻。这意味着，如果你给人们多次为自身利益撒谎的机会，他们会从小谎开始，随着时间推移谎言越来越大。",
+  "questions": [
+   {
+    "number": 46,
+    "answer": "A",
+    "type": "细节题",
+    "locate": "because it requires sophisticated planning, attention and the ability to see a situation from someone else's perspective to manipulate them.",
+    "why": "原文明确指出撒谎被视为发展里程碑，是因为它需要\"从他人角度看待情境的能力\"（the ability to see a situation from someone else's perspective）。选项A\"从不同角度看复杂情境的能力\"是对原文这一表述的合理同义改写，\"from different angles\"对应\"from someone else's perspective\"，故A正确。",
+    "traps": "B项\"比爬行和走路更卓越\"属于过度推断，原文只是将撒谎与爬行、走路并列为里程碑，并未比较优劣；C项\"与周围人积极互动\"过于笼统，原文强调的是\"换位思考并操控他人\"而非泛泛的互动；D项\"心理和身体能力的协调\"无中生有，原文未提及身体能力。",
+    "tip": "注意原文并列关系中的核心语义，选项须忠于原文重点。"
+   },
+   {
+    "number": 47,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "But others opted to lie, and they showed increased activity in their frontal parietal control network, which is involved in difficult or complex thinking.",
+    "why": "原文指出选择撒谎的人额顶控制网络活动增强，该网络参与\"困难或复杂的思维\"（difficult or complex thinking），这正说明撒谎需要大量复杂的心理活动。选项D\"involves lots of sophisticated mental activity\"是对此的精准概括，故D正确。",
+    "traps": "A项\"难以在多个选项中选择\"虽然文中提到在真假间抉择，但这只是撒谎费力的一个方面，不是核心原因；B项\"听起来自然可信\"原文未涉及；C项\"需要快速的脑部血流\"是对功能性MRI检测血流这一实验手段的曲解，并非撒谎费力的原因。",
+    "tip": "区分实验手段与实验结论，答案应指向结论而非工具。"
+   },
+   {
+    "number": 48,
+    "answer": "C",
+    "type": "细节题",
+    "locate": "he found that people whose neural reward centers were more active when they won money were also more likely to be among the group of liars—suggesting that lying may have to do with the inability to resist temptation.",
+    "why": "原文第二段末尾明确提出\"撒谎可能与无法抵制诱惑有关\"（the inability to resist temptation）。选项C\"当诱惑太强时\"与原文这一结论直接对应，即人们在无法抗拒诱惑的情况下更倾向于撒谎。",
+    "traps": "A项\"过于情绪化\"原文未提及情绪化导致撒谎；B项\"同伴压力太大\"属于无中生有，原文提到看到他人不诚实会影响撒谎，但这与peer pressure不同；D项\"后果不紧迫\"虽然第四段提到不受惩罚会助长撒谎，但本题问的是人们倾向于撒谎的情境，核心原因指向诱惑。",
+    "tip": "注意题目问的是\"tend to lie\"的条件，需定位最直接的因果表述。"
+   },
+   {
+    "number": 49,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "And we are less likely to lie when we have moral reminders or when we think others are watching.",
+    "why": "原文第三段明确指出\"当我们认为他人在注视我们时，我们不太可能撒谎\"（when we think others are watching）。选项B\"在被注视的目光下\"（under watchful eyes）是对原文的同义替换，故B正确。",
+    "traps": "A项\"疲惫且有压力\"原文说的是这种情况下人们更可能撒谎，与题意相反；C项\"理性思考时\"原文未直接提及理性思考与减少撒谎的关系，rationalise在原文中指为撒谎找借口；D项\"问心无愧时\"属于无中生有，原文未提及清白良心这一条件。",
+    "tip": "注意more likely与less likely的对立关系，避免混淆正反条件。"
+   },
+   {
+    "number": 50,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Not only that, but when people faced no consequences for dishonesty, their falsehood tended to get even more sensational. This means that if you give people multiple opportunities to lie for their own benefit, they start with little lies which get bigger over time.",
+    "why": "原文末段明确指出，当不诚实行为没有后果（不受惩罚）时，谎言会变得\"更加耸人听闻\"（more sensational），人们会\"从小谎开始，随时间越撒越大\"（start with little lies which get bigger over time）。选项B\"会撒更大的谎\"与原文完全吻合。",
+    "traps": "A项\"觉得自己有道理\"（feel justified）原文未提及，虽然第三段说人们会为撒谎找理由，但这不是不受惩罚的后果；C项\"变得自满\"（complacent）属于过度推断，原文未提及自满情绪；D项\"混合谎言与真话\"原文无此表述。",
+    "tip": "末段为因果总结段，注意锁定\"不受惩罚→谎言升级\"的逻辑链。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "sophisticated",
+    "cn": "adj. 复杂的；精密的"
+   },
+   {
+    "w": "manipulate",
+    "cn": "v. 操控，操纵"
+   },
+   {
+    "w": "morality",
+    "cn": "n. 道德，道德观"
+   },
+   {
+    "w": "self-regulate",
+    "cn": "v. 自我调节，自我约束"
+   },
+   {
+    "w": "rationalise",
+    "cn": "v. 合理化，为…找借口"
+   },
+   {
+    "w": "fatigued",
+    "cn": "adj. 疲惫的，疲劳的"
+   },
+   {
+    "w": "amygdala",
+    "cn": "n. 杏仁核（大脑结构）"
+   },
+   {
+    "w": "falsehood",
+    "cn": "n. 谎言，虚假"
+   },
+   {
+    "w": "sensational",
+    "cn": "adj. 耸人听闻的，轰动的"
+   },
+   {
+    "w": "instinctively",
+    "cn": "adv. 本能地，直觉地"
+   },
+   {
+    "w": "milestone",
+    "cn": "n. 里程碑，重要事件"
+   },
+   {
+    "w": "deceive",
+    "cn": "v. 欺骗，蒙骗"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Some experts even consider lying a developmental milestone, like crawling and walking, because it requires sophisticated planning, attention and the ability to see a situation from someone else's perspective to manipulate them.",
+    "cn": "一些专家甚至将撒谎视为一种发展里程碑，就像爬行和走路一样，因为它需要复杂的规划、注意力，以及从他人角度看待情境从而操控他人的能力。",
+    "note": "主干为Some experts consider lying a milestone；because引导原因状语从句，内含三个并列宾语：planning, attention and the ability；不定式to see...to manipulate为ability的后置定语。"
+   },
+   {
+    "en": "In studies, he gave subjects a chance to deceive for monetary gain while examining their brains in a functional MRI machine, which maps blood flow to active parts of the brain.",
+    "cn": "在研究中，他让受试者有机会为了金钱利益进行欺骗，同时用功能性磁共振成像机检测他们的大脑，该仪器可以将血流映射到大脑的活跃区域。",
+    "note": "主干为he gave subjects a chance；while引导时间状语从句表伴随；which引导非限制性定语从句修饰MRI machine。"
+   },
+   {
+    "en": "Not only that, but when people faced no consequences for dishonesty, their falsehood tended to get even more sensational.",
+    "cn": "不仅如此，当人们的不诚实行为没有受到任何后果时，他们的谎言往往会变得更加耸人听闻。",
+    "note": "Not only...but...构成递进关系；when引导时间/条件状语从句；tended to get为主句谓语，more sensational为比较级表程度加深。"
+   }
+  ]
+ }
+}

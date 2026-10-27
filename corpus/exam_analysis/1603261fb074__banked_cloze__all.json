@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "1603261fb074__banked_cloze__all",
+ "examId": "1603261fb074",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2017 年 6 月英语六级真题（第 2 套）",
+ "year": 2017,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:13:54.510Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 55178,
+ "usage": {
+  "prompt_tokens": 1345,
+  "completion_tokens": 3158,
+  "total_tokens": 4503,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1345,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3158,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1345,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "新环境睡眠时大脑半球保持警觉的研究",
+  "gist": "研究发现，人在陌生环境中睡觉时，左脑半球会保持较高活跃度以应对潜在危险，这种现象被称为\"第一晚效应\"。该现象在海豚等海洋动物中也有体现，它们睡眠时会关闭一个脑半球，以保持呼吸控制并警惕捕食者。",
+  "difficulty": "中等",
+  "translation": "一项研究揭示，当你在一个新地方睡觉时，你的大脑有一半会保持警觉并随时准备应对危险。这种现象通常被称为\"第一晚效应\"。布朗大学的研究人员发现，大脑左半球的一个神经网络比右半球的网络\"保持更加活跃\"。对志愿者的右耳播放声音（刺激左半球）比对左耳播放噪音更容易将他们唤醒。\n\n研究特别观察到，在深度睡眠期间，大脑左侧更为活跃。当研究人员在第二晚和第三晚重复实验室实验时，他们发现在深度睡眠期间左半球无法以同样的方式被刺激。研究人员解释说，该研究表明，当我们处于一个陌生的环境中时，大脑会部分保持警觉，以便人类能够抵御任何潜在的危险。\n\n研究人员认为，这是首次在人类身上识别出\"第一晚效应\"中不同脑状态的现象。然而，这并不是该现象首次被观察到。一些动物物种也表现出这种现象。例如，海豚以及其他海洋动物在入睡时会关闭一个脑半球。此前的一项研究指出，海豚总是有意识地控制它们的呼吸。如果在睡觉时不保持大脑活跃，它们可能会溺水。但正如这项人类研究所表明的，海豚在睡眠时保持睁眼的另一个原因是它们可以在睡着时警惕捕食者。这也使它们的生理过程保持运转。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "K",
+    "correct": "referred",
+    "why": "固定搭配 be referred to as 意为'被称为'，此处表示这种现象通常被称为'第一晚效应'。语法上需要动词过去分词与 is 构成被动语态，且与 to as 搭配完整。",
+    "traps": "classified 虽然也是过去分词，可构成 be classified as（被归类为），但后面的介词搭配是 as 而非 to as，语法不符。identified 缺少与 to as 的搭配关系。",
+    "tip": "熟记 refer to…as… 及其被动形式。"
+   },
+   {
+    "number": 27,
+    "answer": "O",
+    "correct": "volunteers",
+    "why": "此处需要一个名词作介词 of 的宾语，指代实验中的参与者。volunteers（志愿者）最符合实验场景语境，指被试者的右耳被播放声音。",
+    "traps": "species 虽为名词，但指'物种'，不适用于描述实验中的具体参与人员。predators 意为'捕食者'，语境完全不符。",
+    "tip": "实验类文章中 volunteers/subjects/participants 常指被试。"
+   },
+   {
+    "number": 28,
+    "answer": "M",
+    "correct": "specifically",
+    "why": "此处需要副词修饰动词 observed。specifically（特别地、具体地）表示研究人员特别观察到左脑在深度睡眠中更活跃，强调观察的针对性。",
+    "traps": "consciously（有意识地）虽是副词，但语义不搭配观察行为。dramatically（戏剧性地）语义夸张，与 observed 搭配不当。",
+    "tip": "副词空格优先判断语义是否与所修饰的动词匹配。"
+   },
+   {
+    "number": 29,
+    "answer": "H",
+    "correct": "novel",
+    "why": "novel 作形容词意为'新奇的、陌生的'，修饰 environment。全文讨论的核心就是人在新环境中睡觉时大脑的反应，novel environment 与前文 new place 语义呼应。",
+    "traps": "exotic（异国的、奇异的）虽然也是形容词，但强调异域风情，不能准确表达'陌生的'这一核心含义，与文章主题不符。dramatic 是形容词但语义不当。",
+    "tip": "novel 作形容词表'新奇的'，是高频六级考点词。"
+   },
+   {
+    "number": 30,
+    "answer": "I",
+    "correct": "potential",
+    "why": "potential 作形容词意为'潜在的'，修饰 danger。语境说大脑保持警觉以防御任何潜在的危险，potential danger 是常见搭配，逻辑上强调危险尚未发生但可能出现。",
+    "traps": "其他剩余形容词如 exotic 语义不搭配 danger。classified danger（被分类的危险）语义荒谬，不符合语境逻辑。",
+    "tip": "potential danger/risk/threat 是常见学术搭配。"
+   },
+   {
+    "number": 31,
+    "answer": "E",
+    "correct": "identified",
+    "why": "has been identified 构成现在完成时被动语态，意为'被识别出、被发现'。语境指首次在人类中发现了不同脑状态的'第一晚效应'，identified 准确表达科学发现。",
+    "traps": "classified（被分类）虽可构成被动语态，但语义为'分类'，不符合'首次发现'的语境逻辑。referred 已在第26题使用。",
+    "tip": "identified 在科研语境中常表'识别、确认'。"
+   },
+   {
+    "number": 32,
+    "answer": "L",
+    "correct": "species",
+    "why": "animal species 意为'动物物种'，是名词修饰名词的常见结构。语境说一些动物物种也表现出这种现象，species 作为可数名词单复数同形，此处为复数。",
+    "traps": "volunteers 虽是名词，但指人类志愿者，与 animal 搭配语义矛盾。predators 意为'捕食者'，与上下文'也表现出这种现象'不搭配。",
+    "tip": "species 单复数同形，animal species 是固定搭配。"
+   },
+   {
+    "number": 33,
+    "answer": "G",
+    "correct": "marine",
+    "why": "marine 意为'海洋的'，作形容词修饰 animals。前文提到 dolphins（海豚），此处说'海豚以及其他海洋动物'，marine animals 与海豚为同类概念，逻辑连贯。",
+    "traps": "exotic animals（异国动物）虽语法正确，但无法与前文海豚构成逻辑上的同类归纳关系。novel 已在第29题使用。",
+    "tip": "marine 常修饰与海洋相关的名词，如 marine life/biology。"
+   },
+   {
+    "number": 34,
+    "answer": "B",
+    "correct": "consciously",
+    "why": "consciously 意为'有意识地'，修饰动词 control。语境说海豚总是有意识地控制呼吸，因为它们是哺乳动物不能像鱼一样自动在水中呼吸，需主动控制，与后文'否则会溺水'形成因果逻辑。",
+    "traps": "dramatically（戏剧性地）修饰 control 语义不当，无法体现海豚需要主动呼吸的关键信息。specifically 语义为'特别地'，与控制呼吸的语境不贴切。",
+    "tip": "consciously 强调'有意识地'，与无意识状态形成对比。"
+   },
+   {
+    "number": 35,
+    "answer": "J",
+    "correct": "predators",
+    "why": "predators 意为'捕食者'，作 look out for 的宾语。语境说海豚睡眠时睁眼的另一个原因是警惕捕食者，这与前文'defend themselves against danger'主题一致，构成动物自我保护的逻辑。",
+    "traps": "volunteers（志愿者）语义完全不符合动物警惕对象。其他名词如 species 语义上不能作为被警惕的对象。",
+    "tip": "look out for predators 意为'警惕捕食者'，是动物行为学常见表达。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "referred",
+    "cn": "提及、称为（v. 过去分词，refer的过去式）"
+   },
+   {
+    "w": "novel",
+    "cn": "新奇的、陌生的（adj.）；小说（n.）"
+   },
+   {
+    "w": "potential",
+    "cn": "潜在的（adj.）；潜力（n.）"
+   },
+   {
+    "w": "identified",
+    "cn": "识别、确认（v. 过去分词，identify的过去式）"
+   },
+   {
+    "w": "species",
+    "cn": "物种（n. 单复数同形）"
+   },
+   {
+    "w": "marine",
+    "cn": "海洋的（adj.）"
+   },
+   {
+    "w": "consciously",
+    "cn": "有意识地（adv.）"
+   },
+   {
+    "w": "predators",
+    "cn": "捕食者、掠食动物（n. 复数）"
+   },
+   {
+    "w": "hemisphere",
+    "cn": "半球（n.）指大脑半球或地球半球"
+   },
+   {
+    "w": "stimulating",
+    "cn": "刺激（v. 现在分词，stimulate的变形）"
+   },
+   {
+    "w": "physiological",
+    "cn": "生理的（adj.）"
+   },
+   {
+    "w": "phenomenon",
+    "cn": "现象（n.）"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握文章主题和大意，标记每个空格的大致词性需求。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词、副词），缩小每空的选择范围。",
+   "第三步：根据空格前后的语法结构（如冠词+___+名词→形容词；be+___→过去分词/形容词）锁定词性。",
+   "第四步：结合上下文语义和常见搭配（如 refer to as, potential danger）确定最终答案。",
+   "第五步：填完后回读全文，检查语法一致性和语义连贯性，确保每词只用一次。"
+  ]
+ }
+}

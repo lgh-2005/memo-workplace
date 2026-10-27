@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "a0351b9e939b__reading__3",
+ "examId": "a0351b9e939b",
+ "track": "kaoyan1",
+ "section": "reading",
+ "sectionLabel": "阅读理解",
+ "title": "2002 年考研英语真题（旧）",
+ "year": 2002,
+ "sub": "3",
+ "questionNumbers": [
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T06:12:18.486Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 67088,
+ "usage": {
+  "prompt_tokens": 1749,
+  "completion_tokens": 3976,
+  "total_tokens": 5725,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1749,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3976,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1749,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "油价上涨的经济影响不如以往严重",
+  "gist": "文章围绕近期油价上涨展开分析，指出尽管OPEC减产导致油价大幅攀升，但与1970年代的两次石油危机相比，当前油价上涨对经济的冲击要小得多。原因包括：税收在零售油价中占比大、发达国家对石油依赖度降低、全球未出现普遍的大宗商品通胀和过度需求等。作者对经济前景持乐观态度。",
+  "structure": [
+   "第一段：引出话题，油价飙升引发对历史石油危机的回忆",
+   "第二段：短期内油价仍有上行压力",
+   "第三段：税收占比高，削弱原油价格波动对零售价的影响",
+   "第四段：发达经济体对石油依赖度下降，OECD数据佐证",
+   "第五段：当前缺乏大宗商品通胀和过度需求的背景"
+  ],
+  "difficulty": "中等",
+  "translation": "经济衰退的糟糕日子是否即将重演？自从OPEC三月份同意减产以来，原油价格已从去年十二月的不到10美元一桶飙升至近26美元一桶。油价近乎三倍的上涨唤起了人们对1973年石油危机（当时油价翻了四倍）以及1979-1980年（当时油价也几乎翻了三倍）的可怕记忆。此前两次石油危机都导致了两位数的通货膨胀和全球经济衰退。那么，这一次为什么没有出现警告经济前景黯淡的大标题呢？\n\n本周伊拉克暂停石油出口，进一步推高了油价。经济增长势头增强，加之北半球正值寒冬，短期内可能将油价推得更高。\n\n然而，有充分理由预期当前的经济影响不会像1970年代那样严重。在大多数国家，原油成本在汽油价格中的占比已低于1970年代。在欧洲，税收最高占到零售价的五分之四，因此即使原油价格出现较大波动，对加油站油价的影响也比过去小得多。\n\n发达经济体对石油的依赖程度也低于以往，因而对油价波动的敏感度也更低。能源节约、向其他燃料的转型以及高耗能重工业重要性的下降，都减少了石油消费。软件、咨询和移动电话行业的石油消耗量远低于钢铁或汽车制造业。以不变价格计算，每一美元GDP中，发达经济体目前的石油消耗量比1973年减少了近50%。经合组织在其最新一期《经济展望》中估计，如果油价全年平均为每桶22美元（而1998年为13美元），发达经济体的石油进口账单仅增加GDP的0.25%-0.5%。这还不到1974年或1980年收入损失的四分之一。另一方面，石油进口新兴经济体——重工业已转移至这些国家——变得更加能源密集型，因此可能受到更严重的挤压。\n\n不必为油价上涨而失眠的另一个原因是，与1970年代的油价上涨不同，这次油价上涨并非发生在大宗商品价格普遍上涨和全球需求过剩的背景下。世界上相当一部分地区才刚刚从经济衰退中走出来。《经济学人》的大宗商品价格指数与一年前相比基本持平。而1973年大宗商品价格上涨了70%，1979年上涨了近30%。",
+  "questions": [
+   {
+    "number": 31,
+    "answer": "B",
+    "type": "细节题",
+    "locate": "Since OPEC agreed to supply-cuts in March, the price of crude oil has jumped to almost $26 a barrel, up from less than $10 last December.",
+    "why": "文章第一段明确指出，自OPEC三月份同意减产（supply-cuts）以来油价飙升。减产即减少供应（reduction in supply），这是导致本轮油价上涨的主要原因。B选项是对supply-cuts的同义改写，与原文因果关系完全吻合。",
+    "traps": "A（global inflation）文中最后一段明确否认了存在普遍的大宗商品通胀背景，属于反向干扰；C（fast growth in economy）第二段提到经济增长只是短期内进一步推高油价的因素，非主因，属于以偏概全；D（Iraq's suspension of exports）第二段说伊拉克暂停出口给油价\"another push up\"，是次要因素，属于偷换主次。",
+    "tip": "注意区分主要原因与次要推动因素，看时间先后和因果逻辑。"
+   },
+   {
+    "number": 32,
+    "answer": "D",
+    "type": "推断题",
+    "locate": "In Europe, taxes account for up to four-fifths of the retail price, so even quite big changes in the price of crude have a more muted effect on pump prices than in the past.",
+    "why": "原文指出税收占零售油价高达五分之四，因此原油价格的大幅变化对零售油价的影响被削弱。反向推理可得：如果税收上涨，由于其在零售价中占绝对主导地位（80%），零售油价将大幅上涨。D选项符合这一反向推断逻辑。",
+    "traps": "A（price of crude rises）原文明确说原油价格大幅变动对零售价的影响是\"muted\"（被削弱的），因此不会导致\"dramatically\"上涨，属于正面排除项；B（commodity prices rise）文中未建立大宗商品价格与零售油价的直接联系；C（consumption rises）消费量上升与单位零售价格的大幅上升没有必然因果关系。",
+    "tip": "抓住数据比例关系，善用反向推理——既然税收占80%，税收变动对价格影响最大。"
+   },
+   {
+    "number": 33,
+    "answer": "D",
+    "type": "细节题",
+    "locate": "if oil prices averaged $22 a barrel for a full year, compared with $13 in 1998, this would increase the oil import bill in rich economies by only 0.25-0.5% of GDP. That is less than one-quarter of the income loss in 1974 or 1980.",
+    "why": "OECD在《经济展望》中的估算表明，即便油价大幅上涨（从13美元到22美元），对发达国家GDP的影响仅为0.25%-0.5%，不到1974年或1980年收入损失的四分之一。这说明油价变动对发达国家GDP没有显著影响，D选项是对此数据含义的准确概括。",
+    "traps": "A（heavy industry becomes more energy-intensive）原文说的是新兴经济体中重工业更加能源密集，不是发达国家，属于张冠李戴；B（income loss mainly results from fluctuating crude oil prices）文中未说收入损失主要来源于油价波动，属于无中生有；C（manufacturing industry has been seriously squeezed）被严重挤压的是石油进口新兴经济体，非发达国家，属于对象混淆。",
+    "tip": "注意数据论证的对象限定词\"rich economies\"，避免与新兴经济体混淆。"
+   },
+   {
+    "number": 34,
+    "answer": "A",
+    "type": "主旨题",
+    "locate": "Yet there are good reasons to expect the economic consequences now to be less severe than in the 1970s.",
+    "why": "全文核心论点是：尽管油价上涨，但由于税收结构、能源依赖度降低、无大宗商品通胀背景等原因，当前油价冲击的经济影响远不如1970年代严重。A选项\"oil-price shocks are less shocking now\"（如今石油价格冲击不那么令人震惊）精准概括了文章的中心结论。",
+    "traps": "B（inflation seems irrelevant to oil-price shocks）文章说当前没有通胀背景，但并未说通胀与石油危机无关，1970年代就导致了两位数通胀，属于过度推断；C（energy conservation can keep down the oil prices）节能降低了石油消耗，但文中未说能抑制油价本身，属于偷换概念；D（price rise of crude leads to the shrinking of heavy industry）文中说重工业向新兴经济体转移，非因油价上涨而萎缩，属于因果关系错配。",
+    "tip": "总结题需把握全文主线，选最能概括作者核心观点的选项。"
+   },
+   {
+    "number": 35,
+    "answer": "A",
+    "type": "态度题",
+    "locate": "So where are the headlines warning of gloom and doom this time? ... One more reason not to lose sleep over the rise in oil prices is that...",
+    "why": "作者在第一段以反问句暗示此次无需过度担忧，后文用三段篇幅论证当前油价冲击影响较轻，第五段更直接说\"不必为油价上涨而失眠\"。全文论调积极，认为经济不会重蹈1970年代覆辙，因此作者态度是乐观的（optimistic）。",
+    "traps": "B（sensitive）敏感并非一种立场态度，不符合态度题选项的常规设置；C（gloomy）悲观与文章论调完全相反，作者一直在论证情况没那么糟；D（scared）恐惧是文章开头引用的大众记忆情绪，非作者本人立场，属于移花接木。",
+    "tip": "态度题关注反问句、情态动词和评价性表达，区分作者态度与他人情绪。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "quadrupled",
+    "cn": "v. 翻四倍"
+   },
+   {
+    "w": "double-digit",
+    "cn": "adj. 两位数的"
+   },
+   {
+    "w": "muted",
+    "cn": "adj. 减弱的，缓和的"
+   },
+   {
+    "w": "conservation",
+    "cn": "n. 节约，节省；保护"
+   },
+   {
+    "w": "energy-intensive",
+    "cn": "adj. 能源密集型的，高耗能的"
+   },
+   {
+    "w": "sizable",
+    "cn": "adj. 相当大的，可观的"
+   },
+   {
+    "w": "commodity",
+    "cn": "n. 大宗商品，商品"
+   },
+   {
+    "w": "emerging economies",
+    "cn": "n. 新兴经济体"
+   },
+   {
+    "w": "gloom and doom",
+    "cn": "n. 悲观失望，前景黯淡"
+   },
+   {
+    "w": "swing",
+    "cn": "n. 波动，摆动"
+   },
+   {
+    "w": "squeezed",
+    "cn": "v./adj. 被挤压的，受到压力的"
+   }
+  ],
+  "longSentences": [
+   {
+    "en": "Energy conservation, a shift to other fuels and a decline in the importance of heavy, energy-intensive industries have reduced oil consumption.",
+    "cn": "能源节约、向其他燃料的转型以及高耗能重工业重要性的下降，都减少了石油消费。",
+    "note": "三个并列名词短语（conservation / shift / decline）共同充当主语，谓语为have reduced，宾语为oil consumption。注意heavy与energy-intensive共同修饰industries。"
+   },
+   {
+    "en": "The OECD estimates in its latest Economic Outlook that, if oil prices averaged $22 a barrel for a full year, compared with $13 in 1998, this would increase the oil import bill in rich economies by only 0.25-0.5% of GDP.",
+    "cn": "经合组织在其最新一期《经济展望》中估计，如果油价全年平均为每桶22美元（而1998年为13美元），发达经济体的石油进口账单仅会增加GDP的0.25%-0.5%。",
+    "note": "主句为The OECD estimates that...，that引导宾语从句；从句内含if条件状语从句，compared with $13 in 1998为插入比较成分；by only 0.25-0.5% of GDP为程度状语。"
+   },
+   {
+    "en": "One more reason not to lose sleep over the rise in oil prices is that, unlike the rises in the 1970s, it has not occurred against the background of general commodity-price inflation and global excess demand.",
+    "cn": "不必为油价上涨而失眠的另一个原因是，与1970年代的油价上涨不同，这次油价上涨并非发生在大宗商品价格普遍上涨和全球需求过剩的背景下。",
+    "note": "主语为One more reason（后接不定式作后置定语），系动词is后接that引导的表语从句；unlike the rises in the 1970s为插入比较状语；against the background of后接两个并列名词短语。"
+   }
+  ]
+ }
+}

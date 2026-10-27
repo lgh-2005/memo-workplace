@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "41fe6975b225__banked_cloze__all",
+ "examId": "41fe6975b225",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2018 年 12 月英语六级真题（第 1 套）",
+ "year": 2018,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:18:11.948Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 59758,
+ "usage": {
+  "prompt_tokens": 1386,
+  "completion_tokens": 3660,
+  "total_tokens": 5046,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1386,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3660,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1386,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "圣克鲁斯岛岛屿狐狸的濒危拯救与生态恢复",
+  "gist": "文章讲述了南加州圣克鲁斯岛上的岛屿狐狸因野猪引来金雕捕食而濒临灭绝，自然保护协会通过消灭入侵物种、为狐狸接种疫苗和持续监测种群等措施，实现了哺乳动物史上最快的种群恢复，体现了濒危物种保护法的巨大成功。",
+  "difficulty": "中等",
+  "translation": "就在南加州海岸不远处坐落着圣克鲁斯岛，一种被称为岛屿狐狸的神奇生物栖息于此。十年前，这座岛屿的生态系统一片混乱。野猪从大陆吸引来了金雕，而这些飞行掠食者使狐狸的数量骤降。于是，大自然保护协会对野猪发动了一场猛烈的战争，出动了直升机和神枪手。\n\n这一举措奏效了。如今，联邦机构正将岛屿狐狸从濒危物种名录中移除。这是有史以来哺乳动物恢复速度最快的案例，与路易斯安那黑熊等一同成为《濒危物种法》历史上的辉煌成功范例。\n\n但圣克鲁斯岛的恢复不仅仅关乎狐狸。大自然保护协会已经向这里众多入侵物种宣战，从绵羊到植物，再到极具攻击性的阿根廷蚂蚁。\"我们对这座岛屿的理念一直是：'好，消除威胁，让岛屿回到原来的样子，'\"生态学家克里斯蒂娜·博泽尔说道。这一策略似乎正在奏效。本地植物正在恢复，狐狸也再次无忧无虑地四处蹦跳。\n\n但保护这些狐狸免受伤害将在未来数年持续占据博泽尔及其同事的精力。要知道，人类仍然被允许登上圣克鲁斯岛，而且他们会带狗。因此，博泽尔必须为她的狐狸接种各种疾病的疫苗。\"在狐狸从名录中移除后的至少五年内，我们有义务持续关注种群状况，\"博泽尔说。这包括给狐狸做标记并监测它们的数量，以确保不会出问题。\n\n这就是那只小狐狸回归的故事，也是那些将毕生精力奉献给保护它的人们的故事。这是大规模物种灭绝时代野生动物保护的故事。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "F",
+    "correct": "dwells",
+    "why": "此处需要一个第三人称单数动词作为where引导的定语从句谓语。dwells意为\"栖息、居住\"，与前文a magical creature called the island fox搭配，表达\"岛屿狐狸栖息于此\"，语义和语法均通顺。",
+    "traps": "其他动词如declared（过去式）、remove（原形）在时态或语义上不匹配。此处需要一般现在时第三人称单数形式，只有dwells满足。",
+    "tip": "定语从句中缺谓语动词，注意主谓一致（第三人称单数）。"
+   },
+   {
+    "number": 27,
+    "answer": "B",
+    "correct": "chaos",
+    "why": "空格前为was in，构成be in chaos（处于混乱中）的固定搭配。上下文说十年前生态系统遭到破坏，chaos（混乱）完美契合语境，表达生态危机状态。",
+    "traps": "configuration（构型）虽也是名词，但be in configuration语义不通，且与生态危机的语境不符。extinction虽语义相关但搭配不当。",
+    "tip": "识别固定搭配 in chaos（处于混乱之中）。"
+   },
+   {
+    "number": 28,
+    "answer": "L",
+    "correct": "predators",
+    "why": "空格前为flying，空格后为crashed the fox population，需要一个名词做主语。金雕是飞行掠食者（flying predators），捕食狐狸导致种群崩溃，语义逻辑完全吻合。",
+    "traps": "此处those flying ___需要一个复数名词。chaos、extinction等名词语义不匹配。aggressive是形容词，不能单独做名词主语。",
+    "tip": "根据语境推断：金雕捕食狐狸，对应predators（掠食者）。"
+   },
+   {
+    "number": 29,
+    "answer": "H",
+    "correct": "fierce",
+    "why": "空格位于不定冠词a与名词war之间，需要形容词修饰。fierce war（猛烈的战争）与后文complete with helicopters and sharp shooters（配备直升机和神枪手）的高强度行动相呼应。",
+    "traps": "aggressive也是形容词且语义相近，但aggressive在第31题中用于修饰Argentine ant，且fierce war是更地道的搭配。此处需综合全篇选词分配。",
+    "tip": "形容词修饰war，fierce（猛烈的）比aggressive更常搭配war。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "correct": "declared",
+    "why": "has declared war on是固定搭配，意为\"向……宣战\"。此处用现在完成时表示保护协会已经向众多入侵物种宣战，与上下文的持续保护行动一致。",
+    "traps": "其他过去分词如dedicated语义不符（dedicated war不成立）。此处declare war on为高频固定短语，是关键识别点。",
+    "tip": "识别固定搭配 declare war on（向……宣战）。"
+   },
+   {
+    "number": 31,
+    "answer": "A",
+    "correct": "aggressive",
+    "why": "空格位于定冠词the与专有名词Argentine ant之间，需要形容词。aggressive（具有攻击性的）修饰阿根廷蚂蚁，形容这种入侵蚂蚁的侵略性特征，语义贴切。",
+    "traps": "fierce已用于第29题。其他形容词候选词已被占用或语义不合。aggressive用来形容入侵物种的攻击性非常恰当。",
+    "tip": "形容词修饰入侵物种，aggressive强调其攻击性和侵略性。"
+   },
+   {
+    "number": 32,
+    "answer": "M",
+    "correct": "remove",
+    "why": "空格位于祈使句中，前有OK，后接the threats，需要动词原形。remove the threats（消除威胁）与后文let the island go back to what it was形成逻辑因果：先消除威胁，再让岛屿恢复原貌。",
+    "traps": "declared是过去式/过去分词，不适合祈使句。monitoring是现在分词形式，不适合此处的祈使语气。只有remove为动词原形，符合祈使句结构。",
+    "tip": "祈使句需要动词原形，remove the threats语义通顺。"
+   },
+   {
+    "number": 33,
+    "answer": "K",
+    "correct": "monitoring",
+    "why": "空格前为and，与tagging并列，都作includes的宾语，需要动名词形式。monitoring their numbers（监测它们的数量）与tagging the foxes（给狐狸做标记）并列，都是持续追踪种群的具体措施。",
+    "traps": "其他-ing形式词汇在候选词中不存在或已被使用。此处并列结构要求与tagging形式一致，monitoring是唯一合适的动名词选项。",
+    "tip": "并列结构要求词性一致：tagging and monitoring均为动名词。"
+   },
+   {
+    "number": 34,
+    "answer": "E",
+    "correct": "dedicated",
+    "why": "have dedicated their lives to是固定搭配，意为\"将生命奉献给……\"。此处用现在完成时表达保护者长期奉献的行为，与全文赞颂保护工作的主旨呼应。",
+    "traps": "declared虽也是过去分词，但declared their lives to protecting语义不通。dedicated...to doing是经典搭配，需准确识别。",
+    "tip": "识别固定搭配 dedicate one's life to（把生命奉献给）。"
+   },
+   {
+    "number": 35,
+    "answer": "G",
+    "correct": "extinction",
+    "why": "mass extinction（大规模灭绝）是生态学领域的专业术语和高频搭配。文章结尾将个体故事升华到物种灭绝的宏大背景下，extinction完美收束全文主题。",
+    "traps": "chaos虽也是名词但已用于第27题，且mass chaos不如mass extinction贴合文章主题。此处需要一个与wildlife conservation形成对比呼应的名词。",
+    "tip": "识别专业术语 mass extinction（大规模物种灭绝）。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dwells",
+    "cn": "v. 栖息，居住（dwell的第三人称单数）"
+   },
+   {
+    "w": "chaos",
+    "cn": "n. 混乱，无序状态"
+   },
+   {
+    "w": "predators",
+    "cn": "n. 掠食者，捕食者（predator的复数）"
+   },
+   {
+    "w": "fierce",
+    "cn": "adj. 猛烈的，凶猛的"
+   },
+   {
+    "w": "declared",
+    "cn": "v. 宣布，宣告（declare的过去式/过去分词）"
+   },
+   {
+    "w": "aggressive",
+    "cn": "adj. 好斗的，有攻击性的，侵略性的"
+   },
+   {
+    "w": "invasive",
+    "cn": "adj. 入侵的，侵入性的（文中指入侵物种）"
+   },
+   {
+    "w": "dedicated",
+    "cn": "v./adj. 奉献的；把……奉献给（dedicate的过去分词）"
+   },
+   {
+    "w": "extinction",
+    "cn": "n. 灭绝，消亡"
+   },
+   {
+    "w": "monitoring",
+    "cn": "v./n. 监测，监控（monitor的现在分词）"
+   },
+   {
+    "w": "vaccinate",
+    "cn": "v. 给……接种疫苗"
+   },
+   {
+    "w": "configuration",
+    "cn": "n. 构型，配置，布局"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文，把握主旨——了解文章讲述岛屿狐狸保护与生态恢复的故事。",
+   "第二步：将15个候选词按词性分类（名词、动词、形容词等），缩小每空的选择范围。",
+   "第三步：根据空格前后的语法结构（冠词、介词、并列连词等）判断所需词性。",
+   "第四步：利用固定搭配快速锁定答案，如in chaos、declare war on、mass extinction、dedicate...to。",
+   "第五步：填完高确信题后，用排除法处理剩余空格，最后通读检查语义是否连贯。"
+  ]
+ }
+}

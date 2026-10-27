@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "baf672da4db5__banked_cloze__all",
+ "examId": "baf672da4db5",
+ "track": "cet6",
+ "section": "banked_cloze",
+ "sectionLabel": "选词填空",
+ "title": "2019 年 12 月英语六级真题（第 2 套）",
+ "year": 2019,
+ "sub": "all",
+ "questionNumbers": [
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "generatedAt": "2026-10-27T05:25:28.063Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 76050,
+ "usage": {
+  "prompt_tokens": 1376,
+  "completion_tokens": 4822,
+  "total_tokens": 6198,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 1376,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4822,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 1376,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "城市空气污染与交通规划",
+  "gist": "文章指出全球城市空气污染严重，交通是主要污染源之一。仅转向电动汽车并不能完全解决问题，因为电力生产与车辆磨损仍会产生污染。发达国家汽车使用率正在下降，年轻人更倾向选择其他出行方式，但交通规划者尚未跟上这一趋势，盲目扩建道路只会吸引更多车流。",
+  "difficulty": "中等",
+  "translation": "我们许多城市上空持久不散的雾霾提醒着我们正在呼吸被污染的空气。全球超过80%的城市人口呼吸的空气未能达到世界卫生组织的标准，据估计，2015年有450万人因室外空气污染而过早死亡。\n\n在全球范围内，城市人口预计将在未来40年内翻一番，届时将有额外20亿人需要新的居住场所，以及服务设施和城市出行方式。更重要的是，我们现在对城市设计所做的决定将决定后代的日常生活和健康。那么，一个无雾霾、或至少低污染的城市会是什么样子呢？\n\n交通已成为空气污染的代名词，许多国家打算在未来二十年内禁止销售汽油和柴油汽车。但仅仅转向电动汽车并不意味着城市将无污染。电动汽车造成的排放水平取决于驱动它们的电力是如何产生的，而刹车片、轮胎和道路在磨损时都会产生微小的空气悬浮颗粒物。\n\n在发达国家，随着越来越多的人搬到市中心，汽车使用量正在下降，尤其是年轻人正在选择其他出行方式。研究人员已经在探讨机动车使用是否已达到顶峰并将下降，但交通规划者尚未跟上这一趋势，仍在修建新道路来解决交通拥堵。正如伦敦环城M25高速公路的使用者所知，新道路很快就会被更多的车辆填满。在美国，研究表明，将道路规模扩大一倍可能只会使交通流量也翻一倍，从而让我们回到原点。",
+  "questions": [
+   {
+    "number": 26,
+    "answer": "K",
+    "correct": "prematurely",
+    "why": "空格位于动词 died 之后，需要一个副词修饰 died。prematurely（过早地）与 died 构成常见搭配 died prematurely，意为\"过早死亡\"，与空气污染导致人们未到预期寿命即死亡的语境完全吻合。",
+    "traps": "simply 也是副词，但语义不合逻辑，\"simply died\"表达的是\"只是死了\"，无法体现空气污染对寿命的危害程度，且 simply 在第35题已被使用。",
+    "tip": "注意副词与动词的语义搭配，died prematurely 是高频固定表达。"
+   },
+   {
+    "number": 27,
+    "answer": "C",
+    "correct": "determine",
+    "why": "空格前为情态动词 will，需填动词原形。determine 意为\"决定、影响\"，主语为 decisions（决定），宾语为 everyday lives and health，语义逻辑通顺：现在的城市设计决策将决定后代的日常生活与健康。",
+    "traps": "alternate 虽也可作动词，但意为\"交替\"，搭配 the everyday lives 语义不通。generate 语法上可行但语义偏离，\"决策产生日常生活\"不合逻辑。",
+    "tip": "will + 动词原形结构，需从语义角度判断\"决策\"与\"生活\"之间的逻辑关系。"
+   },
+   {
+    "number": 28,
+    "answer": "N",
+    "correct": "synonymous",
+    "why": "空格前为 become，后接 with air pollution，become synonymous with 是固定搭配，意为\"成为……的代名词/等同于……\"。交通成为空气污染的代名词，语义契合上下文对交通污染问题的讨论。",
+    "traps": "其他候选词如 alternate、crown 均无法与 with 构成有意义的搭配。become 后接形容词是系表结构，而 synonymous 恰好是形容词，词性和搭配均完美契合。",
+    "tip": "become + adj. + with 结构识别，synonymous with 是核心固定搭配。"
+   },
+   {
+    "number": 29,
+    "answer": "M",
+    "correct": "switching",
+    "why": "空格前为 simply，后接 to electric cars，switch to 意为\"转向、切换到\"，switching to electric cars 表示\"转向电动汽车\"。此处 simply switching 作动名词短语充当主语，与后面的 will not mean 构成完整句意。",
+    "traps": "alternate 虽有\"替换\"之意，但 alternate to 搭配不当，常见搭配为 alternate between。动名词作主语是本题的语法考点。",
+    "tip": "动名词作主语 + switch to 的搭配是解题关键。"
+   },
+   {
+    "number": 30,
+    "answer": "D",
+    "correct": "generated",
+    "why": "空格前为 is，构成被动语态 is generated，意为\"被产生/发电\"。句意为电动汽车的排放取决于驱动它们的电力是如何产生的，即发电方式（火电、风电等）影响总排放量，逻辑通顺。",
+    "traps": "determined 虽也可构成被动语态，但\"电力被决定\"语义不通。此处考查 generate electricity（发电）这一常见搭配的被动形式。",
+    "tip": "is + 过去分词构成被动语态，generate electricity 为高频搭配。"
+   },
+   {
+    "number": 31,
+    "answer": "I",
+    "correct": "particles",
+    "why": "空格前为 tiny airborne（微小的空气中的），需填名词。particles（颗粒物）与 tiny airborne 搭配，构成\"微小的空气悬浮颗粒物\"，指刹车片、轮胎和道路磨损时产生的细微粉尘，属于空气污染领域的专业术语。",
+    "traps": "trend、peak 虽也为名词，但\"微小的空气中的趋势/顶峰\"语义荒谬。airborne particles 是环保领域的常见表达。",
+    "tip": "形容词 + 名词搭配，airborne particles（悬浮颗粒物）为专业高频词组。"
+   },
+   {
+    "number": 32,
+    "answer": "H",
+    "correct": "opting",
+    "why": "空格前为 are，后接 for other means of travel，构成 are opting for 结构（现在进行时）。opt for 意为\"选择\"，年轻人正在选择其他出行方式，呼应前文汽车使用量下降的趋势。",
+    "traps": "switching for 搭配不当（switch 常接 to）。opting for 是固定短语搭配，表示在多个选项中做出选择。",
+    "tip": "are + doing 构成进行时，opt for 表\"选择\"是核心搭配。"
+   },
+   {
+    "number": 33,
+    "answer": "J",
+    "correct": "peak",
+    "why": "空格前为 reached its，需填名词。reach its peak 意为\"达到顶峰\"，是固定搭配。句意为研究人员质疑机动车使用是否已达到顶峰并将开始下降，与后文 decline 形成峰值后回落的逻辑。",
+    "traps": "crown 虽有\"顶端\"之意，但 reach its crown 非惯用表达。reach its peak 是标准搭配，常用于描述数据或趋势的最高点。",
+    "tip": "reach its peak 为高频固定搭配，表示\"达到峰值\"。"
+   },
+   {
+    "number": 34,
+    "answer": "O",
+    "correct": "trend",
+    "why": "空格前为 this，需填名词。trend（趋势）指代前文所述汽车使用量下降、年轻人选择其他出行方式这一整体趋势。交通规划者尚未跟上这一趋势，反而继续修建新道路，形成转折逻辑。",
+    "traps": "peak 虽也为名词，但已用于第33题，且 catch up with this peak（跟上这个顶峰）语义不合理。this trend 指代能力更强、更符合上下文。",
+    "tip": "this + 名词的指代关系需回溯上文，trend 概括前文变化。"
+   },
+   {
+    "number": 35,
+    "answer": "L",
+    "correct": "simply",
+    "why": "空格位于 can 与 double 之间，需填副词。simply 意为\"简直、完全就是\"，强调扩建道路的结果仅仅是使交通流量翻倍，暗含讽刺意味——扩路并不能真正缓解拥堵，反而回到原点。",
+    "traps": "其他副词 prematurely 已用于第26题。此处 simply 起强调作用，与后文 taking us back to the starting point 形成因果呼应，突出扩路的徒劳。",
+    "tip": "can + adv. + 动词原形结构，simply 在此表强调\"仅仅\"。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "prematurely",
+    "cn": "adv. 过早地，不成熟地"
+   },
+   {
+    "w": "synonymous",
+    "cn": "adj. 同义的；被视为等同的（常与 with 连用）"
+   },
+   {
+    "w": "particles",
+    "cn": "n. 颗粒，微粒（常指悬浮微粒）"
+   },
+   {
+    "w": "opting",
+    "cn": "v. 选择，挑选（opt 的现在分词，常搭配 for）"
+   },
+   {
+    "w": "generated",
+    "cn": "v. 产生，生成（generate 的过去分词）"
+   },
+   {
+    "w": "switching",
+    "cn": "v. 转换，切换（switch 的现在分词，常搭配 to）"
+   },
+   {
+    "w": "peak",
+    "cn": "n. 顶峰，巅峰；最高点"
+   },
+   {
+    "w": "trend",
+    "cn": "n. 趋势，动向，潮流"
+   },
+   {
+    "w": "alternate",
+    "cn": "v. 交替，轮流；adj. 交替的，替代的"
+   },
+   {
+    "w": "emissions",
+    "cn": "n. 排放物，排放量（常用复数）"
+   },
+   {
+    "w": "orbital",
+    "cn": "adj. 环绕的，环形的（文中指环城公路）"
+   },
+   {
+    "w": "diesel",
+    "cn": "n. 柴油；柴油发动机"
+   }
+  ],
+  "skills": [
+   "第一步：通读全文把握主旨，将15个候选词按词性（名词/动词/形容词/副词）分类。",
+   "第二步：根据空格前后的语法标志（如 is/are/will/this/tiny 等）判断所需词性，缩小候选范围。",
+   "第三步：利用固定搭配快速锁定答案，如 synonymous with、opt for、reach its peak、switch to 等。",
+   "第四步：结合上下文逻辑验证选项语义是否通顺，注意转折词（but/instead of）提示的逻辑方向。",
+   "第五步：每词只能用一次，已确定的答案及时划去，避免重复选择，最后回读检查整体连贯性。"
+  ]
+ }
+}

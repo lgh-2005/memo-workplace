@@ -1,0 +1,244 @@
+{
+ "schemaVersion": 1,
+ "id": "a47f9b954dd6__long_match__all",
+ "examId": "a47f9b954dd6",
+ "track": "cet6",
+ "section": "long_match",
+ "sectionLabel": "长篇阅读",
+ "title": "2023 年 3 月英语六级真题（第 1 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "generatedAt": "2026-10-27T05:48:47.045Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 38693,
+ "usage": {
+  "prompt_tokens": 970,
+  "completion_tokens": 2366,
+  "total_tokens": 3336,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 970,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2366,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 970,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "topic": "旧金山湾区住房危机与经济不平等",
+  "strategy": [
+   "先通读10条陈述句，归纳主题（住房、科技业、不平等），带着关键词扫读各段",
+   "优先定位专有名词（San Francisco、Bay Area）与数据性表达，缩小候选段落范围",
+   "注意同义替换：如 simplify ↔ streamline、resentment ↔ hostility、contentment ↔ happiness",
+   "区分相似题干：36题强调就业率+供给，45题强调收入水平，需精准匹配细节差异",
+   "将解决方案类陈述（37/41/44）与问题描述类陈述分开处理，避免混淆段落"
+  ],
+  "questions": [
+   {
+    "number": 36,
+    "answer": "E",
+    "cn": "较高的就业率加上有限的住房供给，并没有使买房变得更容易。",
+    "keywords": [
+     "higher rate of employment",
+     "limited housing supply",
+     "buy a house"
+    ],
+    "paraphrase": "原文可能用 job growth / low unemployment 替换 higher rate of employment，用 constrained / insufficient supply 替换 limited housing supply，整体以让步逻辑呈现：虽然就业好转但购房依然困难。",
+    "tip": "定位\"就业率高+住房供应不足\"的双条件让步句，锁定E段。"
+   },
+   {
+    "number": 37,
+    "answer": "J",
+    "cn": "应对住房危机的一个办法是政府简化住房项目的审批流程。",
+    "keywords": [
+     "housing crisis",
+     "simplify",
+     "approval procedures",
+     "housing projects"
+    ],
+    "paraphrase": "原文可能用 streamline / cut red tape 替换 simplify，用 permitting process 替换 approval procedures，表达政府减少行政障碍以加快住房建设。",
+    "tip": "扫读含\"审批/许可流程\"相关词汇的段落，匹配J段。"
+   },
+   {
+    "number": 38,
+    "answer": "B",
+    "cn": "旧金山湾区居民对科技行业深感不满，因为它加剧了经济不平等。",
+    "keywords": [
+     "San Francisco Bay Area",
+     "resent",
+     "tech industry",
+     "economic inequality"
+    ],
+    "paraphrase": "原文可能用 hostility / anger / backlash 替换 resent，用 widening gap / disparity 替换 economic inequality，描述居民对科技业的负面情绪。",
+    "tip": "定位居民对科技业\"负面情绪\"的段落，情感词是关键线索。"
+   },
+   {
+    "number": 39,
+    "answer": "G",
+    "cn": "土地和房屋价格的快速上涨加剧了人们之间的经济不平等。",
+    "keywords": [
+     "fast rise",
+     "prices of land and houses",
+     "economic inequality"
+    ],
+    "paraphrase": "原文可能用 soaring / skyrocketing property values 替换 fast rise in prices，用 wealth gap / disparity 替换 economic inequality，阐述房价上涨的社会后果。",
+    "tip": "在G段寻找\"房价飙升→不平等扩大\"的因果逻辑链。"
+   },
+   {
+    "number": 40,
+    "answer": "D",
+    "cn": "旧金山市政府提供税收优惠，吸引科技公司到一个欠发达地区设立业务。",
+    "keywords": [
+     "tax benefits",
+     "tech companies",
+     "less developed area"
+    ],
+    "paraphrase": "原文可能用 tax breaks / tax incentives 替换 tax benefits，用 underdeveloped / blighted neighborhood 替换 less developed area，叙述市政府招商引资的具体举措。",
+    "tip": "定位\"税收优惠+科技公司入驻\"的政策描述，锁定D段。"
+   },
+   {
+    "number": 41,
+    "answer": "M",
+    "cn": "应当趁还来得及的时候引入创新性的社会和经济问题解决方案。",
+    "keywords": [
+     "innovative solutions",
+     "social and economic problems",
+     "before it is too late"
+    ],
+    "paraphrase": "原文可能用 creative / novel approaches 替换 innovative solutions，用 act now / urgency 替换 before it is too late，强调解决问题的紧迫性。",
+    "tip": "寻找含\"紧迫感+创新方案\"呼吁语气的段落，通常位于文末。"
+   },
+   {
+    "number": 42,
+    "answer": "H",
+    "cn": "当人们将自己的生活水平与他人进行比较时，这对他们的满足感有更大的影响。",
+    "keywords": [
+     "compare",
+     "living standard",
+     "greater impact",
+     "contentment"
+    ],
+    "paraphrase": "原文可能用 relative income / relative well-being 替换比较概念，用 happiness / satisfaction / subjective well-being 替换 contentment，引用社会心理学研究论证相对比较效应。",
+    "tip": "定位涉及\"相对比较与幸福感\"的学术论述，匹配H段。"
+   },
+   {
+    "number": 43,
+    "answer": "C",
+    "cn": "旧金山被发现是加利福尼亚州贫富收入差距最大的城市。",
+    "keywords": [
+     "San Francisco",
+     "biggest income gap",
+     "California",
+     "rich and poor"
+    ],
+    "paraphrase": "原文可能用 widest income disparity / largest gap between highest and lowest earners 替换 biggest income gap，以具体数据或排名呈现旧金山的贫富悬殊。",
+    "tip": "扫读含加州范围内收入差距排名或数据的段落，对应C段。"
+   },
+   {
+    "number": 44,
+    "answer": "K",
+    "cn": "改善连接城市与远郊地区的交通网络也有助于解决住房危机。",
+    "keywords": [
+     "transport networks",
+     "distant outlying areas",
+     "housing crisis"
+    ],
+    "paraphrase": "原文可能用 commuter rail / public transit expansion 替换 improved transport networks，用 suburbs / peripheral areas 替换 distant outlying areas，提出以交通带动郊区居住的思路。",
+    "tip": "定位\"交通改善+远郊+住房\"三要素并存的段落，锁定K段。"
+   },
+   {
+    "number": 45,
+    "answer": "F",
+    "cn": "湾区的平均收入使大多数租房家庭几乎不可能买得起房。",
+    "keywords": [
+     "average incomes",
+     "Bay Area",
+     "tenant families",
+     "virtually impossible"
+    ],
+    "paraphrase": "原文可能用 median household income / typical earnings 替换 average incomes，用 renters 替换 tenant families，用 unaffordable / out of reach 替换 virtually impossible，以数据说明收入与房价的巨大落差。",
+    "tip": "区分于36题：本题聚焦\"收入水平vs房价\"，寻找含具体收入数据的F段。"
+   }
+  ],
+  "vocab": [
+   {
+    "w": "combined with",
+    "cn": "加上，连同（介词短语，表伴随条件）"
+   },
+   {
+    "w": "resent",
+    "cn": "怨恨，愤恨（动词）"
+   },
+   {
+    "w": "approval procedures",
+    "cn": "审批流程（名词短语）"
+   },
+   {
+    "w": "contentment",
+    "cn": "满足感，知足（名词）"
+   },
+   {
+    "w": "outlying areas",
+    "cn": "远郊地区，偏远地区（名词短语）"
+   },
+   {
+    "w": "virtually",
+    "cn": "几乎，实际上（副词）"
+   },
+   {
+    "w": "innovative",
+    "cn": "创新的，革新的（形容词）"
+   },
+   {
+    "w": "tenant",
+    "cn": "租户，房客（名词）"
+   },
+   {
+    "w": "income gap",
+    "cn": "收入差距（名词短语）"
+   },
+   {
+    "w": "tax benefits",
+    "cn": "税收优惠（名词短语）"
+   }
+  ]
+ }
+}

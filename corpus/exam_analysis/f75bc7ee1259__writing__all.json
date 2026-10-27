@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "f75bc7ee1259__writing__all",
+ "examId": "f75bc7ee1259",
+ "track": "cet6",
+ "section": "writing",
+ "sectionLabel": "写作",
+ "title": "2023 年 3 月英语六级真题（第 3 套）",
+ "year": 2023,
+ "sub": "all",
+ "questionNumbers": [],
+ "generatedAt": "2026-10-27T05:53:09.329Z",
+ "model": "claude-opus-4-6-thinking",
+ "provider": "aipm",
+ "elapsedMs": 37145,
+ "usage": {
+  "prompt_tokens": 726,
+  "completion_tokens": 1898,
+  "total_tokens": 2624,
+  "usage_semantic": "openai",
+  "usage_source": "anthropic",
+  "billing_usage": {
+   "source": "claude_messages",
+   "semantic": "anthropic",
+   "claude_usage": {
+    "input_tokens": 726,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1898,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+   }
+  },
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0
+  },
+  "completion_tokens_details": {
+   "text_tokens": 0,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "reasoning_tokens": 0
+  },
+  "input_tokens": 726,
+  "output_tokens": 0,
+  "input_tokens_details": null,
+  "claude_cache_creation_5_m_tokens": 0,
+  "claude_cache_creation_1_h_tokens": 0
+ },
+ "attempts": 1,
+ "warnings": [],
+ "analysis": {
+  "units": [
+   {
+    "number": 57,
+    "part": "A",
+    "task": "议论文写作，围绕老年人在数字化世界中面临的\"数字鸿沟\"展开评论、解释或举例，字数150-200词。",
+    "outline": [
+     "第一段：以题目指定首句引出话题，概述老年人在数字化时代面临的困境与挑战。",
+     "第二段：从多角度分析数字鸿沟产生的原因（产品设计偏向年轻人、缺乏培训、技术更新过快等）。",
+     "第三段：提出弥合数字鸿沟的具体对策（企业开发适老化产品、社区与家庭提供指导、政府保留传统服务通道），并总结呼吁。"
+    ],
+    "sample": "People are now increasingly aware of the 'digital gap' or challenges the elderly face in a digital world. With the rapid advancement of technology, senior citizens often find themselves struggling to navigate smartphones, online payment systems, and digital health services, which has become a pressing social concern.\n\nSeveral factors contribute to this phenomenon. First, most digital products are designed primarily for younger users, featuring complex interfaces that bewilder older adults. Second, the elderly frequently lack access to proper training or patient guidance on emerging technologies. Third, the dizzying pace of technological updates means that even seniors who acquire basic skills can quickly fall behind again.\n\nTo bridge this digital divide, concerted efforts from multiple parties are indispensable. Technology companies should develop age-friendly applications with simplified interfaces and larger fonts. Communities and families ought to organize regular digital literacy workshops tailored to seniors' needs. Furthermore, the government should implement policies that preserve traditional service channels, ensuring that no citizen is excluded from essential services.\n\nIn conclusion, only through collaborative action can we build a truly inclusive digital society where the elderly are not left behind.",
+    "phrases": [
+     {
+      "en": "digital gap / digital divide",
+      "cn": "数字鸿沟，指不同群体在获取和使用数字技术方面的差距"
+     },
+     {
+      "en": "navigate smartphones / digital platforms",
+      "cn": "操作智能手机/数字平台，navigate比use更生动，体现'摸索'之意"
+     },
+     {
+      "en": "pressing social concern",
+      "cn": "紧迫的社会关切，用于引出话题的严重性"
+     },
+     {
+      "en": "bewilder older adults",
+      "cn": "使老年人感到困惑，bewilder比confuse语级更高"
+     },
+     {
+      "en": "the dizzying pace of technological updates",
+      "cn": "令人目眩的技术更新速度，dizzying形象表达'快得让人跟不上'"
+     },
+     {
+      "en": "concerted efforts from multiple parties",
+      "cn": "多方协同努力，concerted强调齐心协力"
+     },
+     {
+      "en": "age-friendly applications",
+      "cn": "适老化应用程序，age-friendly为六级写作高频搭配"
+     },
+     {
+      "en": "digital literacy workshops",
+      "cn": "数字素养培训班，literacy常与各种技能搭配表示'…素养'"
+     },
+     {
+      "en": "preserve traditional service channels",
+      "cn": "保留传统服务通道，强调线下渠道不应被完全取消"
+     },
+     {
+      "en": "left behind",
+      "cn": "被落下/被边缘化，常用于社会公平类话题的结尾呼吁"
+     }
+    ],
+    "pitfalls": [
+     "未以题目指定首句开头会被判偏题甚至零分，务必原句照抄。",
+     "全文泛泛而谈缺少具体例子或细节（如在线支付、健康码），内容空洞扣分。",
+     "词汇反复使用old people，应交替用the elderly/senior citizens/older adults等。",
+     "段落之间缺少过渡词（First, Furthermore, In conclusion），逻辑链不清晰。",
+     "字数不足150词或远超200词均会被扣分，考前应练习控制篇幅。"
+    ],
+    "upgrades": [
+     {
+      "plain": "Old people cannot use technology well.",
+      "better": "Senior citizens often find themselves struggling to navigate emerging digital platforms.",
+      "note": "用find oneself doing和navigate替换简单表达，句式更高级且画面感更强。"
+     },
+     {
+      "plain": "We should help old people learn to use phones.",
+      "better": "Communities and families ought to organize regular digital literacy workshops tailored to seniors' needs.",
+      "note": "具体化帮助方式，使用ought to和tailored to显示语言多样性。"
+     },
+     {
+      "plain": "Technology changes very fast.",
+      "better": "The dizzying pace of technological updates means that even those who acquire basic skills can quickly fall behind.",
+      "note": "用dizzying修饰pace，搭配means that从句，信息密度和语言层次均提升。"
+     },
+     {
+      "plain": "The government should make some rules.",
+      "better": "The government should implement policies that preserve traditional service channels, ensuring that no citizen is excluded.",
+      "note": "implement policies比make rules正式，后接现在分词短语补充说明，句式丰富。"
+     },
+     {
+      "plain": "In a word, we should solve this problem together.",
+      "better": "Only through collaborative action can we build a truly inclusive digital society where the elderly are not left behind.",
+      "note": "only+介词短语前置引起倒装，增加句式亮点；inclusive呼应主题。"
+     }
+    ]
+   }
+  ],
+  "band9": [
+   "Only through collaborative action can we build a truly inclusive digital society where the elderly are not left behind. —— only引导的倒装句+where定语从句，适用于社会公平类结尾。",
+   "Senior citizens often find themselves struggling to navigate smartphones, online payment systems, and digital health services. —— find oneself doing结构生动呈现老年人的困窘状态，三项并列增强节奏感。",
+   "The dizzying pace of technological updates means that even seniors who acquire basic skills can quickly fall behind again. —— dizzying pace为亮点搭配，even+who从句构成让步逻辑，论证有力。",
+   "Technology companies should develop age-friendly applications with simplified interfaces and larger fonts. —— age-friendly为适老化核心词汇，具体细节（界面、字体）使建议不空泛。",
+   "Concerted efforts from multiple parties are indispensable to bridge this digital divide. —— concerted efforts搭配indispensable，语气坚定，适合提出对策时使用。"
+  ]
+ }
+}
