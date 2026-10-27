@@ -109,6 +109,33 @@
 
 **外刊语料不进 Git**：香港 VPS 夜间增量构建 release → ECS cron `scripts/pull_external.sh` rsync + sha256 核对 + 原子替换，服务端按 mtime 热重载。产品代码发布与外刊数据更新**相互独立**。
 
+### 5.5 ⚠️ ECS SSH 连接纪律（2026-10-25 实测定位，必须遵守）
+
+**症状**：SSH 间歇性失败，报 `kex_exchange_identification: write: Connection timed out` 或 `banner exchange: Connection timed out`——**TCP 能连上，但服务端不回握手**。Web 站始终正常（80/443 不受影响）。
+
+**根因（已排除 fail2ban，确证为 ufw 限速）**：ECS 上 22 端口是 `ufw limit` 而非 `ufw allow`：
+
+```
+ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 name: DEFAULT
+```
+
+即**同一源 IP 在 30 秒内新建 >6 条 SSH 连接即触发限速丢弃**。每个 `ssh` 调用都是一条新连接，所以「重试 8 次 / 间隔 12 秒」这类循环必然在 30 秒内超 6 条而自我触发限速。**越重试越连不上，这是自伤，不是网络问题。**
+
+佐证（当时实测）：服务器 load 0.03、内存 684MB/1608MB、conntrack 53/65536、已运行 83 天；`fail2ban-client status sshd` 显示 **Currently banned: 0**（历史累计 4 次均已解封）；`/var/log/auth.log` 里本机记录全部是 `Accepted publickey` + `disconnected by user`，**登录从未失败**。
+
+**执行纪律**：
+
+1. **一次 SSH 会话内批量执行**：把多条命令写进一个远端脚本，`scp` 上去后单次 `ssh ... "bash /tmp/xxx.sh"` 跑完。不要用"一条命令一次 ssh"的方式连续探测。
+2. **禁止密集重试循环**：重试间隔 **≥40 秒**；单批次内连续失败 3 次即停下等待，不要 10 秒一次地刷。
+3. **探测与执行分离**：需要判断 SSH 是否可用时，用**一次**带 `ConnectTimeout=15` 的连接验证，不要用 `Test-NetConnection` 连刷（它也会新建连接）。注意 `Test-NetConnection` 对 22 端口的 False 结果**不可信**（实测出现过 False 但紧接着 ssh 成功）。
+4. **Windows 上无 ControlMaster**：`ssh -o ControlMaster=yes` 报 `getsockname failed: Not a socket`，不要指望连接复用。批量脚本是唯一可行的省连接手段。
+5. **批量脚本必须 LF 换行**：Windows 写出的 `.sh` 若带 CRLF，远端会报 `$'\r': command not found`。用 `writeFile` 写脚本时显式把 CRLF 归一为 LF，或远端用 `tr -d '\r'` 过滤。
+6. **PowerShell 调 ssh 的插值陷阱**：命令串里含 `$(...)`、花括号变量、`PIPESTATUS` 之类写法会被 pwsh 提前求值——`$(date -u ...)` 会变成 `Get-Date -u` 报错，循环变量插值会抛 ReferenceError。**把远端脚本写成文件再 `scp` + `ssh` 执行**，不要双引号内联 bash 语法。
+
+**不要做的事**：不要为了图方便把 `ufw limit 22` 改成 `ufw allow 22`——`lastb` 显示每小时都有大量 SSH 爆破尝试（zhang/hbase/sssd/ww 等），这条限速是有效的防护。也不要把自己 IP 加白名单，本机出口 IP 会变（本次为 `171.88.96.248`），白名单不可靠。
+
+**部署时的正确做法**：`scripts/deploy.sh` 在服务器上单次执行，本身只占 1 条连接；只要不在外面套重试循环、不用「探活-执行」两条连接，就不会触发限速。
+
 ---
 
 ## 6. 当前状态（v3.7.1，2026-10-25）
