@@ -3,7 +3,7 @@
 > **本文件是「memo bench」这个新工作区的唯一工作手册。** 承接自 `D:\ai\opencode\momo`（opencode 工作区，含旧 AGENTS.md 与《版本号经历.md》），本工作区从 v3.7.0 / `4c2436f` 起独立开发。
 >
 > **工作区根 = 仓库根**：`D:\ai\dsh\cli\memo bench`（注意路径含空格，命令行务必加引号）。
-> 当前版本口径：**v3.7.1**（2026-10-25）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
+> 当前版本口径：**v3.8.0**（2026-10-27）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
 
 ---
 
@@ -23,6 +23,7 @@
 | `scripts/` | 测试入口、发布/回滚、门禁、各类 smoke（`.mjs`/`.sh`） | ✅ |
 | `corpus_tools/` | 真题/语料 Python 解析器 | ✅ |
 | `corpus/` | 运行时语料：`exams.jsonl`（真题）、`records.jsonl`、`external/`（外刊 release） | `exams/records` ✅；`external/` ❌ |
+| `corpus/exam_analysis/` | **真题参考解析**（701 单元 JSON，v3.8.0） | ✅ 随代码入库 |
 | `data/` | **用户数据 + 密钥**（db/config/answers/learning_attempts/quiz_srs/backups…） | ❌ |
 | `runtime/` | 部署产物：`ecdict/`（离线词典）、`tts/`（Piper + 缓存） | ❌ |
 | `.workbuddy/` | 本地 E2E 套件（67 个 `test_*.js` + 调试残渣） | ❌ |
@@ -138,14 +139,23 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 
 ---
 
-## 6. 当前状态（v3.7.1，2026-10-25）
+## 6. 当前状态（v3.8.0，2026-10-27）
 
-**本版主题：划词助手接入离线英汉词典 ECDICT（MIT）**——把「划词全靠 LLM」改为「本地词典秒出 + AI 精读按需增强」。
+**本版主题：真题参考解析——每套卷每道题都有「做完后解析」。** 104 套真题（考研英语一 28 + 六级 76）全部题型预生成解析，做完题切到「答案对照 · 解析」即可逐题对照。
 
-- **词库**：`runtime/ecdict/ecdict.db`（114MB）+ `lemma.db`（6.8MB）。**不进 git、不参与 `data/` 备份**，发布/回滚 rsync 显式排除 `runtime/`。
-- **接口**：`GET /api/dict/ecdict`（精确 → 忽略大小写 → 规则还原 → `lemma.db` exchange → 去符号模糊；交叉引用词条自动跳原形）、`/api/dict/ecdict/suggest`（word 索引范围扫描按 `frq` 升序，limit ≤20）、`/api/dict/ecdict/status`。查询词截断 64 字符，进程内 LRU 4000。
-- **前端**：划选单词/1~5 词短词组 → 气泡秒出音标 + 词形 + 考试标签 + 首条释义 → 点击展开完整词条卡（词性分组/英文释义折叠/原形提示/朗读/收进墨墨/AI 精读入口）。句子不查本地库。AI 精读四模式与 `/api/selection/learn` 完整保留。
-- **实测**：`node:sqlite` 单查 ~0.2ms、HTTP 平均 9ms；真题语料 14,896 词形本地命中率 **87.1%**。
+- **解析形态**：按「单元」落 `corpus/exam_analysis/<examId>__<section>__<sub>.json`，共 **701 单元**。粒度：阅读按篇、其余题型按板块、听力按场。**随仓库入库**（与 `corpus/exams.jsonl` 同等对待），不进 `data/`、不参与备份、无需 rsync 排除。
+- **客观题解析**：逐题给 `type`（细节/推断/词义句意/态度/主旨/例证/指代）+ `locate` 原文定位句 + `why` 正确项推理链 + `traps` 逐个干扰项陷阱 + `tip` 做题启示。
+- **翻译解析**：考研英译汉给全文译文 + 逐句 `structure` + `points` 采分点 + `pitfall` 易错处；六级汉译英给 `reference` 参考译文 + `sentences` 逐句对照 + `keys` 术语标准译法 + `upgrades` 表达升级。
+- **写作解析**：`task` 要求拆解 + `outline` 分段提纲 + `sample` 参考范文（词数按题干校验）+ `phrases` 高分表达 + `upgrades` 表达升级 + `pitfalls` 失分点。
+- **听力解析（用户拍板）**：题库无音频亦无原文，**不逐题编造**；改为 `notice` 明示 + `overview` 分段结构 + `strategy` 通用技巧 + `segments` 逐段「选项语言特征分析」+ `coreVocab`。批处理内置幻觉检测（排除免责/推测/建议语境）。
+- **后端**：`GET /api/exam/analysis/<examId>`（整套，按板块稳定排序）、`/api/exam/analysis/unit/<id>`（单单元，缺失 404 `NO_ANALYSIS`）、`/api/exam/analysis/status`（计数统计，不暴露绝对路径）。目录 mtime 热索引 + 单文件 LRU(120)；**缺失/损坏一律优雅降级，绝不阻断做题**。
+- **前端**：「全真演练」模式**完全隐藏解析防泄题**；「答案对照 · 解析」模式逐题注入讲解（标注 ✔答对/✘答错/—未作答），板块末尾展开解析面板（译文/词汇/长难句/范文/翻译采分点/听力分段）。
+- **批处理**：`scripts/exam-analysis-build.mjs` —— 断点续跑、答案一致性硬校验、原文忠实度校验、429 限流自适应、畸形 JSON 自动修复、写作/阅读超长单元拆题生成后合并、`--revalidate` 只读重校验。
+- **同版修复 CSP 硬缺陷**：`script-src self` 下真题页 17 处内联 `on*` 处理器被浏览器拦截（点选项无反应、进度不动、提交失效）；改为 `data-*` + 事件委托，**不放宽安全策略**。
+- **数据修复**：修正 2017-12 六级第 1 套阅读 `passage_id` 重复（两篇共用 pid=1 导致 51–55 题错配）。
+- **回归**：`scripts/exam-analysis-smoke.mjs` **59 断言** + `scripts/exam-analysis-audit.mjs --strict`（只读体检），均已接入 `npm test` 与发布门禁。
+
+### 6.0 上一版主题（v3.7.x）：离线 ECDICT 划词词典 + Piper 跨平台
 
 ### 6.1 已交付功能地图（按首次交付版本）
 
@@ -167,6 +177,7 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 | v3.4–v3.6 | 前端重复入口精简、TTS 发音（有道真人 + Piper）、今日任务中心、外刊刊物数据轨 + 按考试圈定语料范围 |
 | v3.7.0 | 离线 ECDICT 划词词典 |
 | v3.7.1 | Piper 解释器路径跨平台探测（Windows 可用）+ 本机补装 `runtime/piper` |
+| v3.8.0 | 真题参考解析（701 单元全题型逐题解析 + 答案对照模式）+ 修复 CSP 内联处理器硬缺陷 |
 
 ### 6.2 已知缺口
 
