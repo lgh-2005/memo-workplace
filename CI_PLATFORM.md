@@ -1,6 +1,6 @@
 # v3.8.1 CI 平台与发布门禁确认
 
-v3.8.1 新增 `scripts/vocab-chat-smoke.mjs`（词汇精练单次会话请求数回归，18 断言），已接入 `npm test` 与发布门禁；`release-check.mjs` 新增 1 项（该套件存在且已接入 `test.mjs`），`release-gate.mjs` 必需文件清单同步加入，版本断言升至 3.8.1。
+v3.8.1 新增 `scripts/vocab-chat-smoke.mjs`（词汇精练单次会话请求数回归，20 断言），已接入 `npm test` 与发布门禁；`release-check.mjs` 新增 1 项（该套件存在且已接入 `test.mjs`），`release-gate.mjs` 必需文件清单同步加入，版本断言升至 3.8.1。
 
 该套件的特点：**不只看接口状态**，而是用「假上游 LLM」直接观测服务端真正发给上游的 `messages` 组成与调用次数，因此能锁死「同一用户消息重复两次」「叠加操作产生多次上游调用」这类只看 HTTP 状态码发现不了的缺陷。套件已在**修复前代码**上反向验证：还原三处修复后实测 **9 项失败**（含 `roles=[system,user,user]`、`chat=2`、组字态 Enter 发出请求），确认断言有效而非恒真。
 

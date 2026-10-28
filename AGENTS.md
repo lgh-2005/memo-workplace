@@ -150,7 +150,7 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 - **⑤ 释义补全改走离线 ECDICT**：线上 8260 词缺释义 4434，每次进页稳定 2 批 LLM。改为 ECDICT 优先（命中 **96.4%**、整表 **680ms**、全命中时**零 LLM**），只有专有名词/新造词走 LLM；词库缺失自动回退旧路径。
 - **⑥ ECDICT 音标归一化**：词库混入西里尔形近字（`ә` U+04D9 冒充 `ə` U+0259），20000 样本中 **10065 条**中招。新增 `ecdictNormalizePhonetic` 映射回 IPA + 撇号转 `ˈ` + 冒号转 `ː` + `/.../` 包裹。
 - **⑦ 性能红线**：ECDICT 查词**禁用 `COLLATE NOCASE`**（退化为 77 万行全表扫描，批量查卡死 120s+），必须走「小写精确(`idx_word`) → `sw`(`idx_sw`) → 规则还原 → `lemma` 表」。
-- **⑧ 回归**：新增 `scripts/vocab-chat-smoke.mjs` **18 断言**，已接入 `npm test` 与发布门禁；**修复前代码上实测 9 项失败**（反向验证，非恒真）。`npm test` / `test:syntax` / `test:release`(36) / `test:ops`(30) / `test:mobile`(48) 全部退出码 0。
+- **⑧ 回归**：新增 `scripts/vocab-chat-smoke.mjs` **20 断言**，已接入 `npm test` 与发布门禁；**修复前代码上实测 9 项失败**（反向验证，非恒真）。`npm test` / `test:syntax` / `test:release`(36) / `test:ops`(30) / `test:mobile`(48) 全部退出码 0。
 - **⑨ 线上事实**：`data/users/admin/db.json` 实为 `words=8260 / glosses=3826 / todayItems=215`（**不是 0**）；本地 `glosses=0` 因本地从未同步，不可据此推断线上。
 
 **上一版主题（v3.8.0）：真题参考解析——每套卷每道题都有「做完后解析」。** 104 套真题（考研英语一 28 + 六级 76）全部题型预生成解析，做完题切到「答案对照 · 解析」即可逐题对照。

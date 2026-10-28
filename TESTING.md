@@ -1,6 +1,6 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
-> v3.8.1 增量：新增 `scripts/vocab-chat-smoke.mjs`（词汇精练单次会话请求数回归，**18 断言**），已接入 `npm test` 与发布门禁。它回答的是「界面上一次交互，服务端到底打了几次上游」这个问题，因此**不依赖 HTTP 状态码**，而是用一个**假上游 LLM**（`http.createServer`，记录每次请求的 `messages` 组成）直接观测服务端真正发出的内容与调用次数。
+> v3.8.1 增量：新增 `scripts/vocab-chat-smoke.mjs`（词汇精练单次会话请求数回归，**20 断言**），已接入 `npm test` 与发布门禁。它回答的是「界面上一次交互，服务端到底打了几次上游」这个问题，因此**不依赖 HTTP 状态码**，而是用一个**假上游 LLM**（`http.createServer`，记录每次请求的 `messages` 组成）直接观测服务端真正发出的内容与调用次数。
 >
 > - 前端源码契约（7 项）：`askAI` 在写入历史**之前**取样 `history`、请求体不再二次 `slice`、Enter 判定含 `isComposing`、含 `keyCode 229` 兜底、存在 `chatInFlight` 在途锁、`finally` 中释放、发送中禁用发送按钮。
 > - 运行时实际行为（6 项）：单击词条后上游 `messages` 必须是 `[system,user]` 且 user 只有 1 条；手输提问后 user 消息**无重复内容**；上游慢（2.5s）时「回车 + 再点 chip」只产生 **1 次** `/api/chat`；组字态按 Enter **不发送**且候选内容留在输入框。

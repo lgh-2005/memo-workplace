@@ -6714,7 +6714,8 @@ function ecdictRowToEntry(row, query) {
   return {
     word: row.word,
     query,
-    phonetic: String(row.phonetic || '').trim(),
+    // v3.8.1：同 gloss 路径一起做 IPA 归一化（ECDICT 音标混有 Cyrillic 形近字，见 ecdictNormalizePhonetic）
+    phonetic: ecdictNormalizePhonetic(row.phonetic),
     pos: String(row.pos || '').trim(),
     translation,
     definition,

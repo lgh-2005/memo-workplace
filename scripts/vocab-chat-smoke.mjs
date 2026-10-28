@@ -174,6 +174,14 @@ const REAL_WORDS = ['abandon', 'resilient', 'innovation', 'dormitory', 'sustain'
       const phon = body.glosses?.abandon?.phonetic || '';
       T('ECDICT 音标已归一化为 IPA 并包裹斜杠', /^\/.*\/$/.test(phon) && !/[\u0400-\u04FF]/.test(phon), phon);
       T('ECDICT 词性为词表口径', ['v.', 'n.', 'adj.', 'adv.'].includes(body.glosses?.abandon?.pos || ''), body.glosses?.abandon?.pos || '(空)');
+      // v3.8.1：/api/dict/ecdict（划词助手）与 /api/gloss 共用同一个音标归一化，两者都不得出现西里尔形近字
+      {
+        const dres = await fetch(base + '/api/dict/ecdict?word=abandon');
+        const dj = await dres.json().catch(() => ({}));
+        const dphon = dj?.data?.phonetic || '';
+        T('划词词典音标同样已归一化（无西里尔字符）', Boolean(dphon) && !/[\u0400-\u04FF]/.test(dphon), dphon || '(空)');
+        T('划词词典音标格式为 /.../', /^\/.*\/$/.test(dphon), dphon || '(空)');
+      }
     } else {
       SKIP('ECDICT 词库在时零 LLM 调用', 'runtime/ecdict 未安装');
       SKIP('ECDICT 词库在时释义齐全', 'runtime/ecdict 未安装');
