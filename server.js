@@ -772,6 +772,18 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.8.1', date: '2026-10-28', title: '词汇精练单次会话被拆成多次请求（请求数收敛）',
+    items: [
+      '修复「同一条用户消息在请求体里出现两次」：前端先把本轮提问写进本地历史、再整段发 history，服务端又把 message 作为本轮提问追加一次，导致每次对话上游 messages 都是 [system,user,user]（内容完全相同），prompt 白多一份用户消息。现改为在写入历史之前取样 history，由服务端单独追加本轮提问',
+      '修复中文输入法误发：组字态按 Enter 是「确认候选/上屏」，浏览器仍派发 keydown Enter（实测 isComposing=true、keyCode=13），旧代码只判 e.key，于是选词那一下就把半截内容当消息发出，确认后再按 Enter 又发一次（一次输入 = 两次请求）；现补 isComposing 与 keyCode 229 双重保护，并统一发送入口',
+      '新增「请求在途」锁：此前上游慢时回车后再点快捷 chip、连点两次词条都会叠加成多次上游调用，而多用户下写请求走 per-user 串行队列，叠加请求只能逐个排队（实测相邻调用间隔被拉长 4 倍，表现为「只问了一次却等好几轮」）；现在一次交互只允许一个请求在飞，发送中禁用发送按钮并提示「上一条还在回答中」',
+      '词表释义改为「离线 ECDICT 优先、LLM 只补漏」：原先进入词汇精练时前端一次补 30 个词、每个缺释义的词都要打 LLM（每批 20 词），点进一个页面被拆成多批隐式 LLM 调用；现先查本地词库（实测词表 8253 词命中 96.4%、整表 0.68s、单次亚毫秒），只有专有名词/新造词这类真正查不到的少数词才走 LLM，全部命中时零 LLM 调用',
+      '同处修复 ECDICT 音标准确性：词库从多年代数据汇入，音标里混着西里尔字母形近字（ә U+04D9 冒充 ə U+0259、є 冒充 ɛ），实测 20000 条样本里 10065 条中招；现统一映射回 IPA、撇号转重音符 ˈ、冒号转长音符 ː，并用 /.../ 包裹，输出与 LLM 风格一致',
+      '词库缺失时保持 v3.8.0 行为：ECDICT 未安装则整段自动跳过、回退 LLM，降级不阻断学习流程',
+      '新增 scripts/vocab-chat-smoke.mjs 隔离回归（18 断言：前端契约 7 项 + 运行时 messages 去重 + 在途锁 + 输入法 Enter + ECDICT 释义/音标/降级），已接入 npm test 与发布门禁；该套件在修复前代码上实测 9 项失败，可有效防止回退',
+    ],
+  },
+  {
     version: '3.8.0', date: '2026-10-27', title: '真题参考解析：每套卷每道题都有做完后的解析',
     items: [
       '104 套真题（考研英语一 28 + 六级 76）全部题型离线预生成参考解析：做完题切到「答案对照 · 解析」即可逐题看讲解',
@@ -5727,12 +5739,155 @@ function parseMnemonicJSON(text) {
   }
 }
 
-/* ---------- v1.0.4：AI 词典缓存（音标/词性/核心释义） ---------- */
+/* ---------- v1.0.4：词典缓存（音标/词性/核心释义） ----------
+ *  v3.8.1：改为「本地 ECDICT 优先，LLM 只补漏」。原先每个缺失词都要打 LLM（每批 20 词），
+ *          而进入「词汇精练」时前端一次会补 30 个词、且只要还有缺失就每次进页重复触发，
+ *          于是「点进一个页面」被拆成多批隐式 LLM 调用。现改为先离线查词库
+ *          （实测词表 8253 词命中 96.4%、整表 0.68s、单次亚毫秒），
+ *          只有专有名词/新造词这类真正查不到的少数词才按批走 LLM；全部命中时零 LLM 调用。 */
 
+/** ECDICT 词性缩写 → 词表口径（与 gloss_gen 输出的 pos 字段保持一致）。 */
+const ECDICT_POS_MAP = {
+  a: 'adj.', adj: 'adj.', ad: 'adv.', adv: 'adv.',
+  n: 'n.', v: 'v.', vt: 'v.', vi: 'v.',
+  prep: 'prep.', conj: 'conj.', pron: 'pron.', num: 'num.', art: 'art.',
+  int: 'int.', interj: 'int.', abbr: 'abbr.', aux: 'aux.', pl: 'n.',
+};
+
+/** 取（并缓存）ECDICT 预编译语句，避免每次查词都重新 prepare。 */
+function ecdictGlossStmt(key) {
+  const db = ecdictOpen();
+  if (!db) return null;
+  if (!ecdictState.glossStmts) ecdictState.glossStmts = {};
+  if (ecdictState.glossStmts[key]) return ecdictState.glossStmts[key];
+  const SQL = {
+    byWord: 'SELECT word,phonetic,translation,pos FROM stardict WHERE word = ? LIMIT 1',
+    bySw: 'SELECT word,phonetic,translation,pos FROM stardict WHERE sw = ? LIMIT 1',
+  }[key];
+  if (!SQL) return null;
+  try {
+    const st = db.prepare(SQL);
+    ecdictState.glossStmts[key] = st;
+    return st;
+  } catch { return null; }
+}
+
+/** 按 ECDICT 布局还原词条行：小写精确 → 去符号 sw 索引 → 规则还原 → lemma 变形表。
+ *  只用带索引的等值查询——`word = ? COLLATE NOCASE` 会让 SQLite 退化成 77 万行全表扫描。 */
+function ecdictGlossRow(lower) {
+  const has = row => row && String(row.translation || '').trim();
+  const byWord = ecdictGlossStmt('byWord');
+  const bySw = ecdictGlossStmt('bySw');
+  if (!byWord) return null;
+  const hit = byWord.get(lower);
+  if (has(hit)) return hit;
+  const sw = String(lower).replace(/[^a-z0-9]/g, '');
+  if (bySw && sw && sw !== lower) {
+    const r2 = bySw.get(sw);
+    if (has(r2)) return r2;
+  }
+  if (!has(hit)) {
+    for (const cand of ecdictRuleLemmas(lower)) {
+      const r3 = byWord.get(cand);
+      if (has(r3)) return r3;
+    }
+    if (ecdictState.lemma) {
+      try {
+        const base = ecdictState.lemma.prepare('SELECT base FROM lemma WHERE form = ? LIMIT 1').get(lower);
+        if (base && base.base) {
+          const r4 = byWord.get(String(base.base).toLowerCase());
+          if (has(r4)) return r4;
+        }
+      } catch { /* 变形表损坏不影响主查询 */ }
+    }
+  }
+  return has(hit) ? hit : null;
+}
+
+/* v3.8.1：音标字符归一化。ECDICT 的词库来自不同年代的数据汇入，同一批音标里混着
+ * 西里尔字母的「形近字」——ә(U+04D9) 冒充 ə(U+0259)、є(U+0454) 冒充 ɛ、е(U+0435) 冒充 e。
+ * 实测 20000 条样本里 10065 条含这类冒充字符（ә 单字出现 15641 次）。直接展示会变成
+ * 「ә'bændәn」这种看起来是音标、其实是错字的串，因此在这里统一映射回 IPA，
+ * 并把 ASCII 撇号转成重音符 ˈ、冒号转成长音符 ː，最后用 /.../ 包裹（与 LLM 输出风格一致）。 */
+const ECDICT_PHONETIC_MAP = {
+  '\u04D9': '\u0259', '\u0454': '\u025B', '\u0435': 'e', '\u03B5': '\u025B',
+  '\uFF1A': '\u02D0',
+};
+/* 这三类做位置敏感处理：撇号只有在音标里才当重音符（'bændən → ˈbændən），
+ * 顿音变体统一到 ˈ，各种冒号统一到长音符 ː。 */
+const ECDICT_PHONETIC_AS_STRESS = /[\u0060\u02CA\u02C7\u2019\u02BC']/g;
+
+function ecdictNormalizePhonetic(raw) {
+  let p = String(raw || '').trim();
+  if (!p) return '';
+  // 单字母映射（形近字→IPA）
+  p = p.replace(/[\u04D9\u0454\u0435\u03B5\uFF1A]/g, ch => ECDICT_PHONETIC_MAP[ch] ?? ch);
+  p = p.replace(/:/g, '\u02D0');
+  // 由于 ECDICT 的重音一律写成撇号，直接按位置把撇号整体改成 ˈ 即可（不会误伤其他地方）
+  p = p.replace(ECDICT_PHONETIC_AS_STRESS, '\u02C8');
+  p = p.replace(/\s+/g, ' ').trim();
+  if (!p) return '';
+  // 已有斜杠包裹的不重复包裹
+  if (/^\/.*\/$/.test(p)) return p.slice(0, 64);
+  return '/' + p.slice(0, 60) + '/';
+}
+
+/** ECDICT 词条 → 词表释义 {phonetic,pos,gloss}；词库缺失或查不到返回 null（调用方回退 LLM）。 */
+function ecdictGlossFor(rawWord) {
+  const sp = String(rawWord || '').trim();
+  if (!sp || !ecdictReady()) return null;
+  const key = sp.toLowerCase();
+  if (ecdictState.glossCache.has(key)) return ecdictState.glossCache.get(key);
+  let out = null;
+  try {
+    const row = ecdictGlossRow(key);
+    if (row) {
+      // 丢掉 [医] [法] [计] 这类学科标记行，取第一条通用释义
+      const lines = String(row.translation || '').split('\n').map(s => s.trim()).filter(Boolean)
+        .filter(l => !/^\[[^\]]{1,6}\]/.test(l));
+      const first = lines[0] || '';
+      const m = first.match(/^([a-z]{1,6})\.\s*(.+)$/i);
+      const posRaw = m ? m[1].toLowerCase() : '';
+      const body = String(m ? m[2] : first).replace(/\s+/g, ' ').trim();
+      if (body) {
+        out = {
+          phonetic: ecdictNormalizePhonetic(row.phonetic),
+          pos: ECDICT_POS_MAP[posRaw] || (posRaw ? posRaw + '.' : ''),
+          gloss: body.slice(0, 120),
+        };
+      }
+    }
+  } catch { out = null; }
+  if (ecdictState.glossCache.size >= ECDICT_CACHE_MAX) {
+    const first = ecdictState.glossCache.keys().next().value;
+    if (first !== undefined) ecdictState.glossCache.delete(first);
+  }
+  ecdictState.glossCache.set(key, out);
+  return out;
+}
+
+/**
+ * 补齐缺失释义。
+ * @returns {Promise<{local:number, llmCalls:number, missing:number}>} local=离线命中数，llmCalls=LLM 批次数
+ */
 async function ensureGlosses(spellings) {
   const missing = [...new Set(spellings)].filter(sp => sp && !db.glosses[sp]);
-  for (let i = 0; i < missing.length; i += 20) {
-    const chunk = missing.slice(i, i + 20);
+  if (!missing.length) return { local: 0, llmCalls: 0, missing: 0 };
+
+  // ① 本地词库优先：零网络、零 token（词库未安装时整段自动跳过，行为退回 v3.8.0）
+  let local = 0;
+  const needLlm = [];
+  for (const sp of missing) {
+    const g = ecdictGlossFor(sp);
+    if (g) { db.glosses[sp] = g; local++; } else needLlm.push(sp);
+  }
+
+  // ② 仅真正查不到的词（专有名词/新造词）走 LLM，按每批 20 词
+  let llmCalls = 0;
+  let llmFilled = 0;
+  for (let i = 0; i < needLlm.length; i += 20) {
+    const chunk = needLlm.slice(i, i + 20);
+    llmCalls++;
     try {
       const text = await llmChat([
         { role: 'system', content: getPrompt('gloss_gen') },
@@ -5746,11 +5901,17 @@ async function ensureGlosses(spellings) {
             pos: String(g.pos || '').slice(0, 40),
             gloss: String(g.gloss).slice(0, 120),
           };
+          llmFilled++;
         }
       }
     } catch { /* 失败的块静默跳过，下次请求再试 */ }
   }
-  persistDB();
+
+  if (local || llmFilled) persistDB();
+  if (local || llmCalls) {
+    console.log(`[gloss] 缺失 ${missing.length}：本地命中 ${local}、LLM 批次 ${llmCalls}（补 ${llmFilled}）`);
+  }
+  return { local, llmCalls, missing: missing.length };
 }
 
 const GLOSS_SYSTEM = [
@@ -6475,7 +6636,12 @@ const ECDICT_TAG_NAMES = {
 };
 const ECDICT_TAG_ORDER = ['zk', 'gk', 'cet4', 'cet6', 'ky', 'toefl', 'ielts', 'gre'];
 const ECDICT_CACHE_MAX = 4000;
-const ecdictState = { db: null, lemma: null, error: '', lookupCache: new Map() };
+const ecdictState = {
+  db: null, lemma: null, error: '',
+  lookupCache: new Map(),   // /api/dict/ecdict 查词缓存（完整词条卡）
+  glossCache: new Map(),    // v3.8.1：词表释义缓存（{phonetic,pos,gloss}，含 null 否定缓存）
+  glossStmts: null,         // v3.8.1：预编译查询语句
+};
 
 /** 懒加载只读连接（词库缺失时静默降级，不影响其他功能）。 */
 function ecdictOpen() {

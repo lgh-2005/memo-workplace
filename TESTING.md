@@ -1,5 +1,15 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
+> v3.8.1 增量：新增 `scripts/vocab-chat-smoke.mjs`（词汇精练单次会话请求数回归，**18 断言**），已接入 `npm test` 与发布门禁。它回答的是「界面上一次交互，服务端到底打了几次上游」这个问题，因此**不依赖 HTTP 状态码**，而是用一个**假上游 LLM**（`http.createServer`，记录每次请求的 `messages` 组成）直接观测服务端真正发出的内容与调用次数。
+>
+> - 前端源码契约（7 项）：`askAI` 在写入历史**之前**取样 `history`、请求体不再二次 `slice`、Enter 判定含 `isComposing`、含 `keyCode 229` 兜底、存在 `chatInFlight` 在途锁、`finally` 中释放、发送中禁用发送按钮。
+> - 运行时实际行为（6 项）：单击词条后上游 `messages` 必须是 `[system,user]` 且 user 只有 1 条；手输提问后 user 消息**无重复内容**；上游慢（2.5s）时「回车 + 再点 chip」只产生 **1 次** `/api/chat`；组字态按 Enter **不发送**且候选内容留在输入框。
+> - ECDICT 释义路径（5 项）：词库在时 `/api/gloss` **零 LLM 调用**且释义齐全、音标已归一化为 IPA 并带斜杠、词性为词表口径；词库缺失时回退 LLM（1 批）且释义仍齐全（降级不阻断）。
+>
+> **反向验证（关键）**：把三处修复还原成旧写法后跑同一套件，实测 **9 项失败**——`roles=[system,user,user] users=2`、`users=[请介绍…, 它和…, 它和…]`、`chat=2`、`chat=1`、输入框被清空等，逐条对应当初定位到的缺陷。因此这 18 项断言不是恒真断言。
+>
+> 依赖：浏览器断言需 `playwright`（devDependency）。未安装时自动 `SKIP` 并明确打印、**不伪造通过**；源码契约 + 接口断言（13 项）在任何环境都执行。
+
 > v3.8.0 增量：新增 `scripts/exam-analysis-smoke.mjs`（隔离沙箱，自带最小真题 + 解析夹具）验证真题参考解析全链路：状态接口（units/exams/bySection/byTrack/中文标签/不暴露绝对路径）、整套解析（排序/sub/题号/内嵌逐题）、单单元（命中/404 `NO_ANALYSIS`）、真题详情覆盖信息、无解析套卷降级 `ready:false`、损坏解析文件跳过并计入 `skipped`、索引缓存随文件变更自动失效、解析内容结构完整性（答案/why/译文/词汇/长难句/范文/听力 notice/未编造录音）、前端契约（app.js 与 index.html **内联事件处理器数量必须为 0**、板块挂载点、可见性 class、事件委托、解析徽章、样式、演练模式默认隐藏）、生成器 JSON 修复器单测（`repairUnescapedQuotes` / `parseLoose` / `salvageJson` / `stripFences`）、安全头未放宽（51 断言）。已接入 `npm test` 与发布门禁。
 
 > v3.7.1 增量：`scripts/tts-smoke.mjs` 的句子分支在**已安装 Piper** 时断言 200 + `audio/*`（未安装时仍断言 503 `TTS_UNAVAILABLE` 优雅降级），因此同一套件在本地（已装 Piper）与 CI（不装）都成立，无 SKIP 分支。

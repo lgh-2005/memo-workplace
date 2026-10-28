@@ -1627,10 +1627,24 @@ $('#chatImageFile').addEventListener('change', async () => {
 });
 $('#chatImageClear').addEventListener('click', () => setChatImagePreview(''));
 
+/* v3.8.1：会话在途锁——一次交互只允许一个请求在飞。
+ * 旧版无此保护：上游慢时「回车 + 再点 chip」「连点两次词条」都会叠加成多次 LLM 调用，
+ * 而多用户下写请求走 per-user 串行队列，叠加的请求只能排队逐个跑，表现为「只问了一次却等好几轮」。 */
+let chatInFlight = false;
+
 async function askAI(message, isErrorMark = false) {
   if (!message.trim()) return;
+  if (chatInFlight) { toast('⏳ 上一条还在回答中，请稍候再发'); return; }
+  chatInFlight = true;
+  const sendBtnEl = $('#sendBtn');
+  if (sendBtnEl) sendBtnEl.disabled = true;   // 显式禁用，避免用户误以为没点上而反复点
   const image = chatImage;               // v2.3.4：捕获待发送图片后立即清空预览
   if (image) setChatImagePreview('');
+  /* v3.8.1：请求历史必须在「把本轮提问写入本地历史」之前取出。
+   * 旧写法先 push 再 slice，而服务端会把 message 作为本轮提问追加在历史之后，
+   * 同一条用户消息因此在请求体里出现两次（实测 roles=[system,user,user]，内容完全相同），
+   * 每个回合的 prompt 都白多一份用户消息。 */
+  const history = state.chatHistory.slice(-16).map(m => ({ role: m.role, content: m.content }));
   addMsg('user', message, state.activeWord);
   state.chatHistory.push({ role: 'user', content: message, word: state.activeWord });
   if (state.activeWord) {
@@ -1646,7 +1660,7 @@ async function askAI(message, isErrorMark = false) {
       body: {
         spelling: state.activeWord,
         message,
-        history: state.chatHistory.slice(-16).map(m => ({ role: m.role, content: m.content })),
+        history,                        // v3.8.1：不含本轮提问（服务端会追加），杜绝重复
         useSearch: !!state.useSearch,   // v1.0.7：联网搜索开关
         image: image || undefined,      // v2.3.4：视觉能力图片随问题发送
       },
@@ -1669,6 +1683,9 @@ async function askAI(message, isErrorMark = false) {
   } catch (e) {
     loading.classList.remove('loading');
     loading.innerHTML = '❌ ' + esc(e.message) + (e.message.includes('AI 服务商') ? '（请到 设置 页配置）' : '');
+  } finally {
+    chatInFlight = false;             // v3.8.1：成功/失败都释放，避免一次异常把会话永久锁死
+    if (sendBtnEl) sendBtnEl.disabled = false;
   }
 }
 
@@ -1678,13 +1695,23 @@ function updateSessionInfo() {
   $('#finishBtn').disabled = state.sessionWords.size === 0;
 }
 
-$('#sendBtn').addEventListener('click', () => {
-  const v = $('#chatInput').value.trim();
-  $('#chatInput').value = '';
+/* v3.8.1：发送按钮与输入框共用同一发送入口。
+ * Enter 判定补两道输入法保护：中文输入法组字态下按 Enter 是「确认候选/上屏」，
+ * 浏览器仍会派发 keydown Enter（实测 isComposing=true、keyCode=13），旧写法只判 e.key，
+ * 于是选词那一下就把半截内容当消息发了出去；确认候选后再按 Enter 又发一次，一次输入变两次请求。
+ * keyCode 229 是部分输入法（含 Safari/旧版 Chrome）在组字期间上报的统一码。 */
+function sendChatFromInput() {
+  const input = $('#chatInput');
+  const v = input.value.trim();
+  input.value = '';
   askAI(v);
-});
+}
+$('#sendBtn').addEventListener('click', sendChatFromInput);
 $('#chatInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') { const v = $('#chatInput').value.trim(); $('#chatInput').value = ''; askAI(v); }
+  if (e.key !== 'Enter') return;
+  if (e.isComposing || e.keyCode === 229) return;   // v3.8.1：输入法确认候选，不发送
+  e.preventDefault();
+  sendChatFromInput();
 });
 
 $$('#quickRow .chip.q').forEach(c => c.addEventListener('click', () => {

@@ -3,7 +3,7 @@
 > **本文件是「memo bench」这个新工作区的唯一工作手册。** 承接自 `D:\ai\opencode\momo`（opencode 工作区，含旧 AGENTS.md 与《版本号经历.md》），本工作区从 v3.7.0 / `4c2436f` 起独立开发。
 >
 > **工作区根 = 仓库根**：`D:\ai\dsh\cli\memo bench`（注意路径含空格，命令行务必加引号）。
-> 当前版本口径：**v3.8.0**（2026-10-27）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
+> 当前版本口径：**v3.8.1**（2026-10-28）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
 
 ---
 
@@ -139,9 +139,21 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 
 ---
 
-## 6. 当前状态（v3.8.0，2026-10-27）
+## 6. 当前状态（v3.8.1，2026-10-28）
 
-**本版主题：真题参考解析——每套卷每道题都有「做完后解析」。** 104 套真题（考研英语一 28 + 六级 76）全部题型预生成解析，做完题切到「答案对照 · 解析」即可逐题对照。
+**本版主题：词汇精练「一次交互 = 一次请求」。** 用户实测「在 AI 学习 → 词汇精练里发一句话，后台实际打了好几次请求」。逐层取证（**假上游 LLM 记录服务端真正发出的 `messages`** + Playwright 复现真实交互）定位到四个叠加缺陷，全部修复。
+
+- **① 同一用户消息在请求体里出现两次**：前端 `askAI` 先把本轮提问 `push` 进 `chatHistory`，再把整段 `slice(-16)` 当 `history` 发走；服务端又把 `message` 追加一次 → 上游 `messages` 恒为 `[system,user,user]`（内容逐字相同）。修复：写入历史**之前**取样 `history`。
+- **② 中文输入法 Enter 被当发送**：组字态按 Enter 确认候选时浏览器仍派发 `keydown Enter`（实测 `isComposing=true`、`keyCode=13`），旧代码只判 `e.key` → 半截内容被发出、候选丢失、确认后再发一次。修复：`isComposing` + `keyCode 229` 双保护 + `preventDefault()`，发送按钮与输入框统一入口。
+- **③ 无在途锁**：双击词条 `+2`、连点 chip `+2`、上游慢时「回车 + 点 chip」`+2`。修复：`chatInFlight` 锁 + 发送中禁用按钮，`finally` 释放（异常不会永久锁死）。
+- **④ 多用户串行队列放大**：线上 `multiUser=true` 时 POST 走 `enqueueUserWrite`。A/B 实测连点 5 词：单用户 `32/237/431/615/816ms`（≈196ms 并发），多用户 `48/873/1699/2508/3335ms`（**≈822ms 串行**）→ 体感「只问一次却等好几轮」。①②③ 收敛后消失。
+- **⑤ 释义补全改走离线 ECDICT**：线上 8260 词缺释义 4434，每次进页稳定 2 批 LLM。改为 ECDICT 优先（命中 **96.4%**、整表 **680ms**、全命中时**零 LLM**），只有专有名词/新造词走 LLM；词库缺失自动回退旧路径。
+- **⑥ ECDICT 音标归一化**：词库混入西里尔形近字（`ә` U+04D9 冒充 `ə` U+0259），20000 样本中 **10065 条**中招。新增 `ecdictNormalizePhonetic` 映射回 IPA + 撇号转 `ˈ` + 冒号转 `ː` + `/.../` 包裹。
+- **⑦ 性能红线**：ECDICT 查词**禁用 `COLLATE NOCASE`**（退化为 77 万行全表扫描，批量查卡死 120s+），必须走「小写精确(`idx_word`) → `sw`(`idx_sw`) → 规则还原 → `lemma` 表」。
+- **⑧ 回归**：新增 `scripts/vocab-chat-smoke.mjs` **18 断言**，已接入 `npm test` 与发布门禁；**修复前代码上实测 9 项失败**（反向验证，非恒真）。`npm test` / `test:syntax` / `test:release`(36) / `test:ops`(30) / `test:mobile`(48) 全部退出码 0。
+- **⑨ 线上事实**：`data/users/admin/db.json` 实为 `words=8260 / glosses=3826 / todayItems=215`（**不是 0**）；本地 `glosses=0` 因本地从未同步，不可据此推断线上。
+
+**上一版主题（v3.8.0）：真题参考解析——每套卷每道题都有「做完后解析」。** 104 套真题（考研英语一 28 + 六级 76）全部题型预生成解析，做完题切到「答案对照 · 解析」即可逐题对照。
 
 - **解析形态**：按「单元」落 `corpus/exam_analysis/<examId>__<section>__<sub>.json`，共 **701 单元**。粒度：阅读按篇、其余题型按板块、听力按场。**随仓库入库**（与 `corpus/exams.jsonl` 同等对待），不进 `data/`、不参与备份、无需 rsync 排除。
 - **客观题解析**：逐题给 `type`（细节/推断/词义句意/态度/主旨/例证/指代）+ `locate` 原文定位句 + `why` 正确项推理链 + `traps` 逐个干扰项陷阱 + `tip` 做题启示。
@@ -178,6 +190,7 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 | v3.7.0 | 离线 ECDICT 划词词典 |
 | v3.7.1 | Piper 解释器路径跨平台探测（Windows 可用）+ 本机补装 `runtime/piper` |
 | v3.8.0 | 真题参考解析（701 单元全题型逐题解析 + 答案对照模式）+ 修复 CSP 内联处理器硬缺陷 |
+| v3.8.1 | 词汇精练请求数收敛（用户消息去重 + 输入法 Enter 保护 + 在途锁 + 释义改走离线 ECDICT + 音标 IPA 归一化） |
 
 ### 6.2 已知缺口
 
