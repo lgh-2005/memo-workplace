@@ -1,6 +1,6 @@
 # v3.8.2 CI 平台与发布门禁确认
 
-v3.8.2 新增 `scripts/static-cache-smoke.mjs`（静态资源条件请求 + 复制入口 HTTP 降级，**29 断言**），已接入 `npm test` 与发布门禁；`release-check.mjs` 新增 2 项（该套件存在且已接入 `test.mjs`；`server.js` 必须含 `serveStaticFile` 与 `'Cache-Control': 'no-cache'`），`release-gate.mjs` 必需文件清单同步加入该套件，版本断言升至 3.8.2。当前 `release-check` 共 **38 项**。
+v3.8.2 新增 `scripts/static-cache-smoke.mjs`（静态资源条件请求 + 复制入口 HTTP 降级，**30 断言**），已接入 `npm test` 与发布门禁；`release-check.mjs` 新增 2 项（该套件存在且已接入 `test.mjs`；`server.js` 必须含 `serveStaticFile` 与 `'Cache-Control': 'no-cache'`），`release-gate.mjs` 必需文件清单同步加入该套件，版本断言升至 3.8.2。当前 `release-check` 共 **38 项**。
 
 该套件的三个特点：
 

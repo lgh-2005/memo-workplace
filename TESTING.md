@@ -1,6 +1,6 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
-> v3.8.2 增量：新增 `scripts/static-cache-smoke.mjs`（静态资源条件请求 + 复制入口 HTTP 降级，**29 断言**），已接入 `npm test` 与发布门禁。它锁死三个契约：
+> v3.8.2 增量：新增 `scripts/static-cache-smoke.mjs`（静态资源条件请求 + 复制入口 HTTP 降级，**30 断言**），已接入 `npm test` 与发布门禁。它锁死三个契约：
 > - **静态缓存契约（20 项）**：`Cache-Control: no-cache`（非 `no-store`）、强 `ETag`、`Last-Modified`、`Vary: Accept-Encoding`、`Content-Length` 与实体一致；`If-None-Match` 命中回 **304 且零字节**、304 仍带 `ETag`；`If-Modified-Since`（未来时间）回 304、（30 天前）回 200；**`If-None-Match` 优先于 `If-Modified-Since`**（RFC 9110 §13.1.3，过期 ETag + 未来日期必须回 200）；`HEAD` 返回 200、无实体、仍带 `Content-Length`；改文件后 `ETag` 必须变化且旧 ETag 不再命中 304；`/api/*` **保持 `no-store`**。
 > - **前端源码契约（4 项）**：`app.js` 定义 `async function copyText`；**剥离块注释后**全文件只允许 **1 处** `navigator.clipboard.writeText(`（即 `copyText` 内部）；降级用 `document.execCommand('copy')`；降级路径保存并恢复选区 `Range`。
 > - **浏览器实测（4 项）**：`copyText` 在有 Clipboard API 时返回 true；**把 `navigator.clipboard` 置为 `undefined`（模拟线上 HTTP/IP 非安全上下文）后仍返回 true**；复制后用户原有选区仍然存活；空串 / `null` 返回 false 且不抛错。
