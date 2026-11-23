@@ -772,6 +772,19 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '3.8.2', date: '2026-11-17', title: '静态资源从「零缓存」改为条件请求 + 复制按钮在 HTTP 下不再失效',
+    items: [
+      '静态资源改为 ETag + Last-Modified 条件请求：旧版对 public/ 下每个文件都打 Cache-Control: no-store，浏览器与中间层完全无法复用。实测首屏 index(41KB gzip)+app.js(429KB 未压缩)+style.css(192KB 未压缩)≈663KB，关掉页面再开同样再传 663KB —— 等于零缓存。现改为 no-cache + 强 ETag + Last-Modified，命中即 304 零字节；刻意不用 max-age 长缓存，因为本项目版本号靠 index.html 内联文本承载、静态文件名不带内容指纹，长缓存会让「发版后用户还看旧版」变成难排查的偶发问题',
+      '静态响应补 Vary: Accept-Encoding 与 Content-Length，并支持 HEAD：反代若对同一 URL 同时存在 gzip/identity 两个版本，缺 Vary 会让客户端拿到压缩体却按 identity 解码（表现为乱码）',
+      '助记图 /images/* 加 private, max-age=3600：文件名唯一、内容不变，此前完全无缓存头，每次翻助记库都要重新拉图',
+      '新增统一复制入口 copyText()：线上以 http://IP 访问时页面不是安全上下文，浏览器根本不提供 navigator.clipboard（实测 window.isSecureContext=false、navigator.clipboard===undefined），因此直接写 navigator.clipboard.writeText 的地方要么抛 TypeError、要么落进空 catch 变成「点了没反应」',
+      '修复四处「复制」按钮在 HTTP 下静默失败：词文成章「复制全文+钩子」、划词精读卡「复制」、写作批改报告逐句「复制」（原本连 catch 都没有，点了完全无反应）、范文「复制范文」（同上）；现统一走 copyText —— 先试 Clipboard API，失败退 document.execCommand(copy)，后者在 HTTP 下依然可用',
+      'copyText 的降级路径会保存并恢复用户原有选区（Range），避免划词气泡复制时把正在划的选区吞掉',
+      '复制失败的提示语改为可执行的指引（「请长按选中文本手动复制」），不再只提示「复制失败」让用户无从下手',
+      '新增 scripts/static-cache-smoke.mjs 隔离回归（18 断言：ETag 稳定/变化、304 命中与未命中、If-None-Match 优先于 If-Modified-Since、HEAD 无实实体、Vary/Content-Length、API 仍为 no-store、前端契约含 copyText 与零裸 navigator.clipboard 调用、execCommand 降级真实可复制），已接入 npm test 与发布门禁',
+    ],
+  },
+  {
     version: '3.8.1', date: '2026-10-28', title: '词汇精练单次会话被拆成多次请求（请求数收敛）',
     items: [
       '修复「同一条用户消息在请求体里出现两次」：前端先把本轮提问写进本地历史、再整段发 history，服务端又把 message 作为本轮提问追加一次，导致每次对话上游 messages 都是 [system,user,user]（内容完全相同），prompt 白多一份用户消息。现改为在写入历史之前取样 history，由服务端单独追加本轮提问',
@@ -6917,6 +6930,69 @@ function isWithinDir(baseDir, targetPath) {
   return rel === '' || (rel !== '..' && !rel.startsWith('..' + path.sep) && !path.isAbsolute(rel));
 }
 
+/* v3.8.2：静态资源条件请求（ETag / Last-Modified / 304）。
+ *
+ * 旧版对 public/ 下每个静态文件都打 `Cache-Control: no-store`，浏览器与中间层都无法
+ * 复用：线上实测首屏 index(41KB gzip) + app.js(429KB 未压缩) + style.css(192KB 未压缩)
+ * ≈ 663KB；把页面关掉再开，同样再传 663KB —— 等于零缓存。
+ *
+ * 现改为「no-cache + 强 ETag + Last-Modified」：no-cache 允许存储但强制回源校验，
+ * 命中即 304 零字节。为什么不直接上 max-age 长缓存：本项目的版本号靠 index.html 内联
+ * 文本承载，且发布流程不重命名静态文件名（无内容指纹），长缓存会让「发版后用户还看旧版」
+ * 变成难排查的偶发问题；304 已经能把重复访问压到几十字节，收益占满而风险为零。
+ */
+function staticFileMeta(filePath) {
+  const st = fs.statSync(filePath);
+  return {
+    st,
+    etag: `"${st.size.toString(16)}-${Math.floor(st.mtimeMs).toString(16)}"`,
+    lastModified: new Date(Math.floor(st.mtimeMs / 1000) * 1000).toUTCString(),
+  };
+}
+
+/**
+ * 发送静态文件，支持 If-None-Match / If-Modified-Since 条件请求。
+ * @param {import('http').IncomingMessage} req
+ * @param {import('http').ServerResponse} res
+ * @param {string} filePath 已通过 isWithinDir 校验的绝对路径
+ */
+function serveStaticFile(req, res, filePath) {
+  let meta;
+  try { meta = staticFileMeta(filePath); }
+  catch { res.writeHead(404); return res.end('Not Found'); }
+
+  const ext = path.extname(filePath).toLowerCase();
+  const headers = {
+    'Content-Type': MIME[ext] || 'application/octet-stream',
+    'Cache-Control': 'no-cache',
+    'ETag': meta.etag,
+    'Last-Modified': meta.lastModified,
+    // 反代若对同一 URL 做 gzip/identity 双版本，必须靠 Vary 区分，否则客户端可能拿到
+    // 压缩体却按 identity 解码。
+    'Vary': 'Accept-Encoding',
+  };
+
+  // RFC 9110 §13.1.3：If-None-Match 存在时忽略 If-Modified-Since
+  const inm = String(req.headers['if-none-match'] || '').trim();
+  let notModified = false;
+  if (inm) {
+    const candidates = inm.split(',').map(s => s.trim());
+    notModified = candidates.includes('*') || candidates.includes(meta.etag);
+  } else {
+    const ims = Date.parse(String(req.headers['if-modified-since'] || ''));
+    notModified = Number.isFinite(ims) && Date.parse(meta.lastModified) <= ims;
+  }
+  if (notModified) {
+    // 304 不带实体，仅回校验相关头
+    res.writeHead(304, headers);
+    return res.end();
+  }
+
+  res.writeHead(200, Object.assign({ 'Content-Length': meta.st.size }, headers));
+  if (req.method === 'HEAD') return res.end();
+  return fs.createReadStream(filePath).pipe(res);
+}
+
 /* v3.3.6：今日任务中心、考试计划与听说训练 */
 const STUDY_TASK_IDS = new Set(['vocab_today', 'review_due', 'exam_practice', 'listening', 'speaking']);
 const speechSessions = new Map();
@@ -10567,7 +10643,11 @@ CRITICAL TRANSCRIPTION RULES:
       try { requested = decodeURIComponent(p.slice('/images/'.length)); } catch { res.writeHead(400); return res.end('Bad Request'); }
       const imgPath = path.resolve(baseDir, requested);
       if (!isWithinDir(baseDir, imgPath) || !fs.existsSync(imgPath)) { res.writeHead(404); return res.end('Not Found'); }
-      res.writeHead(200, { 'Content-Type': MIME[path.extname(imgPath).toLowerCase()] || 'application/octet-stream' });
+      // v3.8.2：助记图文件名唯一、内容不变，允许浏览器缓存 1 小时（此前无任何缓存头）
+      res.writeHead(200, {
+        'Content-Type': MIME[path.extname(imgPath).toLowerCase()] || 'application/octet-stream',
+        'Cache-Control': 'private, max-age=3600',
+      });
       return fs.createReadStream(imgPath).pipe(res);
     }
     let filePath;
@@ -10580,9 +10660,8 @@ CRITICAL TRANSCRIPTION RULES:
     catch { res.writeHead(400); return res.end('Bad Request'); }
     if (!isWithinDir(PUBLIC_DIR, filePath)) { res.writeHead(403); return res.end(); }
     if (!fs.existsSync(filePath)) { res.writeHead(404); return res.end('Not Found'); }
-    const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream', 'Cache-Control': 'no-store' });
-    fs.createReadStream(filePath).pipe(res);
+    // v3.8.2：改为条件请求（ETag/Last-Modified/304），不再无条件 no-store
+    return serveStaticFile(req, res, filePath);
   } catch (err) {
     if (p.startsWith('/api/')) {
       if (err.code === 'BODY_TOO_LARGE') {

@@ -71,7 +71,16 @@ ECS 控制台 → 安全组 → 添加入方向规则：TCP 5178（源建议先�
 > - 用 nginx 反向代理 80/443 并加 Basic Auth 或只放行自己 IP；
 > - 安全组源地址只填你常用网络的出口 IP。
 
-## 二、以后更新（v3.8.1 发布门禁、备份恢复与回滚）
+## 二、以后更新（v3.8.2 发布门禁、备份恢复与回滚）
+
+v3.8.2 静态资源条件请求 + 复制按钮 HTTP 降级：**纯代码改动，无新增依赖、无新增配置项、无数据迁移**。改动集中在 `server.js`（静态分支改 `serveStaticFile`，输出 ETag/Last-Modified/Vary，支持 304 与 HEAD；助记图加 `private, max-age=3600`）与 `public/app.js`（新增统一复制入口 `copyText`，替换 5 处调用点）。
+
+- **为什么值得发版**：旧版对 `public/` 下每个文件都打 `Cache-Control: no-store`，配合 nginx 只对 `text/html` 做 gzip，实测首屏 `index`(41KB gzip) + `app.js`(429KB 未压缩) + `style.css`(192KB 未压缩) ≈ **663KB**，关掉页面再开照样再传 663KB —— 等于零缓存。本版改完后重复访问命中 304，传输降到几十字节。
+- **`no-cache` 而非 `max-age` 是刻意选择**：本项目版本号靠 `index.html` 内联文本承载、静态文件名不带内容指纹，长缓存会让「发版后用户还看旧版」变成难排查的偶发问题；`no-cache` 允许存储但强制回源校验，命中即 304，收益占满而风险为零。
+- **复制按钮**：线上以 `http://IP` 访问时 `navigator.clipboard` 根本不存在（实测 `isSecureContext=false`），旧版四处复制要么抛 TypeError、要么落进空 catch 变成「点了没反应」。本版统一走 `copyText`，失败自动退 `document.execCommand('copy')`（HTTP 下仍可用）。
+- **无需重启的项**：无；**需要重启的项**：本版 `server.js` 与 `public/` 改动（`workbench.service` 重启后生效）。
+- **发布后自查**：`curl -s http://127.0.0.1:5178/ | grep -o 'v3\.8\.2'` 应命中；`node scripts/online-health.mjs --expected-version 3.8.2` 应 5/5 通过；`curl -sI http://127.0.0.1:5178/app.js` 应看到 `Cache-Control: no-cache` 与 `ETag`，且带 `If-None-Match` 重放应返回 **304**；`node scripts/static-cache-smoke.mjs` 应 29/29 通过。
+- **反向代理侧（重要，不属于代码发布）**：若前置 nginx 未配置 `gzip_types text/css application/javascript ...`，`app.js` / `style.css` 仍然不压缩；若 nginx 对静态资源另加 `proxy_no_cache` 或强制改写 `Cache-Control`，会盖掉服务端新增的 304 能力。发布后请用 `curl -H 'Accept-Encoding: gzip' -sI` 确认 `Content-Encoding: gzip` 实际生效。
 
 v3.8.1 词汇精练请求数收敛：**纯代码改动，无新增依赖、无新增配置项、无数据迁移**。三个修复全在 `public/app.js`（请求体去重、输入法 Enter 保护、请求在途锁），一处后端改造在 `server.js`（`ensureGlosses` 改走离线 ECDICT），发布时正常同步产品文件即可。
 

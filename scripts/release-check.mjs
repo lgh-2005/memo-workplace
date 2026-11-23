@@ -11,7 +11,7 @@ const rollback = await readFile(join(root, 'scripts', 'rollback.sh'), 'utf8');
 const ci = await readFile(join(root, '.github', 'workflows', 'ci.yml'), 'utf8');
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '3.8.1'],
+  ['package version', packageJson.version === '3.8.2'],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],
@@ -47,6 +47,8 @@ const required = [
   ['exam analysis audit', exists(join(root, 'scripts', 'exam-analysis-audit.mjs'))],
   ['exam analysis corpus shipped', exists(join(root, 'corpus', 'exam_analysis'))],
   ['vocab chat smoke', exists(join(root, 'scripts', 'vocab-chat-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('vocab-chat-smoke.mjs')],
+  ['static cache smoke', exists(join(root, 'scripts', 'static-cache-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('static-cache-smoke.mjs')],
+  ['static cache contract in server', (await readFile(join(root, 'server.js'), 'utf8')).includes('function serveStaticFile') && (await readFile(join(root, 'server.js'), 'utf8')).includes("'Cache-Control': 'no-cache'")],
 ];
 const failed = required.filter(([, ok]) => !ok).map(([name]) => name);
 if (failed.length) throw new Error(`release checks failed: ${failed.join(', ')}`);

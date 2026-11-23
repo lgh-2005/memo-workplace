@@ -1,4 +1,16 @@
-# v3.8.1 CI 平台与发布门禁确认
+# v3.8.2 CI 平台与发布门禁确认
+
+v3.8.2 新增 `scripts/static-cache-smoke.mjs`（静态资源条件请求 + 复制入口 HTTP 降级，**29 断言**），已接入 `npm test` 与发布门禁；`release-check.mjs` 新增 2 项（该套件存在且已接入 `test.mjs`；`server.js` 必须含 `serveStaticFile` 与 `'Cache-Control': 'no-cache'`），`release-gate.mjs` 必需文件清单同步加入该套件，版本断言升至 3.8.2。当前 `release-check` 共 **38 项**。
+
+该套件的三个特点：
+
+1. **既测 HTTP 头也测浏览器行为**。「304 省字节」只看响应头就能验，但「复制在 HTTP 下真的能用」必须开真浏览器——套件用 Playwright 把 `navigator.clipboard` 主动置为 `undefined` 来精确复现线上非安全上下文，再断言 `copyText` 仍返回 true，避免「源码看起来有兜底」的自欺。
+2. **反向验证过**（非恒真）：改回 `no-store` → 1 项失败；`copyText` 改名 → 3 项失败；注入裸 `navigator.clipboard.writeText(` → 1 项失败。
+3. **踩过一次误报并已修正**：首版断言在统计 `navigator.clipboard.writeText(` 时未剥离 JSDoc 注释，把文档里的示例文字算成真实调用而误报；现改为「先剥离块注释再计数」，并在断言处注释说明原因。
+
+**CI 影响**：本套件用 Playwright 起 Chromium，CI 已有 `playwright install --with-deps chromium` 步骤（各既有浏览器套件同样依赖），无需新增 CI 步骤或依赖。
+
+## v3.8.1 CI 平台与发布门禁确认（历史）
 
 v3.8.1 新增 `scripts/vocab-chat-smoke.mjs`（词汇精练单次会话请求数回归，20 断言），已接入 `npm test` 与发布门禁；`release-check.mjs` 新增 1 项（该套件存在且已接入 `test.mjs`），`release-gate.mjs` 必需文件清单同步加入，版本断言升至 3.8.1。
 

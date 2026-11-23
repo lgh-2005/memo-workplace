@@ -1,4 +1,18 @@
-# v3.8.1 安全审计与敏感信息扫描记录
+# v3.8.2 安全审计与敏感信息扫描记录
+
+v3.8.2 静态资源条件请求 + 复制入口 HTTP 降级：**不新增接口、不新增鉴权面、不放宽任何安全策略**。
+
+- **静态资源改条件请求**（`server.js` 新增 `staticFileMeta` / `serveStaticFile`）：`Cache-Control` 由 `no-store` 改为 `no-cache`（**允许存储但强制回源校验**，不是长缓存），新增 `ETag`、`Last-Modified`、`Vary: Accept-Encoding`、`Content-Length`，并支持 `If-None-Match` / `If-Modified-Since` 的 304 与 `HEAD`。
+  - **为什么 `no-cache` 不放宽安全面**：响应仍每次回源校验，客户端无法在未验证的情况下复用旧响应；`no-store` 与 `no-cache` 的差别只在于「是否允许把已验证的响应存到本地」，安全性上等价，而 304 能省掉重复传输。
+  - **未采用 `max-age` 长缓存**：本项目静态文件名不带内容指纹、版本号靠 `index.html` 内联文本承载，长缓存会让发版后用户停留在旧版（也会让安全修复无法及时送达），故明确排除。
+  - **路径穿越防护未改动**：`isWithinDir` 校验仍在进入 `serveStaticFile` 之前执行，且 `serveStaticFile` 只接收已校验的绝对路径，不再自行拼接用户输入。
+  - **`Vary: Accept-Encoding` 是正确性要求而非可选优化**：若反代同时存在 gzip/identity 两版响应而响应缺 `Vary`，客户端可能拿到压缩体却按 identity 解码（表现为乱码）。
+- **`/api/*` 保持 `no-store` 不变**：`sendJSON` 未改动，前端改完立刻可见这一既有约定（经验总结坑 #3）继续成立；`scripts/static-cache-smoke.mjs` 内含断言锁死此行为，防止「顺手把 API 也改成可缓存」。
+- **复制入口 `copyText`（`public/app.js`）**：先试异步 Clipboard API，失败退 `document.execCommand('copy')`。降级路径全程使用**本地临时 DOM 节点**且复制后立即移除，不写入 `localStorage`、不发网络请求；替换选区前保存并在结束后恢复用户原有 `Range`，不改变页面内容。**不涉及任何凭证、Cookie 或会话数据**。
+- **错误提示变化**：复制失败提示由「复制失败」改为「复制失败，请长按选中文本手动复制」，避免用户误判为功能损坏而反复点击（不会产生额外请求或写入）。
+- **助记图缓存**：`/images/*` 由无缓存头改为 `private, max-age=3600`（`private` 表示仅浏览器可缓存、不允许共享代理缓存），避免多用户环境下图片被中间层跨用户复用。
+
+## v3.8.1 安全审计与敏感信息扫描记录（历史）
 
 v3.8.1 词汇精练请求数收敛（三个修复 + 一处释义来源改造）：**不新增接口、不新增鉴权面、不放宽任何安全策略**，四项改动全部在既有接口内部。
 

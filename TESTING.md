@@ -1,5 +1,14 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
+> v3.8.2 增量：新增 `scripts/static-cache-smoke.mjs`（静态资源条件请求 + 复制入口 HTTP 降级，**29 断言**），已接入 `npm test` 与发布门禁。它锁死三个契约：
+> - **静态缓存契约（20 项）**：`Cache-Control: no-cache`（非 `no-store`）、强 `ETag`、`Last-Modified`、`Vary: Accept-Encoding`、`Content-Length` 与实体一致；`If-None-Match` 命中回 **304 且零字节**、304 仍带 `ETag`；`If-Modified-Since`（未来时间）回 304、（30 天前）回 200；**`If-None-Match` 优先于 `If-Modified-Since`**（RFC 9110 §13.1.3，过期 ETag + 未来日期必须回 200）；`HEAD` 返回 200、无实体、仍带 `Content-Length`；改文件后 `ETag` 必须变化且旧 ETag 不再命中 304；`/api/*` **保持 `no-store`**。
+> - **前端源码契约（4 项）**：`app.js` 定义 `async function copyText`；**剥离块注释后**全文件只允许 **1 处** `navigator.clipboard.writeText(`（即 `copyText` 内部）；降级用 `document.execCommand('copy')`；降级路径保存并恢复选区 `Range`。
+> - **浏览器实测（4 项）**：`copyText` 在有 Clipboard API 时返回 true；**把 `navigator.clipboard` 置为 `undefined`（模拟线上 HTTP/IP 非安全上下文）后仍返回 true**；复制后用户原有选区仍然存活；空串 / `null` 返回 false 且不抛错。
+>
+> **反向验证**（确认非恒真）：把 `server.js` 静态分支改回 `'Cache-Control': 'no-store'` → `cache-control is no-cache` **1 项失败**；把 `copyText` 函数改名（模拟所有调用点失效）→ `defines copyText helper` / `restores prior selection Range` / `works via Clipboard API` **3 项失败**；注入一个裸 `navigator.clipboard.writeText(`（模拟 v3.8.1 的裸调用）→ `exactly one ... call` **1 项失败**。
+>
+> 另：该套件首版曾因**未剥离 JSDoc 注释**，把文档里的示例文字误算成真实调用而误报 1 项；现改为「先剥离块注释再计数」，并在断言处注释说明原因，避免后续再踩。
+
 > v3.8.1 增量：新增 `scripts/vocab-chat-smoke.mjs`（词汇精练单次会话请求数回归，**20 断言**），已接入 `npm test` 与发布门禁。它回答的是「界面上一次交互，服务端到底打了几次上游」这个问题，因此**不依赖 HTTP 状态码**，而是用一个**假上游 LLM**（`http.createServer`，记录每次请求的 `messages` 组成）直接观测服务端真正发出的内容与调用次数。
 >
 > - 前端源码契约（7 项）：`askAI` 在写入历史**之前**取样 `history`、请求体不再二次 `slice`、Enter 判定含 `isComposing`、含 `keyCode 229` 兜底、存在 `chatInFlight` 在途锁、`finally` 中释放、发送中禁用发送按钮。

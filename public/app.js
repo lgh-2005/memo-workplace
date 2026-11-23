@@ -409,6 +409,63 @@ function toast(msg) {
   } catch { /* 静默 */ }
 }
 
+/**
+ * v3.8.2：统一复制入口（先 Clipboard API，失败退 execCommand）。
+ *
+ * 为什么需要：线上以 `http://IP` 访问时页面不是「安全上下文」，浏览器根本不提供
+ * `navigator.clipboard`（实测 window.isSecureContext=false、navigator.clipboard===undefined）。
+ * 因此凡是直接写 `navigator.clipboard.writeText(...)` 的地方，在 HTTP 下要么抛 TypeError、
+ * 要么落进空 catch 变成「点了没反应」——词文成章复制、划词精读卡复制、写作批改复制、
+ * 范文复制四处都中招。
+ *
+ * 本函数先试异步 Clipboard API（HTTPS/localhost 下最快），失败再退到 `document.execCommand('copy')`
+ * ——后者在 HTTP 下依然可用，是这条唯一可行的降级路径。替换选区前会保存用户原有 Range 并在
+ * 结束后恢复，避免划词气泡复制把正在划的选区吞掉。
+ *
+ * @param {string} text 要复制的文本
+ * @returns {Promise<boolean>} 是否复制成功（调用方据此给不同的提示语）
+ */
+async function copyText(text) {
+  const value = String(text == null ? '' : text);
+  if (!value) return false;
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(value);
+      return true;
+    } catch { /* 权限被拒或非安全上下文：落到下面的兜底 */ }
+  }
+
+  try {
+    const sel = typeof window.getSelection === 'function' ? window.getSelection() : null;
+    const savedRanges = [];
+    if (sel) {
+      for (let i = 0; i < sel.rangeCount; i++) {
+        try { savedRanges.push(sel.getRangeAt(i).cloneRange()); } catch { /* 静默 */ }
+      }
+    }
+    const ta = document.createElement('textarea');
+    ta.value = value;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;padding:0;border:0;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    try { ta.setSelectionRange(0, value.length); } catch { /* 部分浏览器不支持 */ }
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch { ok = false; }
+    try { document.body.removeChild(ta); } catch { /* 静默 */ }
+    if (sel && savedRanges.length) {
+      try {
+        sel.removeAllRanges();
+        savedRanges.forEach(r => sel.addRange(r));
+      } catch { /* 静默 */ }
+    }
+    return ok;
+  } catch {
+    return false;
+  }
+}
+
 /* ================= v2.4.2：通用可折叠卡片（所有占版大的板块均可折叠） ================= */
 
 /** 按 CSS 选择器折叠/展开卡片内容体；state=true 折叠，false 展开 */
@@ -2097,8 +2154,8 @@ $('#storyCopyBtn').addEventListener('click', async () => {
   if (!s) return;
   try {
     const hooks = (s.hooks || []).map(h => `- ${h.word} ${h.pos || ''} ${h.meaning || ''}｜钩子：${h.hook || ''}`).join('\n');
-    await navigator.clipboard.writeText(`${s.title}\n\n${s.passage}\n\n【词汇钩子】\n${hooks}\n\n【译文】\n${s.translation || ''}`);
-    toast('📋 已复制全文+钩子');
+    const ok = await copyText(`${s.title}\n\n${s.passage}\n\n【词汇钩子】\n${hooks}\n\n【译文】\n${s.translation || ''}`);
+    toast(ok ? '📋 已复制全文+钩子' : '❌ 复制失败，请长按选中文章正文手动复制');
   } catch { toast('复制失败'); }
 });
 $('#storyDelBtn').addEventListener('click', async () => {
@@ -6182,27 +6239,10 @@ function selLearnShowBtn(rect, rects) {
       e.stopPropagation();
       const copyBtn = bubble.querySelector('[data-act="copy"]');
       const textToCopy = selLearnState?.text || '';
-      let success = false;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        try {
-          await navigator.clipboard.writeText(textToCopy);
-          success = true;
-        } catch {}
-      }
-      if (!success) {
-        try {
-          const ta = document.createElement('textarea');
-          ta.value = textToCopy;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          success = document.execCommand('copy');
-          document.body.removeChild(ta);
-        } catch {}
-      }
-      if (copyBtn) copyBtn.innerHTML = '✓ 已复制';
-      toast(success ? '📋 文本已复制到剪贴板' : '❌ 复制失败，请重试');
+      // v3.8.2：改用统一复制入口（HTTP 下 navigator.clipboard 不存在，必须走 execCommand 兜底）
+      const success = await copyText(textToCopy);
+      if (copyBtn) copyBtn.innerHTML = success ? '✓ 已复制' : '✗ 复制失败';
+      toast(success ? '📋 文本已复制到剪贴板' : '❌ 复制失败，请长按选中文本手动复制');
       setTimeout(() => {
         selLearnRemoveBtn();
       }, 700);
@@ -6319,7 +6359,8 @@ function selLearnOpen() {
   });
   card.querySelector('[data-sel-copy]').addEventListener('click', async () => {
     const c = card.querySelector('.sel-learn-body')?.innerText || '';
-    try { await navigator.clipboard.writeText(c); toast('📋 已复制'); } catch { toast('复制失败'); }
+    const ok = await copyText(c);
+    toast(ok ? '📋 已复制' : '❌ 复制失败，请长按选中内容手动复制');
   });
   /* v2.3.3：多模式切换——以新模式重新请求，并发序号保证只显示最后一次结果 */
   card.querySelectorAll('.sel-mode').forEach(btn => {
@@ -9222,8 +9263,9 @@ function wrtRenderReport(md, savedId) {
   });
 
   /* 复制按钮 */
-  $$('#wrtReportFinal .wrt-copy').forEach(b => b.addEventListener('click', () => {
-    navigator.clipboard.writeText(b.dataset.copy || '').then(() => toast('📋 已复制'));
+  $$('#wrtReportFinal .wrt-copy').forEach(b => b.addEventListener('click', async () => {
+    const ok = await copyText(b.dataset.copy || '');
+    toast(ok ? '📋 已复制' : '❌ 复制失败，请长按选中该句手动复制');
   }));
 
   /* 未解析到锚点时的原始报告折叠兜底 */
@@ -9244,7 +9286,10 @@ function addWrtActionRow(el) {
   const [sp, cp] = row.querySelectorAll('button');
   const plain = () => (el.innerText || '').trim();
   sp.addEventListener('click', () => speak(plain()));
-  cp.addEventListener('click', () => navigator.clipboard.writeText(plain()).then(() => toast('📋 范文已复制')));
+  cp.addEventListener('click', async () => {
+    const ok = await copyText(plain());
+    toast(ok ? '📋 范文已复制' : '❌ 复制失败，请长按选中范文手动复制');
+  });
   el.before(row);
 }
 
