@@ -6976,8 +6976,15 @@ function serveStaticFile(req, res, filePath) {
   const inm = String(req.headers['if-none-match'] || '').trim();
   let notModified = false;
   if (inm) {
-    const candidates = inm.split(',').map(s => s.trim());
-    notModified = candidates.includes('*') || candidates.includes(meta.etag);
+    // v3.8.2：If-None-Match 用「弱比较」—— W/"x" 与 "x" 视为同一实体。
+    // 这一条不是理论洁癖：前置 nginx 一旦对响应做 gzip，会把强校验改写成弱校验
+    // （实测 ETag: "693be-1a208892627" → W/"693be-1a208892627"），而浏览器随后就带着
+    // 这个弱标签回来。旧实现只做字符串全等比较，于是**每个重复访问都重新下发整个实体**
+    // （实测首次 164,850B、二次仍是 164,850B，304 完全不生效）。
+    const stripWeak = (tag) => String(tag).trim().replace(/^W\//i, '');
+    const target = stripWeak(meta.etag);
+    const candidates = inm.split(',').map(stripWeak);
+    notModified = candidates.includes('*') || candidates.includes(target);
   } else {
     const ims = Date.parse(String(req.headers['if-modified-since'] || ''));
     notModified = Number.isFinite(ims) && Date.parse(meta.lastModified) <= ims;

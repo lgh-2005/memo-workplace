@@ -93,6 +93,12 @@ try {
   const ims = await fetch(base + '/app.js', { headers: { 'If-Modified-Since': new Date(Date.now() + 60000).toUTCString() } });
   T('If-Modified-Since future yields 304', ims.status === 304, `status=${ims.status}`);
 
+  // v3.8.2：前置 nginx 一旦 gzip 就会把强 ETag 改写成弱校验 W/"..."，浏览器随后带着弱标签回来。
+  // 旧实现做字符串全等比较 → 弱标签永远不命中 → 每个重复访问都重新下发整个实体。
+  // 这条断言就是这个线上实测缺陷的护栏（首版套件没有它，所以没拦住）。
+  const weak = await fetch(base + '/app.js', { headers: { 'If-None-Match': `W/${jsEtag}` } });
+  T('weak If-None-Match (nginx gzip rewrite) also yields 304', weak.status === 304, `status=${weak.status}`);
+
   const stale = await fetch(base + '/app.js', { headers: { 'If-None-Match': '"deadbeef"' } });
   T('stale If-None-Match yields 200', stale.status === 200, `status=${stale.status}`);
 
