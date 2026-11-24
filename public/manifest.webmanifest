@@ -1,7 +1,7 @@
 {
-  "name": "英语学习工作台",
-  "short_name": "英语工作台",
-  "description": "墨墨背单词同步 + AI 教练互动 + 真题语料注入的考研 / 六级英语学习工作台",
+  "name": "英语单词学习工作台",
+  "short_name": "单词工作台",
+  "description": "墨墨背单词同步 + AI 教练互动 + 真实语境语料佐证的英语单词学习工作台",
   "lang": "zh-CN",
   "dir": "ltr",
   "start_url": "/",

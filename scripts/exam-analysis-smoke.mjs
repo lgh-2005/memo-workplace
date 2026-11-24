@@ -307,16 +307,17 @@ try {
   ok(inlineHandlers.length === 0, `前端契约 app.js 无内联事件处理器（实际 ${inlineHandlers.length}）`);
   const htmlInline = idxHtml.match(/\son(?:click|change|input|keydown|keyup|blur|focus)=/gi) || [];
   ok(htmlInline.length === 0, `前端契约 index.html 无内联事件处理器（实际 ${htmlInline.length}）`);
-  ok(appJs.includes('data-exm-analyze='), '前端契约 板块解析挂载点存在');
-  ok(appJs.includes('exm-show-analysis'), '前端契约 解析可见性 class 契约存在');
-  ok(appJs.includes('loadExamAnalysis') && appJs.includes('exmQuestionExplainHtml'), '前端契约 解析加载与逐题渲染函数存在');
-  ok(appJs.includes("dataset.exmScroll") || appJs.includes('data-exm-scroll'), '前端契约 事件委托处理题号跳转');
-  ok(appJs.includes("select[data-exmq]") && appJs.includes("select[data-exmpb]"), '前端契约 事件委托处理两类下拉');
-  ok(idxHtml.includes('id="exmAnalyzeBadge"'), '前端契约 解析状态徽章存在');
-  ok(css.includes('.exm-an-panel') && css.includes('.exm-an-explain'), '前端契约 解析样式已定义');
-  ok(css.includes('body.exm-show-analysis .exm-an-mount'), '前端契约 演练模式隐藏解析的样式规则存在');
-  // 演练模式不泄题：解析面板默认 display:none
-  ok(/\.exm-an-mount\s*\{\s*display:\s*none/.test(css), '前端契约 解析挂载点默认隐藏（防泄题）');
+  // v4.0.0：做题面下线——真题改为「语料库里的只读阅读条目 + 板块级精读附件」
+  ok(!appJs.includes('exm-show-analysis') && !appJs.includes('data-exm-analyze='), '前端契约 做题面与逐题解析挂载点已下线');
+  ok(appJs.includes('kbAppendExamReading') && appJs.includes('/api/exam/analysis/'), '前端契约 真题精读附件渲染存在');
+  ok(appJs.includes("'/api/kb/exams'") && appJs.includes("'exam/'"), '前端契约 语料库已接入真题投影');
+  ok(idxHtml.includes('data-kcat="真题"'), '前端契约 语料库保留真题筛选档');
+  ok(!idxHtml.includes('id="tab-exam"') && !idxHtml.includes('id="tab-pomo"'), '前端契约 真题/番茄钟页签已下线');
+  ok(!css.includes('.exm-an-panel'), '前端契约 逐题解析样式已清理');
+  const deadUnit = await fetch(base + '/api/unit/records');
+  ok(deadUnit.status === 404, `已删路由 /api/unit/records 返回 404（实际 ${deadUnit.status}）`);
+  const deadWriting = await fetch(base + '/api/writing/history');
+  ok(deadWriting.status === 404, `已删路由 /api/writing/history 返回 404（实际 ${deadWriting.status}）`);
 
   /* 10. 安全头未因本次改动放宽 */
   const page = await fetch(base + '/');

@@ -9,9 +9,17 @@ const packageJson = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'
 const deploy = await readFile(join(root, 'scripts', 'deploy.sh'), 'utf8');
 const rollback = await readFile(join(root, 'scripts', 'rollback.sh'), 'utf8');
 const ci = await readFile(join(root, '.github', 'workflows', 'ci.yml'), 'utf8');
+const serverSrc = await readFile(join(root, 'server.js'), 'utf8');
+const appSrc = await readFile(join(root, 'public', 'app.js'), 'utf8');
+const indexHtml = await readFile(join(root, 'public', 'index.html'), 'utf8');
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '3.8.2'],
+  ['package version', packageJson.version === '4.0.0'],
+  // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
+  ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
+  ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
+  ['v4 corpus exam projection', serverSrc.includes("p === '/api/kb/exams'") && appSrc.includes('kbAppendExamReading')],
+  ['v4 nav has no exam/pomodoro tab', !indexHtml.includes('data-tab="exam"') && !indexHtml.includes('data-tab="pomo"')],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],

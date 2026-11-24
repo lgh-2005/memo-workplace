@@ -85,12 +85,12 @@ try {
     assert.equal(await page.locator('#quizOverview').evaluate(el => el.closest('#report-workbench') !== null), true);
     console.log('PASS report source separation');
 
-    await page.evaluate(() => switchTab('unit'));
-    assert.equal(await page.locator('#tab-unit').evaluate(el => el.classList.contains('active')), true);
-    assert.equal(await page.locator('.tab[data-tab="exam"]').evaluate(el => el.classList.contains('active')), true);
-    await page.locator('#tab-unit [data-training-view="exam"]').click();
-    assert.equal(await page.locator('#tab-exam').evaluate(el => el.classList.contains('active')), true);
-    console.log('PASS unified exam and unit entry');
+    await page.evaluate(() => switchTab('kb'));
+    assert.equal(await page.locator('#tab-kb').evaluate(el => el.classList.contains('active')), true);
+    assert.equal(await page.locator('.tab[data-tab="exam"]').count(), 0, 'v4.0.0：独立真题页签必须下线');
+    assert.equal(await page.locator('.tab[data-tab="pomo"]').count(), 0, 'v4.0.0：番茄钟页签必须下线');
+    assert.equal(await page.locator('#kbFilters [data-kcat="真题"]').count(), 1, '语料库必须保留真题筛选档');
+    console.log('PASS exam merged into corpus, standalone exam/pomodoro tabs removed');
 
     await page.evaluate(() => switchTab('settings'));
     await page.locator('#modelAssignments').evaluate(el => {
@@ -98,16 +98,14 @@ try {
       el.style.display = '';
     });
     await page.waitForFunction(() => document.querySelectorAll('#cfgReviewProvider option[value="refine-provider"]').length === 1);
-    for (const id of ['cfgReviewProvider', 'cfgSelectionProvider', 'cfgStoryProvider', 'cfgWritingOcrProvider']) await page.locator(`#${id}`).selectOption('refine-provider', { force: true });
+    for (const id of ['cfgReviewProvider', 'cfgSelectionProvider', 'cfgStoryProvider']) await page.locator(`#${id}`).selectOption('refine-provider', { force: true });
     await page.locator('#cfgReviewModel').fill('review-model');
     await page.locator('#cfgSelectionModel').fill('selection-model');
     await page.locator('#cfgStoryModel').fill('story-model');
-    await page.locator('#cfgWritingOcrModel').fill('vision-model');
     await page.locator('#saveModelAssignmentsBtn').click();
     await page.locator('#modelAssignmentsResult').getByText('模型分配已保存').waitFor();
     assert.equal(writes.length, 1, 'model assignments should use a single config write');
-    assert.deepEqual(Object.keys(writes[0]).sort(), ['review', 'selection', 'story', 'writingOcr']);
-    assert.equal(writes[0].writingOcr.model, 'vision-model');
+    assert.deepEqual(Object.keys(writes[0]).sort(), ['review', 'selection', 'story']);
     console.log('PASS one-save model assignments');
 
     const styles = ['', 'arcade', 'pop', 'mc', 'mc-gui', 'mc-deep', 'mc-end'];
@@ -143,7 +141,7 @@ try {
     const mobileErrors = [];
     mobile.on('pageerror', error => mobileErrors.push(error.message));
     await mobile.goto(base, { waitUntil: 'networkidle' });
-    for (const tab of ['dashboard', 'reports', 'quiz', 'exam', 'unit', 'settings']) {
+    for (const tab of ['dashboard', 'reports', 'quiz', 'kb', 'notes', 'speaking', 'settings']) {
       await mobile.evaluate(name => switchTab(name), tab);
       const overflow = await mobile.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1 || document.body.scrollWidth > innerWidth + 1);
       assert.equal(overflow, false, `${tab} has horizontal overflow`);

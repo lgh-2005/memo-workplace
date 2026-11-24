@@ -3,20 +3,20 @@
 <head data-page-node-id="EdhUpWkgCD4G5QQBoYMgEy">
 <meta charset="UTF-8" data-page-node-id="jJ2TzRBunJhs9LdkX6E9EG">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="oWFDBFujyrY5KW9n2DbmLZ">
-<title>英语学习工作台</title>
+<title>英语单词学习工作台</title>
 <!-- v3.8.0：真题参考解析（104 套全题型逐题解析 + 答案对照模式）；语音运行时跨平台解析（Piper venv 在 Windows 下可用）见 v3.7.1；
      离线 ECDICT 划词词典见 v3.7.0；外刊刊物数据轨见 v3.6.0；语音运行时见 v3.5.3。 -->
 <!-- v3.5.0：发音朗读升级——单词真人发音（有道，美音/英音可切），句子服务端神经语音（Piper），浏览器 TTS 兜底。 -->
 
 <!-- v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） -->
 <meta name="theme-color" content="#3b82f6">
-<meta name="description" content="墨墨背单词同步 + AI 教练互动 + 真题语料注入的考研 / 六级英语学习工作台">
+<meta name="description" content="墨墨背单词同步 + AI 教练互动 + 真实语境语料佐证的英语单词学习工作台">
 <link rel="manifest" href="/manifest.webmanifest">
 <!-- iOS Safari 独立全屏运行（不依赖 HTTPS） -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="英语工作台">
+<meta name="apple-mobile-web-app-title" content="单词工作台">
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152.png">
 <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-167.png">
@@ -27,7 +27,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 英语工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v3.8.2</span></div>
+  <div class="mobile-brand">🐳 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.0.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -39,18 +39,16 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v3.8.2</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语单词学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.0.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
     <button class="tab active" data-tab="dashboard" data-page-node-id="o15ZdFLBAnybA5gFW9Sf58">📊 今日学习</button>
     <button class="tab" data-tab="study" data-page-node-id="eBIb7j6N2U87cA5iGjeTTD">💬 AI 学习</button>
     <button class="tab" data-tab="quiz" data-page-node-id="3FXEzFdeeBZ3UbAbosesG8">📝 测验</button>
-    <button class="tab" data-tab="pomo" data-page-node-id="Bh88PnFT9HGZbJj74MDrlK">🍅 专注工具</button>
     <button class="tab" data-tab="speaking">🎧 听说训练</button>
 
     <div class="tab-group-label" data-page-node-id="II9XTwl8cYai4EgDRImnfQ">题库与语料</div>
-    <button class="tab" data-tab="exam" data-page-node-id="hhGxvXfJ1AAKzff1vMtGrc">🗂 真题训练</button>
     <button class="tab" data-tab="kb" data-page-node-id="vCt5b9lHOLdQZDdgLPNtOh">📚 语料库</button>
     <button class="tab" data-tab="notes" data-page-node-id="Qj2ehEZr3MtAKm89ciXEDf">📖 助记库</button>
 
@@ -75,7 +73,7 @@
      v3.1.0：新增「登录 / 注册」双标签——多用户模式走用户名+密码、一次性邀请码注册；单用户模式仍走 Token 凭证 -->
 <div class="login-overlay" id="loginOverlay" style="display:none">
   <div class="login-card">
-    <div class="login-brand">🐳 英语学习工作台</div>
+    <div class="login-brand">🐳 英语单词学习工作台</div>
 
     <!-- 多用户模式：登录 / 注册 标签 -->
     <div class="login-tabs" id="loginTabs" style="display:none">
@@ -112,7 +110,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v3.8.2</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v4.0.0</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -338,7 +336,6 @@
       <div class="study-subnav">
         <button class="study-sub-item active" data-sub="vocab" type="button">🔤 词汇精练</button>
         <button class="study-sub-item" data-sub="story" type="button" id="storySubBtn">📖 词文成章</button>
-        <button class="study-sub-item" data-sub="writing" type="button" id="writingSubBtn">✍️ 写作升格</button>
         <span class="study-sub-tip" id="studySubTip">词表精读 + AI 教练 + 助记生成，让单词过手入脑</span>
       </div>
     </div>
@@ -451,102 +448,6 @@
         </div>
         <div class="card-collapse-body" id="storyHistBody">
           <div id="storyHistList" style="margin-top:8px"><div class="hint">还没有生成过文章</div></div>
-        </div>
-      </div>
-    </div>
-    <div id="writingPane" style="display:none">
-      <div class="grid-2" style="align-items:start">
-        <div class="card card-collapsible" id="wrtTopicCard">
-          <div class="card-title-row" style="margin-bottom:0">
-            <div class="card-title" style="margin-bottom:0">🧾 题目与审题（自由写作 · 不碰真题库）</div>
-            <button class="card-collapse-toggle" type="button" data-collapse-target="#wrtTopicBody" title="折叠/展开">收起 ▴</button>
-          </div>
-          <div class="card-collapse-body" id="wrtTopicBody">
-            <label class="field-label" style="margin-top:8px">作文类型</label>
-            <div class="filter-row" id="wrtPartRow">
-              <button class="chip active" data-wrt-part="A">Part A 小作文（10 分）</button>
-              <button class="chip" data-wrt-part="B">Part B 大作文（20 分）</button>
-            </div>
-            <label class="field-label">题目要求（题干 / Directions / 图画说明）</label>
-            <textarea id="wrtPrompt" class="input" rows="4" placeholder="粘贴题目要求，例如：Write an essay of 160~200 words based on the following drawing…"></textarea>
-            <div id="wrtImageRow" style="margin-top:8px">
-              <div style="display:flex;gap:8px;align-items:center">
-                <button class="btn ghost" id="wrtImgBtn" style="min-height:44px">🖼️ 上传图画</button>
-                <input type="file" id="wrtImageFile" accept="image/*" style="display:none">
-                <span class="hint" id="wrtVisionHint" style="margin:0"></span>
-              </div>
-              <div class="wrt-img-preview" id="wrtImagePreview" style="display:none">
-                <img id="wrtImagePreviewImg" alt="待审题图画">
-                <button class="chat-image-clear" id="wrtImageClear" type="button">✕</button>
-              </div>
-            </div>
-            <button class="btn primary full" id="wrtInspectBtn" style="margin-top:10px">🔍 AI 审题与立意（防幻觉核对）</button>
-            <div class="result" id="wrtInspectResult"></div>
-            <div id="wrtInspectBox" class="wrt-inspect" style="display:none"></div>
-            <div class="wrt-confirm-row" id="wrtConfirmRow" style="display:none">
-              <label class="check-row"><input type="checkbox" id="wrtImgConfirmed"> ✅ 我已核对：AI 对画面/题意的理解无误</label>
-              <input type="text" id="wrtImgNote" class="input" placeholder="纠偏：画面其实是…（修改后可重新审题或直接随正文提交）" style="margin-top:6px">
-            </div>
-          </div>
-        </div>
-        <div class="card card-collapsible" id="wrtDeskCard">
-          <div class="card-title-row" style="margin-bottom:0">
-            <div class="card-title" style="margin-bottom:0">📝 写作台</div>
-            <button class="card-collapse-toggle" type="button" data-collapse-target="#wrtDeskBody" title="折叠/展开">收起 ▴</button>
-          </div>
-          <div class="card-collapse-body" id="wrtDeskBody">
-            <div class="wrt-desk-meta">
-              <span class="wrt-word-badge" id="wrtWordBadge" data-state="empty">0 词</span>
-              <span class="wrt-timer" id="wrtTimer">⏱ 00:00</span>
-              <span class="row-gap" style="margin-left:auto;align-items:center">
-                <button class="btn small primary" id="wrtOcrBtn" type="button" style="min-height:32px" title="拍照识别考研标准横线纸手写稿">📷 拍照识别手写稿</button>
-                <input type="file" id="wrtOcrInput" accept="image/*" capture="environment" style="display:none">
-                <button class="btn small" id="wrtTimerBtn" style="min-height:32px">▶ 计时</button>
-                <button class="btn small ghost" id="wrtTimerReset" style="min-height:32px">↺</button>
-              </span>
-            </div>
-            <div class="hint" style="margin:6px 0">建议时长：小作文 15 分钟 / 大作文 35 分钟（到时橙色提醒，不强制）</div>
-            <textarea id="wrtEssay" class="input wrt-essay" rows="14" placeholder="在此写作，草稿自动暂存本机（误刷新也不丢字）…"></textarea>
-            <div class="row-gap" style="margin-top:10px">
-              <button class="btn primary" id="wrtSubmitBtn" style="flex:1">✨ 提交 AI 升格批改</button>
-              <button class="btn ghost" id="wrtDraftClear">🗑 清空草稿</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card card-collapsible" id="wrtReportCard" style="display:none">
-        <div class="card-title-row" style="margin-bottom:0">
-          <div class="card-title" style="margin-bottom:0" id="wrtReportTitle">📈 批改与升格报告</div>
-          <button class="card-collapse-toggle" type="button" data-collapse-target="#wrtReportBody" title="折叠/展开">收起 ▴</button>
-        </div>
-        <div class="card-collapse-body" id="wrtReportBody">
-          <details class="hint-fold wrt-think-fold" id="wrtThinkFold" style="display:none">
-            <summary>🧠 AI 思考过程（<span id="wrtThinkCount">0</span> 字）· 点击展开</summary>
-            <div class="wrt-think-box" id="wrtThinkBox"></div>
-          </details>
-          <div id="wrtStreamBox" class="wrt-stream" style="display:none"></div>
-          <div id="wrtReportFinal" style="display:none">
-            <div id="wrtScoreCard" class="wrt-score"></div>
-            <div class="card-title" style="margin:14px 0 8px">🪜 逐句升格对比（规范纠错 L1 → 考研高分 L2）</div>
-            <div id="wrtSentList" class="wrt-sents"></div>
-            <div class="card-title" style="margin:14px 0 8px">🏆 全文升格范文</div>
-            <div id="wrtRewriteCard" class="wrt-rewrite"></div>
-            <div class="card-title" style="margin:14px 0 8px">✨ 可迁移句型骨架（点击 ⭐ 存入助记库）</div>
-            <div id="wrtPatternCard" class="wrt-patterns"></div>
-            <div class="result" id="wrtNoteResult"></div>
-          </div>
-        </div>
-      </div>
-      <div class="card card-collapsible" id="wrtHistCard">
-        <div class="card-title-row" style="margin-bottom:0">
-          <div class="card-title" style="margin-bottom:0">🗂 历史习作</div>
-          <div class="row-gap" style="align-items:center">
-            <button class="btn small" id="wrtHistRefresh">刷新</button>
-            <button class="card-collapse-toggle" type="button" data-collapse-target="#wrtHistBody" title="折叠/展开">收起 ▴</button>
-          </div>
-        </div>
-        <div class="card-collapse-body" id="wrtHistBody">
-          <div id="wrtHistList" style="margin-top:8px"><div class="hint">还没有提交过批改</div></div>
         </div>
       </div>
     </div>
@@ -795,7 +696,7 @@
   <section id="tab-kb" class="tab-page" data-page-node-id="4igJwXCJuOfGPmnfvIkIH3">
     <div class="card" data-page-node-id="CumcxHxq2ExSzdX20wUUAV">
       <div class="card-title-row" data-page-node-id="M8gHaMf3L2W8SuiC02kZLF">
-        <div class="card-title" data-page-node-id="QMTIh0u2lOTRGm11cj1ZXO">📚 题库 · 语料库</div>
+        <div class="card-title" data-page-node-id="QMTIh0u2lOTRGm11cj1ZXO">📚 语料库（含真题）</div>
         <div style="display:flex;gap:8px" data-page-node-id="WoLGzSUEl3VHuiFJqtzCnt">
           <input type="text" id="kbSearchInput" class="input" placeholder="全库搜真题原句 / 语料，如：survive、长难句…" style="width:260px" data-page-node-id="WlPuKXwQ17gzbpcTsvIwI0">
           <button class="btn" id="kbSearchBtn" data-page-node-id="6azRm1QUEU1i08q6S9Kvxi">🔍 搜索</button>
@@ -806,7 +707,7 @@
         <button class="chip active" data-kcat="" data-page-node-id="aWeDfxc4zKwrDYgV9Tw6WV">全部</button>
         <button class="chip" data-kcat="外刊" data-page-node-id="PpnQReO6Jk4tCgLPehS01u">外刊原文</button>
         <button class="chip" data-kcat="教材" data-page-node-id="n2omSKFQFKbzi01RtRXvah">教材文章</button>
-        <button class="chip" data-kcat="真题" data-page-node-id="NdGdYMGGdeqUR5F3iGNBgN">真题正文</button>
+        <button class="chip" data-kcat="真题" data-page-node-id="NdGdYMGGdeqUR5F3iGNBgN">真题整卷 / 正文</button>
         <button class="chip" data-kcat="直录" data-page-node-id="7EUOvTyOoJD9ZAZD6Rizgr">直录笔记</button>
       </div>
       <!-- v3.6.0：刊物数据轨（每个外刊一条独立轨） -->
@@ -863,150 +764,6 @@
       <div class="hint" id="kbDetailMeta" data-page-node-id="VKoBEldf1FrBVoFVBBy1GT"></div>
       <div id="kbEditPanel" style="display:none;margin-top:10px" data-page-node-id="sJoJKdsFx5tGzLkiEJc5Of"></div>
       <div id="kbDetail" data-page-node-id="BWGcCbZoVoKAbHkvHgELry"></div>
-    </div>
-  </section>
-
-  <!-- ============ 真题库（v1.1.2） ============ -->
-  <section id="tab-exam" class="tab-page" data-page-node-id="3thbmqXptek9R1mzko5MOs"><div class="training-view-nav" aria-label="真题训练方式"><button class="btn primary" data-training-view="exam">整卷演练</button><button class="btn " data-training-view="unit">题型专项</button></div>
-    <div class="card card-collapsible" data-page-node-id="zrLt1D63nJqPOG3789dG4c">
-      <div class="card-title-row" style="margin-bottom:0" data-page-node-id="lZEESy3vpTDsGmHIYXv9JP">
-        <div class="card-title" data-page-node-id="PT2imYkzu7EalCYeEFIq4G" style="margin-bottom:0">🗂 真题库 · <span id="exTrackTitle">考研英语一</span></div>
-        <div class="row-gap" style="align-items:center">
-
-          <button class="card-collapse-toggle" type="button" data-collapse-target="#exCardCollapseBody" title="折叠/展开">收起 ▴</button>
-        </div>
-      </div>
-      <div class="card-collapse-body" id="exCardCollapseBody">
-        <p class="hint">按考试类别选择试卷，可进行整卷演练或查看答案解析。</p>
-        <div class="row-gap" id="exTrackFilters" style="margin-top:8px" data-page-node-id="v270trackfilters">
-          <button class="chip active" data-xtrack="kaoyan1" data-page-node-id="v270tk-ky"><span>📘 考研英语一</span> <span class="ex-track-count" id="exTrackCount-kaoyan1">0</span></button>
-          <button class="chip" data-xtrack="cet6" data-page-node-id="v270tk-cet6"><span>🎧 六级英语</span> <span class="ex-track-count" id="exTrackCount-cet6">0</span></button>
-        </div>
-        <details class="management-fold" id="examManagement" data-admin-only><summary>管理题库</summary><div class="row-gap" style="flex-wrap:wrap;margin-top:8px" data-page-node-id="glIIs8VYlET4xxCyOaoZdN">
-          <input type="file" id="exImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".tex,.pdf" data-page-node-id="LUl41UwF6mrKjOnL1PZFjG">
-          <button class="btn primary" id="exImportBtn" data-page-node-id="TYrTWjOGa952mw9zJvlMZF">🗂 导入真题</button>
-        </div>
-        <div class="row-gap" style="flex-wrap:wrap" data-page-node-id="GXFaEvDdNoJMeEnR8vBbaE">
-          <label style="display:flex;align-items:center;gap:6px;font-size:13px" data-page-node-id="X9Zg6oOBBnFFtUO7Exsn2O"><input type="checkbox" id="exMineruOcr" checked data-page-node-id="OmnNBfSF4wAXqFUsDsYvnX"> 扫描件</label>
-          <input type="file" id="exMineruFile" class="input" multiple style="flex:1;min-width:220px" accept=".pdf" data-page-node-id="QksGBjZ2eP6LVVlAvMqWzM">
-          <button class="btn" id="exMineruBtn" data-page-node-id="Sx0wSlYyG4WCRCdXeKagAD">🛰 MinerU 解析（→ 真题正文）</button>
-        </div>
-        <div class="result" id="exImportResult" data-page-node-id="gxOHKU0enUV7obZARC8weO"></div><button class="btn" id="exLogBtn" data-page-node-id="FwphYpAGfpG5v4CCv7dWZP">📜 导入日志</button></details>
-        <div class="card-title-row" style="margin-top:14px" data-page-node-id="F1SE7rqjCze8qxFLPUQ6WI"><div class="card-title" data-page-node-id="IwFKhJHZxsSaBjBdB8wxFX">📄 真题列表</div></div>
-        <div class="result" id="exListResult" data-page-node-id="1DvjpOuyK5JBJK4AHS4rZm"></div>
-        <div id="exList" data-page-node-id="DMhnasjxfKIkdlOpdt40Wo"></div>
-        <div id="exPagination" class="pagination-bar" style="display:none;margin-top:14px"></div>
-      </div>
-    </div>
-    <div class="card" id="exDetailCard" style="display:none" data-page-node-id="n20x6z8B8eXxxjkCqlFWrr">
-      <div class="card-title-row" data-page-node-id="9fkzoJr8gdx4fOFsRdsRrN">
-        <div class="card-title" id="exDetailTitle" data-page-node-id="6FIw74rOuanII9E8QvBpZW">真题</div>
-        <div class="row-gap" style="margin-left:auto;align-items:center" data-page-node-id="Fmz5ZMxHL7fdMSriTN46ZZ">
-          <div class="exm-mode-switch" id="exModeSwitch">
-            <button type="button" class="btn mini exm-mode-btn active" id="exmModePractice">全真演练</button>
-            <button type="button" class="btn mini exm-mode-btn" id="exmModeAnalysis">答案对照 · 解析</button>
-          </div>
-          <span class="exm-an-badge" id="exmAnalyzeBadge"></span>
-          <button data-admin-only class="btn" id="exHistoryBtn" data-page-node-id="v212exhistbtn01">🕘 历史版本</button>
-          <button data-admin-only class="btn" id="exEditBtn" data-page-node-id="gaPtq3845fArJwjXMgegVe">✏️ 编辑</button>
-          <button data-admin-only class="btn ghost" id="exDelBtn" data-page-node-id="009UPRk8ozODJ6ttpXKK8R">🗑 删除</button>
-          <button class="btn" id="exBackBtn" data-page-node-id="CCoG5uGTg9sAxs8hgF8gnc">← 返回列表</button>
-        </div>
-      </div>
-      <div class="hint" id="exDetailMeta" data-page-node-id="7lHBiaX1h21MhJhma08tZT"></div>
-      <div id="exEditPanel" style="display:none;margin-top:10px" data-page-node-id="WVMmpjjKwutMMScGMLuqsF"></div>
-      <div id="exDetail" data-page-node-id="VODm0GAg6beJ6YmquhWCV7"></div>
-    </div>
-  </section>
-
-  <!-- ============ 单元题库（v1.1.5） ============ -->
-  <section id="tab-unit" class="tab-page" data-page-node-id="IfITgtruO00xkphH57ejeh"><div class="training-view-nav" aria-label="真题训练方式"><button class="btn " data-training-view="exam">整卷演练</button><button class="btn primary" data-training-view="unit">题型专项</button></div>
-    <div class="card" data-page-node-id="h0LIrCrJ1zwn5UUWFW9XTF">
-      <div class="card-title-row" data-page-node-id="UlfJ6bIZutlOu1UlSJC2V0">
-        <div class="card-title" data-page-node-id="CibCscb47oCurbrdFHQCN5">🧩 单元题库 · 按题型做题</div>
-      </div>
-      <p class="hint">选择考试类别和题型开始专项练习。整卷演练请切换上方训练方式。</p>
-      <div class="row-gap" id="unitTrackFilters" data-page-node-id="v270unittrackfilters">
-        <button class="chip active" data-utrack="kaoyan1" data-page-node-id="v270utk-ky"><span>📘 考研英语一</span> <span class="ex-track-count" id="unitTrackCount-kaoyan1">0</span></button>
-        <button class="chip" data-utrack="cet6" data-page-node-id="v270utk-cet6"><span>🎧 六级英语</span> <span class="ex-track-count" id="unitTrackCount-cet6">0</span></button>
-      </div>
-      <div class="row-gap" id="unitFilters" data-page-node-id="A99eFIqdNEw29M7cgK5NAq">
-        <button class="chip active" data-usec="" data-page-node-id="NGdvWUOSWgqQyIQsafiOyz">全部</button>
-      </div>
-      <div class="result" id="unitListResult" data-page-node-id="TSAd7KwI3XNTSAVHSVG8x6"></div>
-      <div id="unitList" data-page-node-id="B3sipTTPAARbr3molt66jY"></div>
-      <div id="unitPagination" class="pagination-bar" style="display:none;margin-top:14px"></div>
-    </div>
-    <div class="card" id="unitDetailCard" style="display:none" data-page-node-id="RqKPAHrBAAMgCiFdxNDnhi">
-      <div class="card-title-row" data-page-node-id="E0YjMghMVPZveigDhdZiee">
-        <div class="card-title" id="unitDetailTitle" data-page-node-id="T7IkKlQMUFaw4zZsgRRCiY">单元</div>
-        <button class="btn" id="unitBackBtn" data-page-node-id="fBQ0op0D0iaijTj2wMEseM">← 返回列表</button>
-      </div>
-      <div class="hint" id="unitDetailMeta" data-page-node-id="aDXWH0J69sVekkEVLCe9rC"></div>
-      <div id="unitDetail" data-page-node-id="4Ajvl2Pr8aADWVCMYOE4rJ"></div>
-    </div>
-  </section>
-
-  <!-- ============ 番茄钟 ============ -->
-  <section id="tab-pomo" class="tab-page" data-page-node-id="jRKInbrEe91478I6LyZvit">
-    <div class="grid-2" data-page-node-id="Yu2b4SF4sgsmT6oxWxGJLv">
-      <div class="card pomo-card" data-page-node-id="gnYAJcse0fXxRonw0IWKnD">
-        <div class="pomo-mode-pill" id="pomoMode" data-page-node-id="cYwk04wk3cRQqaAmoeIQxy">待开始 · 专注</div>
-        <div class="pomo-ring-wrap">
-          <svg class="pomo-ring-svg" viewBox="0 0 160 160">
-            <circle class="pomo-ring-bg" cx="80" cy="80" r="70" />
-            <circle class="pomo-ring-progress" id="pomoRingProgress" cx="80" cy="80" r="70" />
-          </svg>
-          <div class="pomo-time" id="pomoTime">25:00</div>
-        </div>
-        <div class="pomo-controls" data-page-node-id="TNvHhxAFRTVJvEzR2yyXWx">
-          <button class="btn primary" id="pomoStartBtn" data-page-node-id="dklvgat4BDpuMZ8rvLlIY9">▶ 开始</button>
-          <button class="btn" id="pomoSkipBtn" data-page-node-id="slOqCIGAm9XLYtxy2UjAH6">⏭ 跳过本段</button>
-          <button class="btn ghost" id="pomoResetBtn" data-page-node-id="T13JxThOcuIqVKSf401W7A">↺ 重置</button>
-        </div>
-        <div class="hint" style="text-align:center" data-page-node-id="tR5yy2HabS3ofuBKM6zbf0">计时基于本机时间戳，刷新页面、切走标签页都不丢进度；一段结束会响铃并自动进入下一段。</div>
-      </div>
-      <div class="card" data-page-node-id="ruKFJK6cpFL3B6ccfLtO49">
-        <div class="card-title" data-page-node-id="cfL2TpL21S5iFSuYlDCpEn">今日番茄</div>
-        <div class="grid-2" style="gap:10px" data-page-node-id="SjLf7b9IxaPG5Nlx01pGhk">
-          <div class="stat" data-page-node-id="MRLVBwIp0zSmMGBBzkhrfA"><div class="stat-value" id="pomoCount" data-page-node-id="X8mwfeU0eTIAhrNJjTkYYm">0</div><div class="stat-label" data-page-node-id="bLs85Vey7ewdYGOMK9465r">完成专注段</div></div>
-          <div class="stat" data-page-node-id="4IoqsF4GadtO2mNiNxaowF"><div class="stat-value" id="pomoMinutes" data-page-node-id="gDDpRHk8CQv8KZ0taFL0gs">0</div><div class="stat-label" data-page-node-id="GENK6QaBEgl8pPVN9lAzMJ">累计专注分钟</div></div>
-        </div>
-        <div class="card-title" style="margin-top:18px" data-page-node-id="m2fODyVjQhlkvIfSJROp4a">时长设置（分钟）</div>
-        <div class="grid-2" style="gap:10px" data-page-node-id="VtE7Egbsu2Ak8ZQZFprFBU">
-          <div data-page-node-id="Nls0OVkKgURmIgA2ibE5zB"><label class="field-label" data-page-node-id="Rq9RrKX4BsvicHUAOfz15m">专注</label><input type="number" id="pomoWorkMin" class="input" value="25" min="1" max="120" data-page-node-id="0MmBhjTe6bu7e6NqoT7QX8"></div>
-          <div data-page-node-id="mcw32RNgBR9g3nMi6ouHRv"><label class="field-label" data-page-node-id="C5n52A7U6FEgPoLQLIeBLr">休息</label><input type="number" id="pomoBreakMin" class="input" value="5" min="1" max="60" data-page-node-id="WBTavNcSSkQOiY7ef6cQ1Y"></div>
-        </div>
-        <details class="hint-fold" data-page-node-id="q25c5cq3ADTymjANhhjbgB"><summary data-page-node-id="L2obgybY7xLIZXYKTS4XRb">ℹ️ 说明</summary>
-        <div class="hint" data-page-node-id="r70Fgn2IVODFb2kwtIYOgG">💡 建议节奏：切到「AI 学习」页选一批顽固词 → 开一个 25 分钟专注 → 结束后点「生成助记」收尾，正好一个番茄。</div>
-        </details>
-      </div>
-    </div>
-
-    <!-- v2.1.0a：自习室白噪音并入番茄钟 -->
-    <div class="card noise-card" data-page-node-id="noiseCard">
-      <div class="card-title-row">
-        <div class="card-title">🎧 自习室白噪音 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
-        <span class="noise-current" id="noiseCurrent">已关闭</span>
-      </div>
-      <div class="hint">选择一个背景声，陪你专注/休息。切换即时生效，可随时关闭。选择会被记住。</div>
-      <div class="noise-grid" id="noiseGrid">
-        <button class="noise-opt" data-noise="off">🔇<span>关闭</span></button>
-        <button class="noise-opt" data-noise="rain">🌧<span>雨落窗台</span></button>
-        <button class="noise-opt" data-noise="cafe">☕<span>深空自习室</span></button>
-        <button class="noise-opt" data-noise="forest">🌲<span>林间清晨</span></button>
-        <button class="noise-opt" data-noise="ocean">🌊<span>海浪拍岸</span></button>
-        <button class="noise-opt" data-noise="fire">🔥<span>壁炉篝火</span></button>
-        <button class="noise-opt" data-noise="night">🦗<span>夏夜虫鸣</span></button>
-        <button class="noise-opt" data-noise="stream">💧<span>山涧溪流</span></button>
-        <button class="noise-opt" data-noise="brown">🌰<span>棕噪音</span></button>
-        <button class="noise-opt" data-noise="white">⚪<span>纯白噪音</span></button>
-      </div>
-      <div class="noise-volume-row">
-        <span class="field-label" style="margin:0">音量</span>
-        <input type="range" id="noiseVolume" class="noise-volume" min="0" max="100" value="45">
-        <span class="noise-vol-val" id="noiseVolVal">45%</span>
-      </div>
     </div>
   </section>
 
@@ -1123,19 +880,13 @@
 
           <details id="modelAssignments" class="settings-section" data-admin-only>
   <summary>功能模型分配 <span class="hint">默认继承服务商，按需覆盖</span></summary>
-  <div class="settings-section-body"><div class="model-assignment"><b>长难句反馈</b><label class="field-label">服务商<select id="cfgReviewProvider" class="input" data-page-node-id="fYTvetZ5m2T3sNPL73BgZZ"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgReviewModel" class="input" placeholder="留空 = 使用服务商默认模型" data-page-node-id="cjnGer5AtLt6FQjavkbZYh"></label></div><div class="model-assignment"><b>划词助手</b><label class="field-label">服务商<select id="cfgSelectionProvider" class="input"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgSelectionModel" class="input" placeholder="留空 = 使用服务商默认模型"></label></div><div class="model-assignment"><b>词文成章</b><label class="field-label">服务商<select id="cfgStoryProvider" class="input"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgStoryModel" class="input" placeholder="留空 = 使用服务商默认模型"></label></div><div class="model-assignment"><b>手写识图</b><label class="field-label">服务商<select id="cfgWritingOcrProvider" class="input"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgWritingOcrModel" class="input" placeholder="留空 = 使用服务商默认模型"></label></div>
-    <p class="hint">思考强度在服务商档案中统一设置；手写识图需支持图片输入的模型。</p>
+  <div class="settings-section-body"><div class="model-assignment"><b>长难句反馈</b><label class="field-label">服务商<select id="cfgReviewProvider" class="input" data-page-node-id="fYTvetZ5m2T3sNPL73BgZZ"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgReviewModel" class="input" placeholder="留空 = 使用服务商默认模型" data-page-node-id="cjnGer5AtLt6FQjavkbZYh"></label></div><div class="model-assignment"><b>划词助手</b><label class="field-label">服务商<select id="cfgSelectionProvider" class="input"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgSelectionModel" class="input" placeholder="留空 = 使用服务商默认模型"></label></div><div class="model-assignment"><b>词文成章</b><label class="field-label">服务商<select id="cfgStoryProvider" class="input"></select></label><label class="field-label">覆盖模型（可选）<input type="text" id="cfgStoryModel" class="input" placeholder="留空 = 使用服务商默认模型"></label></div>
+    <p class="hint">思考强度在服务商档案中统一设置。</p>
     <button class="btn primary" id="saveModelAssignmentsBtn">保存模型分配</button><span class="result" id="modelAssignmentsResult" role="status"></span>
   </div>
 </details>
 
-          <!-- v2.3.4：划词助手专用模型（独立于默认服务商与审核服务商） -->
 
-
-          <!-- v2.4.1：词文成章专用模型 -->
-
-
-          <!-- v2.6.2：写作手写识图专属模型 -->
 
         </div>
 
@@ -1463,10 +1214,6 @@
     <span class="bottom-tab-icon">💬</span>
     <span class="bottom-tab-label">AI学习</span>
   </button>
-  <button class="bottom-tab-item" data-tab="exam">
-    <span class="bottom-tab-icon">🗂</span>
-    <span class="bottom-tab-label">真题训练</span>
-  </button>
   <button class="bottom-tab-item" data-tab="quiz">
     <span class="bottom-tab-icon">📝</span>
     <span class="bottom-tab-label">测验</span>
@@ -1483,10 +1230,6 @@
   <div class="more-sheet-handle"></div>
   <div class="more-sheet-title">更多功能与设置</div>
   <div class="more-sheet-grid"><button class="more-sheet-item" data-tab="reports"><span class="more-item-icon">📈</span><span class="more-item-text">学习报告</span></button>
-    <button class="more-sheet-item" data-tab="pomo">
-      <span class="more-item-icon">🍅</span>
-      <span class="more-item-text">专注工具</span>
-    </button>
     <button class="more-sheet-item" data-tab="kb">
       <span class="more-item-icon">📚</span>
       <span class="more-item-text">语料库</span>

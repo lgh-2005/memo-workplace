@@ -1,5 +1,7 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
+> v4.0.0 增量：定位收缩为「英语单词学习工作台」。测试契约跟着改口径——① `exam-analysis-smoke` 由 59 项调整为 **58 项**：删除真题页/逐题解析的前端契约，改为「做题面与逐题解析挂载点已下线」「真题精读附件渲染存在」「语料库已接入真题投影」「`/api/unit/*` 与 `/api/writing/*` 必须 404」；② `frontend-refinement-smoke` 的「真题双入口」断言改为「真题已并入语料库、独立真题/番茄钟页签已下线」；③ `mobile-device-check` 页签集合同步为 8 项（dashboard/reports/study/quiz/kb/speaking/notes/settings）；④ `release-check.mjs` 由 38 项增至 **42 项**（新增：无 `/api/writing/*` 路由、无 `/api/unit/*` 路由、语料库真题投影、导航无真题/番茄钟页签）。
+
 > v3.8.2 增量：新增 `scripts/static-cache-smoke.mjs`（静态资源条件请求 + 复制入口 HTTP 降级，**30 断言**），已接入 `npm test` 与发布门禁。它锁死三个契约：
 > - **静态缓存契约（20 项）**：`Cache-Control: no-cache`（非 `no-store`）、强 `ETag`、`Last-Modified`、`Vary: Accept-Encoding`、`Content-Length` 与实体一致；`If-None-Match` 命中回 **304 且零字节**、304 仍带 `ETag`；`If-Modified-Since`（未来时间）回 304、（30 天前）回 200；**`If-None-Match` 优先于 `If-Modified-Since`**（RFC 9110 §13.1.3，过期 ETag + 未来日期必须回 200）；`HEAD` 返回 200、无实体、仍带 `Content-Length`；改文件后 `ETag` 必须变化且旧 ETag 不再命中 304；`/api/*` **保持 `no-store`**。
 > - **前端源码契约（4 项）**：`app.js` 定义 `async function copyText`；**剥离块注释后**全文件只允许 **1 处** `navigator.clipboard.writeText(`（即 `copyText` 内部）；降级用 `document.execCommand('copy')`；降级路径保存并恢复选区 `Range`。

@@ -772,6 +772,20 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '4.0.0', date: '2026-11-24', title: '定位收缩为「英语单词学习工作台」：真题并入语料库、做题面下线、删除番茄钟与写作升格',
+    items: [
+      '真题并入语料库：corpus/exams.jsonl 不做 schema 迁移；新增 GET /api/kb/exams（整卷投影成语料条目）与 GET /api/kb/exam/<id>（原文 + 板块级精读），真题在语料库列表里以「真题整卷」出现，可读原文与精读，不再提供做题',
+      '做题面整体下线：删除真题页签与单元题库页签（全真演练 / 答案对照模式、答题卡、作答进度、提交/清空、题号跳转、选项与完形下拉、防泄题逻辑），删除 /api/unit/* 三条路由；/api/exam/records 与 /api/exam/record/<id> 保留为只读阅读数据源',
+      '参考解析降级为「精读附件」：逐题解析（为什么选它 / 干扰项 / 做题启示）随做题面一起下线，只保留板块级全文译文、重点词汇、长难句、范文与采分点；解析缺失一律静默降级，不阻断读原文',
+      '删除番茄钟与白噪音：后端零牵连（数据只在浏览器 localStorage），前端移除页签、计时状态机与 Web Audio 白噪音引擎；禅模式与段落探照灯保留（本就是全局 body class，不依赖番茄钟）',
+      '删除写作升格：移除写作台、计时、拍照识别、逐句批改报告与历史习作，删除后端 /api/writing/* 五条路由与 essays 缓存层；essays.json 历史文件保留但不再有入口（不删用户数据）',
+      '导航由 10 项收敛为 8 项：今日学习 / AI 学习（词汇精练 + 词文成章）/ 测验 / 语料库（含真题）/ 听说训练 / 助记库 / 学习报告 / 设置',
+      '产品更名：标题、品牌、manifest（name/short_name/description）与 PWA 快捷方式统一为「英语单词学习工作台」',
+      '保留不动：真题迁移（/api/quiz/generate）、真实例句（kbEvidenceForWord 三源合并）、考试计划与语料范围、学习报告全部题型过滤、墨墨同步、离线 ECDICT 词典、划词助手、发音朗读',
+      '测试同步：exam-analysis-smoke / frontend-refinement-smoke 改造为「只读语料 + 精读附件」契约，新增「已删模块必须 404」「导航 8 项」断言并做反向验证',
+    ],
+  },
+  {
     version: '3.8.2', date: '2026-11-17', title: '静态资源从「零缓存」改为条件请求 + 复制按钮在 HTTP 下不再失效',
     items: [
       '静态资源改为 ETag + Last-Modified 条件请求：旧版对 public/ 下每个文件都打 Cache-Control: no-store，浏览器与中间层完全无法复用。实测首屏 index(41KB gzip)+app.js(429KB 未压缩)+style.css(192KB 未压缩)≈663KB，关掉页面再开同样再传 663KB —— 等于零缓存。现改为 no-cache + 强 ETag + Last-Modified，命中即 304 零字节；刻意不用 max-age 长缓存，因为本项目版本号靠 index.html 内联文本承载、静态文件名不带内容指纹，长缓存会让「发版后用户还看旧版」变成难排查的偶发问题',
@@ -3328,26 +3342,6 @@ function stripThinkBlocks(text) {
   out = out.replace(/(^|\n)(\s*)<think(?:ing)?\s*>[\s\S]*$/i, (m, pre) => pre);
   return out.trim();
 }
-
-/* ------------------------------------------------------------------ */
-/* v2.5.0：写作升格（Essay Elevation）                                 */
-/*   自由写作单轨（题源不碰真题库）+ Part B 图画防幻觉识图确认           */
-/*   + 逐句 L1/L2 升格对比 + 流式 SSE 批改报告 + 金句入助记库           */
-/* ------------------------------------------------------------------ */
-
-// v2.5.0：写作历史（独立文件，tmp+rename 原子写）；v3.0.0 按用户隔离缓存
-const essaysCache = new Map();   // userId -> array
-
-function loadEssays() {
-  const uid = currentCtx().userId;
-  if (essaysCache.has(uid)) return essaysCache.get(uid);
-  let arr = [];
-  try { arr = JSON.parse(fs.readFileSync(ctxFilePath('essays.json'), 'utf8')); } catch { arr = []; }
-  if (!Array.isArray(arr)) arr = [];
-  essaysCache.set(uid, arr);
-  return arr;
-}
-function saveEssays() { saveJSON(ctxFilePath('essays.json'), loadEssays().slice(0, 200)); }
 
 /* ------------------------------------------------------------------ */
 /* v3.2.0：LLM 用量统计（per-user，独立文件 llm_usage.json）             */
@@ -9353,191 +9347,6 @@ async function handleRequest(req, res) {
       /* ---------- v2.5.0：写作升格（自由写作单轨，题源不碰真题库） ---------- */
 
       // v2.6.2：手写稿拍照识别与转写（考研标准横线纸抗扰 + 防脑补精准转写）
-      if (p === '/api/writing/transcribe' && req.method === 'POST') {
-        const body = await readBody(req);
-        const image = typeof body.image === 'string' && body.image.startsWith('data:image/') ? body.image : '';
-        if (!image) return sendJSON(res, 400, { error: '请先提供手写稿照片' });
-        if (image.length > 5000000) return sendJSON(res, 400, { error: '图片过大，请压缩后再试（≤3.5MB）' });
-
-        // 服务商分派：配置专属 writingOcr > 默认服务商
-        let targetProvId = (config.writingOcr && config.writingOcr.providerId) || undefined;
-        let modelOverride = (config.writingOcr && config.writingOcr.model) ? config.writingOcr.model : undefined;
-        const activeProv = targetProvId ? (config.llm.providers || []).find(x => x.id === targetProvId) : getProvider();
-
-        if (!config.llm.mock && (!activeProv || !activeProv.vision)) {
-          return sendJSON(res, 400, { error: '所选服务商未开启「视觉能力」，请到设置页选择支持 Vision 的模型档案' });
-        }
-
-        const systemPrompt = `You are a professional, high-precision English handwriting transcriber specifically calibrated for the Chinese Graduate Entrance Exam (考研英语) standard ruled answer sheet (考研横线纸).
-
-CRITICAL TRANSCRIPTION RULES:
-1. Ignore background printed horizontal ruling lines (考研印刷横线) completely. Do NOT treat them as hyphens, underlines, or minus signs. Focus strictly on the handwritten ink.
-2. Transcribe exactly what is handwritten with 100% fidelity. DO NOT correct spelling mistakes, punctuation quirks, grammatical errors, or capitalization. If the student misspells "accompany" as "acommpany", you MUST output "acommpany".
-3. Preserve original paragraph indentations and paragraph breaks.
-4. If a word or stroke is genuinely illegible or ambiguous due to ink smear or blur, wrap it in bracket markers: [?word] or [?].
-5. Output format: Output ONLY the transcribed English plain text. Strictly NO explanations, NO greetings, NO markdown fence blocks, NO translation.`;
-
-        const msgs = [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: [
-            { type: 'text', text: 'Please transcribe this handwritten essay from the ruled answer sheet with exact fidelity:' },
-            { type: 'image_url', image_url: { url: image } }
-          ] }
-        ];
-
-        try {
-          const reply = await llmChat(msgs, {
-            providerId: targetProvId,
-            llmOverride: modelOverride ? { model: modelOverride } : undefined,
-            maxTokens: 2500,
-          });
-          const text = stripThinkBlocks(reply).trim();
-          const wordsCount = text.split(/\s+/).filter(Boolean).length;
-          const uncertainCount = (text.match(/\[\?[^\]]*\]/g) || []).length;
-          return sendJSON(res, 200, { ok: true, text, wordsCount, uncertainCount });
-        } catch (e) {
-          return sendJSON(res, 500, { error: '手写识图失败：' + (e.message || '未知错误') });
-        }
-      }
-
-      // 审题/识图（含防幻觉：AI 先自报看到什么，用户再确认/纠偏）
-      if (p === '/api/writing/inspect' && req.method === 'POST') {
-        const body = await readBody(req);
-        const promptText = String(body.prompt || '').trim().slice(0, 4000);
-        const part = body.part === 'B' ? 'B' : 'A';
-        const imageNote = String(body.imageNote || '').trim().slice(0, 800);
-        if (!promptText) return sendJSON(res, 400, { error: '请先填写题目要求（题干/Directions）' });
-        const image = typeof body.image === 'string' && body.image.startsWith('data:image/') ? body.image : '';
-        if (image && image.length > 2100000) return sendJSON(res, 400, { error: '图片过大，请压缩后再试（≤1.5MB）' });
-        const prov = getProvider();
-        if (image && !(config.llm.mock || (prov && prov.vision))) {
-          return sendJSON(res, 400, { error: '当前默认服务商未开启「视觉能力」，请到设置页编辑服务商勾选视觉能力，或直接用文字描述图画' });
-        }
-        const userText = [
-          `【作文类型】Part ${part}${part === 'B' ? ' 大作文（20 分，图画/图表类）' : ' 小作文（10 分，书信/告示类）'}`,
-          `【题目要求】\n${promptText}`,
-          image ? '【附图】见 image 图片内容块（漫画原图，请严格按防幻觉铁律描述）' : '【附图】无',
-          imageNote ? `【用户纠偏提示】${imageNote}` : '',
-        ].filter(Boolean).join('\n\n');
-        const msgs = [
-          { role: 'system', content: WRITING_INSPECT_SYSTEM },
-          { role: 'user', content: image ? [{ type: 'text', text: userText }, { type: 'image_url', image_url: { url: image } }] : userText },
-        ];
-        const reply = await llmChat(msgs, { maxTokens: 3000 });
-        return sendJSON(res, 200, { ok: true, inspection: stripThinkBlocks(reply) });
-      }
-
-      // 批改升格（SSE 流式：thinking / content / done / error 四事件）
-      if (p === '/api/writing/elevate' && req.method === 'POST') {
-        const body = await readBody(req);
-        const promptText = String(body.prompt || '').trim().slice(0, 4000);
-        const essay = String(body.essay || '').trim().slice(0, 6000);
-        const part = body.part === 'B' ? 'B' : 'A';
-        const imageHint = String(body.imageHint || '').trim().slice(0, 1200);
-        if (!promptText) { sendJSON(res, 400, { error: '题目要求不能为空' }); return; }
-        if (!essay) { sendJSON(res, 400, { error: '作文正文为空，请先写作再提交' }); return; }
-
-        // SSE 头：X-Accel-Buffering:no 防 nginx 缓冲吃掉流式；15s 心跳防空闲掐断
-        res.writeHead(200, {
-          'Content-Type': 'text/event-stream; charset=utf-8',
-          'Cache-Control': 'no-cache',
-          Connection: 'keep-alive',
-          'X-Accel-Buffering': 'no',
-        });
-        let finished = false;
-        // v2.5.0.a：sseSend 不带 finished 闸（finishUp/failUp 先置位再发事件，若 sseSend 也检查会自我拦截 done）
-        const sseSend = obj => { try { res.write('data: ' + JSON.stringify(obj) + '\n\n'); } catch { } };
-        const finishUp = (payload) => { if (!finished) { finished = true; sseSend({ type: 'done', ...payload }); try { res.end(); } catch { } } };
-        const failUp = (msg) => { if (!finished) { finished = true; sseSend({ type: 'error', error: msg }); try { res.end(); } catch { } } };
-        const hb = setInterval(() => { if (!finished) { try { res.write(': ping\n\n'); } catch { } } }, 15000);
-
-        const wordsCount = essay.split(/\s+/).filter(Boolean).length;
-        const msgs = [
-          { role: 'system', content: WRITING_ELEVATE_SYSTEM },
-          { role: 'user', content: [
-            `【作文类型】Part ${part}${part === 'B' ? ' 大作文（满分 20 分，建议 160~200 词）' : ' 小作文（满分 10 分，建议 100~120 词）'}`,
-            `【题目要求】\n${promptText}`,
-            part === 'B' && imageHint ? `【图画理解（用户确认信息，以此为准）】${imageHint}` : '',
-            `【考生字数】约 ${wordsCount} 词（与建议档差距明显时须在点评中提示）`,
-            `【考生作文】\n${essay}`,
-          ].filter(Boolean).join('\n\n') },
-        ];
-
-        try {
-          const r = await llmChatSSE(msgs, {
-            onThinking: t => sseSend({ type: 'thinking', delta: t }),
-            onContent: t => sseSend({ type: 'content', delta: t }),
-          });
-          const report = stripThinkBlocks(r.content);
-          if (!report.trim()) {
-            failUp(`AI 未输出批改正文（finish_reason=${r.finishReason || 'unknown'}），请调整 Max Tokens/思考强度后重试`);
-          } else {
-            const rec = {
-              id: crypto.randomUUID(),
-              createdAt: new Date().toISOString(),
-              part, prompt: promptText, imageHint,
-              essay, words: wordsCount,
-              report,
-              score: parseWritingScore(report),
-            };
-            const list = loadEssays();
-            list.unshift(rec);
-            essaysCache.set(currentCtx().userId, list);
-            saveEssays();
-            finishUp({ id: rec.id, score: rec.score, words: rec.words, createdAt: rec.createdAt });
-          }
-        } catch (e) {
-          failUp(`AI 批改失败：${e.message}`);
-        } finally {
-          clearInterval(hb);
-          if (!finished) { finished = true; try { res.end(); } catch { } }
-        }
-        return;
-      }
-
-      // 历史（列表最多 50 条元数据 / 详情 / 删除）
-      if (p === '/api/writing/history' && req.method === 'GET') {
-        const list = loadEssays().slice(0, 50).map(e => ({ id: e.id, createdAt: e.createdAt, part: e.part, words: e.words, score: e.score, prompt: String(e.prompt || '').slice(0, 120) }));
-        return sendJSON(res, 200, { ok: true, list });
-      }
-      {
-        const wm = p.match(/^\/api\/writing\/([a-f0-9-]+)$/);
-        if (wm && req.method === 'GET') {
-          const e = loadEssays().find(x => x.id === wm[1]);
-          if (!e) return sendJSON(res, 404, { error: '习作不存在' });
-          return sendJSON(res, 200, { ok: true, essay: e });
-        }
-        if (wm && req.method === 'DELETE') {
-          const before = loadEssays().length;
-          const next = loadEssays().filter(x => x.id !== wm[1]);
-          if (next.length === before) return sendJSON(res, 404, { error: '习作不存在' });
-          essaysCache.set(currentCtx().userId, next);
-          saveEssays();
-          return sendJSON(res, 200, { ok: true });
-        }
-      }
-
-      // 金句入库（复用助记库存储，noteType=写作金句，不自动推送墨墨）
-      if (p === '/api/writing/note' && req.method === 'POST') {
-        const body = await readBody(req);
-        const content = String(body.content || '').trim().slice(0, 500);
-        if (!content) return sendJSON(res, 400, { error: '金句内容为空' });
-        const spelling = (String(body.spelling || '').trim() || '写作金句').slice(0, 80);
-        const note = {
-          id: crypto.randomUUID(),
-          spelling,
-          noteType: '写作金句',
-          content,
-          createdAt: new Date().toISOString(),
-          source: '写作升格',
-          synced: false,
-        };
-        db.notes.unshift(note);
-        persistDB();
-        return sendJSON(res, 201, { ok: true, note });
-      }
-
-      // 记录删除（解析原件仍保留在 archive/，可重导恢复；删除写日志）
       if (p === '/api/kb/record/delete' && req.method === 'POST') {
         if (!requireAdmin(res, ctxStore, '删除共享语料')) return;
         const body = await readBody(req);
@@ -9554,329 +9363,6 @@ CRITICAL TRANSCRIPTION RULES:
       // v2.6.2：废弃移除高幻觉率的 AI 审读与单条复核相关接口
       if ((p === '/api/kb/review' || p === '/api/kb/review/apply' || p === '/api/kb/review/item') && req.method === 'POST') {
         return sendJSON(res, 410, { error: 'AI 审读功能已在 v2.6.2 中废弃移除' });
-      }
-
-      /* ---------------- v1.1.5：单元题库 API ---------------- */
-
-      // 单元列表（整卷切片自动派生：导入成功即出现，无需手动推送；v2.7.0 支持 track 过滤）
-      if (p === '/api/unit/records' && req.method === 'GET') {
-        const trackFilter = u.searchParams.get('track');
-        const answers = loadAnswers();
-        const all = buildUnits();
-        const tracks = {};
-        for (const k of Object.keys(EXAM_TRACKS)) tracks[k] = 0;
-        for (const x of all) tracks[x.track || DEFAULT_EXAM_TRACK]++;
-        const units = all
-          .filter(x => !trackFilter || (x.track || DEFAULT_EXAM_TRACK) === normalizeTrack(trackFilter))
-          .map(u => ({ ...u, hasAnswer: !!(answers[u.unitId] && Object.keys(answers[u.unitId]).length) }));
-        return sendJSON(res, 200, {
-          ok: true, units, file: examsFile(),
-          track: trackFilter ? normalizeTrack(trackFilter) : null,
-          tracks, trackMeta: EXAM_TRACKS,
-        });
-      }
-
-      // 单元详情：items 切片 + 标准答案状态（只下发有无，不下发答案值）
-      {
-        const m = p.match(/^\/api\/unit\/detail\/([0-9a-f]{12}~[A-Za-z0-9_]+~[A-Za-z0-9]+)$/);
-        if (m && req.method === 'GET') {
-          const ui = unitItems(m[1]);
-          if (!ui) return sendJSON(res, 404, { error: '单元不存在：' + m[1] });
-          const std = loadAnswers()[m[1]] || {};
-          return sendJSON(res, 200, {
-            ok: true,
-            unit: ui.unit,
-            items: ui.items,
-            answerState: { has: Object.keys(std).length > 0, keys: Object.keys(std) },
-          });
-        }
-      }
-
-      // 保存标准答案（人工录入权威答案；LLM 不得生成）
-      if (p === '/api/unit/answers/save' && req.method === 'POST') {
-        if (!requireAdmin(res, ctxStore, '保存单元标准答案')) return;
-        const body = await readBody(req);
-        const unitId = String(body.unitId || '');
-        if (!findUnit(unitId)) return sendJSON(res, 404, { error: '单元不存在：' + unitId });
-        const ans = body.answers && typeof body.answers === 'object' ? body.answers : {};
-        const keys = Object.keys(ans);
-        if (keys.length > 60) return sendJSON(res, 400, { error: '答案条目过多', code: 'KB_IMPORT' });
-        const clean = {};
-        for (const k of keys) {
-          const v = String(ans[k] || '').trim().toUpperCase();
-          // v2.1.4：Part B 选项池可达 A–H（2023），统一放行单字母
-          if (/^[A-Z]$/.test(v)) clean[String(k).slice(0, 10)] = v;
-        }
-        const all = loadAnswers();
-        all[unitId] = clean;
-        saveAnswers(all);
-        kbLog({ time: new Date().toISOString().slice(0, 19), file: '(answers)', status: 'saved', store: 'exam', records: Object.keys(clean).length, reason: unitId.slice(0, 40) });
-        return sendJSON(res, 200, { ok: true, saved: Object.keys(clean).length });
-      }
-
-      // 提交作答 -> 服务端判分（v1.1.5 客观题对标准答案；v2.2.2 升级为客观题、翻译和写作完整流水与错因后补）
-      if (p === '/api/unit/answers/submit' && req.method === 'POST') {
-        const body = await readBody(req);
-        const unitId = String(body.unitId || '').trim();
-        const ui = unitItems(unitId);
-        if (!ui) return sendJSON(res, 404, { error: '单元不存在：' + unitId });
-
-        // 仅补充错因模式：reasonOnly: true
-        if (body.reasonOnly) {
-          const attemptId = String(body.attemptId || '').trim();
-          const batchId = String(body.batchId || '').trim();
-          const errorReason = String(body.errorReason || '').trim();
-          if (!attemptId) return sendJSON(res, 400, { error: '缺少 attemptId' });
-          if (!batchId) return sendJSON(res, 400, { error: '缺少 batchId（错因只能修改同一批次作答）' });
-          if (!VALID_ATTEMPT_ERROR_REASONS.has(errorReason)) {
-            return sendJSON(res, 400, { error: `无效的 errorReason: ${errorReason}` });
-          }
-
-          const store = loadLearningStore();
-          const target = (store.attempts || []).find(a => a.id === attemptId);
-          if (!target) return sendJSON(res, 404, { error: '作答流水不存在: ' + attemptId });
-          if (target.unitId !== unitId) {
-            return sendJSON(res, 400, { error: '作答记录不属于当前单元' });
-          }
-          if (target.kind !== 'unit_objective') {
-            return sendJSON(res, 400, { error: '仅客观题作答记录允许补充错因' });
-          }
-          if (target.result !== 'incorrect') {
-            return sendJSON(res, 400, { error: '仅错误作答允许补充错因' });
-          }
-          if (!target.meta || target.meta.batchId !== batchId) {
-            return sendJSON(res, 400, { error: '该作答不属于当前批次，拒绝修改' });
-          }
-
-          target.errorReason = errorReason;
-          saveLearningStore(store);
-          return sendJSON(res, 200, { ok: true, attemptId, errorReason, batchId });
-        }
-
-        const unitSection = ui.unit.section || 'misc';
-        const isObjective = unitSection !== 'translation' && unitSection !== 'writing';
-        const batchId = String(body.batchId || '').trim();
-        if (!batchId) return sendJSON(res, 400, { error: '缺少 batchId（用于关联本次提交的作答与错因）' });
-
-        const qs = ui.items.filter(it => it.type === 'question' && it.number != null);
-        const std = loadAnswers()[unitId] || {};
-        const given = body.answers && typeof body.answers === 'object' ? body.answers : {};
-        const confObj = body.confidence && typeof body.confidence === 'object' ? body.confidence : {};
-        const subjective = body.subjective && typeof body.subjective === 'object' ? body.subjective : {};
-        const translations = subjective.translations && typeof subjective.translations === 'object'
-          ? subjective.translations
-          : {};
-        const essayText = typeof subjective.essay === 'string' ? subjective.essay.trim() : '';
-
-        // v2.2.8：按 unit.section 严格分支，拒绝不属于当前 section 的字段
-        const hasGiven = Object.keys(given).length > 0;
-        const hasTrans = Object.keys(translations).length > 0;
-        const hasEssay = essayText.length > 0;
-        if (unitSection === 'translation') {
-          if (hasGiven) return sendJSON(res, 400, { error: '当前为翻译单元，不接受客观题作答 answers' });
-          if (hasEssay) return sendJSON(res, 400, { error: '当前为翻译单元，不接受写作 essay' });
-        } else if (unitSection === 'writing') {
-          if (hasGiven) return sendJSON(res, 400, { error: '当前为写作单元，不接受客观题作答 answers' });
-          if (hasTrans) return sendJSON(res, 400, { error: '当前为写作单元，不接受翻译 translations' });
-        } else {
-          if (hasTrans) return sendJSON(res, 400, { error: '当前为客观题单元，不接受翻译 translations' });
-          if (hasEssay) return sendJSON(res, 400, { error: '当前为客观题单元，不接受写作 essay' });
-        }
-
-        // v2.2.8：严格校验客观题答案（单个 A–Z）与题号归属，非法直接 400
-        const unitNumbers = new Set(qs.map(it => String(it.number)));
-        for (const numStr of Object.keys(given)) {
-          const raw = String(given[numStr] || '').trim().toUpperCase();
-          if (!raw) continue;
-          if (!/^[A-Z]$/.test(raw)) {
-            return sendJSON(res, 400, { error: `第 ${numStr} 题答案非法（需为单个 A–Z）` });
-          }
-          if (!unitNumbers.has(String(numStr))) {
-            return sendJSON(res, 400, { error: `第 ${numStr} 题不属于当前单元` });
-          }
-        }
-        for (const numStr of Object.keys(confObj)) {
-          const c = String(confObj[numStr] || '').trim();
-          if (c && !VALID_ATTEMPT_CONFIDENCES.has(c)) {
-            return sendJSON(res, 400, { error: `第 ${numStr} 题信心非法（仅 sure/unsure/guess）` });
-          }
-        }
-
-        // 耗时与起止时间（v2.2.8：整单元会话耗时存 meta.sessionDurationMs，durationMs 不再伪装单题耗时）
-        const now = new Date();
-        const submittedAt = now.toISOString();
-        let startedAt = null;
-        let unitDurationMs = null;
-        if (body.startedAt) {
-          const st = new Date(body.startedAt);
-          if (!isNaN(st.getTime())) {
-            startedAt = st.toISOString();
-            unitDurationMs = Math.max(0, Math.min(14400000, now.getTime() - st.getTime()));
-          }
-        }
-
-        const attemptsToSave = [];
-        const results = [];
-
-        // 1. 客观题处理
-        for (const it of qs) {
-          const rawPicked = String(given[String(it.number)] || '').trim().toUpperCase();
-          const picked = /^[A-Z]$/.test(rawPicked) ? rawPicked : null;
-          const correct = std[String(it.number)] || null;
-          const isJudged = picked && correct;
-          const ok = isJudged ? picked === correct : null;
-
-          let conf = confObj[String(it.number)] ? String(confObj[String(it.number)]).trim() : 'unsure';
-          if (!VALID_ATTEMPT_CONFIDENCES.has(conf)) conf = 'unsure';
-
-          const attemptId = `att_uo_${Date.now()}_${it.number}_${Math.random().toString(36).slice(2, 6)}`;
-          results.push({
-            number: it.number,
-            picked,
-            correct,
-            ok,
-            attemptId,
-            batchId,
-          });
-
-          // 只有用户作答了才落盘流水
-          if (picked) {
-            attemptsToSave.push({
-              id: attemptId,
-              kind: 'unit_objective',
-              source: 'exam',
-              itemId: `${unitId}:${it.number}`,
-              unitId,
-              examId: ui.unit.examId || null,
-              year: ui.unit.year || null,
-              section: ui.unit.section || 'reading',
-              prompt: it.text ? String(it.text).slice(0, 4000) : `第 ${it.number} 题`,
-              expected: correct ? String(correct) : null,
-              answer: picked,
-              result: ok === true ? 'correct' : ok === false ? 'incorrect' : 'unjudged',
-              confidence: conf,
-              errorReason: null,
-              startedAt,
-              submittedAt,
-              durationMs: null,
-              meta: {
-                unitTitle: ui.unit.title,
-                number: it.number,
-                batchId,
-                sessionDurationMs: unitDurationMs,
-              },
-            });
-          }
-        }
-
-        // 2. 主观题处理：翻译
-        let subjectiveCount = 0;
-        if (unitSection === 'translation' && hasTrans) {
-          for (const [numStr, tText] of Object.entries(translations)) {
-            const rawText = String(tText || '').trim();
-            if (!rawText) continue;
-            if (rawText.length > 2000) {
-              return sendJSON(res, 400, { error: `第 ${numStr} 题翻译译文超过 2000 字符限制` });
-            }
-            subjectiveCount++;
-            const qMatch = qs.find(q => String(q.number) === String(numStr));
-            attemptsToSave.push({
-              kind: 'translation',
-              source: 'exam',
-              itemId: `${unitId}:${numStr}`,
-              unitId,
-              examId: ui.unit.examId || null,
-              year: ui.unit.year || null,
-              section: 'translation',
-              prompt: qMatch?.text ? String(qMatch.text).slice(0, 4000) : `第 ${numStr} 题划线句`,
-              expected: null,
-              answer: rawText,
-              result: 'unjudged',
-              confidence: 'unsure',
-              startedAt,
-              submittedAt,
-              durationMs: null,
-              meta: {
-                unitTitle: ui.unit.title,
-                number: Number(numStr) || null,
-                wordCount: rawText.length,
-                batchId,
-                sessionDurationMs: unitDurationMs,
-              },
-            });
-          }
-        }
-
-        // 3. 主观题处理：写作
-        if (unitSection === 'writing' && hasEssay) {
-          if (essayText.length > 4000) {
-            return sendJSON(res, 400, { error: '作文草稿超过 4000 字符限制' });
-          }
-          subjectiveCount++;
-          const wItem = ui.items.find(it => it.type === 'writing') || {};
-          const partStr = wItem.part || (ui.unit.title.includes('Part B') ? 'B' : 'A');
-          attemptsToSave.push({
-            kind: 'writing',
-            source: 'exam',
-            itemId: `${unitId}:writing:${partStr}`,
-            unitId,
-            examId: ui.unit.examId || null,
-            year: ui.unit.year || null,
-            section: 'writing',
-            prompt: wItem.text ? String(wItem.text).slice(0, 4000) : ui.unit.title,
-            expected: null,
-            answer: essayText,
-            result: 'unjudged',
-            confidence: 'unsure',
-            startedAt,
-            submittedAt,
-            durationMs: null,
-            meta: {
-              unitTitle: ui.unit.title,
-              part: partStr,
-              score: wItem.score || null,
-              wordCount: essayText.split(/\s+/).filter(Boolean).length,
-              batchId,
-              sessionDurationMs: unitDurationMs,
-            },
-          });
-        }
-
-        // 4. 落盘学习流水
-        let attemptsSaved = 0;
-        if (attemptsToSave.length > 0) {
-          attemptsSaved = appendLearningAttempts(attemptsToSave);
-        }
-
-        // 5. 双写旧 unitLog（仅计算客观题，主观题不干扰正确率）
-        const judged = results.filter(r => r.ok !== null);
-        const correctN = judged.filter(r => r.ok).length;
-        db.unitLog.push({
-          ts: submittedAt.slice(0, 19),
-          unitId,
-          title: ui.unit.title,
-          total: qs.length,
-          judged: judged.length,
-          correct: correctN,
-          subjective: subjectiveCount,
-        });
-        if (db.unitLog.length > 500) db.unitLog = db.unitLog.slice(-500);
-        persistDB();
-
-        return sendJSON(res, 200, {
-          ok: true,
-          title: ui.unit.title,
-          unitSection,
-          batchId,
-          results,
-          judged: judged.length,
-          total: qs.length,
-          correct: correctN,
-          subjective: subjectiveCount,
-          hasStd: Object.keys(std).length > 0,
-          attemptsSaved,
-          sessionDurationMs: unitDurationMs,
-        });
       }
 
       // v1.1.1：语料导入（文件 base64 数组 + 可选粘贴直录）
@@ -9973,6 +9459,66 @@ CRITICAL TRANSCRIPTION RULES:
               items: u.searchParams.get('raw') === '1' ? (r.items || []) : kbOrderedItems(r),
               sections: examSummary(r).sections,
               // v3.8.0：带上解析覆盖信息，前端据此决定是否显示「参考解析」入口
+              analysis: examAnalysisCoverage(r.id),
+            },
+          });
+        }
+      }
+
+      /* ---------- v4.0.0：真题并入语料库（只读阅读面，不再提供做题） ----------
+       * 数据仍在 corpus/exams.jsonl（不迁移 schema）；这里只把整卷记录投影成
+       * 「语料库条目」形状，让语料库列表/详情可以直接读原文 + 精读解析。 */
+
+      if (p === '/api/kb/exams' && req.method === 'GET') {
+        const records = loadExams().map(r => {
+          const s = examSummary(r);
+          return {
+            id: s.id,
+            title: s.title,
+            rtype: 'qa_set',
+            rtypeLabel: '真题整卷',
+            meta: { year: s.year, questions: s.questions },
+            source: {
+              category: '真题',
+              file: (s.source && s.source.file) || '',
+              parser: (s.source && s.source.parser) || '',
+              imported_at: (s.source && s.source.imported_at) || '',
+              managed: 'exam',
+            },
+            preview: s.preview,
+            track: s.track,
+            trackLabel: s.trackLabel,
+            sections: s.sections,
+          };
+        });
+        return sendJSON(res, 200, { ok: true, count: records.length, records });
+      }
+
+      {
+        const m = p.match(/^\/api\/kb\/exam\/([A-Za-z0-9_-]+)$/);
+        if (m && req.method === 'GET') {
+          const r = loadExams().find(x => x.id === m[1]);
+          if (!r) return sendJSON(res, 404, { error: '真题不存在' });
+          const track = trackOf(r);
+          return sendJSON(res, 200, {
+            ok: true,
+            record: {
+              id: r.id,
+              title: r.title || '(无标题)',
+              rtype: 'qa_set',
+              rtypeLabel: '真题整卷',
+              meta: { ...(r.meta || {}), track },
+              source: {
+                category: '真题',
+                file: (r.source && r.source.file) || '',
+                parser: (r.source && r.source.parser) || '',
+                imported_at: (r.source && r.source.imported_at) || '',
+                managed: 'exam',
+              },
+              track,
+              trackLabel: examTrackMeta(track).label,
+              items: kbOrderedItems(r),
+              sections: examSummary(r).sections,
               analysis: examAnalysisCoverage(r.id),
             },
           });
