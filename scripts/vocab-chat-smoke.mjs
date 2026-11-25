@@ -254,17 +254,53 @@ if (!pw || !pw.chromium) {
     await delay(1500);
     await page.click('.tab[data-tab="study"]');
     await delay(2000);
+    // v4.2.0：词表收成右下角悬浮球，先展开浮层才能点到词条
+    await page.click('#wordFab');
+    await delay(300);
 
-    // B1：单击词条 → 上游 messages 不得重复用户消息
     let n0 = llm.hits.length;
     await page.click('.word-item[data-sp="abandon"]');
+    await page.fill('#wordSearch', 'resilient');
+    await page.getByRole('checkbox', { name: '勾选 resilient' }).check();
+    await page.fill('#wordSearch', 'innovation');
+    await page.getByRole('checkbox', { name: '勾选 innovation' }).check();
+    T('悬浮词表跨搜索保留勾选，点词不发送提问', (await page.locator('#coachSelected').innerText()).includes('3') && !llm.hits.slice(n0).some(h => h.kind === 'chat'));
+    await page.click('#coachScreenBtn');
+    const detail = page.locator('#coachDetail');
+    const rate = async label => {
+      await detail.getByRole('button', { name: '揭晓释义' }).click();
+      await detail.getByRole('button', { name: label, exact: true }).click();
+    };
+    T('初筛先回想并隐藏释义', await detail.locator('.coach-recall').innerText() === 'abandon' && await detail.locator('.coach-sentence').count() === 0);
+    await rate('熟知');
+    await rate('模糊');
+    await rate('不会');
+    const plans = [];
+    await page.route('**/api/tutor/map', async route => {
+      const body = route.request().postDataJSON();
+      if (body.action !== 'plan') return route.fallback();
+      plans.push(body.words);
+      await route.fulfill({ json: { ok: true, groups: body.words.map(word => ({ title: word, words: [word] })) } });
+    });
+    await detail.getByRole('button', { name: '分析并分组' }).click();
+    await page.locator('[data-coach-node="g1"]').waitFor();
+    T('已确认熟知的词不送给分组模型', JSON.stringify(plans[0]) === JSON.stringify(['resilient', 'innovation']));
+    await page.locator('[data-coach-node="g1"]').click();
+    await page.locator('[data-coach-view="outline"]').click();
+    T('切换到大纲后保留当前组', await page.locator('#coachTree').getAttribute('data-view') === 'outline' && await detail.locator('h3').innerText() === 'innovation');
+    await page.locator('#coachTree [data-coach-node="skipped"]').click();
+    await detail.getByRole('button', { name: '拉回本轮' }).click();
+    await detail.getByRole('button', { name: '分析并分组' }).click();
+    await page.locator('[data-coach-node="g2"]').waitFor();
+    T('略过的熟词可以拉回参与分组', plans[1].includes('abandon') && plans[1].length === 3);
+    await page.click('#coachChat > summary');
+    await page.fill('#chatInput', '请介绍一下这个词');
+    await page.press('#chatInput', 'Enter');
     await delay(2500);
     const firstChat = llm.hits.slice(n0).filter(h => h.kind === 'chat').at(-1);
-    T('单击词条：上游消息不含重复用户消息',
-      Boolean(firstChat) && firstChat.users.length === 1 && firstChat.roles.join(',') === 'system,user',
-      firstChat ? `roles=[${firstChat.roles.join(',')}] users=${firstChat.users.length}` : '未捕获');
+    T('首次提问：上游消息不含重复用户消息', firstChat?.users.length === 1 && firstChat.roles.join(',') === 'system,user');
 
-    // B2：手输一句 → user 消息个数 = 真实提问数（2 条不同内容）
+    // B2：上游 user 消息个数 = 真实提问数（2 条不同内容）
     n0 = llm.hits.length;
     await page.fill('#chatInput', '它和 give up 有什么区别？');
     await page.press('#chatInput', 'Enter');
@@ -274,13 +310,14 @@ if (!pw || !pw.chromium) {
     T('手输提问：上游 user 消息无重复', dupOk && secondChat.users.length === 2,
       secondChat ? `users=${JSON.stringify(secondChat.users.map(u => u.slice(0, 12)))}` : '未捕获');
 
-    // C：在途锁——上游慢时点 chip 叠加
+    // C：在途锁——上游慢时再按回车
     process.env.SMOKE_LLM_DELAY_MS = '2500';
     n0 = chatPosts.length;
     await page.fill('#chatInput', '第一个问题');
     await page.press('#chatInput', 'Enter');
     await delay(300);
-    await page.click('#quickRow .chip.q');
+    await page.fill('#chatInput', '在途时的第二个问题');
+    await page.press('#chatInput', 'Enter');
     await delay(5000);
     T('在途锁：上游慢时叠加操作只产生 1 次 /api/chat', chatPosts.length - n0 === 1, `chat=${chatPosts.length - n0}`);
     process.env.SMOKE_LLM_DELAY_MS = '0';

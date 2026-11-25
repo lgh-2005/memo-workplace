@@ -1,5 +1,11 @@
 # 部署到阿里云 ECS（保持可更新）
 
+> v4.1.0（2026-11-25）包含悬浮词表、熟悉度初筛和分组导图。`POST /api/tutor/map` 负责分组、出题、判分和复测。采用现有服务商配置，回合保存在内存。产品文件可按标准流程发布和回滚，无数据迁移。
+
+> 本地预览「v4.2.0」（2026-11-24）：发布内容**纯前端 + 纯代码，不新增数据文件、不改 `data/` 布局、不需要迁移**。① 词表从常驻侧栏改为「右下角悬浮球 + 浮层」，**只是 `index.html` / `app.js` / `style.css` 的布局与交互调整**，词表接口与筛选参数一个没动；② `POST /api/tutor/drill` 的入参**向后兼容**——老的 `{word, stage}` 照旧工作，新前端改传 `{words:[...], stage}`（服务端去重并限长 5 个），回包多了 `words` / `group` / `focus` 三个字段，老前端忽略即可；③ 提示词 `tutor_drill` 的默认模板加了「联动模式」段与 `focus` 契约，**用户已自定义过的提示词不会被覆盖**（`config.diyPrompts` 优先级更高）。回滚只需回退这三个前端文件与 `server.js`，无数据影响。发布后可用 `curl -s -X POST http://127.0.0.1:5178/api/tutor/drill -H 'Content-Type: application/json' -d '{"words":["abandon","give up","quit"],"stage":0}'` 验证（未登录 401 属正常，登录后应返回 `ok:true` 且 `words` 长度为 3）。
+
+> 本地带练预览（2026-11-24）：发布内容**纯代码，不新增数据文件、不改 `data/` 布局、不需要迁移**。新增一条 `POST /api/tutor/drill`（AI 带练的出题/判分回合）与提示词 `tutor_drill`（进 `DEFAULT_PROMPTS`，因此会自动出现在设置页可改），前端只加答题卡与一条控制条。`tutor_drill` 的默认模板随代码走，**用户若已自定义过提示词不会被覆盖**（`config.diyPrompts` 优先级高于默认模板）。带练不落 `learning_attempts` / `quiz_srs`，因此发布前后数据无差异；回滚只需回退产品文件。发布后可用 `curl -s -X POST http://127.0.0.1:5178/api/tutor/drill -H 'Content-Type: application/json' -d '{"word":"abandon","stage":0}'` 验证（未登录时返回 401 属正常，登录后再测应返回 `ok:true` 或 `ok:false` 加 `reason`）。
+
 > v4.0.0（2026-11-24）：发布内容**不新增数据文件、不改 `data/` 布局**。真题仍在 `corpus/exams.jsonl`（schema 未变），参考解析仍在 `corpus/exam_analysis/`（文件未删，只是前端只渲染板块级字段）。本次删除 `/api/writing/*` 与 `/api/unit/*` 两组路由，但**不删除任何用户数据文件**（`essays.json` 保留、仅无入口）。发布后可用 `curl -s http://127.0.0.1:5178/api/kb/exams` 验证真题投影接口（应返回 `count:104`）。
 
 零依赖 Node 应用，部署很简单。核心原则：**代码走 git，数据留在服务器 `data/` 目录**（已被 .gitignore 排除，更新代码不会动数据）。

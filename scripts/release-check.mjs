@@ -14,7 +14,7 @@ const appSrc = await readFile(join(root, 'public', 'app.js'), 'utf8');
 const indexHtml = await readFile(join(root, 'public', 'index.html'), 'utf8');
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.0.0'],
+  ['package version', packageJson.version === '4.1.0'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
@@ -55,6 +55,9 @@ const required = [
   ['exam analysis audit', exists(join(root, 'scripts', 'exam-analysis-audit.mjs'))],
   ['exam analysis corpus shipped', exists(join(root, 'corpus', 'exam_analysis'))],
   ['vocab chat smoke', exists(join(root, 'scripts', 'vocab-chat-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('vocab-chat-smoke.mjs')],
+  // v4.1.0：词汇精练「AI 带练」——出题 / 判分 / 关卡推进 / 降级；
+  // v4.2.0 扩到 34 项断言，补「词表悬浮球」与「词群联动（多词上下文 / focus 归属）」契约
+  ['tutor drill smoke', exists(join(root, 'scripts', 'tutor-drill-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('tutor-drill-smoke.mjs')],
   ['static cache smoke', exists(join(root, 'scripts', 'static-cache-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('static-cache-smoke.mjs')],
   ['static cache contract in server', (await readFile(join(root, 'server.js'), 'utf8')).includes('function serveStaticFile') && (await readFile(join(root, 'server.js'), 'utf8')).includes("'Cache-Control': 'no-cache'")],
 ];

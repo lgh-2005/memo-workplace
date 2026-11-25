@@ -27,7 +27,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.0.0</span></div>
+  <div class="mobile-brand">🐳 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.1.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -39,7 +39,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语单词学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.0.0</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语单词学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.1.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -110,7 +110,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v4.0.0</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v4.1.0</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -336,7 +336,7 @@
       <div class="study-subnav">
         <button class="study-sub-item active" data-sub="vocab" type="button">🔤 词汇精练</button>
         <button class="study-sub-item" data-sub="story" type="button" id="storySubBtn">📖 词文成章</button>
-        <span class="study-sub-tip" id="studySubTip">词表精读 + AI 教练 + 助记生成，让单词过手入脑</span>
+        <span class="study-sub-tip" id="studySubTip">从语境作答开始，按需要展开辨析</span>
       </div>
     </div>
     <div id="storyPane" style="display:none">
@@ -452,10 +452,11 @@
       </div>
     </div>
     <div class="study-layout" id="vocabPane" data-page-node-id="jtPHsbe6nPhZY4HTSyRZuY">
-      <aside class="word-panel card card-collapsible" data-page-node-id="XLvWS2U7KuUAVrvzsrro3S">
-        <div class="card-title-row" style="margin-bottom:0">
-          <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD" style="margin-bottom:0">词表</div>
-          <button class="card-collapse-toggle" type="button" data-collapse-target="#wordPanelCollapseBody" title="折叠/展开">收起 ▴</button>
+      <!-- 词表浮层不占用学习工作区。 -->
+      <aside class="word-panel card" id="wordPanel" inert aria-hidden="true" aria-label="词表" data-page-node-id="XLvWS2U7KuUAVrvzsrro3S">
+        <div class="card-title-row word-panel-head" style="margin-bottom:0">
+          <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD" style="margin-bottom:0">📚 词表 <span class="word-panel-count" id="wordPanelCount"></span></div>
+          <button class="btn small ghost word-panel-close" id="wordPanelClose" type="button" title="收起词表">✕</button>
         </div>
         <div class="card-collapse-body" id="wordPanelCollapseBody">
           <div class="filter-row" id="wordFilters" data-page-node-id="6hQfUGFSzT2MfS2nEn5FtZ" style="margin-top:8px">
@@ -472,16 +473,50 @@
             <button class="chip" data-filter="all" data-page-node-id="tLBVUk9KLaqic2S4C2llO6">全部</button>
           </div>
           <input type="text" id="wordSearch" class="input" placeholder="搜索单词或释义…" data-page-node-id="5RYsbeiVWXkq1iv7rmk1cR">
+          <div class="coach-pick-bar">
+            <span id="coachSelected" role="status">已勾选 0 词</span>
+            <button class="btn small ghost" id="coachClearBtn" type="button" disabled>清空</button>
+            <button class="btn small primary" id="coachScreenBtn" type="button" disabled>开始初筛</button>
+          </div>
           <div class="word-list" id="wordList" data-page-node-id="2QnUWaT7eTETCU8maBdUaS"><div class="empty" data-page-node-id="EBQRB4Prl6VdTzqzj5dRCB">请先在仪表盘同步数据</div></div>
           <div class="session-info" id="sessionInfo" data-page-node-id="PDBFhDxdSklvmO8ThaW0E0">本次会话已学 0 词</div>
           <button class="btn primary full" id="finishBtn" disabled data-page-node-id="Y083OTYkOKbbs4WhjjYymX">结束学习</button>
         </div>
       </aside>
 
+      <!-- 悬浮词表入口 -->
+      <button class="word-fab" id="wordFab" type="button" aria-label="打开词表" aria-expanded="false" title="打开词表">
+        <span class="word-fab-icon">📚</span>
+        <span class="word-fab-count" id="wordFabCount">0</span>
+      </button>
+
+      <section class="coach-map" id="coachMap" aria-labelledby="coachMapTitle">
+        <header class="coach-header">
+          <h2 id="coachMapTitle">学习导图</h2>
+          <span class="coach-status" id="coachStatus" role="status"></span>
+          <div class="coach-views" id="coachViews" role="group" aria-label="学习路径视图" hidden>
+            <button class="btn small ghost" type="button" data-coach-view="map" aria-pressed="false">导图</button>
+            <button class="btn small ghost" type="button" data-coach-view="outline" aria-pressed="false">大纲</button>
+          </div>
+        </header>
+        <div class="coach-workspace" id="coachWorkspace" hidden>
+          <nav id="coachTree" class="coach-tree" aria-label="本轮学习路径"></nav>
+          <section id="coachDetail" class="coach-detail" aria-label="当前学习节点"></section>
+        </div>
+        <div class="coach-empty" id="coachEmpty">
+          <p>尚未选词</p>
+          <button class="btn primary" type="button" data-coach-action="pick">打开词表</button>
+          <button class="btn ghost" type="button" data-coach-action="sample">试做例题</button>
+        </div>
+      </section>
+
+      <details class="coach-chat" id="coachChat">
+        <summary>自由提问</summary>
       <div class="chat-panel card" data-page-node-id="mhDINlh1yKn0Koq9HpFOSx">
         <div class="chat-header-row" data-page-node-id="hP1h0G4ZZcTjfTGKzVYfec">
-          <div class="chat-header" data-page-node-id="t9ofVLCv1wjBgdg7WdFJAW"><span id="chatHeader" data-page-node-id="5tNtI60HD2bCHu6cbVsRyD">选择左侧一个单词开始，或直接提问</span></div>
+          <div class="chat-header" data-page-node-id="t9ofVLCv1wjBgdg7WdFJAW"><span id="chatHeader" data-page-node-id="5tNtI60HD2bCHu6cbVsRyD">自由提问</span></div>
           <div style="display:flex;gap:6px;align-items:center">
+
             <button class="btn small" id="chatHistoryBtn" title="聊天历史">📜 历史</button>
             <button class="btn small speak-btn" id="speakWordBtn" title="朗读单词" style="display:none">🔊</button>
           </div>
@@ -498,17 +533,9 @@
           <div id="chatHistoryPanel" class="ch-panel"></div>
         </div>
         <div class="chat-messages" id="chatMessages" data-page-node-id="jpU6gfzhCZz25RwBiiSesd">
-          <div class="msg ai" data-page-node-id="mEc3ltFfA8JfEB2bCVdmED">选一个单词开始，或直接提问。结束学习后可生成助记。</div>
+          <div class="msg ai" data-page-node-id="mEc3ltFfA8JfEB2bCVdmED">请输入要讨论的单词或问题。</div>
         </div>
-        <div class="quick-row" id="quickRow" data-page-node-id="Ye66xUDBALj2t9Ww9jwEg3">
-          <button class="chip q" data-q="这个词是什么意思？有哪些常见义项？" data-page-node-id="UamTzuB62zbCTHVCw7aaYH">词义</button>
-          <button class="chip q" data-q="给我 3 个由易到难的原例句，附中文翻译。" data-page-node-id="wsZiHU3KP0b5LyT3kZf7Wu">例句</button>
-          <button class="chip q" data-q="这个常见的搭配和用法有哪些？" data-page-node-id="DxopNU9X83oetSzQHxHPGa">用法</button>
-          <button class="chip q" data-q="它最容易和哪些近义词混淆？帮我对比辨析。" data-page-node-id="zevctJGZBevhCAdr0CnHEr">辨析</button>
-          <button class="chip q err" data-q="我又把这个记混了！帮我看看我可能错在哪，给我一个记忆钩子。" data-error="1" data-page-node-id="wbssGTX9Kf0gX2PHgMojWI">我又忘了 😵</button>
-          <button class="chip q" id="imgGenChip" data-page-node-id="UJamfXo35zOnj5yM4UHatl">🎨 生图助记</button>
-          <button class="chip" id="webSearchChip" title="开启后 AI 回答前先联网搜索实时资料（需在设置页配置搜索服务）" data-page-node-id="vjZjyBCFa0ZuRhKgqvGAjj">🌐 联网</button>
-        </div>
+
         <div class="chat-image-preview" id="chatImagePreview" style="display:none">
           <img id="chatImagePreviewImg" alt="待发送图片">
           <button class="chat-image-clear" id="chatImageClear" title="移除图片" type="button">✕</button>
@@ -520,6 +547,7 @@
           <button class="btn primary" id="sendBtn" data-page-node-id="GYO2e2jWWfJ2EZNayi61Vm">发送</button>
         </div>
       </div>
+      </details>
     </div>
   </section>
 

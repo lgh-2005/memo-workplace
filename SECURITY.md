@@ -1,5 +1,11 @@
 # v4.0.0 安全审计与敏感信息扫描记录
 
+> v4.1.0 的导图接口沿用现有登录及同站校验。每轮分组最多 80 词，模型只能按输入编号引用，服务端过滤越界和重叠分组。正确答案与讲解保存在服务端，回合按用户隔离，有效期 30 分钟。
+
+本地预览「v4.2.0」词表悬浮球 + 词群联动（2026-11-24）：**没有新增接口，只扩展 `POST /api/tutor/drill` 的入参**，仍在同一登录闸门、同站 Origin/Referer 校验与 per-user 写串行队列内。输入收敛新增 `normalizeDrillWords`：`words` 数组逐个 trim + 限长 64 + 去重（大小写不敏感）+ 最多 5 个，非数组时回退旧的 `word` 单值，空数组/全空串直接 400——即**客户端不能靠塞一整个词表把一次请求放大**。模型输出侧新增 `normalizeDrillFocus`：`focus` 只保留逐字命中本组词表的值（最多 3 个），**组外词一律丢弃**，防止把易错统计记到无关词上。前端新增的悬浮球与浮层**零内联 `on*`**，全部走 `addEventListener` + 事件委托，CSP 仍 `script-src 'self'`、无 `unsafe-inline`；浮层用 `aria-hidden` / `aria-expanded` 标状态，关闭态 `pointer-events:none` 不可误触。
+
+本地带练预览（2026-11-24）：**新增 1 条写接口**（`POST /api/tutor/drill`），与既有 `/api/*` 同处登录闸门内、同样走 Origin/Referer 同站校验与 per-user 写串行队列；**不放宽任何安全策略**（CSP 仍 `script-src 'self'`，新增答题卡零内联 `on*`，全部走 `#chatMessages` 事件委托）。输入侧做了白名单收敛：`word` ≤64 字符、`stage` 收敛到 0–2、`answer` ≤400 字符、回传的 `task` 经 `normalizeDrillTask` 逐字段校验（类型白名单、题干 ≤600、选项 ≤5 条各 ≤200、选择题少于 2 个选项直接 400），模型输出侧同样二次归一化，**不把上游半截结构透传给前端**。该接口不读文件、不写磁盘、不拼 SQL，仅在内存里读词表与助记笔记，无新增注入面；错误信息只回 `reason` 短码（`no_llm` / `bad_json` / `bad_task` / `llm_error`），不暴露上游响应体。
+
 v4.0.0 定位收缩（2026-11-24）：**删除 8 条路由**（`/api/writing/*` 五条、`/api/unit/*` 三条），**新增 2 条只读接口**（`GET /api/kb/exams`、`GET /api/kb/exam/<id>`，与既有 `/api/kb/*` 同处登录闸门内），**不放宽任何安全策略**（CSP 仍 `script-src 'self'`，无 `unsafe-inline`；写请求仍走 Origin/Referer 同站校验与 per-user 串行队列）。
 
 v3.8.2 静态资源条件请求 + 复制入口 HTTP 降级：**不新增接口、不新增鉴权面、不放宽任何安全策略**。

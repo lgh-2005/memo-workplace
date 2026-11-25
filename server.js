@@ -772,6 +772,16 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '4.1.0', date: '2026-11-25', title: 'AI 学习改为可展开的学习导图',
+    items: [
+      '在悬浮词表勾选本轮单词，搜索和换筛选时保留勾选',
+      '先回想再揭晓释义，标记熟知、模糊或不会，已略过的熟词可以拉回',
+      'AI 按具体义项、用法和搭配分组，给出成组理由和练习方向，缺少合适伙伴的词单练',
+      '导图与大纲共用一轮进度，可回看原题、作答、讲解和换语境复测',
+      '移除旧快捷按钮，自由提问折叠保留，固定例题可直接试做',
+    ],
+  },
+  {
     version: '4.0.0', date: '2026-11-24', title: '定位收缩为「英语单词学习工作台」：真题并入语料库、做题面下线、删除番茄钟与写作升格',
     items: [
       '真题并入语料库：corpus/exams.jsonl 不做 schema 迁移；新增 GET /api/kb/exams（整卷投影成语料条目）与 GET /api/kb/exam/<id>（原文 + 板块级精读），真题在语料库列表里以「真题整卷」出现，可读原文与精读，不再提供做题',
@@ -3843,11 +3853,41 @@ const DEFAULT_PROMPTS = {
       '6. 结合提供的权威词典释义、历年真题原句和外刊真实语境进行针对性讲解。',
     ].join('\n')
   },
-  tutor_first_msg: {
-    id: 'tutor_first_msg',
-    title: '单词点击自动开场指令（User Prompt）',
-    desc: '在左侧单词列表中点击单词时，前端向 AI 自动发送的第一句开场白。支持 {spelling} 占位符',
-    template: '请介绍「{spelling}」的核心含义和常见考点/熟词僻义，还有最常用的搭配，然后等我提问。'
+  /* v4.1.0：词汇精练「AI 带练」——把单向讲解改成「出题 → 作答 → 判分 → 推进」的闭环。
+   * 与 tutor_system 并列：自由问答仍走 tutor_system，带练只走这一条。 */
+  tutor_drill: {
+    id: 'tutor_drill',
+    title: 'AI 带练教练（词汇精练 · 出题与判分）',
+    desc: '词汇精练「AI 带练」模式的系统提示词：每一轮只做一件事——出题，或判分并出下一题',
+    template: [
+      '你是一位英语单词「带练教练」，面向中国考研 / 六级学习者。你的职责不是讲解，而是让学习者一关一关把单词练到会用。',
+      '每一轮你只做一件事：要么出题，要么判分并出下一题。',
+      '',
+      '【三关】',
+      '第 1 关「认」：认出词义与词性（type=choice，四选一：给英文选中文释义，或给中文选英文单词）。',
+      '第 2 关「用」：在真实语境里用它（type=blank 填一个词/短语，或 type=write 让学习者用这个词写一句英文）。',
+      '第 3 关「变」：词形变化、固定搭配、易混词辨析（type=choice 或 blank）。',
+      '',
+      '【联动模式】',
+      '当系统给出的是「一组词」而不是单个词时：题目必须把组内至少两个词放在一起考——组内选词指认（给中文或语境，从组内挑词）、组内挖空选词、辨析组内两词的差别、或让学习者用组内两个词写进同一句/同一段。',
+      '联动时每个词都要在整组三关里至少被考到一次；focus 填这道题主要考的词（1~2 个，必须逐字来自给定词表）。单词模式 focus 给空数组。',
+      '',
+      '【规则】',
+      '1. 中文说明、英文例句。引导语不超过 40 字，判分点评不超过 60 字，不要长篇讲解。',
+      '2. 题目必须当场可作答且只有一个明确答案：choice 恰好一个正确项；blank 只留一个空，答案是一个单词或固定短语。',
+      '3. 不要复述上一题，不要连续两轮用同一种题型；blank 的句子要给出足够上下文，让答案唯一。',
+      '4. 判分要诚实：先判对错，再指出关键（错在哪个义项 / 搭配 / 词形），必要时给一句记忆钩子。不许为了鼓励把错的判成对的。',
+      '5. type=write（造句）按「词义与搭配是否用对」判分：用对了但有小语法错 → score=1 并指出；完全用错 → score=0。',
+      '6. 题干里要出现目标词时用 ___ 挖空让学习者填，绝不要在题干里直接写出答案。',
+      '7. 只输出一个 JSON 对象，不要任何解释文字，不要代码围栏。',
+      '',
+      '【JSON 格式】',
+      '{"say":"一句引导或反馈","verdict":{"correct":true,"score":2,"comment":"点评","hook":"可选记忆钩子"},"focus":["本题主要考的单词"],"task":{"type":"choice","prompt":"题干","options":["选项1","选项2","选项3","选项4"],"placeholder":""},"wordFinished":false}',
+      '- 开局时 verdict 为 null；判分时 verdict 必填。',
+      '- 收到「三关全部完成」的指令时，task 必须为 null 且 wordFinished 为 true。',
+      '- blank / write 题的 options 给空数组，把输入提示写进 placeholder。',
+      '- focus 必须逐字使用给定词表里的词；拿不准就给空数组 []，绝不自造。',
+    ].join('\n')
   },
   mnemonic_gen: {
     id: 'mnemonic_gen',
@@ -5732,6 +5772,182 @@ function localNotesFor(spelling) {
   return notes.map(n => `- [${n.noteType}] ${n.content}`).join('\n');
 }
 
+/* ---------- v4.1.0：AI 带练（词汇精练 → 教练台） ----------
+ * 出发点：词汇精练原来只有「我提问 → AI 讲解」一条路，AI 既不会考你、也判不了你对错，
+ * 学习成果无法沉淀。带练把交互改成闭环，并延续 v3.8.1「一次交互 = 一次请求」的约束：
+ * 判分与出下一题在同一次上游调用里完成，不做两趟。 */
+
+const TUTOR_DRILL_STAGES = ['认词', '用词', '变形/辨析'];
+
+/** 归一化一题：类型/题干/选项白名单校验，避免前端拿到半截结构。 */
+function normalizeDrillTask(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const type = ['choice', 'blank', 'write'].includes(raw.type) ? raw.type : 'blank';
+  const prompt = String(raw.prompt || '').trim().slice(0, 600);
+  if (!prompt) return null;
+  let options = [];
+  if (type === 'choice') {
+    options = (Array.isArray(raw.options) ? raw.options : [])
+      .map(o => String(o || '').trim().slice(0, 200))
+      .filter(Boolean)
+      .slice(0, 5);
+    if (options.length < 2) return null;   // 选择题至少两个选项，否则当作坏题
+  }
+  return { type, prompt, options, placeholder: String(raw.placeholder || '').trim().slice(0, 80) };
+}
+
+/** 归一化判分：score 收敛到 0–2（0 错 / 1 半对 / 2 对），文本设上限。 */
+function normalizeDrillVerdict(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const score = Math.max(0, Math.min(2, Math.round(Number(raw.score) || 0)));
+  return {
+    correct: !!raw.correct || score === 2,
+    score,
+    comment: String(raw.comment || '').trim().slice(0, 240),
+    hook: String(raw.hook || '').trim().slice(0, 160),
+  };
+}
+
+/**
+ * 归一化一趟带练的词表：单词模式 1 个，联动模式 2~5 个（去空白、去重、保序、逐个限长）。
+ * 前端传 words 数组；兼容旧调用只传 word 字符串。
+ */
+function normalizeDrillWords(raw, fallback) {
+  const src = Array.isArray(raw) ? raw : (fallback ? [fallback] : []);
+  const out = [];
+  for (const w of src) {
+    const s = String(w || '').trim().slice(0, 64);
+    if (!s) continue;
+    if (out.some(x => x.toLowerCase() === s.toLowerCase())) continue;
+    out.push(s);
+    if (out.length >= 5) break;
+  }
+  return out;
+}
+
+/**
+ * 归一化「这道题主要考哪几个词」：只接受落在本组词表里的词，
+ * 防止模型把 focus 写成组外的词、把易错统计记到别的词头上。
+ */
+function normalizeDrillFocus(raw, words) {
+  const src = Array.isArray(raw) ? raw : (raw ? [raw] : []);
+  const out = [];
+  for (const w of src) {
+    const s = String(w || '').trim();
+    if (!s) continue;
+    const hit = words.find(x => x.toLowerCase() === s.toLowerCase());
+    if (hit && !out.includes(hit)) out.push(hit);
+    if (out.length >= 3) break;
+  }
+  return out;
+}
+
+/**
+ * 带练一个回合：task 为空 = 开局出题；task + answer = 判分并出下一题。
+ * words 长度 1 = 单词带练；≥2 = 词群联动（题目围绕组内词与词之间的关系出）。
+ * 关卡推进规则（服务端权威，不听模型自由发挥）：
+ *   · 答对 → 进下一关；第 3 关答对 → 通关。
+ *   · 答错 → 留在本关换个角度再考一次（retry 计一次）。
+ *   · 同一关第二次仍答错 → 允许过去（避免卡死），第 3 关则直接结束。
+ * 返回 { ok:false, reason } 时前端退回自由问答（no_llm / bad_json / bad_task），绝不阻断。
+ */
+async function tutorDrillTurn({ words, stage, task, answer, retry }) {
+  if (!llmAvailable()) return { ok: false, reason: 'no_llm' };
+  const list = normalizeDrillWords(words);
+  if (!list.length) return { ok: false, reason: 'bad_word' };
+  const group = list.length > 1;
+  const scope = group ? '这组词' : '这个词';
+  const bySpelling = new Map();
+  for (const w of Object.values(db.words)) {
+    const k = String(w.spelling || '').toLowerCase();
+    if (k && !bySpelling.has(k)) bySpelling.set(k, w);
+  }
+  // 每个词的本地上下文：离线词典释义 + 墨墨记录 + 已有助记笔记（不联网、不多打请求）
+  const facts = list.map(spelling => {
+    const w = bySpelling.get(spelling.toLowerCase());
+    const g = vocabGlossOf(spelling);
+    const bits = [];
+    if (g) bits.push(`词典：${g.pos ? g.pos + ' ' : ''}${g.gloss}`);
+    const brief = w ? wordBrief(w) : '';
+    if (brief) bits.push(`墨墨：${brief}`);
+    const notes = localNotesFor(spelling);
+    if (notes) bits.push(`笔记：${notes.replace(/\n+/g, ' / ')}`);
+    return `- ${spelling}${bits.length ? '（' + bits.join('；') + '）' : ''}`;
+  });
+  const grading = !!(task && String(answer || '').trim());
+  const lastChance = Number(retry) >= 1;
+  const finalStage = stage + 1 >= TUTOR_DRILL_STAGES.length;
+  const lines = [
+    group
+      ? `【词群联动】本组 ${list.length} 个词：${list.join(' / ')}。题目必须把组内至少两个词放在一起考（组内选词指认 / 组内挖空 / 辨析差异 / 串词成句）。`
+      : `当前单词：${list[0]}`,
+    ...facts,
+  ];
+  if (grading) {
+    lines.push(
+      `【待判分】第 ${stage + 1} 关（${TUTOR_DRILL_STAGES[stage] || '巩固'}）`,
+      `题型：${task.type}`,
+      `题干：${task.prompt}`,
+      task.options.length ? `选项：${task.options.join(' | ')}` : '',
+      `学习者作答：${String(answer).slice(0, 300)}`,
+    );
+    if (group) lines.push(`请在 focus 里给出这道题主要考的组内单词（1~2 个，逐字来自：${list.join(' / ')}）。`);
+    if (finalStage && lastChance) {
+      lines.push(`请判分并在 verdict 里给点评与记忆钩子。这是本关最后一次尝试：不论对错，${scope}到此结束，task 必须为 null、wordFinished 为 true。`);
+    } else if (finalStage) {
+      lines.push(`请判分并在 verdict 里给点评与记忆钩子。答对则${scope}三关全部完成（task 必须为 null、wordFinished 为 true）；答错则留在本关换个角度再考一次。`);
+    } else {
+      lines.push(`请判分并在 verdict 里给点评；答对就出第 ${stage + 2} 关（${TUTOR_DRILL_STAGES[stage + 1]}）的下一题，答错就留在本关换个角度再考一次。`);
+      if (group) lines.push('下一题仍要把组内至少两个词放在一起考。');
+    }
+  } else {
+    lines.push(`【开局】现在开始第 ${stage + 1} 关（${TUTOR_DRILL_STAGES[stage] || '巩固'}）：给一句引导并出第一题，verdict 为 null。`);
+    if (group) lines.push('这一题的题干必须把组内至少两个词放在一起考。');
+  }
+  const reply = await llmChat([
+    { role: 'system', content: getPrompt('tutor_drill') },
+    { role: 'user', content: lines.filter(Boolean).join('\n') },
+  ], { maxTokens: 900, llmOverride: { _jsonMode: true } });
+  const parsed = extractJsonObject(reply);
+  if (!parsed || typeof parsed !== 'object') return { ok: false, reason: 'bad_json' };
+  const verdict = grading ? normalizeDrillVerdict(parsed.verdict) : null;
+  if (grading && !verdict) return { ok: false, reason: 'bad_json' };
+
+  // 关卡推进以服务端规则为准：模型只负责「这一关怎么考」，不决定「能不能过关」。
+  let nextStage = stage;
+  let finished = false;
+  if (grading) {
+    const pass = verdict.correct || lastChance;   // 第二次仍错就放过去，避免学习者卡死在一关
+    if (pass && finalStage) { finished = true; nextStage = stage; }
+    else if (pass) nextStage = stage + 1;
+  }
+  const nextTask = finished ? null : normalizeDrillTask(parsed.task);
+  if (!finished && !nextTask) return { ok: false, reason: 'bad_task' };
+
+  // focus：判分归属。模型给了就白名单过滤；联动时若模型偷懒没给，
+  // 用「题干里实际出现过的组内词」兜底（确定性，不额外提问）。
+  let focus = grading ? normalizeDrillFocus(parsed.focus, list) : [];
+  if (grading && !focus.length) {
+    if (!group) focus = [list[0]];
+    else {
+      const prompt = String((task && task.prompt) || '').toLowerCase();
+      focus = list.filter(w => prompt.includes(w.toLowerCase())).slice(0, 2);
+    }
+  }
+  return {
+    ok: true,
+    word: list[0],
+    words: list,
+    group,
+    say: String(parsed.say || '').trim().slice(0, 240),
+    verdict,
+    focus,
+    task: nextTask,
+    stage: nextStage,
+    wordFinished: finished,
+  };
+}
+
 /** 从 LLM 输出解析助记 JSON（带容错） */
 function parseMnemonicJSON(text) {
   // 提取第一个 {...} 或 [...]
@@ -5928,6 +6144,178 @@ const GLOSS_SYSTEM = [
   '{"glosses":[{"spelling":"单词","phonetic":"/美式音标/，不确定就给空串","pos":"词性缩写如 n. v. adj.","gloss":"最核心的 1-2 个中文释义，30 字内"}]}',
   '规则：每个输入单词都必须有一条；音标不确定给空串，严禁编造；释义要优先考研高频义项。',
 ].join('\n');
+
+/* 词汇导图：每轮最多两题。对照词由模型依据作答推荐，服务端校验结构并掌控状态。 */
+const tutorMapRounds = new Map();
+const TUTOR_MAP_TTL = 30 * 60 * 1000;
+const TUTOR_MAP_SAMPLE = {
+  sentence: 'The report addresses the problem but offers no solution.',
+  question: '这句话里的 addresses the problem 表达了什么？',
+  options: ['报告讨论了这个问题', '报告已经解决了这个问题'],
+  answerIndex: 0,
+};
+
+const TUTOR_BATCH_LIMIT = 80;
+
+function normalizeTutorBatchWords(input) {
+  if (!Array.isArray(input) || !input.length || input.length > TUTOR_BATCH_LIMIT) return [];
+  const words = input.map(word => typeof word === 'string' ? word.trim().replace(/’/g, "'").replace(/\s+/g, ' ') : '');
+  if (words.some(word => !/^[a-zA-Z][a-zA-Z0-9'. /-]{0,95}$/.test(word))) return [];
+  return [...new Map(words.map(word => [word.toLowerCase(), word])).values()];
+}
+
+function tutorBatchSingles(words) {
+  return words.map(word => ({ title: word, reason: '', exercise: '', words: [word] }));
+}
+
+function normalizeTutorBatchPlan(raw, words) {
+  const groups = [];
+  const seen = new Set();
+  for (const row of raw.groups) {
+    const ids = row?.ids;
+    if (!Array.isArray(ids) || ids.length < 2 || ids.length > 5 || new Set(ids).size !== ids.length ||
+        ids.some(id => !Number.isInteger(id) || id < 0 || id >= words.length || seen.has(id))) continue;
+    const { title, reason, exercise } = row;
+    if (![title, reason, exercise].every((s, i) => typeof s === 'string' && s.trim() && s.trim().length <= [100, 480, 480][i])) continue;
+    groups.push({ title: title.trim(), reason: reason.trim(), exercise: exercise.trim(), words: ids.map(id => words[id]) });
+    ids.forEach(id => seen.add(id));
+  }
+  return [...groups, ...tutorBatchSingles(words.filter((_, id) => !seen.has(id)))];
+}
+
+async function planTutorBatch(words) {
+  if (words.length === 1) return { ok: true, groups: tutorBatchSingles(words) };
+  if (!llmAvailable()) return { ok: false, reason: 'no_llm' };
+  const raw = extractJsonObject(await llmChat([
+    { role: 'system', content: '你是英语词汇教练。为已经初筛的词分组。只有词义辨析、容易混淆的用法或可一起训练的搭配有明确联系，才把词分成一组。主题宽泛相似、拼写开头相同或词表相邻不够。每组给具体差异与一个用同一情境对比的练习方向。用整数 id 引用输入的词，不扩词，不重复分组。不能设计对比练习的词不成组。没有合适分组时给 {"groups":[]}。只输出 JSON：{"groups":[{"ids":[0,4],"title":"简洁主题","reason":"一起学能区分的具体义项或用法","exercise":"用什么语境比较"}]}。每组 2–5 词。' },
+    { role: 'user', content: JSON.stringify(words.map((word, id) => ({ id, word, gloss: vocabGlossOf(word)?.gloss || '' }))) },
+  ], { llmOverride: { _jsonMode: true } }));
+  if (!Array.isArray(raw?.groups)) return { ok: false, reason: 'bad_plan' };
+  return { ok: true, groups: normalizeTutorBatchPlan(raw, words) };
+}
+
+async function makeTutorBatchTask(words, goal, previous = null) {
+  const instruction = '为该词组设计同一语境里的辨析单选题，英文句子有一个 ___ 空格。选项是输入 words 的原样表达，按原顺序对应零基 answerIndex。令每个选项词形可直接填入，只能有一个按语义和用法成立。正确答案位置应自然变化。给一个自然英文语境、一个不透答案的中文问题和中文 explanation，讲清判断依据和干扰项的区别。讲解只会在交卷后呈现。复测换一个新场景，针对上一题的错选。只返回 JSON：{"sentence":"含 ___ 的英文语境","question":"中文问题","answerIndex":0,"explanation":"简要讲解"}。';
+  const raw = extractJsonObject(await llmChat([
+    { role: 'system', content: instruction },
+    { role: 'user', content: JSON.stringify({ words, goal, previous }) },
+  ], { llmOverride: { _jsonMode: true } }));
+  const task = normalizeTutorMapTask({ ...raw, options: words });
+  const explanation = typeof raw?.explanation === 'string' ? raw.explanation.trim() : '';
+  if (!task || (task.sentence.match(/___/g) || []).length !== 1 || !explanation || explanation.length > 550 ||
+      task.sentence.toLowerCase() === previous?.sentence?.toLowerCase()) return null;
+  return { ...task, explanation };
+}
+
+function normalizeTutorMapTask(raw) {
+  const sentence = typeof raw?.sentence === 'string' ? raw.sentence.trim() : '';
+  const question = typeof raw?.question === 'string' ? raw.question.trim() : '';
+  const options = Array.isArray(raw?.options) ? raw.options.map(o => typeof o === 'string' ? o.trim() : '') : [];
+  const answerIndex = raw?.answerIndex;
+  if (!sentence || sentence.length > 420 || !question || question.length > 160 || options.length < 2 || options.length > 5 ||
+      !options.every(o => o && o.length <= 120) || new Set(options.map(o => o.toLowerCase())).size !== options.length ||
+      !Number.isInteger(answerIndex) || answerIndex < 0 || answerIndex >= options.length) return null;
+  return { sentence, question, options, answerIndex };
+}
+
+function publicTutorMapTask({ sentence, question, options }) {
+  return { sentence, question, options };
+}
+
+function tutorMapSampleReview() {
+  return {
+    evidence: 'offers no solution',
+    term: 'solve a problem',
+    reason: '你把「着手处理」读成了「已经解决」。address a problem 表示面对或处理问题，solve a problem 则表示把问题解决了。',
+    retest: {
+      sentence: 'A temporary workaround can ___ without fixing the underlying bug.',
+      answerIndex: 0,
+    },
+  };
+}
+
+function parseTutorMapBranch(raw, word, firstTask) {
+  const term = typeof raw?.term === 'string' ? raw.term.trim() : '';
+  const reason = typeof raw?.reason === 'string' ? raw.reason.trim() : '';
+  const evidence = typeof raw?.evidence === 'string' ? raw.evidence.trim() : '';
+  const sentence = typeof raw?.retest?.sentence === 'string' ? raw.retest.sentence.trim() : '';
+  if (!/^[a-zA-Z][a-zA-Z' -]{0,63}$/.test(term) || term.toLowerCase() === word.toLowerCase() ||
+      !reason || reason.length > 340 || !evidence || !firstTask.sentence.includes(evidence) ||
+      sentence.toLowerCase() === firstTask.sentence.toLowerCase() || (sentence.match(/___/g) || []).length !== 1) return null;
+  const task = normalizeTutorMapTask({ sentence, question: '哪种表达更符合这个新语境？', options: [word, term], answerIndex: raw.retest.answerIndex });
+  return task ? { branch: { term, reason, evidence }, task } : null;
+}
+
+async function startTutorMap(word, sample, owner, words = [word], goal = '') {
+  let task = TUTOR_MAP_SAMPLE;
+  if (words.length > 1) {
+    if (!llmAvailable()) return { ok: false, reason: 'no_llm' };
+    task = await makeTutorBatchTask(words, goal);
+    if (!task) return { ok: false, reason: 'bad_task' };
+  } else if (!sample) {
+    if (!llmAvailable()) return { ok: false, reason: 'no_llm' };
+    const gloss = vocabGlossOf(word);
+    const raw = await llmChat([
+      { role: 'system', content: '你是英语词汇教练。给指定单词或短语写一句自然的英文语境和一道中文单选题，考能从句中区分的词义或用法。目标词或屈折变化须出现在句子中。选项 2–4 个，只有一个正确，至少一个干扰项对应具体误解。句子由你自拟；不引用出处，不预告关联词。只返回 JSON：{"sentence":"英文句子","question":"中文问题","options":["选项"],"answerIndex":0}。answerIndex 是正确选项的零基索引，位置自然变化。' },
+      { role: 'user', content: JSON.stringify({ word, gloss: gloss?.gloss || '' }) },
+    ], { llmOverride: { _jsonMode: true } });
+    task = normalizeTutorMapTask(extractJsonObject(raw));
+    if (!task) return { ok: false, reason: 'bad_task' };
+  }
+  const now = Date.now();
+  for (const [id, round] of tutorMapRounds) {
+    if (!round.busy && round.expiresAt <= now) tutorMapRounds.delete(id);
+  }
+  if (tutorMapRounds.size >= 300) {
+    const oldest = [...tutorMapRounds].find(([, round]) => !round.busy);
+    if (!oldest) return { ok: false, reason: 'busy' };
+    tutorMapRounds.delete(oldest[0]);
+  }
+  const roundId = crypto.randomUUID();
+  tutorMapRounds.set(roundId, { owner, word, words, goal, sample, task, step: 1, expiresAt: now + TUTOR_MAP_TTL, last: null });
+  return { ok: true, roundId, step: 1, task: publicTutorMapTask(task) };
+}
+
+async function answerTutorMap(round, step, choice) {
+  if (round.last?.step === step && round.last.choice === choice) return round.last.result;
+  if (round.busy) return { ok: false, reason: 'busy' };
+  if (step !== round.step || !round.task || !Number.isInteger(choice) || choice < 0 || choice >= round.task.options.length) {
+    return { ok: false, reason: 'bad_answer' };
+  }
+  const { task, word } = round;
+  const correct = choice === task.answerIndex;
+  const verdict = { correct, answerIndex: task.answerIndex, explanation: task.explanation || '' };
+  let next = null;
+  if (step === 1 && !correct && round.words.length > 1) {
+    round.busy = true;
+    try {
+      const retry = await makeTutorBatchTask(round.words, round.goal, {
+        sentence: task.sentence, selected: task.options[choice], correct: task.options[task.answerIndex],
+      });
+      if (retry) next = { branch: null, task: retry };
+    } catch { /* 初题讲解仍可查看 */ }
+    finally { round.busy = false; }
+  } else if (step === 1 && !correct) {
+    round.busy = true;
+    try {
+      const raw = round.sample ? tutorMapSampleReview() : extractJsonObject(await llmChat([
+        { role: 'system', content: '你是英语词汇教练。根据学习者实际选中的解释和原句，判断一个地道的英文词或短语能否澄清这次具体误解。可自行选词，不受词表限制。只有当你能从原句原样摘出一个关键线索，并用一条新语境清楚区分目标表达和对照表达时才联动。否则返回 {}。避免把漏读等问题强说成词义混淆。只输出 JSON：{"term":"英文对照表达","evidence":"原句中逐字引用的英文线索","reason":"中文，说明该线索、选错的解释和两个表达的具体差别","retest":{"sentence":"新的英文句子，含一个 ___ 空格","answerIndex":0}}。新句必须让目标表达和对照表达都能原样填入，只有一个符合语境。选项由服务端提供，顺序固定为目标表达、对照表达，answerIndex 为零基索引。不要重复原句，不要冒充真实出处。' },
+        { role: 'user', content: JSON.stringify({ word, sentence: task.sentence, question: task.question, selected: task.options[choice], correct: task.options[task.answerIndex] }) },
+      ], { llmOverride: { _jsonMode: true } }));
+      next = parseTutorMapBranch(raw, word, task);
+    } catch {
+      // 客观题已判分。上游异常时照常交付结果，并显示本轮没有可用的对照。
+    } finally {
+      round.busy = false;
+    }
+  }
+  round.task = next?.task || null;
+  round.step = next ? 2 : 0;
+  round.expiresAt = Date.now() + TUTOR_MAP_TTL;
+  const result = { ok: true, verdict, branch: next?.branch || null, task: next ? publicTutorMapTask(next.task) : null, step: round.step };
+  round.last = { step, choice, result };
+  return result;
+}
 
 /** 记录测验结果：反哺「我又忘了」体系（写入 word.quizResponse，供忘记词/模糊词筛选）
  *  v2.2.1：双写统一学习流水（word_quiz attempt），单题采集信心/耗时/作答值，服务端权威释义 expected 防篡改
@@ -8584,6 +8972,60 @@ async function handleRequest(req, res) {
 
         const reply = await llmChat(msgs);
         return sendJSON(res, 200, { reply, evidence: evidenceMeta });
+      }
+
+      /* v4.1.0：AI 带练——出题 / 判分并推进。
+       * 一次交互只打一次上游；无法出题时返回 ok:false（而不是 4xx/5xx），
+       * 让前端平滑退回自由问答而不是中断学习。 */
+      if (p === '/api/tutor/map' && req.method === 'POST') {
+        const body = await readBody(req, 65536);
+        const owner = currentCtx().userId;
+        if (body?.action === 'plan') {
+          const words = normalizeTutorBatchWords(body.words);
+          if (!words.length) return sendJSON(res, 400, { ok: false, reason: 'bad_words', error: 'bad_words' });
+          try { return sendJSON(res, 200, await planTutorBatch(words)); }
+          catch { return sendJSON(res, 200, { ok: false, reason: 'llm_error' }); }
+        }
+        if (body?.action === 'start') {
+          const sample = body.sample === true;
+          const words = normalizeTutorBatchWords(sample ? ['address a problem'] : body.words ?? [body.word]);
+          const goal = typeof body.goal === 'string' && body.goal.length <= 1100 ? body.goal : '';
+          if (!words.length || words.length > 5) return sendJSON(res, 400, { ok: false, reason: 'bad_word', error: 'bad_words' });
+          try {
+            return sendJSON(res, 200, await startTutorMap(words[0], sample, owner, words, goal));
+          } catch {
+            return sendJSON(res, 200, { ok: false, reason: 'llm_error' });
+          }
+        }
+        if (body?.action === 'answer' && typeof body.roundId === 'string') {
+          const round = tutorMapRounds.get(body.roundId);
+          if (!round || round.owner !== owner || round.expiresAt <= Date.now()) return sendJSON(res, 200, { ok: false, reason: 'expired' });
+          return sendJSON(res, 200, await answerTutorMap(round, body.step, body.choice));
+        }
+        return sendJSON(res, 400, { ok: false, reason: 'bad_action' });
+      }
+
+      if (p === '/api/tutor/drill' && req.method === 'POST') {
+        const body = await readBody(req);
+        // v4.2.0：words 数组 = 词群联动（2~5 个词一起练）；只传 word 时按单词带练处理
+        const words = normalizeDrillWords(body.words, body.word);
+        if (!words.length) return sendJSON(res, 400, { error: '缺少 word' });
+        const stage = Math.max(0, Math.min(2, Math.floor(Number(body.stage) || 0)));
+        const answer = String(body.answer || '').trim().slice(0, 400);
+        const retry = Math.max(0, Math.min(3, Math.floor(Number(body.retry) || 0)));   // 同一关重考次数（答错 +1）
+        let task = null;
+        if (body.task && typeof body.task === 'object') {
+          task = normalizeDrillTask(body.task);
+          if (!task) return sendJSON(res, 400, { error: '题目结构不完整，请重新开始带练' });
+        }
+        if (task && !answer) return sendJSON(res, 400, { error: '请先作答再提交' });
+        if (!llmAvailable()) return sendJSON(res, 200, { ok: false, reason: 'no_llm', words });
+        try {
+          const out = await tutorDrillTurn({ words, stage, task, answer, retry });
+          return sendJSON(res, 200, { ...out, word: out.word || words[0], words: out.words || words });
+        } catch (e) {
+          return sendJSON(res, 200, { ok: false, reason: 'llm_error', detail: String(e.message || '').slice(0, 200) });
+        }
       }
 
       // 结束会话 -> 生成助记

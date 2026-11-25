@@ -1,5 +1,11 @@
 # v4.0.0 CI 平台与发布门禁确认
 
+> v4.1.0 沿用 Node 22 / 24 与 Chromium 矩阵。隔离上游用例校验分组结构、组题答案保密和换语境复测，浏览器用例覆盖选词、初筛、略过撤销和视图切换。
+
+本地预览「v4.2.0」词表悬浮球 + 词群联动（2026-11-24）：`release-check.mjs` 仍 **43 项**（没有新增套件，扩展的是既有的 `tutor-drill-smoke`），`release-gate.mjs` 版本断言升至 **4.2.0**、必需文件清单不变。`scripts/tutor-drill-smoke.mjs` 由 21 项扩到 **34 项**（新增词表悬浮球/联动前端契约 5 项、联动语义 6 项、词表清洗 2 项），两段新场景各起一次隔离沙箱（端口 18609–18612），仍然自带假上游 LLM、不起外部依赖、约 6 秒。CI 矩阵（Node 22/24 + Playwright chromium）不变。
+
+本地带练预览（2026-11-24）：`release-check.mjs` 由 42 项增至 **43 项**（新增「tutor drill smoke 存在且已接入 `test.mjs`」），`release-gate.mjs` 版本断言升至 4.1.0、必需文件清单加入 `scripts/tutor-drill-smoke.mjs`；`npm test` 链路新增该套件（**21 断言**，自带假上游 LLM，不起外部依赖，约 4 秒）。CI 矩阵（Node 22/24 + Playwright chromium）不变。
+
 v4.0.0 定位收缩（2026-11-24）：`release-check.mjs` 由 38 项增至 **42 项**（新增「无 `/api/writing/*` 路由」「无 `/api/unit/*` 路由」「语料库真题投影」「导航无真题/番茄钟页签」四条硬断言），`release-gate.mjs` 版本断言升至 4.0.0；`exam-analysis-smoke` 由 59 项调整为 **58 项**（前端契约改测「只读语料 + 精读附件」与已删路由 404）；`mobile-device-check` 页签集合同步为 8 项。CI 矩阵（Node 22/24 + Playwright chromium）不变。
 
 v3.8.2 新增 `scripts/static-cache-smoke.mjs`（静态资源条件请求 + 复制入口 HTTP 降级，**30 断言**），已接入 `npm test` 与发布门禁；`release-check.mjs` 新增 2 项（该套件存在且已接入 `test.mjs`；`server.js` 必须含 `serveStaticFile` 与 `'Cache-Control': 'no-cache'`），`release-gate.mjs` 必需文件清单同步加入该套件，版本断言升至 3.8.2。当时 `release-check` 共 **38 项**。

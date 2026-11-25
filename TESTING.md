@@ -1,5 +1,21 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
+> v4.1.0 的 `tutor-drill-smoke.mjs` 有 37 项断言，覆盖分组输出保真、答案保密、错选复测与旧接口兼容。`vocab-chat-smoke.mjs` 另外用 Chromium 验证跨搜索勾选、熟知词略过与拉回、导图与大纲切换。
+
+> 本地预览「v4.2.0」增量：`scripts/tutor-drill-smoke.mjs` 由 **21 项扩到 34 项**，锁死两件本版新增的事——**词表悬浮球**与**词群联动**。新增 13 项：
+> - 前端契约（5 项）：`#wordFab` / `#wordPanel` / `#wordFabCount` 存在；`wordPanelOpen()` 可开可关且 `selectWord()` 里会 `wordPanelOpen(false)`（点词即收起）；`#drillGroupBtn` 在带练控制条内；请求体走 `words` 数组且按词表顺序成组（`drillPickGroup` / `DRILL_GROUP_SIZE`）；通关卡有「下一组 →」与 `drillRepeat()`（整组重练）。
+> - 联动语义（6 项）：`words:['abandon','give up','quit']` 开局回传整组且 `group:true`；上游 `messages` 里能看到**整组词与组内关系要求**；判分时模型夹带组外词（`banana`）被 `focus` 白名单过滤掉；联动答对同样进下一关；联动第三关结束整组通关；模型偷懒不给 `focus` 时按题干里出现的组内词确定性兜底（不额外打请求）。
+> - 词表清洗（2 项）：`['Abandon','abandon','quit','give up','x1','x2']` 去重（大小写不敏感）并限长到 5；只传 `word` 时仍按单词带练（`words` 长度 1 / `group:false`）。
+>
+> 断言仍全部基于**假上游 LLM 观测真实 `messages`**，不看 HTTP 状态码；两段新场景各起一次隔离沙箱（端口 18609–18612），不引入外部依赖。
+
+> 本地带练预览增量：新增 `scripts/tutor-drill-smoke.mjs`（词汇精练「AI 带练」回合语义回归，**21 断言**），已接入 `npm test`、`release-check`（43 项）与 `release-gate` 必需文件清单。和 `vocab-chat-smoke` 一样，它**不看 HTTP 状态码**，而是用**假上游 LLM** 观测服务端真正发出的 `messages` 与调用次数，因为带练的关键是「回合语义」而不是「接口有没有 200」：
+> - 前端契约（6 项）：`#drillToggleBtn` / `#drillBar` 存在；请求走 `/api/tutor/drill`；作答后答题卡被 `drill-locked` 锁定（防连点重复提交）；带练输入框回车含 `isComposing` / `keyCode 229`；新增标记**零内联 `on*`**（CSP `script-src 'self'` 不放宽）。
+> - 回合语义（9 项）：开局只出题（`verdict=null`、`stage=0`）且上游收到「开局 / 第 1 关」指令、**只调一次上游**；作答返回判分并进第 2 关，且判分请求把**题干 + 选项 + 学习者答案**一并交给上游；第三关答完即通关（`task=null` / `wordFinished=true`）且不额外请求；答错**留在本关重考**；同一关第二次答错才放行（不把人卡死）；第 3 关最后一次答错即结束该词；缺 `word` 与题目结构不完整都返回 400。
+> - 降级（5 项）：未配置服务商 → `ok:false / no_llm`；上游吐自然语言 → `bad_json`；上游给的选择题只有 1 个选项 → `bad_task`。三种降级都是 **200 + `ok:false`**，前端据此提示并退回自由问答，绝不把人锁在出不了题的界面里。
+>
+> **关键设计（也是断言锁死的点）**：关卡推进由**服务端规则**决定，不听模型自由发挥——答对进关、答错重考一次、第二次放过、最后一关一定收敛。这样无论上游模型怎么输出，学习者都不会卡死，也不会「全错也一路通关」。
+
 > v4.0.0 增量：定位收缩为「英语单词学习工作台」。测试契约跟着改口径——① `exam-analysis-smoke` 由 59 项调整为 **58 项**：删除真题页/逐题解析的前端契约，改为「做题面与逐题解析挂载点已下线」「真题精读附件渲染存在」「语料库已接入真题投影」「`/api/unit/*` 与 `/api/writing/*` 必须 404」；② `frontend-refinement-smoke` 的「真题双入口」断言改为「真题已并入语料库、独立真题/番茄钟页签已下线」；③ `mobile-device-check` 页签集合同步为 8 项（dashboard/reports/study/quiz/kb/speaking/notes/settings）；④ `release-check.mjs` 由 38 项增至 **42 项**（新增：无 `/api/writing/*` 路由、无 `/api/unit/*` 路由、语料库真题投影、导航无真题/番茄钟页签）。
 
 > v3.8.2 增量：新增 `scripts/static-cache-smoke.mjs`（静态资源条件请求 + 复制入口 HTTP 降级，**30 断言**），已接入 `npm test` 与发布门禁。它锁死三个契约：

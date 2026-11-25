@@ -16,7 +16,6 @@ const state = {
   llmPresets: {},
   providers: [],        // AI 服务商档案列表
   activeProvId: '',     // 默认服务商 id
-  useSearch: false,     // v1.0.7：联网搜索开关
   diyPrompts: {},       // v2.1.0：自定义提示词注册表（含索引/历史）
 };
 
@@ -243,6 +242,7 @@ function logoutCleanup() {
     state.sessionErrorWords = new Set();
     state.activeWord = null;
     state.words = [];
+    resetCoachMap();
     for (const k of Object.keys(localStorage)) {
       if (k.startsWith('wrtDraft_')) { try { localStorage.removeItem(k); } catch { /* ignore */ } }
     }
@@ -606,6 +606,7 @@ function switchTab(name) {
   $$('.more-sheet-item[data-tab]').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
 
   $$('.tab-page').forEach(p => p.classList.toggle('active', p.id === 'tab-' + name));
+  if (name !== 'study' && typeof wordPanelOpen === 'function') wordPanelOpen(false);   // v4.2.0：离开学习页收起词表浮层
   if (name === 'dashboard') loadDashboard();
   if (name === 'reports') { loadDashboard(); loadLearningReport(state.reportDays || 7); loadQuizStats(); }
   if (name === 'study') loadWords();
@@ -1420,7 +1421,12 @@ async function fetchGlosses() {
 }
 
 function renderWordList() {
+  updateCoachSelection();
   const list = $('#wordList');
+  const total = state.words.length;
+  const fabCount = $('#wordFabCount'), panelCount = $('#wordPanelCount');
+  if (fabCount) fabCount.textContent = String(total);
+  if (panelCount) panelCount.textContent = total ? `· ${total} 词` : '';
   if (!state.words.length) {
     list.innerHTML = '<div class="empty">没有符合条件的单词，试试其他筛选或先同步</div>';
     return;
@@ -1439,7 +1445,9 @@ function renderWordList() {
     const meta = w.studyCount != null ? `学过 ${w.studyCount} 次` : (w.nextStudyDate ? '到期 ' + w.nextStudyDate.slice(5, 10) : '');
     const phon = w.gloss?.phonetic ? `<span class="phonetic">${esc(w.gloss.phonetic)}</span>` : '';
     const glossLine = w.gloss?.gloss ? `<div class="gloss-line" title="${esc(w.gloss.gloss)}">${esc(w.gloss.gloss)}</div>` : '<div class="gloss-line dim">　</div>';
-    return `<div class="word-item ${state.activeWord === w.spelling ? 'active' : ''}" data-sp="${esc(w.spelling)}">
+    const checked = coachSelection.has(coachChoice(w.spelling));
+    return `<div class="word-item ${checked ? 'active' : ''}" data-sp="${esc(w.spelling)}">
+      <input class="coach-check" type="checkbox" aria-label="勾选 ${esc(w.spelling)}" ${checked ? 'checked' : ''}>
       <span class="word-main">
         <span class="spelling">${esc(w.spelling)} ${phon}</span>
         ${glossLine}
@@ -1447,23 +1455,69 @@ function renderWordList() {
       <span style="text-align:right;flex-shrink:0">${badge}<div class="meta">${meta}</div><button class="speak-btn mini" data-speak="${esc(w.spelling)}" title="朗读">🔊</button></span>
     </div>`;
   }).join('');
-  $$('.word-item').forEach(el => el.addEventListener('click', () => selectWord(el.dataset.sp)));
+  $$('.word-item').forEach(el => el.addEventListener('click', () => selectWord(el.dataset.sp, el)));
   $$('.word-item .speak-btn').forEach(b => b.addEventListener('click', e => {
     e.stopPropagation();   // 不触发选中
     speak(b.dataset.speak);
   }));
 }
 
-function selectWord(spelling) {
+/* 词表使用浮层，勾选时保持打开。 */
+function wordPanelOpen(open) {
+  const panel = $('#wordPanel'), fab = $('#wordFab');
+  if (!panel) return;
+  const on = !!open;
+  panel.classList.toggle('open', on);
+  if (!on && panel.contains(document.activeElement)) fab.focus({ preventScroll: true });
+  panel.setAttribute('aria-hidden', on ? 'false' : 'true');
+  panel.inert = !on;
+  if (fab) fab.setAttribute('aria-expanded', on ? 'true' : 'false');
+  document.body.classList.toggle('word-pop-open', on);
+  if (on) {
+    // 手机上不抢焦点（避免软键盘弹出来把列表顶走）；桌面端把光标直接放进搜索框
+    const body = $('#wordPanelCollapseBody');
+    if (body) body.scrollTop = 0;
+    if (window.matchMedia && window.matchMedia('(min-width: 701px)').matches) {
+      setTimeout(() => { if (panel.classList.contains('open')) $('#wordSearch').focus({ preventScroll: true }); }, 170);
+    }
+    if (!state.words.length) loadWords();
+  }
+}
+
+function wordPanelToggle() {
+  const panel = $('#wordPanel');
+  wordPanelOpen(!(panel && panel.classList.contains('open')));
+}
+
+$('#wordFab').addEventListener('click', (e) => { e.stopPropagation(); wordPanelToggle(); });
+$('#wordPanelClose').addEventListener('click', () => wordPanelOpen(false));
+/* 点浮层外任意位置收起（词条、筛选、搜索都算「内部」，不误关） */
+document.addEventListener('click', (e) => {
+  const panel = $('#wordPanel');
+  if (!panel || !panel.classList.contains('open')) return;
+  if (e.target.closest('#wordPanel') || e.target.closest('#wordFab')) return;
+  wordPanelOpen(false);
+});
+document.addEventListener('keydown', (e) => {
+  const panel = $('#wordPanel');
+  if (e.key === 'Escape' && panel && panel.classList.contains('open')) wordPanelOpen(false);
+});
+
+function selectWord(spelling, row) {
+  const key = coachChoice(spelling);
+  if (coachSelection.has(key)) coachSelection.delete(key);
+  else if (coachSelection.size >= COACH_PICK_LIMIT) toast('本轮最多勾选 80 词');
+  else {
+    const word = state.words.find(w => w.spelling === spelling);
+    coachSelection.set(key, { word: spelling, gloss: word?.gloss?.gloss || '' });
+  }
+  const checked = coachSelection.has(key);
+  row.classList.toggle('active', checked);
+  row.querySelector('.coach-check').checked = checked;
   state.activeWord = spelling;
-  renderWordList();
-  $('#chatHeader').textContent = '当前学习：' + spelling;
   $('#speakWordBtn').style.display = 'inline-block';
-  addMsg('ai', `📖 已切换到 **${spelling}**。想问什么？`, spelling);
-  // v2.1.0：首句开场指令可在「设置 → DIY → 模型提示词」中自定义，{spacing} 占位符自动替换
-  const tpl = (state.diyPrompts?.tutor_first_msg?.current)
-    || '请介绍「{spelling}」的核心含义和常见考点/熟词僻义，还有最常用的搭配，然后等我提问。';
-  askAI(tpl.replace(/\{spacing\}|\{spelling\}/g, spelling));
+  $('#chatHeader').textContent = '当前单词：' + spelling;
+  updateCoachSelection();
 }
 
 function addMsg(role, content, word) {
@@ -1696,7 +1750,7 @@ async function askAI(message, isErrorMark = false) {
     if (isErrorMark) state.sessionErrorWords.add(state.activeWord);
     updateSessionInfo();
   }
-  const loading = addMsg('ai', state.useSearch ? '🌐 正在联网搜索资料，然后思考中…' : '思考中…');
+  const loading = addMsg('ai', '思考中…');
   loading.classList.add('loading');
   try {
     const r = await api('/api/chat', {
@@ -1705,7 +1759,7 @@ async function askAI(message, isErrorMark = false) {
         spelling: state.activeWord,
         message,
         history,                        // v3.8.1：不含本轮提问（服务端会追加），杜绝重复
-        useSearch: !!state.useSearch,   // v1.0.7：联网搜索开关
+
         image: image || undefined,      // v2.3.4：视觉能力图片随问题发送
       },
     });
@@ -1758,14 +1812,230 @@ $('#chatInput').addEventListener('keydown', e => {
   sendChatFromInput();
 });
 
-$$('#quickRow .chip.q').forEach(c => c.addEventListener('click', () => {
-  if (c.id === 'imgGenChip') return;   // 生图走独立流程
-  if (c.dataset.error && !state.activeWord) {
-    addMsg('ai', '⚠️ 请先在左侧词表选中一个单词，再标记「我又忘了」。');
-    return;
+/* 同一批次、同一节点状态供横向导图与大纲使用。 */
+const COACH_PICK_LIMIT = 80;
+const coachSelection = new Map();
+let coachBatch = null;
+let coachView = matchMedia('(max-width: 700px)').matches ? 'outline' : 'map';
+
+function resetCoachMap() {
+  coachBatch = null;
+  coachSelection.clear();
+  renderWordList();
+  $('#coachChat').open = false;
+  renderCoachMap();
+}
+
+function coachChoice(word) { return word.toLowerCase(); }
+function updateCoachSelection() {
+  const count = coachSelection.size;
+  $('#coachSelected').textContent = `已勾选 ${count} 词`;
+  $('#coachScreenBtn').disabled = !count;
+  $('#coachClearBtn').disabled = !count;
+}
+
+function beginCoachScreen() {
+  if (!coachSelection.size) return;
+  if (coachBatch && !coachBatch.sample && !confirm('开始新一轮会替换当前学习路径，继续吗？')) return;
+  wordPanelOpen(false);
+  coachBatch = { phase: 'screen', items: [...coachSelection.values()].map(({ word, gloss }) => ({ word, gloss })), active: 'screen', folded: new Set(), groups: [] };
+  renderCoachMap(true);
+}
+
+function beginCoachSample() {
+  coachBatch = { phase: 'study', sample: true, planned: true, items: [{ word: 'address a problem', rating: 'unclear' }], active: 'g0', folded: new Set(), groups: [{ title: 'address a problem', words: ['address a problem'] }] };
+  runCoachExercise('start');
+}
+
+function coachTaskEntry(group, key) { return key === 'second' ? group.retest : group.first; }
+function coachCurrentGroup(batch = coachBatch) {
+  const match = /^g(\d+)(?::(first|second|feedback))?$/.exec(batch?.active || '');
+  return match ? { index: Number(match[1]), group: batch.groups[Number(match[1])], key: match[2] } : {};
+}
+
+function coachNode(id, title, meta, children = []) {
+  const expanded = !coachBatch.folded.has(id);
+  const fold = children.length ? `<button class="coach-fold" type="button" data-coach-fold="${id}" aria-label="${expanded ? '折叠' : '展开'}${esc(title)}" aria-expanded="${expanded}">${expanded ? '−' : '+'}</button>` : '';
+  return `<li><div class="coach-node-row">${fold}<button class="coach-node" type="button" data-coach-node="${id}" aria-pressed="${id === coachBatch.active}"><span class="coach-node-title">${mdInline(title)}</span>${meta ? `<span class="coach-node-meta">${esc(meta)}</span>` : ''}</button></div>${children.length && expanded ? `<ul>${children.join('')}</ul>` : ''}</li>`;
+}
+
+const coachAction = (id, label, primary = false, disabled = false) => `<button type="button" class="btn ${primary ? 'primary' : 'ghost'}" data-coach-action="${id}" ${disabled ? 'disabled' : ''}>${label}</button>`;
+const coachLink = (id, label) => `<button type="button" class="btn primary" data-coach-node="${id}">${label}</button>`;
+const coachResult = entry => !entry?.verdict ? '待作答' : entry.verdict.correct ? '本次辨对' : '答错';
+const coachFinished = group => group.first?.verdict && (!group.retest || group.retest.verdict);
+
+function coachRenderTree(batch) {
+  const screened = batch.items.filter(i => i.rating).length;
+  const skipped = batch.items.filter(i => i.rating === 'known').length;
+  const groups = batch.groups.map((group, index) => {
+    const id = `g${index}`;
+    const nodes = [];
+    if (group.first) nodes.push(coachNode(id + ':first', '语境练习', coachResult(group.first)));
+    if (group.first?.verdict || group.branch) nodes.push(coachNode(id + ':feedback', '作答讲解', group.branch?.term || ''));
+    if (group.retest) nodes.push(coachNode(id + ':second', '换语境复测', coachResult(group.retest)));
+    const status = coachFinished(group) ? (group.retest || group.first).verdict.correct ? '本次辨对' : '仍需复练' : group.first ? '进行中' : '待开始';
+    return coachNode(id, group.title, `${group.words.length} 词 · ${status}`, nodes);
+  });
+  const children = [coachNode('screen', '熟悉度初筛', `${screened}/${batch.items.length}`)];
+  if (skipped) children.push(coachNode('skipped', '本轮略过', `${skipped} 词`));
+  if (batch.phase !== 'screen') children.push(coachNode('plan', '学习分组', batch.groups.length ? `${batch.groups.length} 组` : '待分组', groups));
+  return `<ul class="coach-path">${coachNode('round', batch.sample ? '试做例题' : '本轮学习', `${batch.items.length} 词`, children)}</ul>`;
+}
+
+function coachRenderQuestion(entry, group, key, index, sample) {
+  const options = entry.task.options.map((text, i) => {
+    if (!entry.verdict) return `<button class="btn coach-choice" type="button" data-coach-choice="${i}" ${group.busy ? 'disabled' : ''}>${mdInline(text)}</button>`;
+    const label = [i === entry.verdict.answerIndex ? '正确答案' : '', i === entry.choice ? '你的选择' : ''].filter(Boolean).join(' · ');
+    return `<div class="coach-option-review${label ? ' marked' : ''}">${mdLite(text)}${label ? `<span>${label}</span>` : ''}</div>`;
+  }).join('');
+  const next = key === 'first' ? coachLink(`g${index}:feedback`, '查看讲解') : coachLink(`g${index}`, '返回本组');
+  return `<h3>${mdInline(entry.task.question)}</h3><div lang="en" class="coach-sentence">${mdLite(entry.task.sentence)}</div><div class="coach-source">${sample ? '固定例题' : 'AI 自拟语境'}</div><div class="coach-options">${options}</div>${key === 'second' && entry.verdict?.explanation ? mdLite(entry.verdict.explanation) : ''}${entry.verdict ? next : ''}`;
+}
+
+function renderCoachMap(focus = false) {
+  const batch = coachBatch;
+  $('#coachEmpty').hidden = !!batch;
+  $('#coachWorkspace').hidden = !batch;
+  $('#coachViews').hidden = !batch;
+  const detail = $('#coachDetail');
+  if (!batch) { $('#coachTree').replaceChildren(); detail.replaceChildren(); $('#coachStatus').textContent = ''; return; }
+  const tree = $('#coachTree');
+  tree.dataset.view = coachView;
+  for (const btn of $$('#coachViews [data-coach-view]')) btn.setAttribute('aria-pressed', String(btn.dataset.coachView === coachView));
+  tree.innerHTML = coachRenderTree(batch);
+  const { group, index, key } = coachCurrentGroup();
+  $('#coachStatus').textContent = batch.busy ? '正在分析词汇关系…' : group?.busy ? (group.first ? '正在处理作答…' : '正在生成语境题…') : batch.sample ? '例题 · 固定内容' : '';
+  let content = '';
+  if (batch.active === 'round') {
+    content = `<h3>本轮学习</h3><p>${batch.items.length} 词 · ${batch.groups.filter(coachFinished).length}/${batch.groups.length} 组已完成</p>${coachLink(batch.phase === 'screen' ? 'screen' : 'plan', '继续学习')}${coachAction('pick', '打开词表')}`;
+  } else if (batch.active === 'skipped') {
+    const rows = batch.items.map((item, i) => item.rating === 'known' ? `<li><span>${mdInline(item.word)}</span><button type="button" class="btn ghost" data-coach-restore="${i}">拉回本轮</button></li>` : '').join('');
+    content = `<h3>本轮略过</h3><ul class="coach-review-list">${rows || '<li>没有略过的词</li>'}</ul>${coachLink(batch.phase === 'screen' ? 'screen' : 'plan', '返回')}`;
+  } else if (batch.active === 'screen') {
+    const item = batch.items.find(i => !i.rating);
+    if (!item) {
+      const known = batch.items.filter(i => i.rating === 'known').length;
+      content = `<h3>初筛完成</h3><p>保留 ${batch.items.length - known} 词，略过 ${known} 词。</p><div class="coach-actions">${known < batch.items.length && batch.phase === 'screen' ? coachAction('plan', '分析并分组', true, batch.busy) : ''}${known ? coachLink('skipped', '查看略过的词') : ''}${batch.phase === 'study' ? coachLink('plan', '查看学习分组') : ''}</div>`;
+    } else {
+      content = `<h3>回想词义 · ${batch.items.indexOf(item) + 1}/${batch.items.length}</h3><div class="coach-recall" lang="en">${mdInline(item.word)}</div>${item.revealed ? `<div class="coach-sentence">${mdLite(item.gloss || '暂无词表释义')}</div><div class="coach-actions">${coachAction('rate-known', '熟知')}${coachAction('rate-unclear', '模糊', true)}${coachAction('rate-unknown', '不会')}</div>` : coachAction('reveal', '揭晓释义', true)}`;
+    }
+  } else if (batch.active === 'plan') {
+    const next = batch.groups.findIndex(g => !coachFinished(g));
+    content = `<h3>学习分组</h3><p>${batch.groups.length} 组 · ${batch.groups.filter(coachFinished).length} 组完成</p><div class="coach-actions">${next >= 0 ? coachLink(`g${next}`, '继续未完成小组') : ''}${!batch.planned ? coachAction('plan', '分析并分组', true, batch.busy) : ''}${!batch.planned && batch.error ? coachAction('singles', '暂时逐词练习') : ''}${batch.items.some(i => i.rating === 'known') ? coachLink('skipped', '查看略过的词') : ''}</div>`;
+  } else if (group && key === 'feedback') {
+    const explanation = group.branch ? `${mdLite(group.branch.reason)}<div class="coach-source">原句线索</div>${mdLite(group.branch.evidence)}` : mdLite(group.first.verdict.explanation || (group.first.verdict.correct ? '这次读对了句意。' : '这次答错了，暂没有可用的对照。'));
+    content = `<h3>作答讲解</h3><p>你的选择：${mdInline(group.first.task.options[group.first.choice])}</p>${explanation}${group.retest ? coachLink(`g${index}:second`, '换语境复测') : coachLink(`g${index}`, '返回本组')}`;
+  } else if (group && key) {
+    content = coachRenderQuestion(coachTaskEntry(group, key), group, key, index, batch.sample);
+  } else if (group) {
+    const next = batch.groups.findIndex((g, i) => i !== index && !coachFinished(g));
+    const resume = group.retest ? 'second' : 'first';
+    content = `<h3>${mdInline(group.title)}</h3>${group.words.length > 1 ? `<div class="coach-terms" lang="en">${group.words.map(mdInline).join(' · ')}</div><div class="coach-source">成组理由</div>${mdLite(group.reason)}<div class="coach-source">练习方向</div>${mdLite(group.exercise)}` : ''}<div class="coach-actions">${group.first ? coachLink(`g${index}:${resume}`, coachFinished(group) ? '查看作答' : '回到练习') : coachAction('begin', '开始作答', true, group.busy)}${coachFinished(group) && next >= 0 ? coachLink(`g${next}`, '下一组') : ''}${batch.sample ? coachAction('sample', '重做例题') : coachLink('plan', '回到分组')}</div>`;
   }
-  askAI(c.dataset.q, !!c.dataset.error);
-}));
+  const error = group?.error || batch.error;
+  detail.innerHTML = `${content}${error ? `<p class="coach-error" role="alert">${esc(error)}</p>` : ''}${group?.expired ? coachAction('begin', '重新开始本组', true, group.busy) : ''}`;
+  if (focus) {
+    detail.tabIndex = -1;
+    detail.focus({ preventScroll: true });
+    if (detail.getBoundingClientRect().top > innerHeight - 90) detail.scrollIntoView({ block: 'start' });
+  }
+}
+
+function coachError(reason) {
+  return ({ no_llm: '请在设置里配置 AI 服务商。', expired: '本组练习已过期，可以重新开始。', busy: '正在处理，请稍后再试。', bad_words: '部分词条格式暂不支持，请调整本轮勾选。' })[reason] || '暂时未能完成，请重试。';
+}
+
+async function planCoachBatch(singles = false) {
+  const batch = coachBatch;
+  const retained = batch.groups.filter(group => group.first);
+  const retainedWords = new Set(retained.flatMap(group => group.words.map(coachChoice)));
+  const words = batch.items.filter(i => i.rating && i.rating !== 'known' && !retainedWords.has(coachChoice(i.word))).map(i => i.word);
+  if (!words.length || batch.busy) return;
+  batch.busy = true;
+  batch.error = '';
+  batch.phase = 'study';
+  batch.active = 'plan';
+  batch.folded.delete('plan');
+  renderCoachMap();
+  try {
+    const out = singles ? { ok: true, groups: words.map(word => ({ title: word, words: [word] })) } : await api('/api/tutor/map', { method: 'POST', body: { action: 'plan', words } });
+    if (!out.ok) batch.error = coachError(out.reason);
+    else {
+      batch.groups = [...retained, ...out.groups];
+      batch.planned = true;
+    }
+  } catch (e) { batch.error = coachError(e.message); }
+  finally { batch.busy = false; if (batch === coachBatch) renderCoachMap(true); }
+}
+
+async function runCoachExercise(action, choice) {
+  const batch = coachBatch;
+  const { group, index, key } = coachCurrentGroup();
+  if (!group || group.busy || (action === 'answer' && (key === 'second' ? group.step !== 2 : group.step !== 1))) return;
+  const id = `g${index}`;
+  group.busy = true; group.error = ''; group.expired = false;
+  renderCoachMap();
+  try {
+    const body = action === 'start' ? { action, words: group.words, goal: [group.reason, group.exercise].filter(Boolean).join('；'), sample: batch.sample } : { action, roundId: group.id, step: group.step, choice };
+    const out = await api('/api/tutor/map', { method: 'POST', body });
+    if (coachBatch !== batch || batch.groups[index] !== group) return;
+    if (!out.ok) { group.expired = out.reason === 'expired'; group.error = coachError(out.reason); return; }
+    const stillHere = coachCurrentGroup().group === group;
+    if (action === 'start') {
+      Object.assign(group, { id: out.roundId, first: { task: out.task }, retest: null, branch: null });
+      if (stillHere) batch.active = id + ':first';
+    } else {
+      const entry = coachTaskEntry(group, key);
+      Object.assign(entry, { choice, verdict: out.verdict });
+      if (key === 'first') { group.branch = out.branch; group.retest = out.task ? { task: out.task } : null; }
+      if (!batch.sample) {
+        const tested = group.words.length > 1 ? entry.task.options[out.verdict.answerIndex] : group.words[0];
+        if (tested) { state.sessionWords.add(tested); if (!out.verdict.correct) state.sessionErrorWords.add(tested); }
+        updateSessionInfo();
+      }
+    }
+    group.step = out.step;
+    if (stillHere) batch.folded.delete(id);
+  } catch (e) { group.error = coachError(e.message); }
+  finally { group.busy = false; if (batch === coachBatch) renderCoachMap(coachCurrentGroup().group === group); }
+}
+
+$('#coachScreenBtn').addEventListener('click', beginCoachScreen);
+$('#coachClearBtn').addEventListener('click', () => { coachSelection.clear(); renderWordList(); });
+$('#coachMap').addEventListener('click', e => {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+  const { coachAction: action, coachNode: node, coachView: view, coachFold: fold, coachChoice: choice, coachRestore: restore } = btn.dataset;
+  if (action === 'pick') { e.stopPropagation(); wordPanelOpen(true); return; }
+  if (action === 'sample') { beginCoachSample(); return; }
+  const batch = coachBatch;
+  if (!batch) return;
+  if (view) { coachView = view; renderCoachMap(); return; }
+  if (fold) { if (batch.folded.has(fold)) batch.folded.delete(fold); else batch.folded.add(fold); renderCoachMap(); [...$$('[data-coach-fold]')].find(b => b.dataset.coachFold === fold)?.focus(); return; }
+  if (node) {
+    batch.active = node; batch.folded.delete(node.split(':')[0]);
+    if (node.startsWith('g')) { batch.folded.delete('round'); batch.folded.delete('plan'); }
+    renderCoachMap(true); return;
+  }
+  if (action === 'begin') { runCoachExercise('start'); return; }
+  if (choice !== undefined) { runCoachExercise('answer', Number(choice)); return; }
+  if (action === 'plan' || action === 'singles') { planCoachBatch(action === 'singles'); return; }
+  if (restore !== undefined && !batch.busy && !batch.groups.some(g => g.busy)) {
+    batch.items[Number(restore)].rating = 'unclear';
+    batch.groups = batch.groups.filter(group => group.first);
+    batch.folded = new Set();
+    batch.planned = false;
+    batch.phase = 'screen';
+    batch.active = 'screen';
+    batch.error = '';
+    renderCoachMap(true); return;
+  }
+  const item = batch.items.find(i => !i.rating);
+  if (item && action === 'reveal') item.revealed = true;
+  else if (item?.revealed && action?.startsWith('rate-')) item.rating = action.slice(5);
+  else return;
+  renderCoachMap(true);
+});
 
 /* ================= v2.4.0：词文成章 —— 选词生成记忆文章 ================= */
 
@@ -1778,7 +2048,7 @@ const storyState = {
   analysis: null,      // v2.4.2: AI词汇分析建议缓存
 };
 const STORY_TIP = {
-  vocab: '词表精读 + AI 教练 + 助记生成，让单词过手入脑',
+  vocab: '选词 · 初筛 · 语境辨析',
   story: '把选中的词写进一篇连贯短文：语境记忆 + 记忆钩子 + 检索自测，三管齐下',
 
 };
@@ -2191,51 +2461,7 @@ $('#storyHistRefresh').addEventListener('click', loadStoryHist);
 
 $('#storyRegenBtn').addEventListener('click', generateStory);
 
-/* v1.0.6：AI 生图助记 —— 结合当前对话场景生成助记图并内联展示 */
-$('#imgGenChip').addEventListener('click', async () => {
-  if (!state.activeWord) {
-    addMsg('ai', '⚠️ 请先在左侧词表选中一个单词，再生成助记图。');
-    return;
-  }
-  const chip = $('#imgGenChip');
-  chip.disabled = true;
-  const loading = addMsg('ai', '🎨 正在结合当前对话场景生成助记图…（首次生成约需 10-30 秒）');
-  loading.classList.add('loading');
-  try {
-    const r = await api('/api/image/gen', {
-      method: 'POST',
-      body: {
-        spelling: state.activeWord,
-        context: state.chatHistory.slice(-8).map(m => ({ role: m.role, content: m.content })),
-      },
-    });
-    loading.classList.remove('loading');
-    loading.innerHTML = `<span class="word-tag">📘 ${esc(state.activeWord)}</span>
-      <div class="img-note">
-        <img src="${esc(r.url)}" alt="${esc(state.activeWord)} 助记图" loading="lazy">
-        ${r.caption ? `<div class="img-caption">🖼️ ${esc(r.caption)}</div>` : ''}
-        <div class="img-prompt">画面提示词：${esc(r.prompt)}</div>
-      </div>`;
-    state.chatHistory.push({
-      role: 'assistant', word: state.activeWord,
-      content: `🎨 生成了「${state.activeWord}」的助记图：${r.caption || ''}`,
-    });
-  } catch (e) {
-    loading.classList.remove('loading');
-    loading.innerHTML = '❌ ' + esc(e.message) + (e.message.includes('生图服务商') ? '（请到 设置 页配置）' : '');
-  } finally {
-    chip.disabled = false;
-  }
-});
 
-/* v1.0.7：联网搜索开关 —— 开启后每次提问先让服务端搜索实时资料注入上下文 */
-$('#webSearchChip').addEventListener('click', () => {
-  state.useSearch = !state.useSearch;
-  $('#webSearchChip').classList.toggle('active', state.useSearch);
-  addMsg('ai', state.useSearch
-    ? '🌐 已开启联网搜索：之后每次提问会先搜索实时资料再回答（需在 设置 页配置搜索服务）。'
-    : '🌐 已关闭联网搜索。');
-});
 
 /* v1.2.0：聊天记录自动持久化 —— 每次 AI 回复后自动保存到服务端 */
 const _chatSaveTimer = { t: null };

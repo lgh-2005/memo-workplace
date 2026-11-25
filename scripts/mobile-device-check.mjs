@@ -130,14 +130,18 @@ async function emulatedChecks() {
         await page.evaluate(async () => {
           if (typeof window.switchTab === 'function') window.switchTab('study');
           await new Promise(resolve => setTimeout(resolve, 150));
+          // v4.2.0：词表改成「悬浮球 + 浮层」，先展开浮层再验证列表可滚动
+          document.querySelector('#wordFab')?.click();
+          await new Promise(resolve => setTimeout(resolve, 250));
           document.querySelector('#wordFilters [data-filter="all"]')?.click();
           await new Promise(resolve => setTimeout(resolve, 250));
         });
         const list = await page.evaluate(() => {
+          const body = document.querySelector('#wordPanel .card-collapse-body');
           const el = document.querySelector('#wordList');
-          if (!el) return null;
-          const rect = el.getBoundingClientRect();
-          return { x: Math.round(rect.left + rect.width / 2), y: Math.round(rect.top + Math.min(40, rect.height - 5)), top: Math.round(rect.top), height: Math.round(rect.height), innerHeight, items: el.querySelectorAll('.word-item').length, scrollTop: el.scrollTop, scrollHeight: el.scrollHeight, clientHeight: el.clientHeight };
+          if (!body || !el) return null;
+          const rect = body.getBoundingClientRect();
+          return { x: Math.round(rect.left + rect.width / 2), y: Math.round(rect.top + Math.min(40, rect.height - 5)), top: Math.round(rect.top), height: Math.round(rect.height), innerHeight, items: el.querySelectorAll('.word-item').length, scrollTop: body.scrollTop, scrollHeight: body.scrollHeight, clientHeight: body.clientHeight };
         });
         let scrolled = false;
         if (list && list.items > 10 && list.y < list.innerHeight - 8 && list.scrollHeight > list.clientHeight) {
@@ -149,9 +153,10 @@ async function emulatedChecks() {
           }
           await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
           await delay(250);
-          scrolled = await page.evaluate(() => document.querySelector('#wordList')?.scrollTop > 40);
+          scrolled = await page.evaluate(() => document.querySelector('#wordPanel .card-collapse-body')?.scrollTop > 40);
         }
         pass('Pixel 7 landscape word list is touch-scrollable above viewport edge', scrolled, JSON.stringify(list));
+        await page.evaluate(() => document.querySelector('#wordPanelClose')?.click());
       }
       await page.evaluate(() => switchTab('settings'));
       await page.locator('#addProvBtn').evaluate(el => { el.closest('details.settings-section').open = true; });
