@@ -4164,13 +4164,18 @@ body.spotlight-active .kb-passage p.spotlight-focus {
 .coach-views [aria-pressed="true"] { background: color-mix(in srgb, var(--primary) 12%, var(--card)); color: var(--primary); }
 .coach-workspace:not([hidden]) { display: grid; gap: 20px; min-width: 0; }
 .coach-tree { min-width: 0; max-height: min(440px, 55vh); overflow: auto; padding: 4px; }
+.coach-map-tools:not([hidden]), .coach-pages { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.coach-map-tools { margin-bottom: -12px; }
+.coach-map-tools .btn { min-width: 44px; min-height: 44px; }
+#coachScale { min-width: 5ch; color: var(--text-sub); text-align: center; font-variant-numeric: tabular-nums; }
+.coach-tree[data-view="map"] { border: 1px solid var(--border); border-radius: 10px; background: var(--bg); touch-action: pan-x pan-y; }
 .coach-tree ul { list-style: none; padding: 0; margin: 0; }
 .coach-tree li { position: relative; min-width: 0; }
 .coach-fold { flex: none; width: 28px; min-height: 44px; font: inherit; color: var(--text-sub); background: var(--card); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
 .coach-tree[data-view="outline"] li > ul { margin-left: 13px; padding: 6px 0 0 12px; border-left: 1px solid var(--border); }
 .coach-tree[data-view="outline"] li > ul > li + li { margin-top: 6px; }
 .coach-tree[data-view="outline"] li > ul > li::before { content: ''; position: absolute; inset: 22px auto auto -12px; width: 12px; border-top: 1px solid var(--border); }
-.coach-tree[data-view="map"] .coach-path { width: max-content; min-width: min(100%, 450px); }
+.coach-tree[data-view="map"] .coach-path { width: max-content; zoom: var(--coach-scale, 1); }
 .coach-tree[data-view="map"] li { display: flex; align-items: center; }
 .coach-tree[data-view="map"] .coach-node-row { flex: 0 0 142px; }
 .coach-tree[data-view="map"] .coach-node { min-width: 0; }
@@ -4199,6 +4204,10 @@ body.spotlight-active .kb-passage p.spotlight-focus {
 .coach-sentence { padding: 12px 14px; border-inline-start: 3px solid var(--primary); background: var(--bg); font-size: 17px; }
 .coach-sentence p, .coach-option-review p { margin: 0; }
 .coach-source { margin-top: 5px; }
+.coach-citation { min-width: 0; margin-bottom: 12px; }
+.coach-detail h4 { margin: 16px 0 6px; }
+.coach-related { border-top: 1px solid var(--border); padding-top: 10px; }
+.coach-pages { margin-bottom: 10px; }
 .coach-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .coach-options { display: grid; gap: 8px; margin: 12px 0; }
 .coach-choice, .coach-option-review { text-align: left; white-space: normal; }
@@ -4215,6 +4224,6 @@ body.spotlight-active .kb-passage p.spotlight-focus {
 .coach-chat .chat-panel.card { height: auto; padding-bottom: 16px; }
 .coach-chat .chat-messages { max-height: 420px; min-height: 135px; }
 @media (max-width: 700px) {
-  .coach-map .btn, .coach-pick-bar .btn { min-height: 44px; }
+  .coach-map .btn, .coach-pick-bar .btn, #coachMoreWords { min-height: 44px; }
   .coach-fold { width: 44px; }
 }

@@ -242,7 +242,7 @@ if (!pw || !pw.chromium) {
   const llm = makeFakeLLM();
   const llmPort = 18565, appPort = 18566;
   await new Promise(r => llm.server.listen(llmPort, '127.0.0.1', r));
-  const sandbox = await makeSandbox(['abandon', 'resilient', 'innovation']);
+  const sandbox = await makeSandbox(['abandon', 'resilient', 'innovation', ...Array.from({ length: 510 }, (_, i) => `pickword${i}`)]);
   const { server, base } = await boot(sandbox, llmPort, appPort, HAS_ECDICT ? REAL_ECDICT : join(sandbox, 'no-ecdict'));
   const browser = await pw.chromium.launch({ headless: true });
   try {
@@ -260,6 +260,14 @@ if (!pw || !pw.chromium) {
 
     let n0 = llm.hits.length;
     await page.click('.word-item[data-sp="abandon"]');
+    await page.fill('#wordSearch', 'pickword');
+    await page.waitForFunction(() => $('#wordFabCount').textContent === '510' && !$('#coachSelectAllBtn').disabled);
+    await page.click('#coachSelectAllBtn');
+    T('全选包含未渲染的 500+ 条结果，并保留筛选外勾选', (await page.locator('#coachSelected').innerText()).includes('511') && await page.locator('#wordList .word-item').count() === 60);
+    await page.click('#coachMoreWords');
+    T('显示更多继承已选状态，取消全选仅影响本次筛选', await page.locator('#wordList .coach-check:checked').count() === 120);
+    await page.click('#coachSelectAllBtn');
+    T('取消全选保留筛选外勾选', (await page.locator('#coachSelected').innerText()).includes('1 词'));
     await page.fill('#wordSearch', 'resilient');
     await page.getByRole('checkbox', { name: '勾选 resilient' }).check();
     await page.fill('#wordSearch', 'innovation');
@@ -290,9 +298,62 @@ if (!pw || !pw.chromium) {
     T('切换到大纲后保留当前组', await page.locator('#coachTree').getAttribute('data-view') === 'outline' && await detail.locator('h3').innerText() === 'innovation');
     await page.locator('#coachTree [data-coach-node="skipped"]').click();
     await detail.getByRole('button', { name: '拉回本轮' }).click();
-    await detail.getByRole('button', { name: '分析并分组' }).click();
+    await detail.getByRole('button', { name: '继续分析剩余词' }).click();
     await page.locator('[data-coach-node="g2"]').waitFor();
-    T('略过的熟词可以拉回参与分组', plans[1].includes('abandon') && plans[1].length === 3);
+    T('略过的熟词可以拉回，不会重新分析已有小组', JSON.stringify(plans[1]) === JSON.stringify(['abandon']));
+
+    const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+    try {
+      await mobile.goto(base + '/', { waitUntil: 'domcontentloaded' });
+      await mobile.locator('.bottom-tab-item[data-tab="study"]').click();
+      await mobile.locator('[data-coach-action="sample"]').click();
+      const tree = mobile.locator('#coachTree');
+      const mobileDetail = mobile.locator('#coachDetail');
+      await mobileDetail.locator('.coach-choice').last().click();
+      await mobileDetail.getByRole('button', { name: '查看讲解' }).click();
+      T('手机默认导图，作答讲解是初题节点的直接子级', await tree.getAttribute('data-view') === 'map' && await tree.locator('li:has(> .coach-node-row [data-coach-node="g0:first"]) > ul > li [data-coach-node="g0:first:feedback"]').count() === 1);
+      await mobileDetail.getByRole('button', { name: '换语境复测' }).click();
+      await mobileDetail.locator('.coach-choice').first().click();
+      await mobileDetail.getByRole('button', { name: '查看讲解' }).click();
+      T('复测讲解挂在复测节点下', await tree.locator('li:has(> .coach-node-row [data-coach-node="g0:second"]) > ul > li [data-coach-node="g0:second:feedback"]').count() === 1);
+      await mobile.locator('[data-coach-zoom="out"]').click();
+      T('按钮缩小导图但不改变当前学习节点', await mobile.locator('#coachScale').innerText() === '80%' && await mobileDetail.locator('h3').innerText() === '作答讲解');
+      await tree.scrollIntoViewIfNeeded();
+      const box = await tree.boundingBox(), cdp = await mobile.context().newCDPSession(mobile);
+      const x = Math.round(box.x + box.width / 2), y = Math.round(box.y + box.height / 2);
+      const drag = (type, n) => cdp.send('Input.dispatchTouchEvent', { type, touchPoints: n ? [{ x: x - n, y, id: 1 }, { x: x + n, y, id: 2 }] : [] });
+      await drag('touchStart', 35);
+      await drag('touchMove', 45);
+      await drag('touchMove', 78);
+      await drag('touchEnd', 0);
+      T('双指拉开会缩放画布，页面无横向溢出', parseInt(await mobile.locator('#coachScale').innerText(), 10) > 80 && await mobile.evaluate(() => document.documentElement.scrollWidth === innerWidth));
+      await mobile.locator('[data-coach-zoom="fit"]').click();
+      T('适应宽度让整个导图进入手机视口', await tree.evaluate(el => el.scrollWidth <= el.clientWidth + 2));
+      await mobile.locator('#wordFab').click();
+      await mobile.fill('#wordSearch', 'pickword1');
+      await mobile.waitForFunction(() => document.querySelector('#wordFabCount').textContent === '111' && !document.querySelector('#coachSelectAllBtn').disabled);
+      await mobile.locator('#coachSelectAllBtn').click();
+      await mobile.locator('#coachScreenBtn').click();
+      await mobileDetail.evaluate(detail => {
+        for (let i = 0; i < 111; i++) {
+          detail.querySelector('[data-coach-action="reveal"]').click();
+          detail.querySelector('[data-coach-action="rate-unclear"]').click();
+        }
+      });
+      const chunks = [];
+      await mobile.route('**/api/tutor/map', async route => {
+        const { words } = route.request().postDataJSON();
+        chunks.push(words);
+        await route.fulfill({ json: chunks.length === 2 ? { ok: false, reason: 'llm_error' } : { ok: true, groups: words.map(word => ({ title: word, words: [word] })) } });
+      });
+      await mobileDetail.getByRole('button', { name: '分析并分组' }).click();
+      await mobileDetail.getByRole('alert').waitFor();
+      await mobileDetail.getByRole('button', { name: '继续分析剩余词' }).click();
+      await mobileDetail.getByText('111 组 · 0 组完成').waitFor();
+      T('大批量分组可从失败的批次续跑，不重复或丢弃已分析的词', chunks.map(c => c.length).join(',') === '48,48,48,15' && JSON.stringify(chunks[1]) === JSON.stringify(chunks[2]) && new Set([...chunks[0], ...chunks[2], ...chunks[3]]).size === 111);
+      await mobileDetail.getByRole('button', { name: '下一页' }).click();
+      T('导图分组分页可浏览后续节点，不把所有组一次渲染出来', await tree.locator('[data-coach-node="g24"]').count() === 1 && await tree.locator('[data-coach-node="g0"]').count() === 0);
+    } finally { await mobile.close(); }
     await page.click('#coachChat > summary');
     await page.fill('#chatInput', '请介绍一下这个词');
     await page.press('#chatInput', 'Enter');

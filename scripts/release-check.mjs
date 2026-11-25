@@ -14,7 +14,7 @@ const appSrc = await readFile(join(root, 'public', 'app.js'), 'utf8');
 const indexHtml = await readFile(join(root, 'public', 'index.html'), 'utf8');
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.1.0'],
+  ['package version', packageJson.version === '4.2.0'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],

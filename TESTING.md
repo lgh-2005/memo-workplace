@@ -1,6 +1,6 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
-> v4.1.0 的 `tutor-drill-smoke.mjs` 有 37 项断言，覆盖分组输出保真、答案保密、错选复测与旧接口兼容。`vocab-chat-smoke.mjs` 另外用 Chromium 验证跨搜索勾选、熟知词略过与拉回、导图与大纲切换。
+> v4.2.0 的 `tutor-drill-smoke.mjs` 有 43 项断言，包括真题语境、来源校验、答案隐藏、交卷还原、复测防提前泄题及超过 80 词的分组。`vocab-chat-smoke.mjs` 用 Chromium 验证 510 词全选、筛选外选词不丢、移动端导图缩放和两层讲解关系。
 
 > 本地预览「v4.2.0」增量：`scripts/tutor-drill-smoke.mjs` 由 **21 项扩到 34 项**，锁死两件本版新增的事——**词表悬浮球**与**词群联动**。新增 13 项：
 > - 前端契约（5 项）：`#wordFab` / `#wordPanel` / `#wordFabCount` 存在；`wordPanelOpen()` 可开可关且 `selectWord()` 里会 `wordPanelOpen(false)`（点词即收起）；`#drillGroupBtn` 在带练控制条内；请求体走 `words` 数组且按词表顺序成组（`drillPickGroup` / `DRILL_GROUP_SIZE`）；通关卡有「下一组 →」与 `drillRepeat()`（整组重练）。

@@ -71,6 +71,10 @@ function makeFakeLLM(kind = 'ok', opts = {}) {
       if (sys.includes('为已经初筛的词分组')) {
         const row = { title: '是否继续执行', reason: 'abandon 是放弃，postpone 是推迟。', exercise: '判断项目取消还是改期。' };
         reply = JSON.stringify({ groups: [{ ...row, ids: [0, 9] }, { ...row, ids: [1, 0] }, { ...row, ids: [1, 2] }, { ids: [2, 3], title: '无成组理由' }] });
+      } else if (sys.includes('你是英语语料学习教练')) {
+        const { sources, goal, previous } = JSON.parse(user);
+        const pick = sources.find(s => s.source === (previous ? 'corpus' : 'exam')) || sources[0];
+        reply = JSON.stringify({ sourceId: goal === 'bad source' ? 999 : pick.id, question: '句中的词是什么意思？', options: ['推迟', '终止'], answerIndex: 1, explanation: '根据原文辨别延期与永久取消，不要把两者混为一谈。', translation: '原句参考译文。', clue: previous ? 'until the safety review concludes' : 'running out of supplies' });
       } else if (sys.includes('为该词组设计')) {
         const { previous } = JSON.parse(user);
         reply = JSON.stringify({ sentence: previous ? 'They will ___ the search until sunrise.' : 'They had to ___ the search permanently.', question: '哪个词符合语境？', answerIndex: previous ? 0 : 1, explanation: previous ? 'until sunrise 表示等到天亮后继续。' : 'permanently 表示永久放弃。' });
@@ -227,6 +231,22 @@ const post = async (base, body) => {
     T('错选提供初题讲解与同组新语境，复测答案不提前返回', groupWrong.ok && !groupWrong.verdict.correct && groupWrong.verdict.explanation.includes('永久') && groupWrong.task.sentence !== groupStart.task.sentence && JSON.stringify(groupWrong.task.options) === JSON.stringify(groupStart.task.options) && !Object.hasOwn(groupWrong.task, 'answerIndex'));
     const groupRetest = await mapPost({ ...reply, roundId: groupStart.roundId, step: 2, choice: 0 });
     T('组题复测判分并结束', groupRetest.ok && groupRetest.step === 0 && groupRetest.verdict.correct && groupRetest.task === null);
+
+    const examSentence = 'The explorers had to abandon the expedition after running out of supplies.';
+    const articleSentence = 'The board decided to postpone the vote until the safety review concludes.';
+    await writeFile(join(sb, 'corpus', 'exams.jsonl'), JSON.stringify({ id: 'exam_fixture', rtype: 'qa_set', title: '真题测试记录', meta: { year: 2025 }, items: [{ type: 'passage', section: 'reading', text: examSentence }] }) + '\n');
+    await writeFile(join(sb, 'corpus', 'records.jsonl'), JSON.stringify({ id: 'import_fixture', rtype: 'article', title: '导入测试记录', text: articleSentence }) + '\n');
+    const corpusStart = await mapPost({ action: 'start', words: ['abandon', 'postpone'] });
+    T('真题语境由服务端原样挖空，只返回来源概要', corpusStart.task?.sentence === examSentence.replace('abandon', '___') && corpusStart.task?.source?.rid === 'exam_fixture' && !Object.hasOwn(corpusStart.task.source, 'sentence') && !Object.hasOwn(corpusStart.task, 'answerIndex'));
+    const corpusAnswer = await mapPost({ action: 'answer', roundId: corpusStart.roundId, step: 1, choice: 0 });
+    T('语料组题采用来源词作为权威答案，交卷还原原文和可核对线索', corpusAnswer.verdict?.correct && corpusAnswer.verdict.source.sentence === examSentence && corpusAnswer.verdict.clue === 'running out of supplies' && !!corpusAnswer.verdict.translation);
+    T('复测改用另一词和语料，延伸阅读不会提前泄露复测原文', corpusAnswer.task?.sentence === articleSentence.replace('postpone', '___') && corpusAnswer.task.source.rid === 'import_fixture' && !corpusAnswer.verdict.related?.some(e => e.rid === 'import_fixture'));
+    const corpusRetest = await mapPost({ action: 'answer', roundId: corpusStart.roundId, step: 2, choice: 1 });
+    T('复测单独交付原句、出处和解释', corpusRetest.step === 0 && corpusRetest.verdict?.correct && corpusRetest.verdict.source.sentence === articleSentence && corpusRetest.verdict.related?.some(e => e.rid === 'exam_fixture'));
+    const invalidSource = await mapPost({ action: 'start', words: ['abandon', 'postpone'], goal: 'bad source' });
+    T('模型伪造来源编号只会降级为明确无出处的自拟题', invalidSource.ok && !invalidSource.task.source && invalidSource.task.sentence !== examSentence);
+    const largePlan = await mapPost({ action: 'plan', words: Array.from({ length: 101 }, (_, i) => `word${i}`) });
+    T('分组 API 不再拒绝超过 80 个词', largePlan.ok && largePlan.groups.flatMap(g => g.words).length === 101);
 
     // ① 开局
     const start = await post(base, { word: 'abandon', stage: 0 });

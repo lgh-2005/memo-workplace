@@ -27,7 +27,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.1.0</span></div>
+  <div class="mobile-brand">🐳 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.2.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -39,7 +39,7 @@
 
 <aside class="sidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
-    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语单词学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.1.0</span></div>
+    <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">🐳 英语单词学习工作台 <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.2.0</span></div>
   </div>
   <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
@@ -110,7 +110,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v4.1.0</span></div>
+      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v4.2.0</span></div>
       <button class="btn" id="logsBackBtn">← 返回</button>
     </div>
     <div class="logs-tabs" id="logsTabs">
@@ -475,10 +475,12 @@
           <input type="text" id="wordSearch" class="input" placeholder="搜索单词或释义…" data-page-node-id="5RYsbeiVWXkq1iv7rmk1cR">
           <div class="coach-pick-bar">
             <span id="coachSelected" role="status">已勾选 0 词</span>
+            <button class="btn small ghost" id="coachSelectAllBtn" type="button" disabled>全选当前结果</button>
             <button class="btn small ghost" id="coachClearBtn" type="button" disabled>清空</button>
             <button class="btn small primary" id="coachScreenBtn" type="button" disabled>开始初筛</button>
           </div>
           <div class="word-list" id="wordList" data-page-node-id="2QnUWaT7eTETCU8maBdUaS"><div class="empty" data-page-node-id="EBQRB4Prl6VdTzqzj5dRCB">请先在仪表盘同步数据</div></div>
+          <button class="btn small ghost full" id="coachMoreWords" type="button" hidden>显示更多</button>
           <div class="session-info" id="sessionInfo" data-page-node-id="PDBFhDxdSklvmO8ThaW0E0">本次会话已学 0 词</div>
           <button class="btn primary full" id="finishBtn" disabled data-page-node-id="Y083OTYkOKbbs4WhjjYymX">结束学习</button>
         </div>
@@ -500,6 +502,12 @@
           </div>
         </header>
         <div class="coach-workspace" id="coachWorkspace" hidden>
+          <div class="coach-map-tools" id="coachMapTools" role="group" aria-label="导图缩放" hidden>
+            <button class="btn small ghost" type="button" data-coach-zoom="out" aria-label="缩小导图">−</button>
+            <output id="coachScale" aria-label="缩放比例">100%</output>
+            <button class="btn small ghost" type="button" data-coach-zoom="in" aria-label="放大导图">+</button>
+            <button class="btn small ghost" type="button" data-coach-zoom="fit">适应宽度</button>
+          </div>
           <nav id="coachTree" class="coach-tree" aria-label="本轮学习路径"></nav>
           <section id="coachDetail" class="coach-detail" aria-label="当前学习节点"></section>
         </div>

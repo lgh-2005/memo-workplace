@@ -1388,21 +1388,34 @@ $$('#wordFilters .chip').forEach(c => c.addEventListener('click', () => {
   loadWords();
 }));
 
-$('#wordSearch').addEventListener('input', debounce(loadWords, 300));
+const loadWordsDebounced = debounce(loadWords, 300);
+$('#wordSearch').addEventListener('input', () => { updateCoachSelection(); loadWordsDebounced(); });
 $('#wordSearch').addEventListener('keydown', e => { if (e.key === 'Enter') loadWords(); });
 
 function debounce(fn, ms) {
   let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
 }
 
+const COACH_WORD_PAGE = 60;
+let wordVisibleCount = COACH_WORD_PAGE, wordRequest = 0, wordResult = null;
+const wordQuery = () => new URLSearchParams({ view: 'coach', filter: state.filter, q: $('#wordSearch').value.trim() }).toString();
+const wordResultReady = () => wordResult === wordQuery();
 async function loadWords() {
+  const request = ++wordRequest;
+  const query = wordQuery();
+  wordResult = null;
+  updateCoachSelection();
   try {
-    const q = $('#wordSearch').value.trim();
-    const d = await api(`/api/words?filter=${state.filter}${q ? '&q=' + encodeURIComponent(q) : ''}`);
+    const d = await api(`/api/words?${query}`);
+    if (request !== wordRequest || query !== wordQuery()) return;
     state.words = d.words;
+    wordResult = query;
+    wordVisibleCount = COACH_WORD_PAGE;
     renderWordList();
     fetchGlosses();   // 后台补释义，不阻塞列表
   } catch (e) {
+    if (request !== wordRequest || query !== wordQuery()) return;
+    $('#coachMoreWords').hidden = true;
     $('#wordList').innerHTML = `<div class="empty">${esc(e.message)}</div>`;
   }
 }
@@ -1415,7 +1428,12 @@ async function fetchGlosses() {
     const r = await api('/api/gloss', { method: 'POST', body: { spellings: need } });
     const got = r.glosses || {};
     if (!Object.keys(got).length) return;
-    state.words.forEach(w => { if (got[w.spelling]) w.gloss = got[w.spelling]; });
+    state.words.forEach(w => {
+      if (!got[w.spelling]) return;
+      w.gloss = got[w.spelling];
+      const selected = coachSelection.get(coachChoice(w.spelling));
+      if (selected && !selected.gloss) selected.gloss = w.gloss.gloss || '';
+    });
     if ($('#tab-study').classList.contains('active')) renderWordList();
   } catch { /* 释义是增强功能，获取失败不影响主流程 */ }
 }
@@ -1424,6 +1442,9 @@ function renderWordList() {
   updateCoachSelection();
   const list = $('#wordList');
   const total = state.words.length;
+  const more = $('#coachMoreWords');
+  more.hidden = total <= wordVisibleCount;
+  more.textContent = `显示更多（${Math.min(total, wordVisibleCount)}/${total}）`;
   const fabCount = $('#wordFabCount'), panelCount = $('#wordPanelCount');
   if (fabCount) fabCount.textContent = String(total);
   if (panelCount) panelCount.textContent = total ? `· ${total} 词` : '';
@@ -1432,7 +1453,7 @@ function renderWordList() {
     return;
   }
   const todayStr = bjDate();
-  list.innerHTML = state.words.map(w => {
+  list.innerHTML = state.words.slice(0, wordVisibleCount).map(w => {
     let badge = '';
     if (w.tags?.includes('STICKING') || w.quizResponse === 'FORGET') badge = '<span class="badge sticky">顽固</span>';
     else if (w.today?.date === todayStr && w.today?.isNew) badge = '<span class="badge new">新词</span>';
@@ -1504,9 +1525,9 @@ document.addEventListener('keydown', (e) => {
 });
 
 function selectWord(spelling, row) {
+  if (!wordResultReady()) { row.querySelector('.coach-check').checked = coachSelection.has(coachChoice(spelling)); return; }
   const key = coachChoice(spelling);
   if (coachSelection.has(key)) coachSelection.delete(key);
-  else if (coachSelection.size >= COACH_PICK_LIMIT) toast('本轮最多勾选 80 词');
   else {
     const word = state.words.find(w => w.spelling === spelling);
     coachSelection.set(key, { word: spelling, gloss: word?.gloss?.gloss || '' });
@@ -1813,10 +1834,12 @@ $('#chatInput').addEventListener('keydown', e => {
 });
 
 /* 同一批次、同一节点状态供横向导图与大纲使用。 */
-const COACH_PICK_LIMIT = 80;
 const coachSelection = new Map();
 let coachBatch = null;
-let coachView = matchMedia('(max-width: 700px)').matches ? 'outline' : 'map';
+let coachView = 'map';
+let coachScale = 1;
+const COACH_GROUP_PAGE = 24;
+const COACH_PLAN_CHUNK = 48;
 
 function resetCoachMap() {
   coachBatch = null;
@@ -1826,12 +1849,17 @@ function resetCoachMap() {
   renderCoachMap();
 }
 
-function coachChoice(word) { return word.toLowerCase(); }
+function coachChoice(word) { return word.trim().replace(/’/g, "'").replace(/\s+/g, ' ').toLowerCase(); }
 function updateCoachSelection() {
   const count = coachSelection.size;
   $('#coachSelected').textContent = `已勾选 ${count} 词`;
   $('#coachScreenBtn').disabled = !count;
   $('#coachClearBtn').disabled = !count;
+  const all = $('#coachSelectAllBtn');
+  all.disabled = !wordResultReady() || !state.words.length;
+  const checked = !all.disabled && state.words.every(w => coachSelection.has(coachChoice(w.spelling)));
+  all.textContent = checked ? '取消全选当前结果' : '全选当前结果';
+  all.setAttribute('aria-pressed', String(checked));
 }
 
 function beginCoachScreen() {
@@ -1847,16 +1875,19 @@ function beginCoachSample() {
   runCoachExercise('start');
 }
 
-function coachTaskEntry(group, key) { return key === 'second' ? group.retest : group.first; }
+function coachTaskEntry(group, key) { return key.startsWith('second') ? group.retest : group.first; }
 function coachCurrentGroup(batch = coachBatch) {
-  const match = /^g(\d+)(?::(first|second|feedback))?$/.exec(batch?.active || '');
+  const match = /^g(\d+)(?::((?:first|second)(?::feedback)?))?$/.exec(batch?.active || '');
   return match ? { index: Number(match[1]), group: batch.groups[Number(match[1])], key: match[2] } : {};
 }
+
+const coachInline = value => mdInline(esc(value));
+const coachQuote = value => `<p>${esc(value)}</p>`;
 
 function coachNode(id, title, meta, children = []) {
   const expanded = !coachBatch.folded.has(id);
   const fold = children.length ? `<button class="coach-fold" type="button" data-coach-fold="${id}" aria-label="${expanded ? '折叠' : '展开'}${esc(title)}" aria-expanded="${expanded}">${expanded ? '−' : '+'}</button>` : '';
-  return `<li><div class="coach-node-row">${fold}<button class="coach-node" type="button" data-coach-node="${id}" aria-pressed="${id === coachBatch.active}"><span class="coach-node-title">${mdInline(title)}</span>${meta ? `<span class="coach-node-meta">${esc(meta)}</span>` : ''}</button></div>${children.length && expanded ? `<ul>${children.join('')}</ul>` : ''}</li>`;
+  return `<li><div class="coach-node-row">${fold}<button class="coach-node" type="button" data-coach-node="${id}" aria-pressed="${id === coachBatch.active}"><span class="coach-node-title">${coachInline(title)}</span>${meta ? `<span class="coach-node-meta">${esc(meta)}</span>` : ''}</button></div>${children.length && expanded ? `<ul>${children.join('')}</ul>` : ''}</li>`;
 }
 
 const coachAction = (id, label, primary = false, disabled = false) => `<button type="button" class="btn ${primary ? 'primary' : 'ghost'}" data-coach-action="${id}" ${disabled ? 'disabled' : ''}>${label}</button>`;
@@ -1867,12 +1898,14 @@ const coachFinished = group => group.first?.verdict && (!group.retest || group.r
 function coachRenderTree(batch) {
   const screened = batch.items.filter(i => i.rating).length;
   const skipped = batch.items.filter(i => i.rating === 'known').length;
-  const groups = batch.groups.map((group, index) => {
+  const start = (batch.groupPage || 0) * COACH_GROUP_PAGE;
+  const groups = batch.groups.slice(start, start + COACH_GROUP_PAGE).map((group, offset) => {
+    const index = start + offset;
     const id = `g${index}`;
     const nodes = [];
-    if (group.first) nodes.push(coachNode(id + ':first', '语境练习', coachResult(group.first)));
-    if (group.first?.verdict || group.branch) nodes.push(coachNode(id + ':feedback', '作答讲解', group.branch?.term || ''));
-    if (group.retest) nodes.push(coachNode(id + ':second', '换语境复测', coachResult(group.retest)));
+    for (const [key, entry, title] of [['first', group.first, '语境练习'], ['second', group.retest, '换语境复测']]) {
+      if (entry) nodes.push(coachNode(`${id}:${key}`, title, coachResult(entry), entry.verdict ? [coachNode(`${id}:${key}:feedback`, '作答讲解', '')] : []));
+    }
     const status = coachFinished(group) ? (group.retest || group.first).verdict.correct ? '本次辨对' : '仍需复练' : group.first ? '进行中' : '待开始';
     return coachNode(id, group.title, `${group.words.length} 词 · ${status}`, nodes);
   });
@@ -1884,12 +1917,29 @@ function coachRenderTree(batch) {
 
 function coachRenderQuestion(entry, group, key, index, sample) {
   const options = entry.task.options.map((text, i) => {
-    if (!entry.verdict) return `<button class="btn coach-choice" type="button" data-coach-choice="${i}" ${group.busy ? 'disabled' : ''}>${mdInline(text)}</button>`;
+    if (!entry.verdict) return `<button class="btn coach-choice" type="button" data-coach-choice="${i}" ${group.busy ? 'disabled' : ''}>${coachInline(text)}</button>`;
     const label = [i === entry.verdict.answerIndex ? '正确答案' : '', i === entry.choice ? '你的选择' : ''].filter(Boolean).join(' · ');
     return `<div class="coach-option-review${label ? ' marked' : ''}">${mdLite(text)}${label ? `<span>${label}</span>` : ''}</div>`;
   }).join('');
-  const next = key === 'first' ? coachLink(`g${index}:feedback`, '查看讲解') : coachLink(`g${index}`, '返回本组');
-  return `<h3>${mdInline(entry.task.question)}</h3><div lang="en" class="coach-sentence">${mdLite(entry.task.sentence)}</div><div class="coach-source">${sample ? '固定例题' : 'AI 自拟语境'}</div><div class="coach-options">${options}</div>${key === 'second' && entry.verdict?.explanation ? mdLite(entry.verdict.explanation) : ''}${entry.verdict ? next : ''}`;
+  return `<h3>${coachInline(entry.task.question)}</h3><div lang="en" class="coach-sentence">${coachQuote(entry.task.sentence)}</div><div class="coach-source">${entry.task.source ? esc(coachSourceLabel(entry.task.source)) : sample ? '固定例题' : 'AI 自拟语境'}</div><div class="coach-options">${options}</div>${entry.verdict ? coachLink(`g${index}:${key}:feedback`, '查看讲解') : ''}`;
+}
+
+function coachSourceLabel(source) {
+  return [{ exam: '真题', external: '外刊', corpus: '导入语料' }[source.sourceKind], source.title || source.publication, source.section, source.number].filter(Boolean).join(' · ');
+}
+
+function coachRenderEvidence(source, primary = false) {
+  const valid = source.rid && ['exam', 'external', 'corpus'].includes(source.sourceKind);
+  return `<div class="coach-citation"><div class="coach-source">${esc(coachSourceLabel(source))}</div><div lang="en" class="${primary ? 'coach-sentence' : ''}">${coachQuote(source.sentence)}</div>${valid ? `<button type="button" class="btn small ghost" data-coach-rid="${esc(source.rid)}" data-coach-source-kind="${source.sourceKind}">查看出处</button>` : ''}</div>`;
+}
+
+function coachRenderFeedback(group, key, index) {
+  const entry = coachTaskEntry(group, key), verdict = entry.verdict;
+  const branch = key.startsWith('first') ? group.branch : null;
+  const breakdown = branch ? `${mdLite(branch.reason)}<h4>原句线索</h4>${mdLite(branch.evidence)}` : mdLite(verdict.explanation || (verdict.correct ? '这次读对了句意。' : '这次答错了，暂没有可用的对照。'));
+  const evidence = verdict.source ? `<h4>语料原句</h4>${coachRenderEvidence(verdict.source, true)}${verdict.translation ? `<h4>参考译文</h4>${mdLite(verdict.translation)}` : ''}${verdict.clue ? `<h4>判断线索</h4><div lang="en">${coachQuote(verdict.clue)}</div>` : ''}` : '';
+  const related = verdict.related?.length ? `<h4>延伸阅读 · 对照用法</h4>${verdict.related.map(item => `<div class="coach-related"><strong lang="en">${coachInline(item.word)}</strong>${coachRenderEvidence(item)}</div>`).join('')}` : '';
+  return `<h3>作答讲解</h3><p>你的选择：${coachInline(entry.task.options[entry.choice])}</p><p>正确答案：${coachInline(entry.task.options[verdict.answerIndex])}</p>${evidence}<h4>辨析</h4>${breakdown}<div class="coach-actions">${key.startsWith('first') && group.retest ? coachLink(`g${index}:second`, '换语境复测') : coachLink(`g${index}`, '返回本组')}</div>${related}`;
 }
 
 function renderCoachMap(focus = false) {
@@ -1897,40 +1947,45 @@ function renderCoachMap(focus = false) {
   $('#coachEmpty').hidden = !!batch;
   $('#coachWorkspace').hidden = !batch;
   $('#coachViews').hidden = !batch;
+  $('#coachMapTools').hidden = !batch || coachView !== 'map';
   const detail = $('#coachDetail');
   if (!batch) { $('#coachTree').replaceChildren(); detail.replaceChildren(); $('#coachStatus').textContent = ''; return; }
   const tree = $('#coachTree');
   tree.dataset.view = coachView;
   for (const btn of $$('#coachViews [data-coach-view]')) btn.setAttribute('aria-pressed', String(btn.dataset.coachView === coachView));
+  const left = tree.scrollLeft, top = tree.scrollTop;
   tree.innerHTML = coachRenderTree(batch);
+  tree.style.setProperty('--coach-scale', coachScale);
+  tree.scrollLeft = left;
+  tree.scrollTop = top;
   const { group, index, key } = coachCurrentGroup();
-  $('#coachStatus').textContent = batch.busy ? '正在分析词汇关系…' : group?.busy ? (group.first ? '正在处理作答…' : '正在生成语境题…') : batch.sample ? '例题 · 固定内容' : '';
+  $('#coachStatus').textContent = batch.busy ? `正在分析词汇关系 · ${batch.plannedCount}/${batch.planTotal} 词` : group?.busy ? (group.first ? '正在处理作答…' : '正在生成语境题…') : batch.sample ? '例题 · 固定内容' : '';
   let content = '';
   if (batch.active === 'round') {
     content = `<h3>本轮学习</h3><p>${batch.items.length} 词 · ${batch.groups.filter(coachFinished).length}/${batch.groups.length} 组已完成</p>${coachLink(batch.phase === 'screen' ? 'screen' : 'plan', '继续学习')}${coachAction('pick', '打开词表')}`;
   } else if (batch.active === 'skipped') {
-    const rows = batch.items.map((item, i) => item.rating === 'known' ? `<li><span>${mdInline(item.word)}</span><button type="button" class="btn ghost" data-coach-restore="${i}">拉回本轮</button></li>` : '').join('');
+    const rows = batch.items.map((item, i) => item.rating === 'known' ? `<li><span>${coachInline(item.word)}</span><button type="button" class="btn ghost" data-coach-restore="${i}">拉回本轮</button></li>` : '').join('');
     content = `<h3>本轮略过</h3><ul class="coach-review-list">${rows || '<li>没有略过的词</li>'}</ul>${coachLink(batch.phase === 'screen' ? 'screen' : 'plan', '返回')}`;
   } else if (batch.active === 'screen') {
     const item = batch.items.find(i => !i.rating);
     if (!item) {
       const known = batch.items.filter(i => i.rating === 'known').length;
-      content = `<h3>初筛完成</h3><p>保留 ${batch.items.length - known} 词，略过 ${known} 词。</p><div class="coach-actions">${known < batch.items.length && batch.phase === 'screen' ? coachAction('plan', '分析并分组', true, batch.busy) : ''}${known ? coachLink('skipped', '查看略过的词') : ''}${batch.phase === 'study' ? coachLink('plan', '查看学习分组') : ''}</div>`;
+      content = `<h3>初筛完成</h3><p>保留 ${batch.items.length - known} 词，略过 ${known} 词。</p><div class="coach-actions">${known < batch.items.length && batch.phase === 'screen' ? coachAction('plan', batch.groups.length ? '继续分析剩余词' : '分析并分组', true, batch.busy) : ''}${known ? coachLink('skipped', '查看略过的词') : ''}${batch.phase === 'study' ? coachLink('plan', '查看学习分组') : ''}</div>`;
     } else {
-      content = `<h3>回想词义 · ${batch.items.indexOf(item) + 1}/${batch.items.length}</h3><div class="coach-recall" lang="en">${mdInline(item.word)}</div>${item.revealed ? `<div class="coach-sentence">${mdLite(item.gloss || '暂无词表释义')}</div><div class="coach-actions">${coachAction('rate-known', '熟知')}${coachAction('rate-unclear', '模糊', true)}${coachAction('rate-unknown', '不会')}</div>` : coachAction('reveal', '揭晓释义', true)}`;
+      content = `<h3>回想词义 · ${batch.items.indexOf(item) + 1}/${batch.items.length}</h3><div class="coach-recall" lang="en">${coachInline(item.word)}</div>${item.revealed ? `<div class="coach-sentence">${mdLite(item.gloss || '暂无词表释义')}</div><div class="coach-actions">${coachAction('rate-known', '熟知')}${coachAction('rate-unclear', '模糊', true)}${coachAction('rate-unknown', '不会')}</div>` : coachAction('reveal', '揭晓释义', true)}`;
     }
   } else if (batch.active === 'plan') {
     const next = batch.groups.findIndex(g => !coachFinished(g));
-    content = `<h3>学习分组</h3><p>${batch.groups.length} 组 · ${batch.groups.filter(coachFinished).length} 组完成</p><div class="coach-actions">${next >= 0 ? coachLink(`g${next}`, '继续未完成小组') : ''}${!batch.planned ? coachAction('plan', '分析并分组', true, batch.busy) : ''}${!batch.planned && batch.error ? coachAction('singles', '暂时逐词练习') : ''}${batch.items.some(i => i.rating === 'known') ? coachLink('skipped', '查看略过的词') : ''}</div>`;
-  } else if (group && key === 'feedback') {
-    const explanation = group.branch ? `${mdLite(group.branch.reason)}<div class="coach-source">原句线索</div>${mdLite(group.branch.evidence)}` : mdLite(group.first.verdict.explanation || (group.first.verdict.correct ? '这次读对了句意。' : '这次答错了，暂没有可用的对照。'));
-    content = `<h3>作答讲解</h3><p>你的选择：${mdInline(group.first.task.options[group.first.choice])}</p>${explanation}${group.retest ? coachLink(`g${index}:second`, '换语境复测') : coachLink(`g${index}`, '返回本组')}`;
+    const page = batch.groupPage || 0, pages = Math.ceil(batch.groups.length / COACH_GROUP_PAGE);
+    content = `<h3>学习分组</h3><p>${batch.groups.length} 组 · ${batch.groups.filter(coachFinished).length} 组完成</p>${pages > 1 ? `<div class="coach-actions coach-pages" aria-label="小组分页">${coachAction('prev-page', '上一页', false, page === 0)}<span>${page + 1}/${pages}</span>${coachAction('next-page', '下一页', false, page + 1 >= pages)}</div>` : ''}<div class="coach-actions">${next >= 0 ? coachLink(`g${next}`, '继续未完成小组') : ''}${!batch.planned ? coachAction('plan', batch.groups.length ? '继续分析剩余词' : '分析并分组', true, batch.busy) : ''}${!batch.planned && batch.error ? coachAction('singles', '剩余词暂时逐词练习') : ''}${batch.items.some(i => i.rating === 'known') ? coachLink('skipped', '查看略过的词') : ''}</div>`;
+  } else if (group && key?.endsWith(':feedback')) {
+    content = coachRenderFeedback(group, key, index);
   } else if (group && key) {
     content = coachRenderQuestion(coachTaskEntry(group, key), group, key, index, batch.sample);
   } else if (group) {
     const next = batch.groups.findIndex((g, i) => i !== index && !coachFinished(g));
     const resume = group.retest ? 'second' : 'first';
-    content = `<h3>${mdInline(group.title)}</h3>${group.words.length > 1 ? `<div class="coach-terms" lang="en">${group.words.map(mdInline).join(' · ')}</div><div class="coach-source">成组理由</div>${mdLite(group.reason)}<div class="coach-source">练习方向</div>${mdLite(group.exercise)}` : ''}<div class="coach-actions">${group.first ? coachLink(`g${index}:${resume}`, coachFinished(group) ? '查看作答' : '回到练习') : coachAction('begin', '开始作答', true, group.busy)}${coachFinished(group) && next >= 0 ? coachLink(`g${next}`, '下一组') : ''}${batch.sample ? coachAction('sample', '重做例题') : coachLink('plan', '回到分组')}</div>`;
+    content = `<h3>${coachInline(group.title)}</h3>${group.words.length > 1 ? `<div class="coach-terms" lang="en">${group.words.map(coachInline).join(' · ')}</div><div class="coach-source">成组理由</div>${mdLite(group.reason)}<div class="coach-source">练习方向</div>${mdLite(group.exercise)}` : ''}<div class="coach-actions">${group.first ? coachLink(`g${index}:${resume}`, coachFinished(group) ? '查看作答' : '回到练习') : coachAction('begin', '开始作答', true, group.busy)}${coachFinished(group) && next >= 0 ? coachLink(`g${next}`, '下一组') : ''}${batch.sample ? coachAction('sample', '重做例题') : coachLink('plan', '回到分组')}</div>`;
   }
   const error = group?.error || batch.error;
   detail.innerHTML = `${content}${error ? `<p class="coach-error" role="alert">${esc(error)}</p>` : ''}${group?.expired ? coachAction('begin', '重新开始本组', true, group.busy) : ''}`;
@@ -1947,7 +2002,7 @@ function coachError(reason) {
 
 async function planCoachBatch(singles = false) {
   const batch = coachBatch;
-  const retained = batch.groups.filter(group => group.first);
+  const retained = batch.groups;
   const retainedWords = new Set(retained.flatMap(group => group.words.map(coachChoice)));
   const words = batch.items.filter(i => i.rating && i.rating !== 'known' && !retainedWords.has(coachChoice(i.word))).map(i => i.word);
   if (!words.length || batch.busy) return;
@@ -1956,14 +2011,21 @@ async function planCoachBatch(singles = false) {
   batch.phase = 'study';
   batch.active = 'plan';
   batch.folded.delete('plan');
+  batch.folded.delete('round');
+  batch.plannedCount = retainedWords.size;
+  batch.planTotal = retainedWords.size + words.length;
   renderCoachMap();
   try {
-    const out = singles ? { ok: true, groups: words.map(word => ({ title: word, words: [word] })) } : await api('/api/tutor/map', { method: 'POST', body: { action: 'plan', words } });
-    if (!out.ok) batch.error = coachError(out.reason);
-    else {
-      batch.groups = [...retained, ...out.groups];
-      batch.planned = true;
+    for (let start = 0; start < words.length; start += COACH_PLAN_CHUNK) {
+      const chunk = words.slice(start, start + COACH_PLAN_CHUNK);
+      const out = singles ? { ok: true, groups: chunk.map(word => ({ title: word, words: [word] })) } : await api('/api/tutor/map', { method: 'POST', body: { action: 'plan', words: chunk } });
+      if (batch !== coachBatch) return;
+      if (!out.ok) { batch.error = coachError(out.reason); return; }
+      batch.groups.push(...out.groups);
+      batch.plannedCount += chunk.length;
+      if (!singles) renderCoachMap();
     }
+    batch.planned = true;
   } catch (e) { batch.error = coachError(e.message); }
   finally { batch.busy = false; if (batch === coachBatch) renderCoachMap(true); }
 }
@@ -1971,7 +2033,7 @@ async function planCoachBatch(singles = false) {
 async function runCoachExercise(action, choice) {
   const batch = coachBatch;
   const { group, index, key } = coachCurrentGroup();
-  if (!group || group.busy || (action === 'answer' && (key === 'second' ? group.step !== 2 : group.step !== 1))) return;
+  if (!group || group.busy || (action === 'answer' && ((!['first', 'second'].includes(key)) || coachTaskEntry(group, key)?.verdict || (key === 'second' ? group.step !== 2 : group.step !== 1)))) return;
   const id = `g${index}`;
   group.busy = true; group.error = ''; group.expired = false;
   renderCoachMap();
@@ -1995,13 +2057,56 @@ async function runCoachExercise(action, choice) {
       }
     }
     group.step = out.step;
-    if (stillHere) batch.folded.delete(id);
+    if (stillHere) {
+      batch.folded.delete(id);
+      if (action === 'answer') batch.folded.delete(`${id}:${key}`);
+    }
   } catch (e) { group.error = coachError(e.message); }
   finally { group.busy = false; if (batch === coachBatch) renderCoachMap(coachCurrentGroup().group === group); }
 }
 
 $('#coachScreenBtn').addEventListener('click', beginCoachScreen);
 $('#coachClearBtn').addEventListener('click', () => { coachSelection.clear(); renderWordList(); });
+$('#coachSelectAllBtn').addEventListener('click', () => {
+  if (!wordResultReady() || !state.words.length) return;
+  const clear = state.words.every(w => coachSelection.has(coachChoice(w.spelling)));
+  for (const w of state.words) {
+    const key = coachChoice(w.spelling);
+    if (clear) coachSelection.delete(key);
+    else if (!coachSelection.has(key)) coachSelection.set(key, { word: w.spelling, gloss: w.gloss?.gloss || '' });
+  }
+  renderWordList();
+});
+$('#coachMoreWords').addEventListener('click', () => { if (wordResultReady()) { wordVisibleCount += COACH_WORD_PAGE; renderWordList(); } });
+
+const coachViewport = $('#coachTree');
+function setCoachZoom(scale, x = coachViewport.clientWidth / 2, y = coachViewport.clientHeight / 2, anchorX = x, anchorY = y) {
+  const next = Math.min(2, Math.max(.25, scale));
+  const left = (coachViewport.scrollLeft + anchorX) / coachScale;
+  const top = (coachViewport.scrollTop + anchorY) / coachScale;
+  coachScale = next;
+  coachViewport.style.setProperty('--coach-scale', next);
+  $('#coachScale').textContent = `${Math.round(next * 100)}%`;
+  coachViewport.scrollLeft = left * next - x;
+  coachViewport.scrollTop = top * next - y;
+}
+let coachPinch = null;
+// Native one-finger scrolling; intercept only a two-finger gesture inside the map.
+coachViewport.addEventListener('touchmove', e => {
+  if (coachView !== 'map' || e.touches.length !== 2 || !e.cancelable) return;
+  e.preventDefault();
+  const [a, b] = [e.touches[0], e.touches[1]], rect = coachViewport.getBoundingClientRect();
+  const x = (a.clientX + b.clientX) / 2 - rect.left, y = (a.clientY + b.clientY) / 2 - rect.top;
+  const distance = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+  if (coachPinch?.distance > 0) setCoachZoom(coachScale * distance / coachPinch.distance, x, y, coachPinch.x, coachPinch.y);
+  coachPinch = { x, y, distance };
+}, { passive: false });
+for (const type of ['touchend', 'touchcancel']) coachViewport.addEventListener(type, () => { coachPinch = null; });
+coachViewport.addEventListener('keydown', e => {
+  if (coachView !== 'map' || !['+', '=', '-'].includes(e.key)) return;
+  e.preventDefault();
+  setCoachZoom(coachScale * (e.key === '-' ? .8 : 1.25));
+});
 $('#coachMap').addEventListener('click', e => {
   const btn = e.target.closest('button');
   if (!btn) return;
@@ -2010,11 +2115,33 @@ $('#coachMap').addEventListener('click', e => {
   if (action === 'sample') { beginCoachSample(); return; }
   const batch = coachBatch;
   if (!batch) return;
+  if (btn.dataset.coachRid) { switchTab('kb'); openKbRecord(btn.dataset.coachRid, btn.dataset.coachSourceKind); return; }
+  const zoom = btn.dataset.coachZoom;
+  if (zoom) {
+    if (zoom === 'fit') {
+      const path = coachViewport.querySelector('.coach-path');
+      if (path) setCoachZoom(Math.min(1, (coachViewport.clientWidth - 10) * coachScale / path.getBoundingClientRect().width), 0, 0);
+      coachViewport.scrollLeft = 0;
+    } else setCoachZoom(coachScale * (zoom === 'in' ? 1.25 : .8));
+    return;
+  }
+  if (action === 'prev-page' || action === 'next-page') {
+    batch.groupPage = (batch.groupPage || 0) + (action === 'next-page' ? 1 : -1);
+    coachViewport.scrollTo(0, 0);
+    renderCoachMap();
+    return;
+  }
   if (view) { coachView = view; renderCoachMap(); return; }
   if (fold) { if (batch.folded.has(fold)) batch.folded.delete(fold); else batch.folded.add(fold); renderCoachMap(); [...$$('[data-coach-fold]')].find(b => b.dataset.coachFold === fold)?.focus(); return; }
   if (node) {
-    batch.active = node; batch.folded.delete(node.split(':')[0]);
-    if (node.startsWith('g')) { batch.folded.delete('round'); batch.folded.delete('plan'); }
+    batch.active = node;
+    const parts = node.split(':');
+    for (let i = 1; i <= parts.length; i++) batch.folded.delete(parts.slice(0, i).join(':'));
+    if (node !== 'round') batch.folded.delete('round');
+    if (/^g\d+$/.test(parts[0])) {
+      batch.folded.delete('plan');
+      batch.groupPage = Math.floor(Number(parts[0].slice(1)) / COACH_GROUP_PAGE);
+    }
     renderCoachMap(true); return;
   }
   if (action === 'begin') { runCoachExercise('start'); return; }
@@ -2022,8 +2149,6 @@ $('#coachMap').addEventListener('click', e => {
   if (action === 'plan' || action === 'singles') { planCoachBatch(action === 'singles'); return; }
   if (restore !== undefined && !batch.busy && !batch.groups.some(g => g.busy)) {
     batch.items[Number(restore)].rating = 'unclear';
-    batch.groups = batch.groups.filter(group => group.first);
-    batch.folded = new Set();
     batch.planned = false;
     batch.phase = 'screen';
     batch.active = 'screen';
@@ -3744,13 +3869,13 @@ async function kbAppendExamReading(rid) {
   } catch { /* 解析缺失或接口失败时静默降级 */ }
 }
 
-async function openKbRecord(rid) {
+async function openKbRecord(rid, sourceKind) {
   const card = $('#kbDetailCard');
   card.style.display = 'block';
   $('#kbDetail').innerHTML = '<div class="hint">加载中…</div>';
   try {
-    const isExamRec = !!(kbState.examIds && kbState.examIds.has(rid));
-    const r = await api('/api/kb/' + (isExamRec ? 'exam/' : 'record/') + rid);
+    const isExamRec = sourceKind ? sourceKind === 'exam' : !!kbState.examIds?.has(rid);
+    const r = await api('/api/kb/' + (isExamRec ? 'exam/' : 'record/') + encodeURIComponent(rid));
     const rec = r.record;
     kbDetailState = { prefix: 'kb', id: rid, rec: null };
     kbCloseEditor();
