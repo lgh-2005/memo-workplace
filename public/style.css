@@ -4227,3 +4227,18 @@ body.spotlight-active .kb-passage p.spotlight-focus {
   .coach-map .btn, .coach-pick-bar .btn, #coachMoreWords { min-height: 44px; }
   .coach-fold { width: 44px; }
 }
+
+/* 词汇微课 */
+.coach-sentence mark { background: var(--yellow, #ffe396); color: #242019; border-radius: .15em; padding-inline: .1em; }
+.coach-contrast { border-inline-start: 2px solid var(--border); padding-inline-start: .6rem; }
+.coach-lesson-answer { display: grid; gap: .5rem; margin-block: 1rem; min-width: 0; }
+.coach-lesson-answer textarea {
+  width: 100%; min-height: 100px; padding: .7rem; resize: vertical;
+  color: var(--text); background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  font: inherit; font-size: max(1em, 16px);
+}
+.coach-lesson-answer textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.coach-lesson-hint { border-inline-start: 2px solid var(--accent); padding-inline-start: .6rem; }
+.coach-last-feedback summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; }
+.coach-node:disabled { opacity: .55; cursor: default; }
+.coach-lesson-result { font-weight: 700; }

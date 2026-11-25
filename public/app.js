@@ -1871,29 +1871,46 @@ function beginCoachScreen() {
 }
 
 function beginCoachSample() {
-  coachBatch = { phase: 'study', sample: true, planned: true, items: [{ word: 'address a problem', rating: 'unclear' }], active: 'g0', folded: new Set(), groups: [{ title: 'address a problem', words: ['address a problem'] }] };
-  runCoachExercise('start');
+  coachBatch = {
+    phase: 'study', sample: true, planned: true,
+    items: ['address', 'solve'].map(word => ({ word, rating: 'unclear' })),
+    active: 'g0', folded: new Set(), groups: [{ title: 'address / solve', words: ['address', 'solve'] }],
+  };
+  runCoachLesson('start');
 }
 
-function coachTaskEntry(group, key) { return key.startsWith('second') ? group.retest : group.first; }
+const coachLessonTitles = { demo: '老师示范', guided: '跟着辨别', recall: '合上讲解回想', transfer: '换语境验证', retry: '再换一段语境' };
+const coachLessonResults = { independent: '独立答对', assisted: '提示后答对', needs_work: '仍需补教' };
+const coachFinished = group => group.lessonStage === 'done';
+
 function coachCurrentGroup(batch = coachBatch) {
-  const match = /^g(\d+)(?::((?:first|second)(?::feedback)?))?$/.exec(batch?.active || '');
-  return match ? { index: Number(match[1]), group: batch.groups[Number(match[1])], key: match[2] } : {};
+  const match = /^g(\d+)(?::(demo|guided|recall|transfer|retry)(:feedback)?)?$/.exec(batch?.active || '');
+  if (!match) return {};
+  const index = Number(match[1]);
+  return { index, group: batch.groups[index], key: match[2], feedback: Boolean(match[3]) };
+}
+
+function coachLessonBlind(group) {
+  return ['recall', 'transfer', 'retry'].includes(group.currentNode) && !coachFinished(group) && !group.result;
 }
 
 const coachInline = value => mdInline(esc(value));
 const coachQuote = value => `<p>${esc(value)}</p>`;
+function coachMarkedSentence(sentence, clue) {
+  const at = sentence.indexOf(clue);
+  if (!clue || at < 0) return coachQuote(sentence);
+  return `<p>${esc(sentence.slice(0, at))}<mark>${esc(clue)}</mark>${esc(sentence.slice(at + clue.length))}</p>`;
+}
 
-function coachNode(id, title, meta, children = []) {
+function coachNode(id, title, meta, children = [], disabled = false) {
   const expanded = !coachBatch.folded.has(id);
   const fold = children.length ? `<button class="coach-fold" type="button" data-coach-fold="${id}" aria-label="${expanded ? '折叠' : '展开'}${esc(title)}" aria-expanded="${expanded}">${expanded ? '−' : '+'}</button>` : '';
-  return `<li><div class="coach-node-row">${fold}<button class="coach-node" type="button" data-coach-node="${id}" aria-pressed="${id === coachBatch.active}"><span class="coach-node-title">${coachInline(title)}</span>${meta ? `<span class="coach-node-meta">${esc(meta)}</span>` : ''}</button></div>${children.length && expanded ? `<ul>${children.join('')}</ul>` : ''}</li>`;
+  return `<li><div class="coach-node-row">${fold}<button class="coach-node" type="button" data-coach-node="${id}" aria-pressed="${id === coachBatch.active}" ${disabled ? 'disabled' : ''}><span class="coach-node-title">${coachInline(title)}</span>${meta ? `<span class="coach-node-meta">${esc(meta)}</span>` : ''}</button></div>${children.length && expanded ? `<ul>${children.join('')}</ul>` : ''}</li>`;
 }
 
 const coachAction = (id, label, primary = false, disabled = false) => `<button type="button" class="btn ${primary ? 'primary' : 'ghost'}" data-coach-action="${id}" ${disabled ? 'disabled' : ''}>${label}</button>`;
 const coachLink = (id, label) => `<button type="button" class="btn primary" data-coach-node="${id}">${label}</button>`;
-const coachResult = entry => !entry?.verdict ? '待作答' : entry.verdict.correct ? '本次辨对' : '答错';
-const coachFinished = group => group.first?.verdict && (!group.retest || group.retest.verdict);
+
 
 function coachRenderTree(batch) {
   const screened = batch.items.filter(i => i.rating).length;
@@ -1902,44 +1919,71 @@ function coachRenderTree(batch) {
   const groups = batch.groups.slice(start, start + COACH_GROUP_PAGE).map((group, offset) => {
     const index = start + offset;
     const id = `g${index}`;
-    const nodes = [];
-    for (const [key, entry, title] of [['first', group.first, '语境练习'], ['second', group.retest, '换语境复测']]) {
-      if (entry) nodes.push(coachNode(`${id}:${key}`, title, coachResult(entry), entry.verdict ? [coachNode(`${id}:${key}:feedback`, '作答讲解', '')] : []));
-    }
-    const status = coachFinished(group) ? (group.retest || group.first).verdict.correct ? '本次辨对' : '仍需复练' : group.first ? '进行中' : '待开始';
-    return coachNode(id, group.title, `${group.words.length} 词 · ${status}`, nodes);
+    const nodes = Object.entries(coachLessonTitles).flatMap(([key, title]) => {
+      const entry = group.entries?.[key];
+      if (!entry) return [];
+      const blind = coachLessonBlind(group);
+      const past = blind && ['demo', 'guided', 'recall'].includes(key) && group.currentNode !== key;
+      const children = entry.feedback ? [coachNode(`${id}:${key}:feedback`, '作答讲解', '', [], past)] : [];
+      return [coachNode(`${id}:${key}`, title, '', children, past)];
+    });
+    const status = coachLessonResults[group.result] || (group.id ? '进行中' : '待开始');
+    return coachNode(id, coachLessonBlind(group) ? `第 ${index + 1} 节微课` : group.title, `${group.words.length} 词 · ${status}`, nodes);
   });
   const children = [coachNode('screen', '熟悉度初筛', `${screened}/${batch.items.length}`)];
   if (skipped) children.push(coachNode('skipped', '本轮略过', `${skipped} 词`));
   if (batch.phase !== 'screen') children.push(coachNode('plan', '学习分组', batch.groups.length ? `${batch.groups.length} 组` : '待分组', groups));
-  return `<ul class="coach-path">${coachNode('round', batch.sample ? '试做例题' : '本轮学习', `${batch.items.length} 词`, children)}</ul>`;
-}
-
-function coachRenderQuestion(entry, group, key, index, sample) {
-  const options = entry.task.options.map((text, i) => {
-    if (!entry.verdict) return `<button class="btn coach-choice" type="button" data-coach-choice="${i}" ${group.busy ? 'disabled' : ''}>${coachInline(text)}</button>`;
-    const label = [i === entry.verdict.answerIndex ? '正确答案' : '', i === entry.choice ? '你的选择' : ''].filter(Boolean).join(' · ');
-    return `<div class="coach-option-review${label ? ' marked' : ''}">${mdLite(text)}${label ? `<span>${label}</span>` : ''}</div>`;
-  }).join('');
-  return `<h3>${coachInline(entry.task.question)}</h3><div lang="en" class="coach-sentence">${coachQuote(entry.task.sentence)}</div><div class="coach-source">${entry.task.source ? esc(coachSourceLabel(entry.task.source)) : sample ? '固定例题' : 'AI 自拟语境'}</div><div class="coach-options">${options}</div>${entry.verdict ? coachLink(`g${index}:${key}:feedback`, '查看讲解') : ''}`;
+  return `<ul class="coach-path">${coachNode('round', batch.sample ? '固定样课' : '本轮学习', `${batch.items.length} 词`, children)}</ul>`;
 }
 
 function coachSourceLabel(source) {
   return [{ exam: '真题', external: '外刊', corpus: '导入语料' }[source.sourceKind], source.title || source.publication, source.section, source.number].filter(Boolean).join(' · ');
 }
 
-function coachRenderEvidence(source, primary = false) {
-  const valid = source.rid && ['exam', 'external', 'corpus'].includes(source.sourceKind);
-  return `<div class="coach-citation"><div class="coach-source">${esc(coachSourceLabel(source))}</div><div lang="en" class="${primary ? 'coach-sentence' : ''}">${coachQuote(source.sentence)}</div>${valid ? `<button type="button" class="btn small ghost" data-coach-rid="${esc(source.rid)}" data-coach-source-kind="${source.sourceKind}">查看出处</button>` : ''}</div>`;
+function coachLessonMaterial(item, clue = '', note = '', sample = false, showSource = true) {
+  if (!item.sentence) return '';
+  const { source } = item;
+  const label = source && showSource ? coachSourceLabel(source) : (source || item.material === 'corpus') ? '语料原句' : item.material === 'adaptation' ? '教学改编' : sample ? '固定样课语境' : 'AI 自拟语境';
+  const sourceLink = showSource && source?.rid && ['exam', 'external', 'corpus'].includes(source.sourceKind) ?
+    `<button type="button" class="btn small ghost" data-coach-rid="${esc(source.rid)}" data-coach-source-kind="${source.sourceKind}">查看出处</button>` : '';
+  return `<div class="coach-source">${esc(label)}</div><div lang="en" class="coach-sentence">${coachMarkedSentence(item.sentence, clue)}</div>${note ? `<div class="coach-source">${coachInline(note)}</div>` : ''}${sourceLink}`;
 }
 
-function coachRenderFeedback(group, key, index) {
-  const entry = coachTaskEntry(group, key), verdict = entry.verdict;
-  const branch = key.startsWith('first') ? group.branch : null;
-  const breakdown = branch ? `${mdLite(branch.reason)}<h4>原句线索</h4>${mdLite(branch.evidence)}` : mdLite(verdict.explanation || (verdict.correct ? '这次读对了句意。' : '这次答错了，暂没有可用的对照。'));
-  const evidence = verdict.source ? `<h4>语料原句</h4>${coachRenderEvidence(verdict.source, true)}${verdict.translation ? `<h4>参考译文</h4>${mdLite(verdict.translation)}` : ''}${verdict.clue ? `<h4>判断线索</h4><div lang="en">${coachQuote(verdict.clue)}</div>` : ''}` : '';
-  const related = verdict.related?.length ? `<h4>延伸阅读 · 对照用法</h4>${verdict.related.map(item => `<div class="coach-related"><strong lang="en">${coachInline(item.word)}</strong>${coachRenderEvidence(item)}</div>`).join('')}` : '';
-  return `<h3>作答讲解</h3><p>你的选择：${coachInline(entry.task.options[entry.choice])}</p><p>正确答案：${coachInline(entry.task.options[verdict.answerIndex])}</p>${evidence}<h4>辨析</h4>${breakdown}<div class="coach-actions">${key.startsWith('first') && group.retest ? coachLink(`g${index}:second`, '换语境复测') : coachLink(`g${index}`, '返回本组')}</div>${related}`;
+function coachLessonAction(group, key, feedback) {
+  if (group.currentNode !== key || coachFinished(group)) return '';
+  if (feedback.status === 'pass') {
+    const label = { guided: '收起讲解，开始回想', recall: '开始独立验证', transfer: '完成微课', retry: '完成微课' }[key];
+    return coachAction('continue', label, true, group.busy);
+  }
+  if (key === 'retry') return coachAction('finish', '结束本轮', true, group.busy);
+  return coachAction('retry', key === 'transfer' ? '换一段语境再试' : '重新说说你的判断', true, group.busy);
+}
+
+function renderCoachLesson(batch, group, index, key, viewingFeedback) {
+  const root = `g${index}`;
+  const entry = group.entries?.[key];
+  if (!entry) return '';
+  if (key === 'demo') {
+    const { demo } = entry;
+    return `<h3>老师示范</h3>${mdLite(group.objective)}${coachLessonMaterial(demo, demo.clue, '', batch.sample)}${mdLite(demo.translation)}${mdLite(demo.teaching)}
+      <h4>教学改写</h4><div class="coach-contrast" lang="en">${demo.contrast.map(coachQuote).join('')}</div>${mdLite(demo.difference)}
+      <h4>记住这条规则</h4>${mdLite(demo.rule)}<div class="coach-actions">${group.currentNode === 'demo' ? coachAction('continue', '我来辨别', true, group.busy) : coachLink(`${root}:${group.currentNode}`, '回到当前进度')}</div>`;
+  }
+  if (entry.feedback && viewingFeedback) {
+    const f = entry.feedback;
+    const score = (key === 'transfer' || key === 'retry') && f.status === 'pass' ? coachLessonResults[group.result] : f.status === 'pass' ? '判断有依据' : '补教';
+    return `<h3>作答讲解 · ${score}</h3><h4>你的回答</h4>${mdLite(f.answer)}<h4>${f.status === 'pass' ? '老师反馈' : '老师补教'}</h4>${mdLite(f.coaching)}
+      ${f.expected ? `<h4>参考判断</h4>${mdLite(f.expected)}` : ''}${f.translation ? `<h4>原文与译文</h4>${coachLessonMaterial({ ...entry.task, source: f.source }, f.clue, f.note, batch.sample)}${mdLite(f.translation)}` : ''}
+      <div class="coach-actions">${coachLessonAction(group, key, f)}${coachFinished(group) ? coachLink(root, '回到本课') : ''}</div>`;
+  }
+  const { task } = entry;
+  const previous = entry.feedback ? coachLink(`${root}:${key}:feedback`, '查看作答讲解') : '';
+  const drafting = group.currentNode === key && !entry.feedback && !coachFinished(group);
+  return `<h3>${coachLessonTitles[key]}</h3>${coachLessonMaterial(task, '', '', batch.sample, Boolean(entry.feedback))}${mdLite(task.question)}
+    ${entry.hint ? `<div class="coach-lesson-hint"><h4>提示</h4>${mdLite(entry.hint)}</div>` : ''}
+    ${drafting ? `<form class="coach-lesson-answer"><label for="coachAnswer">用自己的话作答</label><textarea id="coachAnswer" rows="3" maxlength="1500" required ${group.busy ? 'disabled' : ''}>${esc(entry.draft || '')}</textarea>
+      <div class="coach-actions">${coachAction('submit-answer', '提交回答', true, group.busy)}${!entry.hint ? coachAction('hint', '给我一点提示', false, group.busy) : ''}</div></form>` : previous}
+    ${entry.lastFeedback && drafting ? `<details class="coach-last-feedback"><summary>查看上次补教</summary>${mdLite(entry.lastFeedback.coaching)}</details>` : ''}`;
 }
 
 function renderCoachMap(focus = false) {
@@ -1958,8 +2002,8 @@ function renderCoachMap(focus = false) {
   tree.style.setProperty('--coach-scale', coachScale);
   tree.scrollLeft = left;
   tree.scrollTop = top;
-  const { group, index, key } = coachCurrentGroup();
-  $('#coachStatus').textContent = batch.busy ? `正在分析词汇关系 · ${batch.plannedCount}/${batch.planTotal} 词` : group?.busy ? (group.first ? '正在处理作答…' : '正在生成语境题…') : batch.sample ? '例题 · 固定内容' : '';
+  const { group, index, key, feedback } = coachCurrentGroup();
+  $('#coachStatus').textContent = batch.busy ? `正在分析词汇关系 · ${batch.plannedCount}/${batch.planTotal} 词` : group?.busy ? (group.id ? '正在处理本节微课…' : '正在准备微课…') : batch.sample ? '固定样课' : '';
   let content = '';
   if (batch.active === 'round') {
     content = `<h3>本轮学习</h3><p>${batch.items.length} 词 · ${batch.groups.filter(coachFinished).length}/${batch.groups.length} 组已完成</p>${coachLink(batch.phase === 'screen' ? 'screen' : 'plan', '继续学习')}${coachAction('pick', '打开词表')}`;
@@ -1978,14 +2022,19 @@ function renderCoachMap(focus = false) {
     const next = batch.groups.findIndex(g => !coachFinished(g));
     const page = batch.groupPage || 0, pages = Math.ceil(batch.groups.length / COACH_GROUP_PAGE);
     content = `<h3>学习分组</h3><p>${batch.groups.length} 组 · ${batch.groups.filter(coachFinished).length} 组完成</p>${pages > 1 ? `<div class="coach-actions coach-pages" aria-label="小组分页">${coachAction('prev-page', '上一页', false, page === 0)}<span>${page + 1}/${pages}</span>${coachAction('next-page', '下一页', false, page + 1 >= pages)}</div>` : ''}<div class="coach-actions">${next >= 0 ? coachLink(`g${next}`, '继续未完成小组') : ''}${!batch.planned ? coachAction('plan', batch.groups.length ? '继续分析剩余词' : '分析并分组', true, batch.busy) : ''}${!batch.planned && batch.error ? coachAction('singles', '剩余词暂时逐词练习') : ''}${batch.items.some(i => i.rating === 'known') ? coachLink('skipped', '查看略过的词') : ''}</div>`;
-  } else if (group && key?.endsWith(':feedback')) {
-    content = coachRenderFeedback(group, key, index);
   } else if (group && key) {
-    content = coachRenderQuestion(coachTaskEntry(group, key), group, key, index, batch.sample);
+    content = renderCoachLesson(batch, group, index, key, feedback);
   } else if (group) {
     const next = batch.groups.findIndex((g, i) => i !== index && !coachFinished(g));
-    const resume = group.retest ? 'second' : 'first';
-    content = `<h3>${coachInline(group.title)}</h3>${group.words.length > 1 ? `<div class="coach-terms" lang="en">${group.words.map(coachInline).join(' · ')}</div><div class="coach-source">成组理由</div>${mdLite(group.reason)}<div class="coach-source">练习方向</div>${mdLite(group.exercise)}` : ''}<div class="coach-actions">${group.first ? coachLink(`g${index}:${resume}`, coachFinished(group) ? '查看作答' : '回到练习') : coachAction('begin', '开始作答', true, group.busy)}${coachFinished(group) && next >= 0 ? coachLink(`g${next}`, '下一组') : ''}${batch.sample ? coachAction('sample', '重做例题') : coachLink('plan', '回到分组')}</div>`;
+    const id = `g${index}`;
+    const blind = coachLessonBlind(group);
+    const resume = group.currentNode;
+    const suffix = group.entries?.[resume]?.feedback ? ':feedback' : '';
+    content = `<h3>${blind ? '当前微课' : coachInline(group.title)}</h3>
+      ${group.result ? `<p class="coach-lesson-result">${coachLessonResults[group.result]}</p>` : ''}
+      ${!blind && !group.id && group.reason ? mdLite(group.reason) : ''}
+      <div class="coach-actions">${group.id ? coachLink(`${id}:${resume}${suffix}`, coachFinished(group) ? '查看最后一次作答' : '继续微课') : coachAction('begin', '开始微课', true, group.busy)}
+      ${next >= 0 && group.id ? coachLink(`g${next}`, '下一组') : ''}${batch.sample ? coachAction('sample', '重做样课') : coachLink('plan', '回到分组')}</div>`;
   }
   const error = group?.error || batch.error;
   detail.innerHTML = `${content}${error ? `<p class="coach-error" role="alert">${esc(error)}</p>` : ''}${group?.expired ? coachAction('begin', '重新开始本组', true, group.busy) : ''}`;
@@ -1997,7 +2046,7 @@ function renderCoachMap(focus = false) {
 }
 
 function coachError(reason) {
-  return ({ no_llm: '请在设置里配置 AI 服务商。', expired: '本组练习已过期，可以重新开始。', busy: '正在处理，请稍后再试。', bad_words: '部分词条格式暂不支持，请调整本轮勾选。' })[reason] || '暂时未能完成，请重试。';
+  return ({ no_llm: '请在设置里配置 AI 服务商。', expired: '本节微课已过期，可以重新开始。', bad_lesson: '这次没有生成完整的微课，请重试。', bad_feedback: '暂时没能判断这份回答。你的答案已保留，可以再提交。', stale_lesson: '当前节点已经更新，请回到微课进度。', busy: '正在处理，请稍后再试。', bad_words: '部分词条格式暂不支持，请调整本轮勾选。' })[reason] || '暂时未能完成，请重试。';
 }
 
 async function planCoachBatch(singles = false) {
@@ -2030,40 +2079,82 @@ async function planCoachBatch(singles = false) {
   finally { batch.busy = false; if (batch === coachBatch) renderCoachMap(true); }
 }
 
-async function runCoachExercise(action, choice) {
+function coachApplyLesson(group, out, move) {
+  if (move === 'start') {
+    group.id = out.roundId;
+    group.objective = out.objective;
+    group.entries = { demo: { demo: out.demo } };
+    group.result = null;
+    group.retried = false;
+  }
+  group.revision = out.revision;
+  group.lessonStage = out.stage;
+  group.result = out.result;
+  if (out.stage === 'done') return;
+  if (move === 'retry' && out.stage === 'transfer') group.retried = true;
+  const key = out.stage === 'transfer' && group.retried ? 'retry' : out.stage;
+  group.currentNode = key;
+  if (out.task) {
+    const entry = group.entries[key] ||= {};
+    if (move === 'retry' && entry.feedback) {
+      entry.lastFeedback = entry.feedback;
+      entry.draft = '';
+    }
+    Object.assign(entry, { task: out.task, hint: out.hint, feedback: out.feedback });
+  }
+}
+
+async function runCoachLesson(move) {
   const batch = coachBatch;
   const { group, index, key } = coachCurrentGroup();
-  if (!group || group.busy || (action === 'answer' && ((!['first', 'second'].includes(key)) || coachTaskEntry(group, key)?.verdict || (key === 'second' ? group.step !== 2 : group.step !== 1)))) return;
+  if (!group || group.busy || (move !== 'start' && group.currentNode !== key)) return;
+  const entry = group.entries?.[key];
+  const answer = move === 'answer' ? entry?.draft?.trim() : undefined;
+  if (move === 'answer' && !answer) { $('#coachAnswer')?.focus(); return; }
   const id = `g${index}`;
-  group.busy = true; group.error = ''; group.expired = false;
+  group.busy = true;
+  group.error = '';
+  group.expired = false;
   renderCoachMap();
   try {
-    const body = action === 'start' ? { action, words: group.words, goal: [group.reason, group.exercise].filter(Boolean).join('；'), sample: batch.sample } : { action, roundId: group.id, step: group.step, choice };
+    const body = move === 'start' ? { action: 'lesson', words: group.words, goal: [group.reason, group.exercise].filter(Boolean).join('；'), sample: batch.sample } :
+      { action: 'lesson_turn', roundId: group.id, revision: group.revision, move, answer };
     const out = await api('/api/tutor/map', { method: 'POST', body });
     if (coachBatch !== batch || batch.groups[index] !== group) return;
     if (!out.ok) { group.expired = out.reason === 'expired'; group.error = coachError(out.reason); return; }
-    const stillHere = coachCurrentGroup().group === group;
-    if (action === 'start') {
-      Object.assign(group, { id: out.roundId, first: { task: out.task }, retest: null, branch: null });
-      if (stillHere) batch.active = id + ':first';
-    } else {
-      const entry = coachTaskEntry(group, key);
-      Object.assign(entry, { choice, verdict: out.verdict });
-      if (key === 'first') { group.branch = out.branch; group.retest = out.task ? { task: out.task } : null; }
-      if (!batch.sample) {
-        const tested = group.words.length > 1 ? entry.task.options[out.verdict.answerIndex] : group.words[0];
-        if (tested) { state.sessionWords.add(tested); if (!out.verdict.correct) state.sessionErrorWords.add(tested); }
-        updateSessionInfo();
+    coachApplyLesson(group, out, move);
+    if (out.stage === 'done' && !batch.sample) {
+      for (const word of group.words) {
+        state.sessionWords.add(word);
+        if (out.result === 'needs_work') state.sessionErrorWords.add(word);
       }
+      updateSessionInfo();
     }
-    group.step = out.step;
-    if (stillHere) {
+    if (coachCurrentGroup().group === group) {
+      const current = group.currentNode;
+      batch.active = out.stage === 'done' ? id : `${id}:${current}${out.feedback ? ':feedback' : ''}`;
       batch.folded.delete(id);
-      if (action === 'answer') batch.folded.delete(`${id}:${key}`);
+      batch.folded.delete(`${id}:${current}`);
     }
   } catch (e) { group.error = coachError(e.message); }
-  finally { group.busy = false; if (batch === coachBatch) renderCoachMap(coachCurrentGroup().group === group); }
+  finally {
+    group.busy = false;
+    if (batch === coachBatch) {
+      renderCoachMap(coachCurrentGroup().group === group);
+      if (['hint', 'retry'].includes(move) && !group.error) $('#coachAnswer')?.focus();
+    }
+  }
 }
+
+$('#coachDetail').addEventListener('input', e => {
+  const { group, key } = coachCurrentGroup();
+  if (e.target.id === 'coachAnswer' && group?.entries?.[key]) group.entries[key].draft = e.target.value;
+});
+$('#coachDetail').addEventListener('submit', e => {
+  if (!e.target.matches('.coach-lesson-answer')) return;
+  e.preventDefault();
+  runCoachLesson('answer');
+});
 
 $('#coachScreenBtn').addEventListener('click', beginCoachScreen);
 $('#coachClearBtn').addEventListener('click', () => { coachSelection.clear(); renderWordList(); });
@@ -2110,7 +2201,7 @@ coachViewport.addEventListener('keydown', e => {
 $('#coachMap').addEventListener('click', e => {
   const btn = e.target.closest('button');
   if (!btn) return;
-  const { coachAction: action, coachNode: node, coachView: view, coachFold: fold, coachChoice: choice, coachRestore: restore } = btn.dataset;
+  const { coachAction: action, coachNode: node, coachView: view, coachFold: fold, coachRestore: restore } = btn.dataset;
   if (action === 'pick') { e.stopPropagation(); wordPanelOpen(true); return; }
   if (action === 'sample') { beginCoachSample(); return; }
   const batch = coachBatch;
@@ -2144,8 +2235,9 @@ $('#coachMap').addEventListener('click', e => {
     }
     renderCoachMap(true); return;
   }
-  if (action === 'begin') { runCoachExercise('start'); return; }
-  if (choice !== undefined) { runCoachExercise('answer', Number(choice)); return; }
+  if (action === 'begin') { runCoachLesson('start'); return; }
+  if (action === 'submit-answer') { btn.closest('form')?.requestSubmit(); return; }
+  if (['continue', 'hint', 'retry', 'finish'].includes(action)) { runCoachLesson(action); return; }
   if (action === 'plan' || action === 'singles') { planCoachBatch(action === 'singles'); return; }
   if (restore !== undefined && !batch.busy && !batch.groups.some(g => g.busy)) {
     batch.items[Number(restore)].rating = 'unclear';

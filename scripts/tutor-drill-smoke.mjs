@@ -71,6 +71,24 @@ function makeFakeLLM(kind = 'ok', opts = {}) {
       if (sys.includes('为已经初筛的词分组')) {
         const row = { title: '是否继续执行', reason: 'abandon 是放弃，postpone 是推迟。', exercise: '判断项目取消还是改期。' };
         reply = JSON.stringify({ groups: [{ ...row, ids: [0, 9] }, { ...row, ids: [1, 0] }, { ...row, ids: [1, 2] }, { ids: [2, 3], title: '无成组理由' }] });
+      } else if (sys.includes('每组围绕一个具体能力')) {
+        const { sources, goal } = JSON.parse(user);
+        const exam = sources.find(s => s.kind === 'exam');
+        const imported = sources.find(s => s.kind === 'corpus');
+        const exercise = { question: '行动是取消还是改期？说明依据。', expected: '改期，之后还会继续。', hint: '看后续行动。', translation: '中文仅交卷后可见。' };
+        reply = JSON.stringify({
+          objective: '分清取消和改期。',
+          demo: { sourceId: goal === 'invalid lesson source' ? 999 : exam?.id, sentence: 'The company abandoned the project after it lost its funding.', clue: exam ? 'running out of supplies' : 'after it lost its funding',
+            translation: '撤销项目。', teaching: '先看导致停止的原因。', contrast: ['They abandoned the project.', 'They postponed the project.'], difference: '取消与延期。', rule: '没有了和晚点做。' },
+          guided: { ...exercise, sentence: 'They put the vote off until Friday.', clue: 'until Friday' },
+          recall: { ...exercise, question: '说说两个表达哪里不同。' },
+          transfer: { ...exercise, sourceId: goal === 'repeat lesson source' ? exam?.id : imported?.id, sentence: 'They postponed the meeting until Tuesday.', clue: goal === 'repeat lesson source' ? 'running out of supplies' : imported ? 'until the safety review concludes' : 'until Tuesday' },
+          retry: { ...exercise, sentence: 'The committee abandoned the study since the sponsor withdrew.', clue: 'since the sponsor withdrew' },
+        });
+      } else if (sys.includes('按这一关的 question')) {
+        const { answer } = JSON.parse(user);
+        const pass = answer.includes('会接着做');
+        reply = answer === '模型暂时无法打分' ? '{}' : JSON.stringify({ status: pass ? 'pass' : 'reteach', coaching: pass ? '抓住了恢复行动的依据。' : '说说后面有没有重新开始。' });
       } else if (sys.includes('你是英语语料学习教练')) {
         const { sources, goal, previous } = JSON.parse(user);
         const pick = sources.find(s => s.source === (previous ? 'corpus' : 'exam')) || sources[0];
@@ -236,6 +254,46 @@ const post = async (base, body) => {
     const articleSentence = 'The board decided to postpone the vote until the safety review concludes.';
     await writeFile(join(sb, 'corpus', 'exams.jsonl'), JSON.stringify({ id: 'exam_fixture', rtype: 'qa_set', title: '真题测试记录', meta: { year: 2025 }, items: [{ type: 'passage', section: 'reading', text: examSentence }] }) + '\n');
     await writeFile(join(sb, 'corpus', 'records.jsonl'), JSON.stringify({ id: 'import_fixture', rtype: 'article', title: '导入测试记录', text: articleSentence }) + '\n');
+
+    const newLesson = sample => mapPost({ action: 'lesson', sample, words: ['abandon', 'postpone'] });
+    const turn = (roundId, current, move, answer) => mapPost({ action: 'lesson_turn', roundId, revision: current.revision, move, answer });
+    const beforeLesson = llm.hits.length;
+    const lesson = await newLesson(false);
+    T('微课首屏用原样真题示范，未来节点和评分依据由服务端保留', lesson.ok && lesson.demo.sentence === examSentence && lesson.demo.source.rid === 'exam_fixture' && !('task' in lesson) && !('transfer' in lesson) && llm.hits.length === beforeLesson + 1);
+    const guided = await turn(lesson.roundId, lesson, 'continue');
+    const rejectSkip = await turn(lesson.roundId, guided, 'continue');
+    T('跟练无选项，不作答不能跳到回想', guided.stage === 'guided' && !('options' in guided.task) && !('expected' in guided.task) && !('hint' in guided) && rejectSkip.reason === 'bad_answer');
+    const badFeedback = await turn(lesson.roundId, guided, 'answer', '模型暂时无法打分');
+    const gradeCount = llm.hits.length;
+    const [wrongLesson, duplicateLesson] = await Promise.all([turn(lesson.roundId, guided, 'answer', '改期'), turn(lesson.roundId, guided, 'answer', '改期')]);
+    const grade = [wrongLesson, duplicateLesson].find(x => x.ok);
+    T('无依据的正确结论需要补教，异常能重试且双击只判一次', badFeedback.reason === 'bad_feedback' && grade?.feedback.status === 'reteach' && !('expected' in grade.feedback) && llm.hits.length === gradeCount + 1);
+    const redo = await turn(lesson.roundId, grade, 'retry');
+    const guidedWin = await turn(lesson.roundId, redo, 'answer', '之后还会接着做。');
+    const recall = await turn(lesson.roundId, guidedWin, 'continue');
+    const recallWin = await turn(lesson.roundId, recall, 'answer', '延期之后会接着做，取消则不继续。');
+    const transfer = await turn(lesson.roundId, recallWin, 'continue');
+    T('无语料回想之后才发未展示的其他文章句子', recall.stage === 'recall' && !('sentence' in recall.task) && transfer.stage === 'transfer' && transfer.task.sentence === articleSentence && transfer.task.material === 'corpus' && !('source' in transfer.task) && !JSON.stringify(transfer).includes('中文仅交卷后可见'));
+    const transferWin = await turn(lesson.roundId, transfer, 'answer', '是改期，审查结束后会接着做。');
+    const completed = await turn(lesson.roundId, transferWin, 'continue');
+    T('按意思评估开放作答，迁移独立答对后才返回原文信息', transferWin.result === 'independent' && transferWin.feedback.source.rid === 'import_fixture' && transferWin.feedback.translation === '中文仅交卷后可见。' && completed.stage === 'done');
+    for (const goal of ['invalid lesson source', 'repeat lesson source']) {
+      const invalidLesson = await mapPost({ action: 'lesson', words: ['abandon', 'postpone'], goal });
+      T(`课件拒收不合法出处：${goal}`, invalidLesson.reason === 'bad_lesson');
+    }
+    const beforeSample = llm.hits.length;
+    const demoLesson = await newLesson(true);
+    const sampleTurn = (current, move, answer) => turn(demoLesson.roundId, current, move, answer);
+    const sampleGuided = await sampleTurn(demoLesson, 'continue');
+    const sampleGuidedWin = await sampleTurn(sampleGuided, 'answer', '不能，has addressed 只是应对。');
+    const sampleRecall = await sampleTurn(sampleGuidedWin, 'continue');
+    const sampleRecallWin = await sampleTurn(sampleRecall, 'answer', 'address 只表示应对，solve 表示解决。');
+    const sampleTransfer = await sampleTurn(sampleRecallWin, 'continue');
+    const sampleTransferFail = await sampleTurn(sampleTransfer, 'answer', '政策已经解决问题。');
+    const sampleNewTask = await sampleTurn(sampleTransferFail, 'retry');
+    const sampleFailAgain = await sampleTurn(sampleNewTask, 'answer', '猜不到。');
+    const sampleFinish = await sampleTurn(sampleFailAgain, 'finish');
+    T('无模型样课可换句补教，仍未掌握可结束本课', sampleTransferFail.feedback.status === 'reteach' && sampleNewTask.task.sentence !== sampleTransfer.task.sentence && sampleFinish.stage === 'done' && sampleFinish.result === 'needs_work' && llm.hits.length === beforeSample);
     const corpusStart = await mapPost({ action: 'start', words: ['abandon', 'postpone'] });
     T('真题语境由服务端原样挖空，只返回来源概要', corpusStart.task?.sentence === examSentence.replace('abandon', '___') && corpusStart.task?.source?.rid === 'exam_fixture' && !Object.hasOwn(corpusStart.task.source, 'sentence') && !Object.hasOwn(corpusStart.task, 'answerIndex'));
     const corpusAnswer = await mapPost({ action: 'answer', roundId: corpusStart.roundId, step: 1, choice: 0 });

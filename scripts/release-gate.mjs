@@ -14,7 +14,7 @@ const checks = [];
 const check = (name, ok, detail = '') => { checks.push({ name, ok, detail }); console.log(`${ok ? 'PASS' : 'FAIL'} ${name}${detail ? `: ${detail}` : ''}`); };
 const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
 const version = String(pkg.version);
-check('release version', version === '4.2.0', version);
+check('release version', version === '4.3.0', version);
 for (const file of ['server.js', 'public/index.html', 'public/app.js', 'public/sw.js', 'scripts/deploy.sh', 'scripts/rollback.sh', 'scripts/backup-restore-drill.sh', 'scripts/backup-restore-drill.mjs', 'scripts/online-health.mjs', 'scripts/security-audit.mjs', 'scripts/mobile-device-check.mjs', 'scripts/docs-consistency.mjs', 'scripts/study-plan-smoke.mjs', 'scripts/tts-smoke.mjs', 'scripts/ecdict-smoke.mjs', 'scripts/ecdict-bubble-ui-smoke.mjs', 'scripts/ecdict-build-lemma.mjs', 'scripts/today-response-smoke.mjs', 'scripts/today-snapshot-smoke.mjs', 'scripts/frontend-refinement-smoke.mjs', 'tools/tts/piper_worker.py', 'tools/tts/setup_piper.sh', 'scripts/exam-analysis-build.mjs', 'scripts/exam-analysis-audit.mjs', 'scripts/exam-analysis-smoke.mjs', 'scripts/vocab-chat-smoke.mjs', 'scripts/tutor-drill-smoke.mjs', 'scripts/static-cache-smoke.mjs']) {
   check(`required file ${file}`, existsSync(join(root, file)));
 }
