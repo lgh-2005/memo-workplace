@@ -92,6 +92,30 @@ try {
     assert.equal(await page.locator('#kbFilters [data-kcat="真题"]').count(), 1, '语料库必须保留真题筛选档');
     console.log('PASS exam merged into corpus, standalone exam/pomodoro tabs removed');
 
+    // v4.3.1：听说训练页签下线 + 左侧边栏折叠为图标窄栏（折叠状态刷新后保持）
+    assert.equal(await page.locator('.tab[data-tab="speaking"]').count(), 0, 'v4.3.1：听说训练页签必须下线');
+    assert.equal(await page.locator('#tab-speaking').count(), 0, 'v4.3.1：听说训练页面必须下线');
+    assert.equal(await page.locator('#installBtn').count(), 0, 'v4.3.1：设置里的安装按钮必须下线');
+    assert.equal(await page.locator('#sidebarToggle').isVisible(), true, '折叠按钮必须可见');
+    const expandedWidth = await page.locator('#appSidebar').evaluate(el => Math.round(el.getBoundingClientRect().width));
+    await page.locator('#sidebarToggle').click();
+    // 宽度过渡 0.22s，等布局稳定后再断言
+    await page.waitForFunction(() => Math.round(document.querySelector('#appSidebar').getBoundingClientRect().width) === 64);
+    const collapsedWidth = await page.locator('#appSidebar').evaluate(el => Math.round(el.getBoundingClientRect().width));
+    assert.equal(collapsedWidth, 64, `折叠后宽度应为 64px，实测 ${collapsedWidth}`);
+    assert.equal(await page.locator('.tab-text').first().isVisible(), false, '折叠后导航文字应隐藏');
+    assert.equal(await page.locator('body').evaluate(el => el.classList.contains('sidebar-collapsed')), true);
+    assert.equal(await page.evaluate(() => localStorage.getItem('wb-sidebar-collapsed')), '1');
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await page.waitForFunction(() => typeof window.switchTab === 'function');
+    assert.equal(await page.locator('body').evaluate(el => el.classList.contains('sidebar-collapsed')), true, '刷新后应保持折叠');
+    await page.locator('#sidebarToggle').click();
+    await page.waitForFunction(width => Math.round(document.querySelector('#appSidebar').getBoundingClientRect().width) === width, expandedWidth);
+    const restoredWidth = await page.locator('#appSidebar').evaluate(el => Math.round(el.getBoundingClientRect().width));
+    assert.equal(restoredWidth, expandedWidth, `展开后宽度应恢复为 ${expandedWidth}px，实测 ${restoredWidth}`);
+    assert.equal(await page.evaluate(() => localStorage.getItem('wb-sidebar-collapsed')), '0');
+    console.log('PASS collapsible sidebar with remembered state');
+
     await page.evaluate(() => switchTab('settings'));
     await page.locator('#modelAssignments').evaluate(el => {
       for (let node = el; node; node = node.parentElement) if (node.tagName === 'DETAILS') node.open = true;
@@ -141,7 +165,7 @@ try {
     const mobileErrors = [];
     mobile.on('pageerror', error => mobileErrors.push(error.message));
     await mobile.goto(base, { waitUntil: 'networkidle' });
-    for (const tab of ['dashboard', 'reports', 'quiz', 'kb', 'notes', 'speaking', 'settings']) {
+    for (const tab of ['dashboard', 'reports', 'quiz', 'kb', 'notes', 'settings']) {
       await mobile.evaluate(name => switchTab(name), tab);
       const overflow = await mobile.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1 || document.body.scrollWidth > innerWidth + 1);
       assert.equal(overflow, false, `${tab} has horizontal overflow`);

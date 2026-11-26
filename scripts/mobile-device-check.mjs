@@ -90,7 +90,7 @@ async function emulatedChecks() {
       await page.goto(appBase, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(500);
       const result = await page.evaluate(async () => {
-        const tabs = ['dashboard', 'reports', 'study', 'quiz', 'kb', 'speaking', 'notes', 'settings'];
+        const tabs = ['dashboard', 'reports', 'study', 'quiz', 'kb', 'notes', 'settings'];
         const pages = {};
         const touchHeights = [];
         for (const tab of tabs) {

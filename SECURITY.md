@@ -1,5 +1,7 @@
 # v4.0.0 安全审计与敏感信息扫描记录
 
+> v4.3.1（2026-11-26）：删除 `POST /api/speaking/session` 与 `POST /api/speaking/submit`（两条路由现返回 404），`Permissions-Policy` 由 `camera=(self), microphone=(self), geolocation=()` 收敛为 `camera=(self), geolocation=()`——麦克风权限不再声明，拍照识别所需 `camera` 保留。侧边栏折叠只涉及前端 `class` + `localStorage`，**零内联 `on*`**，CSP 仍 `script-src 'self'`、无 `unsafe-inline`。新增的一次性清理脚本只读写 `data/` 下的 JSON，写前备份、原子写，不引入网络面。
+
 > v4.3.0：`/api/tutor/map` 增 `lesson` / `lesson_turn`，沿用同站鉴权和 64 KiB 请求体限制。回合按用户隔离、空闲 30 分钟过期，修订号和在途锁避免重复判分。模型引用语料须使用候选 ID；验证前不发送译文、参考答案或出处链接。
 
 > v4.2.0 导图接口沿用登录、同站校验、64 KiB 请求体保护及 30 分钟用户隔离回合。大批量词由浏览器分批。模型仅可引用本组词编号和已有语料候选 ID；组题的原文、出处和空缺词由服务端提供，交卷前不返回未遮盖的原句或答案，也不会把未作复测的文章作为延伸链接。

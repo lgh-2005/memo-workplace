@@ -1,5 +1,7 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
+> v4.3.1（2026-11-26）门禁变化：`release-check.mjs` 43 → **50 项**（新增删路由 / 删任务项 / 删安装入口 / PWA 内核保留 / 侧栏折叠钩子 / 无 microphone / 清理脚本存在）；`study-plan-smoke.mjs` 不再测听说提交，改测「`/api/speaking/*` 必须 404、任务列表无 listening/speaking、未知任务 400、无 microphone 且保留 camera」；`frontend-refinement-smoke.mjs` 新增「折叠到 64px → 刷新仍折叠 → 展开复原」并去掉 speaking 页签；`mobile-device-check.mjs` 页签清单同步 7 项（48 项全过）。新增 `scripts/purge-speaking-attempts.mjs`（一次性维护脚本，不进 `npm test`）。
+
 > v4.3.0 微课回归。`tutor-drill-smoke.mjs` 有 51 项断言，覆盖服务端阶段、语料出处、错后补教、请求去重和迁移结果。`vocab-chat-smoke.mjs` 有 39 项断言，包括移动样课的原文标记、收起讲解、提示及草稿、作答子节点和导图缩放。
 
 > v4.2.0 的 `tutor-drill-smoke.mjs` 有 43 项断言，包括真题语境、来源校验、答案隐藏、交卷还原、复测防提前泄题及超过 80 词的分组。`vocab-chat-smoke.mjs` 用 Chromium 验证 510 词全选、筛选外选词不丢、移动端导图缩放和两层讲解关系。

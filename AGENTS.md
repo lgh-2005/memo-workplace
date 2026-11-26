@@ -1,11 +1,13 @@
 # AGENTS.md — memo bench 工作区（英语学习工作台）
 
-> **当前交付版本：v4.3.0 · AI 词汇微课（2026-11-25）**。悬浮词表 → 熟悉度初筛 → AI 按具体学习目标分组 → 老师示范 → 跟着辨别 → 合上讲解回想 → 换语境验证。保留不限总量勾选、全选筛选结果、可缩放导图和大纲。讲解和补教挂在对应作答节点下。
+> **当前交付版本：v4.3.1 · 删除听说训练、移除桌面安装入口、侧边栏可折叠（2026-11-26）**。① 听说训练整链路下线（页签 / 手机端「更多」/ 页面与样式 / `/api/speaking/*` 两条路由 / 今日任务两项 / 报告题型过滤两项 / `Permissions-Policy` 的 `microphone`），导航 8 → 7 项。② 设置里「安装到桌面」卡片与一键安装逻辑移除，manifest 与 Service Worker 保留。③ 左侧边栏可折叠为 64px 图标窄栏（只留 emoji + `title` 提示，分组标题变分隔线，底部工具竖排），状态存 `localStorage['wb-sidebar-collapsed']`；手机端侧栏仍隐藏。④ 新增 `scripts/purge-speaking-attempts.mjs` 清理历史 `listening/speaking` 流水与任务勾选（默认 dry-run，`--apply` 才写盘并留备份）。门禁：`release-check` 43 → **50 项**，`release-gate` 版本断言升 4.3.1；`frontend-refinement-smoke` 新增折叠回归，`mobile-device-check` 页签同步 7 项。
+>
+> **v4.3.0 历史口径（2026-11-25）**：悬浮词表 → 熟悉度初筛 → AI 按具体学习目标分组 → 老师示范 → 跟着辨别 → 合上讲解回想 → 换语境验证。保留不限总量勾选、全选筛选结果、可缩放导图和大纲。讲解和补教挂在对应作答节点下。
 
 > **本文件是「memo bench」这个新工作区的唯一工作手册。** 承接自 `D:\ai\opencode\momo`（opencode 工作区，含旧 AGENTS.md 与《版本号经历.md》），本工作区从 v3.7.0 / `4c2436f` 起独立开发。
 >
 > **工作区根 = 仓库根**：`D:\ai\dsh\cli\memo bench`（注意路径含空格，命令行务必加引号）。
-> 当前版本口径：**v4.3.0**（2026-11-25）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
+> 当前版本口径：**v4.3.1**（2026-11-26）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
 
 ---
 
@@ -141,9 +143,13 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 
 ---
 
-## 6. 当前状态（v4.3.0，2026-11-25）
+## 6. 当前状态（v4.3.1，2026-11-26）
 
-- 微课使用 `POST /api/tutor/map` 的 `lesson` / `lesson_turn`，兼容旧 `plan` / `start` / `answer`。开课优先选可核验的原句，标清教学改写、自拟语境；演示与迁移不同出处且先不发迁移评分依据。正式课开放作答按语义和判断依据判分；固定 address / solve 样课不依赖 AI 配置。
+- **v4.3.1 删除听说训练**：导航 8 → 7 项（今日学习 / AI 学习 / 测验 / 语料库 / 助记库 / 学习报告 / 设置）；`#tab-speaking` 页面、`.speech-*` 样式、`/api/speaking/session|submit`、今日任务 `listening`/`speaking`、报告题型过滤两项、`Permissions-Policy` 的 `microphone` 全部移除（`camera` 保留给拍照识别）。`study-plan-smoke` 改为断言「已删接口 404 / 任务无听说项 / 无麦克风权限」。
+- **v4.3.1 移除设置里的「安装到桌面」**：`#installSection`、`pwaInitInstall`、`beforeinstallprompt` 拦截与安装引导删除；`pwaRegisterSW()` 与 manifest 保留，浏览器菜单仍可安装。
+- **v4.3.1 侧边栏可折叠**：`#sidebarToggle` 与版本号同行；折叠为 64px 图标窄栏（`.tab-text` 隐藏、`.tab-group-label` 变分隔线、底部工具竖排、同步徽标只留圆点），状态存 `localStorage['wb-sidebar-collapsed']`；`frontend-refinement-smoke` 覆盖「折叠 64px → 刷新保持 → 展开复原」。
+- **v4.3.1 数据清理**：`scripts/purge-speaking-attempts.mjs`（`npm run purge:speaking`），默认 dry-run，`--apply` 写盘前留 `<file>.bak-speaking-<stamp>`，幂等、原子写；清 `learning_attempts.json` 的 `listening/speaking` 与 `study_plan.json` 的对应任务勾选。
+- 微课仍使用 `POST /api/tutor/map` 的 `lesson` / `lesson_turn`，兼容旧 `plan` / `start` / `answer`。开课优先选可核验的原句，标清教学改写、自拟语境；演示与迁移不同出处且先不发迁移评分依据。正式课开放作答按语义和判断依据判分；固定 address / solve 样课不依赖 AI 配置。
 - 跟练答错针对误解补教；验证错后可再换一句。结果区分独立答对、提示后答对和仍需补教，仅代表本次表现。没有自动延迟抽查或 SRS 持久化，页面刷新不恢复进度；服务端回合按用户隔离，空闲 30 分钟过期。
 - 发布从 Gitee `master` 取产品文件，需要同一提交的 GitHub 镜像和 Actions 成功结果。验收入口 `npm run test:all`，微课相关用例在 `tutor-drill-smoke.mjs` 和 `vocab-chat-smoke.mjs`。
 

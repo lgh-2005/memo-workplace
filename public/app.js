@@ -360,8 +360,6 @@ const ATTEMPT_KIND_LABELS = {
   vocab_context: '语境选义',
   vocab_cloze: '搭配补全',
   sentence_analysis: '长难句三遍训练',
-  listening: '听力训练',
-  speaking: '口语训练',
 };
 
 /** 语料中仅放行 <u>…</u>（阅读划线句忠实还原）；必须先 esc 再调用 */
@@ -596,11 +594,43 @@ function speakEnglishFrom(text, fallbackWord) {
 
 $$('.tab').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
 
+/* ---------------- v4.3.1：左侧边栏折叠 ---------------- */
+/** 侧栏折叠状态存本设备（localStorage），刷新后保持；手机端侧栏本就隐藏，不参与 */
+const SIDEBAR_COLLAPSE_KEY = 'wb-sidebar-collapsed';
+
+function applySidebarCollapse(collapsed) {
+  document.body.classList.toggle('sidebar-collapsed', collapsed);
+  const btn = $('#sidebarToggle');
+  if (!btn) return;
+  const label = collapsed ? '展开侧边栏' : '折叠侧边栏';
+  const icon = btn.querySelector('.sidebar-toggle-icon');
+  const text = btn.querySelector('.sidebar-toggle-text');
+  if (icon) icon.textContent = collapsed ? '»' : '«';
+  if (text) text.textContent = collapsed ? '展开' : '收起';
+  btn.title = label;
+  btn.setAttribute('aria-label', label);
+  btn.setAttribute('aria-expanded', String(!collapsed));
+}
+
+function initSidebarCollapse() {
+  let collapsed = false;
+  try { collapsed = localStorage.getItem(SIDEBAR_COLLAPSE_KEY) === '1'; } catch { /* 隐私模式：不记忆 */ }
+  applySidebarCollapse(collapsed);
+  const btn = $('#sidebarToggle');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const next = !document.body.classList.contains('sidebar-collapsed');
+    applySidebarCollapse(next);
+    try { localStorage.setItem(SIDEBAR_COLLAPSE_KEY, next ? '1' : '0'); } catch { /* 静默 */ }
+  });
+}
+
+initSidebarCollapse();
+
 function switchTab(name) {
-  if (name !== 'speaking' && typeof speechTraining !== 'undefined') stopSpeechRecognition();
   if (name !== 'logs') state._prevTab = name;   // v2.8.0：记录日志版块前的页签，便于返回
   const navName = name;
-  const moreTabs = ['reports', 'kb', 'notes', 'settings', 'speaking'];
+  const moreTabs = ['reports', 'kb', 'notes', 'settings'];
   $$('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === navName));
   $$('.bottom-tab-item').forEach(b => b.classList.toggle('active', b.dataset.tab === navName || (b.id === 'bottomMoreBtn' && moreTabs.includes(name))));
   $$('.more-sheet-item[data-tab]').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
@@ -614,7 +644,6 @@ function switchTab(name) {
   if (name === 'kb') loadKb();
 
   if (name === 'settings') { loadConfig(); loadBackupList(); }
-  if (name === 'speaking') loadSpeechSession();
   if (name === 'logs') loadLogs();
   if (name === 'quiz') { try { checkQuizResume(); } catch {}; try { loadQuizSourceCounts(); } catch {} }   // v2.11.0 续做检查 / v3.2.1 词源计数
   // quiz 页保持进行中的状态，不重置
@@ -776,7 +805,6 @@ function renderStudyTasks(tasks) {
   }));
   box.querySelectorAll('[data-study-start]').forEach(btn => btn.addEventListener('click', () => {
     const task = list.find(x => x.id === btn.dataset.studyStart); if (!task) return;
-    if (task.tab === 'speaking') { speechTraining.mode = task.id; $$('[data-speech-mode]').forEach(x => x.classList.toggle('active', x.dataset.speechMode === task.id)); }
     switchTab(task.tab);
     if (task.id === 'vocab_today') { state.filter = 'today'; $$('#wordFilters .chip').forEach(x => x.classList.toggle('active', x.dataset.filter === 'today')); loadWords(); }
     if (task.id === 'review_due') document.querySelector('[data-submode="srs"]')?.click();
@@ -845,80 +873,6 @@ async function saveStudyPlan() {
   } catch (e) { if (result) { result.className = 'result err'; result.textContent = e.message; } }
 }
 if ($('#studyPlanSaveBtn')) $('#studyPlanSaveBtn').addEventListener('click', saveStudyPlan);
-
-/* ---------------- v3.3.6：听说训练 ---------------- */
-const speechTraining = { mode: 'listening', sessionId: '', ttsText: '', target: '', startedAt: 0, recognition: null, requestId: 0, inputMethod: 'manual' };
-function stopSpeechRecognition() {
-  const rec = speechTraining.recognition; speechTraining.recognition = null;
-  if (rec) { rec.onresult = null; rec.onend = null; rec.onerror = null; try { rec.abort(); } catch {} }
-  if ($('#speechRecordBtn')) $('#speechRecordBtn').textContent = '🎙️ 开始识别';
-  if (window.speechSynthesis) window.speechSynthesis.cancel();
-}
-function speechRecognitionCtor() { return window.SpeechRecognition || window.webkitSpeechRecognition || null; }
-function renderSpeechSupport() {
-  const btn = $('#speechRecordBtn'); const support = $('#speechSupport');
-  const Ctor = speechRecognitionCtor();
-  const available = speechTraining.mode === 'speaking' && Boolean(Ctor) && window.isSecureContext;
-  if (btn) btn.style.display = speechTraining.mode === 'speaking' && available ? '' : 'none';
-  if (support) support.textContent = speechTraining.mode === 'speaking'
-    ? (available ? '可使用浏览器语音识别；识别结果仍可手动修改。' : '当前环境不支持安全的语音识别，请直接在下方输入朗读内容。')
-    : '英语语音播报 · 服务端真人/神经语音，可重复播放';
-}
-async function loadSpeechSession() {
-  stopSpeechRecognition();
-  const requestId = ++speechTraining.requestId;
-  speechTraining.sessionId = ''; speechTraining.ttsText = '';
-  if ($('#speechSubmitBtn')) $('#speechSubmitBtn').disabled = true;
-  if ($('#speechPlayBtn')) $('#speechPlayBtn').disabled = true;
-  const mode = speechTraining.mode;
-  try {
-    const r = await api('/api/speaking/session', { method: 'POST', body: { mode } });
-    if (requestId !== speechTraining.requestId) return;
-    speechTraining.sessionId = r.sessionId; speechTraining.target = r.target || ''; speechTraining.ttsText = r.ttsText || r.target || '';
-    speechTraining.startedAt = Date.now(); speechTraining.inputMethod = 'manual';
-    $('#speechPrompt').textContent = r.prompt || '';
-    $('#speechTarget').textContent = mode === 'speaking' ? (r.target || '') : '🔒 先听音，再输入你听到的单词';
-    $('#speechSource').textContent = r.source?.title || '今日词汇 / 本地词库';
-    $('#speechAnswer').value = ''; $('#speechAnswer').placeholder = mode === 'speaking' ? '输入或识别你朗读的句子' : '听音后输入单词';
-    $('#speechResult').textContent = ''; $('#speechResult').className = 'result';
-    $('#speechSubmitBtn').disabled = false; $('#speechPlayBtn').disabled = false;
-    renderSpeechSupport();
-  } catch (e) { if (requestId === speechTraining.requestId) $('#speechResult').textContent = '加载失败：' + e.message; }
-}
-function startSpeechRecognition() {
-  const Ctor = speechRecognitionCtor();
-  if (!Ctor || !window.isSecureContext) return;
-  if (speechTraining.recognition) { stopSpeechRecognition(); return; }
-  try {
-    const rec = new Ctor(); speechTraining.recognition = rec;
-    rec.lang = 'en-US'; rec.interimResults = false; rec.maxAlternatives = 1;
-    rec.onstart = () => { $('#speechRecordBtn').textContent = '⏹️ 识别中…'; };
-    rec.onresult = e => { $('#speechAnswer').value = e.results?.[0]?.[0]?.transcript || ''; speechTraining.inputMethod = 'recognition'; };
-    rec.onerror = e => { $('#speechSupport').textContent = `语音识别不可用（${e.error || 'unknown'}），可手动输入。`; };
-    rec.onend = () => { speechTraining.recognition = null; $('#speechRecordBtn').textContent = '🎙️ 开始识别'; };
-    rec.start();
-  } catch { $('#speechSupport').textContent = '语音识别启动失败，请手动输入。'; }
-}
-function submitSpeechTraining() {
-  if (!speechTraining.sessionId) return;
-  if (!$('#speechAnswer').value.trim()) { $('#speechResult').textContent = '请输入答案后提交'; return; }
-  stopSpeechRecognition();
-  const requestId = speechTraining.requestId;
-  $('#speechSubmitBtn').disabled = true;
-  api('/api/speaking/submit', { method: 'POST', body: { sessionId: speechTraining.sessionId, answer: $('#speechAnswer').value, inputMethod: speechTraining.inputMethod || 'manual', durationMs: Date.now() - speechTraining.startedAt } })
-    .then(r => { if (requestId !== speechTraining.requestId) return; const out = $('#speechResult'); out.className = `result ${r.correct ? 'ok' : 'err'}`; out.textContent = `${r.correct ? '✅' : '❌'} ${Math.round((r.score || 0) * 100)} 分 · 正确答案：${r.expected}${r.gloss ? ` · ${r.gloss}` : ''}${speechTraining.mode === 'speaking' ? ' · 按文本匹配评分，不评估口音' : ''}`; speechTraining.sessionId = ''; loadDashboard(); })
-    .catch(e => { if (requestId === speechTraining.requestId) { $('#speechSubmitBtn').disabled = false; $('#speechResult').className = 'result err'; $('#speechResult').textContent = e.message; } });
-}
-$$('[data-speech-mode]').forEach(btn => btn.addEventListener('click', () => {
-  speechTraining.mode = btn.dataset.speechMode;
-  $$('[data-speech-mode]').forEach(x => x.classList.toggle('active', x === btn));
-  loadSpeechSession();
-}));
-if ($('#speechNewBtn')) $('#speechNewBtn').addEventListener('click', loadSpeechSession);
-if ($('#speechPlayBtn')) $('#speechPlayBtn').addEventListener('click', () => { if (speechTraining.ttsText) { unlockTtsAudio(); speak(speechTraining.ttsText); } });
-if ($('#speechRecordBtn')) $('#speechRecordBtn').addEventListener('click', startSpeechRecognition);
-if ($('#speechSubmitBtn')) $('#speechSubmitBtn').addEventListener('click', submitSpeechTraining);
-if ($('#speechAnswer')) $('#speechAnswer').addEventListener('input', () => { speechTraining.inputMethod = 'manual'; });
 
 async function loadDashboard() {
   try {
@@ -7288,22 +7242,9 @@ if ($('#mobileSyncBadge')) {
 
 // 移动端主题与同步状态由 applyTheme 与 updateSyncBadge 统一定向更新
 
-/* ============ v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） ============ */
-const PWA = {
-  deferredPrompt: null,
-  installed: false,
-};
-
-function pwaIsStandalone() {
-  return window.matchMedia('(display-mode: standalone)').matches
-    || window.matchMedia('(display-mode: fullscreen)').matches
-    || window.navigator.standalone === true;
-}
-
-function pwaIsIOS() {
-  return /iphone|ipad|ipod/i.test(navigator.userAgent)
-    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-}
+/* ============ v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） ============
+ * v4.3.1：设置里的「安装到桌面」入口已移除，安装引导 UI 与 beforeinstallprompt
+ * 拦截逻辑一并下线；manifest 与 Service Worker 保留，仍可用浏览器菜单安装。 */
 
 /** 注册 Service Worker：仅在安全上下文（HTTPS/localhost）生效；HTTP/IP 下浏览器会拒绝，这里主动跳过避免控制台报错 */
 function pwaRegisterSW() {
@@ -7328,99 +7269,8 @@ function pwaRegisterSW() {
   }).catch(() => { /* 静默：SW 注册失败不影响主流程 */ });
 }
 
-function pwaRenderInstallUI() {
-  const status = $('#installStatus');
-  const guide = $('#installGuide');
-  const btn = $('#installBtn');
-  const refreshBtn = $('#installRefreshBtn');
-  if (!status) return;
-  const secure = window.isSecureContext;
-
-  if (PWA.installed) {
-    status.innerHTML = '✅ 已安装为应用（当前正以独立窗口运行）。';
-    if (btn) btn.style.display = 'none';
-    if (refreshBtn) refreshBtn.style.display = 'none';
-    if (guide) guide.innerHTML = '';
-    return;
-  }
-
-  if (PWA.deferredPrompt) {
-    status.innerHTML = '🔔 本浏览器支持一键安装，点击「立即安装」即可。';
-    if (btn) btn.style.display = '';
-    if (refreshBtn) refreshBtn.style.display = '';
-    if (guide) guide.innerHTML = '';
-    return;
-  }
-
-  if (btn) btn.style.display = 'none';
-  if (refreshBtn) refreshBtn.style.display = '';
-
-  if (pwaIsIOS()) {
-    status.innerHTML = 'ℹ️ iPhone / iPad 请用 Safari 打开本页，按以下步骤添加：';
-    guide.innerHTML = '<ol style="margin:6px 0 0 18px;line-height:1.7">'
-      + '<li>点击 Safari 底部的「分享」按钮 <b>↑</b>（方框带向上箭头）</li>'
-      + '<li>在弹出菜单中向下找到并点击「<b>添加到主屏幕</b>」</li>'
-      + '<li>确认名称后点右上角「添加」，桌面即出现图标</li></ol>';
-  } else if (!secure) {
-    status.innerHTML = '⚠️ 当前以 <b>HTTP/IP</b> 访问，浏览器不允许「一键安装」与离线缓存。'
-      + '你仍可用浏览器菜单里的「<b>添加到主屏幕 / 创建快捷方式</b>」快速打开。';
-    guide.innerHTML = '<div style="margin-top:6px;line-height:1.7">'
-      + '• <b>Android Chrome</b>：右上角 ⋮ → 「添加到主屏幕」<br>'
-      + '• <b>iOS Safari</b>：底部分享 ↑ → 「添加到主屏幕」<br>'
-      + '• <b>桌面 Chrome/Edge</b>：地址栏右侧的「安装」图标 ⊕，或菜单 → 「安装英语学习工作台」</div>';
-  } else {
-    status.innerHTML = 'ℹ️ 本浏览器未直接提供一键安装，请用浏览器菜单添加：';
-    guide.innerHTML = '<div style="line-height:1.7">'
-      + '• <b>Android Chrome</b>：右上角 ⋮ → 「安装应用」/「添加到主屏幕」<br>'
-      + '• <b>iOS Safari</b>：底部分享 ↑ → 「添加到主屏幕」<br>'
-      + '• <b>桌面 Chrome/Edge</b>：地址栏右侧 ⊕ 安装图标</div>';
-  }
-}
-
-function pwaInitInstall() {
-  PWA.installed = pwaIsStandalone();
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();           // 拦截默认迷你信息条，改由自有按钮触发
-    PWA.deferredPrompt = e;
-    pwaRenderInstallUI();
-  });
-  window.addEventListener('appinstalled', () => {
-    PWA.installed = true;
-    PWA.deferredPrompt = null;
-    toast('🎉 已安装到桌面，可从图标直接打开');
-    pwaRenderInstallUI();
-  });
-
-  const btn = $('#installBtn');
-  if (btn) btn.addEventListener('click', async () => {
-    if (!PWA.deferredPrompt) { pwaRenderInstallUI(); return; }
-    PWA.deferredPrompt.prompt();
-    const choice = await PWA.deferredPrompt.userChoice;
-    if (choice && choice.outcome === 'accepted') toast('正在安装…');
-    PWA.deferredPrompt = null;
-    pwaRenderInstallUI();
-  });
-  const refreshBtn = $('#installRefreshBtn');
-  if (refreshBtn) refreshBtn.addEventListener('click', () => {
-    PWA.installed = pwaIsStandalone();
-    pwaRenderInstallUI();
-    if (PWA.deferredPrompt) toast('检测到可安装，请点「立即安装」');
-    else toast('暂未检测到一键安装入口，请按下方指引手动添加');
-  });
-
-  // 打开设置页时刷新安装区状态
-  pwaRenderInstallUI();
-}
-
-/* 安装成功后隐藏遮罩场景下也保持状态同步 */
-window.matchMedia('(display-mode: standalone)').addEventListener
-  && window.matchMedia('(display-mode: standalone)').addEventListener('change', () => {
-    PWA.installed = pwaIsStandalone();
-    pwaRenderInstallUI();
-  });
-
+/* v4.3.1：PWA 内核（manifest + Service Worker）保留，仅注册外壳缓存 */
 pwaRegisterSW();
-pwaInitInstall();
 
 /* 支持 PWA 快捷方式 ?tab=xxx 直达对应页签（在 initApp 登录成功后调用） */
 function pwaHandleShortcutTab() {

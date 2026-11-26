@@ -772,6 +772,15 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '4.3.1', date: '2026-11-26', title: '删除听说训练、移除桌面安装入口、侧边栏可折叠',
+    items: [
+      '删除「听说训练」模块：导航页签、手机端「更多」入口、页面与样式、/api/speaking/session 与 /api/speaking/submit 两条接口、今日任务里的听力拼写与口语跟读，以及相关历史学习流水。',
+      '响应头不再声明 microphone 权限（拍照识别所需的 camera 保留）。',
+      '设置中移除「安装到桌面」入口与一键安装按钮；PWA manifest 与 Service Worker 应用外壳保留，仍可用浏览器菜单安装。',
+      '左侧边栏可折叠为 64px 图标窄栏，分组标题退化为分隔线；折叠状态保存在本设备（localStorage）。手机端侧栏本就隐藏，不受影响。',
+    ],
+  },
+  {
     version: '4.3.0', date: '2026-11-25', title: 'AI 词汇微课',
     items: [
       '词群围绕一个学习目标，先示范原句里的判断线索，再做同语境对照。',
@@ -1205,8 +1214,6 @@ const VALID_ATTEMPT_KINDS = new Set([
   'vocab_context',
   'vocab_cloze',
   'sentence_analysis',
-  'listening',
-  'speaking',
 ]);
 const VALID_ATTEMPT_RESULTS = new Set([
   'pending',
@@ -7592,7 +7599,7 @@ function setSecurityHeaders(res) {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  res.setHeader('Permissions-Policy', 'camera=(self), microphone=(self), geolocation=()');
+  res.setHeader('Permissions-Policy', 'camera=(self), geolocation=()');
   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
   res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https:; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
 }
@@ -7672,9 +7679,8 @@ function serveStaticFile(req, res, filePath) {
   return fs.createReadStream(filePath).pipe(res);
 }
 
-/* v3.3.6：今日任务中心、考试计划与听说训练 */
-const STUDY_TASK_IDS = new Set(['vocab_today', 'review_due', 'exam_practice', 'listening', 'speaking']);
-const speechSessions = new Map();
+/* v3.3.6：今日任务中心与考试计划；v4.3.1 删除「听说训练」及其任务项 */
+const STUDY_TASK_IDS = new Set(['vocab_today', 'review_due', 'exam_practice']);
 function validStudyDate(date) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return false;
   const [year, month, day] = date.split('-').map(Number);
@@ -7766,16 +7772,12 @@ function studyTasks(date = bjDate(), plan = loadStudyPlan()) {
     vocab_today: Math.max(vocab.size, progress?.finished || 0),
     review_due: new Set(attempts.filter(x => x.kind === 'word_quiz' && ['srs', 'srs_review', 'wrongbook'].includes(x.meta?.mode)).map(x => x.meta?.word || x.itemId)).size,
     exam_practice: attempts.filter(x => ['unit_objective', 'translation', 'writing', 'vocab_context', 'vocab_cloze'].includes(x.kind)).length,
-    listening: attempts.filter(x => x.kind === 'listening').length,
-    speaking: attempts.filter(x => x.kind === 'speaking').length,
   };
   const completed = completedStudyTasksFor(date, plan);
   const tasks = [
     { id: 'vocab_today', title: '今日词汇', icon: '🔤', target: plan.dailyWords, detail: `${counts.vocab_today}/${plan.dailyWords} 词 · 今日词表 ${Object.values(db.words).filter(x => x.today?.date === date).length}`, tab: 'study' },
     { id: 'review_due', title: '到期与错题复习', icon: '🔁', target: due + counts.review_due, detail: `${counts.review_due} 词已练 · ${due} 词待复习（去重）`, tab: 'quiz' },
-    { id: 'exam_practice', title: '真题训练', icon: '📝', target: 1, detail: `${counts.exam_practice}/1 次`, tab: 'exam' },
-    { id: 'listening', title: '听力拼写', icon: '🎧', target: 1, detail: `${counts.listening}/1 次`, tab: 'speaking' },
-    { id: 'speaking', title: '口语跟读', icon: '🗣️', target: 1, detail: `${counts.speaking}/1 次`, tab: 'speaking' },
+    { id: 'exam_practice', title: '真题训练', icon: '📝', target: 1, detail: `${counts.exam_practice}/1 次`, tab: 'kb' },
   ];
   return tasks.map(t => {
     const automatic = counts[t.id] >= t.target;
@@ -7796,48 +7798,6 @@ function completeStudyTask(taskId, date = bjDate(), done = true) {
 function studyPlanDate(plan) {
   return plan.examDate || null;
 }
-function speechSourceWord() {
-  const words = [...Object.values(db.words), ...db.todayItems].filter(x => /^[a-z][a-z'-]{1,40}$/i.test(x?.spelling || ''));
-  const today = words.filter(x => x.today?.date === bjDate());
-  const pool = today.length ? today : words;
-  const item = pool.length ? pool[crypto.randomInt(pool.length)] : { spelling: 'practice' };
-  const spelling = String(item.spelling).trim().slice(0, 120) || 'practice';
-  const gloss = String(db.glosses[spelling]?.gloss || '').slice(0, 300);
-  return { spelling, gloss };
-}
-function speechSourceSentence(word) {
-  const plan = loadStudyPlan();
-  const ridSet = activeRidSet();   // v3.6.0：听说语料同样受考试圈定范围约束
-  const pool = kbSentences().filter(x => x.s.length <= 180 && /^[a-zA-Z]/.test(x.s)
-    && (!x.track || plan.examType === 'custom' || x.track === plan.examType)
-    && !(x._scope && ridSet && !ridSet.has(x.rid)));
-  const matching = pool.filter(x => normalizeSpeechText(x.s).split(' ').includes(word));
-  const candidates = matching.length ? matching : pool;
-  if (candidates.length) {
-    const item = candidates[crypto.randomInt(candidates.length)];
-    return { text: item.s, source: item.sourceKind, title: item.title || '本地语料', rid: item.rid };
-  }
-  const sentences = ['Regular practice helps me make steady progress.', 'I would like to improve my English every day.', 'Learning a new language takes time and patience.'];
-  return { text: sentences[crypto.randomInt(sentences.length)], source: 'builtin', title: '内置练习短句', rid: null };
-}
-function speechSessionFor(id, userId) {
-  const s = speechSessions.get(`${userId}:${id}`);
-  if (!s || Date.now() - s.createdAt > 15 * 60 * 1000) { speechSessions.delete(`${userId}:${id}`); return null; }
-  return s;
-}
-function normalizeSpeechText(value) { return String(value || '').toLowerCase().replace(/[^a-z0-9'\s-]/g, ' ').replace(/\s+/g, ' ').trim(); }
-function speechTokenDistance(a, b) {
-  const left = Array.isArray(a) ? a : [];
-  const right = Array.isArray(b) ? b : [];
-  let prev = Array.from({ length: right.length + 1 }, (_, i) => i);
-  for (let i = 1; i <= left.length; i++) {
-    const cur = [i];
-    for (let j = 1; j <= right.length; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (left[i - 1] === right[j - 1] ? 0 : 1));
-    prev = cur;
-  }
-  return prev[right.length];
-}
-
 function readBody(req, max = 5e6) {
   return new Promise((resolve, reject) => {
     let buf = '';
@@ -8673,67 +8633,6 @@ async function handleRequest(req, res) {
         if (body.completed !== undefined && typeof body.completed !== 'boolean') return sendJSON(res, 400, { error: 'completed 必须为布尔值' });
         try { return sendJSON(res, 200, { ok: true, date, tasks: completeStudyTask(String(body.taskId || ''), date, body.completed !== false) }); }
         catch (e) { return sendJSON(res, 400, { error: e.message }); }
-      }
-
-      /* ---- v3.3.6：浏览器听说训练（TTS + Web Speech Recognition / 手动输入降级） ---- */
-      if (p === '/api/speaking/session' && req.method === 'POST') {
-        const body = await readBody(req);
-        for (const [key, session] of speechSessions) if (Date.now() - session.createdAt > 15 * 60 * 1000) speechSessions.delete(key);
-        const userPrefix = `${ctxStore.userId || LEGACY_USER}:`;
-        const mine = [...speechSessions.keys()].filter(key => key.startsWith(userPrefix));
-        for (const key of mine.slice(0, Math.max(0, mine.length - 9))) speechSessions.delete(key);
-        const mode = body.mode || 'listening';
-        if (!['listening', 'speaking'].includes(mode)) return sendJSON(res, 400, { error: 'mode 仅允许 listening/speaking' });
-        const word = speechSourceWord();
-        const id = crypto.randomBytes(12).toString('hex');
-        const sentence = mode === 'speaking' ? speechSourceSentence(word.spelling) : null;
-        const target = mode === 'speaking' ? sentence.text : word.spelling;
-        speechSessions.set(`${ctxStore.userId || LEGACY_USER}:${id}`, { mode, expected: target, word: word.spelling, gloss: word.gloss, source: sentence?.source || null, createdAt: Date.now() });
-        return sendJSON(res, 200, {
-          ok: true, sessionId: id, mode, word: mode === 'speaking' ? word.spelling : null,
-          prompt: mode === 'listening' ? '点击播放后，听音拼写单词' : '请朗读下面的句子，并检查识别结果',
-          target: mode === 'speaking' ? target : null,
-          ttsText: target,
-          gloss: null,
-          source: sentence ? { kind: sentence.source, title: sentence.title, rid: sentence.rid } : null,
-        });
-      }
-      if (p === '/api/speaking/submit' && req.method === 'POST') {
-        const body = await readBody(req);
-        const id = String(body.sessionId || '');
-        const session = speechSessionFor(id, ctxStore.userId || LEGACY_USER);
-        if (!session) return sendJSON(res, 400, { error: '训练会话已失效，请重新开始' });
-        const answer = String(body.answer || '').trim();
-        if (!answer || answer.length > 4000) return sendJSON(res, 400, { error: '请输入 1..4000 字符的答案' });
-        const inputMethod = body.inputMethod || 'manual';
-        if (!['manual', 'recognition'].includes(inputMethod)) return sendJSON(res, 400, { error: 'inputMethod 非法' });
-        const durationMs = body.durationMs === undefined ? null : Number(body.durationMs);
-        if (durationMs !== null && (!Number.isFinite(durationMs) || durationMs < 0 || durationMs > 14400000)) return sendJSON(res, 400, { error: 'durationMs 非法' });
-        const expected = session.expected;
-        let score = 0;
-        if (session.mode === 'listening') {
-          const got = normalizeSpeechText(answer);
-          const want = normalizeSpeechText(expected);
-          const distance = levenshtein(got, want);
-          score = got === want ? 1 : (got && want.length >= 5 && distance <= Math.floor(want.length * 0.2) ? 0.75 : 0);
-        } else {
-          const want = normalizeSpeechText(expected).split(/\s+/).filter(Boolean);
-          const got = normalizeSpeechText(answer).split(/\s+/).filter(Boolean);
-          // 对词序和重复词计入编辑距离；该分数仅表示文本匹配，不能代替发音评估。
-          score = Math.max(0, 1 - speechTokenDistance(want, got) / Math.max(1, want.length, got.length));
-        }
-        const correct = score >= (session.mode === 'listening' ? 0.75 : 0.7);
-        const result = correct ? 'correct' : (score > 0 ? 'vague' : 'incorrect');
-        const submittedAt = new Date().toISOString();
-        appendLearningAttempts([{
-          kind: session.mode, source: 'speech_training', itemId: `speech:${session.word}`,
-          section: session.mode, prompt: session.mode === 'speaking' ? expected : '听音拼写', expected,
-          answer, result, confidence: null, startedAt: null, submittedAt,
-          durationMs: durationMs === null ? null : Math.round(durationMs),
-          meta: { mode: session.mode, score, word: session.word, inputMethod, evaluation: 'text_match' },
-        }]);
-        speechSessions.delete(`${ctxStore.userId || LEGACY_USER}:${id}`);
-        return sendJSON(res, 200, { ok: true, correct, result, score, expected, gloss: session.gloss, source: session.source, attemptsSaved: 1 });
       }
 
       // 单词列表：?filter=sticky|wellfamiliar|forget|vague|newtoday|unfinished|today|due7|all&q=

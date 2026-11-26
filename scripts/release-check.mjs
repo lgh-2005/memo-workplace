@@ -14,12 +14,19 @@ const appSrc = await readFile(join(root, 'public', 'app.js'), 'utf8');
 const indexHtml = await readFile(join(root, 'public', 'index.html'), 'utf8');
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.3.0'],
+  ['package version', packageJson.version === '4.3.1'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
   ['v4 corpus exam projection', serverSrc.includes("p === '/api/kb/exams'") && appSrc.includes('kbAppendExamReading')],
   ['v4 nav has no exam/pomodoro tab', !indexHtml.includes('data-tab="exam"') && !indexHtml.includes('data-tab="pomo"')],
+  // v4.3.1：听说训练整链路下线、设置里的桌面安装入口移除、侧边栏可折叠
+  ['v4.3.1 removed speaking tab', !indexHtml.includes('data-tab="speaking"') && !indexHtml.includes('id="tab-speaking"')],
+  ['v4.3.1 removed speaking routes', !/p === '\/api\/speaking\//.test(serverSrc) && !appSrc.includes('/api/speaking/')],
+  ['v4.3.1 removed install-to-desktop entry', !indexHtml.includes('id="installSection"') && !appSrc.includes('pwaInitInstall')],
+  ['v4.3.1 keeps pwa shell registration', appSrc.includes('pwaRegisterSW()') && indexHtml.includes('rel="manifest"')],
+  ['v4.3.1 sidebar collapse hook', indexHtml.includes('id="sidebarToggle"') && appSrc.includes('sidebar-collapsed') && appSrc.includes('applySidebarCollapse')],
+  ['v4.3.1 no microphone permission', !serverSrc.includes("microphone=(self)")],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],
@@ -41,7 +48,8 @@ const required = [
   ['security audit', exists(join(root, 'scripts', 'security-audit.mjs'))],
   ['mobile regression', exists(join(root, 'scripts', 'mobile-device-check.mjs'))],
   ['docs consistency', exists(join(root, 'scripts', 'docs-consistency.mjs'))],
-  ['study plan speech smoke', exists(join(root, 'scripts', 'study-plan-smoke.mjs'))],
+  ['study plan smoke', exists(join(root, 'scripts', 'study-plan-smoke.mjs'))],
+  ['speaking attempt purge tool', exists(join(root, 'scripts', 'purge-speaking-attempts.mjs'))],
   ['tts smoke', exists(join(root, 'scripts', 'tts-smoke.mjs'))],
   ['ecdict smoke', exists(join(root, 'scripts', 'ecdict-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('ecdict-smoke.mjs')],
   ['ecdict bubble ui', exists(join(root, 'scripts', 'ecdict-bubble-ui-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('ecdict-bubble-ui-smoke.mjs')],

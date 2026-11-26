@@ -61,18 +61,38 @@ body {
   display: flex; flex-direction: column;
   z-index: 100;
   padding: 16px 12px;
+  /* v4.3.1：折叠为图标窄栏时的宽度过渡 */
+  transition: width .22s ease, min-width .22s ease, padding .22s ease;
 }
 
 .sidebar-head {
-  padding: 4px 8px 14px;
+  padding: 4px 8px 10px;
   border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
   margin-bottom: 10px;
 }
 .brand {
   font-weight: 700; font-size: 15px; white-space: nowrap; letter-spacing: .02em;
   display: flex; align-items: baseline; gap: 4px;
+  min-width: 0;
 }
-.ver { font-size: 11px; font-weight: 400; color: var(--text-sub); }
+.brand-mark { flex: none; }
+.brand-text { overflow: hidden; text-overflow: ellipsis; }
+.ver { font-size: 11px; font-weight: 400; color: var(--text-sub); flex: none; }
+
+/* v4.3.1：版本号与折叠按钮同一行；折叠按钮在右 */
+.sidebar-head-tools {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  margin-top: 6px;
+}
+.sidebar-toggle {
+  display: inline-flex; align-items: center; gap: 3px;
+  height: 24px; padding: 0 8px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--card); color: var(--text-sub);
+  cursor: pointer; font-size: 11.5px; line-height: 1;
+  transition: background .16s ease, border-color .16s ease, color .16s ease;
+}
+.sidebar-toggle:hover { background: var(--primary-soft); border-color: var(--primary); color: var(--primary); }
+.sidebar-toggle-icon { font-size: 13px; }
 
 .tabs {
   display: flex; flex-direction: column; gap: 3px; flex: 1; overflow-y: auto;
@@ -89,7 +109,10 @@ body {
   text-align: left; display: flex; align-items: center; gap: 8px;
   transition: background .16s ease, color .16s ease, transform .16s ease;
   width: 100%;
+  min-width: 0;
 }
+.tab-icon { flex: none; font-size: 15px; line-height: 1.2; }
+.tab-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tab:hover {
   background: var(--primary-soft); color: var(--primary); transform: translateX(2px);
 }
@@ -211,19 +234,10 @@ main {
 .study-plan-form .field-label { margin: 0; }
 .study-plan-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .study-plan-grid { margin-top: 16px; }
-.speaking-mode-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-.speech-training { border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; display: grid; gap: 12px; }
-.speech-prompt { color: var(--text-sub); font-size: 13px; }
-.speech-target { font-size: 20px; font-weight: 650; min-height: 32px; line-height: 1.5; }
-.speech-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-.speech-answer { font-size: 16px; min-height: 44px; }
-.speech-support { min-height: 20px; }
 @media (max-width: 700px) {
   .study-plan-grid { margin-top: 12px; }
   .study-plan-fields { grid-template-columns: 1fr; }
   .study-task-btn { min-height: 44px; }
-  .speech-actions .btn, #speechSubmitBtn { min-height: 44px; }
-  .speech-target { font-size: 18px; }
 }
 @media (max-width: 900px) {
   .model-assignment { grid-template-columns: 1fr; gap: 6px; }
@@ -4035,12 +4049,6 @@ body.spotlight-active .kb-passage p.spotlight-focus {
 .account-name { font-size: 16px; font-weight: 600; }
 .account-role { font-size: 12.5px; color: var(--text-sub); margin-top: 2px; }
 
-/* v3.3.0：安装到桌面 */
-.install-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
-.install-status { font-size: 13px; line-height: 1.7; margin-top: 10px; }
-.install-guide { font-size: 13px; color: var(--text-sub); margin-top: 4px; }
-.install-guide b { color: var(--text); }
-
 /* v3.2.0：AI 用量看板 */
 .usage-controls { display: flex; gap: 8px; align-items: center; }
 .usage-total { display: flex; gap: 18px; flex-wrap: wrap; margin: 12px 0 6px; }
@@ -4242,3 +4250,96 @@ body.spotlight-active .kb-passage p.spotlight-focus {
 .coach-last-feedback summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; }
 .coach-node:disabled { opacity: .55; cursor: default; }
 .coach-lesson-result { font-weight: 700; }
+
+/* ============ v4.3.1：左侧边栏折叠为图标窄栏 ============ */
+/* 放在文件末尾，确保覆盖各风格（arcade/pop/mc-*）与禅模式的既有规则 */
+
+body.sidebar-collapsed .sidebar {
+  width: 64px;
+  min-width: 64px;
+  padding: 16px 8px;
+}
+
+body.sidebar-collapsed .sidebar-head {
+  padding: 4px 0 10px;
+}
+
+body.sidebar-collapsed .brand { display: none; }
+
+body.sidebar-collapsed .sidebar-head-tools {
+  justify-content: center;
+  margin-top: 0;
+}
+
+body.sidebar-collapsed .sidebar-head-tools .ver { display: none; }
+
+body.sidebar-collapsed .sidebar-toggle {
+  width: 100%;
+  justify-content: center;
+  padding: 0;
+}
+
+body.sidebar-collapsed .sidebar-toggle-text { display: none; }
+
+/* 分组标题退化为分隔线，保留视觉分组 */
+body.sidebar-collapsed .tab-group-label {
+  height: 1px;
+  margin: 7px 4px;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  opacity: 1;
+  background: color-mix(in srgb, var(--border) 75%, transparent);
+  overflow: hidden;
+}
+
+body.sidebar-collapsed .tabs {
+  gap: 4px;
+  padding-right: 0;
+}
+
+body.sidebar-collapsed .tab {
+  justify-content: center;
+  gap: 0;
+  padding: 10px 0;
+  min-height: 42px;
+}
+
+body.sidebar-collapsed .tab-text { display: none; }
+
+body.sidebar-collapsed .tab-icon { font-size: 17px; }
+
+body.sidebar-collapsed .tab:hover { transform: none; }
+
+/* 图标窄栏里左侧竖条会显得歪，改为整圈描边高亮 */
+body.sidebar-collapsed .tab.active {
+  box-shadow: inset 0 0 0 2px var(--primary);
+}
+
+body.sidebar-collapsed .sidebar-foot {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding: 10px 0 4px;
+}
+
+body.sidebar-collapsed .sidebar-foot-tools {
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+body.sidebar-collapsed .sidebar-foot-tools .theme-toggle {
+  width: 100%;
+  padding: 6px 0;
+}
+
+/* 同步状态在窄栏里只留圆点，文字由 title 提供提示 */
+body.sidebar-collapsed .sidebar-foot .sync-badge {
+  width: 100%;
+  flex: none;
+  padding: 6px 0;
+  justify-content: center;
+}
+
+body.sidebar-collapsed .sidebar-foot #syncText { display: none; }

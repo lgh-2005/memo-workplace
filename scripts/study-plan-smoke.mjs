@@ -1,5 +1,5 @@
 #!/usr/bin/env node
- /** v3.3.6：今日任务中心、考试计划与听说训练隔离沙箱回归。 */
+ /** v3.3.6：今日任务中心与考试计划隔离沙箱回归；v4.3.1 追加「听说训练下线」契约。 */
  import { cp, mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
  import { fileURLToPath } from 'node:url';
  import { tmpdir } from 'node:os';
@@ -69,25 +69,21 @@
    if (r.response.status !== 200 || !r.body.tasks.find(x => x.id === 'exam_practice')?.done) throw new Error('task completion failed');
    r = await json('/api/study/tasks', {}, studentCookie);
    if (!r.body.tasks.find(x => x.id === 'exam_practice')?.done) throw new Error('task completion did not persist');
+   // v4.3.1：听说训练整链路下线——两条接口必须 404，任务列表不再出现听力/口语任务
    r = await json('/api/speaking/session', { method: 'POST', body: JSON.stringify({ mode: 'listening' }) }, studentCookie);
-   const listen = r.body;
-   r = await json('/api/speaking/submit', { method: 'POST', body: JSON.stringify({ sessionId: listen.sessionId, answer: 'practice', inputMethod: 'manual' }) }, studentCookie);
-   if (!r.body.correct || r.body.attemptsSaved !== 1) throw new Error('listening submit failed');
-   r = await json('/api/speaking/submit', { method: 'POST', body: JSON.stringify({ sessionId: listen.sessionId, answer: 'practice' }) }, studentCookie);
-   if (r.response.status !== 400) throw new Error('speech session was reusable');
-   r = await json('/api/speaking/submit', { method: 'POST', body: JSON.stringify({ sessionId: listen.sessionId, answer: 'practice' }) }, adminCookie);
-   if (r.response.status !== 400) throw new Error('speech session crossed user boundary');
-   r = await json('/api/speaking/session', { method: 'POST', body: JSON.stringify({ mode: 'speaking' }) }, studentCookie);
-   if (!r.body.target || !r.body.source) throw new Error('speaking source contract failed');
-   r = await json('/api/speaking/submit', { method: 'POST', body: JSON.stringify({ sessionId: r.body.sessionId, answer: r.body.target, inputMethod: 'recognition' }) }, studentCookie);
-   if (!r.body.correct) throw new Error('speaking submit failed');
-   r = await json('/api/learning/attempts?kind=listening', {}, studentCookie);
-   if (r.body.total !== 1) throw new Error('learning attempts were not recorded');
-   r = await json('/api/learning/attempts?kind=listening', {}, adminCookie);
-   if (r.body.total !== 0) throw new Error('learning attempts leaked across users');
+   if (r.response.status !== 404) throw new Error('removed speaking session endpoint still responds: ' + r.response.status);
+   r = await json('/api/speaking/submit', { method: 'POST', body: JSON.stringify({ sessionId: 'x', answer: 'practice' }) }, studentCookie);
+   if (r.response.status !== 404) throw new Error('removed speaking submit endpoint still responds: ' + r.response.status);
+   r = await json('/api/study/tasks', {}, studentCookie);
+   const taskIds = r.body.tasks.map(x => x.id);
+   if (taskIds.includes('listening') || taskIds.includes('speaking')) throw new Error('speaking tasks still present: ' + taskIds.join(','));
+   let rejectedTask = await json('/api/study/tasks/complete', { method: 'POST', body: JSON.stringify({ taskId: 'listening', completed: true }) }, studentCookie);
+   if (rejectedTask.response.status !== 400) throw new Error('removed speaking task id was still accepted');
+   // v4.3.1：麦克风权限随听说训练移除，拍照识别所需的 camera 保留
    const policy = (await fetch(base + '/api/auth/status', { headers: { Cookie: studentCookie } })).headers.get('permissions-policy') || '';
-   if (!policy.includes('microphone=(self)')) throw new Error('same-origin microphone policy missing');
-   console.log('study plan / speech smoke: passed');
+   if (policy.includes('microphone')) throw new Error('microphone permission still declared after speaking removal');
+   if (!policy.includes('camera=(self)')) throw new Error('same-origin camera policy missing');
+   console.log('study plan / removed speaking smoke: passed');
  } finally {
    if (server) { server.kill('SIGTERM'); await new Promise(resolve => server.once('close', resolve)); }
    await rm(sandbox, { recursive: true, force: true });
