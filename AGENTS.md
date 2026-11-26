@@ -149,6 +149,7 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 - **v4.3.1 移除设置里的「安装到桌面」**：`#installSection`、`pwaInitInstall`、`beforeinstallprompt` 拦截与安装引导删除；`pwaRegisterSW()` 与 manifest 保留，浏览器菜单仍可安装。
 - **v4.3.1 侧边栏可折叠**：`#sidebarToggle` 与版本号同行；折叠为 64px 图标窄栏（`.tab-text` 隐藏、`.tab-group-label` 变分隔线、底部工具竖排、同步徽标只留圆点），状态存 `localStorage['wb-sidebar-collapsed']`；`frontend-refinement-smoke` 覆盖「折叠 64px → 刷新保持 → 展开复原」。
 - **v4.3.1 数据清理**：`scripts/purge-speaking-attempts.mjs`（`npm run purge:speaking`），默认 dry-run，`--apply` 写盘前留 `<file>.bak-speaking-<stamp>`，幂等、原子写；清 `learning_attempts.json` 的 `listening/speaking` 与 `study_plan.json` 的对应任务勾选。
+- **发布确认（北京时间 2026-11-26 10:53）**：ECS 从 v4.3.0 更新至 v4.3.1；Gitee / GitHub `master` 与 `v4.3.1` 标签均对应提交 `d960aaf000a0d6b3737d14a87b4ddc46e6761b58`；[Node 22/24 CI](https://github.com/lgh-2005/memo-workplace/actions/runs/45744797984) 通过。部署前备份 `data_backup_v430_20261126-025316.tar.gz`（恢复演练通过）；听说流水清理跑过 dry-run + apply，实测 **0 条**（线上本无 `listening/speaking` 记录）、幂等复检通过。公网 `online-health` 5/5，首页版本标识 4 处、听说页签 0、`installSection` 0、导航 7 项，`Permissions-Policy` 为 `camera=(self), geolocation=()`。
 - 微课仍使用 `POST /api/tutor/map` 的 `lesson` / `lesson_turn`，兼容旧 `plan` / `start` / `answer`。开课优先选可核验的原句，标清教学改写、自拟语境；演示与迁移不同出处且先不发迁移评分依据。正式课开放作答按语义和判断依据判分；固定 address / solve 样课不依赖 AI 配置。
 - 跟练答错针对误解补教；验证错后可再换一句。结果区分独立答对、提示后答对和仍需补教，仅代表本次表现。没有自动延迟抽查或 SRS 持久化，页面刷新不恢复进度；服务端回合按用户隔离，空闲 30 分钟过期。
 - 发布从 Gitee `master` 取产品文件，需要同一提交的 GitHub 镜像和 Actions 成功结果。验收入口 `npm run test:all`，微课相关用例在 `tutor-drill-smoke.mjs` 和 `vocab-chat-smoke.mjs`。
