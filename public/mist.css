@@ -840,6 +840,41 @@
   .mist-cell-lab, .mist-cell-label { font-size: 11px; }
 }
 
+/* 20 · 登录遮罩（线上首次进门的第一屏，同样给晨雾质感） ------------------ */
+[data-style="mist"] .login-overlay {
+  background:
+    radial-gradient(1100px 520px at 78% 14%, #ffd9b44d, #ffd9b400 62%),
+    radial-gradient(760px 420px at 12% 84%, #cdd8e033, #cdd8e000 68%),
+    color-mix(in srgb, var(--bg) 88%, #2a2018);
+  backdrop-filter: blur(9px) saturate(1.04); -webkit-backdrop-filter: blur(9px) saturate(1.04);
+}
+[data-style="mist"][data-theme="dark"] .login-overlay {
+  background:
+    radial-gradient(1100px 520px at 78% 14%, #7a5a4326, #7a5a4300 62%),
+    radial-gradient(760px 420px at 12% 84%, #2c4a6e2e, #2c4a6e00 68%),
+    color-mix(in srgb, var(--bg) 90%, #05070a);
+}
+[data-style="mist"] .login-card {
+  border-radius: 20px; padding: 30px 26px 24px;
+  border-color: color-mix(in srgb, var(--border) 70%, var(--text));
+  background: var(--card) url('/mist/paper.webp') 0 0 / 320px; background-blend-mode: multiply;
+  box-shadow: 0 40px 80px -52px #362712b3, 0 2px 6px #36271212;
+  animation: mist-login-in .34s var(--mist-ease) both;
+}
+[data-style="mist"][data-theme="dark"] .login-card { background: var(--card); }
+@keyframes mist-login-in { from { opacity: 0; transform: translateY(10px) scale(.99); } }
+[data-style="mist"] .login-brand { font: 600 17px/1.5 var(--mist-serif); letter-spacing: .02em; }
+[data-style="mist"] .login-sub { color: var(--text-sub); font-size: 12px; }
+[data-style="mist"] .login-input { min-height: 46px; border-radius: 11px; margin-top: 10px; font-size: 14px; }
+[data-style="mist"] .login-btn { min-height: 46px; border-radius: 11px; font-size: 14px; margin-top: 14px; }
+[data-style="mist"] .login-hint { font-size: 11.5px; line-height: 1.7; color: var(--text-sub); }
+[data-style="mist"] .login-tabs { border-radius: 999px; padding: 3px; border: 1px solid var(--border); background: var(--mist-soft); }
+[data-style="mist"] .login-tab {
+  border-radius: 999px; border: 1px solid transparent; background: transparent;
+  min-height: 36px; font-size: 13px; color: var(--text-sub);
+}
+[data-style="mist"] .login-tab.active { background: var(--card); color: var(--text); border-color: var(--border); font-weight: 600; }
+
 /* 19 · 满足「减少动态效果」偏好 ------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   [data-style="mist"] *, [data-style="mist"] *::before, [data-style="mist"] *::after {
