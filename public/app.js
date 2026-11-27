@@ -665,7 +665,12 @@ function switchTab(name, { history: trackHistory = true } = {}) {
   if (name === 'notes') loadNotes();
   if (name === 'kb') loadKb();
 
-  if (name === 'settings') { loadConfig(); loadBackupList(); }
+  if (name === 'settings') {
+    loadConfig(); loadBackupList();
+    refreshMistSettingsNav();
+    setTimeout(refreshMistSettingsNav, 120);
+    setTimeout(refreshMistSettingsNav, 900);   // 管理员分区由 loadConfig 异步点亮，再补一次
+  }
   if (name === 'logs') loadLogs();
   if (name === 'quiz') { try { checkQuizResume(); } catch {}; try { loadQuizSourceCounts(); } catch {} }   // v2.11.0 续做检查 / v3.2.1 词源计数
   // quiz 页保持进行中的状态，不重置
@@ -849,17 +854,57 @@ function renderMistTasks(tasks) {
   $('#mistTaskRing').setAttribute('stroke-dasharray', `${ratio} 100`);
   $('#mistTicketSummary').textContent = tasks.length ? `${done} / ${tasks.length} 项已完成` : '暂无任务';
   const title = { vocab_today: '今日词汇', review_due: '到期与错题', exam_practice: '真题训练' };
+  // v4.4.1：票据格改成按钮——点一格直接进入对应任务（与下方「今日任务」共用同一份数据）
   $('#mistTaskCells').innerHTML = tasks.map(task => {
     const count = Number(task.count) || 0, target = Number(task.target) || 0;
     const progress = task.done ? 100 : target ? Math.min(100, Math.round(count * 100 / target)) : 0;
-    return `<div class="mist-ticket-cell${task.done ? ' done' : ''}"><span>${esc(title[task.id] || task.title)}</span>
-      <div><b>${count}</b> / ${target}<small>${task.done ? '完成' : count ? '进行中' : '未开始'}</small></div>
-      <progress max="100" value="${progress}" aria-label="${esc(task.title)}进度"></progress></div>`;
+    const state = task.done ? '完成' : count ? '进行中' : '未开始';
+    return `<button type="button" class="mist-ticket-cell${task.done ? ' done' : ''}" data-mist-task="${esc(task.id)}" aria-label="${esc(task.title)}：${esc(state)}">
+      <span class="mist-cell-label">${esc(title[task.id] || task.title)}</span>
+      <span class="mist-cell-count"><b>${count}</b><i>/ ${target}</i><small class="mist-cell-state">${state}</small></span>
+      <span class="mist-cell-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}" aria-label="${esc(task.title)}进度"><i style="width:${progress}%"></i></span>
+    </button>`;
   }).join('');
+  if (!renderMistTasks.bound) {
+    renderMistTasks.bound = true;
+    $('#mistTaskCells').addEventListener('click', event => {
+      const cell = event.target.closest('[data-mist-task]');
+      if (cell) mistJumpTask(cell.dataset.mistTask);
+    });
+  }
   const next = tasks.find(task => !task.done);
   $('#mistNextTask').textContent = ({ vocab_today: '开始今日词汇', review_due: '继续词汇复习', exam_practice: '打开真题语料' })[next?.id] || '查看今日任务';
   $('#mistTodayLead').textContent = next ? `从「${next.title}」开始，接着完成今天的计划。`
     : tasks.length ? '今天的任务已完成。可以再练一节微课，或回看学习报告。' : '查看今日任务，再挑一组词练习。';
+}
+
+function mistJumpTask(id) {
+  const task = mistTasks.find(item => item.id === id);
+  if (task) openStudyTask(task);
+}
+
+/* v4.4.1：按时段给首页一句「时间感」——清晨 / 上午 / 正午 / 午后 / 黄昏 / 夜晚 / 深夜 */
+const MIST_PHASES = [
+  { until: 5, key: 'late-night', label: '深夜' },
+  { until: 8, key: 'dawn', label: '清晨' },
+  { until: 11, key: 'morning', label: '上午' },
+  { until: 13, key: 'noon', label: '正午' },
+  { until: 17, key: 'afternoon', label: '午后' },
+  { until: 19, key: 'dusk', label: '黄昏' },
+  { until: 22, key: 'evening', label: '夜晚' },
+  { until: 24, key: 'night', label: '深夜' },
+];
+function mistPhase() {
+  const hour = new Date(Date.now() + 8 * 3600000).getUTCHours();   // 北京时间口径，与墨墨统计一致
+  return MIST_PHASES.find(item => hour < item.until) || MIST_PHASES[MIST_PHASES.length - 1];
+}
+function mistApplyPhase() {
+  const hero = document.querySelector('.mist-hero');
+  const label = $('#mistPhase');
+  if (!hero || !label) return;
+  const phase = mistPhase();
+  hero.dataset.phase = phase.key;
+  label.textContent = phase.label;
 }
 
 function renderMistWord() {
@@ -876,6 +921,7 @@ function renderMistWord() {
 
 function renderMistDashboard(data) {
   const date = data.todayStr || bjDate();
+  mistApplyPhase();
   const time = $('#mistToday');
   time.dateTime = date;
   time.textContent = new Intl.DateTimeFormat('zh-CN', { month: 'long', day: 'numeric', weekday: 'long', timeZone: 'Asia/Shanghai' })
@@ -3050,6 +3096,9 @@ function applyStyle(t) {
   localStorage.setItem('wb-style', t);
   updateThemeColor();
   $$('#styleGrid .style-opt').forEach(b => b.classList.toggle('active', b.dataset.style === t));
+  // v4.4.1：晨雾专属的功能壳（设置分区索引 / 首页时段）跟随风格重建
+  // （延后一拍执行：本函数在初始化早期就会被调用，此时下方常量尚未求值）
+  setTimeout(() => { try { refreshMistSettingsNav(); mistApplyPhase(); } catch (error) { console.debug(error); } }, 0);
 }
 
 $$('#styleGrid .style-opt').forEach(b => b.addEventListener('click', () => applyStyle(b.dataset.style)));
@@ -4013,6 +4062,9 @@ function renderKbList() {
   const totalPages = Math.ceil(totalCount / kbState.pageSize) || 1;
   if (kbState.page > totalPages) kbState.page = totalPages;
   if (kbState.page < 1) kbState.page = 1;
+  // v4.4.1：页头图版上的语料规模（随筛选联动，不额外请求）
+  const bandCount = document.getElementById('kbBandCount');
+  if (bandCount) bandCount.textContent = totalCount ? totalCount.toLocaleString('zh-CN') : '0';
 
   if (!list.length) {
     box.innerHTML = '<div class="empty-prov">该类型下暂无记录。可用下方「📥 导入语料」直接导入文件或粘贴文本。</div>';
@@ -6238,6 +6290,11 @@ async function loadQuizSourceCounts() {
       const key = c.dataset.sfilter;
       if (key && sf[key] != null) setChipCount(c, sf[key]);
     });
+    // v4.4.1：页头图版显示「记忆到期 / 错题本」规模
+    const dueEl = document.getElementById('quizBandDue');
+    const wrongEl = document.getElementById('quizBandWrong');
+    if (dueEl && sf.srs_due != null) dueEl.textContent = Number(sf.srs_due).toLocaleString('zh-CN');
+    if (wrongEl && sf.wrongbook != null) wrongEl.textContent = Number(sf.wrongbook).toLocaleString('zh-CN');
   } catch { /* 计数失败静默，不阻断测验 */ }
 }
 
@@ -6688,6 +6745,12 @@ function renderQuizItem() {
       const pickedOpt = opts[Number(b.dataset.i)];
       const ok = pickedOpt.ok;
       b.classList.add(ok ? 'correct' : 'wrong');
+      // v4.4.1：答错时同时点亮正确项，让「对在哪」一眼可见
+      if (!ok) {
+        const rightIndex = opts.findIndex(option => option.ok);
+        const rightBtn = $$('#quizArea .quiz-opt')[rightIndex];
+        if (rightBtn) rightBtn.classList.add('correct');
+      }
       const conf = quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: pickedOpt.text });
       $('#quizFeedback').innerHTML = (ok
         ? '<span class="fb-ok">✅ 答对了</span>'
@@ -6712,6 +6775,11 @@ function renderQuizItem() {
       answered = true;
       const picked = opts[Number(b.dataset.i)];
       b.classList.add(picked.ok ? 'correct' : 'wrong');
+      if (!picked.ok) {
+        const rightIndex = opts.findIndex(option => option.ok);
+        const rightBtn = $$('#quizArea .quiz-opt')[rightIndex];
+        if (rightBtn) rightBtn.classList.add('correct');   // v4.4.1：答错时点亮正确项
+      }
       const conf = quizRecord(null, { grade: picked.ok ? 'good' : 'again', userAnswer: picked.text });
       $('#quizFeedback').innerHTML = (picked.ok
         ? `<span class="fb-ok">✅ 答对了！${esc(it.spelling)}</span>`
@@ -7289,6 +7357,194 @@ window.addEventListener('keydown', e => {
   }
 });
 
+
+/* ======================================================================
+   v4.4.1 · 快捷面板（Ctrl / ⌘ + K）、键盘导航与设置分区索引
+   —— 全部走 DOM 事件委托，不新增内联处理器（CSP 仍无 unsafe-inline script）。
+   ====================================================================== */
+const MIST_TAB_ACTIONS = [
+  { tab: 'dashboard', icon: '📊', title: '今日学习', hint: '今日任务、词卡与墨墨概况', kbd: 'Alt+1' },
+  { tab: 'study', icon: '💬', title: 'AI 学习', hint: '词汇微课、词文成章与自由提问', kbd: 'Alt+2' },
+  { tab: 'quiz', icon: '📝', title: '测验', hint: '基础回忆 / 错题复练 / 真题迁移', kbd: 'Alt+3' },
+  { tab: 'kb', icon: '📚', title: '语料库', hint: '外刊、教材与真题整卷检索', kbd: 'Alt+4' },
+  { tab: 'notes', icon: '📖', title: '助记库', hint: '回看助记并推送到墨墨', kbd: 'Alt+5' },
+  { tab: 'reports', icon: '📈', title: '学习报告', hint: '练习量、正确率与薄弱点', kbd: 'Alt+6' },
+  { tab: 'settings', icon: '⚙️', title: '设置', hint: 'AI 服务、发音、墨墨连接与备份', kbd: 'Alt+7' },
+];
+const MIST_ACTION_ITEMS = [
+  { icon: '🃏', title: '打开悬浮词表', hint: '回到 AI 学习页的词表浮层', keywords: '词表 word vocab 选词', run: () => { switchStudySub('vocab', { load: false }); switchTab('study'); setTimeout(() => { const fab = $('#wordFab'); if (fab) fab.click(); }, 80); } },
+  { icon: '🔄', title: '立即同步墨墨', hint: '拉取今日词表、进度与顽固词', keywords: '同步 sync 刷新', run: () => { const badge = $('#syncBadge'); if (badge) badge.click(); } },
+  { icon: '🔁', title: '开始错题复练', hint: '直接进入测验的错题复练模式', keywords: '错题 srs 复练 wrongbook', run: () => { switchTab('quiz'); const btn = $('[data-submode="srs"]'); if (btn) btn.click(); } },
+  { icon: '📋', title: '整理考试计划', hint: '打开「调整考试计划」并聚焦', keywords: '计划 plan 考试 每日', run: () => { switchTab('dashboard'); const card = $('#studyPlanCard'); if (card) { card.open = true; card.scrollIntoView({ block: 'center' }); } } },
+  { icon: '🌙', title: '切换昼夜主题', hint: '在白天与夜晚之间来回切换', keywords: '主题 theme 黑夜 白天 dark', run: () => { const btn = $('#themeToggle'); if (btn) btn.click(); } },
+  { icon: '🧘', title: '专注禅模式', hint: '收起导航，只留正文（快捷键 Z）', keywords: '禅 zen focus 专注', run: () => { const btn = $('#zenToggle'); if (btn) btn.click(); } },
+  { icon: '🗒', title: '日志版块', hint: '开发日志、使用日志与报错日志', keywords: '日志 log 报错 版本', run: () => openLogs() },
+];
+let mistPaletteRows = [];
+let mistPaletteIndex = 0;
+
+function mistPaletteOptions(query = '') {
+  const q = query.trim().toLowerCase();
+  const all = [
+    ...MIST_TAB_ACTIONS.map(item => ({ icon: item.icon, title: item.title, hint: item.hint, kbd: item.kbd, run: () => switchTab(item.tab), search: `${item.title} ${item.hint} ${item.tab}` })),
+    ...MIST_ACTION_ITEMS.map(item => ({ icon: item.icon, title: item.title, hint: item.hint, kbd: '', run: item.run, search: `${item.title} ${item.hint} ${item.keywords}` })),
+  ];
+  return q ? all.filter(item => item.search.toLowerCase().includes(q)) : all;
+}
+
+function mistPaletteRender() {
+  const box = $('#mistPaletteList');
+  if (!box) return;
+  mistPaletteRows = mistPaletteOptions($('#mistPaletteInput')?.value || '');
+  if (!mistPaletteRows.length) {
+    box.innerHTML = '<div class="mist-palette-empty">没有匹配的页面或动作，换个说法试试。</div>';
+    return;
+  }
+  mistPaletteIndex = Math.min(mistPaletteIndex, mistPaletteRows.length - 1);
+  box.innerHTML = mistPaletteRows.map((row, i) => `
+    <button type="button" class="mist-palette-row" role="option" data-palette-index="${i}" aria-selected="${i === mistPaletteIndex}">
+      <span class="mist-palette-row-icon" aria-hidden="true">${row.icon}</span>
+      <span class="mist-palette-row-main"><span class="mist-palette-row-title">${esc(row.title)}</span><span class="mist-palette-row-hint">${esc(row.hint)}</span></span>
+      ${row.kbd ? `<kbd class="mist-palette-row-kbd">${esc(row.kbd)}</kbd>` : ''}
+    </button>`).join('');
+  const active = box.querySelector('.mist-palette-row[aria-selected="true"]');
+  if (active) active.scrollIntoView({ block: 'nearest' });
+}
+
+function mistPaletteSetOpen(open) {
+  const overlay = $('#mistPalette');
+  if (!overlay) return;
+  overlay.hidden = !open;
+  document.body.classList.toggle('palette-open', open);
+  if (open) {
+    mistPaletteIndex = 0;
+    const input = $('#mistPaletteInput');
+    if (input) { input.value = ''; }
+    mistPaletteRender();
+    setTimeout(() => input?.focus(), 20);
+  }
+}
+function mistPaletteMove(delta) {
+  if (!mistPaletteRows.length) return;
+  mistPaletteIndex = (mistPaletteIndex + delta + mistPaletteRows.length) % mistPaletteRows.length;
+  $$('#mistPaletteList .mist-palette-row').forEach((row, i) => row.setAttribute('aria-selected', String(i === mistPaletteIndex)));
+  const active = $('#mistPaletteList .mist-palette-row[aria-selected="true"]');
+  if (active) active.scrollIntoView({ block: 'nearest' });
+}
+function mistPaletteRun(index) {
+  const row = mistPaletteRows[index];
+  if (!row) return;
+  mistPaletteSetOpen(false);
+  try { row.run(); } catch (error) { console.error(error); }
+}
+
+if ($('#paletteToggle')) {
+  $('#paletteToggle').addEventListener('click', () => mistPaletteSetOpen(true));
+}
+if ($('#mistPalette')) {
+  $('#mistPalette').addEventListener('click', event => {
+    if (event.target.closest('[data-palette-close]')) { mistPaletteSetOpen(false); return; }
+    const row = event.target.closest('[data-palette-index]');
+    if (row) mistPaletteRun(Number(row.dataset.paletteIndex));
+  });
+  $('#mistPaletteInput').addEventListener('input', () => { mistPaletteIndex = 0; mistPaletteRender(); });
+  $('#mistPaletteInput').addEventListener('keydown', event => {
+    if (event.key === 'ArrowDown') { event.preventDefault(); mistPaletteMove(1); }
+    else if (event.key === 'ArrowUp') { event.preventDefault(); mistPaletteMove(-1); }
+    else if (event.key === 'Enter') { event.preventDefault(); mistPaletteRun(mistPaletteIndex); }
+    else if (event.key === 'Escape') { event.preventDefault(); mistPaletteSetOpen(false); }
+  });
+}
+
+/* 设置分区索引：随可见分区生成，滚动时高亮，可一键展开/收起 */
+function mistSettingsSections() {
+  return $$('#tab-settings > details.settings-section').filter(section => getComputedStyle(section).display !== 'none');
+}
+function mistSettingsLabel(section) {
+  const summary = section.querySelector('summary');
+  if (!summary) return '分区';
+  const first = [...summary.childNodes].find(node => node.nodeType === 3 && node.textContent.trim());
+  return (first ? first.textContent : summary.textContent).trim().slice(0, 12) || '分区';
+}
+function refreshMistSettingsNav() {
+  const box = $('#settingsNavItems');
+  if (!box) return;
+  const sections = mistSettingsSections();
+  box.innerHTML = sections.map((section, index) => {
+    if (!section.id) section.id = `settings-section-${index}`;
+    return `<button type="button" class="mist-page-nav-btn" data-settings-jump="${esc(section.id)}">${esc(mistSettingsLabel(section))}</button>`;
+  }).join('');
+  if (!box.dataset.bound) {
+    box.dataset.bound = '1';
+    box.addEventListener('click', event => {
+      const btn = event.target.closest('[data-settings-jump]');
+      if (!btn) return;
+      const section = document.getElementById(btn.dataset.settingsJump);
+      if (!section) return;
+      section.open = true;
+      section.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      $$('#settingsNavItems .mist-page-nav-btn').forEach(x => x.classList.toggle('active', x === btn));
+    });
+  }
+  setTimeout(mistSettingsSpy, 60);
+}
+function mistSettingsSpy() {
+  const nav = $('#settingsNav');
+  if (!nav || !$('#tab-settings')?.classList.contains('active')) return;
+  const sections = mistSettingsSections();
+  if (!sections.length) return;
+  const line = 140;
+  let current = sections[0];
+  for (const section of sections) if (section.getBoundingClientRect().top <= line) current = section;
+  $$('#settingsNavItems .mist-page-nav-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.settingsJump === current.id));
+}
+if ($('#settingsFoldAll')) {
+  $('#settingsFoldAll').addEventListener('click', event => {
+    const sections = mistSettingsSections();
+    const open = !sections.every(section => section.open);
+    sections.forEach(section => { section.open = open; });
+    event.currentTarget.textContent = open ? '全部收起' : '全部展开';
+    event.currentTarget.setAttribute('aria-expanded', String(open));
+  });
+}
+if (!window.__mistSettingsSpyBound) {
+  window.__mistSettingsSpyBound = true;
+  window.addEventListener('scroll', () => { mistSettingsSpy(); }, { passive: true });
+}
+
+/* 键盘：Ctrl/⌘+K 面板、Alt+1..7 跳页、/ 聚焦搜索、←/→ 换词 */
+window.addEventListener('keydown', event => {
+  const target = event.target;
+  const typing = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable);
+  if ((event.ctrlKey || event.metaKey) && !event.altKey && String(event.key).toLowerCase() === 'k') {
+    event.preventDefault();
+    mistPaletteSetOpen($('#mistPalette')?.hidden !== false);
+    return;
+  }
+  if (event.key === 'Escape' && $('#mistPalette')?.hidden === false) { event.preventDefault(); mistPaletteSetOpen(false); return; }
+  // Alt+数字 在输入框里也不会打出字符，因此不受「正在输入」限制
+  if (event.altKey && /^[1-7]$/.test(event.key)) {
+    const action = MIST_TAB_ACTIONS[Number(event.key) - 1];
+    if (action) { event.preventDefault(); switchTab(action.tab); }
+    return;
+  }
+  if (typing || event.metaKey || event.ctrlKey) return;
+  if (event.key === '/' ) {
+    const search = $('#tab-kb.active #kbSearchInput') || $('#tab-notes.active #noteSearch') || $('#wordSearch');
+    if (search && search.offsetParent !== null) { event.preventDefault(); search.focus(); if (search.select) search.select(); }
+    return;
+  }
+  if (!$('#tab-dashboard')?.classList.contains('active')) return;
+  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+    if (mistCards.length <= 1) return;
+    event.preventDefault();
+    mistWordIndex = (mistWordIndex + (event.key === 'ArrowRight' ? 1 : -1) + mistCards.length) % mistCards.length;
+    renderMistWord();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      $('#mistWordBody').animate([{ opacity: .5, transform: 'translateY(3px)' }, { opacity: 1, transform: 'none' }], { duration: 200, easing: 'ease-out' });
+    }
+  }
+});
 
 /* 恢复本地存储的偏好 */
 if (localStorage.getItem('wb-spotlight') === '1') {

@@ -1,5 +1,6 @@
 # v4.0.0 安全审计与敏感信息扫描记录
 
+> v4.4.1（2026-11-27）：新页头图版与 5 张 WebP 均为同源静态资源，CSP 未放宽（仍无 `unsafe-inline` script），快捷面板与设置索引只用 DOM 事件委托。新增交互仍在本地完成，不新增出站请求，用户数据与鉴权口径不变。
 > v4.4.0（2026-11-27）：首页词卡随已鉴权的 `/api/dashboard` 返回，沿用每用户隔离与 API `no-store`；只读取本地缓存与 ECDICT，不调用模型。WebP、独立 CSS 为同源静态资源，无 CSP 调整。
 
 > v4.3.1（2026-11-26）：删除 `POST /api/speaking/session` 与 `POST /api/speaking/submit`（两条路由现返回 404），`Permissions-Policy` 由 `camera=(self), microphone=(self), geolocation=()` 收敛为 `camera=(self), geolocation=()`——麦克风权限不再声明，拍照识别所需 `camera` 保留。侧边栏折叠只涉及前端 `class` + `localStorage`，**零内联 `on*`**，CSP 仍 `script-src 'self'`、无 `unsafe-inline`。新增的一次性清理脚本只读写 `data/` 下的 JSON，写前备份、原子写，不引入网络面。

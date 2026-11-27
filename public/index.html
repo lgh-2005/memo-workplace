@@ -28,7 +28,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand"><span class="mist-seal" aria-hidden="true">词</span><span class="mist-legacy-mark" aria-hidden="true">🐳</span> 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.4.0</span></div>
+  <div class="mobile-brand"><span class="mist-seal" aria-hidden="true">词</span><span class="mist-legacy-mark" aria-hidden="true">🐳</span> 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.4.1</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -44,7 +44,7 @@
       <span class="mist-seal" aria-hidden="true">词</span><span class="brand-mark" aria-hidden="true">🐳</span><span class="brand-text">英语单词学习工作台</span>
     </div>
     <div class="sidebar-head-tools">
-      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.4.0</span>
+      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.4.1</span>
       <!-- v4.3.1：侧边栏可折叠为图标窄栏（状态记忆在本设备） -->
       <button class="sidebar-toggle" id="sidebarToggle" type="button" title="折叠侧边栏" aria-label="折叠侧边栏" aria-expanded="true"><span class="sidebar-toggle-icon" aria-hidden="true">«</span><span class="sidebar-toggle-text">收起</span></button>
     </div>
@@ -65,6 +65,7 @@
   </nav>
   <div class="sidebar-foot" data-page-node-id="OhRP5szI5eBxUfoELcDq4w">
     <div class="sidebar-foot-tools" data-page-node-id="footTools">
+      <button class="theme-toggle palette-toggle" id="paletteToggle" title="快捷面板 (Ctrl / ⌘ + K)" aria-label="打开快捷面板">⌘K</button>
       <button class="theme-toggle" id="themeToggle" title="切换黑夜/白天模式">🌙</button>
       <button class="theme-toggle" id="zenToggle" title="专注禅模式 (快捷键 Z)">🧘</button>
     </div>
@@ -116,10 +117,10 @@
 <main data-page-node-id="hnUFGLrlF2uhns1Lwty8dF">
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
-    <div class="card-title-row" style="align-items:center">
-      <div class="card-title">🗒 日志版块 <span class="ver" id="logsVersionBadge">v4.3.0</span></div>
-      <button class="btn" id="logsBackBtn">← 返回</button>
-    </div>
+    <header class="page-heading mist-band mist-band-logs">
+      <div><span class="mist-kicker">维护记录</span><h1>日志版块 <span class="ver mist-band-ver" id="logsVersionBadge">v4.4.1</span></h1><p>开发日志、使用日志与报错日志。点左上角版本号随时回到这里。</p></div>
+      <div class="mist-band-aside"><button class="btn" id="logsBackBtn">← 返回</button></div>
+    </header>
     <div class="logs-tabs" id="logsTabs">
       <button class="logs-tab active" data-logs="dev">📘 开发日志</button>
       <button class="logs-tab" data-logs="usage">🛠 使用日志</button>
@@ -171,9 +172,11 @@
   <!-- ============ 仪表盘 ============ -->
   <!-- v4.4.0：晨雾首页沿用真实任务、墨墨进度与现有练习入口。 -->
   <section id="tab-dashboard" class="tab-page active">
-  <header class="mist-hero" aria-labelledby="todayTitle">
+  <!-- v4.4.1：hero 与任务进度票据合成同一张卡片（底条内嵌），不再用负边距叠到别的板块上。 -->
+  <header class="mist-hero" aria-labelledby="todayTitle" data-phase="dawn">
+    <div class="mist-hero-sky" aria-hidden="true"><i></i><i></i></div>
     <div class="mist-hero-content">
-      <div class="mist-kicker"><time id="mistToday"></time><span id="mistExam" hidden></span><span id="mistStreak" hidden></span></div>
+      <div class="mist-kicker"><span id="mistPhase">清晨</span><time id="mistToday"></time><span id="mistExam" hidden></span><span id="mistStreak" hidden></span></div>
       <h1 id="todayTitle">今天，学一点点。</h1>
       <p id="mistTodayLead">查看今日任务，再挑一组词练习。</p>
       <div class="mist-actions">
@@ -181,14 +184,15 @@
         <button type="button" class="btn" id="mistOpenLesson">进入词汇微课 <span aria-hidden="true">→</span></button>
       </div>
     </div>
+    <section class="mist-ticket" aria-label="今日任务进度">
+      <div class="mist-ticket-main">
+        <svg class="mist-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle id="mistTaskRing" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="0 100"/></svg>
+        <div class="mist-ticket-copy"><b>今日任务进度</b><span id="mistTicketSummary" role="status">正在加载…</span></div>
+        <span class="mist-ticket-hint" aria-hidden="true">点一格直接开始</span>
+      </div>
+      <div class="mist-ticket-cells" id="mistTaskCells"></div>
+    </section>
   </header>
-  <section class="mist-ticket" aria-label="今日任务进度">
-    <div class="mist-ticket-main">
-      <svg class="mist-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle id="mistTaskRing" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="0 100"/></svg>
-      <div><b>今日任务进度</b><span id="mistTicketSummary" role="status">正在加载…</span></div>
-    </div>
-    <div class="mist-ticket-cells" id="mistTaskCells"></div>
-  </section>
   <div class="sync-banner" id="syncBanner" style="display:none" data-page-node-id="b1PSdgHAeJ2EcRWOlQpnKS">
       <span id="syncBannerText" data-page-node-id="inGWePDGx6rjeLit3A78e0">今日数据还未同步</span>
       <button class="btn small" id="bannerSyncBtn" data-page-node-id="OLOfEXWjgbEEtlpGGQxE1Z">立即同步</button>
@@ -524,7 +528,7 @@
 
       <section class="coach-map" id="coachMap" aria-labelledby="coachMapTitle">
         <header class="coach-header">
-          <h2 id="coachMapTitle">词汇微课</h2>
+          <h2 id="coachMapTitle">学习路径</h2>
           <span class="coach-status" id="coachStatus" role="status"></span>
           <div class="coach-views" id="coachViews" role="group" aria-label="学习路径视图" hidden>
             <button class="btn small ghost" type="button" data-coach-view="map" aria-pressed="false">导图</button>
@@ -591,14 +595,22 @@
 
   <!-- ============ 测验 ============ -->
   <section id="tab-quiz" class="tab-page" data-page-node-id="7gqxf15kCaD2kQAwymNT5Q">
-    <div class="card" id="quizSetup" data-page-node-id="2XLzZDCOV3XrGOzLvZIWZj">
-      <div class="card-title" data-page-node-id="6MxB6a0jjc99rR66ZFFWdB">📝 单词测验</div>
+    <!-- v4.4.1：测验页头（晨雾版式），右侧显示记忆到期 / 错题本计数 -->
+    <header class="page-heading mist-band mist-band-quiz">
+      <div><span class="mist-kicker">记忆训练</span><h1>测验</h1><p>主动回忆比反复看词义有效。抽一组词作答，当场看对错，错词自动进错题本。</p></div>
+      <div class="mist-band-aside" aria-label="记忆状态">
+        <div class="mist-band-metric"><b id="quizBandDue">—</b><span>记忆到期</span></div>
+        <div class="mist-band-metric"><b id="quizBandWrong">—</b><span>错题本</span></div>
+      </div>
+    </header>
+    <div class="card mist-quiz-setup" id="quizSetup" data-page-node-id="2XLzZDCOV3XrGOzLvZIWZj">
+      <div class="card-title" data-page-node-id="6MxB6a0jjc99rR66ZFFWdB">组卷</div>
       <!-- v2.2.4：基础回忆 / 真题迁移 二级模式 -->
       <div class="quiz-submode" id="quizSubmode">
         <button type="button" class="btn quiz-submode-btn active" data-submode="basic">🧠 基础回忆</button>
         <button type="button" class="btn quiz-submode-btn" data-submode="srs">🔁 错题复练</button>
         <button type="button" class="btn quiz-submode-btn" data-submode="transfer">🎯 真题迁移</button>
-      <button class="btn" data-jump="reports">学习报告</button></div>
+      <button class="btn quiz-submode-link" data-jump="reports">学习报告</button></div>
 
       <div id="quizBasicPane">
       <details class="hint-fold" data-page-node-id="JteAlyOsCXGs1iEG7N5yBy"><summary data-page-node-id="zkOapoE7eLNEZMiU767wq0">ℹ️ 说明</summary>
@@ -743,12 +755,15 @@
 
   <!-- ============ 助记库 ============ -->
   <section id="tab-notes" class="tab-page" data-page-node-id="lYEybSHQIB46eGUXUqBI0D">
-    <div class="card" data-page-node-id="ZVxba89WMpTobmkNcHtGOB">
-      <div class="card-title-row" data-page-node-id="OZdvdgBcpcSj55LqJfXhvt">
+    <header class="page-heading mist-band mist-band-notes">
+      <div><span class="mist-kicker">助记沉淀</span><h1>助记库</h1><p>学完的词会留下钩子、例句和画面。挑一条回看，或直接推送到墨墨。</p></div>
+    </header>
+    <div class="card mist-notes-card" data-page-node-id="ZVxba89WMpTobmkNcHtGOB">
+      <div class="card-title-row mist-toolbar" data-page-node-id="OZdvdgBcpcSj55LqJfXhvt">
         <div class="card-title" data-page-node-id="dsyT1xYhNr3N8X9inibCcT">我的助记（<span id="notesCount" data-page-node-id="tqvELcIpsh62xY77MMAczx">0</span>）</div>
-        <div style="display:flex;gap:8px" data-page-node-id="q0GvFxDn9kv4xyyMe8P8x1">
-          <input type="text" id="noteSearch" class="input" placeholder="搜索单词或内容…" style="width:220px" data-page-node-id="q5ZiTM00nocrfY518Ed7Xs">
-          <button class="btn" id="addNoteBtn" data-page-node-id="JKRBvGQi9fBHaVxBJwwxhl">＋ 手动添加</button>
+        <div class="mist-search-group" data-page-node-id="q0GvFxDn9kv4xyyMe8P8x1">
+          <input type="text" id="noteSearch" class="input" placeholder="搜索单词或内容…" aria-label="搜索助记" data-page-node-id="q5ZiTM00nocrfY518Ed7Xs">
+          <button class="btn primary" id="addNoteBtn" data-page-node-id="JKRBvGQi9fBHaVxBJwwxhl">＋ 手动添加</button>
         </div>
       </div>
       <details class="hint-fold" data-page-node-id="ygAEMfaNrwCVxbjM0XqEAw"><summary data-page-node-id="6qEGXGRIYCfJscnpnplpR4">ℹ️ 说明</summary>
@@ -760,12 +775,18 @@
 
   <!-- ============ 语料库（v2.0.0.a） ============ -->
   <section id="tab-kb" class="tab-page" data-page-node-id="4igJwXCJuOfGPmnfvIkIH3">
-    <div class="card" data-page-node-id="CumcxHxq2ExSzdX20wUUAV">
-      <div class="card-title-row" data-page-node-id="M8gHaMf3L2W8SuiC02kZLF">
-        <div class="card-title" data-page-node-id="QMTIh0u2lOTRGm11cj1ZXO">📚 语料库（含真题）</div>
-        <div style="display:flex;gap:8px" data-page-node-id="WoLGzSUEl3VHuiFJqtzCnt">
-          <input type="text" id="kbSearchInput" class="input" placeholder="全库搜真题原句 / 语料，如：survive、长难句…" style="width:260px" data-page-node-id="WlPuKXwQ17gzbpcTsvIwI0">
-          <button class="btn" id="kbSearchBtn" data-page-node-id="6azRm1QUEU1i08q6S9Kvxi">🔍 搜索</button>
+    <header class="page-heading mist-band mist-band-kb">
+      <div><span class="mist-kicker">真实语料</span><h1>语料库</h1><p>外刊、教材与真题整卷都在同一个库里。搜一个词，看它在真实句子里怎么用。</p></div>
+      <div class="mist-band-aside" aria-label="语料规模">
+        <div class="mist-band-metric"><b id="kbBandCount">—</b><span>篇语料</span></div>
+      </div>
+    </header>
+    <div class="card mist-kb-card" data-page-node-id="CumcxHxq2ExSzdX20wUUAV">
+      <div class="card-title-row mist-toolbar" data-page-node-id="M8gHaMf3L2W8SuiC02kZLF">
+        <div class="card-title" data-page-node-id="QMTIh0u2lOTRGm11cj1ZXO">检索</div>
+        <div class="mist-search-group" data-page-node-id="WoLGzSUEl3VHuiFJqtzCnt">
+          <input type="text" id="kbSearchInput" class="input" placeholder="全库搜真题原句 / 语料，如：survive、长难句…" aria-label="搜索语料" data-page-node-id="WlPuKXwQ17gzbpcTsvIwI0">
+          <button class="btn primary" id="kbSearchBtn" data-page-node-id="6azRm1QUEU1i08q6S9Kvxi">🔍 搜索</button>
         </div>
       </div>
       <p class="hint">手工语料可编辑，自动更新的外刊只读；可按来源筛选并搜索原文。</p>
@@ -835,6 +856,15 @@
 
   <!-- ============ 设置（v2.1.0：可折叠子版块） ============ -->
   <section id="tab-settings" class="tab-page" data-page-node-id="tKTGPEToP1TI0j2YEVwNvI">
+
+    <header class="page-heading mist-band mist-band-settings">
+      <div><span class="mist-kicker">工作台配置</span><h1>设置</h1><p>AI 服务、发音、墨墨连接、界面与备份。改动保存后即时生效，密钥只留在这台机器上。</p></div>
+    </header>
+    <!-- v4.4.1：设置分区索引（随滚动定位，可折叠全部） -->
+    <nav class="mist-page-nav" id="settingsNav" aria-label="设置分区">
+      <div class="mist-page-nav-items" id="settingsNavItems"></div>
+      <button type="button" class="btn small ghost mist-page-nav-fold" id="settingsFoldAll" aria-expanded="false">全部展开</button>
+    </nav>
 
     <!-- ===== 子版块：我的账户（v3.1.0，仅多用户模式显示） ===== -->
     <details class="settings-section" id="accountSection" style="display:none">
@@ -1366,6 +1396,20 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- v4.4.1：快捷面板（Ctrl / ⌘ + K）——键盘优先的页面跳转与常用动作 -->
+<div class="mist-palette" id="mistPalette" hidden>
+  <div class="mist-palette-scrim" data-palette-close></div>
+  <div class="mist-palette-shell" role="dialog" aria-modal="true" aria-label="快捷面板">
+    <div class="mist-palette-head">
+      <span class="mist-palette-key" aria-hidden="true">⌘K</span>
+      <input id="mistPaletteInput" class="mist-palette-input" type="text" placeholder="想去哪？输入页面或动作…" autocomplete="off" spellcheck="false" aria-label="搜索页面与动作">
+      <button type="button" class="mist-palette-close" data-palette-close aria-label="关闭 (Esc)">✕</button>
+    </div>
+    <div class="mist-palette-list" id="mistPaletteList" role="listbox" aria-label="结果"></div>
+    <div class="mist-palette-foot"><span>↑↓ 选择</span><span>Enter 执行</span><span>Esc 关闭</span></div>
   </div>
 </div>
 
