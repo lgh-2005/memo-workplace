@@ -157,29 +157,17 @@ try {
     assert.equal(await page.locator('.tab[data-tab="speaking"]').count(), 0, 'v4.3.1：听说训练页签必须下线');
     assert.equal(await page.locator('#tab-speaking').count(), 0, 'v4.3.1：听说训练页面必须下线');
     assert.equal(await page.locator('#installBtn').count(), 0, 'v4.3.1：设置里的安装按钮必须下线');
-    await page.evaluate(() => applyStyle('classic'));
-    assert.equal(await page.locator('#sidebarToggle').isVisible(), true, '折叠按钮必须可见');
-    await page.waitForFunction(() => Math.round(document.querySelector('#appSidebar').getBoundingClientRect().width) === 230);
-    const expandedWidth = await page.locator('#appSidebar').evaluate(el => Math.round(el.getBoundingClientRect().width));
-    await page.locator('#sidebarToggle').click();
-    // 宽度过渡 0.22s，等布局稳定后再断言
-    await page.waitForFunction(() => Math.round(document.querySelector('#appSidebar').getBoundingClientRect().width) === 64);
-    const collapsedWidth = await page.locator('#appSidebar').evaluate(el => Math.round(el.getBoundingClientRect().width));
-    assert.equal(collapsedWidth, 64, `折叠后宽度应为 64px，实测 ${collapsedWidth}`);
-    assert.equal(await page.locator('.tab-text').first().isVisible(), false, '折叠后导航文字应隐藏');
-    assert.equal(await page.locator('body').evaluate(el => el.classList.contains('sidebar-collapsed')), true);
-    assert.equal(await page.evaluate(() => localStorage.getItem('wb-sidebar-collapsed')), '1');
-    await page.reload({ waitUntil: 'domcontentloaded' });
-    await page.waitForFunction(() => typeof window.switchTab === 'function');
-    assert.equal(await page.locator('body').evaluate(el => el.classList.contains('sidebar-collapsed')), true, '刷新后应保持折叠');
-    await page.locator('#sidebarToggle').click();
-    await page.waitForFunction(width => Math.round(document.querySelector('#appSidebar').getBoundingClientRect().width) === width, expandedWidth);
-    const restoredWidth = await page.locator('#appSidebar').evaluate(el => Math.round(el.getBoundingClientRect().width));
-    assert.equal(restoredWidth, expandedWidth, `展开后宽度应恢复为 ${expandedWidth}px，实测 ${restoredWidth}`);
-    assert.equal(await page.evaluate(() => localStorage.getItem('wb-sidebar-collapsed')), '0');
-    console.log('PASS collapsible sidebar with remembered state');
-
+    // v4.5.0：晨雾使用顶部胶囊导航，旧侧栏折叠按钮不再显示（折叠逻辑保留但无入口）
+    assert.equal(await page.locator('#sidebarToggle').isVisible(), false, '晨雾顶部导航下不显示侧栏折叠按钮');
+    assert.equal(await page.locator('.tab:visible').count(), 7, '晨雾桌面保留 7 个页签');
+    assert.equal(await page.locator('#appSidebar .tabs').evaluate(el => getComputedStyle(el).flexDirection), 'row');
+    console.log('PASS mist top navigation replaces legacy collapsible sidebar');
     await page.evaluate(() => switchTab('settings'));
+    // v4.5.0：设置只有一行横列导航，先切到「模型服务」分区，再展开功能模型分配
+    assert.equal(await page.locator('#settingsNavItems .mist-page-nav-btn').count(), 7, '非多用户下设置横列应有 7 个分区');
+    await page.locator('#settingsNavItems [data-settings-jump="modelSection"]').click();
+    assert.equal(await page.locator('#tab-settings > section.settings-panel:visible').count(), 1, '设置同一时刻只能显示一个分区');
+    assert.equal(await page.locator('#ttsSection').evaluate(el => el.hidden), true, '切换到模型服务后发音分区必须隐藏');
     await page.locator('#modelAssignments').evaluate(el => {
       for (let node = el; node; node = node.parentElement) if (node.tagName === 'DETAILS') node.open = true;
       el.style.display = '';
@@ -195,18 +183,22 @@ try {
     assert.deepEqual(Object.keys(writes[0]).sort(), ['review', 'selection', 'story']);
     console.log('PASS one-save model assignments');
 
-    const styles = ['mist', 'classic', 'arcade', 'pop', 'mc', 'mc-gui', 'mc-deep', 'mc-end'];
-    for (const style of styles) {
-      await page.evaluate(value => applyStyle(value), style);
-      assert.equal(await page.locator('html').getAttribute('data-style') || '', style);
-      await page.evaluate(() => switchTab('dashboard'));
-      assert.equal(await page.locator('#todayTasksCard').evaluate(el => getComputedStyle(el).transform), 'none');
-    }
+    // v4.5.0：界面只保留晨雾，旧风格入口、样式与本地偏好全部下线
+    await page.evaluate(() => { try { localStorage.setItem('wb-style', 'arcade'); } catch {} });
+    await page.evaluate(() => applyStyle('arcade'));
+    assert.equal(await page.locator('html').getAttribute('data-style'), 'mist', '旧风格参数必须被忽略，始终落在晨雾');
+    assert.equal(await page.evaluate(() => localStorage.getItem('wb-style')), null, '旧风格本地偏好必须清除');
+    assert.equal(await page.locator('#styleGrid').count(), 0, '设置里的风格选择器必须下线');
+    assert.equal(await page.locator('.style-opt').count(), 0, '旧风格按钮必须下线');
+    const shippedCss = await (await fetch(`${base}/style.css`)).text();
+    assert.doesNotMatch(shippedCss, /\[data-style="(classic|arcade|pop|mc)/, '线上样式不得再含旧风格主题');
+    await page.evaluate(() => switchTab('dashboard'));
+    assert.equal(await page.locator('#todayTasksCard').evaluate(el => getComputedStyle(el).transform), 'none');
     await page.evaluate(() => applyTheme('dark'));
     assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
     await page.evaluate(() => applyTheme('light'));
     assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
-    console.log('PASS eight styles, day/night themes, and calm card hover');
+    console.log('PASS mist-only styling, day/night themes, and calm card hover');
 
     await page.evaluate(() => switchTab('quiz'));
     await page.locator('#quizCount').fill('3');

@@ -6,8 +6,8 @@
       票据式进度、静默动效与键盘交互。
    2) hero 与「今日任务进度」合并为同一张卡片（进度为卡片底条），
       不再用负边距压在 hero 上，故任何宽度下都不会与其他版块重叠。
-   3) 所有样式挂在 [data-style="mist"] 下；其余七种风格保持原样，
-      只保留少量「结构性」类（.mist-page-nav / .mist-palette）的兜底隐藏。
+   3) v4.5.0 起界面只保留晨雾：旧七种风格（经典 / 街机 / 波普 / 四套像素）
+      的样式与切换入口已删除，设置只留一行横列分区导航。
    ========================================================================== */
 
 /* 0 · 非晨雾风格下隐藏晨雾专属装饰元素（结构类不在此列） ------------------ */
@@ -598,20 +598,34 @@
 }
 [data-style="mist"] .mist-page-nav-btn:hover { background: var(--mist-soft); color: var(--text); }
 [data-style="mist"] .mist-page-nav-btn.active { background: var(--text); color: var(--bg); font-weight: 600; }
-[data-style="mist"] .mist-page-nav-fold { flex: none; }
-[data-style="mist"] .settings-section {
+/* v4.5.0：分区只按横列切换，当前分区独占一页，不再有竖排折叠列表 */
+[data-style="mist"] .settings-panel {
   border: 1px solid var(--border); border-radius: var(--radius); background: var(--card);
   margin-bottom: 10px; overflow: hidden; box-shadow: var(--shadow-card);
-  transition: border-color .2s var(--mist-ease), box-shadow .2s var(--mist-ease);
+  scroll-margin-top: 118px;
+  animation: mist-content-in .24s var(--mist-ease) both;
 }
-[data-style="mist"] .settings-section[open] { border-color: color-mix(in srgb, var(--border) 60%, var(--text)); }
-[data-style="mist"] .settings-section > summary {
-  min-height: 52px; padding: 12px 18px; font: 600 14px/1.4 var(--mist-serif); color: var(--text);
-  background: var(--card);
+[data-style="mist"] .settings-panel[hidden] { display: none; }
+[data-style="mist"] .settings-panel-title {
+  display: flex; align-items: center; gap: 7px;
+  margin: 0; padding: 15px 18px 12px;
+  font: 600 15px/1.45 var(--mist-serif); letter-spacing: .02em; color: var(--text);
+  border-bottom: 1px dashed var(--border);
 }
-[data-style="mist"] .settings-section > summary:hover { background: var(--mist-soft); }
-[data-style="mist"] .settings-section > summary::before { color: var(--primary); }
-[data-style="mist"] .settings-section-body { padding: 6px 18px 16px; }
+[data-style="mist"] .settings-panel-title::after {
+  content: ""; flex: 1; height: 1px; margin-inline-start: 4px;
+  background: linear-gradient(90deg, var(--border), transparent 82%);
+}
+[data-style="mist"] .settings-section-body { padding: 10px 18px 16px; }
+[data-style="mist"] .backup-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px; margin-bottom: 6px;
+  border: 1px solid var(--border); border-radius: 12px; background: var(--card);
+}
+[data-style="mist"] .backup-meta { flex: 1; min-width: 0; display: grid; gap: 2px; }
+[data-style="mist"] .backup-meta b { font-size: 12.5px; font-weight: 600; word-break: break-all; }
+[data-style="mist"] .backup-meta span { font-size: 11px; color: var(--text-sub); }
+[data-style="mist"] .backup-item .btn { flex: none; min-height: 44px; }
 [data-style="mist"] .settings-section-body > .card {
   border-bottom: 1px dashed var(--border); padding: 14px 0 16px; background: transparent;
 }
@@ -625,14 +639,7 @@
 [data-style="mist"] .prov-item { margin-top: 8px; }
 [data-style="mist"] .prompt-item { margin-bottom: 8px; }
 [data-style="mist"] .prompt-item-index { font: 600 11px var(--mist-mono); color: var(--primary); }
-[data-style="mist"] .style-grid { gap: 8px; }
-[data-style="mist"] .style-opt {
-  border-radius: 12px; border: 1px solid var(--border); background: var(--card); padding: 10px 12px;
-  transition: border-color .16s, background-color .16s;
-}
-[data-style="mist"] .style-opt:hover { border-color: var(--mist-hair); background: var(--mist-soft); }
-[data-style="mist"] .style-opt.active { border-color: var(--primary); background: var(--primary-soft); }
-[data-style="mist"] .style-desc { color: var(--text-sub); font-size: 11.5px; line-height: 1.5; }
+
 [data-style="mist"] .usage-total { font: 600 22px/1.3 var(--mist-serif); }
 [data-style="mist"] .log-list { display: grid; gap: 6px; }
 [data-style="mist"] .account-row { align-items: center; }
@@ -810,14 +817,13 @@
   [data-style="mist"] .mist-search-group { flex: 1 1 100%; justify-content: stretch; }
   [data-style="mist"] .mist-search-group .input { max-width: none; }
   [data-style="mist"] .mist-page-nav { top: 52px; padding: 6px 9px; gap: 6px; }
-  [data-style="mist"] .mist-page-nav-fold { display: none; }
   [data-style="mist"] .mist-page-nav-items {
     -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
     mask-image: linear-gradient(90deg, #000 88%, transparent);
     padding-inline-end: 14px;
   }
-  [data-style="mist"] .settings-section > summary { padding: 11px 14px; min-height: 48px; }
-  [data-style="mist"] .settings-section-body { padding: 4px 14px 14px; }
+  [data-style="mist"] .settings-panel-title { padding: 13px 14px 11px; font-size: 14.5px; }
+  [data-style="mist"] .settings-section-body { padding: 8px 14px 14px; }
   [data-style="mist"] .model-assignment { grid-template-columns: 1fr; gap: 6px; }
   [data-style="mist"] .quiz-submode { flex-wrap: nowrap; }
   [data-style="mist"] .quiz-submode-link { display: none; }

@@ -14,10 +14,13 @@ const appSrc = await readFile(join(root, 'public', 'app.js'), 'utf8');
 const indexHtml = await readFile(join(root, 'public', 'index.html'), 'utf8');
 const sw = await readFile(join(root, 'public', 'sw.js'), 'utf8');
 const mistCss = await readFile(join(root, 'public', 'mist.css'), 'utf8');
+const styleCss = await readFile(join(root, 'public', 'style.css'), 'utf8');
+const faviconSvg = await readFile(join(root, 'public', 'icons', 'favicon.svg'), 'utf8');
+const iconFiles = ['favicon.ico', 'favicon.svg', 'icon-120.png', 'icon-152.png', 'icon-167.png', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'maskable-192.png', 'maskable-512.png'];
 const mistAssets = ['mist.css', ...['hero-dawn', 'hero-night', 'paper', 'cover-lesson', 'cover-ridge', 'band-report', 'cover-quiz', 'cover-library', 'cover-notes', 'cover-settings', 'empty-ink'].map(name => `mist/${name}.webp`)];
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.4.1'],
+  ['package version', packageJson.version === '4.5.0'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
@@ -38,8 +41,12 @@ const required = [
   ['v4.4.1 every page has a mist band', ['quiz', 'kb', 'notes', 'settings', 'study', 'report'].every(name => indexHtml.includes(`mist-band-${name}`))],
   ['v4.4.1 page bands use generated art', ['cover-quiz', 'cover-library', 'cover-notes', 'cover-settings'].every(name => mistCss.includes(`/mist/${name}.webp`))],
   ['v4.4.1 command palette wiring', indexHtml.includes('id="mistPalette"') && appSrc.includes('mistPaletteSetOpen') && appSrc.includes('MIST_TAB_ACTIONS') && indexHtml.includes('id="paletteToggle"')],
-  ['v4.4.1 settings index nav', indexHtml.includes('id="settingsNavItems"') && appSrc.includes('refreshMistSettingsNav') && appSrc.includes('mistSettingsSpy')],
   ['v4.4.1 motion respects reduced motion', mistCss.includes('prefers-reduced-motion: reduce') && mistCss.includes('mist-glow') && mistCss.includes('mist-row-in')],
+  // v4.5.0：设置只留一行横列导航 + 界面只留晨雾 + 朱印图标族
+  ['v4.5.0 settings is a single horizontal switcher', indexHtml.includes('id="settingsNavItems"') && !indexHtml.includes('settingsFoldAll') && appSrc.includes('mistSettingsSetActive') && appSrc.includes('refreshMistSettingsNav') && !appSrc.includes('mistSettingsSpy')],
+  ['v4.5.0 settings panels are sections', (indexHtml.match(/class="settings-section settings-panel"/g) || []).length >= 7 && !indexHtml.includes('<details class="settings-section"')],
+  ['v4.5.0 mist is the only UI style', !indexHtml.includes('styleGrid') && !appSrc.includes('applyStyle(t') && !/(^|\n)\s*\[data-style="(classic|arcade|pop|mc)/.test(styleCss)],
+  ['v4.5.0 seal favicon and pwa icon family', iconFiles.every(name => exists(join(root, 'public', 'icons', name))) && faviconSvg.includes('词') && sw.includes("'/icons/favicon.ico'")],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],

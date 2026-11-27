@@ -3083,25 +3083,21 @@ $('#themeToggle').addEventListener('click', () => {
   applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
 });
 
-/* ---------------- 界面风格（白天模式主题） ---------------- */
+/* ---------------- 界面风格（v4.5.0：只保留晨雾） ---------------- */
 
 function updateThemeColor() {
-  const { style, theme } = document.documentElement.dataset;
-  document.querySelector('meta[name="theme-color"]').content = style === 'mist'
-    ? (theme === 'dark' ? '#111316' : '#f1ede6') : (theme === 'dark' ? '#111827' : '#3b82f6');
+  const theme = document.documentElement.dataset.theme;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = theme === 'dark' ? '#111316' : '#f1ede6';
 }
 
-function applyStyle(t) {
-  document.documentElement.dataset.style = t;
-  localStorage.setItem('wb-style', t);
+function applyStyle() {
+  document.documentElement.dataset.style = 'mist';
+  try { localStorage.removeItem('wb-style'); } catch (error) { /* 旧设备迁移，忽略隐私模式报错 */ }
   updateThemeColor();
-  $$('#styleGrid .style-opt').forEach(b => b.classList.toggle('active', b.dataset.style === t));
-  // v4.4.1：晨雾专属的功能壳（设置分区索引 / 首页时段）跟随风格重建
-  // （延后一拍执行：本函数在初始化早期就会被调用，此时下方常量尚未求值）
+  // 晨雾专属的功能壳（设置横列导航 / 首页时段）在初始化时重建
   setTimeout(() => { try { refreshMistSettingsNav(); mistApplyPhase(); } catch (error) { console.debug(error); } }, 0);
 }
-
-$$('#styleGrid .style-opt').forEach(b => b.addEventListener('click', () => applyStyle(b.dataset.style)));
 
 /* ---------------- 设置页 ---------------- */
 
@@ -7282,7 +7278,7 @@ async function initApp() {
 
 (async function init() {
   applyTheme(localStorage.getItem('wb-theme') || 'light');
-  applyStyle(localStorage.getItem('wb-style') || 'mist');
+  applyStyle();
   bindLoginUI();
   bindVersionClick();
   // v2.8.0：日志版块事件
@@ -7456,60 +7452,68 @@ if ($('#mistPalette')) {
   });
 }
 
-/* 设置分区索引：随可见分区生成，滚动时高亮，可一键展开/收起 */
+/* 设置：一行横列导航 + 单分区显示（v4.5.0）
+   旧版顶部索引与竖排折叠列表并存，同一批分区出现两次；现只保留横列，
+   点哪一项就只显示该分区，选区记忆在本设备。 */
+const MIST_SETTINGS_TAB_KEY = 'wb-settings-tab';
+let mistSettingsActiveId = '';
 function mistSettingsSections() {
-  return $$('#tab-settings > details.settings-section').filter(section => getComputedStyle(section).display !== 'none');
+  // 只看管理员/多用户逻辑写入的内联 display，不看本函数切换用的 hidden
+  return $$('#tab-settings > section.settings-panel').filter(section => section.style.display !== 'none');
 }
 function mistSettingsLabel(section) {
-  const summary = section.querySelector('summary');
-  if (!summary) return '分区';
-  const first = [...summary.childNodes].find(node => node.nodeType === 3 && node.textContent.trim());
-  return (first ? first.textContent : summary.textContent).trim().slice(0, 12) || '分区';
+  const raw = section.dataset.settingsLabel || section.querySelector('.settings-panel-title')?.textContent || '';
+  return raw.trim().replace(/^[^\p{L}\p{N}]+/u, '').slice(0, 12) || '分区';
+}
+function mistSettingsSetActive(id, opts = {}) {
+  const sections = mistSettingsSections();
+  if (!sections.length) return;
+  const target = sections.find(section => section.id === id) || sections[0];
+  mistSettingsActiveId = target.id;
+  sections.forEach(section => { section.hidden = section !== target; });
+  try { localStorage.setItem(MIST_SETTINGS_TAB_KEY, target.id); } catch (error) { /* 隐私模式忽略 */ }
+  $$('#settingsNavItems .mist-page-nav-btn').forEach(btn => {
+    const active = btn.dataset.settingsJump === target.id;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-selected', String(active));
+    btn.tabIndex = active ? 0 : -1;
+  });
+  if (opts.scroll) {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+  }
 }
 function refreshMistSettingsNav() {
   const box = $('#settingsNavItems');
   if (!box) return;
   const sections = mistSettingsSections();
+  let stored = '';
+  try { stored = localStorage.getItem(MIST_SETTINGS_TAB_KEY) || ''; } catch (error) { /* 忽略 */ }
   box.innerHTML = sections.map((section, index) => {
-    if (!section.id) section.id = `settings-section-${index}`;
-    return `<button type="button" class="mist-page-nav-btn" data-settings-jump="${esc(section.id)}">${esc(mistSettingsLabel(section))}</button>`;
+    if (!section.id) section.id = `settings-panel-${index}`;
+    return `<button type="button" class="mist-page-nav-btn" role="tab" id="settings-tab-${esc(section.id)}" aria-controls="${esc(section.id)}" aria-selected="false" tabindex="-1" data-settings-jump="${esc(section.id)}">${esc(mistSettingsLabel(section))}</button>`;
   }).join('');
   if (!box.dataset.bound) {
     box.dataset.bound = '1';
     box.addEventListener('click', event => {
       const btn = event.target.closest('[data-settings-jump]');
       if (!btn) return;
-      const section = document.getElementById(btn.dataset.settingsJump);
-      if (!section) return;
-      section.open = true;
-      section.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-      $$('#settingsNavItems .mist-page-nav-btn').forEach(x => x.classList.toggle('active', x === btn));
+      mistSettingsSetActive(btn.dataset.settingsJump, { scroll: true });
+    });
+    box.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      const tabs = $$('#settingsNavItems .mist-page-nav-btn');
+      const current = tabs.indexOf(document.activeElement);
+      if (current < 0 || !tabs.length) return;
+      event.preventDefault();
+      const next = event.key === 'Home' ? 0
+        : event.key === 'End' ? tabs.length - 1
+          : (current + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+      tabs[next].focus();
+      mistSettingsSetActive(tabs[next].dataset.settingsJump);
     });
   }
-  setTimeout(mistSettingsSpy, 60);
-}
-function mistSettingsSpy() {
-  const nav = $('#settingsNav');
-  if (!nav || !$('#tab-settings')?.classList.contains('active')) return;
-  const sections = mistSettingsSections();
-  if (!sections.length) return;
-  const line = 140;
-  let current = sections[0];
-  for (const section of sections) if (section.getBoundingClientRect().top <= line) current = section;
-  $$('#settingsNavItems .mist-page-nav-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.settingsJump === current.id));
-}
-if ($('#settingsFoldAll')) {
-  $('#settingsFoldAll').addEventListener('click', event => {
-    const sections = mistSettingsSections();
-    const open = !sections.every(section => section.open);
-    sections.forEach(section => { section.open = open; });
-    event.currentTarget.textContent = open ? '全部收起' : '全部展开';
-    event.currentTarget.setAttribute('aria-expanded', String(open));
-  });
-}
-if (!window.__mistSettingsSpyBound) {
-  window.__mistSettingsSpyBound = true;
-  window.addEventListener('scroll', () => { mistSettingsSpy(); }, { passive: true });
+  mistSettingsSetActive(mistSettingsActiveId || stored || sections[0]?.id);
 }
 
 /* 键盘：Ctrl/⌘+K 面板、Alt+1..7 跳页、/ 聚焦搜索、←/→ 换词 */
@@ -7562,10 +7566,10 @@ async function loadBackupList() {
     const d = await api('/api/backup/list');
     if (!d.backups?.length) { el.innerHTML = '<div class="empty">暂无备份</div>'; return; }
     el.innerHTML = d.backups.map(b => `
-      <div class="note-item" style="padding:8px 12px;margin-bottom:6px">
-        <div style="flex:1">
-          <b style="font-size:13px">${esc(b.name)}</b>
-          <div style="font-size:11px;color:var(--text-sub)">${b.files} 个文件</div>
+      <div class="backup-item">
+        <div class="backup-meta">
+          <b>${esc(b.name)}</b>
+          <span>${b.files} 个文件</span>
         </div>
         <button class="btn small" data-restore="${esc(b.name)}">恢复此备份</button>
       </div>`).join('');

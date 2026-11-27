@@ -159,7 +159,10 @@ async function emulatedChecks() {
         await page.evaluate(() => document.querySelector('#wordPanelClose')?.click());
       }
       await page.evaluate(() => switchTab('settings'));
-      await page.locator('#addProvBtn').evaluate(el => { el.closest('details.settings-section').open = true; });
+      // v4.5.0：设置改为横列单分区显示，先切到「模型服务」再操作服务商卡片
+      await page.waitForSelector('#settingsNavItems [data-settings-jump="modelSection"]');
+      await page.evaluate(() => document.querySelector('#settingsNavItems [data-settings-jump="modelSection"]').click());
+      await page.locator('#modelAssignments').evaluate(el => { el.open = true; });
       await page.setViewportSize({ width: name === 'Pixel 7 landscape' ? 844 : 390, height: 360 });
       await page.locator('#addProvBtn').click();
       await page.locator('#provAdvanced summary').click();

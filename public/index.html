@@ -28,7 +28,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand"><span class="mist-seal" aria-hidden="true">词</span><span class="mist-legacy-mark" aria-hidden="true">🐳</span> 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.4.1</span></div>
+  <div class="mobile-brand"><span class="mist-seal" aria-hidden="true">词</span><span class="mist-legacy-mark" aria-hidden="true">🐳</span> 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.5.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -44,7 +44,7 @@
       <span class="mist-seal" aria-hidden="true">词</span><span class="brand-mark" aria-hidden="true">🐳</span><span class="brand-text">英语单词学习工作台</span>
     </div>
     <div class="sidebar-head-tools">
-      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.4.1</span>
+      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.5.0</span>
       <!-- v4.3.1：侧边栏可折叠为图标窄栏（状态记忆在本设备） -->
       <button class="sidebar-toggle" id="sidebarToggle" type="button" title="折叠侧边栏" aria-label="折叠侧边栏" aria-expanded="true"><span class="sidebar-toggle-icon" aria-hidden="true">«</span><span class="sidebar-toggle-text">收起</span></button>
     </div>
@@ -118,7 +118,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <header class="page-heading mist-band mist-band-logs">
-      <div><span class="mist-kicker">维护记录</span><h1>日志版块 <span class="ver mist-band-ver" id="logsVersionBadge">v4.4.1</span></h1><p>开发日志、使用日志与报错日志。点左上角版本号随时回到这里。</p></div>
+      <div><span class="mist-kicker">维护记录</span><h1>日志版块 <span class="ver mist-band-ver" id="logsVersionBadge">v4.5.0</span></h1><p>开发日志、使用日志与报错日志。点左上角版本号随时回到这里。</p></div>
       <div class="mist-band-aside"><button class="btn" id="logsBackBtn">← 返回</button></div>
     </header>
     <div class="logs-tabs" id="logsTabs">
@@ -858,20 +858,18 @@
   <section id="tab-settings" class="tab-page" data-page-node-id="tKTGPEToP1TI0j2YEVwNvI">
 
     <header class="page-heading mist-band mist-band-settings">
-      <div><span class="mist-kicker">工作台配置</span><h1>设置</h1><p>AI 服务、发音、墨墨连接、界面与备份。改动保存后即时生效，密钥只留在这台机器上。</p></div>
+      <div><span class="mist-kicker">工作台配置</span><h1>设置</h1><p>AI 服务、发音、墨墨连接、同步与备份。改动保存后即时生效，密钥只留在这台机器上。</p></div>
     </header>
-    <!-- v4.4.1：设置分区索引（随滚动定位，可折叠全部） -->
-    <nav class="mist-page-nav" id="settingsNav" aria-label="设置分区">
+    <!-- v4.5.0：设置只保留一行横列导航，点哪项显示哪个分区（旧的竖排折叠列表已移除） -->
+    <nav class="mist-page-nav" id="settingsNav" aria-label="设置分区" role="tablist">
       <div class="mist-page-nav-items" id="settingsNavItems"></div>
-      <button type="button" class="btn small ghost mist-page-nav-fold" id="settingsFoldAll" aria-expanded="false">全部展开</button>
     </nav>
 
     <!-- ===== 子版块：我的账户（v3.1.0，仅多用户模式显示） ===== -->
-    <details class="settings-section" id="accountSection" style="display:none">
-      <summary>👤 我的账户</summary>
+    <section class="settings-section settings-panel" id="accountSection" style="display:none" data-settings-label="我的账户">
+        <h2 class="settings-panel-title">👤 我的账户</h2>
       <div class="settings-section-body">
         <div class="card" id="accountCard">
-          <div class="card-title">👤 我的账户 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（多用户）</span></div>
           <div class="account-row">
             <div>
               <div class="account-name" id="accountName">—</div>
@@ -882,16 +880,15 @@
           <div class="result" id="accountResult"></div>
         </div>
       </div>
-    </details>
+    </section>
 
     <!-- v4.3.1：设置中的「安装到桌面」入口已移除（PWA manifest / Service Worker 保留，仍可用浏览器菜单安装） -->
 
     <!-- ===== 子版块：发音与朗读（v3.5.0 起，全体用户，口音为本设备偏好） ===== -->
-    <details class="settings-section" id="ttsSection">
-      <summary>🔊 发音与朗读</summary>
+    <section class="settings-section settings-panel" id="ttsSection" data-settings-label="发音与朗读">
+        <h2 class="settings-panel-title">🔊 发音与朗读</h2>
       <div class="settings-section-body">
         <div class="card" id="ttsCard">
-          <div class="card-title">🔊 发音与朗读</div>
           <details class="hint-fold"><summary>ℹ️ 说明</summary>
           <div class="hint">单词优先播放<b>真人发音</b>（有道，美音/英音可切），句子使用服务端<b>神经语音</b>（Piper）。两者不可用时自动回退浏览器朗读。口音偏好保存在本设备。</div>
           </details>
@@ -910,15 +907,15 @@
           <div class="result" id="ttsStatus"></div>
         </div>
       </div>
-    </details>
+    </section>
 
     <!-- ===== 子版块：AI 用量看板（v3.2.0，普通用户看自己 / 管理员看全员） ===== -->
-    <details class="settings-section" id="usageSection" style="display:none">
-      <summary>📊 AI 用量</summary>
+    <section class="settings-section settings-panel" id="usageSection" style="display:none" data-settings-label="AI 用量">
+        <h2 class="settings-panel-title">📊 AI 用量</h2>
       <div class="settings-section-body">
         <div class="card" id="usageCard">
           <div class="card-title-row">
-            <div class="card-title">📊 AI 用量 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（共享 LLM Key）</span></div>
+            <span class="hint">共享 LLM Key</span>
             <div class="usage-controls">
               <select id="usageRange" class="input" style="width:auto">
                 <option value="7">近 7 天</option>
@@ -937,11 +934,11 @@
           <div class="result" id="usageResult"></div>
         </div>
       </div>
-    </details>
+    </section>
 
     <!-- ===== 子版块：模型服务（v3.1.0：管理员专属，普通用户隐藏） ===== -->
-    <details class="settings-section" data-admin-only>
-      <summary>🤖 模型服务</summary>
+    <section class="settings-section settings-panel" id="modelSection" data-admin-only data-settings-label="模型服务">
+      <h2 class="settings-panel-title">🤖 模型服务</h2>
       <div class="settings-section-body">
         <div class="grid-2" data-page-node-id="afHumpJW76Wzto2QRYiFxT">
           <div class="card" data-page-node-id="0GTr9YUkCuRodwMSwNthaH">
@@ -1049,11 +1046,11 @@
           <div class="result" id="searchTestResult" data-page-node-id="33PZTKhpJSFJywvq4sreAO"></div>
         </div></div></details>
       </div>
-    </details>
+    </section>
 
     <!-- ===== 子版块：Token 凭证 ===== -->
-    <details class="settings-section">
-      <summary>墨墨连接</summary>
+    <section class="settings-section settings-panel" id="maimemoSection" data-settings-label="墨墨连接">
+      <h2 class="settings-panel-title">墨墨连接</h2>
       <div class="settings-section-body">
         <div class="card" data-page-node-id="m9eP4J4upz09iiZ5JJHshy">
           <div class="card-title" data-page-node-id="YvN4RYzD1WhvH3WjeJQKBx">墨墨背单词 API</div>
@@ -1083,11 +1080,11 @@
           <div class="result" id="notepadResult" data-page-node-id="b9U7rBYvngIASMDQWIqaYo"></div>
         </div>
       </div>
-    </details>
+    </section>
 
     <!-- ===== 子版块：登录与安全（v2.9.0；v3.1.0：管理员专属） ===== -->
-    <details class="settings-section" data-admin-only>
-      <summary>🔐 登录与安全</summary>
+    <section class="settings-section settings-panel" id="authSection" data-admin-only data-settings-label="登录与安全">
+      <h2 class="settings-panel-title">🔐 登录与安全</h2>
       <div class="settings-section-body">
         <div class="card" id="authCfgCard">
           <div class="card-title">🔑 Token 凭证登录 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（管理员登录方式）</span></div>
@@ -1105,26 +1102,12 @@
           <div class="hint" style="margin-top:6px">当前状态：<b id="authCfgState">加载中…</b></div>
         </div>
       </div>
-    </details>
+    </section>
 
     <!-- ===== 子版块：固有服务 ===== -->
-    <details class="settings-section">
-      <summary>界面、同步与备份</summary>
+    <section class="settings-section settings-panel" id="uiSection" data-settings-label="同步与备份">
+      <h2 class="settings-panel-title">同步与备份</h2>
       <div class="settings-section-body">
-        <div class="card" data-page-node-id="hJEX99GgBD8ah6zZPNx2RT">
-          <div class="card-title" data-page-node-id="4cSzMPazvENC9D0onPdqLZ">🎨 界面风格 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（7 种风格深度融入昼夜模式，各具特色）</span></div>
-          <div class="style-grid" id="styleGrid" data-page-node-id="BD6ORHqgI9ZBxAAH9GKv0U">
-            <button class="style-opt" data-style="mist">晨雾（默认）<span class="style-desc">暖纸砖红 · 昼夜山景</span></button>
-            <button class="style-opt" data-style="classic" data-page-node-id="keF08WESqq85Uv4O3nnjj5">🌿 经典清新<span class="style-desc" data-page-node-id="2jhIC9YWaC14P0pWBGf5oZ">天青极简 · 深空钛黑</span></button>
-            <button class="style-opt" data-style="arcade" data-page-node-id="ipySzbiLaYM64Aq6T32h9X">🕹 复古街机<span class="style-desc" data-page-node-id="3OVOAcRW8wzP27W6hkqqEZ">GameBoy · 80s霓虹</span></button>
-            <button class="style-opt" data-style="pop" data-page-node-id="xTqKDDvV1xCFzbzmOihZrQ">🍬 潮流波普<span class="style-desc" data-page-node-id="mI6ZEkGiefkJh9gBYlLg5H">多巴胺粗边 · 潮流暗波</span></button>
-            <button class="style-opt" data-style="mc">⛏️ 像素·草方块<span class="style-desc">主世界草方块 · 下界要塞</span></button>
-            <button class="style-opt" data-style="mc-gui">📦 像素·工作台<span class="style-desc">原版经典灰石 · 经验荧光</span></button>
-            <button class="style-opt" data-style="mc-deep">💎 像素·钻石矿<span class="style-desc">深层玄武岩 · 钻石青蓝</span></button>
-            <button class="style-opt" data-style="mc-end">🔮 像素·附魔殿<span class="style-desc">末地石砖 · 虚空龙息</span></button>
-          </div>
-        </div>
-
         <div class="card" data-page-node-id="cS7dFlHJTmZRRhAhkX1XbF">
           <div class="card-title" data-page-node-id="5V4bXd8RDP6gAFTrUGjeKZ">🔄 自动同步</div>
           <label class="check-row" data-page-node-id="cX3a8Ep0VmBMi5TEFHvu94"><input type="checkbox" id="cfgAutoSync" data-page-node-id="xADfyiZ63M62FWEpJpJYYr"> 开启定时同步</label>
@@ -1144,14 +1127,14 @@
           <div id="backupList" style="margin-top:10px"></div>
         </div>
       </div>
-    </details>
+    </section>
 
     <!-- ===== 子版块：其他服务 ===== -->
 
 
     <!-- ===== 子版块：DIY ===== -->
-    <details class="settings-section">
-      <summary>高级自定义</summary>
+    <section class="settings-section settings-panel" id="advancedSection" data-settings-label="高级自定义">
+      <h2 class="settings-panel-title">高级自定义</h2>
       <div class="settings-section-body">
         <div class="card">
           <div class="card-title-row">
@@ -1184,9 +1167,10 @@
           </div>
         </div>
       </div>
-    </details>
+    </section>
 
-  <details class="settings-section" id="syncLogSection"><summary>同步记录</summary><div class="settings-section-body"><div class="card card-collapsible" data-page-node-id="PY4R8L2IPwM8y5dayzw1D6">
+  <section class="settings-section settings-panel" id="syncLogSection" data-settings-label="同步记录">
+        <h2 class="settings-panel-title">同步记录</h2><div class="settings-section-body"><div class="card card-collapsible" data-page-node-id="PY4R8L2IPwM8y5dayzw1D6">
         <div class="card-title-row" style="margin-bottom:0">
           <div class="card-title" data-page-node-id="3Lxorj5vYVWe4EY0btefcV" style="margin-bottom:0">同步日志</div>
           <button class="card-collapse-toggle" type="button" data-collapse-target="#syncLogCollapseBody" title="折叠/展开">收起 ▴</button>
@@ -1194,7 +1178,7 @@
         <div class="card-collapse-body" id="syncLogCollapseBody">
           <ul class="log-list" id="syncLog" data-page-node-id="Gvhe60LqCpM3Um5WAQVgq8" style="margin-top:8px"><li data-page-node-id="WZjF8oDm4WepIVS44grJi2">暂无记录</li></ul>
         </div>
-      </div></div></details></section>
+      </div></div></section></section>
 
 </main>
 
