@@ -148,6 +148,7 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 ## 6. 当前状态（v4.4.0，2026-11-27）
 
 - **v4.4.0 · 晨雾界面（2026-11-27）**：默认采用暖纸色、砖红与昼夜山景；桌面使用顶部胶囊导航，手机保留底部高频导航和「更多」。今日任务票据与真实任务共用进度，打开任务不会改变完成状态；个人词卡从当前用户的今日词或顽固词取词，只用缓存和离线 ECDICT 释义。保留可缩放词汇微课、固定样课、语料、复练和分来源报告；旧风格可从设置切回。无数据迁移、无新增依赖。
+- **发布确认（北京时间 2026-11-27 10:42）**。阿里云 ECS 已升级到 v4.4.0。Gitee 与 GitHub 的 `v4.4.0` 标签对应 `3de0311ba0c6a6ba12f1e7b41d093a8f400060ec`，该提交的 [Node 22/24 CI](https://github.com/lgh-2005/memo-workplace/actions/runs/45929181748) 全部通过。部署前备份 `data_backup_v431_20261127-024235.tar.gz`，恢复演练通过。公网 IP 健康检查 5/5，晨雾 CSS 和 6 张 WebP 均可读取。
 
 - **v4.3.1 删除听说训练**：导航 8 → 7 项（今日学习 / AI 学习 / 测验 / 语料库 / 助记库 / 学习报告 / 设置）；`#tab-speaking` 页面、`.speech-*` 样式、`/api/speaking/session|submit`、今日任务 `listening`/`speaking`、报告题型过滤两项、`Permissions-Policy` 的 `microphone` 全部移除（`camera` 保留给拍照识别）。`study-plan-smoke` 改为断言「已删接口 404 / 任务无听说项 / 无麦克风权限」。
 - **v4.3.1 移除设置里的「安装到桌面」**：`#installSection`、`pwaInitInstall`、`beforeinstallprompt` 拦截与安装引导删除；`pwaRegisterSW()` 与 manifest 保留，浏览器菜单仍可安装。
