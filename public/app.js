@@ -627,15 +627,37 @@ function initSidebarCollapse() {
 
 initSidebarCollapse();
 
-function switchTab(name) {
+// Query-param deep links are shared with the PWA shortcuts. Internal moves add history, not reloads.
+function tabFromURL() {
+  const name = new URLSearchParams(location.search).get('tab');
+  return name && document.getElementById(`tab-${name}`)?.classList.contains('tab-page') ? name : 'dashboard';
+}
+window.addEventListener('popstate', () => switchTab(tabFromURL(), { history: false }));
+
+function switchTab(name, { history: trackHistory = true } = {}) {
+  const destination = document.getElementById('tab-' + name);
+  if (!destination?.classList.contains('tab-page')) return;
+  const changed = !destination.classList.contains('active');
+  if (trackHistory && name !== tabFromURL()) {
+    const url = new URL(location.href);
+    if (name === 'dashboard') url.searchParams.delete('tab');
+    else url.searchParams.set('tab', name);
+    window.history.pushState(null, '', url);
+  }
   if (name !== 'logs') state._prevTab = name;   // v2.8.0：记录日志版块前的页签，便于返回
   const navName = name;
   const moreTabs = ['reports', 'kb', 'notes', 'settings'];
-  $$('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === navName));
+  $$('.tab, .bottom-tab-item[data-tab], .more-sheet-item[data-tab]').forEach(button => {
+    const current = button.dataset.tab === navName;
+    button.classList.toggle('active', current);
+    if (current) button.setAttribute('aria-current', 'page');
+    else button.removeAttribute('aria-current');
+  });
   $$('.bottom-tab-item').forEach(b => b.classList.toggle('active', b.dataset.tab === navName || (b.id === 'bottomMoreBtn' && moreTabs.includes(name))));
   $$('.more-sheet-item[data-tab]').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
 
-  $$('.tab-page').forEach(p => p.classList.toggle('active', p.id === 'tab-' + name));
+  $$('.tab-page').forEach(p => p.classList.toggle('active', p === destination));
+  if (changed) window.scrollTo(0, 0);
   if (name !== 'study' && typeof wordPanelOpen === 'function') wordPanelOpen(false);   // v4.2.0：离开学习页收起词表浮层
   if (name === 'dashboard') loadDashboard();
   if (name === 'reports') { loadDashboard(); loadLearningReport(state.reportDays || 7); loadQuizStats(); }
@@ -652,7 +674,10 @@ function switchTab(name) {
 $$('[data-report-view]').forEach(btn => btn.addEventListener('click', () => {
   const view = btn.dataset.reportView;
   $$('.report-source-panel').forEach(panel => { panel.hidden = panel.id !== `report-${view}`; });
-  $$('[data-report-view]').forEach(item => item.classList.toggle('primary', item === btn));
+  $$('[data-report-view]').forEach(item => {
+    item.classList.toggle('primary', item === btn);
+    item.setAttribute('aria-pressed', String(item === btn));
+  });
 }));
 
 
@@ -773,21 +798,141 @@ document.addEventListener('click', (e) => {
   const el = e.target.closest('[data-jump]');
   if (!el) return;
   e.preventDefault();
-  switchTab(el.dataset.jump);
-  if (el.dataset.filter) {
-    state.filter = el.dataset.filter;
-    $$('#wordFilters .chip').forEach(c => c.classList.toggle('active', c.dataset.filter === state.filter));
-    loadWords();
+  const { jump, filter } = el.dataset;
+  if (jump === 'study' && filter) openStudyWords(filter);
+  else {
+    switchTab(jump);
+    if (jump === 'quiz' && filter) {
+      $('[data-submode="basic"]')?.click();
+      $$('#quizSources .chip').find(chip => chip.dataset.src === filter)?.click();
+    }
   }
 });
 
 /* ---------------- 仪表盘 ---------------- */
 
-/* ---------------- v3.3.6：今日任务中心 / 考试计划 ---------------- */
+/* ---------------- 晨雾首页：复用真实词表、任务和样课 ---------------- */
+let mistTasks = [];
+let mistCards = [];
+let mistWordIndex = 0;
+let mistWordDate = '';
+let mistWordAnimation;
+let dashboardRequest = 0;
+let studyTaskRevision = 0;
+let savingStudyTask = false;
+
+function openStudyWords(filter = 'today', search = '') {
+  state.filter = filter;
+  $('#wordSearch').value = search;
+  $$('#wordFilters .chip').forEach(chip => chip.classList.toggle('active', chip.dataset.filter === filter));
+  // switchTab is responsible for loading the list; don't request it again when selecting the subview.
+  switchStudySub('vocab', { load: false });
+  switchTab('study');
+  wordPanelOpen(true, { load: false });
+}
+
+function openStudyTask(task) {
+  if (task.id === 'vocab_today') { openStudyWords(); return; }
+  if (task.id === 'exam_practice') {
+    // Select the exam filter before the tab loads, even after the user last read an external article.
+    kbState.filter = '真题';
+    $$('#kbFilters .chip').forEach(chip => chip.classList.toggle('active', chip.dataset.kcat === '真题'));
+  }
+  switchTab(task.tab);
+  if (task.id === 'review_due') $('[data-submode="srs"]')?.click();
+}
+
+function renderMistTasks(tasks) {
+  mistTasks = tasks;
+  const done = tasks.filter(task => task.done).length;
+  const ratio = tasks.length ? Math.round(done * 100 / tasks.length) : 0;
+  $('#mistTaskRing').setAttribute('stroke-dasharray', `${ratio} 100`);
+  $('#mistTicketSummary').textContent = tasks.length ? `${done} / ${tasks.length} 项已完成` : '暂无任务';
+  const title = { vocab_today: '今日词汇', review_due: '到期与错题', exam_practice: '真题训练' };
+  $('#mistTaskCells').innerHTML = tasks.map(task => {
+    const count = Number(task.count) || 0, target = Number(task.target) || 0;
+    const progress = task.done ? 100 : target ? Math.min(100, Math.round(count * 100 / target)) : 0;
+    return `<div class="mist-ticket-cell${task.done ? ' done' : ''}"><span>${esc(title[task.id] || task.title)}</span>
+      <div><b>${count}</b> / ${target}<small>${task.done ? '完成' : count ? '进行中' : '未开始'}</small></div>
+      <progress max="100" value="${progress}" aria-label="${esc(task.title)}进度"></progress></div>`;
+  }).join('');
+  const next = tasks.find(task => !task.done);
+  $('#mistNextTask').textContent = ({ vocab_today: '开始今日词汇', review_due: '继续词汇复习', exam_practice: '打开真题语料' })[next?.id] || '查看今日任务';
+  $('#mistTodayLead').textContent = next ? `从「${next.title}」开始，接着完成今天的计划。`
+    : tasks.length ? '今天的任务已完成。可以再练一节微课，或回看学习报告。' : '查看今日任务，再挑一组词练习。';
+}
+
+function renderMistWord() {
+  const word = mistCards[mistWordIndex];
+  $('#mistWordActions').hidden = !word;
+  $('#mistWordNext').hidden = mistCards.length <= 1;
+  $('#mistWordSource').textContent = word ? (word.source === 'today' ? '来自今日词表' : '来自顽固词') : '';
+  $('#mistWordBody').innerHTML = word ? `<div class="mist-word" lang="en">${esc(word.spelling)}</div>
+    <div class="mist-phonetic">${esc([word.phonetic, word.pos].filter(Boolean).join(' · '))}</div>
+    <div class="mist-word-gloss md-body">${mdLite(word.gloss || '暂无本地释义。可在词表中进一步学习。')}</div>`
+    : '<div class="mist-word-empty md-body">' + mdLite('同步墨墨后，这里会展示今日词或顽固词。也可以先试学一节词汇微课。') + '</div>';
+  if (word) $('#mistWordSpeak').setAttribute('aria-label', `朗读 ${word.spelling}`);
+}
+
+function renderMistDashboard(data) {
+  const date = data.todayStr || bjDate();
+  const time = $('#mistToday');
+  time.dateTime = date;
+  time.textContent = new Intl.DateTimeFormat('zh-CN', { month: 'long', day: 'numeric', weekday: 'long', timeZone: 'Asia/Shanghai' })
+    .format(new Date(`${date}T00:00:00+08:00`));
+  const exam = $('#mistExam');
+  exam.hidden = !data.kaoyan;
+  if (data.kaoyan) {
+    const { daysLeft, custom, examType } = data.kaoyan;
+    const label = ({ kaoyan1: '考研', cet6: '六级', custom: '考试' })[examType] || '考试';
+    exam.textContent = daysLeft < 0 ? `${label}已结束` : daysLeft === 0 ? `${label}就在今天` : `距${label} ${daysLeft} 天${custom ? '' : '（估算）'}`;
+  }
+  const streak = $('#mistStreak');
+  streak.hidden = !(data.streak > 0);
+  streak.textContent = data.streak > 0 ? `连续学习 ${data.streak} 天` : '';
+  const selected = mistWordDate === date ? mistCards[mistWordIndex]?.spelling : null;
+  mistWordDate = date;
+  mistCards = Array.isArray(data.wordCards) ? data.wordCards : [];
+  mistWordIndex = Math.max(0, mistCards.findIndex(word => word.spelling === selected));
+  renderMistWord();
+}
+
+$('#mistNextTask').addEventListener('click', () => {
+  const next = mistTasks.find(task => !task.done);
+  if (next) { openStudyTask(next); return; }
+  $('#todayTasksCard').focus({ preventScroll: true });
+  $('#todayTasksCard').scrollIntoView({ block: 'start' });
+});
+$('#mistOpenLesson').addEventListener('click', () => {
+  switchStudySub('vocab', { load: false });
+  switchTab('study');
+});
+$('#mistOpenSample').addEventListener('click', () => {
+  switchStudySub('vocab', { load: false });
+  switchTab('study');
+  if (!coachBatch) beginCoachSample(); // 不覆盖已开始的真实学习。
+});
+$('#mistWordSpeak').addEventListener('click', () => speak(mistCards[mistWordIndex]?.spelling));
+$('#mistWordNext').addEventListener('click', () => {
+  if (mistCards.length <= 1) return;
+  mistWordIndex = (mistWordIndex + 1) % mistCards.length;
+  renderMistWord();
+  mistWordAnimation?.cancel();
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    mistWordAnimation = $('#mistWordBody').animate([{ opacity: .55, transform: 'translateY(3px)' }, { opacity: 1, transform: 'none' }], { duration: 180, easing: 'ease-out' });
+  }
+});
+$('#mistWordStudy').addEventListener('click', () => {
+  const word = mistCards[mistWordIndex];
+  if (word) openStudyWords(word.source, word.spelling);
+});
+
+/* ---------------- 今日任务中心 / 考试计划 ---------------- */
 function renderStudyTasks(tasks) {
   const box = $('#todayTasksList');
   if (!box) return;
   const list = Array.isArray(tasks) ? tasks : [];
+  renderMistTasks(list);
   const done = list.filter(x => x.done).length;
   const summary = $('#todayTasksSummary');
   if (summary) summary.textContent = `${done}/${list.length} 已完成`;
@@ -799,15 +944,30 @@ function renderStudyTasks(tasks) {
   box.querySelectorAll('[data-study-complete]').forEach(input => input.addEventListener('change', async e => {
     e.preventDefault();
     e.stopPropagation();
+    if (savingStudyTask) return;
     const id = input.dataset.studyComplete;
-    try { const r = await api('/api/study/tasks/complete', { method: 'POST', body: { taskId: id, completed: input.checked } }); renderStudyTasks(r.tasks); }
-    catch (err) { input.checked = !input.checked; toast('任务更新失败：' + err.message); }
+    const checked = input.checked;
+    const returnFocus = document.activeElement === input;
+    savingStudyTask = true;
+    studyTaskRevision++;
+    $$('#todayTasksList [data-study-complete]').forEach(toggle => { toggle.disabled = true; });
+    let tasks = list;
+    try {
+      const r = await api('/api/study/tasks/complete', { method: 'POST', body: { taskId: id, completed: checked } });
+      tasks = r.tasks;
+    } catch (err) { toast('任务更新失败：' + err.message); }
+    finally {
+      savingStudyTask = false;
+      studyTaskRevision++;
+      renderStudyTasks(tasks);
+      if (returnFocus && document.activeElement === document.body && $('#tab-dashboard').classList.contains('active')) {
+        $$('#todayTasksList [data-study-complete]').find(toggle => toggle.dataset.studyComplete === id)?.focus({ preventScroll: true });
+      }
+    }
   }));
   box.querySelectorAll('[data-study-start]').forEach(btn => btn.addEventListener('click', () => {
     const task = list.find(x => x.id === btn.dataset.studyStart); if (!task) return;
-    switchTab(task.tab);
-    if (task.id === 'vocab_today') { state.filter = 'today'; $$('#wordFilters .chip').forEach(x => x.classList.toggle('active', x.dataset.filter === 'today')); loadWords(); }
-    if (task.id === 'review_due') document.querySelector('[data-submode="srs"]')?.click();
+    openStudyTask(task);
   }));
 }
 function renderStudyPlan(plan) {
@@ -875,9 +1035,13 @@ async function saveStudyPlan() {
 if ($('#studyPlanSaveBtn')) $('#studyPlanSaveBtn').addEventListener('click', saveStudyPlan);
 
 async function loadDashboard() {
+  const request = ++dashboardRequest;
+  const revision = studyTaskRevision;
   try {
     const d = await api('/api/dashboard');
-    renderStudyTasks(d.studyTasks || []);
+    if (request !== dashboardRequest) return;
+    if (!savingStudyTask && revision === studyTaskRevision) renderStudyTasks(d.studyTasks || []);
+    renderMistDashboard(d);
     renderStudyPlan(d.studyPlan);
     // 同步引导条（v1.0.4）：从未同步 / 上次失败 / 今天没同步
     const banner = $('#syncBanner');
@@ -904,6 +1068,8 @@ async function loadDashboard() {
     } else {
       $('#statProgress').textContent = '—';
       $('#statProgressSub').textContent = '今天尚未同步';
+      $('#statTime').textContent = '—';
+      $('#statTimeSub').textContent = '';
     }
     $('#statSticky').textContent = d.counts.sticky;
     $('#statTotal').textContent = d.planTotal || '—';
@@ -1039,22 +1205,31 @@ async function doSync(silent) {
 
 /* ---------------- v2.2.3：学习诊断周报 ---------------- */
 
+let reportRequest = 0;
 async function loadLearningReport(days = 7) {
+  const request = ++reportRequest;
   state.reportDays = days;
   const labelEl = $('#reportWinLabel');
   if (labelEl) labelEl.textContent = `最近 ${days} 天`;
   $$('.report-win-btn').forEach(b => {
-    b.classList.toggle('active', Number(b.dataset.days) === days);
+    const current = Number(b.dataset.days) === days;
+    b.classList.toggle('active', current);
+    b.setAttribute('aria-pressed', String(current));
   });
 
   const bodyEl = $('#learningReportBody');
   if (!bodyEl) return;
-
+  bodyEl.setAttribute('aria-busy', 'true');
+  bodyEl.innerHTML = '<div class="hint">正在读取这个时段的学习记录…</div>';
   try {
     const r = await api(`/api/learning/report?days=${days}`);
+    if (request !== reportRequest) return;
     renderLearningReport(r);
   } catch (err) {
+    if (request !== reportRequest) return;
     bodyEl.innerHTML = `<div class="result err">⚠️ 加载学习诊断周报失败: ${esc(err.message)}</div>`;
+  } finally {
+    if (request === reportRequest) bodyEl.setAttribute('aria-busy', 'false');
   }
 }
 
@@ -1438,7 +1613,7 @@ function renderWordList() {
 }
 
 /* 词表使用浮层，勾选时保持打开。 */
-function wordPanelOpen(open) {
+function wordPanelOpen(open, { load = true } = {}) {
   const panel = $('#wordPanel'), fab = $('#wordFab');
   if (!panel) return;
   const on = !!open;
@@ -1455,7 +1630,7 @@ function wordPanelOpen(open) {
     if (window.matchMedia && window.matchMedia('(min-width: 701px)').matches) {
       setTimeout(() => { if (panel.classList.contains('open')) $('#wordSearch').focus({ preventScroll: true }); }, 170);
     }
-    if (!state.words.length) loadWords();
+    if (load && !state.words.length) loadWords();
   }
 }
 
@@ -1470,7 +1645,7 @@ $('#wordPanelClose').addEventListener('click', () => wordPanelOpen(false));
 document.addEventListener('click', (e) => {
   const panel = $('#wordPanel');
   if (!panel || !panel.classList.contains('open')) return;
-  if (e.target.closest('#wordPanel') || e.target.closest('#wordFab')) return;
+  if (e.target.closest('#wordPanel, #wordFab, #mistWordStudy, #mistNextTask, [data-study-start="vocab_today"], [data-jump="study"][data-filter]')) return;
   wordPanelOpen(false);
 });
 document.addEventListener('keydown', (e) => {
@@ -2224,7 +2399,7 @@ const STORY_TIP = {
 
 };
 
-async function switchStudySub(sub) {
+async function switchStudySub(sub, { load = true } = {}) {
   $$('#studySubbar .study-sub-item').forEach(b => b.classList.toggle('active', b.dataset.sub === sub));
   const vocab = $('#vocabPane'), story = $('#storyPane');
   if (vocab) vocab.style.display = sub === 'vocab' ? '' : 'none';
@@ -2244,7 +2419,7 @@ async function switchStudySub(sub) {
   } else if (sub === 'writing') {
     wrtInitOnce();
     loadWrtHist();
-  } else loadWords();
+  } else if (load) loadWords();
 }
 
 $$('#studySubbar .study-sub-item').forEach(b => b.addEventListener('click', () => switchStudySub(b.dataset.sub)));
@@ -2855,6 +3030,7 @@ function applyTheme(t) {
   const mBtn = $('#mobileThemeToggle');
   if (mBtn) mBtn.textContent = t === 'dark' ? '☀️' : '🌙';
   localStorage.setItem('wb-theme', t);
+  updateThemeColor();
 }
 
 $('#themeToggle').addEventListener('click', () => {
@@ -2863,9 +3039,16 @@ $('#themeToggle').addEventListener('click', () => {
 
 /* ---------------- 界面风格（白天模式主题） ---------------- */
 
+function updateThemeColor() {
+  const { style, theme } = document.documentElement.dataset;
+  document.querySelector('meta[name="theme-color"]').content = style === 'mist'
+    ? (theme === 'dark' ? '#111316' : '#f1ede6') : (theme === 'dark' ? '#111827' : '#3b82f6');
+}
+
 function applyStyle(t) {
   document.documentElement.dataset.style = t;
   localStorage.setItem('wb-style', t);
+  updateThemeColor();
   $$('#styleGrid .style-opt').forEach(b => b.classList.toggle('active', b.dataset.style === t));
 }
 
@@ -7007,8 +7190,6 @@ if ($('#transferStartBtn')) $('#transferStartBtn').addEventListener('click', sta
 
 /** v2.8.0：应用初始化/刷新（登录成功后也会再次调用） */
 async function initApp() {
-  applyTheme(localStorage.getItem('wb-theme') || 'light');
-  applyStyle(localStorage.getItem('wb-style') || '');
   // v3.1.0：刷新认证状态与角色显隐（登录/注册成功后进入时同步 me 与管理员设置可见性）
   try { await loadAuthStatus(); } catch { /* 未登录或服务未就绪时静默 */ }
   // v2.1.0：启动即拉取 DIY 提示词，使学习页首句开场等自定义提示词无需进设置页即可生效
@@ -7032,6 +7213,8 @@ async function initApp() {
 }
 
 (async function init() {
+  applyTheme(localStorage.getItem('wb-theme') || 'light');
+  applyStyle(localStorage.getItem('wb-style') || 'mist');
   bindLoginUI();
   bindVersionClick();
   // v2.8.0：日志版块事件
@@ -7275,8 +7458,8 @@ pwaRegisterSW();
 /* 支持 PWA 快捷方式 ?tab=xxx 直达对应页签（在 initApp 登录成功后调用） */
 function pwaHandleShortcutTab() {
   try {
-    const tab = new URLSearchParams(location.search).get('tab');
-    if (tab && document.getElementById('tab-' + tab)) switchTab(tab);
+    const tab = tabFromURL();
+    if (tab !== 'dashboard') switchTab(tab, { history: false });
   } catch { /* 忽略 */ }
 }
 

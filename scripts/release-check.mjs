@@ -12,9 +12,11 @@ const ci = await readFile(join(root, '.github', 'workflows', 'ci.yml'), 'utf8');
 const serverSrc = await readFile(join(root, 'server.js'), 'utf8');
 const appSrc = await readFile(join(root, 'public', 'app.js'), 'utf8');
 const indexHtml = await readFile(join(root, 'public', 'index.html'), 'utf8');
+const sw = await readFile(join(root, 'public', 'sw.js'), 'utf8');
+const mistAssets = ['mist.css', ...['hero-dawn', 'hero-night', 'paper', 'cover-lesson', 'cover-ridge', 'band-report'].map(name => `mist/${name}.webp`)];
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.3.1'],
+  ['package version', packageJson.version === '4.4.0'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
@@ -27,6 +29,7 @@ const required = [
   ['v4.3.1 keeps pwa shell registration', appSrc.includes('pwaRegisterSW()') && indexHtml.includes('rel="manifest"')],
   ['v4.3.1 sidebar collapse hook', indexHtml.includes('id="sidebarToggle"') && appSrc.includes('sidebar-collapsed') && appSrc.includes('applySidebarCollapse')],
   ['v4.3.1 no microphone permission', !serverSrc.includes("microphone=(self)")],
+  ['Mist stylesheet and imagery ship with offline shell', indexHtml.includes('href="mist.css"') && mistAssets.every(asset => exists(join(root, 'public', asset)) && sw.includes(`'/${asset}'`))],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],

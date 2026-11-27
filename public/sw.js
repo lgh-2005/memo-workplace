@@ -1,4 +1,4 @@
-/* 英语单词学习工作台 · Service Worker（v4.3.1）
+/* 英语单词学习工作台 · Service Worker（v4.4.0）
  * 目标：把「应用外壳」缓存到本地，断网也能打开界面（数据仍走 /api 联网）。
  * 注意：Service Worker 只在安全上下文（HTTPS / localhost）生效；
  *       本项目默认入口为 http://IP，此时浏览器不会注册本文件（app.js 侧已做守卫），
@@ -6,12 +6,19 @@
  */
 'use strict';
 
-const SHELL_CACHE = 'wb-shell-v4.3.1';
+const SHELL_CACHE = 'wb-shell-v4.4.0';
 const SHELL_ASSETS = [
   '/',
   '/index.html',
   '/app.js',
   '/style.css',
+  '/mist.css',
+  '/mist/hero-dawn.webp',
+  '/mist/hero-night.webp',
+  '/mist/paper.webp',
+  '/mist/cover-lesson.webp',
+  '/mist/cover-ridge.webp',
+  '/mist/band-report.webp',
   '/manifest.webmanifest',
   '/icons/icon-192.png',
   '/icons/icon-512.png',

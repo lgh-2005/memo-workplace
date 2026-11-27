@@ -1,0 +1,229 @@
+/* v4.4.0 · 晨雾. Layout is scoped to the new style; shared functional markup stays intact. */
+.mist-seal, .mist-hero, .mist-ticket, .mist-word-card, .mist-feature, .mist-memo-heading, .mist-band-study { display: none; }
+.mist-band p { margin-top: 5px; color: var(--text-sub); text-indent: 2em; }
+[data-style="mist"] {
+  --bg: #f1ede6;
+  --card: #fffdf8;
+  --border: #ded8ce;
+  --text: #221f1b;
+  --text-sub: #655d53;
+  --primary: #a54128;
+  --primary-soft: #f8e9df;
+  --ok: #3f6854;
+  --warn: #a53a43;
+  --radius: 17px;
+  --grad-primary: var(--primary);
+  --stat-grad: var(--text);
+  --topbar-bg: #f1ede6ef;
+  --card-sheen: none;
+  --shadow-card: 0 1px 2px #3627120d, 0 18px 28px -28px #36271266;
+  --shadow-card-hover: var(--shadow-card);
+  --shadow-btn: none;
+  --mist-soft: #f7f3ec;
+  --mist-serif: 'Noto Serif SC', 'Songti SC', SimSun, Georgia, serif;
+  --mist-plate: url('/mist/hero-dawn.webp');
+  --mist-fade: linear-gradient(100deg,#f5f1e9 3%,#f5f1e9f0 30%,#f5f1e9a8 50%,#f5f1e900 82%);
+  --mist-band-fade: linear-gradient(100deg,#f5f1e9 12%,#f5f1e9f5 31%,#f5f1e9b0 55%,#f5f1e900 96%);
+  color-scheme: light;
+}
+[data-style="mist"][data-theme="dark"] {
+  --bg: #111316;
+  --card: #1a1d21;
+  --border: #35383c;
+  --text: #f3eee6;
+  --text-sub: #b5ada2;
+  --primary: #f18b66;
+  --primary-soft: #33231d;
+  --ok: #8fb9a4;
+  --warn: #ee94a1;
+  --topbar-bg: #141619ed;
+  --shadow-card: 0 1px 2px #0005;
+  --mist-soft: #222529;
+  --mist-plate: url('/mist/hero-night.webp');
+  --mist-fade: linear-gradient(100deg,#121519 3%,#121519ef 31%,#121519b8 53%,#12151900 88%);
+  --mist-band-fade: linear-gradient(100deg,#191c20 12%,#191c20f2 31%,#191c20c4 55%,#191c204d 96%);
+  color-scheme: dark;
+}
+[data-style="mist"] body { background: var(--bg) url('/mist/paper.webp') 0 0 / 400px; background-blend-mode: multiply; }
+[data-style="mist"][data-theme="dark"] body { background: var(--bg); }
+[data-style="mist"] .mist-legacy-mark, [data-style="mist"] .brand-mark { display: none; }
+[data-style="mist"] .mist-seal {
+  display: inline-grid; place-items: center; width: 31px; height: 31px; flex: none;
+  border-radius: 7px; font: 600 17px var(--mist-serif); background: var(--text); color: var(--bg);
+}
+[data-style="mist"] :is(.card, .coach-map, .plan-editor) { box-shadow: var(--shadow-card); }
+[data-style="mist"] :is(.btn, .tab, .bottom-tab-item, .coach-node, .theme-toggle, a, summary, input, select, textarea):focus-visible {
+  outline: 2px solid var(--primary); outline-offset: 3px;
+}
+[data-style="mist"][data-theme="dark"] :is(.btn.primary, .report-win-btn.active, .word-fab) { color: #26150e; }
+[data-style="mist"] :is(.btn, .tab) { transition: background-color .16s, color .16s, border-color .16s; }
+[data-style="mist"] .tab-page.active { animation: mist-content-in .2s ease-out; }
+@keyframes mist-content-in { from { opacity: .7; } }
+
+/* Desktop: reuse the same seven tabs and sync/zen controls as the classic sidebar. */
+@media (min-width: 701px) {
+  [data-style="mist"] body { display: flex; flex-direction: column; }
+  [data-style="mist"] main { width: 100%; max-width: 1224px; padding: 22px 24px 72px; }
+  [data-style="mist"] #appSidebar {
+    position: sticky; top: 0; display: grid; grid-template-columns: auto minmax(0,1fr) auto;
+    width: 100%; min-width: 0; height: auto; align-items: center; gap: 12px;
+    padding: 9px max(18px, calc((100% - 1176px) / 2)); border: 0; border-bottom: 1px solid var(--border);
+    box-shadow: none; transition: none;
+  }
+  [data-style="mist"] #appSidebar .sidebar-head { display: flex; align-items: center; gap: 8px; padding: 0; margin: 0; border: 0; }
+  [data-style="mist"] #appSidebar .brand { display: flex; align-items: center; gap: 8px; }
+  [data-style="mist"] #appSidebar .brand-text { font-size: 13px; }
+  [data-style="mist"] #appSidebar .sidebar-head-tools { margin: 0; }
+  [data-style="mist"] #appSidebar .ver { display: inline-block; white-space: nowrap; }
+  [data-style="mist"] #appSidebar :is(.sidebar-toggle, .tab-group-label, .tab-icon) { display: none; }
+  [data-style="mist"] #appSidebar .tabs {
+    display: flex; flex-flow: row nowrap; gap: 2px; justify-self: center; max-width: 100%; overflow: visible;
+    padding: 3px; border: 1px solid var(--border); border-radius: 999px; background: var(--card);
+  }
+  [data-style="mist"] #appSidebar .tab {
+    display: grid; place-items: center; width: auto; height: auto; min-height: 34px;
+    padding: 4px clamp(6px, 1.15vw, 16px); border: 1px solid transparent; border-radius: 999px;
+    color: var(--text-sub); white-space: nowrap; font-size: 12px; transform: none; text-shadow: none;
+  }
+  [data-style="mist"] #appSidebar .tab-text { display: inline; }
+  [data-style="mist"] #appSidebar .tab:hover { background: var(--mist-soft); color: var(--text); }
+  [data-style="mist"] #appSidebar .tab.active { background: var(--text); color: var(--bg); font-weight: 600; }
+  [data-style="mist"] #appSidebar .tab.active::before { display: none; }
+  [data-style="mist"] #appSidebar .sidebar-foot { flex-flow: row nowrap; padding: 0; margin: 0; gap: 6px; border: 0; }
+  [data-style="mist"] #appSidebar .sidebar-foot-tools { flex-flow: row nowrap; gap: 4px; }
+  [data-style="mist"] #appSidebar .theme-toggle { width: 34px; height: 34px; padding: 0; border-radius: 50%; background: var(--card); }
+  [data-style="mist"] #appSidebar .sync-badge { min-width: 28px; min-height: 34px; padding: 4px 6px; border-radius: 99px; }
+  [data-style="mist"] #appSidebar #syncText { display: inline; max-width: 104px; white-space: nowrap; }
+  [data-style="mist"] body.zen-mode #appSidebar { display: none; }
+  [data-style="mist"] body.zen-mode main { max-width: 935px; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  [data-style="mist"] #appSidebar .brand-text, [data-style="mist"] #appSidebar #syncText { display: none; }
+  [data-style="mist"] #appSidebar .tab { padding-inline: clamp(6px, 1.05vw, 12px); }
+}
+
+/* Today: photo, compact live ticket, and a two-column task/word workspace. */
+[data-style="mist"] .mist-hero {
+  display: grid; align-items: center; min-height: 292px; overflow: hidden; border-radius: 23px;
+  background: var(--mist-fade), var(--mist-plate) 50% 65% / cover no-repeat, var(--mist-soft);
+  box-shadow: var(--shadow-card);
+}
+.mist-hero-content { padding: 28px 39px 58px; max-width: 610px; }
+.mist-kicker {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 11px; font-weight: 600;
+  line-height: 1.5; letter-spacing: .08em; color: var(--text-sub);
+}
+.mist-kicker::before { content: ''; width: 14px; height: 1px; background: var(--primary); }
+#mistExam { color: var(--primary); }
+:is(#mistExam, #mistStreak):not([hidden])::before { content: '/'; margin-inline-end: 8px; color: var(--text-sub); }
+.mist-hero h1 { font: 500 clamp(31px, 4vw, 48px)/1.28 var(--mist-serif); margin: 11px 0 7px; }
+.mist-hero p, .mist-feature p { color: var(--text-sub); line-height: 1.7; text-indent: 2em; }
+.mist-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 19px; }
+.mist-actions .btn, .mist-feature .btn, .mist-word-actions .btn { min-height: 44px; }
+[data-style="mist"] :is(.dashboard-legacy-heading,#kaoyanCountdown) { display: none !important; }
+[data-style="mist"] .mist-ticket {
+  position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: stretch;
+  background: var(--card); border: 1px solid var(--border); border-radius: 15px;
+  margin: -33px 18px 14px; overflow: hidden; box-shadow: 0 14px 32px -24px #1c130a80;
+}
+.mist-ticket-main { display: flex; align-items: center; gap: 9px; padding: 9px 18px; min-height: 64px; }
+.mist-ticket-main b, .mist-ticket-main span { display: block; }
+.mist-ticket-main span { color: var(--text-sub); font-size: 12px; }
+.mist-ring { width: 36px; height: 36px; overflow: visible; transform: rotate(-90deg); flex: none; }
+.mist-ring circle { fill: none; stroke: var(--border); stroke-width: 4; }
+.mist-ring #mistTaskRing { stroke: var(--primary); stroke-linecap: round; transition: stroke-dasharray .32s ease; }
+.mist-ticket-cells { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+.mist-ticket-cell { border-inline-start: 1px dashed var(--border); padding: 9px 14px; min-width: 0; color: var(--text-sub); font-size: 12px; }
+.mist-ticket-cell b { color: var(--text); font-size: 16px; font-variant-numeric: tabular-nums; }
+.mist-ticket-cell small { float: right; font-size: 11px; margin-top: 4px; }
+.mist-ticket-cell.done small { color: var(--ok); }
+.mist-ticket-cell progress { display: block; width: 100%; height: 3px; margin-top: 5px; appearance: none; border: 0; border-radius: 8px; background: var(--border); color: var(--primary); }
+.mist-ticket-cell progress::-webkit-progress-bar { border-radius: 8px; background: var(--border); }
+.mist-ticket-cell progress::-webkit-progress-value { border-radius: 8px; background: var(--primary); transition: width .26s ease; }
+.mist-ticket-cell progress::-moz-progress-bar { border-radius: 8px; background: var(--primary); }
+.mist-ticket-cell.done progress::-webkit-progress-value { background: var(--ok); }
+.mist-ticket-cell.done progress::-moz-progress-bar { background: var(--ok); }
+[data-style="mist"] .mist-dashboard-grid { display: grid; grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr); gap: 13px; align-items: stretch; }
+[data-style="mist"] .mist-dashboard-grid > .card { margin: 0; }
+[data-style="mist"] #todayTasksCard { scroll-margin-top: 82px; }
+[data-style="mist"] .study-task { gap: 8px; padding-block: 3px; }
+[data-style="mist"] .study-task.done { opacity: 1; }
+[data-style="mist"] .study-task-icon { display: none; }
+[data-style="mist"] .study-task-btn { min-height: 44px; }
+[data-style="mist"] .mist-word-card {
+  display: flex; flex-direction: column; min-width: 0;
+  background: var(--card) url('/mist/paper.webp') 0 0 / 250px; background-blend-mode: multiply;
+}
+[data-style="mist"][data-theme="dark"] .mist-word-card { background: var(--card); }
+.mist-word-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.mist-word { font: 600 clamp(25px, 3.2vw, 41px)/1.15 Georgia, serif; margin-top: 13px; overflow-wrap: anywhere; }
+.mist-phonetic { color: var(--text-sub); margin: 6px 0; font: 12px/1.45 ui-monospace, Consolas, monospace; }
+.mist-word-gloss, .mist-word-empty { color: var(--text-sub); overflow-wrap: anywhere; margin: 8px 0; }
+.mist-word-actions { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; padding-top: 8px; align-items: center; }
+.mist-word-actions[hidden], .mist-word-actions .btn[hidden] { display: none; }
+#mistWordStudy { margin-inline-start: auto; }
+[data-style="mist"] .mist-feature {
+  display: block; background: var(--mist-band-fade), var(--mist-feature-image) 50% 50% / cover no-repeat, var(--mist-soft);
+}
+.mist-feature-lesson { --mist-feature-image: url('/mist/cover-lesson.webp'); }
+.mist-feature-report { --mist-feature-image: url('/mist/band-report.webp'); }
+.mist-feature-body { max-width: 330px; }
+.mist-feature h2, .mist-memo-heading h2 { font: 600 21px/1.45 var(--mist-serif); margin: 3px 0 2px; }
+.mist-feature .btn { margin-top: 9px; }
+[data-style="mist"] .mist-memo-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 21px 0 8px; }
+[data-style="mist"] .today-summary .stat { min-width: 0; }
+[data-style="mist"] .plan-editor { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 14px; }
+
+/* Learning and reports: small editorial headers, not a second landing page. */
+[data-style="mist"] .mist-band {
+  display: flex; min-height: 134px; padding: 22px 25px; align-items: center; border-radius: var(--radius);
+  background: var(--mist-band-fade), var(--mist-band-image) 55% 52%/cover no-repeat, var(--mist-soft);
+  box-shadow: var(--shadow-card);
+}
+.mist-band-study { --mist-band-image: url('/mist/cover-ridge.webp'); }
+.mist-band-report { --mist-band-image: url('/mist/band-report.webp'); }
+[data-style="mist"] .mist-band h1 { font: 600 clamp(23px, 2.8vw, 32px)/1.3 var(--mist-serif); margin-top: 4px; }
+[data-style="mist"] .coach-map { background: var(--card); border-radius: var(--radius); }
+[data-style="mist"] .coach-tree[data-view="map"] { background: var(--mist-soft); }
+[data-style="mist"] .coach-sentence { border-inline-start-width: 2px; border-radius: 6px; }
+[data-style="mist"] .report-source-nav { gap: 6px; }
+[data-style="mist"] .report-win-btns { flex-wrap: wrap; }
+[data-style="mist"] .report-win-btn { border-radius: 999px; }
+
+@media (max-width: 700px) {
+  [data-style="mist"] { --mist-fade: linear-gradient(100deg,#f5f1e9f8 2%,#f5f1e9dc 52%,#f5f1e95c 100%); }
+  [data-style="mist"][data-theme="dark"] { --mist-fade: linear-gradient(100deg,#121519fb 2%,#121519da 52%,#12151976 100%); }
+  [data-style="mist"] main { padding-inline: 12px; }
+  [data-style="mist"] .mobile-header { gap: 4px; padding-inline: 9px; background: var(--topbar-bg); }
+  [data-style="mist"] .mobile-brand { align-items: center; white-space: nowrap; font-size: 13px; }
+  [data-style="mist"] .mobile-brand .ver { font-size: 10px; }
+  [data-style="mist"] .mobile-header-actions { gap: 2px; }
+  [data-style="mist"] .mobile-header-actions .theme-toggle { min-height: 44px; min-width: 44px; border-radius: 50%; }
+  [data-style="mist"] .mobile-header-actions .sync-badge { min-height: 44px; min-width: 44px; justify-content: center; }
+  [data-style="mist"] #mobileSyncText { max-width: 64px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  [data-style="mist"] .mobile-bottom-bar .bottom-tab-item.active { color: var(--primary); background: var(--primary-soft); border-radius: 12px; }
+  [data-style="mist"] .mist-hero { min-height: 0; border-radius: 17px; background-position: center, 64% 63%, center; }
+  .mist-hero-content { padding: 19px 16px 47px; }
+  .mist-hero h1 { font-size: 30px; }
+  .mist-actions { margin-top: 12px; }
+  .mist-actions .btn { padding-inline: 9px; }
+  [data-style="mist"] .mist-ticket { grid-template-columns: 1fr; margin: -29px 7px 12px; border-radius: 13px; }
+  .mist-ticket-main { min-height: 0; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+  .mist-ring { width: 28px; height: 28px; }
+  .mist-ticket-cell { padding: 6px 8px; }
+  .mist-ticket-cell:first-child { border-inline-start: 0; }
+  .mist-ticket-cell small { display: none; }
+  [data-style="mist"] .mist-dashboard-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  [data-style="mist"] .mist-band { min-height: 110px; padding: 13px 15px; }
+  [data-style="mist"] .mist-band p { font-size: 13px; }
+}
+@media (max-width: 375px) {
+  [data-style="mist"] #mobileSyncText { display: none; }
+  [data-style="mist"] .mist-word-actions .btn { padding-inline: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-style="mist"] *, [data-style="mist"] *::before, [data-style="mist"] *::after {
+    animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

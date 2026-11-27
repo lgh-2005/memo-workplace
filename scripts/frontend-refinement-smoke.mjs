@@ -11,6 +11,7 @@ const root = fileURLToPath(new URL('..', import.meta.url));
 const sandbox = await mkdtemp(join(tmpdir(), 'workbench-refinement-'));
 const port = 19200 + Math.floor(Math.random() * 500);
 const base = `http://127.0.0.1:${port}`;
+const today = new Date(Date.now() + 8 * 3600000).toISOString().slice(0, 10);
 let server;
 
 try {
@@ -19,7 +20,11 @@ try {
   await cp(join(root, 'public'), join(sandbox, 'public'), { recursive: true });
   await cp(join(root, 'corpus'), join(sandbox, 'corpus'), { recursive: true });
   await mkdir(join(sandbox, 'data'), { recursive: true });
-  await writeFile(join(sandbox, 'data', 'db.json'), JSON.stringify({ words: {}, glosses: {}, notes: [], sessions: [], syncLog: [], quizLog: [], unitLog: [] }));
+  await writeFile(join(sandbox, 'data', 'db.json'), JSON.stringify({ words: {
+    practice: { id: 1, spelling: 'practice', today: { date: today } },
+    memory: { id: 2, spelling: 'memory', today: { date: today } },
+    review: { id: 3, spelling: 'review', tags: ['STICKING'] },
+  }, glosses: { practice: { gloss: '练习', pos: 'n.' }, memory: { gloss: '记忆', pos: 'n.' } }, notes: [], sessions: [], syncLog: [], quizLog: [], unitLog: [] }));
   const provider = { id: 'refine-provider', name: 'Refinement mock', baseUrl: '', apiKey: '', model: 'mock', vision: true };
   await writeFile(join(sandbox, 'data', 'config.json'), JSON.stringify({
     llm: { mock: true, activeId: provider.id, providers: [provider] },
@@ -67,6 +72,48 @@ try {
     });
 
     await page.goto(base, { waitUntil: 'networkidle' });
+    await page.locator('#mistWordBody .mist-word').waitFor();
+    assert.equal(await page.locator('html').getAttribute('data-style'), 'mist');
+    assert.equal(await page.locator('#sidebarToggle').isVisible(), false);
+    assert.equal(await page.locator('#appSidebar .tabs').evaluate(el => getComputedStyle(el).flexDirection), 'row');
+    assert.equal(await page.locator('.tab:visible').count(), 7);
+    const image = await fetch(`${base}/mist/hero-dawn.webp`);
+    assert.equal(image.status, 200);
+    assert.equal(image.headers.get('content-type'), 'image/webp');
+    await image.arrayBuffer();
+    const first = await page.locator('#mistWordBody .mist-word').textContent();
+    assert(['practice', 'memory'].includes(first));
+    await page.locator('#mistWordNext').click();
+    const second = await page.locator('#mistWordBody .mist-word').textContent();
+    assert(['practice', 'memory'].includes(second) && first !== second);
+    await page.locator('#mistWordStudy').click();
+    await page.locator('#wordPanel.open').waitFor();
+    assert.equal(await page.locator('#wordSearch').inputValue(), second);
+    assert.equal(new URL(page.url()).searchParams.get('tab'), 'study');
+    await page.goBack();
+    await page.locator('#tab-dashboard.active').waitFor();
+    await page.goForward();
+    await page.locator('#tab-study.active').waitFor();
+    await page.goBack();
+    await page.locator('#mistOpenSample').click();
+    await page.locator('#coachDetail').getByText('老师示范').first().waitFor();
+    await page.goBack();
+    await page.locator('#tab-dashboard.active').waitFor();
+    const initial = await page.locator('#mistTicketSummary').textContent();
+    await page.locator('[data-study-start="exam_practice"]').click();
+    await page.locator('#tab-kb.active #kbFilters .active[data-kcat="真题"]').waitFor();
+    await page.goBack();
+    await page.locator('#tab-dashboard.active').waitFor();
+    assert.equal(await page.locator('#mistTicketSummary').textContent(), initial);
+    await page.locator('[data-study-complete="exam_practice"]').check();
+    await page.waitForFunction(before => document.querySelector('#mistTicketSummary').textContent !== before, initial);
+    await page.locator('[data-study-complete="exam_practice"]').uncheck();
+    await page.waitForFunction(before => document.querySelector('#mistTicketSummary').textContent === before, initial);
+    await page.evaluate(() => applyTheme('dark'));
+    assert.match(await page.locator('.mist-hero').evaluate(el => getComputedStyle(el).backgroundImage), /hero-night/);
+    await page.evaluate(() => applyTheme('light'));
+    console.log('PASS Mist default layout, real words, history, sample, independent task navigation/progress, night art');
+
     await page.locator('#studyPlanCard > summary').click();
     await page.locator('#studyPlanExamType').selectOption('cet6');
     await page.locator('#studyPlanExamDate').fill('2027-06-15');
@@ -84,6 +131,20 @@ try {
     assert.equal(await page.locator('#report-workbench').evaluate(el => el.hidden), true);
     assert.equal(await page.locator('#quizOverview').evaluate(el => el.closest('#report-workbench') !== null), true);
     console.log('PASS report source separation');
+    await page.locator('[data-report-view="workbench"]').click();
+    await page.route('**/api/learning/report?days=14', async route => {
+      await delay(550);
+      await route.fulfill({ status: 502, json: { error: '过期请求' } });
+    });
+    await page.locator('.report-win-btn[data-days="14"]').click();
+    await page.locator('.report-win-btn[data-days="30"]').click();
+    await page.waitForFunction(() => document.querySelector('#learningReportBody').getAttribute('aria-busy') === 'false');
+    await delay(600);
+    assert.equal(await page.locator('#reportWinLabel').textContent(), '最近 30 天');
+    assert.equal(await page.locator('.report-win-btn[data-days="30"]').getAttribute('aria-pressed'), 'true');
+    assert.doesNotMatch(await page.locator('#learningReportBody').textContent(), /过期请求/);
+    console.log('PASS latest report range wins across out-of-order responses');
+
 
     await page.evaluate(() => switchTab('kb'));
     assert.equal(await page.locator('#tab-kb').evaluate(el => el.classList.contains('active')), true);
@@ -96,7 +157,9 @@ try {
     assert.equal(await page.locator('.tab[data-tab="speaking"]').count(), 0, 'v4.3.1：听说训练页签必须下线');
     assert.equal(await page.locator('#tab-speaking').count(), 0, 'v4.3.1：听说训练页面必须下线');
     assert.equal(await page.locator('#installBtn').count(), 0, 'v4.3.1：设置里的安装按钮必须下线');
+    await page.evaluate(() => applyStyle('classic'));
     assert.equal(await page.locator('#sidebarToggle').isVisible(), true, '折叠按钮必须可见');
+    await page.waitForFunction(() => Math.round(document.querySelector('#appSidebar').getBoundingClientRect().width) === 230);
     const expandedWidth = await page.locator('#appSidebar').evaluate(el => Math.round(el.getBoundingClientRect().width));
     await page.locator('#sidebarToggle').click();
     // 宽度过渡 0.22s，等布局稳定后再断言
@@ -132,7 +195,7 @@ try {
     assert.deepEqual(Object.keys(writes[0]).sort(), ['review', 'selection', 'story']);
     console.log('PASS one-save model assignments');
 
-    const styles = ['', 'arcade', 'pop', 'mc', 'mc-gui', 'mc-deep', 'mc-end'];
+    const styles = ['mist', 'classic', 'arcade', 'pop', 'mc', 'mc-gui', 'mc-deep', 'mc-end'];
     for (const style of styles) {
       await page.evaluate(value => applyStyle(value), style);
       assert.equal(await page.locator('html').getAttribute('data-style') || '', style);
@@ -143,7 +206,7 @@ try {
     assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
     await page.evaluate(() => applyTheme('light'));
     assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
-    console.log('PASS seven styles, day/night themes, and calm card hover');
+    console.log('PASS eight styles, day/night themes, and calm card hover');
 
     await page.evaluate(() => switchTab('quiz'));
     await page.locator('#quizCount').fill('3');
@@ -160,11 +223,15 @@ try {
     assert.equal(quizCalls[0].count, 3);
     console.log('PASS shared fixed/adaptive start control');
 
-    const mobileContext = await browser.newContext(devices['Pixel 7']);
+    const mobileContext = await browser.newContext({ ...devices['Pixel 7'], reducedMotion: 'reduce' });
     const mobile = await mobileContext.newPage();
     const mobileErrors = [];
     mobile.on('pageerror', error => mobileErrors.push(error.message));
     await mobile.goto(base, { waitUntil: 'networkidle' });
+    const hero = await mobile.locator('.mist-hero').boundingBox();
+    const tasks = await mobile.locator('#todayTasksCard').boundingBox();
+    assert(hero && hero.height < 340 && tasks.y < 550, 'Mist should keep today tasks near the first screen');
+    assert.equal(await mobile.locator('#tab-dashboard').evaluate(el => Number.parseFloat(getComputedStyle(el).animationDuration) < .01), true);
     for (const tab of ['dashboard', 'reports', 'quiz', 'kb', 'notes', 'settings']) {
       await mobile.evaluate(name => switchTab(name), tab);
       const overflow = await mobile.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1 || document.body.scrollWidth > innerWidth + 1);

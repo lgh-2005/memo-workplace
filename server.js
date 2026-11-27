@@ -772,6 +772,15 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '4.4.0', date: '2026-11-27', title: '晨雾界面',
+    items: [
+      '晨雾成为默认风格：暖纸色、砖红强调色、昼夜山景，桌面改用顶部胶囊导航，手机保留底部导航。',
+      '今日学习增加实时任务票据和个人词卡；词卡来自当前用户的今日词或顽固词，只读本地词义，不调用 AI。',
+      'AI 微课与学习报告采用晨雾版式，保留可缩放导图、样课、真实语料和分来源统计；导航支持浏览器前进与返回。',
+      '旧风格可在设置中切回，不迁移学习数据。',
+    ],
+  },
+  {
     version: '4.3.1', date: '2026-11-26', title: '删除听说训练、移除桌面安装入口、侧边栏可折叠',
     items: [
       '删除「听说训练」模块：导航页签、手机端「更多」入口、页面与样式、/api/speaking/session 与 /api/speaking/submit 两条接口、今日任务里的听力拼写与口语跟读，以及相关历史学习流水。',
@@ -7582,6 +7591,7 @@ const MIME = {
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
+  '.webp': 'image/webp',
   '.ico': 'image/x-icon',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
@@ -7832,6 +7842,21 @@ function readBody(req, max = 5e6) {
 }
 
 /** 仪表盘聚合数据 */
+// 首页只投影少量当前用户词。避免把完整词表下载到首页，也不触发补释义的模型请求。
+function dashboardWordCards(today, words, sticky) {
+  const daily = words.filter(word => word.today?.date === today && word.spelling);
+  const source = daily.length ? 'today' : 'sticky';
+  const pool = daily.length ? daily : sticky.filter(word => word.spelling);
+  const start = Math.floor(Date.parse(today) / 86400000) % Math.max(1, pool.length);
+  return Array.from({ length: Math.min(8, pool.length) }, (_, index) => {
+    const { spelling } = pool[(start + index) % pool.length];
+    const local = db.glosses[spelling];
+    const entry = (typeof local === 'string' ? { gloss: local } : local?.gloss ? local : null)
+      || ecdictGlossFor(spelling);
+    return { spelling, source, gloss: entry?.gloss || '', phonetic: entry?.phonetic || '', pos: entry?.pos || '' };
+  });
+}
+
 function dashboardData() {
   const today = bjDate();
   const progress = db.progressHistory.find(p => p.date === today) || null;
@@ -7915,6 +7940,7 @@ function dashboardData() {
     kaoyan: hasExamDate ? { daysLeft, examDate: examDateStr, examType: studyPlan.examType, custom: Boolean(configuredExamDate) } : null,
     studyPlan,
     studyTasks: studyTasks(today, studyPlan),
+    wordCards: dashboardWordCards(today, words, sticky),
     streak,
     mastery,
     quizStats,

@@ -1,5 +1,7 @@
 # v4.0.0 CI 平台与发布门禁确认
 
+> v4.4.0（2026-11-27）：Node 22/24 + Chromium 矩阵与既有发布流程不变；回归加入晨雾界面、导航、真实数据和资源检查。
+
 > v4.3.1（2026-11-26）：CI 矩阵不变（Node 22/24 + Playwright chromium），不依赖正式模型密钥。`release-gate.mjs` 版本断言升至 **4.3.1**、必需文件清单加入 `scripts/purge-speaking-attempts.mjs`；`release-check.mjs` 43 → **50 项**（新增删路由 / 删任务项 / 删安装入口 / PWA 内核保留 / 侧栏折叠钩子 / 无 microphone / 清理脚本存在）。`frontend-refinement-smoke.mjs` 新增折叠侧栏回归，`mobile-device-check.mjs` 页签清单 8 → 7 后仍 48 项全过。
 
 > v4.3.0：Node 22 / 24 与 Chromium 门禁不变。新增真题出处、开放判分、回想防提示、移动样课、缩放和讲解层级回归；不依赖正式模型密钥。

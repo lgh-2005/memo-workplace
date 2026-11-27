@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-page-node-id="cDnFSP6DAZmypkXhvboESc">
+<html lang="zh-CN" data-style="mist" data-page-node-id="cDnFSP6DAZmypkXhvboESc">
 <head data-page-node-id="EdhUpWkgCD4G5QQBoYMgEy">
 <meta charset="UTF-8" data-page-node-id="jJ2TzRBunJhs9LdkX6E9EG">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="oWFDBFujyrY5KW9n2DbmLZ">
@@ -9,7 +9,7 @@
 <!-- v3.5.0：发音朗读升级——单词真人发音（有道，美音/英音可切），句子服务端神经语音（Piper），浏览器 TTS 兜底。 -->
 
 <!-- v3.3.0：PWA 可安装（添加到主屏幕 / 桌面应用） -->
-<meta name="theme-color" content="#3b82f6">
+<meta name="theme-color" content="#f1ede6">
 <meta name="description" content="墨墨背单词同步 + AI 教练互动 + 真实语境语料佐证的英语单词学习工作台">
 <link rel="manifest" href="/manifest.webmanifest">
 <!-- iOS Safari 独立全屏运行（不依赖 HTTPS） -->
@@ -23,11 +23,12 @@
 <link rel="icon" href="/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
 <link rel="stylesheet" href="style.css" data-page-node-id="yrIOKZyALjeHGxt7vkSPue">
+<link rel="stylesheet" href="mist.css">
 </head>
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand">🐳 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.3.1</span></div>
+  <div class="mobile-brand"><span class="mist-seal" aria-hidden="true">词</span><span class="mist-legacy-mark" aria-hidden="true">🐳</span> 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.4.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式">🌙</button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式">🧘</button>
@@ -40,17 +41,17 @@
 <aside class="sidebar" id="appSidebar" data-page-node-id="6iCJuFDkaNwPHqElhgOCwU">
   <div class="sidebar-head" data-page-node-id="fHp0s6qJqNdePrInMHRdJR">
     <div class="brand" data-page-node-id="A8MSx0qKQbQRHZSpyLGc61">
-      <span class="brand-mark" aria-hidden="true">🐳</span><span class="brand-text">英语单词学习工作台</span>
+      <span class="mist-seal" aria-hidden="true">词</span><span class="brand-mark" aria-hidden="true">🐳</span><span class="brand-text">英语单词学习工作台</span>
     </div>
     <div class="sidebar-head-tools">
-      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.3.1</span>
+      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.4.0</span>
       <!-- v4.3.1：侧边栏可折叠为图标窄栏（状态记忆在本设备） -->
       <button class="sidebar-toggle" id="sidebarToggle" type="button" title="折叠侧边栏" aria-label="折叠侧边栏" aria-expanded="true"><span class="sidebar-toggle-icon" aria-hidden="true">«</span><span class="sidebar-toggle-text">收起</span></button>
     </div>
   </div>
-  <nav class="tabs" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
+  <nav class="tabs" aria-label="主导航" data-page-node-id="wQ8LZHTPp1POgx1qxZ8NGV">
     <div class="tab-group-label" data-page-node-id="u0AGAtQ0T8Hh4awn0Pul0w">日常学习</div>
-    <button class="tab active" data-tab="dashboard" title="今日学习" aria-label="今日学习" data-page-node-id="o15ZdFLBAnybA5gFW9Sf58"><span class="tab-icon" aria-hidden="true">📊</span><span class="tab-text">今日学习</span></button>
+    <button class="tab active" aria-current="page" data-tab="dashboard" title="今日学习" aria-label="今日学习" data-page-node-id="o15ZdFLBAnybA5gFW9Sf58"><span class="tab-icon" aria-hidden="true">📊</span><span class="tab-text">今日学习</span></button>
     <button class="tab" data-tab="study" title="AI 学习" aria-label="AI 学习" data-page-node-id="eBIb7j6N2U87cA5iGjeTTD"><span class="tab-icon" aria-hidden="true">💬</span><span class="tab-text">AI 学习</span></button>
     <button class="tab" data-tab="quiz" title="测验" aria-label="测验" data-page-node-id="3FXEzFdeeBZ3UbAbosesG8"><span class="tab-icon" aria-hidden="true">📝</span><span class="tab-text">测验</span></button>
 
@@ -168,7 +169,27 @@
   </section>
 
   <!-- ============ 仪表盘 ============ -->
-  <section id="tab-dashboard" class="tab-page active"><div class="sync-banner" id="syncBanner" style="display:none" data-page-node-id="b1PSdgHAeJ2EcRWOlQpnKS">
+  <!-- v4.4.0：晨雾首页沿用真实任务、墨墨进度与现有练习入口。 -->
+  <section id="tab-dashboard" class="tab-page active">
+  <header class="mist-hero" aria-labelledby="todayTitle">
+    <div class="mist-hero-content">
+      <div class="mist-kicker"><time id="mistToday"></time><span id="mistExam" hidden></span><span id="mistStreak" hidden></span></div>
+      <h1 id="todayTitle">今天，学一点点。</h1>
+      <p id="mistTodayLead">查看今日任务，再挑一组词练习。</p>
+      <div class="mist-actions">
+        <button type="button" class="btn primary" id="mistNextTask">查看今日任务</button>
+        <button type="button" class="btn" id="mistOpenLesson">进入词汇微课 <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+  </header>
+  <section class="mist-ticket" aria-label="今日任务进度">
+    <div class="mist-ticket-main">
+      <svg class="mist-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle id="mistTaskRing" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="0 100"/></svg>
+      <div><b>今日任务进度</b><span id="mistTicketSummary" role="status">正在加载…</span></div>
+    </div>
+    <div class="mist-ticket-cells" id="mistTaskCells"></div>
+  </section>
+  <div class="sync-banner" id="syncBanner" style="display:none" data-page-node-id="b1PSdgHAeJ2EcRWOlQpnKS">
       <span id="syncBannerText" data-page-node-id="inGWePDGx6rjeLit3A78e0">今日数据还未同步</span>
       <button class="btn small" id="bannerSyncBtn" data-page-node-id="OLOfEXWjgbEEtlpGGQxE1Z">立即同步</button>
     </div><div class="card kaoyan-countdown" id="kaoyanCountdown" style="display:none">
@@ -187,9 +208,10 @@
         </div>
       </div>
     </div>
-  <div class="page-heading"><h1>今日学习</h1><button class="btn" data-jump="reports">查看学习报告</button></div>
-  <div class="card" id="todayTasksCard">
-        <div class="card-title-row"><div class="card-title">🧭 今日任务中心</div><span class="hint" id="todayTasksSummary"></span></div>
+  <div class="page-heading dashboard-legacy-heading"><h1>今日学习</h1><button class="btn" data-jump="reports">查看学习报告</button></div>
+  <div class="mist-dashboard-grid">
+    <div class="card" id="todayTasksCard" tabindex="-1">
+        <div class="card-title-row"><h2 class="card-title">今日任务</h2><span class="hint" id="todayTasksSummary"></span></div>
         <div class="study-task-list" id="todayTasksList"><div class="hint">正在加载今日任务…</div></div>
       <details class="task-extra"><summary>其他词汇练习</summary><div class="row-gap">
   <button class="btn" data-jump="study" data-filter="sticky">攻克顽固词</button>
@@ -197,7 +219,32 @@
   <button class="btn" data-jump="quiz" data-filter="today">测验今日词</button>
 </div></details><div class="hint" id="setupHint" style="display:none" data-page-node-id="84FdKCIDxTPIiNzoaVb8ku">
           ⚠️ 首次使用请先到 <a href="#" data-jump="settings" data-page-node-id="57HFRUnKroWSmVAud0L6jF">设置</a> 填写墨墨 Token 与 AI 服务商配置。
-        </div></div><div class="today-summary">
+        </div>
+    </div>
+    <article class="card mist-word-card" aria-labelledby="mistWordLabel">
+      <div class="mist-word-head"><h2 class="mist-kicker" id="mistWordLabel">今日一词</h2><span class="hint" id="mistWordSource"></span></div>
+      <div id="mistWordBody" aria-live="polite"><p class="hint">正在加载词表…</p></div>
+      <div class="mist-word-actions" id="mistWordActions" hidden>
+        <button type="button" class="btn ghost" id="mistWordSpeak" aria-label="朗读单词">朗读</button>
+        <button type="button" class="btn ghost" id="mistWordNext">换一个</button>
+        <button type="button" class="btn" id="mistWordStudy">在词表中学习</button>
+      </div>
+    </article>
+    <article class="card mist-feature mist-feature-lesson">
+      <div class="mist-feature-body"><span class="mist-kicker">AI 词汇微课</span><h2>把容易混的词放在一起学</h2>
+        <p>先看老师示范，再自己回想，最后换个语境验证。</p>
+        <button type="button" class="btn" id="mistOpenSample">试学 address / solve <span aria-hidden="true">→</span></button>
+      </div>
+    </article>
+    <article class="card mist-feature mist-feature-report">
+      <div class="mist-feature-body"><span class="mist-kicker">学习报告</span><h2>哪些词还值得再练？</h2>
+        <p>把工作台训练和墨墨学习分开看。</p>
+        <button type="button" class="btn" data-jump="reports">查看学习报告 <span aria-hidden="true">→</span></button>
+      </div>
+    </article>
+  </div>
+  <div class="mist-memo-heading"><h2>墨墨学习概况</h2><span class="hint">与工作台训练分别统计</span></div>
+  <div class="today-summary">
       <div class="stat">
         <div class="stat-label">墨墨今日进度</div>
         <div class="stat-value" id="statProgress">—</div>
@@ -238,10 +285,12 @@
         </div>
       </details></section>
 <section id="tab-reports" class="tab-page">
-  <div class="page-heading"><h1>学习报告</h1><span class="hint">按数据来源查看，避免混淆学习进度</span></div>
-  <div class="report-source-nav" aria-label="统计来源">
-    <button class="btn primary" data-report-view="workbench">工作台训练</button>
-    <button class="btn" data-report-view="maimemo">墨墨学习</button>
+  <header class="page-heading mist-band mist-band-report">
+    <div><span class="mist-kicker">学习记录</span><h1>学习报告</h1><p>看练习量、正确率和薄弱点。工作台与墨墨数据分开统计。</p></div>
+  </header>
+  <div class="report-source-nav" role="group" aria-label="统计来源">
+    <button class="btn primary" data-report-view="workbench" aria-pressed="true">工作台训练</button>
+    <button class="btn" data-report-view="maimemo" aria-pressed="false">墨墨学习</button>
   </div>
   <div id="report-workbench" class="report-source-panel"><div class="card card-collapsible" id="learningReportCard">
       <div class="card-title-row">
@@ -310,6 +359,9 @@
   <!-- ============ AI 学习 ============ -->
   <!-- v2.3.4：AI 学习收缩为「词汇精练」子版块（新增子版块导航，后续扩展位） -->
   <section id="tab-study" class="tab-page" data-page-node-id="JrmSjX0dVC0hVqhyML8U63">
+    <header class="page-heading mist-band mist-band-study">
+      <div><span class="mist-kicker">AI 学习</span><h1>词汇微课</h1><p>从词表选出想学的词，先回想筛掉熟词，再按用法与语境分组学习。</p></div>
+    </header>
     <div class="study-subbar card" id="studySubbar">
       <div class="study-subnav">
         <button class="study-sub-item active" data-sub="vocab" type="button">🔤 词汇精练</button>
@@ -1032,7 +1084,8 @@
         <div class="card" data-page-node-id="hJEX99GgBD8ah6zZPNx2RT">
           <div class="card-title" data-page-node-id="4cSzMPazvENC9D0onPdqLZ">🎨 界面风格 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（7 种风格深度融入昼夜模式，各具特色）</span></div>
           <div class="style-grid" id="styleGrid" data-page-node-id="BD6ORHqgI9ZBxAAH9GKv0U">
-            <button class="style-opt" data-style="" data-page-node-id="keF08WESqq85Uv4O3nnjj5">🌿 默认清新<span class="style-desc" data-page-node-id="2jhIC9YWaC14P0pWBGf5oZ">天青极简 · 深空钛黑</span></button>
+            <button class="style-opt" data-style="mist">晨雾（默认）<span class="style-desc">暖纸砖红 · 昼夜山景</span></button>
+            <button class="style-opt" data-style="classic" data-page-node-id="keF08WESqq85Uv4O3nnjj5">🌿 经典清新<span class="style-desc" data-page-node-id="2jhIC9YWaC14P0pWBGf5oZ">天青极简 · 深空钛黑</span></button>
             <button class="style-opt" data-style="arcade" data-page-node-id="ipySzbiLaYM64Aq6T32h9X">🕹 复古街机<span class="style-desc" data-page-node-id="3OVOAcRW8wzP27W6hkqqEZ">GameBoy · 80s霓虹</span></button>
             <button class="style-opt" data-style="pop" data-page-node-id="xTqKDDvV1xCFzbzmOihZrQ">🍬 潮流波普<span class="style-desc" data-page-node-id="mI6ZEkGiefkJh9gBYlLg5H">多巴胺粗边 · 潮流暗波</span></button>
             <button class="style-opt" data-style="mc">⛏️ 像素·草方块<span class="style-desc">主世界草方块 · 下界要塞</span></button>

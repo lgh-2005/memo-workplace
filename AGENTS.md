@@ -1,6 +1,8 @@
 # AGENTS.md — memo bench 工作区（英语学习工作台）
 
-> **当前交付版本：v4.3.1 · 删除听说训练、移除桌面安装入口、侧边栏可折叠（2026-11-26）**。① 听说训练整链路下线（页签 / 手机端「更多」/ 页面与样式 / `/api/speaking/*` 两条路由 / 今日任务两项 / 报告题型过滤两项 / `Permissions-Policy` 的 `microphone`），导航 8 → 7 项。② 设置里「安装到桌面」卡片与一键安装逻辑移除，manifest 与 Service Worker 保留。③ 左侧边栏可折叠为 64px 图标窄栏（只留 emoji + `title` 提示，分组标题变分隔线，底部工具竖排），状态存 `localStorage['wb-sidebar-collapsed']`；手机端侧栏仍隐藏。④ 新增 `scripts/purge-speaking-attempts.mjs` 清理历史 `listening/speaking` 流水与任务勾选（默认 dry-run，`--apply` 才写盘并留备份）。门禁：`release-check` 43 → **50 项**，`release-gate` 版本断言升 4.3.1；`frontend-refinement-smoke` 新增折叠回归，`mobile-device-check` 页签同步 7 项。
+> **当前交付版本：v4.4.0 · 晨雾界面（2026-11-27）**：默认采用暖纸色、砖红与昼夜山景；桌面使用顶部胶囊导航，手机保留底部高频导航和「更多」。今日任务票据与真实任务共用进度，打开任务不会改变完成状态；个人词卡从当前用户的今日词或顽固词取词，只用缓存和离线 ECDICT 释义。保留可缩放词汇微课、固定样课、语料、复练和分来源报告；旧风格可从设置切回。无数据迁移、无新增依赖。
+
+> **v4.3.1 历史口径 · 删除听说训练、移除桌面安装入口、侧边栏可折叠（2026-11-26）**。① 听说训练整链路下线（页签 / 手机端「更多」/ 页面与样式 / `/api/speaking/*` 两条路由 / 今日任务两项 / 报告题型过滤两项 / `Permissions-Policy` 的 `microphone`），导航 8 → 7 项。② 设置里「安装到桌面」卡片与一键安装逻辑移除，manifest 与 Service Worker 保留。③ 左侧边栏可折叠为 64px 图标窄栏（只留 emoji + `title` 提示，分组标题变分隔线，底部工具竖排），状态存 `localStorage['wb-sidebar-collapsed']`；手机端侧栏仍隐藏。④ 新增 `scripts/purge-speaking-attempts.mjs` 清理历史 `listening/speaking` 流水与任务勾选（默认 dry-run，`--apply` 才写盘并留备份）。门禁：`release-check` 43 → **50 项**，`release-gate` 版本断言升 4.3.1；`frontend-refinement-smoke` 新增折叠回归，`mobile-device-check` 页签同步 7 项。
 >
 > **v4.3.0 历史口径（2026-11-25）**：悬浮词表 → 熟悉度初筛 → AI 按具体学习目标分组 → 老师示范 → 跟着辨别 → 合上讲解回想 → 换语境验证。保留不限总量勾选、全选筛选结果、可缩放导图和大纲。讲解和补教挂在对应作答节点下。
 
@@ -143,7 +145,9 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 
 ---
 
-## 6. 当前状态（v4.3.1，2026-11-26）
+## 6. 当前状态（v4.4.0，2026-11-27）
+
+- **v4.4.0 · 晨雾界面（2026-11-27）**：默认采用暖纸色、砖红与昼夜山景；桌面使用顶部胶囊导航，手机保留底部高频导航和「更多」。今日任务票据与真实任务共用进度，打开任务不会改变完成状态；个人词卡从当前用户的今日词或顽固词取词，只用缓存和离线 ECDICT 释义。保留可缩放词汇微课、固定样课、语料、复练和分来源报告；旧风格可从设置切回。无数据迁移、无新增依赖。
 
 - **v4.3.1 删除听说训练**：导航 8 → 7 项（今日学习 / AI 学习 / 测验 / 语料库 / 助记库 / 学习报告 / 设置）；`#tab-speaking` 页面、`.speech-*` 样式、`/api/speaking/session|submit`、今日任务 `listening`/`speaking`、报告题型过滤两项、`Permissions-Policy` 的 `microphone` 全部移除（`camera` 保留给拍照识别）。`study-plan-smoke` 改为断言「已删接口 404 / 任务无听说项 / 无麦克风权限」。
 - **v4.3.1 移除设置里的「安装到桌面」**：`#installSection`、`pwaInitInstall`、`beforeinstallprompt` 拦截与安装引导删除；`pwaRegisterSW()` 与 manifest 保留，浏览器菜单仍可安装。
