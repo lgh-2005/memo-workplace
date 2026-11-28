@@ -1,5 +1,8 @@
 # AGENTS.md — memo bench 工作区（英语学习工作台）
 
+> **当前交付版本：v4.9.0 · 单词记忆宫殿 · 槽位固定词轮转（2026-11-28）**：借鉴 [memory-palaces/simon-says](https://github.com/memory-palaces/simon-says)（MIT）的骨架但**没有直接搬**——它是 Vite + TypeScript + three.js 的构建型工程、自带 9.2MB GLB 世界、要求先用 Blender 建模导出 `.glb`，且 Pointer Lock / File System Access 在线上 `http://IP`（非安全上下文，实测 `https://` 连不通）直接失效。本版改为**原生重建**：新增 `public/palace/` 独立 3D 子应用（原生 ES 模块 + 本地 vendored `three.module.min.js`，**程序化生成房间几何**、零素材秒开），主站只在「AI 学习」加一个子页、**进入时才挂 iframe，首屏字节零增长**。核心是「**槽位固定、词轮转**」：宫殿只记「这个位置现在放着哪个词」，由记忆引擎决定谁回来复习（8000+ 词对几十个槽位）。**复习结果直接折算进记忆引擎**：again（同时进错题本、10 分钟后再来）/ hard / good，复用 `applyQuizSrsSession`，落 `learning_attempts`（`kind=palace_practice`）。**联想按「AI 给料 + 人拍板」**：AI 只出 3 条候选（词源/谐音/画面），落盘永远是学习者确认或改写后的那一版。新增 `data/palace.json`（进备份恢复清单 + `isPalaceShape` 结构校验 + 损坏改名留档）；**安全头只对 `/palace/` 放开同源内嵌**，其余仍 `DENY` / `frame-ancestors none`。门禁：`release-check` 85 → **96 项**，新增 `scripts/palace-smoke.mjs` **34 断言**并入 `npm test`，`release-gate` 断言 4.9.0。无数据迁移、无新增运行时依赖、无配置项。
+>
+>
 > **当前交付版本：v4.8.0 · 学习方法 · 结果进记忆引擎（2026-11-28）**：AI 学习此前是四套互不通账的入口——微课只做「老师教 → 你复述」，词文成章的自测只标记「已完成」，v4.1.0/v4.2.0 做的 `/api/tutor/drill` 后端还在、前端零调用，练完的结果全部留在页面内存里刷新即散。本版新增「学习方法」子页与**四种方法**：**费曼**（讲给外行听 → 被追问 → 简化重讲）、**苏格拉底**（先给判断 → 被连续反问 → 自己修正）、**对比辨析**（找差别 → 说清差别 → 给一条规则）、**空白回忆**（凭记忆写 → 对照找漏 → 只补缺口）。四者共用同一套回合引擎与服务端权威关卡机（答对才进关、答错留本关换个角度再考、末关才出结果；模型只决定「这一关问什么」，不决定「能不能过」）。**结果统一折算进记忆引擎**：独立答对 → `good`、提示后答对 → `hard`、仍需补教 → `again`（同时进错题本），练完的词明天按 SRS 节奏回到复习队列；结果另落 `learning_attempts`（`kind=method_practice`，报告里与测验分开统计）与新增的 `data/method_ledger.json`（按方法统计独立答对率 / 覆盖词数，**不记作答原文**），账本已进备份恢复清单并带结构校验。四套提示词都进 `DEFAULT_PROMPTS`（设置页可改）。门禁：`release-check` 75 → **85 项**（9 条新契约，逐条反向验证 **9/9 变红**），新增 `scripts/method-smoke.mjs` **34 断言**并入 `npm test`，`release-gate` 断言 4.8.0。无数据迁移（新文件按需创建）、无新增依赖、无配置项。
 >
 > **当前交付版本：v4.7.0 · 图标全站清空（2026-11-28）**：v4.6.0 只换了导航与卡片标题的图标，按钮、节标题、状态行、toast、划词卡、题型标签里仍是系统 emoji。本版新增 52 枚水墨母版（人像 / 锁 / 门 / 怀表 / 罗盘 / 瓢虫 / 骰子 / 眼睛 / 四态人脸 / 头脑 / 天平 / 扫帚…），**图标族 36 → 89 枚**；新增 `setInkText()` / `inkFragment()`——只识别水墨图标记号、其余字符一律走文本节点（不用 `innerHTML`，状态文本不会被当 HTML 解析），`app.js` 100+ 处状态行与 `toast()` 全部改走它；口音下拉国旗改纯文字，日志勾叉伪元素改 mask 图标，`server.js` 任务 `icon` 字段改图标名。门禁：`release-check` 68 → **75 项**（7 条新契约，逐条反向验证 6/6 变红），`release-gate` 断言 4.7.0，`mobile-device-check` 48 项。无数据迁移、无新增依赖、无配置项。
@@ -19,7 +22,7 @@
 > **本文件是「memo bench」这个新工作区的唯一工作手册。** 承接自 `D:\ai\opencode\momo`（opencode 工作区，含旧 AGENTS.md 与《版本号经历.md》），本工作区从 v3.7.0 / `4c2436f` 起独立开发。
 >
 > **工作区根 = 仓库根**：`D:\ai\opencode\momo\english-workbench`（v3.7.x 时代的 `D:\ai\dsh\cli\memo bench` 已分叉为历史副本；发布一律以 Gitee `master` 为准）。
-> 当前版本口径：**v4.8.0**（2026-11-28）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
+> 当前版本口径：**v4.9.0**（2026-11-28）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
 
 ---
 
@@ -155,7 +158,7 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 
 ---
 
-## 6. 当前状态（v4.8.0，2026-11-28）
+## 6. 当前状态（v4.9.0，2026-11-28）
 
 - **v4.8.0 发布确认（北京时间 2026-11-28 19:40）**：Gitee / GitHub `master` 与 `v4.8.0` 标签均指向 `82ff7655349d8b04b2595e24cf2cb1de2ab7b2ee`；[CI Node 22/24](https://github.com/lgh-2005/memo-workplace/actions/runs/46141250649) completed/success。ECS `/opt/workbench` HEAD = `82ff765`，`workbench.service` **active**，公网 `online-health --url http://121.43.177.191 --expected-version 4.8.0` **5/5**；线上 `v4.8.0` 版本标识 **3 处**、`v4.7.0` 0 处、`sw.js` = `wb-shell-v4.8.0`、`package.json` = 4.8.0；`/api/method/list|effect|start` 未登录一律 401（路由存在且受保护）；方法页浏览器实测 **30/30**：四套方法卡片、8/8 图标带 mask、7 种不同 mask 文件（brain/book/chat/compass/scale/scroll/play，不再是同一张 card.png）、零残留 emoji、零字面图标标记、无 JS 错误。部署前备份 `data_backup_v480_20261128-113554.tar.gz`（1.9M）；代码快照 `.releases/20261128-113554-pre-v480`。**本次 deploy.sh 的双仓门禁因 ECS 侧 `github.com` 被 DNS 解析到 `57.155.223.240` 而 3 项失败**（`api.github.com` 正常、Gitee 正常），与 §6 记载的既有条件一致；按 v3.3.5 / v3.3.6 / v3.5.3 / v4.4.1 同一处置方式完成等效安全部署（本地双仓 SHA 一致 + CI 成功 + 先备份 data + 只应用产品文件 + rsync 排除运行时 + 重启 + 健康检查）。运行时 `corpus/records.jsonl` 未被覆盖（仍 `M`，符合预期）；`data/method_ledger.json` 尚未生成（按需创建，符合预期）。
 - **v4.5.0 · 晨雾单界面（2026-11-27）**：① **设置去冗余**：只保留一行横列分区导航（发音与朗读 / 模型服务 / 墨墨连接 / 登录与安全 / 同步与备份 / 高级自定义 / 同步记录），点哪项只显示哪个分区，删除竖排折叠列表、「全部展开 / 收起」与重复卡片标题；活动分区记在本设备。② **只留晨雾**：经典 / 街机 / 波普 / 四套像素风格的入口、`applyStyle(t)` 与全部 `[data-style="…"]` 旧主题 CSS 删除（`style.css` 约 178KB → 140KB），旧 `localStorage['wb-style']` 自动清除。③ **朱印图标**：生图纸底 + 楷体「词」印，重出 `favicon.ico`（16/32/48）、`favicon.svg` 与 120–512px、maskable 全套。④ **门禁**：`release-check` 59 → **62 项**，`release-gate` 断言 4.5.0，`frontend-refinement-smoke` 改测「晨雾唯一风格 + 设置单面板 + 旧偏好迁移」，`mobile-device-check` 48 项，`npm test` 退出码 0。无数据迁移、无新增依赖。

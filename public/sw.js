@@ -6,7 +6,7 @@
  */
 'use strict';
 
-const SHELL_CACHE = 'wb-shell-v4.8.0';
+const SHELL_CACHE = 'wb-shell-v4.9.0';
 const SHELL_ASSETS = [
   '/',
   '/index.html',
@@ -150,6 +150,9 @@ self.addEventListener('fetch', (event) => {
   // 跨域、API、动态图片一律直连网络，不走缓存
   if (url.origin !== self.location.origin) return;
   if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/images/')) return;
+  // v4.9.0：记忆宫殿是独立子应用，自带加载策略。若让外壳逻辑接管，断网时导航到
+  // /palace/ 会回退成主站 index.html（打开的是一个错页面）。
+  if (url.pathname === '/palace' || url.pathname.startsWith('/palace/')) return;
 
   // 页面导航：网络优先，失败回退到缓存的应用外壳
   if (req.mode === 'navigate') {

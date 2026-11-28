@@ -1168,3 +1168,63 @@
   [data-style="mist"] .method-effect-row { grid-template-columns: 1fr auto; }
   [data-style="mist"] .method-effect-row .me-num { grid-column: 1 / -1; }
 }
+
+/* 23 · 单词记忆宫殿（v4.9.0）--------------------------------------------------
+   主站这侧只有三件事：子页容器、iframe 外框、状态行。
+   3D 全部在 /palace/ 子应用里（独立加载、独立缓存），所以这里不引入任何
+   三维相关样式，也不影响首屏体积。
+   -------------------------------------------------------------------------- */
+[data-style="mist"] .palace-stat { font-size: 13px; color: var(--text-sub); }
+
+[data-style="mist"] .palace-frame-wrap {
+  position: relative;
+  margin-top: 12px;
+  border: 1px solid var(--mist-line, rgba(46, 42, 36, 0.14));
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--mist-soft);
+}
+
+[data-style="mist"] .palace-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 40px 20px;
+  min-height: 320px;
+}
+[data-style="mist"] .palace-placeholder[hidden] { display: none; }
+[data-style="mist"] .palace-ph-title {
+  font-family: var(--serif, "Songti SC", "STSong", Georgia, serif);
+  font-size: 20px;
+  letter-spacing: 0.04em;
+}
+[data-style="mist"] .palace-ph-body {
+  max-width: 460px;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: var(--text-sub);
+}
+
+[data-style="mist"] #palaceFrame {
+  display: block;
+  width: 100%;
+  height: min(72vh, 640px);
+  border: 0;
+  background: #1a1917;
+}
+[data-style="mist"] #palaceFrame[hidden] { display: none; }
+
+[data-style="mist"] .palace-foot {
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  [data-style="mist"] #palaceFrame { height: 64vh; }
+  [data-style="mist"] .palace-placeholder { min-height: 260px; padding: 28px 16px; }
+}

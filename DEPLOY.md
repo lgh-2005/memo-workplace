@@ -1,5 +1,6 @@
 # 部署到阿里云 ECS（保持可更新）
 
+> v4.9.0（2026-11-28）：AI 学习新增「记忆宫殿」子页，3D 部分是独立子应用 `public/palace/`（原生 ES 模块 + 本地 vendored `three.module.min.js`），主站只用 iframe 挂载、首屏字节零增长。新增 `data/palace.json`（槽位 + 每槽的词与联想），**已加入备份与恢复文件清单**（含 `isPalaceShape` 结构校验、损坏改名留档、「备份不含则保留当前宫殿」），随 `data/` 一并备份、随 `--exclude data/` 一并排除。安全头仅对 `/palace/` 放开同源内嵌（`X-Frame-Options: SAMEORIGIN` + `frame-ancestors 'self'`），其余路径仍为 `DENY` / `'none'`；CSP 增加 `frame-src 'self'`。**部署须知**：`public/palace/vendor/three.module.min.js`（约 687KB）随仓库入库，rsync 会一并传输；首次发布后建议确认 nginx 对 `.js` 走 gzip（现有配置已覆盖）。无新增环境变量、无 schema 迁移、无配置项。
 > v4.8.0（2026-11-28）：AI 学习新增「学习方法」子页（费曼 / 苏格拉底 / 对比辨析 / 空白回忆），结果折算 SRS 并落 `learning_attempts`（`kind=method_practice`）与新增的 `data/method_ledger.json`。发布流程 / 回滚不变；**新增的 `method_ledger.json` 已加入备份与恢复文件清单**（含结构校验与「备份不含则保留当前账本」的保护），部署时随 `data/` 一并备份、随 `--exclude data/` 一并排除。无新增环境变量、无 schema 迁移、无配置项；回合状态只在内存中驻留 40 分钟。
 > v4.7.0（2026-11-28）：把残留的系统 emoji 全部换成生图水墨图标（图标族 36 → **89 枚**），状态行改为 `setInkText` 单入口。图标是同源静态 PNG，发布流程 / 数据备份 / 回滚不变；本次只多出 52 个静态资源文件，无新增环境变量、无 schema 迁移；新增 `public/icons/ink/` 36 个 PNG 已并入 SW 外壳缓存。
 > v4.4.1（2026-11-27）：晨雾版式铺到全部七个版块，新增 5 张 WebP 配图并纳入 PWA 外壳；首页任务票据并入 hero 卡片（无负边距叠压）。发布流程、双仓门禁、数据备份与恢复演练不变；无新增环境变量、无 schema 迁移。

@@ -2886,20 +2886,24 @@ const storyState = {
 const STORY_TIP = {
   vocab: '选词 · 初筛 · 语境辨析',
   method: '先自己产出，AI 只追问与收敛',
+  palace: '位置固定、词轮转：走进去把词挂在编号上，复习结果直接进记忆引擎',
   story: '把选中的词写进一篇连贯短文：语境记忆 + 记忆钩子 + 检索自测，三管齐下',
 
 };
 
 async function switchStudySub(sub, { load = true } = {}) {
   $$('#studySubbar .study-sub-item').forEach(b => b.classList.toggle('active', b.dataset.sub === sub));
-  const vocab = $('#vocabPane'), story = $('#storyPane'), method = $('#methodPane');
+  const vocab = $('#vocabPane'), story = $('#storyPane'), method = $('#methodPane'), palace = $('#palacePane');
   if (vocab) vocab.style.display = sub === 'vocab' ? '' : 'none';
   if (story) story.style.display = sub === 'story' ? '' : 'none';
   if (method) method.style.display = sub === 'method' ? '' : 'none';
+  if (palace) palace.style.display = sub === 'palace' ? '' : 'none';
   const tip = $('#studySubTip');
   if (tip) tip.textContent = STORY_TIP[sub] || '';
   if (sub === 'method') {
     methodInit();
+  } else if (sub === 'palace') {
+    palaceLoadStat();
   } else if (sub === 'story') {
     /* v2.4.1：首次进入词文成章时若无题材 chips，先拉取题材渲染（loadConfig 只在设置页触发） */
     if (!$('#storyThemeRow .chip')) {
@@ -2916,7 +2920,83 @@ async function switchStudySub(sub, { load = true } = {}) {
   } else if (load) loadWords();
 }
 
+/* ================= v4.9.0：单词记忆宫殿（主站侧只做挂载与状态展示） ================= */
+
+const palaceState = { loaded: false, stats: null, ready: false };
+
+async function palaceLoadStat() {
+  const stat = $('#palaceStat');
+  try {
+    const data = await api('/api/palace/state');
+    palaceState.stats = data.stats;
+    palaceState.loaded = true;
+    palaceRenderStat();
+  } catch (e) {
+    if (stat) stat.textContent = '状态读取失败';
+  }
+}
+
+function palaceRenderStat() {
+  const st = palaceState.stats;
+  const stat = $('#palaceStat');
+  const foot = $('#palaceFoot');
+  if (!st) { if (stat) stat.textContent = '—'; return; }
+  if (stat) stat.textContent = `${st.occupied} / ${st.slots} 个位置已放词 · ${st.due} 词到期`;
+  if (foot) {
+    foot.textContent = st.occupied
+      ? '复习结果会立刻写进记忆引擎：想不起来 → 明天回队列并进错题本。'
+      : '还没有放词。进入宫殿后走到任意编号，点一下就能把词放进去。';
+  }
+}
+
+function palaceMount() {
+  const frame = $('#palaceFrame');
+  const ph = $('#palacePlaceholder');
+  if (!frame) return;
+  if (!frame.getAttribute('src')) {
+    // 只在第一次进入时加载，避免离开子页后仍在后台跑 3D 循环
+    frame.setAttribute('src', '/palace/');
+  }
+  frame.hidden = false;
+  if (ph) ph.hidden = true;
+}
+
+function palaceSendReview() {
+  const frame = $('#palaceFrame');
+  if (!frame || frame.hidden || !frame.contentWindow) { palaceMount(); return; }
+  try {
+    frame.contentWindow.postMessage({ type: 'palace:command', command: 'review' }, location.origin);
+  } catch { /* 忽略 */ }
+}
+
 $$('#studySubbar .study-sub-item').forEach(b => b.addEventListener('click', () => switchStudySub(b.dataset.sub)));
+
+$('#palaceEnterBtn')?.addEventListener('click', async () => {
+  palaceMount();
+  await palaceLoadStat();
+});
+$('#palaceRefreshBtn')?.addEventListener('click', async () => {
+  await palaceLoadStat();
+  const frame = $('#palaceFrame');
+  if (frame && !frame.hidden) {
+    // 子应用内部有自己的刷新：重设 src 会丢失当前走位，所以只提示走位不变
+    toast('已刷新统计；宫殿内走位保持不变');
+  }
+});
+$('#palaceReviewBtn')?.addEventListener('click', () => {
+  palaceMount();
+  palaceSendReview();
+});
+
+window.addEventListener('message', (ev) => {
+  if (ev.origin !== location.origin) return;
+  const d = ev.data || {};
+  if (d.type === 'palace:ready') {
+    palaceState.ready = true;
+    if (d.stats) { palaceState.stats = d.stats; palaceRenderStat(); }
+  }
+});
+
 
 /* 快选词源 → 按墨墨筛选口径拉词，整组全部加入词池（不限数量） */
 $$('#storyQuickRow .chip').forEach(c => c.addEventListener('click', () => {

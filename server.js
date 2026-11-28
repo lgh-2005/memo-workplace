@@ -63,6 +63,8 @@ const QUIZ_SESSION_FILE = path.join(DATA_DIR, 'quiz_session.json');
 const STUDY_PLAN_FILE = 'study_plan.json';
 // v4.8.0：学习方法账本（哪个词用哪种方法有效）——按用户隔离，随备份恢复
 const METHOD_LEDGER_FILE = 'method_ledger.json';
+// v4.9.0：单词记忆宫殿（房间布局 + 槽位 + 每槽的词与联想）——按用户隔离，随备份恢复
+const PALACE_FILE = 'palace.json';
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
 // 本机默认只监听 127.0.0.1；云服务器部署时设置 HOST=0.0.0.0（建议配合 nginx/防火墙）
 const HOST = process.env.HOST || '127.0.0.1';
@@ -443,6 +445,7 @@ const USER_DATA_FILES = [
   { file: 'llm_usage.json', json: true },   // v3.2.0：AI 用量统计
   { file: STUDY_PLAN_FILE, json: true },    // v3.3.6：考试计划/任务完成状态
   { file: METHOD_LEDGER_FILE, json: true, methodLedger: true },   // v4.8.0：学习方法效果账本
+  { file: PALACE_FILE, json: true, palace: true },                 // v4.9.0：单词记忆宫殿
 ];
 function backupFileSpecs() {
   const specs = [];
@@ -687,7 +690,7 @@ function migrateToMultiUser(adminPasswordRaw) {
 
   // 迁移 per-user 数据文件
   for (const fn of ['db.json', 'chat_sessions.json', 'learning_attempts.json',
-    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json', STUDY_PLAN_FILE, METHOD_LEDGER_FILE]) {
+    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json', STUDY_PLAN_FILE, METHOD_LEDGER_FILE, PALACE_FILE]) {
     const src = path.join(DATA_DIR, fn);
     if (fs.existsSync(src)) {
       try { fs.renameSync(src, path.join(userDir(id), fn)); }
@@ -774,6 +777,20 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '4.9.0', date: '2026-11-28', title: '单词记忆宫殿 · 槽位固定词轮转',
+    items: [
+      '借用了 memory-palaces/simon-says 的骨架（MIT）重做，但没有直接搬：它是 Vite + TypeScript + three.js 的构建型工程，还自带 9.2MB 的 GLB 世界，并且要求你先在 Blender 里把自家房子建模导出 .glb 才能用——对「背单词」这层门槛是纯负担。',
+      '新增 /palace/ 独立子应用（原生 ES 模块 + 本地 vendored three.js），程序化生成房间几何：填两行「房间 + 位置」就有墙壁地面，零素材、秒开。主站只加一个 iframe 与一条 API，首屏字节零增长。',
+      '槽位固定、词轮转：宫殿只记「这个位置现在放着哪个词」，由记忆引擎决定谁回来复习；不然 8000 词对着几十个位置，第二周就没地方放。',
+      '复习结果直接折算进记忆引擎：想不起来 → again（同时进错题本、10 分钟后再来）、想起来但费劲 → hard、顺畅 → good，复用同一套 ease/interval/dueAt 演化，练完的词明天按节奏回队列。',
+      '联想按「AI 给料 + 人拍板」：AI 只出 3 条候选（词源 / 谐音 / 画面三路），落盘的永远是学习者确认或改写后的那一版。原型项目禁止 AI 参与是为保认知努力，但背单词要同时钩住词形、发音、词义，纯人肉产出效率太低，所以保留拍板这一步而放开生成这一步。',
+      '同一个槽换词会把旧词的联想与路线清掉（否则 A 的联想会挂在 B 身上）；取下词不影响任何复习记录。',
+      '能力探测 + 优雅降级：Pointer Lock 只在安全上下文（HTTPS / localhost）可用，线上当前是 http://IP，因此自动切「拖动转头 + 点地面走过去」，不白屏不报错；日后启用 HTTPS 无需改代码自动全开。',
+      '安全头只对 /palace/ 放开同源内嵌（X-Frame-Options: SAMEORIGIN + frame-ancestors self），其余路径仍为 DENY / none，站点不允许被任何第三方嵌入。',
+      '新增 data/palace.json（进备份恢复清单 + 结构校验 + 损坏改名留档），无数据迁移、无新增运行时依赖、无配置项。',
+    ],
+  },
   {
     version: '4.8.0', date: '2026-11-28', title: '学习方法 · 结果进记忆引擎',
     items: [
@@ -1269,6 +1286,7 @@ const VALID_ATTEMPT_KINDS = new Set([
   'vocab_cloze',
   'sentence_analysis',
   'method_practice',
+  'palace_practice',   // v4.9.0：单词记忆宫殿复习
 ]);
 const VALID_ATTEMPT_RESULTS = new Set([
   'pending',
@@ -4037,6 +4055,21 @@ const DEFAULT_PROMPTS = {
       '3. 学生答完再判：先判 pass / reteach，再给不超过 60 字的点评；reteach 时指出具体缺口。',
       '4. 中文点评、英文例词；只输出 JSON，不要代码围栏。',
       '【JSON】判分回合：{"status":"pass 或 reteach","coaching":"点评","gap":"缺口","model":"可选示范"}；出题回合：{"say":"引导","question":"问题","placeholder":"输入提示"}。',
+    ].join('\n')
+  },
+  palace_mnemonic: {
+    id: 'palace_mnemonic',
+    title: '记忆宫殿联想候选（System Prompt）',
+    desc: '单词记忆宫殿：为一个词生成 3 条可直接放进房间槽位的怪异联想候选（词源 / 谐音 / 画面），最终由学习者拍板',
+    template: [
+      '你是「记忆宫殿」教练，面向中国考研 / 六级学习者。你要为一个英语单词给出 3 条**怪异但可想象**的联想候选，供学习者挑选后自行修改。',
+      '【硬要求】',
+      '1. 每条联想必须同时挂住三样：**词形**（拼写或其片段）、**发音**（近似的汉语音/拟声）、**词义**（该词的核心义）。缺一样就不合格。',
+      '2. 联想必须是**一个可以摆进房间的具象画面**：有物、有动作、有反常之处。不要写抽象解释、不要同义复述词义。',
+      '3. 三条约三十字以内，各自走不同路线：route=origin（词根词缀 / 词源拆解）、route=sound（中文谐音或拟声）、route=scene（荒诞视觉场景）。',
+      '4. 三条都必须能被画出来。禁止色情、暴力血腥、政治与真实人物。',
+      '5. 只输出 JSON，不要代码围栏，不要多余解释。',
+      '【JSON】{"candidates":[{"route":"origin 或 sound 或 scene","text":"联想画面","hook":"这一条钩住了哪个义项"}]}',
     ].join('\n')
   },
   mnemonic_gen: {
@@ -7189,6 +7222,230 @@ function settleMethodRound(round) {
   return out;
 }
 
+/* ------------------------------------------------------------------ */
+/* v4.9.0：单词记忆宫殿（method of loci）                                */
+/*                                                                    */
+/* 设计取舍（与本项目既有口径一致的部分）：                              */
+/*  · 槽位（slot）是**固定**的，词是**流动**的。8k 词不可能一槽一词，     */
+/*    所以 palace.json 只记「这个槽现在放着哪个词」，由 SRS 决定谁回来。  */
+/*  · 复习结果是 SRS 输入而不是终点：回不出来 → again（同时进错题本），   */
+/*    想起来但费劲 → hard，顺畅 → good。复用 applyQuizSrsSession，       */
+/*    与测验/学习方法共用同一套 ease/interval/dueAt 演化。               */
+/*  · 联想由**学习者拍板**：AI 只出候选（词源/谐音/画面），落盘的是学习者 */
+/*    确认（或改写）后的那一版。原型项目禁止 AI 参与是为了保认知努力，    */
+/*    但背单词要同时钩住词形/发音/词义，纯人肉产出效率过低——改为        */
+/*    「AI 给料 + 人拍板」，拍板这一步保留。                              */
+/* ------------------------------------------------------------------ */
+const PALACE_SCHEMA = 1;
+const PALACE_MAX_SLOTS = 60;
+const PALACE_MAX_LABEL = 40;
+const PALACE_MNEMONIC_MAX = 300;
+const PALACE_ROUTES = new Set(['origin', 'sound', 'scene']);
+
+function palaceDefaultLayout() {
+  const rooms = [
+    ['门厅', ['门后的鞋柜', '挂衣钩', '穿衣镜']],
+    ['客厅', ['沙发扶手', '茶几中央', '电视柜顶', '窗台']],
+    ['厨房', ['冰箱门', '灶台', '水槽上方']],
+    ['书房', ['书桌台灯下', '书架第二层']],
+  ];
+  const slots = [];
+  rooms.forEach(([room, labels], ri) => {
+    labels.forEach((label, si) => {
+      slots.push({ id: `r${ri + 1}s${si + 1}`, room, label });
+    });
+  });
+  return { name: '我的宫殿', slots };
+}
+
+function emptyPalace() {
+  const atIso = new Date().toISOString();
+  return { schemaVersion: PALACE_SCHEMA, createdAt: atIso, updatedAt: atIso, layout: palaceDefaultLayout(), occupied: {} };
+}
+
+/** 结构校验：备份/恢复/自动备份三处共用，形状不符一律跳过而不是写坏数据。 */
+function isPalaceShape(obj) {
+  if (!obj || typeof obj !== 'object') return false;
+  if (obj.schemaVersion !== PALACE_SCHEMA) return false;
+  if (!obj.layout || !Array.isArray(obj.layout.slots)) return false;
+  if (!obj.occupied || typeof obj.occupied !== 'object' || Array.isArray(obj.occupied)) return false;
+  return true;
+}
+
+function normalizePalaceSlots(raw) {
+  const seen = new Set();
+  const out = [];
+  for (const s of (Array.isArray(raw) ? raw : [])) {
+    if (!s || typeof s !== 'object') continue;
+    const id = String(s.id || '').trim().slice(0, 24);
+    if (!id || seen.has(id)) continue;
+    const label = String(s.label || '').trim().slice(0, PALACE_MAX_LABEL);
+    const room = String(s.room || '').trim().slice(0, PALACE_MAX_LABEL);
+    if (!label) continue;
+    seen.add(id);
+    out.push({ id, room: room || '房间', label });
+    if (out.length >= PALACE_MAX_SLOTS) break;
+  }
+  return out;
+}
+
+function loadPalace() {
+  const file = ctxFilePath(PALACE_FILE);
+  if (!fs.existsSync(file)) return emptyPalace();
+  const raw = loadJSON(file, null);
+  if (!raw) return emptyPalace();
+  if (!isPalaceShape(raw)) {
+    // 损坏不静默丢弃：改名留档，再回落空宫殿（与 method_ledger 同一处置口径）
+    try { fs.renameSync(file, `${file}.corrupt-${Date.now()}`); } catch { /* 忽略 */ }
+    return emptyPalace();
+  }
+  const p = {
+    schemaVersion: PALACE_SCHEMA,
+    createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
+    updatedAt: typeof raw.updatedAt === 'string' ? raw.updatedAt : new Date().toISOString(),
+    layout: { name: String(raw.layout.name || '我的宫殿').slice(0, 40), slots: normalizePalaceSlots(raw.layout.slots) },
+    occupied: {},
+  };
+  const validIds = new Set(p.layout.slots.map(s => s.id));
+  for (const [slotId, v] of Object.entries(raw.occupied)) {
+    if (!validIds.has(slotId) || !v || typeof v !== 'object') continue;
+    const word = String(v.word || '').trim();
+    if (!word) continue;
+    p.occupied[slotId] = {
+      word,
+      gloss: String(v.gloss || '').slice(0, 200),
+      phonetic: String(v.phonetic || '').slice(0, 60),
+      mnemonic: String(v.mnemonic || '').slice(0, PALACE_MNEMONIC_MAX),
+      route: PALACE_ROUTES.has(v.route) ? v.route : 'scene',
+      hook: String(v.hook || '').slice(0, 120),
+      imagePath: typeof v.imagePath === 'string' ? v.imagePath.slice(0, 200) : null,
+      assignedAt: typeof v.assignedAt === 'string' ? v.assignedAt : new Date().toISOString(),
+      lastSeenAt: typeof v.lastSeenAt === 'string' ? v.lastSeenAt : null,
+    };
+  }
+  return p;
+}
+
+function savePalace(palace) {
+  palace.updatedAt = new Date().toISOString();
+  saveJSON(ctxFilePath(PALACE_FILE), palace);
+}
+
+/** 宫殿概览：槽位占用 + 已放词里「到期该复习」的数量（复用 SRS 到期判定）。 */
+function palaceStats(palace) {
+  const store = loadQuizSrs();
+  const now = Date.now();
+  const placed = Object.values(palace.occupied);
+  let due = 0, mastered = 0;
+  for (const p of placed) {
+    const srs = store.words[p.word];
+    if (srs && srs.dueAt && isoMs(srs.dueAt) <= now) due++;
+    if (srs && Number(srs.mastery) >= QUIZ_MASTERED_MASTERY) mastered++;
+  }
+  return {
+    slots: palace.layout.slots.length,
+    occupied: placed.length,
+    free: Math.max(0, palace.layout.slots.length - placed.length),
+    due,
+    mastered,
+  };
+}
+
+/** 词的展示事实：释义优先本地缓存 → 离线 ECDICT，发音音标同理；不联网。 */
+function palaceWordFacts(word) {
+  const sp = String(word || '').trim();
+  const gl = vocabGlossOf(sp);
+  const ec = ecdictGlossFor(sp);
+  const cached = db.glosses && db.glosses[sp];
+  const cachedPhonetic = (cached && typeof cached === 'object' && cached.phonetic) ? String(cached.phonetic) : '';
+  return {
+    word: sp,
+    gloss: (gl && gl.gloss) || (ec && ec.gloss) || '',
+    phonetic: cachedPhonetic || (ec && ec.phonetic) || '',
+  };
+}
+
+/** 归一化 3 条联想候选：只认白名单 route，超长截断，全空则判失败。 */
+function normalizePalaceCandidates(raw, word) {
+  const arr = raw && Array.isArray(raw.candidates) ? raw.candidates : null;
+  if (!arr) return null;
+  const out = [];
+  for (const c of arr) {
+    if (!c || typeof c !== 'object') continue;
+    const text = lessonText(c.text).slice(0, PALACE_MNEMONIC_MAX);
+    if (!text) continue;
+    out.push({
+      route: PALACE_ROUTES.has(c.route) ? c.route : 'scene',
+      text,
+      hook: lessonText(c.hook).slice(0, 120),
+    });
+    if (out.length >= 3) break;
+  }
+  if (!out.length) return null;
+  return { word, candidates: out };
+}
+
+async function palaceMnemonicCandidates(word) {
+  const facts = palaceWordFacts(word);
+  const note = (Array.isArray(db.notes) ? db.notes : []).find(n => String(n.spelling || '').toLowerCase() === facts.word.toLowerCase());
+  const userNote = note && note.content ? String(note.content).slice(0, 300) : '';
+  const raw = extractJsonObject(await llmChat([
+    { role: 'system', content: getPrompt('palace_mnemonic') },
+    {
+      role: 'user',
+      content: [
+        `单词：${facts.word}`,
+        facts.phonetic ? `音标：${facts.phonetic}` : '',
+        facts.gloss ? `释义：${facts.gloss}` : '',
+        userNote ? `学习者原有助记（可参考但不要照抄）：${userNote}` : '',
+        '请给 3 条候选，route 分别取 origin / sound / scene。',
+        '只输出 JSON：{"candidates":[{"route":"...","text":"...","hook":"..."}]}',
+      ].filter(Boolean).join('\n'),
+    },
+  ], { maxTokens: 700, llmOverride: { _jsonMode: true } }));
+  return normalizePalaceCandidates(raw, facts.word);
+}
+
+/** 复习结算：把宫殿里的复习结果折算成 SRS 评分并双写流水。 */
+function settlePalaceReview({ items, mode }) {
+  const atIso = new Date().toISOString();
+  const palace = loadPalace();
+  const accepted = [];
+  for (const it of (Array.isArray(items) ? items : [])) {
+    if (!it || typeof it !== 'object') continue;
+    const slotId = String(it.slotId || '').trim();
+    const grade = String(it.grade || '').trim();
+    const occ = palace.occupied[slotId];
+    if (!occ) continue;                       // 槽位没词就不记，防止伪造词
+    if (!QUIZ_GRADES.has(grade)) continue;
+    accepted.push({
+      spelling: occ.word,
+      grade,
+      confidence: grade === 'again' ? 'guess' : grade === 'hard' ? 'unsure' : 'sure',
+      userAnswer: '',
+      startedAt: typeof it.startedAt === 'string' ? it.startedAt : atIso,
+      durationMs: Number.isFinite(it.durationMs) && it.durationMs >= 0 ? Math.min(it.durationMs, 3600_000) : 0,
+      kind: 'palace_practice',
+      source: 'palace',
+      mode: typeof mode === 'string' ? mode.slice(0, 40) : 'review',
+      metaExtra: { slotId, slotLabel: palace.layout.slots.find(s => s.id === slotId)?.label || '', route: occ.route },
+    });
+    occ.lastSeenAt = atIso;
+  }
+  if (!accepted.length) return { ok: false, reason: 'no_items', applied: 0 };
+  const out = applyQuizSrsSession(accepted, 'palace');
+  palace.updatedAt = atIso;
+  saveJSON(ctxFilePath(PALACE_FILE), palace);
+  return {
+    ok: true,
+    applied: out.applied,
+    attemptsSaved: out.attemptsSaved,
+    wrongBooked: out.wrongBooked,
+    resolved: out.resolved,
+    words: accepted.map(a => ({ word: a.spelling, grade: a.grade })),
+  };
+}
+
 /** 记录测验结果：反哺「我又忘了」体系（写入 word.quizResponse，供忘记词/模糊词筛选）
  *  v2.2.1：双写统一学习流水（word_quiz attempt），单题采集信心/耗时/作答值，服务端权威释义 expected 防篡改
  */
@@ -8177,13 +8434,23 @@ function sendJSON(res, code, obj) {
   res.end(body);
 }
 
-function setSecurityHeaders(res) {
+function setSecurityHeaders(res, pathname) {
   res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'DENY');
+  // v4.9.0：记忆宫殿是**同源内嵌子应用**（/palace/，主站 iframe 挂载），是全站唯一的
+  // 「允许被自己嵌」的路径。若这里沿用 DENY / frame-ancestors 'none'，iframe 会被浏览器
+  // 直接拦掉（线上实测会是白框）。只对自己放开，仍然不允许任何第三方嵌我们。
+  if (typeof pathname === 'string' && pathname.startsWith('/palace/')) {
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  } else {
+    res.setHeader('X-Frame-Options', 'DENY');
+  }
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('Permissions-Policy', 'camera=(self), geolocation=()');
   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-  res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https:; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
+  const frameAncestors = (typeof pathname === 'string' && pathname.startsWith('/palace/')) ? "'self'" : "'none'";
+  // v4.9.0：frame-src 'self' 供主站 iframe 加载同源宫殿子应用（其余不变）；
+  //          worker-src 'self' 供 three.js 在需要时创建 Blob worker（不放开 blob: 给脚本）。
+  res.setHeader('Content-Security-Policy', `default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https:; font-src 'self' data:; frame-src 'self'; frame-ancestors ${frameAncestors}; base-uri 'self'; form-action 'self'`);
 }
 
 function isWithinDir(baseDir, targetPath) {
@@ -8530,7 +8797,7 @@ const AUTH_WHITELIST = new Set([
 
 const server = http.createServer(async (req, res) => {
   const p = new URL(req.url, `http://localhost:${PORT}`).pathname;
-  setSecurityHeaders(res);
+  setSecurityHeaders(res, p);
   if (!sameSiteWriteRequest(req, p)) return sendJSON(res, 403, { error: '跨站写请求已拒绝', code: 'CSRF_ORIGIN' });
   if ((p === '/api/auth/login' || p === '/api/auth/register') && authRateLimited(req)) {
     res.setHeader('Retry-After', String(Math.ceil(AUTH_RATE_WINDOW_MS / 1000)));
@@ -9885,6 +10152,108 @@ async function handleRequest(req, res) {
         if (!Number.isFinite(days) || days < 1) days = 30;
         if (days > 365) days = 365;
         return sendJSON(res, 200, { ...methodEffectSummary(days), words: methodWordHints(12) });
+      }
+
+      /* ---- v4.9.0：单词记忆宫殿 ---- */
+      if (p === '/api/palace/state' && req.method === 'GET') {
+        const palace = loadPalace();
+        return sendJSON(res, 200, {
+          ok: true,
+          palace,
+          stats: palaceStats(palace),
+          routes: [
+            { id: 'origin', label: '词源' },
+            { id: 'sound', label: '谐音' },
+            { id: 'scene', label: '画面' },
+          ],
+        });
+      }
+
+      if (p === '/api/palace/assign' && req.method === 'POST') {
+        const body = await readBody(req, 16384);
+        const slotId = String(body.slotId || '').trim();
+        if (!slotId) return sendJSON(res, 400, { ok: false, error: '缺少槽位' });
+        const palace = loadPalace();
+        if (!palace.layout.slots.some(s => s.id === slotId)) {
+          return sendJSON(res, 400, { ok: false, error: '槽位不存在，请刷新后重试' });
+        }
+        // 空 word = 清空该槽位（把词从宫殿里取下，SRS 记录不动）
+        const word = String(body.word || '').trim();
+        if (!word) {
+          delete palace.occupied[slotId];
+          savePalace(palace);
+          return sendJSON(res, 200, { ok: true, cleared: true, stats: palaceStats(palace) });
+        }
+        const facts = palaceWordFacts(word);
+        if (!facts.gloss) {
+          // 无释义也允许放词（有些专有名词查不到），但如实告知，不编造
+          facts.gloss = '';
+        }
+        const prev = palace.occupied[slotId];
+        const keepMnemonic = prev && prev.word.toLowerCase() === word.toLowerCase();
+        palace.occupied[slotId] = {
+          word: facts.word,
+          gloss: facts.gloss,
+          phonetic: facts.phonetic,
+          mnemonic: keepMnemonic ? prev.mnemonic : '',
+          route: keepMnemonic ? prev.route : 'scene',
+          hook: keepMnemonic ? prev.hook : '',
+          imagePath: keepMnemonic ? prev.imagePath : null,
+          assignedAt: keepMnemonic ? prev.assignedAt : new Date().toISOString(),
+          lastSeenAt: keepMnemonic ? prev.lastSeenAt : null,
+        };
+        savePalace(palace);
+        return sendJSON(res, 200, { ok: true, slotId, placed: palace.occupied[slotId], stats: palaceStats(palace) });
+      }
+
+      if (p === '/api/palace/slot' && req.method === 'POST') {
+        const body = await readBody(req, 16384);
+        const slotId = String(body.slotId || '').trim();
+        const palace = loadPalace();
+        const occ = palace.occupied[slotId];
+        if (!occ) return sendJSON(res, 400, { ok: false, error: '这个位置还没有词' });
+        if (body.mnemonic !== undefined) occ.mnemonic = String(body.mnemonic || '').slice(0, PALACE_MNEMONIC_MAX);
+        if (body.hook !== undefined) occ.hook = String(body.hook || '').slice(0, 120);
+        if (body.route !== undefined && PALACE_ROUTES.has(body.route)) occ.route = body.route;
+        savePalace(palace);
+        return sendJSON(res, 200, { ok: true, placed: occ });
+      }
+
+      if (p === '/api/palace/mnemonic' && req.method === 'POST') {
+        const body = await readBody(req, 16384);
+        const word = String(body.word || '').trim();
+        if (!word) return sendJSON(res, 400, { ok: false, error: '缺少单词' });
+        try {
+          const out = await palaceMnemonicCandidates(word);
+          if (!out) return sendJSON(res, 200, { ok: false, reason: 'bad_json' });
+          return sendJSON(res, 200, { ok: true, ...out });
+        } catch (e) {
+          // 与全站口径一致：AI 不可用一律 200 + ok:false，前端只提示不中断
+          return sendJSON(res, 200, { ok: false, reason: e.code === 'NO_LLM' ? 'no_llm' : 'llm_error' });
+        }
+      }
+
+      if (p === '/api/palace/layout' && req.method === 'POST') {
+        const body = await readBody(req, 32768);
+        const slots = normalizePalaceSlots(body.slots);
+        if (!slots.length) return sendJSON(res, 400, { ok: false, error: '至少要留一个位置' });
+        const palace = loadPalace();
+        palace.layout = {
+          name: String(body.name || palace.layout.name || '我的宫殿').slice(0, 40),
+          slots,
+        };
+        // 被删掉的槽位其词一并取下（词本身还在 SRS 里，不丢数据）
+        const keep = new Set(slots.map(s => s.id));
+        for (const id of Object.keys(palace.occupied)) if (!keep.has(id)) delete palace.occupied[id];
+        savePalace(palace);
+        return sendJSON(res, 200, { ok: true, palace, stats: palaceStats(palace) });
+      }
+
+      if (p === '/api/palace/settle' && req.method === 'POST') {
+        const body = await readBody(req, 65536);
+        const out = settlePalaceReview({ items: body.items, mode: body.mode });
+        if (!out.ok) return sendJSON(res, 400, { ok: false, reason: out.reason, error: '没有可结算的复习记录' });
+        return sendJSON(res, 200, out);
       }
 
       // 结束会话 -> 生成助记
@@ -11395,6 +11764,10 @@ async function handleRequest(req, res) {
               warnings.push({ file: f.name, reason: '学习方法账本结构不符，已跳过' });
               continue;
             }
+            if (f.palace && !isPalaceShape(v.obj)) {
+              warnings.push({ file: f.name, reason: '记忆宫殿结构不符，已跳过' });
+              continue;
+            }
           }
           const dst = path.join(bDir, f.name);
           fs.mkdirSync(path.dirname(dst), { recursive: true });
@@ -11448,6 +11821,7 @@ async function handleRequest(req, res) {
             if (f.quizSrs) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前测验记忆' });
             if (f.quizSession) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前测验会话' });
             if (f.methodLedger) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前学习方法账本' });
+        if (f.palace) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前记忆宫殿' });
             continue;
           }
           if (f.json) {
@@ -11470,6 +11844,10 @@ async function handleRequest(req, res) {
             }
             if (f.methodLedger && !isMethodLedgerShape(v.obj)) {
               warnings.push({ file: f.name, reason: 'schemaVersion/entries 结构不符，已跳过' });
+              continue;
+            }
+            if (f.palace && !isPalaceShape(v.obj)) {
+              warnings.push({ file: f.name, reason: 'schemaVersion/layout 结构不符，已跳过' });
               continue;
             }
           }
@@ -11522,6 +11900,15 @@ async function handleRequest(req, res) {
     }
     catch { res.writeHead(400); return res.end('Bad Request'); }
     if (!isWithinDir(PUBLIC_DIR, filePath)) { res.writeHead(403); return res.end(); }
+    // v4.9.0：目录请求必须回落 index.html。此前只认 '/'，`/palace/` 这类子目录会被当成
+    // 文件去 createReadStream → EISDIR 崩掉整个请求（浏览器实测是白屏 + ECONNRESET）。
+    try {
+      if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+        const idx = path.join(filePath, 'index.html');
+        if (!isWithinDir(PUBLIC_DIR, idx) || !fs.existsSync(idx)) { res.writeHead(404); return res.end('Not Found'); }
+        filePath = idx;
+      }
+    } catch { /* stat 失败按原路径继续，交给下面 404 */ }
     if (!fs.existsSync(filePath)) { res.writeHead(404); return res.end('Not Found'); }
     // v3.8.2：改为条件请求（ETag/Last-Modified/304），不再无条件 no-store
     return serveStaticFile(req, res, filePath);
@@ -11577,6 +11964,7 @@ function autoBackup() {
         if (f.learning && !isLearningStoreShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
         if (f.quizSrs && !isQuizSrsShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
         if (f.methodLedger && !isMethodLedgerShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
+        if (f.palace && !isPalaceShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
         if (f.quizSession && !isQuizSessionShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
       }
       const dst = path.join(bDir, f.name);

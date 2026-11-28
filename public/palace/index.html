@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>单词记忆宫殿</title>
+<link rel="stylesheet" href="./palace.css">
+</head>
+<body>
+<div id="stage" aria-hidden="true"></div>
+
+<!-- 载入 / 错误 -->
+<div id="boot" class="overlay center">
+  <div class="boot-card">
+    <div class="boot-title">单词记忆宫殿</div>
+    <div class="boot-sub" id="bootMsg">正在打开房间…</div>
+  </div>
+</div>
+
+<!-- 顶部状态条 -->
+<header id="hud" hidden>
+  <div class="hud-left">
+    <span id="hudRoom">门厅</span>
+    <span class="dot">·</span>
+    <span id="hudCount">0 / 0</span>
+    <span class="dot">·</span>
+    <span id="hudDue">0 词到期</span>
+  </div>
+  <div class="hud-right">
+    <button id="btnReview" type="button" class="pill solid">开始复习</button>
+    <button id="btnHelp" type="button" class="pill">操作</button>
+  </div>
+</header>
+
+<!-- 视角提示：不安全的 HTTP 环境下会显示 -->
+<div id="lockHint" class="hint" hidden>
+  <span id="lockHintText"></span>
+  <button id="btnLock" type="button" class="pill solid">进入第一人称</button>
+</div>
+
+<!-- 准星 -->
+<div id="cross" hidden></div>
+
+<!-- 靠近提示 -->
+<div id="proximity" class="prompt" hidden>
+  <b id="proxNum">1</b>
+  <span id="proxLabel"></span>
+  <span class="key">E</span>
+</div>
+
+<!-- 槽位面板 -->
+<aside id="slotPanel" class="panel" hidden>
+  <div class="panel-head">
+    <div>
+      <div class="panel-kicker" id="slotWhere">—</div>
+      <div class="panel-title" id="slotWord">—</div>
+      <div class="panel-gloss" id="slotGloss"></div>
+    </div>
+    <button id="slotClose" type="button" class="icon-btn" aria-label="关闭">×</button>
+  </div>
+
+  <div class="field">
+    <label for="mnemonicInput">这里的联想（你自己拍板的那一版）</label>
+    <textarea id="mnemonicInput" rows="3" maxlength="300" placeholder="把词形、发音、词义一起钩进一个怪画面里"></textarea>
+    <div class="field-foot">
+      <span id="mnemonicCount">0 / 300</span>
+      <span id="slotRoute" class="tag"></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <button id="btnGenCand" type="button" class="pill solid">AI 出 3 条候选</button>
+    <button id="btnSaveMnemonic" type="button" class="pill">保存</button>
+    <button id="btnClearSlot" type="button" class="pill danger">取下这个词</button>
+  </div>
+
+  <div id="candBox" class="cands" hidden></div>
+
+  <div class="swap">
+    <label for="swapInput">换成别的词放到这里</label>
+    <div class="row">
+      <input id="swapInput" type="text" autocomplete="off" spellcheck="false" placeholder="输入单词，例如 abandon">
+      <button id="btnSwap" type="button" class="pill">放入</button>
+    </div>
+    <div id="swapMsg" class="msg"></div>
+  </div>
+</aside>
+
+<!-- 复习面板 -->
+<aside id="reviewPanel" class="panel review" hidden>
+  <div class="panel-head">
+    <div>
+      <div class="panel-kicker" id="rvWhere">—</div>
+      <div class="panel-title" id="rvProgress">—</div>
+    </div>
+    <button id="rvQuit" type="button" class="icon-btn" aria-label="退出复习">×</button>
+  </div>
+
+  <div id="rvCue" class="rv-cue">看清这个位置，先在心里回想。</div>
+  <div id="rvReveal" class="rv-reveal" hidden>
+    <div class="rv-word" id="rvWord"></div>
+    <div class="rv-gloss" id="rvGloss"></div>
+    <div class="rv-mnemonic" id="rvMnemonic"></div>
+  </div>
+
+  <div class="row" id="rvActions">
+    <button id="btnReveal" type="button" class="pill solid wide">想不起来 / 揭晓</button>
+  </div>
+  <div class="row" id="rvGrades" hidden>
+    <button type="button" class="pill grade g-again" data-grade="again">想不起来</button>
+    <button type="button" class="pill grade g-hard" data-grade="hard">想起但费劲</button>
+    <button type="button" class="pill grade g-good" data-grade="good">顺畅</button>
+  </div>
+  <div id="rvFoot" class="msg"></div>
+</aside>
+
+<!-- 结果 -->
+<div id="doneBox" class="overlay center" hidden>
+  <div class="boot-card">
+    <div class="boot-title" id="doneTitle">这一轮复习完成</div>
+    <div class="boot-sub" id="doneSub"></div>
+    <div class="row center">
+      <button id="btnDoneBack" type="button" class="pill solid">回到宫殿</button>
+    </div>
+  </div>
+</div>
+
+<!-- 操作说明 -->
+<div id="helpBox" class="overlay center" hidden>
+  <div class="boot-card help">
+    <div class="boot-title">怎么走</div>
+    <ul class="help-list">
+      <li><b>W A S D</b> 或方向键：前后左右</li>
+      <li><b>鼠标</b>：转头（第一人称需点一次画面；本机 / HTTPS 下可用）</li>
+      <li><b>拖动</b>：外网 HTTP 下改用拖动转头，或点地面直接走过去</li>
+      <li><b>E</b> 或点编号：打开这个位置的词</li>
+      <li><b>R</b>：开始 / 继续复习　<b>Esc</b>：关闭面板</li>
+      <li><b>M</b>：鸟瞰全屋，点一下直接过去</li>
+    </ul>
+    <div class="row center">
+      <button id="btnHelpClose" type="button" class="pill solid">知道了</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="./palace.js"></script>
+</body>
+</html>

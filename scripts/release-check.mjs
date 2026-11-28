@@ -24,7 +24,7 @@ const inkWriter = appSrc.slice(appSrc.indexOf('function inkFragment('), appSrc.i
 const EMOJI = /[\u{1F000}-\u{1FAFF}\u2600-\u27BF\u2B00-\u2BFF\uFE0F]/u;
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.8.0'],
+  ['package version', packageJson.version === '4.9.0'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
@@ -76,7 +76,49 @@ const required = [
   ['v4.8.0 method ledger is backed up and validated', serverSrc.includes("const METHOD_LEDGER_FILE = 'method_ledger.json'") && serverSrc.includes('isMethodLedgerShape') && (serverSrc.match(/isMethodLedgerShape\(v\.obj\)/g) || []).length >= 3],
   ['v4.8.0 method page wired in front end', ['methodPane', 'methodRoster', 'methodStageCard', 'methodEffectCard'].every(id => indexHtml.includes(`id="${id}"`)) && appSrc.includes("'/api/method/start'") && appSrc.includes("'/api/method/settle'") && appSrc.includes('method_practice:')],
   ['v4.8.0 no method answer parsed as html', !/innerHTML = answer\b/.test(appSrc) && appSrc.includes('mdLite(data.feedback.coaching')],
-  ['v4.8.0 sw cache name bumped', sw.includes("'wb-shell-v4.8.0'")],
+  ['v4.9.0 sw cache name bumped', sw.includes("'wb-shell-v4.9.0'")],
+  // v4.9.0：单词记忆宫殿。核心契约不是「有个 3D 页面」，而是四件容易退化的事：
+  // ① 槽位固定 / 词流动（换词必须清掉旧联想，否则 A 的联想会挂在 B 身上）；
+  // ② 复习结果真的折算 again/hard/good 进 quiz_srs（否则又是一个刷新即散的孤岛）；
+  // ③ 只有 /palace/ 放开被同源 iframe 嵌入，其余路径仍 DENY（否则站点可被第三方嵌）；
+  // ④ 3D 走独立子应用，主站首屏不加载 three.js。
+  ['v4.9.0 palace file registered, backed up and shape-validated',
+    serverSrc.includes("const PALACE_FILE = 'palace.json'") &&
+    serverSrc.includes('{ file: PALACE_FILE, json: true, palace: true }') &&
+    serverSrc.includes('function isPalaceShape(') &&
+    (serverSrc.match(/f\.palace && !isPalaceShape\(v\.obj\)/g) || []).length >= 3],
+  ['v4.9.0 palace routes exist and settle writes srs as palace_practice',
+    ["'/api/palace/state'", "'/api/palace/assign'", "'/api/palace/slot'", "'/api/palace/mnemonic'", "'/api/palace/layout'", "'/api/palace/settle'"].every(r => serverSrc.includes(r)) &&
+    serverSrc.includes('function settlePalaceReview(') &&
+    serverSrc.includes('applyQuizSrsSession(accepted') &&
+    serverSrc.includes("kind: 'palace_practice'") &&
+    serverSrc.includes("'palace_practice',")],
+  ['v4.9.0 palace AI only proposes candidates (learner decides)',
+    serverSrc.includes("palace_mnemonic: {") &&
+    serverSrc.includes('function normalizePalaceCandidates(') &&
+    /PALACE_ROUTES = new Set\(\['origin', 'sound', 'scene'\]\)/.test(serverSrc)],
+  ['v4.9.0 iframe embedding opened only for /palace/',
+    serverSrc.includes("startsWith('/palace/')") &&
+    serverSrc.includes("X-Frame-Options', 'SAMEORIGIN'") &&
+    serverSrc.includes("X-Frame-Options', 'DENY'") &&
+    /frame-src 'self'/.test(serverSrc)],
+  ['v4.9.0 palace sub-app is standalone (no main-site css, no first-screen bytes)',
+    exists(join(root, 'public', 'palace', 'index.html')) &&
+    exists(join(root, 'public', 'palace', 'palace.js')) &&
+    exists(join(root, 'public', 'palace', 'palace.css')) &&
+    exists(join(root, 'public', 'palace', 'vendor', 'three.module.min.js')) &&
+    !appSrc.includes('three.module.min.js') &&
+    indexHtml.includes('data-sub="palace"') &&
+    /if \(!frame\.getAttribute\('src'\)\)/.test(appSrc)],
+  ['v4.9.0 static server serves directory index (no EISDIR crash)',
+    serverSrc.includes('fs.statSync(filePath).isDirectory()') &&
+    serverSrc.includes("path.join(filePath, 'index.html')")],
+  ['v4.9.0 service worker leaves /palace/ alone',
+    sw.includes("url.pathname.startsWith('/palace/')")],
+  ['v4.9.0 palace degrades outside secure context',
+    appSrc.includes('palace-review') === false &&
+    (await readFile(join(root, 'public', 'palace', 'palace.js'), 'utf8')).includes('isSecureContext') &&
+    (await readFile(join(root, 'public', 'palace', 'palace.js'), 'utf8')).includes('pickGround')],
   // v4.8.0：图标类「撞名」契约。v4.6/v4.7 的门禁只查「每个 PNG 都有 CSS 映射」，
   // 没查「同一个元素上两个 ink-* 类谁胜出」——`ink-card` 既当尺寸类又当图标名，
   // CSS 顺序让后出现的 card.png 覆盖掉前面真正的图标，17 处卡片标题全部画成同一张卡。
@@ -138,6 +180,8 @@ const required = [
   ['tutor drill smoke', exists(join(root, 'scripts', 'tutor-drill-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('tutor-drill-smoke.mjs')],
   // v4.8.0：学习方法（费曼 / 苏格拉底 / 对比辨析 / 空白回忆）——回合语义 + 折算 SRS + 账本
   ['method smoke', exists(join(root, 'scripts', 'method-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('method-smoke.mjs')],
+  // v4.9.0：单词记忆宫殿——槽位语义 + 结算进 SRS + 降级
+  ['palace smoke', exists(join(root, 'scripts', 'palace-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('palace-smoke.mjs')],
   ['static cache smoke', exists(join(root, 'scripts', 'static-cache-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('static-cache-smoke.mjs')],
   ['static cache contract in server', (await readFile(join(root, 'server.js'), 'utf8')).includes('function serveStaticFile') && (await readFile(join(root, 'server.js'), 'utf8')).includes("'Cache-Control': 'no-cache'")],
 ];
