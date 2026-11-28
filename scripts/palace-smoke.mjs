@@ -86,6 +86,13 @@ T('点编号走射线拾取，不受「靠近距离」限制（隔房间也能�
   /function pickSlotAt\(/.test(palaceJs) &&
   /const picked = pickSlotAt\(ev\);/.test(palaceJs) &&
   /intersectObjects\(markers\.map/.test(palaceJs));
+/* 作者样式的 display:flex 会盖过浏览器默认的 [hidden]{display:none}。
+   #hud 曾经漏了覆盖规则：未登录/打开失败时载入卡片已报错，HUD 还露着
+   「开始复习」「操作」两个按钮——用户点了完全没反应。 */
+T('每个会被 hidden 的 flex 元素都有 [hidden] 覆盖规则（#hud 曾漏）',
+  /#hud\[hidden\]\s*\{\s*display:\s*none/.test(palaceCss) &&
+  ['.overlay', '.hint', '#cross', '.prompt', '.panel', '.rv-reveal']
+    .every(sel => new RegExp(sel.replace(/[.#]/g, m => '\\' + m) + '\\[hidden\\]\\s*\\{\\s*display:\\s*none').test(palaceCss)));
 T('主站「开始复习」不再竞态丢指令（未就绪先排队，ready 后补发）',
   /palaceCmdQueue/.test(appSrc) && /palaceState\.ready\) send\(\)/.test(appSrc));
 

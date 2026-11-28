@@ -61,6 +61,11 @@ html, body {
 .hud-left { display: flex; align-items: center; gap: 6px; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
 .hud-left .dot { opacity: 0.45; }
 .hud-right { display: flex; gap: 8px; }
+/* 作者样式的 display:flex 会盖过浏览器默认的 [hidden]{display:none}，
+   所以凡是会被 hidden 的元素都必须显式写一条覆盖规则。
+   这里曾经漏掉 #hud：未登录 / 打开失败时载入卡片已经报错，HUD 却还露着
+   「开始复习」「操作」两个按钮，点了没反应。 */
+#hud[hidden] { display: none; }
 
 /* ---------- 通用控件 ---------- */
 .pill {
