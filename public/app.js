@@ -360,6 +360,7 @@ const ATTEMPT_KIND_LABELS = {
   vocab_context: '语境选义',
   vocab_cloze: '搭配补全',
   sentence_analysis: '长难句三遍训练',
+  method_practice: '学习方法',
 };
 
 /** 语料中仅放行 <u>…</u>（阅读划线句忠实还原）；必须先 esc 再调用 */
@@ -1012,7 +1013,7 @@ function renderStudyTasks(tasks) {
   if (summary) summary.textContent = `${done}/${list.length} 已完成`;
   box.innerHTML = list.map(t => `<div class="study-task ${t.done ? 'done' : ''}">
     <label class="study-task-check-wrap"><input class="study-task-check" type="checkbox" data-study-complete="${esc(t.id)}" aria-label="标记${esc(t.title)}完成" ${t.done ? 'checked' : ''} ${t.automatic ? 'disabled' : ''}></label>
-    <span class="study-task-icon"><i class="ink-card ink-${esc(t.icon)}" aria-hidden="true"></i></span><div class="study-task-main"><b>${esc(t.title)}</b><span>${esc(t.detail || '')}</span></div>
+    <span class="study-task-icon"><i class="ink-ico ink-${esc(t.icon)}" aria-hidden="true"></i></span><div class="study-task-main"><b>${esc(t.title)}</b><span>${esc(t.detail || '')}</span></div>
     <button class="btn mini ${t.done ? 'ghost' : 'primary'} study-task-btn" data-study-start="${esc(t.id)}" type="button">${t.done ? '查看' : '去练习'}</button>
   </div>`).join('');
   box.querySelectorAll('[data-study-complete]').forEach(input => input.addEventListener('change', async e => {
@@ -1697,6 +1698,12 @@ function wordPanelOpen(open, { load = true } = {}) {
   panel.inert = !on;
   if (fab) fab.setAttribute('aria-expanded', on ? 'true' : 'false');
   document.body.classList.toggle('word-pop-open', on);
+  if (!on && typeof methodState !== 'undefined' && methodState.returnAfterPick) {
+    // v4.8.0：从方法页「去词表勾词」过来，收起词表即自动回到学习方法页，
+    // 不用再手动点一次子版块（勾完词本来就是要回去练）
+    methodState.returnAfterPick = false;
+    switchStudySub('method', { load: false });
+  }
   if (on) {
     // 手机上不抢焦点（避免软键盘弹出来把列表顶走）；桌面端把光标直接放进搜索框
     const body = $('#wordPanelCollapseBody');
@@ -1719,7 +1726,7 @@ $('#wordPanelClose').addEventListener('click', () => wordPanelOpen(false));
 document.addEventListener('click', (e) => {
   const panel = $('#wordPanel');
   if (!panel || !panel.classList.contains('open')) return;
-  if (e.target.closest('#wordPanel, #wordFab, #mistWordStudy, #mistNextTask, [data-study-start="vocab_today"], [data-jump="study"][data-filter]')) return;
+  if (e.target.closest('#wordPanel, #wordFab, #mistWordStudy, #mistNextTask, #methodPickWordsBtn, [data-study-start="vocab_today"], [data-jump="study"][data-filter]')) return;
   wordPanelOpen(false);
 });
 document.addEventListener('keydown', (e) => {
@@ -2457,6 +2464,415 @@ $('#coachMap').addEventListener('click', e => {
   renderCoachMap(true);
 });
 
+/* ================= v4.8.0：学习方法（费曼 / 苏格拉底 / 对比辨析 / 空白回忆） =================
+ * 与词汇精练共用同一份勾选（coachSelection），但流程完全不同：
+ * 微课是「老师教 → 学生复述」，方法课是「学生先产出 → AI 只追问与收敛」。
+ * 结算走 /api/method/settle：结果落 learning_attempts（kind=method_practice）
+ * 并折算 again/hard/good 写入 quiz_srs，所以「讲不清楚」明天会回到复习队列。 */
+
+const METHOD_META = {
+  feynman: { title: '费曼学习法', blurb: '讲给外行听，再被追问，最后简化重讲', icon: 'chat' },
+  socratic: { title: '苏格拉底提问', blurb: '先给判断，被连续反问，自己修正', icon: 'compass' },
+  contrast: { title: '对比辨析', blurb: '两句只差一处，找出差异并给规则', icon: 'scale' },
+  blank: { title: '空白回忆', blurb: '合上讲义全写下来，再对照补缺口', icon: 'scroll' },
+};
+
+const methodState = {
+  id: null,          // 当前选中的方法
+  roundId: null,     // 服务端回合 id
+  data: null,        // 最近一次服务端返回
+  busy: false,
+  inited: false,
+  draft: '',
+};
+
+const METHOD_RESULT_LABELS = { independent: '独立答对', assisted: '提示后答对', needs_work: '仍需补教' };
+
+/** 方法页的勾选：直接复用词表勾选集合，避免两套选词状态不一致。 */
+function methodPickedWords() {
+  return [...coachSelection.values()].map(v => v.word).filter(Boolean).slice(0, 5);
+}
+
+function methodInit() {
+  renderMethodRoster();
+  renderMethodPicked();
+  if (!methodState.inited) {
+    methodState.inited = true;
+    $('#methodStartBtn').addEventListener('click', methodStart);
+    $('#methodPickWordsBtn').addEventListener('click', () => {
+      // 从方法页去勾词：记下「勾完要回来」，关掉词表浮层时自动回到学习方法页
+      methodState.returnAfterPick = true;
+      switchStudySub('vocab', { load: false });
+      wordPanelOpen(true);
+    });
+    $('#methodAbortBtn').addEventListener('click', methodAbort);
+    $('#methodEffectRefresh').addEventListener('click', () => loadMethodEffect(true));
+    $('#methodBody').addEventListener('submit', e => {
+      if (!e.target.matches('.method-answer-form')) return;
+      e.preventDefault();
+      methodAnswer();
+    });
+    $('#methodBody').addEventListener('input', e => {
+      if (e.target.id === 'methodAnswer') methodState.draft = e.target.value;
+    });
+    $('#methodBody').addEventListener('click', e => {
+      const btn = e.target.closest('[data-method-action]');
+      if (!btn) return;
+      const action = btn.dataset.methodAction;
+      if (action === 'continue') methodMove('continue');
+      else if (action === 'hint') methodMove('hint');
+      else if (action === 'retry') methodMove('retry');
+      else if (action === 'finish') methodMove('finish');
+      else if (action === 'restart') methodStart();
+    });
+  }
+  loadMethodEffect();
+}
+
+function renderMethodRoster() {
+  const box = $('#methodRoster');
+  if (!box) return;
+  box.replaceChildren();
+  for (const [id, meta] of Object.entries(METHOD_META)) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'method-chip' + (id === methodState.id ? ' active' : '');
+    btn.dataset.method = id;
+    btn.setAttribute('aria-pressed', String(id === methodState.id));
+    const ico = document.createElement('i');
+    ico.className = `ink-glyph ink-${meta.icon}`;
+    ico.setAttribute('aria-hidden', 'true');
+    const name = document.createElement('b');
+    name.textContent = meta.title;
+    const blurb = document.createElement('span');
+    blurb.textContent = meta.blurb;
+    btn.append(ico, name, blurb);
+    btn.addEventListener('click', () => {
+      methodState.id = id;
+      renderMethodRoster();
+      renderMethodPicked();
+    });
+    box.append(btn);
+  }
+}
+
+function renderMethodPicked() {
+  const out = $('#methodPicked');
+  const words = methodPickedWords();
+  if (out) {
+    setInkText(out, words.length
+      ? `<i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 已选 ${words.length} 词：${words.join(' / ')}`
+      : '<i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 还没有选词');
+    out.className = 'method-picked' + (words.length ? ' ok' : '');
+  }
+  const btn = $('#methodStartBtn');
+  if (btn) btn.disabled = methodState.busy || !methodState.id || !words.length;
+}
+
+async function methodStart() {
+  const method = methodState.id;
+  const words = methodPickedWords();
+  if (!method || !words.length || methodState.busy) return;
+  methodState.busy = true;
+  methodState.draft = '';
+  const res = $('#methodResult');
+  renderMethodPicked();
+  if (res) { setInkText(res, '<i class="ink-glyph ink-only ink-hourglass" aria-hidden="true"></i> 正在准备这一套方法…'); res.className = 'result'; }
+  try {
+    const out = await api('/api/method/start', { method: 'POST', body: { method, words, goal: $('#methodGoal')?.value?.trim() || '' } });
+    if (!out.ok) { if (res) { setInkText(res, methodErrorText(out.reason)); res.className = 'result fail'; } return; }
+    methodState.roundId = out.roundId;
+    methodState.data = out;
+    if (res) { res.textContent = ''; res.className = 'result'; }
+    renderMethodRound();
+  } catch (e) {
+    if (res) { setInkText(res, methodErrorText(e.message)); res.className = 'result fail'; }
+  } finally {
+    methodState.busy = false;
+    renderMethodPicked();
+  }
+}
+
+function methodErrorText(reason) {
+  const map = {
+    no_llm: '请在设置里配置 AI 服务商。',
+    bad_method: '未知的学习方法，请重新选择。',
+    bad_words: '请先在词表里勾选要练的词。',
+    bad_task: '这次没有生成可作答的问题，请重试。',
+    bad_feedback: '暂时没能判断这份回答。你的答案已保留，可以再提交。',
+    expired: '这一套方法已过期，可以重新开始。',
+    stale_round: '当前进度已经更新，请继续当前这一关。',
+    bad_move: '当前这一步不可用。',
+    not_finished: '这套方法还没上完，先完成最后一关。',
+    busy: '正在处理，请稍后再试。',
+    llm_error: '暂时未能完成，请重试。',
+  };
+  return map[reason] || map[String(reason || '').replace(/^.*?:/, '')] || '暂时未能完成，请重试。';
+}
+
+function renderMethodRound() {
+  const data = methodState.data;
+  const card = $('#methodStageCard');
+  if (!card) return;
+  if (!data) { card.hidden = true; return; }
+  card.hidden = false;
+  const meta = METHOD_META[data.method] || { title: data.methodTitle || '学习方法' };
+  $('#methodStageTitle').replaceChildren();
+  const head = document.createElement('span');
+  head.className = 'method-stage-head';
+  const ico = document.createElement('i');
+  ico.className = `ink-glyph ink-${meta.icon || 'brain'}`;
+  ico.setAttribute('aria-hidden', 'true');
+  head.append(ico, document.createTextNode(`${meta.title} · ${data.stageTitle || ''}`));
+  $('#methodStageTitle').append(head);
+
+  // 进度点：每关一个，已完成/当前/未开始三态
+  const dots = $('#methodProgress');
+  dots.replaceChildren();
+  for (let i = 0; i < data.stageCount; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'method-dot' + (i < data.stageIndex ? ' done' : i === data.stageIndex ? ' now' : '');
+    dots.append(dot);
+  }
+  const dotsLabel = document.createElement('span');
+  dotsLabel.className = 'method-dots-label';
+  dotsLabel.textContent = `第 ${data.stageIndex + 1} / ${data.stageCount} 关`;
+  dots.append(dotsLabel);
+
+  const body = $('#methodBody');
+  body.replaceChildren();
+  if (data.result) { body.append(methodResultBlock(data)); return; }
+
+  if (data.feedback) {
+    const box = document.createElement('div');
+    box.className = 'method-feedback ' + (data.feedback.status === 'pass' ? 'ok' : 'warn');
+    const y = document.createElement('div');
+    y.className = 'method-feedback-title';
+    setInkText(y, data.feedback.status === 'pass'
+      ? '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 这一关通过'
+      : '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 还差一点');
+    box.append(y);
+    const coaching = document.createElement('div');
+    coaching.className = 'method-feedback-text';
+    coaching.innerHTML = mdLite(data.feedback.coaching || '');
+    box.append(coaching);
+    if (data.feedback.gap) {
+      const gap = document.createElement('div');
+      gap.className = 'method-feedback-gap';
+      gap.innerHTML = mdLite(data.feedback.gap);
+      box.append(gap);
+    }
+    if (data.feedback.model) {
+      const model = document.createElement('details');
+      model.className = 'method-model';
+      const sum = document.createElement('summary');
+      sum.textContent = '看一句示范（通过后才展开）';
+      const inner = document.createElement('div');
+      inner.innerHTML = mdLite(data.feedback.model);
+      model.append(sum, inner);
+      box.append(model);
+    }
+    body.append(box);
+    const acts = document.createElement('div');
+    acts.className = 'method-actions';
+    if (data.feedback.status === 'pass') {
+      const last = data.stageIndex + 1 >= data.stageCount;
+      acts.append(methodActionBtn('continue', last ? '完成这套方法' : '进入下一关', true));
+    } else {
+      acts.append(methodActionBtn('retry', '重新作答', true));
+    }
+    body.append(acts);
+    return;
+  }
+
+  if (data.task) {
+    if (data.task.say) {
+      const say = document.createElement('div');
+      say.className = 'method-say';
+      say.innerHTML = mdLite(data.task.say);
+      body.append(say);
+    }
+    const q = document.createElement('div');
+    q.className = 'method-question';
+    q.innerHTML = mdLite(data.task.question);
+    body.append(q);
+    const form = document.createElement('form');
+    form.className = 'method-answer-form';
+    const ta = document.createElement('textarea');
+    ta.id = 'methodAnswer';
+    ta.rows = 4;
+    ta.maxLength = 1500;
+    ta.required = true;
+    ta.placeholder = data.task.placeholder || '用你自己的话写下来';
+    ta.value = methodState.draft || '';
+    const acts = document.createElement('div');
+    acts.className = 'method-actions';
+    const submit = document.createElement('button');
+    submit.type = 'submit';
+    submit.className = 'btn primary';
+    setInkText(submit, '<i class="ink-btn ink-check"></i>提交回答');
+    acts.append(submit);
+    if (!data.hint) acts.append(methodActionBtn('hint', '给我一点提示'));
+    form.append(ta, acts);
+    body.append(form);
+    if (data.hint) {
+      const hint = document.createElement('div');
+      hint.className = 'method-hint';
+      hint.innerHTML = mdLite(data.hint);
+      body.append(hint);
+    }
+  }
+}
+
+function methodActionBtn(action, label, primary = false) {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'btn' + (primary ? ' primary' : ' ghost');
+  b.dataset.methodAction = action;
+  b.textContent = label;
+  b.disabled = methodState.busy;
+  return b;
+}
+
+function methodResultBlock(data) {
+  const box = document.createElement('div');
+  box.className = 'method-result-block';
+  const title = document.createElement('div');
+  title.className = 'method-feedback-title';
+  const label = METHOD_RESULT_LABELS[data.result] || '已完成';
+  const icon = data.result === 'independent' ? 'check' : data.result === 'assisted' ? 'spark' : 'warn';
+  setInkText(title, `<i class="ink-glyph ink-only ink-${icon}" aria-hidden="true"></i> 这套方法的结果：${label}`);
+  box.append(title);
+  const note = document.createElement('div');
+  note.className = 'method-result-note';
+  note.textContent = data.result === 'independent'
+    ? '不错，这次是自己讲清楚、说对了。这一词已按「掌握」记进记忆引擎。'
+    : data.result === 'assisted'
+      ? '提示后才答对，这一词按「吃力」记进记忆引擎，明天会再回来一次。'
+      : '还需要补教，这一词按「忘记」记进记忆引擎，并已进入错题本。';
+  box.append(note);
+  const acts = document.createElement('div');
+  acts.className = 'method-actions';
+  acts.append(methodActionBtn('restart', '再来一套', true));
+  box.append(acts);
+  return box;
+}
+
+async function methodMove(move) {
+  if (!methodState.roundId || methodState.busy) return;
+  methodState.busy = true;
+  renderMethodRound();
+  const res = $('#methodResult');
+  try {
+    const out = await api('/api/method/turn', { method: 'POST', body: { roundId: methodState.roundId, revision: methodState.data?.revision ?? 0, move } });
+    if (!out.ok) { if (res) { setInkText(res, methodErrorText(out.reason)); res.className = 'result fail'; } return; }
+    methodState.data = out;
+    if (out.result) await methodSettle(out);
+    renderMethodRound();
+  } catch (e) {
+    if (res) { setInkText(res, methodErrorText(e.message)); res.className = 'result fail'; }
+  } finally {
+    methodState.busy = false;
+    renderMethodRound();
+  }
+}
+
+async function methodAnswer() {
+  if (!methodState.roundId || methodState.busy) return;
+  const ta = $('#methodAnswer');
+  const answer = (ta?.value || '').trim();
+  if (!answer) { ta?.focus(); return; }
+  methodState.busy = true;
+  methodState.draft = answer;
+  renderMethodRound();
+  const res = $('#methodResult');
+  try {
+    const out = await api('/api/method/turn', { method: 'POST', body: { roundId: methodState.roundId, revision: methodState.data?.revision ?? 0, move: 'answer', answer } });
+    if (!out.ok) {
+      if (res) { setInkText(res, methodErrorText(out.reason)); res.className = 'result fail'; }
+      return;
+    }
+    methodState.data = out;
+    methodState.draft = '';
+    if (out.result) await methodSettle(out);
+  } catch (e) {
+    if (res) { setInkText(res, methodErrorText(e.message)); res.className = 'result fail'; }
+  } finally {
+    methodState.busy = false;
+    renderMethodRound();
+    if (!methodState.data?.result) $('#methodAnswer')?.focus();
+  }
+}
+
+/** 结算：写流水 + 折算 SRS + 记账。失败不阻断，只提示。 */
+async function methodSettle(out) {
+  const res = $('#methodResult');
+  try {
+    const done = await api('/api/method/settle', { method: 'POST', body: { roundId: methodState.roundId } });
+    if (!done.ok) {
+      if (res) { setInkText(res, methodErrorText(done.reason)); res.className = 'result fail'; }
+      return;
+    }
+    methodState.roundId = null;
+    if (res) {
+      setInkText(res, `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已记入记忆引擎（${METHOD_RESULT_LABELS[out.result] || '已完成'}），明天会按节奏回到复习。`);
+      res.className = 'result ok';
+    }
+    // 方法课不走「结束学习生成助记」：单独一套流程，不污染自由问答的会话词集
+    loadMethodEffect(true);
+  } catch (e) {
+    if (res) { setInkText(res, methodErrorText(e.message)); res.className = 'result fail'; }
+  }
+}
+
+function methodAbort() {
+  if (!methodState.roundId) { $('#methodStageCard').hidden = true; return; }
+  if (!confirm('结束这一套方法？没结算的部分不会记进记忆引擎。')) return;
+  methodState.roundId = null;
+  methodState.data = null;
+  methodState.draft = '';
+  $('#methodStageCard').hidden = true;
+  const res = $('#methodResult');
+  if (res) { setInkText(res, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 已结束，这一套未结算。'); res.className = 'result'; }
+}
+
+async function loadMethodEffect(force = false) {
+  const card = $('#methodEffectCard'), body = $('#methodEffectBody');
+  if (!card || !body) return;
+  if (!force && card.dataset.loaded === '1') return;
+  try {
+    const data = await api('/api/method/effect?days=30');
+    card.hidden = false;
+    card.dataset.loaded = '1';
+    body.replaceChildren();
+    if (!data.total) {
+      const empty = document.createElement('div');
+      empty.className = 'method-effect-empty';
+      empty.textContent = '还没有方法练习记录。先选一种方法练一次，这里就会出现效果对比。';
+      body.append(empty);
+      return;
+    }
+    const rows = document.createElement('div');
+    rows.className = 'method-effect-rows';
+    for (const m of data.methods) {
+      const row = document.createElement('div');
+      row.className = 'method-effect-row' + (m.runs ? '' : ' muted');
+      const name = document.createElement('span');
+      name.className = 'me-name';
+      name.textContent = m.title;
+      const runs = document.createElement('span');
+      runs.className = 'me-num';
+      runs.textContent = m.runs ? `${m.runs} 次 · ${m.words} 词` : '未练过';
+      const rate = document.createElement('span');
+      rate.className = 'me-rate' + (m.soloRate === null ? '' : m.soloRate >= 0.6 ? ' ok' : ' warn');
+      rate.textContent = m.soloRate === null ? '—' : `独立 ${Math.round(m.soloRate * 100)}%`;
+      row.append(name, runs, rate);
+      rows.append(row);
+    }
+    body.append(rows);
+  } catch { /* 静默：效果统计失败不影响练习 */ }
+}
+
 /* ================= v2.4.0：词文成章 —— 选词生成记忆文章 ================= */
 
 const storyState = {
@@ -2469,18 +2885,22 @@ const storyState = {
 };
 const STORY_TIP = {
   vocab: '选词 · 初筛 · 语境辨析',
+  method: '先自己产出，AI 只追问与收敛',
   story: '把选中的词写进一篇连贯短文：语境记忆 + 记忆钩子 + 检索自测，三管齐下',
 
 };
 
 async function switchStudySub(sub, { load = true } = {}) {
   $$('#studySubbar .study-sub-item').forEach(b => b.classList.toggle('active', b.dataset.sub === sub));
-  const vocab = $('#vocabPane'), story = $('#storyPane');
+  const vocab = $('#vocabPane'), story = $('#storyPane'), method = $('#methodPane');
   if (vocab) vocab.style.display = sub === 'vocab' ? '' : 'none';
   if (story) story.style.display = sub === 'story' ? '' : 'none';
+  if (method) method.style.display = sub === 'method' ? '' : 'none';
   const tip = $('#studySubTip');
   if (tip) tip.textContent = STORY_TIP[sub] || '';
-  if (sub === 'story') {
+  if (sub === 'method') {
+    methodInit();
+  } else if (sub === 'story') {
     /* v2.4.1：首次进入词文成章时若无题材 chips，先拉取题材渲染（loadConfig 只在设置页触发） */
     if (!$('#storyThemeRow .chip')) {
       try {

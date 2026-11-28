@@ -6,7 +6,7 @@
  */
 'use strict';
 
-const SHELL_CACHE = 'wb-shell-v4.7.0';
+const SHELL_CACHE = 'wb-shell-v4.8.0';
 const SHELL_ASSETS = [
   '/',
   '/index.html',

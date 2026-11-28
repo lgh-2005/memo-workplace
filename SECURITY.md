@@ -1,5 +1,6 @@
 # v4.0.0 安全审计与敏感信息扫描记录
 
+> v4.8.0（2026-11-28）：学习方法课的作答文本只经 `mdLite` 渲染或走文本节点，**不拼进 `innerHTML` 直接插入**；回合按 `owner` 校验（跨用户拿不到别人的 roundId），过期即 `expired`、未做完不允许结算，避免未完成练习被记成答错；`method_ledger.json` 只记方法名 / 结果 / 耗时 / 词表，**不记作答原文**（原文在 `learning_attempts`），损坏时改名留证而非静默覆盖。无新增外部请求，仍走 `fetchT` 超时护栏，CSP 与静态缓存策略不变。
 > v4.7.0（2026-11-28）：`setInkText` 刻意不走 `innerHTML`——状态行里混入的图标记号被逐段还原成元素，其余字符一律走文本节点，服务端错误信息不会被当 HTML 解析；水墨图标为同源静态 PNG（`/icons/ink/`，89 枚），经 `mask-image` 上色，CSP 与静态缓存策略不变；`/api/study/tasks/complete` 对已下线的 `exam_practice` 返回 400。
 > v4.4.1（2026-11-27）：新页头图版与 5 张 WebP 均为同源静态资源，CSP 未放宽（仍无 `unsafe-inline` script），快捷面板与设置索引只用 DOM 事件委托。新增交互仍在本地完成，不新增出站请求，用户数据与鉴权口径不变。
 > v4.4.0（2026-11-27）：首页词卡随已鉴权的 `/api/dashboard` 返回，沿用每用户隔离与 API `no-store`；只读取本地缓存与 ECDICT，不调用模型。WebP、独立 CSS 为同源静态资源，无 CSP 调整。

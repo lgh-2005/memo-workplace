@@ -907,7 +907,7 @@
 [data-style="mist"] .ink-ico,
 [data-style="mist"] .ink-toggle,
 [data-style="mist"] .ink-tab,
-[data-style="mist"] .ink-card,
+[data-style="mist"] .ink-ico,
 [data-style="mist"] .ink-btn,
 [data-style="mist"] .ink-chip,
 [data-style="mist"] .tab-icon,
@@ -936,7 +936,7 @@
 [data-style="mist"] .logs-tab .ink-tab { width: 15px; height: 15px; margin-inline-end: 6px; vertical-align: -0.18em; }
 
 /* 卡片标题 */
-[data-style="mist"] .card-title .ink-card { width: 16px; height: 16px; margin-inline-end: 7px; vertical-align: -0.17em; }
+[data-style="mist"] .card-title .ink-ico { width: 16px; height: 16px; margin-inline-end: 7px; vertical-align: -0.17em; }
 
 /* 按钮 / 胶囊 */
 [data-style="mist"] .btn .ink-btn { width: 15px; height: 15px; margin-inline-end: 6px; vertical-align: -0.16em; }
@@ -1071,8 +1071,11 @@
 [data-style="mist"] .ink-ruler { -webkit-mask-image: url('/icons/ink/ruler.png'); mask-image: url('/icons/ink/ruler.png'); }
 [data-style="mist"] .ink-tree { -webkit-mask-image: url('/icons/ink/tree.png'); mask-image: url('/icons/ink/tree.png'); }
 [data-style="mist"] .ink-tile { -webkit-mask-image: url('/icons/ink/tile.png'); mask-image: url('/icons/ink/tile.png'); }
-[data-style="mist"] .ink-card { -webkit-mask-image: url('/icons/ink/card.png'); mask-image: url('/icons/ink/card.png'); }
 [data-style="mist"] .ink-keyboard { -webkit-mask-image: url('/icons/ink/keyboard.png'); mask-image: url('/icons/ink/keyboard.png'); }
+/* v4.8.0：.ink-card 曾同时充当「卡片标题尺寸类」与「card.png 图标名」，CSS 顺序让后者胜出，
+   17 处卡片标题全部渲染成同一张 card.png（详见 v4.8.0 的 ink-ico 拆分）。
+   体积类已改名为 .ink-ico；这里只保留真正的 card.png 图标语义（测验「闪卡」）。 */
+[data-style="mist"] .ink-card { -webkit-mask-image: url('/icons/ink/card.png'); mask-image: url('/icons/ink/card.png'); }
 [data-style="mist"] .ink-scale { -webkit-mask-image: url('/icons/ink/scale.png'); mask-image: url('/icons/ink/scale.png'); }
 [data-style="mist"] .ink-broom { -webkit-mask-image: url('/icons/ink/broom.png'); mask-image: url('/icons/ink/broom.png'); }
 [data-style="mist"] .ink-hook { -webkit-mask-image: url('/icons/ink/hook.png'); mask-image: url('/icons/ink/hook.png'); }
@@ -1081,3 +1084,87 @@
 [data-style="mist"] .ink-arrows { -webkit-mask-image: url('/icons/ink/arrows.png'); mask-image: url('/icons/ink/arrows.png'); }
 [data-style="mist"] .ink-ban { -webkit-mask-image: url('/icons/ink/ban.png'); mask-image: url('/icons/ink/ban.png'); }
 [data-style="mist"] .ink-book-closed { -webkit-mask-image: url('/icons/ink/book-closed.png'); mask-image: url('/icons/ink/book-closed.png'); }
+
+/* 22 · 学习方法（v4.8.0）----------------------------------------------------
+   费曼 / 苏格拉底 / 对比辨析 / 空白回忆：四套「学生先产出、AI 只追问」的方法。
+   版式沿用晨雾纸面语言，与方法级卡片、关卡进度点、作答区、结果区一致。 */
+
+[data-style="mist"] .method-roster { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-top: 10px; }
+[data-style="mist"] .method-chip {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 3px;
+  padding: 11px 13px; border: 1px solid var(--border); border-radius: 14px;
+  background: var(--mist-soft); color: var(--text); text-align: start; cursor: pointer;
+  transition: border-color .18s ease, background .18s ease, transform .18s ease;
+}
+[data-style="mist"] .method-chip:hover { border-color: var(--primary); transform: translateY(-1px); }
+[data-style="mist"] .method-chip.active { border-color: var(--primary); background: var(--mist-soft); box-shadow: inset 0 0 0 1px var(--primary); }
+[data-style="mist"] .method-chip b { font-size: 13.5px; font-weight: 700; letter-spacing: .01em; }
+[data-style="mist"] .method-chip span { font-size: 11.5px; line-height: 1.45; color: var(--text-sub); }
+[data-style="mist"] .method-chip .ink-glyph { width: 18px; height: 18px; margin: 0 0 2px; color: var(--primary); }
+
+[data-style="mist"] .method-picked { margin-top: 10px; font-size: 12.5px; color: var(--text-sub); }
+[data-style="mist"] .method-picked.ok { color: var(--text); }
+[data-style="mist"] .method-goal-row { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+[data-style="mist"] .method-goal-row .input { flex: 1 1 auto; min-width: 0; }
+[data-style="mist"] .method-goal-row .btn { flex: 0 0 auto; }
+
+[data-style="mist"] .method-stage { margin-top: 12px; }
+[data-style="mist"] .method-progress { display: flex; align-items: center; gap: 6px; margin: 12px 0 4px; }
+[data-style="mist"] .method-dot { width: 22px; height: 4px; border-radius: 999px; background: var(--border); }
+[data-style="mist"] .method-dot.done { background: var(--primary); opacity: .45; }
+[data-style="mist"] .method-dot.now { background: var(--primary); }
+[data-style="mist"] .method-dots-label { margin-inline-start: 6px; font-size: 11.5px; color: var(--text-sub); }
+[data-style="mist"] .method-stage-head { display: inline-flex; align-items: center; }
+[data-style="mist"] .method-stage-head .ink-glyph { width: 17px; height: 17px; margin-inline-end: 7px; vertical-align: -0.2em; color: var(--primary); }
+
+[data-style="mist"] .method-body { margin-top: 8px; }
+[data-style="mist"] .method-say { font-size: 13px; color: var(--text-sub); margin-bottom: 8px; }
+[data-style="mist"] .method-question { font-size: 14.5px; line-height: 1.75; margin-bottom: 10px; }
+[data-style="mist"] .method-question p { text-indent: 0; }
+[data-style="mist"] .method-answer-form textarea {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 12px;
+  background: var(--mist-soft); color: var(--text); font: inherit; font-size: 14px; line-height: 1.7; resize: vertical;
+}
+[data-style="mist"] .method-answer-form textarea:focus { outline: none; border-color: var(--primary); }
+[data-style="mist"] .method-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+[data-style="mist"] .method-hint {
+  margin-top: 10px; padding: 9px 12px; border-inline-start: 3px solid var(--primary);
+  background: var(--mist-soft); border-radius: 10px; font-size: 13px; line-height: 1.7;
+}
+[data-style="mist"] .method-hint p { text-indent: 0; margin: 0; }
+
+[data-style="mist"] .method-feedback { padding: 11px 13px; border-radius: 12px; border: 1px solid var(--border); background: var(--mist-soft); }
+[data-style="mist"] .method-feedback.ok { border-color: color-mix(in srgb, var(--ok, #3f8f5f) 45%, var(--border)); }
+[data-style="mist"] .method-feedback.warn { border-color: color-mix(in srgb, var(--warn, #b4761f) 45%, var(--border)); }
+[data-style="mist"] .method-feedback-title { font-size: 13.5px; font-weight: 700; margin-bottom: 6px; }
+[data-style="mist"] .method-feedback-text { font-size: 13.5px; line-height: 1.75; }
+[data-style="mist"] .method-feedback-text p, [data-style="mist"] .method-feedback-gap p { text-indent: 2em; margin: 0 0 .4em; }
+[data-style="mist"] .method-feedback-gap { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 13px; color: var(--text-sub); }
+[data-style="mist"] .method-model { margin-top: 8px; font-size: 13px; }
+[data-style="mist"] .method-model summary { cursor: pointer; color: var(--primary); }
+[data-style="mist"] .method-model > div { margin-top: 6px; line-height: 1.7; }
+
+[data-style="mist"] .method-result-block { padding: 13px 14px; border-radius: 14px; border: 1px solid var(--border); background: var(--mist-soft); }
+[data-style="mist"] .method-result-note { font-size: 13px; line-height: 1.75; color: var(--text-sub); margin-top: 6px; }
+
+[data-style="mist"] .method-effect-rows { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+[data-style="mist"] .method-effect-row { display: grid; grid-template-columns: 1.2fr 1fr auto; gap: 10px; align-items: center; padding: 8px 11px; border-radius: 10px; background: var(--mist-soft); border: 1px solid var(--border); font-size: 13px; }
+[data-style="mist"] .method-effect-row.muted { opacity: .55; }
+[data-style="mist"] .method-effect-row .me-name { font-weight: 600; }
+[data-style="mist"] .method-effect-row .me-num { font-size: 11.5px; color: var(--text-sub); }
+[data-style="mist"] .method-effect-row .me-rate { font-variant-numeric: tabular-nums; font-size: 12.5px; }
+[data-style="mist"] .method-effect-row .me-rate.ok { color: var(--ok, #3f8f5f); }
+[data-style="mist"] .method-effect-row .me-rate.warn { color: var(--warn, #b4761f); }
+[data-style="mist"] .method-effect-empty { font-size: 13px; color: var(--text-sub); margin-top: 10px; }
+
+[data-style="mist"][data-theme="dark"] .method-chip { background: var(--mist-soft); }
+[data-style="mist"][data-theme="dark"] .method-chip.active { background: color-mix(in srgb, var(--primary) 16%, var(--mist-soft)); }
+
+@media (max-width: 640px) {
+  [data-style="mist"] .method-roster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  [data-style="mist"] .method-goal-row { flex-wrap: wrap; }
+  [data-style="mist"] .method-goal-row .btn { flex: 1 1 100%; min-height: 44px; }
+  [data-style="mist"] .method-actions .btn { min-height: 44px; }
+  [data-style="mist"] .method-effect-row { grid-template-columns: 1fr auto; }
+  [data-style="mist"] .method-effect-row .me-num { grid-column: 1 / -1; }
+}

@@ -28,7 +28,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand"><span class="mist-seal" aria-hidden="true">词</span><i class="mist-legacy-mark ink-ico ink-book" aria-hidden="true"></i>单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.7.0</span></div>
+  <div class="mobile-brand"><span class="mist-seal" aria-hidden="true">词</span><i class="mist-legacy-mark ink-ico ink-book" aria-hidden="true"></i>单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.8.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式"><i class="ink-toggle ink-moon"></i></button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式"><i class="ink-toggle ink-zen"></i></button>
@@ -44,7 +44,7 @@
       <span class="mist-seal" aria-hidden="true">词</span><i class="brand-mark ink-ico ink-book" aria-hidden="true"></i><span class="brand-text">英语单词学习工作台</span>
     </div>
     <div class="sidebar-head-tools">
-      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.7.0</span>
+      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.8.0</span>
       <!-- v4.3.1：侧边栏可折叠为图标窄栏（状态记忆在本设备） -->
       <button class="sidebar-toggle" id="sidebarToggle" type="button" title="折叠侧边栏" aria-label="折叠侧边栏" aria-expanded="true"><span class="sidebar-toggle-icon" aria-hidden="true">«</span><span class="sidebar-toggle-text">收起</span></button>
     </div>
@@ -118,7 +118,7 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <header class="page-heading mist-band mist-band-logs">
-      <div><h1>日志版块 <span class="ver mist-band-ver" id="logsVersionBadge">v4.7.0</span></h1></div>
+      <div><h1>日志版块 <span class="ver mist-band-ver" id="logsVersionBadge">v4.8.0</span></h1></div>
       <div class="mist-band-aside"><button class="btn" id="logsBackBtn"><i class="ink-glyph ink-only ink-arrow-left" aria-hidden="true"></i>返回</button></div>
     </header>
     <div class="logs-tabs" id="logsTabs">
@@ -295,7 +295,7 @@
   </div>
   <div id="report-workbench" class="report-source-panel"><div class="card card-collapsible" id="learningReportCard">
       <div class="card-title-row">
-        <div class="card-title"><i class="ink-card ink-reports" aria-hidden="true"></i>学习诊断报告（<span id="reportWinLabel">最近 7 天</span>）</div>
+        <div class="card-title"><i class="ink-ico ink-reports" aria-hidden="true"></i>学习诊断报告（<span id="reportWinLabel">最近 7 天</span>）</div>
         <div class="report-win-btns">
           <button type="button" class="btn mini report-win-btn active" data-days="7">7天</button>
           <button type="button" class="btn mini report-win-btn" data-days="14">14天</button>
@@ -366,15 +366,55 @@
     <div class="study-subbar card" id="studySubbar">
       <div class="study-subnav">
         <button class="study-sub-item active" data-sub="vocab" type="button"><i class="ink-glyph ink-letter-a" aria-hidden="true"></i>词汇精练</button>
+        <button class="study-sub-item" data-sub="method" type="button" id="methodSubBtn"><i class="ink-glyph ink-brain" aria-hidden="true"></i>学习方法</button>
         <button class="study-sub-item" data-sub="story" type="button" id="storySubBtn"><i class="ink-glyph ink-book" aria-hidden="true"></i>词文成章</button>
         <span class="study-sub-tip" id="studySubTip">从语境作答开始，按需要展开辨析</span>
+      </div>
+    </div>
+    <!-- v4.8.0：学习方法（费曼 / 苏格拉底 / 对比辨析 / 空白回忆），与词汇精练共用词表勾选 -->
+    <div id="methodPane" style="display:none">
+      <div class="card">
+        <div class="card-title-row" style="margin-bottom:0">
+          <div class="card-title" style="margin-bottom:0"><i class="ink-ico ink-brain" aria-hidden="true"></i>选方法</div>
+          <div class="row-gap" style="align-items:center">
+            <button class="btn small ghost" id="methodPickWordsBtn" type="button"><i class="ink-glyph ink-book" aria-hidden="true"></i>去词表勾词</button>
+          </div>
+        </div>
+        <div class="method-roster" id="methodRoster" role="group" aria-label="学习方法"></div>
+        <div class="method-picked" id="methodPicked" role="status">还没有选词</div>
+        <div class="method-goal-row">
+          <input type="text" id="methodGoal" class="input" placeholder="这次的目标（可留空），例如：分清 address 和 solve" autocomplete="off">
+          <button class="btn primary" id="methodStartBtn" type="button" disabled><i class="ink-btn ink-play"></i>开始</button>
+        </div>
+        <div class="result" id="methodResult"></div>
+      </div>
+
+      <div class="card method-stage" id="methodStageCard" hidden>
+        <div class="card-title-row" style="margin-bottom:0">
+          <div class="card-title" id="methodStageTitle" style="margin-bottom:0">学习方法</div>
+          <div class="row-gap" style="align-items:center">
+            <button class="btn small danger" id="methodAbortBtn" type="button">结束</button>
+          </div>
+        </div>
+        <div class="method-progress" id="methodProgress" aria-label="方法进度"></div>
+        <div class="method-body" id="methodBody"></div>
+      </div>
+
+      <div class="card" id="methodEffectCard" hidden>
+        <div class="card-title-row" style="margin-bottom:0">
+          <div class="card-title" style="margin-bottom:0"><i class="ink-ico ink-chart" aria-hidden="true"></i>方法效果</div>
+          <div class="row-gap" style="align-items:center">
+            <button class="btn small ghost" id="methodEffectRefresh" type="button"><i class="ink-glyph ink-refresh" aria-hidden="true"></i>刷新</button>
+          </div>
+        </div>
+        <div id="methodEffectBody"></div>
       </div>
     </div>
     <div id="storyPane" style="display:none">
       <div class="grid-2" style="align-items:start">
         <div class="card card-collapsible" id="storySelectCard">
           <div class="card-title-row" style="margin-bottom:0">
-            <div class="card-title" style="margin-bottom:0"><i class="ink-card ink-target" aria-hidden="true"></i>选词</div>
+            <div class="card-title" style="margin-bottom:0"><i class="ink-ico ink-target" aria-hidden="true"></i>选词</div>
             <button class="card-collapse-toggle" type="button" data-collapse-target="#storySelectBody" title="折叠/展开">收起</button>
           </div>
           <div class="card-collapse-body" id="storySelectBody">
@@ -404,7 +444,7 @@
         </div>
         <div class="card card-collapsible" id="storyParamCard">
           <div class="card-title-row" style="margin-bottom:0">
-            <div class="card-title" style="margin-bottom:0"><i class="ink-card ink-settings" aria-hidden="true"></i>AI 词汇分析与创作参数规划</div>
+            <div class="card-title" style="margin-bottom:0"><i class="ink-ico ink-settings" aria-hidden="true"></i>AI 词汇分析与创作参数规划</div>
             <button class="card-collapse-toggle" type="button" data-collapse-target="#storyParamBody" title="折叠/展开">收起</button>
           </div>
           <div class="card-collapse-body" id="storyParamBody">
@@ -418,10 +458,10 @@
             <div id="storyAnalysisBox" class="story-analysis-box" style="display:none">
               <div class="story-analysis-summary" id="storyAnalysisSummary"></div>
 
-              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px"><i class="ink-card ink-reports" aria-hidden="true"></i>AI 推荐篇幅与理由</div>
+              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px"><i class="ink-ico ink-reports" aria-hidden="true"></i>AI 推荐篇幅与理由</div>
               <div class="story-len-rec" id="storyLenRec"></div>
 
-              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px"><i class="ink-card ink-spark" aria-hidden="true"></i>词汇场景分类与情节线索建议</div>
+              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px"><i class="ink-ico ink-spark" aria-hidden="true"></i>词汇场景分类与情节线索建议</div>
               <div class="story-groups-list" id="storyGroupsList"></div>
 
               <div style="display:flex;gap:8px;align-items:center;margin-top:12px">
@@ -454,7 +494,7 @@
         <div class="card-collapse-body" id="storyResultBody">
           <div class="story-passage" id="storyPassage" style="margin-top:10px"></div>
           <div class="story-translation" id="storyTranslation" hidden></div>
-          <div class="card-title" style="margin-top:14px"><i class="ink-card ink-quill" aria-hidden="true"></i>词汇钩子</div>
+          <div class="card-title" style="margin-top:14px"><i class="ink-ico ink-quill" aria-hidden="true"></i>词汇钩子</div>
           <div class="story-hooks" id="storyHooks"></div>
           <div class="card-title" style="margin-top:14px"><i class="ink-glyph ink-quill" aria-hidden="true"></i>检索自测</div>
           <div class="story-quiz" id="storyQuiz"></div>
@@ -463,7 +503,7 @@
       </div>
       <div class="card card-collapsible">
         <div class="card-title-row" style="margin-bottom:0">
-          <div class="card-title" style="margin-bottom:0"><i class="ink-card ink-frame" aria-hidden="true"></i>历史文章</div>
+          <div class="card-title" style="margin-bottom:0"><i class="ink-ico ink-frame" aria-hidden="true"></i>历史文章</div>
           <div class="row-gap" style="align-items:center">
             <button class="btn small" id="storyHistRefresh">刷新</button>
             <button class="card-collapse-toggle" type="button" data-collapse-target="#storyHistBody" title="折叠/展开">收起</button>
@@ -478,7 +518,7 @@
       <!-- 词表浮层不占用学习工作区。 -->
       <aside class="word-panel card" id="wordPanel" inert aria-hidden="true" aria-label="词表" data-page-node-id="XLvWS2U7KuUAVrvzsrro3S">
         <div class="card-title-row word-panel-head" style="margin-bottom:0">
-          <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD" style="margin-bottom:0"><i class="ink-card ink-book" aria-hidden="true"></i>词表 <span class="word-panel-count" id="wordPanelCount"></span></div>
+          <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD" style="margin-bottom:0"><i class="ink-ico ink-book" aria-hidden="true"></i>词表 <span class="word-panel-count" id="wordPanelCount"></span></div>
           <button class="btn small ghost word-panel-close" id="wordPanelClose" type="button" title="收起词表"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
         </div>
         <div class="card-collapse-body" id="wordPanelCollapseBody">
@@ -776,7 +816,7 @@
     </div>
     <details class="management-fold" id="corpusManagement" data-admin-only><summary>管理语料</summary><div class="card card-collapsible" data-page-node-id="59dAVKg9z39kffWsnAeyIU">
       <div class="card-title-row" style="margin-bottom:0" data-page-node-id="kjw1OQaUbiIFvrFPjuVHfs">
-        <div class="card-title" data-page-node-id="Djl90jvegO63Qnpd13BEDy" style="margin-bottom:0"><i class="ink-card ink-download" aria-hidden="true"></i>导入语料</div>
+        <div class="card-title" data-page-node-id="Djl90jvegO63Qnpd13BEDy" style="margin-bottom:0"><i class="ink-ico ink-download" aria-hidden="true"></i>导入语料</div>
         <div class="row-gap" style="align-items:center">
           <button class="btn" id="kbLogBtn" data-page-node-id="XzcHlTlXM218R3pkKeXgEd"><i class="ink-glyph ink-scroll" aria-hidden="true"></i>导入日志</button>
           <button class="card-collapse-toggle" type="button" data-collapse-target="#kbImportCollapseBody" title="折叠/展开">收起</button>
@@ -928,7 +968,7 @@
         </div>
 
         <details class="model-services"><summary>其他服务：生图、词典、文档解析与搜索</summary><div class="grid-2 model-service-grid"><div class="card" data-page-node-id="Kmb9Ms5FM0029EuD90rbYn">
-          <div class="card-title" data-page-node-id="4BgRG97E7XlLCbPbBZZwqD"><i class="ink-card ink-palette" aria-hidden="true"></i>AI 生图 · 助记图 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="02DhaRKG86rEW66MBaWWek"></span></div>
+          <div class="card-title" data-page-node-id="4BgRG97E7XlLCbPbBZZwqD"><i class="ink-ico ink-palette" aria-hidden="true"></i>AI 生图 · 助记图 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="02DhaRKG86rEW66MBaWWek"></span></div>
           <div class="grid-2" style="gap:10px" data-page-node-id="OjtgimUdcGhU8cF2vSiZoN">
             <div data-page-node-id="SFciM1OtpMWcl6WjOnA0GC"><label class="field-label" data-page-node-id="uYwviNAS0OSkVDczSmMKf1">Base URL</label><input type="text" id="cfgImgUrl" class="input" placeholder="https://open.bigmodel.cn/api/paas/v4" data-page-node-id="5rEvkiXAtulgQLPt2hPmPZ"></div>
             <div data-page-node-id="sEbf5q4Q0jTg4oHC1GdMJv"><label class="field-label" data-page-node-id="ipF4cJKKzT2csmMlXfl4KO">模型</label><input type="text" id="cfgImgModel" class="input" placeholder="cogview-4 / dall-e-3 / 中转站生图模型…" data-page-node-id="rI6Q8ZRO2Qrl4pbTsAAyS8"></div>
@@ -943,7 +983,7 @@
         </div>
 
         <div class="card" data-page-node-id="w2H52f8e71uDOJfRzo8Qws">
-          <div class="card-title" data-page-node-id="mQHBxBMTS40pTZAKREQug4"><i class="ink-card ink-book" aria-hidden="true"></i>韦氏权威词典 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="1R37aTKWfvu445iyUULcWw"></span></div>
+          <div class="card-title" data-page-node-id="mQHBxBMTS40pTZAKREQug4"><i class="ink-ico ink-book" aria-hidden="true"></i>韦氏权威词典 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="1R37aTKWfvu445iyUULcWw"></span></div>
           <div class="grid-2" style="gap:10px" data-page-node-id="74ege7vdbF45B53qsxVrEs">
             <div data-page-node-id="lyHx1y0UCBgQDoR4BK1fms">
               <label class="field-label" data-page-node-id="vB0IRBaoWk7bCHZ3lusedo">Learner's Key（学习者版）</label>
@@ -962,7 +1002,7 @@
         </div>
 
         <div class="card" data-page-node-id="3KEAR4lrYV4UIubqLvxMOc">
-          <div class="card-title" data-page-node-id="AGovmfM6faqAco06HvHi9O"><i class="ink-card ink-satellite" aria-hidden="true"></i>MinerU 文档解析 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ulwvQNTOoCGk7mS0z40PVj"></span></div>
+          <div class="card-title" data-page-node-id="AGovmfM6faqAco06HvHi9O"><i class="ink-ico ink-satellite" aria-hidden="true"></i>MinerU 文档解析 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ulwvQNTOoCGk7mS0z40PVj"></span></div>
           <label class="field-label" data-page-node-id="ECR7cNZvSVg7Ni5zvPLxjT">API Token</label>
           <input type="password" id="cfgMineruKey" class="input" placeholder="留空 = 沿用已保存的 Token" data-page-node-id="wEYALBIcELR5qAeQSTi0BV">
           <div class="row-gap" data-page-node-id="JsD237OmkDacrFSKbsD9jH">
@@ -973,7 +1013,7 @@
         </div>
 
         <div class="card" data-page-node-id="uKM8PqIv10ZqUwUaHgIP4m">
-          <div class="card-title" data-page-node-id="cE0PgOaOMLilx0j3Q9DttK"><i class="ink-card ink-globe" aria-hidden="true"></i>网络搜索服务 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="iMbAn50xuQsESdGfqMIIFc"></span></div>
+          <div class="card-title" data-page-node-id="cE0PgOaOMLilx0j3Q9DttK"><i class="ink-ico ink-globe" aria-hidden="true"></i>网络搜索服务 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="iMbAn50xuQsESdGfqMIIFc"></span></div>
           <div class="grid-2" style="gap:10px" data-page-node-id="yQyfn9BxQwWfAr7PdIuEi2">
             <div data-page-node-id="p1P3TetslGuA3f7cFJr5sw">
               <label class="field-label" data-page-node-id="zYqWDT1BKyoe4PaFfwt2Q6">服务商预设</label>
@@ -1010,7 +1050,7 @@
           </div>
           <div class="result" id="maimemoTestResult" data-page-node-id="KAArJ06KNpXxScT4iYGdzW"></div>
 
-          <div class="card-title" style="margin-top:20px" data-page-node-id="PhILVzEdvL2qupWLvUIOZG"><i class="ink-card ink-book" aria-hidden="true"></i>云词库绑定 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ktFrwimYhVBTjsmtrqiYcU"></span></div>
+          <div class="card-title" style="margin-top:20px" data-page-node-id="PhILVzEdvL2qupWLvUIOZG"><i class="ink-ico ink-book" aria-hidden="true"></i>云词库绑定 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ktFrwimYhVBTjsmtrqiYcU"></span></div>
           <div class="row-gap" data-page-node-id="JwlzETMQaY6vWUadaASpI5">
             <button class="btn" id="loadNotepadsBtn" data-page-node-id="Se8b40c842mgTJBECKLGz4">拉取云词库列表</button>
             <select id="cfgNotepad" class="input" style="flex:1;min-width:0" data-page-node-id="yFVKabzY8FseQyxkEdYuHf"><option value="" data-page-node-id="h9Q1ynx7abqhwKFA4w98ZY">— 未绑定 —</option></select>
@@ -1025,7 +1065,7 @@
       <h2 class="settings-panel-title"><i class="ink-glyph ink-lock" aria-hidden="true"></i>登录与安全</h2>
       <div class="settings-section-body">
         <div class="card" id="authCfgCard">
-          <div class="card-title"><i class="ink-card ink-key" aria-hidden="true"></i>Token 凭证登录 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
+          <div class="card-title"><i class="ink-ico ink-key" aria-hidden="true"></i>Token 凭证登录 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
           <label class="check-row"><input type="checkbox" id="cfgAuthEnabled"> 启用 Token 凭证登录</label>
           <label class="field-label" style="margin-top:8px">Token 凭证 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（留空 = 沿用已保存）</span></label>
           <input type="password" id="cfgAuthToken" class="input" placeholder="留空 = 沿用已保存的 Token" autocomplete="new-password">
@@ -1044,7 +1084,7 @@
       <h2 class="settings-panel-title">同步与备份</h2>
       <div class="settings-section-body">
         <div class="card" data-page-node-id="cS7dFlHJTmZRRhAhkX1XbF">
-          <div class="card-title" data-page-node-id="5V4bXd8RDP6gAFTrUGjeKZ"><i class="ink-card ink-refresh" aria-hidden="true"></i>自动同步</div>
+          <div class="card-title" data-page-node-id="5V4bXd8RDP6gAFTrUGjeKZ"><i class="ink-ico ink-refresh" aria-hidden="true"></i>自动同步</div>
           <label class="check-row" data-page-node-id="cX3a8Ep0VmBMi5TEFHvu94"><input type="checkbox" id="cfgAutoSync" data-page-node-id="xADfyiZ63M62FWEpJpJYYr"> 开启定时同步</label>
           <label class="field-label" data-page-node-id="2XiEtQEnCY95hxTVgcMuFD">间隔（分钟）</label>
           <input type="number" id="cfgSyncMinutes" class="input" value="60" min="5" data-page-node-id="F169XDHWMTTFeTAFHQQ1nx">
@@ -1052,7 +1092,7 @@
         </div>
 
         <div class="card" data-admin-only>
-          <div class="card-title"><i class="ink-card ink-shield" aria-hidden="true"></i>数据备份与恢复 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
+          <div class="card-title"><i class="ink-ico ink-shield" aria-hidden="true"></i>数据备份与恢复 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
 
           <div class="row-gap">
             <button class="btn primary" id="backupCreateBtn"><i class="ink-glyph ink-package" aria-hidden="true"></i>立即创建备份</button>
@@ -1073,7 +1113,7 @@
       <div class="settings-section-body">
         <div class="card">
           <div class="card-title-row">
-            <div class="card-title"><i class="ink-card ink-quill" aria-hidden="true"></i>模型提示词 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
+            <div class="card-title"><i class="ink-ico ink-quill" aria-hidden="true"></i>模型提示词 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
             <button class="btn" id="promptResetAllBtn"><i class="ink-btn ink-refresh"></i>全部恢复默认</button>
           </div>
           <div id="promptRegistry"></div>
@@ -1082,7 +1122,7 @@
         <!-- v2.4.1：子版块「文章题材」——词文成章题材自定义 -->
         <div class="card" id="storyThemesCard">
           <div class="card-title-row">
-            <div class="card-title"><i class="ink-card ink-book" aria-hidden="true"></i>文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
+            <div class="card-title"><i class="ink-ico ink-book" aria-hidden="true"></i>文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
             <button class="btn" id="storyThemesResetBtn"><i class="ink-btn ink-refresh"></i>恢复内置题材</button>
           </div>
           <div class="story-themes-editor">

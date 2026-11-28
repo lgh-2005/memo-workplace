@@ -24,7 +24,7 @@ const inkWriter = appSrc.slice(appSrc.indexOf('function inkFragment('), appSrc.i
 const EMOJI = /[\u{1F000}-\u{1FAFF}\u2600-\u27BF\u2B00-\u2BFF\uFE0F]/u;
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.7.0'],
+  ['package version', packageJson.version === '4.8.0'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
@@ -65,7 +65,38 @@ const required = [
   ['v4.7.0 status lines go through setInkText', appSrc.includes('function setInkText(') && appSrc.includes('function inkFragment(') && !/\.textContent\s*=\s*(`|')<i class="ink-glyph/.test(appSrc)],
   ['v4.7.0 setInkText never parses arbitrary html', !/innerHTML/.test(inkWriter) && /appendChild\(inkFragment\(s\)\)/.test(inkWriter) && inkWriter.includes('document.createTextNode')],
   ['v4.7.0 accent options are plain text', !indexHtml.includes('\u{1F1FA}\u{1F1F8}') && indexHtml.includes('>美式发音<') && indexHtml.includes('>英式发音<')],
-  ['v4.7.0 sw precaches the whole icon family', inkFiles.every(name => sw.includes(`'/icons/ink/${name}'`)) && sw.includes("'wb-shell-v4.7.0'")],
+  ['v4.7.0 sw precaches the whole icon family', inkFiles.every(name => sw.includes(`'/icons/ink/${name}'`))],
+  // v4.8.0：学习方法（费曼 / 苏格拉底 / 对比辨析 / 空白回忆）——同一引擎四种关卡机，
+  // 结果折算 SRS 并记账；四套提示词都进 DEFAULT_PROMPTS（设置页可改）。
+  ['v4.8.0 method registry has four methods', ['feynman', 'socratic', 'contrast', 'blank'].every(id => new RegExp(`${id}: \\{\\s*\\n\\s*title:`).test(serverSrc)) && (serverSrc.match(/stages: \['\w+', '\w+', '\w+'\]/g) || []).length >= 4],
+  ['v4.8.0 every method has a prompt in DEFAULT_PROMPTS', ['feynman', 'socratic', 'contrast', 'blank'].every(id => serverSrc.includes(`id: 'method_${id}'`) && serverSrc.includes(`method_${id}: {`))],
+  ['v4.8.0 method routes exist', ["'/api/method/start'", "'/api/method/turn'", "'/api/method/settle'", "'/api/method/list'", "'/api/method/effect'"].every(r => serverSrc.includes(r))],
+  ['v4.8.0 method settle writes srs + ledger', serverSrc.includes('function settleMethodRound(') && serverSrc.includes('applyQuizSrsSession(items, round.method)') && serverSrc.includes('recordMethodRun({') && serverSrc.includes("kind: 'method_practice'")],
+  ['v4.8.0 method result maps to srs grade', /METHOD_RESULT_TO_GRADE = \{ independent: 'good', assisted: 'hard', needs_work: 'again' \}/.test(serverSrc)],
+  ['v4.8.0 method ledger is backed up and validated', serverSrc.includes("const METHOD_LEDGER_FILE = 'method_ledger.json'") && serverSrc.includes('isMethodLedgerShape') && (serverSrc.match(/isMethodLedgerShape\(v\.obj\)/g) || []).length >= 3],
+  ['v4.8.0 method page wired in front end', ['methodPane', 'methodRoster', 'methodStageCard', 'methodEffectCard'].every(id => indexHtml.includes(`id="${id}"`)) && appSrc.includes("'/api/method/start'") && appSrc.includes("'/api/method/settle'") && appSrc.includes('method_practice:')],
+  ['v4.8.0 no method answer parsed as html', !/innerHTML = answer\b/.test(appSrc) && appSrc.includes('mdLite(data.feedback.coaching')],
+  ['v4.8.0 sw cache name bumped', sw.includes("'wb-shell-v4.8.0'")],
+  // v4.8.0：图标类「撞名」契约。v4.6/v4.7 的门禁只查「每个 PNG 都有 CSS 映射」，
+  // 没查「同一个元素上两个 ink-* 类谁胜出」——`ink-card` 既当尺寸类又当图标名，
+  // CSS 顺序让后出现的 card.png 覆盖掉前面真正的图标，17 处卡片标题全部画成同一张卡。
+  // 现在尺寸类固定叫 ink-ico，图标名不再兼作尺寸类。
+  ['v4.8.0 icon size class does not collide with icon names',
+    /\n\[data-style="mist"\] \.ink-ico,/.test(mistCss) && !/\[data-style="mist"\] \.ink-ico \{ -webkit-mask-image/.test(mistCss) &&
+    ['glyph', 'only', 'ico'].every(name => !new RegExp(`\\.ink-${name} \\{[^}]*mask-image`).test(mistCss))],
+  ['v4.8.0 no icon element carries two mask-bearing classes', (() => {
+    // 一个元素上只允许一个「承载 mask」的 ink-* 类；ink-glyph / ink-only / ink-ico 是尺寸/形态类，不承载 mask。
+    const carriers = new Set([...mistCss.matchAll(/\[data-style="mist"\] \.ink-([a-z0-9-]+) \{[^}]*?mask-image: url\('\/icons\/ink\/[a-z0-9-]+\.png'\)/g)].map(m => m[1]));
+    const sizeOnly = new Set(['glyph', 'only', 'ico']);
+    for (const src of [indexHtml, appSrc]) {
+      for (const m of src.matchAll(/class="([^"]*)"/g)) {
+        const ink = m[1].split(/\s+/).filter(t => t.startsWith('ink-')).map(t => t.slice(4));
+        const masked = ink.filter(t => carriers.has(t) && !sizeOnly.has(t));
+        if (new Set(masked).size > 1) return false;
+      }
+    }
+    return true;
+  })()],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],
@@ -105,6 +136,8 @@ const required = [
   // v4.1.0：词汇精练「AI 带练」——出题 / 判分 / 关卡推进 / 降级；
   // v4.2.0 扩到 34 项断言，补「词表悬浮球」与「词群联动（多词上下文 / focus 归属）」契约
   ['tutor drill smoke', exists(join(root, 'scripts', 'tutor-drill-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('tutor-drill-smoke.mjs')],
+  // v4.8.0：学习方法（费曼 / 苏格拉底 / 对比辨析 / 空白回忆）——回合语义 + 折算 SRS + 账本
+  ['method smoke', exists(join(root, 'scripts', 'method-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('method-smoke.mjs')],
   ['static cache smoke', exists(join(root, 'scripts', 'static-cache-smoke.mjs')) && (await readFile(join(root, 'scripts', 'test.mjs'), 'utf8')).includes('static-cache-smoke.mjs')],
   ['static cache contract in server', (await readFile(join(root, 'server.js'), 'utf8')).includes('function serveStaticFile') && (await readFile(join(root, 'server.js'), 'utf8')).includes("'Cache-Control': 'no-cache'")],
 ];

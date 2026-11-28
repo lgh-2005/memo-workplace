@@ -27,6 +27,7 @@ await run(process.execPath, ['scripts/ecdict-bubble-ui-smoke.mjs']);
 await run(process.execPath, ['scripts/exam-analysis-smoke.mjs']);
 await run(process.execPath, ['scripts/vocab-chat-smoke.mjs']);   // v3.8.1：词汇精练单次会话请求数回归
 await run(process.execPath, ['scripts/tutor-drill-smoke.mjs']);  // v4.1.0：AI 带练回合语义（出题/判分/推进/降级）
+await run(process.execPath, ['scripts/method-smoke.mjs']);       // v4.8.0：学习方法回合语义 + 折算 SRS + 账本
 await run(process.execPath, ['scripts/static-cache-smoke.mjs']); // v3.8.2：静态资源条件请求 + 复制入口 HTTP 降级
 await run(process.execPath, ['scripts/exam-analysis-audit.mjs', '--strict']);
 

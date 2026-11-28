@@ -61,6 +61,8 @@ const QUIZ_SRS_FILE = path.join(DATA_DIR, 'quiz_srs.json');
 const QUIZ_SESSION_FILE = path.join(DATA_DIR, 'quiz_session.json');
 // v3.3.6：今日任务中心与考试计划（按用户隔离，随备份恢复）
 const STUDY_PLAN_FILE = 'study_plan.json';
+// v4.8.0：学习方法账本（哪个词用哪种方法有效）——按用户隔离，随备份恢复
+const METHOD_LEDGER_FILE = 'method_ledger.json';
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5178;
 // 本机默认只监听 127.0.0.1；云服务器部署时设置 HOST=0.0.0.0（建议配合 nginx/防火墙）
 const HOST = process.env.HOST || '127.0.0.1';
@@ -440,6 +442,7 @@ const USER_DATA_FILES = [
   { file: 'essays.json', json: true },
   { file: 'llm_usage.json', json: true },   // v3.2.0：AI 用量统计
   { file: STUDY_PLAN_FILE, json: true },    // v3.3.6：考试计划/任务完成状态
+  { file: METHOD_LEDGER_FILE, json: true, methodLedger: true },   // v4.8.0：学习方法效果账本
 ];
 function backupFileSpecs() {
   const specs = [];
@@ -684,7 +687,7 @@ function migrateToMultiUser(adminPasswordRaw) {
 
   // 迁移 per-user 数据文件
   for (const fn of ['db.json', 'chat_sessions.json', 'learning_attempts.json',
-    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json', STUDY_PLAN_FILE]) {
+    'quiz_srs.json', 'quiz_session.json', 'essays.json', 'llm_usage.json', STUDY_PLAN_FILE, METHOD_LEDGER_FILE]) {
     const src = path.join(DATA_DIR, fn);
     if (fs.existsSync(src)) {
       try { fs.renameSync(src, path.join(userDir(id), fn)); }
@@ -771,6 +774,19 @@ function appendErrorLog(entry) {
 
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
+  {
+    version: '4.8.0', date: '2026-11-28', title: '学习方法 · 结果进记忆引擎',
+    items: [
+      'AI 学习原本是四套互不通账的入口：微课只讲「老师教 → 你复述」、词文成章只标记「已完成」、带练后端还在但前端零调用、练完的结果全部留在页面内存里，刷新就散。',
+      '新增「学习方法」子页与四种方法：费曼（讲给外行听 → 被追问 → 简化重讲）、苏格拉底（先给判断 → 被连续反问 → 自己修正）、对比辨析（找差别 → 说清差别 → 给一条规则）、空白回忆（凭记忆写 → 对照找漏 → 只补缺口）。',
+      '四种方法共用同一套回合引擎与服务端权威关卡机：答对才进下一关、答错留在本关换个角度再考、末关才出结果；模型只决定「这一关问什么」，不决定「能不能过」。',
+      '结果统一折算进记忆引擎：独立答对 → good、提示后答对 → hard、仍需补教 → again（同时进错题本）。练完的词明天会按 SRS 节奏回到复习队列，这是此前「接 SRS 是下一步」的落地。',
+      '新增 data/method_ledger.json 记账（每种方法练了几次、独立答对率、覆盖多少词），方法页与学习报告可据此比较「哪种方法对哪些词更有效」。',
+      '四套方法提示词都进 DEFAULT_PROMPTS，设置页可自行改写；结果一律落 learning_attempts（kind=method_practice），报告里与测验分开统计。',
+      '降级照旧：未配置服务商、上游吐非 JSON、回合过期一律 ok:false 优雅提示，绝不把学习者卡在一个出不了题的界面里。',
+      '无数据迁移（新增文件按需创建）、无新增依赖、无配置项。',
+    ],
+  },
   {
     version: '4.7.0', date: '2026-11-28', title: '图标全站清空 · 残余 emoji 归零',
     items: [
@@ -1252,6 +1268,7 @@ const VALID_ATTEMPT_KINDS = new Set([
   'vocab_context',
   'vocab_cloze',
   'sentence_analysis',
+  'method_practice',
 ]);
 const VALID_ATTEMPT_RESULTS = new Set([
   'pending',
@@ -3949,6 +3966,77 @@ const DEFAULT_PROMPTS = {
       '- 收到「三关全部完成」的指令时，task 必须为 null 且 wordFinished 为 true。',
       '- blank / write 题的 options 给空数组，把输入提示写进 placeholder。',
       '- focus 必须逐字使用给定词表里的词；拿不准就给空数组 []，绝不自造。',
+    ].join('\n')
+  },
+  method_feynman: {
+    id: 'method_feynman',
+    title: '费曼学习法（讲给外行听）',
+    desc: '学习方法页「费曼」系统提示词：学习者先用白话讲清一个词，AI 只追问与收敛，绝不代讲',
+    template: [
+      '你是「费曼学习法」教练，面向中国考研 / 六级学习者。学生必须先产出，你只负责追问与收敛，绝不代讲。',
+      '【三关】第 1 关「讲给外行听」→ 第 2 关「被追问」→ 第 3 关「简化重讲」。',
+      '【本方法要求】用最朴素的话把这个词讲清楚，不堆术语；能用上你自己的例子。',
+      '【判分口径】判「解释是否让完全不懂的人也能用对」：只报定义不给用法 → 不及格；术语堆砌而没有白话解释 → 不及格；讲错义项的边界（把 A 义说成 B 义）→ 不满分。',
+      '【规则】',
+      '1. 一次只问一个问题，问题必须当场可作答，不要出选择题、不要给选项。',
+      '2. 学生答完再判：先判 pass / reteach，再给不超过 60 字的点评；reteach 时指出具体缺口并给一个更聚焦的追问。',
+      '3. 学生答对结论但说不出依据，判 reteach；学生用了术语但没解释，判 reteach。',
+      '4. 绝不能替学生把答案讲完；只在学生通过后才补充一句「可以这样记」。',
+      '5. 中文点评、英文例词；只输出 JSON，不要代码围栏。',
+      '【JSON】判分回合：{"status":"pass 或 reteach","coaching":"点评","gap":"缺口","model":"可选示范"}；出题回合：{"say":"引导","question":"问题","placeholder":"输入提示"}。',
+    ].join('\n')
+  },
+  method_socratic: {
+    id: 'method_socratic',
+    title: '苏格拉底提问（不给答案只反问）',
+    desc: '学习方法页「苏格拉底」系统提示词：学习者先给判断，AI 连续反问，直到学习者自己修正',
+    template: [
+      '你是「苏格拉底提问」教练，面向中国考研 / 六级学习者。你不给答案，只靠反问让学生自己发现漏洞。',
+      '【三关】第 1 关「先给判断」→ 第 2 关「被反问」→ 第 3 关「修正判断」。',
+      '【本方法要求】先说出你的判断和依据，然后接受连续反问，直到你自己发现问题并修正。',
+      '【判分口径】判「修正后的判断是否有依据且承认了原来的漏洞」：只是重复原判断 → 不及格；承认错误但说不出为什么 → 不及格（会继续追问）。',
+      '【规则】',
+      '1. 一次只问一个问题，问题必须当场可作答，不要出选择题。',
+      '2. 反问要针对学生的具体说法，不能是空泛的「你再想想」。',
+      '3. 学生答完再判：先判 pass / reteach，再给不超过 60 字的点评；reteach 时指出具体缺口并给一个更聚焦的追问。',
+      '4. 绝不能直接说出正确答案；只有学生通过后，才可以点一句「你现在这个判断为什么站得住」。',
+      '5. 中文点评、英文例词；只输出 JSON，不要代码围栏。',
+      '【JSON】判分回合：{"status":"pass 或 reteach","coaching":"点评","gap":"缺口","model":"可选示范"}；出题回合：{"say":"引导","question":"问题","placeholder":"输入提示"}。',
+    ].join('\n')
+  },
+  method_contrast: {
+    id: 'method_contrast',
+    title: '对比辨析（两版句子差在哪）',
+    desc: '学习方法页「对比辨析」系统提示词：学习者指出关键差异并上升为可复用规则',
+    template: [
+      '你是「对比辨析」教练，面向中国考研 / 六级学习者。你给两句只差关键表达的句子，让学生自己找出差异。',
+      '【三关】第 1 关「找差别」→ 第 2 关「说清差别」→ 第 3 关「给一条规则」。',
+      '【本方法要求】指出两句里同一处关键表达的差别，说清它改变了什么，再给一条能复用的判断规则。',
+      '【判分口径】判「是否指出了具体语言差异（而不是语境差异）并把它上升为可复用规则」：只说「意思不同」→ 不及格；规则只对这一个句子成立 → 不满分。',
+      '【规则】',
+      '1. 对比句必须是完整、自然、无挖空的英文句，两句只差一个关键表达。',
+      '2. 一次只问一个问题，不要出选择题，也不要在题干里写出答案。',
+      '3. 学生答完再判：先判 pass / reteach，再给不超过 60 字的点评；reteach 时指出具体缺口并给一个更聚焦的追问。',
+      '4. 学生只描述语境差别（「一个是公司一个是团队」）时判 reteach，要求他说语言层面的差异。',
+      '5. 中文点评、英文例句；只输出 JSON，不要代码围栏。',
+      '【JSON】判分回合：{"status":"pass 或 reteach","coaching":"点评","gap":"缺口","model":"可选示范"}；出题回合：{"say":"引导","question":"问题","placeholder":"输入提示"}（问题里可内联两句英文）。',
+    ].join('\n')
+  },
+  method_blank: {
+    id: 'method_blank',
+    title: '空白回忆（合上讲义全写下来）',
+    desc: '学习方法页「空白回忆」系统提示词：先凭记忆写，再对照找漏，最后只补缺口',
+    template: [
+      '你是「空白回忆」教练，面向中国考研 / 六级学习者。学生先凭记忆写，你只对照找漏，不提前给答案。',
+      '【三关】第 1 关「凭记忆写下来」→ 第 2 关「对照漏了什么」→ 第 3 关「补上缺口」。',
+      '【本方法要求】合上讲义，把关于这个词你知道的一切都写下来（义项 / 搭配 / 例句 / 易混），再对照找漏。',
+      '【判分口径】判「回忆的覆盖面与准确度」：漏掉核心义项或有硬错 → 不及格；覆盖面够但有事实错误 → 只算提示后答对。',
+      '【规则】',
+      '1. 第 1 关绝不能在题干里出现释义、搭配或例句——学生必须真的凭记忆写。',
+      '2. 第 2 关才给出对照标准（义项 / 搭配 / 例句 / 易混四块），让学生自己标漏。',
+      '3. 学生答完再判：先判 pass / reteach，再给不超过 60 字的点评；reteach 时指出具体缺口。',
+      '4. 中文点评、英文例词；只输出 JSON，不要代码围栏。',
+      '【JSON】判分回合：{"status":"pass 或 reteach","coaching":"点评","gap":"缺口","model":"可选示范"}；出题回合：{"say":"引导","question":"问题","placeholder":"输入提示"}。',
     ].join('\n')
   },
   mnemonic_gen: {
@@ -6652,6 +6740,455 @@ async function turnTutorLesson(round, { revision, move, answer: rawAnswer }) {
   return response;
 }
 
+/* ================================================================== */
+/* v4.8.0：学习方法（method）—— 费曼 / 苏格拉底 / 对比辨析 / 空白回忆      */
+/*                                                                     */
+/* 与微课（lesson）的区别：微课是「老师教 → 学生复述」，四关有标准答案式   */
+/* 的 expected；方法课是「学生先产出，AI 只做追问与收敛」，判分标准不是    */
+/* 对错而是「解释是否覆盖了义项、依据、边界」。因此：                     */
+/*   ① 每套方法有自己的关卡序列与「产出要求」，服务端决定能不能过关；      */
+/*   ② 判分仍由 LLM 做，但归一化到三档 independent/assisted/needs_work，   */
+/*      与微课共用同一 result 口径，便于统一折算 SRS；                    */
+/*   ③ 结果一律落 learning_attempts（kind=method_practice）并折算        */
+/*      again/hard/good 写入 quiz_srs——「讲不清楚」明天就会回到复习队列。 */
+/* ================================================================== */
+
+const METHOD_TTL = 40 * 60 * 1000;
+
+/** 方法注册表：id → 名称/关卡序列/产出要求/交接给模型的漏斗。 */
+const METHOD_SPECS = {
+  feynman: {
+    title: '费曼学习法',
+    stages: ['plain', 'probe', 'refine'],
+    stageTitles: { plain: '讲给外行听', probe: '被追问', refine: '简化重讲' },
+    need: '用最朴素的话把这个词讲清楚，不堆术语；能用上你自己的例子',
+    gradeHint: '判「解释是否让完全不懂的人也能用对」：只报定义不给用法 → 不及格；术语堆砌而没有白话解释 → 不及格；讲错义项的边界（把 A 义说成 B 义）→ 不满分。',
+  },
+  socratic: {
+    title: '苏格拉底提问',
+    stages: ['claim', 'question', 'revise'],
+    stageTitles: { claim: '先给判断', question: '被反问', revise: '修正判断' },
+    need: '先说出你的判断和依据，然后接受连续反问，直到你自己发现问题并修正',
+    gradeHint: '判「修正后的判断是否有依据且承认了原来的漏洞」：只是重复原判断 → 不及格；承认错误但说不出为什么 → 不及格（会继续追问）。',
+  },
+  contrast: {
+    title: '对比辨析',
+    stages: ['spot', 'explain', 'generalize'],
+    stageTitles: { spot: '找差别', explain: '说清差别', generalize: '给一条规则' },
+    need: '指出两句里同一处关键表达的差别，说清它改变了什么，再给一条能复用的判断规则',
+    gradeHint: '判「是否指出了具体语言差异（而不是语境差异）并把它上升为可复用规则」：只说「意思不同」→ 不及格；规则只对这一个句子成立 → 不满分。',
+  },
+  blank: {
+    title: '空白回忆',
+    stages: ['dump', 'compare', 'patch'],
+    stageTitles: { dump: '凭记忆写下来', compare: '对照漏了什么', patch: '补上缺口' },
+    need: '合上讲义，把关于这个词你知道的一切都写下来（义项 / 搭配 / 例句 / 易混），再对照找漏',
+    gradeHint: '判「回忆的覆盖面与准确度」：漏掉核心义项或有硬错 → 不及格；覆盖面够但有事实错误 → 只算提示后答对。',
+  },
+};
+
+const METHOD_IDS = Object.keys(METHOD_SPECS);
+
+/** 方法回合独立一张表（不与微课 tutorMapRounds 混用，避免两边淘汰/校验互相干扰）。 */
+const methodRounds = new Map();
+
+/** 存回合：返回同一个对象引用，后续 revise 直接生效；超时或超量时淘汰最旧的空闲回合。 */
+function storeMethodRound(round) {
+  const now = Date.now();
+  for (const [id, active] of methodRounds) {
+    if (!active.busy && active.expiresAt <= now) methodRounds.delete(id);
+  }
+  if (methodRounds.size >= 200) {
+    const oldest = [...methodRounds].find(([, active]) => !active.busy);
+    if (!oldest) return null;
+    methodRounds.delete(oldest[0]);
+  }
+  const roundId = crypto.randomUUID();
+  round.expiresAt = now + METHOD_TTL;
+  methodRounds.set(roundId, round);
+  return roundId;
+}
+const METHOD_HINTS = {
+  feynman: {
+    plain: '先别管术语，想想你会怎么跟一个完全没学过英语的人说这个词。',
+    probe: '他反问你的那一点，你能不能举一个具体场景？',
+    refine: '把刚才那段话压缩到两句以内，保留最关键的区别。',
+  },
+  socratic: {
+    claim: '先说结论，再说你是从句子里哪一处看出来的。',
+    question: '反问你的那个词，换成别的词句子还成立吗？',
+    revise: '把原来的判断改一句，说明你为什么改。',
+  },
+  contrast: {
+    spot: '把两句并排读，只盯那个关键表达，别看别的成分。',
+    explain: '想想这个差别让句子的结果发生了什么变化。',
+    generalize: '把这条规则写成「看到 X，就说明 Y」的形式。',
+  },
+  blank: {
+    dump: '分四块写：意思 / 搭配 / 一个例句 / 最容易混的词。想到多少写多少。',
+    compare: '把标准答案和你的逐块对，只标出漏掉的和写错的。',
+    patch: '只补你标出来的那几处，不要重抄一遍。',
+  },
+};
+
+function methodHint(method, stage) {
+  return METHOD_HINTS[method]?.[stage] || '再想想这个词最容易被用错的地方。';
+}
+
+function methodSpec(id) {
+  return METHOD_SPECS[String(id || '')] || null;
+}
+
+/** 方法名归一化：未知方法一律 null，不静默降级成别的方法。 */
+function normalizeMethodId(raw) {
+  const id = String(raw || '').trim().toLowerCase();
+  return METHOD_IDS.includes(id) ? id : null;
+}
+
+/** 方法结果的第三档口径（与微课 result 同名，直接复用 coachLessonResults）。 */
+const METHOD_RESULTS = new Set(['independent', 'assisted', 'needs_work']);
+
+/** 方法结果 → SRS 评分：独立答对=good / 提示后=hard / 仍需补教=again。 */
+const METHOD_RESULT_TO_GRADE = { independent: 'good', assisted: 'hard', needs_work: 'again' };
+
+function emptyMethodLedger() {
+  return { schemaVersion: 1, createdAt: new Date().toISOString(), entries: [] };
+}
+
+function isMethodLedgerShape(obj) {
+  return !!obj && typeof obj === 'object' && obj.schemaVersion === 1 && Array.isArray(obj.entries);
+}
+
+function loadMethodLedger() {
+  const file = ctxFilePath(METHOD_LEDGER_FILE);
+  if (!fs.existsSync(file)) return emptyMethodLedger();
+  try {
+    const raw = JSON.parse(fs.readFileSync(file, 'utf8'));
+    if (!isMethodLedgerShape(raw)) return emptyMethodLedger();
+    return { schemaVersion: 1, createdAt: raw.createdAt || new Date().toISOString(), entries: raw.entries };
+  } catch {
+    // 账本损坏不阻断学习：退回空账本，但把坏文件改名留证，避免下次静默覆盖
+    try { fs.renameSync(file, file + '.corrupt-' + Date.now()); } catch { /* 忽略 */ }
+    return emptyMethodLedger();
+  }
+}
+
+const METHOD_LEDGER_MAX = 4000;
+
+function saveMethodLedger(ledger) {
+  const entries = Array.isArray(ledger.entries) ? ledger.entries.slice(-METHOD_LEDGER_MAX) : [];
+  saveJSON(ctxFilePath(METHOD_LEDGER_FILE), {
+    schemaVersion: 1,
+    createdAt: ledger.createdAt || new Date().toISOString(),
+    entries,
+  });
+}
+
+/**
+ * 记账：一次方法练习一条，用于「哪个词用哪种方法有效」的统计。
+ * 只记结果与耗时，不记作答原文（作答原文在 learning_attempts 里）。
+ */
+function recordMethodRun({ method, words, result, assisted, elapsedMs, grade }) {
+  const ledger = loadMethodLedger();
+  ledger.entries.push({
+    at: new Date().toISOString(),
+    method,
+    result: METHOD_RESULTS.has(result) ? result : 'needs_work',
+    assisted: assisted === true,
+    grade: QUIZ_GRADES.has(grade) ? grade : null,
+    elapsedMs: Number.isFinite(elapsedMs) && elapsedMs >= 0 ? Math.round(elapsedMs) : null,
+    words: (Array.isArray(words) ? words : []).map(w => String(w || '').trim()).filter(Boolean).slice(0, 5),
+  });
+  saveMethodLedger(ledger);
+  return ledger.entries.length;
+}
+
+/** 方法效果汇总：按方法统计独立答对率、补教率、覆盖词数。 */
+function methodEffectSummary(days = 30) {
+  const ledger = loadMethodLedger();
+  const todayStr = bjDate(0);
+  const startStr = bjDate(-(Math.max(1, Math.min(365, Number(days) || 30)) - 1));
+  const inWindow = entries => entries.filter(e => {
+    const d = bjDateOf(e.at);
+    return d >= startStr && d <= todayStr;
+  });
+  const rows = METHOD_IDS.map(id => {
+    const spec = METHOD_SPECS[id];
+    const mine = inWindow(ledger.entries).filter(e => e.method === id);
+    const independent = mine.filter(e => e.result === 'independent').length;
+    const assisted = mine.filter(e => e.result === 'assisted').length;
+    const needsWork = mine.filter(e => e.result === 'needs_work').length;
+    const words = new Set();
+    for (const e of mine) for (const w of e.words || []) words.add(String(w).toLowerCase());
+    return {
+      id, title: spec.title, runs: mine.length,
+      independent, assisted, needs_work: needsWork,
+      soloRate: mine.length ? Number((independent / mine.length).toFixed(3)) : null,
+      words: words.size,
+    };
+  });
+  const total = rows.reduce((n, r) => n + r.runs, 0);
+  return { ok: true, days: Number(days) || 30, total, methods: rows };
+}
+
+/** 方法学得最好/最差的词：供报告里「哪种方法对哪些词有效」。 */
+function methodWordHints(limit = 12) {
+  const ledger = loadMethodLedger();
+  const byWord = new Map();
+  for (const e of ledger.entries) {
+    for (const raw of e.words || []) {
+      const w = String(raw || '').trim();
+      if (!w) continue;
+      const k = w.toLowerCase();
+      const cur = byWord.get(k) || { word: w, runs: 0, byMethod: {} };
+      cur.runs++;
+      const m = cur.byMethod[e.method] || { independent: 0, assisted: 0, needs_work: 0 };
+      m[e.result] = (m[e.result] || 0) + 1;
+      cur.byMethod[e.method] = m;
+      byWord.set(k, cur);
+    }
+  }
+  return [...byWord.values()].sort((a, b) => b.runs - a.runs).slice(0, Math.max(1, Math.min(50, Number(limit) || 12)));
+}
+
+/** 方法回合的题目归一化：只有「一句引导 + 一个问题 + 输入提示」，不出选项题。 */
+function normalizeMethodTask(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const question = lessonText(raw.question).slice(0, 900);
+  if (!question) return null;
+  return {
+    question,
+    say: lessonText(raw.say).slice(0, 300),
+    placeholder: lessonText(raw.placeholder).slice(0, 80) || '用你自己的话写下来',
+  };
+}
+
+function normalizeMethodFeedback(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const status = raw.status === 'pass' ? 'pass' : raw.status === 'reteach' ? 'reteach' : '';
+  if (!status) return null;
+  const coaching = lessonText(raw.coaching).slice(0, 600);
+  if (!coaching) return null;
+  return {
+    status,
+    coaching,
+    gap: lessonText(raw.gap).slice(0, 300),
+    model: lessonText(raw.model).slice(0, 600),
+  };
+}
+
+/** 方法回合的上下文：词条事实（词典 + 墨墨 + 笔记），与带练同一口径，不联网。 */
+function methodWordFacts(words) {
+  const bySpelling = new Map();
+  for (const w of Object.values(db.words)) {
+    const k = String(w.spelling || '').toLowerCase();
+    if (k && !bySpelling.has(k)) bySpelling.set(k, w);
+  }
+  return words.map(spelling => {
+    const w = bySpelling.get(spelling.toLowerCase());
+    const g = vocabGlossOf(spelling);
+    const bits = [];
+    if (g) bits.push(`词典：${g.pos ? g.pos + ' ' : ''}${g.gloss}`);
+    const brief = w ? wordBrief(w) : '';
+    if (brief) bits.push(`墨墨：${brief}`);
+    const notes = localNotesFor(spelling);
+    if (notes) bits.push(`笔记：${notes.replace(/\n+/g, ' / ')}`);
+    return `- ${spelling}${bits.length ? '（' + bits.join('；') + '）' : ''}`;
+  });
+}
+
+/**
+ * 开一套方法课：生成第一关的提问 scaffold。
+ * 返回 { ok:false, reason } 时前端降级（no_llm / bad_task），绝不阻断。
+ */
+async function startMethodRound({ method, words, goal, owner }) {
+  const spec = methodSpec(method);
+  if (!spec) return { ok: false, reason: 'bad_method' };
+  if (!llmAvailable()) return { ok: false, reason: 'no_llm' };
+  const list = Array.isArray(words) ? words : [];
+  if (!list.length) return { ok: false, reason: 'bad_words' };
+  const stage = spec.stages[0];
+  const scope = list.length > 1 ? '这组词' : '这个词';
+  const raw = extractJsonObject(await llmChat([
+    { role: 'system', content: buildMethodSystemPrompt(method) },
+    {
+      role: 'user',
+      content: [
+        `方法：${spec.title}｜当前第 1 关「${spec.stageTitles[stage]}」`,
+        `目标：${scope}（${list.join(' / ')}），学习者目标：${goal || '把词学到会用'}`,
+        ...methodWordFacts(list),
+        `【开局】只出第 1 关：给一句不超过 40 字的引导，再给一个问题让学习者当场作答。`,
+        `本关产出要求：${spec.need}`,
+        '只输出 JSON：{"say":"引导","question":"问题","placeholder":"输入提示"}',
+      ].join('\n'),
+    },
+  ], { maxTokens: 800, llmOverride: { _jsonMode: true } }));
+  const task = normalizeMethodTask(raw);
+  if (!task) return { ok: false, reason: 'bad_task' };
+  const round = {
+    method, words: list, goal: goal || '', owner,
+    stage, revision: 0, task, feedback: null, hintShown: false, assisted: false,
+    retry: false, busy: false, result: null, startedAt: Date.now(), expiresAt: Date.now() + METHOD_TTL,
+  };
+  const roundId = storeMethodRound(round);
+  if (!roundId) return { ok: false, reason: 'busy' };
+  return { ok: true, ...publicMethodRound(round), roundId };
+}
+
+function publicMethodTask(task) {
+  return { question: task.question, say: task.say, placeholder: task.placeholder };
+}
+
+function buildMethodSystemPrompt(method) {
+  return getPrompt('method_' + method);
+}
+
+/**
+ * 方法回合：answer 判分并推进；continue 进入下一关；hint 给提示；retry 重答；finish 结束。
+ * 关卡推进由服务端决定：答对且非末关 → 进下一关；末关答对 → 得出结果；
+ * 同一关连错两次 → 放行（避免卡死），末关则记 needs_work。
+ */
+async function turnMethodRound(round, { revision, move, answer: rawAnswer }) {
+  const spec = methodSpec(round.method);
+  if (!spec) return { ok: false, reason: 'bad_method' };
+  const answer = lessonText(rawAnswer).slice(0, 1500);
+  const requestKey = JSON.stringify([revision, move, answer]);
+  if (round.last?.requestKey === requestKey) return round.last.response;
+  if (round.busy) return { ok: false, reason: 'busy' };
+  if (revision !== round.revision) return { ok: false, reason: 'stale_round' };
+  const stageIndex = spec.stages.indexOf(round.stage);
+  const finalStage = stageIndex === spec.stages.length - 1;
+
+  if (move === 'answer' && round.task && answer && !round.feedback) {
+    round.busy = true;
+    try {
+      const raw = extractJsonObject(await llmChat([
+        { role: 'system', content: buildMethodSystemPrompt(round.method) },
+        {
+          role: 'user',
+          content: [
+            `方法：${spec.title}｜第 ${stageIndex + 1} 关「${spec.stageTitles[round.stage]}」`,
+            `目标词：${round.words.join(' / ')}（学习者目标：${round.goal || '把词学到会用'}）`,
+            ...methodWordFacts(round.words),
+            `本轮问题：${round.task.question}`,
+            `学习者作答：${answer}`,
+            round.hintShown ? '（学习者已看过提示，判 pass 时记为「提示后答对」）' : '',
+            `判分口径：${spec.gradeHint}`,
+            '只输出 JSON：{"status":"pass 或 reteach","coaching":"不超过 60 字的点评","gap":"缺口（reteach 时必填）","model":"一句可照抄的示范（可选）"}',
+          ].filter(Boolean).join('\n'),
+        },
+      ], { maxTokens: 800, llmOverride: { _jsonMode: true } }));
+      const feedback = normalizeMethodFeedback(raw);
+      if (!feedback) return { ok: false, reason: 'bad_feedback' };
+      round.feedback = { ...feedback, answer, assisted: round.assisted === true || round.hintShown === true };
+      if (finalStage && feedback.status === 'pass') {
+        round.result = round.feedback.assisted ? 'assisted' : 'independent';
+      }
+      if (finalStage && feedback.status === 'reteach' && round.retry) {
+        round.result = 'needs_work';
+      }
+    } catch { return { ok: false, reason: 'llm_error' }; }
+    finally { round.busy = false; }
+  } else if (move === 'continue' && round.feedback?.status === 'pass' && !finalStage) {
+    round.stage = spec.stages[stageIndex + 1];
+    round.feedback = null;
+    round.hintShown = false;
+    round.hint = '';
+    round.retry = false;
+    round.busy = true;
+    try {
+      const nextIndex = spec.stages.indexOf(round.stage);
+      const raw = extractJsonObject(await llmChat([
+        { role: 'system', content: buildMethodSystemPrompt(round.method) },
+        {
+          role: 'user',
+          content: [
+            `方法：${spec.title}｜现在进入第 ${nextIndex + 1} 关「${spec.stageTitles[round.stage]}」`,
+            `目标词：${round.words.join(' / ')}（学习者目标：${round.goal || '把词学到会用'}）`,
+            ...methodWordFacts(round.words),
+            `上一关学习者已通过，他的回答是：${round.feedback?.answer || '（未记录）'}`,
+            `本关产出要求：${spec.need}`,
+            '只出这一关的一个问题，给一句不超过 40 字的引导。',
+            '只输出 JSON：{"say":"引导","question":"问题","placeholder":"输入提示"}',
+          ].join('\n'),
+        },
+      ], { maxTokens: 800, llmOverride: { _jsonMode: true } }));
+      const task = normalizeMethodTask(raw);
+      if (!task) { return { ok: false, reason: 'bad_task' }; }
+      round.task = task;
+    } catch { return { ok: false, reason: 'llm_error' }; }
+    finally { round.busy = false; }
+  } else if (move === 'hint' && round.task && !round.feedback && !round.hintShown) {
+    round.hintShown = true;
+    round.assisted = true;
+    round.hint = methodHint(round.method, round.stage);
+  } else if (move === 'retry' && round.feedback?.status === 'reteach') {
+    round.retry = true;
+    round.assisted = true;
+    round.feedback = null;
+  } else if (move === 'finish' && round.result === 'needs_work') {
+    round.stage = 'done';
+  } else {
+    return { ok: false, reason: 'bad_move' };
+  }
+
+  round.revision += 1;
+  round.expiresAt = Date.now() + METHOD_TTL;
+  const response = publicMethodRound(round);
+  round.last = { requestKey, response };
+  return response;
+}
+
+function publicMethodRound(round) {
+  const spec = methodSpec(round.method);
+  const base = {
+    ok: true, method: round.method, methodTitle: spec.title,
+    stage: round.stage, stageTitle: spec.stageTitles[round.stage] || '',
+    stageIndex: Math.max(0, spec.stages.indexOf(round.stage)),
+    stageCount: spec.stages.length,
+    revision: round.revision, result: round.result, assisted: round.assisted === true,
+  };
+  if (round.feedback) {
+    return { ...base, feedback: { status: round.feedback.status, coaching: round.feedback.coaching, gap: round.feedback.gap, model: round.feedback.model, answer: round.feedback.answer } };
+  }
+  return { ...base, task: round.task ? publicMethodTask(round.task) : null, ...(round.hintShown ? { hint: round.hint } : {}) };
+}
+
+/**
+ * 一套方法课收尾：写学习流水 + 折算 SRS + 记账。
+ * 只在 result 落定（independent/assisted/needs_work）时调用一次；
+ * 由路由层保证「同一 roundId 只结算一次」（结算后 round.settled=true）。
+ */
+function settleMethodRound(round) {
+  if (round.settled) return { applied: 0, attemptsSaved: 0 };
+  const grade = METHOD_RESULT_TO_GRADE[round.result] || 'again';
+  const atIso = new Date().toISOString();
+  const items = round.words.map((w, i) => ({
+    spelling: w,
+    grade,
+    confidence: round.result === 'independent' ? 'sure' : round.result === 'assisted' ? 'unsure' : 'guess',
+    userAnswer: '',
+    submittedAt: atIso,
+    startedAt: new Date(round.startedAt).toISOString(),
+    durationMs: Math.max(0, Date.now() - round.startedAt),
+    kind: 'method_practice',
+    source: 'method:' + round.method,
+    mode: round.method,
+    metaExtra: { method: round.method, methodResult: round.result, words: round.words.slice(0, 5), ...(i === 0 ? {} : { secondary: true }) },
+  }));
+  const out = applyQuizSrsSession(items, round.method);
+  round.settled = true;
+  recordMethodRun({
+    method: round.method,
+    words: round.words,
+    result: round.result,
+    assisted: round.assisted === true,
+    elapsedMs: Date.now() - round.startedAt,
+    grade,
+  });
+  return out;
+}
+
 /** 记录测验结果：反哺「我又忘了」体系（写入 word.quizResponse，供忘记词/模糊词筛选）
  *  v2.2.1：双写统一学习流水（word_quiz attempt），单题采集信心/耗时/作答值，服务端权威释义 expected 防篡改
  */
@@ -6792,8 +7329,10 @@ function applyQuizSrsSession(items, mode) {
       : QUIZ_GRADE_TO_RESPONSE[grade];
 
     attemptsToSave.push({
-      kind: 'word_quiz',
-      source: 'quiz',
+      // v4.8.0：方法/微课练习复用本函数写入 SRS，但流水 kind 记为 method_practice，
+      // 这样报告能区分「测验答对」与「讲清楚才算过」，而 SRS 节奏完全共用一套。
+      kind: VALID_ATTEMPT_KINDS.has(it.kind) ? it.kind : 'word_quiz',
+      source: it.source ? String(it.source).slice(0, 100) : 'quiz',
       itemId: `word:${sp}`,
       section: 'vocabulary',
       prompt: sp,
@@ -6804,7 +7343,11 @@ function applyQuizSrsSession(items, mode) {
       startedAt: it.startedAt || null,
       submittedAt: it.submittedAt || atIso,
       durationMs: (typeof it.durationMs === 'number' && it.durationMs >= 0 && it.durationMs <= 14400000) ? Math.round(it.durationMs) : null,
-      meta: { mode: String(it.mode || mode || 'flash').slice(0, 20), word: sp, grade, mastery: next.mastery, response: QUIZ_GRADE_TO_RESPONSE[grade] },
+      meta: {
+        mode: String(it.mode || mode || 'flash').slice(0, 20),
+        word: sp, grade, mastery: next.mastery, response: QUIZ_GRADE_TO_RESPONSE[grade],
+        ...(it.metaExtra && typeof it.metaExtra === 'object' ? it.metaExtra : {}),
+      },
     });
   }
 
@@ -9283,6 +9826,67 @@ async function handleRequest(req, res) {
         }
       }
 
+      /* v4.8.0：学习方法——费曼 / 苏格拉底 / 对比辨析 / 空白回忆。
+       * 与微课同构：start 开局、turn 逐回合推进、settle 结算入库。
+       * 结算单独一个动作：只有前端确认「这一套方法课已经结束」才落流水与 SRS，
+       * 避免中途刷新把一次未完成的练习记成一次答错。 */
+      if (p === '/api/method/start' && req.method === 'POST') {
+        const body = await readBody(req, 65536);
+        const method = normalizeMethodId(body.method);
+        if (!method) return sendJSON(res, 400, { ok: false, reason: 'bad_method', error: '未知的学习方法' });
+        const words = normalizeDrillWords(body.words ?? [body.word]);
+        if (!words.length) return sendJSON(res, 400, { ok: false, reason: 'bad_words', error: '请先勾选要练的词' });
+        const goal = typeof body.goal === 'string' && body.goal.length <= 1100 ? body.goal : '';
+        try {
+          return sendJSON(res, 200, await startMethodRound({ method, words, goal, owner: currentCtx().userId }));
+        } catch {
+          return sendJSON(res, 200, { ok: false, reason: 'llm_error' });
+        }
+      }
+
+      if (p === '/api/method/turn' && req.method === 'POST') {
+        const body = await readBody(req, 65536);
+        const round = methodRounds.get(String(body.roundId || ''));
+        if (!round || round.owner !== currentCtx().userId || round.expiresAt <= Date.now()) {
+          return sendJSON(res, 200, { ok: false, reason: 'expired' });
+        }
+        return sendJSON(res, 200, await turnMethodRound(round, body));
+      }
+
+      if (p === '/api/method/settle' && req.method === 'POST') {
+        const body = await readBody(req, 65536);
+        const round = methodRounds.get(String(body.roundId || ''));
+        if (!round || round.owner !== currentCtx().userId) return sendJSON(res, 200, { ok: false, reason: 'expired' });
+        if (!METHOD_RESULTS.has(round.result)) return sendJSON(res, 400, { ok: false, reason: 'not_finished', error: '这套方法还没上完，先完成最后一关' });
+        const out = settleMethodRound(round);
+        methodRounds.delete(String(body.roundId || ''));
+        return sendJSON(res, 200, {
+          ok: true, result: round.result, method: round.method,
+          applied: out.applied, attemptsSaved: out.attemptsSaved, grade: METHOD_RESULT_TO_GRADE[round.result],
+        });
+      }
+
+      if (p === '/api/method/list' && req.method === 'GET') {
+        return sendJSON(res, 200, {
+          ok: true,
+          methods: METHOD_IDS.map(id => {
+            const spec = METHOD_SPECS[id];
+            return {
+              id, title: spec.title, need: spec.need,
+              stages: spec.stages.map((s, i) => ({ key: s, title: spec.stageTitles[s], index: i })),
+            };
+          }),
+        });
+      }
+
+      if (p === '/api/method/effect' && req.method === 'GET') {
+        const u2 = new URL(req.url, 'http://localhost');
+        let days = parseInt(u2.searchParams.get('days') || '30', 10);
+        if (!Number.isFinite(days) || days < 1) days = 30;
+        if (days > 365) days = 365;
+        return sendJSON(res, 200, { ...methodEffectSummary(days), words: methodWordHints(12) });
+      }
+
       // 结束会话 -> 生成助记
       if (p === '/api/session/finish' && req.method === 'POST') {
         const body = await readBody(req);
@@ -10787,6 +11391,10 @@ async function handleRequest(req, res) {
               warnings.push({ file: f.name, reason: '测验会话结构不符，已跳过' });
               continue;
             }
+            if (f.methodLedger && !isMethodLedgerShape(v.obj)) {
+              warnings.push({ file: f.name, reason: '学习方法账本结构不符，已跳过' });
+              continue;
+            }
           }
           const dst = path.join(bDir, f.name);
           fs.mkdirSync(path.dirname(dst), { recursive: true });
@@ -10839,6 +11447,7 @@ async function handleRequest(req, res) {
             if (f.learning) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前学习流水' });
             if (f.quizSrs) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前测验记忆' });
             if (f.quizSession) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前测验会话' });
+            if (f.methodLedger) skipped.push({ file: f.name, reason: '备份不含该文件，已保留当前学习方法账本' });
             continue;
           }
           if (f.json) {
@@ -10857,6 +11466,10 @@ async function handleRequest(req, res) {
             }
             if (f.quizSession && !isQuizSessionShape(v.obj)) {
               warnings.push({ file: f.name, reason: 'schemaVersion/items 结构不符，已跳过' });
+              continue;
+            }
+            if (f.methodLedger && !isMethodLedgerShape(v.obj)) {
+              warnings.push({ file: f.name, reason: 'schemaVersion/entries 结构不符，已跳过' });
               continue;
             }
           }
@@ -10963,6 +11576,7 @@ function autoBackup() {
         if (!v.valid) { console.error(`  [自动备份] 跳过损坏文件 ${f.name}: ${v.error}`); continue; }
         if (f.learning && !isLearningStoreShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
         if (f.quizSrs && !isQuizSrsShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
+        if (f.methodLedger && !isMethodLedgerShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
         if (f.quizSession && !isQuizSessionShape(v.obj)) { console.error(`  [自动备份] 跳过结构不符的 ${f.name}`); continue; }
       }
       const dst = path.join(bDir, f.name);
