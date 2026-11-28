@@ -1,11 +1,54 @@
 # 项目交接与当前进度 (Agent Handover State)
 
-> 生成时间：2026-09-14（北京时间）· 最近更新：2026-10-10（v3.3.2）
-> 生成者：AI 工程负责人（v3.3.2 移动端触控与窄屏布局优化、Gitee/ECS 发布已完成）
+> 生成时间：2026-09-14（北京时间）· 最近更新：2026-11-28（v4.8.0）  
+> 生成者：AI 工程负责人（v3.3.2 移动端触控与窄屏布局优化、Gitee/ECS 发布已完成）  
 > 工作区根：`D:\ai\opencode\momo`
+>   
 > 应用仓库根：`D:\ai\opencode\momo\english-workbench`（独立 git 仓库，分支 `master`）
-> **当前版本：`v3.3.2`**（`package.json` = `3.3.2`，`public/index.html` 三处版本标识 = `v3.3.2`，`public/sw.js` 缓存名 = `wb-shell-v3.3.2`，零 dependencies）
+>   
+> **当前版本：`v4.8.0`**（`package.json` = `4.8.0`，`public/index.html` 三处版本标识 = `v4.8.0`，`public/sw.js` 缓存名 = `wb-shell-v4.8.0`，零 dependencies）  
 > **Gitee HEAD：`adfc405`**（v3.3.1 出站 fetch 统一超时护栏）。线上 ECS `/opt/workbench` 已 ff 合并并重启，`workbench.service` active，多用户保持启用（`config.multiUser=true`），外部语料 `external.format=v2` / `count=4070`。
+
+---
+
+## 0. ⭐ v4.8.0 学习方法 · 结果进记忆引擎（2026-11-28 · 已完成）
+
+**出发点**：用户问「目前的 AI 学习能不能整合起来」，并点名「例如费曼学习法」。查证后确认三条真实的不整合：① `/api/tutor/drill` 与 `tutor_drill` 提示词（v4.1.0/v4.2.0 产出）**后端完整存在、前端 0 处调用**；② 微课结果只活在前端 `coachBatch.groups[].result`，刷新即散，不写 `learning_attempts`、不写 `quiz_srs`；③ 词文成章「检索自测」只调 `/api/story/:id/done` 标完成，不进流水。
+
+**四种方法**（用户选定四个都要）：费曼（讲给外行听 → 被追问 → 简化重讲）/ 苏格拉底（先给判断 → 被连续反问 → 自己修正）/ 对比辨析（找差别 → 说清差别 → 给一条规则）/ 空白回忆（凭记忆写 → 对照找漏 → 只补缺口）。
+
+**一套引擎、四种关卡机**：`METHOD_SPECS` 只描述「关卡序列 + 每关产出要求 + 判分口径 + 提示语」，`startMethodRound` / `turnMethodRound` / `settleMethodRound` 承担全部回合逻辑；加第五种方法只需加注册表项 + 一条提示词。
+
+**服务端权威推进**：模型只回 `pass/reteach` 或一问一提示；答对给 feedback 但不立即前进（要 `continue`）、答错留本关 `retry`（记 assisted）、末关通过才出 `independent`/`assisted`、末关连错两次记 `needs_work` 并放行（一定收敛）。
+
+**结果进 SRS（用户拍板）**：`METHOD_RESULT_TO_GRADE = { independent: good, assisted: hard, needs_work: again }`，复用 `applyQuizSrsSession` 写 `quiz_srs.json`，讲不清楚的词明天回复习队列——这是 AGENTS.md 里写了多版的「接 SRS 是下一步」的落地。同时写 `learning_attempts`（`kind=method_practice`）与新增 `data/method_ledger.json`（按方法统计独立答对率/覆盖词数，不记作答原文）。结算单独成动作：未落定前 400 `not_finished`，避免中途刷新把未完成练习记成答错。
+
+**顺带修掉 v4.6.0 起的渲染缺陷**：`.ink-card` 同时当「卡片标题尺寸类」与「card.png 图标名」，CSS 顺序让后者胜出，**17 处卡片标题全部渲染成同一张 card.png**。体积类改名 `.ink-ico`，`ink-card` 只留「闪卡」图标语义，并加 2 条门禁防再撞名。
+
+**门禁**：`release-check` 75 → **87 项**（11 条新契约，逐条反向验证 **11/11 变红**）；新增 `scripts/method-smoke.mjs` **34 断言**并入 `npm test`；`release-gate` 断言 4.8.0。`npm test` / `test:syntax` / `test:release` / `test:ops` / `test:mobile`(48) 全部退出码 0。Playwright 实测四套方法、三关进度、作答/判定/结果/效果区全部可用，390px 下零残留 emoji、零字面图标标记、44px 契约满足、无 JS 错误。
+
+**无数据迁移**（新文件按需创建）、**无新增依赖**、**无配置项**。
+
+---
+
+## 0. ⭐ v4.4.1 晨雾全站（2026-11-27 · 已完成，待发布）
+
+**本版主题**：v4.4.0 的晨雾只覆盖「今日学习」，其余版块仍是旧版机械排布；且首页「今日任务进度」票据用 `margin:-33px` 浮在 hero 上，**实测与其他版块交叠 33px（手机 29px）** —— 这正是用户反馈的重叠。本版把重叠彻底修掉，并把晨雾版式铺到全部七个版块，同时补上生图、动效与键盘交互。
+
+**关键成果**
+- **修掉重叠**：hero 与任务票据合并为同一张卡片，票据作为卡片底条（`border-top` 分隔、占满宽度、零负边距）。DOM 几何探针在 **1440/1280/1024/900/760/700/640/430/390/360/320 共 11 个宽度 × 昼/夜两主题**下断言 **overlaps = 0**。
+- **七个版块统一**：测验 / 语料库 / 助记库 / 设置 / 日志新增图版页头（图版 + 左侧渐隐 + kicker 短文案）；卡片、胶囊、输入与下拉、分页、徽标、空状态、日志条目、笔记卡片、语料条目全部改成晨雾纸面语言，暗色主题逐项适配。
+- **生图 5 张 + 重绘 2 张**：测验（雾湖木桌 · 空白卡与朱笔）、语料库（雾光书架 · 砖红书）、助记库（石案笔记本与钢笔）、设置（黄铜台灯与晨雾窗）、空状态墨绘；微课入口重绘为「三枚相偎的溪石」，学习报告页头改暮色山脊。全部 WebP（20–80KB/张）并纳入 PWA 外壳缓存。
+- **交互**：`Ctrl/⌘+K` 快捷面板（7 页 + 7 动作，↑↓/Enter/Esc + 模糊过滤）、`Alt+1…7` 直达、`/` 聚焦当前页搜索、`←/→` 换今日一词；票据三格改按钮可直入任务；设置新增 7 分区索引（滚动高亮 + 一键展开/收起）。
+- **动效**：山雾呼吸/漂移（19s/27s alternate）按时段换色、页签 0.24s 淡入、条目渐显上浮、进度与数字过渡；全部由 `prefers-reduced-motion` 关闭。
+- **可读性与契约**：测验答错时同时点亮正确项；触屏设备一律 ≥44px（用 `(pointer: coarse)` 兜住手机横屏 915px）；空状态样式只命中「纯空状态块」，不污染 `.acc-bar.empty` 等数据元素。
+
+**踩坑记录（值得记）**
+- **CSS 大括号错位会静默毁掉整站版式**：一次插入把 `@media (max-width: 700px)` 提前闭合，导致移动端全部规则变成全局生效 —— 手机版 hero 渐变把桌面山景照片整块冲淡、设置页索引按钮被 `display:none`。现象是「样式看着不对但没有任何报错」，靠逐条量 `getComputedStyle` 才定位。**改完 `mist.css` 必须跑一次括号配平检查。**
+- **Chromium 对关闭 `<details>` 的子节点仍返回过期几何**：首轮几何探针在 390px 下报出 5110 条「交叠」，几乎全是关闭折叠区里的陈旧坐标。探针必须跳过「祖先链上有未 open 的 details」的节点，否则全是假红。
+- **`(max-width:700px)` 挡不住手机横屏**：Pixel 7 横屏宽 915px，触控契约在此宽度失效（实测 34px 按钮）。改用 `@media (max-width: 980px), (pointer: coarse)` 兜住。
+
+**门禁**：`npm run test:all` 退出码 0 —— `release-check` **59 项**（新增 8 条 v4.4.1 契约）、`release-gate` 34 项、`mobile-device-check` 48 项、`frontend-refinement-smoke` 10 组、`ecdict` 25、`ecdict bubble` 18、`exam-analysis` 全过、`vocab-chat` 39、`tutor-drill` 51、`static-cache` 30、`docs-consistency` 9、`security-audit` 821 文件无敏感命中。无数据迁移、无新增依赖、无配置项。
 
 ---
 
@@ -26,6 +69,7 @@
 **根因**：多用户下所有写请求经 **per-user 写串行队列** `enqueueUserWrite(userId, run)` 执行，新请求链挂在同一用户上一个未 settle 的 Promise 之后；而服务端各处出站 `fetch` **无超时**（全文件仅韦氏词典一处有 `AbortSignal.timeout`），任一上游（LLM/墨墨/生图/搜索/MinerU）无响应时 Node fetch 永久挂起 → 其所在 `run()` 永不 resolve → **该用户整条写链被永久污染**，后续所有写请求排队卡死（GET 与白名单登录不受影响）。
 
 **关键成果**：
+
 - **① 统一护栏**：`server.js` 顶部新增 `fetchT(url, opts, timeoutMs)`（`AbortSignal.timeout`；默认 30s，`FETCH_TIMEOUT_MS` 可覆盖；调用方自带 `signal` 时尊重调用方）。
 - **② 全部 12 处出站 fetch 改用之**：LLM 对话/流式 5 分钟、墨墨 `mm()` 15s、模型列表 20s、生图 2 分钟/下载 30s、网页搜索 30s、MinerU 30s/2 分钟/20s/60s/20s；韦氏词典保留原 15s。
 
@@ -42,6 +86,7 @@
 **决策基线（用户拍板）**：入口**维持 IP**（不启用域名）、**要离线缓存**、图标由 **AI（Pillow）生成**。**关键技术约束（已说明并接受）**：Service Worker 仅安全上下文（HTTPS/localhost）注册；HTTP/IP 入口下 Android 一键安装与离线暂不可用（可加普通快捷方式），iOS Safari「添加到主屏幕」不受 HTTPS 限制、可全屏独立运行。全套资产与注册逻辑已就位，**日后启用 HTTPS 即自动获得完整安装 + 离线**。
 
 **关键成果**：
+
 - **① 图标**：`public/icons/`（`icon-{192,512,180,152,167,120}.png` + `maskable-{192,512}.png` + `favicon.ico` + `favicon.svg`，蓝色圆角底 + 鲸鱼）。
 - **② Manifest**：`public/manifest.webmanifest`（standalone / start_url:/ / scope:/ / theme_color / 图标 any+maskable / shortcuts 单词测验·今日学习）。
 - **③ Service Worker**：`public/sw.js`（预缓存应用外壳；`/api`·`/images`·跨域直连；导航网络优先失败回退；静态资源 stale-while-revalidate）。
@@ -61,6 +106,7 @@
 **决策基线（用户拍板）**：信心信号 = **耗时 + 正误**（仅影响周报，不影响 SRS 调度）；信心 UI 仅改基础/自适应/复练，**迁移保留手选**；题量**下限 1、无上限**（受词源/释义约束）；自动播报仅 **flash/choice/audio/复练**（zh2en/spell 防泄题不播）、开关默认开；词源计数显示**原始候选数**；**释义预补不封顶**（随题量自由膨胀）。
 
 **关键成果**：
+
 - **① 智能信心**：纯函数 `inferQuizConfidence({grade,durationMs,spelling})`（基准 `clamp(1200+180×词长, 2500, 8000)ms`），`quizRecord`/`srsRecord` 覆写并展示判定；删除基础手动信心组与全部引用（迁移独立组保留）。
 - **② 题量解锁**：前端 4 处钳制 → `Math.max(1,…)`；后端 generate 3..50 → ≥1、`<3` 门槛 → `<1`、vocab 3..20 → ≥1；`QUIZ_SESSION_MAX_ITEMS` 100→10000、提交/复练到期截断同步放宽；释义预补不封顶。
 - **③ 自动播报**：`autoSpeakQuizWord` 走浏览器 TTS，`renderQuizItem`/`renderSrsItem` 进入即播；`#quizAutoSpeak` 开关默认开、`localStorage['wb-quiz-autospeak']` 持久化。
@@ -79,6 +125,7 @@
 **决策基线（用户拍板）**：LLM 用量**仅统计与看板、不设额度硬拦截**；用量看板**普通用户看自己、管理员看全员**；共享内容导入/增删改/版本恢复**均仅管理员**；自动同步**启动即遍历所有用户装配**。
 
 **关键成果**：
+
 - **P2 共享资源只读**：新增 `requireAdmin(res, store, what)`，多用户下普通用户对共享资源只读，覆盖 `kb/import`·`exam/import`·`kb/record/update`·`kb/record/delete`·`kb/version/restore`·`unit/answers/save`·`mineru/parse` 七处，统一 403 `FORBIDDEN`；`llm_usage.json` 纳入 `USER_DATA_FILES` + 迁移 + 备份三处统一清单。
 - **P3 墨墨 per-user**：`mmLimiter` Map（`limiterState()` 按 `userId` 隔离频控滑动窗口与自适应间隔）、`notepadCaches` Map（云词库缓存按用户隔离）。
 - **P3 LLM 用量**：`llmChat`/`llmChatSSE` 抓上游 `usage`（流式带 `stream_options.include_usage`，mock 走 `estimateUsage`），按北京自然日聚合落 `data/users/<id>/llm_usage.json`；新增 `GET /api/llm/usage`（普通用户看自己、管理员 `scope=all` 看全员、越权 403）+ 前端「📊 AI 用量」看板。
@@ -97,6 +144,7 @@
 **决策基线（用户拍板）**：登录 UI = 遮罩「登录/注册」双标签 + 设置页「我的账户」区；普通用户**隐藏**管理员专属设置区；登出清会话+用户数据、**保留设备偏好**；本轮部署后**立即迁移启用**多用户。
 
 **关键成果**：
+
 - **登录遮罩自适应**：`applyAuthMode()` 依 `/api/auth/status` 的 `multiUser` 切换——多用户走用户名+密码登录 / 一次性邀请码注册（注册即登录），单用户仍为 Token 凭证。
 - **账户区**：设置页「👤 我的账户」（默认展开）显示用户名 + 角色 + 「🚪 退出登录」。
 - **角色显隐**：`data-admin-only` 标记管理员专属区（模型服务/登录与安全/数据备份），`applyRoleVisibility()` 按 `isAdminUser()` 显隐。
@@ -116,6 +164,7 @@
 **决策基线（用户拍板）**：小圈子邀请制（<50 人，每用户独立 JSON 目录，不引数据库）；每人自带墨墨 Token；管理员共享 LLM Key + 每用户额度（P3）；用户名+密码+一次性邀请码注册；会话持久化到磁盘；管理员全权配置；邀请码用后即废；升级默认 `multiUser=false` 零破坏迁入；admin 初始密码沿用现有 `config.auth.token`。
 
 **关键成果**：
+
 - **零破坏总开关** `config.multiUser`（默认 false）：关闭时所有路径回退旧单用户（`LEGACY_USER` + 扁平 `data/*.json`），行为与 v2.12.0 完全一致；刻意不复用 `auth.enabled`，保证 60 套既有测试零改动。
 - **隔离机制**：`AsyncLocalStorage` 请求上下文绑定 `userId/role`；`config`/`db` 改**透明 Proxy**（业务代码 269 处 `config.` + 147 处 `db.` 零改动）；config 按 `USER_CONFIG_KEYS` 分流用户级/全局；用户级文件落 `data/users/<id>/`；`enqueueUserWrite` 每用户写串行队列防并发覆盖。
 - **账户与会话**：`data/users.json`（`scryptSync` 加盐哈希）+ `data/sessions.json`（30 天，重启不掉线，绑定 `userId`，httpOnly Cookie `wb_session`）。
@@ -135,11 +184,13 @@
 **主题**：把「外刊采集 → 网站可见」从手工搬运升级为**无人值守投递链路**，并根治线上 1.6G 内存隐患。详细见根工作区《版本号经历.md》v2.9.0 章节。
 
 **关键成果**：
+
 - **发布格式 v2（瘦索引 + 分片 gzip 全文）**：`articles_index.jsonl`（元数据，3.6MB/4070 篇，常驻内存）+ `articles_body/body-XX.jsonl.gz`（16 分片，点开某篇只解一片）+ `sentences_index.jsonl.gz`（句子索引）。整包 **141MB → 26MB**；`loadExternalKb()` 由全量 parse（446MB heap）降为读索引。**旧版整包目录自动回退兼容**（`externalStatus().format` = `v1`/`v2`）。
 - **采集侧脚本**（本地源=唯一真相，已部署 HK）：`build_release_v2.py`（自包含，全量 8s）+ `build_release_incremental.py`（夜间编排，45 天回看窗口，窗口外从上一版带过）。
 - **投递链路**：HK cron `0 4 * * *` 构建 → ECS cron `30 4 * * *` 跑 `/opt/workbench/scripts/pull_external.sh`（`~/.ssh/hk_pull` 免密 rsync → sha256 与 manifest 核对 → 归档旧版留 5 份 → 原子替换 → 只读冒烟）。服务端 mtime 热重载，**无需重启**。
 - **香港补齐**：把本地独有的经济学人/卫报/科学美国人/大西洋月刊/CSMonitor 全量并集推到 HK，现 **11 源完整**（4070 篇）。
 - **环境修复**：HK sshd `PubkeyAuthentication no` → `yes`（备份 `sshd_config.bak-v290`）；ECS 生成 `hk_pull` 免密密钥。
+
 
 **验证**：`node --check` 0 错误；`test_v290_external`(25) 全绿；全量回归 **50/52**（仅 `test_v212*` 两套 v1.x 遗留失败，已 stash 对照确认非本次回归）；线上只读冒烟 **16/16**；ECS 冷启 RSS ~96MB，首次检索后 ~232MB 并**稳定持平**（10 轮 100 次检索无增长；`--max-old-space-size=150` 压测下 12 次检索全 200）。经二次优化（句子索引极简化，见下），线上检索后 RSS 由初版 457MB 降至 232MB。
 
@@ -151,17 +202,18 @@
 
 **分版交付链**（均已 push Gitee + 部署 ECS，详见根工作区《版本号经历.md》）：
 
-| 分版 | commit | 主题 |
-|---|---|---|
-| v2.2.8.a | `a850648` | TODO 1 学习流水并发安全（`updateLearningAttempt`）+ 损坏文件保护（`LEARNING_STORE_CORRUPT`）|
-| v2.2.8.b | `8d1cab0` | TODO 2 真实划选 `data-rid`/`sourceRef` + 服务端来源校验收紧 |
-| v2.2.8.c | `0e23324` | TODO 3 迁移训练独立信心组 + 同词性干扰项 + token 绑 rid |
-| v2.2.8.d | `07a86a0` | TODO 4 单元按 section 严格分支 + batchId + 错因权限 + `sessionDurationMs` |
-| v2.2.8.e | `a23ef0b` | TODO 5 周报排除 pending + bySection 分题型 + `pendingRetries` |
-| v2.2.8.f | `eb728f9` | TODO 6 测试进程收口（`process.exitCode`）+ 真实 UI 覆盖 |
-| v2.2.8.g | `850b093` | TODO 7 四风格口径（8→4）+ 触控统一 ≥44px + `.st-sentence` 2em 缩进 |
+| 分版       | commit    | 主题                                                                         |
+| -------- | --------- | -------------------------------------------------------------------------- |
+| v2.2.8.a | `a850648` | TODO 1 学习流水并发安全（`updateLearningAttempt`）+ 损坏文件保护（`LEARNING_STORE_CORRUPT`） |
+| v2.2.8.b | `8d1cab0` | TODO 2 真实划选 `data-rid`/`sourceRef` + 服务端来源校验收紧                             |
+| v2.2.8.c | `0e23324` | TODO 3 迁移训练独立信心组 + 同词性干扰项 + token 绑 rid                                    |
+| v2.2.8.d | `07a86a0` | TODO 4 单元按 section 严格分支 + batchId + 错因权限 + `sessionDurationMs`             |
+| v2.2.8.e | `a23ef0b` | TODO 5 周报排除 pending + bySection 分题型 + `pendingRetries`                     |
+| v2.2.8.f | `eb728f9` | TODO 6 测试进程收口（`process.exitCode`）+ 真实 UI 覆盖                                |
+| v2.2.8.g | `850b093` | TODO 7 四风格口径（8→4）+ 触控统一 ≥44px + `.st-sentence` 2em 缩进                      |
 
 **测试命令**（本地 `english-workbench/`，全部退出码 0）：
+
 - 后端 14 套件：`test_v220_storage.js`(18) / `test_v220_regress.js`(5) / `test_v221_quiz.js`(19) / `test_v222_unit.js`(25) / `test_v223_report.js`(13) / `test_v224_vocab.js`(23) / `test_v225_sentence.js`(32) / `test_v226_backup.js`(23) / `test_v220.js`(63) / `test_v228_concurrency.js`(22) / `test_v228_sourceref.js`(23) / `test_v228_vocab.js`(19) / `test_v228_unit.js`(28) / `test_v228_report.js`(20)
 - 浏览器 12 套件：`test_v221_playwright.js`(6) / `test_v222_playwright.js`(7) / `test_v223_playwright.js`(9) / `test_v224_playwright.js`(6) / `test_v225_playwright.js`(14) / `test_v226_playwright.js`(39) / `test_v220_ui.js`(36) / `test_v228_sourceref_ui.js`(25) / `test_v228_vocab_ui.js`(14) / `test_v228_unit_ui.js`(16) / `test_v228_report_ui.js`(14) / `test_v228_ui_contract.js`(16)
 - 统一入口辅助：`.workbuddy/_test_util.js`（`stopServer`/`cleanupSandbox`）。
@@ -175,9 +227,11 @@
 ## 1. 🎯 核心目标与技术栈
 
 ### 核心功能
+
 个人**考研英语一**学习系统「英语学习工作台」。核心闭环：墨墨背单词 Open API 数据同步 → AI 单词教练互动（注入真题/外刊/个人语料证据）→ 助记生成并推回墨墨云词库。周边模块：真题库、语料库（4070 篇自动外刊 + 手工语料，v2.9.0 全自动入库）、单元题库、单词测验、学习诊断周报、长难句三遍训练、番茄钟/禅模式、数据备份、沉浸式划选精读。
 
 ### 技术栈与架构决策（已冻结，勿轻易改动）
+
 - **后端**：零依赖 Node.js 原生 `http`，单文件 `english-workbench/server.js`。无 `dependencies`。本地 Node v24，云服务器 Node v22。
 - **前端**：原生 JS + CSS 单页多 Tab，无框架、无构建步骤。`english-workbench/public/{index.html,app.js,style.css}`。
 - **持久化**：JSON / JSONL 文件。`data/db.json`、`data/chat_sessions.json`、`data/config.json`、`data/kb_versions.json`、`data/learning_attempts.json`（学习流水，`schemaVersion:1`，上限 20,000 条，tmp+rename 原子写）；`data/` 整体 gitignore（含密钥）。
@@ -189,11 +243,13 @@
 ---
 
 ## 2. ✅ 历史版本 (Completed)
+
 主题：**真题库第八轮（r8）AI 审读修复 + 练习端 Part B 选项池 A–H 打通**。
 
 > **2026-09-13 线上实操复检（Playwright + 网站 AI 审读）**：逐卷点开 30 套真题执行「AI 审读」，仅 2010 卷报 1 条疑点（完形 Q7 选项 D）。核对发现：**库数据 `(D) so long as` 正确**，但 ECS 的审读「原件参考」`corpus/archive/真题/2010.tex` 为旧版（仍含 `so long so`），LLM 拿正确库数据去比错误原件 → **假疑点，fix 方向是改错**。根因：archive 被 gitignore，`git pull` 不更新，ECS 副本停留在 pre-r8/r10（25/30 卷陈旧，含 `self-condident`/`straitford`/`so long so`）。已从本地（texsrc 同步版，30 卷 md5 一致）重新打包 scp 覆盖 ECS archive（备份 `/root/workbench-archive-zhenti-backup-20260913-085946/`），**未改库数据**。重审 30 卷全部 0 疑点。
 
 #### r8 审读定性（14 条，逐条对照原件）
+
 - **真修复 7 处（`english-corpus/texsrc/`，均已重导入库）**：
   - 2000：`self-condident` → `self-confident`；`two years ago.What` → `two years ago. What`（raw_text/2000.txt 作 `[A] self-confident`、`ago. What`）。
   - 2002：Q39 选项 `{Desperate}` → `{Desperate.}`（raw OCR `[D] Desperate.`，与其余选项句末标点一致）。
@@ -203,33 +259,40 @@
   - 2000 `conditionally speeding`（raw OCR + 中译「有条件地」一致）；2010 Part B `41→42→43→44→E→45`（TeX 源本身如此，Directions 明示仅 E 预置）；2017 `consolidated Dickens' as`（各复原稿均缺 reputation，原卷如此）。
 
 #### 练习端 Part B 缺陷修复
+
 - `public/app.js`：新题型空位下拉不再写死 `ABCDEFG`，改按单元实际选项池生成（2023 A–H 的 H 可选）；录入面板让 Part B 41–45 空可从独立「选项池」条目继承答案键。
 - `server.js`：`/api/unit/answers/save` 校验 `^[A-G]$` → `^[A-Z]$`（支持 H）；`/api/unit/answers/submit` 判分排除 `number == null` 的选项池占位条目。
 
 #### 源码层遗留改动（r7 后未提交，随本版一并提交）
+
 - `corpus_tools/tex_parser.py`：`import unicodedata` + 11 类清理。`server.js`：AI 审读送审含 options、定位覆盖「正文+选项」、LIMIT 120000。`app.js`+`style.css`：`allowU()` 放行 `<u>` 划线段。
 
 #### 追加：AI 审读提示词补丁 + r10 修复（09-12 复核，Playwright 实操验收）
+
 - **`server.js` `quality_review` 提示词新增规则 1a/1b**：原件已有写法（含原件自身拼写/语法/专名如 `Au Bong Pain`/`Gallileo`）一律不报；仅「整理结果与原件不符或截断丢词」才算问题。
 - **r10 源修复 2 处**：2000 `comprehension.”No doubt` → `comprehension.” No doubt`；1999 `Amazon .com` → `Amazon.com`。已重导校验。
 - **验收（每卷重审 3 次报错 ≤ 2 条）**：`.workbuddy/sweep_seq_r214.js` r11/r12/r13 三轮全库 30 卷 **全部 0 issues、无 ERR**；`negctl_review.js` 负控注入漏词仍被捕获。
 - **playwright-cli 实操**：真题库 1998/2000/2010「AI 审读」均「✅ 未发现明显疑点」；单元题库 2023 新题型下拉与标准答案下拉均 `ABCDEFGH`。
 
 #### 验证（全绿）
+
 - `node --check public/app.js` / `server.js` 0 错误；全量重导 30 卷；`verify_store_v213.py` 30 卷全 OK，`FAILS: NONE`。
 - 落库抽验：`self-confident` / `Desperate.` / 四处 `Straitford` 已在 `exams.jsonl`，旧串 0 命中。
 - `.workbuddy/e2e_partb_v214.js`：2023 选项池 A–H、含 H 标准答案可保存、提交判分 5/5。
 
 #### 部署（已完成，2026-09-12 22:03）
+
 - `git push gitee master`：`0a259b5..05435c4`（提交 `05435c4`）。
 - ECS 备份 `/root/workbench-pre-v2.1.4-backup-20260912-220217/`（config.json / kb_versions.json / exams.jsonl.online 1005KB / records.jsonl.online 76KB）。
 - 流程：`git checkout -- corpus/exams.jsonl`（线上改动已备份）→ `git fetch origin` → `git merge --ff-only origin/master`（`0a259b5..05435c4`）→ `sudo systemctl restart workbench`（active）；**`records.jsonl` 未触碰**。
 - 线上验证：`git rev-parse --short HEAD` = `05435c4`；`package.json` / 页头 = `v2.1.4`；`/api/exam/records` 返回 30 卷（1994–2023）；抽查 `self-confident`/`Straitford` 命中、旧串 0 命中；2023 Part B 池键 `A–H`；公网 `http://121.43.177.191/` 页头 v2.1.4（Basic Auth 200）。
 
 ### v2.1.3（上一版，已上线 ECS）
+
 主题：**真题库以本地 TeX 源全量重导 + `tex_parser.py` 解析缺陷修复**。用户明确「真题库现有真题全部不要，用本地 TeX 源重新导入，只用 2024 及以前」。
 
 #### 数据结果
+
 - 真题库 `corpus/exams.jsonl` 由旧数据（本地 1 条 PDF / ECS 30 条带缺陷）**全量重导**为本地 TeX 源 30 卷：
   - 覆盖 **1994–2023**（无 2024 TeX 源），共 **1394 题**。
   - 卷题量：1994–2000 各 35 题；2001–2004 各 45 题；2005–2023 各 51 题。
@@ -237,6 +300,7 @@
 - 重导前本地旧库已备份（`corpus/exams.jsonl.bak-v213-*`，gitignored）；原件归档 `corpus/archive/真题/*.tex`（gitignored）。
 
 #### `corpus_tools/tex_parser.py` 修复（7 类）
+
 1. **`\newlinespread{X}{...}` 包裹体剥离**：先移除命令保留正文，修正 1995/1998/1999/2000/2009 翻译整段被 catch-all 吞掉。
 2. **翻译句变体抽取**：兼容 2020 `(49) \uline{...}` 无 `\transnum` 写法；翻译答案句数上限 5，源缺陷多余句（2023 stray Scovell 段落）连同所在段落剔除。
 3. **裸选项兜底**：个别小题漏写 `\fourchoices`（1994 P4、1996 P4、1999 P3）的裸 `{..}×4` 识别；题干开头重复选项词前缀自动去除（1999「far reaching」）。
@@ -246,11 +310,13 @@
 7. **旧卷结构映射**：year<2005 阅读「Part B」映射为翻译（part C），修正 2002–2004 翻译误归 part_b。
 
 #### 配套修复
+
 - **`corpus_tools/exam_norm.py`**：`score_items` 对 `number is None` 的选项池条目置 `score=None`，避免重复计分。
 - **`.gitignore`**：新增 `__pycache__/`。
 - **版本号**：`package.json` → `2.1.3`；`public/index.html` 桌面 + 移动端标识 → `v2.1.3`。
 
 #### 验证与评估（全绿）
+
 - `.workbuddy/gate_v213.py`：按年代期望门禁，30 卷全 OK（含 import_cli 全管线）。
 - `.workbuddy/pipeline_v213.py`：30 卷 parse+normalize 干跑无崩、分数正常。
 - 经本地 server `/api/exam/import`（每批 10，base64）全量重导；`corpus/exams.jsonl` = 30 records / 1394 题。
@@ -259,50 +325,34 @@
 - 抽查：1999 #11 dedup、1994 阅读 11–30 齐全、2023 翻译 46–50、2022 Part B、2023 池 A–H、2005 锚 41–45。
 
 #### 部署（已完成）
+
 - 提交 `0a259b5` 已推送 Gitee 主干。
 - ECS 部署前备份至 `/root/workbench-pre-v2.1.3-backup-20260911-194630/`（config.json / kb_versions.json / exams.jsonl / records.jsonl）；`corpus/exams.jsonl` 定向丢弃换新，`records.jsonl` 未触碰；ff-only 合并 `923d505..0a259b5` 成功；`workbench.service` active。
 - 线上验证：页头 `v2.1.3`；`/api/exam/records` 返回 30 条（1994.tex–2023.tex）；抽查 2005/2020/2023 段计数与池键（2023 = A–H，其余 A–G）全部符合预期。
 
 ### v2.1.2（上一版，已上线）
+
 AI 审读修正方案采纳/拒绝写回、记录级最近 5 版历史回溯、沉浸式划选精读（PC 浮动卡片/移动端底部抽屉）。提交 `923d505` 已推 Gitee + ECS ff-only 部署 + 线上验证。
 
 近期提交链（新→旧）：
 
-| 提交 | 版本 | 内容 |
-|---|---|---|
-| `dc43076` | v2.2.8 | post-audit TODO6：线上静态资源三方哈希（LF 归一）+ Release 完成状态（docs-only）|
-| `a41fe08` | v2.2.8 | post-audit TODO1：新增 `TESTING.md` 可审计测试来源（docs-only，产品代码不变）|
-| `0705689` | v2.2.8 | TODO8 版本与文档统一冻结（`2.2.8.g` → `2.2.8`）|
-| `850b093` | v2.2.8.g | TODO7 统一 UI 契约：四风格文案、触控 ≥44px、`.st-sentence` 2em 缩进 |
-| `eb728f9` | v2.2.8.f | TODO6 测试进程收口（`process.exitCode`）+ 真实 UI 覆盖 |
-| `a23ef0b` | v2.2.8.e | TODO5 周报排除 pending + 分题型统计 + `pendingRetries` |
-| `07a86a0` | v2.2.8.d | TODO4 单元严格 section 分支 + batchId + 错因权限 + `sessionDurationMs` |
-| `0e23324` | v2.2.8.c | TODO3 迁移训练独立信心组 + 同词性干扰项 + token 绑 rid |
-| `8d1cab0` | v2.2.8.b | TODO2 真实划选 `data-rid`/`sourceRef` + 服务端来源校验收紧 |
-| `a850648` | v2.2.8.a | TODO1 学习流水并发安全 + 损坏文件保护 `LEARNING_STORE_CORRUPT` |
-| `a7cd90a` | v2.2.7 | v2.2 学习诊断闭环（单词测验/单元/周报/迁移/长难句/备份）|
-| `05435c4` | v2.1.4 | 真题库 AI 审读零疑点（3 轮复核）+ 审读提示词原件基线补丁 + Part B 选项池 A–H + `tex_parser` 11 类清理 |
-| `0a259b5` | v2.1.3 | 真题库以本地 TeX 源全量重导 30 卷 1394 题 + `tex_parser` 七类解析缺陷修复 |
-| `923d505` | v2.1.2 | AI 审读采纳/拒绝写回、记录级最近 5 版历史回溯、沉浸式划选精读 |
+| 提交        | 版本       | 内容                                                                      |
+| --------- | -------- | ----------------------------------------------------------------------- |
+| `dc43076` | v2.2.8   | post-audit TODO6：线上静态资源三方哈希（LF 归一）+ Release 完成状态（docs-only）             |
+| `a41fe08` | v2.2.8   | post-audit TODO1：新增 `TESTING.md` 可审计测试来源（docs-only，产品代码不变）              |
+| `0705689` | v2.2.8   | TODO8 版本与文档统一冻结（`2.2.8.g` → `2.2.8`）                                    |
+| `850b093` | v2.2.8.g | TODO7 统一 UI 契约：四风格文案、触控 ≥44px、`.st-sentence` 2em 缩进                     |
+| `eb728f9` | v2.2.8.f | TODO6 测试进程收口（`process.exitCode`）+ 真实 UI 覆盖                              |
+| `a23ef0b` | v2.2.8.e | TODO5 周报排除 pending + 分题型统计 + `pendingRetries`                           |
+| `07a86a0` | v2.2.8.d | TODO4 单元严格 section 分支 + batchId + 错因权限 + `sessionDurationMs`            |
+| `0e23324` | v2.2.8.c | TODO3 迁移训练独立信心组 + 同词性干扰项 + token 绑 rid                                  |
+| `8d1cab0` | v2.2.8.b | TODO2 真实划选 `data-rid`/`sourceRef` + 服务端来源校验收紧                           |
+| `a850648` | v2.2.8.a | TODO1 学习流水并发安全 + 损坏文件保护 `LEARNING_STORE_CORRUPT`                        |
+| `a7cd90a` | v2.2.7   | v2.2 学习诊断闭环（单词测验/单元/周报/迁移/长难句/备份）                                       |
+| `05435c4` | v2.1.4   | 真题库 AI 审读零疑点（3 轮复核）+ 审读提示词原件基线补丁 + Part B 选项池 A–H + `tex_parser` 11 类清理 |
+| `0a259b5` | v2.1.3   | 真题库以本地 TeX 源全量重导 30 卷 1394 题 + `tex_parser` 七类解析缺陷修复                    |
+| `923d505` | v2.1.2   | AI 审读采纳/拒绝写回、记录级最近 5 版历史回溯、沉浸式划选精读                                      |
 
----
-
-## 3. ⏳ 正在进行中 / 中断时的状态 (In Progress)
-
-- **v2.2.8 已上线**（Gitee tag `v2.2.8` = `0705689`；HEAD `a41fe08` 仅追加 `TESTING.md`；ECS `/opt/workbench` 产品文件与 tag 逐文件一致，`workbench.service` active）。
-- **测试套件**：27 套（14 后端 + 12 浏览器 + 1 线上只读冒烟），全部退出码 0，断言总数 556；来源清单见 `english-workbench/TESTING.md`（已入库）。线上冒烟含**静态资源三方哈希一致性**（线上=tag `v2.2.8`=本地，LF 归一）。
-- 线上学习流水 `data/learning_attempts.json` 当前为空态（85B）；`data/answers.json` 线上不存在；`data/db.json` 约 3,669,685B。
-- ECS 侧 `corpus/exams.jsonl`、`corpus/records.jsonl` 仍为线上进程可写的 modified 状态（正常，未触碰）；服务器另有若干历史 untracked 文件（`texsrc.tar.gz`、`texsrc_tmp/`、`audit_quality.js`、`batch_import.js` 等），非本次产生，勿清理。
-- **Gitee Release `v2.2.8` ✅ 已完成**（id `1143796`，target `0705689`，标题「v2.2.8 学习诊断闭环稳定性收口」）。
-- **域名（用户决策：不启用）**：国内备案不便，本项目**不依赖域名**；canonical 入口为 ECS 直连 `http://121.43.177.191`（**应用内多用户登录，2026-09-26 起已去除 nginx Basic Auth**）。`memo.luguhu.online` 子域 NXDOMAIN 属既有基础设施状态，**不作为发布阻断项**。
-- **已知非阻塞遗留（有意保留，勿当 bug）**：
-  1. `server.js` 的 `GLOSS_SYSTEM` 常量、`kbCorpusForWord()` 已无引用，属死代码。
-  2. `app.js` 注释写「`{spacing}` 占位符」，实际默认模板用 `{spelling}`；运行时代码两者兼容。
-  3. 旧年真题翻译编号已按原件修正为 1994–2000 → 31–35、2001–2004 → 41–45（经 1998 官方 PDF 与 raw OCR 核验，写入 `tex_parser.py`）。
-  4. 2024 真题（仅 `zhen/2024.pdf`，无 TeX 源）本轮未入库。
-  5. 1998/2000/2010/2017 的「原卷自带拼写/结构」已终裁为误报；后续 AI 审读若再报同项，直接忽略。
-
----
 
 ## 4. 🚀 紧接着的下一步动作 (Next Immediate Steps)
 
