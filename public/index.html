@@ -28,7 +28,7 @@
 <body data-page-node-id="nw1cmg1YyobuHkMMUfVFnx">
 <!-- 手机端原生 App 级顶栏 (48px) -->
 <header class="mobile-header">
-  <div class="mobile-brand"><span class="mist-seal" aria-hidden="true">词</span><i class="mist-legacy-mark ink-ico ink-book" aria-hidden="true"></i> 单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.6.0</span></div>
+  <div class="mobile-brand"><span class="mist-seal" aria-hidden="true">词</span><i class="mist-legacy-mark ink-ico ink-book" aria-hidden="true"></i>单词工作台 <span class="ver ver-click" id="openLogsMobile" title="查看日志版块">v4.7.0</span></div>
   <div class="mobile-header-actions">
     <button class="theme-toggle" id="mobileThemeToggle" title="切换黑夜/白天模式"><i class="ink-toggle ink-moon"></i></button>
     <button class="theme-toggle" id="mobileZenToggle" title="专注禅模式"><i class="ink-toggle ink-zen"></i></button>
@@ -44,7 +44,7 @@
       <span class="mist-seal" aria-hidden="true">词</span><i class="brand-mark ink-ico ink-book" aria-hidden="true"></i><span class="brand-text">英语单词学习工作台</span>
     </div>
     <div class="sidebar-head-tools">
-      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.6.0</span>
+      <span class="ver ver-click" id="openLogsSidebar" title="查看日志版块" data-page-node-id="kSXFZJb7IHBjnBTFxwSPAN">v4.7.0</span>
       <!-- v4.3.1：侧边栏可折叠为图标窄栏（状态记忆在本设备） -->
       <button class="sidebar-toggle" id="sidebarToggle" type="button" title="折叠侧边栏" aria-label="折叠侧边栏" aria-expanded="true"><span class="sidebar-toggle-icon" aria-hidden="true">«</span><span class="sidebar-toggle-text">收起</span></button>
     </div>
@@ -74,8 +74,8 @@
     </div>
   </div>
 </aside>
-<button id="zenFloatingExit" class="zen-exit-btn" title="退出专注视界 (Esc或Z)">✕ 退出专注</button>
-<button id="spotlightToggleFloating" class="spotlight-floating-btn" title="开关段落聚光灯 (快捷键 S)">💡 探照灯</button>
+<button id="zenFloatingExit" class="zen-exit-btn" title="退出专注视界 (Esc或Z)"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i>退出专注</button>
+<button id="spotlightToggleFloating" class="spotlight-floating-btn" title="开关段落聚光灯 (快捷键 S)"><i class="ink-glyph ink-bulb" aria-hidden="true"></i>探照灯</button>
 
 <!-- v2.9.0：登录遮罩（未登录时覆盖全屏；登录后该设备默认保持登录）
      v3.1.0：新增「登录 / 注册」双标签——多用户模式走用户名+密码、一次性邀请码注册；单用户模式仍走 Token 凭证 -->
@@ -118,8 +118,8 @@
   <!-- ============ 日志版块（v2.9.0，点击版本号进入） ============ -->
   <section id="tab-logs" class="tab-page" data-page-node-id="v280logs">
     <header class="page-heading mist-band mist-band-logs">
-      <div><h1>日志版块 <span class="ver mist-band-ver" id="logsVersionBadge">v4.6.0</span></h1></div>
-      <div class="mist-band-aside"><button class="btn" id="logsBackBtn">← 返回</button></div>
+      <div><h1>日志版块 <span class="ver mist-band-ver" id="logsVersionBadge">v4.7.0</span></h1></div>
+      <div class="mist-band-aside"><button class="btn" id="logsBackBtn"><i class="ink-glyph ink-only ink-arrow-left" aria-hidden="true"></i>返回</button></div>
     </header>
     <div class="logs-tabs" id="logsTabs">
       <button class="logs-tab active" data-logs="dev"><i class="ink-tab ink-book" aria-hidden="true"></i>志</button>
@@ -153,7 +153,7 @@
         </div>
         <label class="field-label" style="margin-top:8px">内容</label>
         <textarea id="usageContent" class="input" rows="3" placeholder="补充说明、复现步骤或规划细节"></textarea>
-        <button class="btn primary" id="usageAddBtn" style="margin-top:10px"><i class="ink-btn ink-plus"></i> 添加到使用日志</button>
+        <button class="btn primary" id="usageAddBtn" style="margin-top:10px"><i class="ink-btn ink-plus"></i>添加到使用日志</button>
         <div class="result" id="usageResult"></div>
       </div>
       <div id="usageLogList"></div>
@@ -163,7 +163,7 @@
     <div class="logs-pane" id="logsPane-error">
       <div class="card-title-row" style="align-items:center">
 
-        <button class="btn" id="errorClearBtn">🗑 清空报错日志</button>
+        <button class="btn" id="errorClearBtn"><i class="ink-glyph ink-trash" aria-hidden="true"></i>清空报错日志</button>
       </div>
       <div id="errorLogList"></div>
     </div>
@@ -180,7 +180,7 @@
       <h1 id="todayTitle">今天，学一点点。</h1>
       <div class="mist-actions">
         <button type="button" class="btn primary" id="mistNextTask">查看今日任务</button>
-        <button type="button" class="btn" id="mistOpenLesson">进入词汇微课 <span aria-hidden="true">→</span></button>
+        <button type="button" class="btn" id="mistOpenLesson">进入词汇微课 <i class="ink-glyph ink-only ink-arrow-right" aria-hidden="true"></i></button>
       </div>
     </div>
     <section class="mist-ticket" aria-label="今日任务进度">
@@ -221,7 +221,7 @@
   <button class="btn" data-jump="study" data-filter="due7">7 天内复习</button>
   <button class="btn" data-jump="quiz" data-filter="today">测验今日词</button>
 </div></details><div class="hint" id="setupHint" style="display:none" data-page-node-id="84FdKCIDxTPIiNzoaVb8ku">
-          ⚠️ 首次使用请先到 <a href="#" data-jump="settings" data-page-node-id="57HFRUnKroWSmVAud0L6jF">设置</a> 填写墨墨 Token 与 AI 服务商配置。
+          <i class="ink-glyph ink-warn" aria-hidden="true"></i>首次使用请先到 <a href="#" data-jump="settings" data-page-node-id="57HFRUnKroWSmVAud0L6jF">设置</a> 填写墨墨 Token 与 AI 服务商配置。
         </div>
     </div>
     <article class="card mist-word-card" aria-labelledby="mistWordLabel">
@@ -235,12 +235,12 @@
     </article>
     <article class="card mist-feature mist-feature-lesson">
       <div class="mist-feature-body"><h2>把容易混的词放在一起学</h2>
-        <button type="button" class="btn" id="mistOpenSample">试学 address / solve <span aria-hidden="true">→</span></button>
+        <button type="button" class="btn" id="mistOpenSample">试学 address / solve <i class="ink-glyph ink-only ink-arrow-right" aria-hidden="true"></i></button>
       </div>
     </article>
     <article class="card mist-feature mist-feature-report">
       <div class="mist-feature-body"><h2>哪些词还值得再练？</h2>
-        <button type="button" class="btn" data-jump="reports">查看学习报告 <span aria-hidden="true">→</span></button>
+        <button type="button" class="btn" data-jump="reports">查看学习报告 <i class="ink-glyph ink-only ink-arrow-right" aria-hidden="true"></i></button>
       </div>
     </article>
   </div>
@@ -295,12 +295,12 @@
   </div>
   <div id="report-workbench" class="report-source-panel"><div class="card card-collapsible" id="learningReportCard">
       <div class="card-title-row">
-        <div class="card-title"><i class="ink-card ink-reports" aria-hidden="true"></i>📈 学习诊断报告（<span id="reportWinLabel">最近 7 天</span>）</div>
+        <div class="card-title"><i class="ink-card ink-reports" aria-hidden="true"></i>学习诊断报告（<span id="reportWinLabel">最近 7 天</span>）</div>
         <div class="report-win-btns">
           <button type="button" class="btn mini report-win-btn active" data-days="7">7天</button>
           <button type="button" class="btn mini report-win-btn" data-days="14">14天</button>
           <button type="button" class="btn mini report-win-btn" data-days="30">30天</button>
-          <button type="button" class="btn mini ghost" id="reportViewAllBtn">📜 全部流水</button>
+          <button type="button" class="btn mini ghost" id="reportViewAllBtn"><i class="ink-glyph ink-scroll" aria-hidden="true"></i>全部流水</button>
           <button class="card-collapse-toggle" type="button" data-collapse-target="#learningReportBody" title="折叠/展开">收起</button>
         </div>
       </div>
@@ -313,7 +313,7 @@
           <button type="button" class="chip active" data-statsdays="7">近 7 天</button>
           <button type="button" class="chip" data-statsdays="14">近 14 天</button>
           <button type="button" class="chip" data-statsdays="30">近 30 天</button>
-          <button class="btn small" id="quizStatsRefreshBtn">🔄 刷新</button>
+          <button class="btn small" id="quizStatsRefreshBtn"><i class="ink-glyph ink-refresh" aria-hidden="true"></i>刷新</button>
         </div>
         <div class="result" id="quizStatsMsg"></div>
         <div class="quiz-stats-board" id="quizStatsBoard"></div>
@@ -336,8 +336,8 @@
     </div></div><div class="kb-fix-modal" id="reportModal" style="display:none">
       <div class="kb-fix-dialog">
         <div class="kb-fix-head">
-          <div class="kb-fix-title">📜 细粒度作答流水记录</div>
-          <button type="button" class="kb-fix-close" id="reportModalClose">✕</button>
+          <div class="kb-fix-title"><i class="ink-glyph ink-scroll" aria-hidden="true"></i>细粒度作答流水记录</div>
+          <button type="button" class="kb-fix-close" id="reportModalClose"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
         </div>
         <div class="report-modal-filter-row">
           <span class="field-label" style="padding:0">题型过滤:</span>
@@ -365,8 +365,8 @@
     </header>
     <div class="study-subbar card" id="studySubbar">
       <div class="study-subnav">
-        <button class="study-sub-item active" data-sub="vocab" type="button">🔤 词汇精练</button>
-        <button class="study-sub-item" data-sub="story" type="button" id="storySubBtn">📖 词文成章</button>
+        <button class="study-sub-item active" data-sub="vocab" type="button"><i class="ink-glyph ink-letter-a" aria-hidden="true"></i>词汇精练</button>
+        <button class="study-sub-item" data-sub="story" type="button" id="storySubBtn"><i class="ink-glyph ink-book" aria-hidden="true"></i>词文成章</button>
         <span class="study-sub-tip" id="studySubTip">从语境作答开始，按需要展开辨析</span>
       </div>
     </div>
@@ -374,7 +374,7 @@
       <div class="grid-2" style="align-items:start">
         <div class="card card-collapsible" id="storySelectCard">
           <div class="card-title-row" style="margin-bottom:0">
-            <div class="card-title" style="margin-bottom:0"><i class="ink-card ink-target" aria-hidden="true"></i>🎯 选词</div>
+            <div class="card-title" style="margin-bottom:0"><i class="ink-card ink-target" aria-hidden="true"></i>选词</div>
             <button class="card-collapse-toggle" type="button" data-collapse-target="#storySelectBody" title="折叠/展开">收起</button>
           </div>
           <div class="card-collapse-body" id="storySelectBody">
@@ -393,24 +393,24 @@
             <label class="field-label">精准搜索 / 手动追加</label>
             <div style="display:flex;gap:8px">
               <input type="text" id="storySearch" class="input" placeholder="输入单词，支持逗号或空格批量粘贴…" autocomplete="off">
-              <button class="btn" id="storyAddBtn" style="white-space:nowrap"><i class="ink-btn ink-plus"></i> 加入词池</button>
+              <button class="btn" id="storyAddBtn" style="white-space:nowrap"><i class="ink-btn ink-plus"></i>加入词池</button>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
               <label class="field-label" style="margin:0">已选词池 <span id="storyPoolCount" style="color:var(--primary);font-weight:700">(0)</span></label>
-              <button class="btn small ghost" id="storyPoolClear" style="display:none">🗑 清空全部词池</button>
+              <button class="btn small ghost" id="storyPoolClear" style="display:none"><i class="ink-glyph ink-trash" aria-hidden="true"></i>清空全部词池</button>
             </div>
             <div class="story-pool" id="storyPool"></div>
           </div>
         </div>
         <div class="card card-collapsible" id="storyParamCard">
           <div class="card-title-row" style="margin-bottom:0">
-            <div class="card-title" style="margin-bottom:0"><i class="ink-card ink-settings" aria-hidden="true"></i> AI 词汇分析与创作参数规划</div>
+            <div class="card-title" style="margin-bottom:0"><i class="ink-card ink-settings" aria-hidden="true"></i>AI 词汇分析与创作参数规划</div>
             <button class="card-collapse-toggle" type="button" data-collapse-target="#storyParamBody" title="折叠/展开">收起</button>
           </div>
           <div class="card-collapse-body" id="storyParamBody">
 
             <div style="margin-top:10px">
-              <button class="btn primary full" id="storyAnalyzeBtn">🤖 步骤一：分析词汇并获取分类建议</button>
+              <button class="btn primary full" id="storyAnalyzeBtn"><i class="ink-glyph ink-robot" aria-hidden="true"></i>步骤一：分析词汇并获取分类建议</button>
               <div class="result" id="storyAnalyzeResult"></div>
             </div>
 
@@ -418,14 +418,14 @@
             <div id="storyAnalysisBox" class="story-analysis-box" style="display:none">
               <div class="story-analysis-summary" id="storyAnalysisSummary"></div>
 
-              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px"><i class="ink-card ink-reports" aria-hidden="true"></i>📊 AI 推荐篇幅与理由</div>
+              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px"><i class="ink-card ink-reports" aria-hidden="true"></i>AI 推荐篇幅与理由</div>
               <div class="story-len-rec" id="storyLenRec"></div>
 
-              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px"><i class="ink-card ink-spark" aria-hidden="true"></i>🧩 词汇场景分类与情节线索建议</div>
+              <div class="card-title" style="font-size:13.5px;margin:10px 0 6px"><i class="ink-card ink-spark" aria-hidden="true"></i>词汇场景分类与情节线索建议</div>
               <div class="story-groups-list" id="storyGroupsList"></div>
 
               <div style="display:flex;gap:8px;align-items:center;margin-top:12px">
-                <button class="btn ok" id="storyAdoptAdviceBtn"><i class="ink-btn ink-check"></i> 一键采纳推荐配置</button>
+                <button class="btn ok" id="storyAdoptAdviceBtn"><i class="ink-btn ink-check"></i>一键采纳推荐配置</button>
 
               </div>
             </div>
@@ -435,7 +435,7 @@
             <label class="field-label">文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（采纳建议或自主微调）</span></label>
             <div class="filter-row" id="storyThemeRow"></div><!-- v2.4.1：题材 chips 动态渲染 -->
             <!-- v2.4.3：篇幅规格已删除——篇幅全权由 AI 分析建议约束 -->
-            <button class="btn primary full" id="storyGenBtn" style="margin-top:14px"><i class="ink-btn ink-spark"></i> 步骤二：按分组逐篇生成文章</button>
+            <button class="btn primary full" id="storyGenBtn" style="margin-top:14px"><i class="ink-btn ink-spark"></i>步骤二：按分组逐篇生成文章</button>
             <div class="result" id="storyGenResult"></div>
           </div>
         </div>
@@ -444,10 +444,10 @@
         <div class="card-title-row" style="margin-bottom:0">
           <div class="card-title" id="storyTitle" style="margin-bottom:0">文章</div>
           <div class="row-gap" style="align-items:center">
-            <button class="btn small" id="storySpeakBtn">🔊 朗读全文</button>
-            <button class="btn small ghost" id="storyCopyBtn">📋 复制</button>
-            <button class="btn small" id="storyRegenBtn">🔁 换一篇</button>
-            <button class="btn small danger" id="storyDelBtn">🗑 删除</button>
+            <button class="btn small" id="storySpeakBtn"><i class="ink-glyph ink-audio" aria-hidden="true"></i>朗读全文</button>
+            <button class="btn small ghost" id="storyCopyBtn"><i class="ink-glyph ink-clipboard" aria-hidden="true"></i>复制</button>
+            <button class="btn small" id="storyRegenBtn"><i class="ink-glyph ink-cycle" aria-hidden="true"></i>换一篇</button>
+            <button class="btn small danger" id="storyDelBtn"><i class="ink-glyph ink-trash" aria-hidden="true"></i>删除</button>
             <button class="card-collapse-toggle" type="button" data-collapse-target="#storyResultBody" title="折叠/展开">收起</button>
           </div>
         </div>
@@ -456,14 +456,14 @@
           <div class="story-translation" id="storyTranslation" hidden></div>
           <div class="card-title" style="margin-top:14px"><i class="ink-card ink-quill" aria-hidden="true"></i>词汇钩子</div>
           <div class="story-hooks" id="storyHooks"></div>
-          <div class="card-title" style="margin-top:14px">📝 检索自测</div>
+          <div class="card-title" style="margin-top:14px"><i class="ink-glyph ink-quill" aria-hidden="true"></i>检索自测</div>
           <div class="story-quiz" id="storyQuiz"></div>
           <div class="result" id="storyQuizResult"></div>
         </div>
       </div>
       <div class="card card-collapsible">
         <div class="card-title-row" style="margin-bottom:0">
-          <div class="card-title" style="margin-bottom:0"><i class="ink-card ink-frame" aria-hidden="true"></i>🗂 历史文章</div>
+          <div class="card-title" style="margin-bottom:0"><i class="ink-card ink-frame" aria-hidden="true"></i>历史文章</div>
           <div class="row-gap" style="align-items:center">
             <button class="btn small" id="storyHistRefresh">刷新</button>
             <button class="card-collapse-toggle" type="button" data-collapse-target="#storyHistBody" title="折叠/展开">收起</button>
@@ -478,8 +478,8 @@
       <!-- 词表浮层不占用学习工作区。 -->
       <aside class="word-panel card" id="wordPanel" inert aria-hidden="true" aria-label="词表" data-page-node-id="XLvWS2U7KuUAVrvzsrro3S">
         <div class="card-title-row word-panel-head" style="margin-bottom:0">
-          <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD" style="margin-bottom:0"><i class="ink-card ink-book" aria-hidden="true"></i>📚 词表 <span class="word-panel-count" id="wordPanelCount"></span></div>
-          <button class="btn small ghost word-panel-close" id="wordPanelClose" type="button" title="收起词表">✕</button>
+          <div class="card-title" data-page-node-id="ArcfBvTm0ilBdaFD8BVGJD" style="margin-bottom:0"><i class="ink-card ink-book" aria-hidden="true"></i>词表 <span class="word-panel-count" id="wordPanelCount"></span></div>
+          <button class="btn small ghost word-panel-close" id="wordPanelClose" type="button" title="收起词表"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
         </div>
         <div class="card-collapse-body" id="wordPanelCollapseBody">
           <div class="filter-row" id="wordFilters" data-page-node-id="6hQfUGFSzT2MfS2nEn5FtZ" style="margin-top:8px">
@@ -547,17 +547,17 @@
           <div class="chat-header" data-page-node-id="t9ofVLCv1wjBgdg7WdFJAW"><span id="chatHeader" data-page-node-id="5tNtI60HD2bCHu6cbVsRyD">自由提问</span></div>
           <div style="display:flex;gap:6px;align-items:center">
 
-            <button class="btn small" id="chatHistoryBtn" title="聊天历史">📜 历史</button>
-            <button class="btn small speak-btn" id="speakWordBtn" title="朗读单词" style="display:none">🔊</button>
+            <button class="btn small" id="chatHistoryBtn" title="聊天历史"><i class="ink-glyph ink-scroll" aria-hidden="true"></i>历史</button>
+            <button class="btn small speak-btn" id="speakWordBtn" title="朗读单词" style="display:none"><i class="ink-glyph ink-audio" aria-hidden="true"></i></button>
           </div>
         </div>
         <!-- v1.2.0：聊天历史面板（覆盖层） -->
         <div id="chatHistoryOverlay" class="ch-overlay" style="display:none">
           <div class="ch-overlay-head">
-            <b>📜 聊天历史</b>
+            <b><i class="ink-glyph ink-scroll" aria-hidden="true"></i>聊天历史</b>
             <div style="display:flex;gap:6px;align-items:center">
               <input type="text" id="chatHistorySearch" class="input" placeholder="搜索单词或内容…" style="width:180px;font-size:13px">
-              <button class="btn small" id="chatHistoryClose">✕ 关闭</button>
+              <button class="btn small" id="chatHistoryClose"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i>关闭</button>
             </div>
           </div>
           <div id="chatHistoryPanel" class="ch-panel"></div>
@@ -568,7 +568,7 @@
 
         <div class="chat-image-preview" id="chatImagePreview" style="display:none">
           <img id="chatImagePreviewImg" alt="待发送图片">
-          <button class="chat-image-clear" id="chatImageClear" title="移除图片" type="button">✕</button>
+          <button class="chat-image-clear" id="chatImageClear" title="移除图片" type="button"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
         </div>
         <div class="chat-input-row" data-page-node-id="CF2qOHn0v6t773Z4Ezjam1">
           <input type="file" id="chatImageFile" accept="image/*" style="display:none">
@@ -595,24 +595,24 @@
       <div class="card-title" data-page-node-id="6MxB6a0jjc99rR66ZFFWdB">组卷</div>
       <!-- v2.2.4：基础回忆 / 真题迁移 二级模式 -->
       <div class="quiz-submode" id="quizSubmode">
-        <button type="button" class="btn quiz-submode-btn active" data-submode="basic"><i class="ink-btn ink-memory"></i> 基础回忆</button>
-        <button type="button" class="btn quiz-submode-btn" data-submode="srs"><i class="ink-btn ink-refresh"></i> 错题复练</button>
-        <button type="button" class="btn quiz-submode-btn" data-submode="transfer"><i class="ink-btn ink-target"></i> 真题迁移</button>
+        <button type="button" class="btn quiz-submode-btn active" data-submode="basic"><i class="ink-btn ink-memory"></i>基础回忆</button>
+        <button type="button" class="btn quiz-submode-btn" data-submode="srs"><i class="ink-btn ink-refresh"></i>错题复练</button>
+        <button type="button" class="btn quiz-submode-btn" data-submode="transfer"><i class="ink-btn ink-target"></i>真题迁移</button>
       <button class="btn quiz-submode-link" data-jump="reports">学习报告</button></div>
 
       <div id="quizBasicPane">
       <label class="field-label" data-page-node-id="bCD5sp6gv0FJ65qF3AOiUc">词源</label>
       <div class="filter-row" id="quizSources" data-page-node-id="5lACeDCl76BYErTUiAOtZC">
-        <button class="chip active" data-src="today" data-page-node-id="SgpJdDKR4cIQpust20YaRv"><i class="ink-chip ink-dashboard" aria-hidden="true"></i> 今日词</button>
-        <button class="chip" data-src="sticky" data-page-node-id="RCS8yeKXbg0QgnFnL0TMfZ"><i class="ink-chip ink-target" aria-hidden="true"></i> 顽固词</button>
-        <button class="chip" data-src="vague" data-page-node-id="UIqSG6HuahvOG4Y7Lc5OSO"><i class="ink-chip ink-search" aria-hidden="true"></i> 模糊词</button>
-        <button class="chip" data-src="forget" data-page-node-id="ASFURZrCLt2lHeuLRbs0kV"><i class="ink-chip ink-warn" aria-hidden="true"></i> 忘记词</button>
-        <button class="chip" data-src="today_forget"><i class="ink-chip ink-warn" aria-hidden="true"></i> 今日忘词</button>
-        <button class="chip" data-src="today_vague"><i class="ink-chip ink-search" aria-hidden="true"></i> 今日模糊</button>
-        <button class="chip" data-src="due7" data-page-node-id="azoCmsp9he4ieKgCPRRRIC"><i class="ink-chip ink-refresh" aria-hidden="true"></i> 7天内到期</button>
-        <button class="chip" data-src="srs_due" data-page-node-id="v210srsdue"><i class="ink-chip ink-memory" aria-hidden="true"></i> 记忆到期</button>
-        <button class="chip" data-src="wrongbook" data-page-node-id="v210wbook"><i class="ink-chip ink-warn" aria-hidden="true"></i> 错题本</button>
-        <button class="chip" data-src="all" data-page-node-id="qLHG1AKuV2iDZ5jyYF22wh"><i class="ink-chip ink-book" aria-hidden="true"></i> 全部</button>
+        <button class="chip active" data-src="today" data-page-node-id="SgpJdDKR4cIQpust20YaRv"><i class="ink-chip ink-dashboard" aria-hidden="true"></i>今日词</button>
+        <button class="chip" data-src="sticky" data-page-node-id="RCS8yeKXbg0QgnFnL0TMfZ"><i class="ink-chip ink-target" aria-hidden="true"></i>顽固词</button>
+        <button class="chip" data-src="vague" data-page-node-id="UIqSG6HuahvOG4Y7Lc5OSO"><i class="ink-chip ink-search" aria-hidden="true"></i>模糊词</button>
+        <button class="chip" data-src="forget" data-page-node-id="ASFURZrCLt2lHeuLRbs0kV"><i class="ink-chip ink-warn" aria-hidden="true"></i>忘记词</button>
+        <button class="chip" data-src="today_forget"><i class="ink-chip ink-warn" aria-hidden="true"></i>今日忘词</button>
+        <button class="chip" data-src="today_vague"><i class="ink-chip ink-search" aria-hidden="true"></i>今日模糊</button>
+        <button class="chip" data-src="due7" data-page-node-id="azoCmsp9he4ieKgCPRRRIC"><i class="ink-chip ink-refresh" aria-hidden="true"></i>7天内到期</button>
+        <button class="chip" data-src="srs_due" data-page-node-id="v210srsdue"><i class="ink-chip ink-memory" aria-hidden="true"></i>记忆到期</button>
+        <button class="chip" data-src="wrongbook" data-page-node-id="v210wbook"><i class="ink-chip ink-warn" aria-hidden="true"></i>错题本</button>
+        <button class="chip" data-src="all" data-page-node-id="qLHG1AKuV2iDZ5jyYF22wh"><i class="ink-chip ink-book" aria-hidden="true"></i>全部</button>
       </div>
 
       <label class="field-label" for="quizAssembly">组卷方式</label><select class="input" id="quizAssembly"><option value="fixed">指定题型</option><option value="adaptive">智能混合</option></select><div id="quizFixedOptions"><label class="field-label">指定题型</label><div class="filter-row" id="quizModes" data-page-node-id="PH0uIKuKU1Z8IfHRsUUcFA">
@@ -624,17 +624,17 @@
       <div id="quizAdaptiveFold" hidden>
         <label class="field-label">难度档</label>
         <div class="filter-row" id="quizDifficulty">
-          <button type="button" class="chip" data-diff="easy"><i class="ink-chip ink-target" aria-hidden="true"></i> 轻松（英→中 / 四选一）</button>
-          <button type="button" class="chip active" data-diff="normal"><i class="ink-chip ink-check" aria-hidden="true"></i> 标准（+拼写）</button>
-          <button type="button" class="chip" data-diff="hard"><i class="ink-chip ink-spark" aria-hidden="true"></i> 挑战（+看中选英 / 听音）</button>
+          <button type="button" class="chip" data-diff="easy"><i class="ink-chip ink-target" aria-hidden="true"></i>轻松（英→中 / 四选一）</button>
+          <button type="button" class="chip active" data-diff="normal"><i class="ink-chip ink-check" aria-hidden="true"></i>标准（+拼写）</button>
+          <button type="button" class="chip" data-diff="hard"><i class="ink-chip ink-spark" aria-hidden="true"></i>挑战（+看中选英 / 听音）</button>
         </div>
         <label class="field-label">交错题型开关</label>
         <div class="filter-row" id="quizAdaptiveKinds">
-          <button type="button" class="chip active" data-akind="flash"><i class="ink-chip ink-quiz" aria-hidden="true"></i> 闪卡</button>
-          <button type="button" class="chip active" data-akind="choice"><i class="ink-chip ink-book" aria-hidden="true"></i> 四选一</button>
-          <button type="button" class="chip" data-akind="spell"><i class="ink-chip ink-quill" aria-hidden="true"></i> 拼写</button>
-          <button type="button" class="chip" data-akind="zh2en"><i class="ink-chip ink-globe" aria-hidden="true"></i> 看中选英</button>
-          <button type="button" class="chip" data-akind="audio"><i class="ink-chip ink-audio" aria-hidden="true"></i> 听音辨义</button>
+          <button type="button" class="chip active" data-akind="flash"><i class="ink-chip ink-quiz" aria-hidden="true"></i>闪卡</button>
+          <button type="button" class="chip active" data-akind="choice"><i class="ink-chip ink-book" aria-hidden="true"></i>四选一</button>
+          <button type="button" class="chip" data-akind="spell"><i class="ink-chip ink-quill" aria-hidden="true"></i>拼写</button>
+          <button type="button" class="chip" data-akind="zh2en"><i class="ink-chip ink-globe" aria-hidden="true"></i>看中选英</button>
+          <button type="button" class="chip" data-akind="audio"><i class="ink-chip ink-audio" aria-hidden="true"></i>听音辨义</button>
         </div>
         <label class="field-label quiz-ai-toggle"><input type="checkbox" id="quizAiDistractors"> AI 增强干扰项</label>
       </div>
@@ -662,8 +662,8 @@
         <label class="field-label">题量（不设上限）</label>
         <input type="number" id="quizSrsCount" class="input" value="10" min="1" style="width:120px">
         <div class="row-gap">
-          <button class="btn primary" id="quizSrsStartBtn">🔁 开始复练</button>
-          <button class="btn" id="quizSrsRefreshBtn">🔄 刷新概览</button>
+          <button class="btn primary" id="quizSrsStartBtn"><i class="ink-glyph ink-cycle" aria-hidden="true"></i>开始复练</button>
+          <button class="btn" id="quizSrsRefreshBtn"><i class="ink-glyph ink-refresh" aria-hidden="true"></i>刷新概览</button>
         </div>
         <div class="result" id="quizSrsMsg"></div>
         <div class="quiz-wrongbook-list" id="quizWrongbookList"></div>
@@ -688,7 +688,7 @@
         <label class="field-label">题量（不设上限）</label>
         <input type="number" id="transferCount" class="input" value="6" min="1" style="width:120px">
         <div class="row-gap">
-          <button class="btn primary" id="transferStartBtn">🎯 开始迁移训练</button>
+          <button class="btn primary" id="transferStartBtn"><i class="ink-glyph ink-target" aria-hidden="true"></i>开始迁移训练</button>
         </div>
         <div class="result" id="transferMsg"></div>
       </div>
@@ -700,7 +700,7 @@
     <div class="card" id="quizRun" style="display:none" data-page-node-id="TwoyCTAxz2gPP7P0M4z5Gx">
       <div class="card-title-row" data-page-node-id="xnz197fm3eQPjOpG7MVZC4">
         <div class="card-title" id="quizProgress" data-page-node-id="V329xy8GKe0OTcp79Y8l1F">第 1 / 10 题</div>
-        <button class="btn small ghost" id="quizQuitBtn" data-page-node-id="RZbBz0XgvVIcySxgL2c2fg">✕ 退出测验</button>
+        <button class="btn small ghost" id="quizQuitBtn" data-page-node-id="RZbBz0XgvVIcySxgL2c2fg"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i>退出测验</button>
       </div>
       <div class="quiz-progress-bar" data-page-node-id="voF1U02lxU5fswA6cEOHd8"><div id="quizBar" data-page-node-id="rYNMFaZxFXVncM9hUtYrjL"></div></div>
       <!-- v2.10.0：掌握度条（0–4）与计时 -->
@@ -712,15 +712,15 @@
         </div>
         <span class="quiz-mastery-text" id="quizMasteryText">未追踪</span>
         <span class="quiz-timer" id="quizTimer">00:00</span>
-        <label class="quiz-autospeak" title="进入题目时自动朗读单词（看中选英/拼写题不读，避免泄露答案）"><input type="checkbox" id="quizAutoSpeak" checked> 🔊 自动播报</label>
-        <button type="button" class="btn mini ghost" id="quizPauseBtn"><i class="ink-btn ink-pause"></i> 暂停</button>
+        <label class="quiz-autospeak" title="进入题目时自动朗读单词（看中选英/拼写题不读，避免泄露答案）"><input type="checkbox" id="quizAutoSpeak" checked> <i class="ink-glyph ink-audio" aria-hidden="true"></i>自动播报</label>
+        <button type="button" class="btn mini ghost" id="quizPauseBtn"><i class="ink-btn ink-pause"></i>暂停</button>
       </div>
       <div class="quiz-confidence-row" id="transferConfidenceGroup" style="display:none">
         <span class="quiz-confidence-label">作答信心：</span>
         <div class="quiz-confidence-btns">
-          <button type="button" class="btn small transfer-conf-btn" data-conf="sure" title="确定掌握，毫不犹豫">🎯 确定</button>
-          <button type="button" class="btn small transfer-conf-btn active" data-conf="unsure" title="有点模糊，需要思考">🤔 犹豫</button>
-          <button type="button" class="btn small transfer-conf-btn" data-conf="guess" title="完全不会，纯属蒙猜">🎲 猜测</button>
+          <button type="button" class="btn small transfer-conf-btn" data-conf="sure" title="确定掌握，毫不犹豫"><i class="ink-glyph ink-target" aria-hidden="true"></i>确定</button>
+          <button type="button" class="btn small transfer-conf-btn active" data-conf="unsure" title="有点模糊，需要思考"><i class="ink-glyph ink-face-think" aria-hidden="true"></i>犹豫</button>
+          <button type="button" class="btn small transfer-conf-btn" data-conf="guess" title="完全不会，纯属蒙猜"><i class="ink-glyph ink-dice" aria-hidden="true"></i>猜测</button>
         </div>
       </div>
       <div id="quizArea" data-page-node-id="PjpXRtaC2eKLCTw9sLdlBW"></div>
@@ -757,7 +757,7 @@
         <div class="card-title" data-page-node-id="QMTIh0u2lOTRGm11cj1ZXO">检索</div>
         <div class="mist-search-group" data-page-node-id="WoLGzSUEl3VHuiFJqtzCnt">
           <input type="text" id="kbSearchInput" class="input" placeholder="全库搜真题原句 / 语料，如：survive、长难句…" aria-label="搜索语料" data-page-node-id="WlPuKXwQ17gzbpcTsvIwI0">
-          <button class="btn primary" id="kbSearchBtn" data-page-node-id="6azRm1QUEU1i08q6S9Kvxi">🔍 搜索</button>
+          <button class="btn primary" id="kbSearchBtn" data-page-node-id="6azRm1QUEU1i08q6S9Kvxi"><i class="ink-glyph ink-search" aria-hidden="true"></i>搜索</button>
         </div>
       </div>
 
@@ -776,9 +776,9 @@
     </div>
     <details class="management-fold" id="corpusManagement" data-admin-only><summary>管理语料</summary><div class="card card-collapsible" data-page-node-id="59dAVKg9z39kffWsnAeyIU">
       <div class="card-title-row" style="margin-bottom:0" data-page-node-id="kjw1OQaUbiIFvrFPjuVHfs">
-        <div class="card-title" data-page-node-id="Djl90jvegO63Qnpd13BEDy" style="margin-bottom:0"><i class="ink-card ink-download" aria-hidden="true"></i>📥 导入语料</div>
+        <div class="card-title" data-page-node-id="Djl90jvegO63Qnpd13BEDy" style="margin-bottom:0"><i class="ink-card ink-download" aria-hidden="true"></i>导入语料</div>
         <div class="row-gap" style="align-items:center">
-          <button class="btn" id="kbLogBtn" data-page-node-id="XzcHlTlXM218R3pkKeXgEd">📜 导入日志</button>
+          <button class="btn" id="kbLogBtn" data-page-node-id="XzcHlTlXM218R3pkKeXgEd"><i class="ink-glyph ink-scroll" aria-hidden="true"></i>导入日志</button>
           <button class="card-collapse-toggle" type="button" data-collapse-target="#kbImportCollapseBody" title="折叠/展开">收起</button>
         </div>
       </div>
@@ -791,17 +791,17 @@
             <option value="直录" data-page-node-id="iXtY9l0zlkIxSnzgpZRpHU">直录</option>
           </select>
           <input type="file" id="kbImportFile" class="input" multiple style="flex:1;min-width:220px" accept=".txt,.md,.html,.htm,.tex,.pdf,.docx" data-page-node-id="tCOTNYaDByF4ScPk9kBN3G">
-          <button class="btn primary" id="kbImportBtn" data-page-node-id="yTBHLrxxGzN27Zb9QsgLaF">📥 上传导入</button>
+          <button class="btn primary" id="kbImportBtn" data-page-node-id="yTBHLrxxGzN27Zb9QsgLaF"><i class="ink-glyph ink-download" aria-hidden="true"></i>上传导入</button>
         </div>
         <div class="row-gap" style="flex-wrap:wrap;align-items:stretch" data-page-node-id="6z9IkQqKByIkS7XpsHlkfh">
           <input type="text" id="kbPasteTitle" class="input" placeholder="标题（可选，首行 # 也可当标题）" style="width:230px" data-page-node-id="DH2dhNR2BhJUEbqYIURD7c">
           <textarea id="kbPasteText" class="input" rows="3" placeholder="粘贴文本直录：外刊段落、笔记、错题整理……" style="flex:1;min-width:260px"></textarea>
-          <button class="btn" id="kbPasteBtn" data-page-node-id="GoKofMy6wuUgDg848bwy3e">📝 粘贴导入</button>
+          <button class="btn" id="kbPasteBtn" data-page-node-id="GoKofMy6wuUgDg848bwy3e"><i class="ink-glyph ink-quill" aria-hidden="true"></i>粘贴导入</button>
         </div>
         <div class="row-gap" style="flex-wrap:wrap" data-page-node-id="nUTJYcdBGfZFfWgcTrk2vb">
           <label style="display:flex;align-items:center;gap:6px;font-size:13px" data-page-node-id="qVF9x1ZYRBqppupNWglCMu"><input type="checkbox" id="kbMineruOcr" checked data-page-node-id="8jXk38HsBDVCz7E4A8zIoo"> 扫描件（强制 OCR）</label>
           <input type="file" id="kbMineruFile" class="input" multiple style="flex:1;min-width:220px" accept=".pdf" data-page-node-id="TeIGLiDP4mvdld5WKRkYjM">
-          <button class="btn" id="kbMineruBtn" data-page-node-id="fyBhDui4OYIfd6RZ4v5snP">🛰 MinerU 云端解析</button>
+          <button class="btn" id="kbMineruBtn" data-page-node-id="fyBhDui4OYIfd6RZ4v5snP"><i class="ink-glyph ink-satellite" aria-hidden="true"></i>MinerU 云端解析</button>
         </div>
         <div class="result" id="kbImportResult" data-page-node-id="MPA9AVTfGXqqXiuLhh3qE3"></div>
       </div>
@@ -810,10 +810,10 @@
       <div class="card-title-row" data-page-node-id="05sJRhjVfqDWAcaWqnFpB0">
         <div class="card-title" id="kbDetailTitle" data-page-node-id="0O0kOF5BbgFqkJDEPjrimN">记录</div>
         <div class="row-gap" style="margin-left:auto" data-page-node-id="EnFMWzTxaaa4pgXvn1XeBV">
-          <button data-admin-only class="btn" id="kbHistoryBtn" data-page-node-id="v212kbhistbtn01">🕘 历史版本</button>
-          <button data-admin-only class="btn" id="kbEditBtn" data-page-node-id="zscrvLzs9melJts6kajGKc"><i class="ink-btn ink-quill"></i> 编辑</button>
-          <button data-admin-only class="btn ghost" id="kbDelBtn" data-page-node-id="AG8iZGJs7AuJfawhDbekCj">🗑 删除</button>
-          <button class="btn" id="kbBackBtn" data-page-node-id="nuTv4jB0IKrkR0aIqHKIdP">← 返回列表</button>
+          <button data-admin-only class="btn" id="kbHistoryBtn" data-page-node-id="v212kbhistbtn01"><i class="ink-glyph ink-clock" aria-hidden="true"></i>历史版本</button>
+          <button data-admin-only class="btn" id="kbEditBtn" data-page-node-id="zscrvLzs9melJts6kajGKc"><i class="ink-btn ink-quill"></i>编辑</button>
+          <button data-admin-only class="btn ghost" id="kbDelBtn" data-page-node-id="AG8iZGJs7AuJfawhDbekCj"><i class="ink-glyph ink-trash" aria-hidden="true"></i>删除</button>
+          <button class="btn" id="kbBackBtn" data-page-node-id="nuTv4jB0IKrkR0aIqHKIdP"><i class="ink-glyph ink-only ink-arrow-left" aria-hidden="true"></i>返回列表</button>
         </div>
       </div>
       <div class="hint" id="kbDetailMeta" data-page-node-id="VKoBEldf1FrBVoFVBBy1GT"></div>
@@ -835,7 +835,7 @@
 
     <!-- ===== 子版块：我的账户（v3.1.0，仅多用户模式显示） ===== -->
     <section class="settings-section settings-panel" id="accountSection" style="display:none" data-settings-label="我的账户">
-        <h2 class="settings-panel-title">👤 我的账户</h2>
+        <h2 class="settings-panel-title"><i class="ink-glyph ink-person" aria-hidden="true"></i>我的账户</h2>
       <div class="settings-section-body">
         <div class="card" id="accountCard">
           <div class="account-row">
@@ -843,7 +843,7 @@
               <div class="account-name" id="accountName">—</div>
               <div class="account-role" id="accountRole"></div>
             </div>
-            <button class="btn" id="logoutBtn">🚪 退出登录</button>
+            <button class="btn" id="logoutBtn"><i class="ink-glyph ink-door" aria-hidden="true"></i>退出登录</button>
           </div>
           <div class="result" id="accountResult"></div>
         </div>
@@ -854,19 +854,19 @@
 
     <!-- ===== 子版块：发音与朗读（v3.5.0 起，全体用户，口音为本设备偏好） ===== -->
     <section class="settings-section settings-panel" id="ttsSection" data-settings-label="发音与朗读">
-        <h2 class="settings-panel-title">🔊 发音与朗读</h2>
+        <h2 class="settings-panel-title"><i class="ink-glyph ink-audio" aria-hidden="true"></i>发音与朗读</h2>
       <div class="settings-section-body">
         <div class="card" id="ttsCard">
           <div class="grid-2" style="gap:10px">
             <div>
               <label class="field-label">口音偏好</label>
               <select id="cfgTtsAccent" class="input">
-                <option value="en_US">🇺🇸 美音</option>
-                <option value="en_GB">🇬🇧 英音</option>
+                <option value="en_US">美式发音</option>
+                <option value="en_GB">英式发音</option>
               </select>
             </div>
             <div style="display:flex;align-items:flex-end">
-              <button class="btn" id="testTtsBtn">🔊 试听</button>
+              <button class="btn" id="testTtsBtn"><i class="ink-glyph ink-audio" aria-hidden="true"></i>试听</button>
             </div>
           </div>
           <div class="result" id="ttsStatus"></div>
@@ -876,7 +876,7 @@
 
     <!-- ===== 子版块：AI 用量看板（v3.2.0，普通用户看自己 / 管理员看全员） ===== -->
     <section class="settings-section settings-panel" id="usageSection" style="display:none" data-settings-label="AI 用量">
-        <h2 class="settings-panel-title">📊 AI 用量</h2>
+        <h2 class="settings-panel-title"><i class="ink-glyph ink-chart" aria-hidden="true"></i>AI 用量</h2>
       <div class="settings-section-body">
         <div class="card" id="usageCard">
           <div class="card-title-row">
@@ -903,7 +903,7 @@
 
     <!-- ===== 子版块：模型服务（v3.1.0：管理员专属，普通用户隐藏） ===== -->
     <section class="settings-section settings-panel" id="modelSection" data-admin-only data-settings-label="模型服务">
-      <h2 class="settings-panel-title">🤖 模型服务</h2>
+      <h2 class="settings-panel-title"><i class="ink-glyph ink-robot" aria-hidden="true"></i>模型服务</h2>
       <div class="settings-section-body">
         <div class="grid-2" data-page-node-id="afHumpJW76Wzto2QRYiFxT">
           <div class="card" data-page-node-id="0GTr9YUkCuRodwMSwNthaH">
@@ -928,7 +928,7 @@
         </div>
 
         <details class="model-services"><summary>其他服务：生图、词典、文档解析与搜索</summary><div class="grid-2 model-service-grid"><div class="card" data-page-node-id="Kmb9Ms5FM0029EuD90rbYn">
-          <div class="card-title" data-page-node-id="4BgRG97E7XlLCbPbBZZwqD"><i class="ink-card ink-palette" aria-hidden="true"></i>🎨 AI 生图 · 助记图 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="02DhaRKG86rEW66MBaWWek"></span></div>
+          <div class="card-title" data-page-node-id="4BgRG97E7XlLCbPbBZZwqD"><i class="ink-card ink-palette" aria-hidden="true"></i>AI 生图 · 助记图 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="02DhaRKG86rEW66MBaWWek"></span></div>
           <div class="grid-2" style="gap:10px" data-page-node-id="OjtgimUdcGhU8cF2vSiZoN">
             <div data-page-node-id="SFciM1OtpMWcl6WjOnA0GC"><label class="field-label" data-page-node-id="uYwviNAS0OSkVDczSmMKf1">Base URL</label><input type="text" id="cfgImgUrl" class="input" placeholder="https://open.bigmodel.cn/api/paas/v4" data-page-node-id="5rEvkiXAtulgQLPt2hPmPZ"></div>
             <div data-page-node-id="sEbf5q4Q0jTg4oHC1GdMJv"><label class="field-label" data-page-node-id="ipF4cJKKzT2csmMlXfl4KO">模型</label><input type="text" id="cfgImgModel" class="input" placeholder="cogview-4 / dall-e-3 / 中转站生图模型…" data-page-node-id="rI6Q8ZRO2Qrl4pbTsAAyS8"></div>
@@ -936,14 +936,14 @@
           <label class="field-label" data-page-node-id="fPsAppye3Jgkq1paT7nOor">API Key</label>
           <input type="password" id="cfgImgKey" class="input" placeholder="留空 = 沿用已保存的 Key" data-page-node-id="pwVRFVpGq6bsNoucmtK4NX">
           <div class="row-gap" data-page-node-id="3EdYfrSTkzjgVeBKBkBa8N">
-            <button class="btn" id="saveImageBtn" data-page-node-id="h5Ahn8e3cc2ke46uYjdOu6">💾 保存生图配置</button>
-            <button class="btn" id="testImageBtn" data-page-node-id="eVwWVwKE5QKAWFZ7YgzAJE">🎨 测试生图</button>
+            <button class="btn" id="saveImageBtn" data-page-node-id="h5Ahn8e3cc2ke46uYjdOu6"><i class="ink-glyph ink-save" aria-hidden="true"></i>保存生图配置</button>
+            <button class="btn" id="testImageBtn" data-page-node-id="eVwWVwKE5QKAWFZ7YgzAJE"><i class="ink-glyph ink-palette" aria-hidden="true"></i>测试生图</button>
           </div>
           <div class="result" id="imageTestResult" data-page-node-id="S7Tmr2H0NM4kYHHJCCCS9q"></div>
         </div>
 
         <div class="card" data-page-node-id="w2H52f8e71uDOJfRzo8Qws">
-          <div class="card-title" data-page-node-id="mQHBxBMTS40pTZAKREQug4"><i class="ink-card ink-book" aria-hidden="true"></i>📚 韦氏权威词典 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="1R37aTKWfvu445iyUULcWw"></span></div>
+          <div class="card-title" data-page-node-id="mQHBxBMTS40pTZAKREQug4"><i class="ink-card ink-book" aria-hidden="true"></i>韦氏权威词典 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="1R37aTKWfvu445iyUULcWw"></span></div>
           <div class="grid-2" style="gap:10px" data-page-node-id="74ege7vdbF45B53qsxVrEs">
             <div data-page-node-id="lyHx1y0UCBgQDoR4BK1fms">
               <label class="field-label" data-page-node-id="vB0IRBaoWk7bCHZ3lusedo">Learner's Key（学习者版）</label>
@@ -955,25 +955,25 @@
             </div>
           </div>
           <div class="row-gap" data-page-node-id="LNjQk7YBebJhQWnjQ2aG9g">
-            <button class="btn" id="saveDictBtn" data-page-node-id="DtZrvhasMrYFoSEROGlDkx">💾 保存词典配置</button>
-            <button class="btn" id="testDictBtn" data-page-node-id="evSlcT2pGakCK87t5YQGQ8">📖 测试词典</button>
+            <button class="btn" id="saveDictBtn" data-page-node-id="DtZrvhasMrYFoSEROGlDkx"><i class="ink-glyph ink-save" aria-hidden="true"></i>保存词典配置</button>
+            <button class="btn" id="testDictBtn" data-page-node-id="evSlcT2pGakCK87t5YQGQ8"><i class="ink-glyph ink-book" aria-hidden="true"></i>测试词典</button>
           </div>
           <div class="result" id="dictTestResult" data-page-node-id="DR04CvRoMdVuRxpfWiTnCW"></div>
         </div>
 
         <div class="card" data-page-node-id="3KEAR4lrYV4UIubqLvxMOc">
-          <div class="card-title" data-page-node-id="AGovmfM6faqAco06HvHi9O"><i class="ink-card ink-satellite" aria-hidden="true"></i>🛰 MinerU 文档解析 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ulwvQNTOoCGk7mS0z40PVj"></span></div>
+          <div class="card-title" data-page-node-id="AGovmfM6faqAco06HvHi9O"><i class="ink-card ink-satellite" aria-hidden="true"></i>MinerU 文档解析 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ulwvQNTOoCGk7mS0z40PVj"></span></div>
           <label class="field-label" data-page-node-id="ECR7cNZvSVg7Ni5zvPLxjT">API Token</label>
           <input type="password" id="cfgMineruKey" class="input" placeholder="留空 = 沿用已保存的 Token" data-page-node-id="wEYALBIcELR5qAeQSTi0BV">
           <div class="row-gap" data-page-node-id="JsD237OmkDacrFSKbsD9jH">
-            <button class="btn" id="saveMineruBtn" data-page-node-id="JXbhCDblO44ffSY8DiSARA">💾 保存 MinerU 配置</button>
-            <button class="btn" id="testMineruBtn" data-page-node-id="374pIszwc1t0EIHHyAUsJR">🛰 测试 MinerU</button>
+            <button class="btn" id="saveMineruBtn" data-page-node-id="JXbhCDblO44ffSY8DiSARA"><i class="ink-glyph ink-save" aria-hidden="true"></i>保存 MinerU 配置</button>
+            <button class="btn" id="testMineruBtn" data-page-node-id="374pIszwc1t0EIHHyAUsJR"><i class="ink-glyph ink-satellite" aria-hidden="true"></i>测试 MinerU</button>
           </div>
           <div class="result" id="mineruTestResult" data-page-node-id="z0Sr194UFosKaZsKk9HLxW"></div>
         </div>
 
         <div class="card" data-page-node-id="uKM8PqIv10ZqUwUaHgIP4m">
-          <div class="card-title" data-page-node-id="cE0PgOaOMLilx0j3Q9DttK"><i class="ink-card ink-globe" aria-hidden="true"></i>🌐 网络搜索服务 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="iMbAn50xuQsESdGfqMIIFc"></span></div>
+          <div class="card-title" data-page-node-id="cE0PgOaOMLilx0j3Q9DttK"><i class="ink-card ink-globe" aria-hidden="true"></i>网络搜索服务 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="iMbAn50xuQsESdGfqMIIFc"></span></div>
           <div class="grid-2" style="gap:10px" data-page-node-id="yQyfn9BxQwWfAr7PdIuEi2">
             <div data-page-node-id="p1P3TetslGuA3f7cFJr5sw">
               <label class="field-label" data-page-node-id="zYqWDT1BKyoe4PaFfwt2Q6">服务商预设</label>
@@ -987,8 +987,8 @@
           <label class="field-label" data-page-node-id="eaDMwMhrRi7Z1GSKD56Ufp">API Key</label>
           <input type="password" id="cfgSearchKey" class="input" placeholder="留空 = 沿用已保存的 Key" data-page-node-id="fK0rP3NHwDs0r4GTqN5XLM">
           <div class="row-gap" data-page-node-id="CEvo8f8rDSa8SewbyR4mfl">
-            <button class="btn" id="saveSearchBtn" data-page-node-id="5V7Ai60FCNl8NWRgP3Mtbf">💾 保存搜索配置</button>
-            <button class="btn" id="testSearchBtn" data-page-node-id="lIWQBZf1NkvecSrVIzNGM0">🔍 测试搜索</button>
+            <button class="btn" id="saveSearchBtn" data-page-node-id="5V7Ai60FCNl8NWRgP3Mtbf"><i class="ink-glyph ink-save" aria-hidden="true"></i>保存搜索配置</button>
+            <button class="btn" id="testSearchBtn" data-page-node-id="lIWQBZf1NkvecSrVIzNGM0"><i class="ink-glyph ink-search" aria-hidden="true"></i>测试搜索</button>
           </div>
           <div class="result" id="searchTestResult" data-page-node-id="33PZTKhpJSFJywvq4sreAO"></div>
         </div></div></details>
@@ -1010,7 +1010,7 @@
           </div>
           <div class="result" id="maimemoTestResult" data-page-node-id="KAArJ06KNpXxScT4iYGdzW"></div>
 
-          <div class="card-title" style="margin-top:20px" data-page-node-id="PhILVzEdvL2qupWLvUIOZG"><i class="ink-card ink-book" aria-hidden="true"></i>📚 云词库绑定 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ktFrwimYhVBTjsmtrqiYcU"></span></div>
+          <div class="card-title" style="margin-top:20px" data-page-node-id="PhILVzEdvL2qupWLvUIOZG"><i class="ink-card ink-book" aria-hidden="true"></i>云词库绑定 <span style="font-weight:400;font-size:12px;color:var(--text-sub)" data-page-node-id="ktFrwimYhVBTjsmtrqiYcU"></span></div>
           <div class="row-gap" data-page-node-id="JwlzETMQaY6vWUadaASpI5">
             <button class="btn" id="loadNotepadsBtn" data-page-node-id="Se8b40c842mgTJBECKLGz4">拉取云词库列表</button>
             <select id="cfgNotepad" class="input" style="flex:1;min-width:0" data-page-node-id="yFVKabzY8FseQyxkEdYuHf"><option value="" data-page-node-id="h9Q1ynx7abqhwKFA4w98ZY">— 未绑定 —</option></select>
@@ -1022,16 +1022,16 @@
 
     <!-- ===== 子版块：登录与安全（v2.9.0；v3.1.0：管理员专属） ===== -->
     <section class="settings-section settings-panel" id="authSection" data-admin-only data-settings-label="登录与安全">
-      <h2 class="settings-panel-title">🔐 登录与安全</h2>
+      <h2 class="settings-panel-title"><i class="ink-glyph ink-lock" aria-hidden="true"></i>登录与安全</h2>
       <div class="settings-section-body">
         <div class="card" id="authCfgCard">
-          <div class="card-title"><i class="ink-card ink-key" aria-hidden="true"></i>🔑 Token 凭证登录 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
+          <div class="card-title"><i class="ink-card ink-key" aria-hidden="true"></i>Token 凭证登录 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
           <label class="check-row"><input type="checkbox" id="cfgAuthEnabled"> 启用 Token 凭证登录</label>
           <label class="field-label" style="margin-top:8px">Token 凭证 <span style="font-weight:400;font-size:12px;color:var(--text-sub)">（留空 = 沿用已保存）</span></label>
           <input type="password" id="cfgAuthToken" class="input" placeholder="留空 = 沿用已保存的 Token" autocomplete="new-password">
           <div class="row-gap" style="margin-top:8px">
-            <button class="btn primary" id="saveAuthCfgBtn">💾 保存登录配置</button>
-            <button class="btn" id="clearAuthTokenBtn">🧹 清除已存 Token</button>
+            <button class="btn primary" id="saveAuthCfgBtn"><i class="ink-glyph ink-save" aria-hidden="true"></i>保存登录配置</button>
+            <button class="btn" id="clearAuthTokenBtn"><i class="ink-glyph ink-broom" aria-hidden="true"></i>清除已存 Token</button>
           </div>
           <div class="result" id="authCfgResult"></div>
   <div class="auth-cfg-state" hidden>当前状态：<b id="authCfgState">加载中…</b></div>
@@ -1044,7 +1044,7 @@
       <h2 class="settings-panel-title">同步与备份</h2>
       <div class="settings-section-body">
         <div class="card" data-page-node-id="cS7dFlHJTmZRRhAhkX1XbF">
-          <div class="card-title" data-page-node-id="5V4bXd8RDP6gAFTrUGjeKZ"><i class="ink-card ink-refresh" aria-hidden="true"></i>🔄 自动同步</div>
+          <div class="card-title" data-page-node-id="5V4bXd8RDP6gAFTrUGjeKZ"><i class="ink-card ink-refresh" aria-hidden="true"></i>自动同步</div>
           <label class="check-row" data-page-node-id="cX3a8Ep0VmBMi5TEFHvu94"><input type="checkbox" id="cfgAutoSync" data-page-node-id="xADfyiZ63M62FWEpJpJYYr"> 开启定时同步</label>
           <label class="field-label" data-page-node-id="2XiEtQEnCY95hxTVgcMuFD">间隔（分钟）</label>
           <input type="number" id="cfgSyncMinutes" class="input" value="60" min="5" data-page-node-id="F169XDHWMTTFeTAFHQQ1nx">
@@ -1052,11 +1052,11 @@
         </div>
 
         <div class="card" data-admin-only>
-          <div class="card-title"><i class="ink-card ink-shield" aria-hidden="true"></i>🛡️ 数据备份与恢复 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
+          <div class="card-title"><i class="ink-card ink-shield" aria-hidden="true"></i>数据备份与恢复 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
 
           <div class="row-gap">
-            <button class="btn primary" id="backupCreateBtn">📦 立即创建备份</button>
-            <button class="btn" id="backupRefreshBtn">🔄 刷新列表</button>
+            <button class="btn primary" id="backupCreateBtn"><i class="ink-glyph ink-package" aria-hidden="true"></i>立即创建备份</button>
+            <button class="btn" id="backupRefreshBtn"><i class="ink-glyph ink-refresh" aria-hidden="true"></i>刷新列表</button>
           </div>
           <div class="result" id="backupResult"></div>
           <div id="backupList" style="margin-top:10px"></div>
@@ -1073,8 +1073,8 @@
       <div class="settings-section-body">
         <div class="card">
           <div class="card-title-row">
-            <div class="card-title"><i class="ink-card ink-quill" aria-hidden="true"></i> 模型提示词 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
-            <button class="btn" id="promptResetAllBtn"><i class="ink-btn ink-refresh"></i> 全部恢复默认</button>
+            <div class="card-title"><i class="ink-card ink-quill" aria-hidden="true"></i>模型提示词 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
+            <button class="btn" id="promptResetAllBtn"><i class="ink-btn ink-refresh"></i>全部恢复默认</button>
           </div>
           <div id="promptRegistry"></div>
         </div>
@@ -1082,16 +1082,16 @@
         <!-- v2.4.1：子版块「文章题材」——词文成章题材自定义 -->
         <div class="card" id="storyThemesCard">
           <div class="card-title-row">
-            <div class="card-title"><i class="ink-card ink-book" aria-hidden="true"></i>📚 文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
-            <button class="btn" id="storyThemesResetBtn"><i class="ink-btn ink-refresh"></i> 恢复内置题材</button>
+            <div class="card-title"><i class="ink-card ink-book" aria-hidden="true"></i>文章题材 <span style="font-weight:400;font-size:12px;color:var(--text-sub)"></span></div>
+            <button class="btn" id="storyThemesResetBtn"><i class="ink-btn ink-refresh"></i>恢复内置题材</button>
           </div>
           <div class="story-themes-editor">
             <div style="display:flex;gap:8px;margin-bottom:8px">
               <input type="text" id="storyThemeInput" class="input" placeholder="输入新题材（≤12 字，如：武侠）" maxlength="12" autocomplete="off">
-              <button class="btn" id="storyThemeAddBtn" style="white-space:nowrap"><i class="ink-btn ink-plus"></i> 添加</button>
+              <button class="btn" id="storyThemeAddBtn" style="white-space:nowrap"><i class="ink-btn ink-plus"></i>添加</button>
             </div>
             <div class="story-themes-list" id="storyThemesList"></div>
-            <button class="btn primary" id="storyThemesSaveBtn" style="margin-top:10px">💾 保存题材配置</button>
+            <button class="btn primary" id="storyThemesSaveBtn" style="margin-top:10px"><i class="ink-glyph ink-save" aria-hidden="true"></i>保存题材配置</button>
             <div class="result" id="storyThemesResult"></div>
           </div>
         </div>
@@ -1136,7 +1136,7 @@
   <div class="modal card prov-dialog" role="dialog" aria-modal="true" aria-labelledby="provModalTitle" data-page-node-id="iextvA1c7AgGL74JfEjrVf">
     <div class="prov-dialog-header">
       <div class="card-title" id="provModalTitle" data-page-node-id="FnnaD9sWCuZ4KC15ef4Tmq">添加服务商</div>
-      <button class="btn ghost" id="provClose" aria-label="关闭服务商弹窗">×</button>
+      <button class="btn ghost icon-only" id="provClose" aria-label="关闭服务商弹窗"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
     </div>
     <div class="prov-dialog-body" id="provModalBody">
     <label class="field-label" data-page-node-id="wQ3SDNlQiqQN1YZkjaVAgc">名称</label>
@@ -1150,7 +1150,7 @@
     <label class="field-label" data-page-node-id="kHqcURHJNcbCbUdQZBCW64">模型</label>
     <div class="prov-model-row" data-page-node-id="m87NLx1MxusboYYyUvXr6H">
       <input type="text" id="provModel" class="input" placeholder="deepseek-chat / glm-4-flash …" data-page-node-id="dAavfsIWY1z6x6Fdmc1hIb">
-      <button class="btn" id="provFetchBtn" style="white-space:nowrap" data-page-node-id="nhxVCkCGfNvHfTBK7xCWPL">🔄 拉取</button>
+      <button class="btn" id="provFetchBtn" style="white-space:nowrap" data-page-node-id="nhxVCkCGfNvHfTBK7xCWPL"><i class="ink-glyph ink-refresh" aria-hidden="true"></i>拉取</button>
     </div>
     <select id="provModelSelect" class="input" style="display:none;margin-top:8px" data-page-node-id="6pgQJlYaAsFb6egPUuNWg8"></select>
     <!-- v2.3.4：模型服务高级三项——思考等级 / 视觉能力 / 透传 JSON 参数 -->
@@ -1187,7 +1187,7 @@
     <textarea id="provExtraBody" class="input" rows="3" placeholder='例如：{"top_p":0.9,"response_format":{"type":"json_object"}}（messages / stream 不允许覆盖）'></textarea>
     </details>
     <div class="row-gap" style="margin-top:14px;align-items:center" data-page-node-id="b64DezURw7Ek0eajF2lJO1">
-      <button class="btn" id="provTestBtn" data-page-node-id="HjVwjf1uG9sAxr5RfWcF6K">🔌 测试连接</button>
+      <button class="btn" id="provTestBtn" data-page-node-id="HjVwjf1uG9sAxr5RfWcF6K"><i class="ink-glyph ink-star" aria-hidden="true"></i>测试连接</button>
       <span class="result" id="provTestResult" data-page-node-id="GtiNOqtK3WRSDwno2N8QUE"></span>
     </div>
     </div>
@@ -1245,23 +1245,23 @@
   <div class="ocr-modal" role="dialog" aria-modal="true" aria-labelledby="ocrModalTitle">
     <div class="ocr-head">
       <div style="display:flex;align-items:center;gap:8px">
-        <span style="font-size:18px">📷</span>
+        <span style="font-size:18px"><i class="ink-glyph ink-camera" aria-hidden="true"></i></span>
         <span class="ocr-title" id="ocrModalTitle">手写答题卡拍照核对</span>
 
       </div>
-      <button class="ocr-close" id="ocrCloseBtn" type="button" title="关闭 (Esc)">✕</button>
+      <button class="ocr-close" id="ocrCloseBtn" type="button" title="关闭 (Esc)"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
     </div>
     <div class="ocr-body">
       <div class="ocr-split-view">
         <div class="ocr-img-pane">
-          <div class="ocr-pane-title"><span>🖼 手写原图（考研标准横线纸）</span></div>
+          <div class="ocr-pane-title"><span><i class="ink-glyph ink-frame" aria-hidden="true"></i>手写原图（考研标准横线纸）</span></div>
           <div class="ocr-img-scroll" id="ocrImgScroll">
             <img id="ocrPreviewImg" alt="手写稿原图" src="">
           </div>
         </div>
         <div class="ocr-text-pane">
           <div class="ocr-pane-title">
-            <span>📝 AI 精准转写文本</span>
+            <span><i class="ink-glyph ink-quill" aria-hidden="true"></i>AI 精准转写文本</span>
             <span id="ocrWordCountBadge" class="ocr-badge ok">0 词</span>
           </div>
           <textarea id="ocrTranscribeText" class="input ocr-textarea" placeholder="转写结果生成中…"></textarea>
@@ -1271,8 +1271,8 @@
     </div>
     <div class="ocr-foot">
       <button type="button" class="btn ghost" id="ocrCancelBtn">取消</button>
-      <button type="button" class="btn" id="ocrRetryBtn">🔄 重新拍照/上传</button>
-      <button type="button" class="btn primary" id="ocrConfirmBtn" style="min-width:140px"><i class="ink-btn ink-check"></i> 核对无误，填入作文框</button>
+      <button type="button" class="btn" id="ocrRetryBtn"><i class="ink-glyph ink-refresh" aria-hidden="true"></i>重新拍照/上传</button>
+      <button type="button" class="btn primary" id="ocrConfirmBtn" style="min-width:140px"><i class="ink-btn ink-check"></i>核对无误，填入作文框</button>
     </div>
   </div>
 </div>
@@ -1281,8 +1281,8 @@
 <div class="st-overlay" id="stOverlay" style="display:none">
   <div class="st-modal" role="dialog" aria-modal="true" aria-labelledby="stTitle">
     <div class="st-head">
-      <span class="st-title" id="stTitle">🧩 长难句三遍训练</span>
-      <button class="st-close" id="stCloseBtn" type="button" title="关闭 (Esc)">✕</button>
+      <span class="st-title" id="stTitle"><i class="ink-glyph ink-puzzle" aria-hidden="true"></i>长难句三遍训练</span>
+      <button class="st-close" id="stCloseBtn" type="button" title="关闭 (Esc)"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
     </div>
     <div class="st-body">
       <div class="st-source" id="stSource"></div>
@@ -1319,7 +1319,7 @@
     <div class="mist-palette-head">
       <span class="mist-palette-key" aria-hidden="true">⌘K</span>
       <input id="mistPaletteInput" class="mist-palette-input" type="text" placeholder="想去哪？输入页面或动作…" autocomplete="off" spellcheck="false" aria-label="搜索页面与动作">
-      <button type="button" class="mist-palette-close" data-palette-close aria-label="关闭 (Esc)">✕</button>
+      <button type="button" class="mist-palette-close" data-palette-close aria-label="关闭 (Esc)"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
     </div>
     <div class="mist-palette-list" id="mistPaletteList" role="listbox" aria-label="结果"></div>
     <div class="mist-palette-foot"><span>↑↓ 选择</span><span>Enter 执行</span><span>Esc 关闭</span></div>

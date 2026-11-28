@@ -914,6 +914,7 @@
 [data-style="mist"] .bottom-tab-icon,
 [data-style="mist"] .more-item-icon,
 [data-style="mist"] .word-fab-icon,
+[data-style="mist"] .ink-glyph,
 [data-style="mist"] .mist-palette-row-icon {
   display: inline-block; flex: none; vertical-align: -0.16em;
   background-color: currentColor; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
@@ -979,3 +980,104 @@
 [data-style="mist"] .ink-camera { -webkit-mask-image: url('/icons/ink/camera.png'); mask-image: url('/icons/ink/camera.png'); }
 [data-style="mist"] .ink-sun { -webkit-mask-image: url('/icons/ink/sun.png'); mask-image: url('/icons/ink/sun.png'); }
 [data-style="mist"] .ink-pause { -webkit-mask-image: url('/icons/ink/pause.png'); mask-image: url('/icons/ink/pause.png'); }
+
+/* 21 · 水墨图标族 · 第二批（v4.7.0）------------------------------------------
+   把残留的系统 emoji（按钮、节标题、状态行、toast、滑词卡、题型标签）
+   全部换成同族水墨图标，沿用 mask-image 单套资产、跟随 currentColor。 */
+
+/* v4.7.0：正文行内图标（toast / 结果行 / 状态徽标 / 报表节标题） */
+[data-style="mist"] .ink-glyph { width: 1.05em; height: 1.05em; margin-inline-end: .32em; vertical-align: -0.16em; }
+[data-style="mist"] .btn .ink-glyph { width: 15px; height: 15px; margin-inline-end: 6px; vertical-align: -0.16em; }
+[data-style="mist"] .chip .ink-glyph { width: 14px; height: 14px; margin-inline-end: 5px; vertical-align: -0.14em; }
+[data-style="mist"] .card-title .ink-glyph { width: 16px; height: 16px; margin-inline-end: 7px; vertical-align: -0.17em; }
+[data-style="mist"] .settings-panel-title .ink-glyph { width: 19px; height: 19px; margin-inline-end: 9px; vertical-align: -0.22em; }
+[data-style="mist"] .hint .ink-glyph,
+[data-style="mist"] .result .ink-glyph { width: 1em; height: 1em; margin-inline-end: .3em; vertical-align: -0.14em; }
+[data-style="mist"] .wb-toast .ink-glyph { width: 15px; height: 15px; margin-inline-end: 6px; vertical-align: -0.18em; }
+[data-style="mist"] .log-ok .ink-glyph, [data-style="mist"] .log-fail .ink-glyph { width: 13px; height: 13px; margin-inline-end: 5px; }
+[data-style="mist"] .word-tag .ink-glyph { width: 13px; height: 13px; margin-inline-end: 4px; vertical-align: -0.14em; }
+[data-style="mist"] .report-sec-title .ink-glyph,
+[data-style="mist"] .stats-card-title .ink-glyph { width: 15px; height: 15px; margin-inline-end: 6px; vertical-align: -0.18em; }
+[data-style="mist"] .sel-learn-kind .ink-glyph { width: 14px; height: 14px; margin-inline-end: 4px; }
+[data-style="mist"] .evidence-pill .ink-glyph { width: 12px; height: 12px; margin-inline-end: 3px; vertical-align: -0.12em; }
+[data-style="mist"] .story-done-badge .ink-glyph { width: 12px; height: 12px; margin-inline-end: 3px; vertical-align: -0.1em; }
+[data-style="mist"] .quiz-autospeak .ink-glyph { width: 15px; height: 15px; margin-inline-end: 5px; vertical-align: -0.16em; }
+[data-style="mist"] .prov-meta .ink-glyph { width: 12px; height: 12px; margin-inline-end: 2px; vertical-align: -0.1em; }
+[data-style="mist"] .st-title .ink-glyph { width: 16px; height: 16px; margin-inline-end: 7px; vertical-align: -0.16em; }
+[data-style="mist"] .ocr-pane-title .ink-glyph { width: 15px; height: 15px; margin-inline-end: 6px; vertical-align: -0.16em; }
+[data-style="mist"] .transfer-conf-btn .ink-glyph,
+[data-style="mist"] .study-sub-item .ink-glyph { width: 14px; height: 14px; margin-inline-end: 5px; vertical-align: -0.14em; }
+
+/* 纯图标形态：不占文字间距，尺寸按宿主决定 */
+[data-style="mist"] .ink-glyph.ink-only { margin-inline-end: 0; }
+[data-style="mist"] .btn .ink-glyph.ink-only { width: 16px; height: 16px; margin-inline-end: 0; vertical-align: -0.2em; }
+[data-style="mist"] .zen-exit-btn .ink-glyph { width: 15px; height: 15px; vertical-align: -0.18em; }
+[data-style="mist"] .spotlight-floating-btn .ink-glyph { width: 15px; height: 15px; vertical-align: -0.18em; }
+[data-style="mist"] .kb-fix-close .ink-glyph,
+[data-style="mist"] .word-panel-close .ink-glyph,
+[data-style="mist"] .chat-history-close .ink-glyph,
+[data-style="mist"] .chat-image-clear .ink-glyph,
+[data-style="mist"] .ocr-close .ink-glyph,
+[data-style="mist"] .st-close .ink-glyph,
+[data-style="mist"] .mist-palette-close .ink-glyph,
+[data-style="mist"] .sel-learn-x .ink-glyph,
+[data-style="mist"] .story-pool-x .ink-glyph { width: 13px; height: 13px; margin-inline-end: 0; }
+[data-style="mist"] .story-theme-x .ink-glyph,
+[data-style="mist"] .story-theme-lock .ink-glyph { width: 12px; height: 12px; margin-inline-end: 0; }
+[data-style="mist"] .log-del .ink-glyph { width: 13px; height: 13px; }
+/* 折行保护：图标不单独成行 */
+[data-style="mist"] .ink-glyph { white-space: nowrap; }
+[data-style="mist"] .log-del .ink-glyph, [data-style="mist"] button.icon-only .ink-glyph { width: 14px; height: 14px; margin-inline-end: 0; }
+
+[data-style="mist"] .ink-person { -webkit-mask-image: url('/icons/ink/person.png'); mask-image: url('/icons/ink/person.png'); }
+[data-style="mist"] .ink-lock { -webkit-mask-image: url('/icons/ink/lock.png'); mask-image: url('/icons/ink/lock.png'); }
+[data-style="mist"] .ink-unlock { -webkit-mask-image: url('/icons/ink/unlock.png'); mask-image: url('/icons/ink/unlock.png'); }
+[data-style="mist"] .ink-door { -webkit-mask-image: url('/icons/ink/door.png'); mask-image: url('/icons/ink/door.png'); }
+[data-style="mist"] .ink-clipboard { -webkit-mask-image: url('/icons/ink/clipboard.png'); mask-image: url('/icons/ink/clipboard.png'); }
+[data-style="mist"] .ink-scroll { -webkit-mask-image: url('/icons/ink/scroll.png'); mask-image: url('/icons/ink/scroll.png'); }
+[data-style="mist"] .ink-package { -webkit-mask-image: url('/icons/ink/package.png'); mask-image: url('/icons/ink/package.png'); }
+[data-style="mist"] .ink-plug { -webkit-mask-image: url('/icons/ink/plug.png'); mask-image: url('/icons/ink/plug.png'); }
+[data-style="mist"] .ink-letter-a { -webkit-mask-image: url('/icons/ink/letter-a.png'); mask-image: url('/icons/ink/letter-a.png'); }
+[data-style="mist"] .ink-clock { -webkit-mask-image: url('/icons/ink/clock.png'); mask-image: url('/icons/ink/clock.png'); }
+[data-style="mist"] .ink-compass { -webkit-mask-image: url('/icons/ink/compass.png'); mask-image: url('/icons/ink/compass.png'); }
+[data-style="mist"] .ink-bug { -webkit-mask-image: url('/icons/ink/bug.png'); mask-image: url('/icons/ink/bug.png'); }
+[data-style="mist"] .ink-puzzle { -webkit-mask-image: url('/icons/ink/puzzle.png'); mask-image: url('/icons/ink/puzzle.png'); }
+[data-style="mist"] .ink-dice { -webkit-mask-image: url('/icons/ink/dice.png'); mask-image: url('/icons/ink/dice.png'); }
+[data-style="mist"] .ink-chat { -webkit-mask-image: url('/icons/ink/chat.png'); mask-image: url('/icons/ink/chat.png'); }
+[data-style="mist"] .ink-cycle { -webkit-mask-image: url('/icons/ink/cycle.png'); mask-image: url('/icons/ink/cycle.png'); }
+[data-style="mist"] .ink-eye { -webkit-mask-image: url('/icons/ink/eye.png'); mask-image: url('/icons/ink/eye.png'); }
+[data-style="mist"] .ink-undo { -webkit-mask-image: url('/icons/ink/undo.png'); mask-image: url('/icons/ink/undo.png'); }
+[data-style="mist"] .ink-flame { -webkit-mask-image: url('/icons/ink/flame.png'); mask-image: url('/icons/ink/flame.png'); }
+[data-style="mist"] .ink-calendar { -webkit-mask-image: url('/icons/ink/calendar.png'); mask-image: url('/icons/ink/calendar.png'); }
+[data-style="mist"] .ink-close { -webkit-mask-image: url('/icons/ink/close.png'); mask-image: url('/icons/ink/close.png'); }
+[data-style="mist"] .ink-cross { -webkit-mask-image: url('/icons/ink/cross.png'); mask-image: url('/icons/ink/cross.png'); }
+[data-style="mist"] .ink-hourglass { -webkit-mask-image: url('/icons/ink/hourglass.png'); mask-image: url('/icons/ink/hourglass.png'); }
+[data-style="mist"] .ink-play { -webkit-mask-image: url('/icons/ink/play.png'); mask-image: url('/icons/ink/play.png'); }
+[data-style="mist"] .ink-star { -webkit-mask-image: url('/icons/ink/star.png'); mask-image: url('/icons/ink/star.png'); }
+[data-style="mist"] .ink-face-think { -webkit-mask-image: url('/icons/ink/face-think.png'); mask-image: url('/icons/ink/face-think.png'); }
+[data-style="mist"] .ink-face-dazed { -webkit-mask-image: url('/icons/ink/face-dazed.png'); mask-image: url('/icons/ink/face-dazed.png'); }
+[data-style="mist"] .ink-face-uneasy { -webkit-mask-image: url('/icons/ink/face-uneasy.png'); mask-image: url('/icons/ink/face-uneasy.png'); }
+[data-style="mist"] .ink-face-calm { -webkit-mask-image: url('/icons/ink/face-calm.png'); mask-image: url('/icons/ink/face-calm.png'); }
+[data-style="mist"] .ink-face-cool { -webkit-mask-image: url('/icons/ink/face-cool.png'); mask-image: url('/icons/ink/face-cool.png'); }
+[data-style="mist"] .ink-brain { -webkit-mask-image: url('/icons/ink/brain.png'); mask-image: url('/icons/ink/brain.png'); }
+[data-style="mist"] .ink-trend { -webkit-mask-image: url('/icons/ink/trend.png'); mask-image: url('/icons/ink/trend.png'); }
+[data-style="mist"] .ink-chart { -webkit-mask-image: url('/icons/ink/chart.png'); mask-image: url('/icons/ink/chart.png'); }
+[data-style="mist"] .ink-news { -webkit-mask-image: url('/icons/ink/news.png'); mask-image: url('/icons/ink/news.png'); }
+[data-style="mist"] .ink-cap { -webkit-mask-image: url('/icons/ink/cap.png'); mask-image: url('/icons/ink/cap.png'); }
+[data-style="mist"] .ink-festive { -webkit-mask-image: url('/icons/ink/festive.png'); mask-image: url('/icons/ink/festive.png'); }
+[data-style="mist"] .ink-clap { -webkit-mask-image: url('/icons/ink/clap.png'); mask-image: url('/icons/ink/clap.png'); }
+[data-style="mist"] .ink-muscle { -webkit-mask-image: url('/icons/ink/muscle.png'); mask-image: url('/icons/ink/muscle.png'); }
+[data-style="mist"] .ink-pin { -webkit-mask-image: url('/icons/ink/pin.png'); mask-image: url('/icons/ink/pin.png'); }
+[data-style="mist"] .ink-ruler { -webkit-mask-image: url('/icons/ink/ruler.png'); mask-image: url('/icons/ink/ruler.png'); }
+[data-style="mist"] .ink-tree { -webkit-mask-image: url('/icons/ink/tree.png'); mask-image: url('/icons/ink/tree.png'); }
+[data-style="mist"] .ink-tile { -webkit-mask-image: url('/icons/ink/tile.png'); mask-image: url('/icons/ink/tile.png'); }
+[data-style="mist"] .ink-card { -webkit-mask-image: url('/icons/ink/card.png'); mask-image: url('/icons/ink/card.png'); }
+[data-style="mist"] .ink-keyboard { -webkit-mask-image: url('/icons/ink/keyboard.png'); mask-image: url('/icons/ink/keyboard.png'); }
+[data-style="mist"] .ink-scale { -webkit-mask-image: url('/icons/ink/scale.png'); mask-image: url('/icons/ink/scale.png'); }
+[data-style="mist"] .ink-broom { -webkit-mask-image: url('/icons/ink/broom.png'); mask-image: url('/icons/ink/broom.png'); }
+[data-style="mist"] .ink-hook { -webkit-mask-image: url('/icons/ink/hook.png'); mask-image: url('/icons/ink/hook.png'); }
+[data-style="mist"] .ink-arrow-left { -webkit-mask-image: url('/icons/ink/arrow-left.png'); mask-image: url('/icons/ink/arrow-left.png'); }
+[data-style="mist"] .ink-arrow-right { -webkit-mask-image: url('/icons/ink/arrow-right.png'); mask-image: url('/icons/ink/arrow-right.png'); }
+[data-style="mist"] .ink-arrows { -webkit-mask-image: url('/icons/ink/arrows.png'); mask-image: url('/icons/ink/arrows.png'); }
+[data-style="mist"] .ink-ban { -webkit-mask-image: url('/icons/ink/ban.png'); mask-image: url('/icons/ink/ban.png'); }
+[data-style="mist"] .ink-book-closed { -webkit-mask-image: url('/icons/ink/book-closed.png'); mask-image: url('/icons/ink/book-closed.png'); }

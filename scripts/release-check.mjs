@@ -20,9 +20,11 @@ const inkDir = join(root, 'public', 'icons', 'ink');
 const inkFiles = (await readdir(inkDir)).filter(name => name.endsWith('.png')).sort();
 const iconFiles = ['favicon.ico', 'favicon.svg', 'icon-120.png', 'icon-152.png', 'icon-167.png', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'maskable-192.png', 'maskable-512.png'];
 const mistAssets = ['mist.css', ...['hero-dawn', 'hero-night', 'paper', 'cover-lesson', 'cover-ridge', 'band-report', 'cover-quiz', 'cover-library', 'cover-notes', 'cover-settings', 'empty-ink'].map(name => `mist/${name}.webp`)];
+const inkWriter = appSrc.slice(appSrc.indexOf('function inkFragment('), appSrc.indexOf('/** v2.1.0a 补齐：右下角轻提示'));
+const EMOJI = /[\u{1F000}-\u{1FAFF}\u2600-\u27BF\u2B00-\u2BFF\uFE0F]/u;
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.6.0'],
+  ['package version', packageJson.version === '4.7.0'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
@@ -56,6 +58,14 @@ const required = [
   ['v4.6.0 chip counts keep ink icons', appSrc.includes("chip.querySelector('.chip-label')") && !/chip\.textContent\s*=\s*Number\.isFinite/.test(appSrc)],
   ['v4.6.0 theme toggle swaps ink class', appSrc.includes("classList.add('ink-' + icon)") && !appSrc.includes("btn.textContent = t === 'dark'")],
   ['v4.6.0 exam_practice task retired', !serverSrc.includes("id: 'exam_practice'") && !serverSrc.includes("'vocab_today', 'review_due', 'exam_practice'") && !appSrc.includes("exam_practice: '真题训练'")],
+  // v4.7.0：残留的系统 emoji 全部换成水墨图标（图标族 89 枚，状态行改走 setInkText）
+  ['v4.7.0 ink icon family covers every glyph', inkFiles.length >= 89 && ['person', 'lock', 'unlock', 'door', 'clock', 'compass', 'bug', 'puzzle', 'dice', 'chat', 'cycle', 'eye', 'undo', 'flame', 'calendar', 'hourglass', 'play', 'star', 'brain', 'trend', 'chart', 'news', 'cap', 'pin', 'ruler', 'tree', 'tile', 'card', 'keyboard', 'scale', 'broom', 'hook', 'arrow-left', 'arrow-right', 'arrows', 'ban', 'book-closed', 'face-think', 'face-dazed', 'face-uneasy', 'face-calm', 'face-cool', 'letter-a'].every(name => inkFiles.includes(name + '.png'))],
+  ['v4.7.0 every icon file has a css mapping', inkFiles.every(name => mistCss.includes(`.ink-${name.replace(/\.png$/, '')} {`) && mistCss.includes(`/icons/ink/${name}`))],
+  ['v4.7.0 no system emoji left in chrome', !EMOJI.test(indexHtml) && !EMOJI.test(appSrc) && !EMOJI.test(mistCss) && !EMOJI.test(serverSrc)],
+  ['v4.7.0 status lines go through setInkText', appSrc.includes('function setInkText(') && appSrc.includes('function inkFragment(') && !/\.textContent\s*=\s*(`|')<i class="ink-glyph/.test(appSrc)],
+  ['v4.7.0 setInkText never parses arbitrary html', !/innerHTML/.test(inkWriter) && /appendChild\(inkFragment\(s\)\)/.test(inkWriter) && inkWriter.includes('document.createTextNode')],
+  ['v4.7.0 accent options are plain text', !indexHtml.includes('\u{1F1FA}\u{1F1F8}') && indexHtml.includes('>美式发音<') && indexHtml.includes('>英式发音<')],
+  ['v4.7.0 sw precaches the whole icon family', inkFiles.every(name => sw.includes(`'/icons/ink/${name}'`)) && sw.includes("'wb-shell-v4.7.0'")],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],

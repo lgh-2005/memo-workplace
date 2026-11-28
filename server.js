@@ -772,6 +772,16 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '4.7.0', date: '2026-11-28', title: '图标全站清空 · 残余 emoji 归零',
+    items: [
+      '上一版换掉了导航与卡片标题的图标，但按钮、节标题、状态行、提示文字、滑词卡、题型标签里还留着系统 emoji，同一屏能看到两套图标语言。',
+      '本版把系统 emoji 全部清空：新增 52 枚水墨图标（人像 / 锁 / 门 / 晷 / 罗盘 / 瓢虫 / 拼块 / 骰子 / 眼睛 / 人脸四态 / 头脑 / 天平 / 扫帚…），图标族共 89 枚。',
+      '状态行改为 setInkText：只识别水墨图标记号，其余字符一律走文本节点，绝不把状态文本当 HTML 解析。',
+      '口音下拉的国旗 emoji 改为「美式发音 / 英式发音」；日志勾叉伪元素、语料折叠提示改为同族图标与纯文字。',
+      '无数据迁移、无新增依赖、无配置项。',
+    ],
+  },
+  {
     version: '4.6.0', date: '2026-11-28', title: '水墨图标 · 去小字',
     items: [
       '全站删掉没有意义的解释性小字：页头副标题、分区小标签、卡片下说明、标题括号注释与提示折叠块一并移除，正文只留标题与操作。',
@@ -1052,7 +1062,7 @@ const DEV_LOG = [
     date: '2026-09-27',
     title: 'PWA 可安装（添加到主屏幕 / 桌面应用）',
     items: [
-      '① 可安装为应用：新增 Web App Manifest（standalone 全屏、品牌主题色、应用图标族含 maskable），设置页新增「📱 安装到桌面」区，支持一键安装（beforeinstallprompt）与各浏览器手动添加指引',
+      '① 可安装为应用：新增 Web App Manifest（standalone 全屏、品牌主题色、应用图标族含 maskable），设置页新增「安装到桌面」区，支持一键安装（beforeinstallprompt）与各浏览器手动添加指引',
       '② iOS 全屏独立运行：补齐 apple-touch-icon 与 apple-mobile-web-app-capable，Safari「添加到主屏幕」后无地址栏全屏打开（不依赖 HTTPS）',
       '③ 离线可用：新增 Service Worker 缓存应用外壳（网络优先导航 + 静态资源 stale-while-revalidate），断网也能打开界面；/api 与 /images 直连网络不缓存。仅在 HTTPS/localhost 生效，HTTP/IP 下自动跳过（无副作用），日后启用 HTTPS 即自动启用离线',
       '④ 应用快捷方式：Manifest 内置「单词测验 / 今日学习」快捷入口，支持 ?tab= 参数直达对应页签',
@@ -1065,7 +1075,7 @@ const DEV_LOG = [
     items: [
       '① 智能信心判断：测验信心不再由用户手选，改为按作答行为自动推断（耗时 + 正误）。客观题相对快答对→确定、偏慢→犹豫、答错→猜测（极快）或犹豫，自评题按评分映射；作答后在反馈区轻量显示「本题判定」。真题迁移保留手动信心组不变',
       '② 题量解锁：基础/自适应/复练/迁移题量下限改为 1、不设上限（实际受词源与释义数量约束）；会话上限 100→10000、提交与复练到期列表截断同步放宽；释义预补不封顶，随题量自由膨胀',
-      '③ 自动播报单词：进入题目自动朗读（浏览器 TTS），仅覆盖 flash/choice/audio/复练；看中选英(zh2en)与拼写(spell)不自动播报以免泄露答案；新增「🔊 自动播报」开关（默认开启，本机持久化）',
+      '③ 自动播报单词：进入题目自动朗读（浏览器 TTS），仅覆盖 flash/choice/audio/复练；看中选英(zh2en)与拼写(spell)不自动播报以免泄露答案；新增「自动播报」开关（默认开启，本机持久化）',
       '④ 词源显示具体数目：测验 8 个词源与复练 3 个范围 chip 显示候选具体数量；新增只读接口 GET /api/quiz/sources（与组卷同口径去重计数，失败静默不阻断）',
     ],
   },
@@ -1078,7 +1088,7 @@ const DEV_LOG = [
       'P3 墨墨集成改为 per-user：每人自带 Token 独立频控（滑动窗口 + 自适应间隔按用户隔离，互不拖慢）；云词库缓存按用户隔离；自动同步按用户各自间隔独立装配（各自 Token、写各自数据）',
       'P3 自动同步定时器：启动/迁移/配置变更时遍历所有已开启的用户分别装配，删除用户自动撤下；迁移后立即为 admin 装配',
       'P3 AI 用量统计：每次 LLM 调用抓取上游 usage tokens（流式与非流式均支持），按北京自然日聚合并落 data/users/<id>/llm_usage.json，纳入备份与恢复',
-      '新增「📊 AI 用量」看板：普通用户看自己的总 Tokens/调用次数/输入输出与近 7/14/30 天柱状趋势；管理员额外可见全员用量表',
+      '新增「AI 用量」看板：普通用户看自己的总 Tokens/调用次数/输入输出与近 7/14/30 天柱状趋势；管理员额外可见全员用量表',
       '接口：GET /api/llm/usage?days=7|14|30（scope=all 仅管理员可看全员，越权 403 FORBIDDEN）',
       '共享 LLM Key 由管理员统一配置；用量看板仅统计展示，不设额度拦截',
     ],
@@ -1089,7 +1099,7 @@ const DEV_LOG = [
     title: '多用户 P1 账户体系（前端）',
     items: [
       '登录遮罩升级为「登录 / 注册」双标签：多用户模式走用户名 + 密码登录、一次性邀请码注册（注册成功即登录）；单用户模式仍为 Token 凭证，界面自适应',
-      '新增「👤 我的账户」设置区：显示当前用户名与角色（管理员/普通用户），一键退出登录',
+      '新增「我的账户」设置区：显示当前用户名与角色（管理员/普通用户），一键退出登录',
       '角色显隐：普通用户自动隐藏管理员专属设置区（模型服务/密钥/登录与安全/数据备份等），与后端 403 守卫一致',
       '登出清理：清空内存学习状态 + 作文草稿 + 番茄钟进度，保留主题/风格/白噪音等设备偏好；登出后登录遮罩复现',
       '管理员专属接口加固：备份创建/列表/恢复在多用户下仅管理员可用（403 FORBIDDEN）',
@@ -1147,7 +1157,7 @@ const DEV_LOG = [
     title: '测验记忆引擎（自维护 SRS + 错题本）',
     items: [
       '新增独立记忆引擎 data/quiz_srs.json（自维护 SRS，与墨墨同步数据互不干扰）：每词记录易度/间隔/到期时间与掌握度（0–4），tmp+rename 原子写、损坏拒绝覆盖、纳入备份与恢复',
-      '基础回忆闪卡升级为 4 档评分（😵 忘记 / 😕 吃力 / 😊 掌握 / 😎 轻松），按简化 SM-2 演化间隔与易度；四选一/拼写自动映射 correct/incorrect',
+      '基础回忆闪卡升级为 4 档评分（ 忘记 /  吃力 /  掌握 /  轻松），按简化 SM-2 演化间隔与易度；四选一/拼写自动映射 correct/incorrect',
       '新增「错题复练」子模式：答错即进入错题本，按 1→3→7→21 天分级复练，连续晋级即视为掌握并移出；支持仅错题本 / 仅记忆到期 / 全部到期三种范围',
       '测验页新增掌握度条（0–4 分段）与作答计时（可暂停）；结果页展示 4 档明细、用时与记忆引擎更新摘要',
       '新增游戏化基础（XP / 连胜 / 连对 combo），默认关闭，可在数据层按需开启',
@@ -5551,7 +5561,7 @@ async function kbImportOne({ name, buf, category, store = 'corpus', parserTag = 
     // v2.1.1：真题库新增 mineru md 结构化通道（扫描件经 MinerU 版面还原后拆题入库）
     const examMineruMd = store === 'exam' && ext === '.md' && parserTag === 'mineru-api';
     if (store === 'exam' && ext !== '.tex' && ext !== '.pdf' && !examMineruMd) {
-      parsed = { ok: false, reason: `真题库仅支持 tex / pdf 结构化源（收到 ${ext || '无扩展名'}）`, hint: '文章、笔记类内容请到「📚 语料库」导入' };
+      parsed = { ok: false, reason: `真题库仅支持 tex / pdf 结构化源（收到 ${ext || '无扩展名'}）`, hint: '文章、笔记类内容请到「语料库」导入' };
     } else if (examMineruMd) {
       parsed = await kbParseWithPython('md', srcPath);
       if (parsed.ok) parser = parsed.parser || 'mineru-md-parser';
@@ -5574,7 +5584,7 @@ async function kbImportOne({ name, buf, category, store = 'corpus', parserTag = 
       parsed = { ok: true, records: [{ rtype: 'document', title: safe.replace(/\.docx$/i, ''), text, meta: { chars: text.length } }] };
     } else if (ext === '.tex' || ext === '.pdf') {
       if (store === 'corpus') {
-        parsed = { ok: false, reason: 'tex / pdf 是真题结构化源，不属于语料库', hint: '请到「🗂 真题库」板块导入（自动拆题入库）' };
+        parsed = { ok: false, reason: 'tex / pdf 是真题结构化源，不属于语料库', hint: '请到「真题库」板块导入（自动拆题入库）' };
       } else {
         parsed = await kbParseWithPython(ext.slice(1), srcPath);
         if (parsed.ok) parser = parsed.parser || ext.slice(1) + '-adapter';
@@ -7803,8 +7813,8 @@ function studyTasks(date = bjDate(), plan = loadStudyPlan()) {
   };
   const completed = completedStudyTasksFor(date, plan);
   const tasks = [
-    { id: 'vocab_today', title: '今日词汇', icon: '🔤', target: plan.dailyWords, detail: `${counts.vocab_today}/${plan.dailyWords} 词 · 今日词表 ${Object.values(db.words).filter(x => x.today?.date === date).length}`, tab: 'study' },
-    { id: 'review_due', title: '到期与错题复习', icon: '🔁', target: due + counts.review_due, detail: `${counts.review_due} 词已练 · ${due} 词待复习（去重）`, tab: 'quiz' },
+    { id: 'vocab_today', title: '今日词汇', icon: 'letter-a', target: plan.dailyWords, detail: `${counts.vocab_today}/${plan.dailyWords} 词 · 今日词表 ${Object.values(db.words).filter(x => x.today?.date === date).length}`, tab: 'study' },
+    { id: 'review_due', title: '到期与错题复习', icon: 'cycle', target: due + counts.review_due, detail: `${counts.review_due} 词已练 · ${due} 词待复习（去重）`, tab: 'quiz' },
   ];
   return tasks.map(t => {
     const automatic = counts[t.id] >= t.target;
@@ -9423,8 +9433,8 @@ async function handleRequest(req, res) {
           return sendJSON(res, 200, { ok: true, msg: `Key 可用，但「resilient」未收录。近似词：${(entry.suggestions || []).join('、') || '无'}` });
         }
         const bits = [`「${entry.headword}」${entry.pos}`, entry.def, `来源 ${entry.source}`];
-        if (entry.audio) bits.push('真人发音 ✓');
-        if (entry.etymology) bits.push('词源 ✓');
+        if (entry.audio) bits.push('真人发音 ');
+        if (entry.etymology) bits.push('词源 ');
         return sendJSON(res, 200, { ok: true, msg: `查询成功！${bits.join(' · ')}` });
       }
 
@@ -10974,7 +10984,7 @@ setInterval(autoBackup, 6 * 3600_000);   // 每 6 小时
 
 server.listen(PORT, HOST, () => {
   console.log(`\n  英语学习工作台已启动`);
-  console.log(`  ➜  http://localhost:${PORT}  (listening on ${HOST})`);
+  console.log(`    http://localhost:${PORT}  (listening on ${HOST})`);
   console.log(`  数据目录: ${DATA_DIR}\n`);
   if (!config.maimemoToken) console.log('  [提示] 尚未配置墨墨 Token，请打开网页在「设置」中填写\n');
 });

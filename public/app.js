@@ -175,7 +175,7 @@ async function doLogin() {
       hideLoginOverlay();
       initApp();
     } catch (e) {
-      if (out) out.textContent = '❌ ' + e.message;
+      if (out) setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     }
     return;
   }
@@ -191,7 +191,7 @@ async function doLogin() {
     hideLoginOverlay();
     initApp();
   } catch (e) {
-    if (out) out.textContent = '❌ ' + e.message;
+    if (out) setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
   }
 }
 
@@ -215,7 +215,7 @@ async function doRegister() {
     hideLoginOverlay();
     initApp();
   } catch (e) {
-    if (out) out.textContent = '❌ ' + e.message;
+    if (out) setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
   }
 }
 
@@ -343,7 +343,7 @@ async function loadUsageDashboard() {
       allWrap.style.display = 'none';
     }
   } catch (e) {
-    if (out) out.textContent = '❌ ' + e.message;
+    if (out) setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
   }
 }
 
@@ -390,6 +390,38 @@ function bjDateOf(iso) {
   return isNaN(d) ? '' : d.toLocaleString('sv-SE', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 }
 
+/**
+ * v4.7.0：带水墨图标的纯文本写入。
+ * 状态行（toast / 测试结果 / 进度）现在把图标标记混在纯文本里，
+ * 但正文仍按 textContent 语义处理——只识别 `<i class="ink-glyph …">` 记号，
+ * 其余字符一律走文本节点，绝不把状态文本当 HTML 解析（避免引入注入面）。
+ */
+const INK_TOKEN_RE = /<i class="(ink-glyph[^"]*)"[^>]*><\/i>/g;
+
+function inkFragment(html) {
+  const frag = document.createDocumentFragment();
+  let last = 0, m;
+  INK_TOKEN_RE.lastIndex = 0;
+  while ((m = INK_TOKEN_RE.exec(html))) {
+    if (m.index > last) frag.appendChild(document.createTextNode(html.slice(last, m.index)));
+    const i = document.createElement('i');
+    i.className = m[1];
+    i.setAttribute('aria-hidden', 'true');
+    frag.appendChild(i);
+    last = m.index + m[0].length;
+  }
+  if (last < html.length) frag.appendChild(document.createTextNode(html.slice(last)));
+  return frag;
+}
+
+function setInkText(el, text) {
+  if (!el) return;
+  const s = String(text ?? '');
+  if (s.indexOf('<i class="ink-glyph') < 0) { el.textContent = s; return; }
+  el.textContent = '';
+  el.appendChild(inkFragment(s));
+}
+
 /** v2.1.0a 补齐：右下角轻提示（此前 toast 未定义，禅模式/白噪音调用会抛错） */
 function toast(msg) {
   try {
@@ -397,7 +429,9 @@ function toast(msg) {
     if (old) old.remove();
     const el = document.createElement('div');
     el.className = 'wb-toast';
-    el.textContent = msg;
+    const s = String(msg ?? '');
+    if (s.indexOf('<i class="ink-glyph') >= 0) el.appendChild(inkFragment(s));
+    else el.textContent = msg;
     document.body.appendChild(el);
     requestAnimationFrame(() => el.classList.add('show'));
     setTimeout(() => {
@@ -747,7 +781,7 @@ async function loadDevLogs() {
   }
 }
 
-const USAGE_KIND_META = { plan: { label: '🧭 更新方向', cls: 'plan' }, issue: { label: '🐞 已知小毛病', cls: 'issue' }, note: { label: '📝 备注', cls: 'note' } };
+const USAGE_KIND_META = { plan: { label: '<i class="ink-glyph ink-only ink-compass" aria-hidden="true"></i> 更新方向', cls: 'plan' }, issue: { label: '<i class="ink-glyph ink-only ink-bug" aria-hidden="true"></i> 已知小毛病', cls: 'issue' }, note: { label: '<i class="ink-glyph ink-only ink-quill" aria-hidden="true"></i> 备注', cls: 'note' } };
 
 async function loadUsageLogs() {
   const box = $('#usageLogList');
@@ -763,7 +797,7 @@ async function loadUsageLogs() {
           <span class="log-kind">${meta.label}</span>
           <span class="log-title">${esc(u.title || '')}</span>
           <span class="log-date">${fmtBJ(u.ts)}</span>
-          <button class="btn ghost log-del" data-usage-del="${esc(u.id)}" title="删除">🗑</button>
+          <button class="btn ghost log-del" data-usage-del="${esc(u.id)}" title="删除"><i class="ink-glyph ink-only ink-trash" aria-hidden="true"></i></button>
         </div>
         ${u.content ? `<div class="log-content">${esc(u.content)}</div>` : ''}
       </div>`;
@@ -783,7 +817,7 @@ async function loadErrorLogs() {
   try {
     const r = await api('/api/logs/errors');
     const list = r.errors || [];
-    if (!list.length) { box.innerHTML = '<div class="hint">✓ 暂无报错记录。</div>'; return; }
+    if (!list.length) { box.innerHTML = '<div class="hint"><i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 暂无报错记录。</div>'; return; }
     box.innerHTML = list.map(e => `
       <div class="log-entry err-${esc(e.level || 'error')}">
         <div class="log-entry-head">
@@ -978,7 +1012,7 @@ function renderStudyTasks(tasks) {
   if (summary) summary.textContent = `${done}/${list.length} 已完成`;
   box.innerHTML = list.map(t => `<div class="study-task ${t.done ? 'done' : ''}">
     <label class="study-task-check-wrap"><input class="study-task-check" type="checkbox" data-study-complete="${esc(t.id)}" aria-label="标记${esc(t.title)}完成" ${t.done ? 'checked' : ''} ${t.automatic ? 'disabled' : ''}></label>
-    <span class="study-task-icon">${t.icon}</span><div class="study-task-main"><b>${esc(t.title)}</b><span>${esc(t.detail || '')}</span></div>
+    <span class="study-task-icon"><i class="ink-card ink-${esc(t.icon)}" aria-hidden="true"></i></span><div class="study-task-main"><b>${esc(t.title)}</b><span>${esc(t.detail || '')}</span></div>
     <button class="btn mini ${t.done ? 'ghost' : 'primary'} study-task-btn" data-study-start="${esc(t.id)}" type="button">${t.done ? '查看' : '去练习'}</button>
   </div>`).join('');
   box.querySelectorAll('[data-study-complete]').forEach(input => input.addEventListener('change', async e => {
@@ -1087,13 +1121,13 @@ async function loadDashboard() {
     const banner = $('#syncBanner');
     const lastSyncDate = bjDateOf(d.lastSync);
     if (!d.lastSync) {
-      $('#syncBannerText').textContent = '⚠️ 还没同步过数据——先同步一次，词表和进度才会出现';
+      setInkText($('#syncBannerText'), '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 还没同步过数据——先同步一次，词表和进度才会出现');
       banner.style.display = 'flex';
     } else if (d.lastSyncOk === false) {
-      $('#syncBannerText').textContent = `⚠️ 上次同步失败（${fmtBJ(d.lastSync)}），点击右侧重试`;
+      setInkText($('#syncBannerText'), `<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 上次同步失败（${fmtBJ(d.lastSync)}），点击右侧重试`);
       banner.style.display = 'flex';
     } else if (lastSyncDate !== d.todayStr) {
-      $('#syncBannerText').textContent = `⚠️ 今日数据未同步（上次同步 ${fmtBJ(d.lastSync)}），今日词表可能是空的`;
+      setInkText($('#syncBannerText'), `<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 今日数据未同步（上次同步 ${fmtBJ(d.lastSync)}），今日词表可能是空的`);
       banner.style.display = 'flex';
     } else {
       banner.style.display = 'none';
@@ -1104,7 +1138,7 @@ async function loadDashboard() {
       $('#statProgressSub').textContent = `还剩 ${Math.max(0, d.progress.total - d.progress.finished)} 个词`;
       const min = Math.round(d.progress.studyTimeMs / 60000);
       $('#statTime').textContent = min ? `${min} 分钟` : '—';
-      $('#statTimeSub').textContent = min ? '继续保持 💪' : '今天还没开始学';
+      setInkText($('#statTimeSub'), min ? '继续保持 <i class="ink-glyph ink-only ink-muscle" aria-hidden="true"></i>' : '今天还没开始学');
     } else {
       $('#statProgress').textContent = '—';
       $('#statProgressSub').textContent = '今天尚未同步';
@@ -1234,12 +1268,12 @@ async function doSync(silent) {
     const r = await api('/api/sync', { method: 'POST' });
     updateSyncBadge(r.ok ? 'ok' : 'err', formatTime(new Date().toISOString()));
     if (!silent) {
-      alert(r.ok ? '✅ 同步完成\n' + r.msg : '⚠️ 部分失败\n' + r.msg);
+ alert(r.ok ? '同步完成\n' + r.msg : '部分失败\n' + r.msg);
       loadDashboard();
     }
   } catch (e) {
     updateSyncBadge('err', '同步失败');
-    if (!silent) alert('❌ ' + e.message);
+ if (!silent) alert('' + e.message);
   }
 }
 
@@ -1267,7 +1301,7 @@ async function loadLearningReport(days = 7) {
     renderLearningReport(r);
   } catch (err) {
     if (request !== reportRequest) return;
-    bodyEl.innerHTML = `<div class="result err">⚠️ 加载学习诊断周报失败: ${esc(err.message)}</div>`;
+    bodyEl.innerHTML = `<div class="result err"><i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 加载学习诊断周报失败: ${esc(err.message)}</div>`;
   } finally {
     if (request === reportRequest) bodyEl.setAttribute('aria-busy', 'false');
   }
@@ -1332,7 +1366,7 @@ function renderLearningReport(data) {
     .filter(x => x.v.total > 0 || x.v.judged > 0);
   const bySecHtml = bySecRows.length ? `
     <div class="report-section">
-      <div class="report-sec-title">📚 分题型作答统计</div>
+      <div class="report-sec-title"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 分题型作答统计</div>
       <div class="report-sec-table">
         <div class="report-sec-row report-sec-head">
           <span class="sec-name">题型</span>
@@ -1353,7 +1387,7 @@ function renderLearningReport(data) {
   // 2. 薄弱反复错词
   const repList = data.repeatedWords || [];  const repHtml = repList.length ? `
     <div class="report-section">
-      <div class="report-sec-title">⚠️ 反复错词 / 顽固词（做错 ≥2 次）</div>
+      <div class="report-sec-title"><i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 反复错词 / 顽固词（做错 ≥2 次）</div>
       <div class="report-tag-list">
         ${repList.map(w => `
           <button type="button" class="btn mini ghost report-word-tag" data-word="${esc(w.word)}">
@@ -1377,7 +1411,7 @@ function renderLearningReport(data) {
   const reasonEntries = Object.entries(reasons).filter(([k, v]) => v > 0);
   const reasonHtml = reasonEntries.length ? `
     <div class="report-section">
-      <div class="report-sec-title">🎯 客观题错因归因分布</div>
+      <div class="report-sec-title"><i class="ink-glyph ink-only ink-target" aria-hidden="true"></i> 客观题错因归因分布</div>
       <div class="report-reason-grid">
         ${reasonEntries.map(([k, v]) => `
           <div class="report-reason-item">
@@ -1389,10 +1423,10 @@ function renderLearningReport(data) {
 
   // 4. 信心校准矩阵
   const cm = data.confidenceMatrix || {};
-  const confLabels = { sure: '🎯 确定', unsure: '🤔 犹豫', guess: '🎲 猜测' };
+  const confLabels = { sure: '<i class="ink-glyph ink-only ink-target" aria-hidden="true"></i> 确定', unsure: '<i class="ink-glyph ink-only ink-face-think" aria-hidden="true"></i> 犹豫', guess: '<i class="ink-glyph ink-only ink-dice" aria-hidden="true"></i> 猜测' };
   const confHtml = `
     <div class="report-section">
-      <div class="report-sec-title">⚖️ 作答信心与准确率校准</div>
+      <div class="report-sec-title"><i class="ink-glyph ink-only ink-scale" aria-hidden="true"></i> 作答信心与准确率校准</div>
       <div class="report-conf-grid">
         ${['sure', 'unsure', 'guess'].map(k => {
           const item = cm[k] || { total: 0, accuracy: null, correct: 0 };
@@ -1411,7 +1445,7 @@ function renderLearningReport(data) {
   const mn = data.mnemonicEffect || {};
   const mnHtml = mn.samples > 0 ? `
     <div class="report-section">
-      <div class="report-sec-title">💡 助记促学效果追踪</div>
+      <div class="report-sec-title"><i class="ink-glyph ink-only ink-bulb" aria-hidden="true"></i> 助记促学效果追踪</div>
       <div class="report-mn-row">
         <span class="mn-badge ok">初步有效 ${mn.initialEffective}</span>
         <span class="mn-badge warn">待重写 ${mn.needsRewrite}</span>
@@ -1424,7 +1458,7 @@ function renderLearningReport(data) {
   const dueList = data.dueReviews || [];
   const dueHtml = dueList.length ? `
     <div class="report-section">
-      <div class="report-sec-title">📅 待复测长难句（3 天周期）</div>
+      <div class="report-sec-title"><i class="ink-glyph ink-only ink-calendar" aria-hidden="true"></i> 待复测长难句（3 天周期）</div>
       <div class="report-due-list">
         ${dueList.map(d => `
           <button type="button" class="report-due-item" data-review-id="${esc(d.id)}" data-prompt="${esc(String(d.prompt || '').slice(0, 600))}">
@@ -1438,7 +1472,7 @@ function renderLearningReport(data) {
   const retryList = data.pendingRetries || [];
   const pendingHtml = retryList.length ? `
     <div class="report-section">
-      <div class="report-sec-title">⏳ 待重试长难句（AI 反馈未生成）</div>
+      <div class="report-sec-title"><i class="ink-glyph ink-only ink-hourglass" aria-hidden="true"></i>待重试长难句（AI 反馈未生成）</div>
       <div class="report-due-list">
         ${retryList.map(d => `
           <button type="button" class="report-retry-item" data-review-id="${esc(d.id)}" data-prompt="${esc(String(d.prompt || '').slice(0, 600))}">
@@ -1527,7 +1561,7 @@ async function loadReportModalList(kind = '') {
       const isOk = a.result === 'correct';
       const isBad = a.result === 'incorrect';
       const resClass = isOk ? 'u-ok' : isBad ? 'u-bad' : '';
-      const resText = isOk ? '✓ 正确' : isBad ? '✗ 错误' : (a.result || '待定');
+      const resText = isOk ? '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 正确' : isBad ? '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 错误' : (a.result || '待定');
       const timeStr = a.submittedAt || a.startedAt || '';
       return `
         <div class="report-attempt-item">
@@ -1642,7 +1676,7 @@ function renderWordList() {
         <span class="spelling">${esc(w.spelling)} ${phon}</span>
         ${glossLine}
       </span>
-      <span style="text-align:right;flex-shrink:0">${badge}<div class="meta">${meta}</div><button class="speak-btn mini" data-speak="${esc(w.spelling)}" title="朗读">🔊</button></span>
+      <span style="text-align:right;flex-shrink:0">${badge}<div class="meta">${meta}</div><button class="speak-btn mini" data-speak="${esc(w.spelling)}" title="朗读"><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i></button></span>
     </div>`;
   }).join('');
   $$('.word-item').forEach(el => el.addEventListener('click', () => selectWord(el.dataset.sp, el)));
@@ -1714,9 +1748,9 @@ function addMsg(role, content, word) {
   const box = $('#chatMessages');
   const div = document.createElement('div');
   div.className = 'msg ' + role;
-  const tag = word ? `<span class="word-tag">📘 ${esc(word)}</span>` : '';
+  const tag = word ? `<span class="word-tag"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> ${esc(word)}</span>` : '';
   const spk = role === 'ai'
-    ? `<button class="speak-btn mini msg-speak" title="朗读其中的英文例句">🔊</button>` : '';
+    ? `<button class="speak-btn mini msg-speak" title="朗读其中的英文例句"><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i></button>` : '';
   div.innerHTML = tag + mdLite(content) + spk;
   if (role === 'ai') div.dataset.raw = content;
   box.appendChild(div);
@@ -1911,7 +1945,7 @@ $('#chatImageFile').addEventListener('change', async () => {
   const f = $('#chatImageFile').files && $('#chatImageFile').files[0];
   if (!f) return;
   try { setChatImagePreview(await compressImageFile(f)); }
-  catch (e) { toast('🖼️ ' + (e.message || '图片处理失败')); }
+  catch (e) { toast('<i class="ink-glyph ink-only ink-frame" aria-hidden="true"></i> ' + (e.message || '图片处理失败')); }
 });
 $('#chatImageClear').addEventListener('click', () => setChatImagePreview(''));
 
@@ -1922,7 +1956,7 @@ let chatInFlight = false;
 
 async function askAI(message, isErrorMark = false) {
   if (!message.trim()) return;
-  if (chatInFlight) { toast('⏳ 上一条还在回答中，请稍候再发'); return; }
+  if (chatInFlight) { toast('<i class="ink-glyph ink-only ink-hourglass" aria-hidden="true"></i>上一条还在回答中，请稍候再发'); return; }
   chatInFlight = true;
   const sendBtnEl = $('#sendBtn');
   if (sendBtnEl) sendBtnEl.disabled = true;   // 显式禁用，避免用户误以为没点上而反复点
@@ -1957,20 +1991,20 @@ async function askAI(message, isErrorMark = false) {
     let evidenceBadgeHtml = '';
     if (r.evidence) {
       const parts = [];
-      if (r.evidence.examsCount > 0) parts.push(`<span class="evidence-pill exam" title="${esc(r.evidence.sampleExam || '真题库')}">🎓 真题 ×${r.evidence.examsCount}</span>`);
-      if (r.evidence.externalCount > 0) parts.push(`<span class="evidence-pill external" title="${esc(r.evidence.sampleExternal || '外刊精选')}">📰 外刊 ×${r.evidence.externalCount}</span>`);
-      if (r.evidence.corpusCount > 0) parts.push(`<span class="evidence-pill corpus" title="工作台手工语料">📚 语料 ×${r.evidence.corpusCount}</span>`);
+      if (r.evidence.examsCount > 0) parts.push(`<span class="evidence-pill exam" title="${esc(r.evidence.sampleExam || '真题库')}"><i class="ink-glyph ink-only ink-cap" aria-hidden="true"></i> 真题 ×${r.evidence.examsCount}</span>`);
+      if (r.evidence.externalCount > 0) parts.push(`<span class="evidence-pill external" title="${esc(r.evidence.sampleExternal || '外刊精选')}"><i class="ink-glyph ink-only ink-news" aria-hidden="true"></i> 外刊 ×${r.evidence.externalCount}</span>`);
+      if (r.evidence.corpusCount > 0) parts.push(`<span class="evidence-pill corpus" title="工作台手工语料"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 语料 ×${r.evidence.corpusCount}</span>`);
       if (parts.length > 0) {
         evidenceBadgeHtml = `<div class="evidence-tags">${parts.join('')}</div>`;
       }
     }
     const currentWord = r.evidence?.spelling || state.activeWord;
-    loading.innerHTML = (currentWord ? `<span class="word-tag">📘 ${esc(currentWord)}</span>` : '') + evidenceBadgeHtml + mdLite(r.reply);
+    loading.innerHTML = (currentWord ? `<span class="word-tag"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> ${esc(currentWord)}</span>` : '') + evidenceBadgeHtml + mdLite(r.reply);
     state.chatHistory.push({ role: 'assistant', content: r.reply, word: currentWord });
     autoSaveChat();   // v1.2.0：每次 AI 回复后自动持久化
   } catch (e) {
     loading.classList.remove('loading');
-    loading.innerHTML = '❌ ' + esc(e.message) + (e.message.includes('AI 服务商') ? '（请到 设置 页配置）' : '');
+    loading.innerHTML = '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + esc(e.message) + (e.message.includes('AI 服务商') ? '（请到 设置 页配置）' : '');
   } finally {
     chatInFlight = false;             // v3.8.1：成功/失败都释放，避免一次异常把会话永久锁死
     if (sendBtnEl) sendBtnEl.disabled = false;
@@ -2480,14 +2514,14 @@ async function storyQuickFill() {
   try {
     const chipText = $('#storyQuickRow .chip.active')?.textContent || '当前词源';
     if (out) {
-      out.textContent = '⏳ 正在按「' + chipText + '」抓取所有词汇…';
+      setInkText(out, '<i class="ink-glyph ink-only ink-hourglass" aria-hidden="true"></i>正在按「' + chipText + '」抓取所有词汇…');
       out.className = 'result';
     }
     const d = await api(`/api/words?filter=${storyState.quick}`);
     const list = (d.words || []).map(w => w.spelling.toLowerCase());
     if (!list.length) {
       if (out) {
-        out.textContent = '⚠️ 该词源下暂无单词，请先在仪表盘同步或切换词源';
+        setInkText(out, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 该词源下暂无单词，请先在仪表盘同步或切换词源');
         out.className = 'result err';
       }
       return;
@@ -2500,12 +2534,12 @@ async function storyQuickFill() {
     // 词池变动后，重置分析状态
     resetStoryAnalysis();
     if (out) {
-      out.textContent = `✅ 成功载入「${chipText}」：新加入 ${addedCount} 词，当前词池共 ${storyState.pool.length} 词`;
+      setInkText(out, `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 成功载入「${chipText}」：新加入 ${addedCount} 词，当前词池共 ${storyState.pool.length} 词`);
       out.className = 'result ok';
     }
   } catch (e) {
     if (out) {
-      out.textContent = '❌ ' + e.message;
+      setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
       out.className = 'result err';
     }
   }
@@ -2521,7 +2555,7 @@ function renderStoryPool() {
     return;
   }
   pool.innerHTML = storyState.pool.map(w =>
-    `<span class="story-pool-word" data-pw="${esc(w)}">${esc(w)}<button class="story-pool-x" data-pwx="${esc(w)}" title="移除" type="button">✕</button></span>`
+    `<span class="story-pool-word" data-pw="${esc(w)}">${esc(w)}<button class="story-pool-x" data-pwx="${esc(w)}" title="移除" type="button"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button></span>`
   ).join('');
   $('#storyPoolCount').textContent = `(${storyState.pool.length})`;
   if (clearBtn) clearBtn.style.display = '';
@@ -2540,15 +2574,15 @@ $('#storyAddBtn').addEventListener('click', () => {
   const tokens = raw.split(/[,，;；\s]+/).map(s => s.trim().toLowerCase()).filter(Boolean);
   if (!tokens.length) return;
   const bad = tokens.filter(w => !/^[a-z][a-z''\-]{0,39}$/.test(w));
-  if (bad.length >= tokens.length) { toast('⚠️ 仅支持英文单词（字母/撇号/连字符）'); return; }
-  if (bad.length) toast(`⚠️ 跳过 ${bad.length} 个非法词：${bad.slice(0, 3).join(', ')}${bad.length > 3 ? '…' : ''}`);
+  if (bad.length >= tokens.length) { toast('<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 仅支持英文单词（字母/撇号/连字符）'); return; }
+  if (bad.length) toast(`<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 跳过 ${bad.length} 个非法词：${bad.slice(0, 3).join(', ')}${bad.length > 3 ? '…' : ''}`);
   const before = storyState.pool.length;
   storyState.pool = [...new Set([...storyState.pool, ...tokens.filter(w => /^[a-z][a-z''\-]{0,39}$/.test(w))])];
   const added = storyState.pool.length - before;
   inp.value = '';
   renderStoryPool();
   resetStoryAnalysis();
-  if (added) toast(`➕ 新加 ${added} 词，词池共 ${storyState.pool.length} 词`);
+  if (added) toast(`<i class="ink-glyph ink-only ink-plus" aria-hidden="true"></i> 新加 ${added} 词，词池共 ${storyState.pool.length} 词`);
   else toast('已在词池中');
 });
 $('#storySearch').addEventListener('keydown', e => { if (e.key === 'Enter') $('#storyAddBtn').click(); });
@@ -2569,21 +2603,21 @@ function resetStoryAnalysis() {
 async function analyzeStoryWords() {
   const btn = $('#storyAnalyzeBtn'), out = $('#storyAnalyzeResult');
   if (!storyState.pool.length) {
-    out.textContent = '⚠️ 词池为空——先点击上方词源快速选词或手动加入';
+    setInkText(out, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 词池为空——先点击上方词源快速选词或手动加入');
     out.className = 'result err';
     return;
   }
   btn.disabled = true;
-  out.textContent = `🤖 AI 正在分析 ${storyState.pool.length} 个词汇的语义关联与考研场景…（约 10-30 秒）`;
+  setInkText(out, `<i class="ink-glyph ink-only ink-robot" aria-hidden="true"></i> AI 正在分析 ${storyState.pool.length} 个词汇的语义关联与考研场景…（约 10-30 秒）`);
   out.className = 'result';
   try {
     const r = await api('/api/story/analyze', { method: 'POST', body: { words: storyState.pool } });
     storyState.analysis = r.analysis || null;
     renderStoryAnalysis(storyState.analysis);
-    out.textContent = '✅ 分析完成——请查阅建议并采纳，或手动微调下方参数';
+    setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 分析完成——请查阅建议并采纳，或手动微调下方参数');
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ 分析失败：' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 分析失败：' + e.message);
     out.className = 'result err';
   } finally {
     btn.disabled = false;
@@ -2597,23 +2631,23 @@ function renderStoryAnalysis(a) {
   const box = $('#storyAnalysisBox');
   if (!box) return;
   box.style.display = '';
-  $('#storyAnalysisSummary').textContent = '💡 ' + (a.summary || '（无整体分析）');
+  setInkText($('#storyAnalysisSummary'), '<i class="ink-glyph ink-only ink-bulb" aria-hidden="true"></i> ' + (a.summary || '（无整体分析）'));
   $('#storyLenRec').innerHTML =
     `<b>${esc(a.lengthLabel || '自适应篇幅')}</b>` +
     (a.lengthReason ? `<div style="margin-top:4px">${esc(a.lengthReason)}</div>` : '');
   const groups = Array.isArray(a.groups) ? a.groups : [];
   $('#storyGroupsList').innerHTML = groups.map(g => `
     <div class="story-group-item">
-      <div class="story-group-title">🧩 ${esc(g.name || '未命名组')} <span class="story-hist-meta">题材建议：${esc(g.theme || '随缘')}</span></div>
+      <div class="story-group-title"><i class="ink-glyph ink-only ink-puzzle" aria-hidden="true"></i> ${esc(g.name || '未命名组')} <span class="story-hist-meta">题材建议：${esc(g.theme || '随缘')}</span></div>
       <div class="story-group-words">${esc((g.words || []).join(', '))}</div>
-      <div class="story-group-plot">📖 ${esc(g.suggestedPlot || '')}</div>
+      <div class="story-group-plot"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> ${esc(g.suggestedPlot || '')}</div>
     </div>`).join('') || '<div class="hint">无分组建议</div>';
 }
 
 /** 一键采纳：篇幅写入 storyState（v2.4.3 篇幅已无 chips，全权由 AI 建议约束）；题材按首选分组建议映射 */
 $('#storyAdoptAdviceBtn').addEventListener('click', () => {
   const a = storyState.analysis;
-  if (!a) { toast('⚠️ 请先完成分析'); return; }
+  if (!a) { toast('<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 请先完成分析'); return; }
   // 篇幅采纳（唯一来源：AI 建议）
   const lenKey = ['short', 'medium', 'long'].includes(a.recommendedLength) ? a.recommendedLength : null;
   if (lenKey) storyState.length = lenKey;
@@ -2633,19 +2667,19 @@ $('#storyAdoptAdviceBtn').addEventListener('click', () => {
     matched.classList.add('active');
     storyState.theme = matched.dataset.theme || matched.textContent.trim();
   }
-  toast(`✅ 已采纳：篇幅=${lenKey || storyState.length}，题材=${storyState.theme}`);
+  toast(`<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已采纳：篇幅=${lenKey || storyState.length}，题材=${storyState.theme}`);
 });
 
 /* 生成文章（v2.4.3：按 AI 分组逐篇生成，一次多篇；篇幅全权来自分析建议） */
 async function generateStory() {
   const btn = $('#storyGenBtn'), out = $('#storyGenResult');
   if (storyState.pool.length < 1) {
-    out.textContent = '⚠️ 词池为空，先点击上方词源快速选词';
+    setInkText(out, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 词池为空，先点击上方词源快速选词');
     out.className = 'result err';
     return;
   }
   if (!storyState.analysis) {
-    out.textContent = '⚠️ 请先完成「步骤一：AI 分析」——篇幅与分组由分析建议全权约束';
+    setInkText(out, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 请先完成「步骤一：AI 分析」——篇幅与分组由分析建议全权约束');
     out.className = 'result err';
     return;
   }
@@ -2660,8 +2694,8 @@ async function generateStory() {
   const useGroups = groups.length >= 2 && groups.reduce((n, g) => n + g.words.length, 0) > 0;
   const totalPieces = useGroups ? groups.length : 1;
   out.textContent = useGroups
-    ? `✨ AI 正在按 ${totalPieces} 个分组逐篇创作（0/${totalPieces}）…每篇约 20-60 秒`
-    : `✨ AI 正在把 ${storyState.pool.length} 个词写进${storyState.theme}故事…（约 10-60 秒）`;
+    ? `<i class="ink-glyph ink-only ink-spark" aria-hidden="true"></i> AI 正在按 ${totalPieces} 个分组逐篇创作（0/${totalPieces}）…每篇约 20-60 秒`
+    : `<i class="ink-glyph ink-only ink-spark" aria-hidden="true"></i> AI 正在把 ${storyState.pool.length} 个词写进${storyState.theme}故事…（约 10-60 秒）`;
   out.className = 'result';
   try {
     const r = await api('/api/story/generate', {
@@ -2677,7 +2711,7 @@ async function generateStory() {
     });
     const stories = r.stories || (r.story ? [r.story] : []);
     const partialNote = r.partial ? `（${r.failed ? '「' + r.failed.group + '」失败：' + r.failed.error : ''}）` : '';
-    out.textContent = `✅ 生成完成：共 ${stories.length} 篇${partialNote}`;
+    setInkText(out, `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 生成完成：共 ${stories.length} 篇${partialNote}`);
     out.className = 'result ok';
     if (stories.length) renderStory(stories[0]);
     loadStoryHist();
@@ -2686,7 +2720,7 @@ async function generateStory() {
     collapseCard('#storySelectBody', true);
     expandCard('#storyResultBody');
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   } finally {
     btn.disabled = false;
@@ -2711,8 +2745,8 @@ function renderStory(s) {
   storyState.current = s;
   $('#storyResultCard').style.display = '';
   // v2.4.3：完成态徽章——done=true 绿色已完成 / false 黄色待做
-  const badge = s.done ? '<span class="story-done-badge ok">✅ 已完成</span>' : '<span class="story-done-badge todo">📝 待做</span>';
-  $('#storyTitle').innerHTML = `📖 ${esc(s.title)}（${esc(s.theme)} · ${s.words.length} 词）${badge}`;
+  const badge = s.done ? '<span class="story-done-badge ok"><i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已完成</span>' : '<span class="story-done-badge todo"><i class="ink-glyph ink-only ink-quill" aria-hidden="true"></i> 待做</span>';
+  $('#storyTitle').innerHTML = `<i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> ${esc(s.title)}（${esc(s.theme)} · ${s.words.length} 词）${badge}`;
   $('#storyPassage').innerHTML = highlightStoryWords(s.passage, s.words);
   $('#storyTranslation').textContent = s.translation || '（无翻译）';
   $('#storyHooks').innerHTML = (s.hooks || []).map(h => `
@@ -2720,8 +2754,8 @@ function renderStory(s) {
       <b class="story-hook-word" data-sw="${esc(h.word.toLowerCase())}">${esc(h.word)}</b>
       <span class="story-hook-meta">${esc(h.phonetic || '')} ${esc(h.pos || '')}</span>
       <span class="story-hook-meaning">${esc(h.meaning || '')}</span>
-      <button class="speak-btn mini story-hook-speak" data-spw="${esc(h.word)}" title="朗读">🔊</button>
-      <div class="story-hook-line">🪝 ${esc(h.hook || '')}</div>
+      <button class="speak-btn mini story-hook-speak" data-spw="${esc(h.word)}" title="朗读"><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i></button>
+      <div class="story-hook-line"><i class="ink-glyph ink-only ink-hook" aria-hidden="true"></i> ${esc(h.hook || '')}</div>
     </div>`).join('') || '<div class="hint">无钩子数据</div>';
   $$('#storyHooks [data-spw]').forEach(b => b.addEventListener('click', () => speak(b.dataset.spw)));
   renderStoryQuiz(s);
@@ -2754,7 +2788,7 @@ function renderStoryQuiz(s) {
     }
     const done = Object.keys(picked).length;
     const right = Object.keys(picked).filter(k => picked[k] === answers[k]).length;
-    res.textContent = `📊 已答 ${done}/${answers.length}，答对 ${right} 题`;
+    setInkText(res, `<i class="ink-glyph ink-only ink-chart" aria-hidden="true"></i> 已答 ${done}/${answers.length}，答对 ${right} 题`);
     res.className = 'result ' + (done === answers.length ? (right >= answers.length - 1 ? 'ok' : 'warn') : '');
     // v2.4.3：全部作答 → 上报完成态，标题徽章切换为绿色「已完成」
     if (done === answers.length && !completedReported && s.id) {
@@ -2763,8 +2797,8 @@ function renderStoryQuiz(s) {
         .then(() => {
           if (storyState.current && storyState.current.id === s.id) storyState.current.done = true;
           const badge = $('#storyTitle .story-done-badge');
-          if (badge) { badge.textContent = '✅ 已完成'; badge.className = 'story-done-badge ok'; }
-          toast('🎉 自测完成，文章已标记「已完成」');
+          if (badge) { setInkText(badge, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已完成'); badge.className = 'story-done-badge ok'; }
+          toast('<i class="ink-glyph ink-only ink-festive" aria-hidden="true"></i> 自测完成，文章已标记「已完成」');
           loadStoryHist();
         })
         .catch(() => {});
@@ -2781,7 +2815,7 @@ document.addEventListener('click', e => {
   api('/api/gloss', { method: 'POST', body: { spellings: [word] } })
     .then(r => {
       const g = r.glosses?.[word];
-      toast(g ? `📘 ${word} ${g.phonetic || ''} ${g.pos || ''} ${g.gloss || ''}` : '📘 ' + word + '（暂无释义缓存）');
+      toast(g ? `<i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> ${word} ${g.phonetic || ''} ${g.pos || ''} ${g.gloss || ''}` : '<i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> ' + word + '（暂无释义缓存）');
     })
     .catch(() => {});
 });
@@ -2797,7 +2831,7 @@ $('#storyCopyBtn').addEventListener('click', async () => {
   try {
     const hooks = (s.hooks || []).map(h => `- ${h.word} ${h.pos || ''} ${h.meaning || ''}｜钩子：${h.hook || ''}`).join('\n');
     const ok = await copyText(`${s.title}\n\n${s.passage}\n\n【词汇钩子】\n${hooks}\n\n【译文】\n${s.translation || ''}`);
-    toast(ok ? '📋 已复制全文+钩子' : '❌ 复制失败，请长按选中文章正文手动复制');
+    toast(ok ? '<i class="ink-glyph ink-only ink-clipboard" aria-hidden="true"></i> 已复制全文+钩子' : '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 复制失败，请长按选中文章正文手动复制');
   } catch { toast('复制失败'); }
 });
 $('#storyDelBtn').addEventListener('click', async () => {
@@ -2808,9 +2842,9 @@ $('#storyDelBtn').addEventListener('click', async () => {
     await api('/api/story/' + s.id, { method: 'DELETE' });
     $('#storyResultCard').style.display = 'none';
     storyState.current = null;
-    toast('🗑 已删除');
+    toast('<i class="ink-glyph ink-only ink-trash" aria-hidden="true"></i> 已删除');
     loadStoryHist();
-  } catch (e) { toast('❌ ' + e.message); }
+  } catch (e) { toast('<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message); }
 });
 
 /* 历史文章列表与回看 */
@@ -2830,14 +2864,14 @@ async function loadStoryHist() {
           <span class="story-hist-meta">${esc(s.theme)} · ${s.words.length} 词 · ${s.quizCount || 0} 题 · ${fmtBJ(s.createdAt)}</span>
           <span class="story-hist-words">${esc(s.words.slice(0, 8).join(', '))}${s.words.length > 8 ? '…' : ''}</span>
         </div>
-        <span class="story-done-badge ${s.done ? 'ok' : 'todo'}">${s.done ? '✅ 已完成' : '📝 待做'}</span>
+        <span class="story-done-badge ${s.done ? 'ok' : 'todo'}">${s.done ? '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已完成' : '<i class="ink-glyph ink-only ink-quill" aria-hidden="true"></i> 待做'}</span>
         <button class="btn small" data-sload="${esc(s.id)}">查看</button>
       </div>`).join('');
     $$('#storyHistList [data-sload]').forEach(b => b.addEventListener('click', async () => {
       try {
         const r = await api('/api/story/' + b.dataset.sload);
         renderStory(r.story);
-      } catch (e) { toast('❌ ' + e.message); }
+      } catch (e) { toast('<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message); }
     }));
   } catch (e) {
     $('#storyHistList').innerHTML = `<div class="result err">加载失败: ${esc(e.message)}</div>`;
@@ -2936,7 +2970,7 @@ async function loadChatSession(id) {
     // 切回聊天页
     if ($('#chatHistoryOverlay')) $('#chatHistoryOverlay').style.display = 'none';
   } catch (e) {
-    alert('加载会话失败：' + e.message);
+    alert('加载会话失败：'+ e.message);
   }
 }
 
@@ -2946,7 +2980,7 @@ async function deleteChatSession(id) {
     await api(`/api/chat/session/${id}`, { method: 'DELETE' });
     loadChatHistoryPanel();
   } catch (e) {
-    alert('删除失败：' + e.message);
+    alert('删除失败：'+ e.message);
   }
 }
 
@@ -2963,7 +2997,7 @@ $('#finishBtn').addEventListener('click', async () => {
   if (!state.sessionWords.size) return;
   const btn = $('#finishBtn');
   btn.disabled = true;
-  btn.textContent = '🤖 AI 正在总结助记…';
+  setInkText(btn, '<i class="ink-glyph ink-only ink-robot" aria-hidden="true"></i> AI 正在总结助记…');
   try {
     const r = await api('/api/session/finish', {
       method: 'POST',
@@ -2975,7 +3009,7 @@ $('#finishBtn').addEventListener('click', async () => {
         messages: state.chatHistory,
       },
     });
-    addMsg('ai', `🎉 本次学习结束！已为你生成 **${r.saved}** 条个性化助记，可在「助记库」查看并推送到墨墨 App。\n\n` +
+    addMsg('ai', `<i class="ink-glyph ink-only ink-festive" aria-hidden="true"></i> 本次学习结束！已为你生成 **${r.saved}** 条个性化助记，可在「助记库」查看并推送到墨墨 App。\n\n` +
       r.notes.map(n => `**${n.spelling}**（${n.noteType}）：${n.content}`).join('\n\n'));
     // 重置会话
     state.sessionWords.clear();
@@ -2984,10 +3018,10 @@ $('#finishBtn').addEventListener('click', async () => {
     state.chatSessionId = null;   // v1.2.0：重置持久化 id
     state.sessionStartedAt = new Date().toISOString();
     updateSessionInfo();
-    btn.textContent = '✅ 结束本次学习并生成助记';
+    setInkText(btn, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 结束本次学习并生成助记');
   } catch (e) {
-    alert('生成助记失败：' + e.message);
-    btn.textContent = '✅ 结束本次学习并生成助记';
+    alert('生成助记失败：'+ e.message);
+    setInkText(btn, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 结束本次学习并生成助记');
     btn.disabled = state.sessionWords.size === 0;
   }
 });
@@ -3037,7 +3071,7 @@ async function pushNote(id) {
     await api(`/api/notes/${id}/push`, { method: 'POST' });
     loadNotes();
   } catch (e) {
-    alert('推送失败：' + e.message);
+    alert('推送失败：'+ e.message);
     loadNotes();
   }
 }
@@ -3124,11 +3158,11 @@ async function loadConfig() {
         Object.entries(c.searchPresets).map(([k, v]) => `<option value="${esc(v.url)}">${esc(v.label)}</option>`).join('');
     }
     $('#cfgSearchUrl').value = c.webSearch?.url || '';
-    if (c.webSearch?.hasKey) $('#cfgSearchKey').placeholder = '已保存 ✓（留空 = 沿用）';
+ if (c.webSearch?.hasKey) $('#cfgSearchKey').placeholder = '已保存 （留空 = 沿用）';
     /* v1.0.8：韦氏词典 Key 状态提示 */
-    if (c.dict?.hasLearners) $('#cfgDictLearners').placeholder = '已保存 ✓（留空 = 沿用）';
-    if (c.mineru?.hasKey) $('#cfgMineruKey').placeholder = '已保存 ✓（留空 = 沿用）';
-    if (c.dict?.hasCollegiate) $('#cfgDictCollegiate').placeholder = '已保存 ✓（留空 = 沿用）';
+ if (c.dict?.hasLearners) $('#cfgDictLearners').placeholder = '已保存 （留空 = 沿用）';
+ if (c.mineru?.hasKey) $('#cfgMineruKey').placeholder = '已保存 （留空 = 沿用）';
+ if (c.dict?.hasCollegiate) $('#cfgDictCollegiate').placeholder = '已保存 （留空 = 沿用）';
     /* v3.5.0：发音朗读默认口音与服务端语音能力 */
     if (c.tts) {
       ttsServerAccent = c.tts.accent === 'en_GB' ? 'en_GB' : 'en_US';
@@ -3138,7 +3172,7 @@ async function loadConfig() {
     if (c.maimemoNotepadId) {
       const title = c.notepadTitle || '已绑定云词库';
       $('#cfgNotepad').innerHTML = `<option value="${esc(c.maimemoNotepadId)}" selected>${esc(title)}</option>`;
-      $('#notepadResult').textContent = `✅ 当前已稳定绑定：${title}`;
+      setInkText($('#notepadResult'), `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 当前已稳定绑定：${title}`);
       $('#notepadResult').className = 'result ok';
     } else {
       $('#cfgNotepad').innerHTML = '<option value="">— 未绑定 —</option>';
@@ -3183,11 +3217,11 @@ async function loadConfig() {
       const en = $('#cfgAuthEnabled');
       if (en) en.checked = !!c.auth.enabled;
       const tok = $('#cfgAuthToken');
-      if (tok) tok.placeholder = c.auth.hasToken ? '已保存 ✓（留空 = 沿用）' : '尚未设置，请填写 Token 凭证';
+ if (tok) tok.placeholder = c.auth.hasToken ? '已保存 （留空 = 沿用）' : '尚未设置，请填写 Token 凭证';
       const st = $('#authCfgState');
       if (st) st.textContent = c.auth.enabled
-        ? (c.auth.hasToken ? '✅ 已开启（访问需登录）' : '⚠️ 已开启但未设置 Token')
-        : '🔓 未开启（无需登录）';
+        ? (c.auth.hasToken ? '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已开启（访问需登录）' : '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 已开启但未设置 Token')
+        : '<i class="ink-glyph ink-only ink-unlock" aria-hidden="true"></i> 未开启（无需登录）';
     }
     renderProviders();
     refreshVisionUI();   // v2.3.4：默认服务商视觉能力变化后同步图片按钮显隐
@@ -3203,8 +3237,8 @@ function renderProviders() {
   list.innerHTML = state.providers.map(p => `
     <div class="prov-item">
       <div class="prov-info">
-        <div class="prov-name">${esc(p.name)} ${p.id === state.activeProvId ? '<span class="tag active">⭐ 默认</span>' : ''}</div>
-        <div class="prov-meta">${esc(p.baseUrl || '未填 Base URL')} · ${esc(p.model || '未选模型')} · ${p.hasKey ? '🔑 已存 Key' : '⚠️ 无 Key'}${p.vision ? ' · <span class="prov-tag-mini">👁️ 视觉</span>' : ''}${p.thinking && p.thinking !== 'off' ? ` · <span class="prov-tag-mini">🧠 ${esc((THINK_META[p.thinking] || [p.thinking])[0])}</span>` : ''}${p.extraBody ? ' · <span class="prov-tag-mini">🔧 JSON</span>' : ''}</div>
+        <div class="prov-name">${esc(p.name)} ${p.id === state.activeProvId ? '<span class="tag active"><i class="ink-glyph ink-only ink-star" aria-hidden="true"></i> 默认</span>' : ''}</div>
+        <div class="prov-meta">${esc(p.baseUrl || '未填 Base URL')} · ${esc(p.model || '未选模型')} · ${p.hasKey ? '<i class="ink-glyph ink-only ink-key" aria-hidden="true"></i> 已存 Key' : '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 无 Key'}${p.vision ? ' · <span class="prov-tag-mini"><i class="ink-glyph ink-only ink-eye" aria-hidden="true"></i> 视觉</span>' : ''}${p.thinking && p.thinking !== 'off' ? ` · <span class="prov-tag-mini"><i class="ink-glyph ink-only ink-brain" aria-hidden="true"></i> ${esc((THINK_META[p.thinking] || [p.thinking])[0])}</span>` : ''}${p.extraBody ? ' · <span class="prov-tag-mini"><i class="ink-glyph ink-only ink-star" aria-hidden="true"></i> JSON</span>' : ''}</div>
       </div>
       <div class="prov-actions">
         ${p.id === state.activeProvId ? '' : `<button class="btn small" data-prov-active="${p.id}">设为默认</button>`}
@@ -3239,7 +3273,7 @@ function renderPromptRegistry() {
     const isCustom = p.current && p.current !== p.template;
     const history = Array.isArray(p.history) ? p.history : [];
     const historyHtml = history.length
-      ? `<details class="prompt-history"><summary class="prompt-history-title">🕘 最近 ${history.length} 条历史版本</summary>` +
+      ? `<details class="prompt-history"><summary class="prompt-history-title"><i class="ink-glyph ink-only ink-clock" aria-hidden="true"></i> 最近 ${history.length} 条历史版本</summary>` +
         history.map(h => `<div class="prompt-history-entry"><span class="ph-time">${esc(fmtBJ(h.time))}</span>${esc(String(h.text || '').slice(0, 400))}</div>`).join('') +
         '</details>'
       : '';
@@ -3255,9 +3289,9 @@ function renderPromptRegistry() {
         <div class="prompt-item-desc">${esc(p.desc || '')}</div>
         <textarea data-prompt-text="${esc(key)}">${esc(cur)}</textarea>
         <div class="prompt-item-actions">
-          <button class="btn small primary" data-prompt-save="${esc(key)}">💾 保存</button>
-          <button class="btn small" data-prompt-preview="${esc(key)}">👀 预览默认</button>
-          <button class="btn small ghost" data-prompt-reset="${esc(key)}">↺ 恢复默认</button>
+          <button class="btn small primary" data-prompt-save="${esc(key)}"><i class="ink-glyph ink-only ink-save" aria-hidden="true"></i> 保存</button>
+          <button class="btn small" data-prompt-preview="${esc(key)}"><i class="ink-glyph ink-only ink-eye" aria-hidden="true"></i> 预览默认</button>
+          <button class="btn small ghost" data-prompt-reset="${esc(key)}"><i class="ink-glyph ink-only ink-undo" aria-hidden="true"></i>恢复默认</button>
           <span class="result" id="promptResult-${esc(key)}"></span>
         </div>
         ${historyHtml}
@@ -3269,7 +3303,7 @@ function renderPromptRegistry() {
   $$('[data-prompt-preview]').forEach(b => b.addEventListener('click', () => {
     const key = b.dataset.promptPreview;
     const p = state.diyPrompts[key];
-    alert('【默认提示词 · ' + key + '】\n\n' + (p?.template || ''));
+    alert('【默认提示词 · '+ key + '】\n\n'+ (p?.template || ''));
   }));
   const resetAll = $('#promptResetAllBtn');
   if (resetAll) resetAll.onclick = resetAllPrompts;
@@ -3281,11 +3315,11 @@ async function savePrompt(key) {
   if (!ta || !out) return;
   try {
     await api('/api/config', { method: 'POST', body: { diyPrompts: { [key]: ta.value } } });
-    out.textContent = '✅ 已保存';
+    setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已保存');
     out.className = 'result ok';
     await loadConfig();
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 }
@@ -3347,7 +3381,7 @@ function closeProvModal() {
   returnFocus?.focus({ preventScroll: true });
 }
 
-/* v2.4.4：思考强度 7 档滑块——档位字符串 ↔ 刻度互转与徽章渲染（2026-09 官方档案核实档位）
+/* v2.4.4：思考强度 7 档滑块——档位字符串 <i class="ink-glyph ink-only ink-arrows" aria-hidden="true"></i>刻度互转与徽章渲染（2026-09 官方档案核实档位）
    唯一调节入口=设置页滑块；功能板块不注入思考参数（服务端只读档案 thinking 字段） */
 const THINK_LEVELS = ['off', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max'];
 const THINK_META = {
@@ -3385,7 +3419,7 @@ function openProvModal(id) {
   $('#provPreset').value = '';
   $('#provUrl').value = p?.baseUrl || '';
   $('#provKey').value = '';
-  $('#provKey').placeholder = p?.hasKey ? '已保存 Key（留空 = 沿用）' : '粘贴 API Key';
+  $('#provKey').placeholder = p?.hasKey ? '已保存 Key（留空 = 沿用）': '粘贴 API Key';
   $('#provModel').value = p?.model || '';
   $('#provTemp').value = p?.temperature !== undefined ? p.temperature : '';
   $('#provMaxTokens').value = p?.max_tokens !== undefined ? p.max_tokens : '';
@@ -3450,9 +3484,9 @@ $('#provFetchBtn').addEventListener('click', async () => {
       r.models.map(m => `<option value="${esc(m)}">${esc(m)}</option>`).join('');
   } catch (e) {
     sel.style.display = 'none';
-    alert('拉取失败：' + e.message);
+    alert('拉取失败：'+ e.message);
   }
-  btn.textContent = '🔄 拉取'; btn.disabled = false;
+  setInkText(btn, '<i class="ink-glyph ink-only ink-refresh" aria-hidden="true"></i> 拉取'); btn.disabled = false;
 });
 
 $('#provModelSelect').addEventListener('change', () => {
@@ -3472,10 +3506,10 @@ $('#provTestBtn').addEventListener('click', async () => {
         providerId: provEditId || undefined,
       },
     });
-    $('#provTestResult').textContent = '✅ ' + r.msg;
+    setInkText($('#provTestResult'), '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> ' + r.msg);
     $('#provTestResult').className = 'result ok';
   } catch (e) {
-    $('#provTestResult').textContent = '❌ ' + e.message;
+    setInkText($('#provTestResult'), '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     $('#provTestResult').className = 'result err';
   }
 });
@@ -3500,7 +3534,7 @@ $('#provSave').addEventListener('click', async () => {
     try {
       const parsed = JSON.parse(extraRaw);
       if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('必须是 JSON 对象');
-    } catch (e) { return alert('透传 JSON 参数格式错误：' + e.message); }
+    } catch (e) { return alert('透传 JSON 参数格式错误：'+ e.message); }
   }
   item.extraBody = extraRaw;
   if (provEditId) item.id = provEditId;
@@ -3530,13 +3564,13 @@ if ($('#saveAuthCfgBtn')) $('#saveAuthCfgBtn').addEventListener('click', async (
   try {
     btn.disabled = true;
     await api('/api/config', { method: 'POST', body: { auth: body } });
-    if (out) { out.textContent = '✅ 登录配置已保存'; out.className = 'result ok'; }
+    if (out) { setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 登录配置已保存'); out.className = 'result ok'; }
     if (tok) $('#cfgAuthToken').value = '';
-    btn.textContent = '✅ 已保存';
+    setInkText(btn, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已保存');
     loadConfig();
     setTimeout(() => { btn.textContent = prev; }, 2000);
   } catch (e) {
-    if (out) { out.textContent = '❌ ' + e.message; out.className = 'result err'; }
+    if (out) { setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message); out.className = 'result err'; }
   } finally {
     btn.disabled = false;
   }
@@ -3548,10 +3582,10 @@ if ($('#clearAuthTokenBtn')) $('#clearAuthTokenBtn').addEventListener('click', a
   if (!confirm('确定清除已保存的 Token 凭证？清除后需重新设置才能开启登录。')) return;
   try {
     await api('/api/config', { method: 'POST', body: { auth: { enabled: false, clearToken: true } } });
-    if (out) { out.textContent = '🧹 已清除 Token（登录已关闭）'; out.className = 'result ok'; }
+    if (out) { setInkText(out, '<i class="ink-glyph ink-only ink-broom" aria-hidden="true"></i> 已清除 Token（登录已关闭）'); out.className = 'result ok'; }
     loadConfig();
   } catch (e) {
-    if (out) { out.textContent = '❌ ' + e.message; out.className = 'result err'; }
+    if (out) { setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message); out.className = 'result err'; }
   }
 });
 
@@ -3592,7 +3626,7 @@ function renderStoryThemesEditor() {
   }
   list.innerHTML = items.map((t, i) => `
     <span class="story-theme-tag${t === '随缘' ? ' locked' : ''}" data-ti="${i}">${esc(t)}
-      ${t === '随缘' ? '<span class="story-theme-lock" title="默认题材，不可删除">🔒</span>' : `<button class="story-theme-x" data-tx="${i}" title="移除" type="button">✕</button>`}
+      ${t === '随缘' ? '<span class="story-theme-lock" title="默认题材，不可删除"><i class="ink-glyph ink-only ink-lock" aria-hidden="true"></i></span>' : `<button class="story-theme-x" data-tx="${i}" title="移除" type="button"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>`}
     </span>`).join('');
   $$('#storyThemesList [data-tx]').forEach(b => b.addEventListener('click', () => {
     const cur = storyThemesWorking();
@@ -3627,11 +3661,11 @@ $('#storyThemesSaveBtn').addEventListener('click', async () => {
     state.storyThemesEdit = null;
     renderStoryThemesEditor();
     renderStoryThemeRow(state.storyThemes);
-    out.textContent = '✅ 题材已保存，词文成章页已生效';
+    setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 题材已保存，词文成章页已生效');
     out.className = 'result ok';
     setTimeout(() => { out.textContent = ''; }, 2500);
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   } finally {
     btn.disabled = false;
@@ -3646,11 +3680,11 @@ $('#storyThemesResetBtn').addEventListener('click', async () => {
     state.storyThemesEdit = null;
     renderStoryThemesEditor();
     renderStoryThemeRow(null);
-    out.textContent = '↺ 已恢复内置题材';
+    setInkText(out, '<i class="ink-glyph ink-only ink-undo" aria-hidden="true"></i>已恢复内置题材');
     out.className = 'result ok';
     setTimeout(() => { out.textContent = ''; }, 2500);
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -3680,7 +3714,7 @@ $('#loadNotepadsBtn').addEventListener('click', async () => {
     const r = await api('/api/notepads');
     if (!r.notepads.length) {
       sel.innerHTML = '<option value="">— 账号下没有云词库 —</option>';
-      out.textContent = '⚠️ 账号下没有云词库/收藏本，请先在墨墨 App 里创建一个，再回来绑定';
+      setInkText(out, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 账号下没有云词库/收藏本，请先在墨墨 App 里创建一个，再回来绑定');
       out.className = 'result err';
       return;
     }
@@ -3688,10 +3722,10 @@ $('#loadNotepadsBtn').addEventListener('click', async () => {
     sel.innerHTML = '<option value="">— 未绑定 —</option>' + r.notepads.map(np =>
       `<option value="${esc(np.id)}" ${np.id === r.boundId ? 'selected' : ''}>${esc(np.title)}（${typeLabel(np.type)}）</option>`
     ).join('');
-    out.textContent = `✅ 共 ${r.notepads.length} 个，选择后自动保存绑定`;
+    setInkText(out, `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 共 ${r.notepads.length} 个，选择后自动保存绑定`);
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   } finally {
     btn.textContent = '拉取云词库列表'; btn.disabled = false;
@@ -3704,10 +3738,10 @@ $('#cfgNotepad').addEventListener('change', async () => {
   const title = id ? (sel.options[sel.selectedIndex]?.textContent || '').trim() : '';
   try {
     await api('/api/config', { method: 'POST', body: { maimemoNotepadId: id, notepadTitle: title } });
-    out.textContent = id ? `✅ 已永久绑定云词库「${title}」，之后推送助记会自动将单词入库` : '已解绑';
+    setInkText(out, id ? `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已永久绑定云词库「${title}」，之后推送助记会自动将单词入库` : '已解绑');
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -3727,10 +3761,10 @@ $('#saveImageBtn').addEventListener('click', async () => {
       },
     });
     $('#cfgImgKey').value = '';
-    out.textContent = '✅ 已保存';
+    setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已保存');
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -3751,14 +3785,14 @@ $('#testImageBtn').addEventListener('click', async () => {
     });
     $('#cfgImgKey').value = '';
   } catch { /* 测试时如实暴露错误 */ }
-  out.textContent = '🎨 生成测试图中…（约 10-30 秒）';
+  setInkText(out, '<i class="ink-glyph ink-only ink-palette" aria-hidden="true"></i> 生成测试图中…（约 10-30 秒）');
   out.className = 'result';
   try {
     const r = await api('/api/test/image', { method: 'POST' });
-    out.innerHTML = `✅ 生图成功！<img class="test-img" src="${esc(r.url)}" alt="测试图">`;
+    out.innerHTML = `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 生图成功！<img class="test-img" src="${esc(r.url)}" alt="测试图">`;
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -3783,10 +3817,10 @@ $('#saveSearchBtn').addEventListener('click', async () => {
   try {
     await api('/api/config', { method: 'POST', body: buildSearchBody() });
     $('#cfgSearchKey').value = '';
-    out.textContent = '✅ 已保存';
+    setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已保存');
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -3796,14 +3830,14 @@ $('#testSearchBtn').addEventListener('click', async () => {
   // 先保存表单里的值再测（允许不先保存直接测）
   try { await api('/api/config', { method: 'POST', body: buildSearchBody() }); $('#cfgSearchKey').value = ''; }
   catch { /* 测试时如实暴露错误 */ }
-  out.textContent = '🔍 搜索测试中…';
+  setInkText(out, '<i class="ink-glyph ink-only ink-search" aria-hidden="true"></i> 搜索测试中…');
   out.className = 'result';
   try {
     const r = await api('/api/test/search', { method: 'POST' });
-    out.textContent = `✅ ${r.msg} · 首条：${r.sample}`;
+    setInkText(out, `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> ${r.msg} · 首条：${r.sample}`);
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -3821,7 +3855,7 @@ function renderTtsSettings(tts) {
   const engine = st.piper?.installed
     ? `句子神经语音 ${st.piper.running ? '已就绪' : '待启用'}${roles.length ? `（${roles.join(' / ')}）` : '（模型未就绪）'}`
     : '未部署服务端神经语音（句子将回退浏览器朗读）';
-  out.textContent = `✅ 单词：真人发音 · ${engine}`;
+  setInkText(out, `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 单词：真人发音 · ${engine}`);
   out.className = 'result ok';
 }
 async function refreshTtsStatus() {
@@ -3842,7 +3876,7 @@ if ($('#testTtsBtn')) {
   $('#testTtsBtn').addEventListener('click', async () => {
     unlockTtsAudio();
     const out = $('#ttsStatus');
-    if (out) { out.textContent = '🔊 播放示例：「resilient / Learning English opens the door.」'; out.className = 'result'; }
+    if (out) { setInkText(out, '<i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i> 播放示例：「resilient / Learning English opens the door.」'); out.className = 'result'; }
     await speak('resilient');
     setTimeout(() => speak('Learning English opens the door to a wider world.'), 900);
     setTimeout(refreshTtsStatus, 1800);
@@ -3865,10 +3899,10 @@ $('#saveDictBtn').addEventListener('click', async () => {
     await api('/api/config', { method: 'POST', body: buildDictBody() });
     $('#cfgDictLearners').value = '';
     $('#cfgDictCollegiate').value = '';
-    out.textContent = '✅ 已保存';
+    setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已保存');
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -3878,14 +3912,14 @@ $('#testDictBtn').addEventListener('click', async () => {
   // 先保存表单里的值再测（允许不先保存直接测）
   try { await api('/api/config', { method: 'POST', body: buildDictBody() }); $('#cfgDictLearners').value = ''; $('#cfgDictCollegiate').value = ''; }
   catch { /* 测试时如实暴露错误 */ }
-  out.textContent = '📖 查询「resilient」测试中…';
+  setInkText(out, '<i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 查询「resilient」测试中…');
   out.className = 'result';
   try {
     const r = await api('/api/test/dict', { method: 'POST' });
-    out.textContent = '✅ ' + r.msg;
+    setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> ' + r.msg);
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -3898,10 +3932,10 @@ async function saveMaimemoTokenSilent() {
   try {
     await api('/api/config', { method: 'POST', body: { maimemoToken: val } });
     $('#cfgToken').value = '';
-    $('#cfgToken').placeholder = '已保存 ✓（留空 = 沿用）';
-    if (out) { out.textContent = '✅ Token 已自动保存'; out.className = 'result ok'; }
+ $('#cfgToken').placeholder = '已保存 （留空 = 沿用）';
+    if (out) { setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> Token 已自动保存'); out.className = 'result ok'; }
   } catch (e) {
-    if (out) { out.textContent = '❌ ' + e.message; out.className = 'result err'; }
+    if (out) { setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message); out.className = 'result err'; }
   }
 }
 if ($('#cfgToken')) {
@@ -3928,10 +3962,10 @@ $('#testMaimemoBtn').addEventListener('click', async () => {
   $('#maimemoTestResult').className = 'result';
   try {
     const r = await api('/api/test/maimemo', { method: 'POST' });
-    $('#maimemoTestResult').textContent = '✅ ' + r.msg;
+    setInkText($('#maimemoTestResult'), '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> ' + r.msg);
     $('#maimemoTestResult').className = 'result ok';
   } catch (e) {
-    $('#maimemoTestResult').textContent = '❌ ' + e.message;
+    setInkText($('#maimemoTestResult'), '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     $('#maimemoTestResult').className = 'result err';
   }
 });
@@ -4015,7 +4049,7 @@ async function loadKb() {
       $('#kbListResult').className = 'result';
     }
     if (!r.exists) {
-      $('#kbListResult').textContent = '⚠️ 未找到语料库文件：' + r.file + '（把导入工程的 records.jsonl 同步到 corpus/ 即可）';
+      setInkText($('#kbListResult'), '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 未找到语料库文件：' + r.file + '（把导入工程的 records.jsonl 同步到 corpus/ 即可）');
       $('#kbListResult').className = 'result err';
     }
     renderKbTrackFilters();
@@ -4061,7 +4095,7 @@ function renderKbList() {
   if (bandCount) bandCount.textContent = totalCount ? totalCount.toLocaleString('zh-CN') : '0';
 
   if (!list.length) {
-    box.innerHTML = '<div class="empty-prov">该类型下暂无记录。可用下方「📥 导入语料」直接导入文件或粘贴文本。</div>';
+    box.innerHTML = '<div class="empty-prov">该类型下暂无记录。可用下方「<i class="ink-glyph ink-only ink-download" aria-hidden="true"></i> 导入语料」直接导入文件或粘贴文本。</div>';
     renderPaginationBar('#kbPagination', 1, 0, 0, () => {});
     return;
   }
@@ -4134,12 +4168,12 @@ async function kbAppendExamReading(rid) {
         parts.push(`<div class="kb-an-block"><b>采分点</b><div>${an.points.map(p => esc(typeof p === 'string' ? p : txt(p.text || p.point))).join('；')}</div></div>`);
       }
       if (!parts.length) return '';
-      return `<details class="hint-fold kb-an-fold"><summary>📖 ${esc(u.sectionLabel || u.section || '板块')} · 精读</summary><div>${parts.join('')}</div></details>`;
+      return `<details class="hint-fold kb-an-fold"><summary><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> ${esc(u.sectionLabel || u.section || '板块')} · 精读</summary><div>${parts.join('')}</div></details>`;
     }).filter(Boolean);
     if (!blocks.length) return;
     const el = document.createElement('div');
     el.className = 'card kb-an-card';
-    el.innerHTML = `<div class="card-title">📖 参考解析（精读）</div><div class="hint" style="margin-bottom:8px">逐题解析已随做题面下线，此处只保留板块级精读：译文 / 重点词汇 / 长难句 / 范文 / 采分点。</div>${blocks.join('')}`;
+    el.innerHTML = `<div class="card-title"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 参考解析（精读）</div><div class="hint" style="margin-bottom:8px">逐题解析已随做题面下线，此处只保留板块级精读：译文 / 重点词汇 / 长难句 / 范文 / 采分点。</div>${blocks.join('')}`;
     $('#kbDetail').appendChild(el);
   } catch { /* 解析缺失或接口失败时静默降级 */ }
 }
@@ -4187,7 +4221,7 @@ async function openKbRecord(rid, sourceKind) {
         if (it.type === 'passage') {
           html += `<div class="kb-passage" data-itemidx="${ix}">${kbText(it.text)}</div>`;
         } else if (it.type === 'writing') {
-          html += `<div class="kb-question" data-itemidx="${ix}"><div class="kb-q-head">✍️ 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
+          html += `<div class="kb-question" data-itemidx="${ix}"><div class="kb-q-head"><i class="ink-glyph ink-only ink-star" aria-hidden="true"></i> 作文题${it.part ? ' · Part ' + esc(it.part) : ''}${it.score ? ' · ' + esc(String(it.score)) + ' 分' : ''}</div><div class="kb-q-text">${kbText(it.text)}</div></div>`;
         } else {
           const opts = it.options
             ? Object.entries(it.options).map(([k, v]) => `<span class="kb-opt"><b>${esc(k)}.</b> ${esc(v)}</span>`).join('')
@@ -4200,7 +4234,7 @@ async function openKbRecord(rid, sourceKind) {
     if (isExamRec) kbAppendExamReading(rid);
     card.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } catch (e) {
-    $('#kbDetail').innerHTML = '❌ ' + esc(e.message);
+    $('#kbDetail').innerHTML = '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + esc(e.message);
   }
 }
 
@@ -4217,7 +4251,7 @@ async function kbDoSearch() {
       out.className = 'result';
       return;
     }
-    out.textContent = `✅ 命中 ${r.count} 条语料（点击可跳原文）`;
+    setInkText(out, `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 命中 ${r.count} 条语料（点击可跳原文）`);
     out.className = 'result ok';
     $('#kbList').innerHTML = r.results.map(h => `
       <div class="kb-item" data-rid="${esc(h.rid)}">
@@ -4226,7 +4260,7 @@ async function kbDoSearch() {
       </div>`).join('');
     renderPaginationBar('#kbPagination', 1, 0, 0, () => {});
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 }
@@ -4266,21 +4300,21 @@ async function kbDoImport(kind) {
   if (kind === 'files') {
     for (const f of $('#kbImportFile').files) {
       if (f.size > 30 * 1024 * 1024) {
-        out.textContent = `❌ ${f.name} 超过 30MB 上限`;
+        setInkText(out, `<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ${f.name} 超过 30MB 上限`);
         out.className = 'result err';
         return;
       }
       items.push({ name: f.name, data64: await kbFileToB64(f) });
     }
     if (!items.length) {
-      out.textContent = '⚠️ 请先选择文件';
+      setInkText(out, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 请先选择文件');
       out.className = 'result err';
       return;
     }
   } else {
     paste = { title: $('#kbPasteTitle').value, text: $('#kbPasteText').value };
     if (!paste.text.trim()) {
-      out.textContent = '⚠️ 请先粘贴文本内容';
+      setInkText(out, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 请先粘贴文本内容');
       out.className = 'result err';
       return;
     }
@@ -4290,8 +4324,8 @@ async function kbDoImport(kind) {
   try {
     const r = await api('/api/kb/import', { method: 'POST', body: { category, items, paste } });
     const lines = r.results.map(x => x.ok
-      ? `✅ ${esc(x.file)} → ${x.records} 条记录（${esc((x.rtypes || []).join('/'))} · 解析器 ${esc(x.parser || '')}）`
-      : `⛔ ${esc(x.file)} 已隔离：${esc(x.reason || '')}${x.hint ? '（' + esc(x.hint) + '）' : ''}`);
+      ? `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> ${esc(x.file)} → ${x.records} 条记录（${esc((x.rtypes || []).join('/'))} · 解析器 ${esc(x.parser || '')}）`
+      : `<i class="ink-glyph ink-only ink-ban" aria-hidden="true"></i> ${esc(x.file)} 已隔离：${esc(x.reason || '')}${x.hint ? '（' + esc(x.hint) + '）' : ''}`);
     out.innerHTML = lines.join('<br>') + `<br>合计：成功 ${r.imported} · 隔离 ${r.quarantined}`;
     out.className = r.quarantined ? 'result err' : 'result ok';
     if (kind === 'files') $('#kbImportFile').value = '';
@@ -4299,7 +4333,7 @@ async function kbDoImport(kind) {
     kbState.loaded = false;   // 重新拉取列表（含新记录）
     loadKb();
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 }
@@ -4313,13 +4347,13 @@ async function kbShowLog(targetId = '#kbImportResult') {
     out.innerHTML = r.log.length
       ? r.log.map(e => {
           const ok = e.status === 'imported';
-          const store = e.store ? ` · ${e.store.includes('exam') ? '🗂真题库' : ''}${e.store.includes('corpus') ? '📚语料库' : ''}` : '';
-          return `<div>${ok ? '✅' : '⛔'} ${esc(String(e.time || '').slice(0, 19))} · ${esc(e.file || '')} · ${esc(e.category || '')}${esc(store)} · ${ok ? esc(e.parser || '') + ' · ' + e.records + ' 条' : '隔离：' + esc(e.reason || '')}</div>`;
+          const store = e.store ? ` · ${e.store.includes('exam') ? '<i class="ink-glyph ink-only ink-frame" aria-hidden="true"></i>真题库' : ''}${e.store.includes('corpus') ? '<i class="ink-glyph ink-only ink-book" aria-hidden="true"></i>语料库' : ''}` : '';
+          return `<div>${ok ? '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i>' : '<i class="ink-glyph ink-only ink-ban" aria-hidden="true"></i>'} ${esc(String(e.time || '').slice(0, 19))} · ${esc(e.file || '')} · ${esc(e.category || '')}${esc(store)} · ${ok ? esc(e.parser || '') + ' · ' + e.records + ' 条' : '隔离：' + esc(e.reason || '')}</div>`;
         }).join('')
       : '暂无导入日志（records.jsonl 所在目录下的 import_log.jsonl）';
     out.className = 'result';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 }
@@ -4350,10 +4384,10 @@ $('#saveMineruBtn').addEventListener('click', async () => {
   try {
     await api('/api/config', { method: 'POST', body: buildMineruBody() });
     $('#cfgMineruKey').value = '';
-    out.textContent = '✅ 已保存';
+    setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已保存');
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -4362,14 +4396,14 @@ $('#testMineruBtn').addEventListener('click', async () => {
   const out = $('#mineruTestResult');
   try { await api('/api/config', { method: 'POST', body: buildMineruBody() }); $('#cfgMineruKey').value = ''; }
   catch { /* 测试时如实暴露错误 */ }
-  out.textContent = '🛰 MinerU 连接测试中…';
+  setInkText(out, '<i class="ink-glyph ink-only ink-satellite" aria-hidden="true"></i> MinerU 连接测试中…');
   out.className = 'result';
   try {
     const r = await api('/api/test/mineru', { method: 'POST' });
-    out.textContent = '✅ ' + r.msg;
+    setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> ' + r.msg);
     out.className = 'result ok';
   } catch (e) {
-    out.textContent = '❌ ' + e.message;
+    setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     out.className = 'result err';
   }
 });
@@ -4382,13 +4416,13 @@ async function mineruDoImport(store) {
   const category = $('#kbImportCategory').value;
   const files = [...fileInput.files];
   if (!files.length) {
-    out.textContent = '⚠️ 请先选择 PDF 文件';
+    setInkText(out, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 请先选择 PDF 文件');
     out.className = 'result err';
     return;
   }
   for (const f of files) {
     if (f.size > 30 * 1024 * 1024) {
-      out.textContent = `❌ ${esc(f.name)} 超过 30MB 上限`;
+      setInkText(out, `<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ${esc(f.name)} 超过 30MB 上限`);
       out.className = 'result err';
       return;
     }
@@ -4396,14 +4430,14 @@ async function mineruDoImport(store) {
   const lines = [];
   out.className = 'result';
   for (const f of files) {
-    out.textContent = `🛰 ${f.name} 已提交 MinerU 云端解析…（约 1-2 分钟/文件，请勿关闭页面）`;
+    setInkText(out, `<i class="ink-glyph ink-only ink-satellite" aria-hidden="true"></i> ${f.name} 已提交 MinerU 云端解析…（约 1-2 分钟/文件，请勿关闭页面）`);
     try {
       const r = await api('/api/mineru/parse', { method: 'POST', body: { items: [{ name: f.name, data64: await kbFileToB64(f) }], ocr, category, store: 'corpus' } });
       lines.push(r.ok
-        ? `✅ ${esc(f.name)} → ${r.records} 条记录（${esc((r.rtypes || []).join('/'))} · MinerU 云端解析）`
-        : `⛔ ${esc(f.name)}：${esc(r.reason || '解析失败')}`);
+        ? `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> ${esc(f.name)} → ${r.records} 条记录（${esc((r.rtypes || []).join('/'))} · MinerU 云端解析）`
+        : `<i class="ink-glyph ink-only ink-ban" aria-hidden="true"></i> ${esc(f.name)}：${esc(r.reason || '解析失败')}`);
     } catch (e) {
-      lines.push(`⛔ ${esc(f.name)}：${esc(e.message)}`);
+      lines.push(`<i class="ink-glyph ink-only ink-ban" aria-hidden="true"></i> ${esc(f.name)}：${esc(e.message)}`);
     }
   }
   out.innerHTML = lines.join('<br>');
@@ -4428,7 +4462,7 @@ async function kbToggleEditor() {
     kbDetailState.rec = r.record;
     kbRenderEditor(prefix, r.record);
   } catch (e) {
-    panel.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
+    panel.innerHTML = '<div class="result err"><i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + esc(e.message) + '</div>';
   }
 }
 
@@ -4438,7 +4472,7 @@ function kbRenderEditor(prefix, rec) {
   const rows = items.map((it, i) => `
     <div class="kb-edit-item">
       <div class="kb-edit-head"><b>#${i + 1}</b><span>${esc(it.type || '')}${it.section ? ' · ' + esc(KB_SECTION_LABEL[it.section] || it.section) : ''}${it.number != null ? ' · 第 ' + esc(String(it.number)) + ' 题' : ''}</span>
-        <button class="btn ghost" style="padding:2px 10px;font-size:12px" data-del="${i}">✕ 删此条</button></div>
+        <button class="btn ghost" style="padding:2px 10px;font-size:12px" data-del="${i}"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i> 删此条</button></div>
       <textarea class="input kb-item-text" data-i="${i}" rows="${Math.min(10, Math.max(3, Math.ceil(((it.text || '').length) / 90)))}">${esc(it.text || '')}</textarea>
     </div>`).join('');
   panel.innerHTML = `
@@ -4448,7 +4482,7 @@ function kbRenderEditor(prefix, rec) {
       ? `<label class="field-label" style="margin-top:8px">条目（${items.length} 条 · 改文字或删条目，保存后生效）</label><div>${rows}</div>`
       : `<label class="field-label" style="margin-top:8px">正文</label><textarea class="input" id="${prefix}EditText" rows="10">${esc(rec.text || '')}</textarea>`}
     <div class="row-gap" style="margin-top:10px">
-      <button class="btn primary" id="${prefix}EditSave">💾 保存修改</button>
+      <button class="btn primary" id="${prefix}EditSave"><i class="ink-glyph ink-only ink-save" aria-hidden="true"></i> 保存修改</button>
       <button class="btn ghost" id="${prefix}EditCancel">取消编辑</button>
     </div>
     <div class="result" id="${prefix}EditResult"></div>`;
@@ -4457,7 +4491,7 @@ function kbRenderEditor(prefix, rec) {
   $$('#' + prefix + 'EditPanel [data-del]').forEach(b => b.addEventListener('click', () => {
     const i = +b.dataset.del;
     items[i]._del = !items[i]._del;
-    b.textContent = items[i]._del ? '↩ 恢复' : '✕ 删此条';
+    setInkText(b, items[i]._del ? '<i class="ink-glyph ink-only ink-undo" aria-hidden="true"></i>恢复' : '<i class="ink-glyph ink-only ink-close" aria-hidden="true"></i>删此条');
     b.closest('.kb-edit-item').style.opacity = items[i]._del ? '.45' : '';
   }));
   $('#' + prefix + 'EditCancel').addEventListener('click', kbCloseEditor);
@@ -4480,12 +4514,12 @@ function kbRenderEditor(prefix, rec) {
     out.className = 'result';
     try {
       const r = await api('/api/kb/record/update', { method: 'POST', body });
-      out.textContent = '✅ 已保存（' + esc(r.title) + '）';
+      setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已保存（' + esc(r.title) + '）');
       out.className = 'result ok';
       kbCloseEditor();
       kbState.loaded = false; loadKb(); openKbRecord(kbDetailState.id);
     } catch (e) {
-      out.textContent = '❌ ' + e.message;
+      setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
       out.className = 'result err';
     }
   });
@@ -4498,12 +4532,12 @@ async function kbDeleteCurrent() {
   if (!confirm('确定删除这条记录吗？\n（解析原件仍保留在 archive/，可重新导入恢复；删除会写入导入日志）')) return;
   try {
     const r = await api('/api/kb/record/delete', { method: 'POST', body: { id } });
-    alert('已删除：' + r.title);
+    alert('已删除：'+ r.title);
     kbCloseEditor();
     $('#kbDetailCard').style.display = 'none';
     kbState.loaded = false; loadKb();
   } catch (e) {
-    alert('删除失败：' + e.message);
+    alert('删除失败：'+ e.message);
   }
 }
 
@@ -4574,7 +4608,7 @@ function kbUpdateDetailItem(prefix, x, newText) {
 
 /** 保存后右下角 toast（v2.6.2：原「回到 AI 审读」语义改为提示已保存） */
 function kbShowBackToast(prefix, ok, msg) {
-  toast(msg || (ok ? '✅ 已保存' : '⚠️ 已保存'));
+  toast(msg || (ok ? '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已保存' : '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 已保存'));
 }
 
 /* 疑点直编弹窗：textarea 改的即原始 itemText，保存走 /api/kb/record/update（整体 items 替换）*/
@@ -4599,19 +4633,19 @@ async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
   dlg.innerHTML = `
     <div class="kb-fix-dialog">
       <div class="kb-fix-head">
-        <div class="kb-fix-title">📍 疑点直编 · ${esc(x.itemTag || x.loc)} <span class="kb-issue-tag ${sevCls}">${esc(x.severity || 'mid')}</span></div>
-        <button class="kb-fix-close" title="关闭">✕</button>
+        <div class="kb-fix-title"><i class="ink-glyph ink-only ink-pin" aria-hidden="true"></i> 疑点直编 · ${esc(x.itemTag || x.loc)} <span class="kb-issue-tag ${sevCls}">${esc(x.severity || 'mid')}</span></div>
+        <button class="kb-fix-close" title="关闭"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
       </div>
       <div class="kb-fix-issue">${esc(x.desc || '')}${x.quote ? `<div class="kb-issue-quote">“${esc(x.quote)}”</div>` : ''}</div>
-      ${rule ? `<div class="kb-fix-rule">📐 ${esc(rule)}</div>` : ''}
-      <label class="field-label">🔍 疑点定位预览 <span style="font-weight:400">（<mark class="kb-fix-hl">红底纹</mark> = AI 认为有误处，随下方编辑实时更新）</span></label>
+      ${rule ? `<div class="kb-fix-rule"><i class="ink-glyph ink-only ink-ruler" aria-hidden="true"></i> ${esc(rule)}</div>` : ''}
+      <label class="field-label"><i class="ink-glyph ink-only ink-search" aria-hidden="true"></i> 疑点定位预览 <span style="font-weight:400">（<mark class="kb-fix-hl">红底纹</mark> = AI 认为有误处，随下方编辑实时更新）</span></label>
       <div id="kbFixPreview" class="kb-fix-preview"></div>
       <label class="field-label">条目原文（可直接修改，保存后同步题库；改动会写入 edited_at 留痕）</label>
       <textarea id="kbFixText" class="input kb-fix-text" rows="14">${esc(origText)}</textarea>
       <div class="kb-fix-actions">
-        <button class="btn primary" id="kbFixSave">💾 保存到题库</button>
+        <button class="btn primary" id="kbFixSave"><i class="ink-glyph ink-only ink-save" aria-hidden="true"></i> 保存到题库</button>
         <button class="btn ghost" id="kbFixCancel">关闭</button>
-        ${rawIdx < 0 ? '<span class="hint">⚠️ 该疑点未能对齐到原始条目（定位降级），保存将不可用——请用「编辑」全量面板改。</span>' : ''}
+        ${rawIdx < 0 ? '<span class="hint"><i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 该疑点未能对齐到原始条目（定位降级），保存将不可用——请用「编辑」全量面板改。</span>' : ''}
       </div>
       <div class="result" id="kbFixResult"></div>
     </div>`;
@@ -4632,7 +4666,7 @@ async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
   const ta = $('#kbFixText');
   const renderPv = () => {
     const { html, hit } = kbFixHighlight(ta.value, x.quote);
-    pv.innerHTML = (x.quote && hit < 0 ? '<div class="kb-fix-miss">⚠️ AI 摘录未在当前文本命中（可能已被修改或跨段截断）</div>' : '') + html;
+    pv.innerHTML = (x.quote && hit < 0 ? '<div class="kb-fix-miss"><i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> AI 摘录未在当前文本命中（可能已被修改或跨段截断）</div>' : '') + html;
     pv.scrollTop = 0;
   };
   renderPv();
@@ -4670,12 +4704,12 @@ async function kbOpenFixModal(prefix, rid, x, cardIdx = -1) {
       /* v2.6.2：AI 复核通道已废弃——保存后直接标记完成 */
       if (prefix === 'kb') kbState.loaded = false; else examState.loaded = false;
       kbUpdateDetailItem(prefix, x, newText);
-      out.innerHTML = '✅ 已保存';
+      out.innerHTML = '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已保存';
       out.className = 'result ok';
       close();
-      kbShowBackToast(prefix, true, '✅ 修改已保存');
+      kbShowBackToast(prefix, true, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 修改已保存');
     } catch (e) {
-      out.textContent = '❌ ' + esc(e.message);
+      setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + esc(e.message));
       out.className = 'result err';
     }
   });
@@ -4694,8 +4728,8 @@ async function kbOpenHistory() {
   dlg.innerHTML = `
     <div class="kb-fix-dialog kb-history-dialog">
       <div class="kb-fix-head">
-        <div class="kb-fix-title">🕘 历史版本（最近 ${5} 个，改前自动留存）</div>
-        <button class="kb-fix-close" title="关闭">✕</button>
+        <div class="kb-fix-title"><i class="ink-glyph ink-only ink-clock" aria-hidden="true"></i> 历史版本（最近 ${5} 个，改前自动留存）</div>
+        <button class="kb-fix-close" title="关闭"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
       </div>
       <div id="kbHistoryBody" class="kb-history-body"><div class="hint">加载中…</div></div>
     </div>`;
@@ -4727,7 +4761,7 @@ async function kbOpenHistory() {
         </div>
         <div class="hint">${esc(v.note || '')}</div>
         <div class="row-gap" style="margin-top:6px">
-          <button class="btn small" data-restore="${v.index}">↩ 回退到此版本</button>
+          <button class="btn small" data-restore="${v.index}"><i class="ink-glyph ink-only ink-undo" aria-hidden="true"></i>回退到此版本</button>
         </div>
       </div>`).join('');
     $$('#kbHistoryBody [data-restore]').forEach(b => b.addEventListener('click', async () => {
@@ -4738,15 +4772,15 @@ async function kbOpenHistory() {
       try {
         await api('/api/kb/version/restore', { method: 'POST', body: { id, store: 'corpus', versionIndex: vi } });
         close();
-        toast('↩ 已回退到历史版本');
+        toast('<i class="ink-glyph ink-only ink-undo" aria-hidden="true"></i>已回退到历史版本');
         kbState.loaded = false; loadKb(); openKbRecord(id);
       } catch (e) {
-        alert('回退失败：' + e.message);
-        b.disabled = false; b.textContent = '↩ 回退到此版本';
+        alert('回退失败：'+ e.message);
+        b.disabled = false; setInkText(b, '<i class="ink-glyph ink-only ink-undo" aria-hidden="true"></i>回退到此版本');
       }
     }));
   } catch (e) {
-    body.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
+    body.innerHTML = '<div class="result err"><i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + esc(e.message) + '</div>';
   }
 }
 
@@ -4765,10 +4799,10 @@ $('#kbHistoryBtn').addEventListener('click', kbOpenHistory);
 
 const SEL_LEARN_READABLE = null;   // v2.4.1：null = 全站放行（原白名单 ['#kbDetail', '#exDetail', '#unitDetail'] 已弃用）
 const SEL_LEARN_MODES = [
-  { id: 'define', label: '📖 释义' },
-  { id: 'translate', label: '🌐 直译' },
-  { id: 'grammar', label: '🌳 语法' },
-  { id: 'example', label: '💡 例句' },
+  { id: 'define', label: '<i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 释义' },
+  { id: 'translate', label: '<i class="ink-glyph ink-only ink-globe" aria-hidden="true"></i> 直译' },
+  { id: 'grammar', label: '<i class="ink-glyph ink-only ink-tree" aria-hidden="true"></i> 语法' },
+  { id: 'example', label: '<i class="ink-glyph ink-only ink-bulb" aria-hidden="true"></i> 例句' },
 ];
 let selLearnBtn = null;      // 选区旁的「精读」浮动按钮
 let selLearnCard = null;     // 解析结果卡片
@@ -4928,7 +4962,7 @@ async function selDictLookup(text) {
 
 function selDictTagsHtml(entry) {
   const tags = (entry.tags || []).map(t => `<span class="sel-gloss-tag">${esc(t.name)}</span>`).join('');
-  const stars = entry.collins > 0 ? `<span class="sel-gloss-tag star">${'★'.repeat(Math.min(5, entry.collins))}</span>` : '';
+  const stars = entry.collins > 0 ? `<span class="sel-gloss-tag star">${'<i class="ink-glyph ink-only ink-star" aria-hidden="true"></i>'.repeat(Math.min(5, entry.collins))}</span>` : '';
   return tags + stars;
 }
 
@@ -5046,14 +5080,14 @@ async function selDictOpen() {
   if (!data || !data.data) {
     card.innerHTML = `
       <div class="sel-learn-head">
-        <span class="sel-learn-kind">📖 词典</span>
+        <span class="sel-learn-kind"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 词典</span>
         <span class="sel-learn-text">${esc(text)}</span>
-        <button class="sel-learn-x" title="关闭">✕</button>
+        <button class="sel-learn-x" title="关闭"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
       </div>
       <div class="sel-learn-body"><div class="hint">本地词库未收录该词（可能是专有名词、缩写或拼写变形）。</div></div>
       <div class="sel-learn-foot">
-        <button class="btn small" data-sel-learn>🔍 AI 精读</button>
-        <button class="btn small ghost" data-sel-speak>🔊 朗读</button>
+        <button class="btn small" data-sel-learn><i class="ink-glyph ink-only ink-search" aria-hidden="true"></i> AI 精读</button>
+        <button class="btn small ghost" data-sel-speak><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i> 朗读</button>
       </div>`;
   } else {
     const entry = data.data;
@@ -5062,9 +5096,9 @@ async function selDictOpen() {
     const defs = (entry.definition || []).slice(0, 5);
     card.innerHTML = `
       <div class="sel-learn-head">
-        <span class="sel-learn-kind">📖 词典</span>
+        <span class="sel-learn-kind"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 词典</span>
         <span class="sel-learn-text">${esc(entry.word)}${phon ? ' <span class="sel-dict-phon">' + phon + '</span>' : ''}</span>
-        <button class="sel-learn-x" title="关闭">✕</button>
+        <button class="sel-learn-x" title="关闭"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
       </div>
       <div class="sel-learn-body">
         ${selDictTagsHtml(entry) ? `<div class="sel-dict-tags">${selDictTagsHtml(entry)}</div>` : ''}
@@ -5073,9 +5107,9 @@ async function selDictOpen() {
         ${defs.length ? `<details class="sel-dict-en"><summary>英文释义</summary>${defs.map(d => `<div class="sel-dict-def en">${esc(d)}</div>`).join('')}</details>` : ''}
       </div>
       <div class="sel-learn-foot">
-        <button class="btn small" data-sel-speak>🔊 朗读</button>
-        <button class="btn small ghost" data-sel-learn>🔍 AI 精读</button>
-        <button class="btn small" data-sel-collect>➕ 收进墨墨</button>
+        <button class="btn small" data-sel-speak><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i> 朗读</button>
+        <button class="btn small ghost" data-sel-learn><i class="ink-glyph ink-only ink-search" aria-hidden="true"></i> AI 精读</button>
+        <button class="btn small" data-sel-collect><i class="ink-glyph ink-only ink-plus" aria-hidden="true"></i> 收进墨墨</button>
       </div>`;
   }
   document.body.appendChild(card);
@@ -5090,11 +5124,11 @@ async function selDictOpen() {
   if (collectBtn) collectBtn.addEventListener('click', async () => {
     try {
       await api('/api/selection/collect', { method: 'POST', body: { spelling: text } });
-      collectBtn.textContent = '✔ 已收进';
+      setInkText(collectBtn, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已收进');
       collectBtn.disabled = true;
-      toast('✅ 已收进墨墨云词库');
+      toast('<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已收进墨墨云词库');
     } catch (e) {
-      toast('❌ ' + e.message);
+      toast('<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     }
   });
 }
@@ -5117,10 +5151,10 @@ function selLearnShowBtn(rect, rects) {
     bubble.innerHTML = `
       <div class="sel-gloss" data-sel-gloss style="display:none"></div>
       <div class="sel-bubble-actions">
-        <button type="button" class="sel-bubble-btn primary" data-act="learn">🔍 精读</button>
-        <button type="button" class="sel-bubble-btn" data-act="expand" style="display:none">↔️ 整句</button>
+        <button type="button" class="sel-bubble-btn primary" data-act="learn"><i class="ink-glyph ink-only ink-search" aria-hidden="true"></i> 精读</button>
+        <button type="button" class="sel-bubble-btn" data-act="expand" style="display:none"><i class="ink-glyph ink-only ink-arrows" aria-hidden="true"></i>整句</button>
         <span class="sel-bubble-divider"></span>
-        <button type="button" class="sel-bubble-btn" data-act="copy">📋 复制</button>
+        <button type="button" class="sel-bubble-btn" data-act="copy"><i class="ink-glyph ink-only ink-clipboard" aria-hidden="true"></i> 复制</button>
       </div>
     `;
     document.body.appendChild(bubble);
@@ -5165,8 +5199,8 @@ function selLearnShowBtn(rect, rects) {
       const textToCopy = selLearnState?.text || '';
       // v3.8.2：改用统一复制入口（HTTP 下 navigator.clipboard 不存在，必须走 execCommand 兜底）
       const success = await copyText(textToCopy);
-      if (copyBtn) copyBtn.innerHTML = success ? '✓ 已复制' : '✗ 复制失败';
-      toast(success ? '📋 文本已复制到剪贴板' : '❌ 复制失败，请长按选中文本手动复制');
+      if (copyBtn) copyBtn.innerHTML = success ? '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已复制' : '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 复制失败';
+      toast(success ? '<i class="ink-glyph ink-only ink-clipboard" aria-hidden="true"></i> 文本已复制到剪贴板' : '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 复制失败，请长按选中文本手动复制');
       setTimeout(() => {
         selLearnRemoveBtn();
       }, 700);
@@ -5234,7 +5268,7 @@ function selLearnRequest(card, mode, seq) {
     })
     .catch(e => {
       if (seq !== selLearnReqSeq || selLearnCard !== card) return;
-      bodyEl.innerHTML = '<div class="result err">❌ ' + esc(e.message) + '</div>';
+      bodyEl.innerHTML = '<div class="result err"><i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + esc(e.message) + '</div>';
     });
 }
 
@@ -5250,19 +5284,19 @@ function selLearnOpen() {
   card.className = 'sel-learn-card' + (isMobile ? ' mobile' : '');
   card.innerHTML = `
     <div class="sel-learn-head">
-      <span class="sel-learn-kind">${kind === 'word' ? '📖 单词' : kind === 'phrase' ? '🧩 词组' : '📝 句子'}</span>
+      <span class="sel-learn-kind">${kind === 'word' ? '<i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 单词' : kind === 'phrase' ? '<i class="ink-glyph ink-only ink-puzzle" aria-hidden="true"></i> 词组' : '<i class="ink-glyph ink-only ink-quill" aria-hidden="true"></i> 句子'}</span>
       <span class="sel-learn-text">${esc(text.length > 120 ? text.slice(0, 120) + '…' : text)}</span>
-      <button class="sel-learn-x" title="关闭">✕</button>
+      <button class="sel-learn-x" title="关闭"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
     </div>
     <div class="sel-learn-modes">
       ${SEL_LEARN_MODES.map(m => `<button class="sel-mode${m.id === 'define' ? ' active' : ''}" data-mode="${m.id}" type="button">${m.label}</button>`).join('')}
     </div>
     <div class="sel-learn-body"><div class="hint">AI 精读解析中…</div></div>
     <div class="sel-learn-foot">
-      <button class="btn small" data-sel-speak>🔊 朗读</button>
-      <button class="btn small ghost" data-sel-copy>📋 复制解析</button>
-      <button class="btn small" data-sel-sentence>🧩 加入三遍训练</button>
-      ${kind !== 'sentence' ? '<button class="btn small" data-sel-collect>➕ 收进墨墨</button>' : ''}
+      <button class="btn small" data-sel-speak><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i> 朗读</button>
+      <button class="btn small ghost" data-sel-copy><i class="ink-glyph ink-only ink-clipboard" aria-hidden="true"></i> 复制解析</button>
+      <button class="btn small" data-sel-sentence><i class="ink-glyph ink-only ink-puzzle" aria-hidden="true"></i> 加入三遍训练</button>
+      ${kind !== 'sentence' ? '<button class="btn small" data-sel-collect><i class="ink-glyph ink-only ink-plus" aria-hidden="true"></i> 收进墨墨</button>' : ''}
     </div>`;
   document.body.appendChild(card);
   selLearnCard = card;
@@ -5284,7 +5318,7 @@ function selLearnOpen() {
   card.querySelector('[data-sel-copy]').addEventListener('click', async () => {
     const c = card.querySelector('.sel-learn-body')?.innerText || '';
     const ok = await copyText(c);
-    toast(ok ? '📋 已复制' : '❌ 复制失败，请长按选中内容手动复制');
+    toast(ok ? '<i class="ink-glyph ink-only ink-clipboard" aria-hidden="true"></i> 已复制' : '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 复制失败，请长按选中内容手动复制');
   });
   /* v2.3.3：多模式切换——以新模式重新请求，并发序号保证只显示最后一次结果 */
   card.querySelectorAll('.sel-mode').forEach(btn => {
@@ -5299,11 +5333,11 @@ function selLearnOpen() {
   if (collectBtn) collectBtn.addEventListener('click', async () => {
     try {
       await api('/api/selection/collect', { method: 'POST', body: { spelling: text } });
-      collectBtn.textContent = '✔ 已收进';
+      setInkText(collectBtn, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已收进');
       collectBtn.disabled = true;
-      toast('✅ 已收进墨墨云词库');
+      toast('<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已收进墨墨云词库');
     } catch (e) {
-      toast('❌ ' + e.message);
+      toast('<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     }
   });
   selLearnRequest(card, 'define', seq);
@@ -5817,7 +5851,7 @@ async function stSubmit() {
   const translation = stEl('stTranslation').value.trim();
   const msg = stEl('stMsg');
   if (structure.length < 2 || translation.length < 2) {
-    msg.textContent = '⚠️ 结构和自译都要填写后再提交';
+    setInkText(msg, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 结构和自译都要填写后再提交');
     msg.className = 'result err';
     return;
   }
@@ -5829,7 +5863,7 @@ async function stSubmit() {
   try {
     attemptId = await stEnsureAttempt();
   } catch (e) {
-    msg.textContent = '❌ ' + e.message;
+    setInkText(msg, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     msg.className = 'result err';
     btn.disabled = false;
     return;
@@ -5848,12 +5882,12 @@ async function stSubmit() {
     stEl('stInputPane').style.display = 'none';
     stEl('stFeedbackPane').style.display = 'block';
     stEl('stReviewNote').innerHTML = r.isReview
-      ? '<div class="hint">✅ 复测完成，对比结果见「复测对比」小节。</div>'
-      : (r.dueAt ? `<div class="hint">📅 已安排 3 天后复测（${fmtBJ(r.dueAt)} 到期），届时可从仪表盘「待复测」进入。</div>` : '');
+      ? '<div class="hint"><i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 复测完成，对比结果见「复测对比」小节。</div>'
+      : (r.dueAt ? `<div class="hint"><i class="ink-glyph ink-only ink-calendar" aria-hidden="true"></i> 已安排 3 天后复测（${fmtBJ(r.dueAt)} 到期），届时可从仪表盘「待复测」进入。</div>` : '');
     // 反馈后不提供修改，防止刷分
     stState.attemptId = attemptId;
   } catch (e) {
-    msg.textContent = '❌ ' + e.message + (e.message.includes('已保存') ? '（可再次点击提交重试）' : '');
+    setInkText(msg, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message + (e.message.includes('已保存') ? '（可再次点击提交重试）' : ''));
     msg.className = 'result err';
     btn.disabled = false;
   }
@@ -5916,10 +5950,10 @@ const srs = {
 
 /** 4 档评分定义（Anki 式） */
 const QUIZ_GRADES = [
-  { key: 'again', label: '😵 忘记', cls: 'g-again', hint: '完全想不起，再来' },
-  { key: 'hard', label: '😕 吃力', cls: 'g-hard', hint: '想起来了但很费劲' },
-  { key: 'good', label: '😊 掌握', cls: 'g-good', hint: '顺利想起' },
-  { key: 'easy', label: '😎 轻松', cls: 'g-easy', hint: '脱口而出，太简单' },
+  { key: 'again', label: '<i class="ink-glyph ink-only ink-face-dazed" aria-hidden="true"></i> 忘记', cls: 'g-again', hint: '完全想不起，再来' },
+  { key: 'hard', label: '<i class="ink-glyph ink-only ink-face-uneasy" aria-hidden="true"></i> 吃力', cls: 'g-hard', hint: '想起来了但很费劲' },
+  { key: 'good', label: '<i class="ink-glyph ink-only ink-face-calm" aria-hidden="true"></i> 掌握', cls: 'g-good', hint: '顺利想起' },
+  { key: 'easy', label: '<i class="ink-glyph ink-only ink-face-cool" aria-hidden="true"></i> 轻松', cls: 'g-easy', hint: '脱口而出，太简单' },
 ];
 
 /* v2.2.4：真题迁移训练状态 */
@@ -5992,18 +6026,18 @@ function renderWrongbookList(items) {
   if (!box) return;
   if (!items.length) { box.innerHTML = ''; return; }
   box.innerHTML = `
-    <div class="card-title" style="margin-top:12px">📕 错题本（${items.length}）</div>
+    <div class="card-title" style="margin-top:12px"><i class="ink-glyph ink-only ink-book-closed" aria-hidden="true"></i> 错题本（${items.length}）</div>
     <div class="wb-list">${items.map(it => `
       <div class="wb-item wb-item-rich" data-word="${esc(it.spelling)}">
         <div class="wb-line">
           <span class="wb-word">${esc(it.spelling)}</span>
           <span class="wb-meta">错 ${it.wrongCount || 0} 次 · 阶段 ${it.stage || 0}/4${it.nextDueAt ? ' · 下次 ' + fmtBJ(it.nextDueAt).slice(5, 16) : ''}</span>
           <span class="wb-actions">
-            <button type="button" class="btn mini ghost wb-explain" data-word="${esc(it.spelling)}">💡 讲解</button>
-            <button type="button" class="btn mini ghost wb-mnemonic" data-word="${esc(it.spelling)}">📝 助记</button>
-            <button type="button" class="btn mini ghost wb-example" data-word="${esc(it.spelling)}">📚 例句</button>
-            <button type="button" class="btn mini ghost wb-resolve" data-word="${esc(it.spelling)}">✓ 已掌握</button>
-            <button type="button" class="btn mini ghost wb-remove" data-word="${esc(it.spelling)}">✕</button>
+            <button type="button" class="btn mini ghost wb-explain" data-word="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-bulb" aria-hidden="true"></i> 讲解</button>
+            <button type="button" class="btn mini ghost wb-mnemonic" data-word="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-quill" aria-hidden="true"></i> 助记</button>
+            <button type="button" class="btn mini ghost wb-example" data-word="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 例句</button>
+            <button type="button" class="btn mini ghost wb-resolve" data-word="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已掌握</button>
+            <button type="button" class="btn mini ghost wb-remove" data-word="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i></button>
           </span>
         </div>
         <div class="ai-explain-box" style="display:none"></div>
@@ -6049,7 +6083,7 @@ async function loadSrsOverview() {
 
 /* ================= v2.12.0：统计看板 + AI 增强 ================= */
 
-const QUIZ_KIND_LABELS = { flash: '🃏 闪卡', choice: '🔤 四选一', spell: '⌨️ 拼写', zh2en: '🀄 看中选英', audio: '🔊 听音辨义', srs: '🔁 复练' };
+const QUIZ_KIND_LABELS = { flash: '<i class="ink-glyph ink-only ink-card" aria-hidden="true"></i>闪卡', choice: '<i class="ink-glyph ink-only ink-letter-a" aria-hidden="true"></i>四选一', spell: '<i class="ink-glyph ink-only ink-keyboard" aria-hidden="true"></i>拼写', zh2en: '<i class="ink-glyph ink-only ink-tile" aria-hidden="true"></i>看中选英', audio: '<i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i>听音辨义', srs: '<i class="ink-glyph ink-only ink-cycle" aria-hidden="true"></i>复练' };
 
 $$('#quizStatsPane [data-statsdays]').forEach(c => c.addEventListener('click', () => {
   $$('#quizStatsPane [data-statsdays]').forEach(x => x.classList.remove('active'));
@@ -6111,7 +6145,7 @@ function renderQuizStats(d) {
   box.innerHTML = `
     <div class="stats-grid">
       <div class="stats-card">
-        <div class="stats-card-title">🧠 掌握度分布</div>
+        <div class="stats-card-title"><i class="ink-glyph ink-only ink-brain" aria-hidden="true"></i> 掌握度分布</div>
         <div class="srs-dist-bar">${total > 0 ? distBar : '<div class="hint">尚无记忆数据</div>'}</div>
         <div class="srs-dist-legend">
           <span class="lv-0">错题 ${dist['0'] || 0}</span><span class="lv-1">1级 ${dist['1'] || 0}</span>
@@ -6121,7 +6155,7 @@ function renderQuizStats(d) {
         <div class="stats-sub">追踪 ${total} 词 · <b class="${d.dueCount ? 'warn' : ''}">${d.dueCount || 0}</b> 记忆到期</div>
       </div>
       <div class="stats-card">
-        <div class="stats-card-title">🔥 连续学习 <b>${d.streakDays || 0}</b> 天</div>
+        <div class="stats-card-title"><i class="ink-glyph ink-only ink-star" aria-hidden="true"></i> 连续学习 <b>${d.streakDays || 0}</b> 天</div>
         <div class="stats-sub">错题本在册 <b>${wb.active || 0}</b> · 已掌握 <b>${wb.resolved || 0}</b></div>
         <div class="wb-count-row">
           <span class="wb-count-item">错 1 次 <b>${wc['1'] || 0}</b></span>
@@ -6133,12 +6167,12 @@ function renderQuizStats(d) {
       </div>
     </div>
     <div class="stats-card">
-      <div class="stats-card-title">📈 近 ${d.windowDays} 天正确率趋势</div>
+      <div class="stats-card-title"><i class="ink-glyph ink-only ink-trend" aria-hidden="true"></i> 近 ${d.windowDays} 天正确率趋势</div>
       <div class="acc-chart">${bars || '<div class="hint">无数据</div>'}</div>
       <div class="acc-legend"><span class="lg good"></span>≥80% <span class="lg mid"></span>60–79% <span class="lg low"></span>&lt;60%</div>
     </div>
     <div class="stats-card">
-      <div class="stats-card-title">🎯 分题型正确率</div>
+      <div class="stats-card-title"><i class="ink-glyph ink-only ink-target" aria-hidden="true"></i> 分题型正确率</div>
       <div class="kind-rate-list">${kindRows}</div>
     </div>`;
 }
@@ -6160,7 +6194,7 @@ async function loadQuizExamples(spelling, container) {
 /** ② 错题讲解（结果页/错题本内联展开） */
 async function aiExplainInto(spelling, container, opts = {}) {
   container.style.display = '';
-  container.innerHTML = '<div class="hint">🧠 AI 讲解生成中…</div>';
+  container.innerHTML = '<div class="hint"><i class="ink-glyph ink-only ink-brain" aria-hidden="true"></i> AI 讲解生成中…</div>';
   try {
     const d = await api('/api/quiz/ai/explain', { method: 'POST', body: { spelling, gloss: opts.gloss, userAnswer: opts.userAnswer, correct: opts.correct } });
     if (!d.ok || !d.explain) {
@@ -6220,7 +6254,7 @@ $$('#transferKinds .chip').forEach(c => c.addEventListener('click', () => {
 
 /* v3.2.1：作答信心由用户手选改为「根据行为智能判断」（耗时 + 正误）。
    真题迁移仍保留手动信心组，不受本改动影响。 */
-const CONFIDENCE_LABELS = { sure: '🎯 确定', unsure: '🤔 犹豫', guess: '🎲 猜测' };
+const CONFIDENCE_LABELS = { sure: '<i class="ink-glyph ink-only ink-target" aria-hidden="true"></i> 确定', unsure: '<i class="ink-glyph ink-only ink-face-think" aria-hidden="true"></i> 犹豫', guess: '<i class="ink-glyph ink-only ink-dice" aria-hidden="true"></i> 猜测' };
 
 function confidenceLabel(conf) { return CONFIDENCE_LABELS[conf] || CONFIDENCE_LABELS.unsure; }
 
@@ -6263,7 +6297,7 @@ function autoSpeakQuizWord(kind, spelling) {
   speak(spelling);
 }
 
-/* v3.2.1：词源/复练范围 chip 显示具体数目（v4.6.0：只改文字节点，保留水墨图标） */
+/* v3.2.1：词源/复练范围 chip 显示具体数目（v4.6.0 起只改文字节点，保留水墨图标） */
 function setChipCount(chip, n) {
   if (!chip) return;
   let label = chip.querySelector('.chip-label');
@@ -6378,10 +6412,10 @@ async function checkQuizResume() {
     const r = d.resume;
     box.style.display = '';
     box.innerHTML = `
-      <span class="qr-text">📌 上次自适应组卷未完成（${r.idx}/${r.total} 题${r.answered ? ` · 已答 ${r.answered}` : ''}）</span>
+      <span class="qr-text"><i class="ink-glyph ink-only ink-pin" aria-hidden="true"></i> 上次自适应组卷未完成（${r.idx}/${r.total} 题${r.answered ? ` · 已答 ${r.answered}` : ''}）</span>
       <span class="qr-actions">
-        <button type="button" class="btn small primary" id="quizResumeBtn">▶ 继续上次</button>
-        <button type="button" class="btn small ghost" id="quizResumeDrop">✕ 放弃</button>
+        <button type="button" class="btn small primary" id="quizResumeBtn"><i class="ink-glyph ink-only ink-play" aria-hidden="true"></i>继续上次</button>
+        <button type="button" class="btn small ghost" id="quizResumeDrop"><i class="ink-glyph ink-only ink-close" aria-hidden="true"></i> 放弃</button>
       </span>`;
     $('#quizResumeBtn').addEventListener('click', () => resumeAdaptive());
     $('#quizResumeDrop').addEventListener('click', async () => {
@@ -6398,7 +6432,7 @@ async function resumeAdaptive() {
   try {
     const d = await api('/api/quiz/session');
     if (!d.session || !d.session.items?.length) {
-      msg.textContent = '⚠️ 上次会话已失效，请重新组卷';
+      setInkText(msg, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 上次会话已失效，请重新组卷');
       msg.className = 'result err';
       checkQuizResume();
       return;
@@ -6425,7 +6459,7 @@ async function resumeAdaptive() {
     startQuizTimer();
     if (quiz.idx >= quiz.items.length) finishQuiz(); else renderQuizItem();
   } catch (e) {
-    msg.textContent = '❌ ' + e.message;
+    setInkText(msg, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     msg.className = 'result err';
   }
 }
@@ -6443,8 +6477,8 @@ async function startAdaptive() {
     });
     if (!d.ok) {
       msg.textContent = d.reason === 'too_few_words'
-        ? '⚠️ 该词源下单词太少，换个词源或先去学习/同步'
-        : '⚠️ 可用释义不足（请检查设置页的 AI 服务商），暂时出不了题';
+        ? '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 该词源下单词太少，换个词源或先去学习/同步'
+        : '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 可用释义不足（请检查设置页的 AI 服务商），暂时出不了题';
       msg.className = 'result err';
       return;
     }
@@ -6467,7 +6501,7 @@ async function startAdaptive() {
     startQuizTimer();
     renderQuizItem();
   } catch (e) {
-    msg.textContent = '❌ ' + e.message;
+    setInkText(msg, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     msg.className = 'result err';
   }
 }
@@ -6521,7 +6555,7 @@ async function startQuiz() {
     const d = await api(`/api/words?filter=${quiz.src}`);
     let pool = d.words || [];
     if (pool.length < 3) {
-      msg.textContent = '⚠️ 该词源下单词太少（不足 3 个），换个词源或先去学习/同步';
+      setInkText(msg, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 该词源下单词太少（不足 3 个），换个词源或先去学习/同步');
       msg.className = 'result err';
       return;
     }
@@ -6535,7 +6569,7 @@ async function startQuiz() {
     }
     const withGloss = pool.filter(w => w.gloss?.gloss);
     if (withGloss.length < 3) {
-      msg.textContent = '⚠️ 释义获取失败（请检查设置页的 AI 服务商），暂时出不了题';
+      setInkText(msg, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 释义获取失败（请检查设置页的 AI 服务商），暂时出不了题');
       msg.className = 'result err';
       return;
     }
@@ -6562,7 +6596,7 @@ async function startQuiz() {
     startQuizTimer();
     renderQuizItem();
   } catch (e) {
-    msg.textContent = '❌ ' + e.message;
+    setInkText(msg, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     msg.className = 'result err';
   }
 }
@@ -6626,10 +6660,10 @@ if ($('#quizPauseBtn')) $('#quizPauseBtn').addEventListener('click', () => {
   if (session.pauseStartedAt) {
     session.pausedMs = (session.pausedMs || 0) + (Date.now() - new Date(session.pauseStartedAt).getTime());
     session.pauseStartedAt = null;
-    btn.textContent = '⏸ 暂停';
+    setInkText(btn, '<i class="ink-glyph ink-only ink-pause" aria-hidden="true"></i>暂停');
   } else {
     session.pauseStartedAt = new Date().toISOString();
-    btn.textContent = '▶ 继续';
+    setInkText(btn, '<i class="ink-glyph ink-only ink-play" aria-hidden="true"></i>继续');
   }
 });
 
@@ -6693,7 +6727,7 @@ function renderQuizItem() {
   quiz.itemStartedAt = new Date().toISOString();
   renderMasteryBar(it.spelling, quiz.srsMeta[it.spelling]);
   const kind = it.kind || quiz.mode;
-  const kindLabel = { flash: '🃏 闪卡', choice: '🔤 四选一', spell: '⌨️ 拼写', zh2en: '🀄 看中选英', audio: '🔊 听音辨义' }[kind] || '';
+  const kindLabel = { flash: '<i class="ink-glyph ink-only ink-card" aria-hidden="true"></i>闪卡', choice: '<i class="ink-glyph ink-only ink-letter-a" aria-hidden="true"></i>四选一', spell: '<i class="ink-glyph ink-only ink-keyboard" aria-hidden="true"></i>拼写', zh2en: '<i class="ink-glyph ink-only ink-tile" aria-hidden="true"></i>看中选英', audio: '<i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i>听音辨义' }[kind] || '';
   $('#quizProgress').innerHTML = `第 ${quiz.idx + 1} / ${quiz.items.length} 题${quiz.adaptive && kindLabel ? ` <span class="quiz-kind-badge">${kindLabel}</span>` : ''}`;
   $('#quizBar').style.width = (quiz.idx / quiz.items.length * 100) + '%';
   const area = $('#quizArea');
@@ -6701,17 +6735,17 @@ function renderQuizItem() {
 
   if (kind === 'flash') {
     area.innerHTML = `
-      <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button>
+      <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i></button>
         ${it.gloss?.phonetic ? `<div class="phonetic">${esc(it.gloss.phonetic)}</div>` : ''}</div>
       <div class="quiz-hint">想一想它的中文意思，再翻面对答案</div>
       <div class="quiz-flip-zone" id="quizFlipZone">
-        <button class="btn primary" id="quizFlipBtn">🔄 翻面看答案</button>
+        <button class="btn primary" id="quizFlipBtn"><i class="ink-glyph ink-only ink-refresh" aria-hidden="true"></i> 翻面看答案</button>
       </div>`;
     $('#quizFlipBtn').addEventListener('click', () => {
       $('#quizFlipZone').innerHTML = `
         <div class="quiz-answer"><span class="pos">${esc(it.gloss.pos || '')}</span>${esc(it.gloss.gloss)}</div>
         <div class="grade-row grade-row-4">
-          ${QUIZ_GRADES.map(g => `<button class="btn grade ${g.cls}" data-grade="${g.key}" title="${esc(g.hint)}">${esc(g.label)}</button>`).join('')}
+          ${QUIZ_GRADES.map(g => `<button class="btn grade ${g.cls}" data-grade="${g.key}" title="${esc(g.hint)}">${g.label}</button>`).join('')}
         </div>`;
       $$('#quizFlipZone .grade').forEach(b =>
         b.addEventListener('click', () => {
@@ -6734,9 +6768,9 @@ function renderQuizItem() {
       opts = shuffle([{ ok: true, text: it.gloss.gloss }, ...distractors.map(t => ({ ok: false, text: t }))]);
     }
     const head = kind === 'audio'
-      ? `<div class="quiz-word quiz-audio"><button class="speak-btn large" data-speak="${esc(it.spelling)}">🔊</button><div class="phonetic">${esc(it.gloss?.phonetic || '')}</div></div>
+      ? `<div class="quiz-word quiz-audio"><button class="speak-btn large" data-speak="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i></button><div class="phonetic">${esc(it.gloss?.phonetic || '')}</div></div>
          <div class="quiz-hint">听发音，选出正确释义</div>`
-      : `<div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></div>
+      : `<div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i></button></div>
          <div class="quiz-hint">选出正确的释义</div>`;
     area.innerHTML = `
       ${head}
@@ -6757,9 +6791,9 @@ function renderQuizItem() {
       }
       const conf = quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: pickedOpt.text });
       $('#quizFeedback').innerHTML = (ok
-        ? '<span class="fb-ok">✅ 答对了</span>'
-        : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.gloss.gloss)}</b></span>`)
-        + ` <span class="fb-conf">本题判定：${esc(confidenceLabel(conf))}</span>`;
+        ? '<span class="fb-ok"><i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 答对了</span>'
+        : `<span class="fb-bad"><i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 正确答案：<b>${esc(it.gloss.gloss)}</b></span>`)
+        + ` <span class="fb-conf">本题判定：${confidenceLabel(conf)}</span>`;
       quiz.advanceTimer = setTimeout(quizAdvance, ok ? 700 : 1800);
     }));
     return;
@@ -6786,9 +6820,9 @@ function renderQuizItem() {
       }
       const conf = quizRecord(null, { grade: picked.ok ? 'good' : 'again', userAnswer: picked.text });
       $('#quizFeedback').innerHTML = (picked.ok
-        ? `<span class="fb-ok">✅ 答对了！${esc(it.spelling)}</span>`
-        : `<span class="fb-bad">❌ 正确答案：<b>${esc(it.spelling)}</b></span>`)
-        + ` <span class="fb-conf">本题判定：${esc(confidenceLabel(conf))}</span>`;
+        ? `<span class="fb-ok"><i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 答对了！${esc(it.spelling)}</span>`
+        : `<span class="fb-bad"><i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 正确答案：<b>${esc(it.spelling)}</b></span>`)
+        + ` <span class="fb-conf">本题判定：${confidenceLabel(conf)}</span>`;
       quiz.advanceTimer = setTimeout(quizAdvance, picked.ok ? 700 : 1800);
     }));
     return;
@@ -6813,9 +6847,9 @@ function renderQuizItem() {
     $('#quizSpellBtn').disabled = true;
     const conf = quizRecord(null, { grade: ok ? 'good' : 'again', userAnswer: val });
     $('#quizFeedback').innerHTML = (ok
-      ? `<span class="fb-ok">✅ 拼对了！${esc(it.spelling)}</span>`
-      : `<span class="fb-bad">❌ 正确拼写：<b>${esc(it.spelling)}</b> <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button></span>`)
-      + ` <span class="fb-conf">本题判定：${esc(confidenceLabel(conf))}</span>`;
+      ? `<span class="fb-ok"><i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 拼对了！${esc(it.spelling)}</span>`
+      : `<span class="fb-bad"><i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 正确拼写：<b>${esc(it.spelling)}</b> <button class="speak-btn mini" data-speak="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i></button></span>`)
+      + ` <span class="fb-conf">本题判定：${confidenceLabel(conf)}</span>`;
     quiz.advanceTimer = setTimeout(quizAdvance, ok ? 700 : 2000);
   };
   $('#quizSpellBtn').addEventListener('click', submit);
@@ -6827,7 +6861,7 @@ async function finishQuiz() {
   stopQuizTimer();
   if (quiz.saveTimer) { clearTimeout(quiz.saveTimer); quiz.saveTimer = null; }
   $('#quizBar').style.width = '100%';
-  $('#quizProgress').textContent = '测验完成 🎉';
+  setInkText($('#quizProgress'), '测验完成 <i class="ink-glyph ink-only ink-festive" aria-hidden="true"></i>');
   const r = quiz.results;
   const cnt = k => r.filter(x => x.response === k).length;
   const gcnt = g => r.filter(x => x.grade === g).length;
@@ -6843,7 +6877,7 @@ async function finishQuiz() {
     if (wasAdaptive && sessionId) body.sessionId = sessionId;
     const res = await api('/api/quiz/submit', { method: 'POST', body });
     if (res.engine === 'srs') {
-      srsNote = `🧠 记忆引擎已更新${res.wrongBooked ? ` · 新入错题本 ${res.wrongBooked}` : ''}${res.resolved ? ` · 已掌握移出 ${res.resolved}` : ''}。`;
+      srsNote = `<i class="ink-glyph ink-only ink-brain" aria-hidden="true"></i> 记忆引擎已更新${res.wrongBooked ? ` · 新入错题本 ${res.wrongBooked}` : ''}${res.resolved ? ` · 已掌握移出 ${res.resolved}` : ''}。`;
     }
     submitNote = '忘记/模糊的词自动进入了对应筛选，回「AI 学习」页可针对性攻克。';
   } catch {
@@ -6857,23 +6891,23 @@ async function finishQuiz() {
     const kindLabels = { flash: '闪卡', choice: '四选一', spell: '拼写', zh2en: '看中选英', audio: '听音辨义' };
     kindNote = Object.keys(kindCnt).map(k => `${kindLabels[k] || k} ${kindCnt[k]}`).join(' · ');
   }
-  const gc = QUIZ_GRADES.map(g => `<span class="gd ${g.cls}">${esc(g.label)} ${gcnt(g.key)}</span>`).join('');
+  const gc = QUIZ_GRADES.map(g => `<span class="gd ${g.cls}">${g.label} ${gcnt(g.key)}</span>`).join('');
 
   // v2.12.0：答错/遗忘的词 → AI 复盘区（讲解 / 助记 / 真实例句）
   const wrongItems = r.filter(x => x.response !== 'FAMILIAR');
   let aiReview = '';
   if (wrongItems.length) {
     aiReview = `<div class="stats-card ai-review-card">
-      <div class="stats-card-title">🧠 AI 复盘（本轮回炉 ${wrongItems.length} 词）</div>
+      <div class="stats-card-title"><i class="ink-glyph ink-only ink-brain" aria-hidden="true"></i> AI 复盘（本轮回炉 ${wrongItems.length} 词）</div>
       <div class="ai-review-list" id="aiReviewList">
         ${wrongItems.map((x, i) => `
           <div class="ai-review-item" data-word="${esc(x.spelling)}" data-idx="${i}">
             <div class="ai-review-head">
               <b>${esc(x.spelling)}</b>
               <span class="ai-review-actions">
-                <button class="btn small ghost ai-explain-btn">💡 讲解</button>
-                <button class="btn small ghost ai-mnemonic-btn">📝 助记</button>
-                <button class="btn small ghost ai-example-btn">📚 例句</button>
+                <button class="btn small ghost ai-explain-btn"><i class="ink-glyph ink-only ink-bulb" aria-hidden="true"></i> 讲解</button>
+                <button class="btn small ghost ai-mnemonic-btn"><i class="ink-glyph ink-only ink-quill" aria-hidden="true"></i> 助记</button>
+                <button class="btn small ghost ai-example-btn"><i class="ink-glyph ink-only ink-book" aria-hidden="true"></i> 例句</button>
               </span>
             </div>
             <div class="ai-explain-box" style="display:none"></div>
@@ -6892,8 +6926,8 @@ async function finishQuiz() {
       <div class="hint" style="text-align:center">${esc(srsNote)}</div>
       <div class="hint" style="text-align:center">${esc(submitNote)}</div>
       <div class="row-gap" style="justify-content:center">
-        <button class="btn primary" id="quizAgainBtn">🔁 再来一轮</button>
-        <button class="btn" id="quizToWrongbookBtn">📕 去错题复练</button>
+        <button class="btn primary" id="quizAgainBtn"><i class="ink-glyph ink-only ink-cycle" aria-hidden="true"></i> 再来一轮</button>
+        <button class="btn" id="quizToWrongbookBtn"><i class="ink-glyph ink-only ink-book-closed" aria-hidden="true"></i> 去错题复练</button>
         <button class="btn" data-jump="study" data-filter="forget">去学错词</button>
       </div>
       ${aiReview}
@@ -6921,7 +6955,7 @@ async function startSrs() {
     const data = await api('/api/quiz/srs?filter=' + encodeURIComponent(srs.filter));
     const due = data.due || [];
     if (!due.length) {
-      msg.textContent = '⚠️ 当前没有到期的复练词。可先做基础测验积累记忆数据，或稍后再来。';
+      setInkText(msg, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 当前没有到期的复练词。可先做基础测验积累记忆数据，或稍后再来。');
       msg.className = 'result err';
       return;
     }
@@ -6941,7 +6975,7 @@ async function startSrs() {
     }
     items = items.filter(w => w.gloss?.gloss);
     if (!items.length) {
-      msg.textContent = '⚠️ 到期词的释义获取失败（请检查设置页的 AI 服务商）';
+      setInkText(msg, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 到期词的释义获取失败（请检查设置页的 AI 服务商）');
       msg.className = 'result err';
       return;
     }
@@ -6960,7 +6994,7 @@ async function startSrs() {
     startQuizTimer();
     renderSrsItem();
   } catch (e) {
-    msg.textContent = '❌ ' + e.message;
+    setInkText(msg, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     msg.className = 'result err';
   }
 }
@@ -7008,17 +7042,17 @@ function renderSrsItem() {
   autoSpeakQuizWord('srs', it.spelling);   // v3.2.1：复练自动播报（单词题面可见）
   area.innerHTML = `
     <div class="transfer-meta">${srcBadge}${meta.wrongCount ? `<span class="tag">错 ${meta.wrongCount} 次</span>` : ''}</div>
-    <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}">🔊</button>
+    <div class="quiz-word">${esc(it.spelling)} <button class="speak-btn mini" data-speak="${esc(it.spelling)}"><i class="ink-glyph ink-only ink-audio" aria-hidden="true"></i></button>
       ${it.gloss?.phonetic ? `<div class="phonetic">${esc(it.gloss.phonetic)}</div>` : ''}</div>
     <div class="quiz-hint">回忆它的中文意思，再翻面自评</div>
     <div class="quiz-flip-zone" id="srsFlipZone">
-      <button class="btn primary" id="srsFlipBtn">🔄 翻面看答案</button>
+      <button class="btn primary" id="srsFlipBtn"><i class="ink-glyph ink-only ink-refresh" aria-hidden="true"></i> 翻面看答案</button>
     </div>`;
   $('#srsFlipBtn').addEventListener('click', () => {
     $('#srsFlipZone').innerHTML = `
       <div class="quiz-answer"><span class="pos">${esc(it.gloss.pos || '')}</span>${esc(it.gloss.gloss)}</div>
       <div class="grade-row grade-row-4">
-        ${QUIZ_GRADES.map(g => `<button class="btn grade ${g.cls}" data-grade="${g.key}" title="${esc(g.hint)}">${esc(g.label)}</button>`).join('')}
+        ${QUIZ_GRADES.map(g => `<button class="btn grade ${g.cls}" data-grade="${g.key}" title="${esc(g.hint)}">${g.label}</button>`).join('')}
       </div>`;
     $$('#srsFlipZone .grade').forEach(b =>
       b.addEventListener('click', () => {
@@ -7033,7 +7067,7 @@ async function finishSrs() {
   srs.running = false;
   stopQuizTimer();
   $('#quizBar').style.width = '100%';
-  $('#quizProgress').textContent = '复练完成 🎯';
+  setInkText($('#quizProgress'), '复练完成 <i class="ink-glyph ink-only ink-target" aria-hidden="true"></i>');
   const r = srs.results;
   const gcnt = g => r.filter(x => x.grade === g).length;
   const elapsed = fmtDuration(currentSessionElapsedMs());
@@ -7047,7 +7081,7 @@ async function finishSrs() {
   } catch {
     note = '（结果上报失败，本次不计入记忆引擎）';
   }
-  const gc = QUIZ_GRADES.map(g => `<span class="gd ${g.cls}">${esc(g.label)} ${gcnt(g.key)}</span>`).join('');
+  const gc = QUIZ_GRADES.map(g => `<span class="gd ${g.cls}">${g.label} ${gcnt(g.key)}</span>`).join('');
   $('#quizArea').innerHTML = `
     <div class="quiz-done">
       <div class="quiz-score">${gcnt('good') + gcnt('easy')} / ${r.length}</div>
@@ -7055,8 +7089,8 @@ async function finishSrs() {
       <div class="quiz-grade-summary">${gc}</div>
       <div class="hint" style="text-align:center">${esc(note)}</div>
       <div class="row-gap" style="justify-content:center">
-        <button class="btn primary" id="srsAgainBtn">🔁 继续复练</button>
-        <button class="btn" id="srsBackBtn">↩ 返回设置</button>
+        <button class="btn primary" id="srsAgainBtn"><i class="ink-glyph ink-only ink-cycle" aria-hidden="true"></i> 继续复练</button>
+        <button class="btn" id="srsBackBtn"><i class="ink-glyph ink-only ink-undo" aria-hidden="true"></i>返回设置</button>
       </div>
     </div>`;
   $('#srsAgainBtn').addEventListener('click', () => { $('#quizRun').style.display = 'none'; $('#quizSetup').style.display = 'block'; $('#quizMasteryRow').style.display = 'none'; startSrs(); });
@@ -7069,7 +7103,7 @@ async function startTransfer() {
   const msg = $('#transferMsg');
   const kinds = transfer.kinds;
   if (!kinds.context && !kinds.cloze) {
-    msg.textContent = '⚠️ 请至少开启一种题型（语境选义或搭配补全）';
+    setInkText(msg, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> 请至少开启一种题型（语境选义或搭配补全）');
     msg.className = 'result err';
     return;
   }
@@ -7083,7 +7117,7 @@ async function startTransfer() {
     });
     const questions = r.questions || [];
     if (!questions.length) {
-      msg.textContent = '⚠️ ' + (r.message || '暂无可生成的迁移题');
+      setInkText(msg, '<i class="ink-glyph ink-only ink-warn" aria-hidden="true"></i> ' + (r.message || '暂无可生成的迁移题'));
       msg.className = 'result err';
       return;
     }
@@ -7100,7 +7134,7 @@ async function startTransfer() {
     $('#transferConfidenceGroup').style.display = '';
     renderTransferItem();
   } catch (e) {
-    msg.textContent = '❌ ' + e.message;
+    setInkText(msg, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     msg.className = 'result err';
   }
 }
@@ -7191,7 +7225,7 @@ async function submitTransfer(q, answer) {
     correct = !!r.correct;
     expected = r.expected || '';
   } catch (e) {
-    $('#quizFeedback').innerHTML = `<span class="fb-bad">❌ 提交失败：${esc(e.message)}</span>`;
+    $('#quizFeedback').innerHTML = `<span class="fb-bad"><i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 提交失败：${esc(e.message)}</span>`;
     // 允许重试
     transfer.answered = false;
     return;
@@ -7208,8 +7242,8 @@ async function submitTransfer(q, answer) {
     });
   }
   $('#quizFeedback').innerHTML = correct
-    ? '<span class="fb-ok">✅ 正确</span>'
-    : `<span class="fb-bad">❌ 正确答案：<b>${esc(expected)}</b></span>`;
+    ? '<span class="fb-ok"><i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 正确</span>'
+    : `<span class="fb-bad"><i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> 正确答案：<b>${esc(expected)}</b></span>`;
   transfer.advanceTimer = setTimeout(transferAdvance, correct ? 800 : 1800);
 }
 
@@ -7217,7 +7251,7 @@ async function finishTransfer() {
   transfer.running = false;
   if (transfer.advanceTimer) { clearTimeout(transfer.advanceTimer); transfer.advanceTimer = null; }
   $('#quizBar').style.width = '100%';
-  $('#quizProgress').textContent = '迁移训练完成 🎯';
+  setInkText($('#quizProgress'), '迁移训练完成 <i class="ink-glyph ink-only ink-target" aria-hidden="true"></i>');
   $('#transferConfidenceGroup').style.display = 'none';
   const r = transfer.results;
   const correctN = r.filter(x => x.correct).length;
@@ -7227,7 +7261,7 @@ async function finishTransfer() {
 
   const wrongHtml = wrongWords.length
     ? `<div class="transfer-wrong-list">${wrongWords.map(w => `<button type="button" class="transfer-wrong-chip" data-word="${esc(w)}">${esc(w)}</button>`).join('')}</div>`
-    : '<div class="hint" style="text-align:center">本轮全部答对，状态不错 👏</div>';
+    : '<div class="hint" style="text-align:center">本轮全部答对，状态不错 <i class="ink-glyph ink-only ink-clap" aria-hidden="true"></i></div>';
 
   $('#quizArea').innerHTML = `
     <div class="quiz-done">
@@ -7238,7 +7272,7 @@ async function finishTransfer() {
       <div class="hint" style="text-align:center">${wrongWords.length ? '错词已计入「忘记词」，点击下方词或去 AI 学习攻克：' : ''}</div>
       ${wrongHtml}
       <div class="row-gap" style="justify-content:center">
-        <button class="btn primary" id="transferAgainBtn">🔁 再来一组</button>
+        <button class="btn primary" id="transferAgainBtn"><i class="ink-glyph ink-only ink-cycle" aria-hidden="true"></i> 再来一组</button>
         <button class="btn" id="transferToStudyBtn" data-jump="study" data-filter="forget">去学错词</button>
       </div>
     </div>`;
@@ -7301,9 +7335,9 @@ async function initApp() {
       await api('/api/logs/usage', { method: 'POST', body: { add: { kind, title, content } } });
       if ($('#usageTitle')) $('#usageTitle').value = '';
       if ($('#usageContent')) $('#usageContent').value = '';
-      if (out) out.textContent = '✓ 已添加';
+      if (out) setInkText(out, '<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已添加');
       loadUsageLogs();
-    } catch (e) { if (out) out.textContent = '❌ ' + e.message; }
+    } catch (e) { if (out) setInkText(out, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message); }
   });
   const errClear = $('#errorClearBtn');
   if (errClear) errClear.addEventListener('click', async () => {
@@ -7323,7 +7357,7 @@ function toggleZenMode() {
   const isZen = document.body.classList.toggle('zen-mode');
   localStorage.setItem('wb-zen', isZen ? '1' : '0');
   const btn = $('#zenToggle');
-  if (btn) btn.textContent = isZen ? '🧘‍♂️' : '🧘';
+  if (btn) setInkText(btn, isZen ? '<i class="ink-glyph ink-only ink-zen" aria-hidden="true"></i>' : '<i class="ink-glyph ink-only ink-zen" aria-hidden="true"></i>');
   if (isZen) {
     toast('已进入禅意专注视界（按 Esc 或 Z 退出）');
   } else {
@@ -7592,11 +7626,11 @@ if ($('#backupCreateBtn')) {
     res.textContent = '正在备份…'; res.className = 'result';
     try {
       const d = await api('/api/backup/create', { method: 'POST' });
-      res.textContent = `✅ 备份完成：${d.name}（${d.files} 个文件）`;
+      setInkText(res, `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 备份完成：${d.name}（${d.files} 个文件）`);
       res.className = 'result ok';
       loadBackupList();
     } catch (e) {
-      res.textContent = '❌ ' + e.message;
+      setInkText(res, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
       res.className = 'result err';
     }
   });
@@ -7612,11 +7646,11 @@ document.addEventListener('click', async (e) => {
   res.textContent = '正在恢复…'; res.className = 'result';
   try {
     const d = await api('/api/backup/restore', { method: 'POST', body: { name } });
-    res.textContent = `✅ 已恢复 ${d.restored} 个文件，刷新页面生效`;
+    setInkText(res, `<i class="ink-glyph ink-only ink-check" aria-hidden="true"></i> 已恢复 ${d.restored} 个文件，刷新页面生效`);
     res.className = 'result ok';
     setTimeout(() => location.reload(), 1500);
   } catch (e) {
-    res.textContent = '❌ ' + e.message;
+    setInkText(res, '<i class="ink-glyph ink-only ink-cross" aria-hidden="true"></i> ' + e.message);
     res.className = 'result err';
   }
 });
