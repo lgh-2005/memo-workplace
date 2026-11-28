@@ -69,6 +69,26 @@ T('palace.json 进备份恢复清单，并带结构校验（三处校验 + 缺�
   serverSrc.includes('已保留当前记忆宫殿'));
 T('记忆宫殿下复习流水单独一种 kind，报告里可与测验区分',
   serverSrc.includes("'palace_practice'") && serverSrc.includes("kind: 'palace_practice'"));
+/* v4.9.1 真缺陷：bindInput() 定义了却从未被调用——键盘、拖动转头、点地面、触摸
+   全部不绑事件，用户进到宫殿里只能站着看，连「点编号放词」都做不到。
+   单看源码「函数存在」会假通过，所以这里既查调用点，又查它必须在 renderer 建好之后调
+   （直接放模块顶层会因 renderer 为 undefined 而抛错，整个子应用白屏）。 */
+T('输入绑定 bindInput() 真的被调用，且在 initThree() 之后（否则白屏）',
+  (palaceJs.match(/^\s*bindInput\(\)\s*;?\s*$/gm) || []).length === 1 &&
+  /initThree\(\);[\s\S]{0,500}bindInput\(\);/.test(palaceJs));
+T('点地面走路与拖动转头不打架（拖动结束后不能把人瞬移走）',
+  palaceJs.includes('dragMoved') && /if \(S\.dragMoved\)/.test(palaceJs));
+T('手机没有键盘时，轻点地面也能移动（不只剩转头）',
+  /changedTouches/.test(palaceJs) && /pickGround\(t\)/.test(palaceJs));
+/* 点编号必须靠射线命中，不能只认 3.3m 视线范围：操作说明写着「点编号」，
+   但 slotInSight() 有距离上限，隔着房间能看见却点不动。 */
+T('点编号走射线拾取，不受「靠近距离」限制（隔房间也能点开）',
+  /function pickSlotAt\(/.test(palaceJs) &&
+  /const picked = pickSlotAt\(ev\);/.test(palaceJs) &&
+  /intersectObjects\(markers\.map/.test(palaceJs));
+T('主站「开始复习」不再竞态丢指令（未就绪先排队，ready 后补发）',
+  /palaceCmdQueue/.test(appSrc) && /palaceState\.ready\) send\(\)/.test(appSrc));
+
 
 /* ============ 假上游 LLM ============ */
 function makeFakeLLM(opts = {}) {
@@ -124,6 +144,10 @@ async function makeSandbox() {
       await copyFile(join(root, 'public', 'palace', f), join(sb, 'public', 'palace', f));
     }
   }
+  // three.js 必须一起拷：漏了它，palace.js 的 import 直接 404，
+  // 整个模块一行都不会执行（真浏览器测起来会「探针不存在」）。
+  await copyFile(join(root, 'public', 'palace', 'vendor', 'three.module.min.js'),
+    join(sb, 'public', 'palace', 'vendor', 'three.module.min.js'));
   await mkdir(join(sb, 'corpus'), { recursive: true });
   await writeFile(join(sb, 'corpus', 'records.jsonl'), '');
   await writeFile(join(sb, 'corpus', 'exams.jsonl'), '');
@@ -357,13 +381,291 @@ const readSrs = async (sandbox) => JSON.parse(await readFile(join(sandbox, 'data
   }
 }
 
-/* ============ E. 备份结构校验（静态口径，防「恢复把坏数据写回去」） ============ */
-T('isPalaceShape 校验 schemaVersion + layout.slots + occupied 三件',
+/* ============ D4. 真浏览器：输入绑定是不是真的接上了 ============
+ *
+ * 这条是 v4.9.1 修的真缺陷留下的防回退：bindInput() 曾经「定义了但从未调用」，
+ * 于是键盘、拖动转头、点地面、触摸全部没绑事件——用户进到宫殿里只能站着，
+ * 连「点编号把词放进去」都做不到，整个功能等于不可用。
+ *
+ * 关键：不能用截图像素差当证据。画面本身有呼吸动画（refreshMarkerLook 里
+ * 对已放词的编号做 sin 缩放），任意两帧都不相等，所以「截图变了」会假通过。
+ * 必须读真实相机坐标。
+ */
+{
+  const appPort = 18751;
+  const sb = await makeSandbox();
+  let server = null;
+  let browser = null;
+  try {
+    const booted = await boot(sb, null, appPort);
+    server = booted.server;
+    const base = booted.base;
+    const slot0 = (await getJson(base, '/api/palace/state')).body.palace.layout.slots[0].id;
+    await postJson(base, '/api/palace/assign', { slotId: slot0, word: 'abandon' });
+
+    let chromium = null;
+    try { ({ chromium } = await import('playwright')); } catch { chromium = null; }
+    if (!chromium) {
+      T('真浏览器输入测试（playwright 可用）', false, 'playwright 未安装，无法验证输入绑定');
+    } else {
+      browser = await chromium.launch({ headless: true });
+      const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+      const errs = [];
+      page.on('pageerror', e => errs.push(String(e)));
+      await page.goto(base + '/palace/', { waitUntil: 'load' });
+      await page.waitForTimeout(2200);
+      // 帮助遮罩会挡住画布中央
+      await page.evaluate(() => { const h = document.getElementById('helpBox'); if (h) h.hidden = true; });
+
+      const camOf = (p) => p.evaluate(() => window.__palaceProbe.cam());
+      T('子应用暴露只读探针（否则无法断言镜头真的动了）',
+        await page.evaluate(() => typeof window.__palaceProbe?.cam === 'function'));
+
+      // 点地面走路（趁视角未转，点正前方地面）
+      const e0 = await camOf(page);
+      await page.mouse.click(640, 660);
+      await page.waitForTimeout(900);
+      const e1 = await camOf(page);
+      T('真浏览器：点地面真的走过去（相机位移，不是截图呼吸）',
+        Math.hypot(e1.x - e0.x, e1.z - e0.z) > 0.15,
+        `d=${Math.hypot(e1.x - e0.x, e1.z - e0.z).toFixed(2)}m`);
+
+      // 键盘 W
+      const c0 = await camOf(page);
+      await page.keyboard.down('w');
+      await page.waitForTimeout(800);
+      await page.keyboard.up('w');
+      await page.waitForTimeout(150);
+      const c1 = await camOf(page);
+      T('真浏览器：按 W 真的往前走',
+        Math.hypot(c1.x - c0.x, c1.z - c0.z) > 0.3,
+        `d=${Math.hypot(c1.x - c0.x, c1.z - c0.z).toFixed(2)}m`);
+
+      // 拖动转头：yaw 变，且不把人瞬移走
+      const d0 = await camOf(page);
+      await page.mouse.move(640, 400);
+      await page.mouse.down();
+      await page.mouse.move(340, 400, { steps: 14 });
+      await page.mouse.up();
+      await page.waitForTimeout(700);
+      const d1 = await camOf(page);
+      T('真浏览器：拖动鼠标真的转头', Math.abs(d1.yaw - d0.yaw) > 0.05,
+        `yaw ${d0.yaw.toFixed(2)}->${d1.yaw.toFixed(2)}`);
+      T('真浏览器：拖动转头结束时不会把人顺带传送走',
+        Math.hypot(d1.x - d0.x, d1.z - d0.z) < 0.4,
+        `d=${Math.hypot(d1.x - d0.x, d1.z - d0.z).toFixed(2)}m`);
+
+      // 点编号开面板：走到编号跟前点它
+      let opened = false;
+      for (let i = 0; i < 8 && !opened; i++) {
+        await page.mouse.click(640, 300 + i * 20);
+        await page.waitForTimeout(450);
+        opened = await page.evaluate(() => window.__palaceProbe.panelOpen());
+      }
+      T('真浏览器：点编号能打开槽位面板（放词的唯一入口）', opened);
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(200);
+      T('真浏览器：Esc 能关掉面板', !(await page.evaluate(() => window.__palaceProbe.panelOpen())));
+
+      T('真浏览器：子应用无 JS 报错', errs.length === 0, errs.slice(0, 2).join(' | '));
+      await page.close();
+
+      // 手机：没有键盘，轻点地面必须能走
+      const mob = await browser.newPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+      await mob.goto(base + '/palace/', { waitUntil: 'load' });
+      await mob.waitForTimeout(2000);
+      await mob.evaluate(() => { const h = document.getElementById('helpBox'); if (h) h.hidden = true; });
+      const m0 = await camOf(mob);
+      await mob.touchscreen.tap(195, 700);
+      await mob.waitForTimeout(1000);
+      const m1 = await camOf(mob);
+      T('真浏览器：手机轻点地面能走过去（无键盘也走得动）',
+        Math.hypot(m1.x - m0.x, m1.z - m0.z) > 0.15,
+        `d=${Math.hypot(m1.x - m0.x, m1.z - m0.z).toFixed(2)}m`);
+      await mob.close();
+    }
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+    if (server) server.kill();
+    await delay(400);
+    await rm(sb, { recursive: true, force: true }).catch(() => {});
+  }
+}
+
+/* ============ D5. 真浏览器：主站 → iframe → 放词 → 跨域复习指令 ============
+ *
+ * D4 只测子应用自己。但用户真正走的是「主站登录 → 点记忆宫殿 → 进入 → 放词 →
+ * 点主站开始复习」。这条路要跨 iframe，出问题的地方完全不同：
+ *  ① 进入按钮不设 src → iframe 永远空白
+ *  ② postMessage 在子应用注册监听器之前发出 → 指令进虚空（v4.9.1 修的竞态）
+ *  ③ 点编号的坐标算不准 → 用户点不到
+ */
+{
+  const appPort = 18752;
+  const sb = await makeSandbox();
+  let server = null;
+  let browser = null;
+  try {
+    await writeFile(join(sb, 'data', 'config.json'), JSON.stringify({
+      multiUser: false,
+      auth: { enabled: true, token: 'gate-token' },
+      llm: { mock: false, activeId: '', providers: [] },
+      autoSync: { enabled: false, minutes: 60 },
+    }, null, 2));
+    const booted = await boot(sb, null, appPort);
+    server = booted.server;
+    const base = booted.base;
+
+    let chromium = null;
+    try { ({ chromium } = await import('playwright')); } catch { chromium = null; }
+    if (!chromium) {
+      T('端到端（主站 → iframe → 放词 → 复习指令）', false, 'playwright 未安装');
+    } else {
+      browser = await chromium.launch({ headless: true });
+      const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+      const page = await ctx.newPage();
+      const errs = [];
+      page.on('pageerror', e => errs.push(String(e)));
+
+      const login = await page.request.post(base + '/api/auth/login', { data: { token: 'gate-token' } });
+      T('端到端：登录主站成功', login.ok(), 'status=' + login.status());
+      await page.goto(base + '/', { waitUntil: 'load' });
+      await page.waitForTimeout(1500);
+
+      // 先切到「AI 学习」页签，否则子页按钮在 display:none 的页面里点不到
+      await page.locator('.tab[data-tab="study"]').click();
+      await page.waitForTimeout(600);
+      await page.locator('[data-sub="palace"]').click();
+      await page.waitForTimeout(600);
+      T('端到端：切到记忆宫殿子页，且未点进入前 iframe 不加载',
+        await page.evaluate(() => {
+          const p = document.getElementById('palacePane');
+          const s = document.getElementById('palaceFrame')?.getAttribute('src') || '';
+          return !!p && getComputedStyle(p).display !== 'none' && s === '';
+        }));
+
+      await page.locator('#palaceEnterBtn').click();
+      await page.waitForTimeout(3000);
+      T('端到端：点「进入宫殿」后 iframe 真的加载子应用',
+        await page.evaluate(() => (document.getElementById('palaceFrame')?.getAttribute('src') || '') === '/palace/'));
+
+      const fr = page.frames().find(f => f.url().includes('/palace/'));
+      T('端到端：iframe 内子应用启动完成（HUD 可见、载入遮罩消失、探针可用）',
+        !!fr && await fr.evaluate(() => !!window.__palaceProbe && document.getElementById('hud') !== null && document.getElementById('boot').hidden));
+      if (fr) {
+        await fr.evaluate(() => { const h = document.getElementById('helpBox'); if (h) h.hidden = true; });
+        await page.waitForTimeout(300);
+        const mk = await fr.evaluate(() => window.__palaceProbe.markersScreen());
+        const target = mk.find(m => m.inFront && m.x > 40 && m.x < 1400) || mk[0];
+        await fr.locator('#stage canvas').click({ position: { x: target.x, y: target.y } });
+        await page.waitForTimeout(700);
+        T('端到端：点编号能打开槽位面板（隔房间也点得动）',
+          await fr.evaluate(() => window.__palaceProbe.panelOpen()), `#${target.num}`);
+
+        await fr.locator('#swapInput').fill('abandon');
+        await fr.locator('#btnSwap').click();
+        await page.waitForTimeout(1200);
+        const st = await getJson(base, '/api/palace/state');
+        T('端到端：从 iframe 里放词真的落到服务端', st.body.stats.occupied === 1, 'occupied=' + st.body.stats.occupied);
+        await fr.locator('#slotClose').click();
+        await page.waitForTimeout(300);
+
+        await page.locator('#palaceReviewBtn').click();
+        await page.waitForTimeout(2000);
+        T('端到端：主站「开始复习」跨 iframe 真的让宫殿进入复习态（不丢指令）',
+          await fr.evaluate(() => window.__palaceProbe.reviewOpen() || window.__palaceProbe.doneBoxOpen()));
+      }
+      T('端到端：主站无 JS 报错', errs.length === 0, errs.slice(0, 2).join(' | '));
+    }
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+    if (server) server.kill();
+    await delay(400);
+    await rm(sb, { recursive: true, force: true }).catch(() => {});
+  }
+}
+
+/* ============ D6. 真浏览器：点「进入」后立刻点「开始复习」（竞态窗口） ============
+ *
+ * 这是 v4.9.1 修的竞态真正会打的时序：src 刚设置、子应用还没注册 message 监听器，
+ * 此时发出的 palace:command 会落进虚空。D5 是「等子应用起来再点」，永远测不到这条。
+ * 这里刻意两个点击之间不等待。
+ */
+{
+  const appPort = 18753;
+  const sb = await makeSandbox();
+  let server = null;
+  let browser = null;
+  try {
+    await writeFile(join(sb, 'data', 'config.json'), JSON.stringify({
+      multiUser: false,
+      auth: { enabled: true, token: 'gate-token-2' },
+      llm: { mock: false, activeId: '', providers: [] },
+      autoSync: { enabled: false, minutes: 60 },
+    }, null, 2));
+    const booted = await boot(sb, null, appPort);
+    server = booted.server;
+    const base = booted.base;
+    // 预置一个词，这样「开始复习」会真的进复习态（否则走「还没有词」分支）
+    const slot0 = (await getJson(base, '/api/palace/state')).body.palace.layout.slots[0].id;
+    await postJson(base, '/api/palace/assign', { slotId: slot0, word: 'abandon' });
+
+    let chromium = null;
+    try { ({ chromium } = await import('playwright')); } catch { chromium = null; }
+    if (!chromium) {
+      T('端到端：进入后立刻点复习（竞态窗口）', false, 'playwright 未安装');
+    } else {
+      browser = await chromium.launch({ headless: true });
+      const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+      const page = await ctx.newPage();
+      await page.request.post(base + '/api/auth/login', { data: { token: 'gate-token-2' } });
+
+      // 确定性制造竞态窗口：把 palace.js 的响应人为拖慢 2.5s。
+      // 不这么做的话，Playwright 两次点击之间的固有延迟刚好够 iframe 起来，
+      // 这条断言会「运气好就过」，抓不到真缺陷。
+      await page.route('**/palace/palace.js', async (route) => {
+        await new Promise(r => setTimeout(r, 2500));
+        await route.continue();
+      });
+
+      await page.goto(base + '/', { waitUntil: 'load' });
+      await page.waitForTimeout(1500);
+      await page.locator('.tab[data-tab="study"]').click();
+      await page.waitForTimeout(500);
+      await page.locator('[data-sub="palace"]').click();
+      await page.waitForTimeout(500);
+
+      // 关键：点「进入」与点「开始复习」之间不等待。
+      // 断言必须是 reviewOpen === true：宫殿里明明有词，若指令在 loadState() 完成前
+      // 就被处理，startReview() 会误判「还没有词」弹 doneBox —— 那正是要抓的缺陷。
+      // 所以不能把 doneBoxOpen 也算通过。
+      await page.locator('#palaceEnterBtn').click();
+      await page.locator('#palaceReviewBtn').click();
+      await page.waitForTimeout(5000);
+      const fr = page.frames().find(f => f.url().includes('/palace/'));
+      const probe = fr ? await fr.evaluate(() => ({
+        has: !!window.__palaceProbe,
+        ro: window.__palaceProbe ? window.__palaceProbe.reviewOpen() : null,
+        db: window.__palaceProbe ? window.__palaceProbe.doneBoxOpen() : null,
+      })) : { has: false, ro: null, db: null };
+      T('端到端：点「进入」后立刻点「开始复习」也能进复习态（不丢指令、不误判没词）',
+        probe.has && probe.ro === true,
+        `reviewOpen=${probe.ro} doneBox=${probe.db}（有词时出现 doneBox 就是误判）`);
+    }
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+    if (server) server.kill();
+    await delay(400);
+    await rm(sb, { recursive: true, force: true }).catch(() => {});
+  }
+}
+
+/* ============ E. 备份结构校验（静态口径，防「恢复把坏数据写回去」） ============ */T('isPalaceShape 校验 schemaVersion + layout.slots + occupied 三件',
   /function isPalaceShape\(obj\)[\s\S]{0,400}schemaVersion !== PALACE_SCHEMA[\s\S]{0,400}Array\.isArray\(obj\.layout\.slots\)/.test(serverSrc));
-T('版本号已升 4.9.0（package.json / index.html / sw 缓存名一致）',
-  JSON.parse(await readFile(join(root, 'package.json'), 'utf8')).version === '4.9.0' &&
-  swSrc.includes("wb-shell-v4.9.0") &&
-  (htmlSrc.match(/v4\.9\.0</g) || []).length === 3);
+T('版本号已升 4.9.1（package.json / index.html / sw 缓存名一致）',
+  JSON.parse(await readFile(join(root, 'package.json'), 'utf8')).version === '4.9.1' &&
+  swSrc.includes("wb-shell-v4.9.1") &&
+  (htmlSrc.match(/v4\.9\.1</g) || []).length === 3);
 
 /* ============ 汇总 ============ */
 const failed = checks.filter(c => !c.ok);

@@ -39,6 +39,7 @@ const S = {
   canLock: false,
   locked: false,
   dragging: false,
+  dragMoved: false,     // 本次拖动是否真的转过视角（用于吞掉拖动结束后的 click）
   keys: new Set(),
   activeSlot: null,
   reviewOpen: false,
@@ -366,7 +367,7 @@ function stepMove(dt) {
   }
 }
 
-/** 找出视线前方最近、且在触发距离内的槽位 */
+/** 找出视线前方最近、且在触发距离内的槽位（按 E / 靠近提示用） */
 function slotInSight() {
   const f = forwardDir();
   let best = null, bestScore = -Infinity;
@@ -381,6 +382,24 @@ function slotInSight() {
     if (score > bestScore) { bestScore = score; best = s; }
   }
   return best;
+}
+
+/** 鼠标/手指点在编号上：按射线真的打中那个编号贴图算，跟距离无关。
+ *  slotInSight() 只认 3.3m 内，隔着一个房间能看见却点不动，操作说明又写着「点编号」，
+ *  所以点击走独立的射线拾取；命中不到再退化成「点地面走过去」。 */
+function pickSlotAt(ev) {
+  if (!markers.length) return null;
+  const rect = renderer.domElement.getBoundingClientRect();
+  const ndc = new THREE.Vector2(
+    ((ev.clientX - rect.left) / rect.width) * 2 - 1,
+    -((ev.clientY - rect.top) / rect.height) * 2 + 1
+  );
+  const ray = new THREE.Raycaster();
+  ray.setFromCamera(ndc, camera);
+  const hits = ray.intersectObjects(markers.map(m => m.sprite), false);
+  if (!hits.length) return null;
+  const m = markers.find(x => x.sprite === hits[0].object);
+  return m ? m.slot : null;
 }
 
 /* ============================ 面板逻辑 ============================ */
@@ -662,7 +681,13 @@ function bindInput() {
 
   // 鼠标：安全上下文下用 Pointer Lock；否则拖动转头
   el.addEventListener('click', async (ev) => {
+    // 拖动转头结束时会补发一次 click：此时不该点地面瞬移，否则「转头」变成「乱跑」
+    if (S.dragMoved) { S.dragMoved = false; return; }
     if (S.reviewOpen || !$('slotPanel').hidden) return;
+    // 先按射线找「真的点中的那个编号」——隔着房间也能点开
+    const picked = pickSlotAt(ev);
+    if (picked) { openSlot(picked); return; }
+    // 再退一步：视线正前方的编号（近距离、没精确点中时更宽容）
     const s = slotInSight();
     if (s) { openSlot(s); return; }
     // 点地面 → 走过去
@@ -682,13 +707,14 @@ function bindInput() {
       S.cam.yaw -= e.movementX * 0.0022;
       S.cam.pitch = Math.max(-1.2, Math.min(1.2, S.cam.pitch - e.movementY * 0.0022));
     } else if (S.dragging) {
+      if (Math.abs(e.movementX) + Math.abs(e.movementY) > 2) S.dragMoved = true;
       S.cam.yaw -= e.movementX * 0.0032;
       S.cam.pitch = Math.max(-1.2, Math.min(1.2, S.cam.pitch - e.movementY * 0.0032));
     }
   });
 
   el.addEventListener('pointerdown', (e) => {
-    if (e.pointerType === 'mouse' && !S.locked) S.dragging = true;
+    if (e.pointerType === 'mouse' && !S.locked) { S.dragging = true; S.dragMoved = false; }
   });
   window.addEventListener('pointerup', () => { S.dragging = false; });
 
@@ -709,8 +735,16 @@ function bindInput() {
   }, { passive: true });
   el.addEventListener('touchend', (e) => {
     if (touchMoved) return;
+    const t = e.changedTouches && e.changedTouches[0];
+    // 轻点在编号上就开面板（手机没有 E 键，这是主要入口）
+    if (t) { const picked = pickSlotAt(t); if (picked) { openSlot(picked); return; } }
     const s = slotInSight();
     if (s) { openSlot(s); return; }
+    // 手机没有键盘：轻点地面也要能走过去，否则只能转头没法移动
+    if (t) {
+      const hit = pickGround(t);
+      if (hit) S.walkTarget = hit;
+    }
   }, { passive: true });
 }
 
@@ -772,6 +806,10 @@ function tick() {
 async function boot() {
   try {
     initThree();
+    // bindInput() 依赖 renderer.domElement，必须在 initThree() 之后绑定；
+    // 之前它虽然定义了却从未被调用（键盘/拖拽/点地面/触摸全部失效），
+    // 而直接在模块顶层调用会因 renderer 未创建而抛错白屏。
+    bindInput();
     await loadState();
     buildWorld();
     buildMarkers();
@@ -862,3 +900,30 @@ function bindUI() {
 
 bindUI();
 boot();
+
+/* 只读调试探针：供门禁用真实浏览器断言「镜头真的动了」。
+   写 window 上的只读快照，不暴露任何写入口，也不参与业务逻辑。 */
+window.__palaceProbe = {
+  cam: () => ({ x: S.cam.x, z: S.cam.z, yaw: S.cam.yaw, pitch: S.cam.pitch }),
+  slotCount: () => S.slots.length,
+  activeSlotId: () => (S.activeSlot ? S.activeSlot.id : null),
+  panelOpen: () => $('slotPanel').hidden === false,
+  reviewOpen: () => S.reviewOpen,
+  doneBoxOpen: () => $('doneBox').hidden === false,
+  // 编号在屏幕上的像素坐标（供门禁精确点击，避免靠猜坐标）
+  markersScreen: () => {
+    const out = [];
+    const v = new THREE.Vector3();
+    for (const m of markers) {
+      v.set(m.slot.pos.x, EYE + 0.02, m.slot.pos.z).project(camera);
+      out.push({
+        id: m.slot.id,
+        num: m.slot.num,
+        x: Math.round((v.x * 0.5 + 0.5) * window.innerWidth),
+        y: Math.round((-v.y * 0.5 + 0.5) * window.innerHeight),
+        inFront: v.z < 1,
+      });
+    }
+    return out;
+  },
+};

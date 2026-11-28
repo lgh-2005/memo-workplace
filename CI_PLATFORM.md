@@ -1,5 +1,7 @@
 # v4.0.0 CI 平台与发布门禁确认
 
+> v4.9.1（2026-11-28）：Node 22/24 + Chromium 矩阵与既有发布流程不变。`palace-smoke.mjs` 从 34 增至 **57 断言**，其中真浏览器段用 Playwright 起真实 Chromium 做输入与端到端验证（与 `mobile-device-check` 同样依赖 Playwright，CI 环境需可用的 Chromium）；另用 `page.route` 人为拖慢 `palace.js` 2.5 秒，**确定性**制造「iframe 未就绪」竞态窗口。`release-gate` 版本断言升 4.9.1。`public/palace/vendor/three.module.min.js` 仍随仓库入库（687KB），CI 只做语法/门禁，不打包前端。
+
 > v4.9.0（2026-11-28）：Node 22/24 + Chromium 矩阵与既有发布流程不变；`npm test` 新增 `scripts/palace-smoke.mjs`（31 断言，起真服务 + 假上游 LLM 观测结算是否真进 SRS），门禁更新为「六条宫殿路由 + 结算写 `palace_practice` + iframe 仅放开 `/palace/` + 子应用独立不占首屏」断言。注意 `public/palace/vendor/three.module.min.js` 随仓库入库（687KB），CI 只做语法/门禁，不打包前端。
 > v4.8.0（2026-11-28）：Node 22/24 + Chromium 矩阵与既有发布流程不变；`npm test` 新增 `scripts/method-smoke.mjs`（起假上游 LLM 观测服务端真实回合，34 断言），门禁更新为「四套方法注册表 + 五条路由 + 结算双写 SRS/账本 + 作答不经 innerHTML」断言。
 > v4.7.0（2026-11-28）：Node 22/24 + Chromium 矩阵与既有发布流程不变；门禁更新为「四个源文件 emoji 归零 / 状态行走 setInkText / 每个图标文件都有 CSS 映射与 SW 预缓存」断言。

@@ -24,7 +24,7 @@ const inkWriter = appSrc.slice(appSrc.indexOf('function inkFragment('), appSrc.i
 const EMOJI = /[\u{1F000}-\u{1FAFF}\u2600-\u27BF\u2B00-\u2BFF\uFE0F]/u;
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.9.0'],
+  ['package version', packageJson.version === '4.9.1'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
@@ -76,7 +76,7 @@ const required = [
   ['v4.8.0 method ledger is backed up and validated', serverSrc.includes("const METHOD_LEDGER_FILE = 'method_ledger.json'") && serverSrc.includes('isMethodLedgerShape') && (serverSrc.match(/isMethodLedgerShape\(v\.obj\)/g) || []).length >= 3],
   ['v4.8.0 method page wired in front end', ['methodPane', 'methodRoster', 'methodStageCard', 'methodEffectCard'].every(id => indexHtml.includes(`id="${id}"`)) && appSrc.includes("'/api/method/start'") && appSrc.includes("'/api/method/settle'") && appSrc.includes('method_practice:')],
   ['v4.8.0 no method answer parsed as html', !/innerHTML = answer\b/.test(appSrc) && appSrc.includes('mdLite(data.feedback.coaching')],
-  ['v4.9.0 sw cache name bumped', sw.includes("'wb-shell-v4.9.0'")],
+  ['v4.9.0 sw cache name bumped', sw.includes("'wb-shell-v4.9.1'")],
   // v4.9.0：单词记忆宫殿。核心契约不是「有个 3D 页面」，而是四件容易退化的事：
   // ① 槽位固定 / 词流动（换词必须清掉旧联想，否则 A 的联想会挂在 B 身上）；
   // ② 复习结果真的折算 again/hard/good 进 quiz_srs（否则又是一个刷新即散的孤岛）；

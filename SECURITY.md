@@ -1,3 +1,4 @@
+> v4.9.1（2026-11-28）：本版只改前端交互与门禁，**安全姿态零变化**：iframe 仍只对 `/palace/` 放开同源嵌入（`X-Frame-Options: SAMEORIGIN` + `frame-ancestors 'self'`），其余路径保持 `DENY` / `'none'`；`palace.js` 新增的 `window.__palaceProbe` 是**只读快照**（读相机坐标与面板可见性），不暴露任何写入口、不接收外部输入、不参与业务逻辑，仅供门禁用真实浏览器断言「镜头真的动了」。点编号改为射线拾取、手机轻点地面可行走，均只影响输入处理，不新增任何网络请求或数据出口。
 # v4.0.0 安全审计与敏感信息扫描记录
 
 > v4.9.0（2026-11-28）：记忆宫殿的联想文本在子应用里一律走 `textContent` / `createTextNode`，**不拼进 `innerHTML`**；iframe 只允许**同源**嵌入（仅 `/palace/` 路径为 `X-Frame-Options: SAMEORIGIN` + `frame-ancestors 'self'`，其余路径仍 `DENY` / `'none'`，站点不可被第三方嵌），CSP 仅新增 `frame-src 'self'`。子应用请求 `/api/*` 走同源 Cookie（`credentials: same-origin`），未登录由服务端 401 拦截；`palace.json` 只记槽位、词、释义、联想与时间戳，**不记作答原文**（原文在 `learning_attempts`），损坏时改名留档。AI 只出候选、落盘由学习者确认，提示词里显式禁止色情/暴力/政治与真实人物；仍走 `fetchT` 超时护栏，无新增外部请求，未引入任何运行时依赖（three.js 为同源静态文件）。

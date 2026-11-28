@@ -1,3 +1,4 @@
+> v4.9.1（2026-11-28）：**记忆宫殿修复版**。v4.9.0 的 3D 子应用有一个致命缺陷——`bindInput()` 写好了却从未被调用，导致键盘走动、拖动转头、点地面、触摸全部失效，用户进到宫殿里只能站着，连「点编号放词」这个唯一入口都点不开。本版修复：① 在 `initThree()` 之后正确调用 `bindInput()`（直接放模块顶层会因 `renderer` 未创建而抛错白屏）；② 点编号改射线拾取，不再受 3.3m 距离限制；③ 拖动转头结束不再被当成点地面瞬移；④ 手机轻点地面可移动；⑤ 主站「开始复习」未就绪先排队，避免指令丢失。部署方式不变（先备份 `data/`，只应用产品文件）。无数据迁移、无新增依赖、无配置项。
 # 部署到阿里云 ECS（保持可更新）
 
 > v4.9.0（2026-11-28）：AI 学习新增「记忆宫殿」子页，3D 部分是独立子应用 `public/palace/`（原生 ES 模块 + 本地 vendored `three.module.min.js`），主站只用 iframe 挂载、首屏字节零增长。新增 `data/palace.json`（槽位 + 每槽的词与联想），**已加入备份与恢复文件清单**（含 `isPalaceShape` 结构校验、损坏改名留档、「备份不含则保留当前宫殿」），随 `data/` 一并备份、随 `--exclude data/` 一并排除。安全头仅对 `/palace/` 放开同源内嵌（`X-Frame-Options: SAMEORIGIN` + `frame-ancestors 'self'`），其余路径仍为 `DENY` / `'none'`；CSP 增加 `frame-src 'self'`。**部署须知**：`public/palace/vendor/three.module.min.js`（约 687KB）随仓库入库，rsync 会一并传输；首次发布后建议确认 nginx 对 `.js` 走 gzip（现有配置已覆盖）。无新增环境变量、无 schema 迁移、无配置项。

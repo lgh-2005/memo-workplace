@@ -2961,12 +2961,25 @@ function palaceMount() {
   if (ph) ph.hidden = true;
 }
 
+/* v4.9.1：修两个真缺陷。
+ * ① 首次点「开始复习」时 src 刚设置、子应用的事件监听器还没注册，postMessage 直接
+ *    发进虚空（iframe 收到消息但没人听）——表现为「点了没反应」。
+ *    改为：未就绪就排队，等子应用发来 palace:ready 再补发。
+ * ② 之前只判 `frame.hidden`，iframe 尚未挂载时直接 return，指令也丢了。 */
+const palaceCmdQueue = [];
+
 function palaceSendReview() {
   const frame = $('#palaceFrame');
-  if (!frame || frame.hidden || !frame.contentWindow) { palaceMount(); return; }
-  try {
-    frame.contentWindow.postMessage({ type: 'palace:command', command: 'review' }, location.origin);
-  } catch { /* 忽略 */ }
+  if (!frame) return;
+  palaceMount();
+  const send = () => {
+    try {
+      frame.contentWindow.postMessage({ type: 'palace:command', command: 'review' }, location.origin);
+    } catch { /* 忽略 */ }
+  };
+  // 已就绪（收到过 palace:ready）就直发；否则排队，ready 后补发
+  if (palaceState.ready) send();
+  else palaceCmdQueue.push(send);
 }
 
 $$('#studySubbar .study-sub-item').forEach(b => b.addEventListener('click', () => switchStudySub(b.dataset.sub)));
@@ -2984,7 +2997,6 @@ $('#palaceRefreshBtn')?.addEventListener('click', async () => {
   }
 });
 $('#palaceReviewBtn')?.addEventListener('click', () => {
-  palaceMount();
   palaceSendReview();
 });
 
@@ -2994,6 +3006,11 @@ window.addEventListener('message', (ev) => {
   if (d.type === 'palace:ready') {
     palaceState.ready = true;
     if (d.stats) { palaceState.stats = d.stats; palaceRenderStat(); }
+    // 子应用就绪了：把等待中的指令补发出去
+    while (palaceCmdQueue.length) {
+      const fn = palaceCmdQueue.shift();
+      try { fn(); } catch { /* 忽略 */ }
+    }
   }
 });
 
