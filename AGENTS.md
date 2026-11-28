@@ -19,7 +19,7 @@
 > **本文件是「memo bench」这个新工作区的唯一工作手册。** 承接自 `D:\ai\opencode\momo`（opencode 工作区，含旧 AGENTS.md 与《版本号经历.md》），本工作区从 v3.7.0 / `4c2436f` 起独立开发。
 >
 > **工作区根 = 仓库根**：`D:\ai\opencode\momo\english-workbench`（v3.7.x 时代的 `D:\ai\dsh\cli\memo bench` 已分叉为历史副本；发布一律以 Gitee `master` 为准）。
-> 当前版本口径：**v4.7.0**（2026-11-28）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
+> 当前版本口径：**v4.8.0**（2026-11-28）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
 
 ---
 
@@ -155,8 +155,9 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 
 ---
 
-## 6. 当前状态（v4.7.0，2026-11-28）
+## 6. 当前状态（v4.8.0，2026-11-28）
 
+- **v4.8.0 发布确认（北京时间 2026-11-28 19:40）**：Gitee / GitHub `master` 与 `v4.8.0` 标签均指向 `82ff7655349d8b04b2595e24cf2cb1de2ab7b2ee`；[CI Node 22/24](https://github.com/lgh-2005/memo-workplace/actions/runs/46141250649) completed/success。ECS `/opt/workbench` HEAD = `82ff765`，`workbench.service` **active**，公网 `online-health --url http://121.43.177.191 --expected-version 4.8.0` **5/5**；线上 `v4.8.0` 版本标识 **3 处**、`v4.7.0` 0 处、`sw.js` = `wb-shell-v4.8.0`、`package.json` = 4.8.0；`/api/method/list|effect|start` 未登录一律 401（路由存在且受保护）；方法页浏览器实测 **30/30**：四套方法卡片、8/8 图标带 mask、7 种不同 mask 文件（brain/book/chat/compass/scale/scroll/play，不再是同一张 card.png）、零残留 emoji、零字面图标标记、无 JS 错误。部署前备份 `data_backup_v480_20261128-113554.tar.gz`（1.9M）；代码快照 `.releases/20261128-113554-pre-v480`。**本次 deploy.sh 的双仓门禁因 ECS 侧 `github.com` 被 DNS 解析到 `57.155.223.240` 而 3 项失败**（`api.github.com` 正常、Gitee 正常），与 §6 记载的既有条件一致；按 v3.3.5 / v3.3.6 / v3.5.3 / v4.4.1 同一处置方式完成等效安全部署（本地双仓 SHA 一致 + CI 成功 + 先备份 data + 只应用产品文件 + rsync 排除运行时 + 重启 + 健康检查）。运行时 `corpus/records.jsonl` 未被覆盖（仍 `M`，符合预期）；`data/method_ledger.json` 尚未生成（按需创建，符合预期）。
 - **v4.5.0 · 晨雾单界面（2026-11-27）**：① **设置去冗余**：只保留一行横列分区导航（发音与朗读 / 模型服务 / 墨墨连接 / 登录与安全 / 同步与备份 / 高级自定义 / 同步记录），点哪项只显示哪个分区，删除竖排折叠列表、「全部展开 / 收起」与重复卡片标题；活动分区记在本设备。② **只留晨雾**：经典 / 街机 / 波普 / 四套像素风格的入口、`applyStyle(t)` 与全部 `[data-style="…"]` 旧主题 CSS 删除（`style.css` 约 178KB → 140KB），旧 `localStorage['wb-style']` 自动清除。③ **朱印图标**：生图纸底 + 楷体「词」印，重出 `favicon.ico`（16/32/48）、`favicon.svg` 与 120–512px、maskable 全套。④ **门禁**：`release-check` 59 → **62 项**，`release-gate` 断言 4.5.0，`frontend-refinement-smoke` 改测「晨雾唯一风格 + 设置单面板 + 旧偏好迁移」，`mobile-device-check` 48 项，`npm test` 退出码 0。无数据迁移、无新增依赖。
 - **v4.6.0 发布确认（北京时间 2026-11-28 10:21）**：阿里云 ECS `/opt/workbench` HEAD = `3389952`，Gitee / GitHub `master` 与 `v4.6.0` 标签在发布时同名；部署前备份 `data_backup_v450_20261128-022121.tar.gz`，恢复演练通过；`workbench.service` 为 `active`，公网 `online-health --expected-version 4.6.0` **5/5**；线上 `v4.6.0` 版本标识 3 处、`hint-fold` 0 处、`styleGrid` 0 处、`exam_practice` 0 处；`/icons/ink/` 37 张 PNG 与 `mist.css`（75 条 ink 规则）全部 200，`sw.js` 已含 `icons/ink/sun.png`；[CI](https://github.com/lgh-2005/memo-workplace/actions/runs/46096960572) Node 22/24 通过。
 - **v4.5.0 发布确认（北京时间 2026-11-27 22:37）**：ECS `/opt/workbench` HEAD = `6505335`，Gitee / GitHub `master` 与 `v4.5.0` 标签在发布时同名；部署前备份 `data_backup_v441_20261127-143719.tar.gz`，恢复演练通过；`workbench.service` active，公网 5/5，线上旧风格 CSS 0 处、设置 9 个单分区、图标资源全部 200；[CI](https://github.com/lgh-2005/memo-workplace/actions/runs/46016565179) 通过。
