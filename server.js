@@ -772,6 +772,16 @@ function appendErrorLog(entry) {
 /* v2.8.0：日志版块——开发日志（内置，随版本更新）+ 使用日志（人工维护，data/logs.json） */
 const DEV_LOG = [
   {
+    version: '4.6.0', date: '2026-11-28', title: '水墨图标 · 去小字',
+    items: [
+      '全站删掉没有意义的解释性小字：页头副标题、分区小标签、卡片下说明、标题括号注释与提示折叠块一并移除，正文只留标题与操作。',
+      '系统小图标全部换成生图水墨图标族（36 枚，砖墨笔触）：桌面导航、手机底栏与「更多」抽屉、日志页签、卡片标题、常用按钮与词源胶囊统一换装。',
+      '图标以 mask-image 上色，白天黑夜共用一套图；已并入 Service Worker 外壳缓存，离线可用。',
+      '今日任务去掉「真题训练」：站点没有真题训练面，任务与其勾选接口一并下线（今日任务只剩今日词汇 / 到期与错题复习）。',
+      '无数据迁移、无新增依赖、无配置项。',
+    ],
+  },
+  {
     version: '4.5.0', date: '2026-11-27', title: '晨雾单界面',
     items: [
       '设置页只保留一行横列分区导航：点哪一项就只显示该分区，去掉重复的竖排折叠列表与「全部展开 / 收起」。',
@@ -4957,7 +4967,7 @@ function kbSearch(query, limit = 30, sourceKind = 'all') {
   if (!q || q.length > 100) return [];
   const lower = q.toLowerCase();
   const isAscii = /^[\x20-\x7e]+$/.test(q);
-  
+
   let re = null;
   if (isAscii) {
     // 获取全部变体词形构建高性能正则词界匹配
@@ -7699,7 +7709,7 @@ function serveStaticFile(req, res, filePath) {
 }
 
 /* v3.3.6：今日任务中心与考试计划；v4.3.1 删除「听说训练」及其任务项 */
-const STUDY_TASK_IDS = new Set(['vocab_today', 'review_due', 'exam_practice']);
+const STUDY_TASK_IDS = new Set(['vocab_today', 'review_due']);
 function validStudyDate(date) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return false;
   const [year, month, day] = date.split('-').map(Number);
@@ -7790,13 +7800,11 @@ function studyTasks(date = bjDate(), plan = loadStudyPlan()) {
   const counts = {
     vocab_today: Math.max(vocab.size, progress?.finished || 0),
     review_due: new Set(attempts.filter(x => x.kind === 'word_quiz' && ['srs', 'srs_review', 'wrongbook'].includes(x.meta?.mode)).map(x => x.meta?.word || x.itemId)).size,
-    exam_practice: attempts.filter(x => ['unit_objective', 'translation', 'writing', 'vocab_context', 'vocab_cloze'].includes(x.kind)).length,
   };
   const completed = completedStudyTasksFor(date, plan);
   const tasks = [
     { id: 'vocab_today', title: '今日词汇', icon: '🔤', target: plan.dailyWords, detail: `${counts.vocab_today}/${plan.dailyWords} 词 · 今日词表 ${Object.values(db.words).filter(x => x.today?.date === date).length}`, tab: 'study' },
     { id: 'review_due', title: '到期与错题复习', icon: '🔁', target: due + counts.review_due, detail: `${counts.review_due} 词已练 · ${due} 词待复习（去重）`, tab: 'quiz' },
-    { id: 'exam_practice', title: '真题训练', icon: '📝', target: 1, detail: `${counts.exam_practice}/1 次`, tab: 'kb' },
   ];
   return tasks.map(t => {
     const automatic = counts[t.id] >= t.target;

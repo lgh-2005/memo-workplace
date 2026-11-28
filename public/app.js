@@ -481,7 +481,8 @@ function expandCard(targetSel) {
 }
 
 function setCollapseToggleLabel(btn, collapsed) {
-  btn.textContent = collapsed ? '展开 ▾' : '收起 ▴';
+  btn.textContent = collapsed ? '展开' : '收起';
+  btn.setAttribute('aria-expanded', String(!collapsed));
 }
 
 /* 全站折叠按钮事件委托：点按切换 data-collapse-target 指向的内容体 */
@@ -838,11 +839,6 @@ function openStudyWords(filter = 'today', search = '') {
 
 function openStudyTask(task) {
   if (task.id === 'vocab_today') { openStudyWords(); return; }
-  if (task.id === 'exam_practice') {
-    // Select the exam filter before the tab loads, even after the user last read an external article.
-    kbState.filter = '真题';
-    $$('#kbFilters .chip').forEach(chip => chip.classList.toggle('active', chip.dataset.kcat === '真题'));
-  }
   switchTab(task.tab);
   if (task.id === 'review_due') $('[data-submode="srs"]')?.click();
 }
@@ -853,7 +849,7 @@ function renderMistTasks(tasks) {
   const ratio = tasks.length ? Math.round(done * 100 / tasks.length) : 0;
   $('#mistTaskRing').setAttribute('stroke-dasharray', `${ratio} 100`);
   $('#mistTicketSummary').textContent = tasks.length ? `${done} / ${tasks.length} 项已完成` : '暂无任务';
-  const title = { vocab_today: '今日词汇', review_due: '到期与错题', exam_practice: '真题训练' };
+  const title = { vocab_today: '今日词汇', review_due: '到期与错题' };
   // v4.4.1：票据格改成按钮——点一格直接进入对应任务（与下方「今日任务」共用同一份数据）
   $('#mistTaskCells').innerHTML = tasks.map(task => {
     const count = Number(task.count) || 0, target = Number(task.target) || 0;
@@ -873,9 +869,7 @@ function renderMistTasks(tasks) {
     });
   }
   const next = tasks.find(task => !task.done);
-  $('#mistNextTask').textContent = ({ vocab_today: '开始今日词汇', review_due: '继续词汇复习', exam_practice: '打开真题语料' })[next?.id] || '查看今日任务';
-  $('#mistTodayLead').textContent = next ? `从「${next.title}」开始，接着完成今天的计划。`
-    : tasks.length ? '今天的任务已完成。可以再练一节微课，或回看学习报告。' : '查看今日任务，再挑一组词练习。';
+  $('#mistNextTask').textContent = ({ vocab_today: '开始今日词汇', review_due: '继续词汇复习' })[next?.id] || '查看今日任务';
 }
 
 function mistJumpTask(id) {
@@ -3071,10 +3065,14 @@ $('#noteModalSave').addEventListener('click', async () => {
 
 function applyTheme(t) {
   document.documentElement.dataset.theme = t;
-  const btn = $('#themeToggle');
-  if (btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
-  const mBtn = $('#mobileThemeToggle');
-  if (mBtn) mBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+  const icon = t === 'dark' ? 'sun' : 'moon';
+  ['#themeToggle', '#mobileThemeToggle'].forEach(sel => {
+    const btn = $(sel);
+    const i = btn && btn.querySelector('.ink-toggle');
+    if (!i) return;
+    i.classList.remove('ink-sun', 'ink-moon');
+    i.classList.add('ink-' + icon);
+  });
   localStorage.setItem('wb-theme', t);
   updateThemeColor();
 }
@@ -3963,7 +3961,7 @@ function renderPaginationBar(containerId, currentPage, totalPages, totalCount, o
   container.style.display = 'flex';
   let html = '';
   html += `<button class="page-btn" data-page="${currentPage - 1}" ${currentPage <= 1 ? 'disabled' : ''}>上一页</button>`;
-  
+
   // 生成页码序列（显示第 1 页、当前页前后各 1 页、最后一页，中间省略号）
   const pages = [];
   pages.push(1);
@@ -6265,12 +6263,22 @@ function autoSpeakQuizWord(kind, spelling) {
   speak(spelling);
 }
 
-/* v3.2.1：词源/复练范围 chip 显示具体数目 */
+/* v3.2.1：词源/复练范围 chip 显示具体数目（v4.6.0：只改文字节点，保留水墨图标） */
 function setChipCount(chip, n) {
   if (!chip) return;
-  if (!chip.dataset.baseLabel) chip.dataset.baseLabel = chip.textContent.trim();
-  const base = chip.dataset.baseLabel;
-  chip.textContent = Number.isFinite(n) ? `${base} · ${n}` : base;
+  let label = chip.querySelector('.chip-label');
+  if (!label) {
+    label = document.createElement('span');
+    label.className = 'chip-label';
+    Array.from(chip.childNodes).forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) label.appendChild(node);
+    });
+    label.textContent = label.textContent.trim();
+    chip.appendChild(label);
+  }
+  if (!label.dataset.baseLabel) label.dataset.baseLabel = label.textContent.trim();
+  const base = label.dataset.baseLabel;
+  label.textContent = Number.isFinite(n) ? `${base} · ${n}` : base;
 }
 
 async function loadQuizSourceCounts() {
@@ -7359,22 +7367,22 @@ window.addEventListener('keydown', e => {
    —— 全部走 DOM 事件委托，不新增内联处理器（CSP 仍无 unsafe-inline script）。
    ====================================================================== */
 const MIST_TAB_ACTIONS = [
-  { tab: 'dashboard', icon: '📊', title: '今日学习', hint: '今日任务、词卡与墨墨概况', kbd: 'Alt+1' },
-  { tab: 'study', icon: '💬', title: 'AI 学习', hint: '词汇微课、词文成章与自由提问', kbd: 'Alt+2' },
-  { tab: 'quiz', icon: '📝', title: '测验', hint: '基础回忆 / 错题复练 / 真题迁移', kbd: 'Alt+3' },
-  { tab: 'kb', icon: '📚', title: '语料库', hint: '外刊、教材与真题整卷检索', kbd: 'Alt+4' },
-  { tab: 'notes', icon: '📖', title: '助记库', hint: '回看助记并推送到墨墨', kbd: 'Alt+5' },
-  { tab: 'reports', icon: '📈', title: '学习报告', hint: '练习量、正确率与薄弱点', kbd: 'Alt+6' },
-  { tab: 'settings', icon: '⚙️', title: '设置', hint: 'AI 服务、发音、墨墨连接与备份', kbd: 'Alt+7' },
+  { tab: 'dashboard', icon: 'dashboard', title: '今日学习', hint: '今日任务、词卡与墨墨概况', kbd: 'Alt+1' },
+  { tab: 'study', icon: 'study', title: 'AI 学习', hint: '词汇微课、词文成章与自由提问', kbd: 'Alt+2' },
+  { tab: 'quiz', icon: 'quiz', title: '测验', hint: '基础回忆 / 错题复练 / 真题迁移', kbd: 'Alt+3' },
+  { tab: 'kb', icon: 'kb', title: '语料库', hint: '外刊、教材与真题整卷检索', kbd: 'Alt+4' },
+  { tab: 'notes', icon: 'notes', title: '助记库', hint: '回看助记并推送到墨墨', kbd: 'Alt+5' },
+  { tab: 'reports', icon: 'reports', title: '学习报告', hint: '练习量、正确率与薄弱点', kbd: 'Alt+6' },
+  { tab: 'settings', icon: 'settings', title: '设置', hint: 'AI 服务、发音、墨墨连接与备份', kbd: 'Alt+7' },
 ];
 const MIST_ACTION_ITEMS = [
-  { icon: '🃏', title: '打开悬浮词表', hint: '回到 AI 学习页的词表浮层', keywords: '词表 word vocab 选词', run: () => { switchStudySub('vocab', { load: false }); switchTab('study'); setTimeout(() => { const fab = $('#wordFab'); if (fab) fab.click(); }, 80); } },
-  { icon: '🔄', title: '立即同步墨墨', hint: '拉取今日词表、进度与顽固词', keywords: '同步 sync 刷新', run: () => { const badge = $('#syncBadge'); if (badge) badge.click(); } },
-  { icon: '🔁', title: '开始错题复练', hint: '直接进入测验的错题复练模式', keywords: '错题 srs 复练 wrongbook', run: () => { switchTab('quiz'); const btn = $('[data-submode="srs"]'); if (btn) btn.click(); } },
-  { icon: '📋', title: '整理考试计划', hint: '打开「调整考试计划」并聚焦', keywords: '计划 plan 考试 每日', run: () => { switchTab('dashboard'); const card = $('#studyPlanCard'); if (card) { card.open = true; card.scrollIntoView({ block: 'center' }); } } },
-  { icon: '🌙', title: '切换昼夜主题', hint: '在白天与夜晚之间来回切换', keywords: '主题 theme 黑夜 白天 dark', run: () => { const btn = $('#themeToggle'); if (btn) btn.click(); } },
-  { icon: '🧘', title: '专注禅模式', hint: '收起导航，只留正文（快捷键 Z）', keywords: '禅 zen focus 专注', run: () => { const btn = $('#zenToggle'); if (btn) btn.click(); } },
-  { icon: '🗒', title: '日志版块', hint: '开发日志、使用日志与报错日志', keywords: '日志 log 报错 版本', run: () => openLogs() },
+  { icon: 'book', title: '打开悬浮词表', hint: '回到 AI 学习页的词表浮层', keywords: '词表 word vocab 选词', run: () => { switchStudySub('vocab', { load: false }); switchTab('study'); setTimeout(() => { const fab = $('#wordFab'); if (fab) fab.click(); }, 80); } },
+  { icon: 'refresh', title: '立即同步墨墨', hint: '拉取今日词表、进度与顽固词', keywords: '同步 sync 刷新', run: () => { const badge = $('#syncBadge'); if (badge) badge.click(); } },
+  { icon: 'quiz', title: '开始错题复练', hint: '直接进入测验的错题复练模式', keywords: '错题 srs 复练 wrongbook', run: () => { switchTab('quiz'); const btn = $('[data-submode="srs"]'); if (btn) btn.click(); } },
+  { icon: 'notes', title: '整理考试计划', hint: '打开「调整考试计划」并聚焦', keywords: '计划 plan 考试 每日', run: () => { switchTab('dashboard'); const card = $('#studyPlanCard'); if (card) { card.open = true; card.scrollIntoView({ block: 'center' }); } } },
+  { icon: 'moon', title: '切换昼夜主题', hint: '在白天与夜晚之间来回切换', keywords: '主题 theme 黑夜 白天 dark', run: () => { const btn = $('#themeToggle'); if (btn) btn.click(); } },
+  { icon: 'zen', title: '专注禅模式', hint: '收起导航，只留正文（快捷键 Z）', keywords: '禅 zen focus 专注', run: () => { const btn = $('#zenToggle'); if (btn) btn.click(); } },
+  { icon: 'logs', title: '日志版块', hint: '开发日志、使用日志与报错日志', keywords: '日志 log 报错 版本', run: () => openLogs() },
 ];
 let mistPaletteRows = [];
 let mistPaletteIndex = 0;
@@ -7399,7 +7407,7 @@ function mistPaletteRender() {
   mistPaletteIndex = Math.min(mistPaletteIndex, mistPaletteRows.length - 1);
   box.innerHTML = mistPaletteRows.map((row, i) => `
     <button type="button" class="mist-palette-row" role="option" data-palette-index="${i}" aria-selected="${i === mistPaletteIndex}">
-      <span class="mist-palette-row-icon" aria-hidden="true">${row.icon}</span>
+      <i class="mist-palette-row-icon ink-ico ink-${row.icon}" aria-hidden="true"></i>
       <span class="mist-palette-row-main"><span class="mist-palette-row-title">${esc(row.title)}</span><span class="mist-palette-row-hint">${esc(row.hint)}</span></span>
       ${row.kbd ? `<kbd class="mist-palette-row-kbd">${esc(row.kbd)}</kbd>` : ''}
     </button>`).join('');

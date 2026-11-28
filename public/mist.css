@@ -149,6 +149,12 @@
   background: var(--card); color: var(--text-sub); font-size: 11.5px; min-height: 32px;
 }
 [data-style="mist"] .card-collapse-toggle:hover { color: var(--text); border-color: var(--mist-hair); }
+[data-style="mist"] .card-collapse-toggle::after {
+  content: ''; display: inline-block; width: 5px; height: 5px; margin-inline-start: 6px; vertical-align: 1px;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg); transition: transform .18s var(--mist-ease);
+}
+[data-style="mist"] .card-collapse-toggle[aria-expanded="false"]::after { transform: rotate(-135deg); }
 
 /* 分页 */
 [data-style="mist"] .pagination-bar { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; padding: 6px 0; }
@@ -204,17 +210,20 @@
   [data-style="mist"] #appSidebar .brand-text { font-size: 13px; letter-spacing: .02em; }
   [data-style="mist"] #appSidebar .sidebar-head-tools { margin: 0; }
   [data-style="mist"] #appSidebar .ver { display: inline-block; white-space: nowrap; font-size: 10.5px; color: var(--text-sub); }
-  [data-style="mist"] #appSidebar :is(.sidebar-toggle, .tab-group-label, .tab-icon) { display: none; }
+  [data-style="mist"] #appSidebar :is(.sidebar-toggle, .tab-group-label) { display: none; }
   [data-style="mist"] #appSidebar .tabs {
     display: flex; flex-flow: row nowrap; gap: 2px; justify-self: center; max-width: 100%; overflow: visible;
     padding: 3px; border: 1px solid var(--border); border-radius: 999px; background: var(--card);
   }
   [data-style="mist"] #appSidebar .tab {
-    display: grid; place-items: center; width: auto; height: auto; min-height: 34px;
+    display: inline-flex; align-items: center; width: auto; height: auto; min-height: 34px;
     padding: 4px clamp(6px, 1.15vw, 16px); border: 1px solid transparent; border-radius: 999px;
     color: var(--text-sub); white-space: nowrap; font-size: 12px; transform: none; text-shadow: none;
   }
   [data-style="mist"] #appSidebar .tab-text { display: inline; }
+[data-style="mist"] #appSidebar .tab { flex: 0 0 auto; }
+[data-style="mist"] #appSidebar .tab-text { overflow: visible; text-overflow: clip; }
+@media (max-width: 1200px) { [data-style="mist"] #appSidebar .tab-icon { display: none; } }
   [data-style="mist"] #appSidebar .tab:hover { background: var(--mist-soft); color: var(--text); }
   [data-style="mist"] #appSidebar .tab.active { background: var(--text); color: var(--bg); font-weight: 600; }
   [data-style="mist"] #appSidebar .tab.active::before { display: none; }
@@ -736,6 +745,8 @@
 [data-theme="dark"] .mist-palette-row { color: #f3eee6; }
 [data-theme="dark"] .mist-palette-row[aria-selected="true"] { background: #262a2f; }
 [data-theme="dark"] .mist-palette-row-icon { background: #222529; }
+[data-style="mist"] .mist-palette-row-icon.ink-ico { width: 26px; height: 26px; color: var(--text-sub); }
+[data-style="mist"] .mist-palette-row[aria-selected="true"] .mist-palette-row-icon.ink-ico { color: var(--text); }
 [data-theme="dark"] :is(.mist-palette-row-hint, .mist-palette-row-kbd, .mist-palette-foot, .mist-palette-empty) { color: #a49d94; }
 [data-theme="dark"] :is(.mist-palette-row-kbd, .mist-palette-foot) { border-color: #35383c; }
 [data-theme="dark"] .mist-palette-scrim { background: #0009; }
@@ -889,3 +900,82 @@
   }
   .mist-palette-shell, .mist-palette-scrim { animation: none !important; }
 }
+
+/* 20 · 水墨图标族（v4.6.0）--------------------------------------------------
+   图标资产：public/icons/ink/<name>.png（96×96，白墨 + 透明底）。
+   用 mask-image 上色，因此图标跟随 currentColor，昼夜两主题共用一套图。 */
+[data-style="mist"] .ink-ico,
+[data-style="mist"] .ink-toggle,
+[data-style="mist"] .ink-tab,
+[data-style="mist"] .ink-card,
+[data-style="mist"] .ink-btn,
+[data-style="mist"] .ink-chip,
+[data-style="mist"] .tab-icon,
+[data-style="mist"] .bottom-tab-icon,
+[data-style="mist"] .more-item-icon,
+[data-style="mist"] .word-fab-icon,
+[data-style="mist"] .mist-palette-row-icon {
+  display: inline-block; flex: none; vertical-align: -0.16em;
+  background-color: currentColor; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-position: center; mask-position: center;
+  -webkit-mask-size: contain; mask-size: contain;
+}
+
+/* 侧栏 / 顶栏导航 */
+[data-style="mist"] .tab-icon { width: 19px; height: 19px; margin-inline-end: 7px; vertical-align: -0.24em; }
+/* 顶栏胶囊：图标 + 文字（v4.6.0 起换成水墨图标） */
+[data-style="mist"] .mobile-bottom-bar .bottom-tab-icon { width: 23px; height: 23px; margin: 0 auto 3px; display: block; vertical-align: 0; }
+[data-style="mist"] .more-sheet-item .more-item-icon { width: 22px; height: 22px; }
+[data-style="mist"] .word-fab-icon { width: 20px; height: 20px; }
+
+/* 页脚工具按钮 */
+[data-style="mist"] .theme-toggle .ink-toggle { width: 19px; height: 19px; }
+
+/* 日志页签 */
+[data-style="mist"] .logs-tab .ink-tab { width: 15px; height: 15px; margin-inline-end: 6px; vertical-align: -0.18em; }
+
+/* 卡片标题 */
+[data-style="mist"] .card-title .ink-card { width: 16px; height: 16px; margin-inline-end: 7px; vertical-align: -0.17em; }
+
+/* 按钮 / 胶囊 */
+[data-style="mist"] .btn .ink-btn { width: 15px; height: 15px; margin-inline-end: 6px; vertical-align: -0.16em; }
+[data-style="mist"] .chip .ink-chip { width: 14px; height: 14px; margin-inline-end: 5px; vertical-align: -0.14em; }
+
+/* 图标资产映射 */
+[data-style="mist"] .ink-dashboard { -webkit-mask-image: url('/icons/ink/dashboard.png'); mask-image: url('/icons/ink/dashboard.png'); }
+[data-style="mist"] .ink-study { -webkit-mask-image: url('/icons/ink/study.png'); mask-image: url('/icons/ink/study.png'); }
+[data-style="mist"] .ink-quiz { -webkit-mask-image: url('/icons/ink/quiz.png'); mask-image: url('/icons/ink/quiz.png'); }
+[data-style="mist"] .ink-kb { -webkit-mask-image: url('/icons/ink/kb.png'); mask-image: url('/icons/ink/kb.png'); }
+[data-style="mist"] .ink-notes { -webkit-mask-image: url('/icons/ink/notes.png'); mask-image: url('/icons/ink/notes.png'); }
+[data-style="mist"] .ink-reports { -webkit-mask-image: url('/icons/ink/reports.png'); mask-image: url('/icons/ink/reports.png'); }
+[data-style="mist"] .ink-settings { -webkit-mask-image: url('/icons/ink/settings.png'); mask-image: url('/icons/ink/settings.png'); }
+[data-style="mist"] .ink-logs { -webkit-mask-image: url('/icons/ink/logs.png'); mask-image: url('/icons/ink/logs.png'); }
+[data-style="mist"] .ink-usage { -webkit-mask-image: url('/icons/ink/usage.png'); mask-image: url('/icons/ink/usage.png'); }
+[data-style="mist"] .ink-more { -webkit-mask-image: url('/icons/ink/more.png'); mask-image: url('/icons/ink/more.png'); }
+[data-style="mist"] .ink-book { -webkit-mask-image: url('/icons/ink/book.png'); mask-image: url('/icons/ink/book.png'); }
+[data-style="mist"] .ink-target { -webkit-mask-image: url('/icons/ink/target.png'); mask-image: url('/icons/ink/target.png'); }
+[data-style="mist"] .ink-quill { -webkit-mask-image: url('/icons/ink/quill.png'); mask-image: url('/icons/ink/quill.png'); }
+[data-style="mist"] .ink-frame { -webkit-mask-image: url('/icons/ink/frame.png'); mask-image: url('/icons/ink/frame.png'); }
+[data-style="mist"] .ink-satellite { -webkit-mask-image: url('/icons/ink/satellite.png'); mask-image: url('/icons/ink/satellite.png'); }
+[data-style="mist"] .ink-globe { -webkit-mask-image: url('/icons/ink/globe.png'); mask-image: url('/icons/ink/globe.png'); }
+[data-style="mist"] .ink-key { -webkit-mask-image: url('/icons/ink/key.png'); mask-image: url('/icons/ink/key.png'); }
+[data-style="mist"] .ink-refresh { -webkit-mask-image: url('/icons/ink/refresh.png'); mask-image: url('/icons/ink/refresh.png'); }
+[data-style="mist"] .ink-shield { -webkit-mask-image: url('/icons/ink/shield.png'); mask-image: url('/icons/ink/shield.png'); }
+[data-style="mist"] .ink-audio { -webkit-mask-image: url('/icons/ink/audio.png'); mask-image: url('/icons/ink/audio.png'); }
+[data-style="mist"] .ink-moon { -webkit-mask-image: url('/icons/ink/moon.png'); mask-image: url('/icons/ink/moon.png'); }
+[data-style="mist"] .ink-zen { -webkit-mask-image: url('/icons/ink/zen.png'); mask-image: url('/icons/ink/zen.png'); }
+[data-style="mist"] .ink-memory { -webkit-mask-image: url('/icons/ink/memory.png'); mask-image: url('/icons/ink/memory.png'); }
+[data-style="mist"] .ink-save { -webkit-mask-image: url('/icons/ink/save.png'); mask-image: url('/icons/ink/save.png'); }
+[data-style="mist"] .ink-trash { -webkit-mask-image: url('/icons/ink/trash.png'); mask-image: url('/icons/ink/trash.png'); }
+[data-style="mist"] .ink-robot { -webkit-mask-image: url('/icons/ink/robot.png'); mask-image: url('/icons/ink/robot.png'); }
+[data-style="mist"] .ink-bulb { -webkit-mask-image: url('/icons/ink/bulb.png'); mask-image: url('/icons/ink/bulb.png'); }
+[data-style="mist"] .ink-palette { -webkit-mask-image: url('/icons/ink/palette.png'); mask-image: url('/icons/ink/palette.png'); }
+[data-style="mist"] .ink-plus { -webkit-mask-image: url('/icons/ink/plus.png'); mask-image: url('/icons/ink/plus.png'); }
+[data-style="mist"] .ink-search { -webkit-mask-image: url('/icons/ink/search.png'); mask-image: url('/icons/ink/search.png'); }
+[data-style="mist"] .ink-warn { -webkit-mask-image: url('/icons/ink/warn.png'); mask-image: url('/icons/ink/warn.png'); }
+[data-style="mist"] .ink-check { -webkit-mask-image: url('/icons/ink/check.png'); mask-image: url('/icons/ink/check.png'); }
+[data-style="mist"] .ink-download { -webkit-mask-image: url('/icons/ink/download.png'); mask-image: url('/icons/ink/download.png'); }
+[data-style="mist"] .ink-spark { -webkit-mask-image: url('/icons/ink/spark.png'); mask-image: url('/icons/ink/spark.png'); }
+[data-style="mist"] .ink-camera { -webkit-mask-image: url('/icons/ink/camera.png'); mask-image: url('/icons/ink/camera.png'); }
+[data-style="mist"] .ink-sun { -webkit-mask-image: url('/icons/ink/sun.png'); mask-image: url('/icons/ink/sun.png'); }
+[data-style="mist"] .ink-pause { -webkit-mask-image: url('/icons/ink/pause.png'); mask-image: url('/icons/ink/pause.png'); }

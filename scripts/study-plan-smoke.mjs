@@ -65,10 +65,14 @@
    if (r.response.status !== 400) throw new Error('invalid exam date accepted');
    r = await json('/api/study/plan', {}, studentCookie);
    if (r.response.status !== 200 || r.body.plan.examDate || r.body.plan.dailyWords === 20) throw new Error('study plan leaked across users');
-   r = await json('/api/study/tasks/complete', { method: 'POST', body: JSON.stringify({ taskId: 'exam_practice', completed: true }) }, studentCookie);
-   if (r.response.status !== 200 || !r.body.tasks.find(x => x.id === 'exam_practice')?.done) throw new Error('task completion failed');
+   r = await json('/api/study/tasks/complete', { method: 'POST', body: JSON.stringify({ taskId: 'review_due', completed: true }) }, studentCookie);
+   if (r.response.status !== 200 || !r.body.tasks.find(x => x.id === 'review_due')?.done) throw new Error('task completion failed');
    r = await json('/api/study/tasks', {}, studentCookie);
-   if (!r.body.tasks.find(x => x.id === 'exam_practice')?.done) throw new Error('task completion did not persist');
+   if (!r.body.tasks.find(x => x.id === 'review_due')?.done) throw new Error('task completion did not persist');
+   // v4.6.0：今日任务去掉「真题训练」（站点没有真题训练面），任务与勾选接口都必须拒绝该 id
+   if (r.body.tasks.find(x => x.id === 'exam_practice')) throw new Error('exam_practice task still present');
+   let removedExamTask = await json('/api/study/tasks/complete', { method: 'POST', body: JSON.stringify({ taskId: 'exam_practice', completed: true }) }, studentCookie);
+   if (removedExamTask.response.status !== 400) throw new Error('removed exam_practice task id was still accepted');
    // v4.3.1：听说训练整链路下线——两条接口必须 404，任务列表不再出现听力/口语任务
    r = await json('/api/speaking/session', { method: 'POST', body: JSON.stringify({ mode: 'listening' }) }, studentCookie);
    if (r.response.status !== 404) throw new Error('removed speaking session endpoint still responds: ' + r.response.status);

@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -16,11 +16,13 @@ const sw = await readFile(join(root, 'public', 'sw.js'), 'utf8');
 const mistCss = await readFile(join(root, 'public', 'mist.css'), 'utf8');
 const styleCss = await readFile(join(root, 'public', 'style.css'), 'utf8');
 const faviconSvg = await readFile(join(root, 'public', 'icons', 'favicon.svg'), 'utf8');
+const inkDir = join(root, 'public', 'icons', 'ink');
+const inkFiles = (await readdir(inkDir)).filter(name => name.endsWith('.png')).sort();
 const iconFiles = ['favicon.ico', 'favicon.svg', 'icon-120.png', 'icon-152.png', 'icon-167.png', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'maskable-192.png', 'maskable-512.png'];
 const mistAssets = ['mist.css', ...['hero-dawn', 'hero-night', 'paper', 'cover-lesson', 'cover-ridge', 'band-report', 'cover-quiz', 'cover-library', 'cover-notes', 'cover-settings', 'empty-ink'].map(name => `mist/${name}.webp`)];
 const required = [
   // v3.8.0：版本断言改为跟随 package.json，避免每次发版都要改脚本（沿用 v3.7.1 思路）
-  ['package version', packageJson.version === '4.5.0'],
+  ['package version', packageJson.version === '4.6.0'],
   // v4.0.0：定位收缩为「英语单词学习工作台」——真题并入语料库、做题面下线、番茄钟与写作升格删除
   ['v4 removed writing api', !/p === '\/api\/writing\//.test(serverSrc)],
   ['v4 removed unit api', !/p === '\/api\/unit\//.test(serverSrc)],
@@ -47,6 +49,13 @@ const required = [
   ['v4.5.0 settings panels are sections', (indexHtml.match(/class="settings-section settings-panel"/g) || []).length >= 7 && !indexHtml.includes('<details class="settings-section"')],
   ['v4.5.0 mist is the only UI style', !indexHtml.includes('styleGrid') && !appSrc.includes('applyStyle(t') && !/(^|\n)\s*\[data-style="(classic|arcade|pop|mc)/.test(styleCss)],
   ['v4.5.0 seal favicon and pwa icon family', iconFiles.every(name => exists(join(root, 'public', 'icons', name))) && faviconSvg.includes('词') && sw.includes("'/icons/favicon.ico'")],
+  // v4.6.0：删掉无意义解释性小字 + 生图水墨图标族 + 今日任务去掉「真题训练」
+  ['v4.6.0 explanatory micro-copy removed', !indexHtml.includes('class="hint-fold"') && !indexHtml.includes('<span class="mist-kicker">') && (indexHtml.match(/class="[^"]*\bhint\b[^"]*"/g) || []).length <= 7 && !/<p[ >]/.test(indexHtml)],
+  ['v4.6.0 ink icon family shipped', inkFiles.length >= 36 && inkFiles.every(name => exists(join(inkDir, name))) && mistCss.includes('/icons/ink/dashboard.png') && sw.includes("'/icons/ink/notes.png'") && sw.includes("'/icons/ink/sun.png'")],
+  ['v4.6.0 emoji glyphs replaced in chrome', !/class="tab-icon" aria-hidden="true">[^<]/.test(indexHtml) && !/class="bottom-tab-icon">[^<]/.test(indexHtml) && !/class="more-item-icon">[^<]/.test(indexHtml) && !/id="themeToggle"[^>]*>[^<]+\s*<\/button>/.test(indexHtml) && !/id="mobileThemeToggle"[^>]*>[^<]+\s*<\/button>/.test(indexHtml)],
+  ['v4.6.0 chip counts keep ink icons', appSrc.includes("chip.querySelector('.chip-label')") && !/chip\.textContent\s*=\s*Number\.isFinite/.test(appSrc)],
+  ['v4.6.0 theme toggle swaps ink class', appSrc.includes("classList.add('ink-' + icon)") && !appSrc.includes("btn.textContent = t === 'dark'")],
+  ['v4.6.0 exam_practice task retired', !serverSrc.includes("id: 'exam_practice'") && !serverSrc.includes("'vocab_today', 'review_due', 'exam_practice'") && !appSrc.includes("exam_practice: '真题训练'")],
   ['deploy dry-run', deploy.includes('--dry-run') && deploy.includes('DRY_RUN')],
   ['rollback dry-run', rollback.includes('--dry-run') && rollback.includes('DRY_RUN')],
   ['deploy data exclusion', deploy.includes('--exclude data/')],

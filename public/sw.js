@@ -1,4 +1,4 @@
-/* 英语单词学习工作台 · Service Worker（v4.5.0）
+/* 英语单词学习工作台 · Service Worker（v4.6.0）
  * 目标：把「应用外壳」缓存到本地，断网也能打开界面（数据仍走 /api 联网）。
  * 注意：Service Worker 只在安全上下文（HTTPS / localhost）生效；
  *       本项目默认入口为 http://IP，此时浏览器不会注册本文件（app.js 侧已做守卫），
@@ -6,7 +6,7 @@
  */
 'use strict';
 
-const SHELL_CACHE = 'wb-shell-v4.5.0';
+const SHELL_CACHE = 'wb-shell-v4.6.0';
 const SHELL_ASSETS = [
   '/',
   '/index.html',
@@ -29,6 +29,43 @@ const SHELL_ASSETS = [
   '/icons/icon-512.png',
   '/icons/favicon.ico',
   '/icons/favicon.svg',
+  '/icons/ink/audio.png',
+  '/icons/ink/book.png',
+  '/icons/ink/bulb.png',
+  '/icons/ink/camera.png',
+  '/icons/ink/check.png',
+  '/icons/ink/dashboard.png',
+  '/icons/ink/download.png',
+  '/icons/ink/frame.png',
+  '/icons/ink/globe.png',
+  '/icons/ink/kb.png',
+  '/icons/ink/key.png',
+  '/icons/ink/logs.png',
+  '/icons/ink/memory.png',
+  '/icons/ink/moon.png',
+  '/icons/ink/more.png',
+  '/icons/ink/notes.png',
+  '/icons/ink/palette.png',
+  '/icons/ink/pause.png',
+  '/icons/ink/plus.png',
+  '/icons/ink/quill.png',
+  '/icons/ink/quiz.png',
+  '/icons/ink/refresh.png',
+  '/icons/ink/reports.png',
+  '/icons/ink/robot.png',
+  '/icons/ink/satellite.png',
+  '/icons/ink/save.png',
+  '/icons/ink/search.png',
+  '/icons/ink/settings.png',
+  '/icons/ink/shield.png',
+  '/icons/ink/spark.png',
+  '/icons/ink/study.png',
+  '/icons/ink/sun.png',
+  '/icons/ink/target.png',
+  '/icons/ink/trash.png',
+  '/icons/ink/usage.png',
+  '/icons/ink/warn.png',
+  '/icons/ink/zen.png',
 ];
 
 self.addEventListener('install', (event) => {

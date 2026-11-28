@@ -100,15 +100,21 @@ try {
     await page.goBack();
     await page.locator('#tab-dashboard.active').waitFor();
     const initial = await page.locator('#mistTicketSummary').textContent();
-    await page.locator('[data-study-start="exam_practice"]').click();
-    await page.locator('#tab-kb.active #kbFilters .active[data-kcat="真题"]').waitFor();
+    // v4.6.0：今日任务只剩今日词汇 / 到期与错题复习，「真题训练」已下线
+    assert.equal(await page.locator('[data-study-start="exam_practice"]').count(), 0);
+    assert.equal(await page.locator('#todayTasksList .study-task').count(), 2);
+    await page.locator('[data-study-start="review_due"]').click();
+    await page.locator('#tab-quiz.active').waitFor();
     await page.goBack();
     await page.locator('#tab-dashboard.active').waitFor();
     assert.equal(await page.locator('#mistTicketSummary').textContent(), initial);
-    await page.locator('[data-study-complete="exam_practice"]').check();
-    await page.waitForFunction(before => document.querySelector('#mistTicketSummary').textContent !== before, initial);
-    await page.locator('[data-study-complete="exam_practice"]').uncheck();
-    await page.waitForFunction(before => document.querySelector('#mistTicketSummary').textContent === before, initial);
+    // 沙箱里没有学习流水：错题复习按 0 待复习自动完成，今日词汇仍待办
+    assert.match(initial, /1 \/ 2 项已完成/);
+    assert.equal(await page.locator('[data-study-complete="vocab_today"]').isDisabled(), false);
+    await page.locator('[data-study-complete="vocab_today"]').check();
+    await page.locator('#mistTicketSummary').getByText('2 / 2 项已完成').waitFor();
+    await page.locator('[data-study-complete="vocab_today"]').uncheck();
+    await page.locator('#mistTicketSummary').getByText('1 / 2 项已完成').waitFor();
     await page.evaluate(() => applyTheme('dark'));
     assert.match(await page.locator('.mist-hero').evaluate(el => getComputedStyle(el).backgroundImage), /hero-night/);
     await page.evaluate(() => applyTheme('light'));
@@ -201,6 +207,8 @@ try {
     console.log('PASS mist-only styling, day/night themes, and calm card hover');
 
     await page.evaluate(() => switchTab('quiz'));
+    // 前面从今日任务进过「错题复练」，这里切回基础回忆再看组卷
+    await page.locator('[data-submode="basic"]').click();
     await page.locator('#quizCount').fill('3');
     await page.locator('#quizAssembly').selectOption('fixed');
     await page.locator('#quizStartBtn').click();
