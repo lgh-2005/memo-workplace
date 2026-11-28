@@ -1,6 +1,6 @@
 # v4.0.0 安全审计与敏感信息扫描记录
 
-> v4.6.0（2026-11-28）：删除解释性文案不触碰任何接口与权限；水墨图标为同源静态 PNG（`/icons/ink/`），经 `mask-image` 上色，CSP 与静态缓存策略不变；`/api/study/tasks/complete` 对已下线的 `exam_practice` 返回 400。
+> v4.7.0（2026-11-28）：`setInkText` 刻意不走 `innerHTML`——状态行里混入的图标记号被逐段还原成元素，其余字符一律走文本节点，服务端错误信息不会被当 HTML 解析；水墨图标为同源静态 PNG（`/icons/ink/`，89 枚），经 `mask-image` 上色，CSP 与静态缓存策略不变；`/api/study/tasks/complete` 对已下线的 `exam_practice` 返回 400。
 > v4.4.1（2026-11-27）：新页头图版与 5 张 WebP 均为同源静态资源，CSP 未放宽（仍无 `unsafe-inline` script），快捷面板与设置索引只用 DOM 事件委托。新增交互仍在本地完成，不新增出站请求，用户数据与鉴权口径不变。
 > v4.4.0（2026-11-27）：首页词卡随已鉴权的 `/api/dashboard` 返回，沿用每用户隔离与 API `no-store`；只读取本地缓存与 ECDICT，不调用模型。WebP、独立 CSS 为同源静态资源，无 CSP 调整。
 

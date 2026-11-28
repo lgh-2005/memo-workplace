@@ -1,6 +1,6 @@
 # TESTING.md — 测试来源、清单与验收硬门槛
 
-> v4.6.0（2026-11-28）：`release-check` 62 → **68 项**（去小字 / 水墨图标族 / 图标资产齐全 / 今日任务去掉真题训练）；`release-gate` 版本断言 4.6.0；`study-plan-smoke` 改为断言 `exam_practice` 任务必须不存在且勾选接口 400；`frontend-refinement-smoke` 改为「今日任务 2 项 + 错题复习跳转」；`mobile-device-check` 48 项。
+> v4.7.0（2026-11-28）：`release-check` 68 → **75 项**（图标族覆盖 89 枚 / 四个源文件 emoji 归零 / 状态行走 setInkText / setInkText 不解析任意 HTML / 每个图标文件都有 CSS 映射 / 口音选项纯文字 / SW 预缓存整套图标）；`release-gate` 版本断言 4.7.0；`study-plan-smoke` 改为断言 `exam_practice` 任务必须不存在且勾选接口 400；`frontend-refinement-smoke` 改为「今日任务 2 项 + 错题复习跳转」；`mobile-device-check` 48 项。
 > v4.4.1（2026-11-27）：`release-check` 50 → 59 项（票据内嵌 / 无负边距 / 票据按钮化 / 七页图版页头 / 生图引用 / 快捷面板 / 设置索引 / 减动效）；`mobile-device-check` 仍 48 项，覆盖触屏 ≥44px（含手机横屏 915px）。**补充**：本版另做的 DOM 几何探针不入 `npm test`（一次性排查工具，留在 `.workbuddy/`）：11 个宽度 × 昼/夜两主题断言首页板块零交叠；7 个页签在 390px 下断言「真实交叠 0 项、无横向溢出」（跳过关闭的 `<details>` 子节点——Chromium 会返回其上次布局的过期几何，误报过 5110 条假交叠）。交互层另用一次性脚本实测 15 条：快捷面板开合/过滤/回车跳转、`Alt+1…7` 直达（含输入框聚焦时仍生效）、`/` 聚焦当前页搜索、设置索引 7 分区 + 一键展开、票据三格按钮化并直达任务、`←/→` 换今日一词、`pageerror` 为 0。
 > v4.4.0（2026-11-27）：`frontend-refinement-smoke` 验证晨雾默认布局、真实词卡、导航历史、任务票据与独立任务入口、微课样课、报告竞态、夜景及减动效。既有折叠侧栏用经典清新风格验证；`release-check` 额外验收晨雾静态资源与 PWA 缓存清单。
 

@@ -1,5 +1,7 @@
 # AGENTS.md — memo bench 工作区（英语学习工作台）
 
+> **当前交付版本：v4.7.0 · 图标全站清空（2026-11-28）**：v4.6.0 只换了导航与卡片标题的图标，按钮、节标题、状态行、toast、划词卡、题型标签里仍是系统 emoji。本版新增 52 枚水墨母版（人像 / 锁 / 门 / 怀表 / 罗盘 / 瓢虫 / 骰子 / 眼睛 / 四态人脸 / 头脑 / 天平 / 扫帚…），**图标族 36 → 89 枚**；新增 `setInkText()` / `inkFragment()`——只识别水墨图标记号、其余字符一律走文本节点（不用 `innerHTML`，状态文本不会被当 HTML 解析），`app.js` 100+ 处状态行与 `toast()` 全部改走它；口音下拉国旗改纯文字，日志勾叉伪元素改 mask 图标，`server.js` 任务 `icon` 字段改图标名。门禁：`release-check` 68 → **75 项**（7 条新契约，逐条反向验证 6/6 变红），`release-gate` 断言 4.7.0，`mobile-device-check` 48 项。无数据迁移、无新增依赖、无配置项。
+>
 > **当前交付版本：v4.6.0 · 水墨图标 · 去小字（2026-11-28）**：本版三件事。① **删掉没有意义的解释性小字**：页头副标题、分区小标签、卡片下 `.hint` 说明、标题括号注释与 22 个「ℹ️ 说明」折叠块全部移除，只保留随状态变化的动态节点（今日任务进度、今日一词来源、考试计划摘要、语料详情元信息、初始化提示）与登录卡提示，正文只留标题与操作控件。② **系统小图标换成生图水墨图标族**：36 枚水墨笔触母版（山峦 / 笔砚 / 答题纸 / 书卷 / 笔记 / 卷轴 / 齿轮 / 朱印…）去底裁切为 96px 透明 PNG，以 `mask-image` 上色、昼夜共用一套；桌面胶囊导航、手机底栏与「更多」抽屉、日志页签、卡片标题、常用按钮与词源胶囊统一换装，并并入 Service Worker 外壳缓存。③ **今日任务去掉「真题训练」**：站点没有真题训练面，任务项与勾选接口一并下线（只剩今日词汇 / 到期与错题复习），`/api/study/tasks/complete` 对 `exam_practice` 返回 400。门禁：`release-check` 62 → **68 项**，`release-gate` 断言 4.6.0，`study-plan-smoke` 增加「真题训练任务必须不存在 + 勾选 400」，`frontend-refinement-smoke` 改为「今日任务 2 项 + 错题复习跳转」，`mobile-device-check` 48 项。无数据迁移、无新增依赖、无配置项。
 >
 > **v4.5.0 历史口径 · 晨雾单界面（2026-11-27）**：本版把设置里「横列分区索引 + 竖排折叠列表」两份重复结构收成一份——只保留一行横列分区，点哪项只显示哪个分区（发音与朗读 / 模型服务 / 墨墨连接 / 登录与安全 / 同步与备份 / 高级自定义 / 同步记录），删除「全部展开 / 收起」，分区记忆在本设备；界面风格只保留晨雾，经典 / 街机 / 波普 / 四套像素风格的按钮、`applyStyle(t)` 切换与全部 `[data-style="…"]` 旧主题 CSS 一并删除（`style.css` 约 178KB → 140KB），旧设备 `localStorage['wb-style']` 自动清除并固定 mist；站点图标改为晨雾「词」朱印（生图纸底母版 + 楷体印章），重出 `favicon.ico`（16/32/48）、`favicon.svg` 与 120–512px、maskable 全套 PWA 图标；设置备份列表改为两列卡片行，去掉与分区标题重复的卡片标题。门禁：`release-check` 59 → **62 项**，`release-gate` 版本断言 4.5.0，`frontend-refinement-smoke` 改测「晨雾唯一风格 + 设置单面板 + 旧偏好迁移」，`mobile-device-check` 48 项，`npm test` 退出码 0。无数据迁移、无新增依赖、无配置项。
@@ -15,7 +17,7 @@
 > **本文件是「memo bench」这个新工作区的唯一工作手册。** 承接自 `D:\ai\opencode\momo`（opencode 工作区，含旧 AGENTS.md 与《版本号经历.md》），本工作区从 v3.7.0 / `4c2436f` 起独立开发。
 >
 > **工作区根 = 仓库根**：`D:\ai\opencode\momo\english-workbench`（v3.7.x 时代的 `D:\ai\dsh\cli\memo bench` 已分叉为历史副本；发布一律以 Gitee `master` 为准）。
-> 当前版本口径：**v4.6.0**（2026-11-28）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
+> 当前版本口径：**v4.7.0**（2026-11-28）。Gitee `master` 为发布源，GitHub `origin` 为镜像/CI，ECS 用 `scripts/deploy.sh` / `rollback.sh` 发布与回滚。
 
 ---
 
@@ -151,7 +153,7 @@ ufw-user-limit  tcp dpt:22 ctstate NEW recent: UPDATE seconds: 30 hit_count: 6 n
 
 ---
 
-## 6. 当前状态（v4.6.0，2026-11-28）
+## 6. 当前状态（v4.7.0，2026-11-28）
 
 - **v4.5.0 · 晨雾单界面（2026-11-27）**：① **设置去冗余**：只保留一行横列分区导航（发音与朗读 / 模型服务 / 墨墨连接 / 登录与安全 / 同步与备份 / 高级自定义 / 同步记录），点哪项只显示哪个分区，删除竖排折叠列表、「全部展开 / 收起」与重复卡片标题；活动分区记在本设备。② **只留晨雾**：经典 / 街机 / 波普 / 四套像素风格的入口、`applyStyle(t)` 与全部 `[data-style="…"]` 旧主题 CSS 删除（`style.css` 约 178KB → 140KB），旧 `localStorage['wb-style']` 自动清除。③ **朱印图标**：生图纸底 + 楷体「词」印，重出 `favicon.ico`（16/32/48）、`favicon.svg` 与 120–512px、maskable 全套。④ **门禁**：`release-check` 59 → **62 项**，`release-gate` 断言 4.5.0，`frontend-refinement-smoke` 改测「晨雾唯一风格 + 设置单面板 + 旧偏好迁移」，`mobile-device-check` 48 项，`npm test` 退出码 0。无数据迁移、无新增依赖。
 - **v4.6.0 发布确认（北京时间 2026-11-28 10:21）**：阿里云 ECS `/opt/workbench` HEAD = `3389952`，Gitee / GitHub `master` 与 `v4.6.0` 标签在发布时同名；部署前备份 `data_backup_v450_20261128-022121.tar.gz`，恢复演练通过；`workbench.service` 为 `active`，公网 `online-health --expected-version 4.6.0` **5/5**；线上 `v4.6.0` 版本标识 3 处、`hint-fold` 0 处、`styleGrid` 0 处、`exam_practice` 0 处；`/icons/ink/` 37 张 PNG 与 `mist.css`（75 条 ink 规则）全部 200，`sw.js` 已含 `icons/ink/sun.png`；[CI](https://github.com/lgh-2005/memo-workplace/actions/runs/46096960572) Node 22/24 通过。
